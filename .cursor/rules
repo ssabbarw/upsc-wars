@@ -1,0 +1,1026 @@
+# UPSC Prep App — Cursor Rules
+# Flutter + Dart + Hooks Riverpod + Drift (SQLite)
+# Every rule here applies to every file generated in this project.
+
+---
+
+## Project Overview
+
+A UPSC civil services exam preparation app. 30,000 MCQs stored in a pre-built SQLite
+database bundled with the app. Users take subject-wise and topic-wise tests in two modes:
+Exam mode and Learning mode. The app uses Hooks Riverpod for state management and
+Drift for SQLite ORM.
+
+---
+
+## Tech Stack
+
+- Flutter (latest stable)
+- Dart
+- hooks_riverpod — all state management
+- flutter_hooks — local ephemeral UI state and hook-based lifecycle
+- riverpod_annotation + riverpod_generator — code generation for providers
+- Drift — SQLite ORM for user data (attempts, sessions, bookmarks, revision queue)
+- sqflite + path_provider — for copying and accessing the pre-built question database
+- google_fonts — DM Sans only
+- go_router — navigation
+
+---
+
+## Folder Structure
+
+```
+lib/
+  core/
+    theme/
+      app_theme.dart         # ThemeData light + dark
+      app_colors.dart        # All color tokens
+      app_text_styles.dart   # All text styles
+      app_spacing.dart       # Spacing constants
+    database/
+      question_db.dart       # Read-only question database access
+      user_db.dart           # Drift database for user data
+    router/
+      app_router.dart
+  features/
+    home/
+    subject_test/
+    topic_test/
+    test_engine/
+    results/
+    history/
+    revision_queue/
+    bookmarks/
+  shared/
+    widgets/                 # Reusable widgets
+    extensions/
+```
+
+---
+
+## Design System
+
+### Font
+
+**Always use DM Sans from google_fonts. Never use any other font.**
+
+```dart
+import 'package:google_fonts/google_fonts.dart';
+
+// Usage in ThemeData:
+textTheme: GoogleFonts.dmSansTextTheme(Theme.of(context).textTheme)
+
+// Usage inline:
+style: GoogleFonts.dmSans(fontSize: 15, fontWeight: FontWeight.w500)
+```
+
+Font weight rules:
+- Regular body text: FontWeight.w400
+- Labels, titles, buttons: FontWeight.w500
+- Never use w600, w700, or w800 — too heavy for this UI
+
+---
+
+### Color Tokens — app_colors.dart
+
+Define ALL colors as static constants. Never hardcode hex values anywhere else in the codebase.
+
+```dart
+class AppColors {
+
+  // ── Primary accent (teal-green) ──────────────────────────────────────
+  static const primary          = Color(0xFF1D9E75);
+  static const primaryLight     = Color(0xFFE1F5EE); // backgrounds, selected states light
+  static const primaryDark      = Color(0xFF0F6E56); // darker variant
+  static const primaryDeep      = Color(0xFF085041); // text on primaryLight bg
+
+  // ── Semantic: correct / wrong ─────────────────────────────────────────
+  static const correct          = Color(0xFF1D9E75);
+  static const correctBg        = Color(0xFFE1F5EE); // light mode
+  static const correctBgDark    = Color(0xFF085041); // dark mode
+  static const correctText      = Color(0xFF085041); // text on correctBg light
+  static const correctTextDark  = Color(0xFF9FE1CB); // text on correctBgDark
+
+  static const wrong            = Color(0xFFE24B4A);
+  static const wrongBg          = Color(0xFFFCEBEB); // light mode
+  static const wrongBgDark      = Color(0xFF501313); // dark mode
+  static const wrongText        = Color(0xFF791F1F); // text on wrongBg light
+  static const wrongTextDark    = Color(0xFFF09595); // text on wrongBgDark
+
+  // ── Semantic: warning / flagged ───────────────────────────────────────
+  static const warning          = Color(0xFFBA7517);
+  static const warningBg        = Color(0xFFFAEEDA); // light mode
+  static const warningBgDark    = Color(0xFF412402); // dark mode
+  static const warningText      = Color(0xFF633806); // text on warningBg light
+  static const warningTextDark  = Color(0xFFFAC775); // text on warningBgDark
+
+  // ── Semantic: info / exam mode ────────────────────────────────────────
+  static const info             = Color(0xFF185FA5);
+  static const infoBg           = Color(0xFFE6F1FB); // light mode
+  static const infoBgDark       = Color(0xFF042C53); // dark mode
+  static const infoText         = Color(0xFF0C447C); // text on infoBg light
+  static const infoTextDark     = Color(0xFFB5D4F4); // text on infoBgDark
+
+  // ── Neutral grays ────────────────────────────────────────────────────
+  static const gray50           = Color(0xFFF1EFE8);
+  static const gray100          = Color(0xFFD3D1C7);
+  static const gray200          = Color(0xFFB4B2A9);
+  static const gray400          = Color(0xFF888780);
+  static const gray600          = Color(0xFF5F5E5A);
+  static const gray800          = Color(0xFF444441);
+  static const gray900          = Color(0xFF2C2C2A);
+
+  // ── Light mode surfaces ───────────────────────────────────────────────
+  static const surfacePrimaryLight    = Color(0xFFFFFFFF);
+  static const surfaceSecondaryLight  = Color(0xFFF5F5F3);
+  static const surfaceTertiaryLight   = Color(0xFFEEEEEB);
+
+  // ── Dark mode surfaces ────────────────────────────────────────────────
+  static const surfacePrimaryDark     = Color(0xFF1C1C1E);
+  static const surfaceSecondaryDark   = Color(0xFF2C2C2E);
+  static const surfaceTertiaryDark    = Color(0xFF3A3A3C);
+
+  // ── Border colors ─────────────────────────────────────────────────────
+  static const borderLight      = Color(0x26000000); // 15% black
+  static const borderDark       = Color(0x26FFFFFF); // 15% white
+
+  // ── Streak / fire ────────────────────────────────────────────────────
+  static const streak           = Color(0xFFE24B4A);
+}
+```
+
+---
+
+### Theme — app_theme.dart
+
+```dart
+class AppTheme {
+  static ThemeData light() {
+    return ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.light,
+      colorScheme: ColorScheme.light(
+        primary: AppColors.primary,
+        surface: AppColors.surfacePrimaryLight,
+        surfaceContainerLow: AppColors.surfaceSecondaryLight,
+        surfaceContainerLowest: AppColors.surfaceTertiaryLight,
+        onSurface: const Color(0xFF1C1C1E),
+        onSurfaceVariant: const Color(0xFF6B6B6B),
+        error: AppColors.wrong,
+      ),
+      scaffoldBackgroundColor: AppColors.surfaceTertiaryLight,
+      textTheme: GoogleFonts.dmSansTextTheme(_baseLightTextTheme()),
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.surfacePrimaryLight,
+        foregroundColor: const Color(0xFF1C1C1E),
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        titleTextStyle: GoogleFonts.dmSans(
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+          color: const Color(0xFF1C1C1E),
+        ),
+      ),
+      dividerColor: AppColors.borderLight,
+      dividerTheme: const DividerThemeData(
+        color: AppColors.borderLight,
+        thickness: 0.5,
+        space: 0,
+      ),
+    );
+  }
+
+  static ThemeData dark() {
+    return ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.dark,
+      colorScheme: ColorScheme.dark(
+        primary: AppColors.primary,
+        surface: AppColors.surfacePrimaryDark,
+        surfaceContainerLow: AppColors.surfaceSecondaryDark,
+        surfaceContainerLowest: AppColors.surfaceTertiaryDark,
+        onSurface: const Color(0xFFEAEAEA),
+        onSurfaceVariant: const Color(0xFF9A9A9A),
+        error: AppColors.wrong,
+      ),
+      scaffoldBackgroundColor: AppColors.surfaceTertiaryDark,
+      textTheme: GoogleFonts.dmSansTextTheme(_baseDarkTextTheme()),
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.surfacePrimaryDark,
+        foregroundColor: const Color(0xFFEAEAEA),
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        titleTextStyle: GoogleFonts.dmSans(
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+          color: const Color(0xFFEAEAEA),
+        ),
+      ),
+      dividerColor: AppColors.borderDark,
+      dividerTheme: const DividerThemeData(
+        color: AppColors.borderDark,
+        thickness: 0.5,
+        space: 0,
+      ),
+    );
+  }
+}
+```
+
+---
+
+### Spacing — app_spacing.dart
+
+```dart
+class AppSpacing {
+  static const double xs   = 4;
+  static const double sm   = 8;
+  static const double md   = 12;
+  static const double lg   = 16;
+  static const double xl   = 20;
+  static const double xxl  = 24;
+  static const double xxxl = 32;
+}
+```
+
+---
+
+### Border Radius
+
+```dart
+class AppRadius {
+  static const double sm   = 8;
+  static const double md   = 12;
+  static const double lg   = 14;
+  static const double xl   = 16;
+  static const double pill = 100;
+}
+```
+
+---
+
+### Text Styles — app_text_styles.dart
+
+All styles use DM Sans via GoogleFonts. Color is set at the widget level using
+Theme.of(context).colorScheme — never hardcoded in text styles.
+
+```dart
+class AppTextStyles {
+  // Headings
+  static TextStyle h1() => GoogleFonts.dmSans(fontSize: 22, fontWeight: FontWeight.w500);
+  static TextStyle h2() => GoogleFonts.dmSans(fontSize: 18, fontWeight: FontWeight.w500);
+  static TextStyle h3() => GoogleFonts.dmSans(fontSize: 16, fontWeight: FontWeight.w500);
+
+  // Body
+  static TextStyle body()   => GoogleFonts.dmSans(fontSize: 15, fontWeight: FontWeight.w400, height: 1.6);
+  static TextStyle bodyMd() => GoogleFonts.dmSans(fontSize: 14, fontWeight: FontWeight.w400, height: 1.55);
+  static TextStyle bodySm() => GoogleFonts.dmSans(fontSize: 13, fontWeight: FontWeight.w400, height: 1.5);
+
+  // Labels
+  static TextStyle label()   => GoogleFonts.dmSans(fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle labelSm() => GoogleFonts.dmSans(fontSize: 12, fontWeight: FontWeight.w500);
+  static TextStyle caption() => GoogleFonts.dmSans(fontSize: 11, fontWeight: FontWeight.w400);
+
+  // Question text — slightly larger for readability
+  static TextStyle question() => GoogleFonts.dmSans(fontSize: 15, fontWeight: FontWeight.w400, height: 1.7);
+
+  // Option text
+  static TextStyle option() => GoogleFonts.dmSans(fontSize: 14, fontWeight: FontWeight.w400, height: 1.55);
+}
+```
+
+---
+
+## Component Rules
+
+### Cards
+
+```dart
+// Standard card — always use this pattern
+Container(
+  decoration: BoxDecoration(
+    color: Theme.of(context).colorScheme.surface,
+    borderRadius: BorderRadius.circular(AppRadius.lg),
+    border: Border.all(
+      color: Theme.of(context).brightness == Brightness.light
+          ? AppColors.borderLight
+          : AppColors.borderDark,
+      width: 0.5,
+    ),
+  ),
+  padding: const EdgeInsets.all(AppSpacing.lg),
+  child: ...,
+)
+```
+
+Never use Card() widget — it adds elevation and shadow. Use Container with decoration instead.
+
+---
+
+### Option Rows (Test screen)
+
+Three visual states. Always full-width. Never use button shape.
+
+```dart
+// Unselected
+Container(
+  decoration: BoxDecoration(
+    color: Theme.of(context).colorScheme.surface,
+    borderRadius: BorderRadius.circular(AppRadius.md),
+    border: Border.all(color: borderColor, width: 0.5),
+  ),
+  ...
+)
+
+// Selected (before answer revealed)
+Container(
+  decoration: BoxDecoration(
+    color: AppColors.primaryLight, // dark: AppColors.primaryDeep
+    borderRadius: BorderRadius.circular(AppRadius.md),
+    border: Border.all(color: AppColors.primary, width: 2),
+  ),
+  ...
+)
+
+// Correct answer revealed
+Container(
+  decoration: BoxDecoration(
+    color: isDark ? AppColors.correctBgDark : AppColors.correctBg,
+    borderRadius: BorderRadius.circular(AppRadius.md),
+    border: Border.all(color: AppColors.correct, width: 2),
+  ),
+  ...
+)
+
+// Wrong answer revealed
+Container(
+  decoration: BoxDecoration(
+    color: isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
+    borderRadius: BorderRadius.circular(AppRadius.md),
+    border: Border.all(color: AppColors.wrong, width: 2),
+  ),
+  ...
+)
+```
+
+Option key badge (A, B, C, D):
+- Unselected: gray background, secondary text color
+- Selected: AppColors.primary background, white text
+- Correct: AppColors.correct background, white text
+- Wrong: AppColors.wrong background, white text
+
+---
+
+### Buttons — Primary
+
+```dart
+SizedBox(
+  width: double.infinity,
+  child: ElevatedButton(
+    onPressed: () {},
+    style: ElevatedButton.styleFrom(
+      backgroundColor: AppColors.primary,
+      foregroundColor: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppRadius.md),
+      ),
+      elevation: 0,
+    ),
+    child: Text('Start test', style: AppTextStyles.label()),
+  ),
+)
+```
+
+Secondary button (outlined):
+```dart
+OutlinedButton(
+  style: OutlinedButton.styleFrom(
+    foregroundColor: Theme.of(context).colorScheme.onSurface,
+    side: BorderSide(color: borderColor, width: 0.5),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(AppRadius.md),
+    ),
+    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+  ),
+  ...
+)
+```
+
+---
+
+### Pills / Badges
+
+```dart
+// Mode badge — Exam
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+  decoration: BoxDecoration(
+    color: isDark ? AppColors.infoBgDark : AppColors.infoBg,
+    borderRadius: BorderRadius.circular(AppRadius.sm),
+  ),
+  child: Text(
+    'Exam',
+    style: AppTextStyles.caption().copyWith(
+      color: isDark ? AppColors.infoTextDark : AppColors.infoText,
+      fontWeight: FontWeight.w500,
+    ),
+  ),
+)
+
+// Mode badge — Learning
+// Use primaryLight / primaryDeep same pattern
+
+// Mode badge — In progress
+// Use warningBg / warningText same pattern
+```
+
+---
+
+### Bottom Sheets
+
+```dart
+showModalBottomSheet(
+  context: context,
+  isScrollControlled: true,
+  backgroundColor: Colors.transparent,
+  builder: (context) => Container(
+    decoration: BoxDecoration(
+      color: Theme.of(context).colorScheme.surface,
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+    ),
+    padding: EdgeInsets.only(
+      left: 20,
+      right: 20,
+      top: 0,
+      bottom: MediaQuery.of(context).viewInsets.bottom + 40,
+    ),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Handle
+        Container(
+          width: 36,
+          height: 4,
+          margin: const EdgeInsets.symmetric(vertical: 12),
+          decoration: BoxDecoration(
+            color: borderColor,
+            borderRadius: BorderRadius.circular(2),
+          ),
+        ),
+        // Content
+        ...
+      ],
+    ),
+  ),
+)
+```
+
+---
+
+### Subject Pills (horizontal strip)
+
+```dart
+// Unselected
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+  decoration: BoxDecoration(
+    color: Theme.of(context).colorScheme.surface,
+    borderRadius: BorderRadius.circular(AppRadius.pill),
+    border: Border.all(color: borderColor, width: 0.5),
+  ),
+  child: Text(label, style: AppTextStyles.labelSm().copyWith(
+    color: Theme.of(context).colorScheme.onSurfaceVariant,
+  )),
+)
+
+// Selected
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+  decoration: BoxDecoration(
+    color: AppColors.primary,
+    borderRadius: BorderRadius.circular(AppRadius.pill),
+  ),
+  child: Text(label, style: AppTextStyles.labelSm().copyWith(color: Colors.white)),
+)
+```
+
+---
+
+### Question Palette Grid
+
+States for each cell:
+- Not visited: surfaceSecondary background, onSurfaceVariant text
+- Attempted: correctBg background, correctText text (light) / correctBgDark, correctTextDark (dark)
+- Flagged: warningBg background, warningText text (light) / warningBgDark, warningTextDark (dark)
+- Current: AppColors.primary background, white text
+
+---
+
+## Dark Mode Rules
+
+**CRITICAL: Never hardcode any color value outside of app_colors.dart.**
+
+Always use one of:
+1. `Theme.of(context).colorScheme.surface` — primary surface
+2. `Theme.of(context).colorScheme.surfaceContainerLow` — secondary surface
+3. `Theme.of(context).colorScheme.onSurface` — primary text
+4. `Theme.of(context).colorScheme.onSurfaceVariant` — secondary text
+5. `AppColors.X` constants where X has explicit light/dark variants
+
+For colored backgrounds (correct/wrong/info/warning), always check brightness:
+```dart
+final isDark = Theme.of(context).brightness == Brightness.dark;
+final bgColor = isDark ? AppColors.correctBgDark : AppColors.correctBg;
+final textColor = isDark ? AppColors.correctTextDark : AppColors.correctText;
+```
+
+Text on any colored background must ALWAYS use the matching text constant —
+never use onSurface or onSurfaceVariant on colored backgrounds.
+
+---
+## Architecture — Clean Architecture
+
+This project follows Clean Architecture strictly. Every feature has three layers:
+
+### Data layer
+- Repositories (implementation) — talk to data sources directly
+- Data sources — question_db.dart (sqflite), user_db.dart (Drift), PrefsService
+- Models — raw data classes with fromJson / fromSqflite / fromDrift constructors
+  and toJson / toDrift conversion methods
+
+### Domain layer  
+- Entities — pure Dart classes with no Flutter or database dependencies
+- Repository interfaces (abstract classes) — define the contract
+- Use cases — one class per user action, single execute() method,
+  depends only on repository interfaces never implementations
+
+### Presentation layer
+- Screens — HookConsumerWidget, no business logic
+- Providers — call use cases only, never repositories or data sources directly
+- Widgets — dumb, receive data and callbacks only
+
+### Rules
+- Dependencies point inward only — presentation → domain ← data
+- Domain layer has zero Flutter imports — pure Dart only
+- Use cases have one responsibility each — never combine two actions
+- Providers never import from the data layer directly
+- Repositories are injected via Riverpod providers — never instantiated manually
+----
+
+## Database Architecture
+
+### Two separate databases
+
+**1. Question database (read-only)**
+- Pre-built SQLite file bundled in `assets/db/upsc_questions.db`
+- On first launch, copy from assets to device documents directory using path_provider
+- Access via raw sqflite queries — not Drift
+- Never write to this database
+
+**2. User database (Drift)**
+- Stores: sessions, session_questions, bookmarks, revision_queue
+- Located in app documents directory
+- All writes go here
+
+---
+
+### Question DB Schema (SQLite — read only)
+
+```sql
+CREATE TABLE questions (
+  uuid              TEXT PRIMARY KEY,
+  subject_slug      TEXT NOT NULL,
+  topic_slug        TEXT NOT NULL,
+  sub_topic_slug    TEXT NOT NULL,
+  correct_option    TEXT NOT NULL,
+  question_type     TEXT,
+  trap_type         TEXT,
+  has_table         INTEGER DEFAULT 0
+);
+
+CREATE TABLE question_translations (
+  question_uuid         TEXT NOT NULL,
+  language              TEXT NOT NULL,
+  display_text          TEXT NOT NULL,
+  concept_anchor        TEXT,
+  final_explanation     TEXT,
+  upsc_trap_explanation TEXT,
+  strong_distractor     TEXT,
+  elimination_logic     TEXT,
+  statement_analysis    TEXT,
+  concepts_used         TEXT,
+  header_text           TEXT,
+  footer_text           TEXT,
+  columns               TEXT,
+  rows                  TEXT,
+  PRIMARY KEY (question_uuid, language),
+  FOREIGN KEY (question_uuid) REFERENCES questions(uuid)
+);
+
+CREATE TABLE topic_translations (
+  topic_slug      TEXT NOT NULL,
+  subject_slug    TEXT NOT NULL,
+  language        TEXT NOT NULL,
+  display_name    TEXT NOT NULL,
+  PRIMARY KEY (topic_slug, subject_slug, language)
+);
+
+CREATE INDEX idx_subject ON questions(subject_slug);
+CREATE INDEX idx_topic ON questions(subject_slug, topic_slug);
+CREATE INDEX idx_sub_topic ON questions(subject_slug, topic_slug, sub_topic_slug);
+CREATE INDEX idx_qt_lang ON question_translations(question_uuid, language);
+```
+
+Notes:
+- `elimination_logic`, `statement_analysis`, `concepts_used`, `columns`, `rows` are JSON strings
+- English is the canonical language — all questions have a `language = 'en'` row in question_translations
+- Hindi rows added later when Hindi content is available
+- Subject display names are hardcoded in the app (only 6 subjects)
+- Topic display names live in topic_translations
+
+---
+
+### Unseen Questions Logic
+
+When generating a test session, prioritise questions the user has never attempted:
+
+```sql
+-- Unseen questions for a given subject
+SELECT q.uuid FROM questions q
+WHERE q.subject_slug = ?
+AND q.uuid NOT IN (
+  SELECT sq.question_uuid FROM session_questions sq
+)
+ORDER BY RANDOM()
+LIMIT ?;
+
+-- If unseen count < requested count, fill remainder with seen questions
+SELECT q.uuid FROM questions q
+WHERE q.subject_slug = ?
+AND q.uuid IN (
+  SELECT sq.question_uuid FROM session_questions sq
+)
+ORDER BY RANDOM()
+LIMIT ?;
+```
+
+---
+
+### User DB Schema (Drift)
+
+```dart
+// Sessions
+class Sessions extends Table {
+  TextColumn get id => text()();
+  // UUID generated at session creation, primary key
+
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get completedAt => dateTime().nullable()();
+
+  TextColumn get subjectSlug => text()();
+  TextColumn get topicSlug => text().nullable()();
+  TextColumn get subTopicSlug => text().nullable()();
+
+  TextColumn get mode => text()();
+  // 'exam' | 'learning'
+
+  TextColumn get status => text()();
+  // 'in_progress' | 'completed' | 'abandoned'
+
+  IntColumn get questionCount => integer()();
+  BoolColumn get isTimed => boolean()();
+
+  IntColumn get timeLimitSecs => integer().nullable()();
+  // exam mode: total test time in seconds
+  // learning mode: per-question time limit in seconds (45 | 60 | 120)
+
+  TextColumn get language => text().withDefault(const Constant('en'))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// Session Questions
+class SessionQuestions extends Table {
+  TextColumn get id => text()();
+  // UUID, primary key
+
+  TextColumn get sessionId => text().references(Sessions, #id)();
+  TextColumn get questionUuid => text()();
+
+  IntColumn get position => integer()();
+  // order within the session, 1-indexed
+
+  TextColumn get selectedOption => text().nullable()();
+  // 'a' | 'b' | 'c' | 'd' | null
+
+  BoolColumn get isCorrect => boolean().nullable()();
+
+  TextColumn get status => text().withDefault(const Constant('unattempted'))();
+  // 'unattempted' | 'correct' | 'wrong' | 'timed_out'
+  // timed_out = counts as unattempted for scoring, NOT wrong
+
+  IntColumn get timeSpentSecs => integer().nullable()();
+  BoolColumn get flagged => boolean().withDefault(const Constant(false))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// Bookmarks
+class Bookmarks extends Table {
+  TextColumn get id => text()();
+  // UUID, primary key
+
+  TextColumn get questionUuid => text()();
+  DateTimeColumn get createdAt => dateTime()();
+  TextColumn get note => text().nullable()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// Revision Queue
+class RevisionQueue extends Table {
+  TextColumn get id => text()();
+  // UUID, primary key
+
+  TextColumn get questionUuid => text().unique()();
+  // unique — one row per question, never duplicates
+
+  DateTimeColumn get addedAt => dateTime()();
+
+  TextColumn get reason => text()();
+  // 'wrong' | 'bookmarked'
+
+  IntColumn get correctStreak => integer().withDefault(const Constant(0))();
+  // exits queue when correctStreak >= 2 on separate calendar days
+
+  DateTimeColumn get lastCorrectAt => dateTime().nullable()();
+  // used to enforce "separate days" rule
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+```
+
+---
+
+### Scoring Formula
+
+```dart
+// UPSC Prelims: +2 correct, -0.66 wrong, 0 unattempted/timed_out
+double calculateNetScore(int correct, int wrong) {
+  return (correct * 2) - (wrong * 0.66);
+}
+
+// Accuracy — only counts attempted questions (not unattempted or timed_out)
+double calculateAccuracy(int correct, int attempted) {
+  if (attempted == 0) return 0;
+  return (correct / attempted) * 100;
+}
+```
+
+---
+
+### Shared Preferences Keys
+
+```dart
+class PrefKeys {
+  static const currentStreak   = 'current_streak';      // int
+  static const longestStreak   = 'longest_streak';      // int
+  static const lastActiveDate  = 'last_active_date';    // String 'yyyy-MM-dd'
+  static const dailyGoal       = 'daily_goal';          // int, default 25
+  static const language        = 'language';            // String 'en' | 'hi'
+}
+```
+
+Daily goal progress is derived at query time:
+```sql
+SELECT COUNT(*) FROM session_questions sq
+JOIN sessions s ON sq.session_id = s.id
+WHERE DATE(s.created_at) = DATE('now')
+AND sq.status != 'unattempted';
+```
+
+---
+
+## State Management (Hooks Riverpod)
+
+### Widget base class rules
+
+- ALWAYS extend `HookConsumerWidget` — never `StatelessWidget`, `StatefulWidget`, or `ConsumerWidget`
+- NEVER use `StatefulWidget` — replace all local state with hooks
+- The `build` method signature is always: `Widget build(BuildContext context, WidgetRef ref)`
+
+```dart
+// CORRECT — always this pattern
+class MyScreen extends HookConsumerWidget {
+  const MyScreen({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final count = useState(0);
+    final controller = useTextEditingController();
+    final data = ref.watch(myProvider);
+    return ...;
+  }
+}
+```
+
+### Hooks for local UI state
+
+Use flutter_hooks for ALL ephemeral widget-level state. Never use StatefulWidget.
+
+```dart
+// Local primitive state
+final isExpanded = useState(false);
+final selectedIndex = useState(0);
+
+// Controllers — always use hooks, never instantiate manually
+final searchController = useTextEditingController();
+final scrollController = useScrollController();
+final animController = useAnimationController(duration: const Duration(milliseconds: 300));
+
+// Memoised values
+final filtered = useMemoized(() => items.where((i) => i.active).toList(), [items]);
+
+// Side effects
+useEffect(() {
+  // runs once on mount
+  return null; // return a cleanup function or null
+}, const []);
+
+useEffect(() {
+  // runs when dependency changes
+  return null;
+}, [someDependency]);
+```
+
+### Providers — use code generation
+
+```dart
+// Async provider (data loading)
+@riverpod
+Future<List<Question>> subjectQuestions(Ref ref, String subject) async {
+  final db = ref.watch(questionDbProvider);
+  return db.getQuestionsBySubject(subject);
+}
+
+// Sync notifier (complex state with methods)
+@riverpod
+class TestSessionNotifier extends _$TestSessionNotifier {
+  @override
+  TestSessionState build() => TestSessionState.initial();
+
+  void selectOption(String questionUuid, String option) {
+    state = state.copyWith(...);
+  }
+
+  void flagQuestion(String questionUuid) {
+    state = state.copyWith(...);
+  }
+}
+
+// Simple computed value
+@riverpod
+double netScore(Ref ref, String sessionId) {
+  final session = ref.watch(sessionProvider(sessionId));
+  return session.correct * 2 - session.wrong * 0.66;
+}
+```
+
+### Provider placement
+
+- Keep providers in feature folders: `features/test_engine/providers/test_session_provider.dart`
+- Core/shared providers in `core/providers/`
+- Always use `@riverpod` annotation — never create providers manually without codegen
+
+### Watching vs reading
+
+```dart
+// In build() — use watch (rebuilds on change)
+final questions = ref.watch(questionsProvider);
+
+// In callbacks / event handlers — use read (no rebuild)
+onPressed: () => ref.read(testSessionProvider.notifier).submitTest(),
+```
+
+### Never use
+
+- `StateProvider` — use `@riverpod` notifier instead
+- `ChangeNotifierProvider` — not compatible with code gen pattern
+- `ConsumerWidget` or `ConsumerStatefulWidget` — always use `HookConsumerWidget`
+- `StatefulWidget` anywhere in the codebase
+
+---
+
+## Navigation (go_router)
+
+```
+/                     → HomeScreen
+/subject-test         → SubjectTestScreen
+/topic-test           → TopicTestScreen
+/test/:sessionId      → TestEngineScreen
+/results/:sessionId   → ResultsScreen
+/history              → HistoryScreen
+/history/:sessionId   → SessionReviewScreen
+/revision-queue       → RevisionQueueScreen
+/bookmarks            → BookmarksScreen
+```
+
+---
+
+## Test Modes
+
+### Exam Mode
+- All questions shown one at a time
+- Tap option to select, tap again or different to change — never locks mid-test
+- Previous / Next navigation always available
+- Question palette shows attempted / flagged / not visited / current states
+- Submit button with confirmation dialog
+- Timer counts down total test time (show in top bar)
+- No explanation shown during test
+- After submit → ResultsScreen with stats only (no explanations in v1)
+
+### Learning Mode
+- All questions shown one at a time
+- Tap option → answer locks immediately, cannot change
+- Per-question countdown timer (45s / 1min / 2min — user configures)
+- Timer stops when answer is tapped
+- If timer runs out → correct answer revealed, status = 'timed_out' (NOT wrong)
+- Explanation card slides up after answer revealed
+- "Next question" button appears after explanation
+- No going back to previous questions
+- No question palette needed
+
+---
+
+## Accuracy Color Rules
+
+Used in history cards, topic lists, subject cards:
+- `>= 70%` accuracy → AppColors.correct (green)
+- `55–69%` accuracy → AppColors.warning (amber)
+- `< 55%` accuracy → AppColors.wrong (red)
+- `< 10 attempts` → onSurfaceVariant (muted — data not meaningful yet)
+- `0 attempts` → show "—"
+
+---
+
+## Net Score Calculation
+
+UPSC Prelims negative marking: +2 for correct, -0.66 for wrong, 0 for unattempted.
+
+```dart
+double calculateNetScore(int correct, int wrong) {
+  return (correct * 2) - (wrong * 0.66);
+}
+```
+
+---
+
+## Session Card Display
+
+History screen session cards show:
+- Subject · Topic (if topic test) · Sub-topic (if sub-topic test)
+- If subject-only test: show subject name only
+- Topic and sub-topic are nullable — render only what exists
+- Mode badge: Exam (blue) | Learning (green) | In progress (amber)
+- Stats: Accuracy · Score (X/Y) · Net score · Avg time per question
+- Completed → "Review" button (outlined)
+- In progress → "Resume" button (filled green)
+
+---
+
+## General Flutter Rules
+
+- Never use `Card()` — use `Container` with `BoxDecoration`
+- Never hardcode colors — always use `AppColors` or `Theme.of(context).colorScheme`
+- Never hardcode font sizes — always use `AppTextStyles`
+- Never hardcode spacing — always use `AppSpacing`
+- All `ListView` and `SingleChildScrollView` use `physics: const BouncingScrollPhysics()`
+- All screens have `SafeArea`
+- Use `const` constructors everywhere possible
+- Separate business logic from UI — no database calls inside widget `build()` methods
+- All async operations show loading state — never leave UI blank while loading
+- Handle empty states explicitly — never show empty lists without a message
+
+---
+
+## What NOT to Do
+
+- Do NOT use `StatefulWidget` anywhere — use `HookConsumerWidget` + hooks instead
+- Do NOT use `ConsumerWidget` or `ConsumerStatefulWidget` — always `HookConsumerWidget`
+- Do NOT use `StateProvider` — use `@riverpod` notifier instead
+- Do NOT instantiate controllers manually (TextEditingController(), etc.) — use hooks
+- Do NOT use `Card()` widget — use `Container` with `BoxDecoration`
+- Do NOT hardcode any Color hex value outside app_colors.dart
+- Do NOT use any font other than DM Sans
+- Do NOT use FontWeight.w600, w700, w800
+- Do NOT call providers directly in build without `ref.watch` / `ref.read`
+- Do NOT show explanations in v1 results screen — stats only
+- Do NOT add shadow or elevation to any component
+- Do NOT use `showDialog` for the question palette — use `showModalBottomSheet`
+- Do NOT allow going back to previous questions in Learning mode
+- Do NOT mark timed-out questions as wrong — use status 'timed_out', counts as unattempted

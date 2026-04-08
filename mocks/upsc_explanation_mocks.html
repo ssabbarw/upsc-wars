@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Wars — Explanation Screen Mocks</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-mid: #0F6E56;
+    --teal-dark: #085041;
+    --green-fill: #EAF3DE;
+    --green-border: #97C459;
+    --green-text: #3B6D11;
+    --green-dark: #173404;
+    --green-tag: #C0DD97;
+    --red-fill: #FCEBEB;
+    --red-border: #F09595;
+    --red-text: #A32D2D;
+    --red-dark: #501313;
+    --red-tag: #F7C1C1;
+    --amber-fill: #FAEEDA;
+    --amber-text: #854F0B;
+    --amber-dark: #633806;
+    --bg: #ffffff;
+    --bg-secondary: #F7F7F5;
+    --bg-tertiary: #F0EFE9;
+    --border: rgba(0,0,0,0.12);
+    --border-secondary: rgba(0,0,0,0.22);
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-tertiary: #888;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #E8E6DF;
+    padding: 32px 16px;
+    min-height: 100vh;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .page-header h1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .page-header p {
+    font-size: 13px;
+    color: #777;
+  }
+
+  .mocks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .mock-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mock-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .phone {
+    background: var(--bg);
+    border: 0.5px solid var(--border);
+    border-radius: 24px;
+    width: 360px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px 10px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .topbar-left { display: flex; align-items: center; gap: 8px; }
+  .back-btn {
+    width: 32px; height: 32px;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border);
+    background: var(--bg-secondary);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  .back-arrow {
+    width: 11px; height: 11px;
+    border-left: 1.5px solid var(--text-secondary);
+    border-bottom: 1.5px solid var(--text-secondary);
+    transform: rotate(45deg);
+    margin-left: 3px;
+  }
+  .topbar-title { font-size: 14px; font-weight: 500; color: var(--text); }
+  .topbar-right { display: flex; align-items: center; gap: 10px; }
+  .revision-badge {
+    background: var(--teal-light);
+    border-radius: var(--radius-md);
+    padding: 3px 8px;
+    font-size: 11px;
+    color: var(--teal-mid);
+    font-weight: 500;
+  }
+  .bkmk svg { display: block; }
+
+  /* Progress */
+  .progress-wrap { padding: 10px 16px 0; }
+  .progress-meta {
+    display: flex; justify-content: space-between; margin-bottom: 6px;
+  }
+  .progress-meta span { font-size: 12px; color: var(--text-tertiary); }
+  .progress-meta .green { color: var(--teal); }
+  .progress-bar { height: 3px; background: var(--border); border-radius: 2px; }
+  .progress-fill { height: 3px; background: var(--teal); border-radius: 2px; }
+
+  /* Scroll area */
+  .scroll-area { padding: 0 16px 16px; }
+
+  /* Verdict strip */
+  .verdict-strip {
+    margin: 14px 0 0;
+    border-radius: var(--radius-lg);
+    padding: 12px 14px;
+  }
+  .verdict-strip.wrong { background: var(--red-fill); }
+  .verdict-strip.correct { background: var(--teal-light); }
+  .verdict-top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .verdict-badge {
+    font-size: 11px; font-weight: 500;
+    padding: 2px 8px; border-radius: 20px;
+  }
+  .verdict-badge.wrong { background: var(--red-border); color: var(--red-dark); }
+  .verdict-badge.correct { background: var(--green-tag); color: var(--green-dark); }
+  .verdict-badge.answer { background: var(--green-tag); color: var(--green-dark); }
+  .verdict-opts { display: flex; gap: 12px; }
+  .verdict-opt { font-size: 12px; }
+  .verdict-opt.w { color: var(--red-text); }
+  .verdict-opt.w span { font-weight: 500; color: var(--red-dark); }
+  .verdict-opt.c { color: var(--green-text); }
+  .verdict-opt.c span { font-weight: 500; color: var(--green-dark); }
+  .concept-anchor { font-size: 12px; margin-top: 5px; }
+  .verdict-strip.wrong .concept-anchor { color: #993C1D; }
+  .verdict-strip.correct .concept-anchor { color: var(--teal-mid); }
+
+  /* Section label */
+  .section-label {
+    font-size: 11px; font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 14px 0 8px;
+  }
+
+  /* Question */
+  .question-text {
+    font-size: 13.5px; color: var(--text);
+    line-height: 1.6; margin-bottom: 10px;
+  }
+  .stmt-block {
+    font-size: 13px; color: var(--text-secondary);
+    line-height: 1.55;
+    padding: 6px 0 6px 10px;
+    border-left: 2px solid var(--border-secondary);
+    margin-bottom: 6px;
+  }
+
+  /* Options */
+  .option-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 9px 12px;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border);
+    margin-bottom: 5px;
+    background: var(--bg);
+  }
+  .option-row.sel-wrong { background: var(--red-fill); border: 1.5px solid var(--red-border); }
+  .option-row.correct-ans { background: var(--green-fill); border: 1.5px solid var(--green-border); }
+  .option-row.neutral { opacity: 0.6; }
+  .opt-letter { font-size: 13px; font-weight: 500; min-width: 16px; padding-top: 1px; color: var(--text-tertiary); }
+  .option-row.sel-wrong .opt-letter { color: var(--red-text); }
+  .option-row.correct-ans .opt-letter { color: var(--green-text); }
+  .opt-text { font-size: 13px; color: var(--text); line-height: 1.5; flex: 1; }
+  .option-row.neutral .opt-text { color: var(--text-secondary); }
+  .opt-tag {
+    font-size: 10px; font-weight: 500;
+    padding: 2px 6px; border-radius: 20px;
+    white-space: nowrap; align-self: flex-start; margin-top: 1px; margin-left: 6px;
+  }
+  .wrong-tag { background: var(--red-tag); color: var(--red-dark); }
+  .right-tag { background: var(--green-tag); color: var(--green-dark); }
+
+  /* Explanation card */
+  .expl-card {
+    background: var(--bg);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .expl-main { padding: 14px; }
+  .expl-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+  .value-add {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    margin-top: 12px;
+  }
+  .va-label {
+    font-size: 10px; font-weight: 500;
+    color: var(--text-tertiary);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 5px;
+  }
+  .va-text { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Deep dive */
+  .deepdive-header {
+    padding: 11px 14px;
+    border-top: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer;
+    background: var(--bg-secondary);
+    user-select: none;
+  }
+  .deepdive-header span { font-size: 13px; font-weight: 500; color: var(--text); }
+  .chevron {
+    width: 13px; height: 13px;
+    border-right: 1.5px solid var(--text-tertiary);
+    border-bottom: 1.5px solid var(--text-tertiary);
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+  }
+  .chevron.open { transform: rotate(-135deg); }
+  .dd-body { display: none; }
+
+  /* Tabs */
+  .tabs-bar { display: flex; border-bottom: 0.5px solid var(--border); }
+  .tab-btn {
+    flex: 1; padding: 9px 4px;
+    font-size: 12px; color: var(--text-secondary);
+    background: none; border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer; transition: all 0.15s;
+    font-weight: 400; font-family: inherit;
+  }
+  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); font-weight: 500; }
+  .tab-content { padding: 14px; display: none; }
+  .tab-content.active { display: block; }
+
+  /* Statement analysis */
+  .sa-row { padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .sa-row:last-child { border-bottom: none; }
+  .sa-top { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 5px; }
+  .sa-num { font-size: 12px; font-weight: 500; color: var(--text-tertiary); min-width: 18px; padding-top: 1px; }
+  .sa-text { font-size: 12px; color: var(--text); line-height: 1.55; flex: 1; }
+  .sa-pill {
+    font-size: 10px; font-weight: 500;
+    padding: 2px 8px; border-radius: 20px;
+    white-space: nowrap; margin-left: 6px; margin-top: 1px; align-self: flex-start;
+  }
+  .sa-pill.c { background: var(--green-tag); color: var(--green-dark); }
+  .sa-pill.i { background: var(--red-tag); color: var(--red-dark); }
+  .sa-reason { font-size: 12px; color: var(--text-secondary); line-height: 1.55; padding-left: 26px; }
+
+  /* Watchout */
+  .watchout {
+    background: var(--amber-fill);
+    border-radius: var(--radius-md);
+    padding: 10px 12px; margin-bottom: 12px;
+  }
+  .wo-label {
+    font-size: 10px; font-weight: 500;
+    color: var(--amber-text);
+    text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;
+  }
+  .wo-text { font-size: 12px; color: var(--amber-dark); line-height: 1.55; }
+
+  /* Elimination */
+  .elim-item { display: flex; gap: 10px; margin-bottom: 9px; }
+  .elim-num { font-size: 11px; font-weight: 500; color: var(--text-tertiary); min-width: 16px; padding-top: 2px; }
+  .elim-text { font-size: 12px; color: var(--text); line-height: 1.55; }
+
+  /* Trap */
+  .trap-text { font-size: 12px; color: var(--text); line-height: 1.65; margin-bottom: 12px; }
+  .tags-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+  .concept-tag {
+    font-size: 11px; padding: 4px 10px; border-radius: 20px;
+    background: var(--bg-secondary);
+    border: 0.5px solid var(--border-secondary);
+    color: var(--text-secondary);
+  }
+
+  /* Nav */
+  .nav-bar { display: flex; gap: 10px; padding: 12px 16px 8px; }
+  .nav-btn {
+    flex: 1; padding: 10px;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border-secondary);
+    background: var(--bg);
+    font-size: 13px; font-weight: 500;
+    color: var(--text); cursor: pointer;
+    text-align: center; font-family: inherit;
+  }
+  .nav-btn.primary { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .nav-btn.disabled { opacity: 0.35; pointer-events: none; }
+  .add-revision { text-align: center; padding: 2px 0 10px; }
+  .add-revision span {
+    font-size: 11px; color: var(--text-tertiary);
+    cursor: pointer; border-bottom: 0.5px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>UPSC Wars — Explanation screen mocks</h1>
+  <p>Session review · Revision mode · Multi-statement (Statements tab)</p>
+</div>
+
+<div class="mocks-grid">
+
+  <!-- MOCK 1: Wrong answer, direct question -->
+  <div class="mock-wrapper">
+    <div class="mock-label">Session review — wrong answer</div>
+    <div class="phone">
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="back-btn"><div class="back-arrow"></div></div>
+          <span class="topbar-title">Session review</span>
+        </div>
+        <div class="topbar-right">
+          <svg class="bkmk" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#888" stroke-width="1.5"><path d="M4 2h10a1 1 0 011 1v13l-6-3-6 3V3a1 1 0 011-1z"/></svg>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Question 7 of 40</span>
+          <span>6 correct · 1 wrong</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:17.5%"></div></div>
+      </div>
+      <div class="scroll-area">
+        <div class="verdict-strip wrong">
+          <div class="verdict-top">
+            <span class="verdict-badge wrong">Incorrect</span>
+            <div class="verdict-opts">
+              <div class="verdict-opt w">You: <span>(b)</span></div>
+              <div class="verdict-opt c">Correct: <span>(c)</span></div>
+            </div>
+          </div>
+          <div class="concept-anchor">State ratification threshold under Article 368</div>
+        </div>
+
+        <div class="section-label">Question</div>
+        <div class="question-text">Regarding state ratification under the constitutional amendment procedure, which one of the following is correct?</div>
+
+        <div class="option-row"><span class="opt-letter">a</span><span class="opt-text">Ratification must be completed within six months by the required states</span></div>
+        <div class="option-row sel-wrong"><span class="opt-letter">b</span><span class="opt-text">All state legislatures must ratify the amendment for it to be valid</span><span class="opt-tag wrong-tag">Your pick</span></div>
+        <div class="option-row correct-ans"><span class="opt-letter">c</span><span class="opt-text">Ratification by not less than one-half of the states is required, no time limit prescribed</span><span class="opt-tag right-tag">Correct</span></div>
+        <div class="option-row"><span class="opt-letter">d</span><span class="opt-text">All state assemblies must ratify, though legislative councils may be bypassed</span></div>
+
+        <div class="section-label">Explanation</div>
+        <div class="expl-card">
+          <div class="expl-main">
+            <div class="expl-text">Article 368 establishes a three-tier amendment procedure. The most stringent tier requires a special majority in Parliament AND ratification by not less than one-half of the states — a numerical majority, not unanimity. No time limit is prescribed.</div>
+            <div class="value-add">
+              <div class="va-label">Value addition</div>
+              <div class="va-text">· Ratification must come from state legislatures, not governments or governors.<br>· The President cannot withhold assent — made mandatory by the 24th Amendment.<br>· Only 8–10 categories of provisions require state ratification.</div>
+            </div>
+          </div>
+          <div class="deepdive-header" onclick="toggle('dd1','ch1')">
+            <span>Deep dive</span>
+            <div class="chevron" id="ch1"></div>
+          </div>
+          <div class="dd-body" id="dd1">
+            <div class="tabs-bar" id="tabs1">
+              <button class="tab-btn active" onclick="switchTab('tabs1','t1-elim',this)">Elimination</button>
+              <button class="tab-btn" onclick="switchTab('tabs1','t1-trap',this)">Trap</button>
+            </div>
+            <div id="t1-elim" class="tab-content active">
+              <div class="watchout">
+                <div class="wo-label">Watch out — option (d)</div>
+                <div class="wo-text">Option (d) uses "all state assemblies" — sounds authoritative but unanimity is never the standard under Article 368.</div>
+              </div>
+              <div class="elim-item"><span class="elim-num">1</span><span class="elim-text">Eliminate (a): no time limit prescribed — the Constitution is silent on this.</span></div>
+              <div class="elim-item"><span class="elim-num">2</span><span class="elim-text">Eliminate (b): "all states" is never required — only a majority of state legislatures.</span></div>
+              <div class="elim-item"><span class="elim-num">3</span><span class="elim-text">Eliminate (d): "all states" is an overstatement — threshold is more than half.</span></div>
+              <div class="elim-item"><span class="elim-num">4</span><span class="elim-text">Confirm (c): not less than one-half of states, no time limit — exactly what Article 368 specifies.</span></div>
+            </div>
+            <div id="t1-trap" class="tab-content">
+              <div class="trap-text">Students conflate the state ratification requirement with unanimity, reasoning by analogy with the US federal system. India requires only a majority of states. The no-time-limit detail is a secondary trap for candidates who assume Parliament can set a deadline.</div>
+              <div class="tags-wrap">
+                <span class="concept-tag">Article 368</span>
+                <span class="concept-tag">State ratification</span>
+                <span class="concept-tag">Federal procedure</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bar">
+          <button class="nav-btn disabled">← Prev</button>
+          <button class="nav-btn primary">Next →</button>
+        </div>
+        <div class="add-revision"><span>Add to revision queue</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOCK 2: Revision mode -->
+  <div class="mock-wrapper">
+    <div class="mock-label">Revision mode — read only</div>
+    <div class="phone">
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="back-btn"><div class="back-arrow"></div></div>
+          <span class="topbar-title">Revision</span>
+        </div>
+        <div class="topbar-right">
+          <span class="revision-badge">Revision mode</span>
+          <svg class="bkmk" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1D9E75" stroke-width="1.5"><path d="M4 2h10a1 1 0 011 1v13l-6-3-6 3V3a1 1 0 011-1z" fill="#E1F5EE"/></svg>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Question 3 of 18</span>
+          <span class="green">Revision queue</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:16.6%"></div></div>
+      </div>
+      <div class="scroll-area">
+        <div class="verdict-strip correct">
+          <div class="verdict-top">
+            <span class="verdict-badge answer">Correct answer</span>
+            <div class="verdict-opts">
+              <div class="verdict-opt c"><span>(c)</span></div>
+            </div>
+          </div>
+          <div class="concept-anchor">State ratification threshold under Article 368</div>
+        </div>
+
+        <div class="section-label">Question</div>
+        <div class="question-text">Regarding state ratification under the constitutional amendment procedure, which one of the following is correct?</div>
+
+        <div class="option-row neutral"><span class="opt-letter">a</span><span class="opt-text">Ratification must be completed within six months by the required states</span></div>
+        <div class="option-row neutral"><span class="opt-letter">b</span><span class="opt-text">All state legislatures must ratify the amendment for it to be valid</span></div>
+        <div class="option-row correct-ans"><span class="opt-letter">c</span><span class="opt-text">Ratification by not less than one-half of the states is required, no time limit prescribed</span><span class="opt-tag right-tag">Correct</span></div>
+        <div class="option-row neutral"><span class="opt-letter">d</span><span class="opt-text">All state assemblies must ratify, though legislative councils may be bypassed</span></div>
+
+        <div class="section-label">Explanation</div>
+        <div class="expl-card">
+          <div class="expl-main">
+            <div class="expl-text">Article 368 establishes a three-tier amendment procedure. The most stringent tier requires a special majority in Parliament AND ratification by not less than one-half of the states. No time limit is prescribed within which states must ratify.</div>
+            <div class="value-add">
+              <div class="va-label">Value addition</div>
+              <div class="va-text">· Ratification must come from state legislatures, not governments or governors.<br>· The President cannot withhold assent — made mandatory by the 24th Amendment.<br>· Only 8–10 categories of provisions require state ratification.</div>
+            </div>
+          </div>
+          <div class="deepdive-header" onclick="toggle('dd2','ch2')">
+            <span>Deep dive</span>
+            <div class="chevron" id="ch2"></div>
+          </div>
+          <div class="dd-body" id="dd2">
+            <div class="tabs-bar" id="tabs2">
+              <button class="tab-btn active" onclick="switchTab('tabs2','t2-elim',this)">Elimination</button>
+              <button class="tab-btn" onclick="switchTab('tabs2','t2-trap',this)">Trap</button>
+            </div>
+            <div id="t2-elim" class="tab-content active">
+              <div class="elim-item"><span class="elim-num">1</span><span class="elim-text">Eliminate (a): no time limit prescribed under Article 368.</span></div>
+              <div class="elim-item"><span class="elim-num">2</span><span class="elim-text">Eliminate (b): majority of states, not all states.</span></div>
+              <div class="elim-item"><span class="elim-num">3</span><span class="elim-text">Eliminate (d): "all assemblies" — overstatement.</span></div>
+              <div class="elim-item"><span class="elim-num">4</span><span class="elim-text">Confirm (c): not less than one-half, no time limit.</span></div>
+            </div>
+            <div id="t2-trap" class="tab-content">
+              <div class="trap-text">Students conflate the state ratification requirement with unanimity by analogy with the US federal system. India requires only a majority of states, not all of them.</div>
+              <div class="tags-wrap">
+                <span class="concept-tag">Article 368</span>
+                <span class="concept-tag">State ratification</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bar">
+          <button class="nav-btn">← Prev</button>
+          <button class="nav-btn primary">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOCK 3: Multi-statement with Statements tab -->
+  <div class="mock-wrapper">
+    <div class="mock-label">Session review — multi-statement</div>
+    <div class="phone">
+      <div class="topbar">
+        <div class="topbar-left">
+          <div class="back-btn"><div class="back-arrow"></div></div>
+          <span class="topbar-title">Session review</span>
+        </div>
+        <div class="topbar-right">
+          <svg class="bkmk" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#888" stroke-width="1.5"><path d="M4 2h10a1 1 0 011 1v13l-6-3-6 3V3a1 1 0 011-1z"/></svg>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Question 12 of 40</span>
+          <span>9 correct · 3 wrong</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div>
+      </div>
+      <div class="scroll-area">
+        <div class="verdict-strip wrong">
+          <div class="verdict-top">
+            <span class="verdict-badge wrong">Incorrect</span>
+            <div class="verdict-opts">
+              <div class="verdict-opt w">You: <span>(a)</span></div>
+              <div class="verdict-opt c">Correct: <span>(c)</span></div>
+            </div>
+          </div>
+          <div class="concept-anchor">Panchama category and Shudra internal differentiation</div>
+        </div>
+
+        <div class="section-label">Question</div>
+        <div class="question-text">Consider the following statements regarding the emergence of the 'Panchama' category and internal differentiation within the Shudra Varna:</div>
+        <div class="stmt-block">1. The term 'Panchama' was an established feature of the four-fold Varna system from the Rigvedic period itself.</div>
+        <div class="stmt-block">2. Untouchable communities are placed outside the four-Varna system, not merely at the bottom of the Shudra category.</div>
+        <div class="stmt-block">3. The sat-Shudra / asat-Shudra distinction reflects internal differentiation within the Shudra Varna based on occupational associations.</div>
+
+        <div class="option-row sel-wrong"><span class="opt-letter">a</span><span class="opt-text">1 and 2 only</span><span class="opt-tag wrong-tag">Your pick</span></div>
+        <div class="option-row"><span class="opt-letter">b</span><span class="opt-text">2 only</span></div>
+        <div class="option-row correct-ans"><span class="opt-letter">c</span><span class="opt-text">2 and 3 only</span><span class="opt-tag right-tag">Correct</span></div>
+        <div class="option-row"><span class="opt-letter">d</span><span class="opt-text">1, 2 and 3</span></div>
+
+        <div class="section-label">Explanation</div>
+        <div class="expl-card">
+          <div class="expl-main">
+            <div class="expl-text">The 'Panchama' label is a post-Vedic construct — projecting it onto the Rigvedic period is an anachronism. Untouchable communities sit entirely outside the four-Varna hierarchy, not at the bottom of the Shudra category. The sat/asat-Shudra division distinguishes those in clean service occupations from those in ritually polluting ones.</div>
+            <div class="value-add">
+              <div class="va-label">Value addition</div>
+              <div class="va-text">· Manusmriti categorises Chandalas as progeny of the most degraded Pratiloma union — textually outside the Varna system.<br>· R.S. Sharma's materialist thesis links asat-Shudra exclusion to bonded agricultural labour.<br>· The Arthashastra references Shvapakas, predating Manusmriti's codification.</div>
+            </div>
+          </div>
+          <div class="deepdive-header" onclick="toggle('dd3','ch3')">
+            <span>Deep dive</span>
+            <div class="chevron" id="ch3"></div>
+          </div>
+          <div class="dd-body" id="dd3">
+            <div class="tabs-bar" id="tabs3">
+              <button class="tab-btn active" onclick="switchTab('tabs3','t3-stmts',this)">Statements</button>
+              <button class="tab-btn" onclick="switchTab('tabs3','t3-elim',this)">Elimination</button>
+              <button class="tab-btn" onclick="switchTab('tabs3','t3-trap',this)">Trap</button>
+            </div>
+            <div id="t3-stmts" class="tab-content active">
+              <div class="sa-row">
+                <div class="sa-top">
+                  <span class="sa-num">1</span>
+                  <span class="sa-text">The term 'Panchama' was an established feature of the Varna system from the Rigvedic period itself.</span>
+                  <span class="sa-pill i">Incorrect</span>
+                </div>
+                <div class="sa-reason">Panchama is a later construct. The Rigvedic Purusha Sukta presents only a four-fold Varna — projecting Panchama onto it is a textbook anachronism.</div>
+              </div>
+              <div class="sa-row">
+                <div class="sa-top">
+                  <span class="sa-num">2</span>
+                  <span class="sa-text">Untouchable communities are placed outside the four-Varna system, not merely at the bottom of the Shudra category.</span>
+                  <span class="sa-pill c">Correct</span>
+                </div>
+                <div class="sa-reason">This is the critical distinction — untouchables form a category beyond the Varna framework entirely, reflected in Manusmriti's treatment of Chandalas.</div>
+              </div>
+              <div class="sa-row">
+                <div class="sa-top">
+                  <span class="sa-num">3</span>
+                  <span class="sa-text">The sat-Shudra / asat-Shudra distinction reflects internal differentiation based largely on occupational associations.</span>
+                  <span class="sa-pill c">Correct</span>
+                </div>
+                <div class="sa-reason">Sat-Shudras (potters, barbers) served upper castes and remained touchable; asat-Shudras in polluting occupations were progressively excluded from the Varna system altogether.</div>
+              </div>
+            </div>
+            <div id="t3-elim" class="tab-content">
+              <div class="watchout">
+                <div class="wo-label">Watch out — option (a)</div>
+                <div class="wo-text">Students who correctly recall Statement 2 but also wrongly accept Statement 1 land on option (a). The Panchama anachronism is the trap that inflates option (a)'s appeal.</div>
+              </div>
+              <div class="elim-item"><span class="elim-num">1</span><span class="elim-text">Statement 1 incorrect — Panchama is post-Vedic; eliminate options that include it as correct (a, d).</span></div>
+              <div class="elim-item"><span class="elim-num">2</span><span class="elim-text">Statement 2 correct — untouchables outside Varna entirely; retain options containing 2.</span></div>
+              <div class="elim-item"><span class="elim-num">3</span><span class="elim-text">Statement 3 correct — sat/asat-Shudra distinction is occupational; retain options containing 3.</span></div>
+              <div class="elim-item"><span class="elim-num">4</span><span class="elim-text">Only option (c) has 2 and 3 correct, 1 excluded — confirm (c).</span></div>
+            </div>
+            <div id="t3-trap" class="tab-content">
+              <div class="trap-text">The temporal-swap trap projects a later category (Panchama) onto the Rigvedic period. Students who know the Purusha Sukta divides society into four parts may assume awareness of a 'fifth' — but the text presents only four Varnas. The trap works because Panchama is a real term, just from a much later period of Dharmashastra literature.</div>
+              <div class="tags-wrap">
+                <span class="concept-tag">Panchama category</span>
+                <span class="concept-tag">Sat/asat-Shudra</span>
+                <span class="concept-tag">Purusha Sukta</span>
+                <span class="concept-tag">Temporal-swap trap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-bar">
+          <button class="nav-btn">← Prev</button>
+          <button class="nav-btn primary">Next →</button>
+        </div>
+        <div class="add-revision"><span>Add to revision queue</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end mocks-grid -->
+
+<script>
+function toggle(bodyId, chevId) {
+  const body = document.getElementById(bodyId);
+  const chev = document.getElementById(chevId);
+  const isOpen = body.style.display === 'block';
+  body.style.display = isOpen ? 'none' : 'block';
+  chev.classList.toggle('open', !isOpen);
+}
+
+function switchTab(tabsId, targetId, btn) {
+  const tabsEl = document.getElementById(tabsId);
+  tabsEl.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const allTabIds = Array.from(tabsEl.nextElementSibling.parentElement.querySelectorAll('.tab-content'));
+  allTabIds.forEach(t => t.classList.remove('active'));
+  document.getElementById(targetId).classList.add('active');
+}
+</script>
+</body>
+</html>
