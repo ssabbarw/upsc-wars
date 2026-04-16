@@ -7,8 +7,8 @@ class GetTopicListUseCase {
 
   final TestCatalogRepository _repository;
 
-  Future<List<TopicInfo>> execute(String subjectSlug, String language) async {
-    final metrics = await _repository.fetchTopicMetrics(subjectSlug, language);
+  Future<List<TopicInfo>> execute(String subject, String language) async {
+    final metrics = await _repository.fetchTopicMetrics(subject, language);
     final out = <TopicInfo>[];
     for (final m in metrics) {
       final acc = AccuracyRules.accuracyPercentOrNull(
@@ -17,8 +17,8 @@ class GetTopicListUseCase {
       );
       out.add(
         TopicInfo(
-          topicSlug: m.topicSlug,
-          subjectSlug: m.subjectSlug,
+          topic: m.topic,
+          subject: m.subject,
           displayName: m.displayName,
           questionCount: m.questionCount,
           attemptCount: m.scoredAttemptCount,

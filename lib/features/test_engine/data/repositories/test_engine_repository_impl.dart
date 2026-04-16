@@ -5,7 +5,6 @@ import 'package:drift/drift.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:upsc_wars/core/database/question_db.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -17,14 +16,11 @@ import 'package:upsc_wars/features/test_engine/domain/repositories/test_engine_r
 class TestEngineRepositoryImpl implements TestEngineRepository {
   TestEngineRepositoryImpl({
     required UserDatabase userDb,
-    required QuestionDb questionDb,
     required PrefsService prefsService,
   }) : _userDb = userDb,
-       _questionDb = questionDb,
        _prefsService = prefsService;
 
   final UserDatabase _userDb;
-  final QuestionDb _questionDb;
   final PrefsService _prefsService;
 
   static const _uuid = Uuid();
@@ -43,7 +39,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       throw const SessionHasNoQuestionsException();
     }
 
-    final questionRows = await _questionDb.getQuestionsByUuids(
+    final questionRows = await _userDb.questionsDao.getByUuidsInOrder(
       sqs.map((e) => e.questionUuid).toList(),
     );
     final byUuid = {for (final q in questionRows) q.uuid: q};
@@ -58,13 +54,15 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         );
         continue;
       }
-      final tr =
-          await _questionDb.getQuestionTranslation(
-            sq.questionUuid,
-            session.language,
-          ) ??
-          await _questionDb.getQuestionTranslation(sq.questionUuid, 'en');
-      if (tr == null) {
+      final trEn = await _userDb.questionTranslationsDao.getByQuestionAndLanguage(
+        sq.questionUuid,
+        'en',
+      );
+      final trHi = await _userDb.questionTranslationsDao.getByQuestionAndLanguage(
+        sq.questionUuid,
+        'hi',
+      );
+      if (trEn == null && trHi == null) {
         developer.log(
           'No translation for uuid=${sq.questionUuid} lang=${session.language}',
           name: 'TestEngineRepository',
@@ -72,11 +70,15 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         continue;
       }
 
-      final parsed = QuestionDisplayTextParser.parse(tr.displayText);
-      final oa = parsed.optionA.trim();
-      final ob = parsed.optionB.trim();
-      final oc = parsed.optionC.trim();
-      final od = parsed.optionD.trim();
+      final displayTextEn = q.enDisplayText ?? '';
+      final displayTextHi = q.hiDisplayText ?? displayTextEn;
+      final parsedEn = QuestionDisplayTextParser.parse(displayTextEn);
+      final parsedHi = QuestionDisplayTextParser.parse(displayTextHi);
+      final parsedPrimary = session.language == 'hi' ? parsedHi : parsedEn;
+      final oa = parsedPrimary.optionA.trim();
+      final ob = parsedPrimary.optionB.trim();
+      final oc = parsedPrimary.optionC.trim();
+      final od = parsedPrimary.optionD.trim();
       if (oa.isEmpty || ob.isEmpty || oc.isEmpty || od.isEmpty) {
         developer.log(
           'Skipping question with empty options uuid=${sq.questionUuid}',
@@ -85,32 +87,64 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         continue;
       }
 
+      final table = await _userDb.questionTablesDao.getByQuestionUuid(
+        sq.questionUuid,
+      );
+
       questions.add(
         TestQuestion(
           uuid: q.uuid,
-          displayText:
-              parsed.stem.trim().isEmpty ? tr.displayText : parsed.stem,
-          optionA: oa,
-          optionB: ob,
-          optionC: oc,
-          optionD: od,
+          displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
+          displayTextHi:
+              parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
+          optionA: parsedEn.optionA.trim(),
+          optionAHi: parsedHi.optionA.trim().isEmpty
+              ? parsedEn.optionA.trim()
+              : parsedHi.optionA.trim(),
+          optionB: parsedEn.optionB.trim(),
+          optionBHi: parsedHi.optionB.trim().isEmpty
+              ? parsedEn.optionB.trim()
+              : parsedHi.optionB.trim(),
+          optionC: parsedEn.optionC.trim(),
+          optionCHi: parsedHi.optionC.trim().isEmpty
+              ? parsedEn.optionC.trim()
+              : parsedHi.optionC.trim(),
+          optionD: parsedEn.optionD.trim(),
+          optionDHi: parsedHi.optionD.trim().isEmpty
+              ? parsedEn.optionD.trim()
+              : parsedHi.optionD.trim(),
           correctOption: q.correctOption,
           questionType: q.questionType,
           trapType: q.trapType,
           hasTable: q.hasTable,
-          tableData: _parseTable(tr),
+          tableData: _parseTable(table, 'en'),
+          tableDataHi: _parseTable(table, 'hi') ?? _parseTable(table, 'en'),
           position: sq.position,
           selectedOption: sq.selectedOption,
           status: sq.status,
           flagged: sq.flagged,
           timeSpentSecs: sq.timeSpentSecs,
-          conceptAnchor: tr.conceptAnchor,
-          finalExplanation: tr.finalExplanation,
-          eliminationLogic: _parseStringList(tr.eliminationLogic),
-          statementAnalysis: _parseStatementAnalysis(tr.statementAnalysis),
-          strongDistractor: tr.strongDistractor,
-          upscTrapExplanation: tr.upscTrapExplanation,
-          conceptsUsed: _parseStringList(tr.conceptsUsed),
+          conceptAnchor: q.conceptAnchor,
+          finalExplanation: trEn?.finalExplanation ?? trHi?.finalExplanation,
+          finalExplanationHi: trHi?.finalExplanation ?? trEn?.finalExplanation,
+          eliminationLogic:
+              _parseStringList(trEn?.eliminationLogic) +
+              const <String>[],
+          eliminationLogicHi: _parseStringList(
+            trHi?.eliminationLogic ?? trEn?.eliminationLogic,
+          ),
+          statementAnalysis: _parseStatementAnalysis(trEn?.statementAnalysis),
+          statementAnalysisHi: _parseStatementAnalysis(
+            trHi?.statementAnalysis ?? trEn?.statementAnalysis,
+          ),
+          strongDistractor: trEn?.strongDistractor ?? trHi?.strongDistractor,
+          strongDistractorHi:
+              trHi?.strongDistractor ?? trEn?.strongDistractor,
+          upscTrapExplanation:
+              trEn?.upscTrapExplanation ?? trHi?.upscTrapExplanation,
+          upscTrapExplanationHi:
+              trHi?.upscTrapExplanation ?? trEn?.upscTrapExplanation,
+          conceptsUsed: _parseStringList(q.conceptsUsed),
         ),
       );
     }
@@ -122,9 +156,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     return ActiveSession(
       id: session.id,
       mode: session.mode,
-      subjectSlug: session.subjectSlug,
-      topicSlug: session.topicSlug,
-      subTopicSlug: session.subTopicSlug,
+      subject: session.subject,
+      topic: session.topic,
+      subTopic: session.subTopic,
       questionCount: session.questionCount,
       isTimed: session.isTimed,
       timeLimitSecs: session.timeLimitSecs,
@@ -147,8 +181,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     final sq = rows.where((e) => e.questionUuid == questionUuid).firstOrNull;
     if (sq == null) throw StateError('Question not in session');
 
-    final q =
-        (await _questionDb.getQuestionsByUuids([questionUuid])).firstOrNull;
+    final q = await _userDb.questionsDao.getByUuid(questionUuid);
     if (q == null) throw StateError('Question missing in question db');
 
     final normSelected = selectedOption.toLowerCase();
@@ -199,11 +232,14 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       sessionId,
     );
     for (final row in rows.where((e) => e.status == 'wrong')) {
-      await _userDb.revisionQueueDao.insertOrUpdateRevisionItem(
+      await _userDb.revisionQueueDao.add(
         id: _uuid.v4(),
         questionUuid: row.questionUuid,
-        addedAt: DateTime.now(),
-        reason: 'wrong',
+        dateAddedToQueue: DateTime.now(),
+      );
+      await _userDb.revisionQueueDao.updateCounts(
+        questionUuid: row.questionUuid,
+        answeredCorrectly: false,
       );
     }
 
@@ -214,6 +250,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       sessionId,
       DateTime.now(),
     );
+    await _updateTopicStatsForSession(sessionId);
 
     _updateStreak();
 
@@ -260,11 +297,10 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         ),
       );
     }
-    await _userDb.revisionQueueDao.insertOrUpdateRevisionItem(
+    await _userDb.revisionQueueDao.add(
       id: _uuid.v4(),
       questionUuid: questionUuid,
-      addedAt: DateTime.now(),
-      reason: 'bookmarked',
+      dateAddedToQueue: DateTime.now(),
     );
   }
 
@@ -307,10 +343,51 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     }
   }
 
-  QuestionTableData? _parseTable(QuestionTranslationRow tr) {
-    if (tr.columns == null || tr.rows == null) return null;
-    final columns = _parseStringList(tr.columns);
-    final rowsDecoded = _safeJsonDecode(tr.rows!);
+  Future<void> _updateTopicStatsForSession(String sessionId) async {
+    final session = await _userDb.sessionsDao.getSessionById(sessionId);
+    if (session == null) return;
+    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(sessionId);
+    final scored = rows
+        .where((r) => r.status == 'correct' || r.status == 'wrong')
+        .toList();
+    if (scored.isEmpty) return;
+
+    final questions = await _userDb.questionsDao.getByUuidsInOrder(
+      scored.map((e) => e.questionUuid).toList(),
+    );
+    final byUuid = {for (final q in questions) q.uuid: q};
+    final agg = <String, ({int attempted, int correct})>{};
+    for (final row in scored) {
+      final q = byUuid[row.questionUuid];
+      if (q == null) continue;
+      final key = '${q.subject}||${q.topic}';
+      final prev = agg[key];
+      final attempted = (prev?.attempted ?? 0) + 1;
+      final correct = (prev?.correct ?? 0) + (row.status == 'correct' ? 1 : 0);
+      agg[key] = (attempted: attempted, correct: correct);
+    }
+
+    final now = DateTime.now();
+    for (final entry in agg.entries) {
+      final parts = entry.key.split('||');
+      await _userDb.userTopicStatsDao.upsertAfterSessionCompletion(
+        subject: parts[0],
+        topic: parts[1],
+        attemptedToAdd: entry.value.attempted,
+        correctToAdd: entry.value.correct,
+        attemptedAt: now,
+      );
+    }
+  }
+
+  QuestionTableData? _parseTable(QuestionTable? table, String language) {
+    if (table == null) return null;
+    final columnsRaw = language == 'hi' ? table.hiColumns : table.enColumns;
+    final rowsRaw = language == 'hi' ? table.hiRows : table.enRows;
+    final header = language == 'hi' ? table.hiHeaderText : table.enHeaderText;
+    final footer = language == 'hi' ? table.hiFooterText : table.enFooterText;
+    final columns = _parseStringList(columnsRaw);
+    final rowsDecoded = _safeJsonDecode(rowsRaw);
     if (columns.isEmpty || rowsDecoded is! List) return null;
     final rows = <List<String>>[];
     for (final row in rowsDecoded) {
@@ -319,8 +396,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       }
     }
     return QuestionTableData(
-      header: tr.headerText,
-      footer: tr.footerText,
+      header: header,
+      footer: footer,
       columns: columns,
       rows: rows,
     );

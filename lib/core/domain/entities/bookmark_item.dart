@@ -3,18 +3,18 @@ class BookmarkItem {
     required this.id,
     required this.questionUuid,
     required this.createdAt,
-    required this.note,
-    required this.subjectSlug,
-    required this.topicSlug,
+    required this.userNote,
+    required this.subject,
+    required this.topic,
     required this.questionStem,
   });
 
   final String id;
   final String questionUuid;
   final DateTime createdAt;
-  final String? note;
+  final String? userNote;
 
-  final String subjectSlug;
-  final String topicSlug;
+  final String subject;
+  final String topic;
   final String questionStem;
 }

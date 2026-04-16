@@ -1,17 +1,13 @@
 import 'package:drift/drift.dart';
 import 'package:uuid/uuid.dart';
-import 'package:upsc_wars/core/database/question_db.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/bookmark_item.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/features/bookmarks/domain/repositories/bookmarks_repository.dart';
 
 class BookmarksRepositoryImpl implements BookmarksRepository {
-  const BookmarksRepositoryImpl({required UserDatabase userDb, required QuestionDb questionDb})
-      : _userDb = userDb,
-        _questionDb = questionDb;
+  const BookmarksRepositoryImpl({required UserDatabase userDb}) : _userDb = userDb;
   final UserDatabase _userDb;
-  final QuestionDb _questionDb;
   static const _uuid = Uuid();
 
   @override
@@ -19,17 +15,17 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
     final rows = await _userDb.bookmarksDao.getAllBookmarksOrderedByCreatedAtDesc();
     final out = <BookmarkItem>[];
     for (final b in rows) {
-      final q = (await _questionDb.getQuestionsByUuids([b.questionUuid])).firstOrNull;
-      final tr = await _questionDb.getQuestionTranslation(b.questionUuid, 'en');
-      if (q == null || tr == null) continue;
+      final q = await _userDb.questionsDao.getByUuid(b.questionUuid);
+      if (q == null) continue;
       out.add(BookmarkItem(
         id: b.id,
         questionUuid: b.questionUuid,
         createdAt: b.createdAt,
-        note: b.note,
-        subjectSlug: q.subjectSlug,
-        topicSlug: q.topicSlug,
-        questionStem: QuestionDisplayTextParser.parse(tr.displayText).stem,
+        userNote: b.userNote,
+        subject: q.subject,
+        topic: q.topic,
+        questionStem:
+            QuestionDisplayTextParser.parse(q.enDisplayText ?? '').stem,
       ));
     }
     return out;
@@ -44,15 +40,14 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
           id: _uuid.v4(),
           questionUuid: questionUuid,
           createdAt: DateTime.now(),
-          note: Value(note),
+          userNote: Value(note),
         ),
       );
     }
-    await _userDb.revisionQueueDao.insertOrUpdateRevisionItem(
+    await _userDb.revisionQueueDao.add(
       id: _uuid.v4(),
       questionUuid: questionUuid,
-      addedAt: DateTime.now(),
-      reason: 'bookmarked',
+      dateAddedToQueue: DateTime.now(),
     );
   }
 

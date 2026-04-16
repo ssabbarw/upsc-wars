@@ -1,14 +1,14 @@
 /// Raw metrics from question + user DB for building subject/topic lists.
 class SubjectMetrics {
   const SubjectMetrics({
-    required this.subjectSlug,
+    required this.subject,
     required this.questionCount,
     required this.topicCount,
     required this.scoredAttemptCount,
     required this.scoredCorrectCount,
   });
 
-  final String subjectSlug;
+  final String subject;
   final int questionCount;
   final int topicCount;
   final int scoredAttemptCount;
@@ -17,16 +17,16 @@ class SubjectMetrics {
 
 class TopicMetrics {
   const TopicMetrics({
-    required this.topicSlug,
-    required this.subjectSlug,
+    required this.topic,
+    required this.subject,
     required this.displayName,
     required this.questionCount,
     required this.scoredAttemptCount,
     required this.scoredCorrectCount,
   });
 
-  final String topicSlug;
-  final String subjectSlug;
+  final String topic;
+  final String subject;
   final String displayName;
   final int questionCount;
   final int scoredAttemptCount;
@@ -37,7 +37,7 @@ abstract class TestCatalogRepository {
   Future<List<SubjectMetrics>> fetchSubjectMetrics(String language);
 
   Future<List<TopicMetrics>> fetchTopicMetrics(
-    String subjectSlug,
+    String subject,
     String language,
   );
 }

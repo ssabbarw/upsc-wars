@@ -1,0 +1,1309 @@
+[
+  {
+    "uuid": "916dfa02-30d5-4363-ab37-88d473858b8e",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Women's Suffrage in India: Colonial Grants vs. Nationalist Demands"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Women's franchise timeline — colonial grants vs. universal franchise 1950",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to women's franchise during the colonial period in India, consider the following statements:\n\n1. The Montagu-Chelmsford Reforms (1919) granted women the right to vote in all provincial councils on the same terms as men.\n2. The Government of India Act, 1935, introduced universal adult franchise for women across all provinces of British India.\n3. The Indian National Congress consistently demanded universal adult franchise regardless of gender, in direct contrast to the colonial policy of qualified, graded franchise.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 3 only\n(b) 1 and 2 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Montagu-Chelmsford Reforms (1919) granted women the right to vote in all provincial councils on the same terms as men.",
+          "verdict": "Incorrect",
+          "reason": "The 1919 Reforms left franchise determination to provincial legislatures; some provinces granted women restricted franchise (subject to property qualifications), not on equal terms with men and not uniformly across all provinces."
+        },
+        {
+          "statement": "The Government of India Act, 1935, introduced universal adult franchise for women across all provinces of British India.",
+          "verdict": "Incorrect",
+          "reason": "The 1935 Act expanded women's franchise compared to 1919 but retained property and literacy qualifications — universal adult franchise for women was achieved only with Article 326 of the Indian Constitution in 1950."
+        },
+        {
+          "statement": "The Indian National Congress consistently demanded universal adult franchise regardless of gender, placing it in direct opposition to the colonial policy of graded, qualified franchise.",
+          "verdict": "Correct",
+          "reason": "INC's official position advocated universal adult franchise, which stood in clear contrast to the colonial system of restricted, property-based franchise for both men and women."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because students who know Statement 3 is correct may assume only one statement is incorrect and choose (c) — 1 only — missing that Statement 2 is also factually wrong about universal franchise in 1935.",
+      "elimination_logic": [
+        "Check Statement 1: 1919 Reforms did not grant franchise uniformly or on equal terms — it was property-qualified and varied by province; Statement 1 is incorrect.",
+        "Check Statement 2: 1935 Act retained literacy and property qualifications; universal franchise came only in 1950 under Article 326 — Statement 2 is incorrect.",
+        "Check Statement 3: INC's demand for universal adult suffrage is well-documented — Statement 3 is correct.",
+        "Two statements (1 and 2) are incorrect — the answer is (b) 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "The primary trap exploits confusion between the 1935 Act's expanded (but still restricted) franchise and the genuinely universal franchise of 1950. Many students associate 1935 with major democratic reform and incorrectly extend that to universal suffrage for women, making Statement 2 appear correct.",
+      "final_explanation": "India's path to women's universal franchise was incremental and contested throughout the colonial period.\n\n• Statement 1 — Incorrect: The Montagu-Chelmsford Reforms (1919) did not grant women uniform or equal franchise. The decision was delegated to individual provincial legislatures, resulting in property-qualified, unequal grants — Madras was among the first to extend limited franchise to women in 1921.\n• Statement 2 — Incorrect: The Government of India Act 1935 expanded the female electorate but retained property and literacy qualifications. Universal adult franchise for women arrived only with Article 326 of the Constitution of India in 1950.\n• Statement 3 — Correct: The INC's official demand for universal adult franchise, regardless of gender, property, or literacy, directly opposed the colonial policy of graded electoral participation.\n\nValue Addition:\n• Madras Province became the first to grant women the right to vote in 1921 following the 1919 Reforms.\n• India's Constitution (1950) granted universal adult suffrage — ahead of many Western democracies in making it unrestricted from the outset.\n• The Women's Indian Association was instrumental in petitioning Montagu-Chelmsford commissioners for women's franchise."
+    },
+    "hi": {
+      "display_text": "भारत में औपनिवेशिक काल के दौरान महिलाओं के मताधिकार के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. मोंटागु-चेल्म्सफोर्ड सुधार (1919) ने महिलाओं को सभी प्रांतीय परिषदों में पुरुषों के समान शर्तों पर मतदान का अधिकार दिया।\n2. भारत सरकार अधिनियम, 1935 ने ब्रिटिश भारत के सभी प्रांतों में महिलाओं के लिए सार्वभौमिक वयस्क मताधिकार लागू किया।\n3. भारतीय राष्ट्रीय कांग्रेस ने लगातार लिंग की परवाह किए बिना सार्वभौमिक वयस्क मताधिकार की मांग की, जो औपनिवेशिक योग्यताप्राप्त, क्रमबद्ध मताधिकार नीति के सीधे विरोध में थी।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 3\n(b) केवल 1 और 2\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मोंटागु-चेल्म्सफोर्ड सुधार (1919) ने महिलाओं को सभी प्रांतीय परिषदों में पुरुषों के समान शर्तों पर मतदान का अधिकार दिया।",
+          "verdict": "गलत",
+          "reason": "1919 के सुधारों ने मताधिकार निर्धारण प्रांतीय विधानसभाओं को सौंप दिया; कुछ प्रांतों ने महिलाओं को सीमित मताधिकार दिया (संपत्ति योग्यता के अधीन), पुरुषों के समान शर्तों पर नहीं और सभी प्रांतों में समान रूप से नहीं।"
+        },
+        {
+          "statement": "भारत सरकार अधिनियम, 1935 ने ब्रिटिश भारत के सभी प्रांतों में महिलाओं के लिए सार्वभौमिक वयस्क मताधिकार लागू किया।",
+          "verdict": "गलत",
+          "reason": "1935 के अधिनियम ने 1919 की तुलना में महिलाओं के मताधिकार का विस्तार किया लेकिन संपत्ति और साक्षरता योग्यताएँ बरकरार रखीं — महिलाओं के लिए सार्वभौमिक वयस्क मताधिकार केवल 1950 में भारतीय संविधान के अनुच्छेद 326 के साथ प्राप्त हुआ।"
+        },
+        {
+          "statement": "भारतीय राष्ट्रीय कांग्रेस ने लगातार लिंग की परवाह किए बिना सार्वभौमिक वयस्क मताधिकार की मांग की, जो औपनिवेशिक नीति के योग्यताप्राप्त, क्रमबद्ध मताधिकार के सीधे विरोध में थी।",
+          "verdict": "सही",
+          "reason": "आईएनसी की आधिकारिक स्थिति सार्वभौमिक वयस्क मताधिकार की वकालत करती थी, जो पुरुषों और महिलाओं दोनों के लिए संपत्ति आधारित सीमित मताधिकार की औपनिवेशिक प्रणाली के स्पष्ट विपरीत थी।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि जो छात्र कथन 3 को सही जानते हैं वे मान सकते हैं कि केवल एक कथन गलत है और (c) — केवल 1 — चुन लेते हैं, जबकि वे यह नहीं समझते कि कथन 2 भी 1935 में सार्वभौमिक मताधिकार के बारे में तथ्यात्मक रूप से गलत है।",
+      "elimination_logic": [
+        "कथन 1 जांचें: 1919 के सुधारों ने समान या समान शर्तों पर मताधिकार नहीं दिया — यह संपत्ति-योग्य था और प्रांतों के अनुसार भिन्न था; अतः कथन 1 गलत है।",
+        "कथन 2 जांचें: 1935 के अधिनियम ने साक्षरता और संपत्ति योग्यताएँ बरकरार रखीं; सार्वभौमिक मताधिकार केवल 1950 में अनुच्छेद 326 के तहत आया — अतः कथन 2 गलत है।",
+        "कथन 3 जांचें: आईएनसी की सार्वभौमिक वयस्क मताधिकार की मांग अच्छी तरह से प्रलेखित है — अतः कथन 3 सही है।",
+        "दो कथन (1 और 2) गलत हैं — उत्तर है (b) केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "मुख्य जाल 1935 के अधिनियम के विस्तारित (परंतु अभी भी सीमित) मताधिकार और 1950 के वास्तविक सार्वभौमिक मताधिकार के बीच भ्रम का फायदा उठाता है। कई छात्र 1935 को बड़े लोकतांत्रिक सुधार से जोड़ते हैं और गलत तरीके से महिलाओं के लिए सार्वभौमिक मताधिकार मान लेते हैं, जिससे कथन 2 सही प्रतीत होता है।",
+      "final_explanation": "भारत में महिलाओं के सार्वभौमिक मताधिकार की राह औपनिवेशिक काल में क्रमिक और विवादास्पद रही।\n\n• कथन 1 — गलत: मोंटागु-चेल्म्सफोर्ड सुधार (1919) ने महिलाओं को समान या समान शर्तों पर मताधिकार नहीं दिया। यह निर्णय व्यक्तिगत प्रांतीय विधानसभाओं को सौंपा गया था, जिसके परिणामस्वरूप संपत्ति-योग्य, असमान अनुदान हुए — मद्रास 1921 में महिलाओं को सीमित मताधिकार देने वाला पहला प्रांत था।\n• कथन 2 — गलत: भारत सरकार अधिनियम 1935 ने महिला मतदाताओं का विस्तार किया लेकिन संपत्ति और साक्षरता योग्यताएँ बरकरार रखीं। महिलाओं के लिए सार्वभौमिक वयस्क मताधिकार केवल 1950 में संविधान के अनुच्छेद 326 के साथ आया।\n• कथन 3 — सही: आईएनसी की आधिकारिक मांग लिंग, संपत्ति या साक्षरता की परवाह किए बिना सार्वभौमिक वयस्क मताधिकार की थी, जो औपनिवेशिक क्रमबद्ध मताधिकार नीति के सीधे विरोध में थी।\n\nमूल्यवर्धन:\n• मद्रास प्रांत 1919 के सुधारों के बाद 1921 में महिलाओं को मतदान का अधिकार देने वाला पहला प्रांत बना।\n• भारत का संविधान (1950) सार्वभौमिक वयस्क मताधिकार प्रदान करता है — जो कई पश्चिमी लोकतंत्रों से पहले था, जहां इसे शुरू से ही बिना प्रतिबंध के लागू किया गया।\n• महिला भारतीय संघ ने मोंटागु-चेल्म्सफोर्ड आयुक्तों से महिलाओं के मताधिकार के लिए याचिका देने में महत्वपूर्ण भूमिका निभाई।"
+    }
+  },
+  {
+    "uuid": "232b5482-96f2-4cc8-8eea-97a056e43dca",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Sarojini Naidu: Political Leadership and the 'Nightingale' Paradox",
+        "Emergence of Women's Organizations and Institutional Advocacy (1917–1947)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "First woman INC president — Sarojini Naidu vs. Annie Besant distinction",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I (Person)",
+          "List II (Distinction)"
+        ],
+        "rows": [
+          [
+            "A. Annie Besant",
+            "1. First Indian woman President of the Indian National Congress (1925)"
+          ],
+          [
+            "B. Sarojini Naidu",
+            "2. Co-founder of the Women's Indian Association (1917)"
+          ],
+          [
+            "C. Vijaya Lakshmi Pandit",
+            "3. First woman (not necessarily Indian) to preside over the Indian National Congress (1917)"
+          ],
+          [
+            "D. Margaret Cousins",
+            "4. First woman to serve as President of the United Nations General Assembly (1953)"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-1, B-3, C-2, D-4\n(d) A-4, B-1, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because it pairs Annie Besant correctly with 1917 INC presidency but then swaps the other matches, exploiting the confusion between 'first woman president' and 'first Indian woman president.'",
+      "elimination_logic": [
+        "Anchor on Annie Besant: she was INC President in 1917 — the first woman to hold the position; this eliminates options that pair her with any other year.",
+        "Anchor on Sarojini Naidu: she became INC President in 1925 — the first Indian woman to do so; options incorrectly placing her in 1917 are eliminated.",
+        "Sarojini Naidu became Governor of UP post-independence — the first woman governor; Vijaya Lakshmi Pandit was India's first woman ambassador, not governor.",
+        "Margaret Cousins co-founded WIA (1917) with Annie Besant — confirming the correct match for List I item D."
+      ],
+      "upsc_trap_explanation": "The trap exploits the Besant-Naidu confusion. Students who recall 'first woman INC president' without the Indian qualifier will swap Besant and Naidu, selecting option (a). This is a classic UPSC distinction — the fact that Besant was British makes Naidu the first 'Indian' woman president, a precision UPSC has exploited repeatedly.",
+      "final_explanation": "This question tests precision about 'firsts' in women's nationalist leadership — an area where UPSC exploits the Besant-Naidu confusion systematically.\n\nCorrect matches: A-3, B-1, C-4, D-2.\n\n• A (Annie Besant) — 3 (First woman President of INC, 1917): Besant presided over the Calcutta session of INC in 1917 — the first woman to do so, though she was British-born.\n• B (Sarojini Naidu) — 1 (First Indian woman President of INC, 1925): Naidu presided over the Kanpur session in 1925, becoming the first Indian woman INC president; she also became first woman Governor of UP (1947).\n• C (Vijaya Lakshmi Pandit) — 4 (First woman President of UN General Assembly, 1953): Pandit served as India's diplomat and became the first woman to preside over the UN General Assembly.\n• D (Margaret Cousins) — 2 (Co-founder of Women's Indian Association, 1917): Irish suffragist Cousins co-founded WIA alongside Annie Besant and Dorothy Jinarajadasa.\n\nValue Addition:\n• Sarojini Naidu's role in Dharasana Salt Satyagraha (1930) is separately examined — she led the raid after Gandhi's arrest.\n• Vijaya Lakshmi Pandit was Jawaharlal Nehru's sister and served as ambassador to the USSR, USA, and UK.\n• Annie Besant's INC presidency coincided with the Home Rule League movement she had launched in 1916."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I (व्यक्ति)",
+          "सूची II (विशेषता)"
+        ],
+        "rows": [
+          [
+            "A. एनी बेसेंट",
+            "1. भारतीय राष्ट्रीय कांग्रेस की पहली भारतीय महिला अध्यक्ष (1925)"
+          ],
+          [
+            "B. सरोजिनी नायडू",
+            "2. महिला भारतीय संघ की सह-संस्थापक (1917)"
+          ],
+          [
+            "C. विजय लक्ष्मी पंडित",
+            "3. भारतीय राष्ट्रीय कांग्रेस की पहली महिला (जरूरी नहीं कि भारतीय) अध्यक्ष (1917)"
+          ],
+          [
+            "D. मार्गरेट कज़िंस",
+            "4. संयुक्त राष्ट्र महासभा की पहली महिला अध्यक्ष (1953)"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-3, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-1, B-3, C-2, D-4\n(d) A-4, B-1, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) धोखाधड़ीपूर्ण है क्योंकि यह एनी बेसेंट को सही ढंग से 1917 के INC अध्यक्ष पद से जोड़ता है लेकिन फिर अन्य मेलों को बदल देता है, जो 'पहली महिला अध्यक्ष' और 'पहली भारतीय महिला अध्यक्ष' के बीच भ्रम का फायदा उठाता है।",
+      "elimination_logic": [
+        "एनी बेसेंट पर आधार: वह 1917 में INC अध्यक्ष थीं — इस पद पर पहली महिला; यह उन विकल्पों को समाप्त करता है जो उन्हें किसी अन्य वर्ष के साथ जोड़ते हैं।",
+        "सरोजिनी नायडू पर आधार: वह 1925 में INC अध्यक्ष बनीं — पहली भारतीय महिला; जो विकल्प उन्हें 1917 में रख देते हैं, वे समाप्त किए जाते हैं।",
+        "सरोजिनी नायडू स्वतंत्रता के बाद यूपी की राज्यपाल बनीं — पहली महिला राज्यपाल; विजय लक्ष्मी पंडित भारत की पहली महिला राजदूत थीं, राज्यपाल नहीं।",
+        "मार्गरेट कज़िंस ने एनी बेसेंट के साथ मिलकर 1917 में WIA की सह-स्थापना की — जो सूची I के आइटम D के लिए सही मेल की पुष्टि करता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल बेसेंट-नायडू भ्रम का फायदा उठाता है। जो छात्र 'पहली महिला INC अध्यक्ष' को भारतीय विशेषण के बिना याद करते हैं, वे बेसेंट और नायडू को बदल देंगे, और विकल्प (a) चुनेंगे। यह UPSC का एक क्लासिक भेद है — बेसेंट ब्रिटिश थीं, इसलिए नायडू पहली 'भारतीय' महिला अध्यक्ष हैं, जिसे UPSC ने बार-बार सटीकता के लिए इस्तेमाल किया है।",
+      "final_explanation": "यह प्रश्न महिलाओं के राष्ट्रीय नेतृत्व में 'पहली बार' की सटीकता की परीक्षा लेता है — एक ऐसा क्षेत्र जहाँ UPSC बेसेंट-नायडू भ्रम का व्यवस्थित रूप से उपयोग करता है।\n\nसही मेल: A-3, B-1, C-4, D-2।\n\n• A (एनी बेसेंट) — 3 (INC की पहली महिला अध्यक्ष, 1917): बेसेंट ने 1917 में कोलकाता सत्र की अध्यक्षता की — पहली महिला, हालांकि वह ब्रिटिश मूल की थीं।\n• B (सरोजिनी नायडू) — 1 (INC की पहली भारतीय महिला अध्यक्ष, 1925): नायडू ने 1925 में कानपुर सत्र की अध्यक्षता की, पहली भारतीय महिला INC अध्यक्ष बनीं; वे स्वतंत्रता के बाद यूपी की पहली महिला राज्यपाल भी बनीं (1947)।\n• C (विजया लक्ष्मी पंडित) — 4 (संयुक्त राष्ट्र महासभा की पहली महिला अध्यक्ष, 1953): पंडित भारत की राजनयिक थीं और संयुक्त राष्ट्र महासभा की पहली महिला अध्यक्ष बनीं।\n• D (मार्गरेट कज़िंस) — 2 (महिला भारतीय संघ की सह-संस्थापक, 1917): आयरिश मताधिकार कार्यकर्ता कज़िंस ने एनी बेसेंट और डोरोथी जिनराजदासा के साथ मिलकर WIA की स्थापना की।\n\nमूल्य संवर्धन:\n• सरोजिनी नायडू की धरासना नमक सत्याग्रह (1930) में भूमिका अलग से देखी जाती है — उन्होंने गांधी के गिरफ्तारी के बाद छापा मारा।\n• विजय लक्ष्मी पंडित जवाहरलाल नेहरू की बहन थीं और USSR, USA, और UK में राजदूत रहीं।\n• एनी बेसेंट का INC अध्यक्ष पद गृह शासन लीग आंदोलन के साथ मेल खाता है, जिसे उन्होंने 1916 में शुरू किया था।"
+    }
+  },
+  {
+    "uuid": "693ab49f-813a-41b7-9d1b-e56ca580c27c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Constitutional Provisions for Women's Rights as a Direct Legacy of Freedom Struggle"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 15(3) — permissive not mandatory special provisions for women",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding constitutional provisions for women's rights as a legacy of the freedom struggle:\n\nStatement 1: Article 15(3) of the Constitution empowers the State to make special provisions for women and children, and this power is permissive rather than mandatory — the State is not constitutionally obligated to exercise it.\n\nStatement 2: Article 326, which guarantees universal adult franchise, was an entirely novel constitutional innovation with no precedent in colonial-era legislative practice, since women had never been granted any franchise rights under British Indian law.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 15(3) of the Constitution empowers the State to make special provisions for women and children, and this power is permissive rather than mandatory — the State is not constitutionally obligated to exercise it.",
+          "verdict": "Correct",
+          "reason": "Article 15(3) uses the word 'may', which is consistently interpreted by the Supreme Court as conferring a discretionary power on the State, not imposing a compulsory obligation to enact special provisions for women and children."
+        },
+        {
+          "statement": "Article 326, which guarantees universal adult franchise, was an entirely novel constitutional innovation with no precedent in colonial-era legislative practice, since women had never been granted any franchise rights under British Indian law.",
+          "verdict": "Incorrect",
+          "reason": "Women did receive limited, qualified franchise rights under the Montagu-Chelmsford Reforms (1919) and the Government of India Act, 1935 — these colonial grants were restricted and conditional, but they existed. Article 326's universality was novel, not the grant of franchise itself."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because Statement 1 is indeed correct, and students who know Article 15(3) is a permissive clause may not carefully evaluate Statement 2's absolute claim that women 'never' received franchise under British law.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 15(3) uses 'may' — confirmed permissive; Statement 1 is correct.",
+        "Evaluate Statement 2: Women received limited franchise from 1919 reforms onward through provincial legislatures — the claim 'never been granted any franchise rights' is factually wrong.",
+        "Since Statement 1 is correct and Statement 2 is incorrect, the answer is (c)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Statement 2 uses the word 'never' — an absolute that is factually wrong given the 1919 and 1935 franchise grants. Students who correctly associate 1950 with universal franchise may miss that restricted franchise had existed since 1921.",
+      "final_explanation": "These two statements test precision about two important constitutional and historical facts.\n\n• Statement 1 — Correct: Article 15(3) reads: 'Nothing in this article shall prevent the State from making any special provision for women and children.' The word 'may' is implied through the permissive construction — the State has the power but not the obligation. This has been confirmed in multiple Supreme Court interpretations.\n• Statement 2 — Incorrect: The absolute claim that women 'never' received franchise under British Indian law is false. Madras Province granted women limited franchise in 1921 following the Montagu-Chelmsford Reforms; the 1935 Act expanded this further. What Article 326 innovated was universality — free of property and literacy qualifications — not the existence of women's franchise.\n\nValue Addition:\n• Article 39(d) (equal pay for equal work) and Article 42 (maternity relief) are Directive Principles that directly trace to freedom movement demands.\n• The distinction between permissive and mandatory constitutional provisions is a recurring UPSC examination theme.\n• Article 15(1) prohibits discrimination on grounds of sex; Article 15(3) enables affirmative action — both provisions are complementary."
+    },
+    "hi": {
+      "display_text": "स्वतंत्रता संग्राम की विरासत के रूप में महिलाओं के अधिकारों के लिए संवैधानिक प्रावधानों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: संविधान का अनुच्छेद 15(3) राज्य को महिलाओं और बच्चों के लिए विशेष प्रावधान करने का अधिकार देता है, और यह अधिकार अनिवार्य नहीं बल्कि अनुमति देने वाला है — राज्य पर इसे लागू करने का संवैधानिक दायित्व नहीं है।\n\nकथन 2: अनुच्छेद 326, जो सार्वभौमिक वयस्क मताधिकार की गारंटी देता है, एक पूरी तरह से नया संवैधानिक नवाचार था जिसका औपनिवेशिक युग के विधायी अभ्यास में कोई उदाहरण नहीं था, क्योंकि महिलाओं को ब्रिटिश भारतीय कानून के तहत कभी भी मताधिकार नहीं दिया गया था।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है पर कथन 2 गलत है\n(d) कथन 1 गलत है पर कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संविधान का अनुच्छेद 15(3) राज्य को महिलाओं और बच्चों के लिए विशेष प्रावधान करने का अधिकार देता है, और यह अधिकार अनिवार्य नहीं बल्कि अनुमति देने वाला है — राज्य पर इसे लागू करने का संवैधानिक दायित्व नहीं है।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 15(3) में 'may' शब्द का प्रयोग हुआ है, जिसे सर्वोच्च न्यायालय ने निरंतर इस रूप में व्याख्यायित किया है कि यह राज्य को विवेकाधीन अधिकार देता है, न कि महिलाओं और बच्चों के लिए विशेष प्रावधान करने का अनिवार्य दायित्व।"
+        },
+        {
+          "statement": "अनुच्छेद 326, जो सार्वभौमिक वयस्क मताधिकार की गारंटी देता है, एक पूरी तरह से नया संवैधानिक नवाचार था जिसका औपनिवेशिक युग के विधायी अभ्यास में कोई उदाहरण नहीं था, क्योंकि महिलाओं को ब्रिटिश भारतीय कानून के तहत कभी भी मताधिकार नहीं दिया गया था।",
+          "verdict": "गलत",
+          "reason": "महिलाओं को मोंटैगु-चेल्म्सफोर्ड सुधारों (1919) और भारत सरकार अधिनियम, 1935 के तहत सीमित और शर्तीय मताधिकार अधिकार प्राप्त थे — ये औपनिवेशिक अधिकार सीमित और शर्तीय थे, लेकिन मौजूद थे। अनुच्छेद 326 की सार्वभौमिकता नया नवाचार थी, मताधिकार का अधिकार नहीं।"
+        }
+      ],
+      "strong_distractor": "(a) — विकल्प (a) भ्रमित करने वाला है क्योंकि कथन 1 वास्तव में सही है, और जो छात्र जानते हैं कि अनुच्छेद 15(3) एक अनुमति देने वाला प्रावधान है, वे कथन 2 के पूर्ण दावे कि महिलाओं को ब्रिटिश कानून के तहत 'कभी' मताधिकार नहीं मिला, को सावधानी से नहीं आंकेंगे।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 15(3) में 'may' शब्द का प्रयोग है — यह अनुमति देने वाला है; कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: महिलाओं को 1919 के सुधारों के बाद से प्रांतीय विधानसभाओं के माध्यम से सीमित मताधिकार मिला था — 'कभी भी मताधिकार नहीं दिया गया' दावा तथ्यात्मक रूप से गलत है।",
+        "चूंकि कथन 1 सही है और कथन 2 गलत है, अतः उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'कभी' शब्द का प्रयोग एक दायरा-विस्तार जाल है — यह पूर्ण दावे 1919 और 1935 के मताधिकार अधिकारों के संदर्भ में तथ्यात्मक रूप से गलत है। जो छात्र 1950 को सार्वभौमिक मताधिकार से जोड़ते हैं, वे यह भूल सकते हैं कि 1921 से सीमित मताधिकार पहले से मौजूद था।",
+      "final_explanation": "ये दोनों कथन दो महत्वपूर्ण संवैधानिक और ऐतिहासिक तथ्यों के बारे में सटीकता की परीक्षा लेते हैं।\n\n• कथन 1 — सही: अनुच्छेद 15(3) कहता है: 'इस अनुच्छेद में कुछ भी राज्य को महिलाओं और बच्चों के लिए कोई विशेष प्रावधान करने से रोकता नहीं है।' 'may' शब्द अनुमति देने वाले अर्थ में निहित है — राज्य के पास अधिकार है पर दायित्व नहीं। इसे सर्वोच्च न्यायालय ने कई बार पुष्टि की है।\n• कथन 2 — गलत: महिलाओं को ब्रिटिश भारतीय कानून के तहत 'कभी' मताधिकार नहीं मिला, यह पूर्ण दावा गलत है। मद्रास प्रांत ने 1921 में मोंटैगु-चेल्म्सफोर्ड सुधारों के बाद महिलाओं को सीमित मताधिकार दिया; 1935 के अधिनियम ने इसे बढ़ाया। अनुच्छेद 326 ने जो नवाचार किया वह सार्वभौमिकता थी — संपत्ति और साक्षरता योग्यता से मुक्त — न कि महिलाओं के मताधिकार का अस्तित्व।\n\nमूल्यवर्धन:\n• अनुच्छेद 39(द) (समान कार्य के लिए समान वेतन) और अनुच्छेद 42 (मातृत्व राहत) ऐसे निर्देशात्मक सिद्धांत हैं जो स्वतंत्रता संग्राम की मांगों से सीधे जुड़े हैं।\n• अनुमति देने वाले और अनिवार्य संवैधानिक प्रावधानों के बीच अंतर UPSC परीक्षा में बार-बार पूछा जाता है।\n• अनुच्छेद 15(1) लिंग के आधार पर भेदभाव को रोकता है; अनुच्छेद 15(3) सकारात्मक कार्रवाई को सक्षम करता है — दोनों प्रावधान पूरक हैं।"
+    }
+  },
+  {
+    "uuid": "289e1f39-1583-49d3-8e00-eec9935b009e",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Bhikaji Cama and Early Diaspora Women Nationalism"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Bhikaji Cama — Stuttgart 1907, flag design distinct from current tricolour",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched with reference to Bhikaji Cama's contributions to early diaspora nationalism?\n\n(a) Bhikaji Cama — appeared at the Second International congress in Paris (1907) and delivered a speech demanding Indian independence before a European socialist audience\n(b) Bhikaji Cama — unfurled the current Indian tricolour for the first time on foreign soil at the Stuttgart International Socialist Congress in 1907\n(c) Bhikaji Cama — collaborated primarily with Lala Lajpat Rai in establishing the India House in London as a centre for revolutionary nationalist activity\n(d) Bhikaji Cama — appeared at the International Socialist Congress at Stuttgart (1907) and unfurled a version of the Indian flag that was distinct in design from the present national flag",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know Bhikaji Cama hoisted a flag abroad may not know that the flag she hoisted at Stuttgart in 1907 had a different design from the current tricolour — the conflation of 'Indian flag' with 'current tricolour' is the trap.",
+      "elimination_logic": [
+        "Eliminate (a): Bhikaji Cama's international socialist forum appearance was at Stuttgart (1907), not the Second International in Paris — geographic swap.",
+        "Eliminate (b): The flag Cama unfurled at Stuttgart was not the current tricolour — it had green, saffron, and red stripes with different symbols; conflating it with the current design is incorrect.",
+        "Eliminate (c): Cama collaborated with Shyamji Krishna Varma and Tilak's network — attributing her primary collaboration to Lala Lajpat Rai is an entity-swap.",
+        "Option (d) correctly pairs Cama with the Stuttgart International Socialist Congress (1907) and accurately notes that the flag she unfurled differed in design from the current national flag."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the documented act (flag at Stuttgart) with an incorrect attribute (current tricolour design). Students who know the 'flag hoisting' fact but not the design specifics will select option (b), which contains a plausible partial truth — Cama did hoist a flag — but errs on the design detail that UPSC has specifically targeted.",
+      "final_explanation": "Bhikaji Cama represents India's earliest diaspora nationalist figure and the first to bring India's independence demand to an international socialist forum.\n\n• Option (a) — Incorrect: Cama appeared at the International Socialist Congress at Stuttgart in 1907 — not at a Paris-based forum. The Stuttgart Congress brought together socialist and labour movements globally.\n• Option (b) — Incorrect: While Cama did unfurl a flag at Stuttgart (1907), it was NOT the current Indian tricolour. The flag she designed and hoisted had three horizontal stripes (green, saffron, red) with a crescent and sun, and 'Vande Mataram' inscribed — distinct from the present national flag.\n• Option (c) — Incorrect: Cama's primary collaborators in London were Shyamji Krishna Varma (India House) and she maintained connections with Tilak's network — not primarily Lala Lajpat Rai.\n• Option (d) — Correct: Cama appeared at the Stuttgart International Socialist Congress (1907) and unfurled a version of the Indian flag that differed in design from the current national flag.\n\nValue Addition:\n• Cama was exiled from India and spent years in Europe advocating Indian independence.\n• The India House in London was a centre for early revolutionary nationalism — Savarkar and Shyamji Krishna Varma were key figures.\n• Cama's remains were brought back to India after her death in 1936."
+    },
+    "hi": {
+      "display_text": "भिकाजी कामा के प्रारंभिक प्रवासी राष्ट्रवाद में योगदान के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) भिकाजी कामा — पेरिस में सेकंड इंटरनेशनल कांग्रेस (1907) में उपस्थित हुईं और यूरोपीय समाजवादी दर्शकों के समक्ष भारत की स्वतंत्रता की मांग करते हुए भाषण दिया\n(b) भिकाजी कामा — 1907 में स्टटगार्ट अंतरराष्ट्रीय समाजवादी कांग्रेस में पहली बार विदेशी भूमि पर वर्तमान भारतीय तिरंगा फहराया\n(c) भिकाजी कामा — लंदन में इंडिया हाउस को क्रांतिकारी राष्ट्रवादी गतिविधि का केंद्र बनाने में मुख्य रूप से लाला लाजपत राय के साथ सहयोग किया\n(d) भिकाजी कामा — स्टटगार्ट (1907) में अंतरराष्ट्रीय समाजवादी कांग्रेस में उपस्थित हुईं और वर्तमान राष्ट्रीय ध्वज से डिज़ाइन में भिन्न एक भारतीय ध्वज का संस्करण फहराया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि भिकाजी कामा ने विदेश में ध्वज फहराया था, वे यह नहीं जानते कि उन्होंने 1907 में स्टटगार्ट में जो ध्वज फहराया था वह वर्तमान तिरंगे से अलग डिज़ाइन का था — 'भारतीय ध्वज' को 'वर्तमान तिरंगे' से मिलाना ही जाल है।",
+      "elimination_logic": [
+        "(a) को निरस्त करें — भिकाजी कामा का अंतरराष्ट्रीय समाजवादी मंच पर प्रदर्शन स्टटगार्ट (1907) में था, पेरिस में सेकंड इंटरनेशनल में नहीं — भौगोलिक भ्रम।",
+        "(b) को निरस्त करें — कामा ने स्टटगार्ट में जो ध्वज फहराया वह वर्तमान तिरंगा नहीं था — उसमें हरे, केसरिया और लाल रंग की पट्टियाँ थीं जिनमें अलग प्रतीक थे; इसे वर्तमान डिज़ाइन से मिलाना गलत है।",
+        "(c) को निरस्त करें — कामा ने श्यामजी कृष्ण वर्मा और तिलक के नेटवर्क के साथ सहयोग किया था — उनका मुख्य सहयोगी लाला लाजपत राय नहीं था, यह पहचान में गलती है।",
+        "(d) विकल्प सही है — कामा स्टटगार्ट अंतरराष्ट्रीय समाजवादी कांग्रेस (1907) में उपस्थित थीं और उन्होंने जो ध्वज फहराया वह वर्तमान राष्ट्रीय ध्वज से डिज़ाइन में भिन्न था।"
+      ],
+      "upsc_trap_explanation": "मिलान जाल (conflation trap) उस दस्तावेजीकृत कृत्य (स्टटगार्ट में ध्वज फहराना) को एक गलत विशेषता (वर्तमान तिरंगे का डिज़ाइन) से जोड़ देता है। जो छात्र 'ध्वज फहराने' की बात जानते हैं पर डिज़ाइन की विशिष्टताएँ नहीं जानते, वे विकल्प (b) चुनेंगे, जिसमें आंशिक सत्य है — कामा ने ध्वज फहराया था — पर डिज़ाइन विवरण में त्रुटि है, जिसे UPSC ने विशेष रूप से निशाना बनाया है।",
+      "final_explanation": "भिकाजी कामा भारत की सबसे प्रारंभिक प्रवासी राष्ट्रवादी महिला और पहली ऐसी थीं जिन्होंने भारत की स्वतंत्रता की मांग को अंतरराष्ट्रीय समाजवादी मंच पर प्रस्तुत किया।\n\n• विकल्प (a) — गलत: कामा स्टटगार्ट (1907) में अंतरराष्ट्रीय समाजवादी कांग्रेस में उपस्थित थीं, पेरिस आधारित मंच में नहीं। स्टटगार्ट कांग्रेस ने विश्वभर के समाजवादी और श्रमिक आंदोलनों को एकत्रित किया।\n• विकल्प (b) — गलत: कामा ने स्टटगार्ट (1907) में ध्वज फहराया था, पर वह वर्तमान भारतीय तिरंगा नहीं था। उनके द्वारा डिज़ाइन किया गया और फहराया गया ध्वज तीन क्षैतिज पट्टियों (हरा, केसरिया, लाल) वाला था, जिसमें चंद्र और सूर्य के प्रतीक तथा 'वन्दे मातरम्' लिखा था — जो वर्तमान राष्ट्रीय ध्वज से भिन्न था।\n• विकल्प (c) — गलत: कामा के मुख्य सहयोगी लंदन में श्यामजी कृष्ण वर्मा (इंडिया हाउस) थे और उन्होंने तिलक के नेटवर्क से संबंध बनाए रखे — मुख्य सहयोगी लाला लाजपत राय नहीं थे।\n• विकल्प (d) — सही: कामा स्टटगार्ट अंतरराष्ट्रीय समाजवादी कांग्रेस (1907) में उपस्थित थीं और उन्होंने ऐसा भारतीय ध्वज फहराया जो वर्तमान राष्ट्रीय ध्वज से डिज़ाइन में अलग था।\n\nमूल्यवर्धन:\n• कामा को भारत से निर्वासित किया गया था और उन्होंने यूरोप में कई वर्ष भारत की स्वतंत्रता के लिए प्रचार किया।\n• लंदन का इंडिया हाउस प्रारंभिक क्रांतिकारी राष्ट्रवाद का केंद्र था — सावरकर और श्यामजी कृष्ण वर्मा इसके प्रमुख सदस्य थे।\n• कामा के अवशेष उनकी मृत्यु के बाद 1936 में भारत लाए गए।"
+    }
+  },
+  {
+    "uuid": "f2803b05-efee-446c-8e0f-88c580f1faa5",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Partition, Communal Violence, and Women's Bodies as Sites of Political Contestation (1947)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Abducted Persons Recovery Act 1949 — feminist critique of state paternalism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the treatment of women during and after the Partition of 1947:\n\n1. The Abducted Persons (Recovery and Restoration) Act, 1949, has been critiqued by feminist historians primarily because it excluded Muslim women from its protections, limiting recovery operations to Hindu and Sikh women abducted during Partition violence.\n2. Mridula Sarabhai, who led women's recovery operations after Partition, had been active in the freedom movement before independence, representing the continuity between freedom struggle activism and post-Partition humanitarian work.\n3. The scale of abduction during Partition has been estimated at between 75,000 and 100,000 women across both sides of the newly formed border, with women's bodies becoming sites of communal assertion and retributive violence.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Abducted Persons (Recovery and Restoration) Act, 1949, has been critiqued by feminist historians primarily because it excluded Muslim women from its protections, limiting recovery operations to Hindu and Sikh women abducted during Partition violence.",
+          "verdict": "Incorrect",
+          "reason": "The feminist critique of the 1949 Act is not about exclusion of Muslim women — it is about the Act treating recovered women as property of their community and the Indian/Pakistani state, denying them individual agency to choose whether they wanted to return. The critique centres on paternalism and denial of women's autonomy, not religious exclusion."
+        },
+        {
+          "statement": "Mridula Sarabhai, who led women's recovery operations after Partition, had been active in the freedom movement before independence, representing the continuity between freedom struggle activism and post-Partition humanitarian work.",
+          "verdict": "Correct",
+          "reason": "Mridula Sarabhai was indeed a senior Congress worker before independence who then led inter-dominion recovery operations — her career exemplifies the direct connection between freedom movement activism and post-Partition work."
+        },
+        {
+          "statement": "The scale of abduction during Partition has been estimated at between 75,000 and 100,000 women across both sides of the newly formed border, with women's bodies becoming sites of communal assertion and retributive violence.",
+          "verdict": "Correct",
+          "reason": "Historical scholarship (Butalia, Menon and Bhasin) estimates approximately 75,000–100,000 women were abducted across both India and Pakistan during Partition violence — the scholarly consensus figure for UPSC purposes."
+        }
+      ],
+      "strong_distractor": "a — Option (a) selecting only Statement 1 as incorrect is deceptive because Statement 1 contains a recognisable partial truth (the Act was selective in practice) and students may not know that the actual critique is about agency denial rather than religious exclusion.",
+      "elimination_logic": [
+        "Check Statement 1: The feminist critique focuses on denial of women's agency — treating them as community property — NOT on religious exclusion from the Act's coverage; Statement 1 is incorrect.",
+        "Check Statement 2: Mridula Sarabhai's continuity from freedom struggle to recovery operations is documented — Statement 2 is correct.",
+        "Check Statement 3: 75,000–100,000 abducted women is the established scholarly estimate — Statement 3 is correct.",
+        "Only Statement 1 is incorrect — answer is (a) 1 only."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in Statement 1 inserts a wrong critique (religious exclusion) that sounds plausible because the Act did have selective implementation. The actual critique — denial of women's agency and treating them as community property — requires more precise knowledge of feminist historiography on Partition.",
+      "final_explanation": "The Abducted Persons (Recovery and Restoration) Act, 1949 is one of the most complex legislative responses to Partition violence.\n\n• Statement 1 — Incorrect: The feminist critique of the 1949 Act is NOT about religious exclusion. Scholars like Urvashi Butalia and Ritu Menon argue that the Act treated recovered women as property — of their religion, community, and state — denying them the individual right to decide whether they wished to return to their families. Many women had rebuilt lives in their new circumstances; the Act overrode their choices in the name of 'restoration.'\n• Statement 2 — Correct: Mridula Sarabhai led inter-dominion recovery operations and was a senior Congress worker — her work represents a direct bridge between freedom struggle activism and post-independence humanitarian missions.\n• Statement 3 — Correct: The 75,000–100,000 figure represents the scholarly consensus on abducted women across both sides of the Partition border — a fact cited in UPSC-level materials.\n\nValue Addition:\n• The Act applied reciprocally — India and Pakistan cooperated in recovering abducted women from each other's territory.\n• Partition oral history is a growing academic field; Urvashi Butalia's 'The Other Side of Silence' is a landmark text.\n• Women's experiences of Partition are increasingly part of UPSC essay and mains themes."
+    },
+    "hi": {
+      "display_text": "1947 के विभाजन के दौरान और बाद में महिलाओं के साथ व्यवहार के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अपहृत व्यक्तियों (पुनः प्राप्ति और पुनर्स्थापन) अधिनियम, 1949 की नारीवादी इतिहासकारों द्वारा मुख्य रूप से आलोचना इसलिए की गई है क्योंकि इसने मुस्लिम महिलाओं को अपनी सुरक्षा से बाहर रखा, और पुनः प्राप्ति कार्य केवल विभाजन हिंसा के दौरान अपहृत हिंदू और सिख महिलाओं तक सीमित था।\n2. मृदुला साराभाई, जिन्होंने विभाजन के बाद महिलाओं की पुनः प्राप्ति अभियानों का नेतृत्व किया, स्वतंत्रता से पहले स्वतंत्रता संग्राम में सक्रिय थीं, जो स्वतंत्रता संग्राम की सक्रियता और विभाजन के बाद के मानवीय कार्य के बीच निरंतरता को दर्शाता है।\n3. विभाजन के दौरान अपहरण की मात्रा का अनुमान नए बने सीमा के दोनों ओर लगभग 75,000 से 100,000 महिलाओं के बीच लगाया गया है, जहाँ महिलाओं के शरीर सामुदायिक दावे और प्रतिशोधात्मक हिंसा के स्थल बन गए।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Abducted Persons (Recovery and Restoration) Act, 1949, has been critiqued by feminist historians primarily because it excluded Muslim women from its protections, limiting recovery operations to Hindu and Sikh women abducted during Partition violence.",
+          "verdict": "गलत",
+          "reason": "1949 के अधिनियम की नारीवादी आलोचना मुस्लिम महिलाओं के बहिष्कार के बारे में नहीं है — यह अधिनियम द्वारा पुनः प्राप्त महिलाओं को उनकी समुदाय और भारतीय/पाकिस्तानी राज्य की संपत्ति मानने और उन्हें यह चुनने की व्यक्तिगत स्वतंत्रता न देने के बारे में है कि वे लौटना चाहती हैं या नहीं। आलोचना पितृसत्तात्मकता और महिलाओं की स्वायत्तता के इनकार पर केंद्रित है, धार्मिक बहिष्कार पर नहीं।"
+        },
+        {
+          "statement": "Mridula Sarabhai, who led women's recovery operations after Partition, had been active in the freedom movement before independence, representing the continuity between freedom struggle activism and post-Partition humanitarian work.",
+          "verdict": "सही",
+          "reason": "मृदुला साराभाई स्वतंत्रता से पहले कांग्रेस की वरिष्ठ कार्यकर्ता थीं जिन्होंने बाद में अंतर-डोमिनियन पुनः प्राप्ति अभियानों का नेतृत्व किया — उनका करियर स्वतंत्रता संग्राम की सक्रियता और विभाजन के बाद के मानवीय कार्य के बीच सीधे संबंध को दर्शाता है।"
+        },
+        {
+          "statement": "The scale of abduction during Partition has been estimated at between 75,000 and 100,000 women across both sides of the newly formed border, with women's bodies becoming sites of communal assertion and retributive violence.",
+          "verdict": "सही",
+          "reason": "ऐतिहासिक शोध (बुतालिया, मेनन और भसीन) के अनुसार विभाजन के दौरान भारत और पाकिस्तान दोनों तरफ लगभग 75,000 से 100,000 महिलाओं के अपहरण का अनुमान है — यह UPSC के लिए विद्वत् सहमति संख्या है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) केवल कथन 1 को गलत चुनना भ्रामक है क्योंकि कथन 1 में एक मान्यता प्राप्त आंशिक सत्य है (अधिनियम व्यवहार में चयनात्मक था) और छात्र यह नहीं जानते कि वास्तविक आलोचना एजेंसी के इनकार के बारे में है न कि धार्मिक बहिष्कार के बारे में।",
+      "elimination_logic": [
+        "कथन 1 जांचें: नारीवादी आलोचना महिलाओं की एजेंसी के इनकार पर केंद्रित है — उन्हें समुदाय की संपत्ति मानना — न कि अधिनियम के कवरेज से धार्मिक बहिष्कार; अतः कथन 1 गलत है।",
+        "कथन 2 जांचें: मृदुला साराभाई का स्वतंत्रता संग्राम से पुनः प्राप्ति अभियानों तक का निरंतर कार्य documented है — कथन 2 सही है।",
+        "कथन 3 जांचें: 75,000–100,000 अपहृत महिलाओं का अनुमान स्थापित विद्वत् आंकड़ा है — कथन 3 सही है।",
+        "केवल कथन 1 गलत है — उत्तर है (a) केवल 1।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में आंशिक-सत्य जाल गलत आलोचना (धार्मिक बहिष्कार) डालता है जो संभव लगता है क्योंकि अधिनियम का व्यवहार चयनात्मक था। वास्तविक आलोचना — महिलाओं की एजेंसी का इनकार और उन्हें समुदाय की संपत्ति मानना — नारीवादी इतिहासलेखन की अधिक सटीक जानकारी मांगती है।",
+      "final_explanation": "The Abducted Persons (Recovery and Restoration) Act, 1949 विभाजन हिंसा के प्रति सबसे जटिल विधायी प्रतिक्रियाओं में से एक है।\n\n• कथन 1 — गलत: 1949 के अधिनियम की नारीवादी आलोचना धार्मिक बहिष्कार के बारे में नहीं है। उर्वशी बुतालिया और रितु मेनन जैसे विद्वानों का तर्क है कि अधिनियम पुनः प्राप्त महिलाओं को उनकी धर्म, समुदाय और राज्य की संपत्ति मानता था — उन्हें यह व्यक्तिगत अधिकार नहीं देता था कि वे अपने परिवारों के पास लौटना चाहती हैं या नहीं। कई महिलाओं ने अपनी नई परिस्थितियों में जीवन फिर से बनाया था; अधिनियम ने 'पुनर्स्थापन' के नाम पर उनके विकल्पों को दरकिनार कर दिया।\n• कथन 2 — सही: मृदुला साराभाई ने अंतर-डोमिनियन पुनः प्राप्ति अभियानों का नेतृत्व किया और वे कांग्रेस की वरिष्ठ कार्यकर्ता थीं — उनका कार्य स्वतंत्रता संग्राम की सक्रियता और स्वतंत्रता के बाद के मानवीय मिशनों के बीच सीधे पुल का प्रतिनिधित्व करता है।\n• कथन 3 — सही: 75,000–100,000 की संख्या विभाजन सीमा के दोनों ओर अपहृत महिलाओं पर विद्वत् सहमति को दर्शाती है — यह UPSC स्तर की सामग्री में उद्धृत तथ्य है।\n\nमूल्यवर्धन:\n• अधिनियम पारस्परिक रूप से लागू था — भारत और पाकिस्तान ने एक-दूसरे के क्षेत्र से अपहृत महिलाओं की पुनः प्राप्ति में सहयोग किया।\n• विभाजन की मौखिक इतिहास एक बढ़ता हुआ अकादमिक क्षेत्र है; उर्वशी बुतालिया की 'The Other Side of Silence' एक महत्वपूर्ण ग्रंथ है।\n• विभाजन में महिलाओं के अनुभव UPSC निबंध और मुख्य विषयों का हिस्सा बनते जा रहे हैं।"
+    }
+  },
+  {
+    "uuid": "dcff416c-9018-4eb4-b536-5f521a3de004",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Muslim Women's Participation and the Communal Question"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Bi Amma — Khilafat-Non-Cooperation and Muslim women in public sphere",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately characterises the historical significance of Bi Amma's participation in the Khilafat-Non-Cooperation alliance?\n\n(a) She addressed public political gatherings in support of the Khilafat cause while navigating purdah conventions — sometimes speaking from behind a curtain — representing a distinctive form of Muslim women's political mobilisation within religious-nationalist rather than secular-feminist boundaries\n(b) She rejected purdah conventions entirely in the course of the Khilafat agitation, becoming the first Muslim woman to address mixed public gatherings without any observance of separation, thereby pioneering a secular feminist tradition within Islamic nationalist politics\n(c) Her political significance was largely symbolic — deriving entirely from her status as the mother of the Ali Brothers — rather than from any independent political activity or public speech of her own\n(d) Her participation in the Khilafat Movement exemplified a secular-feminist consciousness that explicitly challenged both British colonial authority and the patriarchal structures of Muslim personal law simultaneously",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because Bi Amma is associated with her sons' political activities, making students assume she was merely a passive family figure rather than an active public speaker who addressed political gatherings in a period when Muslim women's public speech was socially transgressive.",
+      "elimination_logic": [
+        "Identify Bi Amma as the mother of Muhammad Ali and Shaukat Ali — leaders of the Khilafat Movement.",
+        "Eliminate (b): Bi Amma participated within a religious-nationalist framework, not a secular-feminist one — she addressed gatherings from behind a curtain, navigating purdah conventions.",
+        "Eliminate (c): Bi Amma was not merely a symbolic figure — she actively addressed public gatherings, making her presence politically significant beyond familial association.",
+        "Eliminate (d): The Khilafat Movement brought Muslim women into the public sphere but within a religious-nationalist rather than secular-feminist framework — Bi Amma's participation was a product of religious duty and nationalist sentiment, not feminist consciousness.",
+        "Option (a) correctly describes her role — active public participation within purdah conventions — as a historically significant navigation of two competing demands."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges Bi Amma's real participation with a mischaracterisation of its ideological nature. Students who know she was active may assume she rejected purdah (option b) or embodied secular feminism (option d) without recognising that her significance lies precisely in navigating religious convention while achieving public political presence.",
+      "final_explanation": "Bi Amma (Abadi Bano Begum) represents a fascinating intersection of purdah, religious nationalism, and political activism during the Khilafat-Non-Cooperation alliance.\n\n• Option (a) — Correct: Bi Amma addressed public gatherings in support of the Khilafat cause — at times speaking from behind a curtain to maintain purdah while participating actively in political mobilisation. This represented a navigation of purdah conventions rather than a rejection of them.\n• Option (b) — Incorrect: Her participation was within a religious-nationalist, not secular-feminist, framework — the Khilafat Movement was driven by the defence of the Ottoman Caliphate, not by women's rights advocacy.\n• Option (c) — Incorrect: Bi Amma was not merely a symbolic figure associated with her sons — she actively spoke at political gatherings, making her a political participant in her own right.\n• Option (d) — Incorrect: The Khilafat Movement did bring Muslim women into the public sphere, but within boundaries set by religious convention — it was not a movement for women's secular emancipation.\n\nValue Addition:\n• Muhammad Ali and Shaukat Ali (the Ali Brothers) were central to the Khilafat leadership alongside Gandhi.\n• The Khilafat-Non-Cooperation alliance (1919–22) was a landmark moment of Hindu-Muslim political unity.\n• After the Khilafat Movement's collapse, communal polarisation increased, drawing Muslim League and Congress women toward divergent trajectories."
+    },
+    "hi": {
+      "display_text": "खिलाफत-असहयोग गठबंधन में बी अम्मा की भागीदारी के ऐतिहासिक महत्व को सबसे सटीक रूप से कौन-सा वर्णन करता है?\n\n(a) उन्होंने पर्दा प्रथाओं का पालन करते हुए खिलाफत के समर्थन में सार्वजनिक राजनीतिक सभाओं को संबोधित किया — कभी-कभी पर्दे के पीछे से बोलते हुए — जो धार्मिक-राष्ट्रवादी सीमाओं के भीतर मुस्लिम महिलाओं की राजनीतिक सक्रियता का एक विशिष्ट रूप दर्शाता है, न कि धर्मनिरपेक्ष-नारीवादी।\n(b) उन्होंने खिलाफत आंदोलन के दौरान पर्दा प्रथाओं को पूरी तरह से अस्वीकार कर दिया, और पहली मुस्लिम महिला बनीं जिन्होंने बिना किसी पृथक्करण के मिश्रित सार्वजनिक सभाओं को संबोधित किया, इस प्रकार इस्लामी राष्ट्रवादी राजनीति में धर्मनिरपेक्ष नारीवादी परंपरा की शुरुआत की।\n(c) उनका राजनीतिक महत्व मुख्यतः प्रतीकात्मक था — जो पूरी तरह से अली ब्रदर्स की मां के रूप से उनकी स्थिति से उत्पन्न होता था — न कि उनकी स्वतंत्र राजनीतिक गतिविधि या सार्वजनिक भाषण से।\n(d) उनकी भागीदारी ने एक धर्मनिरपेक्ष-नारीवादी चेतना का उदाहरण प्रस्तुत किया जिसने ब्रिटिश औपनिवेशिक सत्ता और मुस्लिम व्यक्तिगत कानून की पितृसत्तात्मक संरचनाओं दोनों को एक साथ चुनौती दी।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि बी अम्मा अपने पुत्रों की राजनीतिक गतिविधियों से जुड़ी हैं, जिससे छात्र यह मान लेते हैं कि वह केवल एक निष्क्रिय पारिवारिक सदस्य थीं न कि एक सक्रिय सार्वजनिक वक्ता जो उस समय मुस्लिम महिलाओं के सार्वजनिक भाषण को सामाजिक रूप से अनुचित मानते थे।",
+      "elimination_logic": [
+        "बी अम्मा को खिलाफत आंदोलन के नेताओं मुहम्मद अली और शौकत अली की माता के रूप में पहचानें।",
+        "(b) को निरस्त करें: बी अम्मा ने धार्मिक-राष्ट्रवादी ढांचे के भीतर भाग लिया, न कि धर्मनिरपेक्ष-नारीवादी ढांचे में — उन्होंने पर्दे के पीछे से सभाओं को संबोधित किया, पर्दा प्रथाओं का पालन करते हुए।",
+        "(c) को निरस्त करें: बी अम्मा केवल एक प्रतीकात्मक आकृति नहीं थीं — उन्होंने सक्रिय रूप से सार्वजनिक सभाओं को संबोधित किया, जिससे उनका राजनीतिक महत्व पारिवारिक संबंध से परे था।",
+        "(d) को निरस्त करें: खिलाफत आंदोलन ने मुस्लिम महिलाओं को सार्वजनिक क्षेत्र में लाया लेकिन धार्मिक-राष्ट्रवादी ढांचे के भीतर — बी अम्मा की भागीदारी धार्मिक कर्तव्य और राष्ट्रवादी भावना का परिणाम थी, न कि नारीवादी चेतना।",
+        "(a) विकल्प सही है — पर्दा प्रथाओं के भीतर सक्रिय सार्वजनिक भागीदारी — जो दो प्रतिस्पर्धी मांगों के बीच ऐतिहासिक रूप से महत्वपूर्ण संतुलन का प्रतिनिधित्व करती है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल (conflation trap) बी अम्मा की वास्तविक भागीदारी को उसकी वैचारिक प्रकृति के गलत चित्रण के साथ जोड़ देता है। जो छात्र जानते हैं कि वह सक्रिय थीं, वे मान सकते हैं कि उन्होंने पर्दा को अस्वीकार किया (विकल्प b) या धर्मनिरपेक्ष नारीवाद को अपनाया (विकल्प d), बिना यह समझे कि उनकी महत्ता धार्मिक प्रथा का पालन करते हुए सार्वजनिक राजनीतिक उपस्थिति हासिल करने में है।",
+      "final_explanation": "बी अम्मा (अबादी बानो बेगम) पर्दा, धार्मिक राष्ट्रवाद, और खिलाफत-असहयोग गठबंधन के दौरान राजनीतिक सक्रियता के एक रोचक संगम का प्रतिनिधित्व करती हैं।\n\n• विकल्प (a) — सही: बी अम्मा ने खिलाफत के समर्थन में सार्वजनिक सभाओं को संबोधित किया — कभी-कभी पर्दे के पीछे से बोलते हुए, पर्दा बनाए रखते हुए राजनीतिक सक्रियता में भाग लिया। यह पर्दा प्रथाओं का अस्वीकार नहीं बल्कि उनका संतुलन था।\n• विकल्प (b) — गलत: उनकी भागीदारी धार्मिक-राष्ट्रवादी थी, न कि धर्मनिरपेक्ष-नारीवादी — खिलाफत आंदोलन ओटोमन खलीफे की रक्षा के लिए था, न कि महिलाओं के अधिकारों के लिए।\n• विकल्प (c) — गलत: बी अम्मा केवल अपने पुत्रों की मां के रूप में प्रतीकात्मक नहीं थीं — उन्होंने सक्रिय रूप से राजनीतिक सभाओं में भाषण दिया, जिससे वे स्वयं एक राजनीतिक प्रतिभागी थीं।\n• विकल्प (d) — गलत: खिलाफत आंदोलन ने मुस्लिम महिलाओं को सार्वजनिक क्षेत्र में लाया, लेकिन धार्मिक प्रथाओं की सीमाओं के भीतर — यह महिलाओं की धर्मनिरपेक्ष मुक्ति का आंदोलन नहीं था।\n\nमूल्य संवर्धन:\n• मुहम्मद अली और शौकत अली (अली ब्रदर्स) गांधी के साथ खिलाफत नेतृत्व के केंद्रीय सदस्य थे।\n• खिलाफत-असहयोग गठबंधन (1919–22) हिंदू-मुस्लिम राजनीतिक एकता का एक महत्वपूर्ण क्षण था।\n• खिलाफत आंदोलन के पतन के बाद, सांप्रदायिक ध्रुवीकरण बढ़ा, जिससे मुस्लिम लीग और कांग्रेस की महिलाओं के अलग-अलग मार्ग बने।"
+    }
+  },
+  {
+    "uuid": "3cdb3f86-a718-4202-b560-7c86f9d15e8d",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "International Connections: Indian Women's Activism and Global Feminist Networks"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Indian women at international forums — suffrage as anti-colonial argument",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Indian women activists during the interwar period used participation in ________ to argue that colonial Britain, while championing suffrage for its own women, simultaneously denied democratic rights to women in its colonies — deploying the global suffrage movement as an explicitly anti-colonial argument.\n\nWhich of the following correctly identifies the international forums referred to in the above statement?\n\n(a) The League of Nations General Assembly and its Committee on Social Questions, where Indian representatives presented petitions alongside other colonial subjects demanding franchise rights\n(b) The International Women's Suffrage Alliance and the International Council of Women, where Indian women delegates participated as representatives of a nation denied self-determination\n(c) The International Women's Peace and Freedom Congress (1915), which specifically resolved to support colonial independence movements as a precondition for universal women's suffrage\n(d) The International Labour Organisation's Committee on Women Workers, which Indian delegates used to link labour rights with franchise demands",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) naming the 'International Women's Peace and Freedom Congress (1915)' is deceptive because this sounds institutional and period-appropriate, making students who are uncertain about the actual forums gravitate toward a plausibly named organisation.",
+      "elimination_logic": [
+        "Eliminate (c): The 'International Women's Peace and Freedom Congress (1915)' is a fabricated body — it does not correspond to a real international organisation Indian women delegates addressed.",
+        "Eliminate (a): The League of Nations was a political-diplomatic body, not a feminist network — Indian women activists targeted feminist international organisations specifically.",
+        "Eliminate (d): The International Labour Organisation (ILO) was involved in labour standards, not specifically women's suffrage campaigns.",
+        "Option (b) correctly identifies the International Women's Suffrage Alliance and International Council of Women as the actual forums Indian women delegates participated in during the interwar period."
+      ],
+      "upsc_trap_explanation": "Option (c) fabricates a plausible-sounding organisation. Students unfamiliar with the specific forums (IWSA, ICW) will default to a name combining women, international, and peace — all contextually appropriate terms — without recognising it is non-existent.",
+      "final_explanation": "Indian women activists strategically used international forums in the interwar period to expose colonial Britain's contradiction of denying democratic rights to colonial subjects.\n\n• Option (a) — Incorrect: The League of Nations was a state-level diplomatic body — Indian women's advocacy was directed at feminist civil society organisations rather than the League itself.\n• Option (b) — Correct: Indian women delegates participated in the International Women's Suffrage Alliance (IWSA) and the International Council of Women (ICW) during the interwar period. They deployed the argument that British colonialism denied Indian women the franchise that Britain's own women were demanding — using the global suffrage movement as an anti-colonial platform.\n• Option (c) — Incorrect: No such body as the 'International Women's Peace and Freedom Congress (1915)' corresponds to the organisations Indian women activists engaged with — this is a plausible fabrication.\n• Option (d) — Incorrect: The International Labour Organisation was concerned with labour standards; it was not the primary forum for women's suffrage or feminist advocacy.\n\nValue Addition:\n• Margaret Cousins, who co-founded WIA (1917), was an Irish suffragist who connected Indian and global suffrage networks.\n• Indian women's use of international forums to embarrass colonial Britain parallels Irish nationalist strategies at the same period.\n• Connections with Egyptian women nationalists in the 1920s created a template for anti-colonial feminist solidarity."
+    },
+    "hi": {
+      "display_text": "अंतरवार्षिक काल में भारतीय महिला कार्यकर्ताओं ने ________ में भाग लेकर यह तर्क दिया कि उपनिवेशी ब्रिटेन, जबकि अपनी महिलाओं के लिए मताधिकार का समर्थन करता है, साथ ही अपने उपनिवेशों की महिलाओं को लोकतांत्रिक अधिकारों से वंचित करता है — वैश्विक मताधिकार आंदोलन को स्पष्ट रूप से उपनिवेश-विरोधी तर्क के रूप में उपयोग करते हुए।\n\nनिम्नलिखित में से कौन-से अंतरराष्ट्रीय मंच उपरोक्त कथन में उल्लिखित हैं?\n\n(a) लीग ऑफ नेशंस की महासभा और इसके सामाजिक प्रश्नों पर समिति, जहाँ भारतीय प्रतिनिधियों ने अन्य उपनिवेशी विषयों के साथ मताधिकार अधिकारों की मांग करते हुए याचिकाएँ प्रस्तुत कीं\n(b) International Women's Suffrage Alliance और International Council of Women, जहाँ भारतीय महिला प्रतिनिधि एक ऐसी राष्ट्र की ओर से भाग ले रही थीं जिसे स्व-निर्णय से वंचित किया गया था\n(c) International Women's Peace and Freedom Congress (1915), जिसने विशेष रूप से सार्वभौमिक महिला मताधिकार के लिए उपनिवेश स्वतंत्रता आंदोलनों का समर्थन करने का संकल्प लिया\n(d) International Labour Organisation की महिला श्रमिकों पर समिति, जिसका उपयोग भारतीय प्रतिनिधियों ने श्रम अधिकारों को मताधिकार मांगों से जोड़ने के लिए किया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) 'International Women's Peace and Freedom Congress (1915)' नामक संस्था धोखाधड़ीपूर्ण है क्योंकि यह संस्थागत और कालानुक्रमिक रूप से उपयुक्त लगती है, जिससे जो छात्र वास्तविक मंचों के बारे में अनिश्चित हैं वे इस नाम को यथार्थवादी मान लेते हैं।",
+      "elimination_logic": [
+        "(c) को निरस्त करें — 'International Women's Peace and Freedom Congress (1915)' एक काल्पनिक संस्था है — यह किसी वास्तविक अंतरराष्ट्रीय संगठन से मेल नहीं खाती जिसमें भारतीय महिला प्रतिनिधियों ने भाग लिया हो।",
+        "(a) को निरस्त करें — लीग ऑफ नेशंस एक राजनीतिक-राजनयिक संस्था थी, न कि नारीवादी नेटवर्क — भारतीय महिला कार्यकर्ताओं ने विशेष रूप से नारीवादी अंतरराष्ट्रीय संगठनों को लक्षित किया।",
+        "(d) को निरस्त करें — अंतरराष्ट्रीय श्रम संगठन (ILO) श्रम मानकों से जुड़ा था, न कि विशेष रूप से महिला मताधिकार अभियानों से।",
+        "(b) विकल्प सही है — अंतरवार्षिक काल में भारतीय महिला प्रतिनिधियों ने International Women's Suffrage Alliance और International Council of Women में भाग लिया।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) एक यथार्थवादी लगने वाली संस्था का निर्माण करता है। जो छात्र विशिष्ट मंचों (IWSA, ICW) से परिचित नहीं हैं, वे महिलाओं, अंतरराष्ट्रीय और शांति जैसे उपयुक्त शब्दों को जोड़कर इसे वास्तविक मान लेते हैं, जबकि यह अस्तित्वहीन है।",
+      "final_explanation": "भारतीय महिला कार्यकर्ताओं ने अंतरवार्षिक काल में अंतरराष्ट्रीय मंचों का रणनीतिक उपयोग किया ताकि उपनिवेशी ब्रिटेन की उस विरोधाभास को उजागर किया जा सके जिसमें वह अपनी महिलाओं को मताधिकार देते हुए उपनिवेशों की महिलाओं को लोकतांत्रिक अधिकारों से वंचित रखता था।\n\n• विकल्प (a) — गलत: लीग ऑफ नेशंस एक राज्य-स्तरीय राजनयिक संस्था थी — भारतीय महिलाओं की वकालत नारीवादी नागरिक समाज संगठनों की ओर थी, न कि लीग की ओर।\n• विकल्प (b) — सही: भारतीय महिला प्रतिनिधियों ने अंतरवार्षिक काल में International Women's Suffrage Alliance (IWSA) और International Council of Women (ICW) में भाग लिया। उन्होंने यह तर्क प्रस्तुत किया कि ब्रिटिश उपनिवेशवाद भारतीय महिलाओं को मताधिकार से वंचित करता है जबकि ब्रिटेन की अपनी महिलाएं मताधिकार मांग रही हैं — वैश्विक मताधिकार आंदोलन को एक उपनिवेश-विरोधी मंच के रूप में उपयोग करते हुए।\n• विकल्प (c) — गलत: 'International Women's Peace and Freedom Congress (1915)' नामक कोई संस्था नहीं है जो भारतीय महिला कार्यकर्ताओं से जुड़ी हो — यह एक यथार्थवादी जाली है।\n• विकल्प (d) — गलत: अंतरराष्ट्रीय श्रम संगठन श्रम मानकों से संबंधित था; यह महिला मताधिकार या नारीवादी वकालत का मुख्य मंच नहीं था।\n\nमूल्यवर्धन:\n• मार्गरेट कौसिन्स, जिन्होंने WIA (1917) की सह-स्थापना की, एक आयरिश मताधिकार कार्यकर्ता थीं जिन्होंने भारतीय और वैश्विक मताधिकार नेटवर्क को जोड़ा।\n• भारतीय महिलाओं द्वारा अंतरराष्ट्रीय मंचों का उपयोग उपनिवेशी ब्रिटेन को अपमानित करने के लिए आयरिश राष्ट्रवादी रणनीतियों के समानांतर था।\n• 1920 के दशक में मिस्री महिला राष्ट्रवादियों के साथ संबंधों ने उपनिवेश-विरोधी नारीवादी एकजुटता के लिए एक मॉडल तैयार किया।"
+    }
+  },
+  {
+    "uuid": "ce7de5b7-f5f9-49c7-8ca8-ad46b51a9b71",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Legislative Reforms for Women During Colonial Period: Cause–Effect with Freedom Struggle",
+        "Emergence of Women's Organizations and Institutional Advocacy (1917–1947)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sarda Act 1929 — nationalist pressure vs. colonial initiative; colonial reform chronology",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to colonial-era legislative reforms concerning women's rights, consider the following statements:\n\n1. The Child Marriage Restraint Act (1929) is popularly known as the 'Sarda Act' because it was championed by Harbilas Sarda, a nationalist member of the Central Legislative Assembly.\n2. The Hindu Women's Right to Property Act (1937) granted Hindu widows full ownership rights equivalent to those of male heirs, abolishing the concept of 'limited estate' and conferring complete alienation rights.\n3. The Age of Consent Act (1891), which raised the minimum age of marital consent for girls from 10 to 12, generated a notable public debate in which reformers like Mahadev Govind Ranade supported the legislation while Bal Gangadhar Tilak opposed it as colonial interference in Hindu social customs.\n4. The Hindu Widows' Remarriage Act (1856) was primarily a colonial administrative initiative with no significant antecedent in Indian social reform agitation.\n\nHow many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Child Marriage Restraint Act (1929) — also known as the Sarda Act — was named after Harbilas Sarda, a nationalist member of the Central Legislative Assembly who championed the legislation.",
+          "verdict": "Correct",
+          "reason": "Harbilas Sarda was indeed the member of the Central Legislative Assembly who introduced and championed the Child Marriage Restraint Act — the Act's popular name derives directly from him."
+        },
+        {
+          "statement": "The Hindu Women's Right to Property Act (1937) granted Hindu widows full ownership rights (stridhan) equivalent to those held by male heirs, eliminating the concept of 'limited estate.'",
+          "verdict": "Incorrect",
+          "reason": "The 1937 Act gave widows a 'limited estate' — not full ownership. The widow inherited the property but could not alienate it; full ownership rights came only with the Hindu Succession Act (1956) which abolished the limited estate concept."
+        },
+        {
+          "statement": "The Age of Consent Act (1891), raising the age of marital consent for girls from 10 to 12, was preceded by sustained social reform agitation associated with Bal Gangadhar Tilak's opposition and Ranade's support.",
+          "verdict": "Correct",
+          "reason": "The Age of Consent Act (1891) did generate significant debate — reformers like Mahadev Govind Ranade supported it while Tilak opposed colonial interference in Hindu social practices, making this a documented episode of the social reform vs. cultural nationalism tension."
+        },
+        {
+          "statement": "The Hindu Widows' Remarriage Act (1856) was primarily a colonial administrative initiative with no significant antecedent in Indian social reform agitation.",
+          "verdict": "Incorrect",
+          "reason": "The 1856 Act was heavily preceded and promoted by Ishwar Chandra Vidyasagar's sustained campaign — including petitions to the colonial government. It was far from purely a colonial initiative; Vidyasagar's social reform activism was its direct catalyst."
+        }
+      ],
+      "strong_distractor": "c — Option (c) 'Only three' is deceptive because students who correctly identify Statement 4 as false (knowing Vidyasagar's role) but incorrectly accept Statement 2 (not knowing the 'limited estate' concept) will count three correct statements.",
+      "elimination_logic": [
+        "Statement 1: Harbilas Sarda and the Sarda Act (1929) — correct pairing, well-established.",
+        "Statement 2: 1937 Act gave 'limited estate,' not full ownership — statement claims full ownership, which is incorrect.",
+        "Statement 3: Ranade-Tilak divide on Age of Consent Act (1891) is documented — correct.",
+        "Statement 4: Vidyasagar's campaign was the direct catalyst for 1856 Act — not a purely colonial initiative; incorrect.",
+        "Two statements (1 and 3) correct; two (2 and 4) incorrect — answer is (b) Only two."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses 'full ownership' to replace the actual 'limited estate' provision of the 1937 Act — an entity-swap targeting the specific legal character of the right granted. Students who know it was a property rights act but not the nature of those rights will accept the incorrect statement as correct.",
+      "final_explanation": "Colonial-era legislative reforms for women existed on a spectrum from genuine reform to limited half-measures.\n\n• Statement 1 — Correct: The Child Marriage Restraint Act (1929) is named the 'Sarda Act' after Harbilas Sarda, who introduced it in the Central Legislative Assembly. It set minimum marriage ages at 14 for girls and 18 for boys.\n• Statement 2 — Incorrect: The Hindu Women's Right to Property Act (1937) gave widows a 'limited estate' — they inherited but could not sell or permanently alienate the property. Full ownership (abolition of limited estate) came only with the Hindu Succession Act (1956).\n• Statement 3 — Correct: The Age of Consent controversy (1891) split the reform camp, with Ranade supporting and Tilak opposing colonial legislative interference in Hindu social customs — a classic tension in social reform history.\n• Statement 4 — Incorrect: Ishwar Chandra Vidyasagar's sustained petitioning was the direct cause of the Hindu Widows' Remarriage Act (1856). It was emphatically not a purely colonial initiative.\n\nValue Addition:\n• AIWC played a significant role in advocating for the Sarda Act.\n• The 1937 Act's 'limited estate' concept was a compromise reflecting resistance from conservative Hindu opinion.\n• Vidyasagar submitted a petition with over 1,000 signatures to the colonial government demanding widows' remarriage rights."
+    },
+    "hi": {
+      "display_text": "औपनिवेशिक काल के दौरान महिलाओं के अधिकारों से संबंधित विधायी सुधारों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. बाल विवाह प्रतिबंध अधिनियम (1929) को लोकप्रिय रूप से 'सारदा अधिनियम' कहा जाता है क्योंकि इसे हरबिलास सारदा ने, जो केंद्रीय विधायी सभा के एक राष्ट्रवादी सदस्य थे, समर्थित किया था।\n2. हिंदू महिला संपत्ति अधिकार अधिनियम (1937) ने हिंदू विधवाओं को पुरुष वारिसों के समान पूर्ण स्वामित्व अधिकार प्रदान किए, 'सीमित संपत्ति' की अवधारणा को समाप्त करते हुए और पूर्ण विक्रय अधिकार प्रदान करते हुए।\n3. सम्मति आयु अधिनियम (1891), जिसने लड़कियों के विवाह के लिए न्यूनतम सहमति आयु 10 से बढ़ाकर 12 की, ने एक उल्लेखनीय सार्वजनिक बहस उत्पन्न की जिसमें महादेव गोविंद रानाडे जैसे सुधारकों ने इस कानून का समर्थन किया जबकि बाल गंगाधर तिलक ने इसे हिंदू सामाजिक रीति-रिवाजों में औपनिवेशिक हस्तक्षेप के रूप में विरोध किया।\n4. हिंदू विधवाओं के पुनर्विवाह अधिनियम (1856) मुख्य रूप से एक औपनिवेशिक प्रशासनिक पहल थी जिसके पीछे भारतीय सामाजिक सुधार agitation का कोई महत्वपूर्ण पूर्ववर्ती नहीं था।\n\nउपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "बाल विवाह प्रतिबंध अधिनियम (1929) — जिसे सारदा अधिनियम के नाम से भी जाना जाता है — इसका नाम हरबिलास सारदा के नाम पर रखा गया था, जो केंद्रीय विधायी सभा के एक राष्ट्रवादी सदस्य थे और जिन्होंने इस कानून का समर्थन किया था।",
+          "verdict": "सही है",
+          "reason": "हरबिलास सारदा वास्तव में केंद्रीय विधायी सभा के सदस्य थे जिन्होंने बाल विवाह प्रतिबंध अधिनियम पेश किया और उसका समर्थन किया — इस अधिनियम का लोकप्रिय नाम सीधे उन्हीं से लिया गया है।"
+        },
+        {
+          "statement": "हिंदू महिला संपत्ति अधिकार अधिनियम (1937) ने हिंदू विधवाओं को पुरुष वारिसों के समान पूर्ण स्वामित्व अधिकार (स्त्रीधन) प्रदान किए, जिससे 'सीमित संपत्ति' की अवधारणा समाप्त हो गई।",
+          "verdict": "गलत है",
+          "reason": "1937 का अधिनियम विधवाओं को 'सीमित संपत्ति' देता था — पूर्ण स्वामित्व नहीं। विधवा संपत्ति विरासत में पाती थी लेकिन उसे बेच या स्थायी रूप से हस्तांतरित नहीं कर सकती थी; पूर्ण स्वामित्व अधिकार केवल हिंदू उत्तराधिकार अधिनियम (1956) के साथ आया जिसने सीमित संपत्ति की अवधारणा को समाप्त किया।"
+        },
+        {
+          "statement": "सम्मति आयु अधिनियम (1891), जिसने लड़कियों के विवाह के लिए सहमति की आयु 10 से बढ़ाकर 12 की, इसके पहले बाल गंगाधर तिलक के विरोध और रानाडे के समर्थन से जुड़ी सतत सामाजिक सुधार agitation थी।",
+          "verdict": "सही है",
+          "reason": "सम्मति आयु अधिनियम (1891) ने महत्वपूर्ण बहस उत्पन्न की — महादेव गोविंद रानाडे जैसे सुधारकों ने इसका समर्थन किया जबकि तिलक ने हिंदू सामाजिक प्रथाओं में औपनिवेशिक हस्तक्षेप का विरोध किया, जो सामाजिक सुधार और सांस्कृतिक राष्ट्रवाद के बीच documented तनाव था।"
+        },
+        {
+          "statement": "हिंदू विधवाओं के पुनर्विवाह अधिनियम (1856) मुख्य रूप से एक औपनिवेशिक प्रशासनिक पहल थी जिसके पीछे भारतीय सामाजिक सुधार agitation का कोई महत्वपूर्ण पूर्ववर्ती नहीं था।",
+          "verdict": "गलत है",
+          "reason": "1856 का अधिनियम ईश्वर चंद्र विद्यासागर के सतत अभियान से पहले और उसके द्वारा प्रोत्साहित था — जिसमें औपनिवेशिक सरकार को याचिकाएं भी शामिल थीं। यह पूरी तरह से औपनिवेशिक पहल नहीं था; विद्यासागर का सामाजिक सुधार सक्रियता इसका प्रत्यक्ष उत्प्रेरक था।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल तीन' भ्रमित करने वाला है क्योंकि जो छात्र कथन 4 को गलत (विद्यासागर की भूमिका जानते हुए) सही पहचानते हैं लेकिन कथन 2 को गलत 'सीमित संपत्ति' अवधारणा न जानने के कारण सही मान लेते हैं, वे तीन सही कथन गिनेंगे।",
+      "elimination_logic": [
+        "कथन 1: हरबिलास सारदा और सारदा अधिनियम (1929) — सही मेल, स्थापित तथ्य।",
+        "कथन 2: 1937 का अधिनियम 'सीमित संपत्ति' देता था, पूर्ण स्वामित्व नहीं — कथन पूर्ण स्वामित्व का दावा करता है, जो गलत है।",
+        "कथन 3: रानाडे-तिलक विभाजन सम्मति आयु अधिनियम (1891) पर documented है — सही।",
+        "कथन 4: विद्यासागर का अभियान 1856 अधिनियम का प्रत्यक्ष उत्प्रेरक था — यह पूरी तरह से औपनिवेशिक पहल नहीं थी; गलत।",
+        "दो कथन (1 और 3) सही; दो (2 और 4) गलत — उत्तर है (b) केवल दो।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'पूर्ण स्वामित्व' शब्द का उपयोग 1937 अधिनियम की वास्तविक 'सीमित संपत्ति' प्रावधान के स्थान पर किया गया है — यह एक entity-swap है जो दिए गए अधिकार के कानूनी स्वरूप को लक्षित करता है। जो छात्र इसे एक संपत्ति अधिकार अधिनियम जानते हैं लेकिन अधिकारों की प्रकृति नहीं जानते, वे गलत कथन को सही मान लेंगे।",
+      "final_explanation": "औपनिवेशिक काल के दौरान महिलाओं के लिए विधायी सुधार वास्तविक सुधार से लेकर सीमित आधे उपायों तक के स्पेक्ट्रम पर मौजूद थे।\n\n• कथन 1 — सही: बाल विवाह प्रतिबंध अधिनियम (1929) को 'सारदा अधिनियम' कहा जाता है क्योंकि इसे हरबिलास सारदा ने केंद्रीय विधायी सभा में पेश किया था। इसने लड़कियों के लिए न्यूनतम विवाह आयु 14 और लड़कों के लिए 18 निर्धारित की।\n• कथन 2 — गलत: हिंदू महिला संपत्ति अधिकार अधिनियम (1937) ने विधवाओं को 'सीमित संपत्ति' दी — वे विरासत में पाती थीं लेकिन संपत्ति को बेच या स्थायी रूप से हस्तांतरित नहीं कर सकती थीं। पूर्ण स्वामित्व (सीमित संपत्ति की समाप्ति) केवल हिंदू उत्तराधिकार अधिनियम (1956) के साथ आया।\n• कथन 3 — सही: सम्मति आयु विवाद (1891) ने सुधारकों को विभाजित किया, रानाडे ने समर्थन किया और तिलक ने हिंदू सामाजिक रीति-रिवाजों में औपनिवेशिक विधायी हस्तक्षेप का विरोध किया — सामाजिक सुधार इतिहास में एक क्लासिक तनाव।\n• कथन 4 — गलत: ईश्वर चंद्र विद्यासागर की सतत याचिका हिंदू विधवाओं के पुनर्विवाह अधिनियम (1856) का प्रत्यक्ष कारण थी। यह पूरी तरह से औपनिवेशिक पहल नहीं थी।\n\nमूल्यवर्धन:\n• AIWC ने सारदा अधिनियम के समर्थन में महत्वपूर्ण भूमिका निभाई।\n• 1937 अधिनियम की 'सीमित संपत्ति' अवधारणा एक समझौता थी जो रूढ़िवादी हिंदू मत से प्रतिरोध को दर्शाती है।\n• विद्यासागर ने विधवाओं के पुनर्विवाह अधिकारों की मांग करते हुए औपनिवेशिक सरकार को 1,000 से अधिक हस्ताक्षरों वाली याचिका प्रस्तुत की।"
+    }
+  },
+  {
+    "uuid": "45d22974-466c-4ced-830e-16564dd2a6ad",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Begum Hazrat Mahal and Aruna Asaf Ali: Women Leadership Across Different Phases",
+        "Indian National Army (INA) and the Rani of Jhansi Regiment: Gender in Armed Nationalism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Usha Mehta vs. Aruna Asaf Ali — distinct QIM contributions; Lakshmi Sahgal timeline",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I (Woman Leader)",
+          "List II (Defining Contribution)"
+        ],
+        "rows": [
+          [
+            "A. Aruna Asaf Ali",
+            "1. Commanded the Rani of Jhansi Regiment within the Indian National Army during the Second World War"
+          ],
+          [
+            "B. Usha Mehta",
+            "2. Hoisted the Indian National Congress flag at Gowalia Tank, Bombay, on 9 August 1942 as senior Congress leaders were arrested"
+          ],
+          [
+            "C. Captain Lakshmi Sahgal",
+            "3. Led the resistance against British forces in the Awadh region during the 1857 uprising after her husband was sent into exile"
+          ],
+          [
+            "D. Begum Hazrat Mahal",
+            "4. Operated a clandestine nationalist radio station (Congress Radio) during the Quit India Movement to broadcast news and political appeals"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-1, B-4, C-2, D-3\n(c) A-2, B-4, C-1, D-3\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because it correctly matches Aruna Asaf Ali with the flag-hoisting but then swaps Usha Mehta's and Lakshmi Sahgal's contributions, exploiting uncertainty about which QIM figure ran the underground radio.",
+      "elimination_logic": [
+        "Anchor on Aruna Asaf Ali: she hoisted the INC flag at Gowalia Tank on 9 August 1942 — matches with 2.",
+        "Anchor on Usha Mehta: she ran the Congress Radio (underground nationalist radio) during QIM — matches with 4.",
+        "Anchor on Lakshmi Sahgal: she commanded the Rani of Jhansi Regiment within the INA — matches with 1.",
+        "Anchor on Begum Hazrat Mahal: she led the 1857 resistance in Awadh/Lucknow after her husband Wajid Ali Shah was exiled — matches with 3; correct answer is A-2, B-4, C-1, D-3 → option (c)."
+      ],
+      "upsc_trap_explanation": "The Aruna Asaf Ali vs. Usha Mehta confusion is the core trap — both were central to QIM 1942 but through different modes. Students who associate QIM with Aruna Asaf Ali may credit her with the underground radio rather than Usha Mehta, leading to a wrong matching of both B and C.",
+      "final_explanation": "This question maps four women leaders to their specific defining acts — the precision of which woman did what is a classic UPSC trap zone.\n\nCorrect matches: A-2, B-4, C-1, D-3.\n\n• A (Aruna Asaf Ali) — 2 (Hoisted INC flag at Gowalia Tank, Bombay, 9 August 1942): This is the iconic image of the Quit India Movement's launch — done as senior Congress leaders were being arrested simultaneously.\n• B (Usha Mehta) — 4 (Operated the Congress Radio, an underground nationalist radio station during QIM): Mehta broadcast nationalist news and Congress appeals from a secret location; her contribution is distinct from Aruna Asaf Ali's public act of defiance.\n• C (Captain Lakshmi Sahgal) — 1 (Commanded the Rani of Jhansi Regiment within the Indian National Army, 1943): Her wartime role is examined separately from her 2002 Presidential candidacy — both are tested facts.\n• D (Begum Hazrat Mahal) — 3 (Led resistance against British forces in Awadh during the 1857 uprising): After her husband Wajid Ali Shah was exiled, she led Lucknow's resistance during 1857 — predating the formal freedom movement.\n\nValue Addition:\n• Usha Mehta was tried and imprisoned; released in 1946.\n• Begum Hazrat Mahal refused the British offer of amnesty and died in exile in Nepal (1879).\n• The Aruna Asaf Ali-Usha Mehta distinction is one of the most frequently tested 'pair confusions' in UPSC prelims relating to 1942."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I (महिला नेता)",
+          "सूची II (निर्णायक योगदान)"
+        ],
+        "rows": [
+          [
+            "A. अरुणा आसफ़ अली",
+            "1. द्वितीय विश्व युद्ध के दौरान भारतीय राष्ट्रीय सेना के अंतर्गत रानी झांसी रेजिमेंट का नेतृत्व किया"
+          ],
+          [
+            "B. उषा मेहता",
+            "2. 9 अगस्त 1942 को गोवालिया टैंक, बॉम्बे में भारतीय राष्ट्रीय कांग्रेस का झंडा फहराया जब वरिष्ठ कांग्रेस नेता गिरफ्तार किए जा रहे थे"
+          ],
+          [
+            "C. कैप्टन लक्ष्मी सहगल",
+            "3. 1857 के विद्रोह के दौरान अवध क्षेत्र में ब्रिटिश सेनाओं के खिलाफ प्रतिरोध का नेतृत्व किया जब उनके पति को निर्वासित किया गया"
+          ],
+          [
+            "D. बेगम हज़रत महल",
+            "4. क़्विट इंडिया मूवमेंट के दौरान एक गुप्त राष्ट्रवादी रेडियो स्टेशन (कांग्रेस रेडियो) चलाया, जिसमें समाचार और राजनीतिक आह्वान प्रसारित किए गए"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-1, B-4, C-2, D-3\n(c) A-2, B-4, C-1, D-3\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "(a) विकल्प धोखा देने वाला है क्योंकि यह अरुणा आसफ़ अली को झंडा फहराने से सही जोड़ता है लेकिन फिर उषा मेहता और लक्ष्मी सहगल के योगदानों को बदल देता है, जिससे यह अस्पष्ट हो जाता है कि कौन सी QIM शख्सियत भूमिगत रेडियो चलाती थी।",
+      "elimination_logic": [
+        "अरुणा आसफ़ अली पर आधार: उन्होंने 9 अगस्त 1942 को गोवालिया टैंक पर कांग्रेस का झंडा फहराया — 2 से मेल खाता है।",
+        "उषा मेहता पर आधार: उन्होंने क़्विट इंडिया मूवमेंट के दौरान कांग्रेस रेडियो (भूमिगत राष्ट्रवादी रेडियो) चलाया — 4 से मेल खाता है।",
+        "लक्ष्मी सहगल पर आधार: उन्होंने भारतीय राष्ट्रीय सेना के अंतर्गत रानी झांसी रेजिमेंट का नेतृत्व किया — 1 से मेल खाता है।",
+        "बेगम हज़रत महल पर आधार: उनके पति वाजिद अली शाह के निर्वासन के बाद उन्होंने 1857 के विद्रोह में अवध/लखनऊ में प्रतिरोध का नेतृत्व किया — 3 से मेल खाता है; सही उत्तर A-2, B-4, C-1, D-3 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "अरुणा आसफ़ अली और उषा मेहता के बीच भ्रम मुख्य जाल है — दोनों क़्विट इंडिया मूवमेंट 1942 के केंद्र में थीं लेकिन अलग-अलग तरीकों से। जो छात्र QIM को अरुणा आसफ़ अली से जोड़ते हैं, वे भूमिगत रेडियो के लिए उषा मेहता की बजाय उन्हें श्रेय दे सकते हैं, जिससे B और C दोनों का गलत मिलान हो जाता है।",
+      "final_explanation": "यह प्रश्न चार महिला नेताओं को उनके विशिष्ट निर्णायक कार्यों से जोड़ता है — यह जानना कि किस महिला ने क्या किया, UPSC का क्लासिक जाल क्षेत्र है।\n\nसही मिलान: A-2, B-4, C-1, D-3।\n\n• A (अरुणा आसफ़ अली) — 2 (9 अगस्त 1942 को गोवालिया टैंक, बॉम्बे में कांग्रेस का झंडा फहराया): यह क़्विट इंडिया मूवमेंट की शुरुआत की प्रतिष्ठित छवि है — जब वरिष्ठ कांग्रेस नेता एक साथ गिरफ्तार किए जा रहे थे।\n• B (उषा मेहता) — 4 (क़्विट इंडिया मूवमेंट के दौरान कांग्रेस रेडियो, एक भूमिगत राष्ट्रवादी रेडियो स्टेशन चलाया): मेहता ने गुप्त स्थान से राष्ट्रवादी समाचार और कांग्रेस के आह्वान प्रसारित किए; उनका योगदान अरुणा आसफ़ अली के सार्वजनिक विरोध से अलग है।\n• C (कैप्टन लक्ष्मी सहगल) — 1 (भारतीय राष्ट्रीय सेना के अंतर्गत रानी झांसी रेजिमेंट का नेतृत्व किया, 1943): उनका युद्धकालीन भूमिका 2002 के राष्ट्रपति पद के उम्मीदवार होने से अलग जाँची जाती है — दोनों तथ्य परीक्षा में आते हैं।\n• D (बेगम हज़रत महल) — 3 (1857 के विद्रोह के दौरान अवध क्षेत्र में ब्रिटिश सेनाओं के खिलाफ प्रतिरोध का नेतृत्व किया): उनके पति वाजिद अली शाह के निर्वासन के बाद उन्होंने लखनऊ के प्रतिरोध का नेतृत्व किया — जो औपचारिक स्वतंत्रता आंदोलन से पहले की घटना है।\n\nमूल्यवर्धन:\n• उषा मेहता को मुकदमा चलाया गया और जेल में रखा गया; 1946 में रिहा हुईं।\n• बेगम हज़रत महल ने ब्रिटिश क्षमादान प्रस्ताव को अस्वीकार किया और नेपाल में निर्वासन में मृत्यु हो गई (1879)।\n• अरुणा आसफ़ अली-उषा मेहता का भेद UPSC प्रारंभिक परीक्षा में 1942 से संबंधित सबसे अधिक परीक्षण किए जाने वाले 'जोड़ी भ्रम' में से एक है।"
+    }
+  },
+  {
+    "uuid": "ccb704bf-9a1d-441a-b194-d2b55a0a43bc",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Women's Political Mobilization through Civil Disobedience Movement (1930–34)",
+        "Gandhi's Ideology on Women's Role: Empowerment vs. Instrumentalism Debate"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Gandhi's constructive programme — domestic-adjacent roles and their ideological implications",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A historian examining Gandhi's approach to women's participation in the nationalist movement observes that while Gandhi deliberately included women in activities such as spinning, weaving, picketing, and social reform campaigns, he consistently justified their participation by invoking qualities like sacrifice, moral purity, and endurance — virtues traditionally attributed to womanhood in the prevailing social order. The historian notes that these roles, while politically significant, remained largely adjacent to domestic and nurturing labour.\n\nWhich of the following most accurately characterises the ideological implication of the pattern described?\n\n(a) Gandhi's approach was unambiguously emancipatory because it brought millions of women into direct political action for the first time, regardless of the moral justifications offered for their inclusion\n(b) Gandhi explicitly stated that women should confine themselves to domestic-adjacent roles in the nationalist movement, reflecting a deliberate patriarchal restriction that contradicted his public rhetoric of equality\n(c) The constructive programme assigned identical roles to men and women within the nationalist movement, and the application of feminine virtue language was purely rhetorical without any practical effect on the gendered division of nationalist labour\n(d) By grounding women's participation in gendered virtue rather than rights-based equality, Gandhi simultaneously opened political space for women and reinforced the expectation that women's legitimate contribution must be filtered through traditionally feminine attributes — an ideological ambivalence critiqued by feminist historians",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it sounds like a balanced critique — acknowledging both emancipatory and limiting aspects — but overstates by claiming Gandhi explicitly stated women should confine themselves to domestic roles, which he did not; he framed domestic-adjacent roles as dignified moral choices rather than explicit confinements.",
+      "elimination_logic": [
+        "The scenario describes women assigned to spinning, weaving, and social reform — activities adjacent to domestic labour, justified through feminine virtues of sacrifice and purity.",
+        "Eliminate (a): This overstates the emancipatory reading — it ignores the feminist critique that the justification reinscribed gendered roles.",
+        "Eliminate (b): Gandhi did not explicitly state women should remain in domestic roles — he framed the constructive programme as morally dignified, not explicitly confining.",
+        "Eliminate (c): Claiming constructive programme roles were identical to male roles is factually incorrect — women were predominantly assigned spinning, weaving, and social reform while men led satyagraha operations.",
+        "Option (d) correctly identifies the ideological ambivalence — justification through feminine virtues simultaneously enabled participation and reinforced gendered role expectations."
+      ],
+      "upsc_trap_explanation": "Option (b) overstates Gandhi's position by adding an explicit attribution ('stated women should confine themselves') that distorts his actual ideology. Gandhi framed roles through virtues, not explicit prohibitions — students who see a critical perspective in (b) may not notice the distortion.",
+      "final_explanation": "Gandhi's constructive programme assigned women roles in spinning, weaving, and social reform — activities that were adjacent to domestic labour but carried a new political dignity through their nationalist framing.\n\nThe scenario maps to the feminist historiographical debate about Gandhi's ideology: his inclusion was real and unprecedented in scale, but the ideological justification (feminine virtues of sacrifice, purity, endurance) inscribed gendered expectations even as it opened political space.\n\n• Option (a) — Incorrect: This ignores the constraining dimension — the feminist critique is precisely that justifying participation through gendered attributes reinforces rather than challenges the patriarchal framework.\n• Option (b) — Incorrect: Gandhi did not explicitly state women should confine themselves to domestic roles — he positioned constructive programme roles as morally elevated choices, not explicit prohibitions on other activities. This option overstates.\n• Option (c) — Incorrect: Women and men were assigned different roles within the movement — claiming identical roles misrepresents the gendered division within the constructive programme.\n• Option (d) — Correct: The constructive programme enabled mass female participation while simultaneously reinforcing gendered expectations through the justificatory language of feminine virtues — an ideological ambivalence that feminist historians like Madhu Kishwar have documented.\n\nValue Addition:\n• Kamaladevi Chattopadhyay pushed Gandhi to include women in the Salt March — his initial plan excluded women from the March itself.\n• The spinning wheel (charkha) became both a symbol of national self-reliance and an implicit domestication of women's political participation.\n• Periyar and Ambedkar's contrast with Gandhi on this point is a recurring UPSC analytical theme."
+    },
+    "hi": {
+      "display_text": "एक इतिहासकार गांधी के दृष्टिकोण का अध्ययन करते हुए पाता है कि गांधी ने जानबूझकर महिलाओं को कातना, बुनना, पिकेटिंग और सामाजिक सुधार अभियानों जैसे कार्यों में शामिल किया, परन्तु वे लगातार उनके भागीदारी को बलिदान, नैतिक पवित्रता और सहनशीलता जैसे गुणों के माध्यम से न्यायसंगत ठहराते थे — जो उस समय की सामाजिक व्यवस्था में स्त्रीत्व से जुड़े पारंपरिक गुण थे। इतिहासकार यह भी नोट करता है कि ये भूमिकाएँ, यद्यपि राजनीतिक रूप से महत्वपूर्ण थीं, मुख्यतः घरेलू और पालन-पोषण श्रम के निकटवर्ती ही रहीं।\n\nनिम्नलिखित में से कौन-सा सबसे सटीक रूप से इस वर्णित पैटर्न के वैचारिक निहितार्थ को दर्शाता है?\n\n(a) गांधी का दृष्टिकोण स्पष्ट रूप से मुक्ति देने वाला था क्योंकि उसने पहली बार लाखों महिलाओं को सीधे राजनीतिक क्रिया में शामिल किया, भले ही उनके समावेशन के लिए नैतिक औचित्य प्रस्तुत किए गए हों\n(b) गांधी ने स्पष्ट रूप से कहा कि महिलाओं को राष्ट्रीय आंदोलन में घरेलू निकटवर्ती भूमिकाओं तक सीमित रहना चाहिए, जो उनकी सार्वजनिक समानता की वकालत के विपरीत एक जानबूझकर पितृसत्तात्मक प्रतिबंध था\n(c) रचनात्मक कार्यक्रम ने पुरुषों और महिलाओं को समान भूमिकाएँ दीं, और स्त्रीलिंग गुणों की भाषा केवल काव्यात्मक थी जिसका राष्ट्रीय श्रम के लिंग आधारित विभाजन पर कोई व्यावहारिक प्रभाव नहीं था\n(d) महिलाओं की भागीदारी को लिंग आधारित गुणों के माध्यम से स्थापित करके, गांधी ने एक ओर महिलाओं के लिए राजनीतिक स्थान खोला और दूसरी ओर यह अपेक्षा भी मजबूत की कि महिलाओं का वैध योगदान पारंपरिक स्त्रीलिंग गुणों के माध्यम से ही स्वीकार्य होगा — यह वैचारिक द्वैत नारीवादी इतिहासकारों द्वारा आलोचित है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it sounds like a balanced critique — acknowledging both emancipatory and limiting aspects — but overstates by claiming Gandhi explicitly stated women should confine themselves to domestic roles, which he did not; he framed domestic-adjacent roles as dignified moral choices rather than explicit confinements.",
+      "elimination_logic": [
+        "परिदृश्य में महिलाओं को कातना, बुनना और सामाजिक सुधार के कार्य सौंपे गए हैं — ये घरेलू श्रम के निकटवर्ती कार्य हैं, जिन्हें बलिदान और पवित्रता जैसी स्त्रीलिंग गुणों के माध्यम से न्यायसंगत ठहराया गया है।",
+        "(a) को निरस्त करें — यह मुक्ति की व्याख्या को अधिक बढ़ा-चढ़ाकर प्रस्तुत करता है — यह नारीवादी आलोचना को नजरअंदाज करता है कि यह न्यायसंगति लिंग आधारित भूमिकाओं को पुनः स्थापित करती है।",
+        "(b) को निरस्त करें — गांधी ने स्पष्ट रूप से यह नहीं कहा कि महिलाओं को घरेलू भूमिकाओं तक सीमित रहना चाहिए — उन्होंने रचनात्मक कार्यक्रम को नैतिक रूप से गरिमामय बताया, न कि स्पष्ट रूप से सीमित करने वाला।",
+        "(c) को निरस्त करें — यह दावा कि रचनात्मक कार्यक्रम में पुरुषों और महिलाओं की भूमिकाएँ समान थीं, तथ्यात्मक रूप से गलत है — महिलाओं को मुख्यतः कातना, बुनना और सामाजिक सुधार के कार्य दिए गए जबकि पुरुष सत्याग्रह संचालन में अग्रणी थे।",
+        "(d) सही विकल्प है — यह वैचारिक द्वैत को सही रूप से पहचानता है — स्त्रीलिंग गुणों के माध्यम से न्यायसंगति ने भागीदारी को सक्षम किया और साथ ही लिंग आधारित भूमिका अपेक्षाओं को मजबूत किया।"
+      ],
+      "upsc_trap_explanation": "(b) विकल्प गांधी की स्थिति को अधिक बढ़ा-चढ़ाकर प्रस्तुत करता है क्योंकि इसमें एक स्पष्ट कथन जोड़ा गया है ('महिलाओं को सीमित रहना चाहिए') जो उनकी वास्तविक विचारधारा को विकृत करता है। गांधी ने भूमिकाओं को गुणों के माध्यम से प्रस्तुत किया, न कि स्पष्ट प्रतिबंधों के द्वारा — जो छात्र (b) में आलोचनात्मक दृष्टिकोण देखते हैं, वे इस विकृति को नहीं पहचान पाते।",
+      "final_explanation": "गांधी के रचनात्मक कार्यक्रम में महिलाओं को कातना, बुनना और सामाजिक सुधार के कार्य सौंपे गए — ये कार्य घरेलू श्रम के निकटवर्ती थे लेकिन उनके राष्ट्रवादी संदर्भ के कारण एक नई राजनीतिक गरिमा प्राप्त की।\n\nयह परिदृश्य नारीवादी इतिहासलेखन के उस विवाद को दर्शाता है जिसमें गांधी की विचारधारा की चर्चा होती है: उनकी समावेशन नीति वास्तविक और अभूतपूर्व थी, लेकिन जो वैचारिक न्यायसंगति (बलिदान, पवित्रता, सहनशीलता जैसे स्त्रीलिंग गुण) दी गई, उसने लिंग आधारित अपेक्षाओं को पुनः स्थापित किया जबकि राजनीतिक स्थान भी खोला।\n\n• विकल्प (a) — गलत: यह सीमित करने वाले पहलू को नजरअंदाज करता है — नारीवादी आलोचना यह है कि लिंग आधारित गुणों के माध्यम से भागीदारी का औचित्य पितृसत्तात्मक ढांचे को चुनौती देने के बजाय उसे मजबूत करता है।\n• विकल्प (b) — गलत: गांधी ने स्पष्ट रूप से यह नहीं कहा कि महिलाओं को घरेलू भूमिकाओं तक सीमित रहना चाहिए — उन्होंने रचनात्मक कार्यक्रम की भूमिकाओं को नैतिक रूप से उच्च स्थान दिया, न कि अन्य गतिविधियों पर स्पष्ट प्रतिबंध लगाया। यह विकल्प अधिक बढ़ा-चढ़ाकर प्रस्तुत करता है।\n• विकल्प (c) — गलत: आंदोलन में पुरुषों और महिलाओं को अलग-अलग भूमिकाएँ दी गईं — समान भूमिकाएँ होने का दावा रचनात्मक कार्यक्रम में लिंग आधारित विभाजन को गलत प्रस्तुत करता है।\n• विकल्प (d) — सही: रचनात्मक कार्यक्रम ने महिलाओं की व्यापक भागीदारी को सक्षम किया और साथ ही स्त्रीलिंग गुणों के माध्यम से लिंग आधारित अपेक्षाओं को मजबूत किया — यह वैचारिक द्वैत है जिसे नारीवादी इतिहासकार जैसे मधु किश्वर ने दस्तावेजीकृत किया है।\n\nमूल्यवर्धन:\n• कमलादेवी चट्टोपाध्याय ने गांधी को नमक सत्याग्रह में महिलाओं को शामिल करने के लिए प्रेरित किया — उनकी प्रारंभिक योजना में महिलाएं मार्च से बाहर थीं।\n• चरखा राष्ट्रीय आत्मनिर्भरता का प्रतीक बन गया और महिलाओं की राजनीतिक भागीदारी का एक अप्रत्यक्ष घरेलूकरण भी।\n• पेरियार और अंबेडकर का गांधी से इस विषय पर विरोधाभास UPSC के विश्लेषणात्मक विषयों में बार-बार आता है।"
+    }
+  },
+  {
+    "uuid": "874871dc-3098-4431-a1b9-3caa0edbde1f",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Rani Gaidinliu and Women's Leadership in Regional/Tribal Nationalist Movements"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Rani Gaidinliu — Heraka movement name and tribal nationalist context",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The anti-colonial resistance led by the young Naga leader who was later honoured with the title 'Rani' by Jawaharlal Nehru was associated with which of the following named movements?\n\n(a) Heraka movement\n(b) Zeliangrong movement\n(c) Naga National Movement\n(d) Tipperah Hill uprising",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because 'Zeliangrong' is a real Naga ethnic grouping associated with Gaidinliu's community, making it sound like the correct name for the movement rather than the Heraka movement.",
+      "elimination_logic": [
+        "Gaidinliu's religio-cultural anti-colonial movement is specifically named the 'Heraka' movement — not the Zeliangrong movement (which refers to an ethnic community grouping).",
+        "Eliminate (b): Zeliangrong refers to a Naga community cluster (Zeme, Liangmei, Rongmei), not the name of the movement.",
+        "Eliminate (c): 'Naga National Movement' is a later separatist political category, not the name of Gaidinliu's 1929–30 religio-cultural movement.",
+        "Eliminate (d): 'Tipperah' refers to a different region (Tripura) — geographic-swap distractor.",
+        "Option (a) correctly identifies the Heraka movement as the name of Gaidinliu's anti-colonial resistance."
+      ],
+      "upsc_trap_explanation": "The entity-swap substitutes 'Zeliangrong' — a real term from Gaidinliu's ethnic context — for the specific name of her movement (Heraka). Students who know she was from the Zeliangrong community but not the movement's distinct name will select (b) as the most contextually plausible option.",
+      "final_explanation": "Rani Gaidinliu's resistance is examined both for its specific details and for what it reveals about the regional and tribal dimensions of Indian nationalism.\n\n• Option (a) — Correct: The Heraka movement was a religio-cultural revival and anti-colonial resistance led by Gaidinliu, beginning around 1929–30 in the Naga Hills. It combined indigenous religious practices with nationalist resistance against British authority.\n• Option (b) — Incorrect: 'Zeliangrong' refers to the ethnic community cluster (Zeme, Liangmei, Rongmei Naga peoples) to which Gaidinliu belonged — it is not the name of her movement.\n• Option (c) — Incorrect: 'Naga National Movement' is a later political framing associated with Naga separatism under Phizo and others — distinct from Gaidinliu's 1930s anti-colonial resistance.\n• Option (d) — Incorrect: 'Tipperah' refers to the Tripura hill region — a geographic-swap distractor unrelated to the Naga Hills context.\n\nValue Addition:\n• Gaidinliu was arrested in 1932 at approximately age 16 and sentenced to life imprisonment.\n• Nehru conferred the title 'Rani' on her during a prison visit; she was released in 1947.\n• Post-independence, Gaidinliu's relationship with mainstream Indian nationalism became complex as she supported Naga cultural identity against the Naga separatist movement led by Phizo."
+    },
+    "hi": {
+      "display_text": "उस युवा नागा नेता द्वारा नेतृत्व किए गए औपनिवेशिक विरोध से संबंधित निम्नलिखित में से कौन-सा नामित आंदोलन था, जिन्हें बाद में जवाहरलाल नेहरू ने 'रानी' की उपाधि से सम्मानित किया?\n\n(a) हेरका आंदोलन\n(b) ज़ेलियांगरॉन्ग आंदोलन\n(c) नागा राष्ट्रीय आंदोलन\n(d) टिप्पेराह हिल विद्रोह",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि 'Zeliangrong' गाइडिनलियू के समुदाय से जुड़ी एक वास्तविक नागा जातीय समूह है, जो इसे आंदोलन के सही नाम के रूप में प्रस्तुत करता है बजाय Heraka आंदोलन के।",
+      "elimination_logic": [
+        "गाइडिनलियू का धार्मिक-सांस्कृतिक औपनिवेशिक विरोध आंदोलन विशेष रूप से 'Heraka' आंदोलन के नाम से जाना जाता है — न कि Zeliangrong आंदोलन के नाम से (जो एक जातीय समुदाय समूह को संदर्भित करता है)।",
+        "(b) को निरस्त करें: Zeliangrong नागा समुदाय समूह (Zeme, Liangmei, Rongmei) को संदर्भित करता है, आंदोलन का नाम नहीं।",
+        "(c) को निरस्त करें: 'Naga National Movement' बाद का अलगाववादी राजनीतिक वर्गीकरण है, गाइडिनलियू के 1929–30 के धार्मिक-सांस्कृतिक आंदोलन का नाम नहीं।",
+        "(d) को निरस्त करें: 'Tipperah' एक अलग क्षेत्र (त्रिपुरा) को संदर्भित करता है — भौगोलिक-स्पैप भ्रम।",
+        "(a) विकल्प सही है — Heraka आंदोलन गाइडिनलियू के औपनिवेशिक विरोध का नाम है।"
+      ],
+      "upsc_trap_explanation": "यह entity-swap 'Zeliangrong' — जो गाइडिनलियू के जातीय संदर्भ से जुड़ा वास्तविक शब्द है — को उनके आंदोलन (Heraka) के विशिष्ट नाम के स्थान पर प्रस्तुत करता है। जो छात्र जानते हैं कि वह Zeliangrong समुदाय से थीं लेकिन आंदोलन का विशिष्ट नाम नहीं जानते, वे (b) को सबसे उपयुक्त विकल्प मानेंगे।",
+      "final_explanation": "रानी गाइडिनलियू के विरोध को उनके विशिष्ट विवरणों के साथ-साथ भारतीय राष्ट्रवाद के क्षेत्रीय और जनजातीय आयामों के संदर्भ में भी देखा जाता है।\n\n• विकल्प (a) — सही: Heraka आंदोलन एक धार्मिक-सांस्कृतिक पुनरुद्धार और औपनिवेशिक विरोध था, जिसका नेतृत्व गाइडिनलियू ने 1929–30 के आसपास नागा पहाड़ियों में किया। इसमें स्वदेशी धार्मिक प्रथाओं को ब्रिटिश सत्ता के खिलाफ राष्ट्रवादी प्रतिरोध के साथ जोड़ा गया था।\n• विकल्प (b) — गलत: 'Zeliangrong' गाइडिनलियू के जातीय समुदाय समूह (Zeme, Liangmei, Rongmei नागा लोग) को संदर्भित करता है — यह उनके आंदोलन का नाम नहीं है।\n• विकल्प (c) — गलत: 'Naga National Movement' बाद का राजनीतिक स्वरूप है जो फिजो और अन्य के नेतृत्व में नागा अलगाववाद से जुड़ा है — गाइडिनलियू के 1930 के दशक के औपनिवेशिक विरोध से अलग।\n• विकल्प (d) — गलत: 'Tipperah' त्रिपुरा पहाड़ी क्षेत्र को संदर्भित करता है — नागा पहाड़ियों के संदर्भ से असंबंधित भौगोलिक भ्रम।\n\nमूल्यवर्धन:\n• गाइडिनलियू को 1932 में लगभग 16 वर्ष की आयु में गिरफ्तार किया गया और आजीवन कारावास की सजा दी गई।\n• नेहरू ने जेल यात्रा के दौरान उन्हें 'रानी' की उपाधि दी; उन्हें 1947 में रिहा किया गया।\n• स्वतंत्रता के बाद, गाइडिनलियू का मुख्यधारा के भारतीय राष्ट्रवाद के साथ संबंध जटिल हो गया क्योंकि उन्होंने फिजो के नेतृत्व वाले नागा अलगाववादी आंदोलन के विरुद्ध नागा सांस्कृतिक पहचान का समर्थन किया।"
+    }
+  },
+  {
+    "uuid": "7e29e05c-79cd-43ec-8e69-db082bab742c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Women in Revolutionary and Armed Resistance: Beyond Gandhian Nonviolence",
+        "Women's Political Mobilization through Civil Disobedience Movement (1930–34)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Revolutionary women vs. Gandhian nonviolent participants — ideological categorisation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following women freedom fighters does NOT belong to the same ideological category of nationalism as the others?\n\n(a) Kamaladev Chattopadhyay\n(b) Kalpana Datta\n(c) Sarojini Naidu\n(d) Avantikabai Gokhale",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) Kamaladev Chattopadhyay is deceptive because she was a major Congress figure who pushed Gandhi to include women in the Salt March — students may associate her advocacy with a 'push' for more radical participation, confusing assertiveness with armed revolutionary ideology.",
+      "elimination_logic": [
+        "Identify the category: three women are associated with Gandhian civil disobedience or mainstream Congress activism; one is from the armed revolutionary movement.",
+        "Kamaladev Chattopadhyay: Congress activist, pushed Gandhi to include women in the Salt March — Gandhian mainstream.",
+        "Sarojini Naidu: led Dharasana salt raid, INC President — Gandhian mainstream.",
+        "Kalpana Datta: member of Surya Sen's revolutionary group, tried in Chittagong Armoury case — armed revolutionary, NOT Gandhian mainstream.",
+        "Avantikabai Gokhale: participated in CDM through picketing — Gandhian mainstream. The odd one out is Kalpana Datta."
+      ],
+      "upsc_trap_explanation": "Listing Kalpana Datta among recognisable Gandhian figures creates a conflation trap — students who know she was a woman freedom fighter but not her Chittagong revolutionary affiliation will group all four together. The odd one out requires knowing the specific ideological distinction.",
+      "final_explanation": "This question tests the ability to distinguish between women in Gandhian civil disobedience and those in the armed revolutionary movement.\n\n• Option (a) — Kamaladev Chattopadhyay: A senior Congress activist who famously persuaded Gandhi to include women in the Salt March (1930) after he initially planned to exclude them. She belongs to the Gandhian mainstream.\n• Option (b) — Kalpana Datta: The correct odd one out. She was a member of Surya Sen's Indian Republican Army (Chittagong revolutionary group), was tried in the Chittagong Armoury Raid Conspiracy Case, and was sentenced to transportation for life. Her ideological context was armed revolutionary nationalism — explicitly distinct from Gandhian nonviolence.\n• Option (c) — Sarojini Naidu: Led the Dharasana Salt Satyagraha raid (1930), served as INC President (1925), and participated in Round Table Conferences — firmly within the Gandhian-Congress mainstream.\n• Option (d) — Avantikabai Gokhale: A Bombay-based CDM participant who picketed foreign cloth and liquor shops — a classic Gandhian civil disobedience activist.\n\nValue Addition:\n• Kalpana Datta later married P.C. Joshi (General Secretary of the Communist Party of India) — her post-independence career moved toward left politics.\n• The Dharasana raid (May 1930) was reported by American journalist Webb Miller and became globally significant in publicising Gandhian nonviolent resistance.\n• The distinction between revolutionary and Gandhian women is increasingly tested in UPSC analytical questions."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित महिला स्वतंत्रता सेनानियों में से कौन-सी अन्य महिलाओं के समान राष्ट्रवाद की वैचारिक श्रेणी से संबंधित नहीं है?\n\n(a) कमलादेव चट्टोपाध्याय\n(b) कल्पना दत्ता\n(c) सरोजिनी नायडू\n(d) अवंतिकाबाई गोखले",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) कमलादेव चट्टोपाध्याय भ्रमित करने वाला है क्योंकि वह कांग्रेस की एक प्रमुख नेता थीं जिन्होंने गांधी को महिलाओं को नमक सत्याग्रह में शामिल करने के लिए प्रेरित किया — छात्र उनकी सक्रियता को सशस्त्र क्रांतिकारी विचारधारा के साथ भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "श्रेणी की पहचान करें: तीन महिलाएं गांधीवादी सविनय अवज्ञा या मुख्यधारा कांग्रेस सक्रियता से जुड़ी हैं; एक सशस्त्र क्रांतिकारी आंदोलन से है।",
+        "कमलादेव चट्टोपाध्याय: कांग्रेस कार्यकर्ता, गांधी को महिलाओं को नमक सत्याग्रह में शामिल करने के लिए प्रेरित किया — गांधीवादी मुख्यधारा।",
+        "सरोजिनी नायडू: धरासना नमक सत्याग्रह का नेतृत्व किया, कांग्रेस अध्यक्ष — गांधीवादी मुख्यधारा।",
+        "कल्पना दत्ता: सूर्य सेन के क्रांतिकारी समूह की सदस्य, चिट्टागाँव आर्मरी कांड में मुकदमा — सशस्त्र क्रांतिकारी, गांधीवादी मुख्यधारा नहीं।",
+        "अवंतिकाबाई गोखले: सविनय अवज्ञा आंदोलन में भाग लिया, पिकेटिंग की — गांधीवादी मुख्यधारा। अलग है कल्पना दत्ता।"
+      ],
+      "upsc_trap_explanation": "कल्पना दत्ता को गांधीवादी प्रमुख हस्तियों में सूचीबद्ध करना भ्रम का जाल बनाता है — जो छात्र जानते हैं कि वह महिला स्वतंत्रता सेनानी थीं लेकिन उनके चिट्टागाँव क्रांतिकारी संबंध को नहीं जानते, वे सभी चार को एक साथ जोड़ देंगे। अलग पहचान के लिए वैचारिक भेद जानना आवश्यक है।",
+      "final_explanation": "यह प्रश्न गांधीवादी सविनय अवज्ञा में महिलाओं और सशस्त्र क्रांतिकारी आंदोलन में महिलाओं के बीच भेद करने की क्षमता का परीक्षण करता है।\n\n• विकल्प (a) — कमलादेव चट्टोपाध्याय: एक वरिष्ठ कांग्रेस कार्यकर्ता जिन्होंने गांधी को नमक सत्याग्रह (1930) में महिलाओं को शामिल करने के लिए मनाया। वह गांधीवादी मुख्यधारा से हैं।\n• विकल्प (b) — कल्पना दत्ता: सही अलग विकल्प। वह सूर्य सेन की भारतीय गणराज्य सेना (चिट्टागाँव क्रांतिकारी समूह) की सदस्य थीं, चिट्टागाँव आर्मरी कांड साजिश मामले में मुकदमा हुआ और आजीवन कारावास की सजा पाई। उनका वैचारिक संदर्भ सशस्त्र क्रांतिकारी राष्ट्रवाद था — जो गांधीवादी अहिंसा से स्पष्ट रूप से अलग है।\n• विकल्प (c) — सरोजिनी नायडू: धरासना नमक सत्याग्रह (1930) का नेतृत्व किया, कांग्रेस अध्यक्ष (1925) रहीं, और राउंड टेबल सम्मेलनों में भाग लिया — गांधीवादी कांग्रेस मुख्यधारा में।\n• विकल्प (d) — अवंतिकाबाई गोखले: बॉम्बे आधारित सविनय अवज्ञा आंदोलन की प्रतिभागी, विदेशी कपड़ा और शराब की दुकानों पर पिकेटिंग की — पारंपरिक गांधीवादी सविनय अवज्ञा कार्यकर्ता।\n\nमूल्यवर्धन:\n• कल्पना दत्ता ने बाद में पी.सी. जोशी (भारतीय कम्युनिस्ट पार्टी के महासचिव) से विवाह किया — उनकी स्वतंत्रता के बाद की राजनीतिक यात्रा वामपंथ की ओर बढ़ी।\n• धरासना छापा (मई 1930) को अमेरिकी पत्रकार वेब मिलर ने रिपोर्ट किया था और यह गांधीवादी अहिंसात्मक प्रतिरोध को विश्व स्तर पर प्रसिद्ध करने में महत्वपूर्ण था।\n• क्रांतिकारी और गांधीवादी महिलाओं के बीच भेद को यूपीएससी के विश्लेषणात्मक प्रश्नों में बढ़-चढ़कर परखा जाता है।"
+    }
+  },
+  {
+    "uuid": "5ff1213e-ed05-4df1-8b7f-89867c92c41b",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Bhikaji Cama and Early Diaspora Women Nationalism",
+        "International Connections: Indian Women's Activism and Global Feminist Networks"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Bhikaji Cama — Stuttgart 1907, India House, ideological context",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Bhikaji Cama and the international dimensions of early Indian nationalism, consider the following statements:\n\n1. Bhikaji Cama was associated with the India House in London, a centre for early radical Indian nationalism that also included figures such as Shyamji Krishna Varma and V.D. Savarkar.\n2. The flag that Bhikaji Cama unfurled at the Stuttgart International Socialist Congress (1907) was identical in design to the Tricolour later adopted as India's national flag, differing only in the placement of the Ashoka Chakra.\n3. Indian women activists used participation in international forums like the International Women's Suffrage Alliance to argue that colonial Britain's denial of franchise to Indian women contradicted Britain's own domestic suffrage movement — deploying anti-colonial arguments within a global feminist framework.\n4. Bhikaji Cama's political ideology was closely aligned with the moderate wing of the Indian National Congress, sharing the gradualist constitutional approach of Gopal Krishna Gokhale rather than the radical nationalism of Bal Gangadhar Tilak.\n\nHow many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Bhikaji Cama was associated with the India House in London, a centre for early radical Indian nationalism that also included figures such as Shyamji Krishna Varma and V.D. Savarkar.",
+          "verdict": "Correct",
+          "reason": "India House in Highgate, London was established by Shyamji Krishna Varma; Cama maintained connections with its network, as did Savarkar — making this association accurate."
+        },
+        {
+          "statement": "The flag that Bhikaji Cama unfurled at the Stuttgart International Socialist Congress (1907) was identical in design to the Tricolour later adopted as India's national flag, differing only in the placement of the Ashoka Chakra.",
+          "verdict": "Incorrect",
+          "reason": "The flag Cama unfurled at Stuttgart was distinctly different from the current national flag — it had three horizontal stripes (green, saffron, and red) with a crescent and sun symbol and the inscription 'Vande Mataram,' bearing no resemblance to the current Tricolour with its Ashoka Chakra."
+        },
+        {
+          "statement": "Indian women activists used participation in international forums like the International Women's Suffrage Alliance to argue that colonial Britain's denial of franchise to Indian women contradicted Britain's own domestic suffrage movement — deploying anti-colonial arguments within a global feminist framework.",
+          "verdict": "Correct",
+          "reason": "This anti-colonial use of global feminist forums is documented — Indian women activists pointed out the contradiction of Britain championing women's suffrage domestically while denying it to colonial subjects, turning international feminist networks into anti-colonial platforms."
+        },
+        {
+          "statement": "Bhikaji Cama's political ideology was closely aligned with the moderate wing of the Indian National Congress, sharing the gradualist constitutional approach of Gopal Krishna Gokhale rather than the radical nationalism of Bal Gangadhar Tilak.",
+          "verdict": "Incorrect",
+          "reason": "Cama was associated with radical nationalism — she collaborated with Tilak's network, not Gokhale's moderate constitutionalism. Her international socialist affiliations and public flag-unfurling at Stuttgart placed her firmly in the radical, anti-imperial camp."
+        }
+      ],
+      "strong_distractor": "c — Option (c) 'Only three' is deceptive because statements 1 and 3 are clearly correct, and Statement 2's error about the flag design requires specific knowledge of what Cama's Stuttgart flag actually looked like — students may assume it was 'basically' the tricolour.",
+      "elimination_logic": [
+        "Statement 1: India House, Shyamji Krishna Varma, Savarkar, Cama — associations are documented; correct.",
+        "Statement 2: Cama's Stuttgart flag was NOT the current Tricolour — different stripes, crescent, sun, Vande Mataram inscription; incorrect.",
+        "Statement 3: Anti-colonial use of international feminist forums is documented — correct.",
+        "Statement 4: Cama was radical, affiliated with Tilak's network, not Gokhale's moderates — incorrect.",
+        "Two correct (1 and 3): answer is (b) Only two."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the 'first Indian flag abroad' association — students who know Cama hoisted a flag may assume it was essentially the current flag, without knowing its completely different design. The specific design elements (crescent, sun, Vande Mataram, different stripe colours) are the precisely tested facts.",
+      "final_explanation": "Bhikaji Cama's contributions span diaspora nationalism, international socialist forums, and the earliest attempts to bring India's independence cause to a global audience.\n\n• Statement 1 — Correct: Cama's connections with India House (Highgate, London) — founded by Shyamji Krishna Varma — placed her within the early radical nationalist emigre network that also included Savarkar.\n• Statement 2 — Incorrect: The flag Cama unfurled at Stuttgart (1907) bore no resemblance to the current national Tricolour. It had three horizontal stripes (green, saffron, red), a crescent and sun in the top stripe, and 'Vande Mataram' inscribed — an entirely different design.\n• Statement 3 — Correct: The strategic use of international feminist forums to expose Britain's colonial contradictions is documented — Indian women delegates at the IWSA pointed out that a nation championing women's suffrage at home denied it to colonial subjects.\n• Statement 4 — Incorrect: Cama was associated with radical nationalism and Tilak's network, not with Gokhale's moderate constitutionalism. Her flagrant international defiance of colonial norms was antithetical to gradualist politics.\n\nValue Addition:\n• Cama was banned from returning to India and spent most of her adult life in exile in Europe.\n• The Stuttgart flag is sometimes called India's 'first national flag' — though this claim is contested, it is the earliest documented public display of an Indian national flag at an international forum.\n• Cama's remains were brought back to India in 1936, years after her death."
+    },
+    "hi": {
+      "display_text": "भिकाजी कामा और प्रारंभिक भारतीय राष्ट्रवाद के अंतरराष्ट्रीय आयामों के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. भिकाजी कामा का लंदन के इंडिया हाउस से संबंध था, जो प्रारंभिक कट्टर भारतीय राष्ट्रवाद का केंद्र था और जिसमें श्यामजी कृष्ण वर्मा और वी.डी. सावरकर जैसे व्यक्ति भी शामिल थे।\n2. भिकाजी कामा ने स्टटगार्ट अंतरराष्ट्रीय समाजवादी कांग्रेस (1907) में जो ध्वज फहराया था, उसका डिजाइन बाद में भारत के राष्ट्रीय ध्वज के रूप में अपनाए गए तिरंगे से समान था, केवल अशोक चक्र के स्थान में अंतर था।\n3. भारतीय महिला कार्यकर्ताओं ने अंतरराष्ट्रीय मंचों जैसे अंतरराष्ट्रीय महिला मताधिकार गठबंधन में भाग लेकर तर्क दिया कि औपनिवेशिक ब्रिटेन द्वारा भारतीय महिलाओं को मताधिकार न देना ब्रिटेन के अपने घरेलू मताधिकार आंदोलन के विरोधाभास को दर्शाता है — और इस प्रकार वैश्विक नारीवादी ढांचे के भीतर औपनिवेशिक विरोधी तर्क प्रस्तुत किए।\n4. भिकाजी कामा की राजनीतिक विचारधारा भारतीय राष्ट्रीय कांग्रेस के मध्यमार्गी धड़े के साथ निकटता से मेल खाती थी, जो गोपाल कृष्ण गोखले के क्रमिक संवैधानिक दृष्टिकोण को साझा करती थी, न कि बाल गंगाधर तिलक के कट्टर राष्ट्रवाद को।\n\nउपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Bhikaji Cama was associated with the India House in London, a centre for early radical Indian nationalism that also included figures such as Shyamji Krishna Varma and V.D. Savarkar.",
+          "verdict": "सही है",
+          "reason": "लंदन के हाईगेट में स्थित इंडिया हाउस की स्थापना श्यामजी कृष्ण वर्मा ने की थी; कामा ने इसके नेटवर्क से संबंध बनाए रखे, जैसे सावरकर ने भी — इसलिए यह संबंध सही है।"
+        },
+        {
+          "statement": "The flag that Bhikaji Cama unfurled at the Stuttgart International Socialist Congress (1907) was identical in design to the Tricolour later adopted as India's national flag, differing only in the placement of the Ashoka Chakra.",
+          "verdict": "गलत है",
+          "reason": "स्टटगार्ट में कामा द्वारा फहराया गया ध्वज वर्तमान राष्ट्रीय ध्वज से पूरी तरह भिन्न था — इसमें तीन क्षैतिज पट्टियाँ (हरा, केसरिया, लाल), एक चंद्र और सूर्य का चिन्ह तथा 'वन्दे मातरम्' लिखा था, जो अशोक चक्र वाले वर्तमान तिरंगे से मेल नहीं खाता।"
+        },
+        {
+          "statement": "Indian women activists used participation in international forums like the International Women's Suffrage Alliance to argue that colonial Britain's denial of franchise to Indian women contradicted Britain's own domestic suffrage movement — deploying anti-colonial arguments within a global feminist framework.",
+          "verdict": "सही है",
+          "reason": "यह दस्तावेजीकृत है कि भारतीय महिला कार्यकर्ताओं ने वैश्विक नारीवादी मंचों का उपयोग ब्रिटेन के औपनिवेशिक विरोधी तर्क प्रस्तुत करने के लिए किया — ब्रिटेन के घरेलू मताधिकार आंदोलन के विपरीत औपनिवेशिक भारत की महिलाओं को मताधिकार न देने की विरोधाभाष को उजागर किया।"
+        },
+        {
+          "statement": "Bhikaji Cama's political ideology was closely aligned with the moderate wing of the Indian National Congress, sharing the gradualist constitutional approach of Gopal Krishna Gokhale rather than the radical nationalism of Bal Gangadhar Tilak.",
+          "verdict": "गलत है",
+          "reason": "कामा का संबंध कट्टर राष्ट्रवाद से था — वह तिलक के नेटवर्क से जुड़ी थीं, न कि गोखले के मध्यमार्गी संवैधानिक दृष्टिकोण से। उनका अंतरराष्ट्रीय समाजवादी जुड़ाव और स्टटगार्ट में सार्वजनिक ध्वज फहराना उन्हें कट्टर, साम्राज्य विरोधी शिविर में रखता है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल तीन' भ्रमित करने वाला है क्योंकि कथन 1 और 3 स्पष्ट रूप से सही हैं, और कथन 2 में ध्वज के डिजाइन की गलती के लिए कामा के स्टटगार्ट ध्वज की सटीक जानकारी आवश्यक है — छात्र मान सकते हैं कि यह मूलतः तिरंगा था।",
+      "elimination_logic": [
+        "कथन 1: इंडिया हाउस, श्यामजी कृष्ण वर्मा, सावरकर, कामा — संबंध दस्तावेजीकृत हैं; सही।",
+        "कथन 2: कामा का स्टटगार्ट ध्वज वर्तमान तिरंगा नहीं था — अलग पट्टियाँ, चंद्र, सूर्य, वन्दे मातरम् लेखन; गलत।",
+        "कथन 3: अंतरराष्ट्रीय नारीवादी मंचों का औपनिवेशिक विरोधी उपयोग दस्तावेजीकृत है — सही।",
+        "कथन 4: कामा कट्टर राष्ट्रवादी थीं, तिलक के नेटवर्क से जुड़ी थीं, गोखले के मध्यमार्गी नहीं — गलत।",
+        "दो सही (1 और 3): उत्तर है (b) केवल दो।"
+      ],
+      "upsc_trap_explanation": "कथन 2 'पहला भारतीय ध्वज विदेश में' संबंध का उपयोग करता है — जो छात्र जानते हैं कि कामा ने ध्वज फहराया था, वे मान सकते हैं कि यह मूलतः वर्तमान ध्वज था, जबकि इसका डिजाइन पूरी तरह भिन्न था। विशिष्ट डिजाइन तत्व (चंद्र, सूर्य, वन्दे मातरम्, अलग पट्टियाँ) सटीक परीक्षण तथ्य हैं।",
+      "final_explanation": "भिकाजी कामा का योगदान प्रवासी राष्ट्रवाद, अंतरराष्ट्रीय समाजवादी मंचों, और भारत की स्वतंत्रता के वैश्विक प्रचार के प्रारंभिक प्रयासों में फैला हुआ है।\n\n• कथन 1 — सही: कामा के इंडिया हाउस (हाईगेट, लंदन) से संबंध थे, जिसकी स्थापना श्यामजी कृष्ण वर्मा ने की थी, और इसमें सावरकर भी शामिल थे।\n• कथन 2 — गलत: स्टटगार्ट (1907) में कामा द्वारा फहराया गया ध्वज वर्तमान राष्ट्रीय तिरंगे से बिल्कुल अलग था। इसमें तीन क्षैतिज पट्टियाँ (हरा, केसरिया, लाल), शीर्ष पट्टी में चंद्र और सूर्य, और 'वन्दे मातरम्' लिखा था — पूरी तरह भिन्न डिजाइन।\n• कथन 3 — सही: ब्रिटेन के औपनिवेशिक विरोधाभासों को उजागर करने के लिए अंतरराष्ट्रीय नारीवादी मंचों का रणनीतिक उपयोग दस्तावेजीकृत है — IWSA में भारतीय महिला प्रतिनिधियों ने यह बताया कि ब्रिटेन घरेलू स्तर पर महिलाओं के मताधिकार का समर्थन करता है, पर औपनिवेशिक विषयों को नहीं देता।\n• कथन 4 — गलत: कामा कट्टर राष्ट्रवाद और तिलक के नेटवर्क से जुड़ी थीं, गोखले के मध्यमार्गी संवैधानिकवाद से नहीं। उनका अंतरराष्ट्रीय स्तर पर औपनिवेशिक नियमों का खुला विरोध था, जो क्रमिक राजनीति के विपरीत था।\n\nमूल्यवर्धन:\n• कामा को भारत लौटने से प्रतिबंधित किया गया था और उन्होंने अपना अधिकांश वयस्क जीवन यूरोप में निर्वासन में बिताया।\n• स्टटगार्ट ध्वज को कभी-कभी भारत का 'पहला राष्ट्रीय ध्वज' कहा जाता है — हालांकि यह दावा विवादित है, यह अंतरराष्ट्रीय मंच पर भारतीय राष्ट्रीय ध्वज का सबसे प्रारंभिक सार्वजनिक प्रदर्शन है।\n• कामा की अस्थियाँ 1936 में भारत वापस लाई गईं, उनकी मृत्यु के कई वर्ष बाद।"
+    }
+  },
+  {
+    "uuid": "432d964f-2ad5-438c-a79e-8f60de80850f",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Constitutional Provisions for Women's Rights as a Direct Legacy of Freedom Struggle",
+        "Women's Suffrage in India: Colonial Grants vs. Nationalist Demands"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Articles 14, 15(1), 15(3), 39(d), 326 — women's rights provisions in Constitution",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the constitutional provisions for women's rights as a legacy of the freedom struggle, consider the following statements:\n\n1. Article 15(1) prohibits the State from discriminating against any citizen solely on grounds of sex, while Article 15(3) permits the State to make special provisions specifically for women and children — the two clauses are complementary, not contradictory.\n2. Article 326, which provides for universal adult suffrage, directly fulfilled the Indian National Congress's pre-independence demand for franchise free of property and literacy qualifications for all citizens regardless of gender.\n3. Article 39(d), which directs the State to ensure equal pay for equal work for both men and women, is a Fundamental Right directly enforceable in courts without the need for enabling legislation.\n\nWhich of the above statements is/are correct?\n\n(a) 3 only\n(b) 1 only\n(c) 2 and 3 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 15(1) prohibits the State from discriminating against any citizen solely on grounds of sex, while Article 15(3) permits the State to make special provisions specifically for women and children — the two clauses are complementary and not contradictory.",
+          "verdict": "Correct",
+          "reason": "Article 15(1) establishes the general anti-discrimination principle (sex as a prohibited basis for State discrimination); Article 15(3) carves out an exception enabling affirmative action for women and children. The Supreme Court has consistently held these as complementary — the exception in 15(3) enables what 15(1) generally prohibits, making special provisions valid."
+        },
+        {
+          "statement": "Article 326, which provides for universal adult suffrage, directly fulfilled the Indian National Congress's pre-independence demand for franchise free of property and literacy qualifications for all citizens regardless of gender.",
+          "verdict": "Correct",
+          "reason": "INC had consistently demanded universal adult franchise free of qualifications; Article 326 of the Constitution operationalised exactly this demand, granting all citizens above age 21 (later 18) the right to vote without any property or literacy requirement."
+        },
+        {
+          "statement": "Article 39(d), which directs the State to ensure equal pay for equal work for both men and women, is a Fundamental Right that is directly enforceable in courts without the need for enabling legislation.",
+          "verdict": "Incorrect",
+          "reason": "Article 39(d) is a Directive Principle of State Policy (DPSP) under Part IV — it is not a Fundamental Right and is not directly enforceable in courts. The right to equal pay has been operationalised through legislation like the Equal Remuneration Act (1976), not directly through Article 39(d) as a Fundamental Right."
+        }
+      ],
+      "strong_distractor": "d — Wait, (d) is the correct answer. The strong distractor is option (b), which claims only Statement 1 is correct — exploiting students who correctly identify Statement 3 as a DPSP but also incorrectly assume Statement 2 overstates INC's franchise demand.",
+      "elimination_logic": [
+        "Statement 1: Articles 15(1) and 15(3) are complementary — anti-discrimination and affirmative action; both clauses are constitutionally valid together. Statement 1 is correct.",
+        "Statement 2: Article 326 and INC's pre-independence demand for universal adult franchise free of qualifications — accurate alignment. Statement 2 is correct.",
+        "Statement 3: Article 39(d) is a DPSP, not a Fundamental Right — not directly court-enforceable; claiming it is a Fundamental Right is incorrect. Statement 3 is incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect → answer is (d) 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3's scope-extension trap claims DPSP status equals Fundamental Right enforceability — a false equivalence that students who know equal pay is constitutionally mentioned but not its Part III/IV location will accept. 'Directly enforceable in courts' is the specific false attribute.",
+      "final_explanation": "Constitutional provisions for women's rights represent the translation of freedom movement demands into enforceable or directive law.\n\n• Statement 1 — Correct: Articles 15(1) and 15(3) operate as general rule (no sex-based State discrimination) and exception (affirmative action for women/children permitted). The Supreme Court in multiple cases has affirmed their complementary relationship — 15(3) does not contradict 15(1); it enables what would otherwise violate it.\n• Statement 2 — Correct: Article 326 established universal adult franchise — voting rights for all citizens 21 and above (lowered to 18 by the 61st Amendment, 1989) without any property or literacy qualification. This directly implemented the INC's long-standing demand, in contrast to colonial-era restricted franchise.\n• Statement 3 — Incorrect: Article 39(d) — 'equal pay for equal work for men and women' — is a Directive Principle of State Policy (Part IV), not a Fundamental Right (Part III). DPSPs are not directly court-enforceable; they guide legislation. The Equal Remuneration Act (1976) was the implementing legislation.\n\nValue Addition:\n• The 61st Constitutional Amendment (1988, in force 1989) lowered voting age from 21 to 18 under Article 326.\n• Article 42 (maternity relief) is also a DPSP — operationalised through the Maternity Benefit Act.\n• Article 14 (equality before law) applies to all persons, not just citizens — a broader protection than Article 15."
+    },
+    "hi": {
+      "display_text": "स्वतंत्रता संग्राम की विरासत के रूप में महिलाओं के अधिकारों के लिए संवैधानिक प्रावधानों के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 15(1) राज्य को किसी भी नागरिक के साथ केवल लिंग के आधार पर भेदभाव करने से रोकता है, जबकि अनुच्छेद 15(3) राज्य को विशेष रूप से महिलाओं और बच्चों के लिए विशेष प्रावधान करने की अनुमति देता है — ये दोनों उपधाराएँ पूरक हैं, विरोधाभासी नहीं।\n2. अनुच्छेद 326, जो सार्वभौमिक वयस्क मताधिकार प्रदान करता है, स्वतंत्रता पूर्व भारतीय राष्ट्रीय कांग्रेस की उस मांग को सीधे पूरा करता है जिसमें सभी नागरिकों के लिए लिंग की परवाह किए बिना संपत्ति और साक्षरता योग्यता से मुक्त मताधिकार मांगा गया था।\n3. अनुच्छेद 39(ड), जो राज्य को पुरुषों और महिलाओं दोनों के लिए समान कार्य के लिए समान वेतन सुनिश्चित करने का निर्देश देता है, एक मौलिक अधिकार है जो सक्षम कानून के बिना सीधे न्यायालयों में लागू किया जा सकता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 3\n(b) केवल 1\n(c) केवल 2 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अनुच्छेद 15(1) राज्य को किसी भी नागरिक के साथ केवल लिंग के आधार पर भेदभाव करने से रोकता है, जबकि अनुच्छेद 15(3) राज्य को विशेष रूप से महिलाओं और बच्चों के लिए विशेष प्रावधान करने की अनुमति देता है — ये दोनों उपधाराएँ परस्पर पूरक हैं, विरोधाभासी नहीं।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 15(1) सामान्य भेदभाव-विरोधी सिद्धांत स्थापित करता है (लिंग को राज्य द्वारा भेदभाव के लिए निषिद्ध आधार के रूप में); अनुच्छेद 15(3) एक अपवाद बनाता है जो महिलाओं और बच्चों के लिए सकारात्मक कार्रवाई को सक्षम करता है। सुप्रीम कोर्ट ने लगातार इन्हें पूरक माना है — 15(3) में अपवाद 15(1) द्वारा सामान्यतः निषिद्ध को सक्षम करता है, जिससे विशेष प्रावधान वैध होते हैं।"
+        },
+        {
+          "statement": "अनुच्छेद 326, जो सार्वभौमिक वयस्क मताधिकार प्रदान करता है, स्वतंत्रता पूर्व भारतीय राष्ट्रीय कांग्रेस की उस मांग को सीधे पूरा करता है जिसमें सभी नागरिकों के लिए लिंग की परवाह किए बिना संपत्ति और साक्षरता योग्यता से मुक्त मताधिकार मांगा गया था।",
+          "verdict": "सही",
+          "reason": "भारतीय राष्ट्रीय कांग्रेस ने लगातार बिना किसी योग्यता के सार्वभौमिक वयस्क मताधिकार की मांग की थी; संविधान का अनुच्छेद 326 ठीक इसी मांग को लागू करता है, जो 21 वर्ष (बाद में 18 वर्ष) से ऊपर के सभी नागरिकों को बिना किसी संपत्ति या साक्षरता आवश्यकता के मतदान का अधिकार देता है।"
+        },
+        {
+          "statement": "अनुच्छेद 39(ड), जो राज्य को पुरुषों और महिलाओं दोनों के लिए समान कार्य के लिए समान वेतन सुनिश्चित करने का निर्देश देता है, एक मौलिक अधिकार है जो सक्षम कानून के बिना सीधे न्यायालयों में लागू किया जा सकता है।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 39(ड) राज्य नीति के निदेशक सिद्धांत (DPSP) के अंतर्गत आता है — यह मौलिक अधिकार नहीं है और सीधे न्यायालयों में लागू नहीं किया जा सकता। समान वेतन का अधिकार समान वेतन अधिनियम (1976) जैसे कानूनों के माध्यम से लागू किया गया है, न कि अनुच्छेद 39(ड) के माध्यम से सीधे मौलिक अधिकार के रूप में।"
+        }
+      ],
+      "strong_distractor": "d — प्रतीक्षा करें, (d) सही उत्तर है। मजबूत भ्रम विकल्प (b) है, जो केवल कथन 1 को सही मानता है — यह उन छात्रों को भ्रमित करता है जो सही रूप से कथन 3 को DPSP के रूप में पहचानते हैं लेकिन गलत रूप से मान लेते हैं कि कथन 2 में INC की मताधिकार मांग अधिक बताई गई है।",
+      "elimination_logic": [
+        "कथन 1: अनुच्छेद 15(1) और 15(3) पूरक हैं — भेदभाव-विरोधी और सकारात्मक कार्रवाई; दोनों उपधाराएँ संवैधानिक रूप से साथ-साथ मान्य हैं। कथन 1 सही है।",
+        "कथन 2: अनुच्छेद 326 और INC की स्वतंत्रता पूर्व सार्वभौमिक वयस्क मताधिकार की मांग — सटीक मेल। कथन 2 सही है।",
+        "कथन 3: अनुच्छेद 39(ड) DPSP है, मौलिक अधिकार नहीं — सीधे न्यायालय में लागू नहीं; इसे मौलिक अधिकार बताना गलत है। कथन 3 गलत है।",
+        "कथन 1 और 2 सही, कथन 3 गलत → उत्तर है (d) केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 का दायरा-विस्तार जाल DPSP की स्थिति को मौलिक अधिकार की न्यायालयीन प्रवर्तनीयता के बराबर मानता है — यह एक गलत तुल्यता है जिसे वे छात्र स्वीकार कर लेते हैं जो जानते हैं कि समान वेतन संवैधानिक रूप से उल्लेखित है लेकिन इसके भाग III/IV के स्थान को नहीं जानते। 'न्यायालयों में सीधे लागू' होना विशेष रूप से गलत गुण है।",
+      "final_explanation": "महिलाओं के अधिकारों के लिए संवैधानिक प्रावधान स्वतंत्रता संग्राम की मांगों का लागू या निर्देशात्मक कानून में अनुवाद हैं।\n\n• कथन 1 — सही: अनुच्छेद 15(1) और 15(3) सामान्य नियम (लिंग आधारित राज्य भेदभाव निषेध) और अपवाद (महिलाओं/बच्चों के लिए सकारात्मक कार्रवाई की अनुमति) के रूप में कार्य करते हैं। सुप्रीम कोर्ट ने कई मामलों में इनके पूरक संबंध की पुष्टि की है — 15(3) 15(1) का विरोध नहीं करता; यह उसे सक्षम बनाता है।\n• कथन 2 — सही: अनुच्छेद 326 ने सार्वभौमिक वयस्क मताधिकार स्थापित किया — 21 वर्ष और उससे ऊपर के सभी नागरिकों (61वें संशोधन, 1989 से 18 वर्ष) को बिना किसी संपत्ति या साक्षरता योग्यता के मतदान का अधिकार। यह INC की दीर्घकालिक मांग को सीधे लागू करता है, जो औपनिवेशिक काल के सीमित मताधिकार से भिन्न है।\n• कथन 3 — गलत: अनुच्छेद 39(ड) — 'पुरुषों और महिलाओं के लिए समान कार्य का समान वेतन' — राज्य नीति के निदेशक सिद्धांत (भाग IV) है, मौलिक अधिकार (भाग III) नहीं। DPSP सीधे न्यायालयीन प्रवर्तनीय नहीं होते; वे कानून निर्माण के लिए मार्गदर्शक हैं। समान वेतन अधिनियम (1976) लागू कानून है।\n\nमूल्य संवर्धन:\n• 61वां संवैधानिक संशोधन (1988, लागू 1989) ने अनुच्छेद 326 के तहत मतदान आयु 21 से घटाकर 18 की।\n• अनुच्छेद 42 (मातृत्व राहत) भी DPSP है — मातृत्व लाभ अधिनियम के माध्यम से लागू।\n• अनुच्छेद 14 (कानून के समक्ष समानता) सभी व्यक्तियों पर लागू होता है, केवल नागरिकों पर नहीं — अनुच्छेद 15 से व्यापक सुरक्षा।"
+    }
+  },
+  {
+    "uuid": "0ab39152-c275-4ccc-908c-c74575a72e04",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Partition, Communal Violence, and Women's Bodies as Sites of Political Contestation (1947)",
+        "Legislative Reforms for Women During Colonial Period: Cause–Effect with Freedom Struggle"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Abducted Persons Recovery Act 1949 — agency denial feminist critique",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the aftermath of Partition violence, the Indian government enacted legislation mandating the recovery and 'restoration' of women who had been abducted across the new international border. The legislation created an administrative mechanism for identifying, recovering, and returning such women to their pre-Partition communities and families — operating through an inter-dominion agreement with Pakistan. Feminist historians have critiqued this legislation arguing that it treated recovered women as objects to be restored to their communities rather than as autonomous individuals whose own preferences about return or resettlement should have determined outcomes.\n\nWhich of the following most accurately describes the legal instrument and the critique applied to it?\n\n(a) The Abducted Persons (Recovery and Restoration) Act, 1949, which is critiqued by feminist historians for treating recovered women as community and state property — denying them individual agency to choose whether they wished to return — rather than as persons with a right to determine their own post-Partition lives\n(b) The Abducted Persons (Recovery and Restoration) Act, 1949, which applied exclusively to Hindu women abducted into Pakistan, reflecting the Indian state's prioritisation of Hindu women's repatriation over Muslim women's recovery within India\n(c) The Abducted Persons (Recovery and Restoration) Act, 1949, which feminist historians praise for specifically prioritising individual women's agency in restoration decisions, requiring case-by-case consent before any enforced return\n(d) The Abducted Persons (Recovery and Restoration) Act, 1949, which operated as a unilateral Indian government initiative without any inter-dominion cooperation, focusing solely on recovering Indian women held in Pakistan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it sounds like the most progressive reading — 'prioritising women's individual agency' — which is precisely what feminist historians argue the Act FAILED to do; students who know the critique may confuse the critique with the Act's actual purpose.",
+      "elimination_logic": [
+        "The scenario describes legislation that mandated 'restoration' of women without consulting their individual wishes — a feature critiqued for denying agency.",
+        "Eliminate (b): The Act covered Hindu, Muslim, and Sikh women — it was not limited to Hindu women alone; the binary India-Pakistan recovery operation applied across religious communities.",
+        "Eliminate (c): The Act mandated restoration without consulting women's own preferences — the opposite of prioritising individual agency; this is the reversed-causation trap.",
+        "Eliminate (d): The Act required inter-dominion cooperation, not unilateral action — it was a bilateral India-Pakistan mechanism.",
+        "Option (a) correctly identifies the feminist critique — the Act treated women as community property, denying their individual agency to choose whether to return."
+      ],
+      "upsc_trap_explanation": "Option (c) presents the feminist critique's demand (agency for women) as the Act's actual design — a reversed-causation trap. Students who know the Act was critiqued for denying agency may confuse the critique's prescriptive claim with the Act's actual operation, selecting (c) as apparently feminist-aligned.",
+      "final_explanation": "The Abducted Persons (Recovery and Restoration) Act, 1949 is simultaneously a landmark humanitarian intervention and a deeply contested legislative instrument.\n\nThe scenario describes a situation where recovered women were mandated to 'return' regardless of their expressed wishes — the central object of feminist critique. This maps to the 1949 Act.\n\n• Option (a) — Correct: The feminist critique by scholars like Urvashi Butalia and Ritu Menon argues that the Act treated women as community property — to be 'restored' to their religious communities and states. Women who had rebuilt lives after abduction, sometimes with children from their captors or abductors, were compelled to return regardless of their own preferences. The Act prioritised communal/state restoration over individual women's autonomy.\n• Option (b) — Incorrect: The Act was not limited to Hindu women — it applied across religious communities on both sides of the border through a bilateral India-Pakistan inter-dominion agreement.\n• Option (c) — Incorrect: This reverses the actual critique. The Act did not prioritise individual women's agency — it overrode it. Option (c) describes the feminist demand, not the Act's design.\n• Option (d) — Incorrect: The Act operated through inter-dominion cooperation between India and Pakistan — not as a unilateral Indian government initiative.\n\nValue Addition:\n• Mridula Sarabhai led the recovery operations on the Indian side — bringing her freedom movement credentials into humanitarian post-Partition work.\n• Many recovered women reportedly did not wish to return but were compelled to under the Act's provisions.\n• The Act remained operative until 1956."
+    },
+    "hi": {
+      "display_text": "विभाजन हिंसा के बाद, भारतीय सरकार ने एक विधायिका लागू की जिसने नई अंतरराष्ट्रीय सीमा के पार अपहृत महिलाओं की पुनर्प्राप्ति और 'पुनर्स्थापन' का आदेश दिया। इस विधायिका ने ऐसी महिलाओं की पहचान, पुनर्प्राप्ति और उन्हें उनके पूर्व-विभाजन समुदायों और परिवारों को लौटाने के लिए एक प्रशासनिक तंत्र बनाया — जो पाकिस्तान के साथ द्विपक्षीय समझौते के माध्यम से संचालित होता था। नारीवादी इतिहासकारों ने इस विधायिका की आलोचना की है कि इसने पुनर्प्राप्त महिलाओं को स्वायत्त व्यक्तियों के रूप में नहीं बल्कि समुदायों को लौटाने योग्य वस्तुओं के रूप में माना, जिनकी अपनी वापसी या पुनर्वास की प्राथमिकताएं परिणाम निर्धारित करतीं।\n\nनिम्नलिखित में से कौन-सा विधायी उपकरण और उस पर लागू आलोचना को सबसे सटीक रूप से वर्णित करता है?\n\n(a) अभियुक्त व्यक्तियों (पुनर्प्राप्ति और पुनर्स्थापन) अधिनियम, 1949, जिसे नारीवादी इतिहासकारों ने इस लिए आलोचना की है कि इसने पुनर्प्राप्त महिलाओं को समुदाय और राज्य की संपत्ति के रूप में माना — जिससे उन्हें यह चुनने की व्यक्तिगत एजेंसी नहीं मिली कि वे लौटना चाहती हैं या नहीं — न कि ऐसे व्यक्तियों के रूप में जिनका अपना विभाजनोत्तर जीवन निर्धारित करने का अधिकार हो\n(b) अभियुक्त व्यक्तियों (पुनर्प्राप्ति और पुनर्स्थापन) अधिनियम, 1949, जो केवल पाकिस्तान में अपहृत हिंदू महिलाओं पर लागू था, जो भारतीय राज्य की हिंदू महिलाओं की वापसी को मुस्लिम महिलाओं की पुनर्प्राप्ति पर प्राथमिकता देने को दर्शाता है\n(c) अभियुक्त व्यक्तियों (पुनर्प्राप्ति और पुनर्स्थापन) अधिनियम, 1949, जिसे नारीवादी इतिहासकार व्यक्तिगत महिलाओं की एजेंसी को पुनर्स्थापन निर्णयों में प्राथमिकता देने के लिए प्रशंसा करते हैं, जो किसी भी जबरन वापसी से पहले मामले-दर-मामला सहमति की मांग करता है\n(d) अभियुक्त व्यक्तियों (पुनर्प्राप्ति और पुनर्स्थापन) अधिनियम, 1949, जो बिना किसी द्विपक्षीय सहयोग के एकतरफा भारतीय सरकारी पहल के रूप में संचालित हुआ, जो केवल पाकिस्तान में रखी गई भारतीय महिलाओं की पुनर्प्राप्ति पर केंद्रित था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह सबसे प्रगतिशील व्याख्या की तरह लगता है — 'महिलाओं की व्यक्तिगत एजेंसी को प्राथमिकता देना' — जो कि नारीवादी इतिहासकारों का तर्क है कि अधिनियम ने असफलतापूर्वक किया; जो छात्र इस आलोचना को जानते हैं वे अधिनियम के वास्तविक उद्देश्य के साथ भ्रमित हो सकते हैं।",
+      "elimination_logic": [
+        "परिदृश्य उस विधायिका का वर्णन करता है जिसने महिलाओं की व्यक्तिगत इच्छाओं की परवाह किए बिना 'पुनर्स्थापन' का आदेश दिया — यह एजेंसी को नकारने वाली विशेषता के लिए आलोचना की गई।",
+        "(b) को निरस्त करें — यह अधिनियम केवल हिंदू महिलाओं तक सीमित नहीं था; यह हिंदू, मुस्लिम और सिख महिलाओं को कवर करता था; भारत-पाकिस्तान पुनर्प्राप्ति अभियान सभी धार्मिक समुदायों पर लागू था।",
+        "(c) को निरस्त करें — अधिनियम ने महिलाओं की अपनी प्राथमिकताओं की परवाह किए बिना पुनर्स्थापन का आदेश दिया — यह व्यक्तिगत एजेंसी को प्राथमिकता देने के विपरीत है; यह उल्टा कारण-प्रभाव जाल है।",
+        "(d) को निरस्त करें — अधिनियम ने एकतरफा कार्रवाई नहीं की बल्कि द्विपक्षीय भारत-पाकिस्तान सहयोग की आवश्यकता थी।",
+        "(a) विकल्प सही है — यह नारीवादी आलोचना की सही पहचान करता है — अधिनियम ने महिलाओं को समुदाय की संपत्ति के रूप में माना, जिससे उनकी व्यक्तिगत एजेंसी को नकारा गया कि वे लौटना चाहती हैं या नहीं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) नारीवादी आलोचना की मांग (महिलाओं की एजेंसी) को अधिनियम की वास्तविक रूपरेखा के रूप में प्रस्तुत करता है — यह उल्टा कारण-प्रभाव जाल है। जो छात्र जानते हैं कि अधिनियम एजेंसी को नकारता है, वे आलोचना की निर्देशात्मक मांग को अधिनियम के वास्तविक संचालन के साथ भ्रमित कर सकते हैं और (c) को नारीवादी-संगत विकल्प समझकर चुन सकते हैं।",
+      "final_explanation": "अभियुक्त व्यक्तियों (पुनर्प्राप्ति और पुनर्स्थापन) अधिनियम, 1949 एक साथ एक महत्वपूर्ण मानवीय हस्तक्षेप और एक विवादास्पद विधायी उपकरण है।\n\nपरिदृश्य उस स्थिति का वर्णन करता है जहाँ पुनर्प्राप्त महिलाओं को उनकी अभिव्यक्त इच्छाओं की परवाह किए बिना 'लौटने' का आदेश दिया गया — जो नारीवादी आलोचना का मुख्य विषय है। यह 1949 के अधिनियम से मेल खाता है।\n\n• विकल्प (a) — सही: उर्वशी बुतालिया और रितु मेनन जैसे विद्वानों द्वारा की गई नारीवादी आलोचना कहती है कि अधिनियम ने महिलाओं को समुदाय की संपत्ति के रूप में माना — उन्हें उनके धार्मिक समुदायों और राज्यों को 'पुनर्स्थापित' किया गया। जिन महिलाओं ने अपहरण के बाद अपने जीवन का पुनर्निर्माण किया था, कभी-कभी अपहरणकर्ताओं के बच्चों के साथ, उन्हें उनकी अपनी प्राथमिकताओं की परवाह किए बिना लौटने के लिए मजबूर किया गया। अधिनियम ने व्यक्तिगत महिलाओं की स्वायत्तता की तुलना में सामुदायिक/राज्य पुनर्स्थापन को प्राथमिकता दी।\n• विकल्प (b) — गलत: अधिनियम केवल हिंदू महिलाओं तक सीमित नहीं था — यह दोनों ओर के धार्मिक समुदायों पर द्विपक्षीय भारत-पाकिस्तान समझौते के तहत लागू था।\n• विकल्प (c) — गलत: यह वास्तविक आलोचना को उलट देता है। अधिनियम ने व्यक्तिगत महिलाओं की एजेंसी को प्राथमिकता नहीं दी — बल्कि उसे दबा दिया। विकल्प (c) नारीवादी मांग का वर्णन करता है, अधिनियम की रूपरेखा नहीं।\n• विकल्प (d) — गलत: अधिनियम भारत और पाकिस्तान के बीच द्विपक्षीय सहयोग के माध्यम से संचालित हुआ — यह एकतरफा भारतीय सरकार की पहल नहीं थी।\n\nमूल्यवर्धन:\n• मृदुला साराभाई ने भारतीय पक्ष पर पुनर्प्राप्ति अभियानों का नेतृत्व किया — जिन्होंने अपने स्वतंत्रता आंदोलन के अनुभव को मानवीय कार्य में लगाया।\n• कई पुनर्प्राप्त महिलाएं कथित तौर पर लौटना नहीं चाहती थीं, लेकिन अधिनियम के प्रावधानों के तहत मजबूर हुईं।\n• यह अधिनियम 1956 तक लागू रहा।"
+    }
+  },
+  {
+    "uuid": "92c67ea3-e971-4436-b3ea-d9b24acea7a1",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Women's Political Mobilization through Civil Disobedience Movement (1930–34)",
+        "Emergence of Women's Organizations and Institutional Advocacy (1917–1947)",
+        "Women's Suffrage in India: Colonial Grants vs. Nationalist Demands"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Madras Province 1921 franchise; Montagu-Chelmsford 1919; AIWC lobbying",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Madras Province",
+            "1. Actively lobbied for the passage of the Child Marriage Restraint Act (Sarda Act) in 1929"
+          ],
+          [
+            "B. All India Women's Conference",
+            "2. Expanded the women's electorate compared to earlier provisions but retained property and literacy qualifications, falling short of universal franchise"
+          ],
+          [
+            "C. Montagu-Chelmsford Reforms (1919)",
+            "3. First provincial administration in India to extend limited franchise rights to women, in 1921"
+          ],
+          [
+            "D. Government of India Act, 1935",
+            "4. Delegated the determination of women's franchise to individual provincial legislatures rather than directly granting women the right to vote"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-4, B-1, C-3, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it correctly matches AIWC with the Sarda Act but then places Madras Province's franchise grant in 1919 rather than 1921, exploiting the confusion between the Reforms' passage (1919) and provincial implementation (1921).",
+      "elimination_logic": [
+        "Anchor: Madras Province was the first province to grant women limited franchise — in 1921, not 1919 (when the Reforms were passed); this eliminates options placing Madras franchise in 1919.",
+        "Anchor: The Montagu-Chelmsford Reforms (1919) delegated franchise decisions to provinces — they did not directly grant franchise; this eliminates options conflating the Reforms with direct franchise grant.",
+        "Anchor: AIWC lobbied for the Child Marriage Restraint Act (Sarda Act, 1929) — documented advocacy role.",
+        "Anchor: Government of India Act 1935 expanded women's franchise but retained qualifications — matches correctly with 'expanded but restricted female electorate.' Correct matching: A-3, B-1, C-4, D-2 → option (c)."
+      ],
+      "upsc_trap_explanation": "The 1919 vs. 1921 distinction is the primary trap — the Reforms were enacted in 1919 but Madras implemented women's franchise in 1921. Students who know Madras was first but conflate the Reforms' enactment year with provincial implementation will incorrectly match Madras with 1919.",
+      "final_explanation": "This question maps key events and bodies in the women's franchise and advocacy timeline to their correct attributes — a UPSC staple for this topic.\n\nCorrect matches: A-3, B-1, C-4, D-2.\n\n• A (Madras Province) — 3 (First Indian province to extend limited franchise to women, in 1921): Following the Montagu-Chelmsford Reforms' delegation of franchise decisions to provinces, Madras became the first province to extend (limited) voting rights to women — in 1921, two years after the Reforms were enacted.\n• B (All India Women's Conference) — 1 (Advocacy for Child Marriage Restraint Act, 1929): AIWC actively lobbied for the Sarda Act — one of its documented legislative advocacy successes during this period.\n• C (Montagu-Chelmsford Reforms, 1919) — 4 (Delegated franchise determination to provincial legislatures rather than directly granting women the vote): The 1919 Reforms did not directly grant women franchise — they left the decision to each provincial legislature, resulting in variation across provinces.\n• D (Government of India Act, 1935) — 2 (Expanded the women's electorate but retained property and literacy qualifications): The 1935 Act enlarged women's voter numbers but did not remove qualifications — universal franchise waited until 1950.\n\nValue Addition:\n• Burma (then part of British India) actually granted women franchise earlier than any Indian province.\n• The 1935 Act increased the women's electorate from approximately 0.3 million to 6 million — a significant expansion, though still far short of universal suffrage.\n• WIA's 1917 petition to the Montagu-Chelmsford committee was the first formal institutional demand for women's franchise in India."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. मद्रास प्रांत",
+            "1. 1929 में बाल विवाह प्रतिबंध अधिनियम (सरदा अधिनियम) के पारित होने के लिए सक्रिय रूप से लॉबी की"
+          ],
+          [
+            "B. ऑल इंडिया विमेंस कॉन्फ्रेंस",
+            "2. महिलाओं के मतदाता वर्ग का विस्तार किया लेकिन संपत्ति और साक्षरता योग्यताओं को बरकरार रखा, जिससे सार्वभौमिक मताधिकार अधूरा रहा"
+          ],
+          [
+            "C. मोंटागु-चेल्म्सफोर्ड सुधार (1919)",
+            "3. भारत का पहला प्रांतीय प्रशासन जिसने 1921 में महिलाओं को सीमित मताधिकार दिया"
+          ],
+          [
+            "D. भारत सरकार अधिनियम, 1935",
+            "4. महिलाओं के मताधिकार के निर्धारण को सीधे मताधिकार देने के बजाय प्रांतीय विधानसभाओं को सौंपा"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-4, B-1, C-3, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि यह सही ढंग से AIWC को सरदा अधिनियम से जोड़ता है लेकिन मद्रास प्रांत के मताधिकार को 1921 के बजाय 1919 में रखता है, जो सुधारों के पारित होने (1919) और प्रांतीय क्रियान्वयन (1921) के बीच भ्रम का लाभ उठाता है।",
+      "elimination_logic": [
+        "एंकर: मद्रास प्रांत महिलाओं को सीमित मताधिकार देने वाला पहला प्रांत था — 1921 में, न कि 1919 में (जब सुधार पारित हुए थे); इससे वे विकल्प निरस्त होते हैं जो मद्रास मताधिकार को 1919 में रखते हैं।",
+        "एंकर: मोंटागु-चेल्म्सफोर्ड सुधार (1919) ने मताधिकार के निर्णय प्रांतों को सौंपे — उन्होंने सीधे मताधिकार नहीं दिया; इससे वे विकल्प निरस्त होते हैं जो सुधारों को सीधे मताधिकार देने से जोड़ते हैं।",
+        "एंकर: AIWC ने बाल विवाह प्रतिबंध अधिनियम (सरदा अधिनियम, 1929) के लिए सक्रिय रूप से लॉबी की — यह एक प्रलेखित वकालत भूमिका है।",
+        "एंकर: भारत सरकार अधिनियम 1935 ने महिलाओं के मताधिकार का विस्तार किया लेकिन योग्यताओं को बरकरार रखा — यह 'विस्तारित लेकिन सीमित महिला मतदाता' के साथ सही मेल खाता है। सही मिलान: A-3, B-1, C-4, D-2 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "1919 और 1921 के बीच का अंतर मुख्य जाल है — सुधार 1919 में लागू हुए लेकिन मद्रास ने महिलाओं को मताधिकार 1921 में दिया। जो छात्र जानते हैं कि मद्रास पहला था लेकिन सुधार के पारित वर्ष को प्रांतीय क्रियान्वयन से भ्रमित करते हैं, वे मद्रास को 1919 से गलत मिलाएंगे।",
+      "final_explanation": "यह प्रश्न महिलाओं के मताधिकार और वकालत के समयरेखा में प्रमुख घटनाओं और निकायों को उनके सही गुणों से जोड़ता है — इस विषय के लिए UPSC का एक प्रमुख प्रश्न।\n\nसही मिलान: A-3, B-1, C-4, D-2।\n\n• A (मद्रास प्रांत) — 3 (भारत का पहला प्रांत जिसने 1921 में महिलाओं को सीमित मताधिकार दिया): मोंटागु-चेल्म्सफोर्ड सुधारों के बाद मताधिकार के निर्णय प्रांतों को सौंपे गए, मद्रास पहला प्रांत बना जिसने महिलाओं को सीमित मतदान अधिकार दिया — 1921 में, सुधारों के दो वर्ष बाद।\n• B (ऑल इंडिया विमेंस कॉन्फ्रेंस) — 1 (बाल विवाह प्रतिबंध अधिनियम, 1929 के लिए सक्रिय वकालत): AIWC ने सरदा अधिनियम के लिए सक्रिय रूप से लॉबी की — इस अवधि के दौरान इसके प्रलेखित विधायी वकालत सफलताओं में से एक।\n• C (मोंटागु-चेल्म्सफोर्ड सुधार, 1919) — 4 (महिलाओं के मताधिकार का निर्धारण सीधे मताधिकार देने के बजाय प्रांतीय विधानसभाओं को सौंपा): 1919 के सुधारों ने महिलाओं को सीधे मताधिकार नहीं दिया — उन्होंने यह निर्णय प्रत्येक प्रांतीय विधान सभा को दिया, जिससे प्रांतों में भिन्नता आई।\n• D (भारत सरकार अधिनियम, 1935) — 2 (महिला मतदाता संख्या का विस्तार किया लेकिन संपत्ति और साक्षरता योग्यताओं को बरकरार रखा): 1935 के अधिनियम ने महिला मतदाताओं की संख्या लगभग 0.3 मिलियन से 6 मिलियन तक बढ़ाई — एक महत्वपूर्ण विस्तार, हालांकि सार्वभौमिक मताधिकार तब तक नहीं मिला।\n\nमूल्य संवर्धन:\n• बर्मा (जो उस समय ब्रिटिश भारत का हिस्सा था) ने वास्तव में किसी भी भारतीय प्रांत से पहले महिलाओं को मताधिकार दिया।\n• WIA का 1917 का ज्ञापन मोंटागु-चेल्म्सफोर्ड समिति को भारत में महिलाओं के मताधिकार की पहली औपचारिक संस्थागत मांग थी।"
+    }
+  },
+  {
+    "uuid": "5df6e5d9-a709-4e5d-8570-aff856f20bd5",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Begum Hazrat Mahal and Aruna Asaf Ali: Women Leadership Across Different Phases",
+        "Women in Revolutionary and Armed Resistance: Beyond Gandhian Nonviolence"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Pritilata Waddedar vs. Bina Das — distinct revolutionary acts and affiliations",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding women in the Bengali revolutionary nationalist movement of the early 1930s:\n\nStatement 1: Bina Das fired at the Governor of Bengal, Sir Stanley Jackson, during a Calcutta University convocation ceremony in 1932, as a member of Surya Sen's Chittagong revolutionary organisation.\n\nStatement 2: Pritilata Waddedar led the armed attack on the Pahartali European Club in 1932 as part of Surya Sen's revolutionary activities and chose death by consuming potassium cyanide rather than surrender to British forces.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Bina Das fired at the Governor of Bengal, Sir Stanley Jackson, during a Calcutta University convocation ceremony in 1932, and she was a member of Surya Sen's Chittagong revolutionary organisation.",
+          "verdict": "Incorrect",
+          "reason": "Bina Das did fire at Governor Jackson during the convocation ceremony in February 1932 — but she was NOT a member of Surya Sen's Chittagong network. She acted independently within the broader Bengal revolutionary milieu. Attributing her to Surya Sen's group is an entity-swap error."
+        },
+        {
+          "statement": "Pritilata Waddedar led the attack on the Pahartali European Club (1932) as part of Surya Sen's revolutionary activities and died by consuming potassium cyanide rather than surrender to colonial forces.",
+          "verdict": "Correct",
+          "reason": "Pritilata Waddedar was a member of Surya Sen's Indian Republican Army, led the September 1932 Pahartali European Club raid, and died by cyanide ingestion to avoid capture — all documented facts."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because students who know both women were Bengal revolutionaries in 1932 may assume both statements are correct, not catching that the Chittagong-affiliation claim about Bina Das is the critical error.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Bina Das did fire at Governor Jackson in 1932 — true. But she was NOT a Chittagong network member — false. The combined statement is incorrect due to the Chittagong attribution.",
+        "Evaluate Statement 2: Pritilata Waddedar, Surya Sen, Pahartali Club, cyanide — all facts verified; Statement 2 is correct.",
+        "Statement 1 incorrect, Statement 2 correct → answer is (d)."
+      ],
+      "upsc_trap_explanation": "The entity-swap in Statement 1 attributes Bina Das to Surya Sen's Chittagong network — plausible because she was a 1932 Bengal revolutionary, the same period and region. Students who cannot precisely distinguish her organisational independence from the Chittagong group will accept the false affiliation claim.",
+      "final_explanation": "Both Bina Das and Pritilata Waddedar were Bengal revolutionary women active in 1932, but their organisational affiliations were distinct.\n\n• Statement 1 — Incorrect: Bina Das did fire at Governor Sir Stanley Jackson at the Calcutta University convocation on 6 February 1932 and was sentenced to eight years' rigorous imprisonment. However, she was NOT affiliated with Surya Sen's Chittagong organisation — she acted independently within the broader Bengal revolutionary movement. The entity-swap (attributing her to Chittagong) is the false element.\n• Statement 2 — Correct: Pritilata Waddedar was an active member of Surya Sen's Indian Republican Army. She led the raid on the Pahartali European Club near Chittagong in September 1932 — the club had a sign that read 'Dogs and Indians not allowed.' She carried potassium cyanide and consumed it when the raid was completed and her escape impossible, dying at the scene.\n\nValue Addition:\n• The Pahartali European Club attack was partly symbolic — targeting a space that openly displayed colonial racial exclusion.\n• Bina Das was elected to the West Bengal Legislative Assembly in 1946 — her post-independence political career continued.\n• The distinction between organisationally affiliated revolutionaries (Chittagong network) and independent revolutionaries (Bina Das) is a recurring precision point in UPSC questions about this era."
+    },
+    "hi": {
+      "display_text": "1930 के दशक की शुरुआत में बंगाली क्रांतिकारी राष्ट्रवादी आंदोलन में महिलाओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: बिना दास ने 1932 में कोलकाता विश्वविद्यालय के दीक्षांत समारोह के दौरान बंगाल के गवर्नर सर स्टेनली जैक्सन पर गोली चलाई, और वह सूर्य सेन के चिट्टागोंग क्रांतिकारी संगठन की सदस्य थीं।\n\nकथन 2: पृतिलता वड्डेदार ने 1932 में सूर्य सेन की क्रांतिकारी गतिविधियों के तहत पहरतली यूरोपीय क्लब पर सशस्त्र हमला किया और ब्रिटिश बलों के समर्पण के बजाय पोटैशियम साइनाइड का सेवन कर मृत्यु को चुना।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है पर कथन 2 गलत है\n(d) कथन 1 गलत है पर कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "बिना दास ने 1932 में कोलकाता विश्वविद्यालय के दीक्षांत समारोह के दौरान बंगाल के गवर्नर सर स्टेनली जैक्सन पर गोली चलाई थी, और वह सूर्य सेन के चिट्टागोंग क्रांतिकारी संगठन की सदस्य थीं।",
+          "verdict": "गलत",
+          "reason": "बिना दास ने फरवरी 1932 के दीक्षांत समारोह के दौरान गवर्नर जैक्सन पर गोली चलाई थी — लेकिन वह सूर्य सेन के चिट्टागोंग नेटवर्क की सदस्य नहीं थीं। उन्होंने व्यापक बंगाल क्रांतिकारी माहौल के भीतर स्वतंत्र रूप से कार्य किया। उन्हें सूर्य सेन के समूह से जोड़ना एक पहचान-स्थानांतरण त्रुटि है।"
+        },
+        {
+          "statement": "पृतिलता वड्डेदार ने सूर्य सेन की क्रांतिकारी गतिविधियों के तहत 1932 में पहरतली यूरोपीय क्लब पर हमला का नेतृत्व किया और औपनिवेशिक बलों के समर्पण के बजाय पोटैशियम साइनाइड का सेवन कर मृत्यु को चुना।",
+          "verdict": "सही",
+          "reason": "पृतिलता वड्डेदार सूर्य सेन की भारतीय गणराज्य सेना की सदस्य थीं, उन्होंने सितंबर 1932 में पहरतली यूरोपीय क्लब पर छापा मारा, और पकड़े जाने से बचने के लिए साइनाइड का सेवन कर मर गईं — ये सभी प्रमाणित तथ्य हैं।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि दोनों महिलाएं 1932 में बंगाल की क्रांतिकारी थीं, वे मान सकते हैं कि दोनों कथन सही हैं, जबकि बिना दास के चिट्टागोंग संबंध का दावा मुख्य त्रुटि है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: बिना दास ने 1932 में गवर्नर जैक्सन पर गोली चलाई — सत्य। लेकिन वह चिट्टागोंग नेटवर्क की सदस्य नहीं थीं — असत्य। संयुक्त कथन चिट्टागोंग संबंध के कारण गलत है।",
+        "कथन 2 का मूल्यांकन करें: पृतिलता वड्डेदार, सूर्य सेन, पहरतली क्लब, साइनाइड — सभी तथ्य सत्यापित; कथन 2 सही है।",
+        "कथन 1 गलत, कथन 2 सही → उत्तर (d) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में पहचान-स्थानांतरण त्रुटि है जो बिना दास को सूर्य सेन के चिट्टागोंग नेटवर्क से जोड़ती है — यह संभव है क्योंकि वह 1932 की बंगाल क्रांतिकारी थीं, उसी समय और क्षेत्र में। जो छात्र उनकी संगठनात्मक स्वतंत्रता को चिट्टागोंग समूह से ठीक से अलग नहीं कर पाते, वे इस गलत संबंध को स्वीकार कर लेते हैं।",
+      "final_explanation": "बिना दास और पृतिलता वड्डेदार दोनों 1932 में सक्रिय बंगाल की क्रांतिकारी महिलाएं थीं, लेकिन उनकी संगठनात्मक संबद्धताएँ भिन्न थीं।\n\n• कथन 1 — गलत: बिना दास ने 6 फरवरी 1932 को कोलकाता विश्वविद्यालय के दीक्षांत समारोह में गवर्नर सर स्टेनली जैक्सन पर गोली चलाई थी और उन्हें आठ वर्ष कठोर कारावास की सजा मिली। हालांकि, वह सूर्य सेन के चिट्टागोंग संगठन से संबद्ध नहीं थीं — उन्होंने व्यापक बंगाल क्रांतिकारी आंदोलन के भीतर स्वतंत्र रूप से कार्य किया। पहचान-स्थानांतरण (उन्हें चिट्टागोंग से जोड़ना) गलत तत्व है।\n• कथन 2 — सही: पृतिलता वड्डेदार सूर्य सेन की भारतीय गणराज्य सेना की सक्रिय सदस्य थीं। उन्होंने सितंबर 1932 में चिट्टागोंग के निकट पहरतली यूरोपीय क्लब पर छापा मारा — उस क्लब पर 'कुत्ते और भारतीयों का प्रवेश वर्जित' लिखा था। वह पोटैशियम साइनाइड लेकर गईं और जब छापा पूरा हो गया और बच निकलना असंभव था, तो उन्होंने इसे सेवन कर मौके पर ही मृत्यु को प्राप्त हुईं।\n\nमूल्यवर्धन:\n• पहरतली यूरोपीय क्लब पर हमला आंशिक रूप से प्रतीकात्मक था — एक ऐसे स्थान को निशाना बनाना जो औपनिवेशिक नस्लीय बहिष्कार को खुलेआम दर्शाता था।\n• बिना दास 1946 में पश्चिम बंगाल विधान सभा के लिए निर्वाचित हुईं — उनका स्वतंत्रता के बाद का राजनीतिक करियर जारी रहा।\n• संगठनात्मक रूप से संबद्ध क्रांतिकारियों (चिट्टागोंग नेटवर्क) और स्वतंत्र क्रांतिकारियों (बिना दास) के बीच का भेद इस युग के UPSC प्रश्नों में बार-बार सटीकता का विषय होता है।"
+    }
+  },
+  {
+    "uuid": "9b78b98e-6720-403c-a3fc-9fe6ffb45792",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Sarojini Naidu: Political Leadership and the 'Nightingale' Paradox",
+        "Emergence of Women's Organizations and Institutional Advocacy (1917–1947)",
+        "Bhikaji Cama and Early Diaspora Women Nationalism"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sarojini Naidu INC 1925 vs. Annie Besant 1917 — 'first' distinctions precision",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding women's political leadership in the Indian nationalist movement:\n\n1. Annie Besant, who presided over the Indian National Congress in 1917, is often described as the 'first Indian woman President of the INC' — a characterisation that is technically accurate since she had adopted Indian citizenship well before 1917.\n2. Sarojini Naidu served as the President of the Indian National Congress in 1925, presiding over the Kanpur session, and is correctly identified as the first Indian woman to hold that position.\n3. Bhikaji Cama's collaborative network in London included Shyamji Krishna Varma and was associated with the India House — a hub of radical Indian nationalism in England in the first decade of the twentieth century.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Annie Besant, who presided over the Indian National Congress in 1917, is often described as the 'first Indian woman President of the INC' — a characterisation that is technically accurate since she had adopted Indian citizenship well before 1917.",
+          "verdict": "Incorrect",
+          "reason": "Annie Besant was British-born and remained a British national — she did not adopt Indian citizenship. The correct characterisation is that she was the 'first woman INC President' (1917), but NOT the 'first Indian woman INC President' — that distinction belongs to Sarojini Naidu (1925). The claim about Indian citizenship is factually wrong."
+        },
+        {
+          "statement": "Sarojini Naidu served as the President of the Indian National Congress in 1925, presiding over the Kanpur session, and is correctly identified as the first Indian woman to hold this position.",
+          "verdict": "Correct",
+          "reason": "Sarojini Naidu presided over the Kanpur session of INC in 1925 and is the first Indian woman INC President — a distinction from Annie Besant (first woman, but not Indian)."
+        },
+        {
+          "statement": "Bhikaji Cama's collaborative network in London included Shyamji Krishna Varma and was associated with the India House — a hub of radical Indian nationalism in England in the first decade of the twentieth century.",
+          "verdict": "Correct",
+          "reason": "Cama did maintain connections with the India House network, which Shyamji Krishna Varma founded in Highgate, London — a documented fact about her diaspora nationalist activities."
+        }
+      ],
+      "strong_distractor": "b — Option (b) identifying only Statement 2 as incorrect exploits students who know Sarojini Naidu was the first Indian woman INC president but read Statement 2 as making an error when it is actually correct.",
+      "elimination_logic": [
+        "Statement 1: Claims Besant adopted Indian citizenship — false; she was British. Also claims this makes 'first Indian woman INC President' accurate for her — false (that belongs to Naidu). Statement 1 is incorrect.",
+        "Statement 2: Naidu, Kanpur 1925, first Indian woman INC President — all accurate; Statement 2 is correct.",
+        "Statement 3: Cama and India House, Shyamji Krishna Varma — documented connections; Statement 3 is correct.",
+        "Only Statement 1 is incorrect → answer is (a) 1 only."
+      ],
+      "upsc_trap_explanation": "The entity-swap in Statement 1 attributes Indian citizenship to Besant — a claim that feels plausible given her deep immersion in Indian culture and Theosophy. Students who know she was a major Indian nationalist figure may assume she naturalised, without knowing she remained British throughout her life.",
+      "final_explanation": "Precision about 'firsts' is one of the most reliably tested categories in UPSC questions on women's nationalist leadership.\n\n• Statement 1 — Incorrect: Annie Besant was British-born and did not adopt Indian citizenship. She is correctly described as the 'first woman INC President' (1917) — but the 'first Indian woman' qualifier cannot be applied to her. Claiming she adopted Indian citizenship before 1917 is factually wrong. Statement 1 is the false statement.\n• Statement 2 — Correct: Sarojini Naidu presided over the Kanpur session of the INC in 1925, becoming the first Indian woman to hold the position of INC President — the distinction from Besant (first woman, not Indian) is maintained.\n• Statement 3 — Correct: Bhikaji Cama's connections with the India House in Highgate, London — founded by Shyamji Krishna Varma — are documented. Savarkar was also associated with this network. Cama's collaboration with this radical nationalist émigré circle is a well-established historical fact.\n\nValue Addition:\n• Besant was president of the Theosophical Society and led the Home Rule League (1916) — her contributions to India were immense but did not involve citizenship change.\n• Naidu's poetry earned her the 'Nightingale of India' title — she remains one of the few figures whose cultural and political identities are both tested in UPSC.\n• India House (London) was shut down by British authorities and Savarkar arrested in 1910 — ending the most active phase of this emigre network."
+    },
+    "hi": {
+      "display_text": "भारतीय राष्ट्रवादी आंदोलन में महिलाओं के राजनीतिक नेतृत्व के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. एनी बेसेंट, जिन्होंने 1917 में भारतीय राष्ट्रीय कांग्रेस की अध्यक्षता की, को अक्सर 'पहली भारतीय महिला INC अध्यक्ष' के रूप में वर्णित किया जाता है — यह तकनीकी रूप से सही है क्योंकि उन्होंने 1917 से पहले भारतीय नागरिकता अपना ली थी।\n2. सरोजिनी नायडू ने 1925 में भारतीय राष्ट्रीय कांग्रेस की अध्यक्षता की, कानपुर सत्र की अध्यक्षता करते हुए, और उन्हें इस पद पर बैठने वाली पहली भारतीय महिला के रूप में सही रूप से पहचाना जाता है।\n3. भिकाजी कामा का लंदन में सहयोगी नेटवर्क में श्यामजी कृष्ण वर्मा शामिल थे और यह इंडिया हाउस से जुड़ा था — जो बीसवीं सदी के पहले दशक में इंग्लैंड में कट्टर भारतीय राष्ट्रवाद का केंद्र था।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1917 में भारतीय राष्ट्रीय कांग्रेस की अध्यक्षता करने वाली एनी बेसेंट को अक्सर 'पहली भारतीय महिला INC अध्यक्ष' के रूप में वर्णित किया जाता है — यह तकनीकी रूप से सही है क्योंकि उन्होंने 1917 से पहले भारतीय नागरिकता अपना ली थी।",
+          "verdict": "गलत",
+          "reason": "एनी बेसेंट ब्रिटिश मूल की थीं और ब्रिटिश नागरिक ही रहीं — उन्होंने भारतीय नागरिकता नहीं अपनाई। सही वर्णन यह है कि वह 'पहली महिला INC अध्यक्ष' (1917) थीं, लेकिन 'पहली भारतीय महिला INC अध्यक्ष' नहीं — यह सम्मान सरोजिनी नायडू (1925) को जाता है। भारतीय नागरिकता अपनाने का दावा तथ्यात्मक रूप से गलत है।"
+        },
+        {
+          "statement": "सरोजिनी नायडू ने 1925 में भारतीय राष्ट्रीय कांग्रेस की अध्यक्षता की, कानपुर सत्र की अध्यक्षता करते हुए, और उन्हें इस पद पर बैठने वाली पहली भारतीय महिला के रूप में सही रूप से पहचाना जाता है।",
+          "verdict": "सही",
+          "reason": "सरोजिनी नायडू ने 1925 में INC के कानपुर सत्र की अध्यक्षता की और वह पहली भारतीय महिला INC अध्यक्ष हैं — जो एनी बेसेंट (पहली महिला, लेकिन भारतीय नहीं) से अलग पहचान है।"
+        },
+        {
+          "statement": "भिकाजी कामा का लंदन में सहयोगी नेटवर्क में श्यामजी कृष्ण वर्मा शामिल थे और यह इंडिया हाउस से जुड़ा था — जो बीसवीं सदी के पहले दशक में इंग्लैंड में कट्टर भारतीय राष्ट्रवाद का केंद्र था।",
+          "verdict": "सही",
+          "reason": "कामा का इंडिया हाउस नेटवर्क से संबंध था, जिसे श्यामजी कृष्ण वर्मा ने हाईगेट, लंदन में स्थापित किया था — यह उनके प्रवासी राष्ट्रवादी गतिविधियों का एक प्रमाणित तथ्य है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) केवल कथन 2 को गलत बताता है, जो उन छात्रों को भ्रमित करता है जो जानते हैं कि सरोजिनी नायडू पहली भारतीय महिला INC अध्यक्ष थीं लेकिन कथन 2 को गलत समझते हैं जबकि वह सही है।",
+      "elimination_logic": [
+        "कथन 1: बेसेंट ने भारतीय नागरिकता अपनाई होने का दावा — गलत; वह ब्रिटिश थीं। साथ ही यह दावा कि इससे वह 'पहली भारतीय महिला INC अध्यक्ष' हैं — गलत (यह सम्मान नायडू को जाता है)। अतः कथन 1 गलत है।",
+        "कथन 2: नायडू, कानपुर 1925, पहली भारतीय महिला INC अध्यक्ष — सभी तथ्य सही; कथन 2 सही है।",
+        "कथन 3: कामा और इंडिया हाउस, श्यामजी कृष्ण वर्मा — प्रमाणित संबंध; कथन 3 सही है।",
+        "केवल कथन 1 गलत है → उत्तर (a) केवल 1।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में एनी बेसेंट को भारतीय नागरिकता देने वाली त्रुटि है — यह दावा इसलिए विश्वसनीय लगता है क्योंकि वह भारतीय संस्कृति और थियोसोफी में गहराई से लिप्त थीं। जो छात्र जानते हैं कि वह एक प्रमुख भारतीय राष्ट्रवादी थीं, वे मान सकते हैं कि उन्होंने नागरिकता ली, जबकि वह जीवन भर ब्रिटिश ही रहीं।",
+      "final_explanation": "महिलाओं के राष्ट्रवादी नेतृत्व में 'पहली' की सटीकता UPSC प्रश्नों में सबसे विश्वसनीय रूप से परखी जाने वाली श्रेणियों में से एक है।\n\n• कथन 1 — गलत: एनी बेसेंट ब्रिटिश मूल की थीं और उन्होंने भारतीय नागरिकता नहीं ली। उन्हें सही रूप से 'पहली महिला INC अध्यक्ष' (1917) कहा जाता है — लेकिन 'पहली भारतीय महिला' का उपाधि उन पर लागू नहीं होती। 1917 से पहले भारतीय नागरिकता अपनाने का दावा तथ्यात्मक रूप से गलत है। कथन 1 गलत है।\n• कथन 2 — सही: सरोजिनी नायडू ने 1925 में INC के कानपुर सत्र की अध्यक्षता की, और वह इस पद पर बैठने वाली पहली भारतीय महिला थीं — बेसेंट से अलग (पहली महिला, लेकिन भारतीय नहीं)।\n• कथन 3 — सही: भिकाजी कामा के इंडिया हाउस, हाईगेट, लंदन से संबंध — जिसे श्यामजी कृष्ण वर्मा ने स्थापित किया था — प्रमाणित हैं। सावरकर भी इस नेटवर्क से जुड़े थे। कामा का इस कट्टर राष्ट्रवादी प्रवासी समूह के साथ सहयोग एक स्थापित ऐतिहासिक तथ्य है।\n\nमूल्यवर्धन:\n• बेसेंट थियोसोफिकल सोसाइटी की अध्यक्ष थीं और होम रूल लीग (1916) का नेतृत्व किया — भारत के लिए उनके योगदान विशाल थे लेकिन उन्होंने नागरिकता परिवर्तन नहीं किया।\n• नायडू की कविता ने उन्हें 'भारत की नाइटिंगेल' की उपाधि दिलाई — वह उन कुछ हस्तियों में से हैं जिनकी सांस्कृतिक और राजनीतिक पहचान दोनों UPSC में परखी जाती है।\n• इंडिया हाउस (लंदन) को ब्रिटिश अधिकारियों ने बंद कर दिया और सावरकर को 1910 में गिरफ्तार किया — जिससे इस प्रवासी नेटवर्क का सबसे सक्रिय चरण समाप्त हुआ।"
+    }
+  },
+  {
+    "uuid": "1c749653-1ca4-4de1-b857-10b7fdd9875a",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Women in the Freedom Struggle",
+      "sub_topic": "Impact of freedom struggle on women's rights",
+      "concepts_used": [
+        "Partition, Communal Violence, and Women's Bodies as Sites of Political Contestation (1947)",
+        "Constitutional Provisions for Women's Rights as a Direct Legacy of Freedom Struggle",
+        "Hindu Code Bill Debates (1948–1956): Freedom Struggle Legacy Meeting Patriarchal Resistance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Post-independence women's rights legislation sequence — 1947 to 1956",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following events in the post-independence trajectory of women's rights legislation in India:\n\nI. Enactment of the Hindu Marriage Act — the first of four successor statutes to the proposed unified Hindu Code Bill\nII. Ambedkar's resignation from the Union Cabinet citing the indefinite postponement and dilution of the Hindu Code Bill\nIII. Enactment of the Abducted Persons (Recovery and Restoration) Act in response to Partition violence\nIV. The Constitution of India coming into force, establishing universal adult franchise and equality provisions\n\nWhich of the following is the correct chronological sequence of these events?\n\n(a) IV → III → II → I\n(b) III → IV → II → I\n(c) IV → III → I → II\n(d) II → III → IV → I",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it correctly places the Constitution before Ambedkar's resignation but reverses the Recovery Act and the Hindu Marriage Act — students uncertain about whether the Recovery Act came before or after the Constitution will select (c).",
+      "elimination_logic": [
+        "Indian Independence and Constitution (1947–1950): Constitution came into force 26 January 1950 — this is the baseline.",
+        "Abducted Persons Recovery Act: enacted in 1949 — before the Constitution came into force (January 1950).",
+        "Ambedkar's resignation: October 1951 — after the Constitution's enactment.",
+        "Hindu Marriage Act: 1955 — the first of the four Hindu Code successor acts; must follow Ambedkar's resignation (1951).",
+        "Correct sequence: Recovery Act (1949) → Constitution in force (1950) → Ambedkar's resignation (1951) → Hindu Marriage Act (1955). Answer corresponds to option (b)."
+      ],
+      "upsc_trap_explanation": "The primary trap targets students who assume all post-independence legislation necessarily came after the Constitution (January 1950). The Recovery Act was passed in 1949 by the same Constituent Assembly acting as a legislature — before the Constitution formally commenced. This counter-intuitive fact makes option (b)'s correct sequence unexpected.",
+      "final_explanation": "The sequence of post-independence women's rights legislation and related events tests precision about dates in a narrow five-year window (1949–1956).\n\nCorrect sequence: III → IV → II → I\n\n• III (Abducted Persons (Recovery and Restoration) Act, 1949): This Act was passed before the Constitution came into force — the Constituent Assembly-era government enacted it in response to Partition violence.\n• IV (Constitution of India comes into force, 26 January 1950): Bringing universal adult franchise (Article 326), equality provisions (Articles 14, 15), and Directive Principles into effect.\n• II (Ambedkar resigns from the Union Cabinet citing the Hindu Code Bill's indefinite postponement, October 1951): His resignation came after the Constitution was adopted and after the first general elections — placing it firmly in 1951.\n• I (Hindu Marriage Act enacted as the first of four successor legislation to the proposed Hindu Code Bill, 1955): The first substantive act following the failure to pass a unified code, enacted four years after Ambedkar's resignation.\n\nWrong options fail by placing the Recovery Act after the Constitution or reversing Ambedkar's resignation and the Hindu Marriage Act.\n\nValue Addition:\n• The first general elections of independent India were held in 1951–52 — women voted as universal adult franchise citizens for the first time.\n• The Hindu Succession Act (1956), Hindu Minority and Guardianship Act (1956), and Hindu Adoptions and Maintenance Act (1956) followed the Hindu Marriage Act in the same year.\n• Ambedkar died in December 1956 — he lived to see the four successor acts passed but not a comprehensive uniform civil code."
+    },
+    "hi": {
+      "display_text": "स्वतंत्रता के बाद भारत में महिलाओं के अधिकारों से संबंधित निम्नलिखित घटनाओं पर विचार करें:\n\nI. हिंदू विवाह अधिनियम का पारित होना — प्रस्तावित एकीकृत हिंदू कोड बिल के चार उत्तराधिकारी विधेयकों में पहला\nII. हिंदू कोड बिल के अनिश्चितकालीन स्थगन और कमजोर किए जाने का हवाला देते हुए अंबेडकर का केंद्रीय मंत्रिमंडल से इस्तीफा\nIII. विभाजन हिंसा के जवाब में अपहृत व्यक्तियों की पुनर्प्राप्ति और बहाली अधिनियम का पारित होना\nIV. भारत के संविधान का लागू होना, जिसमें सार्वभौमिक वयस्क मताधिकार और समानता प्रावधान स्थापित हुए\n\nइन घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) IV → III → II → I\n(b) III → IV → II → I\n(c) IV → III → I → II\n(d) II → III → IV → I",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह संविधान को अंबेडकर के इस्तीफे से पहले सही स्थान पर रखता है लेकिन रिकवरी एक्ट और हिंदू विवाह अधिनियम को उलट देता है — जो छात्र यह नहीं जानते कि रिकवरी एक्ट संविधान से पहले आया या बाद में, वे (c) चुनेंगे।",
+      "elimination_logic": [
+        "भारतीय स्वतंत्रता और संविधान (1947–1950): संविधान 26 जनवरी 1950 को लागू हुआ — यह आधार रेखा है।",
+        "अपहृत व्यक्तियों की पुनर्प्राप्ति अधिनियम: 1949 में पारित — संविधान लागू होने (जनवरी 1950) से पहले।",
+        "अंबेडकर का इस्तीफा: अक्टूबर 1951 — संविधान के लागू होने के बाद।",
+        "हिंदू विवाह अधिनियम: 1955 — चार हिंदू कोड उत्तराधिकारी अधिनियमों में पहला; अंबेडकर के इस्तीफे (1951) के बाद होना चाहिए।",
+        "सही क्रम: रिकवरी एक्ट (1949) → संविधान लागू (1950) → अंबेडकर का इस्तीफा (1951) → हिंदू विवाह अधिनियम (1955)। उत्तर विकल्प (b) के अनुरूप है।"
+      ],
+      "upsc_trap_explanation": "प्रमुख जाल उन छात्रों को निशाना बनाता है जो मानते हैं कि स्वतंत्रता के बाद की सभी विधायिकाएँ अनिवार्य रूप से संविधान (जनवरी 1950) के बाद आईं। रिकवरी एक्ट 1949 में उसी संविधान सभा द्वारा विधायिका के रूप में पारित किया गया था — संविधान के औपचारिक लागू होने से पहले। यह विरोधाभासी तथ्य विकल्प (b) के सही क्रम को अप्रत्याशित बनाता है।",
+      "final_explanation": "स्वतंत्रता के बाद महिलाओं के अधिकारों से संबंधित विधायी घटनाओं का क्रम और संबंधित घटनाएँ 1949–1956 के संकुचित पांच वर्ष के अंतराल में तिथियों के प्रति सटीकता की परीक्षा लेती हैं।\n\nसही क्रम: III → IV → II → I\n\n• III (अपहृत व्यक्तियों की पुनर्प्राप्ति और बहाली अधिनियम, 1949): यह अधिनियम संविधान लागू होने से पहले पारित हुआ — संविधान सभा कालीन सरकार ने इसे विभाजन हिंसा के जवाब में बनाया।\n• IV (भारत का संविधान लागू होना, 26 जनवरी 1950): सार्वभौमिक वयस्क मताधिकार (अनुच्छेद 326), समानता प्रावधान (अनुच्छेद 14, 15), और निर्देशात्मक सिद्धांतों को लागू करना।\n• II (अंबेडकर का हिंदू कोड बिल के अनिश्चितकालीन स्थगन का हवाला देते हुए केंद्रीय मंत्रिमंडल से इस्तीफा, अक्टूबर 1951): उनका इस्तीफा संविधान के अपनाए जाने और पहले आम चुनाव के बाद आया — इसे 1951 में निश्चित रूप से रखा गया।\n• I (हिंदू विवाह अधिनियम, 1955): प्रस्तावित एकीकृत हिंदू कोड बिल के चार उत्तराधिकारी विधेयकों में पहला; अंबेडकर के इस्तीफे के चार वर्ष बाद पारित।\n\nगलत विकल्प रिकवरी एक्ट को संविधान के बाद या अंबेडकर के इस्तीफे और हिंदू विवाह अधिनियम को उलट कर रखते हैं।\n\nमूल्यवर्धन:\n• स्वतंत्र भारत के पहले आम चुनाव 1951–52 में हुए — महिलाओं ने पहली बार सार्वभौमिक वयस्क मताधिकार के रूप में मतदान किया।\n• हिंदू उत्तराधिकार अधिनियम (1956), हिंदू अल्पसंख्यक और अभिभावक अधिनियम (1956), और हिंदू दत्तक ग्रहण एवं पालन-पोषण अधिनियम (1956) उसी वर्ष हिंदू विवाह अधिनियम के बाद आए।\n• अंबेडकर का निधन दिसंबर 1956 में हुआ — उन्होंने चार उत्तराधिकारी अधिनियमों को पारित होते देखा लेकिन एक समग्र एकीकृत नागरिक संहिता नहीं।"
+    }
+  }
+]

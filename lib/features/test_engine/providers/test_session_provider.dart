@@ -102,7 +102,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
         selectedOption: option,
       );
 
-      if (isCorrect && s.subjectSlug == 'revision') {
+      if (isCorrect && s.subject == 'revision') {
         final rev = await ref.read(
           updateRevisionQueueProgressUseCaseProvider.future,
         );
@@ -425,9 +425,9 @@ extension on ActiveSession {
     return ActiveSession(
       id: id,
       mode: mode,
-      subjectSlug: subjectSlug,
-      topicSlug: topicSlug,
-      subTopicSlug: subTopicSlug,
+      subject: subject,
+      topic: topic,
+      subTopic: subTopic,
       questionCount: questionCount,
       isTimed: isTimed,
       timeLimitSecs: timeLimitSecs,

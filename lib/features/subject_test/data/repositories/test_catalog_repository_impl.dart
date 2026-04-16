@@ -1,16 +1,12 @@
 import 'package:upsc_wars/core/constants/subject_constants.dart';
-import 'package:upsc_wars/core/database/question_db.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/repositories/test_catalog_repository.dart';
 
 class TestCatalogRepositoryImpl implements TestCatalogRepository {
   TestCatalogRepositoryImpl({
-    required QuestionDb questionDb,
     required UserDatabase userDatabase,
-  })  : _questionDb = questionDb,
-        _userDatabase = userDatabase;
+  }) : _userDatabase = userDatabase;
 
-  final QuestionDb _questionDb;
   final UserDatabase _userDatabase;
 
   @override
@@ -19,13 +15,14 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
     final bySubject = await _aggregateBySubject(scored);
     final out = <SubjectMetrics>[];
     for (final def in SubjectConstants.ordered) {
-      final slug = def.slug;
-      final qCount = await _questionDb.getQuestionCountForSubject(slug);
-      final topicCount = await _questionDb.getDistinctTopicCountForSubject(slug);
-      final agg = bySubject[slug] ?? _Agg();
+      final subject = def.slug;
+      final qCount = (await _userDatabase.questionsDao.getBySubject(subject)).length;
+      final topicCount = (await _userDatabase.questionsDao.getTopicQuestionCountsForSubject(subject))
+          .length;
+      final agg = bySubject[subject] ?? _Agg();
       out.add(
         SubjectMetrics(
-          subjectSlug: slug,
+          subject: subject,
           questionCount: qCount,
           topicCount: topicCount,
           scoredAttemptCount: agg.attempted,
@@ -38,24 +35,36 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
 
   @override
   Future<List<TopicMetrics>> fetchTopicMetrics(
-    String subjectSlug,
+    String subject,
     String language,
   ) async {
     final scored = await _userDatabase.sessionQuestionsDao.getScoredPracticeRows();
-    final byTopic = await _aggregateByTopic(scored, subjectSlug);
-    final counts = await _questionDb.getQuestionCountsByTopicForSubject(subjectSlug);
-    final names = await _questionDb.getTopicDisplayNamesForSubject(subjectSlug, language);
-    final slugs = names.keys.toList()
+    final byTopic = await _aggregateByTopic(scored, subject);
+    final countsRows = await _userDatabase.questionsDao.getTopicQuestionCountsForSubject(
+      subject,
+    );
+    final counts = {for (final row in countsRows) row.topic: row.questionCount};
+    final topicNames = counts.keys.toList();
+    final names = <String, String>{};
+    for (final topic in topicNames) {
+      if (language == 'hi') {
+        final translation = await _userDatabase.topicTranslationsDao.getByEnglishName(topic);
+        names[topic] = translation?.hindiName ?? topic;
+      } else {
+        names[topic] = topic;
+      }
+    }
+    final topics = names.keys.toList()
       ..sort((a, b) => names[a]!.toLowerCase().compareTo(names[b]!.toLowerCase()));
     return [
-      for (final slug in slugs)
+      for (final topic in topics)
         TopicMetrics(
-          topicSlug: slug,
-          subjectSlug: subjectSlug,
-          displayName: names[slug] ?? slug,
-          questionCount: counts[slug] ?? 0,
-          scoredAttemptCount: byTopic[slug]?.attempted ?? 0,
-          scoredCorrectCount: byTopic[slug]?.correct ?? 0,
+          topic: topic,
+          subject: subject,
+          displayName: names[topic] ?? topic,
+          questionCount: counts[topic] ?? 0,
+          scoredAttemptCount: byTopic[topic]?.attempted ?? 0,
+          scoredCorrectCount: byTopic[topic]?.correct ?? 0,
         ),
     ];
   }
@@ -65,12 +74,12 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
   ) async {
     if (rows.isEmpty) return {};
     final uuids = rows.map((r) => r.questionUuid).toList();
-    final locs = await _questionDb.getSubjectTopicForUuids(uuids);
+    final locs = await _userDatabase.questionsDao.getSubjectTopicForUuids(uuids);
     final map = <String, _Agg>{};
     for (final row in rows) {
       final loc = locs[row.questionUuid];
       if (loc == null) continue;
-      final a = map.putIfAbsent(loc.subjectSlug, _Agg.new);
+      final a = map.putIfAbsent(loc.subject, _Agg.new);
       a.attempted++;
       if (row.isCorrect) a.correct++;
     }
@@ -79,16 +88,16 @@ class TestCatalogRepositoryImpl implements TestCatalogRepository {
 
   Future<Map<String, _Agg>> _aggregateByTopic(
     List<ScoredSessionQuestionRow> rows,
-    String subjectSlug,
+    String subject,
   ) async {
     if (rows.isEmpty) return {};
     final uuids = rows.map((r) => r.questionUuid).toList();
-    final locs = await _questionDb.getSubjectTopicForUuids(uuids);
+    final locs = await _userDatabase.questionsDao.getSubjectTopicForUuids(uuids);
     final map = <String, _Agg>{};
     for (final row in rows) {
       final loc = locs[row.questionUuid];
-      if (loc == null || loc.subjectSlug != subjectSlug) continue;
-      final a = map.putIfAbsent(loc.topicSlug, _Agg.new);
+      if (loc == null || loc.subject != subject) continue;
+      final a = map.putIfAbsent(loc.topic, _Agg.new);
       a.attempted++;
       if (row.isCorrect) a.correct++;
     }

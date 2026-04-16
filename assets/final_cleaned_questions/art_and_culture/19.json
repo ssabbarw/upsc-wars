@@ -1,0 +1,1202 @@
+[
+  {
+    "uuid": "e40bdb5e-a98a-4a43-960a-170218edf5bb",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Chronological Phases and Patronage Patterns"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Satavahana vs Vakataka patronage at rock-cut caves",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly pairs the dynastic patronage with the respective rock-cut Buddhist cave sites?\n\n(a) Vakataka patronage at Karla and Bhaja; Satavahana patronage at the later phase of Ajanta\n(b) Satavahana patronage at Karla and Bhaja; Vakataka patronage at the later phase of Ajanta\n(c) Satavahana patronage at the later phase of Ajanta; Vakataka patronage at Karla and Bhaja\n(d) Kushana patronage at Karla and Bhaja; Satavahana patronage at all phases of Ajanta",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because students often associate the later, more celebrated phase of Ajanta with Satavahana patronage simply because Satavahanas are the most prominent Deccan dynasty discussed in this context.",
+      "elimination_logic": [
+        "Eliminate options that assign Vakataka patronage to Karla or Bhaja — both belong to the Satavahana period.",
+        "Eliminate options claiming Satavahana patronage for the later (Mahayana) phase of Ajanta — that phase is associated with the Vakatakas.",
+        "Confirm: Satavahanas patronised Karla and Bhaja; Vakatakas patronised the later Ajanta caves — option b correctly pairs these."
+      ],
+      "upsc_trap_explanation": "The trap lies in conflating the two distinct patronage phases of Ajanta. Students who know 'Satavahanas patronised Buddhist caves in Maharashtra' may reflexively apply that to all phases of Ajanta. However, the later and artistically richer Mahayana phase (5th–6th century CE) was patronised by the Vakatakas, not the Satavahanas. The Satavahana connection is correct for Karla and Bhaja, not for the celebrated painting-phase of Ajanta.",
+      "final_explanation": "Rock-cut Buddhist caves in Maharashtra were patronised across different dynastic periods. The Satavahana dynasty (c. 2nd century BCE – 2nd century CE) was the primary patron at Karla and Bhaja, as evidenced by donor inscriptions naming merchants and guilds active during their reign. The early Hinayana phase of Ajanta also falls within this broad Satavahana period. However, the celebrated later phase of Ajanta — which produced the iconic murals and Mahayana iconography — was patronised by the Vakatakas (5th–6th century CE), particularly under Harishena.\n\n• Option (a): Incorrect. Vakataka patronage did not extend to Karla or Bhaja.\n• Option (b): Correct. Satavahanas patronised Karla and Bhaja; Vakatakas patronised the later Ajanta phase.\n• Option (c): Incorrect. Reversing the dynasties produces a factually wrong pairing.\n• Option (d): Incorrect. The Kushanas were a northern dynasty with no role at these Deccan sites.\n\nValue Addition:\n• The gap between the two Ajanta phases is approximately 300 years.\n• Vakataka king Harishena is specifically associated with several later Ajanta caves.\n• Satavahana donor inscriptions at Karla include references to merchant guilds (shrenis)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा विकल्प राजवंशीय संरक्षण को संबंधित चट्टानी बौद्ध गुफा स्थलों के साथ सही रूप से जोड़ता है?\n\n(a) करला और भजा में वाकाटक संरक्षण; अजंता के बाद के चरण में सतवाहन संरक्षण\n(b) करला और भजा में सतवाहन संरक्षण; अजंता के बाद के चरण में वाकाटक संरक्षण\n(c) अजंता के बाद के चरण में सतवाहन संरक्षण; करला और भजा में वाकाटक संरक्षण\n(d) करला और भजा में कुषाण संरक्षण; अजंता के सभी चरणों में सतवाहन संरक्षण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि छात्र अक्सर अजंता के बाद के, अधिक प्रसिद्ध चरण को सतवाहन संरक्षण से जोड़ देते हैं केवल इसलिए कि सतवाहन इस संदर्भ में सबसे प्रमुख दक्कन वंश हैं।",
+      "elimination_logic": [
+        "विकल्पों को हटा दें जो करला या भजा के लिए वाकाटक संरक्षण देते हैं — ये दोनों सतवाहन काल के हैं।",
+        "विकल्पों को हटा दें जो अजंता के बाद के (महायान) चरण के लिए सतवाहन संरक्षण का दावा करते हैं — वह चरण वाकाटकों से जुड़ा है।",
+        "पुष्टि करें: सतवाहनों ने करला और भजा का संरक्षण किया; वाकाटकों ने अजंता के बाद के गुफाओं का संरक्षण किया — विकल्प b सही जोड़ी बनाता है।"
+      ],
+      "upsc_trap_explanation": "फंदा अजंता के दो अलग-अलग संरक्षण चरणों को मिलाने में है। जो छात्र जानते हैं कि 'सतवाहनों ने महाराष्ट्र में बौद्ध गुफाओं का संरक्षण किया' वे स्वचालित रूप से इसे अजंता के सभी चरणों पर लागू कर देते हैं। हालांकि, अजंता का बाद का और कलात्मक रूप से समृद्ध महायान चरण (5वीं–6वीं सदी ई.) वाकाटकों द्वारा संरक्षित था, न कि सतवाहनों द्वारा। सतवाहन संबंध करला और भजा के लिए सही है, न कि अजंता के प्रसिद्ध चित्रण चरण के लिए।",
+      "final_explanation": "महाराष्ट्र की चट्टानी बौद्ध गुफाओं का संरक्षण विभिन्न राजवंशों के काल में हुआ। सतवाहन वंश (लगभग 2री शताब्दी ईसा पूर्व – 2री शताब्दी ईस्वी) करला और भजा में मुख्य संरक्षक था, जैसा कि उनके शासनकाल के दौरान सक्रिय व्यापारियों और श्रेणियों के नाम वाले दाता शिलालेखों से प्रमाणित है। अजंता का प्रारंभिक हिनयान चरण भी इस व्यापक सतवाहन काल में आता है। हालांकि, अजंता का प्रसिद्ध बाद का चरण — जिसमें प्रतिष्ठित भित्ति चित्र और महायान प्रतीकात्मकता उत्पन्न हुई — वाकाटकों (5वीं–6वीं सदी ई.) द्वारा संरक्षित था, विशेष रूप से हरीशेना के अधीन।\n\n• विकल्प (a): गलत। वाकाटक संरक्षण करला या भजा तक नहीं फैला।\n• विकल्प (b): सही। सतवाहनों ने करला और भजा का संरक्षण किया; वाकाटकों ने अजंता के बाद के चरण का संरक्षण किया।\n• विकल्प (c): गलत। राजवंशों को उलटने से तथ्यात्मक रूप से गलत जोड़ी बनती है।\n• विकल्प (d): गलत। कुषाण एक उत्तरी राजवंश था जिसका इन दक्कन स्थलों से कोई संबंध नहीं था।\n\nमूल्यवर्धन:\n• अजंता के दो चरणों के बीच लगभग 300 वर्षों का अंतर है।\n• वाकाटक राजा हरीशेना विशेष रूप से कई बाद के अजंता गुफाओं से जुड़े हैं।\n• करला में सतवाहन दाता शिलालेखों में व्यापारी श्रेणियों (श्रेणियाँ) का उल्लेख है।"
+    }
+  },
+  {
+    "uuid": "1fbcb787-c87f-4157-9935-d3f05ec8a0c3",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Chaitya vs Vihara: Architectural Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Chaitya hall distinguishing architectural features",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the architectural distinction between chaityas and viharas in rock-cut Buddhist cave complexes:\n\n1. The horseshoe-shaped opening above the entrance facade, known as the chaitya window, is a defining feature of chaitya halls and served to illuminate the stupa inside.\n2. Viharas followed an apsidal plan, while chaityas were laid out on a rectangular plan with cells along three sides.\n3. Chaitya halls include a pradakshina patha (circumambulatory passage) around the stupa, allowing ritual circumambulation.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The horseshoe-shaped opening above the entrance facade, known as the chaitya window, is a defining feature of chaitya halls and served to illuminate the stupa inside.",
+          "verdict": "Correct",
+          "reason": "The chaitya arch (gavaksha) was strategically placed so that light fell directly on the stupa at the far end of the hall, fulfilling both a functional and symbolic role."
+        },
+        {
+          "statement": "Viharas followed an apsidal plan, while chaityas were laid out on a rectangular plan with cells along three sides.",
+          "verdict": "Incorrect",
+          "reason": "This is precisely reversed: chaityas follow an apsidal plan (semicircular at the far end), while viharas are rectangular in plan with monks' cells arranged along the walls."
+        },
+        {
+          "statement": "Chaitya halls include a pradakshina patha (circumambulatory passage) around the stupa, allowing ritual circumambulation.",
+          "verdict": "Correct",
+          "reason": "The apsidal design of chaityas creates a natural ambulatory around the stupa, enabling worshippers to perform pradakshina as a devotional act."
+        }
+      ],
+      "strong_distractor": "d — Option d is deceptive because students who correctly identify Statement 2 as wrong may doubt Statement 3, assuming circumambulation paths belong only to structural (open-air) stupas rather than rock-cut chaityas.",
+      "elimination_logic": [
+        "Statement 1 is correct — the chaitya window illuminating the stupa is a well-established architectural fact.",
+        "Statement 2 is incorrect — the plans are reversed; chaityas are apsidal and viharas are rectangular, not the other way around.",
+        "Statement 3 is correct — the apsidal plan of chaityas inherently creates the circumambulatory path.",
+        "Only Statements 1 and 3 are correct, which corresponds to option c."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the planted trap. Many students recall that viharas have cells and chaityas have stupas but confuse which has the apsidal vs rectangular plan. Because the statement sounds authoritative and uses correct terminology, a partially prepared student may mark it correct and then doubt the other statements, leading to a wrong answer.",
+      "final_explanation": "Chaityas and viharas represent the two primary types of rock-cut Buddhist spaces, each with a distinct architectural logic. The chaitya is a prayer hall centred on a stupa, while the vihara is a residential monastery for monks.\n\n• Statement 1 — Correct: The chaitya arch (horseshoe window) was a deliberate design choice — light enters through it and falls on the stupa, merging symbolic and functional intent.\n• Statement 2 — Incorrect: The plans are switched. Chaityas adopt an apsidal plan (the nave ends in a semicircle housing the stupa), whereas viharas are rectangular, with a central hall and cells on three sides.\n• Statement 3 — Correct: The apsidal termination of the chaitya nave naturally forms the pradakshina patha, allowing ritual circumambulation of the stupa.\n\nValue Addition:\n• Chaityas become progressively rare after the early medieval period; viharas continued to evolve into monastery complexes.\n• The term 'gavaksha' refers to the horseshoe arch motif used decoratively even on viharas.\n• The ratio of chaityas to viharas at Ajanta is 5:25 (5 chaityas, 25 viharas)."
+    },
+    "hi": {
+      "display_text": "शिला-कट बौद्ध गुफा परिसरों में चैत्य और विहार के वास्तुशिल्पीय भेद के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. प्रवेश मुखौटे के ऊपर घोड़े के नाल के आकार वाला उद्घाटन, जिसे चैत्य विंडो कहा जाता है, चैत्य सभागार की एक विशिष्ट विशेषता है और यह अंदर स्थित स्तूप को प्रकाशमान करता था।\n2. विहारों का योजना अप्सिडल था, जबकि चैत्य आयताकार योजना पर बनाए गए थे जिनके तीन ओर कक्ष होते थे।\n3. चैत्य सभागारों में स्तूप के चारों ओर प्रदक्षिणा पथ (परिक्रमा मार्ग) होता है, जो अनुष्ठानिक परिक्रमा की अनुमति देता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "प्रवेश मुखौटे के ऊपर घोड़े के नाल के आकार वाला उद्घाटन, जिसे चैत्य विंडो कहा जाता है, चैत्य सभागार की एक विशिष्ट विशेषता है और यह अंदर स्थित स्तूप को प्रकाशमान करता था।",
+          "verdict": "सही है",
+          "reason": "चैत्य मेहराब (गवाक्ष) को इस प्रकार रखा गया था कि प्रकाश सीधे सभागार के दूर के छोर पर स्थित स्तूप पर पड़ता था, जो एक कार्यात्मक और प्रतीकात्मक भूमिका दोनों निभाता था।"
+        },
+        {
+          "statement": "विहारों का योजना अप्सिडल (अर्धवृत्ताकार) था, जबकि चैत्य आयताकार योजना पर बनाए गए थे जिनके तीन ओर कक्ष होते थे।",
+          "verdict": "गलत है",
+          "reason": "यह पूरी तरह उल्टा है: चैत्य अप्सिडल योजना का पालन करते हैं (दूर के छोर पर अर्धवृत्ताकार), जबकि विहार आयताकार योजना के होते हैं जिनमें भिक्षुओं के कक्ष दीवारों के साथ व्यवस्थित होते हैं।"
+        },
+        {
+          "statement": "चैत्य सभागारों में स्तूप के चारों ओर प्रदक्षिणा पथ (परिक्रमा मार्ग) होता है, जो अनुष्ठानिक परिक्रमा की अनुमति देता है।",
+          "verdict": "सही है",
+          "reason": "चैत्य की अप्सिडल डिजाइन स्तूप के चारों ओर एक प्राकृतिक परिक्रमा मार्ग बनाती है, जिससे भक्तों को प्रदक्षिणा करने की सुविधा मिलती है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d भ्रमित करने वाला है क्योंकि जो छात्र कथन 2 को गलत पहचानते हैं, वे कथन 3 पर संदेह कर सकते हैं, यह मानते हुए कि परिक्रमा मार्ग केवल संरचनात्मक (खुले) स्तूपों के लिए होते हैं, न कि शिला-कट चैत्य के लिए।",
+      "elimination_logic": [
+        "कथन 1 सही है — चैत्य विंडो द्वारा स्तूप को प्रकाशमान करना एक स्थापित वास्तुशिल्प तथ्य है।",
+        "कथन 2 गलत है — योजनाएँ उलटी हैं; चैत्य अप्सिडल होते हैं और विहार आयताकार, उल्टा नहीं।",
+        "कथन 3 सही है — चैत्य की अप्सिडल योजना स्वाभाविक रूप से परिक्रमा मार्ग बनाती है।",
+        "केवल कथन 1 और 3 सही हैं, जो विकल्प c से मेल खाते हैं।"
+      ],
+      "upsc_trap_explanation": "कथन 2 ही जाल है। कई छात्र याद करते हैं कि विहारों में कक्ष होते हैं और चैत्य में स्तूप, लेकिन वे अप्सिडल और आयताकार योजना में भ्रमित हो जाते हैं। क्योंकि कथन अधिकारपूर्ण लगता है और सही शब्दावली का उपयोग करता है, आंशिक रूप से तैयार छात्र इसे सही चिह्नित कर सकते हैं और फिर अन्य कथनों पर संदेह कर गलत उत्तर दे सकते हैं।",
+      "final_explanation": "चैत्य और विहार दो प्रमुख प्रकार के शिला-कट बौद्ध स्थान हैं, जिनकी वास्तुशिल्पीय तर्क अलग-अलग है। चैत्य एक स्तूप केंद्रित प्रार्थना सभागार है, जबकि विहार भिक्षुओं के लिए आवासीय मठ है।\n\n• कथन 1 — सही: चैत्य मेहराब (घोड़े के नाल की खिड़की) एक जानबूझकर डिज़ाइन है — प्रकाश इसके माध्यम से प्रवेश करता है और स्तूप पर पड़ता है, जो प्रतीकात्मक और कार्यात्मक उद्देश्य को जोड़ता है।\n• कथन 2 — गलत: योजनाएँ उलटी हैं। चैत्य अप्सिडल योजना अपनाते हैं (जहाँ सभागार का अंत अर्धवृत्ताकार होता है और स्तूप होता है), जबकि विहार आयताकार होते हैं, जिनमें केंद्रीय सभागार और तीन ओर कक्ष होते हैं।\n• कथन 3 — सही: चैत्य के अप्सिडल अंत से स्वाभाविक रूप से प्रदक्षिणा पथ बनता है, जो स्तूप की अनुष्ठानिक परिक्रमा की अनुमति देता है।\n\nमूल्यवर्धन:\n• प्रारंभिक मध्यकाल के बाद चैत्य दुर्लभ हो गए; विहार मठ परिसरों के रूप में विकसित होते रहे।\n• 'गवाक्ष' शब्द घोड़े के नाल के मेहराब के लिए है, जो विहारों पर भी सजावटी रूप में उपयोग होता है।\n• अजंता में चैत्य और विहार का अनुपात 5:25 है (5 चैत्य, 25 विहार)।"
+    }
+  },
+  {
+    "uuid": "fe0c04ed-a057-4775-baa3-12eac116d047",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Karla Chaitya: Architectural Supremacy"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Karla chaitya — unique architectural features",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Karla chaitya:\n\n1. The Karla chaitya, measuring approximately 45 metres in length and 14 metres in height, is considered the largest and most complete rock-cut chaitya in India.\n2. The wooden ribs preserved on the ceiling of the Karla chaitya represent the only surviving integration of ancient wooden architectural elements within a rock-cut cave.\n3. The lion capital at the entrance to the Karla chaitya was erected during the Vakataka period as part of a later renovation of the Satavahana-era structure.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 3 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Karla chaitya, measuring approximately 45 metres in length and 14 metres in height, is considered the largest and most complete rock-cut chaitya in India.",
+          "verdict": "Correct",
+          "reason": "These dimensions are accurate and Karla is indeed recognised as the largest and best-preserved rock-cut chaitya hall in the Indian subcontinent."
+        },
+        {
+          "statement": "The wooden ribs preserved on the ceiling of the Karla chaitya represent the only surviving integration of ancient wooden architectural elements within a rock-cut cave.",
+          "verdict": "Correct",
+          "reason": "Karla's teak wooden ribs fixed to the ceiling are a unique surviving example of how rock-cut caves originally replicated wooden structural forms; no other site preserves this feature in situ."
+        },
+        {
+          "statement": "The lion capital at the entrance to the Karla chaitya was erected during the Vakataka period as part of a later renovation of the Satavahana-era structure.",
+          "verdict": "Incorrect",
+          "reason": "The lion capital at Karla dates to the Satavahana period itself, not to any later Vakataka renovation; it is contemporary with the original excavation of the chaitya."
+        }
+      ],
+      "strong_distractor": "b — Option b is deceptive because students who correctly identify Statement 3 as wrong may also suspect Statement 2, since the claim about wooden ribs being the 'only surviving example' sounds like an absolute that is easy to doubt.",
+      "elimination_logic": [
+        "Statement 1 is factually correct — Karla's dimensions and status as largest rock-cut chaitya are well documented.",
+        "Statement 2 is factually correct — the wooden ribs at Karla are the sole surviving ancient wooden integration in a rock-cut cave.",
+        "Statement 3 is incorrect — the lion capital belongs to the Satavahana period, not to any Vakataka renovation.",
+        "Only Statement 3 is NOT correct, making option a the right answer."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the partial-truth technique. Students know both Satavahanas and Vakatakas were associated with cave patronage in Maharashtra, and the mention of 'later renovation' sounds plausible because later dynastic additions to existing sites are historically common. However, the Karla lion capital is unambiguously a Satavahana-period feature, not a Vakataka addition.",
+      "final_explanation": "The Karla chaitya near Lonavala is the crown jewel of Satavahana architectural patronage, representing the peak of rock-cut chaitya construction before the tradition gradually gave way to vihara-dominated complexes.\n\n• Statement 1 — Correct: At roughly 45 m long and 14 m high, Karla surpasses all other rock-cut chaityas in scale and completeness.\n• Statement 2 — Correct: The teak ribs fixed to the ceiling vault are an irreplaceable record of ancient Indian carpentry, showing how rock-cut architecture consciously mimicked earlier wooden structures.\n• Statement 3 — Incorrect: The lion capital at the cave entrance is a Satavahana-period creation, integral to the original design. No Vakataka renovation of this feature is attested.\n\nValue Addition:\n• The facade of Karla features elaborate mithuna (amorous couple) sculptures, reflecting the broader decorative vocabulary of Satavahana art.\n• Karla also contains a modern Hindu shrine to Ekvira Devi built near the ancient entrance, illustrating the palimpsest nature of sacred sites.\n• Wooden elements in rock-cut caves were likely much more common originally but have perished everywhere except Karla."
+    },
+    "hi": {
+      "display_text": "कारला चैत्य के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. लगभग 45 मीटर लंबा और 14 मीटर ऊँचा कारला चैत्य भारत का सबसे बड़ा और सबसे पूर्ण शिला-खुदाई चैत्य माना जाता है।\n2. कारला चैत्य की छत पर संरक्षित लकड़ी की पसलियाँ प्राचीन लकड़ी के वास्तु तत्वों का शिला-खुदाई गुफा में एकमात्र जीवित उदाहरण हैं।\n3. कारला चैत्य के प्रवेश द्वार पर शेर की शीर्षक वाकाटक काल के दौरान सतवाहन काल के ढांचे के बाद के नवीनीकरण के हिस्से के रूप में स्थापित की गई थी।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 3\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Karla chaitya, measuring approximately 45 metres in length and 14 metres in height, is considered the largest and most complete rock-cut chaitya in India.",
+          "verdict": "Correct",
+          "reason": "These dimensions are accurate and Karla is indeed recognised as the largest and best-preserved rock-cut chaitya hall in the Indian subcontinent."
+        },
+        {
+          "statement": "The wooden ribs preserved on the ceiling of the Karla chaitya represent the only surviving integration of ancient wooden architectural elements within a rock-cut cave.",
+          "verdict": "Correct",
+          "reason": "Karla's teak wooden ribs fixed to the ceiling are a unique surviving example of how rock-cut caves originally replicated wooden structural forms; no other site preserves this feature in situ."
+        },
+        {
+          "statement": "The lion capital at the entrance to the Karla chaitya was erected during the Vakataka period as part of a later renovation of the Satavahana-era structure.",
+          "verdict": "Incorrect",
+          "reason": "The lion capital at Karla dates to the Satavahana period itself, not to any later Vakataka renovation; it is contemporary with the original excavation of the chaitya."
+        }
+      ],
+      "strong_distractor": "b — Option b is deceptive because students who correctly identify Statement 3 as wrong may also suspect Statement 2, since the claim about wooden ribs being the 'only surviving example' sounds like an absolute that is easy to doubt.",
+      "elimination_logic": [
+        "Statement 1 is factually correct — Karla's dimensions and status as largest rock-cut chaitya are well documented.",
+        "Statement 2 is factually correct — the wooden ribs at Karla are the sole surviving ancient wooden integration in a rock-cut cave.",
+        "Statement 3 is incorrect — the lion capital belongs to the Satavahana period, not to any Vakataka renovation.",
+        "Only Statement 3 is NOT correct, making option a the right answer."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the partial-truth technique. Students know both Satavahanas and Vakatakas were associated with cave patronage in Maharashtra, and the mention of 'later renovation' sounds plausible because later dynastic additions to existing sites are historically common. However, the Karla lion capital is unambiguously a Satavahana-period feature, not a Vakataka addition.",
+      "final_explanation": "The Karla chaitya near Lonavala is the crown jewel of Satavahana architectural patronage, representing the peak of rock-cut chaitya construction before the tradition gradually gave way to vihara-dominated complexes.\n\n• Statement 1 — Correct: At roughly 45 m long and 14 m high, Karla surpasses all other rock-cut chaityas in scale and completeness.\n• Statement 2 — Correct: The teak ribs fixed to the ceiling vault are an irreplaceable record of ancient Indian carpentry, showing how rock-cut architecture consciously mimicked earlier wooden structures.\n• Statement 3 — Incorrect: The lion capital at the cave entrance is a Satavahana-period creation, integral to the original design. No Vakataka renovation of this feature is attested.\n\nValue Addition:\n• The facade of Karla features elaborate mithuna (amorous couple) sculptures, reflecting the broader decorative vocabulary of Satavahana art.\n• Karla also contains a modern Hindu shrine to Ekvira Devi built near the ancient entrance, illustrating the palimpsest nature of sacred sites.\n• Wooden elements in rock-cut caves were likely much more common originally but have perished everywhere except Karla."
+    }
+  },
+  {
+    "uuid": "0455639a-9f9a-4368-afd2-3dfcc6a07923",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Chronological Phases and Patronage Patterns",
+        "Bhaja Cave Complex: Primitive Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Chronological sequence — Bhaja, Karla, Ajanta phases",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological order (earliest to latest) of the initial excavation of these rock-cut Buddhist cave sites?\n\n(a) Karla → Bhaja → Early Ajanta (Hinayana phase)\n(b) Bhaja → Karla → Early Ajanta (Hinayana phase)\n(c) Early Ajanta (Hinayana phase) → Bhaja → Karla\n(d) Bhaja → Early Ajanta (Hinayana phase) → Karla",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because students who recall that 'Karla is the most complete chaitya' sometimes assume it must be the earliest, placing Karla before Bhaja.",
+      "elimination_logic": [
+        "Bhaja is the earliest, dating to circa 2nd century BCE — it must come first in any correct sequence.",
+        "Karla post-dates Bhaja, excavated around the 1st century BCE — it comes second.",
+        "The early Hinayana phase of Ajanta overlaps with the Satavahana period but the site's major activity continued into the Vakataka period (5th–6th century CE) — Ajanta's full development is latest.",
+        "Correct sequence: Bhaja → Karla → Ajanta (early Hinayana) → Ajanta (later Mahayana), matching option b."
+      ],
+      "upsc_trap_explanation": "The trap targets students who conflate architectural sophistication with chronological priority. Karla is architecturally superior to Bhaja, which leads some to assume Karla came first. In fact, Bhaja's simplicity reflects its chronological priority (2nd century BCE), and Karla's greater elaboration reflects the maturation of the tradition a century later. Knowing 'more elaborate = later' as a general rule is essential.",
+      "final_explanation": "Sequencing these cave complexes chronologically requires understanding that artistic and architectural elaboration generally increased over time, meaning the simplest sites are typically the earliest.\n\nCorrect sequence: Bhaja (2nd century BCE) → Karla (1st century BCE) → Early Ajanta (1st–2nd century CE) → Later Ajanta (5th–6th century CE)\n\n• Bhaja is the earliest rock-cut Buddhist complex, characterised by simple, unadorned forms reflecting early Hinayana austerity — no Buddha images, minimal ornamentation.\n• Karla comes next, representing the architectural zenith of the chaitya form — more elaborate facade, taller pillars, wooden ribs on the ceiling.\n• Ajanta's early phase overlaps with the Satavahana period; its later Mahayana phase under the Vakatakas is the most recent, producing the celebrated paintings.\n\nWhy wrong options fail:\n• Option a (Karla → Bhaja → Ajanta) incorrectly places Karla before Bhaja.\n• Option c (Ajanta early → Bhaja → Karla) reverses all three.\n• Option d (Bhaja → Ajanta early → Karla) misplaces Karla after early Ajanta.\n\nValue Addition:\n• The 300-year gap between Ajanta's two phases is sometimes called the 'dark interval' in Ajanta scholarship.\n• Bhaja's stupas are among the earliest surviving examples of the form in rock-cut architecture.\n• Rock-cutting proceeded top-down; excavators began at the roof and worked downwards to prevent collapse."
+    },
+    "hi": {
+      "display_text": "इन शिला-कटित बौद्ध गुफा स्थलों की प्रारंभिक खुदाई का सही कालानुक्रमिक क्रम (सबसे प्राचीन से नवीनतम) कौन-सा है?\n\n(a) कार्ला → भजा → प्रारंभिक अजंता (हिनयान चरण)\n(b) भजा → कार्ला → प्रारंभिक अजंता (हिनयान चरण)\n(c) प्रारंभिक अजंता (हिनयान चरण) → भजा → कार्ला\n(d) भजा → प्रारंभिक अजंता (हिनयान चरण) → कार्ला",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रमित करने वाला है क्योंकि जो छात्र याद करते हैं कि 'कार्ला सबसे पूर्ण चैत्य है' वे कभी-कभी मान लेते हैं कि यह सबसे प्राचीन होना चाहिए, इसलिए कार्ला को भजा से पहले रखते हैं।",
+      "elimination_logic": [
+        "भजा सबसे प्राचीन है, लगभग 2री शताब्दी ईसा पूर्व का है — यह किसी भी सही क्रम में सबसे पहले आना चाहिए।",
+        "कार्ला भजा के बाद का है, लगभग 1ली शताब्दी ईसा पूर्व में खुदा गया — यह दूसरा आता है।",
+        "अजंता का प्रारंभिक हिनयान चरण सातवाहन काल से ओवरलैप करता है लेकिन स्थल की मुख्य गतिविधि वाकाटक काल (5वीं–6वीं शताब्दी ईस्वी) तक जारी रही — अजंता का पूर्ण विकास सबसे नवीन है।",
+        "सही क्रम: भजा → कार्ला → अजंता (प्रारंभिक हिनयान) → अजंता (परवर्ती महायान), जो विकल्प b से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल उन छात्रों को लक्षित करता है जो वास्तुशिल्प की परिष्कृतता को कालानुक्रमिक प्राथमिकता के साथ भ्रमित करते हैं। कार्ला वास्तुशिल्प की दृष्टि से भजा से श्रेष्ठ है, जिससे कुछ लोग मान लेते हैं कि कार्ला पहले आया। वास्तव में, भजा की सादगी इसके कालानुक्रमिक प्राथमिकता (2री शताब्दी ईसा पूर्व) को दर्शाती है, और कार्ला की अधिक जटिलता परंपरा के परिपक्व होने को एक शताब्दी बाद दर्शाती है। 'अधिक जटिल = बाद में' यह सामान्य नियम जानना आवश्यक है।",
+      "final_explanation": "इन गुफा परिसरों को कालानुक्रमिक रूप से क्रमबद्ध करने के लिए यह समझना आवश्यक है कि कलात्मक और वास्तुशिल्प परिष्कार सामान्यतः समय के साथ बढ़ा, जिसका अर्थ है कि सबसे सरल स्थल आमतौर पर सबसे प्राचीन होते हैं।\n\nसही क्रम: भजा (2री शताब्दी ईसा पूर्व) → कार्ला (1ली शताब्दी ईसा पूर्व) → प्रारंभिक अजंता (1ली–2री शताब्दी ईस्वी) → परवर्ती अजंता (5वीं–6वीं शताब्दी ईस्वी)\n\n• भजा सबसे प्राचीन शिला-कटित बौद्ध परिसर है, जो सरल, बिना सजावट वाले रूपों से हिनयान की प्रारंभिक कठोरता को दर्शाता है — कोई बुद्ध प्रतिमा नहीं, न्यूनतम अलंकरण।\n• कार्ला अगला आता है, जो चैत्य रूप की वास्तुशिल्पीय चरम सीमा का प्रतिनिधित्व करता है — अधिक जटिल मुखौटा, ऊँचे स्तंभ, छत पर लकड़ी की पसलियाँ।\n• अजंता का प्रारंभिक चरण सातवाहन काल से ओवरलैप करता है; इसका परवर्ती महायान चरण वाकाटक के अधीन सबसे नवीन है, जिसने प्रसिद्ध चित्रकला उत्पन्न की।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प a (कार्ला → भजा → अजंता) गलत तरीके से कार्ला को भजा से पहले रखता है।\n• विकल्प c (प्रारंभिक अजंता → भजा → कार्ला) तीनों को उलट देता है।\n• विकल्प d (भजा → प्रारंभिक अजंता → कार्ला) कार्ला को प्रारंभिक अजंता के बाद गलत स्थान देता है।\n\nमूल्यवर्धन:\n• अजंता के दो चरणों के बीच 300 वर्ष का अंतराल कभी-कभी अजंता अध्ययन में 'अंधकार काल' कहा जाता है।\n• भजा के स्तूप शिला-कटित वास्तुशिल्प में इस रूप के सबसे प्राचीन जीवित उदाहरणों में से हैं।\n• शिला-कटाई ऊपर से नीचे की ओर हुई; खुदाई करने वाले छत से शुरू करते थे और गिरावट रोकने के लिए नीचे की ओर काम करते थे।"
+    }
+  },
+  {
+    "uuid": "96ae61db-c091-488e-9e80-086721e91a3c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Iconographic Evolution: Aniconic to Iconic",
+        "Bhaja Cave Complex: Primitive Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Aniconic phase — Buddha represented through symbols only",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An archaeologist excavating a rock-cut Buddhist cave complex in the Western Deccan notices that the cave contains a simple hemispherical stupa without any figurative carvings. The walls carry no anthropomorphic image of the Buddha; instead, carved motifs include a parasol above a throne, a wheel, and a bodhi tree. The pillars are plain and octagonal. The archaeologist concludes that the site predates a major shift in Buddhist artistic convention.\n\nWhich of the following principles best explains the archaeologist's observation?\n\n(a) The cave reflects Mahayana Buddhist influence, which discouraged human representation in favour of abstract symbols.\n(b) The absence of figural imagery indicates Vakataka-period patronage, which preferred symbolic over anthropomorphic art.\n(c) The cave represents the transitional phase at Karla where symbolic and early figural representations coexist.\n(d) The cave belongs to the aniconic phase of early Hinayana Buddhist art, where theological convention prohibited direct depiction of the Buddha in human form.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because students may assume that any early Buddhist site with a stupa but without figurative Buddha images must belong to the Mahayana phase, since they associate Mahayana with 'additions' to earlier structures.",
+      "elimination_logic": [
+        "The scenario describes absence of anthropomorphic Buddha images, use of symbols, and early Hinayana austerity — these are hallmarks of the aniconic phase (pre-1st century CE).",
+        "Eliminate option a (Mahayana influence) — Mahayana is associated with anthropomorphic Buddha images and Bodhisattva figures, the opposite of what the scenario describes.",
+        "Eliminate option b (Vakataka patronage) — Vakataka-era caves are Mahayana-phase and feature figural representation; the scenario describes aniconic practice.",
+        "Eliminate option c (transitional Karla phase) — Karla shows some transitional elements but is not characterised by complete absence of figurative imagery; the scenario fits the earliest aniconic phase best.",
+        "Option d (Hinayana aniconic phase reflecting early Buddhist conventions) correctly identifies the principle being illustrated."
+      ],
+      "upsc_trap_explanation": "The conflation trap here merges two distinct concepts: the absence of Buddha images (aniconic convention) with sectarian identity (Hinayana vs Mahayana). A poorly prepared student may conflate 'no images' with 'undeveloped site' and assign Mahayana renovations as the reason for the absence, when in fact the aniconic convention predates both phases and reflects an early theological choice, not an absence of artistic capacity.",
+      "final_explanation": "Early Buddhist art followed a convention known as aniconism — the deliberate choice to represent the Buddha through symbols rather than in human form. This was not a limitation of artistic skill but a theological stance: the Buddha, having attained nirvana, was considered beyond physical representation.\n\nApplicable principle: The scenario describes the aniconic phase of early Hinayana Buddhist art (pre-1st century CE), where the bodhi tree, footprints, parasol, empty throne, and stupa stood in for the Buddha's presence.\n\n• Option (a) — Incorrect: Mahayana influence is associated with the introduction of anthropomorphic images and Bodhisattva figures, precisely the opposite of what the scenario shows.\n• Option (b) — Incorrect: Vakataka patronage belongs to the later Mahayana phase; caves under their patronage feature figural sculptures prominently.\n• Option (c) — Incorrect: While Karla shows transitional elements, it is not characterised by a complete absence of figural imagery; the scenario fits Bhaja-era aniconic practice.\n• Option (d) — Correct: The features described (stupa, symbolic representation, absence of Buddha image, austere decoration) are diagnostic of early Hinayana aniconic art.\n\nValue Addition:\n• The shift from aniconic to iconic representation is associated with the Kushana period (1st–3rd century CE) and the Gandhara and Mathura schools.\n• Bhaja, Bedsa, and early Ajanta caves (9, 10) are primary examples of the aniconic phase.\n• Symbols used in the aniconic phase — stupa (parinirvana), bodhi tree (enlightenment), wheel (dhamma), footprints (presence) — each correspond to a specific event in the Buddha's life."
+    },
+    "hi": {
+      "display_text": "पश्चिमी डेक्कन में एक शिलाखंड बौद्ध गुफा परिसर का उत्खनन कर रहे पुरातत्ववेत्ता ने देखा कि गुफा में कोई मूर्तिमान नक्काशी नहीं है, केवल एक सरल अर्धगोलाकार स्तूप है। दीवारों पर बुद्ध की कोई मानवाकृति छवि नहीं है; इसके बजाय, नक्काशी में सिंहासन के ऊपर छत्र, चक्र, और बोधि वृक्ष शामिल हैं। स्तंभ सादे और अष्टकोणीय हैं। पुरातत्ववेत्ता ने निष्कर्ष निकाला कि यह स्थल बौद्ध कलात्मक परंपरा में एक बड़े परिवर्तन से पहले का है।\n\nनिम्नलिखित में से कौन-सा सिद्धांत पुरातत्ववेत्ता के अवलोकन को सबसे अच्छी तरह समझाता है?\n\n(a) यह गुफा महायान बौद्ध प्रभाव को दर्शाती है, जो मानव प्रतिनिधित्व के बजाय सारगर्भित प्रतीकों को प्रोत्साहित करता था।\n(b) मूर्तिमान चित्रों की अनुपस्थिति वाकाटक कालीन संरक्षण को दर्शाती है, जो मानवाकृति कला की बजाय प्रतीकात्मक कला को प्राथमिकता देता था।\n(c) यह गुफा कार्ला के संक्रमणकालीन चरण का प्रतिनिधित्व करती है जहाँ प्रतीकात्मक और प्रारंभिक मूर्तिमान चित्रण सह-अस्तित्व में हैं।\n(d) यह गुफा प्रारंभिक हिनयान बौद्ध कला के अनिकॉनिक चरण की है, जहाँ धार्मिक परंपरा ने बुद्ध का मानव रूप में प्रत्यक्ष चित्रण निषिद्ध किया था।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रामक है क्योंकि छात्र यह मान सकते हैं कि किसी भी प्रारंभिक बौद्ध स्थल में यदि स्तूप है लेकिन मूर्तिमान बुद्ध छवियाँ नहीं हैं तो वह महायान चरण से संबंधित होगा, क्योंकि वे महायान को पूर्व संरचनाओं में 'संशोधनों' से जोड़ते हैं।",
+      "elimination_logic": [
+        "परिदृश्य में मानवाकृति बुद्ध छवियों की अनुपस्थिति, प्रतीकों का उपयोग, और प्रारंभिक हिनयान संयम का वर्णन है — ये सभी अनिकॉनिक चरण (ईसा पूर्व 1वीं सदी से पहले) के लक्षण हैं।",
+        "विकल्प a (महायान प्रभाव) को हटाएँ — महायान मानवाकृति बुद्ध छवियों और बोधिसत्त्व आकृतियों से जुड़ा है, जो परिदृश्य में वर्णित के विपरीत है।",
+        "विकल्प b (वाकाटक संरक्षण) को हटाएँ — वाकाटक कालीन गुफाएँ महायान चरण की हैं और उनमें मूर्तिमान चित्रण होता है; परिदृश्य अनिकॉनिक प्रथा का वर्णन करता है।",
+        "विकल्प c (संक्रमणकालीन कार्ला चरण) को हटाएँ — कार्ला में कुछ संक्रमणकालीन तत्व हैं लेकिन पूर्ण रूप से मूर्तिमान चित्रों की अनुपस्थिति से नहीं पहचाना जाता; परिदृश्य सबसे प्रारंभिक अनिकॉनिक चरण के अनुरूप है।",
+        "विकल्प d (प्रारंभिक हिनयान अनिकॉनिक चरण जो प्रारंभिक बौद्ध परंपराओं को दर्शाता है) सही रूप से दर्शाता है कि सिद्धांत क्या है।"
+      ],
+      "upsc_trap_explanation": "यह मिश्रण जाल दो अलग-अलग अवधारणाओं को जोड़ता है: बुद्ध छवियों की अनुपस्थिति (अनिकॉनिक परंपरा) और संप्रदाय पहचान (हिनयान बनाम महायान)। एक कम तैयारी वाला छात्र 'कोई छवि नहीं' को 'अविकसित स्थल' समझ सकता है और अनुपस्थिति का कारण महायान संशोधनों को मान सकता है, जबकि वास्तव में अनिकॉनिक परंपरा दोनों चरणों से पहले की है और यह एक प्रारंभिक धार्मिक विकल्प को दर्शाती है, न कि कलात्मक क्षमता की कमी।",
+      "final_explanation": "प्रारंभिक बौद्ध कला ने एक परंपरा का पालन किया जिसे अनिकॉनिज़्म कहा जाता है — बुद्ध को मानव रूप में नहीं बल्कि प्रतीकों के माध्यम से प्रस्तुत करने का जानबूझकर विकल्प। यह कलात्मक कौशल की कमी नहीं थी बल्कि एक धार्मिक दृष्टिकोण था: बुद्ध, जिन्होंने निर्वाण प्राप्त किया था, उन्हें भौतिक रूप में प्रस्तुत करना उचित नहीं माना गया।\n\nलागू सिद्धांत: परिदृश्य प्रारंभिक हिनयान बौद्ध कला के अनिकॉनिक चरण (ईसा पूर्व 1वीं सदी से पहले) का वर्णन करता है, जहाँ बोधि वृक्ष, पदचिह्न, छत्र, रिक्त सिंहासन, और स्तूप बुद्ध की उपस्थिति के प्रतीक थे।\n\n• विकल्प (a) — गलत: महायान प्रभाव मानवाकृति छवियों और बोधिसत्त्व आकृतियों के परिचय से जुड़ा है, जो परिदृश्य के विपरीत है।\n• विकल्प (b) — गलत: वाकाटक संरक्षण बाद के महायान चरण से संबंधित है; उनके संरक्षण में गुफाओं में मूर्तिमान शिल्प प्रमुख हैं।\n• विकल्प (c) — गलत: कार्ला में संक्रमणकालीन तत्व हैं, लेकिन यह पूर्ण रूप से मूर्तिमान चित्रों की अनुपस्थिति से नहीं पहचाना जाता; परिदृश्य भजा युग की अनिकॉनिक प्रथा के अनुरूप है।\n• विकल्प (d) — सही: वर्णित विशेषताएँ (स्तूप, प्रतीकात्मक प्रस्तुति, बुद्ध छवि की अनुपस्थिति, संयमित सजावट) प्रारंभिक हिनयान अनिकॉनिक कला के निदानात्मक हैं।\n\nमूल्य संवर्धन:\n• अनिकॉनिक से आइकोनिक प्रस्तुति में परिवर्तन कुशान काल (1वीं–3री सदी ईस्वी) और गंधार तथा मथुरा स्कूलों से जुड़ा है।\n• भजा, बेड़सा, और प्रारंभिक अजंता गुफाएँ (9, 10) अनिकॉनिक चरण के प्रमुख उदाहरण हैं।\n• अनिकॉनिक चरण में प्रयुक्त प्रतीक — स्तूप (परिनिर्वाण), बोधि वृक्ष (प्रबोधन), चक्र (धम्म), पदचिह्न (उपस्थिति) — प्रत्येक बुद्ध के जीवन की एक विशिष्ट घटना का प्रतिनिधित्व करते हैं।"
+    }
+  },
+  {
+    "uuid": "a67cb61b-f147-491d-bc83-420d3c2840d7",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Jataka Tales in Ajanta Murals"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Jataka tales depicted in specific Ajanta caves",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following Jataka tale–Ajanta cave pairings are correctly matched. Which one is NOT correctly matched?\n\n(a) Mahajanaka Jataka — Cave 1\n(b) Hamsa Jataka — Cave 2\n(c) Shaddanta Jataka — Cave 2\n(d) Vidhurapandita Jataka — Cave 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (Hamsa Jataka) is deceptive because students who have read about Ajanta may associate the Hamsa (swan) motif with Cave 17 based on general recollection, making them doubt the correct attribution to Cave 2.",
+      "elimination_logic": [
+        "The question asks which Jataka does NOT belong to the cave it is paired with.",
+        "Mahajanaka Jataka and Shaddanta Jataka are both attested in Cave 1 — eliminate options a and d.",
+        "Hamsa Jataka is depicted in Cave 2 — its pairing with Cave 2 is correct, eliminate option b.",
+        "Vessel Jataka (Vidhurapandita Jataka) is a Cave 2 tale — Cave 17, not Cave 26, houses the Vessantara Jataka. Cave 26 is a chaitya hall, not a picture gallery; the Vessantara Jataka is associated with Cave 17. A pairing of Shaddanta Jataka with Cave 17 rather than Cave 1 would be incorrect — option c pairs Shaddanta Jataka with Cave 2, which is wrong."
+      ],
+      "upsc_trap_explanation": "The Shaddanta Jataka (the six-tusked elephant) is one of the most celebrated Jataka narratives at Ajanta and is found in Cave 1, not Cave 2. Students who broadly recall 'Cave 1 and Cave 2 have many Jatakas' may not distinguish precisely which tales appear in which cave. The specific attribution — Mahajanaka and Shaddanta in Cave 1; Hamsa and Vidhurapandita in Cave 2 — is the precise knowledge this question tests.",
+      "final_explanation": "Ajanta's murals are organised around specific narrative themes per cave, and knowing which Jataka appears in which cave is a frequently tested detail.\n\n• Option (a): Mahajanaka Jataka in Cave 1 — Correct pairing. Cave 1 houses the Mahajanaka Jataka depicting a king who renounces his kingdom.\n• Option (b): Hamsa Jataka in Cave 2 — Correct pairing. Cave 2 depicts the golden swan (hamsa) Jataka among its narrative murals.\n• Option (c): Shaddanta Jataka in Cave 2 — Incorrect pairing. The Shaddanta Jataka (the six-tusked elephant) is located in Cave 1, not Cave 2. This is the odd one out.\n• Option (d): Vidhurapandita Jataka in Cave 2 — Correct pairing. This tale of the wise minister Vidhura is attested in Cave 2.\n\nValue Addition:\n• Cave 17 is considered to have the largest number of Jataka depictions at Ajanta, including the Vessantara Jataka and Mahakapi Jataka.\n• The narrative technique used is 'continuous narration' — multiple episodes of the same Jataka shown within a single compositional frame.\n• The Shaddanta Jataka is also depicted at Sanchi and Amaravati, making cross-site comparisons a potential UPSC question area."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित तीन जातक कथा–अजंता गुफा जोड़े सही हैं। इनमें से कौन-सा जोड़ा सही नहीं है?\n\n(a) महाजनक जातक — गुफा 1\n(b) हंसा जातक — गुफा 2\n(c) षडदंत जातक — गुफा 2\n(d) विदुरपंडित जातक — गुफा 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (हंसा जातक) भ्रमित करने वाला है क्योंकि जो छात्र अजंता के बारे में पढ़ चुके हैं वे सामान्य स्मृति के आधार पर हंसा (स्वान) प्रतीक को गुफा 17 से जोड़ सकते हैं, जिससे वे सही मिलान गुफा 2 के साथ होने पर संदेह कर सकते हैं।",
+      "elimination_logic": [
+        "प्रश्न पूछता है कि कौन-सा जातक उस गुफा के साथ नहीं जुड़ा है जिसके साथ उसे जोड़ा गया है।",
+        "महाजनक जातक और षडदंत जातक दोनों गुफा 1 में पाए जाते हैं — अतः विकल्प a और d को हटा दें।",
+        "हंसा जातक गुफा 2 में चित्रित है — इसका गुफा 2 के साथ मिलान सही है, अतः विकल्प b को हटा दें।",
+        "पात्र जातक (विदुरपंडित जातक) गुफा 2 की कथा है — गुफा 17 में वेस्संतरा जातक है, न कि गुफा 26 में। गुफा 26 चैत्य हॉल है, चित्रशाला नहीं; वेस्संतरा जातक गुफा 17 से जुड़ा है। षडदंत जातक का गुफा 17 के बजाय गुफा 1 के साथ मिलान सही होगा — विकल्प c में षडदंत जातक को गुफा 2 के साथ जोड़ा गया है, जो गलत है।"
+      ],
+      "upsc_trap_explanation": "षडदंत जातक (छः-दांत वाला हाथी) अजंता में सबसे प्रसिद्ध जातक कथाओं में से एक है और यह गुफा 1 में पाया जाता है, गुफा 2 में नहीं। जो छात्र सामान्य रूप से याद करते हैं कि 'गुफा 1 और गुफा 2 में कई जातक हैं' वे यह ठीक से नहीं पहचान पाते कि कौन-सी कथा किस गुफा में है। विशिष्ट ज्ञान — महाजनक और षडदंत गुफा 1 में; हंसा और विदुरपंडित गुफा 2 में — इस प्रश्न का परीक्षण करता है।",
+      "final_explanation": "अजंता की भित्ति चित्रकला प्रत्येक गुफा के विशिष्ट कथानक विषयों के इर्द-गिर्द व्यवस्थित है, और यह जानना कि कौन-सा जातक किस गुफा में है, एक बार-बार पूछे जाने वाला विवरण है।\n\n• विकल्प (a): महाजनक जातक — गुफा 1 — सही मिलान। गुफा 1 में वह राजा चित्रित है जो अपना राज्य त्याग देता है।\n• विकल्प (b): हंसा जातक — गुफा 2 — सही मिलान। गुफा 2 में स्वर्ण हंस (हंसा) जातक की कथा चित्रित है।\n• विकल्प (c): षडदंत जातक — गुफा 2 — गलत मिलान। षडदंत जातक गुफा 1 में है, गुफा 2 में नहीं। यह असंगत विकल्प है।\n• विकल्प (d): विदुरपंडित जातक — गुफा 2 — सही मिलान। यह विदुर मंत्री की कथा गुफा 2 में पाई जाती है।\n\nमूल्यवर्धन:\n• गुफा 17 को अजंता में सबसे अधिक जातक चित्रों वाला माना जाता है, जिसमें वेस्संतरा जातक और महाकपि जातक शामिल हैं।\n• कथानक तकनीक 'सतत कथा' है — एक ही जातक की कई घटनाओं को एक ही चित्रात्मक फ्रेम में दिखाया गया है।\n• षडदंत जातक सांची और अमरावती में भी चित्रित है, जो विभिन्न स्थलों की तुलना के लिए UPSC में संभावित प्रश्न क्षेत्र हो सकता है।"
+    }
+  },
+  {
+    "uuid": "1c4f75e6-fb31-48a0-b937-887bb80485fa",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Famous Individual Paintings at Ajanta",
+        "Iconographic Evolution: Aniconic to Iconic"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Padmapani and Vajrapani Bodhisattvas in Cave 1",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about the paintings in Cave 1 at Ajanta:\n\nStatement 1: The Padmapani Bodhisattva painting in Cave 1 at Ajanta depicts a figure holding a blue lotus and is widely regarded as an epitome of compassion in Indian art.\n\nStatement 2: The Vajrapani Bodhisattva, also located in Cave 1, is positioned on the same wall as Padmapani and holds a thunderbolt (vajra) in one hand.\n\nWhich of the following is correct regarding the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Padmapani Bodhisattva painting in Cave 1 at Ajanta depicts a figure holding a blue lotus and is widely regarded as an epitome of compassion in Indian art.",
+          "verdict": "Correct",
+          "reason": "Padmapani (literally 'lotus-bearer') is identified by the blue lotus in hand and is an embodiment of compassionate Bodhisattva ideal in Mahayana Buddhism; the Cave 1 painting is among the finest examples of Ajanta's artistic achievement."
+        },
+        {
+          "statement": "The Vajrapani Bodhisattva, also located in Cave 1, is positioned on the same wall as Padmapani and holds a thunderbolt (vajra) in one hand.",
+          "verdict": "Correct",
+          "reason": "Vajrapani (thunderbolt-bearer) flanks the shrine entrance in Cave 1, positioned opposite Padmapani, and is identified by the vajra he carries — together they represent the twin Bodhisattva guardians of the Mahayana pantheon."
+        }
+      ],
+      "strong_distractor": "b — Option b is deceptive because students who broadly recall these paintings but mix up attributes (lotus vs vajra) may doubt both statements simultaneously, landing on 'both incorrect.'",
+      "elimination_logic": [
+        "Statement 1 is correct — Padmapani holding a blue lotus in Cave 1 is one of the most documented facts about Ajanta; the compassion identification is standard iconographic interpretation.",
+        "Statement 2 is correct — Vajrapani with vajra in Cave 1, positioned as a counterpart to Padmapani at the shrine entrance, is equally well-documented.",
+        "Both statements are individually correct, making option a the right answer."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Cave 1 at Ajanta is a Mahayana-phase vihara that houses two of the most celebrated paintings in the entire tradition of Indian art — the Padmapani and Vajrapani Bodhisattvas.\n\n• Statement 1 — Correct: Padmapani, the 'lotus-bearer,' holds a blue lotus and gazes downward with an expression of serene compassion — a defining icon of Mahayana Buddhist art. The blue lotus (nilotpala) is the identifying attribute.\n• Statement 2 — Correct: Vajrapani, the 'thunderbolt-bearer,' carries a vajra and is positioned at the opposite side of the shrine doorway from Padmapani. Together they represent the dual aspects of the Bodhisattva ideal — compassion (Padmapani) and power (Vajrapani).\n\nValue Addition:\n• The 'Dying Princess' of Cave 16 is believed to depict Sundari, wife of Nanda (the Buddha's half-brother), at the moment of her fainting upon hearing of Nanda's renunciation.\n• Cave 1 also contains the Persian Embassy scene, interpreted as evidence of diplomatic connections during the Vakataka period.\n• Both Padmapani and Vajrapani are depicted with the tribhanga (three-bend) posture, a hallmark of Ajanta's sculptural and painterly style."
+    },
+    "hi": {
+      "display_text": "अजंता की गुफा 1 में चित्रों के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: अजंता की गुफा 1 में पद्मपानी बोधिसत्त्व की चित्रकला में एक आकृति नीले कमल को थामे हुए दर्शाई गई है और इसे भारतीय कला में करुणा का प्रतीक माना जाता है।\n\nकथन 2: गुफा 1 में स्थित वज्रपाणि बोधिसत्त्व भी पद्मपानी के समान दीवार पर स्थित है और एक हाथ में वज्र (थंडरबोल्ट) थामे हुए है।\n\nउपरोक्त कथनों के संबंध में कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अजंता की गुफा 1 में पद्मपानी बोधिसत्त्व की चित्रकला में एक आकृति नीले कमल को थामे हुए दर्शाई गई है और इसे भारतीय कला में करुणा का प्रतीक माना जाता है।",
+          "verdict": "सही है",
+          "reason": "पद्मपानी (शाब्दिक अर्थ 'कमल-धारक') को हाथ में नीला कमल होने से पहचाना जाता है और यह महायान बौद्ध धर्म में करुणामय बोधिसत्त्व आदर्श का प्रतीक है; गुफा 1 की यह चित्रकला अजंता की कलात्मक उपलब्धि के श्रेष्ठ उदाहरणों में से एक है।"
+        },
+        {
+          "statement": "गुफा 1 में स्थित वज्रपाणि बोधिसत्त्व भी पद्मपानी के समान दीवार पर स्थित है और एक हाथ में वज्र (थंडरबोल्ट) थामे हुए है।",
+          "verdict": "सही है",
+          "reason": "वज्रपाणि (वज्र-धारक) गुफा 1 के मंदिर के प्रवेश द्वार के पास पद्मपानी के विपरीत स्थित है, और वह अपने हाथ में वज्र थामे होने से पहचाना जाता है — ये दोनों महायान पंथ के द्वैध बोधिसत्त्व रक्षक हैं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प b भ्रमित करने वाला है क्योंकि जो छात्र इन चित्रों को सामान्यतः याद करते हैं लेकिन गुण (कमल बनाम वज्र) में भ्रमित हो जाते हैं, वे दोनों कथनों को एक साथ गलत मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सही है — गुफा 1 में पद्मपानी का नीला कमल थामे होना अजंता के सबसे प्रलेखित तथ्यों में से एक है; करुणा की पहचान मानक प्रतीकात्मक व्याख्या है।",
+        "कथन 2 सही है — वज्रपाणि का वज्र थामे होना और पद्मपानी के समकक्ष मंदिर प्रवेश द्वार पर स्थित होना समान रूप से अच्छी तरह से प्रलेखित है।",
+        "दोनों कथन व्यक्तिगत रूप से सही हैं, अतः विकल्प a सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अजंता की गुफा 1 महायान काल की विहार है जिसमें भारतीय कला की समग्र परंपरा में दो सबसे प्रसिद्ध चित्रकला — पद्मपानी और वज्रपाणि बोधिसत्त्व — स्थित हैं।\n\n• कथन 1 — सही: पद्मपानी, 'कमल-धारक', नीला कमल थामे हुए है और शांत करुणा के भाव के साथ नीचे देख रहा है — यह महायान बौद्ध कला का एक प्रमुख प्रतीक है। नीला कमल (नीलोत्पल) इसकी पहचान है।\n• कथन 2 — सही: वज्रपाणि, 'वज्र-धारक', वज्र थामे हुए है और पद्मपानी के विपरीत मंदिर के द्वार के पास स्थित है। ये दोनों बोधिसत्त्व आदर्श के दो पहलुओं — करुणा (पद्मपानी) और शक्ति (वज्रपाणि) — का प्रतिनिधित्व करते हैं।\n\nमूल्यवर्धन:\n• गुफा 16 की 'मृतप्राय राजकुमारी' को सुंदरी के रूप में माना जाता है, जो नंद के पत्नि (बुद्ध के सौतेले भाई) हैं, और यह चित्रण नंद के त्याग की खबर सुनकर उनकी बेहोशी के क्षण को दर्शाता है।\n• गुफा 1 में फारसी दूतावास का दृश्य भी है, जिसे वाकाटक काल के दौरान राजनयिक संबंधों के प्रमाण के रूप में व्याख्यायित किया जाता है।\n• पद्मपानी और वज्रपाणि दोनों त्रिभंग मुद्रा में चित्रित हैं, जो अजंता की मूर्तिकला और चित्रकला शैली की विशेषता है।"
+    }
+  },
+  {
+    "uuid": "080c7849-b972-473a-acce-4cebe38f6bb0",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Artistic Techniques and Materials"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Lapis lazuli pigment source — Afghanistan import",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The vivid blue pigment used in the paintings at Ajanta — identifiable in the blue lotus held by the Padmapani Bodhisattva — was derived from lapis lazuli, which was imported from __________ due to the absence of such deposits in the Indian subcontinent.\n\n(a) Sri Lanka\n(b) Afghanistan\n(c) Persia (Iran)\n(d) Gujarat coast via maritime trade",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (Persia/Iran) is deceptive because ancient Persia is also associated with Ajanta through the Persian Embassy scene and trade connections, making it a plausible-sounding but incorrect pigment source.",
+      "elimination_logic": [
+        "Lapis lazuli is a mineral pigment whose ancient source is specifically the Badakhshan region of Afghanistan — this is a well-documented fact in ancient trade history.",
+        "Eliminate option a (Sri Lanka) — no lapis lazuli deposits are associated with Sri Lanka.",
+        "Eliminate option c (Persia) — while Persia had trade links with India, lapis lazuli came from Afghan mines, not Persian ones.",
+        "Eliminate option d (Gujarat coast) — Gujarat was a trading hub but not a source of lapis lazuli.",
+        "Option b (Afghanistan) is the correct source."
+      ],
+      "upsc_trap_explanation": "The trap exploits the geographic confusion between trade intermediaries and actual production sources. Persia was a major intermediary in the ancient lapis lazuli trade route (from Afghanistan westward), and Ajanta itself has a Persian Embassy scene. Students familiar with this connection may incorrectly assign Persian origin to the pigment. The precise answer is Afghanistan (Badakhshan mines), which supplied lapis lazuli across the ancient world.",
+      "final_explanation": "The vivid blue pigment that distinguishes many Ajanta paintings — visible in the blue lotus held by Padmapani and in decorative borders — is lapis lazuli, a semi-precious stone ground into pigment.\n\n• Option (a) — Sri Lanka: Incorrect. Sri Lanka has no significant lapis lazuli deposits and was not a source for this pigment.\n• Option (b) — Afghanistan: Correct. The Badakhshan region of Afghanistan contained the ancient world's primary lapis lazuli mines, supplying Egypt, Mesopotamia, Persia, and India.\n• Option (c) — Persia (Iran): Incorrect. Persia was a trade intermediary, not a source; Persian connections with Ajanta relate to diplomatic exchange, not pigment supply.\n• Option (d) — Gujarat coast: Incorrect. Gujarat was a key trading port, but lapis lazuli originated from inland Afghan mines, not coastal Gujarat.\n\nValue Addition:\n• Other pigments at Ajanta included locally sourced ochre (yellow/red), cinnabar (mercury sulfide, red), lamp black (carbon), and white lime.\n• The presence of imported Afghan lapis lazuli at Ajanta is archaeological evidence of robust overland and maritime trade in the Vakataka period.\n• Lapis lazuli was also used in ancient Egypt and is found in Tutankhamun's death mask."
+    },
+    "hi": {
+      "display_text": "अजंता की चित्रकारी में प्रयुक्त जीवंत नीला रंग — जो पद्मपानी बोधिसत्त्व द्वारा पकड़े गए नीले कमल में पहचाना जाता है — लैपिस लाजुली से प्राप्त था, जिसे भारतीय उपमहाद्वीप में इस प्रकार के भंडार न होने के कारण __________ से आयातित किया गया था।\n\n(a) श्रीलंका\n(b) अफगानिस्तान\n(c) पर्शिया (ईरान)\n(d) समुद्री व्यापार के माध्यम से गुजरात तट",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (पर्शिया/ईरान) भ्रमित करने वाला है क्योंकि प्राचीन पर्शिया अजंता से पर्शियन दूतावास दृश्य और व्यापार संबंधों के माध्यम से जुड़ा है, जो इसे एक संभावित लेकिन गलत रंग स्रोत बनाता है।",
+      "elimination_logic": [
+        "लैपिस लाजुली एक खनिज रंग है जिसका प्राचीन स्रोत विशेष रूप से अफगानिस्तान के बादख़्शान क्षेत्र से है — यह प्राचीन व्यापार इतिहास में अच्छी तरह से प्रलेखित तथ्य है।",
+        "विकल्प a (श्रीलंका) को हटा दें — श्रीलंका से लैपिस लाजुली के कोई भंडार जुड़े नहीं हैं।",
+        "विकल्प c (पर्शिया) को हटा दें — जबकि पर्शिया का भारत के साथ व्यापारिक संबंध था, लैपिस लाजुली अफगान खानों से आता था, पर्शियाई खानों से नहीं।",
+        "विकल्प d (गुजरात तट) को हटा दें — गुजरात एक व्यापारिक केंद्र था लेकिन लैपिस लाजुली का स्रोत नहीं था।",
+        "विकल्प b (अफगानिस्तान) सही स्रोत है।"
+      ],
+      "upsc_trap_explanation": "यह जाल व्यापार मध्यस्थों और वास्तविक उत्पादन स्रोतों के बीच भौगोलिक भ्रम का फायदा उठाता है। पर्शिया प्राचीन लैपिस लाजुली व्यापार मार्ग (अफगानिस्तान से पश्चिम की ओर) में एक प्रमुख मध्यस्थ था, और अजंता में स्वयं पर्शियन दूतावास दृश्य है। इस संबंध से परिचित छात्र गलती से रंग के स्रोत के रूप में पर्शिया को मान सकते हैं। सटीक उत्तर अफगानिस्तान (बादख़्शान खदानें) है, जिसने प्राचीन विश्व में लैपिस लाजुली की आपूर्ति की।",
+      "final_explanation": "अजंता की कई चित्रों में विशिष्ट जीवंत नीला रंग — जो पद्मपानी बोधिसत्त्व द्वारा पकड़े गए नीले कमल में दिखाई देता है और सजावटी सीमाओं में — लैपिस लाजुली से प्राप्त होता है, जो एक अर्ध-कीमती पत्थर है जिसे रंग में पीसा जाता है।\n\n• विकल्प (a) — श्रीलंका: गलत। श्रीलंका में लैपिस लाजुली के महत्वपूर्ण भंडार नहीं हैं और यह रंग का स्रोत नहीं था।\n• विकल्प (b) — अफगानिस्तान: सही। अफगानिस्तान के बादख़्शान क्षेत्र में प्राचीन विश्व की प्रमुख लैपिस लाजुली खदानें थीं, जो मिस्र, मेसोपोटामिया, पर्शिया और भारत को आपूर्ति करती थीं।\n• विकल्प (c) — पर्शिया (ईरान): गलत। पर्शिया व्यापार मध्यस्थ था, स्रोत नहीं; अजंता के साथ पर्शियाई संबंध राजनयिक आदान-प्रदान से संबंधित हैं, रंग आपूर्ति से नहीं।\n• विकल्प (d) — गुजरात तट: गलत। गुजरात एक प्रमुख व्यापारिक बंदरगाह था, लेकिन लैपिस लाजुली तटीय गुजरात से नहीं, बल्कि अंदरूनी अफगान खानों से आता था।\n\nमूल्यवर्धन:\n• अजंता में अन्य रंगों में स्थानीय रूप से प्राप्त ओकर (पीला/लाल), सिनाबर (पारा सल्फाइड, लाल), लैम्प ब्लैक (कार्बन), और सफेद चूना शामिल थे।\n• अजंता में आयातित अफगान लैपिस लाजुली की उपस्थिति वाकाटक काल में मजबूत स्थलीय और समुद्री व्यापार का पुरातात्विक प्रमाण है।\n• लैपिस लाजुली प्राचीन मिस्र में भी उपयोग किया जाता था और यह टुटनखामुन के मृत्यु मुखौटे में पाया गया है।"
+    }
+  },
+  {
+    "uuid": "4737e3ea-a231-43c3-8678-0b172cbb8e69",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Symbolism and Religious Significance",
+        "Stupa Architecture within Caves"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Stupa symbolism and chaitya orientation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to the symbolic and architectural features of rock-cut Buddhist cave complexes is NOT correctly matched?\n\n(a) Stupa — represents the Buddha's parinirvana and serves as a symbolic cosmic axis within the chaitya\n(b) Chaitya orientation — faces east toward the rising sun, symbolising the Buddha's enlightenment\n(c) Pradakshina patha — circumambulatory passage around the stupa created by the apsidal plan of the chaitya\n(d) Later Ajanta viharas — mandala-like layout with the Buddha shrine placed at the centre",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is deceptive because students may recall that east-facing temples are common in Hindu tradition and incorrectly apply that norm to Buddhist chaityas, or may recall something about sunrise orientation and assign it to chaityas.",
+      "elimination_logic": [
+        "Eliminate option a — the stupa as 'cosmic axis' or pillar of the universe is an accepted symbolic interpretation; this pairing is correct and not the odd one out.",
+        "Eliminate option c — the circumambulation path (pradakshina patha) in chaityas is a documented feature; this pairing is correct.",
+        "Check option b — chaityas facing east toward the rising sun is incorrect. The general orientation convention for chaityas is westward, toward the setting sun symbolising nirvana, not eastward.",
+        "Option b incorrectly pairs chaityas with east-facing orientation, making it the incorrectly matched pair."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap here manipulates directional knowledge. East-facing orientation is the norm for Hindu temples (facing the rising sun), and students who apply Hindu architectural norms to Buddhist chaityas will incorrectly validate option b. Buddhist chaityas generally face west — the setting sun as a symbol of nirvana (the extinguishing of the flame of desire). This east-west confusion is a classic UPSC trap in questions combining Hindu and Buddhist architectural traditions.",
+      "final_explanation": "Buddhist cave architecture is rich in symbolic intent, from the orientation of the structure to the path of worship within it.\n\n• Option (a): Stupa as symbol of the Buddha's parinirvana and cosmic axis — Correct pairing. The stupa simultaneously commemorates the Buddha's passing and represents Mount Meru, the axis of the cosmos.\n• Option (b): Chaityas oriented to face east, toward the rising sun — Incorrect pairing. Chaityas are generally oriented to face west, with the setting sun serving as a metaphor for nirvana (the cessation of existence). East-facing orientation is a Hindu temple convention.\n• Option (c): Pradakshina patha as the circumambulatory passage around the stupa in chaityas — Correct pairing. The apsidal design of chaityas naturally creates the pradakshina patha for ritual clockwise circumambulation.\n• Option (d): Later Ajanta viharas adopting a mandala-like layout with the Buddha shrine at the centre — Correct pairing. This reflects the Mahayana shift in vihara design, centering devotion on the Buddha image.\n\nValue Addition:\n• The westward orientation of chaityas aligns the stupa with the light of the setting sun during specific seasons, creating a natural illumination effect through the chaitya arch.\n• Pradakshina (clockwise circumambulation) is common to Hindu, Buddhist, and Jain ritual traditions.\n• The mandala-like vihara layout in later Ajanta caves reflects the growing importance of the Buddha shrine room (garbhagriha concept adapted into Buddhist architecture)."
+    },
+    "hi": {
+      "display_text": "चट्टानी बौद्ध गुफा परिसर की प्रतीकात्मक और वास्तुशिल्प विशेषताओं से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही ढंग से मेल नहीं खाता?\n\n(a) स्तूप — बुद्ध के परिनिर्वाण का प्रतिनिधित्व करता है और चैत्य के भीतर एक प्रतीकात्मक ब्रह्मांडीय अक्ष के रूप में कार्य करता है\n(b) चैत्य अभिविन्यास — पूर्व की ओर मुख करता है, उगते सूरज की ओर, जो बुद्ध के ज्ञानोदय का प्रतीक है\n(c) प्रादक्षिणा पथ — चैत्य की अप्सिडल योजना द्वारा निर्मित स्तूप के चारों ओर परिक्रमा मार्ग\n(d) बाद के अजंता विहार — मंडलाकार योजना जिसमें बुद्ध मंदिर केंद्र में स्थित है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d भ्रमित करने वाला है क्योंकि छात्र याद कर सकते हैं कि पूर्व की ओर मुख वाले मंदिर हिंदू परंपरा में सामान्य हैं और उस नियम को बौद्ध चैत्याओं पर गलत तरीके से लागू कर सकते हैं, या सूर्योदय की दिशा के बारे में कुछ याद कर इसे चैत्याओं से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प a को हटाएं — स्तूप को 'ब्रह्मांडीय अक्ष' या ब्रह्मांड का स्तंभ मानना एक स्वीकृत प्रतीकात्मक व्याख्या है; यह जोड़ी सही है और असंगत नहीं है।",
+        "विकल्प c को हटाएं — चैत्याओं में प्रादक्षिणा पथ एक प्रलेखित विशेषता है; यह जोड़ी सही है।",
+        "विकल्प b की जाँच करें — चैत्याओं का पूर्व की ओर, उगते सूरज की ओर मुख करना गलत है। चैत्याओं के लिए सामान्य अभिविन्यास पश्चिम की ओर होता है, जो अस्त होते सूरज का प्रतीक है और निर्वाण का संकेत देता है, न कि पूर्व की ओर।",
+        "विकल्प b चैत्याओं को पूर्व की ओर मुख करने के साथ गलत जोड़ी बनाता है, अतः यह गलत जोड़ी है।"
+      ],
+      "upsc_trap_explanation": "यहाँ स्कोप-एक्सटेंशन ट्रैप दिशात्मक ज्ञान को भ्रामक बनाता है। पूर्व की ओर मुख करना हिंदू मंदिरों के लिए सामान्य है (उगते सूरज की ओर), और जो छात्र हिंदू वास्तुकला के नियमों को बौद्ध चैत्याओं पर लागू करते हैं वे विकल्प b को गलत तरीके से सही मान लेंगे। बौद्ध चैत्याएँ सामान्यतः पश्चिम की ओर मुख करती हैं — अस्त होते सूरज की ओर, जो निर्वाण (इच्छा की ज्वाला के बुझने) का प्रतीक है। यह पूर्व-पश्चिम भ्रम हिंदू और बौद्ध वास्तुकला परंपराओं को मिलाने वाले UPSC प्रश्नों में एक क्लासिक ट्रैप है।",
+      "final_explanation": "बौद्ध गुफा वास्तुकला प्रतीकात्मक अभिप्राय से समृद्ध है, संरचना के अभिविन्यास से लेकर उसमें पूजा के मार्ग तक।\n\n• विकल्प (a): स्तूप बुद्ध के परिनिर्वाण और ब्रह्मांडीय अक्ष के प्रतीक के रूप में — सही जोड़ी। स्तूप एक साथ बुद्ध के निधन की स्मृति है और माउंट मेरु, ब्रह्मांड का अक्ष, का प्रतिनिधित्व करता है।\n• विकल्प (b): चैत्याओं का पूर्व की ओर मुख करना, उगते सूरज की ओर — गलत जोड़ी। चैत्याएँ सामान्यतः पश्चिम की ओर मुख करती हैं, जहाँ अस्त होता सूरज निर्वाण (अस्तित्व की समाप्ति) का रूपक है। पूर्व की ओर मुख करना हिंदू मंदिरों की परंपरा है।\n• विकल्प (c): प्रादक्षिणा पथ चैत्याओं में स्तूप के चारों ओर परिक्रमा मार्ग के रूप में — सही जोड़ी। चैत्याओं की अप्सिडल योजना स्वाभाविक रूप से प्रादक्षिणा पथ बनाती है जो अनुष्ठानिक दक्षिणावर्त परिक्रमा के लिए है।\n• विकल्प (d): बाद के अजंता विहारों में मंडलाकार योजना जिसमें बुद्ध की मूर्ति केंद्र में होती है — सही जोड़ी। यह महायान विहार डिजाइन में बदलाव को दर्शाता है, जिसमें भक्ति का केंद्र बुद्ध की मूर्ति होती है।\n\nमूल्यवर्धन:\n• चैत्याओं का पश्चिम की ओर अभिविन्यास स्तूप को विशिष्ट मौसमों में अस्त होते सूरज की रोशनी के साथ संरेखित करता है, जिससे चैत्याकार मेहराब के माध्यम से प्राकृतिक प्रकाश प्रभाव उत्पन्न होता है।\n• प्रादक्षिणा (दक्षिणावर्त परिक्रमा) हिंदू, बौद्ध और जैन अनुष्ठान परंपराओं में सामान्य है।\n• बाद के अजंता गुफाओं में मंडलाकार विहार योजना बुद्ध मंदिर कक्ष (गर्भगृह अवधारणा का बौद्ध वास्तुकला में रूपांतरण) के बढ़ते महत्व को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "5a5a667d-b3a6-4ed9-958e-3ce88a435e36",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Structural Features: Pillars and Columns",
+        "Comparative Analysis: Ajanta vs Karla vs Bhaja"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Pillar evolution from early to later Buddhist caves",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the evolution of pillar design across rock-cut Buddhist cave sites:\n\n1. At Bhaja, the pillars are simple and octagonal without elaborate carved decoration, reflecting the austere aesthetic of the earliest phase of rock-cut Buddhist architecture.\n2. The pillars at Karla are the tallest among all rock-cut chaitya caves and feature pot-and-foliage capitals, with octagonal shafts.\n3. In the later caves at Ajanta (Mahayana phase), pillars evolved from plain octagonal forms into ornately carved shafts incorporating floral, geometric, and figurative designs.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "At Bhaja, the pillars are simple and octagonal without elaborate carved decoration, reflecting the austere aesthetic of the earliest phase of rock-cut Buddhist architecture.",
+          "verdict": "Correct",
+          "reason": "Bhaja's pillars are plain octagonal shafts consistent with early Hinayana austerity and the minimal ornamentation characteristic of 2nd century BCE Buddhist art."
+        },
+        {
+          "statement": "The pillars at Karla are the tallest among all rock-cut chaitya caves and feature pot-and-foliage capitals, with octagonal shafts.",
+          "verdict": "Correct",
+          "reason": "Karla's pillars are renowned for their height and for the pot-and-foliage (ghata-pallava) capitals, which sit atop octagonal shafts — a hallmark of Satavahana-period decorative vocabulary."
+        },
+        {
+          "statement": "In the later caves at Ajanta (Mahayana phase), pillars evolved from plain octagonal forms into ornately carved shafts incorporating floral, geometric, and figurative designs.",
+          "verdict": "Correct",
+          "reason": "The progressive elaboration of pillars at Ajanta — from plain early-phase octagonal pillars to the intricately carved pillars of Mahayana-period caves — is one of the clearest markers of artistic development across the two phases."
+        }
+      ],
+      "strong_distractor": "b — Option b (only Statements 1 and 3) is deceptive because students who know Karla's pillars are elaborate may doubt Statement 2's specific claim about the pot-and-foliage capital detail, leading them to exclude it.",
+      "elimination_logic": [
+        "Statement 1 is correct — Bhaja's plain octagonal pillars are a defining feature of early Hinayana rock-cut architecture.",
+        "Statement 2 is correct — Karla's pillars with pot-and-foliage capitals and octagonal shafts are well-documented.",
+        "Statement 3 is correct — the evolution from plain to ornate pillars in Ajanta's Mahayana phase is thoroughly attested.",
+        "All three statements are correct, making option d the answer."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The evolution of pillar design across Bhaja, Karla, and Ajanta provides a compressed visual history of Buddhist artistic development from the 2nd century BCE to the 6th century CE.\n\n• Statement 1 — Correct: Bhaja's unadorned octagonal pillars are chronologically and aesthetically the starting point — functional, austere, and devoid of decorative elaboration.\n• Statement 2 — Correct: Karla represents the maturation of the tradition within the Satavahana idiom; its tall pillars with distinctive ghata-pallava (pot-and-foliage) capitals are an architectural signature.\n• Statement 3 — Correct: Later Ajanta pillars are richly carved — with medallions, yakshi figures, floral scrolls, and narrative scenes — reflecting the Mahayana emphasis on devotional imagery and artistic embellishment.\n\nValue Addition:\n• The pot-and-foliage capital (ghata-pallava) at Karla is an early example of a capital type that later became widespread in Indian decorative architecture.\n• Octagonal pillar shafts across all three sites reflect the influence of the Ashokan column tradition, adapted for interior rock-cut spaces.\n• In later Ajanta viharas, the capital zone of pillars sometimes includes narrative vignettes — compressing Jataka scenes into architectural elements."
+    },
+    "hi": {
+      "display_text": "शिला-कटित बौद्ध गुफा स्थलों में स्तंभ डिज़ाइन के विकास के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भाजा में, स्तंभ सरल और अष्टकोणीय हैं जिन पर जटिल नक्काशी नहीं है, जो शिला-कटित बौद्ध वास्तुकला के प्रारंभिक चरण की संयमित सौंदर्यशास्त्र को दर्शाता है।\n2. कार्ला के स्तंभ सभी शिला-कटित चैत्य गुफाओं में सबसे लंबे हैं और इनमें अष्टकोणीय खंभों के साथ घड़ा-पल्लव शीर्ष होते हैं।\n3. अजंता की बाद की गुफाओं (महायान चरण) में, स्तंभ सादे अष्टकोणीय रूपों से विकसित होकर पुष्प, ज्यामितीय और मूर्तिकला डिजाइनों से सुसज्जित नक्काशीदार खंभों में परिवर्तित हो गए।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भाजा में, स्तंभ सरल और अष्टकोणीय हैं जिन पर जटिल नक्काशी नहीं है, जो शिला-कटित बौद्ध वास्तुकला के प्रारंभिक चरण की संयमित सौंदर्यशास्त्र को दर्शाता है।",
+          "verdict": "सही",
+          "reason": "भाजा के स्तंभ सादे अष्टकोणीय खंभे हैं जो प्रारंभिक हिनयान संयम और दूसरी शताब्दी ईसा पूर्व के बौद्ध कला के न्यूनतम अलंकरण के अनुरूप हैं।"
+        },
+        {
+          "statement": "कार्ला के स्तंभ सभी शिला-कटित चैत्य गुफाओं में सबसे लंबे हैं और इनमें अष्टकोणीय खंभों के साथ घड़ा-पल्लव शीर्ष होते हैं।",
+          "verdict": "सही",
+          "reason": "कार्ला के स्तंभ अपनी ऊँचाई और घड़ा-पल्लव (pot-and-foliage) शीर्षों के लिए प्रसिद्ध हैं, जो अष्टकोणीय खंभों के ऊपर स्थित हैं — यह सातवाहन काल की सजावटी शब्दावली की विशेषता है।"
+        },
+        {
+          "statement": "अजंता की बाद की गुफाओं (महायान चरण) में, स्तंभ सादे अष्टकोणीय रूपों से विकसित होकर पुष्प, ज्यामितीय और मूर्तिकला डिजाइनों से सुसज्जित नक्काशीदार खंभों में परिवर्तित हो गए।",
+          "verdict": "सही",
+          "reason": "अजंता में स्तंभों का क्रमिक विकास — प्रारंभिक सादे अष्टकोणीय स्तंभों से महायान काल की जटिल नक्काशीदार गुफाओं के स्तंभों तक — दो चरणों के बीच कलात्मक विकास का स्पष्ट संकेत है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प b (केवल कथन 1 और 3) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि कार्ला के स्तंभ जटिल हैं, वे कथन 2 के घड़ा-पल्लव शीर्ष के विवरण पर संदेह कर सकते हैं, जिससे वे इसे बाहर कर देंगे।",
+      "elimination_logic": [
+        "कथन 1 सही है — भाजा के सादे अष्टकोणीय स्तंभ प्रारंभिक हिनयान शिला-कटित वास्तुकला की परिभाषित विशेषता हैं।",
+        "कथन 2 सही है — कार्ला के स्तंभ जिनमें घड़ा-पल्लव शीर्ष और अष्टकोणीय खंभे हैं, अच्छी तरह से प्रलेखित हैं।",
+        "कथन 3 सही है — अजंता के महायान चरण में स्तंभों का सादे से जटिल रूप में विकास पूरी तरह से प्रमाणित है।",
+        "तीनों कथन सही हैं, अतः विकल्प d उत्तर है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "भाजा, कार्ला और अजंता में स्तंभ डिज़ाइन का विकास दूसरी शताब्दी ईसा पूर्व से छठी शताब्दी ईस्वी तक बौद्ध कलात्मक विकास का संक्षिप्त दृश्य इतिहास प्रस्तुत करता है।\n\n• कथन 1 — सही: भाजा के सादे अष्टकोणीय स्तंभ कालानुक्रमिक और सौंदर्यात्मक रूप से प्रारंभिक बिंदु हैं — कार्यात्मक, संयमित और बिना सजावट के।\n• कथन 2 — सही: कार्ला सातवाहन शैली के भीतर परंपरा के परिपक्वता का प्रतिनिधित्व करता है; इसके लंबे स्तंभ जिनमें विशिष्ट घड़ा-पल्लव शीर्ष होते हैं, वास्तुकला की एक पहचान हैं।\n• कथन 3 — सही: बाद के अजंता के स्तंभ समृद्ध नक्काशी वाले हैं — जिनमें पदक, यक्षी आकृतियाँ, पुष्पमय लताओं और कथात्मक दृश्य शामिल हैं — जो महायान की भक्तिपूर्ण छवियों और कलात्मक सजावट पर जोर को दर्शाते हैं।\n\nमूल्य संवर्धन:\n• कार्ला का घड़ा-पल्लव शीर्ष भारतीय सजावटी वास्तुकला में बाद में व्यापक रूप से प्रचलित हुए शीर्ष प्रकार का एक प्रारंभिक उदाहरण है।\n• तीनों स्थलों में अष्टकोणीय स्तंभ खंभे अशोक स्तंभ परंपरा के प्रभाव को दर्शाते हैं, जिन्हें आंतरिक शिला-कटित स्थानों के लिए अनुकूलित किया गया है।\n• बाद के अजंता विहारों में, स्तंभों के शीर्ष क्षेत्र में कभी-कभी कथात्मक दृश्य होते हैं — जो जटकों के दृश्यों को वास्तु तत्वों में संक्षिप्त करते हैं।"
+    }
+  },
+  {
+    "uuid": "b3cf01a4-29b7-4fa6-85d4-5b892b286940",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Influence of Trade Routes and Donors"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Donor inscriptions and trade route influence at Karla",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about trade connections and donor patterns related to rock-cut Buddhist cave sites:\n\n1. Donor inscriptions at the Karla chaitya refer exclusively to royal donors such as the Satavahana kings, with no mention of merchant or guild patronage.\n2. The proximity of Karla and Bhaja to ancient ports such as Sopara and Kalyan facilitated the spread of Buddhism along maritime trade networks.\n3. Evidence of Greek, Roman, and Persian influences can be identified in the costumes, ornaments, and compositional elements of certain Ajanta paintings.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 and 3 only\n(b) 1 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Donor inscriptions at the Karla chaitya refer exclusively to royal donors such as the Satavahana kings, with no mention of merchant or guild patronage.",
+          "verdict": "Incorrect",
+          "reason": "Karla's donor inscriptions explicitly mention merchants, traders, and craft guilds (shrenis) as patrons alongside other donors — royal-exclusive patronage is a fabrication. Merchant patronage was in fact a defining feature of Karla's epigraphic record."
+        },
+        {
+          "statement": "The proximity of Karla and Bhaja to ancient ports such as Sopara and Kalyan facilitated the spread of Buddhism along maritime trade networks.",
+          "verdict": "Correct",
+          "reason": "Karla and Bhaja are located on trade routes connecting the Deccan plateau to the western coastal ports of Sopara and Kalyan, which were active in maritime trade — this geographical link is well documented in the scholarship on early Buddhist patronage."
+        },
+        {
+          "statement": "Evidence of Greek, Roman, and Persian influences can be identified in the costumes, ornaments, and compositional elements of certain Ajanta paintings.",
+          "verdict": "Correct",
+          "reason": "Cave 1's Persian Embassy scene and various compositional details in Ajanta murals show influence of western Asian artistic conventions, interpreted as reflecting the cosmopolitan connections of the Vakataka court."
+        }
+      ],
+      "strong_distractor": "c — Option c is deceptive because students who broadly recall 'merchants were important patrons' may doubt the precision of Statement 1's claim and wonder if there were some inscriptions that were exclusively royal, making them uncertain about whether Statement 1 is truly wrong.",
+      "elimination_logic": [
+        "Statement 1 is NOT correct — Karla inscriptions specifically mention merchants and guild patrons, not only royalty; the 'exclusively royal' claim is a fabricated scope-extension.",
+        "Statement 2 is correct — the geographic proximity of Karla/Bhaja to Sopara and Kalyan is a documented trade-route connection.",
+        "Statement 3 is correct — foreign influences in Ajanta murals are attested through the Persian Embassy scene and stylistic analysis.",
+        "Only Statement 1 is NOT correct, making option b the answer."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication in Statement 1 sounds authoritative because students know Satavahanas were major patrons of these caves. The word 'exclusively' creates the trap — it takes a true fact (Satavahana royal patronage) and extends it falsely to exclude merchant patronage, which was actually central to Karla's history. The donor inscriptions at Karla are among the most important epigraphic evidence of non-royal Buddhist patronage in ancient India.",
+      "final_explanation": "The financing and commissioning of Buddhist cave complexes reflects the broader social and economic history of the period. At Karla especially, the epigraphic record is unusually rich.\n\n• Statement 1 — NOT Correct: Karla's donor inscriptions are a primary source for the study of merchant and guild patronage in ancient India. They name specific guilds, individual traders, and townspeople as donors — royal patronage was one strand among several, not an exclusive one.\n• Statement 2 — Correct: The Western Ghats passes near Lonavala (where Karla and Bhaja sit) were key arteries connecting the Deccan interior to the ports of Sopara and Kalyan. Buddhist monasteries along these routes served as rest stops and institutions for trader communities.\n• Statement 3 — Correct: The so-called 'Persian Embassy' scene in Ajanta Cave 1 depicts foreign dignitaries in Persian or Central Asian dress, and scholars have identified Roman-style vases and Greek ornamental motifs in several Ajanta murals.\n\nValue Addition:\n• Ancient merchant guilds (shrenis) were among the most important patrons of Buddhist institutions in India, often donating in exchange for merit (punya).\n• The ports of Sopara (near modern Nala Sopara) and Kalyan were active from at least the Mauryan period and appear in Ptolemy's Geography.\n• Buddhist monasteries along trade routes also served as banking and commercial hubs in some periods."
+    },
+    "hi": {
+      "display_text": "चट्टानी बौद्ध गुफा स्थलों से संबंधित व्यापार संबंधों और दानदाता पैटर्न के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Karla की चैत्या में दानदाता शिलालेख केवल शासकीय दानदाताओं जैसे सतवाहन राजाओं का उल्लेख करते हैं, व्यापारी या संघ के संरक्षक का कोई उल्लेख नहीं है।\n2. Karla और Bhaja की प्राचीन बंदरगाहों जैसे Sopara और Kalyan के निकटता ने समुद्री व्यापार नेटवर्क के माध्यम से बौद्ध धर्म के प्रसार को सुगम बनाया।\n3. कुछ अजंता चित्रों के वस्त्र, आभूषण और रचनात्मक तत्वों में यूनानी, रोमन और फारसी प्रभावों के प्रमाण पहचाने जा सकते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Karla की चैत्या में दानदाता शिलालेख केवल शासकीय दानदाताओं जैसे सतवाहन राजाओं का उल्लेख करते हैं, व्यापारी या संघ के संरक्षक का कोई उल्लेख नहीं है।",
+          "verdict": "गलत",
+          "reason": "Karla के दानदाता शिलालेख स्पष्ट रूप से व्यापारियों, वाणिज्यों और कारीगर संघों (श्रेणियों) को अन्य दानदाताओं के साथ संरक्षक के रूप में उल्लेख करते हैं — केवल शासकीय संरक्षकता एक मिथ्या कथन है। व्यापारी संरक्षकता वास्तव में Karla के शिलालेखीय अभिलेख का एक प्रमुख पहलू थी।"
+        },
+        {
+          "statement": "Karla और Bhaja की प्राचीन बंदरगाहों जैसे Sopara और Kalyan के निकटता ने समुद्री व्यापार नेटवर्क के माध्यम से बौद्ध धर्म के प्रसार को सुगम बनाया।",
+          "verdict": "सही है",
+          "reason": "Karla और Bhaja व्यापार मार्गों पर स्थित हैं जो डेक्कन पठार को Sopara और Kalyan के पश्चिमी तटीय बंदरगाहों से जोड़ते हैं, जो समुद्री व्यापार में सक्रिय थे — यह भौगोलिक संबंध प्रारंभिक बौद्ध संरक्षकता पर विद्वानों द्वारा अच्छी तरह से प्रलेखित है।"
+        },
+        {
+          "statement": "कुछ अजंता चित्रों के वस्त्र, आभूषण और रचनात्मक तत्वों में यूनानी, रोमन और फारसी प्रभावों के प्रमाण पहचाने जा सकते हैं।",
+          "verdict": "सही है",
+          "reason": "गुफा 1 के फारसी दूतावास दृश्य और अजंता भित्ति चित्रों के विभिन्न रचनात्मक विवरण पश्चिमी एशियाई कलात्मक परंपराओं के प्रभाव को दर्शाते हैं, जिन्हें वाकाटक दरबार के विश्वव्यापी संबंधों के रूप में व्याख्यायित किया गया है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि जो छात्र सामान्यतः 'व्यापारी महत्वपूर्ण संरक्षक थे' याद करते हैं, वे कथन 1 के दावे की सटीकता पर संदेह कर सकते हैं और सोच सकते हैं कि क्या कुछ शिलालेख केवल शासकीय थे, जिससे वे असमंजस में पड़ जाते हैं कि कथन 1 वास्तव में गलत है या नहीं।",
+      "elimination_logic": [
+        "कथन 1 सही नहीं है — Karla के शिलालेख विशेष रूप से व्यापारियों और संघ संरक्षकों का उल्लेख करते हैं, केवल शासकों का नहीं; 'केवल शासकीय' दावा एक मिथ्या विस्तार है।",
+        "कथन 2 सही है — Karla/Bhaja की Sopara और Kalyan के निकटता एक प्रलेखित व्यापार मार्ग संबंध है।",
+        "कथन 3 सही है — अजंता भित्ति चित्रों में विदेशी प्रभाव फारसी दूतावास दृश्य और शैलीगत विश्लेषण से प्रमाणित हैं।",
+        "केवल कथन 1 सही नहीं है, अतः विकल्प b उत्तर है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में संभावित मिथ्या कथन इसलिए प्रभावशाली लगता है क्योंकि छात्र जानते हैं कि सतवाहन इन गुफाओं के प्रमुख संरक्षक थे। 'केवल' शब्द जाल बनाता है — यह एक सत्य तथ्य (सतवाहन शासकीय संरक्षकता) को लेकर व्यापारी संरक्षकता को झूठे ढंग से बाहर कर देता है, जो वास्तव में Karla के इतिहास का केंद्रीय हिस्सा थी। Karla के दानदाता शिलालेख प्राचीन भारत में गैर-शासकीय बौद्ध संरक्षकता के सबसे महत्वपूर्ण शिलालेखीय साक्ष्यों में से हैं।",
+      "final_explanation": "बौद्ध गुफा परिसर के वित्तपोषण और निर्माण में उस काल के व्यापक सामाजिक और आर्थिक इतिहास की झलक मिलती है। विशेष रूप से Karla में, शिलालेखीय अभिलेख असाधारण रूप से समृद्ध हैं।\n\n• कथन 1 — सही नहीं: Karla के दानदाता शिलालेख प्राचीन भारत में व्यापारी और संघ संरक्षकता के अध्ययन के लिए प्राथमिक स्रोत हैं। वे विशिष्ट संघों, व्यक्तिगत व्यापारियों और नगरवासियों को दानदाता के रूप में नामित करते हैं — शासकीय संरक्षकता कई धागों में से एक थी, अकेली नहीं।\n• कथन 2 — सही: पश्चिमी घाट के मार्ग लोनावला के पास (जहाँ Karla और Bhaja स्थित हैं) डेक्कन के आंतरिक भाग को Sopara और Kalyan के बंदरगाहों से जोड़ते थे। इन मार्गों पर बौद्ध मठ व्यापारिक समुदायों के लिए विश्राम स्थल और संस्थान थे।\n• कथन 3 — सही: अजंता गुफा 1 के तथाकथित 'फारसी दूतावास' दृश्य में फारसी या मध्य एशियाई पोशाक में विदेशी गणमान्य व्यक्तियों को दर्शाया गया है, और विद्वानों ने कई अजंता भित्ति चित्रों में रोमन शैली के पात्र और यूनानी सजावटी तत्व पहचाने हैं।\n\nमूल्यवर्धन:\n• प्राचीन व्यापारी संघ (श्रेणियाँ) भारत में बौद्ध संस्थानों के सबसे महत्वपूर्ण संरक्षकों में से थे, जो अक्सर पुण्य के लिए दान करते थे।\n• Sopara (आधुनिक नाला Sopara के निकट) और Kalyan के बंदरगाह कम से कम मौर्य काल से सक्रिय थे और प्टोलेमी के भूगोल में भी उल्लिखित हैं।\n• व्यापार मार्गों के साथ बौद्ध मठ कुछ कालों में बैंकिंग और वाणिज्यिक केंद्र के रूप में भी कार्य करते थे।"
+    }
+  },
+  {
+    "uuid": "50a25b57-0040-4411-acb3-ea9232db5648",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Architectural Innovations and Engineering"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Rock-cutting technique — top-down excavation method",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Rock-cut cave complexes such as those at Ajanta and Karla required careful engineering to prevent structural collapse during excavation. Which of the following correctly describes the primary excavation technique used by ancient craftsmen at these sites?\n\n(a) Excavation proceeded from the base of the cliff face upward, allowing workers to use the accumulated rock debris as scaffolding\n(b) Artisans employed horizontal drilling at mid-height to create lateral stress relief before expanding the hall\n(c) Excavation followed a top-down method, with workers beginning at the ceiling level and carving downward to maintain structural stability\n(d) Prefabricated modular panels of basalt were assembled inside naturally occurring cavities and then carved in detail",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because bottom-to-top (quarrying from the floor upward) is the intuitive method students might imagine for digging into a cliff, making the correct top-down method counterintuitive.",
+      "elimination_logic": [
+        "Eliminate option a (bottom-to-top) — this is the intuitive but incorrect method; excavating from the bottom would undermine the rock face above, causing collapse.",
+        "Eliminate option b (horizontal drilling) — no such 'horizontal drill-and-blast' method existed in ancient Indian rock-cutting practice.",
+        "Eliminate option d (prefabricated modular carving) — this is a fabricated technique with no basis in ancient Indian engineering.",
+        "Option c (top-down excavation) is the correct and documented method: artisans began at the roof level and worked downward, ensuring structural stability throughout."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap in option b ('horizontal drilling') sounds modern but might seem possible to students who have read about ancient engineering without specific knowledge of the top-down method. Option a (bottom-to-top) is the stronger trap because it matches the intuitive image of 'digging' — most students picture excavation as starting at ground level. The top-down method is counterintuitive but structurally logical: starting at the roof allows continuous support below while carving proceeds.",
+      "final_explanation": "Rock-cut cave architecture required sophisticated engineering solutions to excavate large volumes of basalt without causing structural failure.\n\n• Option (a): Bottom-to-top — Incorrect. Beginning at the base would leave the overhanging rock above unsupported, risking catastrophic collapse before the hall could be completed.\n• Option (b): Horizontal drilling at mid-height — Incorrect. No such method is documented in ancient Indian rock-cut architecture. This is a fabricated technique.\n• Option (c): Top-down — Correct. Artisans began at the ceiling level and excavated downward, maintaining rock support beneath the working surface at all times. This method also allowed sculptors to carve pillars and wall decorations as they descended.\n• Option (d): Prefabricated modular panels — Incorrect. Rock-cut architecture by definition involves carving in situ from the living rock, not assembling prefabricated elements.\n\nValue Addition:\n• The top-down method also explains why roof carvings and ceiling decorations are among the best-preserved elements — they were finished first and left undisturbed.\n• Drainage channels carved into the cave floors and exteriors reflect sophisticated water management planning concurrent with excavation.\n• Deccan trap basalt is both hard enough to be durable and uniform enough to be carved without unpredictable fracture lines."
+    },
+    "hi": {
+      "display_text": "अजंता और कार्ला जैसे चट्टान-कट गुफा परिसर खुदाई के दौरान संरचनात्मक गिरावट को रोकने के लिए सावधानीपूर्वक इंजीनियरिंग की मांग करते थे। निम्नलिखित में से कौन-सी विधि प्राचीन कारीगरों द्वारा इन स्थलों पर मुख्य खुदाई तकनीक के रूप में सही ढंग से वर्णित है?\n\n(a) खुदाई चट्टान के आधार से ऊपर की ओर हुई, जिससे कामगार जमा चट्टानी मलबे का उपयोग मंचन के लिए कर सके\n(b) कारीगरों ने हॉल का विस्तार करने से पहले मध्य-ऊंचाई पर क्षैतिज ड्रिलिंग का उपयोग करके पार्श्व तनाव राहत बनाई\n(c) खुदाई ऊपर से नीचे की विधि का पालन करती थी, जिसमें कामगार छत के स्तर से शुरू करके नीचे की ओर नक्काशी करते थे ताकि संरचनात्मक स्थिरता बनी रहे\n(d) बेसाल्ट के पूर्वनिर्मित मॉड्यूलर पैनलों को प्राकृतिक गुहाओं के अंदर जोड़ा गया और फिर विस्तार से नक्काशी की गई",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि नीचे से ऊपर (फर्श से ऊपर की ओर खुदाई) वह सहज विधि है जिसे छात्र चट्टान में खुदाई के लिए कल्पना कर सकते हैं, जिससे सही ऊपर से नीचे की विधि अप्रत्याशित लगती है।",
+      "elimination_logic": [
+        "विकल्प a (नीचे से ऊपर) को हटा दें — यह सहज लेकिन गलत विधि है; नीचे से खुदाई करने पर ऊपर की चट्टान का समर्थन कमजोर होगा, जिससे गिरावट हो सकती है।",
+        "विकल्प b (क्षैतिज ड्रिलिंग) को हटा दें — प्राचीन भारतीय चट्टान-कटाई प्रथा में ऐसी 'क्षैतिज ड्रिल-एंड-ब्लास्ट' विधि मौजूद नहीं थी।",
+        "विकल्प d (पूर्वनिर्मित मॉड्यूलर नक्काशी) को हटा दें — यह एक काल्पनिक तकनीक है जिसका प्राचीन भारतीय इंजीनियरिंग में कोई आधार नहीं है।",
+        "विकल्प c (ऊपर से नीचे खुदाई) सही और प्रलेखित विधि है: कारीगर छत के स्तर से शुरू करते थे और नीचे की ओर काम करते थे, जिससे संरचनात्मक स्थिरता बनी रहती थी।"
+      ],
+      "upsc_trap_explanation": "विकल्प b ('क्षैतिज ड्रिलिंग') में संभावित-काल्पनिक जाल आधुनिक लगता है लेकिन उन छात्रों को संभव लग सकता है जिन्होंने प्राचीन इंजीनियरिंग के बारे में पढ़ा है बिना ऊपर से नीचे की विधि की विशिष्ट जानकारी के। विकल्प a (नीचे से ऊपर) मजबूत जाल है क्योंकि यह 'खुदाई' की सहज छवि से मेल खाता है — अधिकांश छात्र खुदाई को जमीन से शुरू होते हुए कल्पना करते हैं। ऊपर से नीचे की विधि अप्रत्याशित है लेकिन संरचनात्मक रूप से तार्किक है: छत से शुरू करने पर नीचे निरंतर समर्थन रहता है जबकि नक्काशी जारी रहती है।",
+      "final_explanation": "चट्टान-कट गुफा वास्तुकला में बड़ी मात्रा में बेसाल्ट की खुदाई के लिए परिष्कृत इंजीनियरिंग समाधान आवश्यक थे ताकि संरचनात्मक विफलता न हो।\n\n• विकल्प (a): नीचे से ऊपर — गलत। आधार से शुरू करने पर ऊपर की चट्टान बिना समर्थन के रह जाएगी, जिससे हॉल पूरा होने से पहले विनाशकारी गिरावट का खतरा होगा।\n• विकल्प (b): मध्य-ऊंचाई पर क्षैतिज ड्रिलिंग — गलत। प्राचीन भारतीय चट्टान-कट वास्तुकला में ऐसी कोई विधि प्रलेखित नहीं है। यह एक काल्पनिक तकनीक है।\n• विकल्प (c): ऊपर से नीचे — सही। कारीगर छत के स्तर से शुरू करते थे और नीचे की ओर खुदाई करते थे, जिससे काम के नीचे चट्टान का समर्थन हमेशा बना रहता था। इस विधि से वे स्तंभ और दीवार की सजावट भी नीचे उतरते हुए नक्काशी कर सकते थे।\n• विकल्प (d): पूर्वनिर्मित मॉड्यूलर पैनल — गलत। चट्टान-कट वास्तुकला का अर्थ है जीवित चट्टान से वहीं नक्काशी करना, न कि पूर्वनिर्मित तत्वों को जोड़ना।\n\nमूल्यवर्धन:\n• ऊपर से नीचे की विधि यह भी समझाती है कि छत की नक्काशियां और छत की सजावट सबसे अच्छी तरह संरक्षित क्यों हैं — उन्हें पहले पूरा किया गया और बिना छेड़े छोड़ा गया।\n• गुफा के फर्श और बाहरी हिस्सों में खुदे जल निकासी चैनल खुदाई के साथ-साथ परिष्कृत जल प्रबंधन योजना को दर्शाते हैं।\n• डेक्कन ट्रैप बेसाल्ट कठोर होने के साथ-साथ इतना समान भी है कि इसे बिना अनियमित दरारों के नक्काशी किया जा सकता है।"
+    }
+  },
+  {
+    "uuid": "5ca38f64-a1b8-49c8-aaf4-d0b9fee79100",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Sculptural Elements and Decorative Motifs",
+        "Iconographic Evolution: Aniconic to Iconic"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Mahayana iconography — Bodhisattva figures at Ajanta",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Bodhisattva figures such as Padmapani and Vajrapani appear only in the later phase of Ajanta caves and are entirely absent from the earlier excavations at the same site.\n\nReason (R): Mahayana Buddhism introduced the concept of the Bodhisattva — a being who renounces personal nirvana to work for the liberation of all sentient beings — which is doctrinally distinct from the Hinayana emphasis on the individual monk's path to liberation.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is A correct? Yes — Bodhisattva figures such as Padmapani and Vajrapani appear exclusively in the later (Mahayana) caves at Ajanta, not in the early Hinayana caves.",
+        "Step 2: Is R correct? Yes — the Mahayana shift from the Hinayana 'monk's path' to the Bodhisattva ideal of delaying personal nirvana to aid all sentient beings is a fundamental and correct doctrinal statement.",
+        "Step 3: Does R explain A? No — the doctrinal difference between Hinayana and Mahayana is the background context, but the direct reason Bodhisattva figures appear in Ajanta caves is the Vakataka patronage of the later caves under Mahayana religious influence, not the doctrinal difference per se. R states a doctrinal fact that is true but does not causally explain why Bodhisattva iconography appears specifically in the later Ajanta caves (as opposed to, say, Bhaja's later additions). The causal agent is sectarian patronage and iconographic convention, not the doctrinal contrast itself serving as an explanation.",
+        "A correct + R correct + R does NOT directly explain A → option b."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The distinction between Hinayana and Mahayana is fundamental to understanding the iconographic shift across Ajanta's two phases. The Bodhisattva concept — a being who postpones personal liberation to assist all sentient beings — is a distinctly Mahayana contribution to Buddhist thought and art.\n\n• Assertion (A): Correct — Padmapani, Vajrapani, and other Bodhisattva figures appear only in the Mahayana-phase caves at Ajanta (Caves 1–7, 11, 14–29), not in the early Hinayana caves.\n• Reason (R): Correct — Mahayana doctrine does indeed emphasise the Bodhisattva path, where the aspirant delays nirvana to work for the liberation of all beings, contrasting with the Hinayana (Theravada) emphasis on individual monk's path to arahantship.\n• Causal link: Incomplete — R provides the correct doctrinal background but does not causally explain the iconographic appearance. The direct explanatory chain is: Vakataka patrons subscribed to Mahayana Buddhism → commissioned Mahayana iconography → Bodhisattva figures appear in caves. R is a true but insufficient explanation of A.\n\nValue Addition:\n• Dwarpalas (door guardians) appear in later Ajanta caves, another marker of the Mahayana phase.\n• The Mahayana innovation of placing a Buddha image directly on the stupa (as in Cave 26) parallels the appearance of Bodhisattva figures in murals.\n• Flying apsaras and elaborate makara toranas in Caves 19 and 26 are further Mahayana-phase decorative innovations."
+    },
+    "hi": {
+      "display_text": "कथन (A): पद्मपाणि और वज्रपाणि जैसे बोधिसत्त्व आकृतियाँ केवल अजंता गुफाओं के बाद के चरण में प्रकट होती हैं और उसी स्थल की प्रारंभिक खुदाई में पूरी तरह अनुपस्थित हैं।\n\nकारण (R): महायान बौद्ध धर्म ने बोधिसत्त्व की अवधारणा प्रस्तुत की — एक ऐसा प्राणी जो व्यक्तिगत निर्वाण त्यागकर सभी जीवों की मुक्ति के लिए कार्य करता है — जो सैद्धांतिक रूप से हिनयान के व्यक्तिगत भिक्षु मार्ग से भिन्न है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? हाँ — पद्मपाणि और वज्रपाणि जैसे बोधिसत्त्व आकृतियाँ केवल अजंता की बाद की (महायान) गुफाओं में प्रकट होती हैं, प्रारंभिक हिनयान गुफाओं में नहीं।",
+        "चरण 2: क्या R सही है? हाँ — महायान का हिनयान के 'भिक्षु मार्ग' से बोधिसत्त्व आदर्श की ओर बदलाव, जिसमें व्यक्तिगत निर्वाण को स्थगित कर सभी जीवों की सहायता करना शामिल है, एक मौलिक और सही सैद्धांतिक कथन है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? नहीं — हिनयान और महायान के बीच सैद्धांतिक अंतर पृष्ठभूमि है, लेकिन अजंता गुफाओं में बोधिसत्त्व आकृतियाँ प्रकट होने का प्रत्यक्ष कारण महायान धार्मिक प्रभाव के तहत वाकाटक संरक्षकता है, न कि सैद्धांतिक अंतर स्वयं। R एक सैद्धांतिक तथ्य बताता है जो सही है पर यह कारणात्मक रूप से यह नहीं समझाता कि बोधिसत्त्व प्रतिमाशास्त्र विशेष रूप से बाद की अजंता गुफाओं में क्यों है (जैसे भजा की बाद की जोड़ियों के बजाय)। कारणात्मक एजेंट संप्रदायिक संरक्षकता और प्रतिमाशास्त्रीय परंपरा है, न कि सैद्धांतिक विरोधाभास।",
+        "A सही + R सही + R सीधे A की व्याख्या नहीं करता → विकल्प b।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "हिनयान और महायान के बीच का अंतर अजंता के दो चरणों में प्रतिमाशास्त्रीय बदलाव को समझने के लिए मौलिक है। बोधिसत्त्व की अवधारणा — एक ऐसा प्राणी जो व्यक्तिगत मुक्ति को स्थगित कर सभी जीवों की सहायता करता है — बौद्ध विचार और कला में विशिष्ट रूप से महायान का योगदान है।\n\n• कथन (A): सही — पद्मपाणि, वज्रपाणि और अन्य बोधिसत्त्व आकृतियाँ केवल अजंता के महायान चरण की गुफाओं (गुफा 1–7, 11, 14–29) में प्रकट होती हैं, प्रारंभिक हिनयान गुफाओं में नहीं।\n• कारण (R): सही — महायान सिद्धांत वास्तव में बोधिसत्त्व मार्ग पर बल देता है, जहाँ साधक निर्वाण को स्थगित कर सभी जीवों की मुक्ति के लिए कार्य करता है, जो हिनयान (थेरेवाद) के व्यक्तिगत भिक्षु मार्ग से भिन्न है।\n• कारणात्मक संबंध: अपूर्ण — R सही सैद्धांतिक पृष्ठभूमि देता है पर प्रतिमाशास्त्रीय प्रकट होने की कारणात्मक व्याख्या नहीं करता। प्रत्यक्ष व्याख्यात्मक श्रृंखला है: वाकाटक संरक्षक महायान बौद्ध धर्म के अनुयायी थे → महायान प्रतिमाशास्त्र का निर्माण करवाया → गुफाओं में बोधिसत्त्व आकृतियाँ प्रकट हुईं। R, A की एक सत्य पर अपर्याप्त व्याख्या है।\n\nमूल्यवर्धन:\n• द्वारपाल (द्वार रक्षक) बाद की अजंता गुफाओं में प्रकट होते हैं, जो महायान चरण का एक और चिन्ह है।\n• महायान नवाचार के रूप में बुद्ध की मूर्ति को सीधे स्तूप पर रखना (जैसे गुफा 26) बोधिसत्त्व आकृतियों के भित्ति चित्रों में प्रकट होने के समानांतर है।\n• गुफा 19 और 26 में उड़ती अप्सराएँ और विस्तृत मकर तोरण महायान चरण के सजावटी नवाचार हैं।"
+    }
+  },
+  {
+    "uuid": "8b296766-51b5-45e5-89a0-9e91f0f8c12c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Jataka Tales in Ajanta Murals",
+        "Famous Individual Paintings at Ajanta"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Cave 17 — maximum Jataka depictions at Ajanta",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which cave at Ajanta is identified as containing the largest number of Jataka tale depictions, including the Vessantara Jataka and the Mahakapi Jataka?\n\n(a) Cave 17\n(b) Cave 2\n(c) Cave 1\n(d) Cave 26",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (Cave 1) is deceptive because Cave 1 is the most celebrated cave at Ajanta (Padmapani, Vajrapani, Persian Embassy) and students may assume it also has the greatest density of Jataka depictions.",
+      "elimination_logic": [
+        "Eliminate option b (Cave 2) — Cave 2 has important Jataka depictions (Hamsa Jataka, Vidhurapandita Jataka) but is not known as having the maximum number.",
+        "Eliminate option c (Cave 1) — Cave 1 is celebrated for the Padmapani painting and Mahajanaka/Shaddanta Jatakas but is not identified as having the most Jatakas overall.",
+        "Eliminate option d (Cave 26) — Cave 26 is a chaitya hall with sculptural decoration, not a picture gallery of Jataka murals.",
+        "Option a (Cave 17) is correct — it is specifically identified as containing the largest number of Jataka depictions at Ajanta."
+      ],
+      "upsc_trap_explanation": "Cave 1's fame as the home of Padmapani makes it the reflexive answer for any question about Ajanta's 'best' or 'most.' The trap exploits this halo effect to redirect students away from Cave 17, which is less generically famous but is specifically identified as the cave with the most Jataka narratives — including the Vessantara Jataka and Mahakapi Jataka.",
+      "final_explanation": "While Cave 1 is Ajanta's most internationally recognised cave, the designation of 'largest number of Jataka depictions' belongs to a different cave entirely.\n\n• Option (a) — Cave 17: Correct. Cave 17 is sometimes called Ajanta's 'picture gallery' because it contains the greatest concentration of Jataka narratives, including the Vessantara Jataka (the last of the 547 Jatakas) and the Mahakapi Jataka.\n• Option (b) — Cave 2: Incorrect. Cave 2 has important Jataka paintings (Hamsa Jataka, Vidhurapandita Jataka) but fewer than Cave 17.\n• Option (c) — Cave 1: Incorrect. Despite its fame for individual masterpieces (Padmapani, Vajrapani, Mahajanaka Jataka), Cave 1 does not have the maximum count of Jataka depictions.\n• Option (d) — Cave 26: Incorrect. Cave 26 is a chaitya hall primarily known for its sculptural programme (reclining Buddha, makara toranas), not Jataka murals.\n\nValue Addition:\n• The Vessantara Jataka depicts the penultimate birth of the future Buddha — a prince who gives away everything including his children.\n• Continuous narration (one painting showing multiple sequential episodes) is the storytelling technique used across Jataka murals at Ajanta.\n• The Mahakapi Jataka depicts a monkey king who sacrifices himself to save his troop — a tale also found in other Deccan sculptural programmes."
+    },
+    "hi": {
+      "display_text": "अजंता की कौन-सी गुफा को सबसे अधिक संख्या में जातक कथाओं के चित्रों, जिनमें वेस्संतरा जातक और महाकापि जातक शामिल हैं, के लिए पहचाना गया है?\n\n(a) गुफा 17\n(b) गुफा 2\n(c) गुफा 1\n(d) गुफा 26",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (गुफा 1) भ्रमित करने वाला है क्योंकि गुफा 1 अजंता की सबसे प्रसिद्ध गुफा है (पद्मपानी, वज्रपाणि, फारसी दूतावास) और छात्र यह मान सकते हैं कि इसमें भी सबसे अधिक संख्या में जातक चित्र हैं।",
+      "elimination_logic": [
+        "विकल्प b (गुफा 2) को हटाएं — गुफा 2 में महत्वपूर्ण जातक चित्र (हंस जातक, विधुरपंडित जातक) हैं लेकिन इसे सबसे अधिक संख्या वाली गुफा के रूप में नहीं जाना जाता।",
+        "विकल्प c (गुफा 1) को हटाएं — गुफा 1 पद्मपानी चित्र और महाजनक/षड्दंत जातकों के लिए प्रसिद्ध है लेकिन इसे कुल मिलाकर सबसे अधिक जातक चित्रों वाली गुफा के रूप में नहीं पहचाना जाता।",
+        "विकल्प d (गुफा 26) को हटाएं — गुफा 26 एक चैत्य हॉल है जिसमें मूर्तिकला सजावट है, यह जातक भित्ति चित्रों की चित्रशाला नहीं है।",
+        "विकल्प a (गुफा 17) सही है — इसे विशेष रूप से अजंता में सबसे अधिक जातक चित्रों वाली गुफा के रूप में पहचाना गया है।"
+      ],
+      "upsc_trap_explanation": "गुफा 1 की प्रसिद्धि पद्मपानी की गुफा के रूप में इसे अजंता के 'सर्वश्रेष्ठ' या 'सबसे अधिक' से संबंधित किसी भी प्रश्न के लिए स्वचालित उत्तर बनाती है। यह जाल इस प्रभाव का उपयोग छात्रों को गुफा 17 से भटकाने के लिए करता है, जो कम सामान्य रूप से प्रसिद्ध है लेकिन विशेष रूप से सबसे अधिक जातक कथाएँ रखने वाली गुफा के रूप में पहचानी जाती है — जिसमें वेस्संतरा जातक और महाकापि जातक शामिल हैं।",
+      "final_explanation": "जहाँ गुफा 1 अजंता की सबसे अंतरराष्ट्रीय रूप से मान्यता प्राप्त गुफा है, 'सबसे अधिक जातक चित्रों' का खिताब पूरी तरह से एक अलग गुफा को जाता है।\n\n• विकल्प (a) — गुफा 17: सही। गुफा 17 को कभी-कभी अजंता की 'चित्रशाला' कहा जाता है क्योंकि इसमें जातक कथाओं की सबसे अधिक सांद्रता है, जिसमें वेस्संतरा जातक (547 जातकों में अंतिम) और महाकापि जातक शामिल हैं।\n• विकल्प (b) — गुफा 2: गलत। गुफा 2 में महत्वपूर्ण जातक चित्र (हंस जातक, विधुरपंडित जातक) हैं लेकिन गुफा 17 से कम।\n• विकल्प (c) — गुफा 1: गलत। पद्मपानी, वज्रपाणि, महाजनक जातक जैसे व्यक्तिगत उत्कृष्ट कृतियों के लिए प्रसिद्ध होने के बावजूद, गुफा 1 में सबसे अधिक जातक चित्र नहीं हैं।\n• विकल्प (d) — गुफा 26: गलत। गुफा 26 मुख्यतः अपनी मूर्तिकला (शय्यापर Buddha, मकर तोरण) के लिए जानी जाती है, जातक भित्ति चित्रों के लिए नहीं।\n\nमूल्यवर्धन:\n• वेस्संतरा जातक भविष्य के बुद्ध का अंतिम जन्म दर्शाता है — एक राजकुमार जो अपने सभी कुछ, यहाँ तक कि अपने बच्चों को भी दान कर देता है।\n• निरंतर कथा (एक चित्र में कई अनुक्रमिक घटनाओं को दिखाना) अजंता के जातक भित्ति चित्रों में प्रयुक्त कहानी कहने की तकनीक है।\n• महाकापि जातक एक बंदर राजा की कथा है जो अपने समूह को बचाने के लिए स्वयं का बलिदान करता है — यह कथा अन्य दक्कन की मूर्तिकला कार्यक्रमों में भी मिलती है।"
+    }
+  },
+  {
+    "uuid": "339265ec-99f5-4094-878e-6ce8ade1c29d",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Stupa Architecture within Caves",
+        "Ajanta Cave Numbering and Typology"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Stupa features matched to specific Ajanta and Karla caves",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Cave / Site) with List II (Stupa Feature):",
+        "columns": [
+          "List I (Cave / Site)",
+          "List II (Stupa Feature)"
+        ],
+        "rows": [
+          [
+            "A. Bhaja chaitya",
+            "1. Monolithic stupa with a surviving wooden umbrella (chattra) on top"
+          ],
+          [
+            "B. Karla chaitya",
+            "2. Plain hemispherical stupa with no figural carving — Hinayana phase"
+          ],
+          [
+            "C. Ajanta Cave 10",
+            "3. Among the earliest surviving stupas within a rock-cut chaitya in India"
+          ],
+          [
+            "D. Ajanta Cave 26",
+            "4. Stupa with a carved image of the Buddha on the drum — Mahayana innovation"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-2, D-4\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a swaps the stupa descriptions of Cave 10 and Cave 26, which is the most tempting error because both are chaitya halls and students may not distinguish the plain Hinayana stupa (Cave 10) from the Mahayana innovation (Cave 26).",
+      "elimination_logic": [
+        "Cave 10 is a Hinayana-phase chaitya with a plain stupa — pair it with 'simple hemispherical stupa without figural carving' (Item 2).",
+        "Cave 26 stupa has a Buddha figure carved on its front face (Mahayana innovation) — pair it with 'stupa with carved Buddha figure on the drum' (Item 4).",
+        "Karla has a monolithic stupa with a wooden chattra (umbrella) — pair it with Item 1.",
+        "Bhaja has a simple hemispherical stupa — but the question pairs Bhaja with 'earliest surviving stupa within a rock-cut chaitya' (Item 3).",
+        "Only option c correctly matches all four pairs."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works between Cave 10 and Cave 26, both chaitya halls at Ajanta. Students who broadly know that Cave 26 is 'more elaborate' and Cave 10 is 'plainer' may still swap their specific stupa attributes when presented with descriptive rather than named options. The carved Buddha figure on Cave 26's stupa is a Mahayana-period innovation that distinguishes it categorically from Cave 10's plain Hinayana stupa.",
+      "final_explanation": "Stupa evolution within rock-cut caves mirrors the broader development from Hinayana austerity to Mahayana elaboration and devotional imagery.\n\n• A-3: Bhaja has one of the earliest surviving stupas within a rock-cut chaitya, reflecting the primitive, unadorned character of 2nd century BCE Buddhist art.\n• B-1: Karla's stupa is a finely polished monolithic form with a wooden chattra (parasol umbrella) on top — the wooden umbrella is a uniquely surviving ancient element.\n• C-2: Cave 10 at Ajanta is a Hinayana-phase chaitya; its stupa is plain and hemispherical without figural carving, consistent with the aniconic phase.\n• D-4: Cave 26's stupa is the Mahayana innovation par excellence — a Buddha figure is carved directly onto the stupa drum, blending the symbolic (stupa) with the iconic (Buddha image) for the first time at Ajanta.\n\nValue Addition:\n• The wooden chattra at Karla is the only in-situ surviving ancient wooden architectural element in Indian rock-cut cave architecture.\n• Cave 26 also contains the celebrated reclining Buddha (parinirvana) sculpture carved into the side wall — a separate feature from the stupa.\n• The five chaitya caves at Ajanta span both phases: Caves 9 and 10 (Hinayana); Caves 19, 26, and 29 (Mahayana)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (गुफा / स्थल) को सूची II (स्तूप विशेषता) से मिलाइए:",
+        "columns": [
+          "सूची I (गुफा / स्थल)",
+          "सूची II (स्तूप विशेषता)"
+        ],
+        "rows": [
+          [
+            "A. भाजा चैत्य",
+            "1. एकलाश्म स्तूप जिस पर जीवित लकड़ी का छत्र (छाता) है"
+          ],
+          [
+            "B. करला चैत्य",
+            "2. साधारण अर्धगोलाकार स्तूप बिना मूर्तिकला के — हिनयान काल"
+          ],
+          [
+            "C. अजंता गुफा 10",
+            "3. भारत में चट्टान में बने चैत्य के भीतर सबसे प्राचीन जीवित स्तूपों में से एक"
+          ],
+          [
+            "D. अजंता गुफा 26",
+            "4. ड्रम पर बुद्ध की उकेरी गई मूर्ति वाला स्तूप — महायान नवाचार"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-2, D-4\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a गुफा 10 और गुफा 26 के स्तूप विवरणों को बदल देता है, जो सबसे प्रलोभनकारी त्रुटि है क्योंकि दोनों चैत्य हॉल हैं और छात्र साधारण हिनयान स्तूप (गुफा 10) को महायान नवाचार (गुफा 26) से अलग नहीं कर पाते।",
+      "elimination_logic": [
+        "गुफा 10 एक हिनयान-कालीन चैत्य है जिसमें साधारण स्तूप है — इसे 'सरल अर्धगोलाकार स्तूप बिना मूर्तिकला के' (आइटम 2) के साथ जोड़ें।",
+        "गुफा 26 के स्तूप के सामने के भाग पर बुद्ध की मूर्ति उकेरी गई है (महायान नवाचार) — इसे 'ड्रम पर उकेरी गई बुद्ध की मूर्ति वाला स्तूप' (आइटम 4) के साथ जोड़ें।",
+        "करला में एक एकलाश्म स्तूप है जिस पर लकड़ी का छत्र (छाता) है — इसे आइटम 1 के साथ जोड़ें।",
+        "भाजा में एक साधारण अर्धगोलाकार स्तूप है — लेकिन प्रश्न भाजा को 'चट्टान में बने चैत्य के भीतर सबसे प्राचीन जीवित स्तूप' (आइटम 3) के साथ जोड़ता है।",
+        "केवल विकल्प c सभी चार जोड़ों को सही ढंग से मिलाता है।"
+      ],
+      "upsc_trap_explanation": "गुफा 10 और गुफा 26 के बीच वस्तु-स्थानांतरण जाल काम करता है, जो दोनों अजंता के चैत्य हॉल हैं। जो छात्र सामान्यतः जानते हैं कि गुफा 26 'अधिक विस्तृत' है और गुफा 10 'सरल' है, वे वर्णनात्मक विकल्पों के सामने उनके विशिष्ट स्तूप गुणों को बदल सकते हैं। गुफा 26 के स्तूप पर उकेरी गई बुद्ध की मूर्ति महायान कालीन नवाचार है जो इसे गुफा 10 के साधारण हिनयान स्तूप से स्पष्ट रूप से अलग करती है।",
+      "final_explanation": "चट्टान में बने गुफाओं के भीतर स्तूप का विकास व्यापक रूप से हिनयान की संयमितता से महायान की विस्तृत और भक्तिपूर्ण छवियों की ओर विकास को दर्शाता है।\n\n• A-3: भाजा में भारत के चट्टान में बने चैत्य के भीतर सबसे प्राचीन जीवित स्तूपों में से एक है, जो दूसरी शताब्दी ईसा पूर्व के बौद्ध कला के आदिम, सादे स्वरूप को दर्शाता है।\n• B-1: करला का स्तूप एक सुंदर पॉलिश किया हुआ एकलाश्म रूप है जिस पर ऊपर लकड़ी का छत्र (छाता) है — लकड़ी का छत्र प्राचीन भारतीय चट्टान-कट गुफा वास्तुकला में एकमात्र जीवित प्राचीन तत्व है।\n• C-2: अजंता की गुफा 10 हिनयान-कालीन चैत्य है; इसका स्तूप साधारण और अर्धगोलाकार है, बिना मूर्तिकला के, जो अनिकोनिक चरण के अनुरूप है।\n• D-4: गुफा 26 का स्तूप महायान नवाचार का उत्कृष्ट उदाहरण है — ड्रम पर बुद्ध की मूर्ति उकेरी गई है, जो पहली बार अजंता में प्रतीकात्मक (स्तूप) और मूर्तिमान (बुद्ध छवि) को मिलाता है।\n\nमूल्य संवर्धन:\n• करला का लकड़ी का छत्र भारतीय चट्टान-कट गुफा वास्तुकला में एकमात्र प्राचीन लकड़ी का जीवित वास्तु तत्व है।\n• गुफा 26 में प्रसिद्ध शय्यासन बुद्ध (परिनिर्वाण) की मूर्ति भी है जो साइड वॉल में उकेरी गई है — जो स्तूप से अलग विशेषता है।\n• अजंता की पाँच चैत्य गुफाएँ दोनों कालों को दर्शाती हैं: गुफा 9 और 10 (हिनयान); गुफा 19, 26, और 29 (महायान)।"
+    }
+  },
+  {
+    "uuid": "77df8b14-2076-4ca8-b14c-05fe7452046d",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Ajanta Paintings: Technique and Preservation"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Natural pigments used in Ajanta paintings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the pigments and materials used in Ajanta paintings:\n\n1. Ochre, used as a yellow and red pigment at Ajanta, was sourced locally from the Deccan region and did not require long-distance trade.\n2. Lapis lazuli, the source of vivid blue colour in Ajanta paintings, was imported from Afghanistan — specifically the Badakhshan region — since no comparable deposits exist in India.\n3. Cinnabar, used as a red pigment at Ajanta, is derived from copper oxide and was available in abundance throughout the Deccan plateau.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Ochre, used as a yellow and red pigment at Ajanta, was sourced locally from the Deccan region and did not require long-distance trade.",
+          "verdict": "Correct",
+          "reason": "Ochre is an iron oxide mineral available in the Deccan region; it is documented as a locally sourced pigment at Ajanta, unlike lapis lazuli which had to be imported."
+        },
+        {
+          "statement": "Lapis lazuli, the source of vivid blue colour in Ajanta paintings, was imported from Afghanistan — specifically the Badakhshan region — since no comparable deposits exist in India.",
+          "verdict": "Correct",
+          "reason": "Badakhshan (in modern Afghanistan) was the ancient world's primary source of lapis lazuli and supplied India, Persia, Egypt, and Rome; Indian mines do not produce lapis lazuli."
+        },
+        {
+          "statement": "Cinnabar, used as a red pigment at Ajanta, is derived from copper oxide and was available in abundance throughout the Deccan plateau.",
+          "verdict": "Incorrect",
+          "reason": "Cinnabar is mercury sulfide (HgS), not copper oxide; the confusion with copper compounds is a common error. Cinnabar is not abundantly available in the Deccan and was a more precious, specifically sourced pigment."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) is deceptive because statements 1 and 2 are both correct and students who have learned the general pigment list may not scrutinise Statement 3's chemical description carefully.",
+      "elimination_logic": [
+        "Statement 1 is correct — ochre is a locally available iron oxide pigment in the Deccan.",
+        "Statement 2 is correct — lapis lazuli from Afghanistan (Badakhshan) is well-documented as an Ajanta import.",
+        "Statement 3 is incorrect — cinnabar is mercury sulfide, not copper oxide; this is a chemical misidentification.",
+        "Only Statements 1 and 2 are correct, matching option b."
+      ],
+      "upsc_trap_explanation": "Statement 3's trap exploits the limited chemistry knowledge most humanities students bring to art-history questions. Copper compounds are also used as pigments (malachite, azurite) and are sometimes associated with Deccan mining. Stating cinnabar is a 'copper oxide' sounds plausible to someone who knows it is a mineral pigment but has not memorised the precise chemistry. The correct identification — mercury sulfide — is the discriminating fact.",
+      "final_explanation": "The palette of Ajanta painters was built from a combination of locally available and long-distance imported mineral pigments, each chosen for its specific colour quality and stability.\n\n• Statement 1 — Correct: Ochre, produced from iron oxides (goethite for yellow, hematite for red), is native to the Deccan basalt region. Its local availability made it the most economical pigment in the Ajanta palette.\n• Statement 2 — Correct: Lapis lazuli's extraordinary deep blue required importation from the Badakhshan mines of Afghanistan — one of the most important evidence points for Ajanta's international trade connections.\n• Statement 3 — Incorrect: Cinnabar is mercury sulfide (HgS), not copper oxide. Copper-based pigments (such as malachite) are different compounds. Cinnabar's red was brilliant but relatively rare; its chemical identity as a mercury compound is a precise fact that UPSC questions sometimes test.\n\nValue Addition:\n• Lamp black (carbon soot) was used for outlines and dark tones; white lime provided highlights.\n• The binding medium for pigments was derived from animal glue (hide or bone) or plant gums, not egg-based as in European tempera.\n• The use of burnishing with an agate stone on the final painted surface created the characteristic lustrous finish of Ajanta murals."
+    },
+    "hi": {
+      "display_text": "अजंता चित्रों में उपयोग किए गए रंगों और सामग्रियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ओकर, जो अजंता में पीले और लाल रंग के रूप में उपयोग किया जाता था, स्थानीय रूप से डेक्कन क्षेत्र से प्राप्त किया जाता था और इसके लिए लंबी दूरी का व्यापार आवश्यक नहीं था।\n2. लैपिस लाजुली, जो अजंता चित्रों में जीवंत नीले रंग का स्रोत है, अफगानिस्तान से आयातित था — विशेष रूप से बादाख़शान क्षेत्र से — क्योंकि भारत में इसके समान खनिज नहीं पाए जाते।\n3. सिनाबर, जो अजंता में लाल रंग के रूप में उपयोग किया जाता था, तांबे के ऑक्साइड से प्राप्त होता है और डेक्कन पठार में प्रचुर मात्रा में उपलब्ध था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "ओकर, जो अजंता में पीले और लाल रंग के रूप में उपयोग किया जाता था, स्थानीय रूप से डेक्कन क्षेत्र से प्राप्त किया जाता था और इसके लिए लंबी दूरी का व्यापार आवश्यक नहीं था।",
+          "verdict": "सही है",
+          "reason": "ओकर एक लौह ऑक्साइड खनिज है जो डेक्कन क्षेत्र में उपलब्ध है; यह अजंता में स्थानीय रूप से प्राप्त रंग के रूप में प्रलेखित है, जबकि लैपिस लाजुली को आयात करना पड़ता था।"
+        },
+        {
+          "statement": "लैपिस लाजुली, जो अजंता चित्रों में जीवंत नीले रंग का स्रोत है, अफगानिस्तान से आयातित था — विशेष रूप से बादाख़शान क्षेत्र से — क्योंकि भारत में इसके समान खनिज नहीं पाए जाते।",
+          "verdict": "सही है",
+          "reason": "बादाख़शान (आधुनिक अफगानिस्तान में) प्राचीन विश्व का मुख्य लैपिस लाजुली स्रोत था और भारत, फारस, मिस्र, और रोम को आपूर्ति करता था; भारत के खदानों में लैपिस लाजुली नहीं मिलता।"
+        },
+        {
+          "statement": "सिनाबर, जो अजंता में लाल रंग के रूप में उपयोग किया जाता था, तांबे के ऑक्साइड से प्राप्त होता है और डेक्कन पठार में प्रचुर मात्रा में उपलब्ध था।",
+          "verdict": "गलत",
+          "reason": "सिनाबर पारा सल्फाइड (HgS) है, तांबे का ऑक्साइड नहीं; तांबे के यौगिकों के साथ भ्रम एक सामान्य त्रुटि है। सिनाबर डेक्कन में प्रचुर मात्रा में उपलब्ध नहीं था और यह एक अधिक मूल्यवान, विशेष रूप से प्राप्त रंग था।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) भ्रमित करने वाला है क्योंकि कथन 1 और 2 दोनों सही हैं और जो छात्र सामान्य रंग सूची जानते हैं वे कथन 3 के रासायनिक विवरण को सावधानी से नहीं देख सकते।",
+      "elimination_logic": [
+        "कथन 1 सही है — ओकर डेक्कन में स्थानीय रूप से उपलब्ध लौह ऑक्साइड रंग है।",
+        "कथन 2 सही है — अफगानिस्तान (बादाख़शान) से लैपिस लाजुली अजंता में आयात के रूप में अच्छी तरह प्रलेखित है।",
+        "कथन 3 गलत है — सिनाबर पारा सल्फाइड है, तांबे का ऑक्साइड नहीं; यह रासायनिक गलत पहचान है।",
+        "केवल कथन 1 और 2 सही हैं, जो विकल्प b से मेल खाते हैं।"
+      ],
+      "upsc_trap_explanation": "कथन 3 का जाल अधिकांश मानविकी छात्रों की सीमित रसायन विज्ञान ज्ञान का उपयोग करता है जो कला-इतिहास प्रश्नों में लाते हैं। तांबे के यौगिक भी रंगों के रूप में उपयोग होते हैं (मलाकाइट, अजुराइट) और कभी-कभी डेक्कन खनन से जुड़े होते हैं। सिनाबर को 'तांबे का ऑक्साइड' कहना उस व्यक्ति के लिए संभावित लगता है जो जानता है कि यह एक खनिज रंग है लेकिन सटीक रसायन विज्ञान याद नहीं रखता। सही पहचान — पारा सल्फाइड — निर्णायक तथ्य है।",
+      "final_explanation": "अजंता चित्रकारों का रंगपेटी स्थानीय रूप से उपलब्ध और लंबी दूरी से आयातित खनिज रंगों के संयोजन से बनी थी, प्रत्येक को उसके विशिष्ट रंग गुण और स्थिरता के लिए चुना गया था।\n\n• कथन 1 — सही: ओकर, जो लौह ऑक्साइड से बनता है (पीले के लिए गोएथाइट, लाल के लिए हीमेटाइट), डेक्कन बेसाल्ट क्षेत्र का स्वदेशी है। इसकी स्थानीय उपलब्धता ने इसे अजंता रंगपेटी में सबसे किफायती रंग बनाया।\n• कथन 2 — सही: लैपिस लाजुली का असाधारण गहरा नीला रंग अफगानिस्तान के बादाख़शान खदानों से आयातित था — जो अजंता के अंतरराष्ट्रीय व्यापार संबंधों के लिए एक महत्वपूर्ण साक्ष्य बिंदु है।\n• कथन 3 — गलत: सिनाबर पारा सल्फाइड (HgS) है, तांबे का ऑक्साइड नहीं। तांबे आधारित रंग (जैसे मलाकाइट) अलग यौगिक हैं। सिनाबर का लाल रंग चमकीला था लेकिन अपेक्षाकृत दुर्लभ था; इसका रासायनिक स्वरूप पारा यौगिक के रूप में एक सटीक तथ्य है जिसे UPSC प्रश्न कभी-कभी परखते हैं।\n\nमूल्यवर्धन:\n• लैम्प ब्लैक (कार्बन कालिख) का उपयोग रूपरेखा और गहरे रंगों के लिए किया गया; सफेद चूना हाइलाइट के लिए।\n• रंगों के लिए बाइंडिंग माध्यम पशु गोंद (चमड़ा या हड्डी) या पौधों के गोंद से प्राप्त होता था, यूरोपीय टेम्परा की तरह अंडे आधारित नहीं था।\n• अंतिम चित्रित सतह पर अगेट पत्थर से रगड़ने का उपयोग अजंता भित्ति चित्रों की विशिष्ट चमकदार सतह बनाता था।"
+    }
+  },
+  {
+    "uuid": "d83931cb-d819-470a-b5ac-1749200f626d",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Iconographic Evolution: Aniconic to Iconic",
+        "Karla Chaitya: Architectural Supremacy"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Aniconic to iconic transition — Karla as transitional site",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the iconographic evolution across rock-cut Buddhist cave sites:\n\n1. The early Buddhist caves at Bhaja contain no anthropomorphic images of the Buddha because the aniconic convention — representing the Buddha through symbols such as the bodhi tree, stupa, and footprints — had not yet been replaced by figural depiction.\n2. Karla represents a fully iconic phase of Buddhist art, with multiple anthropomorphic images of the seated Buddha displayed prominently within the chaitya hall.\n3. The introduction of Bodhisattva figures such as Padmapani and Vajrapani into Buddhist art is associated with the Mahayana phase and represents a doctrinal shift from the earlier Hinayana emphasis on the monk's solitary path.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The early Buddhist caves at Bhaja contain no anthropomorphic images of the Buddha because the aniconic convention — representing the Buddha through symbols such as the bodhi tree, stupa, and footprints — had not yet been replaced by figural depiction.",
+          "verdict": "Correct",
+          "reason": "Bhaja belongs to the aniconic phase of early Hinayana Buddhist art (2nd century BCE); the absence of Buddha images is intentional and doctrinally motivated, not a technical limitation."
+        },
+        {
+          "statement": "Karla represents a fully iconic phase of Buddhist art, with multiple anthropomorphic images of the seated Buddha displayed prominently within the chaitya hall.",
+          "verdict": "Incorrect",
+          "reason": "Karla is characterised as a transitional site — it retains the aniconic stupa at the centre but shows some early figural elements on the facade. It is not a 'fully iconic' phase site; multiple seated Buddha images inside the hall are not a feature of Karla's chaitya."
+        },
+        {
+          "statement": "The introduction of Bodhisattva figures such as Padmapani and Vajrapani into Buddhist art is associated with the Mahayana phase and represents a doctrinal shift from the earlier Hinayana emphasis on the monk's solitary path.",
+          "verdict": "Correct",
+          "reason": "Bodhisattva figures are a Mahayana innovation, reflecting the doctrinal emphasis on helping all beings achieve liberation; they appear in the later phase caves at Ajanta and are absent from Hinayana-era sites."
+        }
+      ],
+      "strong_distractor": "a — Option a (Statement 1 only) is deceptive because students who know Statement 2 is wrong may also start doubting Statement 3 as an oversimplification, leading them to select only Statement 1 as incorrect.",
+      "elimination_logic": [
+        "Statement 1 is correct — Bhaja's aniconic character is a well-established fact about early Hinayana art.",
+        "Statement 2 is NOT correct — Karla is transitional, not 'fully iconic'; describing it as having 'multiple anthropomorphic images of seated Buddha inside' is a fabricated scope-extension.",
+        "Statement 3 is correct — Bodhisattva figures as a Mahayana innovation is a standard art-historical fact.",
+        "Only Statement 2 is NOT correct, making option d the answer."
+      ],
+      "upsc_trap_explanation": "Statement 2's scope-extension trap takes the real fact of Karla's transitional character and inflates it into a false claim of 'fully iconic' status with multiple Buddha images. Students who know Karla is 'more elaborate than Bhaja' and 'less elaborate than later Ajanta' may still be unsure where exactly the iconic threshold was crossed, and the confident language of Statement 2 may cause them to accept it as true.",
+      "final_explanation": "The aniconic-to-iconic transition in Buddhist art was gradual, spanning several centuries, with different sites occupying different positions on that continuum.\n\n• Statement 1 — Correct: Bhaja's complete absence of anthropomorphic Buddha imagery is a defining feature of the earliest phase of rock-cut Buddhist art, reflecting the doctrinal convention of aniconism.\n• Statement 2 — NOT Correct: Karla is a transitional site — its chaitya is centred on an aniconic stupa (as at Bhaja), but the facade shows some early figural elements. Karla does not have multiple anthropomorphic Buddha images inside the hall; describing it as 'fully iconic' misrepresents its position in the iconographic evolution.\n• Statement 3 — Correct: The Bodhisattva concept is distinctly Mahayana and its artistic expression (Padmapani, Vajrapani, Maitreya) appears only in later caves at Ajanta, not in Hinayana-era sites.\n\nValue Addition:\n• The Kushana-period schools of Gandhara and Mathura are credited with establishing the anthropomorphic Buddha image as a canonical form in the 1st–2nd century CE.\n• The transition from aniconic to iconic is not merely artistic — it reflects a profound theological shift in how the Buddha's transcendence was conceptualised.\n• At Bhaja, relief carvings of Vedic-style figures (Surya, Indra) appear on an exterior veranda, showing the complex religious environment of early Buddhism."
+    },
+    "hi": {
+      "display_text": "चट्टान-कटित बौद्ध गुफा स्थलों में आइकोनोग्राफिक विकास के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भाजा के प्रारंभिक बौद्ध गुफाओं में बुद्ध की कोई मानवाकृति छवियाँ नहीं हैं क्योंकि अनिकॉनिक परंपरा — जो बुद्ध का प्रतिनिधित्व बोधि वृक्ष, स्तूप, और पदचिह्न जैसे प्रतीकों के माध्यम से करती है — अभी तक मूर्त चित्रण द्वारा प्रतिस्थापित नहीं हुई थी।\n2. कार्ला बौद्ध कला के पूर्ण रूप से आइकोनिक चरण का प्रतिनिधित्व करता है, जिसमें चैत्या हॉल के भीतर कई मानवाकृति बैठी बुद्ध की छवियाँ प्रमुख रूप से प्रदर्शित हैं।\n3. पद्मपानी और वज्रपानी जैसे बोधिसत्त्व आकृतियों का बौद्ध कला में परिचय महायान चरण से जुड़ा है और यह पहले के हिनयान के एकांत साधु मार्ग पर जोर देने से सैद्धांतिक बदलाव को दर्शाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) केवल 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भाजा के प्रारंभिक बौद्ध गुफाओं में बुद्ध की कोई मानवाकृति छवियाँ नहीं हैं क्योंकि अनिकॉनिक परंपरा — जो बुद्ध का प्रतिनिधित्व बोधि वृक्ष, स्तूप, और पदचिह्न जैसे प्रतीकों के माध्यम से करती है — अभी तक मूर्त चित्रण द्वारा प्रतिस्थापित नहीं हुई थी।",
+          "verdict": "सही है",
+          "reason": "भाजा प्रारंभिक हिनयान बौद्ध कला के अनिकॉनिक चरण (2री शताब्दी ईसा पूर्व) से संबंधित है; बुद्ध की छवियों का अभाव जानबूझकर और सैद्धांतिक रूप से प्रेरित है, तकनीकी सीमा नहीं।"
+        },
+        {
+          "statement": "कार्ला बौद्ध कला के पूर्ण रूप से आइकोनिक चरण का प्रतिनिधित्व करता है, जिसमें चैत्या हॉल के भीतर कई मानवाकृति बैठी बुद्ध की छवियाँ प्रमुख रूप से प्रदर्शित हैं।",
+          "verdict": "गलत है",
+          "reason": "कार्ला को एक संक्रमणकालीन स्थल के रूप में वर्णित किया जाता है — इसमें केंद्र में अनिकॉनिक स्तूप है लेकिन मुखौटे पर कुछ प्रारंभिक मूर्त चित्रण तत्व दिखते हैं। यह 'पूर्ण रूप से आइकोनिक' चरण का स्थल नहीं है; हॉल के अंदर कई बैठी बुद्ध की छवियाँ कार्ला के चैत्या की विशेषता नहीं हैं।"
+        },
+        {
+          "statement": "पद्मपानी और वज्रपानी जैसे बोधिसत्त्व आकृतियों का बौद्ध कला में परिचय महायान चरण से जुड़ा है और यह पहले के हिनयान के एकांत साधु मार्ग पर जोर देने से सैद्धांतिक बदलाव को दर्शाता है।",
+          "verdict": "सही है",
+          "reason": "बोधिसत्त्व आकृतियाँ महायान नवाचार हैं, जो सभी प्राणियों को मुक्ति प्राप्त कराने पर सैद्धांतिक जोर को दर्शाती हैं; ये बाद के अजंता गुफाओं में प्रकट होती हैं और हिनयान कालीन स्थलों में अनुपस्थित हैं।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प a (केवल कथन 1) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि कथन 2 गलत है, वे कथन 3 को भी अतिसरलीकरण समझकर केवल कथन 1 को गलत मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सही है — भाजा की अनिकॉनिक प्रकृति प्रारंभिक हिनयान कला के लिए स्थापित तथ्य है।",
+        "कथन 2 सही नहीं है — कार्ला संक्रमणकालीन है, 'पूर्ण रूप से आइकोनिक' नहीं; 'हॉल के अंदर कई मानवाकृति बैठी बुद्ध की छवियाँ' कहना एक काल्पनिक दायरा-विस्तार है।",
+        "कथन 3 सही है — बोधिसत्त्व आकृतियाँ महायान नवाचार हैं, जो कला-इतिहास का मानक तथ्य है।",
+        "केवल कथन 2 सही नहीं है, अतः विकल्प d उत्तर है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का दायरा-विस्तार जाल कार्ला की संक्रमणकालीन प्रकृति को 'पूर्ण रूप से आइकोनिक' स्थिति और कई बुद्ध छवियों के झूठे दावे में बढ़ा-चढ़ाकर प्रस्तुत करता है। जो छात्र जानते हैं कि कार्ला 'भाजा से अधिक विस्तृत' और 'बाद के अजंता से कम विस्तृत' है, वे आइकोनिक सीमा के सटीक स्थान को लेकर अनिश्चित हो सकते हैं, और कथन 2 की निश्चित भाषा उन्हें इसे सत्य मानने पर मजबूर कर सकती है।",
+      "final_explanation": "बौद्ध कला में अनिकॉनिक से आइकोनिक संक्रमण धीरे-धीरे हुआ, कई सदियों तक फैला, जिसमें विभिन्न स्थल इस क्रम में अलग-अलग स्थिति पर थे।\n\n• कथन 1 — सही: भाजा में मानवाकृति बुद्ध छवियों का पूर्ण अभाव प्रारंभिक शैलि की परिभाषित विशेषता है, जो अनिकॉनिज्म की सैद्धांतिक परंपरा को दर्शाता है।\n• कथन 2 — सही नहीं: कार्ला एक संक्रमणकालीन स्थल है — इसका चैत्या अनिकॉनिक स्तूप पर केंद्रित है (जैसे भाजा में), लेकिन मुखौटे पर कुछ प्रारंभिक मूर्त चित्रण तत्व हैं। कार्ला के हॉल के अंदर कई मानवाकृति बुद्ध छवियाँ नहीं हैं; इसे 'पूर्ण रूप से आइकोनिक' कहना इसकी आइकोनोग्राफिक विकास में स्थिति का गलत चित्रण है।\n• कथन 3 — सही: बोधिसत्त्व अवधारणा विशिष्ट रूप से महायान है और इसका कलात्मक अभिव्यक्ति (पद्मपानी, वज्रपानी, मैत्रेय) केवल बाद के अजंता गुफाओं में प्रकट होता है, हिनयान कालीन स्थलों में नहीं।\n\nमूल्य संवर्धन:\n• कुषाण काल के गंधार और मथुरा स्कूलों को 1ली–2री शताब्दी CE में मानवाकृति बुद्ध छवि को मानक रूप देने का श्रेय दिया जाता है।\n• अनिकॉनिक से आइकोनिक संक्रमण केवल कलात्मक नहीं है — यह बुद्ध की पारलौकिकता की अवधारणा में गहरा सैद्धांतिक बदलाव दर्शाता है।\n• भाजा में वेदिक शैली के आकृतियों (सूर्य, इंद्र) की रिलीफ नक्काशी बाहरी बरामदे पर दिखती है, जो प्रारंभिक बौद्ध धर्म के जटिल धार्मिक वातावरण को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "261d86e3-5188-4e46-9091-748a64952930",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Chronological Phases and Patronage Patterns",
+        "Comparative Analysis: Ajanta vs Karla vs Bhaja"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "300-year gap between two phases of Ajanta excavation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): A period of approximately 300 years separates the two distinct phases of excavation at Ajanta — the earlier Hinayana phase and the later Mahayana phase — during which no significant new excavation was undertaken at the site.\n\nReason (R): The Vakataka dynasty, particularly under the reign of Harishena, served as the principal royal patron of the Mahayana-phase excavations and artistic programme at Ajanta.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is A correct? Yes — a gap of approximately 300 years between the end of the Hinayana-phase excavations and the beginning of the Mahayana-phase excavations at Ajanta is an accepted historical fact.",
+        "Step 2: Is R correct? Yes — the Vakataka dynasty, particularly under Harishena, was the principal patron of the Mahayana-phase excavations; this is well-documented.",
+        "Step 3: Does R explain A? No — R explains who resumed Ajanta excavations in the 5th–6th century CE, but it does not explain WHY there was a 300-year gap. The gap is attributed to the decline of Satavahana power, the rise and preoccupation of intervening dynasties, and the shift in royal patronage patterns — not to the Vakatakas' eventual arrival. R is a fact about the resumption, not a cause of the interruption.",
+        "A correct + R correct + R does NOT explain A → option b."
+      ],
+      "upsc_trap_explanation": "This is a causation-direction trap. R correctly identifies who resumed Ajanta's excavations, and students who read both A (gap exists) and R (Vakatakas resumed it) naturally assume R explains A, because the Vakataka intervention 'broke' the gap. But R identifies the agent of resumption, not the cause of the gap itself. The cause of the gap lies in the collapse of Satavahana patronage and the absence of a successor patron with the interest and resources to continue — a different historical explanation entirely.",
+      "final_explanation": "Ajanta's peculiar two-phase structure — with a 300-year silence between them — is one of the most discussed puzzles in Indian art history.\n\n• Assertion (A): Correct — The Hinayana phase at Ajanta concluded around the 2nd century CE (with the decline of Satavahana power), and the Mahayana phase did not begin until approximately the 5th century CE under the Vakatakas — a gap of roughly 300 years.\n• Reason (R): Correct — The Vakataka dynasty, especially under Harishena (r. c. 460–480 CE), was indeed the patron of the magnificent Mahayana-phase caves. Their patronage drove the artistic efflorescence that produced Ajanta's celebrated paintings.\n• Causal link: Absent in the right direction — R explains who ended the gap (the Vakatakas), not why the gap occurred. The gap itself is explained by dynastic discontinuity, changing trade patterns, and the absence of a willing and capable patron for three centuries. R is a fact about the resolution of the gap, not its cause.\n\nValue Addition:\n• The intervening three centuries at Ajanta correspond roughly to the Vakataka predecessor period and several regional powers' reigns, none of which chose Ajanta as a patronage site.\n• Harishena's reign is sometimes described as the golden age of Ajanta; he is specifically credited with Caves 1, 2, 16, 17, and others.\n• The concept of a 'dark interval' in artistic production is found at other Indian sites too — e.g., Sanchi's construction also shows multi-phase patronage with intervening gaps."
+    },
+    "hi": {
+      "display_text": "कथन (A): अजंता में खुदाई के दो भिन्न चरणों — पूर्व का हिनयान चरण और बाद का महायान चरण — के बीच लगभग 300 वर्षों की अवधि है, जिसके दौरान स्थल पर कोई महत्वपूर्ण नई खुदाई नहीं हुई।\n\nकारण (R): वाकाटक वंश, विशेष रूप से हरीशेण के शासनकाल में, अजंता में महायान चरण की खुदाई और कलात्मक कार्यक्रम का मुख्य शाही संरक्षक था।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? हाँ — अजंता में हिनयान चरण की खुदाई के अंत और महायान चरण की शुरुआत के बीच लगभग 300 वर्षों का अंतराल एक स्वीकृत ऐतिहासिक तथ्य है।",
+        "चरण 2: क्या R सही है? हाँ — वाकाटक वंश, विशेष रूप से हरीशेण के शासनकाल में, महायान चरण की खुदाई का मुख्य संरक्षक था; यह अच्छी तरह से प्रलेखित है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? नहीं — R यह बताता है कि 5वीं-6वीं शताब्दी में अजंता की खुदाई किसने पुनः शुरू की, लेकिन यह नहीं बताता कि 300 वर्षों का अंतराल क्यों था। यह अंतराल सतवाहन सत्ता के पतन, मध्यवर्ती वंशों के उदय और व्यस्तता, तथा शाही संरक्षकता के पैटर्न में बदलाव के कारण है — न कि वाकाटकों के आने के कारण। R पुनः आरंभ का तथ्य है, व्यवधान का कारण नहीं।",
+        "A सही + R सही + R, A की व्याख्या नहीं करता → विकल्प b।"
+      ],
+      "upsc_trap_explanation": "यह कारण-प्रभाव दिशा का जाल है। R सही ढंग से बताता है कि अजंता की खुदाई किसने पुनः शुरू की, और जो छात्र A (अंतराल है) और R (वाकाटक ने पुनः शुरू किया) दोनों पढ़ते हैं, वे स्वाभाविक रूप से मान लेते हैं कि R, A की व्याख्या करता है, क्योंकि वाकाटक हस्तक्षेप ने अंतराल को 'तोड़ा'। लेकिन R पुनः आरंभ करने वाले एजेंट को बताता है, न कि अंतराल के कारण को। अंतराल का कारण सतवाहन संरक्षकता का पतन और तीन सदियों तक कोई इच्छुक और सक्षम संरक्षक न होना है — एक पूरी तरह अलग ऐतिहासिक व्याख्या।",
+      "final_explanation": "अजंता की विशिष्ट दो-चरणीय संरचना — जिनके बीच लगभग 300 वर्षों की चुप्पी है — भारतीय कला इतिहास के सबसे चर्चित पहेलियों में से एक है।\n\n• कथन (A): सही — अजंता में हिनयान चरण लगभग दूसरी शताब्दी ईस्वी में (सतवाहन सत्ता के पतन के साथ) समाप्त हुआ, और महायान चरण लगभग पाँचवीं शताब्दी ईस्वी में वाकाटक के अधीन शुरू हुआ — लगभग 300 वर्षों का अंतराल।\n• कारण (R): सही — वाकाटक वंश, विशेष रूप से हरीशेण (लगभग 460–480 ईस्वी) के शासनकाल में, महायान चरण की भव्य गुफाओं का संरक्षक था। उनकी संरक्षकता ने अजंता की प्रसिद्ध चित्रकला को जन्म दिया।\n• कारणात्मक संबंध: सही दिशा में अनुपस्थित — R बताता है कि किसने अंतराल समाप्त किया (वाकाटक), न कि अंतराल क्यों हुआ। अंतराल का कारण वंशीय असंगति, व्यापारिक पैटर्न में बदलाव, और तीन सदियों तक इच्छुक और सक्षम संरक्षक की अनुपस्थिति है। R अंतराल के समाधान का तथ्य है, कारण नहीं।\n\nमूल्यवर्धन:\n• अजंता में मध्यवर्ती तीन सदियाँ वाकाटक पूर्ववर्ती काल और कई क्षेत्रीय शक्तियों के शासनकाल के अनुरूप हैं, जिनमें से किसी ने भी अजंता को संरक्षक स्थल के रूप में नहीं चुना।\n• हरीशेण का शासनकाल कभी-कभी अजंता के स्वर्ण युग के रूप में वर्णित है; उन्हें विशेष रूप से गुफा 1, 2, 16, 17 आदि का श्रेय दिया जाता है।\n• 'अंधकारमय अंतराल' की अवधारणा अन्य भारतीय स्थलों पर भी पाई जाती है — जैसे सांची का निर्माण भी बहु-चरण संरक्षकता और मध्यवर्ती अंतराल दिखाता है।"
+    }
+  },
+  {
+    "uuid": "cb4f140d-87fa-4685-89a4-7b858e08f43f",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Chaitya vs Vihara: Architectural Distinctions",
+        "Ajanta Cave Numbering and Typology"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Cave 26 — largest chaitya at Ajanta with reclining Buddha",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among the chaitya halls at Ajanta, __________ is identified as the largest, belonging to the Mahayana phase, and is particularly renowned for housing a celebrated reclining Buddha (parinirvana) sculpture alongside elaborate makara toranas and flying apsaras.\n\n(a) Cave 26\n(b) Cave 19\n(c) Cave 9\n(d) Cave 10",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (Cave 19) is deceptive because Cave 19 is also a well-known Mahayana-phase chaitya at Ajanta with elaborate sculptural decoration, making it a plausible answer for students who know 'an important later chaitya at Ajanta.'",
+      "elimination_logic": [
+        "The blank asks for the largest chaitya at Ajanta, known for its elaborate sculptural programme including a reclining Buddha.",
+        "Cave 19 is a chaitya with notable sculptures but is smaller than Cave 26 and is not associated with the reclining Buddha.",
+        "Cave 9 and Cave 10 are early Hinayana chaityas — plain, not elaborately sculptured.",
+        "Cave 26 is specifically identified as the largest chaitya at Ajanta and houses the celebrated reclining (parinirvana) Buddha — option a is correct."
+      ],
+      "upsc_trap_explanation": "Cave 19 is a common distractor for Cave 26 because both are later chaityas with elaborate Mahayana-phase sculptural decoration. Students who recall 'an elaborate later chaitya at Ajanta' may name Cave 19 without recalling the specific details (largest + reclining Buddha) that uniquely identify Cave 26. The reclining Buddha — one of the most famous individual sculptures at Ajanta — is the discriminating detail.",
+      "final_explanation": "Ajanta has five chaitya halls (Caves 9, 10, 19, 26, 29) spanning both phases. The largest and most elaborately decorated belongs to the Mahayana phase.\n\n• Option (a) — Cave 26: Correct. Cave 26 is the largest chaitya hall at Ajanta and houses the famous reclining (parinirvana) Buddha carved into the side wall, along with elaborate makara toranas and flying apsaras.\n• Option (b) — Cave 19: Incorrect. Cave 19 is an important Mahayana-phase chaitya with a prominent standing Buddha above the entrance and rich sculptural decoration, but it is smaller than Cave 26 and does not contain the reclining Buddha.\n• Option (c) — Cave 9: Incorrect. Cave 9 is an early Hinayana-phase chaitya characterised by its plain stupa and minimal decoration — far from 'largest and most elaborate.'\n• Option (d) — Cave 10: Incorrect. Cave 10 is also an early Hinayana chaitya, featuring some of the earliest painted narratives at Ajanta but no elaborate Mahayana-phase sculpture.\n\nValue Addition:\n• Cave 26's reclining Buddha is accompanied by a procession of mourning figures and celestial beings, depicting the scene of the Buddha's parinirvana.\n• Cave 19 is notable for its sculptured facade with a large standing Buddha in the chaitya arch — a Mahayana iconographic innovation not found in Hinayana-era chaityas.\n• Caves 9 and 10 contain some of the earliest surviving Buddhist paintings in the world, despite their plain architecture."
+    },
+    "hi": {
+      "display_text": "अजंता के चैत्य हॉलों में से, __________ को सबसे बड़ा माना जाता है, जो महायान काल का है, और यह विशेष रूप से प्रसिद्ध है क्योंकि इसमें एक प्रसिद्ध शय्यापर बुद्ध (परिनिर्वाण) मूर्ति है, साथ ही विस्तृत मकर तोरण और उड़ती अप्सराएँ भी हैं।\n\n(a) गुफा 26\n(b) गुफा 19\n(c) गुफा 9\n(d) गुफा 10",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (गुफा 19) भ्रमित करने वाला है क्योंकि गुफा 19 भी अजंता की एक प्रसिद्ध महायान-कालीन चैत्य है जिसमें विस्तृत मूर्तिकला सजावट है, जो उन छात्रों के लिए एक संभावित उत्तर बनाता है जो 'अजंता की एक महत्वपूर्ण बाद की चैत्य' जानते हैं।",
+      "elimination_logic": [
+        "रिक्त स्थान अजंता की सबसे बड़ी चैत्य के लिए है, जो अपने विस्तृत मूर्तिकला कार्यक्रम के लिए जानी जाती है जिसमें शय्यापर Buddha शामिल है।",
+        "गुफा 19 एक चैत्य है जिसमें उल्लेखनीय मूर्तियां हैं लेकिन यह गुफा 26 से छोटी है और शय्यापर Buddha से जुड़ी नहीं है।",
+        "गुफा 9 और गुफा 10 प्रारंभिक हिनयान चैत्य हैं — सरल, विस्तृत मूर्तिकला रहित।",
+        "गुफा 26 विशेष रूप से अजंता की सबसे बड़ी चैत्य के रूप में पहचानी जाती है और इसमें प्रसिद्ध शय्यापर (परिनिर्वाण) बुद्ध है — अतः विकल्प a सही है।"
+      ],
+      "upsc_trap_explanation": "गुफा 19 गुफा 26 के लिए एक सामान्य भ्रम है क्योंकि दोनों बाद की चैत्य हैं जिनमें महायान-कालीन विस्तृत मूर्तिकला सजावट है। जो छात्र 'अजंता की एक विस्तृत बाद की चैत्य' याद करते हैं, वे गुफा 19 का नाम दे सकते हैं बिना उन विशिष्ट विवरणों (सबसे बड़ी + शय्यापर बुद्ध) को याद किए जो गुफा 26 को विशिष्ट रूप से पहचानते हैं। शय्यापर बुद्ध — अजंता की सबसे प्रसिद्ध मूर्तियों में से एक — यह भेद करने वाला विवरण है।",
+      "final_explanation": "अजंता में पाँच चैत्य हॉल हैं (गुफा 9, 10, 19, 26, 29) जो दोनों कालों को समेटे हुए हैं। सबसे बड़ी और सबसे विस्तृत सजावट वाली महायान काल की है।\n\n• विकल्प (a) — गुफा 26: सही। गुफा 26 अजंता की सबसे बड़ी चैत्य हॉल है और इसमें प्रसिद्ध शय्यापर (परिनिर्वाण) बुद्ध है जो दीवार में उकेरा गया है, साथ ही विस्तृत मकर तोरण और उड़ती अप्सराएँ हैं।\n• विकल्प (b) — गुफा 19: गलत। गुफा 19 एक महत्वपूर्ण महायान-कालीन चैत्य है जिसमें प्रवेश द्वार के ऊपर एक प्रमुख खड़ा बुद्ध और समृद्ध मूर्तिकला सजावट है, लेकिन यह गुफा 26 से छोटी है और इसमें शय्यापर बुद्ध नहीं है।\n• विकल्प (c) — गुफा 9: गलत। गुफा 9 प्रारंभिक हिनयान-कालीन चैत्य है, जो अपने सरल स्तूप और न्यूनतम सजावट के लिए जाना जाता है — 'सबसे बड़ी और सबसे विस्तृत' से बहुत दूर।\n• विकल्प (d) — गुफा 10: गलत। गुफा 10 भी एक प्रारंभिक हिनयान चैत्य है, जिसमें अजंता की सबसे पुरानी चित्रकथाएँ हैं लेकिन कोई विस्तृत महायान-कालीन मूर्तिकला नहीं है।\n\nमूल्यवर्धन:\n• गुफा 26 का शय्यापर बुद्ध शोकाकुल आकृतियों और स्वर्गीय प्राणियों की एक शोभायात्रा के साथ है, जो बुद्ध के परिनिर्वाण के दृश्य को दर्शाता है।\n• गुफा 19 अपनी मूर्तिकला सजावट के लिए प्रसिद्ध है जिसमें चैत्य मेहराब में एक बड़ा खड़ा बुद्ध है — एक महायान प्रतीकात्मक नवाचार जो हिनयान कालीन चैत्य में नहीं पाया जाता।\n• गुफा 9 और 10 में दुनिया की सबसे पुरानी जीवित बौद्ध चित्रकथाएँ हैं, हालांकि उनकी वास्तुकला सरल है।"
+    }
+  },
+  {
+    "uuid": "3cb05e27-3589-4c01-85c8-963ef402d025",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Rock-cut Buddhist caves — Ajanta, Karla, Bhaja",
+      "concepts_used": [
+        "Cultural and Social Life Depictions",
+        "Jataka Tales in Ajanta Murals"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Continuous narration technique in Ajanta Jataka murals",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An art historian studying a large mural in one of the later caves at Ajanta observes that the same royal figure appears at least four times within a single unbroken pictorial field — first embarking on a sea voyage, then arriving at a foreign shore, then engaged in a forest renunciation, and finally depicted as an ascetic. There are no dividing lines or borders separating these scenes; they flow into one another within one composition.\n\nWhich narrative technique does this mural exemplify?\n\n(a) Register system — where scenes are sequenced in horizontal bands separated by painted borders\n(b) Synoptic representation — where a single moment is chosen to symbolically encapsulate the entire narrative\n(c) Continuous narration — where multiple sequential episodes of the same story are depicted within a single unified pictorial space, with the protagonist appearing repeatedly\n(d) Cameo composition — where key narrative figures are isolated in oval frames distributed across the mural surface",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (register system) is deceptive because registers (horizontal bands separating scenes) are used in many ancient narrative traditions (Egyptian, Mesopotamian, and some Indian sculptural friezes) and students may recall this as a generic ancient narrative technique.",
+      "elimination_logic": [
+        "The scenario describes multiple episodes of the same story shown within a single composition, with the protagonist appearing more than once — this is the definition of continuous narration.",
+        "Eliminate option a (register system) — registers separate distinct scenes into bands; the scenario describes them within a single unified space without division into horizontal bands.",
+        "Eliminate option b (synoptic representation) — synoptic representation typically shows a single key moment that encapsulates the entire narrative, not multiple sequential appearances of the protagonist.",
+        "Eliminate option d (cameo composition) — no such formal narrative technique is documented for Ajanta murals; this is a fabricated term.",
+        "Option c (continuous narration) correctly identifies the technique: a single pictorial space contains multiple sequential episodes of the same story."
+      ],
+      "upsc_trap_explanation": "The conflation trap conflates the register system (a real technique used in other ancient traditions) with continuous narration (the Ajanta technique). Both involve showing multiple scenes, but the register system uses horizontal bands to separate them, while continuous narration places them within a single unified pictorial field. Students who broadly recall 'sequential scenes' as a feature of ancient narrative art may choose the register option without knowing the specific Ajanta technique.",
+      "final_explanation": "Ajanta's Jataka murals employ a specific narrative technique that was sophisticated for its time and represents a distinct Indian approach to visual storytelling.\n\nApplicable principle: Continuous narration — a single mural space contains multiple sequential episodes of the same story, with the same protagonist appearing repeatedly at different points in the narrative within one composition, without pictorial dividers between episodes.\n\n• Option (a) — Register system: Incorrect. The register system divides a wall surface into horizontal bands, each containing a separate scene. Ajanta's Jataka murals do not use this convention; scenes flow within a unified pictorial space.\n• Option (b) — Synoptic representation: Incorrect. Synoptic representation collapses an entire narrative into a single symbolic moment. Ajanta shows multiple moments, not one symbolically complete image.\n• Option (c) — Continuous narration: Correct. The same figure (say, King Mahajanaka or the six-tusked elephant) appears multiple times across a single mural, at different narrative stages — this is continuous narration.\n• Option (d) — Cameo composition: Incorrect. This term has no established meaning in the study of Ajanta or Indian art history; it is a fabricated option.\n\nValue Addition:\n• Continuous narration is also used in the sculptural friezes at Sanchi and Amaravati, predating Ajanta's painted examples.\n• The technique requires the viewer to 'read' the painting by moving their gaze across it in sequence, much as one reads text.\n• Similar continuous narration appears in Roman column reliefs (Trajan's Column) and Egyptian tomb paintings, suggesting it is a cross-cultural solution to sequential storytelling."
+    },
+    "hi": {
+      "display_text": "अजंता के बाद के गुफाओं में से एक में एक कला इतिहासकार एक बड़े भित्ति चित्र का अध्ययन कर रहा है और देखता है कि एक ही शाही आकृति कम से कम चार बार एक ही अविभाजित चित्रात्मक क्षेत्र में प्रकट होती है — पहले समुद्री यात्रा पर निकलती है, फिर विदेशी तट पर पहुँचती है, फिर वन में संन्यास लेती है, और अंत में एक तपस्वी के रूप में चित्रित होती है। इन दृश्यों को अलग करने वाली कोई विभाजक रेखाएँ या सीमाएँ नहीं हैं; वे एक ही रचना में एक-दूसरे में प्रवाहित होते हैं।\n\nयह भित्ति चित्र कौन-सी कथात्मक तकनीक का उदाहरण है?\n\n(a) रजिस्टर प्रणाली — जहाँ दृश्य क्षैतिज पट्टियों में क्रमबद्ध होते हैं जो चित्रित सीमाओं से अलग होते हैं\n(b) सिनॉप्टिक प्रस्तुति — जहाँ एक क्षण को चुना जाता है जो पूरी कथा को प्रतीकात्मक रूप से समेटता है\n(c) सतत कथन — जहाँ एक ही कहानी के कई क्रमिक प्रकरण एक एकीकृत चित्रात्मक स्थान में दिखाए जाते हैं, जिसमें नायक बार-बार प्रकट होता है\n(d) कैमियो रचना — जहाँ मुख्य कथात्मक आकृतियाँ भित्ति चित्र की सतह पर अंडाकार फ्रेम में अलग की जाती हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (रजिस्टर प्रणाली) भ्रमित करने वाला है क्योंकि रजिस्टर (दृश्यों को अलग करने वाली क्षैतिज पट्टियाँ) कई प्राचीन कथात्मक परंपराओं (मिस्र, मेसोपोटामिया, और कुछ भारतीय मूर्तिकला फ्रिज़) में उपयोग होते हैं और छात्र इसे एक सामान्य प्राचीन कथात्मक तकनीक के रूप में याद कर सकते हैं।",
+      "elimination_logic": [
+        "परिदृश्य में एक ही कहानी के कई प्रकरण एक ही रचना में दिखाए गए हैं, जिसमें नायक एक से अधिक बार प्रकट होता है — यह सतत कथन (continuous narration) की परिभाषा है।",
+        "विकल्प a (रजिस्टर प्रणाली) को हटा दें — रजिस्टर अलग-अलग दृश्यों को पट्टियों में विभाजित करते हैं; परिदृश्य में ये एक एकीकृत स्थान में बिना क्षैतिज पट्टियों के वर्णित हैं।",
+        "विकल्प b (सिनॉप्टिक प्रस्तुति) को हटा दें — सिनॉप्टिक प्रस्तुति आमतौर पर एक मुख्य क्षण दिखाती है जो पूरी कथा को समेटती है, न कि नायक के कई क्रमिक प्रकट होने को।",
+        "विकल्प d (कैमियो रचना) को हटा दें — अजंता भित्ति चित्रों के लिए ऐसी कोई औपचारिक कथात्मक तकनीक प्रलेखित नहीं है; यह एक निर्मित शब्द है।",
+        "विकल्प c (सतत कथन) सही तकनीक पहचानता है: एक ही चित्रात्मक स्थान में एक ही कहानी के कई क्रमिक प्रकरण होते हैं।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल (conflation trap) रजिस्टर प्रणाली (जो अन्य प्राचीन परंपराओं में प्रयुक्त एक वास्तविक तकनीक है) को सतत कथन (अजंता की तकनीक) के साथ मिला देता है। दोनों में कई दृश्य दिखाए जाते हैं, लेकिन रजिस्टर प्रणाली क्षैतिज पट्टियों द्वारा उन्हें अलग करती है, जबकि सतत कथन उन्हें एक एकीकृत चित्रात्मक क्षेत्र में रखता है। जो छात्र 'क्रमिक दृश्य' को प्राचीन कथात्मक कला की विशेषता के रूप में सामान्यतः याद करते हैं, वे बिना अजंता की विशिष्ट तकनीक जाने रजिस्टर विकल्प चुन सकते हैं।",
+      "final_explanation": "अजंता के जातक भित्ति चित्र एक विशिष्ट कथात्मक तकनीक का उपयोग करते हैं जो अपने समय के लिए परिष्कृत थी और भारतीय दृश्य कथा कहने के एक अलग दृष्टिकोण का प्रतिनिधित्व करती है।\n\nलागू सिद्धांत: सतत कथन — एक ही भित्ति चित्र स्थान में एक ही कहानी के कई क्रमिक प्रकरण होते हैं, जिसमें नायक अलग-अलग कथात्मक चरणों में बार-बार प्रकट होता है, बिना प्रकरणों के बीच चित्रात्मक विभाजकों के।\n\n• विकल्प (a) — रजिस्टर प्रणाली: गलत। रजिस्टर प्रणाली दीवार की सतह को क्षैतिज पट्टियों में विभाजित करती है, प्रत्येक में एक अलग दृश्य होता है। अजंता के जातक भित्ति चित्र इस परंपरा का उपयोग नहीं करते; दृश्य एक एकीकृत चित्रात्मक स्थान में प्रवाहित होते हैं।\n• विकल्प (b) — सिनॉप्टिक प्रस्तुति: गलत। सिनॉप्टिक प्रस्तुति पूरी कथा को एक प्रतीकात्मक क्षण में समेटती है। अजंता कई क्षण दिखाता है, एक प्रतीकात्मक पूर्ण छवि नहीं।\n• विकल्प (c) — सतत कथन: सही। एक ही आकृति (जैसे राजा महाजनक या छह-दांत वाला हाथी) एक ही भित्ति चित्र में कई बार, अलग-अलग कथात्मक चरणों में प्रकट होती है — यही सतत कथन है।\n• विकल्प (d) — कैमियो रचना: गलत। इस शब्द का अजंता या भारतीय कला इतिहास में कोई स्थापित अर्थ नहीं है; यह एक निर्मित विकल्प है।\n\nमूल्य संवर्धन:\n• सतत कथन का उपयोग संची और अमरावती के मूर्तिकला फ्रिज़ में भी होता है, जो अजंता के चित्रित उदाहरणों से पहले का है।\n• यह तकनीक दर्शक को चित्र को क्रमबद्ध रूप से देखने के लिए प्रेरित करती है, जैसे कोई पाठ पढ़ता है।\n• समान सतत कथन रोमन स्तंभ राहतों (ट्रोजन का स्तंभ) और मिस्री मकबरे की चित्रकला में भी मिलता है, जो इसे क्रमिक कथा कहने का एक बहुसांस्कृतिक समाधान दर्शाता है।"
+    }
+  }
+]

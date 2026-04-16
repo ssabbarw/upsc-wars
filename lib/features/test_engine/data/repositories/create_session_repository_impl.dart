@@ -1,19 +1,15 @@
 import 'package:drift/drift.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:upsc_wars/core/database/question_db.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/domain/repositories/create_session_repository.dart';
 
 class CreateSessionRepositoryImpl implements CreateSessionRepository {
   CreateSessionRepositoryImpl({
-    required QuestionDb questionDb,
     required UserDatabase userDatabase,
-  })  : _questionDb = questionDb,
-        _userDatabase = userDatabase;
+  }) : _userDatabase = userDatabase;
 
-  final QuestionDb _questionDb;
   final UserDatabase _userDatabase;
 
   static const _uuid = Uuid();
@@ -27,24 +23,24 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
       throw StateError('Invalid question count');
     }
 
-    final List<QuestionRow> picked;
-    final topic = config.topicSlug;
-    if (config.subjectSlug == 'revision') {
-      final uuids = await _userDatabase.revisionQueueDao.getActiveRevisionQuestionUuids();
-      final take = uuids.take(config.questionCount).toList();
-      picked = await _questionDb.getQuestionsByUuids(take);
+    final List<Question> picked;
+    final topic = config.topic;
+    if (config.subject == 'revision') {
+      final active = await _userDatabase.revisionQueueDao.fetchActiveQueue();
+      final uuids = active.take(config.questionCount).map((e) => e.questionUuid).toList();
+      picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
     } else if (topic != null) {
-      picked = await _questionDb.getNUnseenQuestionsForTopic(
-        config.subjectSlug,
-        topic,
-        want,
-        attempted,
+      picked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
+        subject: config.subject,
+        topic: topic,
+        limit: want,
+        attemptedQuestionUuids: attempted,
       );
     } else {
-      picked = await _questionDb.getNUnseenQuestionsForSubject(
-        config.subjectSlug,
-        want,
-        attempted,
+      picked = await _userDatabase.questionsDao.getUnseenFirstBySubject(
+        subject: config.subject,
+        limit: want,
+        attemptedQuestionUuids: attempted,
       );
     }
 
@@ -60,9 +56,9 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
         SessionsCompanion.insert(
           id: sessionId,
           createdAt: DateTime.now(),
-          subjectSlug: config.subjectSlug,
-          topicSlug: Value(config.topicSlug),
-          subTopicSlug: Value(config.subTopicSlug),
+          subject: config.subject,
+          topic: Value(config.topic),
+          subTopic: Value(config.subTopic),
           mode: config.mode,
           status: 'in_progress',
           questionCount: n,

@@ -12,9 +12,9 @@ import '../extensions/count_formatting.dart';
 
 class TestConfigSheetArgs {
   const TestConfigSheetArgs({
-    required this.subjectSlug,
-    this.topicSlug,
-    this.subTopicSlug,
+    required this.subject,
+    this.topic,
+    this.subTopic,
     required this.subjectDisplayName,
     this.topicDisplayName,
     required this.availableQuestionCount,
@@ -22,9 +22,9 @@ class TestConfigSheetArgs {
     required this.onSessionCreated,
   });
 
-  final String subjectSlug;
-  final String? topicSlug;
-  final String? subTopicSlug;
+  final String subject;
+  final String? topic;
+  final String? subTopic;
   final String subjectDisplayName;
   final String? topicDisplayName;
   final int availableQuestionCount;
@@ -110,9 +110,9 @@ class TestConfigBottomSheet extends HookConsumerWidget {
           timeLimitSecs = learningSecs.value;
         }
         final config = SessionConfig(
-          subjectSlug: args.subjectSlug,
-          topicSlug: args.topicSlug,
-          subTopicSlug: args.subTopicSlug,
+          subject: args.subject,
+          topic: args.topic,
+          subTopic: args.subTopic,
           mode: isExam.value ? 'exam' : 'learning',
           questionCount: effectiveCount,
           isTimed: isExam.value ? examTimed.value : true,

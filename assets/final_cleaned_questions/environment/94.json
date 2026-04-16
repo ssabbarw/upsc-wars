@@ -1,0 +1,1403 @@
+[
+  {
+    "uuid": "3a1b71fe-847f-4b63-9e08-6df96be0591f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "NDMA: Statutory Basis and Constitutional Anchoring"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDMA statutory basis under DM Act 2005",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The National Disaster Management Authority (NDMA) derives its statutory existence from which of the following?\n\n(a) A specific provision in the Constitution of India under the Concurrent List\n(b) The Disaster Management Act enacted by Parliament in 2005\n(c) The Environment Protection Act, 1986, as amended post-Bhopal disaster\n(d) A constitutional amendment passed following the Indian Ocean Tsunami of 2004",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students often conflate constitutional bodies with statutory bodies created by Parliament, and the NDMA's prominence under PM's chairpersonship reinforces the false impression of constitutional status.",
+      "elimination_logic": [
+        "Eliminate (a): NDMA is not a constitutional body — the Constitution makes no mention of it; it derives authority solely from an Act of Parliament.",
+        "Confirm (b): The Disaster Management Act, 2005 is the legislative basis for NDMA — this is unambiguous.",
+        "Eliminate (c): The Environment Protection Act, 1986 deals with environmental regulation, not disaster management institutional architecture.",
+        "Eliminate (d): No constitutional amendment created NDMA — it was established through ordinary legislation."
+      ],
+      "upsc_trap_explanation": "Students who associate NDMA with the Prime Minister's chairpersonship often assume it must be a constitutional body akin to the Finance Commission or Election Commission. The trap exploits this association between PM-level authority and constitutional standing. In reality, NDMA is a purely statutory creation under the Disaster Management Act, 2005 — Parliament's ordinary legislative competence, not a constitutional provision, is its source of authority.",
+      "final_explanation": "The National Disaster Management Authority (NDMA) was established as a statutory body — not a constitutional body — under the Disaster Management Act, 2005. Parliamentary legislation, not a constitutional provision, is its source of authority.\n\n• Option (a) — Incorrect: The Constitution of India contains no provision for NDMA. Constitutional bodies are those expressly created or mandated by the Constitution itself (e.g., UPSC, CAG, Election Commission).\n• Option (b) — Correct: The Disaster Management Act, 2005 is the specific legislation under which NDMA was constituted, with the Prime Minister as its ex-officio Chairperson.\n• Option (c) — Incorrect: The Environment Protection Act, 1986 is an environmental law administered by MoEFCC and has no role in constituting NDMA.\n• Option (d) — Incorrect: No constitutional amendment created NDMA; it emerged from ordinary legislation.\n\nValue Addition:\n• NDMA replaced the High Powered Committee (HPC) on Disaster Management and the National Crisis Management Committee (NCMC) as the apex policy body.\n• The DM Act draws on Entry 29 of the Concurrent List to justify central legislation despite 'relief' being a State subject under Entry 23.\n• NCMC (Cabinet Secretary-headed) continues to exist as an executive, non-statutory body parallel to NDMA."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA) अपनी वैधानिक उपस्थिति किससे प्राप्त करता है?\n\n(a) भारत के संविधान की समवर्ती सूची में एक विशिष्ट प्रावधान से\n(b) संसद द्वारा 2005 में पारित आपदा प्रबंधन अधिनियम से\n(c) भोपाल दुर्घटना के बाद संशोधित पर्यावरण संरक्षण अधिनियम, 1986 से\n(d) 2004 के भारतीय महासागर सुनामी के बाद पारित संवैधानिक संशोधन से",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि छात्र अक्सर संवैधानिक निकायों को संसद द्वारा बनाए गए वैधानिक निकायों के साथ भ्रमित कर देते हैं, और प्रधानमंत्री की अध्यक्षता में NDMA की प्रमुखता संवैधानिक स्थिति का गलत प्रभाव बढ़ाती है।",
+      "elimination_logic": [
+        "(a) को हटाएं: NDMA कोई संवैधानिक निकाय नहीं है — संविधान में इसका कोई उल्लेख नहीं है; यह केवल संसद के एक अधिनियम से अपनी अधिकारिता प्राप्त करता है।",
+        "(b) की पुष्टि करें: आपदा प्रबंधन अधिनियम, 2005 NDMA के लिए विधायी आधार है — यह स्पष्ट है।",
+        "(c) को हटाएं: पर्यावरण संरक्षण अधिनियम, 1986 पर्यावरणीय विनियमन से संबंधित है, न कि आपदा प्रबंधन संस्थागत संरचना से।",
+        "(d) को हटाएं: कोई संवैधानिक संशोधन NDMA का निर्माण नहीं करता — इसे सामान्य विधायिका के माध्यम से स्थापित किया गया था।"
+      ],
+      "upsc_trap_explanation": "छात्र जो NDMA को प्रधानमंत्री की अध्यक्षता से जोड़ते हैं, वे अक्सर मान लेते हैं कि यह वित्त आयोग या चुनाव आयोग जैसे संवैधानिक निकाय के समान संवैधानिक निकाय होगा। यह जाल प्रधानमंत्री स्तर के अधिकार और संवैधानिक स्थिति के बीच इस संबंध का शोषण करता है। वास्तव में, NDMA पूरी तरह से आपदा प्रबंधन अधिनियम, 2005 के तहत एक वैधानिक निर्माण है — संसद की सामान्य विधायी क्षमता इसका स्रोत है, न कि कोई संवैधानिक प्रावधान।",
+      "final_explanation": "राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA) को आपदा प्रबंधन अधिनियम, 2005 के तहत एक वैधानिक निकाय के रूप में स्थापित किया गया था — यह कोई संवैधानिक निकाय नहीं है। इसका अधिकार संसद के विधेयक से आता है, न कि संवैधानिक प्रावधान से।\n\n• विकल्प (a) — गलत: भारत के संविधान में NDMA के लिए कोई प्रावधान नहीं है। संवैधानिक निकाय वे होते हैं जिन्हें संविधान स्वयं स्पष्ट रूप से स्थापित या अनिवार्य करता है (जैसे UPSC, CAG, चुनाव आयोग)।\n• विकल्प (b) — सही: आपदा प्रबंधन अधिनियम, 2005 वह विशिष्ट कानून है जिसके तहत NDMA का गठन किया गया, जिसमें प्रधानमंत्री इसके पदेन अध्यक्ष हैं।\n• विकल्प (c) — गलत: पर्यावरण संरक्षण अधिनियम, 1986 पर्यावरण मंत्रालय द्वारा प्रशासित पर्यावरण कानून है और NDMA के गठन में इसका कोई भूमिका नहीं है।\n• विकल्प (d) — गलत: कोई संवैधानिक संशोधन NDMA का निर्माण नहीं करता; यह सामान्य विधायिका से उत्पन्न हुआ।\n\nमूल्य संवर्धन:\n• NDMA ने हाई पावर्ड कमेटी (HPC) ऑन डिजास्टर मैनेजमेंट और नेशनल क्राइसिस मैनेजमेंट कमेटी (NCMC) को शीर्ष नीति निकाय के रूप में प्रतिस्थापित किया।\n• DM अधिनियम समवर्ती सूची की प्रविष्टि 29 का उपयोग केंद्रीय कानून बनाने के लिए करता है, जबकि 'राहत' राज्य विषय (प्रविष्टि 23) है।\n• NCMC (कैबिनेट सचिव के नेतृत्व में) NDMA के समानांतर एक कार्यकारी, गैर-वैधानिक निकाय के रूप में मौजूद है।"
+    }
+  },
+  {
+    "uuid": "58fccfa7-4b73-461e-b049-4fa0f70a910d",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "National Disaster Response Force (NDRF): Control and Deployment",
+        "National Disaster Response Fund (NDRF) and National Disaster Mitigation Fund (NDMF)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "NDRF battalions CRPF BSF CISF ITBP SSB composition",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Feature/Provision) with List II (Associated Entity/Reference):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Day-to-day operational control of NDRF",
+            "1. NDMA"
+          ],
+          [
+            "B. Overall supervision of NDRF under DM Act",
+            "2. CRPF, BSF, CISF, ITBP, SSB"
+          ],
+          [
+            "C. Sections under which NDRF is constituted",
+            "3. Director General of NDRF"
+          ],
+          [
+            "D. Central forces from which NDRF battalions are drawn",
+            "4. Sections 44–45 of DM Act"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-4, D-2\n(d) A-1, B-2, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because it places NDRF under MHA — a plausible error since NDRF battalions are drawn from MHA-controlled CAPFs, leading students to infer MHA controls NDRF operationally.",
+      "elimination_logic": [
+        "List I item A (NDRF day-to-day control): This rests with the Director General of NDRF, not MHA or NDMA directly — matches List II item 3.",
+        "List I item B (NDRF overall supervision): NDMA holds overall supervisory authority over NDRF under the DM Act — matches List II item 1.",
+        "List I item C (NDRF constituted under): Sections 44–45 of the DM Act constitute the NDRF — matches List II item 4.",
+        "List I item D (NDRF battalions drawn from): CRPF, BSF, CISF, ITBP, and SSB — the five Central Armed Police Forces — matches List II item 2.",
+        "Correct combination: A-3, B-1, C-4, D-2 → option (c)."
+      ],
+      "upsc_trap_explanation": "The NDRF-MHA conflation is a classic UPSC trap. Because all five source forces (CRPF, BSF, CISF, ITBP, SSB) are under MHA, students conclude NDRF must also be under MHA. However, the DM Act places overall supervision of NDRF under NDMA, while day-to-day control rests with the Director General of NDRF. MHA's role is as the parent ministry for source forces, not the controlling authority for NDRF once personnel are deployed.",
+      "final_explanation": "The NDRF's institutional design separates supervisory authority (NDMA), operational command (DG-NDRF), legislative basis (Sections 44–45, DM Act), and personnel sourcing (CAPFs under MHA).\n\nCorrect matches:\n• A (Day-to-day control of NDRF) → 3 (Director General of NDRF): The DG-NDRF exercises operational command; NDMA sets policy and overall direction.\n• B (Overall supervision of NDRF) → 1 (NDMA): The DM Act vests overall supervisory authority in NDMA, not MHA.\n• C (NDRF constituted under) → 4 (Sections 44–45 of DM Act): These specific sections of the Disaster Management Act, 2005 provide the legislative basis for constituting NDRF.\n• D (NDRF battalions drawn from) → 2 (CRPF, BSF, CISF, ITBP, SSB): The 16 NDRF battalions are sourced exclusively from these five Central Armed Police Forces.\n\nTrap pairing: Students often match B with MHA (thinking parent ministry = supervisory authority), but that is incorrect — the DM Act explicitly assigns supervision to NDMA.\n\nValue Addition:\n• NDRF has 16 battalions — 3 each from CRPF and BSF, 2 each from CISF, ITBP, and SSB.\n• NDRF can be proactively pre-positioned before a disaster — not just deployed reactively.\n• The National Disaster Response Fund (Section 46) is managed by the Central Government, not NDMA."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (विशेषता/प्रावधान) को सूची II (संबंधित संस्था/संदर्भ) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. NDRF का दैनिक परिचालन नियंत्रण",
+            "1. NDMA"
+          ],
+          [
+            "B. DM अधिनियम के तहत NDRF की समग्र निगरानी",
+            "2. CRPF, BSF, CISF, ITBP, SSB"
+          ],
+          [
+            "C. जिन धाराओं के तहत NDRF का गठन हुआ",
+            "3. NDRF के निदेशक जनरल"
+          ],
+          [
+            "D. केंद्रीय बल जिनसे NDRF बटालियन ली गई हैं",
+            "4. DM अधिनियम की धारा 44–45"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-4, D-2\n(d) A-1, B-2, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि यह NDRF को MHA के अंतर्गत रखता है — यह एक संभावित त्रुटि है क्योंकि NDRF बटालियनों का चयन MHA के नियंत्रण वाले CAPFs से होता है, जिससे छात्र यह निष्कर्ष निकालते हैं कि MHA NDRF को परिचालन रूप से नियंत्रित करता है।",
+      "elimination_logic": [
+        "सूची I का आइटम A (NDRF का दैनिक नियंत्रण): यह NDRF के निदेशक जनरल के पास है, न कि सीधे MHA या NDMA के पास — यह सूची II के आइटम 3 से मेल खाता है।",
+        "सूची I का आइटम B (NDRF की समग्र निगरानी): DM अधिनियम के तहत NDMA के पास NDRF की समग्र निगरानी का अधिकार है — यह सूची II के आइटम 1 से मेल खाता है।",
+        "सूची I का आइटम C (NDRF का गठन): DM अधिनियम की धारा 44–45 के तहत NDRF का गठन होता है — यह सूची II के आइटम 4 से मेल खाता है।",
+        "सूची I का आइटम D (NDRF बटालियन जिनसे लिए गए हैं): CRPF, BSF, CISF, ITBP, और SSB — ये पांच केंद्रीय सशस्त्र पुलिस बल हैं — यह सूची II के आइटम 2 से मेल खाता है।",
+        "सही संयोजन: A-3, B-1, C-4, D-2 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "NDRF-MHA का भ्रम UPSC का एक क्लासिक जाल है। क्योंकि सभी पांच स्रोत बल (CRPF, BSF, CISF, ITBP, SSB) MHA के अंतर्गत हैं, छात्र यह निष्कर्ष निकालते हैं कि NDRF भी MHA के अंतर्गत होगा। हालांकि, DM अधिनियम NDRF की समग्र निगरानी NDMA को देता है, जबकि दैनिक नियंत्रण NDRF के निदेशक जनरल के पास होता है। MHA की भूमिका स्रोत बलों के लिए अभिभावक मंत्रालय के रूप में है, न कि NDRF के परिचालन नियंत्रण के रूप में।",
+      "final_explanation": "NDRF की संस्थागत संरचना में निगरानी प्राधिकरण (NDMA), परिचालन कमान (DG-NDRF), विधायी आधार (धारा 44–45, DM अधिनियम), और कर्मियों का स्रोत (MHA के अंतर्गत CAPFs) अलग-अलग हैं।\n\nसही मेल:\n• A (NDRF का दैनिक नियंत्रण) → 3 (NDRF के निदेशक जनरल): DG-NDRF परिचालन कमान का प्रयोग करते हैं; NDMA नीति और समग्र दिशा निर्धारित करता है।\n• B (NDRF की समग्र निगरानी) → 1 (NDMA): DM अधिनियम के तहत समग्र निगरानी NDMA को दी गई है, न कि MHA को।\n• C (NDRF का गठन) → 4 (DM अधिनियम की धारा 44–45): ये विशेष धाराएँ NDRF के गठन के लिए विधायी आधार प्रदान करती हैं।\n• D (NDRF बटालियन जिनसे लिए गए हैं) → 2 (CRPF, BSF, CISF, ITBP, SSB): 16 NDRF बटालियन केवल इन पांच केंद्रीय सशस्त्र पुलिस बलों से आती हैं।\n\nजाल जोड़ी: छात्र अक्सर B को MHA से जोड़ते हैं (सोचते हैं कि अभिभावक मंत्रालय = निगरानी प्राधिकरण), लेकिन यह गलत है — DM अधिनियम स्पष्ट रूप से निगरानी NDMA को सौंपता है।\n\nमूल्य संवर्धन:\n• NDRF के पास 16 बटालियन हैं — CRPF और BSF से 3-3, CISF, ITBP, और SSB से 2-2।\n• NDRF को आपदा से पहले सक्रिय रूप से तैनात किया जा सकता है — केवल प्रतिक्रिया स्वरूप नहीं।\n• राष्ट्रीय आपदा प्रतिक्रिया कोष (धारा 46) केंद्र सरकार द्वारा प्रबंधित है, NDMA द्वारा नहीं।"
+    }
+  },
+  {
+    "uuid": "95e029a9-47eb-4056-b5eb-96706ee321a5",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Sendai Framework 2015–2030 and NDMA's Alignment",
+        "National Disaster Management Plan (NDMP): Hierarchy and Revision"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "HFA Sendai NDMP chronological sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of key milestones in global and Indian disaster risk governance?\n\n1. Hyogo Framework for Action\n2. Sendai Framework for Disaster Risk Reduction\n3. India's first National Disaster Management Plan\n4. Revised National Disaster Management Plan\n\n(a) 2 – 1 – 3 – 4\n(b) 1 – 2 – 3 – 4\n(c) 1 – 3 – 2 – 4\n(d) 2 – 3 – 1 – 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because students who know Sendai replaced HFA may place Sendai before India's first NDMP, forgetting that the NDMP was released in 2016 — a year after Sendai (2015).",
+      "elimination_logic": [
+        "Hyogo Framework for Action was adopted in 2005 — same year as the DM Act — placing it first.",
+        "Sendai Framework was adopted in March 2015 at the Third UN World Conference — after HFA expired.",
+        "India's first NDMP was released in June 2016 — after Sendai was in place, explicitly aligned with it.",
+        "NDMP revision occurred in 2019 — last in the sequence. Correct order: HFA → Sendai → NDMP (2016) → NDMP (2019) → option (b)."
+      ],
+      "upsc_trap_explanation": "The temporal trap lies in the proximity of 2015 (Sendai) and 2016 (first NDMP). Students who know both dates may still confuse whether the first NDMP preceded Sendai or followed it. The correct sequence is: HFA (2005–2015) → Sendai Framework adopted (March 2015) → First NDMP released (June 2016) → NDMP revised (2019). Placing the NDMP before Sendai is the trap option some partially prepared students fall into.",
+      "final_explanation": "India's disaster risk reduction architecture evolved through four sequential milestones:\n\n1. Hyogo Framework for Action (2005–2015): Adopted at the World Conference on Disaster Reduction in Kobe, Japan, in January 2005 — the same year as the DM Act. HFA emphasised building resilience of nations through five priorities.\n\n2. Sendai Framework (2015–2030): Adopted at the Third UN World Conference in Sendai, Japan, in March 2015. It succeeded HFA and shifted focus from managing disasters to managing disaster risk, with four priorities and seven global targets.\n\n3. India's First NDMP (2016): Released in June 2016, explicitly aligned with the Sendai Framework — India was the first country to release such a plan after Sendai.\n\n4. NDMP Revision (2019): Updated to incorporate evolving risk patterns and implementation lessons.\n\nCorrect sequence: HFA → Sendai → NDMP 2016 → NDMP 2019 → option (b).\n\nValue Addition:\n• The Hyogo Framework was adopted in 2005, not 2004 — the Indian Ocean Tsunami was the triggering event but occurred in December 2004.\n• Sendai has 7 global targets, including the goal of substantially reducing disaster mortality by 2030.\n• India chairs the Coalition for Disaster Resilient Infrastructure (CDRI) — a post-Sendai multilateral initiative."
+    },
+    "hi": {
+      "display_text": "वैश्विक और भारतीय आपदा जोखिम शासन में प्रमुख मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. Hyogo Framework for Action\n2. Sendai Framework for Disaster Risk Reduction\n3. भारत की पहली राष्ट्रीय आपदा प्रबंधन योजना\n4. संशोधित राष्ट्रीय आपदा प्रबंधन योजना\n\n(a) 2 – 1 – 3 – 4\n(b) 1 – 2 – 3 – 4\n(c) 1 – 3 – 2 – 4\n(d) 2 – 3 – 1 – 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि Sendai ने HFA को प्रतिस्थापित किया है, वे Sendai को भारत की पहली NDMP से पहले रख सकते हैं, यह भूलकर कि NDMP 2016 में जारी किया गया था — जो Sendai (2015) के एक वर्ष बाद है।",
+      "elimination_logic": [
+        "Hyogo Framework for Action को 2005 में अपनाया गया था — उसी वर्ष जब DM अधिनियम लागू हुआ — इसलिए इसे पहले रखा गया।",
+        "Sendai Framework को मार्च 2015 में तीसरे UN विश्व सम्मेलन में अपनाया गया — HFA समाप्त होने के बाद।",
+        "भारत की पहली NDMP जून 2016 में जारी हुई — Sendai के बाद, स्पष्ट रूप से इसके अनुरूप।",
+        "NDMP का संशोधन 2019 में हुआ — श्रृंखला में अंतिम। सही क्रम: HFA → Sendai → NDMP (2016) → NDMP (2019) → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम 2015 (Sendai) और 2016 (पहली NDMP) की निकटता में है। जो छात्र दोनों तिथियाँ जानते हैं, वे भ्रमित हो सकते हैं कि पहली NDMP Sendai से पहले थी या बाद में। सही क्रम है: HFA (2005–2015) → Sendai Framework अपनाया गया (मार्च 2015) → पहली NDMP जारी (जून 2016) → NDMP संशोधित (2019)। NDMP को Sendai से पहले रखना वह जाल है जिसमें कुछ आंशिक रूप से तैयार छात्र फंस जाते हैं।",
+      "final_explanation": "भारत की आपदा जोखिम न्यूनीकरण संरचना चार क्रमिक मील के पत्थरों के माध्यम से विकसित हुई:\n\n1. Hyogo Framework for Action (2005–2015): जनवरी 2005 में जापान के कोबे में विश्व आपदा न्यूनीकरण सम्मेलन में अपनाया गया — वही वर्ष जब DM अधिनियम लागू हुआ। HFA ने राष्ट्रों की लचीलापन निर्माण पर पांच प्राथमिकताओं के माध्यम से जोर दिया।\n\n2. Sendai Framework (2015–2030): मार्च 2015 में जापान के Sendai में तीसरे UN विश्व सम्मेलन में अपनाया गया। यह HFA का उत्तराधिकारी था और आपदाओं के प्रबंधन से आपदा जोखिम प्रबंधन की ओर ध्यान केंद्रित किया, चार प्राथमिकताओं और सात वैश्विक लक्ष्यों के साथ।\n\n3. भारत की पहली NDMP (2016): जून 2016 में जारी, स्पष्ट रूप से Sendai Framework के अनुरूप — भारत Sendai के बाद ऐसा योजना जारी करने वाला पहला देश था।\n\n4. NDMP संशोधन (2019): विकसित होते जोखिम पैटर्न और कार्यान्वयन के अनुभवों को शामिल करने के लिए अपडेट किया गया।\n\nसही क्रम: HFA → Sendai → NDMP 2016 → NDMP 2019 → विकल्प (b)।\n\nमूल्य संवर्धन:\n• Hyogo Framework 2005 में अपनाया गया था, 2004 में नहीं — भारतीय महासागर सुनामी प्रेरक घटना थी लेकिन दिसंबर 2004 में हुई।\n• Sendai के सात वैश्विक लक्ष्य हैं, जिनमें 2030 तक आपदा मृत्यु दर को काफी कम करने का लक्ष्य शामिल है।\n• भारत आपदा लचीला अवसंरचना गठबंधन (CDRI) की अध्यक्षता करता है — जो Sendai के बाद की एक बहुपक्षीय पहल है।"
+    }
+  },
+  {
+    "uuid": "06a90935-4763-4d37-8215-c5db0d619d57",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "NDMA Guidelines vs. Directions: Legal Force and Compliance",
+        "Disaster Risk Reduction (DRR) Mainstreaming Across Ministries"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Section 37 DM Act ministry DM plan preparation obligation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Ministry of Health declines to incorporate NDMA's disaster management guidelines into its departmental planning framework, arguing that these guidelines are policy recommendations and do not create binding legal obligations on Central Government Ministries. A review committee examining this position must determine its legal validity under the Disaster Management Act, 2005.\n\nWhich of the following correctly describes the legal position?\n\n(a) The Ministry's position is defensible because NDMA issues guidelines, not statutory directions, and integration into departmental plans is at the Ministry's discretion.\n(b) The Ministry's position is untenable because Section 37 of the DM Act creates a binding obligation on every Central Ministry to prepare a disaster management plan consistent with NDMA's guidelines.\n(c) The Ministry of Home Affairs must be approached to direct the Ministry of Health to comply, as NDMA lacks enforcement power over other Ministries.\n(d) The National Executive Committee must first revise the National Plan before any Ministry is obligated to reflect NDMA's guidelines in its own planning.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because the Ministry of Health invoking NDMA's advisory role sounds procedurally correct to students who know NDMA issues guidelines but do not know Section 37 creates a legal obligation rather than a discretionary choice.",
+      "elimination_logic": [
+        "Identify the legal issue: The Ministry of Health claims NDMA guidelines are advisory — test whether this is legally accurate under the DM Act.",
+        "Section 37 of the DM Act mandates every Central Ministry to prepare a DM Plan consistent with the NDMP — this is a statutory obligation, not discretionary.",
+        "Eliminate (a): NDMA's advisory characterisation by the Ministry is factually incorrect under Section 37 — the Ministry cannot invoke 'advisory' status to escape compliance.",
+        "Eliminate (c): There is no provision for MHA to override NDMA guidelines vis-à-vis a Ministry's plan — MHA coordinates, NDMA mandates policy.",
+        "Eliminate (d): The NEC (not NDMA) prepares the operational National Plan; and even if NEC's involvement were relevant, the core legal obligation on the Ministry remains Section 37.",
+        "Select (b): The Ministry's position is untenable — Section 37 creates a binding statutory obligation to prepare a DM Plan incorporating NDMA's guidelines."
+      ],
+      "upsc_trap_explanation": "The scenario exploits the common misconception that NDMA guidelines are 'best practice' recommendations. The term 'guidelines' in ordinary usage implies non-binding advice, but Section 37 of the DM Act converts them into statutory obligations for Ministries. Students who know NDMA issues 'guidelines' but do not know Section 37 will fall for option (a), treating the Ministry's legal position as defensible.",
+      "final_explanation": "Section 37 of the Disaster Management Act, 2005 requires every Ministry and Department of the Central Government to prepare a Disaster Management Plan consistent with the National Disaster Management Plan (NDMP). This is not discretionary — it is a statutory obligation.\n\nApplying the principle: The Ministry of Health's claim that NDMA guidelines are merely advisory and therefore optional is legally incorrect. NDMA issues guidelines under Section 6, and Section 37 mandates that Ministries integrate these into their sectoral plans. Non-integration is not a legally defensible position.\n\n• Option (a) — Incorrect: The Ministry cannot treat NDMA guidelines as advisory — Section 37 makes compliance mandatory for all Central Ministries.\n• Option (b) — Correct: The Ministry's position is untenable. It is legally obligated under Section 37 to prepare a health-sector DM plan consistent with NDMA's guidelines and the NDMP.\n• Option (c) — Incorrect: MHA has no authority to override NDMA guidelines or grant exemptions from Section 37 obligations.\n• Option (d) — Incorrect: The NEC's role in preparing the National Plan does not affect the Ministry's Section 37 obligation, which is direct and unconditional.\n\nValue Addition:\n• NDMA can seek compliance reports from Ministries — a quasi-regulatory power under the DM Act.\n• Hospital safety and school safety are among NDMA's mainstreaming initiatives targeting sectoral ministries.\n• The DM Act creates no criminal penalty for non-compliance, but administrative and fiscal consequences apply."
+    },
+    "hi": {
+      "display_text": "स्वास्थ्य मंत्रालय NDMA के आपदा प्रबंधन दिशानिर्देशों को अपने विभागीय योजना ढांचे में शामिल करने से इनकार करता है, यह तर्क देते हुए कि ये दिशानिर्देश नीति सिफारिशें हैं और केंद्रीय सरकार के मंत्रालयों पर बाध्यकारी कानूनी दायित्व नहीं बनाते। इस स्थिति की समीक्षा कर रही समिति को आपदा प्रबंधन अधिनियम, 2005 के तहत इसकी कानूनी वैधता निर्धारित करनी है।\n\nनिम्नलिखित में से कौन सा कानूनी स्थिति को सही रूप से वर्णित करता है?\n\n(a) मंत्रालय की स्थिति बचाव योग्य है क्योंकि NDMA दिशानिर्देश जारी करता है, वैधानिक निर्देश नहीं, और विभागीय योजनाओं में समावेशन मंत्रालय के विवेकाधीन है।\n(b) मंत्रालय की स्थिति अस्वीकार्य है क्योंकि DM अधिनियम की धारा 37 हर केंद्रीय मंत्रालय पर NDMA के दिशानिर्देशों के अनुरूप आपदा प्रबंधन योजना तैयार करने का बाध्यकारी दायित्व बनाती है।\n(c) गृह मंत्रालय से संपर्क करना आवश्यक है ताकि वह स्वास्थ्य मंत्रालय को अनुपालन का निर्देश दे, क्योंकि NDMA के पास अन्य मंत्रालयों पर प्रवर्तन शक्ति नहीं है।\n(d) राष्ट्रीय कार्यकारी समिति को पहले राष्ट्रीय योजना संशोधित करनी चाहिए तभी कोई मंत्रालय NDMA के दिशानिर्देशों को अपनी योजना में प्रतिबिंबित करने के लिए बाध्य होगा।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि स्वास्थ्य मंत्रालय द्वारा NDMA की सलाहकार भूमिका का आह्वान करना उन छात्रों के लिए प्रक्रियात्मक रूप से सही लगता है जो जानते हैं कि NDMA दिशानिर्देश जारी करता है लेकिन यह नहीं जानते कि धारा 37 एक कानूनी बाध्यता बनाती है न कि विवेकाधीन विकल्प।",
+      "elimination_logic": [
+        "कानूनी मुद्दे की पहचान करें: स्वास्थ्य मंत्रालय का दावा है कि NDMA के दिशानिर्देश सलाहकार हैं — जांचें कि क्या यह DM अधिनियम के तहत कानूनी रूप से सही है।",
+        "DM अधिनियम की धारा 37 हर केंद्रीय मंत्रालय को NDMP के अनुरूप एक आपदा प्रबंधन योजना तैयार करने का आदेश देती है — यह एक वैधानिक बाध्यता है, विवेकाधीन नहीं।",
+        "विकल्प (a) को हटाएं: मंत्रालय द्वारा NDMA को सलाहकार बताना धारा 37 के तहत तथ्यात्मक रूप से गलत है — मंत्रालय 'सलाहकार' स्थिति का आह्वान करके अनुपालन से बच नहीं सकता।",
+        "विकल्प (c) को हटाएं: गृह मंत्रालय के पास मंत्रालय की योजना के संबंध में NDMA के दिशानिर्देशों को अधिलेखित करने का प्रावधान नहीं है — गृह मंत्रालय समन्वय करता है, NDMA नीति बनाता है।",
+        "विकल्प (d) को हटाएं: राष्ट्रीय कार्यकारी समिति (NEC) (NDMA नहीं) राष्ट्रीय योजना तैयार करती है; और यदि NEC की भागीदारी प्रासंगिक भी हो, तो भी मंत्रालय पर मुख्य कानूनी बाध्यता धारा 37 ही रहती है।",
+        "विकल्प (b) चुनें: मंत्रालय की स्थिति अस्वीकार्य है — धारा 37 एक बाध्यकारी वैधानिक बाध्यता बनाती है कि मंत्रालय NDMA के दिशानिर्देशों को शामिल करते हुए आपदा प्रबंधन योजना तैयार करे।"
+      ],
+      "upsc_trap_explanation": "यह परिदृश्य आम गलतफहमी का लाभ उठाता है कि NDMA के दिशानिर्देश 'सर्वोत्तम अभ्यास' की सिफारिशें हैं। सामान्य उपयोग में 'दिशानिर्देश' शब्द गैर-बाध्यकारी सलाह को दर्शाता है, लेकिन DM अधिनियम की धारा 37 इन्हें मंत्रालयों के लिए वैधानिक बाध्यताएँ बना देती है। जो छात्र जानते हैं कि NDMA 'दिशानिर्देश' जारी करता है लेकिन धारा 37 नहीं जानते, वे विकल्प (a) के फंदे में फंसेंगे और मंत्रालय की कानूनी स्थिति को बचाने योग्य समझेंगे।",
+      "final_explanation": "आपदा प्रबंधन अधिनियम, 2005 की धारा 37 हर केंद्रीय मंत्रालय और विभाग को राष्ट्रीय आपदा प्रबंधन योजना (NDMP) के अनुरूप आपदा प्रबंधन योजना तैयार करने का आदेश देती है। यह विवेकाधीन नहीं है — यह एक वैधानिक बाध्यता है।\n\nसिद्धांत लागू करते हुए: स्वास्थ्य मंत्रालय का यह दावा कि NDMA के दिशानिर्देश केवल सलाहकार हैं और इसलिए वैकल्पिक हैं, कानूनी रूप से गलत है। NDMA धारा 6 के तहत दिशानिर्देश जारी करता है, और धारा 37 मंत्रालयों को इनको अपने क्षेत्रीय योजनाओं में शामिल करने का आदेश देती है। शामिल न करना कानूनी रूप से बचाव योग्य स्थिति नहीं है।\n\n• विकल्प (a) — गलत: मंत्रालय NDMA के दिशानिर्देशों को सलाहकार नहीं मान सकता — धारा 37 सभी केंद्रीय मंत्रालयों के लिए अनुपालन अनिवार्य बनाती है।\n• विकल्प (b) — सही: मंत्रालय की स्थिति अस्वीकार्य है। इसे धारा 37 के तहत NDMA के दिशानिर्देशों और NDMP के अनुरूप स्वास्थ्य क्षेत्र की आपदा प्रबंधन योजना तैयार करनी कानूनी रूप से बाध्य है।\n• विकल्प (c) — गलत: गृह मंत्रालय के पास NDMA के दिशानिर्देशों को अधिलेखित करने या धारा 37 की बाध्यताओं से छूट देने का अधिकार नहीं है।\n• विकल्प (d) — गलत: राष्ट्रीय कार्यकारी समिति की राष्ट्रीय योजना तैयार करने की भूमिका मंत्रालय की धारा 37 की बाध्यता को प्रभावित नहीं करती, जो प्रत्यक्ष और बिना शर्त है।\n\nमूल्य संवर्धन:\n• NDMA मंत्रालयों से अनुपालन रिपोर्ट मांग सकता है — DM अधिनियम के तहत एक अर्ध-नियामक शक्ति।\n• अस्पताल सुरक्षा और स्कूल सुरक्षा NDMA की मुख्यधारा में लाने की पहलों में से हैं जो क्षेत्रीय मंत्रालयों को लक्षित करती हैं।\n• DM अधिनियम गैर-अनुपालन के लिए कोई आपराधिक दंड नहीं बनाता, लेकिन प्रशासनिक और वित्तीय परिणाम लागू होते हैं।"
+    }
+  },
+  {
+    "uuid": "3b878f15-6de6-4b51-881b-25aea5bd403d",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "National Disaster Response Fund (NDRF) and National Disaster Mitigation Fund (NDMF)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDRF NDMF SDRF CALAMITY RELIEF FUND financial instruments DM Act",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the financial instruments established under India's disaster management framework, which of the following does NOT belong to the same category as the others?\n\n(a) National Disaster Response Fund\n(b) State Disaster Response Fund\n(c) Calamity Relief Fund\n(d) National Disaster Mitigation Fund",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who know the SDRF exists and that Centre contributes 75% may assume it is directly managed by NDMA, not realising it is a state-managed fund with central contribution.",
+      "elimination_logic": [
+        "Identify the common attribute: Funds directly created or referenced under the Disaster Management Act, 2005 with a defined legal basis in Sections 46–48.",
+        "NDRF (Section 46), NDMF (Section 47), and SDRF (Section 48) are all explicitly constituted under the DM Act — they belong to the same category.",
+        "The Calamity Relief Fund (CRF) predates the DM Act — it was a pre-2005 fund subsequently subsumed into the SDRF. It is not a fund constituted under the DM Act; it is a historical predecessor.",
+        "The odd one out is the Calamity Relief Fund — option (c)."
+      ],
+      "upsc_trap_explanation": "The CRF trap exploits the evolutionary history of disaster finance in India. Students who know CRF was replaced by SDRF assume CRF must be 'part of the same family' and therefore not the odd one out. The distinction is legal: NDRF, NDMF, and SDRF are all constituted under specific sections of the DM Act, while the CRF was a pre-existing administrative arrangement abolished by the DM Act's implementation.",
+      "final_explanation": "The DM Act, 2005 created a structured financial architecture for disaster response and mitigation.\n\n• Option (a) National Disaster Response Fund: Constituted under Section 46 of the DM Act, managed by the Central Government for immediate disaster response needs.\n• Option (b) State Disaster Response Fund: Constituted under Section 48 of the DM Act; Centre contributes 75% (90% for NE/hilly states), with states managing the fund for relief operations.\n• Option (c) Calamity Relief Fund — Odd one out: The CRF was a pre-DM Act administrative fund. After 2005, it was subsumed into the SDRF. CRF has no section of its own in the DM Act — it is a historical predecessor, not a fund constituted under the Act.\n• Option (d) National Disaster Mitigation Fund: Constituted under Section 47 of the DM Act for long-term mitigation projects — distinct in purpose from the NDRF (relief).\n\nValue Addition:\n• NDRF is managed by the Central Government — not NDMA directly (a common UPSC trap).\n• NDMF is intended for mitigation and resilience-building projects, not immediate disaster relief.\n• Centre's 90% contribution to SDRF for NE and hilly states reflects their higher vulnerability and limited fiscal capacity."
+    },
+    "hi": {
+      "display_text": "भारत के आपदा प्रबंधन ढांचे के तहत स्थापित वित्तीय उपकरणों के संदर्भ में, निम्नलिखित में से कौन सा अन्य के समान श्रेणी में नहीं आता?\n\n(a) राष्ट्रीय आपदा प्रतिक्रिया कोष\n(b) राज्य आपदा प्रतिक्रिया कोष\n(c) कलामिटी रिलीफ फंड\n(d) राष्ट्रीय आपदा शमन कोष",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र जानते हैं कि SDRF मौजूद है और केंद्र 75% योगदान देता है, वे मान सकते हैं कि इसे सीधे NDMA द्वारा प्रबंधित किया जाता है, यह समझे बिना कि यह एक राज्य-प्रबंधित कोष है जिसमें केंद्र का योगदान होता है।",
+      "elimination_logic": [
+        "सामान्य विशेषता की पहचान करें: वे कोष जो आपदा प्रबंधन अधिनियम, 2005 के तहत सीधे बनाए गए या संदर्भित हैं और जिनका कानूनी आधार धारा 46–48 में निर्धारित है।",
+        "NDRF (धारा 46), NDMF (धारा 47), और SDRF (धारा 48) सभी स्पष्ट रूप से DM अधिनियम के तहत गठित हैं — ये सभी एक ही श्रेणी के हैं।",
+        "कलामिटी रिलीफ फंड (CRF) DM अधिनियम से पहले का है — यह 2005 से पहले का कोष था जिसे बाद में SDRF में सम्मिलित कर दिया गया। यह DM अधिनियम के तहत गठित कोष नहीं है; यह एक ऐतिहासिक पूर्ववर्ती है।",
+        "असामान्य विकल्प कलामिटी रिलीफ फंड है — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "CRF जाल भारत में आपदा वित्त के विकासात्मक इतिहास का उपयोग करता है। जो छात्र जानते हैं कि CRF को SDRF ने प्रतिस्थापित किया, वे मान लेते हैं कि CRF 'उसी परिवार का हिस्सा' है और इसलिए असामान्य विकल्प नहीं है। अंतर कानूनी है: NDRF, NDMF, और SDRF सभी DM अधिनियम की विशिष्ट धाराओं के तहत गठित हैं, जबकि CRF एक पूर्व-विद्यमान प्रशासनिक व्यवस्था थी जिसे DM अधिनियम के लागू होने पर समाप्त कर दिया गया।",
+      "final_explanation": "DM अधिनियम, 2005 ने आपदा प्रतिक्रिया और शमन के लिए एक संरचित वित्तीय ढांचा बनाया।\n\n• विकल्प (a) राष्ट्रीय आपदा प्रतिक्रिया कोष: DM अधिनियम की धारा 46 के तहत गठित, तत्काल आपदा प्रतिक्रिया आवश्यकताओं के लिए केंद्र सरकार द्वारा प्रबंधित।\n• विकल्प (b) राज्य आपदा प्रतिक्रिया कोष: DM अधिनियम की धारा 48 के तहत गठित; केंद्र 75% (पूर्वोत्तर/पहाड़ी राज्यों के लिए 90%) योगदान देता है, राज्य राहत कार्यों के लिए कोष का प्रबंधन करते हैं।\n• विकल्प (c) कलामिटी रिलीफ फंड — असामान्य विकल्प: CRF DM अधिनियम से पूर्व का प्रशासनिक कोष था। 2005 के बाद इसे SDRF में सम्मिलित कर दिया गया। CRF का DM अधिनियम में कोई धारा नहीं है — यह एक ऐतिहासिक पूर्ववर्ती है, अधिनियम के तहत गठित कोष नहीं।\n• विकल्प (d) राष्ट्रीय आपदा शमन कोष: DM अधिनियम की धारा 47 के तहत गठित, दीर्घकालिक शमन परियोजनाओं के लिए — NDRF (राहत) से उद्देश्य में भिन्न।\n\nमूल्यवर्धन:\n• NDRF केंद्र सरकार द्वारा प्रबंधित है — सीधे NDMA द्वारा नहीं (एक सामान्य UPSC जाल)।\n• NDMF शमन और लचीलापन निर्माण परियोजनाओं के लिए है, तत्काल आपदा राहत के लिए नहीं।\n• पूर्वोत्तर और पहाड़ी राज्यों के लिए SDRF में केंद्र का 90% योगदान उनकी उच्च संवेदनशीलता और सीमित वित्तीय क्षमता को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "138aa8d3-228d-4e59-942e-db37ff1cd55a",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Role of NDMA in Minimum Standards of Relief"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Section 12 NDMA minimum relief standards state implementation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about NDMA's role in disaster relief standards:\n\nStatement 1: Under Section 12 of the Disaster Management Act, NDMA recommends minimum standards of relief covering food, water, sanitation, and medical care, and these standards are binding on State Governments implementing relief.\n\nStatement 2: NDMA directly supervises and coordinates relief distribution operations at the state and district levels during disasters to ensure compliance with minimum standards.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: Under Section 12 of the Disaster Management Act, NDMA recommends minimum standards of relief covering food, water, sanitation, and medical care, and these standards are binding on State Governments implementing relief.",
+          "verdict": "Correct",
+          "reason": "Section 12 explicitly authorises NDMA to recommend minimum standards of relief, and these become binding on State Governments and SDMAs responsible for relief implementation — a clear division where NDMA sets standards and states implement them."
+        },
+        {
+          "statement": "Statement 2: NDMA directly supervises and coordinates relief distribution operations at the state and district levels during disasters to ensure compliance with minimum standards.",
+          "verdict": "Incorrect",
+          "reason": "NDMA's role is to set standards and policy — actual relief distribution and supervisory oversight at state/district levels is the responsibility of SDMAs and DDMAs; NDMA does not directly manage field relief operations."
+        }
+      ],
+      "strong_distractor": "a — Option (a) claiming both statements are correct is the strong distractor because students who know NDMA sets minimum relief standards often also assume NDMA must monitor their implementation, conflating standard-setting with field supervision.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Section 12 of the DM Act grants NDMA authority to recommend minimum standards — food, water, sanitation, medical care — which are binding on states. This is correct.",
+        "Evaluate Statement 2: NDMA is a policy body — it does not conduct field-level relief supervision. SDMAs and DDMAs handle ground-level implementation. Statement 2 incorrectly assigns field supervisory duties to NDMA.",
+        "Statement 1 correct, Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the assumption that if NDMA has authority to set binding standards, it must also monitor their field implementation. In India's DM architecture, this is a deliberate division: NDMA sets standards (national level), SDMAs ensure implementation (state level), and DDMAs coordinate actual relief distribution (district level). NDMA's quasi-regulatory power extends to seeking compliance reports from Ministries — not to directly supervising state-level disaster relief.",
+      "final_explanation": "Section 12 of the DM Act assigns NDMA the authority to recommend minimum standards of relief — covering food, drinking water, sanitation, shelter, and medical care. These standards are binding on State Governments when they implement relief operations.\n\n• Statement 1 — Correct: NDMA's Section 12 standards are not aspirational benchmarks; states are legally obligated to meet these minimums during disaster relief. The division is clear: NDMA sets norms, states implement.\n• Statement 2 — Incorrect: NDMA does not supervise field-level relief distribution. That responsibility lies with SDMAs at the state level and DDMAs at the district level. NDMA remains at the apex policy tier and does not deploy supervisory teams to relief camps or distribution centres.\n\nValue Addition:\n• The Sphere Project provides internationally recognised minimum humanitarian standards — NDMA's domestic standards are broadly consistent with these but adapted to Indian conditions.\n• SDMAs must submit reports on relief compliance to NDMA, creating an indirect accountability loop.\n• NDMA's mandate covers both natural and man-made disasters — minimum relief standards apply to both categories."
+    },
+    "hi": {
+      "display_text": "आपदा राहत मानकों में NDMA की भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: डिजास्टर मैनेजमेंट अधिनियम की धारा 12 के तहत, NDMA भोजन, जल, स्वच्छता, और चिकित्सा देखभाल को कवर करने वाले न्यूनतम राहत मानकों की सिफारिश करता है, और ये मानक राहत लागू करने वाले राज्य सरकारों के लिए बाध्यकारी होते हैं।\n\nकथन 2: NDMA आपदाओं के दौरान राज्य और जिला स्तर पर राहत वितरण संचालन की सीधे निगरानी और समन्वय करता है ताकि न्यूनतम मानकों का पालन सुनिश्चित किया जा सके।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: डिजास्टर मैनेजमेंट अधिनियम की धारा 12 के तहत, NDMA भोजन, जल, स्वच्छता, और चिकित्सा देखभाल को कवर करने वाले न्यूनतम राहत मानकों की सिफारिश करता है, और ये मानक राहत लागू करने वाले राज्य सरकारों के लिए बाध्यकारी होते हैं।",
+          "verdict": "सही",
+          "reason": "धारा 12 स्पष्ट रूप से NDMA को न्यूनतम राहत मानकों की सिफारिश करने का अधिकार देती है, और ये मानक राज्य सरकारों और राहत कार्यान्वयन के लिए जिम्मेदार SDMA पर बाध्यकारी हो जाते हैं — एक स्पष्ट विभाजन जहाँ NDMA मानक निर्धारित करता है और राज्य उन्हें लागू करते हैं।"
+        },
+        {
+          "statement": "कथन 2: NDMA आपदाओं के दौरान राज्य और जिला स्तर पर राहत वितरण संचालन की सीधे निगरानी और समन्वय करता है ताकि न्यूनतम मानकों का पालन सुनिश्चित किया जा सके।",
+          "verdict": "गलत",
+          "reason": "NDMA की भूमिका मानक और नीति निर्धारित करने की है — वास्तविक राहत वितरण और राज्य/जिला स्तर पर पर्यवेक्षण SDMA और DDMA की जिम्मेदारी है; NDMA सीधे क्षेत्रीय राहत संचालन का प्रबंधन नहीं करता।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) जिसमें दोनों कथनों को सही बताया गया है, एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि NDMA न्यूनतम राहत मानक निर्धारित करता है, वे अक्सर यह भी मान लेते हैं कि NDMA को उनके कार्यान्वयन की निगरानी करनी चाहिए, जिससे मानक निर्धारण और क्षेत्रीय पर्यवेक्षण में भ्रम होता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: डिजास्टर मैनेजमेंट अधिनियम की धारा 12 NDMA को न्यूनतम मानक — भोजन, जल, स्वच्छता, चिकित्सा देखभाल — सिफारिश करने का अधिकार देती है जो राज्यों पर बाध्यकारी हैं। यह सही है।",
+        "कथन 2 का मूल्यांकन करें: NDMA एक नीति निकाय है — यह क्षेत्रीय स्तर पर राहत पर्यवेक्षण नहीं करता। SDMA और DDMA जमीन पर कार्यान्वयन संभालते हैं। कथन 2 NDMA को क्षेत्रीय पर्यवेक्षण का दायित्व गलत तरीके से देता है।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 इस धारणा का उपयोग करता है कि यदि NDMA के पास बाध्यकारी मानक निर्धारित करने का अधिकार है, तो उसे उनके क्षेत्रीय कार्यान्वयन की भी निगरानी करनी चाहिए। भारत की डिजास्टर मैनेजमेंट संरचना में यह एक जानबूझकर किया गया विभाजन है: NDMA मानक निर्धारित करता है (राष्ट्रीय स्तर), SDMA कार्यान्वयन सुनिश्चित करता है (राज्य स्तर), और DDMA वास्तविक राहत वितरण का समन्वय करता है (जिला स्तर)। NDMA की अर्ध-नियामक शक्ति मंत्रालयों से अनुपालन रिपोर्ट मांगने तक सीमित है — राज्य स्तर पर राहत की सीधे निगरानी नहीं।",
+      "final_explanation": "डिजास्टर मैनेजमेंट अधिनियम की धारा 12 NDMA को न्यूनतम राहत मानकों की सिफारिश करने का अधिकार देती है — जिसमें भोजन, पीने का पानी, स्वच्छता, आश्रय, और चिकित्सा देखभाल शामिल हैं। ये मानक राहत कार्यान्वयन के समय राज्य सरकारों के लिए बाध्यकारी होते हैं।\n\n• कथन 1 — सही: NDMA के धारा 12 के मानक आकांक्षात्मक नहीं हैं; राज्य आपदा राहत के दौरान इन न्यूनतम मानकों को कानूनी रूप से पूरा करने के लिए बाध्य हैं। विभाजन स्पष्ट है: NDMA मानक निर्धारित करता है, राज्य लागू करते हैं।\n• कथन 2 — गलत: NDMA क्षेत्रीय स्तर पर राहत वितरण की निगरानी नहीं करता। यह जिम्मेदारी राज्य स्तर पर SDMA और जिला स्तर पर DDMA की है। NDMA शीर्ष नीति निकाय के रूप में रहता है और राहत शिविरों या वितरण केंद्रों में पर्यवेक्षण टीम नहीं भेजता।\n\nमूल्य संवर्धन:\n• द स्पीयर प्रोजेक्ट अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त न्यूनतम मानवीय मानक प्रदान करता है — NDMA के घरेलू मानक इनसे व्यापक रूप से संगत हैं लेकिन भारतीय परिस्थितियों के अनुसार अनुकूलित हैं।\n• SDMA को राहत अनुपालन पर NDMA को रिपोर्ट प्रस्तुत करनी होती है, जिससे अप्रत्यक्ष जवाबदेही बनती है।\n• NDMA का दायरा प्राकृतिक और मानव-निर्मित दोनों आपदाओं को कवर करता है — न्यूनतम राहत मानक दोनों श्रेणियों पर लागू होते हैं।"
+    }
+  },
+  {
+    "uuid": "dbe955fe-0142-430c-8847-d3f4c66877ff",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "NDMA and Early Warning Systems: Mandate and Institutional Gaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDMA early warning coordination versus IMD INCOIS forecast generation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In India's disaster early warning architecture, NDMA is responsible for mandating ________ of early warnings, while the actual generation of meteorological, oceanic, and geological hazard forecasts is performed by technical agencies such as IMD, INCOIS, and GSI that are not under NDMA's administrative control.\n\nWhich of the following correctly fills the blank and characterises NDMA's role?\n\n(a) Generation and dissemination — NDMA controls IMD and INCOIS for this purpose\n(b) Dissemination and coordination — forecast generation lies with technical agencies external to NDMA\n(c) Forecast generation — NDMA is the nodal agency for all hazard-specific scientific predictions\n(d) Operational supervision — the National Executive Committee manages early warning agencies on NDMA's behalf",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because IMD is the most prominent disaster-related technical agency and students commonly associate all early warning functions — generation and dissemination — with IMD under NDMA's direction.",
+      "elimination_logic": [
+        "Identify what NDMA does in the early warning ecosystem: NDMA mandates and coordinates dissemination of early warnings — it does not generate forecasts.",
+        "Identify which agencies generate forecasts: IMD (meteorological), INCOIS (ocean/tsunami), GSI (geological) — these are technical agencies NOT under NDMA.",
+        "The blank requires: NDMA coordinates early warning ________ but does not generate forecasts — 'dissemination' fills the blank; the generating agencies are external to NDMA.",
+        "Option (b) correctly captures that NDMA's role is dissemination/coordination while forecast generation lies with IMD, INCOIS, and GSI."
+      ],
+      "upsc_trap_explanation": "The trap conflates early warning coordination with early warning generation. NDMA's mandate includes ensuring that warnings reach the last mile — through the Common Alerting Protocol (CAP), Cell Broadcasting System, and Integrated Alert System. But the scientific forecasts themselves are generated by IMD (weather), INCOIS (ocean/tsunami), and GSI (geological hazards) — none of which are under NDMA's administrative control.",
+      "final_explanation": "NDMA's early warning mandate is coordination and dissemination — not forecast generation. The technical agencies responsible for generating forecasts operate under their parent ministries, independent of NDMA.\n\n• Option (a) — Incorrect: IMD generates meteorological forecasts but operates under the Ministry of Earth Sciences, not NDMA. NDMA coordinates dissemination of IMD forecasts but does not generate them.\n• Option (b) — Correct: NDMA mandates early warning dissemination and coordinates the multi-hazard alerting system. IMD, INCOIS, and GSI are the technical forecast-generating agencies — all external to NDMA's administrative control.\n• Option (c) — Incorrect: NDMA does not generate any forecasts; attributing forecast generation to NDMA misrepresents its statutory mandate.\n• Option (d) — Incorrect: The National Executive Committee (NEC) coordinates implementation of NDMA's policies — it does not manage early warning systems or technical agencies.\n\nValue Addition:\n• The Common Alerting Protocol (CAP) is NDMA's push for standardised multi-hazard alert formats across agencies.\n• INCOIS (Indian National Centre for Ocean Information Services) issues tsunami and storm surge warnings.\n• Cell Broadcasting System (CBS) allows mass alerts to all mobile phones in a geographic area without requiring registration."
+    },
+    "hi": {
+      "display_text": "भारत की आपदा प्रारंभिक चेतावनी संरचना में, NDMA प्रारंभिक चेतावनियों के ________ का आदेश देने के लिए जिम्मेदार है, जबकि मौसम, महासागर, और भूवैज्ञानिक खतरों के पूर्वानुमान तकनीकी एजेंसाओं जैसे IMD, INCOIS, और GSI द्वारा बनाए जाते हैं, जो NDMA के प्रशासनिक नियंत्रण में नहीं हैं।\n\nनिम्नलिखित में से कौन सा विकल्प रिक्त स्थान को सही भरता है और NDMA की भूमिका को सही रूप में दर्शाता है?\n\n(a) निर्माण और प्रसार — NDMA इस उद्देश्य के लिए IMD और INCOIS को नियंत्रित करता है\n(b) प्रसार और समन्वय — पूर्वानुमान निर्माण NDMA के बाहर की तकनीकी एजेंसियों के अधीन है\n(c) पूर्वानुमान निर्माण — NDMA सभी खतरा-विशिष्ट वैज्ञानिक पूर्वानुमानों के लिए नोडल एजेंसी है\n(d) परिचालन पर्यवेक्षण — राष्ट्रीय कार्यकारी समिति NDMA की ओर से प्रारंभिक चेतावनी एजेंसियों का प्रबंधन करती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि IMD सबसे प्रमुख आपदा-संबंधित तकनीकी एजेंसी है और छात्र आमतौर पर सभी प्रारंभिक चेतावनी कार्यों — निर्माण और प्रसार — को NDMA के निर्देशन में IMD से जोड़ते हैं।",
+      "elimination_logic": [
+        "NDMA प्रारंभिक चेतावनी पारिस्थितिकी तंत्र में क्या करता है, इसे पहचानें: NDMA प्रारंभिक चेतावनियों के प्रसार का आदेश देता है और समन्वय करता है — यह पूर्वानुमान उत्पन्न नहीं करता।",
+        "पहचानें कि कौन सी एजेंसियां पूर्वानुमान उत्पन्न करती हैं: IMD (मौसम विज्ञान), INCOIS (महासागर/सुनामी), GSI (भूवैज्ञानिक) — ये तकनीकी एजेंसियां हैं जो NDMA के अधीन नहीं हैं।",
+        "रिक्त स्थान के लिए आवश्यक है: NDMA प्रारंभिक चेतावनी ________ का समन्वय करता है लेकिन पूर्वानुमान उत्पन्न नहीं करता — 'प्रसार' रिक्त स्थान भरता है; पूर्वानुमान उत्पन्न करने वाली एजेंसियां NDMA के बाहर हैं।",
+        "विकल्प (b) सही रूप से दर्शाता है कि NDMA की भूमिका प्रसार/समन्वय की है जबकि पूर्वानुमान निर्माण IMD, INCOIS, और GSI के अधीन है।"
+      ],
+      "upsc_trap_explanation": "यह भ्रम प्रारंभिक चेतावनी समन्वय को प्रारंभिक चेतावनी निर्माण से मिला देता है। NDMA का दायित्व है कि चेतावनियां अंतिम उपयोगकर्ता तक पहुंचें — इसके लिए Common Alerting Protocol (CAP), Cell Broadcasting System, और Integrated Alert System का उपयोग करता है। लेकिन वैज्ञानिक पूर्वानुमान स्वयं IMD (मौसम), INCOIS (महासागर/सुनामी), और GSI (भूवैज्ञानिक खतरों) द्वारा बनाए जाते हैं — जो NDMA के प्रशासनिक नियंत्रण में नहीं हैं।",
+      "final_explanation": "NDMA का प्रारंभिक चेतावनी दायित्व समन्वय और प्रसार है — पूर्वानुमान निर्माण नहीं। पूर्वानुमान बनाने वाली तकनीकी एजेंसियां अपने संबंधित मंत्रालयों के अधीन स्वतंत्र रूप से कार्य करती हैं, जो NDMA से स्वतंत्र हैं।\n\n• विकल्प (a) — गलत: IMD मौसम पूर्वानुमान बनाता है लेकिन पृथ्वी विज्ञान मंत्रालय के अधीन है, NDMA के अधीन नहीं। NDMA IMD के पूर्वानुमानों के प्रसार का समन्वय करता है लेकिन उन्हें उत्पन्न नहीं करता।\n• विकल्प (b) — सही: NDMA प्रारंभिक चेतावनी के प्रसार का आदेश देता है और बहु-खतरा अलर्टिंग प्रणाली का समन्वय करता है। IMD, INCOIS, और GSI तकनीकी पूर्वानुमान बनाने वाली एजेंसियां हैं — ये सभी NDMA के प्रशासनिक नियंत्रण से बाहर हैं।\n• विकल्प (c) — गलत: NDMA कोई पूर्वानुमान उत्पन्न नहीं करता; पूर्वानुमान निर्माण को NDMA से जोड़ना इसके वैधानिक दायित्व का गलत चित्रण है।\n• विकल्प (d) — गलत: राष्ट्रीय कार्यकारी समिति (NEC) NDMA की नीतियों के कार्यान्वयन का समन्वय करती है — यह प्रारंभिक चेतावनी प्रणालियों या तकनीकी एजेंसियों का प्रबंधन नहीं करती।\n\nमूल्यवर्धन:\n• Common Alerting Protocol (CAP) NDMA का मानकीकृत बहु-खतरा अलर्ट प्रारूपों के लिए प्रयास है।\n• INCOIS (Indian National Centre for Ocean Information Services) सुनामी और तूफान चेतावनियां जारी करता है।\n• Cell Broadcasting System (CBS) बिना पंजीकरण के एक भौगोलिक क्षेत्र के सभी मोबाइल फोन पर जनसामान्य अलर्ट भेजने की सुविधा देता है।"
+    }
+  },
+  {
+    "uuid": "5101d757-96e8-4979-8b6c-97e51b2c8e97",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "District Disaster Management Authority (DDMA): Composition and Powers"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "DDMA Mayor Co-Chairperson urban Municipal Corporation area",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to the composition of the District Disaster Management Authority (DDMA) under the Disaster Management Act, 2005 is correctly matched?\n\n(a) District Collector/District Magistrate — Chairperson of DDMA in all areas including those with Municipal Corporations\n(b) Zila Panchayat President — Co-Chairperson of DDMA in urban areas that have a Municipal Corporation\n(c) Superintendent of Police — Chairperson of DDMA in districts with more than one urban local body\n(d) Chief Executive Officer of Zila Panchayat — Co-Chairperson of DDMA in all district types",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because the Zila Panchayat President does have a formal role in DDMA (as Co-Chairperson in rural areas), and students who recall this involvement without noting the 'urban area with Municipal Corporation' qualifier will select this option.",
+      "elimination_logic": [
+        "Identify the distinctive rule: In areas with a Municipal Corporation, the Mayor (not the Zila Panchayat President) serves as Co-Chairperson of the DDMA.",
+        "Option (a) pairs 'District Collector' with 'Chairperson of DDMA in Municipal Corporation areas' — the DC/DM chairs DDMA in all areas, including Municipal Corporation areas — this pairing is correct.",
+        "Option (b) pairs 'Zila Panchayat President' with 'Co-Chairperson in urban areas with Municipal Corporation' — incorrect; in urban/MC areas it is the Mayor, not the Zila Panchayat President.",
+        "Options (c) and (d) involve fabricated or displaced attributions that do not match DM Act provisions — eliminate both.",
+        "Select option (a) as the correctly matched pair."
+      ],
+      "upsc_trap_explanation": "The Zila Panchayat President–Mayor distinction in DDMA composition is a precision trap. Students know the Zila Panchayat President is involved in DDMA as Co-Chairperson — and they are, but only in areas outside Municipal Corporation jurisdiction. In urban areas with a Municipal Corporation, the Mayor assumes the Co-Chairpersonship. Conflating rural and urban DDMA composition is the intended error.",
+      "final_explanation": "The DM Act, 2005 specifies different Co-Chairpersons for DDMAs based on whether the district has a Municipal Corporation.\n\n• Option (a) — Correctly matched: The District Collector/District Magistrate chairs the DDMA universally — in rural, semi-urban, and urban areas alike. This pairing is accurate.\n• Option (b) — Incorrectly matched: The Zila Panchayat President is Co-Chairperson only in districts without a Municipal Corporation. In areas with a Municipal Corporation, the Mayor assumes Co-Chairpersonship — not the Zila Panchayat President.\n• Option (c) — Incorrectly matched: The SP/DIG does not chair or co-chair the DDMA; they are members but hold no leadership designation.\n• Option (d) — Incorrectly matched: The Chief Executive Officer of the Zila Panchayat has a specific member role, not Chairpersonship.\n\nValue Addition:\n• DDMA is the pivotal implementation authority — it is the first coordinator of ground-level disaster response.\n• DDMA prepares the District DM Plan, which must align with both the State DM Plan and the NDMP.\n• DDMAs are required to conduct regular mock drills and maintain resource inventories — a preparedness mandate under the DM Act."
+    },
+    "hi": {
+      "display_text": "आपदा प्रबंधन अधिनियम, 2005 के तहत जिला आपदा प्रबंधन प्राधिकरण (DDMA) की संरचना से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) जिला कलेक्टर/जिला मजिस्ट्रेट — नगर निगम वाले क्षेत्रों सहित सभी क्षेत्रों में DDMA के अध्यक्ष\n(b) जिला पंचायत अध्यक्ष — नगर निगम वाले शहरी क्षेत्रों में DDMA के सह-अध्यक्ष\n(c) पुलिस अधीक्षक — एक से अधिक शहरी स्थानीय निकाय वाले जिलों में DDMA के अध्यक्ष\n(d) जिला पंचायत के मुख्य कार्यकारी अधिकारी — सभी प्रकार के जिलों में DDMA के सह-अध्यक्ष",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि जिला पंचायत अध्यक्ष का DDMA में औपचारिक भूमिका है (ग्रामीण क्षेत्रों में सह-अध्यक्ष के रूप में), और जो छात्र इस भागीदारी को याद करते हैं लेकिन 'नगर निगम वाले शहरी क्षेत्र' की शर्त को नहीं देखते, वे इस विकल्प को चुनेंगे।",
+      "elimination_logic": [
+        "विशिष्ट नियम की पहचान करें: नगर निगम वाले क्षेत्रों में, मेयर (जिला पंचायत अध्यक्ष नहीं) DDMA के सह-अध्यक्ष होते हैं।",
+        "विकल्प (a) में 'जिला कलेक्टर' को 'नगर निगम क्षेत्रों में DDMA के अध्यक्ष' के साथ जोड़ा गया है — DC/DM सभी क्षेत्रों में, नगर निगम क्षेत्रों सहित, DDMA के अध्यक्ष होते हैं — यह जोड़ी सही है।",
+        "विकल्प (b) में 'जिला पंचायत अध्यक्ष' को 'नगर निगम वाले शहरी क्षेत्रों में सह-अध्यक्ष' के साथ जोड़ा गया है — गलत; शहरी/नगर निगम क्षेत्रों में मेयर सह-अध्यक्ष होते हैं, जिला पंचायत अध्यक्ष नहीं।",
+        "विकल्प (c) और (d) में DM अधिनियम के प्रावधानों से मेल न खाने वाले काल्पनिक या विस्थापित पदनाम हैं — दोनों को हटा दें।",
+        "सही जोड़ी के रूप में विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "DDMA संरचना में जिला पंचायत अध्यक्ष और मेयर का भेद एक सटीकता जाल है। छात्र जानते हैं कि जिला पंचायत अध्यक्ष DDMA में सह-अध्यक्ष होते हैं — और वे हैं, लेकिन केवल उन क्षेत्रों में जो नगर निगम के अधिकार क्षेत्र से बाहर हैं। नगर निगम वाले शहरी क्षेत्रों में, मेयर सह-अध्यक्ष होते हैं। ग्रामीण और शहरी DDMA संरचना को मिलाना ही इच्छित त्रुटि है।",
+      "final_explanation": "DM अधिनियम, 2005 में DDMAs के लिए सह-अध्यक्षों को इस आधार पर अलग-अलग निर्दिष्ट किया गया है कि जिले में नगर निगम है या नहीं।\n\n• विकल्प (a) — सही जोड़ी: जिला कलेक्टर/जिला मजिस्ट्रेट सभी क्षेत्रों में, ग्रामीण, अर्ध-शहरी और शहरी क्षेत्रों सहित, DDMA के अध्यक्ष होते हैं। यह जोड़ी सटीक है।\n• विकल्प (b) — गलत जोड़ी: जिला पंचायत अध्यक्ष केवल उन जिलों में सह-अध्यक्ष होते हैं जहाँ नगर निगम नहीं है। नगर निगम वाले क्षेत्रों में मेयर सह-अध्यक्ष होते हैं, जिला पंचायत अध्यक्ष नहीं।\n• विकल्प (c) — गलत जोड़ी: SP/DIG DDMA के अध्यक्ष या सह-अध्यक्ष नहीं होते; वे सदस्य होते हैं लेकिन नेतृत्व पद नहीं रखते।\n• विकल्प (d) — गलत जोड़ी: जिला पंचायत के मुख्य कार्यकारी अधिकारी की सदस्यता होती है, अध्यक्षता नहीं।\n\nमूल्य संवर्धन:\n• DDMA प्राथमिक कार्यान्वयन प्राधिकरण है — यह क्षेत्रीय स्तर पर आपदा प्रतिक्रिया का पहला समन्वयक है।\n• DDMA जिला आपदा प्रबंधन योजना तैयार करता है, जो राज्य आपदा प्रबंधन योजना और NDMP के अनुरूप होनी चाहिए।\n• DDMAs नियमित मॉक ड्रिल आयोजित करने और संसाधन सूची बनाए रखने के लिए बाध्य हैं — यह DM अधिनियम के तहत तैयारी का अनिवार्य प्रावधान है।"
+    }
+  },
+  {
+    "uuid": "25302196-bfa4-4bb5-8f47-1cf6d8340d6a",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "National Executive Committee (NEC): Role and Relationship with NDMA"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NEC headed by Union Home Secretary NDMA operational arm",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the Disaster Management Act, 2005, the National Executive Committee (NEC), which serves as the operational implementation arm of NDMA at the Central Government level, is headed by which of the following officials?\n\n(a) Cabinet Secretary of India\n(b) Union Home Secretary\n(c) Principal Secretary to the Prime Minister\n(d) Secretary, Ministry of Defence",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because Cabinet Secretary is a recognisable apex bureaucratic figure, and students who know NCMC is chaired by the Cabinet Secretary may confuse NCMC with NEC.",
+      "elimination_logic": [
+        "Recall the distinction: NCMC is chaired by the Cabinet Secretary; NEC is a different body.",
+        "NEC (National Executive Committee) is headed by the Union Home Secretary — this is specified under the DM Act.",
+        "Eliminate (a): Cabinet Secretary heads NCMC, not NEC.",
+        "Eliminate (c) and (d): Principal Secretary (PMO) and Defence Secretary do not head NEC — these are entity-swap distractors."
+      ],
+      "upsc_trap_explanation": "The NCMC-NEC confusion is a well-designed UPSC trap. Both are coordination bodies at the central level, and both involve senior officials. Students who know the Cabinet Secretary heads NCMC often incorrectly map this to NEC. The DM Act specifies that the Union Home Secretary heads NEC — making NEC the operational-level implementation arm distinct from NCMC's inter-ministerial crisis coordination role.",
+      "final_explanation": "The National Executive Committee (NEC) is the operational implementation body under the DM Act, responsible for coordinating the execution of NDMA's policies at the Central Government level.\n\n• Option (a) — Incorrect: The Cabinet Secretary heads the National Crisis Management Committee (NCMC) — not NEC. NCMC is an executive, non-statutory body; NEC is statutory under the DM Act.\n• Option (b) — Correct: The Union Home Secretary heads NEC. NEC's members include Secretaries from Agriculture, Defence, Finance, Health, Environment, Space, Telecom, Water Resources, and other key Ministries, plus the Chief of Integrated Defence Staff.\n• Option (c) — Incorrect: The Principal Secretary to the PM chairs the PMO's policy coordination — this role has no defined statutory position in NEC.\n• Option (d) — Incorrect: The Defence Secretary is a member of NEC but does not head it.\n\nValue Addition:\n• NEC prepares the National Plan (operational-level) and submits it to NDMA for approval — the direction of approval is NEC → NDMA.\n• NEC is the 'executive arm' of NDMA at the Central Government level: NDMA makes policy, NEC implements.\n• NCMC (Cabinet Secretary-headed) can be convened without NDMA involvement — it is an executive, non-statutory coordination mechanism."
+    },
+    "hi": {
+      "display_text": "आपदा प्रबंधन अधिनियम, 2005 के तहत, राष्ट्रीय कार्यकारी समिति (NEC), जो केंद्रीय सरकार स्तर पर NDMA की कार्यान्वयन शाखा के रूप में कार्य करती है, की अध्यक्षता निम्नलिखित में से किस अधिकारी द्वारा की जाती है?\n\n(a) भारत के कैबिनेट सचिव\n(b) केंद्रीय गृह सचिव\n(c) प्रधानमंत्री के प्रधान सचिव\n(d) रक्षा मंत्रालय के सचिव",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि कैबिनेट सचिव एक पहचाने जाने वाले शीर्षतम नौकरशाही पदाधिकारी हैं, और जो छात्र जानते हैं कि NCMC की अध्यक्षता कैबिनेट सचिव करते हैं वे NCMC को NEC से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "अंतर याद करें: NCMC की अध्यक्षता कैबिनेट सचिव करते हैं; NEC एक अलग निकाय है।",
+        "NEC (राष्ट्रीय कार्यकारी समिति) की अध्यक्षता केंद्रीय गृह सचिव करते हैं — यह DM अधिनियम के तहत निर्दिष्ट है।",
+        "विकल्प (a) को हटाएं: कैबिनेट सचिव NCMC के प्रमुख हैं, NEC के नहीं।",
+        "विकल्प (c) और (d) को हटाएं: प्रधान सचिव (PMO) और रक्षा सचिव NEC के प्रमुख नहीं हैं — ये पहचान बदलने वाले भ्रमित करने वाले विकल्प हैं।"
+      ],
+      "upsc_trap_explanation": "NCMC-NEC भ्रम UPSC द्वारा अच्छी तरह से डिजाइन किया गया जाल है। दोनों केंद्रीय स्तर पर समन्वय निकाय हैं, और दोनों में वरिष्ठ अधिकारी शामिल हैं। जो छात्र जानते हैं कि कैबिनेट सचिव NCMC के प्रमुख हैं, वे अक्सर इसे NEC से गलत जोड़ देते हैं। DM अधिनियम स्पष्ट करता है कि NEC की अध्यक्षता केंद्रीय गृह सचिव करते हैं — जिससे NEC NCMC के अंतर-मंत्रालयीय संकट समन्वय भूमिका से अलग, कार्यान्वयन स्तर की शाखा बन जाती है।",
+      "final_explanation": "राष्ट्रीय कार्यकारी समिति (NEC) DM अधिनियम के तहत कार्यान्वयन निकाय है, जो केंद्रीय सरकार स्तर पर NDMA की नीतियों के क्रियान्वयन का समन्वय करती है।\n\n• विकल्प (a) — गलत: कैबिनेट सचिव राष्ट्रीय संकट प्रबंधन समिति (NCMC) के प्रमुख हैं — NEC के नहीं। NCMC एक कार्यकारी, गैर-वैधानिक निकाय है; NEC DM अधिनियम के तहत वैधानिक है।\n• विकल्प (b) — सही: केंद्रीय गृह सचिव NEC के प्रमुख हैं। NEC के सदस्य कृषि, रक्षा, वित्त, स्वास्थ्य, पर्यावरण, अंतरिक्ष, दूरसंचार, जल संसाधन और अन्य प्रमुख मंत्रालयों के सचिव होते हैं, साथ ही एकीकृत रक्षा स्टाफ के प्रमुख भी।\n• विकल्प (c) — गलत: प्रधानमंत्री के प्रधान सचिव PMO की नीति समन्वय करते हैं — इस भूमिका का NEC में कोई वैधानिक पद नहीं है।\n• विकल्प (d) — गलत: रक्षा सचिव NEC के सदस्य हैं लेकिन इसके प्रमुख नहीं हैं।\n\nमूल्यवर्धन:\n• NEC राष्ट्रीय योजना (कार्यकारी स्तर) तैयार करता है और अनुमोदन के लिए NDMA को प्रस्तुत करता है — अनुमोदन की दिशा NEC → NDMA होती है।\n• NEC केंद्रीय सरकार स्तर पर NDMA की 'कार्यकारी शाखा' है: NDMA नीति बनाता है, NEC लागू करता है।\n• NCMC (कैबिनेट सचिव-प्रमुख) NDMA की भागीदारी के बिना भी बुलाया जा सकता है — यह एक कार्यकारी, गैर-वैधानिक समन्वय तंत्र है।"
+    }
+  },
+  {
+    "uuid": "ba509514-2bfb-4a63-bf68-e3a6fd12f588",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Disaster Classification: Natural vs. Man-made and NDMA's Ambit"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "DM Act scope COVID-19 notified disaster armed conflict exclusion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the scope of the Disaster Management Act, 2005 and NDMA's mandate:\n\n1. The Disaster Management Act, 2005 provides an exhaustive definition of 'disaster,' restricting NDMA's mandate exclusively to natural calamities.\n2. COVID-19 was classified as a 'notified disaster' under the Disaster Management Act, enabling NDMA to exercise its full statutory powers for pandemic management.\n3. Disasters arising from armed conflict situations fall within NDMA's mandate under the DM Act and are managed alongside natural disasters.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Disaster Management Act, 2005 provides an exhaustive definition of 'disaster,' restricting NDMA's mandate exclusively to natural calamities.",
+          "verdict": "Incorrect",
+          "reason": "The DM Act does not define 'disaster' exhaustively and explicitly; NDMA's mandate covers both natural and man-made disasters — the Act's scope is deliberately broad."
+        },
+        {
+          "statement": "COVID-19 was classified as a 'notified disaster' under the Disaster Management Act, enabling NDMA to exercise its full statutory powers for pandemic management.",
+          "verdict": "Correct",
+          "reason": "COVID-19 was formally declared a notified disaster under the DM Act in 2020, which activated NDMA's powers and enabled central coordination of the pandemic response."
+        },
+        {
+          "statement": "Disasters arising from armed conflict situations fall within NDMA's mandate under the DM Act and are managed alongside natural disasters.",
+          "verdict": "Incorrect",
+          "reason": "Disasters arising from armed conflict are explicitly outside NDMA's purview; such situations are handled under the Armed Forces Acts and related national security legislation — not the DM Act."
+        }
+      ],
+      "strong_distractor": "b — Option (b) citing Statement 2 only as incorrect is a strong distractor because students uncertain about COVID-19's formal classification status may doubt Statement 2, when in fact Statement 2 is the only correct statement in the set.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The DM Act covers both natural AND man-made disasters — the claim of 'exhaustive definition restricting to natural calamities' is doubly incorrect. Mark NOT correct.",
+        "Evaluate Statement 2: COVID-19 was formally notified as a disaster under the DM Act in 2020 — this is factually accurate. Mark correct (not the answer to 'which is NOT correct').",
+        "Evaluate Statement 3: Armed conflict disasters are outside the DM Act's ambit by design — Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 1 uses 'exhaustive definition' and 'exclusively natural calamities' — two simultaneous errors. Students who know the DM Act has a broad scope may still accept the first part ('exhaustive definition') as partially true if they confuse 'definition' with 'scope.' Statement 3 exploits the assumption that a comprehensive disaster law would include all disaster types — the exclusion of armed conflict is a deliberate jurisdictional boundary that students rarely recall precisely.",
+      "final_explanation": "The DM Act, 2005 deliberately avoids an exhaustive definition of 'disaster' to maintain flexibility and cover both natural and man-made events.\n\n• Statement 1 — NOT correct: The Act does not exhaustively define 'disaster' and is not limited to natural calamities. Industrial accidents, epidemics, and other man-made events fall within its scope — the COVID-19 notification confirmed this.\n• Statement 2 — Correct: COVID-19 was declared a 'notified disaster' under the DM Act in March 2020, activating NDMA's full statutory powers for pandemic management — a landmark expansion of the Act's applied scope.\n• Statement 3 — NOT correct: The DM Act explicitly excludes disasters arising from armed conflict. Such situations are governed by the Armed Forces Acts, the National Security Act, and related legislation — not by NDMA.\n\nStatements 1 and 3 are NOT correct → option (c).\n\nValue Addition:\n• Industrial disasters like Bhopal-type events fall under both the Environment Protection Act, 1986 AND the DM Act — creating dual jurisdictional applicability.\n• COVID-19's notification under DM Act enabled NDMA to issue directions to states on lockdown, movement restrictions, and relief measures.\n• The deliberate non-exhaustive scope of 'disaster' under the DM Act is a legislative design choice to future-proof the law against new hazard types."
+    },
+    "hi": {
+      "display_text": "Disaster Management Act, 2005 और NDMA के दायरे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Disaster Management Act, 2005 'आपदा' की एक व्यापक परिभाषा प्रदान करता है, जो NDMA के दायित्व को केवल प्राकृतिक आपदाओं तक सीमित करता है।\n2. COVID-19 को Disaster Management Act के तहत 'सूचित आपदा' के रूप में वर्गीकृत किया गया था, जिससे NDMA को महामारी प्रबंधन के लिए अपने पूर्ण वैधानिक अधिकारों का प्रयोग करने में सक्षम बनाया गया।\n3. सशस्त्र संघर्ष की स्थितियों से उत्पन्न आपदाएँ DM अधिनियम के तहत NDMA के दायित्व में आती हैं और प्राकृतिक आपदाओं के साथ प्रबंधित की जाती हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Disaster Management Act, 2005 'आपदा' की एक व्यापक परिभाषा प्रदान करता है, जो NDMA के दायित्व को केवल प्राकृतिक आपदाओं तक सीमित करता है।",
+          "verdict": "गलत",
+          "reason": "DM अधिनियम 'आपदा' को व्यापक और स्पष्ट रूप से परिभाषित नहीं करता; NDMA का दायित्व प्राकृतिक और मानव-निर्मित दोनों आपदाओं को कवर करता है — अधिनियम का दायरा जानबूझकर व्यापक है।"
+        },
+        {
+          "statement": "COVID-19 को Disaster Management Act के तहत 'सूचित आपदा' के रूप में वर्गीकृत किया गया था, जिससे NDMA को महामारी प्रबंधन के लिए अपने पूर्ण वैधानिक अधिकारों का प्रयोग करने में सक्षम बनाया गया।",
+          "verdict": "सही",
+          "reason": "COVID-19 को 2020 में DM अधिनियम के तहत औपचारिक रूप से सूचित आपदा घोषित किया गया था, जिसने NDMA के अधिकारों को सक्रिय किया और महामारी प्रतिक्रिया के लिए केंद्रीय समन्वय सक्षम किया।"
+        },
+        {
+          "statement": "सशस्त्र संघर्ष की स्थितियों से उत्पन्न आपदाएँ DM अधिनियम के तहत NDMA के दायित्व में आती हैं और प्राकृतिक आपदाओं के साथ प्रबंधित की जाती हैं।",
+          "verdict": "गलत",
+          "reason": "सशस्त्र संघर्ष से उत्पन्न आपदाएँ स्पष्ट रूप से NDMA के अधिकार क्षेत्र से बाहर हैं; ऐसी स्थितियाँ सशस्त्र बल अधिनियमों और संबंधित राष्ट्रीय सुरक्षा कानूनों के तहत प्रबंधित होती हैं — DM अधिनियम के तहत नहीं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) जो केवल कथन 2 को गलत बताता है, एक मजबूत भ्रम पैदा करने वाला है क्योंकि COVID-19 की औपचारिक वर्गीकरण स्थिति के बारे में अनिश्चित छात्र कथन 2 पर संदेह कर सकते हैं, जबकि वास्तव में कथन 2 सेट में एकमात्र सही कथन है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: DM अधिनियम प्राकृतिक और मानव-निर्मित दोनों आपदाओं को कवर करता है — 'केवल प्राकृतिक आपदाओं तक सीमित' की धारणा दोहरी रूप से गलत है। इसे सही नहीं चिह्नित करें।",
+        "कथन 2 का मूल्यांकन करें: COVID-19 को 2020 में DM अधिनियम के तहत औपचारिक रूप से सूचित आपदा घोषित किया गया था — यह तथ्यात्मक रूप से सही है। इसे सही चिह्नित करें (यह 'सही नहीं है' का उत्तर नहीं है)।",
+        "कथन 3 का मूल्यांकन करें: सशस्त्र संघर्ष से उत्पन्न आपदाएँ DM अधिनियम के दायरे से बाहर हैं — कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में 'व्यापक परिभाषा' और 'केवल प्राकृतिक आपदाएँ' दो एक साथ गलतियाँ हैं। जो छात्र DM अधिनियम के व्यापक दायरे को जानते हैं, वे 'परिभाषा' को 'दायरे' से भ्रमित कर पहले भाग को आंशिक रूप से सही मान सकते हैं। कथन 3 इस धारणा का फायदा उठाता है कि एक व्यापक आपदा कानून में सभी प्रकार की आपदाएँ शामिल होंगी — सशस्त्र संघर्ष का बहिष्कार एक जानबूझकर क्षेत्राधिकार सीमा है जिसे छात्र ठीक से याद नहीं रखते।",
+      "final_explanation": "DM अधिनियम, 2005 'आपदा' की व्यापक परिभाषा देने से जानबूझकर बचता है ताकि लचीलापन बना रहे और प्राकृतिक तथा मानव-निर्मित दोनों घटनाओं को कवर किया जा सके।\n\n• कथन 1 — सही नहीं: अधिनियम 'आपदा' को व्यापक रूप से परिभाषित नहीं करता और केवल प्राकृतिक आपदाओं तक सीमित नहीं है। औद्योगिक दुर्घटनाएँ, महामारी और अन्य मानव-निर्मित घटनाएँ इसके दायरे में आती हैं — COVID-19 की सूचना ने इसे पुष्टि की।\n• कथन 2 — सही: COVID-19 को मार्च 2020 में DM अधिनियम के तहत 'सूचित आपदा' घोषित किया गया, जिससे NDMA को महामारी प्रबंधन के लिए पूर्ण वैधानिक अधिकार प्राप्त हुए — अधिनियम के लागू दायरे का एक महत्वपूर्ण विस्तार।\n• कथन 3 — सही नहीं: DM अधिनियम स्पष्ट रूप से सशस्त्र संघर्ष से उत्पन्न आपदाओं को बाहर करता है। ऐसी स्थितियाँ सशस्त्र बल अधिनियम, राष्ट्रीय सुरक्षा अधिनियम और संबंधित कानूनों के तहत आती हैं — NDMA के तहत नहीं।\n\nकथन 1 और 3 सही नहीं हैं → विकल्प (c)।\n\nमूल्य संवर्धन:\n• भोपाल जैसी औद्योगिक आपदाएँ पर्यावरण संरक्षण अधिनियम, 1986 और DM अधिनियम दोनों के तहत आती हैं — जिससे दोहरी क्षेत्राधिकारिता बनती है।\n• DM अधिनियम के तहत COVID-19 की सूचना ने NDMA को राज्यों को लॉकडाउन, आवागमन प्रतिबंध और राहत उपायों के निर्देश जारी करने में सक्षम बनाया।\n• DM अधिनियम के तहत 'आपदा' की जानबूझकर गैर-व्यापक परिभाषा कानून को नए खतरे के प्रकारों के लिए भविष्य-प्रूफ बनाती है।"
+    }
+  },
+  {
+    "uuid": "fbd164ed-25fa-4c01-8e0b-dce0c1410120",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Disaster Risk Reduction (DRR) Mainstreaming Across Ministries"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Section 37 DRR mainstreaming ministry obligation NDMA guidance role",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the mainstreaming of Disaster Risk Reduction (DRR) under the Disaster Management Act, 2005, consider the following statements:\n\n1. Section 37 of the Disaster Management Act places the responsibility of preparing sectoral disaster management plans on each Ministry, not on NDMA.\n2. NDMA alone is responsible for mainstreaming Disaster Risk Reduction across all Central Government Ministries and ensuring its integration into their development programmes.\n3. The School Safety Programme and Hospital Safety initiatives are examples of NDMA-led sectoral mainstreaming of disaster risk reduction.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Section 37 of the Disaster Management Act places the responsibility of preparing sectoral disaster management plans on each Ministry, not on NDMA.",
+          "verdict": "Correct",
+          "reason": "Section 37 explicitly mandates every Central Ministry and Department to prepare its own DM plan consistent with the NDMP — NDMA provides guidance and approves plans, but the preparation responsibility lies with each Ministry."
+        },
+        {
+          "statement": "NDMA alone is responsible for mainstreaming Disaster Risk Reduction across all Central Government Ministries and ensuring its integration into their development programmes.",
+          "verdict": "Incorrect",
+          "reason": "DRR mainstreaming is a shared responsibility — each Ministry is obligated to integrate DRR into its own budgets and programmes; NDMA guides but does not bear sole responsibility for mainstreaming."
+        },
+        {
+          "statement": "The School Safety Programme and Hospital Safety initiatives are examples of NDMA-led sectoral mainstreaming of disaster risk reduction.",
+          "verdict": "Correct",
+          "reason": "School Safety and Hospital Safety programmes are concrete NDMA-led initiatives that embed disaster preparedness into the education and health sectors — textbook examples of DRR mainstreaming."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three statements are correct is the strong distractor because Statement 2 sounds authoritative ('NDMA alone is responsible') and students who know NDMA leads DRR mainstreaming may not notice the 'alone' qualifier that makes it incorrect.",
+      "elimination_logic": [
+        "Statement 1: Section 37's mandate places DM plan preparation on each Ministry — not NDMA — mark Correct.",
+        "Statement 2: 'NDMA alone' is the scope-extension trap — DRR mainstreaming is a shared obligation across Ministries; NDMA guides but each Ministry is responsible for its own domain — mark Incorrect.",
+        "Statement 3: School Safety and Hospital Safety programmes are documented NDMA sectoral initiatives — mark Correct.",
+        "Statements 1 and 3 correct → option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2's 'alone' qualifier is the scope-extension trap. NDMA does play a central role in DRR mainstreaming — it issues guidelines, coordinates, and tracks progress. But 'alone' makes the statement false because Section 37 explicitly distributes the mainstreaming responsibility to each Ministry. This 'NDMA alone vs. shared responsibility' distinction is a recurring structural feature of India's DM Act that UPSC frequently tests.",
+      "final_explanation": "DRR mainstreaming under the DM Act is a distributed responsibility — NDMA guides, but each Ministry owns its sectoral integration.\n\n• Statement 1 — Correct: Section 37 mandates every Central Ministry and Department to prepare a DM plan aligned with the NDMP. The obligation to prepare lies with the Ministry; NDMA's role is to issue guidelines and receive/approve the plans.\n• Statement 2 — Incorrect: 'NDMA alone' overstates NDMA's role. DRR mainstreaming is a whole-of-government obligation. Each Ministry must integrate DRR into its own programmes, budgets, and outcome frameworks — NDMA provides the policy architecture, not sole implementation.\n• Statement 3 — Correct: School Safety Programme (working with Ministry of Education) and Hospital Safety Programme (Ministry of Health) are flagship NDMA-led mainstreaming initiatives ensuring that critical social infrastructure is disaster-resilient.\n\nValue Addition:\n• DRR integration is now reflected in outcome budgets of line Ministries, moving beyond paper plans to financial commitment.\n• The NDMA-led Aapda Mitra scheme for community volunteer training is another mainstreaming example at the community level.\n• Hospital Safety gained importance after the 2001 Gujarat earthquake, when several hospitals collapsed, leaving disaster survivors without medical care."
+    },
+    "hi": {
+      "display_text": "आपदा प्रबंधन अधिनियम, 2005 के तहत आपदा जोखिम न्यूनीकरण (DRR) के मुख्यधारा में समावेशन के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. आपदा प्रबंधन अधिनियम की धारा 37 प्रत्येक मंत्रालय पर क्षेत्रीय आपदा प्रबंधन योजनाएँ तैयार करने की जिम्मेदारी देती है, न कि NDMA पर।\n2. सभी केंद्रीय सरकारी मंत्रालयों में आपदा जोखिम न्यूनीकरण के मुख्यधारा में समावेशन और उनके विकास कार्यक्रमों में इसके एकीकरण के लिए केवल NDMA जिम्मेदार है।\n3. स्कूल सुरक्षा कार्यक्रम और अस्पताल सुरक्षा पहल NDMA-नेतृत्व वाले क्षेत्रीय आपदा जोखिम न्यूनीकरण के मुख्यधारा में समावेशन के उदाहरण हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Section 37 of the Disaster Management Act places the responsibility of preparing sectoral disaster management plans on each Ministry, not on NDMA.",
+          "verdict": "सही",
+          "reason": "आपदा प्रबंधन अधिनियम की धारा 37 स्पष्ट रूप से प्रत्येक केंद्रीय मंत्रालय और विभाग को अपना स्वयं का आपदा प्रबंधन योजना तैयार करने का दायित्व देती है जो NDMP के अनुरूप हो — NDMA मार्गदर्शन प्रदान करता है और योजनाओं को अनुमोदित करता है, लेकिन तैयारी की जिम्मेदारी प्रत्येक मंत्रालय की होती है।"
+        },
+        {
+          "statement": "NDMA alone is responsible for mainstreaming Disaster Risk Reduction across all Central Government Ministries and ensuring its integration into their development programmes.",
+          "verdict": "गलत",
+          "reason": "DRR का मुख्यधारा में समावेशन एक साझा जिम्मेदारी है — प्रत्येक मंत्रालय अपने बजट और कार्यक्रमों में DRR को समाहित करने का दायित्व रखता है; NDMA मार्गदर्शन करता है लेकिन मुख्यधारा में समावेशन की एकमात्र जिम्मेदारी नहीं है।"
+        },
+        {
+          "statement": "The School Safety Programme and Hospital Safety initiatives are examples of NDMA-led sectoral mainstreaming of disaster risk reduction.",
+          "verdict": "सही",
+          "reason": "स्कूल सुरक्षा और अस्पताल सुरक्षा कार्यक्रम ठोस NDMA-नेतृत्व वाले पहल हैं जो शिक्षा और स्वास्थ्य क्षेत्रों में आपदा तैयारी को समाहित करते हैं — DRR मुख्यधारा में समावेशन के आदर्श उदाहरण।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें कहा गया है कि तीनों कथन सही हैं, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 2 में 'केवल NDMA जिम्मेदार है' का दावा अधिकारपूर्ण लगता है और जो छात्र जानते हैं कि NDMA DRR मुख्यधारा में समावेशन का नेतृत्व करता है, वे 'केवल' शब्द पर ध्यान नहीं देते जो इसे गलत बनाता है।",
+      "elimination_logic": [
+        "कथन 1: धारा 37 की जिम्मेदारी प्रत्येक मंत्रालय को DM योजना तैयार करने की देती है — NDMA को नहीं — इसे सही चिह्नित करें।",
+        "कथन 2: 'केवल NDMA' एक सीमा-विस्तार जाल है — DRR मुख्यधारा में समावेशन मंत्रालयों के बीच साझा दायित्व है; NDMA मार्गदर्शन करता है लेकिन प्रत्येक मंत्रालय अपने क्षेत्र के लिए जिम्मेदार है — इसे गलत चिह्नित करें।",
+        "कथन 3: स्कूल सुरक्षा और अस्पताल सुरक्षा कार्यक्रम NDMA के क्षेत्रीय पहल हैं — इसे सही चिह्नित करें।",
+        "कथन 1 और 3 सही → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'केवल' शब्द सीमा-विस्तार जाल है। NDMA DRR मुख्यधारा में समावेशन में केंद्रीय भूमिका निभाता है — यह दिशानिर्देश जारी करता है, समन्वय करता है और प्रगति को ट्रैक करता है। लेकिन 'केवल' इसे गलत बनाता है क्योंकि धारा 37 स्पष्ट रूप से मुख्यधारा में समावेशन की जिम्मेदारी प्रत्येक मंत्रालय को देती है। यह 'केवल NDMA बनाम साझा जिम्मेदारी' का अंतर भारत के DM अधिनियम की एक पुनरावर्ती संरचनात्मक विशेषता है जिसे UPSC अक्सर परखता है।",
+      "final_explanation": "DM अधिनियम के तहत DRR मुख्यधारा में समावेशन एक वितरित जिम्मेदारी है — NDMA मार्गदर्शन करता है, लेकिन प्रत्येक मंत्रालय अपने क्षेत्रीय समावेशन का स्वामी है।\n\n• कथन 1 — सही: धारा 37 प्रत्येक केंद्रीय मंत्रालय और विभाग को NDMP के अनुरूप DM योजना तैयार करने का दायित्व देती है। तैयारी की जिम्मेदारी मंत्रालय की है; NDMA का कार्य दिशानिर्देश जारी करना और योजनाओं को प्राप्त/स्वीकृत करना है।\n• कथन 2 — गलत: 'केवल NDMA' NDMA की भूमिका को अधिक आंकता है। DRR मुख्यधारा में समावेशन सरकार की समग्र जिम्मेदारी है। प्रत्येक मंत्रालय को अपने कार्यक्रमों, बजटों और परिणाम ढांचे में DRR को समाहित करना होता है — NDMA नीति संरचना प्रदान करता है, अकेला क्रियान्वयन नहीं।\n• कथन 3 — सही: स्कूल सुरक्षा कार्यक्रम (शिक्षा मंत्रालय के साथ) और अस्पताल सुरक्षा कार्यक्रम (स्वास्थ्य मंत्रालय) प्रमुख NDMA-नेतृत्व वाले मुख्यधारा में समावेशन पहल हैं जो सुनिश्चित करती हैं कि महत्वपूर्ण सामाजिक अवसंरचना आपदा-प्रतिरोधी हो।\n\nमूल्य संवर्धन:\n• DRR समावेशन अब लाइन मंत्रालयों के परिणाम बजटों में परिलक्षित होता है, जो केवल कागजी योजनाओं से आगे बढ़कर वित्तीय प्रतिबद्धता बन गया है।\n• NDMA-नेतृत्व वाला आपदा मित्र योजना सामुदायिक स्तर पर स्वयंसेवक प्रशिक्षण का एक और मुख्यधारा में समावेशन उदाहरण है।\n• अस्पताल सुरक्षा को 2001 के गुजरात भूकंप के बाद महत्व मिला, जब कई अस्पताल ढह गए और आपदा जीवित बचे बिना चिकित्सा देखभाल के रह गए।"
+    }
+  },
+  {
+    "uuid": "cc5b8a22-0695-4fd0-897d-ce4959b2f62c",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Community-Based Disaster Risk Management (CBDRM) and NDMA Guidelines"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Aapda Mitra NDMA operationalized SDRF funded finance-implementation split",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about community-based disaster risk management and NDMA's capacity-building initiatives:\n\nStatement 1: The Aapda Mitra scheme, which trains community volunteers in disaster preparedness and first response, is operationalized by NDMA but its funding comes under State Disaster Response Fund (SDRF) norms rather than NDMA's direct budget.\n\nStatement 2: NDMA guidelines on community-based disaster risk management identify Panchayati Raj Institutions and Urban Local Bodies as second-line responders, with district-level administration being the designated first responder.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: The Aapda Mitra scheme, which trains community volunteers in disaster preparedness and first response, is operationalized by NDMA but its funding comes under State Disaster Response Fund (SDRF) norms rather than NDMA's direct budget.",
+          "verdict": "Correct",
+          "reason": "Aapda Mitra is a documented NDMA-led capacity-building scheme; its funding mechanism is routed through SDRF norms — creating a finance-implementation split where NDMA operationalizes the programme but states access SDRF for financial support."
+        },
+        {
+          "statement": "Statement 2: NDMA guidelines on community-based disaster risk management identify Panchayati Raj Institutions and Urban Local Bodies as second-line responders, with district-level administration being the designated first responder.",
+          "verdict": "Incorrect",
+          "reason": "NDMA guidelines specifically emphasise PRIs and ULBs as first responders — not second-line responders. Their proximity to communities makes them the frontline; the district administration coordinates and supports, but the PRI/ULB-level structure is the designated first-response tier in CBDRM guidelines."
+        }
+      ],
+      "strong_distractor": "a — Option (a) claiming both statements are correct is the strong distractor because the role of district administration in disaster response is so prominent that students assume it, not PRIs, must be the 'first responder' — making Statement 2's error non-obvious.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Aapda Mitra as NDMA-operationalized and SDRF-funded is a documented finance-implementation split — Correct.",
+        "Evaluate Statement 2: NDMA guidelines explicitly position PRIs and ULBs as first responders; calling them 'second-line' contradicts the CBDRM guidelines — Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2's 'second-line' designation is the entity-role swap trap. Students who know district administration is the Chairperson of DDMA and the most visible administrative actor in disaster response assume district administration must be the 'first responder.' NDMA's CBDRM guidelines take a community-centric view: PRIs and ULBs, because of their immediate physical presence at the village/ward level, are designated as first responders — they are the first to observe, alert, and act.",
+      "final_explanation": "NDMA's Community-Based DRR approach reflects a grassroots-first philosophy — the community level, through PRIs and ULBs, is positioned as the frontline of disaster response.\n\n• Statement 1 — Correct: Aapda Mitra, which trains 'community volunteers' (Aapda Mitras) in 30 disaster-prone districts, is operationalized by NDMA. The funding mechanism is routed through SDRF norms — states draw on SDRF to support the programme financially, while NDMA provides the operational and training framework. This finance-implementation split is a significant exam point.\n• Statement 2 — Incorrect: NDMA's CBDRM guidelines explicitly designate PRIs and ULBs as first responders — not second-line. Their presence at the village, gram panchayat, or ward level makes them the fastest actors in the immediate post-disaster period. District administration coordinates the broader response but is not classified as the 'first responder tier' in CBDRM guidelines.\n\nValue Addition:\n• Aapda Mitra targets flood-prone and cyclone-prone districts initially — focused on states like UP, Bihar, West Bengal, Odisha.\n• NDMA guidelines also emphasise a gendered approach to DRR — women's inclusion in disaster preparedness committees and decision-making is explicitly mandated.\n• Self-Help Groups (SHGs) are also identified in NDMA CBDRM guidelines as community-level capacity-building conduits."
+    },
+    "hi": {
+      "display_text": "सामुदायिक आधारित आपदा जोखिम प्रबंधन और NDMA की क्षमता निर्माण पहलों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: आपदा मित्र योजना, जो आपदा तैयारी और प्रथम प्रतिक्रिया में सामुदायिक स्वयंसेवकों को प्रशिक्षित करती है, NDMA द्वारा संचालित है लेकिन इसका वित्तपोषण NDMA के सीधे बजट के बजाय राज्य आपदा प्रतिक्रिया कोष (SDRF) के नियमों के अंतर्गत आता है।\n\nकथन 2: सामुदायिक आधारित आपदा जोखिम प्रबंधन पर NDMA के दिशानिर्देश पंचायत राज संस्थाओं और शहरी स्थानीय निकायों को द्वितीयक प्रतिक्रिया कर्ता के रूप में पहचानते हैं, जबकि जिला स्तर की प्रशासनिक इकाई को प्रथम प्रतिक्रिया कर्ता के रूप में नामित किया गया है।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: आपदा मित्र योजना, जो आपदा तैयारी और प्रथम प्रतिक्रिया में सामुदायिक स्वयंसेवकों को प्रशिक्षित करती है, NDMA द्वारा संचालित है लेकिन इसका वित्तपोषण NDMA के सीधे बजट के बजाय राज्य आपदा प्रतिक्रिया कोष (SDRF) के नियमों के अंतर्गत आता है।",
+          "verdict": "सही",
+          "reason": "आपदा मित्र एक प्रलेखित NDMA-नेतृत्व वाली क्षमता निर्माण योजना है; इसका वित्तपोषण SDRF नियमों के माध्यम से होता है — जिससे वित्त-कार्यान्वयन विभाजन बनता है जहाँ NDMA कार्यक्रम को संचालित करता है लेकिन राज्य वित्तीय सहायता के लिए SDRF का उपयोग करते हैं।"
+        },
+        {
+          "statement": "कथन 2: सामुदायिक आधारित आपदा जोखिम प्रबंधन पर NDMA के दिशानिर्देश पंचायत राज संस्थाओं और शहरी स्थानीय निकायों को द्वितीयक प्रतिक्रिया कर्ता के रूप में पहचानते हैं, जबकि जिला स्तर की प्रशासनिक इकाई को प्रथम प्रतिक्रिया कर्ता के रूप में नामित किया गया है।",
+          "verdict": "गलत",
+          "reason": "NDMA के दिशानिर्देश स्पष्ट रूप से पंचायत राज संस्थाओं और शहरी स्थानीय निकायों को प्रथम प्रतिक्रिया कर्ता के रूप में मानते हैं — न कि द्वितीयक। उनकी निकटता के कारण वे अग्रिम पंक्ति में हैं; जिला प्रशासन समन्वय करता है और सहायता प्रदान करता है, लेकिन CBDRM दिशानिर्देशों में PRI/ULB स्तर की संरचना प्रथम प्रतिक्रिया की नामित इकाई है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) जो दोनों कथनों को सही मानता है, एक मजबूत भ्रम है क्योंकि आपदा प्रतिक्रिया में जिला प्रशासन की भूमिका इतनी प्रमुख है कि छात्र मान लेते हैं कि जिला प्रशासन ही 'प्रथम प्रतिक्रिया कर्ता' होना चाहिए — जिससे कथन 2 की त्रुटि स्पष्ट नहीं होती।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: आपदा मित्र NDMA द्वारा संचालित और SDRF द्वारा वित्तपोषित एक प्रलेखित वित्त-कार्यान्वयन विभाजन है — सही।",
+        "कथन 2 का मूल्यांकन करें: NDMA के दिशानिर्देश स्पष्ट रूप से पंचायत राज संस्थाओं और शहरी स्थानीय निकायों को प्रथम प्रतिक्रिया कर्ता बताते हैं; उन्हें 'द्वितीयक' कहना CBDRM दिशानिर्देशों के विपरीत है — गलत।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'द्वितीयक' पदनाम एक इकाई-भूमिका स्वैप जाल है। जो छात्र जानते हैं कि जिला प्रशासन DDMA का अध्यक्ष होता है और आपदा प्रतिक्रिया में सबसे प्रमुख प्रशासनिक इकाई है, वे मान लेते हैं कि जिला प्रशासन ही 'प्रथम प्रतिक्रिया कर्ता' होना चाहिए। NDMA के CBDRM दिशानिर्देश समुदाय-केंद्रित दृष्टिकोण अपनाते हैं: पंचायत राज संस्थाएं और शहरी स्थानीय निकाय, क्योंकि वे गाँव/वार्ड स्तर पर तत्काल मौजूद होते हैं, उन्हें प्रथम प्रतिक्रिया कर्ता के रूप में नामित किया गया है — वे सबसे पहले देखना, सूचित करना और कार्य करना शुरू करते हैं।",
+      "final_explanation": "NDMA की सामुदायिक आधारित आपदा जोखिम न्यूनीकरण (DRR) दृष्टिकोण एक जमीनी स्तर की प्राथमिकता दर्शाती है — समुदाय स्तर, पंचायत राज संस्थाओं और शहरी स्थानीय निकायों के माध्यम से, आपदा प्रतिक्रिया की अग्रिम पंक्ति में हैं।\n\n• कथन 1 — सही: आपदा मित्र, जो 30 आपदा प्रवण जिलों में 'सामुदायिक स्वयंसेवकों' (आपदा मित्रों) को प्रशिक्षित करता है, NDMA द्वारा संचालित है। इसका वित्तपोषण SDRF नियमों के माध्यम से होता है — राज्य SDRF से वित्तीय सहायता लेते हैं, जबकि NDMA संचालन और प्रशिक्षण ढांचा प्रदान करता है। यह वित्त-कार्यान्वयन विभाजन एक महत्वपूर्ण परीक्षा बिंदु है।\n• कथन 2 — गलत: NDMA के CBDRM दिशानिर्देश स्पष्ट रूप से पंचायत राज संस्थाओं और शहरी स्थानीय निकायों को प्रथम प्रतिक्रिया कर्ता के रूप में नामित करते हैं — न कि द्वितीयक। गाँव, ग्राम पंचायत या वार्ड स्तर पर उनकी उपस्थिति उन्हें आपदा के तुरंत बाद सबसे तेज़ प्रतिक्रिया कर्ता बनाती है। जिला प्रशासन व्यापक प्रतिक्रिया का समन्वय करता है लेकिन CBDRM दिशानिर्देशों में इसे 'प्रथम प्रतिक्रिया कर्ता' नहीं माना गया है।\n\nमूल्य संवर्धन:\n• आपदा मित्र योजना शुरू में बाढ़ और चक्रवात प्रवण जिलों को लक्षित करती है — जैसे उत्तर प्रदेश, बिहार, पश्चिम बंगाल, ओडिशा।\n• NDMA के दिशानिर्देशों में DRR के लिए लैंगिक दृष्टिकोण पर भी जोर दिया गया है — आपदा तैयारी समितियों और निर्णय लेने में महिलाओं की भागीदारी अनिवार्य है।\n• स्वयं सहायता समूह (SHGs) को भी NDMA के CBDRM दिशानिर्देशों में सामुदायिक स्तर की क्षमता निर्माण माध्यम के रूप में पहचाना गया है।"
+    }
+  },
+  {
+    "uuid": "b88f5a33-3069-448e-9904-5243305f4c75",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Post-Disaster Needs Assessment (PDNA) and NDMA's Role in Recovery Planning"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDRF financial releases Finance Ministry not NDMA post-disaster fund control",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In India's post-disaster recovery framework, NDMA coordinates the Post-Disaster Needs Assessment (PDNA), but the actual financial releases from the National Disaster Response Fund are controlled by ________, not NDMA — a distinction that reflects the separation between coordination authority and financial control in the Disaster Management Act.\n\nWhich of the following correctly fills the blank?\n\n(a) The Finance Ministry/Central Government under Section 46 of the DM Act\n(b) NDMA itself, as the apex disaster management body designated to approve all NDRF disbursements\n(c) The Planning Commission/NITI Aayog as the nodal body for national resource allocation\n(d) The State Finance Department of the affected state, in coordination with SDMA",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who know NDMA coordinates PDNA assume that NDMA also controls the financial releases for recovery — conflating coordination authority with financial control.",
+      "elimination_logic": [
+        "Identify the institution that coordinates PDNA: NDMA coordinates the PDNA process — this is established.",
+        "Identify the institution that controls fund releases: Financial releases from NDRF happen through the Finance Ministry/Central Government — not through NDMA.",
+        "The blank requires the institution that controls NDRF fund releases — not the PDNA coordinator.",
+        "Option (a) correctly states Finance Ministry/Central Government controls NDRF releases while NDMA coordinates PDNA — this is the accurate division."
+      ],
+      "upsc_trap_explanation": "The NDMA-Finance Ministry distinction on NDRF fund releases is a direct UPSC trap. Because NDMA is the apex disaster management body and NDRF is called the 'National Disaster Response Fund,' students intuitively assume NDMA controls NDRF disbursements. However, Section 46 of the DM Act places NDRF management with the Central Government (Finance Ministry), not NDMA. NDMA coordinates the post-disaster needs assessment but has no direct control over fund release decisions.",
+      "final_explanation": "Post-Disaster Needs Assessment (PDNA) is a structured recovery planning methodology jointly developed by the World Bank and the United Nations, adopted by India for assessing damage, losses, and recovery needs after disasters.\n\n• Option (a) — Correct: NDMA coordinates the PDNA process — bringing together relevant ministries, state governments, and technical agencies. However, financial releases from the NDRF are controlled by the Finance Ministry/Central Government under Section 46 of the DM Act — not by NDMA. This coordination-without-financial-control structure is the key institutional fact.\n• Option (b) — Incorrect: NDMA coordinates PDNA but does not control NDRF fund releases — conflating these roles is the intended error.\n• Option (c) — Incorrect: The Planning Commission (now NITI Aayog) has advisory roles in long-term reconstruction but does not control NDRF releases.\n• Option (d) — Incorrect: State Finance Departments manage SDRF at the state level — but NDRF (national fund) is under Central Government control.\n\nValue Addition:\n• 'Build Back Better' is the principle guiding NDMA's reconstruction guidelines — ensuring rebuilt infrastructure is more resilient than the original.\n• Immediate relief: SDRF; Medium-term recovery: NDRF; Long-term reconstruction: Line Ministries/Planning — this three-tier financial architecture is a key exam point.\n• PDNA reports are used to negotiate international assistance and World Bank loans for post-disaster recovery."
+    },
+    "hi": {
+      "display_text": "भारत के आपदा के बाद पुनर्प्राप्ति ढांचे में, NDMA आपदा के बाद आवश्यकताओं के आकलन (PDNA) का समन्वय करता है, लेकिन राष्ट्रीय आपदा प्रतिक्रिया कोष से वास्तविक वित्तीय रिलीज़ ________ द्वारा नियंत्रित होती है, न कि NDMA द्वारा — यह भेद आपदा प्रबंधन अधिनियम में समन्वय प्राधिकरण और वित्तीय नियंत्रण के बीच विभाजन को दर्शाता है।\n\nनिम्नलिखित में से कौन सा विकल्प रिक्त स्थान को सही रूप से भरता है?\n\n(a) DM अधिनियम की धारा 46 के तहत वित्त मंत्रालय/केंद्र सरकार\n(b) NDMA स्वयं, जो सभी NDRF वितरणों को अनुमोदित करने वाला सर्वोच्च आपदा प्रबंधन निकाय है\n(c) राष्ट्रीय संसाधन आवंटन के लिए नोडल निकाय के रूप में योजना आयोग/नीति आयोग\n(d) प्रभावित राज्य के राज्य वित्त विभाग, SDMA के समन्वय में",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि NDMA PDNA का समन्वय करता है, वे मान लेते हैं कि NDMA ही पुनर्प्राप्ति के लिए वित्तीय रिलीज़ भी नियंत्रित करता है — समन्वय प्राधिकरण को वित्तीय नियंत्रण के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "PDNA का समन्वय करने वाले संस्थान की पहचान करें: NDMA PDNA प्रक्रिया का समन्वय करता है — यह स्थापित तथ्य है।",
+        "वित्तीय रिलीज़ नियंत्रित करने वाले संस्थान की पहचान करें: NDRF से वित्तीय रिलीज़ वित्त मंत्रालय/केंद्र सरकार के माध्यम से होती है — NDMA के माध्यम से नहीं।",
+        "रिक्त स्थान में उस संस्थान का नाम भरना है जो NDRF के वित्तीय रिलीज़ नियंत्रित करता है — न कि PDNA समन्वयक।",
+        "विकल्प (a) सही रूप से बताता है कि वित्त मंत्रालय/केंद्र सरकार NDRF रिलीज़ नियंत्रित करता है जबकि NDMA PDNA का समन्वय करता है — यह सही विभाजन है।"
+      ],
+      "upsc_trap_explanation": "NDRF के वित्तीय रिलीज़ में NDMA और वित्त मंत्रालय के बीच का अंतर एक सीधे UPSC जाल है। क्योंकि NDMA सर्वोच्च आपदा प्रबंधन निकाय है और NDRF को 'राष्ट्रीय आपदा प्रतिक्रिया कोष' कहा जाता है, छात्र सहज रूप से मान लेते हैं कि NDMA NDRF के वितरण को नियंत्रित करता है। हालांकि, DM अधिनियम की धारा 46 के अनुसार NDRF का प्रबंधन केंद्र सरकार (वित्त मंत्रालय) के पास है, न कि NDMA के पास। NDMA आपदा के बाद आवश्यकताओं के आकलन का समन्वय करता है लेकिन वित्तीय रिलीज़ के निर्णयों पर इसका कोई प्रत्यक्ष नियंत्रण नहीं है।",
+      "final_explanation": "आपदा के बाद आवश्यकताओं का आकलन (PDNA) एक संरचित पुनर्प्राप्ति योजना पद्धति है जिसे विश्व बैंक और संयुक्त राष्ट्र ने संयुक्त रूप से विकसित किया है, जिसे भारत ने आपदाओं के बाद क्षति, हानि और पुनर्प्राप्ति आवश्यकताओं के आकलन के लिए अपनाया है।\n\n• विकल्प (a) — सही: NDMA PDNA प्रक्रिया का समन्वय करता है — संबंधित मंत्रालयों, राज्य सरकारों और तकनीकी एजेंसियों को एक साथ लाता है। हालांकि, NDRF से वित्तीय रिलीज़ वित्त मंत्रालय/केंद्र सरकार द्वारा DM अधिनियम की धारा 46 के तहत नियंत्रित होती है — NDMA द्वारा नहीं। यह समन्वय-केवल-नियंत्रण-नहीं संरचना मुख्य संस्थागत तथ्य है।\n• विकल्प (b) — गलत: NDMA PDNA का समन्वय करता है लेकिन NDRF के वित्तीय रिलीज़ को नियंत्रित नहीं करता — इन भूमिकाओं को मिलाना जानबूझकर की गई गलती है।\n• विकल्प (c) — गलत: योजना आयोग (अब नीति आयोग) दीर्घकालिक पुनर्निर्माण में सलाहकार भूमिका निभाता है लेकिन NDRF रिलीज़ नियंत्रित नहीं करता।\n• विकल्प (d) — गलत: राज्य वित्त विभाग प्रभावित राज्य में SDRF का प्रबंधन करता है — लेकिन NDRF (राष्ट्रीय कोष) केंद्र सरकार के नियंत्रण में है।\n\nमूल्य संवर्धन:\n• 'Build Back Better' NDMA के पुनर्निर्माण दिशानिर्देशों का सिद्धांत है — यह सुनिश्चित करता है कि पुनर्निर्मित अवसंरचना मूल से अधिक लचीली हो।\n• तत्काल राहत: SDRF; मध्यम अवधि की पुनर्प्राप्ति: NDRF; दीर्घकालिक पुनर्निर्माण: संबंधित मंत्रालय/योजना — यह तीन-स्तरीय वित्तीय संरचना एक महत्वपूर्ण परीक्षा बिंदु है।\n• PDNA रिपोर्टों का उपयोग अंतरराष्ट्रीय सहायता और विश्व बैंक ऋण के लिए किया जाता है।"
+    }
+  },
+  {
+    "uuid": "94ef2f6c-f784-409a-9380-c7382b0e936e",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "NDMA: Statutory Basis and Constitutional Anchoring",
+        "NDMA vs. SDMA vs. NCMC: Jurisdictional Overlaps and Coordination Failures"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "NDMA HPC NCMC predecessor bodies statutory non-statutory distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the institutional relationship between NDMA and its predecessor/parallel bodies:\n\n1. NDMA was established as a successor to both the High Powered Committee on Disaster Management and the National Crisis Management Committee.\n2. The National Crisis Management Committee (NCMC), even after the creation of NDMA, continues to exist as an executive non-statutory body and can be convened independently of NDMA.\n3. Because NCMC is headed by the Cabinet Secretary who ranks above the NDMA Vice-Chairperson, NCMC decisions on disaster response override NDMA guidelines.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "NDMA was established as a successor to both the High Powered Committee on Disaster Management and the National Crisis Management Committee.",
+          "verdict": "Correct",
+          "reason": "The DM Act, 2005 effectively replaced the earlier institutional arrangements — the High Powered Committee (HPC) that reviewed disaster management preparedness and the NCMC that coordinated during major disasters — by creating NDMA as the apex statutory body."
+        },
+        {
+          "statement": "The National Crisis Management Committee (NCMC), even after the creation of NDMA, continues to exist as an executive non-statutory body and can be convened independently of NDMA.",
+          "verdict": "Correct",
+          "reason": "NCMC has not been dissolved — it continues as a Cabinet Secretary-headed executive coordination mechanism that operates parallel to NDMA and can be convened without triggering DM Act procedures."
+        },
+        {
+          "statement": "Because NCMC is headed by the Cabinet Secretary who ranks above the NDMA Vice-Chairperson, NCMC decisions on disaster response override NDMA guidelines.",
+          "verdict": "Incorrect",
+          "reason": "NCMC's executive nature does not give it authority to override NDMA's statutory guidelines. NDMA's policy authority flows from the DM Act — a statutory source — while NCMC's coordination role is executive and non-statutory; the two bodies operate in different domains without formal override authority."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three statements are correct is the strong distractor because Statement 3 sounds institutionally logical — the Cabinet Secretary does outrank the NDMA Vice-Chairperson in bureaucratic hierarchy — making the 'override' claim plausible to students who reason from rank rather than statutory authority.",
+      "elimination_logic": [
+        "Statement 1: NDMA's creation effectively succeeded HPC and NCMC as the apex disaster management institution — mark Correct.",
+        "Statement 2: NCMC continues to exist post-DM Act as a non-statutory executive body — documented fact — mark Correct.",
+        "Statement 3: NCMC's bureaucratic seniority does not translate to statutory override authority over NDMA guidelines — the DM Act's statutory force is not defeatable by executive hierarchy — mark Incorrect.",
+        "Statements 1 and 2 correct → option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the conflation of bureaucratic hierarchy with statutory authority. The Cabinet Secretary is India's senior-most civil servant, and the NCMC chair position carries enormous administrative weight. Students who reason from hierarchical rank conclude that NCMC's decisions would override those of NDMA. However, NDMA derives authority from statute (DM Act) — a legally superior source — while NCMC operates on executive authority. No executive body can override a statutory body's guidelines through mere administrative seniority.",
+      "final_explanation": "The institutional relationship between NDMA and NCMC reflects the distinction between statutory and executive authority in India's governance architecture.\n\n• Statement 1 — Correct: NDMA (2005) was created to provide a statutory institutional framework superseding the ad hoc arrangements of the HPC and NCMC. Both predecessor bodies are historically significant but were non-statutory.\n• Statement 2 — Correct: NCMC was not abolished by the DM Act. It continues as a flexible, Cabinet Secretary-headed executive coordination mechanism — particularly useful for major disasters requiring rapid inter-ministerial communication outside the DM Act's formal procedures.\n• Statement 3 — Incorrect: Bureaucratic rank does not create statutory override authority. NDMA's guidelines derive their binding force from the DM Act — a statutory instrument. NCMC, operating on executive authority, cannot override NDMA's statutory guidelines regardless of the Cabinet Secretary's seniority in the civil services hierarchy.\n\nValue Addition:\n• The co-existence of NDMA (statutory) and NCMC (executive) is deliberately maintained to give the government flexibility in coordinating disaster response.\n• Kedarnath 2013 highlighted coordination gaps between these parallel bodies — a case study frequently referenced in DM reform discussions.\n• NDMA's statutory authority means its guidelines can be enforced through the courts; NCMC decisions have no such justiciability."
+    },
+    "hi": {
+      "display_text": "NDMA और इसके पूर्ववर्ती/समानांतर निकायों के बीच संस्थागत संबंध के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. NDMA की स्थापना उच्च स्तरीय आपदा प्रबंधन समिति और राष्ट्रीय संकट प्रबंधन समिति दोनों के उत्तराधिकारी के रूप में की गई थी।\n2. राष्ट्रीय संकट प्रबंधन समिति (NCMC), NDMA के गठन के बाद भी, एक कार्यकारी गैर-वैधानिक निकाय के रूप में मौजूद है और इसे NDMA से स्वतंत्र रूप से बुलाया जा सकता है।\n3. चूंकि NCMC का नेतृत्व कैबिनेट सचिव करते हैं जो NDMA के उपाध्यक्ष से उच्च पदस्थ हैं, इसलिए आपदा प्रतिक्रिया पर NCMC के निर्णय NDMA के दिशानिर्देशों को अधिलेखित करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "NDMA was established as a successor to both the High Powered Committee on Disaster Management and the National Crisis Management Committee.",
+          "verdict": "सही",
+          "reason": "DM अधिनियम, 2005 ने पूर्व संस्थागत व्यवस्थाओं — उच्च स्तरीय समिति (HPC) जो आपदा प्रबंधन तैयारी की समीक्षा करती थी और NCMC जो प्रमुख आपदाओं के दौरान समन्वय करती थी — को प्रभावी रूप से प्रतिस्थापित करते हुए NDMA को सर्वोच्च वैधानिक निकाय के रूप में स्थापित किया।"
+        },
+        {
+          "statement": "The National Crisis Management Committee (NCMC), even after the creation of NDMA, continues to exist as an executive non-statutory body and can be convened independently of NDMA.",
+          "verdict": "सही",
+          "reason": "NCMC को भंग नहीं किया गया है — यह कैबिनेट सचिव के नेतृत्व में एक कार्यकारी समन्वय तंत्र के रूप में जारी है जो NDMA के समानांतर कार्य करता है और DM अधिनियम की प्रक्रियाओं को शुरू किए बिना स्वतंत्र रूप से बुलाया जा सकता है।"
+        },
+        {
+          "statement": "Because NCMC is headed by the Cabinet Secretary who ranks above the NDMA Vice-Chairperson, NCMC decisions on disaster response override NDMA guidelines.",
+          "verdict": "गलत",
+          "reason": "NCMC की कार्यकारी प्रकृति इसे NDMA के वैधानिक दिशानिर्देशों को अधिलेखित करने का अधिकार नहीं देती। NDMA की नीति अधिकारिता DM अधिनियम से आती है — जो एक वैधानिक स्रोत है — जबकि NCMC की समन्वय भूमिका कार्यकारी और गैर-वैधानिक है; दोनों निकाय अलग-अलग क्षेत्रों में कार्य करते हैं और औपचारिक अधिलेखन अधिकार नहीं रखते।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें कहा गया है कि तीनों कथन सही हैं, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 3 संस्थागत रूप से तार्किक लगता है — कैबिनेट सचिव NDMA के उपाध्यक्ष से उच्च पदस्थ हैं — जिससे 'अधिलेखन' का दावा उन छात्रों के लिए संभावित लगता है जो पदानुक्रम से तर्क करते हैं न कि वैधानिक अधिकार से।",
+      "elimination_logic": [
+        "कथन 1: NDMA का निर्माण HPC और NCMC के स्थान पर सर्वोच्च आपदा प्रबंधन संस्था के रूप में हुआ — सही चिह्नित करें।",
+        "कथन 2: DM अधिनियम के बाद भी NCMC एक गैर-वैधानिक कार्यकारी निकाय के रूप में जारी है — यह तथ्य है — सही चिह्नित करें।",
+        "कथन 3: NCMC की नौकरशाही वरिष्ठता NDMA के दिशानिर्देशों पर वैधानिक अधिलेखन अधिकार में परिवर्तित नहीं होती — DM अधिनियम की वैधानिक शक्ति कार्यकारी पदानुक्रम से पराजित नहीं होती — गलत चिह्नित करें।",
+        "कथन 1 और 2 सही → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "कथन 3 नौकरशाही पदानुक्रम को वैधानिक अधिकार के साथ मिलाने की गलती का फायदा उठाता है। कैबिनेट सचिव भारत के वरिष्ठतम सिविल सेवक हैं, और NCMC अध्यक्ष पद का प्रशासनिक महत्व बहुत अधिक है। जो छात्र पदानुक्रम से तर्क करते हैं वे मान लेते हैं कि NCMC के निर्णय NDMA के निर्णयों को अधिलेखित करेंगे। हालांकि, NDMA का अधिकार DM अधिनियम (एक वैधानिक स्रोत) से आता है — जबकि NCMC कार्यकारी अधिकार पर कार्य करता है। कोई भी कार्यकारी निकाय केवल प्रशासनिक वरिष्ठता के आधार पर वैधानिक निकाय के दिशानिर्देशों को अधिलेखित नहीं कर सकता।",
+      "final_explanation": "NDMA और NCMC के बीच संस्थागत संबंध भारत की शासन संरचना में वैधानिक और कार्यकारी अधिकार के बीच अंतर को दर्शाता है।\n\n• कथन 1 — सही: NDMA (2005) को HPC और NCMC की अस्थायी व्यवस्थाओं की जगह एक वैधानिक संस्थागत ढांचा प्रदान करने के लिए बनाया गया था। दोनों पूर्ववर्ती निकाय ऐतिहासिक रूप से महत्वपूर्ण हैं लेकिन गैर-वैधानिक थे।\n• कथन 2 — सही: DM अधिनियम द्वारा NCMC को समाप्त नहीं किया गया। यह एक लचीला, कैबिनेट सचिव के नेतृत्व वाला कार्यकारी समन्वय तंत्र के रूप में जारी है — विशेष रूप से उन प्रमुख आपदाओं के लिए उपयोगी जहां DM अधिनियम की औपचारिक प्रक्रियाओं के बाहर त्वरित अंतर-मंत्रालयी संचार आवश्यक होता है।\n• कथन 3 — गलत: नौकरशाही पदानुक्रम वैधानिक अधिलेखन अधिकार उत्पन्न नहीं करता। NDMA के दिशानिर्देश DM अधिनियम से अपनी बाध्यकारी शक्ति प्राप्त करते हैं — जो एक वैधानिक उपकरण है। NCMC, जो कार्यकारी अधिकार पर कार्य करता है, कैबिनेट सचिव की वरिष्ठता के बावजूद NDMA के वैधानिक दिशानिर्देशों को अधिलेखित नहीं कर सकता।\n\nमूल्य संवर्धन:\n• NDMA (वैधानिक) और NCMC (कार्यकारी) का सह-अस्तित्व सरकार को आपदा प्रतिक्रिया समन्वय में लचीलापन प्रदान करने के लिए जानबूझकर बनाए रखा गया है।\n• केदारनाथ 2013 ने इन समानांतर निकायों के बीच समन्वय की खामियों को उजागर किया — जो DM सुधार चर्चाओं में अक्सर संदर्भित एक केस स्टडी है।\n• NDMA की वैधानिक अधिकारिता का अर्थ है कि इसके दिशानिर्देशों को न्यायालयों के माध्यम से लागू किया जा सकता है; NCMC के निर्णयों की ऐसी न्यायिकता नहीं है।"
+    }
+  },
+  {
+    "uuid": "bac7a7ec-0a51-4bdf-b606-ba9e8c5d6be6",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "National Disaster Response Fund (NDRF) and National Disaster Mitigation Fund (NDMF)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "NDRF NDMF SDRF sections DM Act financial purpose distinction",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Fund) with List II (Provision/Feature):",
+        "columns": [
+          "List I — Fund",
+          "List II — Provision/Feature"
+        ],
+        "rows": [
+          [
+            "A. National Disaster Response Fund (NDRF)",
+            "1. Section 48; state-managed fund with central contribution of 75% (90% for NE/hilly states)"
+          ],
+          [
+            "B. National Disaster Mitigation Fund (NDMF)",
+            "2. Section 46; managed by Central Government for immediate disaster response"
+          ],
+          [
+            "C. State Disaster Response Fund (SDRF)",
+            "3. Pre-2005 administrative fund subsumed into SDRF after DM Act implementation"
+          ],
+          [
+            "D. Calamity Relief Fund (CRF)",
+            "4. Section 47; dedicated to long-term mitigation and resilience-building projects"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-4, C-3, D-1\n(c) A-2, B-4, C-1, D-3\n(d) A-4, B-2, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because it correctly pairs Section 46 with NDRF but then mismatches the remaining funds — students who remember Section 46 confidently select the option that is correct on that one point but wrong on the others.",
+      "elimination_logic": [
+        "NDRF (National Disaster Response Fund) is under Section 46 — matches List II item 2.",
+        "NDMF (National Disaster Mitigation Fund) is under Section 47 — matches List II item 4.",
+        "SDRF (State Disaster Response Fund) is under Section 48 — matches List II item 1.",
+        "Calamity Relief Fund was subsumed into SDRF post-2005 — it is the historical predecessor (not a current DM Act section) — matches List II item 3.",
+        "Correct combination: A-2, B-4, C-1, D-3 → option (c)."
+      ],
+      "upsc_trap_explanation": "The CRF-SDRF conflation is the primary trap. Students who know CRF was 'merged into' SDRF may reverse the pairing — placing CRF as the 'current' fund and forgetting that SDRF is Section 48 while CRF is the abolished predecessor. The Section 46/47/48 sequence is also a trap: students who remember Section 46 for NDRF may incorrectly assign Section 47 to SDRF and Section 48 to NDMF — reversing the NDMF-SDRF section numbers.",
+      "final_explanation": "The DM Act's financial architecture is built around three active funds under Sections 46, 47, and 48, plus one historical predecessor (CRF).\n\nCorrect matches:\n• A (NDRF — National Disaster Response Fund) → 2 (Section 46, Central Government): NDRF is constituted under Section 46 and managed by the Central Government for immediate disaster response needs — not NDMA.\n• B (NDMF — National Disaster Mitigation Fund) → 4 (Section 47, mitigation projects): NDMF is a dedicated fund under Section 47 for long-term mitigation and resilience-building investments — distinct from relief.\n• C (SDRF — State Disaster Response Fund) → 1 (Section 48, state-managed with central contribution): SDRF is constituted under Section 48; Centre contributes 75% (90% for NE/hilly states); states manage the fund for disaster relief operations.\n• D (Calamity Relief Fund) → 3 (pre-2005 fund subsumed into SDRF): CRF was an administrative arrangement predating the DM Act; it was absorbed into the SDRF structure after the Act's implementation.\n\nTrap pairings: Students commonly swap NDMF and SDRF section numbers (47 vs. 48) and misidentify CRF as a current DM Act fund.\n\nValue Addition:\n• NDRF releases require Central Government approval — NDMA is not the approving authority.\n• NDMF is specifically earmarked for mitigation — not relief. This prevents diversion of mitigation funds for routine relief expenditure.\n• The 90% Centre contribution to SDRF for NE and hilly states acknowledges their higher disaster vulnerability and limited fiscal capacity."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (फंड) को सूची II (प्रावधान/विशेषता) से मिलाइए:",
+        "columns": [
+          "सूची I — फंड",
+          "सूची II — प्रावधान/विशेषता"
+        ],
+        "rows": [
+          [
+            "A. National Disaster Response Fund (NDRF)",
+            "1. सेक्शन 48; राज्य-प्रबंधित फंड जिसमें केंद्र का 75% (पूर्वोत्तर/पहाड़ी राज्यों के लिए 90%) योगदान होता है"
+          ],
+          [
+            "B. National Disaster Mitigation Fund (NDMF)",
+            "2. सेक्शन 46; तत्काल आपदा प्रतिक्रिया के लिए केंद्रीय सरकार द्वारा प्रबंधित"
+          ],
+          [
+            "C. State Disaster Response Fund (SDRF)",
+            "3. 2005 से पूर्व का प्रशासनिक फंड जो DM अधिनियम के बाद SDRF में सम्मिलित हो गया"
+          ],
+          [
+            "D. Calamity Relief Fund (CRF)",
+            "4. सेक्शन 47; दीर्घकालिक शमन और लचीलापन निर्माण परियोजनाओं के लिए समर्पित"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-4, C-3, D-1\n(c) A-2, B-4, C-1, D-3\n(d) A-4, B-2, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि यह सही ढंग से सेक्शन 46 को NDRF से जोड़ता है लेकिन बाकी फंडों को गलत जोड़ता है — जो छात्र सेक्शन 46 को याद रखते हैं वे उस एक बिंदु पर सही विकल्प चुनते हैं लेकिन बाकी में गलत।",
+      "elimination_logic": [
+        "NDRF (National Disaster Response Fund) सेक्शन 46 के अंतर्गत है — यह सूची II के आइटम 2 से मेल खाता है।",
+        "NDMF (National Disaster Mitigation Fund) सेक्शन 47 के अंतर्गत है — यह सूची II के आइटम 4 से मेल खाता है।",
+        "SDRF (State Disaster Response Fund) सेक्शन 48 के अंतर्गत है — यह सूची II के आइटम 1 से मेल खाता है।",
+        "Calamity Relief Fund 2005 के बाद SDRF में सम्मिलित हो गया — यह ऐतिहासिक पूर्ववर्ती है (वर्तमान DM अधिनियम का सेक्शन नहीं) — यह सूची II के आइटम 3 से मेल खाता है।",
+        "सही संयोजन: A-2, B-4, C-1, D-3 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "CRF-SDRF भ्रम मुख्य जाल है। जो छात्र जानते हैं कि CRF 'SDRF में विलय' हो गया था, वे जोड़ी उलट सकते हैं — CRF को 'वर्तमान' फंड मान लेते हैं और भूल जाते हैं कि SDRF सेक्शन 48 है जबकि CRF समाप्त हो चुका पूर्ववर्ती है। सेक्शन 46/47/48 क्रम भी जाल है: जो छात्र सेक्शन 46 को NDRF के लिए याद रखते हैं वे गलत तरीके से सेक्शन 47 को SDRF और सेक्शन 48 को NDMF दे सकते हैं — NDMF-SDRF सेक्शन नंबर उलट देते हैं।",
+      "final_explanation": "DM अधिनियम की वित्तीय संरचना तीन सक्रिय फंडों के इर्द-गिर्द बनी है जो सेक्शन 46, 47, और 48 के अंतर्गत हैं, साथ ही एक ऐतिहासिक पूर्ववर्ती (CRF)।\n\nसही मेल:\n• A (NDRF — National Disaster Response Fund) → 2 (सेक्शन 46, केंद्रीय सरकार): NDRF सेक्शन 46 के तहत गठित है और तत्काल आपदा प्रतिक्रिया आवश्यकताओं के लिए केंद्रीय सरकार द्वारा प्रबंधित है — NDMA नहीं।\n• B (NDMF — National Disaster Mitigation Fund) → 4 (सेक्शन 47, शमन परियोजनाएँ): NDMF सेक्शन 47 के तहत समर्पित फंड है जो दीर्घकालिक शमन और लचीलापन निर्माण निवेश के लिए है — राहत से अलग।\n• C (SDRF — State Disaster Response Fund) → 1 (सेक्शन 48, राज्य-प्रबंधित जिसमें केंद्र का 75% (90% पूर्वोत्तर/पहाड़ी राज्यों के लिए) योगदान): SDRF सेक्शन 48 के तहत गठित है; केंद्र 75% (पूर्वोत्तर/पहाड़ी राज्यों के लिए 90%) योगदान देता है; राज्य आपदा राहत संचालन के लिए फंड का प्रबंधन करते हैं।\n• D (Calamity Relief Fund) → 3 (2005 से पूर्व का फंड जो DM अधिनियम के बाद SDRF में सम्मिलित हो गया): CRF एक प्रशासनिक व्यवस्था थी जो DM अधिनियम से पहले थी; इसे अधिनियम के लागू होने के बाद SDRF संरचना में शामिल कर लिया गया।\n\nजाल जोड़ी: छात्र आमतौर पर NDMF और SDRF के सेक्शन नंबर (47 बनाम 48) उलट देते हैं और CRF को वर्तमान DM अधिनियम का फंड समझ लेते हैं।\n\nमूल्य संवर्धन:\n• NDRF की रिहाई के लिए केंद्रीय सरकार की मंजूरी आवश्यक है — NDMA मंजूरी प्राधिकारी नहीं है।\n• NDMF विशेष रूप से शमन के लिए आरक्षित है — राहत के लिए नहीं। इससे शमन फंड का सामान्य राहत व्यय में उपयोग रोका जाता है।\n• पूर्वोत्तर और पहाड़ी राज्यों के लिए SDRF में केंद्र का 90% योगदान उनकी उच्च आपदा संवेदनशीलता और सीमित वित्तीय क्षमता को मान्यता देता है।"
+    }
+  },
+  {
+    "uuid": "0844c247-f7e5-43d4-a8b0-7ab3dc807da7",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Composition and Chairpersonship of NDMA",
+        "NDMA: Statutory Basis and Constitutional Anchoring"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "NDMA maximum nine members Vice-Chairperson Cabinet Minister rank",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the composition of the National Disaster Management Authority (NDMA) under the Disaster Management Act, 2005, which one of the following statements is correct?\n\n(a) NDMA has a maximum of 7 members, all appointed by the Prime Minister\n(b) NDMA has a maximum of 9 members appointed by the Prime Minister, excluding the Prime Minister in his role as Chairperson\n(c) NDMA has a maximum of 9 members, of whom at least 3 are elected representatives from disaster-prone states\n(d) NDMA has a maximum of 9 members including the Vice-Chairperson, all appointed by the Prime Minister",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because 'maximum 9 members excluding the Chairperson' is a natural reading error — students who know the number 9 is associated with NDMA often forget whether the Chairperson (PM) is counted within the 9 or is additional.",
+      "elimination_logic": [
+        "Recall the DM Act provision: NDMA has a maximum of 9 members including the Vice-Chairperson, all appointed by the PM.",
+        "The PM is the ex-officio Chairperson and is counted separately — the 9 members are in addition to the PM-Chairperson.",
+        "Eliminate (a): 7 is incorrect; the maximum is 9.",
+        "Eliminate (b): 9 excluding the PM-Chairperson means potentially 10 total — this overstates the provision.",
+        "Eliminate (c): Elected members is incorrect — NDMA members are appointed by the PM, not elected.",
+        "Select (d): Maximum 9 members (including Vice-Chairperson), all appointed by the PM — this is the accurate statutory provision."
+      ],
+      "upsc_trap_explanation": "The '9 including vs. excluding the Chairperson' trap exploits imprecise recall. The DM Act specifies a maximum of 9 members (including the Vice-Chairperson) who are appointed by the Prime Minister — the PM as Chairperson is additional to these 9. Option (b) captures the right number but adds 'excluding the Chairperson,' creating a scenario of up to 10 total members, which contradicts the Act. Students who know '9' without knowing whether the PM is counted within or outside this number will be confused.",
+      "final_explanation": "The DM Act specifies NDMA's composition with precision — the PM is the ex-officio Chairperson, and the body has a maximum of 9 additional members.\n\n• Option (a) — Incorrect: The maximum is 9 members, not 7. The number 7 has no basis in the DM Act's composition provisions.\n• Option (b) — Incorrect: '9 members excluding the Chairperson' implies a total of up to 10 (9 + PM-Chairperson) — this overstates the statutory ceiling. The PM as Chairperson is separate; the 9 members are those appointed by the PM.\n• Option (c) — Incorrect: NDMA members are appointed by the Prime Minister — there is no election process for NDMA membership. Elected membership is a feature of Parliament or local bodies, not apex statutory boards.\n• Option (d) — Correct: NDMA has a maximum of 9 members (including the Vice-Chairperson), all appointed by the Prime Minister. The Vice-Chairperson holds Cabinet Minister rank, enhancing coordination authority.\n\nValue Addition:\n• The Vice-Chairperson of NDMA holds the rank of Cabinet Minister — a provision designed to facilitate high-level inter-ministerial coordination.\n• Members of NDMA are typically former senior civil servants, armed forces officers, and technical experts in disaster management.\n• The PM's dual role as Chairperson of NDMA gives disaster management decisions the highest executive endorsement in India's governance system."
+    },
+    "hi": {
+      "display_text": "आपदा प्रबंधन अधिनियम, 2005 के तहत राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA) की संरचना के संदर्भ में, निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) NDMA में अधिकतम 7 सदस्य होते हैं, सभी प्रधानमंत्री द्वारा नियुक्त\n(b) NDMA में अधिकतम 9 सदस्य होते हैं जिन्हें प्रधानमंत्री नियुक्त करते हैं, लेकिन प्रधानमंत्री को उनके अध्यक्ष पद में शामिल नहीं किया जाता\n(c) NDMA में अधिकतम 9 सदस्य होते हैं, जिनमें से कम से कम 3 आपदा-प्रवण राज्यों के निर्वाचित प्रतिनिधि होते हैं\n(d) NDMA में अधिकतम 9 सदस्य होते हैं, जिनमें उपाध्यक्ष भी शामिल हैं, सभी प्रधानमंत्री द्वारा नियुक्त",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि 'अध्यक्ष को छोड़कर अधिकतम 9 सदस्य' एक स्वाभाविक पढ़ने की गलती है — जो छात्र जानते हैं कि संख्या 9 NDMA से जुड़ी है, वे अक्सर भूल जाते हैं कि क्या अध्यक्ष (प्रधानमंत्री) को 9 में गिना जाता है या वह अतिरिक्त है।",
+      "elimination_logic": [
+        "DM अधिनियम के प्रावधान को याद करें: NDMA में अधिकतम 9 सदस्य होते हैं जिनमें उपाध्यक्ष शामिल हैं, सभी प्रधानमंत्री द्वारा नियुक्त।",
+        "प्रधानमंत्री पदेन अध्यक्ष होते हैं और उन्हें अलग से गिना जाता है — 9 सदस्य प्रधानमंत्री-अध्यक्ष के अतिरिक्त होते हैं।",
+        "विकल्प (a) को हटाएं: 7 गलत है; अधिकतम 9 है।",
+        "विकल्प (b) को हटाएं: अध्यक्ष को छोड़कर 9 का मतलब कुल मिलाकर 10 हो सकते हैं — यह प्रावधान को अधिक दर्शाता है।",
+        "विकल्प (c) को हटाएं: निर्वाचित सदस्य गलत है — NDMA के सदस्य प्रधानमंत्री द्वारा नियुक्त होते हैं, निर्वाचित नहीं।",
+        "विकल्प (d) चुनें: अधिकतम 9 सदस्य (उपाध्यक्ष सहित), सभी प्रधानमंत्री द्वारा नियुक्त — यह सटीक वैधानिक प्रावधान है।"
+      ],
+      "upsc_trap_explanation": "'अध्यक्ष सहित या बिना अध्यक्ष के 9' का भ्रम अस्पष्ट स्मरण का फायदा उठाता है। DM अधिनियम अधिकतम 9 सदस्यों का प्रावधान करता है (उपाध्यक्ष सहित) जिन्हें प्रधानमंत्री नियुक्त करते हैं — प्रधानमंत्री अध्यक्ष के रूप में इन 9 के अतिरिक्त हैं। विकल्प (b) सही संख्या बताता है लेकिन 'अध्यक्ष को छोड़कर' जोड़ता है, जिससे कुल सदस्यों की संख्या 10 तक हो जाती है, जो अधिनियम के विपरीत है। जो छात्र '9' जानते हैं लेकिन यह नहीं जानते कि प्रधानमंत्री को इस संख्या में गिना जाता है या नहीं, वे भ्रमित होंगे।",
+      "final_explanation": "DM अधिनियम NDMA की संरचना को स्पष्ट रूप से निर्दिष्ट करता है — प्रधानमंत्री पदेन अध्यक्ष होते हैं, और इस निकाय में अधिकतम 9 अतिरिक्त सदस्य होते हैं।\n\n• विकल्प (a) — गलत: अधिकतम 9 सदस्य हैं, 7 नहीं। 7 की संख्या DM अधिनियम के प्रावधानों में नहीं है।\n• विकल्प (b) — गलत: 'अध्यक्ष को छोड़कर 9 सदस्य' का अर्थ कुल 10 (9 + प्रधानमंत्री-अध्यक्ष) हो सकता है — यह वैधानिक सीमा से अधिक है। प्रधानमंत्री अध्यक्ष अलग हैं; 9 सदस्य प्रधानमंत्री द्वारा नियुक्त होते हैं।\n• विकल्प (c) — गलत: NDMA के सदस्य प्रधानमंत्री द्वारा नियुक्त होते हैं — NDMA सदस्यता के लिए कोई चुनाव प्रक्रिया नहीं है। निर्वाचित सदस्यता संसद या स्थानीय निकायों की विशेषता है, न कि शीर्ष वैधानिक बोर्डों की।\n• विकल्प (d) — सही: NDMA में अधिकतम 9 सदस्य होते हैं (उपाध्यक्ष सहित), सभी प्रधानमंत्री द्वारा नियुक्त। उपाध्यक्ष कैबिनेट मंत्री के पद के होते हैं, जो समन्वय क्षमता बढ़ाता है।\n\nमूल्य संवर्धन:\n• NDMA के उपाध्यक्ष कैबिनेट मंत्री के पद पर होते हैं — यह उच्च स्तरीय अंतर-मंत्रालय समन्वय को सुगम बनाने के लिए प्रावधान है।\n• NDMA के सदस्य आमतौर पर पूर्व वरिष्ठ सिविल सेवक, सशस्त्र बलों के अधिकारी, और आपदा प्रबंधन के तकनीकी विशेषज्ञ होते हैं।\n• प्रधानमंत्री का NDMA अध्यक्ष के रूप में दोहरा पद भारत के शासन प्रणाली में आपदा प्रबंधन निर्णयों को सर्वोच्च कार्यकारी समर्थन देता है।"
+    }
+  },
+  {
+    "uuid": "dacbb651-9744-4487-bd7d-218a2cd9fa07",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "NDMA and Early Warning Systems: Mandate and Institutional Gaps",
+        "NDMA's Core Mandate: The 4R Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDMA early warning coordination CAP cell broadcasting last-mile connectivity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A district in a flood-prone river basin receives cyclone and flood warnings from the Indian Meteorological Department, but ground-level assessment reveals that these warnings are consistently not reaching the most vulnerable communities in low-lying areas before waters rise. Fishing villages along the river have no functional alert mechanism despite IMD forecasts being generated 12 hours in advance. A review committee recommends that NDMA take immediate institutional action to resolve this dissemination failure.\n\nWhich of the following actions falls within NDMA's actual statutory mandate and most appropriately addresses this specific failure?\n\n(a) NDMA should direct the Indian Meteorological Department to generate more accurate and localised forecasts for the district, since NDMA has supervisory authority over technical forecast agencies.\n(b) NDMA should strengthen last-mile dissemination through the Common Alerting Protocol and Cell Broadcasting System, coordinating with telecom agencies to ensure warnings reach communities without digital connectivity.\n(c) NDMA should deploy NDRF battalions in the district 48 hours before each forecast event, ensuring first responders are pre-positioned as a substitute for community-level warning systems.\n(d) NDMA should bring IMD under its administrative control so that warning dissemination and forecast generation fall under a single institutional chain of command.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because it sounds like the correct institutional solution: NDMA directing IMD is intuitive since NDMA is the apex body and IMD generates forecasts. Students assume NDMA can direct technical agencies rather than recognising its purely coordinative role.",
+      "elimination_logic": [
+        "Identify the scenario's problem: Warnings generated by IMD are not reaching vulnerable communities — this is a last-mile dissemination failure.",
+        "Identify NDMA's relevant mandate: NDMA coordinates early warning dissemination through mechanisms like CAP and Cell Broadcasting System — it does not generate forecasts or direct IMD operationally.",
+        "Eliminate (a): NDMA cannot direct IMD to generate more accurate forecasts — IMD operates under Ministry of Earth Sciences and determines its own scientific methods.",
+        "Eliminate (c): NDRF's mandate is rescue and response — it is not the mechanism for warning dissemination.",
+        "Eliminate (d): Transferring IMD to NDMA's administrative control is not within NDMA's powers under the DM Act.",
+        "Select (b): NDMA's appropriate response is to strengthen last-mile dissemination through CAP and Cell Broadcasting System — the correct application of its mandate."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the assumption that an apex body must have directive authority over technical agencies. NDMA can coordinate with IMD but cannot direct it operationally — IMD remains under the Ministry of Earth Sciences. The scenario's problem is dissemination failure (last-mile connectivity), not forecast accuracy — making the IMD-directive option doubly wrong: wrong authority and wrong diagnosis.",
+      "final_explanation": "NDMA's early warning mandate covers dissemination and last-mile connectivity — not forecast generation, which remains with technical agencies under their parent ministries.\n\nApplying the principle: The scenario describes a last-mile dissemination failure — generated warnings not reaching vulnerable communities. NDMA's appropriate response is to strengthen the dissemination infrastructure (CAP, Cell Broadcasting System, Integrated Alert System), not to intervene in IMD's scientific operations.\n\n• Option (a) — Incorrect: NDMA cannot direct IMD's scientific forecast operations — IMD operates under the Ministry of Earth Sciences with its own technical mandate. Moreover, the problem is dissemination, not forecast quality.\n• Option (b) — Correct: NDMA should activate its mandate to strengthen last-mile dissemination — through Common Alerting Protocol (CAP) implementation, Cell Broadcasting System, and coordination with telecom operators to ensure warnings reach communities without smartphones or internet access.\n• Option (c) — Incorrect: NDRF is a response and rescue force — it is not the institutional mechanism for early warning dissemination. Deploying NDRF addresses post-disaster needs, not pre-disaster warning failures.\n• Option (d) — Incorrect: Bringing IMD under NDMA's administrative control would require legislative amendment and is not within NDMA's powers. It also conflates administrative control with operational effectiveness.\n\nValue Addition:\n• Common Alerting Protocol (CAP) standardises warning messages across agencies, formats, and languages — enabling multi-channel alert distribution.\n• Cell Broadcasting System pushes alerts to all mobile phones in a geographic area — crucial for communities without internet access.\n• INCOIS (under Ministry of Earth Sciences) handles tsunami and storm surge warnings — also external to NDMA's administrative control."
+    },
+    "hi": {
+      "display_text": "बाढ़-प्रवण नदी बेसिन के एक जिले को भारतीय मौसम विभाग से चक्रवात और बाढ़ की चेतावनियाँ मिलती हैं, लेकिन ज़मीनी स्तर के आकलन से पता चलता है कि ये चेतावनियाँ लगातार सबसे संवेदनशील कम-भूमि वाले क्षेत्रों के समुदायों तक पानी बढ़ने से पहले नहीं पहुँच रही हैं। नदी के किनारे मछुआरा गांवों में कोई कार्यात्मक अलर्ट तंत्र नहीं है, जबकि IMD पूर्वानुमान 12 घंटे पहले जारी करता है। एक समीक्षा समिति ने अनुशंसा की है कि NDMA इस प्रसार विफलता को तुरंत दूर करने के लिए संस्थागत कार्रवाई करे।\n\nनिम्नलिखित में से कौन-सा कार्य NDMA के वास्तविक वैधानिक जनादेश के अंतर्गत आता है और इस विशिष्ट विफलता को सबसे उपयुक्त रूप से संबोधित करता है?\n\n(a) NDMA को भारतीय मौसम विभाग को जिले के लिए अधिक सटीक और स्थानीयकृत पूर्वानुमान बनाने का निर्देश देना चाहिए, क्योंकि NDMA के पास तकनीकी पूर्वानुमान एजेंसियों पर पर्यवेक्षण अधिकार है।\n(b) NDMA को कॉमन अलर्टिंग प्रोटोकॉल और सेल ब्रॉडकास्टिंग सिस्टम के माध्यम से अंतिम-मील प्रसार को मजबूत करना चाहिए, और टेलीकॉम एजेंसियों के साथ समन्वय करना चाहिए ताकि चेतावनियाँ डिजिटल कनेक्टिविटी न रखने वाले समुदायों तक पहुँच सकें।\n(c) NDMA को प्रत्येक पूर्वानुमान घटना से 48 घंटे पहले जिले में NDRF बटालियनों को तैनात करना चाहिए, ताकि पहले उत्तरदाता समुदाय-स्तर के चेतावनी तंत्र के विकल्प के रूप में पूर्व-स्थित हों।\n(d) NDMA को IMD को अपने प्रशासनिक नियंत्रण में लाना चाहिए ताकि चेतावनी प्रसार और पूर्वानुमान निर्माण एक ही संस्थागत कमान श्रृंखला के अंतर्गत आ जाएं।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि यह सही संस्थागत समाधान जैसा लगता है: NDMA द्वारा IMD को निर्देश देना सहज लगता है क्योंकि NDMA सर्वोच्च निकाय है और IMD पूर्वानुमान बनाता है। छात्र मान लेते हैं कि NDMA तकनीकी एजेंसियों को निर्देश दे सकता है बजाय इसके कि यह केवल समन्वयकारी भूमिका निभाता है।",
+      "elimination_logic": [
+        "परिदृश्य की समस्या पहचानें: IMD द्वारा जारी चेतावनियाँ संवेदनशील समुदायों तक नहीं पहुँच रही हैं — यह अंतिम-मील प्रसार विफलता है।",
+        "NDMA के प्रासंगिक जनादेश की पहचान करें: NDMA CAP और सेल ब्रॉडकास्टिंग सिस्टम जैसे तंत्रों के माध्यम से प्रारंभिक चेतावनी प्रसार का समन्वय करता है — यह पूर्वानुमान नहीं बनाता और न ही IMD को परिचालन रूप से निर्देश देता है।",
+        "(a) को हटाएं: NDMA IMD को अधिक सटीक पूर्वानुमान बनाने का निर्देश नहीं दे सकता — IMD पृथ्वी विज्ञान मंत्रालय के अंतर्गत कार्य करता है और अपनी वैज्ञानिक विधियाँ स्वयं निर्धारित करता है।",
+        "(c) को हटाएं: NDRF का जनादेश बचाव और प्रतिक्रिया है — यह चेतावनी प्रसार का तंत्र नहीं है।",
+        "(d) को हटाएं: IMD को NDMA के प्रशासनिक नियंत्रण में लाना DM अधिनियम के तहत NDMA के अधिकार क्षेत्र में नहीं है।",
+        "(b) को चुनें: NDMA की उपयुक्त प्रतिक्रिया अंतिम-मील प्रसार को CAP और सेल ब्रॉडकास्टिंग सिस्टम के माध्यम से मजबूत करना है — यह उसके जनादेश का सही अनुप्रयोग है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) इस धारणा का फायदा उठाता है कि एक सर्वोच्च निकाय के पास तकनीकी एजेंसियों पर निर्देशात्मक अधिकार होना चाहिए। NDMA IMD के साथ समन्वय कर सकता है लेकिन परिचालन रूप से इसे निर्देशित नहीं कर सकता — IMD पृथ्वी विज्ञान मंत्रालय के अधीन रहता है। परिदृश्य की समस्या प्रसार विफलता (अंतिम-मील कनेक्टिविटी) है, न कि पूर्वानुमान की सटीकता — इसलिए IMD-निर्देश विकल्प दोहरी रूप से गलत है: गलत अधिकार और गलत निदान।",
+      "final_explanation": "NDMA का प्रारंभिक चेतावनी जनादेश प्रसार और अंतिम-मील कनेक्टिविटी को कवर करता है — पूर्वानुमान निर्माण नहीं, जो तकनीकी एजेंसियों के पास उनके संबंधित मंत्रालयों के अंतर्गत रहता है।\n\nसिद्धांत लागू करते हुए: परिदृश्य अंतिम-मील प्रसार विफलता का वर्णन करता है — उत्पन्न चेतावनियाँ संवेदनशील समुदायों तक नहीं पहुँच रही हैं। NDMA की उपयुक्त प्रतिक्रिया प्रसार अवसंरचना (CAP, सेल ब्रॉडकास्टिंग सिस्टम, एकीकृत अलर्ट सिस्टम) को मजबूत करना है, न कि IMD के वैज्ञानिक संचालन में हस्तक्षेप करना।\n\n• विकल्प (a) — गलत: NDMA IMD के वैज्ञानिक पूर्वानुमान संचालन को निर्देशित नहीं कर सकता — IMD पृथ्वी विज्ञान मंत्रालय के अधीन अपनी तकनीकी जिम्मेदारी निभाता है। इसके अलावा, समस्या पूर्वानुमान की गुणवत्ता नहीं बल्कि प्रसार की है।\n• विकल्प (b) — सही: NDMA को अंतिम-मील प्रसार को मजबूत करने के लिए अपना जनादेश सक्रिय करना चाहिए — कॉमन अलर्टिंग प्रोटोकॉल (CAP) के कार्यान्वयन, सेल ब्रॉडकास्टिंग सिस्टम, और टेलीकॉम एजेंसियों के साथ समन्वय के माध्यम से ताकि चेतावनियाँ उन समुदायों तक पहुँचें जिनके पास स्मार्टफोन या इंटरनेट नहीं है।\n• विकल्प (c) — गलत: NDRF एक प्रतिक्रिया और बचाव बल है — यह प्रारंभिक चेतावनी प्रसार का संस्थागत तंत्र नहीं है। NDRF की तैनाती आपदा के बाद की जरूरतों को पूरा करती है, पूर्व-आपदा चेतावनी विफलताओं को नहीं।\n• विकल्प (d) — गलत: IMD को NDMA के प्रशासनिक नियंत्रण में लाना विधायी संशोधन की मांग करता है और NDMA के अधिकार क्षेत्र में नहीं है। यह प्रशासनिक नियंत्रण को परिचालन प्रभावशीलता से भ्रमित करता है।\n\nमूल्य संवर्धन:\n• कॉमन अलर्टिंग प्रोटोकॉल (CAP) एजेंसियों, प्रारूपों और भाषाओं में चेतावनी संदेशों को मानकीकृत करता है — जिससे बहु-चैनल अलर्ट वितरण संभव होता है।\n• सेल ब्रॉडकास्टिंग सिस्टम एक भौगोलिक क्षेत्र में सभी मोबाइल फोन पर अलर्ट भेजता है — जो इंटरनेट न होने वाले समुदायों के लिए महत्वपूर्ण है।\n• INCOIS (पृथ्वी विज्ञान मंत्रालय के अंतर्गत) सुनामी और तूफान चेतावनियाँ संभालता है — जो NDMA के प्रशासनिक नियंत्रण के बाहर है।"
+    }
+  },
+  {
+    "uuid": "06db9294-607c-494a-903d-b816ac48aeb2",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Post-Disaster Needs Assessment (PDNA) and NDMA's Role in Recovery Planning",
+        "National Disaster Response Fund (NDRF) and National Disaster Mitigation Fund (NDMF)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Build Back Better NDRF SDRF reconstruction finance three-tier",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about India's post-disaster recovery framework and NDMA's role:\n\n1. Under India's post-disaster financial framework, immediate relief is funded through State Disaster Response Funds, medium-term recovery through the National Disaster Response Fund, and long-term reconstruction through Line Ministries and planning bodies.\n2. The 'Build Back Better' principle, embedded in NDMA's reconstruction guidelines, requires that rebuilt infrastructure must match the original design specifications to ensure speed of reconstruction.\n3. Post-Disaster Needs Assessment (PDNA) methodology used in India is a joint World Bank–United Nations framework adopted for assessing damage, losses, and recovery needs in a structured manner.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under India's post-disaster financial framework, immediate relief is funded through State Disaster Response Funds, medium-term recovery through the National Disaster Response Fund, and long-term reconstruction through Line Ministries and planning bodies.",
+          "verdict": "Correct",
+          "reason": "This three-tier financial architecture is the structured approach under India's DM framework: SDRF for immediate relief, NDRF for medium-term recovery (including restoration of essential services), and Line Ministries/development budgets for long-term reconstruction."
+        },
+        {
+          "statement": "The 'Build Back Better' principle, embedded in NDMA's reconstruction guidelines, requires that rebuilt infrastructure must match the original design specifications to ensure speed of reconstruction.",
+          "verdict": "Incorrect",
+          "reason": "Build Back Better does not mean replicating original design — it means rebuilding to higher, disaster-resilient standards that reduce vulnerability to future disasters. Matching original specifications would be the antithesis of BBB."
+        },
+        {
+          "statement": "Post-Disaster Needs Assessment (PDNA) methodology used in India is a joint World Bank–United Nations framework adopted for assessing damage, losses, and recovery needs in a structured manner.",
+          "verdict": "Correct",
+          "reason": "India has formally adopted the World Bank–UN PDNA methodology for structured post-disaster assessment — providing a common framework for estimating reconstruction needs and accessing international financial support."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three statements correct is the strong distractor because Statement 2's 'Build Back Better' language sounds positive and development-oriented, leading students to assume 'match original specifications' reflects quality adherence rather than recognising it as the opposite of resilience improvement.",
+      "elimination_logic": [
+        "Statement 1: SDRF → NDRF → Line Ministries three-tier structure is a documented feature of India's DM finance framework — mark Correct.",
+        "Statement 2: Build Back Better means building to higher resilience standards — not matching original specifications. 'Match original design' directly contradicts BBB — mark Incorrect.",
+        "Statement 3: PDNA as a joint World Bank-UN methodology adopted by India is documented — mark Correct.",
+        "Statements 1 and 3 correct → option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the partial-truth technique. 'Build Back Better' is a real NDMA principle, and 'ensuring speed of reconstruction' sounds like a legitimate recovery goal. The error is in 'match original design specifications' — which is precisely what BBB rejects. A student who focuses on 'speed of reconstruction' (plausible) and 'Build Back Better' (real) without scrutinising 'match original specifications' will mark Statement 2 as correct.",
+      "final_explanation": "Post-disaster recovery in India operates through a structured financial and planning framework guided by NDMA's reconstruction principles.\n\n• Statement 1 — Correct: The three-tier financial architecture is India's standard: SDRF for immediate disaster relief (food, shelter, sanitation), NDRF for medium-term recovery (restoration of livelihoods, housing, essential services), and Line Ministry/development budgets for long-term sector reconstruction.\n• Statement 2 — Incorrect: Build Back Better (BBB) explicitly means rebuilding to enhanced, disaster-resilient standards that reduce future vulnerability — not replicating pre-disaster design. Matching original specifications would mean repeating the same vulnerabilities that caused damage — the antithesis of BBB.\n• Statement 3 — Correct: India has adopted the World Bank–UN PDNA methodology as its framework for structured post-disaster assessment. PDNA reports provide the data basis for NDRF releases, Line Ministry allocations, and international assistance negotiations.\n\nValue Addition:\n• Build Back Better originated in Sendai Framework Priority 4 — 'Enhancing disaster preparedness for effective response and to Build Back Better in recovery, rehabilitation, and reconstruction.'\n• PDNA is conducted jointly with state governments and international development partners — it is not an NDMA-only exercise.\n• NDRF (as a financial fund under Section 46) can be accessed for reconstruction of essential government infrastructure — not just immediate relief, distinguishing it from SDRF."
+    },
+    "hi": {
+      "display_text": "भारत के आपदा-उपरांत पुनर्प्राप्ति ढांचे और NDMA की भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत के आपदा-उपरांत वित्तीय ढांचे के तहत, तत्काल राहत राज्य आपदा प्रतिक्रिया कोषों के माध्यम से वित्तपोषित होती है, मध्यम अवधि की पुनर्प्राप्ति राष्ट्रीय आपदा प्रतिक्रिया कोष के माध्यम से होती है, और दीर्घकालिक पुनर्निर्माण लाइन मंत्रालयों और योजना निकायों के माध्यम से होता है।\n2. NDMA के पुनर्निर्माण दिशानिर्देशों में निहित 'Build Back Better' सिद्धांत यह आवश्यक करता है कि पुनर्निर्मित अवसंरचना को पुनर्निर्माण की गति सुनिश्चित करने के लिए मूल डिजाइन विनिर्देशों से मेल खाना चाहिए।\n3. भारत में प्रयुक्त पोस्ट-डिजास्टर नीड्स असेसमेंट (PDNA) पद्धति एक संयुक्त विश्व बैंक–संयुक्त राष्ट्र ढांचा है जिसे क्षति, हानि, और पुनर्प्राप्ति आवश्यकताओं का संरचित मूल्यांकन करने के लिए अपनाया गया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत के आपदा-उपरांत वित्तीय ढांचे के तहत, तत्काल राहत राज्य आपदा प्रतिक्रिया कोषों के माध्यम से वित्तपोषित होती है, मध्यम अवधि की पुनर्प्राप्ति राष्ट्रीय आपदा प्रतिक्रिया कोष के माध्यम से होती है, और दीर्घकालिक पुनर्निर्माण लाइन मंत्रालयों और योजना निकायों के माध्यम से होता है।",
+          "verdict": "सही",
+          "reason": "यह तीन-स्तरीय वित्तीय संरचना भारत के आपदा प्रबंधन ढांचे के तहत संरचित दृष्टिकोण है: तत्काल राहत के लिए SDRF, मध्यम अवधि की पुनर्प्राप्ति (आवश्यक सेवाओं की बहाली सहित) के लिए NDRF, और दीर्घकालिक पुनर्निर्माण के लिए लाइन मंत्रालय/विकास बजट।"
+        },
+        {
+          "statement": "NDMA के पुनर्निर्माण दिशानिर्देशों में निहित 'Build Back Better' सिद्धांत यह आवश्यक करता है कि पुनर्निर्मित अवसंरचना को पुनर्निर्माण की गति सुनिश्चित करने के लिए मूल डिजाइन विनिर्देशों से मेल खाना चाहिए।",
+          "verdict": "गलत",
+          "reason": "Build Back Better का अर्थ मूल डिजाइन की नकल करना नहीं है — इसका मतलब है उच्च, आपदा-प्रतिरोधी मानकों के अनुसार पुनर्निर्माण करना जो भविष्य की आपदाओं के प्रति संवेदनशीलता को कम करता है। मूल विनिर्देशों से मेल खाना BBB के विपरीत होगा।"
+        },
+        {
+          "statement": "भारत में प्रयुक्त पोस्ट-डिजास्टर नीड्स असेसमेंट (PDNA) पद्धति एक संयुक्त विश्व बैंक–संयुक्त राष्ट्र ढांचा है जिसे क्षति, हानि और पुनर्प्राप्ति आवश्यकताओं का संरचित मूल्यांकन करने के लिए अपनाया गया है।",
+          "verdict": "सही",
+          "reason": "भारत ने संरचित आपदा-उपरांत मूल्यांकन के लिए विश्व बैंक–संयुक्त राष्ट्र PDNA पद्धति को औपचारिक रूप से अपनाया है — जो पुनर्निर्माण आवश्यकताओं के अनुमान और अंतरराष्ट्रीय वित्तीय सहायता प्राप्ति के लिए एक सामान्य ढांचा प्रदान करता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें सभी तीन कथनों को सही बताया गया है, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 2 का 'Build Back Better' भाषा सकारात्मक और विकासोन्मुखी लगती है, जिससे छात्र यह मान लेते हैं कि 'मूल विनिर्देशों से मेल खाना' गुणवत्ता पालन को दर्शाता है जबकि यह वास्तव में लचीलापन सुधार के विपरीत है।",
+      "elimination_logic": [
+        "कथन 1: SDRF → NDRF → लाइन मंत्रालय तीन-स्तरीय संरचना भारत के आपदा प्रबंधन वित्तीय ढांचे की एक प्रलेखित विशेषता है — इसे सही चिह्नित करें।",
+        "कथन 2: Build Back Better का अर्थ उच्च लचीलापन मानकों के अनुसार निर्माण करना है — मूल विनिर्देशों से मेल खाना नहीं। 'मूल डिजाइन से मेल खाना' सीधे BBB के विपरीत है — इसे गलत चिह्नित करें।",
+        "कथन 3: PDNA को भारत द्वारा अपनाई गई विश्व बैंक-संयुक्त राष्ट्र संयुक्त पद्धति के रूप में प्रलेखित किया गया है — इसे सही चिह्नित करें।",
+        "कथन 1 और 3 सही हैं → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का जाल आंशिक-सत्य तकनीक है। 'Build Back Better' NDMA का वास्तविक सिद्धांत है, और 'पुनर्निर्माण की गति सुनिश्चित करना' एक वैध पुनर्प्राप्ति लक्ष्य लगता है। त्रुटि 'मूल डिजाइन विनिर्देशों से मेल खाना' में है — जो BBB द्वारा स्पष्ट रूप से अस्वीकार किया गया है। जो छात्र 'पुनर्निर्माण की गति' (संभावित) और 'Build Back Better' (वास्तविक) पर ध्यान केंद्रित करते हैं लेकिन 'मूल विनिर्देशों से मेल खाना' की जांच नहीं करते, वे कथन 2 को सही चिह्नित कर देंगे।",
+      "final_explanation": "भारत में आपदा-उपरांत पुनर्प्राप्ति NDMA के पुनर्निर्माण सिद्धांतों द्वारा निर्देशित एक संरचित वित्तीय और योजना ढांचे के माध्यम से संचालित होती है।\n\n• कथन 1 — सही: तीन-स्तरीय वित्तीय संरचना भारत का मानक है: तत्काल आपदा राहत (भोजन, आश्रय, स्वच्छता) के लिए SDRF, मध्यम अवधि की पुनर्प्राप्ति (जीविका, आवास, आवश्यक सेवाओं की बहाली) के लिए NDRF, और दीर्घकालिक क्षेत्रीय पुनर्निर्माण के लिए लाइन मंत्रालय/विकास बजट।\n• कथन 2 — गलत: Build Back Better (BBB) स्पष्ट रूप से उच्च, आपदा-प्रतिरोधी मानकों के अनुसार पुनर्निर्माण का अर्थ है जो भविष्य की संवेदनशीलता को कम करता है — पूर्व-आपदा डिजाइन की नकल नहीं। मूल विनिर्देशों से मेल खाना उन कमजोरियों को दोहराना होगा जिन्होंने क्षति पहुंचाई — जो BBB के विपरीत है।\n• कथन 3 — सही: भारत ने संरचित आपदा-उपरांत मूल्यांकन के लिए विश्व बैंक–संयुक्त राष्ट्र PDNA पद्धति को अपनाया है। PDNA रिपोर्ट NDRF रिलीज़, लाइन मंत्रालय आवंटन, और अंतरराष्ट्रीय सहायता वार्ताओं के लिए डेटा आधार प्रदान करती हैं।\n\nमूल्य संवर्धन:\n• Build Back Better की उत्पत्ति Sendai Framework Priority 4 में हुई — 'प्रभावी प्रतिक्रिया के लिए आपदा तैयारी बढ़ाना और पुनर्प्राप्ति, पुनर्वास, और पुनर्निर्माण में Build Back Better करना।'\n• PDNA राज्य सरकारों और अंतरराष्ट्रीय विकास भागीदारों के साथ संयुक्त रूप से किया जाता है — यह केवल NDMA का अभ्यास नहीं है।\n• NDRF (धारा 46 के तहत एक वित्तीय कोष के रूप में) आवश्यक सरकारी अवसंरचना के पुनर्निर्माण के लिए उपयोग किया जा सकता है — केवल तत्काल राहत के लिए नहीं, जो इसे SDRF से अलग करता है।"
+    }
+  },
+  {
+    "uuid": "c23bafdb-9be1-4ad1-b631-2d1dd9d277f0",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Sendai Framework 2015–2030 and NDMA's Alignment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sendai Framework four priorities not seven targets",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Sendai Framework for Disaster Risk Reduction (2015–2030) is built around a set of Priorities for Action that guide member nations' disaster risk governance. How many Priorities for Action does the Sendai Framework contain?\n\n(a) 3\n(b) 4\n(c) 5\n(d) 7",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because students who know Sendai has '7 global targets' conflate targets with priorities, selecting '7 priorities' when the correct number is 4 priorities.",
+      "elimination_logic": [
+        "Distinguish Sendai Framework's structural elements: It has 4 Priorities for Action AND 7 Global Targets — these are different things.",
+        "The question asks specifically about Priorities for Action — the answer is 4.",
+        "Eliminate (a): 3 priorities is incorrect.",
+        "Eliminate (c): 5 priorities is incorrect.",
+        "Eliminate (d): 7 is the number of global targets, not priorities — this is the deliberate swap trap.",
+        "Select (b): 4 Priorities for Action — Understanding Risk, Governance, Investing in DRR, Enhancing Disaster Preparedness."
+      ],
+      "upsc_trap_explanation": "The '4 priorities vs. 7 targets' confusion is a precision knowledge trap frequently set in UPSC. Sendai Framework has exactly 4 Priorities for Action and 7 Global Targets. Students who know both numbers but are asked about one often swap them — selecting 7 when asked about priorities, or 4 when asked about targets. Option (d) deliberately places 7 as the answer to exploit this swap.",
+      "final_explanation": "The Sendai Framework for Disaster Risk Reduction (2015–2030) is structured around two distinct numerical elements: 4 Priorities for Action and 7 Global Targets.\n\n• Option (a) — Incorrect: 3 priorities has no basis in the Sendai Framework.\n• Option (b) — Correct: The Sendai Framework has exactly 4 Priorities for Action: (i) Understanding disaster risk; (ii) Strengthening disaster risk governance; (iii) Investing in DRR for resilience; (iv) Enhancing disaster preparedness for effective response and 'Build Back Better.'\n• Option (c) — Incorrect: 5 priorities is not a Sendai Framework element.\n• Option (d) — Incorrect: 7 is the number of Global Targets under Sendai — including targets to reduce disaster mortality, number of affected people, and economic losses by 2030 — not the number of priorities.\n\nValue Addition:\n• The 7 Sendai Global Targets include reducing disaster deaths, number of affected people, economic losses, damage to critical infrastructure, and increasing international cooperation and national strategies.\n• The Hyogo Framework for Action (2005–2015) had 5 Priorities — Sendai reduced this to 4, reflecting a more focused approach.\n• India's NDMP is explicitly aligned with all 4 Sendai priorities, making Sendai-NDMP alignment a recurring examination theme."
+    },
+    "hi": {
+      "display_text": "Sendai Framework for Disaster Risk Reduction (2015–2030) एक ऐसी क्रियान्वयन प्राथमिकताओं की श्रृंखला पर आधारित है जो सदस्य देशों के आपदा जोखिम शासन का मार्गदर्शन करती है। Sendai Framework में कितनी क्रियान्वयन प्राथमिकताएँ हैं?\n\n(a) 3\n(b) 4\n(c) 5\n(d) 7",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि Sendai के पास '7 वैश्विक लक्ष्य' हैं, वे लक्ष्यों को प्राथमिकताओं के साथ भ्रमित कर देते हैं, और सही संख्या 4 प्राथमिकताओं होने के बावजूद '7 प्राथमिकताएँ' चुन लेते हैं।",
+      "elimination_logic": [
+        "Sendai Framework के संरचनात्मक तत्वों को अलग करें: इसमें 4 क्रियान्वयन प्राथमिकताएँ और 7 वैश्विक लक्ष्य हैं — ये अलग-अलग चीजें हैं।",
+        "प्रश्न विशेष रूप से क्रियान्वयन प्राथमिकताओं के बारे में पूछता है — उत्तर है 4।",
+        "(a) को हटाएं: 3 प्राथमिकताएँ गलत हैं।",
+        "(c) को हटाएं: 5 प्राथमिकताएँ गलत हैं।",
+        "(d) को हटाएं: 7 वैश्विक लक्ष्यों की संख्या है, प्राथमिकताओं की नहीं — यह जानबूझकर किया गया भ्रमित करने वाला जाल है।",
+        "(b) चुनें: 4 क्रियान्वयन प्राथमिकताएँ — जोखिम को समझना, शासन, आपदा जोखिम न्यूनीकरण में निवेश, आपदा तैयारी को बढ़ाना।"
+      ],
+      "upsc_trap_explanation": "'4 प्राथमिकताएँ बनाम 7 लक्ष्य' का भ्रम UPSC में अक्सर लगाया जाने वाला सटीक ज्ञान का जाल है। Sendai Framework में ठीक 4 क्रियान्वयन प्राथमिकताएँ और 7 वैश्विक लक्ष्य होते हैं। जो छात्र दोनों संख्याएँ जानते हैं लेकिन एक के बारे में पूछा जाता है, वे अक्सर इन्हें बदल देते हैं — प्राथमिकताओं के बारे में पूछे जाने पर 7 चुन लेते हैं, या लक्ष्यों के बारे में पूछे जाने पर 4। विकल्प (d) जानबूझकर 7 को प्राथमिकताओं के उत्तर के रूप में रखता है ताकि इस भ्रम का फायदा उठाया जा सके।",
+      "final_explanation": "Sendai Framework for Disaster Risk Reduction (2015–2030) दो अलग-अलग संख्यात्मक तत्वों पर आधारित है: 4 क्रियान्वयन प्राथमिकताएँ और 7 वैश्विक लक्ष्य।\n\n• विकल्प (a) — गलत: 3 प्राथमिकताओं का Sendai Framework में कोई आधार नहीं है।\n• विकल्प (b) — सही: Sendai Framework में ठीक 4 क्रियान्वयन प्राथमिकताएँ हैं: (i) आपदा जोखिम को समझना; (ii) आपदा जोखिम शासन को मजबूत करना; (iii) लचीलापन के लिए आपदा जोखिम न्यूनीकरण में निवेश; (iv) प्रभावी प्रतिक्रिया और 'Build Back Better' के लिए आपदा तैयारी को बढ़ाना।\n• विकल्प (c) — गलत: 5 प्राथमिकताएँ Sendai Framework का हिस्सा नहीं हैं।\n• विकल्प (d) — गलत: 7 Sendai के वैश्विक लक्ष्यों की संख्या है — जिनमें 2030 तक आपदा मृत्यु दर, प्रभावित लोगों की संख्या, आर्थिक नुकसान को कम करना शामिल है — प्राथमिकताओं की संख्या नहीं।\n\nमूल्यवर्धन:\n• 7 Sendai वैश्विक लक्ष्यों में आपदा मृत्यु दर, प्रभावित लोगों की संख्या, आर्थिक नुकसान, महत्वपूर्ण अवसंरचना को हुए नुकसान को कम करना, और अंतरराष्ट्रीय सहयोग तथा राष्ट्रीय रणनीतियों को बढ़ाना शामिल है।\n• Hyogo Framework for Action (2005–2015) में 5 प्राथमिकताएँ थीं — Sendai ने इसे 4 कर दिया, जो अधिक केंद्रित दृष्टिकोण को दर्शाता है।\n• भारत का NDMP स्पष्ट रूप से सभी 4 Sendai प्राथमिकताओं के साथ संरेखित है, जिससे Sendai-NDMP संरेखण एक बार-बार परीक्षा विषय बन गया है।"
+    }
+  },
+  {
+    "uuid": "9bcd0aa8-16bd-47a2-8af9-34695c514e7f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Community-Based Disaster Risk Management (CBDRM) and NDMA Guidelines",
+        "Role of NDMA in Minimum Standards of Relief"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Gendered DRR NDMA women preparedness committees Aapda Mitra SDRF",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about NDMA's community-based disaster risk management (CBDRM) guidelines and initiatives:\n\n1. NDMA guidelines on community-based disaster risk management explicitly require the inclusion of women in disaster preparedness committees at the local level.\n2. The Aapda Mitra scheme is both operationalized and directly funded by NDMA from its own budgetary allocation, making it independent of SDRF norms.\n3. Self-Help Groups (SHGs) are identified in NDMA's community-based DRR guidelines as conduits for community-level capacity building and disaster preparedness.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 3 only\n(c) 2 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "NDMA guidelines on community-based disaster risk management explicitly require the inclusion of women in disaster preparedness committees at the local level.",
+          "verdict": "Correct",
+          "reason": "NDMA's CBDRM guidelines incorporate a gendered approach, explicitly mandating women's participation in disaster preparedness committees — recognising women's disproportionate vulnerability and their crucial role in community-level DRR."
+        },
+        {
+          "statement": "The Aapda Mitra scheme is both operationalized and directly funded by NDMA from its own budgetary allocation, making it independent of SDRF norms.",
+          "verdict": "Incorrect",
+          "reason": "While Aapda Mitra is operationalized by NDMA (training framework, guidelines), its funding is channelled through SDRF norms — not from NDMA's direct budget. This finance-implementation split is a defining feature of the scheme."
+        },
+        {
+          "statement": "Self-Help Groups (SHGs) are identified in NDMA's community-based DRR guidelines as conduits for community-level capacity building and disaster preparedness.",
+          "verdict": "Correct",
+          "reason": "NDMA's CBDRM guidelines recognise SHGs as important community structures for DRR capacity building — particularly in rural and semi-urban areas where SHG networks are extensive."
+        }
+      ],
+      "strong_distractor": "b — Option (b) citing Statement 3 only as incorrect is the strong distractor because SHG involvement in government schemes is so commonplace that students may doubt whether NDMA's guidelines specifically include SHGs, making Statement 3 seem uncertain.",
+      "elimination_logic": [
+        "Statement 1: NDMA's gendered approach to DRR with women in preparedness committees is documented — Correct (not the answer).",
+        "Statement 2: Aapda Mitra is operationalized by NDMA but funded through SDRF norms — claiming 'directly funded by NDMA independently of SDRF' is incorrect — mark NOT correct.",
+        "Statement 3: SHGs as CBDRM conduits in NDMA guidelines is documented — Correct (not the answer).",
+        "Only Statement 2 is NOT correct → option (c) — 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 2's 'directly funded by NDMA from its own budget' is the partial-truth trap. The statement correctly identifies NDMA as the operationalizing agency for Aapda Mitra (true) but adds the false claim that funding comes from NDMA's budget independently of SDRF norms. Students who know Aapda Mitra is NDMA's programme often assume NDMA funds it directly. The finance-implementation split — where NDMA provides the operational framework and states access SDRF for funding — is the precise fact that requires examination-level depth.",
+      "final_explanation": "NDMA's CBDRM approach integrates gender sensitivity, community volunteer training, and SHG networks into India's grassroots DRR architecture.\n\n• Statement 1 — Correct: NDMA's guidelines explicitly adopt a gendered lens — mandating women's inclusion in disaster preparedness committees. This reflects evidence that women face disproportionate disaster vulnerability and are effective community-level DRR actors.\n• Statement 2 — NOT correct: Aapda Mitra is operationalized by NDMA — meaning NDMA sets the training curriculum, guidelines, and programme architecture. However, the financial mechanism runs through SDRF norms — states access SDRF to fund the training and deployment of community volunteers. NDMA does not fund Aapda Mitra from its own budgetary allocation.\n• Statement 3 — Correct: SHGs are explicitly identified in NDMA's CBDRM guidelines as capacity-building conduits — particularly relevant in rural areas where SHG networks reach communities that formal government machinery cannot easily access.\n\nOnly Statement 2 is NOT correct → option (c).\n\nValue Addition:\n• Aapda Mitra targets training of 6 lakh community volunteers across 350 disaster-prone districts — reflecting NDMA's ambition to build a nationally distributed community response capacity.\n• The gendered DRR approach in NDMA guidelines aligns with Sendai Framework's recognition of gender-differentiated disaster impacts.\n• PRIs (Panchayati Raj Institutions) are the primary institutional vehicle through which NDMA's CBDRM guidelines are operationalized at the village level."
+    },
+    "hi": {
+      "display_text": "NDMA के सामुदायिक-आधारित आपदा जोखिम प्रबंधन (CBDRM) दिशानिर्देशों और पहलों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. NDMA के सामुदायिक-आधारित आपदा जोखिम प्रबंधन दिशानिर्देश स्थानीय स्तर पर आपदा तैयारी समितियों में महिलाओं को शामिल करने की स्पष्ट आवश्यकता रखते हैं।\n2. आपदा मित्र योजना NDMA द्वारा संचालित और उसके अपने बजट आवंटन से सीधे वित्त पोषित है, जिससे यह SDRF मानदंडों से स्वतंत्र है।\n3. स्वयं सहायता समूह (SHGs) को NDMA के सामुदायिक-आधारित DRR दिशानिर्देशों में सामुदायिक स्तर पर क्षमता निर्माण और आपदा तैयारी के माध्यम के रूप में पहचाना गया है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1 और 3\n(b) केवल 3\n(c) केवल 2\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "NDMA guidelines on community-based disaster risk management explicitly require the inclusion of women in disaster preparedness committees at the local level.",
+          "verdict": "सही है",
+          "reason": "NDMA के CBDRM दिशानिर्देशों में लैंगिक दृष्टिकोण शामिल है, जो स्पष्ट रूप से आपदा तैयारी समितियों में महिलाओं की भागीदारी को अनिवार्य करते हैं — क्योंकि महिलाओं की आपदा के प्रति असमान संवेदनशीलता और उनकी सामुदायिक स्तर पर DRR में महत्वपूर्ण भूमिका को मान्यता दी गई है।"
+        },
+        {
+          "statement": "The Aapda Mitra scheme is both operationalized and directly funded by NDMA from its own budgetary allocation, making it independent of SDRF norms.",
+          "verdict": "गलत है",
+          "reason": "हालांकि आपदा मित्र योजना NDMA द्वारा संचालित है (प्रशिक्षण ढांचा, दिशानिर्देश), इसका वित्त पोषण SDRF मानदंडों के माध्यम से होता है — NDMA के सीधे बजट से नहीं। यह वित्त-कार्यान्वयन विभाजन योजना की एक विशेषता है।"
+        },
+        {
+          "statement": "Self-Help Groups (SHGs) are identified in NDMA's community-based DRR guidelines as conduits for community-level capacity building and disaster preparedness.",
+          "verdict": "सही है",
+          "reason": "NDMA के CBDRM दिशानिर्देशों में SHG को DRR क्षमता निर्माण के लिए महत्वपूर्ण सामुदायिक संरचनाओं के रूप में पहचाना गया है — विशेष रूप से ग्रामीण और अर्ध-शहरी क्षेत्रों में जहाँ SHG नेटवर्क व्यापक हैं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) जो केवल कथन 3 को गलत बताता है, एक मजबूत भ्रम पैदा करता है क्योंकि SHG का सरकारी योजनाओं में शामिल होना इतना सामान्य है कि छात्र संदेह कर सकते हैं कि क्या NDMA के दिशानिर्देशों में विशेष रूप से SHG शामिल हैं, जिससे कथन 3 अनिश्चित प्रतीत होता है।",
+      "elimination_logic": [
+        "कथन 1: NDMA का लैंगिक दृष्टिकोण और महिलाओं को तैयारी समितियों में शामिल करना प्रलेखित है — सही (उत्तर नहीं)।",
+        "कथन 2: आपदा मित्र NDMA द्वारा संचालित है लेकिन SDRF मानदंडों के माध्यम से वित्त पोषित है — 'NDMA द्वारा सीधे बजट से स्वतंत्र रूप से वित्त पोषित' कहना गलत है — इसे सही नहीं चिह्नित करें।",
+        "कथन 3: NDMA के दिशानिर्देशों में SHG को CBDRM के माध्यम के रूप में पहचाना गया है — सही (उत्तर नहीं)।",
+        "केवल कथन 2 सही नहीं है → विकल्प (c) — केवल 2।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का 'NDMA के अपने बजट से सीधे वित्त पोषित' होना आंशिक-सत्य जाल है। कथन सही रूप से NDMA को आपदा मित्र के संचालन एजेंसी के रूप में पहचानता है (सत्य) लेकिन गलत दावा जोड़ता है कि वित्त पोषण NDMA के बजट से स्वतंत्र रूप से आता है। जो छात्र जानते हैं कि आपदा मित्र NDMA का कार्यक्रम है, वे अक्सर मान लेते हैं कि NDMA इसे सीधे वित्त पोषित करता है। वित्त-कार्यान्वयन विभाजन — जहाँ NDMA प्रशिक्षण ढांचा प्रदान करता है और राज्य SDRF से वित्त पोषण प्राप्त करते हैं — यह परीक्षा स्तर की गहराई की आवश्यकता वाला तथ्य है।",
+      "final_explanation": "NDMA का CBDRM दृष्टिकोण लिंग संवेदनशीलता, सामुदायिक स्वयंसेवक प्रशिक्षण, और SHG नेटवर्क को भारत के जमीनी DRR ढांचे में एकीकृत करता है।\n\n• कथन 1 — सही: NDMA के दिशानिर्देश स्पष्ट रूप से लैंगिक दृष्टिकोण अपनाते हैं — आपदा तैयारी समितियों में महिलाओं की भागीदारी अनिवार्य करते हैं। यह इस तथ्य को दर्शाता है कि महिलाएं आपदा के प्रति असमान रूप से संवेदनशील हैं और सामुदायिक स्तर पर प्रभावी DRR कार्यकर्ता हैं।\n• कथन 2 — सही नहीं: आपदा मित्र NDMA द्वारा संचालित है — अर्थात् NDMA प्रशिक्षण पाठ्यक्रम, दिशानिर्देश और कार्यक्रम संरचना निर्धारित करता है। हालांकि, वित्तीय तंत्र SDRF मानदंडों के माध्यम से चलता है — राज्य प्रशिक्षण और सामुदायिक स्वयंसेवकों की तैनाती के लिए SDRF का उपयोग करते हैं। NDMA इसे अपने बजट आवंटन से वित्त पोषित नहीं करता।\n• कथन 3 — सही: SHG को NDMA के CBDRM दिशानिर्देशों में क्षमता निर्माण के माध्यम के रूप में स्पष्ट रूप से पहचाना गया है — विशेष रूप से ग्रामीण क्षेत्रों में जहाँ SHG नेटवर्क उन समुदायों तक पहुँचते हैं जहाँ सरकारी मशीनरी आसानी से नहीं पहुँच पाती।\n\nकेवल कथन 2 सही नहीं है → विकल्प (c)।\n\nमूल्य संवर्धन:\n• आपदा मित्र 350 आपदा-प्रवण जिलों में 6 लाख सामुदायिक स्वयंसेवकों के प्रशिक्षण को लक्षित करता है — जो NDMA की राष्ट्रीय स्तर पर सामुदायिक प्रतिक्रिया क्षमता बनाने की महत्वाकांक्षा को दर्शाता है।\n• NDMA के दिशानिर्देशों में लैंगिक DRR दृष्टिकोण Sendai Framework के लिंग-भेदित आपदा प्रभावों की मान्यता के अनुरूप है।\n• पंचायत राज संस्थान (PRIs) वे प्राथमिक संस्थागत वाहन हैं जिनके माध्यम से NDMA के CBDRM दिशानिर्देश गांव स्तर पर लागू होते हैं।"
+    }
+  },
+  {
+    "uuid": "c62bb567-5059-4ba2-8db4-da4eb8636c28",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "NDMA vs. SDMA vs. NCMC: Jurisdictional Overlaps and Coordination Failures",
+        "National Disaster Response Force (NDRF): Control and Deployment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDRF proactive pre-positioning NDMA authority before disaster strikes",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Indian Meteorological Department issues a forecast with high confidence that a severe cyclonic storm will make landfall on the Odisha coast within 36 hours. The NDMA is reviewing its response options. The Odisha State Government has not yet formally requested Central assistance, and the cyclone has not yet made landfall. NDMA wants to ensure NDRF teams are positioned in coastal districts before wind conditions prevent safe road access.\n\nWhich of the following actions is within NDMA's actual statutory authority in this situation?\n\n(a) NDMA must wait for the cyclone to make landfall before deploying NDRF, since NDRF deployment is a reactive measure triggered by actual disaster occurrence.\n(b) NDMA can pre-position NDRF battalions in coastal Odisha districts based on the forecast, exercising its proactive deployment authority without requiring a post-disaster state request.\n(c) NDMA must wait for the Odisha State Government's formal request for Central assistance before any NDRF movement, since disaster relief is primarily a state subject.\n(d) NDMA can only pre-position NDRF after the IMD issues an official 'red alert' classification — a lesser forecast category is insufficient to trigger NDRF movement.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because waiting for the State Government's formal request before deploying NDRF sounds procedurally correct — students who associate federal protocol with state consent assume NDRF cannot move without a state request.",
+      "elimination_logic": [
+        "Identify the key legal power: NDMA can pre-position NDRF battalions before a disaster strikes — proactive deployment does not require a post-disaster state request.",
+        "The scenario: A cyclone with high confidence landfall forecast 36 hours away — this is precisely the situation for proactive NDRF pre-positioning.",
+        "Eliminate (a): Waiting for the cyclone to make landfall before deploying NDRF defeats the purpose of proactive deployment — eliminating response capacity during the critical warning window.",
+        "Eliminate (c): State Government's formal request is not required for proactive NDRF pre-positioning — NDMA can act on forecast information.",
+        "Eliminate (d): IMD's 'red alert' is a triggering condition for action, not a requirement for NDRF deployment — NDMA can deploy on any credible forecast.",
+        "Select (b): NDMA can pre-position NDRF battalions ahead of the forecast landfall — proactive deployment is within NDMA's statutory authority."
+      ],
+      "upsc_trap_explanation": "Option (c) exploits federalism instincts. Students who associate NDRF deployment with state-level requests (because disaster relief is a State List subject in origin) assume NDMA must wait for a state to formally request NDRF assistance. However, NDMA's proactive deployment authority is explicitly recognised — it can pre-position NDRF based on credible forecast information without waiting for a post-disaster state request. This 'proactive vs. reactive' deployment distinction is a critical operational principle.",
+      "final_explanation": "NDMA's authority to pre-position NDRF battalions before a disaster is a deliberate legislative design to overcome the fatal delay of reactive deployment.\n\nApplying the principle: A high-confidence cyclone forecast 36 hours before expected landfall is the ideal scenario for NDMA to exercise its proactive deployment authority — positioning NDRF teams in coastal districts before wind and flood conditions prevent safe entry.\n\n• Option (a) — Incorrect: Waiting for landfall before deployment eliminates the 36-hour preparedness window — NDMA's proactive deployment authority exists precisely to avoid this reactive posture.\n• Option (b) — Correct: NDMA can pre-position NDRF battalions in coastal districts based on the IMD forecast — this is the standard operating approach for high-confidence cyclone forecasts. Neither a state request nor a post-landfall trigger is required.\n• Option (c) — Incorrect: NDMA does not need to wait for a State Government's formal request to pre-position NDRF. Proactive deployment is an independent NDMA authority — the state's cooperation in logistics is helpful but not a legal prerequisite for NDMA action.\n• Option (d) — Incorrect: IMD's 'red alert' classification is a trigger indicator, not a mandatory legal prerequisite for NDRF deployment. NDMA can act on any credible high-confidence forecast.\n\nValue Addition:\n• NDRF's 16 battalions are strategically located across India to minimize response time to disaster-prone regions.\n• Pre-positioning (proactive deployment) is now standard practice for cyclones in Odisha, Andhra Pradesh, and West Bengal — reducing post-landfall mortality significantly.\n• NDMA-SDMA coordination on NDRF pre-positioning is managed through the NEC coordination mechanism."
+    },
+    "hi": {
+      "display_text": "भारतीय मौसम विभाग ने उच्च विश्वास के साथ पूर्वानुमान जारी किया है कि एक तीव्र चक्रवात 36 घंटे के भीतर ओडिशा तट पर लैंडफॉल करेगा। NDMA अपनी प्रतिक्रिया विकल्पों की समीक्षा कर रहा है। ओडिशा राज्य सरकार ने अभी तक केंद्रीय सहायता के लिए औपचारिक अनुरोध नहीं किया है, और चक्रवात अभी तक लैंडफॉल नहीं हुआ है। NDMA यह सुनिश्चित करना चाहता है कि NDRF टीमें तटीय जिलों में इस तरह स्थित हों कि हवा की स्थिति सुरक्षित सड़क पहुंच को रोकने से पहले।\n\nइस स्थिति में निम्नलिखित में से कौन-सा कार्य NDMA के वास्तविक वैधानिक अधिकार के अंतर्गत है?\n\n(a) NDMA को NDRF तैनात करने के लिए चक्रवात के लैंडफॉल होने तक इंतजार करना चाहिए, क्योंकि NDRF तैनाती एक प्रतिक्रियाशील उपाय है जो वास्तविक आपदा घटित होने पर शुरू होता है।\n(b) NDMA पूर्वानुमान के आधार पर तटीय ओडिशा जिलों में NDRF बटालियन को पूर्व-स्थित कर सकता है, अपनी सक्रिय तैनाती अधिकार का प्रयोग करते हुए, जिसके लिए आपदा के बाद राज्य के अनुरोध की आवश्यकता नहीं है।\n(c) NDMA को NDRF की किसी भी गतिविधि से पहले ओडिशा राज्य सरकार के केंद्रीय सहायता के औपचारिक अनुरोध का इंतजार करना चाहिए, क्योंकि आपदा राहत मूल रूप से राज्य विषय है।\n(d) NDMA केवल IMD के आधिकारिक 'रेड अलर्ट' वर्गीकरण जारी करने के बाद ही NDRF को पूर्व-स्थित कर सकता है — कमतर पूर्वानुमान श्रेणी NDRF की तैनाती के लिए पर्याप्त नहीं है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला है क्योंकि राज्य सरकार के औपचारिक अनुरोध का इंतजार करना NDRF को तैनात करने से पहले प्रक्रियात्मक रूप से सही लगता है — छात्र जो संघीय प्रोटोकॉल को राज्य की सहमति से जोड़ते हैं, वे मानते हैं कि बिना राज्य के अनुरोध के NDRF आगे नहीं बढ़ सकता।",
+      "elimination_logic": [
+        "मुख्य कानूनी अधिकार की पहचान करें: NDMA आपदा आने से पहले NDRF बटालियनों को पूर्व-स्थित कर सकता है — सक्रिय तैनाती के लिए आपदा के बाद राज्य के अनुरोध की आवश्यकता नहीं होती।",
+        "परिदृश्य: एक चक्रवात जिसकी लैंडफॉल की भविष्यवाणी 36 घंटे बाद उच्च विश्वास के साथ है — यह सक्रिय NDRF पूर्व-स्थिति के लिए उपयुक्त स्थिति है।",
+        "(a) को हटाएं: चक्रवात के लैंडफॉल होने तक NDRF तैनात करने के लिए इंतजार करना सक्रिय तैनाती के उद्देश्य को विफल करता है — जो चेतावनी अवधि के दौरान प्रतिक्रिया क्षमता को समाप्त कर देता है।",
+        "(c) को हटाएं: सक्रिय NDRF पूर्व-स्थिति के लिए राज्य सरकार के औपचारिक अनुरोध की आवश्यकता नहीं है — NDMA पूर्वानुमान सूचना पर कार्य कर सकता है।",
+        "(d) को हटाएं: IMD का 'रेड अलर्ट' कार्रवाई के लिए एक ट्रिगर शर्त है, NDRF तैनाती के लिए अनिवार्य आवश्यकता नहीं — NDMA किसी भी विश्वसनीय पूर्वानुमान पर तैनात कर सकता है।",
+        "(b) को चुनें: NDMA पूर्वानुमानित लैंडफॉल से पहले NDRF बटालियनों को पूर्व-स्थित कर सकता है — सक्रिय तैनाती NDMA के वैधानिक अधिकार के अंतर्गत है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) संघवाद की प्रवृत्तियों का शोषण करता है। छात्र जो NDRF तैनाती को राज्य स्तर के अनुरोध से जोड़ते हैं (क्योंकि आपदा राहत मूल रूप से राज्य सूची का विषय है) मानते हैं कि NDMA को राज्य के औपचारिक अनुरोध का इंतजार करना चाहिए। हालांकि, NDMA की सक्रिय तैनाती की अधिकारिता स्पष्ट रूप से मान्यता प्राप्त है — यह विश्वसनीय पूर्वानुमान सूचना के आधार पर बिना आपदा के बाद राज्य के अनुरोध के NDRF को पूर्व-स्थित कर सकता है। यह 'सक्रिय बनाम प्रतिक्रियाशील' तैनाती का अंतर एक महत्वपूर्ण परिचालन सिद्धांत है।",
+      "final_explanation": "NDMA का अधिकार है कि वह आपदा से पहले NDRF बटालियनों को पूर्व-स्थित करे, जो प्रतिक्रियाशील तैनाती की घातक देरी को दूर करने के लिए विधायी रूप से डिज़ाइन किया गया है।\n\nसिद्धांत का अनुप्रयोग: लैंडफॉल से 36 घंटे पहले उच्च विश्वास वाला चक्रवात पूर्वानुमान NDMA के लिए सक्रिय तैनाती अधिकार का प्रयोग करने का आदर्श परिदृश्य है — जिससे NDRF टीमों को तटीय जिलों में इस तरह से स्थित किया जा सके कि हवा और बाढ़ की स्थिति सुरक्षित मार्ग अवरुद्ध करने से पहले प्रवेश संभव हो।\n\n• विकल्प (a) — गलत: लैंडफॉल होने तक तैनाती का इंतजार 36 घंटे की तैयारी की खिड़की को समाप्त कर देता है — NDMA का सक्रिय तैनाती अधिकार इसी प्रतिक्रियाशील स्थिति से बचने के लिए है।\n• विकल्प (b) — सही: NDMA IMD के पूर्वानुमान के आधार पर तटीय ओडिशा जिलों में NDRF बटालियनों को पूर्व-स्थित कर सकता है — यह उच्च विश्वास वाले चक्रवात पूर्वानुमानों के लिए मानक संचालन प्रक्रिया है। न तो राज्य का अनुरोध और न ही लैंडफॉल के बाद का ट्रिगर आवश्यक है।\n• विकल्प (c) — गलत: NDMA को NDRF को पूर्व-स्थित करने के लिए ओडिशा राज्य सरकार के औपचारिक अनुरोध का इंतजार करने की आवश्यकता नहीं है। सक्रिय तैनाती NDMA का स्वतंत्र अधिकार है — राज्य की लॉजिस्टिक सहयोग सहायक है लेकिन कानूनी पूर्वापेक्षा नहीं।\n• विकल्प (d) — गलत: IMD का 'रेड अलर्ट' वर्गीकरण एक ट्रिगर संकेतक है, NDRF तैनाती के लिए अनिवार्य कानूनी पूर्वापेक्षा नहीं। NDMA किसी भी विश्वसनीय उच्च विश्वास पूर्वानुमान पर कार्य कर सकता है।\n\nमूल्य संवर्धन:\n• NDRF की 16 बटालियन भारत भर में रणनीतिक रूप से स्थित हैं ताकि आपदा-प्रवण क्षेत्रों में प्रतिक्रिया समय न्यूनतम हो।\n• पूर्व-स्थिति (सक्रिय तैनाती) अब ओडिशा, आंध्र प्रदेश और पश्चिम बंगाल में चक्रवातों के लिए मानक अभ्यास है — जिससे लैंडफॉल के बाद मृत्यु दर में उल्लेखनीय कमी आई है।\n• NDMA-SDMA समन्वय NDRF पूर्व-स्थिति पर NEC समन्वय तंत्र के माध्यम से प्रबंधित होता है।"
+    }
+  },
+  {
+    "uuid": "a1d7ef15-21d9-46dc-a157-eae0c0063188",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Natural Disasters",
+      "sub_topic": "NDMA — mandate and guidelines",
+      "concepts_used": [
+        "Composition and Chairpersonship of NDMA",
+        "National Executive Committee (NEC): Role and Relationship with NDMA",
+        "NDMA vs. SDMA vs. NCMC: Jurisdictional Overlaps and Coordination Failures"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDMA NEC NCMC SDMA heads institutional hierarchy",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Disaster Management Body) with List II (Head/Chairperson):",
+        "columns": [
+          "List I — Body",
+          "List II — Head/Chairperson"
+        ],
+        "rows": [
+          [
+            "A. National Disaster Management Authority (NDMA)",
+            "1. Union Home Secretary"
+          ],
+          [
+            "B. National Executive Committee (NEC)",
+            "2. Chief Minister of the respective state"
+          ],
+          [
+            "C. National Crisis Management Committee (NCMC)",
+            "3. Prime Minister of India (ex-officio)"
+          ],
+          [
+            "D. State Disaster Management Authority (SDMA)",
+            "4. Cabinet Secretary of India"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because it correctly pairs the PM with NDMA but then swaps the Home Secretary and Cabinet Secretary — assigning the Cabinet Secretary to NEC rather than NCMC.",
+      "elimination_logic": [
+        "List I item A (NDMA Chairperson): Prime Minister as ex-officio Chairperson — matches List II item 3.",
+        "List I item B (NEC head): Union Home Secretary heads NEC — matches List II item 1.",
+        "List I item C (NCMC head): Cabinet Secretary heads NCMC — matches List II item 4.",
+        "List I item D (SDMA head): Chief Minister of the respective state heads SDMA — matches List II item 2.",
+        "Correct combination: A-3, B-1, C-4, D-2 → option (c)."
+      ],
+      "upsc_trap_explanation": "The Home Secretary–Cabinet Secretary swap for NEC and NCMC is the most commonly tested entity-swap in India's disaster management institutional architecture. Students who know both are senior bureaucrats heading different coordination bodies frequently reverse them — placing the Cabinet Secretary at NEC and Home Secretary at NCMC. The correct assignment is: Home Secretary → NEC (statutory, DM Act); Cabinet Secretary → NCMC (executive, non-statutory).",
+      "final_explanation": "Each tier of India's disaster management hierarchy has a defined head, with distinct statutory or executive grounding.\n\nCorrect matches:\n• A (NDMA Chairperson) → 3 (Prime Minister, ex-officio): NDMA's unique feature — the PM's direct chairpersonship signals disaster management as a top executive priority.\n• B (NEC head) → 1 (Union Home Secretary): NEC is the statutory operational arm of NDMA at the Central Government level, headed by the senior-most Ministry of Home Affairs official.\n• C (NCMC head) → 4 (Cabinet Secretary): NCMC is a non-statutory, executive coordination body headed by the Cabinet Secretary — India's senior-most civil servant — for inter-ministerial disaster crisis coordination.\n• D (SDMA head) → 2 (Chief Minister of respective state): Each SDMA mirrors the national NDMA arrangement at the state level, with the CM as ex-officio Chairperson.\n\nTrap pairing: B and C (NEC/NCMC leadership) are the critical discriminators — confusing Home Secretary and Cabinet Secretary is the primary error route.\n\nValue Addition:\n• The Vice-Chairperson of NDMA holds Cabinet Minister rank — not to be confused with the Cabinet Secretary (who is a civil servant, not a minister).\n• NCMC can be convened for 'major disasters' requiring inter-ministerial coordination — it operates in parallel with NDMA, not subordinate to it.\n• Chief Secretaries of states serve in SDMAs — mirroring the Home Secretary's NEC role at the national level."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (आपदा प्रबंधन निकाय) को सूची II (प्रमुख/अध्यक्ष) से मिलाइए:",
+        "columns": [
+          "सूची I — निकाय",
+          "सूची II — प्रमुख/अध्यक्ष"
+        ],
+        "rows": [
+          [
+            "A. राष्ट्रीय आपदा प्रबंधन प्राधिकरण (NDMA)",
+            "1. केंद्रीय गृह सचिव"
+          ],
+          [
+            "B. राष्ट्रीय कार्यकारी समिति (NEC)",
+            "2. संबंधित राज्य के मुख्यमंत्री"
+          ],
+          [
+            "C. राष्ट्रीय संकट प्रबंधन समिति (NCMC)",
+            "3. भारत के प्रधानमंत्री (पदेन)"
+          ],
+          [
+            "D. राज्य आपदा प्रबंधन प्राधिकरण (SDMA)",
+            "4. भारत के कैबिनेट सचिव"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमकारी विकल्प है क्योंकि यह सही ढंग से प्रधानमंत्री को NDMA से जोड़ता है लेकिन गृह सचिव और कैबिनेट सचिव को बदल देता है — NEC के बजाय NCMC के लिए कैबिनेट सचिव को असाइन करता है।",
+      "elimination_logic": [
+        "सूची I आइटम A (NDMA अध्यक्ष): प्रधानमंत्री, पदेन अध्यक्ष — सूची II आइटम 3 से मेल खाता है।",
+        "सूची I आइटम B (NEC प्रमुख): NEC का नेतृत्व केंद्रीय गृह सचिव करते हैं — सूची II आइटम 1 से मेल खाता है।",
+        "सूची I आइटम C (NCMC प्रमुख): NCMC का नेतृत्व कैबिनेट सचिव करते हैं — सूची II आइटम 4 से मेल खाता है।",
+        "सूची I आइटम D (SDMA प्रमुख): संबंधित राज्य के मुख्यमंत्री SDMA के प्रमुख होते हैं — सूची II आइटम 2 से मेल खाता है।",
+        "सही संयोजन: A-3, B-1, C-4, D-2 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "NEC और NCMC के लिए गृह सचिव–कैबिनेट सचिव की अदला-बदली भारत के आपदा प्रबंधन संस्थागत ढांचे में सबसे सामान्य परीक्षित एंटिटी-स्वैप है। जो छात्र दोनों वरिष्ठ नौकरशाहों को जानते हैं जो अलग-अलग समन्वय निकायों के प्रमुख हैं, वे अक्सर इन्हें उलट देते हैं — NEC में कैबिनेट सचिव और NCMC में गृह सचिव को रख देते हैं। सही असाइनमेंट है: गृह सचिव → NEC (वैधानिक, आपदा प्रबंधन अधिनियम); कैबिनेट सचिव → NCMC (कार्यकारी, गैर-वैधानिक)।",
+      "final_explanation": "भारत के आपदा प्रबंधन पदानुक्रम की प्रत्येक स्तर की एक परिभाषित अध्यक्षता होती है, जिसमें विशिष्ट वैधानिक या कार्यकारी आधार होता है।\n\nसही मेल:\n• A (NDMA अध्यक्ष) → 3 (प्रधानमंत्री, पदेन): NDMA की विशिष्टता — प्रधानमंत्री की प्रत्यक्ष अध्यक्षता आपदा प्रबंधन को शीर्ष कार्यकारी प्राथमिकता दर्शाती है।\n• B (NEC प्रमुख) → 1 (केंद्रीय गृह सचिव): NEC, NDMA का केंद्रीय सरकार स्तर पर वैधानिक परिचालन अंग है, जिसका नेतृत्व गृह मंत्रालय के वरिष्ठतम अधिकारी करते हैं।\n• C (NCMC प्रमुख) → 4 (कैबिनेट सचिव): NCMC एक गैर-वैधानिक, कार्यकारी समन्वय निकाय है जिसका नेतृत्व भारत के वरिष्ठतम सिविल सेवक, कैबिनेट सचिव करते हैं — जो मंत्रालयों के बीच आपदा संकट समन्वय के लिए है।\n• D (SDMA प्रमुख) → 2 (संबंधित राज्य के मुख्यमंत्री): प्रत्येक SDMA राष्ट्रीय NDMA व्यवस्था का राज्य स्तर पर प्रतिबिंब है, जिसमें मुख्यमंत्री पदेन अध्यक्ष होते हैं।\n\nफंदा जोड़ी: B और C (NEC/NCMC नेतृत्व) मुख्य भेदक हैं — गृह सचिव और कैबिनेट सचिव को भ्रमित करना मुख्य त्रुटि मार्ग है।\n\nमूल्य संवर्धन:\n• NDMA के उपाध्यक्ष कैबिनेट मंत्री के पद पर होते हैं — जिन्हें कैबिनेट सचिव (जो एक सिविल सेवक हैं, मंत्री नहीं) से भ्रमित नहीं करना चाहिए।\n• NCMC को 'प्रमुख आपदाओं' के लिए बुलाया जा सकता है जिनमें मंत्रालयों के बीच समन्वय आवश्यक होता है — यह NDMA के समकक्ष कार्य करता है, अधीनस्थ नहीं।\n• राज्यों के मुख्य सचिव SDMA में सेवा देते हैं — जो राष्ट्रीय स्तर पर गृह सचिव की NEC भूमिका का प्रतिबिंब है।"
+    }
+  }
+]

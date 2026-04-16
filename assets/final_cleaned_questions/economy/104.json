@@ -1,0 +1,1069 @@
+[
+  {
+    "uuid": "9fdee92e-ea18-4bef-b7c7-cff9e87a0ad8",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Hunger Index (GHI): Methodology, Criticism and India's Response"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "GHI publisher — not a UN body",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly identifies the publishing organisation(s) of the Global Hunger Index?\n\n(a) United Nations Development Programme (UNDP)\n(b) Concern Worldwide and Welthungerhilfe\n(c) Food and Agriculture Organization (FAO)\n(d) World Food Programme (WFP)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because the Food and Agriculture Organization (FAO) is the most prominent UN body associated with hunger data, making students conflate it with the GHI publisher.",
+      "elimination_logic": [
+        "Eliminate option a: UNDP publishes the Human Development Report, not hunger assessments.",
+        "Eliminate option c: FAO publishes the State of Food Security and Nutrition in the World report — a separate product entirely.",
+        "Eliminate option d: WFP is a UN operational agency focused on food delivery, not index publication.",
+        "Retain option b: Concern Worldwide and Welthungerhilfe are the joint publishers of the Global Hunger Index."
+      ],
+      "upsc_trap_explanation": "The most common trap here is attributing the GHI to a UN body — particularly FAO or WFP — because hunger is a UN-adjacent concern. Students who have read about FAO's State of Food Security report assume GHI is a UN product. The GHI is published by two non-governmental organisations: Concern Worldwide (Irish) and Welthungerhilfe (German). India has specifically criticised the GHI methodology, including its reliance on opinion-poll-based data for undernourishment, which further confuses students into thinking it is a government or intergovernmental report.",
+      "final_explanation": "The Global Hunger Index is published jointly by Concern Worldwide and Welthungerhilfe — neither of which is a UN agency. This distinction matters because India's government has repeatedly questioned the GHI's methodology on the grounds that its undernourishment indicator is based on an opinion poll of only 3,000 respondents rather than objective nutritional surveys.\n\n• Option (a) — UNDP: Incorrect. UNDP publishes the Human Development Report and HDI-related indices.\n• Option (b) — Concern Worldwide and Welthungerhilfe: Correct. Both are international NGOs — Irish and German respectively.\n• Option (c) — FAO: Incorrect. FAO co-publishes the State of Food Security and Nutrition in the World (SOFI) report, which is a separate product with different methodology.\n• Option (d) — WFP: Incorrect. WFP is an operational UN agency focused on food delivery and emergency response, not index compilation.\n\nValue Addition:\n• GHI uses four indicators: undernourishment (weight 1/3), child wasting (1/6), child stunting (1/6), and child mortality (1/3).\n• India objects specifically to the use of Gallup opinion polls for the undernourishment component.\n• The SOFI report (FAO/WFP/IFAD/WFP/UNICEF) is the UN's primary food security publication — distinct from GHI."
+    },
+    "hi": {
+      "display_text": "ग्लोबल हंगर इंडेक्स के प्रकाशन संगठन/संगठनों की सही पहचान निम्नलिखित में से कौन-सी है?\n\n(a) संयुक्त राष्ट्र विकास कार्यक्रम (UNDP)\n(b) Concern Worldwide और Welthungerhilfe\n(c) खाद्य और कृषि संगठन (FAO)\n(d) विश्व खाद्य कार्यक्रम (WFP)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि Food and Agriculture Organization (FAO) भूख से संबंधित डेटा के साथ सबसे प्रमुख संयुक्त राष्ट्र निकाय है, जिससे छात्र इसे GHI प्रकाशक के साथ भ्रमित कर लेते हैं।",
+      "elimination_logic": [
+        "विकल्प a को हटाएं: UNDP मानव विकास रिपोर्ट प्रकाशित करता है, भूख आकलन नहीं।",
+        "विकल्प c को हटाएं: FAO 'State of Food Security and Nutrition in the World' रिपोर्ट प्रकाशित करता है — जो पूरी तरह से अलग उत्पाद है।",
+        "विकल्प d को हटाएं: WFP एक संयुक्त राष्ट्र परिचालन एजेंसी है जो खाद्य वितरण पर केंद्रित है, सूचकांक प्रकाशन पर नहीं।",
+        "विकल्प b को रखें: Concern Worldwide और Welthungerhilfe ग्लोबल हंगर इंडेक्स के संयुक्त प्रकाशक हैं।"
+      ],
+      "upsc_trap_explanation": "यहाँ सबसे आम जाल यह है कि GHI को किसी संयुक्त राष्ट्र निकाय — विशेष रूप से FAO या WFP — से जोड़ दिया जाता है क्योंकि भूख एक संयुक्त राष्ट्र से जुड़ा मुद्दा है। जो छात्र FAO की 'State of Food Security' रिपोर्ट के बारे में पढ़ चुके हैं, वे मान लेते हैं कि GHI भी संयुक्त राष्ट्र का उत्पाद है। GHI दो गैर-सरकारी संगठनों द्वारा प्रकाशित किया जाता है: Concern Worldwide (आयरिश) और Welthungerhilfe (जर्मन)। भारत ने विशेष रूप से GHI की कार्यप्रणाली की आलोचना की है, जिसमें इसके कुपोषण के लिए राय सर्वेक्षण आधारित डेटा का उपयोग शामिल है, जो छात्रों को यह सोचने पर मजबूर करता है कि यह कोई सरकारी या अंतरसरकारी रिपोर्ट है।",
+      "final_explanation": "ग्लोबल हंगर इंडेक्स का संयुक्त प्रकाशन Concern Worldwide और Welthungerhilfe द्वारा किया जाता है — जो दोनों संयुक्त राष्ट्र एजेंसियां नहीं हैं। यह भेद महत्वपूर्ण है क्योंकि भारत सरकार ने बार-बार GHI की कार्यप्रणाली पर सवाल उठाए हैं, विशेषकर इसके कुपोषण संकेतक के लिए जो केवल 3,000 उत्तरदाताओं के राय सर्वेक्षण पर आधारित है, न कि वस्तुनिष्ठ पोषण सर्वेक्षणों पर।\n\n• विकल्प (a) — UNDP: गलत। UNDP मानव विकास रिपोर्ट और HDI संबंधित सूचकांक प्रकाशित करता है।\n• विकल्प (b) — Concern Worldwide और Welthungerhilfe: सही। दोनों अंतरराष्ट्रीय गैर-सरकारी संगठन हैं — क्रमशः आयरिश और जर्मन।\n• विकल्प (c) — FAO: गलत। FAO 'State of Food Security and Nutrition in the World' (SOFI) रिपोर्ट का सह-प्रकाशक है, जो एक अलग उत्पाद है और इसकी कार्यप्रणाली भिन्न है।\n• विकल्प (d) — WFP: गलत। WFP एक परिचालन संयुक्त राष्ट्र एजेंसी है जो खाद्य वितरण और आपातकालीन प्रतिक्रिया पर केंद्रित है, सूचकांक संकलन पर नहीं।\n\nमूल्य संवर्धन:\n• GHI चार संकेतकों का उपयोग करता है: कुपोषण (भार 1/3), बाल कुपोषण (1/6), बाल वृद्धि रुकावट (1/6), और बाल मृत्यु दर (1/3)।\n• भारत विशेष रूप से कुपोषण घटक के लिए Gallup राय सर्वेक्षण के उपयोग का विरोध करता है।\n• SOFI रिपोर्ट (FAO/WFP/IFAD/UNICEF) संयुक्त राष्ट्र की प्रमुख खाद्य सुरक्षा प्रकाशन है — जो GHI से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "5330182f-3e85-40c1-885c-f04a275eaf47",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Human Development Index (HDI): Components, Formula and India's Trajectory"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "HDI income dimension — GNI per capita PPP not GDP",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Human Development Index (HDI) and related frameworks:\n\n1. The standard of living dimension in the Human Development Index is measured using Gross National Income per capita adjusted for purchasing power parity.\n2. The Gender Development Index and the Gender Inequality Index are published by different UN agencies.\n3. India's rank in the Human Development Index has been constrained despite economic growth partly because of low GNI per capita relative to comparator countries.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The standard of living dimension in the Human Development Index is measured using Gross National Income per capita adjusted for purchasing power parity.",
+          "verdict": "Correct",
+          "reason": "HDI uses GNI per capita (PPP) — not GDP per capita — for the income dimension, reflecting income available to citizens regardless of where it is earned."
+        },
+        {
+          "statement": "The Gender Development Index and the Gender Inequality Index are published by different UN agencies.",
+          "verdict": "Incorrect",
+          "reason": "Both GDI and GII are products of UNDP's Human Development Report — they originate from the same agency and the same flagship report."
+        },
+        {
+          "statement": "India's rank in the Human Development Index has been constrained despite economic growth partly because of low GNI per capita relative to comparator countries.",
+          "verdict": "Correct",
+          "reason": "India's HDI rank stagnation is attributed to the drag from GNI per capita (PPP) and education indicators, even as GDP growth rates remain high."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) is the strongest distractor because statements 1 and 3 are accurate, tempting students to assume statement 2 must also be correct given that both GDI and GII are HDR products.",
+      "elimination_logic": [
+        "Verify statement 1: HDI income dimension uses GNI per capita (PPP) — this is correct; GDP is not used.",
+        "Test statement 2: Both GDI and GII are UNDP/HDR products, not different agencies — statement 2 is incorrect.",
+        "Verify statement 3: GNI per capita and education lags explain India's HDI rank stagnation — correct.",
+        "Since statements 1 and 3 are correct and statement 2 is incorrect, the answer is option c (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the key trap. Students often know that GDI and GII measure different things (one measures gender-based development gaps; the other measures gender-based inequality in human development) and incorrectly infer they must come from different publishers. Both indices are UNDP products released through the same Human Development Report. This conflation of 'different metrics' with 'different agencies' is a classic scope-extension trap.",
+      "final_explanation": "The HDI framework rests on three dimensions: long and healthy life (measured by life expectancy at birth), knowledge (mean and expected years of schooling), and standard of living (GNI per capita at PPP). The use of GNI rather than GDP is deliberate — GNI captures income of residents regardless of geographic origin of earnings.\n\n• Statement 1 — Correct: GNI per capita (PPP) is the prescribed metric for the income dimension. Using GDP would overstate or understate resident welfare.\n• Statement 2 — Incorrect: Both GDI and GII are published by UNDP as part of the Human Development Report. GDI measures male-female HDI ratio; GII measures inequality in reproductive health, empowerment, and labour market participation — different metrics, same publisher.\n• Statement 3 — Correct: India's HDI rank improvement is tempered by relatively low GNI per capita (PPP) compared to countries with similar growth trajectories, combined with education gaps.\n\nValue Addition:\n• HDR is published annually with a specific thematic focus each year (e.g., Uncertain Times, Unsettled Lives — 2022).\n• GDI is the ratio of female HDI to male HDI; a value of 1 indicates parity.\n• India falls in the 'Medium Human Development' category in recent HDR editions."
+    },
+    "hi": {
+      "display_text": "मानव विकास सूचकांक (HDI) और संबंधित ढांचों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. मानव विकास सूचकांक में जीवन स्तर आयाम को सकल राष्ट्रीय आय प्रति व्यक्ति को क्रय शक्ति समता के अनुसार समायोजित करके मापा जाता है।\n2. लिंग विकास सूचकांक और लिंग असमानता सूचकांक अलग-अलग संयुक्त राष्ट्र एजेंसियों द्वारा प्रकाशित किए जाते हैं।\n3. भारत की मानव विकास सूचकांक में रैंक आर्थिक विकास के बावजूद सीमित रही है, आंशिक रूप से तुलनात्मक देशों की तुलना में कम GNI प्रति व्यक्ति के कारण।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मानव विकास सूचकांक में जीवन स्तर आयाम को सकल राष्ट्रीय आय प्रति व्यक्ति को क्रय शक्ति समता के अनुसार समायोजित करके मापा जाता है।",
+          "verdict": "सही है",
+          "reason": "HDI में आय आयाम के लिए GNI प्रति व्यक्ति (PPP) का उपयोग किया जाता है — GDP प्रति व्यक्ति का नहीं — जो नागरिकों को उपलब्ध आय को दर्शाता है चाहे वह कहीं भी अर्जित की गई हो।"
+        },
+        {
+          "statement": "लिंग विकास सूचकांक और लिंग असमानता सूचकांक अलग-अलग संयुक्त राष्ट्र एजेंसियों द्वारा प्रकाशित किए जाते हैं।",
+          "verdict": "गलत है",
+          "reason": "GDI और GII दोनों UNDP के मानव विकास रिपोर्ट के उत्पाद हैं — ये एक ही एजेंसी और एक ही प्रमुख रिपोर्ट से उत्पन्न होते हैं।"
+        },
+        {
+          "statement": "भारत की मानव विकास सूचकांक में रैंक आर्थिक विकास के बावजूद सीमित रही है, आंशिक रूप से तुलनात्मक देशों की तुलना में कम GNI प्रति व्यक्ति के कारण।",
+          "verdict": "सही है",
+          "reason": "भारत की HDI रैंक स्थिरता का कारण GNI प्रति व्यक्ति (PPP) और शिक्षा संकेतकों से उत्पन्न बाधा है, जबकि GDP विकास दरें उच्च बनी हुई हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन सही) सबसे मजबूत भ्रमित करने वाला विकल्प है क्योंकि कथन 1 और 3 सही हैं, जिससे छात्र यह मान सकते हैं कि कथन 2 भी सही होगा क्योंकि GDI और GII दोनों HDR के उत्पाद हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: HDI आय आयाम के लिए GNI प्रति व्यक्ति (PPP) का उपयोग होता है — यह सही है; GDP का उपयोग नहीं होता।",
+        "कथन 2 का परीक्षण करें: GDI और GII दोनों UNDP/HDR के उत्पाद हैं, अलग एजेंसियां नहीं — कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: GNI प्रति व्यक्ति और शिक्षा की कमी भारत की HDI रैंक स्थिरता को समझाती है — सही है।",
+        "चूंकि कथन 1 और 3 सही हैं और कथन 2 गलत है, अतः उत्तर विकल्प c (केवल 1 और 3) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 मुख्य जाल है। छात्र अक्सर जानते हैं कि GDI और GII अलग-अलग चीजें मापते हैं (एक लिंग आधारित विकास अंतर को मापता है; दूसरा मानव विकास में लिंग आधारित असमानता को मापता है) और गलत तरीके से यह निष्कर्ष निकालते हैं कि वे अलग-अलग प्रकाशकों से आते होंगे। दोनों सूचकांक UNDP के उत्पाद हैं जो एक ही मानव विकास रिपोर्ट के माध्यम से जारी होते हैं। 'अलग मेट्रिक्स' को 'अलग एजेंसियों' से जोड़ना एक क्लासिक स्कोप-एक्सटेंशन जाल है।",
+      "final_explanation": "HDI ढांचा तीन आयामों पर आधारित है: लंबी और स्वस्थ जीवन (जन्म पर जीवन प्रत्याशा द्वारा मापा गया), ज्ञान (औसत और अपेक्षित शिक्षा वर्ष), और जीवन स्तर (GNI प्रति व्यक्ति PPP पर)। GDP के बजाय GNI का उपयोग जानबूझकर किया गया है — GNI आय को दर्शाता है जो निवासियों को प्राप्त होती है चाहे वह आय कहीं भी अर्जित की गई हो।\n\n• कथन 1 — सही: आय आयाम के लिए GNI प्रति व्यक्ति (PPP) निर्धारित मापदंड है। GDP का उपयोग करने से निवासी कल्याण का अतिरंजित या कम आकलन हो सकता है।\n• कथन 2 — गलत: GDI और GII दोनों UNDP द्वारा मानव विकास रिपोर्ट के हिस्से के रूप में प्रकाशित होते हैं। GDI पुरुष-स्त्री HDI अनुपात मापता है; GII प्रजनन स्वास्थ्य, सशक्तिकरण, और श्रम बाजार भागीदारी में असमानता मापता है — अलग मेट्रिक्स, एक ही प्रकाशक।\n• कथन 3 — सही: भारत की HDI रैंक सुधार तुलनात्मक रूप से कम GNI प्रति व्यक्ति (PPP) और शिक्षा अंतर के कारण सीमित है, जबकि विकास दरें उच्च हैं।\n\nमूल्य संवर्धन:\n• HDR प्रत्येक वर्ष एक विशिष्ट थीम के साथ प्रकाशित होता है (जैसे, Uncertain Times, Unsettled Lives — 2022)।\n• GDI महिला HDI का पुरुष HDI के अनुपात के रूप में है; 1 का मान समानता दर्शाता है।\n• भारत हाल के HDR संस्करणों में 'मध्यम मानव विकास' श्रेणी में आता है।"
+    }
+  },
+  {
+    "uuid": "99bcb174-b17c-43c7-8aac-13ad74a39aeb",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Environmental Performance Index (EPI): Publisher, India's Rank and Controversy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "EPI publisher — Yale and Columbia, not UNEP",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following statements correctly attribute an environmental or sustainability-related report to its publishing body. Which one does NOT correctly match the report with its publisher?\n\n(a) The United Nations Environment Programme (UNEP) publishes the Global Environment Outlook, which is a comprehensive assessment of the state of the global environment.\n(b) The United Nations Environment Programme (UNEP) publishes the Environmental Performance Index, which ranked India last among 180 countries in its 2022 edition.\n(c) The World Health Organization (WHO) issues Global Air Quality Guidelines that set recommended limits for key air pollutants.\n(d) The Intergovernmental Panel on Climate Change (IPCC) publishes Assessment Reports that synthesise the scientific basis for understanding climate change.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (UNEP's Global Environment Outlook) is the strongest distractor because UNEP is the most prominent UN body associated with environmental assessment, making students assume UNEP publishes EPI.",
+      "elimination_logic": [
+        "Identify the shared category: options a, c, and d involve intergovernmental or academic bodies publishing recognised environmental assessments.",
+        "Option b states EPI is a UNEP product — but EPI is published by Yale and Columbia Universities, not UNEP.",
+        "Options a (UNEP-GEO), c (WHO air quality guidelines), and d (IPCC reports) are correctly attributed to their respective publishers.",
+        "The odd one out is option b — incorrect attribution of EPI to UNEP."
+      ],
+      "upsc_trap_explanation": "Students associate environmental performance assessment with UNEP — the UN's designated environmental programme. The actual publisher of EPI is a consortium of Yale University and Columbia University, operating independently of UNEP. India ranked 180th (last) in the 2022 EPI, and the government's strong rejection of the methodology — particularly the air quality weighting — is a tested controversy. Confusing UNEP's GEO report with the EPI is the core trap.",
+      "final_explanation": "The Environmental Performance Index is published biennially by Yale University and Columbia University in collaboration with the World Economic Forum — not by UNEP. This is a frequently tested distinction.\n\n• Option (a) — UNEP publishes Global Environment Outlook: Correct attribution. GEO is UNEP's flagship assessment.\n• Option (b) — UNEP publishes Environmental Performance Index: Incorrect. EPI is published by Yale and Columbia Universities. This is the odd one out.\n• Option (c) — WHO issues air quality guidelines: Correct attribution. WHO's Global Air Quality Guidelines are a separate product.\n• Option (d) — IPCC publishes Assessment Reports: Correct attribution. IPCC's Assessment Reports are the gold standard for climate science.\n\nValue Addition:\n• India ranked 180th (last among 180 countries) in EPI 2022 — primarily due to air quality scoring.\n• EPI covers 32 indicators under two objectives: Environmental Health and Ecosystem Vitality.\n• India's government rejected EPI 2022 findings, arguing the air quality metrics used modelled data rather than ground-level monitoring."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन कथन पर्यावरण या स्थिरता से संबंधित किसी रिपोर्ट को उसके प्रकाशक के साथ सही रूप से जोड़ते हैं। कौन-सा कथन रिपोर्ट को उसके प्रकाशक के साथ सही रूप से नहीं जोड़ता है?\n\n(a) संयुक्त राष्ट्र पर्यावरण कार्यक्रम (UNEP) ग्लोबल एनवायरनमेंट आउटलुक प्रकाशित करता है, जो वैश्विक पर्यावरण की स्थिति का व्यापक मूल्यांकन है।\n(b) संयुक्त राष्ट्र पर्यावरण कार्यक्रम (UNEP) एनवायरनमेंटल परफॉर्मेंस इंडेक्स प्रकाशित करता है, जिसमें भारत ने 2022 संस्करण में 180 देशों में अंतिम स्थान प्राप्त किया था।\n(c) विश्व स्वास्थ्य संगठन (WHO) ग्लोबल एयर क्वालिटी गाइडलाइंस जारी करता है जो प्रमुख वायु प्रदूषकों के लिए अनुशंसित सीमाएं निर्धारित करता है।\n(d) इंटरगवर्नमेंटल पैनल ऑन क्लाइमेट चेंज (IPCC) मूल्यांकन रिपोर्ट प्रकाशित करता है जो जलवायु परिवर्तन को समझने के लिए वैज्ञानिक आधार को संक्षेपित करता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (UNEP का Global Environment Outlook) सबसे मजबूत भ्रम पैदा करने वाला है क्योंकि UNEP पर्यावरण मूल्यांकन से जुड़ा सबसे प्रमुख संयुक्त राष्ट्र निकाय है, जिससे छात्र मान लेते हैं कि UNEP EPI प्रकाशित करता है।",
+      "elimination_logic": [
+        "साझा श्रेणी की पहचान करें: विकल्प a, c, और d में अंतर-सरकारी या शैक्षणिक निकाय शामिल हैं जो मान्यता प्राप्त पर्यावरणीय मूल्यांकन प्रकाशित करते हैं।",
+        "विकल्प b कहता है कि EPI UNEP का उत्पाद है — लेकिन EPI Yale और Columbia विश्वविद्यालयों द्वारा प्रकाशित होता है, UNEP द्वारा नहीं।",
+        "विकल्प a (UNEP-GEO), c (WHO वायु गुणवत्ता दिशानिर्देश), और d (IPCC रिपोर्ट) सही रूप से उनके संबंधित प्रकाशकों को सौंपे गए हैं।",
+        "असामान्य विकल्प है विकल्प b — EPI को UNEP से गलत रूप से जोड़ा गया है।"
+      ],
+      "upsc_trap_explanation": "छात्र पर्यावरण प्रदर्शन मूल्यांकन को UNEP से जोड़ते हैं — जो संयुक्त राष्ट्र का नामित पर्यावरण कार्यक्रम है। EPI का वास्तविक प्रकाशक Yale विश्वविद्यालय और Columbia विश्वविद्यालय का एक संघ है, जो UNEP से स्वतंत्र रूप से कार्य करता है। भारत ने 2022 के EPI में 180वें (अंतिम) स्थान पर रैंक किया था, और सरकार ने विशेष रूप से वायु गुणवत्ता के भारांकन को लेकर इस पद्धति को कड़ा विरोध किया है — यह एक जानी-पहचानी विवादास्पद स्थिति है। UNEP की GEO रिपोर्ट को EPI से भ्रमित करना मुख्य जाल है।",
+      "final_explanation": "Environmental Performance Index (EPI) का प्रकाशन द्विवार्षिक रूप से Yale विश्वविद्यालय और Columbia विश्वविद्यालय द्वारा वर्ल्ड इकोनॉमिक फोरम के सहयोग से किया जाता है — न कि UNEP द्वारा। यह एक बार-बार परीक्षण किया गया अंतर है।\n\n• विकल्प (a) — UNEP Global Environment Outlook प्रकाशित करता है: सही सौंपना। GEO UNEP का प्रमुख मूल्यांकन है।\n• विकल्प (b) — UNEP Environmental Performance Index प्रकाशित करता है: गलत। EPI Yale और Columbia विश्वविद्यालयों द्वारा प्रकाशित होता है। यह असामान्य विकल्प है।\n• विकल्प (c) — WHO वायु गुणवत्ता दिशानिर्देश जारी करता है: सही सौंपना। WHO के Global Air Quality Guidelines एक अलग उत्पाद हैं।\n• विकल्प (d) — IPCC मूल्यांकन रिपोर्ट प्रकाशित करता है: सही सौंपना। IPCC की मूल्यांकन रिपोर्ट जलवायु विज्ञान के लिए स्वर्ण मानक हैं।\n\nमूल्य वर्धन:\n• भारत ने EPI 2022 में 180 देशों में अंतिम (180वां) स्थान प्राप्त किया — मुख्यतः वायु गुणवत्ता स्कोरिंग के कारण।\n• EPI दो उद्देश्यों के तहत 32 संकेतकों को कवर करता है: पर्यावरणीय स्वास्थ्य और पारिस्थितिकी तंत्र की जीवंतता।\n• भारत सरकार ने EPI 2022 के निष्कर्षों को खारिज कर दिया, यह तर्क देते हुए कि वायु गुणवत्ता मेट्रिक्स में मॉडल्ड डेटा का उपयोग किया गया है न कि ग्राउंड-लेवल निगरानी।"
+    }
+  },
+  {
+    "uuid": "12d0b6ab-6706-498f-90cd-bba8bf9edea7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Gender Gap Index (GGGI): WEF Framework vs Gender Inequality Index (GII)",
+        "Human Development Index (HDI): Components, Formula and India's Trajectory"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "GGGI vs GII — different publishers, different measurement focus",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements regarding gender-related global indices:\n\nStatement 1: The Global Gender Gap Index published by the World Economic Forum measures gender parity rather than absolute levels of development, meaning a country could achieve a high score even if absolute educational attainment is low, provided female and male attainment levels are similar.\n\nStatement 2: The Gender Inequality Index, which is a product of the World Economic Forum, evaluates inequality in three dimensions: reproductive health, empowerment, and labour market participation.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Global Gender Gap Index published by the World Economic Forum measures gender parity rather than absolute levels of development, meaning a country could achieve a high score even if absolute educational attainment is low, provided female and male attainment levels are similar.",
+          "verdict": "Correct",
+          "reason": "GGGI explicitly measures the gap (parity) between men and women across four sub-indices — it does not reward absolute achievement, only equal distribution between genders."
+        },
+        {
+          "statement": "The Gender Inequality Index, which is a product of the World Economic Forum, evaluates inequality in three dimensions: reproductive health, empowerment, and labour market participation.",
+          "verdict": "Incorrect",
+          "reason": "The Gender Inequality Index (GII) is published by UNDP as part of the Human Development Report — not by WEF. The three dimensions described (reproductive health, empowerment, labour market) are correct for GII but the publisher attribution is wrong."
+        }
+      ],
+      "strong_distractor": "a — Option a (both correct) is the strongest distractor because the three GII dimensions listed in statement 2 are factually accurate, tempting students to overlook the incorrect publisher attribution.",
+      "elimination_logic": [
+        "Verify statement 1: GGGI measures parity (gap), not absolute levels — a country with low but equal female-male education scores well. Statement 1 is correct.",
+        "Verify statement 2: GII is published by UNDP/HDR, not WEF. WEF publishes GGGI, not GII. The publisher attribution in statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect → option c."
+      ],
+      "upsc_trap_explanation": "Statement 2 contains a precise factual description of the Gender Inequality Index's three dimensions (reproductive health, empowerment, labour market) — all of which are accurate. The trap is in the publisher attribution: students who know these three dimensions from GII methodology assume the full statement is correct, missing that the publisher is UNDP (via HDR), not WEF. WEF publishes GGGI; UNDP publishes GII — a conflation trap that exploits partial knowledge.",
+      "final_explanation": "Two distinct gender indices dominate UPSC questions: the Global Gender Gap Index (GGGI) by WEF and the Gender Inequality Index (GII) by UNDP.\n\n• Statement 1 — Correct: GGGI measures the gap between male and female outcomes, not absolute levels. Under its educational attainment sub-index, a country achieves parity when female and male literacy/enrolment rates are equal — regardless of how low they are in absolute terms. This explains why some low-income countries rank above wealthier nations on GGGI.\n• Statement 2 — Incorrect: The three dimensions listed (reproductive health, empowerment, labour market participation) belong correctly to GII. However, GII is published by UNDP through the Human Development Report — not by WEF. WEF publishes GGGI with four sub-indices: economic participation, educational attainment, health and survival, and political empowerment.\n\nValue Addition:\n• India's weakest GGGI sub-indices are Economic participation and Health and survival.\n• GII score of 0 indicates perfect equality; 1 indicates complete inequality.\n• Both indices appear in the same news cycle, making publisher confusion a recurring UPSC trap."
+    },
+    "hi": {
+      "display_text": "लिंग संबंधी वैश्विक सूचकांकों के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: विश्व आर्थिक मंच द्वारा प्रकाशित ग्लोबल जेंडर गैप इंडेक्स लिंग समानता को मापता है न कि विकास के पूर्ण स्तर को, अर्थात् यदि महिला और पुरुष की शिक्षा स्तर समान हो तो एक देश कम शैक्षिक उपलब्धि के बावजूद उच्च स्कोर प्राप्त कर सकता है।\n\nकथन 2: जेंडर इनइक्वालिटी इंडेक्स, जो विश्व आर्थिक मंच का उत्पाद है, असमानता को तीन आयामों में मापता है: प्रजनन स्वास्थ्य, सशक्तिकरण, और श्रम बाजार भागीदारी।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "विश्व आर्थिक मंच द्वारा प्रकाशित ग्लोबल जेंडर गैप इंडेक्स लिंग समानता को मापता है न कि विकास के पूर्ण स्तर को, अर्थात् यदि महिला और पुरुष की शिक्षा स्तर समान हो तो एक देश कम शैक्षिक उपलब्धि के बावजूद उच्च स्कोर प्राप्त कर सकता है।",
+          "verdict": "सही है",
+          "reason": "GGGI स्पष्ट रूप से पुरुष और महिला के बीच चार उप-सूचकांकों में अंतर (समानता) को मापता है — यह पूर्ण उपलब्धि को नहीं बल्कि लिंगों के बीच समान वितरण को पुरस्कृत करता है।"
+        },
+        {
+          "statement": "जेंडर इनइक्वालिटी इंडेक्स, जो विश्व आर्थिक मंच का उत्पाद है, असमानता को तीन आयामों में मापता है: प्रजनन स्वास्थ्य, सशक्तिकरण, और श्रम बाजार भागीदारी।",
+          "verdict": "गलत है",
+          "reason": "जेंडर इनइक्वालिटी इंडेक्स (GII) संयुक्त राष्ट्र विकास कार्यक्रम (UNDP) द्वारा मानव विकास रिपोर्ट के हिस्से के रूप में प्रकाशित होता है — यह WEF द्वारा प्रकाशित नहीं है। कथन 2 में वर्णित तीन आयाम (प्रजनन स्वास्थ्य, सशक्तिकरण, श्रम बाजार) GII के लिए सही हैं लेकिन प्रकाशक का उल्लेख गलत है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प a (दोनों सही) सबसे मजबूत भ्रम है क्योंकि कथन 2 में सूचीबद्ध GII के तीन आयाम तथ्यात्मक रूप से सही हैं, जो छात्रों को प्रकाशक के गलत उल्लेख को नजरअंदाज करने के लिए प्रेरित करता है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: GGGI समानता (अंतर) को मापता है, पूर्ण स्तर को नहीं — एक देश जिसकी महिला-पुरुष शिक्षा समान लेकिन कम है, अच्छा स्कोर करता है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: GII UNDP/HDR द्वारा प्रकाशित होता है, WEF द्वारा नहीं। WEF GGGI प्रकाशित करता है, GII नहीं। कथन 2 में प्रकाशक का उल्लेख गलत है।",
+        "कथन 1 सही + कथन 2 गलत → विकल्प c।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में जेंडर इनइक्वालिटी इंडेक्स के तीन आयामों (प्रजनन स्वास्थ्य, सशक्तिकरण, श्रम बाजार) का सटीक तथ्यात्मक वर्णन है — जो सभी सही हैं। जाल प्रकाशक के उल्लेख में है: जो छात्र GII की इन तीन आयामों को जानते हैं, वे पूरी कथन को सही मान लेते हैं, यह भूल जाते हुए कि प्रकाशक UNDP (मानव विकास रिपोर्ट के माध्यम से) है, WEF नहीं। WEF GGGI प्रकाशित करता है; UNDP GII प्रकाशित करता है — यह आंशिक ज्ञान का उपयोग कर भ्रम पैदा करने वाला जाल है।",
+      "final_explanation": "UPSC प्रश्नों में दो अलग-अलग लिंग सूचकांक प्रमुख हैं: विश्व आर्थिक मंच (WEF) का ग्लोबल जेंडर गैप इंडेक्स (GGGI) और संयुक्त राष्ट्र विकास कार्यक्रम (UNDP) का जेंडर इनइक्वालिटी इंडेक्स (GII)।\n\n• कथन 1 — सही: GGGI पुरुष और महिला के बीच अंतर को मापता है, पूर्ण स्तर को नहीं। इसके शैक्षिक उपलब्धि उप-सूचकांक के तहत, जब महिला और पुरुष साक्षरता/नामांकन दरें समान होती हैं, तो देश समानता प्राप्त करता है — चाहे वे पूर्ण स्तर में कितनी भी कम क्यों न हों। यही कारण है कि कुछ कम आय वाले देश GGGI में अमीर देशों से ऊपर रैंक करते हैं।\n• कथन 2 — गलत: सूचीबद्ध तीन आयाम (प्रजनन स्वास्थ्य, सशक्तिकरण, श्रम बाजार भागीदारी) सही रूप से GII के हैं। लेकिन GII UNDP द्वारा मानव विकास रिपोर्ट के माध्यम से प्रकाशित होता है — WEF द्वारा नहीं। WEF GGGI प्रकाशित करता है जिसमें चार उप-सूचकांक होते हैं: आर्थिक भागीदारी, शैक्षिक उपलब्धि, स्वास्थ्य और जीवित रहना, और राजनीतिक सशक्तिकरण।\n\nमूल्यवर्धन:\n• भारत के सबसे कमजोर GGGI उप-सूचकांक आर्थिक भागीदारी और स्वास्थ्य एवं जीवित रहना हैं।\n• GII का स्कोर 0 पूर्ण समानता और 1 पूर्ण असमानता को दर्शाता है।\n• दोनों सूचकांक एक ही समाचार चक्र में आते हैं, जिससे प्रकाशक भ्रम UPSC में बार-बार होता है।"
+    }
+  },
+  {
+    "uuid": "0ffde162-c4d8-4e33-a798-dd247b4c4ab7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Logistics Performance Index (LPI): World Bank Framework and PM GatiShakti Connection"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "LPI biennial publication frequency",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Logistics Performance Index, published by the World Bank, assesses the trade logistics environment of countries across six components including Customs efficiency, Infrastructure quality, and Timeliness. India has cited improvements in its LPI rank as evidence of the success of initiatives such as PM GatiShakti and Dedicated Freight Corridors. This index is published ________.\n\n(a) Annually\n(b) Biennially (every two years)\n(c) Triennially (every three years)\n(d) Quadrennially (every four years)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (annual) is deceptive because most major indices (HDI, GCI, GHI) are published annually, leading students to assume LPI follows the same pattern.",
+      "elimination_logic": [
+        "Eliminate option a: Most major indices are annual, but LPI is explicitly biennial — published every two years.",
+        "Eliminate option c: Triennial publication is not the correct frequency for LPI.",
+        "Eliminate option d: Quadrennial publication applies to some sporting or treaty review cycles, not LPI.",
+        "Retain option b: LPI is a biennial (every two years) publication by the World Bank."
+      ],
+      "upsc_trap_explanation": "Students default to 'annual' for most global indices, as the majority of flagship reports (HDI, GCI, GHI, CPI) are published annually. LPI's biennial frequency is a tested exception. Questions on LPI often use this frequency detail as a trap embedded in otherwise accurate statements about the index's components.",
+      "final_explanation": "The Logistics Performance Index is published by the World Bank on a biennial basis — once every two years — unlike most other prominent indices which are published annually.\n\n• Option (a) — Annual: Incorrect. LPI does not follow an annual publication cycle.\n• Option (b) — Biennial (every two years): Correct. LPI is published biennially, making it distinct from annual indices.\n• Option (c) — Triennial: Incorrect. No standard global logistics index follows a three-year cycle.\n• Option (d) — Quadrennial: Incorrect. Four-year cycles apply to specific assessment frameworks (e.g., IPCC Assessment Reports), not LPI.\n\nValue Addition:\n• LPI's six components: Customs, Infrastructure, International shipments, Logistics competence, Tracking and tracing, Timeliness.\n• India's National Logistics Policy (2022) uses LPI as a benchmark target framework.\n• PM GatiShakti — the multi-modal connectivity master plan — is directly linked to improving India's LPI score."
+    },
+    "hi": {
+      "display_text": "विश्व बैंक द्वारा प्रकाशित लॉजिस्टिक्स परफॉर्मेंस इंडेक्स देशों के व्यापार लॉजिस्टिक्स वातावरण का छह घटकों में मूल्यांकन करता है, जिनमें कस्टम्स दक्षता, अवसंरचना गुणवत्ता, और समयबद्धता शामिल हैं। भारत ने अपने LPI रैंक में सुधार को पीएम गति शक्ति और समर्पित फ्रेट कॉरिडोर जैसी पहलों की सफलता के प्रमाण के रूप में उद्धृत किया है। यह सूचकांक ________ प्रकाशित होता है।\n\n(a) वार्षिक\n(b) द्विवार्षिक (हर दो वर्ष)\n(c) त्रिवार्षिक (हर तीन वर्ष)\n(d) चतुर्वर्षीय (हर चार वर्ष)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (वार्षिक) भ्रमित करने वाला है क्योंकि अधिकांश प्रमुख सूचकांक (HDI, GCI, GHI) वार्षिक प्रकाशित होते हैं, जिससे छात्र यह मान लेते हैं कि LPI भी इसी पैटर्न का पालन करता है।",
+      "elimination_logic": [
+        "विकल्प a को हटाएं: अधिकांश प्रमुख सूचकांक वार्षिक होते हैं, लेकिन LPI स्पष्ट रूप से द्विवार्षिक है — हर दो वर्ष में प्रकाशित।",
+        "विकल्प c को हटाएं: त्रिवार्षिक प्रकाशन LPI के लिए सही आवृत्ति नहीं है।",
+        "विकल्प d को हटाएं: चतुर्वर्षीय प्रकाशन कुछ खेल या संधि समीक्षा चक्रों पर लागू होता है, LPI पर नहीं।",
+        "विकल्प b को बनाए रखें: LPI विश्व बैंक द्वारा द्विवार्षिक (हर दो वर्ष) प्रकाशित किया जाता है।"
+      ],
+      "upsc_trap_explanation": "छात्र अधिकांश वैश्विक सूचकांकों के लिए 'वार्षिक' को डिफ़ॉल्ट मानते हैं, क्योंकि अधिकांश प्रमुख रिपोर्ट (HDI, GCI, GHI, CPI) वार्षिक प्रकाशित होती हैं। LPI की द्विवार्षिक आवृत्ति एक परीक्षणित अपवाद है। LPI पर प्रश्न अक्सर इस आवृत्ति विवरण का उपयोग एक जाल के रूप में करते हैं जो सूचकांक के घटकों के बारे में अन्यथा सटीक कथनों में छिपा होता है।",
+      "final_explanation": "लॉजिस्टिक्स परफॉर्मेंस इंडेक्स विश्व बैंक द्वारा द्विवार्षिक आधार पर प्रकाशित किया जाता है — हर दो वर्ष में एक बार — जो अधिकांश अन्य प्रमुख सूचकांकों से अलग है जो वार्षिक प्रकाशित होते हैं।\n\n• विकल्प (a) — वार्षिक: गलत। LPI वार्षिक प्रकाशन चक्र का पालन नहीं करता।\n• विकल्प (b) — द्विवार्षिक (हर दो वर्ष): सही। LPI द्विवार्षिक प्रकाशित होता है, जो इसे वार्षिक सूचकांकों से अलग बनाता है।\n• विकल्प (c) — त्रिवार्षिक: गलत। कोई मानक वैश्विक लॉजिस्टिक्स सूचकांक तीन वर्ष के चक्र का पालन नहीं करता।\n• विकल्प (d) — चतुर्वर्षीय: गलत। चार वर्ष के चक्र कुछ विशिष्ट मूल्यांकन ढांचों (जैसे IPCC मूल्यांकन रिपोर्ट) पर लागू होते हैं, LPI पर नहीं।\n\nमूल्य वर्धन:\n• LPI के छह घटक: कस्टम्स, अवसंरचना, अंतरराष्ट्रीय शिपमेंट, लॉजिस्टिक्स दक्षता, ट्रैकिंग और ट्रेसिंग, समयबद्धता।\n• भारत की राष्ट्रीय लॉजिस्टिक्स नीति (2022) LPI को एक मानक लक्ष्य ढांचे के रूप में उपयोग करती है।\n• पीएम गति शक्ति — बहु-मोडल कनेक्टिविटी मास्टर प्लान — सीधे भारत के LPI स्कोर में सुधार से जुड़ा है।"
+    }
+  },
+  {
+    "uuid": "8949fdc9-989f-4695-963f-97b59e990475",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "World Intellectual Property Indicators and Patent Filing Rankings"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "WIPO publishes GII and WIPI — two distinct products",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following WIPO publications specifically tracks and analyses the volume of patent filings, trademark applications, and industrial design registrations across countries, distinguishing between resident and non-resident filers?\n\n(a) Global Innovation Index\n(b) PCT Applications Annual Report\n(c) World Intellectual Property Indicators\n(d) UNCTAD IP Competitiveness Report",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because students who know WIPO publishes the Global Innovation Index may assume all WIPO products on innovation and IP are bundled together, missing the distinction between GII and the World Intellectual Property Indicators.",
+      "elimination_logic": [
+        "Eliminate option a: GII is a separate WIPO product — it focuses on innovation ecosystem, not patent/trademark filing statistics.",
+        "Eliminate option b: The PCT report on Patent Cooperation Treaty applications is a component of WIPI data but is not a standalone separate publication; WIPI encompasses it.",
+        "Retain option c: World Intellectual Property Indicators (WIPI) is the correct WIPO publication covering patents, trademarks, and industrial design filings.",
+        "Eliminate option d: UNCTAD does not publish IP filing statistics — it covers trade and investment flows."
+      ],
+      "upsc_trap_explanation": "WIPO publishes two distinct major annual products: the Global Innovation Index (co-published with INSEAD and Cornell) and the World Intellectual Property Indicators (a standalone WIPO statistical publication). Students who associate WIPO with innovation indices tend to conflate these two, assuming any WIPO publication on IP-related topics is the GII. The WIPI specifically covers hard statistical data on patent, trademark, industrial design, and plant variety filings — distinct from GII's innovation ecosystem assessment.",
+      "final_explanation": "WIPO publishes two major annual products that are often confused: the Global Innovation Index (measuring innovation ecosystems) and the World Intellectual Property Indicators (measuring IP filing activity — patents, trademarks, industrial designs).\n\n• Option (a) — Global Innovation Index: Incorrect for this question. GII focuses on innovation ecosystem indicators, not patent/trademark filing statistics. It is a separate WIPO product.\n• Option (b) — PCT Applications Report: Incorrect as a standalone product name. PCT application data is part of WIPI's coverage but not a separate publication in the context being tested.\n• Option (c) — World Intellectual Property Indicators (WIPI): Correct. WIPI is the WIPO publication covering patent filings (resident vs non-resident), trademark applications, industrial design filings, and related IP activity data.\n• Option (d) — UNCTAD IP Competitiveness Report: Incorrect. UNCTAD does not publish this; it focuses on trade, investment, and development.\n\nValue Addition:\n• India's rise in patent filings distinguishes between resident filings (domestic inventors) and non-resident filings — India's resident filings have grown significantly.\n• National IPR Policy 2016 operates under the 'Creative India, Innovative India' framework.\n• PCT applications allow a single application to seek patent protection in multiple member countries simultaneously."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा WIPO प्रकाशन विशेष रूप से देशों में पेटेंट फाइलिंग, ट्रेडमार्क आवेदन, और औद्योगिक डिज़ाइन पंजीकरण की मात्रा को ट्रैक और विश्लेषण करता है, जिसमें निवासी और गैर-निवासी फाइलरों के बीच भेद किया गया हो?\n\n(a) ग्लोबल इनोवेशन इंडेक्स\n(b) PCT आवेदन वार्षिक रिपोर्ट\n(c) वर्ल्ड इंटेलेक्चुअल प्रॉपर्टी इंडिकेटर्स\n(d) UNCTAD आईपी प्रतिस्पर्धात्मकता रिपोर्ट",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि जो छात्र जानते हैं कि WIPO ग्लोबल इनोवेशन इंडेक्स प्रकाशित करता है, वे मान सकते हैं कि नवाचार और आईपी से संबंधित सभी WIPO उत्पाद एक साथ हैं, जिससे GII और World Intellectual Property Indicators के बीच अंतर छूट जाता है।",
+      "elimination_logic": [
+        "विकल्प a को हटाएं: GII एक अलग WIPO उत्पाद है — यह नवाचार पारिस्थितिकी तंत्र पर केंद्रित है, न कि पेटेंट/ट्रेडमार्क फाइलिंग आंकड़ों पर।",
+        "विकल्प b को हटाएं: पेटेंट सहयोग संधि (PCT) आवेदन पर रिपोर्ट WIPI डेटा का एक घटक है लेकिन यह एक स्वतंत्र अलग प्रकाशन नहीं है; WIPI इसे समाहित करता है।",
+        "विकल्प c को बनाए रखें: World Intellectual Property Indicators (WIPI) सही WIPO प्रकाशन है जो पेटेंट, ट्रेडमार्क, और औद्योगिक डिज़ाइन फाइलिंग को कवर करता है।",
+        "विकल्प d को हटाएं: UNCTAD आईपी फाइलिंग आंकड़े प्रकाशित नहीं करता — यह व्यापार और निवेश प्रवाह को कवर करता है।"
+      ],
+      "upsc_trap_explanation": "WIPO दो अलग-अलग प्रमुख वार्षिक उत्पाद प्रकाशित करता है: ग्लोबल इनोवेशन इंडेक्स (INSEAD और कॉर्नेल के साथ सह-प्रकाशित) और World Intellectual Property Indicators (एक स्वतंत्र WIPO सांख्यिकीय प्रकाशन)। जो छात्र WIPO को नवाचार सूचकांकों से जोड़ते हैं, वे इन दोनों को मिलाकर समझते हैं, यह मानते हुए कि आईपी से संबंधित कोई भी WIPO प्रकाशन GII है। WIPI विशेष रूप से पेटेंट, ट्रेडमार्क, औद्योगिक डिज़ाइन, और पौधा विविधता फाइलिंग पर कठोर सांख्यिकीय डेटा कवर करता है — जो GII के नवाचार पारिस्थितिकी तंत्र मूल्यांकन से अलग है।",
+      "final_explanation": "WIPO दो प्रमुख वार्षिक उत्पाद प्रकाशित करता है जिन्हें अक्सर भ्रमित किया जाता है: ग्लोबल इनोवेशन इंडेक्स (जो नवाचार पारिस्थितिकी तंत्र को मापता है) और World Intellectual Property Indicators (जो आईपी फाइलिंग गतिविधि — पेटेंट, ट्रेडमार्क, औद्योगिक डिज़ाइन — को मापता है)।\n\n• विकल्प (a) — ग्लोबल इनोवेशन इंडेक्स: इस प्रश्न के लिए गलत। GII नवाचार पारिस्थितिकी तंत्र संकेतकों पर केंद्रित है, न कि पेटेंट/ट्रेडमार्क फाइलिंग आंकड़ों पर। यह एक अलग WIPO उत्पाद है।\n• विकल्प (b) — PCT आवेदन वार्षिक रिपोर्ट: स्वतंत्र उत्पाद नाम के रूप में गलत। PCT आवेदन डेटा WIPI के कवरेज का हिस्सा है लेकिन परीक्षण संदर्भ में यह एक अलग प्रकाशन नहीं है।\n• विकल्प (c) — World Intellectual Property Indicators (WIPI): सही। WIPI वह WIPO प्रकाशन है जो पेटेंट फाइलिंग (निवासी बनाम गैर-निवासी), ट्रेडमार्क आवेदन, औद्योगिक डिज़ाइन फाइलिंग, और संबंधित आईपी गतिविधि डेटा को कवर करता है।\n• विकल्प (d) — UNCTAD आईपी प्रतिस्पर्धात्मकता रिपोर्ट: गलत। UNCTAD इसे प्रकाशित नहीं करता; यह व्यापार, निवेश, और विकास पर केंद्रित है।\n\nमूल्य संवर्धन:\n• भारत में पेटेंट फाइलिंग में वृद्धि निवासी फाइलिंग (घरेलू आविष्कारक) और गैर-निवासी फाइलिंग के बीच भेद करती है — भारत की निवासी फाइलिंग में उल्लेखनीय वृद्धि हुई है।\n• राष्ट्रीय आईपीआर नीति 2016 'क्रिएटिव इंडिया, इनोवेटिव इंडिया' ढांचे के अंतर्गत संचालित होती है।\n• PCT आवेदन एकल आवेदन के माध्यम से कई सदस्य देशों में एक साथ पेटेंट संरक्षण की अनुमति देते हैं।"
+    }
+  },
+  {
+    "uuid": "64d08547-7eab-49a3-a8f4-62f92ad17155",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Energy Transition Index (ETI) and India's Renewable Energy Rankings"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Multiple energy report publishers — WEF ETI vs IEA vs IRENA vs REN21",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Energy Report/Index) with List II (Publishing Organisation):",
+        "columns": [
+          "List I (Energy Report / Index)",
+          "List II (Publishing Organisation)"
+        ],
+        "rows": [
+          [
+            "A. Energy Transition Index (ETI)",
+            "1. International Energy Agency (IEA)"
+          ],
+          [
+            "B. World Energy Outlook",
+            "2. International Renewable Energy Agency (IRENA)"
+          ],
+          [
+            "C. Global Status Report on Renewables",
+            "3. World Economic Forum (WEF)"
+          ],
+          [
+            "D. Renewable Energy Statistics",
+            "4. REN21 (Renewable Energy Policy Network)"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-2, D-4\n(d) A-1, B-2, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b incorrectly maps ETI to IEA, which is a plausible error since IEA is the most prominent energy-focused intergovernmental body and students may assume all flagship energy transition reports come from IEA.",
+      "elimination_logic": [
+        "Anchor: Energy Transition Index (ETI) → WEF. WEF publishes ETI as part of its energy platform. A→3.",
+        "Anchor: World Energy Outlook → IEA. IEA's flagship annual publication is World Energy Outlook. B→1.",
+        "Verify: Global Status Report on Renewables → REN21. REN21 (Renewable Energy Policy Network for the 21st Century) publishes the annual Global Status Report. C→4.",
+        "Verify: Renewable Energy Statistics → IRENA. IRENA publishes the annual Renewable Energy Statistics — capacity and generation data. D→2.",
+        "Full match: A-3, B-1, C-4, D-2 → option a."
+      ],
+      "upsc_trap_explanation": "The energy reporting landscape has multiple publishers, and UPSC exploits the tendency to attribute all energy transition reports to IEA. The ETI is a WEF product; the World Energy Outlook belongs to IEA; the Global Status Report belongs to REN21; and IRENA covers renewable energy capacity statistics. Students who know IEA's World Energy Outlook correctly may then incorrectly assign ETI to IEA, since both are 'energy transition' adjacent.",
+      "final_explanation": "Four organisations publish major energy-related reports, each with a distinct focus and mandate.\n\n• A (ETI) → 3 (WEF): The Energy Transition Index is a WEF product measuring progress on energy transition across equity, security, and sustainability dimensions.\n• B (World Energy Outlook) → 1 (IEA): The International Energy Agency's World Energy Outlook is the most authoritative annual global energy forecast, covering supply, demand, and policy scenarios.\n• C (Global Status Report on Renewables) → 4 (REN21): REN21 (a global multi-stakeholder network) publishes this annual review of the renewable energy sector's status worldwide.\n• D (Renewable Energy Statistics) → 2 (IRENA): The International Renewable Energy Agency publishes comprehensive capacity and generation data annually.\n\nCorrect match: A-3, B-1, C-4, D-2 → option a.\n\nValue Addition:\n• India ranks globally in the top 4 in installed renewable energy capacity — but per capita renewable consumption remains low.\n• IRENA and IEA are intergovernmental bodies; REN21 is a multi-stakeholder network; WEF is a non-profit foundation.\n• ETI measures transition readiness across three dimensions: energy security, energy equity, and environmental sustainability."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (ऊर्जा रिपोर्ट/सूचकांक) को सूची II (प्रकाशन संगठन) से मिलाइए:",
+        "columns": [
+          "सूची I (ऊर्जा रिपोर्ट / सूचकांक)",
+          "सूची II (प्रकाशन संगठन)"
+        ],
+        "rows": [
+          [
+            "A. एनर्जी ट्रांजिशन इंडेक्स (ETI)",
+            "1. इंटरनेशनल एनर्जी एजेंसी (IEA)"
+          ],
+          [
+            "B. वर्ल्ड एनर्जी आउटलुक",
+            "2. इंटरनेशनल रिन्यूएबल एनर्जी एजेंसी (IRENA)"
+          ],
+          [
+            "C. ग्लोबल स्टेटस रिपोर्ट ऑन रिन्यूएबल्स",
+            "3. वर्ल्ड इकोनॉमिक फोरम (WEF)"
+          ],
+          [
+            "D. रिन्यूएबल एनर्जी स्टैटिस्टिक्स",
+            "4. REN21 (Renewable Energy Policy Network)"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-2, D-4\n(d) A-1, B-2, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b गलत तरीके से ETI को IEA से जोड़ता है, जो एक संभावित त्रुटि है क्योंकि IEA सबसे प्रमुख ऊर्जा-केंद्रित अंतरसरकारी संस्था है और छात्र मान सकते हैं कि सभी प्रमुख ऊर्जा संक्रमण रिपोर्ट IEA से आती हैं।",
+      "elimination_logic": [
+        "एंकर: एनर्जी ट्रांजिशन इंडेक्स (ETI) → WEF। WEF अपनी ऊर्जा प्लेटफॉर्म के हिस्से के रूप में ETI प्रकाशित करता है। A→3।",
+        "एंकर: वर्ल्ड एनर्जी आउटलुक → IEA। IEA की प्रमुख वार्षिक प्रकाशन वर्ल्ड एनर्जी आउटलुक है। B→1।",
+        "सत्यापित करें: ग्लोबल स्टेटस रिपोर्ट ऑन रिन्यूएबल्स → REN21। REN21 (Renewable Energy Policy Network for the 21st Century) वार्षिक ग्लोबल स्टेटस रिपोर्ट प्रकाशित करता है। C→4।",
+        "सत्यापित करें: रिन्यूएबल एनर्जी स्टैटिस्टिक्स → IRENA। IRENA वार्षिक रिन्यूएबल एनर्जी स्टैटिस्टिक्स — क्षमता और उत्पादन डेटा प्रकाशित करता है। D→2।",
+        "पूर्ण मेल: A-3, B-1, C-4, D-2 → विकल्प a।"
+      ],
+      "upsc_trap_explanation": "ऊर्जा रिपोर्टिंग क्षेत्र में कई प्रकाशक हैं, और UPSC इस प्रवृत्ति का लाभ उठाता है कि सभी ऊर्जा संक्रमण रिपोर्ट IEA को ही मान लिया जाए। ETI WEF का उत्पाद है; वर्ल्ड एनर्जी आउटलुक IEA का है; ग्लोबल स्टेटस रिपोर्ट REN21 की है; और IRENA नवीकरणीय ऊर्जा क्षमता सांख्यिकी को कवर करता है। जो छात्र IEA के वर्ल्ड एनर्जी आउटलुक को सही जानते हैं, वे गलत तरीके से ETI को IEA से जोड़ सकते हैं क्योंकि दोनों 'ऊर्जा संक्रमण' से संबंधित हैं।",
+      "final_explanation": "चार संगठन प्रमुख ऊर्जा-संबंधित रिपोर्ट प्रकाशित करते हैं, प्रत्येक का एक विशिष्ट फोकस और प्राधिकरण है।\n\n• A (ETI) → 3 (WEF): एनर्जी ट्रांजिशन इंडेक्स WEF का उत्पाद है जो ऊर्जा संक्रमण की प्रगति को ऊर्जा सुरक्षा, ऊर्जा समानता, और पर्यावरणीय स्थिरता के आयामों में मापता है।\n• B (वर्ल्ड एनर्जी आउटलुक) → 1 (IEA): इंटरनेशनल एनर्जी एजेंसी की वर्ल्ड एनर्जी आउटलुक सबसे प्रामाणिक वार्षिक वैश्विक ऊर्जा पूर्वानुमान है, जो आपूर्ति, मांग, और नीति परिदृश्यों को कवर करता है।\n• C (ग्लोबल स्टेटस रिपोर्ट ऑन रिन्यूएबल्स) → 4 (REN21): REN21 (एक वैश्विक बहु-हितधारक नेटवर्क) वार्षिक रूप से नवीकरणीय ऊर्जा क्षेत्र की स्थिति की समीक्षा प्रकाशित करता है।\n• D (रिन्यूएबल एनर्जी स्टैटिस्टिक्स) → 2 (IRENA): इंटरनेशनल रिन्यूएबल एनर्जी एजेंसी वार्षिक रूप से व्यापक क्षमता और उत्पादन डेटा प्रकाशित करता है।\n\nसही मिलान: A-3, B-1, C-4, D-2 → विकल्प a।\n\nमूल्य संवर्धन:\n• भारत वैश्विक स्तर पर स्थापित नवीकरणीय ऊर्जा क्षमता में शीर्ष 4 में है — लेकिन प्रति व्यक्ति नवीकरणीय ऊर्जा खपत अभी भी कम है।\n• IRENA और IEA अंतरसरकारी संस्थाएं हैं; REN21 एक बहु-हितधारक नेटवर्क है; WEF एक गैर-लाभकारी फाउंडेशन है।\n• ETI तीन आयामों में संक्रमण की तत्परता को मापता है: ऊर्जा सुरक्षा, ऊर्जा समानता, और पर्यावरणीय स्थिरता।"
+    }
+  },
+  {
+    "uuid": "3d137daf-199c-4bf9-a15f-c805188fb6f8",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global TB Report and India's Disease Burden Rankings: WHO Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "TB elimination target — India 2025 vs global 2030",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A senior health ministry official is preparing a briefing note on India's tuberculosis elimination commitments. The note must correctly state: (i) the year by which India aims to eliminate TB under 'TB-Mukt Bharat'; (ii) the year by which the global community aims to end TB as a public health crisis under the WHO's End TB Strategy; and (iii) the international body that publishes the annual report tracking the global TB burden.\n\nWhich of the following combinations correctly completes all three elements of the briefing note?\n\n(a) India — 2030; Global — 2025; Reporting body — WHO\n(b) India — 2025; Global — 2030; Reporting body — WHO\n(c) India — 2025; Global — 2030; Reporting body — STOP TB Partnership\n(d) India — 2025; Global — 2035; Reporting body — WHO",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (STOP TB Partnership) is deceptive because it is a legitimate TB-related multilateral mechanism, making it sound like an appropriate answer for financing TB elimination goals.",
+      "elimination_logic": [
+        "The scenario asks which combination correctly pairs India's TB elimination target with the global target and the reporting agency.",
+        "India's TB-Mukt Bharat targets 2025 elimination; the global End TB Strategy targets 2030 — this asymmetry is key.",
+        "WHO publishes the Global TB Report annually — not SDSN, not STOP TB Partnership.",
+        "Only option b correctly states India 2025 + global 2030 + WHO as the reporting body."
+      ],
+      "upsc_trap_explanation": "The most common trap is confusing India's TB elimination target (2025) with the global target (2030). Both are widely cited but represent different timelines. India has committed to eliminating TB five years ahead of the global target under 'TB-Mukt Bharat.' Students who recall only one of these dates tend to select an incorrect option. The secondary trap is attributing TB reporting to STOP TB Partnership or SDSN rather than WHO.",
+      "final_explanation": "India's TB burden is a recurring UPSC topic at the intersection of public health, global indices, and SDG framework. The WHO publishes the Global TB Report annually, tracking incidence, prevalence, and mortality rates across 194 member states.\n\n• Option (a) — India 2030 / Global 2025 / WHO: Incorrect. The targets are reversed. India committed to 2025; global target is 2030.\n• Option (b) — India 2025 / Global 2030 / WHO: Correct. India's 'TB-Mukt Bharat' targets 2025 elimination (5 years ahead of the global End TB Strategy's 2030 goal). WHO is the correct reporting body.\n• Option (c) — India 2025 / Global 2030 / STOP TB Partnership: Incorrect on the publisher. STOP TB Partnership is a global coalition supporting TB elimination but does not publish the Global TB Report.\n• Option (d) — India 2025 / Global 2035 / WHO: Incorrect. The global target is 2030 under End TB Strategy — not 2035.\n\nValue Addition:\n• India accounts for approximately 26% of global TB burden — the highest of any single country.\n• 'Elimination' in public health terminology means fewer than 1 case per 1,000,000 population.\n• Global Fund to Fight AIDS, TB and Malaria finances TB programmes but is distinct from WHO's reporting function."
+    },
+    "hi": {
+      "display_text": "एक वरिष्ठ स्वास्थ्य मंत्रालय अधिकारी भारत के क्षय रोग उन्मूलन प्रतिबद्धताओं पर एक ब्रीफिंग नोट तैयार कर रहा है। नोट में सही रूप से उल्लेख होना चाहिए: (i) वह वर्ष जब भारत 'टीबी-मुक्त भारत' के तहत टीबी उन्मूलन का लक्ष्य रखता है; (ii) वह वर्ष जब वैश्विक समुदाय WHO की End TB Strategy के तहत टीबी को सार्वजनिक स्वास्थ्य संकट के रूप में समाप्त करने का लक्ष्य रखता है; और (iii) वह अंतरराष्ट्रीय संस्था जो वैश्विक टीबी बोझ को ट्रैक करने वाली वार्षिक रिपोर्ट प्रकाशित करती है।\n\nनिम्नलिखित में से कौन सा संयोजन ब्रीफिंग नोट के तीनों तत्वों को सही ढंग से पूरा करता है?\n\n(a) भारत — 2030; वैश्विक — 2025; रिपोर्टिंग संस्था — WHO\n(b) भारत — 2025; वैश्विक — 2030; रिपोर्टिंग संस्था — WHO\n(c) भारत — 2025; वैश्विक — 2030; रिपोर्टिंग संस्था — STOP TB Partnership\n(d) भारत — 2025; वैश्विक — 2035; रिपोर्टिंग संस्था — WHO",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (STOP TB Partnership) भ्रामक है क्योंकि यह टीबी से संबंधित एक वैध बहुपक्षीय तंत्र है, जो इसे टीबी उन्मूलन लक्ष्यों के वित्तपोषण के लिए उपयुक्त उत्तर जैसा बनाता है।",
+      "elimination_logic": [
+        "परिदृश्य पूछता है कि कौन सा संयोजन सही ढंग से भारत के टीबी उन्मूलन लक्ष्य को वैश्विक लक्ष्य और रिपोर्टिंग एजेंसी के साथ जोड़ता है।",
+        "भारत का टीबी-मुक्त भारत लक्ष्य 2025 है; वैश्विक End TB Strategy का लक्ष्य 2030 है — यह असममिति महत्वपूर्ण है।",
+        "WHO वार्षिक रूप से Global TB Report प्रकाशित करता है — न कि SDSN, न ही STOP TB Partnership।",
+        "केवल विकल्प b सही रूप से भारत 2025 + वैश्विक 2030 + WHO को रिपोर्टिंग संस्था के रूप में बताता है।"
+      ],
+      "upsc_trap_explanation": "सबसे आम जाल भारत के टीबी उन्मूलन लक्ष्य (2025) को वैश्विक लक्ष्य (2030) से भ्रमित करना है। दोनों व्यापक रूप से उद्धृत हैं लेकिन अलग-अलग समयरेखा दर्शाते हैं। भारत ने 'टीबी-मुक्त भारत' के तहत वैश्विक लक्ष्य से पांच साल पहले 2025 तक टीबी उन्मूलन का संकल्प लिया है। जो छात्र केवल एक तारीख याद रखते हैं, वे गलत विकल्प चुनते हैं। दूसरा जाल यह है कि टीबी रिपोर्टिंग को STOP TB Partnership या SDSN को देना बजाय WHO के।",
+      "final_explanation": "भारत का टीबी बोझ सार्वजनिक स्वास्थ्य, वैश्विक सूचकांक, और SDG फ्रेमवर्क के संगम पर एक बार-बार आने वाला UPSC विषय है। WHO वार्षिक रूप से Global TB Report प्रकाशित करता है, जो 194 सदस्य राज्यों में टीबी की घटना, प्रचलन, और मृत्यु दर को ट्रैक करता है।\n\n• विकल्प (a) — भारत 2030 / वैश्विक 2025 / WHO: गलत। लक्ष्य उलटे हैं। भारत ने 2025 का संकल्प लिया है; वैश्विक लक्ष्य 2030 है।\n• विकल्प (b) — भारत 2025 / वैश्विक 2030 / WHO: सही। भारत का 'टीबी-मुक्त भारत' 2025 तक उन्मूलन का लक्ष्य रखता है (वैश्विक End TB Strategy के 2030 लक्ष्य से 5 साल पहले)। WHO सही रिपोर्टिंग संस्था है।\n• विकल्प (c) — भारत 2025 / वैश्विक 2030 / STOP TB Partnership: प्रकाशक के संदर्भ में गलत। STOP TB Partnership टीबी उन्मूलन का समर्थन करने वाला वैश्विक गठबंधन है लेकिन Global TB Report प्रकाशित नहीं करता।\n• विकल्प (d) — भारत 2025 / वैश्विक 2035 / WHO: गलत। वैश्विक लक्ष्य End TB Strategy के तहत 2030 है — 2035 नहीं।\n\nमूल्य संवर्धन:\n• भारत वैश्विक टीबी बोझ का लगभग 26% हिस्सा रखता है — जो किसी भी एकल देश में सबसे अधिक है।\n• सार्वजनिक स्वास्थ्य शब्दावली में 'उन्मूलन' का अर्थ है प्रति 1,000,000 आबादी में 1 से कम मामले।\n• Global Fund to Fight AIDS, TB and Malaria टीबी कार्यक्रमों को वित्तपोषित करता है लेकिन WHO की रिपोर्टिंग कार्य से अलग है।"
+    }
+  },
+  {
+    "uuid": "2cdc53c4-d7a4-405c-9708-b45841900c56",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Hunger Index (GHI): Methodology, Criticism and India's Response",
+        "Human Development Index (HDI): Components, Formula and India's Trajectory"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "partial-truth",
+      "concept_anchor": "GHI four indicators — weightage distribution trap",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are among the four indicators used to compute the Global Hunger Index (GHI) score. Which one is NOT an indicator used in the GHI methodology?\n\n(a) Undernourishment as a share of the population\n(b) Child stunting rate among children under five years of age\n(c) Maternal anaemia rate among women of reproductive age\n(d) Child mortality rate among children under five years of age",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (child stunting) is deceptive because stunting is a prominent nutrition metric and students may assume it carries the highest weight given its visibility in nutrition discourse.",
+      "elimination_logic": [
+        "GHI has four indicators with specific weightages: undernourishment (1/3), child wasting (1/6), child stunting (1/6), child mortality (1/3).",
+        "Options a, b, and d are correctly identified as components of GHI — undernourishment, child stunting, and child mortality are all valid GHI indicators.",
+        "Option c states 'maternal anaemia rate' — this is NOT a GHI indicator. GHI does not include maternal anaemia in its four-indicator framework.",
+        "The odd one out is option c — maternal anaemia rate."
+      ],
+      "upsc_trap_explanation": "Maternal anaemia is a prominent nutrition and public health indicator tracked by WHO and NFHS, and appears frequently alongside hunger discussions. Students who associate anaemia with nutritional deprivation (a theme central to GHI) may accept it as a GHI component. The actual four GHI indicators are restricted to undernourishment, child wasting, child stunting, and child mortality — maternal anaemia is a distractor drawn from adjacent nutritional discourse.",
+      "final_explanation": "The Global Hunger Index uses exactly four indicators to compute its composite score, each with a defined weightage.\n\n• Option (a) — Undernourishment: Correct GHI indicator. Carries 1/3 weight. Measured using FAO modelled estimates of caloric intake insufficiency.\n• Option (b) — Child stunting: Correct GHI indicator. Carries 1/6 weight. Measures the proportion of children under five who are too short for their age.\n• Option (c) — Maternal anaemia rate: NOT a GHI indicator. This is the odd one out. GHI does not incorporate maternal anaemia — this metric appears in NFHS data and WHO nutrition reports but not in the four-indicator GHI framework.\n• Option (d) — Child mortality: Correct GHI indicator. Carries 1/3 weight. Measures mortality rate of children under five.\n\nValue Addition:\n• Child wasting (also 1/6 weight) measures proportion of children under five who are too thin for their height — acute malnutrition.\n• The two heaviest-weighted components (undernourishment + child mortality) together account for 2/3 of the GHI score.\n• India objects to GHI's reliance on Gallup opinion polls for the undernourishment component."
+    },
+    "hi": {
+      "display_text": "ग्लोबल हंगर इंडेक्स (GHI) स्कोर की गणना के लिए उपयोग किए जाने वाले चार संकेतकों में से तीन निम्नलिखित हैं। इनमें से कौन सा GHI पद्धति में उपयोग किया जाने वाला संकेतक नहीं है?\n\n(a) जनसंख्या में कुपोषण का हिस्सा\n(b) पाँच वर्ष से कम उम्र के बच्चों में बाल स्टंटिंग दर\n(c) प्रजनन आयु की महिलाओं में मातृ एनीमिया दर\n(d) पाँच वर्ष से कम उम्र के बच्चों में बाल मृत्यु दर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (बाल कुपोषण) भ्रामक है क्योंकि कुपोषण में स्टंटिंग एक प्रमुख मापदंड है और छात्र यह मान सकते हैं कि इसका भार सबसे अधिक है क्योंकि यह पोषण चर्चा में प्रमुख है।",
+      "elimination_logic": [
+        "GHI के चार संकेतक हैं जिनके विशिष्ट भार हैं: कुपोषण (1/3), बाल कुपोषण (1/6), बाल स्टंटिंग (1/6), बाल मृत्यु दर (1/3)।",
+        "विकल्प a, b, और d को सही रूप से GHI के घटक के रूप में पहचाना गया है — कुपोषण, बाल स्टंटिंग, और बाल मृत्यु दर सभी वैध GHI संकेतक हैं।",
+        "विकल्प c में 'मातृ एनीमिया दर' है — यह GHI संकेतक नहीं है। GHI अपने चार संकेतक ढांचे में मातृ एनीमिया शामिल नहीं करता।",
+        "अलग विकल्प है विकल्प c — मातृ एनीमिया दर।"
+      ],
+      "upsc_trap_explanation": "मातृ एनीमिया एक प्रमुख पोषण और सार्वजनिक स्वास्थ्य संकेतक है जिसे WHO और NFHS ट्रैक करते हैं, और यह भूख से संबंधित चर्चाओं में अक्सर आता है। छात्र जो एनीमिया को पोषण की कमी से जोड़ते हैं (जो GHI का केंद्रीय विषय है) उसे GHI का घटक मान सकते हैं। वास्तविक चार GHI संकेतक केवल कुपोषण, बाल कुपोषण, बाल स्टंटिंग, और बाल मृत्यु दर हैं — मातृ एनीमिया एक भ्रामक विकल्प है जो निकटवर्ती पोषण चर्चा से लिया गया है।",
+      "final_explanation": "ग्लोबल हंगर इंडेक्स अपने सम्मिश्रित स्कोर की गणना के लिए ठीक चार संकेतकों का उपयोग करता है, जिनमें से प्रत्येक का एक निश्चित भार होता है।\n\n• विकल्प (a) — कुपोषण: सही GHI संकेतक। 1/3 भार। FAO के कैलोरी सेवन अपर्याप्तता के मॉडल अनुमान के आधार पर मापा जाता है।\n• विकल्प (b) — बाल स्टंटिंग: सही GHI संकेतक। 1/6 भार। पाँच वर्ष से कम उम्र के बच्चों में उम्र के अनुसार कद कम होने का अनुपात मापता है।\n• विकल्प (c) — मातृ एनीमिया दर: GHI संकेतक नहीं है। यह अलग विकल्प है। GHI मातृ एनीमिया को शामिल नहीं करता — यह मापदंड NFHS डेटा और WHO पोषण रिपोर्टों में आता है लेकिन चार-सूचकांक GHI ढांचे में नहीं।\n• विकल्प (d) — बाल मृत्यु दर: सही GHI संकेतक। 1/3 भार। पाँच वर्ष से कम उम्र के बच्चों की मृत्यु दर मापता है।\n\nमूल्य संवर्धन:\n• बाल कुपोषण (1/6 भार) पाँच वर्ष से कम उम्र के बच्चों में कद के अनुसार अत्यधिक दुबला होने का अनुपात मापता है — तीव्र कुपोषण।\n• सबसे अधिक भार वाले दो घटक (कुपोषण + बाल मृत्यु दर) मिलकर GHI स्कोर का 2/3 हिस्सा बनाते हैं।\n• भारत GHI के कुपोषण घटक के लिए Gallup सर्वेक्षणों पर निर्भरता का विरोध करता है।"
+    }
+  },
+  {
+    "uuid": "6426faf3-4dba-4745-8322-68f03a545d22",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Competitiveness Index (GCI): WEF Framework and Pillar Structure",
+        "Global Gender Gap Index (GGGI): WEF Framework vs Gender Inequality Index (GII)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "scope-extension",
+      "concept_anchor": "GCI 4.0 — 2018 revision adding Agility dimension",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Global Competitiveness Index (GCI) published by the World Economic Forum underwent a significant methodological revision that introduced 'Agility' factors to reflect the requirements of the Fourth Industrial Revolution. This revised framework, known as GCI 4.0, was first introduced in the ________ edition of the index.\n\n(a) 2015\n(b) 2016\n(c) 2018\n(d) 2020",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (2016) is deceptive because 2016 coincides with several major WEF methodology revisions and the National IPR Policy, making it a plausible year for students reconstructing timelines.",
+      "elimination_logic": [
+        "GCI 4.0 was introduced to assess 'Agility' alongside traditional competitiveness — this revision was unveiled at Davos 2018.",
+        "Eliminate option a (2015): No major GCI methodology revision occurred in 2015.",
+        "Eliminate option b (2016): 2016 saw WEF discussions on Fourth Industrial Revolution but not the GCI 4.0 launch.",
+        "Eliminate option d (2020): GCI 4.0 predates 2020; 2020 GCI publication used 4.0 methodology already established.",
+        "Retain option c (2018): GCI 4.0 was introduced in the 2018 edition, adding agility and resilience to the traditional pillars."
+      ],
+      "upsc_trap_explanation": "Students who have read about GCI revisions tend to recall 'WEF revised GCI' without pinning the year. The 2018 revision (GCI 4.0) specifically added 'Agility' factors reflecting the Fourth Industrial Revolution context — a conceptual addition distinct from earlier GCI methodology. Years 2016 and 2020 are designed as plausible traps because they bracket significant WEF and global economic policy events.",
+      "final_explanation": "The Global Competitiveness Index underwent a significant methodological revision with the launch of GCI 4.0 in 2018, which added agility and resilience factors reflecting the Fourth Industrial Revolution context — a conceptual addition to the traditional 12-pillar structure.\n\n• Option (a) — 2015: Incorrect. No major GCI framework revision occurred in 2015.\n• Option (b) — 2016: Incorrect. While WEF's Fourth Industrial Revolution discourse intensified in 2016 (Davos), the GCI 4.0 revision came two years later.\n• Option (c) — 2018: Correct. GCI 4.0 debuted with the 2018 edition, introducing agility-related factors beyond the original three sub-index groups.\n• Option (d) — 2020: Incorrect. By 2020, GCI 4.0 methodology was already in use; that year's edition was suspended due to COVID-19 data disruption.\n\nValue Addition:\n• GCI's 12 pillars: Institutions, Infrastructure, ICT adoption, Macroeconomic stability, Health, Skills, Product market, Labour market, Financial system, Market size, Business dynamism, Innovation capability.\n• India's weak pillars in GCI include Health, Labour market efficiency, and Financial market development.\n• WEF did not publish GCI in 2020 due to COVID-19 disrupting comparable data collection."
+    },
+    "hi": {
+      "display_text": "विश्व आर्थिक मंच द्वारा प्रकाशित ग्लोबल कॉम्पेटिटिवनेस इंडेक्स (GCI) ने चौथी औद्योगिक क्रांति की आवश्यकताओं को दर्शाने के लिए 'चपलता' कारकों को शामिल करते हुए एक महत्वपूर्ण कार्यप्रणाली संशोधन किया। इस संशोधित फ्रेमवर्क, जिसे GCI 4.0 कहा जाता है, को पहली बार ________ संस्करण में पेश किया गया था।\n\n(a) 2015\n(b) 2016\n(c) 2018\n(d) 2020",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (2016) भ्रामक है क्योंकि 2016 कई प्रमुख WEF कार्यप्रणाली संशोधनों और राष्ट्रीय IPR नीति के साथ मेल खाता है, जो छात्रों के लिए समयरेखा पुनर्निर्माण में संभावित वर्ष बनाता है।",
+      "elimination_logic": [
+        "GCI 4.0 को पारंपरिक प्रतिस्पर्धात्मकता के साथ 'चपलता' (Agility) को मापने के लिए पेश किया गया था — यह संशोधन डावोस 2018 में प्रस्तुत किया गया था।",
+        "विकल्प a (2015) को हटा दें: 2015 में कोई प्रमुख GCI कार्यप्रणाली संशोधन नहीं हुआ।",
+        "विकल्प b (2016) को हटा दें: 2016 में WEF ने चौथी औद्योगिक क्रांति पर चर्चा की लेकिन GCI 4.0 लॉन्च नहीं किया।",
+        "विकल्प d (2020) को हटा दें: GCI 4.0 2020 से पहले ही अस्तित्व में था; 2020 का GCI प्रकाशन पहले से स्थापित 4.0 कार्यप्रणाली का उपयोग करता था।",
+        "विकल्प c (2018) को बनाए रखें: GCI 4.0 2018 संस्करण में पेश किया गया था, जिसमें पारंपरिक स्तंभों के साथ चपलता और लचीलापन जोड़ा गया।"
+      ],
+      "upsc_trap_explanation": "जो छात्र GCI संशोधनों के बारे में पढ़ चुके हैं, वे 'WEF ने GCI संशोधित किया' याद करते हैं लेकिन वर्ष याद नहीं रहता। 2018 का संशोधन (GCI 4.0) विशेष रूप से 'चपलता' कारकों को जोड़ा जो चौथी औद्योगिक क्रांति के संदर्भ को दर्शाता है — यह एक वैचारिक जोड़ है जो पहले के GCI कार्यप्रणाली से अलग है। वर्ष 2016 और 2020 को संभावित जाल के रूप में डिज़ाइन किया गया है क्योंकि वे महत्वपूर्ण WEF और वैश्विक आर्थिक नीति घटनाओं के बीच आते हैं।",
+      "final_explanation": "ग्लोबल कॉम्पेटिटिवनेस इंडेक्स (GCI) ने 2018 में GCI 4.0 के लॉन्च के साथ एक महत्वपूर्ण कार्यप्रणाली संशोधन किया, जिसमें चौथी औद्योगिक क्रांति के संदर्भ को दर्शाने वाले चपलता और लचीलापन कारक जोड़े गए — जो पारंपरिक 12-स्तंभ संरचना में एक वैचारिक जोड़ है।\n\n• विकल्प (a) — 2015: गलत। 2015 में कोई प्रमुख GCI फ्रेमवर्क संशोधन नहीं हुआ।\n• विकल्प (b) — 2016: गलत। जबकि WEF की चौथी औद्योगिक क्रांति पर चर्चा 2016 (डावोस) में तीव्र हुई, GCI 4.0 संशोधन दो साल बाद आया।\n• विकल्प (c) — 2018: सही। GCI 4.0 2018 संस्करण के साथ पेश किया गया, जिसमें मूल तीन उप-सूचक समूहों से परे चपलता-संबंधी कारक शामिल किए गए।\n• विकल्प (d) — 2020: गलत। 2020 तक GCI 4.0 कार्यप्रणाली पहले से उपयोग में थी; उस वर्ष का संस्करण COVID-19 डेटा व्यवधान के कारण स्थगित किया गया था।\n\nमूल्य संवर्धन:\n• GCI के 12 स्तंभ: संस्थान, अवसंरचना, ICT अपनाना, मैक्रोइकॉनॉमिक स्थिरता, स्वास्थ्य, कौशल, उत्पाद बाजार, श्रम बाजार, वित्तीय प्रणाली, बाजार आकार, व्यवसाय गतिशीलता, नवाचार क्षमता।\n• भारत के कमजोर स्तंभों में स्वास्थ्य, श्रम बाजार दक्षता, और वित्तीय बाजार विकास शामिल हैं।\n• WEF ने COVID-19 के कारण 2020 में GCI प्रकाशित नहीं किया क्योंकि तुलनीय डेटा संग्रह बाधित था।"
+    }
+  },
+  {
+    "uuid": "74051a02-0c31-40ba-ac1e-fb930a6ee6b4",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Press Freedom Index: Publisher, Criteria and India's Controversial Ranking",
+        "World Press Freedom Index vs Democracy Index: Two Separate Frameworks"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "RSF Press Freedom Index vs Freedom House — two separate products",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Press Freedom Index — Published by Reporters Without Borders (RSF) using three criteria: political context, legal framework, and journalist safety\n(b) Press Freedom Index — Published by Reporters Without Borders (RSF) using five criteria including political context, legal framework, economic context, sociocultural context, and safety\n(c) Press Freedom Index — Published by Freedom House as part of its annual assessment of civil liberties across democratic and non-democratic regimes\n(d) Press Freedom Index — Published by Freedom House using five criteria: political context, legal framework, economic context, sociocultural context, and safety",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because it correctly names RSF as the publisher but attributes an incorrect number of criteria (three instead of five), which students may overlook if they only check the publisher.",
+      "elimination_logic": [
+        "Test option a: RSF is correct as publisher, but PFI uses five criteria, not three. Pair is incorrect.",
+        "Test option b: RSF publishes PFI using five criteria (political context, legal framework, economic context, sociocultural context, safety). Both elements are correct. This is the correct pair.",
+        "Test option c: Freedom House does not publish PFI — it publishes Freedom of the Press and Freedom in the World. Incorrect attribution.",
+        "Test option d: The five criteria listed under Freedom House are actually RSF's criteria — conflation between two publishers. Incorrect."
+      ],
+      "upsc_trap_explanation": "Option a is the primary trap — it correctly identifies RSF as the publisher (which students who have studied the topic will confirm) but attaches an incorrect number of criteria (three instead of five). Students who anchor on publisher-identity rather than reading the complete pair will select option a. The correct pair (option b) requires verifying both the publisher and the exact count of five criteria.",
+      "final_explanation": "The Press Freedom Index uses five evaluation criteria — a specific detail that UPSC has tested in the context of India's government disputing the index's subjective methodology.\n\n• Option (a) — RSF / three criteria: Publisher is correct; criteria count is incorrect. PFI uses five criteria, not three.\n• Option (b) — RSF / five criteria (political context, legal framework, economic context, sociocultural context, safety): Correct on both elements. This is the correctly matched pair.\n• Option (c) — Freedom House / PFI: Incorrect publisher. Freedom House publishes 'Freedom of the Press' and 'Freedom in the World' — separate products with their own methodology.\n• Option (d) — Freedom House / five RSF criteria: Conflation trap — the five criteria belong to RSF's PFI, not Freedom House's framework.\n\nValue Addition:\n• RSF was founded in 1985 and is headquartered in Paris.\n• Freedom House's Freedom in the World classifies countries as Free, Partly Free, or Not Free — different from RSF's numerical ranking.\n• India's government has specifically objected to the 'safety' and 'political context' criteria in RSF's methodology as subjectively weighted."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) प्रेस फ्रीडम इंडेक्स — Reporters Without Borders (RSF) द्वारा तीन मानदंडों के साथ प्रकाशित: राजनीतिक संदर्भ, कानूनी ढांचा, और पत्रकार सुरक्षा\n(b) प्रेस फ्रीडम इंडेक्स — Reporters Without Borders (RSF) द्वारा पाँच मानदंडों के साथ प्रकाशित जिनमें राजनीतिक संदर्भ, कानूनी ढांचा, आर्थिक संदर्भ, सामाजिक-सांस्कृतिक संदर्भ, और सुरक्षा शामिल हैं\n(c) प्रेस फ्रीडम इंडेक्स — Freedom House द्वारा लोकतांत्रिक और गैर-लोकतांत्रिक शासन के नागरिक स्वतंत्रताओं के वार्षिक मूल्यांकन के हिस्से के रूप में प्रकाशित\n(d) प्रेस फ्रीडम इंडेक्स — Freedom House द्वारा पाँच मानदंडों के साथ प्रकाशित: राजनीतिक संदर्भ, कानूनी ढांचा, आर्थिक संदर्भ, सामाजिक-सांस्कृतिक संदर्भ, और सुरक्षा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि यह सही रूप से RSF को प्रकाशक के रूप में नामित करता है लेकिन गलत संख्या में मानदंड (तीन के बजाय पाँच) देता है, जिसे छात्र केवल प्रकाशक की जांच करते समय नजरअंदाज कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प a का परीक्षण करें: RSF प्रकाशक के रूप में सही है, लेकिन PFI पाँच मानदंडों का उपयोग करता है, तीन का नहीं। जोड़ी गलत है।",
+        "विकल्प b का परीक्षण करें: RSF पाँच मानदंडों (राजनीतिक संदर्भ, कानूनी ढांचा, आर्थिक संदर्भ, सामाजिक-सांस्कृतिक संदर्भ, सुरक्षा) के साथ PFI प्रकाशित करता है। दोनों तत्व सही हैं। यह सही जोड़ी है।",
+        "विकल्प c का परीक्षण करें: Freedom House PFI प्रकाशित नहीं करता — यह Freedom of the Press और Freedom in the World प्रकाशित करता है। गलत अभिज्ञान।",
+        "विकल्प d का परीक्षण करें: Freedom House के तहत सूचीबद्ध पाँच मानदंड वास्तव में RSF के मानदंड हैं — दो प्रकाशकों के बीच भ्रम। गलत।"
+      ],
+      "upsc_trap_explanation": "विकल्प a मुख्य जाल है — यह सही रूप से RSF को प्रकाशक के रूप में पहचानता है (जिसकी पुष्टि विषय पढ़ने वाले छात्र करेंगे) लेकिन गलत संख्या में मानदंड (तीन के बजाय पाँच) जोड़ता है। जो छात्र केवल प्रकाशक की पहचान पर ध्यान केंद्रित करते हैं और पूरी जोड़ी नहीं पढ़ते, वे विकल्प a चुनेंगे। सही जोड़ी (विकल्प b) के लिए प्रकाशक और पाँच मानदंडों की सही संख्या दोनों की पुष्टि आवश्यक है।",
+      "final_explanation": "प्रेस फ्रीडम इंडेक्स पाँच मूल्यांकन मानदंडों का उपयोग करता है — यह एक विशिष्ट विवरण है जिसे UPSC ने भारत सरकार द्वारा सूचकांक की विषयगत कार्यप्रणाली पर विवाद के संदर्भ में परखा है।\n\n• विकल्प (a) — RSF / तीन मानदंड: प्रकाशक सही है; मानदंड संख्या गलत है। PFI तीन नहीं, पाँच मानदंडों का उपयोग करता है।\n• विकल्प (b) — RSF / पाँच मानदंड (राजनीतिक संदर्भ, कानूनी ढांचा, आर्थिक संदर्भ, सामाजिक-सांस्कृतिक संदर्भ, सुरक्षा): दोनों तत्वों में सही। यह सही मेल वाली जोड़ी है।\n• विकल्प (c) — Freedom House / PFI: गलत प्रकाशक। Freedom House 'Freedom of the Press' और 'Freedom in the World' प्रकाशित करता है — अलग उत्पाद जिनकी अपनी कार्यप्रणाली है।\n• विकल्प (d) — Freedom House / पाँच RSF मानदंड: भ्रम जाल — ये पाँच मानदंड RSF के PFI के हैं, Freedom House के ढांचे के नहीं।\n\nमूल्य संवर्धन:\n• RSF की स्थापना 1985 में हुई थी और इसका मुख्यालय पेरिस में है।\n• Freedom House का Freedom in the World देशों को Free, Partly Free, या Not Free के रूप में वर्गीकृत करता है — जो RSF की संख्यात्मक रैंकिंग से अलग है।\n• भारत सरकार ने विशेष रूप से RSF की कार्यप्रणाली में 'सुरक्षा' और 'राजनीतिक संदर्भ' मानदंडों को विषयगत रूप से भारित होने के कारण आपत्ति जताई है।"
+    }
+  },
+  {
+    "uuid": "33a86bfe-c0a5-4741-8bea-f7ced1cec687",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Hunger Index (GHI): Methodology, Criticism and India's Response",
+        "Environmental Performance Index (EPI): Publisher, India's Rank and Controversy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "India's methodology rejections — GHI and EPI controversies",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding India's position and government response to major global indices:\n\n1. India's government has disputed the Global Hunger Index methodology primarily on the ground that the undernourishment indicator relies on a sample-based opinion poll rather than objective nutritional surveys.\n2. India ranked last among 180 countries in the Environmental Performance Index 2022 and the government's primary objection was to the index's overemphasis on air quality metrics derived from satellite-modelled data rather than ground monitoring.\n3. Both the Global Hunger Index and the Environmental Performance Index are published by agencies of the United Nations system.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India's government has disputed the Global Hunger Index methodology primarily on the ground that the undernourishment indicator relies on a sample-based opinion poll rather than objective nutritional surveys.",
+          "verdict": "Correct",
+          "reason": "India's official objection to GHI focuses on the undernourishment component, which uses Gallup World Poll data from a sample of approximately 3,000 respondents — India argues this is too small and subjective to represent a country of 1.4 billion."
+        },
+        {
+          "statement": "India ranked last among 180 countries in the Environmental Performance Index 2022 and the government's primary objection was to the index's overemphasis on air quality metrics derived from satellite-modelled data rather than ground monitoring.",
+          "verdict": "Correct",
+          "reason": "India ranked 180th in EPI 2022; the government explicitly rejected the methodology citing excessive weight given to air quality indicators calculated from modelled (not ground-level) data."
+        },
+        {
+          "statement": "Both the Global Hunger Index and the Environmental Performance Index are published by agencies of the United Nations system.",
+          "verdict": "Incorrect",
+          "reason": "GHI is published by Concern Worldwide and Welthungerhilfe (NGOs); EPI is published by Yale and Columbia Universities — neither is a UN agency."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is the primary trap because statements 1 and 2 are accurate and detailed, making students who have partially studied these controversies overlook statement 3's publisher error.",
+      "elimination_logic": [
+        "Verify statement 1: India's GHI objection centres on Gallup-based undernourishment data — correct.",
+        "Verify statement 2: India ranked 180th in EPI 2022; objection to satellite-modelled air quality data — correct.",
+        "Test statement 3: GHI publisher = Concern Worldwide + Welthungerhilfe (NGOs); EPI publisher = Yale + Columbia (universities). Neither is UN. Statement 3 is incorrect.",
+        "Statements 1 and 2 correct; statement 3 incorrect → option b (1 and 2 only)."
+      ],
+      "upsc_trap_explanation": "Statement 3 is a conflation trap that bundles two separate factual errors — attributing GHI to the UN system and attributing EPI to the UN system simultaneously. Students who have learned that 'India disputes indices published by international organisations' may loosely categorise both under 'UN/international bodies' without recalling the specific publishers. The trap is designed to test whether students have memorised publisher identity, not just the controversies.",
+      "final_explanation": "India has formally disputed both GHI and EPI on methodological grounds — but these indices come from entirely different non-UN publishers.\n\n• Statement 1 — Correct: India objects to GHI's undernourishment component, which uses Gallup World Poll data from a sample of ~3,000 respondents projected onto 1.4 billion people — an approach India calls statistically unreliable.\n• Statement 2 — Correct: India's 180th rank in EPI 2022 triggered a government rebuttal specifically targeting air quality metrics derived from satellite modelling rather than ground-based monitoring stations, which India considers more accurate.\n• Statement 3 — Incorrect: GHI is a product of two European NGOs (Concern Worldwide and Welthungerhilfe); EPI is published by Yale University and Columbia University. Neither belongs to the UN system.\n\nValue Addition:\n• The FAO State of Food Security report (UN body) and GHI (NGO) often reach different conclusions on India's hunger situation.\n• UNEP's Global Environment Outlook (UN) is separate from EPI (Yale/Columbia).\n• India's disputes with both indices highlight the methodological sovereignty debate in global indices."
+    },
+    "hi": {
+      "display_text": "भारत की स्थिति और सरकार की प्रतिक्रिया के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत सरकार ने ग्लोबल हंगर इंडेक्स की कार्यप्रणाली पर मुख्य रूप से इस आधार पर आपत्ति जताई है कि कुपोषण सूचकांक एक नमूना-आधारित सर्वेक्षण पर निर्भर करता है न कि वस्तुनिष्ठ पोषण सर्वेक्षणों पर।\n2. भारत ने Environmental Performance Index 2022 में 180 देशों में अंतिम स्थान प्राप्त किया और सरकार की मुख्य आपत्ति इस सूचकांक के उपग्रह-आधारित मॉडल डेटा से प्राप्त वायु गुणवत्ता मापदंडों पर अधिक जोर देने को लेकर थी, न कि भौतिक निगरानी पर।\n3. ग्लोबल हंगर इंडेक्स और Environmental Performance Index दोनों संयुक्त राष्ट्र प्रणाली की एजेंसियों द्वारा प्रकाशित किए जाते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत सरकार ने ग्लोबल हंगर इंडेक्स की कार्यप्रणाली पर मुख्य रूप से इस आधार पर आपत्ति जताई है कि कुपोषण सूचकांक एक नमूना-आधारित सर्वेक्षण पर निर्भर करता है न कि वस्तुनिष्ठ पोषण सर्वेक्षणों पर।",
+          "verdict": "सही",
+          "reason": "भारत की आधिकारिक आपत्ति GHI के कुपोषण घटक पर केंद्रित है, जो लगभग 3,000 उत्तरदाताओं के एक नमूने से Gallup World Poll डेटा का उपयोग करता है — भारत का तर्क है कि यह 1.4 अरब की आबादी वाले देश का प्रतिनिधित्व करने के लिए बहुत छोटा और व्यक्तिपरक है।"
+        },
+        {
+          "statement": "भारत ने Environmental Performance Index 2022 में 180 देशों में अंतिम स्थान प्राप्त किया और सरकार की मुख्य आपत्ति इस सूचकांक के उपग्रह-आधारित मॉडल डेटा से प्राप्त वायु गुणवत्ता मापदंडों पर अधिक जोर देने को लेकर थी, न कि भौतिक निगरानी पर।",
+          "verdict": "सही",
+          "reason": "भारत ने EPI 2022 में 180वां स्थान प्राप्त किया; सरकार ने कार्यप्रणाली को स्पष्ट रूप से अस्वीकार किया क्योंकि वायु गुणवत्ता संकेतकों को मॉडल्ड (भू-स्तर के बजाय) डेटा से अत्यधिक महत्व दिया गया था।"
+        },
+        {
+          "statement": "ग्लोबल हंगर इंडेक्स और Environmental Performance Index दोनों संयुक्त राष्ट्र प्रणाली की एजेंसियों द्वारा प्रकाशित किए जाते हैं।",
+          "verdict": "गलत",
+          "reason": "GHI Concern Worldwide और Welthungerhilfe (NGO) द्वारा प्रकाशित है; EPI Yale और Columbia विश्वविद्यालयों द्वारा प्रकाशित है — कोई भी संयुक्त राष्ट्र एजेंसी नहीं है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन) मुख्य जाल है क्योंकि कथन 1 और 2 सटीक और विस्तृत हैं, जिससे आंशिक रूप से इन विवादों का अध्ययन करने वाले छात्र कथन 3 के प्रकाशक त्रुटि को नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: भारत की GHI आपत्ति Gallup आधारित कुपोषण डेटा पर केंद्रित है — सही।",
+        "कथन 2 सत्यापित करें: भारत ने EPI 2022 में 180वां स्थान प्राप्त किया; उपग्रह-आधारित वायु गुणवत्ता डेटा पर आपत्ति — सही।",
+        "कथन 3 का परीक्षण करें: GHI प्रकाशक = Concern Worldwide + Welthungerhilfe (NGO); EPI प्रकाशक = Yale + Columbia (विश्वविद्यालय)। कोई भी संयुक्त राष्ट्र नहीं है। कथन 3 गलत है।",
+        "कथन 1 और 2 सही; कथन 3 गलत → विकल्प b (केवल 1 और 2)।"
+      ],
+      "upsc_trap_explanation": "कथन 3 एक मिश्रण जाल है जो दो अलग-अलग तथ्यात्मक त्रुटियों को जोड़ता है — GHI को संयुक्त राष्ट्र प्रणाली से जोड़ना और EPI को संयुक्त राष्ट्र प्रणाली से जोड़ना एक साथ। जो छात्र यह जानते हैं कि 'भारत अंतरराष्ट्रीय संगठनों द्वारा प्रकाशित सूचकांकों को विवादित करता है' वे दोनों को 'संयुक्त राष्ट्र/अंतरराष्ट्रीय निकायों' के अंतर्गत ढेर कर सकते हैं बिना विशिष्ट प्रकाशकों को याद किए। यह जाल यह जांचने के लिए डिज़ाइन किया गया है कि क्या छात्रों ने केवल विवादों को नहीं बल्कि प्रकाशक की पहचान को भी याद किया है।",
+      "final_explanation": "भारत ने विधिवत रूप से GHI और EPI दोनों की कार्यप्रणाली पर आपत्ति जताई है — लेकिन ये सूचकांक पूरी तरह से अलग गैर-यूएन प्रकाशकों से आते हैं।\n\n• कथन 1 — सही: भारत GHI के कुपोषण घटक पर आपत्ति करता है, जो Gallup World Poll डेटा का उपयोग करता है, जिसमें लगभग 3,000 उत्तरदाता होते हैं जिन्हें 1.4 अरब लोगों पर प्रक्षेपित किया जाता है — भारत इसे सांख्यिकीय रूप से अविश्वसनीय कहता है।\n• कथन 2 — सही: भारत का EPI 2022 में 180वां स्थान सरकार की प्रतिक्रिया को प्रेरित करता है, जो विशेष रूप से उपग्रह मॉडलिंग से प्राप्त वायु गुणवत्ता मापदंडों को लक्षित करता है, जिसे भारत भौतिक निगरानी स्टेशनों की तुलना में अधिक सटीक मानता है।\n• कथन 3 — गलत: GHI दो यूरोपीय NGO (Concern Worldwide और Welthungerhilfe) का उत्पाद है; EPI Yale विश्वविद्यालय और Columbia विश्वविद्यालय द्वारा प्रकाशित है। कोई भी संयुक्त राष्ट्र प्रणाली का हिस्सा नहीं है।\n\nमूल्य संवर्धन:\n• FAO का State of Food Security रिपोर्ट (संयुक्त राष्ट्र निकाय) और GHI (NGO) अक्सर भारत की भूख की स्थिति पर अलग निष्कर्ष निकालते हैं।\n• UNEP का Global Environment Outlook (संयुक्त राष्ट्र) EPI (Yale/Columbia) से अलग है।\n• भारत के दोनों सूचकांकों के साथ विवाद वैश्विक सूचकांकों में कार्यप्रणाली संप्रभुता बहस को उजागर करते हैं।"
+    }
+  },
+  {
+    "uuid": "5cb88e57-786c-4c6a-86a6-94ebd4e0efde",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Ease of Doing Business (EoDB) Index: Methodology Change and India's Performance",
+        "Logistics Performance Index (LPI): World Bank Framework and PM GatiShakti Connection"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "EoDB discontinuation sequence — 2014 baseline to 2021 discontinuation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following events related to the Ease of Doing Business (EoDB) Index:\n\nP. India's rank in EoDB reached 63rd\nQ. India's rank in EoDB was recorded at 142nd\nR. World Bank officially discontinued the Doing Business report following a data manipulation controversy\nS. The Business Ready (B-READY) framework was announced as a replacement for EoDB\n\nWhich of the following correctly represents the chronological sequence of these events?\n\n(a) Q → R → P → S\n(b) Q → P → S → R\n(c) Q → R → S → P\n(d) Q → P → R → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b places the discontinuation before India's rank peak (63rd in 2020), which students who roughly recall 'India improved then EoDB was discontinued' may select without pinning the exact year order.",
+      "elimination_logic": [
+        "India's EoDB baseline rank was 142nd in 2014 — this is the starting point of the reform narrative.",
+        "India's peak rank of 63rd was recorded in 2020 — the last published Doing Business report.",
+        "The data manipulation controversy was investigated and confirmed in 2021 — leading to discontinuation.",
+        "B-READY was announced as the replacement framework after the 2021 discontinuation.",
+        "Correct sequence: India rank 142nd (2014) → India rank 63rd (2020) → Discontinuation (2021) → B-READY announced → option d."
+      ],
+      "upsc_trap_explanation": "The year 2021 (discontinuation) and 2020 (India's last rank) are within one year of each other, making their sequence a classic temporal-swap trap. Students who recall India's improvement journey often anchor on 2019 or 2021 as the 'peak rank year' rather than 2020. The correct sequence requires knowing that the last published edition (Doing Business 2020) showed India at 63rd, and that the manipulation investigation and discontinuation came in 2021.",
+      "final_explanation": "The EoDB story follows a clear timeline with four anchor points that UPSC has tested in various combinations.\n\nCorrect chronological sequence:\n1. India's rank 142nd (2014) — starting point under new government's reform agenda.\n2. India's rank 63rd (2020) — peak rank, recorded in the last published edition.\n3. World Bank discontinues EoDB (2021) — following the WilmerHale investigation revealing manipulation in 2018 and 2020 editions.\n4. B-READY framework announced — as the successor assessment tool with redesigned pillars.\n\nThis sequence corresponds to option d.\n\nValue Addition:\n• The data manipulation specifically affected rankings of China, Saudi Arabia, UAE, and Azerbaijan.\n• India's 79-rank improvement (142→63) over six years is one of the most frequently cited reform achievements in government documents.\n• B-READY stands for 'Business Ready' — it assesses regulatory environment, public services, and operational efficiency.\n• Doing Business 2021 edition was never published — the series effectively ended with the 2020 data."
+    },
+    "hi": {
+      "display_text": "Ease of Doing Business (EoDB) सूचकांक से संबंधित निम्नलिखित घटनाओं पर विचार करें:\n\nP. भारत की EoDB रैंक 63वीं तक पहुंची\nQ. भारत की EoDB रैंक 142वीं दर्ज की गई\nR. डेटा हेरफेर विवाद के बाद विश्व बैंक ने आधिकारिक रूप से Doing Business रिपोर्ट बंद कर दी\nS. EoDB के प्रतिस्थापन के रूप में Business Ready (B-READY) फ्रेमवर्क की घोषणा की गई\n\nइन घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) Q → R → P → S\n(b) Q → P → S → R\n(c) Q → R → S → P\n(d) Q → P → R → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b में बंद करने को भारत की रैंक के चरम (2020 में 63वां) से पहले रखा गया है, जिसे वे छात्र चुन सकते हैं जो मोटे तौर पर याद करते हैं 'भारत ने सुधार किया फिर EoDB बंद किया गया' लेकिन सही वर्ष क्रम को नहीं जानते।",
+      "elimination_logic": [
+        "भारत की EoDB आधार रैंक 2014 में 142वीं थी — यह सुधार कथा की शुरुआत है।",
+        "भारत की चरम रैंक 63वीं 2020 में दर्ज की गई थी — अंतिम प्रकाशित Doing Business रिपोर्ट।",
+        "डेटा हेरफेर विवाद की जांच 2021 में हुई और पुष्टि हुई — जिसके कारण बंद किया गया।",
+        "B-READY को 2021 में बंद करने के बाद प्रतिस्थापन रूप में घोषित किया गया।",
+        "सही क्रम: भारत रैंक 142वीं (2014) → भारत रैंक 63वीं (2020) → बंद करना (2021) → B-READY घोषित → विकल्प d।"
+      ],
+      "upsc_trap_explanation": "वर्ष 2021 (बंद करना) और 2020 (भारत की अंतिम रैंक) एक वर्ष के भीतर हैं, जो उनके क्रम को एक क्लासिक कालानुक्रमिक-स्वैप जाल बनाता है। जो छात्र भारत की सुधार यात्रा को याद करते हैं, वे अक्सर 2019 या 2021 को 'चरम रैंक वर्ष' के रूप में मानते हैं न कि 2020 को। सही क्रम जानने के लिए यह आवश्यक है कि अंतिम प्रकाशित संस्करण (Doing Business 2020) में भारत 63वें स्थान पर था, और हेरफेर जांच व बंद करना 2021 में हुआ।",
+      "final_explanation": "EoDB कहानी एक स्पष्ट समयरेखा का पालन करती है जिसमें चार मुख्य बिंदु हैं जिन्हें UPSC ने विभिन्न संयोजनों में परखा है।\n\nसही कालानुक्रमिक क्रम:\n1. भारत की रैंक 142वीं (2014) — नई सरकार के सुधार एजेंडा के तहत शुरुआत।\n2. भारत की रैंक 63वीं (2020) — चरम रैंक, अंतिम प्रकाशित संस्करण में दर्ज।\n3. विश्व बैंक ने EoDB को बंद किया (2021) — WilmerHale जांच के बाद जो 2018 और 2020 संस्करणों में हेरफेर को उजागर करती है।\n4. B-READY फ्रेमवर्क घोषित — उत्तराधिकारी मूल्यांकन उपकरण के रूप में पुनः डिज़ाइन किए गए स्तंभों के साथ।\n\nयह क्रम विकल्प d से मेल खाता है।\n\nमूल्य वर्धन:\n• डेटा हेरफेर विशेष रूप से चीन, सऊदी अरब, UAE, और अजरबैजान की रैंकिंग को प्रभावित करता है।\n• भारत की 79 रैंक सुधार (142→63) छह वर्षों में सरकार के दस्तावेजों में सबसे अधिक उद्धृत सुधार उपलब्धियों में से एक है।\n• B-READY का अर्थ है 'Business Ready' — यह नियामक वातावरण, सार्वजनिक सेवाओं, और परिचालन दक्षता का आकलन करता है।\n• Doing Business 2021 संस्करण कभी प्रकाशित नहीं हुआ — यह श्रृंखला प्रभावी रूप से 2020 के डेटा के साथ समाप्त हो गई।"
+    }
+  },
+  {
+    "uuid": "331ce813-eb69-4893-9246-17e4006ed8ac",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Financial Secrecy Index and Basel AML Index: Anti-Money Laundering Frameworks",
+        "Fragile States Index (FSI): Publisher, Indicators and India's Position"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Financial Secrecy Index vs Basel AML — secrecy provision vs money laundering risk",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding anti-money laundering and financial secrecy indices:\n\n1. The Basel AML Index, published by the Basel Institute on Governance, measures the degree of financial secrecy that a jurisdiction provides to offshore capital flows.\n2. India's FATF membership involves periodic mutual evaluation reviews that assess its anti-money laundering and counter-terrorist financing frameworks — these evaluations are separate from the Basel AML Index.\n3. A high score on the Financial Secrecy Index indicates that a jurisdiction offers extensive secrecy to offshore financial flows, while a high score on the Basel AML Index indicates elevated risk of money laundering.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Basel AML Index, published by the Basel Institute on Governance, measures the degree of financial secrecy that a jurisdiction provides to offshore capital flows.",
+          "verdict": "Incorrect",
+          "reason": "The Basel AML Index measures money laundering and terrorist financing risk — not financial secrecy. Financial secrecy is measured by the Financial Secrecy Index published by Tax Justice Network. The two indices measure conceptually opposite dimensions."
+        },
+        {
+          "statement": "India's FATF membership involves periodic mutual evaluation reviews that assess its anti-money laundering and counter-terrorist financing frameworks — these evaluations are separate from the Basel AML Index.",
+          "verdict": "Correct",
+          "reason": "FATF mutual evaluations are conducted by FATF and its peer review mechanism — they are independent of the Basel AML Index, though both cover AML/CFT compliance territory."
+        },
+        {
+          "statement": "A high score on the Financial Secrecy Index indicates that a jurisdiction offers extensive secrecy to offshore financial flows, while a high score on the Basel AML Index indicates elevated risk of money laundering.",
+          "verdict": "Correct",
+          "reason": "This correctly captures the directional meaning of both indices — FSI high score = more secrecy (negative); Basel AML high score = higher risk (negative). Both high scores are undesirable indicators."
+        }
+      ],
+      "strong_distractor": "b — Option b (statement 2 only) is the strongest distractor because students who correctly identify statement 1 as wrong may then doubt statement 3, which requires knowing the directional interpretation of both indices simultaneously.",
+      "elimination_logic": [
+        "Test statement 1: Basel AML measures money laundering risk — NOT financial secrecy. Financial secrecy is the FSI's domain. Statement 1 is incorrect.",
+        "Verify statement 2: FATF mutual evaluations are a separate mechanism from Basel AML Index — both cover AML but are independent products. Statement 2 is correct.",
+        "Verify statement 3: FSI high = more secrecy; Basel AML high = higher risk. Both directional descriptions are accurate. Statement 3 is correct.",
+        "Only statement 1 is incorrect → option a (1 only) answers 'which is NOT correct.'"
+      ],
+      "upsc_trap_explanation": "The Basel-FSI conflation is a well-designed trap because both indices deal with illicit finance. Students who have memorised that 'Basel Institute + money laundering' is associated with the Basel AML Index may still confuse its directional measurement with FSI's secrecy-provision measurement. The key distinction is that FSI measures how much secrecy a jurisdiction affords (supply side), while Basel AML measures how exposed a jurisdiction is to money laundering risk (risk side).",
+      "final_explanation": "The illicit finance index landscape has two distinct instruments that UPSC exploits for confusion.\n\n• Statement 1 — Incorrect: The Basel AML Index measures money laundering and terrorist financing risk — NOT financial secrecy. Financial secrecy is the domain of the Financial Secrecy Index (Tax Justice Network). Swapping these two measurements is the central trap.\n• Statement 2 — Correct: FATF mutual evaluation reviews are a peer-review mechanism operated by FATF — independent of the Basel AML Index. Both assess AML/CFT compliance but are separate institutional products.\n• Statement 3 — Correct: Both high scores are undesirable — high FSI = jurisdiction enables offshore secrecy (problematic for transparency); high Basel AML = jurisdiction faces elevated money laundering risk.\n\nOnly statement 1 is incorrect → option a.\n\nValue Addition:\n• India completed its FATF Mutual Evaluation in 2023–24 — outcomes affect correspondent banking relationships.\n• Tax Justice Network also publishes the Corporate Tax Haven Index — a separate secrecy-adjacent product.\n• FATF's 'grey list' and 'black list' (ISCO) are distinct from both FSI and Basel AML Index classifications."
+    },
+    "hi": {
+      "display_text": "मनी लॉन्ड्रिंग विरोधी और वित्तीय गोपनीयता सूचकांकों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Basel Institute on Governance द्वारा प्रकाशित Basel AML Index मापता है कि कोई क्षेत्र ऑफशोर पूंजी प्रवाहों को कितनी वित्तीय गोपनीयता प्रदान करता है।\n2. भारत की FATF सदस्यता में समय-समय पर पारस्परिक मूल्यांकन समीक्षा शामिल है जो इसके मनी लॉन्ड्रिंग विरोधी और आतंकवादी वित्तपोषण विरोधी ढांचे का आकलन करती है — ये मूल्यांकन Basel AML Index से अलग हैं।\n3. Financial Secrecy Index में उच्च स्कोर दर्शाता है कि कोई क्षेत्र ऑफशोर वित्तीय प्रवाहों को व्यापक गोपनीयता प्रदान करता है, जबकि Basel AML Index में उच्च स्कोर मनी लॉन्ड्रिंग के उच्च जोखिम को दर्शाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 3 केवल\n(d) 2 और 3 केवल",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Basel AML Index, published by the Basel Institute on Governance, measures the degree of financial secrecy that a jurisdiction provides to offshore capital flows.",
+          "verdict": "गलत",
+          "reason": "Basel AML Index मनी लॉन्ड्रिंग और आतंकवादी वित्तपोषण जोखिम को मापता है — वित्तीय गोपनीयता को नहीं। वित्तीय गोपनीयता को Tax Justice Network द्वारा प्रकाशित Financial Secrecy Index मापता है। ये दोनों सूचकांक वैचारिक रूप से विपरीत आयामों को मापते हैं।"
+        },
+        {
+          "statement": "India's FATF membership involves periodic mutual evaluation reviews that assess its anti-money laundering and counter-terrorist financing frameworks — these evaluations are separate from the Basel AML Index.",
+          "verdict": "सही है",
+          "reason": "FATF पारस्परिक मूल्यांकन FATF और उसके सहकर्मी समीक्षा तंत्र द्वारा संचालित होते हैं — ये Basel AML Index से स्वतंत्र हैं, हालांकि दोनों AML/CFT अनुपालन क्षेत्र को कवर करते हैं।"
+        },
+        {
+          "statement": "A high score on the Financial Secrecy Index indicates that a jurisdiction offers extensive secrecy to offshore financial flows, while a high score on the Basel AML Index indicates elevated risk of money laundering.",
+          "verdict": "सही है",
+          "reason": "यह दोनों सूचकांकों के दिशा-सूचक अर्थ को सही ढंग से दर्शाता है — FSI में उच्च स्कोर = अधिक गोपनीयता (नकारात्मक); Basel AML में उच्च स्कोर = उच्च जोखिम (नकारात्मक)। दोनों उच्च स्कोर अवांछनीय संकेतक हैं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प b (केवल कथन 2) सबसे मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 1 को गलत पहचानते हैं वे कथन 3 पर संदेह कर सकते हैं, जिसे दोनों सूचकांकों की दिशा-सूचक व्याख्या एक साथ जाननी होती है।",
+      "elimination_logic": [
+        "कथन 1 का परीक्षण करें: Basel AML मनी लॉन्ड्रिंग जोखिम को मापता है — वित्तीय गोपनीयता को नहीं। वित्तीय गोपनीयता FSI का क्षेत्र है। अतः कथन 1 गलत है।",
+        "कथन 2 सत्यापित करें: FATF पारस्परिक मूल्यांकन Basel AML Index से अलग तंत्र हैं — दोनों AML को कवर करते हैं पर स्वतंत्र उत्पाद हैं। अतः कथन 2 सही है।",
+        "कथन 3 सत्यापित करें: FSI उच्च = अधिक गोपनीयता; Basel AML उच्च = उच्च जोखिम। दोनों दिशा-सूचक विवरण सही हैं। अतः कथन 3 सही है।",
+        "केवल कथन 1 गलत है → विकल्प a (केवल 1) 'सही नहीं है' का उत्तर देता है।"
+      ],
+      "upsc_trap_explanation": "Basel-FSI मिश्रण एक सुव्यवस्थित जाल है क्योंकि दोनों सूचकांक अवैध वित्त से संबंधित हैं। जो छात्र 'Basel Institute + money laundering' को Basel AML Index से जोड़ते हैं वे इसकी दिशा-सूचक माप को FSI की गोपनीयता-प्रावधान माप से भ्रमित कर सकते हैं। मुख्य अंतर यह है कि FSI मापता है कि कोई क्षेत्र कितना गोपनीयता प्रदान करता है (आपूर्ति पक्ष), जबकि Basel AML मापता है कि कोई क्षेत्र मनी लॉन्ड्रिंग जोखिम के प्रति कितना संवेदनशील है (जोखिम पक्ष)।",
+      "final_explanation": "अवैध वित्त सूचकांक क्षेत्र में UPSC भ्रम के लिए दो अलग उपकरणों का उपयोग करता है।\n\n• कथन 1 — गलत: Basel AML Index मनी लॉन्ड्रिंग और आतंकवादी वित्तपोषण जोखिम को मापता है — वित्तीय गोपनीयता को नहीं। वित्तीय गोपनीयता Financial Secrecy Index (Tax Justice Network) का क्षेत्र है। इन दोनों मापों का अदला-बदली मुख्य जाल है।\n• कथन 2 — सही: FATF पारस्परिक मूल्यांकन FATF द्वारा संचालित सहकर्मी समीक्षा तंत्र है — Basel AML Index से स्वतंत्र। दोनों AML/CFT अनुपालन का आकलन करते हैं पर अलग संस्थागत उत्पाद हैं।\n• कथन 3 — सही: दोनों उच्च स्कोर अवांछनीय हैं — उच्च FSI = क्षेत्र ऑफशोर गोपनीयता सक्षम करता है (पारदर्शिता के लिए समस्या); उच्च Basel AML = क्षेत्र को उच्च मनी लॉन्ड्रिंग जोखिम का सामना है।\n\nकेवल कथन 1 गलत है → विकल्प a।\n\nमूल्य संवर्धन:\n• भारत ने 2023–24 में अपना FATF पारस्परिक मूल्यांकन पूरा किया — परिणाम सहकारी बैंकिंग संबंधों को प्रभावित करते हैं।\n• Tax Justice Network कॉर्पोरेट टैक्स हेवन इंडेक्स भी प्रकाशित करता है — एक अलग गोपनीयता-संबंधित उत्पाद।\n• FATF की 'ग्रे लिस्ट' और 'ब्लैक लिस्ट' (ISCO) FSI और Basel AML Index वर्गीकरण से भिन्न हैं।"
+    }
+  },
+  {
+    "uuid": "04b23b7e-8964-468b-a14f-239e22cbd889",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Human Development Index (HDI): Components, Formula and India's Trajectory",
+        "Global Gender Gap Index (GGGI): WEF Framework vs Gender Inequality Index (GII)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "GDI vs GII vs GGGI — three distinct gender indices, three distinct publishers",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Index) with List II (Publisher and Brief Description):",
+        "columns": [
+          "List I (Index)",
+          "List II (Publisher / Description)"
+        ],
+        "rows": [
+          [
+            "A. Human Development Index (HDI)",
+            "1. UNDP — measures inequality in reproductive health, empowerment, and labour market participation"
+          ],
+          [
+            "B. Gender Development Index (GDI)",
+            "2. UNDP — composite index of long life, knowledge, and decent standard of living"
+          ],
+          [
+            "C. Gender Inequality Index (GII)",
+            "3. WEF — measures gender parity across economic participation, education, health, and political empowerment"
+          ],
+          [
+            "D. Global Gender Gap Index (GGGI)",
+            "4. UNDP — ratio of female HDI to male HDI"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-2, B-4, C-3, D-1\n(c) A-1, B-4, C-2, D-3\n(d) A-2, B-4, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b incorrectly maps GII to WEF (instead of UNDP), which is the most common confusion since students associate WEF with gender gap reporting.",
+      "elimination_logic": [
+        "Anchor: HDI (A) → UNDP/Human Development Report (2). Unambiguous anchor match.",
+        "Verify: GDI (B) → UNDP/HDR (4). GDI is the ratio of female to male HDI — published in the same HDR as GDI. B→4.",
+        "Verify: GII (C) → UNDP/HDR (1). Gender Inequality Index measures reproductive health, empowerment, labour market — an HDR product. C→1.",
+        "Verify: GGGI (D) → WEF (3). Global Gender Gap Index is a WEF product measuring parity across four sub-indices. D→3.",
+        "Full correct match: A-2, B-4, C-1, D-3 → option d."
+      ],
+      "upsc_trap_explanation": "This question places three gender-related indices (GDI, GII, GGGI) in the same question. GDI and GII are both UNDP products from the same HDR, while GGGI is WEF. The trap is attributing GII to WEF (option b) — students who know 'GGGI is WEF' sometimes extend this to GII because both have 'gender' and 'inequality' in their titles. The correct mapping requires distinguishing between: (i) UNDP publishes both GDI and GII through HDR; (ii) WEF publishes GGGI separately.",
+      "final_explanation": "Three gender-related indices — GDI, GII, and GGGI — appear frequently in UPSC Prelims, and publisher confusion is the standard trap.\n\n• A (HDI) → 2 (UNDP — Human Development Report): HDI is UNDP's flagship composite index published annually in the HDR.\n• B (GDI) → 4 (UNDP — ratio of female to male HDI): GDI computes the ratio of female HDI to male HDI. A value below 1 indicates women have lower HDI than men. Published in the same HDR as GDI.\n• C (GII) → 1 (UNDP — reproductive health, empowerment, labour): GII measures gender inequality across three dimensions. It is an HDR product — same publisher (UNDP) as GDI and HDI.\n• D (GGGI) → 3 (WEF — gender parity across four sub-indices): GGGI is WEF's index measuring the gap between male and female outcomes in economic participation, education, health, and political empowerment.\n\nCorrect match: A-2, B-4, C-1, D-3 → option d.\n\nValue Addition:\n• GDI value of 1.0 = perfect gender parity in human development; below 1.0 = female disadvantage.\n• GII score of 0 = perfect equality; score of 1 = complete inequality.\n• GGGI score of 1.0 = full gender parity; score of 0 = complete disparity."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (सूचकांक) को सूची II (प्रकाशक और संक्षिप्त विवरण) से मिलाइए:",
+        "columns": [
+          "सूची I (सूचकांक)",
+          "सूची II (प्रकाशक / विवरण)"
+        ],
+        "rows": [
+          [
+            "A. ह्यूमन डेवलपमेंट इंडेक्स (HDI)",
+            "1. UNDP — प्रजनन स्वास्थ्य, सशक्तिकरण, और श्रम बाजार भागीदारी में असमानता को मापता है"
+          ],
+          [
+            "B. जेंडर डेवलपमेंट इंडेक्स (GDI)",
+            "2. UNDP — दीर्घायु, ज्ञान, और सम्मानजनक जीवन स्तर का सम्मिश्रित सूचकांक"
+          ],
+          [
+            "C. जेंडर इनइक्वालिटी इंडेक्स (GII)",
+            "3. WEF — आर्थिक भागीदारी, शिक्षा, स्वास्थ्य, और राजनीतिक सशक्तिकरण में लिंग समानता को मापता है"
+          ],
+          [
+            "D. ग्लोबल जेंडर गैप इंडेक्स (GGGI)",
+            "4. UNDP — महिला HDI का पुरुष HDI के साथ अनुपात"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-2, B-4, C-3, D-1\n(c) A-1, B-4, C-2, D-3\n(d) A-2, B-4, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b गलत तरीके से GII को WEF से जोड़ता है (UNDP के बजाय), जो सबसे आम भ्रम है क्योंकि छात्र WEF को लिंग अंतर रिपोर्टिंग से जोड़ते हैं।",
+      "elimination_logic": [
+        "एंकर: HDI (A) → UNDP/ह्यूमन डेवलपमेंट रिपोर्ट (2)। स्पष्ट एंकर मिलान।",
+        "सत्यापित करें: GDI (B) → UNDP/HDR (4)। GDI महिला से पुरुष HDI का अनुपात है — जो उसी HDR में प्रकाशित होता है जिसमें GDI है। B→4।",
+        "सत्यापित करें: GII (C) → UNDP/HDR (1)। जेंडर इनइक्वालिटी इंडेक्स प्रजनन स्वास्थ्य, सशक्तिकरण, श्रम बाजार को मापता है — HDR उत्पाद। C→1।",
+        "सत्यापित करें: GGGI (D) → WEF (3)। ग्लोबल जेंडर गैप इंडेक्स WEF का उत्पाद है जो चार उप-सूचकांकों में समानता को मापता है। D→3।",
+        "पूर्ण सही मिलान: A-2, B-4, C-1, D-3 → विकल्प d।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न तीन लिंग-संबंधित सूचकांकों (GDI, GII, GGGI) को एक ही प्रश्न में रखता है। GDI और GII दोनों UNDP के HDR से हैं, जबकि GGGI WEF का है। जाल यह है कि GII को WEF से जोड़ना (विकल्प b) — जो छात्र जानते हैं कि 'GGGI WEF है', वे कभी-कभी इसे GII तक बढ़ा देते हैं क्योंकि दोनों के शीर्षक में 'gender' और 'inequality' है। सही मिलान के लिए यह भेद करना आवश्यक है: (i) UNDP दोनों GDI और GII को HDR के माध्यम से प्रकाशित करता है; (ii) WEF अलग से GGGI प्रकाशित करता है।",
+      "final_explanation": "तीन लिंग-संबंधित सूचकांक — GDI, GII, और GGGI — UPSC प्रीलिम्स में अक्सर आते हैं, और प्रकाशक भ्रम सामान्य जाल है।\n\n• A (HDI) → 2 (UNDP — ह्यूमन डेवलपमेंट रिपोर्ट): HDI UNDP का प्रमुख सम्मिश्रित सूचकांक है जो वार्षिक HDR में प्रकाशित होता है।\n• B (GDI) → 4 (UNDP — महिला से पुरुष HDI का अनुपात): GDI महिला HDI को पुरुष HDI से अनुपातित करता है। 1 से कम मान महिलाओं के लिए कम HDI दर्शाता है। यह उसी HDR में प्रकाशित होता है जिसमें GDI है।\n• C (GII) → 1 (UNDP — प्रजनन स्वास्थ्य, सशक्तिकरण, श्रम): GII तीन आयामों में लिंग असमानता को मापता है। यह HDR उत्पाद है — वही प्रकाशक (UNDP) जो GDI और HDI के लिए है।\n• D (GGGI) → 3 (WEF — आर्थिक भागीदारी, शिक्षा, स्वास्थ्य, राजनीतिक सशक्तिकरण में लिंग समानता): GGGI WEF का सूचकांक है जो पुरुष और महिला परिणामों के बीच अंतर को मापता है।\n\nसही मिलान: A-2, B-4, C-1, D-3 → विकल्प d।\n\nमूल्य संवर्धन:\n• GDI का मान 1.0 = मानव विकास में पूर्ण लिंग समानता; 1.0 से कम = महिला असमानता।\n• GII स्कोर 0 = पूर्ण समानता; 1 = पूर्ण असमानता।\n• GGGI स्कोर 1.0 = पूर्ण लिंग समानता; 0 = पूर्ण असमानता।"
+    }
+  },
+  {
+    "uuid": "e20e139c-10dd-4cfa-8786-0a3842389852",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Competitiveness Index (GCI): WEF Framework and Pillar Structure",
+        "Ease of Doing Business (EoDB) Index: Methodology Change and India's Performance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "GCI 12 pillars — three sub-index groupings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A policy analyst is reviewing an index that evaluates 140+ economies across twelve distinct pillars covering areas such as institutional quality, infrastructure, macroeconomic stability, labour market functioning, financial system development, and innovation capability. The twelve pillars are organised into broader sub-index groupings that capture foundational conditions, efficiency-related enablers, and sophistication factors. The index is published by a Geneva-based non-profit foundation.\n\nThe sub-index grouping structure of this index consists of:\n\n(a) Four sub-index groups: Basic requirements, Human development, Market efficiency, and Innovation capacity\n(b) Three sub-index groups: Basic requirements, Efficiency enhancers, and Innovation and sophistication factors\n(c) Two sub-index groups: Innovation Input and Innovation Output sub-indices\n(d) Six components: Customs, Infrastructure, International shipments, Logistics competence, Tracking and tracing, and Timeliness",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because it lists four sub-indices rather than three, and students who remember 'WEF groups GCI pillars' may not recall the exact number of sub-index groups.",
+      "elimination_logic": [
+        "The scenario describes a framework that groups 12 pillars — this points to GCI's 12-pillar structure.",
+        "GCI groups 12 pillars into exactly three sub-indices: Basic requirements, Efficiency enhancers, Innovation and sophistication factors.",
+        "Eliminate option a: Four sub-index groups is incorrect for GCI — GCI has three sub-index groupings.",
+        "Eliminate option c: Two sub-index groups (Input/Output) is the GII structure, not GCI.",
+        "Eliminate option d: 'Six components' describes LPI, not GCI's pillar grouping.",
+        "Retain option b: Three sub-indices (Basic requirements, Efficiency enhancers, Innovation and sophistication) correctly describes GCI's pillar architecture."
+      ],
+      "upsc_trap_explanation": "Option a lists four sub-index groups, which students who recall 'GCI has many pillars' may not filter carefully. The correct number is three. The GII's two sub-indices (Innovation Input and Output) are designed as option c to trap students who confuse GCI with GII's structure. The scenario is constructed to be specific enough (12 pillars, WEF, competitiveness) to point to GCI, but the answer requires recalling the exact three-group structure.",
+      "final_explanation": "The Global Competitiveness Index evaluates 12 pillars grouped into exactly three sub-index categories — a structural detail UPSC tests in application scenarios.\n\n• Option (a) — Four sub-index groups: Incorrect. GCI has three sub-index groupings, not four. Adding a fourth group is a scope-extension distractor.\n• Option (b) — Three sub-indices (Basic requirements, Efficiency enhancers, Innovation and sophistication): Correct. The 12 pillars are organised as: Basic requirements (Institutions, Infrastructure, ICT, Macrostability, Health, Skills) → Efficiency enhancers (Product market, Labour market, Financial system, Market size) → Innovation and sophistication (Business dynamism, Innovation capability).\n• Option (c) — Two sub-indices (Input and Output): Incorrect. This is the GII structure — not GCI. GII has an Innovation Input sub-index and an Innovation Output sub-index.\n• Option (d) — Six components measuring logistics: Incorrect. Six components is the LPI framework (Customs, Infrastructure, International shipments, Logistics competence, Tracking, Timeliness).\n\nValue Addition:\n• GCI 4.0 (2018) added 'Agility' factors to the innovation cluster.\n• India's lowest-scoring GCI pillars include Health (pillar 5) and Labour market (pillar 8).\n• GCI was not published in 2020 due to COVID-19 data disruption."
+    },
+    "hi": {
+      "display_text": "एक नीति विश्लेषक एक ऐसे सूचकांक की समीक्षा कर रहा है जो 140+ अर्थव्यवस्थाओं का मूल्यांकन करता है, जो बारह विशिष्ट स्तंभों में संस्थागत गुणवत्ता, अवसंरचना, मैक्रोआर्थिक स्थिरता, श्रम बाजार की कार्यप्रणाली, वित्तीय प्रणाली विकास, और नवाचार क्षमता जैसे क्षेत्रों को कवर करते हैं। बारह स्तंभ व्यापक उप-सूचकांक समूहों में व्यवस्थित हैं जो बुनियादी स्थितियों, दक्षता-संबंधी संवर्धकों, और परिष्कार कारकों को दर्शाते हैं। यह सूचकांक जेनेवा स्थित एक गैर-लाभकारी संस्था द्वारा प्रकाशित किया जाता है।\n\nइस सूचकांक की उप-सूचकांक समूह संरचना इस प्रकार है:\n\n(a) चार उप-सूचकांक समूह: मूल आवश्यकताएँ, मानव विकास, बाजार दक्षता, और नवाचार क्षमता\n(b) तीन उप-सूचकांक समूह: मूल आवश्यकताएँ, दक्षता संवर्धक, और नवाचार तथा परिष्कार कारक\n(c) दो उप-सूचकांक समूह: नवाचार इनपुट और नवाचार आउटपुट उप-सूचकांक\n(d) छह घटक: सीमा शुल्क, अवसंरचना, अंतरराष्ट्रीय शिपमेंट, लॉजिस्टिक्स क्षमता, ट्रैकिंग और ट्रेसिंग, तथा समयबद्धता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि यह तीन के बजाय चार उप-सूचकांक सूचीबद्ध करता है, और जो छात्र 'WEF GCI स्तंभों को समूहित करता है' याद रखते हैं वे उप-सूचकांक समूहों की सटीक संख्या याद नहीं रख पाते।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसा ढांचा वर्णित करता है जो 12 स्तंभों को समूहित करता है — यह GCI के 12-स्तंभ संरचना की ओर संकेत करता है।",
+        "GCI 12 स्तंभों को ठीक तीन उप-सूचकांकों में समूहित करता है: मूल आवश्यकताएँ, दक्षता संवर्धक, नवाचार और परिष्कार कारक।",
+        "विकल्प a को हटाएं: चार उप-सूचकांक समूह GCI के लिए गलत है — GCI के तीन उप-सूचकांक समूह हैं।",
+        "विकल्प c को हटाएं: दो उप-सूचकांक समूह (इनपुट/आउटपुट) GII की संरचना है, GCI की नहीं।",
+        "विकल्प d को हटाएं: 'छह घटक' LPI का वर्णन करता है, GCI के स्तंभ समूह का नहीं।",
+        "विकल्प b को रखें: तीन उप-सूचकांक (मूल आवश्यकताएँ, दक्षता संवर्धक, नवाचार और परिष्कार) सही ढंग से GCI की स्तंभ संरचना को दर्शाते हैं।"
+      ],
+      "upsc_trap_explanation": "विकल्प a में चार उप-सूचकांक समूह सूचीबद्ध हैं, जिसे जो छात्र 'GCI में कई स्तंभ हैं' याद रखते हैं वे सावधानी से फ़िल्टर नहीं कर पाते। सही संख्या तीन है। GII के दो उप-सूचकांक (नवाचार इनपुट और आउटपुट) विकल्प c के रूप में डिज़ाइन किए गए हैं ताकि वे छात्र जो GCI को GII की संरचना से भ्रमित करते हैं, फंस जाएं। परिदृश्य इतना विशिष्ट है (12 स्तंभ, WEF, प्रतिस्पर्धात्मकता) कि यह GCI की ओर संकेत करता है, लेकिन उत्तर के लिए सटीक तीन-समूह संरचना याद रखना आवश्यक है।",
+      "final_explanation": "Global Competitiveness Index 12 स्तंभों का मूल्यांकन करता है जो ठीक तीन उप-सूचकांक श्रेणियों में समूहित हैं — यह एक संरचनात्मक विवरण है जिसे UPSC आवेदन परिदृश्यों में परखता है।\n\n• विकल्प (a) — चार उप-सूचकांक समूह: गलत। GCI के तीन उप-सूचकांक समूह हैं, चार नहीं। चौथा समूह जोड़ना एक दायरा-विस्तार भ्रमकारी है।\n• विकल्प (b) — तीन उप-सूचकांक (मूल आवश्यकताएँ, दक्षता संवर्धक, नवाचार और परिष्कार): सही। 12 स्तंभ इस प्रकार व्यवस्थित हैं: मूल आवश्यकताएँ (संस्थाएँ, अवसंरचना, ICT, मैक्रो स्थिरता, स्वास्थ्य, कौशल) → दक्षता संवर्धक (उत्पाद बाजार, श्रम बाजार, वित्तीय प्रणाली, बाजार आकार) → नवाचार और परिष्कार (व्यवसाय गतिशीलता, नवाचार क्षमता)।\n• विकल्प (c) — दो उप-सूचकांक (इनपुट और आउटपुट): गलत। यह GII की संरचना है — GCI की नहीं। GII में नवाचार इनपुट उप-सूचकांक और नवाचार आउटपुट उप-सूचकांक होते हैं।\n• विकल्प (d) — छह घटक जो लॉजिस्टिक्स को मापते हैं: गलत। छह घटक LPI ढांचे के हैं (सीमा शुल्क, अवसंरचना, अंतरराष्ट्रीय शिपमेंट, लॉजिस्टिक्स क्षमता, ट्रैकिंग, समयबद्धता)।\n\nमूल्य संवर्धन:\n• GCI 4.0 (2018) ने नवाचार समूह में 'चपलता' कारक जोड़े।\n• भारत के सबसे कम स्कोर वाले GCI स्तंभों में स्वास्थ्य (स्तंभ 5) और श्रम बाजार (स्तंभ 8) शामिल हैं।\n• COVID-19 डेटा व्यवधान के कारण GCI 2020 में प्रकाशित नहीं किया गया।"
+    }
+  },
+  {
+    "uuid": "286c4b7b-c4ba-44f2-aa8e-b0f1a8c73de7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Global Firepower Index and Military Strength Rankings: Limitations and Parameters",
+        "Fragile States Index (FSI): Publisher, Indicators and India's Position"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "FSI — 12 indicators across four category clusters",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Fragile States Index, published by Fund for Peace, assesses state fragility across four thematic clusters — Cohesion, Economic, Political, and Social — with an equal number of indicators in each cluster. The total number of indicators used in computing the FSI score is ________.\n\n(a) 8\n(b) 12\n(c) 16\n(d) 20",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (16 indicators) is deceptive because students who recall 'FSI uses many indicators' may anchor on a higher number, especially since 16 is a plausible count for a multi-dimensional fragility framework.",
+      "elimination_logic": [
+        "Eliminate option a (8): Too few for a framework covering Cohesion, Economic, Political, and Social dimensions.",
+        "Retain option b (12): FSI uses exactly 12 indicators — three in each of four category clusters.",
+        "Eliminate option c (16): FSI does not use 16 indicators — 16 is a plausible fabrication.",
+        "Eliminate option d (20): Too many; 20 indicators is not the FSI count."
+      ],
+      "upsc_trap_explanation": "Options c (16) and d (20) are plausible fabrications — large enough numbers to seem credible for a comprehensive fragility framework. Students who know FSI covers four broad categories (Cohesion, Economic, Political, Social) may estimate three indicators per category = 12, but those who have not specifically memorised this may guess 16 or 20. The correct answer (12 = 4 categories × 3 indicators each) requires precise recall.",
+      "final_explanation": "The Fragile States Index assesses state fragility across 12 indicators — three within each of four thematic clusters.\n\n• Option (a) — 8 indicators: Incorrect. Too few to cover the four-cluster framework of FSI.\n• Option (b) — 12 indicators: Correct. FSI uses 12 indicators: Cohesion cluster (Security Apparatus, Factionalised Elites, Group Grievance), Economic cluster (Economic Decline, Uneven Development, Human Flight & Brain Drain), Political cluster (State Legitimacy, Public Services, Human Rights), and Social cluster (Demographic Pressures, Refugees & IDPs, External Intervention).\n• Option (c) — 16 indicators: Incorrect. A plausible fabrication — FSI uses 12, not 16.\n• Option (d) — 20 indicators: Incorrect. This exceeds FSI's actual indicator count.\n\nValue Addition:\n• FSI is published by Fund for Peace (FFP), not a UN body.\n• The index was renamed from 'Failed States Index' to 'Fragile States Index' in 2014.\n• India's classification is 'Elevated Warning' — a middle tier on the fragility spectrum."
+    },
+    "hi": {
+      "display_text": "Fragile States Index, जो Fund for Peace द्वारा प्रकाशित है, राज्य की अस्थिरता का मूल्यांकन चार थीमेटिक समूहों — एकजुटता, आर्थिक, राजनीतिक, और सामाजिक — के माध्यम से करता है, प्रत्येक समूह में समान संख्या में संकेतक होते हैं। FSI स्कोर की गणना में उपयोग किए गए कुल संकेतकों की संख्या ________ है।\n\n(a) 8\n(b) 12\n(c) 16\n(d) 20",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (16 संकेतक) भ्रामक है क्योंकि जो छात्र याद करते हैं कि 'FSI कई संकेतकों का उपयोग करता है' वे एक उच्च संख्या पर टिक सकते हैं, विशेष रूप से क्योंकि 16 एक बहुआयामी अस्थिरता ढांचे के लिए एक संभावित संख्या है।",
+      "elimination_logic": [
+        "विकल्प a (8) को हटाएं: एक ऐसा ढांचा जो एकजुटता, आर्थिक, राजनीतिक, और सामाजिक आयामों को कवर करता है, उसके लिए यह बहुत कम है।",
+        "विकल्प b (12) को बनाए रखें: FSI ठीक 12 संकेतकों का उपयोग करता है — प्रत्येक चार श्रेणी समूहों में तीन।",
+        "विकल्प c (16) को हटाएं: FSI 16 संकेतकों का उपयोग नहीं करता — 16 एक संभावित गढ़ा हुआ आंकड़ा है।",
+        "विकल्प d (20) को हटाएं: बहुत अधिक; 20 संकेतक FSI की संख्या नहीं है।"
+      ],
+      "upsc_trap_explanation": "विकल्प c (16) और d (20) संभावित गढ़े हुए आंकड़े हैं — इतने बड़े कि व्यापक अस्थिरता ढांचे के लिए विश्वसनीय लगते हैं। जो छात्र जानते हैं कि FSI चार व्यापक श्रेणियों (एकजुटता, आर्थिक, राजनीतिक, सामाजिक) को कवर करता है, वे प्रति श्रेणी तीन संकेतकों का अनुमान लगा सकते हैं = 12, लेकिन जो इसे विशेष रूप से याद नहीं रखते वे 16 या 20 अनुमान लगा सकते हैं। सही उत्तर (12 = 4 श्रेणियाँ × 3 संकेतक प्रत्येक) सटीक स्मृति की मांग करता है।",
+      "final_explanation": "Fragile States Index राज्य की अस्थिरता का मूल्यांकन 12 संकेतकों के माध्यम से करता है — प्रत्येक चार थीमेटिक समूहों में तीन।\n\n• विकल्प (a) — 8 संकेतक: गलत। FSI के चार समूहों के ढांचे को कवर करने के लिए बहुत कम।\n• विकल्प (b) — 12 संकेतक: सही। FSI 12 संकेतकों का उपयोग करता है: एकजुटता समूह (सुरक्षा तंत्र, गुटबंदी वाले अभिजात वर्ग, समूह शिकायत), आर्थिक समूह (आर्थिक गिरावट, असमान विकास, मानव पलायन एवं मस्तिष्क पलायन), राजनीतिक समूह (राज्य की वैधता, सार्वजनिक सेवाएं, मानवाधिकार), और सामाजिक समूह (जनसांख्यिकीय दबाव, शरणार्थी एवं आंतरिक विस्थापित व्यक्ति, बाहरी हस्तक्षेप)।\n• विकल्प (c) — 16 संकेतक: गलत। एक संभावित गढ़ा हुआ आंकड़ा — FSI 12 का उपयोग करता है, 16 नहीं।\n• विकल्प (d) — 20 संकेतक: गलत। यह FSI के वास्तविक संकेतक संख्या से अधिक है।\n\nमूल्यवर्धन:\n• FSI Fund for Peace (FFP) द्वारा प्रकाशित है, कोई संयुक्त राष्ट्र निकाय नहीं।\n• इस सूचकांक का नाम 2014 में 'Failed States Index' से 'Fragile States Index' में बदला गया।\n• भारत की श्रेणी 'Elevated Warning' है — अस्थिरता स्पेक्ट्रम पर मध्य स्तर।"
+    }
+  },
+  {
+    "uuid": "02d24247-5997-4016-a82d-d2bd013bb8cf",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Indices and Reports",
+      "sub_topic": "India's rank in major global indices",
+      "concepts_used": [
+        "Logistics Performance Index (LPI): World Bank Framework and PM GatiShakti Connection",
+        "Ease of Doing Business (EoDB) Index: Methodology Change and India's Performance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "LPI six components — World Bank framework",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly lists the six components assessed under the World Bank's Logistics Performance Index (LPI)?\n\n(a) Customs, Infrastructure, International shipments, Financial regulation, Tracking and tracing, Timeliness\n(b) Market sophistication, Business sophistication, Infrastructure, Customs efficiency, Timeliness, International shipments\n(c) Customs, Infrastructure, International shipments, Logistics competence and quality, Tracking and tracing, Timeliness\n(d) Political stability, Rule of law, Infrastructure, Customs efficiency, Tracking and tracing, Timeliness",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because 'Customs, Infrastructure, and International shipments' are actual LPI components — a partially correct list that tempts students who recall some but not all six components.",
+      "elimination_logic": [
+        "Eliminate option a: The listed components are partially correct but incomplete — LPI has six components and option a lists only three, plus 'Financial regulation' which is NOT an LPI component.",
+        "Eliminate option b: 'Market sophistication and Business sophistication' are GII/GCI pillar names — not LPI components.",
+        "Retain option c: Customs, Infrastructure, International shipments, Logistics competence and quality, Tracking and tracing, Timeliness — all six are correct LPI components.",
+        "Eliminate option d: 'Political stability and Rule of law' are World Governance Indicators (WGI) components — not LPI."
+      ],
+      "upsc_trap_explanation": "Option a contains three genuine LPI components (Customs, Infrastructure, International shipments) combined with 'Financial regulation' — a plausible-sounding addition from the EoDB or GCI domain. Students who recall some LPI components but not all six may accept option a because the familiar names appear there. The correct option c requires knowing all six LPI components without conflating them with other World Bank indices.",
+      "final_explanation": "The LPI evaluates trade logistics performance across exactly six components, and UPSC has tested the complete list.\n\n• Option (a): Partially correct — Customs, Infrastructure, and International shipments are genuine LPI components, but 'Financial regulation' is not. It belongs to EoDB or financial sector indices.\n• Option (b): Incorrect — Market sophistication and Business sophistication are pillars from GII, not LPI components.\n• Option (c): Correct. The six LPI components are: (1) Customs efficiency, (2) Infrastructure quality, (3) Ease of arranging competitively priced international shipments, (4) Logistics competence and quality, (5) Ability to track and trace consignments, (6) Timeliness of delivery.\n• Option (d): Incorrect — Political stability and Rule of law are dimensions of World Bank's Worldwide Governance Indicators (WGI), not LPI.\n\nValue Addition:\n• LPI is survey-based — logistics professionals rate trading partners on each component.\n• National Logistics Policy (2022) targets reducing logistics cost from ~13% of GDP to under 8%.\n• PM GatiShakti's multi-modal master plan directly addresses LPI's Infrastructure and Timeliness components."
+    },
+    "hi": {
+      "display_text": "विश्व बैंक के लॉजिस्टिक्स प्रदर्शन सूचकांक (LPI) के अंतर्गत आकलित छह घटकों की सही सूची निम्नलिखित में से कौन-सी है?\n\n(a) कस्टम, अवसंरचना, अंतरराष्ट्रीय शिपमेंट, वित्तीय विनियमन, ट्रैकिंग और ट्रेसिंग, समयबद्धता\n(b) मार्केट सॉफिस्टिकेशन, बिजनेस सॉफिस्टिकेशन, अवसंरचना, कस्टम दक्षता, समयबद्धता, अंतरराष्ट्रीय शिपमेंट\n(c) कस्टम, अवसंरचना, अंतरराष्ट्रीय शिपमेंट, लॉजिस्टिक्स दक्षता और गुणवत्ता, ट्रैकिंग और ट्रेसिंग, समयबद्धता\n(d) राजनीतिक स्थिरता, कानून का शासन, अवसंरचना, कस्टम दक्षता, ट्रैकिंग और ट्रेसिंग, समयबद्धता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि 'कस्टम, अवसंरचना, और अंतरराष्ट्रीय शिपमेंट' वास्तविक LPI घटक हैं — आंशिक रूप से सही सूची जो उन छात्रों को आकर्षित करती है जो छह घटकों में से कुछ को याद करते हैं लेकिन सभी को नहीं।",
+      "elimination_logic": [
+        "विकल्प a को हटाएं: सूचीबद्ध घटक आंशिक रूप से सही हैं लेकिन अधूरे हैं — LPI में छह घटक होते हैं और विकल्प a में केवल तीन हैं, साथ ही 'वित्तीय विनियमन' है जो LPI घटक नहीं है।",
+        "विकल्प b को हटाएं: 'मार्केट सॉफिस्टिकेशन और बिजनेस सॉफिस्टिकेशन' GII/GCI के स्तंभ नाम हैं — LPI घटक नहीं।",
+        "विकल्प c को बनाए रखें: कस्टम, अवसंरचना, अंतरराष्ट्रीय शिपमेंट, लॉजिस्टिक्स दक्षता और गुणवत्ता, ट्रैकिंग और ट्रेसिंग, समयबद्धता — ये सभी छह सही LPI घटक हैं।",
+        "विकल्प d को हटाएं: 'राजनीतिक स्थिरता और कानून का शासन' विश्व शासन संकेतक (WGI) के घटक हैं — LPI नहीं।"
+      ],
+      "upsc_trap_explanation": "विकल्प a में तीन वास्तविक LPI घटक (कस्टम, अवसंरचना, अंतरराष्ट्रीय शिपमेंट) हैं, जिन्हें 'वित्तीय विनियमन' के साथ जोड़ा गया है — जो EoDB या GCI क्षेत्र से एक संभावित लगने वाला अतिरिक्त है। जो छात्र कुछ LPI घटकों को याद करते हैं लेकिन सभी छह को नहीं, वे विकल्प a को स्वीकार कर सकते हैं क्योंकि परिचित नाम वहाँ मौजूद हैं। सही विकल्प c के लिए सभी छह LPI घटकों को जानना आवश्यक है बिना उन्हें अन्य विश्व बैंक सूचकांकों के साथ मिलाए।",
+      "final_explanation": "LPI व्यापार लॉजिस्टिक्स प्रदर्शन का मूल्यांकन ठीक छह घटकों के माध्यम से करता है, और UPSC ने पूरी सूची का परीक्षण किया है।\n\n• विकल्प (a): आंशिक रूप से सही — कस्टम, अवसंरचना, और अंतरराष्ट्रीय शिपमेंट वास्तविक LPI घटक हैं, लेकिन 'वित्तीय विनियमन' नहीं है। यह EoDB या वित्तीय क्षेत्र के सूचकांकों से संबंधित है।\n• विकल्प (b): गलत — मार्केट सॉफिस्टिकेशन और बिजनेस सॉफिस्टिकेशन GII के स्तंभ हैं, LPI घटक नहीं।\n• विकल्प (c): सही। छह LPI घटक हैं: (1) कस्टम दक्षता, (2) अवसंरचना गुणवत्ता, (3) प्रतिस्पर्धात्मक मूल्य पर अंतरराष्ट्रीय शिपमेंट की व्यवस्था की सुविधा, (4) लॉजिस्टिक्स दक्षता और गुणवत्ता, (5) कंसाइनमेंट को ट्रैक और ट्रेस करने की क्षमता, (6) डिलीवरी की समयबद्धता।\n• विकल्प (d): गलत — राजनीतिक स्थिरता और कानून का शासन विश्व बैंक के विश्वव्यापी शासन संकेतक (WGI) के आयाम हैं, LPI के नहीं।\n\nमूल्य संवर्धन:\n• LPI सर्वेक्षण आधारित है — लॉजिस्टिक्स पेशेवर प्रत्येक घटक पर व्यापारिक साझेदारों का मूल्यांकन करते हैं।\n• राष्ट्रीय लॉजिस्टिक्स नीति (2022) का लक्ष्य GDP के लगभग 13% से लॉजिस्टिक्स लागत को 8% से नीचे लाना है।\n• पीएम गति शक्ति की बहु-मोडल मास्टर योजना सीधे LPI के अवसंरचना और समयबद्धता घटकों को संबोधित करती है।"
+    }
+  }
+]

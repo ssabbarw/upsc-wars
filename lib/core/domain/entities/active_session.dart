@@ -4,9 +4,9 @@ class ActiveSession {
   const ActiveSession({
     required this.id,
     required this.mode,
-    required this.subjectSlug,
-    required this.topicSlug,
-    required this.subTopicSlug,
+    required this.subject,
+    required this.topic,
+    required this.subTopic,
     required this.questionCount,
     required this.isTimed,
     required this.timeLimitSecs,
@@ -18,9 +18,9 @@ class ActiveSession {
 
   final String id;
   final String mode;
-  final String subjectSlug;
-  final String? topicSlug;
-  final String? subTopicSlug;
+  final String subject;
+  final String? topic;
+  final String? subTopic;
   final int questionCount;
   final bool isTimed;
   final int? timeLimitSecs;

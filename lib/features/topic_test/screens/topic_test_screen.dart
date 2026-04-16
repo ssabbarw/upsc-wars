@@ -188,17 +188,17 @@ class TopicTestScreen extends HookConsumerWidget {
                         const SizedBox(height: AppSpacing.cardListGap),
                     itemBuilder: (context, i) {
                       final t = topics[i];
-                      final subj = SubjectConstants.bySlug(t.subjectSlug);
+                      final subj = SubjectConstants.bySlug(t.subject);
                       return _TopicRow(
                         topic: t,
                         borderColor: borderColor,
                         onTap: () => showTestConfigBottomSheet(
                           context: context,
                           args: TestConfigSheetArgs(
-                            subjectSlug: t.subjectSlug,
-                            topicSlug: t.topicSlug,
+                            subject: t.subject,
+                            topic: t.topic,
                             subjectDisplayName:
-                                subj?.displayName ?? t.subjectSlug,
+                                subj?.displayName ?? t.subject,
                             topicDisplayName: t.displayName,
                             availableQuestionCount: t.questionCount,
                             topicCountWhenSubjectOnly: 0,

@@ -1,0 +1,1083 @@
+[
+  {
+    "uuid": "4f64e92f-fbbc-4122-aa08-1c6859b29a7b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Definition and Constitutional Basis of Simple Majority",
+        "Article 368 Exclusion: What Falls Outside Its Scope"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Simple majority amendments excluded from Article 368",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements correctly captures the relationship between simple majority amendments and Article 368 of the Constitution?\n\n(a) Any change to the text of the Constitution, regardless of the route used, constitutes an amendment under Article 368 and must satisfy its procedural requirements\n(b) Several provisions of the Constitution themselves authorise Parliament to make changes through ordinary legislation, which falls entirely outside the Article 368 procedure\n(c) Simple majority amendments still require Presidential assent under the procedure prescribed by Article 368, even though the voting threshold is lower\n(d) Because simple majority amendments bypass Article 368, they are immune from challenge under the Basic Structure doctrine as a settled constitutional position",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students conflate 'changing constitutional text' with 'amendment under Article 368,' assuming any textual alteration to the Constitution must use the special procedure.",
+      "elimination_logic": [
+        "Eliminate (a): Article 368 governs amendments to the Constitution requiring special majority — but several provisions explicitly permit Parliament to act by ordinary law, bypassing Article 368 entirely.",
+        "Eliminate (c): Presidential assent under Article 368 applies to amendments processed through that article; simple majority amendments are ordinary legislation and do not follow the Article 368 procedure.",
+        "Eliminate (d): The Basic Structure doctrine as articulated in Kesavananda Bharati applies to amendments made under Article 368 — its applicability to simple majority provisions operating outside Article 368 is debated, making (d) an overstatement.",
+        "Select (b): Because simple majority provisions are explicitly authorised by individual articles (e.g., Article 11, 169, 3) and are treated as ordinary legislation, they are wholly outside the Article 368 procedure."
+      ],
+      "upsc_trap_explanation": "The trap here is the common student assumption that any change to the text of the Constitution must go through Article 368. In fact, several constitutional provisions themselves authorise Parliament to act 'by law' — which means ordinary legislation by simple majority. These do not constitute 'amendments' in the Article 368 sense, do not require Presidential assent under the Article 368 procedure, and do not need to satisfy the special majority or ratification conditions. A partially prepared student will instinctively mark (a) or (c), anchored to the idea that constitutionally significant changes must use the formal amendment route.",
+      "final_explanation": "The Indian Constitution distinguishes between two types of changes to its content: amendments under Article 368 (requiring special majority and sometimes state ratification) and changes authorised by individual articles through ordinary legislation (simple majority). The latter are not governed by Article 368 at all.\n\n• Option (a) — Incorrect: Not every change to the constitutional text requires Article 368. Several articles explicitly authorise Parliament to act 'by law,' making the change through ordinary legislation.\n• Option (b) — Correct: Simple majority amendments operate through provisions in individual articles that grant Parliament legislative power. They bypass Article 368 entirely and are treated as ordinary legislation.\n• Option (c) — Incorrect: Presidential assent under Article 368(2) applies only to Bills processed through that article. Simple majority laws receive Presidential assent as ordinary Bills, not under the Article 368 procedure.\n• Option (d) — Incorrect: The Basic Structure doctrine's applicability to simple majority provisions outside Article 368 is contested — this option overstates settled law.\n\nValue Addition:\n• Article 368 itself does not define 'amendment' to cover all constitutional changes — only those explicitly routed through it.\n• Examples: Articles 2, 3, 11, 169, 312 all use the phrase 'by law' or 'by legislation' signalling simple majority.\n• The Kesavananda Bharati judgment (1973) applied Basic Structure to Article 368 amendments — its reach to simple majority provisions remains jurisprudentially open."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 368 और सरल बहुमत संशोधनों के बीच संबंध को सही रूप से कौन-सा कथन दर्शाता है?\n\n(a) संविधान के पाठ में कोई भी परिवर्तन, चाहे मार्ग कोई भी हो, अनुच्छेद 368 के तहत संशोधन माना जाता है और इसकी प्रक्रियात्मक आवश्यकताओं को पूरा करना आवश्यक है\n(b) संविधान के कई प्रावधान स्वयं संसद को सामान्य विधायिका के माध्यम से परिवर्तन करने का अधिकार देते हैं, जो पूरी तरह से अनुच्छेद 368 की प्रक्रिया के बाहर आता है\n(c) सरल बहुमत संशोधनों के लिए भी अनुच्छेद 368 द्वारा निर्धारित प्रक्रिया के तहत राष्ट्रपति की स्वीकृति आवश्यक होती है, भले ही मतदान की सीमा कम हो\n(d) क्योंकि सरल बहुमत संशोधन अनुच्छेद 368 को दरकिनार करते हैं, वे मूलभूत संरचना सिद्धांत के तहत चुनौती से मुक्त हैं क्योंकि यह एक स्थापित संवैधानिक स्थिति है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र 'संवैधानिक पाठ में परिवर्तन' को 'अनुच्छेद 368 के तहत संशोधन' के साथ जोड़ देते हैं, यह मानते हुए कि संविधान के किसी भी पाठ्य परिवर्तन के लिए विशेष प्रक्रिया का उपयोग करना आवश्यक है।",
+      "elimination_logic": [
+        "(a) को हटाएं: अनुच्छेद 368 संविधान में उन संशोधनों को नियंत्रित करता है जिन्हें विशेष बहुमत की आवश्यकता होती है — लेकिन कई प्रावधान स्पष्ट रूप से संसद को सामान्य कानून द्वारा कार्य करने की अनुमति देते हैं, जो अनुच्छेद 368 को पूरी तरह से दरकिनार करता है।",
+        "(c) को हटाएं: अनुच्छेद 368 के तहत राष्ट्रपति की स्वीकृति केवल उन संशोधनों पर लागू होती है जो उस अनुच्छेद के माध्यम से संसाधित होते हैं; सरल बहुमत के संशोधन सामान्य विधायिका होते हैं और अनुच्छेद 368 की प्रक्रिया का पालन नहीं करते।",
+        "(d) को हटाएं: केशवनंद भारती में व्यक्त मूलभूत संरचना सिद्धांत अनुच्छेद 368 के तहत किए गए संशोधनों पर लागू होता है — इसका सरल बहुमत प्रावधानों पर जो अनुच्छेद 368 के बाहर काम करते हैं, लागू होना विवादित है, इसलिए (d) अतिशयोक्ति है।",
+        "(b) को चुनें: क्योंकि सरल बहुमत प्रावधानों को व्यक्तिगत अनुच्छेदों (जैसे अनुच्छेद 11, 169, 3) द्वारा स्पष्ट रूप से अधिकृत किया गया है और इन्हें सामान्य विधायिका माना जाता है, वे पूरी तरह से अनुच्छेद 368 की प्रक्रिया के बाहर हैं।"
+      ],
+      "upsc_trap_explanation": "यह जाल छात्रों की सामान्य धारणा है कि संविधान के पाठ में कोई भी परिवर्तन अनुच्छेद 368 के माध्यम से होना चाहिए। वास्तव में, कई संवैधानिक प्रावधान स्वयं संसद को 'कानून द्वारा' कार्य करने की अनुमति देते हैं — जिसका अर्थ है सरल बहुमत द्वारा सामान्य विधायिका। ये संशोधन अनुच्छेद 368 के अर्थ में 'संशोधन' नहीं हैं, इन्हें अनुच्छेद 368 की प्रक्रिया के तहत राष्ट्रपति की स्वीकृति की आवश्यकता नहीं होती, और न ही विशेष बहुमत या अनुमोदन की शर्तें पूरी करनी होती हैं। अधूरी तैयारी वाला छात्र स्वाभाविक रूप से (a) या (c) को चिह्नित करेगा, यह मानते हुए कि संवैधानिक रूप से महत्वपूर्ण परिवर्तन को औपचारिक संशोधन मार्ग से गुजरना चाहिए।",
+      "final_explanation": "भारतीय संविधान अपनी सामग्री में दो प्रकार के परिवर्तनों के बीच अंतर करता है: अनुच्छेद 368 के तहत संशोधन (जिसमें विशेष बहुमत और कभी-कभी राज्य अनुमोदन की आवश्यकता होती है) और व्यक्तिगत अनुच्छेदों द्वारा सामान्य विधायिका (सरल बहुमत) के माध्यम से अधिकृत परिवर्तन। बाद वाले पर अनुच्छेद 368 लागू नहीं होता।\n\n• विकल्प (a) — गलत: संविधान के पाठ में हर परिवर्तन के लिए अनुच्छेद 368 आवश्यक नहीं है। कई अनुच्छेद स्पष्ट रूप से संसद को 'कानून द्वारा' कार्य करने की अनुमति देते हैं, जो सामान्य विधायिका के माध्यम से परिवर्तन है।\n• विकल्प (b) — सही: सरल बहुमत के संशोधन उन व्यक्तिगत अनुच्छेदों के प्रावधानों के माध्यम से संचालित होते हैं जो संसद को विधायी शक्ति देते हैं। वे पूरी तरह से अनुच्छेद 368 को दरकिनार करते हैं और सामान्य विधायिका माने जाते हैं।\n• विकल्प (c) — गलत: अनुच्छेद 368(2) के तहत राष्ट्रपति की स्वीकृति केवल उन विधेयकों पर लागू होती है जो उस अनुच्छेद के माध्यम से संसाधित होते हैं। सरल बहुमत के कानून सामान्य विधेयकों के रूप में राष्ट्रपति की स्वीकृति प्राप्त करते हैं, न कि अनुच्छेद 368 की प्रक्रिया के तहत।\n• विकल्प (d) — गलत: मूलभूत संरचना सिद्धांत का सरल बहुमत प्रावधानों पर लागू होना विवादित है — यह विकल्प स्थापित कानून से अधिक कहता है।\n\nमूल्यवर्धन:\n• अनुच्छेद 368 स्वयं 'संशोधन' को सभी संवैधानिक परिवर्तनों के लिए परिभाषित नहीं करता — केवल उन परिवर्तनों के लिए जो स्पष्ट रूप से इसके माध्यम से होते हैं।\n• उदाहरण: अनुच्छेद 2, 3, 11, 169, 312 सभी 'कानून द्वारा' या 'विधायिका द्वारा' शब्दावली का उपयोग करते हैं जो सरल बहुमत को दर्शाता है।\n• केशवनंद भारती निर्णय (1973) ने मूलभूत संरचना सिद्धांत को अनुच्छेद 368 के संशोधनों पर लागू किया — इसका सरल बहुमत प्रावधानों पर प्रभाव अभी न्यायशास्त्रीय रूप से खुला है।"
+    }
+  },
+  {
+    "uuid": "acc37268-4041-4488-818b-e9f7012bbefd",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Creation and Abolition of Legislative Councils — Article 169"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 169 — asymmetric majority for Legislative Council",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the creation or abolition of State Legislative Councils under Article 169 of the Constitution, consider the following statements:\n\n1. For Parliament to create or abolish a State Legislative Council under Article 169, it needs to pass the enabling legislation by a special majority.\n2. Before Parliament can act under Article 169, the State Legislative Assembly must pass a resolution expressing its desire by a majority of its total membership and not less than two-thirds of members present and voting.\n3. A law made under Article 169 is not deemed a constitutional amendment for the purposes of Article 368.\n\nWhich of the above statements is/are correct?\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "For Parliament to create or abolish a State Legislative Council under Article 169, it needs to pass the enabling legislation by a special majority.",
+          "verdict": "Incorrect",
+          "reason": "Under Article 169, once the State Assembly passes a resolution by special majority, Parliament enacts the legislation by simple majority — Parliament does NOT need a special majority."
+        },
+        {
+          "statement": "Before Parliament can act under Article 169, the State Legislative Assembly must pass a resolution expressing its desire by a majority of its total membership and not less than two-thirds of members present and voting.",
+          "verdict": "Correct",
+          "reason": "Article 169(1) expressly requires the State Assembly to pass a resolution by an absolute majority of total membership AND two-thirds of members present and voting before Parliament can legislate."
+        },
+        {
+          "statement": "A law made under Article 169 is not deemed a constitutional amendment for the purposes of Article 368.",
+          "verdict": "Correct",
+          "reason": "Article 169(3) explicitly states that such a law shall not be deemed to be an amendment of the Constitution for the purposes of Article 368, though it alters a constitutional provision."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is deceptive because students who correctly know that 'special majority' is involved in Article 169 conflate Parliament's role with the State Assembly's role, assuming both houses/bodies need special majority.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Parliament requires only simple majority under Article 169 — the special majority burden falls on the State Assembly, not Parliament. Statement 1 is incorrect.",
+        "Evaluate Statement 2: Article 169(1) mandates the State Assembly resolution by total majority + 2/3 of members present and voting — Statement 2 is correct.",
+        "Evaluate Statement 3: Article 169(3) explicitly excludes such laws from the definition of 'amendment' under Article 368 — Statement 3 is correct.",
+        "Statements 2 and 3 are correct; Statement 1 is incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The signature trap in Article 169 questions is the asymmetric majority requirement. Students who know 'special majority is involved' invariably apply it to Parliament rather than (or in addition to) the State Assembly. In reality, Parliament passes the law by simple majority — it is the State Assembly that must achieve special majority. Further, Article 169(3)'s explicit exclusion from Article 368 is a highly testable provision that most students overlook.",
+      "final_explanation": "Article 169 provides a unique procedure for creating or abolishing State Legislative Councils. The process has two stages with different majority thresholds applied to different bodies.\n\n• Statement 1 — Incorrect: Parliament legislates under Article 169 by simple majority. The special majority requirement applies exclusively to the State Legislative Assembly's resolution, not to Parliament's vote.\n• Statement 2 — Correct: The State Assembly must pass a resolution by (i) a majority of its total membership and (ii) not less than two-thirds of members present and voting — a double-lock special majority.\n• Statement 3 — Correct: Article 169(3) explicitly provides that such legislation shall not be deemed an amendment for Article 368 purposes, even though it alters a constitutional provision about the state's legislature.\n\nValue Addition:\n• Recent examples: Andhra Pradesh's Legislative Council was abolished and later reconstituted; J&K's Council was abolished when the state was reorganised in 2019.\n• The State Assembly's resolution is not binding on Parliament — Parliament may decline to pass the law.\n• This is one of the clearest examples where a change to constitutional structure occurs outside Article 368."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 169 के तहत राज्य विधान परिषदों के निर्माण या उन्मूलन के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. संसद को अनुच्छेद 169 के तहत राज्य विधान परिषद बनाने या समाप्त करने के लिए सक्षम विधेयक को विशेष बहुमत से पारित करना आवश्यक है।\n2. संसद के अनुच्छेद 169 के तहत कार्य करने से पहले, राज्य विधानसभा को अपनी कुल सदस्यता के बहुमत और उपस्थित एवं मतदान करने वाले सदस्यों के कम से कम दो-तिहाई बहुमत से अपनी इच्छा व्यक्त करते हुए प्रस्ताव पारित करना आवश्यक है।\n3. अनुच्छेद 169 के तहत बनाया गया कानून अनुच्छेद 368 के प्रयोजनों के लिए संवैधानिक संशोधन नहीं माना जाता।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "For Parliament to create or abolish a State Legislative Council under Article 169, it needs to pass the enabling legislation by a special majority.",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 169 के तहत, एक बार राज्य विधानसभा विशेष बहुमत से प्रस्ताव पारित कर देती है, संसद साधारण बहुमत से विधेयक बनाती है — संसद को विशेष बहुमत की आवश्यकता नहीं होती।"
+        },
+        {
+          "statement": "Before Parliament can act under Article 169, the State Legislative Assembly must pass a resolution expressing its desire by a majority of its total membership and not less than two-thirds of members present and voting.",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 169(1) स्पष्ट रूप से राज्य विधानसभा से अपेक्षा करता है कि वह कुल सदस्यता के पूर्ण बहुमत और उपस्थित एवं मतदान करने वाले सदस्यों के दो-तिहाई बहुमत से प्रस्ताव पारित करे, तभी संसद विधेयक बना सकती है।"
+        },
+        {
+          "statement": "A law made under Article 169 is not deemed a constitutional amendment for the purposes of Article 368.",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 169(3) स्पष्ट रूप से कहता है कि इस प्रकार का कानून अनुच्छेद 368 के प्रयोजनों के लिए संविधान संशोधन नहीं माना जाएगा, भले ही यह संवैधानिक प्रावधान में परिवर्तन करता हो।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि अनुच्छेद 169 में 'विशेष बहुमत' शामिल है, वे संसद की भूमिका को राज्य विधानसभा की भूमिका के साथ मिला देते हैं, यह मानते हुए कि दोनों सदनों/संस्थाओं को विशेष बहुमत की आवश्यकता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 169 के तहत संसद को केवल साधारण बहुमत की आवश्यकता है — विशेष बहुमत का बोझ राज्य विधानसभा पर है, संसद पर नहीं। अतः कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: अनुच्छेद 169(1) राज्य विधानसभा के प्रस्ताव के लिए कुल बहुमत + उपस्थित एवं मतदान करने वाले सदस्यों के दो-तिहाई बहुमत की आवश्यकता बताता है — अतः कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: अनुच्छेद 169(3) स्पष्ट रूप से ऐसे कानूनों को अनुच्छेद 368 के तहत 'संशोधन' की परिभाषा से बाहर रखता है — अतः कथन 3 सही है।",
+        "कथन 2 और 3 सही हैं; कथन 1 गलत है — अतः विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "अनुच्छेद 169 के प्रश्नों में मुख्य जाल विशेष बहुमत की असममित आवश्यकता है। जो छात्र जानते हैं कि 'विशेष बहुमत शामिल है', वे इसे संसद पर लागू करते हैं, जबकि वास्तविकता में संसद साधारण बहुमत से विधेयक पारित करती है — विशेष बहुमत राज्य विधानसभा के प्रस्ताव के लिए आवश्यक है। इसके अतिरिक्त, अनुच्छेद 169(3) का अनुच्छेद 368 से स्पष्ट बहिष्कार एक अत्यंत परीक्षात्मक प्रावधान है जिसे अधिकांश छात्र नजरअंदाज कर देते हैं।",
+      "final_explanation": "अनुच्छेद 169 राज्य विधान परिषदों के निर्माण या उन्मूलन के लिए एक विशिष्ट प्रक्रिया प्रदान करता है। इस प्रक्रिया में दो चरण होते हैं जिनमें विभिन्न संस्थाओं पर अलग-अलग बहुमत की आवश्यकताएँ लागू होती हैं।\n\n• कथन 1 — गलत: संसद अनुच्छेद 169 के तहत साधारण बहुमत से विधेयक बनाती है। विशेष बहुमत की आवश्यकता केवल राज्य विधानसभा के प्रस्ताव के लिए होती है, संसद के मतदान के लिए नहीं।\n• कथन 2 — सही: राज्य विधानसभा को (i) अपनी कुल सदस्यता का बहुमत और (ii) उपस्थित एवं मतदान करने वाले सदस्यों के कम से कम दो-तिहाई बहुमत से प्रस्ताव पारित करना होता है — एक दोहरी लॉक विशेष बहुमत।\n• कथन 3 — सही: अनुच्छेद 169(3) स्पष्ट रूप से कहता है कि इस प्रकार का कानून अनुच्छेद 368 के लिए संशोधन नहीं माना जाएगा, भले ही यह राज्य की विधानपालिका के संवैधानिक प्रावधान को बदलता हो।\n\nमूल्यवर्धन:\n• हाल के उदाहरण: आंध्र प्रदेश की विधान परिषद को समाप्त किया गया और बाद में पुनः गठित किया गया; जम्मू-कश्मीर की परिषद को 2019 में राज्य के पुनर्गठन के समय समाप्त किया गया।\n• राज्य विधानसभा का प्रस्ताव संसद के लिए बाध्यकारी नहीं है — संसद विधेयक पारित करने से इनकार कर सकती है।\n• यह एक स्पष्ट उदाहरण है जहाँ संवैधानिक संरचना में परिवर्तन अनुच्छेद 368 के बाहर होता है।"
+    }
+  },
+  {
+    "uuid": "df1376f5-8a51-443d-af32-0d4e878d201b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Multi-statement-incorrect",
+        "Fifth Schedule Amendments — Scheduled Areas and Tribes",
+        "Sixth Schedule Amendments — Tribal Areas in Northeast"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Fifth vs Sixth Schedule amendment procedures",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Fifth and Sixth Schedules of the Constitution:\n\n1. Both the Fifth Schedule (Scheduled Areas) and the Sixth Schedule (Tribal Areas in Northeast) can be amended by Parliament through ordinary legislation by simple majority.\n2. The Sixth Schedule applies to tribal areas in Assam, Meghalaya, Tripura, and Arunachal Pradesh.\n3. Under the Fifth Schedule, the President (not the State Governor) has the power to increase or decrease Scheduled Areas by order.\n\nWhich of the above statements is/are NOT correct?\n(a) 1 and 3 only\n(b) 2 only\n(c) 1 and 2 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Both the Fifth Schedule (Scheduled Areas) and the Sixth Schedule (Tribal Areas in Northeast) can be amended by Parliament through ordinary legislation by simple majority.",
+          "verdict": "Correct",
+          "reason": "Both Schedules are amenable to simple majority legislation by Parliament — the Sixth Schedule, despite its complexity, does not require the Article 368 special majority procedure for amendment by Parliament."
+        },
+        {
+          "statement": "The Sixth Schedule applies to tribal areas in Assam, Meghalaya, Tripura, and Arunachal Pradesh.",
+          "verdict": "Incorrect",
+          "reason": "The Sixth Schedule applies to Assam, Meghalaya, Tripura, and Mizoram — not Arunachal Pradesh. Arunachal Pradesh is covered under the Fifth Schedule framework."
+        },
+        {
+          "statement": "Under the Fifth Schedule, the President (not the State Governor) has the power to increase or decrease Scheduled Areas by order.",
+          "verdict": "Correct",
+          "reason": "Para 6 of the Fifth Schedule vests the power to increase or diminish Scheduled Areas, and to alter their boundaries, in the President by public notification."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because students familiar with Sixth Schedule's complex governance structure assume it must require a higher amendment threshold, when it does not.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Both Fifth and Sixth Schedules are amendable by Parliament through simple majority — this is correct, so Statement 1 is NOT incorrect.",
+        "Evaluate Statement 2: The Sixth Schedule covers Assam, Meghalaya, Tripura, Mizoram — Arunachal Pradesh is NOT in this list. Statement 2 is factually incorrect.",
+        "Evaluate Statement 3: The Fifth Schedule Para 6 vests power to alter Scheduled Areas in the President — this is correct, so Statement 3 is NOT incorrect.",
+        "Only Statement 2 is incorrect — select option (b)."
+      ],
+      "upsc_trap_explanation": "This question exploits two common conflations: (i) the assumption that the Sixth Schedule's elaborate governance structure necessitates a higher amendment threshold, and (ii) the geographic confusion between Arunachal Pradesh (Fifth Schedule state) and Mizoram (Sixth Schedule state). Students who have memorised the northeastern states as a block will often swap Mizoram and Arunachal Pradesh in Sixth Schedule questions.",
+      "final_explanation": "The Fifth and Sixth Schedules address tribal governance but apply to different regions and through different institutional frameworks.\n\n• Statement 1 — Correct: Parliament can amend both Schedules by simple majority. Neither Schedule requires Article 368 procedure for amendment.\n• Statement 2 — Incorrect: The Sixth Schedule covers tribal areas in Assam, Meghalaya, Tripura, and Mizoram. Arunachal Pradesh is NOT covered under the Sixth Schedule; it falls under the general Fifth Schedule framework.\n• Statement 3 — Correct: The President holds the power under Fifth Schedule Para 6 to modify Scheduled Area boundaries by notification.\n\nValue Addition:\n• The Sixth Schedule provides for Autonomous District Councils with quasi-legislative and judicial powers.\n• PESA Act 1996 extends Panchayati Raj to Fifth Schedule areas with tribal-sensitive modifications — it is ordinary legislation (simple majority).\n• Mizoram's inclusion in the Sixth Schedule reflects the Mizo Accord of 1986 — a frequently tested connection.\n• Arunachal Pradesh, Nagaland, and Manipur (hill areas) have special provisions under Article 371 series, not Sixth Schedule."
+    },
+    "hi": {
+      "display_text": "संविधान के पांचवें और छठे अनुसूचियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पांचवां अनुसूची (अनुसूचित क्षेत्र) और छठा अनुसूची (पूर्वोत्तर के जनजातीय क्षेत्र) दोनों को संसद द्वारा साधारण विधायिका के माध्यम से साधारण बहुमत से संशोधित किया जा सकता है।\n2. छठा अनुसूची असम, मेघालय, त्रिपुरा, और अरुणाचल प्रदेश के जनजातीय क्षेत्रों पर लागू होता है।\n3. पांचवें अनुसूची के तहत, राष्ट्रपति (राज्य राज्यपाल नहीं) के पास आदेश द्वारा अनुसूचित क्षेत्रों को बढ़ाने या घटाने का अधिकार है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n(a) केवल 1 और 3\n(b) केवल 2\n(c) केवल 1 और 2\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Both the Fifth Schedule (Scheduled Areas) and the Sixth Schedule (Tribal Areas in Northeast) can be amended by Parliament through ordinary legislation by simple majority.",
+          "verdict": "Correct",
+          "reason": "Both Schedules are amenable to simple majority legislation by Parliament — the Sixth Schedule, despite its complexity, does not require the Article 368 special majority procedure for amendment by Parliament."
+        },
+        {
+          "statement": "The Sixth Schedule applies to tribal areas in Assam, Meghalaya, Tripura, and Arunachal Pradesh.",
+          "verdict": "Incorrect",
+          "reason": "The Sixth Schedule applies to Assam, Meghalaya, Tripura, and Mizoram — not Arunachal Pradesh. Arunachal Pradesh is covered under the Fifth Schedule framework."
+        },
+        {
+          "statement": "Under the Fifth Schedule, the President (not the State Governor) has the power to increase or decrease Scheduled Areas by order.",
+          "verdict": "Correct",
+          "reason": "Para 6 of the Fifth Schedule vests the power to increase or diminish Scheduled Areas, and to alter their boundaries, in the President by public notification."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because students familiar with Sixth Schedule's complex governance structure assume it must require a higher amendment threshold, when it does not.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Both Fifth and Sixth Schedules are amendable by Parliament through simple majority — this is correct, so Statement 1 is NOT incorrect.",
+        "Evaluate Statement 2: The Sixth Schedule covers Assam, Meghalaya, Tripura, Mizoram — Arunachal Pradesh is NOT in this list. Statement 2 is factually incorrect.",
+        "Evaluate Statement 3: The Fifth Schedule Para 6 vests power to alter Scheduled Areas in the President — this is correct, so Statement 3 is NOT incorrect.",
+        "Only Statement 2 is incorrect — select option (b)."
+      ],
+      "upsc_trap_explanation": "This question exploits two common conflations: (i) the assumption that the Sixth Schedule's elaborate governance structure necessitates a higher amendment threshold, and (ii) the geographic confusion between Arunachal Pradesh (Fifth Schedule state) and Mizoram (Sixth Schedule state). Students who have memorised the northeastern states as a block will often swap Mizoram and Arunachal Pradesh in Sixth Schedule questions.",
+      "final_explanation": "The Fifth and Sixth Schedules address tribal governance but apply to different regions and through different institutional frameworks.\n\n• Statement 1 — Correct: Parliament can amend both Schedules by simple majority. Neither Schedule requires Article 368 procedure for amendment.\n• Statement 2 — Incorrect: The Sixth Schedule covers tribal areas in Assam, Meghalaya, Tripura, and Mizoram. Arunachal Pradesh is NOT covered under the Sixth Schedule; it falls under the general Fifth Schedule framework.\n• Statement 3 — Correct: The President holds the power under Fifth Schedule Para 6 to modify Scheduled Area boundaries by notification.\n\nValue Addition:\n• The Sixth Schedule provides for Autonomous District Councils with quasi-legislative and judicial powers.\n• PESA Act 1996 extends Panchayati Raj to Fifth Schedule areas with tribal-sensitive modifications — it is ordinary legislation (simple majority).\n• Mizoram's inclusion in the Sixth Schedule reflects the Mizo Accord of 1986 — a frequently tested connection.\n• Arunachal Pradesh, Nagaland, and Manipur (hill areas) have special provisions under Article 371 series, not Sixth Schedule."
+    }
+  },
+  {
+    "uuid": "75360c22-9746-4aa6-8c98-7b1bfcacfd89",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Alteration of State Boundaries — Article 3 and Its Procedure",
+        "Union Territories: Creation, Modification, Abolition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Article 3 — Parliament's powers over states and territories",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about Parliament's powers under Article 3 of the Constitution:",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "Parliament may, by simple majority, increase the area of any existing State."
+          ],
+          [
+            "2",
+            "Under Article 3, Parliament is bound to act in accordance with the opinion expressed by the State Legislature when reorganising state boundaries."
+          ],
+          [
+            "3",
+            "Jammu and Kashmir was reorganised into two Union Territories in 2019 through ordinary legislation passed by simple majority."
+          ],
+          [
+            "4",
+            "Parliament's power under Article 3 to alter state boundaries requires the prior consent of the affected State Legislature before introducing the Bill."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Parliament may, by simple majority, increase the area of any existing State.",
+          "verdict": "Correct",
+          "reason": "Article 3(b) empowers Parliament to increase the area of any State through ordinary legislation by simple majority."
+        },
+        {
+          "statement": "Under Article 3, Parliament is bound to act in accordance with the opinion expressed by the State Legislature when reorganising state boundaries.",
+          "verdict": "Incorrect",
+          "reason": "Article 3 requires Parliament to refer the Bill to the concerned State Legislature for its opinion, but Parliament is NOT bound by that opinion and can proceed regardless."
+        },
+        {
+          "statement": "Jammu and Kashmir was reorganised into two Union Territories in 2019 through ordinary legislation passed by simple majority.",
+          "verdict": "Correct",
+          "reason": "The Jammu and Kashmir Reorganisation Act 2019 was passed by simple majority, using Parliament's plenary power over Union Territories under Article 3 read with the First Schedule."
+        },
+        {
+          "statement": "Parliament's power under Article 3 to alter state boundaries requires the prior consent of the affected State Legislature before introducing the Bill.",
+          "verdict": "Incorrect",
+          "reason": "Article 3 requires only the President to refer the Bill to the State Legislature for its opinion within a specified time — prior consent of the state is not required. The Bill can be introduced without the state's agreement."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because students who know 'state opinion is required' conflate the opinion requirement with a consent or binding requirement, leading them to mark both Statements 2 and 4 as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 3(b) explicitly grants Parliament this power — correct.",
+        "Evaluate Statement 2: Parliament must seek the State Legislature's opinion but is not bound by it — Statement 2 is incorrect.",
+        "Evaluate Statement 3: The J&K Reorganisation Act 2019 was ordinary legislation — correct.",
+        "Evaluate Statement 4: Article 3 requires Presidential reference for opinion, not prior state consent — Statement 4 is incorrect.",
+        "Two statements (1 and 3) are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statements 2 and 4 together exploit the most common confusion about Article 3: the difference between seeking an opinion and obtaining consent. Many students know that the state legislature must be consulted and incorrectly infer that Parliament must follow that opinion or obtain prior consent. Article 3 is a deliberate assertion of parliamentary supremacy over federal units — India's 'indestructible Union' principle.",
+      "final_explanation": "Article 3 is among the most powerful provisions affirming parliamentary supremacy in India's federal structure. It grants Parliament sweeping authority to reshape states and territories by simple majority.\n\n• Statement 1 — Correct: Article 3(b) explicitly includes increasing a state's area as one of Parliament's powers.\n• Statement 2 — Incorrect: Parliament is required to refer the Bill to the State Legislature for its opinion (within a Presidential-set timeline), but is not bound to follow that opinion.\n• Statement 3 — Correct: The J&K Reorganisation Act 2019, which bifurcated the erstwhile state into two UTs (J&K and Ladakh), was passed by simple majority — a landmark exercise of this power.\n• Statement 4 — Incorrect: The state's prior consent is not a constitutional prerequisite. Only a reference for opinion is required, and even that is through the President's direction, not a direct state-Parliament negotiation.\n\nValue Addition:\n• India is described as an 'indestructible Union of destructible States' — contrasted with the USA where state boundaries cannot be altered without state consent.\n• Article 4 provides that laws under Articles 2 and 3 are not deemed constitutional amendments under Article 368.\n• Telangana's creation in 2014 from Andhra Pradesh is the most recent Article 3 example before J&K's reorganisation."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "संविधान के अनुच्छेद 3 के तहत संसद के अधिकारों के संबंध में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "संसद साधारण बहुमत द्वारा किसी भी मौजूदा राज्य के क्षेत्र को बढ़ा सकती है।"
+          ],
+          [
+            "2",
+            "अनुच्छेद 3 के तहत, राज्य की सीमाओं के पुनर्गठन के समय संसद को राज्य विधानमंडल द्वारा व्यक्त की गई राय के अनुसार कार्य करना अनिवार्य है।"
+          ],
+          [
+            "3",
+            "जम्मू और कश्मीर को 2019 में साधारण बहुमत से पारित साधारण विधेयक के माध्यम से दो केंद्र शासित प्रदेशों में पुनर्गठित किया गया था।"
+          ],
+          [
+            "4",
+            "राज्य की सीमाओं को बदलने के लिए अनुच्छेद 3 के तहत संसद की शक्ति के लिए विधेयक पेश करने से पहले प्रभावित राज्य विधानमंडल की पूर्व सहमति आवश्यक है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "संसद साधारण बहुमत द्वारा किसी भी मौजूदा राज्य के क्षेत्र को बढ़ा सकती है।",
+          "verdict": "सही है",
+          "reason": "अनुच्छेद 3(ख) संसद को साधारण विधायिका द्वारा साधारण बहुमत से किसी भी राज्य के क्षेत्र को बढ़ाने का अधिकार देता है।"
+        },
+        {
+          "statement": "अनुच्छेद 3 के तहत, राज्य की सीमाओं के पुनर्गठन के समय संसद को राज्य विधानमंडल द्वारा व्यक्त की गई राय के अनुसार कार्य करना अनिवार्य है।",
+          "verdict": "गलत है",
+          "reason": "अनुच्छेद 3 संसद को विधेयक को संबंधित राज्य विधानमंडल की राय के लिए भेजने का निर्देश देता है, लेकिन संसद उस राय के बंधन में नहीं है और बिना उसकी सहमति के भी आगे बढ़ सकती है।"
+        },
+        {
+          "statement": "जम्मू और कश्मीर को 2019 में साधारण बहुमत से पारित साधारण विधेयक के माध्यम से दो केंद्र शासित प्रदेशों में पुनर्गठित किया गया था।",
+          "verdict": "सही है",
+          "reason": "जम्मू और कश्मीर पुनर्गठन अधिनियम 2019 को साधारण बहुमत से पारित किया गया था, जो अनुच्छेद 3 के साथ प्रथम अनुसूची के तहत संसद को केंद्र शासित प्रदेशों पर पूर्ण अधिकार प्रदान करता है।"
+        },
+        {
+          "statement": "राज्य की सीमाओं को बदलने के लिए अनुच्छेद 3 के तहत संसद की शक्ति के लिए विधेयक पेश करने से पहले प्रभावित राज्य विधानमंडल की पूर्व सहमति आवश्यक है।",
+          "verdict": "गलत है",
+          "reason": "अनुच्छेद 3 केवल राष्ट्रपति को विधेयक को राज्य विधानमंडल की राय के लिए निर्दिष्ट समय में भेजने का निर्देश देता है — राज्य की पूर्व सहमति आवश्यक नहीं है। विधेयक बिना राज्य की सहमति के भी पेश किया जा सकता है।"
+        }
+      ],
+      "strong_distractor": "क — विकल्प (क) भ्रामक है क्योंकि जो छात्र 'राज्य की राय आवश्यक है' जानते हैं, वे राय की आवश्यकता को सहमति या बाध्यकारी आवश्यकता के साथ भ्रमित कर देते हैं, जिससे वे कथन 2 और 4 दोनों को सही मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 3(ख) स्पष्ट रूप से संसद को यह अधिकार देता है — सही।",
+        "कथन 2 का मूल्यांकन करें: संसद को राज्य विधानमंडल की राय लेनी होती है लेकिन वह उस राय के बंधन में नहीं है — कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: जम्मू और कश्मीर पुनर्गठन अधिनियम 2019 साधारण विधेयक था — सही।",
+        "कथन 4 का मूल्यांकन करें: अनुच्छेद 3 में राय के लिए राष्ट्रपति का संदर्भ आवश्यक है, राज्य की पूर्व सहमति नहीं — कथन 4 गलत है।",
+        "दो कथन (1 और 3) सही हैं — विकल्प (ख) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 और 4 मिलकर अनुच्छेद 3 के बारे में सबसे आम भ्रम का उपयोग करते हैं: राय लेने और सहमति प्राप्त करने के बीच का अंतर। कई छात्र जानते हैं कि राज्य विधानमंडल से परामर्श करना आवश्यक है और गलत तरीके से यह मान लेते हैं कि संसद को उस राय का पालन करना होगा या पूर्व सहमति लेनी होगी। अनुच्छेद 3 संघीय इकाइयों पर संसदीय सर्वोच्चता का स्पष्ट अभिप्राय है — भारत का 'अटूट संघ' सिद्धांत।",
+      "final_explanation": "अनुच्छेद 3 भारत के संघीय ढांचे में संसदीय सर्वोच्चता को पुष्ट करने वाले सबसे शक्तिशाली प्रावधानों में से एक है। यह संसद को साधारण बहुमत से राज्यों और केंद्र शासित प्रदेशों को पुनर्गठित करने का व्यापक अधिकार देता है।\n\n• कथन 1 — सही: अनुच्छेद 3(ख) स्पष्ट रूप से किसी राज्य के क्षेत्र को बढ़ाने को संसद के अधिकारों में शामिल करता है।\n• कथन 2 — गलत: संसद को विधेयक को राज्य विधानमंडल की राय के लिए भेजना होता है (राष्ट्रपति द्वारा निर्धारित समय सीमा के भीतर), लेकिन उस राय का पालन करना आवश्यक नहीं है।\n• कथन 3 — सही: जम्मू और कश्मीर पुनर्गठन अधिनियम 2019, जिसने पूर्व राज्य को दो केंद्र शासित प्रदेशों (जम्मू-कश्मीर और लद्दाख) में विभाजित किया, साधारण बहुमत से पारित हुआ — इस अधिकार का एक महत्वपूर्ण प्रयोग।\n• कथन 4 — गलत: राज्य की पूर्व सहमति संवैधानिक पूर्वापेक्षा नहीं है। केवल राय के लिए संदर्भ आवश्यक है, और वह भी राष्ट्रपति के निर्देश से, न कि सीधे राज्य-संसद वार्ता से।\n\nमूल्य संवर्धन:\n• भारत को 'अटूट संघीय राज्यों का संघ' कहा जाता है — इसके विपरीत अमेरिका में राज्य की सीमाएँ राज्य की सहमति के बिना नहीं बदली जा सकतीं।\n• अनुच्छेद 4 यह निर्धारित करता है कि अनुच्छेद 2 और 3 के तहत बनाए गए कानून अनुच्छेद 368 के तहत संवैधानिक संशोधन नहीं माने जाएंगे।\n• आंध्र प्रदेश से तेलंगाना का 2014 में निर्माण अनुच्छेद 3 का जम्मू-कश्मीर पुनर्गठन से पहले का नवीनतम उदाहरण है।"
+    }
+  },
+  {
+    "uuid": "e885432a-479d-4ae9-a3be-af9153b28fda",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Delimitation and Readjustment of Constituencies — Article 82"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Delimitation history and 91st Amendment freeze",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following events related to delimitation of parliamentary constituencies in India:\n\n1. Enactment of the Delimitation Commission Act, 1952\n2. Constitution (84th Amendment) Act extending the freeze on seat numbers until the first census after 2026\n3. Constitution (42nd Amendment) Act freezing delimitation based on the 1971 census\n4. Enactment of the Delimitation Act, 2002\n\nWhich of the following represents the correct chronological sequence of these events?\n(a) 1 → 3 → 2 → 4\n(b) 1 → 3 → 4 → 2\n(c) 1 → 4 → 3 → 2\n(d) 3 → 1 → 4 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) traps students who know the 91st Amendment is related to delimitation but do not know the correct sequence relative to the Delimitation Act 2002.",
+      "elimination_logic": [
+        "The first Delimitation Commission was established under the Delimitation Commission Act 1952 — this is the earliest event.",
+        "The Constitution (42nd Amendment) Act 1976 froze delimitation following the 1971 census — this comes after the first Commission but before the 2002 Act.",
+        "The Delimitation Act 2002 re-established the Commission for the 2001 census-based delimitation — after the 1976 freeze was partially lifted.",
+        "The Constitution (84th Amendment) Act 2001 and (87th Amendment) Act 2003 extended the freeze and adjusted seat allocation — the 91st Amendment (2003) dealt with defection, not delimitation directly. The freeze until 2026 was by the 84th Amendment. Sequence: 1952 Commission → 1976 freeze (42nd Amendment) → 2002 Delimitation Act → 84th Amendment freeze extension.",
+        "Correct chronological order: 1 → 3 → 4 → 2 — select option (b)."
+      ],
+      "upsc_trap_explanation": "Students confuse the 42nd Amendment's delimitation freeze (1976) with the 84th Amendment's extension (2001). Both involve freezing seat delimitation, but at different census benchmarks and for different durations. The Delimitation Act 2002's position in the sequence — after the freeze but enabling boundary readjustment — is the specific knowledge gap this question exploits.",
+      "final_explanation": "Delimitation — redrawing constituency boundaries based on census data — has had a turbulent legislative history in India.\n\n**Correct sequence:**\n1. **Delimitation Commission Act, 1952** — The first statutory Delimitation Commission was established after the first general elections to conduct seat allocation based on the 1951 census.\n2. **42nd Amendment Act, 1976** — Froze the number of Lok Sabha and State Assembly seats based on the 1971 census until the first census after 2000, suspending fresh delimitation.\n3. **Delimitation Act, 2002** — Re-established a Delimitation Commission for readjusting constituency boundaries (not seat numbers) based on the 2001 census data.\n4. **84th Amendment Act, 2001** — Extended the freeze on total seat numbers until the first census after 2026, though boundary readjustment within existing seats was permitted.\n\n**Wrong options eliminated:** Options placing 1976 (42nd Amendment) after the 2002 Act, or placing the 84th Amendment before the first Delimitation Commission, reflect common temporal confusions.\n\nValue Addition:\n• The Delimitation Commission's orders have the force of law under Article 82 and cannot be challenged in any court.\n• The freeze until 2026 has significant political implications — states that controlled population growth are penalised in seat allocation.\n• Delimitation Commission is a statutory (not constitutional) body — created by Parliament by simple majority."
+    },
+    "hi": {
+      "display_text": "भारत में संसदीय निर्वाचन क्षेत्रों के परिसीमन से संबंधित निम्नलिखित घटनाओं पर विचार करें:\n\n1. परिसीमन आयोग अधिनियम, 1952 का अधिनियमन\n2. संविधान (84वां संशोधन) अधिनियम द्वारा 2026 के बाद पहली जनगणना तक सीट संख्या पर स्थगन का विस्तार\n3. संविधान (42वां संशोधन) अधिनियम द्वारा 1971 की जनगणना के आधार पर परिसीमन को स्थगित करना\n4. परिसीमन अधिनियम, 2002 का अधिनियमन\n\nइन घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n(a) 1 → 3 → 2 → 4\n(b) 1 → 3 → 4 → 2\n(c) 1 → 4 → 3 → 2\n(d) 3 → 1 → 4 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) उन छात्रों को फंसाता है जो जानते हैं कि 91वां संशोधन परिसीमन से संबंधित है लेकिन परिसीमन अधिनियम 2002 के सापेक्ष सही क्रम नहीं जानते।",
+      "elimination_logic": [
+        "पहली परिसीमन आयोग की स्थापना परिसीमन आयोग अधिनियम 1952 के तहत हुई — यह सबसे प्रारंभिक घटना है।",
+        "संविधान (42वां संशोधन) अधिनियम 1976 ने 1971 की जनगणना के बाद परिसीमन को स्थगित कर दिया — यह पहली आयोग के बाद लेकिन 2002 के अधिनियम से पहले हुआ।",
+        "परिसीमन अधिनियम 2002 ने 2001 की जनगणना आधारित परिसीमन के लिए आयोग को पुनः स्थापित किया — 1976 के स्थगन को आंशिक रूप से हटाने के बाद।",
+        "संविधान (84वां संशोधन) अधिनियम 2001 और (87वां संशोधन) अधिनियम 2003 ने स्थगन को बढ़ाया और सीट आवंटन को समायोजित किया — 91वां संशोधन (2003) सीधे परिसीमन से नहीं, बल्कि दलबदल से संबंधित था। 2026 तक स्थगन 84वें संशोधन द्वारा था। क्रम: 1952 आयोग → 1976 स्थगन (42वां संशोधन) → 2002 परिसीमन अधिनियम → 84वां संशोधन स्थगन विस्तार।",
+        "सही कालानुक्रमिक क्रम: 1 → 3 → 4 → 2 — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "छात्र 42वें संशोधन के परिसीमन स्थगन (1976) को 84वें संशोधन के विस्तार (2001) के साथ भ्रमित करते हैं। दोनों में सीट परिसीमन को स्थगित किया गया है, लेकिन अलग-अलग जनगणना आधारों और अवधि के लिए। परिसीमन अधिनियम 2002 का क्रम में स्थान — स्थगन के बाद लेकिन सीमा पुनः समायोजन की अनुमति देने वाला — यह प्रश्न इसी ज्ञान अंतर का उपयोग करता है।",
+      "final_explanation": "परिसीमन — जनगणना डेटा के आधार पर निर्वाचन क्षेत्रों की सीमाओं का पुनः निर्धारण — भारत में विधायी इतिहास में उतार-चढ़ाव रहा है।\n\n**सही क्रम:**\n1. **परिसीमन आयोग अधिनियम, 1952** — पहली सामान्य चुनावों के बाद पहली वैधानिक परिसीमन आयोग की स्थापना हुई, जो 1951 की जनगणना के आधार पर सीट आवंटन करता था।\n2. **42वां संशोधन अधिनियम, 1976** — 1971 की जनगणना के आधार पर लोकसभा और राज्य विधानसभा की सीटों की संख्या को स्थगित किया, 2000 के बाद पहली जनगणना तक ताजा परिसीमन को निलंबित किया।\n3. **परिसीमन अधिनियम, 2002** — 2001 की जनगणना डेटा के आधार पर निर्वाचन क्षेत्रों की सीमाओं को पुनः समायोजित करने के लिए परिसीमन आयोग को पुनः स्थापित किया (सीट संख्या नहीं)।\n4. **84वां संशोधन अधिनियम, 2001** — कुल सीट संख्या पर स्थगन को 2026 के बाद पहली जनगणना तक बढ़ाया, हालांकि मौजूदा सीटों के भीतर सीमा पुनः समायोजन की अनुमति दी।\n\n**गलत विकल्पों का निष्कासन:** 1976 (42वां संशोधन) को 2002 अधिनियम के बाद या 84वें संशोधन को पहली परिसीमन आयोग से पहले रखने वाले विकल्प सामान्य कालानुक्रमिक भ्रम दर्शाते हैं।\n\nमूल्यवर्धन:\n• परिसीमन आयोग के आदेश अनुच्छेद 82 के तहत विधि का बल रखते हैं और किसी भी न्यायालय में चुनौती नहीं दी जा सकती।\n• 2026 तक स्थगन के राजनीतिक प्रभाव महत्वपूर्ण हैं — जनसंख्या वृद्धि नियंत्रित करने वाले राज्यों को सीट आवंटन में दंडित किया जाता है।\n• परिसीमन आयोग एक वैधानिक (संवैधानिक नहीं) निकाय है — जिसे संसद द्वारा साधारण बहुमत से बनाया गया।"
+    }
+  },
+  {
+    "uuid": "b443c2cb-3626-4dba-b4de-d3c3b6daf4fe",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Union Territories: Creation, Modification, Abolition",
+        "Alteration of State Boundaries — Article 3 and Its Procedure"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Parliament's plenary power over Union Territories",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Parliament introduces a Bill proposing to merge two existing Union Territories into a single Union Territory for reasons of administrative efficiency. The Bill is introduced in Lok Sabha and passed by a simple majority of members present and voting. No Presidential reference is made to any State Legislature. The Bill then passes Rajya Sabha by the same margin and receives Presidential assent.\n\nWhich of the following correctly describes the constitutional validity of this process?\n\n(a) The process is constitutionally valid — Parliament possesses plenary power under Article 3 to create, merge, or modify Union Territories through ordinary legislation by simple majority\n(b) The process is invalid — any alteration to the First Schedule of the Constitution that changes territorial boundaries requires the special majority prescribed under Article 368\n(c) The process is invalid — the legislature of at least one of the affected Union Territories must concur with the proposed merger before Parliament can act\n(d) The process is invalid — such a Bill must be ratified by at least half the State Legislatures before it can receive Presidential assent",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) traps students who know 'constitutional amendment is required to alter territory' and assume Article 368 special majority applies, not recognising that UTs are altered through ordinary legislation under Article 3 read with the First Schedule.",
+      "elimination_logic": [
+        "The scenario involves Parliament merging two existing Union Territories — this falls squarely within Parliament's power under Article 3 read with the First Schedule.",
+        "Union Territories are not 'states' — Parliament has plenary power over them without the Article 3 requirement of Presidential reference to a State Legislature (which applies only to states).",
+        "Creating, modifying, or abolishing UTs is done through ordinary legislation by simple majority — Article 368 is not required. Eliminate option (b).",
+        "The consent of the UT's legislature (if it has one) is not constitutionally required — Parliament acts unilaterally. Eliminate options (c) and (d).",
+        "Select option (a): Parliament may enact the merger legislation by simple majority without the constraints applicable to reorganisation of States."
+      ],
+      "upsc_trap_explanation": "The trap exploits students' tendency to apply the Article 3 procedure (Presidential reference to State Legislature) to Union Territories as well as states. The Article 3 reference requirement applies specifically to the concerned State Legislature — UTs either have no legislature or their legislatures do not have the same constitutional standing. Parliament's power over UTs is near-absolute and exercisable through simple majority legislation, as demonstrated by the J&K Reorganisation Act 2019.",
+      "final_explanation": "Parliament's authority over Union Territories is qualitatively different from its authority over States under Article 3. While reorganising States requires Presidential reference to the concerned State Legislature (though not binding), no such procedural requirement exists for modifying Union Territories.\n\n**Applicable principle:** Parliament may create, modify, or abolish Union Territories through ordinary legislation by simple majority, using its power under Article 3 read with the First Schedule. Article 368's special majority is not required.\n\n**Applying to the scenario:** The proposed merger of two UTs is a modification of the First Schedule (list of Union Territories). Parliament can do this by passing an ordinary Bill by simple majority in both Houses, followed by Presidential assent as ordinary legislation.\n\n• Option (a) — Correct: Simple majority suffices; no special majority or state consultation required.\n• Option (b) — Incorrect: Article 368 special majority is not required for UT reorganisation — this was settled by the J&K Reorganisation Act 2019.\n• Option (c) — Incorrect: The UT's legislature (if any) need not concur — Parliament has plenary power over UTs.\n• Option (d) — Incorrect: No ratification by state legislatures is needed.\n\nValue Addition:\n• Ladakh was carved out as a UT without a legislature in 2019 — both Ladakh (no legislature) and J&K (with legislature) created by simple majority.\n• Parliament is the legislature for all UTs without their own legislature under Article 239A.\n• Puducherry and Delhi have partial statehood — but their creation/modification still rests with Parliament."
+    },
+    "hi": {
+      "display_text": "संसद एक विधेयक प्रस्तुत करती है जिसमें दो मौजूदा केंद्र शासित प्रदेशों को प्रशासनिक दक्षता के कारण एकल केंद्र शासित प्रदेश में विलय करने का प्रस्ताव है। यह विधेयक लोकसभा में प्रस्तुत किया जाता है और उपस्थित सदस्यों की सरल बहुमत से पारित हो जाता है। किसी भी राज्य विधानमंडल को राष्ट्रपति द्वारा संदर्भित नहीं किया जाता। फिर यह विधेयक राज्यसभा में भी समान बहुमत से पारित होता है और राष्ट्रपति की स्वीकृति प्राप्त करता है।\n\nनिम्नलिखित में से कौन-सा इस प्रक्रिया की संवैधानिक वैधता का सही वर्णन करता है?\n\n(a) यह प्रक्रिया संवैधानिक रूप से वैध है — संसद के पास अनुच्छेद 3 के तहत पूर्ण शक्ति है कि वह केंद्र शासित प्रदेशों का निर्माण, विलय या संशोधन साधारण विधायिका द्वारा सरल बहुमत से कर सके\n(b) यह प्रक्रिया अवैध है — संविधान की प्रथम अनुसूची में क्षेत्रीय सीमाओं में किसी भी परिवर्तन के लिए अनुच्छेद 368 के तहत विशेष बहुमत आवश्यक है\n(c) यह प्रक्रिया अवैध है — प्रभावित केंद्र शासित प्रदेशों में से कम से कम एक के विधानमंडल को प्रस्तावित विलय से सहमत होना आवश्यक है तभी संसद कार्रवाई कर सकती है\n(d) यह प्रक्रिया अवैध है — ऐसा विधेयक राष्ट्रपति की स्वीकृति से पहले कम से कम आधे राज्य विधानमंडलों द्वारा अनुमोदित होना चाहिए",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) उन छात्रों को फंसाता है जो जानते हैं कि 'क्षेत्रीय परिवर्तन के लिए संवैधानिक संशोधन आवश्यक है' और मान लेते हैं कि अनुच्छेद 368 की विशेष बहुमत लागू होती है, यह न समझते हुए कि केंद्र शासित प्रदेशों में प्रथम अनुसूची के साथ अनुच्छेद 3 के तहत साधारण विधायिका द्वारा परिवर्तन किया जाता है।",
+      "elimination_logic": [
+        "परिदृश्य में संसद दो मौजूदा केंद्र शासित प्रदेशों को विलय कर रही है — यह स्पष्ट रूप से संसद की अनुच्छेद 3 के साथ प्रथम अनुसूची के तहत शक्ति के अंतर्गत आता है।",
+        "केंद्र शासित प्रदेश 'राज्य' नहीं हैं — संसद के पास उन पर पूर्ण शक्ति है बिना अनुच्छेद 3 के राष्ट्रपति के राज्य विधानमंडल को संदर्भित करने की आवश्यकता के (जो केवल राज्यों पर लागू होती है)।",
+        "केंद्र शासित प्रदेशों का निर्माण, संशोधन या समाप्ति साधारण विधायिका द्वारा सरल बहुमत से किया जाता है — अनुच्छेद 368 आवश्यक नहीं है। अतः विकल्प (b) को हटा दें।",
+        "केंद्र शासित प्रदेश के विधानमंडल की सहमति (यदि कोई हो) संवैधानिक रूप से आवश्यक नहीं है — संसद एकतरफा कार्य करती है। अतः विकल्प (c) और (d) को हटा दें।",
+        "विकल्प (a) चुनें: संसद पुनर्गठन के लिए लागू प्रतिबंधों के बिना सरल बहुमत से विलय विधेयक पारित कर सकती है।"
+      ],
+      "upsc_trap_explanation": "यह जाल छात्रों की उस प्रवृत्ति का फायदा उठाता है जो अनुच्छेद 3 की प्रक्रिया (राष्ट्रपति द्वारा राज्य विधानमंडल को संदर्भ) को केंद्र शासित प्रदेशों पर भी राज्यों की तरह लागू करती है। अनुच्छेद 3 का संदर्भ केवल संबंधित राज्य विधानमंडल के लिए है — केंद्र शासित प्रदेशों के पास या तो कोई विधानमंडल नहीं होता या उनके विधानमंडल का वैधानिक दर्जा समान नहीं होता। संसद की केंद्र शासित प्रदेशों पर शक्ति लगभग पूर्ण है और इसे सरल बहुमत विधायिका के माध्यम से प्रयोग किया जाता है, जैसा कि जम्मू-कश्मीर पुनर्गठन अधिनियम 2019 में प्रदर्शित है।",
+      "final_explanation": "संसद की केंद्र शासित प्रदेशों पर अधिकारिता राज्य के अधिकार से गुणात्मक रूप से भिन्न है जो अनुच्छेद 3 के तहत है। जबकि राज्यों के पुनर्गठन के लिए संबंधित राज्य विधानमंडल को राष्ट्रपति द्वारा संदर्भित करना आवश्यक है (हालांकि बाध्यकारी नहीं), केंद्र शासित प्रदेशों के संशोधन के लिए ऐसी कोई प्रक्रिया आवश्यक नहीं है।\n\n**लागू सिद्धांत:** संसद केंद्र शासित प्रदेशों का निर्माण, संशोधन या समाप्ति साधारण विधायिका द्वारा सरल बहुमत से कर सकती है, अपनी शक्ति का प्रयोग करते हुए जो अनुच्छेद 3 के साथ प्रथम अनुसूची से पढ़ा जाता है। अनुच्छेद 368 की विशेष बहुमत आवश्यक नहीं है।\n\n**परिदृश्य पर लागू:** दो केंद्र शासित प्रदेशों के प्रस्तावित विलय से प्रथम अनुसूची (केंद्र शासित प्रदेशों की सूची) में संशोधन होता है। संसद इसे दोनों सदनों में साधारण विधेयक पारित कर, सरल बहुमत से कर सकती है, जिसके बाद राष्ट्रपति की स्वीकृति सामान्य विधायिका के रूप में मिलती है।\n\n• विकल्प (a) — सही: सरल बहुमत पर्याप्त है; कोई विशेष बहुमत या राज्य की सहमति आवश्यक नहीं।\n• विकल्प (b) — गलत: केंद्र शासित प्रदेशों के पुनर्गठन के लिए अनुच्छेद 368 की विशेष बहुमत आवश्यक नहीं — यह जम्मू-कश्मीर पुनर्गठन अधिनियम 2019 द्वारा तय हो चुका है।\n• विकल्प (c) — गलत: केंद्र शासित प्रदेश के विधानमंडल (यदि कोई हो) की सहमति आवश्यक नहीं — संसद के पास पूर्ण शक्ति है।\n• विकल्प (d) — गलत: राष्ट्रपति की स्वीकृति से पहले राज्य विधानमंडलों द्वारा अनुमोदन आवश्यक नहीं है।\n\nमूल्यवर्धन:\n• लद्दाख को 2019 में बिना विधानमंडल के केंद्र शासित प्रदेश के रूप में बनाया गया — दोनों लद्दाख (बिना विधानमंडल) और जम्मू-कश्मीर (विधानमंडल सहित) सरल बहुमत से बनाए गए।\n• अनुच्छेद 239A के तहत जिन केंद्र शासित प्रदेशों का अपना विधानमंडल नहीं है, उनके लिए संसद ही विधायिका है।\n• पुडुचेरी और दिल्ली को आंशिक राज्यत्व प्राप्त है — लेकिन उनका निर्माण/संशोधन फिर भी संसद के अधिकार क्षेत्र में है।"
+    }
+  },
+  {
+    "uuid": "598a999d-d6c8-4df9-af57-7dc4fba0b2e2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Second Schedule Amendments — Salaries and Emoluments",
+        "Salaries and Service Conditions of MPs — Article 106"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Second Schedule — charged vs votable salary provisions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of constitutional provisions governing salaries and emoluments of high functionaries, which one of the following does NOT belong to the same category as the others with respect to the Second Schedule of the Constitution?\n\n(a) Comptroller and Auditor General of India\n(b) Judges of the Supreme Court of India\n(c) Governors of States\n(d) Members of Parliament",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students know judges' salaries are 'special' (charged to Consolidated Fund) and assume this makes the Schedule provision also specially protected, when in fact the Schedule amounts can be changed by simple majority.",
+      "elimination_logic": [
+        "Identify the shared attribute: options (a), (b), (c) all involve constitutional functionaries whose emoluments are listed in the Second Schedule and are charged to the Consolidated Fund of India (non-votable by Parliament).",
+        "Check option (d): MPs' salaries are determined by Parliament 'by law' under Article 106 — they are NOT listed in the Second Schedule and are NOT charged to the Consolidated Fund. MPs' salaries are voted on by Parliament through ordinary legislation.",
+        "The odd one out is option (d) — MPs' salaries fall outside the Second Schedule framework entirely.",
+        "Select option (d)."
+      ],
+      "upsc_trap_explanation": "The trap lies in the assumption that all senior constitutional functionaries' salaries are covered under the Second Schedule. MPs are powerful constitutional actors but their remuneration is a matter of ordinary law (Article 106), not Schedule protection — creating an important asymmetry that this question exploits.",
+      "final_explanation": "The Second Schedule of the Constitution specifies emoluments for certain high constitutional offices. These emoluments are charged to the Consolidated Fund of India, meaning they are non-votable — Parliament cannot reduce them through the annual budget process.\n\n• Option (a) — Comptroller and Auditor General: Covered in Second Schedule (Part E). CAG's salary is charged to the Consolidated Fund.\n• Option (b) — Judges of the Supreme Court: Covered in Second Schedule (Part D). Their salaries are charged to the Consolidated Fund of India.\n• Option (c) — Governors of States: Covered in Second Schedule (Part B). Governors' emoluments are charged to the Consolidated Fund of the State.\n• Option (d) — Members of Parliament: NOT in the Second Schedule. MPs' salaries and allowances are determined by Parliament itself through ordinary legislation under Article 106. This is the odd one out.\n\nValue Addition:\n• The Second Schedule also covers the Chairman and Deputy Chairman of the Rajya Sabha and the Speaker and Deputy Speaker of the Lok Sabha.\n• Judges' salaries cannot be reduced to their disadvantage after appointment — a judicial independence safeguard.\n• Parliament periodically revises MPs' salaries through the Salaries, Allowances and Pension of Members of Parliament Act, 1954 — amendable by simple majority."
+    },
+    "hi": {
+      "display_text": "उच्च पदाधिकारियों के वेतन और भत्तों को नियंत्रित करने वाले संवैधानिक प्रावधानों के संदर्भ में, निम्नलिखित में से कौन सा दूसरी अनुसूची के संबंध में अन्य के समान श्रेणी में नहीं आता?\n\n(a) भारत के नियंत्रक और महालेखा परीक्षक\n(b) भारत के सर्वोच्च न्यायालय के न्यायाधीश\n(c) राज्यों के राज्यपाल\n(d) संसद के सदस्य",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि छात्र जानते हैं कि न्यायाधीशों का वेतन 'विशेष' होता है (संयुक्त कोष से चार्ज किया जाता है) और मान लेते हैं कि इससे अनुसूची प्रावधान भी विशेष रूप से संरक्षित है, जबकि वास्तव में अनुसूची की राशियाँ साधारण बहुमत से बदली जा सकती हैं।",
+      "elimination_logic": [
+        "साझा विशेषता की पहचान करें: विकल्प (a), (b), (c) सभी ऐसे संवैधानिक पदाधिकारी हैं जिनका वेतन दूसरी अनुसूची में सूचीबद्ध है और जो भारत के संयुक्त कोष से चार्ज किया जाता है (संसद द्वारा मतदान योग्य नहीं)।",
+        "विकल्प (d) जांचें: सांसदों का वेतन अनुच्छेद 106 के तहत संसद द्वारा 'कानून द्वारा' निर्धारित होता है — वे दूसरी अनुसूची में सूचीबद्ध नहीं हैं और संयुक्त कोष से चार्ज नहीं हैं। सांसदों का वेतन संसद द्वारा साधारण विधायिका के माध्यम से मतदान किया जाता है।",
+        "अलग विकल्प है विकल्प (d) — सांसदों का वेतन पूरी तरह से दूसरी अनुसूची के दायरे से बाहर है।",
+        "विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "फंदा इस धारणा में है कि सभी वरिष्ठ संवैधानिक पदाधिकारियों का वेतन दूसरी अनुसूची के अंतर्गत आता है। सांसद शक्तिशाली संवैधानिक अभिनेता हैं लेकिन उनका वेतन साधारण कानून (अनुच्छेद 106) का विषय है, न कि अनुसूची संरक्षण का — जो इस प्रश्न द्वारा एक महत्वपूर्ण विषमता उत्पन्न करता है।",
+      "final_explanation": "संविधान की दूसरी अनुसूची कुछ उच्च संवैधानिक पदों के वेतन को निर्दिष्ट करती है। ये वेतन भारत के संयुक्त कोष से चार्ज होते हैं, अर्थात् ये मतदान योग्य नहीं हैं — संसद इन्हें वार्षिक बजट प्रक्रिया के माध्यम से कम नहीं कर सकती।\n\n• विकल्प (a) — नियंत्रक और महालेखा परीक्षक: दूसरी अनुसूची (भाग ई) में शामिल। CAG का वेतन संयुक्त कोष से चार्ज होता है।\n• विकल्प (b) — भारत के सर्वोच्च न्यायालय के न्यायाधीश: दूसरी अनुसूची (भाग डी) में शामिल। उनका वेतन भारत के संयुक्त कोष से चार्ज होता है।\n• विकल्प (c) — राज्यों के राज्यपाल: दूसरी अनुसूची (भाग बी) में शामिल। राज्यपाल का वेतन राज्य के संयुक्त कोष से चार्ज होता है।\n• विकल्प (d) — संसद के सदस्य: दूसरी अनुसूची में नहीं हैं। सांसदों का वेतन और भत्ते संसद द्वारा स्वयं अनुच्छेद 106 के तहत साधारण विधायिका के माध्यम से निर्धारित किए जाते हैं। यह अलग विकल्प है।\n\nमूल्य संवर्धन:\n• दूसरी अनुसूची में राज्यसभा के अध्यक्ष और उपाध्यक्ष तथा लोकसभा के अध्यक्ष और उपाध्यक्ष भी शामिल हैं।\n• न्यायाधीशों का वेतन नियुक्ति के बाद उनकी हानि के लिए कम नहीं किया जा सकता — यह न्यायिक स्वतंत्रता की सुरक्षा है।\n• संसद समय-समय पर सांसदों के वेतन को सांसदों के वेतन, भत्ते और पेंशन अधिनियम, 1954 के माध्यम से संशोधित करती है — जिसे साधारण बहुमत से संशोधित किया जा सकता है।"
+    }
+  },
+  {
+    "uuid": "0438568c-ebe2-4da2-aad1-4ef922104f5a",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Jurisdiction and Powers of Supreme Court — Article 138"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 138 — Parliament expands but cannot curtail SC jurisdiction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under Article 138 of the Constitution, Parliament may by ordinary legislation (simple majority) ________ the jurisdiction and powers of the Supreme Court with respect to matters enumerated in the Union List, but cannot ________ the Supreme Court's constitutionally guaranteed jurisdiction through the same process.\n\n(a) abolish; expand\n(b) extend; curtail\n(c) curtail; expand\n(d) transfer; consolidate",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) misleads students who know Parliament has power over the Supreme Court's jurisdiction and assume this includes the power to curtail it through ordinary legislation.",
+      "elimination_logic": [
+        "Article 138 allows Parliament to extend the Supreme Court's jurisdiction and powers through ordinary legislation — simple majority.",
+        "However, Parliament cannot curtail the Supreme Court's constitutional jurisdiction (original, appellate) by simple majority — that would require constitutional amendment.",
+        "The blank describes what Parliament CAN do under Article 138 — extend, not curtail.",
+        "Select option (b): Parliament may by law extend the Supreme Court's jurisdiction and powers with respect to any matter in the Union List."
+      ],
+      "upsc_trap_explanation": "Article 138's one-directional nature — expand, not curtail — is the core trap. Students assume symmetry: if Parliament can expand, it can also curtail. Constitutional jurisdiction of the Supreme Court is protected from ordinary legislative curtailment.",
+      "final_explanation": "Article 138 is a flexible provision that allows Parliament to expand the Supreme Court's jurisdiction incrementally through ordinary legislation without amending the Constitution.\n\n• Option (a) — Incorrect: Parliament cannot abolish the Supreme Court's original jurisdiction (Article 131) by ordinary law — that would require Article 368.\n• Option (b) — Correct: Article 138 empowers Parliament to extend the Supreme Court's jurisdiction and powers with respect to any matter in the Union List by ordinary legislation (simple majority).\n• Option (c) — Incorrect: Parliament cannot curtail the Supreme Court's constitutionally guaranteed jurisdiction (Articles 131–136) by simple majority legislation.\n• Option (d) — Incorrect: Parliamentary oversight of SC judgments is not within Article 138's scope — judicial decisions are final subject to the Court's own review power.\n\nValue Addition:\n• The Supreme Court (Enlargement of Criminal Appellate Jurisdiction) Act 1970 is a classic example of Parliament using Article 138 to extend SC jurisdiction.\n• Article 139 separately allows Parliament to confer power on the SC to issue writs for purposes other than those in Article 32.\n• Article 140 allows Parliament to confer ancillary powers on the SC — all by simple majority."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 138 के तहत, संसद साधारण विधि (सरल बहुमत) द्वारा संघ सूची में उल्लिखित विषयों के संबंध में सुप्रीम कोर्ट के क्षेत्राधिकार और शक्तियों का ________ कर सकती है, लेकिन उसी प्रक्रिया द्वारा सुप्रीम कोर्ट के संवैधानिक रूप से सुनिश्चित क्षेत्राधिकार को ________ नहीं कर सकती।\n\n(a) समाप्त; विस्तार\n(b) विस्तार; सीमित\n(c) सीमित; विस्तार\n(d) स्थानांतरित; समेकित",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) उन छात्रों को भ्रमित करता है जो जानते हैं कि संसद के पास सुप्रीम कोर्ट के क्षेत्राधिकार पर अधिकार है और मान लेते हैं कि इसमें साधारण विधि द्वारा उसे सीमित करने का अधिकार भी शामिल है।",
+      "elimination_logic": [
+        "अनुच्छेद 138 संसद को साधारण विधि (सरल बहुमत) द्वारा सुप्रीम कोर्ट के क्षेत्राधिकार और शक्तियों का विस्तार करने की अनुमति देता है।",
+        "हालांकि, संसद सुप्रीम कोर्ट के संवैधानिक क्षेत्राधिकार (मूल, अपीलीय) को साधारण बहुमत से सीमित नहीं कर सकती — इसके लिए संवैधानिक संशोधन आवश्यक होगा।",
+        "रिक्त स्थान में वह कार्य वर्णित है जो संसद अनुच्छेद 138 के तहत कर सकती है — विस्तार, सीमित नहीं।",
+        "विकल्प (b) चुनें: संसद कानून द्वारा संघ सूची में उल्लिखित किसी भी विषय के संबंध में सुप्रीम कोर्ट के क्षेत्राधिकार और शक्तियों का विस्तार कर सकती है।"
+      ],
+      "upsc_trap_explanation": "अनुच्छेद 138 की एकतरफा प्रकृति — विस्तार कर सकती है, सीमित नहीं — मुख्य जाल है। छात्र मान लेते हैं कि यदि संसद विस्तार कर सकती है, तो सीमित भी कर सकती है। सुप्रीम कोर्ट के संवैधानिक क्षेत्राधिकार को साधारण विधायी सीमितता से संरक्षित किया गया है।",
+      "final_explanation": "अनुच्छेद 138 एक लचीला प्रावधान है जो संसद को संविधान में संशोधन किए बिना साधारण विधि द्वारा सुप्रीम कोर्ट के क्षेत्राधिकार को क्रमिक रूप से बढ़ाने की अनुमति देता है।\n\n• विकल्प (a) — गलत: संसद साधारण कानून द्वारा सुप्रीम कोर्ट के मूल क्षेत्राधिकार (अनुच्छेद 131) को समाप्त नहीं कर सकती — इसके लिए अनुच्छेद 368 आवश्यक है।\n• विकल्प (b) — सही: अनुच्छेद 138 संसद को साधारण विधि (सरल बहुमत) द्वारा संघ सूची में किसी भी विषय के संबंध में सुप्रीम कोर्ट के क्षेत्राधिकार और शक्तियों का विस्तार करने का अधिकार देता है।\n• विकल्प (c) — गलत: संसद सुप्रीम कोर्ट के संवैधानिक रूप से सुनिश्चित क्षेत्राधिकार (अनुच्छेद 131–136) को साधारण बहुमत विधि द्वारा सीमित नहीं कर सकती।\n• विकल्प (d) — गलत: सुप्रीम कोर्ट के निर्णयों की संसदीय समीक्षा अनुच्छेद 138 के दायरे में नहीं है — न्यायिक निर्णय अंतिम होते हैं, केवल कोर्ट की अपनी समीक्षा शक्ति के अधीन।\n\nमूल्य संवर्धन:\n• सुप्रीम कोर्ट (आपराधिक अपीलीय क्षेत्राधिकार का विस्तार) अधिनियम 1970 संसद द्वारा अनुच्छेद 138 का उपयोग कर SC क्षेत्राधिकार के विस्तार का क्लासिक उदाहरण है।\n• अनुच्छेद 139 संसद को SC को अनुच्छेद 32 के अलावा अन्य उद्देश्यों के लिए रिट जारी करने का अधिकार देने की अनुमति देता है।\n• अनुच्छेद 140 संसद को SC को सहायक शक्तियाँ देने की अनुमति देता है — सभी साधारण बहुमत द्वारा।"
+    }
+  },
+  {
+    "uuid": "ba4c79af-fa71-42f9-b502-25d885474104",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Admission of New States and Formation of New States — Article 2",
+        "Alteration of State Boundaries — Article 3 and Its Procedure"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Article 2 vs Article 3 — new vs existing state distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Parliament's powers over admission and formation of states under Articles 2 and 3 of the Constitution, consider the following statements:\n\n1. Article 2 enables Parliament to admit into the Union, or establish, territories that are not already part of India, and this power is exercisable through ordinary legislation by simple majority.\n2. Unlike Article 3, Article 2 does not require the President to refer the proposed legislation to the concerned State Legislature before introducing it in Parliament.\n3. The formation of new states under Article 3 out of existing Indian territory requires the consent of the affected State Legislature as a precondition for Parliament to introduce the Bill.\n\nWhich of the above statements is/are correct?\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 2 enables Parliament to admit into the Union, or establish, territories that are not already part of India, and this power is exercisable through ordinary legislation by simple majority.",
+          "verdict": "Correct",
+          "reason": "Article 2 explicitly empowers Parliament to admit new states or establish new states on terms it thinks fit — through ordinary law, not Article 368. Sikkim's admission in 1975 initially used this route."
+        },
+        {
+          "statement": "Unlike Article 3, Article 2 does not require the President to refer the proposed legislation to the concerned State Legislature before introducing it in Parliament.",
+          "verdict": "Correct",
+          "reason": "The Presidential reference requirement (for seeking State Legislature's opinion) is specific to Article 3, which deals with existing states. Article 2 concerns new territories not yet part of India, so no existing state legislature is consulted."
+        },
+        {
+          "statement": "The formation of new states under Article 3 out of existing Indian territory requires the consent of the affected State Legislature as a precondition for Parliament to introduce the Bill.",
+          "verdict": "Incorrect",
+          "reason": "Article 3 requires only the President to refer the Bill to the concerned State Legislature for its opinion within a specified period. The state's consent is not required — Parliament can proceed regardless of the state's view."
+        }
+      ],
+      "strong_distractor": "c — Option (c) misleads students who know 'state opinion must be taken' and wrongly extend this to mean state consent is mandatory, marking Statement 3 as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 2 empowers Parliament to admit or establish new states by simple majority — correct.",
+        "Evaluate Statement 2: Presidential reference to State Legislature is a requirement under Article 3 only — Article 2 territories are not part of India, so no state legislature is consulted. Correct.",
+        "Evaluate Statement 3: Article 3 requires the President to seek the State Legislature's opinion, not its consent. Parliament is not bound by the opinion. Statement 3 is incorrect.",
+        "Statements 1 and 2 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 3 is the trap: the word 'consent' replaces the constitutionally correct word 'opinion.' Students who know that state legislatures are involved in Article 3 proceedings often fail to distinguish between 'opinion' (advisory, non-binding) and 'consent' (mandatory, blocking). This is a classic scope-extension combined with entity-swap trap applied to constitutional procedure.",
+      "final_explanation": "Articles 2 and 3 both grant Parliament sweeping territorial powers by simple majority, but they operate on different subjects and have different procedural requirements.\n\n• Statement 1 — Correct: Article 2 covers territories not currently part of India. Parliament can admit or establish them on its own terms through ordinary legislation. Sikkim's 1975 accession used this route.\n• Statement 2 — Correct: The Article 3 requirement of Presidential reference to the State Legislature applies only when existing states are being reorganised. Article 2 involves territories outside India — there is no existing Indian state whose legislature needs to be consulted.\n• Statement 3 — Incorrect: Article 3 requires the President to refer the Bill to the State Legislature for its opinion, not for its consent. Parliament can proceed with or without the state's agreement — India's 'indestructible Union' principle in operation.\n\nValue Addition:\n• Article 4 provides that laws under Articles 2 and 3 amending the First and Fourth Schedules are not deemed constitutional amendments under Article 368.\n• Sikkim's integration: the 35th Amendment (1974) gave Sikkim associate status; the 36th Amendment (1975) made it a full state — Article 2 was used for the initial integration.\n• The USA, by contrast, cannot create new states from existing ones without the affected state's consent — a stark federal contrast."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 2 और 3 के तहत राज्यों के प्रवेश और गठन पर संसद के अधिकारों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 2 संसद को ऐसे प्रदेशों को संघ में शामिल करने या स्थापित करने का अधिकार देता है जो पहले से भारत का हिस्सा नहीं हैं, और यह अधिकार साधारण विधायिका द्वारा साधारण बहुमत से प्रयोग किया जाता है।\n2. अनुच्छेद 3 के विपरीत, अनुच्छेद 2 में राष्ट्रपति को प्रस्तावित विधेयक को संसद में पेश करने से पहले संबंधित राज्य विधानमंडल को भेजने की आवश्यकता नहीं होती।\n3. अनुच्छेद 3 के तहत मौजूदा भारतीय क्षेत्र से नए राज्यों का गठन प्रभावित राज्य विधानमंडल की सहमति को संसद द्वारा विधेयक पेश करने की पूर्व शर्त के रूप में आवश्यक करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अनुच्छेद 2 संसद को ऐसे प्रदेशों को संघ में शामिल करने या स्थापित करने का अधिकार देता है जो पहले से भारत का हिस्सा नहीं हैं, और यह अधिकार साधारण विधायिका द्वारा साधारण बहुमत से प्रयोग किया जाता है।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 2 स्पष्ट रूप से संसद को नए राज्यों को शामिल करने या स्थापित करने का अधिकार देता है, जिसे वह अपनी मर्जी से साधारण कानून के माध्यम से करता है — न कि अनुच्छेद 368 के तहत। सिक्किम का 1975 में शामिल होना प्रारंभ में इसी मार्ग से हुआ था।"
+        },
+        {
+          "statement": "अनुच्छेद 3 के विपरीत, अनुच्छेद 2 में राष्ट्रपति को प्रस्तावित विधेयक को संसद में पेश करने से पहले संबंधित राज्य विधानमंडल को भेजने की आवश्यकता नहीं होती।",
+          "verdict": "सही",
+          "reason": "राष्ट्रपति द्वारा राज्य विधानमंडल की राय लेने के लिए संदर्भ भेजना केवल अनुच्छेद 3 के लिए विशिष्ट है, जो मौजूदा राज्यों से संबंधित है। अनुच्छेद 2 उन प्रदेशों से संबंधित है जो अभी तक भारत का हिस्सा नहीं हैं, इसलिए किसी मौजूदा राज्य विधानमंडल से परामर्श नहीं किया जाता।"
+        },
+        {
+          "statement": "अनुच्छेद 3 के तहत मौजूदा भारतीय क्षेत्र से नए राज्यों का गठन प्रभावित राज्य विधानमंडल की सहमति को संसद द्वारा विधेयक पेश करने की पूर्व शर्त के रूप में आवश्यक करता है।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 3 केवल राष्ट्रपति को विधेयक को संबंधित राज्य विधानमंडल को उसकी राय के लिए एक निर्दिष्ट अवधि के भीतर भेजने का प्रावधान करता है। राज्य की सहमति आवश्यक नहीं है — संसद राज्य की राय की परवाह किए बिना आगे बढ़ सकता है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) उन छात्रों को भ्रमित करता है जो जानते हैं कि 'राज्य की राय ली जानी चाहिए' और इसे गलत तरीके से 'राज्य की सहमति अनिवार्य है' समझते हुए कथन 3 को सही मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 2 संसद को साधारण बहुमत से नए राज्यों को शामिल करने या स्थापित करने का अधिकार देता है — सही।",
+        "कथन 2 का मूल्यांकन करें: राष्ट्रपति द्वारा राज्य विधानमंडल को संदर्भ भेजना केवल अनुच्छेद 3 के तहत आवश्यक है — अनुच्छेद 2 के प्रदेश भारत का हिस्सा नहीं हैं, इसलिए किसी राज्य विधानमंडल से परामर्श नहीं किया जाता। सही।",
+        "कथन 3 का मूल्यांकन करें: अनुच्छेद 3 राष्ट्रपति को राज्य विधानमंडल की राय लेने के लिए भेजने का प्रावधान करता है, सहमति के लिए नहीं। संसद राज्य की राय से बाध्य नहीं है। कथन 3 गलत है।",
+        "कथन 1 और 2 सही हैं — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 जाल है: 'सहमति' शब्द संवैधानिक रूप से सही शब्द 'राय' की जगह ले लेता है। जो छात्र जानते हैं कि अनुच्छेद 3 की प्रक्रिया में राज्य विधानमंडल शामिल होते हैं, वे अक्सर 'राय' (सलाहकार, बाध्यकारी नहीं) और 'सहमति' (अनिवार्य, अवरोधक) के बीच अंतर नहीं कर पाते। यह संवैधानिक प्रक्रिया पर एक क्लासिक दायरा-विस्तार और इकाई-स्थानांतरण जाल है।",
+      "final_explanation": "अनुच्छेद 2 और 3 दोनों संसद को साधारण बहुमत द्वारा व्यापक क्षेत्रीय अधिकार देते हैं, लेकिन वे अलग-अलग विषयों पर काम करते हैं और उनकी प्रक्रियात्मक आवश्यकताएँ भिन्न हैं।\n\n• कथन 1 — सही: अनुच्छेद 2 उन प्रदेशों को कवर करता है जो वर्तमान में भारत का हिस्सा नहीं हैं। संसद उन्हें अपनी शर्तों पर साधारण विधायिका के माध्यम से शामिल या स्थापित कर सकता है। सिक्किम का 1975 में शामिल होना इसी मार्ग से हुआ।\n• कथन 2 — सही: अनुच्छेद 3 के तहत राष्ट्रपति द्वारा राज्य विधानमंडल को संदर्भ भेजने की आवश्यकता केवल मौजूदा राज्यों के पुनर्गठन के समय होती है। अनुच्छेद 2 में भारत के बाहर के प्रदेश शामिल हैं — ऐसे कोई मौजूदा राज्य नहीं हैं जिनका विधानमंडल परामर्श के लिए लिया जाए।\n• कथन 3 — गलत: अनुच्छेद 3 राष्ट्रपति को विधेयक को राज्य विधानमंडल की राय के लिए भेजने का प्रावधान करता है, सहमति के लिए नहीं। संसद राज्य की सहमति के बिना भी आगे बढ़ सकता है — यह भारत के 'अटूट संघ' सिद्धांत का परिचायक है।\n\nमूल्यवर्धन:\n• अनुच्छेद 4 के अनुसार, अनुच्छेद 2 और 3 के तहत प्रथम और चौथे अनुसूचियों में संशोधन करने वाले कानूनों को अनुच्छेद 368 के तहत संवैधानिक संशोधन नहीं माना जाता।\n• सिक्किम का एकीकरण: 35वां संशोधन (1974) ने सिक्किम को सहायक दर्जा दिया; 36वां संशोधन (1975) ने इसे पूर्ण राज्य बनाया — प्रारंभिक एकीकरण के लिए अनुच्छेद 2 का उपयोग हुआ।\n• इसके विपरीत, अमेरिका मौजूदा राज्यों से नए राज्य बनाने के लिए प्रभावित राज्य की सहमति के बिना ऐसा नहीं कर सकता — एक स्पष्ट संघीय भेद।"
+    }
+  },
+  {
+    "uuid": "c9c18f02-e2a7-4bdd-8aa1-48aaa6d7dbe9",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Contingency Fund of India — Article 267"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Contingency Fund — constitutional establishment, statutory corpus",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Contingency Fund of India established under Article 267 of the Constitution, which one of the following statements is correct?\n\n(a) Since the Contingency Fund is established by a constitutional provision, any alteration to its corpus requires a constitutional amendment under Article 368 by special majority\n(b) The corpus of the Contingency Fund is fixed by Parliament through ordinary legislation and can be altered by simple majority without a constitutional amendment\n(c) Parliament can increase the corpus of the Union Contingency Fund and also modify the corpus of State Contingency Funds, both through simple majority legislation\n(d) The Contingency Fund of India is a sub-account within the Consolidated Fund of India and is not a constitutionally distinct fund",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who know the Contingency Fund is a constitutional provision assume that any change to it requires constitutional amendment.",
+      "elimination_logic": [
+        "The Contingency Fund of India is established by Article 267(1) — a constitutional provision. Its existence cannot be abolished by simple majority.",
+        "However, the corpus (amount) and operational modalities of the Fund are fixed by Parliament through ordinary legislation — the Contingency Fund of India Act 1950.",
+        "Changes to the Fund's size are made by amending the Contingency Fund of India Act through simple majority — not through Article 368.",
+        "Select option (b): Parliament can alter the corpus of the Contingency Fund through ordinary legislation by simple majority, even though the Fund itself is established by a constitutional article."
+      ],
+      "upsc_trap_explanation": "The constitutional vs statutory distinction for the Contingency Fund is a recurring exam trap. The Fund's existence is constitutional; its size is statutory. Students who recall 'Contingency Fund is in Article 267' assume any change requires Article 368.",
+      "final_explanation": "Article 267 is a good example of a constitutional provision that creates an institution while delegating its operational details to ordinary legislation.\n\n• Option (a) — Incorrect: The Contingency Fund of India's corpus is not entrenched in the Constitution — it is fixed by the Contingency Fund of India Act 1950, which Parliament can amend by simple majority.\n• Option (b) — Correct: Parliament can alter the corpus and operational parameters of the Contingency Fund through ordinary legislation (simple majority) under Article 267's 'by law' authorisation.\n• Option (c) — Incorrect: States have their own Contingency Funds under Article 267(2), which can similarly be altered by State Legislatures through ordinary legislation — not by Parliament.\n• Option (d) — Incorrect: The Contingency Fund is placed at the disposal of the President (for the Union) for unforeseen expenditure — it is distinct from the Consolidated Fund and Public Account.\n\nValue Addition:\n• The Consolidated Fund of India (Article 266) and the Public Account (Article 266(2)) are similarly established constitutionally but operated through ordinary law.\n• Withdrawals from the Contingency Fund are recouped by subsequent parliamentary appropriation.\n• State Contingency Funds under Article 267(2) are placed at the disposal of the Governor."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 267 के तहत स्थापित भारत के Contingency Fund के संदर्भ में, निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) चूंकि Contingency Fund एक संवैधानिक प्रावधान द्वारा स्थापित है, इसलिए इसके कोष में कोई भी परिवर्तन अनुच्छेद 368 के तहत विशेष बहुमत से संवैधानिक संशोधन की आवश्यकता रखता है\n(b) Contingency Fund का कोष संसद द्वारा साधारण विधायिका के माध्यम से निर्धारित किया जाता है और इसे संवैधानिक संशोधन के बिना साधारण बहुमत से बदला जा सकता है\n(c) संसद संघीय Contingency Fund के कोष को बढ़ा सकती है और साथ ही राज्य Contingency Fund के कोष को भी साधारण बहुमत विधायिका के माध्यम से संशोधित कर सकती है\n(d) भारत का Contingency Fund Consolidated Fund of India के अंतर्गत एक उप-खाता है और यह संवैधानिक रूप से अलग कोष नहीं है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि Contingency Fund एक संवैधानिक प्रावधान है, वे मान लेते हैं कि इसमें कोई भी परिवर्तन संवैधानिक संशोधन की आवश्यकता रखता है।",
+      "elimination_logic": [
+        "भारत का Contingency Fund अनुच्छेद 267(1) द्वारा स्थापित है — एक संवैधानिक प्रावधान। इसका अस्तित्व साधारण बहुमत से समाप्त नहीं किया जा सकता।",
+        "हालांकि, कोष (राशि) और कोष के संचालन के तरीके संसद द्वारा साधारण विधायिका — Contingency Fund of India Act 1950 — के माध्यम से निर्धारित किए जाते हैं।",
+        "कोष के आकार में परिवर्तन Contingency Fund of India Act को साधारण बहुमत से संशोधित करके किया जाता है — न कि अनुच्छेद 368 के माध्यम से।",
+        "विकल्प (b) चुनें: संसद Contingency Fund के कोष को साधारण विधायिका द्वारा साधारण बहुमत से बदल सकता है, भले ही कोष स्वयं एक संवैधानिक अनुच्छेद द्वारा स्थापित हो।"
+      ],
+      "upsc_trap_explanation": "Contingency Fund के संवैधानिक बनाम वैधानिक भेद को लेकर परीक्षा में बार-बार भ्रम होता है। कोष का अस्तित्व संवैधानिक है; उसका आकार वैधानिक है। जो छात्र याद करते हैं कि 'Contingency Fund अनुच्छेद 267 में है' वे मान लेते हैं कि कोई भी परिवर्तन अनुच्छेद 368 की आवश्यकता रखता है।",
+      "final_explanation": "अनुच्छेद 267 एक अच्छा उदाहरण है कि कैसे एक संवैधानिक प्रावधान एक संस्था बनाता है जबकि उसके संचालन के विवरण को साधारण विधायिका को सौंप देता है।\n\n• विकल्प (a) — गलत: भारत के Contingency Fund का कोष संविधान में निहित नहीं है — इसे Contingency Fund of India Act 1950 द्वारा निर्धारित किया जाता है, जिसे संसद साधारण बहुमत से संशोधित कर सकता है।\n• विकल्प (b) — सही: संसद अनुच्छेद 267 के 'कानून द्वारा' प्राधिकरण के तहत साधारण विधायिका (साधारण बहुमत) के माध्यम से Contingency Fund के कोष और संचालन के मानदंडों को बदल सकता है।\n• विकल्प (c) — गलत: राज्यों के अपने Contingency Fund होते हैं जो अनुच्छेद 267(2) के अंतर्गत आते हैं, जिन्हें राज्य विधानसभाएँ साधारण विधायिका के माध्यम से संशोधित कर सकती हैं — न कि संसद द्वारा।\n• विकल्प (d) — गलत: Contingency Fund भारत के राष्ट्रपति के नियंत्रण में होता है (केंद्र के लिए) अप्रत्याशित व्यय के लिए — यह Consolidated Fund और Public Account से अलग है।\n\nमूल्यवर्धन:\n• Consolidated Fund of India (अनुच्छेद 266) और Public Account (अनुच्छेद 266(2)) भी संवैधानिक रूप से स्थापित हैं लेकिन साधारण कानून के माध्यम से संचालित होते हैं।\n• Contingency Fund से निकासी बाद में संसदीय स्वीकृति द्वारा पुनःपूर्ति की जाती है।\n• अनुच्छेद 267(2) के तहत राज्य Contingency Fund राज्यपाल के नियंत्रण में होते हैं।"
+    }
+  },
+  {
+    "uuid": "ac672118-5131-4c0e-bf29-ea50553fb1da",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Article 368 Exclusion: What Falls Outside Its Scope",
+        "Simple Majority vs Special Majority: UPSC Trap Zones and Overlaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Identifying simple vs special majority — 'by law' clause test",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A constitutional law researcher is analysing a provision of the Indian Constitution which reads: 'Parliament may by law provide for the extension of the jurisdiction of the Supreme Court to, and the exercise of original jurisdiction by the Supreme Court in respect of, any dispute between the Government of India and one or more States.' She observes that this provision could significantly affect the judicial structure.\n\nWhich of the following correctly identifies the majority required for Parliament to act under such a provision?\n\n(a) Since the provision could significantly affect the judicial and federal structure, it implicitly requires a special majority under Article 368, even if the text says 'by law'\n(b) The phrase 'Parliament may by law' is a constitutional signal that the provision is exercisable through ordinary legislation by simple majority, without invoking Article 368\n(c) The majority required depends on whether the change has a 'federal impact' — provisions affecting Centre-State relations always require special majority regardless of the text\n(d) The provision requires special majority only if the Supreme Court certifies that the proposed change affects the basic structure of judicial independence",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) misleads students who believe that any change affecting constitutional text or structure must necessarily go through Article 368, regardless of what the article itself says.",
+      "elimination_logic": [
+        "The scenario describes a provision that uses the phrase 'Parliament may by law provide' — this is the constitutional signal for ordinary legislation.",
+        "A provision that grants Parliament the power to act 'by law' or 'by legislation' is authorising simple majority — it does not route through Article 368.",
+        "The impact on federal structure is not the test — several simple majority provisions significantly affect states (Articles 3, 169).",
+        "Eliminate (a): A provision explicitly authorising Parliament to act 'by law' is a simple majority provision — not a disguised Article 368 requirement.",
+        "Eliminate (c): The federal impact test does not determine majority requirement — the constitutional text does.",
+        "Select (b): The correct test is whether the provision itself routes through Article 368 or grants Parliament legislative power through an explicit 'by law' clause."
+      ],
+      "upsc_trap_explanation": "The trap is the assumption that significant federal impact triggers Article 368. In reality, the correct test for identifying whether a provision requires simple or special majority is whether the article itself uses phrases like 'by law,' 'by legislation,' or routes through Article 368's list. Parliament has exercised simple majority power in profoundly federal matters (Article 3 — state reorganisation) without Article 368.",
+      "final_explanation": "Identifying whether a constitutional provision requires simple or special majority requires reading the provision itself — not inferring from its subject matter or impact.\n\n**The Test:** If a constitutional article grants Parliament the power to act 'by law' or 'by Parliament by legislation,' it authorises ordinary legislation by simple majority. Article 368 comes into play only when: (i) the provision is in Article 368's explicit list, or (ii) the provision itself says 'notwithstanding Article 368' or specifies a higher threshold.\n\n• Option (a) — Incorrect: A 'by law' clause is a definitive signal for simple majority — it does not mean the provision 'could' require Article 368 under some circumstances.\n• Option (b) — Correct: The presence of 'by law' or similar language means Parliament acts through ordinary legislation. This is the primary constitutional signal for simple majority action.\n• Option (c) — Incorrect: Federal impact is not the test. Articles 2, 3, and 169 all affect federal structure but operate through simple majority.\n• Option (d) — Incorrect: The political sensitivity of a provision does not elevate its constitutional amendment threshold.\n\nValue Addition:\n• Key 'by law' articles: Article 11 (citizenship), Article 312 (AIS legislation after RS resolution), Article 138 (SC jurisdiction extension).\n• Article 368 itself specifies which provisions require ratification by state legislatures — the highest tier.\n• The phrase 'notwithstanding Article 368' or explicit inclusion in Article 368's list is the marker for special majority."
+    },
+    "hi": {
+      "display_text": "एक संवैधानिक विधि शोधकर्ता भारतीय संविधान के एक प्रावधान का विश्लेषण कर रही है जिसमें लिखा है: 'संसद कानून द्वारा यह प्रावधान कर सकती है कि सर्वोच्च न्यायालय के क्षेत्राधिकार का विस्तार किया जाए, और सर्वोच्च न्यायालय द्वारा मूल क्षेत्राधिकार का प्रयोग किया जाए, भारत सरकार और एक या अधिक राज्यों के बीच किसी भी विवाद के संबंध में।' वह देखती है कि यह प्रावधान न्यायिक संरचना को महत्वपूर्ण रूप से प्रभावित कर सकता है।\n\nनिम्नलिखित में से कौन सा सही रूप से उस प्रावधान के तहत संसद द्वारा कार्य करने के लिए आवश्यक बहुमत की पहचान करता है?\n\n(a) चूंकि प्रावधान न्यायिक और संघीय संरचना को महत्वपूर्ण रूप से प्रभावित कर सकता है, इसलिए यह निहित रूप से अनुच्छेद 368 के तहत विशेष बहुमत की आवश्यकता रखता है, भले ही पाठ में 'कानून द्वारा' लिखा हो\n(b) 'संसद कानून द्वारा' वाक्यांश एक संवैधानिक संकेत है कि प्रावधान सामान्य विधायिका द्वारा सरल बहुमत से लागू किया जा सकता है, बिना अनुच्छेद 368 को लागू किए\n(c) आवश्यक बहुमत इस बात पर निर्भर करता है कि परिवर्तन का 'संघीय प्रभाव' है या नहीं — केंद्र-राज्य संबंधों को प्रभावित करने वाले प्रावधान हमेशा पाठ की परवाह किए बिना विशेष बहुमत की आवश्यकता रखते हैं\n(d) प्रावधान को विशेष बहुमत की आवश्यकता होती है केवल यदि सर्वोच्च न्यायालय प्रमाणित करता है कि प्रस्तावित परिवर्तन न्यायिक स्वतंत्रता की मूल संरचना को प्रभावित करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) उन छात्रों को भ्रमित करता है जो मानते हैं कि संवैधानिक पाठ या संरचना में कोई भी परिवर्तन अनिवार्य रूप से अनुच्छेद 368 के तहत जाना चाहिए, चाहे अनुच्छेद स्वयं क्या कहता हो।",
+      "elimination_logic": [
+        "परिदृश्य में 'संसद कानून द्वारा प्रावधान कर सकती है' वाक्यांश का उपयोग किया गया है — यह सामान्य विधायिका के लिए संवैधानिक संकेत है।",
+        "'कानून द्वारा' या 'विधायिका द्वारा' संसद को कार्य करने का अधिकार देने वाला प्रावधान सरल बहुमत को अधिकृत करता है — यह अनुच्छेद 368 के माध्यम से नहीं जाता।",
+        "संघीय संरचना पर प्रभाव परीक्षण नहीं है — कई सरल बहुमत प्रावधान राज्यों को महत्वपूर्ण रूप से प्रभावित करते हैं (अनुच्छेद 3, 169)।",
+        "(a) को हटाएं: संसद को 'कानून द्वारा' कार्य करने का अधिकार देने वाला प्रावधान सरल बहुमत प्रावधान है — यह छिपा हुआ अनुच्छेद 368 की आवश्यकता नहीं है।",
+        "(c) को हटाएं: संघीय प्रभाव परीक्षण बहुमत आवश्यकता निर्धारित नहीं करता — संवैधानिक पाठ निर्धारित करता है।",
+        "(b) चुनें: सही परीक्षण यह है कि प्रावधान स्वयं अनुच्छेद 368 के माध्यम से जाता है या संसद को स्पष्ट 'कानून द्वारा' खंड के माध्यम से विधायी शक्ति देता है।"
+      ],
+      "upsc_trap_explanation": "फंदा यह मानना है कि महत्वपूर्ण संघीय प्रभाव अनुच्छेद 368 को सक्रिय करता है। वास्तव में, यह पहचानने के लिए सही परीक्षण कि कोई प्रावधान सरल या विशेष बहुमत चाहता है, यह है कि क्या अनुच्छेद स्वयं 'कानून द्वारा', 'विधायिका द्वारा' जैसे शब्दों का उपयोग करता है या अनुच्छेद 368 की सूची में है। संसद ने अनुच्छेद 368 के बिना भी गहरे संघीय मामलों (अनुच्छेद 3 — राज्य पुनर्गठन) में सरल बहुमत का प्रयोग किया है।",
+      "final_explanation": "यह पहचानना कि कोई संवैधानिक प्रावधान सरल बहुमत चाहता है या विशेष बहुमत, प्रावधान को स्वयं पढ़ने पर निर्भर करता है — इसके विषय या प्रभाव से अनुमान लगाने पर नहीं।\n\n**परीक्षण:** यदि कोई संवैधानिक अनुच्छेद संसद को 'कानून द्वारा' या 'विधायिका द्वारा संसद' कार्य करने का अधिकार देता है, तो यह सामान्य विधायिका द्वारा सरल बहुमत को अधिकृत करता है। अनुच्छेद 368 तभी लागू होता है जब: (i) प्रावधान अनुच्छेद 368 की स्पष्ट सूची में हो, या (ii) प्रावधान स्वयं कहता हो 'अनुच्छेद 368 के बावजूद' या उच्चतर सीमा निर्दिष्ट करता हो।\n\n• विकल्प (a) — गलत: 'कानून द्वारा' खंड सरल बहुमत के लिए निश्चित संकेत है — इसका अर्थ यह नहीं कि प्रावधान 'कभी-कभी' अनुच्छेद 368 की आवश्यकता हो सकती है।\n• विकल्प (b) — सही: 'कानून द्वारा' या समान भाषा का होना दर्शाता है कि संसद सामान्य विधायिका के माध्यम से कार्य करता है। यह सरल बहुमत के लिए मुख्य संवैधानिक संकेत है।\n• विकल्प (c) — गलत: संघीय प्रभाव परीक्षण नहीं है। अनुच्छेद 2, 3, और 169 सभी संघीय संरचना को प्रभावित करते हैं लेकिन सरल बहुमत से चलते हैं।\n• विकल्प (d) — गलत: प्रावधान की राजनीतिक संवेदनशीलता उसके संवैधानिक संशोधन सीमा को बढ़ाती नहीं है।\n\nमूल्यवर्धन:\n• प्रमुख 'कानून द्वारा' अनुच्छेद: अनुच्छेद 11 (नागरिकता), अनुच्छेद 312 (राज्यसभा प्रस्ताव के बाद AIS विधायिका), अनुच्छेद 138 (सुप्रीम कोर्ट क्षेत्राधिकार विस्तार)।\n• अनुच्छेद 368 स्वयं निर्दिष्ट करता है कि कौन से प्रावधानों के लिए राज्य विधानसभाओं की मंजूरी आवश्यक है — सर्वोच्च स्तर।\n• 'अनुच्छेद 368 के बावजूद' या अनुच्छेद 368 की सूची में स्पष्ट समावेशन विशेष बहुमत का संकेत है।"
+    }
+  },
+  {
+    "uuid": "b4a0f5ba-83e0-4015-b9ca-d9094a6d231c",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Language Provisions — Article 343–351 and Official Languages Act",
+        "Sixth Schedule Amendments — Tribal Areas in Northeast"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Eighth Schedule additions — Article 368 practice vs Schedule perception",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four actions related to language and scheduled area provisions can be accomplished through ordinary legislation by simple majority. Which one CANNOT be accomplished by simple majority and has historically required a constitutional amendment under Article 368?\n\n(a) Amending the Official Languages Act 1963 to modify the provisions relating to use of Hindi in official communications of the Union Government\n(b) Modifying the Fifth Schedule to alter the extent of a Scheduled Area in a particular State\n(c) Adding a new language to the Eighth Schedule of the Constitution\n(d) Enacting new legislation under Article 344(6) to provide for use of a regional language in a High Court",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) misleads students who know the 'Eighth Schedule amendment' context and assume that since the Eighth Schedule is 'just a list,' additions to it are simple majority like the Fifth Schedule.",
+      "elimination_logic": [
+        "Identify shared attribute: options (a), (b), (d) involve changes made through ordinary legislation by simple majority — Official Languages Act amendment, Fifth Schedule modification, and Official Languages Act 1963 enactment respectively.",
+        "Check option (c): Adding a language to the Eighth Schedule has historically been done through constitutional amendment under Article 368 (71st, 92nd Amendment Acts) requiring special majority — NOT simple majority.",
+        "Option (c) is the odd one out — it requires special majority (Article 368) while others require simple majority.",
+        "Select option (c)."
+      ],
+      "upsc_trap_explanation": "Students assume all Schedules are equal in amendment difficulty. The Eighth Schedule has been treated by Parliament as requiring Article 368, creating a higher amendment bar than the Fifth Schedule. This schedule-specific distinction is a recurring UPSC examination trap.",
+      "final_explanation": "Constitutional schedules are not uniformly amendable by simple majority — the amendment route depends on how the Constitution and parliamentary practice treat each schedule.\n\n• Option (a) — Simple majority: The Official Languages Act 1963 is ordinary legislation amendable by Parliament through simple majority under Article 344(6).\n• Option (b) — Simple majority: Parliament can modify the Fifth Schedule (including Scheduled Areas) through ordinary legislation — the Fifth Schedule's own provisions permit this.\n• Option (c) — Special majority (the odd one out): Every addition to the Eighth Schedule (languages list) has been made through constitutional amendment under Article 368 — 71st Amendment (Sindhi, 1992), 92nd Amendment (Bodo, Dogri, Maithili, Santali, 2004). Special majority + in some instances state ratification was used.\n• Option (d) — Simple majority: The Original Languages Act 1963's enactment and subsequent amendments are simple majority legislation.\n\nValue Addition:\n• The Eighth Schedule currently lists 22 languages; originally it had 14.\n• There is ongoing demand for addition of languages like Bhojpuri, Rajasthani, and Tulu to the Eighth Schedule.\n• The constitutional basis for the Eighth Schedule is Article 344 — but the Schedule's amendment has been treated as requiring Article 368 by parliamentary convention."
+    },
+    "hi": {
+      "display_text": "भाषा और अनुसूचित क्षेत्र प्रावधानों से संबंधित निम्नलिखित चार क्रियाओं में से तीन को साधारण विधायिका द्वारा सरल बहुमत से पूरा किया जा सकता है। कौन-सी क्रिया सरल बहुमत से पूरी नहीं की जा सकती और ऐतिहासिक रूप से इसके लिए अनुच्छेद 368 के तहत संवैधानिक संशोधन आवश्यक रहा है?\n\n(a) आधिकारिक भाषाएँ अधिनियम 1963 में संशोधन करना ताकि केंद्र सरकार के आधिकारिक संचार में हिंदी के उपयोग से संबंधित प्रावधानों को बदला जा सके\n(b) पांचवें अनुसूची को संशोधित करना ताकि किसी विशेष राज्य में अनुसूचित क्षेत्र की सीमा बदली जा सके\n(c) संविधान की आठवीं अनुसूची में एक नई भाषा जोड़ना\n(d) अनुच्छेद 344(6) के तहत नई विधि बनाना ताकि उच्च न्यायालय में क्षेत्रीय भाषा के उपयोग का प्रावधान किया जा सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) misleads students who know the 'Eighth Schedule amendment' context and assume that since the Eighth Schedule is 'just a list,' additions to it are simple majority like the Fifth Schedule.",
+      "elimination_logic": [
+        "साझा गुण पहचानें: विकल्प (a), (b), (d) में साधारण विधायिका द्वारा सरल बहुमत से किए गए परिवर्तन शामिल हैं — आधिकारिक भाषाएँ अधिनियम संशोधन, पांचवां अनुसूची संशोधन, और आधिकारिक भाषाएँ अधिनियम 1963 का निर्माण क्रमशः।",
+        "विकल्प (c) जांचें: संविधान के आठवें अनुसूची में भाषा जोड़ना ऐतिहासिक रूप से अनुच्छेद 368 के तहत संवैधानिक संशोधन के माध्यम से किया गया है (71वां, 92वां संशोधन अधिनियम) जिसमें विशेष बहुमत आवश्यक है — सरल बहुमत नहीं।",
+        "विकल्प (c) अलग है — इसे विशेष बहुमत (अनुच्छेद 368) की आवश्यकता है जबकि अन्य को सरल बहुमत की।",
+        "विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "छात्र मान लेते हैं कि सभी अनुसूचियाँ संशोधन में समान कठिनाई की हैं। आठवीं अनुसूची को संसद ने अनुच्छेद 368 के तहत संशोधन के लिए माना है, जो पांचवीं अनुसूची की तुलना में अधिक कठिन संशोधन मानदंड बनाता है। यह अनुसूची-विशिष्ट भेद UPSC परीक्षा में बार-बार फँसाने वाला प्रश्न होता है।",
+      "final_explanation": "संवैधानिक अनुसूचियाँ समान रूप से सरल बहुमत से संशोधित नहीं की जा सकतीं — संशोधन का मार्ग इस बात पर निर्भर करता है कि संविधान और संसदीय प्रथा प्रत्येक अनुसूची को कैसे मानते हैं।\n\n• विकल्प (a) — सरल बहुमत: आधिकारिक भाषाएँ अधिनियम 1963 एक साधारण विधेयक है जिसे संसद अनुच्छेद 344(6) के तहत सरल बहुमत से संशोधित कर सकती है।\n• विकल्प (b) — सरल बहुमत: संसद पांचवें अनुसूची (जिसमें अनुसूचित क्षेत्र शामिल हैं) को साधारण विधायिका के माध्यम से संशोधित कर सकती है — पांचवें अनुसूची के अपने प्रावधान इसे अनुमति देते हैं।\n• विकल्प (c) — विशेष बहुमत (अलग विकल्प): आठवीं अनुसूची में हर भाषा जोड़ना अनुच्छेद 368 के तहत संवैधानिक संशोधन के माध्यम से किया गया है — 71वां संशोधन (सिंधी, 1992), 92वां संशोधन (बोडो, डोगरी, मैथिली, संथाली, 2004)। विशेष बहुमत + कुछ मामलों में राज्य अनुमोदन भी आवश्यक था।\n• विकल्प (d) — सरल बहुमत: मूल भाषाएँ अधिनियम 1963 का निर्माण और बाद के संशोधन सरल बहुमत विधायिका हैं।\n\nमूल्यवर्धन:\n• आठवीं अनुसूची में वर्तमान में 22 भाषाएँ सूचीबद्ध हैं; मूल रूप से इसमें 14 थीं।\n• भोजपुरी, राजस्थानी, और तुलु जैसी भाषाओं को आठवीं अनुसूची में जोड़ने की मांग जारी है।\n• आठवीं अनुसूची का संवैधानिक आधार अनुच्छेद 344 है — लेकिन संसदीय परंपरा के अनुसार इस अनुसूची का संशोधन अनुच्छेद 368 के तहत माना गया है।"
+    }
+  },
+  {
+    "uuid": "253aa5c9-5c0f-4141-b2ec-8b730be64d19",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Fifth Schedule Amendments — Scheduled Areas and Tribes",
+        "Sixth Schedule Amendments — Tribal Areas in Northeast"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Fifth vs Sixth Schedule — states and governance features",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Feature/Provision) with List II (Associated Schedule or Act):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Autonomous District Councils with quasi-legislative and judicial powers",
+            "1. Fifth Schedule area governance through ordinary legislation (PESA Act 1996)"
+          ],
+          [
+            "B. Power to modify Scheduled Areas by Presidential notification",
+            "2. Fifth Schedule — Para 6 (President's power over Scheduled Areas)"
+          ],
+          [
+            "C. Applicable to tribal areas in Assam, Meghalaya, Tripura, and Mizoram",
+            "3. Sixth Schedule — geographic applicability"
+          ],
+          [
+            "D. Extension of Panchayati Raj framework to tribal areas with special adaptations",
+            "4. Sixth Schedule — institutional mechanism"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n(a) A-2, B-4, C-1, D-3\n(b) A-4, B-3, C-2, D-1\n(c) A-3, B-2, C-4, D-1\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) traps students who know 'Mizoram is Sixth Schedule' but swap Mizoram with Manipur or confuse the President's power (Fifth Schedule) with Governor's power.",
+      "elimination_logic": [
+        "Match A (Autonomous District Councils): Autonomous District Councils are the governance mechanism under the Sixth Schedule — match with 4.",
+        "Match B (Modification of Scheduled Areas by Presidential order): The Fifth Schedule Para 6 vests this power in the President — match with 2.",
+        "Match C (Assam, Meghalaya, Tripura, Mizoram — applicability): The Sixth Schedule applies to these four states — match with 3.",
+        "Match D (PESA Act 1996): PESA extends Panchayati Raj to Fifth Schedule areas — match with 1.",
+        "Correct: A-4, B-2, C-3, D-1 — select option (d)."
+      ],
+      "upsc_trap_explanation": "The geographic trap swaps the Sixth Schedule's applicability (Assam, Meghalaya, Tripura, Mizoram) with incorrect state combinations. Students who partially know the Sixth Schedule states may confuse Mizoram with Manipur or include Arunachal Pradesh. Beginning the matching from the clearest anchor (Autonomous District Councils = Sixth Schedule) is the exam strategy.",
+      "final_explanation": "The Fifth and Sixth Schedules have distinct governance features, geographic applicability, and institutional structures.\n\n**Correct Matches:**\n• A (Autonomous District Councils) — 4: The Sixth Schedule establishes Autonomous District Councils in the designated tribal areas of northeastern states. These councils have quasi-legislative, executive, and judicial powers.\n• B (Presidential order to modify Scheduled Areas) — 2: Para 6 of the Fifth Schedule vests the power to increase, decrease, or alter the boundaries of Scheduled Areas in the President through public notification.\n• C (Applicability to Assam, Meghalaya, Tripura, Mizoram) — 3: The Sixth Schedule applies to these four states. Arunachal Pradesh, Nagaland, and Manipur are NOT under the Sixth Schedule.\n• D (PESA Act 1996) — 1: The Panchayats (Extension to Scheduled Areas) Act 1996 extends the Panchayati Raj framework (73rd Amendment) to Fifth Schedule areas with tribal-specific modifications. It is ordinary legislation.\n\nValue Addition:\n• The Fifth Schedule has no analogue to District Councils — tribal governance in Fifth Schedule areas is through ordinary Panchayati Raj institutions (with PESA modifications).\n• Sixth Schedule courts (Village Courts) can try certain offences — a quasi-judicial function absent in Fifth Schedule areas.\n• Governors have a special role in Fifth Schedule areas (tribal advisory councils) — distinct from their ordinary role."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (विशेषता/प्रावधान) को सूची II (संबंधित अनुसूची या अधिनियम) से मिलाएं:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. अर्ध-विधायी और न्यायिक अधिकारों वाली स्वायत्त जिला परिषदें",
+            "1. सामान्य विधि (PESA अधिनियम 1996) के माध्यम से पांचवें अनुसूची क्षेत्र का शासन"
+          ],
+          [
+            "B. राष्ट्रपति अधिसूचना द्वारा अनुसूचित क्षेत्रों में संशोधन की शक्ति",
+            "2. पांचवां अनुसूची — पैराग्राफ 6 (अनुसूचित क्षेत्रों पर राष्ट्रपति की शक्ति)"
+          ],
+          [
+            "C. असम, मेघालय, त्रिपुरा, और मिजोरम के जनजातीय क्षेत्रों पर लागू",
+            "3. छठा अनुसूची — भौगोलिक लागू क्षेत्र"
+          ],
+          [
+            "D. विशेष अनुकूलन के साथ पंचायती राज ढांचे का जनजातीय क्षेत्रों तक विस्तार",
+            "4. छठा अनुसूची — संस्थागत तंत्र"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n(a) A-2, B-4, C-1, D-3\n(b) A-4, B-3, C-2, D-1\n(c) A-3, B-2, C-4, D-1\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) traps students who know 'Mizoram is Sixth Schedule' but swap Mizoram with Manipur or confuse the President's power (Fifth Schedule) with Governor's power.",
+      "elimination_logic": [
+        "A (स्वायत्त जिला परिषदें) से मेल करें: स्वायत्त जिला परिषदें छठे अनुसूची के तहत शासन तंत्र हैं — 4 से मेल करें।",
+        "B (राष्ट्रपति के आदेश द्वारा अनुसूचित क्षेत्रों में संशोधन): पांचवें अनुसूची के पैराग्राफ 6 में यह शक्ति राष्ट्रपति को दी गई है — 2 से मेल करें।",
+        "C (असम, मेघालय, त्रिपुरा, मिजोरम — लागू क्षेत्र): छठा अनुसूची इन चार राज्यों पर लागू होता है — 3 से मेल करें।",
+        "D (PESA अधिनियम 1996): PESA पंचायती राज को पांचवें अनुसूची के क्षेत्रों तक बढ़ाता है — 1 से मेल करें।",
+        "सही: A-4, B-2, C-3, D-1 — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "भौगोलिक जाल छठे अनुसूची की लागू क्षेत्र (असम, मेघालय, त्रिपुरा, मिजोरम) को गलत राज्य संयोजनों के साथ बदल देता है। जो छात्र छठे अनुसूची के राज्यों को आंशिक रूप से जानते हैं, वे मिजोरम को मणिपुर के साथ भ्रमित कर सकते हैं या अरुणाचल प्रदेश को शामिल कर सकते हैं। सबसे स्पष्ट एंकर (स्वायत्त जिला परिषदें = छठा अनुसूची) से मिलान शुरू करना परीक्षा की रणनीति है।",
+      "final_explanation": "पांचवें और छठे अनुसूची के अलग-अलग शासन विशेषताएँ, भौगोलिक लागू क्षेत्र, और संस्थागत संरचनाएँ हैं।\n\n**सही मेल:**\n• A (स्वायत्त जिला परिषदें) — 4: छठा अनुसूची पूर्वोत्तर राज्यों के निर्दिष्ट जनजातीय क्षेत्रों में स्वायत्त जिला परिषदें स्थापित करता है। इन परिषदों के अर्ध-विधायी, कार्यकारी, और न्यायिक अधिकार होते हैं।\n• B (राष्ट्रपति के आदेश द्वारा अनुसूचित क्षेत्रों में संशोधन) — 2: पांचवें अनुसूची के पैराग्राफ 6 में अनुसूचित क्षेत्रों की सीमाओं को बढ़ाने, घटाने या बदलने की शक्ति राष्ट्रपति को सार्वजनिक अधिसूचना के माध्यम से दी गई है।\n• C (असम, मेघालय, त्रिपुरा, मिजोरम पर लागू) — 3: छठा अनुसूची इन चार राज्यों पर लागू होता है। अरुणाचल प्रदेश, नागालैंड, और मणिपुर छठे अनुसूची के अंतर्गत नहीं हैं।\n• D (PESA अधिनियम 1996) — 1: पंचायती राज (विस्तार से अनुसूचित क्षेत्रों तक) अधिनियम 1996 पंचायती राज ढांचे (73वां संशोधन) को पांचवें अनुसूची के क्षेत्रों तक जनजातीय-विशिष्ट संशोधनों के साथ बढ़ाता है। यह एक सामान्य विधि है।\n\nमूल्य संवर्धन:\n• पांचवें अनुसूची में जिला परिषदों के समकक्ष कोई व्यवस्था नहीं है — पांचवें अनुसूची के क्षेत्रों में जनजातीय शासन सामान्य पंचायती राज संस्थाओं (PESA संशोधनों के साथ) के माध्यम से होता है।\n• छठे अनुसूची की अदालतें (ग्राम न्यायालय) कुछ अपराधों का परीक्षण कर सकती हैं — यह एक अर्ध-न्यायिक कार्य है जो पांचवें अनुसूची के क्षेत्रों में नहीं है।\n• पांचवें अनुसूची के क्षेत्रों में राज्यपालों की विशेष भूमिका होती है (जनजातीय सलाहकार परिषदें) — जो उनकी सामान्य भूमिका से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "ff61c906-54bf-4227-b664-d10f09576b24",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Definition and Constitutional Basis of Simple Majority",
+        "Jurisdiction and Powers of Supreme Court — Article 138"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Simple majority — definition as majority of members present and voting",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "For the purposes of ordinary legislation and simple majority amendments under the Indian Constitution, a 'simple majority' means a majority of ________, which is the default threshold prescribed under Article 100(1) for decisions of each House of Parliament.\n\n(a) Two-thirds of the members of the House present and voting\n(b) The total membership of the House, irrespective of attendance or voting\n(c) The members of the House present and voting, provided the quorum is met\n(d) Three-fourths of the members of the House present and voting",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because 'majority of total membership' sounds like the ordinary meaning of 'majority' and students who have not precisely studied the distinction will confuse 'simple majority' with 'absolute majority.'",
+      "elimination_logic": [
+        "Simple majority is technically defined as a majority of members present and voting — it does not count absentees.",
+        "Absolute majority is a majority of total membership of the House — this is the definition in option (b).",
+        "Special majority under Article 368 requires 2/3 of members present and voting AND majority of total membership — a double condition.",
+        "The blank describing simple majority must be filled with 'majority of members present and voting' — select option (c)."
+      ],
+      "upsc_trap_explanation": "Simple majority is often confused with absolute majority in examination conditions. The technical definition ('present and voting') versus the intuitive reading ('total membership') is the trap. Article 100 is the source of the simple majority definition.",
+      "final_explanation": "Precision in majority definitions is essential for UPSC Polity questions on the amendment procedure.\n\n• Option (a) — Incorrect: '2/3 of members present and voting' is the threshold for the Rajya Sabha's special resolution under Article 312 or part of the Article 368 special majority requirement — not simple majority.\n• Option (b) — Incorrect: 'Majority of the total membership of the House' is the definition of absolute majority — used in contexts like votes of no confidence (Article 75) and Article 169 State Assembly resolutions.\n• Option (c) — Correct: Simple majority means a majority of members present and voting in the House (quorum being present). This is the standard for ordinary legislation and is the default for parliamentary decision-making.\n• Option (d) — Incorrect: '3/4 of members present and voting' is not a standard constitutional majority threshold in India.\n\nValue Addition:\n• Article 100(1): All questions in either House are decided by a majority of members present and voting (simple majority) — the default constitutional rule.\n• Special majority under Article 368: 2/3 of members present and voting (in each House) AND majority of total membership of each House — both conditions must be met simultaneously.\n• Effective majority: majority of the effective strength of the House (excluding vacancies) — used in some specific contexts."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के तहत सामान्य विधायी कार्यों और सरल बहुमत संशोधनों के लिए, 'सरल बहुमत' का अर्थ है ________, जो प्रत्येक संसदीय सदन के निर्णयों के लिए अनुच्छेद 100(1) में निर्धारित डिफ़ॉल्ट सीमा है।\n\n(a) सदन के उपस्थित और मतदान करने वाले सदस्यों का दो-तिहाई भाग\n(b) सदन की कुल सदस्यता, उपस्थिति या मतदान की परवाह किए बिना\n(c) सदन के उपस्थित और मतदान करने वाले सदस्य, बशर्ते कोरम पूरा हो\n(d) सदन के उपस्थित और मतदान करने वाले सदस्यों का तीन-चौथाई भाग",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि 'कुल सदस्यता की बहुमत' सामान्य अर्थ में 'बहुमत' जैसा लगता है और जो छात्र इस भेद को ठीक से नहीं जानते वे 'सरल बहुमत' को 'पूर्ण बहुमत' से भ्रमित कर देंगे।",
+      "elimination_logic": [
+        "सरल बहुमत तकनीकी रूप से उपस्थित और मतदान करने वाले सदस्यों की बहुमत के रूप में परिभाषित है — इसमें अनुपस्थित सदस्यों को नहीं गिना जाता।",
+        "पूर्ण बहुमत सदन की कुल सदस्यता की बहुमत है — यह विकल्प (b) में दी गई परिभाषा है।",
+        "अनुच्छेद 368 के तहत विशेष बहुमत में उपस्थित और मतदान करने वाले सदस्यों का 2/3 और कुल सदस्यता की बहुमत दोनों आवश्यक हैं — यह एक दोहरी शर्त है।",
+        "सरल बहुमत को दर्शाने वाले रिक्त स्थान को 'उपस्थित और मतदान करने वाले सदस्यों की बहुमत' से भरना चाहिए — अतः विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "सरल बहुमत को परीक्षा की स्थिति में अक्सर पूर्ण बहुमत से भ्रमित किया जाता है। तकनीकी परिभाषा ('उपस्थित और मतदान करने वाले') बनाम सहज अर्थ ('कुल सदस्यता') यही जाल है। सरल बहुमत की परिभाषा का स्रोत अनुच्छेद 100 है।",
+      "final_explanation": "संशोधन प्रक्रिया पर UPSC राजनीति प्रश्नों के लिए बहुमत की परिभाषाओं में सटीकता आवश्यक है।\n\n• विकल्प (a) — गलत: 'उपस्थित और मतदान करने वाले सदस्यों का 2/3' राज्यसभा के विशेष प्रस्ताव के लिए अनुच्छेद 312 या अनुच्छेद 368 के विशेष बहुमत की शर्त है — सरल बहुमत नहीं।\n• विकल्प (b) — गलत: 'सदन की कुल सदस्यता की बहुमत' पूर्ण बहुमत की परिभाषा है — जैसे अविश्वास प्रस्ताव (अनुच्छेद 75) और अनुच्छेद 169 के राज्य विधानसभा प्रस्ताव में।\n• विकल्प (c) — सही: सरल बहुमत का अर्थ है सदन में उपस्थित और मतदान करने वाले सदस्यों की बहुमत (कोरम पूरा होने पर)। यह सामान्य विधायी प्रक्रिया का मानक है और संसदीय निर्णय लेने का डिफ़ॉल्ट है।\n• विकल्प (d) — गलत: 'उपस्थित और मतदान करने वाले सदस्यों का 3/4' भारत में कोई मानक संवैधानिक बहुमत सीमा नहीं है।\n\nमूल्यवर्धन:\n• अनुच्छेद 100(1): दोनों सदनों में सभी प्रश्न उपस्थित और मतदान करने वाले सदस्यों की बहुमत (सरल बहुमत) से निर्णय लिए जाते हैं — यह डिफ़ॉल्ट संवैधानिक नियम है।\n• अनुच्छेद 368 के तहत विशेष बहुमत: प्रत्येक सदन में उपस्थित और मतदान करने वाले सदस्यों का 2/3 और प्रत्येक सदन की कुल सदस्यता की बहुमत — दोनों शर्तें एक साथ पूरी होनी चाहिए।\n• प्रभावी बहुमत: सदन की प्रभावी संख्या (रिक्त पदों को छोड़कर) की बहुमत — कुछ विशिष्ट संदर्भों में उपयोग होता है।"
+    }
+  },
+  {
+    "uuid": "e3152177-6b47-44e3-ac97-a200815e139a",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Article 368 Exclusion: What Falls Outside Its Scope",
+        "Definition and Constitutional Basis of Simple Majority"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Basic Structure doctrine inapplicability to simple majority provisions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Ordinary legislation enacted through simple majority, under constitutional provisions that authorise Parliament to act 'by law,' remains subject to challenge under Part III of the Constitution on the ground that it violates fundamental rights.\n\nReason (R): The Supreme Court in Kesavananda Bharati v. State of Kerala (1973) held that Parliament cannot use its constituent power under Article 368 to destroy the basic structure of the Constitution, making constitutional review applicable to all exercises of parliamentary power.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? Laws enacted under constitutional provisions that authorise Parliament to act 'by law' (e.g., Articles 2, 3, 11, 169) are ordinary legislation — they can be challenged under Part III fundamental rights. This is a correct statement about the vulnerability of simple majority provisions to rights-based challenge. A is correct.",
+        "Step 2: Is Reason (R) correct? The Kesavananda Bharati judgment (1973) applied the Basic Structure doctrine to constitutional amendments under Article 368. This is a correct statement. R is correct.",
+        "Step 3: Does R explain A? R tells us that Article 368 amendments can be invalidated if they violate Basic Structure. But A is about ordinary legislation (simple majority) being challengeable under Part III — this is not because of the Basic Structure doctrine but because ordinary legislation is always subject to Part III rights. R does not explain A — the reason ordinary legislation is challengeable under Part III is not the Kesavananda judgment but the general constitutional hierarchy (Part III applies to all legislation). R and A describe different legal doctrines applied to different categories of law.",
+        "A correct + R correct + R does NOT explain A → correct option is (b)."
+      ],
+      "upsc_trap_explanation": "The trap presents two correct doctrines (Part III challenge for ordinary laws; Basic Structure for Article 368 amendments) and invites students to see causal connection. The causal link runs in opposite directions: Article 13 explains ordinary law vulnerability; Kesavananda explains Article 368 limits. Mixing them produces the wrong answer.",
+      "final_explanation": "Two separate constitutional review mechanisms — Basic Structure review and Part III fundamental rights review — are often conflated.\n\n**Assertion (A):** Correct. Ordinary legislation enacted through simple majority provisions (like CAA 2019 under Article 11) is fully subject to fundamental rights scrutiny under Part III. Any such law that violates Articles 14, 19, 21, etc. can be struck down.\n\n**Reason (R):** Correct. The Kesavananda Bharati case (1973) established the Basic Structure doctrine as a limit on Parliament's constituent power under Article 368 — Parliament cannot amend the Constitution to destroy its basic features.\n\n**Causal Link:** R does NOT explain A. The vulnerability of ordinary legislation to Part III challenge flows from Article 13(2) — which declares any law that takes away or abridges fundamental rights to be void. This is entirely independent of the Kesavananda judgment, which applies only to Article 368 constitutional amendments. R and A describe parallel but causally unconnected doctrines.\n\nValue Addition:\n• Article 13(2): The State shall not make any law which takes away or abridges the rights conferred by Part III — applies to ordinary legislation.\n• Article 13(4): Article 368 amendments are explicitly excluded from Article 13's definition of 'law' — hence the Basic Structure doctrine, not Article 13, applies to constitutional amendments.\n• This distinction explains why CAA 2019 is challenged under Article 14 (Part III), not under Basic Structure."
+    },
+    "hi": {
+      "display_text": "कथन (A): संविधान के उन प्रावधानों के तहत जो संसद को 'कानून द्वारा' कार्य करने का अधिकार देते हैं, सरल बहुमत के माध्यम से बनाए गए सामान्य कानून मौलिक अधिकारों के उल्लंघन के आधार पर संविधान के भाग III के तहत चुनौती के अधीन रहते हैं।\n\nकारण (R): केशवनंद भारती बनाम केरल राज्य (1973) में सर्वोच्च न्यायालय ने कहा कि संसद अनुच्छेद 368 के तहत अपनी संवैधानिक शक्ति का उपयोग करके संविधान की मूल संरचना को नष्ट नहीं कर सकता, जिससे संसद की सभी शक्तियों पर संवैधानिक समीक्षा लागू होती है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? संविधान के उन प्रावधानों के तहत बनाए गए कानून जो संसद को 'कानून द्वारा' कार्य करने का अधिकार देते हैं (जैसे अनुच्छेद 2, 3, 11, 169) सामान्य विधायिका होती है — इन्हें भाग III मौलिक अधिकारों के तहत चुनौती दी जा सकती है। यह सरल बहुमत प्रावधानों की अधिकार-आधारित चुनौती के प्रति संवेदनशीलता के बारे में सही कथन है। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? केसवनंद भारती निर्णय (1973) ने अनुच्छेद 368 के तहत संवैधानिक संशोधनों पर मूल संरचना सिद्धांत लागू किया। यह एक सही कथन है। R सही है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? R हमें बताता है कि अनुच्छेद 368 के संशोधन मूल संरचना का उल्लंघन करने पर अमान्य हो सकते हैं। लेकिन A सामान्य विधायिका (सरल बहुमत) के भाग III के तहत चुनौती योग्य होने के बारे में है — यह मूल संरचना सिद्धांत के कारण नहीं बल्कि इसलिए कि सामान्य विधायिका हमेशा भाग III अधिकारों के अधीन होती है। R, A की व्याख्या नहीं करता — सामान्य विधायिका के भाग III के तहत चुनौती योग्य होने का कारण केसवनंद निर्णय नहीं बल्कि सामान्य संवैधानिक पदानुक्रम है (भाग III सभी विधायिका पर लागू होता है)। R और A अलग-अलग विधिक सिद्धांतों का वर्णन करते हैं जो अलग-अलग विधि वर्गों पर लागू होते हैं।",
+        "A सही + R सही + R, A की व्याख्या नहीं करता → सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "यह जाल दो सही सिद्धांत प्रस्तुत करता है (सामान्य कानूनों के लिए भाग III चुनौती; अनुच्छेद 368 संशोधनों के लिए मूल संरचना) और छात्रों को कारण संबंध देखने के लिए प्रेरित करता है। कारण संबंध विपरीत दिशा में चलता है: अनुच्छेद 13 सामान्य कानून की संवेदनशीलता समझाता है; केसवनंद अनुच्छेद 368 की सीमाएँ समझाता है। इन्हें मिलाने से गलत उत्तर बनता है।",
+      "final_explanation": "दो अलग-अलग संवैधानिक समीक्षा तंत्र — मूल संरचना समीक्षा और भाग III मौलिक अधिकार समीक्षा — अक्सर एक साथ मिलाए जाते हैं।\n\n**कथन (A):** सही। सरल बहुमत प्रावधानों (जैसे अनुच्छेद 11 के तहत CAA 2019) के माध्यम से बनाए गए सामान्य कानून पूरी तरह से भाग III के तहत मौलिक अधिकारों की जांच के अधीन होते हैं। कोई भी ऐसा कानून जो अनुच्छेद 14, 19, 21 आदि का उल्लंघन करता है, उसे रद्द किया जा सकता है।\n\n**कारण (R):** सही। केसवनंद भारती मामला (1973) ने मूल संरचना सिद्धांत स्थापित किया जो संसद की अनुच्छेद 368 के तहत संवैधानिक संशोधन की शक्ति पर सीमा लगाता है — संसद संविधान की मूल विशेषताओं को नष्ट नहीं कर सकती।\n\n**कारण संबंध:** R, A की व्याख्या नहीं करता। सामान्य विधायिका की भाग III चुनौती की संवेदनशीलता अनुच्छेद 13(2) से आती है — जो कहता है कि कोई भी कानून जो मौलिक अधिकारों को छीनता या सीमित करता है, वह शून्य होगा। यह पूरी तरह से केसवनंद निर्णय से स्वतंत्र है, जो केवल अनुच्छेद 368 के संवैधानिक संशोधनों पर लागू होता है। R और A समानांतर लेकिन कारणात्मक रूप से असंबंधित सिद्धांतों का वर्णन करते हैं।\n\nमूल्य संवर्धन:\n• अनुच्छेद 13(2): राज्य ऐसा कोई कानून नहीं बनाएगा जो भाग III द्वारा प्रदत्त अधिकारों को छीनता या सीमित करता हो — यह सामान्य विधायिका पर लागू होता है।\n• अनुच्छेद 13(4): अनुच्छेद 368 के संशोधन स्पष्ट रूप से अनुच्छेद 13 की 'कानून' की परिभाषा से बाहर हैं — इसलिए मूल संरचना सिद्धांत लागू होता है, न कि अनुच्छेद 13।\n• यह भेद स्पष्ट करता है कि CAA 2019 को अनुच्छेद 14 (भाग III) के तहत चुनौती दी जाती है, न कि मूल संरचना के तहत।"
+    }
+  },
+  {
+    "uuid": "01d11a3a-72a8-46f0-bde2-1d3ed99c6274",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Citizenship Provisions — Articles 5–11 and Citizenship Act",
+        "Admission of New States and Formation of New States — Article 2"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Citizenship as exclusively Union subject — no state role",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A State Government issues an executive order requiring all residents seeking access to certain State welfare schemes to obtain a 'State Residence Certificate' valid only if the applicant can demonstrate continuous domicile in the State for fifteen years. The Order further provides that this certificate shall be the primary proof of eligibility, superseding citizenship documentation for intra-State benefit distribution. A constitutional challenge is mounted against this order.\n\nWhich of the following most accurately describes the constitutional position?\n\n(a) The State's action is within its competence because entry-level benefit allocation to residents is a State subject, and Parliament has not made any law specifically covering this area in relation to the State's scheme\n(b) The State may legislate on residence-based criteria since citizenship and domicile are treated as equivalent concepts under the Constitution's legislative distribution\n(c) The State Government's order is constitutionally impermissible to the extent it uses residence certification as a surrogate for citizenship determination, which is exclusively within Parliament's legislative competence under Article 11 read with Entry 17, List I\n(d) State Governments may impose domicile conditions for welfare schemes as long as they do not formally use the word 'citizenship,' and the fifteen-year criterion is reasonable and non-discriminatory",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) misleads students who know states have a role in some constitutional processes and assume citizenship regulation through 'residence criteria' is within state competence.",
+      "elimination_logic": [
+        "The scenario involves a State Government creating a residence-based certification affecting citizenship-adjacent rights. Citizenship is Entry 17, List I — exclusively Union subject.",
+        "States cannot legislate on citizenship or create quasi-citizenship distinctions through residence certificates that affect fundamental rights access.",
+        "Parliament alone, under Article 11 read with the Citizenship Act, can regulate citizenship — states have zero legislative competence.",
+        "The state legislation is ultra vires Entry 17, List I and conflicts with Parliament's plenary power under Article 11.",
+        "Select option (c): The State Government's action is constitutionally impermissible — citizenship regulation is exclusively within Parliament's competence under Article 11."
+      ],
+      "upsc_trap_explanation": "The conflation trap: 'residence criteria' sounds like ordinary state power over local policy, but the scenario's certification affects citizenship-adjacent rights — crossing into Entry 17, List I territory. This is the precise line students must identify.",
+      "final_explanation": "The federal distribution of legislative power over citizenship is absolute — there is no concurrent zone.\n\n**Applicable principle:** Article 11 grants Parliament plenary power to regulate citizenship through ordinary legislation. Entry 17, List I (Union List) places 'citizenship, naturalisation and aliens' exclusively within Parliament's legislative domain. States have no residual or concurrent competence.\n\n**Applying to the scenario:** The State Government's residence certificate scheme — if it creates distinctions tied to citizenship status or affects rights available only to citizens — encroaches on Parliament's exclusive domain. The scheme is ultra vires the state's legislative competence under Articles 246 and 11.\n\n• Option (a) — Incorrect: States cannot legislate on citizenship even if Parliament has not expressly occupied the field — it is an exclusively Union subject.\n• Option (b) — Incorrect: Parliament's silence does not create state competence on citizenship — unlike concurrent list subjects.\n• Option (c) — Correct: The state action is constitutionally impermissible. Only Parliament, through ordinary legislation under Article 11, can regulate citizenship-related determinations.\n• Option (d) — Incorrect: State domicile laws for local employment and education are valid, but linking such certification to citizenship status crosses into Union legislative territory.\n\nValue Addition:\n• 'Domicile' as a residence criterion for state-level benefits (employment, education seats) is permissible — but creating a 'citizenship surrogate' based on state residence is not.\n• Citizenship Act 1955 (as amended by CAA 2019) is the primary ordinary law on citizenship — Parliament's exclusive instrument.\n• Article 11's plenary grant covers acquisition, termination, and 'all other matters relating to citizenship.'"
+    },
+    "hi": {
+      "display_text": "एक राज्य सरकार एक कार्यकारी आदेश जारी करती है जिसमें सभी निवासियों को जो राज्य की कुछ कल्याण योजनाओं का लाभ लेना चाहते हैं, 'राज्य निवास प्रमाणपत्र' प्राप्त करना अनिवार्य किया गया है, जो तभी मान्य होगा जब आवेदक राज्य में लगातार पंद्रह वर्षों का निवास प्रमाणित कर सके। आदेश में यह भी कहा गया है कि यह प्रमाणपत्र पात्रता का प्राथमिक प्रमाण होगा, जो राज्य के भीतर लाभ वितरण के लिए नागरिकता दस्तावेजों से ऊपर होगा। इस आदेश के विरुद्ध एक संवैधानिक चुनौती दायर की गई है।\n\nनिम्नलिखित में से कौन-सा संवैधानिक स्थिति का सबसे सटीक वर्णन करता है?\n\n(a) राज्य की यह कार्रवाई उसके अधिकार क्षेत्र में है क्योंकि निवासियों को प्रारंभिक स्तर के लाभ आवंटन राज्य विषय है, और संसद ने इस क्षेत्र में राज्य की योजना से संबंधित कोई विशिष्ट कानून नहीं बनाया है\n(b) राज्य निवास-आधारित मानदंडों पर कानून बना सकता है क्योंकि संविधान के विधायी वितरण के तहत नागरिकता और निवास को समतुल्य माना जाता है\n(c) राज्य सरकार का आदेश संवैधानिक रूप से अस्वीकार्य है क्योंकि यह निवास प्रमाणन का उपयोग नागरिकता निर्धारण के विकल्प के रूप में करता है, जो अनुच्छेद 11 के साथ सूची I, प्रविष्टि 17 के तहत केवल संसद के विधायी अधिकार क्षेत्र में है\n(d) राज्य सरकारें कल्याण योजनाओं के लिए निवास शर्तें लगा सकती हैं जब तक वे औपचारिक रूप से 'नागरिकता' शब्द का उपयोग नहीं करतीं, और पंद्रह वर्ष का मानदंड उचित और गैर-भेदभावपूर्ण है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) उन छात्रों को भ्रमित करता है जो जानते हैं कि राज्यों की कुछ संवैधानिक प्रक्रियाओं में भूमिका होती है और यह मान लेते हैं कि 'निवास मानदंड' के माध्यम से नागरिकता का नियमन राज्य के अधिकार क्षेत्र में है।",
+      "elimination_logic": [
+        "परिदृश्य में एक राज्य सरकार द्वारा ऐसा निवास-आधारित प्रमाणपत्र बनाना शामिल है जो नागरिकता से संबंधित अधिकारों को प्रभावित करता है। नागरिकता सूची I, प्रविष्टि 17 में है — जो पूर्णतः संघीय विषय है।",
+        "राज्य नागरिकता पर कानून नहीं बना सकते और न ही ऐसे निवास प्रमाणपत्रों के माध्यम से अर्ध-नागरिकता भेद बना सकते हैं जो मौलिक अधिकारों की पहुँच को प्रभावित करते हैं।",
+        "सिर्फ संसद ही अनुच्छेद 11 के साथ नागरिकता अधिनियम के तहत नागरिकता का नियमन कर सकती है — राज्यों के पास कोई विधायी अधिकार नहीं है।",
+        "राज्य का यह विधान सूची I, प्रविष्टि 17 के विरुद्ध है और अनुच्छेद 11 के तहत संसद के पूर्ण विधायी अधिकार के साथ टकराव करता है।",
+        "विकल्प (c) चुनें: राज्य सरकार की यह कार्रवाई संवैधानिक रूप से अस्वीकार्य है — नागरिकता का नियमन केवल संसद के अधिकार क्षेत्र में है, अनुच्छेद 11 के तहत।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल: 'निवास मानदंड' सुनने में सामान्य राज्य नीति की शक्ति जैसा लगता है, लेकिन इस परिदृश्य का प्रमाणपत्र नागरिकता से संबंधित अधिकारों को प्रभावित करता है — जो सूची I, प्रविष्टि 17 के क्षेत्र में आता है। यह वह सटीक सीमा है जिसे छात्रों को पहचानना चाहिए।",
+      "final_explanation": "नागरिकता पर विधायी अधिकार का संघीय वितरण पूर्णतः स्पष्ट है — कोई समवर्ती क्षेत्र नहीं है।\n\n**लागू सिद्धांत:** अनुच्छेद 11 संसद को सामान्य विधायिका के माध्यम से नागरिकता का नियमन करने का पूर्ण अधिकार देता है। सूची I, प्रविष्टि 17 (संघ सूची) में 'नागरिकता, प्राकृतिककरण और विदेशी' को केवल संसद के विधायी क्षेत्र में रखा गया है। राज्यों के पास कोई शेष या समवर्ती अधिकार नहीं है।\n\n**परिदृश्य पर लागू:** राज्य सरकार की निवास प्रमाणपत्र योजना — यदि यह नागरिकता स्थिति से जुड़ी भेदभाव या केवल नागरिकों को उपलब्ध अधिकारों को प्रभावित करती है — तो यह संसद के विशेष क्षेत्र में अतिक्रमण है। यह योजना अनुच्छेद 246 और 11 के तहत राज्य की विधायी क्षमता के परे है।\n\n• विकल्प (a) — गलत: राज्य नागरिकता पर कानून नहीं बना सकते, भले ही संसद ने स्पष्ट रूप से इस क्षेत्र को अधिग्रहित न किया हो — यह पूर्णतः संघीय विषय है।\n• विकल्प (b) — गलत: संसद की चुप्पी राज्य को नागरिकता पर विधायी अधिकार नहीं देती — जैसा कि समवर्ती सूची के विषयों में होता है।\n• विकल्प (c) — सही: राज्य की यह कार्रवाई संवैधानिक रूप से अस्वीकार्य है। केवल संसद ही अनुच्छेद 11 के तहत सामान्य विधायिका के माध्यम से नागरिकता से संबंधित निर्धारण कर सकती है।\n• विकल्प (d) — गलत: स्थानीय रोजगार और शिक्षा के लिए राज्य के निवास नियम वैध हैं, लेकिन ऐसे प्रमाणपत्र को नागरिकता स्थिति से जोड़ना संघीय विधायी क्षेत्र में आता है।\n\nमूल्य संवर्धन:\n• 'डोमिसाइल' को राज्य स्तर के लाभों (रोजगार, शिक्षा सीटें) के लिए निवास मानदंड के रूप में स्वीकार किया जाता है — लेकिन राज्य निवास के आधार पर 'नागरिकता का विकल्प' बनाना स्वीकार्य नहीं है।\n• नागरिकता अधिनियम 1955 (CAA 2019 द्वारा संशोधित) नागरिकता पर मुख्य सामान्य कानून है — संसद का विशेष उपकरण।\n• अनुच्छेद 11 का पूर्ण अधिकार अधिग्रहण, समाप्ति और 'नागरिकता से संबंधित सभी अन्य मामलों' को कवर करता है।"
+    }
+  },
+  {
+    "uuid": "063bf973-29c3-42b5-b8c2-05c1c6c989ea",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Amendment Procedure",
+      "sub_topic": "Simple majority amendments",
+      "concepts_used": [
+        "Definition and Constitutional Basis of Simple Majority",
+        "Article 368 Exclusion: What Falls Outside Its Scope",
+        "Acquisition of Territory — Article 1 and Constitutional Practice"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 4 — laws under Arts 2 and 3 not deemed amendments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the constitutional status of laws enacted under Articles 2 and 3:\n\n1. Article 4 of the Constitution provides that laws enacted under Articles 2 and 3 shall be deemed to be amendments of the Constitution for the purposes of Article 368, since they alter the First and Fourth Schedules.\n2. A law made under Article 3 to form a new state out of an existing state and to alter the boundaries of another state can be passed in a single enactment by simple majority, without separate Bills for each affected state.\n3. Simple majority amendments that alter the text of constitutional schedules such as the First and Fourth Schedules are vulnerable to challenge as unconstitutional legislation under Article 13 in the same manner as any other ordinary law.\n\nWhich of the above statements is/are NOT correct?\n(a) 1 only\n(b) 3 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 4 of the Constitution provides that laws enacted under Articles 2 and 3 shall be deemed to be amendments of the Constitution for the purposes of Article 368, since they alter the First and Fourth Schedules.",
+          "verdict": "Incorrect",
+          "reason": "Article 4 explicitly states the opposite — laws under Articles 2 and 3 that amend the First and Fourth Schedules shall NOT be deemed to be amendments for the purposes of Article 368. This is the provision's central purpose."
+        },
+        {
+          "statement": "A law made under Article 3 to form a new state out of an existing state and to alter the boundaries of another state can be passed in a single enactment by simple majority, without separate Bills for each affected state.",
+          "verdict": "Correct",
+          "reason": "There is no constitutional requirement under Article 3 to introduce separate Bills for each affected state. A single Bill addressing multiple states' reorganisation is constitutionally permissible — as exemplified by the States Reorganisation Act 1956, which addressed multiple states simultaneously."
+        },
+        {
+          "statement": "Simple majority amendments that alter the text of constitutional schedules such as the First and Fourth Schedules are vulnerable to challenge as unconstitutional legislation under Article 13 in the same manner as any other ordinary law.",
+          "verdict": "Incorrect",
+          "reason": "Laws under Articles 2 and 3 (even when altering the First and Fourth Schedules) are not treated as 'ordinary legislation' subject to standard Article 13 review in the same way — they are exercising constituent legislative power granted by the Constitution itself. However, they can still be challenged under Part III if they violate fundamental rights. This statement is incorrect as stated because it conflates Article 13 review for ordinary legislation with the specific constitutional status of Article 2/3 laws."
+        }
+      ],
+      "strong_distractor": "b — Option (b) misleads students who know 'only one statement is incorrect' and try to find a single incorrect statement — but this question has two incorrect statements (1 and 3).",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 4 says laws under Articles 2 and 3 are NOT deemed Article 368 amendments — Statement 1 asserts the opposite. Statement 1 IS incorrect.",
+        "Evaluate Statement 2: No constitutional requirement for separate Bills per state under Article 3 — single Bills covering multiple states are valid. Statement 2 is correct.",
+        "Evaluate Statement 3: Article 2/3 laws have a special constitutional status — they are not ordinary legislation in the Article 13 sense even though they are 'simple majority.' Statement 3's equation with 'any other ordinary law' under Article 13 is an oversimplification that misrepresents their constitutional status. Statement 3 IS incorrect.",
+        "Statements 1 and 3 are incorrect — select option (c) if that option is '1 and 3 only.'"
+      ],
+      "upsc_trap_explanation": "Statement 1 directly inverts Article 4's text — the most straightforward trap for students who have not memorised Article 4 precisely. Statement 3 is a subtler trap: Article 2/3 laws are constitutional legislation (not ordinary legislation in the pure sense) — their status under Article 13 is not identical to regular statutes. Students who broadly know 'constitutional laws can be challenged' may miss this nuance.",
+      "final_explanation": "Article 4 is one of the Constitution's self-referential provisions — it defines how laws enacted under specific articles are to be classified for amendment purposes.\n\n• Statement 1 — Incorrect: Article 4 explicitly provides that laws made under Articles 2 and 3 that amend the First and Fourth Schedules shall NOT be deemed to be constitutional amendments under Article 368. Statement 1 inverts this provision.\n• Statement 2 — Correct: Article 3 does not require separate legislation for each affected state. The States Reorganisation Act 1956 simultaneously reorganised multiple states in a single enactment — a historically confirmed practice.\n• Statement 3 — Incorrect: Laws under Articles 2 and 3 are not 'ordinary law' in the same sense as routine legislation. They are exercising Parliament's constituent legislative power delegated by the Constitution. While they can be reviewed for fundamental rights violations, classifying them as subject to Article 13 review 'in the same manner as any other ordinary law' overstates their vulnerability and misrepresents their constitutional status.\n\nValue Addition:\n• Article 4 is significant because it prevents each state reorganisation from requiring Article 368 procedure — making India's federal map highly flexible.\n• The First Schedule lists States and UTs; the Fourth Schedule allocates Rajya Sabha seats by state — both are affected by reorganisation.\n• The States Reorganisation Commission (1953–55) under Justice Fazl Ali laid the groundwork for linguistic reorganisation."
+    },
+    "hi": {
+      "display_text": "अनुच्छेद 2 और 3 के तहत बनाए गए कानूनों की संवैधानिक स्थिति के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. संविधान का अनुच्छेद 4 यह प्रावधान करता है कि अनुच्छेद 2 और 3 के तहत बनाए गए कानूनों को अनुच्छेद 368 के प्रयोजनों के लिए संविधान में संशोधन माना जाएगा क्योंकि वे प्रथम और चतुर्थ अनुसूचियों को बदलते हैं।\n2. अनुच्छेद 3 के तहत एक नया राज्य बनाने और किसी अन्य राज्य की सीमाओं को बदलने के लिए बनाया गया कानून सरल बहुमत से एक ही अधिनियम में पारित किया जा सकता है, प्रत्येक प्रभावित राज्य के लिए अलग-अलग विधेयक आवश्यक नहीं हैं।\n3. सरल बहुमत से किए गए संशोधन जो संविधान की प्रथम और चतुर्थ अनुसूचियों जैसे अनुसूचियों के पाठ को बदलते हैं, अनुच्छेद 13 के तहत असंवैधानिक कानून के रूप में चुनौती के लिए संवेदनशील होते हैं, ठीक वैसे ही जैसे कोई अन्य सामान्य कानून।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n(a) केवल 1\n(b) केवल 3\n(c) केवल 1 और 3\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संविधान का अनुच्छेद 4 यह प्रावधान करता है कि अनुच्छेद 2 और 3 के तहत बनाए गए कानूनों को अनुच्छेद 368 के प्रयोजनों के लिए संविधान में संशोधन माना जाएगा क्योंकि वे प्रथम और चतुर्थ अनुसूचियों को बदलते हैं।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 4 स्पष्ट रूप से इसके विपरीत कहता है — अनुच्छेद 2 और 3 के तहत बनाए गए ऐसे कानून जो प्रथम और चतुर्थ अनुसूचियों को संशोधित करते हैं, उन्हें अनुच्छेद 368 के प्रयोजनों के लिए संशोधन नहीं माना जाएगा। यह प्रावधान का केंद्रीय उद्देश्य है।"
+        },
+        {
+          "statement": "अनुच्छेद 3 के तहत एक नया राज्य बनाने और किसी अन्य राज्य की सीमाओं को बदलने के लिए बनाया गया कानून सरल बहुमत से एक ही अधिनियम में पारित किया जा सकता है, प्रत्येक प्रभावित राज्य के लिए अलग-अलग विधेयक आवश्यक नहीं हैं।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 3 के तहत प्रत्येक प्रभावित राज्य के लिए अलग-अलग विधेयक पेश करने की कोई संवैधानिक आवश्यकता नहीं है। एक ही विधेयक में कई राज्यों के पुनर्गठन को संबोधित करना संवैधानिक रूप से मान्य है — जैसा कि 1956 के राज्य पुनर्गठन अधिनियम में देखा गया, जिसने एक साथ कई राज्यों को संबोधित किया।"
+        },
+        {
+          "statement": "सरल बहुमत से किए गए संशोधन जो संविधान की प्रथम और चतुर्थ अनुसूचियों जैसे अनुसूचियों के पाठ को बदलते हैं, अनुच्छेद 13 के तहत असंवैधानिक कानून के रूप में चुनौती के लिए संवेदनशील होते हैं, ठीक वैसे ही जैसे कोई अन्य सामान्य कानून।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 2 और 3 के तहत बनाए गए कानून (यहां तक कि जब वे प्रथम और चतुर्थ अनुसूचियों को बदलते हैं) 'सामान्य कानून' के रूप में अनुच्छेद 13 की मानक समीक्षा के अधीन नहीं होते — वे संविधान द्वारा प्रदत्त संवैधानिक विधायी शक्ति का प्रयोग कर रहे होते हैं। हालांकि, यदि वे मौलिक अधिकारों का उल्लंघन करते हैं तो उन्हें भाग III के तहत चुनौती दी जा सकती है। यह कथन गलत है क्योंकि यह सामान्य कानून के लिए अनुच्छेद 13 की समीक्षा को अनुच्छेद 2/3 के कानूनों की विशिष्ट संवैधानिक स्थिति के साथ भ्रमित करता है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) उन छात्रों को भ्रमित करता है जो जानते हैं कि 'केवल एक कथन गलत है' और एक ही गलत कथन खोजने की कोशिश करते हैं — लेकिन इस प्रश्न में दो कथन गलत हैं (1 और 3)।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 4 कहता है कि अनुच्छेद 2 और 3 के तहत बनाए गए कानून अनुच्छेद 368 के संशोधन नहीं माने जाएंगे — कथन 1 इसका उल्टा कहता है। अतः कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: अनुच्छेद 3 के तहत प्रत्येक प्रभावित राज्य के लिए अलग-अलग विधेयक आवश्यक नहीं है — एक ही विधेयक में कई राज्यों को शामिल करना वैध है। अतः कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: अनुच्छेद 2/3 के कानूनों की संवैधानिक स्थिति विशेष है — वे अनुच्छेद 13 के अर्थ में सामान्य कानून नहीं हैं, भले ही वे 'सरल बहुमत' से बने हों। कथन 3 का सामान्य कानून के समान अनुच्छेद 13 समीक्षा से तुलना करना उनकी संवैधानिक स्थिति को गलत दर्शाता है। अतः कथन 3 गलत है।",
+        "कथन 1 और 3 गलत हैं — यदि विकल्प (c) 'केवल 1 और 3' है तो उसे चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 सीधे अनुच्छेद 4 के पाठ को उलट देता है — यह उन छात्रों के लिए सबसे स्पष्ट जाल है जिन्होंने अनुच्छेद 4 को ठीक से याद नहीं किया है। कथन 3 एक सूक्ष्म जाल है: अनुच्छेद 2/3 के कानून संवैधानिक कानून हैं (सामान्य कानून नहीं) — उनका अनुच्छेद 13 के तहत स्थिति नियमित कानूनों से अलग है। जो छात्र सामान्य रूप से जानते हैं कि 'संवैधानिक कानूनों को चुनौती दी जा सकती है' वे इस सूक्ष्मता को मिस कर सकते हैं।",
+      "final_explanation": "अनुच्छेद 4 संविधान के आत्म-संदर्भित प्रावधानों में से एक है — यह परिभाषित करता है कि विशिष्ट अनुच्छेदों के तहत बनाए गए कानूनों को संशोधन के प्रयोजनों के लिए कैसे वर्गीकृत किया जाएगा।\n\n• कथन 1 — गलत: अनुच्छेद 4 स्पष्ट रूप से कहता है कि अनुच्छेद 2 और 3 के तहत बनाए गए ऐसे कानून जो प्रथम और चतुर्थ अनुसूचियों को संशोधित करते हैं, उन्हें अनुच्छेद 368 के तहत संवैधानिक संशोधन नहीं माना जाएगा। कथन 1 इस प्रावधान को उलट देता है।\n• कथन 2 — सही: अनुच्छेद 3 प्रत्येक प्रभावित राज्य के लिए अलग-अलग कानून की आवश्यकता नहीं करता। 1956 का राज्य पुनर्गठन अधिनियम एक ही अधिनियम में कई राज्यों के पुनर्गठन को संबोधित करता है — यह ऐतिहासिक रूप से स्थापित प्रथा है।\n• कथन 3 — गलत: अनुच्छेद 2 और 3 के तहत बनाए गए कानून सामान्य कानून के समान नहीं हैं। वे संसद की संवैधानिक विधायी शक्ति का प्रयोग करते हैं। जबकि उन्हें मौलिक अधिकारों के उल्लंघन के लिए समीक्षा की जा सकती है, उन्हें अनुच्छेद 13 के तहत 'किसी अन्य सामान्य कानून की तरह' समीक्षा के अधीन मानना उनकी संवैधानिक स्थिति को गलत दर्शाता है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 4 महत्वपूर्ण है क्योंकि यह प्रत्येक राज्य पुनर्गठन को अनुच्छेद 368 की प्रक्रिया से मुक्त करता है — जिससे भारत का संघीय मानचित्र अत्यंत लचीला बनता है।\n• प्रथम अनुसूची में राज्य और केंद्र शासित प्रदेश सूचीबद्ध हैं; चतुर्थ अनुसूची में राज्यवार राज्यसभा सीटें आवंटित हैं — दोनों पुनर्गठन से प्रभावित होते हैं।\n• न्यायमूर्ति फजल अली के नेतृत्व में राज्य पुनर्गठन आयोग (1953–55) ने भाषाई पुनर्गठन की नींव रखी।"
+    }
+  }
+]

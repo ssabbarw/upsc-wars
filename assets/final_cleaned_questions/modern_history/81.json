@@ -1,0 +1,1375 @@
+[
+  {
+    "uuid": "831c9d1d-6a04-4171-a472-0d538a465097",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Doctrine of Lapse: Scope, Application, and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Doctrine of Lapse — annexed states sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following gives the correct sequence in which states were annexed under the Doctrine of Lapse?\n\n(a) Jhansi (1853) → Satara (1848) → Nagpur (1854)\n(b) Satara (1848) → Jhansi (1853) → Nagpur (1854)\n(c) Satara (1848) → Nagpur (1854) → Jhansi (1853)\n(d) Nagpur (1854) → Jhansi (1853) → Satara (1848)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because students who memorise Jhansi as a famous annexation often misplace it at 1848, confusing it with Satara.",
+      "elimination_logic": [
+        "Recall that Satara was the first state annexed under the Doctrine of Lapse in 1848 — eliminate any option placing a different state first.",
+        "Recall Nagpur was annexed in 1854 and Jhansi in 1853 — eliminate options that reverse this sequence.",
+        "The correct ascending order is Satara (1848) → Jhansi (1853) → Nagpur (1854), which matches option b."
+      ],
+      "upsc_trap_explanation": "Students often associate Jhansi most vividly with the Doctrine of Lapse because of Rani Lakshmibai's prominence in the revolt narrative. This causes them to mentally place Jhansi as the first or most 'defining' annexation, overlooking that Satara (1848) preceded it by five years. Option c exploits this by offering a plausible but incorrect sequence. Precise knowledge of all three dates is required to get this right.",
+      "final_explanation": "Lord Dalhousie's Doctrine of Lapse held that a princely state with no natural male heir would be annexed by the British rather than allowing adoption. The policy was applied in a specific sequence that UPSC tests precisely.\n\n• Option (a): Places Jhansi before Satara — incorrect. Satara (1848) was the first application of the doctrine.\n• Option (b): Satara (1848) → Jhansi (1853) → Nagpur (1854) — correct chronological sequence.\n• Option (c): Places Nagpur before Jhansi — incorrect. Jhansi was annexed in 1853, Nagpur in 1854.\n• Option (d): Reverses all three — incorrect.\n\nValue Addition:\n• Hyderabad and Mysore were NOT annexed — they were 'subordinate' states with existing treaty relationships that exempted them.\n• Nana Sahib's pension was denied under the same doctrine — his resentment directly contributed to the revolt.\n• The doctrine was formally abandoned after 1857 under Queen's Proclamation policy of non-annexation."
+    },
+    "hi": {
+      "display_text": "डोक्ट्रिन ऑफ लैप्स के तहत राज्यों के अधिग्रहण का सही क्रम निम्नलिखित में से कौन-सा है?\n\n(a) झांसी (1853) → सतारा (1848) → नागपुर (1854)\n(b) सतारा (1848) → झांसी (1853) → नागपुर (1854)\n(c) सतारा (1848) → नागपुर (1854) → झांसी (1853)\n(d) नागपुर (1854) → झांसी (1853) → सतारा (1848)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि जो छात्र झांसी को एक प्रसिद्ध अधिग्रहण के रूप में याद करते हैं, वे इसे 1848 में रख देते हैं, जिससे इसे सतारा के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "ध्यान रखें कि सतारा 1848 में डोक्ट्रिन ऑफ लैप्स के तहत पहला अधिग्रहित राज्य था — इसलिए कोई भी विकल्प जो किसी अन्य राज्य को पहले स्थान पर रखता है, उसे हटा दें।",
+        "ध्यान रखें कि नागपुर 1854 में और झांसी 1853 में अधिग्रहित हुआ था — जो विकल्प इस क्रम को उलटते हैं, उन्हें हटा दें।",
+        "सही आरोही क्रम है सतारा (1848) → झांसी (1853) → नागपुर (1854), जो विकल्प b से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर झांसी को डोक्ट्रिन ऑफ लैप्स के साथ सबसे अधिक जोड़ते हैं क्योंकि रानी लक्ष्मीबाई का विद्रोह में प्रमुख स्थान है। इससे वे मानसिक रूप से झांसी को पहला या सबसे 'परिभाषित' अधिग्रहण मान लेते हैं, जबकि सतारा (1848) इससे पाँच वर्ष पहले था। विकल्प c इस भ्रम का लाभ उठाता है और एक संभावित लेकिन गलत क्रम प्रस्तुत करता है। सही उत्तर के लिए तीनों तिथियों का सटीक ज्ञान आवश्यक है।",
+      "final_explanation": "लॉर्ड डलहौजी के डोक्ट्रिन ऑफ लैप्स के अनुसार, यदि किसी रियासत का कोई प्राकृतिक पुरुष वारिस नहीं होता तो उसे ब्रिटिश सरकार द्वारा अपनाने की अनुमति दिए बिना अधिग्रहित कर लिया जाता था। यह नीति एक विशिष्ट क्रम में लागू की गई थी, जिसे UPSC सटीक रूप से परखता है।\n\n• विकल्प (a): झांसी को सतारा से पहले रखता है — गलत। सतारा (1848) इस सिद्धांत का पहला प्रयोग था।\n• विकल्प (b): सतारा (1848) → झांसी (1853) → नागपुर (1854) — सही कालानुक्रमिक क्रम।\n• विकल्प (c): नागपुर को झांसी से पहले रखता है — गलत। झांसी 1853 में अधिग्रहित हुआ, नागपुर 1854 में।\n• विकल्प (d): तीनों का क्रम उलट देता है — गलत।\n\nमूल्यवर्धन:\n• हैदराबाद और मैसूर अधिग्रहित नहीं हुए — वे 'अधीनस्थ' राज्य थे जिनके साथ मौजूदा संधि संबंध थे जो उन्हें छूट देते थे।\n• नाना साहिब की पेंशन इसी सिद्धांत के तहत रोकी गई — उनकी नाराजगी ने विद्रोह में सीधे योगदान दिया।\n• यह सिद्धांत 1857 के बाद रानी की घोषणा के तहत औपचारिक रूप से त्याग दिया गया।"
+    }
+  },
+  {
+    "uuid": "41a6e3bc-5315-4e42-aab5-afd5247b937e",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Annexation of Awadh (1856): Political, Economic, and Psychological Impact",
+        "Doctrine of Lapse: Scope, Application, and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Awadh annexation — grounds distinct from Doctrine of Lapse",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the annexation of Awadh in 1856:\n\n1. The annexation of Awadh in 1856 was carried out under the Doctrine of Lapse on the grounds that the ruling family had no natural male heir.\n2. Awadh served as the principal recruiting ground for the Bengal Army, creating a direct link between its annexation and sepoy disaffection.\n3. The Summary Settlement of 1856 in Awadh dispossessed many taluqdars, turning potential allies into active opponents of British rule.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The annexation of Awadh in 1856 was carried out under the Doctrine of Lapse on the grounds that the ruling family had no natural male heir.",
+          "verdict": "Incorrect",
+          "reason": "Awadh was annexed on grounds of alleged 'misgovernance,' not the Doctrine of Lapse. The Nawab Wajid Ali Shah did have heirs; Dalhousie used a separate justification."
+        },
+        {
+          "statement": "Awadh served as the principal recruiting ground for the Bengal Army, creating a direct link between its annexation and sepoy disaffection.",
+          "verdict": "Correct",
+          "reason": "A large proportion of Bengal Army sepoys were recruited from Awadh's high-caste Hindu population; annexation of their home region created intense personal and economic grievance."
+        },
+        {
+          "statement": "The Summary Settlement of 1856 in Awadh dispossessed many taluqdars, turning potential allies into active opponents of British rule.",
+          "verdict": "Correct",
+          "reason": "Outram's Summary Settlement stripped taluqdars of lands they had held under the Nawabi system, pushing them to support the revolt."
+        }
+      ],
+      "strong_distractor": "d — Students who know statements 2 and 3 are correct may still include statement 1 if they conflate all annexations under a single 'Doctrine of Lapse' umbrella, leading them to choose option d (all three).",
+      "elimination_logic": [
+        "Statement 1 can be eliminated: Awadh was not annexed under the Doctrine of Lapse — it had a ruling family with heirs; misgovernance was the cited ground.",
+        "Statement 2 is correct: Bengal Army's Awadhi recruitment base is a well-established historical fact.",
+        "Statement 3 is correct: The Summary Settlement's dispossession of taluqdars is documented as a direct cause of their participation in the revolt.",
+        "Only statements 2 and 3 are correct — this matches option c."
+      ],
+      "upsc_trap_explanation": "The trap here is the conflation of all British annexation policies into a single umbrella. Students who know the Doctrine of Lapse well tend to apply it to every annexation, including Awadh. In reality, Dalhousie used the quite different charge of 'misgovernance' for Awadh because the Nawab had heirs and could not be lapsed. A student who marks statement 1 as correct has fallen into this conflation trap.",
+      "final_explanation": "The annexation of Awadh in 1856 was one of the most consequential political acts preceding the revolt, but its legal and political grounds are frequently confused with the Doctrine of Lapse.\n\n• Statement 1 — Incorrect: Awadh was annexed on grounds of alleged misgovernance, not the Doctrine of Lapse. Wajid Ali Shah had legitimate heirs. The Doctrine of Lapse applied only where there was no natural male heir.\n• Statement 2 — Correct: Awadh was the primary recruiting ground for Bengal Army sepoys, who were predominantly high-caste Hindus from that region. The annexation of their homeland created deep personal grievance.\n• Statement 3 — Correct: The Summary Settlement stripped taluqdars of revenue rights, converting a class that might have supported the British into active rebels.\n\nValue Addition:\n• Wajid Ali Shah was deported to Calcutta; his son Birjis Qadr was proclaimed ruler by rebels during the revolt.\n• The psychological wound of Awadh's annexation extended beyond economics — Lucknow was a centre of Indo-Islamic culture.\n• Post-1857, taluqdars were restored their lands as the British recalibrated their agrarian policy."
+    },
+    "hi": {
+      "display_text": "1856 में अवध के अधिग्रहण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 1856 में अवध का अधिग्रहण शासन करने वाले परिवार के प्राकृतिक पुरुष वारिस न होने के आधार पर डोक्ट्रिन ऑफ लैप्स के तहत किया गया था।\n2. अवध बंगाल सेना के लिए मुख्य भर्ती क्षेत्र था, जिससे इसके अधिग्रहण और सिपाही असंतोष के बीच सीधा संबंध बनता है।\n3. 1856 में अवध की समरी सेटलमेंट ने कई taluqdars को उनकी जमीनों से वंचित कर दिया, जिससे संभावित सहयोगी ब्रिटिश शासन के सक्रिय विरोधी बन गए।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1856 में अवध का अधिग्रहण शासन करने वाले परिवार के प्राकृतिक पुरुष वारिस न होने के आधार पर डोक्ट्रिन ऑफ लैप्स के तहत किया गया था।",
+          "verdict": "गलत",
+          "reason": "अवध को कथित 'दुशासन' के आधार पर अधिग्रहित किया गया था, न कि डोक्ट्रिन ऑफ लैप्स के तहत। नवाब वाजिद अली शाह के वारिस थे; डलहौजी ने अलग औचित्य प्रस्तुत किया।"
+        },
+        {
+          "statement": "अवध बंगाल सेना के लिए मुख्य भर्ती क्षेत्र था, जिससे इसके अधिग्रहण और सिपाही असंतोष के बीच सीधा संबंध बनता है।",
+          "verdict": "सही",
+          "reason": "बंगाल सेना के अधिकांश सिपाही अवध के उच्च जाति के हिंदू समुदाय से भर्ती होते थे; उनके गृह क्षेत्र का अधिग्रहण व्यक्तिगत और आर्थिक रूप से गहरा आघात था।"
+        },
+        {
+          "statement": "1856 में अवध की समरी सेटलमेंट ने कई taluqdars को उनकी जमीनों से वंचित कर दिया, जिससे संभावित सहयोगी ब्रिटिश शासन के सक्रिय विरोधी बन गए।",
+          "verdict": "सही",
+          "reason": "आउट्राम की समरी सेटलमेंट ने नवाबी प्रणाली के तहत taluqdars की जमीनें छीन लीं, जिससे वे विद्रोह में शामिल हो गए।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि कथन 2 और 3 सही हैं, वे कथन 1 को भी शामिल कर सकते हैं यदि वे सभी अधिग्रहणों को एक ही 'डोक्ट्रिन ऑफ लैप्स' के अंतर्गत समझ लेते हैं, जिससे वे विकल्प d (सभी तीन) चुन लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 को निरस्त करें — अवध डोक्ट्रिन ऑफ लैप्स के तहत अधिग्रहित नहीं हुआ था — इसका शासन परिवार वारिसों के साथ था; कथित दुशासन आधार था।",
+        "कथन 2 सही है — बंगाल सेना की अवध से भर्ती एक स्थापित ऐतिहासिक तथ्य है।",
+        "कथन 3 सही है — समरी सेटलमेंट द्वारा taluqdars की जमीनें छीनना उनके विद्रोह में शामिल होने का सीधा कारण था।",
+        "केवल कथन 2 और 3 सही हैं — यह विकल्प c से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल सभी ब्रिटिश अधिग्रहण नीतियों को एक ही छत्र के तहत मिलाने का है। जो छात्र डोक्ट्रिन ऑफ लैप्स को अच्छी तरह जानते हैं, वे इसे हर अधिग्रहण पर लागू कर देते हैं, जिसमें अवध भी शामिल है। वास्तव में, डलहौजी ने अवध के लिए 'दुशासन' का अलग आरोप लगाया क्योंकि नवाब के वारिस थे और इसे डोक्ट्रिन ऑफ लैप्स के तहत नहीं रखा जा सकता था। जो छात्र कथन 1 को सही मानते हैं, वे इस भ्रम में फंसे हैं।",
+      "final_explanation": "1856 में अवध का अधिग्रहण 1857 के विद्रोह से पहले के सबसे महत्वपूर्ण राजनीतिक कार्यों में से एक था, लेकिन इसके कानूनी और राजनीतिक आधार अक्सर डोक्ट्रिन ऑफ लैप्स के साथ भ्रमित हो जाते हैं।\n\n• कथन 1 — गलत: अवध को डोक्ट्रिन ऑफ लैप्स के तहत नहीं बल्कि कथित दुशासन के आधार पर अधिग्रहित किया गया था। वाजिद अली शाह के वैध वारिस थे। डोक्ट्रिन ऑफ लैप्स केवल उन मामलों में लागू होती थी जहां कोई प्राकृतिक पुरुष वारिस न हो।\n• कथन 2 — सही: अवध बंगाल सेना के सिपाहियों के लिए मुख्य भर्ती क्षेत्र था, जो मुख्यतः उच्च जाति के हिंदू थे। उनके गृह क्षेत्र का अधिग्रहण गहरा व्यक्तिगत आघात था।\n• कथन 3 — सही: समरी सेटलमेंट ने taluqdars के राजस्व अधिकार छीन लिए, जिससे वे ब्रिटिशों के संभावित समर्थक से सक्रिय विद्रोही बन गए।\n\nमूल्यवर्धन:\n• वाजिद अली शाह को कोलकाता भेज दिया गया; उनके पुत्र बिरजिश कादर को विद्रोह के दौरान विद्रोहियों ने शासक घोषित किया।\n• अवध के अधिग्रहण का मनोवैज्ञानिक आघात केवल आर्थिक नहीं था — लखनऊ हिंदू-इस्लामी संस्कृति का केंद्र था।\n• 1857 के बाद, taluqdars को उनकी जमीनें वापस कर दी गईं क्योंकि ब्रिटिशों ने अपनी कृषि नीति में बदलाव किया।"
+    }
+  },
+  {
+    "uuid": "3870b8fb-b9e4-466f-9eb2-eb1adb81ba38",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Military Grievances: Service Conditions, Promotions, and Racial Discrimination",
+        "Bengal Army's Composition and Caste-Based Grievances"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Military grievances — pay, promotion, bhatta, and Vellore precedent",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about military grievances that contributed to the Revolt of 1857:\n\n1. The abolition of foreign service allowance (bhatta) was linked to the annexation of Sindh and Punjab, which expanded British territory and made previously 'foreign' postings domestic.\n2. The General Service Enlistment Act of 1856 required all newly enlisted sepoys to serve overseas if ordered, which was considered a violation of high-caste Hindu taboos against crossing the sea.\n3. Indian sepoys could be promoted to the rank of Colonel in the Bengal Army, provided they demonstrated distinguished service in at least two campaigns.\n4. The Vellore Mutiny of 1806 was triggered by grievances similar to those of 1857, including objections to new uniform regulations perceived as religiously offensive.\n\nHow many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The abolition of foreign service allowance (bhatta) was linked to the annexation of Sindh and Punjab, which expanded British territory and made previously 'foreign' postings domestic.",
+          "verdict": "Correct",
+          "reason": "Once Sindh and Punjab were annexed, what had been foreign territory became British India, eliminating the legal basis for the bhatta payment and reducing sepoy income."
+        },
+        {
+          "statement": "The General Service Enlistment Act of 1856 required all newly enlisted sepoys to serve overseas if ordered, which was considered a violation of high-caste Hindu taboos against crossing the sea.",
+          "verdict": "Correct",
+          "reason": "Sea crossing (kala pani) was considered ritually polluting by high-caste Hindus who formed the bulk of the Bengal Army, making this act a direct affront to religious sentiment."
+        },
+        {
+          "statement": "Indian sepoys could be promoted to the rank of Colonel in the Bengal Army, provided they demonstrated distinguished service in at least two campaigns.",
+          "verdict": "Incorrect",
+          "reason": "Indian sepoys faced a strict glass ceiling — the highest rank achievable was Subedar. The rank of Colonel was exclusively reserved for British officers regardless of service record."
+        },
+        {
+          "statement": "The Vellore Mutiny of 1806 was triggered by grievances similar to those of 1857, including objections to new uniform regulations perceived as religiously offensive.",
+          "verdict": "Correct",
+          "reason": "The Vellore Mutiny was provoked by new regulations requiring sepoys to wear a round hat and shave their beards/moustaches — perceived as Christian cultural imposition, a clear precedent to 1857."
+        }
+      ],
+      "strong_distractor": "c — Students may count only statements 1 and 2 as correct, missing statement 4 about Vellore (which is often conflated with 1857 rather than recognised as a valid, correct separate statement), leading to 'Only two' instead of 'Only three'.",
+      "elimination_logic": [
+        "Statement 1 is correct: bhatta abolition following Sindh and Punjab annexation is a documented economic grievance.",
+        "Statement 2 is correct: the General Service Enlistment Act (1856) and kala pani taboo is a standard fact.",
+        "Statement 3 is incorrect: the promotion ceiling was Subedar — Colonel rank was not accessible to Indian soldiers.",
+        "Statement 4 is correct: Vellore Mutiny (1806) had identical religious-uniform grievances — this is a genuine parallel.",
+        "Three statements (1, 2, 4) are correct — option b."
+      ],
+      "upsc_trap_explanation": "Statement 3 is the primary trap. UPSC candidates aware that racial discrimination existed often assume the promotion ceiling was somewhat higher than Subedar — perhaps a Viceroy's Commissioned Officer rank — and mark statement 3 as partially correct. The statement is wholly false: no Indian officer could attain the rank of Colonel. The Vellore statement (4) is designed as a secondary trap, testing whether students dismiss it as an anachronism rather than recognising it as a factually correct statement about a real precedent.",
+      "final_explanation": "Military grievances operated on multiple levels — economic (bhatta), religious (overseas service), social (racial promotion ceiling), and historical (Vellore precedent).\n\n• Statement 1 — Correct: Annexation of Sindh (1843) and Punjab (1849) eliminated the 'foreign service' basis for bhatta, cutting sepoy income.\n• Statement 2 — Correct: The 1856 Act mandated potential overseas deployment, violating the kala pani taboo of high-caste Bengal Army recruits.\n• Statement 3 — Incorrect: The promotion ceiling was Subedar — a Viceroy's Commissioned Officer rank, far below Colonel. British command was an absolute racial hierarchy.\n• Statement 4 — Correct: Vellore Mutiny (1806) involved objections to the round hat and facial hair regulations — a clear religious-uniform grievance prefiguring 1857.\n\nValue Addition:\n• British soldiers received significantly higher pay than Indian sepoys for identical combat roles — a persistent economic grievance.\n• After 1857, Indians were permanently excluded from artillery units — the British never again trusted sepoys with the most destructive weapons.\n• The Vellore Mutiny is considered a proto-revolt, demonstrating that the seeds of 1857 were planted at least 50 years earlier."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह में योगदान देने वाली सैन्य शिकायतों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. विदेशी सेवा भत्ता (भत्ता) का उन्मूलन सिंध और पंजाब के अधिग्रहण से जुड़ा था, जिसने ब्रिटिश क्षेत्र का विस्तार किया और पहले 'विदेशी' पोस्टिंग को घरेलू बना दिया।\n2. 1856 का जनरल सर्विस एनलिस्टमेंट अधिनियम सभी नए भर्ती सिपाहियों को आदेश मिलने पर विदेश में सेवा करने के लिए बाध्य करता था, जिसे उच्च जाति के हिंदुओं द्वारा समुद्र पार करने के वर्जनाओं का उल्लंघन माना जाता था।\n3. भारतीय सिपाही बंगाल सेना में कर्नल के पद पर पदोन्नत हो सकते थे, बशर्ते उन्होंने कम से कम दो अभियानों में विशिष्ट सेवा प्रदर्शित की हो।\n4. 1806 की वेलोर बगावत 1857 की तरह की शिकायतों से प्रेरित थी, जिसमें नए वर्दी नियमों के खिलाफ धार्मिक आपत्तियां शामिल थीं।\n\nउपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "विदेशी सेवा भत्ता (भत्ता) का उन्मूलन सिंध और पंजाब के अधिग्रहण से जुड़ा था, जिसने ब्रिटिश क्षेत्र का विस्तार किया और पहले 'विदेशी' पोस्टिंग को घरेलू बना दिया।",
+          "verdict": "सही",
+          "reason": "एक बार सिंध और पंजाब का अधिग्रहण हो जाने पर, जो क्षेत्र पहले विदेशी थे वे ब्रिटिश भारत बन गए, जिससे भत्ता भुगतान का कानूनी आधार समाप्त हो गया और सिपाहियों की आय कम हो गई।"
+        },
+        {
+          "statement": "1856 का जनरल सर्विस एनलिस्टमेंट अधिनियम सभी नए भर्ती सिपाहियों को आदेश मिलने पर विदेश में सेवा करने के लिए बाध्य करता था, जिसे उच्च जाति के हिंदुओं द्वारा समुद्र पार करने के वर्जनाओं का उल्लंघन माना जाता था।",
+          "verdict": "सही",
+          "reason": "समुद्र पार करना (काला पानी) उच्च जाति के हिंदुओं द्वारा धार्मिक रूप से अशुद्ध माना जाता था, जो बंगाल सेना का मुख्य हिस्सा थे, इसलिए यह अधिनियम धार्मिक भावना के सीधे अपमान के रूप में देखा गया।"
+        },
+        {
+          "statement": "भारतीय सिपाही बंगाल सेना में कर्नल के पद पर पदोन्नत हो सकते थे, बशर्ते उन्होंने कम से कम दो अभियानों में विशिष्ट सेवा प्रदर्शित की हो।",
+          "verdict": "गलत",
+          "reason": "भारतीय सिपाहियों के लिए पदोन्नति की सीमा सुभेदार तक थी। कर्नल का पद केवल ब्रिटिश अधिकारियों के लिए आरक्षित था, सेवा रिकॉर्ड की परवाह किए बिना।"
+        },
+        {
+          "statement": "1806 की वेलोर बगावत 1857 की तरह की शिकायतों से प्रेरित थी, जिसमें नए वर्दी नियमों के खिलाफ धार्मिक आपत्तियां शामिल थीं।",
+          "verdict": "सही",
+          "reason": "वेलोर बगावत नए नियमों के कारण हुई थी, जिनमें सिपाहियों को गोल टोपी पहनने और दाढ़ी/मूंछें मुंडवाने के लिए कहा गया था — जिसे ईसाई सांस्कृतिक थोपने के रूप में देखा गया, जो 1857 के लिए स्पष्ट उदाहरण था।"
+        }
+      ],
+      "strong_distractor": "c — छात्र केवल कथन 1 और 2 को सही मान सकते हैं, वेलोर (कथन 4) को 1857 से जोड़कर एक ही घटना समझ लेते हैं, जिससे 'केवल दो' के बजाय 'केवल तीन' का विकल्प छूट जाता है।",
+      "elimination_logic": [
+        "कथन 1 सही है — सिंध और पंजाब के अधिग्रहण के बाद भत्ता उन्मूलन एक प्रलेखित आर्थिक शिकायत है।",
+        "कथन 2 सही है — 1856 का जनरल सर्विस एनलिस्टमेंट अधिनियम और काला पानी वर्जना एक मानक तथ्य है।",
+        "कथन 3 गलत है — पदोन्नति की सीमा सुभेदार थी, कर्नल का पद भारतीय सैनिकों के लिए उपलब्ध नहीं था।",
+        "कथन 4 सही है — वेलोर बगावत (1806) में समान धार्मिक-वर्दी शिकायतें थीं, यह एक वास्तविक समानांतर है।",
+        "तीन कथन (1, 2, 4) सही हैं — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "कथन 3 मुख्य जाल है। UPSC उम्मीदवार जो जानते हैं कि नस्लीय भेदभाव था, वे मान लेते हैं कि पदोन्नति की सीमा सुभेदार से थोड़ी ऊपर हो सकती है — शायद वाइसराय के कमीशंड अधिकारी का पद — और कथन 3 को आंशिक रूप से सही चिह्नित करते हैं। यह कथन पूरी तरह गलत है: कोई भी भारतीय अधिकारी कर्नल पद तक नहीं पहुंच सकता था। वेलोर कथन (4) द्वितीयक जाल के रूप में डिज़ाइन किया गया है, यह जांचने के लिए कि छात्र इसे पुरातन मानकर खारिज करते हैं या इसे एक सही तथ्य के रूप में पहचानते हैं।",
+      "final_explanation": "सैन्य शिकायतें कई स्तरों पर काम करती थीं — आर्थिक (भत्ता), धार्मिक (विदेशी सेवा), सामाजिक (नस्लीय पदोन्नति सीमा), और ऐतिहासिक (वेलोर उदाहरण)।\n\n• कथन 1 — सही: सिंध (1843) और पंजाब (1849) के अधिग्रहण ने भत्ता के 'विदेशी सेवा' आधार को समाप्त कर दिया, जिससे सिपाहियों की आय कम हुई।\n• कथन 2 — सही: 1856 का अधिनियम संभावित विदेशी तैनाती का आदेश देता था, जो उच्च जाति के बंगाल सेना के सिपाहियों के काला पानी वर्जना का उल्लंघन था।\n• कथन 3 — गलत: पदोन्नति की सीमा सुभेदार थी — वाइसराय के कमीशंड अधिकारी का पद, जो कर्नल से बहुत नीचे था। ब्रिटिश कमान एक पूर्ण नस्लीय पदानुक्रम थी।\n• कथन 4 — सही: वेलोर बगावत (1806) में गोल टोपी और चेहरे के बालों के नियमों के खिलाफ आपत्तियां थीं — 1857 से पहले एक स्पष्ट धार्मिक-वर्दी शिकायत।\n\nमूल्यवर्धन:\n• ब्रिटिश सैनिकों को समान युद्ध भूमिकाओं के लिए भारतीय सिपाहियों की तुलना में काफी अधिक वेतन मिलता था — एक लगातार आर्थिक शिकायत।\n• 1857 के बाद, भारतीयों को तोपखाने इकाइयों से स्थायी रूप से बाहर रखा गया — ब्रिटिश कभी भी सबसे विनाशकारी हथियारों के साथ सिपाहियों पर भरोसा नहीं करते थे।\n• वेलोर बगावत को एक प्रारंभिक विद्रोह माना जाता है, जो दिखाता है कि 1857 के बीज कम से कम 50 साल पहले बोए गए थे।"
+    }
+  },
+  {
+    "uuid": "523f87e5-4816-48a4-b4b6-b3ae22f45fba",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Annexation of Awadh (1856): Political, Economic, and Psychological Impact",
+        "Bengal Army's Composition and Caste-Based Grievances"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Awadh recruitment — Bengal Army caste composition causal chain",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion (A) and Reason (R):\n\nAssertion (A): Before 1857, the Bengal Army was heavily composed of high-caste Hindu sepoys — predominantly Brahmins and Rajputs — recruited from the Awadh region.\n\nReason (R): The British annexation of Awadh in 1856 was justified on grounds of alleged misgovernance rather than the Doctrine of Lapse, and it dispossessed the Nawabi ruling class and its retinue.\n\nWhich one of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both facts often assume R explains A without examining whether the explanation runs in the right direction; they mark (a) without noticing that the causal chain in R is incomplete.",
+      "elimination_logic": [
+        "Step 1: Is A correct? — Yes. The Bengal Army was disproportionately recruited from Awadh's Brahmin and Rajput communities — this is a historically established fact.",
+        "Step 2: Is R correct? — Yes. The annexation of Awadh in 1856 under a misgovernance pretext was distinct from the Doctrine of Lapse and directly dispossessed the Nawabi ruling class.",
+        "Step 3: Does R causally explain A? — No. The composition of the Bengal Army (A) predates the annexation of Awadh (R). The recruitment pattern existed before 1856; the annexation is a consequence that exploited that composition, not the cause of it. R explains why sepoys were deeply aggrieved, not why Bengal Army had the caste composition it did.",
+        "A correct + R correct + R does NOT explain A → option b."
+      ],
+      "upsc_trap_explanation": "This question exploits a reversed-causation trap. A student who knows both facts will intuitively feel that Awadh's annexation 'explains' the Bengal Army's sensitivity. But logically, the caste composition of the Bengal Army preceded the annexation — the army was already predominantly Awadhi Brahmins and Rajputs for decades. The annexation triggered their grievance because of that pre-existing composition; it did not create the composition. R gives context but is not the causal explanation of A.",
+      "final_explanation": "The relationship between Awadh's demographic dominance in the Bengal Army and the political act of annexation is analytically subtle.\n\nAssertion (A): The Bengal Army before 1857 had a disproportionately high concentration of Brahmin and Rajput recruits from Awadh — Correct. This was a structural feature of Bengal Army recruitment going back decades, favouring high-caste men from eastern UP and Bihar.\n\nReason (R): Awadh was annexed in 1856 on grounds of alleged misgovernance, distinct from the Doctrine of Lapse — Correct. This is a precise and accurate statement about the separate legal justification used for Awadh.\n\nCausal Link: R does not explain A. The Bengal Army's caste composition was a pre-existing structural reality. The annexation of Awadh deepened sepoy grievance because their homeland was taken, but it did not cause the compositional pattern. The correct option is (b) — both are true, but R is not the explanation of A.\n\nValue Addition:\n• The Bombay and Madras Armies had more diverse, lower-caste compositions — a key reason they did not join the revolt.\n• Awadh's annexation meant sepoys' families lost land rights and economic security simultaneously.\n• This 'both correct but causally unrelated' structure is the most testing variant of assertion-reason in UPSC Prelims."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथन (Assertion) और कारण (Reason) पर विचार करें:\n\nकथन (A): 1857 से पहले, बंगाल सेना में उच्च जाति के हिंदू सिपाहियों की भारी संख्या थी — मुख्यतः ब्राह्मण और राजपूत — जो अवध क्षेत्र से भर्ती किए गए थे।\n\nकारण (R): 1856 में ब्रिटिशों द्वारा अवध का अधिग्रहण कथित कुप्रशासन के आधार पर किया गया था, जो डोक्ट्रिन ऑफ लैप्स से अलग था, और इसने नवाबी शासक वर्ग और उसके अनुयायियों को बेदखल कर दिया।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, परंतु R, A की सही व्याख्या नहीं है\n(c) A सही है परंतु R गलत है\n(d) A गलत है परंतु R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र दोनों तथ्यों को जानते हैं वे अक्सर यह मान लेते हैं कि R, A की व्याख्या करता है बिना यह जांचे कि व्याख्या सही दिशा में है या नहीं; वे (a) को चिह्नित करते हैं बिना यह देखे कि R में कारणात्मक श्रृंखला अधूरी है।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — हाँ। बंगाल सेना में अवध के ब्राह्मण और राजपूत समुदायों से असमान रूप से भर्ती होती थी — यह एक ऐतिहासिक रूप से स्थापित तथ्य है।",
+        "चरण 2: क्या R सही है? — हाँ। 1856 में अवध का ब्रिटिश अधिग्रहण कथित कुप्रशासन के बहाने पर था, जो डोक्ट्रिन ऑफ लैप्स से अलग था और नवाबी शासक वर्ग को सीधे बेदखल कर दिया।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — नहीं। बंगाल सेना की संरचना (A) अवध के अधिग्रहण (R) से पहले की है। भर्ती का पैटर्न 1856 से पहले मौजूद था; अधिग्रहण उस संरचना का परिणाम था, कारण नहीं। R यह बताता है कि सिपाहियों को गहरा आघात क्यों हुआ, न कि बंगाल सेना की जातीय संरचना क्यों थी।",
+        "A सही + R सही + R, A की व्याख्या नहीं करता → विकल्प b।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न उल्टे कारण-प्रभाव के जाल का उपयोग करता है। जो छात्र दोनों तथ्यों को जानते हैं, वे सहज रूप से महसूस करते हैं कि अवध का अधिग्रहण बंगाल सेना की संवेदनशीलता को 'व्याख्यायित' करता है। लेकिन तार्किक रूप से, बंगाल सेना की जातीय संरचना अधिग्रहण से पहले की है — सेना दशकों से मुख्यतः अवध के ब्राह्मण और राजपूतों की थी। अधिग्रहण ने उनके आघात को बढ़ाया क्योंकि उनका गृह क्षेत्र छीन लिया गया था; इसने संरचना को नहीं बनाया। R संदर्भ देता है पर A की कारणात्मक व्याख्या नहीं है।",
+      "final_explanation": "अवध की जनसांख्यिकीय प्रभुत्वता और बंगाल सेना में उसकी राजनीतिक अधिग्रहण की क्रिया के बीच संबंध विश्लेषणात्मक रूप से सूक्ष्म है।\n\nकथन (A): 1857 से पहले बंगाल सेना में अवध के ब्राह्मण और राजपूतों की असामान्य रूप से अधिक संख्या थी — सही। यह बंगाल सेना की भर्ती की एक संरचनात्मक विशेषता थी जो पूर्वी यूपी और बिहार के उच्च जाति के पुरुषों को प्राथमिकता देती थी।\n\nकथन (R): अवध को 1856 में कथित कुप्रशासन के आधार पर अधिग्रहित किया गया था, जो डोक्ट्रिन ऑफ लैप्स से अलग था — सही। यह अवध के लिए प्रयुक्त अलग कानूनी औचित्य के बारे में सटीक और सही कथन है।\n\nकारणात्मक संबंध: R, A की व्याख्या नहीं करता। बंगाल सेना की जातीय संरचना एक पूर्व-विद्यमान संरचनात्मक वास्तविकता थी। अवध का अधिग्रहण सिपाहियों के आघात को गहरा करता है क्योंकि उनका गृह क्षेत्र छीन लिया गया, लेकिन इसने संरचनात्मक पैटर्न को जन्म नहीं दिया। सही विकल्प (b) है — दोनों सही हैं, पर R, A की व्याख्या नहीं करता।\n\nमूल्यवर्धन:\n• बॉम्बे और मद्रास सेनाओं में अधिक विविध, निम्न जाति की संरचना थी — यही मुख्य कारण था कि वे विद्रोह में शामिल नहीं हुए।\n• अवध के अधिग्रहण का अर्थ था कि सिपाहियों के परिवारों ने भूमि अधिकार और आर्थिक सुरक्षा दोनों खो दिए।\n• यह 'दोनों सही पर कारणात्मक रूप से असंबंधित' संरचना UPSC प्रीलिम्स में सबसे चुनौतीपूर्ण प्रकार का assertion-reason प्रश्न है।"
+    }
+  },
+  {
+    "uuid": "f383f4d2-bdc8-4e9b-8f9b-dbb457c67da6",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Permanent Settlement of 1793 and Agrarian Distress",
+        "Economic Exploitation and De-industrialization of Indian Artisans"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Economic legislation sequence — Permanent Settlement to de-industrialization",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following gives the correct chronological order of legislative and policy developments that contributed to the causes of the Revolt of 1857?\n\n1. Permanent Settlement\n2. Macaulay's Minute on Education\n3. Hindu Widows' Remarriage Act\n4. Charter Act opening India to free trade and missionaries\n\n(a) 1 → 4 → 2 → 3\n(b) 1 → 2 → 4 → 3\n(c) 4 → 1 → 2 → 3\n(d) 1 → 4 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Macaulay's Minute (1835) correctly often place it before the Charter Act of 1833, unaware that the Charter Act itself opened India to free trade and missionary activity, predating the Minute.",
+      "elimination_logic": [
+        "The Permanent Settlement was enacted in 1793 under Cornwallis — it must be first in any sequence.",
+        "The Charter Act of 1833 opened India to free trade and allowed missionaries — this predates Macaulay's Minute of 1835.",
+        "Macaulay's Minute on education was in 1835 — after the Charter Act.",
+        "The Hindu Widows' Remarriage Act was passed in 1856 — latest of the four. Correct order: Permanent Settlement (1793) → Charter Act (1833) → Macaulay's Minute (1835) → Hindu Widows' Remarriage Act (1856) — option a."
+      ],
+      "upsc_trap_explanation": "The trap is between the Charter Act of 1833 and Macaulay's Minute of 1835. Students often place Macaulay's Minute first because it is more famous and more directly associated with education policy debates. However, the Charter Act of 1833 is the enabling legislation that preceded it. Reversing these two creates the most common incorrect sequence.",
+      "final_explanation": "Several legislative and policy milestones in the pre-1857 period each contributed to different dimensions of the revolt's causes.\n\nCorrect sequence:\n1. Permanent Settlement (1793): Created absentee landlordism, displaced peasants, seeded agrarian grievance.\n2. Charter Act (1833): Opened India to free trade and Christian missionaries — economic and cultural consequences.\n3. Macaulay's Minute (1835): Replaced Persian/Sanskrit-medium education with English — displaced traditional scholars.\n4. Hindu Widows' Remarriage Act (1856): Perceived as British interference in Hindu religion — social cause of revolt.\n\nOptions (b), (c), and (d) each contain the reversal of the 1833/1835 pair or misplace the Permanent Settlement.\n\nValue Addition:\n• The Permanent Settlement was applied only to Bengal — Bombay and Madras had Ryotwari settlements, correlating with those armies' non-participation in 1857.\n• The Charter Act of 1813 (not 1833) first allowed missionaries — 1833 extended free trade. Distinguish the two Charter Acts.\n• Macaulay's Minute declared English the medium of education but did not immediately displace traditional institutions — the disruption was gradual."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह के कारणों में योगदान देने वाले विधायी और नीति विकासों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. स्थायी व्यवस्था\n2. शिक्षा पर मैकाले का मिनट\n3. हिंदू विधवाओं के पुनर्विवाह अधिनियम\n4. भारत को मुक्त व्यापार और मिशनरियों के लिए खोलने वाला चार्टर अधिनियम\n\n(a) 1 → 4 → 2 → 3\n(b) 1 → 2 → 4 → 3\n(c) 4 → 1 → 2 → 3\n(d) 1 → 4 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र मैकाले के मिनट (1835) को जानते हैं, वे इसे चार्टर अधिनियम 1833 से पहले रखते हैं, यह नहीं जानते कि चार्टर अधिनियम ने भारत को मुक्त व्यापार और मिशनरी गतिविधि के लिए खोला था, जो मिनट से पहले है।",
+      "elimination_logic": [
+        "स्थायी व्यवस्था 1793 में कॉर्नवालिस के तहत लागू हुई — यह किसी भी क्रम में सबसे पहले होनी चाहिए।",
+        "चार्टर अधिनियम 1833 ने भारत को मुक्त व्यापार और मिशनरियों के लिए खोला — यह मैकाले के मिनट 1835 से पहले है।",
+        "शिक्षा पर मैकाले का मिनट 1835 में था — चार्टर अधिनियम के बाद।",
+        "हिंदू विधवाओं के पुनर्विवाह अधिनियम 1856 में पारित हुआ — चारों में सबसे नवीन। सही क्रम: स्थायी व्यवस्था (1793) → चार्टर अधिनियम (1833) → मैकाले का मिनट (1835) → हिंदू विधवाओं के पुनर्विवाह अधिनियम (1856) — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "फंदा चार्टर अधिनियम 1833 और मैकाले के मिनट 1835 के बीच है। छात्र अक्सर मैकाले के मिनट को पहले रखते हैं क्योंकि यह अधिक प्रसिद्ध है और शिक्षा नीति बहसों से सीधे जुड़ा है। परंतु चार्टर अधिनियम 1833 वह विधायी आधार है जो इससे पहले था। इन दोनों को उलटने से सबसे आम गलत क्रम बनता है।",
+      "final_explanation": "1857 के विद्रोह के कारणों में योगदान देने वाले कई विधायी और नीति संबंधी मील के पत्थर पूर्व-1857 काल में थे।\n\nसही क्रम:\n1. स्थायी व्यवस्था (1793): गैर-निवासी जमींदारी व्यवस्था बनाई, किसानों को विस्थापित किया, कृषि असंतोष की जड़ डाली।\n2. चार्टर अधिनियम (1833): भारत को मुक्त व्यापार और ईसाई मिशनरियों के लिए खोला — आर्थिक और सांस्कृतिक प्रभाव।\n3. मैकाले का मिनट (1835): फारसी/संस्कृत माध्यम की शिक्षा को अंग्रेजी से बदला — पारंपरिक विद्वानों को विस्थापित किया।\n4. हिंदू विधवाओं के पुनर्विवाह अधिनियम (1856): इसे ब्रिटिश हस्तक्षेप के रूप में देखा गया — विद्रोह का सामाजिक कारण।\n\nविकल्प (b), (c), और (d) में 1833/1835 जोड़ी का उलटफेर या स्थायी व्यवस्था का गलत स्थान है।\n\nमूल्यवर्धन:\n• स्थायी व्यवस्था केवल बंगाल में लागू हुई — बॉम्बे और मद्रास में रैयतवारी व्यवस्था थी, जो 1857 में उन सेनाओं की गैर-भागीदारी से मेल खाती है।\n• 1813 का चार्टर अधिनियम (1833 नहीं) ने पहली बार मिशनरियों को अनुमति दी — 1833 ने मुक्त व्यापार बढ़ाया। दोनों चार्टर अधिनियमों को अलग समझें।\n• मैकाले के मिनट ने अंग्रेजी को शिक्षा का माध्यम घोषित किया पर तुरंत पारंपरिक संस्थानों को विस्थापित नहीं किया — व्यवधान धीरे-धीरे हुआ।"
+    }
+  },
+  {
+    "uuid": "5bac8d13-2fdb-4f82-b4ac-0b1e199b19c7",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Geographical and Social Limitations of the Revolt: Why It Failed to Become Pan-Indian",
+        "Bengal Army's Composition and Caste-Based Grievances"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Regions/groups that did NOT participate in 1857 revolt",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following groups are commonly identified as having remained largely uninvolved in or actively supportive of British forces during the Revolt of 1857. Which one does NOT belong to that category?\n\n(a) The Sikh community of Punjab\n(b) English-educated Bengali professionals\n(c) Sepoys of the Bombay Army\n(d) Taluqdars of Awadh",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The Sikh community's non-participation is well-known, but students often second-guess themselves because Sikhs had grievances against the British too (post-Anglo-Sikh Wars), leading them to question whether Sikhs actually stayed loyal.",
+      "elimination_logic": [
+        "The question asks for the group that did NOT stay aloof from the revolt — i.e., the one that DID participate.",
+        "Sikhs of Punjab stayed loyal — post-Mughal grievances and recent British accommodation after annexation kept them out of the revolt.",
+        "English-educated Bengali professionals largely remained loyal — they saw British rule as a modernising force.",
+        "Bombay Army sepoys did NOT join — different caste composition and regional loyalty.",
+        "Taluqdars of Awadh actively participated — they had been dispossessed by the Summary Settlement. They are the odd one out in a group of 'those who stayed loyal'."
+      ],
+      "upsc_trap_explanation": "This is a reverse-category odd-one-out. Three of the four options are groups that did not join the revolt; one actually did. Students who rapidly scan for 'who was NOT involved in 1857' might miss the question's framing — it asks which group does NOT belong in the category of 'groups that remained uninvolved.' The Awadh taluqdars are the odd one out because they were active participants, not bystanders.",
+      "final_explanation": "Understanding why the revolt failed to become pan-Indian requires knowing not just who participated but who deliberately stayed out — and why.\n\n• Option (a) — Sikh community of Punjab: Stayed loyal. Still recovering from Anglo-Sikh Wars (1845–1849) and harbouring anti-Mughal sentiment — they did not want to restore Mughal authority under Bahadur Shah Zafar.\n• Option (b) — English-educated Bengali professionals: Largely loyal. They saw British modernisation as progress; the bifurcation of nationalist response was already visible.\n• Option (c) — Bombay Army sepoys: Did not join. Lower-caste composition and different regional identity meant they did not share Bengal Army grievances.\n• Option (d) — Taluqdars of Awadh: Actively participated. Dispossessed by the 1856 Summary Settlement, they had the most direct economic grievance and provided leadership and resources to the rebels.\n\nValue Addition:\n• New zamindars created under the Permanent Settlement also largely stayed loyal — their land rights depended on British protection.\n• Some princely states like Hyderabad and Gwalior provided military support to the British to suppress the revolt.\n• The geographical concentration of the revolt in the Hindi-speaking belt of northern and central India is directly explained by Bengal Army recruitment patterns and Permanent Settlement geography."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह के दौरान निम्नलिखित में से तीन समूह आमतौर पर ऐसे माने जाते हैं जो मुख्यतः शामिल नहीं हुए या ब्रिटिश बलों के सक्रिय समर्थक रहे। इनमें से कौन-सा उस श्रेणी में नहीं आता?\n\n(a) पंजाब का सिख समुदाय\n(b) अंग्रेज़ी-शिक्षित बंगाली पेशेवर\n(c) बॉम्बे आर्मी के सिपाही\n(d) आवध के taluqdars",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — पंजाब के सिख समुदाय का विद्रोह में भाग न लेना प्रसिद्ध है, लेकिन छात्र अक्सर स्वयं को संदेह में डालते हैं क्योंकि सिखों के भी ब्रिटिश के खिलाफ शिकायतें थीं (एंग्लो-सिख युद्धों के बाद), जिससे वे सोचते हैं कि क्या सिख वास्तव में वफादार रहे।",
+      "elimination_logic": [
+        "प्रश्न उस समूह के लिए है जो विद्रोह से अलग नहीं रहा — अर्थात्, जिसने भाग लिया।",
+        "पंजाब के सिख वफादार रहे — मुगलों के प्रति शिकायतें और ब्रिटिश के अधिग्रहण के बाद मिली सहमति ने उन्हें विद्रोह से दूर रखा।",
+        "अंग्रेज़ी-शिक्षित बंगाली पेशेवर मुख्यतः वफादार रहे — वे ब्रिटिश शासन को आधुनिकीकरण की शक्ति मानते थे।",
+        "बॉम्बे आर्मी के सिपाही शामिल नहीं हुए — जाति संरचना और क्षेत्रीय वफादारी अलग थी।",
+        "आवध के taluqdars सक्रिय रूप से भाग लिए — उन्हें Summary Settlement से बेदखल किया गया था। वे 'वफादार रहने वालों' के समूह में अलग हैं।"
+      ],
+      "upsc_trap_explanation": "यह एक उल्टा श्रेणी-आधारित odd-one-out प्रश्न है। चार विकल्पों में से तीन ऐसे समूह हैं जो विद्रोह में शामिल नहीं हुए; एक वास्तव में शामिल था। जो छात्र जल्दी से '1857 में कौन शामिल नहीं था' खोजते हैं, वे प्रश्न के स्वरूप को मिस कर सकते हैं — यह पूछता है कि कौन उस श्रेणी में नहीं आता जो 'अलग-थलग रहे'। आवध के taluqdars अलग हैं क्योंकि वे सक्रिय प्रतिभागी थे, दर्शक नहीं।",
+      "final_explanation": "यह समझना कि विद्रोह पैन-इंडियन क्यों नहीं बन पाया, केवल यह जानने से नहीं कि कौन शामिल था, बल्कि यह भी कि कौन जानबूझकर बाहर रहा — और क्यों।\n\n• विकल्प (a) — पंजाब का सिख समुदाय: वफादार रहा। एंग्लो-सिख युद्धों (1845–1849) से उबर रहा था और मुगलों के प्रति विरोधी भावना रखता था — वे बहादुर शाह ज़फ़र के अधीन मुगल सत्ता बहाल नहीं करना चाहते थे।\n• विकल्प (b) — अंग्रेज़ी-शिक्षित बंगाली पेशेवर: मुख्यतः वफादार। वे ब्रिटिश आधुनिकीकरण को प्रगति मानते थे; राष्ट्रवादी प्रतिक्रिया में विभाजन पहले से ही स्पष्ट था।\n• विकल्प (c) — बॉम्बे आर्मी के सिपाही: शामिल नहीं हुए। निम्न जाति संरचना और अलग क्षेत्रीय पहचान के कारण वे बंगाल आर्मी की शिकायतें साझा नहीं करते थे।\n• विकल्प (d) — आवध के taluqdars: सक्रिय रूप से भाग लिए। 1856 के Summary Settlement से बेदखल, उनके पास सबसे प्रत्यक्ष आर्थिक शिकायत थी और उन्होंने विद्रोहियों को नेतृत्व और संसाधन प्रदान किए।\n\nमूल्य संवर्धन:\n• स्थायी निपटान (Permanent Settlement) के तहत बने नए ज़मींदार भी मुख्यतः वफादार रहे — उनकी ज़मीन के अधिकार ब्रिटिश संरक्षण पर निर्भर थे।\n• हैदराबाद और ग्वालियर जैसे कुछ रियासतों ने विद्रोह दबाने के लिए ब्रिटिशों को सैन्य समर्थन दिया।\n• विद्रोह का भौगोलिक केंद्र उत्तर और मध्य भारत के हिंदी-भाषी क्षेत्र में था, जो बंगाल आर्मी की भर्ती पैटर्न और स्थायी निपटान की भौगोलिकता से सीधे समझाया जा सकता है।"
+    }
+  },
+  {
+    "uuid": "5bbb6dee-a071-4dab-894b-85cd0e9a3c64",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Subsidiary Alliance System: Political Discontentment and Economic Drain",
+        "Doctrine of Lapse: Scope, Application, and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Subsidiary Alliance — treasury drain and disarmament effects",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Subsidiary Alliance system established by Lord Wellesley, consider the following statements:\n\nStatement 1: Under the Subsidiary Alliance, Indian rulers were required to maintain British troops within their territories at their own expense, a burden that progressively drained their treasuries.\n\nStatement 2: The Subsidiary Alliance permitted Indian rulers to maintain independent foreign policy with neighbouring states, provided they sought British approval for treaties involving European powers.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Subsidiary Alliance system introduced by Wellesley, Indian rulers were required to maintain British troops within their territories at their own expense, a burden that progressively drained their treasuries.",
+          "verdict": "Correct",
+          "reason": "This is the core economic mechanism of the Subsidiary Alliance — the ruler paid for a British contingent permanently stationed in his territory, which systematically depleted state revenues."
+        },
+        {
+          "statement": "The Subsidiary Alliance permitted Indian rulers to maintain independent foreign policy with neighbouring states, provided they sought British approval for treaties involving European powers.",
+          "verdict": "Incorrect",
+          "reason": "The Subsidiary Alliance explicitly eliminated the independent foreign policy of Indian rulers — they could not enter into any treaty with any power (European or Indian) without British consent. There was no provision permitting limited independent diplomacy."
+        }
+      ],
+      "strong_distractor": "a — Students who know the economic drain dimension (Statement 1 is correct) but have a hazy recollection of the foreign policy clause may recall that Indian rulers retained some autonomy in 'internal' matters and incorrectly extend this to foreign policy, marking statement 2 as broadly correct.",
+      "elimination_logic": [
+        "Statement 1 describes the maintenance cost mechanism of the Subsidiary Alliance — this is a standard, accurate fact; mark as correct.",
+        "Statement 2 claims Indian rulers retained a limited independent foreign policy under Subsidiary Alliance — this directly contradicts the defining feature of the system, which abolished all independent foreign policy. Mark as incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → option c."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a scope-extension trap disguised as a partial-truth. Students know that Subsidiary Alliance was invasive but may recall that rulers retained 'internal administration' autonomy. The statement crafts a false concession — 'permitted independent foreign policy with neighbouring states' — that sounds like it might reflect a real nuance. In fact, the Subsidiary Alliance was absolute in eliminating foreign policy independence. Any treaty required British mediation, with no exceptions.",
+      "final_explanation": "The Subsidiary Alliance system was Wellesley's instrument for extending British paramountcy without direct annexation — but its effects were as debilitating as annexation.\n\n• Statement 1 — Correct: The mandatory maintenance of a British military contingent at the ruler's expense was the economic centrepiece of the alliance, draining state treasuries and creating fiscal dependency.\n• Statement 2 — Incorrect: The Subsidiary Alliance categorically eliminated independent foreign policy. Rulers could not negotiate with any outside power — Indian or European — without British consent. There was no carve-out for 'neighbouring states.'\n\nValue Addition:\n• The Subsidiary Alliance also required Indian rulers to dismiss European officers (especially French) from their armies — targeting Napoleon-era geopolitical competition.\n• Hyderabad was the first state to sign a Subsidiary Alliance (1798) — yet was NOT later annexed, making it the classic 'exceptions' case alongside Mysore.\n• The combined effect of Subsidiary Alliance (economic drain + disarmament) and Doctrine of Lapse (annexation threat) produced the comprehensive alienation of Indian ruling classes that preceded 1857."
+    },
+    "hi": {
+      "display_text": "लॉर्ड वेल्सली द्वारा स्थापित सब्सिडियरी एलायंस प्रणाली के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: सब्सिडियरी एलायंस के तहत, भारतीय शासकों को अपने क्षेत्रों में ब्रिटिश सैनिकों को अपने खर्च पर बनाए रखना आवश्यक था, जो उनके खजाने को धीरे-धीरे समाप्त करता गया।\n\nकथन 2: सब्सिडियरी एलायंस ने भारतीय शासकों को पड़ोसी राज्यों के साथ स्वतंत्र विदेश नीति बनाए रखने की अनुमति दी, बशर्ते वे यूरोपीय शक्तियों से संबंधित संधियों के लिए ब्रिटिश अनुमोदन लें।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "वेल्सली द्वारा स्थापित सब्सिडियरी एलायंस प्रणाली के तहत, भारतीय शासकों को अपने क्षेत्रों में ब्रिटिश सैनिकों को अपने खर्च पर बनाए रखना आवश्यक था, जो उनके खजाने को धीरे-धीरे समाप्त करता गया।",
+          "verdict": "सही",
+          "reason": "यह सब्सिडियरी एलायंस की मुख्य आर्थिक व्यवस्था है — शासक अपने क्षेत्र में स्थायी रूप से तैनात ब्रिटिश दस्ते का भुगतान करता था, जिससे राज्य के राजस्व में व्यवस्थित कमी आती थी।"
+        },
+        {
+          "statement": "सब्सिडियरी एलायंस ने भारतीय शासकों को पड़ोसी राज्यों के साथ स्वतंत्र विदेश नीति बनाए रखने की अनुमति दी, बशर्ते वे यूरोपीय शक्तियों से संबंधित संधियों के लिए ब्रिटिश अनुमोदन लें।",
+          "verdict": "गलत",
+          "reason": "सब्सिडियरी एलायंस ने स्पष्ट रूप से भारतीय शासकों की स्वतंत्र विदेश नीति समाप्त कर दी — वे बिना ब्रिटिश सहमति के किसी भी शक्ति (यूरोपीय या भारतीय) के साथ कोई संधि नहीं कर सकते थे। स्वतंत्र कूटनीति की कोई अनुमति नहीं थी।"
+        }
+      ],
+      "strong_distractor": "(a) — जो छात्र आर्थिक निकासी के पहलू को जानते हैं (कथन 1 सही है) लेकिन विदेश नीति के प्रावधान को अस्पष्ट रूप से याद करते हैं, वे सोचते हैं कि शासकों को 'आंतरिक' मामलों में कुछ स्वायत्तता थी और इसे गलत तरीके से विदेश नीति तक बढ़ा देते हैं, इसलिए कथन 2 को व्यापक रूप से सही मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 सब्सिडियरी एलायंस की रखरखाव लागत व्यवस्था का वर्णन करता है — यह एक मानक, सटीक तथ्य है; इसे सही चिह्नित करें।",
+        "कथन 2 दावा करता है कि सब्सिडियरी एलायंस के तहत भारतीय शासकों को सीमित स्वतंत्र विदेश नीति मिली — यह प्रणाली की मुख्य विशेषता के सीधे विरोध में है, जिसने सभी स्वतंत्र विदेश नीति समाप्त कर दी। इसे गलत चिह्नित करें।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक आंशिक सत्य के रूप में दायरे का विस्तार करने वाला जाल है। छात्र जानते हैं कि सब्सिडियरी एलायंस आक्रामक था लेकिन याद कर सकते हैं कि शासकों को 'आंतरिक प्रशासन' की स्वायत्तता मिली थी। यह कथन एक झूठा समझौता प्रस्तुत करता है — 'पड़ोसी राज्यों के साथ स्वतंत्र विदेश नीति की अनुमति' — जो वास्तविक सूक्ष्मता जैसा लगता है। वास्तव में, सब्सिडियरी एलायंस ने विदेश नीति की स्वतंत्रता को पूरी तरह समाप्त कर दिया था। किसी भी संधि के लिए ब्रिटिश मध्यस्थता आवश्यक थी, बिना किसी अपवाद के।",
+      "final_explanation": "सब्सिडियरी एलायंस प्रणाली वेल्सली का उपकरण था ब्रिटिश सर्वोच्चता को सीधे विलय के बिना बढ़ाने का — लेकिन इसके प्रभाव विलय जितने ही विनाशकारी थे।\n\n• कथन 1 — सही: शासक के खर्च पर ब्रिटिश सैन्य दस्ते की अनिवार्य रखरखाव इस गठबंधन का आर्थिक केंद्र था, जिसने राज्य के खजाने को समाप्त किया और वित्तीय निर्भरता पैदा की।\n• कथन 2 — गलत: सब्सिडियरी एलायंस ने स्वतंत्र विदेश नीति को पूरी तरह समाप्त कर दिया। शासक बिना ब्रिटिश सहमति के किसी भी बाहरी शक्ति — भारतीय या यूरोपीय — से बातचीत नहीं कर सकते थे। 'पड़ोसी राज्यों' के लिए कोई अपवाद नहीं था।\n\nमूल्यवर्धन:\n• सब्सिडियरी एलायंस ने भारतीय शासकों को अपने सेनाओं से यूरोपीय अधिकारियों (विशेषकर फ्रांसीसी) को निकालने की भी आवश्यकता थी — जो नेपोलियन काल के भू-राजनीतिक प्रतिस्पर्धा को लक्षित करता था।\n• हैदराबाद पहला राज्य था जिसने सब्सिडियरी एलायंस (1798) पर हस्ताक्षर किए — फिर भी बाद में इसे विलय नहीं किया गया, जो इसे मैसूर के साथ एक क्लासिक 'अपवाद' मामला बनाता है।\n• सब्सिडियरी एलायंस (आर्थिक निकासी + निरस्त्रीकरण) और डाक्ट्रिन ऑफ लैप्स (विलय का खतरा) का संयुक्त प्रभाव 1857 से पहले भारतीय शासक वर्गों के व्यापक परित्याग का कारण बना।"
+    }
+  },
+  {
+    "uuid": "3e4b7d39-ee82-4636-979f-af8b60854ab4",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Rumour and Propaganda: Chapati Movement and Lotus Flower Circulation",
+        "The 'Prophecy of 100 Years': Psychological and Ideological Mobilization"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Plassey 1757 — centennial prophecy as ideological mobilizer",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the months preceding the Revolt of 1857, a widely circulated prophecy held that British rule in India would end exactly one hundred years after the ________, lending the rebellion a millenarian quality that helped unify sepoys, peasants, and dispossessed princes under a common symbolic timeline.\n\n(a) Battle of Wandiwash (1760)\n(b) Battle of Plassey (1757)\n(c) Battle of Buxar (1764)\n(d) Battle of Assaye (1803)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may confuse Buxar (1764) with Plassey (1757) as the 'decisive' British victory, and since 1764 + 100 = 1864, option c seems plausible — but the prophecy was specifically tied to Plassey.",
+      "elimination_logic": [
+        "The prophecy held that British rule would end exactly 100 years after the battle that established British dominance — eliminate options not referencing this specific connection.",
+        "The Battle of Plassey (1757) was considered the foundational moment of British rule in India — 1757 + 100 = 1857.",
+        "The Battle of Buxar (1764) was later and more militarily decisive but not the one cited in the prophecy — eliminate option c.",
+        "Option b correctly identifies Plassey (1757) as the anchor of the centennial prophecy."
+      ],
+      "upsc_trap_explanation": "The Buxar distractor is a plausible-fabrication trap. Students who know that the Battle of Buxar (1764) was actually more decisive in military terms than Plassey may doubt their answer. The prophecy, however, was anchored to Plassey specifically — the battle that symbolically inaugurated Company rule in Bengal. Option c (Buxar + 100 = 1864) sounds logical but does not correspond to any historical prophecy.",
+      "final_explanation": "The centennial prophecy was a powerful psychological instrument that gave the revolt an ideological coherence it might otherwise have lacked.\n\n• Option (a) — Battle of Wandiwash (1760): This was a decisive victory against the French in the Carnatic, not the founding moment of British rule in Bengal — incorrect anchor for the prophecy.\n• Option (b) — Battle of Plassey (1757): Correct. The prophecy held that British rule would end 100 years after Plassey — 1757 + 100 = 1857. This millenarian belief unified diverse groups under a common symbolic timeline.\n• Option (c) — Battle of Buxar (1764): Though more militarily decisive, Buxar is not the battle associated with the prophecy. 1764 + 100 = 1864 — historically irrelevant.\n• Option (d) — Battle of Assaye (1803): A Maratha Wars battle — wholly unrelated to the founding of Company raj in Bengal.\n\nValue Addition:\n• Bahadur Shah Zafar was chosen as symbolic figurehead partly because the prophecy required a Mughal figurehead to legitimise restoration.\n• The chapati circulation in early 1857 is historiographically debated — some scholars see it as a deliberate signal network; others attribute it to coincidence.\n• The lotus flower was circulated among sepoy regiments — its symbolism of solidarity strengthened unit cohesion before the outbreak."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह से पहले के महीनों में, एक व्यापक रूप से प्रसारित भविष्यवाणी यह मानती थी कि भारत में ब्रिटिश शासन ठीक उस ________ के 100 वर्ष बाद समाप्त हो जाएगा, जिसने विद्रोह को एक सहस्राब्दी गुण दिया जो सिपाहियों, किसानों और बेदखल राजाओं को एक सामान्य प्रतीकात्मक समयरेखा के तहत एकजुट करता था।\n\n(a) वांडिवाश का युद्ध (1760)\n(b) प्लासी का युद्ध (1757)\n(c) बक्सर का युद्ध (1764)\n(d) अस्से का युद्ध (1803)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र बक्सर (1764) को प्लासी (1757) के साथ 'निर्णायक' ब्रिटिश विजय के रूप में भ्रमित कर सकते हैं, और चूंकि 1764 + 100 = 1864, विकल्प c संभावित लगता है — लेकिन भविष्यवाणी विशेष रूप से प्लासी से जुड़ी थी।",
+      "elimination_logic": [
+        "भविष्यवाणी यह मानती थी कि ब्रिटिश शासन ठीक उस युद्ध के 100 वर्ष बाद समाप्त होगा जिसने ब्रिटिश प्रभुत्व स्थापित किया — उन विकल्पों को हटा दें जो इस विशिष्ट संबंध का उल्लेख नहीं करते।",
+        "प्लासी का युद्ध (1757) भारत में ब्रिटिश शासन का आधार माना जाता था — 1757 + 100 = 1857।",
+        "बक्सर का युद्ध (1764) बाद में और सैन्य दृष्टि से अधिक निर्णायक था लेकिन भविष्यवाणी में इसका उल्लेख नहीं था — विकल्प c को हटा दें।",
+        "विकल्प b सही रूप से प्लासी (1757) को शताब्दी भविष्यवाणी का आधार बताता है।"
+      ],
+      "upsc_trap_explanation": "बक्सर का भ्रम एक संभावित-निर्मित जाल है। जो छात्र जानते हैं कि बक्सर का युद्ध (1764) सैन्य दृष्टि से प्लासी से अधिक निर्णायक था, वे अपने उत्तर पर संदेह कर सकते हैं। हालांकि, भविष्यवाणी विशेष रूप से प्लासी से जुड़ी थी — वह युद्ध जिसने प्रतीकात्मक रूप से बंगाल में कंपनी शासन की शुरुआत की। विकल्प c (बक्सर + 100 = 1864) तार्किक लगता है लेकिन किसी ऐतिहासिक भविष्यवाणी से मेल नहीं खाता।",
+      "final_explanation": "शताब्दी भविष्यवाणी एक शक्तिशाली मनोवैज्ञानिक उपकरण था जिसने विद्रोह को एक वैचारिक एकरूपता दी जो अन्यथा नहीं होती।\n\n• विकल्प (a) — वांडिवाश का युद्ध (1760): यह कर्नाटक में फ्रांसीसियों के खिलाफ निर्णायक विजय थी, बंगाल में ब्रिटिश शासन की स्थापना का क्षण नहीं — भविष्यवाणी के लिए गलत आधार।\n• विकल्प (b) — प्लासी का युद्ध (1757): सही। भविष्यवाणी यह मानती थी कि ब्रिटिश शासन प्लासी के 100 वर्ष बाद समाप्त होगा — 1757 + 100 = 1857। यह सहस्राब्दी विश्वास विभिन्न समूहों को एक सामान्य प्रतीकात्मक समयरेखा के तहत एकजुट करता था।\n• विकल्प (c) — बक्सर का युद्ध (1764): हालांकि सैन्य रूप से अधिक निर्णायक, बक्सर वह युद्ध नहीं है जिससे भविष्यवाणी जुड़ी थी। 1764 + 100 = 1864 — ऐतिहासिक रूप से अप्रासंगिक।\n• विकल्प (d) — अस्से का युद्ध (1803): मराठा युद्धों का युद्ध — बंगाल में कंपनी शासन की स्थापना से पूरी तरह असंबंधित।\n\nमूल्य संवर्धन:\n• बहादुर शाह ज़फ़र को प्रतीकात्मक मुखिया के रूप में चुना गया था क्योंकि भविष्यवाणी को बहाली के लिए मुगल मुखिया की आवश्यकता थी।\n• 1857 की शुरुआत में चपाती का प्रसार ऐतिहासिक रूप से विवादित है — कुछ विद्वान इसे जानबूझकर संकेत नेटवर्क मानते हैं; अन्य इसे संयोग मानते हैं।\n• कमल के फूल को सिपाही रेजिमेंटों में प्रसारित किया गया — इसकी एकता का प्रतीकात्मक अर्थ विद्रोह से पहले इकाई की एकजुटता को मजबूत करता था।"
+    }
+  },
+  {
+    "uuid": "27da5e0c-a273-48fc-8800-e108c1d0eeea",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Role of Dispossessed Ruling Classes: Taluqdars, Nawabs, and Erstwhile Soldiers",
+        "Doctrine of Lapse: Scope, Application, and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nana Sahib — Doctrine of Lapse and pension denial",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Nana Sahib — Adopted son of Peshwa Baji Rao II, whose pension was denied by the British under the Doctrine of Lapse\n(b) Nana Sahib — Adopted son of Peshwa Baji Rao I, dispossessed through the Subsidiary Alliance\n(c) Nana Sahib — Natural son of the last Nawab of Awadh, deposed when Awadh was annexed in 1856\n(d) Nana Sahib — Dispossessed taluqdar of Awadh whose revenue rights were extinguished under the Summary Settlement of 1856",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Nana Sahib was the adopted son of Peshwa Baji Rao II correctly identify the peshwa connection, but option b swaps the peshwa's name to Baji Rao I — the first Peshwa — which sounds plausible to students who have not memorised the specific Baji Rao.",
+      "elimination_logic": [
+        "Nana Sahib is associated with the denial of a pension following the Doctrine of Lapse — not the Doctrine applied to a territory, but to a title/pension: eliminate options that attach him to territorial annexation only.",
+        "Nana Sahib was the adopted son of Peshwa Baji Rao II, the last Peshwa, not Baji Rao I: eliminate option b.",
+        "The pension denial was on the grounds that as an adopted (not natural) son, he could not inherit the pension — a Doctrine of Lapse application: option a correctly pairs him with Baji Rao II.",
+        "Options c and d attach Nana Sahib to other rulers/contexts that are historically inaccurate — eliminate."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap is the substitution of Baji Rao I for Baji Rao II. Both were Maratha peshwas — Baji Rao I was the powerful 18th-century Peshwa who expanded Maratha power; Baji Rao II was the last Peshwa, exiled to Bithur after the Third Anglo-Maratha War (1818). Students who do not distinguish between the two Baji Raos will mark option b as correct. Nana Sahib's connection is specifically to Baji Rao II.",
+      "final_explanation": "Nana Sahib's case illustrates how the Doctrine of Lapse was applied beyond territorial annexation to deny pensions and titles to adopted heirs.\n\n• Option (a) — Nana Sahib : Adopted son of Peshwa Baji Rao II, pension denied under Doctrine of Lapse — Correctly matched. Baji Rao II, last Peshwa, was exiled to Bithur in 1818. Nana Sahib was his adopted son whose pension claim the British rejected, driving him to lead the Kanpur massacre.\n• Option (b) — Nana Sahib : Adopted son of Peshwa Baji Rao I — Incorrectly matched. Baji Rao I (d. 1740) was a different, much earlier Peshwa.\n• Option (c) — Nana Sahib : Son of the last Nawab of Awadh — Incorrect; conflates Nana Sahib with Birjis Qadr.\n• Option (d) — Nana Sahib : Dispossessed taluqdar of Awadh under Summary Settlement — Incorrect; Nana Sahib was a Maratha prince, not an Awadh taluqdar.\n\nValue Addition:\n• The Kanpur (Cawnpore) massacre, associated with Nana Sahib, became the most emotionally charged episode of the revolt for the British.\n• Nana Sahib disappeared after the revolt's suppression — his fate remains unknown.\n• Tantia Tope, Nana Sahib's military commander, continued guerrilla warfare until 1859."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) नाना साहिब — पेशवा बाजी राव द्वितीय के दत्तक पुत्र, जिनकी पेंशन दीक्षा के सिद्धांत के तहत ब्रिटिशों द्वारा अस्वीकृत की गई\n(b) नाना साहिब — पेशवा बाजी राव प्रथम के दत्तक पुत्र, जिन्हें सहायक संधि के तहत निष्कासित किया गया\n(c) नाना साहिब — अवध के अंतिम नवाब के प्राकृतिक पुत्र, जिन्हें 1856 में अवध के अधिग्रहण के समय पदच्युत किया गया\n(d) नाना साहिब — अवध के निष्कासित तल्लुकदार, जिनके राजस्व अधिकार 1856 के संक्षिप्त निपटान के तहत समाप्त कर दिए गए",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Nana Sahib was the adopted son of Peshwa Baji Rao II correctly identify the peshwa connection, but option b swaps the peshwa's name to Baji Rao I — the first Peshwa — which sounds plausible to students who have not memorised the specific Baji Rao.",
+      "elimination_logic": [
+        "नाना साहिब का संबंध दीक्षा के सिद्धांत (Doctrine of Lapse) के तहत पेंशन अस्वीकृति से है — यह क्षेत्रीय अधिग्रहण के लिए लागू सिद्धांत नहीं, बल्कि शीर्षक/पेंशन के लिए था: उन विकल्पों को हटा दें जो उन्हें केवल क्षेत्रीय अधिग्रहण से जोड़ते हैं।",
+        "नाना साहिब पेशवा बाजी राव द्वितीय के दत्तक पुत्र थे, जो अंतिम पेशवा थे, न कि बाजी राव प्रथम: विकल्प (b) को हटा दें।",
+        "पेंशन अस्वीकृति इस आधार पर थी कि दत्तक पुत्र होने के कारण वे पेंशन के वारिस नहीं बन सकते थे — यह दीक्षा के सिद्धांत का एक अनुप्रयोग है: विकल्प (a) ने उन्हें सही ढंग से बाजी राव द्वितीय से जोड़ा है।",
+        "विकल्प (c) और (d) नाना साहिब को अन्य शासकों/प्रसंगों से जोड़ते हैं जो ऐतिहासिक रूप से गलत हैं — इन्हें हटा दें।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण (entity-swap) जाल बाजी राव द्वितीय के स्थान पर बाजी राव प्रथम को रखना है। दोनों मराठा पेशवा थे — बाजी राव प्रथम 18वीं सदी के शक्तिशाली पेशवा थे जिन्होंने मराठा शक्ति का विस्तार किया; बाजी राव द्वितीय अंतिम पेशवा थे, जिन्हें तीसरे आंग्ल-मराठा युद्ध (1818) के बाद बिथूर में निर्वासित किया गया। जो छात्र दोनों बाजी रावों में अंतर नहीं करते, वे विकल्प (b) को सही मानेंगे। नाना साहिब का संबंध विशेष रूप से बाजी राव द्वितीय से है।",
+      "final_explanation": "नाना साहिब का मामला दर्शाता है कि दीक्षा का सिद्धांत केवल क्षेत्रीय अधिग्रहण तक सीमित नहीं था, बल्कि दत्तक वारिसों को पेंशन और शीर्षक से वंचित करने के लिए भी लागू किया गया।\n\n• विकल्प (a) — नाना साहिब : पेशवा बाजी राव द्वितीय के दत्तक पुत्र, दीक्षा के सिद्धांत के तहत पेंशन अस्वीकृत — सही मेल। बाजी राव द्वितीय अंतिम पेशवा थे, जिन्हें 1818 में बिथूर निर्वासित किया गया था। नाना साहिब उनके दत्तक पुत्र थे जिनकी पेंशन का दावा ब्रिटिशों ने अस्वीकार कर दिया, जिससे वे कानपुर नरसंहार के नेता बने।\n• विकल्प (b) — नाना साहिब : पेशवा बाजी राव प्रथम के दत्तक पुत्र — गलत मेल। बाजी राव प्रथम (मृत्यु 1740) एक अलग, बहुत पहले का पेशवा था।\n• विकल्प (c) — नाना साहिब : अवध के अंतिम नवाब का प्राकृतिक पुत्र — गलत; नाना साहिब को बिरजिस कादर से भ्रमित किया गया है।\n• विकल्प (d) — नाना साहिब : अवध के निष्कासित तल्लुकदार, जिनके राजस्व अधिकार 1856 के संक्षिप्त निपटान के तहत समाप्त हुए — गलत; नाना साहिब मराठा राजकुमार थे, अवध के तल्लुकदार नहीं।\n\nमूल्य संवर्धन:\n• नाना साहिब से जुड़ा कानपुर (कौनपुर) नरसंहार ब्रिटिशों के लिए विद्रोह का सबसे भावनात्मक रूप से संवेदनशील अध्याय बन गया।\n• विद्रोह के दमन के बाद नाना साहिब लापता हो गए — उनकी नियति अज्ञात है।\n• तंतिया टोपे, नाना साहिब के सैन्य कमांडर, 1859 तक गुरिल्ला युद्ध जारी रखे।"
+    }
+  },
+  {
+    "uuid": "f29aee85-2b23-45b0-bf80-ccf8ea00ec47",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Social Reform Legislation and Perception of Threat to Religion",
+        "Racial Arrogance and Social Humiliation of Indians by British Officers"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Religious Disabilities Act 1850 — inheritance and social reform as revolt cause",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the social and religious dimensions of the causes of the Revolt of 1857:\n\n1. The Religious Disabilities Act of 1850 provided that conversion to Christianity would no longer disqualify an Indian from inheriting ancestral property, creating alarm among Hindu and Muslim communities about British intentions.\n2. The abolition of sati in 1829 under Bentinck was unanimously welcomed across all sections of Indian society and did not contribute to the perception of British interference in religious customs.\n3. The Hindu Widows' Remarriage Act of 1856, though subsequently credited as a progressive reform, was in the immediate pre-revolt period perceived by conservative groups as a British intrusion into Hindu social order.\n4. The fear of missionary conversion was wholly unfounded, as the British government had formally prohibited Christian missionary activity in India until the Charter Act of 1813.\n\nWhich of the above statements is/are correct?\n\n(a) 1, 2 and 3 only\n(b) 1, 3 and 4 only\n(c) 2 and 4 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Religious Disabilities Act of 1850 provided that conversion to Christianity would no longer disqualify an Indian from inheriting ancestral property, creating alarm among Hindu and Muslim communities about British intentions.",
+          "verdict": "Correct",
+          "reason": "This is precisely what the Act did — it removed the legal disability attached to religious conversion, which communities interpreted as an incentive to convert and a threat to the integrity of ancestral succession."
+        },
+        {
+          "statement": "The abolition of sati in 1829 under Bentinck was unanimously welcomed across all sections of Indian society and did not contribute to the perception of British interference in religious customs.",
+          "verdict": "Incorrect",
+          "reason": "While social reformers like Ram Mohan Roy supported abolition, many orthodox groups saw it as foreign interference in Hindu religious practice. The scope-extension 'unanimously welcomed' makes this false."
+        },
+        {
+          "statement": "The Hindu Widows' Remarriage Act of 1856, though subsequently credited as a progressive reform, was in the immediate pre-revolt period perceived by conservative groups as a British intrusion into Hindu social order.",
+          "verdict": "Correct",
+          "reason": "Conservative Hindu opinion saw the Act as a violation of dharmic social structure. This perception, regardless of the Act's progressive intent, contributed to the 'threat to religion' atmosphere of 1857."
+        },
+        {
+          "statement": "The fear of missionary conversion was wholly unfounded, as the British government had formally prohibited Christian missionary activity in India until the Charter Act of 1813.",
+          "verdict": "Incorrect",
+          "reason": "The Charter Act of 1813 opened India to Christian missionaries — so after 1813, missionary activity was legally permitted and growing. The fear of conversion had a real basis in post-1813 missionary expansion, making it not 'wholly unfounded.'"
+        }
+      ],
+      "strong_distractor": "b — Students who know statements 1 and 3 are correct may add statement 4 based on the partially true fact that missionary activity was restricted before 1813, missing that the question asks about the pre-revolt period (post-1813, when missions were active).",
+      "elimination_logic": [
+        "Statement 2 uses 'unanimously welcomed' — a scope-extension that is false since orthodox groups opposed abolition of sati. Mark incorrect.",
+        "Statement 4 claims missionary fear was 'wholly unfounded' and that missions were prohibited until 1813 — but 1813 opened India to missionaries, so by 1857 mission activity had been legal for over 40 years. Mark incorrect.",
+        "Statements 1 and 3 are both factually accurate and analytically supported.",
+        "Statements 1 and 3 only are correct — option d."
+      ],
+      "upsc_trap_explanation": "Statement 4 is a partial-truth trap. The first half is correct — the East India Company did restrict missionaries before 1813. But the conclusion ('wholly unfounded' fear) is false because after the Charter Act of 1813, missions expanded significantly. By 1857, 44 years of active missionary work had given the fear a real foundation. Students who remember the pre-1813 restriction but forget that 1813 ended it will mark statement 4 as correct.",
+      "final_explanation": "Social reform legislation occupies a dual analytical position in the causes of 1857: historically progressive, but in the immediate context perceived as cultural aggression.\n\n• Statement 1 — Correct: The Religious Disabilities Act (1850) removed the inheritance penalty for conversion, which traditional communities read as an incentive to proselytise — a direct trigger for 'missionary conspiracy' rumours.\n• Statement 2 — Incorrect: The abolition of sati (1829) was not unanimously welcomed. Orthodox opinion, particularly in Bengal, viewed it as religious interference.\n• Statement 3 — Correct: The Hindu Widows' Remarriage Act (1856) was seen by conservative Hindus as dismantling the dharmic social order, adding to the pre-revolt atmosphere of religious anxiety.\n• Statement 4 — Incorrect: The Charter Act of 1813 opened India to missionaries. By 1857, 44 years of missionary activity gave the conversion fear a real empirical basis.\n\nValue Addition:\n• The 'bone-dust in flour and salt' rumour (that the British were contaminating food to force conversion) was a direct product of this pre-revolt missionary anxiety.\n• Post-1857, the Queen's Proclamation explicitly pledged non-interference in religion — an implicit acknowledgement that these social interventions had been a cause.\n• UPSC tests the 'dual framing' of social reforms: progressive in long-term impact, destabilising in short-term perception."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह के कारणों के सामाजिक और धार्मिक आयामों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 1850 का Religious Disabilities Act यह प्रावधान करता था कि ईसाई धर्म में परिवर्तन करने से कोई भारतीय पूर्वजों की संपत्ति का वारिस बनने से अयोग्य नहीं होगा, जिससे हिंदू और मुस्लिम समुदायों में ब्रिटिश इरादों को लेकर चिंता उत्पन्न हुई।\n2. 1829 में बेंटिंक के तहत सती प्रथा का उन्मूलन भारतीय समाज के सभी वर्गों द्वारा सर्वसम्मति से स्वागत किया गया और इसने धार्मिक रीति-रिवाजों में ब्रिटिश हस्तक्षेप की धारणा में कोई योगदान नहीं दिया।\n3. 1856 का हिंदू विधवाओं के पुनर्विवाह अधिनियम, जिसे बाद में प्रगतिशील सुधार के रूप में माना गया, तत्काल पूर्व-विद्रोह अवधि में रूढ़िवादी समूहों द्वारा हिंदू सामाजिक व्यवस्था में ब्रिटिश दखल के रूप में देखा गया।\n4. मिशनरी धर्मांतरण का भय पूरी तरह निराधार था, क्योंकि ब्रिटिश सरकार ने 1813 के चार्टर अधिनियम तक भारत में ईसाई मिशनरी गतिविधि को औपचारिक रूप से प्रतिबंधित किया था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1, 2 और 3\n(b) केवल 1, 3 और 4\n(c) केवल 2 और 4\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1850 का Religious Disabilities Act यह प्रावधान करता था कि ईसाई धर्म में परिवर्तन करने से कोई भारतीय पूर्वजों की संपत्ति का वारिस बनने से अयोग्य नहीं होगा, जिससे हिंदू और मुस्लिम समुदायों में ब्रिटिश इरादों को लेकर चिंता उत्पन्न हुई।",
+          "verdict": "सही",
+          "reason": "यह बिलकुल वही था जो अधिनियम ने किया — इसने धार्मिक परिवर्तन से जुड़ी कानूनी अयोग्यता को हटा दिया, जिसे समुदायों ने धर्म परिवर्तन को प्रोत्साहन और पूर्वजों की उत्तराधिकारिता की अखंडता के लिए खतरा माना।"
+        },
+        {
+          "statement": "1829 में बेंटिंक के तहत सती प्रथा का उन्मूलन भारतीय समाज के सभी वर्गों द्वारा सर्वसम्मति से स्वागत किया गया और इसने धार्मिक रीति-रिवाजों में ब्रिटिश हस्तक्षेप की धारणा में कोई योगदान नहीं दिया।",
+          "verdict": "गलत",
+          "reason": "जहां राम मोहन रॉय जैसे सामाजिक सुधारकों ने उन्मूलन का समर्थन किया, वहीं कई रूढ़िवादी समूहों ने इसे हिंदू धार्मिक प्रथा में विदेशी हस्तक्षेप माना। 'सर्वसम्मति से स्वागत' का दायरा-विस्तार इसे गलत बनाता है।"
+        },
+        {
+          "statement": "1856 का हिंदू विधवाओं के पुनर्विवाह अधिनियम, जिसे बाद में प्रगतिशील सुधार के रूप में माना गया, तत्काल पूर्व-विद्रोह अवधि में रूढ़िवादी समूहों द्वारा हिंदू सामाजिक व्यवस्था में ब्रिटिश दखल के रूप में देखा गया।",
+          "verdict": "सही",
+          "reason": "रूढ़िवादी हिंदू मत ने इस अधिनियम को धार्मिक सामाजिक संरचना का उल्लंघन माना। इस धारणा ने, अधिनियम के प्रगतिशील इरादे के बावजूद, 1857 के 'धर्म के लिए खतरे' के माहौल में योगदान दिया।"
+        },
+        {
+          "statement": "मिशनरी धर्मांतरण का भय पूरी तरह निराधार था, क्योंकि ब्रिटिश सरकार ने 1813 के चार्टर अधिनियम तक भारत में ईसाई मिशनरी गतिविधि को औपचारिक रूप से प्रतिबंधित किया था।",
+          "verdict": "गलत",
+          "reason": "1813 का चार्टर अधिनियम भारत को ईसाई मिशनरियों के लिए खोलता है — अतः 1813 के बाद मिशनरी गतिविधि कानूनी रूप से अनुमत और बढ़ रही थी। धर्मांतरण का भय 1813 के बाद मिशनरी विस्तार के कारण वास्तविक था, इसलिए यह 'पूरी तरह निराधार' नहीं था।"
+        }
+      ],
+      "strong_distractor": "बिंदु (b) — जो छात्र कथन 1 और 3 को सही जानते हैं, वे कथन 4 को आंशिक रूप से सही तथ्य के आधार पर जोड़ सकते हैं कि मिशनरी गतिविधि 1813 से पहले प्रतिबंधित थी, पर वे भूल जाते हैं कि प्रश्न पूर्व-विद्रोह अवधि (1813 के बाद, जब मिशन सक्रिय थे) के बारे में है।",
+      "elimination_logic": [
+        "कथन 2 में 'सर्वसम्मति से स्वागत' का दायरा-विस्तार है — जो गलत है क्योंकि रूढ़िवादी समूहों ने सती उन्मूलन का विरोध किया। इसे गलत चिह्नित करें।",
+        "कथन 4 कहता है कि मिशनरी भय 'पूरी तरह निराधार' था और 1813 तक मिशनरी प्रतिबंधित थे — लेकिन 1813 ने भारत को मिशनरियों के लिए खोल दिया, अतः 1857 तक मिशनरी गतिविधि 40 वर्षों से कानूनी थी। इसे गलत चिह्नित करें।",
+        "कथन 1 और 3 दोनों तथ्यात्मक रूप से सही और विश्लेषणात्मक रूप से समर्थित हैं।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "कथन 4 आंशिक-सत्य जाल है। पहला भाग सही है — ईस्ट इंडिया कंपनी ने 1813 से पहले मिशनरियों को प्रतिबंधित किया था। लेकिन निष्कर्ष ('पूरी तरह निराधार' भय) गलत है क्योंकि 1813 के चार्टर अधिनियम के बाद मिशनरी गतिविधि काफी बढ़ी। 1857 तक 44 वर्षों की सक्रिय मिशनरी कार्यवाही ने इस भय को वास्तविक आधार दिया। जो छात्र 1813 से पहले के प्रतिबंध को याद रखते हैं पर 1813 के अंत को भूल जाते हैं, वे कथन 4 को सही चिह्नित कर देंगे।",
+      "final_explanation": "1857 के कारणों में सामाजिक सुधार कानूनों की द्वैध विश्लेषणात्मक स्थिति है: ऐतिहासिक रूप से प्रगतिशील, पर तत्काल संदर्भ में सांस्कृतिक आक्रमण के रूप में देखा गया।\n\n• कथन 1 — सही: Religious Disabilities Act (1850) ने धर्म परिवर्तन पर उत्तराधिकार दंड हटाया, जिसे परंपरागत समुदायों ने धर्मांतरण प्रोत्साहन और 'मिशनरी साजिश' की अफवाहों के लिए कारण माना।\n• कथन 2 — गलत: सती उन्मूलन (1829) सर्वसम्मति से स्वीकार नहीं किया गया। विशेषकर बंगाल में रूढ़िवादी मत ने इसे धार्मिक हस्तक्षेप माना।\n• कथन 3 — सही: हिंदू विधवाओं के पुनर्विवाह अधिनियम (1856) को रूढ़िवादी हिंदुओं ने धार्मिक सामाजिक व्यवस्था का उल्लंघन माना, जिससे पूर्व-विद्रोह धार्मिक चिंता का माहौल बना।\n• कथन 4 — गलत: 1813 का चार्टर अधिनियम भारत को मिशनरियों के लिए खोलता है। 1857 तक 44 वर्षों की मिशनरी गतिविधि ने धर्मांतरण के भय को वास्तविक आधार दिया।\n\nमूल्यवर्धन:\n• 'आटे और नमक में हड्डी की धूल' की अफवाह (जिसमें कहा गया कि ब्रिटिश भोजन को दूषित कर धर्मांतरण के लिए मजबूर कर रहे हैं) इस पूर्व-विद्रोह मिशनरी चिंता का प्रत्यक्ष परिणाम थी।\n• 1857 के बाद, रानी की घोषणा ने स्पष्ट रूप से धर्म में गैर-हस्तक्षेप का वचन दिया — जो इन सामाजिक हस्तक्षेपों को कारण मानने की अप्रत्यक्ष स्वीकृति थी।\n• UPSC सामाजिक सुधारों के 'द्वैध फ्रेमिंग' का परीक्षण करता है: दीर्घकालिक प्रभाव में प्रगतिशील, अल्पकालिक धारणा में अस्थिर।"
+    }
+  },
+  {
+    "uuid": "4a2bdc59-6515-44bd-ba60-409e42f05e1c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Economic Exploitation and De-industrialization of Indian Artisans"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Dacca muslin decline — de-industrialization regional specificity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which among the following textile manufacturing centres is most specifically documented as having suffered severe economic decline due to competition from cheap British machine-made cloth in the decades preceding the Revolt of 1857?\n\n(a) Surat\n(b) Murshidabad\n(c) Dacca\n(d) Amritsar",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Surat is associated with textile trade decline and is plausible, but the most celebrated and historically documented case of textile de-industrialization is Dacca (muslin), not Surat.",
+      "elimination_logic": [
+        "The question asks for the textile centre most specifically documented as a casualty of British machine-made cloth competition — recall the 'Dacca muslin' example.",
+        "Surat suffered but its decline was more linked to loss of Mughal patronage and Maratha raids earlier — not specifically the post-industrial machine-cloth competition.",
+        "Murshidabad's decline was linked to the capital shifting away from Bengal's Nawabi era — political, not directly industrial.",
+        "Dacca's muslin industry is the canonical example of de-industrialization cited in economic histories — option c."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap offers Surat (option a) as the first option because Surat is associated with cotton textile trade in student memory. However, the textbook example for the destruction of fine handloom weaving by British machine-made imports is Dacca — famous for its fine muslin (woven so fine it was called 'woven air'). Students who associate 'textile decline' generically with western India trade routes will choose Surat and miss the eastern India specificity.",
+      "final_explanation": "De-industrialization hit different regions for different reasons; UPSC rewards regional precision.\n\n• Option (a) — Surat: Surat's commercial decline was primarily tied to loss of Mughal patronage and Maratha incursions in the 18th century, predating the systematic machine-cloth competition.\n• Option (b) — Murshidabad: Declined as Bengal's political and commercial capital shifted, but this was primarily political displacement, not the artisan de-industrialization model.\n• Option (c) — Dacca: Correct. Dacca's famous fine muslin weaving industry collapsed under competition from cheap British machine-made cloth. Montgomery Martin (1838) documented the dramatic fall in Dacca's population and loom count.\n• Option (d) — Amritsar: Amritsar's shawl and textile trade continued into the 19th century; it was not the primary documented case of machine-cloth displacement.\n\nValue Addition:\n• Dadabhai Naoroji's 'Drain of Wealth' theory identified de-industrialization as one mechanism of the drain — pre-revolt economic grievance with a long intellectual legacy.\n• The artisan class driven into poverty had sons who joined the army — creating the economic-to-military grievance linkage.\n• Montgomery Martin's 1838 report on the devastation of Dacca's textile industry is a primary source UPSC occasionally references."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह से पहले के दशकों में सस्ते ब्रिटिश मशीन-निर्मित कपड़े की प्रतिस्पर्धा के कारण निम्नलिखित वस्त्र निर्माण केंद्रों में से कौन-सा सबसे विशिष्ट रूप से गंभीर आर्थिक पतन का शिकार हुआ है?\n\n(a) सूरत\n(b) मुरशिदाबाद\n(c) डक्का\n(d) अमृतसर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — सूरत वस्त्र व्यापार के पतन से जुड़ा है और संभावित है, लेकिन वस्त्रों के विनिर्माण में गिरावट का सबसे प्रसिद्ध और ऐतिहासिक रूप से प्रलेखित मामला डक्का (मसलिन) है, न कि सूरत।",
+      "elimination_logic": [
+        "प्रश्न उस वस्त्र केंद्र के लिए है जिसे ब्रिटिश मशीन-निर्मित सस्ते कपड़े की प्रतिस्पर्धा के कारण सबसे विशिष्ट रूप से आर्थिक पतन का शिकार बताया गया है — 'डक्का मसलिन' उदाहरण को याद करें।",
+        "सूरत को नुकसान हुआ लेकिन इसका पतन मुख्य रूप से मुगल संरक्षण के नुकसान और मराठा आक्रमणों से जुड़ा था — विशेष रूप से औद्योगिक मशीन-कपड़े की प्रतिस्पर्धा के बाद नहीं।",
+        "मुरशिदाबाद का पतन बंगाल के नवाबी युग की राजधानी के स्थानांतरण से जुड़ा था — राजनीतिक था, सीधे औद्योगिक नहीं।",
+        "डक्का की मसलिन उद्योग आर्थिक इतिहासों में विनिर्माण में गिरावट का मानक उदाहरण है — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "भूगोल-स्थानांतरण जाल में सूरत (विकल्प a) को पहला विकल्प दिया गया है क्योंकि छात्र स्मृति में सूरत कपास वस्त्र व्यापार से जुड़ा है। हालांकि, ब्रिटिश मशीन-निर्मित आयातों द्वारा सूक्ष्म हथकरघा बुनाई के विनाश का पाठ्यपुस्तक उदाहरण डक्का है — जो अपनी सूक्ष्म मसलिन के लिए प्रसिद्ध है (इतना सूक्ष्म कि इसे 'बुना हुआ हवा' कहा जाता था)। जो छात्र 'वस्त्र पतन' को सामान्यतः पश्चिमी भारत के व्यापार मार्गों से जोड़ते हैं, वे सूरत चुनेंगे और पूर्वी भारत की विशिष्टता को चूक जाएंगे।",
+      "final_explanation": "विनिर्माण में गिरावट विभिन्न क्षेत्रों को विभिन्न कारणों से प्रभावित करती है; UPSC क्षेत्रीय सटीकता को महत्व देता है।\n\n• विकल्प (a) — सूरत: सूरत का वाणिज्यिक पतन मुख्य रूप से 18वीं सदी में मुगल संरक्षण के नुकसान और मराठा आक्रमणों से जुड़ा था, जो व्यवस्थित मशीन-कपड़े प्रतिस्पर्धा से पहले था।\n• विकल्प (b) — मुरशिदाबाद: बंगाल की राजनीतिक और वाणिज्यिक राजधानी के स्थानांतरण के कारण पतन हुआ, लेकिन यह मुख्य रूप से राजनीतिक विस्थापन था, कारीगर विनिर्माण में गिरावट का मॉडल नहीं।\n• विकल्प (c) — डक्का: सही। डक्का की प्रसिद्ध सूक्ष्म मसलिन बुनाई उद्योग सस्ते ब्रिटिश मशीन-निर्मित कपड़े की प्रतिस्पर्धा के कारण ध्वस्त हो गई। मोंटगोमरी मार्टिन (1838) ने डक्का की जनसंख्या और करघों की संख्या में नाटकीय गिरावट का दस्तावेजीकरण किया।\n• विकल्प (d) — अमृतसर: अमृतसर का शॉल और वस्त्र व्यापार 19वीं सदी तक जारी रहा; यह मशीन-कपड़े विस्थापन का मुख्य प्रलेखित मामला नहीं था।\n\nमूल्य संवर्धन:\n• दादाभाई नौरोजी के 'धन निकासी' सिद्धांत ने विनिर्माण में गिरावट को निकासी के एक तंत्र के रूप में पहचाना — विद्रोह से पूर्व आर्थिक शिकायत जिसके दीर्घकालिक बौद्धिक प्रभाव हैं।\n• गरीबी में धकेले गए कारीगर वर्ग के पुत्र सेना में शामिल हुए — आर्थिक से सैन्य शिकायत का संबंध बना।\n• मोंटगोमरी मार्टिन की 1838 की रिपोर्ट डक्का के वस्त्र उद्योग के विनाश पर एक प्राथमिक स्रोत है जिसे UPSC कभी-कभी संदर्भित करता है।"
+    }
+  },
+  {
+    "uuid": "98adc8fc-f987-459f-8cec-4b8505f34df6",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Permanent Settlement of 1793 and Agrarian Distress",
+        "Geographical and Social Limitations of the Revolt: Why It Failed to Become Pan-Indian"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Permanent Settlement geography — revolt participation correlation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Permanent Settlement of 1793 and its relationship to the Revolt of 1857:\n\n1. The Permanent Settlement of 1793 was applied uniformly across British India, including the Bombay and Madras Presidencies, making it a universal cause of agrarian distress in all revolt-affected regions.\n2. Under the Permanent Settlement, zamindars were made permanent owners of land with fixed revenue obligations to the state, which transformed them into absentee landlords with little incentive to improve agricultural conditions for tenants.\n3. The correlation between areas under Permanent Settlement and areas of active revolt participation in 1857 is explained by the fact that agrarian distress was identical under all land revenue systems operative in British India at the time.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 1 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Permanent Settlement of 1793 was applied uniformly across British India, including the Bombay and Madras Presidencies, making it a universal cause of agrarian distress in all revolt-affected regions.",
+          "verdict": "Incorrect",
+          "reason": "The Permanent Settlement was applied only to Bengal and parts of northern India. Bombay Presidency had the Ryotwari system; Madras had both Ryotwari and Mahalwari in different areas. Its application was not uniform."
+        },
+        {
+          "statement": "Under the Permanent Settlement, zamindars were made permanent owners of land with fixed revenue obligations to the state, which transformed them into absentee landlords with little incentive to improve agricultural conditions for tenants.",
+          "verdict": "Correct",
+          "reason": "This accurately describes the structural outcome of the Permanent Settlement — zamindars' revenue was fixed, but they could extract maximum rent from tenants, creating absentee landlordism and tenant exploitation."
+        },
+        {
+          "statement": "The correlation between areas under Permanent Settlement and areas of active revolt participation in 1857 is explained by the fact that agrarian distress was identical under all land revenue systems operative in British India at the time.",
+          "verdict": "Incorrect",
+          "reason": "The Ryotwari system, operative in Bombay and Madras, had different tenancy structures. The Bengal Presidency's Permanent Settlement created distinctive conditions of absentee landlordism. Agrarian distress was not identical across systems — this explains in part the regional geography of the revolt."
+        }
+      ],
+      "strong_distractor": "b — Students who know statement 1 is incorrect (Permanent Settlement was not universal) may still mark option b, thinking only statement 1 is wrong while missing that statement 3 is also false.",
+      "elimination_logic": [
+        "Statement 1 falsely claims uniform application of Permanent Settlement — Bombay had Ryotwari. Mark incorrect.",
+        "Statement 2 correctly describes the absentee landlordism outcome of the Permanent Settlement — mark correct.",
+        "Statement 3 claims agrarian distress was identical under all revenue systems — this is false; differences in systems explain revolt geography. Mark incorrect.",
+        "Statements 1 and 3 are NOT correct — option a."
+      ],
+      "upsc_trap_explanation": "Statement 3 is the harder trap. Students who know the agrarian distress was a cause of the revolt may assume it was uniformly distributed. The statement exploits this by suggesting all land revenue systems produced identical outcomes. In reality, the Permanent Settlement's specific mechanism of absentee landlordism was structurally distinct from Ryotwari, and this difference partly explains why the revolt was geographically concentrated in the Hindi belt rather than the Deccan or the far south.",
+      "final_explanation": "The Permanent Settlement's geographic specificity is one of the most analytically important — and underappreciated — facts about the revolt's geography.\n\n• Statement 1 — Incorrect: The Permanent Settlement applied to Bengal, Bihar, Orissa, and parts of the Northwest. Bombay Presidency used the Ryotwari system; Madras had both Ryotwari and Mahalwari settlements. It was not pan-Indian.\n• Statement 2 — Correct: The Permanent Settlement created a class of absentee zamindars incentivised to maximise tenant extraction but not agricultural investment — the structural root of peasant indebtedness.\n• Statement 3 — Incorrect: Ryotwari and Mahalwari systems had different tenancy structures, different grievance patterns, and different classes affected. Agrarian conditions were not identical — the geographic overlap between Permanent Settlement areas and revolt hotspots is precisely what historians use to explain participation patterns.\n\nValue Addition:\n• Moneylenders (mahajans/sahukars) deepened peasant indebtedness independent of the land revenue system — their role is a 'non-British actor' in the economic grievance.\n• The new zamindars created under Permanent Settlement largely stayed loyal in 1857 — their land rights depended on British protection.\n• Eric Stokes' work on the 'peasant war' dimension of 1857 specifically examines the Permanent Settlement areas of UP and Bihar."
+    },
+    "hi": {
+      "display_text": "1793 के स्थायी निपटान (Permanent Settlement) और 1857 के विद्रोह के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 1793 का स्थायी निपटान ब्रिटिश भारत में समान रूप से लागू किया गया था, जिसमें बॉम्बे और मद्रास प्रेसिडेंसी भी शामिल थीं, जिससे यह सभी विद्रोह प्रभावित क्षेत्रों में कृषक संकट का सार्वभौमिक कारण बन गया।\n2. स्थायी निपटान के तहत, ज़मींदारों को भूमि के स्थायी मालिक बनाया गया था जिनके राजस्व दायित्व राज्य के प्रति निश्चित थे, जिससे वे गैर-निवासी ज़मींदार बन गए जिनके पास किरायेदारों के कृषि सुधार के लिए कम प्रोत्साहन था।\n3. 1857 के विद्रोह में सक्रिय भागीदारी वाले क्षेत्रों और स्थायी निपटान वाले क्षेत्रों के बीच सहसंबंध इस तथ्य से समझाया जाता है कि उस समय ब्रिटिश भारत में सभी भूमि राजस्व प्रणालियों के तहत कृषक संकट समान था।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1793 के स्थायी निपटान (Permanent Settlement) को ब्रिटिश भारत में समान रूप से लागू किया गया था, जिसमें बॉम्बे और मद्रास प्रेसिडेंसी भी शामिल थीं, जिससे यह सभी विद्रोह प्रभावित क्षेत्रों में कृषक संकट का सार्वभौमिक कारण बन गया।",
+          "verdict": "गलत",
+          "reason": "स्थायी निपटान केवल बंगाल और उत्तरी भारत के कुछ हिस्सों में लागू था। बॉम्बे प्रेसिडेंसी में रायटवारी प्रणाली थी; मद्रास में विभिन्न क्षेत्रों में रायटवारी और महालवारी दोनों थीं। इसका लागू होना समान नहीं था।"
+        },
+        {
+          "statement": "स्थायी निपटान के तहत, ज़मींदारों को भूमि के स्थायी मालिक बनाया गया था जिनके राजस्व दायित्व राज्य के प्रति निश्चित थे, जिससे वे गैर-निवासी ज़मींदार बन गए जिनके पास किरायेदारों के कृषि सुधार के लिए कम प्रोत्साहन था।",
+          "verdict": "सही",
+          "reason": "यह स्थायी निपटान के संरचनात्मक परिणाम का सही वर्णन करता है — ज़मींदारों का राजस्व निश्चित था, लेकिन वे किरायेदारों से अधिकतम किराया वसूल सकते थे, जिससे गैर-निवासी ज़मींदारी और किरायेदारों का शोषण हुआ।"
+        },
+        {
+          "statement": "1857 के विद्रोह में सक्रिय भागीदारी वाले क्षेत्रों और स्थायी निपटान वाले क्षेत्रों के बीच सहसंबंध इस तथ्य से समझाया जाता है कि उस समय ब्रिटिश भारत में सभी भूमि राजस्व प्रणालियों के तहत कृषक संकट समान था।",
+          "verdict": "गलत",
+          "reason": "बॉम्बे और मद्रास में लागू रायटवारी प्रणाली की किरायेदारी संरचनाएँ भिन्न थीं। बंगाल प्रेसिडेंसी का स्थायी निपटान गैर-निवासी ज़मींदारी की विशिष्ट परिस्थितियाँ बनाता था। कृषक संकट सभी प्रणालियों में समान नहीं था — यही विद्रोह के क्षेत्रीय भूगोल को आंशिक रूप से समझाता है।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र जानते हैं कि कथन 1 गलत है (स्थायी निपटान सार्वभौमिक नहीं था) वे फिर भी विकल्प b चुन सकते हैं, सोचकर कि केवल कथन 1 गलत है जबकि वे यह नहीं समझते कि कथन 3 भी गलत है।",
+      "elimination_logic": [
+        "कथन 1 गलत है क्योंकि स्थायी निपटान समान रूप से लागू नहीं था — बॉम्बे में रायटवारी थी। इसे गलत चिह्नित करें।",
+        "कथन 2 सही है क्योंकि यह स्थायी निपटान के गैर-निवासी ज़मींदारी परिणाम का सही वर्णन करता है। इसे सही चिह्नित करें।",
+        "कथन 3 गलत है क्योंकि यह कहता है कि सभी राजस्व प्रणालियों के तहत कृषक संकट समान था — यह गलत है; प्रणालियों के भेद विद्रोह के भूगोल को समझाते हैं। इसे गलत चिह्नित करें।",
+        "अतः कथन 1 और 3 सही नहीं हैं — विकल्प a।"
+      ],
+      "upsc_trap_explanation": "कथन 3 कठिन जाल है। जो छात्र जानते हैं कि कृषक संकट विद्रोह का कारण था, वे मान सकते हैं कि यह समान रूप से फैला था। यह कथन इस भ्रम का फायदा उठाता है कि सभी भूमि राजस्व प्रणालियों ने समान परिणाम दिए। वास्तव में, स्थायी निपटान की गैर-निवासी ज़मींदारी की विशिष्ट संरचना रायटवारी से भिन्न थी, और यही अंतर आंशिक रूप से समझाता है कि विद्रोह हिंदी पट्टी में केंद्रित क्यों था, न कि दक्कन या दक्षिण में।",
+      "final_explanation": "स्थायी निपटान का भौगोलिक विशिष्टता विद्रोह के भूगोल के सबसे महत्वपूर्ण — और कम समझे गए — तथ्यों में से एक है।\n\n• कथन 1 — गलत: स्थायी निपटान बंगाल, बिहार, उड़ीसा और उत्तर-पश्चिम के कुछ हिस्सों में लागू था। बॉम्बे प्रेसिडेंसी में रायटवारी प्रणाली थी; मद्रास में रायटवारी और महालवारी दोनों थीं। यह पूरे भारत में लागू नहीं था।\n• कथन 2 — सही: स्थायी निपटान ने गैर-निवासी ज़मींदारों की एक वर्ग बनाई जो किरायेदारों से अधिकतम वसूली के लिए प्रेरित थे लेकिन कृषि निवेश के लिए नहीं — यह कृषक कर्ज़ में फंसे होने की संरचनात्मक जड़ थी।\n• कथन 3 — गलत: रायटवारी और महालवारी प्रणालियों की किरायेदारी संरचनाएँ, शिकायत के पैटर्न और प्रभावित वर्ग भिन्न थे। कृषक स्थिति समान नहीं थी — स्थायी निपटान वाले क्षेत्रों और विद्रोह के केंद्रों के बीच भौगोलिक ओवरलैप इतिहासकारों द्वारा भागीदारी पैटर्न समझाने के लिए उपयोग किया जाता है।\n\nमूल्यवर्धन:\n• साहूकारों (महाजन/सहूकार) ने कृषक कर्ज़ को भूमि राजस्व प्रणाली से स्वतंत्र रूप से गहरा किया — उनकी भूमिका आर्थिक शिकायत में 'गैर-ब्रिटिश अभिनेता' है।\n• स्थायी निपटान के तहत बने नए ज़मींदार 1857 में अधिकांशतः वफादार रहे — उनके भूमि अधिकार ब्रिटिश संरक्षण पर निर्भर थे।\n• एरिक स्टोक्स का 1857 के 'कृषक युद्ध' आयाम पर कार्य विशेष रूप से यूपी और बिहार के स्थायी निपटान क्षेत्रों की जांच करता है।"
+    }
+  },
+  {
+    "uuid": "2d5bc305-3f91-40fe-9421-03188814df16",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Immediate Triggers vs. Long-term Structural Causes: Analytical Framework",
+        "Greased Cartridge Controversy: Immediate Trigger vs. Underlying Causes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Meerut mutiny date — May 10, 1857 as conventional revolt start",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following events is conventionally regarded as the starting point of the Revolt of 1857?\n\n(a) The attack by Mangal Pandey on British officers at Barrackpore on March 29, 1857\n(b) The outbreak of the sepoy mutiny at Meerut on May 10, 1857\n(c) The seizure of the Kanpur cantonment by Nana Sahib's forces on June 4, 1857\n(d) The circulation of incendiary pamphlets among sepoys at Ambala on April 15, 1857",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know March 1857 is significant (Mangal Pandey's Barrackpore incident) often conflate it with the Meerut mutiny, choosing 'March' as the start of the revolt.",
+      "elimination_logic": [
+        "The question asks for the conventionally accepted starting event of the Revolt of 1857 — not the Barrackpore incident.",
+        "Mangal Pandey's attack was in March 1857 at Barrackpore — important but a precursor, not the starting event.",
+        "The Meerut mutiny on May 10, 1857 is the conventional start — eliminate options placing the start in March, June, or April.",
+        "Option b (May 10, 1857 — Meerut) is correct."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap exploits the proximity of Barrackpore (March 1857) and Meerut (May 1857). Students who have memorised Mangal Pandey's date may answer 'March' without distinguishing between a precursor incident and the formally recognised outbreak. UPSC distinguishes: Barrackpore is a catalyst/precursor; Meerut on May 10 is the conventional commencement of the revolt.",
+      "final_explanation": "The precise dating of the revolt's start matters for analytical framing in UPSC questions.\n\n• Option (a) — March 29, 1857, Barrackpore: This was Mangal Pandey's attack on British officers — an important precursor but not the generalised mutiny. The regiment was disbanded, not an uprising.\n• Option (b) — May 10, 1857, Meerut: Correct. Sepoys at Meerut broke out of jail, killed British officers, and marched to Delhi — this is conventionally the start of the revolt.\n• Option (c) — June 4, 1857, Kanpur: Kanpur (Cawnpore) was a significant rebel centre associated with Nana Sahib, but it came after Meerut.\n• Option (d) — April 15, 1857, Ambala: Ambala had early signs of disaffection but was not the site of the revolt's outbreak.\n\nValue Addition:\n• After reaching Delhi on May 11, sepoys proclaimed Bahadur Shah Zafar as the symbolic Emperor — giving the revolt its most visible figurehead.\n• Mangal Pandey was hanged on April 8, 1857 — accelerating radicalisation before Meerut.\n• The fall of Delhi to British forces in September 1857 effectively ended organised resistance, though guerrilla warfare continued until mid-1858."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह की पारंपरिक शुरुआत के रूप में निम्नलिखित में से कौन-सी घटना मानी जाती है?\n\n(a) 29 मार्च 1857 को बैरकपुर में मंगल पांडे द्वारा ब्रिटिश अधिकारियों पर हमला\n(b) 10 मई 1857 को मेरठ में सिपाही बगावत का फूट पड़ना\n(c) 4 जून 1857 को नाना साहिब की सेनाओं द्वारा कानपुर छावनी पर कब्जा\n(d) 15 अप्रैल 1857 को अंबाला में सिपाहियों के बीच उकसाने वाले पर्चे का वितरण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र मार्च 1857 को महत्वपूर्ण (मंगल पांडे का बैरकपुर घटना) मानते हैं, वे अक्सर इसे मेरठ की बगावत के साथ भ्रमित कर मार्च को विद्रोह की शुरुआत मान लेते हैं।",
+      "elimination_logic": [
+        "प्रश्न 1857 के विद्रोह की पारंपरिक रूप से स्वीकार्य प्रारंभिक घटना के लिए है — न कि बैरकपुर घटना के लिए।",
+        "मंगल पांडे का हमला मार्च 1857 में बैरकपुर में हुआ था — महत्वपूर्ण लेकिन एक पूर्ववर्ती घटना, प्रारंभिक घटना नहीं।",
+        "मेरठ की बगावत 10 मई 1857 को पारंपरिक शुरुआत मानी जाती है — मार्च, जून या अप्रैल में शुरुआत रखने वाले विकल्पों को हटा दें।",
+        "विकल्प (b) (10 मई 1857 — मेरठ) सही है।"
+      ],
+      "upsc_trap_explanation": "समय-संबंधित भ्रम का जाल बैरकपुर (मार्च 1857) और मेरठ (मई 1857) की निकटता का फायदा उठाता है। जो छात्र मंगल पांडे की तारीख याद करते हैं, वे बिना पूर्ववर्ती घटना और औपचारिक विद्रोह की शुरुआत के बीच अंतर किए 'मार्च' उत्तर दे सकते हैं। UPSC इस भेद को मानता है: बैरकपुर एक उत्प्रेरक/पूर्ववर्ती घटना है; मेरठ 10 मई को विद्रोह की पारंपरिक शुरुआत है।",
+      "final_explanation": "विद्रोह की शुरुआत की सटीक तिथि UPSC प्रश्नों में विश्लेषणात्मक रूपरेखा के लिए महत्वपूर्ण है।\n\n• विकल्प (a) — 29 मार्च 1857, बैरकपुर: यह मंगल पांडे का ब्रिटिश अधिकारियों पर हमला था — एक महत्वपूर्ण पूर्ववर्ती घटना लेकिन सामान्य विद्रोह नहीं। रेजिमेंट भंग कर दी गई थी, विद्रोह नहीं।\n• विकल्प (b) — 10 मई 1857, मेरठ: सही। मेरठ के सिपाहियों ने जेल तोड़ी, ब्रिटिश अधिकारियों की हत्या की और दिल्ली की ओर बढ़े — इसे पारंपरिक रूप से विद्रोह की शुरुआत माना जाता है।\n• विकल्प (c) — 4 जून 1857, कानपुर: कानपुर (कानपुर) नाना साहिब से जुड़ा एक महत्वपूर्ण विद्रोही केंद्र था, लेकिन यह मेरठ के बाद आया।\n• विकल्प (d) — 15 अप्रैल 1857, अंबाला: अंबाला में असंतोष के शुरुआती संकेत थे लेकिन यह विद्रोह की शुरुआत का स्थल नहीं था।\n\nमूल्य संवर्धन:\n• 11 मई को दिल्ली पहुंचने के बाद, सिपाहियों ने बहादुर शाह ज़फ़र को प्रतीकात्मक सम्राट घोषित किया — जिससे विद्रोह का सबसे प्रमुख चेहरा बना।\n• मंगल पांडे को 8 अप्रैल 1857 को फांसी दी गई — जिससे मेरठ से पहले कट्टरता बढ़ी।\n• सितंबर 1857 में दिल्ली के ब्रिटिश बलों द्वारा गिराए जाने से संगठित प्रतिरोध समाप्त हुआ, हालांकि गुरिल्ला युद्ध 1858 के मध्य तक जारी रहा।"
+    }
+  },
+  {
+    "uuid": "5abe896d-9cee-4e0d-bbb5-eebf4f5ba011",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Doctrine of Lapse: Scope, Application, and Limitations",
+        "Subsidiary Alliance System: Political Discontentment and Economic Drain"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Hyderabad — Subsidiary Alliance exemption from Doctrine of Lapse",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among the princely states that had entered into a Subsidiary Alliance with the British, ________ was notably NOT subjected to the Doctrine of Lapse and remained under its own ruling dynasty through the period leading up to and beyond the Revolt of 1857.\n\n(a) Jhansi\n(b) Hyderabad\n(c) Nagpur\n(d) Satara",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Jhansi is most famous in the revolt narrative and students associate it with Dalhousie's policies — but Jhansi was annexed, making it the opposite of the correct answer.",
+      "elimination_logic": [
+        "The blank requires a state that signed the Subsidiary Alliance AND was NOT annexed under the Doctrine of Lapse — a state that survived both Wellesley's and Dalhousie's expansionist tools.",
+        "Jhansi was annexed under Doctrine of Lapse — eliminate option a.",
+        "Nagpur was annexed — eliminate option c.",
+        "Satara was annexed — eliminate option d.",
+        "Hyderabad signed the first Subsidiary Alliance (1798) and was never annexed — option b."
+      ],
+      "upsc_trap_explanation": "Jhansi is the entity-swap trap because it is the most famous state associated with revolt and Dalhousie's policies. Students instinctively think of Jhansi in any question about the Doctrine of Lapse. But Jhansi was annexed — it is the paradigm case of annexation, not exemption. Hyderabad is the correct answer precisely because it illustrates the limits of the Doctrine: states with specific treaty relationships (here, the Subsidiary Alliance) were treated differently.",
+      "final_explanation": "The Doctrine of Lapse had important exemptions that UPSC tests alongside its applications.\n\n• Option (a) — Jhansi: Incorrect. Jhansi was annexed in 1853 — it is a canonical application, not an exemption.\n• Option (b) — Hyderabad: Correct. Hyderabad signed the first Subsidiary Alliance with Wellesley in 1798 and was classified as a 'subordinate' state with a distinct treaty relationship. This exempted it from the Doctrine of Lapse, and it remained intact under the Nizam.\n• Option (c) — Nagpur: Incorrect. Nagpur was annexed in 1854 under the Doctrine of Lapse.\n• Option (d) — Satara: Incorrect. Satara was the first state annexed under the Doctrine in 1848.\n\nValue Addition:\n• Mysore is another state exempted from the Doctrine — it had a specific relationship with the British following the Fourth Anglo-Mysore War (1799).\n• The 'dependent' vs. 'subordinate' state distinction determined Doctrine of Lapse applicability — subordinate states with treaties were generally exempt.\n• Post-1857, the Queen's Proclamation effectively buried the Doctrine of Lapse by pledging to respect the rights of Indian princes to adopt heirs."
+    },
+    "hi": {
+      "display_text": "उन रियासतों में से जो ब्रिटिश के साथ सब्सिडियरी एलायंस में शामिल थीं, ________ विशेष रूप से डोक्ट्रिन ऑफ लैप्स के अधीन नहीं था और 1857 के विद्रोह के पहले और बाद की अवधि में अपनी शासकीय वंशावली के अधीन बना रहा।\n\n(a) झांसी\n(b) हैदराबाद\n(c) नागपुर\n(d) सतारा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — झांसी विद्रोह कथा में सबसे प्रसिद्ध है और छात्र इसे डलहौजी की नीतियों से जोड़ते हैं — लेकिन झांसी का अधिग्रहण हो चुका था, जो सही उत्तर के विपरीत है।",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए उस राज्य की आवश्यकता है जिसने ब्रिटिश के साथ सब्सिडियरी एलायंस (Subsidiary Alliance) पर हस्ताक्षर किए और जिसे डोक्ट्रिन ऑफ लैप्स (Doctrine of Lapse) के तहत अधिग्रहित नहीं किया गया — ऐसा राज्य जो वेल्सली और डलहौजी दोनों के विस्तारवादी उपकरणों से बचा।",
+        "झांसी को डोक्ट्रिन ऑफ लैप्स के तहत अधिग्रहित किया गया था — विकल्प (a) को निरस्त करें।",
+        "नागपुर का अधिग्रहण हो चुका था — विकल्प (c) को निरस्त करें।",
+        "सतारा का अधिग्रहण हो चुका था — विकल्प (d) को निरस्त करें।",
+        "हैदराबाद ने पहला सब्सिडियरी एलायंस (1798) किया और कभी अधिग्रहित नहीं हुआ — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "झांसी एक एंटिटी-स्वैप ट्रैप है क्योंकि यह विद्रोह और डलहौजी की नीतियों से सबसे प्रसिद्ध रूप से जुड़ा राज्य है। छात्र सहज रूप से डोक्ट्रिन ऑफ लैप्स से संबंधित किसी भी प्रश्न में झांसी को सोचते हैं। लेकिन झांसी का अधिग्रहण हो चुका था — यह अधिग्रहण का आदर्श उदाहरण है, छूट का नहीं। हैदराबाद सही उत्तर है क्योंकि यह डोक्ट्रिन की सीमाओं को दर्शाता है: जिन राज्यों के साथ विशिष्ट संधि संबंध थे (यहाँ, सब्सिडियरी एलायंस), उन्हें अलग तरीके से माना गया।",
+      "final_explanation": "डोक्ट्रिन ऑफ लैप्स के महत्वपूर्ण अपवाद थे जिन्हें UPSC इसके अनुप्रयोगों के साथ परखता है।\n\n• विकल्प (a) — झांसी: गलत। झांसी का अधिग्रहण 1853 में हुआ — यह डोक्ट्रिन का मानक अनुप्रयोग है, छूट नहीं।\n• विकल्प (b) — हैदराबाद: सही। हैदराबाद ने 1798 में वेल्सली के साथ पहला सब्सिडियरी एलायंस किया और इसे 'अधीनस्थ' राज्य के रूप में वर्गीकृत किया गया, जिसके पास विशिष्ट संधि संबंध थे। इससे यह डोक्ट्रिन ऑफ लैप्स से मुक्त रहा और निज़ाम के अधीन बना रहा।\n• विकल्प (c) — नागपुर: गलत। नागपुर का अधिग्रहण 1854 में डोक्ट्रिन ऑफ लैप्स के तहत हुआ।\n• विकल्प (d) — सतारा: गलत। सतारा पहला राज्य था जिसे 1848 में डोक्ट्रिन के तहत अधिग्रहित किया गया।\n\nमूल्यवर्धन:\n• मैसूर भी डोक्ट्रिन से मुक्त एक अन्य राज्य था — इसका ब्रिटिश के साथ चौथे आंग्ल-मैसूर युद्ध (1799) के बाद विशिष्ट संबंध था।\n• 'निर्भर' और 'अधीनस्थ' राज्यों के बीच का भेद डोक्ट्रिन ऑफ लैप्स की प्रासंगिकता निर्धारित करता था — संधि वाले अधीनस्थ राज्य आमतौर पर मुक्त थे।\n• 1857 के बाद, रानी की घोषणा ने डोक्ट्रिन ऑफ लैप्स को प्रभावी रूप से समाप्त कर दिया, भारतीय राजाओं के वारिस अपनाने के अधिकारों का सम्मान करने का वचन देकर।"
+    }
+  },
+  {
+    "uuid": "d3e1992a-d209-42b1-bfdc-3fda7fccfb54",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Bengal Army's Composition and Caste-Based Grievances",
+        "Geographical and Social Limitations of the Revolt: Why It Failed to Become Pan-Indian"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Bengal vs. Bombay/Madras armies — caste composition as geographical limit",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the caste composition of the Bengal Army and its relationship to the Revolt of 1857:\n\n1. The Bengal Army before 1857 was dominated by high-caste Brahmin and Rajput recruits primarily from Awadh and Bihar, making it particularly sensitive to religious grievances involving caste purity.\n2. The Bombay and Madras Armies shared an identical caste composition with the Bengal Army, and their non-participation in the revolt was solely due to the superior administrative efficiency of their respective British commanders.\n3. The geographical concentration of the revolt in northern and central India is partly explained by the recruitment patterns of the Bengal Army, whose sepoys' home regions were also the areas most affected by the Permanent Settlement and the annexation of Awadh.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Bengal Army before 1857 was dominated by high-caste Brahmin and Rajput recruits primarily from Awadh and Bihar, making it particularly sensitive to religious grievances involving caste purity.",
+          "verdict": "Correct",
+          "reason": "This is the established composition of the Bengal Army — high-caste Hindus from eastern UP and Bihar who were acutely responsive to caste-based religious concerns like the overseas service order and greased cartridges."
+        },
+        {
+          "statement": "The Bombay and Madras Armies shared an identical caste composition with the Bengal Army, and their non-participation in the revolt was solely due to the superior administrative efficiency of their respective British commanders.",
+          "verdict": "Incorrect",
+          "reason": "The Bombay and Madras Armies had more diverse, lower-caste compositions and different regional recruitment bases. Their non-participation reflected structural differences in caste composition, not merely superior British management."
+        },
+        {
+          "statement": "The geographical concentration of the revolt in northern and central India is partly explained by the recruitment patterns of the Bengal Army, whose sepoys' home regions were also the areas most affected by the Permanent Settlement and the annexation of Awadh.",
+          "verdict": "Correct",
+          "reason": "There is a direct geographical overlap between Bengal Army recruitment zones (Awadh, Bihar, eastern UP) and the revolt's hotspots — the same areas suffered under the Permanent Settlement's agrarian distress and the Awadh annexation's economic displacement."
+        }
+      ],
+      "strong_distractor": "d — Students who correctly identify statements 1 and 3 as correct may hesitate over statement 2, wondering if there is some truth to the administrative efficiency argument — but the word 'solely' makes it categorically incorrect.",
+      "elimination_logic": [
+        "Statement 1: Bengal Army's Brahmin/Rajput composition from Awadh/Bihar is a standard historical fact — correct.",
+        "Statement 2 uses 'identical caste composition' and 'solely' — both are scope extensions that make the statement wholly false. The Bombay/Madras armies had different compositions. Mark incorrect.",
+        "Statement 3 correctly identifies the geographical overlap between Bengal Army recruitment zones and revolt hotspots — correct.",
+        "Statements 1 and 3 are correct — option c."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the scope-extension technique with two extreme qualifiers: 'identical caste composition' and 'solely.' Students who know that good British commanders in Bombay/Madras did help maintain order might see partial truth in the 'administrative efficiency' claim and overlook the factual error about 'identical composition.' The word 'solely' should immediately trigger suspicion — historical causation is never monocausal, and caste composition was the primary structural explanation.",
+      "final_explanation": "The caste composition difference between Bengal Army and its sister armies is the single most important structural explanation for the revolt's geographical limitations.\n\n• Statement 1 — Correct: Bengal Army recruitment focused on high-caste Hindus — Brahmins and Rajputs from the Bhojpuri/Awadhi belt. Their acute sensitivity to caste pollution made them susceptible to the religious dimensions of the military grievances.\n• Statement 2 — Incorrect: Bombay and Madras Armies had more socially diverse, lower-caste compositions. They did not share the Bengal Army's caste-based anxiety about overseas service or greased cartridges. The explanation lies in structural composition, not just British administrative skill.\n• Statement 3 — Correct: The geographical overlap is analytically crucial — the same regions that supplied Bengal Army recruits were devastated by the Permanent Settlement's absentee landlordism and Awadh's annexation. Economic and military grievances reinforced each other in the same territory.\n\nValue Addition:\n• After 1857, the British diversified army recruitment — the 'Martial Races' theory emerged, favouring Sikhs, Gurkhas, Pathans, and Jats over high-caste Hindustanis.\n• The concentration of revolt in the Hindi belt created the first organised resistance map of modern India.\n• The non-participation of south India is not merely about army composition — the Deccan had different land revenue systems and different elite grievance structures."
+    },
+    "hi": {
+      "display_text": "बंगाल सेना की जाति संरचना और 1857 के विद्रोह के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 1857 से पहले बंगाल सेना में मुख्य रूप से अवध और बिहार के उच्च जाति के ब्राह्मण और राजपूत भर्ती थे, जिससे यह जाति शुद्धता से संबंधित धार्मिक शिकायतों के प्रति विशेष रूप से संवेदनशील थी।\n2. बॉम्बे और मद्रास सेनाओं की जाति संरचना बंगाल सेना के समान थी, और उनका विद्रोह में भाग न लेना केवल उनके ब्रिटिश कमांडरों की श्रेष्ठ प्रशासनिक दक्षता के कारण था।\n3. विद्रोह का भौगोलिक केंद्रित होना मुख्यतः उत्तरी और मध्य भारत में बंगाल सेना की भर्ती पैटर्न से समझाया जा सकता है, जिनके सिपाहियों के गृह क्षेत्र स्थायी बंदोबस्त और अवध के अधिग्रहण से सबसे अधिक प्रभावित क्षेत्र थे।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1857 से पहले बंगाल सेना में मुख्य रूप से अवध और बिहार के उच्च जाति के ब्राह्मण और राजपूत भर्ती थे, जिससे यह जाति शुद्धता से संबंधित धार्मिक शिकायतों के प्रति विशेष रूप से संवेदनशील थी।",
+          "verdict": "सही",
+          "reason": "यह बंगाल सेना की स्थापित संरचना है — पूर्वी यूपी और बिहार के उच्च जाति के हिंदू जो विदेशी सेवा आदेश और चिकनाई लगी कारतूस जैसी जाति आधारित धार्मिक चिंताओं के प्रति तीव्र संवेदनशील थे।"
+        },
+        {
+          "statement": "बॉम्बे और मद्रास सेनाओं की जाति संरचना बंगाल सेना के समान थी, और उनका विद्रोह में भाग न लेना केवल उनके ब्रिटिश कमांडरों की श्रेष्ठ प्रशासनिक दक्षता के कारण था।",
+          "verdict": "गलत",
+          "reason": "बॉम्बे और मद्रास सेनाओं की जातीय संरचना अधिक विविध और निम्न जाति की थी तथा उनकी भर्ती के क्षेत्र अलग थे। उनका विद्रोह में भाग न लेना जाति संरचना के भिन्न होने को दर्शाता है, न कि केवल ब्रिटिश प्रबंधन की श्रेष्ठता को।"
+        },
+        {
+          "statement": "विद्रोह का भौगोलिक केंद्रित होना मुख्यतः उत्तरी और मध्य भारत में बंगाल सेना की भर्ती पैटर्न से समझाया जा सकता है, जिनके सिपाहियों के गृह क्षेत्र स्थायी बंदोबस्त और अवध के अधिग्रहण से सबसे अधिक प्रभावित क्षेत्र थे।",
+          "verdict": "सही",
+          "reason": "बंगाल सेना की भर्ती क्षेत्र (अवध, बिहार, पूर्वी यूपी) और विद्रोह के मुख्य क्षेत्र के बीच सीधा भौगोलिक ओवरलैप है — वही क्षेत्र स्थायी बंदोबस्त की कृषि संकट और अवध के अधिग्रहण की आर्थिक विस्थापन से पीड़ित थे।"
+        }
+      ],
+      "strong_distractor": "विकल्प (d) — जो छात्र कथन 1 और 3 को सही पहचानते हैं, वे कथन 2 को लेकर संदेह कर सकते हैं कि क्या प्रशासनिक दक्षता का कोई सत्य है — लेकिन 'केवल' शब्द इसे पूर्णतः गलत बनाता है।",
+      "elimination_logic": [
+        "कथन 1: बंगाल सेना की ब्राह्मण/राजपूत संरचना अवध/बिहार से एक मान्य ऐतिहासिक तथ्य है — सही।",
+        "कथन 2 में 'समान जाति संरचना' और 'केवल' शब्द दायरे का विस्तार करते हैं जो इसे पूरी तरह गलत बनाते हैं। बॉम्बे/मद्रास सेनाओं की संरचना भिन्न थी। इसे गलत चिह्नित करें।",
+        "कथन 3 सही है क्योंकि यह बंगाल सेना की भर्ती क्षेत्रों और विद्रोह के केंद्रों के बीच भौगोलिक ओवरलैप को सही ढंग से दर्शाता है।",
+        "कथन 1 और 3 सही हैं — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में दायरे का विस्तार करने की तकनीक का उपयोग किया गया है जिसमें दो चरम सीमाएँ हैं: 'समान जाति संरचना' और 'केवल'। जो छात्र जानते हैं कि बॉम्बे/मद्रास में अच्छे ब्रिटिश कमांडर थे जिन्होंने व्यवस्था बनाए रखी, वे 'प्रशासनिक दक्षता' के दावे में आंशिक सत्य देख सकते हैं और 'समान संरचना' के तथ्यात्मक त्रुटि को नजरअंदाज कर सकते हैं। 'केवल' शब्द तुरंत संदेह उत्पन्न करना चाहिए — ऐतिहासिक कारण कभी एकल कारण नहीं होते, और जाति संरचना प्राथमिक संरचनात्मक व्याख्या थी।",
+      "final_explanation": "बंगाल सेना और उसकी सहायक सेनाओं के बीच जाति संरचना का अंतर विद्रोह के भौगोलिक सीमाओं की सबसे महत्वपूर्ण संरचनात्मक व्याख्या है।\n\n• कथन 1 — सही: बंगाल सेना की भर्ती उच्च जाति के हिंदुओं — ब्राह्मण और राजपूतों पर केंद्रित थी जो भोजपुरी/अवधी क्षेत्र से थे। उनकी जाति प्रदूषण के प्रति तीव्र संवेदनशीलता ने उन्हें सैन्य शिकायतों के धार्मिक पहलुओं के प्रति संवेदनशील बनाया।\n• कथन 2 — गलत: बॉम्बे और मद्रास सेनाओं की सामाजिक रूप से अधिक विविध, निम्न जाति की संरचना थी। वे बंगाल सेना की जाति आधारित चिंता जैसे विदेशी सेवा या चिकनाई लगी कारतूस के प्रति चिंतित नहीं थे। व्याख्या संरचनात्मक संरचना में निहित है, केवल ब्रिटिश प्रशासनिक कौशल में नहीं।\n• कथन 3 — सही: भौगोलिक ओवरलैप विश्लेषणात्मक रूप से महत्वपूर्ण है — वही क्षेत्र जो बंगाल सेना की भर्ती के लिए थे, स्थायी बंदोबस्त के absentee landlordism और अवध के अधिग्रहण से तबाह हुए थे। आर्थिक और सैन्य शिकायतें एक ही क्षेत्र में एक-दूसरे को मजबूत करती थीं।\n\nमूल्य संवर्धन:\n• 1857 के बाद, ब्रिटिश सेना भर्ती में विविधता लाए — 'मॉर्शियल रेस' सिद्धांत उभरा, जो उच्च जाति के हिंदुस्तानियों की तुलना में सिख, गोरखा, पठान और जाटों को प्राथमिकता देता था।\n• हिंदी पट्टी में विद्रोह की एकाग्रता ने आधुनिक भारत का पहला संगठित प्रतिरोध मानचित्र बनाया।\n• दक्षिण भारत का भाग न लेना केवल सेना की संरचना का मामला नहीं था — दक्कन में अलग भूमि राजस्व प्रणाली और अलग अभिजात वर्ग की शिकायतें थीं।"
+    }
+  },
+  {
+    "uuid": "bef82d0e-4ffa-43d8-a994-3c4d4527187e",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Role of Dispossessed Ruling Classes: Taluqdars, Nawabs, and Erstwhile Soldiers",
+        "Annexation of Awadh (1856): Political, Economic, and Psychological Impact"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Wajid Ali Shah — Awadh deposition and cultural symbolism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Wajid Ali Shah — Last Nawab of Awadh, deported to Calcutta after the annexation of 1856 on grounds of alleged misgovernance, becoming a cultural symbol of the British assault on Indo-Islamic civilisation\n(b) Wajid Ali Shah — Last Nawab of Awadh, exiled to Rangoon after the suppression of the Revolt of 1857 as punishment for leading armed resistance in Lucknow\n(c) Wajid Ali Shah — Last Nawab of Awadh, who agreed to place Awadh under British administrative supervision and continued to reside in Lucknow as a ceremonial figurehead\n(d) Wajid Ali Shah — Last Mughal Emperor of Delhi, who led the rebel forces from the Red Fort during the Revolt of 1857",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Wajid Ali Shah was deposed sometimes conflate his fate with Bahadur Shah Zafar (exiled to Rangoon), leading them to choose the option that describes exile to Burma rather than Calcutta.",
+      "elimination_logic": [
+        "Wajid Ali Shah was the last Nawab of Awadh — identify the option that correctly pairs him with Awadh.",
+        "He was not a Mughal Emperor (eliminates options referencing Delhi) — eliminate option d.",
+        "He was deported to Calcutta, not Rangoon — eliminate option b (Rangoon conflation with Bahadur Shah Zafar).",
+        "Option c attributes misgovernance as the cause of his removal — this is correct in terms of British justification, but the pairing that best captures the historically documented personal detail is option a (deported to Calcutta, became symbol of cultural loss).",
+        "Option a correctly pairs Wajid Ali Shah with deportation to Calcutta and his cultural significance — correctly matched."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges Wajid Ali Shah's fate with Bahadur Shah Zafar's. Both were Indian monarchs deposed/exiled by the British in connection with 1857. But Wajid Ali Shah was deported to Calcutta (Garden Reach, Matiaburj) before the revolt, in 1856; Bahadur Shah Zafar was exiled to Rangoon after the revolt, in 1858. Students who know one exile narrative often apply it to the other.",
+      "final_explanation": "Wajid Ali Shah's case combines political, economic, and cultural dimensions of the causes of 1857.\n\n• Option (a) — Wajid Ali Shah : Last Nawab of Awadh, deported to Calcutta in 1856 after annexation on misgovernance grounds, becoming a symbol of the wound to Indo-Islamic culture — Correctly matched.\n• Option (b) — Wajid Ali Shah : Exiled to Rangoon after the revolt — Incorrectly matched. Rangoon exile was Bahadur Shah Zafar's fate (1858). Wajid Ali Shah was sent to Calcutta in 1856, before the revolt.\n• Option (c) — Wajid Ali Shah : Agreed voluntarily to British administrative supervision and remained in Lucknow — Incorrectly matched. He was deported, not given supervisory status.\n• Option (d) — Wajid Ali Shah : Mughal Emperor who led the revolt from Delhi — Incorrectly matched. He was an Awadhi Nawab, not a Mughal Emperor; he was in Calcutta during the revolt.\n\nValue Addition:\n• Wajid Ali Shah was renowned as a poet, musician, and patron of Kathak dance — his deportation symbolised the British destruction of Lucknow's Indo-Islamic cultural heritage.\n• His son Birjis Qadr was proclaimed ruler of Awadh by rebels during the revolt — Wajid Ali Shah himself did not actively lead the uprising from Calcutta.\n• The psychological wound of Awadh's annexation resonated beyond its political class — it was felt as a civilisational loss by artists, scholars, and common people."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा सही मेल खाता है?\n\n(a) वाजिद अली शाह — अवध के अंतिम नवाब, 1856 के अधिग्रहण के बाद कथित दुरुपयोग शासन के आधार पर कोलकाता भेजे गए, जो ब्रिटिशों के हिंदू-इस्लामी सभ्यता पर हमले का सांस्कृतिक प्रतीक बन गए\n(b) वाजिद अली शाह — अवध के अंतिम नवाब, 1857 के विद्रोह के दमन के बाद लखनऊ में सशस्त्र प्रतिरोध का नेतृत्व करने के कारण रंगून निर्वासित\n(c) वाजिद अली शाह — अवध के अंतिम नवाब, जिन्होंने ब्रिटिश प्रशासनिक नियंत्रण स्वीकार किया और लखनऊ में औपचारिक पद पर बने रहे\n(d) वाजिद अली शाह — दिल्ली के अंतिम मुगल सम्राट, जिन्होंने 1857 के विद्रोह के दौरान लाल किले से विद्रोह का नेतृत्व किया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Wajid Ali Shah was deposed sometimes conflate his fate with Bahadur Shah Zafar (exiled to Rangoon), leading them to choose the option that describes exile to Burma rather than Calcutta.",
+      "elimination_logic": [
+        "वाजिद अली शाह अवध के अंतिम नवाब थे — उस विकल्प को पहचानें जो उन्हें अवध के साथ सही जोड़ता है।",
+        "वे मुगल सम्राट नहीं थे (दिल्ली से संबंधित विकल्पों को निरस्त करें) — विकल्प (d) को निरस्त करें।",
+        "उन्हें रंगून नहीं बल्कि कोलकाता भेजा गया था — विकल्प (b) को निरस्त करें (रंगून का भ्रम बहादुर शाह जफर से जुड़ा है)।",
+        "विकल्प (c) में उनके हटाए जाने का कारण दुरुपयोग शासन बताया गया है — यह ब्रिटिश औचित्य के अनुसार सही है, लेकिन ऐतिहासिक रूप से दर्ज व्यक्तिगत विवरण को सबसे बेहतर दर्शाने वाला जोड़ विकल्प (a) है (कोलकाता भेजे जाना, सांस्कृतिक हानि का प्रतीक बनना)।",
+        "विकल्प (a) वाजिद अली शाह को कोलकाता निर्वासन और उनकी सांस्कृतिक महत्ता के साथ सही जोड़ता है — सही मेल।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल (conflation trap) वाजिद अली शाह के भाग्य को बहादुर शाह जफर के साथ मिला देता है। दोनों 1857 के संबंध में ब्रिटिशों द्वारा हटाए/निर्वासित भारतीय शासक थे। लेकिन वाजिद अली शाह को 1856 में विद्रोह से पहले कोलकाता (गार्डन रीच, मटियाबुर्ज) भेजा गया था; बहादुर शाह जफर को 1858 में विद्रोह के बाद रंगून निर्वासित किया गया था। जो छात्र एक निर्वासन कथा जानते हैं, वे अक्सर उसे दूसरे पर लागू कर देते हैं।",
+      "final_explanation": "वाजिद अली शाह का मामला 1857 के कारणों के राजनीतिक, आर्थिक और सांस्कृतिक आयामों को सम्मिलित करता है।\n\n• विकल्प (a) — वाजिद अली शाह : अवध के अंतिम नवाब, 1856 में अवध के अधिग्रहण के बाद कथित दुरुपयोग शासन के आधार पर कोलकाता भेजे गए, जो ब्रिटिशों के हिंदू-इस्लामी सभ्यता पर हमले का सांस्कृतिक प्रतीक बन गए — सही मेल।\n• विकल्प (b) — वाजिद अली शाह : विद्रोह के बाद रंगून निर्वासित — गलत मेल। रंगून निर्वासन बहादुर शाह जफर का भाग्य था (1858)। वाजिद अली शाह को विद्रोह से पहले 1856 में कोलकाता भेजा गया था।\n• विकल्प (c) — वाजिद अली शाह : ब्रिटिश प्रशासनिक नियंत्रण स्वीकार कर लखनऊ में औपचारिक पद पर रहे — गलत मेल। उन्हें निर्वासित किया गया था, न कि पर्यवेक्षक बनाया गया।\n• विकल्प (d) — वाजिद अली शाह : दिल्ली के अंतिम मुगल सम्राट, जिन्होंने 1857 के विद्रोह के दौरान लाल किले से विद्रोह का नेतृत्व किया — गलत मेल। वे अवध के नवाब थे, मुगल सम्राट नहीं; विद्रोह के दौरान कोलकाता में थे।\n\nमूल्यवर्धन:\n• वाजिद अली शाह कवि, संगीतकार और कथक नृत्य के संरक्षक के रूप में प्रसिद्ध थे — उनका निर्वासन लखनऊ की हिंदू-इस्लामी सांस्कृतिक विरासत के ब्रिटिश विनाश का प्रतीक था।\n• उनके पुत्र बिरजिस कादर को विद्रोह के दौरान विद्रोहियों ने अवध का शासक घोषित किया — वाजिद अली शाह ने स्वयं कोलकाता से सक्रिय रूप से विद्रोह का नेतृत्व नहीं किया।\n• अवध के अधिग्रहण की मनोवैज्ञानिक चोट राजनीतिक वर्ग से परे महसूस की गई — इसे कलाकारों, विद्वानों और आम लोगों द्वारा सभ्यतागत क्षति के रूप में महसूस किया गया।"
+    }
+  },
+  {
+    "uuid": "ed5eda36-279d-46c6-aabe-15034f3425ef",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "The 'Prophecy of 100 Years': Psychological and Ideological Mobilization",
+        "Rumour and Propaganda: Chapati Movement and Lotus Flower Circulation"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Bahadur Shah Zafar as symbolic figurehead — Mughal legitimacy and centennial prophecy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion (A) and Reason (R):\n\nAssertion (A): Bahadur Shah Zafar, the last Mughal Emperor, was proclaimed the symbolic figurehead of the Revolt of 1857 by sepoys who marched to Delhi after the Meerut mutiny.\n\nReason (R): A widely circulated millenarian prophecy held that British rule in India would end exactly one hundred years after the Battle of Plassey, creating a shared symbolic timeline that helped unify diverse rebel groups around the expectation of an imminent restoration of pre-British order.\n\nWhich one of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know both A and R are correct and are unsure whether the causal connection holds may choose (b), but the connection here is direct and genuine — the prophecy's millenarian logic and the need for Mughal legitimacy both explain why Zafar was chosen.",
+      "elimination_logic": [
+        "Step 1: Is A correct? — Yes. Bahadur Shah Zafar was proclaimed symbolic Emperor and figurehead of the revolt by sepoys who reached Delhi — this is historically documented.",
+        "Step 2: Is R correct? — Yes. The centennial prophecy (Plassey 1757 + 100 = 1857) held that British rule would end 100 years after Plassey, and this millenarian belief was a real psychological unifier among diverse rebel groups.",
+        "Step 3: Does R causally explain A? — Yes. The prophecy's logic required a restoration of pre-British order; the Mughal Emperor was the symbolic apex of that order. Choosing Zafar gave the prophecy its figurehead — R genuinely explains A.",
+        "A correct + R correct + R explains A → option a."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The use of Bahadur Shah Zafar as a figurehead illustrates how ideological and psychological causes worked alongside structural ones.\n\nAssertion (A): Bahadur Shah Zafar was proclaimed the symbolic Emperor and figurehead of the Revolt of 1857 by sepoys who reached Delhi after the Meerut mutiny — Correct. By 1857, Zafar was an elderly poet with no real power, but the rebels needed a symbol of legitimate authority to unify diverse groups.\n\nReason (R): A widely circulated prophecy held that British rule would end exactly 100 years after the Battle of Plassey (1757), lending the revolt a millenarian dimension that helped create a common symbolic timeline — Correct. This belief unified sepoys, peasants, and princes under a shared expectation of imminent British collapse.\n\nCausal Link: R genuinely explains A. The prophecy's logic demanded the restoration of pre-British sovereign order — the Mughal Emperor was the natural symbolic representative of that order. Proclaiming Zafar emperor gave the centennial prophecy its institutional expression. Option (a) is correct.\n\nValue Addition:\n• Zafar's own attitude toward the revolt was ambivalent — he was drawn in by sepoys arriving in Delhi rather than actively planning the revolt.\n• His trial after the revolt's suppression was a public humiliation — he was exiled to Rangoon, where he died in 1862.\n• The rebels' proclamations in his name reflect a pre-nationalist, pre-modern political imagination — authority still required royal legitimisation."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथन (A) और कारण (R) पर विचार करें:\n\nकथन (A): बादशाह शाह ज़फ़र, अंतिम मुगल सम्राट, को मेरठ के विद्रोह के बाद दिल्ली पहुंचने वाले सिपाहियों ने 1857 के विद्रोह का प्रतीकात्मक मुखिया घोषित किया।\n\nकारण (R): एक व्यापक रूप से प्रसारित सहस्राब्दी भविष्यवाणी थी कि भारत में ब्रिटिश शासन ठीक 100 वर्ष बाद प्लासी के युद्ध के बाद समाप्त हो जाएगा, जिससे एक साझा प्रतीकात्मक समयरेखा बनी जिसने विभिन्न विद्रोही समूहों को पूर्व-ब्रिटिश व्यवस्था की निकट पुनर्स्थापना की उम्मीद के इर्द-गिर्द एकजुट किया।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि A और R दोनों सही हैं और यह सुनिश्चित नहीं हैं कि कारणात्मक संबंध है या नहीं, वे (b) चुन सकते हैं, लेकिन यहाँ संबंध प्रत्यक्ष और वास्तविक है — भविष्यवाणी की सहस्राब्दी तर्क और मुगल वैधता की आवश्यकता दोनों बताते हैं कि ज़फ़र को क्यों चुना गया।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — हाँ। बादशाह शाह ज़फ़र को दिल्ली पहुंचने वाले सिपाहियों ने विद्रोह का प्रतीकात्मक सम्राट और मुखिया घोषित किया — यह ऐतिहासिक रूप से प्रमाणित है।",
+        "चरण 2: क्या R सही है? — हाँ। शताब्दी भविष्यवाणी (प्लासी 1757 + 100 = 1857) कहती थी कि ब्रिटिश शासन प्लासी के 100 वर्ष बाद समाप्त होगा, और यह सहस्राब्दी विश्वास विभिन्न विद्रोही समूहों के बीच एक वास्तविक मनोवैज्ञानिक एकता थी।",
+        "चरण 3: क्या R कारणात्मक रूप से A को समझाता है? — हाँ। भविष्यवाणी की तर्कशक्ति पूर्व-ब्रिटिश व्यवस्था की पुनर्स्थापना की मांग करती थी; मुगल सम्राट उस व्यवस्था का प्रतीकात्मक शीर्ष था। ज़फ़र को चुनना भविष्यवाणी को उसका मुखिया प्रदान करता है — R वास्तव में A को समझाता है।",
+        "A सही + R सही + R, A को समझाता है → विकल्प a।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "बादशाह शाह ज़फ़र को प्रतीकात्मक मुखिया के रूप में उपयोग यह दर्शाता है कि वैचारिक और मनोवैज्ञानिक कारण संरचनात्मक कारणों के साथ कैसे काम करते थे।\n\nकथन (A): बादशाह शाह ज़फ़र, अंतिम मुगल सम्राट, को मेरठ के विद्रोह के बाद दिल्ली पहुंचने वाले सिपाहियों ने 1857 के विद्रोह का प्रतीकात्मक सम्राट और मुखिया घोषित किया — सही। 1857 तक, ज़फ़र एक वृद्ध कवि थे जिनके पास कोई वास्तविक शक्ति नहीं थी, लेकिन विद्रोहियों को वैध अधिकार का एक प्रतीक चाहिए था जो विभिन्न समूहों को एकजुट कर सके।\n\nकारण (R): एक व्यापक रूप से प्रसारित भविष्यवाणी थी कि ब्रिटिश शासन ठीक 100 वर्ष बाद प्लासी के युद्ध (1757) के समाप्त हो जाएगा, जिससे विद्रोह को एक सहस्राब्दी आयाम मिला जिसने सिपाहियों, किसानों और राजकुमारों को ब्रिटिश पतन की निकटता की साझा उम्मीद के तहत एकजुट किया — सही।\n\nकारणात्मक संबंध: R वास्तव में A को समझाता है। भविष्यवाणी की तर्कशक्ति पूर्व-ब्रिटिश संप्रभु व्यवस्था की पुनर्स्थापना की मांग करती थी — मुगल सम्राट उस व्यवस्था का स्वाभाविक प्रतीकात्मक प्रतिनिधि था। ज़फ़र को सम्राट घोषित करने से शताब्दी भविष्यवाणी को उसका संस्थागत रूप मिला। विकल्प (a) सही है।\n\nमूल्य संवर्धन:\n• ज़फ़र का विद्रोह के प्रति अपना दृष्टिकोण द्विध्रुवीय था — वे सक्रिय रूप से विद्रोह की योजना नहीं बना रहे थे, बल्कि दिल्ली पहुंचने वाले सिपाहियों द्वारा आकर्षित हुए थे।\n• विद्रोह के दमन के बाद उनका मुकदमा सार्वजनिक अपमान था — उन्हें रंगून निर्वासित किया गया, जहाँ वे 1862 में मरे।\n• उनके नाम पर विद्रोहियों के घोषणापत्र एक पूर्व-राष्ट्रवादी, पूर्व-आधुनिक राजनीतिक कल्पना को दर्शाते हैं — अधिकार अभी भी राजसी वैधता की आवश्यकता थी।"
+    }
+  },
+  {
+    "uuid": "37589ae2-fcd3-4c4a-aadd-86015cb174ff",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Economic Exploitation and De-industrialization of Indian Artisans",
+        "Permanent Settlement of 1793 and Agrarian Distress"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Dadabhai Naoroji Drain of Wealth — pre-1857 economic grievances",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are directly associated with the economic dimensions of grievance that contributed to the Revolt of 1857. Which one does NOT belong to this category?\n\n(a) The Permanent Settlement of 1793 creating absentee landlordism in Bengal\n(b) Dadabhai Naoroji's Drain of Wealth theory identifying systematic export of Indian resources to Britain\n(c) The Anglo-French Treaty of Commerce (Cobden-Chevalier Treaty) of 1860\n(d) The destruction of Dacca's handloom muslin industry due to competition from cheap British machine-made cloth",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — The Permanent Settlement is often associated with economic exploitation and revolt causes, so students may think it belongs with the 'economic grievances' category and is therefore the odd one out — but it directly caused agrarian distress that fed into the revolt.",
+      "elimination_logic": [
+        "The question groups items sharing a connection to pre-1857 Indian economic grievance and disaffection.",
+        "Permanent Settlement (1793): Created absentee landlordism and peasant distress — directly linked to revolt causes.",
+        "Drain of Wealth theory: Naoroji articulated this as the intellectual framework for the economic exploitation preceding 1857.",
+        "Destruction of Dacca's muslin industry: De-industrialization case — directly linked to artisan economic grievance.",
+        "The Anglo-French Treaty of Commerce (Cobden-Chevalier Treaty, 1860): A European free trade agreement between Britain and France — post-revolt, European in scope, and wholly unconnected to Indian economic grievances. This is the odd one out — option c."
+      ],
+      "upsc_trap_explanation": "The Cobden-Chevalier Treaty is a plausible-fabrication-style distractor — it is a real historical event (1860) involving Britain and free trade, and students with surface-level knowledge of 19th-century economic history may see 'free trade' and associate it with British trade policies affecting India. In fact, it was a bilateral European treaty with no direct bearing on Indian economic exploitation or the causes of 1857.",
+      "final_explanation": "Three of these four items are directly connected to the economic roots of Indian disaffection before 1857; one belongs to European trade diplomacy.\n\n• Option (a) — Permanent Settlement of 1793: Created absentee zamindars, rack-renting, and peasant indebtedness — a core agrarian cause of revolt in the Bengal belt.\n• Option (b) — Dadabhai Naoroji's Drain of Wealth theory: Intellectually systematised the economic exploitation that had been occurring since the mid-18th century, with its roots clearly traceable to pre-1857 policies.\n• Option (c) — Anglo-French Treaty of Commerce (1860): The Cobden-Chevalier Treaty between Britain and France — a European free trade agreement post-dating the revolt, with no connection to Indian economic grievances. This is the odd one out.\n• Option (d) — Destruction of Dacca's muslin industry: The canonical case of de-industrialization caused by cheap British machine-made cloth — directly linked to artisan economic grievance.\n\nValue Addition:\n• The Cobden-Chevalier Treaty (1860) reduced French tariffs on British goods and vice versa — it accelerated the industrialisation of European trade but is irrelevant to India.\n• The Drain of Wealth was estimated by Naoroji at £30–40 million annually in his 1901 work, but the drain had been occurring since the Battle of Plassey.\n• The link between artisan economic ruin and sepoy radicalism: impoverished artisan families sent sons to the army, where economic and religious grievances merged."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन सीधे 1857 के विद्रोह में योगदान देने वाली आर्थिक शिकायतों से संबंधित हैं। इनमें से कौन-सा इस श्रेणी में नहीं आता?\n\n(a) 1793 की स्थायी व्यवस्था जिसने बंगाल में गैर-हाजिर जमींदारी बनाई\n(b) दादाभाई नौरोजी का धन निकासी सिद्धांत जो भारत के संसाधनों के ब्रिटेन को व्यवस्थित निर्यात की पहचान करता है\n(c) 1860 की एंग्लो-फ्रेंच वाणिज्य संधि (कोबडेन-शेवालिएर संधि)\n(d) सस्ते ब्रिटिश मशीन निर्मित कपड़े के कारण ढाका के हथकरघा मुसलिन उद्योग का विनाश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — स्थायी व्यवस्था (Permanent Settlement) को अक्सर आर्थिक शोषण और विद्रोह के कारणों से जोड़ा जाता है, इसलिए छात्र इसे 'आर्थिक शिकायतों' की श्रेणी में मान सकते हैं और इसे अलग समझ सकते हैं — लेकिन यह सीधे कृषि संकट का कारण बनी जो विद्रोह में योगदान दिया।",
+      "elimination_logic": [
+        "प्रश्न उन वस्तुओं को समूहित करता है जो 1857 से पहले भारतीय आर्थिक शिकायत और असंतोष से संबंधित हैं।",
+        "स्थायी व्यवस्था (1793): गैर-हाजिर जमींदारी और किसान संकट का सृजन — जो सीधे विद्रोह के कारणों से जुड़ा है।",
+        "धन निकासी सिद्धांत: नौरोजी ने इसे 1857 से पहले के आर्थिक शोषण के बौद्धिक ढांचे के रूप में प्रस्तुत किया।",
+        "ढाका के मुसलिन उद्योग का विनाश: उद्योग-ध्वंस का मामला — जो कारीगरों की आर्थिक शिकायत से सीधे जुड़ा है।",
+        "एंग्लो-फ्रेंच वाणिज्य संधि (कोबडेन-शेवालिएर संधि, 1860): ब्रिटेन और फ्रांस के बीच एक यूरोपीय मुक्त व्यापार समझौता — विद्रोह के बाद का, यूरोपीय क्षेत्रीय, और भारतीय आर्थिक शिकायतों से पूरी तरह असंबंधित। यह अलग वस्तु है — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कोबडेन-शेवालिएर संधि एक संभावित-निर्मित भ्रम पैदा करने वाला विकल्प है — यह एक वास्तविक ऐतिहासिक घटना (1860) है जिसमें ब्रिटेन और मुक्त व्यापार शामिल है, और 19वीं सदी के आर्थिक इतिहास की सतही जानकारी रखने वाले छात्र 'मुक्त व्यापार' देखकर इसे ब्रिटिश व्यापार नीतियों से जोड़ सकते हैं जो भारत को प्रभावित करती थीं। वास्तव में, यह एक द्विपक्षीय यूरोपीय संधि थी जिसका भारतीय आर्थिक शोषण या 1857 के कारणों से कोई सीधा संबंध नहीं था।",
+      "final_explanation": "इन चार वस्तुओं में से तीन सीधे 1857 से पहले भारतीय असंतोष की आर्थिक जड़ों से संबंधित हैं; एक यूरोपीय व्यापार कूटनीति से संबंधित है।\n\n• विकल्प (a) — 1793 की स्थायी व्यवस्था: गैर-हाजिर जमींदारों, अत्यधिक किराया वसूली, और किसान कर्ज़ के कारण बनी — बंगाल क्षेत्र में विद्रोह का मुख्य कृषि कारण।\n• विकल्प (b) — दादाभाई नौरोजी का धन निकासी सिद्धांत: 18वीं सदी के मध्य से हो रहे आर्थिक शोषण को बौद्धिक रूप से व्यवस्थित किया, जिसकी जड़ें 1857 से पहले की नीतियों में स्पष्ट हैं।\n• विकल्प (c) — एंग्लो-फ्रेंच वाणिज्य संधि (1860): ब्रिटेन और फ्रांस के बीच कोबडेन-शेवालिएर संधि — विद्रोह के बाद की यूरोपीय मुक्त व्यापार संधि, जिसका भारतीय आर्थिक शिकायतों से कोई संबंध नहीं। यह अलग वस्तु है।\n• विकल्प (d) — ढाका के मुसलिन उद्योग का विनाश: सस्ते ब्रिटिश मशीन निर्मित कपड़े के कारण उद्योग-ध्वंस का पारंपरिक मामला — कारीगरों की आर्थिक शिकायत से सीधे जुड़ा।\n\nमूल्य संवर्धन:\n• कोबडेन-शेवालिएर संधि (1860) ने फ्रांसीसी टैरिफ को ब्रिटिश वस्तुओं पर और इसके विपरीत कम किया — इसने यूरोपीय व्यापार के औद्योगिकीकरण को तेज किया लेकिन भारत से असंबंधित है।\n• धन निकासी का अनुमान नौरोजी ने 1901 के अपने कार्य में £30–40 मिलियन वार्षिक लगाया, लेकिन यह निकासी प्लासी के युद्ध से ही हो रही थी।\n• कारीगर आर्थिक विनाश और सिपाही कट्टरता के बीच संबंध: गरीब कारीगर परिवारों ने अपने पुत्रों को सेना भेजा, जहां आर्थिक और धार्मिक शिकायतें मिल गईं।"
+    }
+  },
+  {
+    "uuid": "893175e8-7045-45c0-a904-aa09e51b1f54",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Nature of the Revolt: Mutiny vs. National Uprising — The Historiographical Debate"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "R.C. Majumdar — contested nationalist interpretation of 1857",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following Indian historians most prominently argued that the Revolt of 1857 was neither a national movement nor a 'First War of Independence,' characterising it instead as a feudal uprising by dispossessed elites?\n\n(a) V.D. Savarkar\n(b) S.N. Sen\n(c) Eric Stokes\n(d) R.C. Majumdar",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know the nationalist interpretation associate it with prominent Indian historians and may wrongly attribute it to R.C. Majumdar, who is known for writing about 1857 but actually contested the 'First War of Independence' label.",
+      "elimination_logic": [
+        "Identify which Indian historian most prominently rejected the 'First War of Independence' characterisation of 1857.",
+        "V.D. Savarkar coined 'First War of Independence' — he endorsed the nationalist view. Eliminate options attributing rejection to Savarkar.",
+        "S.N. Sen wrote a government-commissioned study that acknowledged both sepoy and popular dimensions — not a flat rejection. Eliminate options conflating Sen with Majumdar.",
+        "R.C. Majumdar explicitly called the revolt 'neither a national movement nor a war of independence' — option d."
+      ],
+      "upsc_trap_explanation": "R.C. Majumdar is an entity-swap trap. Students know he is a major Indian historian who wrote about 1857 and assume all Indian historians of the period endorsed the nationalist narrative. Majumdar is the prominent exception — he described the revolt as a feudal reaction by dispossessed elites, explicitly rejecting Savarkar's framing. Students who conflate 'Indian historian' with 'nationalist historian' will choose the wrong option.",
+      "final_explanation": "The historiographical debate on 1857 is tested precisely because it requires knowing not just positions but who held them.\n\n• Option (a) — V.D. Savarkar: Incorrect as the answer. Savarkar coined 'The Indian War of Independence, 1857' (1909) — he is the originator of the nationalist interpretation, not its opponent.\n• Option (b) — S.N. Sen: Incorrect. Sen's government-commissioned study acknowledged popular dimensions of the revolt — he did not flatly reject the national character though he was cautious.\n• Option (c) — Eric Stokes: Incorrect. Stokes emphasised the peasant war dimension — his work extended the analysis rather than rejecting national character.\n• Option (d) — R.C. Majumdar: Correct. Majumdar explicitly argued the revolt was 'not a national movement' and characterised it as a feudal uprising by dispossessed princes and elites — the most prominent Indian academic rejection of the Savarkar thesis.\n\nValue Addition:\n• Majumdar's position is closer to the British colonial characterisation ('mere mutiny') than to Savarkar's, though Majumdar arrived there through rigorous scholarship, not imperial apologetics.\n• The absence of a unified ideology or coordinated plan is Majumdar's key argument against calling it a 'national' movement.\n• Marx wrote contemporaneous dispatches on 1857 for the New York Tribune, characterising it as a popular rebellion against colonial exploitation."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से किस भारतीय इतिहासकार ने सबसे प्रमुख रूप से तर्क दिया कि 1857 का विद्रोह न तो कोई राष्ट्रीय आंदोलन था और न ही 'पहली स्वतंत्रता संग्राम,' बल्कि इसे बेदखल किए गए अभिजात वर्ग द्वारा एक सामंती विद्रोह के रूप में वर्णित किया?\n\n(a) V.D. सावरकर\n(b) S.N. सेन\n(c) Eric Stokes\n(d) R.C. माजूमदार",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र राष्ट्रीयवादी व्याख्या जानते हैं वे इसे प्रमुख भारतीय इतिहासकारों से जोड़ते हैं और इसे गलत तरीके से R.C. Majumdar को देते हैं, जो 1857 के बारे में लिखने के लिए जाने जाते हैं लेकिन वास्तव में 'पहली स्वतंत्रता संग्राम' के लेबल को अस्वीकार करते थे।",
+      "elimination_logic": [
+        "यह पहचानें कि किस भारतीय इतिहासकार ने सबसे प्रमुख रूप से 1857 को 'पहली स्वतंत्रता संग्राम' के रूप में वर्णित करने को अस्वीकार किया।",
+        "V.D. सावरकर ने 'पहली स्वतंत्रता संग्राम' शब्द गढ़ा — उन्होंने राष्ट्रीयवादी दृष्टिकोण का समर्थन किया। सावरकर को अस्वीकार करने वाले विकल्पों को हटा दें।",
+        "S.N. सेन ने एक सरकारी आयोग द्वारा कमीशन की गई अध्ययन लिखी जिसमें दोनों सिपाही और लोकप्रिय आयामों को स्वीकार किया गया — यह पूर्ण अस्वीकार नहीं था। सेन और माजूमदार को मिलाने वाले विकल्पों को हटा दें।",
+        "R.C. माजूमदार ने स्पष्ट रूप से विद्रोह को 'ना तो राष्ट्रीय आंदोलन और ना ही स्वतंत्रता संग्राम' कहा — विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "R.C. माजूमदार एक entity-swap ट्रैप है। छात्र जानते हैं कि वह 1857 के बारे में लिखने वाले प्रमुख भारतीय इतिहासकार हैं और मान लेते हैं कि उस काल के सभी भारतीय इतिहासकार राष्ट्रीयवादी दृष्टिकोण का समर्थन करते हैं। माजूमदार प्रमुख अपवाद हैं — उन्होंने विद्रोह को बेदखल किए गए अभिजात वर्ग द्वारा एक सामंती प्रतिक्रिया के रूप में वर्णित किया, स्पष्ट रूप से सावरकर के फ्रेमिंग को अस्वीकार किया। जो छात्र 'भारतीय इतिहासकार' को 'राष्ट्रीयवादी इतिहासकार' से मिलाते हैं वे गलत विकल्प चुनेंगे।",
+      "final_explanation": "1857 पर इतिहासलेखन बहस का परीक्षण इसलिए किया जाता है क्योंकि इसमें केवल दृष्टिकोण ही नहीं बल्कि यह भी जानना आवश्यक है कि किसने वह दृष्टिकोण अपनाया।\n\n• विकल्प (a) — V.D. सावरकर: उत्तर के रूप में गलत। सावरकर ने 'The Indian War of Independence, 1857' (1909) शब्द गढ़ा — वे राष्ट्रीयवादी व्याख्या के जनक हैं, इसके विरोधी नहीं।\n• विकल्प (b) — S.N. सेन: गलत। सेन की सरकारी कमीशन की गई अध्ययन ने विद्रोह के लोकप्रिय आयामों को स्वीकार किया — उन्होंने राष्ट्रीय चरित्र को पूरी तरह से अस्वीकार नहीं किया, हालांकि वे सतर्क थे।\n• विकल्प (c) — Eric Stokes: गलत। स्टोक्स ने किसान युद्ध के आयाम पर जोर दिया — उनका कार्य राष्ट्रीय चरित्र को अस्वीकार करने के बजाय विश्लेषण को बढ़ाता है।\n• विकल्प (d) — R.C. माजूमदार: सही। माजूमदार ने स्पष्ट रूप से तर्क दिया कि विद्रोह 'राष्ट्रीय आंदोलन नहीं था' और इसे बेदखल किए गए राजकुमारों और अभिजात वर्ग द्वारा एक सामंती विद्रोह के रूप में वर्णित किया — सावरकर के सिद्धांत का सबसे प्रमुख भारतीय अकादमिक अस्वीकार।\n\nमूल्य संवर्धन:\n• माजूमदार की स्थिति ब्रिटिश औपनिवेशिक वर्णन ('केवल बगावत') के करीब है, हालांकि माजूमदार वहां कठोर विद्वत्तापूर्ण अध्ययन के माध्यम से पहुँचे, न कि साम्राज्यवादी बहानों से।\n• एक एकीकृत विचारधारा या समन्वित योजना की अनुपस्थिति माजूमदार का 'राष्ट्रीय' आंदोलन कहने के खिलाफ मुख्य तर्क है।\n• मार्क्स ने न्यूयॉर्क ट्रिब्यून के लिए 1857 पर समकालीन रिपोर्ट लिखी, जिसमें इसे औपनिवेशिक शोषण के खिलाफ लोकप्रिय विद्रोह के रूप में वर्णित किया।"
+    }
+  },
+  {
+    "uuid": "d01dfa19-8404-48cf-b082-fb9c2bc87f97",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Subsidiary Alliance System: Political Discontentment and Economic Drain",
+        "Doctrine of Lapse: Scope, Application, and Limitations",
+        "Role of Dispossessed Ruling Classes: Taluqdars, Nawabs, and Erstwhile Soldiers"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "British annexation policies — matching policy to specific consequence or target",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (British Policy/Action) with List II (Primary Consequence or Operational Criterion):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Subsidiary Alliance System",
+            "1. Annexation of a princely state whose ruler died without a natural male heir"
+          ],
+          [
+            "B. Doctrine of Lapse",
+            "2. Mandatory maintenance of British troops at Indian rulers' expense, depleting state treasuries"
+          ],
+          [
+            "C. Annexation of Awadh (1856)",
+            "3. Denial of pension/title to an adopted son of a deposed ruler"
+          ],
+          [
+            "D. Denial of Nana Sahib's pension claim",
+            "4. Annexation justified on grounds of alleged misgovernance by the ruling family"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-1, C-4, D-3\n(c) A-1, B-2, C-4, D-3\n(d) A-2, B-4, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know the Subsidiary Alliance involved troop maintenance costs may correctly match A, but then swap C and D — confusing the 'misgovernance' pretext (Awadh) with the 'no natural heir' criterion (Doctrine of Lapse), which are the two most commonly confused policy grounds.",
+      "elimination_logic": [
+        "The Subsidiary Alliance required Indian rulers to maintain British troops at their own expense — A must match 2 (treasury depletion).",
+        "The Doctrine of Lapse's defining criterion is the absence of a natural male heir — B must match 1.",
+        "Awadh's annexation used the misgovernance pretext — C must match 4.",
+        "Nana Sahib's pension was denied because he was an adopted (not natural) son, applying Doctrine of Lapse to inheritance — D must match 3. This gives A-2, B-1, C-4, D-3 — option b."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap targets the C-D pair. Students who have memorised both the Doctrine of Lapse (no natural heir) and Awadh's misgovernance pretext often confuse which mechanism applied to Awadh and which to Nana Sahib. In fact, Awadh used misgovernance; Nana Sahib's pension denial used the Doctrine of Lapse's logic of non-recognition of adopted heirs. Swapping C and D (matching Awadh to Doctrine of Lapse) is the most common error.",
+      "final_explanation": "The three British annexation and control mechanisms — Subsidiary Alliance, Doctrine of Lapse, and the misgovernance pretext — had distinct operational logic.\n\nCorrect Matches:\n• A (Subsidiary Alliance) → 2: The defining economic mechanism was mandatory maintenance of British troops at Indian rulers' expense — treasury depletion was the intended outcome.\n• B (Doctrine of Lapse) → 1: The defining criterion was the absence of a natural male heir — adopted sons were not recognised.\n• C (Annexation of Awadh, 1856) → 4: Dalhousie used alleged misgovernance as the pretext — a distinct legal ground separate from Doctrine of Lapse.\n• D (Nana Sahib's pension denial) → 3: His pension claim was rejected because he was an adopted son — the Doctrine of Lapse's logic applied to title/pension inheritance, not territorial annexation.\n\nThe trap is matching C and D — students mix the misgovernance pretext with the adopted heir criterion.\n\nValue Addition:\n• The Doctrine of Lapse had no basis in traditional Indian succession law — it was a purely British administrative invention.\n• Hyderabad escaped both the Subsidiary Alliance's worst consequences and the Doctrine of Lapse because its treaty predated and shaped the Subsidiary Alliance system itself.\n• The multiplicity of pretexts — lapse, misgovernance, subsidiary alliance — shows the British were opportunistic rather than principled in annexation policy."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (ब्रिटिश नीति/कार्य) को सूची II (प्रमुख परिणाम या परिचालन मानदंड) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. Subsidiary Alliance System",
+            "1. उस रियासत का अधिग्रहण जिसका शासक प्राकृतिक पुरुष वारिस के बिना मृत्यु हो गया"
+          ],
+          [
+            "B. Doctrine of Lapse",
+            "2. भारतीय शासकों के खर्च पर ब्रिटिश सैनिकों का अनिवार्य रखरखाव, जिससे राज्य कोष क्षीण होता है"
+          ],
+          [
+            "C. Awadh का अधिग्रहण (1856)",
+            "3. एक दत्तक पुत्र को पेंशन/उपाधि से वंचित करना"
+          ],
+          [
+            "D. नाना साहिब की पेंशन दावा अस्वीकृति",
+            "4. कथित दुराचार के आधार पर अधिग्रहण का औचित्य"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-1, C-4, D-3\n(c) A-1, B-2, C-4, D-3\n(d) A-2, B-4, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know the Subsidiary Alliance involved troop maintenance costs may correctly match A, but then swap C and D — confusing the 'misgovernance' pretext (Awadh) with the 'no natural heir' criterion (Doctrine of Lapse), which are the two most commonly confused policy grounds.",
+      "elimination_logic": [
+        "Subsidiary Alliance में भारतीय शासकों को ब्रिटिश सैनिकों का खर्च खुद वहन करना पड़ता था — अतः A का मिलान 2 (राजकोषीय क्षरण) से होना चाहिए।",
+        "Doctrine of Lapse का मुख्य मानदंड प्राकृतिक पुरुष वारिस का अभाव है — अतः B का मिलान 1 से होना चाहिए।",
+        "Awadh के अधिग्रहण में दुराचार (misgovernance) का बहाना इस्तेमाल हुआ — अतः C का मिलान 4 से होना चाहिए।",
+        "नाना साहिब की पेंशन इसलिए अस्वीकृत हुई क्योंकि वह दत्तक पुत्र थे, जो वारिस के रूप में मान्यता प्राप्त नहीं था — यह Doctrine of Lapse के नियम के अनुसार था — अतः D का मिलान 3 से होना चाहिए। इससे सही मिलान होगा A-2, B-1, C-4, D-3 — विकल्प b।"
+      ],
+      "upsc_trap_explanation": "entity-swap ट्रैप C-D जोड़ी को लक्षित करता है। जो छात्र Doctrine of Lapse (प्राकृतिक वारिस का अभाव) और Awadh के दुराचार बहाने दोनों को याद रखते हैं, वे अक्सर भ्रमित हो जाते हैं कि Awadh पर कौन सा तंत्र लागू हुआ और नाना साहिब पर कौन सा। वास्तव में Awadh पर दुराचार का बहाना इस्तेमाल हुआ; नाना साहिब की पेंशन अस्वीकृति में Doctrine of Lapse के दत्तक वारिसों को न मानने का तर्क लागू हुआ। C और D को उलट देना (Awadh को Doctrine of Lapse से जोड़ना) सबसे आम गलती है।",
+      "final_explanation": "तीन ब्रिटिश अधिग्रहण और नियंत्रण तंत्र — Subsidiary Alliance, Doctrine of Lapse, और दुराचार का बहाना — के अलग-अलग परिचालन तर्क थे।\n\nसही मिलान:\n• A (Subsidiary Alliance) → 2: आर्थिक तंत्र था कि भारतीय शासकों को ब्रिटिश सैनिकों का खर्च उठाना अनिवार्य था — जिससे राजकोषीय क्षरण होता था।\n• B (Doctrine of Lapse) → 1: मुख्य मानदंड था प्राकृतिक पुरुष वारिस का अभाव — दत्तक पुत्रों को मान्यता नहीं थी।\n• C (Awadh का अधिग्रहण, 1856) → 4: डलहौजी ने कथित दुराचार को बहाना बनाया — जो Doctrine of Lapse से अलग कानूनी आधार था।\n• D (नाना साहिब की पेंशन अस्वीकृति) → 3: उनकी पेंशन इसलिए अस्वीकृत हुई क्योंकि वे दत्तक पुत्र थे — Doctrine of Lapse का तर्क शीर्षक/पेंशन विरासत पर लागू हुआ, क्षेत्रीय अधिग्रहण पर नहीं।\n\nट्रैप C और D को मिलाने का है — छात्र दुराचार बहाने को दत्तक वारिस के मानदंड से भ्रमित कर देते हैं।\n\nमूल्यवर्धन:\n• Doctrine of Lapse का भारतीय पारंपरिक उत्तराधिकार कानून में कोई आधार नहीं था — यह पूरी तरह ब्रिटिश प्रशासनिक आविष्कार था।\n• हैदराबाद ने Subsidiary Alliance के सबसे खराब परिणामों और Doctrine of Lapse दोनों से बचाव किया क्योंकि उसका संधि समझौता Subsidiary Alliance प्रणाली से पहले और उसे आकार देने वाला था।\n• बहाने की विविधता — lapse, दुराचार, subsidiary alliance — दर्शाती है कि ब्रिटिश अधिग्रहण नीति अवसरवादी थी, सिद्धांतवादी नहीं।"
+    }
+  },
+  {
+    "uuid": "1ac9eb47-667f-4413-acf1-6ec7fa12fb3b",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Racial Arrogance and Social Humiliation of Indians by British Officers",
+        "Social Reform Legislation and Perception of Threat to Religion"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Post-1813 missionary activity — shift in British attitude as social cause",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A company historian writing in 1858 notes: 'It was from a specific legislative moment that the Company's traditional policy of strict non-interference in the religious and social customs of Indian subjects began to erode, as a new class of European residents — motivated by religious zeal rather than commercial interest — was permitted to settle and operate freely across Indian territory.' The historian is most likely referring to which of the following legislative acts?\n\n(a) The Charter Act of 1833, which abolished the Company's commercial monopoly and opened India to European settlement\n(b) The Regulating Act of 1773, which established a Supreme Court and the Governor-General's office in Calcutta\n(c) The Charter Act of 1813, which opened India to Christian missionary activity\n(d) Pitt's India Act of 1784, which created a Board of Control to oversee the Company's political activities",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who connect 'missionary activity' with 'Charter Act' may choose option a (Charter Act 1833), but the Charter Act that opened India to missionary activity was the 1813 Act, not 1833. 1833 extended free trade.",
+      "elimination_logic": [
+        "The scenario describes the turning point when British policy shifted from religious neutrality to active missionary and cultural superiority — identify the act that enabled this.",
+        "The Charter Act of 1813 opened India to Christian missionaries for the first time — this is the correct trigger event.",
+        "The Charter Act of 1833 dealt with free trade and the Company's trading monopoly — not missionaries. Eliminate option a.",
+        "The Regulating Act of 1773 dealt with Company governance — predates missionary question. Eliminate option b.",
+        "The Pitt's India Act (1784) established Board of Control — administrative, not religious/cultural. Eliminate option d.",
+        "Charter Act of 1813 — option c — is the correct answer."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap lies in the multiple Charter Acts. Students know 'a Charter Act opened India to missionaries' but conflate 1813 and 1833. The 1813 Act is the one that first allowed missionaries; 1833 addressed the Company's commercial monopoly and governance. This is a standard temporal-swap variant dressed as an application-scenario. Students who remember 'Charter Act and missionaries' without recalling the specific year will choose option a.",
+      "final_explanation": "The shift in British cultural policy from nominal neutrality to active missionary engagement was a long-term social cause of the revolt.\n\nApplicable Principle: The Charter Act of 1813 was the legislative turning point that ended the East India Company's official policy of religious neutrality by opening India to Christian missionary activity. This enabled the growth of missionary institutions, conversions, and eventually the 'missionary conspiracy' fears of 1857.\n\nApplied to Scenario: The scenario describes a company historian noting the year when the policy of non-interference in Indian religion was formally abandoned. This is 1813 — not 1833 (trade), not 1773 (governance), not 1784 (Board of Control).\n\n• Option (a) — Charter Act 1833: Dealt with abolition of Company's trade monopoly and territorial governance — not the missionary opening.\n• Option (b) — Regulating Act 1773: Established the Governor-General's office and a Supreme Court — administrative, not cultural.\n• Option (c) — Charter Act 1813: Correct. Opened India to missionary activity and included a clause on promoting education — the start of the cultural intervention phase.\n• Option (d) — Pitt's India Act 1784: Created the Board of Control for political oversight — predates the missionary question.\n\nValue Addition:\n• The Charter Act of 1813 also required the Company to allocate one lakh rupees annually for the promotion of Indian learning — a precursor to the education debate that produced Macaulay's Minute.\n• Missionary activity accelerated after 1813: schools, orphanages, and conversion campaigns all expanded, feeding 'Christian conspiracy' rumours.\n• The 'bone-dust in flour' rumour of 1857 was a direct product of this missionary anxiety — it alleged that the British were contaminating food to force conversion."
+    },
+    "hi": {
+      "display_text": "1858 में एक कंपनी इतिहासकार लिखता है: 'यह एक विशिष्ट विधायी क्षण से था जब कंपनी की भारतीय विषयों के धार्मिक और सामाजिक रीति-रिवाजों में सख्त गैर-हस्तक्षेप की पारंपरिक नीति कमजोर होने लगी, क्योंकि एक नया यूरोपीय निवासियों का वर्ग — जो वाणिज्यिक हितों के बजाय धार्मिक उत्साह से प्रेरित था — भारतीय क्षेत्र में स्वतंत्र रूप से बसने और कार्य करने की अनुमति प्राप्त कर गया।' इतिहासकार संभवतः निम्नलिखित में से किस विधायी अधिनियम का उल्लेख कर रहा है?\n\n(a) 1833 का चार्टर अधिनियम, जिसने कंपनी के वाणिज्यिक एकाधिकार को समाप्त किया और भारत को यूरोपीय बसावट के लिए खोला\n(b) 1773 का विनियमन अधिनियम, जिसने कोलकाता में सुप्रीम कोर्ट और गवर्नर-जनरल का कार्यालय स्थापित किया\n(c) 1813 का चार्टर अधिनियम, जिसने भारत को ईसाई मिशनरी गतिविधि के लिए खोला\n(d) 1784 का पिट का इंडिया एक्ट, जिसने कंपनी की राजनीतिक गतिविधियों की निगरानी के लिए नियंत्रण बोर्ड बनाया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who connect 'missionary activity' with 'Charter Act' may choose option a (Charter Act 1833), but the Charter Act that opened India to missionary activity was the 1813 Act, not 1833. 1833 extended free trade.",
+      "elimination_logic": [
+        "यह परिदृश्य उस मोड़ का वर्णन करता है जब ब्रिटिश नीति धार्मिक तटस्थता से सक्रिय मिशनरी और सांस्कृतिक श्रेष्ठता की ओर बदल गई — उस अधिनियम की पहचान करें जिसने इसे सक्षम किया।",
+        "1813 का चार्टर अधिनियम पहली बार भारत को ईसाई मिशनरियों के लिए खोलता है — यह सही ट्रिगर घटना है।",
+        "1833 का चार्टर अधिनियम मुक्त व्यापार और कंपनी के व्यापारिक एकाधिकार से संबंधित था — मिशनरियों से नहीं। विकल्प (a) को निरस्त करें।",
+        "1773 का विनियमन अधिनियम कंपनी के शासन से संबंधित था — मिशनरी प्रश्न से पहले का है। विकल्प (b) को निरस्त करें।",
+        "1784 का पिट का इंडिया एक्ट नियंत्रण बोर्ड स्थापित करता है — प्रशासनिक है, धार्मिक/सांस्कृतिक नहीं। विकल्प (d) को निरस्त करें।",
+        "1813 का चार्टर अधिनियम — विकल्प (c) — सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "स्कोप-विस्तार जाल कई चार्टर अधिनियमों में निहित है। छात्र जानते हैं कि 'एक चार्टर अधिनियम ने भारत को मिशनरियों के लिए खोला' लेकिन 1813 और 1833 को भ्रमित कर देते हैं। 1813 का अधिनियम पहली बार मिशनरियों को अनुमति देता है; 1833 कंपनी के वाणिज्यिक एकाधिकार और शासन से संबंधित है। यह एक मानक कालानुक्रमिक-स्थानांतरण प्रकार का प्रश्न है जो आवेदन-दृश्य के रूप में प्रस्तुत किया गया है। जो छात्र 'चार्टर अधिनियम और मिशनरी' याद रखते हैं लेकिन वर्ष नहीं, वे विकल्प (a) चुनेंगे।",
+      "final_explanation": "ब्रिटिश सांस्कृतिक नीति में नाममात्र तटस्थता से सक्रिय मिशनरी संलग्नता की ओर बदलाव विद्रोह का दीर्घकालिक सामाजिक कारण था।\n\nलागू सिद्धांत: 1813 का चार्टर अधिनियम वह विधायी मोड़ था जिसने ईस्ट इंडिया कंपनी की धार्मिक तटस्थता की आधिकारिक नीति को समाप्त कर भारत को ईसाई मिशनरी गतिविधि के लिए खोल दिया। इससे मिशनरी संस्थानों का विकास, धर्मांतरण और अंततः 1857 के 'मिशनरी साजिश' के भय को बढ़ावा मिला।\n\nपरिदृश्य पर लागू: यह परिदृश्य एक कंपनी इतिहासकार का वर्णन करता है जो उस वर्ष को नोट करता है जब भारतीय धर्म में गैर-हस्तक्षेप की नीति औपचारिक रूप से छोड़ी गई। यह 1813 है — न कि 1833 (व्यापार), न 1773 (शासन), न 1784 (नियंत्रण बोर्ड)।\n\n• विकल्प (a) — चार्टर अधिनियम 1833: कंपनी के व्यापारिक एकाधिकार और क्षेत्रीय शासन को समाप्त करता है — मिशनरी उद्घाटन नहीं।\n• विकल्प (b) — विनियमन अधिनियम 1773: गवर्नर-जनरल का कार्यालय और सुप्रीम कोर्ट स्थापित किया — प्रशासनिक, सांस्कृतिक नहीं।\n• विकल्प (c) — चार्टर अधिनियम 1813: सही। भारत को मिशनरी गतिविधि के लिए खोला और शिक्षा को बढ़ावा देने का प्रावधान शामिल किया — सांस्कृतिक हस्तक्षेप चरण की शुरुआत।\n• विकल्प (d) — पिट का इंडिया एक्ट 1784: राजनीतिक नियंत्रण के लिए बोर्ड ऑफ कंट्रोल बनाया — मिशनरी प्रश्न से पहले।\n\nमूल्य संवर्धन:\n• 1813 का चार्टर अधिनियम कंपनी को भारतीय शिक्षा को बढ़ावा देने के लिए वार्षिक एक लाख रुपये आवंटित करने का भी निर्देश देता था — मैकाले के मिनट के शिक्षा विवाद का पूर्ववर्ती।\n• 1813 के बाद मिशनरी गतिविधि तेज हुई: स्कूल, अनाथालय और धर्मांतरण अभियान बढ़े, जिससे 'ईसाई साजिश' की अफवाहें फैलीं।\n• 1857 की 'आटे में हड्डी का धूल' की अफवाह इसी मिशनरी चिंता का प्रत्यक्ष परिणाम थी — जिसमें आरोप था कि ब्रिटिश भोजन को दूषित कर धर्मांतरण के लिए मजबूर कर रहे थे।"
+    }
+  },
+  {
+    "uuid": "0de55db9-3360-4311-897a-03c813d2cdac",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Military Grievances: Service Conditions, Promotions, and Racial Discrimination",
+        "Greased Cartridge Controversy: Immediate Trigger vs. Underlying Causes"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Military events sequence — Vellore to Meerut chronology",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following gives the correct chronological order of military events and legislative measures in the sequence leading to the Revolt of 1857?\n\n1. Vellore Mutiny\n2. General Service Enlistment Act\n3. Mangal Pandey's attack on British officers at Barrackpore\n4. Sepoy mutiny at Meerut\n\n(a) 1 → 2 → 3 → 4\n(b) 1 → 3 → 2 → 4\n(c) 2 → 1 → 3 → 4\n(d) 1 → 2 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Mangal Pandey (March 1857) predates Meerut (May 1857) correctly, but may misplace the General Service Enlistment Act, thinking it was passed after Barrackpore as a response — it was passed in 1856, before both events.",
+      "elimination_logic": [
+        "The Vellore Mutiny (1806) must come first — it predates all other events by decades.",
+        "The General Service Enlistment Act was passed in 1856 — it precedes both Barrackpore and Meerut.",
+        "Mangal Pandey's Barrackpore incident was March 1857 — after the Act.",
+        "The Meerut mutiny was May 10, 1857 — last in this sequence. Correct order: Vellore (1806) → General Service Enlistment Act (1856) → Barrackpore (March 1857) → Meerut (May 1857) — option a."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap targets the placement of the General Service Enlistment Act relative to Barrackpore. Students who think of the Act as a 'response to discontent' (rather than a cause of it) may place it after Barrackpore, reasoning that the British tightened service rules after early signs of mutiny. In fact, the Act was passed in 1856 as a proactive policy — it preceded and contributed to the very discontent it seemed to respond to.",
+      "final_explanation": "The military trigger sequence of 1857 has a clear chronological logic that rewards precise knowledge.\n\nCorrect sequence:\n1. Vellore Mutiny (1806): First major military uprising — triggered by uniform regulations perceived as religiously offensive. Important precedent 50 years before 1857.\n2. General Service Enlistment Act (1856): Required sepoys to serve overseas — violated kala pani taboo. Enacted as policy, not as a response to discontent.\n3. Barrackpore incident (March 29, 1857): Mangal Pandey attacked British officers — first individual act of open defiance, triggered by cartridge rumours.\n4. Meerut Mutiny (May 10, 1857): Generalised sepoy uprising — the conventional start of the revolt.\n\nOptions (b), (c), (d) misplace the General Service Enlistment Act after Barrackpore or misorder Vellore with the Act.\n\nValue Addition:\n• The Vellore Mutiny's lessons were not adequately applied by the British — the failure to learn from 1806 made 1857 more likely.\n• Mangal Pandey was tried and hanged on April 8, 1857 — between Barrackpore and Meerut.\n• At Meerut, 85 sepoys were court-martialled for refusing to bite cartridges — their public shackling became the immediate provocation for the May 10 outbreak."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह की श्रृंखला में सैन्य घटनाओं और विधायी उपायों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. वेलोर विद्रोह\n2. जनरल सर्विस एनलिस्टमेंट एक्ट\n3. मंगल पांडे का बैरकपुर में ब्रिटिश अधिकारियों पर हमला\n4. मेरठ में सिपाही विद्रोह\n\n(a) 1 → 2 → 3 → 4\n(b) 1 → 3 → 2 → 4\n(c) 2 → 1 → 3 → 4\n(d) 1 → 2 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Mangal Pandey (March 1857) predates Meerut (May 1857) correctly, but may misplace the General Service Enlistment Act, thinking it was passed after Barrackpore as a response — it was passed in 1856, before both events.",
+      "elimination_logic": [
+        "वेलोर विद्रोह (1806) सबसे पहले होना चाहिए — यह अन्य सभी घटनाओं से दशकों पहले है।",
+        "जनरल सर्विस एनलिस्टमेंट एक्ट 1856 में पारित हुआ — यह बैरकपुर और मेरठ दोनों से पहले है।",
+        "मंगल पांडे का बैरकपुर घटना मार्च 1857 की है — एक्ट के बाद।",
+        "मेरठ का विद्रोह 10 मई 1857 को हुआ — इस क्रम में अंतिम। सही क्रम: वेलोर (1806) → जनरल सर्विस एनलिस्टमेंट एक्ट (1856) → बैरकपुर (मार्च 1857) → मेरठ (मई 1857) — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "टेम्पोरल-स्वैप (कालानुक्रमिक स्थानांतरण) जाल जनरल सर्विस एनलिस्टमेंट एक्ट को बैरकपुर के सापेक्ष गलत स्थान पर रखने पर केंद्रित है। जो छात्र एक्ट को 'असंतोष के जवाब' के रूप में सोचते हैं (कारण के रूप में नहीं), वे इसे बैरकपुर के बाद मान सकते हैं, यह सोचकर कि ब्रिटिश ने विद्रोह के शुरुआती संकेतों के बाद सेवा नियम कड़े किए। वास्तव में, यह एक्ट 1856 में एक सक्रिय नीति के रूप में पारित हुआ था — यह असंतोष से पहले था और उसे बढ़ावा दिया।",
+      "final_explanation": "1857 के सैन्य ट्रिगर की कालानुक्रमिक श्रृंखला स्पष्ट है जो सटीक ज्ञान को पुरस्कृत करती है।\n\nसही क्रम:\n1. वेलोर विद्रोह (1806): पहला बड़ा सैन्य विद्रोह — धार्मिक रूप से अपमानजनक समझे गए वर्दी नियमों से प्रेरित। 1857 से 50 साल पहले महत्वपूर्ण उदाहरण।\n2. जनरल सर्विस एनलिस्टमेंट एक्ट (1856): सिपाहियों को विदेश सेवा के लिए बाध्य करता था — काला पानी वर्जना का उल्लंघन। यह नीति के रूप में लागू हुआ, असंतोष के जवाब में नहीं।\n3. बैरकपुर घटना (29 मार्च 1857): मंगल पांडे ने ब्रिटिश अधिकारियों पर हमला किया — खुली अवज्ञा की पहली व्यक्तिगत घटना, कारतूस की अफवाहों से प्रेरित।\n4. मेरठ विद्रोह (10 मई 1857): सामान्यीकृत सिपाही विद्रोह — विद्रोह की पारंपरिक शुरुआत।\n\nविकल्प (b), (c), (d) जनरल सर्विस एनलिस्टमेंट एक्ट को बैरकपुर के बाद या वेलोर को एक्ट के साथ गलत क्रम में रखते हैं।\n\nमूल्यवर्धन:\n• वेलोर विद्रोह के सबक ब्रिटिशों द्वारा ठीक से लागू नहीं किए गए — 1806 से सीख न पाने के कारण 1857 की संभावना बढ़ी।\n• मंगल पांडे का मुकदमा हुआ और 8 अप्रैल 1857 को फांसी दी गई — बैरकपुर और मेरठ के बीच।\n• मेरठ में, 85 सिपाहियों को कारतूस काटने से इनकार करने पर कोर्ट-मार्शल किया गया — उनकी सार्वजनिक बेड़ियाँ 10 मई के विद्रोह के तत्काल कारण बनीं।"
+    }
+  },
+  {
+    "uuid": "72fa3cc5-9967-4031-8212-5765647674d4",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Revolt of 1857",
+      "sub_topic": "Causes — political, economic, military, social",
+      "concepts_used": [
+        "Immediate Triggers vs. Long-term Structural Causes: Analytical Framework",
+        "Nature of the Revolt: Mutiny vs. National Uprising — The Historiographical Debate"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Multi-causal analysis — no single cause sufficiency for 1857",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the analytical frameworks used to understand the causes of the Revolt of 1857, consider the following statements:\n\n1. The greased cartridge controversy, while serving as the immediate trigger, was sufficient by itself to explain the scale and spread of the Revolt of 1857 across northern and central India.\n2. The revolt's failure to become pan-Indian — with significant non-participation by Punjab, South India, and the Bombay and Madras Armies — is itself analytically significant, indicating that the causes were not uniformly operative across all regions and social groups.\n3. The 'perfect storm' model of the revolt's causes holds that the convergence of political, economic, military, and social grievances — rather than any single cause — accounts for the scale and intensity of the uprising.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 3 only\n(c) 1 and 2 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The greased cartridge controversy, while serving as the immediate trigger, was sufficient by itself to explain the scale and spread of the Revolt of 1857 across northern and central India.",
+          "verdict": "Incorrect",
+          "reason": "The cartridge issue was the immediate trigger but not a sufficient explanation. The scale of the revolt required the pre-existing accumulation of political, economic, military, and social grievances — without these structural causes, the cartridge issue would have been addressed as an isolated disciplinary matter."
+        },
+        {
+          "statement": "The revolt's failure to become pan-Indian — with significant non-participation by Punjab, South India, and the Bombay and Madras Armies — is itself analytically significant, indicating that the causes were not uniformly operative across all regions and social groups.",
+          "verdict": "Correct",
+          "reason": "The geographic and social patchwork of participation reveals that the revolt's causes were structurally specific — the Bengal Army's caste composition, Awadh's annexation, and the Permanent Settlement's geography were concentrated in particular regions, explaining both participation and non-participation."
+        },
+        {
+          "statement": "The 'perfect storm' model of the revolt's causes holds that the convergence of political, economic, military, and social grievances — rather than any single cause — accounts for the scale and intensity of the uprising.",
+          "verdict": "Correct",
+          "reason": "This integrated multi-causal model is the standard historiographical position — each cause class reinforced the others: political displacement radicalized ruling elites; economic distress mobilised peasants and artisans; military grievances armed the resistance; social/religious anxiety unified Hindu and Muslim sepoys."
+        }
+      ],
+      "strong_distractor": "b — Students who correctly reject statement 1 and accept statement 3 may hesitate over statement 2, reading it as a limitation of the revolt rather than an analytical insight — they may incorrectly mark it as a 'negative' statement and not select it.",
+      "elimination_logic": [
+        "Statement 1 uses 'sufficient by itself' — an extreme scope claim. A single trigger cannot explain a multi-region uprising. Mark incorrect.",
+        "Statement 2 correctly uses the non-participation geography as analytical evidence — this is how historians work backwards from outcomes to causes. Mark correct.",
+        "Statement 3 describes the standard 'perfect storm' multi-causal framework — this is the established historiographical position. Mark correct.",
+        "Statements 2 and 3 are correct — option d."
+      ],
+      "upsc_trap_explanation": "Statement 1's trap is the word 'sufficient.' Students who know the cartridge issue was a real and important cause may accept it as 'sufficient' without applying the analytical distinction between 'necessary condition' and 'sufficient condition.' The cartridge issue was a necessary crystallising moment but not a sufficient explanation — you need all the accumulated grievances to explain why a cartridge dispute became a widespread armed revolt rather than an isolated disciplinary incident.",
+      "final_explanation": "The analytical framework for understanding the revolt's causes requires distinguishing triggers from roots and integrated multi-causal models from single-cause narratives.\n\n• Statement 1 — Incorrect: 'Sufficient by itself' is the scope-extension error. The greased cartridge controversy was the immediate trigger — the spark that ignited pre-existing fuel. Without the accumulated political, economic, and military grievances, the same trigger would not have produced the same scale of revolt.\n• Statement 2 — Correct: The revolt's non-universal nature is analytically important. Punjab (Sikh loyalty, anti-Mughal sentiment), South India (different revenue systems, different army composition), and Bombay/Madras Armies (different caste composition) all illuminate which specific causes operated where.\n• Statement 3 — Correct: The 'perfect storm' model correctly captures the interaction of cause classes — each amplified the others. Political dispossession created leaders; economic distress created foot soldiers; military grievances created armed capability; religious anxiety created mass unity.\n\nValue Addition:\n• UPSC frequently rewards 'integrated analysis' answers in both Prelims MCQs and Mains essays — distinguishing between single-cause and multi-cause frameworks.\n• The 'perfect storm' model also explains why the revolt happened in 1857 specifically, not earlier or later — the simultaneous maturation of multiple grievances.\n• Historians like Bipin Chandra have argued that the revolt, despite its limitations, 'prepared the ground' for later nationalist consciousness by demonstrating both the possibility and the necessity of organised resistance."
+    },
+    "hi": {
+      "display_text": "1857 के विद्रोह के कारणों को समझने के लिए उपयोग किए गए विश्लेषणात्मक ढांचों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. कारतूस विवाद, जो तत्कालीन ट्रिगर था, स्वयं में पर्याप्त था कि वह 1857 के विद्रोह के पैमाने और फैलाव को उत्तरी और मध्य भारत में समझा सके।\n2. विद्रोह का पैन-इंडियन न बन पाना — पंजाब, दक्षिण भारत, और बॉम्बे तथा मद्रास सेनाओं की महत्वपूर्ण गैर-भागीदारी के साथ — स्वयं विश्लेषणात्मक रूप से महत्वपूर्ण है, जो दर्शाता है कि कारण सभी क्षेत्रों और सामाजिक समूहों में समान रूप से प्रभावी नहीं थे।\n3. विद्रोह के कारणों का 'परफेक्ट स्टॉर्म' मॉडल यह मानता है कि राजनीतिक, आर्थिक, सैन्य और सामाजिक शिकायतों का संगम — किसी एकल कारण के बजाय — विद्रोह के पैमाने और तीव्रता के लिए जिम्मेदार है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 3\n(c) केवल 1 और 2\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The greased cartridge controversy, while serving as the immediate trigger, was sufficient by itself to explain the scale and spread of the Revolt of 1857 across northern and central India.",
+          "verdict": "गलत",
+          "reason": "कारतूस विवाद तत्कालीन ट्रिगर था लेकिन पर्याप्त व्याख्या नहीं था। विद्रोह के पैमाने के लिए पूर्व में राजनीतिक, आर्थिक, सैन्य और सामाजिक शिकायतों का संचय आवश्यक था — बिना इन संरचनात्मक कारणों के, कारतूस विवाद को एक पृथक अनुशासनात्मक मामला माना जाता।"
+        },
+        {
+          "statement": "The revolt's failure to become pan-Indian — with significant non-participation by Punjab, South India, and the Bombay and Madras Armies — is itself analytically significant, indicating that the causes were not uniformly operative across all regions and social groups.",
+          "verdict": "सही",
+          "reason": "भौगोलिक और सामाजिक भागीदारी का यह पैचवर्क दर्शाता है कि विद्रोह के कारण संरचनात्मक रूप से विशिष्ट थे — बंगाल सेना की जातीय संरचना, अवध का विलय, और स्थायी बंदोबस्त की भौगोलिकता कुछ क्षेत्रों में केंद्रित थी, जो भागीदारी और गैर-भागीदारी दोनों को समझाती है।"
+        },
+        {
+          "statement": "The 'perfect storm' model of the revolt's causes holds that the convergence of political, economic, military, and social grievances — rather than any single cause — accounts for the scale and intensity of the uprising.",
+          "verdict": "सही",
+          "reason": "यह एकीकृत बहु-कारणात्मक मॉडल मानक इतिहासलेखन स्थिति है — प्रत्येक कारण वर्ग ने अन्य को मजबूत किया: राजनीतिक विस्थापन ने शासक वर्ग को कट्टर बनाया; आर्थिक संकट ने किसानों और कारीगरों को संगठित किया; सैन्य शिकायतों ने प्रतिरोध को सशस्त्र किया; सामाजिक/धार्मिक चिंता ने हिंदू और मुस्लिम सिपाहियों को एकजुट किया।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र कथन 1 को सही ठुकरा कर कथन 3 को स्वीकार करते हैं, वे कथन 2 को विद्रोह की सीमा के रूप में पढ़कर हिचक सकते हैं — वे इसे 'नकारात्मक' कथन मानकर चयन नहीं कर सकते।",
+      "elimination_logic": [
+        "कथन 1 में 'स्वयं में पर्याप्त' शब्द का उपयोग है — यह अतिशयोक्ति है। एकल ट्रिगर बहु-क्षेत्रीय विद्रोह को समझा नहीं सकता। इसे गलत चिह्नित करें।",
+        "कथन 2 सही है क्योंकि गैर-भागीदारी का भौगोलिक विश्लेषण ऐतिहासिक कारणों को समझने में सहायक है। इसे सही चिह्नित करें।",
+        "कथन 3 मानक 'परफेक्ट स्टॉर्म' बहु-कारणात्मक ढांचे का वर्णन करता है — इसे सही चिह्नित करें।",
+        "कथन 2 और 3 सही हैं — विकल्प d।"
+      ],
+      "upsc_trap_explanation": "कथन 1 का जाल 'पर्याप्त' शब्द है। जो छात्र जानते हैं कि कारतूस विवाद एक वास्तविक और महत्वपूर्ण कारण था, वे इसे 'पर्याप्त' मान सकते हैं बिना 'आवश्यक शर्त' और 'पर्याप्त शर्त' के बीच विश्लेषणात्मक भेद को समझे। कारतूस विवाद आवश्यक क्रिस्टलीकरण क्षण था लेकिन पर्याप्त व्याख्या नहीं — सभी संचयी शिकायतों की आवश्यकता थी कि क्यों कारतूस विवाद एक व्यापक सशस्त्र विद्रोह बना न कि एक पृथक अनुशासनात्मक घटना।",
+      "final_explanation": "विद्रोह के कारणों को समझने के लिए विश्लेषणात्मक ढांचे में ट्रिगर और मूल कारणों के बीच भेद करना आवश्यक है तथा एकल-कारण और बहु-कारण मॉडल को अलग करना आवश्यक है।\n\n• कथन 1 — गलत: 'स्वयं में पर्याप्त' एक अतिशयोक्ति है। कारतूस विवाद तत्कालीन ट्रिगर था — वह चिंगारी थी जो पहले से मौजूद ईंधन को जलाती है। बिना राजनीतिक, आर्थिक और सैन्य शिकायतों के संचय के, वही ट्रिगर समान पैमाने का विद्रोह उत्पन्न नहीं करता।\n• कथन 2 — सही: विद्रोह का सार्वभौमिक न होना विश्लेषणात्मक रूप से महत्वपूर्ण है। पंजाब (सिख निष्ठा, मुगलों के प्रति विरोध), दक्षिण भारत (विभिन्न राजस्व प्रणाली, सेना की भिन्न संरचना), और बॉम्बे/मद्रास सेनाएँ (विभिन्न जातीय संरचना) यह दर्शाती हैं कि कौन से विशिष्ट कारण कहाँ प्रभावी थे।\n• कथन 3 — सही: 'परफेक्ट स्टॉर्म' मॉडल कारण वर्गों के परस्पर प्रभाव को सही ढंग से दर्शाता है — प्रत्येक ने दूसरे को बढ़ावा दिया। राजनीतिक विस्थापन ने नेतृत्व बनाया; आर्थिक संकट ने पैदल सैनिक बनाए; सैन्य शिकायतों ने सशस्त्र क्षमता दी; धार्मिक चिंता ने व्यापक एकता बनाई।\n\nमूल्यवर्धन:\n• UPSC अक्सर 'एकीकृत विश्लेषण' उत्तरों को प्रीलिम्स MCQs और मेन्स निबंधों दोनों में पुरस्कृत करता है — एकल-कारण और बहु-कारण ढांचों के बीच भेद करते हुए।\n• 'परफेक्ट स्टॉर्म' मॉडल यह भी समझाता है कि विद्रोह 1857 में क्यों हुआ, न कि पहले या बाद में — कई शिकायतों के एक साथ परिपक्व होने के कारण।\n• बिपिन चंद्र जैसे इतिहासकारों ने तर्क दिया है कि विद्रोह, अपनी सीमाओं के बावजूद, 'राष्ट्रीय चेतना' के लिए जमीन तैयार करने वाला था क्योंकि इसने संगठित प्रतिरोध की संभावना और आवश्यकता दोनों को प्रदर्शित किया।"
+    }
+  }
+]

@@ -16,15 +16,21 @@ class TestQuestion {
   const TestQuestion({
     required this.uuid,
     required this.displayText,
+    required this.displayTextHi,
     required this.optionA,
+    required this.optionAHi,
     required this.optionB,
+    required this.optionBHi,
     required this.optionC,
+    required this.optionCHi,
     required this.optionD,
+    required this.optionDHi,
     required this.correctOption,
     required this.questionType,
     required this.trapType,
     required this.hasTable,
     required this.tableData,
+    required this.tableDataHi,
     required this.position,
     required this.selectedOption,
     required this.status,
@@ -32,24 +38,35 @@ class TestQuestion {
     required this.timeSpentSecs,
     required this.conceptAnchor,
     required this.finalExplanation,
+    required this.finalExplanationHi,
     required this.eliminationLogic,
+    required this.eliminationLogicHi,
     required this.statementAnalysis,
+    required this.statementAnalysisHi,
     required this.strongDistractor,
+    required this.strongDistractorHi,
     required this.upscTrapExplanation,
+    required this.upscTrapExplanationHi,
     required this.conceptsUsed,
   });
 
   final String uuid;
   final String displayText;
+  final String displayTextHi;
   final String optionA;
+  final String optionAHi;
   final String optionB;
+  final String optionBHi;
   final String optionC;
+  final String optionCHi;
   final String optionD;
+  final String optionDHi;
   final String correctOption;
   final String? questionType;
   final String? trapType;
   final bool hasTable;
   final QuestionTableData? tableData;
+  final QuestionTableData? tableDataHi;
   final int position;
   final String? selectedOption;
   final String status;
@@ -57,10 +74,15 @@ class TestQuestion {
   final int? timeSpentSecs;
   final String? conceptAnchor;
   final String? finalExplanation;
+  final String? finalExplanationHi;
   final List<String> eliminationLogic;
+  final List<String> eliminationLogicHi;
   final List<StatementAnalysisItem> statementAnalysis;
+  final List<StatementAnalysisItem> statementAnalysisHi;
   final String? strongDistractor;
+  final String? strongDistractorHi;
   final String? upscTrapExplanation;
+  final String? upscTrapExplanationHi;
   final List<String> conceptsUsed;
 
   TestQuestion copyWith({
@@ -72,15 +94,21 @@ class TestQuestion {
     return TestQuestion(
       uuid: uuid,
       displayText: displayText,
+      displayTextHi: displayTextHi,
       optionA: optionA,
+      optionAHi: optionAHi,
       optionB: optionB,
+      optionBHi: optionBHi,
       optionC: optionC,
+      optionCHi: optionCHi,
       optionD: optionD,
+      optionDHi: optionDHi,
       correctOption: correctOption,
       questionType: questionType,
       trapType: trapType,
       hasTable: hasTable,
       tableData: tableData,
+      tableDataHi: tableDataHi,
       position: position,
       selectedOption: selectedOption ?? this.selectedOption,
       status: status ?? this.status,
@@ -88,10 +116,15 @@ class TestQuestion {
       timeSpentSecs: timeSpentSecs ?? this.timeSpentSecs,
       conceptAnchor: conceptAnchor,
       finalExplanation: finalExplanation,
+      finalExplanationHi: finalExplanationHi,
       eliminationLogic: eliminationLogic,
+      eliminationLogicHi: eliminationLogicHi,
       statementAnalysis: statementAnalysis,
+      statementAnalysisHi: statementAnalysisHi,
       strongDistractor: strongDistractor,
+      strongDistractorHi: strongDistractorHi,
       upscTrapExplanation: upscTrapExplanation,
+      upscTrapExplanationHi: upscTrapExplanationHi,
       conceptsUsed: conceptsUsed,
     );
   }

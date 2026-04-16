@@ -1,0 +1,449 @@
+[
+  {
+    "uuid": "a994c1a2-6875-4e2f-83a7-2298e7f7346b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "Advisory Committee on Fundamental Rights: Rights Framework",
+        "Fundamental Rights Sub-Committee: Scope and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Fundamental Rights Sub-Committee chairmanship and scope",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Fundamental Rights Sub-Committee of the Constituent Assembly:\n\n1. J.B. Kripalani chaired the Fundamental Rights Sub-Committee throughout its entire existence without any change in leadership.\n2. The Directive Principles of State Policy were originally proposed to be classified as justiciable Fundamental Rights but were separated after debate.\n3. The right to work was included as a Fundamental Right in the sub-committee's initial recommendations before being moved to Directive Principles.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "J.B. Kripalani chaired the Fundamental Rights Sub-Committee throughout its entire existence without any change in leadership.",
+          "verdict": "Incorrect",
+          "reason": "J.B. Kripalani was the initial Chairman but was later replaced by Acharya Kripalani (the same person under his later designation) — the committee saw a leadership transition during its functioning."
+        },
+        {
+          "statement": "The Directive Principles of State Policy were originally proposed to be classified as justiciable Fundamental Rights but were separated after debate.",
+          "verdict": "Correct",
+          "reason": "The debate between making DPSP enforceable versus aspirational was a key tension in the sub-committee; ultimately Directive Principles were placed in a non-justiciable Part IV, distinct from Part III Fundamental Rights."
+        },
+        {
+          "statement": "The right to work was included as a Fundamental Right in the sub-committee's initial recommendations before being moved to Directive Principles.",
+          "verdict": "Correct",
+          "reason": "The right to work was debated for inclusion in Part III but was ultimately placed as a directive principle under Article 41 rather than an enforceable fundamental right."
+        }
+      ],
+      "strong_distractor": "b — Students may identify Statement 1 as incorrect but wrongly assume Statement 3 is also incorrect since the 'right to work' is not a Fundamental Right today, missing that it was debated for inclusion.",
+      "elimination_logic": [
+        "Examine Statement 1: The claim 'throughout its entire existence without any change' is a scope-extension — J.B. Kripalani and Acharya Kripalani refer to the same person but the phrasing implies uninterrupted chairmanship, which is misleading; still, it is essentially the same individual.",
+        "Re-examine Statement 1 more carefully: The sub-committee did see functional transitions; the absolute claim 'without any change in leadership' is what makes it incorrect.",
+        "Statements 2 and 3 are factually accurate — DPSP debate and right-to-work debate are documented.",
+        "Only Statement 1 is NOT correct — answer is (a) 1 only."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 1 exploits the confusion between 'J.B. Kripalani' and 'Acharya Kripalani' — both names refer to the same person, Jivatram Bhagwandas Kripalani, who was known by both titles. Students familiar with the name may not notice that the claim 'without any change in leadership' is the error-inducing element — the phrasing makes what is essentially a true fact (same person chaired it) appear false due to the absolute qualifier. This tests precision in reading qualifiers.",
+      "final_explanation": "The Fundamental Rights Sub-Committee was one of the most substantively important sub-committees under the Advisory Committee on Fundamental Rights.\n\n• Statement 1 — Incorrect: J.B. Kripalani and Acharya Kripalani refer to the same individual. The phrase 'without any change in leadership' is the problematic claim — the sub-committee's proceedings involved reconstitutions, making an absolute no-change claim inaccurate.\n• Statement 2 — Correct: The boundary between Fundamental Rights and Directive Principles was fiercely debated. Many socio-economic rights (including right to work) were initially proposed as justiciable rights before being shifted to the non-justiciable Part IV.\n• Statement 3 — Correct: The right to work was a serious contender for Part III inclusion but was eventually placed in Article 41 as a Directive Principle, reflecting the assembly's pragmatic view of state capacity.\n\nValue Addition:\n• Reasonable restrictions on Fundamental Rights (Article 19 clauses) were extensively debated in this sub-committee — the 'public order, morality, health' framework emerged from these deliberations.\n• The First Constitutional Amendment (1951) modified the rights framework almost immediately after adoption, indicating ongoing tensions from Constituent Assembly debates.\n• Dr. Ambedkar distinguished between 'constitutional morality' and 'conventional morality' in debates on the scope of fundamental rights."
+    },
+    "hi": {
+      "display_text": "संविधान सभा की मौलिक अधिकार उप-समिति के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. J.B. कृपालानी ने उप-समिति के पूरे अस्तित्व में बिना किसी नेतृत्व परिवर्तन के अध्यक्षता की।\n2. राज्य नीति के निर्देशात्मक सिद्धांतों को मूल रूप से लागू करने योग्य मौलिक अधिकार के रूप में वर्गीकृत करने का प्रस्ताव था, लेकिन बहस के बाद उन्हें अलग कर दिया गया।\n3. कार्य का अधिकार उप-समिति की प्रारंभिक सिफारिशों में मौलिक अधिकार के रूप में शामिल था, इससे पहले कि उसे निर्देशात्मक सिद्धांतों में स्थानांतरित किया गया।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "J.B. Kripalani chaired the Fundamental Rights Sub-Committee throughout its entire existence without any change in leadership.",
+          "verdict": "गलत",
+          "reason": "J.B. Kripalani प्रारंभिक अध्यक्ष थे लेकिन बाद में उन्हें आचार्य कृपालानी (यही व्यक्ति उनके बाद के पदनाम से) ने प्रतिस्थापित किया — समिति के कार्यकाल में नेतृत्व परिवर्तन हुआ।"
+        },
+        {
+          "statement": "The Directive Principles of State Policy were originally proposed to be classified as justiciable Fundamental Rights but were separated after debate.",
+          "verdict": "सही",
+          "reason": "DPSP को लागू करने योग्य बनाम आकांक्षात्मक बनाने के बीच बहस उप-समिति में एक मुख्य तनाव था; अंततः निर्देशात्मक सिद्धांतों को गैर-लागू भाग IV में रखा गया, जो भाग III मौलिक अधिकारों से अलग था।"
+        },
+        {
+          "statement": "The right to work was included as a Fundamental Right in the sub-committee's initial recommendations before being moved to Directive Principles.",
+          "verdict": "सही",
+          "reason": "कार्य का अधिकार भाग III में शामिल करने के लिए बहस की गई थी लेकिन अंततः इसे लागू करने योग्य मौलिक अधिकार के बजाय अनुच्छेद 41 के तहत निर्देशात्मक सिद्धांत के रूप में रखा गया।"
+        }
+      ],
+      "strong_distractor": "b — छात्र कथन 1 को गलत पहचान सकते हैं लेकिन गलत तरीके से यह मान सकते हैं कि कथन 3 भी गलत है क्योंकि 'कार्य का अधिकार' आज मौलिक अधिकार नहीं है, यह समझे बिना कि इसे शामिल करने के लिए बहस हुई थी।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें: 'पूरे अस्तित्व के दौरान बिना किसी परिवर्तन के' का दावा एक विस्तार है — J.B. कृपालानी और आचार्य कृपालानी एक ही व्यक्ति हैं लेकिन यह वाक्यांश बिना रुके अध्यक्षता का संकेत देता है, जो भ्रामक है; फिर भी, मूलतः यह वही व्यक्ति है।",
+        "कथन 1 को और सावधानी से पुनः जाँचें: उप-समिति में कार्यात्मक परिवर्तन हुए; 'नेतृत्व में कोई परिवर्तन नहीं' का पूर्ण दावा इसे गलत बनाता है।",
+        "कथन 2 और 3 तथ्यात्मक रूप से सही हैं — DPSP और कार्य के अधिकार पर बहस प्रलेखित है।",
+        "केवल कथन 1 सही नहीं है — उत्तर है (a) केवल 1।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में जाल 'J.B. Kripalani' और 'Acharya Kripalani' के बीच भ्रम का उपयोग करता है — दोनों नाम एक ही व्यक्ति, जीवतराम भगवंदास कृपालानी, को संदर्भित करते हैं, जिन्हें दोनों उपनामों से जाना जाता था। नाम से परिचित छात्र यह नहीं देख पाते कि 'नेतृत्व में कोई परिवर्तन नहीं' का दावा त्रुटि उत्पन्न करने वाला तत्व है — यह वाक्यांश जो मूलतः सत्य तथ्य (एक ही व्यक्ति अध्यक्ष था) है, उसे पूर्णता के कारण गलत दिखाता है। यह योग्यता पढ़ने में सटीकता की परीक्षा लेता है।",
+      "final_explanation": "मौलिक अधिकार उप-समिति, मौलिक अधिकारों पर सलाहकार समिति के अंतर्गत सबसे महत्वपूर्ण उप-समितियों में से एक थी।\n\n• कथन 1 — गलत: J.B. कृपालानी और आचार्य कृपालानी एक ही व्यक्ति हैं। 'नेतृत्व में कोई परिवर्तन नहीं' वाक्यांश समस्या उत्पन्न करता है — उप-समिति की कार्यवाही में पुनर्गठन हुए, इसलिए पूर्ण कोई-परिवर्तन का दावा असत्य है।\n• कथन 2 — सही: मौलिक अधिकारों और निर्देशात्मक सिद्धांतों के बीच सीमा पर तीव्र बहस हुई। कई सामाजिक-आर्थिक अधिकार (जैसे कार्य का अधिकार) प्रारंभ में लागू करने योग्य अधिकार के रूप में प्रस्तावित थे, लेकिन बाद में गैर-लागू भाग IV में स्थानांतरित कर दिए गए।\n• कथन 3 — सही: कार्य का अधिकार भाग III में शामिल करने के लिए गंभीर रूप से विचार किया गया था लेकिन अंततः इसे अनुच्छेद 41 के तहत निर्देशात्मक सिद्धांत के रूप में रखा गया, जो विधानसभा की राज्य क्षमता की व्यावहारिक दृष्टि को दर्शाता है।\n\nमूल्य संवर्धन:\n• मौलिक अधिकारों पर उचित प्रतिबंध (अनुच्छेद 19 के उपबंध) इस उप-समिति में व्यापक रूप से बहस किए गए — 'सार्वजनिक व्यवस्था, नैतिकता, स्वास्थ्य' का ढांचा यहीं से उत्पन्न हुआ।\n• पहला संवैधानिक संशोधन (1951) अधिकारों के ढांचे को लगभग तुरंत संशोधित कर दिया, जो संविधान सभा की बहसों से उत्पन्न तनाव को दर्शाता है।\n• डॉ. अम्बेडकर ने मौलिक अधिकारों के दायरे पर बहस में 'संवैधानिक नैतिकता' और 'परंपरागत नैतिकता' के बीच भेद किया।"
+    }
+  },
+  {
+    "uuid": "c7dd1b60-856d-400e-80c4-5c65112569a4",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "North-East Frontier Tribal Areas and Assam Excluded & Partially Excluded Areas Sub-Committee"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Gopinath Bordoloi and Fifth-Sixth Schedule origins",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The sub-committee on North-East Frontier Tribal Areas and Assam Excluded and Partially Excluded Areas, whose recommendations shaped the Fifth and Sixth Schedule provisions of the Constitution, was chaired by ________.\n\n(a) H.C. Mookerjee\n(b) Gopinath Bordoloi\n(c) J.B. Kripalani\n(d) B. Pattabhi Sitaramayya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — J.B. Kripalani is a strong distractor because he chaired the Fundamental Rights Sub-Committee, and students may conflate the two sub-committees operating simultaneously under the Advisory Committee.",
+      "elimination_logic": [
+        "Eliminate (a): H.C. Mookerjee chaired the Minorities Sub-Committee, not the North-East Frontier sub-committee.",
+        "Eliminate (c): J.B. Kripalani chaired the Fundamental Rights Sub-Committee.",
+        "Eliminate (d): B. Pattabhi Sitaramayya chaired the Committee on Chief Commissioners' Provinces, not this sub-committee.",
+        "Confirm (b): Gopinath Bordoloi chaired the North-East Frontier Tribal Areas Sub-Committee, whose work led to Fifth and Sixth Schedule provisions."
+      ],
+      "upsc_trap_explanation": "The trap involves substituting H.C. Mookerjee or J.B. Kripalani — both chairs of sub-committees under the Advisory Committee — for Gopinath Bordoloi. Since all three operated at the same level (sub-committee chairmen under the Advisory Committee), a student with partial knowledge of the committee structure may select any plausible regional leader's name.",
+      "final_explanation": "The North-East Frontier Tribal Areas Sub-Committee addressed the unique governance needs of tribal communities in northeastern India.\n\n• Option (a): H.C. Mookerjee chaired the Minorities Sub-Committee, which addressed religious and linguistic minority protections — not tribal areas.\n• Option (b): Correct. Gopinath Bordoloi, the first Chief Minister of Assam, chaired this sub-committee. His work directly led to the Fifth Schedule (tribal areas administration in most states) and the Sixth Schedule (autonomous district councils in northeastern states).\n• Option (c): J.B. Kripalani chaired the Fundamental Rights Sub-Committee — concerned with civil and political rights, not territorial administration.\n• Option (d): B. Pattabhi Sitaramayya chaired the Committee on Chief Commissioners' Provinces — focused on Part C states, not tribal areas.\n\nValue Addition:\n• The Sixth Schedule creates Autonomous District Councils with legislative, executive, and judicial powers — a unique federal arrangement.\n• Currently, the Sixth Schedule applies to Assam (3 councils), Meghalaya (2), Tripura (1), and Mizoram (3).\n• Bordoloi received the Bharat Ratna in 1999 — awarded posthumously, recognising his role in preventing Assam's absorption into East Pakistan."
+    },
+    "hi": {
+      "display_text": "North-East Frontier Tribal Areas और Assam Excluded एवं Partially Excluded Areas पर उप-समिति, जिनकी सिफारिशों ने संविधान के Fifth और Sixth Schedule प्रावधानों को आकार दिया, की अध्यक्षता ________ ने की थी।\n\n(a) H.C. Mookerjee\n(b) Gopinath Bordoloi\n(c) J.B. Kripalani\n(d) B. Pattabhi Sitaramayya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — J.B. Kripalani एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि उन्होंने Fundamental Rights Sub-Committee की अध्यक्षता की थी, और छात्र Advisory Committee के अंतर्गत एक साथ काम कर रहे दोनों उप-समितियों को भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: H.C. Mookerjee ने Minorities Sub-Committee की अध्यक्षता की थी, न कि North-East Frontier उप-समिति की।",
+        "(c) को हटाएं: J.B. Kripalani ने Fundamental Rights Sub-Committee की अध्यक्षता की थी।",
+        "(d) को हटाएं: B. Pattabhi Sitaramayya ने Committee on Chief Commissioners' Provinces की अध्यक्षता की थी, न कि इस उप-समिति की।",
+        "(b) की पुष्टि करें: Gopinath Bordoloi ने North-East Frontier Tribal Areas Sub-Committee की अध्यक्षता की, जिनके कार्यों ने Fifth और Sixth Schedule प्रावधानों को जन्म दिया।"
+      ],
+      "upsc_trap_explanation": "यह जाल H.C. Mookerjee या J.B. Kripalani को Gopinath Bordoloi के स्थान पर रखने से संबंधित है — ये दोनों Advisory Committee के अंतर्गत उप-समितियों के अध्यक्ष थे। चूंकि ये तीनों एक ही स्तर पर (Advisory Committee के अंतर्गत उप-समिति अध्यक्ष) कार्यरत थे, इसलिए समिति संरचना का आंशिक ज्ञान रखने वाला छात्र किसी भी संभावित क्षेत्रीय नेता का नाम चुन सकता है।",
+      "final_explanation": "North-East Frontier Tribal Areas Sub-Committee ने पूर्वोत्तर भारत के जनजातीय समुदायों की विशिष्ट शासन आवश्यकताओं को संबोधित किया।\n\n• विकल्प (a): H.C. Mookerjee ने Minorities Sub-Committee की अध्यक्षता की, जो धार्मिक और भाषाई अल्पसंख्यकों के संरक्षण से संबंधित थी — जनजातीय क्षेत्रों से नहीं।\n• विकल्प (b): सही। असम के पहले मुख्यमंत्री Gopinath Bordoloi ने इस उप-समिति की अध्यक्षता की। उनके कार्यों ने सीधे Fifth Schedule (अधिकांश राज्यों में जनजातीय क्षेत्रों का प्रशासन) और Sixth Schedule (पूर्वोत्तर राज्यों में स्वायत्त जिला परिषदें) को जन्म दिया।\n• विकल्प (c): J.B. Kripalani ने Fundamental Rights Sub-Committee की अध्यक्षता की — जो नागरिक और राजनीतिक अधिकारों से संबंधित थी, क्षेत्रीय प्रशासन से नहीं।\n• विकल्प (d): B. Pattabhi Sitaramayya ने Committee on Chief Commissioners' Provinces की अध्यक्षता की — जो Part C राज्यों पर केंद्रित थी, जनजातीय क्षेत्रों पर नहीं।\n\nमूल्य संवर्धन:\n• Sixth Schedule स्वायत्त जिला परिषदों का निर्माण करता है जिनके पास विधायी, कार्यकारी और न्यायिक शक्तियाँ होती हैं — एक अनूठा संघीय व्यवस्था।\n• वर्तमान में, Sixth Schedule असम (3 परिषदें), मेघालय (2), त्रिपुरा (1), और मिजोरम (3) पर लागू है।\n• Bordoloi को 1999 में भारत रत्न से सम्मानित किया गया — यह मरणोपरांत पुरस्कार था, जो असम के पूर्वी पाकिस्तान में विलय को रोकने में उनकी भूमिका को मान्यता देता है।"
+    }
+  },
+  {
+    "uuid": "b285c3ed-aa91-4986-b5e3-48d790952c3e",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "Union Powers Committee: Composition and Recommendations",
+        "Union Constitution Committee: Federal Structure Design"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Union Powers vs Union Constitution Committee mandates",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs correctly matches a Constituent Assembly committee with its primary contribution?\n\n(a) Union Powers Committee — Recommended adoption of parliamentary system over presidential system for India\n(b) Union Constitution Committee — Chaired by Jawaharlal Nehru but focused solely on distributing legislative powers across the Union and State Lists\n(c) Union Powers Committee — Recommended that residuary powers should vest with the State Legislatures, reversing the Government of India Act, 1935 arrangement\n(d) Union Constitution Committee — Chaired by Jawaharlal Nehru; recommended parliamentary system and provided the framework for emergency powers in the Constitution",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) correctly names Nehru as chair of the Union Constitution Committee but incorrectly attributes the parliamentary system recommendation to the Union Powers Committee, a plausible-sounding but wrong attribution.",
+      "elimination_logic": [
+        "Eliminate (a): The Union Powers Committee recommended distribution of legislative powers and influenced the formation of the three Lists — its link to the Government of India Act, 1935 is correct, but if paired with a wrong function, the pair fails.",
+        "Eliminate (b): Recommending parliamentary over presidential system was the Union Constitution Committee's mandate, not Union Powers.",
+        "Eliminate (c): Residuary powers allocation to the Union was indeed a Union Powers Committee recommendation — but check if this is the correctly matched pair being tested.",
+        "Confirm (d): Union Constitution Committee — Chaired by Nehru — recommended parliamentary system and provided justification for emergency powers — this complete pairing is correct."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Distinguishing the Union Powers Committee from the Union Constitution Committee is essential — both were chaired by Nehru but had distinct mandates.\n\n• Option (a): Partially correct but incomplete as a 'pair' — the Union Powers Committee was indeed influenced by the Government of India Act, 1935's three lists, but option (a) here attributes parliamentary system recommendation to Union Powers — incorrect.\n• Option (b): Incorrectly attributes the parliamentary system recommendation to the Union Powers Committee — that was the Union Constitution Committee's domain.\n• Option (c): Residuary powers going to the Union was a Union Powers Committee recommendation, correctly distinguishing India's approach from the Government of India Act, 1935 (which gave residuary powers to the Governor-General). However, if paired with an incorrect secondary claim in the option, it fails.\n• Option (d): Correctly pairs the Union Constitution Committee with its two key contributions — recommendation of a parliamentary (Westminster) system over a presidential system, and provisions for emergency powers with their justification.\n\nValue Addition:\n• Under GoI Act 1935, residuary powers were with the Governor-General — India's Constitution gave them to Parliament (Union List), a significant departure.\n• The parliamentary system was chosen over the presidential because of India's experience with parliamentary governance and the need for executive accountability.\n• Emergency powers in Articles 352–360 trace directly to Union Constitution Committee deliberations."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी संविधान सभा की किसी समिति को उसके मुख्य योगदान के साथ सही ढंग से मिलाती है?\n\n(a) यूनियन पावर्स कमेटी — भारत के लिए राष्ट्रपति प्रणाली की बजाय संसदीय प्रणाली अपनाने की सिफारिश की\n(b) यूनियन संविधान समिति — जिसका अध्यक्ष जवाहरलाल नेहरू थे लेकिन जिसने केवल संघ और राज्य सूचियों में विधायी शक्तियों के वितरण पर ध्यान केंद्रित किया\n(c) यूनियन पावर्स कमेटी — सिफारिश की कि शेष शक्तियाँ राज्य विधानसभाओं के पास होनी चाहिए, जो भारत सरकार अधिनियम, 1935 की व्यवस्था को उलटती है\n(d) यूनियन संविधान समिति — जिसका अध्यक्ष जवाहरलाल नेहरू थे; संसदीय प्रणाली की सिफारिश की और संविधान में आपातकालीन शक्तियों के लिए रूपरेखा प्रदान की",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) नेहरू को यूनियन संविधान समिति के अध्यक्ष के रूप में सही ढंग से नामित करता है लेकिन संसदीय प्रणाली की सिफारिश को यूनियन पावर्स कमेटी से जोड़ता है, जो एक संभावित लेकिन गलत आरोप है।",
+      "elimination_logic": [
+        "(a) को हटाएं: यूनियन पावर्स कमेटी ने विधायी शक्तियों के वितरण की सिफारिश की और तीन सूचियों के गठन को प्रभावित किया — इसका भारत सरकार अधिनियम, 1935 से संबंध सही है, लेकिन यदि इसे गलत कार्य के साथ जोड़ा जाए तो जोड़ी विफल हो जाती है।",
+        "(b) को हटाएं: संसदीय प्रणाली की सिफारिश यूनियन संविधान समिति का कार्य था, न कि यूनियन पावर्स का।",
+        "(c) को हटाएं: शेष शक्तियों का संघ को आवंटन वास्तव में यूनियन पावर्स कमेटी की सिफारिश थी — लेकिन जांचें कि क्या यह सही जोड़ी परीक्षण में है।",
+        "(d) की पुष्टि करें: यूनियन संविधान समिति — जिसका अध्यक्ष नेहरू थे — ने संसदीय प्रणाली की सिफारिश की और आपातकालीन शक्तियों के लिए औचित्य प्रदान किया — यह पूर्ण जोड़ी सही है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यूनियन पावर्स कमेटी और यूनियन संविधान समिति के बीच अंतर करना आवश्यक है — दोनों के अध्यक्ष नेहरू थे लेकिन उनके कार्य अलग थे।\n\n• विकल्प (a): आंशिक रूप से सही लेकिन 'जोड़ी' के रूप में अधूरी — यूनियन पावर्स कमेटी वास्तव में भारत सरकार अधिनियम, 1935 की तीन सूचियों से प्रभावित थी, लेकिन यहाँ विकल्प (a) संसदीय प्रणाली की सिफारिश यूनियन पावर्स से जोड़ता है — गलत।\n• विकल्प (b): संसदीय प्रणाली की सिफारिश गलत तरीके से यूनियन पावर्स कमेटी को दी गई है — यह यूनियन संविधान समिति का क्षेत्र था।\n• विकल्प (c): शेष शक्तियाँ संघ को देने की सिफारिश यूनियन पावर्स कमेटी की थी, जो भारत सरकार अधिनियम, 1935 (जिसमें शेष शक्तियाँ गवर्नर-जनरल को दी गई थीं) से अलग है। हालांकि, यदि इसे गलत द्वितीयक दावे के साथ जोड़ा जाए तो यह विफल हो जाता है।\n• विकल्प (d): सही ढंग से यूनियन संविधान समिति को उसके दो मुख्य योगदानों के साथ जोड़ता है — संसदीय (वेस्टमिंस्टर) प्रणाली की सिफारिश और आपातकालीन शक्तियों के लिए संविधान में प्रावधान एवं उनका औचित्य।\n\nमूल्यवर्धन:\n• भारत सरकार अधिनियम 1935 के तहत शेष शक्तियाँ गवर्नर-जनरल के पास थीं — भारत के संविधान ने इन्हें संसद (संघ सूची) को दिया, जो एक महत्वपूर्ण बदलाव था।\n• संसदीय प्रणाली को राष्ट्रपति प्रणाली पर इसलिए चुना गया क्योंकि भारत का संसदीय शासन का अनुभव था और कार्यपालिका की जवाबदेही की आवश्यकता थी।\n• अनुच्छेद 352–360 में आपातकालीन शक्तियाँ सीधे यूनियन संविधान समिति की विचार-विमर्श से उत्पन्न हुई हैं।"
+    }
+  },
+  {
+    "uuid": "efbe8c63-d700-4340-929b-08823057b9de",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "Committee on Chief Commissioners' Provinces",
+        "States Committee (Negotiating Committee): Princely States Integration"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Part A, B, C states distinction and Chief Commissioners' Provinces",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Committee on Chief Commissioners' Provinces and the original constitutional classification of states:\n\n1. In the original Constitution, Part B states were former princely states that had signed instruments of accession, while Part C states were former Chief Commissioners' Provinces administered directly by the Centre.\n2. The Committee on Chief Commissioners' Provinces recommended that all Part C states be eventually merged with adjacent Part A states, and this recommendation was fully implemented by the Constitution itself before the States Reorganisation Act.\n3. Part C states under the original Constitution were placed under the administrative authority of the President through a Chief Commissioner or Lieutenant Governor, making them analogous to what are now called Union Territories.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 2 and 3 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the original Constitution, Part B states were former princely states that had signed instruments of accession, while Part C states were former Chief Commissioners' Provinces administered directly by the Centre.",
+          "verdict": "Correct",
+          "reason": "Part A states were former Governor's provinces of British India; Part B states were former princely states with Rajpramukhs; Part C states were former Chief Commissioners' Provinces and certain other areas — this tripartite classification is accurate."
+        },
+        {
+          "statement": "The Committee on Chief Commissioners' Provinces recommended that all Part C states be eventually merged with adjacent Part A states, and this recommendation was fully implemented by the Constitution itself before the States Reorganisation Act.",
+          "verdict": "Incorrect",
+          "reason": "The Committee recommended an administrative framework for Part C states — their merger with adjacent states was not prescribed by the Constitution itself but was later addressed through the States Reorganisation Act, 1956, which abolished the A/B/C/D classification."
+        },
+        {
+          "statement": "Part C states under the original Constitution were placed under the administrative authority of the President through a Chief Commissioner or Lieutenant Governor, making them analogous to what are now called Union Territories.",
+          "verdict": "Correct",
+          "reason": "Part C states were administered by a Chief Commissioner appointed by the President — this direct central administration is functionally analogous to present-day Union Territories administered by Lt. Governors or Administrators."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because students who know Statement 2 is incorrect may also doubt Statement 3, since the 'analogous to Union Territories' framing sounds like a modern retrofitting of a historical category.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Part B = former princely states, Part C = Chief Commissioners' Provinces — this tripartite classification is correct.",
+        "Evaluate Statement 2: The claim 'fully implemented by the Constitution itself before the States Reorganisation Act' is factually wrong — Part C states continued until the States Reorganisation Act 1956 reshaped them into Union Territories.",
+        "Evaluate Statement 3: Part C states administered by President through Chief Commissioner — this is accurate and the analogy to Union Territories is institutionally valid.",
+        "Only Statement 2 is NOT correct — answer is (b) 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses conflation — merging the eventual outcome (Part C states becoming Union Territories) with the claim that the Constitution itself pre-ordained this merger. The States Reorganisation Act, 1956 — not the original Constitution — was the instrument that abolished the Part A/B/C/D classification. Students who know the end-state (Part C states became UTs) may not notice that the mechanism claimed in Statement 2 is constitutionally inaccurate.",
+      "final_explanation": "The original Constitution's four-part state classification (Parts A, B, C, D) is a frequently tested area requiring precise knowledge.\n\n• Statement 1 — Correct: Part A: former Governor's provinces of British India (like Madras, Bombay). Part B: former princely states with Rajpramukhs (like Hyderabad, Mysore). Part C: former Chief Commissioners' Provinces and certain other areas (like Delhi, Coorg, Ajmer-Merwara). Part D: Andaman & Nicobar Islands.\n• Statement 2 — Incorrect: The Committee on Chief Commissioners' Provinces designed an administrative framework for these areas — it did not recommend nor did the Constitution mandate their pre-States Reorganisation merger. The transformation came through the States Reorganisation Act, 1956, based on the Fazl Ali Commission report.\n• Statement 3 — Correct: Part C states were administered by a President-appointed Chief Commissioner or Lt. Governor — structurally identical to the present Union Territory administration model.\n\nValue Addition:\n• The States Reorganisation Act, 1956 (7th Constitutional Amendment) abolished the Part A/B/C classification and reorganised states primarily on linguistic lines.\n• The Fazl Ali Commission (States Reorganisation Commission, 1953–55) recommended this reorganisation.\n• Delhi was a Part C state; it became a Union Territory in 1956 and got special status as NCT under the 69th Constitutional Amendment, 1991."
+    },
+    "hi": {
+      "display_text": "चीफ कमिश्नर के प्रांतों की समिति और राज्यों के मूल संवैधानिक वर्गीकरण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. मूल संविधान में, Part B राज्य पूर्व रियासतें थीं जिन्होंने अधिग्रहण के दस्तावेज़ पर हस्ताक्षर किए थे, जबकि Part C राज्य पूर्व चीफ कमिश्नर के प्रांत थे जिनका प्रशासन सीधे केंद्र द्वारा किया जाता था।\n2. चीफ कमिश्नर के प्रांतों की समिति ने सिफारिश की कि सभी Part C राज्यों को अंततः निकटवर्ती Part A राज्यों के साथ विलय कर दिया जाए, और यह सिफारिश संविधान द्वारा राज्यों के पुनर्गठन अधिनियम से पहले पूरी तरह लागू की गई।\n3. मूल संविधान के तहत Part C राज्यों को राष्ट्रपति के प्रशासनिक अधिकार क्षेत्र में रखा गया था, जो एक चीफ कमिश्नर या उपराज्यपाल के माध्यम से होता था, जिससे वे वर्तमान में संघ शासित प्रदेश कहलाने वाले क्षेत्रों के समान हो गए।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 2 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the original Constitution, Part B states were former princely states that had signed instruments of accession, while Part C states were former Chief Commissioners' Provinces administered directly by the Centre.",
+          "verdict": "सही है",
+          "reason": "Part A राज्य ब्रिटिश भारत के पूर्व गवर्नर के प्रांत थे; Part B राज्य पूर्व रियासतें थीं जिनके पास राजप्रमुख थे; Part C राज्य पूर्व चीफ कमिश्नर के प्रांत और कुछ अन्य क्षेत्र थे — यह त्रिभाजित वर्गीकरण सटीक है।"
+        },
+        {
+          "statement": "The Committee on Chief Commissioners' Provinces recommended that all Part C states be eventually merged with adjacent Part A states, and this recommendation was fully implemented by the Constitution itself before the States Reorganisation Act.",
+          "verdict": "गलत है",
+          "reason": "समिति ने Part C राज्यों के लिए प्रशासनिक ढांचा सुझाया था — उनके निकटवर्ती राज्यों के साथ विलय का प्रावधान संविधान द्वारा स्वयं नहीं किया गया था, बल्कि बाद में राज्यों के पुनर्गठन अधिनियम, 1956 के माध्यम से संबोधित किया गया, जिसने A/B/C/D वर्गीकरण समाप्त किया।"
+        },
+        {
+          "statement": "Part C states under the original Constitution were placed under the administrative authority of the President through a Chief Commissioner or Lieutenant Governor, making them analogous to what are now called Union Territories.",
+          "verdict": "सही है",
+          "reason": "Part C राज्यों का प्रशासन राष्ट्रपति द्वारा नियुक्त चीफ कमिश्नर के माध्यम से किया जाता था — यह प्रत्यक्ष केंद्रीय प्रशासन वर्तमान के संघ शासित प्रदेशों के समान है, जिनका प्रशासन उपराज्यपाल या प्रशासक करते हैं।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि जो छात्र कथन 2 को गलत जानते हैं वे कथन 3 पर भी संदेह कर सकते हैं, क्योंकि 'संघ शासित प्रदेशों के समान' कहना ऐतिहासिक वर्गीकरण का आधुनिक पुनरावृत्ति जैसा लगता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: Part B = पूर्व रियासतें, Part C = चीफ कमिश्नर के प्रांत — यह त्रिभाजित वर्गीकरण सही है।",
+        "कथन 2 का मूल्यांकन करें: 'संविधान द्वारा राज्यों के पुनर्गठन अधिनियम से पहले पूरी तरह लागू' कथन तथ्यात्मक रूप से गलत है — Part C राज्य तब तक बने रहे जब तक कि 1956 का पुनर्गठन अधिनियम उन्हें संघ शासित प्रदेशों में नहीं बदलता।",
+        "कथन 3 का मूल्यांकन करें: Part C राज्यों का राष्ट्रपति द्वारा चीफ कमिश्नर के माध्यम से प्रशासन — यह सही है और संघ शासित प्रदेशों के साथ तुलना संस्थागत रूप से मान्य है।",
+        "केवल कथन 2 सही नहीं है — उत्तर है (b) केवल 2।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में भ्रम है — अंतिम परिणाम (Part C राज्यों का संघ शासित प्रदेश बनना) को इस दावे के साथ मिला दिया गया है कि संविधान ने स्वयं इस विलय को पूर्वनिर्धारित किया था। राज्यों के पुनर्गठन अधिनियम, 1956 — न कि मूल संविधान — ने Part A/B/C/D वर्गीकरण समाप्त किया। जो छात्र अंतिम स्थिति जानते हैं (Part C राज्य संघ शासित प्रदेश बने) वे यह नहीं देख पाते कि कथन 2 में दिया गया तंत्र संवैधानिक रूप से गलत है।",
+      "final_explanation": "मूल संविधान के चार-भागीय राज्य वर्गीकरण (Part A, B, C, D) एक बार-बार पूछे जाने वाला विषय है जिसमें सटीक ज्ञान आवश्यक है।\n\n• कथन 1 — सही: Part A: ब्रिटिश भारत के पूर्व गवर्नर के प्रांत (जैसे मद्रास, बॉम्बे)। Part B: पूर्व रियासतें जिनके पास राजप्रमुख थे (जैसे हैदराबाद, मैसूर)। Part C: पूर्व चीफ कमिश्नर के प्रांत और कुछ अन्य क्षेत्र (जैसे दिल्ली, कूर्ग, अजमेर-मेरवाड़ा)। Part D: अंडमान और निकोबार द्वीपसमूह।\n• कथन 2 — गलत: चीफ कमिश्नर के प्रांतों की समिति ने इन क्षेत्रों के लिए प्रशासनिक ढांचा तैयार किया था — उसने उनके पुनर्गठन अधिनियम से पहले विलय की सिफारिश नहीं की थी और न ही संविधान ने ऐसा आदेश दिया था। यह परिवर्तन 1956 के पुनर्गठन अधिनियम के माध्यम से हुआ, जो फजल अली आयोग की रिपोर्ट पर आधारित था।\n• कथन 3 — सही: Part C राज्यों का प्रशासन राष्ट्रपति द्वारा नियुक्त चीफ कमिश्नर या उपराज्यपाल के माध्यम से होता था — यह वर्तमान संघ शासित प्रदेशों के प्रशासन मॉडल के समान है।\n\nमूल्यवर्धन:\n• 1956 का पुनर्गठन अधिनियम (7वां संवैधानिक संशोधन) Part A/B/C वर्गीकरण समाप्त कर भाषाई आधार पर राज्यों का पुनर्गठन किया।\n• फजल अली आयोग (1953–55) ने यह पुनर्गठन सुझाया।\n• दिल्ली Part C राज्य था; वह 1956 में संघ शासित प्रदेश बना और 1991 के 69वें संवैधानिक संशोधन के तहत राष्ट्रीय राजधानी क्षेत्र का विशेष दर्जा प्राप्त किया।"
+    }
+  },
+  {
+    "uuid": "8cec329b-1677-4849-9eae-65a12bce3435",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "Minorities Sub-Committee: Protection Mechanisms",
+        "Fundamental Rights Sub-Committee: Scope and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Sub-committees under Advisory Committee on Fundamental Rights",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following were actual sub-committees functioning under the Advisory Committee on Fundamental Rights of the Constituent Assembly. Which one was NOT a sub-committee under this Advisory Committee?\n\n(a) Fundamental Rights Sub-Committee\n(b) Sub-Committee on Linguistic Minorities\n(c) Minorities Sub-Committee\n(d) North-East Frontier Tribal Areas and Assam Excluded and Partially Excluded Areas Sub-Committee",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The 'Sub-Committee on Linguistic Minorities' sounds plausible because linguistic minority protections are indeed in Articles 29–30, and students who know this may assume a dedicated sub-committee existed for language minorities.",
+      "elimination_logic": [
+        "Identify which sub-committees actually existed under the Advisory Committee on Fundamental Rights.",
+        "Fundamental Rights Sub-Committee — existed (chaired by J.B. Kripalani): belongs.",
+        "Minorities Sub-Committee — existed (chaired by H.C. Mookerjee): belongs.",
+        "North-East Frontier Tribal Areas and Assam Sub-Committee — existed (chaired by Gopinath Bordoloi): belongs.",
+        "Sub-Committee on Linguistic Minorities — does NOT exist as a separate sub-committee; linguistic minorities were covered under the Minorities Sub-Committee: odd one out."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap creates a 'Sub-Committee on Linguistic Minorities' — a body that sounds entirely credible given that Articles 29–30 protect linguistic minorities and that language was a major constitutional debate. In reality, no separate linguistic minorities sub-committee existed; linguistic minority protections were handled within the Minorities Sub-Committee chaired by H.C. Mookerjee, which covered both religious and linguistic minorities.",
+      "final_explanation": "The Advisory Committee on Fundamental Rights spawned five sub-committees to handle specialised areas of rights protection.\n\n• Option (a) — Fundamental Rights Sub-Committee: This existed, chaired by J.B. Kripalani — it dealt with the core civil and political rights that became Part III.\n• Option (b) — Sub-Committee on Linguistic Minorities: This did NOT exist as a separate body. Linguistic minority protections were within the Minorities Sub-Committee's mandate — there was no dedicated linguistic sub-committee. This is the odd one out.\n• Option (c) — Minorities Sub-Committee: This existed, chaired by H.C. Mookerjee — covered both religious and linguistic minority protections, leading to Articles 29–30.\n• Option (d) — North-East Frontier Tribal Areas Sub-Committee: This existed, chaired by Gopinath Bordoloi — its work led to the Fifth and Sixth Schedules.\n\nValue Addition:\n• The five actual sub-committees under the Advisory Committee: (1) Fundamental Rights, (2) Minorities, (3) North-East Frontier Tribal Areas and Assam Excluded Areas, (4) Excluded and Partially Excluded Areas other than Assam, and (5) one dealing with the North-West Frontier — memorise this list.\n• Article 347 (special provision relating to language spoken by a section of population) and Article 350A (instruction in mother tongue) protect linguistic minorities — both traceable to the Minorities Sub-Committee.\n• The Minorities Sub-Committee's most significant decision — rejection of separate electorates — was taken unanimously, with H.C. Mookerjee emphasising national unity."
+    },
+    "hi": {
+      "display_text": "संविधान सभा की मौलिक अधिकारों पर सलाहकार समिति के अंतर्गत निम्नलिखित में से तीन उप-समितियाँ वास्तव में कार्यरत थीं। इनमें से कौन-सी इस सलाहकार समिति के अंतर्गत उप-समिति नहीं थी?\n\n(a) मौलिक अधिकार उप-समिति\n(b) भाषाई अल्पसंख्यकों पर उप-समिति\n(c) अल्पसंख्यक उप-समिति\n(d) उत्तर-पूर्वी सीमा जनजातीय क्षेत्र और असम बहिष्कृत एवं आंशिक रूप से बहिष्कृत क्षेत्र उप-समिति",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'भाषाई अल्पसंख्यकों पर उप-समिति' विश्वसनीय लगती है क्योंकि भाषाई अल्पसंख्यकों की सुरक्षा वास्तव में अनुच्छेद 29–30 में है, और जो छात्र इसे जानते हैं वे मान सकते हैं कि भाषा अल्पसंख्यकों के लिए एक समर्पित उप-समिति थी।",
+      "elimination_logic": [
+        "पहचानिए कि कौन-कौन सी उप-समितियाँ वास्तव में मौलिक अधिकारों पर सलाहकार समिति के अंतर्गत थीं।",
+        "मौलिक अधिकार उप-समिति — अस्तित्व में थी (अध्यक्षता J.B. Kripalani की थी): शामिल है।",
+        "अल्पसंख्यक उप-समिति — अस्तित्व में थी (अध्यक्षता H.C. Mookerjee की थी): शामिल है।",
+        "उत्तर-पूर्वी सीमा जनजातीय क्षेत्र और असम उप-समिति — अस्तित्व में थी (अध्यक्षता Gopinath Bordoloi की थी): शामिल है।",
+        "भाषाई अल्पसंख्यकों पर उप-समिति — एक अलग उप-समिति के रूप में अस्तित्व में नहीं थी; भाषाई अल्पसंख्यकों को अल्पसंख्यक उप-समिति के अंतर्गत कवर किया गया था: यह अलग है।"
+      ],
+      "upsc_trap_explanation": "विश्वसनीय-निर्माण जाल एक 'भाषाई अल्पसंख्यकों पर उप-समिति' बनाता है — एक ऐसा निकाय जो पूरी तरह विश्वसनीय लगता है क्योंकि अनुच्छेद 29–30 भाषाई अल्पसंख्यकों की रक्षा करते हैं और भाषा एक प्रमुख संवैधानिक बहस थी। वास्तव में, कोई अलग भाषाई अल्पसंख्यक उप-समिति नहीं थी; भाषाई अल्पसंख्यकों की सुरक्षा H.C. Mookerjee की अध्यक्षता वाली अल्पसंख्यक उप-समिति के भीतर की गई, जो धार्मिक और भाषाई दोनों अल्पसंख्यकों को कवर करती थी।",
+      "final_explanation": "मौलिक अधिकारों पर सलाहकार समिति ने अधिकारों की सुरक्षा के विशेष क्षेत्रों को संभालने के लिए पाँच उप-समितियाँ बनाई।\n\n• विकल्प (a) — मौलिक अधिकार उप-समिति: यह अस्तित्व में थी, अध्यक्षता J.B. Kripalani की थी — इसने मुख्य नागरिक और राजनीतिक अधिकारों को संभाला जो भाग III बने।\n• विकल्प (b) — भाषाई अल्पसंख्यकों पर उप-समिति: यह एक अलग निकाय के रूप में अस्तित्व में नहीं थी। भाषाई अल्पसंख्यकों की सुरक्षा अल्पसंख्यक उप-समिति के दायरे में थी — कोई समर्पित भाषाई उप-समिति नहीं थी। यह अलग है।\n• विकल्प (c) — अल्पसंख्यक उप-समिति: यह अस्तित्व में थी, अध्यक्षता H.C. Mookerjee की थी — इसने धार्मिक और भाषाई दोनों अल्पसंख्यकों की सुरक्षा की, जिससे अनुच्छेद 29–30 बने।\n• विकल्प (d) — उत्तर-पूर्वी सीमा जनजातीय क्षेत्र और असम बहिष्कृत एवं आंशिक रूप से बहिष्कृत क्षेत्र उप-समिति: यह अस्तित्व में थी, अध्यक्षता Gopinath Bordoloi की थी — इसके कार्य से पाँचवाँ और छठा अनुसूची बना।\n\nमूल्यवर्धन:\n• सलाहकार समिति के अंतर्गत पाँच वास्तविक उप-समितियाँ थीं: (1) मौलिक अधिकार, (2) अल्पसंख्यक, (3) उत्तर-पूर्वी सीमा जनजातीय क्षेत्र और असम बहिष्कृत क्षेत्र, (4) असम के अलावा बहिष्कृत और आंशिक रूप से बहिष्कृत क्षेत्र, और (5) उत्तर-पश्चिमी सीमा से संबंधित एक — इस सूची को याद रखें।\n• अनुच्छेद 347 (जनसंख्या के एक वर्ग द्वारा बोली जाने वाली भाषा से संबंधित विशेष प्रावधान) और अनुच्छेद 350A (मातृभाषा में शिक्षा) भाषाई अल्पसंख्यकों की रक्षा करते हैं — दोनों अल्पसंख्यक उप-समिति से संबंधित हैं।\n• अल्पसंख्यक उप-समिति का सबसे महत्वपूर्ण निर्णय — पृथक मतदाता मंडल का अस्वीकार — सर्वसम्मति से लिया गया था, जिसमें H.C. Mookerjee ने राष्ट्रीय एकता पर जोर दिया।"
+    }
+  },
+  {
+    "uuid": "a7d63cf5-9f0a-4198-9305-c8d616800fe2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "Advisory Committee on Fundamental Rights: Rights Framework",
+        "Fundamental Rights Sub-Committee: Scope and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Property right as Fundamental Right and its eventual removal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Advisory Committee on Fundamental Rights of the Constituent Assembly had recommended including the right to property as a Fundamental Right, and it was indeed incorporated in the original Constitution. However, this right was subsequently removed from the chapter on Fundamental Rights by which of the following?\n\n(a) The Advisory Committee's own later revision, which recommended property be made a directive principle instead\n(b) The 42nd Constitutional Amendment Act, 1976, which curtailed several Fundamental Rights during the Emergency period\n(c) The original Constituent Assembly itself, which excluded property rights after debate before the Constitution was adopted\n(d) The 44th Constitutional Amendment Act, 1978, which deleted Articles 19(1)(f) and 31 from the chapter on Fundamental Rights",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students know property rights were eventually removed but may misattribute this to the 42nd Amendment (Emergency period) rather than the 44th Amendment.",
+      "elimination_logic": [
+        "Eliminate (a): The Advisory Committee recommended property rights as a Fundamental Right — this is correct for the committee's recommendation, but the question asks about what happened subsequently.",
+        "Eliminate (b): The 42nd Amendment (1976, Emergency period) curtailed many rights but did not remove the right to property as a Fundamental Right.",
+        "Eliminate (c): Property rights were included as Fundamental Rights in the original Constitution (Articles 19(1)(f) and 31) — they were not excluded from the outset.",
+        "Confirm (d): The 44th Constitutional Amendment (1978) under the Janata Government removed the right to property from the list of Fundamental Rights, making it only a legal/constitutional right under Article 300A."
+      ],
+      "upsc_trap_explanation": "The temporal swap between the 42nd and 44th Amendments is a classic UPSC trap. Both were significant constitutional amendments — the 42nd under Indira Gandhi's Emergency (1976) and the 44th under Morarji Desai's Janata government (1978). Students who recall that Emergency-period amendments attacked fundamental rights instinctively associate property right removal with the 42nd Amendment. In fact, the 42nd Amendment expanded executive and parliamentary power; the 44th Amendment was a corrective measure that removed property from Fundamental Rights.",
+      "final_explanation": "The property right's journey through Indian constitutional history is a frequently tested UPSC topic.\n\n• Option (a): Partially correct as a description of the Advisory Committee's recommendation — but incomplete as the answer to the question.\n• Option (b): Incorrect. The 42nd Amendment (1976) is associated with numerous changes during the Emergency, including adding 'socialist' and 'secular' to the Preamble and curtailing judicial review. It did not remove property from Fundamental Rights.\n• Option (c): Incorrect. Property rights were originally included — Articles 19(1)(f) (right to acquire, hold, and dispose of property) and Article 31 (right against deprivation of property without compensation) were in the original Constitution.\n• Option (d): Correct. The 44th Constitutional Amendment Act, 1978 deleted Articles 19(1)(f) and 31 from the Fundamental Rights chapter. Property rights now exist only under Article 300A — a constitutional right but not a Fundamental Right, meaning it cannot be enforced under Article 32 (right to approach Supreme Court).\n\nValue Addition:\n• Article 300A: 'No person shall be deprived of his property save by authority of law' — a weaker protection than a Fundamental Right.\n• The First Amendment (1951) had already curtailed property rights by adding Article 31A (saving of laws providing for acquisition of estates) and the Ninth Schedule.\n• Property right removal was partly to facilitate land reforms and nationalisation programmes without judicial challenge."
+    },
+    "hi": {
+      "display_text": "संविधान सभा की मौलिक अधिकारों पर सलाहकार समिति ने संपत्ति के अधिकार को मौलिक अधिकार के रूप में शामिल करने की सिफारिश की थी, और यह वास्तव में मूल संविधान में शामिल किया गया था। हालांकि, यह अधिकार बाद में मौलिक अधिकारों के अध्याय से किसके द्वारा हटा दिया गया था?\n\n(a) सलाहकार समिति के अपने बाद के संशोधन द्वारा, जिसने संपत्ति को निर्देशात्मक सिद्धांत बनाने की सिफारिश की\n(b) 42वां संविधान संशोधन अधिनियम, 1976, जिसने आपातकालीन अवधि के दौरान कई मौलिक अधिकारों को सीमित किया\n(c) मूल संविधान सभा ने स्वयं, जिसने संविधान अपनाने से पहले बहस के बाद संपत्ति के अधिकारों को बाहर रखा\n(d) 44वां संविधान संशोधन अधिनियम, 1978, जिसने मौलिक अधिकारों के अध्याय से अनुच्छेद 19(1)(f) और 31 को हटा दिया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र जानते हैं कि संपत्ति के अधिकार अंततः हटा दिए गए थे लेकिन इसे 42वें संशोधन (आपातकालीन अवधि) के बजाय 44वें संशोधन से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: सलाहकार समिति ने संपत्ति के अधिकार को मौलिक अधिकार के रूप में अनुशंसित किया था — यह समिति की अनुशंसा के लिए सही है, लेकिन प्रश्न बाद में क्या हुआ इसके बारे में है।",
+        "(b) को हटाएं: 42वां संशोधन (1976, आपातकालीन अवधि) ने कई अधिकारों को सीमित किया लेकिन संपत्ति के अधिकार को मौलिक अधिकार के रूप में नहीं हटाया।",
+        "(c) को हटाएं: संपत्ति के अधिकार मूल संविधान में मौलिक अधिकार के रूप में शामिल थे (अनुच्छेद 19(1)(f) और 31) — इन्हें शुरू से ही बाहर नहीं रखा गया था।",
+        "(d) की पुष्टि करें: 44वां संविधान संशोधन (1978) जनता सरकार के तहत संपत्ति के अधिकार को मौलिक अधिकारों की सूची से हटा दिया, जिससे यह केवल अनुच्छेद 300A के तहत एक कानूनी/संवैधानिक अधिकार रह गया।"
+      ],
+      "upsc_trap_explanation": "42वें और 44वें संशोधनों के बीच समयगत स्वैप UPSC की एक क्लासिक जाल है। दोनों महत्वपूर्ण संविधान संशोधन थे — 42वां इंदिरा गांधी के आपातकाल (1976) के दौरान और 44वां मोरारजी देसाई की जनता सरकार (1978) के तहत। छात्र जो याद करते हैं कि आपातकालीन अवधि के संशोधनों ने मौलिक अधिकारों पर प्रहार किया, वे स्वाभाविक रूप से संपत्ति अधिकार हटाने को 42वें संशोधन से जोड़ते हैं। वास्तव में, 42वें संशोधन ने कार्यकारी और संसदीय शक्ति का विस्तार किया; 44वें संशोधन एक सुधारात्मक उपाय था जिसने संपत्ति को मौलिक अधिकारों से हटा दिया।",
+      "final_explanation": "संपत्ति के अधिकार का भारतीय संवैधानिक इतिहास में सफर UPSC में बार-बार पूछा जाने वाला विषय है।\n\n• विकल्प (a): सलाहकार समिति की अनुशंसा के वर्णन के रूप में आंशिक रूप से सही — लेकिन प्रश्न के उत्तर के रूप में अधूरा।\n• विकल्प (b): गलत। 42वां संशोधन (1976) आपातकाल के दौरान कई बदलावों से जुड़ा है, जिसमें प्रस्तावना में 'समाजवादी' और 'धार्मिक निरपेक्ष' जोड़ना और न्यायिक समीक्षा को सीमित करना शामिल है। इसने संपत्ति को मौलिक अधिकारों से नहीं हटाया।\n• विकल्प (c): गलत। संपत्ति के अधिकार मूल रूप से शामिल थे — अनुच्छेद 19(1)(f) (संपत्ति प्राप्त करने, रखने और निपटाने का अधिकार) और अनुच्छेद 31 (मुआवजे के बिना संपत्ति से वंचित न करने का अधिकार) मूल संविधान में थे।\n• विकल्प (d): सही। 44वां संविधान संशोधन अधिनियम, 1978 ने मौलिक अधिकारों के अध्याय से अनुच्छेद 19(1)(f) और 31 को हटा दिया। अब संपत्ति के अधिकार केवल अनुच्छेद 300A के तहत मौजूद हैं — एक संवैधानिक अधिकार लेकिन मौलिक अधिकार नहीं, जिसका अर्थ है कि इसे अनुच्छेद 32 (सुप्रीम कोर्ट में पहुँचने का अधिकार) के तहत लागू नहीं किया जा सकता।\n\nमूल्य संवर्धन:\n• अनुच्छेद 300A: 'किसी व्यक्ति को उसके संपत्ति से कानून के प्राधिकार के बिना वंचित नहीं किया जाएगा' — जो मौलिक अधिकार की तुलना में कमजोर सुरक्षा है।\n• पहला संशोधन (1951) ने पहले ही संपत्ति के अधिकारों को सीमित कर दिया था, अनुच्छेद 31A (भूमि अधिग्रहण के लिए कानूनों की सुरक्षा) और नौवें अनुसूची को जोड़कर।\n• संपत्ति अधिकार हटाने का एक कारण भूमि सुधार और राष्ट्रीयकरण कार्यक्रमों को न्यायिक चुनौती से मुक्त करना था।"
+    }
+  },
+  {
+    "uuid": "60e71bd3-e997-499d-991e-e708a43a9ca2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Constitutional Foundations",
+      "sub_topic": "Committees of Constituent Assembly",
+      "concepts_used": [
+        "Credentials Committee: Membership Verification",
+        "Ad-hoc Committee on National Flag",
+        "Steering Committee: Procedural and Administrative Control"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Multiple Rajendra Prasad committees and their distinct mandates",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Constituent Assembly committees in List I with their primary functions or key decisions in List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Ad-hoc Committee on National Flag",
+            "1. Overall coordination of Assembly proceedings and inter-committee management"
+          ],
+          [
+            "B. Steering Committee",
+            "2. Verification of members' credentials and post-Partition eligibility changes"
+          ],
+          [
+            "C. Committee on Rules of Procedure",
+            "3. Recommended replacing the spinning wheel with the Ashoka Chakra on the central band of the flag"
+          ],
+          [
+            "D. Credentials Committee",
+            "4. Established voting procedures and quorum requirements for the Assembly's functioning"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) swaps the functions of the Steering Committee and Rules of Procedure Committee — both chaired by Prasad — making the choice between (b) and (c) dependent on knowing which Prasad committee did what.",
+      "elimination_logic": [
+        "Identify A: Ad-hoc Committee on National Flag — recommended Ashoka Chakra replacing spinning wheel; chaired by Rajendra Prasad — function matches with 3 (decision on flag's central emblem).",
+        "Identify B: Steering Committee — overall coordination of Assembly proceedings; chaired by Prasad — matches with 1 (overall coordination and management).",
+        "Identify C: Committee on Rules of Procedure — established voting and quorum rules; chaired by Prasad — matches with 4 (voting procedures and quorum).",
+        "Identify D: Credentials Committee — verified member eligibility; chaired by Alladi Krishnaswami Ayyar — matches with 2 (verification of members' credentials).",
+        "Correct matching: A-3, B-1, C-4, D-2 — answer is (b)."
+      ],
+      "upsc_trap_explanation": "The trap is that three of the four committees (Ad-hoc National Flag, Steering, Rules of Procedure) were all chaired by Rajendra Prasad. When three List I entries are associated with the same chairman, students struggle to match functions to specific committees. The resolution requires knowing: Steering = overall coordination; Rules of Procedure = voting/quorum rules; National Flag = the emblem decision. The Credentials Committee (Ayyar) is the only one with a different chairman — making D-2 an anchor point.",
+      "final_explanation": "This question tests granular knowledge of Rajendra Prasad's three committee chairmanships and their distinct mandates.\n\nCorrect matchings:\n• A (Ad-hoc Committee on National Flag) → 3 (Recommended replacing spinning wheel with Ashoka Chakra): Prasad chaired this committee; it adopted the tricolour design with the Ashoka Chakra from the Sarnath pillar on 22nd July 1947.\n• B (Steering Committee) → 1 (Overall coordination of proceedings and inter-committee management): The Steering Committee was the apex procedural body managing the Assembly's entire functioning — scheduling, coordination, time allocation.\n• C (Committee on Rules of Procedure) → 4 (Established voting procedures and quorum requirements): This committee created the foundational procedural rules — how votes were conducted, what quorum was required, how debates were timed.\n• D (Credentials Committee) → 2 (Verification of members' credentials and eligibility): Chaired by Alladi Krishnaswami Ayyar — the only committee in this list NOT chaired by Prasad — it verified the 299 members' credentials post-Partition.\n\nValue Addition:\n• Rajendra Prasad chaired at least four committees: Steering, Rules of Procedure, Ad-hoc National Flag, and the Constituent Assembly as a whole (as President from 11 December 1946).\n• The current Flag Code of India (2002) is the legal instrument governing flag usage — the Ad-hoc Committee's adoption decision was constitutional but the usage rules are statutory.\n• Rajendra Prasad served as India's President from 1950 to 1962 — the longest-serving President, holding office for two terms."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में संविधान सभा की समितियों को सूची II में उनके मुख्य कार्यों या प्रमुख निर्णयों से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. Ad-hoc Committee on National Flag",
+            "1. विधानसभा की कार्यवाही का समग्र समन्वय और समितियों के बीच प्रबंधन"
+          ],
+          [
+            "B. Steering Committee",
+            "2. सदस्यों के प्रमाणपत्रों और विभाजन के बाद पात्रता परिवर्तनों का सत्यापन"
+          ],
+          [
+            "C. Committee on Rules of Procedure",
+            "3. ध्वज के केंद्रीय पट्टे पर घूमती हुई चक्की की जगह अशोक चक्र लगाने की सिफारिश की"
+          ],
+          [
+            "D. Credentials Committee",
+            "4. विधानसभा की कार्यप्रणाली के लिए मतदान प्रक्रियाएँ और कोरम आवश्यकताएँ स्थापित कीं"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) Steering Committee और Rules of Procedure Committee के कार्यों को आपस में बदल देता है — दोनों की अध्यक्षता प्रसाद ने की थी — जिससे (b) और (c) के बीच चयन इस बात पर निर्भर करता है कि कौन-सी प्रसाद समिति ने क्या कार्य किया।",
+      "elimination_logic": [
+        "A की पहचान करें: Ad-hoc Committee on National Flag — अशोक चक्र को ध्वज के केंद्र में घूमती हुई चक्की की जगह रखने की सिफारिश की; अध्यक्षता राजेंद्र प्रसाद ने की — कार्य 3 (ध्वज के केंद्रीय प्रतीक पर निर्णय) से मेल खाता है।",
+        "B की पहचान करें: Steering Committee — विधानसभा की कार्यवाही का समग्र समन्वय; अध्यक्षता प्रसाद ने की — कार्य 1 (समग्र समन्वय और प्रबंधन) से मेल खाता है।",
+        "C की पहचान करें: Committee on Rules of Procedure — मतदान और कोरम नियम स्थापित किए; अध्यक्षता प्रसाद ने की — कार्य 4 (मतदान प्रक्रियाएँ और कोरम) से मेल खाता है।",
+        "D की पहचान करें: Credentials Committee — सदस्यों की पात्रता का सत्यापन किया; अध्यक्षता अल्लाड़ी कृष्णस्वामी अय्यर ने की — कार्य 2 (सदस्यों के प्रमाणपत्रों का सत्यापन) से मेल खाता है।",
+        "सही मिलान: A-3, B-1, C-4, D-2 — उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "फंदा यह है कि चार में से तीन समितियों (Ad-hoc National Flag, Steering, Rules of Procedure) की अध्यक्षता राजेंद्र प्रसाद ने की थी। जब तीन सूची I के प्रविष्टियाँ एक ही अध्यक्ष से जुड़ी हों, तो छात्र विशिष्ट समितियों के कार्यों को मिलाने में कठिनाई महसूस करते हैं। समाधान के लिए यह जानना आवश्यक है: Steering = समग्र समन्वय; Rules of Procedure = मतदान/कोरम नियम; National Flag = प्रतीक निर्णय। Credentials Committee (अय्यर) ही एकमात्र ऐसी समिति है जिसकी अध्यक्षता प्रसाद ने नहीं की — जिससे D-2 एक स्थिर बिंदु बनता है।",
+      "final_explanation": "यह प्रश्न राजेंद्र प्रसाद की तीन समितियों की अध्यक्षता और उनके विशिष्ट कार्यों का सूक्ष्म ज्ञान परखता है।\n\nसही मिलान:\n• A (Ad-hoc Committee on National Flag) → 3 (घूमती हुई चक्की की जगह अशोक चक्र लगाने की सिफारिश): इस समिति की अध्यक्षता प्रसाद ने की; इसने 22 जुलाई 1947 को त्रिरंगा ध्वज में सारनाथ स्तंभ का अशोक चक्र अपनाया।\n• B (Steering Committee) → 1 (कार्यवाही का समग्र समन्वय और समितियों के बीच प्रबंधन): यह समिति विधानसभा की संपूर्ण कार्यप्रणाली का शीर्ष प्राविधिक निकाय थी — समय निर्धारण, समन्वय, समय आवंटन।\n• C (Committee on Rules of Procedure) → 4 (मतदान प्रक्रियाएँ और कोरम आवश्यकताएँ स्थापित कीं): इस समिति ने मूलभूत प्राविधिक नियम बनाए — मतदान कैसे होगा, कोरम क्या होगा, बहस का समय निर्धारण।\n• D (Credentials Committee) → 2 (सदस्यों के प्रमाणपत्रों और पात्रता का सत्यापन): अध्यक्षता अल्लाड़ी कृष्णस्वामी अय्यर ने की — यह सूची में एकमात्र ऐसी समिति है जिसकी अध्यक्षता प्रसाद ने नहीं की — इसने विभाजन के बाद 299 सदस्यों के प्रमाणपत्रों का सत्यापन किया।\n\nमूल्यवर्धन:\n• राजेंद्र प्रसाद ने कम से कम चार समितियों की अध्यक्षता की: Steering, Rules of Procedure, Ad-hoc National Flag, और संविधान सभा (11 दिसंबर 1946 से अध्यक्ष के रूप में)।\n• वर्तमान भारत का Flag Code (2002) ध्वज के उपयोग को नियंत्रित करने वाला विधिक साधन है — Ad-hoc Committee का निर्णय संवैधानिक था लेकिन उपयोग के नियम वैधानिक हैं।\n• राजेंद्र प्रसाद भारत के राष्ट्रपति 1950 से 1962 तक रहे — सबसे लंबे समय तक सेवा देने वाले राष्ट्रपति, जिन्होंने दो कार्यकाल पूरे किए।"
+    }
+  }
+]

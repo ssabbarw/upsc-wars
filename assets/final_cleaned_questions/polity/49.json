@@ -1,0 +1,1390 @@
+[
+  {
+    "uuid": "efd5b685-7119-4b44-816b-ad52a44706b9",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Establishment and History of the Inter-State Council"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "ISC establishment — 1990 Presidential Order, Sarkaria basis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the establishment of the Inter-State Council:\n\n1. The Inter-State Council was established by an Act of Parliament in 1988, following the Sarkaria Commission's final report.\n2. The Punchhi Commission, which submitted its report in 2010, recommended measures to strengthen the Inter-State Council.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Inter-State Council was established by an Act of Parliament in 1988, following the Sarkaria Commission's final report.",
+          "verdict": "Incorrect",
+          "reason": "The ISC was established by a Presidential Order dated May 28, 1990 — not by an Act of Parliament, and not in 1988 (which was when the Sarkaria Commission submitted its report, not when the ISC was created)."
+        },
+        {
+          "statement": "The Punchhi Commission, which submitted its report in 2010, recommended measures to strengthen the Inter-State Council.",
+          "verdict": "Correct",
+          "reason": "The Punchhi Commission (set up in 2007, reporting in 2010) did make recommendations to strengthen ISC, including increasing meeting frequency and expanding its role."
+        }
+      ],
+      "strong_distractor": "b — Option b is a strong distractor because Statement 2 is factually correct, and students who only verify Statement 2 may select 'b' thinking it is the incorrect one.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The ISC was established by Presidential Order, not an Act of Parliament — 'Act of Parliament' is factually wrong; also, 1988 was the Sarkaria report year, not the ISC establishment year (1990).",
+        "Evaluate Statement 2: Punchhi Commission reporting in 2010 with recommendations on ISC is factually accurate — this statement is correct.",
+        "The question asks which is NOT correct — only Statement 1 is incorrect, making option (a) the answer."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Inter-State Council's establishment is a factually precise area where two common errors cluster: the mode and the year.\n\n• Statement 1 — Incorrect: Two errors are embedded here. First, the ISC was established by a Presidential Order (May 28, 1990), not by an Act of Parliament. Second, 1988 was when the Sarkaria Commission submitted its report — the ISC itself came into existence two years later in 1990.\n• Statement 2 — Correct: The Punchhi Commission (constituted 2007, report submitted 2010) specifically addressed Centre-State relations and recommended that the ISC meet at least three times a year and be given a stronger role in legislative consultation.\n\nValue Addition:\n• The 40-year gap (1950–1990) between Article 263's enactment and the ISC's actual establishment reflects the purely discretionary nature of presidential power under this article.\n• The Sarkaria Commission (1983–1988) is the primary driver behind ISC's creation — a critical link for any Centre-State relations question.\n• Punchhi Commission's 12th ISC meeting (2016) discussed 182 of its recommendations."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद की स्थापना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अंतर-राज्य परिषद की स्थापना संसद के अधिनियम द्वारा 1988 में, सरकारिया आयोग की अंतिम रिपोर्ट के बाद हुई थी।\n2. पंची आयोग, जिसने 2010 में अपनी रिपोर्ट प्रस्तुत की, ने अंतर-राज्य परिषद को मजबूत करने के उपाय सुझाए।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1, न ही 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Inter-State Council was established by an Act of Parliament in 1988, following the Sarkaria Commission's final report.",
+          "verdict": "गलत",
+          "reason": "ISC की स्थापना संसद के अधिनियम द्वारा नहीं, बल्कि 28 मई 1990 के राष्ट्रपति आदेश द्वारा हुई थी — और यह 1988 में नहीं (जो कि सरकारिया आयोग की रिपोर्ट प्रस्तुत करने का वर्ष था, न कि ISC के गठन का)।"
+        },
+        {
+          "statement": "The Punchhi Commission, which submitted its report in 2010, recommended measures to strengthen the Inter-State Council.",
+          "verdict": "सही",
+          "reason": "पंची आयोग (2007 में गठित, 2010 में रिपोर्ट प्रस्तुत) ने ISC को मजबूत करने के लिए सिफारिशें कीं, जिनमें बैठक की आवृत्ति बढ़ाना और इसके कार्यक्षेत्र का विस्तार शामिल था।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 2 तथ्यात्मक रूप से सही है, और जो छात्र केवल कथन 2 की जांच करते हैं वे इसे गलत समझकर 'b' चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: ISC की स्थापना राष्ट्रपति आदेश द्वारा हुई थी, संसद के अधिनियम द्वारा नहीं — 'संसद का अधिनियम' तथ्यात्मक रूप से गलत है; साथ ही, 1988 सरकारिया आयोग की रिपोर्ट का वर्ष था, ISC स्थापना का नहीं (1990)।",
+        "कथन 2 का मूल्यांकन करें: पंची आयोग की 2010 में रिपोर्ट और ISC पर सिफारिशें तथ्यात्मक रूप से सही हैं — यह कथन सही है।",
+        "प्रश्न पूछता है कि कौन सा कथन सही नहीं है — केवल कथन 1 गलत है, अतः विकल्प (a) उत्तर है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अंतर-राज्य परिषद की स्थापना एक तथ्यात्मक रूप से सटीक विषय है जहाँ दो सामान्य त्रुटियाँ होती हैं: स्थापना का तरीका और वर्ष।\n\n• कथन 1 — गलत: इसमें दो त्रुटियाँ हैं। पहली, ISC की स्थापना राष्ट्रपति आदेश (28 मई 1990) द्वारा हुई थी, संसद के अधिनियम द्वारा नहीं। दूसरी, 1988 वह वर्ष था जब सरकारिया आयोग ने अपनी रिपोर्ट प्रस्तुत की थी — ISC स्वयं दो वर्ष बाद 1990 में स्थापित हुआ।\n• कथन 2 — सही: पंची आयोग (2007 में गठित, 2010 में रिपोर्ट प्रस्तुत) ने केंद्र-राज्य संबंधों पर विशेष ध्यान दिया और ISC को कम से कम तीन बार वार्षिक बैठक करने तथा विधायी परामर्श में अधिक भूमिका देने की सिफारिश की।\n\nमूल्यवर्धन:\n• अनुच्छेद 263 के लागू होने (1950) और ISC की वास्तविक स्थापना (1990) के बीच 40 वर्षों का अंतर राष्ट्रपति के विवेकाधीन अधिकार की प्रकृति को दर्शाता है।\n• सरकारिया आयोग (1983–1988) ISC के निर्माण के पीछे मुख्य प्रेरक था — केंद्र-राज्य संबंधों के किसी भी प्रश्न के लिए यह एक महत्वपूर्ण कड़ी है।\n• पंची आयोग की 12वीं ISC बैठक (2016) ने इसके 182 सिफारिशों पर चर्चा की।"
+    }
+  },
+  {
+    "uuid": "ac7b30dc-6f4c-4b7b-a91e-5c2450cd8ac9",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Nature of Recommendations: Advisory vs. Binding Character",
+        "Three Enumerated Duties under Article 263"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "ISC advisory role — Article 131 SC jurisdiction for binding resolution",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Recommendations made by the Inter-State Council are not binding on either the Union Government or the state governments.\n\nReason (R): The Supreme Court of India, under Article 131, has original jurisdiction to adjudicate disputes between states, and its determinations are binding on the parties.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because both A and R are factually correct, and students may assume that R (SC's binding jurisdiction) automatically explains A (ISC's advisory nature) without examining whether this causal logic actually holds.",
+      "elimination_logic": [
+        "Step 1: Is A correct? — Yes. ISC recommendations under Article 263 are advisory and cannot compel state or Union compliance.",
+        "Step 2: Is R correct? — Yes. The Supreme Court's jurisdiction under Article 131 in inter-state disputes does produce binding determinations.",
+        "Step 3: Does R explain A? — No. ISC's advisory character stems from the text and design of Article 263 itself (the word 'advising' in Clause (a)), not from the existence of Supreme Court jurisdiction under Article 131. These are parallel mechanisms — SC's binding power does not cause ISC to be advisory.",
+        "Both A and R are correct but R does NOT causally explain A — select option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 263 and Article 131 operate as parallel, not hierarchical, mechanisms for inter-state relations — a distinction at the heart of this question.\n\nAssertion (A) is correct: ISC recommendations are purely advisory. Neither the Constitution nor the 1990 Presidential Order gives ISC power to compel compliance from either the Union or states.\n\nReason (R) is correct: The Supreme Court under Article 131 does have original and binding jurisdiction over disputes between states or between states and the Union.\n\nCausal link — Absent: ISC's advisory nature is not caused by SC's binding jurisdiction. The ISC is advisory because Article 263(a) uses the word 'advising' and because no enforcement mechanism was ever granted to it. The SC's role under Article 131 is an entirely separate constitutional channel. A student must resist the tempting but false logic: 'SC is binding, therefore ISC must be advisory by contrast.'\n\nValue Addition:\n• ISC and Article 131 (SC) are alternative, not sequential, mechanisms — states can approach SC directly without exhausting ISC.\n• Punchhi Commission recommended ISC be used as a pre-dispute forum before states approach SC under Article 131.\n• Inter-State Water Disputes Tribunals (Article 262) are binding — Parliament can even bar SC jurisdiction over them."
+    },
+    "hi": {
+      "display_text": "कथन (A): अंतर-राज्य परिषद द्वारा की गई सिफारिशें न तो केंद्र सरकार के लिए और न ही राज्य सरकारों के लिए बाध्यकारी हैं।\n\nकारण (R): भारत का सुप्रीम कोर्ट, अनुच्छेद 131 के तहत, राज्यों के बीच विवादों का निपटारा करने के लिए मूल क्षेत्राधिकार रखता है, और उसके निर्णय पक्षों के लिए बाध्यकारी होते हैं।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रम पैदा करने वाला है क्योंकि A और R दोनों तथ्यात्मक रूप से सही हैं, और छात्र यह मान सकते हैं कि R (SC की बाध्यकारी क्षेत्राधिकार) स्वचालित रूप से A (ISC की सलाहकार प्रकृति) की व्याख्या करता है बिना यह जांचे कि क्या यह कारणात्मक तर्क वास्तव में सही है।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — हाँ। अनुच्छेद 263 के तहत ISC की सिफारिशें सलाहकार हैं और वे राज्य या केंद्र को पालन के लिए बाध्य नहीं कर सकतीं।",
+        "चरण 2: क्या R सही है? — हाँ। अनुच्छेद 131 के तहत सुप्रीम कोर्ट का क्षेत्राधिकार अंतर-राज्य विवादों में बाध्यकारी निर्णय देता है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? — नहीं। ISC की सलाहकार प्रकृति अनुच्छेद 263 के पाठ और डिज़ाइन (धारा (a) में 'सलाह देना' शब्द) से उत्पन्न होती है, न कि अनुच्छेद 131 के तहत सुप्रीम कोर्ट के क्षेत्राधिकार के अस्तित्व से। ये समानांतर तंत्र हैं — SC की बाध्यकारी शक्ति ISC को सलाहकार नहीं बनाती।",
+        "A और R दोनों सही हैं लेकिन R, A की कारणात्मक व्याख्या नहीं करता — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 263 और अनुच्छेद 131 अंतर-राज्य संबंधों के लिए समानांतर, न कि पदानुक्रमित, तंत्र के रूप में कार्य करते हैं — यह इस प्रश्न का मूल अंतर है।\n\nकथन (A) सही है: ISC की सिफारिशें पूरी तरह से सलाहकार हैं। न संविधान और न ही 1990 के राष्ट्रपति आदेश ने ISC को केंद्र या राज्यों से पालन कराने का अधिकार दिया है।\n\nकारण (R) सही है: अनुच्छेद 131 के तहत सुप्रीम कोर्ट के पास राज्यों के बीच या राज्यों और केंद्र के बीच विवादों पर मूल और बाध्यकारी क्षेत्राधिकार है।\n\nकारणात्मक संबंध — अनुपस्थित: ISC की सलाहकार प्रकृति SC के बाध्यकारी क्षेत्राधिकार के कारण नहीं है। ISC सलाहकार है क्योंकि अनुच्छेद 263(क) में 'सलाह देना' शब्द का प्रयोग है और इसे कभी भी प्रवर्तन तंत्र नहीं दिया गया। अनुच्छेद 131 के तहत SC की भूमिका एक पूरी तरह से अलग संवैधानिक चैनल है। छात्र को उस आकर्षक लेकिन गलत तर्क से बचना चाहिए: 'SC बाध्यकारी है, इसलिए ISC तुलनात्मक रूप से सलाहकार होना चाहिए।'\n\nमूल्य संवर्धन:\n• ISC और अनुच्छेद 131 (SC) वैकल्पिक हैं, अनुक्रमिक नहीं — राज्य सीधे SC से संपर्क कर सकते हैं बिना ISC को समाप्त किए।\n• पंची आयोग ने अनुशंसा की कि ISC को विवाद से पहले मंच के रूप में उपयोग किया जाए, इससे पहले कि राज्य अनुच्छेद 131 के तहत SC से संपर्क करें।\n• अंतर-राज्य जल विवाद न्यायाधिकरण (अनुच्छेद 262) बाध्यकारी हैं — संसद SC के क्षेत्राधिकार को भी इन पर रोक सकता है।"
+    }
+  },
+  {
+    "uuid": "bbc9694c-7ac5-4836-9800-1b84357d7663",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Establishment and History of the Inter-State Council",
+        "Sarkaria Commission Recommendations on ISC",
+        "Frequency and Functioning of ISC Meetings"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "ISC timeline — Sarkaria report, establishment, Standing Committee, Punchhi",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of events related to the Inter-State Council?\n\n1. Submission of Sarkaria Commission Report\n2. Establishment of the Inter-State Council by Presidential Order\n3. Constitution of the Standing Committee of the Inter-State Council\n4. Submission of Punchhi Commission Report\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a swaps the Sarkaria Commission report year with the ISC establishment year, which is the single most common temporal confusion students make in this topic.",
+      "elimination_logic": [
+        "Fix the Sarkaria Commission report: submitted in 1988 — this is the earliest event in this sequence.",
+        "ISC established by Presidential Order: May 1990 — after Sarkaria's report.",
+        "Standing Committee of ISC set up: 1996 — after ISC establishment.",
+        "Punchhi Commission report: 2010 — the latest event. Correct order: Sarkaria Report (1988) → ISC Established (1990) → Standing Committee (1996) → Punchhi Report (2010) — select option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This chronology question tests precision across the key institutional milestones of the ISC.\n\nCorrect sequence:\n1. Sarkaria Commission Report (1988): Recommended a permanent Inter-State Council — the trigger for ISC's eventual creation.\n2. ISC Establishment (1990): Presidential Order dated May 28, 1990 — two years after Sarkaria's report, not in the same year.\n3. Standing Committee of ISC (1996): Set up six years after the ISC itself, for continuous consultation between full ISC meetings.\n4. Punchhi Commission Report (2010): Reviewed and expanded on Sarkaria's recommendations, including ISC reforms.\n\nWrong options fail by: swapping 1988/1990 positions (option a), placing Standing Committee before ISC establishment (option c), or placing Punchhi before Standing Committee (option d).\n\nValue Addition:\n• The Sarkaria Commission was set up in 1983 — five years before its 1988 report. Do not confuse setup year with report year.\n• Punchhi Commission was constituted in 2007 and submitted its report in 2010.\n• 12th ISC meeting (2016) discussed Punchhi Commission's 182 recommendations — 6 years after the report."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्यीय परिषद से संबंधित घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. सर्कारिया आयोग की रिपोर्ट प्रस्तुत करना\n2. राष्ट्रपति आदेश द्वारा अंतर-राज्यीय परिषद की स्थापना\n3. अंतर-राज्यीय परिषद की स्थायी समिति का गठन\n4. पंची आयोग की रिपोर्ट प्रस्तुत करना\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a swaps the Sarkaria Commission report year with the ISC establishment year, which is the single most common temporal confusion students make in this topic.",
+      "elimination_logic": [
+        "सर्कारिया आयोग की रिपोर्ट को निश्चित करें: 1988 में प्रस्तुत — यह इस अनुक्रम में सबसे पहला घटना है।",
+        "राष्ट्रपति आदेश द्वारा ISC की स्थापना: मई 1990 — सर्कारिया की रिपोर्ट के बाद।",
+        "ISC की स्थायी समिति का गठन: 1996 — ISC स्थापना के बाद।",
+        "पंची आयोग की रिपोर्ट: 2010 — नवीनतम घटना। सही क्रम: सर्कारिया रिपोर्ट (1988) → ISC स्थापना (1990) → स्थायी समिति (1996) → पंची रिपोर्ट (2010) — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह कालानुक्रमिक प्रश्न ISC के प्रमुख संस्थागत मील के पत्थरों के बीच सटीकता का परीक्षण करता है।\n\nसही क्रम:\n1. सर्कारिया आयोग की रिपोर्ट (1988): एक स्थायी अंतर-राज्यीय परिषद की सिफारिश की — ISC के अंततः निर्माण के लिए प्रेरक।\n2. ISC की स्थापना (1990): 28 मई 1990 का राष्ट्रपति आदेश — सर्कारिया की रिपोर्ट के दो वर्ष बाद, उसी वर्ष नहीं।\n3. ISC की स्थायी समिति (1996): ISC की स्थापना के छह वर्ष बाद गठित, पूर्ण ISC बैठकों के बीच निरंतर परामर्श के लिए।\n4. पंची आयोग की रिपोर्ट (2010): सर्कारिया की सिफारिशों की समीक्षा और विस्तार, जिसमें ISC सुधार शामिल हैं।\n\nगलत विकल्प असफल होते हैं: 1988/1990 की स्थिति बदलना (विकल्प a), ISC स्थापना से पहले स्थायी समिति रखना (विकल्प c), या स्थायी समिति से पहले पंची रखना (विकल्प d)।\n\nमूल्य संवर्धन:\n• सर्कारिया आयोग 1983 में गठित हुआ था — अपनी 1988 की रिपोर्ट से पांच वर्ष पहले। स्थापना वर्ष को रिपोर्ट वर्ष से भ्रमित न करें।\n• पंची आयोग 2007 में गठित हुआ और 2010 में अपनी रिपोर्ट प्रस्तुत की।\n• 12वीं ISC बैठक (2016) ने पंची आयोग की 182 सिफारिशों पर चर्चा की — रिपोर्ट के छह वर्ष बाद।"
+    }
+  },
+  {
+    "uuid": "9bec5aa3-f0a1-4b7f-a2dd-6aa7dcdf839d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Role of ISC in Cooperative Federalism",
+        "Constitutional Limitations and Critiques of Article 263 Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "ISC — no enforcement power, purely deliberative",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Inter-State Council, after deliberation in a plenary meeting, passes a recommendation that all state governments adopt a uniform policy framework on a particular subject of common interest. State X, governed by a party in opposition to the Union Government, formally refuses to implement the recommendation. What is the constitutional position of the Inter-State Council in this situation?\n\n(a) The ISC may pass a binding direction requiring State X to comply within a stipulated period\n(b) The Standing Committee of the ISC may investigate State X's non-compliance and direct the President to issue appropriate instructions\n(c) The ISC has no enforcement authority and can only rely on political persuasion or broader deliberative processes to address the situation\n(d) The ISC may petition the President of India to invoke Article 356 against State X for non-compliance",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because it invokes the Standing Committee (a real ISC body) performing a seemingly logical oversight function, but the Standing Committee has no power to compel a state or direct the President either.",
+      "elimination_logic": [
+        "Eliminate option (a): ISC cannot pass binding directions to any state — it has no enforcement authority whatsoever.",
+        "Eliminate option (b): The Standing Committee of ISC processes agenda and facilitates consultation — it cannot investigate non-compliance or direct any government.",
+        "Eliminate option (d): The President does not act on ISC recommendations in a legally compellable way — ISC cannot petition the President for enforcement.",
+        "Confirm option (c): ISC recommendations are advisory; the only remedy is political persuasion, media attention, or approaching the Supreme Court under Article 131 — ISC itself has no enforcement mechanism."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Inter-State Council is a deliberative and recommendatory forum — it possesses no executive, legislative, or judicial power to enforce compliance with its recommendations.\n\nScenario analysis: The ISC passes a recommendation that all states adopt a uniform policy on a particular subject. State X refuses. The ISC's correct response is option (c) — it can do nothing legally. Its recommendations are non-binding.\n\n• Option (a): Incorrect. ISC cannot issue binding directions — it is not a court or a statutory regulatory body.\n• Option (b): Incorrect. The Standing Committee facilitates ISC's functioning but similarly holds no enforcement power over state governments.\n• Option (c): Correct. The ISC's limitation is precisely this: a state that ignores its recommendations faces no constitutional consequence from the ISC itself. This is the central critique of ISC as a cooperative federalism instrument.\n• Option (d): Incorrect. There is no constitutional mechanism by which ISC can petition the President to compel a state's compliance.\n\nValue Addition:\n• This weakness distinguishes ISC from Germany's Bundesrat, which can block federal legislation affecting states.\n• GST Council has voting weights and structured decision-making — a more effective federal coordination model.\n• Punchhi Commission recommended ISC be used as a pre-dispute forum, but even this role is non-compulsory."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद, पूर्ण बैठक में विचार-विमर्श के बाद, एक सिफारिश पारित करती है कि सभी राज्य सरकारें किसी सामान्य हित के विषय पर एक समान नीति ढांचा अपनाएं। राज्य X, जो केंद्र सरकार के विपक्षी दल द्वारा शासित है, औपचारिक रूप से इस सिफारिश को लागू करने से इनकार करता है। इस स्थिति में अंतर-राज्य परिषद की संवैधानिक स्थिति क्या है?\n\n(a) ISC बाध्यकारी निर्देश पारित कर सकता है कि राज्य X एक निर्धारित अवधि के भीतर अनुपालन करे\n(b) ISC की स्थायी समिति राज्य X के गैर-अनुपालन की जांच कर सकती है और राष्ट्रपति को उपयुक्त निर्देश जारी करने का निर्देश दे सकती है\n(c) ISC के पास कोई प्रवर्तन अधिकार नहीं है और यह केवल राजनीतिक मनाने या व्यापक विचार-विमर्श प्रक्रियाओं पर निर्भर कर सकता है\n(d) ISC राष्ट्रपति से अनुच्छेद 356 लागू करने के लिए याचिका कर सकता है यदि राज्य X अनुपालन नहीं करता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because it invokes the Standing Committee (a real ISC body) performing a seemingly logical oversight function, but the Standing Committee has no power to compel a state or direct the President either.",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: ISC किसी भी राज्य को बाध्यकारी निर्देश नहीं दे सकता — इसके पास कोई प्रवर्तन अधिकार नहीं है।",
+        "विकल्प (b) को खारिज करें: ISC की स्थायी समिति एजेंडा प्रक्रिया करती है और परामर्श की सुविधा प्रदान करती है — यह गैर-अनुपालन की जांच या किसी सरकार को निर्देश देने में सक्षम नहीं है।",
+        "विकल्प (d) को खारिज करें: राष्ट्रपति ISC की सिफारिशों पर कानूनी रूप से बाध्यकारी कार्रवाई नहीं करते — ISC राष्ट्रपति से प्रवर्तन के लिए याचिका नहीं कर सकता।",
+        "विकल्प (c) की पुष्टि करें: ISC की सिफारिशें सलाहकार होती हैं; एकमात्र उपाय राजनीतिक मनाने, मीडिया ध्यान या अनुच्छेद 131 के तहत सुप्रीम कोर्ट का रुख करना है — ISC के पास कोई प्रवर्तन तंत्र नहीं है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अंतर-राज्य परिषद एक विचार-विमर्श और सिफारिशी मंच है — इसके पास अपनी सिफारिशों के अनुपालन को लागू करने के लिए कोई कार्यकारी, विधायी या न्यायिक शक्ति नहीं है।\n\nपरिदृश्य विश्लेषण: ISC एक सिफारिश पारित करता है कि सभी राज्य एक समान नीति अपनाएं। राज्य X, जो केंद्र सरकार के विपक्षी दल द्वारा शासित है, औपचारिक रूप से इसे लागू करने से इनकार करता है। ISC की सही प्रतिक्रिया विकल्प (c) है — यह कानूनी रूप से कुछ नहीं कर सकता। इसकी सिफारिशें बाध्यकारी नहीं हैं।\n\n• विकल्प (a): गलत। ISC बाध्यकारी निर्देश जारी नहीं कर सकता — यह कोई न्यायालय या वैधानिक नियामक निकाय नहीं है।\n• विकल्प (b): गलत। ISC की स्थायी समिति ISC के कार्य में सुविधा प्रदान करती है लेकिन राज्य सरकारों पर कोई प्रवर्तन शक्ति नहीं रखती।\n• विकल्प (c): सही। ISC की सीमा यही है: जो राज्य इसकी सिफारिशों की अवहेलना करता है, उसे ISC से कोई संवैधानिक परिणाम नहीं भुगतना पड़ता। यह ISC के सहकारी संघवाद उपकरण के रूप में मुख्य आलोचना है।\n• विकल्प (d): गलत। ऐसा कोई संवैधानिक तंत्र नहीं है जिसके द्वारा ISC राष्ट्रपति से अनुच्छेद 356 के तहत राज्य को बाध्य करने की याचिका कर सके।\n\nमूल्य संवर्धन:\n• यह कमजोरी ISC को जर्मनी के Bundesrat से अलग करती है, जो राज्यों को प्रभावित करने वाले संघीय कानून को रोक सकता है।\n• GST परिषद के पास मतदान भार और संरचित निर्णय-प्रक्रिया है — एक अधिक प्रभावी संघीय समन्वय मॉडल।\n• पंची आयोग ने ISC को विवाद पूर्व मंच के रूप में उपयोग करने की सिफारिश की, लेकिन यह भूमिका भी अनिवार्य नहीं है।"
+    }
+  },
+  {
+    "uuid": "0090cb1c-947d-4118-ac04-f89f3a0fe32a",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Inter-State Council vs. Zonal Councils: Comparison"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Zonal Councils — statutory, not constitutional",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT belong to the same legal category as the others in terms of its constitutional or statutory basis?\n\n(a) North Zonal Council\n(b) Inter-State Council\n(c) East Zonal Council\n(d) Central Zonal Council",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d (Central Zonal Council) is a strong distractor because students may assume the 'Central' council is nationally coordinated and thus different from the regional ones — but all five Zonal Councils share the same statutory character.",
+      "elimination_logic": [
+        "Identify the common attribute: North, South, East, West, and Central Zonal Councils are all statutory bodies created under the States Reorganisation Act, 1956.",
+        "Examine option (b): The Inter-State Council is a constitutional body under Article 263, not a statutory body under any Act of Parliament.",
+        "All Zonal Councils share the same statutory origin; the ISC does not — ISC is the odd one out.",
+        "Select option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "All five Zonal Councils — North, South, East, West, and Central — were created by Parliament under the States Reorganisation Act, 1956, making them statutory bodies. The Inter-State Council is fundamentally different: it derives its existence from Article 263 of the Constitution and was established by Presidential Order in 1990.\n\n• Option (a) North Zonal Council: Statutory — States Reorganisation Act, 1956.\n• Option (b) Inter-State Council: Constitutional — Article 263. This is the odd one out.\n• Option (c) East Zonal Council: Statutory — States Reorganisation Act, 1956.\n• Option (d) Central Zonal Council: Statutory — States Reorganisation Act, 1956.\n\nValue Addition:\n• All five Zonal Councils are chaired by the Union Home Minister — ISC is chaired by the PM.\n• Northeast India is handled separately under the North Eastern Council (NEC), set up under the NEC Act, 1971.\n• Zonal Councils are regional (sub-national scope); ISC covers the entire country."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन सा संवैधानिक या वैधानिक आधार के संदर्भ में अन्य के समान कानूनी श्रेणी में नहीं आता?\n\n(a) उत्तर क्षेत्रीय परिषद\n(b) अंतर-राज्य परिषद\n(c) पूर्व क्षेत्रीय परिषद\n(d) केंद्रीय क्षेत्रीय परिषद",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d (केंद्रीय क्षेत्रीय परिषद) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र मान सकते हैं कि 'केंद्रीय' परिषद राष्ट्रीय स्तर पर समन्वित है और इसलिए क्षेत्रीय परिषदों से अलग है — लेकिन सभी पाँच क्षेत्रीय परिषदों का वैधानिक स्वरूप समान है।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: उत्तर, दक्षिण, पूर्व, पश्चिम और केंद्रीय क्षेत्रीय परिषदें सभी राज्यों के पुनर्गठन अधिनियम, 1956 के तहत स्थापित वैधानिक निकाय हैं।",
+        "विकल्प (b) की जांच करें: अंतर-राज्य परिषद अनुच्छेद 263 के तहत एक संवैधानिक निकाय है, न कि संसद के किसी अधिनियम के तहत वैधानिक निकाय।",
+        "सभी क्षेत्रीय परिषदों की वैधानिक उत्पत्ति समान है; अंतर-राज्य परिषद नहीं है — अतः यह अलग है।",
+        "विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "सभी पाँच क्षेत्रीय परिषदें — उत्तर, दक्षिण, पूर्व, पश्चिम और केंद्रीय — संसद द्वारा राज्यों के पुनर्गठन अधिनियम, 1956 के तहत स्थापित की गईं, जो इन्हें वैधानिक निकाय बनाती हैं। अंतर-राज्य परिषद मौलिक रूप से भिन्न है: यह संविधान के अनुच्छेद 263 से उत्पन्न होती है और 1990 में राष्ट्रपति के आदेश द्वारा स्थापित की गई।\n\n• विकल्प (a) उत्तर क्षेत्रीय परिषद: वैधानिक — राज्यों के पुनर्गठन अधिनियम, 1956।\n• विकल्प (b) अंतर-राज्य परिषद: संवैधानिक — अनुच्छेद 263। यह अलग है।\n• विकल्प (c) पूर्व क्षेत्रीय परिषद: वैधानिक — राज्यों के पुनर्गठन अधिनियम, 1956।\n• विकल्प (d) केंद्रीय क्षेत्रीय परिषद: वैधानिक — राज्यों के पुनर्गठन अधिनियम, 1956।\n\nमूल्यवर्धन:\n• सभी पाँच क्षेत्रीय परिषदों की अध्यक्षता केंद्रीय गृह मंत्री करते हैं — अंतर-राज्य परिषद की अध्यक्षता प्रधानमंत्री करते हैं।\n• पूर्वोत्तर भारत को अलग से उत्तर-पूर्वी परिषद (NEC) के तहत संभाला जाता है, जो NEC अधिनियम, 1971 के तहत स्थापित है।\n• क्षेत्रीय परिषदें क्षेत्रीय (उप-राष्ट्रीय स्तर) हैं; अंतर-राज्य परिषद पूरे देश को कवर करती है।"
+    }
+  },
+  {
+    "uuid": "f6ad3c1b-54dc-403a-b4a9-e34ae3138847",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Inter-State Council vs. National Development Council (NDC)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "NDC vs. ISC — constitutional vs. extra-constitutional distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about the National Development Council (NDC) and its relationship with the Inter-State Council:\n\nStatement 1: The National Development Council, like the Inter-State Council, is a constitutional body whose establishment flows from an explicit provision of the Constitution of India.\nStatement 2: After NITI Aayog replaced the Planning Commission in 2015, the National Development Council effectively became defunct as its primary function of approving Five-Year Plans lost its purpose.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: The National Development Council, like the Inter-State Council, is a constitutional body whose establishment flows from an explicit provision of the Constitution of India.",
+          "verdict": "Incorrect",
+          "reason": "The NDC is an extra-constitutional body set up by executive resolution — it has no mention in the Constitution. Only the ISC has a constitutional basis under Article 263."
+        },
+        {
+          "statement": "Statement 2: After NITI Aayog replaced the Planning Commission in 2015, the National Development Council effectively became defunct as its primary function of approving Five-Year Plans lost its purpose.",
+          "verdict": "Correct",
+          "reason": "The NDC's core function was to approve Five-Year Plans and set national development priorities. With the Planning Commission abolished and Five-Year Plans discontinued, the NDC lost its operational rationale."
+        }
+      ],
+      "strong_distractor": "a — Option a is deceptive because students who know NDC is chaired by the PM (same as ISC) may assume it also has a constitutional basis, selecting 'both correct.'",
+      "elimination_logic": [
+        "Evaluate Statement 1: NDC was created by executive resolution (Cabinet decision), not by a constitutional provision — it is extra-constitutional. Statement 1 is false.",
+        "Evaluate Statement 2: NDC's raison d'être was Five-Year Plans; with Planning Commission abolished in 2015 and NITI Aayog not having a similar planning mandate, NDC is effectively defunct. Statement 2 is correct.",
+        "Statement 1 incorrect, Statement 2 correct — select option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The NDC and ISC are frequently compared in UPSC questions precisely because of their surface similarities.\n\n• Statement 1 — Incorrect: The NDC has no mention in the Constitution. It was set up by the Government of India through a Cabinet decision (executive resolution) in 1952. This makes it an extra-constitutional body — fundamentally different from the ISC, which rests on Article 263.\n• Statement 2 — Correct: The NDC's primary purpose was to approve Five-Year Plans prepared by the Planning Commission. When the Planning Commission was replaced by NITI Aayog in January 2015 and Five-Year Plans were discontinued, the NDC lost its institutional purpose. It has not been convened in a meaningful way since.\n\nValue Addition:\n• NDC's last full meeting was in 2012 — it was already weakening before the Planning Commission's abolition.\n• ISC remains constitutionally alive regardless of political will — NDC has no such constitutional anchor.\n• Both ISC and NDC are chaired by PM and include all state CMs — a classic UPSC confusion point."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय विकास परिषद (NDC) और अंतर-राज्य परिषद के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: राष्ट्रीय विकास परिषद, अंतर-राज्य परिषद की तरह, एक संवैधानिक निकाय है जिसकी स्थापना भारत के संविधान के स्पष्ट प्रावधान से होती है।\nकथन 2: 2015 में नीति आयोग ने योजना आयोग की जगह लेने के बाद, राष्ट्रीय विकास परिषद प्रभावी रूप से निष्क्रिय हो गई क्योंकि इसकी मुख्य भूमिका पंचवर्षीय योजनाओं को मंजूरी देना समाप्त हो गई।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: राष्ट्रीय विकास परिषद, अंतर-राज्य परिषद की तरह, एक संवैधानिक निकाय है जिसकी स्थापना भारत के संविधान के स्पष्ट प्रावधान से होती है।",
+          "verdict": "गलत",
+          "reason": "राष्ट्रीय विकास परिषद एक संवैधानिक निकाय नहीं है, यह कार्यपालिका के निर्णय द्वारा स्थापित एक संवैधानिक-पर्याप्त निकाय है — इसका संविधान में कोई उल्लेख नहीं है। केवल अंतर-राज्य परिषद का अनुच्छेद 263 के तहत संवैधानिक आधार है।"
+        },
+        {
+          "statement": "कथन 2: 2015 में नीति आयोग ने योजना आयोग की जगह लेने के बाद, राष्ट्रीय विकास परिषद प्रभावी रूप से निष्क्रिय हो गई क्योंकि इसकी मुख्य भूमिका पंचवर्षीय योजनाओं को मंजूरी देना समाप्त हो गई।",
+          "verdict": "सही",
+          "reason": "राष्ट्रीय विकास परिषद का मुख्य कार्य पंचवर्षीय योजनाओं को मंजूरी देना और राष्ट्रीय विकास प्राथमिकताओं को निर्धारित करना था। योजना आयोग के समाप्त होने और पंचवर्षीय योजनाओं के बंद होने के कारण, राष्ट्रीय विकास परिषद ने अपनी परिचालन तर्क खो दिया।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प a भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि राष्ट्रीय विकास परिषद की अध्यक्षता प्रधानमंत्री करते हैं (जैसे अंतर-राज्य परिषद), वे यह मान सकते हैं कि इसका भी संवैधानिक आधार है, इसलिए 'दोनों सही' चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: राष्ट्रीय विकास परिषद कार्यपालिका के निर्णय (कैबिनेट निर्णय) द्वारा बनाई गई थी, न कि संवैधानिक प्रावधान द्वारा — यह संवैधानिक-पर्याप्त निकाय है। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: राष्ट्रीय विकास परिषद का अस्तित्व पंचवर्षीय योजनाओं पर आधारित था; 2015 में योजना आयोग के समाप्त होने और नीति आयोग के समान योजना कार्य न होने के कारण, राष्ट्रीय विकास परिषद प्रभावी रूप से निष्क्रिय हो गई। कथन 2 सही है।",
+        "कथन 1 गलत, कथन 2 सही — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "राष्ट्रीय विकास परिषद और अंतर-राज्य परिषद की तुलना UPSC प्रश्नों में अक्सर उनकी सतही समानताओं के कारण की जाती है।\n\n• कथन 1 — गलत: राष्ट्रीय विकास परिषद का संविधान में कोई उल्लेख नहीं है। इसे भारत सरकार ने 1952 में कैबिनेट निर्णय (कार्यपालिका प्रस्ताव) के माध्यम से स्थापित किया था। यह एक संवैधानिक-पर्याप्त निकाय है — जो अंतर-राज्य परिषद से मौलिक रूप से भिन्न है, जिसका आधार अनुच्छेद 263 है।\n• कथन 2 — सही: राष्ट्रीय विकास परिषद का मुख्य उद्देश्य योजना आयोग द्वारा तैयार पंचवर्षीय योजनाओं को मंजूरी देना था। जब योजना आयोग को जनवरी 2015 में नीति आयोग ने प्रतिस्थापित किया और पंचवर्षीय योजनाएँ बंद कर दी गईं, तो राष्ट्रीय विकास परिषद ने अपना संस्थागत उद्देश्य खो दिया। तब से इसे सार्थक रूप से नहीं बुलाया गया है।\n\nमूल्य संवर्धन:\n• राष्ट्रीय विकास परिषद की अंतिम पूर्ण बैठक 2012 में हुई थी — यह योजना आयोग के समाप्त होने से पहले ही कमजोर हो रही थी।\n• अंतर-राज्य परिषद संवैधानिक रूप से जीवित है, राजनीतिक इच्छा के बावजूद — राष्ट्रीय विकास परिषद का ऐसा कोई संवैधानिक आधार नहीं है।\n• दोनों, अंतर-राज्य परिषद और राष्ट्रीय विकास परिषद की अध्यक्षता प्रधानमंत्री करते हैं और इनमें सभी राज्य के मुख्यमंत्री शामिल होते हैं — यह UPSC में भ्रम पैदा करने वाला एक क्लासिक बिंदु है।"
+    }
+  },
+  {
+    "uuid": "34388c87-8cc9-4f94-9ed9-b0945fce0d65",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Inter-State Council vs. Inter-State Water Disputes Tribunal"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Article 262 — ISWDT, SC jurisdiction barred",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Inter-State Water Disputes Act, 1956, which provides for the adjudication of disputes relating to waters of inter-state rivers, was enacted by Parliament in exercise of powers under Article ________ of the Constitution — the same article that empowers Parliament to exclude the jurisdiction of the Supreme Court from such disputes.\n\n(a) Article 263\n(b) Article 262\n(c) Article 261\n(d) Article 131",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (Article 263) is deceptive because students associate 'inter-state water disputes' with the ISC (also an inter-state coordination body) without distinguishing Article 262 from Article 263.",
+      "elimination_logic": [
+        "Article 263 relates to the Inter-State Council — not water disputes specifically.",
+        "Inter-State Water Disputes are governed by Article 262, not Article 263.",
+        "The Inter-State Water Disputes Act, 1956 was enacted under Article 262 — binds the correct answer to Article 262.",
+        "Select option (b): Article 262."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Articles 262 and 263 are adjacent constitutional provisions that deal with different aspects of inter-state relations.\n\n• Option (a) Article 263: Incorrect — Article 263 is the basis for the Inter-State Council, which deals with general policy coordination, not water disputes.\n• Option (b) Article 262: Correct — Parliament enacted the Inter-State Water Disputes Act, 1956 under Article 262. This article also empowers Parliament to exclude Supreme Court jurisdiction over such disputes, making ISWDT awards potentially final.\n• Option (c) Article 261: Incorrect — Article 261 deals with full faith and credit to public acts and judicial proceedings across states.\n• Option (d) Article 131: Incorrect — Article 131 is the Supreme Court's original jurisdiction in state-state/Centre-state disputes, which is actually excluded by Article 262 in water dispute matters.\n\nValue Addition:\n• ISWDT awards are binding — unlike ISC recommendations.\n• Parliament can bar SC jurisdiction under Article 262(2) — a unique constitutional feature.\n• Krishna, Cauvery, and Narmada tribunals are all constituted under the 1956 Act."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य जल विवाद अधिनियम, 1956, जो अंतर-राज्य नदियों के जल से संबंधित विवादों के निपटारे के लिए है, संविधान के अनुच्छेद ________ के तहत संसद द्वारा बनाया गया था — वही अनुच्छेद जो संसद को ऐसे विवादों से सर्वोच्च न्यायालय के अधिकार क्षेत्र को बाहर करने का अधिकार देता है।\n\n(a) अनुच्छेद 263\n(b) अनुच्छेद 262\n(c) अनुच्छेद 261\n(d) अनुच्छेद 131",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (अनुच्छेद 263) भ्रमित करने वाला है क्योंकि छात्र 'अंतर-राज्य जल विवाद' को ISC (जो एक अंतर-राज्य समन्वय निकाय भी है) से जोड़ते हैं बिना अनुच्छेद 262 और अनुच्छेद 263 के बीच अंतर किए।",
+      "elimination_logic": [
+        "अनुच्छेद 263 अंतर-राज्य परिषद से संबंधित है — विशेष रूप से जल विवादों से नहीं।",
+        "अंतर-राज्य जल विवाद अनुच्छेद 262 के अंतर्गत आते हैं, न कि अनुच्छेद 263 के।",
+        "अंतर-राज्य जल विवाद अधिनियम, 1956 अनुच्छेद 262 के अंतर्गत बनाया गया था — जो सही उत्तर को अनुच्छेद 262 से जोड़ता है।",
+        "विकल्प (b) चुनें: अनुच्छेद 262।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 262 और 263 संवैधानिक प्रावधान हैं जो अंतर-राज्य संबंधों के विभिन्न पहलुओं से संबंधित हैं।\n\n• विकल्प (a) अनुच्छेद 263: गलत — अनुच्छेद 263 अंतर-राज्य परिषद का आधार है, जो सामान्य नीति समन्वय से संबंधित है, जल विवादों से नहीं।\n• विकल्प (b) अनुच्छेद 262: सही — संसद ने अनुच्छेद 262 के अंतर्गत अंतर-राज्य जल विवाद अधिनियम, 1956 बनाया। यह अनुच्छेद संसद को ऐसे विवादों में सर्वोच्च न्यायालय के अधिकार क्षेत्र को बाहर करने का अधिकार भी देता है, जिससे ISWDT के निर्णय अंतिम हो सकते हैं।\n• विकल्प (c) अनुच्छेद 261: गलत — अनुच्छेद 261 राज्यों के बीच सार्वजनिक कृत्यों और न्यायिक कार्यवाहियों को पूर्ण विश्वास और सम्मान देने से संबंधित है।\n• विकल्प (d) अनुच्छेद 131: गलत — अनुच्छेद 131 राज्य-राज्य/केंद्र-राज्य विवादों में सर्वोच्च न्यायालय का मूल अधिकार क्षेत्र है, जिसे जल विवाद मामलों में अनुच्छेद 262 द्वारा बाहर किया गया है।\n\nमूल्यवर्धन:\n• ISWDT के निर्णय बाध्यकारी होते हैं — ISC की सिफारिशों के विपरीत।\n• संसद अनुच्छेद 262(2) के तहत सर्वोच्च न्यायालय के अधिकार क्षेत्र को प्रतिबंधित कर सकती है — एक अनूठा संवैधानिक विशेषता।\n• कृष्णा, कावेरी, और नर्मदा न्यायाधिकरण सभी 1956 के अधिनियम के तहत गठित हैं।"
+    }
+  },
+  {
+    "uuid": "7b2e770c-c1e6-4257-b2c1-6a1d8e9aca16",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "GST Council vs. Inter-State Council: Cooperative Federalism Comparison"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "GST Council — Article 279A, 101st Amendment 2016",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched with respect to the constitutional provision and the amendment that introduced the GST Council?\n\n(a) Article 279A — Constitution (101st Amendment) Act, 2016\n(b) Article 279A — Constitution (100th Amendment) Act, 2015\n(c) Article 246A — Constitution (102nd Amendment) Act, 2018\n(d) Article 279A — Constitution (101st Amendment) Act, 2016, with the Union Government holding 2/3 voting weight",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b places the GST Council under the 100th Amendment (which dealt with the India-Bangladesh land boundary agreement), which sounds plausible to students who know the GST Amendment was 'one of the later amendments' but cannot pin the exact number.",
+      "elimination_logic": [
+        "Identify the GST Council's constitutional basis: Article 279A, inserted by the Constitution (101st Amendment) Act, 2016.",
+        "Eliminate option (b): 100th Amendment relates to India-Bangladesh land boundary agreement — not GST.",
+        "Eliminate option (c): The 102nd Amendment deals with the National Commission for Backward Classes — not GST Council.",
+        "Eliminate option (d): The GST Council's voting gives Union government 1/3 weight and states collectively 2/3 — reversing these is false.",
+        "Confirm option (a): Article 279A + 101st Amendment, 2016 — correctly matched."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The GST Council is a constitutionally anchored body — a point UPSC frequently tests to distinguish it from the ISC.\n\n• Option (a): Correct — Article 279A was inserted by the Constitution (101st Amendment) Act, 2016, establishing the GST Council.\n• Option (b): Incorrect — The 100th Amendment (2015) implemented the India-Bangladesh land boundary agreement (LBA), not GST.\n• Option (c): Incorrect — The 102nd Amendment (2018) gave constitutional status to the National Commission for Backward Classes.\n• Option (d): Incorrect — The GST Council's voting structure gives the Union government 1/3 weight and states collectively 2/3 — not the reverse.\n\nValue Addition:\n• GST Council has held 50+ meetings since 2016 — far more active than ISC in same period.\n• GST Council decisions require a majority of not less than three-fourths of weighted votes.\n• ISC has no voting mechanism — it operates on consensus, making it structurally weaker for binding outcomes."
+    },
+    "hi": {
+      "display_text": "GST काउंसिल के संवैधानिक प्रावधान और संशोधन के संदर्भ में निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) अनुच्छेद 279A — संविधान (101वां संशोधन) अधिनियम, 2016\n(b) अनुच्छेद 279A — संविधान (100वां संशोधन) अधिनियम, 2015\n(c) अनुच्छेद 246A — संविधान (102वां संशोधन) अधिनियम, 2018\n(d) अनुच्छेद 279A — संविधान (101वां संशोधन) अधिनियम, 2016, जिसमें केंद्र सरकार के पास 2/3 मतदान भार है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b GST काउंसिल को 100वें संशोधन के अंतर्गत रखता है (जो भारत-बांग्लादेश भूमि सीमा समझौते से संबंधित था), जो उन छात्रों के लिए संभावित लगता है जो जानते हैं कि GST संशोधन 'बाद के संशोधनों में से एक' था लेकिन सही संख्या नहीं जान पाते।",
+      "elimination_logic": [
+        "GST काउंसिल के संवैधानिक आधार की पहचान करें: अनुच्छेद 279A, जिसे संविधान (101वां संशोधन) अधिनियम, 2016 द्वारा जोड़ा गया।",
+        "विकल्प (b) को खारिज करें: 100वां संशोधन भारत-बांग्लादेश भूमि सीमा समझौते से संबंधित है — GST से नहीं।",
+        "विकल्प (c) को खारिज करें: 102वां संशोधन राष्ट्रीय पिछड़ा वर्ग आयोग से संबंधित है — GST काउंसिल से नहीं।",
+        "विकल्प (d) को खारिज करें: GST काउंसिल के मतदान में केंद्र सरकार का 1/3 और राज्यों का संयुक्त रूप से 2/3 भार होता है — इसे उलटना गलत है।",
+        "विकल्प (a) की पुष्टि करें: अनुच्छेद 279A + 101वां संशोधन, 2016 — सही मेल।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "GST काउंसिल एक संवैधानिक रूप से स्थापित निकाय है — यह UPSC द्वारा ISC से अलग पहचान के लिए अक्सर परीक्षण किया जाता है।\n\n• विकल्प (a): सही — अनुच्छेद 279A संविधान (101वां संशोधन) अधिनियम, 2016 द्वारा जोड़ा गया, जिसने GST काउंसिल की स्थापना की।\n• विकल्प (b): गलत — 100वां संशोधन (2015) भारत-बांग्लादेश भूमि सीमा समझौते (LBA) को लागू करता है, GST को नहीं।\n• विकल्प (c): गलत — 102वां संशोधन (2018) ने राष्ट्रीय पिछड़ा वर्ग आयोग को संवैधानिक दर्जा दिया।\n• विकल्प (d): गलत — GST काउंसिल के मतदान संरचना में केंद्र सरकार का 1/3 और राज्यों का संयुक्त रूप से 2/3 भार होता है — उल्टा नहीं।\n\nमूल्य संवर्धन:\n• GST काउंसिल ने 2016 से 50+ बैठकें की हैं — जो ISC की तुलना में उसी अवधि में कहीं अधिक सक्रिय है।\n• GST काउंसिल के निर्णयों के लिए भारित मतों का कम से कम तीन-चौथाई बहुमत आवश्यक है।\n• ISC में कोई मतदान तंत्र नहीं है — यह सहमति पर चलता है, जिससे यह बाध्यकारी परिणामों के लिए संरचनात्मक रूप से कमजोर है।"
+    }
+  },
+  {
+    "uuid": "e31f390c-d795-4661-a0e9-908b957b8406",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Distinction: Inter-State Council vs. National Integration Council"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NIC — extra-constitutional, 1961, civil society representation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The National Integration Council and the Inter-State Council differ fundamentally in their mandate — the former is concerned with communal harmony and societal cohesion, while the latter focuses on governmental coordination on policy matters.\n\nReason (R): Unlike the Inter-State Council, which has an exclusively governmental membership, the National Integration Council includes civil society representatives, journalists, and leaders from minority communities.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because both A and R appear correct and students may assume that the NIC's broader civil society membership is the reason it focuses on communal harmony rather than governmental policy.",
+      "elimination_logic": [
+        "Step 1: Is A correct? — Yes. The National Integration Council focuses on communal harmony and national integration, while the ISC focuses on Centre-State coordination and policy.",
+        "Step 2: Is R correct? — Yes. The NIC does include civil society members, journalists, and non-governmental representatives — unlike ISC which is exclusively governmental.",
+        "Step 3: Does R causally explain A? — No. The NIC's focus on communal harmony is determined by its mandate (set at the time of its establishment in 1961 in response to communal tensions), not by its civil society membership composition. The membership composition is a design choice, not the cause of its mandate.",
+        "Both A and R are correct but R does NOT explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The NIC and ISC serve fundamentally different purposes despite both being chaired by the Prime Minister.\n\nAssertion (A) is correct: NIC focuses on communal harmony and national integration — not Centre-State policy coordination. ISC is for governmental coordination; NIC is for societal cohesion.\n\nReason (R) is correct: NIC includes civil society actors — journalists, representatives of minority communities, opposition leaders, academics — a composition ISC deliberately excludes (ISC is purely governmental).\n\nCausal link — Absent: NIC's civil society composition did not cause its communal harmony mandate. The mandate came first, historically determined in 1961 by the Indian government's response to communal riots. The broader membership was designed to serve that mandate — not the reverse.\n\nValue Addition:\n• NIC was set up in 1961, 29 years before ISC (1990) — it is older but less constitutionally grounded.\n• Both NIC and ISC are chaired by PM — a classic UPSC confusion point.\n• ISC is exclusively governmental (no civil society); NIC includes diverse non-governmental voices — a structural distinction worth remembering."
+    },
+    "hi": {
+      "display_text": "कथन (A): राष्ट्रीय एकता परिषद और अंतर-राज्य परिषद अपने मण्डेट में मौलिक रूप से भिन्न हैं — पूर्व सांप्रदायिक सद्भाव और सामाजिक एकता से संबंधित है, जबकि उत्तर सरकारी समन्वय और नीति मामलों पर केंद्रित है।\n\nकारण (R): अंतर-राज्य परिषद के विपरीत, जिसकी सदस्यता पूरी तरह सरकारी है, राष्ट्रीय एकता परिषद में नागरिक समाज के प्रतिनिधि, पत्रकार और अल्पसंख्यक समुदायों के नेता शामिल हैं।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि दोनों A और R सही प्रतीत होते हैं और छात्र यह मान सकते हैं कि NIC की व्यापक नागरिक समाज सदस्यता ही इसका कारण है कि यह सरकारी नीति के बजाय सांप्रदायिक सद्भाव पर केंद्रित है।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — हाँ। राष्ट्रीय एकता परिषद (NIC) सांप्रदायिक सद्भाव और राष्ट्रीय एकता पर केंद्रित है, जबकि अंतर-राज्य परिषद (ISC) केंद्र-राज्य समन्वय और नीति पर केंद्रित है।",
+        "चरण 2: क्या R सही है? — हाँ। NIC में नागरिक समाज के सदस्य, पत्रकार और गैर-सरकारी प्रतिनिधि शामिल हैं — जबकि ISC पूरी तरह से सरकारी है।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — नहीं। NIC का सांप्रदायिक सद्भाव पर ध्यान इसकी स्थापना के समय (1961 में सांप्रदायिक तनावों के जवाब में) निर्धारित मण्डेट द्वारा तय होता है, न कि इसकी नागरिक समाज सदस्यता संरचना द्वारा। सदस्यता संरचना एक डिज़ाइन विकल्प है, इसका मण्डेट का कारण नहीं।",
+        "A और R दोनों सही हैं लेकिन R, A की व्याख्या नहीं करता — अतः विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "NIC और ISC के उद्देश्य मौलिक रूप से भिन्न हैं, हालांकि दोनों की अध्यक्षता प्रधानमंत्री करते हैं।\n\nकथन (A) सही है: NIC सांप्रदायिक सद्भाव और राष्ट्रीय एकता पर केंद्रित है — न कि केंद्र-राज्य नीति समन्वय पर। ISC सरकारी समन्वय के लिए है; NIC सामाजिक एकता के लिए है।\n\nकथन (R) सही है: NIC में नागरिक समाज के सदस्य शामिल हैं — पत्रकार, अल्पसंख्यक समुदायों के प्रतिनिधि, विपक्षी नेता, विद्वान — जबकि ISC में यह जानबूझकर शामिल नहीं है (ISC पूरी तरह सरकारी है)।\n\nकारणात्मक संबंध — नहीं है: NIC की नागरिक समाज संरचना ने इसके सांप्रदायिक सद्भाव मण्डेट का कारण नहीं बनी। मण्डेट पहले आया, जो 1961 में भारत सरकार द्वारा सांप्रदायिक दंगों के जवाब में ऐतिहासिक रूप से निर्धारित हुआ। व्यापक सदस्यता उस मण्डेट को पूरा करने के लिए डिज़ाइन की गई थी — इसका उल्टा नहीं।\n\nमूल्यवर्धन:\n• NIC की स्थापना 1961 में हुई, जो ISC (1990) से 29 वर्ष पहले है — यह पुराना है लेकिन कम संवैधानिक आधार वाला है।\n• दोनों NIC और ISC की अध्यक्षता प्रधानमंत्री करते हैं — UPSC में भ्रम का एक सामान्य बिंदु।\n• ISC पूरी तरह सरकारी है (कोई नागरिक समाज नहीं); NIC में विविध गैर-सरकारी आवाजें शामिल हैं — यह एक संरचनात्मक भेद है जिसे याद रखना चाहिए।"
+    }
+  },
+  {
+    "uuid": "2a5a3837-da7d-45c5-b95e-af2de3cdbc4d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Union Territories' Representation in Inter-State Council",
+        "Composition of the Inter-State Council: Members and Categories"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "UTs without legislature — invitees not members in ISC",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the composition of the Inter-State Council, which one of the following correctly describes the status of Administrators of Union Territories that do not have a legislature?\n\n(a) They are full members of the Inter-State Council with the same participatory rights as Chief Ministers of states\n(b) They are represented in the ISC through their respective Chief Ministers, who serve as full members\n(c) They are excluded from ISC proceedings entirely, as only elected governments may participate\n(d) They are invitees to ISC meetings, distinguished from the full member status held by Chief Ministers of states and Union Territories with legislatures",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because students who recall that 'UT representatives attend ISC' without remembering the member/invitee distinction will accept this as correct.",
+      "elimination_logic": [
+        "Eliminate option (a): Administrators of UTs without legislatures are invitees, not full members — they do not participate as voting members.",
+        "Eliminate option (b): Only UTs with legislatures send their Chief Ministers as members — UTs without legislatures do not send Chief Ministers.",
+        "Eliminate option (c): Administrators are not excluded entirely — they attend but as invitees only.",
+        "Confirm option (d): Administrators of UTs without legislatures attend ISC meetings as invitees, clearly distinguished from the member status of state CMs and UT CMs with legislatures."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The ISC's membership rules draw a careful distinction based on whether a UT has a legislature.\n\n• Option (a): Incorrect — Administrators (Lt. Governors) of UTs without legislatures are not full members; they are invitees with a subordinate participatory status.\n• Option (b): Incorrect — UTs without legislatures do not have Chief Ministers at all; only UTs with legislatures have elected heads of government.\n• Option (c): Incorrect — Administrators are not barred from ISC entirely; they attend as invitees and participate in deliberations without full member status.\n• Option (d): Correct — Administrators of UTs without legislatures attend as invitees. Full membership belongs to CMs of all states and CMs of UTs with legislatures (Delhi, Puducherry, J&K post-2019).\n\nValue Addition:\n• Currently, 5 UTs have no legislature: Chandigarh, D&NH and DD (merged), Lakshadweep, Andaman & Nicobar Islands.\n• Invitee status means no formal vote or resolution-making role in ISC.\n• J&K became a UT with legislature after the J&K Reorganisation Act, 2019."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद की संरचना के संदर्भ में, निम्नलिखित में से कौन सा कथन बिना विधानमंडल वाले केंद्र शासित प्रदेशों के प्रशासकों की स्थिति को सही रूप से वर्णित करता है?\n\n(a) वे अंतर-राज्य परिषद के पूर्ण सदस्य हैं जिनके भागीदारी अधिकार राज्यों के मुख्यमंत्रियों के समान हैं\n(b) वे अपने संबंधित मुख्यमंत्रियों के माध्यम से ISC में प्रतिनिधित्व करते हैं, जो पूर्ण सदस्य के रूप में कार्य करते हैं\n(c) वे ISC की कार्यवाही से पूरी तरह बाहर हैं, क्योंकि केवल निर्वाचित सरकारें भाग ले सकती हैं\n(d) वे ISC की बैठकों में आमंत्रित सदस्य होते हैं, जो विधानमंडल वाले राज्यों और केंद्र शासित प्रदेशों के मुख्यमंत्रियों के पूर्ण सदस्य पद से भिन्न होते हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because students who recall that 'UT representatives attend ISC' without remembering the member/invitee distinction will accept this as correct.",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: बिना विधानमंडल वाले केंद्र शासित प्रदेशों के प्रशासक आमंत्रित सदस्य होते हैं, पूर्ण सदस्य नहीं — वे मतदान करने वाले सदस्य के रूप में भाग नहीं लेते।",
+        "विकल्प (b) को खारिज करें: केवल विधानमंडल वाले केंद्र शासित प्रदेश अपने मुख्यमंत्री को सदस्य के रूप में भेजते हैं — बिना विधानमंडल वाले केंद्र शासित प्रदेश मुख्यमंत्री नहीं भेजते।",
+        "विकल्प (c) को खारिज करें: प्रशासक पूरी तरह से बाहर नहीं हैं — वे उपस्थित होते हैं लेकिन केवल आमंत्रित सदस्य के रूप में।",
+        "विकल्प (d) की पुष्टि करें: बिना विधानमंडल वाले केंद्र शासित प्रदेशों के प्रशासक ISC की बैठकों में आमंत्रित सदस्य के रूप में उपस्थित होते हैं, जो राज्यों के मुख्यमंत्रियों और विधानमंडल वाले केंद्र शासित प्रदेशों के मुख्यमंत्रियों के पूर्ण सदस्य पद से स्पष्ट रूप से भिन्न है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अंतर-राज्य परिषद (ISC) की सदस्यता नियम विधानमंडल के आधार पर केंद्र शासित प्रदेशों के लिए स्पष्ट भेद करती है।\n\n• विकल्प (a): गलत — बिना विधानमंडल वाले केंद्र शासित प्रदेशों के प्रशासक (राज्यपाल) पूर्ण सदस्य नहीं हैं; वे एक अधीनस्थ भागीदारी स्थिति के साथ आमंत्रित सदस्य होते हैं।\n• विकल्प (b): गलत — बिना विधानमंडल वाले केंद्र शासित प्रदेशों के पास मुख्यमंत्री नहीं होते; केवल विधानमंडल वाले केंद्र शासित प्रदेशों के पास निर्वाचित सरकार के प्रमुख होते हैं।\n• विकल्प (c): गलत — प्रशासक ISC से पूरी तरह वंचित नहीं हैं; वे आमंत्रित सदस्य के रूप में उपस्थित होते हैं और विचार-विमर्श में भाग लेते हैं लेकिन पूर्ण सदस्य नहीं होते।\n• विकल्प (d): सही — बिना विधानमंडल वाले केंद्र शासित प्रदेशों के प्रशासक आमंत्रित सदस्य के रूप में उपस्थित होते हैं। पूर्ण सदस्यता सभी राज्यों के मुख्यमंत्रियों और विधानमंडल वाले केंद्र शासित प्रदेशों (दिल्ली, पुडुचेरी, जम्मू-कश्मीर 2019 के बाद) के मुख्यमंत्रियों को प्राप्त है।\n\nमूल्यवर्धन:\n• वर्तमान में 5 केंद्र शासित प्रदेशों के पास विधानमंडल नहीं है: चंडीगढ़, दादरा और नगर हवेली एवं दमन और दीव (मर्ज़), लक्षद्वीप, अंडमान और निकोबार द्वीप समूह।\n• आमंत्रित सदस्य का अर्थ है ISC में औपचारिक मतदान या प्रस्ताव बनाने की भूमिका नहीं।\n• जम्मू-कश्मीर 2019 के जम्मू-कश्मीर पुनर्गठन अधिनियम के बाद विधानमंडल वाला केंद्र शासित प्रदेश बन गया।"
+    }
+  },
+  {
+    "uuid": "38dad314-e04f-4cff-922e-eba417bbfd03",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Subjects of ISC Deliberations: Agenda and Outcomes",
+        "Standing Committee of Inter-State Council"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Standing Committee — agenda screening role before full ISC",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Before matters are placed before the full plenary of the Inter-State Council, they are first screened and processed by the ________, which acts as a preparatory forum to ensure that the ISC's deliberations are focused and substantive.\n\n(a) Inter-State Council Secretariat\n(b) Finance Commission of India\n(c) Standing Committee of the Inter-State Council\n(d) National Integration Council Screening Committee",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (ISC Secretariat) is deceptive because the Secretariat does handle administrative preparation, and students may conflate the secretariat's logistical role with the Standing Committee's substantive agenda-screening role.",
+      "elimination_logic": [
+        "Eliminate option (a): The ISC Secretariat handles administrative support but does not formally screen and filter the ISC's agenda — that is the Standing Committee's function.",
+        "Eliminate option (b): The Finance Commission has no role in ISC agenda-setting.",
+        "Eliminate option (d): There is no 'National Integration Council Screening Committee' — this is a fabricated entity.",
+        "Confirm option (c): The Standing Committee of ISC, chaired by the Home Minister, screens and processes matters before they reach the full ISC plenary — a key structural role."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The ISC's internal structure creates a two-tier deliberation system: the Standing Committee processes matters first, then the full ISC takes them up.\n\n• Option (a) ISC Secretariat: Incorrect — the Secretariat provides administrative continuity and prepares background papers, but the formal agenda-screening function belongs to the Standing Committee.\n• Option (b) Finance Commission: Incorrect — Finance Commission deals with Centre-State financial devolution; it has no role in ISC agenda-setting.\n• Option (c) Standing Committee of ISC: Correct — the Standing Committee, chaired by the Home Minister and comprising 5 Union Cabinet Ministers and CMs of 9 states (rotational), screens matters before they reach the full ISC. This prevents the ISC plenary from being overwhelmed with unprocessed items.\n• Option (d) Fabricated entity: Incorrect — no such body exists.\n\nValue Addition:\n• Standing Committee was set up in 1996, six years after the ISC.\n• Home Minister chairs the Standing Committee; PM chairs the full ISC — a leadership hierarchy to remember.\n• Agenda items not cleared by the Standing Committee do not typically reach the full ISC plenary."
+    },
+    "hi": {
+      "display_text": "राज्य-राज्य परिषद की पूर्ण बैठक के समक्ष मामले प्रस्तुत किए जाने से पहले, उन्हें पहले ________ द्वारा स्क्रीन और संसाधित किया जाता है, जो एक तैयारी मंच के रूप में कार्य करता है ताकि ISC के विचार-विमर्श केंद्रित और सारगर्भित हों।\n\n(a) राज्य-राज्य परिषद सचिवालय\n(b) भारत का वित्त आयोग\n(c) राज्य-राज्य परिषद की स्थायी समिति\n(d) राष्ट्रीय एकता परिषद स्क्रीनिंग समिति",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (ISC सचिवालय) भ्रामक है क्योंकि सचिवालय प्रशासनिक तैयारी करता है, और छात्र सचिवालय की तार्किक भूमिका को स्थायी समिति की सारगर्भित एजेंडा-स्क्रीनिंग भूमिका के साथ भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: ISC सचिवालय प्रशासनिक सहायता प्रदान करता है लेकिन ISC के एजेंडा को औपचारिक रूप से स्क्रीन और फ़िल्टर नहीं करता — यह स्थायी समिति का कार्य है।",
+        "विकल्प (b) को हटाएं: वित्त आयोग का ISC एजेंडा-निर्धारण में कोई भूमिका नहीं है।",
+        "विकल्प (d) को हटाएं: 'राष्ट्रीय एकता परिषद स्क्रीनिंग समिति' नामक कोई संस्था नहीं है — यह एक काल्पनिक संस्था है।",
+        "विकल्प (c) की पुष्टि करें: गृह मंत्री की अध्यक्षता वाली ISC की स्थायी समिति, पूर्ण ISC के समक्ष मामलों को स्क्रीन और संसाधित करती है — यह एक महत्वपूर्ण संरचनात्मक भूमिका है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "ISC की आंतरिक संरचना दो-स्तरीय विचार-विमर्श प्रणाली बनाती है: स्थायी समिति पहले मामलों को संसाधित करती है, फिर पूर्ण ISC उन्हें उठाता है।\n\n• विकल्प (a) ISC सचिवालय: गलत — सचिवालय प्रशासनिक निरंतरता प्रदान करता है और पृष्ठभूमि पत्र तैयार करता है, लेकिन औपचारिक एजेंडा-स्क्रीनिंग कार्य स्थायी समिति का है।\n• विकल्प (b) वित्त आयोग: गलत — वित्त आयोग केंद्र-राज्य वित्तीय वितरण से संबंधित है; इसका ISC एजेंडा-निर्धारण में कोई भाग नहीं है।\n• विकल्प (c) ISC की स्थायी समिति: सही — गृह मंत्री की अध्यक्षता वाली स्थायी समिति, जिसमें 5 केंद्रीय मंत्री और 9 राज्यों के मुख्यमंत्री (परिवर्ती) शामिल हैं, पूर्ण ISC के समक्ष मामलों को स्क्रीन करती है। इससे ISC की पूर्ण बैठक बिना संसाधित वस्तुओं के अभिभूत नहीं होती।\n• विकल्प (d) काल्पनिक संस्था: गलत — ऐसी कोई संस्था मौजूद नहीं है।\n\nमूल्यवर्धन:\n• स्थायी समिति की स्थापना 1996 में हुई, जो ISC के छह वर्ष बाद थी।\n• गृह मंत्री स्थायी समिति के अध्यक्ष हैं; प्रधानमंत्री पूर्ण ISC के अध्यक्ष हैं — नेतृत्व पदानुक्रम याद रखने योग्य है।\n• स्थायी समिति द्वारा मंजूर न किए गए एजेंडा आइटम सामान्यतः पूर्ण ISC की बैठक तक नहीं पहुंचते।"
+    }
+  },
+  {
+    "uuid": "e34ce29a-6c46-4ffd-9cd4-a9e4255533b1",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Role of ISC in Cooperative Federalism",
+        "GST Council vs. Inter-State Council: Cooperative Federalism Comparison"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Cooperative federalism — ISC vs. GST Council structural differences",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A constitutional researcher argues that India needs a permanent, structured mechanism for Centre-State coordination on fiscal and policy matters — one where states have a defined and weighted participatory role, decisions are taken through a formal process, and meetings occur regularly with specific agendas. She argues that existing informal or infrequently convened forums are inadequate for this purpose. Which of the following existing Indian constitutional institutions most closely approximates the model she is advocating?\n\n(a) The Inter-State Council under Article 263, with states lobbying for mandatory implementation of its recommendations through constitutional amendment\n(b) The GST Council under Article 279A, which provides weighted voting, regular structured meetings, and formal decision-making on Centre-State fiscal matters\n(c) The Inter-State Council under Article 263, as it is already the designated deliberative forum for Centre-State coordination under the Constitution\n(d) A special ISC session convened by the President under Article 263 at the request of a majority of state governments",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because it accurately describes the ISC as a 'deliberative forum under Article 263' — which sounds correct — but incorrectly suggests this makes ISC more appropriate for the described situation than the GST Council, when the scenario calls for structured, recurring, binding-adjacent coordination.",
+      "elimination_logic": [
+        "Eliminate option (a): There is no constitutional provision requiring states to implement ISC recommendations — mandatory compliance does not exist.",
+        "Eliminate option (c): ISC is a deliberative body with no enforcement, no voting, and infrequent meetings — structurally unsuited for the described recurring, structured need.",
+        "Eliminate option (d): The President cannot be constitutionally compelled to convene ISC on states' request — Article 263 makes this discretionary.",
+        "Confirm option (b): GST Council's weighted voting, frequent meetings, and structured decision-making process make it the model of structured cooperative federalism that the scenario demands."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This scenario tests whether students can apply structural knowledge about ISC and GST Council to a real coordination problem.\n\nScenario: A researcher recommends India adopt a model for recurring, structured Centre-State coordination on fiscal and policy matters, with formal decision-making and a defined voting weight for states.\n\n• Option (a): Incorrect — ISC recommendations cannot be made compulsory; there is no constitutional mechanism for mandatory implementation.\n• Option (b): Correct — The GST Council model under Article 279A exemplifies exactly what the scenario describes: a constitutional body with weighted voting (states hold 2/3 collectively), frequent structured meetings, and formal decision-making on fiscal matters. It is widely regarded as India's most effective cooperative federalism institution.\n• Option (c): Incorrect — While ISC is indeed under Article 263, it lacks voting, meets rarely, and has no enforcement power — the opposite of 'structured and recurring coordination.'\n• Option (d): Incorrect — Presidential convening of ISC is discretionary; states cannot compel an ISC meeting, making this institutionally unreliable for recurring coordination needs.\n\nValue Addition:\n• GST Council's success has reignited academic debate about whether ISC should be reformed on similar lines.\n• Germany's Bundesrat — legislative chamber representing Länder (states) — is often cited as the gold standard ISC aspires to but hasn't reached.\n• Punchhi Commission's recommendations on ISC reform implicitly point toward a GST Council-type transformation."
+    },
+    "hi": {
+      "display_text": "एक संवैधानिक शोधकर्ता तर्क करता है कि भारत को वित्तीय और नीति मामलों पर केंद्र-राज्य समन्वय के लिए एक स्थायी, संरचित तंत्र की आवश्यकता है — ऐसा तंत्र जिसमें राज्यों की परिभाषित और भारित भागीदारी हो, निर्णय औपचारिक प्रक्रिया के माध्यम से लिए जाएं, और बैठकें नियमित रूप से विशिष्ट एजेंडों के साथ हों। वह तर्क देती है कि मौजूदा अनौपचारिक या दुर्लभ रूप से बुलाए जाने वाले मंच इस उद्देश्य के लिए अपर्याप्त हैं। निम्नलिखित में से कौन-सा मौजूदा भारतीय संवैधानिक संस्थान उस मॉडल के सबसे निकट है जिसकी वह वकालत कर रही है?\n\n(a) अनुच्छेद 263 के तहत अंतर-राज्य परिषद, जिसमें राज्य इसकी सिफारिशों के अनिवार्य कार्यान्वयन के लिए संवैधानिक संशोधन के माध्यम से दबाव डालते हैं\n(b) अनुच्छेद 279A के तहत GST काउंसिल, जो भारित मतदान, नियमित संरचित बैठकें, और केंद्र-राज्य वित्तीय मामलों पर औपचारिक निर्णय-प्रक्रिया प्रदान करती है\n(c) अनुच्छेद 263 के तहत अंतर-राज्य परिषद, क्योंकि यह पहले से ही संविधान के तहत केंद्र-राज्य समन्वय के लिए नामित विचार-विमर्श मंच है\n(d) अनुच्छेद 263 के तहत अधिकांश राज्य सरकारों के अनुरोध पर राष्ट्रपति द्वारा बुलाई गई विशेष ISC बैठक",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रामक है क्योंकि यह ISC को 'अनुच्छेद 263 के तहत विचार-विमर्श मंच' के रूप में सही ढंग से वर्णित करता है — जो सही लगता है — लेकिन गलत तरीके से सुझाव देता है कि यह ISC को GST काउंसिल की तुलना में वर्णित स्थिति के लिए अधिक उपयुक्त बनाता है, जबकि परिदृश्य संरचित, आवर्ती, बाध्यकारी-सन्निकट समन्वय की मांग करता है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: राज्यों के लिए ISC की सिफारिशों को लागू करना अनिवार्य करने का कोई संवैधानिक प्रावधान नहीं है — अनिवार्य अनुपालन मौजूद नहीं है।",
+        "विकल्प (c) को हटाएं: ISC एक विचार-विमर्श निकाय है जिसमें कोई प्रवर्तन, कोई मतदान नहीं होता और बैठकें दुर्लभ होती हैं — संरचनात्मक रूप से वर्णित आवर्ती, संरचित आवश्यकता के लिए अनुपयुक्त।",
+        "विकल्प (d) को हटाएं: राष्ट्रपति को राज्यों के अनुरोध पर ISC बुलाने के लिए संवैधानिक रूप से बाध्य नहीं किया जा सकता — अनुच्छेद 263 इसे विवेकाधीन बनाता है।",
+        "विकल्प (b) की पुष्टि करें: GST काउंसिल का भारित मतदान, बार-बार बैठकें, और संरचित निर्णय-प्रक्रिया इसे उस संरचित सहकारी संघवाद का मॉडल बनाती है जिसकी परिदृश्य में मांग की गई है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह परिदृश्य यह परीक्षण करता है कि छात्र ISC और GST काउंसिल के संरचनात्मक ज्ञान को वास्तविक समन्वय समस्या पर लागू कर सकते हैं या नहीं।\n\nपरिदृश्य: एक शोधकर्ता सुझाव देता है कि भारत को वित्तीय और नीति मामलों पर केंद्र-राज्य समन्वय के लिए एक आवर्ती, संरचित मॉडल अपनाना चाहिए, जिसमें राज्यों के लिए औपचारिक निर्णय-प्रक्रिया और परिभाषित मतदान भार हो।\n\n• विकल्प (a): गलत — ISC की सिफारिशों को अनिवार्य नहीं बनाया जा सकता; अनिवार्य कार्यान्वयन के लिए कोई संवैधानिक तंत्र नहीं है।\n• विकल्प (b): सही — अनुच्छेद 279A के तहत GST काउंसिल मॉडल ठीक वही है जो परिदृश्य वर्णित करता है: भारित मतदान (राज्य सामूहिक रूप से 2/3 रखते हैं), बार-बार संरचित बैठकें, और वित्तीय मामलों पर औपचारिक निर्णय-प्रक्रिया। इसे भारत का सबसे प्रभावी सहकारी संघवाद संस्थान माना जाता है।\n• विकल्प (c): गलत — ISC वास्तव में अनुच्छेद 263 के तहत है, लेकिन इसमें मतदान नहीं होता, बैठकें दुर्लभ हैं, और कोई प्रवर्तन शक्ति नहीं है — जो 'संरचित और आवर्ती समन्वय' के विपरीत है।\n• विकल्प (d): गलत — ISC की बैठक राष्ट्रपति के विवेकाधीन है; राज्य ISC बैठक के लिए बाध्य नहीं कर सकते, जिससे यह आवर्ती समन्वय आवश्यकताओं के लिए संस्थागत रूप से अविश्वसनीय है।\n\nमूल्य संवर्धन:\n• GST काउंसिल की सफलता ने ISC को इसी तरह सुधारने के बारे में शैक्षणिक बहस को पुनर्जीवित किया है।\n• जर्मनी का Bundesrat — जो Länder (राज्यों) का प्रतिनिधित्व करता है — अक्सर ISC के लिए आदर्श मानक के रूप में उद्धृत किया जाता है, जिसे ISC अभी तक प्राप्त नहीं कर पाया है।\n• पंची आयोग की ISC सुधार संबंधी सिफारिशें अप्रत्यक्ष रूप से GST काउंसिल जैसे परिवर्तन की ओर संकेत करती हैं।"
+    }
+  },
+  {
+    "uuid": "2bf9b39a-4538-4922-afef-1ca5e72041b7",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Standing Committee of Inter-State Council"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Standing Committee — 5 Union Ministers + 9 state CMs, rotational",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following correctly describes the composition of the Standing Committee of the Inter-State Council?\n\n(a) Six Cabinet Ministers of the Union Government and Chief Ministers of six states on rotational basis, chaired by the Home Minister\n(b) Five Cabinet Ministers of the Union Government and Chief Ministers of six states on rotational basis, chaired by the Prime Minister\n(c) Five Cabinet Ministers of the Union Government and Chief Ministers of nine states on rotational basis, chaired by the Home Minister\n(d) Five Cabinet Ministers of the Union Government and Chief Ministers of nine states on rotational basis, set up simultaneously with the Inter-State Council in 1990",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because students who know the ISC has six Cabinet Ministers as members may project this number onto the Standing Committee, selecting option (a) incorrectly.",
+      "elimination_logic": [
+        "Eliminate option (a): The Standing Committee has 5 Union Cabinet Ministers — not 6. The full ISC has 6 Cabinet Ministers nominated by PM.",
+        "Eliminate option (b): The Standing Committee includes CMs of 9 states on rotational basis — not 6 states.",
+        "Eliminate option (d): The Standing Committee was set up in 1996, not at the same time as the ISC (1990).",
+        "Confirm option (c): 5 Cabinet Ministers of Union + CMs of 9 states (rotational) — the correct composition of the ISC Standing Committee."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Standing Committee of the ISC has a precisely defined but frequently confused composition.\n\n• Option (a): Incorrect — Six Cabinet Ministers is the number for the full ISC, not the Standing Committee. The Standing Committee has five Union Cabinet Ministers.\n• Option (b): Incorrect — Nine state CMs serve on rotational basis, not six.\n• Option (c): Correct — The Standing Committee comprises five Cabinet Ministers of the Union Government plus Chief Ministers of nine states on a rotational basis, chaired by the Home Minister.\n• Option (d): Incorrect — The Standing Committee was constituted in 1996, six years after the ISC was established in 1990.\n\nValue Addition:\n• Full ISC: 6 Cabinet Ministers (nominated by PM). Standing Committee: 5 Cabinet Ministers.\n• The rotational element means different states participate in different Standing Committee tenures — preventing permanent dominance by any regional bloc.\n• The Home Minister's dual role (chairs both Zonal Councils AND ISC Standing Committee) makes this a high-frequency UPSC data point."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद की स्टैंडिंग कमेटी की संरचना का सही वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) केंद्र सरकार के छह कैबिनेट मंत्री और छह राज्यों के मुख्यमंत्री घुमावदार आधार पर, अध्यक्ष गृह मंत्री\n(b) केंद्र सरकार के पांच कैबिनेट मंत्री और छह राज्यों के मुख्यमंत्री घुमावदार आधार पर, अध्यक्ष प्रधानमंत्री\n(c) केंद्र सरकार के पांच कैबिनेट मंत्री और नौ राज्यों के मुख्यमंत्री घुमावदार आधार पर, अध्यक्ष गृह मंत्री\n(d) केंद्र सरकार के पांच कैबिनेट मंत्री और नौ राज्यों के मुख्यमंत्री घुमावदार आधार पर, जो 1990 में अंतर-राज्य परिषद के साथ एक साथ स्थापित हुई",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि ISC में छह कैबिनेट मंत्री सदस्य हैं, वे इस संख्या को स्टैंडिंग कमेटी पर लागू कर सकते हैं और विकल्प (a) को गलत तरीके से चुन सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: स्टैंडिंग कमेटी में 5 केंद्रीय कैबिनेट मंत्री होते हैं — 6 नहीं। पूरे ISC में प्रधानमंत्री द्वारा नामित 6 कैबिनेट मंत्री होते हैं।",
+        "विकल्प (b) को खारिज करें: स्टैंडिंग कमेटी में घुमावदार आधार पर 9 राज्यों के मुख्यमंत्री शामिल होते हैं — 6 नहीं।",
+        "विकल्प (d) को खारिज करें: स्टैंडिंग कमेटी 1996 में स्थापित हुई थी, ISC के साथ (1990) एक साथ नहीं।",
+        "विकल्प (c) की पुष्टि करें: 5 केंद्रीय कैबिनेट मंत्री + 9 राज्यों के मुख्यमंत्री (घुमावदार) — ISC स्टैंडिंग कमेटी की सही संरचना।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "ISC की स्टैंडिंग कमेटी की संरचना स्पष्ट रूप से परिभाषित है लेकिन अक्सर भ्रमित की जाती है।\n\n• विकल्प (a): गलत — छह कैबिनेट मंत्री पूरे ISC के लिए हैं, स्टैंडिंग कमेटी के लिए नहीं। स्टैंडिंग कमेटी में पांच केंद्रीय कैबिनेट मंत्री होते हैं।\n• विकल्प (b): गलत — नौ राज्यों के मुख्यमंत्री घुमावदार आधार पर सेवा देते हैं, छह नहीं।\n• विकल्प (c): सही — स्टैंडिंग कमेटी में केंद्र सरकार के पांच कैबिनेट मंत्री और नौ राज्यों के मुख्यमंत्री घुमावदार आधार पर शामिल होते हैं, जिसकी अध्यक्षता गृह मंत्री करते हैं।\n• विकल्प (d): गलत — स्टैंडिंग कमेटी 1996 में गठित हुई थी, जो ISC की स्थापना (1990) के छह वर्ष बाद है।\n\nमूल्यवर्धन:\n• पूरा ISC: 6 कैबिनेट मंत्री (प्रधानमंत्री द्वारा नामित)। स्टैंडिंग कमेटी: 5 कैबिनेट मंत्री।\n• घुमावदार तत्व का अर्थ है कि विभिन्न राज्य विभिन्न स्टैंडिंग कमेटी कार्यकालों में भाग लेते हैं — जिससे किसी क्षेत्रीय समूह का स्थायी प्रभुत्व नहीं होता।\n• गृह मंत्री की दोहरी भूमिका (जो क्षेत्रीय परिषदों और ISC स्टैंडिंग कमेटी दोनों की अध्यक्षता करते हैं) इसे UPSC के लिए एक उच्च-आवृत्ति वाला तथ्य बनाती है।"
+    }
+  },
+  {
+    "uuid": "f478f05c-409a-49bd-a73f-159dba06431d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Constitutional Limitations and Critiques of Article 263 Framework",
+        "Role of ISC in Cooperative Federalism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "scope-extension",
+      "concept_anchor": "ISC limitations — enforcement, frequency, non-justiciability",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following statements are legitimate critiques or constitutional limitations associated with the Inter-State Council. One is NOT a legitimate critique but a false characterisation. Identify the one that does NOT belong:\n\n(a) The Inter-State Council has no authority to summon state governments or compel compliance with its recommendations\n(b) Unlike the German Bundesrat, the ISC does not give states a direct role in federal legislative processes and functions only as an advisory body\n(c) The Inter-State Council's recommendations are binding on state governments in matters falling within the Concurrent List\n(d) The Constitution of India contains no timeline within which the President must establish the Inter-State Council, as evidenced by the 40-year gap between 1950 and 1990",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because the German Bundesrat is genuinely discussed in comparative federalism literature alongside ISC critiques, making students unsure whether it is a 'critique of ISC' or an external reference point.",
+      "elimination_logic": [
+        "Identify the common attribute: options (a), (b), and (d) are all critiques of or limitations on the ISC — absence of enforcement power, comparison with Bundesrat's stronger state representation, and the constitutional timeline gap.",
+        "Examine option (c): The assertion that ISC recommendations are binding on states regarding Concurrent List subjects is factually false — ISC recommendations are never binding. This option states a non-existent power, not a critique.",
+        "Option (c) does not belong to the category of 'legitimate critiques or limitations of ISC' — it is a false claim about ISC's power, making it the odd one out."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Three of the four options are legitimate critiques or constitutional limitations associated with the Inter-State Council. One is a false characterisation of ISC's power.\n\n• Option (a): A genuine critique — ISC cannot summon state governments or compel compliance. This limitation is constitutionally built into Article 263.\n• Option (b): A genuine comparative critique — the German Bundesrat gives states direct legislative participation at the federal level, while the ISC offers only advisory consultation.\n• Option (c): Odd one out — ISC recommendations are never binding, including on Concurrent List matters. This is a false claim about ISC authority, not a limitation or critique.\n• Option (d): A genuine constitutional limitation — the 40-year gap between Article 263's enactment (1950) and ISC's establishment (1990) demonstrates the complete absence of any constitutional timeline for ISC creation.\n\nValue Addition:\n• COAG (Council of Australian Governments) is another comparative model often cited alongside German Bundesrat in discussions of India's ISC.\n• The Concurrent List is precisely the area where ISC consultation would be most valuable — yet ISC has no formal role there.\n• Punchhi Commission tried to address the Concurrent List gap by recommending ISC consultation before Parliament legislates on concurrent subjects."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद से संबंधित निम्नलिखित में से तीन कथन वैध आलोचनाएँ या संवैधानिक सीमाएँ हैं। एक कथन वैध आलोचना नहीं बल्कि एक गलत वर्णन है। वह कथन पहचानिए जो संबंधित नहीं है:\n\n(a) अंतर-राज्य परिषद के पास राज्य सरकारों को बुलाने या अपनी सिफारिशों का पालन कराने का अधिकार नहीं है\n(b) जर्मन Bundesrat के विपरीत, ISC राज्यों को संघीय विधायी प्रक्रियाओं में प्रत्यक्ष भूमिका नहीं देता और केवल एक सलाहकार संस्था के रूप में कार्य करता है\n(c) अंतर-राज्य परिषद की सिफारिशें समवर्ती सूची के विषयों में राज्य सरकारों के लिए बाध्यकारी हैं\n(d) भारत के संविधान में कोई समयसीमा नहीं है जिसके भीतर राष्ट्रपति को अंतर-राज्य परिषद स्थापित करनी हो, जैसा कि 1950 और 1990 के बीच 40 वर्षों के अंतराल से स्पष्ट होता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because the German Bundesrat is genuinely discussed in comparative federalism literature alongside ISC critiques, making students unsure whether it is a 'critique of ISC' or an external reference point.",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: विकल्प (a), (b), और (d) सभी ISC की आलोचनाएँ या सीमाएँ हैं — प्रवर्तन शक्ति का अभाव, Bundesrat के मजबूत राज्य प्रतिनिधित्व से तुलना, और संवैधानिक समयरेखा का अंतर।",
+        "विकल्प (c) की जांच करें: यह दावा कि ISC की सिफारिशें Concurrent List विषयों में राज्यों के लिए बाध्यकारी हैं, तथ्यात्मक रूप से गलत है — ISC की सिफारिशें कभी बाध्यकारी नहीं होतीं। यह विकल्प एक अवास्तविक शक्ति बताता है, आलोचना नहीं।",
+        "विकल्प (c) 'ISC की वैध आलोचनाएँ या सीमाएँ' की श्रेणी में नहीं आता — यह ISC की शक्ति के बारे में गलत दावा है, अतः यह अलग विकल्प है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "चार विकल्पों में से तीन ISC से संबंधित वैध आलोचनाएँ या संवैधानिक सीमाएँ हैं। एक ISC की शक्ति के बारे में गलत वर्णन है।\n\n• विकल्प (a): एक वास्तविक आलोचना — ISC के पास राज्य सरकारों को बुलाने या अपनी सिफारिशों का पालन कराने का अधिकार नहीं है। यह सीमा अनुच्छेद 263 में निहित है।\n• विकल्प (b): एक वास्तविक तुलनात्मक आलोचना — जर्मन Bundesrat राज्यों को संघीय विधायी प्रक्रियाओं में प्रत्यक्ष भागीदारी देता है, जबकि ISC केवल सलाहकार संस्था के रूप में कार्य करता है।\n• विकल्प (c): अलग विकल्प — ISC की सिफारिशें कभी बाध्यकारी नहीं होतीं, यहाँ तक कि Concurrent List मामलों में भी। यह ISC की शक्ति के बारे में गलत दावा है, न कि कोई सीमा या आलोचना।\n• विकल्प (d): एक वास्तविक संवैधानिक सीमा — अनुच्छेद 263 के लागू होने (1950) और ISC की स्थापना (1990) के बीच 40 वर्षों का अंतर ISC के निर्माण के लिए कोई संवैधानिक समयसीमा न होने को दर्शाता है।\n\nमूल्यवर्धन:\n• COAG (Council of Australian Governments) एक अन्य तुलनात्मक मॉडल है जो जर्मन Bundesrat के साथ भारत के ISC पर चर्चा में अक्सर उद्धृत होता है।\n• Concurrent List वह क्षेत्र है जहाँ ISC की सलाह सबसे अधिक मूल्यवान होती — फिर भी ISC की वहाँ कोई औपचारिक भूमिका नहीं है।\n• पंची आयोग ने Concurrent List के अंतर को दूर करने के लिए संसद द्वारा समवर्ती विषयों पर विधायिका से पहले ISC की सलाह लेने की सिफारिश की।"
+    }
+  },
+  {
+    "uuid": "7e1ff7fe-0f89-41ad-b0b2-aa2d9c61ef3f",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Composition of the Inter-State Council: Members and Categories",
+        "Constitutional Basis of Inter-State Council: Article 263"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "All state CMs as ISC members — Article 263 President's design choice",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Chief Ministers of all states, regardless of their political affiliation or the party governing at the Centre, are full members of the Inter-State Council.\n\nReason (R): Article 263 of the Constitution uses comprehensive language referring to 'states' in their entirety when describing the scope of matters the body may address, implying an inclusive membership covering all state governments.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because both A and R are correct, and students may assume R (constitutional mandate for all states) explains A (all CMs being members) without examining whether the causal relationship is accurate.",
+      "elimination_logic": [
+        "Step 1: Is A correct? — Yes. Chief Ministers of ALL states (not just some) are members of the ISC — no state CM is excluded from full ISC membership.",
+        "Step 2: Is R correct? — Yes. Article 263 speaks of matters of 'common interest' between the Union and states, using 'states' comprehensively — this does support inclusive membership.",
+        "Step 3: Does R causally explain A? — No. The membership of all CMs flows from the Presidential Order of 1990, which was a design choice made under the discretionary power of Article 263 — not a direct logical deduction from Article 263's language. Article 263 does not specifically mandate that all CMs must be members; the Presidential Order made that determination.",
+        "Both A and R are correct, but R is NOT the direct causal explanation of A — select option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The ISC's inclusive membership (all state CMs) and its constitutional basis (Article 263) are both facts — but their causal relationship requires careful examination.\n\nAssertion (A) is correct: All state CMs are full members of ISC — no state is excluded, whether governed by the ruling party at the Centre or not. This is a democratic design feature.\n\nReason (R) is correct: Article 263 refers to 'states' in a general and comprehensive sense, using language about the 'common interest' of states and the Union that implies broad inclusion.\n\nCausal link — Absent: The all-inclusive membership was determined by the Presidential Order of 1990, which operationalised Article 263. Article 263 itself does not specify membership — it only empowers the President to set up such a body. The Presidential Order could theoretically have created a selective membership framework. The 'all CMs' design was a deliberate policy choice, not a constitutional compulsion from Article 263's language.\n\nValue Addition:\n• The Presidential Order (May 28, 1990) is the founding document of ISC — its membership rules are set there, not in the Constitution.\n• Article 263's silence on composition is deliberate — giving the President flexibility in designing the body.\n• Including opposition-governed states' CMs as full members is a democratic safeguard against ISC becoming a partisan forum."
+    },
+    "hi": {
+      "display_text": "दावा (A): सभी राज्यों के मुख्यमंत्री, उनकी राजनीतिक संबद्धता या केंद्र में शासित पार्टी की परवाह किए बिना, अंतर-राज्य परिषद के पूर्ण सदस्य हैं।\n\nकारण (R): संविधान के अनुच्छेद 263 में 'राज्यों' के व्यापक संदर्भ में भाषा का प्रयोग किया गया है, जो इस निकाय द्वारा संबोधित किए जाने वाले मामलों के दायरे का वर्णन करता है, जो सभी राज्य सरकारों को शामिल करने वाली सदस्यता का संकेत देता है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि दोनों A और R सही हैं, और छात्र मान सकते हैं कि R (सभी राज्यों के लिए संवैधानिक अनिवार्यता) A (सभी मुख्यमंत्री सदस्य हैं) की व्याख्या करता है बिना यह जांचे कि कारणात्मक संबंध सही है या नहीं।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — हाँ। सभी राज्यों के मुख्यमंत्री (केवल कुछ नहीं) ISC के सदस्य हैं — कोई भी राज्य का मुख्यमंत्री पूर्ण ISC सदस्यता से बाहर नहीं है।",
+        "चरण 2: क्या R सही है? — हाँ। अनुच्छेद 263 संघ और राज्यों के बीच 'साझा हित' के मामलों की बात करता है, जिसमें 'राज्यों' को व्यापक रूप से शामिल किया गया है — यह समावेशी सदस्यता का समर्थन करता है।",
+        "चरण 3: क्या R कारणात्मक रूप से A की व्याख्या करता है? — नहीं। सभी मुख्यमंत्रियों की सदस्यता 1990 के राष्ट्रपति आदेश से आती है, जो अनुच्छेद 263 की विवेकाधीन शक्ति के तहत एक डिज़ाइन विकल्प था — अनुच्छेद 263 की भाषा से सीधे तार्किक निष्कर्ष नहीं। अनुच्छेद 263 विशेष रूप से यह नहीं कहता कि सभी मुख्यमंत्री सदस्य होंगे; यह निर्धारण राष्ट्रपति आदेश ने किया।",
+        "A और R दोनों सही हैं, लेकिन R A का प्रत्यक्ष कारणात्मक स्पष्टीकरण नहीं है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "ISC की समावेशी सदस्यता (सभी राज्य मुख्यमंत्री) और इसका संवैधानिक आधार (अनुच्छेद 263) दोनों तथ्य हैं — लेकिन उनके कारणात्मक संबंध की सावधानीपूर्वक जांच आवश्यक है।\n\nदावा (A) सही है: सभी राज्य के मुख्यमंत्री ISC के पूर्ण सदस्य हैं — कोई राज्य बाहर नहीं है, चाहे वह केंद्र की सत्तारूढ़ पार्टी द्वारा शासित हो या नहीं। यह एक लोकतांत्रिक डिज़ाइन विशेषता है।\n\nकारण (R) सही है: अनुच्छेद 263 'राज्यों' को सामान्य और व्यापक अर्थ में संदर्भित करता है, जिसमें राज्यों और संघ के 'साझा हित' के बारे में भाषा समावेशी सदस्यता का संकेत देती है।\n\nकारणात्मक संबंध — अनुपस्थित: सभी-समावेशी सदस्यता 1990 के राष्ट्रपति आदेश द्वारा निर्धारित की गई थी, जिसने अनुच्छेद 263 को क्रियान्वित किया। अनुच्छेद 263 स्वयं सदस्यता निर्दिष्ट नहीं करता — यह केवल राष्ट्रपति को ऐसा निकाय स्थापित करने का अधिकार देता है। राष्ट्रपति आदेश सैद्धांतिक रूप से चयनात्मक सदस्यता ढांचा बना सकता था। 'सभी मुख्यमंत्री' डिज़ाइन एक जानबूझकर नीति विकल्प था, न कि अनुच्छेद 263 की भाषा से संवैधानिक बाध्यता।\n\nमूल्य संवर्धन:\n• राष्ट्रपति आदेश (28 मई, 1990) ISC का संस्थापक दस्तावेज़ है — इसकी सदस्यता नियम वहीं निर्धारित हैं, संविधान में नहीं।\n• अनुच्छेद 263 की सदस्यता पर मौनता जानबूझकर है — जो राष्ट्रपति को निकाय डिज़ाइन में लचीलापन देती है।\n• विपक्ष द्वारा शासित राज्यों के मुख्यमंत्रियों को पूर्ण सदस्य बनाना ISC के पक्षपाती मंच बनने से बचाने के लिए एक लोकतांत्रिक सुरक्षा है।"
+    }
+  },
+  {
+    "uuid": "40389978-14cd-4c8d-9bf9-cc142d083c12",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Inter-State Council vs. National Development Council (NDC)",
+        "Distinction: Inter-State Council vs. National Integration Council"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "NDC, NIC, ISC, Zonal Councils — legal basis and chairmanship",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Body) with List II (Nature and Key Feature):",
+        "columns": [
+          "List I (Body)",
+          "List II (Nature / Key Feature)"
+        ],
+        "rows": [
+          [
+            "A. National Development Council (NDC)",
+            "1. Statutory body, chaired by Union Home Minister"
+          ],
+          [
+            "B. National Integration Council (NIC)",
+            "2. Constitutional body under Article 263, chaired by Prime Minister"
+          ],
+          [
+            "C. Zonal Councils",
+            "3. Extra-constitutional body created by executive resolution in 1952"
+          ],
+          [
+            "D. Inter-State Council (ISC)",
+            "4. Extra-constitutional, non-statutory body with civil society representation, set up in 1961"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-4, B-3, C-2, D-1\n(c) A-3, B-4, C-1, D-2\n(d) A-1, B-2, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a places NDC as constitutional and NIC as statutory — a double-swap that students who know 'both are non-constitutional' but are uncertain about which is which may select.",
+      "elimination_logic": [
+        "Identify A: National Development Council — extra-constitutional, executive resolution 1952; A matches with 3.",
+        "Identify B: National Integration Council — extra-constitutional, non-statutory, set up 1961; B matches with 4.",
+        "Identify C: Zonal Councils — statutory under States Reorganisation Act 1956, chaired by Home Minister; C matches with 1.",
+        "Identify D: Inter-State Council — constitutional under Article 263, PM-chaired; D matches with 2.",
+        "Correct combination: A-3, B-4, C-1, D-2 — select option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This question tests cross-body classification precision — a favourite UPSC format for federalism topics.\n\nCorrect matchings:\n• A (NDC) → 3 (Extra-constitutional, executive resolution): NDC was created by a Cabinet decision in 1952 — no constitutional or statutory backing.\n• B (NIC) → 4 (Extra-constitutional, non-statutory, civil society): NIC (1961) shares the extra-constitutional status with NDC but has a broader, non-governmental membership.\n• C (Zonal Councils) → 1 (Statutory, Home Minister-chaired): States Reorganisation Act 1956 created Zonal Councils — they are statutory, not constitutional.\n• D (ISC) → 2 (Constitutional, Article 263, PM-chaired): ISC is the only constitutional body among these four — the most significant distinction.\n\nTrap pairing: A and B are both extra-constitutional — students may swap their specific descriptions.\n\nValue Addition:\n• Memory aid: Only ISC is constitutional among ISC, NDC, NIC, and Zonal Councils.\n• Zonal Councils are statutory (Parliament-created); ISC is constitutional (Constitution-created).\n• NDC: PM-chaired, for Five-Year Plans (now defunct). NIC: PM-chaired, for communal harmony (active but infrequent)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (निकाय) को सूची II (स्वभाव और मुख्य विशेषता) से मिलाइए:",
+        "columns": [
+          "सूची I (निकाय)",
+          "सूची II (स्वभाव / मुख्य विशेषता)"
+        ],
+        "rows": [
+          [
+            "A. राष्ट्रीय विकास परिषद (NDC)",
+            "1. वैधानिक निकाय, जिसकी अध्यक्षता केंद्रीय गृह मंत्री करते हैं"
+          ],
+          [
+            "B. राष्ट्रीय एकता परिषद (NIC)",
+            "2. अनुच्छेद 263 के तहत संवैधानिक निकाय, जिसकी अध्यक्षता प्रधानमंत्री करते हैं"
+          ],
+          [
+            "C. क्षेत्रीय परिषदें",
+            "3. संवैधानिक से बाहर निकाय, जिसे 1952 में कार्यकारी प्रस्ताव द्वारा बनाया गया"
+          ],
+          [
+            "D. अंतर-राज्यीय परिषद (ISC)",
+            "4. संवैधानिक से बाहर, गैर-वैधानिक निकाय जिसमें नागरिक समाज का प्रतिनिधित्व है, 1961 में स्थापित"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-4, B-3, C-2, D-1\n(c) A-3, B-4, C-1, D-2\n(d) A-1, B-2, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a में NDC को संवैधानिक और NIC को वैधानिक बताया गया है — यह एक दोहरी गलती है जिसे वे छात्र चुन सकते हैं जो जानते हैं कि 'दोनों गैर-संवैधानिक हैं' लेकिन यह निश्चित नहीं है कि कौन सा कौन है।",
+      "elimination_logic": [
+        "A की पहचान करें: राष्ट्रीय विकास परिषद — संवैधानिक से बाहर, कार्यकारी प्रस्ताव 1952; A मेल खाता है 3 से।",
+        "B की पहचान करें: राष्ट्रीय एकता परिषद — संवैधानिक से बाहर, गैर-वैधानिक, 1961 में स्थापित; B मेल खाता है 4 से।",
+        "C की पहचान करें: क्षेत्रीय परिषदें — राज्यों के पुनर्गठन अधिनियम 1956 के तहत वैधानिक, गृह मंत्री की अध्यक्षता में; C मेल खाता है 1 से।",
+        "D की पहचान करें: अंतर-राज्यीय परिषद — अनुच्छेद 263 के तहत संवैधानिक, प्रधानमंत्री की अध्यक्षता में; D मेल खाता है 2 से।",
+        "सही संयोजन: A-3, B-4, C-1, D-2 — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह प्रश्न विभिन्न निकायों के वर्गीकरण की सटीकता की परीक्षा लेता है — संघवाद विषयों के लिए UPSC का पसंदीदा प्रारूप।\n\nसही मेल:\n• A (NDC) → 3 (संवैधानिक से बाहर, कार्यकारी प्रस्ताव): NDC की स्थापना 1952 में कैबिनेट निर्णय द्वारा हुई — न तो इसका कोई संवैधानिक और न ही वैधानिक आधार है।\n• B (NIC) → 4 (संवैधानिक से बाहर, गैर-वैधानिक, नागरिक समाज): NIC (1961) भी संवैधानिक से बाहर है लेकिन इसका सदस्यता दायरा व्यापक और गैर-सरकारी है।\n• C (क्षेत्रीय परिषदें) → 1 (वैधानिक, गृह मंत्री की अध्यक्षता में): राज्यों के पुनर्गठन अधिनियम 1956 ने क्षेत्रीय परिषदों की स्थापना की — ये वैधानिक हैं, संवैधानिक नहीं।\n• D (ISC) → 2 (संवैधानिक, अनुच्छेद 263, प्रधानमंत्री की अध्यक्षता में): ISC इन चारों में एकमात्र संवैधानिक निकाय है — यह सबसे महत्वपूर्ण भेद है।\n\nफँसाव संयोजन: A और B दोनों संवैधानिक से बाहर हैं — छात्र इनके विवरणों को उलट सकते हैं।\n\nमूल्यवर्धन:\n• स्मृति सहायता: ISC, NDC, NIC, और क्षेत्रीय परिषदों में केवल ISC संवैधानिक है।\n• क्षेत्रीय परिषदें वैधानिक (संसद द्वारा निर्मित) हैं; ISC संवैधानिक (संविधान द्वारा निर्मित) है।\n• NDC: प्रधानमंत्री की अध्यक्षता में, पंचवर्षीय योजनाओं के लिए (अब समाप्त)। NIC: प्रधानमंत्री की अध्यक्षता में, साम्प्रदायिक सद्भाव के लिए (सक्रिय लेकिन कम)।"
+    }
+  },
+  {
+    "uuid": "664dba17-5cc4-4b3a-b694-8451f18de5f8",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Union Territories' Representation in Inter-State Council",
+        "Composition of the Inter-State Council: Members and Categories"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "J&K reorganisation 2019 — UT status change affecting ISC membership",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of events that are relevant to the membership composition of the Inter-State Council?\n\n1. Establishment of the Inter-State Council by Presidential Order\n2. Jammu & Kashmir Reorganisation Act bifurcating J&K into two Union Territories\n3. 12th Inter-State Council plenary meeting\n\n(a) 1 → 3 → 2\n(b) 2 → 1 → 3\n(c) 1 → 2 → 3\n(d) 3 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c places J&K's UT reorganisation before the 12th ISC meeting of 2016, which sounds plausible to students who confuse the Reorganisation Act's year (2019) with earlier J&K-related events.",
+      "elimination_logic": [
+        "Fix ISC establishment: Presidential Order, May 28, 1990 — earliest event.",
+        "12th ISC meeting: 2016 — well after ISC establishment.",
+        "J&K Reorganisation Act: 2019 — after the 2016 ISC meeting.",
+        "Puducherry acquiring legislature: Puducherry became a UT with legislature under the Government of Union Territories Act, 1963 — well before 1990. But the question presents it as: ISC established (1990) → 12th ISC meeting (2016) → J&K Reorganisation (2019). Correct order: 1 → 3 → 2 — select option (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This question tests whether students can sequence J&K's changed constitutional status relative to ISC's timeline.\n\nCorrect sequence:\n1. ISC established by Presidential Order (May 1990): The foundation — earliest event.\n2. 12th ISC Plenary Meeting (2016): Discussed Punchhi Commission recommendations — landmark meeting after 8-year gap.\n3. J&K Reorganisation Act (2019): J&K was bifurcated into two UTs — J&K (with legislature) and Ladakh (without legislature). This changed J&K's representation in ISC: previously a full state with a CM as member; post-2019, a UT with legislature (CM/Lt. Governor as member) and Ladakh (UT without legislature, Administrator as invitee).\n\nWrong options fail by placing J&K reorganisation before the 2016 meeting or before ISC's establishment.\n\nValue Addition:\n• Before 2019, J&K had a special status under Article 370 — its CM was always a full ISC member as head of a full state.\n• After 2019, J&K UT (with legislature): elected government head is member. Ladakh UT (without legislature): Lt. Governor is invitee.\n• The 2019 reorganisation created India's newest UT with legislature (J&K) and newest UT without legislature (Ladakh)."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद की सदस्यता संरचना से संबंधित घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. राष्ट्रपति आदेश द्वारा अंतर-राज्य परिषद की स्थापना\n2. जम्मू-कश्मीर पुनर्गठन अधिनियम जिसके तहत जम्मू-कश्मीर को दो केंद्र शासित प्रदेशों में विभाजित किया गया\n3. 12वीं अंतर-राज्य परिषद की पूर्ण बैठक\n\n(a) 1 → 3 → 2\n(b) 2 → 1 → 3\n(c) 1 → 2 → 3\n(d) 3 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c जम्मू-कश्मीर के UT पुनर्गठन को 2016 के 12वें ISC बैठक से पहले रखता है, जो उन छात्रों के लिए संभावित लगता है जो पुनर्गठन अधिनियम के वर्ष (2019) को पहले के जम्मू-कश्मीर संबंधित घटनाओं से भ्रमित करते हैं।",
+      "elimination_logic": [
+        "ISC की स्थापना निश्चित करें: राष्ट्रपति आदेश, 28 मई 1990 — सबसे प्रारंभिक घटना।",
+        "12वीं ISC बैठक: 2016 — ISC स्थापना के बाद।",
+        "जम्मू-कश्मीर पुनर्गठन अधिनियम: 2019 — 2016 की ISC बैठक के बाद।",
+        "पुडुचेरी का विधानमंडल प्राप्त करना: पुडुचेरी 1963 के यूनियन टेरिटरीज अधिनियम के तहत विधानमंडल वाला UT बना — 1990 से बहुत पहले। लेकिन प्रश्न इसे इस प्रकार प्रस्तुत करता है: ISC स्थापित (1990) → 12वीं ISC बैठक (2016) → जम्मू-कश्मीर पुनर्गठन (2019)। सही क्रम: 1 → 3 → 2 — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह प्रश्न यह परीक्षण करता है कि छात्र जम्मू-कश्मीर की बदली संवैधानिक स्थिति को ISC की समयरेखा के सापेक्ष सही क्रम में रख पाते हैं या नहीं।\n\nसही क्रम:\n1. राष्ट्रपति आदेश द्वारा ISC की स्थापना (मई 1990): आधार — सबसे प्रारंभिक घटना।\n2. 12वीं ISC पूर्ण बैठक (2016): पंची आयोग की सिफारिशों पर चर्चा — 8 साल के अंतराल के बाद महत्वपूर्ण बैठक।\n3. जम्मू-कश्मीर पुनर्गठन अधिनियम (2019): जम्मू-कश्मीर को दो UTs में विभाजित किया गया — जम्मू-कश्मीर (विधानमंडल सहित) और लद्दाख (विधानमंडल के बिना)। इससे ISC में जम्मू-कश्मीर का प्रतिनिधित्व बदला: पहले पूर्ण राज्य के रूप में जिसमें मुख्यमंत्री सदस्य थे; 2019 के बाद, विधानमंडल वाला UT (मुख्यमंत्री/राज्यपाल सदस्य) और लद्दाख (विधानमंडल के बिना UT, प्रशासक आमंत्रित सदस्य)।\n\nगलत विकल्प जम्मू-कश्मीर पुनर्गठन को 2016 की बैठक या ISC की स्थापना से पहले रखकर गलत हैं।\n\nमूल्य संवर्धन:\n• 2019 से पहले, जम्मू-कश्मीर को अनुच्छेद 370 के तहत विशेष दर्जा प्राप्त था — उसका मुख्यमंत्री हमेशा पूर्ण राज्य के प्रमुख के रूप में ISC का पूर्ण सदस्य था।\n• 2019 के बाद, जम्मू-कश्मीर UT (विधानमंडल सहित): निर्वाचित सरकार का प्रमुख सदस्य होता है। लद्दाख UT (विधानमंडल के बिना): राज्यपाल आमंत्रित सदस्य होता है।\n• 2019 का पुनर्गठन भारत के सबसे नए विधानमंडल वाले UT (जम्मू-कश्मीर) और सबसे नए बिना विधानमंडल वाले UT (लद्दाख) का सृजन था।"
+    }
+  },
+  {
+    "uuid": "7184ee3e-86f8-46bd-8465-84fad5155316",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Three Enumerated Duties under Article 263",
+        "Nature of Recommendations: Advisory vs. Binding Character",
+        "Inter-State Council vs. Inter-State Water Disputes Tribunal"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 263 Clause (a) advisory vs Article 131 SC binding — parallel mechanisms",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Inter-State Council's role in dispute resolution and its comparison with other constitutional mechanisms:\n\n1. Under Article 263, the Inter-State Council's function of inquiring into and advising upon inter-state disputes makes it an alternative adjudicatory mechanism to the Supreme Court's jurisdiction under Article 131.\n2. The Inter-State Water Disputes Tribunal, unlike the Inter-State Council, operates under Article 262 and can produce awards that Parliament may declare to be final, effectively barring Supreme Court jurisdiction.\n3. The advisory character of ISC recommendations under Article 263 means that state governments are constitutionally free to disregard such recommendations without any legal consequence.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under Article 263, the Inter-State Council's function of inquiring into and advising upon inter-state disputes makes it an alternative adjudicatory mechanism to the Supreme Court's jurisdiction under Article 131.",
+          "verdict": "Incorrect",
+          "reason": "ISC's Clause (a) function is advisory — not adjudicatory. The ISC cannot produce enforceable decisions. It is a consultative parallel track, not an alternative adjudicatory mechanism. The Supreme Court under Article 131 produces binding determinations."
+        },
+        {
+          "statement": "The Inter-State Water Disputes Tribunal, unlike the Inter-State Council, operates under Article 262 and can produce awards that Parliament may declare to be final, effectively barring Supreme Court jurisdiction.",
+          "verdict": "Correct",
+          "reason": "This is accurate — ISWDT operates under Article 262 and the Inter-State Water Disputes Act, 1956. Parliament can declare tribunal awards final under Article 262(2), excluding SC jurisdiction."
+        },
+        {
+          "statement": "The advisory character of ISC recommendations under Article 263 means that state governments are constitutionally free to disregard such recommendations without any legal consequence.",
+          "verdict": "Correct",
+          "reason": "Since ISC recommendations are non-binding, states face no constitutional or legal sanction for not implementing them. The ISC has no enforcement mechanism — this is a constitutional fact."
+        }
+      ],
+      "strong_distractor": "d — Option d (1, 2 and 3) tempts students who accept Statement 1's characterisation of ISC as an 'alternative mechanism' without questioning whether 'advisory' and 'adjudicatory' can coexist.",
+      "elimination_logic": [
+        "Statement 1: ISC is advisory (Clause (a) says 'advising upon disputes') — calling it an 'alternative adjudicatory mechanism' is false. Adjudication implies binding determination; ISC only advises.",
+        "Statement 2: ISWDT under Article 262, with Parliament's power to declare awards final and exclude SC — accurate. Correct.",
+        "Statement 3: States face no legal consequence for ignoring ISC recommendations — this is the constitutional reality. Correct.",
+        "Statements 2 and 3 are correct; Statement 1 is false — select option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The relationship between ISC, the Supreme Court under Article 131, and the ISWDT under Article 262 is a triangular comparison UPSC tests at advanced levels.\n\n• Statement 1 — Incorrect: ISC's Clause (a) function is advisory — 'inquiring and advising' is explicitly non-binding. An 'adjudicatory mechanism' produces determinations; ISC does not. These are fundamentally different functions.\n• Statement 2 — Correct: ISWDT under Article 262 operates entirely separately from ISC. Its awards can be made final by Parliament under Article 262(2), which can also bar SC jurisdiction — a unique constitutional feature not available to ISC.\n• Statement 3 — Correct: No constitutional provision penalises a state government for declining to implement ISC recommendations. The ISC's advisory character means compliance is politically voluntary, not legally compelled.\n\nValue Addition:\n• Three parallel tracks for inter-state disputes: (1) ISC — advisory, (2) SC under Article 131 — binding, (3) ISWDT under Article 262 — potentially binding with SC excluded.\n• Punchhi Commission's recommendation to use ISC before Article 131 suits would not make ISC adjudicatory — it would remain advisory.\n• 'Advising' and 'adjudicating' are constitutionally distinct functions — a distinction the UPSC consistently tests."
+    },
+    "hi": {
+      "display_text": "अंतर-राज्य परिषद की विवाद समाधान में भूमिका और अन्य संवैधानिक तंत्रों के साथ इसकी तुलना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 263 के तहत, अंतर-राज्य परिषद का अंतर-राज्य विवादों की जांच और सलाह देने का कार्य इसे अनुच्छेद 131 के तहत सर्वोच्च न्यायालय के क्षेत्राधिकार के लिए एक वैकल्पिक निर्णयात्मक तंत्र बनाता है।\n2. अंतर-राज्य जल विवाद न्यायाधिकरण, अंतर-राज्य परिषद के विपरीत, अनुच्छेद 262 के अंतर्गत कार्य करता है और ऐसे पुरस्कार दे सकता है जिन्हें संसद अंतिम घोषित कर सकती है, जिससे प्रभावी रूप से सर्वोच्च न्यायालय का क्षेत्राधिकार प्रतिबंधित हो जाता है।\n3. अनुच्छेद 263 के तहत अंतर-राज्य परिषद की सिफारिशों का सलाहकार स्वभाव यह दर्शाता है कि राज्य सरकारें बिना किसी कानूनी परिणाम के ऐसी सिफारिशों की अनदेखी करने के लिए संवैधानिक रूप से स्वतंत्र हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अनुच्छेद 263 के तहत अंतर-राज्य परिषद की सिफारिशों का सलाहकार स्वभाव यह दर्शाता है कि राज्य सरकारें बिना किसी कानूनी परिणाम के ऐसी सिफारिशों की अनदेखी करने के लिए संवैधानिक रूप से स्वतंत्र हैं।",
+          "verdict": "सही",
+          "reason": "चूंकि अंतर-राज्य परिषद की सिफारिशें बाध्यकारी नहीं हैं, राज्यों को उन्हें लागू न करने पर कोई संवैधानिक या कानूनी दंड नहीं मिलता। अंतर-राज्य परिषद के पास कोई प्रवर्तन तंत्र नहीं है — यह एक संवैधानिक तथ्य है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (1, 2 और 3) उन छात्रों को आकर्षित करता है जो कथन 1 के ISC को 'वैकल्पिक तंत्र' के रूप में वर्णन को बिना यह जांचे स्वीकार कर लेते हैं कि 'सलाहकार' और 'निर्णयात्मक' सह-अस्तित्व में हो सकते हैं या नहीं।",
+      "elimination_logic": [
+        "कथन 1: ISC सलाहकार है (उपधारा (a) कहती है 'विवादों पर सलाह देना') — इसे 'वैकल्पिक निर्णयात्मक तंत्र' कहना गलत है। निर्णयात्मक का अर्थ है बाध्यकारी निर्णय; ISC केवल सलाह देती है।",
+        "कथन 2: ISWDT अनुच्छेद 262 के तहत है, जिसमें संसद को पुरस्कार अंतिम घोषित करने और सर्वोच्च न्यायालय के क्षेत्राधिकार को समाप्त करने का अधिकार है — सही।",
+        "कथन 3: राज्यों को ISC की सिफारिशों की अनदेखी करने पर कोई कानूनी परिणाम नहीं भुगतना पड़ता — यह संवैधानिक वास्तविकता है। सही।",
+        "कथन 2 और 3 सही हैं; कथन 1 गलत है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अंतर-राज्य परिषद (ISC), अनुच्छेद 131 के तहत सर्वोच्च न्यायालय, और अनुच्छेद 262 के तहत अंतर-राज्य जल विवाद न्यायाधिकरण (ISWDT) के बीच संबंध UPSC उन्नत स्तर पर त्रिकोणीय तुलना के रूप में परखता है।\n\n• कथन 1 — गलत: ISC का उपधारा (a) कार्य सलाहकार है — 'जांच और सलाह देना' स्पष्ट रूप से बाध्यकारी नहीं है। 'निर्णयात्मक तंत्र' निर्णय देता है; ISC ऐसा नहीं करता। ये मूल रूप से भिन्न कार्य हैं।\n• कथन 2 — सही: ISWDT अनुच्छेद 262 के तहत पूरी तरह से ISC से अलग कार्य करता है। इसके पुरस्कार संसद द्वारा अनुच्छेद 262(2) के तहत अंतिम घोषित किए जा सकते हैं, जो सर्वोच्च न्यायालय के क्षेत्राधिकार को भी समाप्त कर सकता है — यह ISC के लिए उपलब्ध नहीं है।\n• कथन 3 — सही: ISC की सिफारिशों को लागू न करने पर किसी राज्य सरकार को कोई संवैधानिक दंड नहीं मिलता। ISC का सलाहकार स्वभाव राजनीतिक रूप से स्वैच्छिक अनुपालन को दर्शाता है, कानूनी बाध्यता नहीं।\n\nमूल्यवर्धन:\n• अंतर-राज्य विवादों के लिए तीन समानांतर मार्ग: (1) ISC — सलाहकार, (2) अनुच्छेद 131 के तहत सर्वोच्च न्यायालय — बाध्यकारी, (3) अनुच्छेद 262 के तहत ISWDT — संभावित रूप से बाध्यकारी और सर्वोच्च न्यायालय को बाहर रखा गया।\n• पंची आयोग की अनुशंसा ISC को अनुच्छेद 131 के तहत मामलों से पहले उपयोग करने की, ISC को निर्णयात्मक नहीं बनाएगी — यह सलाहकार ही रहेगा।\n• 'सलाह देना' और 'निर्णय देना' संवैधानिक रूप से भिन्न कार्य हैं — UPSC इसे लगातार परखता है।"
+    }
+  },
+  {
+    "uuid": "55d1d2f2-779a-4c56-aebc-5d76999c41a8",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Punchhi Commission Recommendations on ISC Reforms",
+        "Article 263 and Pre-Constitutional Bodies: Historical Context"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Punchhi Commission — constituted 2007, reported 2010",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Second Commission on Centre-State Relations, commonly referred to as the Punchhi Commission, was constituted in which year and submitted its report in which year respectively?\n\n(a) Constituted in 2003 and reported in 2008\n(b) Constituted in 2005 and reported in 2010\n(c) Constituted in 2007 and reported in 2010\n(d) Constituted in 2007 and reported in 2012",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b places the Punchhi Commission as constituted in 2005, which is close enough to 2007 that students who remember 'mid-2000s' will be drawn to it.",
+      "elimination_logic": [
+        "Eliminate option (a): Punchhi Commission was not constituted in 2003 — that is too early and predates the political context of its formation.",
+        "Eliminate option (b): 2005 is incorrect — the Commission was constituted in 2007.",
+        "Eliminate option (d): The Commission was constituted in 2007 and submitted its report in 2010 — not in 2012.",
+        "Confirm option (c): Punchhi Commission was constituted in 2007 and submitted its report in 2010 — both years correctly matched."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Punchhi Commission's timeline is a precision data point that distinguishes it from the Sarkaria Commission.\n\n• Option (a): Incorrect — 2003 is too early; the political and administrative context for the Punchhi Commission's constitution was 2007.\n• Option (b): Incorrect — 2005 is a plausible temporal swap but incorrect; the Commission was constituted in 2007.\n• Option (c): Correct — The Second Commission on Centre-State Relations (Punchhi Commission) was constituted in 2007 and submitted its report in 2010. Justice Madan Mohan Punchhi (former CJI) chaired it.\n• Option (d): Incorrect — The Commission's report was submitted in 2010, not 2012. The 12th ISC meeting discussed these recommendations six years later, in 2016.\n\nValue Addition:\n• Sarkaria Commission: Constituted 1983, reported 1988. Punchhi Commission: Constituted 2007, reported 2010.\n• Justice M.M. Punchhi was the 24th Chief Justice of India — the Commission is named after him.\n• Punchhi Commission had 7 volumes and 273 recommendations covering Centre-State relations broadly."
+    },
+    "hi": {
+      "display_text": "केंद्र-राज्य संबंधों पर दूसरी आयोग, जिसे सामान्यतः पंची आयोग कहा जाता है, किस वर्ष गठित हुई और किस वर्ष अपनी रिपोर्ट प्रस्तुत की?\n\n(a) 2003 में गठित और 2008 में रिपोर्ट प्रस्तुत की\n(b) 2005 में गठित और 2010 में रिपोर्ट प्रस्तुत की\n(c) 2007 में गठित और 2010 में रिपोर्ट प्रस्तुत की\n(d) 2007 में गठित और 2012 में रिपोर्ट प्रस्तुत की",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b पंची आयोग को 2005 में गठित बताता है, जो 2007 के काफी करीब है इसलिए जो छात्र 'मिड-2000s' याद रखते हैं वे इस विकल्प की ओर आकर्षित होंगे।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: पंची आयोग 2003 में गठित नहीं हुआ था — यह बहुत पहले की बात है और इसके गठन के राजनीतिक संदर्भ से पहले की तारीख है।",
+        "विकल्प (b) को खारिज करें: 2005 गलत है — आयोग 2007 में गठित हुआ था।",
+        "विकल्प (d) को खारिज करें: आयोग 2007 में गठित हुआ था और अपनी रिपोर्ट 2010 में प्रस्तुत की थी — 2012 में नहीं।",
+        "विकल्प (c) को स्वीकार करें: पंची आयोग 2007 में गठित हुआ था और अपनी रिपोर्ट 2010 में प्रस्तुत की थी — दोनों वर्ष सही हैं।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "पंची आयोग की समयरेखा एक सटीक तथ्य है जो इसे सरकारिया आयोग से अलग करती है।\n\n• विकल्प (a): गलत — 2003 बहुत पहले की तारीख है; पंची आयोग के गठन का राजनीतिक और प्रशासनिक संदर्भ 2007 था।\n• विकल्प (b): गलत — 2005 एक संभावित समयगत भ्रम है लेकिन गलत है; आयोग 2007 में गठित हुआ था।\n• विकल्प (c): सही — केंद्र-राज्य संबंधों पर दूसरी आयोग (पंची आयोग) 2007 में गठित हुई और 2010 में अपनी रिपोर्ट प्रस्तुत की। न्यायमूर्ति मदन मोहन पंची (पूर्व CJI) इसके अध्यक्ष थे।\n• विकल्प (d): गलत — आयोग की रिपोर्ट 2010 में प्रस्तुत हुई थी, 2012 में नहीं। 12वीं अंतर-राज्य परिषद की बैठक ने इन सिफारिशों पर छह साल बाद, 2016 में चर्चा की।\n\nमूल्यवर्धन:\n• सरकारिया आयोग: 1983 में गठित, 1988 में रिपोर्ट। पंची आयोग: 2007 में गठित, 2010 में रिपोर्ट।\n• न्यायमूर्ति एम.एम. पंची भारत के 24वें मुख्य न्यायाधीश थे — आयोग उनका नाम धारण करता है।\n• पंची आयोग के 7 खंड और 273 सिफारिशें थीं जो व्यापक रूप से केंद्र-राज्य संबंधों को कवर करती हैं।"
+    }
+  },
+  {
+    "uuid": "c3ccb3eb-2f1e-4bd9-a431-95b65752d928",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Constitutional Basis of Inter-State Council: Article 263",
+        "GST Council vs. Inter-State Council: Cooperative Federalism Comparison",
+        "Inter-State Council vs. National Development Council (NDC)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Article 263 vs 279A — ISC vs GST Council constitutional basis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the constitutional architecture of cooperative federalism in India:\n\n1. The GST Council, like the Inter-State Council, was established by a Presidential Order and not by an amendment to the Constitution.\n2. The Inter-State Council is the only constitutional body in India that brings together the Prime Minister and Chief Ministers of all states for structured deliberation on Centre-State policy matters.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Neither 1 nor 2\n(d) Both 1 and 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The GST Council, like the Inter-State Council, was established by a Presidential Order and not by an amendment to the Constitution.",
+          "verdict": "Incorrect",
+          "reason": "The GST Council was established by the Constitution (101st Amendment) Act, 2016, which inserted Article 279A — it is a constitutionally mandated body created by constitutional amendment, not by Presidential Order."
+        },
+        {
+          "statement": "The Inter-State Council is the only constitutional body in India that brings together the Prime Minister and Chief Ministers of all states for structured deliberation on Centre-State policy matters.",
+          "verdict": "Incorrect",
+          "reason": "The GST Council under Article 279A is also a constitutional body that brings together Union and state finance ministers — while the PM chairs ISC, the GST Council's constitutional status as an inter-governmental body means it too qualifies as a structured constitutional forum. The claim of ISC being 'the only' such body is false."
+        }
+      ],
+      "strong_distractor": "d — Here option d (both incorrect) is correct but also the strong distractor — students instinctively doubt 'neither' options in two-statement questions. Statement 2's 'only' qualifier is the key error that many miss.",
+      "elimination_logic": [
+        "Evaluate Statement 1: GST Council was created by the 101st Constitutional Amendment inserting Article 279A — NOT by Presidential Order. Statement 1 is clearly incorrect.",
+        "Evaluate Statement 2: The word 'only' makes this false — GST Council is also a constitutional inter-governmental body (Article 279A) bringing Union and states together. ISC is not the exclusive such forum. Statement 2 is incorrect.",
+        "Both statements are NOT correct — select option (d): Both 1 and 2."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Both statements contain errors — one factual, one through scope-extension.\n\n• Statement 1 — Incorrect: The GST Council is a creature of constitutional amendment (101st Amendment, 2016, Article 279A) — not a Presidential Order. This is a fundamental error that conflates ISC's establishment method with the GST Council's.\n• Statement 2 — Incorrect: The word 'only' collapses under scrutiny. The GST Council under Article 279A also brings Union and state governments together in a constitutional framework for structured deliberation on tax matters. ISC is not the exclusive constitutional inter-governmental forum.\n\nValue Addition:\n• ISC: Presidential Order (1990) under Article 263. GST Council: Constitutional amendment, Article 279A (2016). Both constitutional — but established differently.\n• The 'only' qualifier in UPSC multi-statement questions is almost always the source of the error — train yourself to test every absolute claim.\n• NDC (executive resolution), NIC (executive resolution), and Zonal Councils (statutory) are all non-constitutional — ISC and GST Council stand apart as constitutional inter-governmental bodies."
+    },
+    "hi": {
+      "display_text": "भारत में सहकारी संघवाद की संवैधानिक संरचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. GST काउंसिल, इंटर-स्टेट काउंसिल की तरह, राष्ट्रपति के आदेश द्वारा स्थापित की गई थी न कि संविधान में संशोधन द्वारा।\n2. इंटर-स्टेट काउंसिल भारत में एकमात्र संवैधानिक निकाय है जो प्रधानमंत्री और सभी राज्यों के मुख्यमंत्री को केंद्र-राज्य नीति मामलों पर संरचित विचार-विमर्श के लिए एक साथ लाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) न तो 1, न ही 2\n(d) दोनों 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "GST काउंसिल, इंटर-स्टेट काउंसिल की तरह, राष्ट्रपति के आदेश द्वारा स्थापित की गई थी न कि संविधान में संशोधन द्वारा।",
+          "verdict": "गलत",
+          "reason": "GST काउंसिल संविधान (101वां संशोधन) अधिनियम, 2016 द्वारा स्थापित की गई थी, जिसमें अनुच्छेद 279A जोड़ा गया — यह एक संवैधानिक संशोधन द्वारा निर्मित संवैधानिक रूप से अनिवार्य निकाय है, न कि राष्ट्रपति के आदेश द्वारा।"
+        },
+        {
+          "statement": "इंटर-स्टेट काउंसिल भारत में एकमात्र संवैधानिक निकाय है जो प्रधानमंत्री और सभी राज्यों के मुख्यमंत्री को केंद्र-राज्य नीति मामलों पर संरचित विचार-विमर्श के लिए एक साथ लाता है।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 279A के तहत GST काउंसिल भी एक संवैधानिक निकाय है जो केंद्र और राज्य के वित्त मंत्रियों को एक साथ लाता है — जबकि ISC की अध्यक्षता प्रधानमंत्री करते हैं, GST काउंसिल की संवैधानिक स्थिति एक अंतर-सरकारी निकाय के रूप में है, अतः यह भी एक संरचित संवैधानिक मंच है। ISC को 'एकमात्र' ऐसा निकाय बताना गलत है।"
+        }
+      ],
+      "strong_distractor": "d — यहाँ विकल्प d (दोनों गलत) सही है लेकिन यह मजबूत भ्रम भी है — छात्र दो-कथन वाले प्रश्नों में 'न तो' विकल्प पर स्वाभाविक रूप से संदेह करते हैं। कथन 2 का 'केवल' शब्द मुख्य त्रुटि है जिसे कई लोग चूक जाते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: GST काउंसिल 101वें संवैधानिक संशोधन द्वारा अनुच्छेद 279A जोड़े जाने से बनी है — राष्ट्रपति के आदेश द्वारा नहीं। अतः कथन 1 स्पष्ट रूप से गलत है।",
+        "कथन 2 का मूल्यांकन करें: 'केवल' शब्द इसे गलत बनाता है — GST काउंसिल भी एक संवैधानिक अंतर-सरकारी निकाय (अनुच्छेद 279A) है जो केंद्र और राज्यों को एक साथ लाता है। ISC ऐसा विशिष्ट मंच नहीं है। अतः कथन 2 गलत है।",
+        "दोनों कथन सही नहीं हैं — विकल्प (d) चुनें: दोनों 1 और 2।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "दोनों कथनों में त्रुटियाँ हैं — एक तथ्यात्मक, एक दायरे के विस्तार के कारण।\n\n• कथन 1 — गलत: GST काउंसिल संवैधानिक संशोधन (101वां संशोधन, 2016, अनुच्छेद 279A) द्वारा स्थापित है — राष्ट्रपति के आदेश द्वारा नहीं। यह ISC की स्थापना विधि को GST काउंसिल की स्थापना से मिलाने वाली मूलभूत त्रुटि है।\n• कथन 2 — गलत: 'केवल' शब्द जांच में टिक नहीं पाता। अनुच्छेद 279A के तहत GST काउंसिल भी केंद्र और राज्य सरकारों को कर मामलों पर संरचित विचार-विमर्श के लिए संवैधानिक रूप से एक साथ लाता है। ISC ऐसा विशिष्ट संवैधानिक अंतर-सरकारी मंच नहीं है।\n\nमूल्यवर्धन:\n• ISC: राष्ट्रपति के आदेश (1990) के तहत अनुच्छेद 263। GST काउंसिल: संवैधानिक संशोधन, अनुच्छेद 279A (2016)। दोनों संवैधानिक हैं — पर स्थापना विधि अलग है।\n• UPSC के बहु-कथन प्रश्नों में 'केवल' शब्द लगभग हमेशा त्रुटि का स्रोत होता है — हर पूर्ण दावे की जांच करना सीखें।\n• NDC (कार्यकारी प्रस्ताव), NIC (कार्यकारी प्रस्ताव), और जोनल काउंसिल (वैधानिक) सभी गैर-संवैधानिक हैं — ISC और GST काउंसिल संवैधानिक अंतर-सरकारी निकाय के रूप में अलग हैं।"
+    }
+  },
+  {
+    "uuid": "8dbe6aaf-b932-4814-9210-be6c6663e985",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Constitutional Basis of Inter-State Council: Article 263",
+        "Constitutional Limitations and Critiques of Article 263 Framework",
+        "Inter-State Council vs. National Development Council (NDC)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Article 263 discretionary — President's power, non-justiciable",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A coalition of state governments files a writ petition before the Supreme Court of India, arguing that the President of India is constitutionally obligated under Article 263 to convene the Inter-State Council within a specified period and that the infrequency of ISC meetings constitutes a violation of the principle of cooperative federalism embedded in the Constitution. Which of the following most accurately describes the constitutional position that the Supreme Court is likely to adopt?\n\n(a) The Court will direct the President to convene the ISC at least three times a year, drawing on the cooperative federalism principle as a constitutionally enforceable directive\n(b) The Court will direct Parliament to enact legislation specifying a mandatory convening schedule for the ISC under Article 263\n(c) The Court is likely to hold that Article 263's language — 'if it appears to the President' — makes ISC establishment and convening a matter of presidential discretion, not a justiciable constitutional obligation\n(d) The Court will refer the matter to the Finance Commission to determine an appropriate schedule for ISC meetings as part of Centre-State fiscal relations",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because it invokes the 'cooperative federalism' principle — a real constitutional doctrine — giving it doctrinal credibility even though Article 263 clearly makes establishment discretionary.",
+      "elimination_logic": [
+        "Eliminate option (a): The President's discretion under Article 263 is non-justiciable — courts have consistently upheld executive discretion on such matters. 'Cooperative federalism' is a principle, not a justiciable right.",
+        "Eliminate option (b): Parliament cannot mandate ISC establishment under Article 263 — the power vests exclusively in the President. Parliament passing a law ordering ISC's establishment would itself be constitutionally suspect.",
+        "Eliminate option (d): The Finance Commission addresses fiscal devolution — it has no authority to direct the President on ISC matters.",
+        "Confirm option (c): Article 263's 'if it appears to the President' language makes ISC establishment purely discretionary and non-justiciable. States have no legal remedy to compel establishment."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This scenario tests the non-justiciable character of Article 263's discretionary power — a nuanced constitutional limitation.\n\nScenario: Several states file a writ petition claiming the President is constitutionally obligated to convene ISC. The court must determine whether this is enforceable.\n\n• Option (a): Incorrect — 'Cooperative federalism' is a constitutional principle but not a judicially enforceable directive that overrides presidential discretion on Article 263 matters. Courts have not read such a mandate into the Constitution.\n• Option (b): Incorrect — Parliament cannot direct the President to establish the ISC under Article 263 — the article places this power exclusively with the President, not with Parliament.\n• Option (c): Correct — The phrase 'if it appears to the President' is the controlling language. Judicial intervention in the President's satisfaction under Article 263 would override a clear constitutional grant of discretion — courts will not do this.\n• Option (d): Incorrect — The Finance Commission has no competence over ISC establishment; it addresses tax devolution, not inter-governmental institutional design.\n\nValue Addition:\n• The 40-year delay (1950–1990) in ISC establishment was never challenged in court — silent proof of non-justiciability.\n• Article 263's design intentionally leaves ISC's creation to executive will — a feature, not a flaw, in India's constitutional design.\n• Contrast: Finance Commission establishment is mandatory (Article 280) — a constitutional obligation, unlike ISC."
+    },
+    "hi": {
+      "display_text": "राज्य सरकारों के एक गठबंधन ने भारत के सर्वोच्च न्यायालय में एक याचिका दायर की है, जिसमें तर्क दिया गया है कि भारत के राष्ट्रपति अनुच्छेद 263 के तहत संवैधानिक रूप से बाध्य हैं कि वे एक निर्दिष्ट अवधि के भीतर अंतर-राज्य परिषद (ISC) बुलाएं और ISC की बैठकें कम होने से संविधान में निहित सहकारी संघवाद के सिद्धांत का उल्लंघन होता है। निम्नलिखित में से कौन-सा सबसे सटीक रूप से उस संवैधानिक स्थिति का वर्णन करता है जिसे सर्वोच्च न्यायालय अपनाने की संभावना है?\n\n(a) न्यायालय राष्ट्रपति को निर्देश देगा कि वे ISC को प्रति वर्ष कम से कम तीन बार बुलाएं, सहकारी संघवाद के सिद्धांत को संवैधानिक रूप से लागू होने वाले निर्देश के रूप में लेते हुए\n(b) न्यायालय संसद को निर्देश देगा कि वह अनुच्छेद 263 के तहत ISC के लिए अनिवार्य बैठक अनुसूची निर्धारित करने वाला कानून बनाए\n(c) न्यायालय संभवतः यह निर्णय देगा कि अनुच्छेद 263 की भाषा — 'यदि राष्ट्रपति को ऐसा प्रतीत होता है' — ISC की स्थापना और बैठक को राष्ट्रपति के विवेकाधिकार का विषय बनाती है, न कि न्यायिक रूप से लागू होने वाला संवैधानिक दायित्व\n(d) न्यायालय इस मामले को वित्त आयोग को भेजेगा ताकि वह केंद्र-राज्य वित्तीय संबंधों के हिस्से के रूप में ISC की बैठकों के लिए उपयुक्त अनुसूची निर्धारित कर सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि यह 'सहकारी संघवाद' सिद्धांत का हवाला देता है — जो एक वास्तविक संवैधानिक सिद्धांत है — जिससे इसे सैद्धांतिक वैधता मिलती है जबकि अनुच्छेद 263 स्पष्ट रूप से स्थापना को विवेकाधिकार बनाता है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: अनुच्छेद 263 के तहत राष्ट्रपति का विवेकाधिकार न्यायिक समीक्षा योग्य नहीं है — न्यायालयों ने ऐसे मामलों में कार्यकारी विवेकाधिकार को लगातार मान्यता दी है। 'सहकारी संघवाद' एक सिद्धांत है, न्यायिक रूप से लागू होने वाला अधिकार नहीं।",
+        "विकल्प (b) को हटाएं: संसद अनुच्छेद 263 के तहत ISC की स्थापना का आदेश नहीं दे सकती — यह अधिकार विशिष्ट रूप से राष्ट्रपति के पास है। संसद द्वारा ISC स्थापना का आदेश देने वाला कानून स्वयं संवैधानिक रूप से संदिग्ध होगा।",
+        "विकल्प (d) को हटाएं: वित्त आयोग वित्तीय हस्तांतरण से संबंधित है — इसका राष्ट्रपति को ISC मामलों पर निर्देश देने का कोई अधिकार नहीं है।",
+        "विकल्प (c) की पुष्टि करें: अनुच्छेद 263 की 'यदि राष्ट्रपति को ऐसा प्रतीत होता है' भाषा ISC की स्थापना को पूरी तरह से विवेकाधिकार और न्यायिक समीक्षा से बाहर बनाती है। राज्यों के पास स्थापना के लिए कोई कानूनी उपाय नहीं है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह परिदृश्य अनुच्छेद 263 के विवेकाधिकार की न्यायिक समीक्षा से बाहर प्रकृति की संवैधानिक सीमा का परीक्षण करता है — एक सूक्ष्म संवैधानिक प्रतिबंध।\n\nपरिदृश्य: कई राज्य एक याचिका दायर करते हैं जिसमें दावा किया गया है कि राष्ट्रपति संवैधानिक रूप से ISC बुलाने के लिए बाध्य हैं। न्यायालय को यह निर्धारित करना है कि क्या यह लागू किया जा सकता है।\n\n• विकल्प (a): गलत — 'सहकारी संघवाद' एक संवैधानिक सिद्धांत है लेकिन न्यायालय द्वारा लागू किया जाने वाला निर्देश नहीं है जो अनुच्छेद 263 के तहत राष्ट्रपति के विवेकाधिकार को अधिलेखित कर सके। न्यायालयों ने संविधान में ऐसा आदेश नहीं पढ़ा है।\n• विकल्प (b): गलत — संसद अनुच्छेद 263 के तहत राष्ट्रपति को ISC स्थापित करने का निर्देश नहीं दे सकती — यह अधिकार विशिष्ट रूप से राष्ट्रपति के पास है, न कि संसद के।\n• विकल्प (c): सही — 'यदि राष्ट्रपति को ऐसा प्रतीत होता है' वाक्यांश नियंत्रणकारी भाषा है। अनुच्छेद 263 के तहत राष्ट्रपति की संतुष्टि में न्यायिक हस्तक्षेप स्पष्ट संवैधानिक विवेकाधिकार को अधिलेखित करेगा — न्यायालय ऐसा नहीं करेगा।\n• विकल्प (d): गलत — वित्त आयोग का ISC स्थापना पर कोई अधिकार नहीं है; यह कर हस्तांतरण से संबंधित है, न कि अंतर-सरकारी संस्थागत डिजाइन से।\n\nमूल्य संवर्धन:\n• ISC स्थापना में 40 वर्षों (1950–1990) की देरी पर कभी न्यायालय में चुनौती नहीं आई — न्यायिक समीक्षा से बाहर होने का मौन प्रमाण।\n• अनुच्छेद 263 की रचना जानबूझकर ISC की स्थापना को कार्यकारी इच्छा पर छोड़ती है — यह भारत के संवैधानिक डिजाइन की विशेषता है, दोष नहीं।\n• तुलना: वित्त आयोग की स्थापना अनिवार्य है (अनुच्छेद 280) — एक संवैधानिक दायित्व, ISC के विपरीत।"
+    }
+  },
+  {
+    "uuid": "545a32e9-86b6-47dc-a108-4b321314a63e",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Inter-State Council vs. Zonal Councils: Comparison",
+        "Standing Committee of Inter-State Council",
+        "Secretariat of Inter-State Council"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Zonal Council chair Home Minister; ISC chair PM; ISC Secretariat under MHA",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about inter-governmental coordination bodies in India:",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "Zonal Councils are chaired by the Chief Minister of the most populous state in each zone on a rotational basis."
+          ],
+          [
+            "2",
+            "The ISC Secretariat, though serving a constitutional body, operates under the Ministry of Home Affairs rather than the Prime Minister's Office."
+          ],
+          [
+            "3",
+            "The Standing Committee of the Inter-State Council was set up to enable continuous consultation between ISC plenary meetings and to pre-screen agenda items."
+          ],
+          [
+            "4",
+            "The North Eastern Council serves as the Zonal Council for the northeastern states and is chaired by the Union Home Minister, like the other five Zonal Councils."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Zonal Councils are chaired by the Chief Minister of the most populous state in each zone on a rotational basis.",
+          "verdict": "Incorrect",
+          "reason": "Zonal Councils are chaired by the Union Home Minister — not by any state Chief Minister. This is a fixed, non-rotational chairmanship."
+        },
+        {
+          "statement": "The ISC Secretariat, though serving a constitutional body, operates under the Ministry of Home Affairs rather than the Prime Minister's Office.",
+          "verdict": "Correct",
+          "reason": "The ISC Secretariat is located in New Delhi under the Ministry of Home Affairs — consistent with the Home Minister's role in chairing the ISC's Standing Committee."
+        },
+        {
+          "statement": "The Standing Committee of the Inter-State Council was set up to enable continuous consultation between ISC plenary meetings and to pre-screen agenda items.",
+          "verdict": "Correct",
+          "reason": "The Standing Committee (1996) was created precisely for these two purposes: continuous inter-sessional consultation and agenda preparation/screening before full ISC meetings."
+        },
+        {
+          "statement": "The North Eastern Council serves as the Zonal Council for the northeastern states and is chaired by the Union Home Minister, like the other five Zonal Councils.",
+          "verdict": "Incorrect",
+          "reason": "NEC is not a Zonal Council — it is a separate body under the NEC Act, 1971. While the Home Minister is indeed its Chairman (post-2002 amendment), calling it 'a Zonal Council' is incorrect — it is a distinct statutory body."
+        }
+      ],
+      "strong_distractor": "c — Option c (Only three) is deceptive because Statement 4 has a partial truth (Home Minister does chair NEC) that makes students accept it as fully correct, inflating the count.",
+      "elimination_logic": [
+        "Statement 1: Zonal Councils chaired by Home Minister — not by rotating state CMs. Incorrect.",
+        "Statement 2: ISC Secretariat under MHA (not PMO) — correct.",
+        "Statement 3: Standing Committee's twin purposes (consultation + screening) — correct.",
+        "Statement 4: NEC is not a Zonal Council — it is a separate statutory body under NEC Act, 1971. The partial truth (Home Minister chairs NEC) does not save the incorrect classification. Incorrect.",
+        "Two statements correct (2 and 3) — select option (b): Only two."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This question tests institutional precision across four related but distinct inter-governmental bodies.\n\n• Statement 1 — Incorrect: All five Zonal Councils are chaired by the Union Home Minister — a single, non-rotating, nationally fixed chairmanship.\n• Statement 2 — Correct: The ISC Secretariat is under the Ministry of Home Affairs, not the PMO — an administrative placement consistent with the Home Minister's Standing Committee chairmanship role.\n• Statement 3 — Correct: The Standing Committee was established in 1996 for two purposes: (a) inter-sessional consultation between ISC plenary meetings, and (b) screening/processing agenda before it reaches the full ISC.\n• Statement 4 — Incorrect: The North Eastern Council is not a Zonal Council. It was established under the NEC Act, 1971 as a distinct statutory body. The Home Minister's chairmanship (added by 2002 amendment) is a shared feature, not evidence of identical classification.\n\nValue Addition:\n• NEC preceded formal ISC by nearly 20 years (NEC: 1971; ISC: 1990).\n• NEC membership includes 8 northeastern states and their governors/CMs.\n• Zonal Councils: 5 in number (North, South, East, West, Central). NEC is additional and separate."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "भारत में अंतर-सरकारी समन्वय निकायों के बारे में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "Zonal Councils की अध्यक्षता प्रत्येक क्षेत्र के सबसे अधिक जनसंख्या वाले राज्य के मुख्यमंत्री द्वारा परिवर्ती आधार पर की जाती है।"
+          ],
+          [
+            "2",
+            "ISC सचिवालय, यद्यपि एक संवैधानिक निकाय की सेवा करता है, प्रधानमंत्री कार्यालय के बजाय गृह मंत्रालय के अधीन कार्य करता है।"
+          ],
+          [
+            "3",
+            "अंतर-राज्य परिषद की स्थायी समिति ISC की पूर्ण बैठकों के बीच निरंतर परामर्श सक्षम करने और एजेंडा आइटमों की पूर्व-स्क्रीनिंग के लिए स्थापित की गई थी।"
+          ],
+          [
+            "4",
+            "उत्तर-पूर्वी परिषद पूर्वोत्तर राज्यों के लिए Zonal Council के रूप में कार्य करती है और अन्य पांच Zonal Councils की तरह इसकी अध्यक्षता केंद्रीय गृह मंत्री करते हैं।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Zonal Councils are chaired by the Chief Minister of the most populous state in each zone on a rotational basis.",
+          "verdict": "गलत",
+          "reason": "Zonal Councils की अध्यक्षता केंद्रीय गृह मंत्री करते हैं — किसी भी राज्य के मुख्यमंत्री द्वारा नहीं। यह एक स्थिर, गैर-परिवर्ती अध्यक्षता है।"
+        },
+        {
+          "statement": "The ISC Secretariat, though serving a constitutional body, operates under the Ministry of Home Affairs rather than the Prime Minister's Office.",
+          "verdict": "सही है",
+          "reason": "ISC सचिवालय नई दिल्ली में गृह मंत्रालय के अधीन है — जो ISC की स्थायी समिति की अध्यक्षता में गृह मंत्री की भूमिका के अनुरूप है।"
+        },
+        {
+          "statement": "The Standing Committee of the Inter-State Council was set up to enable continuous consultation between ISC plenary meetings and to pre-screen agenda items.",
+          "verdict": "सही है",
+          "reason": "स्थायी समिति (1996) इन्हीं दो उद्देश्यों के लिए बनाई गई थी: ISC की पूर्ण बैठक के बीच निरंतर परामर्श और पूर्ण ISC बैठक से पहले एजेंडा की तैयारी/प्री-स्क्रीनिंग।"
+        },
+        {
+          "statement": "The North Eastern Council serves as the Zonal Council for the northeastern states and is chaired by the Union Home Minister, like the other five Zonal Councils.",
+          "verdict": "गलत",
+          "reason": "NEC कोई Zonal Council नहीं है — यह NEC अधिनियम, 1971 के तहत एक अलग निकाय है। जबकि गृह मंत्री इसके अध्यक्ष हैं (2002 संशोधन के बाद), इसे 'Zonal Council' कहना गलत है — यह एक विशिष्ट वैधानिक निकाय है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c (केवल तीन) भ्रमित करने वाला है क्योंकि कथन 4 में आंशिक सत्य है (गृह मंत्री NEC की अध्यक्षता करते हैं) जो छात्रों को इसे पूरी तरह सही मानने पर मजबूर करता है, जिससे सही कथनों की संख्या बढ़ जाती है।",
+      "elimination_logic": [
+        "कथन 1: Zonal Councils की अध्यक्षता गृह मंत्री करते हैं — न कि परिवर्ती राज्य मुख्यमंत्रियों द्वारा। गलत।",
+        "कथन 2: ISC सचिवालय गृह मंत्रालय के अधीन है (PMO के नहीं) — सही।",
+        "कथन 3: स्थायी समिति के दो उद्देश्य (परामर्श + स्क्रीनिंग) — सही।",
+        "कथन 4: NEC कोई Zonal Council नहीं है — यह NEC अधिनियम, 1971 के तहत एक अलग वैधानिक निकाय है। आंशिक सत्य (गृह मंत्री NEC के अध्यक्ष हैं) गलत वर्गीकरण को सही नहीं करता। गलत।",
+        "दो कथन सही हैं (2 और 3) — विकल्प (b) चुनें: केवल दो।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह प्रश्न चार संबंधित लेकिन भिन्न अंतर-सरकारी निकायों के बीच संस्थागत सटीकता की परीक्षा लेता है।\n\n• कथन 1 — गलत: सभी पांच Zonal Councils की अध्यक्षता केंद्रीय गृह मंत्री करते हैं — एक एकल, गैर-परिवर्ती, राष्ट्रीय स्तर पर निश्चित अध्यक्षता।\n• कथन 2 — सही: ISC सचिवालय गृह मंत्रालय के अधीन है, न कि PMO के — प्रशासनिक व्यवस्था जो गृह मंत्री की स्थायी समिति अध्यक्षता की भूमिका के अनुरूप है।\n• कथन 3 — सही: स्थायी समिति 1996 में दो उद्देश्यों के लिए स्थापित की गई थी: (क) ISC की पूर्ण बैठकों के बीच अंतर-सत्रीय परामर्श, और (ख) पूर्ण ISC को एजेंडा भेजने से पहले उसकी स्क्रीनिंग/प्रसंस्करण।\n• कथन 4 — गलत: North Eastern Council कोई Zonal Council नहीं है। इसे NEC अधिनियम, 1971 के तहत एक विशिष्ट वैधानिक निकाय के रूप में स्थापित किया गया था। गृह मंत्री की अध्यक्षता (2002 संशोधन द्वारा जोड़ी गई) एक साझा विशेषता है, समान वर्गीकरण का प्रमाण नहीं।\n\nमूल्यवर्धन:\n• NEC औपचारिक ISC से लगभग 20 वर्ष पहले स्थापित हुआ (NEC: 1971; ISC: 1990)।\n• NEC में 8 पूर्वोत्तर राज्य और उनके राज्यपाल/मुख्यमंत्री शामिल हैं।\n• Zonal Councils की संख्या 5 है (उत्तर, दक्षिण, पूर्व, पश्चिम, मध्य)। NEC अतिरिक्त और पृथक है।"
+    }
+  },
+  {
+    "uuid": "5cf87270-2d3a-4ffc-9e03-3f47e1db061a",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Constitutional Basis of Inter-State Council: Article 263",
+        "Three Enumerated Duties under Article 263",
+        "Constitutional Limitations and Critiques of Article 263 Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 263 Clause (c) — recommendations for better coordination of policy and action",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Clause (c) of Article 263 of the Constitution empowers the body established thereunder to ________ — making it the most broadly applicable of the three enumerated functions.\n\n(a) Make recommendations on any subject, particularly for better coordination of policy and action among the Union and the states\n(b) Issue legislative directions to state governments on subjects falling within the Concurrent List\n(c) Investigate non-compliance by state governments with Union directives and summon state officials for examination\n(d) Refer unresolved inter-state policy disagreements to an arbitral tribunal for binding resolution",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because 'legislative directions on Concurrent List subjects' sounds like a natural extension of coordination — students may assume ISC has some legislative coordination role from Punchhi Commission proposals.",
+      "elimination_logic": [
+        "Eliminate option (b): ISC has no power to issue legislative directions on any List — this is a Punchhi Commission recommendation, not a current power.",
+        "Eliminate option (c): ISC has no investigative power to summon state officials or conduct formal investigations like a commission of inquiry.",
+        "Eliminate option (d): ISC cannot refer disputes to an arbitral tribunal — that would require statutory backing not present in Article 263.",
+        "Confirm option (a): Clause (c) of Article 263 specifically empowers the body to make 'recommendations for better coordination of policy and action' — purely advisory coordination."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 263's Clause (c) is the broadest and most frequently operationalised of the three enumerated duties.\n\n• Option (a): Correct — Clause (c) of Article 263 empowers the ISC to make 'recommendations on any subject and particularly for better coordination of policy and action.' This is purely advisory — a recommendatory, not prescriptive, power.\n• Option (b): Incorrect — ISC has no power to issue legislative directions on any subject, including the Concurrent List. This is what the Punchhi Commission recommended but which has not been implemented.\n• Option (c): Incorrect — The ISC is not an investigative body with summons powers. Article 263 creates an advisory coordination forum, not an inquiry commission.\n• Option (d): Incorrect — ISC cannot refer disputes to arbitration; this would require statutory authority. Inter-state water disputes have their own separate arbitral mechanism under Article 262 and the 1956 Act.\n\nValue Addition:\n• The three clauses of Article 263: (a) Advising on inter-state disputes, (b) Investigating subjects of common interest, (c) Making recommendations for better coordination.\n• Clause (b) — investigation — is the precondition for Clause (c)'s recommendations.\n• All three duties are advisory — none creates binding authority."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 263 की धारा (c) उस निकाय को ________ का अधिकार देती है — जो तीन उल्लिखित कार्यों में सबसे व्यापक रूप से लागू है।\n\n(a) किसी भी विषय पर, विशेष रूप से संघ और राज्यों के बीच नीति और क्रियान्वयन के बेहतर समन्वय के लिए सिफारिशें करना\n(b) समवर्ती सूची के अंतर्गत आने वाले विषयों पर राज्य सरकारों को विधायी निर्देश जारी करना\n(c) राज्य सरकारों द्वारा संघीय निर्देशों का पालन न करने की जांच करना और राज्य अधिकारियों को परीक्षा के लिए समन भेजना\n(d) अनसुलझे अंतर-राज्य नीति विवादों को बाध्यकारी समाधान के लिए मध्यस्थता न्यायाधिकरण को भेजना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because 'legislative directions on Concurrent List subjects' sounds like a natural extension of coordination — students may assume ISC has some legislative coordination role from Punchhi Commission proposals.",
+      "elimination_logic": [
+        "विकल्प (b) को हटाएं: ISC के पास किसी भी सूची पर विधायी निर्देश जारी करने का अधिकार नहीं है — यह पंची आयोग की सिफारिश है, वर्तमान अधिकार नहीं।",
+        "विकल्प (c) को हटाएं: ISC के पास राज्य अधिकारियों को समन भेजने या आयोग की तरह औपचारिक जांच करने का अन्वेषणात्मक अधिकार नहीं है।",
+        "विकल्प (d) को हटाएं: ISC विवादों को मध्यस्थता न्यायाधिकरण को नहीं भेज सकता — इसके लिए अनुच्छेद 263 में विधिक समर्थन आवश्यक है जो मौजूद नहीं है।",
+        "विकल्प (a) की पुष्टि करें: अनुच्छेद 263 की धारा (c) विशेष रूप से इस निकाय को 'नीति और क्रियान्वयन के बेहतर समन्वय के लिए सिफारिशें करने' का अधिकार देती है — यह केवल सलाहकार समन्वय है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 263 की धारा (c) तीनों उल्लिखित कर्तव्यों में सबसे व्यापक और सबसे अधिक क्रियान्वित है।\n\n• विकल्प (a): सही — अनुच्छेद 263 की धारा (c) ISC को 'किसी भी विषय पर, विशेष रूप से नीति और क्रियान्वयन के बेहतर समन्वय के लिए सिफारिशें करने' का अधिकार देती है। यह केवल सलाहकार है — एक सिफारिशात्मक, न कि अनिवार्य, अधिकार।\n• विकल्प (b): गलत — ISC के पास किसी भी विषय, जिसमें समवर्ती सूची भी शामिल है, पर विधायी निर्देश जारी करने का अधिकार नहीं है। यह पंची आयोग की सिफारिश थी जो लागू नहीं हुई।\n• विकल्प (c): गलत — ISC कोई अन्वेषणात्मक निकाय नहीं है जिसके पास समन भेजने का अधिकार हो। अनुच्छेद 263 एक सलाहकार समन्वय मंच बनाता है, जांच आयोग नहीं।\n• विकल्प (d): गलत — ISC विवादों को मध्यस्थता के लिए नहीं भेज सकता; इसके लिए विधिक अधिकार आवश्यक है। अंतर-राज्य जल विवादों के लिए अनुच्छेद 262 और 1956 के अधिनियम के तहत अलग मध्यस्थता तंत्र है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 263 की तीन धाराएँ हैं: (a) अंतर-राज्य विवादों पर सलाह देना, (b) सामान्य हित के विषयों की जांच करना, (c) बेहतर समन्वय के लिए सिफारिशें करना।\n• धारा (b) — जांच — धारा (c) की सिफारिशों के लिए पूर्वापेक्षा है।\n• ये तीनों कर्तव्य सलाहकार हैं — कोई भी बाध्यकारी अधिकार नहीं बनाता।"
+    }
+  },
+  {
+    "uuid": "29a7db48-298a-40cd-8c6b-c2d7f5ce8e42",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Federal System",
+      "sub_topic": "Inter-State Council",
+      "concepts_used": [
+        "Role of ISC in Cooperative Federalism",
+        "GST Council vs. Inter-State Council: Cooperative Federalism Comparison",
+        "Constitutional Limitations and Critiques of Article 263 Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "ISC cooperative federalism — limitations vs. German Bundesrat vs. GST Council",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Inter-State Council as an instrument of cooperative federalism in comparison with other models:\n\n1. The German Bundesrat, often cited in comparative federalism literature, differs from India's Inter-State Council in that the Bundesrat is a legislative chamber through which German states participate directly in federal law-making, whereas the ISC is a purely consultative forum.\n2. Academic critics of the ISC often characterise it as ineffective because its recommendations are binding only on state governments but not on the Union Government.\n3. The GST Council's greater effectiveness as a cooperative federalism institution compared to the ISC is attributed, in part, to its structured voting mechanism and the financial stakes involved in GST-related decisions.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The German Bundesrat, often cited in comparative federalism literature, differs from India's Inter-State Council in that the Bundesrat is a legislative chamber through which German states participate directly in federal law-making, whereas the ISC is a purely consultative forum.",
+          "verdict": "Correct",
+          "reason": "The Bundesrat is Germany's upper house through which Länder (states) have formal legislative participation at the federal level. The ISC is advisory only — no legislative participation role."
+        },
+        {
+          "statement": "Academic critics of the ISC often characterise it as ineffective because its recommendations are binding only on state governments but not on the Union Government.",
+          "verdict": "Incorrect",
+          "reason": "ISC recommendations are not binding on anyone — neither state governments nor the Union Government. The claim that recommendations bind states but not the Union is factually wrong."
+        },
+        {
+          "statement": "The GST Council's greater effectiveness as a cooperative federalism institution compared to the ISC is attributed, in part, to its structured voting mechanism and the financial stakes involved in GST-related decisions.",
+          "verdict": "Correct",
+          "reason": "GST Council has weighted voting (enforceable through legislative implementation) and deals with revenue-critical matters — creating strong political incentives for regular, substantive engagement that the ISC lacks."
+        }
+      ],
+      "strong_distractor": "d — Option d (1, 2 and 3) tempts students who accept Statement 2's plausible-sounding claim that 'at least states are bound' without knowing that ISC recommendations bind nobody.",
+      "elimination_logic": [
+        "Statement 1: Bundesrat as legislative chamber vs. ISC as consultative — correct and well-established comparative point.",
+        "Statement 2: ISC recommendations bind 'state governments but not Union' — false. ISC recommendations bind nobody — not states, not Union. Incorrect.",
+        "Statement 3: GST Council's effectiveness from voting structure and financial stakes — correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Comparative federalism analysis of the ISC against global models is increasingly tested in UPSC.\n\n• Statement 1 — Correct: Germany's Bundesrat can veto federal legislation affecting Länder — a formal legislative power the ISC entirely lacks. India's ISC is consultative; Germany's Bundesrat is participatory. This is the gold-standard comparison in ISC critique literature.\n• Statement 2 — Incorrect: ISC recommendations bind no government — Union or state. The claim that states are bound but not the Union is a fabrication. This is not how ISC's advisory character works.\n• Statement 3 — Correct: GST Council's structured voting (1/3 Union, 2/3 states) and the high financial stakes of GST rate decisions create strong incentives for frequent, substantive participation — precisely what the ISC's purely advisory mandate cannot create.\n\nValue Addition:\n• Australia's COAG (Council of Australian Governments) is another comparison model — more structured than ISC but less formal than German Bundesrat.\n• The ISC's weakness: no voting, no financial stakes, no enforcement, no fixed schedule.\n• GST Council's 50+ meetings since 2016 vs. ISC's 12 in 33 years captures this contrast starkly."
+    },
+    "hi": {
+      "display_text": "सहकारी संघवाद के उपकरण के रूप में अंतर-राज्य परिषद की तुलना अन्य मॉडलों से करते हुए निम्नलिखित कथनों पर विचार करें:\n\n1. जर्मन Bundesrat, जिसे तुलनात्मक संघवाद साहित्य में अक्सर उद्धृत किया जाता है, भारत की अंतर-राज्य परिषद से इस प्रकार भिन्न है कि Bundesrat एक विधायी सदन है जिसके माध्यम से जर्मन राज्य सीधे संघीय कानून निर्माण में भाग लेते हैं, जबकि ISC केवल एक परामर्शी मंच है।\n2. ISC के शैक्षणिक आलोचक इसे अप्रभावी बताते हैं क्योंकि इसकी सिफारिशें केवल राज्य सरकारों के लिए बाध्यकारी हैं, लेकिन केंद्र सरकार के लिए नहीं।\n3. GST परिषद की ISC की तुलना में सहकारी संघवाद संस्था के रूप में अधिक प्रभावशीलता आंशिक रूप से इसके संरचित मतदान तंत्र और GST से संबंधित निर्णयों में वित्तीय दांव के कारण है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The German Bundesrat, often cited in comparative federalism literature, differs from India's Inter-State Council in that the Bundesrat is a legislative chamber through which German states participate directly in federal law-making, whereas the ISC is a purely consultative forum.",
+          "verdict": "Correct",
+          "reason": "The Bundesrat is Germany's upper house through which Länder (states) have formal legislative participation at the federal level. The ISC is advisory only — no legislative participation role."
+        },
+        {
+          "statement": "Academic critics of the ISC often characterise it as ineffective because its recommendations are binding only on state governments but not on the Union Government.",
+          "verdict": "Incorrect",
+          "reason": "ISC recommendations are not binding on anyone — neither state governments nor the Union Government. The claim that recommendations bind states but not the Union is factually wrong."
+        },
+        {
+          "statement": "The GST Council's greater effectiveness as a cooperative federalism institution compared to the ISC is attributed, in part, to its structured voting mechanism and the financial stakes involved in GST-related decisions.",
+          "verdict": "Correct",
+          "reason": "GST Council has weighted voting (enforceable through legislative implementation) and deals with revenue-critical matters — creating strong political incentives for regular, substantive engagement that the ISC lacks."
+        }
+      ],
+      "strong_distractor": "d — Option d (1, 2 and 3) tempts students who accept Statement 2's plausible-sounding claim that 'at least states are bound' without knowing that ISC recommendations bind nobody.",
+      "elimination_logic": [
+        "Statement 1: Bundesrat as legislative chamber vs. ISC as consultative — correct and well-established comparative point.",
+        "Statement 2: ISC recommendations bind 'state governments but not Union' — false. ISC recommendations bind nobody — not states, not Union. Incorrect.",
+        "Statement 3: GST Council's effectiveness from voting structure and financial stakes — correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Comparative federalism analysis of the ISC against global models is increasingly tested in UPSC.\n\n• Statement 1 — Correct: Germany's Bundesrat can veto federal legislation affecting Länder — a formal legislative power the ISC entirely lacks. India's ISC is consultative; Germany's Bundesrat is participatory. This is the gold-standard comparison in ISC critique literature.\n• Statement 2 — Incorrect: ISC recommendations bind no government — Union or state. The claim that states are bound but not the Union is a fabrication. This is not how ISC's advisory character works.\n• Statement 3 — Correct: GST Council's structured voting (1/3 Union, 2/3 states) and the high financial stakes of GST rate decisions create strong incentives for frequent, substantive participation — precisely what the ISC's purely advisory mandate cannot create.\n\nValue Addition:\n• Australia's COAG (Council of Australian Governments) is another comparison model — more structured than ISC but less formal than German Bundesrat.\n• The ISC's weakness: no voting, no financial stakes, no enforcement, no fixed schedule.\n• GST Council's 50+ meetings since 2016 vs. ISC's 12 in 33 years captures this contrast starkly."
+    }
+  }
+]

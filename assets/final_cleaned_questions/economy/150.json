@@ -1,0 +1,1182 @@
+[
+  {
+    "uuid": "14ecb34e-2fde-4f74-928e-c5ceda245f8b",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "JAM Trinity: Integration, Mechanism and Gaps",
+        "Direct Benefit Transfer (DBT) and PMJDY Linkage"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "JAM Trinity — components, roles and policy genesis",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (JAM Trinity Component) with List II (Role / Policy Context):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Jan Dhan",
+            "1. Coined and popularised the JAM Trinity framework in its volume on fiscal architecture"
+          ],
+          [
+            "B. Aadhaar",
+            "2. Provides the bank account as a financial address for receiving welfare transfers"
+          ],
+          [
+            "C. Mobile",
+            "3. Enables identity verification and eliminates duplicate or ghost beneficiaries"
+          ],
+          [
+            "D. Economic Survey 2016-17",
+            "4. Serves as the last-mile interface for transactions, UPI access, and DBT notifications"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-3, C-4, D-1\n(b) A-2, B-4, C-3, D-1\n(c) A-3, B-2, C-4, D-1\n(d) A-2, B-3, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) incorrectly attributes JAM coinage to the Economic Survey 2015-16, which is one year earlier than the correct answer (2016-17). A student who remembers 'mid-2010s' without pinning the exact survey year will gravitate toward (c).",
+      "elimination_logic": [
+        "A-2 (Jan Dhan → Account/deposit infrastructure): Jan Dhan provides the bank account — the financial address. This is unambiguous.",
+        "B-3 (Aadhaar → Identity verification and authentication layer): Aadhaar provides biometric/demographic identity — eliminates ghost beneficiaries.",
+        "C-4 (Mobile → Last-mile interface for transactions and DBT notifications): Mobile phones serve as the interface layer for accessing accounts, UPI, and receiving DBT notifications.",
+        "D-1 (Economic Survey 2016-17 → coined and popularised the JAM Trinity concept): The Economic Survey 2016-17 under Chief Economic Adviser Arvind Subramanian explicitly used the JAM framework. Eliminate options with D-2, D-3, or D-4. Correct answer is (a)."
+      ],
+      "upsc_trap_explanation": "The trap in this question is the attribution of JAM's conceptual coinage to the correct Economic Survey edition. Students often recall that the JAM framework was popularised 'in the mid-2010s Economic Survey' but confuse 2015-16 and 2016-17. Additionally, some students misattribute JAM to the Nachiket Mor Committee (2014), which recommended Payment Banks and Small Finance Banks but did not coin JAM. The year trap (2015-16 vs. 2016-17) is a classic UPSC temporal-swap.",
+      "final_explanation": "The JAM Trinity is a financial infrastructure concept linking three distinct systems to enable seamless Direct Benefit Transfer. Each component plays a non-overlapping role.\n\nCorrect pairings:\n• A-2 (Jan Dhan — Account/deposit infrastructure): Jan Dhan provides the bank account as the financial address to receive benefits.\n• B-3 (Aadhaar — Identity verification layer): Aadhaar's biometric database eliminates duplicate or ghost beneficiaries in welfare delivery.\n• C-4 (Mobile — Last-mile transaction interface): Mobile phones enable account access, UPI transactions, and DBT receipt notifications.\n• D-1 (Economic Survey 2016-17 — Coined JAM concept): Chief Economic Adviser Arvind Subramanian's Economic Survey 2016-17 formally articulated the JAM framework as India's financial infrastructure revolution.\n\nTrap pairing: Economic Survey 2015-16 (List II item 2) is placed to mislead students who misremember the year by one edition.\n\nValue Addition:\n• Aadhaar authentication failures (exclusion errors) remain a documented gap in the JAM system — genuine beneficiaries are sometimes denied access.\n• NACH (National Automated Clearing House) operated by NPCI is the backend mechanism for bulk DBT auto-credit.\n• JAM's dual role: financial infrastructure for private transactions AND welfare delivery conduit for government schemes."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (JAM ट्रिनिटी घटक) को सूची II (भूमिका / नीति संदर्भ) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. जन धन",
+            "1. वित्तीय संरचना पर अपने खंड में JAM ट्रिनिटी फ्रेमवर्क का सृजन और प्रचार किया"
+          ],
+          [
+            "B. आधार",
+            "2. कल्याण हस्तांतरण प्राप्त करने के लिए बैंक खाता वित्तीय पते के रूप में प्रदान करता है"
+          ],
+          [
+            "C. मोबाइल",
+            "3. पहचान सत्यापन सक्षम करता है और डुप्लीकेट या भूत लाभार्थियों को समाप्त करता है"
+          ],
+          [
+            "D. आर्थिक सर्वेक्षण 2016-17",
+            "4. लेनदेन, UPI पहुंच, और DBT सूचनाओं के लिए अंतिम-मील इंटरफ़ेस के रूप में कार्य करता है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-2, B-3, C-4, D-1\n(b) A-2, B-4, C-3, D-1\n(c) A-3, B-2, C-4, D-1\n(d) A-2, B-3, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) गलत रूप से JAM शब्दावली को आर्थिक सर्वेक्षण 2015-16 से जोड़ता है, जो सही उत्तर (2016-17) से एक वर्ष पहले है। जो छात्र 'मिड-2010s' याद रखते हैं लेकिन सही सर्वेक्षण वर्ष नहीं जानते, वे (c) की ओर झुकाव रखते हैं।",
+      "elimination_logic": [
+        "A-2 (जन धन → खाता/जमा अवसंरचना): जन धन बैंक खाता प्रदान करता है — वित्तीय पता। यह स्पष्ट है।",
+        "B-3 (आधार → पहचान सत्यापन और प्रमाणीकरण परत): आधार बायोमेट्रिक/जनसांख्यिकीय पहचान प्रदान करता है — भूत लाभार्थियों को समाप्त करता है।",
+        "C-4 (मोबाइल → लेनदेन और DBT सूचनाओं के लिए अंतिम-मील इंटरफ़ेस): मोबाइल फोन खाते, UPI और DBT सूचनाओं तक पहुंच के लिए इंटरफ़ेस परत के रूप में कार्य करते हैं।",
+        "D-1 (आर्थिक सर्वेक्षण 2016-17 → JAM ट्रिनिटी अवधारणा का सृजन और प्रचार): मुख्य आर्थिक सलाहकार अरविंद सुब्रमणियन के तहत आर्थिक सर्वेक्षण 2016-17 ने स्पष्ट रूप से JAM फ्रेमवर्क का उपयोग किया। D-2, D-3, या D-4 वाले विकल्पों को समाप्त करें। सही उत्तर (a) है।"
+      ],
+      "upsc_trap_explanation": "इस प्रश्न में जाल JAM की वैचारिक रचना को सही आर्थिक सर्वेक्षण संस्करण से जोड़ने में है। छात्र अक्सर याद करते हैं कि JAM फ्रेमवर्क 'मिड-2010s आर्थिक सर्वेक्षण' में लोकप्रिय हुआ था लेकिन 2015-16 और 2016-17 को भ्रमित कर देते हैं। इसके अतिरिक्त, कुछ छात्र JAM को नचिकेत मोर समिति (2014) से गलत रूप से जोड़ते हैं, जिसने पेमेंट बैंक और स्मॉल फाइनेंस बैंक की सिफारिश की थी लेकिन JAM को नहीं बनाया था। वर्ष का जाल (2015-16 बनाम 2016-17) UPSC का क्लासिक समय-संबंधी स्वैप है।",
+      "final_explanation": "JAM ट्रिनिटी एक वित्तीय अवसंरचना अवधारणा है जो तीन अलग-अलग प्रणालियों को जोड़ती है ताकि निर्बाध डायरेक्ट बेनिफिट ट्रांसफर संभव हो सके। प्रत्येक घटक की भूमिका अलग और गैर-अतिव्यापी है।\n\nसही मिलान:\n• A-2 (जन धन — खाता/जमा अवसंरचना): जन धन लाभ प्राप्त करने के लिए बैंक खाता वित्तीय पते के रूप में प्रदान करता है।\n• B-3 (आधार — पहचान सत्यापन परत): आधार का बायोमेट्रिक डेटाबेस कलंकित या भूत लाभार्थियों को समाप्त करता है।\n• C-4 (मोबाइल — अंतिम-मील लेनदेन इंटरफ़ेस): मोबाइल फोन खाते तक पहुंच, UPI लेनदेन और DBT प्राप्ति सूचनाओं को सक्षम करते हैं।\n• D-1 (आर्थिक सर्वेक्षण 2016-17 — JAM अवधारणा का सृजन): मुख्य आर्थिक सलाहकार अरविंद सुब्रमणियन का आर्थिक सर्वेक्षण 2016-17 आधिकारिक रूप से JAM फ्रेमवर्क को भारत की वित्तीय अवसंरचना क्रांति के रूप में प्रस्तुत करता है।\n\nजाल मिलान: आर्थिक सर्वेक्षण 2015-16 (सूची II आइटम 2) को उन छात्रों को भ्रमित करने के लिए रखा गया है जो वर्ष को एक संस्करण से गलत याद करते हैं।\n\nमूल्य संवर्धन:\n• आधार प्रमाणीकरण विफलताएं (बहिष्करण त्रुटियां) JAM प्रणाली में एक प्रलेखित अंतराल हैं — कभी-कभी वास्तविक लाभार्थियों को पहुंच से वंचित किया जाता है।\n• NACH (नेशनल ऑटोमेटेड क्लियरिंग हाउस) जो NPCI द्वारा संचालित है, बड़े पैमाने पर DBT ऑटो-क्रेडिट के लिए बैकएंड तंत्र है।\n• JAM की दोहरी भूमिका: निजी लेनदेन के लिए वित्तीय अवसंरचना और सरकारी योजनाओं के लिए कल्याण वितरण माध्यम।"
+    }
+  },
+  {
+    "uuid": "83eac10b-66ae-45b4-905c-28f2bbe0513a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Financial Inclusion vs. Financial Deepening — Conceptual Distinction",
+        "Dormant Accounts Problem and Effective Financial Inclusion"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Financial inclusion vs. financial deepening — access-usage distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Despite Pradhan Mantri Jan Dhan Yojana generating a large number of bank accounts, a significant proportion of these accounts remained dormant or maintained zero balances, indicating that account access did not automatically translate into active financial participation.\n\nReason (R): Financial deepening is measured by indicators such as frequency of transactions and credit penetration rather than by the number of accounts opened.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because both A and R are factually true. The trap is that students who verify both facts as true automatically select (a) without examining whether R actually explains A. The high number of zero-balance accounts is caused by usage gaps (financial deepening failure), but R describes what financial deepening measures — it does not causally explain why zero-balance accounts persist.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? PMJDY did generate high account-ownership numbers while simultaneously being criticised for a large proportion of dormant/zero-balance accounts. A is factually correct.",
+        "Step 2 — Is Reason (R) correct? Financial deepening is indeed measured by frequency of transactions and credit penetration, not merely account ownership. R is factually correct.",
+        "Step 3 — Does R causally explain A? R defines what financial deepening measures. It does not explain why PMJDY succeeded on inclusion metrics but struggled on deepening. The gap between account opening and account usage is caused by factors like financial illiteracy, BC dropout, and absence of need — R is a definitional statement, not a causal explanation of A. R does NOT explain A.",
+        "Both A and R correct, but R does not explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": "This assertion-reason is designed to trap students who conduct only a two-step verification (is A true? is R true?) rather than a three-step analysis. Both A and R are independently correct facts. The trap is that R defines financial deepening metrics — it is a true statement about measurement — but it does not explain why PMJDY succeeded on access while failing on deepening. The causal explanation for the gap would be factors like financial illiteracy, low income, BC infrastructure failures, and absence of credit need — not the definition of what deepening measures.",
+      "final_explanation": "Financial inclusion and financial deepening are distinct concepts in development economics. Inclusion refers to access — whether individuals have a bank account. Deepening refers to usage — whether they actively transact, save, borrow, and insure through formal channels.\n\nAssertion (A): True. PMJDY generated over 500 million accounts, making it the world's largest financial inclusion programme. However, a significant proportion of these accounts remained dormant (no transactions for two years) or had zero balances, indicating that access was achieved but active financial behaviour was not.\n\nReason (R): True. Financial deepening is measured by transaction frequency, credit penetration, and usage of financial products — not merely account ownership. This is a recognised distinction in the Global Findex methodology and RBI's FI-Index.\n\nCausal link: R does not explain A. The reason PMJDY succeeded on access metrics but not deepening metrics is rooted in factors like low financial literacy, sporadic income, BC infrastructure failures, and the absence of felt need for formal banking — not in the definition of what financial deepening measures. R is definitional, not explanatory.\n\nValue Addition:\n• RBI's FI-Index (launched 2021) measures inclusion across Access, Usage, and Quality — all three dimensions.\n• World Bank's Global Findex 2021 documented India's rise in account ownership post-PMJDY.\n• Policy response to dormancy: DBT linkage to activate accounts, financial literacy campaigns under NSFE 2020-2025."
+    },
+    "hi": {
+      "display_text": "कथन (A): प्रधानमंत्री जन धन योजना के तहत बड़ी संख्या में बैंक खाते बनने के बावजूद, इन खातों का एक महत्वपूर्ण हिस्सा निष्क्रिय रहा या शून्य बैलेंस बनाए रखा, जो दर्शाता है कि खाता पहुंच का अर्थ सक्रिय वित्तीय भागीदारी नहीं है।\n\nकारण (R): वित्तीय गहराई को मापने के लिए लेनदेन की आवृत्ति और क्रेडिट पैठ जैसे संकेतकों का उपयोग किया जाता है, न कि केवल खुले गए खातों की संख्या से।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) धोखाधड़ीपूर्ण है क्योंकि A और R दोनों तथ्यात्मक रूप से सही हैं। जाल यह है कि छात्र जो दोनों तथ्यों को सत्य मानते हैं, बिना यह जांचे कि क्या R वास्तव में A की व्याख्या करता है, स्वचालित रूप से (a) चुन लेते हैं। शून्य-बैलेंस खातों की अधिक संख्या उपयोग अंतराल (वित्तीय गहराई की विफलता) के कारण होती है, लेकिन R वित्तीय गहराई के माप को वर्णित करता है — यह कारणात्मक रूप से यह नहीं बताता कि शून्य-बैलेंस खाते क्यों बने रहते हैं।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? पीएमजेडीवाई ने उच्च खाता-स्वामित्व संख्या उत्पन्न की जबकि साथ ही बड़ी संख्या में निष्क्रिय/शून्य-बैलेंस खाते होने की आलोचना भी हुई। A तथ्यात्मक रूप से सही है।",
+        "चरण 2 — क्या कारण (R) सही है? वित्तीय गहराई वास्तव में लेनदेन की आवृत्ति और क्रेडिट पैठ से मापी जाती है, केवल खाता स्वामित्व से नहीं। R तथ्यात्मक रूप से सही है।",
+        "चरण 3 — क्या R, A की कारणात्मक व्याख्या करता है? R यह परिभाषित करता है कि वित्तीय गहराई क्या मापती है। यह यह नहीं बताता कि पीएमजेडीवाई ने समावेशन मापदंडों पर सफलता प्राप्त की लेकिन गहराई पर संघर्ष किया। खाता खोलने और उपयोग के बीच का अंतर वित्तीय साक्षरता की कमी, बीसी ड्रॉपआउट, और आवश्यकता की अनुपस्थिति जैसे कारणों से होता है — R एक परिभाषात्मक कथन है, A की कारणात्मक व्याख्या नहीं। R, A की व्याख्या नहीं करता।",
+        "A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं करता — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह कथन-कारण प्रश्न उन छात्रों को फंसाने के लिए डिज़ाइन किया गया है जो केवल दो-चरणीय सत्यापन करते हैं (क्या A सही है? क्या R सही है?) बजाय तीन-चरणीय विश्लेषण के। A और R दोनों स्वतंत्र रूप से सही तथ्य हैं। जाल यह है कि R वित्तीय गहराई के मापदंडों को परिभाषित करता है — यह मापन के बारे में एक सत्य कथन है — लेकिन यह यह नहीं बताता कि पीएमजेडीवाई ने पहुंच पर सफलता प्राप्त की जबकि गहराई पर विफल रहा। अंतर का कारण वित्तीय साक्षरता की कमी, कम आय, बीसी अवसंरचना की विफलताएं, और औपचारिक बैंकिंग की आवश्यकता की अनुपस्थिति जैसे कारक हैं — न कि वित्तीय गहराई के माप की परिभाषा।",
+      "final_explanation": "विकास अर्थशास्त्र में वित्तीय समावेशन और वित्तीय गहराई अलग-अलग अवधारणाएँ हैं। समावेशन का तात्पर्य पहुंच से है — क्या व्यक्तियों के पास बैंक खाता है। गहराई का तात्पर्य उपयोग से है — क्या वे सक्रिय रूप से लेनदेन करते हैं, बचत करते हैं, उधार लेते हैं, और औपचारिक चैनलों के माध्यम से बीमा करते हैं।\n\nकथन (A): सत्य। पीएमजेडीवाई ने 500 मिलियन से अधिक खाते बनाए, जिससे यह विश्व का सबसे बड़ा वित्तीय समावेशन कार्यक्रम बन गया। हालांकि, इन खातों का एक महत्वपूर्ण हिस्सा निष्क्रिय (दो वर्षों तक कोई लेनदेन नहीं) या शून्य बैलेंस वाला था, जो दर्शाता है कि पहुंच तो हुई लेकिन सक्रिय वित्तीय व्यवहार नहीं।\n\nकारण (R): सत्य। वित्तीय गहराई को लेनदेन की आवृत्ति, क्रेडिट पैठ, और वित्तीय उत्पादों के उपयोग से मापा जाता है — केवल खाता स्वामित्व से नहीं। यह वैश्विक फाइंडेक्स पद्धति और RBI के FI-Index में मान्यता प्राप्त भेद है।\n\nकारणात्मक संबंध: R, A की व्याख्या नहीं करता। पीएमजेडीवाई ने पहुंच मापदंडों पर सफलता प्राप्त की लेकिन गहराई मापदंडों पर नहीं, इसका कारण वित्तीय साक्षरता की कमी, अनियमित आय, बीसी अवसंरचना की विफलताएं, और औपचारिक बैंकिंग की आवश्यकता की अनुपस्थिति है — न कि वित्तीय गहराई के माप की परिभाषा। R परिभाषात्मक है, व्याख्यात्मक नहीं।\n\nमूल्य संवर्धन:\n• RBI का FI-Index (2021 में लॉन्च) पहुंच, उपयोग, और गुणवत्ता — इन तीनों आयामों में समावेशन को मापता है।\n• विश्व बैंक का ग्लोबल फाइंडेक्स 2021 ने पीएमजेडीवाई के बाद भारत में खाता स्वामित्व में वृद्धि को दर्ज किया।\n• निष्क्रियता के लिए नीति प्रतिक्रिया: खातों को सक्रिय करने के लिए DBT लिंकिंग, NSFE 2020-2025 के तहत वित्तीय साक्षरता अभियान।"
+    }
+  },
+  {
+    "uuid": "3b24d2fa-d5f9-47ba-9559-5aab48440882",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "PMJDY vs. Earlier Financial Inclusion Schemes"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Financial inclusion scheme evolution — NFA to BSBDA to PMJDY",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of financial inclusion initiatives in India?\n\n1. No-Frills Accounts\n2. Swabhimaan Campaign\n3. Basic Savings Bank Deposit Account (BSBDA)\n4. Pradhan Mantri Jan Dhan Yojana (PMJDY)\n\n(a) 1 – 3 – 2 – 4\n(b) 1 – 2 – 4 – 3\n(c) 1 – 2 – 3 – 4\n(d) 1 – 3 – 4 – 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places Swabhimaan Campaign before BSBDA, which is chronologically correct (2011 before 2012), but incorrectly sequences PMJDY before BSBDA, trapping students who remember Swabhimaan's position but misplace BSBDA.",
+      "elimination_logic": [
+        "No-Frills Accounts were introduced by RBI in 2005 — this must be first in any correct sequence.",
+        "Swabhimaan Campaign was launched in 2011 — it comes after NFAs and before BSBDA.",
+        "BSBDA (Basic Savings Bank Deposit Account) norms were issued by RBI in August 2012 — after Swabhimaan.",
+        "PMJDY was launched on August 28, 2014 — last in this evolutionary trajectory. Correct sequence: NFA (2005) → Swabhimaan (2011) → BSBDA (2012) → PMJDY (2014) = option (c)."
+      ],
+      "upsc_trap_explanation": "The trap lies in the proximity of Swabhimaan (2011) and BSBDA (2012) — both are in the same general period and students who recall them as 'early 2010s initiatives' may reverse their order. Additionally, students who confuse Swabhimaan as an RBI initiative (it was a government/IBA initiative) may place it after BSBDA. The UPSC temporal-swap trap is most effective when two events are within one to two years of each other.",
+      "final_explanation": "India's financial inclusion journey followed an evolutionary path, with each initiative building on the gaps of its predecessor.\n\nCorrect sequence: No-Frills Accounts (2005) → Swabhimaan Campaign (2011) → BSBDA (2012) → PMJDY (2014)\n\n• No-Frills Accounts (2005): RBI introduced NFAs to allow zero-balance accounts — the first formal attempt at inclusion.\n• Swabhimaan Campaign (2011): A government-IBA initiative to provide banking services to villages with populations above 2,000 — village-level coverage approach.\n• BSBDA (2012): RBI's August 2012 circular upgraded NFAs to BSBDA, adding minimum service standards but imposing transaction caps.\n• PMJDY (2014): Launched August 28, 2014 — moved to individual-based accounts, added insurance, OD facility, and RuPay card as a bundled product.\n\nWhy wrong options fail:\n• Option (a): Places BSBDA before Swabhimaan — incorrect (Swabhimaan is 2011, BSBDA is 2012).\n• Option (b): Reverses BSBDA and PMJDY sequencing within a correct NFA-Swabhimaan start.\n• Option (d): Places Swabhimaan last — clearly incorrect.\n\nValue Addition:\n• PMJDY did not abolish BSBDA; existing BSBDA accounts continued under their own norms.\n• The 2005 NFA was India's first zero-balance account — a full decade before PMJDY.\n• Swabhimaan used Business Correspondents as the primary delivery mechanism — a model PMJDY inherited and expanded."
+    },
+    "hi": {
+      "display_text": "भारत में वित्तीय समावेशन पहलों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. नो-फ्रिल्स खाते\n2. स्वाभिमान अभियान\n3. बेसिक सेविंग्स बैंक डिपॉजिट अकाउंट (BSBDA)\n4. प्रधानमंत्री जन धन योजना (PMJDY)\n\n(a) 1 – 3 – 2 – 4\n(b) 1 – 2 – 4 – 3\n(c) 1 – 2 – 3 – 4\n(d) 1 – 3 – 4 – 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) स्वाभिमान अभियान को BSBDA से पहले रखता है, जो कालानुक्रमिक रूप से सही है (2011, 2012 से पहले), लेकिन PMJDY को BSBDA से पहले अनुक्रमित करता है, जिससे वे छात्र फंस जाते हैं जो स्वाभिमान की स्थिति याद रखते हैं लेकिन BSBDA को गलत स्थान देते हैं।",
+      "elimination_logic": [
+        "नो-फ्रिल्स खाते (No-Frills Accounts) को RBI ने 2005 में शुरू किया था — यह किसी भी सही अनुक्रम में पहला होना चाहिए।",
+        "स्वाभिमान अभियान 2011 में शुरू किया गया था — यह NFA के बाद और BSBDA से पहले आता है।",
+        "BSBDA (बेसिक सेविंग्स बैंक डिपॉजिट अकाउंट) के नियम RBI ने अगस्त 2012 में जारी किए — स्वाभिमान के बाद।",
+        "PMJDY 28 अगस्त 2014 को शुरू किया गया था — इस विकासात्मक क्रम में अंतिम। सही अनुक्रम: NFA (2005) → स्वाभिमान (2011) → BSBDA (2012) → PMJDY (2014) = विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "फंदा स्वाभिमान (2011) और BSBDA (2012) की निकटता में है — दोनों लगभग एक ही अवधि के हैं और जो छात्र इन्हें 'प्रारंभिक 2010 के दशक की पहल' के रूप में याद करते हैं, वे इनके क्रम को उलट सकते हैं। इसके अतिरिक्त, जो छात्र स्वाभिमान को RBI की पहल समझते हैं (जबकि यह सरकार/IBA की पहल थी), वे इसे BSBDA के बाद रख सकते हैं। UPSC का यह कालानुक्रमिक-स्वैप फंदा तब सबसे प्रभावी होता है जब दो घटनाएं एक-दो वर्षों के भीतर होती हैं।",
+      "final_explanation": "भारत की वित्तीय समावेशन यात्रा एक विकासात्मक मार्ग का अनुसरण करती है, जिसमें प्रत्येक पहल अपने पूर्ववर्ती की कमियों को पूरा करती है।\n\nसही अनुक्रम: नो-फ्रिल्स खाते (2005) → स्वाभिमान अभियान (2011) → BSBDA (2012) → PMJDY (2014)\n\n• नो-फ्रिल्स खाते (2005): RBI ने शून्य-बैलेंस खाते खोलने के लिए NFA शुरू किए — समावेशन का पहला औपचारिक प्रयास।\n• स्वाभिमान अभियान (2011): सरकार-IBA की पहल, 2,000 से अधिक जनसंख्या वाले गांवों को बैंकिंग सेवाएं प्रदान करने के लिए — गांव स्तर पर कवरेज।\n• BSBDA (2012): RBI के अगस्त 2012 के सर्कुलर ने NFA को BSBDA में अपग्रेड किया, न्यूनतम सेवा मानक जोड़े लेकिन लेनदेन सीमा लगाई।\n• PMJDY (2014): 28 अगस्त 2014 को शुरू — व्यक्तिगत खातों की ओर बढ़ा, बीमा, ओवरड्राफ्ट सुविधा, और रूपे कार्ड को एकीकृत उत्पाद के रूप में जोड़ा।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (a): BSBDA को स्वाभिमान से पहले रखता है — गलत (स्वाभिमान 2011 है, BSBDA 2012)।\n• विकल्प (b): सही NFA-स्वाभिमान शुरुआत के भीतर BSBDA और PMJDY के अनुक्रम को उलट देता है।\n• विकल्प (d): स्वाभिमान को अंतिम स्थान पर रखता है — स्पष्ट रूप से गलत।\n\nमूल्यवर्धन:\n• PMJDY ने BSBDA को समाप्त नहीं किया; मौजूदा BSBDA खाते अपने नियमों के तहत जारी रहे।\n• 2005 का NFA भारत का पहला शून्य-बैलेंस खाता था — PMJDY से एक पूरा दशक पहले।\n• स्वाभिमान ने बिजनेस कॉरेस्पोंडेंट्स को प्राथमिक वितरण तंत्र के रूप में उपयोग किया — एक मॉडल जिसे PMJDY ने अपनाया और विस्तारित किया।"
+    }
+  },
+  {
+    "uuid": "b020e9e3-b7f8-4f17-a6af-1bf521cf532a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Direct Benefit Transfer (DBT) and PMJDY Linkage",
+        "JAM Trinity: Integration, Mechanism and Gaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Aadhaar-seeding of PMJDY accounts — Supreme Court 2018 nuance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A rural resident in a remote district holds a PMJDY account through which he receives MGNREGS wages as Direct Benefit Transfer. The local bank's Business Correspondent informs him that his account must be seeded with Aadhaar to continue receiving payments. He approaches a legal aid centre questioning whether this requirement is lawful. Which of the following principles most accurately governs this situation?\n\n(a) Aadhaar-seeding of Jan Dhan accounts is mandatory for all Direct Benefit Transfer schemes without exception, as upheld by the Supreme Court of India in its judgment on the Aadhaar Act.\n(b) The Supreme Court of India has prohibited mandatory Aadhaar seeding for any bank account regardless of whether it is used for receiving government welfare payments.\n(c) Under the Aadhaar Act, the government may require Aadhaar authentication for receipt of subsidies and benefits from the Consolidated Fund, but must ensure alternative access when authentication fails.\n(d) Mandatory Aadhaar seeding of bank accounts is permissible exclusively for MGNREGS wage disbursements and cannot be extended to any other welfare scheme.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) claiming Aadhaar-seeding is mandatory for all DBT schemes is the strong distractor because most students associate JAM Trinity with mandatory integration of all three components, not realising the Supreme Court's 2018 Puttaswamy judgment restricted mandatory Aadhaar use to government welfare schemes only and barred mandatory linking for private services.",
+      "elimination_logic": [
+        "The scenario involves a citizen questioning whether Aadhaar linking to a Jan Dhan account is mandatory — this invokes the Supreme Court's 2018 Aadhaar judgment.",
+        "Eliminate (a): The 2018 judgment held that Aadhaar can be mandated for government welfare benefits but cannot be made mandatory for all financial services or private entities — the claim that it is mandatory for 'all DBT schemes without exception' overstates the ruling.",
+        "Eliminate (b): Aadhaar linking is not prohibited — the Court upheld Section 7 of the Aadhaar Act allowing mandatory linking for government benefits. Prohibition is factually wrong.",
+        "Eliminate (d): Aadhaar seeding is not restricted only to MGNREGS — it applies broadly to government welfare under Section 7. This is too narrow.",
+        "Select (c): The correct principle is that Aadhaar can be mandatorily required for government welfare benefit receipt under Section 7, but voluntary for other purposes — account holders retain the right to receive benefits through alternative KYC if Aadhaar authentication fails."
+      ],
+      "upsc_trap_explanation": "The trap exploits the common oversimplification that 'JAM = mandatory Aadhaar linking for all purposes.' The Supreme Court's five-judge constitution bench in K.S. Puttaswamy v. Union of India (2018) upheld Section 7 of the Aadhaar Act (mandatory for government welfare) while striking down Section 57 (which allowed private entities to mandate Aadhaar). Students who know JAM Trinity but not the judicial nuance will mark option (a) as correct.",
+      "final_explanation": "The Supreme Court's 2018 judgment in K.S. Puttaswamy v. Union of India significantly shaped the legal landscape of Aadhaar's use in the DBT ecosystem.\n\nApplicable principle: Under Section 7 of the Aadhaar Act, 2016, the government may require individuals to authenticate via Aadhaar to receive subsidies, benefits, or services from the Consolidated Fund of India. However, the Court struck down Section 57 which permitted private entities from mandating Aadhaar. Additionally, authentication failures must provide an alternative — denial of benefits solely on authentication failure is impermissible.\n\nMapping to the scenario: The citizen's Jan Dhan account linked to MGNREGS wages falls under Section 7's coverage. Aadhaar seeding is permissible but not unconditional — alternative authentication must be available if biometric fails.\n\n• Option (a): Incorrect. The 'without exception' qualifier makes this wrong — the Court's judgment has nuances on alternatives and private entities.\n• Option (b): Incorrect. Aadhaar linking was upheld for government welfare; blanket prohibition is wrong.\n• Option (c): Correct. Section 7 permits mandatory Aadhaar for government benefit receipt while ensuring alternative access.\n• Option (d): Incorrect. The Section 7 permission is not limited to MGNREGS — it covers all Consolidated Fund disbursements.\n\nValue Addition:\n• Section 7 of Aadhaar Act = mandatory for government benefits; Section 57 was struck down (no private mandating).\n• Exclusion errors from Aadhaar authentication remain a documented problem in rural areas with biometric degradation.\n• COVID-19 period saw relaxed authentication norms to prevent denial of DBT to affected populations."
+    },
+    "hi": {
+      "display_text": "एक दूरस्थ जिले का ग्रामीण निवासी जिसके पास PMJDY खाता है, जिसके माध्यम से वह MGNREGS मजदूरी डायरेक्ट बेनिफिट ट्रांसफर के रूप में प्राप्त करता है। स्थानीय बैंक का बिजनेस कॉरेस्पोंडेंट उसे सूचित करता है कि उसके खाते को आधार से सीड करना आवश्यक है ताकि वह भुगतान प्राप्त करना जारी रख सके। वह एक कानूनी सहायता केंद्र से पूछताछ करता है कि क्या यह आवश्यकता वैध है। निम्नलिखित में से कौन-सा सिद्धांत इस स्थिति को सबसे सटीक रूप से नियंत्रित करता है?\n\n(a) जन धन खातों की आधार-सीडिंग सभी डायरेक्ट बेनिफिट ट्रांसफर योजनाओं के लिए बिना अपवाद अनिवार्य है, जैसा कि भारत के सुप्रीम कोर्ट ने आधार अधिनियम पर अपने निर्णय में स्थापित किया है।\n(b) भारत के सुप्रीम कोर्ट ने किसी भी बैंक खाते के लिए अनिवार्य आधार सीडिंग को प्रतिबंधित कर दिया है, चाहे वह सरकारी कल्याण भुगतान प्राप्त करने के लिए उपयोग हो रहा हो या नहीं।\n(c) आधार अधिनियम के तहत, सरकार समेकित कोष से सब्सिडी और लाभ प्राप्ति के लिए आधार प्रमाणीकरण की मांग कर सकती है, लेकिन प्रमाणीकरण विफल होने पर वैकल्पिक पहुँच सुनिश्चित करनी होगी।\n(d) बैंक खातों की अनिवार्य आधार सीडिंग केवल MGNREGS मजदूरी भुगतान के लिए अनुमत है और इसे किसी अन्य कल्याण योजना तक विस्तारित नहीं किया जा सकता।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) जो कहता है कि सभी DBT योजनाओं के लिए आधार-सीडिंग अनिवार्य है, एक मजबूत भ्रम पैदा करने वाला है क्योंकि अधिकांश छात्र JAM ट्रिनिटी को तीनों घटकों के अनिवार्य एकीकरण से जोड़ते हैं, यह न समझते हुए कि सुप्रीम कोर्ट के 2018 के पुत्तस्वामी निर्णय ने अनिवार्य आधार उपयोग को केवल सरकारी कल्याण योजनाओं तक सीमित किया है और निजी सेवाओं के लिए अनिवार्य लिंकिंग को प्रतिबंधित किया है।",
+      "elimination_logic": [
+        "यह परिदृश्य एक नागरिक के उस प्रश्न को शामिल करता है कि क्या जन धन खाते के लिए आधार लिंकिंग अनिवार्य है — यह सुप्रीम कोर्ट के 2018 के आधार निर्णय को लागू करता है।",
+        "विकल्प (a) को हटाएं: 2018 के निर्णय में कहा गया कि आधार को सरकारी कल्याण लाभों के लिए अनिवार्य किया जा सकता है लेकिन सभी वित्तीय सेवाओं या निजी संस्थाओं के लिए अनिवार्य नहीं किया जा सकता — 'सभी DBT योजनाओं के लिए बिना अपवाद' अनिवार्य होने का दावा निर्णय को अधिक बढ़ा-चढ़ा कर प्रस्तुत करता है।",
+        "विकल्प (b) को हटाएं: आधार लिंकिंग निषिद्ध नहीं है — कोर्ट ने आधार अधिनियम की धारा 7 को बरकरार रखा है जो सरकारी लाभों के लिए अनिवार्य लिंकिंग की अनुमति देता है। निषेध तथ्यात्मक रूप से गलत है।",
+        "विकल्प (d) को हटाएं: आधार सीडिंग केवल MGNREGS तक सीमित नहीं है — यह धारा 7 के तहत व्यापक रूप से सरकारी कल्याण पर लागू होती है। यह बहुत संकीर्ण है।",
+        "विकल्प (c) चुनें: सही सिद्धांत यह है कि आधार को सरकारी कल्याण लाभ प्राप्ति के लिए धारा 7 के तहत अनिवार्य किया जा सकता है, लेकिन अन्य प्रयोजनों के लिए स्वैच्छिक है — खाता धारकों को वैकल्पिक KYC के माध्यम से लाभ प्राप्त करने का अधिकार रहता है यदि आधार प्रमाणीकरण विफल हो।"
+      ],
+      "upsc_trap_explanation": "यह जाल इस सामान्य सरलीकरण का उपयोग करता है कि 'JAM = सभी प्रयोजनों के लिए अनिवार्य आधार लिंकिंग।' सुप्रीम कोर्ट की पांच न्यायाधीशों वाली संविधान पीठ ने K.S. Puttaswamy v. Union of India (2018) में आधार अधिनियम की धारा 7 (सरकारी कल्याण के लिए अनिवार्य) को बरकरार रखा जबकि धारा 57 (जो निजी संस्थाओं को आधार अनिवार्य करने की अनुमति देती थी) को रद्द कर दिया। जो छात्र JAM ट्रिनिटी जानते हैं लेकिन न्यायिक सूक्ष्मता नहीं समझते, वे विकल्प (a) को सही मानेंगे।",
+      "final_explanation": "सुप्रीम कोर्ट के 2018 के K.S. Puttaswamy v. Union of India निर्णय ने DBT पारिस्थितिकी तंत्र में आधार के उपयोग के कानूनी परिदृश्य को महत्वपूर्ण रूप से आकार दिया।\n\nलागू सिद्धांत: आधार अधिनियम, 2016 की धारा 7 के तहत, सरकार व्यक्तियों से सब्सिडी, लाभ या भारत के समेकित कोष से सेवाएं प्राप्त करने के लिए आधार प्रमाणीकरण की मांग कर सकती है। हालांकि, कोर्ट ने धारा 57 को रद्द कर दिया जो निजी संस्थाओं को आधार अनिवार्य करने की अनुमति देता था। इसके अतिरिक्त, प्रमाणीकरण विफलता की स्थिति में वैकल्पिक व्यवस्था होनी चाहिए — केवल प्रमाणीकरण विफलता के कारण लाभों से वंचित करना अनुचित है।\n\nपरिदृश्य से मेल: नागरिक का जन धन खाता जो MGNREGS मजदूरी से जुड़ा है, वह धारा 7 के दायरे में आता है। आधार सीडिंग अनुमत है लेकिन बिना शर्त नहीं — यदि बायोमेट्रिक विफल हो तो वैकल्पिक प्रमाणीकरण उपलब्ध होना चाहिए।\n\n• विकल्प (a): गलत। 'बिना अपवाद' की शर्त इसे गलत बनाती है — कोर्ट के निर्णय में वैकल्पिक व्यवस्था और निजी संस्थाओं के लिए सूक्ष्मताएं हैं।\n• विकल्प (b): गलत। आधार लिंकिंग सरकारी कल्याण के लिए बरकरार रखी गई; पूर्ण निषेध गलत है।\n• विकल्प (c): सही। धारा 7 सरकारी लाभ प्राप्ति के लिए अनिवार्य आधार की अनुमति देता है और वैकल्पिक पहुँच सुनिश्चित करता है।\n• विकल्प (d): गलत। धारा 7 की अनुमति केवल MGNREGS तक सीमित नहीं है — यह सभी समेकित कोष भुगतान को कवर करती है।\n\nमूल्य संवर्धन:\n• आधार अधिनियम की धारा 7 = सरकारी लाभों के लिए अनिवार्य; धारा 57 रद्द (कोई निजी अनिवार्यता नहीं)।\n• आधार प्रमाणीकरण से वंचित होना ग्रामीण क्षेत्रों में बायोमेट्रिक गिरावट के कारण एक दस्तावेजीकृत समस्या है।\n• COVID-19 अवधि में प्रभावित जनसंख्या को DBT से वंचित न करने के लिए प्रमाणीकरण मानदंडों में छूट दी गई।"
+    }
+  },
+  {
+    "uuid": "805429eb-7063-4ac9-a9f9-e095bd4b27d8",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Financial Literacy as a Prerequisite for Financial Inclusion"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NSFE 2020-2025 — joint regulatory initiative for financial literacy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The National Strategy for Financial Education (NSFE) 2020-2025, which aims to build a financially aware citizenry capable of utilising financial services including those under PMJDY, was jointly formulated by ________.\n\n(a) RBI and NABARD\n(b) RBI and SEBI\n(c) RBI, SEBI, and the Ministry of Finance\n(d) RBI, SEBI, IRDAI, and PFRDA",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) naming only RBI and SEBI as joint authors of the NSFE is deceptive because most students associate financial literacy with these two regulators and may not recall that IRDAI (insurance) and PFRDA (pensions) are equally co-authors of the National Strategy for Financial Education.",
+      "elimination_logic": [
+        "The National Strategy for Financial Education (NSFE) 2020-2025 is a joint initiative — eliminate any option that lists only one or two regulators.",
+        "The four financial sector regulators in India are RBI (banking), SEBI (securities), IRDAI (insurance), and PFRDA (pensions) — NSFE requires all four because financial literacy spans all four domains.",
+        "Eliminate (a): Lists only RBI and NABARD — NABARD is not a co-author of NSFE.",
+        "Eliminate (b): Lists only RBI and SEBI — incomplete; IRDAI and PFRDA are missing.",
+        "Eliminate (c): Includes the Ministry of Finance instead of PFRDA — Ministry is not a regulatory co-author.",
+        "Select (d): RBI, SEBI, IRDAI, and PFRDA — the correct four-regulator authorship."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works by replacing PFRDA or IRDAI with NABARD or Ministry of Finance — entities that are associated with financial inclusion broadly but are not co-authors of NSFE. Students who know NSFE exists but have not memorised the precise four-regulator composition will select the option with the most recognisable pair (RBI + SEBI), missing the insurance and pension regulators.",
+      "final_explanation": "The National Strategy for Financial Education (NSFE) 2020-2025 is a comprehensive framework for improving financial awareness across banking, investment, insurance, and pension domains in India.\n\n• Option (a): Incorrect. NABARD is a development finance institution focused on rural credit — it is not a co-author of NSFE. NABARD runs separate rural financial literacy initiatives.\n• Option (b): Incorrect. RBI and SEBI cover banking and securities respectively, but NSFE spans four financial domains — insurance (IRDAI) and pensions (PFRDA) are equally essential co-authors.\n• Option (c): Incorrect. The Ministry of Finance is not one of the regulatory co-authors of NSFE. The NSFE is a regulator-to-regulator initiative.\n• Option (d): Correct. The NSFE 2020-2025 was jointly issued by all four financial sector regulators: RBI (banking), SEBI (securities/capital markets), IRDAI (insurance), and PFRDA (pension funds).\n\nValue Addition:\n• RBI runs the Centre for Financial Literacy (CFL) programme at block level — distinct from NSFE.\n• Financial literacy is classified as a demand-side intervention; BC model and branch expansion are supply-side.\n• NSFE 2020-2025 targets five core competencies: earning, spending, saving, borrowing, and protecting (insurance)."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय वित्तीय शिक्षा रणनीति (NSFE) 2020-2025, जिसका उद्देश्य पीएमजेडीवाई सहित वित्तीय सेवाओं का उपयोग करने में सक्षम वित्तीय जागरूक नागरिक बनाना है, संयुक्त रूप से ________ द्वारा तैयार की गई थी।\n\n(a) RBI और NABARD\n(b) RBI और SEBI\n(c) RBI, SEBI, और वित्त मंत्रालय\n(d) RBI, SEBI, IRDAI, और PFRDA",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में केवल RBI और SEBI को NSFE के संयुक्त लेखक के रूप में नामित करना भ्रामक है क्योंकि अधिकांश छात्र वित्तीय साक्षरता को इन दो नियामकों से जोड़ते हैं और याद नहीं रख पाते कि IRDAI (बीमा) और PFRDA (पेंशन) भी राष्ट्रीय वित्तीय शिक्षा रणनीति के समान सह-लेखक हैं।",
+      "elimination_logic": [
+        "राष्ट्रीय वित्तीय शिक्षा रणनीति (NSFE) 2020-2025 एक संयुक्त पहल है — इसलिए कोई भी विकल्प जो केवल एक या दो नियामकों को सूचीबद्ध करता है, उसे हटा दें।",
+        "भारत में चार वित्तीय क्षेत्र नियामक हैं: RBI (बैंकिंग), SEBI (सिक्योरिटीज), IRDAI (बीमा), और PFRDA (पेंशन) — NSFE को सभी चार की आवश्यकता है क्योंकि वित्तीय साक्षरता इन सभी चार क्षेत्रों में फैली हुई है।",
+        "(a) को हटाएं: केवल RBI और NABARD को सूचीबद्ध करता है — NABARD NSFE का सह-लेखक नहीं है।",
+        "(b) को हटाएं: केवल RBI और SEBI को सूचीबद्ध करता है — अधूरा है; IRDAI और PFRDA गायब हैं।",
+        "(c) को हटाएं: PFRDA के बजाय वित्त मंत्रालय को शामिल करता है — मंत्रालय नियामक सह-लेखक नहीं है।",
+        "(d) को चुनें: RBI, SEBI, IRDAI, और PFRDA — सही चार-नियामक लेखक।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल PFRDA या IRDAI को NABARD या वित्त मंत्रालय से बदलकर काम करता है — ये संस्थाएं व्यापक रूप से वित्तीय समावेशन से जुड़ी हैं लेकिन NSFE के सह-लेखक नहीं हैं। जो छात्र जानते हैं कि NSFE मौजूद है लेकिन चार नियामकों की सटीक संरचना याद नहीं रखते, वे सबसे परिचित जोड़ी (RBI + SEBI) वाले विकल्प को चुनेंगे, बीमा और पेंशन नियामकों को छोड़ देंगे।",
+      "final_explanation": "राष्ट्रीय वित्तीय शिक्षा रणनीति (NSFE) 2020-2025 भारत में बैंकिंग, निवेश, बीमा, और पेंशन क्षेत्रों में वित्तीय जागरूकता बढ़ाने के लिए एक व्यापक ढांचा है।\n\n• विकल्प (a): गलत। NABARD एक ग्रामीण वित्त विकास संस्था है — यह NSFE का सह-लेखक नहीं है। NABARD अलग ग्रामीण वित्तीय साक्षरता पहल चलाता है।\n• विकल्प (b): गलत। RBI और SEBI क्रमशः बैंकिंग और सिक्योरिटीज को कवर करते हैं, लेकिन NSFE चार वित्तीय क्षेत्रों में फैला है — बीमा (IRDAI) और पेंशन (PFRDA) भी समान रूप से आवश्यक सह-लेखक हैं।\n• विकल्प (c): गलत। वित्त मंत्रालय NSFE के नियामक सह-लेखकों में से नहीं है। NSFE नियामक से नियामक की पहल है।\n• विकल्प (d): सही। NSFE 2020-2025 को चारों वित्तीय क्षेत्र नियामकों ने संयुक्त रूप से जारी किया है: RBI (बैंकिंग), SEBI (सिक्योरिटीज/पूंजी बाजार), IRDAI (बीमा), और PFRDA (पेंशन फंड)।\n\nमूल्य संवर्धन:\n• RBI ब्लॉक स्तर पर वित्तीय साक्षरता केंद्र (CFL) कार्यक्रम चलाता है — जो NSFE से अलग है।\n• वित्तीय साक्षरता को मांग-पक्ष हस्तक्षेप के रूप में वर्गीकृत किया गया है; BC मॉडल और शाखा विस्तार आपूर्ति-पक्ष हैं।\n• NSFE 2020-2025 पांच मुख्य क्षमताओं को लक्षित करता है: कमाई, खर्च, बचत, उधार, और सुरक्षा (बीमा)।"
+    }
+  },
+  {
+    "uuid": "925d8dbe-b1f9-4ec0-8d93-65dcd6d01bbe",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Payment Banks and Small Finance Banks: Inclusion Architecture"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Payment Banks — deposit ceiling and lending prohibition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Payment Banks — Licensed to accept deposits up to ₹2 lakh per customer but prohibited from extending loans\n(b) Payment Banks — Licensed to accept deposits up to ₹1 lakh per customer and permitted to extend small-ticket loans to priority sector borrowers\n(c) Payment Banks — Cannot accept public deposits but can extend small remittance and payment services\n(d) Payment Banks — Can accept deposits without a ceiling and extend loans exclusively to small and marginal farmers",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) pairing Payment Banks with 'cannot accept deposits' is the strong distractor because students who only remember that Payment Banks 'cannot lend' sometimes misremember this as 'cannot accept deposits' — conflating the two restrictions.",
+      "elimination_logic": [
+        "Payment Banks can accept deposits — this is their primary function. Eliminate (c) which says they cannot accept deposits.",
+        "Payment Banks CANNOT give loans — this is the critical restriction. Eliminate (d) which says they can give loans.",
+        "The deposit ceiling for Payment Banks is ₹2 lakh per individual account. Eliminate (b) which states ₹1 lakh as the deposit ceiling.",
+        "Option (a) — 'Payment Banks: Licensed to accept deposits up to ₹2 lakh per customer but prohibited from extending loans' — is correctly matched."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges two distinct restrictions: deposit ceiling (₹2 lakh) and lending prohibition. Students who know Payment Banks have a restriction often recall it as either a deposit restriction OR a lending prohibition but confuse which is which. The ₹1 lakh figure in option (b) is a temporal swap — it may have been associated with earlier proposals or with cooperative bank norms. The precise ₹2 lakh deposit ceiling combined with the lending prohibition is the exact factual pairing that distinguishes Payment Banks.",
+      "final_explanation": "Payment Banks are a differentiated banking category licensed by RBI under recommendations of the Nachiket Mor Committee (2014). Their design is focused on financial inclusion through payments and remittances, not credit intermediation.\n\n• Option (a): Correctly matched. Payment Banks accept deposits up to ₹2 lakh per customer and are prohibited from extending any loans or credit cards. Their revenue model relies on transaction fees and investment in government securities.\n• Option (b): Incorrectly matched. The deposit ceiling is ₹2 lakh, not ₹1 lakh. The ₹1 lakh figure is a common temporal-swap distractor.\n• Option (c): Incorrectly matched. Payment Banks CAN accept deposits — that is their primary function. The restriction is on lending, not on deposits.\n• Option (d): Incorrectly matched. Payment Banks CANNOT give loans — this is a fundamental structural prohibition distinguishing them from full-service banks and Small Finance Banks.\n\nValue Addition:\n• India Post Payments Bank (IPPB) is the largest Payment Bank, leveraging the postal network for PMJDY last-mile delivery.\n• Small Finance Banks CAN lend (primarily to small borrowers) — key distinction from Payment Banks.\n• Both Payment Banks and Small Finance Banks were licensed by RBI in 2015-16 following the Nachiket Mor Committee's 2014 report."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) Payment Banks — प्रति ग्राहक ₹2 लाख तक जमा स्वीकार करने के लिए लाइसेंस प्राप्त लेकिन ऋण देने से प्रतिबंधित\n(b) Payment Banks — प्रति ग्राहक ₹1 लाख तक जमा स्वीकार करने के लिए लाइसेंस प्राप्त और प्राथमिकता क्षेत्र के उधारकर्ताओं को छोटे ऋण देने की अनुमति\n(c) Payment Banks — सार्वजनिक जमा स्वीकार नहीं कर सकते लेकिन छोटे रेमिटेंस और भुगतान सेवाएं प्रदान कर सकते हैं\n(d) Payment Banks — बिना किसी सीमा के जमा स्वीकार कर सकते हैं और केवल छोटे और सीमांत किसानों को ऋण दे सकते हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) में Payment Banks को 'जमा स्वीकार नहीं कर सकते' के साथ जोड़ना एक मजबूत भ्रम है क्योंकि छात्र जो केवल याद रखते हैं कि Payment Banks 'ऋण नहीं दे सकते' कभी-कभी इसे 'जमा स्वीकार नहीं कर सकते' के रूप में गलत समझ लेते हैं — दोनों प्रतिबंधों को मिलाते हुए।",
+      "elimination_logic": [
+        "Payment Banks जमा स्वीकार कर सकते हैं — यह उनका प्राथमिक कार्य है। इसलिए (c) को हटा दें जो कहता है कि वे जमा स्वीकार नहीं कर सकते।",
+        "Payment Banks ऋण नहीं दे सकते — यह मुख्य प्रतिबंध है। इसलिए (d) को हटा दें जो कहता है कि वे ऋण दे सकते हैं।",
+        "Payment Banks के लिए जमा सीमा प्रति व्यक्तिगत खाते ₹2 लाख है। इसलिए (b) को हटा दें जो ₹1 लाख जमा सीमा बताता है।",
+        "विकल्प (a) — 'Payment Banks: प्रति ग्राहक ₹2 लाख तक जमा स्वीकार करने के लिए लाइसेंस प्राप्त लेकिन ऋण देने से प्रतिबंधित' — सही मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "यह भ्रम जाल दो अलग-अलग प्रतिबंधों को मिला देता है: जमा सीमा (₹2 लाख) और ऋण प्रतिबंध। जो छात्र जानते हैं कि Payment Banks पर प्रतिबंध है, वे इसे या तो जमा प्रतिबंध या ऋण प्रतिबंध के रूप में याद करते हैं लेकिन भ्रमित हो जाते हैं कि कौन सा क्या है। विकल्प (b) में ₹1 लाख की राशि एक अस्थायी बदलाव है — यह पहले के प्रस्तावों या सहकारी बैंक नियमों से जुड़ी हो सकती है। सटीक ₹2 लाख जमा सीमा और ऋण प्रतिबंध का संयोजन ही Payment Banks को विशिष्ट बनाता है।",
+      "final_explanation": "Payment Banks आरबीआई द्वारा नचिकेत मोर समिति (2014) की सिफारिशों के तहत लाइसेंस प्राप्त एक विशिष्ट बैंकिंग श्रेणी हैं। इनका डिज़ाइन वित्तीय समावेशन पर केंद्रित है, जो भुगतान और रेमिटेंस के माध्यम से है, न कि क्रेडिट मध्यस्थता पर।\n\n• विकल्प (a): सही मेल खाता है। Payment Banks प्रति ग्राहक ₹2 लाख तक जमा स्वीकार करते हैं और किसी भी ऋण या क्रेडिट कार्ड जारी करने से प्रतिबंधित हैं। उनकी आय मॉडल लेनदेन शुल्क और सरकारी प्रतिभूतियों में निवेश पर आधारित है।\n• विकल्प (b): गलत मेल खाता है। जमा सीमा ₹2 लाख है, ₹1 लाख नहीं। ₹1 लाख की राशि एक सामान्य अस्थायी भ्रम है।\n• विकल्प (c): गलत मेल खाता है। Payment Banks जमा स्वीकार कर सकते हैं — यह उनका प्राथमिक कार्य है। प्रतिबंध ऋण देने पर है, जमा पर नहीं।\n• विकल्प (d): गलत मेल खाता है। Payment Banks ऋण नहीं दे सकते — यह एक मौलिक संरचनात्मक प्रतिबंध है जो उन्हें पूर्ण सेवा बैंक और स्मॉल फाइनेंस बैंक से अलग करता है।\n\nमूल्य संवर्धन:\n• इंडिया पोस्ट पेमेंट्स बैंक (IPPB) सबसे बड़ा Payment Bank है, जो पीएमजेडीवाई की अंतिम मील डिलीवरी के लिए डाक नेटवर्क का उपयोग करता है।\n• स्मॉल फाइनेंस बैंक ऋण दे सकते हैं (मुख्य रूप से छोटे उधारकर्ताओं को) — जो Payment Banks से मुख्य भेद है।\n• दोनों Payment Banks और स्मॉल फाइनेंस बैंक को 2015-16 में नचिकेत मोर समिति की 2014 रिपोर्ट के बाद आरबीआई ने लाइसेंस दिया।"
+    }
+  },
+  {
+    "uuid": "0ad7e280-1a47-422c-b67d-5182d9371790",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Interoperability and Digital Payments Ecosystem Post-PMJDY"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "NPCI — institutional status, ownership and functions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the National Payments Corporation of India (NPCI) and its role in the PMJDY digital ecosystem:\n\n1. NPCI operates the Unified Payments Interface (UPI), RuPay card network, and the National Automated Clearing House (NACH) used for bulk DBT auto-credits.\n2. NPCI is a statutory body established by an Act of Parliament and functions under the direct administrative oversight of the Ministry of Finance.\n3. Jan Dhan accounts can be linked to UPI, enabling account holders to conduct digital transactions without needing a smartphone, by using USSD-based mobile banking on basic feature phones.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The National Payments Corporation of India (NPCI) operates the Unified Payments Interface (UPI), RuPay card network, and the National Automated Clearing House (NACH) used for bulk DBT auto-credits.",
+          "verdict": "Correct",
+          "reason": "NPCI is the umbrella organisation for retail payments infrastructure in India, operating UPI, RuPay, NACH, IMPS, and other systems. NACH is specifically used for bulk DBT auto-credit transfers."
+        },
+        {
+          "statement": "NPCI is a statutory body established by an Act of Parliament and functions under the direct administrative oversight of the Ministry of Finance.",
+          "verdict": "Incorrect",
+          "reason": "NPCI is a not-for-profit company incorporated under Section 8 of the Companies Act, promoted by RBI and the Indian Banks' Association (IBA). It is not a statutory body, nor is it under the Ministry of Finance."
+        },
+        {
+          "statement": "Jan Dhan accounts can be linked to UPI, enabling account holders to conduct digital transactions without needing a smartphone, by using USSD-based mobile banking on basic feature phones.",
+          "verdict": "Correct",
+          "reason": "NPCI's *99# USSD-based mobile banking service allows basic feature phone users — including Jan Dhan account holders — to access banking services and UPI without a smartphone or internet connection."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three statements are correct is the strong distractor because Statements 1 and 3 are factually correct and well-known; Statement 2 sounds authoritative ('statutory body') and students unfamiliar with NPCI's corporate structure may accept it uncritically.",
+      "elimination_logic": [
+        "Statement 1: NPCI operates UPI, RuPay, NACH, IMPS — this is widely documented. Statement 1 is correct.",
+        "Statement 2: 'Statutory body under Ministry of Finance' — NPCI is not created by Parliament. It is a not-for-profit company under the Companies Act, promoted by RBI and IBA. Statement 2 is incorrect.",
+        "Statement 3: *99# USSD banking enables feature phone users to access UPI — this is an NPCI initiative for digital inclusion. Statement 3 is correct.",
+        "Only Statements 1 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a plausible fabrication — 'statutory body under Ministry of Finance' sounds exactly like how a regulatory or quasi-governmental payments body should be described. Students who know NPCI plays an important role in India's digital payments infrastructure but have not specifically studied its corporate form will find 'statutory body' plausible. NPCI's actual status as an RBI-IBA promoted not-for-profit company under the Companies Act is the precise knowledge required to reject Statement 2.",
+      "final_explanation": "NPCI is India's umbrella retail payments infrastructure organisation and is critical to both PMJDY's digital payments layer and the DBT ecosystem.\n\n• Statement 1 — Correct: NPCI operates UPI, RuPay, NACH, IMPS, and other retail payment systems. NACH specifically handles bulk auto-credits used in DBT for schemes like PM-KISAN, LPG subsidy, and MGNREGS wages.\n• Statement 2 — Incorrect: NPCI is a not-for-profit company registered under Section 8 of the Companies Act, 2013. It was promoted by RBI and the Indian Banks' Association — it is not a statutory body, and it does not report to the Ministry of Finance.\n• Statement 3 — Correct: NPCI's *99# service (USSD-based mobile banking) allows Jan Dhan holders with basic feature phones to conduct transactions — a critical bridge for the approximately 300 million Indians without smartphones.\n\nValue Addition:\n• NPCI was incorporated in 2008 on RBI's initiative; it has 56 member banks.\n• RuPay reduces India's dependence on Visa and Mastercard for domestic card transactions.\n• NACH processes over 500 million transactions monthly, making it the backbone of India's welfare payment infrastructure."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय भुगतान निगम (NPCI) और पीएमजेडीवाई के डिजिटल पारिस्थितिकी तंत्र में इसकी भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. NPCI यूनिफाइड पेमेंट्स इंटरफेस (UPI), रूपे कार्ड नेटवर्क, और राष्ट्रीय स्वचालित क्लियरिंग हाउस (NACH) संचालित करता है, जिसका उपयोग थोक DBT ऑटो-क्रेडिट के लिए किया जाता है।\n2. NPCI एक विधायी निकाय है जिसे संसद के अधिनियम द्वारा स्थापित किया गया है और यह वित्त मंत्रालय के प्रत्यक्ष प्रशासनिक नियंत्रण में कार्य करता है।\n3. जन धन खातों को UPI से जोड़ा जा सकता है, जिससे खाता धारक बिना स्मार्टफोन के भी बेसिक फीचर फोन पर USSD आधारित मोबाइल बैंकिंग का उपयोग करके डिजिटल लेनदेन कर सकते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) 1 और 2 केवल\n(c) 1 और 3 केवल\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The National Payments Corporation of India (NPCI) operates the Unified Payments Interface (UPI), RuPay card network, and the National Automated Clearing House (NACH) used for bulk DBT auto-credits.",
+          "verdict": "Correct",
+          "reason": "NPCI भारत में खुदरा भुगतान अवसंरचना के लिए छत्र संगठन है, जो UPI, रूपे, NACH, IMPS और अन्य प्रणालियों को संचालित करता है। NACH विशेष रूप से थोक DBT ऑटो-क्रेडिट ट्रांसफर के लिए उपयोग किया जाता है।"
+        },
+        {
+          "statement": "NPCI is a statutory body established by an Act of Parliament and functions under the direct administrative oversight of the Ministry of Finance.",
+          "verdict": "Incorrect",
+          "reason": "NPCI एक गैर-लाभकारी कंपनी है जो कंपनी अधिनियम की धारा 8 के तहत पंजीकृत है, और इसे RBI तथा भारतीय बैंकों के संघ (IBA) ने प्रोत्साहित किया है। यह कोई विधायी निकाय नहीं है, न ही यह वित्त मंत्रालय के अधीन है।"
+        },
+        {
+          "statement": "Jan Dhan accounts can be linked to UPI, enabling account holders to conduct digital transactions without needing a smartphone, by using USSD-based mobile banking on basic feature phones.",
+          "verdict": "Correct",
+          "reason": "NPCI की *99# USSD आधारित मोबाइल बैंकिंग सेवा बेसिक फीचर फोन उपयोगकर्ताओं — जिनमें जन धन खाते धारक भी शामिल हैं — को बिना स्मार्टफोन या इंटरनेट कनेक्शन के बैंकिंग सेवाओं और UPI तक पहुंच प्रदान करती है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें सभी तीन कथनों को सही बताया गया है, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 तथ्यात्मक रूप से सही और प्रसिद्ध हैं; कथन 2 'विधायी निकाय' होने का दावा करता है जो प्रामाणिक लगता है और जो छात्र NPCI की कॉर्पोरेट संरचना से परिचित नहीं हैं वे इसे बिना जांचे स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: NPCI UPI, रूपे, NACH, IMPS संचालित करता है — यह व्यापक रूप से प्रलेखित है। कथन 1 सही है।",
+        "कथन 2: 'वित्त मंत्रालय के अधीन विधायी निकाय' — NPCI संसद द्वारा निर्मित नहीं है। यह कंपनी अधिनियम के तहत एक गैर-लाभकारी कंपनी है, जिसे RBI और भारतीय बैंकों के संघ (IBA) ने प्रोत्साहित किया है। कथन 2 गलत है।",
+        "कथन 3: *99# USSD बैंकिंग फीचर फोन उपयोगकर्ताओं को UPI तक पहुंच प्रदान करती है — यह डिजिटल समावेशन के लिए NPCI की पहल है। कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक संभावित भ्रम है — 'वित्त मंत्रालय के अधीन विधायी निकाय' सुनने में बिल्कुल वैसा लगता है जैसे कोई नियामक या अर्ध-सरकारी भुगतान निकाय होना चाहिए। जो छात्र जानते हैं कि NPCI भारत के डिजिटल भुगतान अवसंरचना में महत्वपूर्ण भूमिका निभाता है लेकिन इसकी कॉर्पोरेट संरचना का अध्ययन नहीं किया है, वे 'विधायी निकाय' को सही मान सकते हैं। NPCI की वास्तविक स्थिति, जो कि RBI-IBA द्वारा प्रोत्साहित गैर-लाभकारी कंपनी है, कंपनी अधिनियम के तहत पंजीकृत है, वह सही ज्ञान है जो कथन 2 को अस्वीकार करने के लिए आवश्यक है।",
+      "final_explanation": "NPCI भारत का छत्र खुदरा भुगतान अवसंरचना संगठन है और यह पीएमजेडीवाई के डिजिटल भुगतान परत और DBT पारिस्थितिकी तंत्र दोनों के लिए महत्वपूर्ण है।\n\n• कथन 1 — सही: NPCI UPI, रूपे, NACH, IMPS और अन्य खुदरा भुगतान प्रणालियों को संचालित करता है। NACH विशेष रूप से PM-KISAN, LPG सब्सिडी, और MGNREGS मजदूरी जैसी योजनाओं के लिए DBT में थोक ऑटो-क्रेडिट संभालता है।\n• कथन 2 — गलत: NPCI कंपनी अधिनियम, 2013 की धारा 8 के तहत पंजीकृत एक गैर-लाभकारी कंपनी है। इसे RBI और भारतीय बैंकों के संघ ने प्रोत्साहित किया है — यह कोई विधायी निकाय नहीं है, और यह वित्त मंत्रालय को रिपोर्ट नहीं करता।\n• कथन 3 — सही: NPCI की *99# सेवा (USSD आधारित मोबाइल बैंकिंग) जन धन धारकों को बेसिक फीचर फोन पर लेनदेन करने की अनुमति देती है — यह लगभग 300 मिलियन भारतीयों के लिए एक महत्वपूर्ण पुल है जिनके पास स्मार्टफोन नहीं है।\n\nमूल्य संवर्धन:\n• NPCI को 2008 में RBI की पहल पर स्थापित किया गया था; इसके 56 सदस्य बैंक हैं।\n• रूपे भारत में घरेलू कार्ड लेनदेन के लिए वीज़ा और मास्टरकार्ड पर निर्भरता कम करता है।\n• NACH मासिक 500 मिलियन से अधिक लेनदेन संसाधित करता है, जो भारत की कल्याण भुगतान अवसंरचना की रीढ़ है।"
+    }
+  },
+  {
+    "uuid": "8a7a2610-7129-4b76-af62-9353bfd308e7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Measuring Financial Inclusion: Indices and Indicators"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "RBI Financial Inclusion Index — structure and publication norms",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following correctly describes the Reserve Bank of India's Financial Inclusion Index (FI-Index)?\n\n(a) The FI-Index was launched in 2019 as a composite measure of banking access, published annually by RBI with 2017 as the base year.\n(b) The FI-Index, launched in 2021 by RBI, measures financial inclusion across three dimensions — Access, Usage, and Quality — and is published annually without a fixed base year.\n(c) The FI-Index measures account ownership alone and is published biannually with 2017 as the reference base year to track progress under PMJDY.\n(d) The FI-Index is published by NABARD as part of its mandate to assess rural financial inclusion and is updated every three years in alignment with the World Bank's Global Findex Database.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) attributing the FI-Index to NABARD sounds plausible because NABARD is associated with rural finance and financial inclusion in popular understanding. A student who has not specifically studied the FI-Index's institutional ownership will gravitate toward NABARD as the logical publisher.",
+      "elimination_logic": [
+        "Eliminate (a): The FI-Index was launched in 2021, not 2019. A two-year temporal swap.",
+        "Eliminate (c): The FI-Index has no fixed base year — it is a composite index published annually without a base year comparison, unlike GDP base-year indices. The claim of a '2017 base year' is fabricated.",
+        "Eliminate (d): The FI-Index is published by RBI, not NABARD. NABARD runs separate rural finance assessments.",
+        "Select (b): The FI-Index was launched by RBI in 2021, measures Access + Usage + Quality, is published annually, and has no base year — all four elements correct."
+      ],
+      "upsc_trap_explanation": "Option (d) is designed around the plausible-fabrication trap: NABARD's well-known role in rural financial inclusion makes it a believable publisher of a financial inclusion index. Students who associate financial inclusion metrics with NABARD rather than with RBI's regulatory mandate will choose (d). The 'no base year' feature of the FI-Index is another precision trap — students accustomed to GDP or price indices having base years assume FI-Index must too.",
+      "final_explanation": "RBI's Financial Inclusion Index (FI-Index) was introduced to provide a comprehensive, composite measure of financial inclusion in India beyond simple account-opening statistics.\n\n• Option (a): Incorrect. The FI-Index was launched in 2021, not 2019.\n• Option (b): Correct. RBI launched the FI-Index in 2021. It is a composite of three dimensions: Access (physical and digital infrastructure), Usage (transaction activity, credit, insurance), and Quality (financial literacy, consumer protection). It is published annually without a base year, meaning it measures absolute progress rather than relative change from a fixed point.\n• Option (c): Incorrect. The FI-Index has no base year — it is specifically designed as an absolute measure. The '2017 base year' is fabricated.\n• Option (d): Incorrect. The FI-Index is an RBI publication. NABARD publishes separate assessments on rural financial inclusion but not the FI-Index.\n\nValue Addition:\n• The FI-Index score ranges from 0 to 100; higher scores indicate greater inclusion.\n• Distinction: FI-Index measures inclusion comprehensively; PMJDY metrics measure only account opening.\n• World Bank's Global Findex Database (published every 3 years) compares India's inclusion trajectory internationally — complementary but distinct from RBI's FI-Index."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा विकल्प भारतीय रिज़र्व बैंक के वित्तीय समावेशन सूचकांक (FI-Index) का सही वर्णन करता है?\n\n(a) FI-Index 2019 में लॉन्च किया गया था, जो बैंकिंग पहुंच का सम्मिश्रित माप है, जिसे RBI द्वारा वार्षिक रूप से 2017 को आधार वर्ष मानकर प्रकाशित किया जाता है।\n(b) FI-Index, जिसे RBI ने 2021 में लॉन्च किया, वित्तीय समावेशन को तीन आयामों — पहुंच, उपयोग, और गुणवत्ता — में मापता है और इसे बिना किसी निश्चित आधार वर्ष के वार्षिक रूप से प्रकाशित किया जाता है।\n(c) FI-Index केवल खाता स्वामित्व को मापता है और इसे द्विवार्षिक रूप से 2017 को संदर्भ आधार वर्ष मानकर PMJDY के तहत प्रगति ट्रैक करने के लिए प्रकाशित किया जाता है।\n(d) FI-Index NABARD द्वारा ग्रामीण वित्तीय समावेशन के आकलन के तहत प्रकाशित किया जाता है और इसे विश्व बैंक के Global Findex Database के अनुरूप हर तीन वर्ष में अपडेट किया जाता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) में FI-Index को NABARD से जोड़ना संभावित-निर्माण (plausible-fabrication) जाल है क्योंकि NABARD ग्रामीण वित्त और वित्तीय समावेशन से जुड़ा है, जो सामान्य समझ में आता है। जो छात्र FI-Index के संस्थागत स्वामित्व का विशेष अध्ययन नहीं करते, वे NABARD को तार्किक प्रकाशक मानेंगे।",
+      "elimination_logic": [
+        "(a) को हटाएं: FI-Index 2019 में नहीं, बल्कि 2021 में लॉन्च किया गया था। यह दो साल की समयावधि की गलती है।",
+        "(c) को हटाएं: FI-Index का कोई निश्चित आधार वर्ष नहीं है — यह एक सम्मिश्रित सूचकांक है जो वार्षिक रूप से प्रकाशित होता है, GDP के आधार-वर्ष सूचकांकों की तरह नहीं। '2017 आधार वर्ष' का दावा निर्मित है।",
+        "(d) को हटाएं: FI-Index RBI द्वारा प्रकाशित होता है, NABARD द्वारा नहीं। NABARD अलग से ग्रामीण वित्त आकलन चलाता है।",
+        "(b) को चुनें: FI-Index को RBI ने 2021 में लॉन्च किया, यह Access + Usage + Quality को मापता है, वार्षिक रूप से प्रकाशित होता है, और इसका कोई आधार वर्ष नहीं है — ये चारों तत्व सही हैं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) संभावित-निर्माण जाल पर आधारित है: NABARD की ग्रामीण वित्तीय समावेशन में प्रसिद्ध भूमिका इसे वित्तीय समावेशन सूचकांक का विश्वसनीय प्रकाशक बनाती है। जो छात्र वित्तीय समावेशन मापदंडों को RBI के नियामक दायित्व के बजाय NABARD से जोड़ते हैं, वे (d) चुनेंगे। FI-Index की 'कोई आधार वर्ष नहीं' विशेषता एक और सटीकता जाल है — जो छात्र GDP या मूल्य सूचकांकों के आधार वर्ष होने के आदी हैं, वे मानते हैं कि FI-Index में भी होना चाहिए।",
+      "final_explanation": "RBI का वित्तीय समावेशन सूचकांक (FI-Index) भारत में वित्तीय समावेशन का एक व्यापक, सम्मिश्रित माप प्रदान करने के लिए प्रस्तुत किया गया था, जो केवल खाता खोलने के आंकड़ों से आगे है।\n\n• विकल्प (a): गलत। FI-Index 2019 में नहीं, बल्कि 2021 में लॉन्च किया गया था।\n• विकल्प (b): सही। RBI ने FI-Index 2021 में लॉन्च किया। यह तीन आयामों का सम्मिश्रण है: Access (भौतिक और डिजिटल अवसंरचना), Usage (लेन-देन गतिविधि, ऋण, बीमा), और Quality (वित्तीय साक्षरता, उपभोक्ता संरक्षण)। इसे वार्षिक रूप से बिना किसी आधार वर्ष के प्रकाशित किया जाता है, अर्थात यह एक निश्चित बिंदु से सापेक्ष परिवर्तन के बजाय पूर्ण प्रगति को मापता है।\n• विकल्प (c): गलत। FI-Index का कोई आधार वर्ष नहीं है — इसे विशेष रूप से पूर्ण माप के रूप में डिजाइन किया गया है। '2017 आधार वर्ष' निर्मित है।\n• विकल्प (d): गलत। FI-Index RBI का प्रकाशन है। NABARD ग्रामीण वित्तीय समावेशन पर अलग आकलन प्रकाशित करता है, लेकिन FI-Index नहीं।\n\nमूल्य संवर्धन:\n• FI-Index स्कोर 0 से 100 तक होता है; उच्च स्कोर अधिक समावेशन दर्शाता है।\n• भेद: FI-Index समावेशन को व्यापक रूप से मापता है; PMJDY मेट्रिक्स केवल खाता खोलने को मापते हैं।\n• विश्व बैंक का Global Findex Database (तीन वर्षों में प्रकाशित) भारत के समावेशन मार्ग की अंतरराष्ट्रीय तुलना करता है — यह RBI के FI-Index से पूरक लेकिन भिन्न है।"
+    }
+  },
+  {
+    "uuid": "eab2269a-3250-42ff-9805-650c926b37ca",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "RBI's Role vs. Government's Role in Financial Inclusion"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NABARD vs. RBI vs. Government — financial inclusion roles",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the roles of different institutions in India's financial inclusion ecosystem:\n\n1. RBI mandates Priority Sector Lending norms and Business Correspondent guidelines as part of its regulatory role in financial inclusion.\n2. NABARD is the apex regulator for all rural cooperative banks and Regional Rural Banks, and it also directly implements the Pradhan Mantri Jan Dhan Yojana in rural districts.\n3. Small Finance Banks and Payment Banks were licensed by RBI primarily to expand formal financial intermediation to underserved segments, and the Government of India uses them as channels for Direct Benefit Transfer.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "RBI mandates Priority Sector Lending norms and Business Correspondent guidelines as part of its regulatory role in financial inclusion.",
+          "verdict": "Correct",
+          "reason": "Priority Sector Lending (PSL) norms and BC guidelines are squarely within RBI's regulatory mandate. RBI issues master circulars on PSL targets and BC framework for scheduled commercial banks."
+        },
+        {
+          "statement": "NABARD is the apex regulator for all rural cooperative banks and Regional Rural Banks, and it also directly implements the Pradhan Mantri Jan Dhan Yojana in rural districts.",
+          "verdict": "Incorrect",
+          "reason": "While NABARD supervises RRBs and state cooperative banks, it does NOT implement PMJDY. PMJDY implementation is carried out through public sector banks, RRBs, and cooperative banks — but the coordinating authority is the Ministry of Finance, not NABARD. NABARD is a development finance institution, not an implementer of PMJDY."
+        },
+        {
+          "statement": "Small Finance Banks and Payment Banks were licensed by RBI primarily to expand formal financial intermediation to underserved segments, and the Government of India uses them as channels for Direct Benefit Transfer.",
+          "verdict": "Correct",
+          "reason": "RBI licensed Small Finance Banks and Payment Banks following Nachiket Mor Committee recommendations (2014) with financial inclusion as the primary objective. The government subsequently uses these institutions for DBT delivery, creating an overlap of RBI's regulatory role and the government's implementation role."
+        }
+      ],
+      "strong_distractor": "b — Option (b) naming only Statement 2 as incorrect is the strong distractor. Students who identify Statement 2 as incorrect but are unsure whether Statement 3's 'overlap' characterisation is accurate may select (b), missing that only Statement 2 is wrong and Statements 1 and 3 are correct.",
+      "elimination_logic": [
+        "Statement 1: PSL norms and BC guidelines are textbook RBI regulatory tools — Statement 1 is correct, not the incorrect one.",
+        "Statement 2: NABARD supervises RRBs but does NOT implement PMJDY. The claim that NABARD 'directly implements PMJDY in rural districts' is factually wrong — this is an entity-swap of NABARD for the Ministry of Finance.",
+        "Statement 3: RBI licensed Small Finance Banks and Payment Banks; government uses them for DBT — correct characterisation of the overlap.",
+        "Only Statement 2 is NOT correct — select option (a), which is 'Statement 2 only' in the given option set."
+      ],
+      "upsc_trap_explanation": "The entity-swap in Statement 2 exploits NABARD's strong association with rural banking and RRBs. Students who know NABARD supervises RRBs (which do implement PMJDY) make the inferential error that NABARD itself implements PMJDY. The critical distinction: NABARD supervises and refinances — it is a development finance institution, not a PMJDY implementing agency. The Ministry of Finance oversees PMJDY implementation through banks.",
+      "final_explanation": "Understanding which institution plays which role in India's financial inclusion ecosystem is a recurring UPSC test area.\n\n• Statement 1 — Correct: RBI's regulatory tools for financial inclusion include PSL norms (mandating banks to lend to priority sectors) and BC guidelines (enabling last-mile agent banking).\n• Statement 2 — Incorrect: NABARD supervises RRBs and state cooperative banks and provides refinance — but it does not implement PMJDY. PMJDY implementation falls under public sector banks and RRBs coordinated by the Ministry of Finance. Attributing PMJDY implementation to NABARD is a factual error.\n• Statement 3 — Correct: Small Finance Banks and Payment Banks were RBI's regulatory innovation for inclusion. Their subsequent use by the government for DBT creates a genuine overlap — RBI as licensor/regulator and Government as service delivery architect.\n\nValue Addition:\n• Three-way distinction: NABARD (rural credit/supervision) + RBI (regulation) + Government (scheme implementation).\n• NABARD refinances RRBs which then implement PMJDY — an indirect, not direct, role.\n• RBI's BSBDA norms and PSL targets collectively form the regulatory foundation of financial inclusion, predating PMJDY."
+    },
+    "hi": {
+      "display_text": "भारत के वित्तीय समावेशन तंत्र में विभिन्न संस्थाओं की भूमिकाओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. आरबीआई वित्तीय समावेशन में अपने नियामक दायित्व के तहत प्राथमिक क्षेत्र उधार (Priority Sector Lending) के मानदंड और व्यवसाय प्रतिनिधि (Business Correspondent) दिशानिर्देश निर्धारित करता है।\n2. NABARD सभी ग्रामीण सहकारी बैंकों और क्षेत्रीय ग्रामीण बैंकों का शीर्ष नियामक है, और यह ग्रामीण जिलों में सीधे प्रधानमंत्री जन धन योजना को लागू भी करता है।\n3. छोटे वित्त बैंक और भुगतान बैंक मुख्य रूप से सेवा से वंचित वर्गों तक औपचारिक वित्तीय मध्यस्थता बढ़ाने के लिए आरबीआई द्वारा लाइसेंस प्राप्त थे, और भारत सरकार उन्हें प्रत्यक्ष लाभ अंतरण के चैनल के रूप में उपयोग करती है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "RBI mandates Priority Sector Lending norms and Business Correspondent guidelines as part of its regulatory role in financial inclusion.",
+          "verdict": "सही है",
+          "reason": "प्राथमिक क्षेत्र उधार (Priority Sector Lending - PSL) के मानदंड और व्यवसाय प्रतिनिधि (Business Correspondent - BC) दिशानिर्देश आरबीआई के नियामक दायित्व के अंतर्गत आते हैं। आरबीआई अनुसूचित वाणिज्यिक बैंकों के लिए PSL लक्ष्यों और BC ढांचे पर मास्टर सर्कुलर जारी करता है।"
+        },
+        {
+          "statement": "NABARD is the apex regulator for all rural cooperative banks and Regional Rural Banks, and it also directly implements the Pradhan Mantri Jan Dhan Yojana in rural districts.",
+          "verdict": "गलत है",
+          "reason": "हालांकि NABARD क्षेत्रीय ग्रामीण बैंक (RRBs) और राज्य सहकारी बैंकों की निगरानी करता है, यह PMJDY को लागू नहीं करता। PMJDY का कार्य सार्वजनिक क्षेत्र के बैंक, RRBs और सहकारी बैंक करते हैं — लेकिन समन्वयकारी प्राधिकरण वित्त मंत्रालय है, न कि NABARD। NABARD एक विकास वित्त संस्थान है, PMJDY का कार्यान्वयन एजेंसी नहीं।"
+        },
+        {
+          "statement": "Small Finance Banks and Payment Banks were licensed by RBI primarily to expand formal financial intermediation to underserved segments, and the Government of India uses them as channels for Direct Benefit Transfer.",
+          "verdict": "सही है",
+          "reason": "आरबीआई ने नचिकेत मोर समिति (2014) की सिफारिशों के बाद छोटे वित्त बैंक और भुगतान बैंक को लाइसेंस दिया था, जिनका प्राथमिक उद्देश्य वित्तीय समावेशन था। सरकार बाद में इन संस्थानों का उपयोग प्रत्यक्ष लाभ अंतरण (DBT) के लिए करती है, जिससे आरबीआई के नियामक और सरकार के कार्यान्वयन भूमिकाओं में ओवरलैप बनता है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) जो केवल कथन 2 को गलत बताता है, एक मजबूत भ्रम पैदा करता है। जो छात्र कथन 2 को गलत पहचानते हैं लेकिन कथन 3 के 'ओवरलैप' वर्णन के सही होने को लेकर अनिश्चित हैं, वे (b) चुन सकते हैं, जबकि केवल कथन 2 गलत है और कथन 1 व 3 सही हैं।",
+      "elimination_logic": [
+        "कथन 1: PSL मानदंड और BC दिशानिर्देश आरबीआई के नियामक उपकरण हैं — कथन 1 सही है, गलत नहीं।",
+        "कथन 2: NABARD RRBs की निगरानी करता है लेकिन PMJDY लागू नहीं करता। NABARD द्वारा ग्रामीण जिलों में PMJDY के सीधे कार्यान्वयन का दावा तथ्यात्मक रूप से गलत है — यह NABARD और वित्त मंत्रालय के बीच इकाई-स्थानांतरण (entity-swap) है।",
+        "कथन 3: आरबीआई ने छोटे वित्त बैंक और भुगतान बैंक को लाइसेंस दिया; सरकार उन्हें DBT के लिए उपयोग करती है — ओवरलैप का सही वर्णन।",
+        "केवल कथन 2 सही नहीं है — विकल्प (a) चुनें, जो 'केवल कथन 2' है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में इकाई-स्थानांतरण NABARD के ग्रामीण बैंकिंग और RRBs से मजबूत जुड़ाव का फायदा उठाता है। जो छात्र जानते हैं कि NABARD RRBs की निगरानी करता है (जो PMJDY लागू करते हैं), वे यह गलत निष्कर्ष निकालते हैं कि NABARD स्वयं PMJDY लागू करता है। महत्वपूर्ण अंतर: NABARD निगरानी और पुनर्वित्त करता है — यह PMJDY लागू करने वाली एजेंसी नहीं है। PMJDY का कार्यान्वयन वित्त मंत्रालय द्वारा बैंकों के माध्यम से नियंत्रित होता है।",
+      "final_explanation": "भारत के वित्तीय समावेशन तंत्र में कौन-सी संस्था कौन-सा भूमिका निभाती है, यह UPSC में बार-बार पूछा जाने वाला विषय है।\n\n• कथन 1 — सही: आरबीआई के वित्तीय समावेशन के नियामक उपकरणों में PSL मानदंड (बैंकों को प्राथमिक क्षेत्रों को ऋण देने का निर्देश) और BC दिशानिर्देश (अंतिम मील एजेंट बैंकिंग सक्षम करना) शामिल हैं।\n• कथन 2 — गलत: NABARD RRBs और राज्य सहकारी बैंकों की निगरानी करता है और पुनर्वित्त प्रदान करता है — लेकिन PMJDY लागू नहीं करता। PMJDY का कार्यान्वयन सार्वजनिक क्षेत्र के बैंक और RRBs द्वारा वित्त मंत्रालय के समन्वय में होता है। NABARD को PMJDY लागू करने वाला बताना तथ्यात्मक त्रुटि है।\n• कथन 3 — सही: छोटे वित्त बैंक और भुगतान बैंक आरबीआई की वित्तीय समावेशन के लिए नियामक नवाचार हैं। सरकार द्वारा बाद में इनका DBT के लिए उपयोग एक वास्तविक ओवरलैप बनाता है — आरबीआई नियामक/लाइसेंसधारी और सरकार सेवा वितरण वास्तुकार के रूप में।\n\nमूल्य संवर्धन:\n• तीन-तरफा भेद: NABARD (ग्रामीण ऋण/निगरानी) + RBI (नियमन) + सरकार (योजना कार्यान्वयन)।\n• NABARD RRBs को पुनर्वित्त करता है जो PMJDY लागू करते हैं — अप्रत्यक्ष, न कि प्रत्यक्ष भूमिका।\n• आरबीआई के BSBDA मानदंड और PSL लक्ष्य वित्तीय समावेशन की नियामक नींव हैं, जो PMJDY से पहले से मौजूद हैं।"
+    }
+  },
+  {
+    "uuid": "0700dadb-0bba-4931-b0b3-04f829a29b49",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Financial Inclusion and Poverty Reduction: Causal vs. Correlational Link"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Financial inclusion as enabler — not direct cause — of poverty reduction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following most accurately describes the relationship between financial inclusion through PMJDY and poverty reduction in India?\n\n(a) Financial inclusion directly reduces poverty by giving households formal bank accounts, which independently generate income and savings sufficient to exit poverty.\n(b) Financial inclusion is an enabling condition that reduces welfare transaction costs and facilitates Direct Benefit Transfer, but requires accompanying credit access, insurance penetration, and income generation to translate into poverty reduction.\n(c) PMJDY and Direct Benefit Transfer have had no measurable impact on reducing leakage from welfare schemes and therefore cannot be linked to poverty alleviation.\n(d) According to Amartya Sen's capabilities approach, a bank account is a sufficient capability that enables households to convert their resources into poverty escape on their own.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) stating that financial inclusion directly reduces poverty is the strong distractor because the government's own communication frequently uses the language of 'poverty reduction through financial inclusion,' leading students to accept a direct causal claim that is actually a correlational or conditional relationship.",
+      "elimination_logic": [
+        "Eliminate (a): Financial inclusion reduces transaction costs of welfare receipt but does not by itself reduce poverty — the causal claim is too strong. Bank accounts without income, credit, and employment do not reduce poverty.",
+        "Eliminate (c): The claim that PMJDY and DBT have had zero impact on leakage reduction is contradicted by documented evidence — LPG subsidy savings are government-cited. Option (c) is too strong a denial.",
+        "Eliminate (d): Amartya Sen's capabilities approach emphasises that well-being requires real freedoms and capabilities — a bank account is an enabling condition, not a sufficient capability. This option correctly invokes Sen but misapplies it by calling bank accounts 'sufficient.'",
+        "Select (b): Financial inclusion is an enabling condition — it reduces welfare transaction costs and enables DBT — but without accompanying credit, insurance, and income-generation, it is insufficient for poverty reduction. This is the nuanced, policy-correct characterisation."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap appears in option (a): it presents financial inclusion as a direct cause of poverty reduction, reversing the correct characterisation (financial inclusion is a necessary enabling condition, not a sufficient cause). Government communication often uses this loose language, conditioning students to accept the direct causal claim. The precise answer — that financial inclusion is a necessary but not sufficient enabler — requires engagement with the development economics literature on financial inclusion and poverty.",
+      "final_explanation": "The relationship between financial inclusion and poverty reduction is a nuanced policy debate that UPSC increasingly tests in analytical questions.\n\n• Option (a): Incorrect. Financial inclusion reduces the transaction costs of receiving welfare transfers, but does not directly reduce poverty. A bank account without accompanying income, credit, or insurance does not automatically lift households out of poverty.\n• Option (b): Correct. Financial inclusion is an enabling condition — it facilitates DBT efficiency, reduces leakage, and provides access to savings and insurance tools. But it must be accompanied by credit access, insurance penetration, and income-generating opportunities to translate into poverty reduction. This is the capabilities approach logic.\n• Option (c): Incorrect. The claim of zero impact is contradicted by government data showing ₹1.4 lakh crore in leakage savings from DBT across schemes including LPG subsidy rationalisation, though attribution methodology is debated.\n• Option (d): Incorrect. Amartya Sen's capabilities approach would not call a bank account 'sufficient' — Sen emphasises the full set of real freedoms required for human development, of which a bank account is only one enabling element.\n\nValue Addition:\n• Financial inclusion links to SDG 1 (No Poverty), SDG 5 (Gender Equality), and SDG 8 (Decent Work) — but as an enabler, not a direct driver.\n• The attribution debate on DBT savings: government claims ₹1.4 lakh crore savings; independent researchers debate the counterfactual.\n• World Bank research documents that account ownership alone raises welfare by only 3–5% — deepening matters more than access."
+    },
+    "hi": {
+      "display_text": "भारत में पीएमजेडीवाई के माध्यम से वित्तीय समावेशन और गरीबी उन्मूलन के बीच संबंध को सबसे सटीक रूप से कौन-सा वर्णन करता है?\n\n(a) वित्तीय समावेशन सीधे गरीबी को कम करता है क्योंकि यह परिवारों को औपचारिक बैंक खाते देता है, जो स्वतंत्र रूप से आय और बचत उत्पन्न करते हैं जो गरीबी से बाहर निकलने के लिए पर्याप्त हैं।\n(b) वित्तीय समावेशन एक सक्षम करने वाली शर्त है जो कल्याण लेनदेन लागत को कम करता है और डायरेक्ट बेनिफिट ट्रांसफर को सुगम बनाता है, लेकिन इसे गरीबी उन्मूलन में परिणत करने के लिए ऋण, बीमा कवरेज, और आय सृजन के साथ होना आवश्यक है।\n(c) पीएमजेडीवाई और डायरेक्ट बेनिफिट ट्रांसफर का कल्याण योजनाओं से रिसाव कम करने पर कोई मापन योग्य प्रभाव नहीं हुआ है, इसलिए इन्हें गरीबी उन्मूलन से जोड़ा नहीं जा सकता।\n(d) अमर्त्य सेन की क्षमताओं की दृष्टिकोण के अनुसार, एक बैंक खाता एक पर्याप्त क्षमता है जो परिवारों को अपने संसाधनों को गरीबी से बचने में स्वयं परिवर्तित करने में सक्षम बनाता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) — विकल्प (a) यह कहता है कि वित्तीय समावेशन सीधे गरीबी को कम करता है, जो एक मजबूत भ्रम फैलाने वाला विकल्प है क्योंकि सरकार की अपनी संचार भाषा अक्सर 'वित्तीय समावेशन के माध्यम से गरीबी उन्मूलन' का उपयोग करती है, जिससे छात्र एक प्रत्यक्ष कारणात्मक संबंध को स्वीकार कर लेते हैं जबकि यह वास्तव में सहसंबंध या सशर्त संबंध है।",
+      "elimination_logic": [
+        "(a) को हटाएं: वित्तीय समावेशन कल्याण प्राप्ति के लेनदेन लागत को कम करता है लेकिन स्वयं गरीबी को कम नहीं करता — कारणात्मक दावा बहुत मजबूत है। बिना आय, ऋण, और रोजगार के बैंक खाते गरीबी कम नहीं करते।",
+        "(c) को हटाएं: पीएमजेडीवाई और डायरेक्ट बेनिफिट ट्रांसफर (DBT) के कल्याण योजनाओं से रिसाव कम करने पर शून्य प्रभाव होने का दावा प्रलेखित साक्ष्यों से विरोधाभासी है — एलपीजी सब्सिडी बचत सरकार द्वारा उद्धृत है। विकल्प (c) बहुत कठोर इनकार है।",
+        "(d) को हटाएं: अमर्त्य सेन की क्षमताओं की दृष्टिकोण यह बताती है कि कल्याण के लिए वास्तविक स्वतंत्रताएँ और क्षमताएँ आवश्यक हैं — बैंक खाता एक सक्षम करने वाली शर्त है, पर्याप्त क्षमता नहीं। यह विकल्प सेन का सही संदर्भ देता है लेकिन बैंक खातों को 'पर्याप्त' कहकर गलत उपयोग करता है।",
+        "(b) को चुनें: वित्तीय समावेशन एक सक्षम करने वाली शर्त है — यह कल्याण लेनदेन लागत को कम करता है और DBT को सक्षम बनाता है — लेकिन बिना ऋण, बीमा, और आय सृजन के यह गरीबी उन्मूलन के लिए अपर्याप्त है। यह एक सूक्ष्म, नीति-सही व्याख्या है।"
+      ],
+      "upsc_trap_explanation": "विपरीत-कारण संबंध का जाल विकल्प (a) में है: यह वित्तीय समावेशन को गरीबी उन्मूलन का प्रत्यक्ष कारण बताता है, जबकि सही व्याख्या यह है कि वित्तीय समावेशन एक आवश्यक सक्षम करने वाली शर्त है, पर्याप्त कारण नहीं। सरकारी संचार अक्सर इस ढीली भाषा का उपयोग करता है, जिससे छात्र प्रत्यक्ष कारणात्मक दावा स्वीकार कर लेते हैं। सटीक उत्तर — कि वित्तीय समावेशन आवश्यक लेकिन अपर्याप्त सक्षम करने वाला है — के लिए विकास अर्थशास्त्र की साहित्य से परिचय आवश्यक है।",
+      "final_explanation": "वित्तीय समावेशन और गरीबी उन्मूलन के बीच संबंध एक सूक्ष्म नीति बहस है जिसे UPSC विश्लेषणात्मक प्रश्नों में बढ़-चढ़कर पूछता है।\n\n• विकल्प (a): गलत। वित्तीय समावेशन कल्याण हस्तांतरण प्राप्ति के लेनदेन लागत को कम करता है, लेकिन सीधे गरीबी कम नहीं करता। बिना आय, ऋण, या बीमा के बैंक खाता अपने आप परिवारों को गरीबी से बाहर नहीं निकालता।\n• विकल्प (b): सही। वित्तीय समावेशन एक सक्षम करने वाली शर्त है — यह DBT की दक्षता को बढ़ाता है, रिसाव कम करता है, और बचत व बीमा उपकरणों तक पहुंच प्रदान करता है। लेकिन इसे ऋण, बीमा कवरेज, और आय सृजन के साथ होना चाहिए तभी यह गरीबी उन्मूलन में परिणत होता है। यह क्षमताओं की दृष्टिकोण की तर्कसंगत व्याख्या है।\n• विकल्प (c): गलत। शून्य प्रभाव का दावा सरकारी आंकड़ों से विरोधाभासी है जो DBT के तहत ₹1.4 लाख करोड़ के रिसाव बचत दिखाते हैं, जिसमें एलपीजी सब्सिडी सुधार भी शामिल है, हालांकि इसके कारणों पर बहस है।\n• विकल्प (d): गलत। अमर्त्य सेन की क्षमताओं की दृष्टिकोण बैंक खाते को 'पर्याप्त' नहीं कहेगी — सेन मानव विकास के लिए आवश्यक वास्तविक स्वतंत्रताओं के पूरे सेट पर जोर देते हैं, जिसमें बैंक खाता केवल एक सक्षम करने वाला तत्व है।\n\nमूल्य संवर्धन:\n• वित्तीय समावेशन SDG 1 (गरीबी उन्मूलन), SDG 5 (लिंग समानता), और SDG 8 (सम्मानजनक कार्य) से जुड़ा है — लेकिन एक सक्षम करने वाला कारक के रूप में, प्रत्यक्ष चालक के रूप में नहीं।\n• DBT बचत के कारणों पर बहस: सरकार ₹1.4 लाख करोड़ बचत का दावा करती है; स्वतंत्र शोधकर्ता इसके प्रतिकूल पर बहस करते हैं।\n• विश्व बैंक के शोध से पता चलता है कि केवल खाता स्वामित्व से कल्याण में 3–5% की वृद्धि होती है — गहराई में जाना पहुंच से अधिक महत्वपूर्ण है।"
+    }
+  },
+  {
+    "uuid": "85921265-c0af-4931-8bc0-2589d7298f71",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "PMJDY: Core Architecture and Launch Context",
+        "Zero-Balance Account Feature and Its Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "PMJDY launch date and national mission classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Pradhan Mantri Jan Dhan Yojana was formally launched as a National Mission on Financial Inclusion on ________, two weeks after it was announced in the Prime Minister's Independence Day address.\n\n(a) January 26, 2014\n(b) August 15, 2014\n(c) August 28, 2014\n(d) October 2, 2014",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — August 15, 2014 is the strong distractor because PMJDY was announced by Prime Minister Modi in his Independence Day speech on August 15, 2014, and students who recall the announcement date rather than the formal launch date will choose option (b).",
+      "elimination_logic": [
+        "PMJDY was announced in the Independence Day speech on August 15, 2014 — this was the announcement, not the launch.",
+        "The formal launch of PMJDY took place on August 28, 2014 — a distinct date from the announcement.",
+        "Eliminate (a): January 26, 2014 is Republic Day — no connection to PMJDY.",
+        "Eliminate (d): October 2, 2014 is Gandhi Jayanti — while used for other scheme launches, not PMJDY.",
+        "Select (c): August 28, 2014 is the correct formal launch date of PMJDY as a National Mission on Financial Inclusion."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap exploits the difference between announcement date (Independence Day, August 15, 2014) and formal launch date (August 28, 2014). Prime Minister Modi announced PMJDY during his Independence Day address, and many students who associate government scheme launches with national occasions remember August 15 as the PMJDY date. The precise formal launch date of August 28, 2014, requires specific recall that goes beyond the commonly remembered announcement context.",
+      "final_explanation": "PMJDY's launch history has two distinct dates that UPSC uses as a precision trap.\n\n• Option (a): Incorrect. January 26, 2014 (Republic Day) has no connection to PMJDY's launch.\n• Option (b): Incorrect. August 15, 2014 was the date of the Independence Day speech in which Prime Minister Modi announced PMJDY — this was the announcement, not the formal launch.\n• Option (c): Correct. PMJDY was formally launched on August 28, 2014, as a National Mission on Financial Inclusion. On the launch day, approximately 1.5 crore bank accounts were opened — setting a Guinness World Record.\n• Option (d): Incorrect. October 2, 2014 (Gandhi Jayanti) is used for other scheme launches (e.g., Swachh Bharat Mission was launched on this date in 2014), not PMJDY.\n\nValue Addition:\n• Swachh Bharat Mission was launched on October 2, 2014 — same year, different date from PMJDY.\n• The PMJDY launch set a Guinness World Record for the most bank accounts opened in one week.\n• August 28 is now observed as 'Financial Inclusion Day' in recognition of PMJDY's launch."
+    },
+    "hi": {
+      "display_text": "प्रधान मंत्री जन धन योजना को राष्ट्रीय वित्तीय समावेशन मिशन के रूप में ________ को औपचारिक रूप से लॉन्च किया गया था, जो प्रधानमंत्री के स्वतंत्रता दिवस भाषण में इसकी घोषणा के दो सप्ताह बाद था।\n\n(a) 26 जनवरी, 2014\n(b) 15 अगस्त, 2014\n(c) 28 अगस्त, 2014\n(d) 2 अक्टूबर, 2014",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 15 अगस्त, 2014 मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि पीएम मोदी ने 15 अगस्त, 2014 को अपने स्वतंत्रता दिवस भाषण में पीएमजेडीवाई की घोषणा की थी, और जो छात्र घोषणा तिथि याद रखते हैं न कि औपचारिक शुभारंभ तिथि, वे विकल्प (b) चुनेंगे।",
+      "elimination_logic": [
+        "पीएमजेडीवाई की घोषणा 15 अगस्त, 2014 को स्वतंत्रता दिवस के भाषण में हुई थी — यह घोषणा थी, शुभारंभ नहीं।",
+        "पीएमजेडीवाई का औपचारिक शुभारंभ 28 अगस्त, 2014 को हुआ था — जो घोषणा तिथि से अलग है।",
+        "विकल्प (a) को हटाएं: 26 जनवरी, 2014 गणतंत्र दिवस है — पीएमजेडीवाई से कोई संबंध नहीं।",
+        "विकल्प (d) को हटाएं: 2 अक्टूबर, 2014 गांधी जयंती है — अन्य योजनाओं के शुभारंभ के लिए उपयोग होता है, पीएमजेडीवाई के लिए नहीं।",
+        "विकल्प (c) चुनें: 28 अगस्त, 2014 पीएमजेडीवाई के राष्ट्रीय वित्तीय समावेशन मिशन के रूप में औपचारिक शुभारंभ की सही तिथि है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम (temporal-swap) जाल घोषणा तिथि (स्वतंत्रता दिवस, 15 अगस्त, 2014) और औपचारिक शुभारंभ तिथि (28 अगस्त, 2014) के बीच के अंतर का उपयोग करता है। प्रधानमंत्री मोदी ने स्वतंत्रता दिवस के भाषण में पीएमजेडीवाई की घोषणा की थी, और कई छात्र जो सरकारी योजनाओं के शुभारंभ को राष्ट्रीय अवसरों से जोड़ते हैं, वे 15 अगस्त को पीएमजेडीवाई की तिथि के रूप में याद रखते हैं। 28 अगस्त, 2014 की सटीक औपचारिक शुभारंभ तिथि विशेष स्मृति की मांग करती है जो सामान्यतः याद रखी गई घोषणा संदर्भ से परे है।",
+      "final_explanation": "पीएमजेडीवाई के शुभारंभ का इतिहास दो अलग-अलग तिथियाँ रखता है जिन्हें UPSC सटीकता के जाल के रूप में उपयोग करता है।\n\n• विकल्प (a): गलत। 26 जनवरी, 2014 (गणतंत्र दिवस) का पीएमजेडीवाई के शुभारंभ से कोई संबंध नहीं है।\n• विकल्प (b): गलत। 15 अगस्त, 2014 वह दिन था जब प्रधानमंत्री मोदी ने स्वतंत्रता दिवस भाषण में पीएमजेडीवाई की घोषणा की थी — यह घोषणा थी, औपचारिक शुभारंभ नहीं।\n• विकल्प (c): सही। पीएमजेडीवाई का औपचारिक शुभारंभ 28 अगस्त, 2014 को राष्ट्रीय वित्तीय समावेशन मिशन के रूप में हुआ था। शुभारंभ के दिन लगभग 1.5 करोड़ बैंक खाते खुले — जो गिनीज वर्ल्ड रिकॉर्ड था।\n• विकल्प (d): गलत। 2 अक्टूबर, 2014 (गांधी जयंती) अन्य योजनाओं के शुभारंभ के लिए उपयोग होता है (जैसे स्वच्छ भारत मिशन इसी दिन 2014 में शुरू हुआ था), पीएमजेडीवाई के लिए नहीं।\n\nमूल्य संवर्धन:\n• स्वच्छ भारत मिशन 2 अक्टूबर, 2014 को शुरू हुआ — वही वर्ष, पीएमजेडीवाई से अलग तिथि।\n• पीएमजेडीवाई के शुभारंभ ने एक सप्ताह में सबसे अधिक बैंक खाते खुलवाने का गिनीज वर्ल्ड रिकॉर्ड बनाया।\n• 28 अगस्त अब 'वित्तीय समावेशन दिवस' के रूप में मनाया जाता है, पीएमजेडीवाई के शुभारंभ की मान्यता में।"
+    }
+  },
+  {
+    "uuid": "77903b68-5fe2-4165-b4b7-b1a388160fae",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Business Correspondent (BC) Model and Last-Mile Delivery",
+        "Financial Literacy as a Prerequisite for Financial Inclusion"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Supply-side vs. demand-side financial inclusion barriers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Business Correspondent (BC) model and financial literacy in the context of PMJDY:\n\n1. The Business Correspondent model addresses supply-side barriers to financial inclusion by extending banking services to remote areas without requiring full branch infrastructure.\n2. Financial literacy programmes are demand-side interventions because they build awareness, financial behaviour, and motivation among potential users, addressing the reason why people do not use formal financial services even when access exists.\n3. Since Business Correspondents are bank employees, any fraudulent transaction conducted by them makes the sponsoring bank directly liable under the Payment and Settlement Systems Act, 2007.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Business Correspondent model addresses supply-side barriers to financial inclusion by extending banking services to remote areas without requiring full branch infrastructure.",
+          "verdict": "Correct",
+          "reason": "BC model is a supply-side intervention — it expands the reach of banking services by using agents in areas where branch viability is low. It addresses geographic and infrastructure barriers, not awareness or behavioural barriers."
+        },
+        {
+          "statement": "Financial literacy programmes are demand-side interventions because they build awareness, financial behaviour, and motivation among potential users, addressing the reason why people do not use formal financial services even when access exists.",
+          "verdict": "Correct",
+          "reason": "Demand-side interventions target the behavioural and awareness barriers that prevent uptake of existing financial services. Financial literacy addresses why people do not use accounts even when they have them — the core of the deepening problem."
+        },
+        {
+          "statement": "Since Business Correspondents are bank employees, any fraudulent transaction conducted by them makes the sponsoring bank directly liable under the Payment and Settlement Systems Act, 2007.",
+          "verdict": "Incorrect",
+          "reason": "BCs are NOT bank employees — they are agents. The legal relationship and liability framework for BCs is governed by RBI's BC guidelines and agency law principles, not purely through an employer-employee relationship. The statement is wrong in characterising BCs as employees."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three statements are correct is deceptive because Statements 1 and 2 are well-framed and clearly correct, causing students to accept Statement 3 without scrutinising the 'bank employees' characterisation.",
+      "elimination_logic": [
+        "Statement 1: BC model = supply-side (extending reach/infrastructure). This is standard financial inclusion terminology. Statement 1 is correct.",
+        "Statement 2: Financial literacy = demand-side (building awareness/behaviour). Textbook correct. Statement 2 is correct.",
+        "Statement 3: 'BCs are bank employees' is factually wrong — BCs are agents, not employees. This is a scope-extension trap. Statement 3 is incorrect.",
+        "Only Statements 1 and 2 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "The scope-extension in Statement 3 adds 'bank employees' to a statement about BCs — which sounds administratively plausible (they work for banks after all) but is factually wrong. BCs are agents regulated under RBI's BC framework, not employees under labour law. The distinction matters legally and operationally: as agents (not employees), their conduct has different legal liability implications. Students who associate BCs with bank operations without examining the specific employment classification will accept Statement 3.",
+      "final_explanation": "The supply-demand distinction in financial inclusion policy is a conceptual framework UPSC increasingly tests in analytical questions.\n\n• Statement 1 — Correct: The BC model is a supply-side intervention — it physically extends the banking infrastructure to remote areas, reducing geographic distance between customers and banking services. It addresses the 'no bank nearby' barrier.\n• Statement 2 — Correct: Financial literacy is a demand-side intervention — it builds the awareness, motivation, and behavioural capability to use financial services that already exist in proximity. It addresses the 'no reason to use the bank' barrier.\n• Statement 3 — Incorrect: Business Correspondents are agents of banks, not employees. RBI's BC framework explicitly establishes an agency relationship. BCs are typically individuals or entities (NGOs, kiosk operators, post offices) contracted by banks. They are not on the bank's payroll and their liability framework is governed by agency law principles under RBI guidelines, not the employer-employee relationship.\n\nValue Addition:\n• BC dropout rate is high because commissions are often insufficient — a supply-side policy gap within the supply-side solution itself.\n• Centre for Financial Literacy (CFL) under RBI operates at block level as a demand-side complement to BC infrastructure.\n• RBI's 2006 circular first permitted BCs; it was progressively expanded to include individuals, telecom companies, and retail agents."
+    },
+    "hi": {
+      "display_text": "PMJDY के संदर्भ में बिजनेस कॉरेस्पोंडेंट (BC) मॉडल और वित्तीय साक्षरता के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बिजनेस कॉरेस्पोंडेंट मॉडल आपूर्ति-पक्ष की बाधाओं को दूर करता है क्योंकि यह पूर्ण शाखा अवसंरचना की आवश्यकता के बिना दूरदराज के क्षेत्रों में बैंकिंग सेवाओं का विस्तार करता है।\n2. वित्तीय साक्षरता कार्यक्रम मांग-पक्ष हस्तक्षेप हैं क्योंकि वे संभावित उपयोगकर्ताओं में जागरूकता, वित्तीय व्यवहार और प्रेरणा का निर्माण करते हैं, जो इस बात को संबोधित करता है कि लोग औपचारिक वित्तीय सेवाओं का उपयोग क्यों नहीं करते, भले ही उन्हें पहुँच हो।\n3. चूंकि बिजनेस कॉरेस्पोंडेंट बैंक कर्मचारी हैं, उनके द्वारा किया गया कोई भी धोखाधड़ी वाला लेनदेन प्रायोजक बैंक को भुगतान और निपटान प्रणाली अधिनियम, 2007 के तहत सीधे उत्तरदायी बनाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Business Correspondent model addresses supply-side barriers to financial inclusion by extending banking services to remote areas without requiring full branch infrastructure.",
+          "verdict": "सही है",
+          "reason": "BC मॉडल एक आपूर्ति-पक्ष हस्तक्षेप है — यह उन क्षेत्रों में एजेंटों का उपयोग करके बैंकिंग सेवाओं की पहुँच बढ़ाता है जहाँ शाखा की व्यवहार्यता कम होती है। यह भौगोलिक और अवसंरचना बाधाओं को संबोधित करता है, जागरूकता या व्यवहार संबंधी बाधाओं को नहीं।"
+        },
+        {
+          "statement": "Financial literacy programmes are demand-side interventions because they build awareness, financial behaviour, and motivation among potential users, addressing the reason why people do not use formal financial services even when access exists.",
+          "verdict": "सही है",
+          "reason": "मांग-पक्ष हस्तक्षेप उन व्यवहारिक और जागरूकता बाधाओं को लक्षित करते हैं जो मौजूदा वित्तीय सेवाओं के उपयोग को रोकती हैं। वित्तीय साक्षरता इस बात को संबोधित करती है कि लोग खाते होने के बावजूद उनका उपयोग क्यों नहीं करते — यह गहराई की समस्या का मूल है।"
+        },
+        {
+          "statement": "Since Business Correspondents are bank employees, any fraudulent transaction conducted by them makes the sponsoring bank directly liable under the Payment and Settlement Systems Act, 2007.",
+          "verdict": "गलत है",
+          "reason": "BC बैंक कर्मचारी नहीं हैं — वे एजेंट हैं। BC के लिए कानूनी संबंध और दायित्व RBI के BC दिशानिर्देशों और एजेंसी कानून सिद्धांतों द्वारा नियंत्रित होते हैं, न कि केवल नियोक्ता-कर्मचारी संबंध के माध्यम से। यह कथन BC को कर्मचारी बताने में गलत है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें कहा गया है कि तीनों कथन सही हैं, भ्रामक है क्योंकि कथन 1 और 2 स्पष्ट रूप से सही हैं, जिससे छात्र बिना 'बैंक कर्मचारी' की विशेषता की जांच किए कथन 3 को स्वीकार कर लेते हैं।",
+      "elimination_logic": [
+        "कथन 1: BC मॉडल = आपूर्ति-पक्ष (पहुंच/अवसंरचना का विस्तार)। यह वित्तीय समावेशन की मानक शब्दावली है। कथन 1 सही है।",
+        "कथन 2: वित्तीय साक्षरता = मांग-पक्ष (जागरूकता/व्यवहार का निर्माण)। पाठ्यपुस्तक के अनुसार सही। कथन 2 सही है।",
+        "कथन 3: 'BC बैंक कर्मचारी हैं' तथ्यात्मक रूप से गलत है — BC एजेंट हैं, कर्मचारी नहीं। यह एक दायरा-विस्तार जाल है। कथन 3 गलत है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में दायरा-विस्तार ने BC के बारे में 'बैंक कर्मचारी' जोड़ दिया है — जो प्रशासनिक रूप से संभव लगता है (वे बैंक के लिए काम करते हैं) लेकिन तथ्यात्मक रूप से गलत है। BC RBI के BC ढांचे के तहत एजेंट हैं, न कि श्रम कानून के तहत कर्मचारी। यह भेद कानूनी और परिचालन रूप से महत्वपूर्ण है: एजेंट होने के नाते (कर्मचारी नहीं), उनका आचरण अलग कानूनी दायित्वों के अंतर्गत आता है। जो छात्र BC को बैंक संचालन से जोड़ते हैं बिना विशिष्ट रोजगार वर्गीकरण की जांच किए, वे कथन 3 को स्वीकार कर लेते हैं।",
+      "final_explanation": "वित्तीय समावेशन नीति में आपूर्ति-पक्ष और मांग-पक्ष का भेद एक वैचारिक ढांचा है जिसे UPSC विश्लेषणात्मक प्रश्नों में बढ़ते हुए परखता है।\n\n• कथन 1 — सही: BC मॉडल एक आपूर्ति-पक्ष हस्तक्षेप है — यह बैंकिंग अवसंरचना को दूरदराज के क्षेत्रों तक भौतिक रूप से बढ़ाता है, ग्राहकों और बैंकिंग सेवाओं के बीच भौगोलिक दूरी को कम करता है। यह 'पास में कोई बैंक नहीं' बाधा को संबोधित करता है।\n• कथन 2 — सही: वित्तीय साक्षरता एक मांग-पक्ष हस्तक्षेप है — यह जागरूकता, प्रेरणा और व्यवहारिक क्षमता का निर्माण करता है ताकि निकटवर्ती मौजूदा वित्तीय सेवाओं का उपयोग किया जा सके। यह 'बैंक का उपयोग करने का कोई कारण नहीं' बाधा को संबोधित करता है।\n• कथन 3 — गलत: बिजनेस कॉरेस्पोंडेंट बैंक के एजेंट होते हैं, कर्मचारी नहीं। RBI का BC ढांचा स्पष्ट रूप से एजेंसी संबंध स्थापित करता है। BC आमतौर पर व्यक्ति या संस्थाएं (NGO, कियोस्क ऑपरेटर, डाकघर) होते हैं जिन्हें बैंक द्वारा अनुबंधित किया जाता है। वे बैंक के वेतनमान पर नहीं होते और उनका दायित्व ढांचा RBI के दिशानिर्देशों के तहत एजेंसी कानून सिद्धांतों द्वारा नियंत्रित होता है, न कि नियोक्ता-कर्मचारी संबंध द्वारा।\n\nमूल्य संवर्धन:\n• BC का ड्रॉपआउट दर अधिक है क्योंकि कमीशन अक्सर अपर्याप्त होते हैं — आपूर्ति-पक्ष समाधान के भीतर एक आपूर्ति-पक्ष नीति अंतर।\n• RBI के तहत वित्तीय साक्षरता केंद्र (CFL) ब्लॉक स्तर पर BC अवसंरचना के लिए मांग-पक्ष पूरक के रूप में कार्य करता है।\n• RBI का 2006 सर्कुलर ने पहली बार BC को अनुमति दी; इसे क्रमशः व्यक्तियों, दूरसंचार कंपनियों और खुदरा एजेंटों को शामिल करने के लिए बढ़ाया गया।"
+    }
+  },
+  {
+    "uuid": "380cc9a6-e942-4736-b6d4-baf599ad175e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Direct Benefit Transfer (DBT) and PMJDY Linkage"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "partial-truth",
+      "concept_anchor": "DBT-linked schemes using PMJDY as delivery channel",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT use the Direct Benefit Transfer mechanism in the same manner as the others — i.e., by crediting cash benefits directly into beneficiaries' Jan Dhan or linked bank accounts?\n\n(a) LPG subsidy under the PAHAL scheme\n(b) MGNREGS wage payments\n(c) PM-KISAN income support instalments\n(d) Pradhan Mantri Awas Yojana housing assistance",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — MGNREGS wages are the strong distractor because they are not a subsidy but rather earnings, and students who categorise DBT narrowly as 'subsidy transfers' may exclude MGNREGS. However, MGNREGS wages ARE transferred via DBT into Jan Dhan accounts. The genuinely odd option is Pradhan Mantri Awas Yojana.",
+      "elimination_logic": [
+        "The common attribute: schemes whose cash benefits are directly transferred to beneficiaries' bank accounts (preferably Jan Dhan accounts) through the DBT mechanism.",
+        "LPG subsidy (PAHAL): Classic DBT example — subsidy transferred directly to Jan Dhan account, beneficiary buys at market price. Belongs.",
+        "MGNREGS wages: Wages are directly credited to beneficiaries' bank/Jan Dhan accounts. Belongs.",
+        "PM-KISAN income support: ₹6,000/year in three instalments transferred directly to farmers' accounts via DBT. Belongs.",
+        "Pradhan Mantri Awas Yojana (PMAY): PMAY provides housing assistance through construction subsidies and interest subvention — not a direct cash transfer to bank accounts via DBT in the same mechanism. The beneficiary receives a constructed house or interest subsidy on a loan — the 'direct cash to account' mechanism does not apply the same way. PMAY is the odd one out."
+      ],
+      "upsc_trap_explanation": "PMAY is a partial-truth distractor — it does involve government fund flow but through a construction subsidy or interest subvention model rather than direct cash-to-account DBT. Students who know PMAY is a beneficiary scheme and associate it with Jan Dhan broadly may not recognise that the delivery mechanism is fundamentally different from LPG-type direct cash transfer. MGNREGS is included as a trap for students who think only subsidies use DBT and exclude wages.",
+      "final_explanation": "Direct Benefit Transfer (DBT) in the PMJDY context specifically refers to government cash benefits credited directly to beneficiaries' bank accounts, bypassing intermediaries.\n\n• Option (a) — LPG subsidy under PAHAL: Classic DBT. The subsidy amount is transferred directly into Jan Dhan accounts; the beneficiary then buys LPG at market price. Belongs in the DBT-via-account category.\n• Option (b) — MGNREGS wages: Wage payments under MGNREGS are credited directly to workers' bank accounts (Jan Dhan accounts in many cases) — a direct cash transfer mechanism. Belongs.\n• Option (c) — PM-KISAN income support: ₹6,000 per year transferred in three instalments of ₹2,000 directly to farmers' registered bank accounts. Classic DBT. Belongs.\n• Option (d) — Pradhan Mantri Awas Yojana (PMAY): The odd one out. PMAY delivers benefits through construction subsidies (for rural housing) or interest subvention on home loans (urban), not through direct cash-to-account transfers. The delivery mechanism is fundamentally different.\n\nValue Addition:\n• COVID-19 ex-gratia of ₹500/month to women Jan Dhan holders is another live example of direct cash DBT.\n• DBT Mission under the Cabinet Secretariat coordinates DBT implementation across 300+ government schemes.\n• Aadhaar seeding of accounts ensures the right beneficiary receives the transfer — preventing duplication under DBT."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन सी योजना अन्य योजनाओं की तरह सीधे लाभार्थियों के जन धन या जुड़े बैंक खातों में नकद लाभ सीधे क्रेडिट करके डायरेक्ट बेनिफिट ट्रांसफर तंत्र का उपयोग नहीं करती?\n\n(a) पहल योजना के तहत LPG सब्सिडी\n(b) MGNREGS मजदूरी भुगतान\n(c) PM-किसान आय सहायता किस्तें\n(d) प्रधानमंत्री आवास योजना के तहत आवास सहायता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — MGNREGS मजदूरी मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि यह सब्सिडी नहीं बल्कि आय है, और छात्र जो DBT को संकीर्ण रूप से 'सब्सिडी ट्रांसफर' के रूप में वर्गीकृत करते हैं, वे MGNREGS को बाहर कर सकते हैं। हालांकि, MGNREGS मजदूरी DBT के माध्यम से जन धन खातों में स्थानांतरित की जाती है। वास्तव में असामान्य विकल्प प्रधान मंत्री आवास योजना है।",
+      "elimination_logic": [
+        "सामान्य विशेषता: वे योजनाएं जिनके नकद लाभ सीधे लाभार्थियों के बैंक खातों (अधिमानतः जन धन खातों) में DBT तंत्र के माध्यम से स्थानांतरित किए जाते हैं।",
+        "LPG सब्सिडी (पहल): क्लासिक DBT उदाहरण — सब्सिडी सीधे जन धन खाते में स्थानांतरित की जाती है, लाभार्थी बाजार मूल्य पर खरीदता है। शामिल है।",
+        "MGNREGS मजदूरी: मजदूरी सीधे लाभार्थियों के बैंक/जन धन खातों में जमा की जाती है। शामिल है।",
+        "PM-किसान आय सहायता: ₹6,000/वर्ष तीन किस्तों में सीधे किसानों के खातों में DBT के माध्यम से स्थानांतरित। शामिल है।",
+        "प्रधान मंत्री आवास योजना (PMAY): PMAY निर्माण सब्सिडी और ब्याज सबवेंशन के माध्यम से आवास सहायता प्रदान करती है — DBT के समान तंत्र से सीधे नकद हस्तांतरण नहीं होता। लाभार्थी को निर्मित घर या ऋण पर ब्याज सब्सिडी मिलती है — 'सीधे खाते में नकद' तंत्र समान रूप से लागू नहीं होता। PMAY असामान्य विकल्प है।"
+      ],
+      "upsc_trap_explanation": "PMAY आंशिक-सत्य भ्रम पैदा करने वाला विकल्प है — इसमें सरकार का धन प्रवाह होता है लेकिन निर्माण सब्सिडी या ब्याज सबवेंशन मॉडल के माध्यम से, सीधे नकद-से-खाते DBT के बजाय। जो छात्र जानते हैं कि PMAY लाभार्थी योजना है और इसे व्यापक रूप से जन धन से जोड़ते हैं, वे यह नहीं पहचान पाते कि वितरण तंत्र LPG जैसे सीधे नकद हस्तांतरण से मौलिक रूप से भिन्न है। MGNREGS उन छात्रों के लिए जाल है जो सोचते हैं कि केवल सब्सिडी DBT का उपयोग करती है और मजदूरी को बाहर कर देते हैं।",
+      "final_explanation": "प्रधानमंत्री जन धन योजना (PMJDY) के संदर्भ में डायरेक्ट बेनिफिट ट्रांसफर (DBT) का अर्थ है सरकार के नकद लाभ सीधे लाभार्थियों के बैंक खातों में हस्तांतरित किए जाना, बिना किसी मध्यस्थ के।\n\n• विकल्प (a) — पहल के तहत LPG सब्सिडी: क्लासिक DBT। सब्सिडी राशि सीधे जन धन खातों में स्थानांतरित होती है; लाभार्थी फिर बाजार मूल्य पर LPG खरीदता है। DBT-खाते के माध्यम से श्रेणी में शामिल।\n• विकल्प (b) — MGNREGS मजदूरी: MGNREGS के तहत मजदूरी सीधे श्रमिकों के बैंक खातों (कई मामलों में जन धन खाते) में जमा होती है — एक सीधे नकद हस्तांतरण तंत्र। शामिल।\n• विकल्प (c) — PM-किसान आय सहायता: ₹6,000 प्रति वर्ष तीन किस्तों में ₹2,000 सीधे किसानों के पंजीकृत बैंक खातों में स्थानांतरित। क्लासिक DBT। शामिल।\n• विकल्प (d) — प्रधानमंत्री आवास योजना (PMAY): असामान्य विकल्प। PMAY लाभ निर्माण सब्सिडी (ग्रामीण आवास के लिए) या गृह ऋण पर ब्याज सबवेंशन (शहरी) के माध्यम से प्रदान करता है, सीधे नकद-से-खाते हस्तांतरण के माध्यम से नहीं। वितरण तंत्र मौलिक रूप से भिन्न है।\n\nमूल्य संवर्धन:\n• COVID-19 के तहत महिलाओं के जन धन खाताधारकों को ₹500/माह का एक्स-ग्रेशिया एक और जीवंत सीधे नकद DBT उदाहरण है।\n• कैबिनेट सचिवालय के तहत DBT मिशन 300+ सरकारी योजनाओं में DBT कार्यान्वयन का समन्वय करता है।\n• खातों का आधार सीडिंग सुनिश्चित करता है कि सही लाभार्थी को स्थानांतरण मिले — DBT में डुप्लीकेशन से बचाव।"
+    }
+  },
+  {
+    "uuid": "018d2220-2d2e-40cc-a971-d6f8d39c1b68",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Payment Banks and Small Finance Banks: Inclusion Architecture"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nachiket Mor Committee — Payment Banks and Small Finance Banks genesis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): India Post Payments Bank (IPPB) is the largest Payment Bank in India by network reach, using the extensive postal infrastructure as a last-mile banking connector for PMJDY account holders.\n\nReason (R): The Nachiket Mor Committee (2014) recommended a new category of differentiated banks focused on payments and remittances, following which the Reserve Bank of India licensed Payment Banks in India.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is the strong distractor because both A and R are correct and the causal link between R (Mor Committee's recommendations) and A (RBI's licensing of Payment and Small Finance Banks) appears direct. Students who verify both facts as true will often select (a) without testing whether R is the complete causal explanation or merely the policy genesis.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? India Post Payments Bank (IPPB) is indeed the largest Payment Bank in India by reach, using the postal network of approximately 1.6 lakh post offices. A is factually correct.",
+        "Step 2 — Is Reason (R) correct? The Nachiket Mor Committee (2014) did recommend a new category of differentiated banks including Payment Banks and Small Finance Banks — and RBI did license them following these recommendations. R is factually correct.",
+        "Step 3 — Does R causally explain A? R explains why Payment Banks exist as a category — but it does not explain why IPPB specifically is the largest Payment Bank. IPPB's scale advantage comes from the pre-existing postal network infrastructure, not from the Mor Committee's recommendation. The committee's recommendation is a necessary condition for the category's existence, not an explanation for IPPB's scale dominance.",
+        "Both A and R correct, R does not explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap replaces the true causal explanation (IPPB's scale comes from postal network infrastructure) with a related but non-causal fact (Mor Committee recommended Payment Banks). Students who know both facts — IPPB is the largest Payment Bank and the Mor Committee recommended the category — construct a false causal narrative: 'IPPB is largest because the Mor Committee recommended it.' The correct explanation for IPPB's scale is the pre-existing 1.6 lakh post office network that required no new physical infrastructure investment.",
+      "final_explanation": "The Payment Bank category emerged from India's differentiated banking licensing policy, and IPPB's emergence as the largest Payment Bank has a specific structural explanation.\n\nAssertion (A): True. India Post Payments Bank (IPPB), launched in 2018, is the largest Payment Bank in India by network reach, leveraging approximately 1.6 lakh post offices and 3 lakh postmen to provide last-mile banking services — a scale no other Payment Bank can match.\n\nReason (R): True. The Nachiket Mor Committee on Comprehensive Financial Services for Small Businesses and Low-Income Households (2014) recommended differentiated bank licences including Payment Banks and Small Finance Banks. RBI issued licences for 11 Payment Banks in 2015.\n\nCausal link: R explains why Payment Banks exist as a category — but not why IPPB is the largest one. IPPB's dominant scale is a function of India Post's pre-existing ubiquitous physical network. The Mor Committee's recommendation is policy genesis, not a causal explanation for IPPB's network advantage.\n\nValue Addition:\n• IPPB was launched nationally on September 1, 2018, by the Prime Minister.\n• Small Finance Banks (SFBs) can accept deposits AND extend loans — the lending ability distinguishes them from Payment Banks.\n• IPPB's postal-agent model directly supports PMJDY's last-mile delivery mandate in rural India."
+    },
+    "hi": {
+      "display_text": "कथन (A): India Post Payments Bank (IPPB) भारत में नेटवर्क पहुंच के हिसाब से सबसे बड़ा Payment Bank है, जो PMJDY खाता धारकों के लिए अंतिम मील बैंकिंग कनेक्टर के रूप में व्यापक डाक अवसंरचना का उपयोग करता है।\n\nकारण (R): Nachiket Mor Committee (2014) ने भुगतान और प्रेषण पर केंद्रित भेदित बैंक की एक नई श्रेणी की सिफारिश की, जिसके बाद भारतीय रिजर्व बैंक ने भारत में Payment Banks को लाइसेंस दिया।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) मजबूत भ्रमित करने वाला है क्योंकि दोनों A और R सही हैं और R (Mor Committee की सिफारिशें) और A (RBI द्वारा Payment और Small Finance Banks को लाइसेंस देना) के बीच कारणात्मक संबंध प्रत्यक्ष प्रतीत होता है। जो छात्र दोनों तथ्यों को सत्य मानते हैं वे अक्सर (a) चुन लेते हैं बिना यह जांचे कि क्या R पूरी कारणात्मक व्याख्या है या केवल नीति की उत्पत्ति है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? India Post Payments Bank (IPPB) वास्तव में भारत में पहुंच के हिसाब से सबसे बड़ा Payment Bank है, जो लगभग 1.6 लाख डाक घरों के डाक नेटवर्क का उपयोग करता है। A तथ्यात्मक रूप से सही है।",
+        "चरण 2 — क्या कारण (R) सही है? Nachiket Mor Committee (2014) ने Payment Banks और Small Finance Banks सहित एक नई भेदित बैंक श्रेणी की सिफारिश की थी — और RBI ने इन सिफारिशों के बाद इन्हें लाइसेंस दिया। R तथ्यात्मक रूप से सही है।",
+        "चरण 3 — क्या R, A को कारणात्मक रूप से समझाता है? R यह बताता है कि Payment Banks एक श्रेणी के रूप में क्यों मौजूद हैं — लेकिन यह नहीं बताता कि IPPB विशेष रूप से सबसे बड़ा Payment Bank क्यों है। IPPB का पैमाना पूर्व-विद्यमान डाक नेटवर्क अवसंरचना से आता है, न कि Mor Committee की सिफारिश से। समिति की सिफारिश श्रेणी के अस्तित्व के लिए आवश्यक शर्त है, IPPB के पैमाने के प्रभुत्व के लिए व्याख्या नहीं।",
+        "दोनों A और R सही हैं, पर R, A को समझाता नहीं है — अतः विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "entity-swap जाल वास्तविक कारणात्मक व्याख्या (IPPB का पैमाना डाक नेटवर्क अवसंरचना से आता है) को एक संबंधित लेकिन गैर-कारणात्मक तथ्य (Mor Committee ने Payment Banks की सिफारिश की) से बदल देता है। जो छात्र दोनों तथ्यों को जानते हैं — IPPB सबसे बड़ा Payment Bank है और Mor Committee ने श्रेणी की सिफारिश की — वे एक गलत कारणात्मक कथा बनाते हैं: 'IPPB सबसे बड़ा है क्योंकि Mor Committee ने इसकी सिफारिश की।' IPPB के पैमाने की सही व्याख्या पूर्व-विद्यमान 1.6 लाख डाक घरों के नेटवर्क है जिसे नए भौतिक अवसंरचना निवेश की आवश्यकता नहीं थी।",
+      "final_explanation": "Payment Bank श्रेणी भारत की भेदित बैंकिंग लाइसेंसिंग नीति से उभरी है, और IPPB के सबसे बड़े Payment Bank के रूप में उभरने की एक विशिष्ट संरचनात्मक व्याख्या है।\n\nकथन (A): सत्य। India Post Payments Bank (IPPB), जो 2018 में शुरू हुआ, भारत में नेटवर्क पहुंच के हिसाब से सबसे बड़ा Payment Bank है, जो लगभग 1.6 लाख डाक घरों और 3 लाख डाक कर्मचारियों का उपयोग करके अंतिम मील बैंकिंग सेवाएं प्रदान करता है — ऐसा पैमाना कोई अन्य Payment Bank नहीं रखता।\n\nकारण (R): सत्य। Nachiket Mor Committee on Comprehensive Financial Services for Small Businesses and Low-Income Households (2014) ने Payment Banks और Small Finance Banks सहित भेदित बैंक लाइसेंस की सिफारिश की। RBI ने 2015 में 11 Payment Banks के लिए लाइसेंस जारी किए।\n\nकारणात्मक संबंध: R यह बताता है कि Payment Banks एक श्रेणी के रूप में क्यों मौजूद हैं — लेकिन यह नहीं बताता कि IPPB सबसे बड़ा क्यों है। IPPB का प्रभुत्व भारत पोस्ट के पूर्व-विद्यमान सर्वव्यापी भौतिक नेटवर्क का परिणाम है। Mor Committee की सिफारिश नीति की उत्पत्ति है, IPPB के नेटवर्क लाभ के लिए कारणात्मक व्याख्या नहीं।\n\nमूल्य संवर्धन:\n• IPPB को 1 सितंबर 2018 को प्रधानमंत्री द्वारा राष्ट्रीय स्तर पर लॉन्च किया गया था।\n• Small Finance Banks (SFBs) जमा स्वीकार कर सकते हैं और ऋण भी दे सकते हैं — ऋण देने की क्षमता उन्हें Payment Banks से अलग करती है।\n• IPPB का डाक-एजेंट मॉडल ग्रामीण भारत में PMJDY के अंतिम मील वितरण जनादेश का सीधे समर्थन करता है।"
+    }
+  },
+  {
+    "uuid": "ceb4372b-5d3f-48f6-8ff5-8d914d536430",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "RuPay Debit Card and Accidental Insurance Cover"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "RuPay insurance — coverage amount revision and 90-day condition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Statement 1: The accidental insurance cover on RuPay Debit Cards issued under PMJDY was revised from ₹1 lakh to ₹2 lakh in 2018 for accounts opened on or after August 28, 2018.\n\nStatement 2: The RuPay accidental insurance is available unconditionally — an account holder's family can claim the full insurance amount regardless of whether the RuPay card was used in the period preceding the accident.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The accidental insurance cover on RuPay Debit Cards issued under PMJDY was revised from ₹1 lakh to ₹2 lakh in 2018 for accounts opened on or after August 28, 2018.",
+          "verdict": "Correct",
+          "reason": "The 2018 revision specifically enhanced the accidental insurance cover for new account holders to ₹2 lakh. Accounts opened before this date retained the ₹1 lakh cover under original terms."
+        },
+        {
+          "statement": "The RuPay accidental insurance is available unconditionally — an account holder's family can claim the full insurance amount regardless of whether the RuPay card was used in the period preceding the accident.",
+          "verdict": "Incorrect",
+          "reason": "The insurance claim requires that the RuPay card must have been used at least once in the 90 days immediately preceding the accident. This is a critical operational condition — failure to meet it disqualifies the claim."
+        }
+      ],
+      "strong_distractor": "a — Option (a) claiming both statements are correct is the strong distractor because Statement 1 is clearly factual and students who agree with it may read Statement 2 as a general description of insurance without scrutinising the 'unconditionally' qualifier that is the trap word.",
+      "elimination_logic": [
+        "Statement 1: The ₹1 lakh to ₹2 lakh revision in 2018 for new accounts is a documented PMJDY enhancement. Statement 1 is correct.",
+        "Statement 2: The word 'unconditionally' is the trap. The 90-day card usage condition is an explicit eligibility requirement for insurance claims under the RuPay framework. Without using the card at least once in the preceding 90 days, the claim is invalid. Statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect = option (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap in this question operates through the word 'unconditionally.' Students who know the RuPay card provides free insurance assume this means no conditions apply — conflating 'free of charge' with 'no conditions.' The 90-day card usage condition is a usage-activation requirement (not a payment condition), and its absence from student preparation is the specific knowledge gap this question targets. A student who recalls '₹2 lakh insurance' but not the 90-day activation condition will mark Statement 2 as correct.",
+      "final_explanation": "The RuPay Debit Card insurance under PMJDY has two precision details UPSC regularly exploits: the revised coverage amount and the 90-day activation condition.\n\n• Statement 1 — Correct: For accounts opened on or after August 28, 2018, accidental insurance cover was enhanced from ₹1 lakh to ₹2 lakh. This was part of the 2018 PMJDY expansion package that also raised the OD ceiling.\n• Statement 2 — Incorrect: The RuPay insurance is NOT unconditional. To be eligible for a claim, the RuPay card must have been used at least once in the 90 days immediately prior to the accident. This usage-activation condition is a critical operational requirement. Many account holders who open Jan Dhan accounts but do not use their RuPay cards are functionally uninsured despite technically having insurance.\n\nValue Addition:\n• 'Used at least once in 90 days' can be any transaction — ATM withdrawal, POS purchase, or online payment.\n• Accounts opened before August 2018 carry the original ₹1 lakh accidental cover.\n• The 90-day condition distinguishes active account holders (who use the card) from passive holders — incentivising financial deepening."
+    },
+    "hi": {
+      "display_text": "कथन 1: PMJDY के तहत जारी RuPay डेबिट कार्ड पर आकस्मिक बीमा कवरेज को 2018 में ₹1 लाख से बढ़ाकर ₹2 लाख कर दिया गया था, जो 28 अगस्त 2018 या उसके बाद खोले गए खातों पर लागू है।\n\nकथन 2: RuPay आकस्मिक बीमा बिना किसी शर्त के उपलब्ध है — एक खाताधारक के परिवार को दुर्घटना से पहले RuPay कार्ड के उपयोग की अवधि की परवाह किए बिना पूरा बीमा राशि दावा करने का अधिकार है।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "PMJDY के तहत जारी RuPay डेबिट कार्ड पर आकस्मिक बीमा कवरेज को 2018 में ₹1 लाख से बढ़ाकर ₹2 लाख कर दिया गया था, जो 28 अगस्त 2018 या उसके बाद खोले गए खातों पर लागू है।",
+          "verdict": "सही है",
+          "reason": "2018 के संशोधन में नए खाताधारकों के लिए आकस्मिक बीमा कवरेज को विशेष रूप से ₹2 लाख किया गया था। इस तारीख से पहले खोले गए खातों पर मूल ₹1 लाख की कवरेज लागू रहती है।"
+        },
+        {
+          "statement": "RuPay आकस्मिक बीमा बिना किसी शर्त के उपलब्ध है — एक खाताधारक के परिवार को दुर्घटना से पहले RuPay कार्ड के उपयोग की अवधि की परवाह किए बिना पूरा बीमा राशि दावा करने का अधिकार है।",
+          "verdict": "गलत है",
+          "reason": "बीमा दावा करने के लिए आवश्यक है कि RuPay कार्ड का उपयोग दुर्घटना से ठीक पहले के 90 दिनों में कम से कम एक बार किया गया हो। यह एक महत्वपूर्ण परिचालन शर्त है — यदि यह शर्त पूरी नहीं होती है तो दावा अमान्य हो जाता है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) जिसमें दोनों कथनों को सही बताया गया है, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 स्पष्ट रूप से तथ्यात्मक है और जो छात्र इसे मानते हैं वे कथन 2 को बीमा का सामान्य विवरण समझ सकते हैं बिना 'बिना शर्त' शब्द की जाँच किए जो कि इस प्रश्न में जाल है।",
+      "elimination_logic": [
+        "कथन 1: नए खातों के लिए 2018 में ₹1 लाख से ₹2 लाख की संशोधित राशि PMJDY के तहत दर्ज है। अतः कथन 1 सही है।",
+        "कथन 2: 'बिना शर्त' शब्द जाल है। 90-दिन कार्ड उपयोग की शर्त RuPay बीमा दावों के लिए स्पष्ट पात्रता आवश्यकता है। यदि कार्ड का उपयोग पिछले 90 दिनों में कम से कम एक बार नहीं हुआ तो दावा अमान्य है। अतः कथन 2 गलत है।",
+        "कथन 1 सही + कथन 2 गलत = विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "इस प्रश्न में 'बिना शर्त' शब्द के माध्यम से समयगत स्वैप जाल काम करता है। जो छात्र जानते हैं कि RuPay कार्ड मुफ्त बीमा प्रदान करता है, वे मान लेते हैं कि इसका अर्थ है कोई शर्त लागू नहीं होती — 'मुफ्त' को 'कोई शर्त नहीं' समझ लेना। 90-दिन कार्ड उपयोग की शर्त एक उपयोग-सक्रियता आवश्यकता है (भुगतान की शर्त नहीं), और इसका अभाव छात्र तैयारी में ज्ञान की कमी है जिसे यह प्रश्न लक्षित करता है। जो छात्र '₹2 लाख बीमा' याद रखते हैं लेकिन 90-दिन सक्रियता शर्त नहीं, वे कथन 2 को सही चिह्नित कर देंगे।",
+      "final_explanation": "PMJDY के तहत RuPay डेबिट कार्ड बीमा में UPSC दो सटीक विवरणों का नियमित रूप से उपयोग करता है: संशोधित कवरेज राशि और 90-दिन सक्रियता शर्त।\n\n• कथन 1 — सही: 28 अगस्त 2018 या उसके बाद खोले गए खातों के लिए आकस्मिक बीमा ₹1 लाख से बढ़ाकर ₹2 लाख किया गया। यह 2018 के PMJDY विस्तार पैकेज का हिस्सा था जिसमें ओवरड्राफ्ट सीमा भी बढ़ाई गई।\n• कथन 2 — गलत: RuPay बीमा बिना शर्त नहीं है। दावा करने के लिए, RuPay कार्ड का उपयोग दुर्घटना से ठीक पहले के 90 दिनों में कम से कम एक बार होना आवश्यक है। यह उपयोग-सक्रियता शर्त एक महत्वपूर्ण परिचालन आवश्यकता है। कई जन धन खाते खोलने वाले जो अपने RuPay कार्ड का उपयोग नहीं करते, वे तकनीकी रूप से बीमित होने के बावजूद कार्यात्मक रूप से असुरक्षित हैं।\n\nमूल्य संवर्धन:\n• '90 दिनों में कम से कम एक बार उपयोग' में कोई भी लेनदेन हो सकता है — एटीएम निकासी, पॉइंट ऑफ सेल खरीद, या ऑनलाइन भुगतान।\n• अगस्त 2018 से पहले खोले गए खातों पर मूल ₹1 लाख आकस्मिक कवरेज लागू है।\n• 90-दिन की शर्त सक्रिय खाताधारकों (जो कार्ड का उपयोग करते हैं) को निष्क्रिय धारकों से अलग करती है — जो वित्तीय समावेशन को प्रोत्साहित करती है।"
+    }
+  },
+  {
+    "uuid": "f57e44ee-5ee3-4728-b471-6c3112bd9dca",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Measuring Financial Inclusion: Indices and Indicators",
+        "Financial Inclusion vs. Financial Deepening — Conceptual Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Global Findex vs. RBI FI-Index — scope and publisher distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the measurement of financial inclusion in India:\n\n1. The Global Findex Database, published by the World Bank every three years, documents account ownership, savings, borrowing, and payment behaviour across countries, and has recorded India's significant improvement in account ownership following PMJDY.\n2. RBI's Financial Inclusion Index and the Global Findex Database are functionally equivalent measures of financial inclusion, as both use account ownership as their primary indicator.\n3. A high score on RBI's Financial Inclusion Index does not necessarily imply a reduction in poverty, as financial inclusion is a necessary enabling condition but not a sufficient condition for poverty alleviation.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Global Findex Database, published by the World Bank every three years, documents account ownership, savings, borrowing, and payment behaviour across countries, and has recorded India's significant improvement in account ownership following PMJDY.",
+          "verdict": "Correct",
+          "reason": "The Global Findex is a triennial World Bank publication covering financial inclusion indicators globally. India's account ownership rose from approximately 53% (2014) to 78% (2017) to over 77% with deepened usage in 2021, reflecting PMJDY's impact."
+        },
+        {
+          "statement": "RBI's Financial Inclusion Index and the Global Findex Database are functionally equivalent measures of financial inclusion, as both use account ownership as their primary indicator.",
+          "verdict": "Incorrect",
+          "reason": "RBI's FI-Index is a composite of Access + Usage + Quality — it goes significantly beyond account ownership. The Global Findex also covers savings and borrowing behaviour but is primarily an account-ownership survey. The two indices have different methodologies and scopes; calling them functionally equivalent is incorrect."
+        },
+        {
+          "statement": "A high score on RBI's Financial Inclusion Index does not necessarily imply a reduction in poverty, as financial inclusion is a necessary enabling condition but not a sufficient condition for poverty alleviation.",
+          "verdict": "Correct",
+          "reason": "The causal chain from financial inclusion to poverty reduction requires accompanying conditions: credit access, insurance penetration, income generation, and financial literacy. The FI-Index measures inclusion depth, not welfare outcomes."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three are correct is the strong distractor because Statements 1 and 3 are clearly correct. Statement 2 requires specific knowledge that the two indices differ in methodology — students who know both indices exist may assume they measure the same thing.",
+      "elimination_logic": [
+        "Statement 1: World Bank's Global Findex is triennial, covers account ownership and usage, and documents India's PMJDY-era improvement. Statement 1 is correct.",
+        "Statement 2: RBI's FI-Index measures Access + Usage + Quality — not just account ownership. Calling it 'functionally equivalent' to Findex (primarily an account-ownership survey) is wrong. Statement 2 is incorrect.",
+        "Statement 3: FI-Index to poverty reduction causal chain requires accompanying conditions. The statement correctly characterises financial inclusion as necessary but not sufficient. Statement 3 is correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits conflation between two financial inclusion measurement tools. Students who know both the Global Findex and RBI's FI-Index exist in the financial inclusion landscape may assume they measure the same underlying construct, especially since both track India's inclusion progress. The precise methodological difference — Findex is primarily a survey of account ownership and usage behaviour; FI-Index is a composite regulatory index of Access + Usage + Quality — is the knowledge gap this question targets.",
+      "final_explanation": "Understanding the differences between financial inclusion measurement tools is essential for analytical UPSC questions on PMJDY outcomes.\n\n• Statement 1 — Correct: The World Bank's Global Findex Database is published every three years and measures account ownership, savings, borrowing, and payment use globally. India's dramatic rise in account ownership post-2014 is documented in the 2017 and 2021 editions — a direct validation of PMJDY's access achievement.\n• Statement 2 — Incorrect: The two indices are not functionally equivalent. RBI's FI-Index (launched 2021) is a composite of three dimensions: Access (infrastructure and accounts), Usage (transaction frequency, credit, insurance), and Quality (consumer protection, financial literacy). The Global Findex is primarily a survey-based account-ownership and usage tracker. Different methodology, different scope, different frequency (RBI: annual; Findex: triennial).\n• Statement 3 — Correct: A high FI-Index score indicates deep, active financial inclusion but does not automatically reduce poverty. Poverty reduction requires income generation, credit access, and productive opportunities — all of which a bank account alone cannot provide.\n\nValue Addition:\n• India's FI-Index score improved from 53.9 (March 2021) to 56.4 (March 2022) — indicating progress in all three dimensions.\n• Global Findex 2021 showed India's account ownership at 77% — a significant rise from 35% in 2011.\n• The quality dimension of FI-Index includes financial literacy and customer grievance redressal — areas where India scores relatively lower."
+    },
+    "hi": {
+      "display_text": "भारत में वित्तीय समावेशन के मापन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. विश्व बैंक द्वारा हर तीन वर्ष में प्रकाशित ग्लोबल फिन्डेक्स डेटाबेस देशों में खाता स्वामित्व, बचत, उधारी, और भुगतान व्यवहार को दस्तावेजीकृत करता है, और पीएमजेडीवाई के बाद भारत में खाता स्वामित्व में महत्वपूर्ण सुधार दर्ज किया है।\n2. आरबीआई का वित्तीय समावेशन सूचकांक और ग्लोबल फिन्डेक्स डेटाबेस वित्तीय समावेशन के कार्यात्मक रूप से समान माप हैं, क्योंकि दोनों का प्राथमिक संकेतक खाता स्वामित्व है।\n3. आरबीआई के वित्तीय समावेशन सूचकांक में उच्च अंक का होना आवश्यक नहीं कि गरीबी में कमी को दर्शाए, क्योंकि वित्तीय समावेशन गरीबी उन्मूलन के लिए आवश्यक सक्षम शर्त है लेकिन पर्याप्त शर्त नहीं है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "विश्व बैंक द्वारा हर तीन वर्ष में प्रकाशित ग्लोबल फिन्डेक्स डेटाबेस देशों में खाता स्वामित्व, बचत, उधारी, और भुगतान व्यवहार को दस्तावेजीकृत करता है, और पीएमजेडीवाई के बाद भारत में खाता स्वामित्व में महत्वपूर्ण सुधार दर्ज किया है।",
+          "verdict": "सही",
+          "reason": "ग्लोबल फिन्डेक्स विश्व बैंक की त्रैवार्षिक प्रकाशन है जो वैश्विक स्तर पर वित्तीय समावेशन संकेतकों को कवर करती है। भारत में खाता स्वामित्व लगभग 53% (2014) से बढ़कर 78% (2017) और 2021 में 77% से अधिक हो गया, जो पीएमजेडीवाई के प्रभाव को दर्शाता है।"
+        },
+        {
+          "statement": "आरबीआई का वित्तीय समावेशन सूचकांक और ग्लोबल फिन्डेक्स डेटाबेस वित्तीय समावेशन के कार्यात्मक रूप से समान माप हैं, क्योंकि दोनों का प्राथमिक संकेतक खाता स्वामित्व है।",
+          "verdict": "गलत",
+          "reason": "आरबीआई का एफआई-इंडेक्स एक्सेस + उपयोग + गुणवत्ता का सम्मिश्रण है — यह केवल खाता स्वामित्व से कहीं आगे है। ग्लोबल फिन्डेक्स भी बचत और उधारी व्यवहार को कवर करता है लेकिन मुख्यतः खाता-स्वामित्व सर्वे है। दोनों सूचकांकों की कार्यप्रणाली और दायरा अलग है; उन्हें कार्यात्मक रूप से समान कहना गलत है।"
+        },
+        {
+          "statement": "आरबीआई के वित्तीय समावेशन सूचकांक में उच्च अंक का होना आवश्यक नहीं कि गरीबी में कमी को दर्शाए, क्योंकि वित्तीय समावेशन गरीबी उन्मूलन के लिए आवश्यक सक्षम शर्त है लेकिन पर्याप्त शर्त नहीं है।",
+          "verdict": "सही",
+          "reason": "वित्तीय समावेशन से गरीबी में कमी तक का कारणात्मक संबंध अन्य शर्तों जैसे क्रेडिट पहुंच, बीमा कवरेज, आय सृजन, और वित्तीय साक्षरता पर निर्भर करता है। एफआई-इंडेक्स समावेशन की गहराई मापता है, कल्याण परिणाम नहीं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें कहा गया है कि तीनों कथन सही हैं, यह मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 स्पष्ट रूप से सही हैं। कथन 2 के लिए विशेष ज्ञान आवश्यक है कि दोनों सूचकांक कार्यप्रणाली में भिन्न हैं — जो छात्र दोनों सूचकांक जानते हैं वे मान सकते हैं कि वे समान माप करते हैं।",
+      "elimination_logic": [
+        "कथन 1: विश्व बैंक का ग्लोबल फिन्डेक्स त्रैवार्षिक है, खाता स्वामित्व और उपयोग को कवर करता है, और पीएमजेडीवाई युग में भारत में सुधार को दस्तावेजीकृत करता है। कथन 1 सही है।",
+        "कथन 2: आरबीआई का एफआई-इंडेक्स एक्सेस + उपयोग + गुणवत्ता को मापता है — केवल खाता स्वामित्व नहीं। इसे फिन्डेक्स (मुख्यतः खाता-स्वामित्व सर्वे) के समान कहना गलत है। कथन 2 गलत है।",
+        "कथन 3: गरीबी में कमी के लिए एफआई-इंडेक्स से जुड़े कारणात्मक संबंध में अन्य शर्तें आवश्यक हैं। कथन वित्तीय समावेशन को आवश्यक लेकिन अपर्याप्त बताता है। कथन 3 सही है।",
+        "कथन 1 और 3 सही, कथन 2 गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 दो वित्तीय समावेशन मापन उपकरणों के बीच भ्रम का फायदा उठाता है। जो छात्र जानते हैं कि ग्लोबल फिन्डेक्स और आरबीआई का एफआई-इंडेक्स दोनों मौजूद हैं, वे मान सकते हैं कि वे समान अवधारणा मापते हैं, खासकर क्योंकि दोनों भारत की समावेशन प्रगति को ट्रैक करते हैं। सटीक कार्यप्रणाली का अंतर — फिन्डेक्स मुख्यतः खाता स्वामित्व और उपयोग व्यवहार का सर्वे है; एफआई-इंडेक्स एक्सेस + उपयोग + गुणवत्ता का सम्मिश्रित नियामक सूचकांक है — यह ज्ञान अंतराल इस प्रश्न का लक्ष्य है।",
+      "final_explanation": "वित्तीय समावेशन मापन उपकरणों के बीच अंतर को समझना पीएमजेडीवाई परिणामों पर विश्लेषणात्मक यूपीएससी प्रश्नों के लिए आवश्यक है।\n\n• कथन 1 — सही: विश्व बैंक का ग्लोबल फिन्डेक्स डेटाबेस हर तीन वर्ष में प्रकाशित होता है और वैश्विक स्तर पर खाता स्वामित्व, बचत, उधारी, और भुगतान उपयोग को मापता है। भारत में 2014 के बाद खाता स्वामित्व में नाटकीय वृद्धि 2017 और 2021 संस्करणों में दर्ज है — पीएमजेडीवाई की पहुंच उपलब्धि का प्रत्यक्ष प्रमाण।\n• कथन 2 — गलत: दोनों सूचकांक कार्यात्मक रूप से समान नहीं हैं। आरबीआई का एफआई-इंडेक्स (2021 में लॉन्च) तीन आयामों का सम्मिश्रण है: एक्सेस (इन्फ्रास्ट्रक्चर और खाते), उपयोग (लेन-देन आवृत्ति, क्रेडिट, बीमा), और गुणवत्ता (उपभोक्ता संरक्षण, वित्तीय साक्षरता)। ग्लोबल फिन्डेक्स मुख्यतः सर्वे आधारित खाता-स्वामित्व और उपयोग ट्रैकर है। कार्यप्रणाली, दायरा, और आवृत्ति (आरबीआई: वार्षिक; फिन्डेक्स: त्रैवार्षिक) भिन्न हैं।\n• कथन 3 — सही: उच्च एफआई-इंडेक्स स्कोर गहरे, सक्रिय वित्तीय समावेशन को दर्शाता है लेकिन स्वचालित रूप से गरीबी में कमी नहीं करता। गरीबी उन्मूलन के लिए आय सृजन, क्रेडिट पहुंच, और उत्पादक अवसर आवश्यक हैं — जो केवल बैंक खाता प्रदान नहीं कर सकता।\n\nमूल्य संवर्धन:\n• भारत का एफआई-इंडेक्स स्कोर मार्च 2021 में 53.9 से बढ़कर मार्च 2022 में 56.4 हुआ — तीनों आयामों में प्रगति दर्शाता है।\n• ग्लोबल फिन्डेक्स 2021 में भारत का खाता स्वामित्व 77% था — 2011 के 35% से महत्वपूर्ण वृद्धि।\n• एफआई-इंडेक्स का गुणवत्ता आयाम वित्तीय साक्षरता और ग्राहक शिकायत निवारण शामिल करता है — ऐसे क्षेत्र जहां भारत का स्कोर अपेक्षाकृत कम है।"
+    }
+  },
+  {
+    "uuid": "82968a66-be6e-48e6-8b09-1f1e25a38f60",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Credit Exclusion Despite Account Inclusion — The Missing Middle",
+        "Financial Inclusion vs. Financial Deepening — Conceptual Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "PMMY Mudra loan categories — Shishu, Kishor, Tarun loan ceilings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Pradhan Mantri Mudra Yojana (PMMY), which serves as the formal credit complement to PMJDY by reaching borrowers excluded from conventional bank lending, categorises its loans into three tiers: 'Shishu' for loans up to ________, 'Kishor' for loans from ₹50,001 to ₹5 lakh, and 'Tarun' for loans from ₹5 lakh to ₹10 lakh.\n\n(a) ₹25,000\n(b) ₹1 lakh\n(c) ₹50,000\n(d) ₹5 lakh",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) incorrectly sets Shishu at ₹1 lakh (double the actual ceiling). Students who know Mudra has small, medium, and large categories but have not memorised the exact Shishu ceiling may confuse ₹50,000 with ₹1 lakh, which is the Kishor category's minimum floor.",
+      "elimination_logic": [
+        "PMMY (Pradhan Mantri Mudra Yojana) has three tiers: Shishu (up to ₹50,000), Kishor (₹50,001–₹5 lakh), and Tarun (₹5 lakh–₹10 lakh).",
+        "The blank refers to the Shishu category ceiling — the smallest loan tier.",
+        "Eliminate (a): ₹25,000 is too low — no such official Shishu ceiling exists.",
+        "Eliminate (b): ₹1 lakh is the Kishor tier's approximate lower boundary reference, not Shishu's ceiling.",
+        "Eliminate (d): ₹5 lakh is the Tarun tier floor — not Shishu.",
+        "Select (c): ₹50,000 is the correct Shishu loan ceiling under PMMY."
+      ],
+      "upsc_trap_explanation": "The conflation trap blends the three PMMY loan categories. Students who know there are three tiers but have not precisely mapped the ceiling of each category will conflate Shishu (₹50,000) with adjacent figures — ₹25,000 (plausibly 'very small') or ₹1 lakh (sounding like a round first-tier figure). The ₹50,000 Shishu ceiling is the precise figure that distinguishes superficial from precise preparation.",
+      "final_explanation": "Pradhan Mantri Mudra Yojana (PMMY), launched in April 2015, addresses the credit gap that PMJDY's deposit-focused architecture cannot fill.\n\n• Option (a): Incorrect. ₹25,000 is not the Shishu ceiling. No official PMMY document sets ₹25,000 as a tier boundary.\n• Option (b): Incorrect. ₹1 lakh misidentifies Shishu's ceiling. ₹1 lakh is within the Kishor range, not the Shishu ceiling.\n• Option (c): Correct. The Shishu category covers collateral-free loans up to ₹50,000, targeting micro-enterprises in their earliest stage. It is the most frequently accessed PMMY category by volume.\n• Option (d): Incorrect. ₹5 lakh is the lower boundary of the Tarun category, not Shishu's ceiling.\n\nValue Addition:\n• PMMY tiers: Shishu (≤₹50,000) → Kishor (₹50,001–₹5 lakh) → Tarun (₹5 lakh–₹10 lakh).\n• Mudra loans are disbursed through scheduled commercial banks, MFIs, NBFCs, and RRBs — not through PMJDY accounts directly.\n• Over 70% of Mudra loans are Shishu loans — indicating the dominance of very-small borrowers in India's informal economy."
+    },
+    "hi": {
+      "display_text": "प्रधान मंत्री मुद्रा योजना (PMMY), जो पारंपरिक बैंक ऋण से वंचित उधारकर्ताओं तक पहुँचने के लिए पीएमजेडवाय का औपचारिक क्रेडिट पूरक है, अपने ऋणों को तीन स्तरों में वर्गीकृत करती है: 'शिशु' के लिए ________ तक के ऋण, 'किशोर' के लिए ₹50,001 से ₹5 लाख तक के ऋण, और 'तरुण' के लिए ₹5 लाख से ₹10 लाख तक के ऋण।\n\n(a) ₹25,000\n(b) ₹1 लाख\n(c) ₹50,000\n(d) ₹5 लाख",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) गलत तरीके से शिशु की सीमा ₹1 लाख निर्धारित करता है (वास्तविक सीमा का दोगुना)। जो छात्र जानते हैं कि मुद्रा के छोटे, मध्यम और बड़े वर्ग होते हैं लेकिन शिशु की सटीक सीमा याद नहीं है, वे ₹50,000 को ₹1 लाख के साथ भ्रमित कर सकते हैं, जो किशोर वर्ग की न्यूनतम सीमा है।",
+      "elimination_logic": [
+        "PMMY (प्रधान मंत्री मुद्रा योजना) के तीन स्तर हैं: शिशु (₹50,000 तक), किशोर (₹50,001–₹5 लाख), और तरुण (₹5 लाख–₹10 लाख)।",
+        "रिक्त स्थान शिशु वर्ग की सीमा को संदर्भित करता है — सबसे छोटा ऋण स्तर।",
+        "(a) को हटाएं: ₹25,000 बहुत कम है — ऐसी कोई आधिकारिक शिशु सीमा नहीं है।",
+        "(b) को हटाएं: ₹1 लाख किशोर स्तर की लगभग निचली सीमा है, शिशु की सीमा नहीं।",
+        "(d) को हटाएं: ₹5 लाख तरुण स्तर की न्यूनतम सीमा है — शिशु की सीमा नहीं।",
+        "(c) चुनें: ₹50,000 पीएमएमवाई के तहत शिशु ऋण की सही सीमा है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल तीनों पीएमएमवाई ऋण वर्गों को मिला देता है। जो छात्र जानते हैं कि तीन स्तर हैं लेकिन प्रत्येक वर्ग की सीमा ठीक से नहीं जानते, वे शिशु (₹50,000) को आस-पास के आंकड़ों — ₹25,000 (संभवतः 'बहुत छोटा') या ₹1 लाख (पहले स्तर की गोल संख्या जैसा) के साथ भ्रमित कर देंगे। ₹50,000 की शिशु सीमा वह सटीक आंकड़ा है जो सतही और सटीक तैयारी में अंतर करता है।",
+      "final_explanation": "प्रधान मंत्री मुद्रा योजना (PMMY), जो अप्रैल 2015 में शुरू हुई, उस क्रेडिट अंतर को पूरा करती है जिसे पीएमजेडवाय की जमा-केंद्रित संरचना पूरा नहीं कर पाती।\n\n• विकल्प (a): गलत। ₹25,000 शिशु सीमा नहीं है। कोई आधिकारिक पीएमएमवाई दस्तावेज ₹25,000 को स्तर सीमा के रूप में निर्धारित नहीं करता।\n• विकल्प (b): गलत। ₹1 लाख शिशु की सीमा की गलत पहचान है। ₹1 लाख किशोर सीमा के अंतर्गत आता है, शिशु की सीमा नहीं।\n• विकल्प (c): सही। शिशु वर्ग बिना गारंटी के ₹50,000 तक के ऋण को कवर करता है, जो माइक्रो-उद्यमों के शुरुआती चरण को लक्षित करता है। यह पीएमएमवाई का सबसे अधिक उपयोग किया जाने वाला वर्ग है।\n• विकल्प (d): गलत। ₹5 लाख तरुण वर्ग की न्यूनतम सीमा है, शिशु की सीमा नहीं।\n\nमूल्य संवर्धन:\n• पीएमएमवाई के स्तर: शिशु (≤₹50,000) → किशोर (₹50,001–₹5 लाख) → तरुण (₹5 लाख–₹10 लाख)।\n• मुद्रा ऋण अनुसूचित वाणिज्यिक बैंक, एमएफआई, एनबीएफसी और आरआरबी के माध्यम से वितरित होते हैं — सीधे पीएमजेडवाय खातों के माध्यम से नहीं।\n• 70% से अधिक मुद्रा ऋण शिशु ऋण हैं — जो भारत की अनौपचारिक अर्थव्यवस्था में बहुत छोटे उधारकर्ताओं की प्रधानता को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "67d851a5-7ca9-486f-bdba-57f2641f67b2",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "PMJDY and Federalism: Centre-State Implementation Dynamics",
+        "Business Correspondent (BC) Model and Last-Mile Delivery"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "RRBs — sponsorship, supervision and PMJDY role",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Regional Rural Banks (RRBs) and their role in PMJDY implementation:\n\n1. Regional Rural Banks are sponsored by scheduled commercial banks that provide capital support and management, while NABARD exercises supervisory oversight over RRBs for their rural banking operations.\n2. RRBs operate exclusively in districts where no scheduled commercial bank branch exists, functioning as a banking exclusivity instrument for remote unserved areas.\n3. North-eastern states and aspirational districts were identified as receiving special focus under PMJDY due to historically lower banking penetration in these regions.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Regional Rural Banks (RRBs) are sponsored by scheduled commercial banks that provide capital support and management, while NABARD exercises supervisory oversight over RRBs for their rural banking operations.",
+          "verdict": "Correct",
+          "reason": "This is the correct governance structure for RRBs under the Regional Rural Banks Act, 1976, as amended. Sponsor banks and NABARD play complementary roles — sponsor banks for capital/management, NABARD for supervision and refinance."
+        },
+        {
+          "statement": "RRBs operate exclusively in districts where no scheduled commercial bank branch exists, functioning as a banking exclusivity instrument for remote unserved areas.",
+          "verdict": "Incorrect",
+          "reason": "RRBs do not operate exclusively where no commercial bank exists. They operate in semi-urban and rural areas alongside other banks. Their mandate is rural focus, not geographic exclusivity. Multiple bank types (public sector banks, RRBs, cooperative banks) often operate in the same area."
+        },
+        {
+          "statement": "North-eastern states and aspirational districts were identified as receiving special focus under PMJDY due to historically lower banking penetration in these regions.",
+          "verdict": "Correct",
+          "reason": "PMJDY's implementation strategy specifically identified low-penetration regions — including the North-East and identified aspirational districts — for focused outreach, recognising that standard bank-driven implementation would leave these areas underserved."
+        }
+      ],
+      "strong_distractor": "c — Option (c) claiming only Statement 3 is correct is deceptive because Statement 2 sounds operationally plausible — students who intuitively think RRBs serve areas without commercial banks may accept Statement 2 as correct and then be unsure about Statement 1's complexity.",
+      "elimination_logic": [
+        "Statement 1: RRB governance (sponsor bank capital + NABARD supervision) is the textbook characterisation of the Regional Rural Banks Act structure. Statement 1 is correct.",
+        "Statement 2: RRBs do NOT operate with geographic exclusivity — commercial banks, RRBs, and cooperative banks can coexist in the same area. The 'exclusive to unserved areas' claim is an entity-swap introducing a false restriction. Statement 2 is incorrect.",
+        "Statement 3: The North-East and aspirational district focus under PMJDY is documented in the scheme's implementation framework. Statement 3 is correct.",
+        "Statements 1 and 3 correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 employs entity-swap by misattributing a 'geographic exclusivity' condition to RRBs — a feature that does not exist. The plausibility comes from RRBs' mandate to serve rural/semi-urban areas, which students correctly associate with underserved regions. The logical step from 'focuses on rural areas' to 'operates only where no commercial bank exists' is the inferential trap. In reality, PMJDY is implemented through RRBs even in areas with commercial bank presence.",
+      "final_explanation": "RRBs are a critical institutional pillar for PMJDY implementation in semi-urban and rural India.\n\n• Statement 1 — Correct: RRBs are jointly owned by the Central Government (50%), state governments (15%), and sponsor banks (35%). Sponsor banks (scheduled commercial banks) provide capital and managerial support; NABARD provides supervisory oversight and refinance facilities under the Regional Rural Banks Act, 1976.\n• Statement 2 — Incorrect: RRBs do not operate with geographic exclusivity. They function in rural and semi-urban areas but coexist with commercial bank branches, cooperative banks, and other financial institutions in the same geography. There is no regulatory bar on other banks operating where RRBs operate.\n• Statement 3 — Correct: PMJDY's implementation design identified specific low-penetration geographies — the North-East states (historically under-banked due to infrastructure and connectivity challenges) and government-identified aspirational districts — for concentrated outreach efforts.\n\nValue Addition:\n• There are 43 RRBs in India (post-amalgamation rounds), down from 196 at peak.\n• NABARD refinances RRBs for agricultural and rural lending — an indirect financial inclusion tool.\n• Aspirational Districts Programme (formerly BRGF districts) overlaps significantly with PMJDY's special focus geography."
+    },
+    "hi": {
+      "display_text": "क्षेत्रीय ग्रामीण बैंकों (RRBs) और PMJDY कार्यान्वयन में उनकी भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. क्षेत्रीय ग्रामीण बैंक अनुसूचित वाणिज्यिक बैंकों द्वारा प्रायोजित होते हैं जो पूंजी सहायता और प्रबंधन प्रदान करते हैं, जबकि NABARD ग्रामीण बैंकिंग संचालन के लिए RRBs पर पर्यवेक्षण करता है।\n2. RRBs केवल उन जिलों में कार्य करते हैं जहाँ कोई अनुसूचित वाणिज्यिक बैंक शाखा मौजूद नहीं है, जो दूरदराज के अप्रतिबंधित क्षेत्रों के लिए बैंकिंग विशिष्टता उपकरण के रूप में कार्य करता है।\n3. उत्तर-पूर्वी राज्य और आकांक्षी जिले PMJDY के तहत विशेष ध्यान प्राप्त करने वाले क्षेत्र के रूप में पहचाने गए थे क्योंकि इन क्षेत्रों में ऐतिहासिक रूप से बैंकिंग पैठ कम थी।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "क्षेत्रीय ग्रामीण बैंक (RRBs) अनुसूचित वाणिज्यिक बैंकों द्वारा प्रायोजित होते हैं जो पूंजी सहायता और प्रबंधन प्रदान करते हैं, जबकि NABARD ग्रामीण बैंकिंग संचालन के लिए RRBs पर पर्यवेक्षण करता है।",
+          "verdict": "सही",
+          "reason": "यह क्षेत्रीय ग्रामीण बैंक अधिनियम, 1976 के तहत RRBs के लिए सही शासन संरचना है, जैसा कि संशोधित किया गया है। प्रायोजक बैंक और NABARD पूरक भूमिकाएँ निभाते हैं — प्रायोजक बैंक पूंजी/प्रबंधन के लिए, NABARD पर्यवेक्षण और पुनर्वित्त के लिए।"
+        },
+        {
+          "statement": "RRBs केवल उन जिलों में कार्य करते हैं जहाँ कोई अनुसूचित वाणिज्यिक बैंक शाखा मौजूद नहीं है, जो दूरदराज के अप्रतिबंधित क्षेत्रों के लिए बैंकिंग विशिष्टता उपकरण के रूप में कार्य करता है।",
+          "verdict": "गलत",
+          "reason": "RRBs केवल उन स्थानों पर कार्य नहीं करते जहाँ कोई वाणिज्यिक बैंक नहीं है। वे अर्ध-शहरी और ग्रामीण क्षेत्रों में अन्य बैंकों के साथ कार्य करते हैं। उनका दायित्व ग्रामीण केंद्रित है, न कि भौगोलिक विशिष्टता। एक ही क्षेत्र में कई प्रकार के बैंक (सार्वजनिक क्षेत्र बैंक, RRBs, सहकारी बैंक) अक्सर कार्यरत होते हैं।"
+        },
+        {
+          "statement": "उत्तर-पूर्वी राज्य और आकांक्षी जिले PMJDY के तहत विशेष ध्यान प्राप्त करने वाले क्षेत्र के रूप में पहचाने गए थे क्योंकि इन क्षेत्रों में ऐतिहासिक रूप से बैंकिंग पैठ कम थी।",
+          "verdict": "सही",
+          "reason": "PMJDY की कार्यान्वयन रणनीति ने विशेष रूप से कम पैठ वाले क्षेत्रों — जिनमें उत्तर-पूर्व और पहचाने गए आकांक्षी जिले शामिल हैं — को लक्षित किया, यह मानते हुए कि सामान्य बैंक-चालित कार्यान्वयन इन क्षेत्रों को अपर्याप्त सेवा देगा।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) जो केवल कथन 3 को सही बताता है, भ्रामक है क्योंकि कथन 2 परिचालन रूप से संभावित लगता है — छात्र जो सहज रूप से सोचते हैं कि RRBs उन क्षेत्रों में सेवा देते हैं जहाँ वाणिज्यिक बैंक नहीं हैं, वे कथन 2 को सही मान सकते हैं और फिर कथन 1 की जटिलता को लेकर अनिश्चित हो सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: RRB शासन (प्रायोजक बैंक पूंजी + NABARD पर्यवेक्षण) क्षेत्रीय ग्रामीण बैंक अधिनियम की पाठ्यपुस्तक वर्णन है। कथन 1 सही है।",
+        "कथन 2: RRBs भौगोलिक विशिष्टता के साथ कार्य नहीं करते — वाणिज्यिक बैंक, RRBs, और सहकारी बैंक एक ही क्षेत्र में सह-अस्तित्व में हो सकते हैं। 'अप्रतिबंधित क्षेत्रों के लिए विशिष्ट' दावा एक गलत प्रतिबंध प्रस्तुत करने वाला entity-swap है। कथन 2 गलत है।",
+        "कथन 3: PMJDY के तहत उत्तर-पूर्व और आकांक्षी जिलों पर विशेष ध्यान योजना के कार्यान्वयन ढांचे में प्रलेखित है। कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में entity-swap का उपयोग किया गया है जो RRBs को 'भौगोलिक विशिष्टता' की शर्त गलत तरीके से लगाता है — जो कि मौजूद नहीं है। संभाव्यता इस बात से आती है कि RRBs का दायित्व ग्रामीण/अर्ध-शहरी क्षेत्रों में सेवा देना है, जिसे छात्र सही रूप से कम सेवा वाले क्षेत्रों से जोड़ते हैं। 'ग्रामीण क्षेत्रों पर ध्यान केंद्रित करता है' से 'जहाँ कोई वाणिज्यिक बैंक नहीं है वहाँ ही कार्य करता है' तक का तार्किक कदम ही inferential trap है। वास्तविकता में, PMJDY RRBs के माध्यम से उन क्षेत्रों में भी लागू होता है जहाँ वाणिज्यिक बैंक मौजूद हैं।",
+      "final_explanation": "RRBs अर्ध-शहरी और ग्रामीण भारत में PMJDY के कार्यान्वयन के लिए एक महत्वपूर्ण संस्थागत स्तंभ हैं।\n\n• कथन 1 — सही: RRBs का संयुक्त स्वामित्व केंद्र सरकार (50%), राज्य सरकारें (15%), और प्रायोजक बैंक (35%) के पास है। प्रायोजक बैंक (अनुसूचित वाणिज्यिक बैंक) पूंजी और प्रबंधकीय सहायता प्रदान करते हैं; NABARD क्षेत्रीय ग्रामीण बैंक अधिनियम, 1976 के तहत पर्यवेक्षण और पुनर्वित्त सुविधाएँ प्रदान करता है।\n• कथन 2 — गलत: RRBs भौगोलिक विशिष्टता के साथ कार्य नहीं करते। वे ग्रामीण और अर्ध-शहरी क्षेत्रों में कार्य करते हैं लेकिन वाणिज्यिक बैंक शाखाओं, सहकारी बैंकों, और अन्य वित्तीय संस्थानों के साथ सह-अस्तित्व में होते हैं। RRBs के कार्यक्षेत्र में अन्य बैंकों के संचालन पर कोई नियामक प्रतिबंध नहीं है।\n• कथन 3 — सही: PMJDY के कार्यान्वयन डिजाइन ने विशिष्ट कम पैठ वाले भौगोलिक क्षेत्रों — उत्तर-पूर्वी राज्य (जो अवसंरचना और कनेक्टिविटी चुनौतियों के कारण ऐतिहासिक रूप से कम बैंकिंग सेवा प्राप्त थे) और सरकार द्वारा पहचाने गए आकांक्षी जिलों — को केंद्रित प्रयासों के लिए चिन्हित किया।\n\nमूल्य संवर्धन:\n• भारत में 43 RRBs हैं (विलय के बाद), जो चरम पर 196 थे।\n• NABARD कृषि और ग्रामीण ऋण के लिए RRBs को पुनर्वित्त करता है — एक अप्रत्यक्ष वित्तीय समावेशन उपकरण।\n• आकांक्षी जिलों का कार्यक्रम (पूर्व में BRGF जिले) PMJDY के विशेष ध्यान वाले भौगोलिक क्षेत्रों के साथ काफी ओवरलैप करता है।"
+    }
+  },
+  {
+    "uuid": "9febabe0-2510-45d2-aba6-494b3e15ead4",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Micro-Insurance and Pension Schemes Linked to PMJDY Ecosystem",
+        "Zero-Balance Account Feature and Its Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "PMJJBY age eligibility and premium amount",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched in respect of Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)?\n\n(a) PMJJBY — Life cover of ₹2 lakh at an annual premium of ₹20, available to account holders aged 18 to 50 years\n(b) PMJJBY — Life cover of ₹2 lakh covering all-cause death, available to account holders aged 18 to 70 years\n(c) PMJJBY — Accidental death and disability cover of ₹2 lakh at an annual premium of ₹436, available to account holders aged 18 to 50 years\n(d) PMJJBY — Life cover of ₹2 lakh for death from any cause, available to account holders aged 18 to 50 years with the annual premium auto-debited from the linked bank account",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) incorrectly pairs PMJJBY with the age range 18–70 years — which is actually PMSBY's extended age eligibility. Students who know both schemes have different age bands but have not memorised which band belongs to which scheme will swap them.",
+      "elimination_logic": [
+        "PMJJBY (life insurance) has age eligibility of 18–50 years — narrower than PMSBY because life insurance actuarial risk for older age groups requires a tighter band.",
+        "PMSBY (accident insurance) has age eligibility of 18–70 years — broader because accident risk is more age-neutral than all-cause mortality risk.",
+        "Option (a): Pairs PMJJBY with ₹20/year premium — wrong. ₹20 is PMSBY's premium. PMJJBY's premium is ₹436/year.",
+        "Option (b): Pairs PMJJBY with 18–70 years — wrong. 18–70 is PMSBY's age band. PMJJBY is 18–50.",
+        "Option (c): Pairs PMJJBY with 'accidental death only' — wrong. PMJJBY covers all-cause death. Accidental-only coverage is PMSBY.",
+        "Option (d): Pairs PMJJBY with 18–50 years age eligibility and ₹2 lakh all-cause life cover — correctly matched."
+      ],
+      "upsc_trap_explanation": "The temporal-swap in option (b) is actually an entity-swap — it assigns PMSBY's age band (18–70) to PMJJBY. Students who know the two schemes have different age bands but recall 'PMJDY-linked insurance schemes: 18–70' as a composite figure will incorrectly select (b). The precise distinction — PMJJBY is 18–50 (life insurance actuarial constraint), PMSBY is 18–70 (accident coverage broader) — is the exact knowledge point this question targets.",
+      "final_explanation": "PMSBY and PMJJBY are frequently tested together because both provide ₹2 lakh cover but differ on coverage type, premium, and age eligibility.\n\n• Option (a): Incorrectly matched. PMJJBY's annual premium is ₹436 (revised from original ₹330). The ₹20/year premium belongs to PMSBY.\n• Option (b): Incorrectly matched. PMJJBY's age eligibility is 18–50 years, not 18–70 years. The 18–70 band belongs to PMSBY.\n• Option (c): Incorrectly matched. PMJJBY provides all-cause death cover — not accidental death only. Accidental-only coverage is PMSBY's domain.\n• Option (d): Correctly matched. PMJJBY provides ₹2 lakh life cover for death from any cause, with eligibility for persons aged 18–50 years, with the premium auto-debited from the linked bank account annually.\n\nValue Addition:\n• Memory aid: PMJJBY = Jeevan = Life = Broader (all causes), younger age cap (50). PMSBY = Suraksha = Safety = Accident only, wider age band (70).\n• Both schemes require the account to be active and sufficient balance for auto-debit on the renewal date.\n• PMJJBY covers suicide deaths after a one-year waiting period — a standard life insurance norm."
+    },
+    "hi": {
+      "display_text": "प्रधान मंत्री जीवन ज्योति बीमा योजना (PMJJBY) के संबंध में निम्नलिखित में से कौन-सा जोड़ा सही रूप से मेल खाता है?\n\n(a) PMJJBY — ₹2 लाख जीवन बीमा वार्षिक प्रीमियम ₹20 पर, 18 से 50 वर्ष आयु के खाताधारकों के लिए उपलब्ध\n(b) PMJJBY — ₹2 लाख जीवन बीमा सभी कारणों से मृत्यु के लिए, 18 से 70 वर्ष आयु के खाताधारकों के लिए उपलब्ध\n(c) PMJJBY — ₹2 लाख दुर्घटना मृत्यु और विकलांगता बीमा वार्षिक प्रीमियम ₹436 पर, 18 से 50 वर्ष आयु के खाताधारकों के लिए उपलब्ध\n(d) PMJJBY — ₹2 लाख जीवन बीमा किसी भी कारण से मृत्यु के लिए, 18 से 50 वर्ष आयु के खाताधारकों के लिए उपलब्ध, वार्षिक प्रीमियम लिंक्ड बैंक खाते से ऑटो-डेबिट के साथ",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) गलत तरीके से PMJJBY को 18–70 वर्ष की आयु सीमा के साथ जोड़ता है — जो वास्तव में PMSBY की विस्तारित आयु पात्रता है। जो छात्र दोनों योजनाओं के अलग-अलग आयु समूह जानते हैं लेकिन यह याद नहीं रखते कि कौन सा समूह किस योजना का है, वे इन्हें उलट देंगे।",
+      "elimination_logic": [
+        "PMJJBY (जीवन बीमा) की आयु पात्रता 18–50 वर्ष है — PMSBY की तुलना में संकीर्ण क्योंकि जीवन बीमा में वृद्ध आयु समूहों के लिए जोखिम अधिक सख्त होता है।",
+        "PMSBY (दुर्घटना बीमा) की आयु पात्रता 18–70 वर्ष है — व्यापक क्योंकि दुर्घटना जोखिम सभी कारणों से मृत्यु जोखिम की तुलना में आयु-तटस्थ होता है।",
+        "विकल्प (a): PMJJBY को ₹20/वर्ष प्रीमियम के साथ जोड़ता है — गलत। ₹20 PMSBY का प्रीमियम है। PMJJBY का प्रीमियम ₹436/वर्ष है।",
+        "विकल्प (b): PMJJBY को 18–70 वर्ष के साथ जोड़ता है — गलत। 18–70 PMSBY की आयु सीमा है। PMJJBY 18–50 है।",
+        "विकल्प (c): PMJJBY को 'केवल दुर्घटना मृत्यु' के साथ जोड़ता है — गलत। PMJJBY सभी कारणों से मृत्यु को कवर करता है। केवल दुर्घटना कवर PMSBY का है।",
+        "विकल्प (d): PMJJBY को 18–50 वर्ष की आयु पात्रता और ₹2 लाख सभी कारणों से जीवन बीमा कवर के साथ सही जोड़ा गया है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में समय-संबंधी अदला-बदली वास्तव में एक इकाई-संबंधी अदला-बदली है — यह PMSBY की आयु सीमा (18–70) को PMJJBY को सौंपता है। जो छात्र जानते हैं कि दोनों योजनाओं की आयु सीमाएं अलग हैं लेकिन 'PMJDY-लिंक्ड बीमा योजनाएं: 18–70' को एक संयुक्त आंकड़ा के रूप में याद करते हैं, वे गलत तरीके से (b) चुनेंगे। सटीक भेद — PMJJBY 18–50 (जीवन बीमा जोखिम सीमा), PMSBY 18–70 (दुर्घटना कवरेज व्यापक) — यही ज्ञान बिंदु इस प्रश्न का लक्ष्य है।",
+      "final_explanation": "PMSBY और PMJJBY को अक्सर एक साथ परखा जाता है क्योंकि दोनों ₹2 लाख का कवर प्रदान करते हैं लेकिन कवरेज प्रकार, प्रीमियम, और आयु पात्रता में भिन्न हैं।\n\n• विकल्प (a): गलत जोड़ा गया। PMJJBY का वार्षिक प्रीमियम ₹436 है (मूल ₹330 से संशोधित)। ₹20/वर्ष प्रीमियम PMSBY का है।\n• विकल्प (b): गलत जोड़ा गया। PMJJBY की आयु पात्रता 18–50 वर्ष है, न कि 18–70 वर्ष। 18–70 आयु सीमा PMSBY की है।\n• विकल्प (c): गलत जोड़ा गया। PMJJBY सभी कारणों से मृत्यु कवर प्रदान करता है — केवल दुर्घटना मृत्यु नहीं। केवल दुर्घटना कवर PMSBY का क्षेत्र है।\n• विकल्प (d): सही जोड़ा गया। PMJJBY ₹2 लाख जीवन बीमा कवर प्रदान करता है जो किसी भी कारण से मृत्यु के लिए है, पात्रता 18–50 वर्ष की आयु के खाताधारकों के लिए है, और वार्षिक प्रीमियम लिंक्ड बैंक खाते से ऑटो-डेबिट होता है।\n\nमूल्य संवर्धन:\n• स्मृति सहायता: PMJJBY = जीवन = व्यापक (सभी कारण), कम आयु सीमा (50)। PMSBY = सुरक्षा = केवल दुर्घटना, व्यापक आयु सीमा (70)।\n• दोनों योजनाओं के लिए खाता सक्रिय होना आवश्यक है और नवीनीकरण तिथि पर ऑटो-डेबिट के लिए पर्याप्त शेष होना चाहिए।\n• PMJJBY आत्महत्या मृत्यु को एक वर्ष की प्रतीक्षा अवधि के बाद कवर करता है — जो जीवन बीमा का मानक नियम है।"
+    }
+  },
+  {
+    "uuid": "cb01872b-1001-4494-aab5-8cae6f419167",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Poverty, Inequality and Employment",
+      "sub_topic": "Financial inclusion — Jan Dhan Yojana",
+      "concepts_used": [
+        "Financial Inclusion and Poverty Reduction: Causal vs. Correlational Link",
+        "Gender Dimension of PMJDY: Women's Financial Inclusion"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Capabilities approach — financial inclusion as means not end",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A field survey in a rural district finds that while over 80% of women in a cluster of villages hold PMJDY accounts, the majority of withdrawal decisions and savings choices are made by male household heads. The women report being unaware of their account balances or the insurance benefits attached to their RuPay cards. A development economist evaluating this situation applies Amartya Sen's capabilities approach to argue that PMJDY has not achieved its intended welfare objective in this cluster. Which of the following most accurately captures the principle she is applying?\n\n(a) Financial account ownership is a sufficient capability for economic agency — since women formally hold the accounts, PMJDY has fulfilled its mandate, and the reported male control is a social issue outside the scheme's scope.\n(b) The capabilities approach recognises that formal access to a bank account is an enabling means, not an end in itself — genuine financial capability requires the freedom to make autonomous financial decisions, supported by literacy, legal empowerment, and social conditions that enable such choices.\n(c) The primary failure in this scenario is the absence of credit access — since PMJDY does not provide loans, linking these accounts to Pradhan Mantri Mudra Yojana would resolve the capability deficit.\n(d) The capabilities approach would conclude that PMJDY itself must be abolished and replaced with a women-controlled community banking programme, since account ownership without agency is worse than no account at all.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) claiming bank accounts are a sufficient capability aligns with the government's communication on financial empowerment through PMJDY. Students who have not engaged with the capabilities approach in development economics will accept this as the correct application of the scenario.",
+      "elimination_logic": [
+        "The scenario involves women account holders in a village who have PMJDY accounts but whose financial decisions are controlled by male household heads — the account ownership-control gap.",
+        "Eliminate (a): 'Account ownership is a sufficient capability for economic agency' directly contradicts the capabilities approach. Sen's framework requires real freedoms — actual ability to make decisions — not just formal access.",
+        "Eliminate (c): The scenario is not about credit access; it is about whether account ownership alone confers agency. Credit (PMMY) is a different dimension.",
+        "Eliminate (d): Abolishing PMJDY is a policy prescription not supported by the capabilities approach — which would recommend complementary interventions (financial literacy, SHG formation), not scheme elimination.",
+        "Select (b): The capabilities approach holds that financial access (bank account) is an enabling means, not an end. Real capability requires the freedom to make financial decisions — which requires accompanying literacy, legal empowerment, and social norm change."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in option (a) takes a true element (PMJDY provides financial access) and extends it to a false conclusion (access is sufficient for capability/agency). Amartya Sen's capabilities approach specifically warns against confusing the availability of means (resources, access) with the actual capability to use them. The scenario is precisely designed to illustrate this gap: women have accounts but lack decision-making agency over them — the classic access-without-agency problem that the capabilities approach identifies.",
+      "final_explanation": "Amartya Sen's capabilities approach is increasingly applied in financial inclusion policy evaluation. The core distinction is between having access to a tool (a bank account) and having the substantive freedom to use it effectively.\n\nApplicable principle: Capabilities approach holds that well-being requires real freedoms — the actual ability to live the life one has reason to value. Formal access to a bank account is an enabling resource, not a capability by itself. If women hold accounts but cannot autonomously authorise withdrawals or savings decisions, the bank account has not expanded their real capabilities.\n\nMapping to the scenario: Women in the village have formal account ownership (access achieved) but lack decision-making agency (capability not achieved). This is the exact gap the capabilities approach identifies between resources and functionings.\n\n• Option (a): Incorrect. Sen's approach explicitly rejects the idea that resource access is sufficient for capability. 'Sufficient' is the scope-extension.\n• Option (b): Correct. The capabilities approach recognises that account ownership is a means — genuine financial capability requires freedom to make decisions, financial literacy, and social conditions that permit autonomous use.\n• Option (c): Incorrect. This pivots to credit access (PMMY) — the scenario is about decision-making agency over existing accounts, not about credit.\n• Option (d): Incorrect. The capabilities approach would not recommend scheme abolition — it would recommend complementary capability-building (literacy, legal empowerment, SHG formation).\n\nValue Addition:\n• Sen's 'Development as Freedom' (1999) frames poverty as capability deprivation — not just income deprivation.\n• SHG-bank linkage programmes address the agency problem by building collective financial decision-making.\n• The NRLM (Aajeevika) programme specifically targets women's economic agency through SHG formation."
+    },
+    "hi": {
+      "display_text": "एक ग्रामीण जिले के क्षेत्र सर्वेक्षण में पाया गया कि एक गाँव समूह में 80% से अधिक महिलाएं PMJDY खाते रखती हैं, लेकिन निकासी निर्णय और बचत विकल्पों का अधिकांश नियंत्रण पुरुष परिवार के मुखिया के पास है। महिलाएं अपने खाते की शेष राशि या अपने रूपे कार्ड से जुड़े बीमा लाभों के बारे में अनजान हैं। एक विकास अर्थशास्त्री इस स्थिति का मूल्यांकन करते हुए अमर्त्य सेन के क्षमताओं के दृष्टिकोण को लागू करता है और तर्क देता है कि PMJDY ने इस समूह में अपने लक्षित कल्याण उद्देश्य को प्राप्त नहीं किया है। निम्नलिखित में से कौन-सा सिद्धांत वह सबसे सटीक रूप से लागू कर रही है?\n\n(a) वित्तीय खाता स्वामित्व आर्थिक एजेंसी के लिए एक पर्याप्त क्षमता है — चूंकि महिलाएं औपचारिक रूप से खाते रखती हैं, PMJDY ने अपना दायित्व पूरा कर लिया है, और रिपोर्ट किया गया पुरुष नियंत्रण योजना के दायरे से बाहर एक सामाजिक समस्या है।\n(b) क्षमताओं का दृष्टिकोण मानता है कि बैंक खाते तक औपचारिक पहुँच एक सक्षम बनाने वाला साधन है, स्वयं में अंत नहीं — वास्तविक वित्तीय क्षमता के लिए स्वायत्त वित्तीय निर्णय लेने की स्वतंत्रता आवश्यक है, जिसे साक्षरता, कानूनी सशक्तिकरण, और सामाजिक परिस्थितियाँ समर्थित करती हैं।\n(c) इस परिदृश्य में मुख्य विफलता ऋण पहुँच की अनुपस्थिति है — चूंकि PMJDY ऋण प्रदान नहीं करता, इन खातों को प्रधानमंत्री मुद्रा योजना से जोड़ना क्षमता की कमी को दूर कर देगा।\n(d) क्षमताओं का दृष्टिकोण यह निष्कर्ष निकालेगा कि PMJDY को समाप्त कर महिलाओं द्वारा नियंत्रित सामुदायिक बैंकिंग कार्यक्रम से बदलना चाहिए, क्योंकि एजेंसी के बिना खाता स्वामित्व न होने से भी बदतर है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) यह दावा करता है कि बैंक खाते होना एक पर्याप्त क्षमता है, जो PMJDY के माध्यम से वित्तीय सशक्तिकरण पर सरकार के संचार के अनुरूप है। जो छात्र विकास अर्थशास्त्र में क्षमताओं के दृष्टिकोण से परिचित नहीं हैं, वे इसे परिदृश्य के सही अनुप्रयोग के रूप में स्वीकार करेंगे।",
+      "elimination_logic": [
+        "परिदृश्य में एक गाँव की महिलाएं हैं जिनके पास PMJDY खाते हैं लेकिन उनके वित्तीय निर्णय पुरुष परिवार के मुखिया द्वारा नियंत्रित होते हैं — खाता स्वामित्व-नियंत्रण अंतर।",
+        "विकल्प (a) को हटाएं: 'खाता स्वामित्व आर्थिक एजेंसी के लिए एक पर्याप्त क्षमता है' यह क्षमताओं के दृष्टिकोण के सीधे विरोध में है। सेन के ढांचे में वास्तविक स्वतंत्रताएँ आवश्यक हैं — निर्णय लेने की वास्तविक क्षमता — केवल औपचारिक पहुँच नहीं।",
+        "विकल्प (c) को हटाएं: परिदृश्य ऋण पहुँच के बारे में नहीं है; यह इस बात पर है कि क्या केवल खाता स्वामित्व एजेंसी प्रदान करता है। ऋण (PMMY) एक अलग आयाम है।",
+        "विकल्प (d) को हटाएं: PMJDY को समाप्त करना एक नीति प्रस्ताव है जो क्षमताओं के दृष्टिकोण द्वारा समर्थित नहीं है — जो पूरक हस्तक्षेप (वित्तीय साक्षरता, स्वयं सहायता समूह गठन) की सिफारिश करेगा, न कि योजना समाप्ति।",
+        "विकल्प (b) चुनें: क्षमताओं का दृष्टिकोण मानता है कि वित्तीय पहुँच (बैंक खाता) एक सक्षम बनाने वाला साधन है, अंत नहीं। वास्तविक क्षमता के लिए वित्तीय निर्णय लेने की स्वतंत्रता आवश्यक है — जिसके लिए साक्षरता, कानूनी सशक्तिकरण, और सामाजिक मानदंडों में परिवर्तन आवश्यक है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में दायरा-विस्तार जाल एक सत्य तत्व (PMJDY वित्तीय पहुँच प्रदान करता है) को लेकर इसे एक गलत निष्कर्ष (पहुँच क्षमता/एजेंसी के लिए पर्याप्त है) तक बढ़ा देता है। अमर्त्य सेन का क्षमताओं का दृष्टिकोण विशेष रूप से संसाधनों या पहुँच की उपलब्धता को वास्तविक क्षमता के साथ भ्रमित करने से सावधान करता है। परिदृश्य ठीक उसी अंतर को दर्शाने के लिए डिज़ाइन किया गया है: महिलाओं के पास खाते हैं लेकिन उनके ऊपर निर्णय लेने की एजेंसी नहीं है — यह क्लासिक पहुँच-बिना-एजेंसी समस्या है जिसे क्षमताओं का दृष्टिकोण पहचानता है।",
+      "final_explanation": "अमर्त्य सेन का क्षमताओं का दृष्टिकोण वित्तीय समावेशन नीति मूल्यांकन में बढ़ती हुई रूप से लागू हो रहा है। मुख्य भेद यह है कि किसी उपकरण (बैंक खाता) तक पहुँच होना और उसे प्रभावी ढंग से उपयोग करने की वास्तविक स्वतंत्रता होना अलग है।\n\nलागू सिद्धांत: क्षमताओं का दृष्टिकोण कहता है कि कल्याण के लिए वास्तविक स्वतंत्रताएँ आवश्यक हैं — वह वास्तविक क्षमता जो व्यक्ति को वह जीवन जीने की अनुमति देती है जिसे वह मूल्यवान समझता है। बैंक खाते तक औपचारिक पहुँच एक सक्षम बनाने वाला संसाधन है, स्वयं में क्षमता नहीं। यदि महिलाओं के खाते हैं लेकिन वे स्वायत्त रूप से निकासी या बचत के निर्णय नहीं कर पातीं, तो बैंक खाते ने उनकी वास्तविक क्षमताओं का विस्तार नहीं किया है।\n\nपरिदृश्य से मेल: गाँव की महिलाएं औपचारिक खाता स्वामित्व रखती हैं (पहुँच प्राप्त) लेकिन निर्णय लेने की एजेंसी नहीं रखतीं (क्षमता प्राप्त नहीं)। यह वही अंतर है जिसे क्षमताओं का दृष्टिकोण संसाधनों और क्रियाओं के बीच पहचानता है।\n\n• विकल्प (a): गलत। सेन का दृष्टिकोण स्पष्ट रूप से अस्वीकार करता है कि संसाधन पहुँच क्षमता के लिए पर्याप्त है। 'पर्याप्त' दायरा-विस्तार है।\n• विकल्प (b): सही। क्षमताओं का दृष्टिकोण मानता है कि खाता स्वामित्व एक साधन है — वास्तविक वित्तीय क्षमता के लिए निर्णय लेने की स्वतंत्रता, वित्तीय साक्षरता, और सामाजिक परिस्थितियाँ आवश्यक हैं जो स्वायत्त उपयोग की अनुमति दें।\n• विकल्प (c): गलत। यह ऋण पहुँच (PMMY) की ओर मुड़ता है — परिदृश्य मौजूदा खातों पर निर्णय लेने की एजेंसी के बारे में है, ऋण के बारे में नहीं।\n• विकल्प (d): गलत। क्षमताओं का दृष्टिकोण योजना समाप्ति की सिफारिश नहीं करेगा — यह पूरक क्षमता निर्माण (साक्षरता, कानूनी सशक्तिकरण, स्वयं सहायता समूह गठन) की सिफारिश करेगा।\n\nमूल्य संवर्धन:\n• सेन की 'विकास के रूप में स्वतंत्रता' (1999) गरीबी को क्षमता हानि के रूप में देखती है — केवल आय हानि के रूप में नहीं।\n• स्वयं सहायता समूह-बैंक लिंकिंग कार्यक्रम एजेंसी समस्या को सामूहिक वित्तीय निर्णय निर्माण द्वारा संबोधित करते हैं।\n• NRLM (आजीविका) कार्यक्रम विशेष रूप से स्वयं सहायता समूह गठन के माध्यम से महिलाओं की आर्थिक एजेंसी को लक्षित करता है।"
+    }
+  }
+]

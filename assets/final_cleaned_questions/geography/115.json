@@ -1,0 +1,1445 @@
+[
+  {
+    "uuid": "671972a7-8c21-4f8f-a402-3add8b01cc16",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Nile River: Length Debate and Drainage Basin Characteristics"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Blue Nile vs White Nile discharge contribution",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following statements about the tributaries of the Nile River is correct?\n\n(a) The White Nile contributes a greater volume of water to the Nile than the Blue Nile does, and it originates from Lake Victoria.\n(b) Although the Blue Nile is shorter than the White Nile, it contributes approximately 85% of the Nile's total water discharge.\n(c) The Blue Nile originates from Lake Victoria, while the White Nile originates from Lake Tana in Ethiopia.\n(d) The Nile Delta is a classic example of a bird's foot (digitate) delta, similar to the Mississippi Delta.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students correctly associate the White Nile with being longer and confuse 'longer' with 'greater discharge contributor.'",
+      "elimination_logic": [
+        "Eliminate (a): the White Nile is the longer tributary, but length does not equal discharge volume.",
+        "Eliminate (c): the Blue Nile originates from Lake Tana in Ethiopia, not Lake Victoria — Lake Victoria is the source of the White Nile.",
+        "Eliminate (d): the Nile delta is arcuate (fan-shaped), not bird's foot — Mississippi is the bird's foot example.",
+        "Retain (b): the Blue Nile contributes approximately 85% of the Nile's total water volume despite being the shorter tributary."
+      ],
+      "upsc_trap_explanation": "This question exploits the common conflation of tributary length with discharge contribution. Students who know that the White Nile is longer often assume it also contributes more water, which is incorrect. The Blue Nile, originating from Lake Tana in the Ethiopian Highlands, carries the majority of silt and water — especially during the monsoon season — and accounts for roughly 85% of the Nile's total discharge. A partially prepared student will instinctively select option (a), confusing the White Nile's greater length with greater hydrological contribution.",
+      "final_explanation": "The Nile has two principal tributaries: the White Nile, which is longer and originates from Lake Victoria in East Africa, and the Blue Nile, which originates from Lake Tana in the Ethiopian Highlands.\n\n• Option (a) — Incorrect: The White Nile is indeed the longer tributary, but it contributes only about 15% of the total discharge. Length and discharge are independent characteristics.\n• Option (b) — Correct: The Blue Nile, though shorter, contributes approximately 85% of the Nile's water and most of its silt, particularly during the Ethiopian monsoon season.\n• Option (c) — Incorrect: Lake Tana (Ethiopia) is the source of the Blue Nile; Lake Victoria is the source of the White Nile — these are reversed in this option.\n• Option (d) — Incorrect: The Nile Delta is the classic example of an arcuate (fan-shaped) delta; the Mississippi Delta is the textbook bird's foot delta.\n\nValue Addition:\n• The Blue Nile's flood pulse historically deposited nutrient-rich silt on Egyptian farmland — the basis of ancient Egyptian agriculture.\n• The Nile Basin Initiative (1999) includes 11 riparian countries and addresses transboundary water-sharing conflicts.\n• Recent hydrological studies suggest the Amazon may be longer than the Nile, challenging the traditional ranking."
+    },
+    "hi": {
+      "display_text": "नील नदी की उपनदियों के संबंध में निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) श्वेत नील नीला नील की तुलना में नील को अधिक जल मात्रा प्रदान करता है, और यह लेक विक्टोरिया से निकलता है।\n(b) यद्यपि नीला नील श्वेत नील से छोटा है, यह नील के कुल जल प्रवाह का लगभग 85% योगदान देता है।\n(c) नीला नील लेक विक्टोरिया से निकलता है, जबकि श्वेत नील इथियोपिया के लेक ताना से निकलता है।\n(d) नील डेल्टा पक्षी के पंजे (डिजिटेट) डेल्टा का क्लासिक उदाहरण है, जो मिसिसिपी डेल्टा के समान है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि छात्र सही रूप से श्वेत नील को लंबा मानते हैं और 'लंबा' होने को 'अधिक जल प्रवाह देने वाला' समझ लेते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: श्वेत नील लंबा उपनदी है, लेकिन लंबाई जल प्रवाह की मात्रा के बराबर नहीं होती।",
+        "(c) को हटाएं: नीला नील इथियोपिया के लेक ताना से निकलता है, लेक विक्टोरिया से नहीं — लेक विक्टोरिया श्वेत नील का स्रोत है।",
+        "(d) को हटाएं: नील डेल्टा धनुषाकार (फैन-आकार) है, पक्षी के पंजे जैसा नहीं — मिसिसिपी डेल्टा पक्षी के पंजे का उदाहरण है।",
+        "(b) को रखें: नीला नील, जो छोटा उपनदी है, नील के कुल जल प्रवाह का लगभग 85% योगदान देता है।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न उपनदियों की लंबाई को जल प्रवाह योगदान से भ्रमित करने की सामान्य गलती का लाभ उठाता है। जो छात्र जानते हैं कि श्वेत नील लंबा है, वे अक्सर मान लेते हैं कि वह अधिक जल भी देता है, जो गलत है। नीला नील, जो इथियोपियाई उच्चभूमि के लेक ताना से निकलता है, अधिकांश तलछट और जल लेकर आता है — विशेषकर मानसून के दौरान — और नील के कुल जल प्रवाह का लगभग 85% हिस्सा है। आंशिक रूप से तैयार छात्र स्वाभाविक रूप से विकल्प (a) चुनेंगे, श्वेत नील की अधिक लंबाई को अधिक जल प्रवाह के साथ भ्रमित करते हुए।",
+      "final_explanation": "नील की दो मुख्य उपनदियाँ हैं: श्वेत नील, जो लंबा है और पूर्वी अफ्रीका के लेक विक्टोरिया से निकलता है, और नीला नील, जो इथियोपियाई उच्चभूमि के लेक ताना से निकलता है।\n\n• विकल्प (a) — गलत: श्वेत नील वास्तव में लंबा उपनदी है, लेकिन यह कुल जल प्रवाह का केवल लगभग 15% देता है। लंबाई और जल प्रवाह स्वतंत्र गुण हैं।\n• विकल्प (b) — सही: नीला नील, हालांकि छोटा है, नील के जल का लगभग 85% और अधिकांश तलछट देता है, विशेषकर इथियोपियाई मानसून के दौरान।\n• विकल्प (c) — गलत: लेक ताना (इथियोपिया) नीला नील का स्रोत है; लेक विक्टोरिया श्वेत नील का स्रोत है — यह विकल्प उल्टा है।\n• विकल्प (d) — गलत: नील डेल्टा धनुषाकार (फैन-आकार) डेल्टा का क्लासिक उदाहरण है; मिसिसिपी डेल्टा पक्षी के पंजे वाला डेल्टा है।\n\nमूल्य संवर्धन:\n• नीला नील की बाढ़ ने ऐतिहासिक रूप से मिस्र के खेतों पर पोषक तत्वों से भरपूर तलछट जमा किया — प्राचीन मिस्री कृषि का आधार।\n• नील बेसिन इनिशिएटिव (1999) में 11 तटवर्ती देश शामिल हैं और यह सीमा-पार जल-साझाकरण विवादों को संबोधित करता है।\n• हाल की जलविज्ञान अध्ययन सुझाव देते हैं कि अमेज़न नील से लंबा हो सकता है, जो पारंपरिक रैंकिंग को चुनौती देता है।"
+    }
+  },
+  {
+    "uuid": "38142e41-4865-4f0a-bd33-1a6b9c5943be",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Amazon River: Discharge, Basin, and Biodiversity Superlatives"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Amazon River superlatives — delta, discharge, Marajó Island",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Amazon River:\n\n1. The Amazon River accounts for approximately 20% of all freshwater discharged into the world's oceans.\n2. The Amazon River forms a classic arcuate delta at its mouth near Marajó Island.\n3. Marajó Island, located at the mouth of the Amazon, is considered the world's largest fluvial island.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Amazon River accounts for approximately 20% of all freshwater discharged into the world's oceans.",
+          "verdict": "Correct",
+          "reason": "The Amazon's discharge volume is unmatched globally and constitutes roughly one-fifth of all freshwater entering the oceans."
+        },
+        {
+          "statement": "The Amazon River forms a classic arcuate delta at its mouth near Marajó Island.",
+          "verdict": "Incorrect",
+          "reason": "The Amazon does not form a classic delta; it forms an estuary where tidal action dominates and sediment is swept away. Marajó Island is a fluvial island, but there is no arcuate delta."
+        },
+        {
+          "statement": "Marajó Island, located at the mouth of the Amazon, is considered the world's largest fluvial island.",
+          "verdict": "Correct",
+          "reason": "Marajó Island in Brazil is recognized as the world's largest river island (fluvial island), situated where the Amazon meets the Atlantic Ocean."
+        }
+      ],
+      "strong_distractor": "d — Students who know the Amazon has a massive mouth assume it must have a delta, making Statement 2 appear correct and pushing them toward option (d).",
+      "elimination_logic": [
+        "Verify Statement 1: Amazon discharge ~20% of global freshwater outflow — Correct.",
+        "Verify Statement 2: The Amazon forms an estuary, not an arcuate delta; tidal forces prevent classic delta formation — Incorrect.",
+        "Verify Statement 3: Marajó Island is the world's largest fluvial island — Correct.",
+        "Since Statements 1 and 3 are correct and Statement 2 is incorrect, select option (c): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the key trap. The Amazon's enormous mouth and sediment load lead many students to assume it forms a prominent delta. In reality, the strong tidal action and ocean currents at the Amazon's mouth prevent classic delta formation — the river opens into an estuary. The mention of Marajó Island reinforces the image of a river mouth feature, making students overlook whether a 'delta' specifically exists.",
+      "final_explanation": "The Amazon River holds multiple global superlatives that are frequently tested in isolation or in combination.\n\n• Statement 1 — Correct: The Amazon discharges approximately 20% of all freshwater that enters the world's oceans, a volume greater than the next seven largest rivers combined.\n• Statement 2 — Incorrect: The Amazon does not form a classic delta. The powerful tidal forces at its mouth sweep sediment away, resulting in an estuary. This is a high-frequency UPSC trap — the Amazon is the textbook example of an estuarine delta (no visible delta).\n• Statement 3 — Correct: Marajó Island, located at the Amazon's mouth in the state of Pará, Brazil, is the world's largest fluvial (river) island, roughly the size of Switzerland.\n\nValue Addition:\n• The Amazon basin covers about 7 million sq km — the world's largest drainage basin.\n• Congo River holds the record for the world's largest discharge in Africa and second globally.\n• The Amazon's width can exceed 48 km during flood season, making it also the world's widest river."
+    },
+    "hi": {
+      "display_text": "अमेज़न नदी के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अमेज़न नदी विश्व के महासागरों में निर्वाहित होने वाले सभी मीठे पानी का लगभग 20% हिस्सा है।\n2. अमेज़न नदी अपने मुहाने पर माराजो द्वीप के पास एक पारंपरिक धनुषाकार डेल्टा बनाती है।\n3. अमेज़न के मुहाने पर स्थित माराजो द्वीप को विश्व का सबसे बड़ा नदी द्वीप माना जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Amazon River accounts for approximately 20% of all freshwater discharged into the world's oceans.",
+          "verdict": "सही है",
+          "reason": "अमेज़न का निर्वहन मात्रा विश्व स्तर पर अतुलनीय है और यह महासागरों में प्रवेश करने वाले सभी मीठे पानी का लगभग एक-पाँचवाँ हिस्सा है।"
+        },
+        {
+          "statement": "The Amazon River forms a classic arcuate delta at its mouth near Marajó Island.",
+          "verdict": "गलत है",
+          "reason": "अमेज़न एक पारंपरिक धनुषाकार डेल्टा नहीं बनाता; यह एक эстuary बनाता है जहाँ ज्वारीय क्रिया प्रमुख होती है और तलछट बहा दी जाती है। माराजो द्वीप एक नदी द्वीप है, लेकिन कोई धनुषाकार डेल्टा नहीं है।"
+        },
+        {
+          "statement": "Marajó Island, located at the mouth of the Amazon, is considered the world's largest fluvial island.",
+          "verdict": "सही है",
+          "reason": "ब्राज़ील में अमेज़न के मुहाने पर स्थित माराजो द्वीप को विश्व का सबसे बड़ा नदी द्वीप (fluvial island) माना जाता है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि अमेज़न का मुहाना विशाल है, वे मान लेते हैं कि वहाँ डेल्टा होगा, जिससे कथन 2 सही प्रतीत होता है और वे विकल्प (d) की ओर बढ़ते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: अमेज़न का निर्वहन विश्व के मीठे पानी के बहाव का लगभग 20% है — सही।",
+        "कथन 2 सत्यापित करें: अमेज़न एक पारंपरिक धनुषाकार डेल्टा नहीं बनाता; यह एक эстuary बनाता है; ज्वारीय बल क्लासिक डेल्टा बनने से रोकते हैं — गलत।",
+        "कथन 3 सत्यापित करें: माराजो द्वीप विश्व का सबसे बड़ा नदी द्वीप है — सही।",
+        "चूंकि कथन 1 और 3 सही हैं और कथन 2 गलत है, अतः विकल्प (c) चुनें: केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 मुख्य जाल है। अमेज़न के विशाल मुहाने और तलछट भार के कारण कई छात्र मान लेते हैं कि वहाँ एक प्रमुख डेल्टा होगा। वास्तव में, अमेज़न के मुहाने पर मजबूत ज्वारीय क्रिया और महासागरीय धाराएँ पारंपरिक डेल्टा बनने से रोकती हैं — नदी एक эстuary में खुलती है। माराजो द्वीप का उल्लेख नदी मुहाने की विशेषता की छवि को मजबूत करता है, जिससे छात्र यह ध्यान नहीं देते कि 'डेल्टा' विशेष रूप से मौजूद है या नहीं।",
+      "final_explanation": "अमेज़न नदी के कई वैश्विक सुपरलेटिव हैं जो अक्सर अलग-अलग या संयोजन में परीक्षा में पूछे जाते हैं।\n\n• कथन 1 — सही: अमेज़न लगभग 20% मीठे पानी का निर्वहन करता है जो विश्व के महासागरों में जाता है, यह मात्रा अगले सात सबसे बड़े नदियों के संयुक्त निर्वहन से अधिक है।\n• कथन 2 — गलत: अमेज़न पारंपरिक डेल्टा नहीं बनाता। इसके मुहाने पर शक्तिशाली ज्वारीय बल तलछट को बहा देते हैं, जिससे एक эстuary बनता है। यह UPSC में एक उच्च-आवृत्ति वाला जाल है — अमेज़न एक эстуарिन डेल्टा का पाठ्यपुस्तक उदाहरण है (दृश्य डेल्टा नहीं)।\n• कथन 3 — सही: माराजो द्वीप, जो ब्राज़ील के पारा राज्य में अमेज़न के मुहाने पर स्थित है, विश्व का सबसे बड़ा नदी द्वीप है, जिसका आकार लगभग स्विट्ज़रलैंड के बराबर है।\n\nमूल्य संवर्धन:\n• अमेज़न बेसिन लगभग 7 मिलियन वर्ग किलोमीटर क्षेत्र में फैला है — विश्व का सबसे बड़ा जलग्रहण क्षेत्र।\n• कांगो नदी अफ्रीका में सबसे बड़ा निर्वहन रखती है और विश्व में दूसरा स्थान है।\n• बाढ़ के मौसम में अमेज़न की चौड़ाई 48 किमी से अधिक हो सकती है, जिससे यह विश्व की सबसे चौड़ी नदी भी बन जाती है।"
+    }
+  },
+  {
+    "uuid": "cfc5a770-626f-4921-9845-fc8869c7c35a",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Mekong River: Transboundary Flow and Southeast Asian Geopolitics"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mekong River — Tonle Sap, country sequence, sea outlet",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Tonle Sap Lake",
+            "1. China–Myanmar–Laos–Thailand–Cambodia–Vietnam"
+          ],
+          [
+            "B. Mekong Delta outlet sea",
+            "2. South China Sea"
+          ],
+          [
+            "C. Mekong River country sequence (source to mouth)",
+            "3. Lower Mekong cooperation body"
+          ],
+          [
+            "D. Mekong River Commission",
+            "4. Seasonal flow reversal due to flood pulse"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-4, B-2, C-1, D-3\n(b) A-4, B-3, C-1, D-2\n(c) A-2, B-4, C-3, D-1\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) pairs Mekong outlet with the Indian Ocean, which some students confuse because the delta is in Vietnam and they associate Vietnam's eastern coast with a general 'Asian ocean.'",
+      "elimination_logic": [
+        "Match A: Tonle Sap Lake is in Cambodia and is famous for reversing its flow seasonally due to the Mekong flood pulse — matches with 4 (Seasonal flow reversal).",
+        "Match B: The Mekong Delta lies in southern Vietnam and drains into the South China Sea — matches with 2.",
+        "Match C: The Mekong flows through 6 countries; the correct sequence starting from its Tibetan source is China → Myanmar → Laos → Thailand → Cambodia → Vietnam — matches with 1.",
+        "Match D: The Mekong River Commission is the inter-governmental body for lower Mekong cooperation — matches with 3; select option (a): A-4, B-2, C-1, D-3."
+      ],
+      "upsc_trap_explanation": "The trap in List I item C is the country sequence. Many students know the six countries but place Myanmar before or after Laos incorrectly, or omit Myanmar altogether. The precise sequence — China, Myanmar, Laos, Thailand, Cambodia, Vietnam — must be memorised for direction-of-flow questions. The Tonle Sap pairing (A-4) also traps students who know the lake but associate it with 'large lake' features rather than its unique seasonal flow-reversal property.",
+      "final_explanation": "The Mekong is one of the most geopolitically significant rivers in Southeast Asia, demanding precise knowledge of its course, features, and institutions.\n\nCorrect matches:\n• A (Tonle Sap Lake) → 4 (Seasonal flow reversal): When the Mekong floods during monsoon, it reverses the flow of the Tonle Sap River, pushing water into the lake and expanding it dramatically. This is one of geography's most remarkable hydrological anomalies.\n• B (Mekong Delta outlet) → 2 (South China Sea): The delta in southern Vietnam drains into the South China Sea — not the Indian Ocean or Bay of Bengal.\n• C (Mekong country sequence) → 1 (China–Myanmar–Laos–Thailand–Cambodia–Vietnam): This is the correct downstream order from the Tibetan Plateau source.\n• D (Mekong River Commission) → 3 (Lower Mekong cooperation body): The MRC is the intergovernmental organisation for the four lower Mekong countries (Laos, Thailand, Cambodia, Vietnam); China and Myanmar are only dialogue partners, not full members.\n\nValue Addition:\n• China's upstream dam-building on the Lancang (Mekong) has intensified downstream water conflicts.\n• The Mekong originates in Tibet, sharing headwaters with the Yangtze, Salween, and Brahmaputra.\n• The 'Three Parallel Rivers of Yunnan' UNESCO site features the Salween, Mekong, and Yangtze flowing within 76 km of each other."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. टोनले सैप झील",
+            "1. चीन–म्यांमार–लाओस–थाईलैंड–कंबोडिया–वियतनाम"
+          ],
+          [
+            "B. मेकांग डेल्टा निकास समुद्र",
+            "2. दक्षिण चीन सागर"
+          ],
+          [
+            "C. मेकांग नदी देश क्रम (स्रोत से मुंह तक)",
+            "3. निचले मेकांग सहयोग निकाय"
+          ],
+          [
+            "D. मेकांग नदी आयोग",
+            "4. बाढ़ पल्स के कारण मौसमी प्रवाह उलटना"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-4, B-2, C-1, D-3\n(b) A-4, B-3, C-1, D-2\n(c) A-2, B-4, C-3, D-1\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) मेकांग के निकास को भारतीय महासागर से जोड़ता है, जिसे कुछ छात्र भ्रमित करते हैं क्योंकि डेल्टा वियतनाम में है और वे वियतनाम के पूर्वी तट को सामान्य 'एशियाई महासागर' से जोड़ते हैं।",
+      "elimination_logic": [
+        "मिलान A: टोनले सैप झील कंबोडिया में है और मेकांग के बाढ़ पल्स के कारण मौसमी प्रवाह उलटने के लिए प्रसिद्ध है — 4 (मौसमी प्रवाह उलटना) से मेल खाता है।",
+        "मिलान B: मेकांग डेल्टा दक्षिणी वियतनाम में स्थित है और दक्षिण चीन सागर में जल निकास करता है — 2 से मेल खाता है।",
+        "मिलान C: मेकांग 6 देशों से होकर बहती है; तिब्बती स्रोत से सही क्रम है चीन → म्यांमार → लाओस → थाईलैंड → कंबोडिया → वियतनाम — 1 से मेल खाता है।",
+        "मिलान D: मेकांग नदी आयोग निचले मेकांग सहयोग के लिए अंतर-सरकारी निकाय है — 3 से मेल खाता है; विकल्प (a) चुनें: A-4, B-2, C-1, D-3।"
+      ],
+      "upsc_trap_explanation": "सूची I के आइटम C में जाल देश क्रम है। कई छात्र छह देशों को जानते हैं लेकिन म्यांमार को लाओस के पहले या बाद में गलत स्थान देते हैं, या म्यांमार को पूरी तरह छोड़ देते हैं। सही क्रम — चीन, म्यांमार, लाओस, थाईलैंड, कंबोडिया, वियतनाम — प्रवाह दिशा के प्रश्नों के लिए याद रखना आवश्यक है। टोनले सैप जोड़ी (A-4) भी छात्रों को फंसाती है जो झील को जानते हैं लेकिन इसे 'बड़ी झील' विशेषताओं से जोड़ते हैं बजाय इसके अनूठे मौसमी प्रवाह-उलटने वाले गुण के।",
+      "final_explanation": "मेकांग दक्षिण पूर्व एशिया की सबसे भू-राजनीतिक रूप से महत्वपूर्ण नदियों में से एक है, जिसके मार्ग, विशेषताएँ और संस्थान सटीक ज्ञान मांगते हैं।\n\nसही मिलान:\n• A (टोनले सैप झील) → 4 (मौसमी प्रवाह उलटना): जब मेकांग मानसून के दौरान बाढ़ करता है, तो यह टोनले सैप नदी के प्रवाह को उलट देता है, जिससे झील में पानी बढ़ता है और यह नाटकीय रूप से फैलती है। यह भूगोल की सबसे उल्लेखनीय जलवैज्ञानिक विसंगतियों में से एक है।\n• B (मेकांग डेल्टा निकास) → 2 (दक्षिण चीन सागर): दक्षिणी वियतनाम में डेल्टा दक्षिण चीन सागर में जल निकास करता है — न कि भारतीय महासागर या बंगाल की खाड़ी में।\n• C (मेकांग देश क्रम) → 1 (चीन–म्यांमार–लाओस–थाईलैंड–कंबोडिया–वियतनाम): यह तिब्बती पठार स्रोत से सही नीचे की ओर क्रम है।\n• D (मेकांग नदी आयोग) → 3 (निचले मेकांग सहयोग निकाय): MRC चार निचले मेकांग देशों (लाओस, थाईलैंड, कंबोडिया, वियतनाम) के लिए अंतर-सरकारी संगठन है; चीन और म्यांमार केवल संवाद साझेदार हैं, पूर्ण सदस्य नहीं।\n\nमूल्य संवर्धन:\n• चीन द्वारा लानकांग (मेकांग) पर बांध निर्माण ने निचले हिस्से में जल विवादों को तीव्र किया है।\n• मेकांग तिब्बत में उत्पन्न होती है, जो यांग्त्ज़े, सालविन और ब्रह्मपुत्र के साथ स्रोत साझा करती है।\n• 'युन्नान के तीन समानांतर नदियाँ' यूनेस्को स्थल में सालविन, मेकांग और यांग्त्ज़े 76 किमी के भीतर बहती हैं।"
+    }
+  },
+  {
+    "uuid": "493b9663-66a8-464c-95c2-3e30ba51e018",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Brahmaputra-Tsangpo River: Antecedent River and Gorge Formation"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Brahmaputra — antecedent river, names across countries, gorge",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The river known as the Yarlung Tsangpo in Tibet flows through Arunachal Pradesh and Assam before entering Bangladesh. Which of the following gives the correct sequence of names this river carries, from its source region to its entry into Bangladesh?\n\n(a) Siang/Dihang → Yarlung Tsangpo → Brahmaputra → Jamuna\n(b) Yarlung Tsangpo → Siang/Dihang → Brahmaputra → Jamuna\n(c) Siang/Dihang → Brahmaputra → Yarlung Tsangpo → Jamuna\n(d) Yarlung Tsangpo → Brahmaputra → Siang/Dihang → Jamuna",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know the river crosses from Tibet into Arunachal Pradesh may place 'Siang' before 'Yarlung Tsangpo' in the flow sequence, confusing upstream naming with downstream naming.",
+      "elimination_logic": [
+        "The river originates in Tibet — it is first called Yarlung Tsangpo there.",
+        "It enters Arunachal Pradesh (India) and is called Siang or Dihang — this comes after Tibet.",
+        "After entering Assam, it broadens into the Brahmaputra — after Arunachal Pradesh.",
+        "Finally, after entering Bangladesh, it is called Jamuna — last in the sequence; correct order is Yarlung Tsangpo → Siang/Dihang → Brahmaputra → Jamuna, which is option (b)."
+      ],
+      "upsc_trap_explanation": "The naming sequence of the Brahmaputra across political boundaries is a high-frequency trap. Students often confuse 'Dihang' and 'Siang' as separate rivers rather than the same river in Arunachal Pradesh. Additionally, 'Jamuna' in Bangladesh is sometimes confused with 'Yamuna' in India — they are completely different rivers. The chronological/spatial sequence must be recalled from upstream (Tibet) to downstream (Bangladesh).",
+      "final_explanation": "The Brahmaputra is one of the world's great antecedent rivers — it predates the Himalayas and cut through the mountains as they rose. As it flows from its Tibetan source to the Bay of Bengal, it carries different names in different political regions.\n\nCorrect sequence (upstream to downstream):\n1. Yarlung Tsangpo — Tibet (China): the river's Tibetan name; it flows eastward here, flanked by the Yarlung Tsangpo Grand Canyon, the world's deepest river gorge.\n2. Siang / Dihang — Arunachal Pradesh (India): after making a dramatic hairpin turn at the Great Bend, the river enters India.\n3. Brahmaputra — Assam (India): after joining several tributaries, it widens dramatically into the Brahmaputra.\n4. Jamuna — Bangladesh: after entering Bangladesh, it is called Jamuna and joins the Ganga (called Padma) and Meghna rivers.\n\nWhy other options fail: Options (a), (c), and (d) place the Tibetan or Assam name out of sequence relative to the Arunachal or Bangladesh name.\n\nValue Addition:\n• The Yarlung Tsangpo Grand Canyon is deeper than the Grand Canyon in the USA.\n• The Ganga–Brahmaputra–Meghna delta is the world's largest delta.\n• China's proposed dam at the Great Bend is a significant geopolitical concern for India."
+    },
+    "hi": {
+      "display_text": "तिब्बत में यारलुंग त्सांगपो के नाम से जानी जाने वाली नदी अरुणाचल प्रदेश और असम से होकर बांग्लादेश में प्रवेश करती है। इस नदी के स्रोत क्षेत्र से लेकर बांग्लादेश में प्रवेश तक इसके नामों का सही क्रम कौन-सा है?\n\n(a) सियांग/दिहांग → यारलुंग त्सांगपो → ब्रह्मपुत्र → जमुना\n(b) यारलुंग त्सांगपो → सियांग/दिहांग → ब्रह्मपुत्र → जमुना\n(c) सियांग/दिहांग → ब्रह्मपुत्र → यारलुंग त्सांगपो → जमुना\n(d) यारलुंग त्सांगपो → ब्रह्मपुत्र → सियांग/दिहांग → जमुना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि नदी तिब्बत से अरुणाचल प्रदेश में प्रवेश करती है, वे 'सियांग' को 'यारलुंग त्सांगपो' से पहले प्रवाह अनुक्रम में रख सकते हैं, जिससे ऊपर की ओर नामकरण को नीचे की ओर नामकरण के साथ भ्रमित किया जाता है।",
+      "elimination_logic": [
+        "नदी की उत्पत्ति तिब्बत में होती है — वहां इसे पहले यारलुंग त्सांगपो कहा जाता है।",
+        "यह अरुणाचल प्रदेश (भारत) में प्रवेश करती है और इसे सियांग या दिहांग कहा जाता है — यह तिब्बत के बाद आता है।",
+        "असम में प्रवेश करने के बाद, यह ब्रह्मपुत्र में विस्तृत हो जाती है — अरुणाचल प्रदेश के बाद।",
+        "अंत में, बांग्लादेश में प्रवेश करने के बाद, इसे जमुना कहा जाता है — अनुक्रम में अंतिम; सही क्रम है यारलुंग त्सांगपो → सियांग/दिहांग → ब्रह्मपुत्र → जमुना, जो विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "राजनीतिक सीमाओं के पार ब्रह्मपुत्र के नामकरण अनुक्रम को याद रखना एक उच्च-आवृत्ति वाला जाल है। छात्र अक्सर 'दिहांग' और 'सियांग' को अरुणाचल प्रदेश में अलग-अलग नदियाँ समझ लेते हैं जबकि वे एक ही नदी के नाम हैं। इसके अतिरिक्त, बांग्लादेश की 'जमुना' को भारत की 'यमुना' के साथ भ्रमित किया जाता है — ये पूरी तरह अलग नदियाँ हैं। प्रवाह अनुक्रम को ऊपर से नीचे (तिब्बत से बांग्लादेश) याद रखना आवश्यक है।",
+      "final_explanation": "ब्रह्मपुत्र विश्व की महान पूर्ववर्ती नदियों में से एक है — यह हिमालय से पहले अस्तित्व में थी और पर्वतों के उठने के दौरान उनके बीच से कटती हुई बहती रही। यह तिब्बती स्रोत से बंगाल की खाड़ी तक बहते हुए विभिन्न राजनीतिक क्षेत्रों में अलग-अलग नामों से जाना जाता है।\n\nसही अनुक्रम (ऊपर से नीचे):\n1. यारलुंग त्सांगपो — तिब्बत (चीन): नदी का तिब्बती नाम; यहाँ यह पूर्व की ओर बहती है, जिसके किनारे यारलुंग त्सांगपो ग्रैंड कैन्यन है, जो विश्व की सबसे गहरी नदी घाटी है।\n2. सियांग / दिहांग — अरुणाचल प्रदेश (भारत): ग्रेट बेंड पर एक नाटकीय मोड़ के बाद, नदी भारत में प्रवेश करती है।\n3. ब्रह्मपुत्र — असम (भारत): कई उपनदियों के मिलने के बाद, यह ब्रह्मपुत्र के रूप में व्यापक हो जाती है।\n4. जमुना — बांग्लादेश: बांग्लादेश में प्रवेश के बाद इसे जमुना कहा जाता है और यह गंगा (जिसे पद्मा कहा जाता है) और मेघना नदियों से मिलती है।\n\nअन्य विकल्प क्यों गलत हैं: विकल्प (a), (c), और (d) में तिब्बती या असम के नाम को अरुणाचल या बांग्लादेश के नाम के सापेक्ष अनुक्रम से बाहर रखा गया है।\n\nमूल्यवर्धन:\n• यारलुंग त्सांगपो ग्रैंड कैन्यन अमेरिका के ग्रैंड कैन्यन से भी गहरा है।\n• गंगा–ब्रह्मपुत्र–मेघना डेल्टा विश्व का सबसे बड़ा डेल्टा है।\n• ग्रेट बेंड पर चीन द्वारा प्रस्तावित बांध भारत के लिए एक महत्वपूर्ण भू-राजनीतिक चिंता है।"
+    }
+  },
+  {
+    "uuid": "be74f6e8-44a8-4d5d-8507-c3509e615b79",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Ganga River System: Drainage, Tributaries, and Environmental Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Ganga tributaries — right bank vs left bank identification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A geography teacher asks students to identify a pair of rivers that both join the Ganga from its right bank (south side). Which of the following pairs would constitute the correct answer?\n\n(a) Kosi and Gandak\n(b) Gomti and Yamuna\n(c) Ghaghara and Son\n(d) Yamuna and Son",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The Yamuna is such a well-known Ganga tributary that students automatically classify it with the left-bank tributaries (Gomti, Ghaghara), not recognising it as a right-bank feeder.",
+      "elimination_logic": [
+        "Eliminate (a): Kosi is a left-bank tributary of the Ganga — it joins from the north (Nepal side). Option (a) is incorrect.",
+        "Eliminate (b): Gomti is a left-bank tributary (joins from the north); Yamuna is a right-bank tributary (joins from the south at Prayagraj) — this pair is incorrectly grouped.",
+        "Eliminate (c): Ghaghara is a left-bank tributary (flows from the Nepal Himalaya); it cannot be a right-bank tributary.",
+        "Retain (d): Yamuna and Son are both right-bank tributaries of the Ganga — Yamuna joins at Prayagraj, Son joins near Patna — this is correct."
+      ],
+      "upsc_trap_explanation": "The bank-side classification of Ganga's tributaries is a perennial UPSC trap. Students know major tributaries but rarely memorise which bank they join from. Left-bank tributaries (joining from the north — from Nepal/Himalayan side) include Gomti, Ghaghara, Gandak, and Kosi. Right-bank tributaries (joining from the south — from the Peninsular/Vindhya side) include Yamuna, Son, and Damodar. The Yamuna is so prominent that students instinctively group it with the well-known left-bank Himalayan rivers.",
+      "final_explanation": "The bank-side classification of Ganga's tributaries depends on which side of the river they join when one faces downstream (toward the sea — i.e., eastward for the Ganga).\n\n• Option (a) — Incorrect: The Kosi joins the Ganga from the north (left bank). It originates in Nepal and is notorious for frequent course changes — 'Bihar's Sorrow.'\n• Option (b) — Incorrect: Gomti is a left-bank tributary; Yamuna is a right-bank tributary. These two cannot form a homogeneous pair for the same bank.\n• Option (c) — Incorrect: Ghaghara (also called Ghaghra or Saryu) is a major left-bank tributary from the Nepal Himalaya.\n• Option (d) — Correct: Both Yamuna (joining at Prayagraj/Triveni Sangam) and Son (joining near Patna) flow from the south — from the Peninsular/Vindhya region — making them right-bank tributaries.\n\nValue Addition:\n• The Doab concept: the land between the Ganga and Yamuna is called the Ganga-Yamuna Doab — one of the most fertile tracts in India.\n• Damodar River (right bank) is known as 'Bengal's Sorrow' due to its flooding history.\n• The Namami Gange Programme (2014) targets the Ganga's pollution and conservation."
+    },
+    "hi": {
+      "display_text": "एक भूगोल शिक्षक छात्रों से गंगा की दाहिनी घाटी (दक्षिणी ओर) से मिलने वाली दो नदियों की जोड़ी पहचानने को कहते हैं। निम्नलिखित में से कौन-सी जोड़ी सही उत्तर होगी?\n\n(a) कोसी और गंडक\n(b) गोमती और यमुना\n(c) घाघरा और सोन\n(d) यमुना और सोन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — यमुना एक ऐसी प्रसिद्ध गंगा की सहायक नदी है कि छात्र इसे स्वचालित रूप से बाईं घाटी की सहायक नदियों (गोमती, घाघरा) के साथ वर्गीकृत कर देते हैं, और इसे दाहिनी घाटी की सहायक नदी के रूप में पहचान नहीं पाते।",
+      "elimination_logic": [
+        "(a) को हटाएँ: कोसी गंगा की बाईं घाटी की सहायक नदी है — यह उत्तर (नेपाल की ओर) से मिलती है। विकल्प (a) गलत है।",
+        "(b) को हटाएँ: गोमती बाईं घाटी की सहायक नदी है (उत्तर से मिलती है); यमुना दाहिनी घाटी की सहायक नदी है (प्रयागराज में दक्षिण से मिलती है) — यह जोड़ी गलत रूप से समूहित है।",
+        "(c) को हटाएँ: घाघरा बाईं घाटी की सहायक नदी है (नेपाल हिमालय से बहती है); यह दाहिनी घाटी की सहायक नदी नहीं हो सकती।",
+        "(d) को बनाए रखें: यमुना और सोन दोनों गंगा की दाहिनी घाटी की सहायक नदियाँ हैं — यमुना प्रयागराज में मिलती है, सोन पटना के पास — यह सही है।"
+      ],
+      "upsc_trap_explanation": "गंगा की सहायक नदियों का घाटी-आधारित वर्गीकरण UPSC में एक बार-बार आने वाला जाल है। छात्र प्रमुख सहायक नदियों को जानते हैं लेकिन वे आमतौर पर याद नहीं रखते कि वे किस घाटी से मिलती हैं। बाईं घाटी की सहायक नदियाँ (उत्तर से मिलती हैं — नेपाल/हिमालय की ओर) में गोमती, घाघरा, गंडक, और कोसी शामिल हैं। दाहिनी घाटी की सहायक नदियाँ (दक्षिण से मिलती हैं — प्रायद्वीपीय/विंध्य क्षेत्र से) में यमुना, सोन, और दामोदर शामिल हैं। यमुना इतनी प्रमुख है कि छात्र इसे सहज रूप से प्रसिद्ध बाईं घाटी की हिमालयी नदियों के साथ जोड़ देते हैं।",
+      "final_explanation": "गंगा की सहायक नदियों का घाटी-आधारित वर्गीकरण इस बात पर निर्भर करता है कि नदी के प्रवाह की दिशा (नीचे की ओर — अर्थात् गंगा के लिए पूर्व की ओर) की ओर मुख करके वे किस ओर से मिलती हैं।\n\n• विकल्प (a) — गलत: कोसी गंगा से उत्तर (बाईं घाटी) से मिलती है। यह नेपाल में उत्पन्न होती है और अक्सर अपना मार्ग बदलती रहती है — 'बिहार का दुःख।'\n• विकल्प (b) — गलत: गोमती बाईं घाटी की सहायक नदी है; यमुना दाहिनी घाटी की सहायक नदी है। ये दोनों एक ही घाटी की सहायक नदियाँ नहीं हो सकतीं।\n• विकल्प (c) — गलत: घाघरा (जिसे घाघरा या सरयू भी कहा जाता है) नेपाल हिमालय से आने वाली प्रमुख बाईं घाटी की सहायक नदी है।\n• विकल्प (d) — सही: यमुना (प्रयागराज/त्रिवेणी संगम पर मिलती है) और सोन (पटना के पास मिलती है) दोनों दक्षिण से — प्रायद्वीपीय/विंध्य क्षेत्र से बहती हैं — अतः ये दाहिनी घाटी की सहायक नदियाँ हैं।\n\nमूल्यवर्धन:\n• दोआब की अवधारणा: गंगा और यमुना के बीच की भूमि को गंगा-यमुना दोआब कहा जाता है — जो भारत के सबसे उपजाऊ क्षेत्रों में से एक है।\n• दामोदर नदी (दाहिनी घाटी) को इसके बाढ़ के इतिहास के कारण 'बंगाल का दुःख' कहा जाता है।\n• नमामि गंगे कार्यक्रम (2014) गंगा की प्रदूषण और संरक्षण को लक्षित करता है।"
+    }
+  },
+  {
+    "uuid": "14100f3a-6160-4f5f-91c7-1b0912885e0b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Rhine and Danube Rivers: Europe's Economic and Political Waterways",
+        "Volga River: Europe's Longest River and Strategic Importance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "scope-extension",
+      "concept_anchor": "European rivers draining into Black Sea or endorheic basin",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four rivers drain into an enclosed or semi-enclosed inland sea rather than into an open ocean. Which one does NOT share this characteristic with the other three?\n\n(a) Danube\n(b) Volga\n(c) Rhine\n(d) Dnieper",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The Volga is often grouped with the Danube as a 'major European river draining into a closed basin,' but students may know both drain into inland seas and mistakenly pick Volga as the odd one out because it drains into the Caspian, not the Black Sea.",
+      "elimination_logic": [
+        "Identify the common attribute: rivers draining into inland or enclosed seas (Black Sea or Caspian Sea) rather than open oceans.",
+        "Danube → Black Sea (inland sea) — qualifies.",
+        "Volga → Caspian Sea (landlocked endorheic basin) — qualifies as draining into an enclosed water body.",
+        "Dnieper → Black Sea — qualifies.",
+        "Rhine → North Sea (open ocean) — does NOT drain into a closed basin; Rhine is the odd one out. Select option (c)."
+      ],
+      "upsc_trap_explanation": "The question tests whether students know the Rhine's outlet. The Rhine is often grouped mentally with the Danube because both originate in the Alps. However, the Rhine flows northward into the North Sea (open ocean), while the Danube flows eastward into the Black Sea. Students who associate 'European river → enclosed sea' may correctly identify Danube, Volga, and Dnieper but overlook the Rhine's open-ocean outlet.",
+      "final_explanation": "The shared attribute among three of the four rivers is draining into an enclosed or semi-enclosed inland sea rather than an open ocean.\n\n• Option (a) — Danube: drains into the Black Sea — qualifies.\n• Option (b) — Volga: drains into the Caspian Sea, a fully landlocked endorheic basin — qualifies.\n• Option (c) — Rhine: drains into the North Sea, which is part of the open Atlantic Ocean — does NOT qualify. This is the odd one out.\n• Option (d) — Dnieper: drains into the Black Sea (via the Dnieper-Bug estuary in Ukraine) — qualifies.\n\nValue Addition:\n• The Danube flows through the most countries of any river in the world — 10 countries.\n• The Rhine-Main-Danube Canal links the North Sea (via Rhine) to the Black Sea (via Danube), creating a trans-European waterway.\n• The Volga contributes approximately 80% of the inflow to the Caspian Sea."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार नदियों में से तीन अंतर्देशीय या अर्ध-अंतर्देशीय बंद समुद्र में बहती हैं, न कि खुले महासागर में। इनमें से कौन-सी नदी इस विशेषता को अन्य तीन के साथ साझा नहीं करती?\n\n(a) डेन्यूब\n(b) वोल्गा\n(c) राइन\n(d) डनिपर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — वोल्गा को अक्सर डेन्यूब के साथ 'एक बंद बेसिन में बहने वाली प्रमुख यूरोपीय नदियों' के रूप में वर्गीकृत किया जाता है, लेकिन छात्र जानते हैं कि दोनों अंतर्देशीय समुद्रों में बहती हैं और गलती से वोल्गा को अलग समझ सकते हैं क्योंकि यह कैस्पियन में बहती है, न कि ब्लैक सी में।",
+      "elimination_logic": [
+        "सामान्य विशेषता पहचानें: नदियाँ जो खुले महासागरों के बजाय अंतर्देशीय या बंद समुद्रों (ब्लैक सी या कैस्पियन सी) में बहती हैं।",
+        "डेन्यूब → ब्लैक सी (अंतर्देशीय समुद्र) — योग्य।",
+        "वोल्गा → कैस्पियन सी (भूमि-बंधित एंडोरहेइक बेसिन) — बंद जल निकाय में बहने के रूप में योग्य।",
+        "डनिपर → ब्लैक सी — योग्य।",
+        "राइन → नॉर्थ सी (खुला महासागर) — बंद बेसिन में नहीं बहती; राइन अलग है। विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न यह जांचता है कि छात्र राइन के जल निकास को जानते हैं या नहीं। राइन को अक्सर डेन्यूब के साथ मानसिक रूप से जोड़ा जाता है क्योंकि दोनों अल्प्स में उत्पन्न होती हैं। हालांकि, राइन उत्तर की ओर नॉर्थ सी (खुला महासागर) में बहती है, जबकि डेन्यूब पूर्व की ओर ब्लैक सी में बहती है। जो छात्र 'यूरोपीय नदी → बंद समुद्र' को जोड़ते हैं, वे डेन्यूब, वोल्गा और डनिपर को सही पहचान सकते हैं लेकिन राइन के खुले महासागर में बहने को नजरअंदाज कर देते हैं।",
+      "final_explanation": "चार नदियों में से तीन की साझा विशेषता है कि वे खुले महासागर के बजाय बंद या अर्ध-बंद अंतर्देशीय समुद्र में बहती हैं।\n\n• विकल्प (a) — डेन्यूब: ब्लैक सी में बहती है — योग्य।\n• विकल्प (b) — वोल्गा: कैस्पियन सी में बहती है, जो पूरी तरह से भूमि-बंधित एंडोरहेइक बेसिन है — योग्य।\n• विकल्प (c) — राइन: नॉर्थ सी में बहती है, जो खुले अटलांटिक महासागर का हिस्सा है — योग्य नहीं। यह अलग है।\n• विकल्प (d) — डनिपर: ब्लैक सी में बहती है (यूक्रेन में डनिपर-बग मुहाना के माध्यम से) — योग्य।\n\nमूल्य संवर्धन:\n• डेन्यूब विश्व की सबसे अधिक देशों से होकर बहने वाली नदी है — 10 देश।\n• राइन-मेन-डेन्यूब नहर नॉर्थ सी (राइन के माध्यम से) को ब्लैक सी (डेन्यूब के माध्यम से) से जोड़ती है, जो एक ट्रांस-यूरोपीय जलमार्ग बनाती है।\n• वोल्गा कैस्पियन सी में लगभग 80% जल प्रवाह प्रदान करती है।"
+    }
+  },
+  {
+    "uuid": "365c6871-5f1f-4db8-872a-2504729e526e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Mississippi-Missouri River System: North America's Major Drainage"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mississippi-Missouri system — delta type and Missouri's tributary status",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements:\n\nStatement 1: The Missouri River is the longest individual river in the United States and serves as the principal tributary of the Mississippi River.\n\nStatement 2: The Mississippi River discharges into the Gulf of Mexico through an arcuate (fan-shaped) delta, similar in form to the Nile Delta.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Missouri River is the longest individual river in the United States and serves as the principal tributary of the Mississippi River.",
+          "verdict": "Correct",
+          "reason": "The Missouri River is longer than the Mississippi's main channel and is indeed the longest tributary of the Mississippi, making it the longest single river in the US."
+        },
+        {
+          "statement": "The Mississippi River discharges into the Gulf of Mexico through an arcuate (fan-shaped) delta, similar in form to the Nile Delta.",
+          "verdict": "Incorrect",
+          "reason": "The Mississippi forms a bird's foot (digitate) delta — characterised by finger-like projections of sediment into the Gulf of Mexico — not an arcuate delta like the Nile."
+        }
+      ],
+      "strong_distractor": "a — Students who know the Mississippi drains into the Gulf of Mexico via a large delta may accept both statements as correct without carefully distinguishing delta type.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The Missouri River is longer than the Mississippi's own channel and is the Mississippi's longest tributary — Correct.",
+        "Evaluate Statement 2: The Mississippi delta is bird's foot/digitate (strong river deposition, weak waves), not arcuate like the Nile — Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → select option (d)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the trap. Both the Nile and the Mississippi have prominent deltas, and students who recall that both discharge large sediment loads may assume both form arcuate deltas. The Mississippi's delta is the textbook example of a bird's foot (digitate) delta — formed when river deposition force greatly exceeds wave energy. The Nile delta, by contrast, forms under gentler wave conditions, producing the arcuate (fan-shaped) form.",
+      "final_explanation": "The Mississippi-Missouri system is North America's dominant drainage network, and its delta type is a standard UPSC-level geography fact.\n\n• Statement 1 — Correct: The Missouri River, at approximately 3,767 km, is longer than the Mississippi's own channel (~3,730 km). When combined, the Mississippi-Missouri system is one of the longest river systems in the world, often ranked 4th globally.\n• Statement 2 — Incorrect: The Mississippi discharges into the Gulf of Mexico through a bird's foot (digitate) delta — characterised by multiple elongated distributaries extending into the sea like fingers. This is the textbook contrast to the Nile's arcuate delta.\n\nValue Addition:\n• The Mississippi-Missouri drainage basin covers approximately 40% of the contiguous United States.\n• Bird's foot deltas form when river deposition dominates over wave action — the Mississippi is the global exemplar.\n• The Rio Grande forms the US-Mexico border and is entirely separate from the Mississippi drainage basin."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: मिसौरी नदी संयुक्त राज्य अमेरिका की सबसे लंबी व्यक्तिगत नदी है और मिसिसिपी नदी की मुख्य सहायक नदी के रूप में कार्य करती है।\n\nकथन 2: मिसिसिपी नदी नील डेल्टा के समान आकार के एक धनुषाकार (पंखे के आकार) डेल्टा के माध्यम से मेक्सिको की खाड़ी में जल विसर्जित करती है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मिसौरी नदी संयुक्त राज्य अमेरिका की सबसे लंबी व्यक्तिगत नदी है और मिसिसिपी नदी की मुख्य सहायक नदी के रूप में कार्य करती है।",
+          "verdict": "सही",
+          "reason": "मिसौरी नदी मिसिसिपी की मुख्य धारा से लंबी है और वास्तव में मिसिसिपी की सबसे लंबी सहायक नदी है, जिससे यह अमेरिका की सबसे लंबी एकल नदी बन जाती है।"
+        },
+        {
+          "statement": "मिसिसिपी नदी नील डेल्टा के समान आकार के एक धनुषाकार (पंखे के आकार) डेल्टा के माध्यम से मेक्सिको की खाड़ी में जल विसर्जित करती है।",
+          "verdict": "गलत",
+          "reason": "मिसिसिपी एक बर्ड्स फुट (अंगुली जैसे) डेल्टा बनाती है — जो मेक्सिको की खाड़ी में तलछट की अंगुली जैसी प्रक्षेपणों द्वारा पहचाना जाता है — न कि नील की तरह धनुषाकार डेल्टा।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि मिसिसिपी मेक्सिको की खाड़ी में एक बड़े डेल्टा के माध्यम से जल विसर्जित करती है, वे दोनों कथनों को सही मान सकते हैं बिना डेल्टा के प्रकार को सावधानीपूर्वक अलग किए।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: मिसौरी नदी मिसिसिपी की अपनी धारा से लंबी है और मिसिसिपी की सबसे लंबी सहायक नदी है — सही।",
+        "कथन 2 का मूल्यांकन करें: मिसिसिपी डेल्टा बर्ड्स फुट/डिजिटेट (मजबूत नदी तलछट, कमजोर लहरें) है, न कि नील की तरह धनुषाकार — गलत।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 जाल है। नील और मिसिसिपी दोनों के प्रमुख डेल्टा हैं, और जो छात्र याद करते हैं कि दोनों बड़ी मात्रा में तलछट विसर्जित करते हैं, वे मान सकते हैं कि दोनों धनुषाकार डेल्टा बनाते हैं। मिसिसिपी का डेल्टा बर्ड्स फुट (डिजिटेट) डेल्टा का पाठ्यपुस्तक उदाहरण है — जब नदी की तलछट शक्ति लहरों की ऊर्जा से बहुत अधिक होती है। इसके विपरीत, नील डेल्टा कोमल लहरों के तहत बनता है, जो धनुषाकार (पंखे के आकार) रूप देता है।",
+      "final_explanation": "मिसिसिपी-मिसौरी प्रणाली उत्तरी अमेरिका का प्रमुख जल निकासी नेटवर्क है, और इसका डेल्टा प्रकार UPSC स्तर का एक मानक भूगोल तथ्य है।\n\n• कथन 1 — सही: मिसौरी नदी लगभग 3,767 किमी लंबी है, जो मिसिसिपी की अपनी धारा (~3,730 किमी) से लंबी है। जब संयुक्त होती है, तो मिसिसिपी-मिसौरी प्रणाली विश्व की सबसे लंबी नदियों में से एक है, जो अक्सर विश्व में चौथे स्थान पर होती है।\n• कथन 2 — गलत: मिसिसिपी मेक्सिको की खाड़ी में बर्ड्स फुट (डिजिटेट) डेल्टा के माध्यम से जल विसर्जित करती है — जो कई लम्बी वितरक नदियों द्वारा समुद्र में अंगुलियों की तरह फैला होता है। यह नील के धनुषाकार डेल्टा के विपरीत है।\n\nमूल्यवर्धन:\n• मिसिसिपी-मिसौरी जल निकासी बेसिन संयुक्त राज्य अमेरिका के लगभग 40% क्षेत्र को कवर करता है।\n• बर्ड्स फुट डेल्टा तब बनते हैं जब नदी की तलछट लहरों की क्रिया से अधिक होती है — मिसिसिपी इसका वैश्विक उदाहरण है।\n• रियो ग्रांडे अमेरिका-मेक्सिको सीमा बनाती है और पूरी तरह से मिसिसिपी जल निकासी बेसिन से अलग है।"
+    }
+  },
+  {
+    "uuid": "3e737df4-f226-4ae0-b5c2-cb44582b14ac",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "River Delta Types and Formation: Geomorphological Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Niger Inland Delta — delta type classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Niger River in West Africa displays a remarkable geographical anomaly where it forms a ________ within the country of Mali, creating a vast seasonal wetland system far from the ocean, before the river reconsolidates and eventually reaches the Gulf of Guinea.\n\n(a) Arcuate delta\n(b) Inland/interior delta\n(c) Cuspate delta\n(d) Estuarine delta",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Cuspate delta' is a real delta type (associated with the Tiber River in Italy), and students who recall delta classifications may insert it here without checking whether the Niger's inland feature matches.",
+      "elimination_logic": [
+        "The blank requires a delta type that forms inland (before reaching the sea) rather than at a river's ocean outlet.",
+        "Eliminate (a): Arcuate delta forms at the sea — Nile is the example; not applicable to an inland feature.",
+        "Eliminate (c): Cuspate delta forms at the coast with opposing wave action — Tiber River example; not inland.",
+        "Eliminate (d): Estuarine delta forms where tidal action dominates at the coast — Amazon example; not inland.",
+        "Retain (b): Inland/interior delta — the Niger River forms its delta within Mali's interior before continuing to the coast; select (b)."
+      ],
+      "upsc_trap_explanation": "The concept of an 'inland delta' is counterintuitive. Students associate deltas with river mouths at the sea. The Niger River's inland delta in Mali forms when the river spreads across a flat alluvial plain far from the ocean — creating a wetland ecosystem before the river reconsolidates and continues to the Gulf of Guinea. Option (c) 'cuspate delta' is a plausible-fabrication trap — it is a real delta type but belongs to the Tiber River in Italy.",
+      "final_explanation": "Delta classification by morphology and formation process is a standard geomorphology topic.\n\n• Option (a) — Arcuate delta: Classic fan-shaped delta (e.g., Nile). Forms at the sea coast under gentle wave conditions — not applicable here.\n• Option (b) — Inland/interior delta: Correct. The Niger River forms an inland delta in Mali, where it spreads into a vast seasonal floodplain far from the ocean before reconsolidating. This is one of geography's most notable river anomalies.\n• Option (c) — Cuspate delta: A pointed, tooth-shaped delta formed by two equal and opposing wave directions (e.g., Tiber River, Italy). Not applicable to an inland formation.\n• Option (d) — Estuarine delta: Forms where tidal forces dominate and sediment is swept away (e.g., Amazon). Not applicable to an inland setting.\n\nValue Addition:\n• The Niger Inland Delta supports one of West Africa's richest fisheries and the Dogon people's agriculture.\n• The Niger River's unusual course — flowing away from the nearby Atlantic before curving back — is one of geography's great river anomalies.\n• The Okavango River (Botswana) also forms an inland delta — the world's largest inland delta — but in a desert setting (Kalahari)."
+    },
+    "hi": {
+      "display_text": "पश्चिम अफ्रीका की नाइजर नदी एक असाधारण भौगोलिक विसंगति प्रदर्शित करती है जहाँ यह माली देश के भीतर एक ________ बनाती है, जो समुद्र से दूर एक विशाल मौसमी आर्द्रभूमि प्रणाली बनाता है, फिर नदी पुनः एकीकृत होकर अंततः गॉल्फ ऑफ गिनी तक पहुँचती है।\n\n(a) आर्कुएट डेल्टा\n(b) इनलैंड/अंदरूनी डेल्टा\n(c) कुस्पेट डेल्टा\n(d) एस्चुअरीन डेल्टा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Cuspate delta' एक वास्तविक डेल्टा प्रकार है (जो इटली के टाइबर नदी से जुड़ा है), और जो छात्र डेल्टा वर्गीकरण याद करते हैं वे इसे यहाँ बिना जांचे शामिल कर सकते हैं कि क्या नाइजर का इनलैंड फीचर मेल खाता है।",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए ऐसा डेल्टा प्रकार चाहिए जो समुद्र तक पहुँचने से पहले (अंदरूनी क्षेत्र में) बनता हो, न कि नदी के समुद्री मुहाने पर।",
+        "(a) को हटाएं: आर्कुएट डेल्टा समुद्र के किनारे बनता है — नील नदी इसका उदाहरण है; यह अंदरूनी क्षेत्र के लिए लागू नहीं।",
+        "(c) को हटाएं: कुस्पेट डेल्टा तट पर विपरीत तरंग क्रिया से बनता है — टाइबर नदी का उदाहरण; यह अंदरूनी क्षेत्र में नहीं बनता।",
+        "(d) को हटाएं: एस्चुअरीन डेल्टा तटीय क्षेत्र में ज्वारीय क्रिया के प्रभाव से बनता है — अमेज़न इसका उदाहरण; यह अंदरूनी क्षेत्र में नहीं बनता।",
+        "(b) को रखें: इनलैंड/अंदरूनी डेल्टा — नाइजर नदी माली के अंदरूनी क्षेत्र में अपना डेल्टा बनाती है, जो समुद्र से दूर है; अतः (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "'इनलैंड डेल्टा' की अवधारणा विरोधाभासी है। छात्र डेल्टाओं को नदी के समुद्र के मुहाने से जोड़ते हैं। माली में नाइजर नदी का इनलैंड डेल्टा तब बनता है जब नदी समुद्र से दूर एक समतल अलुवियल मैदान में फैलती है — जो एक आर्द्रभूमि पारिस्थितिकी तंत्र बनाता है, फिर नदी पुनः एकीकृत होकर गॉल्फ ऑफ गिनी तक पहुँचती है। विकल्प (c) 'कुस्पेट डेल्टा' एक संभावित भ्रम है — यह एक वास्तविक डेल्टा प्रकार है लेकिन टाइबर नदी (इटली) से संबंधित है।",
+      "final_explanation": "डेल्टा वर्गीकरण आकृति और निर्माण प्रक्रिया के आधार पर एक मानक भूआकृतिक विषय है।\n\n• विकल्प (a) — आर्कुएट डेल्टा: पारंपरिक पंखे के आकार का डेल्टा (जैसे नील)। यह समुद्र तट पर सौम्य तरंगों के तहत बनता है — यहाँ लागू नहीं।\n• विकल्प (b) — इनलैंड/अंदरूनी डेल्टा: सही। नाइजर नदी माली में एक अंदरूनी डेल्टा बनाती है, जहाँ यह समुद्र से दूर एक विशाल मौसमी बाढ़ मैदान में फैलती है, फिर पुनः एकीकृत होती है। यह भूगोल की एक प्रमुख नदी विसंगति है।\n• विकल्प (c) — कुस्पेट डेल्टा: एक नुकीला, दाँतेदार डेल्टा जो दो समान और विपरीत तरंग दिशाओं से बनता है (जैसे टाइबर नदी, इटली)। यह अंदरूनी निर्माण के लिए लागू नहीं।\n• विकल्प (d) — एस्चुअरीन डेल्टा: जहाँ ज्वारीय बल प्रमुख होते हैं और तलछट बहा दी जाती है (जैसे अमेज़न)। यह अंदरूनी क्षेत्र के लिए लागू नहीं।\n\nमूल्यवर्धन:\n• नाइजर इनलैंड डेल्टा पश्चिम अफ्रीका की सबसे समृद्ध मत्स्य संपदा और डोगोन लोगों की कृषि का समर्थन करता है।\n• नाइजर नदी का असामान्य मार्ग — जो निकटवर्ती अटलांटिक से दूर बहती है और फिर वापस मुड़ती है — भूगोल की एक बड़ी नदी विसंगति है।\n• ओकावांगो नदी (बोत्सवाना) भी एक इनलैंड डेल्टा बनाती है — जो विश्व का सबसे बड़ा इनलैंड डेल्टा है — लेकिन यह एक रेगिस्तानी क्षेत्र (कालाहारी) में है।"
+    }
+  },
+  {
+    "uuid": "35fcb117-3989-4dd1-87e8-96ad73608235",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Congo vs. Amazon vs. Nile: Comparative Superlatives and UPSC Traps"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "River superlatives — most countries traversed",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which river holds the distinction of flowing through the greatest number of sovereign countries in the world?\n\n(a) Nile\n(b) Amazon\n(c) Danube\n(d) Mekong",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — The Nile, passing through 11 countries of the Nile Basin Initiative, is the most commonly cited answer because students equate 'transboundary' significance with 'most countries traversed.'",
+      "elimination_logic": [
+        "Eliminate (a): The Nile touches around 11 countries in its basin but the main river channel does not flow through all of them — the Danube flows through 10 countries by river channel.",
+        "Eliminate (b): The Amazon flows mainly through Brazil with the source area in Peru — far fewer than 10 countries.",
+        "Eliminate (d): The Mekong flows through 6 countries — significant but less than the Danube.",
+        "Retain (c): The Danube flows through 10 countries — Germany, Austria, Slovakia, Hungary, Croatia, Serbia, Romania, Bulgaria, Moldova, Ukraine — the most of any river in the world."
+      ],
+      "upsc_trap_explanation": "The Nile Basin Initiative involves 11 riparian nations, which causes students to associate the Nile with 'most countries.' However, the Nile's main channel passes through far fewer countries directly. The Danube's 10-country channel passage is the correct answer and is a standard comparative superlative that appears in UPSC geography questions. The Mekong's 6-country flow is also a common distractor since it is frequently studied in geopolitics.",
+      "final_explanation": "This question tests the comparative superlative of 'most countries traversed by any river's main channel.'\n\n• Option (a) — Nile: The Nile Basin Initiative involves ~11 nations, but the main river channel directly flows through fewer. The Nile is associated with 'longest river' (traditional), not 'most countries.'\n• Option (b) — Amazon: Flows primarily through Brazil, with upper tributaries in Peru, Colombia, and a few others. Not a contender for most-countries record.\n• Option (c) — Danube: Correct. The Danube flows through 10 countries — Germany, Austria, Slovakia, Hungary, Croatia, Serbia, Romania, Bulgaria, Moldova, and Ukraine — the most of any river in the world.\n• Option (d) — Mekong: Flows through 6 countries (China, Myanmar, Laos, Thailand, Cambodia, Vietnam) — notable but not the record holder.\n\nValue Addition:\n• The Danube is the second longest river in Europe after the Volga.\n• The Rhine-Main-Danube Canal (completed 1992) connects the North Sea to the Black Sea across continental Europe.\n• The Danube flows eastward from the Alps — contrast with the Rhine, which originates in the same region but flows northward."
+    },
+    "hi": {
+      "display_text": "विश्व में सबसे अधिक संप्रभु देशों से होकर बहने वाली नदी कौन-सी है?\n\n(a) नील\n(b) अमेज़न\n(c) डेन्यूब\n(d) मेकांग",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — The Nile, passing through 11 countries of the Nile Basin Initiative, is the most commonly cited answer because students equate 'transboundary' significance with 'most countries traversed.'",
+      "elimination_logic": [
+        "(a) को खारिज करें: नील नदी अपने बेसिन में लगभग 11 देशों को छूती है लेकिन मुख्य नदी चैनल सभी से होकर नहीं गुजरता — डेन्यूब नदी मुख्य नदी चैनल द्वारा 10 देशों से होकर गुजरती है।",
+        "(b) को खारिज करें: अमेज़न मुख्यतः ब्राज़ील से होकर बहती है और इसका स्रोत क्षेत्र पेरू में है — 10 से बहुत कम देश।",
+        "(d) को खारिज करें: मेकांग नदी 6 देशों से होकर बहती है — महत्वपूर्ण है लेकिन डेन्यूब से कम।",
+        "(c) को बनाए रखें: डेन्यूब नदी 10 देशों से होकर बहती है — जर्मनी, ऑस्ट्रिया, स्लोवाकिया, हंगरी, क्रोएशिया, सर्बिया, रोमानिया, बुल्गारिया, मोल्दोवा, यूक्रेन — जो किसी भी नदी में सबसे अधिक है।"
+      ],
+      "upsc_trap_explanation": "नील बेसिन इनिशिएटिव में 11 तटीय राष्ट्र शामिल हैं, जिससे छात्र नील नदी को 'सबसे अधिक देशों से होकर बहने वाली' समझ लेते हैं। हालांकि, नील की मुख्य नदी चैनल सीधे बहुत कम देशों से होकर गुजरती है। डेन्यूब की 10-देशीय चैनल मार्ग सही उत्तर है और यह UPSC भूगोल प्रश्नों में एक मानक तुलनात्मक सर्वोच्चता है। मेकांग की 6-देशीय बहाव भी एक सामान्य भ्रम है क्योंकि इसे भू-राजनीति में अक्सर पढ़ा जाता है।",
+      "final_explanation": "यह प्रश्न 'किसी भी नदी की मुख्य चैनल द्वारा सबसे अधिक देशों से होकर बहने' की तुलनात्मक सर्वोच्चता का परीक्षण करता है।\n\n• विकल्प (a) — नील: नील बेसिन इनिशिएटिव में लगभग 11 राष्ट्र शामिल हैं, लेकिन मुख्य नदी चैनल सीधे कम देशों से होकर गुजरता है। नील को 'सबसे लंबी नदी' (परंपरागत) के रूप में जाना जाता है, न कि 'सबसे अधिक देशों से होकर बहने वाली' के रूप में।\n• विकल्प (b) — अमेज़न: मुख्यतः ब्राज़ील से होकर बहती है, इसके ऊपरी सहायक नदियाँ पेरू, कोलंबिया और कुछ अन्य देशों में हैं। यह सबसे अधिक देशों के रिकॉर्ड के लिए दावेदार नहीं है।\n• विकल्प (c) — डेन्यूब: सही उत्तर। डेन्यूब 10 देशों से होकर बहती है — जर्मनी, ऑस्ट्रिया, स्लोवाकिया, हंगरी, क्रोएशिया, सर्बिया, रोमानिया, बुल्गारिया, मोल्दोवा, और यूक्रेन — जो किसी भी नदी में सबसे अधिक है।\n• विकल्प (d) — मेकांग: 6 देशों से होकर बहती है (चीन, म्यांमार, लाओस, थाईलैंड, कंबोडिया, वियतनाम) — उल्लेखनीय है लेकिन रिकॉर्ड धारक नहीं।\n\nमूल्यवर्धन:\n• डेन्यूब यूरोप की दूसरी सबसे लंबी नदी है, वोल्गा के बाद।\n• राइन-मेन-डेन्यूब नहर (1992 में पूर्ण) उत्तरी सागर को काले सागर से जोड़ती है, जो महाद्वीपीय यूरोप में है।\n• डेन्यूब आल्प्स से पूर्व की ओर बहती है — इसके विपरीत राइन नदी, जो उसी क्षेत्र से निकलती है लेकिन उत्तर की ओर बहती है।"
+    }
+  },
+  {
+    "uuid": "e4e84f79-2404-4603-8b6e-06db12005096",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Niger River: Inland Delta, Course Anomaly, and West African Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Niger River — course anomaly, inland delta, ocean outlet",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Niger River:\n\n1. The Niger River originates in the highlands of Guinea, flows inland away from the Atlantic Ocean before curving southward, and ultimately drains into the Gulf of Guinea.\n2. The Niger River's inland delta, located in Mali, is a seasonal floodplain that supports unique ecosystems and agriculture, though the river eventually continues to the sea.\n3. The Niger flows in the same general south-to-north direction as the Nile, making the two African rivers geomorphologically similar in their continental-scale flow patterns.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Niger River originates in the highlands of Guinea, flows inland away from the Atlantic Ocean before curving southward, and ultimately drains into the Gulf of Guinea.",
+          "verdict": "Correct",
+          "reason": "The Niger's unusual course — originating near the Atlantic but flowing northeast before curving southeast — is one of the world's great river anomalies. It eventually drains into the Gulf of Guinea via a delta in Nigeria."
+        },
+        {
+          "statement": "The Niger River's inland delta, located in Mali, is a seasonal floodplain that supports unique ecosystems and agriculture but does not constitute a true delta in the geomorphological sense as the river eventually continues to the sea.",
+          "verdict": "Correct",
+          "reason": "The Niger Inland Delta in Mali is technically an interior wetland rather than a coastal delta; it forms when the river spreads over a flat alluvial plain before reconsolidating and continuing to the Gulf of Guinea."
+        },
+        {
+          "statement": "The Niger flows in the same general south-to-north direction as the Nile, making the two African rivers geomorphologically similar in their continental-scale flow patterns.",
+          "verdict": "Incorrect",
+          "reason": "The Nile flows south-to-north; the Niger flows northeast-then-southeast (forming an arc). Their flow patterns are fundamentally different, not similar."
+        }
+      ],
+      "strong_distractor": "d — Students who know both Statement 1 and Statement 2 involve correct Niger facts may assume Statement 3 is also approximately correct since 'both are African rivers flowing away from their origin point.'",
+      "elimination_logic": [
+        "Evaluate Statement 1: Niger's anomalous course — originates near Atlantic, flows inland, curves back to Gulf of Guinea — Correct.",
+        "Evaluate Statement 2: Niger Inland Delta in Mali is a genuine feature; the river continues to the sea afterward — Correct.",
+        "Evaluate Statement 3: Nile flows south-to-north; Niger flows in a curved arc (northeast then southeast) — these are fundamentally different patterns — Incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect → select option (b): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits a geographic comparison trap. Both the Niger and the Nile are African rivers that flow in directions unexpected from their source locations, leading students to assume they share directional similarity. In fact, the Nile's south-to-north flow and the Niger's curved arc (northeast then southeast) are directionally opposite in their dominant continental trends. A student who loosely recalls 'both flow away from intuitive directions' may accept Statement 3.",
+      "final_explanation": "The Niger River's geography is one of the most geographically interesting in Africa, defined by its anomalous course and inland delta.\n\n• Statement 1 — Correct: The Niger originates in the Fouta Djallon highlands of Guinea — just 240 km from the Atlantic — yet flows northeast into the Sahara before curving southeast to the Gulf of Guinea. This counterintuitive course is the result of the river's ancient drainage predating Saharan aridification.\n• Statement 2 — Correct: The Niger Inland Delta in Mali (also called the Inner Niger Delta) is a massive seasonal wetland where the river fans out over flat terrain. It reconsolidates and continues to Nigeria, where it reaches the ocean. Technically it is an interior floodplain, not a true coastal delta.\n• Statement 3 — Incorrect: The Nile flows predominantly south-to-north; the Niger follows a curved arc — predominantly northeast from Guinea, then bending southeast through Mali, Niger, and Nigeria. They are not geomorphologically similar in flow pattern.\n\nValue Addition:\n• The Niger Delta in Nigeria is one of Africa's largest oil-producing regions and faces severe pollution.\n• The Niger River is the third longest river in Africa after the Nile and Congo.\n• The Inland Niger Delta supports millions of people through fishing and flood-recession farming."
+    },
+    "hi": {
+      "display_text": "नाइजर नदी के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. नाइजर नदी गिनी के पठारों में उत्पन्न होती है, अटलांटिक महासागर से दूर अंदर की ओर बहती है, फिर दक्षिण की ओर मुड़ती है और अंततः गल्फ ऑफ गिनी में मिलती है।\n2. माली में स्थित नाइजर नदी का इनलैंड डेल्टा एक मौसमी बाढ़ मैदान है जो अद्वितीय पारिस्थितिक तंत्र और कृषि का समर्थन करता है, हालांकि नदी अंततः समुद्र तक जाती है।\n3. नाइजर नदी नील नदी की तरह ही सामान्यतः दक्षिण से उत्तर की दिशा में बहती है, जिससे दोनों अफ्रीकी नदियाँ अपने महाद्वीपीय स्तर के प्रवाह पैटर्न में भू-आकृतिक रूप से समान हो जाती हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Niger River originates in the highlands of Guinea, flows inland away from the Atlantic Ocean before curving southward, and ultimately drains into the Gulf of Guinea.",
+          "verdict": "सही है",
+          "reason": "नाइजर की असामान्य धारा — अटलांटिक के निकट उत्पन्न होकर पूर्वोत्तर की ओर बहती है फिर दक्षिण-पूर्व की ओर मुड़ती है — विश्व की प्रमुख नदियों में एक अनोखी विशेषता है। यह अंततः नाइजीरिया में डेल्टा के माध्यम से गल्फ ऑफ गिनी में मिलती है।"
+        },
+        {
+          "statement": "The Niger River's inland delta, located in Mali, is a seasonal floodplain that supports unique ecosystems and agriculture but does not constitute a true delta in the geomorphological sense as the river eventually continues to the sea.",
+          "verdict": "सही है",
+          "reason": "माली में स्थित नाइजर का इनलैंड डेल्टा तकनीकी रूप से एक आंतरिक दलदली क्षेत्र है, न कि तटीय डेल्टा; यह तब बनता है जब नदी एक समतल अलुवियल मैदान में फैलती है और फिर पुनः संकुचित होकर गल्फ ऑफ गिनी की ओर बहती है।"
+        },
+        {
+          "statement": "The Niger flows in the same general south-to-north direction as the Nile, making the two African rivers geomorphologically similar in their continental-scale flow patterns.",
+          "verdict": "गलत है",
+          "reason": "नाइल दक्षिण से उत्तर की ओर बहती है; नाइजर पूर्वोत्तर फिर दक्षिण-पूर्व की ओर मुड़ती है (एक चाप बनाती है)। उनकी बहाव की प्रवृत्तियाँ मौलिक रूप से भिन्न हैं, समान नहीं।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र कथन 1 और 2 दोनों में नाइजर के सही तथ्य जानते हैं, वे मान सकते हैं कि कथन 3 भी लगभग सही है क्योंकि 'दोनों अफ्रीकी नदियाँ अपने स्रोत स्थान से दूर बहती हैं।'",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: नाइजर की असामान्य धारा — अटलांटिक के निकट उत्पन्न होकर अंदर की ओर बहती है, फिर गल्फ ऑफ गिनी की ओर मुड़ती है — सही है।",
+        "कथन 2 का मूल्यांकन करें: माली में नाइजर इनलैंड डेल्टा एक वास्तविक विशेषता है; नदी बाद में समुद्र तक जाती है — सही है।",
+        "कथन 3 का मूल्यांकन करें: नाइल दक्षिण से उत्तर बहती है; नाइजर एक चाप में बहती है (पूर्वोत्तर फिर दक्षिण-पूर्व) — ये मौलिक रूप से भिन्न प्रवृत्तियाँ हैं — गलत है।",
+        "कथन 1 और 2 सही, कथन 3 गलत → विकल्प (b) चुनें: केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 एक भौगोलिक तुलना जाल का उपयोग करता है। नाइजर और नाइल दोनों अफ्रीकी नदियाँ हैं जो अपने स्रोत स्थानों से अप्रत्याशित दिशाओं में बहती हैं, जिससे छात्र मान सकते हैं कि उनकी दिशा समान है। वास्तव में, नाइल का दक्षिण से उत्तर बहना और नाइजर का चापाकार बहाव (पूर्वोत्तर फिर दक्षिण-पूर्व) महाद्वीपीय प्रवृत्तियों में विपरीत हैं। जो छात्र 'दोनों स्रोत से दूर बहती हैं' याद रखते हैं, वे कथन 3 को स्वीकार कर सकते हैं।",
+      "final_explanation": "नाइजर नदी का भूगोल अफ्रीका में सबसे रोचक है, जो उसकी असामान्य धारा और इनलैंड डेल्टा से परिभाषित होता है।\n\n• कथन 1 — सही: नाइजर गिनी के फौटा जलॉन पठार में उत्पन्न होती है — जो अटलांटिक से केवल 240 किमी दूर है — फिर सहारा की ओर पूर्वोत्तर बहती है और अंततः दक्षिण-पूर्व की ओर मुड़कर गल्फ ऑफ गिनी तक पहुँचती है। यह अप्रत्याशित धारा नदी के प्राचीन जल निकासी का परिणाम है जो सहारा के शुष्क होने से पहले की है।\n• कथन 2 — सही: माली में नाइजर इनलैंड डेल्टा (जिसे इनर नाइजर डेल्टा भी कहा जाता है) एक विशाल मौसमी दलदली क्षेत्र है जहाँ नदी समतल क्षेत्र में फैलती है। यह पुनः संकुचित होकर नाइजीरिया तक जाती है, जहाँ यह समुद्र से मिलती है। तकनीकी रूप से यह एक आंतरिक बाढ़ मैदान है, सच्चा तटीय डेल्टा नहीं।\n• कथन 3 — गलत: नाइल मुख्यतः दक्षिण से उत्तर बहती है; नाइजर एक चापाकार मार्ग का अनुसरण करती है — मुख्यतः गिनी से पूर्वोत्तर, फिर माली, नाइजर और नाइजीरिया से होकर दक्षिण-पूर्व। वे बहाव के पैटर्न में भू-आकृतिक रूप से समान नहीं हैं।\n\nमूल्यवर्धन:\n• नाइजर डेल्टा नाइजीरिया में अफ्रीका के सबसे बड़े तेल उत्पादक क्षेत्रों में से एक है और गंभीर प्रदूषण का सामना करता है।\n• नाइजर नदी नाइल और कांगो के बाद अफ्रीका की तीसरी सबसे लंबी नदी है।\n• इनलैंड नाइजर डेल्टा मछली पकड़ने और बाढ़-उत्पन्न कृषि के माध्यम से लाखों लोगों का समर्थन करता है।"
+    }
+  },
+  {
+    "uuid": "6a1ae2c9-bb2a-43f6-93a4-6b268b0f4a7c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Salween, Irrawaddy, and Mekong: Parallel Rivers of Southeast Asia"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Three Parallel Rivers of Yunnan — rivers and their outlets",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about rivers in Southeast Asia:\n\n1. The Three Parallel Rivers of Yunnan UNESCO World Heritage Site features the Salween, Mekong, and Yangtze rivers flowing through parallel gorges within approximately 76 km of each other.\n2. The Irrawaddy River, the principal river of Myanmar, drains into the Bay of Bengal via a large delta.\n3. The Salween River drains into the South China Sea, sharing the same outlet sea as the Mekong River.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Three Parallel Rivers of Yunnan UNESCO World Heritage Site features the Salween, Mekong, and Yangtze rivers flowing through parallel gorges within approximately 76 km of each other.",
+          "verdict": "Correct",
+          "reason": "This is the defining characteristic of the site — three major rivers flowing in parallel within a narrow geographic corridor of about 76 km in Yunnan Province, China."
+        },
+        {
+          "statement": "The Irrawaddy River, the principal river of Myanmar, drains into the Bay of Bengal via a large delta near Yangon.",
+          "verdict": "Incorrect",
+          "reason": "The Irrawaddy drains into the Andaman Sea (part of the Indian Ocean), not the Bay of Bengal. Its delta is in the Ayeyarwady Region of Myanmar, south of Yangon."
+        },
+        {
+          "statement": "The Salween River drains into the South China Sea, sharing the same outlet sea as the Mekong River.",
+          "verdict": "Incorrect",
+          "reason": "The Salween drains into the Andaman Sea (Gulf of Martaban) in Myanmar — not the South China Sea. Only the Mekong drains into the South China Sea (via Vietnam)."
+        }
+      ],
+      "strong_distractor": "a — Statement 1 appears precisely worded and correct, leading students to choose option (a) — 1 only (i.e., only Statement 1 is incorrect) — without recognising that Statements 2 and 3 are the wrong ones.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Three Parallel Rivers — Salween, Mekong, Yangtze — within ~76 km in Yunnan; UNESCO WHS — Correct (NOT incorrect).",
+        "Evaluate Statement 2: Irrawaddy drains into Andaman Sea, not Bay of Bengal — Incorrect.",
+        "Evaluate Statement 3: Salween drains into Andaman Sea; Mekong drains into South China Sea — they do not share the same outlet sea — Incorrect.",
+        "Statements 2 and 3 are NOT correct → select option (d): 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the Bay of Bengal confusion. Students who know the Irrawaddy is in Myanmar and that Myanmar has a Bay of Bengal coastline may automatically assign the Irrawaddy's outlet to the Bay of Bengal. The Irrawaddy actually drains into the Andaman Sea — a distinct water body from the Bay of Bengal, though both are part of the Indian Ocean. Statement 3 is a simpler geographic-swap trap — Salween and Mekong are parallel rivers but drain into completely different seas.",
+      "final_explanation": "The Three Parallel Rivers region is a UNESCO World Heritage Site of exceptional biodiversity and geomorphological significance.\n\n• Statement 1 — Correct (NOT incorrect): The Salween (Nu), Mekong (Lancang), and Yangtze (Jinsha) flow in near-parallel gorges within about 76 km of each other in Yunnan — a unique geological occurrence on Earth.\n• Statement 2 — Incorrect: The Irrawaddy (Ayeyarwady) is Myanmar's principal river and drains into the Andaman Sea, not the Bay of Bengal. Its delta is located in the Ayeyarwady Region south of Mandalay, not near Yangon specifically.\n• Statement 3 — Incorrect: The Salween drains into the Andaman Sea (Gulf of Martaban) in southern Myanmar. The Mekong drains into the South China Sea via Vietnam. Despite being parallel rivers in their upper reaches, they discharge into different seas.\n\nValue Addition:\n• China's upstream control over the Salween, Mekong, and Yangtze gives it significant leverage over downstream Southeast Asian nations.\n• The Irrawaddy Delta is a major rice-producing region and was devastated by Cyclone Nargis in 2008.\n• All three parallel rivers — and the Brahmaputra — originate in the Tibetan Plateau, giving China strategic hydrological influence across Asia."
+    },
+    "hi": {
+      "display_text": "दक्षिण पूर्व एशिया की नदियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. युनान के तीन समानांतर नदियाँ यूनेस्को विश्व धरोहर स्थल में सल्विन, मेकांग, और यांग्त्ज़े नदियाँ लगभग 76 किमी की दूरी पर समानांतर घाटियों से होकर बहती हैं।\n2. म्यांमार की मुख्य नदी इरावदी नदी एक बड़े डेल्टा के माध्यम से बंगाल की खाड़ी में बहती है।\n3. सल्विन नदी दक्षिण चीन सागर में बहती है, जो मेकांग नदी के समान आउटलेट समुद्र साझा करती है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Three Parallel Rivers of Yunnan UNESCO World Heritage Site features the Salween, Mekong, and Yangtze rivers flowing through parallel gorges within approximately 76 km of each other.",
+          "verdict": "सही है",
+          "reason": "यह स्थल की परिभाषित विशेषता है — तीन प्रमुख नदियाँ युनान प्रांत, चीन में लगभग 76 किमी के संकीर्ण भौगोलिक गलियारे के भीतर समानांतर बहती हैं।"
+        },
+        {
+          "statement": "The Irrawaddy River, the principal river of Myanmar, drains into the Bay of Bengal via a large delta near Yangon.",
+          "verdict": "गलत है",
+          "reason": "इरावदी नदी अंडमान सागर (भारतीय महासागर का हिस्सा) में बहती है, बंगाल की खाड़ी में नहीं। इसका डेल्टा म्यांमार के आयेयारवाडी क्षेत्र में है, जो यांगून के दक्षिण में है।"
+        },
+        {
+          "statement": "The Salween River drains into the South China Sea, sharing the same outlet sea as the Mekong River.",
+          "verdict": "गलत है",
+          "reason": "सल्विन नदी म्यांमार में अंडमान सागर (मार्टाबन की खाड़ी) में बहती है — दक्षिण चीन सागर में नहीं। केवल मेकांग नदी दक्षिण चीन सागर में बहती है (वियतनाम के माध्यम से)।"
+        }
+      ],
+      "strong_distractor": "कथन 1 बिल्कुल सटीक और सही प्रतीत होता है, जिससे छात्र विकल्प (a) — केवल 1 — चुन लेते हैं, बिना यह समझे कि कथन 2 और 3 गलत हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: तीन समानांतर नदियाँ — सल्विन, मेकांग, यांग्त्ज़े — युनान में लगभग 76 किमी के भीतर; यूनेस्को विश्व धरोहर स्थल — सही (गलत नहीं)।",
+        "कथन 2 का मूल्यांकन करें: इरावदी अंडमान सागर में बहती है, बंगाल की खाड़ी में नहीं — गलत।",
+        "कथन 3 का मूल्यांकन करें: सल्विन अंडमान सागर में बहती है; मेकांग दक्षिण चीन सागर में बहती है — दोनों का आउटलेट समुद्र समान नहीं है — गलत।",
+        "कथन 2 और 3 सही नहीं हैं → विकल्प (d) चुनें: केवल 2 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 बंगाल की खाड़ी के भ्रम का फायदा उठाता है। जो छात्र जानते हैं कि इरावदी म्यांमार में है और म्यांमार की बंगाल की खाड़ी से सीमा है, वे स्वचालित रूप से इरावदी के आउटलेट को बंगाल की खाड़ी मान लेते हैं। वास्तव में इरावदी अंडमान सागर में बहती है — जो बंगाल की खाड़ी से अलग जल क्षेत्र है, हालांकि दोनों भारतीय महासागर के हिस्से हैं। कथन 3 एक सरल भौगोलिक-स्वैप जाल है — सल्विन और मेकांग समानांतर नदियाँ हैं लेकिन पूरी तरह अलग समुद्रों में बहती हैं।",
+      "final_explanation": "तीन समानांतर नदियाँ क्षेत्र एक यूनेस्को विश्व धरोहर स्थल है जो असाधारण जैव विविधता और भूआकृतिक महत्व रखता है।\n\n• कथन 1 — सही (गलत नहीं): सल्विन (नू), मेकांग (लांगकांग), और यांग्त्ज़े (जिन्शा) युनान में लगभग 76 किमी के भीतर लगभग समानांतर घाटियों में बहती हैं — पृथ्वी पर एक अनूठा भूवैज्ञानिक घटना।\n• कथन 2 — गलत: इरावदी (आयेयारवाडी) म्यांमार की मुख्य नदी है और अंडमान सागर में बहती है, बंगाल की खाड़ी में नहीं। इसका डेल्टा मंडले के दक्षिण में आयेयारवाडी क्षेत्र में स्थित है, विशेष रूप से यांगून के पास नहीं।\n• कथन 3 — गलत: सल्विन म्यांमार के दक्षिण में अंडमान सागर (मार्टाबन की खाड़ी) में बहती है। मेकांग वियतनाम के माध्यम से दक्षिण चीन सागर में बहती है। ऊपरी हिस्सों में समानांतर नदियाँ होने के बावजूद, वे अलग-अलग समुद्रों में बहती हैं।\n\nमूल्य संवर्धन:\n• चीन का सल्विन, मेकांग, और यांग्त्ज़े पर नियंत्रण दक्षिण-पूर्व एशियाई देशों पर महत्वपूर्ण प्रभाव देता है।\n• इरावदी डेल्टा एक प्रमुख चावल उत्पादन क्षेत्र है और 2008 में चक्रवात नारगिस से तबाह हुआ था।\n• ये तीनों समानांतर नदियाँ — और ब्रह्मपुत्र — तिब्बती पठार से निकलती हैं, जो चीन को पूरे एशिया में रणनीतिक जल संबंधी प्रभाव प्रदान करता है।"
+    }
+  },
+  {
+    "uuid": "5191e696-f6f8-4ea7-85f0-5c9518e3d43b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Amazon vs. Orinoco: Casiquiare Canal and South American Drainage"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Casiquiare Canal — natural bifurcation between Amazon and Orinoco",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Casiquiare Canal in South America is geographically significant because it is:\n\n(a) A man-made navigation canal built to link the Amazon and Orinoco river systems for commercial traffic\n(b) A man-made canal connecting the Pacific Ocean to the Atlantic Ocean through Venezuela\n(c) A natural waterway (river bifurcation) that connects the Orinoco and Amazon river systems in Venezuela\n(d) A man-made canal linking the North Sea to the Atlantic Ocean through South American territory",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'A man-made canal' is the default assumption for any waterway called a 'canal,' leading well-prepared students who confuse canal-types to select option (a).",
+      "elimination_logic": [
+        "Eliminate (a): The Casiquiare is a natural waterway — not a man-made canal. The word 'canal' is used colloquially for this natural bifurcation.",
+        "Eliminate (b): The Panama Canal connects the Pacific and Atlantic Oceans — an entirely different waterway in Central America.",
+        "Eliminate (d): The Rhine-Main-Danube Canal connects the North Sea to the Black Sea — entirely in Europe, unrelated to South America.",
+        "Retain (c): The Casiquiare Canal is a natural waterway (river bifurcation) in Venezuela that connects the Orinoco and Amazon river systems — one of the few natural bifurcations between two major river basins in the world."
+      ],
+      "upsc_trap_explanation": "The word 'canal' in 'Casiquiare Canal' is the primary trap. Students who encounter this term for the first time assume it is a man-made engineering project, similar to the Panama Canal or the Rhine-Main-Danube Canal. The Casiquiare is in fact a natural river bifurcation — a branch of the Orinoco that naturally connects to the Amazon drainage system in Venezuela. This makes it one of the world's rarest hydrological phenomena: a natural link between two separate major river basins.",
+      "final_explanation": "The Casiquiare Canal is a remarkable hydrological feature of South America.\n\n• Option (a) — Incorrect: The Casiquiare is not man-made. 'Canal' is a historical/colloquial name for what is a natural waterway.\n• Option (b) — Incorrect: The Panama Canal (man-made) connects the Pacific and Atlantic Oceans through Central America — unrelated.\n• Option (c) — Correct: The Casiquiare Canal is a natural river bifurcation in Venezuela that connects the Orinoco River system to the Amazon River system. It is one of the few places in the world where two major river basins are naturally linked by a flowing waterway.\n• Option (d) — Incorrect: The Rhine-Main-Danube Canal is a man-made European waterway linking the North Sea to the Black Sea — no connection to South America.\n\nValue Addition:\n• Angel Falls (world's highest uninterrupted waterfall at ~979 m) is located in the Orinoco Basin in Venezuela.\n• The Rio de la Plata system (Paraná + Uruguay) is South America's third major drainage system.\n• The Orinoco drains into the Atlantic Ocean (Caribbean Sea side), distinct from the Amazon's more southerly Atlantic outlet."
+    },
+    "hi": {
+      "display_text": "दक्षिण अमेरिका में Casiquiare नहर भौगोलिक रूप से महत्वपूर्ण है क्योंकि यह है:\n\n(a) एक मानव-निर्मित नौवहन नहर जो वाणिज्यिक यातायात के लिए अमेज़न और ओरिनोको नदी प्रणालियों को जोड़ती है\n(b) एक मानव-निर्मित नहर जो वेनेजुएला के माध्यम से प्रशांत महासागर को अटलांटिक महासागर से जोड़ती है\n(c) एक प्राकृतिक जलमार्ग (नदी शाखा) जो वेनेजुएला में ओरिनोको और अमेज़न नदी प्रणालियों को जोड़ती है\n(d) एक मानव-निर्मित नहर जो दक्षिण अमेरिकी क्षेत्र के माध्यम से उत्तरी सागर को अटलांटिक महासागर से जोड़ती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) — 'एक मानव-निर्मित नहर' किसी भी जलमार्ग के लिए डिफ़ॉल्ट धारणा होती है जिसे 'नहर' कहा जाता है, जो अच्छी तरह से तैयार छात्रों को जो नहर के प्रकारों में भ्रमित होते हैं विकल्प (a) चुनने के लिए प्रेरित करती है।",
+      "elimination_logic": [
+        "(a) को खारिज करें: Casiquiare एक प्राकृतिक जलमार्ग है — मानव-निर्मित नहर नहीं। 'नहर' शब्द इस प्राकृतिक शाखा के लिए बोलचाल की भाषा में उपयोग किया जाता है।",
+        "(b) को खारिज करें: पनामा नहर प्रशांत और अटलांटिक महासागरों को जोड़ती है — यह मध्य अमेरिका में एक पूरी तरह अलग जलमार्ग है।",
+        "(d) को खारिज करें: राइन-मेन-डेन्यूब नहर उत्तरी सागर को काला सागर से जोड़ती है — पूरी तरह यूरोप में है, दक्षिण अमेरिका से असंबंधित।",
+        "(c) को बनाए रखें: Casiquiare नहर वेनेजुएला में एक प्राकृतिक जलमार्ग (नदी शाखा) है जो ओरिनोको और अमेज़न नदी प्रणालियों को जोड़ती है — यह विश्व के कुछ प्राकृतिक शाखाओं में से एक है जो दो प्रमुख नदी बेसिनों को जोड़ती है।"
+      ],
+      "upsc_trap_explanation": "'Casiquiare Canal' में 'नहर' शब्द मुख्य जाल है। जो छात्र इस शब्द से पहली बार मिलते हैं वे इसे एक मानव-निर्मित इंजीनियरिंग परियोजना समझते हैं, जैसे पनामा नहर या राइन-मेन-डेन्यूब नहर। वास्तव में Casiquiare एक प्राकृतिक नदी शाखा है — ओरिनोको की एक शाखा जो स्वाभाविक रूप से वेनेजुएला में अमेज़न जल निकासी प्रणाली से जुड़ती है। यह विश्व के सबसे दुर्लभ जलवैज्ञानिक घटनाओं में से एक है: दो अलग-अलग प्रमुख नदी बेसिनों के बीच प्राकृतिक कड़ी।",
+      "final_explanation": "Casiquiare नहर दक्षिण अमेरिका की एक उल्लेखनीय जलवैज्ञानिक विशेषता है।\n\n• विकल्प (a) — गलत: Casiquiare मानव-निर्मित नहीं है। 'नहर' एक ऐतिहासिक/बोलचाल का नाम है जो एक प्राकृतिक जलमार्ग के लिए उपयोग होता है।\n• विकल्प (b) — गलत: पनामा नहर (मानव-निर्मित) प्रशांत और अटलांटिक महासागरों को मध्य अमेरिका के माध्यम से जोड़ती है — असंबंधित।\n• विकल्प (c) — सही: Casiquiare नहर वेनेजुएला में एक प्राकृतिक नदी शाखा है जो ओरिनोको नदी प्रणाली को अमेज़न नदी प्रणाली से जोड़ती है। यह विश्व के कुछ स्थानों में से एक है जहाँ दो प्रमुख नदी बेसिन स्वाभाविक रूप से बहने वाले जलमार्ग द्वारा जुड़े होते हैं।\n• विकल्प (d) — गलत: राइन-मेन-डेन्यूब नहर एक मानव-निर्मित यूरोपीय जलमार्ग है जो उत्तरी सागर को काला सागर से जोड़ता है — दक्षिण अमेरिका से कोई संबंध नहीं।\n\nमूल्य संवर्धन:\n• एंजेल फॉल्स (विश्व की सबसे ऊँची अविरल जलप्रपात लगभग 979 मीटर) वेनेजुएला के ओरिनोको बेसिन में स्थित है।\n• रियो दे ला प्लाटा प्रणाली (पाराना + उरुग्वे) दक्षिण अमेरिका की तीसरी प्रमुख जल निकासी प्रणाली है।\n• ओरिनोको अटलांटिक महासागर (कैरेबियन सागर की ओर) में बहती है, जो अमेज़न के अधिक दक्षिणी अटलांटिक निकास से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "9c73d6e5-06c0-4709-8891-f3157ab06ff3",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Zambezi and Orange Rivers: Southern African Drainage and Waterfalls"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Victoria Falls vs Angel Falls — largest vs highest waterfall distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Victoria Falls, situated on the Zambezi River at the Zimbabwe-Zambia border, is recognised as the world's largest waterfall by combined width and volume of flow.\n\nReason (R): The Zambezi River ultimately drains into the Indian Ocean through the Mozambique Channel after flowing eastward across southern Africa.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is A correct? — Victoria Falls on the Zambezi is described as the world's largest waterfall by combined width and flow — Yes, this is correct; it is not the highest (Angel Falls holds that record).",
+        "Step 2: Is R correct? — The Zambezi River drains into the Indian Ocean via the Mozambique Channel — Yes, this is factually correct.",
+        "Step 3: Does R explain A? — The Zambezi's drainage into the Indian Ocean has no causal relationship to why Victoria Falls is the world's largest by combined width and flow. The superlative is determined by the falls' geomorphology, not its ocean outlet. R does not explain A.",
+        "A correct + R correct + R does NOT explain A → select option (b)."
+      ],
+      "upsc_trap_explanation": "Both A and R are true facts about the Zambezi River, which makes option (a) the default choice for a student who verifies each statement individually without checking the causal link. The reason the falls holds its superlative is the sheer volume of flow and the width of the basalt gorge — not the direction of the river's ultimate drainage. R describes a correct geographic fact (Zambezi → Indian Ocean) that happens to be about the same river as A, but it does not causally explain A's superlative status.",
+      "final_explanation": "Victoria Falls and the Zambezi River are standard test items in southern African geography.\n\n• Assertion (A): Correct. Victoria Falls, located on the Zambezi at the Zimbabwe-Zambia border, is the world's largest waterfall by combined width (~1.7 km) and water flow volume. It is not the world's highest waterfall — that distinction belongs to Angel Falls in Venezuela (979 m uninterrupted drop) on an Orinoco tributary.\n• Reason (R): Correct. The Zambezi River drains into the Indian Ocean via the Mozambique Channel — flowing eastward through Mozambique to the coast.\n• Causal link: R does not explain A. The Zambezi's ocean outlet has no bearing on Victoria Falls' geomorphological superlative. The falls' record is a function of basalt canyon width and the volume of Zambezi's flow during peak season.\n\nValue Addition:\n• The Kariba Dam on the Zambezi created one of the world's largest man-made reservoirs by volume.\n• The Orange River is the longest river entirely within South Africa and drains into the Atlantic Ocean.\n• The Lesotho Highlands Water Project transfers Orange River water northward to South Africa's Gauteng region."
+    },
+    "hi": {
+      "display_text": "कथन (A): विक्टोरिया फॉल्स, जो ज़ाम्बेज़ी नदी पर जिम्बाब्वे-ज़ाम्बिया सीमा पर स्थित है, संयुक्त चौड़ाई और प्रवाह मात्रा के आधार पर विश्व का सबसे बड़ा जलप्रपात माना जाता है।\n\nकारण (R): ज़ाम्बेज़ी नदी अंततः मोज़ाम्बिक चैनल के माध्यम से भारतीय महासागर में बहती है, जो दक्षिणी अफ्रीका के पार पूर्व की ओर बहती है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — विक्टोरिया फॉल्स जो ज़ाम्बेज़ी नदी पर स्थित है, विश्व का सबसे बड़ा जलप्रपात है जो उसकी संयुक्त चौड़ाई और प्रवाह मात्रा के आधार पर वर्णित है — हाँ, यह सही है; यह सबसे ऊँचा नहीं है (यह रिकॉर्ड एंजेल फॉल्स के पास है)।",
+        "चरण 2: क्या R सही है? — ज़ाम्बेज़ी नदी भारतीय महासागर में मोज़ाम्बिक चैनल के माध्यम से बहती है — हाँ, यह तथ्यात्मक रूप से सही है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? — ज़ाम्बेज़ी का भारतीय महासागर में बहना इस बात का कारण नहीं है कि विक्टोरिया फॉल्स विश्व का सबसे बड़ा जलप्रपात है। यह श्रेष्ठता जलप्रपात की भू-आकृतिक संरचना से निर्धारित होती है, न कि इसके महासागर निकास से। अतः R, A की व्याख्या नहीं करता।",
+        "A सही + R सही + R, A की व्याख्या नहीं करता → विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "A और R दोनों ज़ाम्बेज़ी नदी के बारे में सही तथ्य हैं, जो उन छात्रों के लिए विकल्प (a) को डिफ़ॉल्ट बनाता है जो प्रत्येक कथन को व्यक्तिगत रूप से सत्यापित करते हैं लेकिन कारणात्मक संबंध की जांच नहीं करते। जलप्रपात की श्रेष्ठता उसके विशाल प्रवाह और बेसाल्ट घाटी की चौड़ाई पर निर्भर करती है — न कि नदी के अंतिम बहाव की दिशा पर। R एक सही भौगोलिक तथ्य (ज़ाम्बेज़ी → भारतीय महासागर) बताता है जो A के समान नदी के बारे में है, परंतु यह A की श्रेष्ठता की व्याख्या नहीं करता।",
+      "final_explanation": "विक्टोरिया फॉल्स और ज़ाम्बेज़ी नदी दक्षिणी अफ्रीकी भूगोल के मानक परीक्षण विषय हैं।\n\n• कथन (A): सही। विक्टोरिया फॉल्स, जो ज़ाम्बेज़ी नदी पर जिम्बाब्वे-ज़ाम्बिया सीमा पर स्थित है, संयुक्त चौड़ाई (~1.7 किमी) और जल प्रवाह मात्रा के आधार पर विश्व का सबसे बड़ा जलप्रपात है। यह विश्व का सबसे ऊँचा जलप्रपात नहीं है — वह सम्मान वेनेजुएला के एंजेल फॉल्स (979 मीटर निरंतर गिरावट) को प्राप्त है जो ओरिनोको नदी की एक उपनदी है।\n• कारण (R): सही। ज़ाम्बेज़ी नदी मोज़ाम्बिक चैनल के माध्यम से भारतीय महासागर में बहती है — जो मोज़ाम्बिक के पूर्वी भाग से होकर समुद्र तट तक जाती है।\n• कारणात्मक संबंध: R, A की व्याख्या नहीं करता। ज़ाम्बेज़ी का महासागर निकास विक्टोरिया फॉल्स की भू-आकृतिक श्रेष्ठता पर कोई प्रभाव नहीं डालता। जलप्रपात का रिकॉर्ड बेसाल्ट घाटी की चौड़ाई और ज़ाम्बेज़ी के प्रवाह की मात्रा पर निर्भर करता है।\n\nमूल्यवर्धन:\n• ज़ाम्बेज़ी पर करिबा बांध ने विश्व के सबसे बड़े मानव निर्मित जलाशयों में से एक बनाया है।\n• ऑरेंज नदी दक्षिण अफ्रीका की सबसे लंबी नदी है जो पूरी तरह देश के भीतर बहती है और अटलांटिक महासागर में मिलती है।\n• लेसोथो हाईलैंड्स वाटर प्रोजेक्ट ऑरेंज नदी के जल को उत्तर की ओर दक्षिण अफ्रीका के गौटेंग क्षेत्र में स्थानांतरित करता है।"
+    }
+  },
+  {
+    "uuid": "89ff0775-34f2-4116-98ec-40d1d6cbd65e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Volga River: Europe's Longest River and Strategic Importance",
+        "Rhine and Danube Rivers: Europe's Economic and Political Waterways"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "European rivers — outlet seas and key attributes",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Volga River",
+            "1. Flows through 10 countries; drains into Black Sea"
+          ],
+          [
+            "B. Danube River",
+            "2. Connects Caspian Sea basin to Sea of Azov"
+          ],
+          [
+            "C. Rhine River",
+            "3. Longest river in Europe; drains into Caspian Sea"
+          ],
+          [
+            "D. Volga-Don Canal",
+            "4. Major industrial waterway draining into North Sea"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) swaps the Volga's outlet to the Black Sea, which is tempting because the Danube drains into the Black Sea and both are major Eastern European rivers.",
+      "elimination_logic": [
+        "Match A (Volga): Europe's longest river, drains into the Caspian Sea — matches 3.",
+        "Match B (Danube): Flows through 10 countries, drains into Black Sea — matches 1.",
+        "Match C (Rhine): Flows through Switzerland-Germany-Netherlands into North Sea; major industrial corridor — matches 4.",
+        "Match D (Volga-Don Canal): Connects Caspian Sea basin to Sea of Azov/Black Sea — matches 2.",
+        "Correct matching: A-3, B-1, C-4, D-2 → select option (a)."
+      ],
+      "upsc_trap_explanation": "The Volga → Caspian Sea link is the core trap here. The Caspian Sea is not an ocean — it is a landlocked body of water. Students who associate 'Europe's longest river' with 'drains into a major sea' often confuse the Caspian with the Black Sea, or assume the Volga must drain into the Black Sea because of the Volga-Don Canal's connection. The canal provides indirect access to the Black Sea basin, but the Volga itself terminates in the Caspian.",
+      "final_explanation": "This question maps Europe's major rivers to their defining attributes.\n\nCorrect matches:\n• A (Volga) → 3 (Longest river in Europe; drains into Caspian Sea): The Volga flows entirely within Russia and terminates in the Caspian Sea, a landlocked endorheic basin, not an ocean.\n• B (Danube) → 1 (Flows through 10 countries; drains into Black Sea): The Danube holds the record for most countries traversed by any river; it empties into the Black Sea via a delta shared by Romania and Ukraine.\n• C (Rhine) → 4 (Major industrial waterway; drains into North Sea): The Rhine is Western Europe's primary commercial river, linking Switzerland, Germany, and the Netherlands to the North Sea.\n• D (Volga-Don Canal) → 2 (Connects Caspian Sea basin to Sea of Azov): This Soviet-era canal (completed 1952) provides a navigable link between the Volga-Caspian system and the Don-Azov-Black Sea system.\n\nTrap pairing to note: Volga → Black Sea is the most common wrong answer. The Volga drains into the Caspian; only the Volga-Don Canal indirectly links the basin to the Black Sea.\n\nValue Addition:\n• The Caspian Sea receives ~80% of its inflow from the Volga.\n• Battle of Stalingrad (WWII) was fought on the banks of the Volga.\n• Rhine and Danube originate in the same Alpine source region but flow in opposite directions."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. वोल्गा नदी",
+            "1. 10 देशों से होकर बहती है; ब्लैक सी में बहती है"
+          ],
+          [
+            "B. डेन्यूब नदी",
+            "2. कैस्पियन सागर बेसिन को सी ऑफ अज़ोव से जोड़ती है"
+          ],
+          [
+            "C. राइन नदी",
+            "3. यूरोप की सबसे लंबी नदी; कैस्पियन सागर में बहती है"
+          ],
+          [
+            "D. वोल्गा-डॉन नहर",
+            "4. प्रमुख औद्योगिक जलमार्ग जो नॉर्थ सी में बहती है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) वोल्गा के आउटलेट को ब्लैक सी से बदल देता है, जो आकर्षक है क्योंकि डेन्यूब ब्लैक सी में बहता है और दोनों प्रमुख पूर्वी यूरोपीय नदियाँ हैं।",
+      "elimination_logic": [
+        "A (वोल्गा) से मेल खाता है: यूरोप की सबसे लंबी नदी, कैस्पियन सागर में बहती है — 3 से मेल खाता है।",
+        "B (डेन्यूब) से मेल खाता है: 10 देशों से होकर बहती है, ब्लैक सी में बहती है — 1 से मेल खाता है।",
+        "C (राइन) से मेल खाता है: स्विट्ज़रलैंड-जर्मनी-नीदरलैंड से होकर नॉर्थ सी में बहती है; प्रमुख औद्योगिक गलियारा — 4 से मेल खाता है।",
+        "D (वोल्गा-डॉन नहर) से मेल खाता है: कैस्पियन सागर बेसिन को सी ऑफ अज़ोव/ब्लैक सी से जोड़ती है — 2 से मेल खाता है।",
+        "सही मिलान: A-3, B-1, C-4, D-2 → विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "वोल्गा → कैस्पियन सागर संबंध यहाँ मुख्य जाल है। कैस्पियन सागर महासागर नहीं है — यह एक बंद जलाशय है। छात्र जो 'यूरोप की सबसे लंबी नदी' को 'प्रमुख सागर में बहने वाली' से जोड़ते हैं, वे अक्सर कैस्पियन को ब्लैक सी से भ्रमित कर देते हैं, या मान लेते हैं कि वोल्गा को ब्लैक सी में बहना चाहिए क्योंकि वोल्गा-डॉन नहर ब्लैक सी से जुड़ती है। नहर ब्लैक सी बेसिन तक अप्रत्यक्ष पहुँच प्रदान करती है, लेकिन वोल्गा स्वयं कैस्पियन में समाप्त होती है।",
+      "final_explanation": "यह प्रश्न यूरोप की प्रमुख नदियों को उनके विशिष्ट गुणों से जोड़ता है।\n\nसही मिलान:\n• A (वोल्गा) → 3 (यूरोप की सबसे लंबी नदी; कैस्पियन सागर में बहती है): वोल्गा पूरी तरह रूस के भीतर बहती है और कैस्पियन सागर में समाप्त होती है, जो एक बंद अंतःस्रावी बेसिन है, महासागर नहीं।\n• B (डेन्यूब) → 1 (10 देशों से होकर बहती है; ब्लैक सी में बहती है): डेन्यूब किसी भी नदी की तुलना में सबसे अधिक देशों से होकर बहती है; यह रोमानिया और यूक्रेन द्वारा साझा डेल्टा के माध्यम से ब्लैक सी में मिलती है।\n• C (राइन) → 4 (प्रमुख औद्योगिक जलमार्ग; नॉर्थ सी में बहती है): राइन पश्चिमी यूरोप की मुख्य वाणिज्यिक नदी है, जो स्विट्ज़रलैंड, जर्मनी और नीदरलैंड को नॉर्थ सी से जोड़ती है।\n• D (वोल्गा-डॉन नहर) → 2 (कैस्पियन सागर बेसिन को सी ऑफ अज़ोव से जोड़ती है): यह सोवियत काल की नहर (1952 में पूर्ण) वोल्गा-कैस्पियन प्रणाली और डॉन-अज़ोव-ब्लैक सी प्रणाली के बीच नौगम्य लिंक प्रदान करती है।\n\nध्यान देने योग्य जाल जोड़ी: वोल्गा → ब्लैक सी सबसे सामान्य गलत उत्तर है। वोल्गा कैस्पियन में बहती है; केवल वोल्गा-डॉन नहर अप्रत्यक्ष रूप से बेसिन को ब्लैक सी से जोड़ती है।\n\nमूल्यवर्धन:\n• कैस्पियन सागर में लगभग 80% जल प्रवाह वोल्गा से आता है।\n• स्टालिनग्राद की लड़ाई (द्वितीय विश्व युद्ध) वोल्गा के किनारे लड़ी गई थी।\n• राइन और डेन्यूब एक ही आल्पाइन स्रोत क्षेत्र से निकलती हैं लेकिन विपरीत दिशाओं में बहती हैं।"
+    }
+  },
+  {
+    "uuid": "eec1d887-c5fd-41d2-8e85-6a4ffc16f91a",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Brahmaputra-Tsangpo River: Antecedent River and Gorge Formation",
+        "Ganga River System: Drainage, Tributaries, and Environmental Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Antecedent river — cuts through mountains rather than being blocked",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A geography researcher notes that a major Himalayan river was already flowing in its present course millions of years before the Himalayan mountain range began rising due to tectonic plate collision. As the mountains rose, this river maintained its course by continuously cutting downward through the rising rock, creating one of the world's deepest gorges. Which of the following geomorphological concepts best describes this type of river?\n\n(a) Superimposed river\n(b) Subsequent river\n(c) Antecedent river\n(d) Consequent river",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Superimposed river' is a real geomorphological concept (river that cuts through underlying rock as overlying sediment is stripped away) and is often confused with antecedent rivers by students who recall both terms from the same chapter.",
+      "elimination_logic": [
+        "The scenario describes a river older than the mountains it traverses — it maintained its original course as mountains rose around it.",
+        "Eliminate (a): A superimposed river inherits its course from overlying sediment layers onto underlying rock — not from pre-existing mountains.",
+        "Eliminate (b): A subsequent river develops its course along lines of weak rock after other rivers erode the landscape — unrelated to mountain-cutting.",
+        "Eliminate (d): A consequent river flows in the direction of the original slope — it does not cut through mountains.",
+        "Retain (c): An antecedent river is one that predates the mountain range and maintains its course by cutting through as the land rises — exactly describing the Brahmaputra/Tsangpo scenario."
+      ],
+      "upsc_trap_explanation": "Superimposed and antecedent rivers are both types of discordant drainage (rivers whose courses do not conform to underlying structure), causing students to conflate them. The distinction: antecedent rivers are older than the mountains and maintained their course through active downcutting as the mountains rose; superimposed rivers inherited their course from a different, overlying geological layer. The Brahmaputra (Yarlung Tsangpo) cutting through the Himalayas is the textbook antecedent example.",
+      "final_explanation": "This question applies river geomorphology concepts to a real-world example.\n\nApplicable principle — Antecedent River: A river that is older than the mountain range through which it flows. As tectonic uplift raised the mountains, the river maintained its original course by downward erosion at a rate faster than the uplift, creating dramatic gorges.\n\n• Option (a) — Superimposed river: Incorrect. A superimposed river inherits its course from overlying rock layers as erosion exposes underlying formations — the river's age relative to the mountain is not the defining factor.\n• Option (b) — Subsequent river: Incorrect. A subsequent river develops along weaker geological structures after initial drainage patterns are established — no mountain-cutting involved.\n• Option (c) — Antecedent river: Correct. The Brahmaputra (Yarlung Tsangpo) predates the Himalayas. As the Indo-Eurasian plate collision raised the Himalayas, the river maintained its course by cutting downward, producing the Yarlung Tsangpo Grand Canyon — the world's deepest river gorge.\n• Option (d) — Consequent river: Incorrect. A consequent river simply follows the original slope of the land — no mountain-cutting anomaly.\n\nValue Addition:\n• Indus and Sutlej are also classic antecedent rivers — older than the Himalayas.\n• The Yarlung Tsangpo Grand Canyon is deeper (~5,300 m from rim to river) than the Grand Canyon in the USA.\n• The Ganga's source at Gomukh (Gangotri Glacier) is a glacial regime feature, not antecedent drainage."
+    },
+    "hi": {
+      "display_text": "एक भूगोल शोधकर्ता ने नोट किया कि एक प्रमुख हिमालयी नदी अपनी वर्तमान धारा में लाखों वर्ष पहले से बह रही थी, जब हिमालय पर्वत श्रृंखला टेक्टोनिक प्लेट टकराव के कारण उठना शुरू भी नहीं हुई थी। जैसे-जैसे पर्वत उठे, इस नदी ने लगातार ऊपर उठती चट्टान को नीचे की ओर काटते हुए अपनी धारा बनाए रखी, जिससे विश्व की सबसे गहरी घाटियों में से एक बनी। निम्नलिखित में से कौन-सी भूआकृतिक अवधारणा इस प्रकार की नदी का सर्वश्रेष्ठ वर्णन करती है?\n\n(a) सुपरइम्पोज्ड नदी\n(b) उपरांत नदी\n(c) पूर्ववर्ती नदी\n(d) परिणामी नदी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Superimposed river' एक वास्तविक भूआकृतिक अवधारणा है (ऐसी नदी जो ऊपर की तलछट के हटने पर नीचे की चट्टान को काटती है) और इसे छात्र अक्सर पूर्ववर्ती नदियों के साथ भ्रमित कर देते हैं क्योंकि दोनों शब्द एक ही अध्याय में आते हैं।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसी नदी का वर्णन करता है जो उस पर्वत से पुरानी है जिसके बीच से वह बहती है — यह अपनी मूल धारा को बनाए रखती है क्योंकि पर्वत उसके चारों ओर उठ रहे थे।",
+        "(a) को हटाएं: एक सुपरइम्पोज्ड नदी अपनी धारा ऊपर की तलछट पर आधारित चट्टानों से प्राप्त करती है — न कि पहले से मौजूद पर्वतों से।",
+        "(b) को हटाएं: एक उपरांत नदी कमजोर चट्टानों के साथ अपनी धारा विकसित करती है जब अन्य नदियाँ भू-दृश्य को कटान कर चुकी होती हैं — इसका पर्वत काटने से कोई संबंध नहीं है।",
+        "(d) को हटाएं: एक परिणामी नदी मूल ढलान की दिशा में बहती है — यह पर्वतों को नहीं काटती।",
+        "(c) को रखें: एक पूर्ववर्ती नदी वह होती है जो पर्वत श्रृंखला से पुरानी होती है और जैसे-जैसे भूमि उठती है, वह कटान करके अपनी धारा बनाए रखती है — बिल्कुल ब्रह्मपुत्र/यारलुंग त्सांगपो के परिदृश्य का वर्णन।"
+      ],
+      "upsc_trap_explanation": "सुपरइम्पोज्ड और पूर्ववर्ती नदियाँ दोनों असंगत जल निकासी (उन नदियों की धाराएँ जो नीचे की संरचना के अनुरूप नहीं होतीं) के प्रकार हैं, जिससे छात्र इन्हें भ्रमित कर देते हैं। अंतर यह है कि पूर्ववर्ती नदियाँ पर्वतों से पुरानी होती हैं और पर्वतों के उठने के दौरान सक्रिय कटान के माध्यम से अपनी धारा बनाए रखती हैं; जबकि सुपरइम्पोज्ड नदियाँ अपनी धारा किसी अलग, ऊपर की भूवैज्ञानिक परत से विरासत में पाती हैं। हिमालय को काटती ब्रह्मपुत्र (यारलुंग त्सांगपो) पूर्ववर्ती नदी का पाठ्यपुस्तक उदाहरण है।",
+      "final_explanation": "यह प्रश्न नदी भूआकृतिक अवधारणाओं को वास्तविक उदाहरण पर लागू करता है।\n\nलागू सिद्धांत — पूर्ववर्ती नदी: ऐसी नदी जो उस पर्वत श्रृंखला से पुरानी होती है जिसके बीच से वह बहती है। जैसे-जैसे टेक्टोनिक उठान ने पर्वतों को उठाया, नदी ने अपनी मूल धारा को बनाए रखा और उठान से तेज कटान करके नाटकीय घाटियाँ बनाईं।\n\n• विकल्प (a) — सुपरइम्पोज्ड नदी: गलत। सुपरइम्पोज्ड नदी अपनी धारा ऊपर की चट्टानी परतों से विरासत में पाती है क्योंकि कटान नीचे की संरचनाओं को उजागर करता है — नदी की उम्र पर्वत के सापेक्ष निर्णायक नहीं है।\n• विकल्प (b) — उपरांत नदी: गलत। उपरांत नदी कमजोर भूवैज्ञानिक संरचनाओं के साथ अपनी धारा विकसित करती है जब प्रारंभिक जल निकासी पैटर्न स्थापित हो चुके होते हैं — इसमें पर्वत काटना शामिल नहीं है।\n• विकल्प (c) — पूर्ववर्ती नदी: सही। ब्रह्मपुत्र (यारलुंग त्सांगपो) हिमालय से पुरानी है। जैसे-जैसे इंडो-यूरेशियाई प्लेट टकराव ने हिमालय को उठाया, नदी ने नीचे की ओर कटान करके अपनी धारा बनाए रखी, जिससे यारलुंग त्सांगपो ग्रैंड कैनियन बना — जो विश्व की सबसे गहरी नदी घाटी है।\n• विकल्प (d) — परिणामी नदी: गलत। परिणामी नदी केवल भूमि की मूल ढलान के अनुसार बहती है — इसमें पर्वत काटने का कोई असामान्य व्यवहार नहीं है।\n\nमूल्य संवर्धन:\n• सिंधु और सतलज भी क्लासिक पूर्ववर्ती नदियाँ हैं — जो हिमालय से पुरानी हैं।\n• यारलुंग त्सांगपो ग्रैंड कैनियन गहराई में (~5,300 मीटर किनारे से नदी तक) अमेरिका के ग्रैंड कैनियन से भी गहरा है।\n• गंगा का स्रोत गोमुख (गंगोत्री ग्लेशियर) हिमनदीय क्षेत्र की विशेषता है, पूर्ववर्ती जल निकासी नहीं।"
+    }
+  },
+  {
+    "uuid": "99acfba4-86e3-40ea-85cf-6035fcd6a138",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Nile River: Length Debate and Drainage Basin Characteristics",
+        "Congo vs. Amazon vs. Nile: Comparative Superlatives and UPSC Traps"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Nile vs Amazon length controversy — recent hydrological studies",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements:\n\nStatement 1: The Amazon River has the largest drainage basin in the world, larger than that of the Nile.\n\nStatement 2: Traditional geographic consensus has always held the Amazon to be the world's longest river, with the Nile ranking second.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Amazon River has the largest drainage basin in the world, larger than that of the Nile.",
+          "verdict": "Correct",
+          "reason": "The Amazon drainage basin covers approximately 7 million sq km — the world's largest. The Nile basin is significantly smaller, at around 3.4 million sq km."
+        },
+        {
+          "statement": "Traditional geographic consensus has always held the Amazon to be the world's longest river, with the Nile ranking second.",
+          "verdict": "Incorrect",
+          "reason": "Traditionally, the Nile has been considered the world's longest river. Recent hydrological studies (particularly post-2007) have challenged this, suggesting the Amazon may be longer when source-to-mouth measurement methodology is revised. The traditional consensus favoured the Nile, not the Amazon."
+        }
+      ],
+      "strong_distractor": "a — Students who are aware that recent studies favour the Amazon as longer may assume the 'traditional' consensus was also for the Amazon, confusing contemporary findings with historical geographic consensus.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Amazon basin (~7 million sq km) is the world's largest drainage basin — Correct.",
+        "Evaluate Statement 2: Traditional geographic consensus placed the Nile as the world's longest river; the Amazon's claim is based on recent (post-2007) revised measurements — the statement incorrectly attributes the traditional consensus to the Amazon — Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → select option (d)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a subtle reversal trap. Current knowledge (informed by recent studies) suggests the Amazon may be longer, and students who absorb this fact may retroactively assume it was always believed to be the longest. The trap lies in the phrase 'traditional geographic consensus' — historically, the Nile has been the consensus longest river for well over a century. The Amazon's claim is recent and contested, not traditional.",
+      "final_explanation": "The Nile-Amazon length rivalry is a frequently tested contemporary geographic controversy.\n\n• Statement 1 — Correct: The Amazon River basin covers approximately 7 million sq km — the world's largest drainage basin by a significant margin. The Nile's basin is around 3.4 million sq km. Basin area and river length are distinct attributes — the Amazon holds the basin record; the Nile holds the traditional length record.\n• Statement 2 — Incorrect: Traditional (pre-2000s) geographic consensus consistently ranked the Nile as the world's longest river at approximately 6,650 km. It is only recent hydrological studies — particularly a 2007 Brazilian study — that repositioned the Amazon as potentially longer (approximately 6,992 km when measured to its most distant source). 'Traditional consensus' favoured the Nile, not the Amazon.\n\nValue Addition:\n• The debate hinges on where the 'source' of a river is defined — a methodological, not purely factual, question.\n• The Amazon has the world's largest discharge and largest basin — only the length record is in dispute.\n• UPSC questions often present this as an active controversy — acknowledge both positions rather than stating either definitively."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: अमेज़न नदी का जलग्रहण क्षेत्र विश्व का सबसे बड़ा है, जो नील के जलग्रहण क्षेत्र से भी बड़ा है।\n\nकथन 2: पारंपरिक भौगोलिक सहमति हमेशा अमेज़न को विश्व की सबसे लंबी नदी मानती रही है, और नील दूसरे स्थान पर है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Amazon River has the largest drainage basin in the world, larger than that of the Nile.",
+          "verdict": "सही है",
+          "reason": "अमेज़न जलग्रहण क्षेत्र लगभग 7 मिलियन वर्ग किलोमीटर में फैला है — जो विश्व का सबसे बड़ा है। नील जलग्रहण क्षेत्र काफी छोटा है, लगभग 3.4 मिलियन वर्ग किलोमीटर।"
+        },
+        {
+          "statement": "Traditional geographic consensus has always held the Amazon to be the world's longest river, with the Nile ranking second.",
+          "verdict": "गलत है",
+          "reason": "परंपरागत रूप से, नील को विश्व की सबसे लंबी नदी माना जाता रहा है। हाल के हाइड्रोलॉजिकल अध्ययन (विशेषकर 2007 के बाद) ने इस पर प्रश्न उठाया है, यह सुझाव देते हुए कि स्रोत से मुंह तक की माप के तरीके में संशोधन के बाद अमेज़न लंबी हो सकती है। पारंपरिक सहमति नील के पक्ष में थी, अमेज़न के पक्ष में नहीं।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि हाल के अध्ययन अमेज़न को लंबा मानते हैं, वे यह मान सकते हैं कि 'पारंपरिक' सहमति भी अमेज़न के पक्ष में थी, जिससे समकालीन निष्कर्षों को ऐतिहासिक भौगोलिक सहमति के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अमेज़न जलग्रहण क्षेत्र (~7 मिलियन वर्ग किलोमीटर) विश्व का सबसे बड़ा जलग्रहण क्षेत्र है — सही।",
+        "कथन 2 का मूल्यांकन करें: पारंपरिक भौगोलिक सहमति नील को विश्व की सबसे लंबी नदी मानती थी; अमेज़न का दावा हाल के (2007 के बाद) संशोधित मापों पर आधारित है — कथन ने पारंपरिक सहमति को अमेज़न के पक्ष में गलत रूप से दर्शाया है — गलत।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक सूक्ष्म उलटफेर जाल है। वर्तमान ज्ञान (हाल के अध्ययनों से सूचित) सुझाव देता है कि अमेज़न लंबी हो सकती है, और जो छात्र इस तथ्य को ग्रहण करते हैं वे पीछे जाकर मान सकते हैं कि इसे हमेशा सबसे लंबी माना गया था। जाल 'पारंपरिक भौगोलिक सहमति' शब्द में है — ऐतिहासिक रूप से, नील को एक सदी से अधिक समय तक सबसे लंबी नदी माना गया है। अमेज़न का दावा हाल का और विवादित है, पारंपरिक नहीं।",
+      "final_explanation": "नील-अमेज़न लंबाई प्रतिस्पर्धा एक बार-बार पूछे जाने वाला समकालीन भौगोलिक विवाद है।\n\n• कथन 1 — सही: अमेज़न नदी का जलग्रहण क्षेत्र लगभग 7 मिलियन वर्ग किलोमीटर है — जो विश्व का सबसे बड़ा जलग्रहण क्षेत्र है। नील का जलग्रहण क्षेत्र लगभग 3.4 मिलियन वर्ग किलोमीटर है। जलग्रहण क्षेत्र और नदी की लंबाई अलग-अलग गुण हैं — अमेज़न जलग्रहण क्षेत्र का रिकॉर्ड रखता है; नील पारंपरिक लंबाई रिकॉर्ड रखता है।\n• कथन 2 — गलत: पारंपरिक (2000 से पहले) भौगोलिक सहमति ने लगातार नील को विश्व की सबसे लंबी नदी माना, जिसकी लंबाई लगभग 6,650 किमी थी। केवल हाल के हाइड्रोलॉजिकल अध्ययन — विशेषकर 2007 का ब्राज़ीलियाई अध्ययन — ने अमेज़न को संभावित रूप से लंबा (लगभग 6,992 किमी जब इसके सबसे दूरस्थ स्रोत तक मापा गया) बताया। 'पारंपरिक सहमति' नील के पक्ष में थी, अमेज़न के पक्ष में नहीं।\n\nमूल्य संवर्धन:\n• बहस इस बात पर निर्भर करती है कि नदी का 'स्रोत' कहाँ परिभाषित किया जाता है — यह एक पद्धतिगत, न कि केवल तथ्यात्मक, प्रश्न है।\n• अमेज़न के पास विश्व का सबसे बड़ा जल निकासी और सबसे बड़ा जलग्रहण क्षेत्र है — केवल लंबाई का रिकॉर्ड विवादित है।\n• UPSC प्रश्न अक्सर इसे एक सक्रिय विवाद के रूप में प्रस्तुत करते हैं — दोनों पक्षों को स्वीकार करें बजाय किसी एक को निश्चित रूप से कहने के।"
+    }
+  },
+  {
+    "uuid": "95816e8c-da92-4150-be4e-f6cbe76a1579",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Yellow River (Huang He): Silt Load, Course Changes, and Civilization"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Yellow River — Bohai Sea outlet, directional trap",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Yellow River (Huang He), after flowing eastward through the Loess Plateau and the North China Plain, ultimately drains into the ________ in northeastern China.\n\n(a) Yellow Sea\n(b) South China Sea\n(c) Bohai Sea\n(d) East China Sea",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Yellow Sea' is a plausible distractor because the Yellow River shares its colour with the Yellow Sea and students logically assume the river named for its colour drains into the sea also named for that colour.",
+      "elimination_logic": [
+        "Eliminate (a): The Yellow Sea is the broader body of water; the Yellow River drains specifically into the Bohai Sea, a northern embayment.",
+        "Eliminate (b): The South China Sea is in southern China — the Yellow River flows in northern China far from the South China Sea.",
+        "Eliminate (d): The East China Sea is associated with the Yangtze River's outlet near Shanghai — not the Yellow River.",
+        "Retain (c): The Yellow River empties into the Bohai Sea, a semi-enclosed bay in northeastern China — select (c)."
+      ],
+      "upsc_trap_explanation": "The Yellow River–Yellow Sea name association is the trap. The Yellow Sea (Huang Hai) received its name partly from the silt discharged by the Yellow River, leading students to assume the river drains directly into the Yellow Sea. The Bohai Sea is actually a smaller, semi-enclosed bay that opens into the Yellow Sea — the river terminates in the Bohai, not the broader Yellow Sea.",
+      "final_explanation": "The Yellow River's drainage into a specific named sea body is a precision geography test.\n\n• Option (a) — Yellow Sea: Incorrect, though the Yellow Sea does receive discoloured water from the Bohai. The Yellow River drains specifically into the Bohai Sea, which is a northern inlet of the Yellow Sea.\n• Option (b) — South China Sea: Incorrect. The South China Sea is in southern China. The Yellow River flows through northern China's Loess Plateau and North China Plain.\n• Option (c) — Bohai Sea: Correct. The Yellow River empties into the Bohai Sea near Dongying city in Shandong Province. The Bohai is a semi-enclosed bay between the Liaodong and Shandong peninsulas.\n• Option (d) — East China Sea: Incorrect. The East China Sea receives the Yangtze River (near Shanghai), not the Yellow River.\n\nValue Addition:\n• The Yellow River has changed its outlet course multiple times historically — sometimes entering the sea north of Shandong, sometimes south.\n• 'China's Sorrow' is attributed to the Yellow River's devastating flood history on the North China Plain.\n• The Loess Plateau is the world's largest loess deposit, giving the river its characteristic sediment load."
+    },
+    "hi": {
+      "display_text": "Yellow River (Huang He), Loess पठार और North China Plain से पूर्व की ओर बहने के बाद, अंततः उत्तर-पूर्वी चीन में ________ में बहती है।\n\n(a) Yellow Sea\n(b) South China Sea\n(c) Bohai Sea\n(d) East China Sea",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Yellow Sea' एक संभावित भ्रम है क्योंकि Yellow River अपने रंग के कारण Yellow Sea के साथ साझा करता है और छात्र तार्किक रूप से मान लेते हैं कि रंग के लिए नामित नदी उसी रंग के लिए नामित समुद्र में बहती है।",
+      "elimination_logic": [
+        "(a) को हटाएं: Yellow Sea व्यापक जल क्षेत्र है; Yellow River विशेष रूप से Bohai Sea में बहती है, जो एक उत्तरी खाड़ी है।",
+        "(b) को हटाएं: South China Sea दक्षिणी चीन में है — Yellow River उत्तरी चीन में बहती है जो South China Sea से दूर है।",
+        "(d) को हटाएं: East China Sea Yangtze River के निकास के साथ जुड़ा है जो Shanghai के पास है — Yellow River के साथ नहीं।",
+        "(c) को रखें: Yellow River Bohai Sea में बहती है, जो उत्तर-पूर्वी चीन में एक अर्ध-बंधित खाड़ी है — अतः (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "Yellow River–Yellow Sea नाम संबंध ही जाल है। Yellow Sea (Huang Hai) को आंशिक रूप से Yellow River द्वारा निकाले गए तलछट के कारण नाम मिला है, जिससे छात्र मान लेते हैं कि नदी सीधे Yellow Sea में बहती है। वास्तव में Bohai Sea एक छोटी, अर्ध-बंधित खाड़ी है जो Yellow Sea में खुलती है — नदी का अंत Bohai Sea में होता है, व्यापक Yellow Sea में नहीं।",
+      "final_explanation": "Yellow River का किसी विशिष्ट नामित समुद्र में बहना एक सटीक भूगोल परीक्षा है।\n\n• विकल्प (a) — Yellow Sea: गलत, हालांकि Yellow Sea को Bohai से रंगीन पानी मिलता है। Yellow River विशेष रूप से Bohai Sea में बहती है, जो Yellow Sea की उत्तरी खाड़ी है।\n• विकल्प (b) — South China Sea: गलत। South China Sea दक्षिणी चीन में है। Yellow River उत्तरी चीन के Loess पठार और North China Plain से होकर बहती है।\n• विकल्प (c) — Bohai Sea: सही। Yellow River Shandong प्रांत के Dongying शहर के पास Bohai Sea में बहती है। Bohai Liaodong और Shandong प्रायद्वीपों के बीच एक अर्ध-बंधित खाड़ी है।\n• विकल्प (d) — East China Sea: गलत। East China Sea Yangtze River (Shanghai के पास) को प्राप्त करता है, Yellow River को नहीं।\n\nमूल्य संवर्धन:\n• Yellow River ने ऐतिहासिक रूप से अपने निकास मार्ग को कई बार बदला है — कभी Shandong के उत्तर में, कभी दक्षिण में समुद्र में प्रवेश करती है।\n• 'China's Sorrow' नामक उपाधि Yellow River के North China Plain पर विनाशकारी बाढ़ इतिहास को दी गई है।\n• Loess पठार विश्व का सबसे बड़ा लोएस जमा क्षेत्र है, जो नदी को इसकी विशिष्ट तलछटी भार देता है।"
+    }
+  },
+  {
+    "uuid": "a261176b-c28b-45a6-b307-f70d2f52fb51",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Endorheic Rivers and Drainage into Inland Basins",
+        "Amazon vs. Orinoco: Casiquiare Canal and South American Drainage"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Okavango River — inland delta, endorheic drainage to Botswana",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about endorheic river systems:\n\n1. The Okavango River drains into the Okavango Delta in Botswana — one of the world's largest inland deltas — without ever reaching the ocean.\n2. The Syr Darya and Amu Darya rivers, which formerly fed the Aral Sea, are examples of endorheic drainage systems.\n3. All endorheic rivers are ephemeral — they flow only seasonally and cannot maintain year-round flow.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Okavango River drains into the Okavango Delta in Botswana — one of the world's largest inland deltas — without ever reaching the ocean.",
+          "verdict": "Correct",
+          "reason": "The Okavango is a classic endorheic river; it terminates in the Kalahari Basin of Botswana, forming the world's largest inland delta, listed as a UNESCO World Heritage Site."
+        },
+        {
+          "statement": "The Syr Darya and Amu Darya rivers, which formerly fed the Aral Sea, are examples of endorheic drainage systems.",
+          "verdict": "Correct",
+          "reason": "Both the Syr Darya and Amu Darya drain into the Aral Sea — a closed inland basin — making them endorheic rivers by definition. Soviet irrigation diversions reduced their inflow, causing the Aral Sea to shrink catastrophically."
+        },
+        {
+          "statement": "All endorheic rivers are ephemeral — they flow only seasonally and cannot maintain year-round flow.",
+          "verdict": "Incorrect",
+          "reason": "Endorheic rivers can be perennial. The Volga, Amu Darya, and Okavango all flow year-round despite draining into closed basins. Endorheic classification refers to the destination of drainage, not the seasonality of flow."
+        }
+      ],
+      "strong_distractor": "d — Students may accept Statement 3 as partially reasonable since many endorheic rivers (like the Jordan) are significantly diminished, confusing 'reduced flow' with 'ephemeral.'",
+      "elimination_logic": [
+        "Evaluate Statement 1: Okavango → Okavango Delta (Botswana) — inland, never reaches ocean — Correct.",
+        "Evaluate Statement 2: Syr Darya and Amu Darya → Aral Sea (closed basin) — endorheic — Correct.",
+        "Evaluate Statement 3: 'All endorheic rivers are ephemeral' — the Volga (perennial, feeds Caspian Sea) disproves this — Incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect → select option (b): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 uses 'all' — a scope-extension trap. Endorheic refers solely to a drainage basin that does not connect to the ocean. Whether the river is perennial or ephemeral is a separate characteristic. The Volga (perennial, Europe's longest river) drains into the Caspian Sea — a closed endorheic basin — yet maintains year-round flow. The conflation of 'closed basin drainage' with 'ephemeral flow' is a persistent misconception.",
+      "final_explanation": "Endorheic drainage systems are those where rivers drain into landlocked basins — a key classification concept in hydrology.\n\n• Statement 1 — Correct: The Okavango River flows from Angola into Botswana, spreading into the Okavango Delta — a UNESCO World Heritage Site and one of the world's largest inland deltas. It never reaches the ocean; it terminates in the Kalahari Desert's closed basin.\n• Statement 2 — Correct: The Amu Darya and Syr Darya are endorheic rivers draining into the Aral Sea. Soviet-era cotton irrigation projects diverted over 90% of their combined inflow, causing the Aral Sea to shrink from the world's 4th largest lake to a series of saline remnants.\n• Statement 3 — Incorrect: The qualifier 'all' makes this false. Endorheic rivers include major perennial rivers like the Volga (flows year-round into the Caspian Sea) and the Okavango itself. Endorheic = closed basin destination, not ephemeral flow.\n\nValue Addition:\n• Exorheic rivers drain into the ocean; endorheic into closed basins; areic regions have no river drainage at all.\n• The Dead Sea (terminal lake of the Jordan River) is shrinking at approximately 1 metre per year.\n• The Okavango Delta supports the largest elephant population on Earth."
+    },
+    "hi": {
+      "display_text": "एंडोरेहिक नदी प्रणालियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ओकावांगो नदी बोत्सवाना में ओकावांगो डेल्टा में जल निकासी करती है — जो विश्व के सबसे बड़े अंतर्देशीय डेल्टाओं में से एक है — और कभी भी महासागर तक नहीं पहुँचती।\n2. सिर दार्या और अमू दार्या नदियाँ, जो पूर्व में अराल सागर को जल प्रदान करती थीं, एंडोरेहिक जल निकासी प्रणालियों के उदाहरण हैं।\n3. सभी एंडोरेहिक नदियाँ अस्थायी होती हैं — वे केवल मौसमी प्रवाह करती हैं और वर्ष भर प्रवाह बनाए नहीं रख सकतीं।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Okavango River drains into the Okavango Delta in Botswana — one of the world's largest inland deltas — without ever reaching the ocean.",
+          "verdict": "Correct",
+          "reason": "The Okavango is a classic endorheic river; it terminates in the Kalahari Basin of Botswana, forming the world's largest inland delta, listed as a UNESCO World Heritage Site."
+        },
+        {
+          "statement": "The Syr Darya and Amu Darya rivers, which formerly fed the Aral Sea, are examples of endorheic drainage systems.",
+          "verdict": "Correct",
+          "reason": "Both the Syr Darya and Amu Darya drain into the Aral Sea — a closed inland basin — making them endorheic rivers by definition. Soviet irrigation diversions reduced their inflow, causing the Aral Sea to shrink catastrophically."
+        },
+        {
+          "statement": "All endorheic rivers are ephemeral — they flow only seasonally and cannot maintain year-round flow.",
+          "verdict": "Incorrect",
+          "reason": "Endorheic rivers can be perennial. The Volga, Amu Darya, and Okavango all flow year-round despite draining into closed basins. Endorheic classification refers to the destination of drainage, not the seasonality of flow."
+        }
+      ],
+      "strong_distractor": "d — Students may accept Statement 3 as partially reasonable since many endorheic rivers (like the Jordan) are significantly diminished, confusing 'reduced flow' with 'ephemeral.'",
+      "elimination_logic": [
+        "Evaluate Statement 1: Okavango → Okavango Delta (Botswana) — inland, never reaches ocean — Correct.",
+        "Evaluate Statement 2: Syr Darya and Amu Darya → Aral Sea (closed basin) — endorheic — Correct.",
+        "Evaluate Statement 3: 'All endorheic rivers are ephemeral' — the Volga (perennial, feeds Caspian Sea) disproves this — Incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect → select option (b): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 uses 'all' — a scope-extension trap. Endorheic refers solely to a drainage basin that does not connect to the ocean. Whether the river is perennial or ephemeral is a separate characteristic. The Volga (perennial, Europe's longest river) drains into the Caspian Sea — a closed endorheic basin — yet maintains year-round flow. The conflation of 'closed basin drainage' with 'ephemeral flow' is a persistent misconception.",
+      "final_explanation": "Endorheic drainage systems are those where rivers drain into landlocked basins — a key classification concept in hydrology.\n\n• Statement 1 — Correct: The Okavango River flows from Angola into Botswana, spreading into the Okavango Delta — a UNESCO World Heritage Site and one of the world's largest inland deltas. It never reaches the ocean; it terminates in the Kalahari Desert's closed basin.\n• Statement 2 — Correct: The Amu Darya and Syr Darya are endorheic rivers draining into the Aral Sea. Soviet-era cotton irrigation projects diverted over 90% of their combined inflow, causing the Aral Sea to shrink from the world's 4th largest lake to a series of saline remnants.\n• Statement 3 — Incorrect: The qualifier 'all' makes this false. Endorheic rivers include major perennial rivers like the Volga (flows year-round into the Caspian Sea) and the Okavango itself. Endorheic = closed basin destination, not ephemeral flow.\n\nValue Addition:\n• Exorheic rivers drain into the ocean; endorheic into closed basins; areic regions have no river drainage at all.\n• The Dead Sea (terminal lake of the Jordan River) is shrinking at approximately 1 metre per year.\n• The Okavango Delta supports the largest elephant population on Earth."
+    }
+  },
+  {
+    "uuid": "450519ca-0ec8-48ee-9627-b08f193c30c1",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Mississippi-Missouri River System: North America's Major Drainage",
+        "Amazon vs. Orinoco: Casiquiare Canal and South American Drainage"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Waterfall and delta superlatives — rank ordering by attribute",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following gives the correct order of the world's three most famous waterfalls arranged from tallest uninterrupted drop (highest) to shortest?\n\n(a) Angel Falls → Victoria Falls → Niagara Falls\n(b) Victoria Falls → Angel Falls → Niagara Falls\n(c) Angel Falls → Niagara Falls → Victoria Falls\n(d) Victoria Falls → Niagara Falls → Angel Falls",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who confuse Angel Falls (highest) with Victoria Falls (largest by width/flow) may reverse their rankings, placing Victoria Falls as both the highest and widest.",
+      "elimination_logic": [
+        "Rank waterfalls from highest drop (uninterrupted) to lowest: Angel Falls (Venezuela, ~979 m) is the world's highest.",
+        "Victoria Falls (Zimbabwe/Zambia, ~108 m) is the world's largest by width and flow — NOT highest.",
+        "Niagara Falls (~57 m) is lower than Victoria Falls in drop height.",
+        "Correct ranking by height of uninterrupted fall: Angel Falls → Victoria Falls → Niagara Falls — option (a)."
+      ],
+      "upsc_trap_explanation": "The Victoria Falls trap is the key trap here. Victoria Falls is frequently described as the 'world's largest waterfall' (by width and volume), leading students to also rank it as the 'highest.' Angel Falls in Venezuela (on an Orinoco tributary) holds the height record at ~979 m uninterrupted drop. Victoria Falls is ~108 m in drop height. Students who mix these attributes will reverse Angel Falls and Victoria Falls.",
+      "final_explanation": "Waterfall superlatives require distinguishing between height, width, and volume — three separate attributes.\n\nCorrect order (tallest uninterrupted drop, highest to lowest):\n1. Angel Falls (~979 m): Located on the Churún River (Orinoco basin tributary), Venezuela. World's highest uninterrupted waterfall.\n2. Victoria Falls (~108 m): Located on the Zambezi River at the Zimbabwe-Zambia border. World's largest waterfall by combined width (~1.7 km) and volume of flow during peak season.\n3. Niagara Falls (~57 m): Located on the Niagara River between the USA and Canada. Smaller in both height and width than Victoria Falls but the most commercially famous.\n\nWhy wrong options fail:\n• Option (b): Reverses Angel Falls and Victoria Falls — conflates 'largest' with 'highest.'\n• Option (c): Places Niagara before Victoria — incorrect by height comparison.\n• Option (d): Places Victoria before Angel — same largest/highest conflation error.\n\nValue Addition:\n• Angel Falls is located in the Gran Sabana plateau region of Venezuela.\n• Victoria Falls is known locally as 'Mosi-oa-Tunya' (The Smoke That Thunders).\n• Iguazu Falls (Argentina-Brazil border) is also a major waterfall — wider than Victoria Falls but with lower volume."
+    },
+    "hi": {
+      "display_text": "विश्व के तीन सबसे प्रसिद्ध जलप्रपातों को सबसे ऊँची बिना रुकावट गिरावट (सबसे ऊँचा) से सबसे कम तक सही क्रम में कौन-सा विकल्प दर्शाता है?\n\n(a) Angel Falls → Victoria Falls → Niagara Falls\n(b) Victoria Falls → Angel Falls → Niagara Falls\n(c) Angel Falls → Niagara Falls → Victoria Falls\n(d) Victoria Falls → Niagara Falls → Angel Falls",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो Angel Falls (सबसे ऊँचा) को Victoria Falls (चौड़ाई/प्रवाह के हिसाब से सबसे बड़ा) से भ्रमित करते हैं, वे अपनी रैंकिंग उलट सकते हैं, जिससे Victoria Falls को सबसे ऊँचा और सबसे चौड़ा दोनों माना जाता है।",
+      "elimination_logic": [
+        "जलप्रपातों को सबसे ऊँचे गिरावट (बिना रुकावट) से सबसे कम तक क्रमबद्ध करें: Angel Falls (वेनेजुएला, लगभग 979 मीटर) विश्व का सबसे ऊँचा जलप्रपात है।",
+        "Victoria Falls (जिम्बाब्वे/जाम्बिया, लगभग 108 मीटर) चौड़ाई और प्रवाह के हिसाब से विश्व का सबसे बड़ा जलप्रपात है — यह सबसे ऊँचा नहीं है।",
+        "Niagara Falls (लगभग 57 मीटर) गिरावट की ऊँचाई में Victoria Falls से कम है।",
+        "बिना रुकावट की ऊँचाई के अनुसार सही क्रम: Angel Falls → Victoria Falls → Niagara Falls — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "Victoria Falls का जाल सबसे महत्वपूर्ण है। Victoria Falls को अक्सर 'विश्व का सबसे बड़ा जलप्रपात' (चौड़ाई और प्रवाह के आधार पर) कहा जाता है, जिससे छात्र इसे 'सबसे ऊँचा' भी मान लेते हैं। वेनेजुएला का Angel Falls (Orinoco नदी की उपनदी) लगभग 979 मीटर की बिना रुकावट गिरावट के साथ ऊँचाई का रिकॉर्ड रखता है। Victoria Falls की गिरावट लगभग 108 मीटर है। जो छात्र इन गुणों को मिलाते हैं, वे Angel Falls और Victoria Falls की रैंकिंग उलट देते हैं।",
+      "final_explanation": "जलप्रपात की श्रेष्ठता के लिए ऊँचाई, चौड़ाई और प्रवाह — ये तीन अलग-अलग गुण होते हैं।\n\nसही क्रम (सबसे ऊँची बिना रुकावट गिरावट, ऊँचाई के अनुसार):\n1. Angel Falls (~979 मीटर): वेनेजुएला की Churún नदी (Orinoco बेसिन की उपनदी) पर स्थित। विश्व का सबसे ऊँचा बिना रुकावट जलप्रपात।\n2. Victoria Falls (~108 मीटर): जिम्बाब्वे-जाम्बिया सीमा पर Zambezi नदी पर स्थित। चौड़ाई (~1.7 किमी) और प्रवाह के हिसाब से विश्व का सबसे बड़ा जलप्रपात।\n3. Niagara Falls (~57 मीटर): अमेरिका और कनाडा के बीच Niagara नदी पर स्थित। ऊँचाई और चौड़ाई दोनों में Victoria Falls से छोटा, पर वाणिज्यिक रूप से सबसे प्रसिद्ध।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (b): Angel Falls और Victoria Falls की रैंकिंग उलट देता है — 'सबसे बड़ा' और 'सबसे ऊँचा' को मिलाता है।\n• विकल्प (c): Niagara को Victoria से पहले रखता है — ऊँचाई के हिसाब से गलत।\n• विकल्प (d): Victoria को Angel से पहले रखता है — वही 'सबसे बड़ा/सबसे ऊँचा' भ्रम।\n\nअतिरिक्त जानकारी:\n• Angel Falls वेनेजुएला के Gran Sabana पठार क्षेत्र में स्थित है।\n• Victoria Falls को स्थानीय रूप से 'Mosi-oa-Tunya' (धुआँ जो गरजता है) कहा जाता है।\n• Iguazu Falls (अर्जेंटीना-ब्राजील सीमा) भी एक प्रमुख जलप्रपात है — Victoria Falls से चौड़ा लेकिन प्रवाह में कम।"
+    }
+  },
+  {
+    "uuid": "20630fd9-d8c1-40a3-a8f7-435a6a5959c7",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Mekong River: Transboundary Flow and Southeast Asian Geopolitics"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Tonle Sap Lake — Mekong-driven seasonal flow reversal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During the monsoon season, a major Southeast Asian lake and its connecting river exhibit a remarkable phenomenon: the river reverses its normal outflow direction and begins carrying water back into the lake as a larger upstream river's flood levels exceed the lake's outflow point. The lake expands to nearly six times its dry-season area, supporting one of the world's most productive inland fisheries. Which of the following correctly identifies the lake-river system described and the mechanism driving this phenomenon?\n\n(a) Chindwin River reversing flow into Irrawaddy, driven by monsoon flooding in the Irrawaddy basin\n(b) Tonle Sap River reversing flow into Tonle Sap Lake (Cambodia), driven by the Mekong's monsoon flood pulse\n(c) Tonle Sap River reversing flow into Tonle Sap Lake, driven by tidal reversal from the South China Sea\n(d) Jamuna River reversing flow into a connected lake in Bangladesh, driven by Brahmaputra flooding",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who recall that the Mekong floods cause unusual lake behaviour may correctly identify Cambodia but attribute the phenomenon to 'tidal reversal' — confusing tidal effects (ocean-driven) with the flood-pulse reversal (river-driven).",
+      "elimination_logic": [
+        "The scenario describes a river that reverses its flow direction seasonally due to a larger river's flooding — a hydrological anomaly.",
+        "Eliminate (a): The Irrawaddy-Chindwin system in Myanmar does not exhibit this specific flood-pulse reversal phenomenon.",
+        "Eliminate (c): A tidal reversal is caused by ocean tides, not a river's flood pulse — the mechanism described is different.",
+        "Eliminate (d): The Brahmaputra-Jamuna confluence in Bangladesh causes flooding but not a documented flow-reversal in a connected tributary lake.",
+        "Retain (b): The Tonle Sap River (Cambodia) reverses flow during the Mekong flood season — water backs up into Tonle Sap Lake, expanding it dramatically. This is the textbook Mekong-Tonle Sap flow reversal."
+      ],
+      "upsc_trap_explanation": "Option (c) is constructed to trap students who correctly identify the phenomenon as Mekong-related but misattribute the mechanism to 'tidal reversal.' Tidal reversals occur near ocean-river interfaces; the Tonle Sap's reversal is a flood-pulse phenomenon caused by the Mekong's monsoon flooding raising water levels above the lake's normal outflow point, reversing the direction of the Tonle Sap River. The distinction between flood-pulse reversal and tidal reversal requires precise hydrological knowledge.",
+      "final_explanation": "This question applies the concept of flood-pulse-driven flow reversal to a real-world Southeast Asian scenario.\n\nApplicable principle — Mekong Flood Pulse and Tonle Sap Flow Reversal: During the monsoon season (May-October), the Mekong's discharge increases dramatically. When Mekong levels rise above the Tonle Sap River's outlet, flow reverses: water pushes back up the Tonle Sap River into Tonle Sap Lake, expanding it from ~2,500 sq km (dry season) to ~16,000 sq km (wet season).\n\n• Option (a) — Chindwin-Irrawaddy system: Incorrect. The Chindwin is a tributary of the Irrawaddy in Myanmar; no documented seasonal flow-reversal phenomenon of this nature.\n• Option (b) — Tonle Sap River-Lake (Cambodia): Correct. This is the world's most documented example of seasonal flow reversal driven by a main river's flood pulse — the Mekong.\n• Option (c) — Tidal reversal at Mekong delta: Incorrect. Tidal reversals occur near ocean interfaces; the Tonle Sap reversal is 300+ km inland — driven by river flood pulse, not ocean tides.\n• Option (d) — Jamuna-Brahmaputra confluence: Incorrect. Flooding occurs at this confluence but no equivalent seasonal flow-reversal into a connected lake system.\n\nValue Addition:\n• Tonle Sap Lake is Southeast Asia's largest freshwater lake and supports Cambodia's inland fishery — one of the world's most productive.\n• The Mekong River Commission monitors this flood pulse as central to Mekong basin management.\n• China's upstream dams have reduced the Mekong flood pulse, affecting Tonle Sap's seasonal expansion and fish populations."
+    },
+    "hi": {
+      "display_text": "मानसून के मौसम में, दक्षिण-पूर्व एशिया की एक प्रमुख झील और उसकी जुड़ी नदी एक असाधारण घटना प्रदर्शित करती हैं: नदी अपने सामान्य बहिर्वाह की दिशा उलट देती है और एक बड़ी ऊपर की नदी की बाढ़ स्तर झील के बहिर्वाह बिंदु से ऊपर जाने पर पानी को झील में वापस ले जाने लगती है। झील अपने शुष्क मौसम के क्षेत्रफल से लगभग छह गुना बढ़ जाती है, जो विश्व की सबसे उत्पादक आंतरिक मत्स्य पालन प्रणालियों में से एक का समर्थन करती है। निम्नलिखित में से कौन-सा विकल्प वर्णित झील-नदी प्रणाली और इस घटना को संचालित करने वाले तंत्र की सही पहचान करता है?\n\n(a) चिंडविन नदी का इरावदी में प्रवाह उलटना, जो इरावदी बेसिन में मानसून बाढ़ के कारण होता है\n(b) टोनले सैप नदी का टोनले सैप झील (कंबोडिया) में प्रवाह उलटना, जो मेकांग की मानसूनी बाढ़ धारा से प्रेरित है\n(c) टोनले सैप नदी का टोनले सैप झील में प्रवाह उलटना, जो दक्षिण चीन सागर से ज्वारीय उलटफेर के कारण होता है\n(d) जमुना नदी का बांग्लादेश में जुड़ी झील में प्रवाह उलटना, जो ब्रह्मपुत्र की बाढ़ से प्रेरित है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र जो याद करते हैं कि मेकांग बाढ़ों के कारण असामान्य झील व्यवहार होता है, वे सही रूप से कंबोडिया की पहचान कर सकते हैं लेकिन इस घटना को 'ज्वारीय उलटफेर' से जोड़ देते हैं — ज्वार के प्रभाव (महासागर-प्रेरित) को बाढ़-धारा उलटफेर (नदी-प्रेरित) से भ्रमित करते हैं।",
+      "elimination_logic": [
+        "यह परिदृश्य एक ऐसी नदी का वर्णन करता है जो एक बड़ी नदी की बाढ़ के कारण मौसमी रूप से अपने प्रवाह की दिशा उलट देती है — एक जलवैज्ञानिक असामान्यता।",
+        "(a) को हटाएं: म्यांमार में इरावदी-चिंडविन प्रणाली में यह विशिष्ट बाढ़-धारा उलटफेर घटना नहीं पाई जाती।",
+        "(c) को हटाएं: ज्वारीय उलटफेर महासागरीय ज्वारों के कारण होता है, न कि नदी की बाढ़-धारा के कारण — वर्णित तंत्र अलग है।",
+        "(d) को हटाएं: बांग्लादेश में ब्रह्मपुत्र-जमुना संगम बाढ़ उत्पन्न करता है लेकिन जुड़ी हुई सहायक झील में प्रवाह उलटने का कोई प्रलेखित प्रमाण नहीं है।",
+        "(b) को रखें: टोनले सैप नदी (कंबोडिया) मेकांग की बाढ़ के मौसम में प्रवाह उलटती है — पानी टोनले सैप झील में वापस बहता है, जिससे झील का क्षेत्रफल नाटकीय रूप से बढ़ जाता है। यह मेकांग-टोनले सैप प्रवाह उलटफेर का पाठ्यपुस्तक उदाहरण है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) उन छात्रों को फंसाने के लिए बनाया गया है जो सही रूप से इस घटना को मेकांग से संबंधित पहचानते हैं लेकिन तंत्र को 'ज्वारीय उलटफेर' मान लेते हैं। ज्वारीय उलटफेर महासागर-नदी सीमाओं के निकट होते हैं; टोनले सैप का उलटफेर बाढ़-धारा घटना है जो मेकांग की मानसून बाढ़ के कारण झील के सामान्य बहिर्वाह बिंदु से ऊपर जल स्तर बढ़ने पर होता है, जिससे टोनले सैप नदी की दिशा उलट जाती है। बाढ़-धारा उलटफेर और ज्वारीय उलटफेर के बीच का अंतर सटीक जलवैज्ञानिक ज्ञान मांगता है।",
+      "final_explanation": "यह प्रश्न बाढ़-धारा-प्रेरित प्रवाह उलटफेर की अवधारणा को दक्षिण-पूर्व एशियाई वास्तविक परिदृश्य में लागू करता है।\n\nलागू सिद्धांत — मेकांग बाढ़ धारा और टोनले सैप प्रवाह उलटफेर: मानसून के मौसम (मई-अक्टूबर) के दौरान, मेकांग का जलस्तर नाटकीय रूप से बढ़ जाता है। जब मेकांग का जलस्तर टोनले सैप नदी के बहिर्वाह से ऊपर चला जाता है, तो प्रवाह उलट जाता है: पानी टोनले सैप नदी के माध्यम से टोनले सैप झील में वापस बहता है, जिससे इसका क्षेत्रफल लगभग 2,500 वर्ग किमी (शुष्क मौसम) से बढ़कर 16,000 वर्ग किमी (वर्षा मौसम) हो जाता है।\n\n• विकल्प (a) — चिंडविन-इरावदी प्रणाली: गलत। चिंडविन म्यांमार में इरावदी की सहायक नदी है; इस प्रकार की मौसमी प्रवाह उलटफेर घटना का कोई प्रलेखित प्रमाण नहीं।\n• विकल्प (b) — टोनले सैप नदी-झील (कंबोडिया): सही। यह मुख्य नदी की बाढ़ धारा से प्रेरित मौसमी प्रवाह उलटफेर का विश्व में सबसे अधिक प्रलेखित उदाहरण है।\n• विकल्प (c) — मेकांग डेल्टा में ज्वारीय उलटफेर: गलत। ज्वारीय उलटफेर महासागर सीमाओं के निकट होते हैं; टोनले सैप का उलटफेर 300+ किमी अंदरूनी क्षेत्र में है — यह नदी की बाढ़ धारा से प्रेरित है, महासागरीय ज्वार से नहीं।\n• विकल्प (d) — जमुना-ब्रह्मपुत्र संगम: गलत। इस संगम पर बाढ़ आती है लेकिन जुड़ी झील प्रणाली में समान मौसमी प्रवाह उलटफेर नहीं होता।\n\nमूल्य संवर्धन:\n• टोनले सैप झील दक्षिण-पूर्व एशिया की सबसे बड़ी मीठे पानी की झील है और कंबोडिया की आंतरिक मत्स्य पालन प्रणाली का समर्थन करती है — जो विश्व की सबसे उत्पादक प्रणालियों में से एक है।\n• मेकांग नदी आयोग इस बाढ़ धारा की निगरानी करता है जो मेकांग बेसिन प्रबंधन के लिए केंद्रीय है।\n• चीन के ऊपर के बांधों ने मेकांग की बाढ़ धारा को कम कर दिया है, जिससे टोनले सैप के मौसमी विस्तार और मछली आबादी प्रभावित हुई है।"
+    }
+  },
+  {
+    "uuid": "fc9f6566-f5f4-4aba-8989-897118681542",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Rhine and Danube Rivers: Europe's Economic and Political Waterways"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Rhine-Danube divergent flow from Alps — opposite directions, same source region",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements:\n\nStatement 1: The Rhine River and the Danube River both originate in the Alps but flow in opposite general directions — the Rhine flows northward toward the North Sea, while the Danube flows eastward toward the Black Sea.\n\nStatement 2: The Rhine-Main-Danube Canal was constructed to divert Rhine water into the Danube basin to address water scarcity in southeastern Europe.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Rhine River and the Danube River both originate in the Alps but flow in opposite general directions — the Rhine flows northward toward the North Sea, while the Danube flows eastward toward the Black Sea.",
+          "verdict": "Correct",
+          "reason": "Both rivers originate in the Black Forest/Alps region of central Europe. The Rhine flows north-northwest into the North Sea; the Danube flows eastward across central and southeastern Europe into the Black Sea."
+        },
+        {
+          "statement": "The Rhine-Main-Danube Canal was constructed to divert Rhine water into the Danube basin to address water scarcity in southeastern Europe.",
+          "verdict": "Incorrect",
+          "reason": "The Rhine-Main-Danube Canal was built as a navigational waterway to connect the North Sea (via the Rhine) to the Black Sea (via the Danube) — not to transfer water. Its purpose is commercial navigation, not water supply diversion."
+        }
+      ],
+      "strong_distractor": "a — Students who know both the directional fact and the canal's existence may accept both statements without questioning the canal's purpose — navigation vs. water transfer is a subtle distinction.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Rhine flows north to North Sea; Danube flows east to Black Sea; both from Alpine source region — Correct.",
+        "Evaluate Statement 2: Rhine-Main-Danube Canal is a navigation canal, NOT a water transfer project for scarcity relief — Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the plausible-sounding purpose of the Rhine-Main-Danube Canal. Students who know the canal connects two major river systems may logically assume it was built for water transfer, as is common with modern inter-basin transfer projects. The canal's actual primary purpose is commercial navigation — creating a trans-European inland waterway linking the North Sea to the Black Sea — not water scarcity management. The canal was completed in 1992 and stretches 171 km through Bavaria.",
+      "final_explanation": "The Rhine and Danube are Europe's two most politically and economically significant rivers, often tested comparatively.\n\n• Statement 1 — Correct: The Rhine and Danube originate in the same general Alpine/Black Forest region of Central Europe but flow in opposite directions. The Rhine flows approximately northward through Switzerland, Germany, and the Netherlands into the North Sea. The Danube flows eastward through 10 countries into the Black Sea. This is a classic geographic contrast question.\n• Statement 2 — Incorrect: The Rhine-Main-Danube Canal (completed 1992) links the Rhine system to the Danube system via the Main River, creating an unbroken 3,500 km inland waterway from the North Sea to the Black Sea. Its purpose is commercial shipping navigation — not addressing water scarcity. This confusion between navigation canals and water-transfer schemes is a common exam trap.\n\nValue Addition:\n• The Rhine is one of Western Europe's most industrialised river corridors (Ruhr industrial region).\n• The Danube Delta in Romania is a UNESCO World Heritage Site for its biodiversity.\n• The Rhine Action Programme (1987) followed a major chemical spill that killed fish along 700 km of the river — an environmental policy case study."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: राइन नदी और डेन्यूब नदी दोनों आल्प्स में उत्पन्न होती हैं लेकिन विपरीत सामान्य दिशाओं में बहती हैं — राइन नदी उत्तर की ओर उत्तर सागर की ओर बहती है, जबकि डेन्यूब नदी पूर्व की ओर काला सागर की ओर बहती है।\n\nकथन 2: राइन-मेन-डेन्यूब नहर को दक्षिण-पूर्वी यूरोप में जल संकट को दूर करने के लिए राइन के पानी को डेन्यूब बेसिन में मोड़ने के लिए बनाया गया था।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "राइन नदी और डेन्यूब नदी दोनों आल्प्स में उत्पन्न होती हैं लेकिन विपरीत सामान्य दिशाओं में बहती हैं — राइन नदी उत्तर की ओर उत्तर सागर की ओर बहती है, जबकि डेन्यूब नदी पूर्व की ओर काला सागर की ओर बहती है।",
+          "verdict": "सही है",
+          "reason": "दोनों नदियाँ मध्य यूरोप के ब्लैक फॉरेस्ट/आल्प्स क्षेत्र में उत्पन्न होती हैं। राइन नदी उत्तर-उत्तर-पश्चिम की ओर उत्तर सागर में मिलती है; डेन्यूब नदी पूर्व की ओर मध्य और दक्षिण-पूर्वी यूरोप से होकर काला सागर में मिलती है।"
+        },
+        {
+          "statement": "राइन-मेन-डेन्यूब नहर को दक्षिण-पूर्वी यूरोप में जल संकट को दूर करने के लिए राइन के पानी को डेन्यूब बेसिन में मोड़ने के लिए बनाया गया था।",
+          "verdict": "गलत है",
+          "reason": "राइन-मेन-डेन्यूब नहर को एक नौवहन जलमार्ग के रूप में बनाया गया था जो उत्तर सागर (राइन के माध्यम से) को काला सागर (डेन्यूब के माध्यम से) से जोड़ती है — पानी स्थानांतरण के लिए नहीं। इसका उद्देश्य वाणिज्यिक नौवहन है, जल आपूर्ति स्थानांतरण नहीं।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र दोनों दिशात्मक तथ्य और नहर के अस्तित्व को जानते हैं, वे दोनों कथनों को बिना नहर के उद्देश्य (नौवहन बनाम जल स्थानांतरण) पर सवाल किए स्वीकार कर सकते हैं — यह एक सूक्ष्म भेद है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: राइन नदी उत्तर की ओर उत्तर सागर की ओर बहती है; डेन्यूब नदी पूर्व की ओर काला सागर की ओर बहती है; दोनों आल्प्स स्रोत क्षेत्र से हैं — सही।",
+        "कथन 2 का मूल्यांकन करें: राइन-मेन-डेन्यूब नहर एक नौवहन नहर है, जल संकट निवारण के लिए जल स्थानांतरण परियोजना नहीं है — गलत।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 राइन-मेन-डेन्यूब नहर के संभावित उद्देश्य का भ्रम पैदा करता है। जो छात्र जानते हैं कि यह नहर दो प्रमुख नदी प्रणालियों को जोड़ती है, वे तर्कसंगत रूप से मान सकते हैं कि इसे जल स्थानांतरण के लिए बनाया गया था, जैसा कि आधुनिक अंतर-बेसिन जल स्थानांतरण परियोजनाओं में होता है। नहर का वास्तविक प्राथमिक उद्देश्य वाणिज्यिक नौवहन है — एक ट्रांस-यूरोपीय अंतर्देशीय जलमार्ग बनाना जो उत्तर सागर को काला सागर से जोड़ता है — जल संकट प्रबंधन नहीं। यह नहर 1992 में पूरी हुई और बवेरिया में 171 किमी लंबी है।",
+      "final_explanation": "राइन और डेन्यूब यूरोप की दो सबसे राजनीतिक और आर्थिक रूप से महत्वपूर्ण नदियाँ हैं, जो अक्सर तुलनात्मक रूप से परीक्षा में पूछी जाती हैं।\n\n• कथन 1 — सही: राइन और डेन्यूब मध्य यूरोप के समान आल्पाइन/ब्लैक फॉरेस्ट क्षेत्र में उत्पन्न होती हैं लेकिन विपरीत दिशाओं में बहती हैं। राइन लगभग उत्तर की ओर स्विट्ज़रलैंड, जर्मनी और नीदरलैंड से होकर उत्तर सागर में मिलती है। डेन्यूब पूर्व की ओर 10 देशों से होकर काला सागर में मिलती है। यह एक क्लासिक भौगोलिक विरोधाभास प्रश्न है।\n• कथन 2 — गलत: राइन-मेन-डेन्यूब नहर (1992 में पूरी हुई) राइन प्रणाली को मेन नदी के माध्यम से डेन्यूब प्रणाली से जोड़ती है, जिससे उत्तर सागर से काला सागर तक 3,500 किमी का अंतर्देशीय जलमार्ग बनता है। इसका उद्देश्य वाणिज्यिक नौवहन है — जल संकट का समाधान नहीं। नौवहन नहरों और जल स्थानांतरण योजनाओं के बीच यह भ्रम एक सामान्य परीक्षा जाल है।\n\nमूल्यवर्धन:\n• राइन पश्चिमी यूरोप के सबसे औद्योगिकीकृत नदी गलियारों में से एक है (रूर औद्योगिक क्षेत्र)।\n• रोमानिया में डेन्यूब डेल्टा अपनी जैव विविधता के लिए यूनेस्को विश्व धरोहर स्थल है।\n• राइन एक्शन प्रोग्राम (1987) एक प्रमुख रासायनिक रिसाव के बाद शुरू हुआ जिसने नदी के 700 किमी हिस्से में मछलियों को मार डाला — एक पर्यावरण नीति अध्ययन।"
+    }
+  },
+  {
+    "uuid": "12c08e6e-4f07-4256-900c-9d8f9eed1680",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "River Regimes and Seasonal Flow Patterns: Nival, Pluvial, and Glacial",
+        "Indus River System: Origin, Course, and Indus Waters Treaty"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Mixed river regime — glacial and monsoonal inputs in same river",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Indus River system receives water from glacier melt in the Karakoram and Himalayan ranges, from seasonal snowmelt in the Tibetan Plateau catchment, and from monsoon rainfall in its middle and lower basin reaches. The type of river regime that best describes the Indus is a ________ regime.\n\n(a) Nival\n(b) Mixed/complex\n(c) Pluvial\n(d) Ephemeral",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Nival regime' sounds precise and technically correct to students who associate snowmelt with Himalayan rivers, conflating snow-fed with the glacial-plus-monsoonal mixed reality of the Indus.",
+      "elimination_logic": [
+        "Eliminate (a): Nival regime implies snowmelt as the dominant and near-exclusive source — the Indus combines glacier melt AND monsoon — this is too narrow.",
+        "Eliminate (c): Pluvial regime implies rainfall dominance — the upper Indus is significantly glacier-fed, making this incomplete.",
+        "Eliminate (d): Ephemeral rivers flow only seasonally — the Indus is perennial — incorrect.",
+        "Retain (b): Mixed/complex regime — combining glacial melt (upper Indus from Tibetan Plateau) with monsoon rainfall (middle and lower catchment) — correctly describes the Indus."
+      ],
+      "upsc_trap_explanation": "The Indus-nival conflation is the trap. Students who recall that the upper Indus originates in the Tibetan Plateau and receives snowmelt jump to 'nival regime.' However, a purely nival regime would mean almost exclusive snowmelt dependence — the Indus also receives significant monsoon rainfall from the lower catchment and glacier melt (glacial input) from the Karakoram/Himalayan ranges. This combination makes it a mixed/complex regime, not purely nival.",
+      "final_explanation": "River regimes describe the seasonal pattern of a river's discharge based on its water sources.\n\n• Option (a) — Nival regime: Incorrect. A nival regime is fed predominantly by winter snowpack melting in spring. While the Indus has snowmelt input, it also has significant glacial and monsoonal components — too complex for a purely nival classification.\n• Option (b) — Mixed/complex regime: Correct. The Indus draws water from three sources: glacier melt from the Karakoram and Western Himalayas, snowmelt from the Tibetan Plateau catchment, and monsoon rainfall in its middle and lower basin. This multi-source input defines a mixed or complex regime.\n• Option (c) — Pluvial regime: Incorrect. A pluvial regime is dominated by rainfall. The upper Indus is notably glacier-fed — rainfall alone does not describe its hydrology.\n• Option (d) — Ephemeral: Incorrect. Ephemeral rivers flow only part of the year. The Indus is one of Asia's major perennial rivers.\n\nValue Addition:\n• Climate change-driven glacier retreat in the Karakoram is altering Indus discharge patterns, threatening water security for ~200 million people.\n• The Ganga also follows a mixed regime — glacial (Gangotri) plus monsoonal (Himalayan and Peninsular tributaries).\n• Purely glacial rivers show the highest year-to-year discharge variability linked to temperature changes."
+    },
+    "hi": {
+      "display_text": "सिंधु नदी प्रणाली कराकोरम और हिमालयी श्रृंखलाओं से हिमनद पिघलने, तिब्बती पठार के क्षेत्र में मौसमी हिमपात पिघलने, और इसके मध्य व निचले क्षेत्र में मानसूनी वर्षा से जल प्राप्त करती है। सिंधु के लिए सबसे उपयुक्त नदी शासन प्रकार ________ शासन है।\n\n(a) निवल\n(b) मिश्रित/जटिल\n(c) वर्षा प्रधान\n(d) अस्थायी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'निवल शासन' हिमालयी नदियों के साथ हिमपात पिघलने को जोड़ने वाले छात्रों के लिए सटीक और तकनीकी रूप से सही लगता है, जो हिमनद-युक्त और मानसूनी मिश्रित वास्तविकता को भ्रमित करता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: निवल शासन का अर्थ है कि हिमपात पिघलना प्रमुख और लगभग एकमात्र स्रोत है — सिंधु में हिमनद पिघलना और मानसून दोनों शामिल हैं — यह बहुत संकीर्ण है।",
+        "(c) को हटाएं: वर्षा प्रधान शासन का अर्थ है वर्षा का प्रभुत्व — ऊपरी सिंधु मुख्यतः हिमनद-युक्त है, इसलिए यह अधूरा है।",
+        "(d) को हटाएं: अस्थायी नदियाँ केवल मौसमी प्रवाह करती हैं — सिंधु स्थायी नदी है — गलत।",
+        "(b) को रखें: मिश्रित/जटिल शासन — हिमनद पिघलना (तिब्बती पठार से ऊपरी सिंधु) और मानसूनी वर्षा (मध्य और निचले क्षेत्र) का संयोजन — सिंधु का सही वर्णन।"
+      ],
+      "upsc_trap_explanation": "सिंधु-निवल भ्रम जाल है। जो छात्र जानते हैं कि ऊपरी सिंधु तिब्बती पठार से निकलती है और हिमपात पिघलने से जल प्राप्त करती है, वे 'निवल शासन' पर पहुँच जाते हैं। परंतु, एक शुद्ध निवल शासन का अर्थ होगा लगभग पूरी तरह हिमपात पिघलने पर निर्भरता — सिंधु को निचले क्षेत्र से मानसूनी वर्षा और कराकोरम/हिमालयी श्रृंखलाओं से हिमनद पिघलने का भी महत्वपूर्ण जल प्राप्त होता है। यह संयोजन इसे मिश्रित/जटिल शासन बनाता है, न कि केवल निवल।",
+      "final_explanation": "नदी शासन नदी के जल स्रोतों के आधार पर उसके मौसमी प्रवाह पैटर्न का वर्णन करते हैं।\n\n• विकल्प (a) — निवल शासन: गलत। निवल शासन मुख्यतः सर्दियों के हिमपात के वसंत में पिघलने से जल प्राप्त करता है। जबकि सिंधु में हिमपात पिघलने का योगदान है, इसमें हिमनद और मानसूनी घटक भी महत्वपूर्ण हैं — इसलिए केवल निवल वर्गीकरण के लिए जटिल है।\n• विकल्प (b) — मिश्रित/जटिल शासन: सही। सिंधु तीन स्रोतों से जल प्राप्त करता है: कराकोरम और पश्चिमी हिमालय से हिमनद पिघलना, तिब्बती पठार से हिमपात पिघलना, और मध्य व निचले क्षेत्र में मानसूनी वर्षा। यह बहु-स्रोत इनपुट इसे मिश्रित या जटिल शासन बनाता है।\n• विकल्प (c) — वर्षा प्रधान शासन: गलत। वर्षा प्रधान शासन में वर्षा का प्रभुत्व होता है। ऊपरी सिंधु मुख्यतः हिमनद-युक्त है — केवल वर्षा इसकी जलविज्ञान को नहीं दर्शाती।\n• विकल्प (d) — अस्थायी: गलत। अस्थायी नदियाँ केवल वर्ष के कुछ हिस्सों में प्रवाहित होती हैं। सिंधु एशिया की प्रमुख स्थायी नदियों में से एक है।\n\nमूल्यवर्धन:\n• कराकोरम में जलवायु परिवर्तन के कारण हिमनदों का पिघलना सिंधु के प्रवाह पैटर्न को बदल रहा है, जिससे लगभग 200 मिलियन लोगों के लिए जल सुरक्षा खतरे में है।\n• गंगा भी मिश्रित शासन का पालन करती है — हिमनद (गंगोत्री) और मानसूनी (हिमालयी और प्रायद्वीपीय सहायक नदियाँ)।\n• शुद्ध हिमनदी तापमान परिवर्तन से जुड़ी उच्चतम वार्षिक प्रवाह अस्थिरता दिखाती हैं।"
+    }
+  },
+  {
+    "uuid": "9e3362eb-8a3c-47c0-80a1-3c07be48fa7b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Congo vs. Amazon vs. Nile: Comparative Superlatives and UPSC Traps",
+        "Amazon River: Discharge, Basin, and Biodiversity Superlatives",
+        "Niger River: Inland Delta, Course Anomaly, and West African Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "River superlatives — widest river, most countries, Amazon basin",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about global river characteristics:\n\n1. The Rio de la Plata in South America is classified as the world's widest river, which is why it is used as the standard reference for maximum river width comparisons.\n2. The Nile River, when measured including all its basin tributaries, flows through more countries than the Danube.\n3. The Amazon River's drainage basin covers approximately 40% of the South American continent.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Rio de la Plata in South America is classified as the world's widest river, which is why it is used as the standard reference for maximum river width comparisons.",
+          "verdict": "Incorrect",
+          "reason": "While the Rio de la Plata has an extremely wide mouth (around 220 km at its widest), it is technically classified as an estuary, not a river. The Amazon is considered the widest river (up to 48 km during floods). The Rio de la Plata is wider but is classified as an estuary."
+        },
+        {
+          "statement": "The Nile River, when measured including all its basin tributaries, flows through more countries than the Danube.",
+          "verdict": "Incorrect",
+          "reason": "This confuses basin countries with river channel countries. Even if the Nile's basin involves more nations, the question of 'river flowing through most countries' refers to the main river channel, and the Danube's 10-country channel passage is the accepted record."
+        },
+        {
+          "statement": "The Amazon River's drainage basin covers approximately 40% of the South American continent.",
+          "verdict": "Correct",
+          "reason": "The Amazon basin covers approximately 7 million sq km — roughly 40% of South America's total area. This statement is correct and therefore NOT incorrect."
+        }
+      ],
+      "strong_distractor": "c — Students who accept Statement 1 as partially true (Rio de la Plata IS wider, technically) and Statement 2 as true (Nile basin does touch more countries) may select option (c) — 1 and 2 only — without catching that Statement 2 is also incorrect, or may accept Statement 3 without verifying the 40% figure.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Rio de la Plata is technically an estuary, not a river; the Amazon is the widest river; this statement is incorrect as a standard reference — Incorrect.",
+        "Evaluate Statement 2: Danube's 10-country channel flow is the accepted record; Nile basin countries ≠ channel countries — Incorrect.",
+        "Evaluate Statement 3: Amazon basin ≈ 7 million sq km ≈ 40% of South America — Correct (NOT incorrect).",
+        "Statements 1 and 2 are NOT correct → select option (a): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the partial-truth mechanism — the Rio de la Plata is indeed extremely wide (wider than the Amazon at its mouth), but it is classified as an estuary, not a river. The Amazon is recognised as the world's widest river proper. This distinction requires knowing the classification, not just the measurement. Statement 2 conflates 'Nile Basin Initiative countries' (11) with 'countries the main Nile channel flows through' — a precision trap frequently set in UPSC geography questions.",
+      "final_explanation": "This question requires distinguishing river superlatives with precision.\n\n• Statement 1 — Incorrect: The Rio de la Plata is geographically wider (up to 220 km) than the Amazon, but it is classified as an estuary (the combined mouth of the Paraná and Uruguay rivers), not a river. The Amazon is the accepted standard for the world's widest river, reaching up to 48 km during flood season. A river and an estuary are classified differently.\n• Statement 2 — Incorrect: The Danube's main channel flows through 10 sovereign countries — the world record for a river's main channel. The Nile's basin (watershed) may involve ~11 nations under the Nile Basin Initiative, but 'flowing through' refers to the main channel, not the basin boundary.\n• Statement 3 — Correct (NOT incorrect): The Amazon basin covers approximately 7 million sq km — roughly 40% of South America's 17.8 million sq km area. This is the standard figure used in geographic literature.\n\nValue Addition:\n• The Paraná River (part of Rio de la Plata system) is South America's second longest river after the Amazon.\n• Iguazu Falls is located on the Iguazu River, a Paraná tributary — on the Argentina-Brazil border.\n• The Amazon River basin has ~10% of all species found on Earth — the highest biodiversity density of any river basin."
+    },
+    "hi": {
+      "display_text": "वैश्विक नदियों की विशेषताओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. दक्षिण अमेरिका में स्थित रियो दे ला प्लाटा को विश्व की सबसे चौड़ी नदी के रूप में वर्गीकृत किया गया है, इसलिए इसे अधिकतम नदी चौड़ाई की तुलना के लिए मानक संदर्भ के रूप में उपयोग किया जाता है।\n2. नाइल नदी, जब इसके सभी बेसिन सहायक नदियों सहित मापी जाती है, तो यह डेन्यूब की तुलना में अधिक देशों से होकर बहती है।\n3. अमेज़न नदी का जलग्रहण क्षेत्र लगभग 40% दक्षिण अमेरिकी महाद्वीप को कवर करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "दक्षिण अमेरिका में स्थित रियो दे ला प्लाटा को विश्व की सबसे चौड़ी नदी के रूप में वर्गीकृत किया गया है, इसलिए इसे अधिकतम नदी चौड़ाई की तुलना के लिए मानक संदर्भ के रूप में उपयोग किया जाता है।",
+          "verdict": "गलत",
+          "reason": "हालांकि रियो दे ला प्लाटा का मुहाना अत्यंत चौड़ा है (लगभग 220 किमी अपनी सबसे चौड़ी जगह पर), इसे तकनीकी रूप से नदी नहीं बल्कि एक मुहाना (estuary) माना जाता है। अमेज़न को सबसे चौड़ी नदी माना जाता है (बाढ़ के दौरान 48 किमी तक)। रियो दे ला प्लाटा चौड़ा है लेकिन इसे मुहाना के रूप में वर्गीकृत किया गया है।"
+        },
+        {
+          "statement": "नाइल नदी, जब इसके सभी बेसिन सहायक नदियों सहित मापी जाती है, तो यह डेन्यूब की तुलना में अधिक देशों से होकर बहती है।",
+          "verdict": "गलत",
+          "reason": "यह बेसिन देशों को नदी चैनल से होकर बहने वाले देशों से भ्रमित करता है। भले ही नाइल का बेसिन अधिक देशों को शामिल करता हो, 'सबसे अधिक देशों से होकर बहने वाली नदी' का प्रश्न मुख्य नदी चैनल से संबंधित है, और डेन्यूब का 10 देशों से होकर बहना मान्यता प्राप्त रिकॉर्ड है।"
+        },
+        {
+          "statement": "अमेज़न नदी का जलग्रहण क्षेत्र लगभग 40% दक्षिण अमेरिकी महाद्वीप को कवर करता है।",
+          "verdict": "सही",
+          "reason": "अमेज़न बेसिन लगभग 7 मिलियन वर्ग किलोमीटर क्षेत्र में फैला है — जो दक्षिण अमेरिका के कुल क्षेत्रफल का लगभग 40% है। यह कथन सही है और इसलिए गलत नहीं है।"
+        }
+      ],
+      "strong_distractor": "c — छात्र जो कथन 1 को आंशिक रूप से सही मानते हैं (रियो दे ला प्लाटा तकनीकी रूप से चौड़ा है) और कथन 2 को सही मानते हैं (नाइल बेसिन अधिक देशों को छूता है) वे विकल्प (c) — केवल 1 और 2 — चुन सकते हैं बिना यह पकड़े कि कथन 2 भी गलत है, या कथन 3 को बिना 40% आंकड़ा जांचे स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: रियो दे ला प्लाटा तकनीकी रूप से नदी नहीं बल्कि मुहाना है; अमेज़न सबसे चौड़ी नदी है; यह कथन मानक संदर्भ के रूप में गलत है — गलत।",
+        "कथन 2 का मूल्यांकन करें: डेन्यूब का 10 देशों से होकर बहना मान्यता प्राप्त रिकॉर्ड है; नाइल बेसिन के देश नदी चैनल के देश नहीं हैं — गलत।",
+        "कथन 3 का मूल्यांकन करें: अमेज़न बेसिन ≈ 7 मिलियन वर्ग किलोमीटर ≈ दक्षिण अमेरिका का 40% — सही (गलत नहीं)।",
+        "कथन 1 और 2 सही नहीं हैं → विकल्प (a) चुनें: केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 1 आंशिक-सत्य तंत्र का उपयोग करता है — रियो दे ला प्लाटा वास्तव में अत्यंत चौड़ा है (अमेज़न के मुहाने से भी चौड़ा), लेकिन इसे नदी नहीं बल्कि मुहाना माना जाता है। अमेज़न को विश्व की सबसे चौड़ी नदी के रूप में मान्यता प्राप्त है। यह भेद वर्गीकरण जानने की आवश्यकता है, केवल मापने की नहीं। कथन 2 'नाइल बेसिन पहल के देश' (11) को 'मुख्य नाइल चैनल से होकर बहने वाले देश' से भ्रमित करता है — यह UPSC भूगोल प्रश्नों में अक्सर लगाई जाने वाली सटीकता की जाल है।",
+      "final_explanation": "यह प्रश्न नदी के सर्वोच्चताओं को सटीकता से अलग करने की मांग करता है।\n\n• कथन 1 — गलत: रियो दे ला प्लाटा भौगोलिक रूप से अमेज़न से चौड़ा है (220 किमी तक), लेकिन इसे मुहाना (पाराना और उरुग्वे नदियों के संयुक्त मुहाने) माना जाता है, नदी नहीं। अमेज़न को विश्व की सबसे चौड़ी नदी के रूप में स्वीकार किया जाता है, जो बाढ़ के मौसम में 48 किमी तक पहुंचती है। नदी और मुहाना अलग-अलग वर्गीकृत होते हैं।\n• कथन 2 — गलत: डेन्यूब का मुख्य चैनल 10 संप्रभु देशों से होकर बहता है — नदी के मुख्य चैनल के लिए विश्व रिकॉर्ड। नाइल का बेसिन (जलग्रहण क्षेत्र) लगभग 11 देशों को शामिल कर सकता है, लेकिन 'से होकर बहना' मुख्य चैनल से संबंधित है, बेसिन सीमा से नहीं।\n• कथन 3 — सही (गलत नहीं): अमेज़न बेसिन लगभग 7 मिलियन वर्ग किलोमीटर क्षेत्र में फैला है — जो दक्षिण अमेरिका के 17.8 मिलियन वर्ग किलोमीटर क्षेत्रफल का लगभग 40% है। यह भूगोल साहित्य में प्रयुक्त मानक आंकड़ा है।\n\nमूल्य संवर्धन:\n• पराना नदी (रियो दे ला प्लाटा प्रणाली का हिस्सा) अमेज़न के बाद दक्षिण अमेरिका की दूसरी सबसे लंबी नदी है।\n• इगुआज़ू जलप्रपात इगुआज़ू नदी पर स्थित है, जो पराना की सहायक नदी है — अर्जेंटीना-ब्राज़ील सीमा पर।\n• अमेज़न नदी बेसिन में पृथ्वी पर पाए जाने वाले लगभग 10% सभी प्रजातियाँ हैं — किसी भी नदी बेसिन में सबसे अधिक जैव विविधता।"
+    }
+  },
+  {
+    "uuid": "b13cbffc-6cfb-4de4-bf8a-bf727571cba5",
+    "meta": {
+      "subject": "Geography",
+      "topic": "World Geography",
+      "sub_topic": "Major rivers of the world",
+      "concepts_used": [
+        "Brahmaputra-Tsangpo River: Antecedent River and Gorge Formation"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Yarlung Tsangpo Grand Canyon — world's deepest river canyon",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is recognised as the world's deepest river canyon?\n\n(a) Fish River Canyon, formed by the Fish River in Namibia\n(b) Grand Canyon, formed by the Colorado River in the United States\n(c) Colca Canyon, formed by the Colca River in Peru\n(d) Yarlung Tsangpo Grand Canyon, formed by the Brahmaputra in Tibet",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The Grand Canyon of the Colorado River in the USA is the world's most famous canyon; students recall this first and may not know the Yarlung Tsangpo gorge is deeper.",
+      "elimination_logic": [
+        "Eliminate (a): The Fish River Canyon in Namibia is Africa's largest canyon but nowhere near the world's deepest.",
+        "Eliminate (b): The Grand Canyon (Colorado River, USA) is approximately 1,800 m deep — impressive but shallower than the Yarlung Tsangpo gorge (~5,300 m from rim to river in places).",
+        "Eliminate (c): Colca Canyon (Peru) is one of the world's deepest canyons by some measurements but remains less deep than the Yarlung Tsangpo gorge.",
+        "Retain (d): The Yarlung Tsangpo Grand Canyon in Tibet, carved by the Brahmaputra as it bends around the Namcha Barwa peak, is the world's deepest river gorge — select (d)."
+      ],
+      "upsc_trap_explanation": "The Grand Canyon (Colorado River) is so deeply embedded in popular geography knowledge that students instinctively select it as the 'world's deepest canyon.' The Yarlung Tsangpo Grand Canyon, formed where the Brahmaputra makes its dramatic hairpin turn at the Namcha Barwa massif, descends approximately 5,300 metres from peak to river — significantly deeper. This is a high-yield UPSC geography trap that has appeared in similar forms in coaching material and examination practice.",
+      "final_explanation": "Canyon depth is a distinct geographic superlative from canyon length or width.\n\n• Option (a) — Fish River Canyon, Namibia: One of Africa's largest canyons by area, but not a global depth record holder.\n• Option (b) — Grand Canyon, Colorado River, USA: The world's most famous canyon (~446 km long, ~1,800 m deep) but not the deepest by vertical measurement.\n• Option (c) — Colca Canyon, Peru: Sometimes cited as very deep (~3,270 m in places), but still shallower than the Yarlung Tsangpo gorge.\n• Option (d) — Yarlung Tsangpo Grand Canyon, Tibet: Correct. The gorge carved by the Brahmaputra (Yarlung Tsangpo) around the Namcha Barwa peak reaches depths of approximately 5,300 metres from the surrounding peaks to the river surface — making it the world's deepest river gorge.\n\nValue Addition:\n• The Great Bend of the Yarlung Tsangpo is where China proposes to build a major dam — a major India-China geopolitical concern.\n• The gorge is ecologically one of the most isolated and biodiverse regions in Asia.\n• The antecedent nature of the Brahmaputra — older than the Himalayas — is what allowed it to carve this extraordinary gorge as the mountains rose."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी घाटी दुनिया की सबसे गहरी नदी घाटी के रूप में मान्यता प्राप्त है?\n\n(a) फिश नदी घाटी, नामीबिया में फिश नदी द्वारा निर्मित\n(b) ग्रैंड कैन्यन, संयुक्त राज्य अमेरिका में कोलोराडो नदी द्वारा निर्मित\n(c) कोल्का घाटी, पेरू में कोल्का नदी द्वारा निर्मित\n(d) यारलुंग त्सांगपो ग्रैंड कैन्यन, तिब्बत में ब्रह्मपुत्र द्वारा निर्मित",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The Grand Canyon of the Colorado River in the USA is the world's most famous canyon; students recall this first and may not know the Yarlung Tsangpo gorge is deeper.",
+      "elimination_logic": [
+        "(a) को खारिज करें: नामीबिया में फिश नदी घाटी अफ्रीका की सबसे बड़ी घाटी है लेकिन दुनिया की सबसे गहरी घाटी नहीं है।",
+        "(b) को खारिज करें: ग्रैंड कैन्यन (कोलोराडो नदी, यूएसए) लगभग 1,800 मीटर गहरा है — प्रभावशाली है लेकिन यारलुंग त्सांगपो घाटी (~5,300 मीटर किनारे से नदी तक) से कम गहरा है।",
+        "(c) को खारिज करें: कोल्का कैन्यन (पेरू) कुछ मापों के अनुसार दुनिया की सबसे गहरी घाटियों में से एक है लेकिन यारलुंग त्सांगपो घाटी से कम गहरी है।",
+        "(d) को बनाए रखें: तिब्बत में यारलुंग त्सांगपो ग्रैंड कैन्यन, जो ब्रह्मपुत्र द्वारा नामचा बारवा शिखर के चारों ओर मुड़ते हुए बना है, दुनिया की सबसे गहरी नदी घाटी है — अतः (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "ग्रैंड कैन्यन (कोलोराडो नदी) लोकप्रिय भूगोल ज्ञान में इतना गहराई से समाया हुआ है कि छात्र स्वाभाविक रूप से इसे 'दुनिया की सबसे गहरी घाटी' के रूप में चुन लेते हैं। यारलुंग त्सांगपो ग्रैंड कैन्यन, जो ब्रह्मपुत्र के नामचा बारवा पर्वत पर नाटकीय मोड़ के स्थान पर बना है, लगभग 5,300 मीटर की गहराई तक उतरता है — जो काफी अधिक गहरा है। यह UPSC भूगोल का एक उच्च-प्रभाव वाला जाल है जो कोचिंग सामग्री और परीक्षा अभ्यास में इसी तरह के रूपों में सामने आया है।",
+      "final_explanation": "घाटी की गहराई घाटी की लंबाई या चौड़ाई से अलग एक भौगोलिक श्रेष्ठता है।\n\n• विकल्प (a) — फिश नदी घाटी, नामीबिया: क्षेत्रफल के हिसाब से अफ्रीका की सबसे बड़ी घाटियों में से एक, लेकिन वैश्विक गहराई रिकॉर्ड धारक नहीं।\n• विकल्प (b) — ग्रैंड कैन्यन, कोलोराडो नदी, यूएसए: दुनिया की सबसे प्रसिद्ध घाटी (~446 किमी लंबी, ~1,800 मीटर गहरी) लेकिन ऊर्ध्वाधर माप से सबसे गहरी नहीं।\n• विकल्प (c) — कोल्का घाटी, पेरू: कभी-कभी बहुत गहरी (~3,270 मीटर कुछ स्थानों पर) बताई जाती है, लेकिन यारलुंग त्सांगपो घाटी से कम गहरी।\n• विकल्प (d) — यारलुंग त्सांगपो ग्रैंड कैन्यन, तिब्बत: सही। ब्रह्मपुत्र (यारलुंग त्सांगपो) द्वारा नामचा बारवा शिखर के चारों ओर बनाई गई यह घाटी आसपास के शिखरों से नदी की सतह तक लगभग 5,300 मीटर गहरी है — जिससे यह दुनिया की सबसे गहरी नदी घाटी बनती है।\n\nमूल्य संवर्धन:\n• यारलुंग त्सांगपो का बड़ा मोड़ वह स्थान है जहाँ चीन एक बड़ा बांध बनाने का प्रस्ताव रखता है — जो भारत-चीन के भू-राजनीतिक संबंधों में एक प्रमुख चिंता का विषय है।\n• यह घाटी एशिया के सबसे पृथक और जैव विविधता से भरपूर क्षेत्रों में से एक है।\n• ब्रह्मपुत्र की पूर्ववर्ती प्रकृति — जो हिमालय से भी पुरानी है — ने इसे पर्वतों के उठने के दौरान इस असाधारण घाटी को काटने की अनुमति दी।"
+    }
+  }
+]

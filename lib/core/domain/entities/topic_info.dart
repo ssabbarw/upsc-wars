@@ -2,8 +2,8 @@ import 'accuracy_display_tier.dart';
 
 class TopicInfo {
   const TopicInfo({
-    required this.topicSlug,
-    required this.subjectSlug,
+    required this.topic,
+    required this.subject,
     required this.displayName,
     required this.questionCount,
     required this.attemptCount,
@@ -11,8 +11,8 @@ class TopicInfo {
     required this.accuracyTier,
   });
 
-  final String topicSlug;
-  final String subjectSlug;
+  final String topic;
+  final String subject;
   final String displayName;
   final int questionCount;
   final int attemptCount;

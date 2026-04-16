@@ -1,0 +1,1359 @@
+[
+  {
+    "uuid": "fcef826d-4b02-4b6e-b54a-71c874a7c681",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Scheme: Origin, Genesis and Institutional Architects"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "KCC origin: R.V. Gupta Committee and NABARD design",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Kisan Credit Card scheme, launched in 1998, was designed as a model scheme primarily by which of the following institutions?\n\n(a) Reserve Bank of India\n(b) National Bank for Agriculture and Rural Development\n(c) Planning Commission of India\n(d) Ministry of Agriculture and Farmers Welfare",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because RBI is prominently associated with agricultural credit regulation, leading students to attribute the KCC model scheme design to RBI rather than NABARD.",
+      "elimination_logic": [
+        "Eliminate option (a): RBI circulated the model scheme jointly with NABARD but the design mandate was with NABARD, not RBI alone.",
+        "Eliminate option (c): The Planning Commission recommended rural development priorities broadly but was not the architect of the KCC scheme.",
+        "Eliminate option (d): The Ministry of Agriculture issues policy directives but the KCC model scheme was a financial sector initiative routed through NABARD."
+      ],
+      "upsc_trap_explanation": "Students familiar with agricultural finance know RBI regulates banks and also circulated the KCC scheme. This creates a false attribution — the R.V. Gupta Committee that recommended KCC reported to NABARD, and NABARD was the designing institution. The trap exploits the fact that both RBI and NABARD were involved, but their roles differed: NABARD designed the model scheme while RBI/NABARD jointly circulated it to implementing banks.",
+      "final_explanation": "The Kisan Credit Card scheme was launched in 1998 following the recommendations of the R.V. Gupta Committee, which was constituted by NABARD. NABARD designed the model scheme, which was then circulated to implementing institutions — commercial banks, Regional Rural Banks, and cooperative banks.\n\n• Option (a) — Incorrect: RBI co-circulated the scheme but did not design it; the design mandate rested with NABARD.\n• Option (b) — Correct: NABARD, based on the R.V. Gupta Committee report, designed the KCC model scheme.\n• Option (c) — Incorrect: The Planning Commission had no role in designing the KCC scheme.\n• Option (d) — Incorrect: The Ministry of Agriculture is a policy body; financial scheme design in this domain belongs to NABARD.\n\nValue Addition:\n• KCC is not a government scheme per se but a 'model scheme' — implementing banks adapt it within NABARD/RBI guidelines.\n• R.V. Gupta Committee (1998) is the foundational reference for KCC; confusing it with other committees is a recurring trap.\n• Post-2012 revamp converted the paper KCC into a RuPay-enabled smart debit card."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड योजना, जो 1998 में शुरू की गई थी, मुख्य रूप से निम्नलिखित में से किस संस्था द्वारा एक मॉडल योजना के रूप में डिजाइन की गई थी?\n\n(a) भारतीय रिज़र्व बैंक\n(b) राष्ट्रीय कृषि और ग्रामीण विकास बैंक\n(c) भारत का योजना आयोग\n(d) कृषि और किसान कल्याण मंत्रालय",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि RBI कृषि ऋण विनियमन से प्रमुख रूप से जुड़ा है, जिससे छात्र KCC मॉडल योजना के डिजाइन को NABARD के बजाय RBI से जोड़ देते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: RBI ने NABARD के साथ मिलकर मॉडल योजना का प्रचार किया था लेकिन डिजाइन का दायित्व केवल NABARD का था, RBI का अकेला नहीं।",
+        "विकल्प (c) को हटाएं: योजना आयोग ने ग्रामीण विकास प्राथमिकताओं की सिफारिश की थी लेकिन KCC योजना का निर्माता नहीं था।",
+        "विकल्प (d) को हटाएं: कृषि मंत्रालय नीति निर्देश जारी करता है लेकिन KCC मॉडल योजना एक वित्तीय क्षेत्र की पहल थी जो NABARD के माध्यम से संचालित हुई।"
+      ],
+      "upsc_trap_explanation": "कृषि वित्त से परिचित छात्र जानते हैं कि RBI बैंकों को नियंत्रित करता है और KCC योजना का प्रचार भी किया। इससे एक गलत धारणा बनती है — R.V. Gupta समिति जिसने KCC की सिफारिश की थी, NABARD को रिपोर्ट करती थी, और NABARD ही डिजाइनिंग संस्था थी। यह जाल इस तथ्य का उपयोग करता है कि RBI और NABARD दोनों शामिल थे, लेकिन उनकी भूमिकाएँ अलग थीं: NABARD ने मॉडल योजना डिजाइन की जबकि RBI/NABARD ने इसे लागू करने वाले बैंकों तक मिलकर पहुँचाया।",
+      "final_explanation": "किसान क्रेडिट कार्ड योजना 1998 में R.V. Gupta समिति की सिफारिशों के बाद शुरू की गई थी, जिसे NABARD ने गठित किया था। NABARD ने मॉडल योजना डिजाइन की, जिसे फिर लागू करने वाली संस्थाओं — वाणिज्यिक बैंक, क्षेत्रीय ग्रामीण बैंक, और सहकारी बैंकों को प्रचारित किया गया।\n\n• विकल्प (a) — गलत: RBI ने योजना का सह-प्रचार किया लेकिन इसे डिजाइन नहीं किया; डिजाइन का दायित्व NABARD का था।\n• विकल्प (b) — सही: NABARD ने R.V. Gupta समिति की रिपोर्ट के आधार पर KCC मॉडल योजना डिजाइन की।\n• विकल्प (c) — गलत: योजना आयोग का KCC योजना डिजाइन में कोई योगदान नहीं था।\n• विकल्प (d) — गलत: कृषि मंत्रालय एक नीति निकाय है; इस क्षेत्र में वित्तीय योजना डिजाइन NABARD की जिम्मेदारी है।\n\nमूल्य संवर्धन:\n• KCC स्वयं में कोई सरकारी योजना नहीं है बल्कि एक 'मॉडल योजना' है — लागू करने वाले बैंक इसे NABARD/RBI के दिशानिर्देशों के भीतर अनुकूलित करते हैं।\n• R.V. Gupta समिति (1998) KCC के लिए आधारभूत संदर्भ है; इसे अन्य समितियों से भ्रमित करना एक सामान्य जाल है।\n• 2012 के बाद के पुनर्गठन ने कागजी KCC को RuPay-सक्षम स्मार्ट डेबिट कार्ड में परिवर्तित कर दिया।"
+    }
+  },
+  {
+    "uuid": "ade8bb0a-d854-4d57-8602-f616a61ea9ac",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Eligibility Criteria for KCC: Who Qualifies and Who Doesn't"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "KCC eligibility — tenant farmers and landless labour exclusion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding eligibility for the Kisan Credit Card (KCC) scheme:\n\n1. Oral lessees and share croppers are eligible for a Kisan Credit Card even without formal land ownership documents.\n2. Landless agricultural labourers who work on others' land are eligible for a KCC provided they are members of a Self-Help Group.\n3. There is no minimum land holding requirement for a tenant farmer to obtain a Kisan Credit Card.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Oral lessees and share croppers are eligible for a Kisan Credit Card even without formal land ownership documents.",
+          "verdict": "Correct",
+          "reason": "The KCC scheme explicitly covers oral lessees and share croppers as eligible categories; formal land titles are not a prerequisite for eligibility."
+        },
+        {
+          "statement": "Landless agricultural labourers who work on others' land are eligible for a KCC provided they are members of a Self-Help Group.",
+          "verdict": "Incorrect",
+          "reason": "Landless agricultural labourers are categorically excluded from KCC eligibility regardless of SHG membership; SHG/JLG eligibility applies to farmers, not pure agricultural wage workers."
+        },
+        {
+          "statement": "There is no minimum land holding requirement for a tenant farmer to obtain a Kisan Credit Card.",
+          "verdict": "Correct",
+          "reason": "The KCC model scheme does not prescribe a minimum land holding for tenant farmers — eligibility is based on cultivating status, not land ownership area."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is deceptive because SHGs are indeed a channel for KCC access, tempting students to believe that any agriculturally linked individual in an SHG qualifies, when in fact the SHG/JLG route applies to farmers, not to landless labourers.",
+      "elimination_logic": [
+        "Verify Statement 1: oral lessees and share croppers are named eligible categories in the KCC scheme — Statement 1 is correct.",
+        "Verify Statement 2: landless agricultural labourers are a critical exclusion from KCC; SHG membership does not override this exclusion — Statement 2 is incorrect.",
+        "Verify Statement 3: no minimum land holding is prescribed for tenant farmers under the KCC model scheme — Statement 3 is correct.",
+        "Only Statements 1 and 3 are correct, pointing to option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the primary trap. Students know SHGs are a KCC delivery channel and may conclude that SHG membership unlocks access for any rural poor, including landless labourers. The scheme, however, targets cultivators — those who actually cultivate land in some capacity. Pure agricultural wage labour, which has no cultivation relationship with land, remains outside the scheme's ambit irrespective of group membership.",
+      "final_explanation": "KCC eligibility is broader than ownership-based credit — it deliberately includes non-owner cultivators to address tenancy-based exclusion from formal credit.\n\n• Statement 1 — Correct: Oral lessees and share croppers are named beneficiary categories. Their lack of formal documents is acknowledged; states like Andhra Pradesh and Telangana issue Loan Eligibility Cards to bridge this gap.\n• Statement 2 — Incorrect: Landless agricultural labourers remain outside the KCC framework. SHG/JLG access is for smallholder or tenant farmers, not for pure wage labour with no cultivation role.\n• Statement 3 — Correct: Tenant farmer eligibility has no minimum land holding threshold — what matters is the cultivation relationship, not acreage.\n\nValue Addition:\n• Post-2018, fishermen and animal husbandry farmers were added as eligible categories, expanding beyond crop cultivation.\n• The de facto exclusion of tenant farmers despite de jure eligibility is a classic UPSC-tested structural gap.\n• Women SHG members can access KCC through JLG mechanism without individual collateral — relevant to the gender dimension."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड (KCC) योजना के लिए पात्रता के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. मौखिक पट्टेदार और साझेदार किसान बिना औपचारिक भूमि स्वामित्व दस्तावेजों के भी किसान क्रेडिट कार्ड के पात्र हैं।\n2. जो भूमिहीन कृषि मजदूर दूसरों की जमीन पर काम करते हैं, वे स्वयं सहायता समूह के सदस्य होने पर KCC के पात्र हैं।\n3. किसान क्रेडिट कार्ड प्राप्त करने के लिए किरायेदार किसान के लिए न्यूनतम भूमि धारणा की कोई आवश्यकता नहीं है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मौखिक पट्टेदार और साझेदार किसान बिना औपचारिक भूमि स्वामित्व दस्तावेजों के भी किसान क्रेडिट कार्ड के पात्र हैं।",
+          "verdict": "सही है",
+          "reason": "KCC योजना स्पष्ट रूप से मौखिक पट्टेदारों और साझेदार किसानों को पात्र श्रेणियों के रूप में शामिल करती है; पात्रता के लिए औपचारिक भूमि स्वामित्व आवश्यक नहीं है।"
+        },
+        {
+          "statement": "जो भूमिहीन कृषि मजदूर दूसरों की जमीन पर काम करते हैं, वे स्वयं सहायता समूह के सदस्य होने पर KCC के पात्र हैं।",
+          "verdict": "गलत है",
+          "reason": "भूमिहीन कृषि मजदूर KCC पात्रता से स्पष्ट रूप से बाहर हैं, चाहे वे SHG सदस्य हों या नहीं; SHG/JLG पात्रता किसानों के लिए है, शुद्ध कृषि मजदूरों के लिए नहीं।"
+        },
+        {
+          "statement": "किसान क्रेडिट कार्ड प्राप्त करने के लिए किरायेदार किसान के लिए न्यूनतम भूमि धारणा की कोई आवश्यकता नहीं है।",
+          "verdict": "सही है",
+          "reason": "KCC मॉडल योजना में किरायेदार किसानों के लिए न्यूनतम भूमि धारणा निर्धारित नहीं है — पात्रता खेती की स्थिति पर आधारित है, भूमि स्वामित्व क्षेत्र पर नहीं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि SHG वास्तव में KCC पहुँच का एक माध्यम है, जिससे छात्र यह मान सकते हैं कि SHG में कोई भी कृषि से जुड़ा व्यक्ति पात्र है, जबकि वास्तव में SHG/JLG मार्ग केवल किसानों के लिए है, भूमिहीन मजदूरों के लिए नहीं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: मौखिक पट्टेदार और साझेदार किसान KCC योजना में नामित पात्र श्रेणियाँ हैं — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: भूमिहीन कृषि मजदूर KCC से स्पष्ट रूप से बाहर हैं; SHG सदस्यता इस बहिष्कार को समाप्त नहीं करती — कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: KCC मॉडल योजना में किरायेदार किसानों के लिए न्यूनतम भूमि धारणा निर्धारित नहीं है — कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं, अतः विकल्प (c) सही है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 मुख्य जाल है। छात्र जानते हैं कि SHG KCC वितरण का माध्यम है और यह निष्कर्ष निकाल सकते हैं कि SHG सदस्यता किसी भी ग्रामीण गरीब, जिसमें भूमिहीन मजदूर भी शामिल हैं, के लिए पहुँच खोलती है। हालांकि योजना उन किसानों को लक्षित करती है जो किसी न किसी रूप में जमीन की खेती करते हैं। शुद्ध कृषि मजदूर, जिनका जमीन से कोई खेती संबंध नहीं है, समूह सदस्यता के बावजूद योजना के दायरे से बाहर रहते हैं।",
+      "final_explanation": "KCC पात्रता स्वामित्व आधारित क्रेडिट से व्यापक है — यह जानबूझकर गैर-स्वामी कृषकों को शामिल करती है ताकि पट्टेदारी आधारित बहिष्कार को दूर किया जा सके।\n\n• कथन 1 — सही: मौखिक पट्टेदार और साझेदार किसान नामित लाभार्थी श्रेणियाँ हैं। उनके औपचारिक दस्तावेजों की कमी को स्वीकार किया गया है; आंध्र प्रदेश और तेलंगाना जैसे राज्यों में इस अंतर को पाटने के लिए ऋण पात्रता कार्ड जारी किए जाते हैं।\n• कथन 2 — गलत: भूमिहीन कृषि मजदूर KCC ढांचे के बाहर हैं। SHG/JLG पहुँच छोटे या किरायेदार किसानों के लिए है, शुद्ध मजदूरों के लिए नहीं जिनका खेती में कोई भूमिका नहीं है।\n• कथन 3 — सही: किरायेदार किसानों के लिए न्यूनतम भूमि धारणा की कोई सीमा नहीं है — महत्वपूर्ण है खेती का संबंध, न कि क्षेत्रफल।\n\nमूल्य संवर्धन:\n• 2018 के बाद, मछुआरे और पशुपालक किसानों को पात्र श्रेणियों में जोड़ा गया, जो फसल खेती से परे विस्तार है।\n• कानूनी पात्रता के बावजूद किरायेदार किसानों का व्यवहारिक बहिष्कार UPSC में परीक्षण किया गया एक संरचनात्मक अंतराल है।\n• महिला SHG सदस्य बिना व्यक्तिगत जमानत के JLG तंत्र के माध्यम से KCC प्राप्त कर सकती हैं — जो लैंगिक आयाम से संबंधित है।"
+    }
+  },
+  {
+    "uuid": "c6a03522-69e7-430b-bfd4-6e4b6df3c8b2",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Validity Period and Renewal Mechanism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "KCC 5-year card validity vs. shorter repayment schedules for drawals",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A farmer was sanctioned a Kisan Credit Card in April 2023 with a credit limit of ₹1.5 lakh. The card is valid for 5 years. In October 2023, she withdrew ₹80,000 for her Kharif crop. By March 2024, she had not repaid this amount. Her bank is conducting its annual review of the KCC account.\n\nWhich of the following correctly describes the bank's position and options under the KCC framework?\n\n(a) Since the KCC account is valid for 5 years, the bank cannot classify the amount as overdue until 2028.\n(b) The bank must automatically waive the overdue amount as crop loan defaults within the validity period are exempt from NPA norms.\n(c) The bank may flag the drawal as overdue on its annual review and has the authority to reduce or restrict the credit limit based on adverse assessment.\n(d) The repayment period for any drawal under a KCC automatically extends to match the card's 5-year validity period.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — A student who knows KCC has a 5-year validity may assume any activity within 5 years is automatically valid without recognising that individual loan drawals have their own, shorter repayment cycles.",
+      "elimination_logic": [
+        "The scenario involves a farmer's KCC account — identify which principle governs repayment schedules for individual drawals vs. overall account validity.",
+        "Eliminate option (a): the 5-year validity refers to the KCC account/card, not to individual drawals — short-term crop loan drawals must be repaid within 12 months.",
+        "Eliminate option (b): banks do not automatically waive defaults within the 5-year window — annual reviews can trigger limit reduction or cancellation.",
+        "Eliminate option (d): there is no provision for automatic extension of repayment beyond the crop season without bank approval — this would misrepresent the revolving credit mechanism.",
+        "Option (c) correctly states that the KCC is a revolving credit facility where the 5-year card validity and the individual drawal repayment schedule (12 months for short-term) are separate — option (c) is correct."
+      ],
+      "upsc_trap_explanation": "The trap here is a scope-extension error — students know '5 years' is the KCC validity and incorrectly extend this to mean all repayments have a 5-year window. The KCC structure has two timelines: the account is valid for 5 years, but each short-term crop loan drawal must be repaid within 12 months. The revolving credit feature means a farmer can re-draw after repaying, not that repayment is deferred to year 5.",
+      "final_explanation": "A farmer holds a KCC with a credit limit of ₹1.5 lakh sanctioned in April 2023. The KCC account has a 5-year validity. In October 2023, she withdraws ₹80,000 for the Kharif crop. By March 2024, she has not repaid this amount. Under KCC norms, the bank's most appropriate action is described in option (c).\n\nApplicable principle: KCC is a revolving credit facility. While the card/account is valid for 5 years, individual short-term crop loan drawals carry a 12-month repayment obligation. Non-repayment within this cycle can trigger NPA classification (after 2 crop seasons for short-duration crops) and reduces the available revolving limit.\n\n• Option (a) — Incorrect: The 5-year validity governs the account, not individual drawal repayment timelines.\n• Option (b) — Incorrect: Banks do not automatically waive defaults — they may restructure under natural calamity conditions but not routinely.\n• Option (c) — Correct: The bank can flag the unpaid drawal as potentially overdue and, on annual review, reduce or restrict the credit limit.\n• Option (d) — Incorrect: Automatic extension without bank approval misrepresents the KCC mechanism.\n\nValue Addition:\n• NPA for short-duration crop loans under KCC triggers after 2 crop seasons of non-payment — not the standard 90-day norm.\n• Annual review by the bank is a built-in feature, distinct from the 5-year overall card validity.\n• Restructuring of KCC accounts during natural calamities is permitted with government interest subvention continuation."
+    },
+    "hi": {
+      "display_text": "एक किसान को अप्रैल 2023 में ₹1.5 लाख की क्रेडिट सीमा के साथ किसान क्रेडिट कार्ड जारी किया गया था। कार्ड की वैधता 5 वर्ष की है। अक्टूबर 2023 में उसने अपनी खरीफ फसल के लिए ₹80,000 निकाले। मार्च 2024 तक उसने यह राशि चुकाई नहीं। उसका बैंक KCC खाते की वार्षिक समीक्षा कर रहा है।\n\nनिम्नलिखित में से कौन-सा विकल्प बैंक की स्थिति और KCC ढांचे के तहत विकल्पों का सही वर्णन करता है?\n\n(a) चूंकि KCC खाता 5 वर्षों के लिए वैध है, बैंक 2028 तक इस राशि को ओवरड्यू नहीं मान सकता।\n(b) बैंक को स्वचालित रूप से बकाया राशि माफ़ करनी चाहिए क्योंकि वैधता अवधि के भीतर फसल ऋण डिफॉल्ट NPA नियमों से मुक्त हैं।\n(c) बैंक वार्षिक समीक्षा पर निकासी को ओवरड्यू के रूप में चिह्नित कर सकता है और नकारात्मक आकलन के आधार पर क्रेडिट सीमा को कम या प्रतिबंधित कर सकता है।\n(d) KCC के तहत किसी भी निकासी की पुनर्भुगतान अवधि स्वचालित रूप से कार्ड की 5-वर्षीय वैधता अवधि तक बढ़ जाती है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — एक छात्र जो जानता है कि KCC की वैधता 5 वर्ष की होती है, वह यह मान सकता है कि 5 वर्षों के भीतर कोई भी गतिविधि स्वचालित रूप से वैध है, बिना यह समझे कि व्यक्तिगत ऋण निकासी की अपनी, छोटी पुनर्भुगतान अवधि होती है।",
+      "elimination_logic": [
+        "परिदृश्य में एक किसान का KCC खाता शामिल है — यह पहचानें कि व्यक्तिगत निकासी के पुनर्भुगतान कार्यक्रम और समग्र खाते की वैधता के लिए कौन सा सिद्धांत लागू होता है।",
+        "विकल्प (a) को हटाएं: 5-वर्ष की वैधता KCC खाते/कार्ड के लिए है, व्यक्तिगत निकासी के लिए नहीं — अल्पकालिक फसल ऋण निकासी को 12 महीनों के भीतर चुकाना आवश्यक है।",
+        "विकल्प (b) को हटाएं: बैंक 5-वर्ष की अवधि के भीतर डिफॉल्ट को स्वचालित रूप से माफ़ नहीं करते — वार्षिक समीक्षा सीमा में कटौती या रद्दीकरण कर सकती है।",
+        "विकल्प (d) को हटाएं: बैंक की मंजूरी के बिना फसल ऋण की अवधि के बाद पुनर्भुगतान की स्वचालित अवधि विस्तार का प्रावधान नहीं है — यह रिवॉल्विंग क्रेडिट तंत्र का गलत प्रतिनिधित्व होगा।",
+        "विकल्प (c) सही है क्योंकि KCC एक रिवॉल्विंग क्रेडिट सुविधा है जहाँ 5-वर्ष का कार्ड वैधता और व्यक्तिगत निकासी का पुनर्भुगतान कार्यक्रम (अल्पकालिक के लिए 12 महीने) अलग-अलग हैं — अतः विकल्प (c) सही है।"
+      ],
+      "upsc_trap_explanation": "यहाँ जालसाजी एक दायरा-विस्तार त्रुटि है — छात्र जानते हैं कि '5 वर्ष' KCC की वैधता है और इसे गलत तरीके से सभी पुनर्भुगतान के लिए 5-वर्ष की अवधि मान लेते हैं। KCC संरचना में दो समयरेखा होती हैं: खाता 5 वर्षों के लिए वैध होता है, लेकिन प्रत्येक अल्पकालिक फसल ऋण निकासी को 12 महीनों के भीतर चुकाना होता है। रिवॉल्विंग क्रेडिट सुविधा का अर्थ है कि किसान पुनर्भुगतान के बाद पुनः निकासी कर सकता है, न कि पुनर्भुगतान को वर्ष 5 तक स्थगित किया गया हो।",
+      "final_explanation": "एक किसान को अप्रैल 2023 में ₹1.5 लाख की क्रेडिट सीमा के साथ किसान क्रेडिट कार्ड (KCC) स्वीकृत हुआ। KCC खाता 5 वर्षों के लिए वैध है। अक्टूबर 2023 में उसने खरीफ फसल के लिए ₹80,000 निकाले। मार्च 2024 तक उसने यह राशि चुकाई नहीं। KCC खाता की वार्षिक समीक्षा के दौरान बैंक की सबसे उपयुक्त कार्रवाई विकल्प (c) में वर्णित है।\n\nलागू सिद्धांत: KCC एक रिवॉल्विंग क्रेडिट सुविधा है। जबकि कार्ड/खाता 5 वर्षों के लिए वैध है, व्यक्तिगत अल्पकालिक फसल ऋण निकासी के लिए 12 महीने की पुनर्भुगतान अवधि होती है। इस अवधि में पुनर्भुगतान न होने पर NPA वर्गीकरण (अल्पकालिक फसलों के लिए 2 फसल मौसम के बाद) हो सकता है और उपलब्ध रिवॉल्विंग सीमा कम हो जाती है।\n\n• विकल्प (a) — गलत: 5-वर्ष की वैधता खाते के लिए है, व्यक्तिगत निकासी पुनर्भुगतान समयसीमा के लिए नहीं।\n• विकल्प (b) — गलत: बैंक डिफॉल्ट को स्वचालित रूप से माफ़ नहीं करता — प्राकृतिक आपदा की स्थिति में पुनर्गठन हो सकता है, लेकिन नियमित रूप से नहीं।\n• विकल्प (c) — सही: बैंक वार्षिक समीक्षा पर बकाया निकासी को ओवरड्यू के रूप में चिह्नित कर सकता है और नकारात्मक आकलन के आधार पर क्रेडिट सीमा को कम या प्रतिबंधित कर सकता है।\n• विकल्प (d) — गलत: बैंक की मंजूरी के बिना स्वचालित विस्तार KCC तंत्र का गलत प्रतिनिधित्व है।\n\nमूल्य संवर्धन:\n• KCC के तहत अल्पकालिक फसल ऋण के लिए NPA 2 फसल मौसम के गैर-भुगतान के बाद लागू होता है — मानक 90-दिन नियम नहीं।\n• बैंक द्वारा वार्षिक समीक्षा एक अंतर्निहित सुविधा है, जो 5-वर्ष की समग्र कार्ड वैधता से अलग है।\n• प्राकृतिक आपदाओं के दौरान KCC खातों का पुनर्गठन सरकार की ब्याज सबवेंशन जारी रखने के साथ अनुमत है।"
+    }
+  },
+  {
+    "uuid": "9bc7a913-ff8a-40fe-9660-7bc7d45cf6b7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC and Priority Sector Lending (PSL) Classification",
+        "Collateral Security Norms under KCC"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "KCC collateral-free limit vs. CGTMSE — PSL classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following features are correctly associated with the Kisan Credit Card scheme within the Priority Sector Lending framework. Which one is NOT correctly associated?\n\n(a) KCC loans are classified under the 'Agriculture' sub-category of Priority Sector Lending.\n(b) KCC agricultural loans qualifying for PSL are covered under the Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) for collateral-free access.\n(c) KCC crop loans up to ₹1.6 lakh do not require collateral — hypothecation of crops is considered sufficient security.\n(d) Lending under KCC by scheduled commercial banks contributes toward the 18% agricultural sub-target of Adjusted Net Bank Credit.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) referencing CGTMSE sounds like it could apply to KCC agricultural loans because both are collateral-free credit instruments, making the conflation feel plausible to a partially prepared student.",
+      "elimination_logic": [
+        "Identify which options describe features directly applicable to KCC agricultural loans under PSL norms.",
+        "Options (a), (c), and (d) relate to credit access, financial inclusion, and lending norms — evaluate which one does NOT belong to the KCC agricultural loan framework specifically.",
+        "CGTMSE (Credit Guarantee Fund Trust for Micro and Small Enterprises) is specifically for MSME sector loans — it does NOT apply to KCC agricultural loans; KCC crop loans up to ₹1.6 lakh are collateral-free on different norms.",
+        "Option (b) is the odd one — KCC agricultural loans qualifying under PSL are classified under the 'Agriculture' sub-category, not under 'Micro and Small Enterprises' sub-category."
+      ],
+      "upsc_trap_explanation": "This question exploits the conflation between two collateral-free credit instruments: KCC crop loans (up to ₹1.6 lakh, collateral-free under agriculture PSL norms) and CGTMSE-guaranteed MSME loans (also collateral-free but under a different guarantee structure). Students familiar with both may conflate them, especially because both feature in financial inclusion discussions. The critical distinction is that CGTMSE is specifically an MSME credit guarantee scheme and does not extend to KCC agricultural loans.",
+      "final_explanation": "KCC loans occupy a specific position within the PSL framework, and the collateral-free provision has its own distinct basis — not shared with MSME credit guarantees.\n\n• Option (a) — Belongs: KCC loans are classified under PSL 'Agriculture' sub-category and contribute to both direct and indirect agriculture sub-targets.\n• Option (b) — Does NOT belong: KCC agricultural loans qualifying as PSL are categorised under 'Agriculture', not 'Micro and Small Enterprises'. CGTMSE governs MSME credit guarantees — it does not apply to KCC crop loans.\n• Option (c) — Belongs: The collateral-free provision (up to ₹1.6 lakh) for KCC agricultural loans is a defined feature under the KCC model scheme norms.\n• Option (d) — Belongs: KCC lending by banks counts toward the 18% ANBC agricultural PSL target.\n\nValue Addition:\n• CGTMSE is managed by SIDBI and the Government of India — distinct from the agricultural credit guarantee framework.\n• The collateral-free limit for KCC crop loans (₹1.6 lakh) differs from the general MSME collateral-free limit under CGTMSE — do not conflate these.\n• PSL target: 18% of Adjusted Net Bank Credit (ANBC) for agriculture; sub-targets exist for small/marginal farmers."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन विशेषताएँ किसान क्रेडिट कार्ड योजना को प्राथमिक क्षेत्र ऋण (Priority Sector Lending) ढांचे के अंतर्गत सही रूप से संबद्ध करती हैं। इनमें से कौन-सी सही रूप से संबद्ध नहीं है?\n\n(a) KCC ऋण प्राथमिक क्षेत्र ऋण के 'कृषि' उप-श्रेणी के अंतर्गत वर्गीकृत हैं।\n(b) PSL के लिए योग्य KCC कृषि ऋण क्रेडिट गारंटी फंड ट्रस्ट फॉर माइक्रो एंड स्मॉल एंटरप्राइजेज (CGTMSE) के तहत बिना जमानत के ऋण के लिए आते हैं।\n(c) KCC फसल ऋण ₹1.6 लाख तक बिना जमानत के होते हैं — फसलों की हाइपोथिकेशन पर्याप्त सुरक्षा मानी जाती है।\n(d) अनुसूचित वाणिज्यिक बैंकों द्वारा KCC के तहत ऋण देना समायोजित शुद्ध बैंक क्रेडिट के 18% कृषि उप-लक्ष्य में योगदान करता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) में CGTMSE का उल्लेख KCC कृषि ऋणों पर लागू हो सकता है ऐसा लगता है क्योंकि दोनों ही बगैर जमानत के क्रेडिट उपकरण हैं, जिससे आंशिक रूप से तैयार छात्र के लिए भ्रम संभव हो जाता है।",
+      "elimination_logic": [
+        "पहचानें कि कौन से विकल्प सीधे KCC कृषि ऋणों के PSL मानदंडों के अंतर्गत लागू होते हैं।",
+        "विकल्प (a), (c), और (d) ऋण पहुँच, वित्तीय समावेशन, और ऋण मानदंडों से संबंधित हैं — मूल्यांकन करें कि इनमें से कौन सा विशेष रूप से KCC कृषि ऋण ढांचे से संबंधित नहीं है।",
+        "CGTMSE (क्रेडिट गारंटी फंड ट्रस्ट फॉर माइक्रो एंड स्मॉल एंटरप्राइजेज) विशेष रूप से MSME क्षेत्र के ऋणों के लिए है — यह KCC कृषि ऋणों पर लागू नहीं होता; KCC फसल ऋण ₹1.6 लाख तक अलग मानदंडों पर बिना जमानत के होते हैं।",
+        "विकल्प (b) अलग है — PSL के अंतर्गत KCC कृषि ऋण 'कृषि' उप-श्रेणी में वर्गीकृत होते हैं, न कि 'सूक्ष्म और लघु उद्यम' उप-श्रेणी में।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न दो बिना जमानत वाले क्रेडिट उपकरणों के बीच भ्रम का लाभ उठाता है: KCC फसल ऋण (₹1.6 लाख तक, कृषि PSL मानदंडों के तहत बिना जमानत) और CGTMSE-गारंटीकृत MSME ऋण (जो भी बिना जमानत हैं लेकिन अलग गारंटी संरचना के तहत)। दोनों वित्तीय समावेशन चर्चाओं में आते हैं, इसलिए परिचित छात्र इन्हें भ्रमित कर सकते हैं। मुख्य अंतर यह है कि CGTMSE विशेष रूप से MSME क्रेडिट गारंटी योजना है और यह KCC कृषि ऋणों तक नहीं फैली है।",
+      "final_explanation": "KCC ऋण PSL ढांचे में एक विशिष्ट स्थान रखते हैं, और बिना जमानत की व्यवस्था की अपनी अलग आधारशिला है — जो MSME क्रेडिट गारंटी से अलग है।\n\n• विकल्प (a) — संबंधित: KCC ऋण PSL के 'कृषि' उप-श्रेणी में वर्गीकृत हैं और सीधे व अप्रत्यक्ष कृषि उप-लक्ष्यों में योगदान करते हैं।\n• विकल्प (b) — संबंधित नहीं: PSL के अंतर्गत KCC कृषि ऋण 'कृषि' में वर्गीकृत हैं, न कि 'सूक्ष्म और लघु उद्यम' में। CGTMSE MSME क्रेडिट गारंटी को नियंत्रित करता है — यह KCC फसल ऋणों पर लागू नहीं होता।\n• विकल्प (c) — संबंधित: KCC कृषि ऋणों के लिए ₹1.6 लाख तक बिना जमानत की व्यवस्था KCC मॉडल योजना मानदंडों के तहत परिभाषित है।\n• विकल्प (d) — संबंधित: अनुसूचित वाणिज्यिक बैंकों द्वारा KCC ऋण 18% कृषि उप-लक्ष्य के लिए ANBC में गिना जाता है।\n\nमूल्य संवर्धन:\n• CGTMSE का प्रबंधन SIDBI और भारत सरकार द्वारा किया जाता है — जो कृषि ऋण गारंटी ढांचे से अलग है।\n• KCC फसल ऋणों के लिए बिना जमानत की सीमा (₹1.6 लाख) CGTMSE के सामान्य MSME बिना जमानत सीमा से भिन्न है — इन्हें भ्रमित न करें।\n• PSL लक्ष्य: कृषि के लिए समायोजित शुद्ध बैंक क्रेडिट (ANBC) का 18%; छोटे/सीमांत किसानों के लिए उप-लक्ष्य मौजूद हैं।"
+    }
+  },
+  {
+    "uuid": "8260b122-4684-439b-a331-5f8365cbed05",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "PM-KISAN and KCC Convergence: Saturation Drive"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "PM-KISAN and KCC different beneficiary universes",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the convergence between PM-KISAN and the Kisan Credit Card scheme:\n\nStatement 1: PM-KISAN beneficiaries are restricted to owner cultivators, whereas the Kisan Credit Card scheme can also be extended to tenant farmers and oral lessees.\nStatement 2: The simplified two-page application form introduced under the PM-KISAN and KCC convergence model is applicable to all KCC applicants, including those who are not PM-KISAN beneficiaries.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: PM-KISAN beneficiaries are restricted to owner cultivators, whereas the Kisan Credit Card scheme can also be extended to tenant farmers and oral lessees.",
+          "verdict": "Correct",
+          "reason": "PM-KISAN targets owner cultivators of cultivable land; KCC has a broader eligibility base including tenant farmers, oral lessees, and share croppers."
+        },
+        {
+          "statement": "Statement 2: The simplified two-page application form introduced under the PM-KISAN and KCC convergence model is applicable to all KCC applicants, including those who are not PM-KISAN beneficiaries.",
+          "verdict": "Incorrect",
+          "reason": "The simplified application form was specifically designed for PM-KISAN beneficiaries to ease their KCC onboarding — it is not universally applicable to all KCC applicants."
+        }
+      ],
+      "strong_distractor": "a — Students who know both the convergence model and the simplified application form exists may assume Statement 2 is also correct without recognising that the simplification was targeted at PM-KISAN beneficiaries specifically.",
+      "elimination_logic": [
+        "Verify Statement 1: PM-KISAN is explicitly for owner cultivators; KCC covers a broader set including tenants and oral lessees — Statement 1 is correct.",
+        "Verify Statement 2: the simplified 2-page form under the convergence drive was designed for PM-KISAN beneficiaries' KCC onboarding, not as a universal KCC application form — Statement 2 is incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits a scope-extension error. The simplified application form is a targeted administrative ease for PM-KISAN beneficiaries being onboarded to KCC. Students who recall the convergence campaign and the simplified form may extend its applicability to all KCC applicants — a logical but incorrect inference. The form simplification was a convergence-specific measure, not a scheme-wide reform.",
+      "final_explanation": "The PM-KISAN and KCC convergence model represents a two-pronged income support architecture, but the two schemes retain distinct beneficiary criteria.\n\n• Statement 1 — Correct: PM-KISAN is designed for owner cultivators of cultivable land and has specific landownership criteria. KCC, by contrast, extends to tenant farmers, oral lessees, and share croppers — making the two schemes' beneficiary universes overlap but not coincide.\n• Statement 2 — Incorrect: The 2-page simplified application form was a specific administrative intervention to facilitate KCC coverage for PM-KISAN beneficiaries who were not yet KCC holders. Standard KCC applications for other categories continue to follow the regular, more detailed format.\n\nValue Addition:\n• PM-KISAN provides ₹6,000 per year in direct income support; KCC provides revolving crop credit — together they address both income and liquidity gaps.\n• The KCC saturation drive aimed to ensure all PM-KISAN beneficiaries had access to credit — this is tracked as a convergence metric.\n• UPSC often tests the precise overlap and divergence between welfare schemes operating in the same domain — the PM-KISAN/KCC boundary is a classic such pair."
+    },
+    "hi": {
+      "display_text": "पीएम-किसान और किसान क्रेडिट कार्ड योजना के समन्वय के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: पीएम-किसान लाभार्थी केवल स्वामी कृषक तक सीमित हैं, जबकि किसान क्रेडिट कार्ड योजना को किरायेदार किसानों और मौखिक पट्टेदारों तक भी बढ़ाया जा सकता है।\nकथन 2: पीएम-किसान और केसीसी समन्वय मॉडल के तहत पेश किया गया सरल दो-पृष्ठीय आवेदन पत्र सभी केसीसी आवेदकों पर लागू होता है, जिनमें वे भी शामिल हैं जो पीएम-किसान लाभार्थी नहीं हैं।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: पीएम-किसान लाभार्थी केवल स्वामी कृषक तक सीमित हैं, जबकि किसान क्रेडिट कार्ड योजना को किरायेदार किसानों और मौखिक पट्टेदारों तक भी बढ़ाया जा सकता है।",
+          "verdict": "सही",
+          "reason": "पीएम-किसान का लक्ष्य कृषि योग्य भूमि के स्वामी कृषक हैं; केसीसी की पात्रता में किरायेदार किसान, मौखिक पट्टेदार और साझेदार भी शामिल हैं।"
+        },
+        {
+          "statement": "कथन 2: पीएम-किसान और केसीसी समन्वय मॉडल के तहत पेश किया गया सरल दो-पृष्ठीय आवेदन पत्र सभी केसीसी आवेदकों पर लागू होता है, जिनमें वे भी शामिल हैं जो पीएम-किसान लाभार्थी नहीं हैं।",
+          "verdict": "गलत",
+          "reason": "सरल आवेदन पत्र विशेष रूप से पीएम-किसान लाभार्थियों के लिए उनके केसीसी ऑनबोर्डिंग को आसान बनाने हेतु डिज़ाइन किया गया था — यह सभी केसीसी आवेदकों पर सार्वभौमिक रूप से लागू नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र समन्वय मॉडल और सरल आवेदन पत्र दोनों को जानते हैं, वे कथन 2 को भी सही मान सकते हैं बिना यह समझे कि यह सरलता विशेष रूप से पीएम-किसान लाभार्थियों के लिए लक्षित थी।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: पीएम-किसान स्पष्ट रूप से स्वामी कृषकों के लिए है; केसीसी में किरायेदार और मौखिक पट्टेदार भी शामिल हैं — अतः कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: समन्वय अभियान के तहत सरल 2-पृष्ठीय फॉर्म पीएम-किसान लाभार्थियों के केसीसी ऑनबोर्डिंग के लिए था, सभी केसीसी आवेदकों के लिए नहीं — अतः कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक दायरा-विस्तार त्रुटि का उपयोग करता है। सरल आवेदन पत्र पीएम-किसान लाभार्थियों के केसीसी ऑनबोर्डिंग के लिए लक्षित प्रशासनिक सुविधा है। जो छात्र समन्वय अभियान और सरल फॉर्म को याद करते हैं, वे इसकी प्रासंगिकता सभी केसीसी आवेदकों तक बढ़ा सकते हैं — जो तार्किक लेकिन गलत निष्कर्ष है। फॉर्म सरलता एक समन्वय-विशिष्ट उपाय था, योजना-व्यापी सुधार नहीं।",
+      "final_explanation": "पीएम-किसान और केसीसी समन्वय मॉडल दो-तरफा आय सहायता संरचना का प्रतिनिधित्व करता है, लेकिन दोनों योजनाओं के लाभार्थी मानदंड भिन्न हैं।\n\n• कथन 1 — सही: पीएम-किसान कृषि योग्य भूमि के स्वामी कृषकों के लिए डिज़ाइन किया गया है और इसमें विशिष्ट भूमि स्वामित्व मानदंड हैं। केसीसी, इसके विपरीत, किरायेदार किसानों, मौखिक पट्टेदारों और साझेदारों तक भी विस्तारित है — जिससे दोनों योजनाओं के लाभार्थी समूह आंशिक रूप से ओवरलैप करते हैं लेकिन पूरी तरह मेल नहीं खाते।\n• कथन 2 — गलत: 2-पृष्ठीय सरल आवेदन पत्र एक विशिष्ट प्रशासनिक हस्तक्षेप था जो पीएम-किसान लाभार्थियों के लिए केसीसी कवरेज को सुविधाजनक बनाने हेतु था जो अभी तक केसीसी धारक नहीं थे। अन्य श्रेणियों के लिए मानक केसीसी आवेदन नियमित, अधिक विस्तृत प्रारूप का पालन करते हैं।\n\nमूल्य संवर्धन:\n• पीएम-किसान प्रति वर्ष ₹6,000 की प्रत्यक्ष आय सहायता प्रदान करता है; केसीसी क्रेडिट सुविधा प्रदान करता है — दोनों मिलकर आय और तरलता की कमी को पूरा करते हैं।\n• केसीसी सैचुरेशन अभियान का उद्देश्य था कि सभी पीएम-किसान लाभार्थियों को क्रेडिट तक पहुंच सुनिश्चित हो — इसे समन्वय मीट्रिक के रूप में ट्रैक किया जाता है।\n• यूपीएससी अक्सर एक ही क्षेत्र में संचालित कल्याण योजनाओं के सटीक ओवरलैप और भिन्नता का परीक्षण करता है — पीएम-किसान/केसीसी सीमा एक क्लासिक उदाहरण है।"
+    }
+  },
+  {
+    "uuid": "fa0d63a0-3a6a-44c0-b508-fcc519f27f12",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Revised KCC Scheme 2012: Key Structural Changes",
+        "Digital KCC and Financial Inclusion Architecture"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "2012 KCC revamp: RuPay card and revolving credit introduction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Kisan Credit Card was revamped in ________ to convert it from a paper-based credit instrument to a RuPay-enabled debit card format, simultaneously introducing a single unified credit limit and a 'flexi' revolving credit feature that replaced multiple separate loan accounts for the same farmer.\n\n(a) 2008\n(b) 2012\n(c) 2016\n(d) 2019",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — '2016' is associated with demonetisation-era digital push, which students may incorrectly link to the KCC's digital card transition.",
+      "elimination_logic": [
+        "Eliminate option (a): 2008 predates the RuPay card ecosystem and the unified limit structure — too early for the revamp described.",
+        "Eliminate option (c): 2016 is the year of demonetisation, not the KCC structural revamp; students may associate this with the digital push but it is the wrong year.",
+        "Eliminate option (d): 2019 is post-revamp — no major structural overhaul of KCC occurred in that year.",
+        "Option (b) — 2012 — is the year of the comprehensive KCC revamp that introduced the RuPay debit card, unified limit, and revolving credit feature."
+      ],
+      "upsc_trap_explanation": "The 2012 KCC revamp is a key milestone that students may conflate with the broader Jan Dhan-driven digital financial inclusion push of 2014–16. The demonetisation year (2016) is a strong temporal trap because it is strongly associated with digital transactions and cashless banking, making it feel like the natural year for a card-based KCC transition.",
+      "final_explanation": "The Kisan Credit Card underwent a comprehensive structural overhaul in a specific year, converting it from a paper-based credit instrument to a technologically enabled banking product.\n\n• Option (a) — 2008: Incorrect. No major KCC structural reform occurred in 2008; this predates the RuPay ecosystem.\n• Option (b) — 2012: Correct. The 2012 revamp introduced the RuPay debit card format, replaced multiple loan accounts with a single unified limit, enabled ATM/PoS transactions, and introduced the flexi revolving credit feature.\n• Option (c) — 2016: Incorrect. While 2016 saw a major digital push through demonetisation and Aadhaar-linked banking, it was not the year of the KCC structural revamp.\n• Option (d) — 2019: Incorrect. The 2019 Budget expanded KCC to fishermen and animal husbandry farmers — an eligibility expansion, not the original structural revamp.\n\nValue Addition:\n• RuPay is a domestic card payment network promoted by NPCI — its integration with KCC reduced rural cash dependency.\n• The 2012 revamp is distinct from the 2019 expansion; both are tested separately.\n• Smart card + mobile banking integration under the 2012 revamp is relevant to Digital India and JAM Trinity discussions."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड को ________ में पुनर्गठित किया गया था ताकि इसे कागज आधारित क्रेडिट उपकरण से RuPay-सक्षम डेबिट कार्ड प्रारूप में बदला जा सके, साथ ही एक एकीकृत क्रेडिट सीमा और 'फ्लेक्सी' रिवॉल्विंग क्रेडिट फीचर भी पेश किया गया जिसने एक ही किसान के लिए कई अलग-अलग ऋण खातों को प्रतिस्थापित किया।\n\n(a) 2008\n(b) 2012\n(c) 2016\n(d) 2019",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — '2016' को नोटबंदी युग के डिजिटल प्रोत्साहन से जोड़ा जाता है, जिसे छात्र गलत तरीके से KCC के डिजिटल कार्ड संक्रमण से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 2008 RuPay कार्ड इकोसिस्टम और एकीकृत सीमा संरचना से पहले का है — वर्णित पुनर्गठन के लिए बहुत पहले।",
+        "विकल्प (c) को हटाएं: 2016 नोटबंदी का वर्ष है, KCC संरचनात्मक पुनर्गठन का नहीं; छात्र इसे डिजिटल प्रोत्साहन से जोड़ सकते हैं लेकिन यह गलत वर्ष है।",
+        "विकल्प (d) को हटाएं: 2019 पुनर्गठन के बाद का वर्ष है — उस वर्ष KCC में कोई बड़ा संरचनात्मक पुनर्गठन नहीं हुआ।",
+        "विकल्प (b) — 2012 — वह वर्ष है जब व्यापक KCC पुनर्गठन हुआ जिसने RuPay डेबिट कार्ड, एकीकृत सीमा, और फ्लेक्सी रिवॉल्विंग क्रेडिट फीचर पेश किया।"
+      ],
+      "upsc_trap_explanation": "2012 का KCC पुनर्गठन एक महत्वपूर्ण मील का पत्थर है जिसे छात्र 2014–16 के जन धन-प्रेरित डिजिटल वित्तीय समावेशन के व्यापक अभियान के साथ भ्रमित कर सकते हैं। नोटबंदी वर्ष (2016) एक मजबूत कालानुक्रमिक जाल है क्योंकि इसे डिजिटल लेनदेन और कैशलेस बैंकिंग से गहरा जोड़ा जाता है, जिससे यह कार्ड-आधारित KCC संक्रमण के लिए स्वाभाविक वर्ष प्रतीत होता है।",
+      "final_explanation": "किसान क्रेडिट कार्ड का एक विशिष्ट वर्ष में व्यापक संरचनात्मक पुनर्गठन हुआ, जिससे यह कागज आधारित क्रेडिट उपकरण से तकनीकी रूप से सक्षम बैंकिंग उत्पाद में परिवर्तित हो गया।\n\n• विकल्प (a) — 2008: गलत। 2008 में कोई बड़ा KCC संरचनात्मक सुधार नहीं हुआ; यह RuPay इकोसिस्टम से पहले का है।\n• विकल्प (b) — 2012: सही। 2012 के पुनर्गठन ने RuPay डेबिट कार्ड प्रारूप पेश किया, कई ऋण खातों को एक एकीकृत सीमा में बदला, ATM/PoS लेनदेन सक्षम किए, और फ्लेक्सी रिवॉल्विंग क्रेडिट फीचर शुरू किया।\n• विकल्प (c) — 2016: गलत। जबकि 2016 में नोटबंदी और आधार-लिंक्ड बैंकिंग के माध्यम से बड़ा डिजिटल प्रोत्साहन हुआ, यह KCC संरचनात्मक पुनर्गठन का वर्ष नहीं था।\n• विकल्प (d) — 2019: गलत। 2019 के बजट ने मछुआरों और पशुपालन किसानों के लिए KCC का विस्तार किया — पात्रता विस्तार, मूल संरचनात्मक पुनर्गठन नहीं।\n\nमूल्य संवर्धन:\n• RuPay NPCI द्वारा प्रोत्साहित एक घरेलू कार्ड भुगतान नेटवर्क है — इसका KCC के साथ एकीकरण ग्रामीण नकद निर्भरता को कम करता है।\n• 2012 का पुनर्गठन 2019 के विस्तार से अलग है; दोनों को अलग-अलग परखा जाता है।\n• 2012 के पुनर्गठन के तहत स्मार्ट कार्ड + मोबाइल बैंकिंग एकीकरण डिजिटल इंडिया और JAM ट्रिनिटी चर्चाओं के लिए प्रासंगिक है।"
+    }
+  },
+  {
+    "uuid": "08ac42ef-a954-48b0-abff-a8234a673b3a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC for Allied Activities: Fisheries and Animal Husbandry"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "KCC fisheries extension: ₹2 lakh limit for non-boat owners",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to the extension of the Kisan Credit Card to allied activities is correctly matched?\n\n(a) Fisheries KCC for non-boat-owning fishermen — Working capital limit of up to ₹2 lakh\n(b) Animal husbandry KCC — Covers feed and veterinary expenses, disbursed exclusively through commercial banks\n(c) Extension to fisheries and animal husbandry — Announced in the Union Budget 2015–16\n(d) Fisheries KCC — Covers only inland fishermen and does not extend to marine fishing activities",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) states that animal husbandry KCC covers veterinary expenses and feed, which is broadly correct but the attribution to 'commercial banks exclusively' is false — cooperative banks and NCDC are important channels for fisheries/allied KCC.",
+      "elimination_logic": [
+        "Evaluate option (a): fisheries KCC for non-boat-owning fishermen with a ₹2 lakh limit — this matches the key dimension directly.",
+        "Evaluate option (b): animal husbandry KCC covers feed and veterinary expenses — correct; but 'exclusively through commercial banks' is false as cooperative banks and NCDC are also channels.",
+        "Evaluate option (c): KCC extension to fisheries occurred post-2018–19 Budget, not in 2015 — temporal error.",
+        "Evaluate option (d): marine fishermen are also covered under fisheries KCC, not just inland — scope error.",
+        "Option (a) is the correctly matched pair."
+      ],
+      "upsc_trap_explanation": "Option (b) is the primary trap — it contains a correct substantive claim (animal husbandry KCC covers feed and veterinary expenses) but adds an incorrect scope restriction (exclusive to commercial banks). Students who recall the animal husbandry coverage may overlook the channel specification, accepting the partial truth as fully correct.",
+      "final_explanation": "The extension of KCC to allied activities post-2018 introduced specific credit parameters for fisheries and animal husbandry farmers.\n\n• Option (a) — Correctly matched: The fisheries KCC for non-boat-owning fishermen carries a working capital limit of up to ₹2 lakh, covering fuel, nets, and operational costs.\n• Option (b) — Incorrectly matched: Animal husbandry KCC does cover feed, fodder, and veterinary expenses, but the channel is not exclusively commercial banks — cooperative banks and NCDC also route these loans.\n• Option (c) — Incorrectly matched: The extension to fisheries and animal husbandry was announced in the 2018–19 Union Budget, not 2015.\n• Option (d) — Incorrectly matched: KCC covers both inland and marine fishermen — restricting it to inland fishermen only is factually incorrect.\n\nValue Addition:\n• The fisheries KCC expansion is linked to PM Matsya Sampada Yojana and the Blue Economy agenda.\n• NCDC (National Cooperative Development Corporation) is a relevant institution for cooperative-channel fisheries credit.\n• Animal husbandry Scale of Finance for KCC is determined based on livestock units — analogous to crop-based SoF determination."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड के सहायक गतिविधियों के लिए विस्तार से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) गैर-नाव मालिक मछुआरों के लिए मत्स्य KCC — ₹2 लाख तक की कार्यशील पूंजी सीमा\n(b) पशुपालन KCC — चारा और पशु चिकित्सा खर्च को कवर करता है, जो केवल वाणिज्यिक बैंकों के माध्यम से वितरित होता है\n(c) मत्स्य और पशुपालन के लिए विस्तार — केंद्रीय बजट 2015–16 में घोषित\n(d) मत्स्य KCC — केवल अंतर्देशीय मछुआरों को कवर करता है और समुद्री मत्स्य गतिविधियों तक नहीं फैला है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) कहता है कि पशुपालन KCC में पशु चिकित्सा खर्च और चारा शामिल है, जो व्यापक रूप से सही है लेकिन इसे 'केवल वाणिज्यिक बैंकों के माध्यम से' बताया जाना गलत है — सहकारी बैंक और NCDC मत्स्य/सहायक KCC के लिए महत्वपूर्ण चैनल हैं।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: गैर-नाव मालिक मछुआरों के लिए मत्स्य KCC जिसमें ₹2 लाख की सीमा है — यह मुख्य आयाम से सीधे मेल खाता है।",
+        "विकल्प (b) का मूल्यांकन करें: पशुपालन KCC में चारा और पशु चिकित्सा खर्च शामिल हैं — सही; लेकिन 'केवल वाणिज्यिक बैंकों के माध्यम से' होना गलत है क्योंकि सहकारी बैंक और NCDC भी चैनल हैं।",
+        "विकल्प (c) का मूल्यांकन करें: मत्स्य के लिए KCC का विस्तार 2015 में नहीं बल्कि 2018–19 के बजट के बाद हुआ — काल संबंधी त्रुटि।",
+        "विकल्प (d) का मूल्यांकन करें: मत्स्य KCC में केवल अंतर्देशीय मछुआरे नहीं बल्कि समुद्री मछुआरे भी शामिल हैं — दायरे की त्रुटि।",
+        "विकल्प (a) सही मेल खाता जोड़ा है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) मुख्य जाल है — इसमें एक सही तथ्यात्मक दावा है (पशुपालन KCC में चारा और पशु चिकित्सा खर्च शामिल हैं) लेकिन एक गलत दायरा प्रतिबंध जोड़ता है (केवल वाणिज्यिक बैंकों तक सीमित)। जो छात्र पशुपालन कवरेज याद करते हैं वे चैनल विनिर्देशन को नजरअंदाज कर सकते हैं, आंशिक सत्य को पूरी तरह सही मान लेते हैं।",
+      "final_explanation": "किसान क्रेडिट कार्ड का विस्तार 2018 के बाद सहायक गतिविधियों के लिए हुआ, जिसमें मत्स्य और पशुपालन किसानों के लिए विशिष्ट क्रेडिट मानदंड शामिल हैं।\n\n• विकल्प (a) — सही मेल खाता: गैर-नाव मालिक मछुआरों के लिए मत्स्य KCC में ₹2 लाख तक का कार्यशील पूंजी सीमा है, जो ईंधन, जाल और परिचालन लागत को कवर करता है।\n• विकल्प (b) — गलत मेल खाता: पशुपालन KCC में चारा, चारा और पशु चिकित्सा खर्च शामिल हैं, लेकिन चैनल केवल वाणिज्यिक बैंक नहीं हैं — सहकारी बैंक और NCDC भी ये ऋण प्रदान करते हैं।\n• विकल्प (c) — गलत मेल खाता: मत्स्य और पशुपालन के लिए विस्तार 2018–19 के केंद्रीय बजट में घोषित किया गया था, 2015 में नहीं।\n• विकल्प (d) — गलत मेल खाता: KCC अंतर्देशीय और समुद्री दोनों मछुआरों को कवर करता है — केवल अंतर्देशीय मछुआरों तक सीमित करना तथ्यात्मक रूप से गलत है।\n\nमूल्य संवर्धन:\n• मत्स्य KCC विस्तार प्रधानमंत्री मत्स्य संपदा योजना और ब्लू इकोनॉमी एजेंडा से जुड़ा है।\n• NCDC (राष्ट्रीय सहकारी विकास निगम) मत्स्य क्रेडिट के लिए सहकारी चैनल का एक महत्वपूर्ण संस्थान है।\n• पशुपालन के लिए KCC का वित्तीय पैमाना पशुधन इकाइयों के आधार पर निर्धारित होता है — जो फसल आधारित वित्तीय पैमाने के समान है।"
+    }
+  },
+  {
+    "uuid": "7ff30d60-3b5f-4f0e-8044-a18d0bfc7784",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "NPA Classification and Restructuring of KCC Accounts"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Agriculture-specific NPA norms: 2 crop seasons vs. 90-day standard",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding Non-Performing Asset (NPA) classification and restructuring of Kisan Credit Card accounts:\n\n1. For short-duration crops, a KCC loan is classified as a Non-Performing Asset if it remains unpaid for two crop seasons, which is a departure from the standard 90-day NPA norm applicable to other loans.\n2. For long-duration crops such as sugarcane, the NPA threshold is triggered after one crop season if the outstanding period exceeds two years.\n3. When a state government announces a farm loan waiver, it equally reduces NPA levels on the books of commercial banks and cooperative banks.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "For short-duration crops, a KCC loan is classified as a Non-Performing Asset if it remains unpaid for two crop seasons, which is a departure from the standard 90-day NPA norm applicable to other loans.",
+          "verdict": "Correct",
+          "reason": "Agriculture-specific NPA rules apply to KCC: two crop seasons of non-repayment for short-duration crops, not the standard 90-day norm applicable to commercial loans."
+        },
+        {
+          "statement": "For long-duration crops such as sugarcane, the NPA threshold is triggered after one crop season if the outstanding period exceeds two years.",
+          "verdict": "Correct",
+          "reason": "For long-duration crops, NPA classification occurs after one crop season exceeding two years — a different threshold from short-duration crops, reflecting the longer gestation of these crops."
+        },
+        {
+          "statement": "When a state government announces a farm loan waiver, it equally reduces NPA levels on the books of commercial banks and cooperative banks.",
+          "verdict": "Incorrect",
+          "reason": "Farm loan waivers by state governments disproportionately affect cooperative banks, which have higher KCC exposure in rural areas and are more directly under state government control — the impact on commercial banks is relatively less severe."
+        }
+      ],
+      "strong_distractor": "d — A student who knows the 2-crop-season rule and the long-duration crop rule may assume all three statements are correct, particularly because Statement 3 sounds logically symmetrical.",
+      "elimination_logic": [
+        "Verify Statement 1: two crop seasons for short-duration crops vs. 90-day standard — this is the defined agriculture-specific NPA rule; Statement 1 is correct.",
+        "Verify Statement 2: one crop season exceeding 2 years for long-duration crops — this matches the prescribed rule for sugarcane-type crops; Statement 2 is correct.",
+        "Verify Statement 3: the claim that waivers affect commercial and cooperative banks equally is incorrect — cooperative banks bear disproportionate impact due to higher rural KCC exposure and state proximity; Statement 3 is incorrect.",
+        "Only Statements 1 and 2 are correct — option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 3 is the trap. Farm loan waivers are a politically prominent topic and students may assume their impact is symmetrical across bank types. The fiscal federalism angle — state waivers hitting cooperative banks harder because these banks are state-proximate institutions with concentrated rural agricultural loan portfolios — requires a deeper institutional understanding that tests beyond surface knowledge.",
+      "final_explanation": "NPA classification rules for agricultural loans under KCC differ from standard banking norms, reflecting the seasonal and cyclical nature of farm income.\n\n• Statement 1 — Correct: The 2-crop-season NPA rule for short-duration crops is an agriculture-specific carve-out from the 90-day rule, recognising that farmers earn income in discrete crop cycles rather than monthly flows.\n• Statement 2 — Correct: For long-duration crops like sugarcane, the NPA trigger is one crop season if it has been outstanding for over two years — this recognises the longer income cycle while setting an outer boundary.\n• Statement 3 — Incorrect: Farm loan waivers by state governments have an asymmetric impact. Cooperative banks, which are under partial state government control and have higher KCC penetration in rural areas, bear a disproportionately severe NPA impact. Commercial banks, with diversified portfolios, are relatively less affected.\n\nValue Addition:\n• The agriculture-specific NPA norm was framed by RBI in recognition of India's monsoon-dependent farm economy.\n• Debt restructuring under natural calamity provisions allows banks to reschedule KCC repayment with continued interest subvention — a separate relief mechanism from outright waivers.\n• State-level farm loan waivers have fiscal federalism implications and often create moral hazard in agricultural credit markets."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड खातों के गैर-निष्पादित संपत्ति (NPA) वर्गीकरण और पुनर्गठन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अल्पकालिक फसलों के लिए, यदि KCC ऋण दो फसल मौसमों तक अवैतनिक रहता है तो उसे गैर-निष्पादित संपत्ति के रूप में वर्गीकृत किया जाता है, जो अन्य ऋणों पर लागू मानक 90-दिन के NPA मानदंड से अलग है।\n2. दीर्घकालिक फसलों जैसे गन्ना के लिए, यदि बकाया अवधि दो वर्ष से अधिक हो तो एक फसल मौसम के बाद NPA सीमा लागू होती है।\n3. जब कोई राज्य सरकार कृषि ऋण माफी की घोषणा करती है, तो यह वाणिज्यिक बैंकों और सहकारी बैंकों की पुस्तकों पर NPA स्तर को समान रूप से कम करती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "For short-duration crops, a KCC loan is classified as a Non-Performing Asset if it remains unpaid for two crop seasons, which is a departure from the standard 90-day NPA norm applicable to other loans.",
+          "verdict": "Correct",
+          "reason": "कृषि-विशिष्ट NPA नियम KCC पर लागू होते हैं: अल्पकालिक फसलों के लिए दो फसल मौसम तक भुगतान न होने पर, न कि वाणिज्यिक ऋणों पर लागू मानक 90-दिन नियम।"
+        },
+        {
+          "statement": "For long-duration crops such as sugarcane, the NPA threshold is triggered after one crop season if the outstanding period exceeds two years.",
+          "verdict": "Correct",
+          "reason": "दीर्घकालिक फसलों के लिए, NPA वर्गीकरण एक फसल मौसम के बाद होता है यदि अवधि दो वर्ष से अधिक हो — यह अल्पकालिक फसलों से अलग सीमा है, जो इन फसलों की लंबी परिपक्वता को दर्शाती है।"
+        },
+        {
+          "statement": "When a state government announces a farm loan waiver, it equally reduces NPA levels on the books of commercial banks and cooperative banks.",
+          "verdict": "Incorrect",
+          "reason": "राज्य सरकारों द्वारा कृषि ऋण माफी का प्रभाव असमान होता है; सहकारी बैंकों पर अधिक प्रभाव पड़ता है क्योंकि उनका ग्रामीण क्षेत्रों में KCC एक्सपोजर अधिक होता है और वे राज्य सरकार के नियंत्रण में होते हैं — वाणिज्यिक बैंकों पर प्रभाव अपेक्षाकृत कम होता है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र 2-फसल मौसम नियम और दीर्घकालिक फसल नियम जानते हैं, वे मान सकते हैं कि सभी तीन कथन सही हैं, विशेषकर क्योंकि कथन 3 तार्किक रूप से समान प्रतीत होता है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: अल्पकालिक फसलों के लिए दो फसल मौसम बनाम 90-दिन मानक — यह कृषि-विशिष्ट NPA नियम है; कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: दीर्घकालिक फसलों के लिए दो वर्ष से अधिक अवधि में एक फसल मौसम — यह गन्ना जैसी फसलों के लिए निर्धारित नियम से मेल खाता है; कथन 2 सही है।",
+        "कथन 3 सत्यापित करें: माफी का प्रभाव वाणिज्यिक और सहकारी बैंकों पर समान है यह दावा गलत है — सहकारी बैंक ग्रामीण क्षेत्रों में अधिक KCC एक्सपोजर और राज्य सरकार के निकट होने के कारण असमान प्रभाव झेलते हैं; कथन 3 गलत है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 3 जाल है। कृषि ऋण माफी एक राजनीतिक रूप से प्रमुख विषय है और छात्र मान सकते हैं कि इसका प्रभाव सभी बैंक प्रकारों पर समान है। वित्तीय संघवाद का पहलू — राज्य माफियां सहकारी बैंकों को अधिक प्रभावित करती हैं क्योंकि ये बैंक राज्य के निकट और ग्रामीण कृषि ऋण पोर्टफोलियो में केंद्रित हैं — यह गहरी संस्थागत समझ मांगता है जो सतही ज्ञान से परे है।",
+      "final_explanation": "KCC के तहत कृषि ऋणों के लिए NPA वर्गीकरण नियम मानक बैंकिंग मानदंडों से भिन्न हैं, जो कृषि आय के मौसमी और चक्रीय स्वभाव को दर्शाते हैं।\n\n• कथन 1 — सही: अल्पकालिक फसलों के लिए 2-फसल मौसम NPA नियम 90-दिन नियम से अलग कृषि-विशिष्ट अपवाद है, जो यह मानता है कि किसान आय मासिक प्रवाह के बजाय अलग-अलग फसल चक्रों में कमाते हैं।\n• कथन 2 — सही: गन्ना जैसी दीर्घकालिक फसलों के लिए, यदि बकाया दो वर्ष से अधिक हो तो एक फसल मौसम के बाद NPA ट्रिगर होता है — यह लंबी आय चक्र को मान्यता देता है और एक बाहरी सीमा निर्धारित करता है।\n• कथन 3 — गलत: राज्य सरकारों द्वारा कृषि ऋण माफी का प्रभाव असमान होता है। सहकारी बैंक, जो आंशिक रूप से राज्य सरकार के नियंत्रण में हैं और ग्रामीण क्षेत्रों में अधिक KCC प्रवेश रखते हैं, असमान रूप से गंभीर NPA प्रभाव झेलते हैं। वाणिज्यिक बैंक, जिनके पास विविध पोर्टफोलियो हैं, अपेक्षाकृत कम प्रभावित होते हैं।\n\nमूल्य संवर्धन:\n• कृषि-विशिष्ट NPA मानदंड RBI द्वारा भारत की मानसून-निर्भर कृषि अर्थव्यवस्था को ध्यान में रखकर बनाया गया था।\n• प्राकृतिक आपदा प्रावधानों के तहत ऋण पुनर्गठन बैंकों को KCC पुनर्भुगतान को पुनर्निर्धारित करने की अनुमति देता है जिसमें ब्याज सबवेंशन जारी रहता है — यह सीधे माफी से अलग राहत तंत्र है।\n• राज्य स्तर की कृषि ऋण माफियां वित्तीय संघवाद के निहितार्थ रखती हैं और अक्सर कृषि क्रेडिट बाजारों में नैतिक खतरे को जन्म देती हैं।"
+    }
+  },
+  {
+    "uuid": "15e1c970-4ee2-4dd2-a784-19ce11ab25df",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Reforms Post-Atmanirbhar Bharat: Emergency Credit and COVID-19 Response"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Atmanirbhar KCC credit vs. ECLGS — two distinct COVID instruments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the Atmanirbhar Bharat Abhiyan announced in May 2020, ₹2 lakh crore emergency credit for farmers was channelled through the Kisan Credit Card framework. Which of the following correctly distinguishes this measure from the Emergency Credit Line Guarantee Scheme (ECLGS) announced in the same package?\n\n(a) Both KCC emergency credit and ECLGS targeted agricultural borrowers, but KCC was for short-term credit while ECLGS was for term loans.\n(b) The ₹2 lakh crore KCC emergency credit and ECLGS were part of the same instrument — ECLGS covered all PSL borrowers including farmers with KCC accounts.\n(c) The ₹2 lakh crore KCC emergency credit was specifically for agricultural borrowers through the KCC channel, while ECLGS was a distinct instrument targeted at Micro, Small and Medium Enterprises.\n(d) Both measures involved repayment moratoriums; the KCC credit involved fresh disbursement whereas ECLGS involved interest waivers on existing loans.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — ECLGS is the most prominent COVID emergency credit instrument and students may conflate the farmer KCC emergency credit announcement with ECLGS, assuming both fall under the same guarantee framework.",
+      "elimination_logic": [
+        "Eliminate option (a): the announcement was for farmers via KCC — not a general credit line for all PSL borrowers.",
+        "Eliminate option (b): ECLGS was designed exclusively for MSMEs and businesses — it is a distinct instrument and does not cover KCC agricultural borrowers.",
+        "Eliminate option (d): RBI's moratorium was on repayment — it did not involve fresh credit disbursement of ₹2 lakh crore.",
+        "Option (c) correctly identifies the Atmanirbhar Package 1 announcement of ₹2 lakh crore emergency credit through KCC for farmers — separate from ECLGS."
+      ],
+      "upsc_trap_explanation": "The conflation trap between ECLGS (for MSMEs) and the KCC emergency credit (for farmers) is the central mechanism. Both were part of the Atmanirbhar Bharat Abhiyan and both involved emergency credit, making the boundary between them easy to blur. A student who broadly recalls 'ECLGS = Atmanirbhar emergency credit' will mark option (b), missing the fact that ECLGS was explicitly for MSMEs while farmers had a distinct KCC-based emergency credit announcement.",
+      "final_explanation": "The Atmanirbhar Bharat Abhiyan (May 2020) included multiple distinct credit relief packages for different sectors — confusing them is a common exam error.\n\n• Option (a) — Incorrect: The announcement was specifically for farmers via KCC, not a general PSL emergency credit line covering all sectors.\n• Option (b) — Incorrect: ECLGS was announced for MSMEs and businesses under financial stress — it operated through the National Credit Guarantee Trustee Company (NCGTC) and had no application to KCC agricultural borrowers.\n• Option (c) — Correct: ₹2 lakh crore emergency credit for farmers through KCC was announced under Atmanirbhar Package 1, with simplified renewal/enhancement procedures and processing fee waivers.\n• Option (d) — Incorrect: RBI's 3-month moratorium on loan repayments (extendable to 6 months) was a repayment deferral — interest continued to accrue; it was not the same as fresh credit disbursement.\n\nValue Addition:\n• Interest accrued (not waived) during the COVID moratorium — a critical distinction students miss.\n• ECLGS vs. KCC emergency credit is a high-probability UPSC trap because both were Atmanirbhar announcements in the same time window.\n• Atmanirbhar Package 1 focused on: KCC (farmers), ECLGS (MSMEs), special liquidity for NBFCs, and EPF relief for organised labour."
+    },
+    "hi": {
+      "display_text": "मई 2020 में घोषित आत्मनिर्भर भारत अभियान के तहत, किसानों के लिए ₹2 लाख करोड़ की आपातकालीन क्रेडिट किसान क्रेडिट कार्ड (KCC) ढांचे के माध्यम से प्रदान की गई। निम्नलिखित में से कौन-सा विकल्प इस उपाय को उसी पैकेज में घोषित आपातकालीन क्रेडिट लाइन गारंटी योजना (ECLGS) से सही ढंग से अलग करता है?\n\n(a) KCC आपातकालीन क्रेडिट और ECLGS दोनों कृषि उधारकर्ताओं को लक्षित करते थे, लेकिन KCC अल्पकालिक क्रेडिट के लिए था जबकि ECLGS टर्म लोन के लिए था।\n(b) ₹2 लाख करोड़ KCC आपातकालीन क्रेडिट और ECLGS एक ही उपकरण का हिस्सा थे — ECLGS में सभी PSL उधारकर्ता शामिल थे जिनमें KCC खाते वाले किसान भी थे।\n(c) ₹2 लाख करोड़ KCC आपातकालीन क्रेडिट विशेष रूप से KCC चैनल के माध्यम से कृषि उधारकर्ताओं के लिए था, जबकि ECLGS एक अलग उपकरण था जो सूक्ष्म, लघु और मध्यम उद्यमों को लक्षित करता था।\n(d) दोनों उपायों में पुनर्भुगतान मोरेटोरियम शामिल थे; KCC क्रेडिट में नई वितरण शामिल थी जबकि ECLGS में मौजूदा ऋणों पर ब्याज माफी शामिल थी।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — ECLGS सबसे प्रमुख COVID आपातकालीन क्रेडिट उपकरण है और छात्र किसान KCC आपातकालीन क्रेडिट घोषणा को ECLGS के साथ भ्रमित कर सकते हैं, यह मानते हुए कि दोनों एक ही गारंटी ढांचे के अंतर्गत आते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: घोषणा किसानों के लिए KCC के माध्यम से थी — सभी PSL उधारकर्ताओं के लिए सामान्य क्रेडिट लाइन नहीं।",
+        "विकल्प (b) को हटाएं: ECLGS विशेष रूप से MSMEs और व्यवसायों के लिए डिज़ाइन किया गया था — यह एक अलग उपकरण है और KCC कृषि उधारकर्ताओं को कवर नहीं करता।",
+        "विकल्प (d) को हटाएं: RBI का मोरेटोरियम पुनर्भुगतान पर था — इसमें ₹2 लाख करोड़ की नई क्रेडिट वितरण शामिल नहीं थी।",
+        "विकल्प (c) सही रूप से आत्मनिर्भर पैकेज 1 की ₹2 लाख करोड़ की आपातकालीन क्रेडिट घोषणा को किसानों के लिए KCC के माध्यम से दर्शाता है — जो ECLGS से अलग है।"
+      ],
+      "upsc_trap_explanation": "ECLGS (MSMEs के लिए) और KCC आपातकालीन क्रेडिट (किसानों के लिए) के बीच भ्रम का जाल केंद्रीय तंत्र है। दोनों आत्मनिर्भर भारत अभियान के भाग थे और दोनों में आपातकालीन क्रेडिट शामिल था, जिससे इनके बीच की सीमा धुंधली हो जाती है। जो छात्र सामान्यतः 'ECLGS = आत्मनिर्भर आपातकालीन क्रेडिट' याद करते हैं, वे विकल्प (b) को चिह्नित करेंगे, यह तथ्य चूकते हुए कि ECLGS स्पष्ट रूप से MSMEs के लिए था जबकि किसानों के लिए अलग KCC आधारित आपातकालीन क्रेडिट घोषणा थी।",
+      "final_explanation": "आत्मनिर्भर भारत अभियान (मई 2020) में विभिन्न क्षेत्रों के लिए कई अलग-अलग क्रेडिट राहत पैकेज शामिल थे — इन्हें भ्रमित करना सामान्य परीक्षा त्रुटि है।\n\n• विकल्प (a) — गलत: घोषणा विशेष रूप से किसानों के लिए KCC के माध्यम से थी, सभी क्षेत्रों को कवर करने वाली सामान्य PSL आपातकालीन क्रेडिट लाइन नहीं।\n• विकल्प (b) — गलत: ECLGS MSMEs और वित्तीय दबाव में व्यवसायों के लिए घोषित था — यह नेशनल क्रेडिट गारंटी ट्रस्टी कंपनी (NCGTC) के माध्यम से संचालित था और KCC कृषि उधारकर्ताओं पर लागू नहीं था।\n• विकल्प (c) — सही: आत्मनिर्भर पैकेज 1 के तहत किसानों के लिए KCC के माध्यम से ₹2 लाख करोड़ की आपातकालीन क्रेडिट घोषित की गई, जिसमें सरल नवीनीकरण/वृद्धि प्रक्रियाएं और प्रोसेसिंग शुल्क माफी शामिल थी।\n• विकल्प (d) — गलत: RBI का 3 महीने का ऋण पुनर्भुगतान मोरेटोरियम (6 महीने तक बढ़ाने योग्य) पुनर्भुगतान स्थगन था — ब्याज जारी रहता था; यह नई क्रेडिट वितरण के समान नहीं था।\n\nमूल्य संवर्धन:\n• COVID मोरेटोरियम के दौरान ब्याज जमा होता रहा (माफ नहीं किया गया) — एक महत्वपूर्ण अंतर जिसे छात्र चूकते हैं।\n• ECLGS बनाम KCC आपातकालीन क्रेडिट UPSC में उच्च संभावना वाला जाल है क्योंकि दोनों आत्मनिर्भर घोषणाएं एक ही समयावधि में थीं।\n• आत्मनिर्भर पैकेज 1 का फोकस था: KCC (किसान), ECLGS (MSMEs), NBFCs के लिए विशेष तरलता, और संगठित श्रम के लिए EPF राहत।"
+    }
+  },
+  {
+    "uuid": "438d5f04-392e-4a6c-a2f4-d864c0b60141",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Credit Limit Structure: Short-Term vs. Term Loan Components",
+        "KCC Validity Period and Renewal Mechanism"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "KCC revolving credit: card validity vs. individual drawal repayment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the credit structure and repayment mechanism of the Kisan Credit Card:\n\n1. The Kisan Credit Card is a one-time credit instrument — once the borrower draws the full sanctioned limit, the account must be closed and a fresh KCC applied for.\n2. The term loan component of KCC for allied activities has the same repayment schedule as the short-term crop loan component — both must be repaid within 12 months.\n3. Under the KCC scheme, unused credit limit from one year is forfeited and cannot be accessed in subsequent years within the validity period.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Kisan Credit Card is a one-time credit instrument — once the borrower draws the full sanctioned limit, the account must be closed and a fresh KCC applied for.",
+          "verdict": "Incorrect",
+          "reason": "KCC is explicitly designed as a revolving credit facility — the unutilised limit can be carried forward and amounts repaid become available for re-withdrawal within the validity period."
+        },
+        {
+          "statement": "The term loan component of KCC for allied activities has the same repayment schedule as the short-term crop loan component — both must be repaid within 12 months.",
+          "verdict": "Incorrect",
+          "reason": "The term loan component for allied activities has a repayment period of up to 5 years, not 12 months; the 12-month repayment window applies to the short-term crop loan component."
+        },
+        {
+          "statement": "Under the KCC scheme, unused credit limit from one year is forfeited and cannot be accessed in subsequent years within the validity period.",
+          "verdict": "Incorrect",
+          "reason": "KCC is a revolving credit facility; unused limits within the validity period can be accessed in subsequent years — forfeiture of unused limits does not occur under the standard scheme design."
+        }
+      ],
+      "strong_distractor": "a — A student who identifies Statement 1 as NOT correct (knowing KCC is revolving) may assume Statements 2 and 3 are correct, not recognising that all three contain different errors.",
+      "elimination_logic": [
+        "Check Statement 1: KCC is a revolving credit facility — the 'one-time loan' characterisation is false; Statement 1 is NOT correct.",
+        "Check Statement 2: the term loan component for allied activities has a 5-year repayment horizon, not 12 months — Statement 2 is NOT correct.",
+        "Check Statement 3: unused revolving limits do not lapse within the validity period — Statement 3 is NOT correct.",
+        "All three statements are incorrect — option (d)."
+      ],
+      "upsc_trap_explanation": "This question stacks three errors testing the revolving credit concept from three angles: the basic mechanism (Statement 1), the differential repayment schedule (Statement 2), and the carry-forward provision (Statement 3). Statement 2 is the subtlest trap — students who know the 5-year card validity may confuse it with the 5-year term loan repayment period for allied activities, or may incorrectly apply the 12-month short-term rule to all components.",
+      "final_explanation": "The revolving credit nature of KCC is its defining structural feature, distinguishing it from conventional term loans.\n\n• Statement 1 — Incorrect: KCC operates as a revolving credit line. After repayment, the limit is restored and can be re-drawn. This enables farmers to manage credit flexibly across multiple crop seasons without fresh applications.\n• Statement 2 — Incorrect: The 12-month repayment rule applies to the short-term crop loan component. The term loan component for allied activities (dairy, fisheries, non-farm) carries a repayment tenure of up to 5 years — reflecting longer investment gestation.\n• Statement 3 — Incorrect: The revolving credit design explicitly allows unused limits to be carried forward within the 5-year validity period. There is no 'use it or lose it' annual forfeiture provision.\n\nValue Addition:\n• The revolving feature is what distinguishes KCC from earlier crop loan instruments and is the central innovation of the 1998 model scheme.\n• Banks conduct annual reviews — they may reduce limits but do not automatically forfeit unused portions.\n• The two-component structure (short-term + term loan) under a single KCC account is the 'unified limit' introduced in the 2012 revamp."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड की क्रेडिट संरचना और पुनर्भुगतान तंत्र के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. किसान क्रेडिट कार्ड एक एकबारगी क्रेडिट उपकरण है — एक बार उधारकर्ता ने पूरी स्वीकृत सीमा निकाल ली, तो खाता बंद करना होगा और नया KCC आवेदन करना होगा।\n2. सहायक गतिविधियों के लिए KCC का टर्म लोन घटक और अल्पकालिक फसल ऋण घटक की पुनर्भुगतान अनुसूची समान है — दोनों को 12 महीनों के भीतर चुकाना होता है।\n3. KCC योजना के तहत, एक वर्ष की अप्रयुक्त क्रेडिट सीमा समाप्त हो जाती है और वैधता अवधि के भीतर अगले वर्षों में इसका उपयोग नहीं किया जा सकता।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "किसान क्रेडिट कार्ड एक एकबारगी क्रेडिट उपकरण है — एक बार उधारकर्ता ने पूरी स्वीकृत सीमा निकाल ली, तो खाता बंद करना होगा और नया KCC आवेदन करना होगा।",
+          "verdict": "गलत",
+          "reason": "KCC स्पष्ट रूप से एक पुनर्चक्रणीय क्रेडिट सुविधा के रूप में डिज़ाइन किया गया है — अप्रयुक्त सीमा आगे ले जाई जा सकती है और चुकाई गई राशि वैधता अवधि के भीतर पुनः निकासी के लिए उपलब्ध हो जाती है।"
+        },
+        {
+          "statement": "सहायक गतिविधियों के लिए KCC का टर्म लोन घटक और अल्पकालिक फसल ऋण घटक की पुनर्भुगतान अनुसूची समान है — दोनों को 12 महीनों के भीतर चुकाना होता है।",
+          "verdict": "गलत",
+          "reason": "सहायक गतिविधियों के लिए टर्म लोन घटक की पुनर्भुगतान अवधि 5 वर्ष तक होती है, न कि 12 महीने; 12 महीने की पुनर्भुगतान अवधि केवल अल्पकालिक फसल ऋण घटक पर लागू होती है।"
+        },
+        {
+          "statement": "KCC योजना के तहत, एक वर्ष की अप्रयुक्त क्रेडिट सीमा समाप्त हो जाती है और वैधता अवधि के भीतर अगले वर्षों में इसका उपयोग नहीं किया जा सकता।",
+          "verdict": "गलत",
+          "reason": "KCC एक पुनर्चक्रणीय क्रेडिट सुविधा है; वैधता अवधि के भीतर अप्रयुक्त सीमाओं का उपयोग अगले वर्षों में किया जा सकता है — मानक योजना डिज़ाइन के तहत अप्रयुक्त सीमाओं की समाप्ति नहीं होती।"
+        }
+      ],
+      "strong_distractor": "कथन 1 को सही नहीं मानने वाला छात्र (यह जानते हुए कि KCC पुनर्चक्रणीय है) यह मान सकता है कि कथन 2 और 3 सही हैं, जबकि तीनों में अलग-अलग त्रुटियाँ हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: KCC एक पुनर्चक्रणीय क्रेडिट सुविधा है — 'एकबारगी ऋण' की व्याख्या गलत है; कथन 1 सही नहीं है।",
+        "कथन 2 जांचें: सहायक गतिविधियों के लिए टर्म लोन घटक की पुनर्भुगतान अवधि 5 वर्ष है, न कि 12 महीने — कथन 2 सही नहीं है।",
+        "कथन 3 जांचें: वैधता अवधि के भीतर अप्रयुक्त पुनर्चक्रणीय सीमाएँ समाप्त नहीं होतीं — कथन 3 सही नहीं है।",
+        "तीनों कथन गलत हैं — विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न पुनर्चक्रणीय क्रेडिट अवधारणा की तीन त्रुटियों को परखता है: मूल तंत्र (कथन 1), भिन्न पुनर्भुगतान अनुसूची (कथन 2), और आगे ले जाने की व्यवस्था (कथन 3)। कथन 2 सबसे सूक्ष्म जाल है — जो छात्र 5-वर्षीय कार्ड वैधता जानते हैं, वे इसे सहायक गतिविधियों के 5-वर्षीय टर्म लोन पुनर्भुगतान अवधि से भ्रमित कर सकते हैं, या 12-महीने के अल्पकालिक नियम को सभी घटकों पर गलत तरीके से लागू कर सकते हैं।",
+      "final_explanation": "KCC की पुनर्चक्रणीय क्रेडिट प्रकृति इसकी प्रमुख संरचनात्मक विशेषता है, जो इसे पारंपरिक टर्म लोन से अलग करती है।\n\n• कथन 1 — गलत: KCC पुनर्चक्रणीय क्रेडिट लाइन के रूप में कार्य करता है। पुनर्भुगतान के बाद, सीमा पुनः स्थापित हो जाती है और पुनः निकाली जा सकती है। इससे किसान कई फसल मौसमों में बिना नए आवेदन के लचीले ढंग से क्रेडिट प्रबंधित कर सकते हैं।\n• कथन 2 — गलत: 12 महीने की पुनर्भुगतान नियम केवल अल्पकालिक फसल ऋण घटक पर लागू होता है। सहायक गतिविधियों (डेयरी, मत्स्य पालन, गैर-कृषि) के लिए टर्म लोन घटक की पुनर्भुगतान अवधि 5 वर्ष तक होती है — जो लंबी निवेश अवधि को दर्शाता है।\n• कथन 3 — गलत: पुनर्चक्रणीय क्रेडिट डिज़ाइन स्पष्ट रूप से अप्रयुक्त सीमाओं को 5-वर्षीय वैधता अवधि के भीतर आगे ले जाने की अनुमति देता है। कोई 'इस्तेमाल करो या खो दो' वार्षिक समाप्ति प्रावधान नहीं है।\n\nमूल्य संवर्धन:\n• पुनर्चक्रणीय विशेषता KCC को पूर्व के फसल ऋण उपकरणों से अलग करती है और 1998 के मॉडल योजना की केंद्रीय नवाचार है।\n• बैंक वार्षिक समीक्षा करते हैं — वे सीमाएँ कम कर सकते हैं लेकिन अप्रयुक्त हिस्सों को स्वचालित रूप से समाप्त नहीं करते।\n• एकल KCC खाते के तहत दो-घटक संरचना (अल्पकालिक + टर्म लोन) 2012 के पुनरावृत्ति में 'एकीकृत सीमा' के रूप में पेश की गई।"
+    }
+  },
+  {
+    "uuid": "1aae95ff-1260-46c1-8db8-1ef18bf945a0",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Tenant Farmer and Oral Lessee Access to KCC: Structural Challenges"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "KCC eligibility expansion timeline: 1998 inception to 2018–19 fisheries",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following developments in the evolution of the Kisan Credit Card scheme:\n\n1. KCC launched with eligibility covering owner cultivators, tenant farmers, and share croppers\n2. Structural revamp converting KCC into a RuPay debit card format with a unified credit limit\n3. State-level Loan Eligibility Card (LEC) innovation in Andhra Pradesh and Telangana to enable tenant farmers' practical KCC access\n4. Union Budget announcement extending KCC to fishermen and animal husbandry farmers\n\nWhich of the following represents the correct chronological sequence of the above developments?\n\n(a) 1 → 3 → 2 → 4\n(b) 1 → 2 → 3 → 4\n(c) 1 → 2 → 4 → 3\n(d) 2 → 1 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Placing the 2012 RuPay revamp after the 2018–19 allied activities expansion feels intuitively wrong to attentive students, but confusing the sequence of the tenant farmer LEC innovation (which is not dated in a national policy) with the 2012 revamp is the subtler trap.",
+      "elimination_logic": [
+        "Event 1 — KCC launch with original eligibility covering owner cultivators and tenant farmers: 1998.",
+        "Event 2 — Structural revamp converting KCC to RuPay debit card format with unified limit: 2012.",
+        "Event 3 — Andhra Pradesh/Telangana Loan Eligibility Card (LEC) innovation enabling practical KCC access for tenant farmers: post-bifurcation state-level initiative (around 2014–15 in Telangana's case).",
+        "Event 4 — Union Budget announcement extending KCC to fishermen and animal husbandry farmers: 2018–19.",
+        "Correct sequence: 1998 → 2012 → LEC state innovation → 2018–19 expansion — option (b)."
+      ],
+      "upsc_trap_explanation": "The LEC (Loan Eligibility Card) innovation is a state-level initiative in Andhra Pradesh and Telangana — students may not recall its approximate timing relative to the 2012 revamp, making chronological placement uncertain. The trap is designed to test whether students know the 2018–19 allied activities expansion comes last, which is the most precisely dated event, and whether they can correctly sequence the 2012 RuPay revamp before state-level LEC innovations.",
+      "final_explanation": "The chronological evolution of KCC eligibility and structure involves both central policy decisions and state-level innovations.\n\nCorrect order — Option (b):\n1. 1998: KCC launched; original eligibility included owner cultivators, tenant farmers, and share croppers — but practical access for tenants was limited by documentation requirements.\n2. 2012: Structural revamp — RuPay debit card, unified limit, revolving credit feature introduced at the central level.\n3. ~2014–15 onwards: State-level LEC innovation in Andhra Pradesh and Telangana to issue Loan Eligibility Cards to tenant farmers, enabling documented access to KCC — a workaround for the absence of national tenancy reform.\n4. 2018–19 Budget: KCC formally extended to fishermen (inland and marine) and animal husbandry farmers — the broadest eligibility expansion since inception.\n\nWrong options fail because they either reverse the 2012 revamp and LEC sequence or place the 2018–19 expansion before the 2012 revamp.\n\nValue Addition:\n• The LEC model is a state-level administrative innovation that compensates for the absence of tenancy reform legislation in most Indian states.\n• The 2018–19 expansion is linked to the Blue Economy agenda and the Animal Husbandry Infrastructure Development Fund.\n• Tenant farmer exclusion despite formal eligibility since 1998 is a textbook 'de jure vs. de facto' policy gap question."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड योजना के विकास में निम्नलिखित प्रगति पर विचार करें:\n\n1. KCC की शुरुआत मूल पात्रता के साथ जिसमें मालिक कृषक, किरायेदार किसान, और साझेदार कृषक शामिल थे\n2. KCC को RuPay डेबिट कार्ड प्रारूप में परिवर्तित करने वाला संरचनात्मक पुनर्गठन जिसमें एकीकृत क्रेडिट सीमा थी\n3. आंध्र प्रदेश और तेलंगाना में राज्य-स्तरीय लोन पात्रता कार्ड (LEC) नवाचार जिसने किरायेदार किसानों के लिए व्यावहारिक KCC पहुंच सक्षम की\n4. केंद्रीय बजट घोषणा जिसने मछुआरों और पशुपालन किसानों तक KCC का विस्तार किया\n\nउपरोक्त प्रगति का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) 1 → 3 → 2 → 4\n(b) 1 → 2 → 3 → 4\n(c) 1 → 2 → 4 → 3\n(d) 2 → 1 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 2012 के RuPay पुनर्गठन को 2018–19 के सहायक गतिविधि विस्तार के बाद रखना सतर्क छात्रों को सहज रूप से गलत लगता है, लेकिन किरायेदार किसान LEC नवाचार (जो राष्ट्रीय नीति में तिथि नहीं है) को 2012 के पुनर्गठन के साथ भ्रमित करना सूक्ष्म जाल है।",
+      "elimination_logic": [
+        "घटना 1 — KCC की शुरुआत मूल पात्रता के साथ जिसमें मालिक कृषक और किरायेदार किसान शामिल थे: 1998।",
+        "घटना 2 — संरचनात्मक पुनर्गठन जिसने KCC को RuPay डेबिट कार्ड प्रारूप में परिवर्तित किया और एकीकृत सीमा लागू की: 2012।",
+        "घटना 3 — आंध्र प्रदेश/तेलंगाना लोन पात्रता कार्ड (LEC) नवाचार जिसने किरायेदार किसानों के लिए व्यावहारिक KCC पहुंच सक्षम की: विभाजन के बाद राज्य-स्तरीय पहल (तेलंगाना के मामले में लगभग 2014–15)।",
+        "घटना 4 — केंद्रीय बजट घोषणा जिसने मछुआरों और पशुपालन किसानों तक KCC का विस्तार किया: 2018–19।",
+        "सही क्रम: 1998 → 2012 → LEC राज्य नवाचार → 2018–19 विस्तार — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "LEC (लोन पात्रता कार्ड) नवाचार आंध्र प्रदेश और तेलंगाना में एक राज्य-स्तरीय पहल है — छात्र इसकी लगभग तिथि 2012 के पुनर्गठन के सापेक्ष याद नहीं रख पाते, जिससे कालानुक्रमिक क्रम अस्पष्ट हो जाता है। यह जाल यह परखने के लिए बनाया गया है कि छात्र जानते हैं कि 2018–19 का सहायक गतिविधि विस्तार अंतिम आता है, जो सबसे सटीक रूप से तिथिबद्ध घटना है, और क्या वे 2012 के RuPay पुनर्गठन को राज्य-स्तरीय LEC नवाचारों से पहले सही क्रम में रख सकते हैं।",
+      "final_explanation": "KCC पात्रता और संरचना का कालानुक्रमिक विकास केंद्रीय नीति निर्णयों और राज्य-स्तरीय नवाचारों दोनों को शामिल करता है।\n\nसही क्रम — विकल्प (b):\n1. 1998: KCC शुरू हुआ; मूल पात्रता में मालिक कृषक, किरायेदार किसान, और साझेदार कृषक शामिल थे — लेकिन दस्तावेज़ीकरण आवश्यकताओं के कारण किरायेदारों के लिए व्यावहारिक पहुंच सीमित थी।\n2. 2012: संरचनात्मक पुनर्गठन — RuPay डेबिट कार्ड, एकीकृत सीमा, और पुनरावर्ती क्रेडिट सुविधा केंद्रीय स्तर पर लागू की गई।\n3. लगभग 2014–15 से: आंध्र प्रदेश और तेलंगाना में राज्य-स्तरीय LEC नवाचार, जिसने किरायेदार किसानों को लोन पात्रता कार्ड जारी किए, जिससे दस्तावेज़ीकरण के साथ KCC तक पहुंच संभव हुई — राष्ट्रीय किरायेदारी सुधार के अभाव में एक समाधान।\n4. 2018–19 बजट: KCC को औपचारिक रूप से मछुआरों (आंतरिक और समुद्री) और पशुपालन किसानों तक विस्तारित किया गया — स्थापना के बाद से सबसे व्यापक पात्रता विस्तार।\n\nगलत विकल्प इसलिए असफल होते हैं क्योंकि वे या तो 2012 के पुनर्गठन और LEC क्रम को उलट देते हैं या 2018–19 विस्तार को 2012 के पुनर्गठन से पहले रखते हैं।\n\nमूल्य संवर्धन:\n• LEC मॉडल एक राज्य-स्तरीय प्रशासनिक नवाचार है जो अधिकांश भारतीय राज्यों में किरायेदारी सुधार कानून के अभाव की भरपाई करता है।\n• 2018–19 का विस्तार ब्लू इकोनॉमी एजेंडा और पशुपालन अवसंरचना विकास कोष से जुड़ा है।\n• 1998 से औपचारिक पात्रता के बावजूद किरायेदार किसानों का बहिष्कार 'de jure बनाम de facto' नीति अंतर का एक आदर्श प्रश्न है।"
+    }
+  },
+  {
+    "uuid": "ebb12106-ef67-441f-bdb2-57f0be1dec87",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Gender Dimension of KCC: Women Farmers and Joint Holders"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Women KCC access: land ownership barrier and SHG-JLG alternative",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Despite being legally eligible for Kisan Credit Cards, women farmers face practical barriers to accessing KCC loans above the collateral-free threshold because land — the typical collateral — remains predominantly owned by male household members in most Indian states.\n\nReason (R): The Women Kisan Sashaktikaran Pariyojana (WKSP) directly confers land ownership rights on women farmers, which, once implemented, removes the collateral-based barrier to KCC access for women.\n\nWhich one of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both that women face barriers to KCC access and that SHG/JLG mechanisms exist may assume the JLG mechanism causes the land ownership barrier — reversing the causal chain.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — A states women farmers face practical barriers to KCC access due to land ownership norms above ₹1.6 lakh. This is factually accurate — above the collateral-free limit, land is the typical collateral, and women's low land ownership creates a real access gap. A is correct.",
+        "Step 2: Is Reason (R) correct? — R states that Women Kisan Sashaktikaran Pariyojana (WKSP) provides direct land ownership rights to women farmers. WKSP is a capacity-building and empowerment programme for women in agriculture — it does not provide direct land ownership rights. R is factually incorrect.",
+        "Step 3: A is correct, R is incorrect — option (c).",
+        "Confirm: final step names option (c), matching correct_option (c)."
+      ],
+      "upsc_trap_explanation": "WKSP (Women Kisan Sashaktikaran Pariyojana) is a real government programme for women farmers, making it a plausible-sounding reason. Students who recall its name and its connection to women in agriculture may accept R as correct without knowing WKSP's precise mandate — which is capacity building, skill development, and convergence with credit schemes, NOT direct land ownership transfer. This conflates the programme's stated objective with a much stronger intervention (land rights) that it does not deliver.",
+      "final_explanation": "The gender dimension of KCC access involves a structural contradiction between the feminisation of agricultural labour and women's historically low land ownership.\n\nAssertion (A) Analysis: Women farmers face a genuine access barrier to KCC loans above the ₹1.6 lakh collateral-free threshold because collateral is typically in the form of land, and women's land ownership in India remains low. A is factually correct.\n\nReason (R) Analysis: The Women Kisan Sashaktikaran Pariyojana (WKSP) is a programme focused on capacity building, training, technology dissemination, and convergence of various agricultural schemes for women farmers. It does NOT confer direct land ownership rights on women. Therefore R is factually incorrect.\n\nConclusion: Since A is correct and R is incorrect, option (c) applies.\n\nValue Addition:\n• Women can access KCC through SHG-linked JLG (Joint Liability Group) mechanisms without individual collateral — this is the primary workaround for the land ownership barrier.\n• Feminisation of agriculture (men migrating to cities) has increased women's operational role but not their land ownership — a structural contradiction in Indian agrarian policy.\n• WKSP convergence with KCC aims to improve women farmers' financial literacy and credit uptake — it is a facilitation programme, not a rights-conferment programme."
+    },
+    "hi": {
+      "display_text": "कथन (A): कानूनी रूप से किसान क्रेडिट कार्ड के पात्र होने के बावजूद, महिला किसान ₹1.6 लाख की बिना जमानत सीमा से ऊपर KCC ऋणों तक पहुंच में व्यावहारिक बाधाओं का सामना करती हैं क्योंकि भूमि — जो सामान्य जमानत होती है — अधिकांश भारतीय राज्यों में पुरुष परिवार के सदस्यों के स्वामित्व में है।\n\nकारण (R): महिला किसान सशक्तिकरण परियोजना (WKSP) महिलाओं को सीधे भूमि स्वामित्व अधिकार प्रदान करती है, जो लागू होने पर महिलाओं के लिए KCC तक जमानत आधारित बाधा को समाप्त कर देती है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि महिलाओं को KCC तक पहुंच में बाधाएं हैं और SHG/JLG तंत्र मौजूद हैं, वे मान सकते हैं कि JLG तंत्र भूमि स्वामित्व बाधा का कारण है — कारण संबंध उलट जाता है।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — A कहता है कि महिला किसान ₹1.6 लाख से ऊपर के KCC ऋणों तक पहुंच में भूमि स्वामित्व नियमों के कारण व्यावहारिक बाधाओं का सामना करती हैं। यह तथ्यात्मक रूप से सही है — ₹1.6 लाख की बिना जमानत सीमा से ऊपर, भूमि सामान्य जमानत होती है, और महिलाओं का कम भूमि स्वामित्व वास्तविक पहुंच अंतर पैदा करता है। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — R कहता है कि महिला किसान सशक्तिकरण परियोजना (WKSP) महिलाओं को सीधे भूमि स्वामित्व अधिकार प्रदान करती है। WKSP कृषि में महिलाओं के लिए क्षमता निर्माण और सशक्तिकरण कार्यक्रम है — यह सीधे भूमि स्वामित्व अधिकार प्रदान नहीं करता। R तथ्यात्मक रूप से गलत है।",
+        "चरण 3: A सही है, R गलत है — विकल्प (c)।",
+        "पुष्टि करें: अंतिम चरण विकल्प (c) बताता है, जो correct_option (c) से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "WKSP (महिला किसान सशक्तिकरण परियोजना) महिलाओं के लिए एक वास्तविक सरकारी कार्यक्रम है, इसलिए यह एक संभावित सही कारण लगता है। जो छात्र इसका नाम और कृषि में महिलाओं से संबंध याद रखते हैं, वे R को सही मान सकते हैं बिना WKSP के सटीक उद्देश्य को जाने — जो क्षमता निर्माण, कौशल विकास और ऋण योजनाओं के समन्वय तक सीमित है, सीधे भूमि स्वामित्व हस्तांतरण नहीं। यह कार्यक्रम के उद्देश्य को एक मजबूत हस्तक्षेप (भूमि अधिकार) के साथ भ्रमित करता है जो यह प्रदान नहीं करता।",
+      "final_explanation": "KCC पहुंच में लिंग आयाम में कृषि श्रम के स्त्रीकरण और महिलाओं के ऐतिहासिक रूप से कम भूमि स्वामित्व के बीच एक संरचनात्मक विरोधाभास है।\n\nकथन (A) विश्लेषण: महिला किसान ₹1.6 लाख की बिना जमानत सीमा से ऊपर KCC ऋणों तक पहुंच में वास्तविक बाधा का सामना करती हैं क्योंकि जमानत आमतौर पर भूमि के रूप में होती है, और भारत में महिलाओं का भूमि स्वामित्व कम है। A तथ्यात्मक रूप से सही है।\n\nकारण (R) विश्लेषण: महिला किसान सशक्तिकरण परियोजना (WKSP) एक ऐसा कार्यक्रम है जो क्षमता निर्माण, प्रशिक्षण, प्रौद्योगिकी प्रसार और विभिन्न कृषि योजनाओं के समन्वय पर केंद्रित है। यह महिलाओं को सीधे भूमि स्वामित्व अधिकार प्रदान नहीं करता। अतः R तथ्यात्मक रूप से गलत है।\n\nनिष्कर्ष: चूंकि A सही है और R गलत है, विकल्प (c) लागू होता है।\n\nमूल्य संवर्धन:\n• महिलाएं SHG से जुड़े JLG (संयुक्त देयता समूह) तंत्र के माध्यम से बिना व्यक्तिगत जमानत के KCC तक पहुंच सकती हैं — यह भूमि स्वामित्व बाधा का प्राथमिक समाधान है।\n• कृषि का स्त्रीकरण (पुरुषों का शहरों की ओर पलायन) ने महिलाओं की परिचालन भूमिका बढ़ाई है लेकिन उनके भूमि स्वामित्व को नहीं — यह भारतीय कृषि नीति में एक संरचनात्मक विरोधाभास है।\n• WKSP का KCC के साथ समन्वय महिलाओं की वित्तीय साक्षरता और ऋण ग्रहण क्षमता बढ़ाने का प्रयास करता है — यह एक सुविधा प्रदान करने वाला कार्यक्रम है, अधिकार प्रदान करने वाला नहीं।"
+    }
+  },
+  {
+    "uuid": "f2893edb-fee0-44cc-9111-f0a3f50d43ee",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Collateral Security Norms under KCC",
+        "KCC and Priority Sector Lending (PSL) Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "₹1.6 lakh KCC collateral-free vs. CGTMSE — distinct frameworks",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about collateral norms under the Kisan Credit Card scheme:\n\nStatement 1: Under the Kisan Credit Card scheme, crop loans up to ₹1.6 lakh are collateral-free — hypothecation of crops is considered adequate security, and no land mortgage is required.\nStatement 2: The collateral-free provision for KCC crop loans up to ₹1.6 lakh operates under the Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) guarantee framework.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: Under the Kisan Credit Card scheme, crop loans up to ₹1.6 lakh are collateral-free — hypothecation of crops is considered adequate security, and no land mortgage is required.",
+          "verdict": "Correct",
+          "reason": "The KCC model scheme prescribes that loans up to ₹1.6 lakh require no collateral beyond hypothecation of crops — this is specific to KCC agricultural loans."
+        },
+        {
+          "statement": "Statement 2: The collateral-free provision for KCC crop loans up to ₹1.6 lakh operates under the Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) guarantee framework.",
+          "verdict": "Incorrect",
+          "reason": "CGTMSE applies to Micro and Small Enterprise (MSE) loans — it is a separate guarantee framework and does not cover KCC agricultural loans. The KCC collateral-free norm is a stand-alone provision under the KCC model scheme, not backed by CGTMSE."
+        }
+      ],
+      "strong_distractor": "a — Students who know both KCC has a collateral-free limit and CGTMSE enables collateral-free lending may conflate the two, assuming CGTMSE is the mechanism behind the KCC collateral-free provision.",
+      "elimination_logic": [
+        "Verify Statement 1: ₹1.6 lakh collateral-free threshold with crop hypothecation as security is the defined KCC norm — Statement 1 is correct.",
+        "Verify Statement 2: CGTMSE specifically covers MSE sector loans — its application to KCC agricultural loans is a conflation of two distinct credit guarantee frameworks; Statement 2 is incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — option (c)."
+      ],
+      "upsc_trap_explanation": "CGTMSE is a well-known collateral-free credit guarantee instrument in India, and students aware of both CGTMSE and KCC's collateral-free feature may assume they operate under the same framework. The trap relies on the surface similarity (both involve collateral-free lending) to obscure the fundamental difference in their target sectors: CGTMSE covers MSEs while KCC operates under its own agricultural model scheme norms without CGTMSE backing.",
+      "final_explanation": "The collateral norms under KCC and the CGTMSE framework are frequently conflated — understanding their distinct domains is important.\n\n• Statement 1 — Correct: KCC loans up to ₹1.6 lakh are collateral-free; hypothecation of the standing crop or harvest is considered adequate security. This is a defined feature of the KCC model scheme applicable to all implementing institutions.\n• Statement 2 — Incorrect: CGTMSE (Credit Guarantee Fund Trust for Micro and Small Enterprises) is administered by SIDBI and covers MSE sector loans — not agricultural loans under KCC. The KCC collateral-free provision is a scheme-specific norm, not a guarantee-backed arrangement under CGTMSE.\n\nValue Addition:\n• Above ₹1.6 lakh, KCC typically requires land mortgage or third-party guarantee — this threshold is different from the general MSME collateral-free limit under CGTMSE.\n• Cooperative banks may follow state-specific collateral norms that deviate from the NABARD model scheme — regulatory variation is an important nuance.\n• CGTMSE covers loans up to ₹2 crore for eligible MSEs — this figure is commonly confused with agricultural credit thresholds."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड योजना के अंतर्गत जमानत नियमों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: किसान क्रेडिट कार्ड योजना के तहत, ₹1.6 लाख तक के फसल ऋण बिना जमानत के होते हैं — फसलों का हाइपोथिकेशन पर्याप्त सुरक्षा माना जाता है, और भूमि गिरवी रखने की आवश्यकता नहीं होती।\nकथन 2: ₹1.6 लाख तक के KCC फसल ऋणों के लिए बिना जमानत की व्यवस्था माइक्रो और लघु उद्यमों के लिए क्रेडिट गारंटी फंड ट्रस्ट (CGTMSE) की गारंटी प्रणाली के अंतर्गत संचालित होती है।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: किसान क्रेडिट कार्ड योजना के तहत, ₹1.6 लाख तक के फसल ऋण बिना जमानत के होते हैं — फसलों का हाइपोथिकेशन पर्याप्त सुरक्षा माना जाता है, और भूमि गिरवी रखने की आवश्यकता नहीं होती।",
+          "verdict": "सही",
+          "reason": "KCC मॉडल योजना में यह निर्धारित है कि ₹1.6 लाख तक के ऋणों के लिए फसलों के हाइपोथिकेशन के अलावा कोई जमानत आवश्यक नहीं है — यह विशेष रूप से KCC कृषि ऋणों के लिए है।"
+        },
+        {
+          "statement": "कथन 2: ₹1.6 लाख तक के KCC फसल ऋणों के लिए बिना जमानत की व्यवस्था माइक्रो और लघु उद्यमों के लिए क्रेडिट गारंटी फंड ट्रस्ट (CGTMSE) की गारंटी प्रणाली के अंतर्गत संचालित होती है।",
+          "verdict": "गलत",
+          "reason": "CGTMSE माइक्रो और लघु उद्यम (MSE) ऋणों पर लागू होता है — यह एक अलग गारंटी प्रणाली है और KCC कृषि ऋणों को कवर नहीं करता। KCC का बिना जमानत का नियम KCC मॉडल योजना के अंतर्गत स्वतंत्र प्रावधान है, जो CGTMSE द्वारा समर्थित नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि KCC की एक बिना जमानत सीमा है और CGTMSE बिना जमानत वाले ऋण को सक्षम करता है, वे दोनों को मिला सकते हैं, यह मानते हुए कि CGTMSE ही KCC के बिना जमानत प्रावधान के पीछे की व्यवस्था है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: ₹1.6 लाख तक बिना जमानत की सीमा और फसलों के हाइपोथिकेशन को सुरक्षा के रूप में KCC का परिभाषित नियम है — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: CGTMSE विशेष रूप से MSE क्षेत्र के ऋणों को कवर करता है — इसका KCC कृषि ऋणों पर लागू होना दो अलग-अलग क्रेडिट गारंटी ढांचों का मिश्रण है; कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "CGTMSE भारत में एक प्रसिद्ध बिना जमानत क्रेडिट गारंटी उपकरण है, और जो छात्र CGTMSE और KCC के बिना जमानत वाले फीचर दोनों से परिचित हैं, वे मान सकते हैं कि वे एक ही ढांचे के अंतर्गत काम करते हैं। यह जाल सतही समानता (दोनों बिना जमानत वाले ऋण से संबंधित) पर आधारित है, जो उनके लक्षित क्षेत्रों में मौलिक अंतर को छुपाता है: CGTMSE MSEs को कवर करता है जबकि KCC अपनी कृषि मॉडल योजना के नियमों के अंतर्गत CGTMSE समर्थन के बिना संचालित होता है।",
+      "final_explanation": "KCC और CGTMSE के अंतर्गत जमानत नियमों को अक्सर मिलाया जाता है — उनके अलग-अलग क्षेत्रों को समझना महत्वपूर्ण है।\n\n• कथन 1 — सही: KCC के तहत ₹1.6 लाख तक के ऋण बिना जमानत के होते हैं; खड़ी फसल या कटाई का हाइपोथिकेशन पर्याप्त सुरक्षा माना जाता है। यह KCC मॉडल योजना की एक परिभाषित विशेषता है जो सभी लागू संस्थानों पर लागू होती है।\n• कथन 2 — गलत: CGTMSE (क्रेडिट गारंटी फंड ट्रस्ट फॉर माइक्रो एंड स्मॉल एंटरप्राइजेज) SIDBI द्वारा संचालित है और MSE क्षेत्र के ऋणों को कवर करता है — KCC के तहत कृषि ऋणों को नहीं। KCC का बिना जमानत प्रावधान योजना-विशिष्ट नियम है, CGTMSE के तहत गारंटी-समर्थित व्यवस्था नहीं।\n\nमूल्य संवर्धन:\n• ₹1.6 लाख से ऊपर, KCC आमतौर पर भूमि गिरवी या तृतीय पक्ष गारंटी मांगता है — यह सीमा CGTMSE के सामान्य MSME बिना जमानत सीमा से अलग है।\n• सहकारी बैंक राज्य-विशिष्ट जमानत नियमों का पालन कर सकते हैं जो NABARD मॉडल योजना से भिन्न हो सकते हैं — नियामक भिन्नता एक महत्वपूर्ण बारीकी है।\n• CGTMSE पात्र MSEs के लिए ₹2 करोड़ तक के ऋण कवर करता है — यह आंकड़ा कृषि ऋण सीमाओं के साथ अक्सर भ्रमित किया जाता है।"
+    }
+  },
+  {
+    "uuid": "6feef478-dd05-4fe7-b1a6-a10a301d8660",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC and Agricultural Credit Flow: Macro Targets and Achievement"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Annual agricultural credit target set by Union Budget, not RBI/NABARD",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The annual agricultural credit flow target in India — for example, ₹20 lakh crore set for 2023–24 — is announced by the ________.\n\n(a) Reserve Bank of India through its monetary policy statement\n(b) Union Budget presented by the Finance Minister\n(c) National Bank for Agriculture and Rural Development in its Annual Report\n(d) NITI Aayog as part of its sectoral development targets",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — NABARD is the apex rural finance institution and students may logically assume it sets the agricultural credit targets, given its central role in agricultural finance.",
+      "elimination_logic": [
+        "Eliminate option (a): RBI sets monetary policy targets and regulates banks but does not set the annual agricultural credit flow target — that is a fiscal policy decision.",
+        "Eliminate option (c): NABARD plays a supervisory and refinancing role; it does not independently set the annual agricultural credit target in the Union Budget.",
+        "Eliminate option (d): NITI Aayog is a policy think-tank without the mandate to set annual sectoral credit flow targets.",
+        "Option (b) — Union Budget — is the correct answer: the annual agricultural credit target (e.g., ₹20 lakh crore for 2023–24) is announced in the Union Budget by the Finance Minister."
+      ],
+      "upsc_trap_explanation": "NABARD is prominently associated with agricultural credit in every context — refinancing, oversight, scheme design — making it the instinctive choice for setting agricultural credit targets. The trap exploits this association. In reality, the annual agricultural credit target is a fiscal policy announcement made in the Union Budget, reflecting the government's expenditure priorities, not a central banking or development finance institution decision.",
+      "final_explanation": "The annual agricultural credit target is a fiscal policy instrument announced by the Finance Minister.\n\n• Option (a) — Reserve Bank of India: Incorrect. RBI sets monetary policy rates and regulates banks but does not announce annual sectoral credit flow targets. Its role in agricultural credit is regulatory and monetary, not target-setting.\n• Option (b) — Union Budget: Correct. The annual agricultural credit flow target is announced in the Union Budget — for 2023–24 it was set at ₹20 lakh crore. This is a government commitment to direct credit flow toward agriculture.\n• Option (c) — NABARD: Incorrect. NABARD refinances and supervises, and tracks credit flow data, but the annual target is set by the government in the Budget, not independently by NABARD.\n• Option (d) — NITI Aayog: Incorrect. NITI Aayog is a policy advisory body without operational mandate over annual credit targets.\n\nValue Addition:\n• Achieving the credit target does not guarantee equitable distribution — small/marginal farmers and women remain underserved despite headline target achievement.\n• NABARD's AIDIS (All India Debt and Investment Survey) data tracks actual agricultural credit penetration — useful for evaluating target vs. reality.\n• The Credit-Deposit ratio in rural areas is used as a financial inclusion metric — KCC lending improves this ratio."
+    },
+    "hi": {
+      "display_text": "भारत में वार्षिक कृषि ऋण प्रवाह लक्ष्य — उदाहरण के लिए, 2023–24 के लिए ₹20 लाख करोड़ निर्धारित — ________ द्वारा घोषित किया जाता है।\n\n(a) भारतीय रिज़र्व बैंक अपनी मौद्रिक नीति घोषणा के माध्यम से\n(b) वित्त मंत्री द्वारा प्रस्तुत केंद्रीय बजट\n(c) राष्ट्रीय कृषि और ग्रामीण विकास बैंक अपनी वार्षिक रिपोर्ट में\n(d) नीति आयोग अपने क्षेत्रीय विकास लक्ष्यों के हिस्से के रूप में",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — NABARD ग्रामीण वित्त का शीर्ष संस्थान है और छात्र तार्किक रूप से मान सकते हैं कि यह कृषि ऋण लक्ष्य निर्धारित करता है, क्योंकि इसका कृषि वित्त में केंद्रीय भूमिका है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: RBI मौद्रिक नीति लक्ष्य निर्धारित करता है और बैंकों को विनियमित करता है लेकिन वार्षिक कृषि ऋण प्रवाह लक्ष्य निर्धारित नहीं करता — यह एक राजकोषीय नीति निर्णय है।",
+        "विकल्प (c) को हटाएं: NABARD पर्यवेक्षण और पुनर्वित्त की भूमिका निभाता है; यह स्वतंत्र रूप से केंद्रीय बजट में वार्षिक कृषि ऋण लक्ष्य निर्धारित नहीं करता।",
+        "विकल्प (d) को हटाएं: नीति आयोग एक नीति थिंक-टैंक है जिसके पास वार्षिक क्षेत्रीय ऋण प्रवाह लक्ष्य निर्धारित करने का अधिकार नहीं है।",
+        "विकल्प (b) — केंद्रीय बजट — सही उत्तर है: वार्षिक कृषि ऋण लक्ष्य (जैसे, 2023–24 के लिए ₹20 लाख करोड़) केंद्रीय बजट में वित्त मंत्री द्वारा घोषित किया जाता है।"
+      ],
+      "upsc_trap_explanation": "NABARD हर संदर्भ में कृषि ऋण से जुड़ा होता है — पुनर्वित्त, निगरानी, योजना निर्माण — इसलिए यह कृषि ऋण लक्ष्य निर्धारित करने के लिए सहज विकल्प लगता है। यह जाल इसी संबंध का उपयोग करता है। वास्तव में, वार्षिक कृषि ऋण लक्ष्य एक राजकोषीय नीति घोषणा है जो केंद्रीय बजट में की जाती है, जो सरकार की व्यय प्राथमिकताओं को दर्शाती है, न कि किसी केंद्रीय बैंकिंग या विकास वित्त संस्थान का निर्णय।",
+      "final_explanation": "वार्षिक कृषि ऋण लक्ष्य एक राजकोषीय नीति उपकरण है जिसे वित्त मंत्री द्वारा घोषित किया जाता है।\n\n• विकल्प (a) — भारतीय रिज़र्व बैंक: गलत। RBI मौद्रिक नीति दरें निर्धारित करता है और बैंकों को विनियमित करता है लेकिन वार्षिक क्षेत्रीय ऋण प्रवाह लक्ष्य घोषित नहीं करता। इसका कृषि ऋण में भूमिका विनियामक और मौद्रिक है, लक्ष्य निर्धारण नहीं।\n• विकल्प (b) — केंद्रीय बजट: सही। वार्षिक कृषि ऋण प्रवाह लक्ष्य केंद्रीय बजट में घोषित किया जाता है — 2023–24 के लिए इसे ₹20 लाख करोड़ निर्धारित किया गया था। यह कृषि की ओर ऋण प्रवाह निर्देशित करने के लिए सरकार की प्रतिबद्धता है।\n• विकल्प (c) — NABARD: गलत। NABARD पुनर्वित्त करता है, पर्यवेक्षण करता है, और ऋण प्रवाह डेटा ट्रैक करता है, लेकिन वार्षिक लक्ष्य सरकार द्वारा बजट में निर्धारित किया जाता है, NABARD द्वारा स्वतंत्र रूप से नहीं।\n• विकल्प (d) — नीति आयोग: गलत। नीति आयोग एक नीति सलाहकार निकाय है जिसके पास वार्षिक ऋण लक्ष्यों पर संचालनात्मक अधिकार नहीं है।\n\nमूल्य संवर्धन:\n• ऋण लक्ष्य प्राप्त करना समान वितरण की गारंटी नहीं देता — छोटे/सीमांत किसान और महिलाएं मुख्य लक्ष्य प्राप्ति के बावजूद सेवा से वंचित रहती हैं।\n• NABARD का AIDIS (ऑल इंडिया डेट एंड इन्वेस्टमेंट सर्वे) डेटा वास्तविक कृषि ऋण पैठ को ट्रैक करता है — लक्ष्य और वास्तविकता के मूल्यांकन के लिए उपयोगी।\n• ग्रामीण क्षेत्रों में क्रेडिट-डिपॉजिट अनुपात वित्तीय समावेशन का मापक है — KCC ऋण इस अनुपात को सुधारता है।"
+    }
+  },
+  {
+    "uuid": "de226acb-f0b0-44e8-bc0b-037878e832b3",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Scheme: Origin, Genesis and Institutional Architects",
+        "Revised KCC Scheme 2012: Key Structural Changes",
+        "KCC for Allied Activities: Fisheries and Animal Husbandry",
+        "PM-KISAN and KCC Convergence: Saturation Drive"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "KCC milestones matched to years and institutional events",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (KCC Development / Event) with List II (Year / Context):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Launch of the Kisan Credit Card scheme based on R.V. Gupta Committee recommendations",
+            "1. 2012"
+          ],
+          [
+            "B. Conversion of KCC to RuPay debit card format with unified credit limit",
+            "2. 1998"
+          ],
+          [
+            "C. Formal extension of KCC to fishermen and animal husbandry farmers",
+            "3. 2019"
+          ],
+          [
+            "D. Launch of PM-KISAN creating the convergence model with KCC",
+            "4. 2018–19 Budget"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-2, B-1, C-4, D-3\n(d) A-1, B-3, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) swaps the 1998 launch year (correctly matched to A) with the 2019 PM-KISAN launch, which students may confuse because both involve farmer-facing credit/income support programmes announced at similar policy junctures.",
+      "elimination_logic": [
+        "Match A: KCC was launched in 1998 based on the R.V. Gupta Committee recommendations — A matches with 2.",
+        "Match B: The 2012 revamp introduced the RuPay debit card format — B matches with 1.",
+        "Match C: Fisheries and animal husbandry extension was announced in the 2018–19 Union Budget — C matches with 4.",
+        "Match D: PM-KISAN was launched in 2019, creating the convergence model with KCC — D matches with 3.",
+        "Correct combination: A-2, B-1, C-4, D-3 — option (c)."
+      ],
+      "upsc_trap_explanation": "The primary temporal traps are: (1) confusing the 2019 PM-KISAN launch with the 1998 KCC launch (both are founding moments for large farmer support schemes), and (2) confusing the 2012 RuPay conversion with the 2018–19 fisheries expansion. Option (a) deliberately places A with '1' (2012) to test whether students know 1998 is the KCC launch year, and option (b) swaps C and D to test knowledge of the fisheries extension year.",
+      "final_explanation": "Matching KCC milestones to their correct years tests both factual recall and the ability to distinguish adjacent policy events.\n\nCorrect pairings:\n• A-2 (1998): KCC was launched in 1998 following the R.V. Gupta Committee's recommendations — this is the founding year.\n• B-1 (2012): The 2012 structural revamp converted the paper KCC into a RuPay-enabled debit card with a unified credit limit and revolving feature.\n• C-4 (2018–19 Budget): The Union Budget 2018–19 announced the formal extension of KCC to fishermen and animal husbandry farmers — expanding eligibility beyond crop agriculture.\n• D-3 (2019): PM-KISAN was launched in 2019, and the government subsequently launched a convergence drive to link all PM-KISAN beneficiaries to KCC.\n\nCommon errors: Confusing the 2019 PM-KISAN launch with the 1998 KCC inception, or placing the fisheries extension in 2016 or 2020.\n\nValue Addition:\n• Each of these four milestones represents a distinct phase: 1998 (inception), 2012 (digitalisation), 2018–19 (eligibility expansion), 2019 (convergence architecture).\n• The 2018–19 fisheries extension is linked to PM Matsya Sampada Yojana — connecting credit to the Blue Economy framework.\n• PM-KISAN's 2-page simplified KCC application is a direct product of the 2019 convergence drive."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (KCC विकास / घटना) को सूची II (वर्ष / संदर्भ) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. R.V. Gupta समिति की सिफारिशों के आधार पर किसान क्रेडिट कार्ड योजना का शुभारंभ",
+            "1. 2012"
+          ],
+          [
+            "B. KCC को RuPay डेबिट कार्ड प्रारूप में एकीकृत क्रेडिट सीमा के साथ रूपांतरित करना",
+            "2. 1998"
+          ],
+          [
+            "C. मत्स्य पालन और पशुपालन किसानों के लिए KCC का औपचारिक विस्तार",
+            "3. 2019"
+          ],
+          [
+            "D. PM-KISAN का शुभारंभ जो KCC के साथ समन्वय मॉडल बनाता है",
+            "4. 2018–19 बजट"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-2, B-1, C-4, D-3\n(d) A-1, B-3, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) 1998 के लॉन्च वर्ष (जो सही रूप से A से मेल खाता है) को 2019 के PM-KISAN लॉन्च के साथ बदल देता है, जिसे छात्र भ्रमित कर सकते हैं क्योंकि दोनों में किसान-सम्बंधित क्रेडिट/आय सहायता कार्यक्रम शामिल हैं जो समान नीति समय पर घोषित हुए।",
+      "elimination_logic": [
+        "A से मेल: KCC को 1998 में R.V. Gupta समिति की सिफारिशों के आधार पर लॉन्च किया गया था — A का मेल 2 से है।",
+        "B से मेल: 2012 के पुनर्गठन में RuPay डेबिट कार्ड प्रारूप पेश किया गया — B का मेल 1 से है।",
+        "C से मेल: मत्स्य पालन और पशुपालन का विस्तार 2018–19 के केंद्रीय बजट में घोषित किया गया — C का मेल 4 से है।",
+        "D से मेल: PM-KISAN 2019 में लॉन्च किया गया, जिससे KCC के साथ समन्वय मॉडल बना — D का मेल 3 से है।",
+        "सही संयोजन: A-2, B-1, C-4, D-3 — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "प्रमुख कालानुक्रमिक जाल हैं: (1) 2019 के PM-KISAN लॉन्च को 1998 के KCC लॉन्च के साथ भ्रमित करना (दोनों बड़े किसान सहायता योजनाओं के संस्थापक क्षण हैं), और (2) 2012 के RuPay रूपांतरण को 2018–19 के मत्स्य विस्तार के साथ भ्रमित करना। विकल्प (a) जानबूझकर A को '1' (2012) से जोड़ता है ताकि यह जांच सके कि छात्र जानते हैं कि 1998 KCC लॉन्च वर्ष है, और विकल्प (b) C और D को बदलता है ताकि मत्स्य विस्तार वर्ष की जानकारी की परीक्षा हो सके।",
+      "final_explanation": "KCC के मील के पत्थरों को उनके सही वर्षों से मिलाना तथ्यात्मक स्मृति और निकटवर्ती नीति घटनाओं को अलग करने की क्षमता दोनों की परीक्षा लेता है।\n\nसही जोड़े:\n• A-2 (1998): KCC को 1998 में R.V. Gupta समिति की सिफारिशों के बाद लॉन्च किया गया — यह स्थापना वर्ष है।\n• B-1 (2012): 2012 के संरचनात्मक पुनर्गठन में कागजी KCC को RuPay-सक्षम डेबिट कार्ड में बदला गया जिसमें एकीकृत क्रेडिट सीमा और रिवॉल्विंग सुविधा थी।\n• C-4 (2018–19 बजट): 2018–19 के केंद्रीय बजट में मत्स्य पालन और पशुपालन किसानों के लिए KCC का औपचारिक विस्तार घोषित किया गया — फसल कृषि से परे पात्रता का विस्तार।\n• D-3 (2019): PM-KISAN 2019 में लॉन्च किया गया, और सरकार ने बाद में सभी PM-KISAN लाभार्थियों को KCC से जोड़ने के लिए समन्वय अभियान शुरू किया।\n\nसामान्य त्रुटियाँ: 2019 के PM-KISAN लॉन्च को 1998 के KCC आरंभ से भ्रमित करना, या मत्स्य विस्तार को 2016 या 2020 में रखना।\n\nमूल्य संवर्धन:\n• ये चारों मील के पत्थर अलग-अलग चरणों का प्रतिनिधित्व करते हैं: 1998 (आरंभ), 2012 (डिजिटलीकरण), 2018–19 (पात्रता विस्तार), 2019 (समन्वय संरचना)।\n• 2018–19 मत्स्य विस्तार PM मत्स्य संपदा योजना से जुड़ा है — जो क्रेडिट को ब्लू इकोनॉमी फ्रेमवर्क से जोड़ता है।\n• PM-KISAN का 2-पृष्ठ सरल KCC आवेदन 2019 के समन्वय अभियान का प्रत्यक्ष परिणाम है।"
+    }
+  },
+  {
+    "uuid": "f888fe9f-1fc4-4c17-870c-4c2488eac7a9",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Interest Subvention Scheme (ISS) Linkage with KCC",
+        "KCC for Allied Activities: Fisheries and Animal Husbandry"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "ISS ₹3 lakh cap — fisheries KCC and subvention eligibility",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A marine fisherman has a Kisan Credit Card with a sanctioned limit of ₹1.8 lakh, covering working capital for fuel and nets. He repays the amount borrowed within the due date in a given crop year. His bank is seeking to apply the Interest Subvention Scheme (ISS) to his account.\n\nWhich of the following correctly describes the ISS applicability in this scenario?\n\n(a) Only the portion of the loan up to ₹1.6 lakh qualifies for the interest subvention benefit — the remaining ₹20,000 is ineligible as it exceeds the collateral-free threshold.\n(b) The entire ₹1.8 lakh qualifies for the ISS benefit; as a prompt repayer, the fisherman's effective interest rate is approximately 4% per annum.\n(c) The fisherman's loan does not qualify for ISS because the Interest Subvention Scheme was not extended to fisheries KCC accounts.\n(d) The full loan qualifies, but the effective rate after subvention is 6% per annum since the prompt repayment incentive only applies to crop loans, not fisheries loans.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — A student who knows fisheries KCC was brought under the interest subvention framework post-COVID may assume the full KCC limit for fisheries (up to ₹2 lakh for non-boat owners) automatically qualifies for the maximum subvention benefit, without checking the ₹3 lakh cap.",
+      "elimination_logic": [
+        "Identify the applicable principle: ISS provides 2% subvention to banks + 3% prompt repayment incentive to borrowers, but only on short-term crop/allied activity loans up to ₹3 lakh.",
+        "The fisherman's KCC limit is ₹1.8 lakh — this is below ₹3 lakh, so the full amount qualifies for ISS.",
+        "Eliminate option (a): the ₹3 lakh cap is not breached here; claiming the loan partially qualifies is incorrect.",
+        "Eliminate option (c): ISS was extended to fisheries KCC post-COVID under PM Matsya Sampada Yojana linkage — fisheries KCC does qualify.",
+        "Eliminate option (d): the prompt repayment incentive is the additional 3% — total effective benefit is 5%, bringing the rate to approximately 4%, not 6%.",
+        "Option (b) correctly states the full ₹1.8 lakh qualifies for ISS at the effective 4% rate for prompt repayment — option (b) is correct."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the ₹3 lakh cap by suggesting the fisherman's loan only partially qualifies — this would be true only if the loan exceeded ₹3 lakh. Since ₹1.8 lakh is below the cap, the full amount qualifies. Option (d) exploits a numerical error — students may add 2% + 3% to the standard rate incorrectly, arriving at 6% instead of the approximately 4% effective rate (subtracting the subvention from the standard 7% benchmark).",
+      "final_explanation": "A marine fisherman holds a KCC with a ₹1.8 lakh limit and repays within the due date. Applying the ISS framework correctly:\n\nApplicable principle: ISS provides a 2% interest subvention to the lending institution and an additional 3% prompt repayment incentive to the borrower on short-term loans up to ₹3 lakh. Post-COVID, fisheries KCC was brought under this subvention framework.\n\nScenario mapping: The fisherman's loan (₹1.8 lakh) is below the ₹3 lakh cap. As a prompt repayer, he qualifies for both the 2% bank subvention and the 3% borrower incentive, bringing the effective rate to approximately 4% per annum.\n\n• Option (a) — Incorrect: The ₹3 lakh cap is not breached; the full ₹1.8 lakh qualifies, not just a portion.\n• Option (b) — Correct: Full loan amount qualifies; effective rate is approximately 4% for a prompt repayer.\n• Option (c) — Incorrect: Fisheries KCC was extended to the ISS framework post-2020 under PM Matsya Sampada Yojana linkage — it does qualify.\n• Option (d) — Incorrect: The effective rate is approximately 4% (7% − 2% bank subvention − 3% borrower incentive), not 6%.\n\nValue Addition:\n• The ISS mechanism has two layers: bank-level subvention (reduces cost of funds) + borrower-level incentive (rewards prompt repayment).\n• The ₹3 lakh cap is the single most important numerical threshold in the ISS framework — above it, normal rates apply.\n• PM Matsya Sampada Yojana linkage is the policy instrument that extended ISS to fisheries KCC — connecting fisheries credit to the mainstream agricultural credit subvention architecture."
+    },
+    "hi": {
+      "display_text": "एक समुद्री मछुआरे के पास ₹1.8 लाख की स्वीकृत सीमा वाला किसान क्रेडिट कार्ड है, जो ईंधन और जाल के लिए कार्यशील पूंजी को कवर करता है। वह दिए गए फसल वर्ष में उधार ली गई राशि को नियत तिथि के भीतर चुका देता है। उसका बैंक उसके खाते पर ब्याज सबवेंशन योजना (ISS) लागू करना चाहता है।\n\nनिम्नलिखित में से कौन-सा इस परिदृश्य में ISS की प्रासंगिकता को सही रूप से दर्शाता है?\n\n(a) केवल ₹1.6 लाख तक के ऋण के हिस्से पर ही ब्याज सबवेंशन लाभ लागू होता है — शेष ₹20,000 पात्र नहीं हैं क्योंकि यह बिना जमानत की सीमा से अधिक है।\n(b) पूरा ₹1.8 लाख ISS लाभ के लिए पात्र है; एक समय पर भुगतान करने वाले के रूप में, मछुआरे की प्रभावी ब्याज दर लगभग 4% प्रति वर्ष है।\n(c) मछुआरे का ऋण ISS के लिए पात्र नहीं है क्योंकि ब्याज सबवेंशन योजना मछलीपालन KCC खातों तक विस्तारित नहीं की गई है।\n(d) पूरा ऋण पात्र है, लेकिन सबवेंशन के बाद प्रभावी दर 6% प्रति वर्ष है क्योंकि समय पर भुगतान प्रोत्साहन केवल फसल ऋणों पर लागू होता है, मछलीपालन ऋणों पर नहीं।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "विकल्प (a) — जो छात्र जानते हैं कि मछलीपालन KCC को COVID के बाद ब्याज सबवेंशन ढांचे में लाया गया था, वे मान सकते हैं कि मछलीपालन के लिए पूरा KCC सीमा (नॉन-बोट मालिकों के लिए ₹2 लाख तक) स्वचालित रूप से अधिकतम सबवेंशन लाभ के लिए पात्र है, बिना ₹3 लाख की सीमा की जांच किए।",
+      "elimination_logic": [
+        "लागू सिद्धांत की पहचान करें: ISS बैंकों को 2% सबवेंशन और उधारकर्ताओं को 3% समय पर भुगतान प्रोत्साहन प्रदान करता है, लेकिन केवल ₹3 लाख तक के अल्पकालिक फसल/सहायक गतिविधि ऋणों पर।",
+        "मछुआरे का KCC सीमा ₹1.8 लाख है — जो ₹3 लाख से कम है, इसलिए पूरी राशि ISS के लिए पात्र है।",
+        "विकल्प (a) को हटाएं: ₹3 लाख की सीमा यहाँ उल्लंघन नहीं हुई है; ऋण के केवल आंशिक पात्र होने का दावा गलत है।",
+        "विकल्प (c) को हटाएं: COVID के बाद PM मत्स्य संपदा योजना के तहत मछलीपालन KCC को ISS में शामिल किया गया — मछलीपालन KCC पात्र है।",
+        "विकल्प (d) को हटाएं: समय पर भुगतान प्रोत्साहन अतिरिक्त 3% है — कुल प्रभावी लाभ 5% है, जिससे दर लगभग 4% होती है, न कि 6%।",
+        "विकल्प (b) सही रूप से कहता है कि पूरा ₹1.8 लाख ISS के लिए पात्र है और समय पर भुगतान के लिए प्रभावी दर लगभग 4% है — इसलिए विकल्प (b) सही है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "एक समुद्री मछुआरे के पास ₹1.8 लाख सीमा वाला KCC है और वह नियत तिथि के भीतर भुगतान करता है। ISS ढांचे को सही ढंग से लागू करते हुए:\n\nलागू सिद्धांत: ISS ऋणदाता संस्था को 2% ब्याज सबवेंशन और उधारकर्ता को अतिरिक्त 3% समय पर भुगतान प्रोत्साहन प्रदान करता है, जो ₹3 लाख तक के अल्पकालिक ऋणों पर लागू होता है। COVID के बाद, मछलीपालन KCC को इस सबवेंशन ढांचे में शामिल किया गया।\n\nपरिदृश्य का मिलान: मछुआरे का ऋण (₹1.8 लाख) ₹3 लाख की सीमा से कम है। समय पर भुगतान करने वाले के रूप में, वह 2% बैंक सबवेंशन और 3% उधारकर्ता प्रोत्साहन दोनों के लिए पात्र है, जिससे प्रभावी दर लगभग 4% प्रति वर्ष होती है।\n\n• विकल्प (a) — गलत: ₹3 लाख की सीमा उल्लंघन नहीं हुई; पूरा ₹1.8 लाख पात्र है, केवल एक हिस्सा नहीं।\n• विकल्प (b) — सही: पूरा ऋण पात्र है; समय पर भुगतान करने वाले के लिए प्रभावी दर लगभग 4% है।\n• विकल्प (c) — गलत: मछलीपालन KCC को 2020 के बाद PM मत्स्य संपदा योजना के तहत ISS में शामिल किया गया — यह पात्र है।\n• विकल्प (d) — गलत: प्रभावी दर लगभग 4% है (7% − 2% बैंक सबवेंशन − 3% उधारकर्ता प्रोत्साहन), न कि 6%।\n\nमूल्य संवर्धन:\n• ISS तंत्र में दो स्तर होते हैं: बैंक स्तर पर सबवेंशन (फंड की लागत कम करता है) + उधारकर्ता स्तर पर प्रोत्साहन (समय पर भुगतान के लिए पुरस्कार)।\n• ₹3 लाख की सीमा ISS ढांचे में सबसे महत्वपूर्ण संख्यात्मक सीमा है — इसके ऊपर सामान्य दरें लागू होती हैं।\n• PM मत्स्य संपदा योजना वह नीति उपकरण है जिसने ISS को मछलीपालन KCC तक विस्तारित किया — जिससे मछलीपालन क्रेडिट को मुख्यधारा के कृषि क्रेडिट सबवेंशन ढांचे से जोड़ा गया।"
+    }
+  },
+  {
+    "uuid": "a6fa9b85-fb80-4846-8a19-6575f4b1f3f3",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Reforms Post-Atmanirbhar Bharat: Emergency Credit and COVID-19 Response",
+        "KCC Validity Period and Renewal Mechanism"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "COVID moratorium: interest accrual vs. waiver; Atmanirbhar KCC vs. ECLGS",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about COVID-19-related measures affecting the Kisan Credit Card framework:\n\n1. The RBI moratorium offered to KCC borrowers during COVID-19 deferred repayment obligations but did not waive interest — interest continued to accrue on outstanding amounts during the moratorium period.\n2. Processing fees for KCC renewal and limit enhancement were waived during the COVID-19 relief period as part of the Atmanirbhar Bharat agricultural credit measures.\n3. The Emergency Credit Line Guarantee Scheme (ECLGS) announced under Atmanirbhar Bharat also covered KCC agricultural borrowers, providing guaranteed emergency credit to farmers facing crop loss due to COVID-19.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The RBI moratorium offered to KCC borrowers during COVID-19 deferred repayment obligations but did not waive interest — interest continued to accrue on outstanding amounts during the moratorium period.",
+          "verdict": "Correct",
+          "reason": "The RBI moratorium (March–August 2020) was a repayment deferral, not a waiver; interest accrued during the moratorium period and was added to the outstanding principal, which borrowers had to repay subsequently."
+        },
+        {
+          "statement": "Processing fees for KCC renewal and limit enhancement were waived during the COVID-19 relief period as part of the Atmanirbhar Bharat agricultural credit measures.",
+          "verdict": "Correct",
+          "reason": "The Atmanirbhar Bharat Package simplified KCC procedures including waiver of processing fees for renewal and enhanced limits — reducing the transaction cost burden on farmers."
+        },
+        {
+          "statement": "The Emergency Credit Line Guarantee Scheme (ECLGS) announced under Atmanirbhar Bharat also covered KCC agricultural borrowers, providing guaranteed emergency credit to farmers facing crop loss due to COVID-19.",
+          "verdict": "Incorrect",
+          "reason": "ECLGS was specifically designed for Micro, Small and Medium Enterprises (MSMEs) — it did not extend to KCC agricultural borrowers; the ₹2 lakh crore emergency agricultural credit was a separate instrument through the KCC channel."
+        }
+      ],
+      "strong_distractor": "d — Students who broadly recall 'Atmanirbhar = ECLGS + emergency credit' without distinguishing beneficiary categories may accept all three statements as correct.",
+      "elimination_logic": [
+        "Statement 1: the COVID moratorium was explicitly a deferral; the Supreme Court's interest-on-interest case confirmed that interest accrued — Statement 1 is correct.",
+        "Statement 2: processing fee waiver for KCC renewal during COVID is a documented Atmanirbhar Package 1 measure — Statement 2 is correct.",
+        "Statement 3: ECLGS was for MSMEs — its application to KCC agricultural borrowers is a deliberate conflation trap; Statement 3 is incorrect.",
+        "Only Statements 1 and 2 are correct — option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 3 is the core trap. ECLGS and the ₹2 lakh crore KCC emergency credit were both Atmanirbhar Package announcements made in the same week of May 2020. Students who recall the broad package but not its distinct components will conflate them. ECLGS's NCGTC-backed guarantee structure is fundamentally an MSME credit instrument — it had no application to agricultural loans.",
+      "final_explanation": "The COVID-19 agricultural credit measures under Atmanirbhar Bharat had multiple components that must be distinguished from each other and from MSME measures.\n\n• Statement 1 — Correct: The 3-to-6-month RBI moratorium was a payment holiday, not a debt waiver. Interest compounding during the moratorium period was subsequently addressed through a government interest subvention scheme, but the base accrual of interest was not eliminated.\n• Statement 2 — Correct: Atmanirbhar Package 1 simplified KCC procedures — processing fee waivers for renewal/enhancement, simplified documentation, and outreach to PM-KISAN beneficiaries for new KCC accounts were part of the agricultural measures.\n• Statement 3 — Incorrect: ECLGS was exclusively for MSMEs and businesses under financial stress due to COVID-19. The agricultural emergency credit (₹2 lakh crore) was a separate announcement through the KCC channel with its own operational framework — the two instruments must not be conflated.\n\nValue Addition:\n• The Supreme Court's 2020 judgment on 'interest on interest' during the moratorium period led the government to provide ex-gratia relief to smaller borrowers — relevant to understanding the moratorium's full fiscal impact.\n• ECLGS was managed through NCGTC (National Credit Guarantee Trustee Company) — distinct from NABARD's agricultural credit guarantee framework.\n• Atmanirbhar Package 1 (Agriculture) announced: ₹2 lakh crore KCC credit + NABARD refinance window of ₹30,000 crore — two separate measures."
+    },
+    "hi": {
+      "display_text": "Kisan Credit Card (KCC) ढांचे को प्रभावित करने वाले COVID-19 संबंधित उपायों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. COVID-19 के दौरान KCC उधारकर्ताओं को आरबीआई द्वारा दिया गया मोरेटोरियम पुनर्भुगतान दायित्वों को स्थगित करता था लेकिन ब्याज माफ़ नहीं करता था — मोरेटोरियम अवधि के दौरान बकाया राशियों पर ब्याज लगातार बढ़ता रहा।\n2. COVID-19 राहत अवधि के दौरान Atmanirbhar Bharat कृषि ऋण उपायों के तहत KCC नवीनीकरण और सीमा वृद्धि के लिए प्रोसेसिंग शुल्क माफ़ कर दिया गया था।\n3. Atmanirbhar Bharat के तहत घोषित आपातकालीन क्रेडिट लाइन गारंटी योजना (ECLGS) ने भी KCC कृषि उधारकर्ताओं को कवर किया, जो COVID-19 के कारण फसल हानि का सामना कर रहे किसानों को गारंटीकृत आपातकालीन क्रेडिट प्रदान करती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "COVID-19 के दौरान KCC उधारकर्ताओं को आरबीआई द्वारा दिया गया मोरेटोरियम पुनर्भुगतान दायित्वों को स्थगित करता था लेकिन ब्याज माफ़ नहीं करता था — मोरेटोरियम अवधि के दौरान बकाया राशियों पर ब्याज लगातार बढ़ता रहा।",
+          "verdict": "Correct",
+          "reason": "आरबीआई मोरेटोरियम (मार्च–अगस्त 2020) पुनर्भुगतान स्थगन था, माफी नहीं; मोरेटोरियम अवधि के दौरान ब्याज बढ़ता रहा और इसे बकाया मूलधन में जोड़ा गया, जिसे उधारकर्ताओं को बाद में चुकाना था।"
+        },
+        {
+          "statement": "COVID-19 राहत अवधि के दौरान Atmanirbhar Bharat कृषि ऋण उपायों के तहत KCC नवीनीकरण और सीमा वृद्धि के लिए प्रोसेसिंग शुल्क माफ़ कर दिया गया था।",
+          "verdict": "Correct",
+          "reason": "Atmanirbhar Bharat पैकेज ने KCC प्रक्रियाओं को सरल बनाया जिसमें नवीनीकरण और सीमा वृद्धि के लिए प्रोसेसिंग शुल्क माफी शामिल थी — जिससे किसानों पर लेनदेन लागत का बोझ कम हुआ।"
+        },
+        {
+          "statement": "Atmanirbhar Bharat के तहत घोषित आपातकालीन क्रेडिट लाइन गारंटी योजना (ECLGS) ने भी KCC कृषि उधारकर्ताओं को कवर किया, जो COVID-19 के कारण फसल हानि का सामना कर रहे किसानों को गारंटीकृत आपातकालीन क्रेडिट प्रदान करती है।",
+          "verdict": "Incorrect",
+          "reason": "ECLGS विशेष रूप से सूक्ष्म, लघु और मध्यम उद्यमों (MSMEs) के लिए डिज़ाइन की गई थी — इसका विस्तार KCC कृषि उधारकर्ताओं तक नहीं था; ₹2 लाख करोड़ का आपातकालीन कृषि क्रेडिट KCC चैनल के माध्यम से एक अलग उपकरण था।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र व्यापक रूप से 'Atmanirbhar = ECLGS + आपातकालीन क्रेडिट' को याद करते हैं लेकिन लाभार्थी वर्गों में अंतर नहीं करते, वे तीनों कथनों को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: COVID मोरेटोरियम स्पष्ट रूप से पुनर्भुगतान स्थगन था; सुप्रीम कोर्ट के ब्याज पर ब्याज मामले ने पुष्टि की कि ब्याज बढ़ता रहा — कथन 1 सही है।",
+        "कथन 2: COVID के दौरान KCC नवीनीकरण के लिए प्रोसेसिंग शुल्क माफी Atmanirbhar पैकेज 1 का प्रलेखित उपाय है — कथन 2 सही है।",
+        "कथन 3: ECLGS MSMEs के लिए था — इसका KCC कृषि उधारकर्ताओं पर लागू होना जानबूझकर भ्रमित करने वाला जाल है; कथन 3 गलत है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 3 मुख्य जाल है। ECLGS और ₹2 लाख करोड़ KCC आपातकालीन क्रेडिट दोनों Atmanirbhar पैकेज की घोषणाएं थीं जो मई 2020 के एक ही सप्ताह में हुईं। जो छात्र व्यापक पैकेज याद करते हैं लेकिन इसके अलग-अलग घटकों को नहीं, वे इन्हें मिला देंगे। ECLGS की NCGTC-समर्थित गारंटी संरचना मूलतः MSME क्रेडिट उपकरण है — इसका कृषि ऋणों पर कोई आवेदन नहीं था।",
+      "final_explanation": "Atmanirbhar Bharat के तहत COVID-19 कृषि क्रेडिट उपायों में कई घटक थे जिन्हें एक-दूसरे और MSME उपायों से अलग करना आवश्यक है।\n\n• कथन 1 — सही: 3 से 6 महीने का RBI मोरेटोरियम भुगतान अवकाश था, ऋण माफी नहीं। मोरेटोरियम अवधि के दौरान ब्याज का चक्रवृद्धि बाद में सरकार की ब्याज सबवेंशन योजना के माध्यम से संबोधित किया गया, लेकिन मूल ब्याज की गणना समाप्त नहीं हुई।\n• कथन 2 — सही: Atmanirbhar पैकेज 1 ने KCC प्रक्रियाओं को सरल बनाया — नवीनीकरण/सीमा वृद्धि के लिए प्रोसेसिंग शुल्क माफी, सरल दस्तावेज़ीकरण, और PM-KISAN लाभार्थियों को नए KCC खाते के लिए पहुंच शामिल थे।\n• कथन 3 — गलत: ECLGS विशेष रूप से MSMEs और COVID-19 के कारण वित्तीय संकट में व्यवसायों के लिए था। कृषि आपातकालीन क्रेडिट (₹2 लाख करोड़) KCC चैनल के माध्यम से एक अलग घोषणा थी जिसका अपना संचालन ढांचा था — इन दोनों उपकरणों को मिलाना गलत है।\n\nमूल्य संवर्धन:\n• मोरेटोरियम अवधि के दौरान 'ब्याज पर ब्याज' पर सुप्रीम कोर्ट के 2020 के निर्णय ने सरकार को छोटे उधारकर्ताओं को अनुग्रह राहत देने के लिए प्रेरित किया — जो मोरेटोरियम के पूर्ण वित्तीय प्रभाव को समझने के लिए प्रासंगिक है।\n• ECLGS का प्रबंधन NCGTC (National Credit Guarantee Trustee Company) के माध्यम से होता था — जो NABARD के कृषि क्रेडिट गारंटी ढांचे से अलग है।\n• Atmanirbhar पैकेज 1 (कृषि) की घोषणा: ₹2 लाख करोड़ KCC क्रेडिट + NABARD पुनर्वित्त विंडो ₹30,000 करोड़ — दो अलग-अलग उपाय।"
+    }
+  },
+  {
+    "uuid": "363430ee-6453-406f-b1ff-dc91bc22ab1a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Scheme: Origin, Genesis and Institutional Architects",
+        "Revised KCC Scheme 2012: Key Structural Changes"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "NABARD design role vs. RBI circulation role in KCC genesis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Kisan Credit Card is technically a 'model scheme' rather than a centrally legislated government programme — it does not derive its authority from an Act of Parliament or a statutory government notification.\n\nReason (R): The KCC was designed by NABARD following the R.V. Gupta Committee's recommendations and was circulated to commercial banks, Regional Rural Banks, and cooperative banks as a model scheme to be adopted within their operational frameworks.\n\nWhich one of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know both A and R are correct may not recognise that R causally explains A — they may think the two facts are independent (NABARD designed it; R says something else) without examining the causal link between the circular mechanism and the model scheme status.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — A states that KCC is technically a 'model scheme' circulated to banks rather than a centrally legislated government programme. This is accurate — KCC has no dedicated legislation; it is a model scheme that banks implement under NABARD/RBI guidelines. A is correct.",
+        "Step 2: Is Reason (R) correct? — R states that NABARD designed the KCC and circulated it to commercial banks, RRBs, and cooperative banks as a model scheme rather than enacting it through parliamentary legislation. This is accurate. R is correct.",
+        "Step 3: Does R explain A? — R explains the mechanism by which KCC acquired its 'model scheme' (not government scheme) character: it was designed by NABARD and circulated as a model, not enacted through Parliament. This is the direct causal explanation for A's assertion. R correctly explains A.",
+        "A correct + R correct + R explains A — option (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The institutional status of KCC as a 'model scheme' rather than a legislative programme is a foundational distinction that affects how the scheme is governed, amended, and implemented.\n\nAssertion (A) Analysis: KCC has no standalone legislation — it operates through a model scheme framework designed by NABARD and circulated through RBI/NABARD guidelines to all participating banks. This makes it different from schemes created by Acts of Parliament or executive orders with statutory force. A is factually correct.\n\nReason (R) Analysis: NABARD designed the KCC following the R.V. Gupta Committee report (1998) and circulated it to commercial banks, RRBs, and cooperative banks as a model scheme. This is the factual and causal basis for its 'model scheme' (not government scheme) classification. R is correct and directly explains A.\n\nConclusion: Both A and R are correct, and R causally explains A — option (a).\n\nValue Addition:\n• The 'model scheme' status means implementing banks have some flexibility in adapting the KCC to their operational requirements within NABARD/RBI guidelines.\n• Contrast with PM-KISAN — which is a government scheme with dedicated budget allocation, Cabinet approval, and DBT architecture — different governance architecture from KCC.\n• NABARD's role as a design institution (not just a refinancing body) is frequently tested in UPSC questions on agricultural finance governance."
+    },
+    "hi": {
+      "display_text": "कथन (A): किसान क्रेडिट कार्ड तकनीकी रूप से एक 'मॉडल योजना' है न कि संसद द्वारा विधायी रूप से पारित कोई सरकारी कार्यक्रम — इसका अधिकार संसद के अधिनियम या वैधानिक सरकारी अधिसूचना से प्राप्त नहीं होता।\n\nकारण (R): KCC को NABARD ने R.V. Gupta समिति की सिफारिशों के बाद डिजाइन किया और इसे वाणिज्यिक बैंक, क्षेत्रीय ग्रामीण बैंक, और सहकारी बैंकों को एक मॉडल योजना के रूप में उनके परिचालन ढांचे के भीतर अपनाने के लिए सर्कुलेट किया गया।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि A और R दोनों सही हैं, वे यह पहचान नहीं पाते कि R, A की कारणात्मक व्याख्या करता है — वे सोच सकते हैं कि ये दोनों तथ्य स्वतंत्र हैं (NABARD ने इसे डिजाइन किया; R कुछ और कहता है) बिना सर्कुलर तंत्र और मॉडल योजना स्थिति के बीच कारणात्मक संबंध की जांच किए।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — A कहता है कि KCC तकनीकी रूप से एक 'मॉडल योजना' है जो बैंकों को सर्कुलेट की गई है, न कि संसद द्वारा विधायी रूप से पारित कोई सरकारी कार्यक्रम। यह सही है — KCC के लिए कोई समर्पित कानून नहीं है; यह एक मॉडल योजना है जिसे बैंक NABARD/RBI के दिशानिर्देशों के तहत लागू करते हैं। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — R कहता है कि NABARD ने KCC को डिजाइन किया और इसे वाणिज्यिक बैंकों, क्षेत्रीय ग्रामीण बैंकों और सहकारी बैंकों को एक मॉडल योजना के रूप में सर्कुलेट किया, न कि इसे संसदीय विधायिका के माध्यम से लागू किया। यह सही है। R सही है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? — R उस तंत्र की व्याख्या करता है जिसके द्वारा KCC ने अपना 'मॉडल योजना' (सरकारी योजना नहीं) स्वरूप प्राप्त किया: इसे NABARD ने डिजाइन किया और मॉडल के रूप में सर्कुलेट किया, संसद के माध्यम से लागू नहीं किया गया। यह A के कथन के लिए प्रत्यक्ष कारणात्मक व्याख्या है। R सही ढंग से A की व्याख्या करता है।",
+        "A सही + R सही + R, A की व्याख्या करता है — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "KCC की संस्थागत स्थिति एक 'मॉडल योजना' के रूप में, न कि विधायी कार्यक्रम के रूप में, एक मौलिक भेद है जो योजना के शासन, संशोधन और कार्यान्वयन को प्रभावित करता है।\n\nकथन (A) विश्लेषण: KCC के लिए कोई स्वतंत्र कानून नहीं है — यह NABARD द्वारा डिजाइन की गई मॉडल योजना ढांचे के तहत संचालित होता है और RBI/NABARD के दिशानिर्देशों के माध्यम से सभी भाग लेने वाले बैंकों को सर्कुलेट किया जाता है। यह इसे संसद के अधिनियमों या विधिक शक्ति वाले कार्यकारी आदेशों से अलग बनाता है। A तथ्यात्मक रूप से सही है।\n\nकारण (R) विश्लेषण: NABARD ने R.V. Gupta समिति की रिपोर्ट (1998) के बाद KCC को डिजाइन किया और इसे वाणिज्यिक बैंक, क्षेत्रीय ग्रामीण बैंक और सहकारी बैंकों को एक मॉडल योजना के रूप में सर्कुलेट किया। यह इसके 'मॉडल योजना' (सरकारी योजना नहीं) वर्गीकरण का तथ्यात्मक और कारणात्मक आधार है। R सही है और सीधे A की व्याख्या करता है।\n\nनिष्कर्ष: A और R दोनों सही हैं, और R, A की कारणात्मक व्याख्या करता है — विकल्प (a)।\n\nमूल्य संवर्धन:\n• 'मॉडल योजना' स्थिति का अर्थ है कि लागू करने वाले बैंक NABARD/RBI के दिशानिर्देशों के भीतर KCC को अपनी परिचालन आवश्यकताओं के अनुसार अनुकूलित करने में कुछ लचीलापन रखते हैं।\n• PM-KISAN से तुलना करें — जो एक सरकारी योजना है जिसमें समर्पित बजट आवंटन, कैबिनेट अनुमोदन और DBT संरचना है — KCC से अलग शासन संरचना।\n• NABARD की भूमिका एक डिजाइन संस्था के रूप में (केवल पुनर्वित्त निकाय नहीं) कृषि वित्त शासन पर UPSC प्रश्नों में अक्सर परीक्षण की जाती है।"
+    }
+  },
+  {
+    "uuid": "7cd46444-67b6-4404-a472-100945b2bb84",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC and Priority Sector Lending (PSL) Classification",
+        "KCC and Agricultural Credit Flow: Macro Targets and Achievement"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "PSL agricultural sub-target: 18% of ANBC; direct vs. indirect sub-targets",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to Kisan Credit Card loans and Priority Sector Lending (PSL) classification is NOT correctly matched?\n\n(a) PSL target for agriculture — 18% of Adjusted Net Bank Credit (ANBC)\n(b) KCC loan portfolio — Contributes to both direct and indirect agriculture sub-targets under PSL\n(c) KCC crop loans up to ₹1.6 lakh — Qualify for PSL agricultural sub-target without collateral requirement\n(d) Non-farm activity loans under KCC's term loan component — Classified under the 'Micro Enterprise' sub-category of Priority Sector Lending",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) states KCC contributes to both direct and indirect agriculture sub-targets — this is actually correct, making it a strong distractor for students looking for the incorrectly matched pair.",
+      "elimination_logic": [
+        "Evaluate option (a): PSL agriculture sub-target is 18% of ANBC — this is correct; option (a) is correctly matched.",
+        "Evaluate option (b): KCC loans do contribute to both direct agriculture (crop production) and indirect agriculture (allied activities) sub-targets depending on the nature of the loan — option (b) is correctly matched.",
+        "Evaluate option (c): KCC crop loans up to ₹1.6 lakh qualify for collateral-free lending — this is correct; option (c) is correctly matched.",
+        "Evaluate option (d): option (d) claims KCC non-farm activity loans are classified under the 'Micro Enterprise' sub-category of PSL — non-farm activity loans under KCC are classified under agriculture PSL, not under the Micro Enterprise sub-category; option (d) is NOT correctly matched."
+      ],
+      "upsc_trap_explanation": "Option (d) is a partial-truth trap. KCC does cover non-farm activities as part of the term loan component, and PSL does have a 'Micro Enterprise' sub-category. Linking the two feels plausible — especially because non-farm activities (trading, processing) are often associated with micro-enterprise. However, non-farm loans under KCC are classified within the 'Agriculture' PSL sub-category because they are attached to the farmer's KCC account as part of the unified credit limit, not separately classified as micro-enterprise loans.",
+      "final_explanation": "PSL classification of KCC loans requires understanding both the target structure and how different loan components are categorised.\n\n• Option (a) — Correctly matched: The PSL agriculture sub-target is 18% of Adjusted Net Bank Credit (ANBC) — a standard and well-established target.\n• Option (b) — Correctly matched: KCC loans for crop production qualify under direct agriculture, while KCC loans for allied activities (fisheries, animal husbandry) qualify under indirect agriculture or weaker section sub-targets — contributing to both sub-categories.\n• Option (c) — Correctly matched: KCC crop loans up to ₹1.6 lakh are collateral-free under the KCC model scheme, qualifying for PSL benefit without additional security.\n• Option (d) — NOT correctly matched: Non-farm activity loans under KCC are classified within the 'Agriculture' PSL sub-category (as they are part of the unified KCC limit for farmer households) — they are NOT classified under the 'Micro Enterprise' sub-category of PSL, which covers separate business loans to microenterprises.\n\nValue Addition:\n• PSL sub-targets within agriculture: 8% for small and marginal farmers, specific targets for weaker sections — not just the headline 18%.\n• ANBC (Adjusted Net Bank Credit) = Net Bank Credit + investments in non-SLR bonds held in HTM category.\n• The 'Micro Enterprise' PSL category has a 7.5% sub-target within the overall 40% PSL target — distinct from agricultural targets."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड ऋण और प्राथमिकता क्षेत्र ऋण (PSL) वर्गीकरण से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल नहीं खाता?\n\n(a) कृषि के लिए PSL लक्ष्य — समायोजित नेट बैंक क्रेडिट (ANBC) का 18%\n(b) KCC ऋण पोर्टफोलियो — PSL के तहत सीधे और अप्रत्यक्ष दोनों कृषि उप-लक्ष्यों में योगदान करता है\n(c) ₹1.6 लाख तक के KCC फसल ऋण — बिना जमानत के PSL कृषि उप-लक्ष्य के लिए पात्र\n(d) KCC के टर्म लोन घटक के तहत गैर-कृषि गतिविधि ऋण — प्राथमिकता क्षेत्र ऋण की 'माइक्रो एंटरप्राइज' उप-श्रेणी में वर्गीकृत",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) कहता है कि KCC सीधे और अप्रत्यक्ष दोनों कृषि उप-लक्ष्यों में योगदान देता है — यह वास्तव में सही है, जो इसे गलत मेल जोड़े की तलाश करने वाले छात्रों के लिए एक मजबूत भ्रमित करने वाला बनाता है।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: PSL कृषि उप-लक्ष्य ANBC का 18% है — यह सही है; विकल्प (a) सही मेल खाता है।",
+        "विकल्प (b) का मूल्यांकन करें: KCC ऋण सीधे कृषि (फसल उत्पादन) और अप्रत्यक्ष कृषि (सहायक गतिविधियाँ) दोनों उप-लक्ष्यों में ऋण की प्रकृति के अनुसार योगदान देते हैं — विकल्प (b) सही मेल खाता है।",
+        "विकल्प (c) का मूल्यांकन करें: KCC फसल ऋण ₹1.6 लाख तक बगैर जमानत के ऋण के लिए पात्र हैं — यह सही है; विकल्प (c) सही मेल खाता है।",
+        "विकल्प (d) का मूल्यांकन करें: विकल्प (d) कहता है कि KCC के गैर-कृषि गतिविधि ऋण PSL के 'माइक्रो एंटरप्राइज' उप-श्रेणी में वर्गीकृत हैं — KCC के तहत गैर-कृषि गतिविधि ऋण कृषि PSL के अंतर्गत वर्गीकृत हैं, माइक्रो एंटरप्राइज उप-श्रेणी के अंतर्गत नहीं; विकल्प (d) सही मेल नहीं खाता।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) आंशिक-सत्य जाल है। KCC में टर्म लोन घटक के रूप में गैर-कृषि गतिविधियाँ शामिल हैं, और PSL में 'माइक्रो एंटरप्राइज' उप-श्रेणी भी है। दोनों को जोड़ना संभावित लगता है — खासकर क्योंकि गैर-कृषि गतिविधियाँ (व्यापार, प्रसंस्करण) अक्सर माइक्रो एंटरप्राइज से जुड़ी होती हैं। हालांकि, KCC के तहत गैर-कृषि ऋण 'कृषि' PSL उप-श्रेणी में वर्गीकृत हैं क्योंकि वे किसान के KCC खाते के एकीकृत क्रेडिट सीमा का हिस्सा हैं, न कि माइक्रो एंटरप्राइज ऋण के रूप में अलग वर्गीकृत।",
+      "final_explanation": "KCC ऋणों के PSL वर्गीकरण के लिए लक्ष्य संरचना और विभिन्न ऋण घटकों की श्रेणीकरण को समझना आवश्यक है।\n\n• विकल्प (a) — सही मेल खाता है: PSL कृषि उप-लक्ष्य समायोजित नेट बैंक क्रेडिट (ANBC) का 18% है — एक मानक और स्थापित लक्ष्य।\n• विकल्प (b) — सही मेल खाता है: KCC के फसल उत्पादन के लिए ऋण सीधे कृषि के अंतर्गत आते हैं, जबकि सहायक गतिविधियों (मछली पालन, पशुपालन) के लिए KCC ऋण अप्रत्यक्ष कृषि या कमजोर वर्ग उप-लक्ष्यों के अंतर्गत आते हैं — दोनों उप-श्रेणियों में योगदान।\n• विकल्प (c) — सही मेल खाता है: KCC फसल ऋण ₹1.6 लाख तक बिना जमानत के KCC मॉडल योजना के तहत हैं, जो अतिरिक्त सुरक्षा के बिना PSL लाभ के लिए पात्र हैं।\n• विकल्प (d) — सही मेल नहीं खाता: KCC के तहत गैर-कृषि गतिविधि ऋण 'कृषि' PSL उप-श्रेणी में वर्गीकृत हैं (क्योंकि वे किसान परिवारों के लिए KCC की एकीकृत सीमा का हिस्सा हैं) — वे PSL की 'माइक्रो एंटरप्राइज' उप-श्रेणी में वर्गीकृत नहीं हैं, जो माइक्रोएंटरप्राइज के लिए अलग व्यापार ऋणों को कवर करती है।\n\nमूल्य संवर्धन:\n• कृषि के भीतर PSL उप-लक्ष्य: छोटे और सीमांत किसानों के लिए 8%, कमजोर वर्गों के लिए विशिष्ट लक्ष्य — केवल शीर्षक 18% नहीं।\n• ANBC (समायोजित नेट बैंक क्रेडिट) = नेट बैंक क्रेडिट + HTM श्रेणी में रखे गए गैर-SLR बॉन्ड में निवेश।\n• 'माइक्रो एंटरप्राइज' PSL श्रेणी का 40% कुल PSL लक्ष्य के भीतर 7.5% उप-लक्ष्य है — जो कृषि लक्ष्यों से अलग है।"
+    }
+  },
+  {
+    "uuid": "6a8af7e9-301c-4d9d-a5ef-8d4a5151bc37",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "NPA Classification and Restructuring of KCC Accounts",
+        "KCC Reforms Post-Atmanirbhar Bharat: Emergency Credit and COVID-19 Response"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Agriculture NPA: 2 crop seasons rule + COVID moratorium interest accrual",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A sugarcane farmer had a Kisan Credit Card with a crop loan component of ₹90,000. He availed the COVID-19 moratorium from April to September 2020. After the moratorium ended, he did not make any repayment. By December 2021, two complete sugarcane crop seasons have elapsed since the original repayment due date without any payment.\n\nWhich of the following correctly describes the bank's position under applicable norms?\n\n(a) The bank cannot classify the account as NPA because the 90-day overdue period applies universally — and the moratorium period has delayed the counting of days overdue.\n(b) The bank can classify the account as NPA since two crop seasons have elapsed and the outstanding period is approaching two years; interest that accrued during the moratorium period was not waived and forms part of the outstanding principal.\n(c) The bank must treat the account as performing because the COVID moratorium waived all interest obligations during the April–September 2020 period — reducing the effective outstanding amount.\n(d) Under the COVID relief framework, the account automatically qualifies for write-off after two crop seasons of non-repayment without the need for NPA classification.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — A student who knows that COVID moratorium provided relief may assume interest was waived during the moratorium period, confusing the moratorium (deferral) with a debt waiver.",
+      "elimination_logic": [
+        "Identify applicable rules: NPA for short-duration crop loans triggers after 2 crop seasons of non-repayment; COVID moratorium was a deferral, not a waiver — interest accrued.",
+        "Eliminate option (a): the standard 90-day NPA rule does not apply to agricultural crop loans — agriculture-specific 2-crop-season rule applies; option (a) is incorrect.",
+        "Eliminate option (c): moratorium extended repayment timelines but did not waive interest — interest accrued during moratorium; option (c) is incorrect.",
+        "Eliminate option (d): the account would not automatically qualify for write-off; restructuring under natural calamity provisions is different from COVID moratorium; option (d) is incorrect.",
+        "Option (b) correctly states: the bank can classify the account as NPA after 2 crop seasons of non-payment, while noting that accrued interest during the moratorium period was added to the outstanding principal — option (b) is correct."
+      ],
+      "upsc_trap_explanation": "Option (d) is the primary scope-extension trap — students who know COVID moratorium provided relief may extend this to include interest waiver, when the moratorium was explicitly a deferral of payment obligations with interest continuing to accrue. The government's subsequent ex-gratia relief scheme for 'interest on interest' for smaller borrowers is a nuanced follow-up, but the base rule — that moratorium ≠ interest waiver — must be the starting point.",
+      "final_explanation": "A sugarcane farmer holds a KCC with a term loan component for cane cultivation. He availed the COVID moratorium from April to September 2020 and did not repay after the moratorium ended. By December 2021, two full cane crop seasons have elapsed since the original due date without repayment.\n\nApplicable rules: (1) For long-duration crops (sugarcane), NPA after one crop season if the outstanding period exceeds two years; (2) COVID moratorium was a payment deferral — interest accrued on outstanding amounts throughout.\n\n• Option (a) — Incorrect: The 90-day NPA norm applies to general loans, not agricultural loans — agriculture has crop-season-based NPA rules.\n• Option (b) — Correct: With two crop seasons elapsed and the outstanding period approaching two years, the bank can now classify the account as NPA under the long-duration crop rule. The accrued interest (including the moratorium period) forms part of the outstanding principal.\n• Option (c) — Incorrect: The moratorium deferred payment — it did not waive interest. Interest accrued during April–September 2020 and was added to the outstanding amount.\n• Option (d) — Incorrect: Automatic write-off does not occur; the bank must follow the NPA classification and provisioning process before any resolution.\n\nValue Addition:\n• Sugarcane's long gestation (12–18 months) justifies the 'one crop season exceeding 2 years' NPA rule — a different threshold from short-duration crop loans.\n• Debt restructuring under natural calamity is a government-directed process distinct from COVID moratorium provisions.\n• The Supreme Court's 2020 judgment directed the government to provide ex-gratia relief on 'interest on interest' for loans up to ₹2 crore during the moratorium — relevant to this scenario."
+    },
+    "hi": {
+      "display_text": "एक गन्ना किसान के पास ₹90,000 की फसल ऋण घटक के साथ किसान क्रेडिट कार्ड था। उसने अप्रैल से सितंबर 2020 तक COVID-19 मोरेटोरियम का लाभ लिया। मोरेटोरियम समाप्त होने के बाद उसने कोई पुनर्भुगतान नहीं किया। दिसंबर 2021 तक, मूल पुनर्भुगतान देय तिथि से दो पूर्ण गन्ना फसल मौसम बीत चुके हैं बिना किसी भुगतान के।\n\nनिम्नलिखित में से कौन सा बैंक की स्थिति को लागू नियमों के तहत सही रूप से वर्णित करता है?\n\n(a) बैंक खाते को NPA के रूप में वर्गीकृत नहीं कर सकता क्योंकि 90-दिन की बकाया अवधि सार्वभौमिक रूप से लागू होती है — और मोरेटोरियम अवधि ने बकाया दिनों की गिनती को स्थगित कर दिया है।\n(b) बैंक खाते को NPA के रूप में वर्गीकृत कर सकता है क्योंकि दो फसल मौसम बीत चुके हैं और बकाया अवधि दो वर्ष के करीब है; मोरेटोरियम अवधि के दौरान जमा ब्याज माफ़ नहीं किया गया और बकाया मूलधन का हिस्सा है।\n(c) बैंक खाते को प्रदर्शनशील मानना चाहिए क्योंकि COVID मोरेटोरियम ने अप्रैल–सितंबर 2020 अवधि के दौरान सभी ब्याज दायित्व माफ़ कर दिए — जिससे प्रभावी बकाया राशि कम हो गई।\n(d) COVID राहत ढांचे के तहत, दो फसल मौसमों की गैर-भुगतान के बाद खाता स्वचालित रूप से व्रित्‍त के लिए योग्य हो जाता है बिना NPA वर्गीकरण की आवश्यकता के।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — एक छात्र जो जानता है कि COVID मोरेटोरियम ने राहत प्रदान की थी, वह यह मान सकता है कि मोरेटोरियम अवधि के दौरान ब्याज माफ़ किया गया था, मोरेटोरियम (स्थगन) को ऋण माफी के साथ भ्रमित कर रहा है।",
+      "elimination_logic": [
+        "लागू नियमों की पहचान करें: अल्पकालिक फसल ऋणों के लिए NPA तब बनता है जब दो फसल मौसमों तक पुनर्भुगतान नहीं होता; COVID मोरेटोरियम एक स्थगन था, माफी नहीं — ब्याज जमा होता रहा।",
+        "विकल्प (a) को हटाएं: मानक 90-दिन का NPA नियम कृषि फसल ऋणों पर लागू नहीं होता — कृषि-विशिष्ट 2-फसल मौसम नियम लागू होता है; विकल्प (a) गलत है।",
+        "विकल्प (c) को हटाएं: मोरेटोरियम ने पुनर्भुगतान समय सीमा बढ़ाई लेकिन ब्याज माफ़ नहीं किया — मोरेटोरियम अवधि के दौरान ब्याज जमा हुआ; विकल्प (c) गलत है।",
+        "विकल्प (d) को हटाएं: खाता स्वचालित रूप से व्रित्‍त नहीं होगा; प्राकृतिक आपदा प्रावधानों के तहत पुनर्गठन COVID मोरेटोरियम से अलग है; विकल्प (d) गलत है।",
+        "विकल्प (b) सही कहता है: बैंक दो फसल मौसमों के बाद खाते को NPA के रूप में वर्गीकृत कर सकता है, जबकि मोरेटोरियम अवधि के दौरान जमा ब्याज को बकाया मूलधन में जोड़ा गया है — विकल्प (b) सही है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) मुख्य स्कोप-एक्सटेंशन जाल है — जो छात्र जानते हैं कि COVID मोरेटोरियम ने राहत दी थी, वे इसे ब्याज माफी तक बढ़ा सकते हैं, जबकि मोरेटोरियम स्पष्ट रूप से भुगतान दायित्वों का स्थगन था जिसमें ब्याज जमा होता रहा। सरकार की बाद की एक्स-ग्रेशिया राहत योजना 'ब्याज पर ब्याज' के लिए एक सूक्ष्म अनुवर्ती है, लेकिन मूल नियम — कि मोरेटोरियम = ब्याज माफी नहीं है — प्रारंभिक बिंदु होना चाहिए।",
+      "final_explanation": "एक गन्ना किसान के पास ₹90,000 की फसल ऋण घटक के साथ किसान क्रेडिट कार्ड है। उसने अप्रैल से सितंबर 2020 तक COVID मोरेटोरियम का लाभ लिया और मोरेटोरियम समाप्त होने के बाद कोई पुनर्भुगतान नहीं किया। दिसंबर 2021 तक, मूल देय तिथि से दो पूर्ण गन्ना फसल मौसम बीत चुके हैं बिना किसी भुगतान के।\n\nलागू नियम: (1) दीर्घकालिक फसलों (गन्ना) के लिए, यदि बकाया अवधि दो वर्ष से अधिक हो तो एक फसल मौसम के बाद NPA; (2) COVID मोरेटोरियम भुगतान स्थगन था — बकाया राशि पर ब्याज जमा होता रहा।\n\n• विकल्प (a) — गलत: 90-दिन का NPA नियम सामान्य ऋणों पर लागू होता है, कृषि ऋणों पर नहीं — कृषि में फसल मौसम आधारित NPA नियम हैं।\n• विकल्प (b) — सही: दो फसल मौसम बीत चुके हैं और बकाया अवधि दो वर्ष के करीब है, बैंक दीर्घकालिक फसल नियम के तहत खाते को NPA के रूप में वर्गीकृत कर सकता है। जमा ब्याज (मोरेटोरियम अवधि सहित) बकाया मूलधन का हिस्सा है।\n• विकल्प (c) — गलत: मोरेटोरियम ने भुगतान स्थगित किया था — ब्याज माफ़ नहीं किया। अप्रैल–सितंबर 2020 के दौरान ब्याज जमा हुआ और बकाया राशि में जोड़ा गया।\n• विकल्प (d) — गलत: स्वचालित व्रित्‍त नहीं होता; बैंक को NPA वर्गीकरण और प्रावधान प्रक्रिया का पालन करना होगा।\n\nमूल्य संवर्धन:\n• गन्ने की लंबी अवधि (12–18 महीने) 'एक फसल मौसम जो 2 वर्ष से अधिक हो' NPA नियम को उचित ठहराती है — जो अल्पकालिक फसल ऋणों से अलग है।\n• प्राकृतिक आपदा के तहत ऋण पुनर्गठन COVID मोरेटोरियम प्रावधानों से अलग सरकार निर्देशित प्रक्रिया है।\n• सुप्रीम कोर्ट के 2020 के निर्णय ने मोरेटोरियम अवधि के दौरान ₹2 करोड़ तक के ऋणों पर 'ब्याज पर ब्याज' के लिए सरकार को एक्स-ग्रेशिया राहत देने का निर्देश दिया — जो इस परिदृश्य से संबंधित है।"
+    }
+  },
+  {
+    "uuid": "382d85c2-6d4f-4f67-8113-5ef88a7cf12a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC vs. Institutional vs. Non-Institutional Credit: Substitution Effect",
+        "Tenant Farmer and Oral Lessee Access to KCC: Structural Challenges"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "NAFIS as primary data source for institutional vs. non-institutional credit",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the primary dedicated survey instrument for tracking the share of institutional versus non-institutional credit in rural India, including data on Kisan Credit Card penetration and household-level financial inclusion?\n\n(a) Reserve Bank of India's Annual Report on Trend and Progress of Banking\n(b) NSSO's All India Debt and Investment Survey (AIDIS)\n(c) NABARD's All India Rural Financial Inclusion Survey (NAFIS)\n(d) SEBI's Rural Market Financial Services Access Survey",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — NSSO (National Sample Survey Office) conducts the All India Debt and Investment Survey (AIDIS) which also tracks rural credit sources; students may confuse AIDIS with NAFIS or attribute NAFIS data to NSSO.",
+      "elimination_logic": [
+        "Eliminate option (a): RBI's annual report covers banking data but does not conduct the dedicated rural financial inclusion survey that tracks institutional vs. non-institutional credit shares at the household level.",
+        "Eliminate option (b): NSSO's AIDIS is a related survey but NAFIS is specifically NABARD's instrument — the two are separate and should not be conflated.",
+        "Eliminate option (d): SEBI regulates capital markets — it has no mandate for rural credit surveys; this is a plausible-fabrication option.",
+        "Option (c) — NABARD's NAFIS — is the correct answer as the primary dedicated survey for rural financial inclusion tracking in India."
+      ],
+      "upsc_trap_explanation": "Option (b) is the primary trap — NSSO's AIDIS is a genuine survey that does collect rural debt and credit data, making it a highly plausible alternative to NAFIS. Students who know AIDIS exists may attribute its function to NSSO rather than NABARD, or confuse AIDIS and NAFIS as the same instrument. NAFIS is NABARD's own survey with broader financial inclusion scope, while AIDIS focuses on debt and investment — they are complementary but distinct instruments under different institutional auspices.",
+      "final_explanation": "Tracking rural financial inclusion requires dedicated surveys, and identifying the correct institutional source is a precision-recall question.\n\n• Option (a) — RBI Annual Report: Incorrect. RBI's annual report covers aggregate banking statistics but does not conduct dedicated rural financial inclusion surveys at the household level tracking institutional vs. non-institutional credit shares.\n• Option (b) — NSSO's All India Debt and Investment Survey: Incorrect. NSSO's AIDIS does collect rural debt data and is a related source, but NAFIS is NABARD's dedicated comprehensive survey for rural financial inclusion — including credit access, insurance, savings, and remittances.\n• Option (c) — NABARD's NAFIS: Correct. NABARD All India Rural Financial Inclusion Survey (NAFIS) is the primary instrument for tracking the share of institutional vs. non-institutional credit, banking access, and financial product penetration in rural India.\n• Option (d) — SEBI Rural Market Survey: Incorrect. SEBI has no mandate for rural credit surveys — this is a fabricated option.\n\nValue Addition:\n• NAFIS 2016–17 was the first wave; subsequent waves update the data on credit access, insurance, and digital financial services in rural areas.\n• NSSO's AIDIS (All India Debt and Investment Survey) is conducted periodically and covers debt, assets, and investment — complementary to but distinct from NAFIS.\n• NABARD's Annual Report and AIDIS together are the most commonly cited data sources for questions on agricultural credit penetration."
+    },
+    "hi": {
+      "display_text": "भारत के ग्रामीण क्षेत्रों में संस्थागत बनाम गैर-संस्थागत क्रेडिट के हिस्से को ट्रैक करने के लिए निम्नलिखित में से कौन-सा प्राथमिक समर्पित सर्वेक्षण उपकरण है, जिसमें किसान क्रेडिट कार्ड की पैठ और घरेलू स्तर पर वित्तीय समावेशन का डेटा शामिल है?\n\n(a) भारतीय रिज़र्व बैंक की बैंकिंग के रुझान और प्रगति पर वार्षिक रिपोर्ट\n(b) NSSO का ऑल इंडिया डेट एंड इन्वेस्टमेंट सर्वे (AIDIS)\n(c) NABARD का ऑल इंडिया ग्रामीण वित्तीय समावेशन सर्वेक्षण (NAFIS)\n(d) SEBI का ग्रामीण बाजार वित्तीय सेवाओं की पहुंच सर्वेक्षण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — NSSO (National Sample Survey Office) conducts the All India Debt and Investment Survey (AIDIS) which also tracks rural credit sources; students may confuse AIDIS with NAFIS or attribute NAFIS data to NSSO.",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: RBI की वार्षिक रिपोर्ट बैंकिंग डेटा को कवर करती है लेकिन यह समर्पित ग्रामीण वित्तीय समावेशन सर्वेक्षण नहीं करती जो संस्थागत बनाम गैर-संस्थागत क्रेडिट हिस्सेदारी को घरेलू स्तर पर ट्रैक करता है।",
+        "विकल्प (b) को हटाएं: NSSO का AIDIS संबंधित सर्वेक्षण है लेकिन NAFIS विशेष रूप से NABARD का उपकरण है — ये दोनों अलग हैं और इन्हें एक साथ नहीं मिलाना चाहिए।",
+        "विकल्प (d) को हटाएं: SEBI पूंजी बाजारों को नियंत्रित करता है — इसका ग्रामीण क्रेडिट सर्वेक्षण के लिए कोई अधिकार क्षेत्र नहीं है; यह एक संभावित-गलत विकल्प है।",
+        "विकल्प (c) — NABARD का NAFIS — सही उत्तर है क्योंकि यह भारत में ग्रामीण वित्तीय समावेशन ट्रैकिंग के लिए प्राथमिक समर्पित सर्वेक्षण है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) मुख्य जाल है — NSSO का AIDIS एक वास्तविक सर्वेक्षण है जो ग्रामीण ऋण और क्रेडिट डेटा एकत्र करता है, जिससे यह NAFIS के लिए एक अत्यंत संभावित विकल्प बन जाता है। जो छात्र AIDIS के अस्तित्व को जानते हैं, वे इसके कार्य को NSSO से जोड़ सकते हैं बजाय NABARD के, या AIDIS और NAFIS को एक ही उपकरण समझ सकते हैं। NAFIS NABARD का अपना सर्वेक्षण है जिसमें व्यापक वित्तीय समावेशन शामिल है, जबकि AIDIS ऋण और निवेश पर केंद्रित है — ये अलग-अलग संस्थागत अधिकार क्षेत्र के तहत पूरक लेकिन भिन्न उपकरण हैं।",
+      "final_explanation": "ग्रामीण वित्तीय समावेशन को ट्रैक करने के लिए समर्पित सर्वेक्षण आवश्यक हैं, और सही संस्थागत स्रोत की पहचान एक सटीकता-पुनःप्राप्ति प्रश्न है।\n\n• विकल्प (a) — RBI वार्षिक रिपोर्ट: गलत। RBI की वार्षिक रिपोर्ट समेकित बैंकिंग आंकड़े कवर करती है लेकिन घरेलू स्तर पर संस्थागत बनाम गैर-संस्थागत क्रेडिट हिस्सेदारी ट्रैक करने वाले समर्पित ग्रामीण वित्तीय समावेशन सर्वेक्षण नहीं करती।\n• विकल्प (b) — NSSO का ऑल इंडिया डेट एंड इन्वेस्टमेंट सर्वे (AIDIS): गलत। NSSO का AIDIS ग्रामीण ऋण डेटा एकत्र करता है और संबंधित स्रोत है, लेकिन NAFIS NABARD का समर्पित व्यापक सर्वेक्षण है जो क्रेडिट पहुंच, बीमा, बचत, और प्रेषण सहित ग्रामीण वित्तीय समावेशन को कवर करता है।\n• विकल्प (c) — NABARD का NAFIS: सही। NABARD ऑल इंडिया ग्रामीण वित्तीय समावेशन सर्वेक्षण (NAFIS) संस्थागत बनाम गैर-संस्थागत क्रेडिट, बैंकिंग पहुंच, और ग्रामीण भारत में वित्तीय उत्पादों की पैठ को ट्रैक करने का प्राथमिक उपकरण है।\n• विकल्प (d) — SEBI ग्रामीण बाजार सर्वेक्षण: गलत। SEBI का ग्रामीण क्रेडिट सर्वेक्षण के लिए कोई अधिकार क्षेत्र नहीं है — यह एक निर्मित विकल्प है।\n\nमूल्य संवर्धन:\n• NAFIS 2016–17 पहली लहर थी; बाद की लहरें ग्रामीण क्षेत्रों में क्रेडिट पहुंच, बीमा, और डिजिटल वित्तीय सेवाओं पर डेटा अपडेट करती हैं।\n• NSSO का AIDIS (ऑल इंडिया डेट एंड इन्वेस्टमेंट सर्वे) समय-समय पर किया जाता है और ऋण, संपत्ति, और निवेश को कवर करता है — NAFIS से पूरक लेकिन भिन्न।\n• NABARD की वार्षिक रिपोर्ट और AIDIS दोनों कृषि क्रेडिट पैठ पर प्रश्नों के लिए सबसे सामान्य रूप से उद्धृत डेटा स्रोत हैं।"
+    }
+  },
+  {
+    "uuid": "5045894d-ba65-4476-becb-29c60559c751",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "KCC Credit Limit Structure: Short-Term vs. Term Loan Components",
+        "Collateral Security Norms under KCC",
+        "KCC Validity Period and Renewal Mechanism",
+        "KCC and Priority Sector Lending (PSL) Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "scope-extension",
+      "concept_anchor": "KCC structural features matched to correct specifications",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (KCC Feature) with List II (Specification):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Standard validity period of KCC account",
+            "1. ₹1.6 lakh — no collateral required beyond crop hypothecation"
+          ],
+          [
+            "B. Threshold for collateral-free crop loan under KCC",
+            "2. Repayable within 12 months per individual drawal"
+          ],
+          [
+            "C. Maximum loan amount attracting Interest Subvention Scheme benefit",
+            "3. 5 years"
+          ],
+          [
+            "D. Repayment period for short-term crop loan component",
+            "4. ₹3 lakh"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-2, B-1, C-4, D-3\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) swaps the collateral threshold (matching ₹1.6 lakh with term loan validity instead of collateral norm) exploiting students who know both facts but confuse which specification belongs to which structural feature.",
+      "elimination_logic": [
+        "Match A: KCC standard validity period — 5 years — A matches with 3.",
+        "Match B: Collateral-free threshold — loans up to ₹1.6 lakh need no collateral — B matches with 1.",
+        "Match C: ISS short-term crop loan benefit cap — ₹3 lakh — C matches with 4.",
+        "Match D: Short-term crop loan repayment period — 12 months per drawal — D matches with 2.",
+        "Correct combination: A-3, B-1, C-4, D-2 — option (b)."
+      ],
+      "upsc_trap_explanation": "The primary trap is confusing the ₹1.6 lakh collateral threshold (B-1) with the ₹3 lakh ISS cap (C-4). Both are numerical thresholds in the KCC framework and students who recall 'there is a lakh-figure threshold' without distinguishing which threshold applies to which feature will swap B and C. Option (a) deliberately places B with '4' (₹3 lakh ISS cap) to exploit this confusion.",
+      "final_explanation": "The KCC framework contains multiple distinct numerical and temporal thresholds that must be precisely matched to the correct structural feature.\n\nCorrect pairings:\n• A-3 (5 years): The KCC card/account has a standard validity of 5 years — after which renewal is required. This replaced the earlier annual renewal system.\n• B-1 (₹1.6 lakh collateral-free): Loans up to ₹1.6 lakh require no collateral; hypothecation of crops is sufficient. Above this threshold, land mortgage or third-party guarantee is typically required.\n• C-4 (₹3 lakh ISS cap): Interest subvention benefits are available only up to the ₹3 lakh short-term crop loan limit. Loans above ₹3 lakh attract normal commercial interest rates without subvention.\n• D-2 (12 months repayment): Individual drawals under the short-term crop loan component must be repaid within 12 months — even though the account is valid for 5 years.\n\nCommon confusion: Students swap B and C because both are rupee thresholds. The ₹1.6 lakh governs collateral, while ₹3 lakh governs interest subvention — different structural features with different threshold amounts.\n\nValue Addition:\n• The 5-year validity replaced annual renewal to reduce transaction costs for farmers and banks.\n• The ₹1.6 lakh collateral norm is specific to KCC agricultural loans — MSME collateral-free norms under CGTMSE operate on different thresholds.\n• Banks can lend above SoF and above ₹3 lakh — both are permissible, but above ₹3 lakh the ISS benefit does not apply."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (KCC विशेषता) को सूची II (विनिर्देशन) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. KCC खाते की मानक वैधता अवधि",
+            "1. ₹1.6 लाख — फसल गिरवीकरण के अलावा कोई गिरवी आवश्यक नहीं"
+          ],
+          [
+            "B. KCC के तहत गिरवी-मुक्त फसल ऋण की सीमा",
+            "2. प्रत्येक व्यक्तिगत निकासी पर 12 महीनों के भीतर चुकाना होता है"
+          ],
+          [
+            "C. ब्याज सबवेंशन योजना लाभ के लिए अधिकतम ऋण राशि",
+            "3. 5 वर्ष"
+          ],
+          [
+            "D. अल्पकालिक फसल ऋण घटक की पुनर्भुगतान अवधि",
+            "4. ₹3 लाख"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-2, B-1, C-4, D-3\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) गिरवी सीमा को स्वैप करता है (₹1.6 लाख को गिरवी मानदंड के बजाय टर्म लोन वैधता से मिलाना) उन छात्रों का शोषण करते हुए जो दोनों तथ्यों को जानते हैं लेकिन भ्रमित हो जाते हैं कि कौन-सा विनिर्देशन किस संरचनात्मक विशेषता से संबंधित है।",
+      "elimination_logic": [
+        "मिलान A: KCC मानक वैधता अवधि — 5 वर्ष — A का मिलान 3 से है।",
+        "मिलान B: गिरवी-मुक्त सीमा — ₹1.6 लाख तक के ऋणों के लिए कोई गिरवी आवश्यक नहीं — B का मिलान 1 से है।",
+        "मिलान C: ISS अल्पकालिक फसल ऋण लाभ सीमा — ₹3 लाख — C का मिलान 4 से है।",
+        "मिलान D: अल्पकालिक फसल ऋण पुनर्भुगतान अवधि — प्रत्येक निकासी पर 12 महीने — D का मिलान 2 से है।",
+        "सही संयोजन: A-3, B-1, C-4, D-2 — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "प्रमुख जाल यह है कि ₹1.6 लाख गिरवी सीमा (B-1) को ₹3 लाख ISS सीमा (C-4) के साथ भ्रमित किया जाता है। दोनों KCC ढांचे में संख्यात्मक सीमाएँ हैं और जो छात्र 'लाख-रुपये की सीमा है' याद करते हैं लेकिन यह नहीं पहचान पाते कि कौन-सी सीमा किस विशेषता पर लागू होती है, वे B और C को स्वैप कर देते हैं। विकल्प (a) जानबूझकर B को '4' (₹3 लाख ISS सीमा) के साथ रखता है ताकि इस भ्रम का फायदा उठाया जा सके।",
+      "final_explanation": "KCC ढांचे में कई विशिष्ट संख्यात्मक और कालिक सीमाएँ होती हैं जिन्हें सही संरचनात्मक विशेषता से सटीक रूप से मिलाना आवश्यक है।\n\nसही जोड़े:\n• A-3 (5 वर्ष): KCC कार्ड/खाता की मानक वैधता 5 वर्ष है — जिसके बाद नवीनीकरण आवश्यक होता है। यह पूर्व के वार्षिक नवीनीकरण प्रणाली की जगह ले चुका है।\n• B-1 (₹1.6 लाख गिरवी-मुक्त): ₹1.6 लाख तक के ऋणों के लिए कोई गिरवी आवश्यक नहीं; फसलों का गिरवीकरण पर्याप्त है। इस सीमा से ऊपर आमतौर पर भूमि गिरवी या तृतीय पक्ष गारंटी आवश्यक होती है।\n• C-4 (₹3 लाख ISS सीमा): ब्याज सबवेंशन लाभ केवल ₹3 लाख तक के अल्पकालिक फसल ऋण सीमा तक उपलब्ध है। ₹3 लाख से ऊपर के ऋणों पर सामान्य वाणिज्यिक ब्याज दरें लागू होती हैं।\n• D-2 (12 महीने पुनर्भुगतान): अल्पकालिक फसल ऋण घटक के तहत व्यक्तिगत निकासी को 12 महीनों के भीतर चुकाना होता है — हालांकि खाता 5 वर्षों के लिए वैध होता है।\n\nसामान्य भ्रम: छात्र B और C को स्वैप कर देते हैं क्योंकि दोनों रुपये की सीमाएँ हैं। ₹1.6 लाख गिरवी से संबंधित है, जबकि ₹3 लाख ब्याज सबवेंशन से संबंधित है — ये अलग-अलग संरचनात्मक विशेषताएँ हैं जिनकी अलग-अलग सीमा राशि है।\n\nमूल्य संवर्धन:\n• 5 वर्ष की वैधता ने वार्षिक नवीनीकरण को बदल दिया ताकि किसानों और बैंकों के लिए लेन-देन लागत कम हो सके।\n• ₹1.6 लाख गिरवी मानदंड विशेष रूप से KCC कृषि ऋणों के लिए है — CGTMSE के तहत MSME गिरवी-मुक्त मानदंड अलग सीमाओं पर आधारित हैं।\n• बैंक SoF से ऊपर और ₹3 लाख से ऊपर ऋण दे सकते हैं — दोनों अनुमत हैं, लेकिन ₹3 लाख से ऊपर ISS लाभ लागू नहीं होता।"
+    }
+  },
+  {
+    "uuid": "fadabc1e-42fc-4781-b150-499e842cd5bc",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "sub_topic": "Agricultural credit — Kisan Credit Card",
+      "concepts_used": [
+        "Digital KCC and Financial Inclusion Architecture",
+        "Revised KCC Scheme 2012: Key Structural Changes"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "EASE reforms for PSBs: KCC saturation as a tracked metric",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The metric of Kisan Credit Card 'saturation' — tracking the proportion of eligible farmers covered by active KCC accounts — is specifically included as a performance benchmark for Public Sector Banks under which of the following reform frameworks?\n\n(a) CRISIL Rural Finance Inclusion Index for scheduled commercial banks\n(b) NABARD Annual Agricultural Outreach Report for refinancing institutions\n(c) Reserve Bank of India's Financial Inclusion Index (FI-Index)\n(d) EASE (Enhanced Access and Service Excellence) reforms for Public Sector Banks",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — NABARD Annual Report does publish KCC data and is prominently associated with agricultural credit tracking; students may attribute the KCC saturation metric to NABARD's annual accountability framework rather than the EASE index for PSBs.",
+      "elimination_logic": [
+        "Eliminate option (a): CRISIL is a credit rating agency — it does not manage PSB reform indices or track KCC saturation as a banking reform metric.",
+        "Eliminate option (b): NABARD publishes KCC data but does not administer the EASE index — EASE is a PSB-specific reform framework jointly designed by IBA and the Finance Ministry.",
+        "Eliminate option (c): RBI's Financial Inclusion Index (FI-Index) is a composite measure of financial inclusion across dimensions — KCC saturation is not a standalone metric within FI-Index.",
+        "Option (d) — EASE (Enhanced Access and Service Excellence) reforms for PSBs — is the correct framework; KCC saturation is tracked as a public commitment metric under EASE, reflecting banks' outreach performance."
+      ],
+      "upsc_trap_explanation": "The EASE index is a less commonly known PSB reform framework, making option (d) counterintuitive relative to the more familiar NABARD and RBI frameworks. Students are more likely to attribute KCC tracking to NABARD (which designs KCC and publishes agricultural credit data) than to EASE (a PSB performance index). The plausible-fabrication in option (a) — CRISIL Rural Finance Inclusion Index — sounds institutional and authoritative but does not exist as the relevant framework.",
+      "final_explanation": "KCC saturation — the percentage of eligible farmers covered by KCC — is tracked within a specific PSB reform accountability framework.\n\n• Option (a) — CRISIL Rural Finance Inclusion Index: Incorrect. CRISIL does publish financial inclusion assessments but there is no specifically named 'CRISIL Rural Finance Inclusion Index' that tracks KCC saturation as a PSB metric.\n• Option (b) — NABARD Annual Outreach Report: Incorrect. NABARD does publish KCC data and agricultural credit flow information, but KCC saturation as a specific PSB performance metric is tracked under EASE, not NABARD's own annual reporting framework.\n• Option (c) — RBI Financial Inclusion Index: Incorrect. RBI's FI-Index is a composite multidimensional index of financial inclusion across banking, insurance, and investment — KCC saturation is not a standalone indicator within it.\n• Option (d) — EASE (Enhanced Access and Service Excellence) reforms for PSBs: Correct. EASE is the PSB reform framework administered jointly by IBA and the Finance Ministry; it includes KCC saturation as a measurable commitment tracking PSBs' agricultural outreach performance.\n\nValue Addition:\n• EASE reforms were introduced in 2018 and have multiple thematic pillars — customer responsiveness, technology, and credit including agricultural credit outreach.\n• RBI's FI-Index (launched 2021) covers three dimensions: Access, Usage, and Quality — broader than agricultural credit alone.\n• IBA (Indian Banks' Association) is a key industry body for coordinating PSB reform implementation."
+    },
+    "hi": {
+      "display_text": "किसान क्रेडिट कार्ड (KCC) की 'संतृप्ति' मीट्रिक — पात्र किसानों में सक्रिय KCC खातों के अनुपात को ट्रैक करना — निम्नलिखित में से किस सुधार ढांचे के तहत सार्वजनिक क्षेत्र के बैंकों के लिए प्रदर्शन मानक के रूप में विशेष रूप से शामिल है?\n\n(क) अनुसूचित वाणिज्यिक बैंकों के लिए CRISIL ग्रामीण वित्त समावेशन सूचकांक\n(ख) पुनर्वित्त संस्थानों के लिए NABARD वार्षिक कृषि आउटरीच रिपोर्ट\n(ग) भारतीय रिज़र्व बैंक का वित्तीय समावेशन सूचकांक (FI-Index)\n(घ) सार्वजनिक क्षेत्र के बैंकों के लिए EASE (Enhanced Access and Service Excellence) सुधार",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "ख — NABARD वार्षिक रिपोर्ट KCC डेटा प्रकाशित करती है और कृषि ऋण ट्रैकिंग से प्रमुख रूप से जुड़ी है; छात्र KCC संतृप्ति मीट्रिक को NABARD की वार्षिक जवाबदेही प्रणाली से जोड़ सकते हैं बजाय PSB के लिए EASE सूचकांक के।",
+      "elimination_logic": [
+        "विकल्प (क) को हटाएं: CRISIL एक क्रेडिट रेटिंग एजेंसी है — यह PSB सुधार सूचकांक प्रबंधित नहीं करती और न ही बैंकिंग सुधार मीट्रिक के रूप में KCC संतृप्ति ट्रैक करती है।",
+        "विकल्प (ख) को हटाएं: NABARD KCC डेटा प्रकाशित करता है लेकिन EASE सूचकांक का प्रशासन नहीं करता — EASE एक PSB-विशिष्ट सुधार ढांचा है जिसे IBA और वित्त मंत्रालय ने संयुक्त रूप से डिजाइन किया है।",
+        "विकल्प (ग) को हटाएं: RBI का वित्तीय समावेशन सूचकांक (FI-Index) वित्तीय समावेशन का एक समग्र माप है — KCC संतृप्ति FI-Index में एक स्वतंत्र मीट्रिक नहीं है।",
+        "विकल्प (घ) — EASE (Enhanced Access and Service Excellence) सुधार PSB के लिए — सही ढांचा है; KCC संतृप्ति EASE के तहत सार्वजनिक प्रतिबद्धता मीट्रिक के रूप में ट्रैक की जाती है, जो बैंकों के आउटरीच प्रदर्शन को दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "EASE सूचकांक एक कम ज्ञात PSB सुधार ढांचा है, जिससे विकल्प (घ) अपेक्षाकृत कम सहज लगता है जबकि NABARD और RBI के परिचित ढांचे अधिक परिचित हैं। छात्र KCC ट्रैकिंग को NABARD (जो KCC डिजाइन करता है और कृषि ऋण डेटा प्रकाशित करता है) से जोड़ने की अधिक संभावना रखते हैं बजाय EASE (PSB प्रदर्शन सूचकांक) के। विकल्प (क) में संभावित भ्रम — CRISIL Rural Finance Inclusion Index — संस्थागत और अधिकारिक लगता है लेकिन प्रासंगिक ढांचा नहीं है।",
+      "final_explanation": "KCC संतृप्ति — पात्र किसानों में सक्रिय KCC खातों का प्रतिशत — एक विशिष्ट PSB सुधार जवाबदेही ढांचे के अंतर्गत ट्रैक की जाती है।\n\n• विकल्प (क) — CRISIL Rural Finance Inclusion Index: गलत। CRISIL वित्तीय समावेशन आकलन प्रकाशित करता है लेकिन कोई विशेष 'CRISIL Rural Finance Inclusion Index' नहीं है जो PSB मीट्रिक के रूप में KCC संतृप्ति ट्रैक करे।\n• विकल्प (ख) — NABARD वार्षिक आउटरीच रिपोर्ट: गलत। NABARD KCC डेटा और कृषि ऋण प्रवाह जानकारी प्रकाशित करता है, लेकिन KCC संतृप्ति एक विशिष्ट PSB प्रदर्शन मीट्रिक के रूप में EASE के अंतर्गत ट्रैक होती है, NABARD की वार्षिक रिपोर्टिंग ढांचे के अंतर्गत नहीं।\n• विकल्प (ग) — RBI वित्तीय समावेशन सूचकांक: गलत। RBI का FI-Index बैंकिंग, बीमा, और निवेश में वित्तीय समावेशन का एक समग्र बहुआयामी सूचकांक है — इसमें KCC संतृप्ति एक स्वतंत्र संकेतक नहीं है।\n• विकल्प (घ) — EASE (Enhanced Access and Service Excellence) सुधार PSB के लिए: सही। EASE PSB सुधार ढांचा है जिसे IBA और वित्त मंत्रालय ने संयुक्त रूप से प्रशासित किया है; इसमें KCC संतृप्ति शामिल है जो PSB के कृषि आउटरीच प्रदर्शन को मापने वाली प्रतिबद्धता है।\n\nमूल्य संवर्धन:\n• EASE सुधार 2018 में शुरू हुए और इसके कई विषय स्तंभ हैं — ग्राहक प्रतिक्रिया, प्रौद्योगिकी, और ऋण जिसमें कृषि ऋण आउटरीच शामिल है।\n• RBI का FI-Index (2021 में लॉन्च) तीन आयामों को कवर करता है: पहुँच, उपयोग, और गुणवत्ता — जो केवल कृषि ऋण से व्यापक है।\n• IBA (Indian Banks' Association) PSB सुधार कार्यान्वयन के समन्वय के लिए एक प्रमुख उद्योग निकाय है।"
+    }
+  }
+]

@@ -1,4 +1,3 @@
-import 'package:upsc_wars/core/database/question_db.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 
 class SessionBundleModel {
@@ -11,6 +10,6 @@ class SessionBundleModel {
 
   final Session session;
   final List<SessionQuestion> sessionQuestions;
-  final List<QuestionRow> questionRows;
-  final Map<String, QuestionTranslationRow> translations;
+  final List<Question> questionRows;
+  final Map<String, QuestionTranslation> translations;
 }

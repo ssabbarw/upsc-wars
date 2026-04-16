@@ -43,9 +43,9 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
     final avg = attemptedTimeCount == 0 ? null : (attemptedTimeSum / attemptedTimeCount);
     return SessionResult(
       sessionId: session.id,
-      subjectSlug: session.subjectSlug,
-      topicSlug: session.topicSlug,
-      subTopicSlug: session.subTopicSlug,
+      subject: session.subject,
+      topic: session.topic,
+      subTopic: session.subTopic,
       mode: session.mode,
       createdAt: session.createdAt,
       completedAt: session.completedAt,
@@ -65,22 +65,22 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
   }
 
   @override
-  Future<List<SessionSummary>> getSessionList({String? subjectSlug, String? mode}) async {
+  Future<List<SessionSummary>> getSessionList({String? subject, String? mode}) async {
     var sessions = await _userDb.sessionsDao.getAllSessionsOrderedByCreatedAtDesc();
-    if (subjectSlug != null) sessions = sessions.where((s) => s.subjectSlug == subjectSlug).toList();
+    if (subject != null) sessions = sessions.where((s) => s.subject == subject).toList();
     if (mode != null) sessions = sessions.where((s) => s.mode == mode).toList();
     final out = <SessionSummary>[];
     for (final s in sessions) {
       final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(s.id);
       if (s.status == 'in_progress') {
-        out.add(SessionSummary(sessionId: s.id, subjectSlug: s.subjectSlug, topicSlug: s.topicSlug, mode: s.mode, status: s.status, createdAt: s.createdAt, questionCount: s.questionCount, correct: null, wrong: null, accuracy: null, accuracyTier: null, netScore: null, avgTimeSpentSecs: null));
+        out.add(SessionSummary(sessionId: s.id, subject: s.subject, topic: s.topic, mode: s.mode, status: s.status, createdAt: s.createdAt, questionCount: s.questionCount, correct: null, wrong: null, accuracy: null, accuracyTier: null, netScore: null, avgTimeSpentSecs: null));
         continue;
       }
       if (s.status == 'abandoned') {
         out.add(SessionSummary(
           sessionId: s.id,
-          subjectSlug: s.subjectSlug,
-          topicSlug: s.topicSlug,
+          subject: s.subject,
+          topic: s.topic,
           mode: s.mode,
           status: s.status,
           createdAt: s.createdAt,
@@ -102,8 +102,8 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
       final attempted = correct + wrong;
       out.add(SessionSummary(
         sessionId: s.id,
-        subjectSlug: s.subjectSlug,
-        topicSlug: s.topicSlug,
+        subject: s.subject,
+        topic: s.topic,
         mode: s.mode,
         status: s.status,
         createdAt: s.createdAt,

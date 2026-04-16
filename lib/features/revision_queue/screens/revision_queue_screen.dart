@@ -23,7 +23,7 @@ class RevisionQueueScreen extends HookConsumerWidget {
       final count = items.length > 50 ? 50 : items.length;
       if (count == 0) return;
       final id = await create.execute(const SessionConfig(
-        subjectSlug: 'revision',
+        subject: 'revision',
         mode: 'learning',
         questionCount: 50,
         isTimed: true,
@@ -113,23 +113,11 @@ class RevisionQueueScreen extends HookConsumerWidget {
                       ]),
                     );
                   }
-                  final wrong = items.where((e) => e.reason == 'wrong').toList();
-                  final bookmarked = items.where((e) => e.reason == 'bookmarked').toList();
                   return ListView(
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.all(AppSpacing.lg),
                     children: [
-                      if (wrong.isNotEmpty) ...[
-                        Text('WRONG ANSWERS (${wrong.length})', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
-                        const SizedBox(height: AppSpacing.sm),
-                        ...wrong.map((e) => _Row(item: e)),
-                      ],
-                      if (bookmarked.isNotEmpty) ...[
-                        const SizedBox(height: AppSpacing.lg),
-                        Text('BOOKMARKED (${bookmarked.length})', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
-                        const SizedBox(height: AppSpacing.sm),
-                        ...bookmarked.map((e) => _Row(item: e)),
-                      ],
+                      ...items.map((e) => _Row(item: e)),
                     ],
                   );
                 },
@@ -151,10 +139,14 @@ class _Row extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final subj = SubjectConstants.bySlug(item.subjectSlug)?.displayName ?? item.subjectSlug;
-    final badWrong = item.reason == 'wrong';
-    final badgeBg = badWrong ? (isDark ? AppColors.wrongBgDark : AppColors.wrongBg) : (isDark ? AppColors.primaryDeep : AppColors.primaryLight);
-    final badgeFg = badWrong ? (isDark ? AppColors.wrongTextDark : AppColors.wrongText) : (isDark ? AppColors.onPrimary : AppColors.primaryDeep);
+    final subj = SubjectConstants.bySlug(item.subject)?.displayName ?? item.subject;
+    final mastered = item.numberOfTimesAnsweredCorrectlyInRevision >= 2;
+    final badgeBg = mastered
+        ? (isDark ? AppColors.correctBgDark : AppColors.correctBg)
+        : (isDark ? AppColors.primaryDeep : AppColors.primaryLight);
+    final badgeFg = mastered
+        ? (isDark ? AppColors.correctTextDark : AppColors.correctText)
+        : (isDark ? AppColors.onPrimary : AppColors.primaryDeep);
 
     return Container(
       margin: const EdgeInsets.only(bottom: AppSpacing.sm),
@@ -165,7 +157,7 @@ class _Row extends HookConsumerWidget {
         border: Border.all(color: border, width: 0.5),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text('$subj · ${item.topicSlug}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
+        Text('$subj · ${item.topic}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
         const SizedBox(height: AppSpacing.xs),
         Text(item.questionStem, maxLines: 2, overflow: TextOverflow.ellipsis, style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurface)),
         const SizedBox(height: AppSpacing.sm),
@@ -173,10 +165,10 @@ class _Row extends HookConsumerWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm, vertical: AppSpacing.xs),
             decoration: BoxDecoration(color: badgeBg, borderRadius: BorderRadius.circular(AppRadius.sm)),
-            child: Text(badWrong ? 'Wrong' : 'Bookmarked', style: AppTextStyles.caption().copyWith(color: badgeFg)),
+            child: Text(mastered ? 'Mastered' : 'In queue', style: AppTextStyles.caption().copyWith(color: badgeFg)),
           ),
           const SizedBox(width: AppSpacing.md),
-          _Dots(streak: item.correctStreak),
+          _Dots(streak: item.numberOfTimesAnsweredCorrectlyInRevision),
         ]),
       ]),
     );
@@ -197,9 +189,9 @@ class _Dots extends HookConsumerWidget {
 
 extension on SessionConfig {
   SessionConfig copyWith({int? questionCount}) => SessionConfig(
-        subjectSlug: subjectSlug,
-        topicSlug: topicSlug,
-        subTopicSlug: subTopicSlug,
+        subject: subject,
+        topic: topic,
+        subTopic: subTopic,
         mode: mode,
         questionCount: questionCount ?? this.questionCount,
         isTimed: isTimed,

@@ -2,23 +2,25 @@ class RevisionQueueItem {
   const RevisionQueueItem({
     required this.id,
     required this.questionUuid,
-    required this.addedAt,
-    required this.reason,
-    required this.correctStreak,
-    required this.lastCorrectAt,
-    required this.subjectSlug,
-    required this.topicSlug,
+    required this.dateAddedToQueue,
+    required this.numberOfTimesAnsweredCorrectlyInRevision,
+    required this.numberOfTimesAnsweredIncorrectlyInRevision,
+    required this.hasGraduatedFromQueue,
+    required this.dateGraduated,
+    required this.subject,
+    required this.topic,
     required this.questionStem,
   });
 
   final String id;
   final String questionUuid;
-  final DateTime addedAt;
-  final String reason;
-  final int correctStreak;
-  final DateTime? lastCorrectAt;
+  final DateTime dateAddedToQueue;
+  final int numberOfTimesAnsweredCorrectlyInRevision;
+  final int numberOfTimesAnsweredIncorrectlyInRevision;
+  final bool hasGraduatedFromQueue;
+  final DateTime? dateGraduated;
 
-  final String subjectSlug;
-  final String topicSlug;
+  final String subject;
+  final String topic;
   final String questionStem;
 }

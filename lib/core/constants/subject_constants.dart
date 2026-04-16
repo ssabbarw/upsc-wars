@@ -16,17 +16,27 @@ class SubjectDefinition {
 abstract final class SubjectConstants {
   SubjectConstants._();
 
-  /// Polity → History → Geography → Economy → Environment → Science & Tech
+  /// Subject order aligned with shipped question bank data.
   static const List<SubjectDefinition> ordered = [
     SubjectDefinition(
-      slug: 'polity',
-      displayName: 'Polity',
+      slug: 'Ancient History',
+      displayName: 'Ancient History',
+      materialIcon: Icons.history_edu_outlined,
+    ),
+    SubjectDefinition(
+      slug: 'Medieval History',
+      displayName: 'Medieval History',
+      materialIcon: Icons.castle_outlined,
+    ),
+    SubjectDefinition(
+      slug: 'Modern History',
+      displayName: 'Modern History',
       materialIcon: Icons.account_balance_outlined,
     ),
     SubjectDefinition(
-      slug: 'history',
-      displayName: 'History',
-      materialIcon: Icons.menu_book_outlined,
+      slug: 'Art and Culture',
+      displayName: 'Art and Culture',
+      materialIcon: Icons.palette_outlined,
     ),
     SubjectDefinition(
       slug: 'geography',
@@ -44,9 +54,9 @@ abstract final class SubjectConstants {
       materialIcon: Icons.park_outlined,
     ),
     SubjectDefinition(
-      slug: 'science_tech',
-      displayName: 'Science & Tech',
-      materialIcon: Icons.science_outlined,
+      slug: 'Polity',
+      displayName: 'Polity',
+      materialIcon: Icons.gavel_outlined,
     ),
   ];
 

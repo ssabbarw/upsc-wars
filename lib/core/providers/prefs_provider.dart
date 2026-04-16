@@ -10,6 +10,7 @@ abstract final class PrefKeys {
   static const dailyGoal = 'daily_goal';
   static const language = 'language';
   static const dbInitialized = 'db_initialized';
+  static const dbAssetVersion = 'db_asset_version';
 }
 
 class PrefsService {
@@ -40,6 +41,9 @@ class PrefsService {
 
   bool get dbInitialized => _p.getBool(PrefKeys.dbInitialized) ?? false;
   set dbInitialized(bool v) => _p.setBool(PrefKeys.dbInitialized, v);
+
+  int get dbAssetVersion => _p.getInt(PrefKeys.dbAssetVersion) ?? 0;
+  set dbAssetVersion(int v) => _p.setInt(PrefKeys.dbAssetVersion, v);
 }
 
 @Riverpod(keepAlive: true)

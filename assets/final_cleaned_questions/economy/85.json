@@ -1,0 +1,1491 @@
+[
+  {
+    "uuid": "3091373c-2640-4e22-9e48-9a1e77afef89",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO Organizational Structure: Principal Bodies and Decision-Making",
+        "RATS: Regional Anti-Terrorist Structure — Mandate and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "SCO Secretariat vs RATS headquarters distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the SCO's institutional structure:\n\n1. The SCO Secretariat and the Regional Anti-Terrorist Structure (RATS) are both headquartered in Beijing, reflecting China's foundational role in the organization.\n2. Decision-making in the SCO operates through a voting mechanism where member states have weighted votes proportional to their economic contribution.\n3. The Council of Heads of Government, which consists of prime ministers, focuses primarily on trade and economic cooperation matters, meeting separately from the Council of Heads of State.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The SCO Secretariat and the Regional Anti-Terrorist Structure (RATS) are both headquartered in Beijing, reflecting China's foundational role in the organization.",
+          "verdict": "Incorrect",
+          "reason": "The SCO Secretariat is in Beijing, but RATS is headquartered in Tashkent, Uzbekistan — conflating both into Beijing is factually wrong."
+        },
+        {
+          "statement": "Decision-making in the SCO operates through a voting mechanism where member states have weighted votes proportional to their economic contribution.",
+          "verdict": "Incorrect",
+          "reason": "The SCO follows a consensus-based decision-making model — there is no voting mechanism. This has significant implications as it prevents any member from being outvoted."
+        },
+        {
+          "statement": "The Council of Heads of Government, which consists of prime ministers, focuses primarily on trade and economic cooperation matters, meeting separately from the Council of Heads of State.",
+          "verdict": "Correct",
+          "reason": "This is accurate — the two councils are separate bodies; the Heads of State council is the supreme decision-making body meeting annually, while the Heads of Government (PM-level) council focuses on economic and trade cooperation."
+        }
+      ],
+      "strong_distractor": "a — Students who know that Beijing hosts the Secretariat may assume Statement 1 is correct (since RATS is sometimes loosely associated with China's counter-terrorism emphasis), making them think only Statement 2 is incorrect.",
+      "elimination_logic": [
+        "Statement 1 claims both Secretariat and RATS are in Beijing — RATS is in Tashkent, Uzbekistan. This statement is factually incorrect.",
+        "Statement 2 claims a weighted voting mechanism exists — the SCO uses consensus, not voting. This statement is factually incorrect.",
+        "Statement 3 accurately describes the two separate councils: Heads of State (supreme, annual) and Heads of Government (PM-level, economic focus) — this is correct.",
+        "The question asks which are NOT correct — Statements 1 and 2 are incorrect; option b (1 and 2 only) is the answer."
+      ],
+      "upsc_trap_explanation": "The geographic swap in Statement 1 is a classic UPSC trap: students who correctly know 'Beijing = SCO Secretariat' may unconsciously extend that to RATS without recalling Tashkent. The two permanent bodies have deliberately separate locations — Beijing for administration and Tashkent for counter-terrorism operations.",
+      "final_explanation": "The SCO has two permanent bodies: the Secretariat in Beijing and RATS in Tashkent. This distinction is institutionally and geographically significant.\n\n• Statement 1 — Incorrect: RATS is headquartered in Tashkent, Uzbekistan — not Beijing. Only the SCO Secretariat is in Beijing. The geographic separation reflects distinct functional mandates.\n• Statement 2 — Incorrect: The SCO operates on consensus, meaning no member can be outvoted. This has a direct strategic implication: India cannot be forced to accept BRI-linked decisions, but equally cannot isolate Pakistan within the framework.\n• Statement 3 — Correct: The Council of Heads of Government (prime ministerial level) deals with trade and economic cooperation, while the Council of Heads of State is the supreme authority that meets annually at the summit level.\n\nValue Addition:\n• The consensus rule is India's structural safeguard within SCO — it can block resolutions it disagrees with but cannot push through resolutions that China or Pakistan oppose.\n• RATS coordinates intelligence sharing on the 'Three Evils': terrorism, separatism, and extremism.\n• The SCO Secretariat's budget sees disproportionate contribution from China, giving it informal institutional leverage."
+    },
+    "hi": {
+      "display_text": "SCO की संस्थागत संरचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. SCO सचिवालय और क्षेत्रीय आतंकवाद विरोधी संरचना (RATS) दोनों का मुख्यालय बीजिंग में है, जो संगठन में चीन की आधारशिला भूमिका को दर्शाता है।\n2. SCO में निर्णय लेने की प्रक्रिया एक मतदान तंत्र के माध्यम से होती है जहाँ सदस्य राज्यों के वोट उनके आर्थिक योगदान के अनुपात में भारित होते हैं।\n3. सरकार प्रमुखों की परिषद, जिसमें प्रधानमंत्री शामिल हैं, मुख्य रूप से व्यापार और आर्थिक सहयोग के मामलों पर केंद्रित होती है, और यह राज्य प्रमुखों की परिषद से अलग बैठती है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The SCO Secretariat and the Regional Anti-Terrorist Structure (RATS) are both headquartered in Beijing, reflecting China's foundational role in the organization.",
+          "verdict": "गलत",
+          "reason": "SCO सचिवालय बीजिंग में है, लेकिन RATS का मुख्यालय ताशकंद, उज्बेकिस्तान में है — दोनों को बीजिंग में मानना तथ्यात्मक रूप से गलत है।"
+        },
+        {
+          "statement": "Decision-making in the SCO operates through a voting mechanism where member states have weighted votes proportional to their economic contribution.",
+          "verdict": "गलत",
+          "reason": "SCO सहमति-आधारित निर्णय लेने की प्रक्रिया अपनाता है — कोई मतदान तंत्र नहीं है। इसका महत्वपूर्ण प्रभाव यह है कि किसी सदस्य को बहुमत से बाहर नहीं किया जा सकता।"
+        },
+        {
+          "statement": "The Council of Heads of Government, which consists of prime ministers, focuses primarily on trade and economic cooperation matters, meeting separately from the Council of Heads of State.",
+          "verdict": "सही है",
+          "reason": "यह सही है — ये दो अलग-अलग परिषदें हैं; राज्य प्रमुखों की परिषद सर्वोच्च निर्णय लेने वाली संस्था है जो वार्षिक रूप से मिलती है, जबकि सरकार प्रमुखों (प्रधानमंत्री स्तर) की परिषद आर्थिक और व्यापार सहयोग पर केंद्रित है।"
+        }
+      ],
+      "strong_distractor": "कथन 1 के लिए — जो छात्र जानते हैं कि सचिवालय बीजिंग में है, वे मान सकते हैं कि कथन 1 सही है (क्योंकि RATS को कभी-कभी चीन के आतंकवाद विरोधी जोर के साथ जोड़ा जाता है), जिससे वे सोचते हैं कि केवल कथन 2 गलत है।",
+      "elimination_logic": [
+        "कथन 1 कहता है कि सचिवालय और RATS दोनों बीजिंग में हैं — RATS ताशकंद, उज्बेकिस्तान में है। यह कथन तथ्यात्मक रूप से गलत है।",
+        "कथन 2 कहता है कि एक भारित मतदान तंत्र है — SCO सहमति पर चलता है, मतदान नहीं। यह कथन तथ्यात्मक रूप से गलत है।",
+        "कथन 3 दो अलग-अलग परिषदों का सही वर्णन करता है: राज्य प्रमुखों की परिषद (सर्वोच्च, वार्षिक) और सरकार प्रमुखों की परिषद (प्रधानमंत्री स्तर, आर्थिक केंद्रित) — यह सही है।",
+        "प्रश्न पूछता है कि कौन-से कथन सही नहीं हैं — कथन 1 और 2 गलत हैं; विकल्प (b) (1 और 2 केवल) उत्तर है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में भौगोलिक भ्रम UPSC का क्लासिक जाल है: जो छात्र सही जानते हैं कि 'बीजिंग = SCO सचिवालय' है, वे अनजाने में इसे RATS तक बढ़ा देते हैं और ताशकंद को भूल जाते हैं। ये दो स्थायी निकाय जानबूझकर अलग-अलग स्थानों पर हैं — प्रशासन के लिए बीजिंग और आतंकवाद विरोधी संचालन के लिए ताशकंद।",
+      "final_explanation": "SCO के दो स्थायी निकाय हैं: सचिवालय बीजिंग में और RATS ताशकंद में। यह संस्थागत और भौगोलिक रूप से महत्वपूर्ण भेद है।\n\n• कथन 1 — गलत: RATS का मुख्यालय ताशकंद, उज्बेकिस्तान में है — बीजिंग में नहीं। केवल SCO सचिवालय बीजिंग में है। यह भौगोलिक पृथक्करण अलग-अलग कार्यात्मक दायित्वों को दर्शाता है।\n• कथन 2 — गलत: SCO सहमति पर चलता है, जिसका अर्थ है कि कोई सदस्य बहुमत से बाहर नहीं किया जा सकता। इसका सीधा रणनीतिक प्रभाव है: भारत को BRI से जुड़े निर्णय स्वीकार करने के लिए मजबूर नहीं किया जा सकता, लेकिन पाकिस्तान को भी अलग-थलग नहीं किया जा सकता।\n• कथन 3 — सही: सरकार प्रमुखों की परिषद (प्रधानमंत्री स्तर) व्यापार और आर्थिक सहयोग से संबंधित है, जबकि राज्य प्रमुखों की परिषद सर्वोच्च प्राधिकरण है जो वार्षिक शिखर सम्मेलन स्तर पर मिलती है।\n\nमूल्यवर्धन:\n• सहमति नियम SCO में भारत की संरचनात्मक सुरक्षा है — यह उन प्रस्तावों को रोक सकता है जिनसे वह असहमत है, लेकिन चीन या पाकिस्तान के विरोध वाले प्रस्तावों को आगे नहीं बढ़ा सकता।\n• RATS 'तीन बुराइयों' — आतंकवाद, अलगाववाद, और उग्रवाद — पर खुफिया साझेदारी का समन्वय करता है।\n• SCO सचिवालय का बजट चीन से असमान योगदान प्राप्त करता है, जो इसे अनौपचारिक संस्थागत प्रभाव देता है।"
+    }
+  },
+  {
+    "uuid": "2ea364be-8ace-400c-b224-2ffa31e1b267",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "RATS: Regional Anti-Terrorist Structure — Mandate and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Three Evils doctrine of RATS",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Regional Anti-Terrorist Structure (RATS) of the SCO is mandated to coordinate member states' efforts against what the organization terms the 'Three Evils'. Which of the following correctly identifies all three?\n\n(a) Terrorism, separatism, and extremism\n(b) Terrorism, radicalization, and extremism\n(c) Terrorism, narco-terrorism, and separatism\n(d) Terrorism, cyber-terrorism, and extremism",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students aware of SCO's security focus may substitute 'radicalization' for 'separatism', as radicalization is a commonly discussed counter-terrorism theme — but it is not one of the Three Evils.",
+      "elimination_logic": [
+        "Recall that the Three Evils are the foundational doctrine of RATS — they are specific named threats, not generic security concerns.",
+        "Terrorism and extremism are commonly associated with counter-terrorism frameworks — narrow down by recalling the third term that distinguishes SCO's doctrine from generic frameworks.",
+        "The third evil is 'separatism' — targeting secessionist movements, particularly relevant to Xinjiang (China), Central Asian states, and Kashmir dynamics — option a is correct."
+      ],
+      "upsc_trap_explanation": "Students frequently substitute 'radicalization' for 'separatism' because the former is more common in global security discourse. The Three Evils — terrorism, separatism, extremism — are specifically SCO-coined. Separatism is included because of deep member-state concerns about territorial integrity, particularly China's Xinjiang and Russia's Chechnya experiences.",
+      "final_explanation": "RATS (Regional Anti-Terrorist Structure) is one of the two permanent bodies of the SCO, headquartered in Tashkent, Uzbekistan. Its foundational mandate rests on countering what the SCO calls the 'Three Evils.'\n\n• Option (a): Correct — terrorism, separatism, and extremism are the Three Evils that define RATS's mandate.\n• Option (b): Incorrect — radicalization is not one of the Three Evils; separatism is the term used, not radicalization.\n• Option (c): Incorrect — narco-terrorism is a concern in Central Asia but is not part of the formal Three Evils framework.\n• Option (d): Incorrect — cyber-terrorism is not one of the Three Evils, though SCO has discussed cyber-security separately.\n\nValue Addition:\n• 'Separatism' in the Three Evils directly targets China's concerns about Xinjiang and Taiwan, Russia's Chechnya legacy, and Central Asian states' secessionist risks.\n• RATS coordinates intelligence sharing and joint counter-terrorism exercises — it has an operational role distinct from the Secretariat's administrative role.\n• Peace Mission exercises are conducted under SCO's auspices but are separate from RATS's intelligence coordination function."
+    },
+    "hi": {
+      "display_text": "SCO के Regional Anti-Terrorist Structure (RATS) को सदस्य राज्यों के प्रयासों का समन्वय करने का दायित्व दिया गया है, जो संगठन द्वारा 'Three Evils' कहा जाता है। निम्नलिखित में से कौन-सा विकल्प तीनों को सही रूप से पहचानता है?\n\n(a) आतंकवाद, अलगाववाद, और उग्रवाद\n(b) आतंकवाद, कट्टरता, और उग्रवाद\n(c) आतंकवाद, नारको-आतंकवाद, और अलगाववाद\n(d) आतंकवाद, साइबर-आतंकवाद, और उग्रवाद",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — SCO की सुरक्षा केंद्रितता से परिचित छात्र 'separatism' के स्थान पर 'radicalization' का विकल्प चुन सकते हैं, क्योंकि 'radicalization' आतंकवाद विरोधी चर्चा में सामान्य है — लेकिन यह Three Evils में से एक नहीं है।",
+      "elimination_logic": [
+        "याद रखें कि Three Evils RATS का मूल सिद्धांत है — ये विशिष्ट नामित खतरे हैं, सामान्य सुरक्षा चिंताएँ नहीं।",
+        "आतंकवाद और उग्रवाद आतंकवाद विरोधी ढाँचों से सामान्यतः जुड़े होते हैं — तीसरे शब्द को याद करें जो SCO के सिद्धांत को सामान्य ढाँचों से अलग करता है।",
+        "तीसरा दुष्ट तत्व 'separatism' है — जो अलगाववादी आंदोलनों को लक्षित करता है, विशेषकर शिनजियांग (चीन), मध्य एशियाई राज्यों, और कश्मीर की परिस्थितियों के लिए प्रासंगिक — अतः विकल्प (a) सही है।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर 'separatism' के स्थान पर 'radicalization' चुन लेते हैं क्योंकि पूर्व विश्व सुरक्षा विमर्श में अधिक सामान्य है। Three Evils — आतंकवाद, अलगाववाद, उग्रवाद — विशेष रूप से SCO द्वारा निर्मित हैं। अलगाववाद इसलिए शामिल है क्योंकि सदस्य राज्यों को क्षेत्रीय अखंडता की गहरी चिंता है, विशेषकर चीन के शिनजियांग और रूस के चेचन्या अनुभवों के कारण।",
+      "final_explanation": "RATS (Regional Anti-Terrorist Structure) SCO के दो स्थायी निकायों में से एक है, जिसका मुख्यालय ताशकंद, उज़्बेकिस्तान में है। इसका मूल कार्य SCO द्वारा 'Three Evils' के रूप में परिभाषित खतरों का मुकाबला करना है।\n\n• विकल्प (a): सही — आतंकवाद, अलगाववाद, और उग्रवाद वे तीन दुष्ट तत्व हैं जो RATS के कार्यक्षेत्र को परिभाषित करते हैं।\n• विकल्प (b): गलत — 'radicalization' Three Evils में से नहीं है; 'separatism' शब्द प्रयुक्त होता है, 'radicalization' नहीं।\n• विकल्प (c): गलत — नारको-आतंकवाद मध्य एशिया में चिंता का विषय है लेकिन Three Evils के औपचारिक ढांचे में शामिल नहीं है।\n• विकल्प (d): गलत — साइबर-आतंकवाद Three Evils में नहीं है, हालांकि SCO ने साइबर सुरक्षा पर अलग से चर्चा की है।\n\nमूल्य संवर्धन:\n• Three Evils में 'अलगाववाद' सीधे चीन के शिनजियांग और ताइवान, रूस के चेचन्या विरासत, और मध्य एशियाई राज्यों के अलगाववादी जोखिमों को लक्षित करता है।\n• RATS खुफिया साझाकरण और संयुक्त आतंकवाद विरोधी अभ्यासों का समन्वय करता है — इसका संचालन सचिवालय के प्रशासनिक कार्य से अलग है।\n• शांति मिशन अभ्यास SCO के अधीन होते हैं लेकिन RATS के खुफिया समन्वय कार्य से पृथक हैं।"
+    }
+  },
+  {
+    "uuid": "c76b0ce7-5d18-48f2-ac67-15f0d50a7fb4",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO Summits: Key Decisions and Locations (Examinable Milestones)",
+        "India's Accession to SCO: Timeline, Conditions, and Strategic Calculus"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "SCO summit milestones: years and key decisions",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the following SCO Summits (List I) with their principal outcomes (List II):",
+        "columns": [
+          "List I (Summit)",
+          "List II (Key Outcome)"
+        ],
+        "rows": [
+          [
+            "A. Shanghai Summit, 2001",
+            "1. Iran's observer-to-member process formally initiated; first in-person post-COVID summit"
+          ],
+          [
+            "B. Astana Summit, 2017",
+            "2. SCO formally established, replacing the Shanghai Five; founding Charter signed"
+          ],
+          [
+            "C. Samarkand Summit, 2022",
+            "3. Summit held in virtual format; 'One Earth, One Family, One Future' theme promoted; Belarus approved for membership"
+          ],
+          [
+            "D. New Delhi Summit, 2023",
+            "4. India and Pakistan admitted simultaneously as full members"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-4, C-1, D-3\n(c) A-4, B-2, C-1, D-3\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who remember '2001 = SCO established' and '2017 = India joins' may correctly place A and B but then confuse the Samarkand and New Delhi summits' specific outcomes, swapping C and D.",
+      "elimination_logic": [
+        "The 2001 Shanghai Summit is definitionally associated with SCO's formal establishment — A matches with 2 (formal establishment and Charter signing).",
+        "The 2017 Astana Summit is the landmark expansion summit where India and Pakistan both became full members — B matches with 4.",
+        "The 2022 Samarkand Summit was the first in-person post-COVID summit and is where Iran's observer-to-member process was formally initiated — C matches with 1.",
+        "The 2023 New Delhi Summit was held in virtual format under India's chairmanship, where India promoted the 'One Earth, One Family, One Future' theme — D matches with 3. This gives option b."
+      ],
+      "upsc_trap_explanation": "The trap is the 2022 versus 2023 distinction regarding Iran. Students who know Iran joined SCO in 2023 may attribute the initiation to the New Delhi Summit. In reality, Iran's observer-to-member transition was sanctioned at the 2022 Samarkand Summit — New Delhi focused on India's soft-power agenda and the virtual format.",
+      "final_explanation": "SCO summits have produced distinct milestone decisions that are individually examinable.\n\nCorrect matches: A-2, B-4, C-1, D-3\n\n• A (2001, Shanghai): The SCO was formally established here, replacing the Shanghai Five, and the founding Charter was signed — matches with 2.\n• B (2017, Astana): India and Pakistan were admitted as full members simultaneously — the most significant expansion in SCO history — matches with 4.\n• C (2022, Samarkand): The first in-person summit after COVID, where Iran's transition from observer to full member was formally initiated — matches with 1.\n• D (2023, New Delhi): Held in virtual format under India's chairmanship; India's 'One Earth, One Family, One Future' theme was promoted; the SCO Development Bank was discussed and Belarus's full membership approved — matches with 3.\n\nValue Addition:\n• The 2023 New Delhi Summit being virtual was a first in SCO history — a procedural milestone.\n• India's SECURE framework (Security, Economy, Connectivity, Unity, Respect for sovereignty, Environment) was articulated during its chairmanship.\n• Belarus was approved for full membership at the 2023 Astana (June) Summit — not New Delhi."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "निम्नलिखित SCO शिखर सम्मेलनों (सूची I) को उनके मुख्य परिणामों (सूची II) से मिलाइए:",
+        "columns": [
+          "सूची I (शिखर सम्मेलन)",
+          "सूची II (मुख्य परिणाम)"
+        ],
+        "rows": [
+          [
+            "A. शंघाई शिखर सम्मेलन, 2001",
+            "1. ईरान के पर्यवेक्षक से सदस्य बनने की प्रक्रिया औपचारिक रूप से शुरू; कोविड के बाद पहला व्यक्तिगत शिखर सम्मेलन"
+          ],
+          [
+            "B. अस्ताना शिखर सम्मेलन, 2017",
+            "2. SCO की औपचारिक स्थापना, शंघाई फाइव की जगह; संस्थापक चार्टर पर हस्ताक्षर"
+          ],
+          [
+            "C. समरकंद शिखर सम्मेलन, 2022",
+            "3. शिखर सम्मेलन वर्चुअल प्रारूप में आयोजित; 'एक पृथ्वी, एक परिवार, एक भविष्य' विषय को बढ़ावा; बेलारूस को सदस्यता स्वीकृत"
+          ],
+          [
+            "D. नई दिल्ली शिखर सम्मेलन, 2023",
+            "4. भारत और पाकिस्तान को एक साथ पूर्ण सदस्य के रूप में स्वीकार किया गया"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-4, C-1, D-3\n(c) A-4, B-2, C-1, D-3\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो '2001 = SCO की स्थापना' और '2017 = भारत शामिल हुआ' याद रखते हैं, वे सही रूप से A और B को रख सकते हैं लेकिन फिर समरकंद और नई दिल्ली शिखर सम्मेलनों के विशिष्ट परिणामों को भ्रमित कर C और D को बदल देते हैं।",
+      "elimination_logic": [
+        "2001 का शंघाई शिखर सम्मेलन परिभाषागत रूप से SCO की औपचारिक स्थापना से जुड़ा है — A मेल खाता है 2 (औपचारिक स्थापना और चार्टर पर हस्ताक्षर)।",
+        "2017 का अस्ताना शिखर सम्मेलन वह महत्वपूर्ण विस्तार सम्मेलन था जहाँ भारत और पाकिस्तान दोनों पूर्ण सदस्य बने — B मेल खाता है 4।",
+        "2022 का समरकंद शिखर सम्मेलन कोविड के बाद पहला व्यक्तिगत शिखर सम्मेलन था और यहीं ईरान के पर्यवेक्षक से सदस्य बनने की प्रक्रिया औपचारिक रूप से शुरू हुई — C मेल खाता है 1।",
+        "2023 का नई दिल्ली शिखर सम्मेलन भारत की अध्यक्षता में वर्चुअल प्रारूप में आयोजित हुआ, जहाँ भारत ने 'एक पृथ्वी, एक परिवार, एक भविष्य' विषय को बढ़ावा दिया — D मेल खाता है 3। अतः विकल्प b सही है।"
+      ],
+      "upsc_trap_explanation": "फंदा ईरान के संबंध में 2022 और 2023 के बीच अंतर है। जो छात्र जानते हैं कि ईरान 2023 में SCO में शामिल हुआ, वे इसकी शुरुआत नई दिल्ली शिखर सम्मेलन से जोड़ सकते हैं। वास्तविकता में, ईरान का पर्यवेक्षक से सदस्य में संक्रमण 2022 के समरकंद शिखर सम्मेलन में स्वीकृत हुआ था — नई दिल्ली ने भारत के सॉफ्ट-पावर एजेंडा और वर्चुअल प्रारूप पर ध्यान केंद्रित किया।",
+      "final_explanation": "SCO शिखर सम्मेलनों ने विशिष्ट मील के पत्थर निर्णय दिए हैं जो व्यक्तिगत रूप से परीक्षा योग्य हैं।\n\nसही मेल: A-2, B-4, C-1, D-3\n\n• A (2001, शंघाई): SCO की औपचारिक स्थापना यहीं हुई, शंघाई फाइव की जगह, और संस्थापक चार्टर पर हस्ताक्षर हुए — मेल खाता है 2 से।\n• B (2017, अस्ताना): भारत और पाकिस्तान को एक साथ पूर्ण सदस्य के रूप में स्वीकार किया गया — SCO के इतिहास का सबसे महत्वपूर्ण विस्तार — मेल खाता है 4 से।\n• C (2022, समरकंद): कोविड के बाद पहला व्यक्तिगत शिखर सम्मेलन, जहाँ ईरान के पर्यवेक्षक से पूर्ण सदस्य बनने की प्रक्रिया औपचारिक रूप से शुरू हुई — मेल खाता है 1 से।\n• D (2023, नई दिल्ली): भारत की अध्यक्षता में वर्चुअल प्रारूप में आयोजित; भारत के 'एक पृथ्वी, एक परिवार, एक भविष्य' विषय को बढ़ावा दिया गया; SCO विकास बैंक पर चर्चा हुई और बेलारूस की पूर्ण सदस्यता स्वीकृत हुई — मेल खाता है 3 से।\n\nमूल्य संवर्धन:\n• 2023 का नई दिल्ली शिखर सम्मेलन SCO इतिहास में पहला वर्चुअल था — एक प्रक्रियात्मक मील का पत्थर।\n• भारत के SECURE फ्रेमवर्क (सुरक्षा, अर्थव्यवस्था, कनेक्टिविटी, एकता, संप्रभुता का सम्मान, पर्यावरण) को इसकी अध्यक्षता के दौरान प्रस्तुत किया गया।\n• बेलारूस को पूर्ण सदस्यता 2023 के अस्ताना (जून) शिखर सम्मेलन में स्वीकृत किया गया — नई दिल्ली में नहीं।"
+    }
+  },
+  {
+    "uuid": "85a979de-a566-4bf4-aad3-6e7f29a4f9e1",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "India's Chairmanship of SCO (2022-23): Agenda and Outcomes",
+        "SCO's Cultural and People-to-People Dimension"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "India's SCO chairmanship priority areas and SECURE framework",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During its tenure presiding over a major multilateral grouping, a country introduced five thematic priorities centred on innovation ecosystems, healing traditions, digital access, youth engagement, and shared civilizational heritage. The country also articulated a six-element framework encapsulating security, economic cooperation, connectivity, unity, sovereign respect, and environmental concerns as guiding principles. The summit hosted under its chairmanship was notably conducted through a remote conferencing format rather than in-person.\n\nThe description above most accurately characterizes:\n\n(a) India's leadership of the Peace Mission counter-terrorism exercise series within the SCO\n(b) India's chairmanship of the SCO (2022–23) and its SECURE framework\n(c) India's push for operationalizing the SCO Development Bank as the centrepiece of its presidency\n(d) India's role at the 2022 Samarkand Summit in advancing de-dollarization within intra-SCO trade",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who associate India's foreign policy with BRICS's development finance focus may expect India to push the SCO Development Bank as a primary agenda item, while in reality India's chairmanship was distinctly soft-power oriented.",
+      "elimination_logic": [
+        "The scenario describes a chairmanship focused on non-military, non-economic-integration themes — eliminate option a (military exercise leadership is not a chairmanship-specific agenda).",
+        "The emphasis on startups, traditional medicine, youth empowerment, and shared heritage points to India's SECURE framework and soft-power priorities — this matches option b.",
+        "India explicitly avoided making the BRI or SCO Development Bank the centrepiece of its chairmanship — option c is eliminated.",
+        "De-dollarization was discussed at Samarkand (2022), not as India's primary chairmanship theme — option d is eliminated."
+      ],
+      "upsc_trap_explanation": "Options c and d are plausible because SCO Development Bank and de-dollarization are real SCO agenda items from 2022–2023. Students who cannot distinguish what India specifically championed during its chairmanship from what was discussed in the broader SCO context will be misled. India's chairmanship was deliberately soft-power focused, contrasting with China's infrastructure narrative.",
+      "final_explanation": "India's SCO chairmanship (2022–23) had a distinctly soft-power orientation, marking a strategic choice to differentiate India's agenda from China's infrastructure-dominated narrative.\n\nThe scenario's reference to non-military, people-to-people, and cultural themes maps directly to India's five priority areas: startups and innovation, traditional medicine, digital inclusion, youth empowerment, and shared Buddhist and Silk Road heritage.\n\n• Option (a): Incorrect — leading Peace Mission military exercises is a rotating SCO-wide responsibility, not a chairmanship-specific agenda choice.\n• Option (b): Correct — the SECURE framework (Security, Economy, Connectivity, Unity, Respect for sovereignty, Environment) and the soft-power priorities characterize India's chairmanship agenda.\n• Option (c): Incorrect — while the SCO Development Bank was discussed, India did not make it the centrepiece; the bank remains unestablished.\n• Option (d): Incorrect — de-dollarization discussions were prominent at the 2022 Samarkand Summit, not specifically India's chairmanship theme.\n\nValue Addition:\n• The 2023 New Delhi SCO Summit was the first to be held in virtual format — a procedural first in SCO history.\n• India's 'One Earth, One Family, One Future' theme mirrored its G20 2023 presidency theme — a deliberate alignment of messaging.\n• Traditional medicine cooperation included India's push for Ayurveda and Yoga recognition within the SCO framework."
+    },
+    "hi": {
+      "display_text": "किसी प्रमुख बहुपक्षीय समूह की अध्यक्षता करते हुए, एक देश ने नवाचार पारिस्थितिकी तंत्र, उपचार परंपराओं, डिजिटल पहुँच, युवा सहभागिता, और साझा सभ्यतागत विरासत पर केंद्रित पाँच थीमेटिक प्राथमिकताएँ प्रस्तुत कीं। उस देश ने सुरक्षा, आर्थिक सहयोग, कनेक्टिविटी, एकता, संप्रभु सम्मान, और पर्यावरणीय चिंताओं को समाहित करते हुए छह-तत्वीय ढांचा भी प्रस्तुत किया। उसकी अध्यक्षता में आयोजित शिखर सम्मेलन विशेष रूप से व्यक्तिगत उपस्थिति के बजाय दूरस्थ सम्मेलन प्रारूप में आयोजित किया गया।\n\nउपरोक्त विवरण सबसे सटीक रूप से किसका वर्णन करता है:\n\n(a) SCO के भीतर शांति मिशन आतंकवाद-विरोधी अभ्यास श्रृंखला में भारत का नेतृत्व\n(b) SCO (2022–23) में भारत की अध्यक्षता और उसका SECURE फ्रेमवर्क\n(c) SCO विकास बैंक को अपनी अध्यक्षता का केंद्र बनाने के लिए भारत का प्रयास\n(d) 2022 समरकंद शिखर सम्मेलन में SCO आंतरिक व्यापार में डॉलर-मुक्तिकरण को बढ़ावा देने में भारत की भूमिका",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — वे छात्र जो भारत की विदेश नीति को BRICS के विकास वित्त पर केंद्रित समझते हैं, वे भारत से SCO विकास बैंक को प्राथमिक एजेंडा बनाने की उम्मीद कर सकते हैं, जबकि वास्तव में भारत की अध्यक्षता स्पष्ट रूप से सॉफ्ट-पावर केंद्रित थी।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसी अध्यक्षता का वर्णन करता है जो गैर-सैन्य, गैर-आर्थिक-संघटनात्मक विषयों पर केंद्रित है — विकल्प a को हटा दें (सैन्य अभ्यास नेतृत्व अध्यक्षता-विशिष्ट एजेंडा नहीं है)।",
+        "स्टार्टअप, पारंपरिक चिकित्सा, युवा सशक्तिकरण, और साझा विरासत पर जोर भारत के SECURE फ्रेमवर्क और सॉफ्ट-पावर प्राथमिकताओं से मेल खाता है — यह विकल्प b से मेल खाता है।",
+        "भारत ने स्पष्ट रूप से BRI या SCO विकास बैंक को अपनी अध्यक्षता का केंद्र नहीं बनाया — विकल्प c को हटा दिया गया है।",
+        "डॉलर-मुक्तिकरण समरकंद (2022) में चर्चा की गई थी, न कि भारत की प्राथमिक अध्यक्षता थी — विकल्प d को हटा दिया गया है।"
+      ],
+      "upsc_trap_explanation": "विकल्प c और d संभावित हैं क्योंकि SCO विकास बैंक और डॉलर-मुक्तिकरण 2022–2023 के वास्तविक SCO एजेंडा आइटम हैं। जो छात्र यह नहीं समझ पाते कि भारत ने अपनी अध्यक्षता के दौरान क्या विशिष्ट रूप से समर्थन किया, और क्या व्यापक SCO संदर्भ में चर्चा हुई, वे भ्रमित हो सकते हैं। भारत की अध्यक्षता जानबूझकर सॉफ्ट-पावर केंद्रित थी, जो चीन के अवसंरचना कथानक से अलग थी।",
+      "final_explanation": "भारत की SCO अध्यक्षता (2022–23) स्पष्ट रूप से सॉफ्ट-पावर उन्मुख थी, जो भारत के एजेंडा को चीन के अवसंरचना-प्रधान कथानक से अलग करने की रणनीतिक पसंद थी।\n\nपरिदृश्य में गैर-सैन्य, जन-से-जन, और सांस्कृतिक विषयों का उल्लेख सीधे भारत के पांच प्राथमिक क्षेत्रों से मेल खाता है: स्टार्टअप और नवाचार, पारंपरिक चिकित्सा, डिजिटल समावेशन, युवा सशक्तिकरण, और साझा बौद्ध व सिल्क रोड विरासत।\n\n• विकल्प (a): गलत — शांति मिशन सैन्य अभ्यास का नेतृत्व SCO-व्यापी घूर्णन जिम्मेदारी है, अध्यक्षता-विशिष्ट एजेंडा विकल्प नहीं।\n• विकल्प (b): सही — SECURE फ्रेमवर्क (सुरक्षा, अर्थव्यवस्था, कनेक्टिविटी, एकता, संप्रभुता का सम्मान, पर्यावरण) और सॉफ्ट-पावर प्राथमिकताएं भारत की अध्यक्षता एजेंडा को दर्शाती हैं।\n• विकल्प (c): गलत — जबकि SCO विकास बैंक पर चर्चा हुई, भारत ने इसे केंद्र बिंदु नहीं बनाया; बैंक अभी स्थापित नहीं हुआ है।\n• विकल्प (d): गलत — डॉलर-मुक्तिकरण चर्चा 2022 समरकंद शिखर सम्मेलन में प्रमुख थी, न कि विशेष रूप से भारत की अध्यक्षता थी।\n\nमूल्य संवर्धन:\n• 2023 का नई दिल्ली SCO शिखर सम्मेलन पहली बार वर्चुअल प्रारूप में आयोजित किया गया — SCO इतिहास में एक प्रक्रिया संबंधी प्रथम।\n• भारत का 'एक पृथ्वी, एक परिवार, एक भविष्य' विषय उसके G20 2023 अध्यक्षता विषय से मेल खाता था — संदेश का जानबूझकर संरेखण।\n• पारंपरिक चिकित्सा सहयोग में SCO फ्रेमवर्क के भीतर आयुर्वेद और योग की मान्यता के लिए भारत का प्रयास शामिल था।"
+    }
+  },
+  {
+    "uuid": "b4917e0e-9ed0-4ec3-b251-275da797776c",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO and De-dollarization: Trade in Local Currencies",
+        "SCO's Economic Agenda: Trade, Connectivity, and the BRI Tension"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "SCO de-dollarization: aspirational vs operational",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the SCO's approach to reducing dependence on the US dollar in intra-bloc trade, consider the following statements:\n\nStatement 1: The SCO has established a formal currency settlement mechanism among member states to facilitate trade in local currencies, reducing dependence on the US dollar.\nStatement 2: Within the SCO framework, China's promotion of yuan-denominated trade and Russia's push for ruble settlements represent competing currency interests rather than a unified de-dollarization strategy.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The SCO has established a formal currency settlement mechanism among member states to facilitate trade in local currencies, reducing dependence on the US dollar.",
+          "verdict": "Incorrect",
+          "reason": "No formal SCO mechanism for currency settlement exists — de-dollarization discussions within SCO remain aspirational and have not produced an institutional framework."
+        },
+        {
+          "statement": "Within the SCO framework, China's promotion of yuan-denominated trade and Russia's push for ruble settlements represent competing currency interests rather than a unified de-dollarization strategy.",
+          "verdict": "Correct",
+          "reason": "China and Russia have divergent currency ambitions within SCO — China seeks yuan internationalization while Russia prioritizes the ruble, especially post-2022 sanctions, creating a structural tension within the de-dollarization discourse."
+        }
+      ],
+      "strong_distractor": "a — Students who know de-dollarization is discussed within SCO may assume a formal mechanism exists, accepting Statement 1 as correct and choosing option a.",
+      "elimination_logic": [
+        "Statement 1 claims a 'formal currency settlement mechanism' exists within SCO — this is aspirational, not operational. No such mechanism has been established despite repeated discussions. Statement 1 is incorrect.",
+        "Statement 2 correctly identifies that China's yuan ambitions and Russia's ruble push are competing — not complementary — interests within SCO's de-dollarization discourse. Statement 2 is correct.",
+        "Statement 1 incorrect, Statement 2 correct → option c."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap inflates 'discussions about de-dollarization' into 'existence of a formal mechanism.' Students who read SCO summit communiqués about reducing USD dependence may assume a formal settlement framework was created. No such institutional mechanism exists — the aspiration has not been operationalized.",
+      "final_explanation": "The SCO's de-dollarization agenda is an evolving discourse without institutional teeth yet.\n\n• Statement 1 — Incorrect: There is no formal SCO currency settlement mechanism. Discussions at Samarkand (2022) and New Delhi (2023) addressed the aspiration of trading in local currencies, but no treaty, fund, or settlement system has been operationalized. Compare with BRICS's NDB, which is a real institution.\n• Statement 2 — Correct: China's goal is yuan internationalization — expanding the renminbi's global footprint through SCO trade. Russia, post-2022 sanctions, wants ruble-denominated trade to circumvent SWIFT exclusions. These are structurally competing interests that prevent a unified SCO de-dollarization strategy.\n\nValue Addition:\n• India's position on de-dollarization within SCO is cautious — it promotes rupee settlements but resists yuan dominance.\n• The SCO Business Council and Interbank Consortium exist as facilitation bodies but cannot enforce currency settlement norms.\n• The BRICS NDB (New Development Bank) is a contrast point: BRICS translated financial cooperation into a real institution; SCO has not done this with its Development Bank proposal."
+    },
+    "hi": {
+      "display_text": "SCO के भीतर अमेरिकी डॉलर पर निर्भरता कम करने के दृष्टिकोण के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: SCO ने सदस्य राज्यों के बीच स्थानीय मुद्राओं में व्यापार को सुविधाजनक बनाने के लिए एक औपचारिक मुद्रा निपटान तंत्र स्थापित किया है, जिससे अमेरिकी डॉलर पर निर्भरता कम हुई है।\nकथन 2: SCO के ढांचे के भीतर, चीन का युआन-निर्धारित व्यापार को बढ़ावा देना और रूस का रूबल निपटान के लिए दबाव एकीकृत डि-डॉलराइजेशन रणनीति के बजाय प्रतिस्पर्धी मुद्रा हितों का प्रतिनिधित्व करते हैं।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SCO ने सदस्य राज्यों के बीच स्थानीय मुद्राओं में व्यापार को सुविधाजनक बनाने के लिए एक औपचारिक मुद्रा निपटान तंत्र स्थापित किया है, जिससे अमेरिकी डॉलर पर निर्भरता कम हुई है।",
+          "verdict": "गलत",
+          "reason": "SCO के भीतर कोई औपचारिक मुद्रा निपटान तंत्र मौजूद नहीं है — SCO में डि-डॉलराइजेशन पर चर्चा आकांक्षात्मक है और इसका कोई संस्थागत ढांचा नहीं बना है।"
+        },
+        {
+          "statement": "SCO के ढांचे के भीतर, चीन का युआन-निर्धारित व्यापार को बढ़ावा देना और रूस का रूबल निपटान के लिए दबाव एकीकृत डि-डॉलराइजेशन रणनीति के बजाय प्रतिस्पर्धी मुद्रा हितों का प्रतिनिधित्व करते हैं।",
+          "verdict": "सही है",
+          "reason": "SCO में चीन और रूस की मुद्रा महत्वाकांक्षाएँ भिन्न हैं — चीन युआन के अंतरराष्ट्रीयकरण की कोशिश करता है जबकि रूस विशेष रूप से 2022 के प्रतिबंधों के बाद रूबल को प्राथमिकता देता है, जो डि-डॉलराइजेशन विमर्श में संरचनात्मक तनाव उत्पन्न करता है।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि SCO में डि-डॉलराइजेशन पर चर्चा होती है, वे मान सकते हैं कि कोई औपचारिक तंत्र मौजूद है, इसलिए कथन 1 को सही मानकर विकल्प a चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 में कहा गया है कि SCO के भीतर 'औपचारिक मुद्रा निपटान तंत्र' मौजूद है — यह आकांक्षात्मक है, परिचालनात्मक नहीं। बार-बार चर्चा के बावजूद ऐसा कोई तंत्र स्थापित नहीं हुआ है। अतः कथन 1 गलत है।",
+        "कथन 2 सही रूप से पहचानता है कि चीन के युआन महत्वाकांक्षा और रूस के रूबल दबाव SCO के डि-डॉलराइजेशन विमर्श में प्रतिस्पर्धी हैं, न कि पूरक। अतः कथन 2 सही है।",
+        "कथन 1 गलत, कथन 2 सही → विकल्प c।"
+      ],
+      "upsc_trap_explanation": "स्कोप-एक्सटेंशन ट्रैप 'डि-डॉलराइजेशन पर चर्चा' को 'औपचारिक तंत्र के अस्तित्व' में बढ़ा-चढ़ाकर प्रस्तुत करता है। जो छात्र SCO शिखर सम्मेलन के संचार पढ़ते हैं, वे अमेरिकी डॉलर पर निर्भरता कम करने के लिए औपचारिक निपटान ढांचे के बने होने का अनुमान लगा सकते हैं। ऐसा कोई संस्थागत तंत्र मौजूद नहीं है — यह आकांक्षा अभी तक परिचालनात्मक नहीं हुई है।",
+      "final_explanation": "SCO का डि-डॉलराइजेशन एजेंडा एक विकसित होता हुआ विमर्श है जिसका अभी कोई संस्थागत आधार नहीं है।\n\n• कथन 1 — गलत: कोई औपचारिक SCO मुद्रा निपटान तंत्र नहीं है। समरकंद (2022) और नई दिल्ली (2023) में स्थानीय मुद्राओं में व्यापार की आकांक्षा पर चर्चा हुई, लेकिन कोई संधि, कोष या निपटान प्रणाली परिचालित नहीं हुई। तुलना करें BRICS के NDB से, जो एक वास्तविक संस्था है।\n• कथन 2 — सही: चीन का लक्ष्य युआन का अंतरराष्ट्रीयकरण है — SCO व्यापार के माध्यम से रेनमिन्बी के वैश्विक प्रभाव को बढ़ाना। रूस, 2022 के प्रतिबंधों के बाद, SWIFT बहिष्कार से बचने के लिए रूबल-निर्धारित व्यापार चाहता है। ये संरचनात्मक रूप से प्रतिस्पर्धी हित हैं जो एकीकृत SCO डि-डॉलराइजेशन रणनीति को रोकते हैं।\n\nमूल्य संवर्धन:\n• SCO में डि-डॉलराइजेशन पर भारत की स्थिति सतर्क है — वह रुपये निपटान को बढ़ावा देता है लेकिन युआन प्रभुत्व का विरोध करता है।\n• SCO बिजनेस काउंसिल और इंटरबैंक कंसोर्टियम सुविधा प्रदान करने वाले निकाय हैं लेकिन मुद्रा निपटान मानदंड लागू नहीं कर सकते।\n• BRICS का NDB (न्यू डेवलपमेंट बैंक) एक विरोधाभास है: BRICS ने वित्तीय सहयोग को वास्तविक संस्था में बदला; SCO ने अपने विकास बैंक प्रस्ताव के साथ ऐसा नहीं किया।"
+    }
+  },
+  {
+    "uuid": "8e442753-38f4-447a-a544-ef506ee6876f",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO's Connectivity Agenda: INSTC, Corridors, and India's Engagement"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "INSTC route: India-Iran-Russia connectivity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to connectivity initiatives relevant to India's engagement with the SCO region, which of the following pairs is correctly matched?\n\n(a) International North-South Transport Corridor (INSTC) — Multimodal route connecting India to Russia via Iran\n(b) Chabahar Port — India-developed port facility providing Pakistan an alternative sea route to Central Asia\n(c) TAPI Pipeline — India-initiated gas pipeline connecting Central Asian republics directly to Indian markets bypassing Pakistan\n(d) CPEC (China-Pakistan Economic Corridor) — SCO's officially endorsed flagship connectivity initiative for Eurasian integration",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who associate Chabahar with Iran correctly but then associate INSTC with ASEAN connectivity rather than the Russia-Iran-India axis may select option b as the 'correctly matched' pair.",
+      "elimination_logic": [
+        "INSTC (International North-South Transport Corridor) connects India to Russia via Iran — the route is India → Iran → Caspian Sea/Central Asia → Russia. Option a correctly matches INSTC with this India-Iran-Russia axis.",
+        "Option b pairs Chabahar Port with Pakistan — Chabahar is developed by India in Iran precisely to bypass Pakistan, so this pairing is factually reversed.",
+        "Option c pairs TAPI pipeline with an India-Central Asia route — TAPI is Turkmenistan-Afghanistan-Pakistan-India, not India-initiated Central Asian connectivity.",
+        "Option d pairs CPEC with SCO's official connectivity initiative — CPEC is a bilateral China-Pakistan project, not an official SCO connectivity initiative, though it creates BRI-SCO nexus tensions."
+      ],
+      "upsc_trap_explanation": "The entity-swap in option b pairs Chabahar with Pakistan — precisely the opposite of its strategic purpose. Chabahar was developed by India in Iran to bypass Pakistan. Students with fragmented knowledge who know 'Chabahar is near Pakistan-Iran border' without understanding the bypass logic will fall into this trap.",
+      "final_explanation": "India's connectivity strategy within the SCO context is built around alternatives to BRI that bypass Pakistan.\n\n• Option (a): Correctly matched — INSTC (International North-South Transport Corridor) is a multimodal route connecting India to Russia via Iran, integrating sea, rail, and road links. India sees it as an alternative to BRI-linked routes.\n• Option (b): Incorrectly matched — Chabahar Port is developed by India on Iran's southeastern coast specifically to bypass Pakistan, providing access to Afghanistan and Central Asia. Pairing it with Pakistan contradicts its strategic rationale.\n• Option (c): Incorrectly matched — TAPI (Turkmenistan-Afghanistan-Pakistan-India) is an energy pipeline project, not an India-initiated Central Asian connectivity project. Its route runs through Afghanistan and Pakistan.\n• Option (d): Incorrectly matched — CPEC is a bilateral China-Pakistan infrastructure initiative under BRI, not an official SCO-endorsed connectivity initiative.\n\nValue Addition:\n• INSTC is tripartite — India, Iran, and Russia signed the agreement in 2000 in St. Petersburg.\n• Chabahar is India's strategic counter to Gwadar (CPEC's Pakistani port) — both give their respective backers Indian Ocean access.\n• Afghanistan is the critical missing link in both INSTC and TAPI — SCO's connectivity vision depends on a stable Afghanistan."
+    },
+    "hi": {
+      "display_text": "SCO क्षेत्र के साथ भारत की संलग्नता से संबंधित कनेक्टिविटी पहलों के संदर्भ में, निम्नलिखित में से कौन-सा जोड़ा सही मेल खाता है?\n\n(a) International North-South Transport Corridor (INSTC) — ईरान के माध्यम से भारत को रूस से जोड़ने वाला बहुमाध्यमिक मार्ग\n(b) चाबहार बंदरगाह — भारत द्वारा विकसित बंदरगाह सुविधा जो पाकिस्तान को मध्य एशिया के लिए वैकल्पिक समुद्री मार्ग प्रदान करती है\n(c) TAPI पाइपलाइन — भारत-प्रारंभित गैस पाइपलाइन जो पाकिस्तान को बायपास करते हुए मध्य एशियाई गणराज्यों को सीधे भारतीय बाजारों से जोड़ती है\n(d) CPEC (चीन-पाकिस्तान आर्थिक गलियारा) — यूरेशियाई एकीकरण के लिए SCO की आधिकारिक रूप से अनुमोदित प्रमुख कनेक्टिविटी पहल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो चाबहार को ईरान से सही ढंग से जोड़ते हैं लेकिन फिर INSTC को रूस-ईरान-भारत अक्ष के बजाय ASEAN कनेक्टिविटी से जोड़ते हैं, वे विकल्प b को 'सही मेल वाला' जोड़ा मान सकते हैं।",
+      "elimination_logic": [
+        "INSTC (International North-South Transport Corridor) भारत को रूस से ईरान के माध्यम से जोड़ता है — मार्ग है भारत → ईरान → कैस्पियन सागर/मध्य एशिया → रूस। विकल्प (a) सही ढंग से INSTC को इस भारत-ईरान-रूस अक्ष के साथ जोड़ता है।",
+        "विकल्प (b) चाबहार बंदरगाह को पाकिस्तान से जोड़ता है — चाबहार को भारत ने ईरान में पाकिस्तान को बायपास करने के लिए विकसित किया है, अतः यह जोड़ी तथ्यात्मक रूप से उलटी है।",
+        "विकल्प (c) TAPI पाइपलाइन को भारत-मध्य एशिया मार्ग से जोड़ता है — TAPI तुर्कमेनिस्तान-अफगानिस्तान-पाकिस्तान-भारत है, न कि भारत-प्रारंभित मध्य एशियाई कनेक्टिविटी।",
+        "विकल्प (d) CPEC को SCO की आधिकारिक कनेक्टिविटी पहल से जोड़ता है — CPEC एक द्विपक्षीय चीन-पाकिस्तान परियोजना है, न कि SCO की आधिकारिक कनेक्टिविटी पहल, हालांकि यह BRI-SCO संबंधों में तनाव उत्पन्न करता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में वस्तु-विनिमय है जो चाबहार को पाकिस्तान से जोड़ता है — जो इसके रणनीतिक उद्देश्य के बिल्कुल विपरीत है। चाबहार को भारत ने ईरान में पाकिस्तान को बायपास करने के लिए विकसित किया है। जो छात्र 'चाबहार पाकिस्तान-ईरान सीमा के पास है' यह जानते हैं लेकिन बायपास तर्क नहीं समझते, वे इस जाल में फंस सकते हैं।",
+      "final_explanation": "SCO संदर्भ में भारत की कनेक्टिविटी रणनीति पाकिस्तान को बायपास करने वाले BRI विकल्पों के इर्द-गिर्द निर्मित है।\n\n• विकल्प (a): सही मेल — INSTC (International North-South Transport Corridor) एक बहुमाध्यमिक मार्ग है जो भारत को ईरान के माध्यम से रूस से जोड़ता है, जिसमें समुद्री, रेल और सड़क लिंक शामिल हैं। भारत इसे BRI-संबंधित मार्गों का विकल्प मानता है।\n• विकल्प (b): गलत मेल — चाबहार बंदरगाह भारत द्वारा ईरान के दक्षिण-पूर्वी तट पर विकसित किया गया है ताकि पाकिस्तान को बायपास किया जा सके, और अफगानिस्तान तथा मध्य एशिया तक पहुंच प्रदान की जा सके। इसे पाकिस्तान से जोड़ना इसके रणनीतिक तर्क के विपरीत है।\n• विकल्प (c): गलत मेल — TAPI (तुर्कमेनिस्तान-अफगानिस्तान-पाकिस्तान-भारत) एक ऊर्जा पाइपलाइन परियोजना है, न कि भारत-प्रारंभित मध्य एशियाई कनेक्टिविटी परियोजना। इसका मार्ग अफगानिस्तान और पाकिस्तान से होकर गुजरता है।\n• विकल्प (d): गलत मेल — CPEC एक द्विपक्षीय चीन-पाकिस्तान अवसंरचना पहल है जो BRI के अंतर्गत है, न कि SCO द्वारा आधिकारिक रूप से समर्थित कनेक्टिविटी पहल।\n\nमूल्य संवर्धन:\n• INSTC त्रिपक्षीय है — भारत, ईरान और रूस ने 2000 में सेंट पीटर्सबर्ग में समझौता किया।\n• चाबहार भारत का रणनीतिक जवाब है ग्वादर (CPEC का पाकिस्तानी बंदरगाह) के लिए — दोनों अपने-अपने समर्थकों को हिंद महासागर तक पहुंच देते हैं।\n• अफगानिस्तान दोनों INSTC और TAPI में महत्वपूर्ण लापता कड़ी है — SCO की कनेक्टिविटी दृष्टि स्थिर अफगानिस्तान पर निर्भर है।"
+    }
+  },
+  {
+    "uuid": "10fe35d8-1535-460d-aa33-cae658d9606d",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO and Multilateralism: Positioning vis-à-vis UN and Western Institutions",
+        "SCO vs. Other Regional Groupings: Overlaps and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "SCO-UN relationship and non-interference principle",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the SCO's positioning within the broader international order:\n\n1. The SCO has been accorded observer status at the United Nations General Assembly, and SCO's founding documents explicitly endorse the principles of the UN Charter.\n2. The SCO's commitment to the principle of non-interference in internal affairs aligns it with the Western liberal doctrine of Responsibility to Protect (R2P), as both seek to limit state sovereignty in humanitarian crises.\n3. Western critics characterize the SCO as a counter-Western formation despite SCO member states' explicit positioning of the organization as a platform for inclusive multilateralism.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The SCO has been accorded observer status at the United Nations General Assembly, and SCO's founding documents explicitly endorse the principles of the UN Charter.",
+          "verdict": "Correct",
+          "reason": "The SCO holds observer status at the UNGA, and its foundational documents — including the SCO Charter — explicitly reaffirm adherence to UN Charter principles including sovereign equality and non-interference."
+        },
+        {
+          "statement": "The SCO's commitment to the principle of non-interference in internal affairs aligns it with the Western liberal doctrine of Responsibility to Protect (R2P), as both seek to limit state sovereignty in humanitarian crises.",
+          "verdict": "Incorrect",
+          "reason": "The SCO's non-interference principle is the opposite of R2P — it reinforces absolute state sovereignty, whereas R2P conditionally limits it. SCO members (Russia, China) have consistently opposed R2P interventions in international forums."
+        },
+        {
+          "statement": "Western critics characterize the SCO as a counter-Western formation despite SCO member states' explicit positioning of the organization as a platform for inclusive multilateralism.",
+          "verdict": "Correct",
+          "reason": "There is a genuine perception gap: SCO members frame it as a UN-compatible multilateral body, while Western analysts and governments characterize it as an anti-Western or counter-NATO formation, particularly after Iran's entry."
+        }
+      ],
+      "strong_distractor": "d — Statement 2 uses authoritative-sounding language about 'both seek to limit state sovereignty' which may mislead students who associate SCO's security agenda with limited tolerance for humanitarian intervention, falsely concluding both doctrines converge.",
+      "elimination_logic": [
+        "Statement 1: SCO-UNGA observer status and UN Charter endorsement are established facts — this statement is correct.",
+        "Statement 2: Non-interference and R2P are diametrically opposed principles — SCO's non-interference reinforces absolute sovereignty while R2P conditionally overrides it; this statement falsely equates them — incorrect.",
+        "Statement 3: The Western-SCO perception gap is a documented geopolitical reality, especially post-Iran accession — this statement is correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect → option b (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 2 reverses the actual relationship between SCO's non-interference doctrine and R2P. Students who superficially associate both with 'limiting state action' will accept the statement. The two doctrines point in opposite directions: non-interference prevents external intervention, R2P conditionally permits it.",
+      "final_explanation": "The SCO's positioning in global multilateralism involves a carefully constructed narrative that its member states present versus how Western governments perceive it.\n\n• Statement 1 — Correct: SCO has observer status at the UNGA, and its founding documents explicitly cite UN Charter principles. This allows SCO members to claim legitimacy within the UN-led international order.\n• Statement 2 — Incorrect: This is the trap. Non-interference (the SCO doctrine) and R2P are diametrically opposed. Non-interference protects state sovereignty absolutely; R2P conditionally permits international intervention when states fail to protect their populations. China and Russia (SCO's pivotal members) have consistently voted against R2P applications in the UN Security Council.\n• Statement 3 — Correct: The perception gap is real. Western governments, particularly after Iran's accession, increasingly frame SCO as a counter-Western coalition, while SCO members insist it is a legitimate multilateral body.\n\nValue Addition:\n• SCO's 'non-interference + sovereign equality' framing is sometimes called the 'Shanghai Spirit.'\n• China and Russia's UNSC veto power has been used to block R2P-based resolutions on Syria, Libya, and Myanmar — consistent with SCO's non-interference doctrine.\n• SCO-UN cooperation is formalized through an agreement, but critics argue it is nominal rather than substantive."
+    },
+    "hi": {
+      "display_text": "वैश्विक अंतरराष्ट्रीय व्यवस्था में SCO की स्थिति के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. SCO को संयुक्त राष्ट्र महासभा में पर्यवेक्षक दर्जा दिया गया है, और SCO के संस्थापक दस्तावेज़ स्पष्ट रूप से UN चार्टर के सिद्धांतों का समर्थन करते हैं।\n2. SCO की आंतरिक मामलों में गैर-दखलअंदाजी की प्रतिबद्धता इसे पश्चिमी उदारवादी सिद्धांत 'रिस्पॉन्सिबिलिटी टू प्रोटेक्ट' (R2P) के साथ जोड़ती है, क्योंकि दोनों मानवीय संकटों में राज्य संप्रभुता को सीमित करने का प्रयास करते हैं।\n3. पश्चिमी आलोचक SCO को एक विरोधी-पश्चिमी गठन के रूप में देखते हैं, जबकि SCO सदस्य राज्यों ने संगठन को समावेशी बहुपक्षीयता के मंच के रूप में स्पष्ट रूप से स्थापित किया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The SCO has been accorded observer status at the United Nations General Assembly, and SCO's founding documents explicitly endorse the principles of the UN Charter.",
+          "verdict": "सही है",
+          "reason": "SCO को UNGA में पर्यवेक्षक दर्जा प्राप्त है, और इसके संस्थापक दस्तावेज़ — जिनमें SCO चार्टर शामिल है — स्पष्ट रूप से संप्रभु समानता और गैर-दखलअंदाजी सहित UN चार्टर के सिद्धांतों के पालन की पुष्टि करते हैं।"
+        },
+        {
+          "statement": "The SCO's commitment to the principle of non-interference in internal affairs aligns it with the Western liberal doctrine of Responsibility to Protect (R2P), as both seek to limit state sovereignty in humanitarian crises.",
+          "verdict": "गलत है",
+          "reason": "SCO का गैर-दखलअंदाजी सिद्धांत R2P का विपरीत है — यह पूर्ण राज्य संप्रभुता को मजबूत करता है, जबकि R2P इसे सशर्त रूप से सीमित करता है। SCO सदस्य (रूस, चीन) ने अंतरराष्ट्रीय मंचों पर R2P हस्तक्षेपों का लगातार विरोध किया है।"
+        },
+        {
+          "statement": "Western critics characterize the SCO as a counter-Western formation despite SCO member states' explicit positioning of the organization as a platform for inclusive multilateralism.",
+          "verdict": "सही है",
+          "reason": "यह एक वास्तविक धारणा अंतर है: SCO सदस्य इसे एक UN-अनुकूल बहुपक्षीय निकाय के रूप में प्रस्तुत करते हैं, जबकि पश्चिमी विश्लेषक और सरकारें इसे एक विरोधी-पश्चिमी या काउंटर-नाटो गठन के रूप में देखते हैं, विशेष रूप से ईरान के प्रवेश के बाद।"
+        }
+      ],
+      "strong_distractor": "d — कथन 2 में 'दोनों राज्य संप्रभुता को सीमित करने का प्रयास करते हैं' जैसी अधिकारपूर्ण भाषा का उपयोग किया गया है, जो उन छात्रों को भ्रमित कर सकता है जो SCO की सुरक्षा एजेंडा को मानवीय हस्तक्षेप के प्रति सीमित सहिष्णुता से जोड़ते हैं, और गलत रूप से यह निष्कर्ष निकालते हैं कि दोनों सिद्धांत समान हैं।",
+      "elimination_logic": [
+        "कथन 1: SCO-UNGA पर्यवेक्षक दर्जा और UN चार्टर की पुष्टि स्थापित तथ्य हैं — यह कथन सही है।",
+        "कथन 2: गैर-दखलअंदाजी और R2P पूरी तरह से विपरीत सिद्धांत हैं — SCO की गैर-दखलअंदाजी पूर्ण संप्रभुता को मजबूत करती है जबकि R2P इसे सशर्त रूप से सीमित करता है; यह कथन उन्हें समान मानता है — गलत।",
+        "कथन 3: पश्चिमी-SCO धारणा अंतर एक प्रलेखित भू-राजनीतिक वास्तविकता है, विशेष रूप से ईरान के शामिल होने के बाद — यह कथन सही है।",
+        "कथन 1 और 3 सही, कथन 2 गलत → विकल्प b (केवल 1 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 SCO के गैर-दखलअंदाजी सिद्धांत और R2P के बीच वास्तविक संबंध को उलट देता है। जो छात्र सतही रूप से दोनों को 'राज्य कार्रवाई को सीमित करने' से जोड़ते हैं, वे इस कथन को स्वीकार कर लेते हैं। ये दोनों सिद्धांत विपरीत दिशा में इशारा करते हैं: गैर-दखलअंदाजी बाहरी हस्तक्षेप को रोकती है, R2P सशर्त रूप से अनुमति देती है।",
+      "final_explanation": "SCO की वैश्विक बहुपक्षीयता में स्थिति एक सावधानीपूर्वक निर्मित कथा है जो इसके सदस्य राज्यों द्वारा प्रस्तुत की जाती है और जिसे पश्चिमी सरकारें अलग तरह से देखती हैं।\n\n• कथन 1 — सही: SCO को UNGA में पर्यवेक्षक दर्जा प्राप्त है, और इसके संस्थापक दस्तावेज़ स्पष्ट रूप से UN चार्टर के सिद्धांतों का उल्लेख करते हैं। इससे SCO सदस्यों को UN-नेतृत्व वाले अंतरराष्ट्रीय व्यवस्था में वैधता का दावा करने की अनुमति मिलती है।\n• कथन 2 — गलत: यह जाल है। गैर-दखलअंदाजी (SCO सिद्धांत) और R2P पूरी तरह से विपरीत हैं। गैर-दखलअंदाजी पूर्ण राज्य संप्रभुता की रक्षा करती है; R2P तब अंतरराष्ट्रीय हस्तक्षेप की अनुमति देती है जब राज्य अपनी जनता की रक्षा करने में विफल रहते हैं। चीन और रूस (SCO के मुख्य सदस्य) ने UN सुरक्षा परिषद में R2P के अनुप्रयोगों के खिलाफ लगातार मतदान किया है।\n• कथन 3 — सही: धारणा अंतर वास्तविक है। पश्चिमी सरकारें, विशेष रूप से ईरान के शामिल होने के बाद, SCO को एक विरोधी-पश्चिमी गठबंधन के रूप में देखती हैं, जबकि SCO सदस्य इसे एक वैध बहुपक्षीय निकाय बताते हैं।\n\nमूल्य संवर्धन:\n• SCO का 'गैर-दखलअंदाजी + संप्रभु समानता' फ्रेमिंग कभी-कभी 'शंघाई भावना' कहा जाता है।\n• चीन और रूस की UNSC वीटो शक्ति का उपयोग सीरिया, लीबिया और म्यांमार पर R2P-आधारित प्रस्तावों को रोकने के लिए किया गया है — जो SCO के गैर-दखलअंदाजी सिद्धांत के अनुरूप है।\n• SCO-UN सहयोग एक समझौते के माध्यम से औपचारिक है, लेकिन आलोचक इसे नाममात्र का और सार्थक नहीं मानते।"
+    }
+  },
+  {
+    "uuid": "573a04a7-1646-4598-a225-d9ed767223a7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO's Limitations and Criticisms: Why It Underperforms Its Potential",
+        "SCO's Economic Agenda: Trade, Connectivity, and the BRI Tension"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "SCO Development Bank: unestablished vs BRICS NDB",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the status of the SCO Development Bank as of 2024?\n\n(a) It is an operational institution headquartered in Shanghai, modelled on the BRICS New Development Bank\n(b) It exists as a functional entity under the SCO Interbank Consortium, providing project financing to member states\n(c) It has been repeatedly proposed and discussed at SCO summits but has not been established as an operational institution\n(d) It is a development fund with committed capital contributions from all SCO members, currently in its initial disbursement phase",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who confuse the SCO Development Bank (proposed, unestablished) with the BRICS New Development Bank (operational) may believe the SCO bank exists since BRICS (with overlapping membership) has one.",
+      "elimination_logic": [
+        "Recall that the SCO has repeatedly discussed a Development Bank but has not established one — this distinguishes SCO from BRICS, which operationalized the NDB.",
+        "Eliminate option a — the SCO Development Bank has been discussed at multiple summits but remains unestablished.",
+        "Eliminate option b — the SCO Business Council and Interbank Consortium exist as facilitation bodies, not as a development bank.",
+        "Eliminate option d — no SCO special economic zone or development fund with capital has been established. Option c correctly states that the SCO Development Bank proposal has been repeatedly discussed but not operationalized."
+      ],
+      "upsc_trap_explanation": "The trap exploits the BRICS-SCO membership overlap. Since India, China, and Russia are in both BRICS (which has an operational NDB) and SCO, students may incorrectly infer that SCO also has an operational development bank. The distinction is critical: BRICS translated the proposal into an institution; SCO has not.",
+      "final_explanation": "The SCO's inability to translate economic aspirations into institutional reality is one of its defining limitations.\n\n• Option (a): Incorrect — the SCO Development Bank has been discussed at multiple summits (including the 2023 New Delhi Summit) but remains unestablished. No capital base, governance structure, or headquarters has been agreed upon.\n• Option (b): Incorrect — the SCO Business Council and SCO Interbank Consortium are trade facilitation bodies, not a development bank. They facilitate business connections and banking coordination, not large-scale project financing.\n• Option (c): Correct — the SCO Development Bank is an aspirational proposal repeatedly floated but never operationalized, unlike the BRICS NDB which became functional.\n• Option (d): Incorrect — no SCO development fund with a defined capital commitment exists as an operational institution.\n\nValue Addition:\n• BRICS's NDB was proposed in 2012 and began operations in 2015 — a contrast to SCO's decade-plus of discussion without a bank.\n• China has informally used bilateral BRI financing to fill the SCO's institutional financing gap.\n• The absence of an SCO development bank is a key reason why SCO is described as geopolitically significant but economically underperforming."
+    },
+    "hi": {
+      "display_text": "2024 तक SCO विकास बैंक की स्थिति का सबसे सटीक वर्णन निम्नलिखित में से कौन सा है?\n\n(a) यह शंघाई में मुख्यालय वाला एक संचालित संस्था है, जो BRICS न्यू डेवलपमेंट बैंक के मॉडल पर आधारित है\n(b) यह SCO इंटरबैंक कंसोर्टियम के तहत एक कार्यात्मक इकाई के रूप में मौजूद है, जो सदस्य राज्यों को परियोजना वित्तपोषण प्रदान करती है\n(c) इसे बार-बार SCO शिखर सम्मेलनों में प्रस्तावित और चर्चा किया गया है लेकिन इसे एक संचालित संस्था के रूप में स्थापित नहीं किया गया है\n(d) यह एक विकास कोष है जिसमें सभी SCO सदस्यों की पूंजी प्रतिबद्धताएँ हैं, जो वर्तमान में अपनी प्रारंभिक वितरण चरण में है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो SCO विकास बैंक (प्रस्तावित, अस्थापित) को BRICS न्यू डेवलपमेंट बैंक (संचालित) के साथ भ्रमित करते हैं, वे यह मान सकते हैं कि SCO बैंक मौजूद है क्योंकि BRICS (जिसकी सदस्यता आंशिक रूप से ओवरलैप करती है) के पास एक है।",
+      "elimination_logic": [
+        "याद रखें कि SCO ने बार-बार विकास बैंक पर चर्चा की है लेकिन इसे स्थापित नहीं किया है — यह SCO को BRICS से अलग करता है, जिसने NDB को संचालित किया है।",
+        "विकल्प (a) को हटा दें — SCO विकास बैंक पर कई शिखर सम्मेलनों में चर्चा हुई है लेकिन यह अभी तक स्थापित नहीं हुआ है।",
+        "विकल्प (b) को हटा दें — SCO बिजनेस काउंसिल और इंटरबैंक कंसोर्टियम सुविधा प्रदान करने वाले निकाय हैं, विकास बैंक नहीं।",
+        "विकल्प (d) को हटा दें — कोई SCO विशेष आर्थिक क्षेत्र या पूंजी वाला विकास कोष स्थापित नहीं हुआ है। विकल्प (c) सही है क्योंकि SCO विकास बैंक प्रस्ताव पर बार-बार चर्चा हुई है लेकिन इसे संचालित नहीं किया गया है।"
+      ],
+      "upsc_trap_explanation": "यह जाल BRICS-SCO सदस्यता ओवरलैप का फायदा उठाता है। चूंकि भारत, चीन और रूस दोनों BRICS (जिसका NDB संचालित है) और SCO के सदस्य हैं, छात्र गलत तरीके से यह निष्कर्ष निकाल सकते हैं कि SCO के पास भी एक संचालित विकास बैंक है। यह अंतर महत्वपूर्ण है: BRICS ने प्रस्ताव को संस्था में बदला; SCO ने नहीं।",
+      "final_explanation": "SCO की आर्थिक आकांक्षाओं को संस्थागत वास्तविकता में बदलने में असमर्थता इसकी प्रमुख सीमाओं में से एक है।\n\n• विकल्प (a): गलत — SCO विकास बैंक पर कई शिखर सम्मेलनों (जिसमें 2023 नई दिल्ली शिखर सम्मेलन भी शामिल है) में चर्चा हुई है लेकिन यह स्थापित नहीं हुआ है। कोई पूंजी आधार, शासन संरचना या मुख्यालय तय नहीं हुआ है।\n• विकल्प (b): गलत — SCO बिजनेस काउंसिल और SCO इंटरबैंक कंसोर्टियम व्यापार सुविधा निकाय हैं, विकास बैंक नहीं। वे व्यापार संबंध और बैंकिंग समन्वय में सहायता करते हैं, बड़े पैमाने पर परियोजना वित्तपोषण में नहीं।\n• विकल्प (c): सही — SCO विकास बैंक एक आकांक्षात्मक प्रस्ताव है जिसे बार-बार उठाया गया लेकिन कभी संचालित नहीं किया गया, जबकि BRICS NDB कार्यात्मक हो गया।\n• विकल्प (d): गलत — कोई SCO विकास कोष जिसके पास पूंजी प्रतिबद्धता हो, एक संचालित संस्था के रूप में मौजूद नहीं है।\n\nमूल्य संवर्धन:\n• BRICS का NDB 2012 में प्रस्तावित हुआ और 2015 में संचालन शुरू किया — जबकि SCO ने एक दशक से अधिक समय तक चर्चा की लेकिन बैंक नहीं बनाया।\n• चीन ने अनौपचारिक रूप से द्विपक्षीय BRI वित्तपोषण का उपयोग SCO की संस्थागत वित्तीय कमी को पूरा करने के लिए किया है।\n• SCO विकास बैंक की अनुपस्थिति एक प्रमुख कारण है कि SCO को भू-राजनीतिक रूप से महत्वपूर्ण लेकिन आर्थिक रूप से कम प्रदर्शन करने वाला कहा जाता है।"
+    }
+  },
+  {
+    "uuid": "69d5fb04-defb-4174-839a-11a36ea0bf01",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "Origins and Evolution: From Shanghai Five to SCO",
+        "SCO Organizational Structure: Principal Bodies and Decision-Making"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Shanghai Five mandate vs SCO broader mandate",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the origins of the SCO:\n\n1. The Shanghai Five's primary mandate when established in 1996 was economic integration among post-Soviet Central Asian states and China, not border security.\n2. Uzbekistan was one of the five founding members of the Shanghai Five in 1996, making it among the longest-serving members of the SCO framework.\n3. The transformation from the Shanghai Five to the SCO in 2001 expanded the organization's mandate beyond border demilitarization to encompass economic cooperation, cultural exchange, and counter-terrorism.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Shanghai Five's primary mandate when established in 1996 was economic integration among post-Soviet Central Asian states and China, not border security.",
+          "verdict": "Incorrect",
+          "reason": "The Shanghai Five's original mandate was explicitly border demilitarization and military confidence-building — economic integration was added only under the SCO framework after 2001."
+        },
+        {
+          "statement": "Uzbekistan was one of the five founding members of the Shanghai Five in 1996, making it among the longest-serving members of the SCO framework.",
+          "verdict": "Incorrect",
+          "reason": "Uzbekistan was NOT a founding member of the Shanghai Five — it joined only in 2001 when the grouping transformed into the SCO. The five original members were Russia, China, Kazakhstan, Kyrgyzstan, and Tajikistan."
+        },
+        {
+          "statement": "The transformation from the Shanghai Five to the SCO in 2001 expanded the organization's mandate beyond border demilitarization to encompass economic cooperation, cultural exchange, and counter-terrorism.",
+          "verdict": "Correct",
+          "reason": "This accurately captures the mandate expansion — the SCO Charter (2001) explicitly broadened the agenda from the Shanghai Five's security-focused border arrangements to a multi-dimensional mandate."
+        }
+      ],
+      "strong_distractor": "b — Students who know Uzbekistan is not a founding member may think only Statement 2 is incorrect, overlooking Statement 1's false claim about the original mandate.",
+      "elimination_logic": [
+        "Statement 1 claims economic integration was the Shanghai Five's primary mandate — this is false; border demilitarization was the mandate. Statement 1 is incorrect.",
+        "Statement 2 claims Uzbekistan was a founding Shanghai Five member in 1996 — this is false; Uzbekistan joined in 2001. Statement 2 is incorrect.",
+        "Statement 3 accurately describes the 2001 mandate expansion — this is correct.",
+        "The question asks which are NOT correct: Statements 1 and 2 are not correct → option a (1 and 2 only)."
+      ],
+      "upsc_trap_explanation": "Statement 2 (Uzbekistan as founding member) is the primary trap. Students who correctly identify it as false may not scrutinize Statement 1, which falsely attributes an economic mandate to the Shanghai Five. Both require separate fact-checking — a multi-trap design that tests whether students verify every statement independently.",
+      "final_explanation": "The Shanghai Five (1996) and SCO (2001) have distinct mandates that are frequently conflated.\n\n• Statement 1 — Incorrect: The Shanghai Five's mandate was border demilitarization and military confidence-building — not economic integration. The Alma-Ata declarations of the mid-1990s focused on reducing military forces along former Sino-Soviet borders.\n• Statement 2 — Incorrect: Uzbekistan was not a founding member of the Shanghai Five. The five were Russia, China, Kazakhstan, Kyrgyzstan, and Tajikistan — all states sharing border demarcation concerns with China. Uzbekistan joined when the SCO was established in 2001 as the sixth member.\n• Statement 3 — Correct: The 2001 SCO Charter formally expanded the mandate to include economic cooperation, cultural exchange, and counter-terrorism — a qualitatively different scope from the 1996 formation.\n\nValue Addition:\n• The Shanghai Five's 1996 formation followed the Shanghai Agreement on military confidence-building — one of the first such post-Cold War frameworks in Asia.\n• The economic dimension of SCO was bolstered by establishing the SCO Business Council and Interbank Consortium.\n• Uzbekistan's geography (no shared border with China) means it joined for political and economic reasons, not border security."
+    },
+    "hi": {
+      "display_text": "SCO की उत्पत्ति के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. शंघाई फाइव की प्राथमिक जिम्मेदारी जब 1996 में स्थापित हुई थी, तो वह पोस्ट-सोवियत मध्य एशियाई राज्यों और चीन के बीच आर्थिक एकीकरण थी, न कि सीमा सुरक्षा।\n2. उज़्बेकिस्तान 1996 में शंघाई फाइव के पांच संस्थापक सदस्यों में से एक था, जिससे यह SCO ढांचे के सबसे लंबे समय तक सेवा देने वाले सदस्यों में से एक बन गया।\n3. 2001 में शंघाई फाइव से SCO में परिवर्तन ने संगठन की जिम्मेदारी को सीमा निरस्त्रीकरण से आगे बढ़ाकर आर्थिक सहयोग, सांस्कृतिक आदान-प्रदान, और आतंकवाद विरोधी कार्यों को शामिल किया।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "शंघाई फाइव की प्राथमिक जिम्मेदारी जब 1996 में स्थापित हुई थी, तो वह पोस्ट-सोवियत मध्य एशियाई राज्यों और चीन के बीच आर्थिक एकीकरण थी, न कि सीमा सुरक्षा।",
+          "verdict": "गलत",
+          "reason": "शंघाई फाइव की मूल जिम्मेदारी स्पष्ट रूप से सीमा निरस्त्रीकरण और सैन्य विश्वास निर्माण थी — आर्थिक एकीकरण केवल 2001 के बाद SCO के ढांचे के तहत जोड़ा गया।"
+        },
+        {
+          "statement": "उज़्बेकिस्तान 1996 में शंघाई फाइव के पांच संस्थापक सदस्यों में से एक था, जिससे यह SCO ढांचे के सबसे लंबे समय तक सेवा देने वाले सदस्यों में से एक बन गया।",
+          "verdict": "गलत",
+          "reason": "उज़्बेकिस्तान शंघाई फाइव का संस्थापक सदस्य नहीं था — यह केवल 2001 में शामिल हुआ जब समूह SCO में परिवर्तित हुआ। पांच मूल सदस्य रूस, चीन, कजाकिस्तान, किर्गिज़स्तान और ताजिकिस्तान थे।"
+        },
+        {
+          "statement": "2001 में शंघाई फाइव से SCO में परिवर्तन ने संगठन की जिम्मेदारी को सीमा निरस्त्रीकरण से आगे बढ़ाकर आर्थिक सहयोग, सांस्कृतिक आदान-प्रदान, और आतंकवाद विरोधी कार्यों को शामिल किया।",
+          "verdict": "सही",
+          "reason": "यह जिम्मेदारी विस्तार को सही ढंग से दर्शाता है — SCO चार्टर (2001) ने स्पष्ट रूप से एजेंडा को शंघाई फाइव के सुरक्षा-केंद्रित सीमा व्यवस्थाओं से बहुआयामी जिम्मेदारी में विस्तारित किया।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र जानते हैं कि उज़्बेकिस्तान संस्थापक सदस्य नहीं है, वे केवल कथन 2 को गलत समझ सकते हैं और कथन 1 के शंघाई फाइव की मूल जिम्मेदारी के बारे में गलत दावे को नजरअंदाज कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 यह दावा करता है कि आर्थिक एकीकरण शंघाई फाइव की प्राथमिक जिम्मेदारी थी — यह गलत है; जिम्मेदारी सीमा निरस्त्रीकरण थी। अतः कथन 1 गलत है।",
+        "कथन 2 यह दावा करता है कि उज़्बेकिस्तान 1996 में शंघाई फाइव का संस्थापक सदस्य था — यह गलत है; उज़्बेकिस्तान 2001 में शामिल हुआ। अतः कथन 2 गलत है।",
+        "कथन 3 2001 के जिम्मेदारी विस्तार का सही वर्णन करता है — यह सही है।",
+        "प्रश्न पूछता है कि कौन-से कथन सही नहीं हैं: कथन 1 और 2 सही नहीं हैं → विकल्प a (केवल 1 और 2)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 (उज़्बेकिस्तान को संस्थापक सदस्य बताना) मुख्य जाल है। जो छात्र इसे गलत पहचानते हैं, वे कथन 1 की जांच नहीं कर सकते, जो शंघाई फाइव को आर्थिक जिम्मेदारी गलत तरीके से देता है। दोनों को अलग-अलग तथ्य-जांच की आवश्यकता है — एक बहु-फंदा डिज़ाइन जो यह जांचता है कि छात्र प्रत्येक कथन को स्वतंत्र रूप से सत्यापित करते हैं।",
+      "final_explanation": "शंघाई फाइव (1996) और SCO (2001) की जिम्मेदारियाँ अलग-अलग हैं जिन्हें अक्सर मिलाया जाता है।\n\n• कथन 1 — गलत: शंघाई फाइव की जिम्मेदारी सीमा निरस्त्रीकरण और सैन्य विश्वास निर्माण थी — आर्थिक एकीकरण नहीं। 1990 के दशक के मध्य के अल्मा-अता घोषणापत्र पूर्वी चीन-सोवियत सीमाओं पर सैन्य बलों को कम करने पर केंद्रित थे।\n• कथन 2 — गलत: उज़्बेकिस्तान शंघाई फाइव का संस्थापक सदस्य नहीं था। पांच सदस्य रूस, चीन, कजाकिस्तान, किर्गिज़स्तान, और ताजिकिस्तान थे — सभी ऐसे राज्य जो चीन के साथ सीमा निर्धारण के मुद्दे साझा करते थे। उज़्बेकिस्तान 2001 में SCO के गठन के समय छठा सदस्य बना।\n• कथन 3 — सही: 2001 के SCO चार्टर ने जिम्मेदारी को औपचारिक रूप से आर्थिक सहयोग, सांस्कृतिक आदान-प्रदान, और आतंकवाद विरोधी कार्यों तक विस्तारित किया — जो 1996 के गठन से गुणात्मक रूप से अलग है।\n\nमूल्य संवर्धन:\n• शंघाई फाइव का 1996 में गठन शंघाई समझौते के बाद हुआ था, जो सैन्य विश्वास निर्माण पर एशिया में शीत युद्ध के बाद के पहले फ्रेमवर्क में से एक था।\n• SCO के आर्थिक आयाम को SCO बिजनेस काउंसिल और इंटरबैंक कंसोर्टियम की स्थापना से बल मिला।\n• उज़्बेकिस्तान का भौगोलिक स्थिति (चीन के साथ कोई साझा सीमा नहीं) इसे सीमा सुरक्षा के बजाय राजनीतिक और आर्थिक कारणों से शामिल होने का कारण बनाती है।"
+    }
+  },
+  {
+    "uuid": "1e1e3417-2be5-446a-a674-d725f9a9f564",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO Secretariat: Functions, Location, and Secretary-General"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SCO Secretary-General appointment: rotation, not election",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Secretary-General of the SCO Secretariat serves a term of three years and is ________ among the member states of the organization.\n\n(a) elected by a majority vote of full member states at the annual Heads of State Summit\n(b) appointed by rotation through consensus\n(c) nominated unilaterally by the host country of the Secretariat for approval by remaining members\n(d) selected by the United Nations General Assembly from candidates proposed by SCO member governments",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who associate Secretary-General selection with 'election' (as with UN Secretary-General) may select option a, applying the UN organizational model to SCO.",
+      "elimination_logic": [
+        "Recall that SCO's consensus-based decision-making extends to appointments — the Secretary-General is not elected through a competitive process.",
+        "The rotation principle is a common feature in multilateral bodies to ensure equitable representation — SCO follows this for its Secretary-General.",
+        "Each term is three years, appointed through consensus by rotation among member states — option b is correct."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap imports the UN Secretary-General's election model into the SCO context. Students who know the UN SG is elected through UNGA vote may apply the same process to SCO. The SCO Secretary-General is appointed by rotation — no election occurs.",
+      "final_explanation": "The SCO Secretariat's leadership structure reflects the organization's consensus-based ethos.\n\n• Option (a): Incorrect — the SCO Secretary-General is not elected by member states through a vote. Applying the UN election model is the primary distractor here.\n• Option (b): Correct — the Secretary-General is appointed by rotation among member states for a three-year, non-renewable term. This ensures equitable representation and prevents any single member from monopolizing the position.\n• Option (c): Incorrect — the Chinese government does not unilaterally nominate the Secretary-General despite hosting the Secretariat in Beijing.\n• Option (d): Incorrect — the UN General Assembly has no role in appointing the SCO Secretary-General; they are separate institutions with an observer relationship, not a supervisory one.\n\nValue Addition:\n• The rotation principle is designed to counterbalance China's institutional influence from hosting the Secretariat in Beijing.\n• RATS's Executive Committee (in Tashkent) has a similar rotational leadership model.\n• China's dominant budget contribution to the Secretariat creates informal leverage that the rotation principle for Secretary-General is meant to partially offset."
+    },
+    "hi": {
+      "display_text": "SCO सचिवालय के सचिव-जनरल का कार्यकाल तीन वर्ष का होता है और उन्हें संगठन के सदस्य राज्यों के बीच ________ नियुक्त किया जाता है।\n\n(a) पूर्ण सदस्य राज्यों के वार्षिक राष्ट्राध्यक्ष शिखर सम्मेलन में बहुमत वोट से चुना जाता है\n(b) सर्वसम्मति के माध्यम से रोटेशन द्वारा नियुक्त किया जाता है\n(c) सचिवालय के मेजबान देश द्वारा एकतरफा नामित किया जाता है जिसे शेष सदस्यों द्वारा अनुमोदित किया जाता है\n(d) SCO सदस्य सरकारों द्वारा प्रस्तावित उम्मीदवारों में से संयुक्त राष्ट्र महासभा द्वारा चयनित किया जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो सचिव-जनरल के चयन को 'चुनाव' से जोड़ते हैं (जैसे कि संयुक्त राष्ट्र सचिव-जनरल के साथ) विकल्प a चुन सकते हैं, जो संयुक्त राष्ट्र के संगठनात्मक मॉडल को SCO पर लागू करते हैं।",
+      "elimination_logic": [
+        "याद रखें कि SCO का सर्वसम्मति-आधारित निर्णय-प्रक्रिया नियुक्तियों तक भी लागू होती है — सचिव-जनरल प्रतिस्पर्धात्मक प्रक्रिया के माध्यम से चुना नहीं जाता।",
+        "रोटेशन सिद्धांत बहुपक्षीय निकायों में समान प्रतिनिधित्व सुनिश्चित करने के लिए सामान्य है — SCO अपने सचिव-जनरल के लिए इसका पालन करता है।",
+        "प्रत्येक कार्यकाल तीन वर्ष का होता है, जो सदस्य राज्यों के बीच रोटेशन के माध्यम से सर्वसम्मति से नियुक्त किया जाता है — विकल्प b सही है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल संयुक्त राष्ट्र सचिव-जनरल के चुनाव मॉडल को SCO संदर्भ में लाता है। जो छात्र जानते हैं कि संयुक्त राष्ट्र सचिव-जनरल को UNGA वोट के माध्यम से चुना जाता है, वे उसी प्रक्रिया को SCO पर लागू कर सकते हैं। SCO सचिव-जनरल रोटेशन द्वारा नियुक्त होता है — कोई चुनाव नहीं होता।",
+      "final_explanation": "SCO सचिवालय की नेतृत्व संरचना संगठन की सर्वसम्मति-आधारित भावना को दर्शाती है।\n\n• विकल्प (a): गलत — SCO सचिव-जनरल को सदस्य राज्यों द्वारा वोट के माध्यम से नहीं चुना जाता। संयुक्त राष्ट्र चुनाव मॉडल को लागू करना मुख्य भ्रम है।\n• विकल्प (b): सही — सचिव-जनरल को सदस्य राज्यों के बीच रोटेशन के माध्यम से तीन वर्ष के गैर-नवीनीकरणीय कार्यकाल के लिए नियुक्त किया जाता है। यह समान प्रतिनिधित्व सुनिश्चित करता है और किसी एक सदस्य को पद पर हावी होने से रोकता है।\n• विकल्प (c): गलत — सचिवालय के बीजिंग में होने के बावजूद चीनी सरकार सचिव-जनरल को एकतरफा नामित नहीं करती।\n• विकल्प (d): गलत — संयुक्त राष्ट्र महासभा का SCO सचिव-जनरल की नियुक्ति में कोई भूमिका नहीं है; ये अलग संस्थान हैं जिनका पर्यवेक्षक संबंध है, पर्यवेक्षण संबंध नहीं।\n\nमूल्य संवर्धन:\n• रोटेशन सिद्धांत बीजिंग में सचिवालय की मेजबानी से चीन के संस्थागत प्रभाव को संतुलित करने के लिए डिज़ाइन किया गया है।\n• ताशकंद में RATS की कार्यकारी समिति में भी समान रोटेशन नेतृत्व मॉडल है।\n• सचिवालय के लिए चीन का प्रमुख बजट योगदान अनौपचारिक प्रभाव पैदा करता है, जिसे सचिव-जनरल के लिए रोटेशन सिद्धांत आंशिक रूप से संतुलित करता है।"
+    }
+  },
+  {
+    "uuid": "352bb255-176b-44d3-bcf5-d6ea4555423c",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "India's Accession to SCO: Timeline, Conditions, and Strategic Calculus",
+        "Pakistan-India Dynamics within SCO: Structural Tensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "India SCO accession: strategic rationale and BRI abstention",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about India's engagement with the SCO:\n\n1. India has consistently signed all SCO framework agreements since its 2017 accession, reflecting its full integration into SCO's institutional architecture.\n2. India's strategic rationale for seeking full SCO membership included gaining improved access to Central Asian markets and energy resources, as well as participation in regional counter-terrorism frameworks.\n3. The consensus rule within SCO means that India can block resolutions it disagrees with but cannot pass resolutions against the wishes of China or Pakistan.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India has consistently signed all SCO framework agreements since its 2017 accession, reflecting its full integration into SCO's institutional architecture.",
+          "verdict": "Incorrect",
+          "reason": "India has selectively engaged — it has abstained from BRI-linked initiatives within the SCO framework, particularly those related to China-Pakistan Economic Corridor and connectivity projects that India views as violating its sovereignty."
+        },
+        {
+          "statement": "India's strategic rationale for seeking full SCO membership included gaining improved access to Central Asian markets and energy resources, as well as participation in regional counter-terrorism frameworks.",
+          "verdict": "Correct",
+          "reason": "Central Asian connectivity, energy security (Kazakhstan and Uzbekistan hold hydrocarbon reserves), and counter-terrorism engagement were among India's key stated rationales for full membership."
+        },
+        {
+          "statement": "The consensus rule within SCO means that India can block resolutions it disagrees with but cannot pass resolutions against the wishes of China or Pakistan.",
+          "verdict": "Correct",
+          "reason": "Consensus is a double-edged sword — India has veto-equivalent blocking power but also cannot isolate or outvote China or Pakistan. This captures the structural reality of consensus-based multilateralism."
+        }
+      ],
+      "strong_distractor": "d — Students who know India is an 'active' SCO member may assume it has signed all agreements, making Statement 1 appear correct and selecting option d (all three).",
+      "elimination_logic": [
+        "Statement 1 claims India signed ALL SCO agreements — India's selective engagement and abstention from BRI-linked SCO initiatives makes this false. Statement 1 is incorrect.",
+        "Statement 2 accurately reflects India's stated strategic rationale: Central Asian access, energy security, counter-terrorism — correct.",
+        "Statement 3 correctly describes the double-edged nature of the consensus rule for India — correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect → option b (2 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 1's trap word is 'all' — India has selective engagement, not comprehensive agreement signing. Students who know India actively participates in SCO may not recall the specific BRI-linked abstentions, accepting the 'all agreements' claim as true.",
+      "final_explanation": "India's SCO engagement reflects a carefully calibrated strategy of selective participation — joining where beneficial, abstaining where sovereignty concerns arise.\n\n• Statement 1 — Incorrect: India has not signed all SCO agreements. Most notably, India has abstained from BRI-related SCO connectivity declarations because CPEC passes through Pakistan-occupied Kashmir. This selective engagement is a deliberate sovereignty-based position.\n• Statement 2 — Correct: India's strategic rationale for full membership includes Central Asian connectivity (bypassing Pakistan via Iran and Afghanistan), energy security (Kazakhstan and Uzbekistan's hydrocarbons), and counter-terrorism cooperation — all documented in India's policy statements.\n• Statement 3 — Correct: Consensus is structurally a double-edged constraint. India cannot be outvoted — a protection against China-Pakistan combined positions — but equally cannot push through resolutions that China or Russia oppose.\n\nValue Addition:\n• India's BRI abstention within SCO is consistent with its bilateral refusal to endorse BRI globally.\n• India promotes INSTC and Chabahar as its alternative connectivity framework within the SCO region.\n• India's 12-year observer-to-member journey (2005–2017) reflects the time taken to negotiate terms of engagement that protected its strategic interests."
+    },
+    "hi": {
+      "display_text": "भारत की SCO के साथ सहभागिता के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत ने 2017 में SCO में शामिल होने के बाद से सभी SCO फ्रेमवर्क समझौतों पर लगातार हस्ताक्षर किए हैं, जो SCO की संस्थागत संरचना में उसकी पूर्ण एकीकरण को दर्शाता है।\n2. पूर्ण SCO सदस्यता की मांग के लिए भारत की रणनीतिक तर्क में मध्य एशियाई बाजारों और ऊर्जा संसाधनों तक बेहतर पहुंच प्राप्त करना, साथ ही क्षेत्रीय आतंकवाद-विरोधी ढांचे में भागीदारी शामिल थी।\n3. SCO के भीतर सहमति नियम का अर्थ है कि भारत उन प्रस्तावों को रोक सकता है जिनसे वह असहमत है लेकिन चीन या पाकिस्तान की इच्छा के विरुद्ध प्रस्ताव पारित नहीं कर सकता।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत ने 2017 में SCO में शामिल होने के बाद से सभी SCO फ्रेमवर्क समझौतों पर लगातार हस्ताक्षर किए हैं, जो SCO की संस्थागत संरचना में उसकी पूर्ण एकीकरण को दर्शाता है।",
+          "verdict": "गलत",
+          "reason": "भारत ने चयनात्मक सहभागिता की है — उसने SCO फ्रेमवर्क के भीतर BRI-संबंधित पहलों से परहेज किया है, विशेषकर चीन-पाकिस्तान आर्थिक गलियारे और कनेक्टिविटी परियोजनाओं से, जिन्हें भारत अपनी संप्रभुता का उल्लंघन मानता है।"
+        },
+        {
+          "statement": "पूर्ण SCO सदस्यता की मांग के लिए भारत की रणनीतिक तर्क में मध्य एशियाई बाजारों और ऊर्जा संसाधनों तक बेहतर पहुंच प्राप्त करना, साथ ही क्षेत्रीय आतंकवाद-विरोधी ढांचे में भागीदारी शामिल थी।",
+          "verdict": "सही",
+          "reason": "मध्य एशियाई कनेक्टिविटी, ऊर्जा सुरक्षा (कजाकिस्तान और उजबेकिस्तान के पास हाइड्रोकार्बन भंडार हैं), और आतंकवाद-विरोधी सहभागिता भारत के पूर्ण सदस्यता के प्रमुख घोषित तर्क थे।"
+        },
+        {
+          "statement": "SCO के भीतर सहमति नियम का अर्थ है कि भारत उन प्रस्तावों को रोक सकता है जिनसे वह असहमत है लेकिन चीन या पाकिस्तान की इच्छा के विरुद्ध प्रस्ताव पारित नहीं कर सकता।",
+          "verdict": "सही",
+          "reason": "सहमति एक दोधारी तलवार है — भारत के पास वीटो के समान रोकने की शक्ति है लेकिन वह चीन या पाकिस्तान को अलग-थलग नहीं कर सकता या उनसे अधिक वोट नहीं कर सकता। यह सहमति-आधारित बहुपक्षीयता की संरचनात्मक वास्तविकता को दर्शाता है।"
+        }
+      ],
+      "strong_distractor": "विकल्प d — जो छात्र जानते हैं कि भारत SCO का 'सक्रिय' सदस्य है, वे मान सकते हैं कि उसने सभी समझौतों पर हस्ताक्षर किए हैं, जिससे कथन 1 सही प्रतीत होता है और विकल्प d (सभी तीन) चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 दावा करता है कि भारत ने सभी SCO समझौतों पर हस्ताक्षर किए हैं — भारत की चयनात्मक सहभागिता और BRI-संबंधित SCO पहलों से परहेज इसे गलत बनाता है। अतः कथन 1 गलत है।",
+        "कथन 2 भारत के घोषित रणनीतिक तर्क को सही ढंग से दर्शाता है: मध्य एशियाई पहुंच, ऊर्जा सुरक्षा, आतंकवाद-विरोधी सहयोग — सही।",
+        "कथन 3 सहमति नियम की दोधारी प्रकृति को सही रूप में वर्णित करता है — सही।",
+        "कथन 2 और 3 सही हैं, कथन 1 गलत है → विकल्प (b) (केवल 2 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में 'सभी' शब्द जाल है — भारत की सहभागिता चयनात्मक है, सभी समझौतों पर व्यापक हस्ताक्षर नहीं। जो छात्र जानते हैं कि भारत SCO में सक्रिय है, वे BRI-संबंधित परहेज को याद नहीं रख सकते और 'सभी समझौते' के दावे को सही मान सकते हैं।",
+      "final_explanation": "भारत की SCO सहभागिता सावधानीपूर्वक संतुलित रणनीति को दर्शाती है — जहां लाभकारी है शामिल होना, जहां संप्रभुता संबंधी चिंताएं हैं वहां परहेज करना।\n\n• कथन 1 — गलत: भारत ने सभी SCO समझौतों पर हस्ताक्षर नहीं किए हैं। विशेष रूप से, भारत ने BRI-संबंधित SCO कनेक्टिविटी घोषणाओं से परहेज किया है क्योंकि CPEC पाकिस्तान-प्रशासित कश्मीर से होकर गुजरता है। यह चयनात्मक सहभागिता संप्रभुता आधारित स्पष्ट स्थिति है।\n• कथन 2 — सही: पूर्ण सदस्यता के लिए भारत का रणनीतिक तर्क मध्य एशियाई कनेक्टिविटी (ईरान और अफगानिस्तान के माध्यम से पाकिस्तान को बायपास करना), ऊर्जा सुरक्षा (कजाकिस्तान और उजबेकिस्तान के हाइड्रोकार्बन), और आतंकवाद-विरोधी सहयोग शामिल है — जो भारत की नीति वक्तव्यों में दर्ज है।\n• कथन 3 — सही: सहमति संरचनात्मक रूप से दोधारी प्रतिबंध है। भारत को बाहर नहीं किया जा सकता — यह चीन-पाकिस्तान संयुक्त स्थिति के खिलाफ सुरक्षा है — लेकिन वह ऐसे प्रस्ताव पारित नहीं कर सकता जिनका चीन या रूस विरोध करते हैं।\n\nमूल्य संवर्धन:\n• SCO में भारत का BRI से परहेज उसकी द्विपक्षीय वैश्विक BRI अस्वीकृति के अनुरूप है।\n• भारत SCO क्षेत्र में अपनी वैकल्पिक कनेक्टिविटी रूपरेखा के रूप में INSTC और चाबहार को बढ़ावा देता है।\n• भारत की 12 वर्ष की पर्यवेक्षक से सदस्यता यात्रा (2005–2017) ने उसकी रणनीतिक हितों की रक्षा के लिए सहभागिता की शर्तों पर बातचीत का समय दर्शाया।"
+    }
+  },
+  {
+    "uuid": "9f6f222f-fb7a-485f-bb6e-27a1c17e4064",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO and Afghanistan: The Elephant in the Room"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Afghanistan SCO observer status and Taliban recognition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the SCO's engagement with Afghanistan:\n\n1. Following the Taliban's return to power in 2021, the SCO collectively endorsed recognition of the Taliban government, reflecting the pragmatic security interests of member states in maintaining stability in Afghanistan.\n2. Afghanistan's connectivity is critical to SCO's regional vision because it serves as a geographic bridge between Central Asia and South Asia, and its instability disrupts planned trade and energy corridors.\n3. The SCO-Afghanistan Contact Group was established after the Taliban takeover in 2021 as a new mechanism to manage post-withdrawal engagement with Afghanistan.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Following the Taliban's return to power in 2021, the SCO collectively endorsed recognition of the Taliban government, reflecting the pragmatic security interests of member states in maintaining stability in Afghanistan.",
+          "verdict": "Incorrect",
+          "reason": "The SCO has not collectively endorsed Taliban recognition — member states have divergent positions. China and Russia have been more pragmatic while India remains cautious. No collective recognition was issued."
+        },
+        {
+          "statement": "Afghanistan's connectivity is critical to SCO's regional vision because it serves as a geographic bridge between Central Asia and South Asia, and its instability disrupts planned trade and energy corridors.",
+          "verdict": "Correct",
+          "reason": "Afghanistan is the geographic missing link in SCO's connectivity architecture — TAPI pipeline, INSTC connectivity, and overland trade between Central Asia and South Asia all require a stable Afghanistan."
+        },
+        {
+          "statement": "The SCO-Afghanistan Contact Group was established after the Taliban takeover in 2021 as a new mechanism to manage post-withdrawal engagement with Afghanistan.",
+          "verdict": "Incorrect",
+          "reason": "The SCO-Afghanistan Contact Group predates the Taliban takeover — it was an existing engagement mechanism that predates the 2021 developments, not a new mechanism created in response to the Taliban's return."
+        }
+      ],
+      "strong_distractor": "c — Students who know that China and Russia have engaged with Taliban pragmatically may assume the SCO collectively recognized the Taliban, making Statement 1 appear correct.",
+      "elimination_logic": [
+        "Statement 1: SCO collectively endorsed Taliban recognition — this is false; member positions diverge, no collective endorsement. Incorrect.",
+        "Statement 2: Afghanistan as geographic missing link in SCO's connectivity — this is an accurate characterization of Afghanistan's strategic centrality. Correct.",
+        "Statement 3: SCO-Afghanistan Contact Group was created after 2021 — this is false; it predates the Taliban takeover. Incorrect.",
+        "NOT correct: Statements 1 and 3 → option b (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 1's trap extends bilateral pragmatism (China, Russia) into collective SCO endorsement. Students who know China and Russia have engaged with the Taliban may incorrectly infer SCO-level recognition. Statement 3 falsely dates the Contact Group to post-2021, exploiting the assumption that SCO created new mechanisms in response to the Taliban takeover.",
+      "final_explanation": "Afghanistan's relationship with the SCO is complex — it is a geographic imperative but a political complication.\n\n• Statement 1 — Incorrect: Despite China and Russia engaging more pragmatically with the Taliban at the bilateral level, the SCO as a collective body has not endorsed Taliban recognition. Member positions remain deliberately divergent — India in particular maintains a cautious stance.\n• Statement 2 — Correct: Afghanistan is the geographic bridge between Central Asia and South Asia. The TAPI pipeline, INSTC route, and overland trade routes all converge on Afghan territory. Its instability is the single largest barrier to SCO's connectivity ambitions.\n• Statement 3 — Incorrect: The SCO-Afghanistan Contact Group was an existing mechanism predating the 2021 Taliban takeover. It was not a post-withdrawal creation.\n\nValue Addition:\n• Afghanistan holds Observer status in the SCO — the only observer state currently governed by a group that is not internationally recognized as a government.\n• TAPI pipeline (Turkmenistan-Afghanistan-Pakistan-India) requires Afghan stability — currently a non-starter.\n• India's cautious approach to Taliban includes maintaining 'Technical Mission' presence in Kabul without formal recognition."
+    },
+    "hi": {
+      "display_text": "अफगानिस्तान के साथ SCO की सहभागिता के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. तालिबान के 2021 में सत्ता में लौटने के बाद, SCO ने तालिबान सरकार की मान्यता सामूहिक रूप से स्वीकार की, जो सदस्य राज्यों के व्यावहारिक सुरक्षा हितों को दर्शाता है ताकि अफगानिस्तान में स्थिरता बनी रहे।\n2. अफगानिस्तान की कनेक्टिविटी SCO के क्षेत्रीय दृष्टिकोण के लिए महत्वपूर्ण है क्योंकि यह मध्य एशिया और दक्षिण एशिया के बीच एक भौगोलिक पुल का काम करता है, और इसकी अस्थिरता नियोजित व्यापार और ऊर्जा गलियारों को बाधित करती है।\n3. SCO-अफगानिस्तान संपर्क समूह तालिबान के कब्जे के बाद 2021 में स्थापित किया गया था ताकि अफगानिस्तान के साथ वापसी के बाद की सहभागिता को प्रबंधित किया जा सके।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Following the Taliban's return to power in 2021, the SCO collectively endorsed recognition of the Taliban government, reflecting the pragmatic security interests of member states in maintaining stability in Afghanistan.",
+          "verdict": "गलत",
+          "reason": "SCO ने तालिबान की मान्यता सामूहिक रूप से स्वीकार नहीं की है — सदस्य राज्यों की स्थिति भिन्न है। चीन और रूस अधिक व्यावहारिक रहे हैं जबकि भारत सतर्क बना हुआ है। कोई सामूहिक मान्यता जारी नहीं की गई।"
+        },
+        {
+          "statement": "Afghanistan's connectivity is critical to SCO's regional vision because it serves as a geographic bridge between Central Asia and South Asia, and its instability disrupts planned trade and energy corridors.",
+          "verdict": "सही है",
+          "reason": "अफगानिस्तान SCO की कनेक्टिविटी संरचना में भौगोलिक रूप से एक महत्वपूर्ण कड़ी है — TAPI पाइपलाइन, INSTC कनेक्टिविटी, और मध्य एशिया तथा दक्षिण एशिया के बीच स्थल व्यापार सभी के लिए स्थिर अफगानिस्तान आवश्यक है।"
+        },
+        {
+          "statement": "The SCO-Afghanistan Contact Group was established after the Taliban takeover in 2021 as a new mechanism to manage post-withdrawal engagement with Afghanistan.",
+          "verdict": "गलत",
+          "reason": "SCO-अफगानिस्तान संपर्क समूह तालिबान के कब्जे से पहले स्थापित था — यह 2021 के घटनाक्रम से पहले मौजूद एक जुड़ाव तंत्र था, तालिबान की वापसी के जवाब में नया तंत्र नहीं।"
+        }
+      ],
+      "strong_distractor": "c — जो छात्र जानते हैं कि चीन और रूस ने तालिबान के साथ व्यावहारिक रूप से संवाद किया है, वे मान सकते हैं कि SCO ने सामूहिक रूप से तालिबान को मान्यता दी, जिससे कथन 1 सही प्रतीत होता है।",
+      "elimination_logic": [
+        "कथन 1: SCO ने तालिबान की मान्यता सामूहिक रूप से स्वीकार की — यह गलत है; सदस्य राज्यों की स्थिति भिन्न है, कोई सामूहिक मान्यता नहीं। गलत।",
+        "कथन 2: अफगानिस्तान SCO की कनेक्टिविटी में भौगोलिक कड़ी है — यह अफगानिस्तान की रणनीतिक केंद्रीयता का सही वर्णन है। सही।",
+        "कथन 3: SCO-अफगानिस्तान संपर्क समूह 2021 के बाद बनाया गया — यह गलत है; यह तालिबान के कब्जे से पहले था। गलत।",
+        "गलत हैं: कथन 1 और 3 → विकल्प b (केवल 1 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 का जाल द्विपक्षीय व्यावहारिकता (चीन, रूस) को SCO की सामूहिक मान्यता में बदल देता है। जो छात्र जानते हैं कि चीन और रूस ने तालिबान के साथ संवाद किया है, वे गलत तरीके से SCO स्तर की मान्यता समझ सकते हैं। कथन 3 गलत तरीके से संपर्क समूह को 2021 के बाद का बताता है, यह मानते हुए कि SCO ने तालिबान के कब्जे के जवाब में नए तंत्र बनाए।",
+      "final_explanation": "अफगानिस्तान का SCO के साथ संबंध जटिल है — यह भौगोलिक दृष्टि से आवश्यक है लेकिन राजनीतिक रूप से जटिल भी।\n\n• कथन 1 — गलत: चीन और रूस ने द्विपक्षीय स्तर पर तालिबान के साथ अधिक व्यावहारिक संवाद किया है, लेकिन SCO एक सामूहिक निकाय के रूप में तालिबान की मान्यता स्वीकार नहीं करता। सदस्य राज्यों की स्थिति जानबूझकर भिन्न है — विशेष रूप से भारत सतर्क है।\n• कथन 2 — सही: अफगानिस्तान मध्य एशिया और दक्षिण एशिया के बीच भौगोलिक पुल है। TAPI पाइपलाइन, INSTC मार्ग, और स्थल व्यापार मार्ग सभी अफगान क्षेत्र से होकर गुजरते हैं। इसकी अस्थिरता SCO की कनेक्टिविटी महत्वाकांक्षाओं के लिए सबसे बड़ी बाधा है।\n• कथन 3 — गलत: SCO-अफगानिस्तान संपर्क समूह तालिबान के 2021 के कब्जे से पहले मौजूद था। यह कोई वापसी के बाद बनाया गया तंत्र नहीं है।\n\nमूल्य संवर्धन:\n• अफगानिस्तान SCO में पर्यवेक्षक स्थिति रखता है — वर्तमान में एकमात्र पर्यवेक्षक राज्य जो ऐसी सरकार द्वारा शासित है जिसे अंतरराष्ट्रीय स्तर पर सरकार के रूप में मान्यता नहीं मिली है।\n• TAPI पाइपलाइन (तुर्कमेनिस्तान-अफगानिस्तान-पाकिस्तान-भारत) के लिए अफगानिस्तान की स्थिरता आवश्यक है — वर्तमान में यह संभव नहीं है।\n• भारत की तालिबान के प्रति सतर्क दृष्टिकोण में काबुल में 'तकनीकी मिशन' बनाए रखना शामिल है, बिना औपचारिक मान्यता के।"
+    }
+  },
+  {
+    "uuid": "2589df84-6f93-4bdd-aaae-b26dd67df46d",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO's Connectivity Agenda: INSTC, Corridors, and India's Engagement",
+        "SCO and Central Asian Energy Security"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Chabahar as India's BRI-alternative gateway to Central Asia",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An SCO member state has developed and operationalized a port facility in the territory of another SCO member state. The stated strategic purpose of this facility is to provide the developing country with a maritime entry point into a third country's territory (currently governed by a non-state actor) and thereafter into Central Asia — all without transiting through a fourth SCO member state with which it has longstanding territorial disputes.\n\nThe port described in the above scenario is:\n\n(a) Gwadar Port, developed under the China-Pakistan Economic Corridor\n(b) Bandar Abbas Port, jointly managed by India and Iran under INSTC framework\n(c) Chabahar Port, developed by India in Iran's Sistan-Baluchestan province\n(d) Jask Port, developed by India as part of the International North-South Transport Corridor",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know Gwadar Port (CPEC) is Pakistan's BRI-linked port may confuse it with Chabahar's role, or may think Chabahar falls under CPEC because both are in the vicinity of the Pakistan-Iran border region.",
+      "elimination_logic": [
+        "The scenario describes a port developed by one SCO member in a second SCO member's territory, enabling the first to bypass a third SCO member — this is India (developer) in Iran (host), bypassing Pakistan.",
+        "The purpose is Central Asian connectivity and access to Afghanistan — this maps precisely to Chabahar Port's strategic rationale.",
+        "Eliminate option a (Gwadar Port under CPEC) — Gwadar is Chinese-developed in Pakistan, enabling China's access to the Arabian Sea, not an Indian bypass of Pakistan.",
+        "Eliminate option b (Bandar Abbas under INSTC) — Bandar Abbas is Iran's major commercial port but is not the India-developed strategic port; option c (Chabahar) is the correct answer."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes Gwadar (Chinese-developed in Pakistan) for Chabahar (India-developed in Iran). Both are strategic ports near the Arabian Sea associated with major power connectivity ambitions. Students who know 'India has a strategic port near Pakistan' but confuse its location (Iran, not Pakistan) will select Gwadar.",
+      "final_explanation": "The scenario describes a 'bypass Pakistan' connectivity strategy — a port in a neighboring country providing overland access to Afghanistan and Central Asia.\n\nThis maps precisely to Chabahar Port (option c) — India-developed in Iran's Sistan-Baluchestan province, on the Gulf of Oman.\n\n• Option (a): Incorrect — Gwadar is a Pakistani port developed under CPEC (Chinese Belt and Road Initiative). It gives China access to the Arabian Sea, not India access to Central Asia bypassing Pakistan.\n• Option (b): Incorrect — Bandar Abbas is Iran's existing major commercial port, managed by Iranian port authorities, not India-developed for this specific connectivity strategy.\n• Option (c): Correct — Chabahar Port is the India-developed facility in Iran that provides India a maritime-overland route to Afghanistan and Central Asia without transiting Pakistani territory.\n• Option (d): Incorrect — Jask Port is an Iranian naval base being developed; it is not an India-developed trade connectivity facility.\n\nValue Addition:\n• India signed a 10-year Chabahar Port management agreement with Iran in 2024.\n• Chabahar and Gwadar are approximately 170 km apart — geographically adjacent but strategically opposed.\n• The US has issued sanctions exemptions for Chabahar development, recognizing its role in Afghanistan connectivity."
+    },
+    "hi": {
+      "display_text": "एक SCO सदस्य राज्य ने दूसरे SCO सदस्य राज्य के क्षेत्र में एक बंदरगाह सुविधा विकसित और संचालित की है। इस सुविधा का घोषित रणनीतिक उद्देश्य विकासशील देश को तीसरे देश (जो वर्तमान में एक गैर-राज्य अभिनेता द्वारा शासित है) के क्षेत्र में समुद्री प्रवेश बिंदु प्रदान करना है और उसके बाद मध्य एशिया तक पहुंच — वह भी चौथे SCO सदस्य राज्य के क्षेत्र से गुजरने के बिना, जिसके साथ उसका पुराना क्षेत्रीय विवाद है।\n\nउपरोक्त परिदृश्य में वर्णित बंदरगाह है:\n\n(a) Gwadar पोर्ट, जो चीन-पाकिस्तान आर्थिक गलियारे के तहत विकसित है\n(b) बंदर अब्बास पोर्ट, जिसे भारत और ईरान ने INSTC ढांचे के तहत संयुक्त रूप से प्रबंधित किया है\n(c) चाबहार पोर्ट, जिसे भारत ने ईरान के सिस्तान-बालूचिस्तान प्रांत में विकसित किया है\n(d) जास्क पोर्ट, जिसे भारत ने अंतरराष्ट्रीय उत्तर-दक्षिण परिवहन गलियारे के हिस्से के रूप में विकसित किया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि Gwadar पोर्ट (CPEC) पाकिस्तान का BRI से जुड़ा पोर्ट है, वे इसे चाबहार की भूमिका के साथ भ्रमित कर सकते हैं, या सोच सकते हैं कि चाबहार CPEC के अंतर्गत आता है क्योंकि दोनों पाकिस्तान-ईरान सीमा क्षेत्र के निकट हैं।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसे पोर्ट का वर्णन करता है जिसे एक SCO सदस्य ने दूसरे SCO सदस्य के क्षेत्र में विकसित किया है, जिससे पहला सदस्य तीसरे SCO सदस्य को बायपास कर सकता है — यह भारत (विकासकर्ता) है जो ईरान (मेजबान) में है, पाकिस्तान को बायपास करते हुए।",
+        "इसका उद्देश्य मध्य एशियाई कनेक्टिविटी और अफगानिस्तान तक पहुंच प्रदान करना है — जो चाबहार पोर्ट के रणनीतिक तर्क से पूरी तरह मेल खाता है।",
+        "विकल्प a (CPEC के अंतर्गत Gwadar पोर्ट) को हटाएं — Gwadar चीन द्वारा पाकिस्तान में विकसित है, जो चीन को अरब सागर तक पहुंच देता है, न कि भारत को पाकिस्तान को बायपास करते हुए।",
+        "विकल्प b (INSTC के अंतर्गत बंदर अब्बास) को हटाएं — बंदर अब्बास ईरान का प्रमुख वाणिज्यिक बंदरगाह है लेकिन यह भारत द्वारा विकसित रणनीतिक पोर्ट नहीं है; विकल्प c (चाबहार) सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में Gwadar (चीन द्वारा पाकिस्तान में विकसित) को चाबहार (भारत द्वारा ईरान में विकसित) के स्थान पर रखा गया है। दोनों अरब सागर के निकट रणनीतिक बंदरगाह हैं जो प्रमुख शक्ति कनेक्टिविटी महत्वाकांक्षाओं से जुड़े हैं। जो छात्र जानते हैं कि 'भारत का एक रणनीतिक बंदरगाह पाकिस्तान के पास है' लेकिन इसके स्थान (ईरान, पाकिस्तान नहीं) को भ्रमित करते हैं, वे Gwadar चुनेंगे।",
+      "final_explanation": "परिदृश्य एक 'पाकिस्तान को बायपास' कनेक्टिविटी रणनीति का वर्णन करता है — एक पड़ोसी देश में बंदरगाह जो अफगानिस्तान और मध्य एशिया तक स्थलमार्ग पहुंच प्रदान करता है।\n\nयह पूरी तरह से चाबहार पोर्ट (विकल्प c) से मेल खाता है — भारत द्वारा ईरान के सिस्तान-बालूचिस्तान प्रांत में विकसित, जो ओमान की खाड़ी पर स्थित है।\n\n• विकल्प (a): गलत — Gwadar पाकिस्तान का पोर्ट है जो CPEC (चीनी बेल्ट एंड रोड इनिशिएटिव) के तहत विकसित हुआ है। यह चीन को अरब सागर तक पहुंच देता है, न कि भारत को पाकिस्तान को बायपास करते हुए मध्य एशिया तक।\n• विकल्प (b): गलत — बंदर अब्बास ईरान का मौजूदा प्रमुख वाणिज्यिक बंदरगाह है, जिसे ईरानी बंदरगाह प्राधिकरण संचालित करते हैं, यह भारत द्वारा इस विशिष्ट कनेक्टिविटी रणनीति के लिए विकसित नहीं है।\n• विकल्प (c): सही — चाबहार पोर्ट वह भारत द्वारा विकसित सुविधा है जो भारत को पाकिस्तान के क्षेत्र से गुजरने बिना अफगानिस्तान और मध्य एशिया तक समुद्री-स्थलीय मार्ग प्रदान करती है।\n• विकल्प (d): गलत — जास्क पोर्ट एक ईरानी नौसैनिक अड्डा है जिसे विकसित किया जा रहा है; यह भारत द्वारा विकसित व्यापार कनेक्टिविटी सुविधा नहीं है।\n\nमूल्य संवर्धन:\n• भारत ने 2024 में ईरान के साथ चाबहार पोर्ट प्रबंधन के लिए 10-वर्षीय समझौता किया।\n• चाबहार और Gwadar लगभग 170 किमी दूर हैं — भौगोलिक रूप से निकट लेकिन रणनीतिक रूप से विरोधी।\n• अमेरिका ने चाबहार विकास के लिए प्रतिबंध छूट जारी की है, जो इसके अफगानिस्तान कनेक्टिविटी में भूमिका को मान्यता देता है।"
+    }
+  },
+  {
+    "uuid": "aac915ed-fa11-44f7-91f9-55b289e95ac0",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "Pakistan-India Dynamics within SCO: Structural Tensions",
+        "SCO's Economic Agenda: Trade, Connectivity, and the BRI Tension"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "CPEC-BRI-SCO nexus and India's sovereignty objection",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to India-Pakistan dynamics within the SCO framework, consider the following statements:\n\n1. India objects to CPEC-linked projects being endorsed within the SCO framework on the grounds that CPEC passes through Pakistan-administered Kashmir, which India considers its sovereign territory.\n2. The consensus rule within SCO has been used by India to block all China-Pakistan joint proposals from being adopted as SCO resolutions, effectively paralysing the organization's connectivity agenda.\n3. China's strategic interest in ensuring Pakistan's simultaneous admission with India to the SCO in 2017 was partly to prevent India from gaining a strategic advantage within the organization as its sole South Asian voice.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India objects to CPEC-linked projects being endorsed within the SCO framework on the grounds that CPEC passes through Pakistan-administered Kashmir, which India considers its sovereign territory.",
+          "verdict": "Correct",
+          "reason": "India's consistent position is that CPEC infringes on its territorial sovereignty because it traverses Pakistan-occupied Kashmir (PoK). This objection extends to any SCO endorsement of CPEC as part of BRI connectivity."
+        },
+        {
+          "statement": "The consensus rule within SCO has been used by India to block all China-Pakistan joint proposals from being adopted as SCO resolutions, effectively paralysing the organization's connectivity agenda.",
+          "verdict": "Incorrect",
+          "reason": "While India uses the consensus rule to avoid endorsing BRI-linked proposals, it has not blocked 'all' China-Pakistan proposals — the scope-extension from 'selective abstention' to 'all proposals blocked' is false. SCO continues to function and adopt resolutions in other areas."
+        },
+        {
+          "statement": "China's strategic interest in ensuring Pakistan's simultaneous admission with India to the SCO in 2017 was partly to prevent India from gaining a strategic advantage within the organization as its sole South Asian voice.",
+          "verdict": "Correct",
+          "reason": "China's motive in championing Pakistan's simultaneous entry (rather than India entering alone) is well-documented in strategic analysis — it ensured India could not consolidate a unique South Asian perspective and maintained a counter-balance to India within SCO."
+        }
+      ],
+      "strong_distractor": "d — Students who know China and Pakistan coordinate within SCO may assume Statement 2 is also correct — India having used the consensus to block 'all' joint proposals feels consistent with ongoing India-China tensions.",
+      "elimination_logic": [
+        "Statement 1 (India's CPEC sovereignty objection) — this is documented Indian foreign policy position; correct.",
+        "Statement 2 claims India blocked 'all' China-Pakistan joint proposals — 'all' makes this a scope-extension error. India selectively abstains; the SCO remains functional across many areas. Incorrect.",
+        "Statement 3 (China's motive in Pakistan's simultaneous entry) — this is analytically and strategically documented; correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect → option a (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 2's 'all proposals blocked' is a scope-extension of India's actual selective abstention on BRI matters. Students who know India uses the consensus rule defensively may extrapolate to total obstruction, when in reality India cooperates across multiple SCO domains while selectively blocking CPEC-BRI endorsements.",
+      "final_explanation": "The India-Pakistan-China triangle within SCO creates a structural tension that shapes the organization's functioning.\n\n• Statement 1 — Correct: India's sovereignty objection to CPEC is the precise reason it refuses to endorse BRI-linked SCO connectivity statements. CPEC passes through Gilgit-Baltistan and Pakistan-occupied Kashmir, which India claims as its territory.\n• Statement 2 — Incorrect: India has not blocked all China-Pakistan joint proposals. The consensus mechanism allows selective abstention — India blocks specific BRI/CPEC endorsements while participating in other SCO activities, including counter-terrorism (RATS) and cultural cooperation.\n• Statement 3 — Correct: China's strategic calculation in ensuring Pakistan joined alongside India (not after) in 2017 was to prevent India from consolidating a unique South Asian position. Having both India and Pakistan neutralizes each other's South Asian leverage.\n\nValue Addition:\n• India has boycotted some BRI-related SCO meetings — most notably the 2017 Belt and Road Forum — consistent with its CPEC sovereignty stance.\n• Pakistan's presence in RATS creates an inherent structural irony — India must share counter-terrorism intelligence platforms with a state it designates as sponsoring terrorism.\n• China-Pakistan coordination within SCO is often called the 'CP axis' in strategic analysis."
+    },
+    "hi": {
+      "display_text": "SCO ढांचे के भीतर भारत-पाकिस्तान गतिशीलता के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. भारत SCO ढांचे के भीतर CPEC से जुड़े परियोजनाओं को मंजूरी देने का विरोध करता है क्योंकि CPEC पाकिस्तान-प्रशासित कश्मीर से होकर गुजरता है, जिसे भारत अपने संप्रभु क्षेत्र के रूप में मानता है।\n2. SCO में सर्वसम्मति नियम का उपयोग भारत ने सभी चीन-पाकिस्तान संयुक्त प्रस्तावों को SCO प्रस्तावों के रूप में अपनाने से रोकने के लिए किया है, जिससे संगठन की कनेक्टिविटी एजेंडा प्रभावी रूप से ठप हो गई है।\n3. 2017 में पाकिस्तान के भारत के साथ एक साथ SCO में प्रवेश सुनिश्चित करने में चीन की रणनीतिक रुचि आंशिक रूप से यह थी कि भारत संगठन के भीतर अपने एकमात्र दक्षिण एशियाई आवाज के रूप में रणनीतिक लाभ प्राप्त न कर सके।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत SCO ढांचे के भीतर CPEC से जुड़े परियोजनाओं को मंजूरी देने का विरोध करता है क्योंकि CPEC पाकिस्तान-प्रशासित कश्मीर से होकर गुजरता है, जिसे भारत अपने संप्रभु क्षेत्र के रूप में मानता है।",
+          "verdict": "सही",
+          "reason": "भारत की लगातार स्थिति यह है कि CPEC उसके क्षेत्रीय संप्रभुता का उल्लंघन करता है क्योंकि यह पाकिस्तान-प्रशासित कश्मीर (PoK) से होकर गुजरता है। यह आपत्ति किसी भी SCO द्वारा CPEC को BRI कनेक्टिविटी के हिस्से के रूप में समर्थन देने पर लागू होती है।"
+        },
+        {
+          "statement": "SCO में सर्वसम्मति नियम का उपयोग भारत ने सभी चीन-पाकिस्तान संयुक्त प्रस्तावों को SCO प्रस्तावों के रूप में अपनाने से रोकने के लिए किया है, जिससे संगठन की कनेक्टिविटी एजेंडा प्रभावी रूप से ठप हो गई है।",
+          "verdict": "गलत",
+          "reason": "हालांकि भारत सर्वसम्मति नियम का उपयोग BRI से जुड़े प्रस्तावों को समर्थन देने से बचने के लिए करता है, उसने 'सभी' चीन-पाकिस्तान प्रस्तावों को नहीं रोका है — 'चयनात्मक परहेज' से 'सभी प्रस्तावों को अवरुद्ध करना' तक का दायरा बढ़ाना गलत है। SCO अन्य क्षेत्रों में कार्यशील है और प्रस्तावों को अपनाता रहता है।"
+        },
+        {
+          "statement": "2017 में पाकिस्तान के भारत के साथ एक साथ SCO में प्रवेश सुनिश्चित करने में चीन की रणनीतिक रुचि आंशिक रूप से यह थी कि भारत संगठन के भीतर अपने एकमात्र दक्षिण एशियाई आवाज के रूप में रणनीतिक लाभ प्राप्त न कर सके।",
+          "verdict": "सही",
+          "reason": "चीन का पाकिस्तान के एक साथ प्रवेश (केवल भारत के अकेले प्रवेश के बजाय) का समर्थन करने का उद्देश्य रणनीतिक विश्लेषण में अच्छी तरह से प्रलेखित है — इससे भारत एक अनूठा दक्षिण एशियाई दृष्टिकोण मजबूत नहीं कर सका और SCO में भारत के खिलाफ संतुलन बना रहा।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि चीन और पाकिस्तान SCO के भीतर समन्वय करते हैं, वे कथन 2 को भी सही मान सकते हैं — भारत ने सर्वसम्मति का उपयोग सभी संयुक्त प्रस्तावों को अवरुद्ध करने के लिए किया है, जो भारत-चीन तनाव के साथ संगत लगता है।",
+      "elimination_logic": [
+        "कथन 1 (भारत की CPEC संप्रभुता आपत्ति) — यह प्रलेखित भारतीय विदेश नीति स्थिति है; सही।",
+        "कथन 2 कहता है कि भारत ने सभी चीन-पाकिस्तान संयुक्त प्रस्तावों को अवरुद्ध किया — 'सभी' शब्द इसे दायरा-विस्तार त्रुटि बनाता है। भारत चयनात्मक परहेज करता है; SCO कई क्षेत्रों में कार्यशील है। गलत।",
+        "कथन 3 (पाकिस्तान के एक साथ प्रवेश में चीन की मंशा) — यह विश्लेषणात्मक और रणनीतिक रूप से प्रलेखित है; सही।",
+        "कथन 1 और 3 सही, कथन 2 गलत → विकल्प a (केवल 1 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का 'सभी प्रस्ताव अवरुद्ध' भारत के वास्तविक चयनात्मक परहेज का दायरा-विस्तार है। जो छात्र जानते हैं कि भारत सर्वसम्मति नियम का रक्षात्मक उपयोग करता है, वे इसे पूर्ण अवरोध के रूप में समझ सकते हैं, जबकि वास्तव में भारत कई SCO क्षेत्रों में सहयोग करता है और केवल CPEC-BRI समर्थन को चयनात्मक रूप से रोकता है।",
+      "final_explanation": "SCO के भीतर भारत-पाकिस्तान-चीन त्रिकोण एक संरचनात्मक तनाव उत्पन्न करता है जो संगठन के कार्यकलापों को आकार देता है।\n\n• कथन 1 — सही: भारत की CPEC पर संप्रभुता आपत्ति वह मुख्य कारण है जिसके कारण वह BRI से जुड़े SCO कनेक्टिविटी बयानों को समर्थन देने से इनकार करता है। CPEC गिलगित-बाल्टिस्तान और पाकिस्तान-प्रशासित कश्मीर से होकर गुजरता है, जिसे भारत अपना क्षेत्र मानता है।\n• कथन 2 — गलत: भारत ने सभी चीन-पाकिस्तान संयुक्त प्रस्तावों को अवरुद्ध नहीं किया है। सर्वसम्मति तंत्र चयनात्मक परहेज की अनुमति देता है — भारत विशिष्ट BRI/CPEC समर्थन को रोकता है जबकि अन्य SCO गतिविधियों में भाग लेता है, जैसे आतंकवाद विरोधी (RATS) और सांस्कृतिक सहयोग।\n• कथन 3 — सही: 2017 में पाकिस्तान के भारत के साथ एक साथ प्रवेश सुनिश्चित करने में चीन की रणनीतिक गणना यह थी कि भारत एक अनूठी दक्षिण एशियाई स्थिति मजबूत न कर सके। भारत और पाकिस्तान दोनों के होने से दोनों की दक्षिण एशियाई प्रभावशीलता शून्य हो जाती है।\n\nमूल्य संवर्धन:\n• भारत ने कुछ BRI-संबंधित SCO बैठकों का बहिष्कार किया है — विशेष रूप से 2017 का बेल्ट एंड रोड फोरम — जो उसकी CPEC संप्रभुता स्थिति के अनुरूप है।\n• RATS में पाकिस्तान की उपस्थिति एक अंतर्निहित संरचनात्मक विडंबना पैदा करती है — भारत को आतंकवाद प्रायोजित करने वाले देश के साथ आतंकवाद विरोधी खुफिया मंच साझा करना पड़ता है।\n• SCO में चीन-पाकिस्तान समन्वय को रणनीतिक विश्लेषण में अक्सर 'CP अक्ष' कहा जाता है।"
+    }
+  },
+  {
+    "uuid": "3bc4b34c-57f4-49c1-a2eb-ffd6de2ba2fe",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO Organizational Structure: Principal Bodies and Decision-Making",
+        "SCO Secretariat: Functions, Location, and Secretary-General"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "SCO bodies: functions and locations",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the following SCO bodies (List I) with their primary functions and locations (List II):",
+        "columns": [
+          "List I (SCO Body)",
+          "List II (Function / Location)"
+        ],
+        "rows": [
+          [
+            "A. SCO Secretariat",
+            "1. Coordinates counter-terrorism intelligence sharing among member states; headquartered in Tashkent"
+          ],
+          [
+            "B. RATS Executive Committee",
+            "2. Prime ministerial-level body focused on trade and economic cooperation among member states"
+          ],
+          [
+            "C. Council of Heads of State",
+            "3. Responsible for administrative and organizational coordination; headquartered in Beijing"
+          ],
+          [
+            "D. Council of Heads of Government",
+            "4. Supreme decision-making body of the SCO; meets annually at summit level"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-1, C-2, D-4\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know RATS is in Tashkent may correctly place it, then incorrectly pair the Council of Heads of State with 'annual trade cooperation' (confusing it with the Heads of Government council) and scramble the remaining matches.",
+      "elimination_logic": [
+        "SCO Secretariat is in Beijing, handles administrative coordination — matches with 3 (administrative coordination, Beijing).",
+        "RATS Executive Committee is in Tashkent, coordinates counter-terrorism — matches with 1 (counter-terrorism intelligence coordination, Tashkent).",
+        "Council of Heads of State is the supreme decision-making body, meets annually — matches with 4 (supreme decision-making, annual meeting).",
+        "Council of Heads of Government (Prime Ministers) focuses on trade and economic cooperation — matches with 2 (trade and economic cooperation). Correct matching: A-3, B-1, C-4, D-2 → option b."
+      ],
+      "upsc_trap_explanation": "The geographic swap trap assigns Beijing to RATS when students who know 'SCO headquarters = Beijing' fail to recall the Tashkent distinction. The secondary trap confuses the two councils — Heads of State (supreme, political) vs. Heads of Government (PM-level, economic) — which have similar-sounding names but different mandates.",
+      "final_explanation": "The SCO's institutional architecture distributes functions across clearly separated bodies.\n\nCorrect matches: A-3, B-1, C-4, D-2\n\n• A (SCO Secretariat): Located in Beijing; responsible for administrative coordination, documentation, and supporting SCO's regular functioning — matches with 3.\n• B (RATS Executive Committee): Located in Tashkent, Uzbekistan; coordinates intelligence sharing and counter-terrorism activities under the Three Evils framework — matches with 1.\n• C (Council of Heads of State): The supreme decision-making body of the SCO, meeting annually at summit level where political-level decisions are made — matches with 4.\n• D (Council of Heads of Government): Prime ministerial-level body focused specifically on trade, economic, and financial cooperation — distinct from the Heads of State council in mandate and composition — matches with 2.\n\nValue Addition:\n• China's hosting of the Secretariat gives it administrative influence; the rotational Secretary-General appointment partially counterbalances this.\n• The geographic separation of Secretariat (Beijing) and RATS (Tashkent) was a deliberate institutional design reflecting the political balance between China and Central Asian states.\n• The Council of Heads of Government meeting is sometimes confused with the annual summit — they are separate events with different agendas."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "निम्नलिखित SCO निकायों (सूची I) को उनके मुख्य कार्यों और स्थानों (सूची II) से मिलाइए:",
+        "columns": [
+          "सूची I (SCO निकाय)",
+          "सूची II (कार्य / स्थान)"
+        ],
+        "rows": [
+          [
+            "A. SCO सचिवालय",
+            "1. सदस्य राज्यों के बीच आतंकवाद विरोधी खुफिया साझा करने का समन्वय करता है; मुख्यालय ताशकंद में है"
+          ],
+          [
+            "B. RATS कार्यकारी समिति",
+            "2. सदस्य राज्यों के बीच व्यापार और आर्थिक सहयोग पर केंद्रित प्रधानमंत्री स्तर का निकाय"
+          ],
+          [
+            "C. राज्य प्रमुख परिषद",
+            "3. प्रशासनिक और संगठनात्मक समन्वय के लिए जिम्मेदार; मुख्यालय बीजिंग में है"
+          ],
+          [
+            "D. सरकार के प्रमुख परिषद",
+            "4. SCO की सर्वोच्च निर्णय लेने वाली संस्था; वार्षिक शिखर सम्मेलन स्तर पर मिलती है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-1, C-2, D-4\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि RATS ताशकंद में है, वे इसे सही स्थान पर रख सकते हैं, फिर राज्य प्रमुख परिषद को 'वार्षिक व्यापार सहयोग' के साथ गलत तरीके से जोड़ सकते हैं (इसे सरकार के प्रमुख परिषद के साथ भ्रमित करते हुए) और शेष मेल गलत कर सकते हैं।",
+      "elimination_logic": [
+        "SCO सचिवालय बीजिंग में है, प्रशासनिक समन्वय संभालता है — 3 (प्रशासनिक समन्वय, बीजिंग) से मेल खाता है।",
+        "RATS कार्यकारी समिति ताशकंद में है, आतंकवाद विरोधी समन्वय करती है — 1 (आतंकवाद विरोधी खुफिया समन्वय, ताशकंद) से मेल खाता है।",
+        "राज्य प्रमुख परिषद सर्वोच्च निर्णय लेने वाली संस्था है, वार्षिक बैठक करती है — 4 (सर्वोच्च निर्णय, वार्षिक बैठक) से मेल खाता है।",
+        "सरकार के प्रमुख परिषद (प्रधानमंत्री) व्यापार और आर्थिक सहयोग पर केंद्रित है — 2 (व्यापार और आर्थिक सहयोग) से मेल खाता है। सही मिलान: A-3, B-1, C-4, D-2 → विकल्प b।"
+      ],
+      "upsc_trap_explanation": "भौगोलिक स्वैप जाल बीजिंग को RATS से जोड़ता है जब छात्र जो जानते हैं कि 'SCO मुख्यालय = बीजिंग' हैं, ताशकंद के भेद को याद नहीं रख पाते। द्वितीयक जाल दो परिषदों को भ्रमित करता है — राज्य प्रमुख (सर्वोच्च, राजनीतिक) बनाम सरकार के प्रमुख (प्रधानमंत्री स्तर, आर्थिक) — जिनके नाम समान सुनाई देते हैं लेकिन कार्य अलग हैं।",
+      "final_explanation": "SCO की संस्थागत संरचना कार्यों को स्पष्ट रूप से अलग-अलग निकायों में वितरित करती है।\n\nसही मिलान: A-3, B-1, C-4, D-2\n\n• A (SCO सचिवालय): बीजिंग में स्थित; प्रशासनिक समन्वय, दस्तावेजीकरण, और SCO के नियमित संचालन का समर्थन करता है — 3 से मेल खाता है।\n• B (RATS कार्यकारी समिति): ताशकंद, उज्बेकिस्तान में स्थित; तीन बुराइयों के ढांचे के तहत खुफिया साझा करने और आतंकवाद विरोधी गतिविधियों का समन्वय करती है — 1 से मेल खाता है।\n• C (राज्य प्रमुख परिषद): SCO की सर्वोच्च निर्णय लेने वाली संस्था, वार्षिक शिखर सम्मेलन स्तर पर मिलती है जहाँ राजनीतिक स्तर के निर्णय लिए जाते हैं — 4 से मेल खाता है।\n• D (सरकार के प्रमुख परिषद): प्रधानमंत्री स्तर की संस्था जो विशेष रूप से सदस्य राज्यों के बीच व्यापार, आर्थिक और वित्तीय सहयोग पर केंद्रित है — राज्य प्रमुख परिषद से कार्य और संरचना में भिन्न — 2 से मेल खाता है।\n\nमूल्य संवर्धन:\n• सचिवालय की मेजबानी चीन को प्रशासनिक प्रभाव देती है; सचिव-जनरल की घूर्णन नियुक्ति आंशिक रूप से इसे संतुलित करती है।\n• सचिवालय (बीजिंग) और RATS (ताशकंद) का भौगोलिक पृथक्करण चीन और मध्य एशियाई राज्यों के बीच राजनीतिक संतुलन को दर्शाता है।\n• सरकार के प्रमुख परिषद की बैठक कभी-कभी वार्षिक शिखर सम्मेलन के साथ भ्रमित होती है — ये अलग-अलग आयोजन हैं जिनके एजेंडे भिन्न हैं।"
+    }
+  },
+  {
+    "uuid": "1b4746bd-3e3a-4d7e-9c88-37b66ba2e4bf",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO Membership: Full Members, Observers, and Dialogue Partners",
+        "SCO and Afghanistan: The Elephant in the Room"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SCO observer vs dialogue partner status: Afghanistan vs Turkey",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched with respect to SCO membership categories?\n\n(a) Turkey — Observer State of the SCO\n(b) Belarus — Observer State of the SCO\n(c) Afghanistan — Observer State of the SCO\n(d) Mongolia — Dialogue Partner of the SCO",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who associate Turkey with SCO's expansion may expect it to be an observer (a higher status than dialogue partner), selecting option a as the 'correct' match.",
+      "elimination_logic": [
+        "Afghanistan has observer status — not full membership, not dialogue partner. Option c states 'Afghanistan: Observer State' — this is correct.",
+        "Turkey has Dialogue Partner status (not observer) — option a pairing Turkey as observer is incorrect.",
+        "Belarus was approved for full membership in 2023 — not observer status. Option b is incorrect.",
+        "Mongolia is an SCO Observer State — option d calling it a Dialogue Partner is incorrect. Option c is the only correctly matched pair."
+      ],
+      "upsc_trap_explanation": "Turkey's status as Dialogue Partner (not Observer State) is the entity-swap trap. Students who know Turkey has non-full SCO status may not recall whether it is observer or dialogue partner — two distinct tiers that require precise recall.",
+      "final_explanation": "The SCO membership architecture has three distinct tiers — full member, observer state, and dialogue partner — each with specific countries assigned to specific tiers.\n\n• Option (a): Incorrectly matched — Turkey is a Dialogue Partner of the SCO, not an Observer State. Turkey applied for full membership in 2013 but was accorded only Dialogue Partner status.\n• Option (b): Incorrectly matched — Belarus was approved for full membership (not observer status) at the 2023 Astana Summit. It is transitioning to full membership, not observer status.\n• Option (c): Correctly matched — Afghanistan holds Observer State status in the SCO. This status predates the Taliban takeover and continues formally despite the political complications of Taliban governance.\n• Option (d): Incorrectly matched — Mongolia is an Observer State of the SCO, not a Dialogue Partner. It has been an observer since 2004, one of the earliest observers.\n\nValue Addition:\n• SCO Observer States (as of 2023): Afghanistan, Belarus (transitioning), Mongolia.\n• SCO Dialogue Partners include: Turkey, Sri Lanka, Saudi Arabia, Egypt, Qatar, and others.\n• The Observer-Dialogue Partner distinction matters: observers can attend and observe SCO meetings more broadly; dialogue partners engage on specific sectoral issues."
+    },
+    "hi": {
+      "display_text": "SCO सदस्यता श्रेणियों के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) तुर्की — SCO का पर्यवेक्षक राज्य\n(b) बेलारूस — SCO का पर्यवेक्षक राज्य\n(c) अफगानिस्तान — SCO का पर्यवेक्षक राज्य\n(d) मंगोलिया — SCO का डायलॉग पार्टनर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो तुर्की को SCO के विस्तार से जोड़ते हैं, वे इसे पर्यवेक्षक (डायलॉग पार्टनर से उच्च स्थिति) मान सकते हैं, इसलिए विकल्प a को 'सही' जोड़ी के रूप में चुनते हैं।",
+      "elimination_logic": [
+        "अफगानिस्तान के पास पर्यवेक्षक स्थिति है — पूर्ण सदस्यता नहीं, न ही डायलॉग पार्टनर। विकल्प c में 'अफगानिस्तान: पर्यवेक्षक राज्य' कहा गया है — यह सही है।",
+        "तुर्की के पास डायलॉग पार्टनर की स्थिति है (पर्यवेक्षक नहीं) — विकल्प a में तुर्की को पर्यवेक्षक बताना गलत है।",
+        "बेलारूस को 2023 में पूर्ण सदस्यता के लिए मंजूरी मिली — पर्यवेक्षक स्थिति नहीं। विकल्प b गलत है।",
+        "मंगोलिया SCO का पर्यवेक्षक राज्य है — विकल्प d में इसे डायलॉग पार्टनर बताना गलत है। विकल्प c ही सही जोड़ी है।"
+      ],
+      "upsc_trap_explanation": "तुर्की की स्थिति डायलॉग पार्टनर (पर्यवेक्षक राज्य नहीं) के रूप में है, जो एक पहचान-स्थानांतरण जाल है। जो छात्र जानते हैं कि तुर्की SCO में पूर्ण सदस्य नहीं है, वे याद नहीं रख पाते कि वह पर्यवेक्षक है या डायलॉग पार्टनर — ये दो अलग-अलग स्तर हैं जिनकी सटीक जानकारी आवश्यक है।",
+      "final_explanation": "SCO सदस्यता संरचना में तीन स्पष्ट स्तर हैं — पूर्ण सदस्य, पर्यवेक्षक राज्य, और डायलॉग पार्टनर — प्रत्येक स्तर के लिए विशिष्ट देश निर्धारित हैं।\n\n• विकल्प (a): गलत जोड़ी — तुर्की SCO का डायलॉग पार्टनर है, पर्यवेक्षक राज्य नहीं। तुर्की ने 2013 में पूर्ण सदस्यता के लिए आवेदन किया था लेकिन केवल डायलॉग पार्टनर की स्थिति मिली।\n• विकल्प (b): गलत जोड़ी — बेलारूस को 2023 के अस्ताना सम्मेलन में पूर्ण सदस्यता के लिए मंजूरी मिली (पर्यवेक्षक स्थिति नहीं)। यह पूर्ण सदस्यता की ओर बढ़ रहा है, पर्यवेक्षक नहीं।\n• विकल्प (c): सही जोड़ी — अफगानिस्तान SCO में पर्यवेक्षक राज्य की स्थिति रखता है। यह स्थिति तालिबान के सत्ता में आने से पहले की है और राजनीतिक जटिलताओं के बावजूद औपचारिक रूप से जारी है।\n• विकल्प (d): गलत जोड़ी — मंगोलिया SCO का पर्यवेक्षक राज्य है, डायलॉग पार्टनर नहीं। यह 2004 से पर्यवेक्षक है, जो सबसे पुराने पर्यवेक्षकों में से एक है।\n\nमूल्यवर्धन:\n• SCO पर्यवेक्षक राज्य (2023 तक): अफगानिस्तान, बेलारूस (परिवर्तनशील), मंगोलिया।\n• SCO डायलॉग पार्टनर में शामिल हैं: तुर्की, श्रीलंका, सऊदी अरब, मिस्र, कतर, और अन्य।\n• पर्यवेक्षक और डायलॉग पार्टनर के बीच अंतर महत्वपूर्ण है: पर्यवेक्षक SCO बैठकों में व्यापक रूप से भाग ले सकते हैं; डायलॉग पार्टनर विशिष्ट क्षेत्रीय मुद्दों पर संवाद करते हैं।"
+    }
+  },
+  {
+    "uuid": "ce31121e-b648-42d1-bceb-a9e096d64952",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO and Central Asian Energy Security",
+        "SCO's Connectivity Agenda: INSTC, Corridors, and India's Engagement"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "TAPI pipeline and SCO energy connectivity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to energy security and connectivity within the SCO framework, consider the following statements:\n\n1. The TAPI (Turkmenistan-Afghanistan-Pakistan-India) pipeline is a project that runs through four SCO member states, all of whom are full members of the organization.\n2. India's development of Chabahar Port in Iran represents an alternative connectivity strategy within the SCO region that bypasses China's Belt and Road-linked infrastructure and Pakistan's land routes.\n3. Iran's full SCO membership (2023) added a strategically significant energy and transit dimension because Iran bridges the Caspian Sea region and the Persian Gulf, two critical energy corridors within the SCO's geographic footprint.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The TAPI (Turkmenistan-Afghanistan-Pakistan-India) pipeline is a project that runs through four SCO member states, all of whom are full members of the organization.",
+          "verdict": "Incorrect",
+          "reason": "Turkmenistan is NOT an SCO member — it maintains a policy of permanent neutrality and has not joined SCO even as an observer. While Afghanistan (observer), Pakistan and India (full members) are in SCO, Turkmenistan is not."
+        },
+        {
+          "statement": "India's development of Chabahar Port in Iran represents an alternative connectivity strategy within the SCO region that bypasses China's Belt and Road-linked infrastructure and Pakistan's land routes.",
+          "verdict": "Correct",
+          "reason": "Chabahar is explicitly India's counter-BRI connectivity strategy within the SCO region — it provides access to Afghanistan and Central Asia without using Pakistani territory and without endorsing BRI-linked infrastructure."
+        },
+        {
+          "statement": "Iran's full SCO membership (2023) added a strategically significant energy and transit dimension because Iran bridges the Caspian Sea region and the Persian Gulf, two critical energy corridors within the SCO's geographic footprint.",
+          "verdict": "Correct",
+          "reason": "Iran's geographic position between the Caspian (shared with Russia and Kazakhstan) and Persian Gulf makes it a unique transit and energy corridor node, amplifying SCO's energy security dimension."
+        }
+      ],
+      "strong_distractor": "d — Students who know TAPI is discussed in the SCO context and vaguely associate all four TAPI countries with SCO may accept Statement 1, selecting option d (all three).",
+      "elimination_logic": [
+        "Statement 1 claims all TAPI countries are SCO full members — Turkmenistan is not an SCO member (permanent neutrality). Statement 1 is incorrect.",
+        "Statement 2 accurately characterizes Chabahar as India's BRI-alternative connectivity strategy — correct.",
+        "Statement 3 correctly describes Iran's bridging geographic role between Caspian and Persian Gulf — correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect → option b (2 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 1's trap: Turkmenistan (the 'T' in TAPI and the gas source) is not an SCO member despite being discussed in SCO connectivity contexts. Three of four TAPI countries are in SCO — the one that is not is the most critical one (the gas supplier). Students who know TAPI is relevant to SCO may assume all four TAPI countries are SCO-affiliated.",
+      "final_explanation": "SCO's energy and connectivity agenda intersects with several regional energy projects but requires precision about membership.\n\n• Statement 1 — Incorrect: Turkmenistan is not an SCO member — it holds a policy of permanent neutrality and has not joined as a full member, observer, or dialogue partner. Among TAPI's four countries, only India and Pakistan are full SCO members; Afghanistan is an observer. Turkmenistan stands entirely outside the SCO framework.\n• Statement 2 — Correct: Chabahar Port is India's strategic counter to BRI in the SCO region — it provides a maritime entry into Iran and onwards to Afghanistan and Central Asia without Pakistani territory or Chinese infrastructure.\n• Statement 3 — Correct: Iran's geographic position is uniquely valuable — it shares Caspian coastline with Russia and Kazakhstan (major SCO energy producers) and controls strategic Persian Gulf access, making it an energy transit bridge within the enlarged SCO.\n\nValue Addition:\n• Turkmenistan's permanent neutrality was recognized by the UN in 1995 — it applies this principle consistently to regional organizations.\n• TAPI's feasibility depends critically on Afghan stability — currently suspended due to Taliban governance.\n• Kazakhstan holds the largest proven oil reserves among SCO members (Central Asian tier) — a key energy security asset within the organization."
+    },
+    "hi": {
+      "display_text": "SCO ढांचे के भीतर ऊर्जा सुरक्षा और कनेक्टिविटी के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. TAPI (तुर्कमेनिस्तान-अफगानिस्तान-पाकिस्तान-भारत) पाइपलाइन एक परियोजना है जो चार SCO सदस्य राज्यों से होकर गुजरती है, जिनमें से सभी संगठन के पूर्ण सदस्य हैं।\n2. भारत का ईरान में चाबहार बंदरगाह का विकास SCO क्षेत्र के भीतर एक वैकल्पिक कनेक्टिविटी रणनीति का प्रतिनिधित्व करता है जो चीन के बेल्ट एंड रोड से जुड़े बुनियादी ढांचे और पाकिस्तान के भूमि मार्गों को बायपास करता है।\n3. ईरान की पूर्ण SCO सदस्यता (2023) ने एक रणनीतिक रूप से महत्वपूर्ण ऊर्जा और पारगमन आयाम जोड़ा क्योंकि ईरान कैस्पियन सागर क्षेत्र और फारस की खाड़ी, जो SCO के भौगोलिक क्षेत्र में दो महत्वपूर्ण ऊर्जा गलियारे हैं, को जोड़ता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "TAPI (Turkmenistan-Afghanistan-Pakistan-India) पाइपलाइन एक परियोजना है जो चार SCO सदस्य राज्यों से होकर गुजरती है, जिनमें से सभी संगठन के पूर्ण सदस्य हैं।",
+          "verdict": "गलत",
+          "reason": "तुर्कमेनिस्तान SCO सदस्य नहीं है — यह स्थायी तटस्थता की नीति अपनाए हुए है और SCO में पर्यवेक्षक के रूप में भी शामिल नहीं है। जबकि अफगानिस्तान (पर्यवेक्षक), पाकिस्तान और भारत (पूर्ण सदस्य) SCO में हैं, तुर्कमेनिस्तान नहीं है।"
+        },
+        {
+          "statement": "भारत का ईरान में चाबहार बंदरगाह का विकास SCO क्षेत्र के भीतर एक वैकल्पिक कनेक्टिविटी रणनीति का प्रतिनिधित्व करता है जो चीन के बेल्ट एंड रोड से जुड़े बुनियादी ढांचे और पाकिस्तान के भूमि मार्गों को बायपास करता है।",
+          "verdict": "सही है",
+          "reason": "चाबहार स्पष्ट रूप से SCO क्षेत्र में भारत की BRI-विरोधी कनेक्टिविटी रणनीति है — यह अफगानिस्तान और मध्य एशिया तक पहुंच प्रदान करता है बिना पाकिस्तानी क्षेत्र का उपयोग किए और बिना BRI से जुड़े बुनियादी ढांचे को समर्थन दिए।"
+        },
+        {
+          "statement": "ईरान की पूर्ण SCO सदस्यता (2023) ने एक रणनीतिक रूप से महत्वपूर्ण ऊर्जा और पारगमन आयाम जोड़ा क्योंकि ईरान कैस्पियन सागर क्षेत्र और फारस की खाड़ी, जो SCO के भौगोलिक क्षेत्र में दो महत्वपूर्ण ऊर्जा गलियारे हैं, को जोड़ता है।",
+          "verdict": "सही है",
+          "reason": "कैस्पियन (रूस और कजाकिस्तान के साथ साझा) और फारस की खाड़ी के बीच ईरान की भौगोलिक स्थिति इसे एक अनूठा पारगमन और ऊर्जा गलियारे का केंद्र बनाती है, जो SCO की ऊर्जा सुरक्षा आयाम को बढ़ाती है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो जानते हैं कि TAPI SCO संदर्भ में चर्चा में है और सभी चार TAPI देशों को अस्पष्ट रूप से SCO से जोड़ते हैं, वे कथन 1 को स्वीकार कर सकते हैं और विकल्प d (सभी तीन) चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 यह दावा करता है कि सभी TAPI देश SCO के पूर्ण सदस्य हैं — तुर्कमेनिस्तान SCO सदस्य नहीं है (स्थायी तटस्थता)। कथन 1 गलत है।",
+        "कथन 2 चाबहार को भारत की BRI-विरोधी कनेक्टिविटी रणनीति के रूप में सही ढंग से वर्णित करता है — सही।",
+        "कथन 3 ईरान की कैस्पियन और फारस की खाड़ी के बीच पुल बनाने वाली भौगोलिक भूमिका को सही ढंग से बताता है — सही।",
+        "कथन 2 और 3 सही हैं, कथन 1 गलत है → विकल्प b (केवल 2 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 का जाल: तुर्कमेनिस्तान (TAPI में 'T' और गैस स्रोत) SCO सदस्य नहीं है, हालांकि इसे SCO कनेक्टिविटी संदर्भों में चर्चा में लाया जाता है। TAPI के चार देशों में से तीन SCO में हैं — जो नहीं है वह सबसे महत्वपूर्ण है (गैस आपूर्तिकर्ता)। जो छात्र जानते हैं कि TAPI SCO से संबंधित है, वे मान सकते हैं कि सभी चार TAPI देश SCO से जुड़े हैं।",
+      "final_explanation": "SCO की ऊर्जा और कनेक्टिविटी एजेंडा कई क्षेत्रीय ऊर्जा परियोजनाओं से जुड़ी है लेकिन सदस्यता के बारे में सटीकता आवश्यक है।\n\n• कथन 1 — गलत: तुर्कमेनिस्तान SCO सदस्य नहीं है — यह स्थायी तटस्थता की नीति अपनाए हुए है और पूर्ण सदस्य, पर्यवेक्षक या संवाद साझेदार के रूप में शामिल नहीं है। TAPI के चार देशों में केवल भारत और पाकिस्तान पूर्ण SCO सदस्य हैं; अफगानिस्तान पर्यवेक्षक है। तुर्कमेनिस्तान पूरी तरह से SCO ढांचे के बाहर है।\n• कथन 2 — सही: चाबहार बंदरगाह भारत की SCO क्षेत्र में BRI के खिलाफ रणनीति है — यह पाकिस्तानी क्षेत्र या चीनी बुनियादी ढांचे का उपयोग किए बिना ईरान और आगे अफगानिस्तान तथा मध्य एशिया तक समुद्री प्रवेश प्रदान करता है।\n• कथन 3 — सही: ईरान की भौगोलिक स्थिति अनूठी है — यह रूस और कजाकिस्तान (प्रमुख SCO ऊर्जा उत्पादक) के साथ कैस्पियन तट साझा करता है और फारस की खाड़ी तक रणनीतिक पहुंच नियंत्रित करता है, जिससे यह विस्तारित SCO में ऊर्जा पारगमन पुल बनता है।\n\nमूल्य संवर्धन:\n• तुर्कमेनिस्तान की स्थायी तटस्थता को 1995 में संयुक्त राष्ट्र ने मान्यता दी — यह सिद्धांत क्षेत्रीय संगठनों पर लगातार लागू करता है।\n• TAPI की व्यवहार्यता मुख्य रूप से अफगान स्थिरता पर निर्भर है — वर्तमान में तालिबान शासन के कारण निलंबित है।\n• कजाकिस्तान SCO सदस्यों में सबसे बड़े प्रमाणित तेल भंडार का मालिक है (मध्य एशियाई स्तर) — संगठन के भीतर एक प्रमुख ऊर्जा सुरक्षा संपत्ति।"
+    }
+  },
+  {
+    "uuid": "f4b023b3-cb97-4ccd-b7c2-400556d4dde2",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "Origins and Evolution: From Shanghai Five to SCO",
+        "SCO Summits: Key Decisions and Locations (Examinable Milestones)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "SCO Charter signed at 2001 Shanghai Summit",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The founding Charter of the Shanghai Cooperation Organisation, which gave the organization its formal legal identity and established its core principles, was signed at a summit held in ________ in 2001.\n\n(a) Shanghai, formally replacing the Shanghai Five and establishing the SCO's institutional framework\n(b) Astana, marking the first expansion of the organization to include Central Asian states beyond the original five\n(c) Tashkent, where the headquarters of the Regional Anti-Terrorist Structure were simultaneously established\n(d) Dushanbe, at the first plenary session of the newly expanded organization's heads of state",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know the 2001 transformation occurred 'in Shanghai' but also associate Astana with landmark SCO milestones (India's 2017 accession) may blend the two, selecting Astana as the location where the founding Charter was signed.",
+      "elimination_logic": [
+        "Recall that the transformation from Shanghai Five to SCO occurred in 2001 — the naming itself (Shanghai Cooperation Organisation) gives a geographic clue to the founding summit location.",
+        "The founding summit that established SCO and signed its Charter was held in Shanghai, China, in June 2001.",
+        "Astana (2017) and Samarkand (2022) are associated with subsequent milestones — the Charter signing was specifically at Shanghai 2001.",
+        "Option a (Shanghai, 2001) is correct."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap blends the 2001 Shanghai Charter signing with the 2017 Astana expansion. Students who associate 'Astana' with SCO milestones may misplace the Charter signing. The answer is embedded in the organization's own name — 'Shanghai' Cooperation Organisation.",
+      "final_explanation": "The SCO's Charter, which gave the organization formal legal status, was signed at the 2001 Shanghai Summit.\n\n• Option (a): Correct — The SCO Charter was signed at the Shanghai Summit in June 2001, formally establishing the organization and replacing the informal Shanghai Five framework. The city name is preserved in the organization's title.\n• Option (b): Incorrect — Astana is associated with the 2017 Summit where India and Pakistan joined as full members, not the founding Charter.\n• Option (c): Incorrect — Tashkent is the headquarters of RATS; no founding Charter event occurred there.\n• Option (d): Incorrect — Dushanbe has hosted SCO meetings (e.g., 2021 Summit) but was not the site of the founding Charter signing.\n\nValue Addition:\n• The organization retains 'Shanghai' in its name as a permanent tribute to its founding location — unusual among international organizations.\n• The 2001 SCO Charter defined the Three Evils, established RATS, and set out the consensus decision-making framework.\n• Prior to the 2001 Charter, the Shanghai Five had no founding treaty — it operated through informal summit-level declarations."
+    },
+    "hi": {
+      "display_text": "शंघाई सहयोग संगठन का संस्थापक चार्टर, जिसने संगठन को औपचारिक कानूनी पहचान दी और इसके मूल सिद्धांत स्थापित किए, 2001 में ________ में आयोजित एक शिखर सम्मेलन में हस्ताक्षरित किया गया था।\n\n(a) शंघाई, जिसने शंघाई फाइव को औपचारिक रूप से प्रतिस्थापित किया और SCO की संस्थागत रूपरेखा स्थापित की\n(b) अस्ताना, जिसने संगठन का पहला विस्तार किया और मूल पांच से परे मध्य एशियाई राज्यों को शामिल किया\n(c) ताशकंद, जहाँ क्षेत्रीय आतंकवाद-विरोधी संरचना (RATS) का मुख्यालय एक साथ स्थापित किया गया\n(d) दुशांबे, नए विस्तारित संगठन के राष्ट्राध्यक्षों के पहले पूर्ण सत्र में",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो जानते हैं कि 2001 में परिवर्तन 'शंघाई' में हुआ था लेकिन साथ ही अस्ताना को SCO के महत्वपूर्ण मील के पत्थरों (भारत का 2017 में सदस्यता) से जोड़ते हैं, वे दोनों को मिला सकते हैं और संस्थापक चार्टर के हस्ताक्षर स्थल के रूप में अस्ताना चुन सकते हैं।",
+      "elimination_logic": [
+        "याद रखें कि शंघाई फाइव से SCO में परिवर्तन 2001 में हुआ था — नामकरण (Shanghai Cooperation Organisation) स्वयं संस्थापक शिखर सम्मेलन के स्थान के लिए भौगोलिक संकेत देता है।",
+        "SCO की स्थापना करने वाला और उसका चार्टर हस्ताक्षर करने वाला संस्थापक शिखर सम्मेलन जून 2001 में शंघाई, चीन में आयोजित किया गया था।",
+        "अस्ताना (2017) और समरकंद (2022) बाद के मील के पत्थरों से जुड़े हैं — चार्टर हस्ताक्षर विशेष रूप से शंघाई 2001 में हुआ था।",
+        "विकल्प (a) (शंघाई, 2001) सही है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्थान परिवर्तन जाल 2001 के शंघाई चार्टर हस्ताक्षर को 2017 के अस्ताना विस्तार के साथ मिला देता है। जो छात्र 'अस्ताना' को SCO के मील के पत्थरों से जोड़ते हैं, वे चार्टर हस्ताक्षर को गलत स्थान पर रख सकते हैं। उत्तर संगठन के अपने नाम में निहित है — 'Shanghai' Cooperation Organisation।",
+      "final_explanation": "SCO का चार्टर, जिसने संगठन को औपचारिक कानूनी पहचान दी, 2001 के शंघाई शिखर सम्मेलन में हस्ताक्षरित हुआ था।\n\n• विकल्प (a): सही — SCO चार्टर जून 2001 में शंघाई शिखर सम्मेलन में हस्ताक्षरित हुआ, जिसने संगठन की औपचारिक स्थापना की और अनौपचारिक शंघाई फाइव ढांचे को प्रतिस्थापित किया। शहर का नाम संगठन के शीर्षक में संरक्षित है।\n• विकल्प (b): गलत — अस्ताना 2017 के शिखर सम्मेलन से जुड़ा है जहाँ भारत और पाकिस्तान पूर्ण सदस्य बने, न कि संस्थापक चार्टर से।\n• विकल्प (c): गलत — ताशकंद RATS का मुख्यालय है; वहाँ कोई संस्थापक चार्टर कार्यक्रम नहीं हुआ।\n• विकल्प (d): गलत — दुशांबे ने SCO की बैठकें आयोजित की हैं (जैसे 2021 शिखर सम्मेलन) लेकिन संस्थापक चार्टर हस्ताक्षर स्थल नहीं था।\n\nमूल्य संवर्धन:\n• संगठन ने अपने नाम में 'शंघाई' को स्थायी श्रद्धांजलि के रूप में रखा है — जो अंतरराष्ट्रीय संगठनों में असामान्य है।\n• 2001 SCO चार्टर ने तीन बुराइयों को परिभाषित किया, RATS की स्थापना की, और सर्वसम्मति निर्णय लेने की रूपरेखा निर्धारित की।\n• 2001 के चार्टर से पहले, शंघाई फाइव का कोई संस्थापक संधि नहीं थी — यह अनौपचारिक शिखर सम्मेलन स्तर के घोषणापत्रों के माध्यम से संचालित होता था।"
+    }
+  },
+  {
+    "uuid": "9e63b65d-bdb3-4e28-becc-78ef968a5936",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO's Limitations and Criticisms: Why It Underperforms Its Potential",
+        "SCO and De-dollarization: Trade in Local Currencies"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "SCO established institutions vs aspirational proposals",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT belong to the same category as the others when classified as an operationally established institutional body of the Shanghai Cooperation Organisation?\n\n(a) SCO Secretariat\n(b) RATS Executive Committee\n(c) SCO Development Bank\n(d) SCO Business Council",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Students who know RATS is headquartered in Tashkent and that 'RATS Executive Council' sounds like a different body from RATS may think the Executive Council is a proposed rather than established entity.",
+      "elimination_logic": [
+        "The question asks which is NOT an operationally established SCO institution — identify the aspirational/proposed body.",
+        "SCO Secretariat (Beijing) — established and operational since 2004. Included.",
+        "RATS Executive Committee (Tashkent) — established and operational. Included.",
+        "SCO Business Council — established as a facilitation body. Included.",
+        "SCO Development Bank — repeatedly proposed, never established. This is the odd one out — the only aspirational body among the four.",
+        "Option c (SCO Development Bank) is the answer."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the SCO Development Bank (aspirational) with operationally similar-sounding bodies (Business Council, Interbank Consortium). Students who know 'BRICS has an NDB and SCO wants something similar' may assume the SCO bank exists. It remains the only major proposed SCO institution that has not been operationalized.",
+      "final_explanation": "Among SCO's various bodies, one remains a persistent proposal without institutional reality.\n\n• Option (a) SCO Secretariat: Established and operational — located in Beijing since 2004, handles administrative coordination for the organization.\n• Option (b) RATS Executive Committee: Established and operational — located in Tashkent, coordinates the Three Evils counter-terrorism framework among member states.\n• Option (c) SCO Development Bank: NOT established — this is the odd one out. Despite being discussed at multiple summits including the 2023 New Delhi Summit, no agreement on capital, governance, or headquarters has been reached.\n• Option (d) SCO Business Council: Established — functions as a facilitation body for business-to-business cooperation among SCO member state enterprises.\n\nValue Addition:\n• The SCO Interbank Consortium, like the Business Council, is an established facilitation body — distinct from the proposed Development Bank.\n• China's bilateral BRI financing has effectively filled the gap left by the non-existent SCO Development Bank.\n• The contrast between BRICS (NDB established 2014, operational 2015) and SCO (Development Bank still proposed) illustrates SCO's deeper institutional underperformance."
+    },
+    "hi": {
+      "display_text": "शंघाई सहयोग संगठन के परिचालन रूप से स्थापित संस्थागत निकाय के रूप में वर्गीकृत किए जाने पर निम्नलिखित में से कौन अन्य के समान श्रेणी में नहीं आता?\n\n(a) SCO सचिवालय\n(b) RATS कार्यकारी समिति\n(c) SCO विकास बैंक\n(d) SCO व्यापार परिषद",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — छात्र जो जानते हैं कि RATS का मुख्यालय ताशकंद में है और 'RATS कार्यकारी परिषद' RATS से अलग निकाय जैसा लगता है, वे कार्यकारी परिषद को प्रस्तावित निकाय समझ सकते हैं न कि स्थापित।",
+      "elimination_logic": [
+        "प्रश्न पूछता है कि कौन सा SCO संस्थान परिचालन रूप से स्थापित नहीं है — आकांक्षात्मक/प्रस्तावित निकाय की पहचान करें।",
+        "SCO सचिवालय (बीजिंग) — 2004 से स्थापित और परिचालित। शामिल।",
+        "RATS कार्यकारी समिति (ताशकंद) — स्थापित और परिचालित। शामिल।",
+        "SCO व्यापार परिषद — एक सुविधा निकाय के रूप में स्थापित। शामिल।",
+        "SCO विकास बैंक — बार-बार प्रस्तावित, कभी स्थापित नहीं। यह अलग है — चारों में से एकमात्र आकांक्षात्मक निकाय।",
+        "विकल्प c (SCO विकास बैंक) उत्तर है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल SCO विकास बैंक (आकांक्षात्मक) को परिचालन रूप से समान नाम वाले निकायों (व्यापार परिषद, इंटरबैंक कंसोर्टियम) के साथ मिला देता है। जो छात्र जानते हैं कि 'BRICS के पास NDB है और SCO कुछ ऐसा चाहता है' वे मान सकते हैं कि SCO बैंक मौजूद है। यह अभी तक परिचालित न होने वाला एकमात्र प्रमुख प्रस्तावित SCO संस्थान है।",
+      "final_explanation": "SCO के विभिन्न निकायों में से एक लगातार प्रस्तावित है लेकिन संस्थागत वास्तविकता में नहीं है।\n\n• विकल्प (a) SCO सचिवालय: स्थापित और परिचालित — 2004 से बीजिंग में स्थित, संगठन के प्रशासनिक समन्वय का कार्य करता है।\n• विकल्प (b) RATS कार्यकारी समिति: स्थापित और परिचालित — ताशकंद में स्थित, सदस्य राज्यों के बीच तीनों बुराइयों के खिलाफ आतंकवाद विरोधी ढांचे का समन्वय करती है।\n• विकल्प (c) SCO विकास बैंक: स्थापित नहीं — यह अलग है। 2023 नई दिल्ली शिखर सम्मेलन सहित कई सम्मेलनों में चर्चा के बावजूद, पूंजी, शासन या मुख्यालय पर कोई समझौता नहीं हुआ है।\n• विकल्प (d) SCO व्यापार परिषद: स्थापित — SCO सदस्य राज्यों के उद्यमों के बीच व्यापार-से-व्यापार सहयोग के लिए एक सुविधा निकाय के रूप में कार्य करता है।\n\nमूल्य संवर्धन:\n• SCO इंटरबैंक कंसोर्टियम, व्यापार परिषद की तरह, एक स्थापित सुविधा निकाय है — प्रस्तावित विकास बैंक से अलग।\n• चीन की द्विपक्षीय BRI वित्तपोषण ने SCO विकास बैंक के अभाव को प्रभावी रूप से पूरा किया है।\n• BRICS (NDB 2014 में स्थापित, 2015 में परिचालित) और SCO (विकास बैंक अभी भी प्रस्तावित) के बीच का अंतर SCO की गहरी संस्थागत कमज़ोरी को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "ba6c7ad6-8b3a-459d-b723-c82426e8427e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO's Cultural and People-to-People Dimension",
+        "SCO's Limitations and Criticisms: Why It Underperforms Its Potential"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "SCO soft power: University network, Forum, Youth Council",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the SCO's cultural and people-to-people engagement mechanisms:\n\n1. The SCO has established an SCO University as a fully functional standalone institution offering degree programmes to students from member states.\n2. India utilized its SCO chairmanship to advance Ayurveda and Yoga as traditional medicine cooperation areas within the SCO framework, consistent with its soft-power diplomacy.\n3. The SCO Forum serves as a civil society engagement platform within the organization, facilitating non-governmental participation in the SCO process.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The SCO has established an SCO University as a fully functional standalone institution offering degree programmes to students from member states.",
+          "verdict": "Incorrect",
+          "reason": "The SCO University is a network proposal — it envisages a consortium of existing universities from member states rather than a single standalone institution. It has not been operationalized as a degree-granting university in its own right."
+        },
+        {
+          "statement": "India utilized its SCO chairmanship to advance Ayurveda and Yoga as traditional medicine cooperation areas within the SCO framework, consistent with its soft-power diplomacy.",
+          "verdict": "Correct",
+          "reason": "Traditional medicine — specifically India's push for Ayurveda and Yoga recognition — was a documented priority during India's SCO chairmanship, part of its broader soft-power agenda within the organization."
+        },
+        {
+          "statement": "The SCO Forum serves as a civil society engagement platform within the organization, facilitating non-governmental participation in the SCO process.",
+          "verdict": "Correct",
+          "reason": "The SCO Forum is the civil society engagement mechanism of the SCO — it represents the people-to-people and non-governmental dimension of the organization's activities."
+        }
+      ],
+      "strong_distractor": "d — Students who know 'SCO University' exists as a concept may assume it is a fully operational institution like the University of the South Pacific or the ADB-affiliated institutions, selecting option d (all three).",
+      "elimination_logic": [
+        "Statement 1 claims SCO University is a standalone institution offering degree programmes — the SCO University is a network concept, not a single institution. Statement 1 is incorrect.",
+        "Statement 2 accurately describes India's traditional medicine push during chairmanship — correct.",
+        "Statement 3 accurately describes the SCO Forum as civil society engagement — correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect → option c (2 and 3 only)."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap makes the SCO University sound like an established institution (like an ADB Institute or ASEAN University Network headquarters). In reality, it is a proposed network of existing national universities — not a standalone degree-granting institution. The 'network vs. institution' distinction requires precise recall.",
+      "final_explanation": "SCO's people-to-people and cultural dimensions are implemented through a mix of established and proposed mechanisms.\n\n• Statement 1 — Incorrect: The SCO University is a network framework — it proposes cooperation among existing universities of member states (including curricula and student exchanges) rather than a standalone institution. No single SCO University building, campus, or degree programme exists independently.\n• Statement 2 — Correct: India's chairmanship specifically advanced Ayurveda and Yoga as SCO traditional medicine cooperation areas. This was consistent with India's broader soft-power strategy of projecting its civilizational knowledge systems through multilateral platforms.\n• Statement 3 — Correct: The SCO Forum is the civil society engagement mechanism — it provides a non-governmental dimension to the otherwise state-centric SCO process.\n\nValue Addition:\n• The ASEAN University Network (AUN) is the closest analogy to the proposed SCO University network — both are consortium models, not standalone institutions.\n• SCO Youth Council and SCO Forum represent the 'bottom-up' people-to-people dimension alongside the top-down state-to-state summit architecture.\n• Shared Buddhist and Silk Road heritage is a recurring theme in SCO's cultural diplomacy — India has leveraged this to frame its historical ties to Central Asia."
+    },
+    "hi": {
+      "display_text": "SCO के सांस्कृतिक और जन-जन संपर्क तंत्रों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. SCO ने एक SCO विश्वविद्यालय स्थापित किया है जो सदस्य राज्यों के छात्रों को डिग्री कार्यक्रम प्रदान करने वाला पूर्णतया स्वतंत्र संस्थान है।\n2. भारत ने अपनी SCO अध्यक्षता का उपयोग पारंपरिक चिकित्सा सहयोग क्षेत्रों के रूप में आयुर्वेद और योग को बढ़ावा देने के लिए किया, जो SCO के सॉफ्ट-पावर कूटनीति के अनुरूप है।\n3. SCO फोरम संगठन के भीतर एक नागरिक समाज संलग्नता मंच के रूप में कार्य करता है, जो SCO प्रक्रिया में गैर-सरकारी भागीदारी को सुविधाजनक बनाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SCO ने एक SCO विश्वविद्यालय स्थापित किया है जो सदस्य राज्यों के छात्रों को डिग्री कार्यक्रम प्रदान करने वाला पूर्णतया स्वतंत्र संस्थान है।",
+          "verdict": "गलत",
+          "reason": "SCO विश्वविद्यालय एक नेटवर्क प्रस्ताव है — यह सदस्य राज्यों के मौजूदा विश्वविद्यालयों के संघ की कल्पना करता है, न कि एकल स्वतंत्र संस्थान। इसे एक स्वतंत्र डिग्री प्रदान करने वाले विश्वविद्यालय के रूप में लागू नहीं किया गया है।"
+        },
+        {
+          "statement": "भारत ने अपनी SCO अध्यक्षता का उपयोग पारंपरिक चिकित्सा सहयोग क्षेत्रों के रूप में आयुर्वेद और योग को बढ़ावा देने के लिए किया, जो SCO के सॉफ्ट-पावर कूटनीति के अनुरूप है।",
+          "verdict": "सही",
+          "reason": "पारंपरिक चिकित्सा — विशेष रूप से भारत का आयुर्वेद और योग को मान्यता दिलाने का प्रयास — भारत की SCO अध्यक्षता के दौरान एक दस्तावेजीकृत प्राथमिकता थी, जो संगठन के भीतर इसके व्यापक सॉफ्ट-पावर एजेंडे का हिस्सा था।"
+        },
+        {
+          "statement": "SCO फोरम संगठन के भीतर एक नागरिक समाज संलग्नता मंच के रूप में कार्य करता है, जो SCO प्रक्रिया में गैर-सरकारी भागीदारी को सुविधाजनक बनाता है।",
+          "verdict": "सही",
+          "reason": "SCO फोरम SCO की नागरिक समाज संलग्नता तंत्र है — यह संगठन की गतिविधियों के जन-जन और गैर-सरकारी आयाम का प्रतिनिधित्व करता है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि 'SCO विश्वविद्यालय' एक अवधारणा के रूप में मौजूद है, वे इसे University of the South Pacific या ADB से संबद्ध संस्थानों की तरह पूर्णतया संचालित संस्थान मान सकते हैं, इसलिए विकल्प d (सभी तीन) चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 यह दावा करता है कि SCO विश्वविद्यालय एक स्वतंत्र संस्थान है जो डिग्री कार्यक्रम प्रदान करता है — SCO विश्वविद्यालय एक नेटवर्क अवधारणा है, एकल संस्थान नहीं। अतः कथन 1 गलत है।",
+        "कथन 2 SCO अध्यक्षता के दौरान भारत के पारंपरिक चिकित्सा प्रयासों का सही वर्णन करता है — सही।",
+        "कथन 3 SCO फोरम को नागरिक समाज संलग्नता के रूप में सही रूप में वर्णित करता है — सही।",
+        "कथन 2 और 3 सही हैं, कथन 1 गलत है → विकल्प (c) (केवल 2 और 3)।"
+      ],
+      "upsc_trap_explanation": "सुसंगत-निर्माण (plausible-fabrication) जाल SCO विश्वविद्यालय को एक स्थापित संस्थान (जैसे ADB संस्थान या ASEAN विश्वविद्यालय नेटवर्क मुख्यालय) के रूप में प्रस्तुत करता है। वास्तविकता में, यह मौजूदा राष्ट्रीय विश्वविद्यालयों का प्रस्तावित नेटवर्क है — एक स्वतंत्र डिग्री प्रदान करने वाला संस्थान नहीं। 'नेटवर्क बनाम संस्थान' का अंतर सटीक स्मरण की मांग करता है।",
+      "final_explanation": "SCO के जन-जन और सांस्कृतिक आयाम स्थापित और प्रस्तावित तंत्रों के मिश्रण के माध्यम से लागू होते हैं।\n\n• कथन 1 — गलत: SCO विश्वविद्यालय एक नेटवर्क ढांचा है — यह सदस्य राज्यों के मौजूदा विश्वविद्यालयों के बीच सहयोग (पाठ्यक्रम और छात्र विनिमय सहित) का प्रस्ताव करता है, न कि एक स्वतंत्र संस्थान। कोई एकल SCO विश्वविद्यालय भवन, परिसर या डिग्री कार्यक्रम स्वतंत्र रूप से मौजूद नहीं है।\n• कथन 2 — सही: भारत की अध्यक्षता ने विशेष रूप से आयुर्वेद और योग को SCO पारंपरिक चिकित्सा सहयोग क्षेत्रों के रूप में आगे बढ़ाया। यह भारत की व्यापक सॉफ्ट-पावर रणनीति के अनुरूप था, जिसमें वह अपने सभ्यतागत ज्ञान प्रणालियों को बहुपक्षीय मंचों के माध्यम से प्रस्तुत करता है।\n• कथन 3 — सही: SCO फोरम नागरिक समाज संलग्नता तंत्र है — यह अन्यथा राज्य-केंद्रित SCO प्रक्रिया को गैर-सरकारी आयाम प्रदान करता है।\n\nमूल्य संवर्धन:\n• ASEAN विश्वविद्यालय नेटवर्क (AUN) प्रस्तावित SCO विश्वविद्यालय नेटवर्क का निकटतम समानांतर है — दोनों संघ मॉडल हैं, स्वतंत्र संस्थान नहीं।\n• SCO युवा परिषद और SCO फोरम 'नीचे से ऊपर' जन-जन आयाम का प्रतिनिधित्व करते हैं, जो शीर्ष-से-शीर्ष राज्य-से-राज्य शिखर सम्मेलन संरचना के साथ हैं।\n• साझा बौद्ध और सिल्क रोड विरासत SCO की सांस्कृतिक कूटनीति में एक आवर्ती विषय है — भारत ने इसे मध्य एशिया के साथ अपने ऐतिहासिक संबंधों को प्रस्तुत करने के लिए उपयोग किया है।"
+    }
+  },
+  {
+    "uuid": "955cc704-9880-4c6c-8889-900c13a9e7b3",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO vs. Other Regional Groupings: Overlaps and Distinctions",
+        "SCO's Limitations and Criticisms: Why It Underperforms Its Potential"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "CSTO vs SCO: membership and mandate distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the overlapping memberships between the SCO and the Collective Security Treaty Organization (CSTO), which of the following pairs is correctly matched?\n\n(a) Armenia — Full member of both the SCO and the CSTO\n(b) Russia — Full member of both the SCO and the CSTO, where the latter is a formal military alliance\n(c) China — Full member of both the SCO and the CSTO, exercising leadership in both organizations\n(d) India — Full member of the SCO and observer state in the CSTO",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know China is the dominant power in SCO may assume China is also a CSTO member, selecting option c (China: member of both SCO and CSTO) as a 'correct' pair about overlapping memberships.",
+      "elimination_logic": [
+        "Recall that CSTO members are: Russia, Kazakhstan, Kyrgyzstan, Tajikistan, Belarus, and Armenia (until its 2024 suspension).",
+        "China is NOT a CSTO member — it is only in SCO. Option c pairing China with CSTO membership is incorrect.",
+        "India is NOT a CSTO member — it is only in SCO. Eliminate any option pairing India with CSTO.",
+        "Russia is a member of BOTH SCO and CSTO — option b (Russia: member of both SCO and CSTO, which is a military alliance) is a correctly matched pair in the context of overlapping memberships."
+      ],
+      "upsc_trap_explanation": "The conflation trap makes China's dominant SCO role suggest CSTO membership. China is specifically NOT in CSTO — it uses SCO for regional security without accepting mutual defense obligations. Russia's membership in both SCO and CSTO is the key overlapping fact that distinguishes it from China's SCO-only participation.",
+      "final_explanation": "The SCO and CSTO have overlapping but distinct memberships — Russia is the key overlap, not China.\n\n• Option (a): Incorrectly matched — Armenia is a CSTO member (or was until 2024) but is not an SCO member. Pairing Armenia's CSTO membership with SCO participation is false.\n• Option (b): Correctly matched — Russia is a founding member of SCO and a leading member of CSTO. It is the most prominent example of SCO-CSTO membership overlap, and the distinction is that CSTO is a military alliance while SCO is not.\n• Option (c): Incorrectly matched — China is NOT a CSTO member. China deliberately stays out of the CSTO's mutual defense commitments to maintain strategic flexibility.\n• Option (d): Incorrectly matched — India is not a CSTO member. India is only in SCO.\n\nValue Addition:\n• Central Asian states in both SCO and CSTO: Kazakhstan, Kyrgyzstan, Tajikistan — the 'triple overlap' states.\n• Armenia's effective suspension from CSTO in 2024 (after Russia did not respond to the Nagorno-Karabakh conflict) is a significant CSTO credibility crisis.\n• China's deliberate non-membership in CSTO reflects its preference for bilateral security partnerships over mutual defense treaty obligations."
+    },
+    "hi": {
+      "display_text": "SCO और सामूहिक सुरक्षा संधि संगठन (CSTO) के बीच ओवरलैपिंग सदस्यताओं के संदर्भ में, निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) आर्मेनिया — SCO और CSTO दोनों का पूर्ण सदस्य\n(b) रूस — SCO और CSTO दोनों का पूर्ण सदस्य, जहाँ CSTO एक औपचारिक सैन्य गठबंधन है\n(c) चीन — SCO और CSTO दोनों का पूर्ण सदस्य, दोनों संगठनों में नेतृत्व करता है\n(d) भारत — SCO का पूर्ण सदस्य और CSTO में पर्यवेक्षक राज्य",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि चीन SCO में प्रमुख शक्ति है, वे यह मान सकते हैं कि चीन CSTO का भी सदस्य है, और विकल्प c (चीन: SCO और CSTO दोनों का सदस्य) को ओवरलैपिंग सदस्यताओं के बारे में 'सही' जोड़ी मान सकते हैं।",
+      "elimination_logic": [
+        "याद रखें कि CSTO के सदस्य हैं: रूस, कजाखस्तान, किर्गिज़स्तान, ताजिकिस्तान, बेलारूस, और आर्मेनिया (2024 में निलंबन तक)।",
+        "चीन CSTO का सदस्य नहीं है — वह केवल SCO में है। विकल्प c में चीन को CSTO सदस्यता के साथ जोड़ना गलत है।",
+        "भारत CSTO का सदस्य नहीं है — वह केवल SCO में है। भारत को CSTO के साथ जोड़ने वाले किसी भी विकल्प को हटा दें।",
+        "रूस दोनों SCO और CSTO का सदस्य है — विकल्प b (रूस: SCO और CSTO दोनों का सदस्य, जहाँ CSTO एक सैन्य गठबंधन है) ओवरलैपिंग सदस्यताओं के संदर्भ में सही जोड़ी है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल (conflation trap) चीन की SCO में प्रमुख भूमिका को CSTO सदस्यता के रूप में प्रस्तुत करता है। चीन विशेष रूप से CSTO में नहीं है — वह SCO का उपयोग क्षेत्रीय सुरक्षा के लिए करता है बिना पारस्परिक रक्षा दायित्व स्वीकार किए। रूस की SCO और CSTO दोनों में सदस्यता वह मुख्य ओवरलैपिंग तथ्य है जो उसे चीन के SCO-केवल भागीदारी से अलग करता है।",
+      "final_explanation": "SCO और CSTO की सदस्यताएँ ओवरलैप करती हैं लेकिन भिन्न हैं — रूस मुख्य ओवरलैप है, चीन नहीं।\n\n• विकल्प (a): गलत मिलान — आर्मेनिया CSTO का सदस्य है (या 2024 तक था) लेकिन SCO का सदस्य नहीं है। आर्मेनिया की CSTO सदस्यता को SCO भागीदारी के साथ जोड़ना गलत है।\n• विकल्प (b): सही मिलान — रूस SCO का संस्थापक सदस्य और CSTO का प्रमुख सदस्य है। यह SCO-CSTO सदस्यता ओवरलैप का सबसे प्रमुख उदाहरण है, और अंतर यह है कि CSTO एक सैन्य गठबंधन है जबकि SCO नहीं है।\n• विकल्प (c): गलत मिलान — चीन CSTO का सदस्य नहीं है। चीन जानबूझकर CSTO के पारस्परिक रक्षा दायित्वों से बाहर रहता है ताकि रणनीतिक लचीलापन बनाए रख सके।\n• विकल्प (d): गलत मिलान — भारत CSTO का सदस्य नहीं है। भारत केवल SCO में है।\n\nमूल्य संवर्धन:\n• मध्य एशियाई राज्य जो SCO और CSTO दोनों में हैं: कजाखस्तान, किर्गिज़स्तान, ताजिकिस्तान — 'त्रि-ओवरलैप' राज्य।\n• 2024 में आर्मेनिया का CSTO से प्रभावी निलंबन (रूस ने नागोर्नो-कराबाख संघर्ष पर प्रतिक्रिया नहीं दी) CSTO की विश्वसनीयता संकट है।\n• चीन की जानबूझकर CSTO में गैर-सदस्यता उसके द्विपक्षीय सुरक्षा साझेदारियों को पारस्परिक रक्षा संधि दायित्वों पर प्राथमिकता देने को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "40ba3d5c-e08e-465e-939d-91419985e61f",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO and De-dollarization: Trade in Local Currencies",
+        "SCO's Economic Agenda: Trade, Connectivity, and the BRI Tension",
+        "India's Chairmanship of SCO (2022-23): Agenda and Outcomes"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "De-dollarization within SCO: India's rupee vs yuan vs formal mechanism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to de-dollarization discussions within the SCO framework, consider the following statements:\n\n1. India has enthusiastically endorsed yuan-denominated trade settlements within the SCO framework as part of its broader de-dollarization strategy.\n2. Russia's push for ruble-denominated settlements within the SCO framework intensified after 2022 as a consequence of Western sanctions imposed following its military actions in Ukraine.\n3. The SCO has created a formal multilateral currency settlement mechanism through which intra-SCO trade is now conducted in member states' local currencies rather than the US dollar.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 only\n(b) 1 and 3 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India has enthusiastically endorsed yuan-denominated trade settlements within the SCO framework as part of its broader de-dollarization strategy.",
+          "verdict": "Incorrect",
+          "reason": "India promotes rupee settlements but is cautious — in fact resistant — to yuan dominance in SCO trade. Yuan promotion is China's agenda within SCO; India's de-dollarization position specifically seeks to avoid substituting dollar dependence with yuan dependence."
+        },
+        {
+          "statement": "Russia's push for ruble-denominated settlements within the SCO framework intensified after 2022 as a consequence of Western sanctions imposed following its military actions in Ukraine.",
+          "verdict": "Correct",
+          "reason": "Post-2022 Western sanctions (including SWIFT exclusions) directly prompted Russia to accelerate the push for ruble settlements in SCO trade — a factually accurate and causally sound statement."
+        },
+        {
+          "statement": "The SCO has created a formal multilateral currency settlement mechanism through which intra-SCO trade is now conducted in member states' local currencies rather than the US dollar.",
+          "verdict": "Incorrect",
+          "reason": "No formal SCO currency settlement mechanism exists — de-dollarization within SCO remains aspirational. Individual bilateral arrangements exist, but no SCO-wide multilateral framework has been established."
+        }
+      ],
+      "strong_distractor": "b — Students who know India promotes de-dollarization may think Statement 1 is accurate since India has endorsed de-dollarization — but the critical point is that India's position is rupee (not yuan) oriented, making Statement 1 false.",
+      "elimination_logic": [
+        "Statement 1 claims India 'enthusiastically endorsed yuan-denominated trade' — India promotes rupee settlements and resists yuan dominance. Statement 1 is incorrect.",
+        "Statement 2 accurately links Russia's ruble push to 2022 sanctions — causally and factually correct. Statement 2 is correct.",
+        "Statement 3 claims a formal SCO currency settlement mechanism exists — no such mechanism has been operationalized. Statement 3 is incorrect.",
+        "NOT correct: Statements 1 and 3 → option b (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 1 extends India's support for de-dollarization in principle into a false endorsement of yuan-denominated settlements. India specifically promotes rupee settlements and resists yuan dominance. The distinction between 'supporting de-dollarization' and 'endorsing the yuan' is the precision this question tests.",
+      "final_explanation": "The SCO's de-dollarization discourse involves competing national currency interests that must be distinguished carefully.\n\n• Statement 1 — Incorrect: India's de-dollarization agenda promotes the Indian rupee — not the Chinese yuan. India has actively resisted yuan dominance within SCO trade frameworks, recognizing that replacing dollar dependence with yuan dependence would create a different form of currency vulnerability, this time tied to China.\n• Statement 2 — Correct: Russia's post-2022 SWIFT exclusion and sanctions regime created an urgent practical need for ruble settlements in international (including intra-SCO) trade. This correctly identifies a real causal relationship between sanctions and Russia's SCO currency agenda.\n• Statement 3 — Incorrect: No formal SCO multilateral currency mechanism exists. Individual bilateral arrangements (India-Russia rupee-ruble trades, China-Kazakhstan yuan settlements) exist, but no SCO-wide institutional framework for currency settlement has been established.\n\nValue Addition:\n• India launched rupee-based trade with Russia post-2022 — a bilateral arrangement that aligns with SCO's de-dollarization rhetoric without creating a yuan-dominated framework.\n• The competition between yuan (China's interest) and ruble (Russia's interest) within SCO's de-dollarization discourse mirrors the broader Russia-China rivalry for SCO leadership.\n• BRICS has similarly discussed a common currency — both initiatives remain aspirational without institutional operationalization."
+    },
+    "hi": {
+      "display_text": "SCO ढांचे के भीतर डि-डॉलराइजेशन चर्चाओं के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. भारत ने अपने व्यापक डि-डॉलराइजेशन रणनीति के हिस्से के रूप में SCO ढांचे के भीतर युआन-निर्धारित व्यापार निपटानों का उत्साहपूर्वक समर्थन किया है।\n2. रूस का SCO ढांचे के भीतर रूबल-निर्धारित निपटानों के लिए दबाव 2022 के बाद यूक्रेन में अपनी सैन्य कार्रवाई के बाद लगाए गए पश्चिमी प्रतिबंधों के परिणामस्वरूप तेज हो गया।\n3. SCO ने एक औपचारिक बहुपक्षीय मुद्रा निपटान तंत्र बनाया है जिसके माध्यम से अब सदस्य राज्यों के स्थानीय मुद्राओं में SCO के भीतर व्यापार किया जाता है, न कि अमेरिकी डॉलर में।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 2\n(b) केवल 1 और 3\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India has enthusiastically endorsed yuan-denominated trade settlements within the SCO framework as part of its broader de-dollarization strategy.",
+          "verdict": "गलत",
+          "reason": "भारत रुपया निपटान को बढ़ावा देता है लेकिन SCO व्यापार में युआन प्रभुत्व के प्रति सतर्क — वास्तव में विरोधी — है। युआन प्रचार चीन का एजेंडा है; भारत की डि-डॉलराइजेशन स्थिति विशेष रूप से डॉलर निर्भरता को युआन निर्भरता से बदलने से बचने की है।"
+        },
+        {
+          "statement": "Russia's push for ruble-denominated settlements within the SCO framework intensified after 2022 as a consequence of Western sanctions imposed following its military actions in Ukraine.",
+          "verdict": "सही है",
+          "reason": "2022 के बाद पश्चिमी प्रतिबंधों (जिसमें SWIFT बहिष्कार भी शामिल है) ने सीधे रूस को SCO व्यापार में रूबल निपटान को तेज करने के लिए प्रेरित किया — यह तथ्यात्मक और कारणात्मक रूप से सही कथन है।"
+        },
+        {
+          "statement": "The SCO has created a formal multilateral currency settlement mechanism through which intra-SCO trade is now conducted in member states' local currencies rather than the US dollar.",
+          "verdict": "गलत",
+          "reason": "कोई औपचारिक SCO मुद्रा निपटान तंत्र मौजूद नहीं है — SCO के भीतर डि-डॉलराइजेशन अभी आकांक्षात्मक है। व्यक्तिगत द्विपक्षीय व्यवस्था हैं, लेकिन कोई SCO-व्यापी बहुपक्षीय ढांचा स्थापित नहीं हुआ है।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र जानते हैं कि भारत डि-डॉलराइजेशन को बढ़ावा देता है, वे सोच सकते हैं कि कथन 1 सही है क्योंकि भारत ने डि-डॉलराइजेशन का समर्थन किया है — लेकिन महत्वपूर्ण बिंदु यह है कि भारत की स्थिति रुपया (युआन नहीं) केंद्रित है, जिससे कथन 1 गलत हो जाता है।",
+      "elimination_logic": [
+        "कथन 1 कहता है कि भारत ने 'युआन-निर्धारित व्यापार' का उत्साहपूर्वक समर्थन किया — भारत रुपया निपटान को बढ़ावा देता है और युआन प्रभुत्व का विरोध करता है। अतः कथन 1 गलत है।",
+        "कथन 2 सही है क्योंकि यह रूस के रूबल निपटान के लिए 2022 के प्रतिबंधों से जुड़ाव को सही ढंग से दर्शाता है।",
+        "कथन 3 कहता है कि SCO ने औपचारिक मुद्रा निपटान तंत्र बनाया है — ऐसा कोई तंत्र लागू नहीं हुआ है। अतः कथन 3 गलत है।",
+        "गलत हैं: कथन 1 और 3 → विकल्प b (केवल 1 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 भारत के डि-डॉलराइजेशन समर्थन को सिद्धांत में युआन-निर्धारित निपटानों के झूठे समर्थन में बढ़ा देता है। भारत विशेष रूप से रुपया निपटान को बढ़ावा देता है और युआन प्रभुत्व का विरोध करता है। 'डि-डॉलराइजेशन का समर्थन' और 'युआन का समर्थन' के बीच का अंतर यह प्रश्न परखता है।",
+      "final_explanation": "SCO के डि-डॉलराइजेशन संवाद में प्रतिस्पर्धी राष्ट्रीय मुद्रा हित शामिल हैं जिन्हें सावधानी से अलग करना आवश्यक है।\n\n• कथन 1 — गलत: भारत की डि-डॉलराइजेशन नीति भारतीय रुपया को बढ़ावा देती है — न कि चीनी युआन को। भारत ने SCO व्यापार ढांचों में युआन प्रभुत्व का सक्रिय रूप से विरोध किया है, यह समझते हुए कि डॉलर निर्भरता को युआन निर्भरता से बदलना एक अलग मुद्रा संवेदनशीलता पैदा करेगा, जो इस बार चीन से जुड़ी होगी।\n• कथन 2 — सही: रूस के 2022 के बाद SWIFT बहिष्कार और प्रतिबंधों ने अंतरराष्ट्रीय (जिसमें SCO भी शामिल है) व्यापार में रूबल निपटान की तत्काल व्यावहारिक आवश्यकता पैदा की। यह प्रतिबंधों और रूस के SCO मुद्रा एजेंडे के बीच वास्तविक कारणात्मक संबंध को सही ढंग से दर्शाता है।\n• कथन 3 — गलत: कोई औपचारिक SCO बहुपक्षीय मुद्रा तंत्र मौजूद नहीं है। व्यक्तिगत द्विपक्षीय व्यवस्थाएं (भारत-रूस रुपया-रूबल व्यापार, चीन-कजाखस्तान युआन निपटान) हैं, लेकिन SCO-व्यापी संस्थागत मुद्रा निपटान ढांचा स्थापित नहीं हुआ है।\n\nमूल्य संवर्धन:\n• भारत ने 2022 के बाद रूस के साथ रुपया आधारित व्यापार शुरू किया — एक द्विपक्षीय व्यवस्था जो SCO के डि-डॉलराइजेशन भाषण के अनुरूप है बिना युआन-प्रभुत्व वाला ढांचा बनाए।\n• SCO के डि-डॉलराइजेशन संवाद में युआन (चीन का हित) और रूबल (रूस का हित) के बीच प्रतिस्पर्धा रूस-चीन नेतृत्व के व्यापक प्रतिद्वंद्विता को दर्शाती है।\n• BRICS ने भी सामान्य मुद्रा पर चर्चा की है — दोनों पहलें आकांक्षात्मक हैं और संस्थागत रूप से लागू नहीं हुई हैं।"
+    }
+  },
+  {
+    "uuid": "2e6ba978-59ed-423c-ac9b-15dbdcf988f8",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "SCO",
+      "concepts_used": [
+        "SCO Membership: Full Members, Observers, and Dialogue Partners",
+        "Pakistan-India Dynamics within SCO: Structural Tensions",
+        "RATS: Regional Anti-Terrorist Structure — Mandate and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SCO consensus rule and RATS structural irony with Pakistan",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A full member of a major multilateral security-economic grouping harbours longstanding concerns that a fellow member state hosts and supports non-state actors responsible for cross-border terrorism on its territory. The concerned country wishes to use the grouping's counter-terrorism infrastructure to formally raise these concerns and seeks to build a coalition within the grouping to pressure the accused state. However, the grouping's decision-making architecture and institutional design create significant structural barriers to this objective.\n\nWhich of the following most accurately describes the operative constraints in the situation described above, in the context of the SCO?\n\n(a) The concerned member can invoke Article 5-equivalent provisions to demand collective action against the accused state under SCO's mutual defense framework\n(b) The consensus rule prevents formal isolation of the accused state, and the counter-terrorism coordination body requires all members — including the accused state — to participate as equal partners\n(c) The concerned member can file a formal complaint with RATS, which has adjudicatory authority to investigate and sanction member states for counter-terrorism failures\n(d) The concerned member can take the matter to the SCO's dispute settlement tribunal, which can impose binding resolutions on member states found to have violated the Three Evils framework",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know SCO has counter-terrorism mechanisms may expect India could use RATS to specifically address Pakistan-linked terrorism, choosing option c about formal RATS complaints against Pakistan.",
+      "elimination_logic": [
+        "The scenario describes a country seeking to use a multilateral consensus-based body to take action against a fellow member accused of hosting non-state actors — this maps to India's challenge with Pakistan in SCO/RATS.",
+        "Eliminate option a — SCO's consensus rule means India cannot expel Pakistan; expulsion would require unanimous agreement including Pakistan's own consent.",
+        "Eliminate option c — RATS does not operate as a complaint/adjudication mechanism against member states; it coordinates intelligence among all members including Pakistan.",
+        "Eliminate option d — SCO has no tribunal or dispute settlement body for sovereignty complaints.",
+        "Option b correctly identifies the structural irony: the consensus rule prevents isolating the accused member, and the intelligence-sharing platform includes the accused state — option b is the answer."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap misrepresents RATS as a complaint mechanism against member states when it is an intelligence-coordination body requiring all members (including Pakistan) to participate equally. Students who know India has counter-terrorism grievances against Pakistan within SCO may assume RATS provides a formal channel for such complaints — it does not.",
+      "final_explanation": "The scenario maps to India's structural dilemma within the SCO: seeking to address state-sponsored terrorism concerns against a fellow SCO member (Pakistan) within a consensus-based organization.\n\nOption b correctly captures the operative constraints:\n\n• Option (a): Incorrect — SCO's consensus rule means India cannot expel or isolate Pakistan. Expulsion would require unanimous agreement, including from China (which would veto any such move) and Pakistan itself.\n• Option (b): Correct — The consensus rule prevents formal action against Pakistan, and RATS — the counter-terrorism body — requires all members including Pakistan to participate as equal partners in intelligence sharing. India cannot use RATS as a unilateral complaint mechanism against Pakistan.\n• Option (c): Incorrect — RATS is an intelligence coordination body, not an adjudicatory or complaint-resolution mechanism. It has no authority to investigate or sanction a member state for counter-terrorism failures.\n• Option (d): Incorrect — SCO has no tribunal, arbitration mechanism, or dispute settlement body for sovereignty or security complaints between members.\n\nValue Addition:\n• India-Pakistan foreign ministers have met on the sidelines of SCO summits — an informal Track 1.5 benefit of simultaneous SCO membership.\n• The SCO consensus rule was India's primary negotiating demand before accepting full membership in 2017 — it provides protection from being outvoted.\n• Pakistan's presence in RATS creates an inherent structural contradiction that India must navigate without a formal remedy."
+    },
+    "hi": {
+      "display_text": "एक प्रमुख बहुपक्षीय सुरक्षा-आर्थिक समूह का पूर्ण सदस्य लंबे समय से चिंतित है कि एक साथी सदस्य राज्य उसके क्षेत्र में सीमा पार आतंकवाद के लिए जिम्मेदार गैर-राज्य अभिनेताओं की मेजबानी और समर्थन करता है। संबंधित देश समूह के आतंकवाद-विरोधी ढांचे का उपयोग करके इन चिंताओं को औपचारिक रूप से उठाना चाहता है और आरोपी राज्य पर दबाव बनाने के लिए समूह के भीतर एक गठबंधन बनाना चाहता है। हालांकि, समूह की निर्णय-निर्माण संरचना और संस्थागत डिजाइन इस उद्देश्य के लिए महत्वपूर्ण संरचनात्मक बाधाएं उत्पन्न करते हैं।\n\nनिम्नलिखित में से कौन-सा विकल्प SCO के संदर्भ में ऊपर वर्णित स्थिति में परिचालन बाधाओं का सबसे सटीक वर्णन करता है?\n\n(a) संबंधित सदस्य SCO के पारस्परिक रक्षा ढांचे के तहत आरोपी राज्य के खिलाफ सामूहिक कार्रवाई की मांग के लिए अनुच्छेद 5-समकक्ष प्रावधानों का हवाला दे सकता है\n(b) सर्वसम्मति नियम आरोपी राज्य को औपचारिक रूप से अलग-थलग करने से रोकता है, और आतंकवाद-विरोधी समन्वय निकाय सभी सदस्यों — जिसमें आरोपी राज्य भी शामिल है — को समान भागीदार के रूप में भाग लेने की आवश्यकता होती है\n(c) संबंधित सदस्य RATS के पास आतंकवाद-विरोधी विफलताओं के लिए सदस्य राज्यों की जांच और दंडित करने का न्यायिक अधिकार है, इसलिए वह RATS में औपचारिक शिकायत दर्ज कर सकता है\n(d) संबंधित सदस्य मामले को SCO के विवाद निपटान न्यायाधिकरण तक ले जा सकता है, जो तीन बुराइयों के ढांचे का उल्लंघन करने वाले सदस्य राज्यों पर बाध्यकारी निर्णय लगा सकता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि SCO में आतंकवाद-विरोधी तंत्र है, वे उम्मीद कर सकते हैं कि भारत RATS का उपयोग पाकिस्तान से जुड़े आतंकवाद को विशेष रूप से संबोधित करने के लिए कर सकता है, इसलिए वे विकल्प c को चुनते हैं जिसमें पाकिस्तान के खिलाफ RATS में औपचारिक शिकायत की बात है।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसे देश का वर्णन करता है जो एक बहुपक्षीय सर्वसम्मति-आधारित निकाय का उपयोग करके एक साथी सदस्य के खिलाफ कार्रवाई करना चाहता है, जिस पर गैर-राज्य अभिनेताओं की मेजबानी का आरोप है — यह SCO/RATS में भारत की पाकिस्तान के साथ चुनौती से मेल खाता है।",
+        "विकल्प a को हटाएं — SCO का सर्वसम्मति नियम यह सुनिश्चित करता है कि भारत पाकिस्तान को निष्कासित नहीं कर सकता; निष्कासन के लिए सभी सदस्यों की सहमति आवश्यक है जिसमें पाकिस्तान की अपनी सहमति भी शामिल है।",
+        "विकल्प c को हटाएं — RATS सदस्य राज्यों के खिलाफ शिकायत/निपटान तंत्र के रूप में कार्य नहीं करता; यह सभी सदस्यों सहित पाकिस्तान के बीच खुफिया समन्वय करता है।",
+        "विकल्प d को हटाएं — SCO के पास संप्रभुता शिकायतों के लिए कोई न्यायाधिकरण या विवाद निपटान निकाय नहीं है।",
+        "विकल्प b सही रूप से संरचनात्मक विडंबना को पहचानता है: सर्वसम्मति नियम आरोपी सदस्य को अलग-थलग करने से रोकता है, और खुफिया साझा करने वाला मंच आरोपी राज्य को भी शामिल करता है — अतः विकल्प b उत्तर है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल RATS को सदस्य राज्यों के खिलाफ शिकायत तंत्र के रूप में गलत प्रस्तुत करता है जबकि यह एक खुफिया समन्वय निकाय है जिसमें सभी सदस्य (पाकिस्तान सहित) समान भागीदार के रूप में भाग लेते हैं। जो छात्र जानते हैं कि भारत के पास SCO में पाकिस्तान के खिलाफ आतंकवाद-विरोधी शिकायतें हैं, वे मान सकते हैं कि RATS ऐसे शिकायतों के लिए औपचारिक चैनल प्रदान करता है — ऐसा नहीं है।",
+      "final_explanation": "परिदृश्य SCO के भीतर भारत की संरचनात्मक दुविधा को दर्शाता है: एक सर्वसम्मति-आधारित संगठन में एक साथी SCO सदस्य (पाकिस्तान) के खिलाफ राज्य-प्रायोजित आतंकवाद की चिंताओं को संबोधित करने का प्रयास।\n\nविकल्प b सही रूप से परिचालन बाधाओं को दर्शाता है:\n\n• विकल्प (a): गलत — SCO का सर्वसम्मति नियम भारत को पाकिस्तान को निष्कासित या अलग-थलग करने की अनुमति नहीं देता। निष्कासन के लिए सभी सदस्यों की सहमति आवश्यक है, जिसमें चीन (जो किसी भी ऐसे कदम पर वीटो कर देगा) और पाकिस्तान स्वयं शामिल हैं।\n• विकल्प (b): सही — सर्वसम्मति नियम पाकिस्तान के खिलाफ औपचारिक कार्रवाई को रोकता है, और RATS — आतंकवाद-विरोधी निकाय — सभी सदस्यों सहित पाकिस्तान को खुफिया साझा करने में समान भागीदार के रूप में शामिल करता है। भारत RATS का उपयोग पाकिस्तान के खिलाफ एकतरफा शिकायत तंत्र के रूप में नहीं कर सकता।\n• विकल्प (c): गलत — RATS एक खुफिया समन्वय निकाय है, न कि कोई न्यायिक या शिकायत निपटान तंत्र। इसके पास सदस्य राज्य की आतंकवाद-विरोधी विफलताओं की जांच या दंडित करने का अधिकार नहीं है।\n• विकल्प (d): गलत — SCO के पास संप्रभुता या सुरक्षा शिकायतों के लिए कोई न्यायाधिकरण, मध्यस्थता तंत्र, या विवाद निपटान निकाय नहीं है।\n\nमूल्य संवर्धन:\n• SCO शिखर सम्मेलनों के दौरान भारत-पाक विदेश मंत्री अनौपचारिक ट्रैक 1.5 लाभ के रूप में मिले हैं।\n• SCO का सर्वसम्मति नियम भारत की 2017 में पूर्ण सदस्यता स्वीकार करने से पहले मुख्य वार्ता मांग थी — यह बहुमत से बाहर होने से सुरक्षा प्रदान करता है।\n• RATS में पाकिस्तान की उपस्थिति एक अंतर्निहित संरचनात्मक विरोधाभास पैदा करती है जिसे भारत को औपचारिक समाधान के बिना नेविगेट करना पड़ता है।"
+    }
+  }
+]

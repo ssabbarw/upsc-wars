@@ -50,7 +50,7 @@ class ResultsScreen extends HookConsumerWidget {
             ),
           ),
           data: (r) {
-            final subj = SubjectConstants.bySlug(r.subjectSlug)?.displayName ?? r.subjectSlug;
+            final subj = SubjectConstants.bySlug(r.subject)?.displayName ?? r.subject;
             final totalSpent = r.totalTimeSpentSecs;
             final totalAllowed = r.timeLimitSecs;
             final accColor = _accuracyColor(
@@ -77,9 +77,9 @@ class ResultsScreen extends HookConsumerWidget {
                   children: [
                     _Card(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text(subj, style: AppTextStyles.h1().copyWith(color: scheme.onSurface)),
-                      if (r.topicSlug != null) Padding(
+                      if (r.topic != null) Padding(
                         padding: const EdgeInsets.only(top: AppSpacing.xs),
-                        child: Text(r.topicSlug!, style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant)),
+                        child: Text(r.topic!, style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant)),
                       ),
                       const SizedBox(height: AppSpacing.sm),
                       _ModeBadge(mode: r.mode),

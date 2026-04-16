@@ -3,14 +3,14 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'history_filters_provider.g.dart';
 
 class HistoryFilters {
-  const HistoryFilters({this.subjectSlug, this.mode});
+  const HistoryFilters({this.subject, this.mode});
 
-  final String? subjectSlug;
+  final String? subject;
   final String? mode;
 
-  HistoryFilters copyWith({String? subjectSlug, String? mode, bool clearSubject = false, bool clearMode = false}) {
+  HistoryFilters copyWith({String? subject, String? mode, bool clearSubject = false, bool clearMode = false}) {
     return HistoryFilters(
-      subjectSlug: clearSubject ? null : (subjectSlug ?? this.subjectSlug),
+      subject: clearSubject ? null : (subject ?? this.subject),
       mode: clearMode ? null : (mode ?? this.mode),
     );
   }
@@ -22,6 +22,6 @@ class HistoryFilterState extends _$HistoryFilterState {
   HistoryFilters build() => const HistoryFilters();
 
   void setAll() => state = const HistoryFilters();
-  void setSubject(String? slug) => state = state.copyWith(subjectSlug: slug, clearSubject: slug == null);
+  void setSubject(String? subject) => state = state.copyWith(subject: subject, clearSubject: subject == null);
   void setMode(String? mode) => state = state.copyWith(mode: mode, clearMode: mode == null);
 }

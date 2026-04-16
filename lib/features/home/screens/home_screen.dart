@@ -9,7 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/home_state.dart';
 import '../../../core/providers/catalog_providers.dart';
-import '../../../core/providers/question_db_provider.dart';
+import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -24,7 +24,8 @@ class HomeScreen extends HookConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final home = ref.watch(homeStateProvider);
-    final qdb = ref.watch(questionDbProvider);
+    final totalQuestions = ref.watch(totalQuestionCountProvider);
+    final bootstrap = ref.watch(appBootstrapProvider);
 
     final past200ms = useState(false);
     useEffect(() {
@@ -79,7 +80,7 @@ class HomeScreen extends HookConsumerWidget {
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(AppSpacing.lg),
             children: [
-              if (qdb.hasError)
+              if (bootstrap.hasError)
                 Padding(
                   padding: const EdgeInsets.only(bottom: AppSpacing.md),
                   child: Material(
@@ -158,6 +159,33 @@ class HomeScreen extends HookConsumerWidget {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(height: AppSpacing.md),
+              Material(
+                color: scheme.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(AppRadius.md),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.sm,
+                  ),
+                  child: totalQuestions.when(
+                    data: (count) => Text(
+                      'Temp debug: Total questions in DB = $count',
+                      style: AppTextStyles.bodySm()
+                          .copyWith(color: scheme.onSurface),
+                    ),
+                    loading: () => Text(
+                      'Temp debug: Reading total questions...',
+                      style: AppTextStyles.bodySm()
+                          .copyWith(color: scheme.onSurfaceVariant),
+                    ),
+                    error: (e, _) => Text(
+                      'Temp debug: Failed to read question count: $e',
+                      style: AppTextStyles.bodySm().copyWith(color: AppColors.wrong),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(height: AppSpacing.md),
               home.when(
@@ -447,8 +475,8 @@ class _LastSessionCard extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     if (s == null) return const SizedBox.shrink();
     final subj =
-        SubjectConstants.bySlug(s.subjectSlug)?.displayName ?? s.subjectSlug;
-    final title = s.topicSlug == null ? subj : '$subj · ${s.topicSlug}';
+        SubjectConstants.bySlug(s.subject)?.displayName ?? s.subject;
+    final title = s.topic == null ? subj : '$subj · ${s.topic}';
     final inProgress = s.status == 'in_progress';
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),

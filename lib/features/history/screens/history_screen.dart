@@ -20,7 +20,7 @@ class HistoryScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final filters = ref.watch(historyFilterStateProvider);
     final async = ref.watch(
-      sessionSummariesProvider(subjectSlug: filters.subjectSlug, mode: filters.mode),
+      sessionSummariesProvider(subject: filters.subject, mode: filters.mode),
     );
     final scheme = Theme.of(context).colorScheme;
 
@@ -69,7 +69,7 @@ class HistoryScreen extends HookConsumerWidget {
                       OutlinedButton(
                         onPressed: () => ref.invalidate(
                           sessionSummariesProvider(
-                            subjectSlug: filters.subjectSlug,
+                            subject: filters.subject,
                             mode: filters.mode,
                           ),
                         ),
@@ -85,14 +85,14 @@ class HistoryScreen extends HookConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            filters.subjectSlug == null && filters.mode == null
+                            filters.subject == null && filters.mode == null
                                 ? 'No sessions yet'
                                 : 'No sessions found',
                             style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
                           ),
                           const SizedBox(height: AppSpacing.sm),
                           Text(
-                            filters.subjectSlug == null && filters.mode == null
+                            filters.subject == null && filters.mode == null
                                 ? 'Complete a test to see your history here'
                                 : 'Try changing your filters',
                             style: AppTextStyles.bodySm()
@@ -155,10 +155,10 @@ class _FilterStrip extends HookConsumerWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         children: [
-          pill('All', filters.subjectSlug == null && filters.mode == null, () => ref.read(historyFilterStateProvider.notifier).setAll()),
+          pill('All', filters.subject == null && filters.mode == null, () => ref.read(historyFilterStateProvider.notifier).setAll()),
           const SizedBox(width: AppSpacing.sm),
           for (final s in SubjectConstants.ordered) ...[
-            pill(s.displayName, filters.subjectSlug == s.slug, () => ref.read(historyFilterStateProvider.notifier).setSubject(s.slug)),
+            pill(s.displayName, filters.subject == s.slug, () => ref.read(historyFilterStateProvider.notifier).setSubject(s.slug)),
             const SizedBox(width: AppSpacing.sm),
           ],
           pill('Exam', filters.mode == 'exam', () => ref.read(historyFilterStateProvider.notifier).setMode('exam')),
@@ -179,7 +179,7 @@ class _SessionCard extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final subj = SubjectConstants.bySlug(summary.subjectSlug)?.displayName ?? summary.subjectSlug;
+    final subj = SubjectConstants.bySlug(summary.subject)?.displayName ?? summary.subject;
 
     final modeBg = summary.status == 'abandoned'
         ? scheme.surfaceContainerLow
@@ -240,9 +240,9 @@ class _SessionCard extends HookConsumerWidget {
                           overflow: TextOverflow.ellipsis,
                           style: AppTextStyles.label().copyWith(color: scheme.onSurface),
                         ),
-                        if (summary.topicSlug != null)
+                        if (summary.topic != null)
                           Text(
-                            summary.topicSlug!,
+                            summary.topic!,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: AppTextStyles.bodySm()
@@ -296,7 +296,7 @@ class _SessionCard extends HookConsumerWidget {
                   else
                     OutlinedButton(
                       onPressed: () => context.go(
-                        summary.topicSlug == null
+                        summary.topic == null
                             ? '/subject-test'
                             : '/topic-test',
                       ),

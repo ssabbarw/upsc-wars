@@ -1,0 +1,1311 @@
+[
+  {
+    "uuid": "6de93866-7b20-444e-871c-703c9ff2b095",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Origins and Context of the Mountbatten Plan (June 3rd Plan)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Attlee Declaration February 1947 deadline",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Attlee Declaration of February 1947, which preceded the Mountbatten Plan, specified that Britain would transfer power to Indian hands by:\n\n(a) December 1947, coinciding with the expiry of the existing Constituent Assembly's mandate\n(b) March 1948, following the conclusion of a round-table conference between the Congress and the Muslim League\n(c) June 1948, as the outer limit for British withdrawal from India\n(d) August 1947, the date that was subsequently ratified by the Mountbatten Plan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is a strong distractor because students familiar with Mountbatten associate him with the June 1948 deadline change, confusing the original Attlee Declaration deadline with Mountbatten's revision.",
+      "elimination_logic": [
+        "Eliminate option a: the Attlee Declaration of February 1947 announced Britain's intention to withdraw from India, not a specific constitutional framework.",
+        "Eliminate option b: the Cabinet Mission Plan (1946) is distinct from the Attlee Declaration — they are separate interventions.",
+        "Eliminate option d: August 1947 was the accelerated deadline Mountbatten chose — the Attlee Declaration originally set June 1948.",
+        "Confirm option c: Attlee's February 1947 declaration specified June 1948 as the deadline for British withdrawal, which Mountbatten subsequently advanced."
+      ],
+      "upsc_trap_explanation": "Students frequently conflate the Attlee Declaration (February 1947) with the Mountbatten Plan (June 1947) or with the actual transfer date (August 15, 1947). The trap exploits the existence of three distinct deadlines — June 1948 (Attlee), August 1947 (Mountbatten's revision), and August 15, 1947 (actual transfer) — causing students to assign August 1947 to the Attlee Declaration itself.",
+      "final_explanation": "The Attlee Declaration of February 20, 1947 was the British government's formal announcement that it intended to transfer power to Indian hands no later than June 1948. This set the political clock ticking but provided no structural plan for how power would be transferred.\n\n• Option (a): Incorrect. The Attlee Declaration did not unveil a constitutional framework — it only committed to a withdrawal timeline.\n• Option (b): Incorrect. The Cabinet Mission Plan (1946) preceded the Attlee Declaration and proposed a federated united India with groupings — a distinct exercise.\n• Option (c): Correct. June 1948 was the original deadline stated in the Attlee Declaration. Mountbatten subsequently accelerated this to August 1947 upon assessing the deteriorating communal situation.\n• Option (d): Incorrect. August 1947 was Mountbatten's revised deadline, not Attlee's original commitment.\n\nValue Addition:\n• Lord Wavell was replaced by Mountbatten precisely because Wavell's 'Breakdown Plan' lacked political acceptability.\n• Attlee's Labour government was ideologically committed to Indian independence but faced strategic pressures over Commonwealth membership.\n• The acceleration from June 1948 to August 1947 gave barely 73 days for the Radcliffe Commission to demarcate boundaries."
+    },
+    "hi": {
+      "display_text": "फरवरी 1947 का एटली घोषणा पत्र, जो माउंटबेटन योजना से पहले था, ने यह निर्दिष्ट किया कि ब्रिटेन भारतीय हाथों में सत्ता तब तक सौंप देगा:\n\n(a) दिसंबर 1947, जब मौजूदा संविधान सभा का कार्यकाल समाप्त हो रहा था\n(b) मार्च 1948, कांग्रेस और मुस्लिम लीग के बीच राउंड-टेबल सम्मेलन के बाद\n(c) जून 1948, भारत से ब्रिटिश पीछे हटने की अंतिम सीमा के रूप में\n(d) अगस्त 1947, वह तिथि जिसे बाद में माउंटबेटन योजना द्वारा अनुमोदित किया गया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is a strong distractor because students familiar with Mountbatten associate him with the June 1948 deadline change, confusing the original Attlee Declaration deadline with Mountbatten's revision.",
+      "elimination_logic": [
+        "(a) विकल्प को निरस्त करें — फरवरी 1947 का एटली घोषणा पत्र भारत से ब्रिटेन के पीछे हटने की मंशा बताता है, न कि किसी विशिष्ट संवैधानिक ढांचे को।",
+        "(b) विकल्प को निरस्त करें — कैबिनेट मिशन योजना (1946) एटली घोषणा पत्र से अलग है — ये अलग-अलग हस्तक्षेप हैं।",
+        "(d) विकल्प को निरस्त करें — अगस्त 1947 वह तेज़ किया गया समय था जिसे माउंटबेटन ने चुना था — एटली घोषणा ने मूल रूप से जून 1948 निर्धारित किया था।",
+        "(c) विकल्प सही है — एटली का फरवरी 1947 का घोषणा पत्र ब्रिटिश पीछे हटने की अंतिम सीमा जून 1948 बताता है, जिसे बाद में माउंटबेटन ने आगे बढ़ाया।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर एटली घोषणा (फरवरी 1947) को माउंटबेटन योजना (जून 1947) या वास्तविक सत्ता हस्तांतरण तिथि (15 अगस्त 1947) के साथ भ्रमित कर देते हैं। यह जाल तीन अलग-अलग समय सीमाओं — जून 1948 (एटली), अगस्त 1947 (माउंटबेटन का संशोधन), और 15 अगस्त 1947 (वास्तविक हस्तांतरण) — के कारण बनता है, जिससे छात्र अगस्त 1947 को एटली घोषणा से जोड़ देते हैं।",
+      "final_explanation": "20 फरवरी 1947 का एटली घोषणा पत्र ब्रिटिश सरकार की औपचारिक घोषणा थी कि वह भारतीय हाथों में सत्ता सौंपने का इरादा रखती है, जो जून 1948 से पहले होगा। इसने राजनीतिक घड़ी चालू कर दी लेकिन सत्ता हस्तांतरण के लिए कोई संरचनात्मक योजना नहीं दी।\n\n• विकल्प (a): गलत। एटली घोषणा ने कोई संवैधानिक ढांचा नहीं बताया — केवल पीछे हटने की समय सीमा तय की।\n• विकल्प (b): गलत। कैबिनेट मिशन योजना (1946) एटली घोषणा से पहले थी और एक संघीय भारत का प्रस्ताव रखती थी — यह एक अलग प्रयास था।\n• विकल्प (c): सही। जून 1948 एटली घोषणा में मूल समय सीमा थी। माउंटबेटन ने बाद में साम्प्रदायिक स्थिति बिगड़ने के कारण इसे अगस्त 1947 कर दिया।\n• विकल्प (d): गलत। अगस्त 1947 माउंटबेटन की संशोधित समय सीमा थी, एटली की मूल प्रतिबद्धता नहीं।\n\nमूल्यवर्धन:\n• लॉर्ड वेवेल को माउंटबेटन से बदला गया क्योंकि वेवेल की 'ब्रेकडाउन योजना' राजनीतिक रूप से स्वीकार्य नहीं थी।\n• एटली की लेबर सरकार भारतीय स्वतंत्रता के प्रति वैचारिक रूप से प्रतिबद्ध थी लेकिन राष्ट्रमंडल सदस्यता को लेकर रणनीतिक दबावों का सामना कर रही थी।\n• जून 1948 से अगस्त 1947 की तेजी ने राडक्लिफ आयोग को सीमाओं को चिह्नित करने के लिए मात्र 73 दिन दिए।"
+    }
+  },
+  {
+    "uuid": "6d757f04-e4ec-4fa2-93e1-061faa0b3550",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Referendum Provisions: NWFP and Sylhet",
+        "Sind, Baluchistan, and Bengal Legislative Assembly Votes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Sylhet referendum unique district-level status",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the plebiscitary and assembly-based mechanisms used under the Mountbatten Plan to determine the future of various territories, consider the following statements:\n\n1. The Sylhet referendum was the only district-level referendum held under the Mountbatten Plan, making it unique among all the plebiscitary exercises conducted in 1947.\n2. The Congress party boycotted the NWFP referendum, and as a consequence, the referendum resulted in a vote in favour of joining Pakistan.\n3. Baluchistan's decision to join Pakistan was made through a province-wide referendum similar to the one held in NWFP.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Sylhet referendum was the only district-level referendum held under the Mountbatten Plan, making it unique among all the plebiscitary exercises conducted in 1947.",
+          "verdict": "Correct",
+          "reason": "Unlike NWFP, which was a province-level referendum, Sylhet was a single district within Assam that voted separately on whether to join East Bengal (Pakistan) — the only instance of a district-level referendum in the entire partition process."
+        },
+        {
+          "statement": "The Congress party boycotted the NWFP referendum, and as a consequence, the referendum resulted in a vote in favour of joining Pakistan.",
+          "verdict": "Correct",
+          "reason": "Congress, along with Khan Abdul Ghaffar Khan's Khudai Khidmatgar movement, boycotted the NWFP referendum on the grounds that 'Pakhtunistan' was not an option on the ballot. The referendum still resulted in a majority voting for Pakistan, though voter turnout was significantly reduced."
+        },
+        {
+          "statement": "Baluchistan's decision to join Pakistan was made through a province-wide referendum similar to the one held in NWFP.",
+          "verdict": "Incorrect",
+          "reason": "Baluchistan did not hold a popular referendum. The decision was made by the Shahi Jirga (a traditional non-elected assembly) and the Quetta Municipality — a process criticised for lacking democratic representation."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) is a strong distractor because students who know statements 1 and 2 are correct assume statement 3 must follow the same referendum pattern, not realising Baluchistan used the Shahi Jirga mechanism.",
+      "elimination_logic": [
+        "Verify statement 1: Sylhet was indeed the only district-level vote — NWFP, Sind, Bengal, and Punjab operated at provincial or assembly level. Statement 1 is correct.",
+        "Verify statement 2: Congress did boycott the NWFP referendum, and Pakistan won the vote — both parts of statement 2 are accurate.",
+        "Verify statement 3: Baluchistan never had a popular referendum — the Shahi Jirga, a traditional non-elected body, decided; this disqualifies statement 3.",
+        "Only statements 1 and 2 are correct — select option b."
+      ],
+      "upsc_trap_explanation": "The trap in statement 3 exploits the assumption that all provinces followed the same referendum mechanism. Students who know NWFP held a referendum incorrectly extend this to Baluchistan. The Shahi Jirga is a factual detail that directly contradicts the 'referendum' framing — only students with precise knowledge of Baluchistan's unique procedure will eliminate statement 3.",
+      "final_explanation": "The Mountbatten Plan prescribed different mechanisms for different provinces to decide their future, reflecting ground realities rather than uniform democratic principles.\n\n• Statement 1 — Correct: Sylhet, a district of Assam with a Muslim-majority population, held the only district-level referendum. It voted to merge with East Bengal (Pakistan), altering Assam's composition significantly.\n• Statement 2 — Correct: Congress and the Khudai Khidmatgar boycotted the NWFP referendum, arguing that an independent Pakhtunistan option was absent. The vote proceeded and returned a majority for Pakistan, though the turnout was low due to the boycott.\n• Statement 3 — Incorrect: Baluchistan's accession was decided by the Shahi Jirga, a traditional tribal assembly of non-elected members, alongside the Quetta Municipality — not by a popular referendum. This remains one of the most criticised aspects of the partition process for its democratic deficit.\n\nValue Addition:\n• Khan Abdul Ghaffar Khan, known as 'Frontier Gandhi,' never reconciled with Pakistan's formation and was repeatedly imprisoned by Pakistani authorities.\n• The Sylhet referendum result meant Assam lost a significant Muslim-majority district, reshaping the demographic character of East Pakistan.\n• The Shahi Jirga precedent in Baluchistan later fuelled Baloch nationalist sentiment about the involuntary nature of their accession."
+    },
+    "hi": {
+      "display_text": "माउंटबेटन योजना के तहत विभिन्न क्षेत्रों के भविष्य का निर्धारण करने के लिए उपयोग किए गए जनमत संग्रह और विधानसभा-आधारित तंत्रों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. सिलहट जनमत संग्रह माउंटबेटन योजना के तहत आयोजित एकमात्र जिला-स्तरीय जनमत संग्रह था, जो 1947 में आयोजित सभी जनमत संग्रहों में अद्वितीय था।\n2. कांग्रेस पार्टी ने NWFP जनमत संग्रह का बहिष्कार किया, और परिणामस्वरूप, जनमत संग्रह पाकिस्तान में शामिल होने के पक्ष में मतदान के साथ समाप्त हुआ।\n3. बलूचिस्तान का पाकिस्तान में शामिल होने का निर्णय NWFP में आयोजित प्रांत-व्यापी जनमत संग्रह के समान एक जनमत संग्रह के माध्यम से लिया गया था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Sylhet referendum was the only district-level referendum held under the Mountbatten Plan, making it unique among all the plebiscitary exercises conducted in 1947.",
+          "verdict": "Correct",
+          "reason": "NWFP के विपरीत, जो प्रांत-स्तरीय जनमत संग्रह था, सिलहट असम का एकल जिला था जिसने अलग से मतदान किया कि वह पूर्वी बंगाल (पाकिस्तान) में शामिल होगा या नहीं — यह पूरे विभाजन प्रक्रिया में एकमात्र जिला-स्तरीय जनमत संग्रह था।"
+        },
+        {
+          "statement": "The Congress party boycotted the NWFP referendum, and as a consequence, the referendum resulted in a vote in favour of joining Pakistan.",
+          "verdict": "Correct",
+          "reason": "कांग्रेस ने खान अब्दुल गफ्फार खान के खुदाई खिदमतगार आंदोलन के साथ मिलकर NWFP जनमत संग्रह का बहिष्कार किया क्योंकि 'पख्तूनिस्तान' विकल्प मतपत्र पर नहीं था। इसके बावजूद जनमत संग्रह में पाकिस्तान के पक्ष में बहुमत आया, हालांकि मतदान प्रतिशत काफी कम था।"
+        },
+        {
+          "statement": "Baluchistan's decision to join Pakistan was made through a province-wide referendum similar to the one held in NWFP.",
+          "verdict": "Incorrect",
+          "reason": "बलूचिस्तान ने लोकप्रिय जनमत संग्रह आयोजित नहीं किया। यह निर्णय शाही जिरगा (एक पारंपरिक गैर-चुनी हुई सभा) और क्वेटा नगरपालिका द्वारा लिया गया — इस प्रक्रिया की लोकतांत्रिक प्रतिनिधित्व की कमी के लिए आलोचना हुई।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन सही) एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि कथन 1 और 2 सही हैं, वे मान लेते हैं कि कथन 3 भी उसी जनमत संग्रह पैटर्न का पालन करता है, यह नहीं समझते कि बलूचिस्तान ने शाही जिरगा तंत्र का उपयोग किया।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: सिलहट वास्तव में एकमात्र जिला-स्तरीय मतदान था — NWFP, सिंध, बंगाल और पंजाब प्रांतीय या विधानसभा स्तर पर थे। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: कांग्रेस ने NWFP जनमत संग्रह का बहिष्कार किया, और पाकिस्तान ने मतदान जीता — कथन 2 के दोनों भाग सही हैं।",
+        "कथन 3 सत्यापित करें: बलूचिस्तान ने कभी लोकप्रिय जनमत संग्रह नहीं कराया — निर्णय शाही जिरगा ने लिया; यह कथन 3 को अमान्य करता है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प b चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में जाल इस धारणा का फायदा उठाता है कि सभी प्रांतों ने समान जनमत संग्रह तंत्र अपनाया। जो छात्र जानते हैं कि NWFP ने जनमत संग्रह कराया था, वे इसे बलूचिस्तान पर भी गलत तरीके से लागू करते हैं। शाही जिरगा एक तथ्यात्मक विवरण है जो 'जनमत संग्रह' के फ्रेमिंग के सीधे विरोध में है — केवल वे छात्र जो बलूचिस्तान की विशिष्ट प्रक्रिया को ठीक से जानते हैं, कथन 3 को खारिज करेंगे।",
+      "final_explanation": "माउंटबेटन योजना ने विभिन्न प्रांतों के भविष्य का निर्धारण करने के लिए अलग-अलग तंत्र निर्धारित किए, जो समान लोकतांत्रिक सिद्धांतों के बजाय वास्तविक परिस्थितियों को दर्शाते हैं।\n\n• कथन 1 — सही: सिलहट, असम का एक मुस्लिम बहुल जिला, एकमात्र जिला-स्तरीय जनमत संग्रह था। इसने पूर्वी बंगाल (पाकिस्तान) में विलय के लिए मतदान किया, जिससे असम की संरचना में महत्वपूर्ण बदलाव आया।\n• कथन 2 — सही: कांग्रेस और खुदाई खिदमतगारों ने NWFP जनमत संग्रह का बहिष्कार किया, यह तर्क देते हुए कि स्वतंत्र पख्तूनिस्तान विकल्प नहीं था। मतदान हुआ और पाकिस्तान के पक्ष में बहुमत आया, हालांकि बहिष्कार के कारण मतदान कम था।\n• कथन 3 — गलत: बलूचिस्तान का विलय शाही जिरगा, एक पारंपरिक जनजातीय सभा, और क्वेटा नगरपालिका द्वारा तय किया गया — लोकप्रिय जनमत संग्रह द्वारा नहीं। यह विभाजन प्रक्रिया के सबसे आलोचित पहलुओं में से एक है क्योंकि इसमें लोकतांत्रिक कमी थी।\n\nमूल्य संवर्धन:\n• खान अब्दुल गफ्फार खान, जिन्हें 'फ्रंटियर गांधी' कहा जाता है, पाकिस्तान के गठन से कभी मेल नहीं खा सके और बार-बार पाकिस्तानी अधिकारियों द्वारा जेल में डाले गए।\n• सिलहट जनमत संग्रह के परिणामस्वरूप असम ने एक महत्वपूर्ण मुस्लिम बहुल जिला खो दिया, जिससे पूर्वी पाकिस्तान की जनसांख्यिकीय संरचना बदल गई।\n• बलूचिस्तान में शाही जिरगा की मिसाल ने बाद में बलोच राष्ट्रवादी भावना को बढ़ावा दिया कि उनका विलय अनैच्छिक था।"
+    }
+  },
+  {
+    "uuid": "56738964-6e1c-4eef-ac64-e8738d3fa2be",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Sind, Baluchistan, and Bengal Legislative Assembly Votes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Baluchistan Shahi Jirga non-elected body partition decision",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the procedures used in various provinces under the Mountbatten Plan to determine accession:\n\n1. The Bengal Legislative Assembly met as a single unified body to vote on whether Bengal as a whole should join Pakistan or remain with India.\n2. The Sind Legislative Assembly voted in favour of joining Pakistan without a separate referendum being held among the Sind population.\n3. The Shahi Jirga in Baluchistan, which voted on accession to Pakistan, was a fully elected representative body constituted specifically for this purpose under the Mountbatten Plan.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Bengal Legislative Assembly met as a single unified body to vote on whether Bengal as a whole should join Pakistan or remain with India.",
+          "verdict": "Incorrect",
+          "reason": "The Bengal Legislative Assembly met in two separate parts — members representing predominantly Hindu-majority western districts met separately from members representing Muslim-majority eastern districts. Each part voted independently, leading to the partition of Bengal."
+        },
+        {
+          "statement": "The Sind Legislative Assembly voted in favour of joining Pakistan without a separate referendum being held among the Sind population.",
+          "verdict": "Correct",
+          "reason": "Unlike NWFP and Sylhet, Sind did not hold a popular referendum. The Sind Legislative Assembly itself voted on the question of joining Pakistan, and the assembly voted in favour — no separate plebiscite was conducted."
+        },
+        {
+          "statement": "The Shahi Jirga in Baluchistan, which voted on accession to Pakistan, was a fully elected representative body constituted specifically for this purpose under the Mountbatten Plan.",
+          "verdict": "Incorrect",
+          "reason": "The Shahi Jirga was a traditional, non-elected tribal assembly — not a constituted elected body. Its use was widely criticised as undemocratic. The Quetta Municipality also participated, but neither constituted a universal franchise exercise."
+        }
+      ],
+      "strong_distractor": "a — Option a is a strong distractor because students who correctly identify statement 1 as incorrect may assume statement 3 is correct, not knowing that the Shahi Jirga was non-elected.",
+      "elimination_logic": [
+        "Evaluate statement 1: the Bengal assembly did NOT meet as a unified body — it met in two separate parts by regional composition. Statement 1 is incorrect.",
+        "Evaluate statement 2: Sind did vote through its Legislative Assembly without a referendum — this is factually accurate. Statement 2 is correct.",
+        "Evaluate statement 3: the Shahi Jirga was a traditional tribal assembly, not an elected body created under the Mountbatten Plan. Statement 3 is incorrect.",
+        "Statements 1 and 3 are NOT correct — select option b."
+      ],
+      "upsc_trap_explanation": "Statement 3 conflates 'traditional assembly' with 'elected representative body.' Students who know a body called 'Shahi Jirga' made the decision for Baluchistan may assume it was constituted properly for this purpose, not recognising its non-elected, customary character. Statement 1 traps students who know Bengal was partitioned but forget the procedural detail that the assembly met in two separate parts rather than one combined sitting.",
+      "final_explanation": "The Mountbatten Plan prescribed province-specific procedures rather than a uniform mechanism, creating procedural variation that is a frequent UPSC testing area.\n\n• Statement 1 — Incorrect: The Bengal Legislative Assembly did not meet as a single unified body. Members from the western (Hindu-majority) districts met separately from members of the eastern (Muslim-majority) districts. The western members voted for partition and remaining with India; the eastern members voted for joining Pakistan — thus confirming the partition of Bengal.\n• Statement 2 — Correct: Sind used its Legislative Assembly as the decision-making body. The assembly voted to join Pakistan, and no separate public referendum was conducted in Sind.\n• Statement 3 — Incorrect: The Shahi Jirga was a traditional, non-elected tribal institution — not a democratically constituted assembly created for this purpose. Its use drew criticism as it did not reflect universal franchise.\n\nValue Addition:\n• The Punjab Legislative Assembly similarly met in two parts, with western Punjab voting for Pakistan and eastern Punjab voting to remain with India.\n• The use of existing legislatures (rather than referendums) in Bengal, Punjab, and Sind was designed to speed up the process under Mountbatten's accelerated timeline.\n• Balochistan's undemocratic accession process remains a grievance cited by Baloch nationalist movements to this day."
+    },
+    "hi": {
+      "display_text": "माउंटबेटन योजना के तहत विभिन्न प्रांतों में प्रवेश निर्धारण के लिए उपयोग की गई प्रक्रियाओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बंगाल विधान सभा एक एकीकृत निकाय के रूप में मिली कि बंगाल को संपूर्ण रूप से पाकिस्तान में शामिल होना चाहिए या भारत में रहना चाहिए, इस पर मतदान करने के लिए।\n2. सिंध विधान सभा ने पाकिस्तान में शामिल होने के पक्ष में मतदान किया बिना सिंध की जनता के बीच कोई अलग जनमत संग्रह कराए।\n3. बलूचिस्तान में शाही जिरगा, जिसने पाकिस्तान में शामिल होने पर मतदान किया, एक पूर्णतः निर्वाचित प्रतिनिधि निकाय थी जो विशेष रूप से इस उद्देश्य के लिए माउंटबेटन योजना के तहत गठित की गई थी।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Bengal Legislative Assembly met as a single unified body to vote on whether Bengal as a whole should join Pakistan or remain with India.",
+          "verdict": "गलत",
+          "reason": "बंगाल विधान सभा दो अलग-अलग भागों में मिली — पश्चिमी हिंदू-बहुल जिलों के सदस्य और पूर्वी मुस्लिम-बहुल जिलों के सदस्य अलग-अलग मिले। प्रत्येक भाग ने स्वतंत्र रूप से मतदान किया, जिससे बंगाल का विभाजन हुआ।"
+        },
+        {
+          "statement": "The Sind Legislative Assembly voted in favour of joining Pakistan without a separate referendum being held among the Sind population.",
+          "verdict": "सही है",
+          "reason": "NWFP और सिलेहत के विपरीत, सिंध में कोई लोकप्रिय जनमत संग्रह नहीं हुआ। सिंध विधान सभा ने ही पाकिस्तान में शामिल होने के प्रश्न पर मतदान किया, और विधानसभा ने समर्थन दिया — कोई अलग जनमत संग्रह आयोजित नहीं किया गया।"
+        },
+        {
+          "statement": "The Shahi Jirga in Baluchistan, which voted on accession to Pakistan, was a fully elected representative body constituted specifically for this purpose under the Mountbatten Plan.",
+          "verdict": "गलत",
+          "reason": "शाही जिरगा एक पारंपरिक, गैर-निर्वाचित जनजातीय सभा थी — यह कोई निर्वाचित निकाय नहीं थी। इसका उपयोग व्यापक रूप से गैर-लोकतांत्रिक माना गया। क्वेटा नगरपालिका भी इसमें शामिल थी, लेकिन दोनों ने सार्वभौमिक मताधिकार का अभ्यास नहीं किया।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 1 को गलत पहचानते हैं वे मान सकते हैं कि कथन 3 सही है, यह न जानते हुए कि शाही जिरगा गैर-निर्वाचित थी।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: बंगाल विधानसभा एकीकृत निकाय के रूप में नहीं मिली — यह क्षेत्रीय संरचना के अनुसार दो भागों में मिली। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: सिंध ने जनमत संग्रह के बिना अपनी विधान सभा के माध्यम से मतदान किया — यह तथ्यात्मक रूप से सही है। कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: शाही जिरगा एक पारंपरिक जनजातीय सभा थी, जो माउंटबेटन योजना के तहत गठित निर्वाचित निकाय नहीं थी। कथन 3 गलत है।",
+        "कथन 1 और 3 सही नहीं हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 'पारंपरिक सभा' को 'निर्वाचित प्रतिनिधि निकाय' के साथ भ्रमित करता है। जो छात्र जानते हैं कि बलूचिस्तान के लिए 'शाही जिरगा' ने निर्णय लिया था, वे मान सकते हैं कि इसे इस उद्देश्य के लिए सही ढंग से गठित किया गया था, यह न जानते हुए कि यह गैर-निर्वाचित, परंपरागत था। कथन 1 उन छात्रों को फंसाता है जो जानते हैं कि बंगाल विभाजित हुआ था लेकिन भूल जाते हैं कि विधानसभा एक संयुक्त बैठक के बजाय दो अलग-अलग भागों में मिली थी।",
+      "final_explanation": "माउंटबेटन योजना ने एक समान प्रक्रिया के बजाय प्रांत-विशिष्ट प्रक्रियाएँ निर्धारित कीं, जिससे प्रक्रियात्मक विविधता आई जो UPSC में अक्सर परीक्षण का विषय होती है।\n\n• कथन 1 — गलत: बंगाल विधान सभा एक एकीकृत निकाय के रूप में नहीं मिली। पश्चिमी (हिंदू-बहुल) जिलों के सदस्य पूर्वी (मुस्लिम-बहुल) जिलों के सदस्यों से अलग मिले। पश्चिमी सदस्यों ने विभाजन और भारत में रहने के पक्ष में मतदान किया; पूर्वी सदस्यों ने पाकिस्तान में शामिल होने के पक्ष में मतदान किया — इस प्रकार बंगाल के विभाजन की पुष्टि हुई।\n• कथन 2 — सही: सिंध ने निर्णय लेने वाली निकाय के रूप में अपनी विधान सभा का उपयोग किया। विधानसभा ने पाकिस्तान में शामिल होने के पक्ष में मतदान किया, और सिंध में कोई अलग सार्वजनिक जनमत संग्रह आयोजित नहीं किया गया।\n• कथन 3 — गलत: शाही जिरगा एक पारंपरिक, गैर-निर्वाचित जनजातीय संस्था थी — यह इस उद्देश्य के लिए लोकतांत्रिक रूप से गठित सभा नहीं थी। इसके उपयोग की आलोचना हुई क्योंकि यह सार्वभौमिक मताधिकार को प्रतिबिंबित नहीं करता था।\n\nमूल्यवर्धन:\n• पंजाब विधान सभा भी दो भागों में मिली, जिसमें पश्चिमी पंजाब ने पाकिस्तान के पक्ष में और पूर्वी पंजाब ने भारत में रहने के पक्ष में मतदान किया।\n• बंगाल, पंजाब और सिंध में मौजूदा विधानसभाओं का उपयोग (जनमत संग्रह के बजाय) माउंटबेटन की तेज़ प्रक्रिया के तहत किया गया था।\n• बलूचिस्तान की गैर-लोकतांत्रिक प्रवेश प्रक्रिया आज भी बलूच राष्ट्रवादी आंदोलनों द्वारा एक शिकायत के रूप में उद्धृत की जाती है।"
+    }
+  },
+  {
+    "uuid": "797f9f50-ac06-409c-9572-5d031ae3b2c9",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Comparison: Mountbatten Plan vs. Cabinet Mission Plan — Key Differences",
+        "Key Provisions of the Mountbatten Plan: Partition Principle"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Cabinet Mission vs Mountbatten Plan structural differences",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Feature) with List II (Plan it belongs to or describes):",
+        "columns": [
+          "List I (Feature)",
+          "List II (Description / Plan Attribution)"
+        ],
+        "rows": [
+          [
+            "A. Cabinet Mission Plan's stance on two-nation theory",
+            "1. Created two separate sovereign dominions with dominion status within the Commonwealth"
+          ],
+          [
+            "B. Mountbatten Plan's core partition mechanism",
+            "2. Explicitly rejected partition and proposed a three-tier federal united India with provincial groupings"
+          ],
+          [
+            "C. Cabinet Mission's approach to princely states",
+            "3. Declared lapse of British paramountcy, leaving states free to accede to either dominion"
+          ],
+          [
+            "D. Mountbatten Plan's approach to princely states",
+            "4. Proposed an advisory committee to negotiate integration of states into the federal union"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-2, B-1, C-3, D-4\n(c) A-1, B-2, C-4, D-3\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because students may correctly place A-2 (Cabinet Mission rejecting two-nation theory) but then incorrectly match B-1 (confusing the grouping scheme with Mountbatten's dominion formula), leading them to option b.",
+      "elimination_logic": [
+        "Match A: The Cabinet Mission Plan explicitly rejected the two-nation theory and proposed a united India with groupings — matches description 2.",
+        "Match B: The Mountbatten Plan created two separate sovereign dominions with dominion status — matches description 1.",
+        "Match C: The Cabinet Mission's treatment of princely states involved an advisory committee on states within the federal structure — matches description 4.",
+        "Match D: The Mountbatten Plan declared the lapse of British paramountcy, leaving states free to accede — matches description 3.",
+        "Correct matching: A-2, B-1, C-4, D-3 → option a."
+      ],
+      "upsc_trap_explanation": "The trap lies in conflating the two plans' approaches to princely states. Students who know paramountcy lapsed under the Mountbatten Plan may incorrectly assign it to the Cabinet Mission column. Similarly, the 'grouping scheme' and 'federal structure' sound like they could belong to either plan to a surface-level reader. Precise knowledge of which plan did what is essential.",
+      "final_explanation": "The Cabinet Mission Plan (1946) and Mountbatten Plan (1947) represent fundamentally different approaches to Indian independence — one seeking unity, the other managing division.\n\nCorrect matches:\n• A (Cabinet Mission) — 2: The Cabinet Mission explicitly rejected the two-nation theory and proposed a three-tier federal structure with provinces grouped into sections, keeping India united.\n• B (Mountbatten Plan) — 1: The Mountbatten Plan operationalised partition by creating two separate dominions — India and Pakistan — both within the British Commonwealth, with dominion status rather than full immediate independence.\n• C (Cabinet Mission — Princely States) — 4: The Cabinet Mission proposed an advisory committee to negotiate the relationship between princely states and the proposed union, integrating them into the federal scheme.\n• D (Mountbatten Plan — Princely States) — 3: The Mountbatten Plan announced that British paramountcy would lapse on the date of independence, leaving each princely state technically free to choose between accession to India, Pakistan, or independence.\n\nValue Addition:\n• Congress rejected the Cabinet Mission's grouping scheme because Group B and Group C would have given Muslim League effective control over large territories.\n• Paramountcy lapsing without automatic merger created the crises of Hyderabad, Junagadh, and Kashmir.\n• Both plans accepted dominion status, but the Cabinet Mission envisaged a single dominion while Mountbatten created two."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (विशेषता) को सूची II (योजना जिसके अंतर्गत या जिसका वर्णन है) से मिलाएं:",
+        "columns": [
+          "सूची I (विशेषता)",
+          "सूची II (विवरण / योजना का श्रेय)"
+        ],
+        "rows": [
+          [
+            "A. कैबिनेट मिशन योजना का दो-राष्ट्र सिद्धांत पर रुख",
+            "1. राष्ट्रमंडल के भीतर डोमिनियन स्थिति के साथ दो अलग संप्रभु डोमिनियन बनाए"
+          ],
+          [
+            "B. माउंटबेटन योजना की मुख्य विभाजन प्रक्रिया",
+            "2. स्पष्ट रूप से विभाजन को खारिज किया और प्रांतीय समूहों के साथ तीन-स्तरीय संघीय एकीकृत भारत का प्रस्ताव दिया"
+          ],
+          [
+            "C. कैबिनेट मिशन का रियासतों के प्रति दृष्टिकोण",
+            "3. ब्रिटिश सर्वोच्चता के समाप्त होने की घोषणा की, जिससे राज्य स्वतंत्र रूप से किसी भी डोमिनियन में सम्मिलित हो सकते हैं"
+          ],
+          [
+            "D. माउंटबेटन योजना का रियासतों के प्रति दृष्टिकोण",
+            "4. राज्यों को संघीय संघ में एकीकृत करने के लिए एक सलाहकार समिति का प्रस्ताव दिया"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-2, B-1, C-3, D-4\n(c) A-1, B-2, C-4, D-3\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र सही रूप से A-2 (कैबिनेट मिशन द्वारा दो-राष्ट्र सिद्धांत का खंडन) को सही स्थान पर रख सकते हैं लेकिन फिर B-1 को गलत तरीके से मिलाते हैं (माउंटबेटन के डोमिनियन सूत्र के साथ समूह योजना को भ्रमित करते हुए), जिससे वे विकल्प b पर पहुँचते हैं।",
+      "elimination_logic": [
+        "A से मेल करें: कैबिनेट मिशन योजना ने स्पष्ट रूप से दो-राष्ट्र सिद्धांत को खारिज किया और समूहों के साथ एक संयुक्त भारत का प्रस्ताव दिया — विवरण 2 से मेल खाता है।",
+        "B से मेल करें: माउंटबेटन योजना ने दो अलग-अलग संप्रभु डोमिनियनों का निर्माण किया जिनके पास डोमिनियन स्थिति थी — विवरण 1 से मेल खाता है।",
+        "C से मेल करें: कैबिनेट मिशन का रियासतों के प्रति दृष्टिकोण संघीय संरचना के भीतर राज्यों पर एक सलाहकार समिति शामिल करता था — विवरण 4 से मेल खाता है।",
+        "D से मेल करें: माउंटबेटन योजना ने ब्रिटिश सर्वोच्चता के समाप्त होने की घोषणा की, जिससे राज्य स्वतंत्र रूप से सम्मिलित होने के लिए मुक्त हो गए — विवरण 3 से मेल खाता है।",
+        "सही मिलान: A-2, B-1, C-4, D-3 → विकल्प a।"
+      ],
+      "upsc_trap_explanation": "फंदा रियासतों के प्रति दोनों योजनाओं के दृष्टिकोण को मिलाने में है। जो छात्र जानते हैं कि माउंटबेटन योजना के तहत सर्वोच्चता समाप्त हो गई थी, वे इसे गलत तरीके से कैबिनेट मिशन कॉलम में डाल सकते हैं। इसी तरह, 'समूह योजना' और 'संघीय संरचना' दोनों योजनाओं के लिए सतही पाठक को समान लग सकते हैं। यह जानना आवश्यक है कि कौन-सी योजना क्या करती है।",
+      "final_explanation": "कैबिनेट मिशन योजना (1946) और माउंटबेटन योजना (1947) भारतीय स्वतंत्रता के लिए मौलिक रूप से भिन्न दृष्टिकोण प्रस्तुत करती हैं — एक एकता चाहता है, दूसरा विभाजन को प्रबंधित करता है।\n\nसही मिलान:\n• A (कैबिनेट मिशन) — 2: कैबिनेट मिशन ने स्पष्ट रूप से दो-राष्ट्र सिद्धांत को खारिज किया और तीन-स्तरीय संघीय संरचना का प्रस्ताव दिया जिसमें प्रांतों को समूहों में बांटा गया, जिससे भारत एकजुट रहा।\n• B (माउंटबेटन योजना) — 1: माउंटबेटन योजना ने विभाजन को लागू किया, दो अलग डोमिनियन — भारत और पाकिस्तान — बनाए, दोनों ब्रिटिश राष्ट्रमंडल के भीतर, पूर्ण तत्काल स्वतंत्रता के बजाय डोमिनियन स्थिति के साथ।\n• C (कैबिनेट मिशन — रियासतें) — 4: कैबिनेट मिशन ने रियासतों और प्रस्तावित संघ के बीच संबंधों पर बातचीत के लिए एक सलाहकार समिति का प्रस्ताव दिया, उन्हें संघीय योजना में शामिल किया।\n• D (माउंटबेटन योजना — रियासतें) — 3: माउंटबेटन योजना ने घोषणा की कि स्वतंत्रता की तारीख पर ब्रिटिश सर्वोच्चता समाप्त हो जाएगी, जिससे प्रत्येक रियासत तकनीकी रूप से भारत, पाकिस्तान या स्वतंत्रता के बीच चुनाव करने के लिए स्वतंत्र हो जाएगी।\n\nमूल्य संवर्धन:\n• कांग्रेस ने कैबिनेट मिशन की समूह योजना को इसलिए अस्वीकार किया क्योंकि समूह B और समूह C मुस्लिम लीग को बड़े क्षेत्रों पर प्रभावी नियंत्रण दे देते।\n• सर्वोच्चता का समाप्त होना बिना स्वचालित विलय के हैदराबाद, जूनागढ़ और कश्मीर के संकटों का कारण बना।\n• दोनों योजनाओं ने डोमिनियन स्थिति को स्वीकार किया, लेकिन कैबिनेट मिशन ने एकल डोमिनियन की कल्पना की जबकि माउंटबेटन ने दो बनाए।"
+    }
+  },
+  {
+    "uuid": "2860ccbe-7939-4cd8-adc7-4793f6dbca53",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Mountbatten's Dual Role: Last Viceroy and First Governor-General of India"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Jinnah as Pakistan Governor-General two-dominion theory significance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): India and Pakistan each had a separate Governor-General after independence — Mountbatten for India and Jinnah for Pakistan — rather than a single shared Governor-General for both dominions.\n\nReason (R): Jinnah preferred the role of Governor-General over Prime Minister for Pakistan because, under dominion status, the Governor-General exercised real executive authority and Jinnah sought maximum personal control over Pakistan's critical early governance.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students correctly identify both A and R as factually true and assume causal connection, not recognising that Jinnah's motivation was political consolidation of power, not a philosophical statement about the two-nation theory.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Jinnah became Pakistan's first Governor-General while Mountbatten became India's first Governor-General; they were separate appointments.",
+        "Step 2: Is Reason (R) correct? — Yes. Jinnah did want maximum executive authority over Pakistan in its critical early months, and becoming Governor-General (which held real executive power under dominion status) rather than Prime Minister served this goal.",
+        "Step 3: Does R causally explain A? — No. R explains why Jinnah chose the Governor-General role over Prime Minister, but A simply states the fact that separate Governors-General were appointed. R does not explain why separate appointments were made — that follows from the plan's two-dominion structure. The causal link is broken.",
+        "A correct + R correct + R does NOT explain A → option b... wait: re-reading — A states the fact of separate GGs; R explains Jinnah's personal motivation for taking the GG role. R explains Jinnah's individual decision, not the structural fact that there were separate GGs. → option b."
+      ],
+      "upsc_trap_explanation": "Both A and R are independently true. The trap is that R (Jinnah's desire for executive authority) feels like it explains A (separate Governor-Generals). But A is a structural provision of the Mountbatten Plan — two dominions naturally required two Governors-General. R explains Jinnah's personal choice within that structure, not the structure itself. Students who verify both as true immediately pick option a without testing the causal link.",
+      "final_explanation": "The appointment of separate Governors-General for India and Pakistan was a direct consequence of the two-dominion structure in the Mountbatten Plan. Under dominion status, the Governor-General exercised significant constitutional authority — not a merely ceremonial role.\n\nAssertion (A): Factually correct. Mountbatten became India's first Governor-General, while Jinnah chose to become Pakistan's first Governor-General. This was structurally required by the two-dominion arrangement.\n\nReason (R): Factually correct. Jinnah rejected the initial suggestion that Mountbatten serve as a common Governor-General for both dominions, partly because he wanted direct personal control over Pakistan's formative governance. As Governor-General under dominion status, he held real executive authority, unlike the largely ceremonial Prime Minister position in Westminster systems.\n\nCausal link: R does not explain A. A (the existence of separate Governors-General) flows from the plan's two-dominion structure, not from Jinnah's personal motivation. R explains Jinnah's choice within the arrangement — a different causal chain from the arrangement's origin.\n\nValue Addition:\n• Jinnah died in September 1948, only thirteen months after becoming Pakistan's Governor-General.\n• Mountbatten's dual role (plan negotiator and then Governor-General) created a conflict of interest — his influence on Nehru's Kashmir decision (UN referral) is attributed to this proximity.\n• Under dominion status, the Governor-General could reserve bills for Crown approval — a real constitutional power, not merely symbolic."
+    },
+    "hi": {
+      "display_text": "कथन (A): स्वतंत्रता के बाद भारत और पाकिस्तान के लिए अलग-अलग गवर्नर-जनरल थे — भारत के लिए माउंटबेटन और पाकिस्तान के लिए जिन्ना — न कि दोनों डोमिनियनों के लिए एक साझा गवर्नर-जनरल।\n\nकारण (R): जिन्ना ने पाकिस्तान के लिए प्रधानमंत्री की तुलना में गवर्नर-जनरल की भूमिका को प्राथमिकता दी क्योंकि डोमिनियन स्थिति के तहत गवर्नर-जनरल के पास वास्तविक कार्यकारी अधिकार था और जिन्ना पाकिस्तान के महत्वपूर्ण प्रारंभिक शासन पर अधिकतम व्यक्तिगत नियंत्रण चाहते थे।\n\n(a) A और R दोनों सही हैं तथा R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं परंतु R, A की सही व्याख्या नहीं है\n(c) A सही है परंतु R गलत है\n(d) A गलत है परंतु R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र दोनों A और R को तथ्यात्मक रूप से सही मानते हैं और कारणात्मक संबंध मान लेते हैं, यह न समझते हुए कि जिन्ना की प्रेरणा राजनीतिक सत्ता के एकीकरण की थी, न कि दो-राष्ट्र सिद्धांत के बारे में दार्शनिक कथन।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। जिन्ना पाकिस्तान के पहले गवर्नर-जनरल बने जबकि माउंटबेटन भारत के पहले गवर्नर-जनरल बने; ये अलग-अलग नियुक्तियाँ थीं।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। जिन्ना पाकिस्तान के महत्वपूर्ण प्रारंभिक महीनों में अधिकतम कार्यकारी अधिकार चाहते थे, और गवर्नर-जनरल बनना (जिसके पास डोमिनियन स्थिति के तहत वास्तविक कार्यकारी शक्ति थी) प्रधानमंत्री बनने की तुलना में इस लक्ष्य की पूर्ति करता था।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — नहीं। R यह बताता है कि जिन्ना ने गवर्नर-जनरल की भूमिका क्यों चुनी, लेकिन A केवल यह तथ्य बताता है कि अलग-अलग गवर्नर-जनरल नियुक्त किए गए थे। R यह नहीं बताता कि अलग-अलग नियुक्तियाँ क्यों की गईं — यह योजना की दो-डोमिनियन संरचना से आता है। कारणात्मक संबंध टूट गया है।",
+        "A सही + R सही + R, A को नहीं समझाता → विकल्प b... रीडिंग दोबारा — A अलग-अलग गवर्नर-जनरल होने का तथ्य बताता है; R जिन्ना की व्यक्तिगत प्रेरणा बताता है। R जिन्ना के व्यक्तिगत निर्णय को समझाता है, न कि संरचनात्मक तथ्य को कि अलग-अलग गवर्नर-जनरल थे। → विकल्प b।"
+      ],
+      "upsc_trap_explanation": "A और R दोनों स्वतंत्र रूप से सही हैं। जाल यह है कि R (जिन्ना की कार्यकारी अधिकार की इच्छा) ऐसा लगता है कि A (अलग गवर्नर-जनरल) को समझाता है। लेकिन A माउंटबेटन योजना की संरचनात्मक व्यवस्था है — दो डोमिनियन होने के कारण स्वाभाविक रूप से दो गवर्नर-जनरल होंगे। R जिन्ना के व्यक्तिगत चुनाव को उस संरचना के भीतर समझाता है, न कि संरचना को। जो छात्र दोनों को सही मानते हैं, वे बिना कारणात्मक संबंध जांचे तुरंत विकल्प a चुन लेते हैं।",
+      "final_explanation": "भारत और पाकिस्तान के लिए अलग-अलग गवर्नर-जनरल नियुक्त करना माउंटबेटन योजना की दो-डोमिनियन संरचना का प्रत्यक्ष परिणाम था। डोमिनियन स्थिति के तहत, गवर्नर-जनरल के पास महत्वपूर्ण संवैधानिक अधिकार होते थे — केवल सांकेतिक भूमिका नहीं।\n\nकथन (A): तथ्यात्मक रूप से सही। माउंटबेटन भारत के पहले गवर्नर-जनरल बने, जबकि जिन्ना ने पाकिस्तान के पहले गवर्नर-जनरल बनने का विकल्प चुना। यह दो-डोमिनियन व्यवस्था के कारण आवश्यक था।\n\nकारण (R): तथ्यात्मक रूप से सही। जिन्ना ने प्रारंभ में माउंटबेटन को दोनों डोमिनियनों के लिए सामान्य गवर्नर-जनरल बनने का सुझाव अस्वीकार कर दिया, क्योंकि वे पाकिस्तान के प्रारंभिक शासन पर व्यक्तिगत नियंत्रण चाहते थे। डोमिनियन स्थिति के तहत गवर्नर-जनरल के पास वास्तविक कार्यकारी अधिकार था, जो वेस्टमिंस्टर प्रणाली में प्रधानमंत्री की मुख्यतः सांकेतिक भूमिका से अलग था।\n\nकारणात्मक संबंध: R, A को नहीं समझाता। A (अलग गवर्नर-जनरल का होना) योजना की दो-डोमिनियन संरचना से आता है, न कि जिन्ना की व्यक्तिगत प्रेरणा से। R जिन्ना के उस चुनाव को समझाता है जो उसने उस व्यवस्था के भीतर किया — जो व्यवस्था की उत्पत्ति से अलग कारणात्मक श्रृंखला है।\n\nमूल्यवर्धन:\n• जिन्ना सितंबर 1948 में निधन हो गए, केवल तेरह महीने बाद जब वे पाकिस्तान के गवर्नर-जनरल बने।\n• माउंटबेटन की द्वैध भूमिका (योजना वार्ताकार और फिर गवर्नर-जनरल) में हितों का टकराव था — नेहरू के कश्मीर निर्णय (संयुक्त राष्ट्र संदर्भ) पर उनका प्रभाव इसी निकटता को माना जाता है।\n• डोमिनियन स्थिति के तहत, गवर्नर-जनरल बिलों को क्राउन की मंजूरी के लिए रिजर्व कर सकता था — यह एक वास्तविक संवैधानिक शक्ति थी, केवल प्रतीकात्मक नहीं।"
+    }
+  },
+  {
+    "uuid": "5f1139d0-859f-446d-8244-ac558056f75e",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Accelerated Timeline: June 1947 Announcement vs. June 1948 Original Deadline",
+        "Role and Powers of the Boundary Commissions (Radcliffe Commission)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Chronology of partition events 1946-1947",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of events leading to Indian independence and partition?\n\n1. Cabinet Mission Plan\n2. Direct Action Day\n3. Attlee Declaration (February 1947)\n4. Mountbatten Plan (June 3, 1947)\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 3 → 2 → 4\n(c) 1 → 2 → 4 → 3\n(d) 1 → 2 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because students who know the Direct Action Day and Cabinet Mission are both 1946 events may incorrectly sequence them, or place the Mountbatten Plan announcement before Attlee's declaration.",
+      "elimination_logic": [
+        "Anchor the earliest event: Cabinet Mission Plan was presented in May 1946 — this must come first.",
+        "Direct Action Day was August 16, 1946 — after the Cabinet Mission but before Attlee's February 1947 declaration.",
+        "Attlee's declaration of February 1947 followed the breakdown of the Cabinet Mission negotiations.",
+        "Mountbatten Plan was announced June 3, 1947 — after all three preceding events; Radcliffe Award followed in August 1947.",
+        "Correct sequence: Cabinet Mission (1946) → Direct Action Day (August 1946) → Attlee Declaration (February 1947) → Mountbatten Plan (June 3, 1947) → option d."
+      ],
+      "upsc_trap_explanation": "The trap is in the precise sequencing of the Direct Action Day relative to the Attlee Declaration. Students who remember both as 1946-1947 events sometimes place the Attlee Declaration before Direct Action Day, not realising that Direct Action Day (August 16, 1946) preceded Attlee's announcement (February 20, 1947) — and indeed, the communal violence of Direct Action Day was part of what made Attlee's February announcement urgent.",
+      "final_explanation": "The sequence of events leading to partition follows a clear causal chain where each development made the next more inevitable.\n\nCorrect sequence: Cabinet Mission Plan → Direct Action Day → Attlee Declaration → Mountbatten Plan (June 3, 1947)\n\n• Cabinet Mission Plan (May 1946): Britain's last attempt to keep India united through a three-tier federal structure. Its failure set the stage for partition.\n• Direct Action Day (August 16, 1946): Called by Jinnah to demonstrate Muslim League's resolve. The Great Calcutta Killings followed, triggering a spiral of communal violence that made the British urgency to leave more acute.\n• Attlee Declaration (February 20, 1947): Britain announced withdrawal by June 1948 and replaced Wavell with Mountbatten — signalling the end of British mediation and beginning of partition planning.\n• Mountbatten Plan (June 3, 1947): The actual partition blueprint, accepted by Congress, Muslim League, and the Sikh representatives, followed by the Indian Independence Act.\n\nWhy each wrong option fails:\n• Option a reverses the Cabinet Mission and Direct Action Day — Cabinet Mission came first.\n• Option b places Attlee Declaration before Direct Action Day — incorrect.\n• Option c inverts the Mountbatten Plan and Attlee Declaration positions.\n\nValue Addition:\n• The 'Great Calcutta Killings' (August 1946) saw approximately 4,000 deaths in four days — a defining moment in pushing partition forward.\n• Wavell's 'Breakdown Plan' (for orderly British withdrawal) was rejected as too pessimistic — leading to his replacement by Mountbatten.\n• The interval between the Mountbatten Plan (June 3) and independence (August 15) was only 73 days."
+    },
+    "hi": {
+      "display_text": "भारतीय स्वतंत्रता और विभाजन की ओर ले जाने वाली घटनाओं का सही कालानुक्रमिक क्रम निम्नलिखित में से कौन-सा है?\n\n1. कैबिनेट मिशन योजना\n2. डायरेक्ट एक्शन डे\n3. एटली घोषणा (फरवरी 1947)\n4. माउंटबेटन योजना (3 जून 1947)\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 3 → 2 → 4\n(c) 1 → 2 → 4 → 3\n(d) 1 → 2 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र डायरेक्ट एक्शन डे और कैबिनेट मिशन दोनों को 1946 की घटनाएँ जानते हैं, वे इन्हें गलत क्रम में रख सकते हैं, या माउंटबेटन योजना की घोषणा को एटली की घोषणा से पहले रख सकते हैं।",
+      "elimination_logic": [
+        "सबसे प्रारंभिक घटना को आधार बनाएं: कैबिनेट मिशन योजना मई 1946 में प्रस्तुत हुई — यह सबसे पहले आनी चाहिए।",
+        "डायरेक्ट एक्शन डे 16 अगस्त 1946 था — कैबिनेट मिशन के बाद लेकिन एटली की फरवरी 1947 की घोषणा से पहले।",
+        "एटली की फरवरी 1947 की घोषणा कैबिनेट मिशन वार्ताओं के विफल होने के बाद आई।",
+        "माउंटबेटन योजना 3 जून 1947 को घोषित हुई — ये तीनों घटनाओं के बाद; रैडक्लिफ पुरस्कार अगस्त 1947 में आया।",
+        "सही क्रम: कैबिनेट मिशन (1946) → डायरेक्ट एक्शन डे (अगस्त 1946) → एटली घोषणा (फरवरी 1947) → माउंटबेटन योजना (3 जून 1947) → विकल्प d।"
+      ],
+      "upsc_trap_explanation": "फंदा डायरेक्ट एक्शन डे और एटली घोषणा के सटीक क्रम में है। जो छात्र दोनों को 1946-1947 की घटनाएँ याद रखते हैं, वे कभी-कभी एटली घोषणा को डायरेक्ट एक्शन डे से पहले रख देते हैं, यह समझे बिना कि डायरेक्ट एक्शन डे (16 अगस्त 1946) एटली की घोषणा (20 फरवरी 1947) से पहले था — और वास्तव में, डायरेक्ट एक्शन डे की सांप्रदायिक हिंसा ने एटली की फरवरी की घोषणा को आवश्यक बना दिया था।",
+      "final_explanation": "विभाजन की ओर ले जाने वाली घटनाओं की श्रृंखला स्पष्ट कारणात्मक क्रम का पालन करती है जहाँ प्रत्येक विकास ने अगले को और अधिक अनिवार्य बना दिया।\n\nसही क्रम: कैबिनेट मिशन योजना → डायरेक्ट एक्शन डे → एटली घोषणा → माउंटबेटन योजना (3 जून 1947)\n\n• कैबिनेट मिशन योजना (मई 1946): भारत को तीन-स्तरीय संघीय संरचना के माध्यम से एकजुट रखने का ब्रिटेन का अंतिम प्रयास। इसकी विफलता ने विभाजन की राह प्रशस्त की।\n• डायरेक्ट एक्शन डे (16 अगस्त 1946): मुस्लिम लीग के संकल्प को दिखाने के लिए जिन्ना द्वारा बुलाया गया। इसके बाद ग्रेट कोलकाता हत्याकांड हुआ, जिसने सांप्रदायिक हिंसा की श्रृंखला शुरू की और ब्रिटिशों के जल्द जाने की आवश्यकता को बढ़ा दिया।\n• एटली घोषणा (20 फरवरी 1947): ब्रिटेन ने जून 1948 तक वापसी की घोषणा की और वेवेल की जगह माउंटबेटन को नियुक्त किया — जो ब्रिटिश मध्यस्थता के अंत और विभाजन की योजना की शुरुआत का संकेत था।\n• माउंटबेटन योजना (3 जून 1947): वास्तविक विभाजन की रूपरेखा, जिसे कांग्रेस, मुस्लिम लीग और सिख प्रतिनिधियों ने स्वीकार किया, इसके बाद भारतीय स्वतंत्रता अधिनियम आया।\n\nप्रत्येक गलत विकल्प क्यों असफल है:\n• विकल्प a में कैबिनेट मिशन और डायरेक्ट एक्शन डे का क्रम उलट दिया गया है — कैबिनेट मिशन पहले आया।\n• विकल्प b में एटली घोषणा को डायरेक्ट एक्शन डे से पहले रखा गया है — गलत।\n• विकल्प c में माउंटबेटन योजना और एटली घोषणा की स्थिति उलट दी गई है।\n\nमूल्यवर्धन:\n• 'ग्रेट कोलकाता हत्याकांड' (अगस्त 1946) में लगभग 4,000 लोग चार दिनों में मारे गए — विभाजन को आगे बढ़ाने वाला निर्णायक क्षण।\n• वेवेल की 'ब्रेकडाउन योजना' (ब्रिटिशों की सुव्यवस्थित वापसी के लिए) को बहुत निराशावादी मानकर अस्वीकार कर दिया गया — जिसके कारण माउंटबेटन को नियुक्त किया गया।\n• माउंटबेटन योजना (3 जून) और स्वतंत्रता (15 अगस्त) के बीच केवल 73 दिन का अंतर था।"
+    }
+  },
+  {
+    "uuid": "25d099e2-a25c-4302-8efe-4e65736a3a43",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Princely States and the Mountbatten Plan: Lapse of Paramountcy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Lapse of paramountcy accession choice princely states",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following scenario:\n\nA princely state with a Hindu-majority population and a Muslim ruler was geographically surrounded by Indian territory. Its ruler wished to remain fully independent and not accede to either dominion. Under the provisions of the Mountbatten Plan regarding princely states, which of the following best describes the legal position of such a state on August 15, 1947?\n\n(a) The state was required to accede to the geographically contiguous dominion automatically, as the Mountbatten Plan mandated integration based on geographic contiguity.\n(b) The lapse of British paramountcy left the state legally free to accede to India, Pakistan, or remain independent, as the plan imposed no compulsion on accession.\n(c) The state could negotiate continued independent status with the British Crown under a new treaty, since paramountcy was replaced by a revised framework of Crown protections.\n(d) A referendum of the state's population was mandatory before any accession decision could be formalised, as the plan required democratic endorsement in all princely states.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students who know Patel integrated most states may assume that accession was automatic or mandatory under the Mountbatten Plan itself, not realising that the plan only declared the lapse of paramountcy — the coercive integration was a subsequent political exercise.",
+      "elimination_logic": [
+        "Identify the constitutional principle: the Mountbatten Plan declared British paramountcy would lapse — states were not automatically merged into either dominion.",
+        "Eliminate option a: the plan did not compel automatic accession — integration was a subsequent political and administrative exercise led by Patel, not a provision of the plan itself.",
+        "Eliminate option c: the plan did not provide for an independent sovereign status as a third recognised option with ongoing British treaty protections — paramountcy lapsed entirely.",
+        "Eliminate option d: the plan did not require a referendum in each state — that was specific only to NWFP and Sylhet.",
+        "Confirm option b: upon lapse of paramountcy, each state was legally free to accede to India, Pakistan, or theoretically remain independent — the plan gave them this choice without compelling any specific outcome."
+      ],
+      "upsc_trap_explanation": "Option a exploits students who know Patel ultimately achieved near-total integration and assume this was mandated by the Mountbatten Plan. The distinction between what the plan provided (lapse of paramountcy + free choice) and what Patel accomplished (coercive diplomatic integration) is a classic UPSC trap of conflating the plan's text with its political implementation.",
+      "final_explanation": "The Mountbatten Plan's treatment of approximately 565 princely states was deliberately left open-ended, which created the integration problem that Sardar Patel's States Ministry subsequently had to resolve.\n\nApplicable principle: The plan declared that British paramountcy — the legal framework under which Britain had suzerainty over princely states — would lapse on the date of independence. This did not mean states were absorbed into India or Pakistan. It meant the treaty relationships simply ended, leaving states in a legal vacuum.\n\nMapping to the scenario: A state like the fictional Rampur kingdom would be left free to choose accession to India, accession to Pakistan, or nominal independence — the plan itself imposed no compulsion.\n\n• Option (a): Incorrect. Automatic accession to the geographically contiguous dominion was not a provision of the plan — this was Patel's subsequent political argument, not the plan's legal text.\n• Option (b): Correct. The lapse of paramountcy meant states were legally free to accede to either dominion or remain independent, though British advice strongly favoured accession.\n• Option (c): Incorrect. Independent sovereign status with continued British treaty protection was not available — paramountcy lapsed entirely, eliminating British treaty obligations.\n• Option (d): Incorrect. Referendums were specific to NWFP and Sylhet; no such universal requirement applied to princely states.\n\nValue Addition:\n• Patel used the instrument of accession, economic blockade threats, and military force (Hyderabad) to integrate states — tools beyond the plan's provisions.\n• Junagadh's ruler acceded to Pakistan despite geographic contiguity with India — demonstrating that 'free choice' was real, if politically untenable.\n• The plan's silence on population-transfer for states contributed to the Kashmir crisis when Maharaja Hari Singh delayed his decision."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित परिदृश्य पर विचार करें:\n\nएक रियासत जिसकी आबादी हिंदू बहुलक है और शासक मुस्लिम है, वह भारतीय क्षेत्र से भौगोलिक रूप से घिरी हुई है। उसका शासक पूरी तरह स्वतंत्र रहना चाहता है और किसी भी डोमिनियन में प्रवेश नहीं करना चाहता। माउंटबैटन योजना के प्रावधानों के अनुसार, 15 अगस्त 1947 को ऐसी रियासत की कानूनी स्थिति का सबसे उपयुक्त वर्णन क्या होगा?\n\n(a) योजना के अनुसार भौगोलिक निकटता के आधार पर राज्य को स्वचालित रूप से संबंधित डोमिनियन में प्रवेश करना अनिवार्य था।\n(b) ब्रिटिश सर्वोच्चता के समाप्त होने से राज्य कानूनी रूप से भारत, पाकिस्तान में प्रवेश करने या स्वतंत्र रहने के लिए स्वतंत्र था, योजना ने प्रवेश पर कोई बाध्यता नहीं लगाई।\n(c) राज्य ब्रिटिश क्राउन के साथ एक नई संधि के तहत स्वतंत्र स्थिति के लिए बातचीत कर सकता था, क्योंकि सर्वोच्चता को एक संशोधित क्राउन संरक्षण ढांचे से बदला गया था।\n(d) किसी भी प्रवेश निर्णय को औपचारिक बनाने से पहले राज्य की आबादी का जनमत संग्रह अनिवार्य था, क्योंकि योजना ने सभी रियासतों में लोकतांत्रिक समर्थन की आवश्यकता रखी थी।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students who know Patel integrated most states may assume that accession was automatic or mandatory under the Mountbatten Plan itself, not realising that the plan only declared the lapse of paramountcy — the coercive integration was a subsequent political exercise.",
+      "elimination_logic": [
+        "संवैधानिक सिद्धांत की पहचान करें: माउंटबैटन योजना ने ब्रिटिश सर्वोच्चता के समाप्त होने की घोषणा की — राज्यों को स्वचालित रूप से किसी भी डोमिनियन में विलयित नहीं किया गया।",
+        "(a) विकल्प को निरस्त करें: योजना ने स्वचालित प्रवेश को अनिवार्य नहीं किया — एकीकरण बाद की राजनीतिक और प्रशासनिक प्रक्रिया थी जो पटेल के नेतृत्व में हुई, योजना का प्रावधान नहीं।",
+        "(c) विकल्प को निरस्त करें: योजना ने ब्रिटिश संधि संरक्षण के साथ स्वतंत्र संप्रभु स्थिति को तीसरे विकल्प के रूप में मान्यता नहीं दी — सर्वोच्चता पूरी तरह समाप्त हो गई।",
+        "(d) विकल्प को निरस्त करें: योजना ने प्रत्येक राज्य में जनमत संग्रह की आवश्यकता नहीं रखी — यह केवल NWFP और सिलेहत के लिए विशिष्ट था।",
+        "(b) विकल्प की पुष्टि करें: सर्वोच्चता समाप्त होने पर, प्रत्येक राज्य कानूनी रूप से भारत, पाकिस्तान में प्रवेश करने या सैद्धांतिक रूप से स्वतंत्र रहने के लिए स्वतंत्र था — योजना ने उन्हें यह विकल्प दिया बिना किसी बाध्यता के।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) उन छात्रों को भ्रमित करता है जो जानते हैं कि पटेल ने लगभग सभी राज्यों को एकीकृत किया था और मान लेते हैं कि यह माउंटबैटन योजना द्वारा अनिवार्य था। योजना के प्रावधान (सर्वोच्चता का समाप्त होना + स्वतंत्र विकल्प) और पटेल द्वारा की गई राजनीतिक एकीकरण के बीच का अंतर UPSC की एक क्लासिक जालसाजी है।",
+      "final_explanation": "माउंटबैटन योजना ने लगभग 565 रियासतों के साथ व्यवहार जानबूझकर खुला रखा, जिससे एकीकरण की समस्या उत्पन्न हुई जिसे बाद में सरदार पटेल के राज्यों के मंत्रालय को हल करना पड़ा।\n\nलागू सिद्धांत: योजना ने घोषणा की कि ब्रिटिश सर्वोच्चता — वह कानूनी ढांचा जिसके तहत ब्रिटेन की रियासतों पर अधिपत्य था — स्वतंत्रता की तारीख पर समाप्त हो जाएगी। इसका अर्थ यह नहीं था कि राज्य भारत या पाकिस्तान में समाहित हो जाएंगे। इसका अर्थ था कि संधि संबंध समाप्त हो जाएंगे, जिससे राज्य कानूनी शून्य में रह जाएंगे।\n\nपरिदृश्य से मेल: रामपुर जैसे काल्पनिक राज्य को भारत में प्रवेश, पाकिस्तान में प्रवेश, या नाममात्र स्वतंत्रता का विकल्प स्वतंत्र रूप से चुनने के लिए छोड़ दिया जाएगा — योजना ने कोई बाध्यता नहीं लगाई।\n\n• विकल्प (a): गलत। भौगोलिक निकटता के आधार पर स्वचालित प्रवेश योजना का प्रावधान नहीं था — यह पटेल का बाद का राजनीतिक तर्क था, योजना का कानूनी पाठ नहीं।\n• विकल्प (b): सही। सर्वोच्चता के समाप्त होने का अर्थ था कि राज्य कानूनी रूप से किसी भी डोमिनियन में प्रवेश करने या स्वतंत्र रहने के लिए स्वतंत्र थे, हालांकि ब्रिटिश सलाह प्रवेश के पक्ष में थी।\n• विकल्प (c): गलत। ब्रिटिश संधि संरक्षण के साथ स्वतंत्र संप्रभु स्थिति उपलब्ध नहीं थी — सर्वोच्चता पूरी तरह समाप्त हो गई, जिससे ब्रिटिश संधि दायित्व समाप्त हुए।\n• विकल्प (d): गलत। जनमत संग्रह केवल NWFP और सिलेहत के लिए विशिष्ट था; रियासतों पर ऐसा सार्वभौमिक नियम लागू नहीं था।\n\nमूल्य संवर्धन:\n• पटेल ने प्रवेश के उपकरण, आर्थिक नाकेबंदी की धमकियाँ, और सैन्य बल (हैदराबाद) का उपयोग करके राज्यों को एकीकृत किया — योजना के प्रावधानों से परे उपकरण।\n• जूनागढ़ के शासक ने पाकिस्तान में प्रवेश किया जबकि वह भारत के भौगोलिक निकट था — यह दर्शाता है कि 'स्वतंत्र विकल्प' वास्तविक था, भले ही राजनीतिक रूप से अस्वीकार्य था।\n• योजना की चुप्पी ने राज्यों के लिए जनसंख्या स्थानांतरण पर कश्मीर संकट में योगदान दिया जब महाराजा हरि सिंह ने अपना निर्णय स्थगित किया।"
+    }
+  },
+  {
+    "uuid": "4e0e2f6a-9d3f-4da3-830a-397b8d9bc7dc",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Division of Military Assets and the Armed Forces Reconstitution Committee"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Military assets division 64:36 ratio India Pakistan",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the arrangements for dividing military assets between the two new dominions following the Mountbatten Plan, the Armed Forces Reconstitution Committee agreed on a division ratio of ________ (India : Pakistan) for military assets including equipment, ordnance, and stores.\n\n(a) 50 : 50\n(b) 64 : 36\n(c) 70 : 30\n(d) 80 : 20",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (70:30) is a strong distractor because students who know India received the larger share may estimate a ratio close to 70:30 — a round-number approximation that feels plausible but is incorrect.",
+      "elimination_logic": [
+        "Recall that the military assets division was not equal — India, as the successor state with larger territory and population, received the larger share.",
+        "Eliminate option a (50:50): division was explicitly unequal.",
+        "Eliminate option c (70:30): this overstates India's share and is not the agreed ratio.",
+        "Eliminate option d (80:20): further overstates India's share.",
+        "Confirm option b (64:36): the division formula agreed upon was approximately 64% for India and 36% for Pakistan — a ratio derived from proportional assessment of the armed forces."
+      ],
+      "upsc_trap_explanation": "The 64:36 ratio is a precise numerical fact that rewards specific preparation. Students who know India got more but not the exact ratio will gravitate toward the intuitive-sounding 70:30 or default to 50:50 as a 'safe' guess. The trap exploits the tendency to substitute a plausible round number for a precise historical figure.",
+      "final_explanation": "The division of military assets between India and Pakistan was one of the most contentious aspects of the partition process, governed by a formula agreed upon by the Armed Forces Reconstitution Committee.\n\n• Option (a) — 50:50: Incorrect. Equal division was not the basis — India, as the larger successor state, received a proportionally larger share.\n• Option (b) — 64:36: Correct. The agreed ratio was approximately 64% for India and 36% for Pakistan, reflecting proportional assessment based on the size of the divided forces and territories.\n• Option (c) — 70:30: Incorrect. A common approximation error; the actual ratio gave Pakistan a larger share than 30%.\n• Option (d) — 80:20: Incorrect. This significantly overstates India's share.\n\nValue Addition:\n• Field Marshal Claude Auchinleck was appointed Supreme Commander during the transitional period to oversee the division — his role ended in November 1947.\n• Pakistan alleged it did not receive its full 36% share, contributing to early bilateral mistrust.\n• The Royal Indian Navy and Royal Indian Air Force divisions were also contested — the RIN mutiny of 1946 had already destabilised naval cohesion before partition."
+    },
+    "hi": {
+      "display_text": "माउंटबेटन योजना के बाद दो नए डोमिनियनों के बीच सैन्य संपत्तियों के विभाजन के प्रावधानों के तहत, सशस्त्र बल पुनर्गठन समिति ने सैन्य संपत्तियों जैसे उपकरण, आयुध और भंडार के लिए ________ (भारत : पाकिस्तान) के विभाजन अनुपात पर सहमति व्यक्त की।\n\n(a) 50 : 50\n(b) 64 : 36\n(c) 70 : 30\n(d) 80 : 20",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (70:30) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि भारत को बड़ा हिस्सा मिला था वे 70:30 के करीब अनुपात का अनुमान लगा सकते हैं — जो एक सहज लेकिन गलत गोल संख्या है।",
+      "elimination_logic": [
+        "स्मरण करें कि सैन्य संपत्तियों का विभाजन समान नहीं था — भारत, जो बड़ा क्षेत्र और जनसंख्या वाला उत्तराधिकारी राज्य था, को बड़ा हिस्सा मिला।",
+        "विकल्प a (50:50) को निरस्त करें: विभाजन स्पष्ट रूप से असमान था।",
+        "विकल्प c (70:30) को निरस्त करें: यह भारत के हिस्से को अधिक दर्शाता है और सहमति वाला अनुपात नहीं है।",
+        "विकल्प d (80:20) को निरस्त करें: यह भारत के हिस्से को और अधिक बढ़ा-चढ़ाकर दर्शाता है।",
+        "विकल्प b (64:36) की पुष्टि करें: सहमति वाला विभाजन लगभग 64% भारत के लिए और 36% पाकिस्तान के लिए था — यह अनुपात सशस्त्र बलों के आनुपातिक मूल्यांकन से निकला था।"
+      ],
+      "upsc_trap_explanation": "64:36 का अनुपात एक सटीक संख्यात्मक तथ्य है जो विशिष्ट तैयारी को पुरस्कृत करता है। जो छात्र जानते हैं कि भारत को अधिक मिला लेकिन सही अनुपात नहीं जानते, वे सहज लगने वाले 70:30 या सुरक्षित अनुमान के रूप में 50:50 की ओर झुक सकते हैं। यह जाल एक सटीक ऐतिहासिक आंकड़े के स्थान पर एक संभावित गोल संख्या लगाने की प्रवृत्ति का लाभ उठाता है।",
+      "final_explanation": "माउंटबेटन योजना के बाद दो नए डोमिनियनों के बीच सैन्य संपत्तियों के विभाजन में सबसे विवादास्पद पहलुओं में से एक था, जिसे सशस्त्र बल पुनर्गठन समिति द्वारा सहमति से निर्धारित सूत्र द्वारा नियंत्रित किया गया था।\n\n• विकल्प (a) — 50:50: गलत। समान विभाजन आधार नहीं था — भारत, बड़े उत्तराधिकारी राज्य के रूप में, आनुपातिक रूप से बड़ा हिस्सा मिला।\n• विकल्प (b) — 64:36: सही। सहमति वाला अनुपात लगभग 64% भारत के लिए और 36% पाकिस्तान के लिए था, जो विभाजित बलों और क्षेत्रों के आकार के आधार पर आनुपातिक मूल्यांकन को दर्शाता है।\n• विकल्प (c) — 70:30: गलत। एक सामान्य अनुमान त्रुटि; वास्तविक अनुपात पाकिस्तान को 30% से अधिक हिस्सा देता था।\n• विकल्प (d) — 80:20: गलत। यह भारत के हिस्से को काफी अधिक दर्शाता है।\n\nमूल्य संवर्धन:\n• फील्ड मार्शल क्लॉड ऑचिनलेक को संक्रमणकालीन अवधि के दौरान सुप्रीम कमांडर नियुक्त किया गया था ताकि विभाजन की निगरानी कर सकें — उनकी भूमिका नवंबर 1947 में समाप्त हुई।\n• पाकिस्तान ने आरोप लगाया कि उसे पूरा 36% हिस्सा नहीं मिला, जिससे प्रारंभिक द्विपक्षीय अविश्वास बढ़ा।\n• रॉयल इंडियन नेवी और रॉयल इंडियन एयर फोर्स के विभाजन भी विवादित थे — 1946 की RIN बगावत ने विभाजन से पहले नौसेना की एकता को अस्थिर कर दिया था।"
+    }
+  },
+  {
+    "uuid": "3a83a479-b9a6-40c0-9a20-e3ff5904f26f",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Division of Financial Assets and the Reserve Bank of India's Transitional Role"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Gandhi fast Rs 75 crore payment Pakistan financial dispute",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched in the context of financial and economic disputes following the Mountbatten Plan and partition?\n\n(a) Gandhi's January 1948 fast — Pressure to halt Indian military operations in Kashmir\n(b) RBI's transitional role — Pakistan established its own central bank immediately after August 15, 1947, ending RBI's dual role\n(c) Rs. 75 crore payment dispute — Gandhi's fast pressured the Indian government to release Pakistan's withheld share of financial assets\n(d) Nehru-Liaquat Pact (1950) — Agreement dividing British India's public debt and financial reserves between the two dominions",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because Gandhi's fast is well known, but students may associate it with a Hindu-Muslim harmony cause in Calcutta rather than the specific Rs. 75 crore payment dispute — the financial dimension is less frequently recalled.",
+      "elimination_logic": [
+        "Evaluate option a: Gandhi did fast in January 1948, but associating it specifically with halting military operations in Kashmir is incorrect — it was about payment to Pakistan and communal harmony in Delhi.",
+        "Evaluate option b: the RBI did serve both dominions initially, but Pakistan established its State Bank in July 1948 — not 'immediately after August 1947.'",
+        "Evaluate option c: Gandhi's January 1948 fast is correctly paired with pressure to release the Rs. 75 crore payment to Pakistan that the Indian government had initially withheld — this is the correctly matched pair.",
+        "Evaluate option d: Nehru-Liaquat Pact was 1950 (about minority rights), not a financial assets agreement — incorrect pairing."
+      ],
+      "upsc_trap_explanation": "Students know Gandhi fasted in January 1948 but often associate it with communal harmony or the Kashmir situation. The specific connection to the Rs. 75 crore financial dispute (India had withheld the payment amid the Kashmir war) is a precise detail. Option a exploits this by offering a plausible but incorrect cause for the fast.",
+      "final_explanation": "The financial partition of British India was among the most contentious post-independence disputes, with the Rs. 75 crore payment becoming politically explosive.\n\n• Option (a): Incorrectly matched. Gandhi's January 1948 fast was not about halting Kashmir military operations — it was about communal violence in Delhi and the release of Pakistan's share of financial assets, including the disputed Rs. 75 crore.\n• Option (b): Incorrectly matched. The RBI did serve as the monetary authority for both dominions initially, but the State Bank of Pakistan was established in July 1948 — approximately eleven months after independence, not immediately.\n• Option (c): Correctly matched. Gandhi undertook his fast in January 1948 in part to pressure the Indian government to release Rs. 75 crore to Pakistan — a payment India had withheld after the Kashmir war began. The government, following Gandhi's fast, agreed to release the funds.\n• Option (d): Incorrectly matched. The Nehru-Liaquat Pact (1950) addressed minority rights in both countries — it was not a financial assets agreement.\n\nValue Addition:\n• Gandhi's January 13, 1948 fast (his last fast) ended after the Indian government agreed to release the funds — he was assassinated 17 days later on January 30, 1948.\n• The withholding of Rs. 75 crore was justified by India partly on grounds of the ongoing Kashmir conflict — making it a fusion of military and financial disputes.\n• Division of public debt and pension liabilities for British Indian civil servants also formed part of the financial partition negotiations."
+    },
+    "hi": {
+      "display_text": "माउंटबैटन योजना और विभाजन के बाद वित्तीय और आर्थिक विवादों के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) गांधी का जनवरी 1948 का उपवास — कश्मीर में भारतीय सैन्य कार्रवाई रोकने का दबाव\n(b) आरबीआई की संक्रमणकालीन भूमिका — पाकिस्तान ने 15 अगस्त 1947 के तुरंत बाद अपना केंद्रीय बैंक स्थापित कर आरबीआई की दोहरी भूमिका समाप्त कर दी\n(c) 75 करोड़ रुपये के भुगतान विवाद — गांधी के उपवास ने भारतीय सरकार पर दबाव डाला कि वह पाकिस्तान के रोके गए वित्तीय हिस्से को जारी करे\n(d) नेहरू-लियाकत संधि (1950) — ब्रिटिश भारत के सार्वजनिक ऋण और वित्तीय भंडार को दोनों डोमिनियनों के बीच विभाजित करने का समझौता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because Gandhi's fast is well known, but students may associate it with a Hindu-Muslim harmony cause in Calcutta rather than the specific Rs. 75 crore payment dispute — the financial dimension is less frequently recalled.",
+      "elimination_logic": [
+        "(a) विकल्प का मूल्यांकन करें: गांधी ने जनवरी 1948 में उपवास किया था, लेकिन इसे विशेष रूप से कश्मीर में सैन्य कार्रवाई रोकने से जोड़ना गलत है — यह पाकिस्तान को भुगतान और दिल्ली में सांप्रदायिक सद्भाव के बारे में था।",
+        "(b) विकल्प का मूल्यांकन करें: आरबीआई ने प्रारंभ में दोनों डोमिनियनों की सेवा की थी, लेकिन पाकिस्तान ने जुलाई 1948 में अपना स्टेट बैंक स्थापित किया था — अगस्त 1947 के तुरंत बाद नहीं।",
+        "(c) विकल्प का मूल्यांकन करें: गांधी के जनवरी 1948 के उपवास को सही रूप से उस दबाव के साथ जोड़ा गया है जिससे भारतीय सरकार ने पाकिस्तान को आरक्षित 75 करोड़ रुपये की राशि जारी की — यह सही मेल जोड़ी है।",
+        "(d) विकल्प का मूल्यांकन करें: नेहरू-लियाकत संधि 1950 की थी (अल्पसंख्यक अधिकारों के बारे में), यह वित्तीय संपत्ति समझौता नहीं था — गलत मेल जोड़ी।"
+      ],
+      "upsc_trap_explanation": "छात्र जानते हैं कि गांधी ने जनवरी 1948 में उपवास किया था लेकिन अक्सर इसे सांप्रदायिक सद्भाव या कश्मीर की स्थिति से जोड़ते हैं। 75 करोड़ रुपये के वित्तीय विवाद से विशेष संबंध (भारत ने कश्मीर युद्ध के बीच भुगतान रोका था) एक सटीक विवरण है। विकल्प (a) इस भ्रम का लाभ उठाता है और उपवास के लिए एक संभावित लेकिन गलत कारण प्रस्तुत करता है।",
+      "final_explanation": "ब्रिटिश भारत के वित्तीय विभाजन को स्वतंत्रता के बाद के सबसे विवादास्पद मुद्दों में से एक माना जाता है, जिसमें 75 करोड़ रुपये का भुगतान राजनीतिक रूप से संवेदनशील बन गया।\n\n• विकल्प (a): गलत मेल जोड़ी। गांधी का जनवरी 1948 का उपवास कश्मीर में सैन्य कार्रवाई रोकने के लिए नहीं था — यह दिल्ली में सांप्रदायिक हिंसा और पाकिस्तान के वित्तीय हिस्से, जिसमें विवादित 75 करोड़ रुपये शामिल थे, की रिहाई के लिए था।\n• विकल्प (b): गलत मेल जोड़ी। आरबीआई ने प्रारंभ में दोनों डोमिनियनों के लिए मौद्रिक प्राधिकरण के रूप में कार्य किया, लेकिन पाकिस्तान का स्टेट बैंक जुलाई 1948 में स्थापित हुआ — स्वतंत्रता के लगभग ग्यारह महीने बाद, तुरंत नहीं।\n• विकल्प (c): सही मेल जोड़ी। गांधी ने जनवरी 1948 में उपवास किया ताकि भारतीय सरकार पर दबाव डाला जा सके कि वह पाकिस्तान को 75 करोड़ रुपये जारी करे — यह भुगतान भारत ने कश्मीर युद्ध शुरू होने के बाद रोका था। गांधी के उपवास के बाद सरकार ने राशि जारी करने पर सहमति दी।\n• विकल्प (d): गलत मेल जोड़ी। नेहरू-लियाकत संधि (1950) दोनों देशों में अल्पसंख्यक अधिकारों से संबंधित थी — यह वित्तीय संपत्ति समझौता नहीं था।\n\nमूल्य संवर्धन:\n• गांधी का 13 जनवरी 1948 का उपवास (उनका अंतिम उपवास) तब समाप्त हुआ जब भारतीय सरकार ने राशि जारी करने पर सहमति दी — उन्हें 17 दिन बाद 30 जनवरी 1948 को हत्या कर दी गई।\n• 75 करोड़ रुपये की रोकथाम को भारत ने आंशिक रूप से कश्मीर संघर्ष के कारण उचित ठहराया — जिससे यह सैन्य और वित्तीय विवाद का मिश्रण बन गया।\n• ब्रिटिश भारतीय सिविल सेवकों के सार्वजनिक ऋण और पेंशन दायित्वों का विभाजन भी वित्तीय विभाजन वार्ताओं का हिस्सा था।"
+    }
+  },
+  {
+    "uuid": "1004e907-05bd-4887-8436-523d7b0a4d52",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Congress's Acceptance of Partition: Internal Debates",
+        "Gandhi's Response to the Mountbatten Plan: Opposition and Acquiescence"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Patel truncated India strong centre argument partition acceptance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Regarding the internal Congress debates and individual positions on the Mountbatten Plan, consider the following statements:\n\n1. Sardar Patel argued that a truncated but strong-centred India was preferable to a loose federation spanning a united but communally divided subcontinent.\n2. Gandhi actively campaigned against the Mountbatten Plan by launching a mass civil disobedience movement in the summer of 1947.\n3. C. Rajagopalachari proposed a formula in 1944 that envisaged a partition of India, making him the first prominent Congress leader to publicly suggest dividing the country on communal lines.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sardar Patel argued that a truncated but strong-centred India was preferable to a loose federation spanning a united but communally divided subcontinent.",
+          "verdict": "Correct",
+          "reason": "Patel's core argument for accepting partition was pragmatic: a smaller India with undivided Congress authority and a strong central government would be more governable and stable than a united India where Muslim-League-controlled provinces would perpetually contest central authority."
+        },
+        {
+          "statement": "Gandhi actively campaigned against the Mountbatten Plan by launching a mass civil disobedience movement in the summer of 1947.",
+          "verdict": "Incorrect",
+          "reason": "While Gandhi was personally and philosophically opposed to partition ('vivisection of India'), he did not launch any mass movement against it. He trusted Nehru and Patel's political judgment and ultimately did not mobilise public opposition, though he never endorsed the plan."
+        },
+        {
+          "statement": "C. Rajagopalachari proposed a formula in 1944 that envisaged a partition of India, making him the first prominent Congress leader to publicly suggest dividing the country on communal lines.",
+          "verdict": "Correct",
+          "reason": "The CR Formula (Rajagopalachari Formula, 1944) proposed that the Muslim League campaign for Pakistan via a plebiscite in Muslim-majority districts and that a sovereign Pakistan be created if the vote favoured it — making Rajagopalachari the earliest Congress figure to publicly engage with the idea of territorial division."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) is a strong distractor because students who know statements 1 and 3 are correct may assume Gandhi's well-known opposition must have taken some organised form, making statement 2 seem plausible.",
+      "elimination_logic": [
+        "Verify statement 1: Patel's 'truncated India with strong centre' argument is a documented historical position — correct.",
+        "Verify statement 2: Gandhi opposed partition philosophically but launched NO mass civil disobedience against it — the claim of a 'mass civil disobedience movement' is false.",
+        "Verify statement 3: the CR Formula of 1944 is historically documented as the first major Congress engagement with a partition proposal — correct.",
+        "Statements 1 and 3 correct; statement 2 incorrect → option a (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses the phrase 'campaigned against' — a partial-truth trap. Gandhi did oppose partition and spoke against it, but 'launching a mass civil disobedience movement' is factually false. Students who know Gandhi opposed partition emotionally accept the statement without checking whether opposition translated into an organised campaign.",
+      "final_explanation": "The Congress Working Committee's acceptance of the Mountbatten Plan was far from unanimous in spirit, even if unanimous in formal vote, reflecting the deep internal tensions within the party.\n\n• Statement 1 — Correct: Patel's pragmatic argument was decisive. He believed that a Congress-governed India without the Muslim League as a permanent coalition partner would be stronger and more efficiently administered than a united India paralysed by communal tensions at the centre.\n• Statement 2 — Incorrect: Gandhi was the most vocal opponent of partition within Congress circles but never translated his opposition into a mass movement. His trust in Nehru and Patel, and his belief that a mass agitation at this stage would cause more bloodshed, led him to acquiesce silently.\n• Statement 3 — Correct: Rajagopalachari's 1944 formula was revolutionary in Congress terms — it acknowledged the possibility of Pakistan via a plebiscite and proposed conditions for it. This earned Gandhi's approval at the time but was rejected by the Congress leadership and by Jinnah (who found it insufficient).\n\nValue Addition:\n• Gandhi's alternative to partition was to offer Jinnah the Prime Ministership of an undivided India — Nehru and Patel rejected this as politically unrealistic.\n• On August 15, 1947, Gandhi fasted in Calcutta rather than celebrating in Delhi — his silent protest against the partition outcome.\n• The CR Formula's failure in 1944 demonstrated that even a moderate partition proposal could not satisfy Jinnah, who demanded sovereignty, not a negotiated plebiscite."
+    },
+    "hi": {
+      "display_text": "माउंटबेटन योजना पर कांग्रेस के आंतरिक विवादों और व्यक्तिगत रुखों के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. सरदार पटेल ने तर्क दिया कि एक छोटा लेकिन मजबूत केंद्र वाला भारत एक ढीले संघ से बेहतर था जो एक संयुक्त लेकिन सांप्रदायिक रूप से विभाजित उपमहाद्वीप में फैला हो।\n2. गांधी ने 1947 की गर्मियों में एक जनसामान्य असहयोग आंदोलन शुरू करके माउंटबेटन योजना के खिलाफ सक्रिय रूप से अभियान चलाया।\n3. सी. राजगोपालाचारी ने 1944 में एक ऐसा सूत्र प्रस्तावित किया जो भारत के विभाजन की कल्पना करता था, जिससे वे पहले प्रमुख कांग्रेस नेता बने जिन्होंने सार्वजनिक रूप से देश को सांप्रदायिक आधार पर विभाजित करने का सुझाव दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sardar Patel argued that a truncated but strong-centred India was preferable to a loose federation spanning a united but communally divided subcontinent.",
+          "verdict": "सही है",
+          "reason": "पटेल का विभाजन स्वीकार करने का मुख्य तर्क व्यावहारिक था: एक छोटा भारत जिसमें कांग्रेस की एकीकृत सत्ता और एक मजबूत केंद्रीय सरकार हो, वह एक ऐसे संयुक्त भारत से अधिक सुशासन योग्य और स्थिर होगा जहाँ मुस्लिम लीग नियंत्रित प्रांत लगातार केंद्रीय सत्ता को चुनौती देते रहें।"
+        },
+        {
+          "statement": "Gandhi actively campaigned against the Mountbatten Plan by launching a mass civil disobedience movement in the summer of 1947.",
+          "verdict": "गलत है",
+          "reason": "गांधी व्यक्तिगत और दार्शनिक रूप से विभाजन के विरोधी थे ('भारत का विच्छेदन'), लेकिन उन्होंने इसके खिलाफ कोई जन आंदोलन शुरू नहीं किया। उन्होंने नेहरू और पटेल के राजनीतिक निर्णय पर भरोसा किया और अंततः सार्वजनिक विरोध को संगठित नहीं किया, हालांकि उन्होंने योजना को कभी स्वीकार नहीं किया।"
+        },
+        {
+          "statement": "C. Rajagopalachari proposed a formula in 1944 that envisaged a partition of India, making him the first prominent Congress leader to publicly suggest dividing the country on communal lines.",
+          "verdict": "सही है",
+          "reason": "सीआर फॉर्मूला (राजगोपालाचारी फॉर्मूला, 1944) ने प्रस्ताव दिया कि मुस्लिम लीग पाकिस्तान के लिए मुस्लिम बहुल जिलों में जनमत संग्रह कराए और यदि वोट इसके पक्ष में हो तो एक संप्रभु पाकिस्तान बनाया जाए — जिससे राजगोपालाचारी पहले प्रमुख कांग्रेस नेता बने जिन्होंने सार्वजनिक रूप से क्षेत्रीय विभाजन का विचार स्वीकार किया।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन सही) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र कथन 1 और 3 को सही जानते हैं, वे गांधी के प्रसिद्ध विरोध को किसी संगठित रूप में मान सकते हैं, जिससे कथन 2 विश्वसनीय लगता है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: पटेल का 'छोटा लेकिन मजबूत केंद्र वाला भारत' तर्क ऐतिहासिक रूप से प्रलेखित है — सही।",
+        "कथन 2 सत्यापित करें: गांधी ने विभाजन का दार्शनिक विरोध किया लेकिन इसके खिलाफ कोई जन आंदोलन शुरू नहीं किया — 'जन आंदोलन शुरू करने' का दावा गलत है।",
+        "कथन 3 सत्यापित करें: 1944 का सीआर फॉर्मूला ऐतिहासिक रूप से पहला प्रमुख कांग्रेस प्रस्ताव था जो विभाजन की संभावना को स्वीकार करता है — सही।",
+        "कथन 1 और 3 सही; कथन 2 गलत → विकल्प a (केवल 1 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'विरोध में अभियान चलाना' शब्द का उपयोग एक आंशिक-सत्य जाल है। गांधी ने विभाजन का विरोध किया और इसके खिलाफ बोले, लेकिन 'जन आंदोलन शुरू करना' तथ्यात्मक रूप से गलत है। जो छात्र जानते हैं कि गांधी ने विभाजन का भावनात्मक विरोध किया, वे बिना जांचे इस कथन को स्वीकार कर लेते हैं कि इसका कोई संगठित अभियान भी था।",
+      "final_explanation": "माउंटबेटन योजना को कांग्रेस कार्य समिति द्वारा औपचारिक रूप से सर्वसम्मति से स्वीकार किया गया था, लेकिन पार्टी के भीतर गहरे आंतरिक तनाव विद्यमान थे।\n\n• कथन 1 — सही: पटेल का व्यावहारिक तर्क निर्णायक था। उनका मानना था कि मुस्लिम लीग के बिना कांग्रेस-शासित भारत एक मजबूत और कुशलतापूर्वक प्रशासित देश होगा, जबकि एक संयुक्त भारत जहाँ केंद्र में सांप्रदायिक तनाव हो, वह अस्थिर रहेगा।\n• कथन 2 — गलत: गांधी कांग्रेस के भीतर विभाजन के सबसे मुखर विरोधी थे, लेकिन उन्होंने अपने विरोध को जन आंदोलन में नहीं बदला। नेहरू और पटेल पर उनका भरोसा और इस समय जन आंदोलन से अधिक रक्तपात की आशंका ने उन्हें मौन सहमति देने पर मजबूर किया।\n• कथन 3 — सही: राजगोपालाचारी का 1944 का फॉर्मूला कांग्रेस के लिए क्रांतिकारी था — इसने जनमत संग्रह के माध्यम से पाकिस्तान की संभावना को स्वीकार किया और इसके लिए शर्तें प्रस्तावित कीं। इसे उस समय गांधी ने स्वीकार किया था, लेकिन कांग्रेस नेतृत्व और जिन्ना ने इसे अस्वीकार कर दिया।\n\nमूल्यवर्धन:\n• गांधी का विभाजन का विकल्प था कि जिन्ना को एक अविभाजित भारत का प्रधानमंत्री बनाया जाए — नेहरू और पटेल ने इसे राजनीतिक रूप से अव्यावहारिक माना।\n• 15 अगस्त 1947 को गांधी ने दिल्ली में जश्न मनाने के बजाय कोलकाता में उपवास किया — विभाजन के परिणाम के प्रति उनका मौन विरोध।\n• 1944 में सीआर फॉर्मूला की विफलता ने दिखाया कि एक मध्यम विभाजन प्रस्ताव भी जिन्ना को संतुष्ट नहीं कर सका, जो संप्रभुता की मांग कर रहे थे, न कि एक समझौते वाले जनमत संग्रह की।"
+    }
+  },
+  {
+    "uuid": "529d3f74-4ec6-49a2-ad0c-b0886ec71352",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Partition of Bengal: Historical and Political Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "United Bengal proposal Sarat Bose Kiran Shankar Roy rejection",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following leaders jointly proposed a plan for a sovereign, undivided Bengal in 1947 — independent of both India and Pakistan — a proposal that was ultimately rejected by the Congress, the Muslim League, and the Hindu Mahasabha?\n\n(a) Maulana Abul Kalam Azad and H.S. Suhrawardy\n(b) Subhas Chandra Bose and Huseyn Shaheed Suhrawardy\n(c) Maulana Azad and A.K. Fazlul Haq\n(d) Sarat Chandra Bose and Kiran Shankar Roy",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Subhas Chandra Bose is far more famous than his brother Sarat Chandra Bose, and students unfamiliar with the United Bengal proposal may default to the Bose name they recognise.",
+      "elimination_logic": [
+        "Eliminate option a: Maulana Azad opposed partition of India but was not the proposer of a United Bengal plan.",
+        "Eliminate option b: Subhas Chandra Bose died in 1945 — he was not present in 1947 to make the United Bengal proposal.",
+        "Eliminate option c: Abul Kalam Azad's Frontier proposals are distinct from the United Bengal movement.",
+        "Confirm option d: Sarat Chandra Bose (Subhas's elder brother) and Kiran Shankar Roy jointly proposed a sovereign united Bengal that would be neither India nor Pakistan — the proposal was rejected by both Congress and the Muslim League."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works on the fame differential between Sarat Chandra Bose and Subhas Chandra Bose. Students who recognise 'Bose' in the context of Bengal politics immediately think of Subhas — not his lesser-known but politically active elder brother Sarat Chandra Bose, who was the actual architect of the United Bengal proposal alongside Kiran Shankar Roy.",
+      "final_explanation": "The United Bengal proposal of 1947 was an attempt to prevent Bengal's partition by creating an independent, undivided Bengal that would join neither India nor Pakistan.\n\n• Option (a): Incorrect. H.S. Suhrawardy (Bengal's last Muslim Premier) was also involved in United Bengal discussions, but the primary Congress-side proposers were Sarat Chandra Bose and Kiran Shankar Roy.\n• Option (b): Incorrect. Subhas Chandra Bose died in a plane crash in August 1945 — he was not alive in 1947 to make any such proposal.\n• Option (c): Incorrect. Maulana Azad was a Congress leader who opposed partition of India as a whole, but he did not propose the specific United Bengal formula.\n• Option (d): Correct. Sarat Chandra Bose (Subhas's elder brother and a prominent Bengal Congress leader) and Kiran Shankar Roy jointly advocated for a sovereign United Bengal. The proposal was ultimately rejected — by Congress (which feared a Muslim-majority united Bengal joining Pakistan), by the Muslim League (which preferred East Pakistan), and by the Hindu Mahasabha.\n\nValue Addition:\n• H.S. Suhrawardy (Muslim League) also supported United Bengal, making it a rare Hindu-Muslim political convergence that nonetheless failed.\n• The Hindu Mahasabha actively lobbied for Bengal's partition to prevent Calcutta from falling under Muslim League control.\n• The second partition of Bengal (1947) differed from the first (1905): the 1905 partition was reversed in 1911, while the 1947 partition created a permanent international boundary."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से किन नेताओं ने 1947 में एक संप्रभु, अविभाजित बंगाल के लिए संयुक्त रूप से योजना प्रस्तावित की थी — जो न तो भारत का हिस्सा होगा और न ही पाकिस्तान का — और जिसे अंततः कांग्रेस, मुस्लिम लीग और हिंदू महासभा द्वारा अस्वीकार कर दिया गया?\n\n(a) मौलाना अबुल कलाम आज़ाद और एच.एस. सुहरावर्दी\n(b) सुभाष चंद्र बोस और हुसैन शाहिद सुहरावर्दी\n(c) मौलाना आज़ाद और ए.के. फजलुल हक\n(d) सरत चंद्र बोस और किरण शंकर रॉय",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि सुभाष चंद्र बोस अपने भाई सरत चंद्र बोस की तुलना में कहीं अधिक प्रसिद्ध हैं, और जो छात्र यूनाइटेड बंगाल प्रस्ताव से परिचित नहीं हैं वे बोस नाम को पहचानकर उसी को चुन सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: मौलाना आज़ाद भारत के विभाजन के विरोधी थे लेकिन यूनाइटेड बंगाल योजना के प्रस्तावक नहीं थे।",
+        "विकल्प (b) को निरस्त करें: सुभाष चंद्र बोस 1945 में निधन हो गए थे — वे 1947 में यूनाइटेड बंगाल प्रस्ताव देने के लिए उपस्थित नहीं थे।",
+        "विकल्प (c) को निरस्त करें: अबुल कलाम आज़ाद के फ्रंटियर प्रस्ताव यूनाइटेड बंगाल आंदोलन से भिन्न हैं।",
+        "विकल्प (d) को स्वीकार करें: सरत चंद्र बोस (सुभाष के बड़े भाई) और किरण शंकर रॉय ने संयुक्त रूप से एक संप्रभु संयुक्त बंगाल का प्रस्ताव दिया था जो न तो भारत का हिस्सा होगा और न ही पाकिस्तान का — यह प्रस्ताव कांग्रेस और मुस्लिम लीग दोनों द्वारा अस्वीकार कर दिया गया था।"
+      ],
+      "upsc_trap_explanation": "यह पहचान-परिवर्तन (entity-swap) जाल सरत चंद्र बोस और सुभाष चंद्र बोस के बीच प्रसिद्धि के अंतर पर आधारित है। जो छात्र बंगाल राजनीति के संदर्भ में 'बोस' नाम सुनते हैं, वे तुरंत सुभाष को सोचते हैं — न कि उनके कम प्रसिद्ध लेकिन राजनीतिक रूप से सक्रिय बड़े भाई सरत चंद्र बोस को, जो कि किरण शंकर रॉय के साथ मिलकर यूनाइटेड बंगाल प्रस्ताव के वास्तविक निर्माता थे।",
+      "final_explanation": "1947 का यूनाइटेड बंगाल प्रस्ताव बंगाल के विभाजन को रोकने का एक प्रयास था, जिसमें एक स्वतंत्र, अविभाजित बंगाल बनाने की बात थी जो न तो भारत से जुड़ता और न ही पाकिस्तान से।\n\n• विकल्प (a): गलत। एच.एस. सुहरावर्दी (बंगाल के अंतिम मुस्लिम प्रधानमंत्री) भी यूनाइटेड बंगाल चर्चाओं में शामिल थे, लेकिन कांग्रेस पक्ष के मुख्य प्रस्तावक सरत चंद्र बोस और किरण शंकर रॉय थे।\n• विकल्प (b): गलत। सुभाष चंद्र बोस अगस्त 1945 में विमान दुर्घटना में मारे गए थे — वे 1947 में जीवित नहीं थे कि कोई प्रस्ताव दे सकें।\n• विकल्प (c): गलत। मौलाना आज़ाद कांग्रेस नेता थे जो पूरे भारत के विभाजन के विरोधी थे, लेकिन उन्होंने यूनाइटेड बंगाल का विशिष्ट सूत्र नहीं दिया था।\n• विकल्प (d): सही। सरत चंद्र बोस (सुभाष के बड़े भाई और बंगाल कांग्रेस के प्रमुख नेता) और किरण शंकर रॉय ने मिलकर एक संप्रभु संयुक्त बंगाल का समर्थन किया। यह प्रस्ताव अंततः कांग्रेस (जो मुस्लिम बहुल संयुक्त बंगाल के पाकिस्तान से जुड़ने से डरती थी), मुस्लिम लीग (जो पूर्वी पाकिस्तान को प्राथमिकता देती थी), और हिंदू महासभा द्वारा अस्वीकार कर दिया गया।\n\nमूल्यवर्धन:\n• एच.एस. सुहरावर्दी (मुस्लिम लीग) ने भी यूनाइटेड बंगाल का समर्थन किया, जो एक दुर्लभ हिंदू-मुस्लिम राजनीतिक संगम था जो विफल रहा।\n• हिंदू महासभा ने कलकत्ता के मुस्लिम लीग नियंत्रण में जाने से रोकने के लिए बंगाल के विभाजन के लिए सक्रिय रूप से लॉबिंग की।\n• बंगाल का दूसरा विभाजन (1947) पहले (1905) से भिन्न था: 1905 का विभाजन 1911 में उलट दिया गया था, जबकि 1947 का विभाजन एक स्थायी अंतरराष्ट्रीय सीमा बन गया।"
+    }
+  },
+  {
+    "uuid": "1a40807f-164f-46e6-8050-782c5dbbee6c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Key Provisions of the Mountbatten Plan: Partition Principle",
+        "Indian Independence Act, 1947: Legislative Enactment of the Mountbatten Plan"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Indian Independence Act Royal Assent date July 18 1947",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Indian Independence Act, which gave legal effect to the Mountbatten Plan by formally creating the two dominions of India and Pakistan, received Royal Assent from the British Crown on ________.\n\n(a) June 3, 1947\n(b) July 18, 1947\n(c) August 15, 1947\n(d) July 26, 1947",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (August 15, 1947) is a strong distractor because students associate all partition-related dates with August 15 and do not recall that the Indian Independence Act received Royal Assent nearly a month earlier.",
+      "elimination_logic": [
+        "Eliminate option a (June 3, 1947): that was the date the Mountbatten Plan was announced — not the Act's Royal Assent date.",
+        "Eliminate option c (August 15, 1947): Independence Day was when power was transferred — the Act was already law before that date.",
+        "Eliminate option d (July 26, 1947): this date has no special significance in the partition timeline.",
+        "Confirm option b (July 18, 1947): the Indian Independence Act received Royal Assent on July 18, 1947 — nearly four weeks before independence was actually transferred."
+      ],
+      "upsc_trap_explanation": "The most common error is associating all partition legislation with August 15, 1947. Students know August 15 as Independence Day and reverse-engineer that the enabling legislation must also have been finalised on that date. The Royal Assent date (July 18, 1947) is a precise fact that rewards specific preparation and punishes the 'August 15 for everything' assumption.",
+      "final_explanation": "The Indian Independence Act moved from announcement to law with remarkable speed — reflecting both political urgency and the efficiency of the British parliamentary process.\n\n• Option (a) — June 3, 1947: Incorrect. June 3 was the date the Mountbatten Plan was publicly announced and accepted by the major parties — not the date of the Act's passage.\n• Option (b) — July 18, 1947: Correct. The Indian Independence Act was introduced in the British Parliament in early July 1947 and received Royal Assent on July 18, 1947 — giving it the force of law nearly four weeks before August 15.\n• Option (c) — August 15, 1947: Incorrect. August 15 was the date of actual power transfer and independence — the legislative instrument enabling it had already been enacted weeks earlier.\n• Option (d) — July 26, 1947: Incorrect. This date has no specific significance in the partition legislative timeline.\n\nValue Addition:\n• The Indian Independence Bill was introduced in the House of Commons on July 4, 1947 — American Independence Day — a symbolically noted coincidence.\n• The Act was passed with remarkable cross-party support in the UK Parliament, reflecting the post-war political consensus on Indian independence.\n• The speed of passage (from June 3 plan to July 18 Royal Assent = 45 days) is itself evidence of the political urgency Mountbatten had created."
+    },
+    "hi": {
+      "display_text": "भारतीय स्वतंत्रता अधिनियम, जिसने माउंटबेटन योजना को कानूनी प्रभाव दिया और औपचारिक रूप से भारत और पाकिस्तान के दो डोमिनियनों का निर्माण किया, ब्रिटिश क्राउन से रॉयल असेंट ________ को प्राप्त हुआ।\n\n(a) 3 जून, 1947\n(b) 18 जुलाई, 1947\n(c) 15 अगस्त, 1947\n(d) 26 जुलाई, 1947",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (15 अगस्त, 1947) एक मजबूत भ्रम है क्योंकि छात्र सभी विभाजन-संबंधित तिथियों को 15 अगस्त से जोड़ते हैं और याद नहीं रखते कि भारतीय स्वतंत्रता अधिनियम को लगभग एक महीने पहले रॉयल असेंट मिला था।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें (3 जून, 1947): यह वह तारीख थी जब माउंटबेटन योजना की घोषणा हुई थी — अधिनियम के रॉयल असेंट की तारीख नहीं।",
+        "विकल्प (c) को निरस्त करें (15 अगस्त, 1947): स्वतंत्रता दिवस वह दिन था जब सत्ता हस्तांतरित हुई — अधिनियम पहले ही कानून बन चुका था।",
+        "विकल्प (d) को निरस्त करें (26 जुलाई, 1947): इस तारीख का विभाजन समयरेखा में कोई विशेष महत्व नहीं है।",
+        "विकल्प (b) को पुष्टि करें (18 जुलाई, 1947): भारतीय स्वतंत्रता अधिनियम को 18 जुलाई, 1947 को रॉयल असेंट मिला — स्वतंत्रता हस्तांतरण से लगभग चार सप्ताह पहले।"
+      ],
+      "upsc_trap_explanation": "सबसे सामान्य त्रुटि यह है कि सभी विभाजन संबंधी कानूनों को 15 अगस्त, 1947 से जोड़ना। छात्र 15 अगस्त को स्वतंत्रता दिवस के रूप में जानते हैं और सोचते हैं कि सक्षम करने वाला कानून भी उसी दिन अंतिम रूप से पारित हुआ होगा। रॉयल असेंट की तारीख (18 जुलाई, 1947) एक सटीक तथ्य है जो विशेष तैयारी को पुरस्कृत करता है और 'सब कुछ 15 अगस्त' मान्यता को दंडित करता है।",
+      "final_explanation": "भारतीय स्वतंत्रता अधिनियम ने माउंटबेटन योजना को कानून में बदलने में असाधारण गति दिखाई — जो राजनीतिक तात्कालिकता और ब्रिटिश संसदीय प्रक्रिया की दक्षता दोनों को दर्शाता है।\n\n• विकल्प (a) — 3 जून, 1947: गलत। 3 जून वह दिन था जब माउंटबेटन योजना सार्वजनिक रूप से घोषित और प्रमुख पक्षों द्वारा स्वीकार की गई थी — अधिनियम पारित होने की तारीख नहीं।\n• विकल्प (b) — 18 जुलाई, 1947: सही। भारतीय स्वतंत्रता अधिनियम जुलाई 1947 की शुरुआत में ब्रिटिश संसद में प्रस्तुत किया गया और 18 जुलाई, 1947 को रॉयल असेंट प्राप्त किया — जिससे यह कानून बन गया, स्वतंत्रता से लगभग चार सप्ताह पहले।\n• विकल्प (c) — 15 अगस्त, 1947: गलत। 15 अगस्त वह दिन था जब वास्तविक सत्ता हस्तांतरित हुई और स्वतंत्रता मिली — सक्षम करने वाला विधायी उपकरण पहले ही कई सप्ताह पहले पारित हो चुका था।\n• विकल्प (d) — 26 जुलाई, 1947: गलत। इस तारीख का विभाजन विधायी समयरेखा में कोई विशेष महत्व नहीं है।\n\nमूल्यवर्धन:\n• भारतीय स्वतंत्रता विधेयक 4 जुलाई, 1947 को हाउस ऑफ कॉमन्स में प्रस्तुत किया गया था — अमेरिकी स्वतंत्रता दिवस — एक प्रतीकात्मक संयोग।\n• यह अधिनियम यूके संसद में असाधारण पार-पार्टी समर्थन के साथ पारित हुआ, जो भारतीय स्वतंत्रता पर युद्धोत्तर राजनीतिक सहमति को दर्शाता है।\n• पारित होने की गति (3 जून योजना से 18 जुलाई रॉयल असेंट = 45 दिन) स्वयं माउंटबेटन द्वारा निर्मित राजनीतिक तात्कालिकता का प्रमाण है।"
+    }
+  },
+  {
+    "uuid": "21ea24ea-5753-44e7-8ab4-35ab48d8899d",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Princely States and the Mountbatten Plan: Lapse of Paramountcy",
+        "Comparison: Mountbatten Plan vs. Cabinet Mission Plan — Key Differences"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Hyderabad Junagadh Kashmir flashpoints lapse of paramountcy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Mountbatten Plan's provisions regarding princely states and the subsequent integration crises, consider the following statements:\n\n1. The Mountbatten Plan's declaration of the lapse of paramountcy meant that princely states were left in a legal vacuum — they were not automatically merged into either India or Pakistan.\n2. Hyderabad, Junagadh, and Kashmir became flashpoints precisely because they each had rulers whose religious identity was a minority within their own population, and in each case the ruler's preferred accession choice conflicted with popular sentiment.\n3. The Mountbatten Plan explicitly prohibited princely states from declaring independence — they were required to choose between accession to India or Pakistan.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Mountbatten Plan's declaration of the lapse of paramountcy meant that princely states were left in a legal vacuum — they were not automatically merged into either India or Pakistan.",
+          "verdict": "Correct",
+          "reason": "The lapse of paramountcy dissolved the treaty relationships between the British Crown and the princely states without replacing them with an automatic mechanism of accession. States were left technically free to determine their own futures, creating the integration problem Patel subsequently resolved."
+        },
+        {
+          "statement": "Hyderabad, Junagadh, and Kashmir became flashpoints precisely because they each had rulers whose religious identity was a minority within their own population, and in each case the ruler's preferred accession choice conflicted with popular sentiment.",
+          "verdict": "Correct",
+          "reason": "All three states exemplified the religion-population-ruler conflict: Hyderabad had a Muslim Nizam ruling a Hindu-majority state who wanted independence; Junagadh had a Muslim Nawab ruling a Hindu-majority state who acceded to Pakistan; Kashmir had a Hindu Maharaja ruling a Muslim-majority state who delayed accession. In each case, the ruler's position contradicted the demographic majority."
+        },
+        {
+          "statement": "The Mountbatten Plan explicitly prohibited princely states from declaring independence — they were required to choose between accession to India or Pakistan.",
+          "verdict": "Incorrect",
+          "reason": "The Mountbatten Plan imposed no such prohibition. The lapse of paramountcy technically left independence as a legal option, however impractical. It was British advice and subsequent political pressure from Patel (not the plan's text) that discouraged independence claims."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) traps students who know Hyderabad, Junagadh, and Kashmir all became flashpoints and assume statement 3's restriction must logically follow — not checking whether the plan's text actually prohibited independence.",
+      "elimination_logic": [
+        "Verify statement 1: paramountcy lapsing without automatic merger is a well-established fact of partition history. Statement 1 is correct.",
+        "Verify statement 2: all three states had the ruler-population religious mismatch described. Statement 2 is correct.",
+        "Verify statement 3: the Mountbatten Plan did NOT explicitly prohibit independence — lapse of paramountcy technically permitted it. Statement 3 is incorrect.",
+        "Statements 1 and 2 correct; statement 3 incorrect → option a."
+      ],
+      "upsc_trap_explanation": "Statement 3 uses 'explicitly prohibited' — a scope-extension technique. Students who know the British strongly discouraged independence for princely states and that Patel's integration drive made independence practically impossible may read this as a formal prohibition within the plan's text. It was not — the plan was silent on prohibiting independence, which is precisely why Hyderabad could attempt it.",
+      "final_explanation": "The princely states crisis of 1947-48 was a direct consequence of the Mountbatten Plan's deliberate silence on compulsory integration — a silence that prioritised speed of withdrawal over clarity of outcome.\n\n• Statement 1 — Correct: Paramountcy lapsing created a genuine legal vacuum. The 565 princely states were not absorbed into either dominion by the plan itself — they needed to sign instruments of accession. This vacuum is why Patel's States Ministry and V.P. Menon's work was so consequential.\n• Statement 2 — Correct: All three major flashpoints shared the structural feature of a ruler whose religious identity was a minority in his own state. Hyderabad's Nizam sought independence; Junagadh's Nawab acceded to Pakistan; Kashmir's Maharaja Hari Singh delayed accession hoping for independence. Each created a constitutional and military crisis.\n• Statement 3 — Incorrect: The plan did not prohibit independence declarations — it was simply silent on this. Hyderabad's Nizam explicitly claimed independent status for over a year after August 1947, demonstrating that independence was a legally available (if politically untenable) option.\n\nValue Addition:\n• Police Action (Operation Polo, September 1948) ended Hyderabad's independence bid — it was the Indian Army's operation, not a provision of the Mountbatten Plan.\n• Junagadh's Nawab's accession to Pakistan was reversed by a plebiscite held in February 1948 — showing the 'popular will' principle could be invoked selectively.\n• Kashmir's instrument of accession was signed on October 26, 1947 — after Pakistani-backed tribal incursion had already begun."
+    },
+    "hi": {
+      "display_text": "माउंटबैटन योजना के प्रावधानों और बाद के एकीकरण संकटों के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. माउंटबैटन योजना द्वारा परमाउंटसी के समाप्त होने की घोषणा का अर्थ था कि रियासतें कानूनी शून्यता में छोड़ दी गईं — वे स्वचालित रूप से भारत या पाकिस्तान में विलय नहीं हुईं।\n2. हैदराबाद, जूनागढ़, और कश्मीर विवादित क्षेत्र बने क्योंकि प्रत्येक के शासक की धार्मिक पहचान उनकी अपनी जनसंख्या में अल्पसंख्यक थी, और हर मामले में शासक की पसंदीदा विलय विकल्प लोकप्रिय भावना के विपरीत थी।\n3. माउंटबैटन योजना ने स्पष्ट रूप से रियासतों को स्वतंत्रता घोषित करने से रोका — उन्हें भारत या पाकिस्तान में विलय चुनना आवश्यक था।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Mountbatten Plan's declaration of the lapse of paramountcy meant that princely states were left in a legal vacuum — they were not automatically merged into either India or Pakistan.",
+          "verdict": "सही",
+          "reason": "परमाउंटसी के समाप्त होने से ब्रिटिश क्राउन और रियासतों के बीच संधि संबंध समाप्त हो गए बिना किसी स्वचालित विलय तंत्र के। रियासतें तकनीकी रूप से स्वतंत्र हो गईं अपनी भविष्य की दिशा तय करने के लिए, जिससे एकीकरण समस्या उत्पन्न हुई जिसे बाद में पटेल ने सुलझाया।"
+        },
+        {
+          "statement": "Hyderabad, Junagadh, and Kashmir became flashpoints precisely because they each had rulers whose religious identity was a minority within their own population, and in each case the ruler's preferred accession choice conflicted with popular sentiment.",
+          "verdict": "सही",
+          "reason": "तीनों राज्यों में धर्म-जनसंख्या-शासक संघर्ष स्पष्ट था: हैदराबाद में मुस्लिम निजाम थे जो हिंदू बहुल राज्य पर शासन करते थे और स्वतंत्रता चाहते थे; जूनागढ़ में मुस्लिम नवाब थे जो हिंदु बहुल राज्य पर शासन करते थे और पाकिस्तान में विलय कर गए; कश्मीर में हिंदू महाराजा थे जो मुस्लिम बहुल राज्य पर शासन करते थे और विलय में देरी की। हर मामले में शासक की स्थिति जनसंख्या बहुलता के विपरीत थी।"
+        },
+        {
+          "statement": "The Mountbatten Plan explicitly prohibited princely states from declaring independence — they were required to choose between accession to India or Pakistan.",
+          "verdict": "गलत",
+          "reason": "माउंटबैटन योजना ने ऐसा कोई स्पष्ट प्रतिबंध नहीं लगाया। परमाउंटसी के समाप्त होने से तकनीकी रूप से स्वतंत्रता एक वैध विकल्प बनी, हालांकि व्यावहारिक नहीं। स्वतंत्रता के दावे को ब्रिटिश सलाह और बाद में पटेल के राजनीतिक दबाव ने हतोत्साहित किया, न कि योजना के पाठ ने।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) उन छात्रों को फंसाता है जो जानते हैं कि हैदराबाद, जूनागढ़ और कश्मीर सभी विवादित क्षेत्र बने और मान लेते हैं कि कथन 3 का प्रतिबंध तार्किक रूप से लागू होना चाहिए — बिना यह जांचे कि योजना के पाठ में स्वतंत्रता पर वास्तव में प्रतिबंध था या नहीं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: परमाउंटसी का समाप्त होना बिना स्वचालित विलय के विभाजन इतिहास का स्थापित तथ्य है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: तीनों राज्यों में शासक-जनसंख्या धार्मिक असंगति थी जैसा वर्णित। कथन 2 सही है।",
+        "कथन 3 सत्यापित करें: माउंटबैटन योजना ने स्वतंत्रता पर स्पष्ट प्रतिबंध नहीं लगाया — परमाउंटसी का समाप्त होना तकनीकी रूप से स्वतंत्रता की अनुमति देता है। कथन 3 गलत है।",
+        "कथन 1 और 2 सही; कथन 3 गलत → विकल्प a।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में 'स्पष्ट रूप से प्रतिबंधित' शब्द का उपयोग एक दायरा-विस्तार तकनीक है। जो छात्र जानते हैं कि ब्रिटिश ने रियासतों की स्वतंत्रता को कड़ा विरोध किया और पटेल के एकीकरण अभियान ने स्वतंत्रता को व्यावहारिक रूप से असंभव बना दिया, वे इसे योजना के पाठ में औपचारिक प्रतिबंध के रूप में पढ़ सकते हैं। ऐसा नहीं था — योजना स्वतंत्रता पर मौन थी, यही कारण है कि हैदराबाद ने स्वतंत्रता का प्रयास किया।",
+      "final_explanation": "1947-48 के रियासत संकट का सीधा परिणाम माउंटबैटन योजना की अनिवार्य एकीकरण पर जानबूझकर चुप्पी थी — एक चुप्पी जिसने वापसी की गति को परिणाम की स्पष्टता पर प्राथमिकता दी।\n\n• कथन 1 — सही: परमाउंटसी का समाप्त होना एक वास्तविक कानूनी शून्यता उत्पन्न करता है। 565 रियासतें योजना द्वारा किसी भी डोमिनियन में स्वचालित रूप से शामिल नहीं हुईं — उन्हें विलय के दस्तावेज़ों पर हस्ताक्षर करना आवश्यक था। यही शून्यता पटेल के राज्यों मंत्रालय और वी.पी. मेनन के कार्यों को महत्वपूर्ण बनाती है।\n• कथन 2 — सही: तीनों प्रमुख विवाद क्षेत्रों में एक ऐसा शासक था जिसकी धार्मिक पहचान अपने राज्य में अल्पसंख्यक थी। हैदराबाद का निजाम स्वतंत्रता चाहता था; जूनागढ़ का नवाब पाकिस्तान में विलय कर गया; कश्मीर के महाराजा हरि सिंह ने विलय में देरी की, स्वतंत्रता की आशा में। हर एक ने संवैधानिक और सैन्य संकट उत्पन्न किया।\n• कथन 3 — गलत: योजना ने स्वतंत्रता की घोषणा पर प्रतिबंध नहीं लगाया — यह इस विषय पर मौन थी। हैदराबाद का निजाम अगस्त 1947 के बाद एक वर्ष से अधिक स्वतंत्रता का दावा करता रहा, जो दिखाता है कि स्वतंत्रता कानूनी रूप से उपलब्ध (हालांकि राजनीतिक रूप से असंभव) विकल्प था।\n\nमूल्यवर्धन:\n• पुलिस कार्रवाई (ऑपरेशन पोलो, सितंबर 1948) ने हैदराबाद की स्वतंत्रता की कोशिश को समाप्त किया — यह भारतीय सेना का अभियान था, माउंटबैटन योजना का प्रावधान नहीं।\n• जूनागढ़ के नवाब का पाकिस्तान में विलय फरवरी 1948 में हुए जनमत संग्रह द्वारा उलट दिया गया — यह दिखाता है कि 'लोकप्रिय इच्छा' सिद्धांत को चयनात्मक रूप से लागू किया जा सकता है।\n• कश्मीर का विलय पत्र 26 अक्टूबर 1947 को हस्ताक्षरित हुआ — जब पाक समर्थित कबीलाई आक्रमण पहले ही शुरू हो चुका था।"
+    }
+  },
+  {
+    "uuid": "4d1cd762-e223-47ba-b1c0-c9503730d27e",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Muslim League's Acceptance and Jinnah's 'Moth-Eaten Pakistan'",
+        "Congress's Acceptance of Partition: Internal Debates"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Leaders positions on partition 1947 Congress Muslim League",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the leaders in List I with their specific positions or arguments regarding the Mountbatten Plan and partition in List II:",
+        "columns": [
+          "List I (Leader)",
+          "List II (Position / Argument)"
+        ],
+        "rows": [
+          [
+            "A. Muhammad Ali Jinnah",
+            "1. Accepted partition reluctantly, fearing a geographically fragmented and unstable new state would create perpetual regional crises for both nations"
+          ],
+          [
+            "B. Jawaharlal Nehru",
+            "2. Proposed offering the leadership of an undivided India to the Muslim League as an alternative to partition — rejected by Congress colleagues"
+          ],
+          [
+            "C. Sardar Vallabhbhai Patel",
+            "3. Criticised the outcome as a 'moth-eaten, truncated' state — dissatisfied that undivided Punjab and Bengal were denied"
+          ],
+          [
+            "D. Mahatma Gandhi",
+            "4. Argued that a smaller India with undivided Congress authority and a strong central government was preferable to a loose federal union permanently contested from within"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-3, B-4, C-2, D-1\n(c) A-3, B-1, C-4, D-2\n(d) A-1, B-3, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b swaps the positions of Nehru and Patel on the 'moth-eaten' characterisation, exploiting students who attribute the 'moth-eaten' fear to Patel rather than Nehru.",
+      "elimination_logic": [
+        "Match A (Jinnah): Jinnah called the Pakistan he received 'moth-eaten' because he didn't get undivided Punjab and Bengal — matches description 3.",
+        "Match B (Nehru): Nehru expressed the fear that a 'moth-eaten Pakistan' (geographically fragmented) would weaken both nations and create perpetual instability — matches description 1.",
+        "Match C (Patel): Patel's argument was specifically about a strong-centred truncated India being preferable to a loose federal India — matches description 4.",
+        "Match D (Gandhi): Gandhi's alternative proposal was to offer Jinnah the Prime Ministership of undivided India — matches description 2.",
+        "Correct: A-3, B-1, C-4, D-2 → option c."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap operates between Nehru and Patel. Both accepted partition but for different reasons. Students may attribute Patel's 'strong centre' argument to Nehru or vice versa. The 'moth-eaten' phrase in Jinnah's mouth (List I, A) and as Nehru's fear (List I, B) sounds similar but has different connotations — Jinnah used it as criticism of what he received, while Nehru used it as a concern about Pakistan's viability creating regional instability.",
+      "final_explanation": "The acceptance of the Mountbatten Plan by each major figure rested on distinct reasoning — and UPSC questions frequently test whether students can attribute the correct logic to the correct leader.\n\nCorrect matches:\n• A (Jinnah) — 3: Jinnah famously called the partitioned Pakistan a 'moth-eaten, truncated' state — expressing dissatisfaction that he received only western Punjab and eastern Bengal, not the full, undivided versions.\n• B (Nehru) — 1: Nehru's acceptance of partition was reluctant and strategic. He feared that a geographically and economically weak Pakistan ('moth-eaten' in a different sense) would be unstable and create perpetual border crises — ultimately concluding partition with a strong Indian centre was preferable.\n• C (Patel) — 4: Patel's argument was the most pragmatic among Congress leaders. He believed a smaller, undivided-Congress-governed India with a strong centre was more governable than a united India permanently contested by Muslim League provinces at the centre.\n• D (Gandhi) — 2: Gandhi's alternative was radical — he proposed offering Jinnah the Prime Ministership of an undivided India, believing Jinnah's real goal was power, not territory. Nehru and Patel rejected this proposal as politically unrealistic.\n\nValue Addition:\n• Nehru's phrase describing partition as 'a partition of the heart' reflected his deeper pan-Asian federalist vision being sacrificed.\n• Patel managed the integration of 565 princely states within one year — vindicating his 'strong centre' argument through practical action.\n• Gandhi's Jinnah-as-PM proposal, if accepted, would have produced an India with a Muslim League Prime Minister and a Congress-majority Parliament — a constitutionally novel arrangement."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में नेताओं को सूची II में माउंटबेटन योजना और विभाजन के संबंध में उनके विशिष्ट दृष्टिकोण या तर्कों से मिलाएं:",
+        "columns": [
+          "सूची I (नेता)",
+          "सूची II (दृष्टिकोण / तर्क)"
+        ],
+        "rows": [
+          [
+            "A. मोहम्मद अली जिन्ना",
+            "1. अनिच्छा से विभाजन स्वीकार किया, यह डरते हुए कि भौगोलिक रूप से खंडित और अस्थिर नया राज्य दोनों राष्ट्रों के लिए स्थायी क्षेत्रीय संकट पैदा करेगा"
+          ],
+          [
+            "B. जवाहरलाल नेहरू",
+            "2. विभाजन के विकल्प के रूप में मुस्लिम लीग को अविभाजित भारत का नेतृत्व देने का प्रस्ताव रखा — कांग्रेस सहयोगियों ने अस्वीकार किया"
+          ],
+          [
+            "C. सरदार वल्लभभाई पटेल",
+            "3. परिणाम की आलोचना की कि यह 'मॉथ-ईटन, संकुचित' राज्य है — असंतुष्ट कि अविभाजित पंजाब और बंगाल से वंचित किया गया"
+          ],
+          [
+            "D. महात्मा गांधी",
+            "4. तर्क दिया कि एक छोटा भारत जिसमें अविभाजित कांग्रेस का अधिकार और मजबूत केंद्रीय सरकार हो, एक कमजोर संघीय संघ से बेहतर है जो अंदर से स्थायी रूप से विवादित हो"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-3, B-4, C-2, D-1\n(c) A-3, B-1, C-4, D-2\n(d) A-1, B-3, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b में नेहरू और पटेल की 'मॉथ-ईटन' (moth-eaten) की व्याख्या उलट दी गई है, जो उन छात्रों को भ्रमित करता है जो 'मॉथ-ईटन' भय पटेल को देते हैं न कि नेहरू को।",
+      "elimination_logic": [
+        "A (जिन्ना) से मेल करें: जिन्ना ने पाकिस्तान को 'मॉथ-ईटन' कहा क्योंकि उन्हें अविभाजित पंजाब और बंगाल नहीं मिला — यह विवरण 3 से मेल खाता है।",
+        "B (नेहरू) से मेल करें: नेहरू ने 'मॉथ-ईटन पाकिस्तान' (भौगोलिक रूप से खंडित) के कारण दोनों राष्ट्रों के कमजोर होने और स्थायी अस्थिरता के डर को व्यक्त किया — यह विवरण 1 से मेल खाता है।",
+        "C (पटेल) से मेल करें: पटेल का तर्क विशेष रूप से एक मजबूत केंद्रित संकुचित भारत को एक कमजोर संघीय भारत से बेहतर मानना था — यह विवरण 4 से मेल खाता है।",
+        "D (गांधी) से मेल करें: गांधी का वैकल्पिक प्रस्ताव था कि जिन्ना को अविभाजित भारत का प्रधानमंत्री पद दिया जाए — यह विवरण 2 से मेल खाता है।",
+        "सही: A-3, B-1, C-4, D-2 → विकल्प c।"
+      ],
+      "upsc_trap_explanation": "नेहरू और पटेल के बीच वस्तु-स्थानांतरण (entity-swap) जाल काम करता है। दोनों ने विभाजन स्वीकार किया लेकिन अलग-अलग कारणों से। छात्र पटेल के 'मजबूत केंद्र' तर्क को नेहरू या इसके विपरीत दे सकते हैं। जिन्ना के मुंह से 'मॉथ-ईटन' वाक्यांश (सूची I, A) और नेहरू के भय के रूप में (सूची I, B) सुनने में समान लगता है लेकिन अर्थ अलग है — जिन्ना ने इसे प्राप्त परिणाम की आलोचना के रूप में उपयोग किया, जबकि नेहरू ने इसे पाकिस्तान की व्यवहार्यता के बारे में चिंता के रूप में उपयोग किया जो क्षेत्रीय अस्थिरता पैदा करता है।",
+      "final_explanation": "माउंटबेटन योजना को प्रत्येक प्रमुख नेता द्वारा स्वीकार करने के पीछे अलग-अलग तर्क थे — और UPSC के प्रश्न अक्सर यह जांचते हैं कि छात्र सही तर्क को सही नेता से जोड़ पाते हैं।\n\nसही मेल:\n• A (जिन्ना) — 3: जिन्ना ने विभाजित पाकिस्तान को 'मॉथ-ईटन, संकुचित' राज्य कहा — यह असंतोष व्यक्त करता है कि उन्हें केवल पश्चिमी पंजाब और पूर्वी बंगाल मिला, पूरा अविभाजित नहीं।\n• B (नेहरू) — 1: नेहरू का विभाजन स्वीकारना अनिच्छुक और रणनीतिक था। उन्हें डर था कि भौगोलिक और आर्थिक रूप से कमजोर पाकिस्तान ('मॉथ-ईटन' एक अलग अर्थ में) अस्थिर होगा और स्थायी सीमा संकट पैदा करेगा — अंततः उन्होंने मजबूत भारतीय केंद्र के साथ विभाजन को बेहतर माना।\n• C (पटेल) — 4: पटेल का तर्क कांग्रेस नेताओं में सबसे व्यावहारिक था। उनका मानना था कि एक छोटा, अविभाजित-कांग्रेस-शासित भारत जिसमें मजबूत केंद्र हो, वह मुस्लिम लीग के प्रांतों द्वारा स्थायी रूप से विवादित एक संयुक्त भारत से अधिक सुशासन योग्य होगा।\n• D (गांधी) — 2: गांधी का वैकल्पिक प्रस्ताव कट्टर था — उन्होंने जिन्ना को अविभाजित भारत का प्रधानमंत्री पद देने का प्रस्ताव रखा, यह मानते हुए कि जिन्ना का असली लक्ष्य सत्ता है, क्षेत्र नहीं। नेहरू और पटेल ने इसे राजनीतिक रूप से अव्यावहारिक माना और अस्वीकार कर दिया।\n\nमूल्यवर्धन:\n• नेहरू का विभाजन को 'दिल का विभाजन' कहना उनके गहरे पैन-एशियाई संघवादी दृष्टिकोण का प्रतिबिंब था जो बलिदान हो रहा था।\n• पटेल ने 565 रियासतों का एक वर्ष में एकीकृत प्रबंधन किया — जिससे उनका 'मजबूत केंद्र' तर्क व्यावहारिक रूप से सिद्ध हुआ।\n• गांधी का जिन्ना को पीएम बनाने का प्रस्ताव स्वीकार हो जाता तो भारत में मुस्लिम लीग का प्रधानमंत्री और कांग्रेस बहुमत वाला संसद होता — एक संवैधानिक रूप से नया प्रावधान।"
+    }
+  },
+  {
+    "uuid": "4cbddc77-a73e-43a9-93e2-ea58888e1792",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Accelerated Timeline: June 1947 Announcement vs. June 1948 Original Deadline"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Mountbatten accelerated timeline consequences administrative unpreparedness",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following scenario:\n\nWhen Mountbatten advanced the deadline for the transfer of power from June 1948 (as originally specified in the Attlee Declaration) to August 1947, the entire administrative machinery of partition was compressed into approximately 73 days. The Boundary Commission, military reconstitution committees, financial division teams, and civil service allocation panels all had to operate within this drastically shortened window.\n\nWhich of the following was the most direct and documented consequence of this accelerated timeline?\n\n(a) The Radcliffe Commission was formally given a legally shortened mandate by the Mountbatten Plan — restricting it from conducting the same extent of survey work that a longer mandate would have permitted\n(b) The Radcliffe Commission had approximately five weeks of actual working time to demarcate boundaries affecting tens of millions of people, making detailed ground surveys impossible and contributing directly to disputed boundary lines\n(c) The military reconstitution committee successfully completed the division of all armed forces assets before August 15, 1947 because the accelerated timeline forced prioritisation of military over administrative assets\n(d) The accelerated timeline reduced communal tensions by giving extremist groups less time to organise resistance, resulting in a calmer immediate transition than a longer drawn-out partition would have produced",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students who know the Radcliffe Award was rushed may conflate 'rushed because of the timeline' with 'Radcliffe was given a legally shorter mandate under the accelerated plan' — not recognising that the reduced timeframe was an administrative consequence, not a legal provision.",
+      "elimination_logic": [
+        "Identify the scenario's core principle: Mountbatten advanced the deadline from June 1948 to August 1947, reducing time from approximately 14-16 months to 2-3 months.",
+        "Eliminate option a: the legal mandate given to Radcliffe was not formally shortened — the commission was given the same brief, but the rushed timeline meant it had inadequate time to conduct ground surveys.",
+        "Eliminate option c: the military reconstitution was not completed before August 1947 — it was an ongoing process that continued well past independence.",
+        "Eliminate option d: the accelerated timeline actually increased (not decreased) communal tensions in the short term — violence erupted precisely because partition happened before administrative frameworks were ready.",
+        "Confirm option b: the most significant documented consequence of the accelerated timeline was the Radcliffe Commission having approximately 5 weeks to demarcate boundaries affecting millions of people, with no ability to conduct detailed ground surveys — a direct cause of the boundary disputes and violence."
+      ],
+      "upsc_trap_explanation": "Option a conflates the rushed timeline (a consequence of the accelerated plan) with a formal reduction in Radcliffe's legal mandate. Students who know the Radcliffe Award was hurried may assume this means the commission's legal timeframe was explicitly cut short as a plan provision. In fact, the commission's inadequate time was a consequence of the overall acceleration, not a specifically prescribed shorter mandate.",
+      "final_explanation": "Mountbatten's decision to advance the transfer of power from June 1948 to August 1947 — a reduction of approximately ten months — had profound and largely negative consequences for the administrative mechanics of partition.\n\nApplicable principle: Accelerating a complex administrative transition without corresponding institutional preparation creates operational voids that violence and political instability fill.\n\nMapping to the scenario: Given only 73 days between the plan's announcement (June 3) and independence (August 15), administrative bodies — particularly the Radcliffe Commission — had insufficient time for proper demarcation work.\n\n• Option (a): Incorrect. Radcliffe's legal mandate was not formally shortened as a plan provision — the commission was given the task with the expectation it would complete it. The inadequacy stemmed from operational time pressure, not a legal truncation of mandate.\n• Option (b): Correct. The Radcliffe Commission had approximately five weeks of actual working time to demarcate boundaries affecting tens of millions of people across Punjab and Bengal, with no capacity for field surveys. This directly caused imprecise boundary drawing, disputed allocations, and contributed to violence as communities found themselves unexpectedly on the 'wrong' side.\n• Option (c): Incorrect. Military reconstitution was explicitly not completed before independence — Field Marshal Auchinleck's Supreme Command continued for months after August 15, 1947.\n• Option (d): Incorrect. The accelerated timeline demonstrably increased rather than decreased communal violence in the short term — the mass migrations and massacres of 1947-48 occurred precisely because no administrative buffer existed.\n\nValue Addition:\n• Radcliffe had approximately 5 weeks to draw boundaries — he later said he wished he had not taken the task.\n• The acceleration was partly motivated by Mountbatten's personal concern about a complete collapse of law and order if partition dragged into 1948.\n• The division of the Indian Civil Service between the two dominions was similarly rushed, leaving both governments significantly understaffed."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित परिदृश्य पर विचार करें:\n\nजब माउंटबेटन ने सत्ता हस्तांतरण की समयसीमा को जून 1948 (जैसा कि एटली घोषणा में मूल रूप से निर्दिष्ट था) से अगस्त 1947 कर दिया, तो विभाजन की पूरी प्रशासनिक मशीनरी लगभग 73 दिनों में समा गई। सीमा आयोग, सैन्य पुनर्गठन समितियां, वित्तीय विभाजन टीमें, और सिविल सेवा आवंटन पैनल सभी को इस अत्यंत संकुचित समय में काम करना पड़ा।\n\nइस तेज समयसीमा का सबसे प्रत्यक्ष और दस्तावेजीकृत परिणाम निम्नलिखित में से कौन सा था?\n\n(a) माउंटबेटन योजना द्वारा रैडक्लिफ आयोग को औपचारिक रूप से कानूनी रूप से कम समय दिया गया — जिससे उसे उतना विस्तृत सर्वेक्षण करने से रोका गया जितना लंबी अवधि में संभव होता\n(b) रैडक्लिफ आयोग के पास लगभग पांच सप्ताह का वास्तविक कार्यकाल था जिसमें उसने करोड़ों लोगों को प्रभावित करने वाली सीमाओं को चिह्नित किया, जिससे विस्तृत जमीन सर्वेक्षण असंभव हो गया और यह सीमा विवादों में सीधे योगदान देने वाला था\n(c) सैन्य पुनर्गठन समिति ने सभी सशस्त्र बलों के संसाधनों का विभाजन 15 अगस्त 1947 से पहले सफलतापूर्वक पूरा कर लिया क्योंकि तेज समयसीमा ने सैन्य संसाधनों को प्रशासनिक संसाधनों पर प्राथमिकता दी\n(d) तेज समयसीमा ने कट्टरपंथी समूहों को प्रतिरोध संगठित करने के लिए कम समय दिया, जिससे सांप्रदायिक तनाव कम हुआ और विभाजन की तुलना में संक्रमण अधिक शांतिपूर्ण रहा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र जानते हैं कि रैडक्लिफ पुरस्कार जल्दी दिया गया था, वे 'समयसीमा के कारण जल्दी किया गया' को 'रैडक्लिफ को तेज योजना के तहत कानूनी रूप से कम समय दिया गया' से मिला सकते हैं — यह नहीं समझते कि कम समय प्रशासनिक परिणाम था, कानूनी प्रावधान नहीं।",
+      "elimination_logic": [
+        "परिदृश्य के मूल सिद्धांत की पहचान करें: माउंटबेटन ने समयसीमा जून 1948 से अगस्त 1947 कर दी, जिससे लगभग 14-16 महीने का समय घटकर 2-3 महीने रह गया।",
+        "विकल्प a को निरस्त करें: रैडक्लिफ को दिया गया कानूनी अधिकार औपचारिक रूप से कम नहीं किया गया था — आयोग को वही कार्य दिया गया था, लेकिन जल्दी की गई समयसीमा के कारण उसके पास जमीन सर्वेक्षण के लिए पर्याप्त समय नहीं था।",
+        "विकल्प c को निरस्त करें: सैन्य पुनर्गठन अगस्त 1947 से पहले पूरा नहीं हुआ था — यह एक चल रही प्रक्रिया थी जो स्वतंत्रता के बाद भी जारी रही।",
+        "विकल्प d को निरस्त करें: तेज समयसीमा ने वास्तव में अल्पकालिक में सांप्रदायिक तनाव बढ़ाए — हिंसा इसलिए हुई क्योंकि विभाजन प्रशासनिक तैयारियों के बिना हुआ।",
+        "विकल्प b को पुष्टि करें: तेज समयसीमा का सबसे महत्वपूर्ण दस्तावेजीकृत परिणाम था कि रैडक्लिफ आयोग के पास लगभग 5 सप्ताह थे जिसमें वह लाखों लोगों को प्रभावित करने वाली सीमाओं को चिह्नित कर सके, बिना विस्तृत जमीन सर्वेक्षण के — जो सीमा विवादों और हिंसा का सीधा कारण बना।"
+      ],
+      "upsc_trap_explanation": "विकल्प a में जल्दी की गई समयसीमा (जो तेज योजना का परिणाम है) को रैडक्लिफ के कानूनी अधिकार में औपचारिक कमी से मिला दिया गया है। जो छात्र जानते हैं कि रैडक्लिफ पुरस्कार जल्दी दिया गया था, वे मान सकते हैं कि आयोग के कानूनी समय को योजना के प्रावधान के रूप में स्पष्ट रूप से कम किया गया था। वास्तव में, आयोग के पास कम समय होना कुल समयसीमा के तेज होने का परिणाम था, न कि किसी विशेष रूप से निर्धारित कम अवधि।",
+      "final_explanation": "माउंटबेटन के जून 1948 से अगस्त 1947 तक सत्ता हस्तांतरण की समयसीमा को लगभग दस महीने घटाने के निर्णय का विभाजन की प्रशासनिक प्रक्रिया पर गहरा और मुख्यतः नकारात्मक प्रभाव पड़ा।\n\nलागू सिद्धांत: जटिल प्रशासनिक संक्रमण को बिना संस्थागत तैयारी के तेज करना परिचालन में खामियां पैदा करता है, जिन्हें हिंसा और राजनीतिक अस्थिरता भर देती है।\n\nपरिदृश्य से मेल: योजना की घोषणा (3 जून) और स्वतंत्रता (15 अगस्त) के बीच केवल 73 दिन थे, जिससे प्रशासनिक निकायों — विशेषकर रैडक्लिफ आयोग — के पास सीमांकन कार्य के लिए पर्याप्त समय नहीं था।\n\n• विकल्प (a): गलत। रैडक्लिफ के कानूनी अधिकार को योजना के प्रावधान के रूप में औपचारिक रूप से कम नहीं किया गया था — आयोग को कार्य पूरा करने की उम्मीद के साथ दिया गया था। कमी परिचालन समय दबाव की वजह से थी, कानूनी अधिकार की कटौती से नहीं।\n• विकल्प (b): सही। रैडक्लिफ आयोग के पास लगभग पांच सप्ताह का वास्तविक कार्यकाल था जिसमें उसने पंजाब और बंगाल में करोड़ों लोगों को प्रभावित करने वाली सीमाओं को चिह्नित किया, बिना क्षेत्रीय सर्वेक्षण के। इससे सीमाओं के अस्पष्ट निर्धारण, विवाद और हिंसा हुई क्योंकि समुदाय अप्रत्याशित रूप से 'गलत' पक्ष पर आ गए।\n• विकल्प (c): गलत। सैन्य पुनर्गठन स्वतंत्रता से पहले पूरा नहीं हुआ था — फील्ड मार्शल ऑचिनलेक का सुप्रीम कमांड अगस्त 1947 के बाद भी कई महीने चला।\n• विकल्प (d): गलत। तेज समयसीमा ने अल्पकालिक में सांप्रदायिक हिंसा को कम करने के बजाय बढ़ाया — 1947-48 के दौरान बड़े पैमाने पर पलायन और हत्याकांड इसलिए हुए क्योंकि कोई प्रशासनिक सुरक्षा नहीं थी।\n\nमूल्यवर्धन:\n• रैडक्लिफ के पास सीमाएं निर्धारित करने के लिए लगभग 5 सप्ताह थे — बाद में उन्होंने कहा कि वे यह कार्य नहीं लेना चाहते थे।\n• इस तेजी का एक कारण माउंटबेटन की व्यक्तिगत चिंता थी कि यदि विभाजन 1948 तक खिंचता रहा तो कानून-व्यवस्था पूरी तरह से ध्वस्त हो जाएगी।\n• भारतीय सिविल सेवा के दो डोमिनियनों में विभाजन भी जल्दी किया गया, जिससे दोनों सरकारें काफी कम स्टाफ के साथ रह गईं।"
+    }
+  },
+  {
+    "uuid": "527b741a-8cc7-4fca-a400-78aaa1289238",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Origins and Context of the Mountbatten Plan (June 3rd Plan)",
+        "Comparison: Mountbatten Plan vs. Cabinet Mission Plan — Key Differences"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Cabinet Mission Plan failure necessitated Mountbatten Plan",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A principal reason why the Cabinet Mission Plan of 1946 failed — thereby making the Mountbatten Plan and partition unavoidable — was:\n\n(a) The Muslim League rejected the plan because it proposed dominion status rather than full independence for Pakistan, while Congress demanded complete independence for a united India\n(b) Jinnah unconditionally rejected the Cabinet Mission Plan from the outset, preventing any serious negotiation of its federal structure\n(c) Gandhi organised a mass movement against the Cabinet Mission Plan's grouping scheme, forcing Congress to withdraw its acceptance\n(d) Congress accepted the Constituent Assembly but rejected the grouping scheme that was integral to the plan's federal structure, while Jinnah refused to participate without grouping guarantees — making the plan unimplementable",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Jinnah's rejection of the grouping scheme is well known, but students may not know that Congress also effectively torpedoed the plan by rejecting the grouping mechanism while accepting the assembly — making both parties responsible for its failure.",
+      "elimination_logic": [
+        "Eliminate option a: the Cabinet Mission Plan was not rejected because it proposed dominion status — it actually proposed continuing British oversight, not full independence.",
+        "Eliminate option b: while Jinnah's stance was important, the more decisive blow was Congress's acceptance of the Constituent Assembly while rejecting the grouping scheme — this made the plan unworkable.",
+        "Eliminate option c: Gandhi's opposition was philosophical but he did not launch an organised movement that caused the plan's failure.",
+        "Confirm option d: the Cabinet Mission Plan's fatal contradiction was that Congress accepted the Constituent Assembly but rejected the grouping scheme (which was integral to the plan's federal structure), while Jinnah refused to join an assembly without the grouping guarantees — making the plan unimplementable."
+      ],
+      "upsc_trap_explanation": "Option b conflates Jinnah's role with the plan's collapse. Students who know Jinnah eventually rejected the plan focus on his position and overlook that Congress's selective acceptance (assembly yes, groupings no) was equally — arguably more — fatal to the plan's viability. The plan required both parties' full participation; Congress's rejection of groupings destroyed the federal structure that was the plan's core.",
+      "final_explanation": "The Cabinet Mission Plan's failure is among the most consequential political breakdowns in modern Indian history — it made partition structurally inevitable.\n\n• Option (a): Incorrect. The Cabinet Mission Plan did not propose dominion status in the sense of the Mountbatten Plan. It proposed a complex three-tier federal structure — its rejection was not about dominion status.\n• Option (b): Incorrect. This is a partial truth. Jinnah initially accepted the Cabinet Mission Plan in June 1946, then withdrew acceptance in July 1946. But attributing the plan's failure solely to Jinnah overlooks the Congress role.\n• Option (c): Incorrect. Gandhi expressed reservations but did not organise a movement that caused the plan's collapse.\n• Option (d): Correct. The Cabinet Mission Plan's grouping scheme — dividing provinces into three sections (A, B, C) — was inseparable from its federal architecture. Congress accepted the Constituent Assembly but declared it would not be bound by the grouping scheme, interpreting it as advisory. This made Section B (Muslim-majority northwestern provinces) and Section C (Assam and Bengal) unworkable. Jinnah then refused participation without guaranteed groupings. The plan collapsed from irreconcilable selective acceptances.\n\nValue Addition:\n• Section B of the grouping scheme included Punjab, NWFP, and Sind — the eventual core of Pakistan.\n• Congress's interpretation of the grouping scheme as 'optional' was seen by Jinnah as evidence that Congress would not honour the plan — accelerating his shift toward partition demand.\n• Nehru's July 10, 1946 press conference statement that Congress was 'free to change or modify' the constitution was the specific trigger for Jinnah's withdrawal."
+    },
+    "hi": {
+      "display_text": "1946 की कैबिनेट मिशन योजना के असफल होने का एक मुख्य कारण — जिससे माउंटबेटन योजना और विभाजन अनिवार्य हो गया — था:\n\n(a) मुस्लिम लीग ने योजना को इसलिए अस्वीकार कर दिया क्योंकि इसने पाकिस्तान के लिए पूर्ण स्वतंत्रता के बजाय डोमिनियन स्टेटस का प्रस्ताव दिया, जबकि कांग्रेस ने एक संयुक्त भारत के लिए पूर्ण स्वतंत्रता की मांग की\n(b) जिन्ना ने शुरू से ही कैबिनेट मिशन योजना को बिना शर्त अस्वीकार कर दिया, जिससे इसकी संघीय संरचना पर कोई गंभीर बातचीत संभव नहीं हो सकी\n(c) गांधी ने कैबिनेट मिशन योजना की समूह बनाने की योजना के खिलाफ एक जन आंदोलन संगठित किया, जिससे कांग्रेस को अपनी स्वीकृति वापस लेनी पड़ी\n(d) कांग्रेस ने संविधान सभा को स्वीकार किया लेकिन योजना की संघीय संरचना का अभिन्न हिस्सा समूह बनाने की योजना को अस्वीकार कर दिया, जबकि जिन्ना ने समूह बनाने की गारंटी के बिना भागीदारी से इनकार कर दिया — जिससे योजना अमल में असंभव हो गई",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Jinnah's rejection of the grouping scheme is well known, but students may not know that Congress also effectively torpedoed the plan by rejecting the grouping mechanism while accepting the assembly — making both parties responsible for its failure.",
+      "elimination_logic": [
+        "(a) विकल्प को हटाएं: कैबिनेट मिशन योजना को इसलिए अस्वीकार नहीं किया गया क्योंकि इसने डोमिनियन स्टेटस का प्रस्ताव दिया था — वास्तव में इसने पूर्ण स्वतंत्रता नहीं बल्कि ब्रिटिश नियंत्रण जारी रखने का प्रस्ताव दिया था।",
+        "(b) विकल्प को हटाएं: जबकि जिन्ना का रुख महत्वपूर्ण था, अधिक निर्णायक प्रहार कांग्रेस का था जिसने संविधान सभा को स्वीकार किया लेकिन समूह बनाने की योजना को अस्वीकार कर दिया — जिससे योजना अमल में नहीं आ सकी।",
+        "(c) विकल्प को हटाएं: गांधी का विरोध दार्शनिक था लेकिन उन्होंने कोई संगठित आंदोलन शुरू नहीं किया जिसने योजना को विफल किया।",
+        "(d) विकल्प की पुष्टि करें: कैबिनेट मिशन योजना की घातक विरोधाभास यह थी कि कांग्रेस ने संविधान सभा को स्वीकार किया लेकिन समूह बनाने की योजना (जो योजना की संघीय संरचना का अभिन्न हिस्सा थी) को अस्वीकार कर दिया, जबकि जिन्ना समूह बनाने की गारंटी के बिना सभा में शामिल होने से इनकार कर दिया — जिससे योजना अमल में असंभव हो गई।"
+      ],
+      "upsc_trap_explanation": "(b) विकल्प जिन्ना की भूमिका को योजना के पतन के साथ मिला देता है। जिन्ना ने अंततः योजना को अस्वीकार किया, यह जानने वाले छात्र केवल उनके रुख पर ध्यान देते हैं और यह नहीं देखते कि कांग्रेस की चयनात्मक स्वीकृति (सभा को हाँ, समूहों को नहीं) भी — संभवतः अधिक — योजना की व्यवहार्यता के लिए घातक थी। योजना दोनों पक्षों की पूर्ण भागीदारी की मांग करती थी; कांग्रेस का समूहों का अस्वीकार संघीय संरचना को नष्ट कर देता है जो योजना का मूल था।",
+      "final_explanation": "कैबिनेट मिशन योजना की विफलता आधुनिक भारतीय इतिहास के सबसे महत्वपूर्ण राजनीतिक टूटनों में से एक है — इसने विभाजन को संरचनात्मक रूप से अनिवार्य बना दिया।\n\n• विकल्प (a): गलत। कैबिनेट मिशन योजना ने माउंटबेटन योजना के अर्थ में डोमिनियन स्टेटस का प्रस्ताव नहीं दिया था। इसने एक जटिल तीन-स्तरीय संघीय संरचना का प्रस्ताव दिया था — इसका अस्वीकार डोमिनियन स्टेटस के कारण नहीं था।\n• विकल्प (b): गलत। यह आंशिक सत्य है। जिन्ना ने जून 1946 में कैबिनेट मिशन योजना को स्वीकार किया था, फिर जुलाई 1946 में स्वीकार्यता वापस ले ली। लेकिन योजना की विफलता का पूरा श्रेय केवल जिन्ना को देना कांग्रेस की भूमिका को नजरअंदाज करना है।\n• विकल्प (c): गलत। गांधी ने आपत्तियां जताईं लेकिन उन्होंने कोई ऐसा आंदोलन संगठित नहीं किया जिससे योजना ध्वस्त हो।\n• विकल्प (d): सही। कैबिनेट मिशन योजना की समूह बनाने की योजना — प्रांतों को तीन वर्गों (A, B, C) में विभाजित करना — इसकी संघीय संरचना से अविभाज्य थी। कांग्रेस ने संविधान सभा को स्वीकार किया लेकिन कहा कि वह समूह बनाने की योजना से बंधी नहीं होगी, इसे केवल सलाहकार माना। इससे वर्ग B (मुस्लिम बहुल उत्तर-पश्चिमी प्रांत) और वर्ग C (असम और बंगाल) अमल में असंभव हो गए। जिन्ना ने बिना समूह बनाने की गारंटी के भागीदारी से इनकार कर दिया। योजना असंगत चयनात्मक स्वीकृतियों के कारण ध्वस्त हो गई।\n\nमूल्यवर्धन:\n• समूह बनाने की योजना का वर्ग B पंजाब, NWFP और सिंध को शामिल करता था — जो अंततः पाकिस्तान का मूल बना।\n• कांग्रेस की समूह योजना को 'वैकल्पिक' मानने की व्याख्या को जिन्ना ने इस बात के प्रमाण के रूप में देखा कि कांग्रेस योजना का सम्मान नहीं करेगी — जिससे उनका विभाजन की मांग की ओर झुकाव तेज हुआ।\n• नेहरू के 10 जुलाई 1946 के प्रेस कॉन्फ्रेंस में यह बयान कि कांग्रेस संविधान को 'बदलने या संशोधित करने के लिए स्वतंत्र' है, जिन्ना के वापसी के लिए विशेष ट्रिगर था।"
+    }
+  },
+  {
+    "uuid": "f3c1a53e-4924-46cb-aca6-11b873d2a566",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Partition of Bengal: Historical and Political Dimensions",
+        "Referendum Provisions: NWFP and Sylhet"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Sylhet referendum Assam East Bengal demographic impact",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the partition of Bengal under the Mountbatten Plan and its historical dimensions, consider the following statements:\n\n1. Sylhet was a district of Assam that voted in a referendum to join East Bengal (Pakistan) — the only district-level referendum held during the partition process.\n2. The partition of Bengal in 1947 was the first occasion in which Bengal had been divided along administrative lines — the earlier 1905 partition had been a complete reversal that left no permanent boundary.\n3. Hindu Mahasabha actively supported the partition of Bengal in 1947, contrary to its general stance of opposing partition of India as a whole, because partition prevented Calcutta from being included in a Muslim-majority united Bengal that might have joined Pakistan.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sylhet was a district of Assam that voted in a referendum to join East Bengal (Pakistan) — the only district-level referendum held during the partition process.",
+          "verdict": "Correct",
+          "reason": "Sylhet was indeed a district of Assam with a Muslim-majority population. Its referendum resulted in a vote to join East Bengal, which became part of Pakistan. This was the only district-level referendum — all other partition decisions were made at provincial or assembly level."
+        },
+        {
+          "statement": "The partition of Bengal in 1947 was the first occasion in which Bengal had been divided along administrative lines — the earlier 1905 partition had been a complete reversal that left no permanent boundary.",
+          "verdict": "Incorrect",
+          "reason": "The statement is misleading in its implication. While the 1905 partition was indeed reversed in 1911 (leaving no permanent boundary), the 1947 partition was thus the second occasion of Bengal's administrative division — not the first. Calling 1947 the 'first occasion' is factually incorrect."
+        },
+        {
+          "statement": "Hindu Mahasabha actively supported the partition of Bengal in 1947, contrary to its general stance of opposing partition of India as a whole, because partition prevented Calcutta from being included in a Muslim-majority united Bengal that might have joined Pakistan.",
+          "verdict": "Correct",
+          "reason": "This is an important historical nuance. The Hindu Mahasabha, while opposing the overall partition of India, supported the partition of Bengal specifically because an undivided Bengal would have been Muslim-majority and might have joined Pakistan — taking Calcutta with it. Their Bengal-specific support for partition was driven by the strategic concern of keeping Calcutta within India."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) traps students who accept the superficially plausible statement 2 without checking whether 1947 was actually the 'first' partition of Bengal.",
+      "elimination_logic": [
+        "Verify statement 1: Sylhet district in Assam, Muslim majority, voted in referendum to join East Bengal — only district-level referendum. Statement 1 is correct.",
+        "Verify statement 2: 1905 partition of Bengal is historically documented — 1947 was the SECOND partition, not the first. Statement 2 is incorrect.",
+        "Verify statement 3: Hindu Mahasabha's tactical support for Bengal's partition to save Calcutta is historically documented. Statement 3 is correct.",
+        "Statements 1 and 3 correct → option b (1 and 3 only)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a geographic-scope trap exploiting the 'second partition' versus 'first partition' distinction. Students who know Bengal was partitioned in 1947 and know it was later called the 'partition of Bengal' may not recall the 1905 precedent, accepting '1947 as first' without challenge. The 1905 partition's reversal in 1911 is the crucial context.",
+      "final_explanation": "Bengal's partition in 1947 must be understood within its own historical trajectory — it was not the first time Bengal was divided.\n\n• Statement 1 — Correct: Sylhet's referendum was unique in the entire partition process — the only time a single district voted on its future independently of the province it was in. Sylhet had a Muslim-majority population despite being part of Hindu-majority Assam, justifying this exception under the Mountbatten Plan's majority-area logic.\n• Statement 2 — Incorrect: The 1905 partition of Bengal (by Lord Curzon) divided it into 'Bengal' (Hindu-majority western) and 'Eastern Bengal and Assam' (Muslim-majority eastern). Though reversed in 1911, it was a real administrative partition. The 1947 partition was therefore the second division, not the first.\n• Statement 3 — Correct: The Hindu Mahasabha's position on Bengal's partition was tactically distinct from its broader anti-partition stance on India as a whole. Leaders like Shyama Prasad Mookerjee argued that a united Bengal joining Pakistan would place Calcutta — then India's largest city and commercial capital — under Muslim League control. Partition of Bengal thus served Hindu Mahasabha's interests in Bengal even while it opposed partition nationally.\n\nValue Addition:\n• The 1905 partition was reversed primarily due to the Swadeshi movement — one of the first major mass mobilisations of the nationalist era.\n• Calcutta remained with India (West Bengal) — an outcome the Hindu Mahasabha's tactical support for Bengal's partition helped ensure.\n• Post-1947 East Bengal (later East Pakistan, then Bangladesh in 1971) went through its own partition journey — making Bengal's division a three-stage historical process."
+    },
+    "hi": {
+      "display_text": "माउंटबेटन योजना के तहत बंगाल के विभाजन और इसके ऐतिहासिक आयामों के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. सिलहट असम का एक जिला था जिसने जनमत संग्रह में पूर्वी बंगाल (पाकिस्तान) में शामिल होने के लिए मतदान किया — यह विभाजन प्रक्रिया के दौरान आयोजित एकमात्र जिला-स्तरीय जनमत संग्रह था।\n2. 1947 में बंगाल का विभाजन वह पहला अवसर था जब बंगाल को प्रशासनिक रूप से विभाजित किया गया — पूर्व का 1905 का विभाजन पूरी तरह उलट दिया गया था और कोई स्थायी सीमा नहीं छोड़ी गई थी।\n3. हिंदू महासभा ने 1947 में बंगाल के विभाजन का सक्रिय समर्थन किया, जो भारत के समग्र विभाजन के विरोध के उनके सामान्य रुख के विपरीत था, क्योंकि विभाजन ने कोलकाता को एक मुस्लिम बहुल संयुक्त बंगाल में शामिल होने से रोका जो पाकिस्तान में शामिल हो सकता था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sylhet was a district of Assam that voted in a referendum to join East Bengal (Pakistan) — the only district-level referendum held during the partition process.",
+          "verdict": "सही है",
+          "reason": "सिलहट वास्तव में असम का एक जिला था जिसमें मुस्लिम बहुल आबादी थी। इसका जनमत संग्रह पूर्वी बंगाल में शामिल होने के पक्ष में हुआ, जो पाकिस्तान का हिस्सा बना। यह एकमात्र जिला-स्तरीय जनमत संग्रह था — अन्य सभी विभाजन निर्णय प्रांत या विधानसभा स्तर पर लिए गए थे।"
+        },
+        {
+          "statement": "The partition of Bengal in 1947 was the first occasion in which Bengal had been divided along administrative lines — the earlier 1905 partition had been a complete reversal that left no permanent boundary.",
+          "verdict": "गलत है",
+          "reason": "यह कथन अपने आशय में भ्रामक है। जबकि 1905 का विभाजन 1911 में उलट दिया गया था (जिससे कोई स्थायी सीमा नहीं बनी), 1947 का विभाजन बंगाल के प्रशासनिक विभाजन का दूसरा अवसर था — पहला नहीं। 1947 को 'पहला अवसर' कहना तथ्यात्मक रूप से गलत है।"
+        },
+        {
+          "statement": "Hindu Mahasabha actively supported the partition of Bengal in 1947, contrary to its general stance of opposing partition of India as a whole, because partition prevented Calcutta from being included in a Muslim-majority united Bengal that might have joined Pakistan.",
+          "verdict": "सही है",
+          "reason": "यह एक महत्वपूर्ण ऐतिहासिक सूक्ष्मता है। हिंदू महासभा, जो भारत के समग्र विभाजन का विरोध करती थी, ने बंगाल के विभाजन का समर्थन इसलिए किया क्योंकि एक अविभाजित बंगाल मुस्लिम बहुल होता और पाकिस्तान में शामिल हो सकता था — जिससे कोलकाता भी पाकिस्तान के नियंत्रण में आ जाता। बंगाल के विभाजन के लिए उनका समर्थन कोलकाता को भारत में रखने की रणनीतिक चिंता से प्रेरित था।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) उन छात्रों को फंसाता है जो सतही रूप से कथन 2 को सही मान लेते हैं बिना यह जांचे कि क्या 1947 वास्तव में बंगाल का 'पहला' विभाजन था।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: सिलहट जिला असम का था, मुस्लिम बहुल, जनमत संग्रह में पूर्वी बंगाल में शामिल होने के पक्ष में। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: 1905 का बंगाल विभाजन ऐतिहासिक रूप से दर्ज है — 1947 दूसरा विभाजन था, पहला नहीं। कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: हिंदू महासभा का कोलकाता बचाने के लिए बंगाल विभाजन का रणनीतिक समर्थन ऐतिहासिक रूप से दर्ज है। कथन 3 सही है।",
+        "कथन 1 और 3 सही → विकल्प b (केवल 1 और 3)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक भौगोलिक-क्षेत्र जाल है जो 'दूसरे विभाजन' बनाम 'पहले विभाजन' के अंतर का उपयोग करता है। जो छात्र जानते हैं कि बंगाल 1947 में विभाजित हुआ था और इसे बाद में 'बंगाल का विभाजन' कहा गया, वे 1905 के पूर्ववर्ती को याद नहीं रख पाते और बिना चुनौती के '1947 को पहला' मान लेते हैं। 1905 के विभाजन का 1911 में उलटना महत्वपूर्ण संदर्भ है।",
+      "final_explanation": "1947 में बंगाल का विभाजन उसकी अपनी ऐतिहासिक प्रक्रिया के संदर्भ में समझा जाना चाहिए — यह बंगाल के विभाजन का पहला अवसर नहीं था।\n\n• कथन 1 — सही: सिलहट का जनमत संग्रह पूरे विभाजन प्रक्रिया में अद्वितीय था — एकमात्र ऐसा अवसर जब एक जिला स्वतंत्र रूप से अपने भविष्य पर मतदान कर सका। सिलहट मुस्लिम बहुल था जबकि वह हिंदू बहुल असम का हिस्सा था, जो माउंटबेटन योजना के बहुलता-क्षेत्र तर्क के तहत इस अपवाद को न्यायसंगत बनाता है।\n• कथन 2 — गलत: 1905 का बंगाल विभाजन (लॉर्ड कर्जन द्वारा) बंगाल को 'बंगाल' (हिंदू बहुल पश्चिमी) और 'पूर्वी बंगाल और असम' (मुस्लिम बहुल पूर्वी) में विभाजित करता था। हालांकि इसे 1911 में उलट दिया गया, यह एक वास्तविक प्रशासनिक विभाजन था। अतः 1947 का विभाजन दूसरा था, पहला नहीं।\n• कथन 3 — सही: हिंदू महासभा का बंगाल विभाजन पर रुख भारत के समग्र विभाजन विरोध से रणनीतिक रूप से अलग था। श्यामाप्रसाद मुखर्जी जैसे नेताओं ने तर्क दिया कि एक संयुक्त बंगाल जो पाकिस्तान में शामिल हो जाता, कोलकाता — जो उस समय भारत का सबसे बड़ा शहर और वाणिज्यिक राजधानी था — मुस्लिम लीग के नियंत्रण में आ जाता। इसलिए बंगाल का विभाजन हिंदू महासभा के हित में था, जबकि वह राष्ट्रीय स्तर पर विभाजन का विरोध करती थी।\n\nमूल्यवर्धन:\n• 1905 का विभाजन मुख्यतः स्वदेशी आंदोलन के कारण उलटा गया — जो राष्ट्रवादी युग के पहले बड़े जन आंदोलन में से एक था।\n• कोलकाता भारत (पश्चिम बंगाल) के साथ रहा — यह परिणाम हिंदू महासभा के बंगाल विभाजन के रणनीतिक समर्थन से सुनिश्चित हुआ।\n• 1947 के बाद पूर्वी बंगाल (बाद में पूर्वी पाकिस्तान, फिर 1971 में बांग्लादेश) ने अपनी अलग विभाजन यात्रा तय की — जिससे बंगाल का विभाजन तीन चरणों वाली ऐतिहासिक प्रक्रिया बन गया।"
+    }
+  },
+  {
+    "uuid": "3f45c4d2-e378-496e-a722-f3cd698f3dcb",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Division of Military Assets and the Armed Forces Reconstitution Committee",
+        "Division of Financial Assets and the Reserve Bank of India's Transitional Role"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Auchinleck Supreme Commander transitional military role",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched in the context of the division of military and financial assets following the Mountbatten Plan?\n\n(a) Field Marshal Claude Auchinleck — Appointed Supreme Commander during the transitional period to oversee the reconstitution and division of military assets between the two new dominions\n(b) Lord Wavell — Chaired the Armed Forces Reconstitution Committee that determined the 64:36 division ratio for military assets between India and Pakistan\n(c) Reserve Bank of India — Continued as the monetary authority for Pakistan only until December 1947, when Pakistan established its own central bank\n(d) Military assets division ratio — 60% for India and 40% for Pakistan, based on proportional assessment of territorial size",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Wavell is a familiar name associated with the India transition period, and students may confuse Auchinleck's post-partition Supreme Commander role with Wavell's pre-partition Viceroy role.",
+      "elimination_logic": [
+        "Evaluate option a: Field Marshal Claude Auchinleck was indeed appointed Supreme Commander during the transitional period to oversee division of military assets — correctly matched.",
+        "Evaluate option b: Lord Wavell was Viceroy before Mountbatten — he was not involved in the post-partition military asset division.",
+        "Evaluate option c: the RBI served as currency authority for both dominions initially, but Pakistan's central bank (State Bank of Pakistan) was established in July 1948, not 'by December 1947.'",
+        "Evaluate option d: the military assets division ratio was 64:36 (India:Pakistan), not 60:40.",
+        "Option a is correctly matched."
+      ],
+      "upsc_trap_explanation": "Option b uses Wavell — a real, senior military-political figure closely associated with the India transition — as the entity-swap. Students who know Auchinleck was a Field Marshal in the South Asian context may confuse the two. Wavell's role ended when Mountbatten replaced him as Viceroy in March 1947, whereas Auchinleck's Supreme Command role began at partition and continued into late 1947.",
+      "final_explanation": "The transitional military arrangements post-partition required a specific administrative architecture to manage the division of what had been a single unified armed force.\n\n• Option (a): Correctly matched. Field Marshal Sir Claude Auchinleck (famously 'The Auk') was appointed Supreme Commander of all British Indian forces to oversee the reconstitution and division of military assets between the two new dominions. His command technically covered both dominions' forces until they were formally separated.\n• Option (b): Incorrectly matched. Lord Wavell was Viceroy of India until March 1947, when he was replaced by Mountbatten. He had no role in the post-partition military asset division.\n• Option (c): Incorrectly matched. Pakistan established the State Bank of Pakistan in July 1948 — not by December 1947. The RBI continued as the monetary authority for Pakistan for approximately eleven months after independence.\n• Option (d): Incorrectly matched. The agreed military assets ratio was 64:36 (India receiving 64%, Pakistan receiving 36%) — not 60:40.\n\nValue Addition:\n• Auchinleck's Supreme Command was dissolved in November 1947 — his position became untenable when the two dominions went to war over Kashmir.\n• The Royal Indian Navy's division was particularly contentious — Pakistan received vessels that were disputed as to their condition.\n• Auchinleck was criticised by Indian leaders for allegedly being more sympathetic to Pakistan in the asset division — a charge he denied."
+    },
+    "hi": {
+      "display_text": "माउंटबेटन योजना के बाद सैन्य और वित्तीय संपत्तियों के विभाजन के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) फील्ड मार्शल क्लॉड ऑचिनलेक — संक्रमण काल के दौरान सुप्रीम कमांडर नियुक्त, दोनों नए डोमिनियनों के बीच सैन्य संपत्तियों के पुनर्गठन और विभाजन की देखरेख के लिए\n(b) लॉर्ड वेवेल — सशस्त्र बल पुनर्गठन समिति के अध्यक्ष, जिसने भारत और पाकिस्तान के बीच सैन्य संपत्तियों के 64:36 विभाजन अनुपात को निर्धारित किया\n(c) भारतीय रिज़र्व बैंक — केवल दिसंबर 1947 तक पाकिस्तान के लिए मौद्रिक प्राधिकरण के रूप में कार्य किया, जब पाकिस्तान ने अपना केंद्रीय बैंक स्थापित किया\n(d) सैन्य संपत्तियों का विभाजन अनुपात — क्षेत्रीय आकार के अनुपात के आधार पर भारत के लिए 60% और पाकिस्तान के लिए 40%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि वेवेल भारत के संक्रमण काल से जुड़ा एक परिचित नाम है, और छात्र ऑचिनलेक के विभाजन के बाद सुप्रीम कमांडर पद को वेवेल के विभाजन से पहले के वायसराय पद के साथ भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: फील्ड मार्शल क्लॉड ऑचिनलेक को वास्तव में संक्रमण काल के दौरान सुप्रीम कमांडर नियुक्त किया गया था ताकि सैन्य संपत्तियों के विभाजन की देखरेख की जा सके — सही मेल।",
+        "विकल्प (b) का मूल्यांकन करें: लॉर्ड वेवेल माउंटबेटन से पहले वायसराय थे — वे विभाजन के बाद सैन्य संपत्ति के विभाजन में शामिल नहीं थे।",
+        "विकल्प (c) का मूल्यांकन करें: आरबीआई दोनों डोमिनियनों के लिए प्रारंभ में मुद्रा प्राधिकरण के रूप में कार्य करता था, लेकिन पाकिस्तान का केंद्रीय बैंक (स्टेट बैंक ऑफ पाकिस्तान) जुलाई 1948 में स्थापित हुआ था, न कि 'दिसंबर 1947 तक।'",
+        "विकल्प (d) का मूल्यांकन करें: सैन्य संपत्तियों के विभाजन का अनुपात 64:36 (भारत:पाकिस्तान) था, न कि 60:40।",
+        "विकल्प (a) सही मेल है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में वेवेल का उपयोग किया गया है — जो भारत के संक्रमण से निकटता से जुड़े एक वास्तविक, वरिष्ठ सैन्य-राजनीतिक व्यक्ति थे — एक भ्रम पैदा करने के लिए। जो छात्र जानते हैं कि ऑचिनलेक दक्षिण एशियाई संदर्भ में फील्ड मार्शल थे, वे दोनों को भ्रमित कर सकते हैं। वेवेल की भूमिका मार्च 1947 में माउंटबेटन द्वारा प्रतिस्थापित किए जाने पर समाप्त हो गई थी, जबकि ऑचिनलेक की सुप्रीम कमांड भूमिका विभाजन के समय शुरू हुई और 1947 के अंत तक जारी रही।",
+      "final_explanation": "विभाजन के बाद संक्रमणकालीन सैन्य व्यवस्थाओं के लिए एक विशिष्ट प्रशासनिक संरचना की आवश्यकता थी ताकि एकीकृत सशस्त्र बल के विभाजन का प्रबंधन किया जा सके।\n\n• विकल्प (a): सही मेल। फील्ड मार्शल सर क्लॉड ऑचिनलेक (प्रसिद्ध 'द ऑक') को सभी ब्रिटिश भारतीय बलों का सुप्रीम कमांडर नियुक्त किया गया था ताकि दोनों नए डोमिनियनों के बीच सैन्य संपत्तियों के पुनर्गठन और विभाजन की देखरेख की जा सके। उनकी कमान तकनीकी रूप से दोनों डोमिनियनों के बलों को कवर करती थी जब तक कि वे औपचारिक रूप से अलग नहीं हुए।\n• विकल्प (b): गलत मेल। लॉर्ड वेवेल मार्च 1947 तक भारत के वायसराय थे, जब उन्हें माउंटबेटन ने प्रतिस्थापित किया। उनका विभाजन के बाद सैन्य संपत्ति के विभाजन में कोई भूमिका नहीं थी।\n• विकल्प (c): गलत मेल। पाकिस्तान ने जुलाई 1948 में स्टेट बैंक ऑफ पाकिस्तान स्थापित किया — न कि दिसंबर 1947 तक। स्वतंत्रता के लगभग ग्यारह महीने बाद तक आरबीआई पाकिस्तान के लिए मौद्रिक प्राधिकरण के रूप में कार्य करता रहा।\n• विकल्प (d): गलत मेल। सहमति सैन्य संपत्तियों का अनुपात 64:36 था (भारत को 64%, पाकिस्तान को 36%) — न कि 60:40।\n\nमूल्य वर्धन:\n• ऑचिनलेक की सुप्रीम कमान नवंबर 1947 में समाप्त हो गई — जब दोनों डोमिनियनों के बीच कश्मीर को लेकर युद्ध हुआ तो उनकी स्थिति अस्थिर हो गई।\n• रॉयल इंडियन नेवी का विभाजन विशेष रूप से विवादास्पद था — पाकिस्तान को ऐसे जहाज मिले जिनकी स्थिति पर विवाद था।\n• ऑचिनलेक पर भारतीय नेताओं द्वारा पाकिस्तान के पक्ष में अधिक सहानुभूति रखने का आरोप लगाया गया — जिसे उन्होंने खारिज किया।"
+    }
+  },
+  {
+    "uuid": "9222af51-ac1d-481d-97c3-dc1329a3e67d",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Sind, Baluchistan, and Bengal Legislative Assembly Votes",
+        "Referendum Provisions: NWFP and Sylhet"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sequence partition decisions provinces NWFP Bengal Punjab Sylhet",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence in which various provinces and territories made their partition decisions following the announcement of the Mountbatten Plan on June 3, 1947?\n\n1. Bengal Legislative Assembly vote (in two parts)\n2. NWFP Referendum\n3. Sylhet Referendum\n4. Punjab Legislative Assembly vote (in two parts)\n\n(a) 2 → 3 → 1 → 4\n(b) 3 → 1 → 4 → 2\n(c) 2 → 1 → 4 → 3\n(d) 3 → 4 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because students who know NWFP and Sylhet were referendums (and thus 'democratic') may assume they preceded the legislative assembly votes in Bengal and Punjab, not realising the legislative processes and referendums occurred in close succession in the same July 1947 period.",
+      "elimination_logic": [
+        "Anchor: the Mountbatten Plan was announced June 3, 1947 — all province-level decisions followed.",
+        "Bengal Legislative Assembly voted in two parts: June 20, 1947 — this was among the first assembly-level votes.",
+        "Punjab Legislative Assembly voted in two parts: June 23, 1947 — shortly after Bengal.",
+        "NWFP Referendum: July 6-17, 1947 — a separate exercise after the assembly votes.",
+        "Sylhet Referendum: June 6-7, 1947 — actually preceded the Bengal and Punjab assembly votes, being held very shortly after the plan's announcement.",
+        "Correct chronological order: Sylhet Referendum → Bengal Legislative Assembly → Punjab Legislative Assembly → NWFP Referendum → option b."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap here exploits the assumption that NWFP referendum preceded the Bengal and Punjab assembly votes because it was a 'bigger' and more contested exercise. In fact, the Sylhet referendum was among the earliest decisions (June 6-7), and the Bengal and Punjab assemblies voted in late June, while NWFP's referendum came in July. Students who sequence by perceived importance rather than actual dates fall into this trap.",
+      "final_explanation": "The various partition decisions across provinces were taken in rapid succession in June-July 1947, and their precise sequencing is a testable UPSC detail.\n\nCorrect sequence: Sylhet Referendum (June 6-7) → Bengal Legislative Assembly (June 20) → Punjab Legislative Assembly (June 23) → NWFP Referendum (July 6-17)\n\n• Sylhet Referendum (June 6-7, 1947): Held very shortly after the plan's announcement — this district of Assam voted first among all the partition exercises, reflecting its relatively straightforward majority-area logic.\n• Bengal Legislative Assembly (June 20, 1947): Members from West Bengal (Hindu-majority districts) and East Bengal (Muslim-majority districts) met separately and voted on their respective futures.\n• Punjab Legislative Assembly (June 23, 1947): Same two-part process as Bengal — West Punjab voted to join Pakistan, East Punjab voted to remain with India.\n• NWFP Referendum (July 6-17, 1947): Held latest because the NWFP had a Congress ministry under Khan Abdul Ghaffar Khan, making the referendum politically complex. Congress boycotted; Pakistan won.\n\nWhy other options fail:\n• Option a reverses NWFP and Sylhet positions.\n• Option c places NWFP before Bengal and Punjab assembly votes.\n• Option d inverts Bengal and Punjab, and misplaces Sylhet.\n\nValue Addition:\n• Sylhet's early referendum date reflects Mountbatten's urgency — even district-level decisions were cleared within days of the plan's announcement.\n• The NWFP referendum's July date and Congress boycott made it the most politically charged of all partition decisions.\n• Bengal and Punjab assembly votes on consecutive working days (June 20 and 23) reflected the coordinated administrative push."
+    },
+    "hi": {
+      "display_text": "3 जून 1947 को माउंटबेटन योजना की घोषणा के बाद विभिन्न प्रांतों और क्षेत्रों ने अपने विभाजन निर्णय निम्नलिखित में से किस सही कालानुक्रमिक क्रम में लिए?\n\n1. बंगाल विधान सभा का मतदान (दो भागों में)\n2. NWFP जनमत संग्रह\n3. सिलहट जनमत संग्रह\n4. पंजाब विधान सभा का मतदान (दो भागों में)\n\n(a) 2 → 3 → 1 → 4\n(b) 3 → 1 → 4 → 2\n(c) 2 → 1 → 4 → 3\n(d) 3 → 4 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र जानते हैं कि NWFP और सिलहट जनमत संग्रह (referendums) थे (और इसलिए 'लोकतांत्रिक'), वे मान सकते हैं कि वे बंगाल और पंजाब की विधान सभा के मतदान से पहले हुए, यह न समझते हुए कि विधान प्रक्रियाएँ और जनमत संग्रह जुलाई 1947 के एक ही निकट अवधि में हुए।",
+      "elimination_logic": [
+        "एंकर: माउंटबेटन योजना की घोषणा 3 जून 1947 को हुई — इसके बाद सभी प्रांतीय स्तर के निर्णय हुए।",
+        "बंगाल विधान सभा ने दो भागों में मतदान किया: 20 जून 1947 — यह पहले विधानसभा स्तर के मतदानों में से था।",
+        "पंजाब विधान सभा ने दो भागों में मतदान किया: 23 जून 1947 — बंगाल के बाद तुरंत।",
+        "NWFP जनमत संग्रह: 6-17 जुलाई 1947 — विधानसभा मतदानों के बाद एक अलग प्रक्रिया।",
+        "सिलहट जनमत संग्रह: 6-7 जून 1947 — वास्तव में बंगाल और पंजाब के विधानसभा मतदानों से पहले हुआ, योजना की घोषणा के तुरंत बाद।",
+        "सही कालानुक्रमिक क्रम: सिलहट जनमत संग्रह → बंगाल विधान सभा → पंजाब विधान सभा → NWFP जनमत संग्रह → विकल्प b।"
+      ],
+      "upsc_trap_explanation": "यह कालानुक्रमिक भ्रम इस धारणा का शोषण करता है कि NWFP जनमत संग्रह बंगाल और पंजाब के विधानसभा मतदानों से पहले हुआ क्योंकि यह एक 'बड़ा' और अधिक विवादित अभ्यास था। वास्तव में, सिलहट जनमत संग्रह सबसे पहले हुआ (6-7 जून), और बंगाल तथा पंजाब की विधान सभाओं ने जून के अंत में मतदान किया, जबकि NWFP का जनमत संग्रह जुलाई में हुआ। जो छात्र महत्व के आधार पर क्रम बनाते हैं न कि वास्तविक तिथियों के आधार पर, वे इस जाल में फंस जाते हैं।",
+      "final_explanation": "विभिन्न प्रांतों में विभाजन के निर्णय जून-जुलाई 1947 में तीव्र गति से लिए गए, और उनका सटीक अनुक्रम UPSC के लिए परीक्षण योग्य विवरण है।\n\nसही अनुक्रम: सिलहट जनमत संग्रह (6-7 जून) → बंगाल विधान सभा (20 जून) → पंजाब विधान सभा (23 जून) → NWFP जनमत संग्रह (6-17 जुलाई)\n\n• सिलहट जनमत संग्रह (6-7 जून, 1947): योजना की घोषणा के तुरंत बाद हुआ — असम के इस जिले ने सभी विभाजन प्रक्रियाओं में सबसे पहले मतदान किया, जो इसके अपेक्षाकृत सरल बहुमत-क्षेत्र तर्क को दर्शाता है।\n• बंगाल विधान सभा (20 जून, 1947): पश्चिम बंगाल (हिंदू बहुल जिले) और पूर्व बंगाल (मुस्लिम बहुल जिले) के सदस्य अलग-अलग मिले और अपने-अपने भविष्य पर मतदान किया।\n• पंजाब विधान सभा (23 जून, 1947): बंगाल की तरह दो भागों में प्रक्रिया — पश्चिम पंजाब ने पाकिस्तान में शामिल होने के लिए मतदान किया, पूर्व पंजाब ने भारत में रहने के लिए।\n• NWFP जनमत संग्रह (6-17 जुलाई, 1947): सबसे बाद में हुआ क्योंकि NWFP में खान अब्दुल गफ्फार खान के नेतृत्व में कांग्रेस सरकार थी, जिससे जनमत संग्रह राजनीतिक रूप से जटिल था। कांग्रेस ने बहिष्कार किया; पाकिस्तान जीता।\n\nअन्य विकल्प क्यों गलत हैं:\n• विकल्प a में NWFP और सिलहट की स्थिति उलट दी गई है।\n• विकल्प c में NWFP को बंगाल और पंजाब के विधानसभा मतदानों से पहले रखा गया है।\n• विकल्प d में बंगाल और पंजाब को उलट दिया गया है, और सिलहट को गलत स्थान दिया गया है।\n\nमूल्यवर्धन:\n• सिलहट के जल्दी जनमत संग्रह की तिथि माउंटबेटन की तत्परता को दर्शाती है — यहां तक कि जिला स्तर के निर्णय भी योजना की घोषणा के कुछ ही दिनों में लिए गए।\n• NWFP जनमत संग्रह की जुलाई तिथि और कांग्रेस का बहिष्कार इसे सभी विभाजन निर्णयों में सबसे राजनीतिक रूप से संवेदनशील बनाता है।\n• बंगाल और पंजाब के विधानसभा मतदान लगातार कार्य दिवसों (20 और 23 जून) में हुए, जो समन्वित प्रशासनिक प्रयास को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "ef7b1375-684b-40e0-99b7-1d550557c615",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Refugee Crisis and the Plan's Failure to Anticipate Population Transfer",
+        "Partition of Punjab: Unique Violence and Administrative Collapse"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Population transfer provision absent Mountbatten Plan critical omission",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the Mountbatten Plan's treatment of the population displacement that partition would inevitably generate?\n\n(a) The plan established a Bilateral Population Transfer Protocol between India and Pakistan, modelled on earlier examples of managed population exchanges in Europe and the Middle East\n(b) The plan made no provision for population transfer or refugee management — this was a critical omission, as planners assumed most people would remain in place after partition\n(c) The plan established an Emergency Population Management Commission chaired by Mountbatten as a pre-planned body specifically designed to coordinate refugee flows across the Punjab and Bengal borders\n(d) The plan established a Minority Rights Commission with authority to investigate communal violence and order protective relocations of at-risk communities in both dominions",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because the Emergency Committee was a real post-partition coordination body chaired by Mountbatten — students may mistake this reactive crisis body for a 'planned population management commission' within the Mountbatten Plan itself.",
+      "elimination_logic": [
+        "Eliminate option a: the Mountbatten Plan contained no provision for population transfer — transfer protocol was not part of its design.",
+        "Eliminate option c: the Emergency Committee was created reactively after partition, not as a planned provision within the Mountbatten Plan.",
+        "Eliminate option d: a 'Minority Rights Commission' of the type described was not established under the Mountbatten Plan.",
+        "Confirm option b: the Mountbatten Plan made no provision for population transfer or refugee management — this was the critical omission that contributed to the catastrophic unmanaged migration."
+      ],
+      "upsc_trap_explanation": "Option c names a real institution (Emergency Committee) and a real person (Mountbatten as its chair) but misrepresents it as a planned provision within the Mountbatten Plan. Students who know about the Emergency Committee may accept option c without questioning whether it was pre-planned or reactive. The distinction between designed provisions of the plan and post-crisis improvised institutions is the trap.",
+      "final_explanation": "The Mountbatten Plan's most consequential structural gap was its complete silence on population movement — a failure of political imagination that cost hundreds of thousands of lives.\n\n• Option (a): Incorrect. A 'Bilateral Population Transfer Protocol' as a named instrument was not part of the Mountbatten Plan — no such provision existed.\n• Option (b): Correct. The Mountbatten Plan made no provision whatsoever for population transfer. The planners — including Mountbatten — assumed that most people would remain in place after partition, with perhaps a manageable minority crossing borders. The actual scale of 14-15 million displaced persons shattered this assumption.\n• Option (c): Incorrect. The Emergency Committee (chaired by Mountbatten as Governor-General) was constituted reactively in August-September 1947 to manage the crisis that had already erupted — it was not a planned provision of the Mountbatten Plan announced on June 3, 1947.\n• Option (d): Incorrect. A 'Minority Rights Commission' with the powers described was not established under the Mountbatten Plan. Minority rights were addressed in the Indian Constitution and in bilateral agreements like the Nehru-Liaquat Pact (1950) — subsequent to and separate from the Mountbatten Plan.\n\nValue Addition:\n• The assumption of no mass migration was shared by almost all political leaders — even Gandhi did not predict the scale of displacement.\n• The Nehru-Liaquat Pact (April 1950) was the first formal bilateral mechanism addressing the rights of minorities in both countries — three years after partition.\n• Long-term consequences of the unplanned migration included the 'refugee vote bank' that shaped Punjab and Delhi's politics for decades."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा माउंटबेटन योजना के उस दृष्टिकोण का सबसे सटीक वर्णन करता है जिसमें विभाजन के कारण अनिवार्य जनसंख्या विस्थापन को संबोधित किया गया?\n\n(a) योजना ने भारत और पाकिस्तान के बीच द्विपक्षीय जनसंख्या स्थानांतरण प्रोटोकॉल स्थापित किया, जो यूरोप और मध्य पूर्व में प्रबंधित जनसंख्या आदान-प्रदान के पूर्व उदाहरणों पर आधारित था\n(b) योजना में जनसंख्या स्थानांतरण या शरणार्थी प्रबंधन के लिए कोई प्रावधान नहीं था — यह एक महत्वपूर्ण चूक थी क्योंकि योजनाकारों ने माना कि विभाजन के बाद अधिकांश लोग वहीं रहेंगे\n(c) योजना ने माउंटबेटन की अध्यक्षता में एक इमरजेंसी जनसंख्या प्रबंधन आयोग स्थापित किया, जो पंजाब और बंगाल की सीमाओं पर शरणार्थी प्रवाह का समन्वय करने के लिए पूर्व-योजना बद्ध निकाय था\n(d) योजना ने एक अल्पसंख्यक अधिकार आयोग स्थापित किया, जिसे दोनों डोमिनियनों में सांप्रदायिक हिंसा की जांच करने और जोखिम में समुदायों के सुरक्षात्मक पुनर्वास का आदेश देने का अधिकार था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि इमरजेंसी कमेटी एक वास्तविक विभाजनोत्तर समन्वय निकाय थी जिसका अध्यक्ष माउंटबेटन था — छात्र इस प्रतिक्रियाशील संकट निकाय को माउंटबेटन योजना के भीतर 'योजना बद्ध जनसंख्या प्रबंधन आयोग' समझ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: माउंटबेटन योजना में जनसंख्या स्थानांतरण के लिए कोई प्रावधान नहीं था — स्थानांतरण प्रोटोकॉल इसकी रूपरेखा का हिस्सा नहीं था।",
+        "विकल्प (c) को निरस्त करें: इमरजेंसी कमेटी विभाजन के बाद प्रतिक्रियाशील रूप से बनाई गई थी, माउंटबेटन योजना के भीतर पूर्व-योजना बद्ध प्रावधान के रूप में नहीं।",
+        "विकल्प (d) को निरस्त करें: माउंटबेटन योजना के तहत वर्णित प्रकार की 'अल्पसंख्यक अधिकार आयोग' स्थापित नहीं की गई थी।",
+        "विकल्प (b) को स्वीकार करें: माउंटबेटन योजना में जनसंख्या स्थानांतरण या शरणार्थी प्रबंधन के लिए कोई प्रावधान नहीं था — यह महत्वपूर्ण चूक थी जिसने विनाशकारी अनियंत्रित प्रवासन को जन्म दिया।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) एक वास्तविक संस्था (इमरजेंसी कमेटी) और एक वास्तविक व्यक्ति (माउंटबेटन, इसके अध्यक्ष के रूप में) का नाम लेता है लेकिन इसे माउंटबेटन योजना के भीतर पूर्व-योजना बद्ध प्रावधान के रूप में गलत प्रस्तुत करता है। जो छात्र इमरजेंसी कमेटी के बारे में जानते हैं वे बिना यह जांचे कि यह पूर्व-योजना थी या प्रतिक्रियाशील, विकल्प (c) को स्वीकार कर सकते हैं। योजना के डिजाइन किए गए प्रावधानों और संकट के बाद बनाए गए अस्थायी संस्थानों के बीच का अंतर ही यह जाल है।",
+      "final_explanation": "माउंटबेटन योजना की सबसे महत्वपूर्ण संरचनात्मक कमी जनसंख्या आंदोलन पर पूर्ण मौन थी — राजनीतिक कल्पना की विफलता जिसने सैकड़ों हजारों जानें लीं।\n\n• विकल्प (a): गलत। 'द्विपक्षीय जनसंख्या स्थानांतरण प्रोटोकॉल' नामक कोई उपकरण माउंटबेटन योजना का हिस्सा नहीं था।\n• विकल्प (b): सही। माउंटबेटन योजना में जनसंख्या स्थानांतरण के लिए कोई प्रावधान नहीं था। योजनाकारों — जिनमें माउंटबेटन भी शामिल थे — ने माना कि विभाजन के बाद अधिकांश लोग वहीं रहेंगे, और शायद कुछ अल्पसंख्यक सीमाएं पार करेंगे। 14-15 मिलियन विस्थापितों का वास्तविक पैमाना इस अनुमान को तोड़ गया।\n• विकल्प (c): गलत। इमरजेंसी कमेटी (जिसके अध्यक्ष माउंटबेटन थे) अगस्त-सितंबर 1947 में प्रतिक्रियाशील रूप से बनाई गई थी ताकि पहले से उत्पन्न संकट को संभाला जा सके — यह 3 जून 1947 को घोषित माउंटबेटन योजना का पूर्व-योजना बद्ध प्रावधान नहीं थी।\n• विकल्प (d): गलत। वर्णित शक्तियों वाली 'अल्पसंख्यक अधिकार आयोग' माउंटबेटन योजना के तहत स्थापित नहीं की गई थी। अल्पसंख्यक अधिकार भारतीय संविधान और द्विपक्षीय समझौतों जैसे नेहरू-लियाकत संधि (1950) में संबोधित किए गए — जो माउंटबेटन योजना के बाद और उससे अलग थे।\n\nमूल्य संवर्धन:\n• जनसंख्या के बड़े पैमाने पर प्रवासन की अनुपस्थिति का अनुमान लगभग सभी राजनीतिक नेताओं ने लगाया था — यहां तक कि गांधी ने भी विस्थापन के पैमाने की भविष्यवाणी नहीं की थी।\n• नेहरू-लियाकत संधि (अप्रैल 1950) दोनों देशों में अल्पसंख्यकों के अधिकारों को संबोधित करने वाला पहला औपचारिक द्विपक्षीय तंत्र था — विभाजन के तीन साल बाद।\n• अनियोजित प्रवासन के दीर्घकालिक परिणामों में 'शरणार्थी वोट बैंक' शामिल था जिसने पंजाब और दिल्ली की राजनीति को दशकों तक आकार दिया।"
+    }
+  },
+  {
+    "uuid": "187dcedc-88a1-4ae6-b6d0-1b89d04c0e40",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Mountbatten Plan",
+      "concepts_used": [
+        "Partition of Bengal: Historical and Political Dimensions",
+        "Partition of Punjab: Unique Violence and Administrative Collapse"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Partition 1905 vs 1947 Bengal Punjab Sikh factor Boundary Force",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the events/entities in List I with their correct descriptions in List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. First Partition of Bengal (1905)",
+            "1. Akali Dal and Master Tara Singh demanded a separate Sikh homeland; this demand was not incorporated into the Mountbatten Plan, leaving the Sikh community divided across two new dominions"
+          ],
+          [
+            "B. Sikh factor in Punjab's partition (1947)",
+            "2. Proposed a sovereign undivided Bengal that would be independent of both India and Pakistan; rejected by Congress, the Muslim League, and the Hindu Mahasabha"
+          ],
+          [
+            "C. Punjab Boundary Force",
+            "3. Divided Bengal into a Hindu-majority western province and a Muslim-majority eastern province (Eastern Bengal and Assam); reversed in 1911 following the Swadeshi movement"
+          ],
+          [
+            "D. Sarat Chandra Bose's United Bengal proposal",
+            "4. A military formation specifically tasked with protecting communities in districts adjacent to the new Punjab boundary; overwhelmed by the scale of violence and eventually disbanded"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-3, B-2, C-4, D-1\n(c) A-3, B-4, C-1, D-2\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b swaps the descriptions for the 1905 partition and the Sikh factor, exploiting students who know both facts but incorrectly attribute the Sikh demand for a separate state to the 1905 Bengal context.",
+      "elimination_logic": [
+        "Match A (First partition of Bengal, 1905): divided into 'Bengal' (Hindu-majority west) and 'Eastern Bengal and Assam' (Muslim-majority east) — matches description 3.",
+        "Match B (Sikh factor in Punjab's partition): Akali Dal and Master Tara Singh demanded a Sikh homeland; this demand was rejected — matches description 1.",
+        "Match C (Punjab Boundary Force): specifically formed to protect the districts through which the new border passed; failed to contain violence — matches description 4.",
+        "Match D (Sarat Chandra Bose's United Bengal proposal): proposed a sovereign undivided Bengal independent of both India and Pakistan — matches description 2.",
+        "Correct: A-3, B-1, C-4, D-2 → option d."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap pairs the 1905 Bengal partition detail (description 3) with Sarat Bose (List I, D) in wrong options, exploiting students who associate all Bengal-related content together. Students who know Sarat Bose proposed United Bengal may incorrectly match him with the 1905 partition description, not realising his proposal was a 1947 alternative to partition — entirely separate from the 1905 event.",
+      "final_explanation": "The partitions of Bengal and Punjab — and the resistance to partition they generated — are distinct historical episodes with different characters, actors, and consequences.\n\nCorrect matches:\n• A (First partition of Bengal, 1905) — 3: Lord Curzon's 1905 partition divided Bengal into a Hindu-majority western Bengal and 'Eastern Bengal and Assam' with a Muslim majority. This partition was reversed in 1911 following the Swadeshi movement — India's first major mass mobilisation.\n• B (Sikh factor in Punjab's partition, 1947) — 1: The Akali Dal under Master Tara Singh demanded a separate Sikh state (Khalistan or Sikhistan) during the 1947 negotiations. This demand was not accommodated in the Mountbatten Plan — Sikhs were divided between India and Pakistan, with the community's homeland split along the new boundary.\n• C (Punjab Boundary Force) — 4: The Punjab Boundary Force was established specifically to maintain order in the districts adjacent to the new international border. It was eventually overwhelmed by the scale of violence — approximately 50,000 troops proved inadequate for protecting millions of migrants.\n• D (Sarat Chandra Bose's United Bengal proposal, 1947) — 2: Sarat Bose and Kiran Shankar Roy proposed a sovereign United Bengal independent of both India and Pakistan. This proposal was rejected by Congress (feared Muslim-majority united Bengal joining Pakistan), the Muslim League (preferred East Pakistan), and the Hindu Mahasabha.\n\nValue Addition:\n• The 1905 partition's reversal in 1911 is seen as the first major nationalist victory against British divide-and-rule policy.\n• Master Tara Singh later became a prominent figure in the Punjabi Suba movement (1960s), which eventually achieved a Punjabi-speaking state.\n• The Punjab Boundary Force was disbanded in late September 1947 after proving insufficient — responsibility for security reverted to the two dominions' separate armies."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में घटनाओं/इकाइयों को सूची II में उनके सही विवरणों से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. बंगाल का पहला विभाजन (1905)",
+            "1. अकाली दल और मास्टर तारा सिंह ने एक अलग सिख मातृभूमि की मांग की; यह मांग माउंटबेटन योजना में शामिल नहीं की गई, जिससे सिख समुदाय दो नए डोमिनियनों में विभाजित हो गया"
+          ],
+          [
+            "B. पंजाब के विभाजन में सिख कारक (1947)",
+            "2. एक संप्रभु अविभाजित बंगाल का प्रस्ताव दिया जो भारत और पाकिस्तान दोनों से स्वतंत्र हो; कांग्रेस, मुस्लिम लीग और हिंदू महासभा द्वारा अस्वीकार किया गया"
+          ],
+          [
+            "C. पंजाब बॉउंड्री फोर्स",
+            "3. बंगाल को हिंदू बहुल पश्चिमी प्रांत और मुस्लिम बहुल पूर्वी प्रांत (पूर्वी बंगाल और असम) में विभाजित किया; स्वदेशी आंदोलन के बाद 1911 में उलट दिया गया"
+          ],
+          [
+            "D. सरत चंद्र बोस का संयुक्त बंगाल प्रस्ताव",
+            "4. एक सैन्य इकाई जो विशेष रूप से नई पंजाब सीमा के निकटवर्ती जिलों में समुदायों की रक्षा के लिए गठित की गई; हिंसा के पैमाने से अभिभूत होकर अंततः भंग कर दी गई"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-3, B-2, C-4, D-1\n(c) A-3, B-4, C-1, D-2\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b 1905 के विभाजन और सिख कारक के विवरणों को बदल देता है, उन छात्रों का शोषण करता है जो दोनों तथ्यों को जानते हैं लेकिन सिखों की अलग राज्य की मांग को 1905 के बंगाल संदर्भ में गलत तरीके से जोड़ते हैं।",
+      "elimination_logic": [
+        "A से मेल खाता है (बंगाल का पहला विभाजन, 1905): इसे 'बंगाल' (हिंदू बहुल पश्चिम) और 'पूर्वी बंगाल और असम' (मुस्लिम बहुल पूर्व) में विभाजित किया गया था — विवरण 3 से मेल खाता है।",
+        "B से मेल खाता है (पंजाब के विभाजन में सिख कारक): अकाली दल और मास्टर तारा सिंह ने सिख मातृभूमि की मांग की; यह मांग अस्वीकार कर दी गई — विवरण 1 से मेल खाता है।",
+        "C से मेल खाता है (पंजाब बॉउंड्री फोर्स): विशेष रूप से उन जिलों की रक्षा के लिए गठित किया गया जिनके माध्यम से नई सीमा गुजरी; हिंसा को रोकने में विफल — विवरण 4 से मेल खाता है।",
+        "D से मेल खाता है (सरत चंद्र बोस का संयुक्त बंगाल प्रस्ताव): एक संप्रभु अविभाजित बंगाल का प्रस्ताव दिया जो भारत और पाकिस्तान दोनों से स्वतंत्र हो — विवरण 2 से मेल खाता है।",
+        "सही: A-3, B-1, C-4, D-2 → विकल्प d।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल 1905 के बंगाल विभाजन विवरण (विवरण 3) को सरत बोस (सूची I, D) के साथ गलत विकल्पों में जोड़ता है, उन छात्रों का शोषण करता है जो सभी बंगाल-संबंधित सामग्री को एक साथ जोड़ते हैं। जो छात्र जानते हैं कि सरत बोस ने संयुक्त बंगाल का प्रस्ताव दिया था, वे उसे 1905 के विभाजन विवरण से गलत तरीके से जोड़ सकते हैं, यह न समझते हुए कि उनका प्रस्ताव 1947 में विभाजन के विकल्प के रूप में था — जो 1905 की घटना से पूरी तरह अलग है।",
+      "final_explanation": "बंगाल और पंजाब के विभाजन — और उनके विरुद्ध उत्पन्न प्रतिरोध — अलग-अलग ऐतिहासिक घटनाएं हैं जिनके अलग चरित्र, अभिनेता और परिणाम हैं।\n\nसही मेल:\n• A (बंगाल का पहला विभाजन, 1905) — 3: लॉर्ड कर्जन के 1905 के विभाजन ने बंगाल को हिंदू बहुल पश्चिमी बंगाल और मुस्लिम बहुल 'पूर्वी बंगाल और असम' में विभाजित किया। यह विभाजन 1911 में स्वदेशी आंदोलन के बाद उलट दिया गया — जो भारत का पहला बड़ा जन आंदोलन था।\n• B (पंजाब के विभाजन में सिख कारक, 1947) — 1: मास्टर तारा सिंह के नेतृत्व में अकाली दल ने 1947 के वार्तालापों के दौरान एक अलग सिख राज्य (खालिस्तान या सिखिस्तान) की मांग की। यह मांग माउंटबेटन योजना में शामिल नहीं की गई — सिख समुदाय को भारत और पाकिस्तान के बीच विभाजित कर दिया गया, और उनकी मातृभूमि नई सीमा के साथ विभाजित हो गई।\n• C (पंजाब बॉउंड्री फोर्स) — 4: पंजाब बॉउंड्री फोर्स को विशेष रूप से नई अंतरराष्ट्रीय सीमा के निकटवर्ती जिलों में व्यवस्था बनाए रखने के लिए स्थापित किया गया था। अंततः यह हिंसा के पैमाने से अभिभूत हो गया — लगभग 50,000 सैनिक लाखों प्रवासियों की सुरक्षा के लिए अपर्याप्त साबित हुए।\n• D (सरत चंद्र बोस का संयुक्त बंगाल प्रस्ताव, 1947) — 2: सरत बोस और किरण शंकर रॉय ने एक संप्रभु संयुक्त बंगाल का प्रस्ताव दिया जो भारत और पाकिस्तान दोनों से स्वतंत्र हो। इस प्रस्ताव को कांग्रेस (जो मुस्लिम बहुल संयुक्त बंगाल के पाकिस्तान में शामिल होने से डरती थी), मुस्लिम लीग (जो पूर्वी पाकिस्तान को प्राथमिकता देती थी), और हिंदू महासभा ने अस्वीकार कर दिया।\n\nमूल्य संवर्धन:\n• 1905 के विभाजन को 1911 में उलटना ब्रिटिश 'विभाजित और राज करो' नीति के खिलाफ पहला बड़ा राष्ट्रीय विजय माना जाता है।\n• मास्टर तारा सिंह बाद में पंजाबी सूबा आंदोलन (1960 के दशक) में एक प्रमुख नेता बने, जिसने अंततः पंजाबी भाषी राज्य प्राप्त किया।\n• पंजाब बॉउंड्री फोर्स को सितंबर 1947 के अंत में भंग कर दिया गया क्योंकि यह अपर्याप्त साबित हुई — सुरक्षा की जिम्मेदारी दो डोमिनियनों की अलग-अलग सेनाओं को सौंप दी गई।"
+    }
+  }
+]

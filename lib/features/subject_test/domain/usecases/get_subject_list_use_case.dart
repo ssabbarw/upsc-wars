@@ -10,17 +10,17 @@ class GetSubjectListUseCase {
 
   Future<List<SubjectInfo>> execute(String language) async {
     final metrics = await _repository.fetchSubjectMetrics(language);
-    final bySlug = {for (final m in metrics) m.subjectSlug: m};
+    final bySubject = {for (final m in metrics) m.subject: m};
     return [
       for (final def in SubjectConstants.ordered)
-        _mapSubject(def, bySlug[def.slug]),
+        _mapSubject(def, bySubject[def.slug]),
     ];
   }
 
   SubjectInfo _mapSubject(SubjectDefinition def, SubjectMetrics? m) {
     final metrics = m ??
         SubjectMetrics(
-          subjectSlug: def.slug,
+          subject: def.slug,
           questionCount: 0,
           topicCount: 0,
           scoredAttemptCount: 0,
@@ -36,7 +36,7 @@ class GetSubjectListUseCase {
       accuracyPercent: acc,
     );
     return SubjectInfo(
-      subjectSlug: def.slug,
+      subject: def.slug,
       displayName: def.displayName,
       questionCount: metrics.questionCount,
       topicCount: metrics.topicCount,

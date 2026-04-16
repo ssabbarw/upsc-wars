@@ -1,0 +1,1277 @@
+[
+  {
+    "uuid": "d46e127f-6a8f-4e5a-83b2-ac89cadc21ad",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Composition and Mandate of the Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Cripps Mission — War Cabinet envoy status",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Stafford Cripps, who led the 1942 mission to India, came in what official capacity?\n\n(a) As a personal envoy of Prime Minister Churchill, acting independently of the War Cabinet\n(b) As the head of a multi-member Parliamentary delegation similar to the Simon Commission\n(c) As a member of the British War Cabinet, representing its official mandate\n(d) As a special representative deputed by the Viceroy of India to negotiate with political parties",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Cripps was indeed a single envoy, and students familiar with his personal sympathy for India may assume he came independently rather than as an official War Cabinet representative.",
+      "elimination_logic": [
+        "Eliminate option (a): Cripps did not come as a personal envoy — he was an official representative of the War Cabinet.",
+        "Eliminate option (b): The mission was not a multi-member Parliamentary delegation; Cripps was the sole envoy.",
+        "Eliminate option (d): Cripps was not dispatched by the Viceroy — Linlithgow was actually hostile to the mission.",
+        "Confirm option (c): Stafford Cripps came as a member of the War Cabinet acting on its official mandate."
+      ],
+      "upsc_trap_explanation": "Many students conflate Cripps's personal left-leaning sympathy for India with an assumption that he came independently or as a Labour Party emissary. The trap here is the distinction between the source of authority — the War Cabinet (official) versus a personal or Parliamentary mission. Students who recall only that Cripps was a politician with India-sympathies often select option (a), not recognising the institutional character of his mandate.",
+      "final_explanation": "When Stafford Cripps arrived in India in March 1942, his authority derived from the British War Cabinet, of which he was a serving member. This is constitutionally significant: he was not a private emissary, nor a Parliamentary committee, nor someone acting under the Viceroy's direction. His War Cabinet membership was intended to signal that the offer carried official British governmental weight.\n\n• Option (a) — Incorrect: A personal envoy acts without institutional mandate; Cripps had an explicit War Cabinet brief.\n• Option (b) — Incorrect: Unlike the Simon Commission (1927), which was a multi-member Parliamentary body, Cripps was the sole envoy.\n• Option (c) — Correct: Cripps was despatched by and reported back to the War Cabinet.\n• Option (d) — Incorrect: Viceroy Linlithgow was antagonistic toward the mission and had no role in dispatching Cripps.\n\nValue Addition:\n• The Simon Commission (1927) had no Indian members; Cripps (1942) was a single British Cabinet minister.\n• Churchill was reluctant to send the mission; American and Labour pressure compelled him.\n• Cripps's War Cabinet status meant any concessions he offered theoretically carried governmental authority — making the London veto on the defense formula all the more damaging."
+    },
+    "hi": {
+      "display_text": "स्टैफर्ड क्रिप्स, जिन्होंने 1942 के मिशन का नेतृत्व किया, किस आधिकारिक क्षमता में भारत आए थे?\n\n(a) प्रधानमंत्री चर्चिल के व्यक्तिगत दूत के रूप में, वार कैबिनेट से स्वतंत्र रूप से कार्य करते हुए\n(b) साइमन कमीशन के समान बहु-सदस्य संसदीय प्रतिनिधिमंडल के प्रमुख के रूप में\n(c) ब्रिटिश वार कैबिनेट के सदस्य के रूप में, जो उसके आधिकारिक जनादेश का प्रतिनिधित्व करते हैं\n(d) भारत के वायसराय द्वारा राजनीतिक दलों के साथ बातचीत के लिए नियुक्त विशेष प्रतिनिधि के रूप में",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि क्रिप्स वास्तव में एकल दूत थे, और जो छात्र उनके भारत के प्रति व्यक्तिगत सहानुभूति से परिचित हैं, वे मान सकते हैं कि वे स्वतंत्र रूप से आए थे न कि आधिकारिक वार कैबिनेट प्रतिनिधि के रूप में।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें — क्रिप्स व्यक्तिगत दूत के रूप में नहीं आए थे — वे वार कैबिनेट के आधिकारिक प्रतिनिधि थे।",
+        "विकल्प (b) को निरस्त करें — यह मिशन बहु-सदस्यीय संसदीय प्रतिनिधिमंडल नहीं था; क्रिप्स एकमात्र दूत थे।",
+        "विकल्प (d) को निरस्त करें — क्रिप्स को वायसराय ने नहीं भेजा था — लिनलिथगो वास्तव में मिशन के प्रति विरोधी थे।",
+        "विकल्प (c) की पुष्टि करें — स्टैफर्ड क्रिप्स वार कैबिनेट के सदस्य के रूप में उसके आधिकारिक जनादेश पर कार्य करते हुए आए थे।"
+      ],
+      "upsc_trap_explanation": "कई छात्र क्रिप्स की भारत के प्रति व्यक्तिगत वामपंथी सहानुभूति को यह मानकर भ्रमित हो जाते हैं कि वे स्वतंत्र रूप से या लेबर पार्टी के दूत के रूप में आए थे। यहाँ जाल यह है कि अधिकार का स्रोत — वार कैबिनेट (आधिकारिक) बनाम व्यक्तिगत या संसदीय मिशन — में अंतर है। जो छात्र केवल यह याद रखते हैं कि क्रिप्स भारत-सहानुभूति रखने वाले राजनेता थे, वे अक्सर विकल्प (a) चुनते हैं, यह न समझते हुए कि उनका जनादेश संस्थागत था।",
+      "final_explanation": "जब स्टैफर्ड क्रिप्स मार्च 1942 में भारत आए, तो उनका अधिकार ब्रिटिश वार कैबिनेट से था, जिसके वे सदस्य थे। यह संवैधानिक रूप से महत्वपूर्ण है: वे निजी दूत नहीं थे, न ही संसदीय समिति, न ही वायसराय के निर्देशन में कार्यरत कोई व्यक्ति। उनका वार कैबिनेट सदस्य होना यह संकेत देने के लिए था कि प्रस्ताव में आधिकारिक ब्रिटिश सरकारी वजन था।\n\n• विकल्प (a) — गलत: एक व्यक्तिगत दूत बिना संस्थागत जनादेश के कार्य करता है; क्रिप्स के पास स्पष्ट वार कैबिनेट निर्देश था।\n• विकल्प (b) — गलत: साइमन कमीशन (1927) के विपरीत, जो बहु-सदस्य संसदीय निकाय था, क्रिप्स एकमात्र दूत थे।\n• विकल्प (c) — सही: क्रिप्स को वार कैबिनेट ने भेजा था और वे उसे रिपोर्ट करते थे।\n• विकल्प (d) — गलत: वायसराय लिनलिथगो मिशन के विरोधी थे और क्रिप्स को भेजने में कोई भूमिका नहीं थी।\n\nमूल्यवर्धन:\n• साइमन कमीशन (1927) में कोई भारतीय सदस्य नहीं था; क्रिप्स (1942) एकल ब्रिटिश कैबिनेट मंत्री थे।\n• चर्चिल मिशन भेजने के लिए अनिच्छुक थे; अमेरिकी और लेबर पार्टी के दबाव ने उन्हें मजबूर किया।\n• क्रिप्स का वार कैबिनेट सदस्य होना यह दर्शाता था कि उनके द्वारा दी गई कोई भी छूट सैद्धांतिक रूप से सरकारी अधिकार रखती थी — जिससे रक्षा सूत्र पर लंदन का वीटो और भी अधिक हानिकारक था।"
+    }
+  },
+  {
+    "uuid": "8f7b98cd-44b1-405c-8ab0-ae7000e43cd7",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Congress Response and Rejection of the Cripps Proposals",
+        "The Defense Portfolio Deadlock"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Congress rejection — defense deadlock vs. post-war deferral",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Congress response to the Cripps Mission proposals in 1942, consider the following:\n\nAssertion (A): Congress did not reject the Cripps proposals outright and immediately; negotiations continued for some time, particularly regarding the Executive Council structure.\n\nReason (R): The post-war, deferred nature of the constitutional promises meant that the proposals offered no immediate transfer of power, which was a fundamental Congress objection.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because both A and R are factually correct, and students who do not carefully examine the causal link may assume R explains A without recognising that the post-war nature was not the sole or direct cause of the Congress walkout.",
+      "elimination_logic": [
+        "Step 1 — Is A correct? Yes: Congress did not reject the Cripps proposals immediately; negotiations on the Executive Council structure continued for days.",
+        "Step 2 — Is R correct? Yes: The post-war, deferred nature of constitutional promises was a genuine and major Congress grievance.",
+        "Step 3 — Does R causally explain A? No: The Congress decision to prolong negotiations was driven primarily by the hope of resolving the defense portfolio deadlock, not by the post-war deferral — that deferral was a known feature from the outset. R is a background grievance, not the direct cause of A (the extended negotiations).",
+        "A is correct, R is correct, but R does NOT explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": "The trap here is in the causal chain. Both A and R are true facts about the Cripps Mission, making option (a) tempting. However, Congress's decision to continue negotiating rather than reject immediately was driven by the live defense portfolio discussions, not by the post-war deferral which was apparent from the beginning. R explains a different Congress grievance — their overall dissatisfaction — not their specific decision to negotiate rather than reject at once.",
+      "final_explanation": "This question tests whether students can distinguish between a background grievance and a proximate cause.\n\nAssertion (A) is correct: Congress did not walk out immediately when the proposals were presented. Nehru and Azad engaged in sustained negotiations, particularly around the Executive Council composition and the defense portfolio arrangement.\n\nReason (R) is correct: The post-war deferral of constitutional promises was a fundamental Congress objection — Gandhi's 'post-dated cheque on a failing bank' metaphor encapsulates this precisely.\n\nHowever, R does NOT explain A: If the post-war deferral was the reason Congress refused to accept, they would have rejected immediately — as this feature was apparent from day one. The reason Congress prolonged negotiations was the hope that the defense portfolio deadlock might be resolved, not the post-war timeline. The defense formula being overruled by London was what finally caused the breakdown.\n\nValue Addition:\n• The Cripps-Azad formula attempted a compromise on the defense portfolio — its rejection by the War Cabinet was the proximate trigger for Congress's withdrawal.\n• Gandhi described the proposals as a 'post-dated cheque on a failing bank' — this addressed the deferral problem, not the negotiation timeline.\n• Maulana Azad (Congress President at the time) and Nehru were the primary negotiators, not Gandhi."
+    },
+    "hi": {
+      "display_text": "1942 में क्रिप्स मिशन प्रस्तावों पर कांग्रेस की प्रतिक्रिया के संदर्भ में निम्नलिखित पर विचार करें:\n\nकथन (A): कांग्रेस ने क्रिप्स प्रस्तावों को तुरंत और पूरी तरह से अस्वीकार नहीं किया; विशेष रूप से कार्यकारी परिषद की संरचना को लेकर कुछ समय तक वार्ता जारी रही।\n\nकारण (R): संवैधानिक वादों की युद्धोत्तर, स्थगित प्रकृति का अर्थ था कि प्रस्ताव तत्काल सत्ता हस्तांतरण नहीं करते थे, जो कांग्रेस की एक मूल आपत्ति थी।\n\n(a) A और R दोनों सही हैं तथा R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, परंतु R, A की सही व्याख्या नहीं है\n(c) A सही है परंतु R गलत है\n(d) A गलत है परंतु R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) विकल्प भ्रामक है क्योंकि A और R दोनों तथ्यात्मक रूप से सही हैं, और जो छात्र कारण संबंध को सावधानीपूर्वक नहीं देखते वे मान सकते हैं कि R, A की व्याख्या करता है जबकि यह समझ नहीं पाते कि युद्धोत्तर प्रकृति कांग्रेस के बहिष्कार का एकमात्र या प्रत्यक्ष कारण नहीं थी।",
+      "elimination_logic": [
+        "चरण 1 — क्या A सही है? हाँ: कांग्रेस ने क्रिप्स प्रस्तावों को तुरंत अस्वीकार नहीं किया; कार्यकारी परिषद की संरचना पर वार्ता कई दिनों तक जारी रही।",
+        "चरण 2 — क्या R सही है? हाँ: संवैधानिक वादों की युद्धोत्तर, स्थगित प्रकृति कांग्रेस की एक वास्तविक और प्रमुख आपत्ति थी।",
+        "चरण 3 — क्या R, A की कारणात्मक व्याख्या करता है? नहीं: कांग्रेस का वार्ता को लंबा करने का निर्णय मुख्यतः रक्षा पोर्टफोलियो गतिरोध को सुलझाने की आशा से प्रेरित था, न कि युद्धोत्तर स्थगन से — जो शुरू से ही ज्ञात था। R एक पृष्ठभूमि की आपत्ति है, न कि A (लंबी वार्ता) का प्रत्यक्ष कारण।",
+        "A सही है, R सही है, परंतु R, A की व्याख्या नहीं करता — अतः विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यहाँ जाल कारणात्मक श्रृंखला में है। क्रिप्स मिशन के संबंध में A और R दोनों सत्य तथ्य हैं, जो विकल्प (a) को आकर्षक बनाता है। परंतु कांग्रेस का निर्णय तुरंत अस्वीकार करने के बजाय वार्ता जारी रखने का कारण सक्रिय रक्षा पोर्टफोलियो चर्चा थी, न कि युद्धोत्तर स्थगन जो शुरू से स्पष्ट था। R कांग्रेस की एक अलग आपत्ति — उनकी समग्र असंतुष्टि — को दर्शाता है, न कि उनके विशिष्ट निर्णय को।",
+      "final_explanation": "यह प्रश्न छात्रों की पृष्ठभूमि की आपत्ति और निकट कारण के बीच अंतर समझने की क्षमता का परीक्षण करता है।\n\nकथन (A) सही है: कांग्रेस ने प्रस्ताव प्रस्तुत होते ही तुरंत बहिष्कार नहीं किया। नेहरू और आज़ाद ने विशेष रूप से कार्यकारी परिषद की संरचना और रक्षा पोर्टफोलियो व्यवस्था पर निरंतर वार्ता की।\n\nकथन (R) सही है: संवैधानिक वादों का युद्धोत्तर स्थगन कांग्रेस की मूल आपत्ति थी — गांधी का 'असफल बैंक पर पोस्ट-डेटेड चेक' रूपक इसे सटीक रूप से दर्शाता है।\n\nपरंतु R, A की व्याख्या नहीं करता: यदि युद्धोत्तर स्थगन कांग्रेस के अस्वीकार का कारण होता, तो वे तुरंत अस्वीकार कर देते — क्योंकि यह पहलू शुरू से स्पष्ट था। कांग्रेस ने वार्ता लंबी इसलिए की क्योंकि रक्षा पोर्टफोलियो गतिरोध के समाधान की आशा थी, न कि युद्धोत्तर समयरेखा के कारण। रक्षा सूत्र को लंदन द्वारा खारिज किए जाने से अंततः विफलता हुई।\n\nमूल्यवर्धन:\n• क्रिप्स-आजाद सूत्र ने रक्षा पोर्टफोलियो पर समझौता करने का प्रयास किया था — युद्ध कैबिनेट द्वारा इसका अस्वीकार कांग्रेस के बहिष्कार का निकट कारण था।\n• गांधी ने प्रस्तावों को 'असफल बैंक पर पोस्ट-डेटेड चेक' कहा — यह स्थगन समस्या को संबोधित करता है, न कि वार्ता समयरेखा को।\n• मौलाना आज़ाद (तत्कालीन कांग्रेस अध्यक्ष) और नेहरू मुख्य वार्ताकार थे, न कि गांधी।"
+    }
+  },
+  {
+    "uuid": "c4d83abd-a89a-4d49-ab02-d7f1c092da33",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Impact of Cripps Mission Failure on the Quit India Movement",
+        "Context and Timing of Cripps Mission (1942)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Chronology — Cripps Mission to Quit India Movement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of events?\n\n1. Fall of Singapore to Japanese forces\n2. Cripps Mission arrives in India\n3. Quit India Resolution passed by the All-India Congress Committee\n\n(a) 1 → 2 → 3\n(b) 2 → 1 → 3\n(c) 1 → 3 → 2\n(d) 3 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know the Quit India Resolution came on August 8 may reverse the order of the Fall of Singapore and the Cripps Mission arrival, since both happened in early 1942.",
+      "elimination_logic": [
+        "Fall of Singapore occurred on February 15, 1942 — this was the military crisis that precipitated the mission.",
+        "Cripps arrived in India in late March 1942 and the mission formally concluded (failed) in April 1942.",
+        "The Quit India Resolution was passed by the Congress Working Committee on August 8, 1942.",
+        "Correct sequence: Fall of Singapore → Cripps Mission → Quit India Resolution — select option (a)."
+      ],
+      "upsc_trap_explanation": "The trap is placing the Cripps Mission before the Fall of Singapore or confusing the sequence of events within 1942. Students who know both events occurred in 1942 may not remember that Singapore fell in February and Cripps arrived in March, assuming the mission prompted the Singapore fall rather than responding to it. Option (b) places Cripps before Singapore, which reverses the causal logic of the mission.",
+      "final_explanation": "All three events occurred in 1942, making precise sequencing critical.\n\nThe Fall of Singapore (February 15, 1942) was the triggering military catastrophe: Britain's seemingly impregnable fortress fell to Japan, shocking the empire and demonstrating vulnerability in the Indian Ocean theater. This made Indian cooperation in the war effort urgent.\n\nCripps arrived in India in late March 1942. The mission negotiations ran from March to April 1942, ending in failure when the defense portfolio deadlock could not be resolved.\n\nThe Quit India Resolution was passed on August 8, 1942, at the Bombay session of the AICC. The failure of the Cripps Mission was a direct catalyst — Congress concluded that constitutional negotiation with Britain was futile.\n\nCorrect sequence: Fall of Singapore (Feb 1942) → Cripps Mission (Mar–Apr 1942) → Quit India Resolution (Aug 8, 1942).\n\nValue Addition:\n• 'Do or Die' was Gandhi's call at the Quit India launch — the logical endpoint of the 'post-dated cheque' argument.\n• The Japanese advance into Burma further heightened British urgency between Singapore's fall and Cripps's arrival.\n• The Quit India movement began the day after the resolution — August 9, 1942 ('August Kranti Diwas')."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से घटनाओं का सही कालानुक्रमिक क्रम क्या है?\n\n1. जापानी सेनाओं द्वारा सिंगापुर का पतन\n2. क्रिप्स मिशन का भारत आगमन\n3. अखिल भारतीय कांग्रेस समिति द्वारा भारत छोड़ो प्रस्ताव पारित होना\n\n(a) 1 → 2 → 3\n(b) 2 → 1 → 3\n(c) 1 → 3 → 2\n(d) 3 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि भारत छोड़ो प्रस्ताव 8 अगस्त को आया था, वे सिंगापुर के पतन और क्रिप्स मिशन के आगमन के क्रम को उलट सकते हैं, क्योंकि दोनों घटनाएँ 1942 की शुरुआत में हुई थीं।",
+      "elimination_logic": [
+        "सिंगापुर का पतन 15 फरवरी 1942 को हुआ — यह वह सैन्य संकट था जिसने मिशन को प्रेरित किया।",
+        "क्रिप्स मार्च 1942 के अंत में भारत आए और मिशन औपचारिक रूप से अप्रैल 1942 में समाप्त (असफल) हुआ।",
+        "भारत छोड़ो प्रस्ताव 8 अगस्त 1942 को कांग्रेस कार्य समिति द्वारा पारित किया गया।",
+        "सही क्रम: सिंगापुर का पतन → क्रिप्स मिशन → भारत छोड़ो प्रस्ताव — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "फंदा यह है कि क्रिप्स मिशन को सिंगापुर के पतन से पहले रखना या 1942 के भीतर घटनाओं के क्रम को भ्रमित करना। जो छात्र जानते हैं कि दोनों घटनाएँ 1942 में हुईं, वे याद नहीं रख पाते कि सिंगापुर फरवरी में गिरा और क्रिप्स मार्च में आया, और मान लेते हैं कि मिशन ने सिंगापुर के पतन को प्रेरित किया बजाय इसके कि वह उस पर प्रतिक्रिया थी। विकल्प (b) में क्रिप्स को सिंगापुर से पहले रखा गया है, जो मिशन की कारणात्मक तर्क को उलट देता है।",
+      "final_explanation": "तीनों घटनाएँ 1942 में हुईं, इसलिए सटीक क्रम महत्वपूर्ण है।\n\nसिंगापुर का पतन (15 फरवरी 1942) वह सैन्य त्रासदी थी जिसने ब्रिटेन के अजेय किले को जापान के हाथों गिरा दिया, जिससे साम्राज्य को झटका लगा और भारतीय महासागर क्षेत्र में उसकी कमजोरी उजागर हुई। इससे युद्ध प्रयास में भारतीय सहयोग आवश्यक हो गया।\n\nक्रिप्स मार्च 1942 के अंत में भारत आए। मिशन की बातचीत मार्च से अप्रैल 1942 तक चली, जो रक्षा विभाग के गतिरोध के कारण असफल रही।\n\nभारत छोड़ो प्रस्ताव 8 अगस्त 1942 को बॉम्बे सत्र में अखिल भारतीय कांग्रेस समिति द्वारा पारित किया गया। क्रिप्स मिशन की असफलता इसका प्रत्यक्ष उत्प्रेरक थी — कांग्रेस ने ब्रिटेन के साथ संवैधानिक वार्ता को व्यर्थ समझा।\n\nसही क्रम: सिंगापुर का पतन (फरवरी 1942) → क्रिप्स मिशन (मार्च–अप्रैल 1942) → भारत छोड़ो प्रस्ताव (8 अगस्त 1942)।\n\nमूल्यवर्धन:\n• 'करो या मरो' गांधी का भारत छोड़ो आंदोलन के शुभारंभ पर आह्वान था — 'पोस्ट-डेटेड चेक' तर्क का तार्किक अंत।\n• जापानी सेना का बर्मा में प्रगति ने सिंगापुर के पतन और क्रिप्स के आगमन के बीच ब्रिटिश तत्परता को और बढ़ा दिया।\n• भारत छोड़ो आंदोलन प्रस्ताव के अगले दिन — 9 अगस्त 1942 ('अगस्त क्रांति दिवस') शुरू हुआ।"
+    }
+  },
+  {
+    "uuid": "ec0d9358-9299-4d7c-bba0-1ffa8a5c6e31",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "American Involvement and International Dimensions of the Cripps Mission",
+        "Context and Timing of Cripps Mission (1942)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "American pressure — Roosevelt's role in Cripps Mission",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During the Cripps Mission negotiations of 1942, an Allied power outside Britain took the unusual step of sending its head of state's personal representative to assist in the talks, reflecting the strategic importance of Indian cooperation in the war against Japan. This representative was not part of any formal diplomatic mission but acted as a channel to nudge both sides toward agreement.\n\nWhich of the following correctly identifies this representative and the country he represented?\n\n(a) A senior official from the US State Department representing the American government's formal diplomatic position\n(b) Harry Hopkins, acting as a personal emissary of President Roosevelt on matters of European war strategy\n(c) Colonel Louis Johnson, sent as President Roosevelt's personal representative to assist the Cripps negotiations\n(d) Chiang Kai-shek, representing China's interest in securing Indian military cooperation on the eastern front",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students know the mission was a British initiative and may assume any American presence was through the State Department or a formal diplomatic channel, rather than a personal presidential representative.",
+      "elimination_logic": [
+        "Eliminate option (a): The scenario specifies a non-British mediator — the State Department was a formal diplomatic body, not what the scenario describes.",
+        "Eliminate option (b): Harry Hopkins was Roosevelt's envoy to Churchill on European matters, not the Cripps Mission negotiations.",
+        "Eliminate option (d): Chiang Kai-shek was not involved in the Cripps negotiations — he visited India in early 1942 but in a different context.",
+        "Confirm option (c): Colonel Louis Johnson was Roosevelt's personal representative dispatched to assist the Cripps negotiations — an unusually direct American diplomatic intervention."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places other known Roosevelt-era figures (Harry Hopkins, Chiang Kai-shek) as distractors. Students who know America was involved but cannot name the specific representative will guess at plausible Roosevelt envoys. Colonel Louis Johnson is a precise factual point that most students do not recall, making this a high-difficulty discrimination question.",
+      "final_explanation": "The Cripps Mission had a significant international dimension that UPSC exploits. President Franklin D. Roosevelt was deeply concerned that Britain's failure to offer meaningful constitutional concessions would undermine Indian morale and war cooperation against Japan. To signal American interest and pressure Britain toward compromise, Roosevelt took the unusual step of sending his personal representative to participate informally in the Cripps negotiations.\n\n• Option (a) — Incorrect: The US State Department conducts formal diplomacy; this was a personal presidential representative, not a State Department channel.\n• Option (b) — Incorrect: Harry Hopkins was Roosevelt's envoy on European matters and the Lend-Lease programme — he was not dispatched to the Cripps Mission.\n• Option (c) — Correct: Colonel Louis Johnson was Roosevelt's personal representative sent to assist the Cripps negotiations — an extraordinary American intervention in British imperial affairs.\n• Option (d) — Incorrect: Chiang Kai-shek visited India in early 1942 to encourage Indian participation in the war, but was not part of the Cripps Mission negotiations.\n\nValue Addition:\n• Churchill resented American 'interference' in what he considered internal imperial matters.\n• Roosevelt's pressure was one reason Churchill reluctantly agreed to send Cripps at all.\n• The Fall of Singapore made the Indian Ocean theater strategically critical for all Allied powers, explaining American urgency."
+    },
+    "hi": {
+      "display_text": "1942 के क्रिप्स मिशन वार्ताओं के दौरान, ब्रिटेन के बाहर एक मित्र राष्ट्र ने असामान्य कदम उठाते हुए अपने राष्ट्राध्यक्ष के व्यक्तिगत प्रतिनिधि को वार्ताओं में सहायता के लिए भेजा, जो जापान के खिलाफ युद्ध में भारतीय सहयोग की रणनीतिक महत्ता को दर्शाता है। यह प्रतिनिधि किसी औपचारिक राजनयिक मिशन का हिस्सा नहीं था, बल्कि दोनों पक्षों को समझौते की ओर प्रेरित करने वाला एक माध्यम था।\n\nनिम्नलिखित में से कौन-सा सही प्रतिनिधि और उसके देश की पहचान करता है?\n\n(a) अमेरिकी सरकार के औपचारिक राजनयिक रुख का प्रतिनिधित्व करने वाला अमेरिकी स्टेट डिपार्टमेंट का वरिष्ठ अधिकारी\n(b) हैरी हॉपकिन्स, जो राष्ट्रपति रूजवेल्ट के व्यक्तिगत दूत के रूप में यूरोपीय युद्ध रणनीति मामलों में कार्यरत थे\n(c) कर्नल लुई जॉनसन, जिन्हें राष्ट्रपति रूजवेल्ट ने क्रिप्स वार्ताओं में सहायता के लिए व्यक्तिगत प्रतिनिधि के रूप में भेजा था\n(d) चियांग काई-शेक, जो पूर्वी मोर्चे पर भारतीय सैन्य सहयोग सुनिश्चित करने में चीन के हितों का प्रतिनिधित्व करते थे",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र जानते हैं कि मिशन ब्रिटिश पहल थी और वे मान सकते हैं कि कोई भी अमेरिकी उपस्थिति स्टेट डिपार्टमेंट या औपचारिक राजनयिक चैनल के माध्यम से थी, न कि व्यक्तिगत राष्ट्रपति प्रतिनिधि के रूप में।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: परिदृश्य में गैर-ब्रिटिश मध्यस्थ निर्दिष्ट है — स्टेट डिपार्टमेंट एक औपचारिक राजनयिक निकाय था, जो परिदृश्य में वर्णित नहीं है।",
+        "विकल्प (b) को निरस्त करें: हैरी हॉपकिन्स रूजवेल्ट के यूरोपीय मामलों पर चर्चिल के लिए दूत थे, क्रिप्स मिशन वार्ताओं में नहीं।",
+        "विकल्प (d) को निरस्त करें: चियांग काई-शेक क्रिप्स वार्ताओं में शामिल नहीं थे — वे 1942 की शुरुआत में भारत आए थे लेकिन अलग संदर्भ में।",
+        "विकल्प (c) की पुष्टि करें: कर्नल लुई जॉनसन रूजवेल्ट के व्यक्तिगत प्रतिनिधि थे जिन्हें क्रिप्स वार्ताओं में सहायता के लिए भेजा गया था — एक असाधारण अमेरिकी राजनयिक हस्तक्षेप।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में अन्य ज्ञात रूजवेल्ट-कालीन हस्तियों (हैरी हॉपकिन्स, चियांग काई-शेक) को भ्रमित करने वाले विकल्प के रूप में रखा गया है। जो छात्र जानते हैं कि अमेरिका शामिल था लेकिन विशिष्ट प्रतिनिधि का नाम नहीं जानते, वे संभावित रूजवेल्ट दूतों का अनुमान लगाते हैं। कर्नल लुई जॉनसन एक सटीक तथ्य है जिसे अधिकांश छात्र याद नहीं रखते, इसलिए यह उच्च कठिनाई वाला भेदभाव प्रश्न है।",
+      "final_explanation": "क्रिप्स मिशन का एक महत्वपूर्ण अंतरराष्ट्रीय आयाम था जिसे UPSC ने भुनाया है। राष्ट्रपति फ्रैंकलिन डी. रूजवेल्ट इस बात को लेकर गहराई से चिंतित थे कि ब्रिटेन के सार्थक संवैधानिक रियायतें न देने से भारतीय मनोबल और जापान के खिलाफ युद्ध सहयोग कमजोर होगा। अमेरिकी रुचि और ब्रिटेन पर समझौते के लिए दबाव दिखाने हेतु, रूजवेल्ट ने असामान्य कदम उठाते हुए अपने व्यक्तिगत प्रतिनिधि को क्रिप्स वार्ताओं में अनौपचारिक रूप से भाग लेने भेजा।\n\n• विकल्प (a) — गलत: अमेरिकी स्टेट डिपार्टमेंट औपचारिक कूटनीति करता है; यह एक व्यक्तिगत राष्ट्रपति प्रतिनिधि था, स्टेट डिपार्टमेंट चैनल नहीं।\n• विकल्प (b) — गलत: हैरी हॉपकिन्स यूरोपीय मामलों और लेंड-लीज कार्यक्रम के लिए रूजवेल्ट के दूत थे — उन्हें क्रिप्स मिशन के लिए नहीं भेजा गया।\n• विकल्प (c) — सही: कर्नल लुई जॉनसन रूजवेल्ट के व्यक्तिगत प्रतिनिधि थे जिन्हें क्रिप्स वार्ताओं में सहायता के लिए भेजा गया — ब्रिटिश साम्राज्य मामलों में असाधारण अमेरिकी हस्तक्षेप।\n• विकल्प (d) — गलत: चियांग काई-शेक 1942 की शुरुआत में भारत आए थे ताकि भारतीय युद्ध में भागीदारी बढ़ा सकें, लेकिन वे क्रिप्स वार्ताओं का हिस्सा नहीं थे।\n\nमूल्य संवर्धन:\n• चर्चिल को अमेरिकी 'हस्तक्षेप' से कष्ट था जिसे वे आंतरिक साम्राज्य मामलों में मानते थे।\n• रूजवेल्ट का दबाव एक कारण था कि चर्चिल ने अनिच्छा से क्रिप्स को भेजने पर सहमति दी।\n• सिंगापुर के पतन ने भारतीय महासागर क्षेत्र को सभी मित्र राष्ट्रों के लिए रणनीतिक रूप से महत्वपूर्ण बना दिया, जो अमेरिकी तत्परता को समझाता है।"
+    }
+  },
+  {
+    "uuid": "eca3e778-bb65-46de-b461-ca1ee8fc6dfa",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Cripps Mission vs. Cabinet Mission (1946): Distinguishing Features",
+        "Composition and Mandate of the Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Cabinet Mission 1946 — three members identified",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four individuals were members of the Cabinet Mission of 1946. Which one was NOT a member of that Mission?\n\n(a) Pethick-Lawrence\n(b) Stafford Cripps\n(c) Lord Wavell\n(d) A.V. Alexander",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Stafford Cripps was indeed part of the Cabinet Mission (1946), and students who associate him primarily with 1942 may be uncertain whether he should be 'odd one out' — momentarily hesitating before incorrectly choosing him.",
+      "elimination_logic": [
+        "Identify the category: The question asks for the member who did NOT belong to the Cabinet Mission of 1946.",
+        "Pethick-Lawrence: Secretary of State for India — was a member of the Cabinet Mission (1946).",
+        "Stafford Cripps: Was a member of the Cabinet Mission (1946) — also led the 1942 mission.",
+        "A.V. Alexander: First Lord of the Admiralty — was a member of the Cabinet Mission (1946).",
+        "Lord Wavell: Was the Viceroy of India (1943–1947) — he was not a member of the Cabinet Mission; the mission worked alongside but separate from the Viceroy.",
+        "The odd one out is Lord Wavell — select option (c)."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the role of the Viceroy (Wavell) with the Cabinet Mission members. Students who know Wavell was Viceroy during the Cabinet Mission period and was therefore present and engaged with the negotiations may assume he was a member of the Mission itself. However, the Cabinet Mission was a delegated body from London — Wavell was the Crown's representative in India, a separate institutional role.",
+      "final_explanation": "The Cabinet Mission of 1946 was a three-member body dispatched from Britain to negotiate the transfer of power.\n\n• Option (a) — Pethick-Lawrence: Sir Frederick Pethick-Lawrence was the Secretary of State for India and the formal head of the Cabinet Mission. Member — not the odd one out.\n• Option (b) — Stafford Cripps: President of the Board of Trade, and veteran of the 1942 mission. He was a full member of the 1946 Cabinet Mission — not the odd one out.\n• Option (c) — Lord Wavell: Field Marshal Archibald Wavell was the Viceroy of India (1943–1947). He interacted with the Cabinet Mission but was not a member of it — he represented the Crown as Viceroy, a structurally different role. This is the odd one out.\n• Option (d) — A.V. Alexander: First Lord of the Admiralty, the third member of the Cabinet Mission — not the odd one out.\n\nValue Addition:\n• Wavell was replaced by Mountbatten as Viceroy in March 1947.\n• The Cabinet Mission is famous for rejecting partition and proposing the grouping of provinces.\n• Cripps's presence in both 1942 and 1946 makes him a uniquely important figure in India's constitutional history."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार व्यक्तियों में से तीन 1946 के कैबिनेट मिशन के सदस्य थे। इनमें से कौन उस मिशन का सदस्य नहीं था?\n\n(a) पैथिक-लॉरेंस\n(b) स्टैफर्ड क्रिप्स\n(c) लॉर्ड वेवेल\n(d) ए.वी. अलेक्जेंडर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि स्टैफर्ड क्रिप्स वास्तव में कैबिनेट मिशन (1946) के सदस्य थे, और जो छात्र उन्हें मुख्य रूप से 1942 से जोड़ते हैं, वे असमंजस में पड़ सकते हैं कि उन्हें 'अलग' माना जाना चाहिए या नहीं — इसलिए वे अस्थायी रूप से हिचकिचाते हुए गलत विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "श्रेणी की पहचान करें: प्रश्न उस सदस्य के लिए है जो 1946 के कैबिनेट मिशन का सदस्य नहीं था।",
+        "पैथिक-लॉरेंस: भारत के सचिव — कैबिनेट मिशन (1946) के सदस्य थे।",
+        "स्टैफर्ड क्रिप्स: कैबिनेट मिशन (1946) के सदस्य थे — साथ ही 1942 के मिशन का नेतृत्व भी किया।",
+        "ए.वी. अलेक्जेंडर: प्रथम लॉर्ड ऑफ द एडमिरल्टी — कैबिनेट मिशन (1946) के सदस्य थे।",
+        "लॉर्ड वेवेल: भारत के वायसराय (1943–1947) थे — वे कैबिनेट मिशन के सदस्य नहीं थे; मिशन वायसराय के साथ काम करता था लेकिन अलग था।",
+        "अलग सदस्य लॉर्ड वेवेल हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "मिश्रण का जाल वायसराय (वेवेल) की भूमिका को कैबिनेट मिशन के सदस्यों के साथ मिला देता है। जो छात्र जानते हैं कि वेवेल कैबिनेट मिशन के समय वायसराय थे और इसलिए बातचीत में शामिल थे, वे मान सकते हैं कि वे मिशन के सदस्य थे। हालांकि, कैबिनेट मिशन लंदन से भेजा गया प्रतिनिधि निकाय था — वेवेल भारत में क्राउन का प्रतिनिधि था, जो एक अलग संस्थागत भूमिका है।",
+      "final_explanation": "1946 का कैबिनेट मिशन ब्रिटेन से भेजा गया तीन सदस्यीय निकाय था, जिसका उद्देश्य सत्ता हस्तांतरण पर बातचीत करना था।\n\n• विकल्प (a) — पैथिक-लॉरेंस: सर फ्रेडरिक पैथिक-लॉरेंस भारत के सचिव और कैबिनेट मिशन के औपचारिक प्रमुख थे। सदस्य — अलग सदस्य नहीं।\n• विकल्प (b) — स्टैफर्ड क्रिप्स: बोर्ड ऑफ ट्रेड के अध्यक्ष और 1942 के मिशन के अनुभवी। वे 1946 के कैबिनेट मिशन के पूर्ण सदस्य थे — अलग सदस्य नहीं।\n• विकल्प (c) — लॉर्ड वेवेल: फील्ड मार्शल आर्चिबाल्ड वेवेल भारत के वायसराय (1943–1947) थे। वे कैबिनेट मिशन के साथ संपर्क में थे लेकिन सदस्य नहीं थे — वे क्राउन के प्रतिनिधि थे, एक संरचनात्मक रूप से अलग भूमिका। यह अलग सदस्य है।\n• विकल्प (d) — ए.वी. अलेक्जेंडर: प्रथम लॉर्ड ऑफ द एडमिरल्टी, कैबिनेट मिशन के तीसरे सदस्य — अलग सदस्य नहीं।\n\nअतिरिक्त जानकारी:\n• मार्च 1947 में वेवेल की जगह माउंटबेटन वायसराय बने।\n• कैबिनेट मिशन विभाजन को अस्वीकार करने और प्रांतों के समूह बनाने के प्रस्ताव के लिए प्रसिद्ध है।\n• क्रिप्स का 1942 और 1946 दोनों मिशनों में होना उन्हें भारत के संवैधानिक इतिहास में एक अनूठा महत्वपूर्ण व्यक्ति बनाता है।"
+    }
+  },
+  {
+    "uuid": "16091597-d592-4c6e-948f-9ae497f2baf9",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "The 'Post-Dated Cheque on a Failing Bank' Metaphor: Analytical Significance",
+        "Congress Response and Rejection of the Cripps Proposals"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Gandhi's post-dated cheque metaphor — attribution and meaning",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Congress's response to the Cripps Mission proposals, consider the following statements:\n\nStatement 1: The phrase 'a post-dated cheque on a failing bank,' used to characterise the Cripps proposals, is attributed to Mahatma Gandhi, with the 'failing bank' referring to the British Empire's uncertain survival in World War II.\n\nStatement 2: Gandhi was the primary Congress negotiator during the Cripps Mission talks, conducting the most substantive discussions with Stafford Cripps on behalf of the Congress Working Committee.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: The phrase 'a post-dated cheque on a failing bank,' used to characterise the Cripps proposals, is attributed to Mahatma Gandhi, with the 'failing bank' referring to the British Empire's uncertain survival in World War II.",
+          "verdict": "Correct",
+          "reason": "The phrase is attributed to Gandhi; 'failing bank' refers to the possibility that Britain might lose the war, making future promises worthless — this is the historically accepted interpretation."
+        },
+        {
+          "statement": "Statement 2: Gandhi was the primary Congress negotiator during the Cripps Mission talks, conducting the most substantive discussions with Stafford Cripps on behalf of the Congress Working Committee.",
+          "verdict": "Incorrect",
+          "reason": "Nehru and Maulana Azad (Congress President) were the primary negotiators; Gandhi was influential in shaping the Congress position but was not the direct negotiator with Cripps."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because Statement 1 is correct and students who recall Gandhi's phrase may assume the entire description of Congress's engagement — including Gandhi as lead negotiator — is also accurate.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The attribution to Gandhi and the 'failing bank = British Empire losing WWII' interpretation are both historically accurate — Statement 1 is correct.",
+        "Evaluate Statement 2: Azad (Congress President) and Nehru were the primary negotiators with Cripps; Gandhi was not the direct interlocutor — Statement 2 is incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Gandhi is so closely associated with Indian nationalist resistance that students instinctively assume he was the lead negotiator in every major constitutional engagement. In fact, for the Cripps Mission, Azad (as Congress President) and Nehru conducted the substantive talks. Gandhi's decisive influence was exercised through his position in the Congress Working Committee and through the 'post-dated cheque' framing — not through direct negotiation with Cripps.",
+      "final_explanation": "Gandhi's 'post-dated cheque on a failing bank' is one of the most quoted phrases in Indian nationalist history and carries precise analytical meaning.\n\n• Statement 1 — Correct: The phrase is attributed to Gandhi. 'Post-dated cheque' = a promise deferred to a future date (post-war). 'Failing bank' = the British Empire, which might lose World War II, making the promise worthless. The phrase captures Congress's strategic calculation perfectly.\n• Statement 2 — Incorrect: Maulana Azad, as Congress President, and Jawaharlal Nehru were the primary negotiators with Cripps. Gandhi participated in Congress deliberations and shaped the decision but was not the direct interlocutor in the Cripps talks.\n\nValue Addition:\n• Azad's role as Congress President during the Cripps Mission is often overlooked — UPSC sometimes tests this.\n• Gandhi's opposition to the proposals crystallised Congress's position but he initially left negotiations to Nehru and Azad.\n• The 'post-dated cheque' logic became the philosophical justification for the Quit India Movement launched four months later."
+    },
+    "hi": {
+      "display_text": "क्रिप्स मिशन प्रस्तावों के प्रति कांग्रेस की प्रतिक्रिया के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: 'एक असफल बैंक पर पोस्ट-डेटेड चेक' वाक्यांश, जिसका उपयोग क्रिप्स प्रस्तावों को वर्णित करने के लिए किया गया, महात्मा गांधी को दिया जाता है, जिसमें 'असफल बैंक' से तात्पर्य ब्रिटिश साम्राज्य के द्वितीय विश्व युद्ध में अनिश्चित अस्तित्व से है।\n\nकथन 2: गांधी क्रिप्स मिशन वार्ताओं के दौरान कांग्रेस के मुख्य वार्ताकार थे, जिन्होंने कांग्रेस कार्य समिति की ओर से स्टैफर्ड क्रिप्स के साथ सबसे महत्वपूर्ण चर्चाएँ कीं।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: 'एक असफल बैंक पर पोस्ट-डेटेड चेक' वाक्यांश, जिसका उपयोग क्रिप्स प्रस्तावों को वर्णित करने के लिए किया गया, महात्मा गांधी को दिया जाता है, जिसमें 'असफल बैंक' से तात्पर्य ब्रिटिश साम्राज्य के द्वितीय विश्व युद्ध में अनिश्चित अस्तित्व से है।",
+          "verdict": "सही",
+          "reason": "यह वाक्यांश गांधी को दिया गया है; 'असफल बैंक' से आशय है कि ब्रिटेन युद्ध हार सकता है, जिससे भविष्य के वादे निरर्थक हो जाते हैं — यह ऐतिहासिक रूप से स्वीकार्य व्याख्या है।"
+        },
+        {
+          "statement": "कथन 2: गांधी क्रिप्स मिशन वार्ताओं के दौरान कांग्रेस के मुख्य वार्ताकार थे, जिन्होंने कांग्रेस कार्य समिति की ओर से स्टैफर्ड क्रिप्स के साथ सबसे महत्वपूर्ण चर्चाएँ कीं।",
+          "verdict": "गलत",
+          "reason": "नेहरू और मौलाना आज़ाद (कांग्रेस अध्यक्ष) मुख्य वार्ताकार थे; गांधी कांग्रेस की स्थिति को आकार देने में प्रभावशाली थे लेकिन क्रिप्स के साथ सीधे वार्ताकार नहीं थे।"
+        }
+      ],
+      "strong_distractor": "विकल्प (a) भ्रमित करने वाला है क्योंकि कथन 1 सही है और जो छात्र गांधी के वाक्यांश को याद करते हैं वे मान सकते हैं कि कांग्रेस की संपूर्ण भागीदारी — जिसमें गांधी मुख्य वार्ताकार हैं — भी सही है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: गांधी को दिया जाना और 'असफल बैंक = ब्रिटिश साम्राज्य का द्वितीय विश्व युद्ध हारना' व्याख्या दोनों ऐतिहासिक रूप से सही हैं — अतः कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: आज़ाद (कांग्रेस अध्यक्ष) और नेहरू क्रिप्स के साथ मुख्य वार्ताकार थे; गांधी सीधे वार्ताकार नहीं थे — अतः कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "गांधी भारतीय राष्ट्रवादी प्रतिरोध से इतने घनिष्ठ रूप से जुड़े हैं कि छात्र सहज रूप से मान लेते हैं कि वे हर प्रमुख संवैधानिक वार्ता में मुख्य वार्ताकार थे। वास्तव में, क्रिप्स मिशन के लिए आज़ाद (कांग्रेस अध्यक्ष) और नेहरू ने महत्वपूर्ण वार्ताएँ कीं। गांधी का निर्णायक प्रभाव कांग्रेस कार्य समिति में उनकी स्थिति और 'पोस्ट-डेटेड चेक' रूपक के माध्यम से था — न कि क्रिप्स के साथ सीधे वार्ता के द्वारा।",
+      "final_explanation": "गांधी का 'असफल बैंक पर पोस्ट-डेटेड चेक' वाक्यांश भारतीय राष्ट्रवादी इतिहास में सबसे अधिक उद्धृत वाक्यों में से एक है और इसका विशिष्ट विश्लेषणात्मक अर्थ है।\n\n• कथन 1 — सही: यह वाक्यांश गांधी को दिया गया है। 'पोस्ट-डेटेड चेक' = एक वादा जो भविष्य की तारीख (युद्ध के बाद) के लिए स्थगित है। 'असफल बैंक' = ब्रिटिश साम्राज्य, जो द्वितीय विश्व युद्ध हार सकता है, जिससे वादा निरर्थक हो जाता है। यह वाक्यांश कांग्रेस की रणनीतिक गणना को पूरी तरह से दर्शाता है।\n• कथन 2 — गलत: मौलाना आज़ाद, कांग्रेस अध्यक्ष के रूप में, और जवाहरलाल नेहरू क्रिप्स के साथ मुख्य वार्ताकार थे। गांधी ने कांग्रेस की विचार-विमर्श में भाग लिया और निर्णय को आकार दिया लेकिन वे क्रिप्स वार्ताओं में सीधे वार्ताकार नहीं थे।\n\nमूल्यवर्धन:\n• क्रिप्स मिशन के दौरान कांग्रेस अध्यक्ष के रूप में आज़ाद की भूमिका अक्सर अनदेखी की जाती है — UPSC कभी-कभी इसे परखता है।\n• गांधी का प्रस्तावों के प्रति विरोध कांग्रेस की स्थिति को स्पष्ट करता है लेकिन उन्होंने प्रारंभ में वार्ताएँ नेहरू और आज़ाद को सौंपी थीं।\n• 'पोस्ट-डेटेड चेक' तर्क ने चार महीने बाद शुरू हुए भारत छोड़ो आंदोलन के दार्शनिक औचित्य के रूप में काम किया।"
+    }
+  },
+  {
+    "uuid": "32981d9f-e4c3-4a8c-a066-984f48b10ab0",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Constitutional Significance: First Formal British Acceptance of India's Right to Frame Its Own Constitution"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Cripps Mission — first Constituent Assembly commitment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The ________ represented the first occasion on which the British government formally accepted that Indians would frame their own constitution, marking a decisive shift from the earlier practice of Britain imposing constitutional frameworks upon India.\n\n(a) Montagu-Chelmsford Reforms (1919)\n(b) Cripps Mission (1942)\n(c) Government of India Act (1935)\n(d) Cabinet Mission (1946)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because the Government of India Act 1935 is the most prominent British constitutional document for India and students may assume it contained the first Constituent Assembly commitment.",
+      "elimination_logic": [
+        "The Government of India Act 1935 imposed a British-designed framework — it did not commit to an Indian-framed constitution.",
+        "The Montagu-Chelmsford Reforms (1919) introduced dyarchy but made no Constituent Assembly commitment.",
+        "The August Offer (1940) promised Dominion Status and Executive Council expansion but NO Constituent Assembly.",
+        "The Cripps Mission (1942) was the first time Britain formally committed to Indians framing their own constitution through a Constituent Assembly — fill the blank with 'Cripps Mission (1942)'."
+      ],
+      "upsc_trap_explanation": "Students associate the Constituent Assembly with the Cabinet Mission of 1946, which actually implemented the idea. The trap is conflating the first formal commitment (Cripps, 1942) with the first implementation (Cabinet Mission, 1946). Option (c) exploits the Government of India Act 1935's prominence — it was a landmark British constitutional document for India but was a British-imposed framework, not an Indian-framed constitution.",
+      "final_explanation": "The evolution of British constitutional thinking on India is a key UPSC theme.\n\n• Option (a) — Incorrect: The Montagu-Chelmsford Reforms (1919) introduced dyarchy in the provinces but contained no commitment to a Constituent Assembly or an India-framed constitution.\n• Option (b) — Correct: The Cripps Mission (1942) was the first occasion on which Britain formally committed to Indians framing their own constitution through a Constituent Assembly. Previous documents (Montagu-Chelmsford, GOI Act 1935) were imposed by Britain.\n• Option (c) — Incorrect: The Government of India Act 1935 was the most comprehensive British-imposed constitutional framework for India — it was not Indian-made and contained no Constituent Assembly provision.\n• Option (d) — Incorrect: The Cabinet Mission (1946) implemented and operationalised the Constituent Assembly idea — it did not make the first formal commitment; that distinction belongs to the Cripps Mission.\n\nValue Addition:\n• The Constituent Assembly actually met from December 9, 1946, following the Cabinet Mission's plan.\n• The Cripps-to-Cabinet Mission evolution is a classic UPSC 'bridge concept'.\n• All pre-Cripps British documents were imposed frameworks; Cripps marked the pivot to Indian self-constitution."
+    },
+    "hi": {
+      "display_text": "________ वह पहली घटना थी जब ब्रिटिश सरकार ने औपचारिक रूप से स्वीकार किया कि भारतीय अपनी संविधान सभा के माध्यम से अपना संविधान बनाएंगे, जो ब्रिटेन द्वारा भारत पर संवैधानिक ढांचे थोपने की पूर्व की प्रथा से निर्णायक बदलाव था।\n\n(a) Montagu-Chelmsford सुधार (1919)\n(b) Cripps मिशन (1942)\n(c) भारत सरकार अधिनियम (1935)\n(d) कैबिनेट मिशन (1946)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि Government of India Act 1935 भारत के लिए सबसे प्रमुख ब्रिटिश संवैधानिक दस्तावेज है और छात्र यह मान सकते हैं कि इसमें पहली संविधान सभा की प्रतिबद्धता थी।",
+      "elimination_logic": [
+        "Government of India Act 1935 ने ब्रिटिश-निर्मित ढांचा थोप दिया था — इसमें भारतीय-निर्मित संविधान की कोई प्रतिबद्धता नहीं थी।",
+        "Montagu-Chelmsford सुधार (1919) ने द्विध्रुवीय शासन प्रणाली (dyarchy) शुरू की लेकिन संविधान सभा की कोई प्रतिबद्धता नहीं दी।",
+        "August Offer (1940) ने डोमिनियन स्टेटस और कार्यकारी परिषद के विस्तार का वादा किया लेकिन संविधान सभा का कोई उल्लेख नहीं था।",
+        "Cripps Mission (1942) पहली बार था जब ब्रिटेन ने औपचारिक रूप से भारतीयों को अपनी संविधान सभा के माध्यम से अपना संविधान बनाने की प्रतिबद्धता दी — रिक्त स्थान में 'Cripps Mission (1942)' भरें।"
+      ],
+      "upsc_trap_explanation": "छात्र संविधान सभा को 1946 के कैबिनेट मिशन से जोड़ते हैं, जिसने वास्तव में इस विचार को लागू किया। जाल यह है कि पहली औपचारिक प्रतिबद्धता (Cripps, 1942) को पहली कार्यान्वयन (Cabinet Mission, 1946) से भ्रमित कर दिया जाए। विकल्प (c) Government of India Act 1935 की प्रमुखता का फायदा उठाता है — यह भारत के लिए एक महत्वपूर्ण ब्रिटिश संवैधानिक दस्तावेज था लेकिन यह ब्रिटिश-थोपित ढांचा था, भारतीय-निर्मित संविधान नहीं।",
+      "final_explanation": "ब्रिटिश संवैधानिक सोच का भारत पर विकास UPSC का एक प्रमुख विषय है।\n\n• विकल्प (a) — गलत: Montagu-Chelmsford सुधार (1919) ने प्रांतों में द्विध्रुवीय शासन प्रणाली शुरू की लेकिन संविधान सभा या भारतीय-निर्मित संविधान की कोई प्रतिबद्धता नहीं दी।\n• विकल्प (b) — सही: Cripps Mission (1942) पहली बार था जब ब्रिटेन ने औपचारिक रूप से भारतीयों को अपनी संविधान सभा के माध्यम से अपना संविधान बनाने की प्रतिबद्धता दी। इससे पहले के दस्तावेज (Montagu-Chelmsford, GOI Act 1935) ब्रिटेन द्वारा थोपे गए थे।\n• विकल्प (c) — गलत: Government of India Act 1935 भारत के लिए सबसे व्यापक ब्रिटिश-थोपित संवैधानिक ढांचा था — यह भारतीय-निर्मित नहीं था और इसमें संविधान सभा का प्रावधान नहीं था।\n• विकल्प (d) — गलत: Cabinet Mission (1946) ने संविधान सभा के विचार को लागू किया — उसने पहली औपचारिक प्रतिबद्धता नहीं दी; वह सम्मान Cripps Mission को जाता है।\n\nमूल्यवर्धन:\n• संविधान सभा वास्तव में 9 दिसंबर 1946 से कैबिनेट मिशन की योजना के अनुसार बैठी।\n• Cripps से Cabinet Mission तक का विकास UPSC का एक क्लासिक 'ब्रिज कॉन्सेप्ट' है।\n• Cripps से पहले के सभी ब्रिटिश दस्तावेज थोपे गए ढांचे थे; Cripps ने भारतीय स्व-संविधान की दिशा में मोड़ दिया।"
+    }
+  },
+  {
+    "uuid": "b99b8eb9-4fb0-4ad9-a8ba-ab8417075c32",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Muslim League Response to the Cripps Mission",
+        "The Non-Accession / Opt-Out Clause for Provinces"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Muslim League reaction — insufficient Pakistan guarantee",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — relating the Muslim League's position to a specific feature of the Cripps proposals — is correctly matched?\n\n(a) Non-accession clause : Muslim League accepted the overall Cripps proposals because this clause provided constitutional legitimacy to the idea of Pakistan\n(b) Constituent Assembly proposal : Muslim League demanded a joint Constituent Assembly with Congress rather than separate bodies\n(c) Absence of an explicit Pakistan guarantee : Muslim League's primary reason for rejecting the Cripps proposals despite the non-accession clause partially meeting their aspirations\n(d) Non-accession clause : The clause applied only to provinces and did not extend to princely states, which the League found inadequate",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because the non-accession clause DID give implicit constitutional legitimacy to the partition idea, so students may assume the League was satisfied with it, confusing 'partial satisfaction' with 'acceptance of the proposals.'",
+      "elimination_logic": [
+        "Eliminate option (a): The League was partially satisfied with the non-accession clause but ultimately REJECTED the overall proposal — this pair incorrectly states the League 'accepted' the proposals.",
+        "Eliminate option (b): Jinnah did not demand a joint Constituent Assembly with Congress; he demanded a SEPARATE Constituent Assembly for Muslim-majority areas — this pair reverses the actual demand.",
+        "Evaluate option (c): The League's core objection was that the Cripps proposals did not explicitly guarantee Pakistan's creation — this is historically accurate and correctly matched.",
+        "Eliminate option (d): The opt-out clause applied to provinces AND princely states, not provinces only — this pair contains a factual error."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the partial truth that the non-accession clause partially satisfied the League. Students who know this may extend it to assume the League accepted the overall proposals — missing that the League ultimately rejected them. The distinction between 'partially satisfying a clause' and 'accepting the mission' is the precise factual trap here.",
+      "final_explanation": "The Muslim League's response to the Cripps Mission reveals the limits of the non-accession clause as a compromise.\n\n• Option (a) — Incorrectly matched: The League rejected the overall proposals. While the non-accession clause partially satisfied them, the absence of an explicit Pakistan guarantee was a dealbreaker.\n• Option (b) — Incorrectly matched: Jinnah demanded a separate Constituent Assembly for Muslim-majority areas, not a joint assembly — this option reverses the actual League demand.\n• Option (c) — Correctly matched: The League's principal objection was that the Cripps proposals implicitly acknowledged the possibility of partition (via the opt-out clause) but did not operationalise or guarantee Pakistan — Jinnah found this ambiguity insufficient.\n• Option (d) — Incorrectly matched: The opt-out (non-accession) clause applied to BOTH provinces and princely states, not provinces only.\n\nValue Addition:\n• The League wanted two things: explicit Pakistan creation AND a separate Constituent Assembly — Cripps offered neither explicitly.\n• The non-accession clause was a compromise that satisfied no one completely.\n• Jinnah's 1940 Lahore Resolution had already formally demanded a separate Muslim homeland — Cripps's implicit acknowledgment was seen as too vague."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित जोड़ों में से कौन-सा — मुस्लिम लीग की स्थिति को क्रिप्स प्रस्तावों की किसी विशिष्ट विशेषता से जोड़ता है — सही मेल खाता है?\n\n(a) गैर-प्रवेश क्लॉज : मुस्लिम लीग ने समग्र क्रिप्स प्रस्तावों को स्वीकार किया क्योंकि इस क्लॉज ने पाकिस्तान के विचार को संवैधानिक वैधता प्रदान की\n(b) संविधान सभा प्रस्ताव : मुस्लिम लीग ने कांग्रेस के साथ संयुक्त संविधान सभा की मांग की न कि पृथक निकायों की\n(c) स्पष्ट पाकिस्तान गारंटी की अनुपस्थिति : मुस्लिम लीग का मुख्य कारण था कि उन्होंने गैर-प्रवेश क्लॉज के आंशिक रूप से उनकी आकांक्षाओं को पूरा करने के बावजूद क्रिप्स प्रस्तावों को अस्वीकार किया\n(d) गैर-प्रवेश क्लॉज : यह क्लॉज केवल प्रांतों पर लागू था और रियासतों तक नहीं फैला, जिसे लीग ने अपर्याप्त पाया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि गैर-प्रवेश (non-accession) क्लॉज ने विभाजन के विचार को निहित संवैधानिक वैधता दी थी, इसलिए छात्र यह मान सकते हैं कि लीग इससे संतुष्ट थी, 'आंशिक संतुष्टि' को 'प्रस्तावों की स्वीकृति' से भ्रमित करते हुए।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: लीग गैर-प्रवेश क्लॉज से आंशिक रूप से संतुष्ट थी लेकिन अंततः समग्र प्रस्तावों को अस्वीकार कर दिया — यह जोड़ी गलत रूप से कहती है कि लीग ने प्रस्तावों को 'स्वीकार' किया।",
+        "विकल्प (b) को निरस्त करें: जिन्ना ने कांग्रेस के साथ संयुक्त संविधान सभा की मांग नहीं की; उन्होंने मुस्लिम बहुल क्षेत्रों के लिए पृथक संविधान सभा की मांग की — यह जोड़ी वास्तविक मांग को उलट देती है।",
+        "विकल्प (c) का मूल्यांकन करें: लीग की मुख्य आपत्ति यह थी कि क्रिप्स प्रस्तावों में पाकिस्तान के निर्माण की स्पष्ट गारंटी नहीं थी — यह ऐतिहासिक रूप से सही और सही मेल खाता है।",
+        "विकल्प (d) को निरस्त करें: गैर-प्रवेश क्लॉज प्रांतों और रियासतों दोनों पर लागू था, केवल प्रांतों पर नहीं — यह जोड़ी तथ्यात्मक त्रुटि रखती है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) आंशिक सत्य का लाभ उठाता है कि गैर-प्रवेश क्लॉज ने लीग को आंशिक रूप से संतुष्ट किया। जो छात्र इसे जानते हैं वे इसे बढ़ाकर मान सकते हैं कि लीग ने समग्र प्रस्तावों को स्वीकार कर लिया — जबकि लीग ने अंततः उन्हें अस्वीकार कर दिया। 'क्लॉज को आंशिक रूप से संतुष्ट करना' और 'मिशन को स्वीकार करना' के बीच का अंतर यही तथ्यात्मक जाल है।",
+      "final_explanation": "क्रिप्स मिशन के प्रति मुस्लिम लीग की प्रतिक्रिया गैर-प्रवेश क्लॉज की समझौते के रूप में सीमाओं को दर्शाती है।\n\n• विकल्प (a) — गलत मेल: लीग ने समग्र प्रस्तावों को अस्वीकार किया। जबकि गैर-प्रवेश क्लॉज ने उन्हें आंशिक रूप से संतुष्ट किया, स्पष्ट पाकिस्तान गारंटी की अनुपस्थिति निर्णायक थी।\n• विकल्प (b) — गलत मेल: जिन्ना ने मुस्लिम बहुल क्षेत्रों के लिए पृथक संविधान सभा की मांग की, संयुक्त सभा की नहीं — यह विकल्प वास्तविक मांग को उलट देता है।\n• विकल्प (c) — सही मेल: लीग की मुख्य आपत्ति यह थी कि क्रिप्स प्रस्तावों ने विभाजन की संभावना को निहित रूप से स्वीकार किया (गैर-प्रवेश क्लॉज के माध्यम से) लेकिन पाकिस्तान की गारंटी या क्रियान्वयन नहीं किया — जिन्ना को यह अस्पष्टता अपर्याप्त लगी।\n• विकल्प (d) — गलत मेल: गैर-प्रवेश क्लॉज प्रांतों और रियासतों दोनों पर लागू था, केवल प्रांतों पर नहीं।\n\nमूल्यवर्धन:\n• लीग दो चीजें चाहती थी: स्पष्ट पाकिस्तान निर्माण और पृथक संविधान सभा — क्रिप्स ने दोनों को स्पष्ट रूप से नहीं दिया।\n• गैर-प्रवेश क्लॉज एक समझौता था जिसने किसी को पूरी तरह संतुष्ट नहीं किया।\n• जिन्ना का 1940 का लाहौर प्रस्ताव पहले ही पृथक मुस्लिम मातृभूमि की औपचारिक मांग कर चुका था — क्रिप्स की निहित स्वीकृति बहुत अस्पष्ट मानी गई।"
+    }
+  },
+  {
+    "uuid": "ffe6f468-26f9-4f0b-9e0f-43e7521af110",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Failure Analysis: Why the Cripps Mission Failed — Multi-Causal Assessment",
+        "The Defense Portfolio Deadlock"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Cripps failure — multi-causal analysis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the reasons for the failure of the Cripps Mission in 1942, consider the following statements:\n\n1. The defense portfolio deadlock — caused by the War Cabinet's refusal to allow an Indian member to hold the defense portfolio with meaningful authority — was the most immediate and proximate cause of the breakdown.\n2. The Congress–League divide ensured that any proposal acceptable to Congress would be unacceptable to the League and vice versa, creating a structurally inevitable impasse regardless of the defense question.\n3. The mission failed primarily because Cripps exceeded his War Cabinet mandate by making unauthorised promises to Congress on the defense portfolio, which London subsequently refused to honour.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The defense portfolio deadlock, caused by the War Cabinet's refusal to allow an Indian member to hold the defense portfolio with meaningful authority, was the most immediate and proximate cause of the Cripps Mission's breakdown.",
+          "verdict": "Correct",
+          "reason": "Historians and the negotiating record consistently identify the defense portfolio issue as the immediate trigger — the Cripps-Azad formula was rejected by London, directly causing the breakdown."
+        },
+        {
+          "statement": "The Congress–League divide ensured that any proposal acceptable to the Congress would be unacceptable to the League and vice versa, making the mission's failure structurally inevitable regardless of the defense question.",
+          "verdict": "Correct",
+          "reason": "The non-accession clause satisfied the League partially but was deeply objectionable to Congress, while Congress's demand for a strong unitary centre conflicted with League's separatist demands — a structural impasse."
+        },
+        {
+          "statement": "The Cripps Mission failed primarily because Cripps exceeded his War Cabinet mandate by making unauthorized promises to Congress on the defense portfolio, which London subsequently refused to honour.",
+          "verdict": "Incorrect",
+          "reason": "While Cripps did show flexibility (the Cripps-Azad formula), characterising this as 'exceeding his mandate through unauthorized promises' overstates the case — the historical debate is about whether London deliberately restricted him, not that Cripps unilaterally made promises beyond his authority."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because all three statements contain factual elements that are partially true, and students may assume all three are correct without identifying the overstatement in Statement 3.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The defense portfolio deadlock as the proximate cause is well-established — Statement 1 is correct.",
+        "Evaluate Statement 2: The structural incompatibility between Congress and League positions is historically accurate — Statement 2 is correct.",
+        "Evaluate Statement 3: Calling Cripps's flexibility 'unauthorized promises' mischaracterises the situation — the War Cabinet restricted him, not that he acted without authority — Statement 3 is incorrect.",
+        "Statements 1 and 2 are correct; Statement 3 is incorrect — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 uses a partial-truth technique. Cripps did show flexibility on the defense formula, and London did overrule him. But the framing 'unauthorized promises' implies Cripps acted improperly — the historical consensus is that Cripps operated within reasonable interpretations of his mandate, and it was the War Cabinet's restrictive intervention that created the impasse, not Cripps exceeding authority.",
+      "final_explanation": "The Cripps Mission's failure is best understood through multiple overlapping causes.\n\n• Statement 1 — Correct: The defense portfolio was the immediate proximate cause. The Cripps-Azad formula represented a possible bridge, but when London rejected it, the negotiations collapsed. This was the specific point of breakdown, not the general post-war deferral.\n• Statement 2 — Correct: Structurally, any constitutional arrangement that maintained Indian unity (as Congress demanded) was incompatible with the explicit partition guarantee the League sought. The non-accession clause was an unstable compromise that neither side could fully accept.\n• Statement 3 — Incorrect: The characterisation of Cripps making 'unauthorized promises' is a misrepresentation. Cripps explored flexibility within his War Cabinet brief — it was London's restrictive response that narrowed the space for agreement. He did not unilaterally promise what he had no authority to deliver.\n\nValue Addition:\n• UPSC often asks for the 'primary' reason — distinguish immediate cause (defense deadlock) from structural causes (post-war deferral, Congress-League divide).\n• Churchill's restrictive telegram to Cripps is cited as evidence of deliberate sabotage by some historians.\n• The mission's failure validated Gandhi's 'post-dated cheque' logic and directly energised the Quit India decision."
+    },
+    "hi": {
+      "display_text": "1942 में क्रिप्स मिशन की विफलता के कारणों के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. रक्षा विभाग की गतिरोध — जो युद्ध कैबिनेट द्वारा एक भारतीय सदस्य को प्रभावशाली अधिकार के साथ रक्षा विभाग संभालने की अनुमति न देने के कारण हुई — क्रिप्स मिशन के विफल होने का सबसे तात्कालिक और निकटतम कारण था।\n2. कांग्रेस-लीग विभाजन ने यह सुनिश्चित किया कि कांग्रेस के लिए स्वीकार्य कोई भी प्रस्ताव लीग के लिए अस्वीकार्य होगा और इसके विपरीत, जिससे रक्षा प्रश्न की परवाह किए बिना मिशन की विफलता संरचनात्मक रूप से अनिवार्य हो गई।\n3. मिशन मुख्य रूप से इसलिए विफल हुआ क्योंकि क्रिप्स ने युद्ध कैबिनेट के अपने अधिकार क्षेत्र से बाहर जाकर कांग्रेस को रक्षा विभाग के संबंध में अनधिकृत वादे किए, जिन्हें बाद में लंदन ने मान्यता देने से इनकार कर दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The defense portfolio deadlock, caused by the War Cabinet's refusal to allow an Indian member to hold the defense portfolio with meaningful authority, was the most immediate and proximate cause of the Cripps Mission's breakdown.",
+          "verdict": "Correct",
+          "reason": "Historians and the negotiating record consistently identify the defense portfolio issue as the immediate trigger — the Cripps-Azad formula was rejected by London, directly causing the breakdown."
+        },
+        {
+          "statement": "The Congress–League divide ensured that any proposal acceptable to the Congress would be unacceptable to the League and vice versa, making the mission's failure structurally inevitable regardless of the defense question.",
+          "verdict": "Correct",
+          "reason": "The non-accession clause satisfied the League partially but was deeply objectionable to Congress, while Congress's demand for a strong unitary centre conflicted with League's separatist demands — a structural impasse."
+        },
+        {
+          "statement": "The Cripps Mission failed primarily because Cripps exceeded his War Cabinet mandate by making unauthorized promises to Congress on the defense portfolio, which London subsequently refused to honour.",
+          "verdict": "Incorrect",
+          "reason": "While Cripps did show flexibility (the Cripps-Azad formula), characterising this as 'exceeding his mandate through unauthorized promises' overstates the case — the historical debate is about whether London deliberately restricted him, not that Cripps unilaterally made promises beyond his authority."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because all three statements contain factual elements that are partially true, and students may assume all three are correct without identifying the overstatement in Statement 3.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The defense portfolio deadlock as the proximate cause is well-established — Statement 1 is correct.",
+        "Evaluate Statement 2: The structural incompatibility between Congress and League positions is historically accurate — Statement 2 is correct.",
+        "Evaluate Statement 3: Calling Cripps's flexibility 'unauthorized promises' mischaracterises the situation — the War Cabinet restricted him, not that he acted without authority — Statement 3 is incorrect.",
+        "Statements 1 and 2 are correct; Statement 3 is incorrect — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 uses a partial-truth technique. Cripps did show flexibility on the defense formula, and London did overrule him. But the framing 'unauthorized promises' implies Cripps acted improperly — the historical consensus is that Cripps operated within reasonable interpretations of his mandate, and it was the War Cabinet's restrictive intervention that created the impasse, not Cripps exceeding authority.",
+      "final_explanation": "The Cripps Mission's failure is best understood through multiple overlapping causes.\n\n• Statement 1 — Correct: The defense portfolio was the immediate proximate cause. The Cripps-Azad formula represented a possible bridge, but when London rejected it, the negotiations collapsed. This was the specific point of breakdown, not the general post-war deferral.\n• Statement 2 — Correct: Structurally, any constitutional arrangement that maintained Indian unity (as Congress demanded) was incompatible with the explicit partition guarantee the League sought. The non-accession clause was an unstable compromise that neither side could fully accept.\n• Statement 3 — Incorrect: The characterisation of Cripps making 'unauthorized promises' is a misrepresentation. Cripps explored flexibility within his War Cabinet brief — it was London's restrictive response that narrowed the space for agreement. He did not unilaterally promise what he had no authority to deliver.\n\nValue Addition:\n• UPSC often asks for the 'primary' reason — distinguish immediate cause (defense deadlock) from structural causes (post-war deferral, Congress-League divide).\n• Churchill's restrictive telegram to Cripps is cited as evidence of deliberate sabotage by some historians.\n• The mission's failure validated Gandhi's 'post-dated cheque' logic and directly energised the Quit India decision."
+    }
+  },
+  {
+    "uuid": "96c62c88-41e1-4348-a02b-4429ea7d1371",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Context and Timing of Cripps Mission (1942)",
+        "Role of Linlithgow (Viceroy) and Churchill in Sabotaging the Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Churchill vs. Labour — who pushed the Cripps Mission",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The decision to send the Cripps Mission to India in 1942 was driven primarily by pressure from which combination of political forces?\n\n(a) American (Roosevelt) pressure for Indian war cooperation and Labour Party advocacy within the British War Cabinet\n(b) Churchill's personal conviction that a constitutional offer would decisively secure Indian military support against Japan\n(c) Viceroy Linlithgow's recommendation that a formal offer was necessary to stabilise the Indian political situation\n(d) Stafford Cripps's own advocacy within the War Cabinet, backed by his longstanding sympathy for Indian self-rule",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students know Churchill was the Prime Minister who ultimately sent Cripps and may assume he was therefore enthusiastic, not recognising that he was compelled by external pressures.",
+      "elimination_logic": [
+        "Eliminate option (b): Churchill was reluctant to send the mission — he was compelled by American and Labour pressure.",
+        "Eliminate option (c): Viceroy Linlithgow was hostile to the mission — he did not advocate for it.",
+        "Eliminate option (d): Cripps himself was sent as the envoy; he had prior India sympathy but was not the political force that created the mission — the political pressure came from Roosevelt and the Labour Party.",
+        "Confirm option (a): American pressure (through Roosevelt) and Labour Party pressure within the coalition War Cabinet were the primary forces that compelled Churchill to authorise the mission."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap targets Churchill. Students who know Churchill sent Cripps assume he supported the idea. In reality, Churchill was deeply reluctant — he was an imperialist who opposed Indian self-rule. The mission happened despite Churchill, not because of him. The political pressures were Roosevelt (strategic war considerations) and the Labour Party (ideological commitment to Indian self-rule as coalition partners).",
+      "final_explanation": "The political context behind the Cripps Mission is as important as the mission itself.\n\n• Option (a) — Correct: Roosevelt pressured Churchill diplomatically, needing Indian cooperation to hold the eastern front against Japan. The Labour Party, as coalition partners in the War Cabinet, had an ideological commitment to Indian self-determination. These twin pressures overrode Churchill's personal imperialism.\n• Option (b) — Incorrect: Churchill was an avowed imperialist who famously said he had not become the King's First Minister to preside over the liquidation of the British Empire. He agreed reluctantly and reportedly wanted the mission to fail.\n• Option (c) — Incorrect: Viceroy Linlithgow actively worked to undermine the mission behind the scenes — he was one of its most significant internal obstacles.\n• Option (d) — Incorrect: Cripps had personal sympathy for India and was chosen because of it, but he was the envoy, not the political architect of the decision to send a mission.\n\nValue Addition:\n• Churchill's wartime coalition included Labour leaders like Clement Attlee — who later oversaw actual independence in 1947.\n• Roosevelt sent Colonel Louis Johnson to assist Cripps — reflecting American stakes in Indian cooperation.\n• Cripps was chosen partly because his left-leaning credentials made him credible to Congress leaders."
+    },
+    "hi": {
+      "display_text": "1942 में भारत को क्रिप्स मिशन भेजने का निर्णय मुख्य रूप से किन राजनीतिक शक्तियों के दबाव के कारण लिया गया था?\n\n(a) अमेरिकी (रूजवेल्ट) दबाव जो भारतीय युद्ध सहयोग के लिए था और ब्रिटिश युद्ध कैबिनेट में लेबर पार्टी की वकालत\n(b) चर्चिल का व्यक्तिगत विश्वास कि एक संवैधानिक प्रस्ताव जापान के खिलाफ भारतीय सैन्य समर्थन को निर्णायक रूप से सुनिश्चित करेगा\n(c) वाइसराय लिनलिथगो की सिफारिश कि भारतीय राजनीतिक स्थिति को स्थिर करने के लिए एक औपचारिक प्रस्ताव आवश्यक था\n(d) स्टैफर्ड क्रिप्स की स्वयं की वकालत युद्ध कैबिनेट में, जो भारतीय स्वशासन के प्रति उनकी दीर्घकालिक सहानुभूति से समर्थित थी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students know Churchill was the Prime Minister who ultimately sent Cripps and may assume he was therefore enthusiastic, not recognising that he was compelled by external pressures.",
+      "elimination_logic": [
+        "(b) विकल्प को निरस्त करें — चर्चिल मिशन भेजने के लिए अनिच्छुक थे — उन्हें अमेरिकी और लेबर पार्टी के दबाव के कारण मजबूर होना पड़ा।",
+        "(c) विकल्प को निरस्त करें — वाइसराय लिनलिथगो मिशन के प्रति शत्रुतापूर्ण थे — उन्होंने इसका समर्थन नहीं किया।",
+        "(d) विकल्प को निरस्त करें — क्रिप्स स्वयं दूत के रूप में भेजे गए थे; उनके भारत के प्रति सहानुभूति थी लेकिन वे मिशन बनाने वाली राजनीतिक शक्ति नहीं थे — राजनीतिक दबाव रूजवेल्ट और लेबर पार्टी से आया था।",
+        "(a) विकल्प की पुष्टि करें — अमेरिकी दबाव (रूजवेल्ट के माध्यम से) और युद्ध कैबिनेट में लेबर पार्टी का दबाव मुख्य कारण थे जिन्होंने चर्चिल को मिशन को अधिकृत करने के लिए मजबूर किया।"
+      ],
+      "upsc_trap_explanation": "यह entity-swap जाल चर्चिल को लक्षित करता है। जो छात्र जानते हैं कि चर्चिल ने क्रिप्स को भेजा, वे मान लेते हैं कि वे इस विचार के समर्थक थे। वास्तव में, चर्चिल गहराई से अनिच्छुक थे — वे एक साम्राज्यवादी थे जो भारतीय स्वशासन के विरोधी थे। यह मिशन चर्चिल के बावजूद हुआ, उनके कारण नहीं। राजनीतिक दबाव रूजवेल्ट (रणनीतिक युद्ध कारण) और लेबर पार्टी (कोलिशन पार्टनर के रूप में भारतीय स्वशासन के प्रति वैचारिक प्रतिबद्धता) से आया था।",
+      "final_explanation": "क्रिप्स मिशन के पीछे राजनीतिक संदर्भ मिशन जितना ही महत्वपूर्ण है।\n\n• विकल्प (a) — सही: रूजवेल्ट ने चर्चिल पर कूटनीतिक दबाव डाला, क्योंकि जापान के खिलाफ पूर्वी मोर्चे को बनाए रखने के लिए भारतीय सहयोग आवश्यक था। युद्ध कैबिनेट में कोलिशन पार्टनर के रूप में लेबर पार्टी का भारतीय स्व-निर्णय के प्रति वैचारिक प्रतिबद्धता थी। इन दोनों दबावों ने चर्चिल के व्यक्तिगत साम्राज्यवाद को मात दी।\n• विकल्प (b) — गलत: चर्चिल एक खुले साम्राज्यवादी थे जिन्होंने कहा था कि वे ब्रिटिश साम्राज्य के विघटन की अध्यक्षता करने के लिए राजा के प्रथम मंत्री नहीं बने हैं। वे अनिच्छुक थे और कहा जाता है कि वे मिशन के असफल होने की इच्छा रखते थे।\n• विकल्प (c) — गलत: वाइसराय लिनलिथगो ने पर्दे के पीछे मिशन को कमजोर करने के लिए सक्रिय रूप से काम किया — वे इसके सबसे बड़े आंतरिक बाधाओं में से एक थे।\n• विकल्प (d) — गलत: क्रिप्स के व्यक्तिगत रूप से भारत के प्रति सहानुभूति थी और इसलिए उन्हें चुना गया था, लेकिन वे दूत थे, मिशन भेजने के राजनीतिक वास्तुकार नहीं।\n\nमूल्य संवर्धन:\n• चर्चिल के युद्धकालीन गठबंधन में लेबर नेता जैसे क्लेमेंट एटली शामिल थे — जिन्होंने बाद में 1947 में वास्तविक स्वतंत्रता का नेतृत्व किया।\n• रूजवेल्ट ने कर्नल लुई जॉनसन को क्रिप्स की सहायता के लिए भेजा — जो अमेरिकी हितों को दर्शाता है।\n• क्रिप्स को आंशिक रूप से इसलिए चुना गया क्योंकि उनकी वामपंथी छवि कांग्रेस नेताओं के लिए विश्वसनीय थी।"
+    }
+  },
+  {
+    "uuid": "7ab27de7-ac18-47d5-a4a1-c95dbcb43be4",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Role of Linlithgow (Viceroy) and Churchill in Sabotaging the Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Churchill telegram — War Cabinet restricts Cripps flexibility",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Historical accounts of the Cripps Mission reveal that Stafford Cripps's negotiating flexibility was significantly curtailed when a restrictive telegram was sent to him limiting the concessions he could offer, particularly on the defense portfolio. This communication came from ________.\n\n(a) Viceroy Linlithgow, who was determined to prevent any agreement that would reduce his executive authority\n(b) Clement Attlee, acting to protect Labour Party interests within the War Cabinet coalition\n(c) Winston Churchill, whose instructions narrowed Cripps's room to manoeuvre and contributed to the breakdown of the Cripps-Azad formula\n(d) President Roosevelt, who feared that conceding defense to Indians would weaken Allied command structures in the eastern theater",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Linlithgow was indeed hostile to the mission, and students may assume he was the one who issued restrictive communications to Cripps, when in fact the telegram came from Churchill and the War Cabinet in London.",
+      "elimination_logic": [
+        "Eliminate option (a): Linlithgow undermined the mission through behind-the-scenes manoeuvring in India — the restrictive telegram came from London, not from the Viceroy.",
+        "Eliminate option (b): Attlee was a Labour leader who supported the mission — he would not have sent a restrictive telegram curtailing Cripps.",
+        "Confirm option (c): Churchill reportedly sent a restrictive telegram limiting Cripps's negotiating flexibility — this is the historically cited action from London.",
+        "Eliminate option (d): Roosevelt supported the mission and wanted Cripps to succeed — he sent Colonel Louis Johnson to assist, not to restrict."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap confuses Linlithgow (who was hostile in India) with Churchill (who acted from London via telegram). Students who know Linlithgow was hostile to the mission may assume he was the source of the restrictive communication, when in fact the telegram came from Churchill in London — demonstrating the dual pressure on Cripps from both the Viceroy in India and the Prime Minister in Britain.",
+      "final_explanation": "The sabotage of the Cripps Mission operated on two levels — from the Viceroy in India and from the Prime Minister in London.\n\n• Option (a) — Incorrect: Linlithgow worked against the mission in India through institutional resistance and direct communication with London — but the restrictive telegram curtailing Cripps's flexibility came from Churchill, not Linlithgow.\n• Option (b) — Incorrect: Clement Attlee was a Labour Party leader and deputy Prime Minister who was sympathetic to Indian aspirations — he would not have sent a telegram curtailing the mission.\n• Option (c) — Correct: Churchill reportedly sent a restrictive telegram to Cripps limiting his room to offer concessions on the defense portfolio, directly contributing to the Cripps-Azad formula's failure.\n• Option (d) — Incorrect: Roosevelt was pressing Britain to make meaningful concessions — he sent Colonel Louis Johnson to assist Cripps, not restrict him.\n\nValue Addition:\n• This telegram is central to the historical debate about whether the mission was designed to fail as a 'diplomatic gesture' to the USA.\n• Cripps himself was reportedly frustrated by the War Cabinet's restrictions.\n• The gap between what Cripps signalled and what London permitted is the Cripps Mission's central paradox."
+    },
+    "hi": {
+      "display_text": "क्रिप्स मिशन के ऐतिहासिक विवरण बताते हैं कि स्टैफर्ड क्रिप्स की बातचीत की स्वतंत्रता को काफी सीमित कर दिया गया था जब उन्हें एक प्रतिबंधात्मक टेलीग्राम भेजा गया जिसने विशेष रूप से रक्षा पोर्टफोलियो पर दी जाने वाली रियायतों को सीमित कर दिया। यह संचार ________ से आया था।\n\n(a) वाइसराय लिनलिथगो, जो अपनी कार्यकारी सत्ता को कम करने वाले किसी भी समझौते को रोकने के लिए प्रतिबद्ध थे\n(b) क्लेमेंट एटली, जो युद्ध कैबिनेट गठबंधन में लेबर पार्टी के हितों की रक्षा कर रहे थे\n(c) विंस्टन चर्चिल, जिनके निर्देशों ने क्रिप्स की बातचीत की गुंजाइश को संकुचित कर दिया और क्रिप्स-आज़ाद सूत्र के विफल होने में योगदान दिया\n(d) राष्ट्रपति रूजवेल्ट, जिन्हें डर था कि भारतीयों को रक्षा सौंपने से पूर्वी थिएटर में सहयोगी कमान संरचनाएं कमजोर हो जाएंगी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि लिनलिथगो वास्तव में मिशन के प्रति शत्रुतापूर्ण थे, और छात्र यह मान सकते हैं कि उन्होंने ही क्रिप्स को प्रतिबंधात्मक संचार जारी किया, जबकि वास्तव में टेलीग्राम चर्चिल और लंदन के युद्ध कैबिनेट से आया था।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: लिनलिथगो ने भारत में पर्दे के पीछे चालाकी से मिशन को कमजोर किया — प्रतिबंधात्मक टेलीग्राम लंदन से आया था, न कि वाइसराय से।",
+        "विकल्प (b) को निरस्त करें: एटली एक लेबर नेता थे जो मिशन का समर्थन करते थे — वे क्रिप्स को प्रतिबंधित करने वाला टेलीग्राम नहीं भेजते।",
+        "विकल्प (c) को पुष्टि करें: चर्चिल ने कथित तौर पर क्रिप्स की बातचीत की स्वतंत्रता को सीमित करने वाला प्रतिबंधात्मक टेलीग्राम भेजा — यह ऐतिहासिक रूप से लंदन से किया गया कार्य माना जाता है।",
+        "विकल्प (d) को निरस्त करें: रूजवेल्ट ने मिशन का समर्थन किया और क्रिप्स की सफलता चाहते थे — उन्होंने सहायता के लिए कर्नल लुई जॉनसन भेजा, न कि प्रतिबंध लगाने के लिए।"
+      ],
+      "upsc_trap_explanation": "एंटिटी-स्वैप जाल लिनलिथगो (जो भारत में शत्रुतापूर्ण थे) को चर्चिल (जो लंदन से टेलीग्राम के माध्यम से कार्यरत थे) से भ्रमित करता है। जो छात्र जानते हैं कि लिनलिथगो मिशन के प्रति शत्रुतापूर्ण थे, वे मान सकते हैं कि प्रतिबंधात्मक संचार उन्हीं से आया, जबकि वास्तव में टेलीग्राम चर्चिल से लंदन में आया था — जो क्रिप्स पर भारत में वाइसराय और ब्रिटेन के प्रधानमंत्री दोनों के द्वैत दबाव को दर्शाता है।",
+      "final_explanation": "क्रिप्स मिशन का विघटन दो स्तरों पर हुआ — भारत में वाइसराय और लंदन में प्रधानमंत्री से।\n\n• विकल्प (a) — गलत: लिनलिथगो ने भारत में संस्थागत प्रतिरोध और लंदन से सीधे संचार के माध्यम से मिशन के खिलाफ काम किया — लेकिन क्रिप्स की स्वतंत्रता को सीमित करने वाला प्रतिबंधात्मक टेलीग्राम चर्चिल से आया, न कि लिनलिथगो से।\n• विकल्प (b) — गलत: क्लेमेंट एटली लेबर पार्टी के नेता और उप प्रधानमंत्री थे जो भारतीय आकांक्षाओं के प्रति सहानुभूतिपूर्ण थे — वे मिशन को सीमित करने वाला टेलीग्राम नहीं भेजते।\n• विकल्प (c) — सही: चर्चिल ने कथित तौर पर क्रिप्स को रक्षा पोर्टफोलियो पर रियायतें देने की स्वतंत्रता सीमित करने वाला प्रतिबंधात्मक टेलीग्राम भेजा, जो क्रिप्स-आज़ाद सूत्र के विफल होने में सीधे योगदान देता है।\n• विकल्प (d) — गलत: रूजवेल्ट ब्रिटेन पर सार्थक रियायतें देने का दबाव डाल रहे थे — उन्होंने क्रिप्स की सहायता के लिए कर्नल लुई जॉनसन भेजा, न कि उसे सीमित करने के लिए।\n\nमूल्य संवर्धन:\n• यह टेलीग्राम उस ऐतिहासिक बहस का केंद्र है कि क्या मिशन को USA के लिए एक 'राजनयिक संकेत' के रूप में विफल करने के लिए डिज़ाइन किया गया था।\n• क्रिप्स स्वयं कथित तौर पर युद्ध कैबिनेट की सीमाओं से निराश थे।\n• क्रिप्स के संकेत और लंदन की अनुमति के बीच का अंतर क्रिप्स मिशन का केंद्रीय विरोधाभास है।"
+    }
+  },
+  {
+    "uuid": "4ab62e55-ca48-4031-a405-3212adfb83da",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Congress Response and Rejection of the Cripps Proposals",
+        "Muslim League Response to the Cripps Mission",
+        "Position of Sikhs, Scheduled Castes (Ambedkar), and Other Minorities on Cripps Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Political group reactions — Cripps proposals 1942",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Political Group) with List II (Primary Reason for Rejecting the Cripps Proposals):",
+        "columns": [
+          "List I (Political Group)",
+          "List II (Primary Reason for Rejection)"
+        ],
+        "rows": [
+          [
+            "A. Indian National Congress",
+            "1. The proposals did not explicitly guarantee the creation of a separate Muslim homeland"
+          ],
+          [
+            "B. Muslim League",
+            "2. Any constitutional provision legitimising India's territorial division was ideologically unacceptable"
+          ],
+          [
+            "C. Sikh community",
+            "3. The War Cabinet's refusal to transfer meaningful defense authority to an Indian Executive Council member"
+          ],
+          [
+            "D. Hindu Mahasabha",
+            "4. The opt-out clause for Punjab would geographically divide the Sikh population between two separate entities"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it correctly places Congress's objection to the defense portfolio but then mismatches the League's position, conflating 'implicit acknowledgement of Pakistan' with 'explicit guarantee of Pakistan.'",
+      "elimination_logic": [
+        "Match A (Congress): Congress's primary negotiating-level objection was the defense portfolio deadlock — the War Cabinet's refusal to transfer meaningful defense control — matches with 3.",
+        "Match B (Muslim League): Jinnah rejected the proposals because they did not explicitly guarantee Pakistan's creation — the opt-out clause was only an implicit acknowledgement — matches with 1.",
+        "Match C (Sikhs): Sikh opposition was rooted in Punjab's mixed demography — partition of Punjab would split the Sikh community — matches with 4.",
+        "Match D (Hindu Mahasabha): Opposed any provision giving constitutional legitimacy to India's territorial division — matches with 2.",
+        "Correct combination: A-3, B-1, C-4, D-2 — select option (b)."
+      ],
+      "upsc_trap_explanation": "The conflation trap operates on the League-Congress matching: students may confuse Congress's structural objection (non-accession clause = Balkanisation) with the League's structural objection (no explicit Pakistan guarantee), causing cross-matching of A and B. Option (c) exploits this by placing the defense deadlock correctly for Congress but then giving the League a Congress-style objection about Balkanisation.",
+      "final_explanation": "Each major political constituency rejected the Cripps proposals for distinct and specific reasons that UPSC tests with precision.\n\n• A–3 (Congress — defense portfolio deadlock): Congress's negotiating breakdown point was the refusal to transfer meaningful defense authority to an Indian Executive Council member. The Cripps-Azad formula tried to bridge this gap but was vetoed by London.\n• B–1 (Muslim League — no explicit Pakistan guarantee): The opt-out clause gave implicit acknowledgement to partition's possibility, but Jinnah demanded an explicit, operational guarantee of Pakistan — an entirely separate state with defined territory. Implicit was insufficient.\n• C–4 (Sikhs — Punjab partition would split Sikh community): Punjab had a mixed Hindu-Muslim-Sikh population. Any provincial opt-out that split Punjab would geographically bisect the Sikh community — the community's primary fear.\n• D–2 (Hindu Mahasabha — opposed any territorial division): Committed to Akhand Bharat, the Hindu Mahasabha rejected any constitutional framework that gave legitimacy to India's partition, making the opt-out clause an existential objection.\n\nValue Addition:\n• Azad as Congress President and Nehru as the key negotiator — not Gandhi — conducted the Cripps talks.\n• The Lahore Resolution (1940) had already formalised the League's Pakistan demand, so implicit acknowledgement in 1942 was insufficient.\n• Sikh anxiety about Punjab in 1942 proved prescient — the Punjab partition of 1947 did exactly what they feared."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (राजनीतिक समूह) को सूची II (क्रिप्स प्रस्तावों को अस्वीकार करने का मुख्य कारण) से मिलाएं:",
+        "columns": [
+          "सूची I (राजनीतिक समूह)",
+          "सूची II (अस्वीकृति का मुख्य कारण)"
+        ],
+        "rows": [
+          [
+            "A. भारतीय राष्ट्रीय कांग्रेस",
+            "1. प्रस्तावों ने अलग मुस्लिम मातृभूमि के निर्माण की स्पष्ट गारंटी नहीं दी"
+          ],
+          [
+            "B. मुस्लिम लीग",
+            "2. भारत के क्षेत्रीय विभाजन को संवैधानिक वैधता देने वाला कोई भी प्रावधान वैचारिक रूप से अस्वीकार्य था"
+          ],
+          [
+            "C. सिख समुदाय",
+            "3. युद्ध कैबिनेट ने भारतीय कार्यकारी परिषद सदस्य को प्रभावी रक्षा अधिकार हस्तांतरित करने से इनकार किया"
+          ],
+          [
+            "D. हिंदू महासभा",
+            "4. पंजाब के लिए ऑप्ट-आउट क्लॉज सिख आबादी को दो अलग-अलग इकाइयों में भौगोलिक रूप से विभाजित कर देगा"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह कांग्रेस की रक्षा पोर्टफोलियो पर आपत्ति को सही ढंग से रखता है लेकिन फिर लीग की स्थिति को गलत मिलाता है, 'पाकिस्तान की निहित स्वीकृति' को 'पाकिस्तान की स्पष्ट गारंटी' के साथ मिलाकर भ्रम पैदा करता है।",
+      "elimination_logic": [
+        "A (कांग्रेस) से मेल करें: कांग्रेस की मुख्य वार्ता स्तर की आपत्ति रक्षा पोर्टफोलियो गतिरोध थी — युद्ध कैबिनेट द्वारा प्रभावी रक्षा नियंत्रण हस्तांतरण से इनकार — जो 3 से मेल खाती है।",
+        "B (मुस्लिम लीग) से मेल करें: जिन्ना ने प्रस्तावों को इसलिए अस्वीकार किया क्योंकि वे पाकिस्तान के निर्माण की स्पष्ट गारंटी नहीं देते थे — ऑप्ट-आउट क्लॉज केवल निहित स्वीकृति थी — जो 1 से मेल खाती है।",
+        "C (सिख) से मेल करें: सिख विरोध पंजाब की मिश्रित जनसांख्यिकी में निहित था — पंजाब का विभाजन सिख समुदाय को विभाजित कर देगा — जो 4 से मेल खाती है।",
+        "D (हिंदू महासभा) से मेल करें: भारत के क्षेत्रीय विभाजन को संवैधानिक वैधता देने वाले किसी भी प्रावधान का विरोध किया — जो 2 से मेल खाती है।",
+        "सही संयोजन: A-3, B-1, C-4, D-2 — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "लीग-कांग्रेस मिलान पर भ्रम का जाल काम करता है: छात्र कांग्रेस की संरचनात्मक आपत्ति (गैर-प्रवेश क्लॉज = बाल्कनीकरण) को लीग की संरचनात्मक आपत्ति (स्पष्ट पाकिस्तान गारंटी का अभाव) के साथ भ्रमित कर सकते हैं, जिससे A और B का क्रॉस-मिलान होता है। विकल्प (c) इसका फायदा उठाता है, कांग्रेस के लिए रक्षा गतिरोध सही रखता है लेकिन फिर लीग को कांग्रेस-शैली की बाल्कनीकरण आपत्ति देता है।",
+      "final_explanation": "प्रत्येक प्रमुख राजनीतिक समूह ने क्रिप्स प्रस्तावों को विशिष्ट और स्पष्ट कारणों से अस्वीकार किया, जिसे UPSC सटीकता से परखता है।\n\n• A–3 (कांग्रेस — रक्षा पोर्टफोलियो गतिरोध): कांग्रेस की वार्ता विफलता का बिंदु था प्रभावी रक्षा अधिकार को भारतीय कार्यकारी परिषद सदस्य को हस्तांतरित करने से इनकार। क्रिप्स-आज़ाद सूत्र ने इस अंतर को पाटने की कोशिश की लेकिन लंदन ने वीटो कर दिया।\n• B–1 (मुस्लिम लीग — पाकिस्तान की स्पष्ट गारंटी का अभाव): ऑप्ट-आउट क्लॉज विभाजन की संभावना की निहित स्वीकृति देता था, लेकिन जिन्ना ने पाकिस्तान की स्पष्ट, क्रियान्वयन योग्य गारंटी मांगी — एक पूरी तरह से अलग राज्य जिसके सीमित क्षेत्र हों। निहित स्वीकृति अपर्याप्त थी।\n• C–4 (सिख — पंजाब विभाजन से सिख समुदाय विभाजित हो जाएगा): पंजाब में हिंदू-मुस्लिम-सिख मिश्रित आबादी थी। कोई भी प्रांतीय ऑप्ट-आउट जो पंजाब को विभाजित करता, सिख समुदाय को भौगोलिक रूप से दो हिस्सों में बांट देता — जो समुदाय का मुख्य भय था।\n• D–2 (हिंदू महासभा — किसी भी क्षेत्रीय विभाजन का विरोध): अखंड भारत के प्रति प्रतिबद्ध, हिंदू महासभा ने भारत के विभाजन को वैधता देने वाले किसी भी संवैधानिक ढांचे का विरोध किया, जिससे ऑप्ट-आउट क्लॉज अस्तित्वगत आपत्ति बन गया।\n\nमूल्य संवर्धन:\n• क्रिप्स वार्ता कांग्रेस अध्यक्ष आज़ाद और मुख्य वार्ताकार नेहरू ने की — गांधी नहीं।\n• लाहौर प्रस्ताव (1940) ने पहले ही लीग की पाकिस्तान मांग को औपचारिक रूप दिया था, इसलिए 1942 में निहित स्वीकृति अपर्याप्त थी।\n• 1942 में पंजाब को लेकर सिख चिंता दूरदर्शी साबित हुई — 1947 का पंजाब विभाजन ठीक वही किया जिसकी उन्हें आशंका थी।"
+    }
+  },
+  {
+    "uuid": "482c55e1-0ca8-4347-8ae1-cf61bb535580",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Impact of Cripps Mission Failure on the Quit India Movement",
+        "The 'Post-Dated Cheque on a Failing Bank' Metaphor: Analytical Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Post-dated cheque metaphor — analytical meaning",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The phrase 'a post-dated cheque on a failing bank,' used to describe the Cripps proposals, captures a specific strategic argument. Which of the following most accurately represents the meaning intended by this characterisation?\n\n(a) The proposals offered promises deferred to the post-war period, and 'failing bank' referred to the possibility that Britain might lose World War II — making such promises potentially unenforceable\n(b) The proposals were economically worthless because Britain's wartime financial difficulties meant it lacked the resources to implement constitutional changes even after the war\n(c) The Constituent Assembly proposed under the Cripps plans had no viable mechanism for operation, making the constitutional promise structurally defective rather than merely delayed\n(d) The Congress-League deadlock had rendered any constitutional proposal a 'failing' exercise because no offer could simultaneously satisfy both parties",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because 'failing bank' sounds like it could refer to the British economy's wartime strain, which is a plausible but incorrect interpretation that a student with partial knowledge might select.",
+      "elimination_logic": [
+        "Eliminate option (b): The metaphor does not refer to Britain's economic difficulties — 'failing bank' refers to the possibility of Britain losing the war, making future promises worthless.",
+        "Eliminate option (c): The phrase was coined by Gandhi in the context of the Cripps proposals — it does not address the Constituent Assembly specifically as a structural defect.",
+        "Eliminate option (d): The metaphor is NOT about Congress-League relations — it is about the reliability of British promises given wartime uncertainty.",
+        "Confirm option (a): 'Post-dated cheque' = promise deferred to post-war; 'failing bank' = British Empire potentially losing WWII, making the promise unenforceable. This captures both elements correctly."
+      ],
+      "upsc_trap_explanation": "Option (b) exploits the partial-truth that Britain's economy was indeed under wartime strain, making 'failing bank = British economic weakness' seem plausible. However, Gandhi's specific argument was strategic — if Britain lost the war, a post-war promise from a defeated empire would be worthless. The distinction between 'economic difficulty' and 'possible defeat in war' is the precise fact UPSC tests.",
+      "final_explanation": "Gandhi's 'post-dated cheque on a failing bank' is one of the most analytically precise political metaphors in Indian nationalist history.\n\n• Option (a) — Correct: 'Post-dated cheque' = a promise deferred to a future date (post-war), which cannot be acted upon now. 'Failing bank' = the British Empire, which might lose WWII — if the bank fails before the cheque matures, the cheque is worthless. The argument was strategic: why accept deferred promises from an empire that might not survive to honour them?\n• Option (b) — Incorrect: Britain's wartime economic strain is not the referent. 'Failing' specifically refers to possible military defeat in WWII, not economic difficulty.\n• Option (c) — Incorrect: The metaphor addresses the overall structure of the Cripps proposals (post-war deferral), not the Constituent Assembly mechanism specifically.\n• Option (d) — Incorrect: The metaphor is not about Congress-League deadlock; it is about the reliability of British promises under wartime conditions.\n\nValue Addition:\n• This phrase became the philosophical foundation of the Quit India argument: if promises are unreliable, mass action is the only option.\n• The metaphor shows Gandhi's strategic sophistication — he understood geopolitics, not just morality.\n• UPSC sometimes asks about attribution variations — the core argument matters more than exact wording."
+    },
+    "hi": {
+      "display_text": "'फेल हो रहे बैंक पर पोस्ट-डेटेड चेक' वाक्यांश, जो क्रिप्स प्रस्तावों का वर्णन करने के लिए उपयोग किया गया, एक विशिष्ट रणनीतिक तर्क को दर्शाता है। निम्नलिखित में से कौन-सा इस व्याख्या द्वारा अभिप्रेत अर्थ को सबसे सटीक रूप से प्रस्तुत करता है?\n\n(a) प्रस्ताव युद्धोपरांत अवधि के लिए स्थगित वादे प्रस्तुत करते थे, और 'फेल हो रहा बैंक' का तात्पर्य यह था कि ब्रिटेन द्वितीय विश्व युद्ध हार सकता है — जिससे ऐसे वादे संभवतः अमान्य हो सकते हैं\n(b) प्रस्ताव आर्थिक रूप से निरर्थक थे क्योंकि ब्रिटेन की युद्धकालीन वित्तीय कठिनाइयों के कारण उसके पास युद्ध के बाद भी संवैधानिक बदलाव लागू करने के संसाधन नहीं थे\n(c) क्रिप्स योजनाओं के तहत प्रस्तावित संविधान सभा के पास संचालन के लिए कोई व्यवहार्य तंत्र नहीं था, जिससे संवैधानिक वादा केवल स्थगित नहीं बल्कि संरचनात्मक रूप से दोषपूर्ण था\n(d) कांग्रेस-लीग गतिरोध ने किसी भी संवैधानिक प्रस्ताव को 'फेल' अभ्यास बना दिया था क्योंकि कोई भी प्रस्ताव दोनों पक्षों को एक साथ संतुष्ट नहीं कर सकता था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि 'फेल हो रहा बैंक' ऐसा लगता है जैसे यह ब्रिटेन की युद्धकालीन आर्थिक कठिनाइयों को संदर्भित करता हो, जो आंशिक ज्ञान वाले छात्र द्वारा चुना जाने वाला एक संभावित लेकिन गलत व्याख्या है।",
+      "elimination_logic": [
+        "विकल्प (b) को निरस्त करें: यह रूपक ब्रिटेन की आर्थिक कठिनाइयों को संदर्भित नहीं करता — 'फेल हो रहा बैंक' का तात्पर्य युद्ध हारने की संभावना से है, जिससे भविष्य के वादे निरर्थक हो जाते हैं।",
+        "विकल्प (c) को निरस्त करें: यह वाक्यांश गांधी द्वारा क्रिप्स प्रस्तावों के संदर्भ में गढ़ा गया था — यह संविधान सभा को विशेष रूप से संरचनात्मक दोष के रूप में संबोधित नहीं करता।",
+        "विकल्प (d) को निरस्त करें: यह रूपक कांग्रेस-लीग संबंधों के बारे में नहीं है — यह युद्धकालीन अनिश्चितता में ब्रिटिश वादों की विश्वसनीयता के बारे में है।",
+        "विकल्प (a) की पुष्टि करें: 'पोस्ट-डेटेड चेक' = युद्ध के बाद के लिए स्थगित वादा; 'फेल हो रहा बैंक' = ब्रिटिश साम्राज्य जो द्वितीय विश्व युद्ध हार सकता है, जिससे वादा अमान्य हो जाता है। यह दोनों तत्व सही ढंग से दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) इस आंशिक सत्य का लाभ उठाता है कि ब्रिटेन की अर्थव्यवस्था वास्तव में युद्धकालीन दबाव में थी, जिससे 'फेल हो रहा बैंक = ब्रिटिश आर्थिक कमजोरी' संभावित लगता है। हालांकि, गांधी का विशिष्ट तर्क रणनीतिक था — यदि ब्रिटेन युद्ध हार गया, तो पराजित साम्राज्य का युद्धोपरांत वादा निरर्थक होगा। 'आर्थिक कठिनाई' और 'संभव युद्ध हार' के बीच का अंतर UPSC द्वारा परखा जाता है।",
+      "final_explanation": "गांधी का 'फेल हो रहे बैंक पर पोस्ट-डेटेड चेक' भारतीय राष्ट्रवादी इतिहास में सबसे विश्लेषणात्मक रूप से सटीक राजनीतिक रूपकों में से एक है।\n\n• विकल्प (a) — सही: 'पोस्ट-डेटेड चेक' = भविष्य की तारीख (युद्ध के बाद) के लिए स्थगित वादा, जिसे अभी लागू नहीं किया जा सकता। 'फेल हो रहा बैंक' = ब्रिटिश साम्राज्य, जो द्वितीय विश्व युद्ध हार सकता है — यदि बैंक चेक के परिपक्व होने से पहले फेल हो जाए, तो चेक बेकार हो जाता है। तर्क रणनीतिक था: ऐसे साम्राज्य से स्थगित वादे क्यों स्वीकार करें जो उन्हें पूरा करने में सक्षम न हो?\n• विकल्प (b) — गलत: ब्रिटेन की युद्धकालीन आर्थिक कठिनाई संदर्भ नहीं है। 'फेल हो रहा' विशेष रूप से द्वितीय विश्व युद्ध में संभावित सैन्य पराजय को दर्शाता है, न कि आर्थिक कठिनाई को।\n• विकल्प (c) — गलत: यह रूपक क्रिप्स प्रस्तावों की समग्र संरचना (युद्धोपरांत स्थगन) को संबोधित करता है, न कि संविधान सभा की कार्यप्रणाली को।\n• विकल्प (d) — गलत: यह रूपक कांग्रेस-लीग गतिरोध के बारे में नहीं है; यह युद्धकालीन परिस्थितियों में ब्रिटिश वादों की विश्वसनीयता के बारे में है।\n\nमूल्य संवर्धन:\n• यह वाक्यांश भारत छोड़ो आंदोलन के दलील का दार्शनिक आधार बन गया: यदि वादे अविश्वसनीय हैं, तो जन आंदोलन ही एकमात्र विकल्प है।\n• यह रूपक गांधी की रणनीतिक सूझ-बूझ को दर्शाता है — वे केवल नैतिकता नहीं, बल्कि भू-राजनीति को भी समझते थे।\n• UPSC कभी-कभी संदर्भ भिन्नताओं के बारे में पूछता है — मूल तर्क शब्दों से अधिक महत्वपूर्ण है।"
+    }
+  },
+  {
+    "uuid": "290dcfa0-f1c8-4e67-b4cd-b0c091e80b10",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Composition and Mandate of the Mission",
+        "Context and Timing of Cripps Mission (1942)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Cripps — chosen as envoy, personal background, War Cabinet role",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the selection and official standing of Stafford Cripps as the envoy for the 1942 mission, consider the following statements:\n\n1. Cripps was chosen partly because his left-leaning political inclinations and personal sympathy for India made him credible to Indian political leaders.\n2. As a member of the War Cabinet, Cripps had the authority to make binding commitments on behalf of the British government without subsequent ratification from the War Cabinet.\n3. The decision to send a single envoy rather than a commission represented a departure from the Simon Commission model, reflecting a more personalised, negotiation-focused approach.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Stafford Cripps was selected as the sole envoy for the 1942 mission partly because his left-leaning political inclinations and personal sympathy for India made him credible to Indian political leaders.",
+          "verdict": "Correct",
+          "reason": "Cripps's reputation as a left-wing politician who had visited India and expressed sympathy for self-rule was a deliberate calculation — he would be more acceptable to Congress than a conservative politician."
+        },
+        {
+          "statement": "As a member of the War Cabinet, Cripps had the authority to make binding commitments on behalf of the British government without subsequent ratification from the War Cabinet.",
+          "verdict": "Incorrect",
+          "reason": "Cripps's War Cabinet membership gave him official standing, but his authority was bounded — the War Cabinet in London retained final authority, as shown when Churchill's restrictive telegram overruled the Cripps-Azad formula."
+        },
+        {
+          "statement": "The decision to send a single envoy rather than a commission was a departure from the Simon Commission model, reflecting a more personalised, negotiation-focused approach.",
+          "verdict": "Correct",
+          "reason": "The Simon Commission was a multi-member Parliamentary body designed for investigation; sending a single Cabinet minister for negotiation represented a fundamentally different engagement model."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students who correctly identify Statements 1 and 3 as correct may assume Statement 2 is also correct, believing War Cabinet membership conferred autonomous binding authority.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Cripps's left-leaning credentials and prior India sympathy were deliberate selection criteria — Statement 1 is correct.",
+        "Evaluate Statement 2: War Cabinet membership gave official standing, not autonomous binding authority — Churchill overruled Cripps on the defense formula — Statement 2 is incorrect.",
+        "Evaluate Statement 3: The contrast with Simon Commission (multi-member investigation) versus Cripps (single negotiator) is historically valid — Statement 3 is correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the common assumption that holding a senior office (War Cabinet membership) automatically confers autonomous authority. Students unfamiliar with constitutional conventions may assume that a War Cabinet member's commitments are automatically binding. The Cripps Mission demonstrated the opposite — the War Cabinet in London could and did override Cripps's flexibility.",
+      "final_explanation": "The selection, standing, and operating constraints of Stafford Cripps reveal the complex politics behind the mission.\n\n• Statement 1 — Correct: Cripps was not chosen randomly. His political history — Labour left, visitor to India, personal relationships with Congress leaders including Nehru — made him the most credible British politician for the task. Churchill's reluctance to send anyone was overcome partly by the argument that Cripps specifically might succeed.\n• Statement 2 — Incorrect: War Cabinet membership signalled official commitment but did not confer autonomous authority to bind the Cabinet. When Cripps showed flexibility on the defense formula, Churchill sent a telegram restricting him — demonstrating that his authority was delegated, not plenary.\n• Statement 3 — Correct: The Simon Commission (1927) was a seven-member Parliamentary investigative body with no Indian members, tasked with reviewing the Government of India Act. Cripps in 1942 was a single Cabinet minister tasked with direct political negotiation — an entirely different institutional model.\n\nValue Addition:\n• Cripps had visited India in the 1930s and had relationships with Nehru — this personal history mattered.\n• The Simon Commission was boycotted by Congress because it had no Indian members; Cripps's individual status avoided that trap.\n• Labour's presence in the War Cabinet coalition (Attlee, Cripps) was the key lever for India-sympathetic policy."
+    },
+    "hi": {
+      "display_text": "1942 के मिशन के लिए स्टैफर्ड क्रिप्स के दूत के रूप में चयन और आधिकारिक दर्जा के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. क्रिप्स को आंशिक रूप से इसलिए चुना गया क्योंकि उनकी वामपंथी राजनीतिक प्रवृत्तियाँ और भारत के प्रति व्यक्तिगत सहानुभूति ने उन्हें भारतीय राजनीतिक नेताओं के लिए विश्वसनीय बना दिया था।\n2. युद्ध कैबिनेट के सदस्य के रूप में, क्रिप्स के पास ब्रिटिश सरकार की ओर से बिना युद्ध कैबिनेट से बाद में अनुमोदन के बाध्यकारी प्रतिबद्धताएँ करने का अधिकार था।\n3. एक आयोग भेजने के बजाय एकल दूत भेजने का निर्णय साइमन आयोग मॉडल से अलग था, जो एक अधिक व्यक्तिगत, वार्ता-केंद्रित दृष्टिकोण को दर्शाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "स्टैफर्ड क्रिप्स को 1942 के मिशन के लिए एकमात्र दूत के रूप में इसलिए चुना गया था क्योंकि उनकी वामपंथी राजनीतिक प्रवृत्तियाँ और भारत के प्रति व्यक्तिगत सहानुभूति ने उन्हें भारतीय राजनीतिक नेताओं के लिए विश्वसनीय बना दिया था।",
+          "verdict": "सही",
+          "reason": "क्रिप्स की छवि एक वामपंथी राजनेता के रूप में थी, जिन्होंने भारत का दौरा किया था और स्वशासन के प्रति सहानुभूति व्यक्त की थी, जो कांग्रेस के लिए अधिक स्वीकार्य थी।"
+        },
+        {
+          "statement": "युद्ध कैबिनेट के सदस्य के रूप में, क्रिप्स के पास ब्रिटिश सरकार की ओर से बाध्यकारी प्रतिबद्धताएँ करने का अधिकार था, जिसके लिए युद्ध कैबिनेट से बाद में अनुमोदन की आवश्यकता नहीं थी।",
+          "verdict": "गलत",
+          "reason": "क्रिप्स का युद्ध कैबिनेट सदस्य होना उन्हें आधिकारिक दर्जा देता था, लेकिन उनकी अधिकार सीमित थी — लंदन के युद्ध कैबिनेट के पास अंतिम अधिकार था, जैसा कि चर्चिल के प्रतिबंधात्मक टेलीग्राम ने क्रिप्स-अज़ाद सूत्र को निरस्त करके दिखाया।"
+        },
+        {
+          "statement": "एक आयोग भेजने के बजाय एकल दूत भेजने का निर्णय साइमन आयोग मॉडल से अलग था, जो एक अधिक व्यक्तिगत, वार्ता-केंद्रित दृष्टिकोण को दर्शाता है।",
+          "verdict": "सही",
+          "reason": "साइमन आयोग एक बहु-सदस्य संसदीय जांच निकाय था; एकल कैबिनेट मंत्री को वार्ता के लिए भेजना एक मौलिक रूप से अलग संलग्नता मॉडल था।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) भ्रमित करने वाला है क्योंकि जो छात्र कथन 1 और 3 को सही पहचानते हैं, वे कथन 2 को भी सही मान सकते हैं, यह सोचकर कि युद्ध कैबिनेट सदस्यता स्वतः बाध्यकारी अधिकार देती है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: क्रिप्स की वामपंथी योग्यता और भारत के प्रति पूर्व सहानुभूति चयन के जानबूझकर मानदंड थे — कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: युद्ध कैबिनेट सदस्यता आधिकारिक दर्जा देती है, लेकिन स्वतः बाध्यकारी अधिकार नहीं — चर्चिल ने रक्षा सूत्र पर क्रिप्स को निरस्त किया — कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: साइमन आयोग (बहु-सदस्य जांच) और क्रिप्स (एकल वार्ताकार) के बीच का अंतर ऐतिहासिक रूप से मान्य है — कथन 3 सही है।",
+        "कथन 1 और 3 सही, कथन 2 गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 इस सामान्य धारणा का फायदा उठाता है कि उच्च पद (युद्ध कैबिनेट सदस्यता) स्वतः स्वायत्त अधिकार प्रदान करता है। संविधानिक परंपराओं से अनजान छात्र मान सकते हैं कि युद्ध कैबिनेट सदस्य की प्रतिबद्धताएँ स्वतः बाध्यकारी होती हैं। क्रिप्स मिशन ने इसका उल्टा दिखाया — लंदन का युद्ध कैबिनेट क्रिप्स की लचीलापन को निरस्त कर सकता था।",
+      "final_explanation": "स्टैफर्ड क्रिप्स के चयन, दर्जा और संचालन की सीमाएँ मिशन के पीछे की जटिल राजनीति को दर्शाती हैं।\n\n• कथन 1 — सही: क्रिप्स को यादृच्छिक रूप से नहीं चुना गया था। उनका राजनीतिक इतिहास — श्रमिक वामपंथी, भारत का आगंतुक, नेहरू सहित कांग्रेस नेताओं के साथ व्यक्तिगत संबंध — उन्हें इस कार्य के लिए सबसे विश्वसनीय ब्रिटिश राजनेता बनाता था। चर्चिल की किसी को भेजने में हिचक को आंशिक रूप से इस तर्क ने पार किया कि क्रिप्स विशेष रूप से सफल हो सकते हैं।\n• कथन 2 — गलत: युद्ध कैबिनेट सदस्यता आधिकारिक प्रतिबद्धता का संकेत देती है लेकिन कैबिनेट को बाध्य करने का स्वायत्त अधिकार नहीं देती। जब क्रिप्स रक्षा सूत्र पर लचीलापन दिखाते हैं, तो चर्चिल ने एक टेलीग्राम भेजकर उन्हें प्रतिबंधित किया — यह दर्शाता है कि उनका अधिकार प्रतिनिधि था, पूर्ण नहीं।\n• कथन 3 — सही: साइमन आयोग (1927) सात सदस्यीय संसदीय जांच निकाय था जिसमें कोई भारतीय सदस्य नहीं था, जिसे भारत सरकार अधिनियम की समीक्षा का कार्य दिया गया था। 1942 में क्रिप्स एकल कैबिनेट मंत्री थे जिन्हें सीधे राजनीतिक वार्ता का कार्य दिया गया था — एक पूरी तरह अलग संस्थागत मॉडल।\n\nमूल्यवर्धन:\n• क्रिप्स ने 1930 के दशक में भारत का दौरा किया था और नेहरू के साथ संबंध थे — यह व्यक्तिगत इतिहास महत्वपूर्ण था।\n• कांग्रेस ने साइमन आयोग का बहिष्कार किया क्योंकि उसमें कोई भारतीय सदस्य नहीं था; क्रिप्स की व्यक्तिगत स्थिति ने उस जाल से बचाया।\n• युद्ध कैबिनेट गठबंधन में श्रमिक पार्टी की उपस्थिति (एटली, क्रिप्स) भारत-सहानुभूति नीति के लिए मुख्य कारक थी।"
+    }
+  },
+  {
+    "uuid": "dfbd8575-49df-4978-9860-811766b78534",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Legacy and Long-Term Significance of the Cripps Mission",
+        "Impact of Cripps Mission Failure on the Quit India Movement"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Cripps Mission legacy — foreshadowed partition, accelerated independence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — relating a feature or outcome of the Cripps Mission to its long-term historical significance — is correctly matched?\n\n(a) Failure of the Cripps Mission : Directly triggered the Non-Cooperation Movement of the 1920s as Congress abandoned constitutional methods\n(b) Demonstration that Britain could not govern India without Indian consent : Accelerated independence to 1945 rather than the originally anticipated post-war timeline\n(c) Constituent Assembly concept introduced by the Cripps Mission : Permanently abandoned after the mission's failure and revived independently by the Cabinet Mission without reference to the 1942 precedent\n(d) Non-accession clause for provinces : Provided constitutional legitimacy to the concept of territorial separation, foreshadowing the Partition of 1947",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because the Cripps Mission did demonstrate that Britain could not govern without Indian consent — but the specific claim about 'accelerating independence to 1945' introduces a temporal error that students may miss.",
+      "elimination_logic": [
+        "Eliminate option (a): The Cripps Mission did NOT trigger the Non-Cooperation Movement — that was 1920–22, over two decades earlier. This is a clear temporal error.",
+        "Eliminate option (b): The Mission demonstrated Britain's inability to govern India without consent, but Indian independence came in 1947, not 1945 — this pairing contains a temporal error.",
+        "Eliminate option (c): The Constituent Assembly concept was carried forward to the Cabinet Mission (1946), not abandoned after the Cripps failure — this pairing reverses the actual legacy.",
+        "Confirm option (d): The non-accession clause legitimised the concept of provincial opt-out, which directly foreshadowed and provided constitutional precedent for the Partition of 1947 — this pairing is correctly matched."
+      ],
+      "upsc_trap_explanation": "Option (c) uses a reversed-causation technique: the Constituent Assembly idea was NOT abandoned after the Cripps failure — it was carried forward and implemented by the Cabinet Mission in 1946. Students who know the Cripps Mission failed may assume all its proposals failed permanently, missing that the Constituent Assembly concept survived and was realised.",
+      "final_explanation": "The Cripps Mission's long-term significance extends well beyond its immediate failure.\n\n• Option (a) — Incorrectly matched: The Non-Cooperation Movement was launched by Gandhi in 1920 — more than two decades before the Cripps Mission. The Cripps failure catalysed the Quit India Movement (1942), not the Non-Cooperation Movement.\n• Option (b) — Incorrectly matched: The Mission did demonstrate that Britain could not govern India without Indian consent — but independence came in 1947, not 1945. The pairing contains a temporal error.\n• Option (c) — Incorrectly matched: The Constituent Assembly idea was NOT abandoned — it was the most durable legacy of the Cripps Mission, carried forward to the Cabinet Mission (1946) and realised as the actual Constituent Assembly that met from December 1946.\n• Option (d) — Correctly matched: The non-accession clause gave constitutional form and legitimacy to the idea that provinces could opt out of the Indian Union. This directly foreshadowed Partition — the mechanism of territorial separation was conceptually present in the Cripps proposals.\n\nValue Addition:\n• The Constituent Assembly's durability as a concept shows that even failed missions can have lasting constitutional impact.\n• The Quit India Movement (1942) was the direct political consequence of the Cripps failure.\n• The Partition of 1947 can be traced intellectually to the non-accession clause's normalisation of territorial separation."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी — जो क्रिप्स मिशन की किसी विशेषता या परिणाम को उसके दीर्घकालिक ऐतिहासिक महत्व से जोड़ती है — सही मेल खाती है?\n\n(a) क्रिप्स मिशन की विफलता : कांग्रेस द्वारा संवैधानिक तरीकों को छोड़ने के कारण 1920 के दशक के असहयोग आंदोलन को सीधे प्रेरित किया\n(b) यह प्रदर्शित करना कि ब्रिटेन भारतीय सहमति के बिना शासन नहीं कर सकता : स्वतंत्रता को 1945 तक तेज़ कर दिया, बजाय मूलतः अपेक्षित युद्धोत्तर समयरेखा के\n(c) क्रिप्स मिशन द्वारा संविधान सभा की अवधारणा प्रस्तुत की गई : मिशन की विफलता के बाद स्थायी रूप से छोड़ दी गई और 1942 के उदाहरण के बिना कैबिनेट मिशन द्वारा स्वतंत्र रूप से पुनर्जीवित की गई\n(d) प्रांतों के लिए गैर-प्रवेश खंड : क्षेत्रीय पृथक्करण की अवधारणा को संवैधानिक वैधता प्रदान की, जिसने 1947 के विभाजन की पूर्वसूचना दी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because the Cripps Mission did demonstrate that Britain could not govern without Indian consent — but the specific claim about 'accelerating independence to 1945' introduces a temporal error that students may miss.",
+      "elimination_logic": [
+        "(a) विकल्प को हटाएं — क्रिप्स मिशन ने असहयोग आंदोलन को प्रेरित नहीं किया था — वह 1920–22 का था, जो दो दशकों से अधिक पहले था। यह एक स्पष्ट कालानुक्रमिक त्रुटि है।",
+        "(b) विकल्प को हटाएं — मिशन ने यह दिखाया कि ब्रिटेन भारतीय सहमति के बिना शासन नहीं कर सकता, लेकिन स्वतंत्रता 1947 में आई, 1945 में नहीं — इस जोड़ी में कालानुक्रमिक त्रुटि है।",
+        "(c) विकल्प को हटाएं — संविधान सभा की अवधारणा क्रिप्स मिशन की विफलता के बाद छोड़ी नहीं गई थी — यह कैबिनेट मिशन (1946) तक चली गई थी, यह जोड़ी वास्तविक विरासत को उलटती है।",
+        "(d) विकल्प की पुष्टि करें — गैर-प्रवेश खंड ने प्रांतीय विकल्प की अवधारणा को वैधता दी, जिसने सीधे 1947 के विभाजन की पूर्वसूचना और संवैधानिक उदाहरण प्रदान किया — यह जोड़ी सही मेल खाती है।"
+      ],
+      "upsc_trap_explanation": "(c) विकल्प उल्टे कारण-प्रभाव तकनीक का उपयोग करता है: संविधान सभा का विचार क्रिप्स मिशन की विफलता के बाद छोड़ा नहीं गया था — इसे कैबिनेट मिशन ने 1946 में आगे बढ़ाया और लागू किया। जो छात्र जानते हैं कि क्रिप्स मिशन विफल रहा, वे मान सकते हैं कि इसके सभी प्रस्ताव स्थायी रूप से विफल हो गए, लेकिन संविधान सभा की अवधारणा जीवित रही और साकार हुई।",
+      "final_explanation": "क्रिप्स मिशन का दीर्घकालिक महत्व उसकी तत्काल विफलता से कहीं अधिक है।\n\n• विकल्प (a) — गलत मेल: असहयोग आंदोलन गांधी द्वारा 1920 में शुरू किया गया था — जो क्रिप्स मिशन से दो दशकों से अधिक पहले था। क्रिप्स की विफलता ने भारत छोड़ो आंदोलन (1942) को प्रेरित किया, न कि असहयोग आंदोलन को।\n• विकल्प (b) — गलत मेल: मिशन ने दिखाया कि ब्रिटेन भारतीय सहमति के बिना शासन नहीं कर सकता — लेकिन स्वतंत्रता 1947 में आई, 1945 में नहीं। इस जोड़ी में कालानुक्रमिक त्रुटि है।\n• विकल्प (c) — गलत मेल: संविधान सभा का विचार छोड़ा नहीं गया था — यह क्रिप्स मिशन की सबसे स्थायी विरासत थी, जो कैबिनेट मिशन (1946) तक चली और दिसंबर 1946 से वास्तविक संविधान सभा के रूप में साकार हुई।\n• विकल्प (d) — सही मेल: गैर-प्रवेश खंड ने यह वैधानिक रूप दिया कि प्रांत भारतीय संघ से बाहर रह सकते हैं। इसने सीधे विभाजन की पूर्वसूचना दी — क्षेत्रीय पृथक्करण की प्रक्रिया क्रिप्स प्रस्तावों में मौलिक रूप से मौजूद थी।\n\nमूल्य संवर्धन:\n• संविधान सभा की स्थिरता यह दिखाती है कि विफल मिशन भी स्थायी संवैधानिक प्रभाव छोड़ सकते हैं।\n• भारत छोड़ो आंदोलन (1942) क्रिप्स मिशन की विफलता का प्रत्यक्ष राजनीतिक परिणाम था।\n• 1947 के विभाजन को गैर-प्रवेश खंड के क्षेत्रीय पृथक्करण के सामान्यीकरण से बौद्धिक रूप से जोड़ा जा सकता है।"
+    }
+  },
+  {
+    "uuid": "8fd0ae8d-7ddc-46db-a0ad-4e091578b58b",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "American Involvement and International Dimensions of the Cripps Mission",
+        "Context and Timing of Cripps Mission (1942)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "American pressure — strategic war rationale, not idealism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the international context of the Cripps Mission, consider the following:\n\nAssertion (A): The Fall of Singapore to Japanese forces in early 1942 made securing Indian cooperation in the war effort a matter of urgent strategic necessity for the Allied powers.\n\nReason (R): President Roosevelt of the United States applied significant diplomatic pressure on Churchill to offer meaningful constitutional concessions to India, and this pressure was a key factor in Churchill's decision to authorise the Cripps Mission.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1 — Is A correct? Yes: The Fall of Singapore in February 1942 was the military catastrophe that made Indian cooperation in the eastern war theater critically urgent.",
+        "Step 2 — Is R correct? Yes: Roosevelt did pressure Churchill to offer meaningful constitutional concessions to India, and this pressure was a significant factor in Churchill agreeing to send Cripps.",
+        "Step 3 — Does R causally explain A? No: R explains why Britain sent the Cripps Mission, not why the Fall of Singapore made Indian cooperation urgent. The Fall of Singapore's urgency derived from Japan's military advance threatening the Indian Ocean, not from American pressure. R is a political cause of the mission being launched, while A addresses the military-strategic rationale for urgency. These are two separate causal chains.",
+        "A correct + R correct + R does NOT explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": "This is a sophisticated causal trap. Both A and R are true — Singapore's fall did create urgency, and Roosevelt did pressure Churchill. But R (American pressure) explains why Britain launched the mission diplomatically, not why the Fall of Singapore made Indian cooperation militarily urgent. The military urgency arose from Japan's advance in the Indian Ocean theater; American pressure was a political factor that shaped the diplomatic response. Students conflating 'reasons the mission was sent' with 'reasons India's cooperation was needed militarily' will select option (a).",
+      "final_explanation": "The international context of the Cripps Mission operates on two distinct causal levels.\n\nAssertion (A) is correct: The Fall of Singapore on February 15, 1942 was a catastrophic British defeat that exposed the vulnerability of the Indian Ocean theater. Japan's advance made Indian military cooperation — men, resources, territory — urgently necessary for Allied strategy.\n\nReason (R) is correct: Roosevelt applied sustained pressure on Churchill, arguing that British credibility in the Pacific and Atlantic war against fascism required demonstrating respect for Indian self-determination. This pressure was a key factor in Churchill reluctantly authorising the Cripps Mission.\n\nHowever, R does NOT explain A: The urgency created by the Fall of Singapore was driven by Japan's military threat to the Indian Ocean, not by American diplomatic pressure. Roosevelt's pressure explains why Britain chose to send a mission in response to that urgency — but the urgency itself (A) arose from military realities, not from American politics.\n\nValue Addition:\n• Roosevelt sent Colonel Louis Johnson as his personal representative — an extraordinary diplomatic intervention in British imperial affairs.\n• Churchill resented American 'interference' even while depending on American military and economic support.\n• The Fall of Singapore is often called the greatest military disaster in British history — its strategic impact on India policy was enormous."
+    },
+    "hi": {
+      "display_text": "क्रिप्स मिशन के अंतरराष्ट्रीय संदर्भ के संबंध में निम्नलिखित पर विचार करें:\n\nकथन (A): 1942 की शुरुआत में जापानी सेनाओं द्वारा सिंगापुर के पतन ने मित्र राष्ट्रों के लिए युद्ध प्रयास में भारतीय सहयोग को तत्काल रणनीतिक आवश्यकता बना दिया।\n\nकारण (R): संयुक्त राज्य अमेरिका के राष्ट्रपति रूजवेल्ट ने चर्चिल पर भारत को महत्वपूर्ण संवैधानिक रियायतें देने के लिए कड़ा कूटनीतिक दबाव डाला, और यह दबाव चर्चिल के क्रिप्स मिशन को अधिकृत करने के निर्णय में एक प्रमुख कारक था।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1 — क्या A सही है? हाँ: फरवरी 1942 में सिंगापुर का पतन वह सैन्य आपदा थी जिसने पूर्वी युद्ध क्षेत्र में भारतीय सहयोग को अत्यंत आवश्यक बना दिया।",
+        "चरण 2 — क्या R सही है? हाँ: रूजवेल्ट ने चर्चिल पर भारत को महत्वपूर्ण संवैधानिक रियायतें देने के लिए दबाव डाला था, और यह दबाव क्रिप्स मिशन भेजने के चर्चिल के निर्णय में एक महत्वपूर्ण कारक था।",
+        "चरण 3 — क्या R, A को कारणात्मक रूप से समझाता है? नहीं: R यह बताता है कि ब्रिटेन ने क्रिप्स मिशन क्यों भेजा, न कि सिंगापुर के पतन ने भारतीय सहयोग को क्यों आवश्यक बना दिया। सिंगापुर के पतन की तात्कालिकता जापान की सैन्य प्रगति से आई थी जो हिंद महासागर को खतरे में डाल रही थी, न कि अमेरिकी दबाव से। R मिशन भेजे जाने का राजनीतिक कारण है, जबकि A सैन्य-रणनीतिक तात्कालिकता का कारण है। ये दो अलग-अलग कारणात्मक श्रृंखलाएं हैं।",
+        "A सही + R सही + R, A को नहीं समझाता — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह एक जटिल कारणात्मक जाल है। A और R दोनों सही हैं — सिंगापुर का पतन वास्तव में तात्कालिकता लाया, और रूजवेल्ट ने चर्चिल पर दबाव डाला। लेकिन R (अमेरिकी दबाव) यह बताता है कि ब्रिटेन ने मिशन क्यों भेजा, न कि सिंगापुर के पतन ने भारतीय सहयोग को सैन्य रूप से क्यों आवश्यक बनाया। सैन्य तात्कालिकता जापान की हिंद महासागर क्षेत्र में प्रगति से आई; अमेरिकी दबाव एक राजनीतिक कारक था जिसने कूटनीतिक प्रतिक्रिया को आकार दिया। जो छात्र 'मिशन भेजे जाने के कारण' को 'भारतीय सहयोग की सैन्य आवश्यकता' के कारणों के साथ मिला देंगे, वे विकल्प (a) चुनेंगे।",
+      "final_explanation": "क्रिप्स मिशन का अंतरराष्ट्रीय संदर्भ दो अलग-अलग कारणात्मक स्तरों पर काम करता है।\n\nकथन (A) सही है: 15 फरवरी 1942 को सिंगापुर का पतन एक भयंकर ब्रिटिश पराजय थी जिसने हिंद महासागर क्षेत्र की संवेदनशीलता उजागर की। जापान की प्रगति ने भारतीय सैन्य सहयोग — मानव संसाधन, साधन, क्षेत्र — को मित्र राष्ट्रों की रणनीति के लिए अत्यंत आवश्यक बना दिया।\n\nकथन (R) सही है: रूजवेल्ट ने चर्चिल पर लगातार दबाव डाला कि ब्रिटिश विश्वसनीयता को प्रशांत और अटलांटिक युद्ध में फासीवाद के खिलाफ बनाए रखने के लिए भारत की स्व-निर्णय क्षमता का सम्मान दिखाना आवश्यक है। यह दबाव चर्चिल के अनिच्छुक रूप से क्रिप्स मिशन को अधिकृत करने में एक प्रमुख कारक था।\n\nहालांकि, R, A को नहीं समझाता: सिंगापुर के पतन से उत्पन्न तात्कालिकता जापान के सैन्य खतरे से आई थी, न कि अमेरिकी कूटनीतिक दबाव से। रूजवेल्ट का दबाव यह बताता है कि ब्रिटेन ने उस तात्कालिकता के जवाब में मिशन भेजने का निर्णय क्यों लिया — लेकिन तात्कालिकता (A) स्वयं सैन्य वास्तविकताओं से आई, न कि अमेरिकी राजनीति से।\n\nमूल्यवर्धन:\n• रूजवेल्ट ने कर्नल लुई जॉनसन को अपना व्यक्तिगत प्रतिनिधि भेजा — ब्रिटिश साम्राज्य के मामलों में एक असाधारण कूटनीतिक हस्तक्षेप।\n• चर्चिल अमेरिकी 'हस्तक्षेप' से नाराज थे, जबकि वे अमेरिकी सैन्य और आर्थिक समर्थन पर निर्भर थे।\n• सिंगापुर का पतन अक्सर ब्रिटिश इतिहास की सबसे बड़ी सैन्य आपदा कहा जाता है — इसका भारत नीति पर रणनीतिक प्रभाव बहुत बड़ा था।"
+    }
+  },
+  {
+    "uuid": "c4675438-3f0c-4d9b-9efb-8b6da7100d91",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Failure Analysis: Why the Cripps Mission Failed — Multi-Causal Assessment",
+        "Role of Linlithgow (Viceroy) and Churchill in Sabotaging the Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Causes of Cripps failure — immediate vs. structural",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four factors are recognised causes of the Cripps Mission's failure in 1942. Which one is NOT a cause of the mission's breakdown?\n\n(a) The defense portfolio deadlock caused by the War Cabinet's refusal to allow meaningful Indian control over defense during the war\n(b) The post-war deferral of all constitutional promises, which Congress considered unreliable given wartime uncertainty\n(c) Congress's demand that Cripps be replaced by a multi-member commission similar to the Simon Commission before negotiations could continue\n(d) The non-accession clause, which Congress argued gave constitutional legitimacy to the fragmentation of India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because the defense portfolio deadlock IS a real and primary cause of failure, and students may confuse 'real cause' with 'the answer the question seeks,' hesitating before selecting it.",
+      "elimination_logic": [
+        "Identify the category: Three of these are genuine causes of the Cripps Mission's failure; one is NOT.",
+        "Option (a) — Defense portfolio deadlock: Historically established as the immediate proximate cause — a genuine cause.",
+        "Option (b) — Post-war deferral of constitutional promises: A real structural grievance — Congress's 'post-dated cheque' objection — genuine cause.",
+        "Option (c) — Congress demanding a multi-member commission to replace Cripps as sole negotiator: Congress never made this demand; they engaged with Cripps as the envoy. This is a fabricated cause — the odd one out.",
+        "Option (d) — Non-accession clause's implicit legitimation of partition: A documented Congress objection — genuine cause."
+      ],
+      "upsc_trap_explanation": "Option (c) is a plausible fabrication: students know the Simon Commission was multi-member and Congress criticised it for having no Indian members. A student with partial knowledge might reason that Congress would want a multi-member body to replace Cripps — applying Simon Commission logic to a different context. In fact, Congress had no such demand; their objections were specifically about defense, post-war deferral, and the opt-out clause.",
+      "final_explanation": "Identifying genuine causes from fabricated ones tests precise historical knowledge.\n\n• Option (a) — Genuine cause: The defense portfolio deadlock was the most immediate cause. Congress demanded meaningful Indian control; Britain insisted the British Commander-in-Chief retain authority. The Cripps-Azad formula's rejection by London triggered the breakdown.\n• Option (b) — Genuine cause: The post-war deferral of all substantive promises was a fundamental structural objection. Gandhi's 'post-dated cheque' metaphor captures this — Congress wanted immediate power transfer, not future promises.\n• Option (c) — NOT a genuine cause (the odd one out): Congress never demanded a multi-member commission to replace Cripps. This is a fabricated cause, possibly confusion with the Simon Commission context. Congress engaged with Cripps as the valid envoy and focused their objections on specific substantive issues.\n• Option (d) — Genuine cause: The non-accession clause giving constitutional legitimacy to India's fragmentation was a deep Congress objection — the 'Balkanisation' argument.\n\nValue Addition:\n• The three genuine causes map to three analytical categories: tactical (defense deadlock), temporal (post-war deferral), and structural (opt-out clause).\n• Understanding multi-causal failure analysis is a high-order UPSC skill.\n• Congress's negotiating focus on defense (not on Cripps's personal standing) shows the sophistication of their strategic positioning."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार में से तीन कारक 1942 में क्रिप्स मिशन की विफलता के मान्यता प्राप्त कारण हैं। इनमें से कौन-सा मिशन के विफल होने का कारण नहीं है?\n\n(a) युद्ध के दौरान रक्षा पर सार्थक भारतीय नियंत्रण की अनुमति देने से युद्ध कैबिनेट के इनकार के कारण रक्षा विभाग में गतिरोध\n(b) युद्धोपरांत सभी संवैधानिक वादों की स्थगन, जिसे कांग्रेस ने युद्धकालीन अनिश्चितता के कारण अविश्वसनीय माना\n(c) कांग्रेस की मांग कि वार्ता जारी रखने से पहले क्रिप्स को साइमन कमीशन के समान बहु-सदस्यीय आयोग से बदला जाए\n(d) गैर-प्रवेश खंड, जिसे कांग्रेस ने भारत के विखंडन को संवैधानिक वैधता देने वाला तर्क बताया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because the defense portfolio deadlock IS a real and primary cause of failure, and students may confuse 'real cause' with 'the answer the question seeks,' hesitating before selecting it.",
+      "elimination_logic": [
+        "श्रेणी की पहचान करें: इनमें से तीन क्रिप्स मिशन की विफलता के वास्तविक कारण हैं; एक कारण नहीं है।",
+        "विकल्प (a) — रक्षा विभाग में गतिरोध: ऐतिहासिक रूप से तत्काल निकटतम कारण के रूप में स्थापित — एक वास्तविक कारण।",
+        "विकल्प (b) — युद्धोपरांत संवैधानिक वादों की स्थगन: एक वास्तविक संरचनात्मक शिकायत — कांग्रेस की 'पोस्ट-डेटेड चेक' आपत्ति — वास्तविक कारण।",
+        "विकल्प (c) — कांग्रेस द्वारा क्रिप्स के स्थान पर एक बहु-सदस्यीय आयोग की मांग: कांग्रेस ने कभी यह मांग नहीं की; वे क्रिप्स को राजदूत के रूप में मानते थे। यह एक निर्मित कारण है — असामान्य विकल्प।",
+        "विकल्प (d) — गैर-प्रवेश खंड द्वारा विभाजन को निहित वैधता देना: कांग्रेस की एक प्रलेखित आपत्ति — वास्तविक कारण।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) एक संभावित निर्मित कारण है: छात्र जानते हैं कि साइमन कमीशन बहु-सदस्यीय था और कांग्रेस ने इसे भारतीय सदस्यों के अभाव के लिए आलोचना की थी। आंशिक ज्ञान वाला छात्र यह सोच सकता है कि कांग्रेस क्रिप्स के स्थान पर बहु-सदस्यीय निकाय चाहती होगी — साइमन कमीशन की तर्कशक्ति को अलग संदर्भ में लागू करते हुए। वास्तव में, कांग्रेस की ऐसी कोई मांग नहीं थी; उनकी आपत्तियाँ विशेष रूप से रक्षा, युद्धोपरांत स्थगन, और विकल्प-छोड़ खंड के बारे में थीं।",
+      "final_explanation": "निर्मित कारणों से वास्तविक कारणों की पहचान करना सटीक ऐतिहासिक ज्ञान की परीक्षा है।\n\n• विकल्प (a) — वास्तविक कारण: रक्षा विभाग में गतिरोध सबसे तत्काल कारण था। कांग्रेस ने भारतीय नियंत्रण की मांग की; ब्रिटेन ने ब्रिटिश कमांडर-इन-चीफ के अधिकार बनाए रखने पर जोर दिया। लंदन द्वारा क्रिप्स-आज़ाद सूत्र को अस्वीकार करने से विफलता हुई।\n• विकल्प (b) — वास्तविक कारण: युद्धोपरांत सभी महत्वपूर्ण वादों की स्थगन एक मौलिक संरचनात्मक आपत्ति थी। गांधी के 'पोस्ट-डेटेड चेक' रूपक से यह स्पष्ट होता है — कांग्रेस तत्काल सत्ता हस्तांतरण चाहती थी, भविष्य के वादे नहीं।\n• विकल्प (c) — वास्तविक कारण नहीं (असामान्य विकल्प): कांग्रेस ने कभी क्रिप्स के स्थान पर बहु-सदस्यीय आयोग की मांग नहीं की। यह एक निर्मित कारण है, संभवतः साइमन कमीशन के संदर्भ से भ्रम। कांग्रेस ने क्रिप्स को वैध राजदूत माना और अपनी आपत्तियाँ विशिष्ट मुद्दों पर केंद्रित कीं।\n• विकल्प (d) — वास्तविक कारण: गैर-प्रवेश खंड जिसने भारत के विखंडन को संवैधानिक वैधता दी, कांग्रेस की गहरी आपत्ति थी — 'बाल्कनीकरण' तर्क।\n\nमूल्य संवर्धन:\n• तीन वास्तविक कारण तीन विश्लेषणात्मक श्रेणियों से मेल खाते हैं: रणनीतिक (रक्षा गतिरोध), कालिक (युद्धोपरांत स्थगन), और संरचनात्मक (विकल्प-छोड़ खंड)।\n• बहु-कारणात्मक विफलता विश्लेषण समझना UPSC की उच्च स्तरीय योग्यता है।\n• कांग्रेस का रक्षा पर वार्ता केंद्रित करना (क्रिप्स के व्यक्तिगत स्थान पर नहीं) उनकी रणनीतिक परिपक्वता दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "d809ef36-e954-4280-8819-7c4a638df703",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Dominion Status vs. Complete Independence: The Cripps Offer",
+        "Congress Response and Rejection of the Cripps Proposals"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Dominion Status — insufficient for Purna Swaraj demand",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the nature of constitutional concessions offered by the Cripps Mission, consider the following statements:\n\nStatement 1: The Cripps Mission offered complete independence (Purna Swaraj) to India, which Congress rejected because it did not include the immediate transfer of power during the war.\n\nStatement 2: Unlike the August Offer of 1940, the Cripps proposals included the right for the proposed Dominion of India to secede from the British Commonwealth.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: The Cripps Mission offered complete independence (Purna Swaraj) to India, which Congress rejected because it did not include immediate transfer of power during the war.",
+          "verdict": "Incorrect",
+          "reason": "The Cripps Mission offered Dominion Status, NOT complete independence. Purna Swaraj (complete independence) was Congress's demand — it was not what Cripps offered."
+        },
+        {
+          "statement": "Statement 2: Unlike the August Offer (1940), the Cripps proposals included the right for the proposed Dominion of India to secede from the British Commonwealth.",
+          "verdict": "Correct",
+          "reason": "The secession right from the Commonwealth was a new and distinctive feature of the Cripps proposals — it was absent from the August Offer, making the Cripps offer constitutionally more advanced in this specific respect."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because students who know the Cripps Mission offered 'near-independence' may conflate Dominion Status with Purna Swaraj, selecting option (a) on the assumption that both statements are broadly correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The Cripps Mission offered Dominion Status — NOT Purna Swaraj/complete independence. Congress's demand was Purna Swaraj, which the offer failed to meet. Statement 1 incorrectly describes the offer as complete independence — Statement 1 is incorrect.",
+        "Evaluate Statement 2: The secession right from the Commonwealth was specifically a Cripps addition not present in the August Offer — Statement 2 is correct.",
+        "Statement 1 incorrect, Statement 2 correct — select option (d)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Statement 1 takes the term 'complete independence' (Purna Swaraj) — which was Congress's demand — and incorrectly presents it as the Cripps offer. Students who know the Cripps Mission was rejected because it fell short of Purna Swaraj may not carefully check whether the offer itself WAS Purna Swaraj or merely Dominion Status. This reversal catches students who understand the outcome (rejection) but confuse the content (what was offered).",
+      "final_explanation": "The distinction between Dominion Status and complete independence (Purna Swaraj) is one of the most UPSC-tested factual points in this topic.\n\n• Statement 1 — Incorrect: The Cripps Mission offered Dominion Status — a self-governing state within the Commonwealth framework. Purna Swaraj (complete independence) was the Indian National Congress's demand since the 1929 Lahore Session. Congress rejected the Cripps proposals precisely BECAUSE they offered Dominion Status rather than Purna Swaraj — this Statement inverts what was offered and what was demanded.\n• Statement 2 — Correct: The August Offer (1940) promised Dominion Status but did not include the right to secede from the Commonwealth. The Cripps proposals added this secession right — a genuinely new concession that went further than any previous British offer, even if it was still short of the Purna Swaraj Congress sought.\n\nValue Addition:\n• The Purna Swaraj resolution was passed at the Lahore Congress session on December 31, 1929 — a key date.\n• India became a Republic in 1950 by effectively exercising the secession right the Cripps proposals had offered.\n• Dominion Status historically meant the Governor-General was appointed by the Crown — India retained this link until 1950."
+    },
+    "hi": {
+      "display_text": "क्रिप्स मिशन द्वारा दी गई संवैधानिक रियायतों की प्रकृति के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: क्रिप्स मिशन ने भारत को पूर्ण स्वतंत्रता (पूर्ण स्वराज) की पेशकश की, जिसे कांग्रेस ने अस्वीकार कर दिया क्योंकि इसमें युद्ध के दौरान तत्काल सत्ता हस्तांतरण शामिल नहीं था।\n\nकथन 2: 1940 के अगस्त ऑफर के विपरीत, क्रिप्स प्रस्तावों में प्रस्तावित डोमिनियन ऑफ इंडिया को ब्रिटिश कॉमनवेल्थ से अलग होने का अधिकार शामिल था।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: क्रिप्स मिशन ने भारत को पूर्ण स्वतंत्रता (पूर्ण स्वराज) की पेशकश की, जिसे कांग्रेस ने अस्वीकार कर दिया क्योंकि इसमें युद्ध के दौरान तत्काल सत्ता हस्तांतरण शामिल नहीं था।",
+          "verdict": "गलत",
+          "reason": "क्रिप्स मिशन ने डोमिनियन स्टेटस की पेशकश की थी, पूर्ण स्वतंत्रता नहीं। पूर्ण स्वराज कांग्रेस की मांग थी — यह क्रिप्स की पेशकश नहीं थी।"
+        },
+        {
+          "statement": "कथन 2: अगस्त ऑफर (1940) के विपरीत, क्रिप्स प्रस्तावों में प्रस्तावित डोमिनियन ऑफ इंडिया को ब्रिटिश कॉमनवेल्थ से अलग होने का अधिकार शामिल था।",
+          "verdict": "सही",
+          "reason": "कॉमनवेल्थ से अलग होने का अधिकार क्रिप्स प्रस्तावों की एक नई और विशिष्ट विशेषता थी — यह अगस्त ऑफर में नहीं था, जिससे क्रिप्स ऑफर संवैधानिक रूप से इस विशेष मामले में अधिक उन्नत था।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि क्रिप्स मिशन ने 'लगभग स्वतंत्रता' दी थी, वे डोमिनियन स्टेटस को पूर्ण स्वराज से मिला सकते हैं और मान सकते हैं कि दोनों कथन सामान्यतः सही हैं, इसलिए विकल्प (a) चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: क्रिप्स मिशन ने डोमिनियन स्टेटस दिया — पूर्ण स्वराज/पूर्ण स्वतंत्रता नहीं। कांग्रेस की मांग पूर्ण स्वराज थी, जिसे यह प्रस्ताव पूरा नहीं करता। कथन 1 ने प्रस्ताव को पूर्ण स्वतंत्रता बताया है — अतः कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: कॉमनवेल्थ से अलग होने का अधिकार विशेष रूप से क्रिप्स प्रस्तावों में जोड़ा गया था, जो अगस्त ऑफर में नहीं था — अतः कथन 2 सही है।",
+        "कथन 1 गलत, कथन 2 सही — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में स्कोप-एक्सटेंशन ट्रैप 'पूर्ण स्वतंत्रता' (पूर्ण स्वराज) शब्द को कांग्रेस की मांग के रूप में लेकर गलत तरीके से क्रिप्स की पेशकश के रूप में प्रस्तुत करता है। जो छात्र जानते हैं कि क्रिप्स मिशन को इसलिए अस्वीकार किया गया क्योंकि यह पूर्ण स्वराज से कम था, वे ध्यान से यह जांच नहीं करते कि प्रस्ताव स्वयं पूर्ण स्वराज था या केवल डोमिनियन स्टेटस। यह उलटफेर उन छात्रों को फंसाता है जो परिणाम (अस्वीकृति) समझते हैं लेकिन सामग्री (क्या दिया गया) भ्रमित करते हैं।",
+      "final_explanation": "डोमिनियन स्टेटस और पूर्ण स्वतंत्रता (पूर्ण स्वराज) के बीच का अंतर इस विषय में UPSC द्वारा बार-बार परखा गया तथ्य है।\n\n• कथन 1 — गलत: क्रिप्स मिशन ने डोमिनियन स्टेटस दिया — कॉमनवेल्थ के अंतर्गत स्वशासित राज्य। पूर्ण स्वराज (पूर्ण स्वतंत्रता) भारतीय राष्ट्रीय कांग्रेस की 1929 के लाहौर सत्र से मांग थी। कांग्रेस ने क्रिप्स प्रस्तावों को इसलिए अस्वीकार किया क्योंकि वे पूर्ण स्वराज नहीं बल्कि डोमिनियन स्टेटस देते थे — यह कथन प्रस्ताव और मांग को उलट देता है।\n• कथन 2 — सही: अगस्त ऑफर (1940) ने डोमिनियन स्टेटस का वादा किया लेकिन कॉमनवेल्थ से अलग होने का अधिकार शामिल नहीं था। क्रिप्स प्रस्तावों ने यह अधिकार जोड़ा — यह एक नई स्वीकृति थी जो किसी भी पूर्व ब्रिटिश प्रस्ताव से आगे थी, भले ही यह पूर्ण स्वराज से कम था जिसे कांग्रेस चाहती थी।\n\nमूल्यवर्धन:\n• पूर्ण स्वराज प्रस्ताव 31 दिसंबर 1929 को लाहौर कांग्रेस सत्र में पारित हुआ — एक महत्वपूर्ण तिथि।\n• भारत 1950 में गणराज्य बना, effectively उस अलग होने के अधिकार का प्रयोग करते हुए जो क्रिप्स प्रस्तावों ने दिया था।\n• डोमिनियन स्टेटस का ऐतिहासिक अर्थ था कि गवर्नर-जनरल क्राउन द्वारा नियुक्त होता था — भारत ने यह संबंध 1950 तक बनाए रखा।"
+    }
+  },
+  {
+    "uuid": "8f3dd889-1f18-4e46-be24-582086fb7991",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "The Defense Portfolio Deadlock",
+        "Congress Response and Rejection of the Cripps Proposals"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Cripps-Azad formula — defense compromise attempt",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The term 'Cripps-Azad formula' refers to a compromise attempt on the defense portfolio during the 1942 negotiations. The 'Azad' in this formula refers to which Congress leader who served as the primary institutional counterpart to Cripps in these discussions?\n\n(a) Mahatma Gandhi, who shaped Congress's position on the defense question behind the scenes\n(b) Maulana Abul Kalam Azad, who was serving as Congress President at the time of the mission\n(c) Jawaharlal Nehru, who was the Congress's primary expert on international and constitutional questions\n(d) Rajendra Prasad, who represented the Congress Working Committee in the Cripps negotiations",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because Nehru was a senior Congress leader involved in the Cripps negotiations, and students may assume he rather than Azad was Cripps's counterpart in the defense formula.",
+      "elimination_logic": [
+        "Eliminate option (a): Gandhi was not directly involved in the Cripps Mission talks — Azad and Nehru were the primary negotiators.",
+        "Eliminate option (c): Nehru was involved in the talks but the defense formula is specifically associated with Azad (Congress President) as the Congress negotiating counterpart.",
+        "Eliminate option (d): Rajendra Prasad was not a primary negotiator in the Cripps Mission discussions.",
+        "Confirm option (b): Maulana Azad, as Congress President at the time, was Cripps's primary counterpart in the defense formula negotiations — the 'Cripps-Azad formula' is named for them both."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap replaces Azad with Nehru. Students know Nehru was a senior Congress figure deeply involved in international and constitutional questions, making him the intuitive guess for Cripps's primary counterpart. However, Azad was Congress President at the time — the formal head — and the defense formula bears his name alongside Cripps's. Students who recall Nehru's prominence in Congress select option (c) without remembering Azad's presidential role.",
+      "final_explanation": "The 'Cripps-Azad formula' is a specific and examinable term in the Cripps Mission narrative.\n\n• Option (a) — Incorrect: Gandhi was not a direct negotiator with Cripps — he participated in Congress deliberations but the on-ground talks were conducted by Azad and Nehru. The defense formula does not bear Gandhi's name.\n• Option (b) — Correct: Maulana Abul Kalam Azad was Congress President during the Cripps Mission period (he served as Congress President from 1940 to 1946). As the formal head of Congress, he was Cripps's primary institutional counterpart in the defense formula discussions — hence 'Cripps-Azad formula.'\n• Option (c) — Incorrect: Nehru was involved in the negotiations but the specific defense formula is associated with Azad, not Nehru.\n• Option (d) — Incorrect: Rajendra Prasad was a senior Congressman but was not the primary negotiator during the Cripps Mission.\n\nValue Addition:\n• Azad served as Congress President for the longest unbroken term (1940–1946) — a fact UPSC tests separately.\n• Azad's 'India Wins Freedom' (autobiography) provides a Congress insider's account of the Cripps Mission.\n• The Cripps-Azad formula's rejection by London is the key event separating Cripps's personal intent from War Cabinet policy."
+    },
+    "hi": {
+      "display_text": "'क्रिप्स-आज़ाद सूत्र' शब्द 1942 की वार्ता के दौरान रक्षा पोर्टफोलियो पर एक समझौता प्रयास को संदर्भित करता है। इस सूत्र में 'आज़ाद' से तात्पर्य किस कांग्रेस नेता से है जो इन वार्ताओं में क्रिप्स के मुख्य संस्थागत समकक्ष के रूप में कार्यरत थे?\n\n(a) महात्मा गांधी, जिन्होंने पर्दे के पीछे रक्षा प्रश्न पर कांग्रेस की स्थिति को आकार दिया\n(b) मौलाना अबुल कलाम आज़ाद, जो उस समय कांग्रेस अध्यक्ष थे\n(c) जवाहरलाल नेहरू, जो कांग्रेस के अंतरराष्ट्रीय और संवैधानिक प्रश्नों के मुख्य विशेषज्ञ थे\n(d) राजेंद्र प्रसाद, जो क्रिप्स वार्ता में कांग्रेस कार्य समिति का प्रतिनिधित्व करते थे",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि नेहरू क्रिप्स वार्ता में शामिल एक वरिष्ठ कांग्रेस नेता थे, और छात्र यह मान सकते हैं कि वे आज़ाद के बजाय क्रिप्स के रक्षा सूत्र में समकक्ष थे।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: गांधी सीधे क्रिप्स मिशन वार्ता में शामिल नहीं थे — आज़ाद और नेहरू मुख्य वार्ताकार थे।",
+        "विकल्प (c) को निरस्त करें: नेहरू वार्ता में शामिल थे लेकिन रक्षा सूत्र विशेष रूप से आज़ाद (कांग्रेस अध्यक्ष) से जुड़ा है जो कांग्रेस के वार्ताकार समकक्ष थे।",
+        "विकल्प (d) को निरस्त करें: राजेंद्र प्रसाद क्रिप्स मिशन वार्ता में मुख्य वार्ताकार नहीं थे।",
+        "विकल्प (b) को स्वीकार करें: मौलाना आज़ाद, जो उस समय कांग्रेस अध्यक्ष थे, क्रिप्स के रक्षा सूत्र वार्ता में मुख्य समकक्ष थे — 'क्रिप्स-आज़ाद सूत्र' उनके नाम पर है।"
+      ],
+      "upsc_trap_explanation": "एंटिटी-स्वैप जाल आज़ाद की जगह नेहरू को रखता है। छात्र जानते हैं कि नेहरू एक वरिष्ठ कांग्रेस नेता थे जो अंतरराष्ट्रीय और संवैधानिक मामलों में गहराई से शामिल थे, इसलिए वे क्रिप्स के मुख्य समकक्ष के रूप में सहज अनुमान लगाते हैं। हालांकि, उस समय आज़ाद कांग्रेस अध्यक्ष थे — औपचारिक प्रमुख — और रक्षा सूत्र उनके नाम के साथ क्रिप्स का नाम रखता है। जो छात्र नेहरू की कांग्रेस में प्रमुखता याद रखते हैं, वे आज़ाद की अध्यक्षता की भूमिका भूलकर विकल्प (c) चुन लेते हैं।",
+      "final_explanation": "'क्रिप्स-आज़ाद सूत्र' क्रिप्स मिशन कथा में एक विशिष्ट और परीक्षा योग्य शब्द है।\n\n• विकल्प (a) — गलत: गांधी सीधे क्रिप्स के साथ वार्ताकार नहीं थे — वे कांग्रेस की विचार-विमर्श में शामिल थे लेकिन वार्ता आज़ाद और नेहरू ने की। रक्षा सूत्र गांधी के नाम से नहीं जुड़ा।\n• विकल्प (b) — सही: मौलाना अबुल कलाम आज़ाद उस समय कांग्रेस अध्यक्ष थे (1940 से 1946 तक)। कांग्रेस के औपचारिक प्रमुख के रूप में वे क्रिप्स के मुख्य संस्थागत समकक्ष थे — इसलिए 'क्रिप्स-आज़ाद सूत्र'।\n• विकल्प (c) — गलत: नेहरू वार्ता में शामिल थे लेकिन रक्षा सूत्र विशेष रूप से आज़ाद से जुड़ा है, नेहरू से नहीं।\n• विकल्प (d) — गलत: राजेंद्र प्रसाद वरिष्ठ कांग्रेस नेता थे लेकिन क्रिप्स मिशन के मुख्य वार्ताकार नहीं थे।\n\nमूल्यवर्धन:\n• आज़ाद ने कांग्रेस अध्यक्ष के रूप में सबसे लंबा अविरल कार्यकाल (1940–1946) निभाया — यह तथ्य UPSC अलग से पूछता है।\n• आज़ाद की 'India Wins Freedom' (आत्मकथा) क्रिप्स मिशन का कांग्रेस अंदरूनी विवरण देती है।\n• लंदन द्वारा क्रिप्स-आज़ाद सूत्र का अस्वीकार करना वह मुख्य घटना है जो क्रिप्स के व्यक्तिगत इरादे को युद्ध कैबिनेट की नीति से अलग करती है।"
+    }
+  },
+  {
+    "uuid": "e17e1522-961c-42bb-95f8-48d06c078a2b",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Legacy and Long-Term Significance of the Cripps Mission",
+        "Failure Analysis: Why the Cripps Mission Failed — Multi-Causal Assessment",
+        "Impact of Cripps Mission Failure on the Quit India Movement"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Cripps Mission long-term significance — partition, Quit India, independence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following assessments of the Cripps Mission's broader historical significance:\n\n1. The mission's failure is considered a direct catalyst for the Quit India Movement because Congress concluded that constitutional negotiations had been exhausted and mass action was the only remaining option.\n2. The non-accession clause is considered a constitutional precedent that provided legitimacy to the concept of territorial separation, foreshadowing the Partition of 1947.\n3. The Cripps Mission demonstrated that Britain was willing to grant complete independence to India during the war itself, but Congress's insistence on immediate implementation made agreement impossible.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Cripps Mission's failure is considered a direct catalyst for the Quit India Movement because Congress concluded that constitutional negotiations with Britain had been exhausted and mass action was the only remaining option.",
+          "verdict": "Correct",
+          "reason": "The Cripps failure (April 1942) directly preceded the Quit India Resolution (August 8, 1942) — Congress's 'Do or Die' approach was the logical endpoint of the 'post-dated cheque' reasoning."
+        },
+        {
+          "statement": "The non-accession clause introduced by the Cripps proposals is considered a constitutional precedent that provided legitimacy to the concept of territorial separation, foreshadowing the Partition of 1947.",
+          "verdict": "Correct",
+          "reason": "By giving any province the constitutional right to opt out of the Indian Union, the Cripps proposals normalised territorial separation as a legitimate constitutional outcome — a precedent directly relevant to 1947."
+        },
+        {
+          "statement": "The Cripps Mission demonstrated that Britain was willing to grant complete independence to India during the war itself, but Congress's insistence on immediate implementation made agreement impossible.",
+          "verdict": "Incorrect",
+          "reason": "Britain was NOT willing to grant complete independence during the war — the Cripps offer was post-war Dominion Status (not complete independence), and Congress objected to both the deferral AND the limitation to Dominion Status."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students who correctly identify Statements 1 and 2 as valid may also accept Statement 3 on the logic that 'Britain was showing willingness' — conflating the offer of Dominion Status with complete independence.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The Cripps-to-Quit India causal chain is well-established — Congress explicitly cited the failure of negotiations — correct.",
+        "Evaluate Statement 2: The non-accession clause as a partition precedent is a recognised historical interpretation — correct.",
+        "Evaluate Statement 3: Britain offered post-war Dominion Status, NOT complete independence; Congress objected to both the deferral AND the Dominion Status limitation — this statement double-errs — incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 3 contains a double error — it upgrades 'Dominion Status' to 'complete independence' AND shifts the cause of failure to Congress's 'insistence on immediate implementation.' Students who know Congress wanted immediate power transfer may accept the second part of this statement as broadly true and miss the mischaracterisation of the British offer as 'complete independence.'",
+      "final_explanation": "The Cripps Mission's significance extends across three historical arcs: the Quit India Movement, the Partition, and the independence negotiation trajectory.\n\n• Statement 1 — Correct: The sequence from Cripps failure (April 1942) to Quit India (August 8, 1942) is a direct causal chain. Congress's 'Do or Die' approach was the strategic conclusion of the 'post-dated cheque' logic — if British promises are unreliable, mass pressure is the only tool.\n• Statement 2 — Correct: The non-accession clause legitimised territorial separation as a constitutional option. By making opt-out a right (not a rebellion), it provided the conceptual and constitutional scaffolding for 1947's Partition.\n• Statement 3 — Incorrect: Britain was NOT offering complete independence — the offer was Dominion Status, deferred to after the war. Congress's objections were multiple: the deferral AND the limitation to Dominion Status, AND the defense portfolio, AND the opt-out clause.\n\nValue Addition:\n• The four-month gap between Cripps failure (April) and Quit India (August) reflects Congress's internal deliberations — not impulsive reaction.\n• The Partition of India in 1947 physically enacted what the non-accession clause had constitutionally contemplated in 1942.\n• The Cripps Mission sits at the intersection of WWII strategy, Indian constitutional history, and the independence narrative — a multi-dimensional UPSC topic."
+    },
+    "hi": {
+      "display_text": "कृप्स मिशन (Cripps Mission) के व्यापक ऐतिहासिक महत्व के निम्नलिखित आकलन पर विचार करें:\n\n1. मिशन की विफलता को भारत छोड़ो आंदोलन (Quit India Movement) के लिए एक प्रत्यक्ष उत्प्रेरक माना जाता है क्योंकि कांग्रेस ने निष्कर्ष निकाला कि संवैधानिक वार्ता समाप्त हो चुकी है और जन आंदोलन ही एकमात्र विकल्प बचा है।\n2. गैर-प्रवेश (non-accession) प्रावधान को संवैधानिक मिसाल माना जाता है जिसने क्षेत्रीय पृथक्करण की अवधारणा को वैधता प्रदान की, जो 1947 के विभाजन की पूर्वसूचना थी।\n3. कृप्स मिशन ने यह दिखाया कि ब्रिटेन युद्ध के दौरान ही भारत को पूर्ण स्वतंत्रता देने को तैयार था, लेकिन कांग्रेस की तत्काल क्रियान्वयन की जिद ने समझौता असंभव बना दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Cripps Mission's failure is considered a direct catalyst for the Quit India Movement because Congress concluded that constitutional negotiations with Britain had been exhausted and mass action was the only remaining option.",
+          "verdict": "Correct",
+          "reason": "The Cripps failure (April 1942) directly preceded the Quit India Resolution (August 8, 1942) — Congress's 'Do or Die' approach was the logical endpoint of the 'post-dated cheque' reasoning."
+        },
+        {
+          "statement": "The non-accession clause introduced by the Cripps proposals is considered a constitutional precedent that provided legitimacy to the concept of territorial separation, foreshadowing the Partition of 1947.",
+          "verdict": "Correct",
+          "reason": "By giving any province the constitutional right to opt out of the Indian Union, the Cripps proposals normalised territorial separation as a legitimate constitutional outcome — a precedent directly relevant to 1947."
+        },
+        {
+          "statement": "The Cripps Mission demonstrated that Britain was willing to grant complete independence to India during the war itself, but Congress's insistence on immediate implementation made agreement impossible.",
+          "verdict": "Incorrect",
+          "reason": "Britain was NOT willing to grant complete independence during the war — the Cripps offer was post-war Dominion Status (not complete independence), and Congress objected to both the deferral AND the limitation to Dominion Status."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students who correctly identify Statements 1 and 2 as valid may also accept Statement 3 on the logic that 'Britain was showing willingness' — conflating the offer of Dominion Status with complete independence.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The Cripps-to-Quit India causal chain is well-established — Congress explicitly cited the failure of negotiations — correct.",
+        "Evaluate Statement 2: The non-accession clause as a partition precedent is a recognised historical interpretation — correct.",
+        "Evaluate Statement 3: Britain offered post-war Dominion Status, NOT complete independence; Congress objected to both the deferral AND the Dominion Status limitation — this statement double-errs — incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 3 contains a double error — it upgrades 'Dominion Status' to 'complete independence' AND shifts the cause of failure to Congress's 'insistence on immediate implementation.' Students who know Congress wanted immediate power transfer may accept the second part of this statement as broadly true and miss the mischaracterisation of the British offer as 'complete independence.'",
+      "final_explanation": "The Cripps Mission's significance extends across three historical arcs: the Quit India Movement, the Partition, and the independence negotiation trajectory.\n\n• Statement 1 — Correct: The sequence from Cripps failure (April 1942) to Quit India (August 8, 1942) is a direct causal chain. Congress's 'Do or Die' approach was the strategic conclusion of the 'post-dated cheque' logic — if British promises are unreliable, mass pressure is the only tool.\n• Statement 2 — Correct: The non-accession clause legitimised territorial separation as a constitutional option. By making opt-out a right (not a rebellion), it provided the conceptual and constitutional scaffolding for 1947's Partition.\n• Statement 3 — Incorrect: Britain was NOT offering complete independence — the offer was Dominion Status, deferred to after the war. Congress's objections were multiple: the deferral AND the limitation to Dominion Status, AND the defense portfolio, AND the opt-out clause.\n\nValue Addition:\n• The four-month gap between Cripps failure (April) and Quit India (August) reflects Congress's internal deliberations — not impulsive reaction.\n• The Partition of India in 1947 physically enacted what the non-accession clause had constitutionally contemplated in 1942.\n• The Cripps Mission sits at the intersection of WWII strategy, Indian constitutional history, and the independence narrative — a multi-dimensional UPSC topic."
+    }
+  },
+  {
+    "uuid": "d5cf7b71-90ef-4921-920b-7b94f2860668",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Princely States and the Cripps Mission",
+        "Cripps Mission vs. Cabinet Mission (1946): Distinguishing Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Princely states — nominated not elected in Cripps Constituent Assembly",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the Cripps Mission proposals of 1942, how were the princely states to be represented in the proposed Constituent Assembly?\n\n(a) Through representatives nominated by their respective rulers, not through elections by the population of those states\n(b) Through the same proportional representation mechanism as provincial assemblies, with elections held within the princely states\n(c) Only through princely states that had established elected legislative assemblies, which could then elect members to the Constituent Assembly\n(d) Princely states were excluded from the initial Constituent Assembly and were to negotiate their constitutional status separately after the war",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know the Cabinet Mission (1946) integrated princely states into the constitutional process may conflate the two missions' approaches to princely state representation.",
+      "elimination_logic": [
+        "Confirm option (a): Under the Cripps proposals, representatives of princely states were to be NOMINATED by their rulers — not elected by the population.",
+        "Eliminate option (b): The Cabinet Mission, not the Cripps Mission, addressed princely state integration in a more structured way — and even there, the approach was different from direct popular election.",
+        "Eliminate option (c): There was no provision requiring princely states to have elected legislatures before participation — this condition does not appear in the Cripps proposals.",
+        "Eliminate option (d): Princely states were not excluded from the Constituent Assembly — they could participate through nominated representatives."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the Cripps Mission's approach to princely states (nomination by rulers) with the Cabinet Mission's approach (integration with eventual merger). Students who know the Cabinet Mission dealt more definitively with princely states may assume the Cripps proposals also had a more democratic representation mechanism for princes — confusing two different historical frameworks.",
+      "final_explanation": "The representation of princely states in the Cripps Mission's proposed Constituent Assembly had a specific and examinable mechanism.\n\n• Option (a) — Correct: Under the Cripps proposals, princely state representatives to the Constituent Assembly were to be nominated by the rulers of those states. This was in contrast to provincial representatives, who were to be elected by provincial assemblies using proportional representation (single transferable vote).\n• Option (b) — Incorrect: The Cabinet Mission (1946), not the Cripps Mission, addressed princely state representation in a different constitutional context. The approaches of the two missions should not be conflated.\n• Option (c) — Incorrect: No condition requiring elected legislatures as a prerequisite for princely state participation appears in the Cripps proposals.\n• Option (d) — Incorrect: Princely states were not excluded — they had a parallel opt-out right AND could participate through nominated representatives.\n\nValue Addition:\n• The nomination (not election) mechanism for princes was criticised as undemocratic — the populations of princely states had no say.\n• Princely states had both the right to participate AND the right to opt out — a dual constitutional status.\n• The Cabinet Mission eventually envisaged that princely states would merge into the Indian Union — the Cripps proposals were less definitive on this trajectory."
+    },
+    "hi": {
+      "display_text": "1942 के क्रिप्स मिशन प्रस्तावों के तहत, प्रस्तावित संविधान सभा में रियासतों का प्रतिनिधित्व कैसे किया जाना था?\n\n(a) उनके संबंधित शासकों द्वारा नामित प्रतिनिधियों के माध्यम से, न कि उन राज्यों की जनता द्वारा चुनाव के माध्यम से\n(b) प्रांतीय विधानसभाओं के समान अनुपातिक प्रतिनिधित्व तंत्र के माध्यम से, जिसमें रियासतों के भीतर चुनाव होते\n(c) केवल उन रियासतों के माध्यम से जिनके पास निर्वाचित विधानसभाएं स्थापित थीं, जो फिर संविधान सभा के सदस्यों का चुनाव कर सकती थीं\n(d) रियासतों को प्रारंभिक संविधान सभा से बाहर रखा गया था और युद्ध के बाद उनके संवैधानिक दर्जे पर अलग से बातचीत करनी थी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि जो छात्र कैबिनेट मिशन (1946) को जानते हैं जिसने रियासतों को संवैधानिक प्रक्रिया में शामिल किया, वे दोनों मिशनों के रियासत प्रतिनिधित्व के दृष्टिकोण को मिला सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) की पुष्टि करें: क्रिप्स प्रस्तावों के तहत, रियासतों के प्रतिनिधि उनके शासकों द्वारा नामित किए जाने थे — जनता द्वारा निर्वाचित नहीं।",
+        "विकल्प (b) को निरस्त करें: रियासतों के एकीकरण को अधिक संरचित तरीके से संबोधित करने वाला कैबिनेट मिशन था, न कि क्रिप्स मिशन — और वहाँ भी, दृष्टिकोण सीधे लोकप्रिय चुनाव से अलग था।",
+        "विकल्प (c) को निरस्त करें: रियासतों के भागीदारी के लिए निर्वाचित विधानसभाओं की आवश्यकता क्रिप्स प्रस्तावों में नहीं थी।",
+        "विकल्प (d) को निरस्त करें: रियासतों को संविधान सभा से बाहर नहीं रखा गया था — वे नामित प्रतिनिधियों के माध्यम से भाग ले सकते थे।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल क्रिप्स मिशन के रियासतों के लिए नामांकन (शासकों द्वारा) के दृष्टिकोण को कैबिनेट मिशन के दृष्टिकोण (अंततः विलय के साथ एकीकरण) के साथ मिला देता है। जो छात्र जानते हैं कि कैबिनेट मिशन ने रियासतों के साथ अधिक निर्णायक रूप से निपटा, वे मान सकते हैं कि क्रिप्स प्रस्तावों में भी राजाओं के लिए अधिक लोकतांत्रिक प्रतिनिधित्व था — जो दो अलग-अलग ऐतिहासिक ढांचों को भ्रमित करता है।",
+      "final_explanation": "क्रिप्स मिशन के प्रस्तावित संविधान सभा में रियासतों के प्रतिनिधित्व की एक विशिष्ट और परीक्षा योग्य व्यवस्था थी।\n\n• विकल्प (a) — सही: क्रिप्स प्रस्तावों के तहत, रियासतों के प्रतिनिधि उनके शासकों द्वारा नामित किए जाने थे। यह प्रांतीय प्रतिनिधियों से भिन्न था, जिन्हें प्रांतीय विधानसभाओं द्वारा अनुपातिक प्रतिनिधित्व (सिंगल ट्रांसफरेबल वोट) के माध्यम से चुना जाना था।\n• विकल्प (b) — गलत: कैबिनेट मिशन (1946), न कि क्रिप्स मिशन, ने रियासतों के प्रतिनिधित्व को एक अलग संवैधानिक संदर्भ में संबोधित किया। दोनों मिशनों के दृष्टिकोणों को नहीं मिलाना चाहिए।\n• विकल्प (c) — गलत: क्रिप्स प्रस्तावों में रियासतों की भागीदारी के लिए निर्वाचित विधानसभाओं की कोई शर्त नहीं थी।\n• विकल्प (d) — गलत: रियासतों को बाहर नहीं रखा गया था — उनके पास भाग लेने का अधिकार और नामित प्रतिनिधियों के माध्यम से भागीदारी का विकल्प था।\n\nमूल्य संवर्धन:\n• राजाओं के लिए नामांकन (चुनाव नहीं) की व्यवस्था को गैर-लोकतांत्रिक के रूप में आलोचना मिली — रियासतों की जनता की कोई भूमिका नहीं थी।\n• रियासतों के पास भाग लेने का अधिकार और अलग होने का अधिकार दोनों थे — एक द्वैध संवैधानिक स्थिति।\n• कैबिनेट मिशन ने अंततः रियासतों के भारतीय संघ में विलय की कल्पना की — क्रिप्स प्रस्ताव इस मार्ग पर कम निश्चित थे।"
+    }
+  },
+  {
+    "uuid": "aa847f86-8d88-4a49-aa51-ac1a1a55748d",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Cripps Mission vs. Cabinet Mission (1946): Distinguishing Features",
+        "Composition and Mandate of the Mission"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Stafford Cripps — dual role in 1942 and 1946 missions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A senior British politician held an unusual distinction in the constitutional history of India's independence negotiations: he served as the sole British envoy in one mission to India during World War II, and then returned four years later as one of three members of a second, more senior constitutional mission. The second mission explicitly rejected the partition of India, in contrast to the first mission's proposals, which had implicitly acknowledged the possibility of territorial separation.\n\nWhich of the following correctly describes this politician's roles in the two missions?\n\n(a) He led both missions as the sole envoy, and the difference between the two missions lay only in the scope of constitutional concessions offered\n(b) He was the sole British envoy in 1942, and then one of three members of the Cabinet Mission of 1946, alongside Pethick-Lawrence and A.V. Alexander\n(c) He participated only in the 1942 mission as sole envoy; his role concluded with its failure, and he was not part of the 1946 constitutional mission\n(d) He was one of three members in both the 1942 and 1946 missions, though his personal role was more prominent in the 1942 mission than in 1946",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because students who associate the 1946 Cabinet Mission with 'three members' may correctly recall this but then misidentify Cripps's role, assuming he only led the 1942 mission and was not in 1946.",
+      "elimination_logic": [
+        "Eliminate option (a): The 1942 mission was solo; the 1946 mission had three members — the description 'led both as sole envoy' is false for 1946.",
+        "Confirm option (b): Cripps was the sole envoy in 1942 AND one of three members (with Pethick-Lawrence and A.V. Alexander) of the Cabinet Mission in 1946 — this correctly describes his dual participation.",
+        "Eliminate option (c): Cripps was indeed part of the 1946 Cabinet Mission — option (c) incorrectly states he was only in 1942.",
+        "Eliminate option (d): The description conflates the two missions by implying the 1942 mission also had three members — it did not."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the composition details of the two missions. Students who strongly associate Cripps with 1942 as the sole envoy may not recall his equal importance in 1946 as one of three Cabinet Mission members. Option (c) exploits this by stating he was 'only the 1942 envoy' — which many partially prepared students will accept without questioning.",
+      "final_explanation": "This scenario tests one of the most UPSC-exploited facts about Stafford Cripps — his unique participation in both the 1942 and 1946 constitutional missions to India.\n\nThe scenario describes a statesman who served in two distinct constitutional roles with India. The answer is Stafford Cripps:\n\n• Option (a) — Incorrect: Cripps was the sole envoy in 1942 but was one of three members (not sole) in the 1946 Cabinet Mission. 'Led both as sole envoy' is factually wrong for 1946.\n• Option (b) — Correct: In 1942, Cripps was the sole War Cabinet envoy to India. In 1946, he was one of three members of the Cabinet Mission, alongside Pethick-Lawrence (Secretary of State) and A.V. Alexander (First Lord of the Admiralty). He uniquely bridged both missions.\n• Option (c) — Incorrect: Cripps was not 'only' part of the 1942 mission — he was equally a member of the 1946 Cabinet Mission.\n• Option (d) — Incorrect: The 1942 mission was not a three-member body — Cripps was the sole envoy. This option fabricates a three-member 1942 structure.\n\nValue Addition:\n• No other British politician participated in both the 1942 and 1946 constitutional missions — Cripps's dual role is historically unique.\n• The 1946 Cabinet Mission rejected partition; the 1942 mission implicitly allowed it — Cripps's position evolved between the two.\n• Pethick-Lawrence, Cripps, and A.V. Alexander — the three Cabinet Mission members — is a standard UPSC identification fact."
+    },
+    "hi": {
+      "display_text": "भारत की स्वतंत्रता वार्ता के संवैधानिक इतिहास में एक वरिष्ठ ब्रिटिश राजनेता की एक असामान्य विशिष्टता थी: उन्होंने द्वितीय विश्व युद्ध के दौरान भारत के लिए एक मिशन में एकमात्र ब्रिटिश दूत के रूप में सेवा दी, और फिर चार वर्ष बाद एक दूसरे, अधिक वरिष्ठ संवैधानिक मिशन के तीन सदस्यों में से एक के रूप में लौटे। दूसरा मिशन भारत के विभाजन को स्पष्ट रूप से अस्वीकार करता था, जबकि पहले मिशन के प्रस्तावों ने क्षेत्रीय पृथक्करण की संभावना को अप्रत्यक्ष रूप से स्वीकार किया था।\n\nनिम्नलिखित में से कौन-सा इस राजनेता की दोनों मिशनों में भूमिकाओं का सही वर्णन करता है?\n\n(a) उन्होंने दोनों मिशनों का एकमात्र दूत के रूप में नेतृत्व किया, और दोनों मिशनों के बीच अंतर केवल संवैधानिक रियायतों के दायरे में था\n(b) वह 1942 में एकमात्र ब्रिटिश दूत थे, और फिर 1946 के कैबिनेट मिशन के तीन सदस्यों में से एक थे, पैथिक-लॉरेंस और ए.वी. अलेक्जेंडर के साथ\n(c) उन्होंने केवल 1942 के मिशन में एकमात्र दूत के रूप में भाग लिया; उनकी भूमिका इसके विफल होने पर समाप्त हो गई, और वह 1946 के संवैधानिक मिशन का हिस्सा नहीं थे\n(d) वह 1942 और 1946 दोनों मिशनों में तीन सदस्यों में से एक थे, हालांकि उनकी व्यक्तिगत भूमिका 1942 के मिशन में 1946 की तुलना में अधिक प्रमुख थी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि जो छात्र 1946 के कैबिनेट मिशन को 'तीन सदस्यों' से जोड़ते हैं, वे इसे सही याद कर सकते हैं लेकिन फिर क्रिप्स की भूमिका को गलत पहचानते हैं, यह मानते हुए कि वह केवल 1942 के मिशन का नेतृत्व करते थे और 1946 में नहीं थे।",
+      "elimination_logic": [
+        "विकल्प (a) को निरस्त करें: 1942 का मिशन अकेला था; 1946 के मिशन में तीन सदस्य थे — 'दोनों का एकमात्र दूत के रूप में नेतृत्व किया' कथन 1946 के लिए गलत है।",
+        "विकल्प (b) को सही मानें: क्रिप्स 1942 में एकमात्र दूत थे और 1946 के कैबिनेट मिशन के तीन सदस्यों में से एक थे (पैथिक-लॉरेंस और ए.वी. अलेक्जेंडर के साथ) — यह उनके दोहरे भागीदारी का सही वर्णन है।",
+        "विकल्प (c) को निरस्त करें: क्रिप्स वास्तव में 1946 के कैबिनेट मिशन का हिस्सा थे — विकल्प (c) गलत रूप से कहता है कि वह केवल 1942 में थे।",
+        "विकल्प (d) को निरस्त करें: यह विवरण दोनों मिशनों को मिलाकर 1942 के मिशन में भी तीन सदस्य होने का भ्रम पैदा करता है — ऐसा नहीं था।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल दोनों मिशनों की संरचना विवरणों को मिला देता है। जो छात्र क्रिप्स को 1942 के एकमात्र दूत के रूप में जोड़ते हैं, वे 1946 में उनके समान महत्व को याद नहीं कर पाते। विकल्प (c) इस भ्रम का फायदा उठाता है यह कहकर कि वह 'केवल 1942 के दूत' थे — जिसे कई आंशिक रूप से तैयार छात्र बिना जांच के स्वीकार कर लेते हैं।",
+      "final_explanation": "यह परिदृश्य स्टैफर्ड क्रिप्स के बारे में UPSC द्वारा सबसे अधिक उपयोग किए जाने वाले तथ्यों में से एक का परीक्षण करता है — उनका 1942 और 1946 दोनों संवैधानिक मिशनों में अनूठा भाग।\n\nयह परिदृश्य एक ऐसे राजनेता का वर्णन करता है जिसने भारत के दो अलग-अलग संवैधानिक मिशनों में सेवा दी। उत्तर है स्टैफर्ड क्रिप्स:\n\n• विकल्प (a) — गलत: क्रिप्स 1942 में एकमात्र दूत थे लेकिन 1946 के कैबिनेट मिशन में तीन सदस्यों में से एक थे (एकमात्र नहीं)। 'दोनों का एकमात्र दूत के रूप में नेतृत्व किया' 1946 के लिए तथ्यात्मक रूप से गलत है।\n• विकल्प (b) — सही: 1942 में, क्रिप्स युद्ध कैबिनेट के एकमात्र दूत थे। 1946 में, वह कैबिनेट मिशन के तीन सदस्यों में से एक थे, जिनमें पैथिक-लॉरेंस (राज्य सचिव) और ए.वी. अलेक्जेंडर (फर्स्ट लॉर्ड ऑफ द एडमिरल्टी) शामिल थे। उन्होंने दोनों मिशनों को अनूठे रूप से जोड़ा।\n• विकल्प (c) — गलत: क्रिप्स केवल 1942 के मिशन का हिस्सा नहीं थे — वह 1946 के कैबिनेट मिशन के भी सदस्य थे।\n• विकल्प (d) — गलत: 1942 का मिशन तीन सदस्यों वाला नहीं था — क्रिप्स एकमात्र दूत थे। यह विकल्प 1942 के तीन सदस्यीय ढांचे का निर्माण करता है।\n\nमूल्यवर्धन:\n• कोई अन्य ब्रिटिश राजनेता 1942 और 1946 दोनों संवैधानिक मिशनों में भाग नहीं लिया — क्रिप्स की दोहरी भूमिका ऐतिहासिक रूप से अनूठी है।\n• 1946 का कैबिनेट मिशन विभाजन को अस्वीकार करता था; 1942 का मिशन अप्रत्यक्ष रूप से इसे स्वीकार करता था — क्रिप्स की स्थिति दोनों के बीच विकसित हुई।\n• पैथिक-लॉरेंस, क्रिप्स, और ए.वी. अलेक्जेंडर — ये तीन कैबिनेट मिशन के सदस्य हैं — UPSC की मानक पहचान तथ्य है।"
+    }
+  },
+  {
+    "uuid": "eb273b51-4867-44af-807a-368be909a9b4",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Towards Independence",
+      "sub_topic": "Cripps Mission",
+      "concepts_used": [
+        "Failure Analysis: Why the Cripps Mission Failed — Multi-Causal Assessment",
+        "The Defense Portfolio Deadlock",
+        "Congress Response and Rejection of the Cripps Proposals"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Defense deadlock — proximate vs. structural cause distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the breakdown of the Cripps Mission:\n\nAssertion (A): The defense portfolio deadlock — specifically the War Cabinet's rejection of the Cripps-Azad formula — served as the immediate and proximate trigger for the breakdown of negotiations.\n\nReason (R): The Congress objection to the non-accession clause, which they argued constituted the 'Balkanisation' of India, was the specific and immediate trigger that caused the final breakdown of the Cripps Mission negotiations.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1 — Is A correct? Yes: The defense portfolio deadlock is consistently identified by historians as the immediate proximate cause of the mission's breakdown — the rejection of the Cripps-Azad formula by London triggered the final collapse.",
+        "Step 2 — Is R correct? No: The non-accession clause was a real Congress grievance, but it was a structural objection present from the beginning — it did not become the specific immediate trigger of the breakdown. The defense question was the immediate cause; the non-accession clause was a deeper structural grievance that made the mission unlikely to succeed regardless.",
+        "Step 3 — (Not needed since R is incorrect): A is correct, R is incorrect — select option (c).",
+        "A correct + R incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "R is a partial truth: the non-accession clause WAS a Congress objection and DID contribute to the mission's failure. However, characterising it as the 'immediate trigger' is incorrect — that role belongs to the defense portfolio deadlock. Students who know Congress objected to the non-accession clause may mark R as correct, selecting option (a) or (b) rather than (c). The distinction between immediate cause (defense) and structural cause (non-accession clause) is the precise factual test here.",
+      "final_explanation": "This question tests the distinction between immediate and structural causes — a classic analytical challenge in UPSC questions on historical failures.\n\nAssertion (A) is correct: The defense portfolio deadlock was the immediate, proximate trigger for the Cripps Mission's collapse. The Cripps-Azad formula represented the closest point of potential agreement — when London rejected it via restrictive instructions, the specific trigger for breakdown was pulled. Congress withdrew when the defense question could not be resolved.\n\nReason (R) is incorrect: While the non-accession clause was a genuine and deep Congress grievance, it was a structural objection that was apparent from the moment the proposals were presented. It was NOT the specific trigger that caused the breakdown in April 1942. Calling it the 'immediate trigger' misidentifies the causal sequence. The defense deadlock emerged in real-time negotiation and was the proximate cause.\n\nConclusion: A is correct, R is incorrect — option (c).\n\nValue Addition:\n• Distinguishing between immediate cause (defense deadlock) and structural cause (opt-out clause, post-war deferral) is a recurring UPSC analytical requirement.\n• Congress raised the non-accession clause objection from the outset but continued negotiating — showing it was not the immediate dealbreaker.\n• The defense formula rejection by London is the single most datable event in the mission's failure timeline."
+    },
+    "hi": {
+      "display_text": "क्रिप्स मिशन के विफल होने के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन (A): रक्षा पोर्टफोलियो गतिरोध — विशेष रूप से युद्ध कैबिनेट द्वारा क्रिप्स-अज़ाद सूत्र का अस्वीकार — वार्ता के टूटने का तत्काल और निकटतम ट्रिगर था।\n\nकथन (R): कांग्रेस की गैर-प्रवेश खंड के प्रति आपत्ति, जिसे उन्होंने भारत के 'बाल्कनीकरण' के रूप में वर्णित किया, क्रिप्स मिशन वार्ता के अंतिम टूटने का विशिष्ट और तत्काल ट्रिगर था।\n\n(a) A और R दोनों सही हैं तथा R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं परंतु R, A की सही व्याख्या नहीं है\n(c) A सही है परंतु R सही नहीं है\n(d) A सही नहीं है परंतु R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1 — क्या A सही है? हाँ: रक्षा पोर्टफोलियो गतिरोध को इतिहासकारों द्वारा मिशन के विफल होने का तत्काल निकटतम कारण माना जाता है — लंदन द्वारा क्रिप्स-अज़ाद सूत्र को अस्वीकार करना अंतिम पतन का कारण बना।",
+        "चरण 2 — क्या R सही है? नहीं: गैर-प्रवेश खंड कांग्रेस की वास्तविक आपत्ति थी, लेकिन यह एक संरचनात्मक आपत्ति थी जो शुरू से मौजूद थी — यह टूटने का तत्काल कारण नहीं बनी। रक्षा प्रश्न तत्काल कारण था; गैर-प्रवेश खंड एक गहरी संरचनात्मक आपत्ति थी जिसने मिशन की सफलता को असंभव बना दिया।",
+        "चरण 3 — (आवश्यक नहीं क्योंकि R गलत है): A सही है, R गलत है — विकल्प (c) चुनें।",
+        "A सही + R गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "R आंशिक सत्य है: गैर-प्रवेश खंड कांग्रेस की आपत्ति थी और इसने मिशन की विफलता में योगदान दिया। हालांकि, इसे 'तत्काल ट्रिगर' कहना गलत है — वह भूमिका रक्षा पोर्टफोलियो गतिरोध की है। जो छात्र जानते हैं कि कांग्रेस ने गैर-प्रवेश खंड का विरोध किया, वे R को सही मानकर विकल्प (a) या (b) चुन सकते हैं बजाय (c) के। तत्काल कारण (रक्षा) और संरचनात्मक कारण (गैर-प्रवेश खंड) के बीच का अंतर यहाँ तथ्यात्मक परीक्षण है।",
+      "final_explanation": "यह प्रश्न तत्काल और संरचनात्मक कारणों के बीच अंतर को परखता है — जो UPSC के ऐतिहासिक विफलताओं पर आधारित विश्लेषणात्मक चुनौती है।\n\nकथन (A) सही है: रक्षा पोर्टफोलियो गतिरोध क्रिप्स मिशन के पतन का तत्काल, निकटतम ट्रिगर था। क्रिप्स-अज़ाद सूत्र संभावित समझौते का सबसे निकट बिंदु था — जब लंदन ने इसे प्रतिबंधात्मक निर्देशों के माध्यम से अस्वीकार किया, तो टूटने का विशिष्ट ट्रिगर सक्रिय हुआ। कांग्रेस ने रक्षा प्रश्न के अनसुलझे रहने पर वापसी की।\n\nकथन (R) गलत है: गैर-प्रवेश खंड कांग्रेस की वास्तविक और गहरी आपत्ति थी, लेकिन यह एक संरचनात्मक आपत्ति थी जो प्रस्ताव प्रस्तुत होते ही स्पष्ट थी। यह अप्रैल 1942 में टूटने का विशिष्ट ट्रिगर नहीं था। इसे 'तत्काल ट्रिगर' कहना कारणात्मक क्रम की गलत पहचान है। रक्षा गतिरोध वास्तविक समय की बातचीत में उभरा और निकटतम कारण था।\n\nनिष्कर्ष: A सही है, R गलत है — विकल्प (c)।\n\nमूल्य संवर्धन:\n• तत्काल कारण (रक्षा गतिरोध) और संरचनात्मक कारण (गैर-प्रवेश खंड, युद्धोपरांत स्थगन) के बीच भेद UPSC के विश्लेषणात्मक प्रश्नों में बार-बार आता है।\n• कांग्रेस ने शुरू से ही गैर-प्रवेश खंड का विरोध किया लेकिन बातचीत जारी रखी — जो दिखाता है कि यह तत्काल सौदा तोड़ने वाला कारण नहीं था।\n• लंदन द्वारा रक्षा सूत्र का अस्वीकार मिशन की विफलता की सबसे सटीक तिथि वाली घटना है।"
+    }
+  }
+]

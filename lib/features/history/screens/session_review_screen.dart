@@ -77,11 +77,10 @@ class SessionReviewScreen extends HookConsumerWidget {
               onAddToRevision: () async {
                 if (queue.value[q.uuid] == true) return;
                 final userDb = ref.read(userDatabaseProvider);
-                await userDb.revisionQueueDao.insertOrUpdateRevisionItem(
+                await userDb.revisionQueueDao.add(
                   id: reviewSessionUuid.v4(),
                   questionUuid: q.uuid,
-                  addedAt: DateTime.now(),
-                  reason: 'bookmarked',
+                  dateAddedToQueue: DateTime.now(),
                 );
                 queue.value = {...queue.value, q.uuid: true};
               },

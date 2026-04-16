@@ -49,7 +49,7 @@ final class TestCatalogRepositoryProvider
 }
 
 String _$testCatalogRepositoryHash() =>
-    r'1d08712620f8c907f7f34f98f5492b9d66c975bd';
+    r'c1ade1a947ce8ba35d48874f2c39543da8cc370a';
 
 @ProviderFor(getSubjectListUseCase)
 final getSubjectListUseCaseProvider = GetSubjectListUseCaseProvider._();
@@ -175,7 +175,7 @@ final class CreateSessionRepositoryProvider
 }
 
 String _$createSessionRepositoryHash() =>
-    r'48d2120a75eb2622f69ea2b1794fb17bfb9e5c1d';
+    r'7ce4b1b1c7b25023d88433647953cfc757ff0746';
 
 @ProviderFor(createSessionUseCase)
 final createSessionUseCaseProvider = CreateSessionUseCaseProvider._();
@@ -348,7 +348,7 @@ final class TopicTestTopicsProvider
   }
 }
 
-String _$topicTestTopicsHash() => r'779ddde2c438fb8e6aba014e5d5b1f1e53de6024';
+String _$topicTestTopicsHash() => r'6ac2c4d29f0af742877b65de687526d9b39af214';
 
 final class TopicTestTopicsFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<List<TopicInfo>>, String> {
@@ -361,8 +361,8 @@ final class TopicTestTopicsFamily extends $Family
         isAutoDispose: true,
       );
 
-  TopicTestTopicsProvider call(String subjectSlug) =>
-      TopicTestTopicsProvider._(argument: subjectSlug, from: this);
+  TopicTestTopicsProvider call(String subject) =>
+      TopicTestTopicsProvider._(argument: subject, from: this);
 
   @override
   String toString() => r'topicTestTopicsProvider';
@@ -408,7 +408,7 @@ final class TestEngineRepositoryProvider
 }
 
 String _$testEngineRepositoryHash() =>
-    r'10c63b6e8edbc2c1d672ddad50da863eb48900b9';
+    r'd4aae35a23c1fff1c2c45b0d69645c55eb7b6be8';
 
 @ProviderFor(loadSessionUseCase)
 final loadSessionUseCaseProvider = LoadSessionUseCaseProvider._();
@@ -989,7 +989,7 @@ final class SessionSummariesProvider
         $FutureProvider<List<SessionSummary>> {
   SessionSummariesProvider._({
     required SessionSummariesFamily super.from,
-    required ({String? subjectSlug, String? mode}) super.argument,
+    required ({String? subject, String? mode}) super.argument,
   }) : super(
          retry: null,
          name: r'sessionSummariesProvider',
@@ -1016,10 +1016,10 @@ final class SessionSummariesProvider
 
   @override
   FutureOr<List<SessionSummary>> create(Ref ref) {
-    final argument = this.argument as ({String? subjectSlug, String? mode});
+    final argument = this.argument as ({String? subject, String? mode});
     return sessionSummaries(
       ref,
-      subjectSlug: argument.subjectSlug,
+      subject: argument.subject,
       mode: argument.mode,
     );
   }
@@ -1035,13 +1035,13 @@ final class SessionSummariesProvider
   }
 }
 
-String _$sessionSummariesHash() => r'd2a9f807e30e55b31f34090c09d650e7b8a19e61';
+String _$sessionSummariesHash() => r'5e836e5bf1bb26ee1e59bdc2cb0d69999db5c231';
 
 final class SessionSummariesFamily extends $Family
     with
         $FunctionalFamilyOverride<
           FutureOr<List<SessionSummary>>,
-          ({String? subjectSlug, String? mode})
+          ({String? subject, String? mode})
         > {
   SessionSummariesFamily._()
     : super(
@@ -1052,9 +1052,9 @@ final class SessionSummariesFamily extends $Family
         isAutoDispose: true,
       );
 
-  SessionSummariesProvider call({String? subjectSlug, String? mode}) =>
+  SessionSummariesProvider call({String? subject, String? mode}) =>
       SessionSummariesProvider._(
-        argument: (subjectSlug: subjectSlug, mode: mode),
+        argument: (subject: subject, mode: mode),
         from: this,
       );
 
@@ -1136,7 +1136,7 @@ final class RevisionRepositoryProvider
 }
 
 String _$revisionRepositoryHash() =>
-    r'0faa61cf39c1e6e4736c559e35f42bf0cdae0618';
+    r'bba595dacfed42f553c67f0e393dac6f63262a4f';
 
 @ProviderFor(getRevisionQueueUseCase)
 final getRevisionQueueUseCaseProvider = GetRevisionQueueUseCaseProvider._();
@@ -1264,7 +1264,7 @@ final class BookmarksRepositoryProvider
 }
 
 String _$bookmarksRepositoryHash() =>
-    r'ffc265d53bfb6c9dc4dad290404f5dee6eb7f7a5';
+    r'25201f681e57a194a59b488c85d47edfeb9121f8';
 
 @ProviderFor(getBookmarksUseCase)
 final getBookmarksUseCaseProvider = GetBookmarksUseCaseProvider._();
@@ -1596,3 +1596,37 @@ final class HomeStateProvider
 }
 
 String _$homeStateHash() => r'ccb5a4770d9cf916e580701e63d06e5446326c9d';
+
+@ProviderFor(totalQuestionCount)
+final totalQuestionCountProvider = TotalQuestionCountProvider._();
+
+final class TotalQuestionCountProvider
+    extends $FunctionalProvider<AsyncValue<int>, int, FutureOr<int>>
+    with $FutureModifier<int>, $FutureProvider<int> {
+  TotalQuestionCountProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'totalQuestionCountProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$totalQuestionCountHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<int> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<int> create(Ref ref) {
+    return totalQuestionCount(ref);
+  }
+}
+
+String _$totalQuestionCountHash() =>
+    r'94994b6afd1b2423b3707fd5f1769f6889262d14';

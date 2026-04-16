@@ -176,6 +176,13 @@ class _TestEngineLoaded extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
+    final sessionLanguage = ref.watch(
+          testSessionProvider(
+            sessionId,
+          ).select((a) => a.asData?.value.session?.language),
+        ) ??
+        'en';
+    final uiLanguage = useState(sessionLanguage);
     final showBanner = ref.watch(
       testSessionProvider(
         sessionId,
@@ -203,10 +210,15 @@ class _TestEngineLoaded extends HookConsumerWidget {
               ),
             ),
           ),
-        _TopBar(sessionId: sessionId),
+        _TopBar(
+          sessionId: sessionId,
+          uiLanguage: uiLanguage.value,
+          onLanguageChanged: (value) => uiLanguage.value = value,
+        ),
         Expanded(
           child: _QuestionArea(
             sessionId: sessionId,
+            uiLanguage: uiLanguage.value,
             onSelectOption: notifier.selectOption,
           ),
         ),
@@ -347,9 +359,15 @@ Future<void> _showTestSubmitSheet(
 }
 
 class _TopBar extends HookConsumerWidget {
-  const _TopBar({required this.sessionId});
+  const _TopBar({
+    required this.sessionId,
+    required this.uiLanguage,
+    required this.onLanguageChanged,
+  });
 
   final String sessionId;
+  final String uiLanguage;
+  final ValueChanged<String> onLanguageChanged;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -366,8 +384,8 @@ class _TopBar extends HookConsumerWidget {
           v.currentIndex,
           s.questions.length,
           s.mode,
-          s.subjectSlug,
-          s.topicSlug,
+          s.subject,
+          s.topic,
           q.flagged,
           v.explanationVisible,
           v.bookmarkedByUuid[q.uuid] ?? false,
@@ -381,19 +399,19 @@ class _TopBar extends HookConsumerWidget {
       currentIndex,
       qLen,
       mode,
-      subjectSlug,
-      topicSlug,
+      subject,
+      topic,
       flagged,
       explanationVisible,
       bookmarked,
     ) = snap;
 
     final subj =
-        subjectSlug == 'revision'
+        subject == 'revision'
             ? 'Revision'
-            : (SubjectConstants.bySlug(subjectSlug)?.displayName ??
-                subjectSlug);
-    final contextText = topicSlug == null ? subj : '$subj · $topicSlug';
+            : (SubjectConstants.bySlug(subject)?.displayName ??
+                subject);
+    final contextText = topic == null ? subj : '$subj · $topic';
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -423,6 +441,18 @@ class _TopBar extends HookConsumerWidget {
               ],
             ),
           ),
+          const SizedBox(width: AppSpacing.sm),
+          ToggleButtons(
+            isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
+            onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
+            borderRadius: BorderRadius.circular(AppRadius.sm),
+            constraints: const BoxConstraints(minHeight: 28, minWidth: 40),
+            children: const [
+              Padding(padding: EdgeInsets.symmetric(horizontal: 8), child: Text('EN')),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 8), child: Text('HI')),
+            ],
+          ),
+          const SizedBox(width: AppSpacing.sm),
           if (!(mode == 'learning' && explanationVisible))
             InkWell(
               onTap:
@@ -554,9 +584,14 @@ class _TopBarTimerLabel extends HookConsumerWidget {
 }
 
 class _QuestionArea extends HookConsumerWidget {
-  const _QuestionArea({required this.sessionId, required this.onSelectOption});
+  const _QuestionArea({
+    required this.sessionId,
+    required this.uiLanguage,
+    required this.onSelectOption,
+  });
 
   final String sessionId;
+  final String uiLanguage;
   final Future<void> Function(String option) onSelectOption;
 
   @override
@@ -577,6 +612,13 @@ class _QuestionArea extends HookConsumerWidget {
     if (snap == null) return const SizedBox.shrink();
 
     final (mode, explanationVisible, learningVerdict, question) = snap;
+    final isHindi = uiLanguage == 'hi';
+    final displayText = isHindi ? question.displayTextHi : question.displayText;
+    final optionA = isHindi ? question.optionAHi : question.optionA;
+    final optionB = isHindi ? question.optionBHi : question.optionB;
+    final optionC = isHindi ? question.optionCHi : question.optionC;
+    final optionD = isHindi ? question.optionDHi : question.optionD;
+    final tableData = isHindi ? question.tableDataHi : question.tableData;
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -585,17 +627,17 @@ class _QuestionArea extends HookConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            question.displayText,
+            displayText,
             style: AppTextStyles.question().copyWith(color: scheme.onSurface),
           ),
-          if (question.hasTable && question.tableData != null) ...[
+          if (question.hasTable && tableData != null) ...[
             const SizedBox(height: AppSpacing.lg),
-            _QuestionTable(table: question.tableData!),
+            _QuestionTable(table: tableData),
           ],
           const SizedBox(height: AppSpacing.lg),
           _OptionRow(
             keyLabel: 'A',
-            optionText: question.optionA,
+            optionText: optionA,
             visual: _optionVisual(mode, question, 'a', explanationVisible),
             onTap:
                 (mode == 'learning' && explanationVisible)
@@ -605,7 +647,7 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
             keyLabel: 'B',
-            optionText: question.optionB,
+            optionText: optionB,
             visual: _optionVisual(mode, question, 'b', explanationVisible),
             onTap:
                 (mode == 'learning' && explanationVisible)
@@ -615,7 +657,7 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
             keyLabel: 'C',
-            optionText: question.optionC,
+            optionText: optionC,
             visual: _optionVisual(mode, question, 'c', explanationVisible),
             onTap:
                 (mode == 'learning' && explanationVisible)
@@ -625,7 +667,7 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
             keyLabel: 'D',
-            optionText: question.optionD,
+            optionText: optionD,
             visual: _optionVisual(mode, question, 'd', explanationVisible),
             onTap:
                 (mode == 'learning' && explanationVisible)
@@ -640,6 +682,7 @@ class _QuestionArea extends HookConsumerWidget {
                   explanationVisible
                       ? _ExplanationCard(
                         question: question,
+                        uiLanguage: uiLanguage,
                         verdict: learningVerdict,
                       )
                       : const SizedBox.shrink(),
@@ -829,15 +872,36 @@ class _QuestionTable extends HookConsumerWidget {
 }
 
 class _ExplanationCard extends HookConsumerWidget {
-  const _ExplanationCard({required this.question, required this.verdict});
+  const _ExplanationCard({
+    required this.question,
+    required this.uiLanguage,
+    required this.verdict,
+  });
 
   final TestQuestion question;
+  final String uiLanguage;
   final LearningVerdict? verdict;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isHindi = uiLanguage == 'hi';
+    final finalExplanation = isHindi
+        ? question.finalExplanationHi
+        : question.finalExplanation;
+    final statementAnalysis = isHindi
+        ? question.statementAnalysisHi
+        : question.statementAnalysis;
+    final eliminationLogic = isHindi
+        ? question.eliminationLogicHi
+        : question.eliminationLogic;
+    final strongDistractor = isHindi
+        ? question.strongDistractorHi
+        : question.strongDistractor;
+    final upscTrapExplanation = isHindi
+        ? question.upscTrapExplanationHi
+        : question.upscTrapExplanation;
 
     final (badgeBg, badgeText, label) = switch (verdict) {
       LearningVerdict.correct => (
@@ -902,9 +966,9 @@ class _ExplanationCard extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.xs),
           ExplanationCard(
             translation: QuestionTranslation(
-              finalExplanation: question.finalExplanation,
+              finalExplanation: finalExplanation,
               statementAnalysis:
-                  question.statementAnalysis
+                  statementAnalysis
                       .map(
                         (e) => StatementAnalysisVm(
                           statement: e.label,
@@ -913,12 +977,12 @@ class _ExplanationCard extends HookConsumerWidget {
                         ),
                       )
                       .toList(),
-              eliminationLogic: question.eliminationLogic,
-              strongDistractor: question.strongDistractor,
-              upscTrapExplanation: question.upscTrapExplanation,
+              eliminationLogic: eliminationLogic,
+              strongDistractor: strongDistractor,
+              upscTrapExplanation: upscTrapExplanation,
               conceptsUsed: question.conceptsUsed,
             ),
-            showStatements: question.statementAnalysis.isNotEmpty,
+            showStatements: statementAnalysis.isNotEmpty,
           ),
         ],
       ),

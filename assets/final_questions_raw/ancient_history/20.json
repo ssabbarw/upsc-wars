@@ -1,0 +1,296 @@
+[
+  {
+    "uuid": "8659f61d-cb30-492e-8104-c96ac86e8caa",
+    "en": {
+      "meta": {
+        "uuid": "8659f61d-cb30-492e-8104-c96ac86e8caa",
+        "language": "en",
+        "subject": "Ancient History",
+        "topic": "Education and Learning Centres",
+        "sub_topic": "Decline of ancient education centres",
+        "concepts_used": [
+          "Destruction of Nalanda University: Causes and Chronology"
+        ],
+        "subject_que_no": 662,
+        "overall_que_no": 662
+      },
+      "solution": {
+        "correct_option": "b",
+        "question_type": "direct",
+        "trap_type": "conflation",
+        "concept_anchor": "Multi-phase destruction of Nalanda University",
+        "statement_analysis": null,
+        "strong_distractor": "a — Option (a) is a strong distractor because Bakhtiyar Khilji's raid is the most popularly cited event and many students attribute the entirety of Nalanda's destruction to him, overlooking earlier phases of damage.",
+        "elimination_logic": [
+          "Eliminate any option that treats Bakhtiyar Khilji's raid as both the first and only episode of destruction — Nalanda suffered earlier attacks by Hunas and Gaudas before 1193 CE.",
+          "Eliminate any option claiming Nalanda was unaffected before the 12th century — Chinese pilgrims document strain by the late 7th century.",
+          "Retain the option acknowledging a multi-phase destruction process where Bakhtiyar Khilji's 1193 CE raid was the final, decisive blow, not the sole cause."
+        ],
+        "upsc_trap_explanation": "The classic trap here is conflation: students associate Nalanda's destruction exclusively with Bakhtiyar Khilji's 1193 CE raid because it is the most dramatic and widely taught episode. This collapses a multi-phase process into a single event. Earlier raids by the Hunas and the Gauda ruler had already damaged the institution, and internal intellectual and economic decay had set in well before the Turkic invasion. A student who has memorised only the 1193 CE date will choose option (a), missing the broader pattern.",
+        "final_explanation": "Nalanda's fall was not a single catastrophic event but a process unfolding over centuries. The institution suffered military damage at the hands of the Hunas and the Gauda ruler Shashanka even before the 12th century. Yijing's late 7th-century account already hints at institutional strain. Bakhtiyar Khilji's 1193 CE raid delivered the final blow to a structure that had already been weakened by prior attacks, patronage withdrawal, and internal ritualistic decay.\n\n• Option (a): Incorrect — attributes Nalanda's destruction entirely to Bakhtiyar Khilji's 1193 CE raid, ignoring prior Huna and Gauda attacks and internal decline.\n• Option (b): Correct — accurately reflects the multi-phase nature of destruction where the 1193 CE raid was the concluding episode of a longer decline.\n• Option (c): Incorrect — Nalanda did face military attacks; dismissing all military causes distorts the historical record.\n• Option (d): Incorrect — Xuanzang (7th CE) describes Nalanda at its peak, not in ruins; decline was documented later by Dharmasvamin in the 13th century.\n\nValue Addition:\n• Shashanka, a Shaiva king of Gauda, is associated with early hostility toward Buddhist institutions in the 7th century CE.\n• Dharmasvamin's 13th-century account is the primary textual evidence for Nalanda's post-raid ruined state.\n• The multi-causal framework (invasion + patronage loss + internal decay) is the UPSC-preferred analytical approach for institutional decline questions."
+      },
+      "formatted_presentation": {
+        "has_table": false,
+        "display_text": "Which of the following most accurately characterises the destruction of Nalanda University?\n\n(a) Nalanda was destroyed solely by Bakhtiyar Khilji's military raid in 1193 CE, which constitutes both the beginning and the end of its decline.\n(b) Nalanda's destruction was a multi-phase process, with earlier damage from Huna and Gauda raids, and Bakhtiyar Khilji's 1193 CE attack serving as the final blow to an already weakened institution.\n(c) Nalanda declined purely due to internal intellectual stagnation and ritualism, with military attacks playing no significant role.\n(d) Xuanzang's 7th-century account already describes Nalanda in a state of ruin, confirming that its destruction preceded the medieval Turkic invasions.",
+        "table_data": null
+      }
+    },
+    "hi": {
+      "questions": [
+        {
+          "meta": {
+            "uuid": "8659f61d-cb30-492e-8104-c96ac86e8caa",
+            "language": "en",
+            "subject": "Ancient History",
+            "topic": "Education and Learning Centres",
+            "sub_topic": "Decline of ancient education centres",
+            "concepts_used": [
+              "Destruction of Nalanda University: Causes and Chronology"
+            ],
+            "subject_que_no": 662,
+            "overall_que_no": 662
+          },
+          "solution": {
+            "correct_option": "b",
+            "question_type": "direct",
+            "trap_type": "conflation",
+            "concept_anchor": "Multi-phase destruction of Nalanda University",
+            "statement_analysis": null,
+            "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि बख्तियार खिलजी के आक्रमण को सबसे अधिक लोकप्रिय घटना माना जाता है और कई छात्र नालंदा के संपूर्ण विनाश को केवल उसी से जोड़ते हैं, जबकि पहले के चरणों की क्षति को नजरअंदाज करते हैं।",
+            "elimination_logic": [
+              "ऐसे किसी भी विकल्प को हटा दें जो बख्तियार खिलजी के आक्रमण को विनाश की पहली और एकमात्र घटना मानता हो — नालंदा को 1193 ईस्वी से पहले हूणों और गौड़ों के हमलों का सामना करना पड़ा था।",
+              "ऐसे किसी भी विकल्प को हटा दें जो कहता हो कि नालंदा 12वीं सदी से पहले अप्रभावित था — चीनी तीर्थयात्रियों ने 7वीं सदी के अंत तक तनाव का उल्लेख किया है।",
+              "ऐसे विकल्प को बनाए रखें जो बहु-चरणीय विनाश प्रक्रिया को स्वीकार करता हो, जिसमें बख्तियार खिलजी का 1193 ईस्वी का आक्रमण अंतिम और निर्णायक प्रहार था, न कि एकमात्र कारण।"
+            ],
+            "upsc_trap_explanation": "यहाँ क्लासिक जालसाजी भ्रम है: छात्र नालंदा के विनाश को केवल बख्तियार खिलजी के 1193 ईस्वी के आक्रमण से जोड़ते हैं क्योंकि यह सबसे नाटकीय और व्यापक रूप से पढ़ाया गया घटना है। इससे एक बहु-चरणीय प्रक्रिया एकल घटना में समाहित हो जाती है। हूणों और गौड़ा शासक के पहले के आक्रमणों ने पहले ही संस्थान को क्षति पहुंचाई थी, और तुर्क आक्रमण से पहले ही आंतरिक बौद्धिक और आर्थिक पतन शुरू हो चुका था। जो छात्र केवल 1193 ईस्वी की तारीख याद करते हैं, वे विकल्प (a) चुनेंगे और व्यापक पैटर्न को नहीं समझ पाएंगे।",
+            "final_explanation": "नालंदा का पतन कोई एकल विनाशकारी घटना नहीं था, बल्कि सदियों में फैली एक प्रक्रिया थी। संस्थान को 12वीं सदी से पहले ही हूणों और गौड़ा शासक शशांक के हाथों सैन्य क्षति हुई थी। यिंगजिंग का 7वीं सदी के अंत का विवरण पहले से ही संस्थागत तनाव का संकेत देता है। बख्तियार खिलजी का 1193 ईस्वी का आक्रमण उस संरचना को अंतिम प्रहार था जो पहले के हमलों, संरक्षण की कमी और आंतरिक अनुष्ठानिक पतन से पहले ही कमजोर हो चुकी थी।\n\n• विकल्प (a): गलत — नालंदा के विनाश को पूरी तरह से बख्तियार खिलजी के 1193 ईस्वी के आक्रमण से जोड़ता है, जबकि पहले के हूण और गौड़ा हमलों और आंतरिक पतन को नजरअंदाज करता है।\n• विकल्प (b): सही — विनाश की बहु-चरणीय प्रकृति को सही रूप में दर्शाता है, जिसमें 1193 ईस्वी का आक्रमण लंबे पतन की अंतिम कड़ी था।\n• विकल्प (c): गलत — नालंदा को सैन्य हमलों का सामना करना पड़ा था; सभी सैन्य कारणों को खारिज करना ऐतिहासिक तथ्य का विकृति है।\n• विकल्प (d): गलत — ज़ुआनजांग (7वीं सदी) नालंदा को अपने चरम पर वर्णित करते हैं, खंडहर में नहीं; पतन 13वीं सदी में धर्मस्वामिन द्वारा दर्ज किया गया।\n\nमूल्य संवर्धन:\n• शशांक, गौड़ा के एक शैव राजा, 7वीं सदी में बौद्ध संस्थानों के प्रति प्रारंभिक शत्रुता से जुड़े हैं।\n• धर्मस्वामिन का 13वीं सदी का विवरण नालंदा के आक्रमण के बाद के खंडहर अवस्था का प्राथमिक साक्ष्य है।\n• बहु-कारणात्मक ढांचा (आक्रमण + संरक्षण की कमी + आंतरिक पतन) संस्थागत पतन के प्रश्नों के लिए UPSC द्वारा पसंद किया गया विश्लेषणात्मक दृष्टिकोण है।"
+          },
+          "formatted_presentation": {
+            "has_table": false,
+            "display_text": "निम्नलिखित में से कौन-सा नालंदा विश्वविद्यालय के विनाश का सबसे सटीक वर्णन करता है?\n\n(a) नालंदा का विनाश केवल बख्तियार खिलजी के 1193 ईस्वी के सैन्य आक्रमण से हुआ, जो इसके पतन की शुरुआत और अंत दोनों है।\n(b) नालंदा का विनाश एक बहु-चरणीय प्रक्रिया थी, जिसमें पहले हूण और गौड़ा के आक्रमणों से क्षति हुई, और बख्तियार खिलजी का 1193 ईस्वी का आक्रमण पहले से कमजोर संस्थान को अंतिम प्रहार था।\n(c) नालंदा का पतन केवल आंतरिक बौद्धिक जड़ता और अनुष्ठानवाद के कारण हुआ, जिसमें सैन्य आक्रमणों की कोई महत्वपूर्ण भूमिका नहीं थी।\n(d) ज़ुआनजांग का 7वीं सदी का विवरण पहले से ही नालंदा को खंडहर में दर्शाता है, जो पुष्टि करता है कि इसका विनाश मध्यकालीन तुर्क आक्रमणों से पहले हुआ था।",
+            "table_data": null
+          }
+        }
+      ]
+    }
+  },
+  {
+    "uuid": "4aa1dd71-48ee-41b3-b0c8-f41d2e1184c5",
+    "en": {
+      "meta": {
+        "uuid": "4aa1dd71-48ee-41b3-b0c8-f41d2e1184c5",
+        "language": "en",
+        "subject": "Ancient History",
+        "topic": "Education and Learning Centres",
+        "sub_topic": "Decline of ancient education centres",
+        "concepts_used": [
+          "Decline of Taxila (Takshashila): Political vs. Intellectual Factors"
+        ],
+        "subject_que_no": 663,
+        "overall_que_no": 663
+      },
+      "solution": {
+        "correct_option": "c",
+        "question_type": "multi-statement-correct",
+        "trap_type": "temporal-swap",
+        "concept_anchor": "Taxila decline: Huns and trade route shift",
+        "statement_analysis": [
+          {
+            "statement": "The primary military blow to Taxila (Takshashila) came from the White Hun (Hephthalite) invasions of the 5th–6th century CE.",
+            "verdict": "Correct",
+            "reason": "The Hephthalite invasions in the 5th–6th century CE are historically identified as the decisive military factor in Taxila's destruction, distinct from the later Turkic invasions that affected Bihar's institutions."
+          },
+          {
+            "statement": "Taxila's decline closely paralleled the decline of the Gupta Empire, with both occurring as a direct result of Bakhtiyar Khilji's campaigns.",
+            "verdict": "Incorrect",
+            "reason": "Bakhtiyar Khilji's campaigns (late 12th–early 13th century CE) targeted Bihar's institutions. Taxila had already ceased to function centuries earlier due to Hephthalite invasions, making any connection to Khilji factually wrong."
+          },
+          {
+            "statement": "The shift of major trade routes away from the northwestern corridor contributed to Taxila's economic and institutional decline by reducing the patronage base of its scholarly community.",
+            "verdict": "Correct",
+            "reason": "Taxila's institutional vitality depended significantly on the trade networks of the northwestern Silk Road corridor; when these routes shifted, the economic underpinning of its scholarly ecosystem eroded alongside military disruption."
+          }
+        ],
+        "strong_distractor": "b — Option (b) is a strong distractor because students who know Taxila's decline is linked to the Gupta era may select statements 1 and 2 together, not realising that the Gupta decline and the White Hun invasions, while temporally overlapping, are distinct causative factors and that Khilji has no connection to Taxila.",
+        "elimination_logic": [
+          "Eliminate Statement 2 immediately — Bakhtiyar Khilji's campaigns targeted Bihar institutions (Nalanda, Odantapuri, Vikramashila), not Taxila, which had declined centuries earlier.",
+          "Confirm Statement 1 — White Huns (Hephthalites) invaded the northwest in the 5th–6th century CE, and this is the established primary military cause of Taxila's decline.",
+          "Confirm Statement 3 — trade route displacement is a documented secondary factor in Taxila's institutional collapse, complementing the military blow.",
+          "With Statement 2 eliminated and Statements 1 and 3 confirmed, the answer is (c): 1 and 3 only."
+        ],
+        "upsc_trap_explanation": "The temporal-swap trap conflates Taxila's decline with the Gupta decline narrative and then further conflates it with Bakhtiyar Khilji's much later campaigns. Students who have memorised 'Gupta decline → educational decline' as a formula may accept Statement 2's mention of Khilji without scrutinising the timeline. Taxila's destruction predates Khilji by nearly six centuries — a critical chronological distinction that separates a prepared candidate from a partially prepared one.",
+        "final_explanation": "Taxila's decline is structurally different from Nalanda's. While both were great learning centres, they fell to different aggressors at different times. The White Huns (Hephthalites) devastated Taxila in the 5th–6th century CE, centuries before the Turkic campaigns that destroyed Bihar's Buddhist institutions. Additionally, the gradual displacement of the northwestern Silk Road trade routes removed the economic scaffolding that sustained Taxila's scholarly community.\n\n• Statement 1 — Correct: The Hephthalite (White Hun) invasions of the 5th–6th century CE are the primary military cause of Taxila's destruction — this is the mainstream historical consensus.\n• Statement 2 — Incorrect: Bakhtiyar Khilji operated in the late 12th–early 13th century CE and attacked Bihar, not Taxila. Connecting Khilji to Taxila is a factual error.\n• Statement 3 — Correct: Trade route shifts reduced the patronage and footfall of scholars, compounding the damage from military invasions.\n\nValue Addition:\n• Mihirakula, a Huna ruler, is specifically associated with persecution of Buddhism in the Gandhara-Taxila corridor in the early 6th century CE.\n• Unlike Nalanda, Taxila never underwent a Pala-era revival, leaving it permanently without an institutional successor.\n• Taxila's decline illustrates how external military conquest combined with economic dislocation — not just one factor alone — destroys institutions."
+      },
+      "formatted_presentation": {
+        "has_table": false,
+        "display_text": "Consider the following statements about the decline of Taxila (Takshashila) as an ancient centre of learning:\n\n1. The primary military blow to Taxila came from the White Hun (Hephthalite) invasions of the 5th–6th century CE.\n2. Taxila's decline closely paralleled the decline of the Gupta Empire, with both occurring as a direct result of Bakhtiyar Khilji's campaigns.\n3. The shift of major trade routes away from the northwestern corridor contributed to Taxila's economic and institutional decline by reducing the patronage base of its scholarly community.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+        "table_data": null
+      }
+    },
+    "hi": {
+      "questions": [
+        {
+          "meta": {
+            "uuid": "4aa1dd71-48ee-41b3-b0c8-f41d2e1184c5",
+            "language": "en",
+            "subject": "Ancient History",
+            "topic": "Education and Learning Centres",
+            "sub_topic": "Decline of ancient education centres",
+            "concepts_used": [
+              "Decline of Taxila (Takshashila): Political vs. Intellectual Factors"
+            ],
+            "subject_que_no": 663,
+            "overall_que_no": 663
+          },
+          "solution": {
+            "correct_option": "c",
+            "question_type": "multi-statement-correct",
+            "trap_type": "temporal-swap",
+            "concept_anchor": "Taxila decline: Huns and trade route shift",
+            "statement_analysis": [
+              {
+                "statement": "The primary military blow to Taxila (Takshashila) came from the White Hun (Hephthalite) invasions of the 5th–6th century CE.",
+                "verdict": "सही है",
+                "reason": "5वीं-6वीं शताब्दी ईस्वी में हेफ्थलाइट आक्रमणों को टैक्सिला के विनाश में निर्णायक सैन्य कारण के रूप में ऐतिहासिक रूप से पहचाना गया है, जो बिहार के संस्थानों को प्रभावित करने वाले बाद के तुर्क आक्रमणों से भिन्न हैं।"
+              },
+              {
+                "statement": "Taxila's decline closely paralleled the decline of the Gupta Empire, with both occurring as a direct result of Bakhtiyar Khilji's campaigns.",
+                "verdict": "गलत है",
+                "reason": "बख्तियार खिलजी के अभियान (12वीं शताब्दी के अंत - 13वीं शताब्दी की शुरुआत) बिहार के संस्थानों को लक्षित करते थे। टैक्सिला सदियों पहले हेफ्थलाइट आक्रमणों के कारण बंद हो चुका था, इसलिए खिलजी से कोई संबंध तथ्यात्मक रूप से गलत है।"
+              },
+              {
+                "statement": "The shift of major trade routes away from the northwestern corridor contributed to Taxila's economic and institutional decline by reducing the patronage base of its scholarly community.",
+                "verdict": "सही है",
+                "reason": "टैक्सिला की संस्थागत जीवंतता मुख्य रूप से उत्तर-पश्चिमी सिल्क रोड कॉरिडोर के व्यापार नेटवर्क पर निर्भर थी; जब ये मार्ग बदल गए, तो इसके विद्वत् समुदाय के आर्थिक आधार में गिरावट आई, जो सैन्य व्यवधान के साथ-साथ थी।"
+              }
+            ],
+            "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि जो छात्र टैक्सिला के पतन को गुप्त वंश के पतन से जोड़ते हैं, वे कथन 1 और 2 दोनों को एक साथ चुन सकते हैं, यह न समझते हुए कि गुप्त पतन और श्वेत हून आक्रमण, जबकि कालानुक्रमिक रूप से ओवरलैप करते हैं, अलग-अलग कारण हैं और खिलजी का टैक्सिला से कोई संबंध नहीं है।",
+            "elimination_logic": [
+              "कथन 2 को तुरंत हटा दें — बख्तियार खिलजी के अभियान बिहार के संस्थानों (नालंदा, ओदंतपुरी, विक्रमशिला) को लक्षित करते थे, न कि टैक्सिला को, जो सदियों पहले ही पतित हो चुका था।",
+              "कथन 1 की पुष्टि करें — श्वेत हून (हेफ्थलाइट) ने 5वीं-6वीं शताब्दी ईस्वी में उत्तर-पश्चिमी क्षेत्र में आक्रमण किया, और यह टैक्सिला के पतन का मुख्य सैन्य कारण है।",
+              "कथन 3 की पुष्टि करें — व्यापार मार्गों का स्थानांतरण टैक्सिला के संस्थागत पतन में एक दस्तावेजीकृत द्वितीयक कारण है, जो सैन्य आघात के साथ जुड़ा हुआ है।",
+              "कथन 2 को हटाने और कथन 1 व 3 की पुष्टि के साथ, उत्तर है (c): केवल 1 और 3।"
+            ],
+            "upsc_trap_explanation": "कालानुक्रमिक-स्थानांतरण जाल टैक्सिला के पतन को गुप्त वंश के पतन की कथा के साथ मिलाता है और फिर इसे बख्तियार खिलजी के बाद के अभियानों के साथ जोड़ देता है। जो छात्र 'गुप्त पतन → शैक्षिक पतन' सूत्र याद करते हैं, वे बिना समयरेखा की जांच किए कथन 2 में खिलजी का उल्लेख स्वीकार कर सकते हैं। टैक्सिला का विनाश खिलजी से लगभग छह शताब्दियों पहले हुआ था — यह एक महत्वपूर्ण कालानुक्रमिक भेद है जो एक तैयार उम्मीदवार को आंशिक रूप से तैयार उम्मीदवार से अलग करता है।",
+            "final_explanation": "टैक्सिला का पतन नालंदा से संरचनात्मक रूप से भिन्न है। दोनों महान शिक्षण केंद्र थे, लेकिन वे अलग-अलग आक्रमणकारियों द्वारा अलग-अलग समय पर नष्ट हुए। श्वेत हून (हेफ्थलाइट) ने 5वीं-6वीं शताब्दी ईस्वी में टैक्सिला को तबाह किया, जो बिहार के बौद्ध संस्थानों को नष्ट करने वाले तुर्की अभियानों से सदियों पहले था। इसके अतिरिक्त, उत्तर-पश्चिमी सिल्क रोड व्यापार मार्गों का क्रमिक स्थानांतरण टैक्सिला के विद्वत् समुदाय के आर्थिक आधार को समाप्त कर गया।\n\n• कथन 1 — सही: 5वीं-6वीं शताब्दी ईस्वी में हेफ्थलाइट (श्वेत हून) आक्रमण टैक्सिला के विनाश का मुख्य सैन्य कारण है — यह मुख्यधारा का ऐतिहासिक सहमति है।\n• कथन 2 — गलत: बख्तियार खिलजी 12वीं शताब्दी के अंत से 13वीं शताब्दी की शुरुआत में बिहार पर आक्रमण करता था, न कि टैक्सिला पर। खिलजी को टैक्सिला से जोड़ना तथ्यात्मक त्रुटि है।\n• कथन 3 — सही: व्यापार मार्गों के स्थानांतरण ने विद्वानों के संरक्षण और उपस्थिति को कम किया, जिससे सैन्य आक्रमणों के नुकसान में वृद्धि हुई।\n\nमूल्यवर्धन:\n• मिहिरकुला, एक हूण शासक, विशेष रूप से 6वीं शताब्दी की शुरुआत में गांधार-टैक्सिला मार्ग में बौद्ध धर्म के उत्पीड़न से जुड़ा है।\n• नालंदा के विपरीत, टैक्सिला ने कभी पाला युग में पुनरुद्धार नहीं देखा, जिससे यह स्थायी रूप से बिना संस्थागत उत्तराधिकारी के रह गया।\n• टैक्सिला का पतन दर्शाता है कि बाहरी सैन्य विजय और आर्थिक विस्थापन — केवल एक कारक नहीं — संस्थानों को नष्ट करते हैं।"
+          },
+          "formatted_presentation": {
+            "has_table": false,
+            "display_text": "प्राचीन शिक्षण केंद्र के रूप में टैक्सिला (तक्षशिला) के पतन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. टैक्सिला को मुख्य सैन्य आघात 5वीं-6वीं शताब्दी ईस्वी में श्वेत हून (हेफ्थलाइट) आक्रमणों से लगा।\n2. टैक्सिला का पतन गुप्त साम्राज्य के पतन के समानांतर हुआ, दोनों बख्तियार खिलजी के अभियानों का प्रत्यक्ष परिणाम थे।\n3. उत्तर-पश्चिमी मार्ग से प्रमुख व्यापार मार्गों के स्थानांतरण ने टैक्सिला के विद्वत् समुदाय के संरक्षण आधार को कम करके इसके आर्थिक और संस्थागत पतन में योगदान दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "uuid": "b3d5063b-f64c-47ec-8043-c62a18d76055",
+    "en": {
+      "meta": {
+        "uuid": "b3d5063b-f64c-47ec-8043-c62a18d76055",
+        "language": "en",
+        "subject": "Ancient History",
+        "topic": "Education and Learning Centres",
+        "sub_topic": "Decline of ancient education centres",
+        "concepts_used": [
+          "Role of Royal Patronage in Sustaining Ancient Institutions",
+          "Destruction of Vikramashila: Parallels and Distinctions with Nalanda"
+        ],
+        "subject_que_no": 664,
+        "overall_que_no": 664
+      },
+      "solution": {
+        "correct_option": "a",
+        "question_type": "multi-statement-incorrect",
+        "trap_type": "scope-extension",
+        "concept_anchor": "Pala patronage and Vikramashila institutional origin",
+        "statement_analysis": [
+          {
+            "statement": "Vikramashila was founded by the Gupta ruler Samudragupta as a centre for Mahayana Buddhist studies.",
+            "verdict": "Incorrect",
+            "reason": "Vikramashila was founded by Dharmapala, a Pala king, not by any Gupta ruler. The Pala dynasty is specifically associated with its establishment, placing its founding several centuries after the Gupta period."
+          },
+          {
+            "statement": "The Pala dynasty's decline directly increased the vulnerability of both Nalanda and Vikramashila to external attacks because it removed the primary source of institutional patronage and protection.",
+            "verdict": "Correct",
+            "reason": "The Pala dynasty was the principal patron of Buddhist institutions in Bihar-Bengal; their political fragmentation withdrew both financial support and military protection, leaving these centres exposed to Bakhtiyar Khilji's campaigns."
+          },
+          {
+            "statement": "Nalanda and Vikramashila were destroyed simultaneously in a single coordinated military campaign by Bakhtiyar Khilji.",
+            "verdict": "Incorrect",
+            "reason": "Nalanda (c. 1193 CE) and Vikramashila's destructions were separate events occurring over Khilji's prolonged campaigns; they were not a single coordinated simultaneous operation."
+          }
+        ],
+        "strong_distractor": "b — Option (b) is a strong distractor because Statement 2 is factually correct and students who identify it as correct may hesitate, second-guessing whether 'only Statement 1' is the right answer when asked which are NOT correct.",
+        "elimination_logic": [
+          "Evaluate Statement 1 — Vikramashila was founded by Dharmapala (Pala king), not by Samudragupta (Gupta ruler). Statement 1 is NOT correct.",
+          "Evaluate Statement 2 — The Pala decline leaving institutions vulnerable is an established historical fact. Statement 2 IS correct, so it is not the answer to 'which is NOT correct'.",
+          "Evaluate Statement 3 — Nalanda and Vikramashila destructions were sequential events in separate campaigns, not simultaneous. Statement 3 is NOT correct.",
+          "Statements 1 and 3 are NOT correct; Statement 2 is correct. The answer is (a): 1 and 3 only."
+        ],
+        "upsc_trap_explanation": "The scope-extension trap in Statement 3 uses 'simultaneously' and 'single coordinated campaign' — words that sound plausible given that Khilji destroyed both. A student who knows Khilji destroyed multiple centres but has not studied the sequence carefully will accept the conflation. Statement 1 exploits the Gupta-Pala confusion: since the Guptas patronised Nalanda, students carelessly extend this to Vikramashila, which was actually a Pala-era foundation.",
+        "final_explanation": "This question tests precision about the founding of Vikramashila and the sequence of Bakhtiyar Khilji's destructions — two areas where partial knowledge creates confident wrong answers.\n\n• Statement 1 — Incorrect: Vikramashila was founded by Dharmapala, a Pala dynasty king. The Guptas patronised Nalanda, not Vikramashila. Attributing Vikramashila's founding to Samudragupta (a Gupta emperor) is a category error.\n• Statement 2 — Correct: The Pala dynasty was the financial and protective pillar of Bihar's Buddhist institutions. Their political decline in the 11th–12th centuries left Nalanda and Vikramashila without the resources or military cover to withstand Khilji's campaigns.\n• Statement 3 — Incorrect: The destructions of Nalanda (~1193 CE) and Vikramashila were separate events in Khilji's multi-year campaigns across the Gangetic plains, not a single simultaneous operation.\n\nValue Addition:\n• Dharmapala (c. 770–810 CE) is credited with founding Vikramashila and reviving Nalanda — making him one of the most significant educational patrons in ancient Indian history.\n• Vikramashila specialised in Tantric Buddhism and Vajrayana studies, distinguishing its curriculum from Nalanda's broader scope.\n• After Vikramashila's destruction, its monks carried Vajrayana texts to Tibet, where the tradition survives to this day."
+      },
+      "formatted_presentation": {
+        "has_table": false,
+        "display_text": "Consider the following statements about the role of royal patronage and the institutional history of ancient learning centres:\n\n1. Vikramashila was founded by the Gupta ruler Samudragupta as a centre for Mahayana Buddhist studies.\n2. The Pala dynasty's decline directly increased the vulnerability of both Nalanda and Vikramashila to external attacks because it removed the primary source of institutional patronage and protection.\n3. Nalanda and Vikramashila were destroyed simultaneously in a single coordinated military campaign by Bakhtiyar Khilji.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 1 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+        "table_data": null
+      }
+    },
+    "hi": {
+      "questions": [
+        {
+          "meta": {
+            "uuid": "b3d5063b-f64c-47ec-8043-c62a18d76055",
+            "language": "en",
+            "subject": "Ancient History",
+            "topic": "Education and Learning Centres",
+            "sub_topic": "Decline of ancient education centres",
+            "concepts_used": [
+              "Role of Royal Patronage in Sustaining Ancient Institutions",
+              "Destruction of Vikramashila: Parallels and Distinctions with Nalanda"
+            ],
+            "subject_que_no": 664,
+            "overall_que_no": 664
+          },
+          "solution": {
+            "correct_option": "a",
+            "question_type": "multi-statement-incorrect",
+            "trap_type": "scope-extension",
+            "concept_anchor": "Pala patronage and Vikramashila institutional origin",
+            "statement_analysis": [
+              {
+                "statement": "विक्रमशिला की स्थापना महायान बौद्ध अध्ययन के केंद्र के रूप में गुप्त शासक समुद्रगुप्त ने की थी।",
+                "verdict": "गलत",
+                "reason": "विक्रमशिला की स्थापना पाल वंश के राजा धर्मपाल ने की थी, न कि किसी गुप्त शासक ने। पाल वंश विशेष रूप से इसके संस्थापक के रूप में जाना जाता है, जो गुप्त काल के कई सदियों बाद की घटना है।"
+              },
+              {
+                "statement": "पाल वंश के पतन ने नालंदा और विक्रमशिला दोनों को बाहरी हमलों के प्रति सीधे तौर पर अधिक असुरक्षित बना दिया क्योंकि इससे संस्थागत संरक्षण और संरक्षण का मुख्य स्रोत समाप्त हो गया।",
+                "verdict": "सही",
+                "reason": "पाल वंश बिहार-बंगाल के बौद्ध संस्थानों का मुख्य संरक्षक था; उनके राजनीतिक विखंडन ने वित्तीय सहायता और सैन्य सुरक्षा दोनों वापस ले ली, जिससे ये केंद्र बख्तियार खिलजी के अभियानों के प्रति असुरक्षित हो गए।"
+              },
+              {
+                "statement": "नालंदा और विक्रमशिला को बख्तियार खिलजी द्वारा एक ही समन्वित सैन्य अभियान में एक साथ नष्ट किया गया था।",
+                "verdict": "गलत",
+                "reason": "नालंदा (लगभग 1193 ई.) और विक्रमशिला के विनाश अलग-अलग घटनाएं थीं जो खिलजी के लंबे अभियानों के दौरान हुईं; ये एक ही समन्वित एक साथ ऑपरेशन नहीं थे।"
+              }
+            ],
+            "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि कथन 2 तथ्यात्मक रूप से सही है और जो छात्र इसे सही मानते हैं वे हिचकिचा सकते हैं, यह सोचते हुए कि 'केवल कथन 1' सही उत्तर है जब पूछा जाता है कि कौन-सा सही नहीं है।",
+            "elimination_logic": [
+              "कथन 1 का मूल्यांकन करें — विक्रमशिला की स्थापना धर्मपाल (पाल राजा) ने की थी, न कि समुद्रगुप्त (गुप्त शासक) ने। कथन 1 सही नहीं है।",
+              "कथन 2 का मूल्यांकन करें — पाल वंश का पतन संस्थानों को असुरक्षित छोड़ना एक स्थापित ऐतिहासिक तथ्य है। कथन 2 सही है, अतः यह 'सही नहीं है' के उत्तर में नहीं आता।",
+              "कथन 3 का मूल्यांकन करें — नालंदा और विक्रमशिला का विनाश क्रमिक घटनाएं थीं, अलग-अलग अभियानों में, एक साथ नहीं। कथन 3 सही नहीं है।",
+              "कथन 1 और 3 सही नहीं हैं; कथन 2 सही है। उत्तर है (a): केवल 1 और 3।"
+            ],
+            "upsc_trap_explanation": "कथन 3 में 'समानांतर' और 'एक समन्वित अभियान' शब्दों का उपयोग स्कोप-एक्सटेंशन ट्रैप है — ये शब्द खिलजी द्वारा दोनों के विनाश के कारण प्रासंगिक लगते हैं। जो छात्र जानते हैं कि खिलजी ने कई केंद्रों को नष्ट किया लेकिन क्रम को ध्यान से नहीं पढ़ा है, वे इस मिश्रण को स्वीकार कर लेते हैं। कथन 1 गुप्त-पाल भ्रम का फायदा उठाता है: क्योंकि गुप्तों ने नालंदा का संरक्षण किया, छात्र इसे विक्रमशिला तक भी बढ़ा देते हैं, जबकि विक्रमशिला वास्तव में पाल युग की स्थापना है।",
+            "final_explanation": "यह प्रश्न विक्रमशिला की स्थापना और बख्तियार खिलजी के विनाश के क्रम के बारे में सटीकता की परीक्षा लेता है — दो ऐसे क्षेत्र जहाँ आंशिक ज्ञान गलत उत्तरों को आत्मविश्वास देता है।\n\n• कथन 1 — गलत: विक्रमशिला की स्थापना पाल वंश के राजा धर्मपाल ने की थी। गुप्तों ने नालंदा का संरक्षण किया, न कि विक्रमशिला का। विक्रमशिला की स्थापना को समुद्रगुप्त (गुप्त सम्राट) से जोड़ना श्रेणीगत त्रुटि है।\n• कथन 2 — सही: पाल वंश बिहार के बौद्ध संस्थानों का वित्तीय और सुरक्षा स्तंभ था। 11वीं-12वीं शताब्दी में उनका राजनीतिक पतन नालंदा और विक्रमशिला को खिलजी के अभियानों के खिलाफ संसाधन और सैन्य सुरक्षा से वंचित कर गया।\n• कथन 3 — गलत: नालंदा (~1193 ई.) और विक्रमशिला का विनाश खिलजी के गंगा मैदानों में कई वर्षों के अभियानों के अलग-अलग घटनाएं थीं, न कि एक साथ एक समन्वित ऑपरेशन।\n\nमूल्यवर्धन:\n• धर्मपाल (लगभग 770–810 ई.) को विक्रमशिला की स्थापना और नालंदा के पुनरुद्धार का श्रेय दिया जाता है — जो उन्हें प्राचीन भारतीय इतिहास के सबसे महत्वपूर्ण शैक्षिक संरक्षकों में से एक बनाता है।\n• विक्रमशिला तांत्रिक बौद्ध धर्म और वज्रयान अध्ययन में विशिष्ट था, जो इसके पाठ्यक्रम को नालंदा के व्यापक दायरे से अलग करता है।\n• विक्रमशिला के विनाश के बाद, इसके भिक्षु वज्रयान ग्रंथ तिब्बत ले गए, जहाँ यह परंपरा आज भी जीवित है।"
+          },
+          "formatted_presentation": {
+            "has_table": false,
+            "display_text": "प्राचीन शिक्षण केंद्रों के शाही संरक्षण और संस्थागत इतिहास की भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. विक्रमशिला की स्थापना महायान बौद्ध अध्ययन के केंद्र के रूप में गुप्त शासक समुद्रगुप्त ने की थी।\n2. पाल वंश के पतन ने नालंदा और विक्रमशिला दोनों को बाहरी हमलों के प्रति सीधे तौर पर अधिक असुरक्षित बना दिया क्योंकि इससे संस्थागत संरक्षण और सुरक्षा का मुख्य स्रोत समाप्त हो गया।\n3. नालंदा और विक्रमशिला को बख्तियार खिलजी द्वारा एक ही समन्वित सैन्य अभियान में एक साथ नष्ट किया गया था।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+            "table_data": null
+          }
+        }
+      ]
+    }
+  }
+]

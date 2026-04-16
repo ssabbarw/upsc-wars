@@ -2,7 +2,7 @@ import 'accuracy_display_tier.dart';
 
 class SubjectInfo {
   const SubjectInfo({
-    required this.subjectSlug,
+    required this.subject,
     required this.displayName,
     required this.questionCount,
     required this.topicCount,
@@ -11,7 +11,7 @@ class SubjectInfo {
     required this.accuracyTier,
   });
 
-  final String subjectSlug;
+  final String subject;
   final String displayName;
   final int questionCount;
   final int topicCount;

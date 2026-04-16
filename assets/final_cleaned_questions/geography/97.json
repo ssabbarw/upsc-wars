@@ -1,0 +1,1477 @@
+[
+  {
+    "uuid": "dc0ffaf2-31ec-439b-b8df-211a67eef420",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Himalayan Mountain System: Origin and Tectonic Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Himalayas classified as fold mountains not block",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the structural classification of the Himalayan mountain system, which of the following correctly describes its geomorphic type?\n\n(a) Block mountains formed by the uplift of a central horst between two rift valleys\n(b) Residual mountains formed by the prolonged erosion of an ancient landmass\n(c) Fold mountains formed by the compression and folding of sediments of the Tethys Sea\n(d) Volcanic mountains formed by successive lava flows associated with hotspot activity",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is a strong distractor because students who associate Himalayan uplift with faulting (due to rift valleys of Narmada/Tapi) incorrectly conflate block-mountain formation with the Himalayas.",
+      "elimination_logic": [
+        "Eliminate option (a): block mountains form by faulting and uplift of landmass between faults — Satpura, not Himalayas, fits this description.",
+        "Eliminate option (b): residual mountains are worn-down ancient ranges — Aravallis, not Himalayas, are residual mountains.",
+        "Eliminate option (d): volcanic mountains form by lava accumulation — Deccan Trap region, not Himalayas, has volcanic origin.",
+        "Confirm option (c): Himalayas formed by compressional folding of Tethys Sea sediments between colliding plates — classic fold mountains."
+      ],
+      "upsc_trap_explanation": "Students frequently confuse the structural type of the Himalayas. Because the Narmada and Tapi rivers flow through rift valleys (associated with faulting/block-mountain logic), some students incorrectly apply that model to the Himalayas. The Himalayas are unambiguously fold mountains formed by the collision of the Indo-Australian and Eurasian plates, which crumpled the sediments of the ancient Tethys Sea into folds. Barring this precision, a student choosing 'block mountains' would lose a mark on what should be a high-confidence question.",
+      "final_explanation": "The Himalayas are the world's finest example of young fold mountains, formed during the Cenozoic era by the collision of the Indo-Australian plate with the Eurasian plate. The sediments accumulated in the ancient Tethys Sea were compressed and folded upward over millions of years, producing the characteristic arc-shaped mountain system.\n\n• Option (a) — Block mountains: Incorrect. Block mountains (horsts) form when a central block is uplifted between two parallel faults. Satpura Range is India's textbook example of a block mountain.\n• Option (b) — Residual mountains: Incorrect. Residual mountains result from prolonged erosion of ancient ranges. The Aravallis are residual mountains.\n• Option (c) — Fold mountains: Correct. Himalayan ranges are folded layers of Tethys sediments; this is the defining structural type.\n• Option (d) — Volcanic mountains: Incorrect. Volcanic mountains form by lava extrusion. The Deccan Trap has volcanic origin, not the Himalayas.\n\nValue Addition:\n• Andes (South America) and Alps (Europe) are other examples of young fold mountains formed by plate collision.\n• The Himalayas are classified as Tertiary mountains — much younger than the Pre-Cambrian Peninsular plateau.\n• The Tethys Sea no longer exists; its sedimentary remains are now found as marine fossils at high Himalayan altitudes."
+    },
+    "hi": {
+      "display_text": "हिमालय पर्वत प्रणाली की संरचनात्मक वर्गीकरण के संदर्भ में, निम्नलिखित में से कौन-सा इसके भूआकृतिक प्रकार का सही वर्णन करता है?\n\n(a) दो रिफ्ट घाटियों के बीच केंद्रीय हॉर्स्ट के उठान से बने ब्लॉक पर्वत\n(b) प्राचीन भूभाग के दीर्घकालिक कटाव से बने अवशिष्ट पर्वत\n(c) टेथिस सागर की तलछटों के संपीड़न और मोड़ से बने फोल्ड पर्वत\n(d) हॉटस्पॉट गतिविधि से जुड़े लगातार लावा प्रवाह से बने ज्वालामुखीय पर्वत",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि छात्र जो हिमालय की उठान को फॉल्टिंग से जोड़ते हैं (नर्मदा/ताप्ती के रिफ्ट घाटियों के कारण) वे गलत तरीके से ब्लॉक-पर्वत निर्माण को हिमालय से जोड़ देते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: ब्लॉक पर्वत फॉल्टिंग और फॉल्ट्स के बीच भूमि के उठान से बनते हैं — सतपुड़ा, न कि हिमालय, इस विवरण में फिट बैठता है।",
+        "विकल्प (b) को हटाएं: अवशिष्ट पर्वत पुराने पहाड़ों के कटाव से बने होते हैं — अरावली, न कि हिमालय, अवशिष्ट पर्वत हैं।",
+        "विकल्प (d) को हटाएं: ज्वालामुखीय पर्वत लावा संचय से बनते हैं — डेक्कन ट्रैप क्षेत्र, न कि हिमालय, ज्वालामुखीय उत्पत्ति वाला है।",
+        "विकल्प (c) की पुष्टि करें: हिमालय टेथिस सागर की तलछटों के संपीड़न और मोड़ से बने हैं — पारंपरिक फोल्ड पर्वत।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर हिमालय की संरचनात्मक श्रेणी को भ्रमित करते हैं। क्योंकि नर्मदा और ताप्ती नदियाँ रिफ्ट घाटियों से होकर बहती हैं (जो फॉल्टिंग/ब्लॉक-पर्वत तर्क से जुड़ी हैं), कुछ छात्र गलत तरीके से उस मॉडल को हिमालय पर लागू कर देते हैं। हिमालय स्पष्ट रूप से फोल्ड पर्वत हैं जो इंडो-ऑस्ट्रेलियाई और यूरेशियाई प्लेटों के टकराव से बने हैं, जिसने प्राचीन टेथिस सागर की तलछटों को मोड़ दिया। इस सटीकता के बिना, 'ब्लॉक पर्वत' चुनने वाला छात्र एक उच्च-विश्वास वाले प्रश्न में अंक खो देगा।",
+      "final_explanation": "हिमालय विश्व के सर्वश्रेष्ठ युवा फोल्ड पर्वतों का उदाहरण हैं, जो सीनोज़ोइक युग में इंडो-ऑस्ट्रेलियाई प्लेट के यूरेशियाई प्लेट से टकराने से बने। प्राचीन टेथिस सागर में जमा तलछटों को संपीड़ित और मोड़कर लाखों वर्षों में ऊपर उठाया गया, जिससे यह विशिष्ट चापाकार पर्वत प्रणाली बनी।\n\n• विकल्प (a) — ब्लॉक पर्वत: गलत। ब्लॉक पर्वत (हॉर्स्ट) तब बनते हैं जब दो समानांतर फॉल्ट्स के बीच केंद्रीय ब्लॉक उठता है। सतपुड़ा श्रृंखला भारत का ब्लॉक पर्वत का आदर्श उदाहरण है।\n• विकल्प (b) — अवशिष्ट पर्वत: गलत। अवशिष्ट पर्वत प्राचीन श्रृंखलाओं के दीर्घकालिक कटाव से बनते हैं। अरावली अवशिष्ट पर्वत हैं।\n• विकल्प (c) — फोल्ड पर्वत: सही। हिमालयी श्रृंखलाएँ टेथिस तलछटों की मोड़ी हुई परतें हैं; यह उनकी संरचनात्मक श्रेणी है।\n• विकल्प (d) — ज्वालामुखीय पर्वत: गलत। ज्वालामुखीय पर्वत लावा के बहाव से बनते हैं। डेक्कन ट्रैप का ज्वालामुखीय मूल है, हिमालय का नहीं।\n\nमूल्य संवर्धन:\n• एंडीज़ (दक्षिण अमेरिका) और आल्प्स (यूरोप) युवा फोल्ड पर्वतों के अन्य उदाहरण हैं जो प्लेट टकराव से बने हैं।\n• हिमालय को तृतीयक पर्वत के रूप में वर्गीकृत किया जाता है — जो प्रीकैंब्रियन प्रायद्वीपीय पठार से बहुत युवा हैं।\n• टेथिस सागर अब अस्तित्व में नहीं है; इसके तलछटी अवशेष अब उच्च हिमालयी ऊंचाइयों पर समुद्री जीवाश्म के रूप में पाए जाते हैं।"
+    }
+  },
+  {
+    "uuid": "f959012e-80d0-4675-a5e2-ad36860331eb",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Northern Plains: Formation, Composition, and Sub-divisions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Bhabar Terai Bhangar Khadar distinctions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the sub-divisions of the Northern Plains of India:\n\n1. The Bhabar belt is characterised by porous, coarse alluvium where streams disappear underground after descending from the hills.\n2. The Khadar zone consists of older alluvium deposited above the flood plain level and frequently contains calcium carbonate nodules called kankar.\n3. The Terai belt, lying immediately south of the Bhabar zone, is marshy and waterlogged because the underground streams of the Bhabar re-emerge at the surface.\n\nWhich of the above statements is/are correct?\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Bhabar belt is characterised by porous, coarse alluvium where streams disappear underground after descending from the hills.",
+          "verdict": "Correct",
+          "reason": "Bhabar lies immediately south of the Himalayan foothills; rivers deposit coarse boulders and gravel here, and streams sink underground due to high porosity."
+        },
+        {
+          "statement": "The Khadar zone consists of older alluvium deposited above the flood plain level and frequently contains calcium carbonate nodules called kankar.",
+          "verdict": "Incorrect",
+          "reason": "It is Bhangar (old alluvium), not Khadar, that lies above flood level and contains kankar nodules. Khadar is new alluvium found in active flood plains and is more fertile."
+        },
+        {
+          "statement": "The Terai belt, lying immediately south of the Bhabar zone, is marshy and waterlogged because the underground streams of the Bhabar re-emerge at the surface.",
+          "verdict": "Correct",
+          "reason": "The streams that disappear into the porous Bhabar belt resurface in the Terai, creating a wet, swampy environment supporting dense forests."
+        }
+      ],
+      "strong_distractor": "d — Option d ('1 and 3 only' vs. 'all three') is a strong distractor because Statement 2 sounds authoritative by correctly mentioning kankar nodules but wrongly attributes them to Khadar instead of Bhangar.",
+      "elimination_logic": [
+        "Evaluate Statement 2 carefully: kankar nodules are the diagnostic feature of Bhangar (old alluvium above flood level), not Khadar. Statement 2 is incorrect.",
+        "Confirm Statement 1: Bhabar's porous coarse alluvium causing stream disappearance is a textbook characteristic — Statement 1 is correct.",
+        "Confirm Statement 3: Terai's waterlogged character directly results from Bhabar streams re-emerging — Statement 3 is correct.",
+        "Only Statements 1 and 3 are correct, matching option (b)."
+      ],
+      "upsc_trap_explanation": "The Khadar-Bhangar swap is a classic UPSC trap. Kankar nodules are exclusively associated with Bhangar because they form in older, lime-rich deposits above the flood plain. A student who remembers 'kankar = old alluvium' but confuses which term corresponds to old alluvium will incorrectly accept Statement 2. Statement 2 is deliberately constructed to include the correct factual detail (kankar nodules) but assign it to the wrong zone.",
+      "final_explanation": "The Northern Plains are an alluvial tract built by Himalayan rivers. They are divided into four parallel belts from north to south.\n\n• Statement 1 — Correct: Bhabar is the first belt south of the Shivaliks, composed of coarse boulders and porous gravel. Rivers lose their current here and flow underground.\n• Statement 2 — Incorrect: Kankar nodules characterise Bhangar (old alluvium, above flood level), not Khadar. Khadar is new alluvium deposited in active flood plains — more fertile, renewed annually by floods.\n• Statement 3 — Correct: Terai lies immediately south of Bhabar. Underground Bhabar streams resurface here, creating a wet, swampy belt that historically supported tropical forests (many now cleared for agriculture).\n\nValue Addition:\n• Duars are the equivalent of Duns in the eastern (Assam) belt — structural valleys between Lesser Himalayas and Shiwaliks.\n• Bhangar soils, though older, are cultivated with well irrigation since they lie above flood reach.\n• The Terai was historically a malaria-infested belt; post-independence drainage and deforestation converted much of it into agricultural land."
+    },
+    "hi": {
+      "display_text": "भारत के उत्तरी मैदानों के उप-विभाजनों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भाबर पट्टी छिद्रयुक्त, मोटे अलुवियम से बनी है जहाँ पहाड़ों से उतरने के बाद धाराएँ भूमिगत चली जाती हैं।\n2. खादर क्षेत्र पुराने अलुवियम से बना है जो बाढ़ मैदान के स्तर से ऊपर जमा होता है और अक्सर कैल्शियम कार्बोनेट के नोड्यूल्स जिन्हें कंकर कहा जाता है, होते हैं।\n3. तराई पट्टी, जो भाबर क्षेत्र के ठीक दक्षिण में स्थित है, दलदली और जलमग्न होती है क्योंकि भाबर की भूमिगत धाराएँ सतह पर पुनः उभरती हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Bhabar belt is characterised by porous, coarse alluvium where streams disappear underground after descending from the hills.",
+          "verdict": "सही है",
+          "reason": "भाबर हिमालय की तलहटी के ठीक दक्षिण में स्थित है; नदियाँ यहाँ मोटे बोल्डर और बजरी जमा करती हैं, और धाराएँ उच्च छिद्रता के कारण भूमिगत चली जाती हैं।"
+        },
+        {
+          "statement": "The Khadar zone consists of older alluvium deposited above the flood plain level and frequently contains calcium carbonate nodules called kankar.",
+          "verdict": "गलत है",
+          "reason": "यह भंगार (पुराना अलुवियम) है, न कि खादर, जो बाढ़ के स्तर से ऊपर स्थित होता है और जिसमें कंकर नोड्यूल्स होते हैं। खादर नया अलुवियम है जो सक्रिय बाढ़ मैदानों में पाया जाता है और अधिक उपजाऊ होता है।"
+        },
+        {
+          "statement": "The Terai belt, lying immediately south of the Bhabar zone, is marshy and waterlogged because the underground streams of the Bhabar re-emerge at the surface.",
+          "verdict": "सही है",
+          "reason": "जो धाराएँ छिद्रयुक्त भाबर पट्टी में भूमिगत चली जाती हैं, वे तराई में पुनः सतह पर उभरती हैं, जिससे एक गीला, दलदली वातावरण बनता है जो घने जंगलों का समर्थन करता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d ('केवल 1 और 3' बनाम 'सभी तीन') एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 2 कंकर नोड्यूल्स का सही उल्लेख करता है लेकिन उन्हें गलत तरीके से खादर के बजाय भंगार से जोड़ता है।",
+      "elimination_logic": [
+        "कथन 2 को सावधानीपूर्वक जांचें: कंकर नोड्यूल्स भंगार (पुराना अलुवियम, बाढ़ के स्तर से ऊपर) की विशिष्ट विशेषता हैं, खादर की नहीं। इसलिए कथन 2 गलत है।",
+        "कथन 1 की पुष्टि करें: भाबर की छिद्रयुक्त मोटी बजरी के कारण धाराएँ भूमिगत चली जाती हैं — कथन 1 सही है।",
+        "कथन 3 की पुष्टि करें: तराई का जलमग्न स्वभाव सीधे भाबर की धाराओं के पुनः सतह पर आने का परिणाम है — कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं, जो विकल्प (b) से मेल खाते हैं।"
+      ],
+      "upsc_trap_explanation": "खादर-भंगार का उलटफेर UPSC का एक क्लासिक जाल है। कंकर नोड्यूल्स केवल भंगार से जुड़े होते हैं क्योंकि वे बाढ़ मैदान के ऊपर पुराने, चूना युक्त जमाव में बनते हैं। जो छात्र 'कंकर = पुराना अलुवियम' याद रखते हैं लेकिन किस शब्द का पुराना अलुवियम है, इसमें भ्रमित हो जाते हैं, वे गलत तरीके से कथन 2 को स्वीकार कर लेंगे। कथन 2 जानबूझकर सही तथ्य (कंकर नोड्यूल्स) शामिल करता है लेकिन इसे गलत क्षेत्र से जोड़ता है।",
+      "final_explanation": "उत्तर भारत के मैदान हिमालयी नदियों द्वारा निर्मित एक अलुवियल क्षेत्र हैं। इन्हें उत्तर से दक्षिण की ओर चार समानांतर पट्टियों में विभाजित किया गया है।\n\n• कथन 1 — सही: भाबर शिवालिक की दक्षिण में पहली पट्टी है, जो मोटे बोल्डर और छिद्रयुक्त बजरी से बनी है। नदियाँ यहाँ अपनी धारा खो देती हैं और भूमिगत बहती हैं।\n• कथन 2 — गलत: कंकर नोड्यूल्स भंगार (पुराना अलुवियम, बाढ़ के स्तर से ऊपर) की विशेषता हैं, न कि खादर की। खादर नया अलुवियम है जो सक्रिय बाढ़ मैदानों में जमा होता है — अधिक उपजाऊ और बाढ़ द्वारा वार्षिक रूप से नवीनीकृत।\n• कथन 3 — सही: तराई भाबर के ठीक दक्षिण में स्थित है। भाबर की भूमिगत धाराएँ यहाँ सतह पर पुनः उभरती हैं, जिससे एक गीली, दलदली पट्टी बनती है जो ऐतिहासिक रूप से उष्णकटिबंधीय जंगलों का समर्थन करती थी (अब कई कृषि के लिए साफ़ कर दिए गए हैं)।\n\nमूल्य संवर्धन:\n• दुआर पूर्वी (असम) पट्टी में डंस के समकक्ष हैं — लेसर हिमालय और शिवालिक के बीच संरचनात्मक घाटियाँ।\n• भंगार की मिट्टियाँ पुरानी होने के बावजूद अच्छी सिंचाई के साथ खेती योग्य हैं क्योंकि वे बाढ़ के पहुंच से ऊपर हैं।\n• तराई ऐतिहासिक रूप से मलेरिया से ग्रस्त क्षेत्र था; स्वतंत्रता के बाद नालीकरण और वनों की कटाई ने इसे कृषि भूमि में परिवर्तित कर दिया।"
+    }
+  },
+  {
+    "uuid": "d6c2e8e2-2282-4501-8113-4b1496039de7",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Western Ghats vs. Eastern Ghats: Comparative Structural Analysis"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Western vs Eastern Ghats structural contrast",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Western and Eastern Ghats:\n\n1. The Eastern Ghats form a continuous unbroken chain running parallel to the Bay of Bengal coast, acting as a watershed for rivers flowing into the sea.\n2. Doddabetta is the highest peak of the Nilgiri Hills, which is the meeting point of the Western and Eastern Ghats.\n3. Rivers such as Godavari and Krishna, which originate in the Western Ghats, flow eastward across the Deccan Plateau before draining into the Bay of Bengal.\n\nWhich of the above statements is/are NOT correct?\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Eastern Ghats form a continuous unbroken chain running parallel to the Bay of Bengal coast, acting as a watershed for rivers flowing into the sea.",
+          "verdict": "Incorrect",
+          "reason": "Eastern Ghats are discontinuous — they are cut through by rivers like Mahanadi, Godavari, and Krishna, and do not perform a watershed function. The continuous and watershed character belongs to the Western Ghats."
+        },
+        {
+          "statement": "Doddabetta is the highest peak of the Nilgiri Hills, which is the meeting point of the Western and Eastern Ghats.",
+          "verdict": "Correct",
+          "reason": "Doddabetta (2,637 m) is indeed the highest peak of the Nilgiri Hills, and the Nilgiris mark the convergence of both Ghats. However, Doddabetta is not the highest peak in South India overall — that distinction belongs to Anamudi."
+        },
+        {
+          "statement": "Rivers such as Godavari and Krishna, which originate in the Western Ghats, flow eastward across the Deccan Plateau before draining into the Bay of Bengal.",
+          "verdict": "Correct",
+          "reason": "Both Godavari and Krishna rise on the eastern slopes of the Western Ghats and flow generally east-southeast across the plateau into the Bay of Bengal — this is correct."
+        }
+      ],
+      "strong_distractor": "c — Option c (2 and 3 only are incorrect) is a strong distractor because Statement 2 contains the subtle Doddabetta-as-highest-in-South-India confusion, tempting students to mark it incorrect on that basis.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Eastern Ghats are discontinuous and lack a watershed function — attributes wrongly transferred from Western Ghats. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: Doddabetta IS the highest peak of the Nilgiris, and Nilgiris IS the meeting point of both Ghats — Statement 2 is factually correct.",
+        "Evaluate Statement 3: Godavari and Krishna do originate in Western Ghats and drain eastward into the Bay of Bengal — Statement 3 is correct.",
+        "Only Statement 1 is NOT correct, matching option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 1 deliberately transfers the defining characteristics of the Western Ghats (continuous, watershed function) onto the Eastern Ghats. A student who knows that Eastern Ghats are 'lower' but has not internalized their discontinuous nature and lack of watershed function may accept Statement 1 as half-true. Statement 2 contains a dormant trap: Doddabetta is not the highest peak of South India (Anamudi is), but the statement only claims it is the highest of the Nilgiris — which is correct.",
+      "final_explanation": "The Western and Eastern Ghats are the flanking ranges of the Deccan Plateau and differ fundamentally in structure and function.\n\n• Statement 1 — Incorrect: Eastern Ghats are discontinuous — rivers like Mahanadi, Godavari, and Krishna cut through them and drain into the Bay of Bengal. Eastern Ghats have no watershed function. It is the Western Ghats that are continuous and act as the primary watershed of the peninsula.\n• Statement 2 — Correct: The Nilgiri Hills are the meeting point of the Western and Eastern Ghats. Doddabetta (2,637 m) is the highest peak of the Nilgiris. Note: Anamudi (2,695 m) in the Anaimalai Hills is the highest peak of South India.\n• Statement 3 — Correct: Both Godavari and Krishna originate in the Western Ghats and flow eastward across the Deccan Plateau.\n\nValue Addition:\n• Major passes in Western Ghats: Thal Ghat, Bhor Ghat (Maharashtra), Pal Ghat (Kerala–Tamil Nadu border), Senkota Pass.\n• Pal Ghat (Palakkad Gap) is the only major break in the Western Ghats — it allows the southwest monsoon to penetrate Tamil Nadu.\n• Eastern Ghats are also called the 'Discontinuous Hills' in some regional geography texts."
+    },
+    "hi": {
+      "display_text": "पश्चिमी और पूर्वी घाटों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पूर्वी घाट बंगाल की खाड़ी के तट के समानांतर एक अविरल श्रृंखला बनाते हैं, जो समुद्र में बहने वाली नदियों के लिए जलग्रहण क्षेत्र का कार्य करते हैं।\n2. डोड्डाबेट्टा नीलगिरी पहाड़ियों की सबसे ऊँची चोटी है, जो पश्चिमी और पूर्वी घाटों का संगम स्थल है।\n3. गोदावरी और कृष्णा जैसी नदियाँ, जो पश्चिमी घाटों में उत्पन्न होती हैं, दक्कन पठार के पार पूर्व की ओर बहती हैं और बंगाल की खाड़ी में मिलती हैं।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Eastern Ghats form a continuous unbroken chain running parallel to the Bay of Bengal coast, acting as a watershed for rivers flowing into the sea.",
+          "verdict": "गलत",
+          "reason": "पूर्वी घाट अविरल नहीं हैं — उन्हें महानदी, गोदावरी, और कृष्णा जैसी नदियाँ काटती हैं, और वे जलग्रहण क्षेत्र का कार्य नहीं करते। अविरल और जलग्रहण क्षेत्र का कार्य पश्चिमी घाटों का है।"
+        },
+        {
+          "statement": "Doddabetta is the highest peak of the Nilgiri Hills, which is the meeting point of the Western and Eastern Ghats.",
+          "verdict": "सही है",
+          "reason": "डोड्डाबेट्टा (2,637 मीटर) वास्तव में नीलगिरी पहाड़ियों की सबसे ऊँची चोटी है, और नीलगिरी दोनों घाटों का संगम स्थल है। हालांकि, डोड्डाबेट्टा दक्षिण भारत की सबसे ऊँची चोटी नहीं है — वह स्थान अनामुडी का है।"
+        },
+        {
+          "statement": "Rivers such as Godavari and Krishna, which originate in the Western Ghats, flow eastward across the Deccan Plateau before draining into the Bay of Bengal.",
+          "verdict": "सही है",
+          "reason": "गोदावरी और कृष्णा दोनों पश्चिमी घाटों की पूर्वी ढलानों से निकलती हैं और सामान्यतः पठार के पार पूर्व-दक्षिण-पूर्व की ओर बंगाल की खाड़ी में बहती हैं — यह सही है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c (केवल 2 और 3 गलत हैं) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 2 में डोड्डाबेट्टा को दक्षिण भारत की सबसे ऊँची चोटी बताने वाली सूक्ष्म गलती है, जो छात्रों को इसे गलत चिह्नित करने के लिए प्रेरित करती है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: पूर्वी घाट अविरल नहीं हैं और उनका जलग्रहण क्षेत्र का कार्य नहीं है — ये गुण गलत तरीके से पश्चिमी घाटों से स्थानांतरित किए गए हैं। अतः कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: डोड्डाबेट्टा नीलगिरी की सबसे ऊँची चोटी है, और नीलगिरी दोनों घाटों का संगम स्थल है — कथन 2 तथ्यात्मक रूप से सही है।",
+        "कथन 3 का मूल्यांकन करें: गोदावरी और कृष्णा वास्तव में पश्चिमी घाटों में उत्पन्न होती हैं और बंगाल की खाड़ी में पूर्व की ओर बहती हैं — कथन 3 सही है।",
+        "केवल कथन 1 सही नहीं है, जो विकल्प (a) से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 जानबूझकर पश्चिमी घाटों की विशेषताएँ (अविरल, जलग्रहण क्षेत्र) पूर्वी घाटों पर थोपता है। जो छात्र जानते हैं कि पूर्वी घाट 'निम्न' हैं लेकिन उनकी अविरल प्रकृति और जलग्रहण क्षेत्र की कमी को नहीं समझते, वे कथन 1 को आंशिक रूप से सही मान सकते हैं। कथन 2 में एक छुपा हुआ जाल है: डोड्डाबेट्टा दक्षिण भारत की सबसे ऊँची चोटी नहीं है (अनामुडी है), लेकिन कथन केवल यह कहता है कि यह नीलगिरी की सबसे ऊँची चोटी है — जो सही है।",
+      "final_explanation": "पश्चिमी और पूर्वी घाट दक्कन पठार के दोनों ओर स्थित पर्वतमालाएँ हैं और संरचना तथा कार्य में मौलिक रूप से भिन्न हैं।\n\n• कथन 1 — गलत: पूर्वी घाट अविरल नहीं हैं — महानदी, गोदावरी, और कृष्णा जैसी नदियाँ इन्हें काटती हैं और बंगाल की खाड़ी में बहती हैं। पूर्वी घाटों का कोई जलग्रहण क्षेत्र कार्य नहीं है। यह पश्चिमी घाट हैं जो अविरल हैं और प्रायद्वीप के मुख्य जलग्रहण क्षेत्र के रूप में कार्य करते हैं।\n• कथन 2 — सही: नीलगिरी पहाड़ पश्चिमी और पूर्वी घाटों का संगम स्थल हैं। डोड्डाबेट्टा (2,637 मीटर) नीलगिरी की सबसे ऊँची चोटी है। ध्यान दें: अनामुडी (2,695 मीटर) अणैमलाई पहाड़ियों में दक्षिण भारत की सबसे ऊँची चोटी है।\n• कथन 3 — सही: गोदावरी और कृष्णा दोनों पश्चिमी घाटों में उत्पन्न होती हैं और दक्कन पठार के पार पूर्व की ओर बहती हैं।\n\nमूल्यवर्धन:\n• पश्चिमी घाटों के प्रमुख दर्रे: थाल घाट, भोर घाट (महाराष्ट्र), पाल घाट (केरल–तमिलनाडु सीमा), सेनकोटा दर्रा।\n• पाल घाट (पालक्कड़ गैप) पश्चिमी घाटों में एकमात्र प्रमुख विराम है — यह दक्षिण-पश्चिम मानसून को तमिलनाडु में प्रवेश करने देता है।\n• पूर्वी घाटों को कुछ क्षेत्रीय भूगोल ग्रंथों में 'अविरल पहाड़ियाँ' भी कहा जाता है।"
+    }
+  },
+  {
+    "uuid": "81251ec0-8c93-4324-8f0e-ea7274eed89f",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Longitudinal Divisions of the Himalayas: Trans-, Greater, Lesser, and Sub-Himalayas",
+        "Passes of the Himalayas: Strategic and Connectivity Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Himalayan ranges correct longitudinal zone assignment",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Himalayan ranges in List I with their correct longitudinal zone in List II:",
+        "columns": [
+          "List I (Range)",
+          "List II (Longitudinal Zone)"
+        ],
+        "rows": [
+          [
+            "A. Karakoram",
+            "1. Trans-Himalayas"
+          ],
+          [
+            "B. Zaskar",
+            "2. Greater Himalayas (Himadri)"
+          ],
+          [
+            "C. Pir Panjal",
+            "3. Lesser Himalayas (Himachal)"
+          ],
+          [
+            "D. Shiwalik",
+            "4. Sub-Himalayas (Outer Himalayas)"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n(a) A-1, B-3, C-2, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-1, B-2, C-3, D-4\n(d) A-3, B-2, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because placing Pir Panjal in the Greater Himalayas (instead of Lesser Himalayas) is a common error made by students who associate 'Panjal' with high-altitude Kashmir geography.",
+      "elimination_logic": [
+        "Anchor on the most certain pair: Shiwalik is universally the Sub-Himalayan zone (outermost foothills) — eliminates any option where D is not matched to 4.",
+        "Karakoram lies north of the main watershed, making it Trans-Himalayan — A must match 1; eliminate options where A is not 1.",
+        "Pir Panjal is a Lesser Himalayan range in J&K/HP — C matches 3; eliminate options placing Pir Panjal in Greater Himalayas.",
+        "Zaskar is part of the Trans-Himalayan system (some classifications) but many UPSC sources place it as a high-altitude range within the Greater Himalayas zone — B matches 2; option (c): A-1, B-2, C-3, D-4 is the correct combination."
+      ],
+      "upsc_trap_explanation": "The Pir Panjal range is the most commonly misassigned range in Prelims questions. Its location in Kashmir and its elevation lead many students to place it in the Greater Himalayas. However, Pir Panjal is a Lesser Himalayan range, lying between the Greater Himalayas and the Shiwaliks in J&K/Himachal Pradesh. Similarly, Karakoram is often mistakenly placed within the Greater Himalayas, whereas it lies north of the main Himalayan watershed and belongs to the Trans-Himalayan zone.",
+      "final_explanation": "The Himalayas are classified longitudinally (north to south) into four parallel zones. Correct assignment of ranges to zones is a perennially tested Prelims topic.\n\n• A – Karakoram → 1 (Trans-Himalayas): Karakoram lies north of the main Himalayan watershed, in the Trans-Himalayan zone. It contains K2, India's highest peak.\n• B – Zaskar → 2 (Greater Himalayas / Himadri): Zaskar Range flanks the Greater Himalayan zone; in standard NCERT classification it falls within this inner belt.\n• C – Pir Panjal → 3 (Lesser Himalayas / Himachal): Pir Panjal is a prominent Lesser Himalayan range in J&K and Himachal Pradesh. It lies between the Greater Himalayas and the Shiwaliks — trap pairing if assigned to Greater Himalayas.\n• D – Shiwalik → 4 (Sub-Himalayas): Shiwaliks are the outermost and lowest Himalayan range, composed of unconsolidated sediments. Duns (structural valleys) are found between Shiwaliks and Lesser Himalayas.\n\nValue Addition:\n• Duns are found between Lesser Himalayas and Shiwaliks — Dehradun is a well-known Dun valley.\n• Rohtang Pass lies in the Greater Himalayas; Banihal Pass lies in the Lesser Himalayan (Pir Panjal) range.\n• Trans-Himalayan ranges receive very little rainfall — they lie in the rain shadow of all other Himalayan ranges."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में हिमालयी श्रृंखलाओं को सूची II में उनके सही लंबवत क्षेत्र से मिलाइए:",
+        "columns": [
+          "सूची I (श्रृंखला)",
+          "सूची II (लंबवत क्षेत्र)"
+        ],
+        "rows": [
+          [
+            "A. कराकोरम",
+            "1. ट्रांस-हिमालय"
+          ],
+          [
+            "B. जस्कर",
+            "2. ग्रेटर हिमालय (हिमाद्री)"
+          ],
+          [
+            "C. पिर पंजाल",
+            "3. लेसर हिमालय (हिमाचल)"
+          ],
+          [
+            "D. शिवालिक",
+            "4. उप-हिमालय (बाहरी हिमालय)"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n(a) A-1, B-3, C-2, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-1, B-2, C-3, D-4\n(d) A-3, B-2, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रमकारी है क्योंकि पिर पंजाल को ग्रेटर हिमालय की बजाय लेसर हिमालय में न रखने की गलती अक्सर उन छात्रों से होती है जो 'पंजाल' को कश्मीर की उच्च-ऊंचाई वाली भौगोलिक स्थिति से जोड़ते हैं।",
+      "elimination_logic": [
+        "सबसे निश्चित जोड़ी पर ध्यान दें: शिवालिक सार्वभौमिक रूप से उप-हिमालयी क्षेत्र (सबसे बाहरी पहाड़ी क्षेत्र) है — इसलिए किसी भी विकल्प को हटा दें जहाँ D को 4 से नहीं जोड़ा गया हो।",
+        "कराकोरम मुख्य जलविभाजक के उत्तर में स्थित है, अतः यह ट्रांस-हिमालयी क्षेत्र है — A को 1 से जोड़ा जाना चाहिए; उन विकल्पों को हटा दें जहाँ A को 1 नहीं जोड़ा गया हो।",
+        "पिर पंजाल जम्मू-कश्मीर/हिमाचल प्रदेश में एक लेसर हिमालयी श्रृंखला है — C को 3 से जोड़ा जाना चाहिए; उन विकल्पों को हटा दें जो पिर पंजाल को ग्रेटर हिमालय में रखते हैं।",
+        "जस्कर ट्रांस-हिमालयी प्रणाली का हिस्सा है (कुछ वर्गीकरणों में) लेकिन कई UPSC स्रोत इसे ग्रेटर हिमालयी क्षेत्र के उच्च-ऊंचाई वाले क्षेत्र के रूप में रखते हैं — B को 2 से जोड़ा जाना चाहिए; विकल्प (c): A-1, B-2, C-3, D-4 सही संयोजन है।"
+      ],
+      "upsc_trap_explanation": "पिर पंजाल श्रृंखला प्रीलिम्स प्रश्नों में सबसे अधिक गलत वर्गीकृत की जाने वाली श्रृंखला है। इसका कश्मीर में स्थान और ऊंचाई कई छात्रों को इसे ग्रेटर हिमालय में रखने के लिए प्रेरित करती है। हालांकि, पिर पंजाल एक लेसर हिमालयी श्रृंखला है, जो जम्मू-कश्मीर और हिमाचल प्रदेश में ग्रेटर हिमालय और शिवालिक के बीच स्थित है। इसी प्रकार, कराकोरम को अक्सर गलती से ग्रेटर हिमालय में रखा जाता है, जबकि यह मुख्य हिमालयी जलविभाजक के उत्तर में स्थित है और ट्रांस-हिमालयी क्षेत्र से संबंधित है।",
+      "final_explanation": "हिमालय को लंबवत (उत्तर से दक्षिण) चार समानांतर क्षेत्रों में वर्गीकृत किया गया है। श्रृंखलाओं को सही क्षेत्र में वर्गीकृत करना प्रीलिम्स में बार-बार पूछा जाने वाला विषय है।\n\n• A – कराकोरम → 1 (ट्रांस-हिमालय): कराकोरम मुख्य हिमालयी जलविभाजक के उत्तर में स्थित है, ट्रांस-हिमालयी क्षेत्र में। इसमें K2, भारत की सबसे ऊँची चोटी है।\n• B – जस्कर → 2 (ग्रेटर हिमालय / हिमाद्री): जस्कर श्रृंखला ग्रेटर हिमालय क्षेत्र के किनारे स्थित है; मानक NCERT वर्गीकरण में यह इस आंतरिक क्षेत्र में आता है।\n• C – पिर पंजाल → 3 (लेसर हिमालय / हिमाचल): पिर पंजाल जम्मू-कश्मीर और हिमाचल प्रदेश में एक प्रमुख लेसर हिमालयी श्रृंखला है। यह ग्रेटर हिमालय और शिवालिक के बीच स्थित है — यदि इसे ग्रेटर हिमालय में रखा जाए तो यह एक भ्रमकारी जोड़ी है।\n• D – शिवालिक → 4 (उप-हिमालय / बाहरी हिमालय): शिवालिक सबसे बाहरी और सबसे निचली हिमालयी श्रृंखला है, जो असंगठित तलछटों से बनी है। शिवालिक और लेसर हिमालय के बीच डून (संरचनात्मक घाटियाँ) पाई जाती हैं।\n\nमूल्यवर्धन:\n• डून लेसर हिमालय और शिवालिक के बीच पाए जाते हैं — देहरादून एक प्रसिद्ध डून घाटी है।\n• रोहतांग दर्रा ग्रेटर हिमालय में है; बनिहाल दर्रा लेसर हिमालय (पिर पंजाल) श्रृंखला में है।\n• ट्रांस-हिमालयी श्रृंखलाओं को बहुत कम वर्षा मिलती है — ये सभी अन्य हिमालयी श्रृंखलाओं की वर्षा छाया में स्थित हैं।"
+    }
+  },
+  {
+    "uuid": "435e0067-7de9-4f0e-8f29-66ecb1cecffb",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Himalayan Mountain System: Origin and Tectonic Classification",
+        "The Peninsular Plateau: Structural Origin and Major Sub-divisions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Geological age sequence Indian physiographic units",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological order of formation of major physiographic features of India, from the oldest to the most recent?\n\n1. Formation of the Peninsular Plateau as part of the Gondwanaland\n2. Deccan volcanic eruptions creating the Deccan Trap\n3. Himalayan orogeny due to collision of tectonic plates\n4. Formation of the Northern Plains through alluvial deposition\n\n(a) 1 – 3 – 2 – 4\n(b) 1 – 2 – 3 – 4\n(c) 2 – 1 – 3 – 4\n(d) 1 – 2 – 4 – 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students who correctly know the Peninsular plateau is the oldest but are unsure whether the Himalayan uplift preceded or followed the formation of the Northern Plains will swap the order of events 2 and 3.",
+      "elimination_logic": [
+        "Fix the oldest: Gondwanaland breakup and Peninsular plateau formation is Pre-Cambrian (Event 1 — oldest) — this anchors the sequence.",
+        "The Deccan volcanic eruptions (Cretaceous, ~66 million years ago) post-date the Peninsular formation but pre-date Himalayan uplift — Event 2 comes second.",
+        "Himalayan orogeny (Cenozoic, ~50–40 million years ago) follows Deccan volcanism — Event 3 third.",
+        "Northern Plains formation (ongoing, Quaternary) is the youngest — alluvial deposition by Himalayan rivers is geologically very recent. Correct order: 1–2–3–4, matching option (b)."
+      ],
+      "upsc_trap_explanation": "Many students place Himalayan uplift before Deccan volcanism because both are ancient by human standards. The key precision: Deccan eruptions are dated to the end of the Cretaceous period (~66 Ma), while the main phase of Himalayan uplift began in the Eocene (~50 Ma) and continued through the Miocene. The Northern Plains are Quaternary in age — geologically the youngest of all four. Getting events 2 and 3 reversed is the most common error.",
+      "final_explanation": "The physiographic units of India did not form simultaneously — they represent vastly different geological ages and processes.\n\n• Event 1 (oldest) — Formation of the Peninsular Plateau as part of Gondwanaland: The Peninsular plateau is composed of Pre-Cambrian igneous and metamorphic rocks, making it the oldest and most stable landmass in India, over 600 million years old.\n• Event 2 — Deccan volcanic eruptions forming Deccan Trap: Massive flood basalt eruptions during the late Cretaceous period (~66 Ma) deposited thick lava sheets over present-day Maharashtra, MP, Karnataka, and AP.\n• Event 3 — Himalayan orogeny (folding and uplift): The Indo-Australian plate's collision with the Eurasian plate during the Cenozoic (~50–40 Ma) produced the Himalayas, folding Tethys Sea sediments.\n• Event 4 (youngest) — Formation of the Northern Plains: Quaternary-age alluvial deposits carried by Himalayan rivers created the Indo-Gangetic Plain — geologically the most recent physiographic unit.\n\nValue Addition:\n• The stratigraphic contrast between the Pre-Cambrian plateau and the Tertiary Himalayas is a standard UPSC comparative point.\n• 'Young fold mountains' = Cenozoic age; 'Old fold mountains' = Paleozoic age (e.g., Aravallis, Appalachians).\n• The Northern Plains continue to subside and receive fresh alluvial deposits annually — they are not static landforms."
+    },
+    "hi": {
+      "display_text": "भारत की प्रमुख भौगोलिक विशेषताओं के निर्माण का सही कालानुक्रमिक क्रम कौन-सा है, सबसे पुराने से लेकर सबसे हाल के तक?\n\n1. गोंडवाना भूमि के हिस्से के रूप में प्रायद्वीपीय पठार का निर्माण\n2. डेक्कन ज्वालामुखीय विस्फोट जो डेक्कन ट्रैप बनाते हैं\n3. टेक्टोनिक प्लेटों के टकराव के कारण हिमालयी पर्वतोत्थान\n4. तलछट जमाव के माध्यम से उत्तरी मैदानों का निर्माण\n\n(a) 1 – 3 – 2 – 4\n(b) 1 – 2 – 3 – 4\n(c) 2 – 1 – 3 – 4\n(d) 1 – 2 – 4 – 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र जो सही रूप से जानते हैं कि प्रायद्वीपीय पठार सबसे पुराना है लेकिन यह निश्चित नहीं हैं कि हिमालयी उत्थान उत्तरी मैदानों के निर्माण से पहले हुआ या बाद में, वे घटनाओं 2 और 3 के क्रम को उलट देंगे।",
+      "elimination_logic": [
+        "सबसे पुराना निश्चित करें: गोंडवाना भूमि का विघटन और प्रायद्वीपीय पठार का निर्माण प्रीकैंब्रियन काल का है (घटना 1 — सबसे पुराना) — यह अनुक्रम को स्थिर करता है।",
+        "डेक्कन ज्वालामुखीय विस्फोट (क्रीटेशियस, लगभग 66 मिलियन वर्ष पूर्व) प्रायद्वीपीय निर्माण के बाद लेकिन हिमालयी उत्थान से पहले हुए — घटना 2 दूसरे स्थान पर आती है।",
+        "हिमालयी पर्वतोत्थान (सिनोज़ोइक, लगभग 50–40 मिलियन वर्ष पूर्व) डेक्कन ज्वालामुखी गतिविधि के बाद हुआ — घटना 3 तीसरे स्थान पर।",
+        "उत्तरी मैदानों का निर्माण (चल रहा है, क्वाटरनरी) सबसे युवा है — हिमालयी नदियों द्वारा तलछट जमा होना भूवैज्ञानिक रूप से बहुत हाल की घटना है। सही क्रम: 1–2–3–4, जो विकल्प (b) से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "कई छात्र हिमालयी उत्थान को डेक्कन ज्वालामुखी गतिविधि से पहले रखते हैं क्योंकि दोनों मानव दृष्टिकोण से प्राचीन हैं। मुख्य सटीकता यह है कि डेक्कन विस्फोट क्रीटेशियस काल के अंत (~66 Ma) में हुए थे, जबकि हिमालयी उत्थान का मुख्य चरण ईओसीन (~50 Ma) में शुरू हुआ और मियोसीन तक जारी रहा। उत्तरी मैदान क्वाटरनरी युग के हैं — भूवैज्ञानिक रूप से ये चारों में सबसे युवा हैं। घटनाओं 2 और 3 को उलटना सबसे सामान्य त्रुटि है।",
+      "final_explanation": "भारत के भौगोलिक इकाइयाँ एक साथ नहीं बनीं — वे बहुत अलग भूवैज्ञानिक युगों और प्रक्रियाओं का प्रतिनिधित्व करती हैं।\n\n• घटना 1 (सबसे पुरानी) — गोंडवाना भूमि के हिस्से के रूप में प्रायद्वीपीय पठार का निर्माण: प्रायद्वीपीय पठार प्रीकैंब्रियन आग्नेय और रूपांतरित चट्टानों से बना है, जो इसे भारत का सबसे पुराना और सबसे स्थिर भूभाग बनाता है, जिसकी आयु 600 मिलियन वर्ष से अधिक है।\n• घटना 2 — डेक्कन ज्वालामुखीय विस्फोट जो डेक्कन ट्रैप का निर्माण करते हैं: क्रीटेशियस काल के अंत में (~66 Ma) विशाल फ्लड बेसाल्ट विस्फोट महाराष्ट्र, मध्य प्रदेश, कर्नाटक और आंध्र प्रदेश के वर्तमान क्षेत्रों में मोटी लावा चादरें जमा करते हैं।\n• घटना 3 — हिमालयी पर्वतोत्थान (मोड़ और उत्थान): सिनोज़ोइक काल में (~50–40 Ma) इंडो-ऑस्ट्रेलियाई प्लेट के यूरेशियाई प्लेट से टकराव ने हिमालय का निर्माण किया, जिसमें थेथिस सागर की तलछटें मुड़ीं।\n• घटना 4 (सबसे युवा) — उत्तरी मैदानों का निर्माण: क्वाटरनरी युग की तलछटी जमा जो हिमालयी नदियों द्वारा लाई गई, ने इंडो-गैंगेटिक मैदान का निर्माण किया — भूवैज्ञानिक रूप से यह सबसे हाल की भौगोलिक इकाई है।\n\nमूल्यवर्धन:\n• प्रीकैंब्रियन पठार और तृतीयक हिमालय के बीच स्तरीय अंतर UPSC में एक मानक तुलनात्मक बिंदु है।\n• 'युवा मोड़ पर्वत' = सिनोज़ोइक युग; 'पुराने मोड़ पर्वत' = पैलियोज़ोइक युग (जैसे अरावली, अपलाचियंस)।\n• उत्तरी मैदान लगातार डूब रहे हैं और हर साल नई तलछट प्राप्त कर रहे हैं — ये स्थिर भू-आकृतियाँ नहीं हैं।"
+    }
+  },
+  {
+    "uuid": "4f733690-ee9c-4d62-9bce-2c9e5579eb51",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Coastal Plains: East Coast vs. West Coast — Structural and Economic Differences"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "East Coast wider deltaic vs West Coast narrow backwaters",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A geography researcher is studying a coastal region of India that features an extensive deltaic plain built by a major river system, a flat and wide coastal lowland suitable for paddy cultivation, and regular cyclone impacts from the adjoining sea. The region has no significant backwaters or lagoons but has well-developed beach and bar formations at the river mouth.\n\nWhich coastal sub-division of India does this description most accurately correspond to?\n\n(a) Konkan Coast\n(b) Malabar Coast\n(c) Northern Circars\n(d) Coromandel Coast",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (Malabar Coast) is a strong distractor because it is part of the West Coast and students associate backwaters with the Malabar/Kerala coast, but the question describes deltaic conditions which are exclusive to the East Coast.",
+      "elimination_logic": [
+        "The scenario mentions 'extensive deltaic plain built by a large river' — deltas are characteristic of the East Coast, not the West Coast. Eliminate options (b) and (c) which name West Coast sub-divisions.",
+        "The scenario mentions 'flat, wide coastal plain suitable for paddy cultivation' — Eastern Coast is wider and flatter than the narrow Western Coast. Eliminate option (a) Konkan (West Coast, narrow and rocky).",
+        "The Coromandel Coast is the southern section of the East Coast (covering Tamil Nadu and southern Andhra Pradesh) — it includes deltas of Krishna, Kaveri, and Godavari. Option (d) is correct."
+      ],
+      "upsc_trap_explanation": "Students who memorise 'Malabar = backwaters' and 'Coromandel = east coast' sometimes mix up the coastal sub-divisions when given a scenario. The key distinguishing features in this scenario are: deltaic formation (always East Coast), wide flat plain (East Coast), and river-built sediment (major east-flowing rivers). Konkan and Malabar are both West Coast sub-divisions characterised by narrow, rocky or estuarine coasts with no major deltas.",
+      "final_explanation": "India's eastern and western coastal plains differ fundamentally in width, origin, and physiographic features. The East Coast is wider and formed by sediment deposition from major peninsular rivers (Mahanadi, Godavari, Krishna, Kaveri) creating fertile deltaic plains. The West Coast is narrow and predominantly estuarine, with backwaters (Kayals) but no major river deltas.\n\nScenario analysis:\n• The 'extensive deltaic plain built by a large river' points exclusively to the East Coast — major rivers drain eastward and form deltas before entering the Bay of Bengal.\n• 'Flat, wide coastal plain suitable for paddy cultivation' matches East Coast morphology.\n• Option (a) Konkan: Incorrect — West Coast, narrow, rocky, no major deltas.\n• Option (b) Malabar: Incorrect — West Coast (Kerala), characterised by backwaters and lagoons, not deltas.\n• Option (c) Northern Circars: This is a valid East Coast sub-division (northern Andhra coast), but the scenario better matches the Coromandel region where Krishna and Kaveri deltas are most prominent.\n• Option (d) Coromandel: Correct — southern East Coast covering Tamil Nadu and southern AP; major deltaic formations of Krishna and Kaveri rivers.\n\nValue Addition:\n• Northern Circars covers northern coastal Andhra Pradesh (Godavari, Krishna areas); Coromandel covers southern AP and Tamil Nadu.\n• The Chilika Lake (Odisha) on the East Coast is India's largest coastal lagoon — technically brackish, not a backwater.\n• West Coast backwaters (Kayals) in Kerala are used extensively for inland navigation and tourism."
+    },
+    "hi": {
+      "display_text": "भारत के एक तटीय क्षेत्र का एक भूगोल शोधकर्ता अध्ययन कर रहा है जिसमें एक बड़े नदी तंत्र द्वारा निर्मित विस्तृत डेल्टाई मैदान, धान की खेती के लिए उपयुक्त समतल और चौड़ा तटीय मैदान, और आसन्न समुद्र से नियमित चक्रवात प्रभाव हैं। इस क्षेत्र में कोई महत्वपूर्ण बैकवाटर्स या लैगून नहीं हैं लेकिन नदी मुख पर अच्छी तरह विकसित समुद्र तट और बार संरचनाएँ हैं।\n\nभारत के किस तटीय उप-विभाजन का यह विवरण सबसे सटीक रूप से मेल खाता है?\n\n(a) कोंकण तट\n(b) मलाबार तट\n(c) नॉर्दर्न सर्कर्स\n(d) कोरमंडल तट",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (मलाबार तट) एक मजबूत भ्रमकारी विकल्प है क्योंकि यह पश्चिमी तट का हिस्सा है और छात्र मलाबार/केरल तट को बैकवाटर्स से जोड़ते हैं, लेकिन प्रश्न में डेल्टाई परिस्थितियों का वर्णन है जो केवल पूर्वी तट के लिए विशिष्ट हैं।",
+      "elimination_logic": [
+        "परिदृश्य में 'एक बड़े नदी तंत्र द्वारा निर्मित विस्तृत डेल्टाई मैदान' का उल्लेख है — डेल्टास पूर्वी तट की विशेषता हैं, न कि पश्चिमी तट की। इसलिए विकल्प (b) और (c) जो पश्चिमी तट के उप-विभाजनों के नाम हैं, उन्हें हटा दें।",
+        "परिदृश्य में 'धान की खेती के लिए उपयुक्त समतल, चौड़ा तटीय मैदान' का उल्लेख है — पूर्वी तट पश्चिमी तट की तुलना में चौड़ा और समतल है। इसलिए विकल्प (a) कोंकण (पश्चिमी तट, संकीर्ण और चट्टानी) को हटा दें।",
+        "कोरमंडल तट पूर्वी तट का दक्षिणी भाग है (तमिलनाडु और दक्षिण आंध्र प्रदेश को कवर करता है) — इसमें कृष्णा, कावेरी और गोदावरी के डेल्टास शामिल हैं। विकल्प (d) सही है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र 'मलाबार = बैकवाटर्स' और 'कोरमंडल = पूर्वी तट' याद करते हैं, वे कभी-कभी तटीय उप-विभाजनों को परिदृश्य में भ्रमित कर देते हैं। इस परिदृश्य में मुख्य भेदभावकारी विशेषताएँ हैं: डेल्टाई निर्माण (हमेशा पूर्वी तट), चौड़ा समतल मैदान (पूर्वी तट), और नदी द्वारा निर्मित तलछट (मुख्य पूर्व की ओर बहने वाली नदियाँ)। कोंकण और मलाबार दोनों पश्चिमी तट के उप-विभाजन हैं जो संकीर्ण, चट्टानी या मुहाना तटों से संबंधित हैं और जिनमें कोई प्रमुख डेल्टास नहीं हैं।",
+      "final_explanation": "भारत के पूर्वी और पश्चिमी तटीय मैदान चौड़ाई, उत्पत्ति और भौगोलिक विशेषताओं में मौलिक रूप से भिन्न हैं। पूर्वी तट चौड़ा है और प्रमुख प्रायद्वीपीय नदियों (महानदी, गोदावरी, कृष्णा, कावेरी) द्वारा तलछट जमाव से बना है, जो उपजाऊ डेल्टाई मैदान बनाते हैं। पश्चिमी तट संकीर्ण और मुख्यतः मुहाना है, जिसमें बैकवाटर्स (कयाल) हैं लेकिन कोई प्रमुख नदी डेल्टास नहीं हैं।\n\nपरिदृश्य विश्लेषण:\n• 'एक बड़े नदी द्वारा निर्मित विस्तृत डेल्टाई मैदान' केवल पूर्वी तट की ओर संकेत करता है — प्रमुख नदियाँ पूर्व की ओर बहती हैं और बंगाल की खाड़ी में प्रवेश करने से पहले डेल्टास बनाती हैं।\n• 'धान की खेती के लिए उपयुक्त समतल, चौड़ा तटीय मैदान' पूर्वी तट की आकृति से मेल खाता है।\n• विकल्प (a) कोंकण: गलत — पश्चिमी तट, संकीर्ण, चट्टानी, कोई प्रमुख डेल्टास नहीं।\n• विकल्प (b) मलाबार: गलत — पश्चिमी तट (केरल), बैकवाटर्स और लैगून से विशेषित, डेल्टास नहीं।\n• विकल्प (c) नॉर्दर्न सर्कर्स: यह पूर्वी तट का एक वैध उप-विभाजन है (उत्तर आंध्र तट), लेकिन परिदृश्य कोरमंडल क्षेत्र से बेहतर मेल खाता है जहाँ कृष्णा और कावेरी के डेल्टास प्रमुख हैं।\n• विकल्प (d) कोरमंडल: सही — तमिलनाडु और दक्षिण आंध्र प्रदेश को कवर करता है; कृष्णा और कावेरी नदियों के प्रमुख डेल्टाई निर्माण।\n\nमूल्य संवर्धन:\n• नॉर्दर्न सर्कर्स उत्तर तटीय आंध्र प्रदेश (गोदावरी, कृष्णा क्षेत्र) को कवर करता है; कोरमंडल दक्षिण आंध्र प्रदेश और तमिलनाडु को।\n• पूर्वी तट पर स्थित चिलिका झील (ओडिशा) भारत की सबसे बड़ी तटीय लैगून है — तकनीकी रूप से ब्रैकिश है, बैकवाटर नहीं।\n• केरल में पश्चिमी तट के बैकवाटर्स (कयाल) का उपयोग व्यापक रूप से अंतर्देशीय नौवहन और पर्यटन के लिए किया जाता है।"
+    }
+  },
+  {
+    "uuid": "c827744c-2ac3-44c4-bb6c-85cb4b7804df",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Islands of India: Andaman & Nicobar vs. Lakshadweep — Origin and Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Lakshadweep coral origin vs continental island groups",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT share the same geological origin as the others?\n\n(a) Lakshadweep Islands\n(b) North Andaman Islands\n(c) Barren Island\n(d) Nicobar Islands",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (Barren Island) is a strong distractor because it is a volcanic island within Andaman group and students might think volcanism makes it structurally different, not recognising that all Andaman islands share a continental/structural origin (Arakan Yoma extension).",
+      "elimination_logic": [
+        "Identify the common attribute: North Andaman, South Andaman, and Barren Island are all part of the Andaman & Nicobar archipelago — all share a continental/structural origin as submerged extensions of the Arakan Yoma.",
+        "Lakshadweep Islands are coral atolls formed over a submarine platform — they have no structural connection to the Indian mainland or any fold mountain system.",
+        "Barren Island, though volcanic, is still part of the Andaman group (structural origin) — the volcanic activity is a secondary feature, not the primary origin.",
+        "Lakshadweep is the odd one out — it is the only group of coral (not structural/continental) origin among the options."
+      ],
+      "upsc_trap_explanation": "Barren Island's volcanic character is a well-known Prelims fact and is deliberately placed as a trap option. A student who focuses on 'structural uniqueness' of Barren Island (volcanic vs. non-volcanic) may select it as the odd one out. However, the classifying attribute here is origin — continental/structural vs. coral. Barren Island is structurally part of the Andaman group (Arakan Yoma extension). Lakshadweep alone has a coral/atoll origin with no continental structural link.",
+      "final_explanation": "The Andaman & Nicobar Islands and Lakshadweep represent fundamentally different island types in terms of their geological origin.\n\n• Option (a) Lakshadweep Islands: Correct odd one out — formed as coral atolls over a submarine platform; no volcanic activity; no structural connection to mainland India or any mountain system.\n• Option (b) North Andaman: Part of A&N group — structural extension of Arakan Yoma (Myanmar fold mountains); continental origin.\n• Option (c) Barren Island: Part of A&N group — while it hosts the only active volcano in South Asia, its structural origin is as part of the Andaman arc (Arakan Yoma extension). Volcanic activity is a superimposed feature.\n• Option (d) Nicobar Islands: Part of A&N group — same structural origin as Andaman Islands, submerged extension of Arakan Yoma.\n\nValue Addition:\n• Indira Point (southernmost tip of India) is in the Nicobar Islands — it was partly submerged after the 2004 Indian Ocean tsunami.\n• Narcondam Island in the Andamans has an extinct volcano; Barren Island has an active one.\n• Lakshadweep's coral atolls are threatened by coral bleaching due to rising sea temperatures — an Environment-Ecology linkage."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन अन्य सभी के समान भूवैज्ञानिक उत्पत्ति साझा नहीं करता?\n\n(a) लक्षद्वीप द्वीपसमूह\n(b) उत्तर अंडमान द्वीप\n(c) बैरन द्वीप\n(d) निकोबार द्वीप",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (Barren Island) एक मजबूत भ्रमकारी विकल्प है क्योंकि यह अंडमान समूह के भीतर एक ज्वालामुखीय द्वीप है और छात्र सोच सकते हैं कि ज्वालामुखीयता इसे संरचनात्मक रूप से अलग बनाती है, यह पहचान नहीं पाते कि सभी अंडमान द्वीपों की महाद्वीपीय/संरचनात्मक उत्पत्ति (अराकान योमा विस्तार) समान है।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: उत्तर अंडमान, दक्षिण अंडमान, और बैरन द्वीप सभी अंडमान और निकोबार द्वीपसमूह का हिस्सा हैं — ये सभी अराकान योमा के डूबे हुए विस्तार के रूप में महाद्वीपीय/संरचनात्मक उत्पत्ति साझा करते हैं।",
+        "लक्षद्वीप द्वीप समूह प्रवाल एटोल हैं जो एक समुद्र के नीचे के मंच पर बने हैं — इनका भारतीय मुख्यभूमि या किसी भी तह पर्वत प्रणाली से कोई संरचनात्मक संबंध नहीं है।",
+        "बैरन द्वीप, यद्यपि ज्वालामुखीय है, फिर भी अंडमान समूह का हिस्सा है (संरचनात्मक उत्पत्ति) — ज्वालामुखीय गतिविधि एक द्वितीयक विशेषता है, प्राथमिक उत्पत्ति नहीं।",
+        "लक्षद्वीप अलग है — यह विकल्पों में唯一 प्रवाल (महाद्वीपीय/संरचनात्मक नहीं) उत्पत्ति वाला समूह है।"
+      ],
+      "upsc_trap_explanation": "बैरन द्वीप की ज्वालामुखीय प्रकृति एक प्रसिद्ध प्रारंभिक परीक्षा तथ्य है और इसे जानबूझकर भ्रम के लिए रखा गया है। जो छात्र 'बैरन द्वीप की संरचनात्मक विशिष्टता' (ज्वालामुखीय बनाम गैर-ज्वालामुखीय) पर ध्यान केंद्रित करते हैं, वे इसे अलग विकल्प के रूप में चुन सकते हैं। हालांकि, वर्गीकरण का आधार यहाँ उत्पत्ति है — महाद्वीपीय/संरचनात्मक बनाम प्रवाल। बैरन द्वीप संरचनात्मक रूप से अंडमान समूह (अराकान योमा विस्तार) का हिस्सा है। केवल लक्षद्वीप का प्रवाल/एटोल उत्पत्ति है और इसका कोई महाद्वीपीय संरचनात्मक संबंध नहीं है।",
+      "final_explanation": "अंडमान और निकोबार द्वीपसमूह तथा लक्षद्वीप द्वीपसमूह अपनी भूवैज्ञानिक उत्पत्ति के संदर्भ में मौलिक रूप से भिन्न द्वीप प्रकारों का प्रतिनिधित्व करते हैं।\n\n• विकल्प (a) लक्षद्वीप द्वीपसमूह: सही अलग विकल्प — प्रवाल एटोल के रूप में एक समुद्र के नीचे के मंच पर बने; कोई ज्वालामुखीय गतिविधि नहीं; भारतीय मुख्यभूमि या किसी पर्वत प्रणाली से कोई संरचनात्मक संबंध नहीं।\n• विकल्प (b) उत्तर अंडमान: अंडमान और निकोबार समूह का हिस्सा — अराकान योमा (म्यांमार तह पर्वत) का संरचनात्मक विस्तार; महाद्वीपीय उत्पत्ति।\n• विकल्प (c) बैरन द्वीप: अंडमान और निकोबार समूह का हिस्सा — दक्षिण एशिया का एकमात्र सक्रिय ज्वालामुखी यहाँ है, लेकिन इसकी संरचनात्मक उत्पत्ति अंडमान चाप (अराकान योमा विस्तार) का हिस्सा है। ज्वालामुखीय गतिविधि एक अतिरिक्त विशेषता है।\n• विकल्प (d) निकोबार द्वीप: अंडमान और निकोबार समूह का हिस्सा — अंडमान द्वीपों के समान संरचनात्मक उत्पत्ति, अराकान योमा का डूबा हुआ विस्तार।\n\nमूल्यवर्धन:\n• इंदिरा प्वाइंट (भारत का दक्षिणतम छोर) निकोबार द्वीपों में है — 2004 के भारतीय महासागर सुनामी के बाद आंशिक रूप से डूब गया था।\n• अंडमान में नारकोंदम द्वीप पर एक मृत ज्वालामुखी है; बैरन द्वीप पर सक्रिय।\n• लक्षद्वीप के प्रवाल एटोल समुद्र के तापमान वृद्धि के कारण प्रवाल सफेदी से खतरे में हैं — पर्यावरण-इकोलॉजी संबंध।"
+    }
+  },
+  {
+    "uuid": "5ffe4be0-1904-4d3b-8a3c-961f746b438b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Concept of Antecedent and Consequent Drainage in Indian Context",
+        "Physiographic Regions and Their Drainage System Relationships: Integrated Overview"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Antecedent rivers perennial Himalayan vs seasonal peninsular",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements:\n\nStatement 1: The Indus, Sutlej, and Brahmaputra are antecedent rivers because they predate the Himalayan uplift and have maintained their course by cutting gorges as the mountains rose.\nStatement 2: All Himalayan rivers are perennial throughout the year because they are exclusively fed by glacial meltwater from permanent snow cover.\n\nWhich of the following is correct?\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Indus, Sutlej, and Brahmaputra are antecedent rivers because they predate the Himalayan uplift and have maintained their course by cutting gorges as the mountains rose.",
+          "verdict": "Correct",
+          "reason": "Antecedent rivers established their courses before the mountains formed; as the Himalayas rose, these rivers cut through them by downward erosion, creating deep gorges. This is the textbook definition and these three rivers are the standard examples."
+        },
+        {
+          "statement": "All Himalayan rivers are perennial throughout the year because they are exclusively fed by glacial meltwater from permanent snow cover.",
+          "verdict": "Incorrect",
+          "reason": "Himalayan rivers are perennial, but not exclusively because of glacial melt — they receive both glacial meltwater AND monsoon rainfall, making them perennial. The word 'exclusively' makes the statement incorrect."
+        }
+      ],
+      "strong_distractor": "a — Option a ('Both statements correct') is a strong distractor because Statement 2 is largely true in spirit (Himalayan rivers ARE perennial due to snow/glacier), and students may overlook the word 'exclusively' which makes it incorrect.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Indus, Sutlej, and Brahmaputra originating in Tibet and cutting through Himalayas via gorges is the classic antecedent drainage description — Statement 1 is correct.",
+        "Focus on the word 'exclusively' in Statement 2: Himalayan rivers are perennial because of BOTH glacier melt AND monsoon rainfall — not glacial melt alone. 'Exclusively' is a scope-extension error — Statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is carefully constructed to be almost entirely accurate — Himalayan rivers ARE perennial and DO receive glacial meltwater. The trap is the word 'exclusively.' In UPSC questions, extreme qualifiers like 'exclusively,' 'only,' 'always,' and 'never' almost always render an otherwise true statement false. Himalayan rivers receive a dual contribution: glacial/snowmelt (summer) and monsoon rainfall (July–September). Removing either source would reduce flow but not eliminate it entirely.",
+      "final_explanation": "Himalayan river hydrology and drainage classification are perennially tested in Prelims.\n\n• Statement 1 — Correct: Antecedent rivers are those that existed before the mountains they flow through. Indus, Sutlej, and Brahmaputra all originate in Tibet (China) and predate the Himalayan orogeny — they maintained their courses by cutting down as the Himalayas rose, forming dramatic gorges.\n• Statement 2 — Incorrect: Himalayan rivers are indeed perennial, but the reason is dual — glacial/snow meltwater in summer AND heavy monsoon rainfall. The statement incorrectly uses 'exclusively' to attribute perennial flow only to glacial melt, which is factually incomplete and therefore incorrect.\n\nValue Addition:\n• Ganga originates at Gangotri glacier in India — it is NOT an antecedent river in the strict sense; it is largely consequent.\n• Peninsular rivers (Godavari, Krishna, etc.) are seasonal — dependent almost entirely on monsoon rainfall with no glacier contribution.\n• Brahmaputra makes a spectacular U-turn (hairpin bend) around Namcha Barwa peak before entering India as the Dihang — the gorge here is one of the deepest in the world."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: सिंधु, सतलज, और ब्रह्मपुत्र पूर्ववर्ती नदियाँ हैं क्योंकि ये हिमालय के उठान से पहले मौजूद थीं और पर्वतों के उठने के दौरान घाटियाँ काटते हुए अपने मार्ग को बनाए रखा है।\nकथन 2: सभी हिमालयी नदियाँ वर्षभर स्थायी होती हैं क्योंकि इन्हें केवल स्थायी हिमनद के पिघलने वाले पानी से पोषित किया जाता है।\n\nनिम्नलिखित में से कौन सा सही है?\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Indus, Sutlej, and Brahmaputra are antecedent rivers because they predate the Himalayan uplift and have maintained their course by cutting gorges as the mountains rose.",
+          "verdict": "सही है",
+          "reason": "पूर्ववर्ती नदियाँ वे होती हैं जो पर्वत बनने से पहले अपने मार्ग स्थापित कर चुकी थीं; जैसे-जैसे हिमालय उठा, ये नदियाँ नीचे की ओर कटाव करके पर्वतों को चीरती हुई अपने मार्ग को बनाए रखीं, जिससे गहरी घाटियाँ बनीं। यह पाठ्यपुस्तक परिभाषा है और ये तीन नदियाँ इसके मानक उदाहरण हैं।"
+        },
+        {
+          "statement": "All Himalayan rivers are perennial throughout the year because they are exclusively fed by glacial meltwater from permanent snow cover.",
+          "verdict": "गलत है",
+          "reason": "हिमालयी नदियाँ वर्षभर बहती हैं, लेकिन केवल हिमनद पिघलने के कारण नहीं — इन्हें हिमनद पिघलने के साथ-साथ मानसून वर्षा भी मिलती है, जिससे ये स्थायी होती हैं। 'केवल' शब्द इस कथन को गलत बनाता है।"
+        }
+      ],
+      "strong_distractor": "क — विकल्प क ('दोनों कथन सही हैं') एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 2 का भावात्मक अर्थ काफी हद तक सही है (हिमालयी नदियाँ हिमनद/बर्फ के कारण स्थायी होती हैं), और विद्यार्थी 'केवल' शब्द को नजरअंदाज कर सकते हैं जो इसे गलत बनाता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: सिंधु, सतलज और ब्रह्मपुत्र तिब्बत में उत्पन्न होकर हिमालय की घाटियों को काटते हुए बहती हैं, जो पूर्ववर्ती जल निकासी का क्लासिक उदाहरण है — कथन 1 सही है।",
+        "कथन 2 में 'केवल' शब्द पर ध्यान दें: हिमालयी नदियाँ स्थायी हैं क्योंकि उन्हें हिमनद पिघलने और मानसून वर्षा दोनों से पानी मिलता है — केवल हिमनद पिघलने से नहीं। 'केवल' एक दायरा-विस्तार त्रुटि है — कथन 2 गलत है।",
+        "कथन 1 सही + कथन 2 गलत → विकल्प (ग)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 सावधानीपूर्वक लगभग पूरी तरह सही बनाया गया है — हिमालयी नदियाँ स्थायी हैं और उन्हें हिमनद पिघलने का पानी भी मिलता है। जाल 'केवल' शब्द है। UPSC प्रश्नों में 'केवल', 'सिर्फ', 'हमेशा', 'कभी नहीं' जैसे अतिशयोक्ति शब्द अक्सर किसी सही कथन को गलत बना देते हैं। हिमालयी नदियाँ दो स्रोतों से जल प्राप्त करती हैं: हिमनद/बर्फ पिघलना (गर्मी में) और मानसून वर्षा (जुलाई–सितंबर)। इनमें से किसी एक स्रोत को हटाने से प्रवाह कम होगा लेकिन पूरी तरह समाप्त नहीं होगा।",
+      "final_explanation": "हिमालयी नदियों के जल विज्ञान और जल निकासी वर्गीकरण को प्रारंभिक परीक्षा में बार-बार पूछा जाता है।\n\n• कथन 1 — सही: पूर्ववर्ती नदियाँ वे होती हैं जो उन पर्वतों के बनने से पहले मौजूद थीं जिनसे वे होकर बहती हैं। सिंधु, सतलज और ब्रह्मपुत्र सभी तिब्बत (चीन) में उत्पन्न होते हैं और हिमालय के उद्भव से पहले से हैं — ये पर्वतों के उठने के साथ नीचे की ओर कटाव करते हुए अपने मार्ग बनाए रखते हैं, जिससे गहरी घाटियाँ बनती हैं।\n• कथन 2 — गलत: हिमालयी नदियाँ वास्तव में स्थायी हैं, लेकिन इसका कारण दोहरा है — गर्मियों में हिमनद/बर्फ का पिघलना और भारी मानसून वर्षा। कथन में 'केवल' शब्द का प्रयोग स्थायी प्रवाह को केवल हिमनद पिघलने से जोड़ता है, जो तथ्यात्मक रूप से अधूरा और इसलिए गलत है।\n\nमूल्यवर्धन:\n• गंगा का उद्गम भारत के गंगोत्री हिमनद से होता है — यह सख्त अर्थों में पूर्ववर्ती नदी नहीं है; यह मुख्यतः परिणामस्वरूप नदी है।\n• प्रायद्वीपीय नदियाँ (गोदावरी, कृष्णा आदि) मौसमी होती हैं — ये लगभग पूरी तरह मानसून वर्षा पर निर्भर हैं और हिमनद योगदान नहीं होता।\n• ब्रह्मपुत्र भारत में दीहांग के रूप में प्रवेश करने से पहले नामचा बरवा शिखर के चारों ओर एक भव्य यू-टर्न (हेयरपिन मोड़) बनाती है — यहाँ की घाटी विश्व की सबसे गहरी घाटियों में से एक है।"
+    }
+  },
+  {
+    "uuid": "deb6e12d-b31f-4153-83a5-7cf1575554ac",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Deccan Trap (Deccan Lava Plateau): Formation and Soil Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Deccan Trap volcanic origin distinct from Deccan Plateau",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Deccan Trap, which gave rise to the highly fertile black cotton soils of peninsular India, was formed primarily as a result of ________.\n\n(a) Fluvial deposition by large rivers over millions of years\n(b) Tectonic uplift and folding associated with the breakup of Gondwanaland\n(c) Glacial retreat during the Pleistocene epoch\n(d) Extensive volcanic eruptions and outpourings of basaltic lava during the Cretaceous period",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because 'tectonic uplift and folding' sounds plausible given that the Deccan Plateau is indeed a structural geological unit, and students may conflate the plateau's structural history with the Trap's volcanic origin.",
+      "elimination_logic": [
+        "Eliminate option (a): 'fluvial deposition' applies to alluvial plains, not igneous/volcanic landforms.",
+        "Eliminate option (b): tectonic folding produces fold mountains — Deccan Trap is a volcanic landform, not a fold structure.",
+        "Eliminate option (c): glacial retreat is not associated with any part of peninsular India's recent geological history.",
+        "Confirm option (d): the Deccan Trap is a flood basalt province formed by extensive volcanic eruptions during the late Cretaceous — associated with the Reunion hotspot and Gondwana breakup."
+      ],
+      "upsc_trap_explanation": "The conflation trap here is between 'Deccan Plateau' (a structural landmass) and 'Deccan Trap' (a volcanic rock region). The Deccan Plateau has ancient Gondwana origins and structural stability; the Deccan Trap refers specifically to the flood basalt that was deposited over parts of the plateau during Cretaceous-period volcanism. Students who study only the plateau's ancient stability may miss that the Trap's rock type (basalt) indicates a volcanic origin — quite different from the tectonic folding that forms mountains.",
+      "final_explanation": "The Deccan Trap is one of the world's largest flood basalt provinces, covering large parts of Maharashtra, Madhya Pradesh, Karnataka, and Andhra Pradesh.\n\n• Option (a) — fluvial deposition: Incorrect. Fluvial processes build alluvial plains. The Deccan Trap rocks are igneous basalts, not sedimentary alluvium.\n• Option (b) — tectonic uplift and folding: Incorrect. Tectonic folding produces fold mountains (e.g., Himalayas). The Deccan Trap is not folded rock — it is solidified lava.\n• Option (c) — glacial retreat: Incorrect. Peninsular India has not experienced Quaternary glaciation. This option is not geologically applicable.\n• Option (d) — extensive volcanic eruptions during the Cretaceous period: Correct. The Deccan Trap was formed by massive outpourings of basaltic lava, associated with the Reunion mantle hotspot during the breakup of Gondwanaland (~66 million years ago).\n\nValue Addition:\n• Regur (Black Cotton Soil) is derived from Deccan basalt — it is self-ploughing, moisture-retentive, and ideal for cotton and sugarcane cultivation.\n• The Deccan Trap eruptions coincide with the Cretaceous-Paleogene extinction event — debated as a contributing factor to dinosaur extinction.\n• Deccan Trap ≠ Deccan Plateau: Trap = volcanic rock region; Plateau = larger structural unit including non-volcanic areas."
+    },
+    "hi": {
+      "display_text": "डेक्कन ट्रैप, जिसने प्रायद्वीपीय भारत की अत्यंत उपजाऊ काली मिट्टियों को जन्म दिया, मुख्यतः ________ के परिणामस्वरूप बना था।\n\n(a) लाखों वर्षों में बड़ी नदियों द्वारा फ्लुवियल जमाव\n(b) गोंडवाना के विखंडन से जुड़ा टेक्टोनिक उठान और फोल्डिंग\n(c) प्लायोसीन युग के दौरान ग्लेशियल वापसी\n(d) क्रेटेशियस काल के दौरान व्यापक ज्वालामुखीय विस्फोट और बेसाल्टिक लावा का प्रवाह",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि 'tectonic uplift and folding' प्रबल लगता है क्योंकि डेक्कन पठार वास्तव में एक संरचनात्मक भूवैज्ञानिक इकाई है, और छात्र पठार के संरचनात्मक इतिहास को ट्रैप के ज्वालामुखीय उत्पत्ति के साथ भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 'fluvial deposition' अलुवियल मैदानों पर लागू होता है, ज्वालामुखीय/आग्नेय स्थलाकृतियों पर नहीं।",
+        "विकल्प (b) को हटाएं: टेक्टोनिक फोल्डिंग से फोल्ड पर्वत बनते हैं — डेक्कन ट्रैप एक ज्वालामुखीय स्थलाकृति है, फोल्ड संरचना नहीं।",
+        "विकल्प (c) को हटाएं: ग्लेशियल वापसी प्रायद्वीपीय भारत के हाल के भूवैज्ञानिक इतिहास से संबंधित नहीं है।",
+        "विकल्प (d) की पुष्टि करें: डेक्कन ट्रैप एक फ्लड बेसाल्ट प्रदेश है जो लेट क्रेटेशियस के दौरान व्यापक ज्वालामुखीय विस्फोटों से बना — यह Reunion हॉटस्पॉट और गोंडवाना विखंडन से जुड़ा है।"
+      ],
+      "upsc_trap_explanation": "यहां भ्रम डेक्कन पठार (एक संरचनात्मक स्थलाकृति) और डेक्कन ट्रैप (एक ज्वालामुखीय चट्टान क्षेत्र) के बीच है। डेक्कन पठार का प्राचीन गोंडवाना मूल और संरचनात्मक स्थिरता है; डेक्कन ट्रैप विशेष रूप से उस फ्लड बेसाल्ट को संदर्भित करता है जो क्रेटेशियस काल के ज्वालामुखीय क्रियाकलाप के दौरान पठार के कुछ हिस्सों पर जमा हुआ। केवल पठार की प्राचीन स्थिरता पढ़ने वाले छात्र यह नहीं समझ पाते कि ट्रैप की चट्टान का प्रकार (बेसाल्ट) ज्वालामुखीय उत्पत्ति को दर्शाता है — जो पर्वत बनाने वाले टेक्टोनिक फोल्डिंग से पूरी तरह अलग है।",
+      "final_explanation": "डेक्कन ट्रैप विश्व के सबसे बड़े फ्लड बेसाल्ट प्रदेशों में से एक है, जो महाराष्ट्र, मध्य प्रदेश, कर्नाटक और आंध्र प्रदेश के बड़े हिस्सों को कवर करता है।\n\n• विकल्प (a) — फ्लुवियल डिपोजिशन: गलत। फ्लुवियल प्रक्रियाएँ अलुवियल मैदान बनाती हैं। डेक्कन ट्रैप की चट्टानें आग्नेय बेसाल्ट हैं, तलछटी अलुवियम नहीं।\n• विकल्प (b) — टेक्टोनिक उठान और फोल्डिंग: गलत। टेक्टोनिक फोल्डिंग से फोल्ड पर्वत बनते हैं (जैसे हिमालय)। डेक्कन ट्रैप फोल्डेड चट्टान नहीं है — यह ठोस लावा है।\n• विकल्प (c) — ग्लेशियल वापसी: गलत। प्रायद्वीपीय भारत ने क्वाटरनरी ग्लेशिएशन का अनुभव नहीं किया है। यह विकल्प भूवैज्ञानिक रूप से लागू नहीं है।\n• विकल्प (d) — क्रेटेशियस काल के दौरान व्यापक ज्वालामुखीय विस्फोट: सही। डेक्कन ट्रैप विशाल बेसाल्टिक लावा के प्रवाहों से बना था, जो Reunion मेंटल हॉटस्पॉट से जुड़ा था, गोंडवाना के विखंडन के दौरान (~66 मिलियन वर्ष पहले)।\n\nमूल्य संवर्धन:\n• रेजर (काली मिट्टी) डेक्कन बेसाल्ट से उत्पन्न होती है — यह स्वयं-हल चलाने वाली, नमी धारण करने वाली और कपास तथा गन्ना की खेती के लिए आदर्श है।\n• डेक्कन ट्रैप के विस्फोट क्रेटेशियस-पैलेओजीन विलुप्ति घटना के साथ मेल खाते हैं — डायनासोर के विलुप्त होने में एक योगदान कारक के रूप में विवादित।\n• डेक्कन ट्रैप ≠ डेक्कन पठार: ट्रैप = ज्वालामुखीय चट्टान क्षेत्र; पठार = गैर-ज्वालामुखीय क्षेत्रों सहित बड़ा संरचनात्मक इकाई।"
+    }
+  },
+  {
+    "uuid": "7993132d-83e3-4a92-ad6d-018d3b341f3b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Brahmaputra Plain and Assam Valley: Structural Uniqueness",
+        "The North-East Hill Ranges (Purvanchal): Structural Linkage and Geopolitical Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Brahmaputra enters India at Arunachal not Assam",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Brahmaputra River — Enters India through the plains of Assam after descending from Tibet\n(b) Loktak Lake — Largest freshwater lake in Northeast India, located in Manipur\n(c) Majuli Island — Expanding river island in the Brahmaputra, recognised as the world's largest river island\n(d) Purvanchal Hills — Composed primarily of granite and gneiss, structurally identical to the main Himalayan axis",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because students know Majuli is in Assam and is associated with the Brahmaputra, but may not know the precise claim about it being the 'world's largest river island' versus just 'India's largest,' and because the island is shrinking (not growing).",
+      "elimination_logic": [
+        "Evaluate option (a): Brahmaputra enters India at Arunachal Pradesh (through Dihang gorge after U-turn around Namcha Barwa), NOT Assam. This pair is incorrectly matched.",
+        "Evaluate option (b): Loktak Lake is indeed located in Manipur and is the largest freshwater lake in Northeast India — correctly matched.",
+        "Evaluate option (c): Majuli is a river island in Assam, but it is shrinking due to erosion, not growing. Also, while often cited as the world's largest river island, its UNESCO claim is about cultural heritage, not size. The pairing has a partial-truth issue.",
+        "Option (b) is the correctly matched pair — confirm: Loktak Lake in Manipur is the largest freshwater lake in NE India."
+      ],
+      "upsc_trap_explanation": "Option (a) is the primary trap: students who know that Brahmaputra is associated with Assam (where most of its Indian course lies) incorrectly assume it enters India in Assam. In fact, it enters India in Arunachal Pradesh as the Dihang River after making a dramatic U-turn around Namcha Barwa peak. The entry point into Assam is after the Dihang merges with other tributaries. This geographic precision is repeatedly tested in UPSC Prelims.",
+      "final_explanation": "Northeast India's physiography centres on the Brahmaputra valley and surrounding hill ranges.\n\n• Option (a) — Brahmaputra: Entered India through Assam: Incorrect. Brahmaputra (called Tsangpo in Tibet and Dihang in Arunachal) enters India through Arunachal Pradesh after cutting the Dihang gorge around Namcha Barwa. It adopts the name Brahmaputra only after entering the Assam plains.\n• Option (b) — Loktak Lake: Located in Manipur: Correct. Loktak is the largest freshwater lake in Northeast India, famous for its phumdis (floating masses of vegetation, soil, and organic matter).\n• Option (c) — Majuli: Expanding river island in Assam: Incorrect. Majuli is shrinking due to severe bank erosion — it has lost significant area over the past century.\n• Option (d) — Purvanchal Hills: Composed of granite and gneiss: Incorrect. Purvanchal (Patkai, Naga, Mizo hills) is composed of sedimentary rocks, unlike the main Himalayan axis which has granite/gneiss.\n\nValue Addition:\n• Brahmaputra carries the highest sediment load of any river in India — responsible for annual floods and island (char) formation in Assam.\n• Loktak Lake hosts Keibul Lamjao National Park — the world's only floating national park (on phumdis).\n• Purvanchal's sedimentary composition makes it less rugged but more dissected than the main Himalayas."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा सही मेल खाता है?\n\n(a) ब्रह्मपुत्र नदी — तिब्बत से उतरकर असम के मैदानों के माध्यम से भारत में प्रवेश करती है\n(b) लोकटक झील — पूर्वोत्तर भारत की सबसे बड़ी मीठे पानी की झील, मणिपुर में स्थित\n(c) माजुली द्वीप — ब्रह्मपुत्र में बढ़ता हुआ नदी द्वीप, जिसे विश्व का सबसे बड़ा नदी द्वीप माना जाता है\n(d) पूर्वांचल पहाड़ियाँ — मुख्य रूप से ग्रेनाइट और गनीस से बनी, संरचनात्मक रूप से मुख्य हिमालयी अक्ष के समान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र जानते हैं कि माजुली असम में है और ब्रह्मपुत्र से जुड़ा है, लेकिन वे यह सटीक दावा नहीं जानते कि यह 'विश्व का सबसे बड़ा नदी द्वीप' है या केवल 'भारत का सबसे बड़ा', और क्योंकि द्वीप सिकुड़ रहा है (बढ़ नहीं रहा)।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: ब्रह्मपुत्र भारत में अरुणाचल प्रदेश में प्रवेश करता है (नमचा बरवा के चारों ओर यू-टर्न लेकर दिहांग घाटी के माध्यम से), असम में नहीं। यह जोड़ी गलत मेल खाती है।",
+        "विकल्प (b) का मूल्यांकन करें: लोकटक झील वास्तव में मणिपुर में स्थित है और यह पूर्वोत्तर भारत की सबसे बड़ी मीठे पानी की झील है — सही मेल।",
+        "विकल्प (c) का मूल्यांकन करें: माजुली असम में एक नदी द्वीप है, लेकिन यह कटाव के कारण सिकुड़ रहा है, बढ़ नहीं रहा। साथ ही, जबकि इसे अक्सर विश्व का सबसे बड़ा नदी द्वीप कहा जाता है, इसका यूनेस्को दावा सांस्कृतिक विरासत के बारे में है, आकार के बारे में नहीं। इस जोड़ी में आंशिक सत्य की समस्या है।",
+        "विकल्प (b) सही मेल वाली जोड़ी है — पुष्टि करें: मणिपुर की लोकटक झील पूर्वोत्तर भारत की सबसे बड़ी मीठे पानी की झील है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) मुख्य जालसाजी है: जो छात्र जानते हैं कि ब्रह्मपुत्र असम से जुड़ा है (जहाँ इसका अधिकांश भारतीय मार्ग है), वे गलत तरीके से मान लेते हैं कि यह असम में भारत में प्रवेश करता है। वास्तव में, यह नमचा बरवा पर्वत के चारों ओर एक नाटकीय यू-टर्न लेकर दिहांग नदी के रूप में अरुणाचल प्रदेश में प्रवेश करता है। असम में प्रवेश बिंदु दिहांग के अन्य सहायक नदियों से मिलने के बाद है। यह भौगोलिक सटीकता यूपीएससी प्रारंभिक परीक्षा में बार-बार परखी जाती है।",
+      "final_explanation": "पूर्वोत्तर भारत की भौगोलिक संरचना ब्रह्मपुत्र घाटी और आसपास की पहाड़ी श्रृंखलाओं पर केंद्रित है।\n\n• विकल्प (a) — ब्रह्मपुत्र: असम के मैदानों से होकर भारत में प्रवेश करता है: गलत। ब्रह्मपुत्र (तिब्बत में त्सांगपो और अरुणाचल में दिहांग के नाम से जाना जाता है) नमचा बरवा के चारों ओर दिहांग घाटी काटते हुए अरुणाचल प्रदेश के माध्यम से भारत में प्रवेश करता है। असम के मैदानों में प्रवेश के बाद ही इसे ब्रह्मपुत्र कहा जाता है।\n• विकल्प (b) — लोकटक झील: मणिपुर में स्थित: सही। लोकटक पूर्वोत्तर भारत की सबसे बड़ी मीठे पानी की झील है, जो अपने फुमडीस (तैरती वनस्पति, मिट्टी और जैविक पदार्थ के समूह) के लिए प्रसिद्ध है।\n• विकल्प (c) — माजुली: असम में बढ़ता हुआ नदी द्वीप: गलत। माजुली कटाव के कारण सिकुड़ रहा है — पिछले शताब्दी में इसका क्षेत्रफल काफी कम हो गया है।\n• विकल्प (d) — पूर्वांचल पहाड़ियाँ: मुख्य रूप से ग्रेनाइट और गनीस से बनी: गलत। पूर्वांचल (पटकै, नागा, मिजो पहाड़ियाँ) तलछटी चट्टानों से बनी हैं, जो मुख्य हिमालयी अक्ष से अलग हैं जिसमें ग्रेनाइट/गनीस होता है।\n\nमूल्य वर्धन:\n• ब्रह्मपुत्र भारत की किसी भी नदी की तुलना में सबसे अधिक तलछट वहन करता है — जो असम में वार्षिक बाढ़ और द्वीप (चर) निर्माण के लिए जिम्मेदार है।\n• लोकटक झील में केइबुल लामजाओ राष्ट्रीय उद्यान है — विश्व का एकमात्र तैरता राष्ट्रीय उद्यान (फुमडीस पर)।\n• पूर्वांचल की तलछटी संरचना इसे मुख्य हिमालय से कम खुरदरी लेकिन अधिक कटाव वाली बनाती है।"
+    }
+  },
+  {
+    "uuid": "d052cba0-ee5a-4458-8c99-311b92fd4a89",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Chotanagpur Plateau: Geomorphology, Resources, and Strategic Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Chotanagpur Plateau Ruhr of India mineral wealth centrifugal drainage",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Chotanagpur Plateau:\n\n1. The Chotanagpur Plateau is referred to as the 'Ruhr of India' on account of its exceptional concentration of coal, iron ore, manganese, and mica deposits within a single physiographic unit.\n2. The Damodar Valley, which runs through the Chotanagpur Plateau, is a synclinal trough and is famous for its Gondwana coal deposits.\n3. Rivers originating from the Chotanagpur Plateau drain radially outward in different directions — the Damodar flows east, the Son flows north, and the Mahanadi flows south.\n\nWhich of the above statements is/are correct?\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Chotanagpur Plateau is referred to as the 'Ruhr of India' on account of its exceptional concentration of coal, iron ore, manganese, and mica deposits within a single physiographic unit.",
+          "verdict": "Correct",
+          "reason": "Chotanagpur Plateau is India's richest mineral region; its analogy with Germany's Ruhr industrial belt is well-established in standard geography texts."
+        },
+        {
+          "statement": "The Damodar Valley, which runs through the Chotanagpur Plateau, is a synclinal trough and is famous for its Gondwana coal deposits.",
+          "verdict": "Incorrect",
+          "reason": "The Damodar Valley is a rift valley (graben), not a synclinal trough. The Gondwana coal deposits in the valley are structurally associated with the rift, not synclinal folding."
+        },
+        {
+          "statement": "Rivers originating from the Chotanagpur Plateau drain radially outward in different directions — the Damodar flows east, the Son flows north, and the Mahanadi flows south.",
+          "verdict": "Correct",
+          "reason": "The Chotanagpur Plateau exhibits a centrifugal (radial outward) drainage pattern; Damodar drains east into the Ganga-Hooghly system, Son drains northward into the Ganga, and Mahanadi drains south into the Bay of Bengal."
+        }
+      ],
+      "strong_distractor": "d — Option d ('all three') is a strong distractor because Statement 2 sounds authoritative — 'Gondwana coal deposits' is correct, but 'synclinal trough' is the planted error that a student focused on the coal fact will overlook.",
+      "elimination_logic": [
+        "Evaluate Statement 2 carefully: Damodar Valley is a rift valley (graben between faults), not a synclinal trough (which is a fold structure). Statement 2 is incorrect.",
+        "Confirm Statement 1: 'Ruhr of India' designation for Chotanagpur's mineral wealth is textbook-verified — Statement 1 is correct.",
+        "Confirm Statement 3: centrifugal drainage from Chotanagpur is accurately described with correct directional flow for each river — Statement 3 is correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect → option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a partial-truth trap: Gondwana coal in the Damodar Valley is a well-known fact that students readily accept. The error lies in the structural description — 'synclinal trough' applies to folded rock sequences, while the Damodar Valley is a rift valley (graben) formed by faulting. A student who reads only 'Gondwana coal deposits — Damodar Valley' will check off Statement 2 as true without examining the structural term 'synclinal trough.'",
+      "final_explanation": "The Chotanagpur Plateau is one of India's most geographically significant landforms — a dissected plateau of ancient Gondwana rocks in present-day Jharkhand.\n\n• Statement 1 — Correct: The 'Ruhr of India' analogy captures the extraordinary mineral concentration — coal (Jharia, Raniganj), iron ore, manganese, mica, and copper are all found within this one plateau unit.\n• Statement 2 — Incorrect: The Damodar Valley is a structural rift valley (graben), not a synclinal trough. Gondwana coal sediments were trapped in this rift depression — the structural mechanism is faulting, not folding.\n• Statement 3 — Correct: Chotanagpur displays centrifugal (radially outward) drainage — rivers flow in all directions from the plateau's central dome. Damodar → east; Son → north toward Ganga; Mahanadi → south toward Bay of Bengal.\n\nValue Addition:\n• Jharia coalfield (Jharkhand) is India's most important coking coal reserve — located in the Damodar Valley.\n• The Damodar Valley Corporation (DVC) was India's first river valley project (1948), modelled on the Tennessee Valley Authority.\n• Chotanagpur is geologically linked to Gondwana formations — same ancient rock group as peninsular Africa and Australia."
+    },
+    "hi": {
+      "display_text": "छोटानागपुर पठार के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. छोटानागपुर पठार को इसके एकल स्थलाकृति इकाई में कोयला, लौह अयस्क, मैंगनीज, और मिका के असाधारण सघनता के कारण 'भारत का रूर' कहा जाता है।\n2. छोटानागपुर पठार से होकर गुजरने वाली डामोदर घाटी एक सिंक्लिनल ट्रफ है और अपने गोंडवाना कोयला जमा के लिए प्रसिद्ध है।\n3. छोटानागपुर पठार से उत्पन्न नदियाँ विभिन्न दिशाओं में विकेन्द्री रूप से बहती हैं — डामोदर पूर्व की ओर, सोन उत्तर की ओर, और महानदी दक्षिण की ओर बहती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Chotanagpur Plateau is referred to as the 'Ruhr of India' on account of its exceptional concentration of coal, iron ore, manganese, and mica deposits within a single physiographic unit.",
+          "verdict": "सही है",
+          "reason": "छोटानागपुर पठार भारत का सबसे समृद्ध खनिज क्षेत्र है; इसका जर्मनी के रूर औद्योगिक क्षेत्र के साथ समानता मानक भूगोल ग्रंथों में स्थापित है।"
+        },
+        {
+          "statement": "The Damodar Valley, which runs through the Chotanagpur Plateau, is a synclinal trough and is famous for its Gondwana coal deposits.",
+          "verdict": "गलत है",
+          "reason": "डामोदर घाटी एक रिफ्ट घाटी (ग्रैबेन) है, न कि सिंक्लिनल ट्रफ। घाटी में गोंडवाना कोयला जमा संरचनात्मक रूप से रिफ्ट से संबंधित हैं, न कि सिंक्लिनल फोल्डिंग से।"
+        },
+        {
+          "statement": "Rivers originating from the Chotanagpur Plateau drain radially outward in different directions — the Damodar flows east, the Son flows north, and the Mahanadi flows south.",
+          "verdict": "सही है",
+          "reason": "छोटानागपुर पठार में केन्द्र से विकेन्द्री प्रवाह (केंद्र से बाहर की ओर) का जल निकासी पैटर्न है; डामोदर गंगा-हुगली प्रणाली में पूर्व की ओर बहता है, सोन गंगा की ओर उत्तर की ओर, और महानदी बंगाल की खाड़ी की ओर दक्षिण की ओर बहती है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d ('तीनों') एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 2 अधिकारिक लगता है — 'गोंडवाना कोयला जमा' सही है, लेकिन 'सिंक्लिनल ट्रफ' वह planted त्रुटि है जिसे छात्र कोयले के तथ्य पर ध्यान केंद्रित करते हुए नजरअंदाज कर देंगे।",
+      "elimination_logic": [
+        "कथन 2 को सावधानीपूर्वक मूल्यांकन करें: डामोदर घाटी एक रिफ्ट घाटी (फॉल्ट के बीच ग्रैबेन) है, न कि सिंक्लिनल ट्रफ (जो एक फोल्ड संरचना है)। अतः कथन 2 गलत है।",
+        "कथन 1 की पुष्टि करें: छोटानागपुर के खनिज संपदा के लिए 'भारत का रूर' उपाधि पाठ्यपुस्तक में सत्यापित है — कथन 1 सही है।",
+        "कथन 3 की पुष्टि करें: छोटानागपुर से विकेन्द्री जल निकासी सही दिशा प्रवाह के साथ वर्णित है — कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक आंशिक-सत्य जाल है: डामोदर घाटी में गोंडवाना कोयला एक प्रसिद्ध तथ्य है जिसे छात्र आसानी से स्वीकार कर लेते हैं। त्रुटि संरचनात्मक विवरण में है — 'सिंक्लिनल ट्रफ' मुड़े हुए चट्टानों के लिए है, जबकि डामोदर घाटी एक रिफ्ट घाटी (ग्रैबेन) है जो फॉल्टिंग से बनी है। जो छात्र केवल 'गोंडवाना कोयला जमा — डामोदर घाटी' पढ़ते हैं, वे बिना 'सिंक्लिनल ट्रफ' शब्द की जांच किए कथन 2 को सही मान लेंगे।",
+      "final_explanation": "छोटानागपुर पठार भारत के सबसे भौगोलिक रूप से महत्वपूर्ण स्थलाकृतियों में से एक है — वर्तमान झारखंड में प्राचीन गोंडवाना चट्टानों का एक खंडित पठार।\n\n• कथन 1 — सही: 'भारत का रूर' उपमा असाधारण खनिज सघनता को दर्शाती है — कोयला (झरिया, रानीगंज), लौह अयस्क, मैंगनीज, मिका, और तांबा सभी इसी पठार इकाई में पाए जाते हैं।\n• कथन 2 — गलत: डामोदर घाटी एक संरचनात्मक रिफ्ट घाटी (ग्रैबेन) है, न कि सिंक्लिनल ट्रफ। गोंडवाना कोयला तलछट इस रिफ्ट अवसाद में फंसे हैं — संरचनात्मक तंत्र फॉल्टिंग है, फोल्डिंग नहीं।\n• कथन 3 — सही: छोटानागपुर विकेन्द्री (केंद्र से बाहर की ओर) जल निकासी प्रदर्शित करता है — नदियाँ पठार के केंद्रीय गुंबद से सभी दिशाओं में बहती हैं। डामोदर → पूर्व; सोन → गंगा की ओर उत्तर; महानदी → बंगाल की खाड़ी की ओर दक्षिण।\n\nमूल्य संवर्धन:\n• झरिया कोयला क्षेत्र (झारखंड) भारत का सबसे महत्वपूर्ण कोकिंग कोयला भंडार है — डामोदर घाटी में स्थित।\n• डामोदर घाटी निगम (DVC) भारत की पहली नदी घाटी परियोजना थी (1948), जो टेनेसी वैली अथॉरिटी पर आधारित थी।\n• छोटानागपुर भूवैज्ञानिक रूप से गोंडवाना संरचनाओं से जुड़ा है — वही प्राचीन चट्टान समूह जो पेनिनसुलर अफ्रीका और ऑस्ट्रेलिया में पाया जाता है।"
+    }
+  },
+  {
+    "uuid": "63ca2b20-2d06-4792-b19a-246fb9966195",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Aravalli Range: Age, Orientation, and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Guru Shikhar highest peak of Aravallis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the highest peak of the Aravalli Range?\n\n(a) Anamudi\n(b) Doddabetta\n(c) Guru Shikhar\n(d) Dhupgarh",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Doddabetta is a well-known 'highest peak' fact (Nilgiris) and students who know multiple 'highest peak' facts may accidentally assign it to the Aravallis.",
+      "elimination_logic": [
+        "Eliminate option (a): Anamudi is the highest peak of South India (Anaimalai Hills/Western Ghats in Kerala) — not in the Aravallis.",
+        "Eliminate option (b): Doddabetta is the highest peak of the Nilgiri Hills — located in Tamil Nadu, not associated with Aravallis.",
+        "Eliminate option (d): Dhupgarh is the highest point of the Satpura Range and Madhya Pradesh — not the Aravallis.",
+        "Confirm option (c): Guru Shikhar (1,722 m) on Mount Abu is the highest peak of the Aravalli Range in Rajasthan."
+      ],
+      "upsc_trap_explanation": "This question exploits 'highest peak' confusion across different ranges. UPSC frequently tests Doddabetta (Nilgiris), Anamudi (South India), Guru Shikhar (Aravallis), and Dhupgarh (Satpura) against each other. A student with partial knowledge may correctly recall Guru Shikhar as a famous Rajasthan hill station name but be unsure whether it is the highest peak of Aravallis or something else. Dhupgarh is a particularly effective distractor because it is another 'highest peak of a central Indian range' — placed here to catch students who confuse Satpura with Aravallis.",
+      "final_explanation": "The Aravalli Range is one of the world's oldest fold mountain systems, now reduced to residual hills through prolonged erosion.\n\n• Option (a) — Anamudi: Incorrect. Anamudi (2,695 m) is the highest peak in South India and the Western Ghats, located in Kerala's Anaimalai Hills. No connection to Aravallis.\n• Option (b) — Doddabetta: Incorrect. Doddabetta (2,637 m) is the highest peak of the Nilgiri Hills in Tamil Nadu. It is also the meeting point of the Western and Eastern Ghats.\n• Option (c) — Guru Shikhar: Correct. Guru Shikhar (1,722 m) at Mount Abu in Rajasthan is the highest peak of the Aravalli Range. Mount Abu is the only hill station in Rajasthan.\n• Option (d) — Dhupgarh: Incorrect. Dhupgarh is the highest point of the Satpura Range and Madhya Pradesh (1,350 m). Sometimes also listed as Pachmarhi area — a separate but nearby peak.\n\nValue Addition:\n• Aravallis are Pre-Cambrian in age — among the oldest fold mountains in the world, now residual due to erosion.\n• Aravallis separate Rajasthan's desert (west) from fertile agricultural lands (east) — drainage divide significance.\n• Mount Abu hosts the Dilwara Jain temples — a UNESCO tentative list site."
+    },
+    "hi": {
+      "display_text": "अरावली श्रृंखला का सबसे ऊँचा शिखर निम्नलिखित में से कौन सा है?\n\n(a) अनामुडी\n(b) डोड्डाबेट्टा\n(c) गुरु शिखर\n(d) धूपगढ़",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि डोड्डाबेट्टा एक प्रसिद्ध 'सबसे ऊँचा शिखर' तथ्य है (निलगिरी) और जो छात्र कई 'सबसे ऊँचे शिखर' तथ्यों को जानते हैं वे गलती से इसे अरावली से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: अनामुडी दक्षिण भारत का सबसे ऊँचा शिखर है (अणैमलाई पहाड़/पश्चिमी घाट केरल में) — अरावली में नहीं है।",
+        "विकल्प (b) को हटाएं: डोड्डाबेट्टा निलगिरी पहाड़ियों का सबसे ऊँचा शिखर है — तमिलनाडु में स्थित, अरावली से संबंधित नहीं।",
+        "विकल्प (d) को हटाएं: धूपगढ़ सतपुड़ा श्रृंखला और मध्य प्रदेश का सबसे ऊँचा बिंदु है — अरावली नहीं।",
+        "विकल्प (c) की पुष्टि करें: गुरु शिखर (1,722 मीटर) माउंट आबू पर राजस्थान में अरावली श्रृंखला का सबसे ऊँचा शिखर है।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न विभिन्न पर्वत श्रृंखलाओं के 'सबसे ऊँचे शिखर' के भ्रम का लाभ उठाता है। UPSC अक्सर डोड्डाबेट्टा (निलगिरी), अनामुडी (दक्षिण भारत), गुरु शिखर (अरावली), और धूपगढ़ (सतपुड़ा) को एक-दूसरे के विरुद्ध पूछता है। आंशिक ज्ञान वाला छात्र गुरु शिखर को राजस्थान के प्रसिद्ध हिल स्टेशन के रूप में सही याद कर सकता है लेकिन यह निश्चित नहीं हो सकता कि यह अरावली का सबसे ऊँचा शिखर है या कुछ और। धूपगढ़ एक प्रभावी भ्रम पैदा करने वाला विकल्प है क्योंकि यह मध्य भारत की एक अन्य 'सबसे ऊँची पर्वत श्रृंखला' का शिखर है — इसे यहाँ इसलिए रखा गया है ताकि वे छात्र जो सतपुड़ा और अरावली को भ्रमित करते हैं, फंस जाएं।",
+      "final_explanation": "अरावली श्रृंखला विश्व की सबसे प्राचीन फोल्ड पर्वत प्रणालियों में से एक है, जो अब दीर्घकालिक अपरदन के कारण अवशिष्ट पहाड़ियों में परिवर्तित हो गई है।\n\n• विकल्प (a) — अनामुडी: गलत। अनामुडी (2,695 मीटर) दक्षिण भारत और पश्चिमी घाट का सबसे ऊँचा शिखर है, जो केरल के अणैमलाई पहाड़ियों में स्थित है। अरावली से कोई संबंध नहीं।\n• विकल्प (b) — डोड्डाबेट्टा: गलत। डोड्डाबेट्टा (2,637 मीटर) तमिलनाडु के निलगिरी पहाड़ियों का सबसे ऊँचा शिखर है। यह पश्चिमी और पूर्वी घाटों का संगम स्थल भी है।\n• विकल्प (c) — गुरु शिखर: सही। गुरु शिखर (1,722 मीटर) माउंट आबू, राजस्थान में अरावली श्रृंखला का सबसे ऊँचा शिखर है। माउंट आबू राजस्थान का एकमात्र हिल स्टेशन है।\n• विकल्प (d) — धूपगढ़: गलत। धूपगढ़ सतपुड़ा श्रृंखला और मध्य प्रदेश का सबसे ऊँचा बिंदु है (1,350 मीटर)। कभी-कभी इसे पचमढ़ी क्षेत्र के रूप में भी सूचीबद्ध किया जाता है — एक अलग लेकिन निकटवर्ती शिखर।\n\nमूल्यवर्धन:\n• अरावली प्रीकैम्ब्रियन युग की हैं — विश्व की सबसे प्राचीन फोल्ड पर्वत श्रृंखलाओं में से एक, जो अपरदन के कारण अब अवशिष्ट हैं।\n• अरावली राजस्थान के रेगिस्तान (पश्चिम) को उपजाऊ कृषि भूमि (पूर्व) से अलग करती हैं — जल निकासी विभाजन का महत्व।\n• माउंट आबू में दिलवाड़ा जैन मंदिर हैं — जो यूनेस्को के अस्थायी सूचीबद्ध स्थल हैं।"
+    }
+  },
+  {
+    "uuid": "81a4a410-45e1-4c4a-b978-ec163c8eb53c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Regional/Lateral Divisions of the Himalayas: Punjab, Kumaon, Nepal, and Assam Himalayas"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Longitudinal vs regional classification of Himalayas",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the classification of the Himalayas:\n\n1. The regional (east-west) classification of the Himalayas uses major rivers as boundary markers, with the Indus, Sutlej, Kali (Sarda), and Teesta rivers demarcating the principal sections.\n2. The longitudinal classification of the Himalayas (Trans-, Greater, Lesser, Sub-Himalayas) runs from east to west, parallel to the length of the mountain system.\n3. The Nepal Himalayas contain the highest peaks of the entire Himalayan system, including Mount Everest, Kanchenjunga, and Makalu.\n\nWhich of the above statements is/are correct?\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The regional (east-west) classification of the Himalayas uses major rivers as boundary markers, with the Indus, Sutlej, Kali (Sarda), and Teesta rivers demarcating the principal sections.",
+          "verdict": "Correct",
+          "reason": "The Himalayas are divided into regional sections (Punjab, Kumaon, Nepal, Assam Himalayas) based on rivers: Indus (western limit), Sutlej (Punjab-Kumaon divide), Kali/Sarda (Kumaon-Nepal divide), and Teesta (Nepal-Assam divide)."
+        },
+        {
+          "statement": "The longitudinal classification of the Himalayas (Trans-, Greater, Lesser, Sub-Himalayas) runs from east to west, parallel to the length of the mountain system.",
+          "verdict": "Incorrect",
+          "reason": "The longitudinal classification runs from north to south (perpendicular to the mountain system), not east to west. 'Longitudinal' here refers to parallel rows running east-west in terms of strike, but the classification itself zones the Himalayas from north to south across their width."
+        },
+        {
+          "statement": "The Nepal Himalayas contain the highest peaks of the entire Himalayan system, including Mount Everest, Kanchenjunga, and Makalu.",
+          "verdict": "Correct",
+          "reason": "The Nepal Himalayas region (between Kali River and Teesta River) encompasses the highest peaks — Everest (8,849 m), Makalu, and Lhotse are in Nepal; Kanchenjunga is on the Nepal-Sikkim border."
+        }
+      ],
+      "strong_distractor": "b — Option b ('1 and 2 only') is a strong distractor because Statement 2 contains directional language about a 'north-south' vs. 'east-west' distinction that sounds technical and correct to students unfamiliar with the precise geographic orientation of the classification system.",
+      "elimination_logic": [
+        "Evaluate Statement 2: longitudinal classification (Trans-, Greater, Lesser, Sub-Himalayan) zones the Himalayas from north to south — not east to west. 'East to west, parallel to the length' is incorrect. Statement 2 is incorrect.",
+        "Confirm Statement 1: rivers as regional boundaries — Indus, Sutlej, Kali/Sarda, Teesta — is textbook standard. Statement 1 is correct.",
+        "Confirm Statement 3: Nepal Himalayas hosting Everest, Makalu, Kanchenjunga is verifiable fact. Statement 3 is correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect → option (d)."
+      ],
+      "upsc_trap_explanation": "The conflation here is between 'longitudinal' (meaning parallel bands running east-west across India) and the direction of the classification system (which zones north to south across the width of the Himalayas). Students who casually read 'longitudinal' as 'running along the length' (east-west) conflate the orientation of the ranges with the direction of classification. The key distinction: the ranges themselves run east-west, but the four-fold classification (Trans-, Greater, Lesser, Sub-) is a north-to-south zoning.",
+      "final_explanation": "The Himalayas have two independent classification systems that students must not conflate.\n\n• Statement 1 — Correct: Regional (east-west) classification uses rivers as dividers: Indus separates the Punjab Himalayas (west); Sutlej separates Punjab from Kumaon; Kali/Sarda separates Kumaon from Nepal; Teesta separates Nepal from Assam Himalayas.\n• Statement 2 — Incorrect: The longitudinal classification (Trans-, Greater, Lesser, Sub-) zones the Himalayas from north to south across their width. The four parallel ranges are indeed oriented east-west, but the classification itself moves from north (Trans-Himalayas) to south (Shiwaliks).\n• Statement 3 — Correct: Nepal Himalayas is the widest and highest regional section. Everest (8,849 m), Makalu (8,485 m), and Lhotse are in Nepal; Kanchenjunga (8,586 m) lies on the Nepal-Sikkim border.\n\nValue Addition:\n• Punjab Himalayas (between Indus and Sutlej) is the narrowest regional section.\n• The Purvanchal hills (Patkai, Naga, Mizo) are considered the eastern extension of the Assam Himalayas.\n• Regional classification is also called 'lateral classification' in some NCERT editions."
+    },
+    "hi": {
+      "display_text": "हिमालय की वर्गीकरण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. हिमालय का क्षेत्रीय (पूर्व-पश्चिम) वर्गीकरण प्रमुख नदियों को सीमा चिन्ह के रूप में उपयोग करता है, जिसमें सिंधु, सतलज, काली (सरदा), और तीस्ता नदियाँ मुख्य खंडों को विभाजित करती हैं।\n2. हिमालय का दीर्घीय वर्गीकरण (ट्रांस-, ग्रेटर, लेसर, सब-हिमालय) पूर्व से पश्चिम की ओर, पर्वत प्रणाली की लंबाई के समानांतर चलता है।\n3. नेपाल हिमालय में पूरे हिमालयी प्रणाली के सबसे ऊँचे शिखर हैं, जिनमें माउंट एवरेस्ट, कंचनजंगा, और मकालू शामिल हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The regional (east-west) classification of the Himalayas uses major rivers as boundary markers, with the Indus, Sutlej, Kali (Sarda), and Teesta rivers demarcating the principal sections.",
+          "verdict": "Correct",
+          "reason": "The Himalayas are divided into regional sections (Punjab, Kumaon, Nepal, Assam Himalayas) based on rivers: Indus (western limit), Sutlej (Punjab-Kumaon divide), Kali/Sarda (Kumaon-Nepal divide), and Teesta (Nepal-Assam divide)."
+        },
+        {
+          "statement": "The longitudinal classification of the Himalayas (Trans-, Greater, Lesser, Sub-Himalayas) runs from east to west, parallel to the length of the mountain system.",
+          "verdict": "Incorrect",
+          "reason": "The longitudinal classification runs from north to south (perpendicular to the mountain system), not east to west. 'Longitudinal' here refers to parallel rows running east-west in terms of strike, but the classification itself zones the Himalayas from north to south across their width."
+        },
+        {
+          "statement": "The Nepal Himalayas contain the highest peaks of the entire Himalayan system, including Mount Everest, Kanchenjunga, and Makalu.",
+          "verdict": "Correct",
+          "reason": "The Nepal Himalayas region (between Kali River and Teesta River) encompasses the highest peaks — Everest (8,849 m), Makalu, and Lhotse are in Nepal; Kanchenjunga is on the Nepal-Sikkim border."
+        }
+      ],
+      "strong_distractor": "b — Option b ('1 and 2 only') is a strong distractor because Statement 2 contains directional language about a 'north-south' vs. 'east-west' distinction that sounds technical and correct to students unfamiliar with the precise geographic orientation of the classification system.",
+      "elimination_logic": [
+        "Evaluate Statement 2: longitudinal classification (Trans-, Greater, Lesser, Sub-Himalayan) zones the Himalayas from north to south — not east to west. 'East to west, parallel to the length' is incorrect. Statement 2 is incorrect.",
+        "Confirm Statement 1: rivers as regional boundaries — Indus, Sutlej, Kali/Sarda, Teesta — is textbook standard. Statement 1 is correct.",
+        "Confirm Statement 3: Nepal Himalayas hosting Everest, Makalu, Kanchenjunga is verifiable fact. Statement 3 is correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect → option (d)."
+      ],
+      "upsc_trap_explanation": "The conflation here is between 'longitudinal' (meaning parallel bands running east-west across India) and the direction of the classification system (which zones north to south across the width of the Himalayas). Students who casually read 'longitudinal' as 'running along the length' (east-west) conflate the orientation of the ranges with the direction of classification. The key distinction: the ranges themselves run east-west, but the four-fold classification (Trans-, Greater, Lesser, Sub-) is a north-to-south zoning.",
+      "final_explanation": "The Himalayas have two independent classification systems that students must not conflate.\n\n• Statement 1 — Correct: Regional (east-west) classification uses rivers as dividers: Indus separates the Punjab Himalayas (west); Sutlej separates Punjab from Kumaon; Kali/Sarda separates Kumaon from Nepal; Teesta separates Nepal from Assam Himalayas.\n• Statement 2 — Incorrect: The longitudinal classification (Trans-, Greater, Lesser, Sub-) zones the Himalayas from north to south across their width. The four parallel ranges are indeed oriented east-west, but the classification itself moves from north (Trans-Himalayas) to south (Shiwaliks).\n• Statement 3 — Correct: Nepal Himalayas is the widest and highest regional section. Everest (8,849 m), Makalu (8,485 m), and Lhotse are in Nepal; Kanchenjunga (8,586 m) lies on the Nepal-Sikkim border.\n\nValue Addition:\n• Punjab Himalayas (between Indus and Sutlej) is the narrowest regional section.\n• The Purvanchal hills (Patkai, Naga, Mizo) are considered the eastern extension of the Assam Himalayas.\n• Regional classification is also called 'lateral classification' in some NCERT editions."
+    }
+  },
+  {
+    "uuid": "71096088-3f10-447d-b75e-2bf2ae1d421b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Passes of the Himalayas: Strategic and Connectivity Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Himalayan passes correct state or border assignment",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Himalayan passes in List I with their correct location/border significance in List II:",
+        "columns": [
+          "List I (Pass)",
+          "List II (Location / Border)"
+        ],
+        "rows": [
+          [
+            "A. Nathu La",
+            "1. Sikkim–China border"
+          ],
+          [
+            "B. Rohtang Pass",
+            "2. Himachal Pradesh (Manali–Lahaul–Spiti axis)"
+          ],
+          [
+            "C. Shipki La",
+            "3. Himachal Pradesh–China border (Sutlej River entry)"
+          ],
+          [
+            "D. Zoji La",
+            "4. J&K/Ladakh — Srinagar to Leh connectivity"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n(a) A-1, B-2, C-3, D-4\n(b) A-3, B-2, C-1, D-4\n(c) A-1, B-4, C-2, D-3\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because it places Nathu La in Arunachal Pradesh — a common error made by students who associate Nathu La with the India-China border (which Arunachal Pradesh also shares) without knowing that Nathu La is specifically in Sikkim.",
+      "elimination_logic": [
+        "Anchor on the most certain pair: Zoji La connects Srinagar to Leh — it is in J&K/Ladakh region. D must match 4. Eliminates option (c) and (d).",
+        "Nathu La is the India-China border pass in Sikkim (not Arunachal Pradesh) — A matches 1. Eliminates option (b).",
+        "Rohtang Pass is in Himachal Pradesh (Manali-Lahaul-Spiti axis) — B matches 2.",
+        "Shipki La is the Sutlej River gorge pass on the India-China border in Himachal Pradesh — C matches 3. Correct answer: A-1, B-2, C-3, D-4 = option (a)."
+      ],
+      "upsc_trap_explanation": "Nathu La-Arunachal Pradesh is the planted geographic swap. Students know that Nathu La is on the India-China border and that Arunachal Pradesh also has a significant India-China border, so they may conflate the two. Nathu La is definitively in Sikkim — it was reopened for border trade in 2006. Jelep La is the Sikkim-China pass near Bhutan; Nathu La is slightly north of it. Geographic precision at the pass-state level is a recurring Prelims question design.",
+      "final_explanation": "Himalayan passes are strategically significant for defence, trade, and connectivity. Their correct state/border assignments are frequently tested.\n\n• A – Nathu La → 1 (Sikkim-China border): Nathu La connects Sikkim to the Tibet Autonomous Region of China. Reopened for trade in 2006 — strategic significance in India-China relations.\n• B – Rohtang Pass → 2 (Himachal Pradesh): Rohtang connects the Kullu Valley (Manali) with Lahaul and Spiti — now bypassed by the Atal Tunnel (Rohtang Tunnel), opened 2020.\n• C – Shipki La → 3 (Himachal Pradesh-China border): Located where the Sutlej River enters India from Tibet — an important trade route in the Kinnaur district.\n• D – Zoji La → 4 (J&K/Ladakh — Srinagar-Leh axis): The only direct road link between Kashmir Valley and Ladakh. Now supplemented by the Z-Morh Tunnel for all-weather access to Sonamarg.\n\nValue Addition:\n• Jelep La (Sikkim) is another India-China pass near the Bhutan trijunction — historically used during British India.\n• Banihal Pass (J&K) is in the Lesser Himalayan (Pir Panjal) range, not the Greater Himalayas.\n• Karakoram Pass is India's highest pass (~5,540 m) in the Trans-Himalayan zone of Ladakh."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में हिमालयी दर्रों को सूची II में उनके सही स्थान/सीमा महत्व से मिलाइए:",
+        "columns": [
+          "सूची I (दर्रा)",
+          "सूची II (स्थान / सीमा)"
+        ],
+        "rows": [
+          [
+            "A. नाथू ला",
+            "1. सिक्किम–चीन सीमा"
+          ],
+          [
+            "B. रोहतांग दर्रा",
+            "2. हिमाचल प्रदेश (मनाली–लाहौल–स्पीति अक्ष)"
+          ],
+          [
+            "C. शिपकी ला",
+            "3. हिमाचल प्रदेश–चीन सीमा (सतलज नदी प्रवेश)"
+          ],
+          [
+            "D. जोजी ला",
+            "4. जम्मू-कश्मीर/लद्दाख — श्रीनगर से लेह संपर्क"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n(a) A-1, B-2, C-3, D-4\n(b) A-3, B-2, C-1, D-4\n(c) A-1, B-4, C-2, D-3\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह नाथू ला को अरुणाचल प्रदेश में रखता है — यह एक सामान्य त्रुटि है जो छात्र करते हैं जो नाथू ला को भारत-चीन सीमा से जोड़ते हैं (जो अरुणाचल प्रदेश भी साझा करता है) बिना यह जाने कि नाथू ला विशेष रूप से सिक्किम में है।",
+      "elimination_logic": [
+        "सबसे निश्चित जोड़ी पर ध्यान दें: जोजी ला श्रीनगर को लेह से जोड़ता है — यह जम्मू-कश्मीर/लद्दाख क्षेत्र में है। D को 4 से मेल खाना चाहिए। विकल्प (c) और (d) समाप्त करता है।",
+        "नाथू ला सिक्किम में भारत-चीन सीमा का दर्रा है (अरुणाचल प्रदेश नहीं) — A 1 से मेल खाता है। विकल्प (b) समाप्त करता है।",
+        "रोहतांग दर्रा हिमाचल प्रदेश में है (मनाली-लाहौल-स्पीति अक्ष) — B 2 से मेल खाता है।",
+        "शिपकी ला हिमाचल प्रदेश में भारत-चीन सीमा पर सतलज नदी के घाटी दर्रे है — C 3 से मेल खाता है। सही उत्तर: A-1, B-2, C-3, D-4 = विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "नाथू ला-अरुणाचल प्रदेश एक स्थापित भौगोलिक भ्रम है। छात्र जानते हैं कि नाथू ला भारत-चीन सीमा पर है और अरुणाचल प्रदेश में भी एक महत्वपूर्ण भारत-चीन सीमा है, इसलिए वे दोनों को मिला सकते हैं। नाथू ला निश्चित रूप से सिक्किम में है — इसे 2006 में सीमा व्यापार के लिए पुनः खोला गया था। जेलेप ला सिक्किम-चीन दर्रा है जो भूटान के पास है; नाथू ला उससे थोड़ा उत्तर में है। दर्रा-राज्य स्तर पर भौगोलिक सटीकता एक बार-बार आने वाला प्रारंभिक परीक्षा प्रश्न डिजाइन है।",
+      "final_explanation": "हिमालयी दर्रे रक्षा, व्यापार और संपर्क के लिए रणनीतिक रूप से महत्वपूर्ण हैं। इनके सही राज्य/सीमा आवंटन अक्सर परीक्षा में पूछे जाते हैं।\n\n• A – नाथू ला → 1 (सिक्किम-चीन सीमा): नाथू ला सिक्किम को तिब्बत स्वायत्त क्षेत्र से जोड़ता है। 2006 में व्यापार के लिए पुनः खोला गया — भारत-चीन संबंधों में रणनीतिक महत्व।\n• B – रोहतांग दर्रा → 2 (हिमाचल प्रदेश): रोहतांग कुल्लू घाटी (मनाली) को लाहौल और स्पीति से जोड़ता है — अब अटल सुरंग (रोहतांग सुरंग), जो 2020 में खुली, द्वारा बाईपास किया गया है।\n• C – शिपकी ला → 3 (हिमाचल प्रदेश-चीन सीमा): वह स्थान जहाँ सतलज नदी तिब्बत से भारत में प्रवेश करती है — किन्नौर जिले में एक महत्वपूर्ण व्यापार मार्ग।\n• D – जोजी ला → 4 (जम्मू-कश्मीर/लद्दाख — श्रीनगर-लेह अक्ष): कश्मीर घाटी और लद्दाख के बीच एकमात्र प्रत्यक्ष सड़क लिंक। अब सोनमर्ग के लिए सभी मौसम पहुँच हेतु Z-मोरह सुरंग से पूरक।\n\nमूल्य संवर्धन:\n• जेलेप ला (सिक्किम) भूटान त्रिसंधि के पास एक अन्य भारत-चीन दर्रा है — ऐतिहासिक रूप से ब्रिटिश भारत के दौरान उपयोग किया जाता था।\n• बनिहाल दर्रा (जम्मू-कश्मीर) लघु हिमालय (पिर पंजाल) श्रृंखला में है, महाद्वीपीय हिमालय में नहीं।\n• कराकोरम दर्रा भारत का सबसे ऊँचा दर्रा (~5,540 मीटर) है जो लद्दाख के ट्रांस-हिमालयन क्षेत्र में है।"
+    }
+  },
+  {
+    "uuid": "9bdb45a8-47c6-4eeb-8ce8-9d22adfd9673",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Longitudinal Divisions of the Himalayas: Trans-, Greater, Lesser, and Sub-Himalayas"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Duns structural valleys between Lesser Himalayas and Shiwaliks",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Duns are longitudinal structural valleys formed in the Himalayas between the ________ and the ________.\n\n(a) Trans-Himalayan ranges and the Greater Himalayas\n(b) Lesser Himalayas (Himachal zone) and the Shiwalik hills\n(c) Greater Himalayas and the Lesser Himalayas\n(d) Shiwalik hills and the foothills of the Northern Plains",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because students know 'Duns' are associated with the Dehradun valley and may casually associate Dehradun with the Greater Himalayas region, not specifically the zone between Lesser Himalayas and Shiwaliks.",
+      "elimination_logic": [
+        "Eliminate option (a): valleys between Trans-Himalayas and Greater Himalayas are high-altitude cold valleys (like Indus Valley in Ladakh), not Duns.",
+        "Eliminate option (c): Greater Himalayas and Lesser Himalayas boundary zone is the transition into the high Himalayan core — not where Duns form.",
+        "Eliminate option (d): valleys south of Shiwaliks are the foothills merging into the Northern Plains — no specific structural valley formation here.",
+        "Confirm option (b): Duns are longitudinal valleys between the Lesser Himalayas (Himachal zone) and the Shiwalik (Sub-Himalayan) range — Dehradun is the classic example."
+      ],
+      "upsc_trap_explanation": "The precise zonal boundary where Duns form is the trap. Students know 'Duns = Dehradun area = Himalayan valleys' but may not precisely recall that the structural formation is between the Lesser Himalayas and the Shiwaliks, not between the Greater and Lesser Himalayas. The Greater Himalayas–Lesser Himalayas boundary is a high-altitude transition zone, not where settlement-friendly Dun valleys form.",
+      "final_explanation": "Duns are distinctive structural valleys in the Himalayan foothills that are important for human settlement and agriculture.\n\n• Option (a) — Trans-Himalayas and Greater Himalayas: Incorrect. This high-altitude zone contains cold, arid trans-Himalayan valleys, not the fertile Duns.\n• Option (b) — Lesser Himalayas and Shiwaliks: Correct. Duns are longitudinal structural valleys trapped between the Lesser Himalayan ranges and the Shiwalik hills. Dehradun is the most well-known example; Patli Dun and Kotli Dun are others.\n• Option (c) — Greater Himalayas and Lesser Himalayas: Incorrect. This boundary is a high-altitude alpine transition — not where valley towns and Duns are found.\n• Option (d) — Shiwaliks and Northern Plains: Incorrect. South of the Shiwaliks the terrain merges into the alluvial Northern Plains — no bounded structural valleys.\n\nValue Addition:\n• Duars are the eastern equivalents of Duns, found in the foothills of West Bengal and Assam between the mountains and plains.\n• Duns are agriculturally productive and densely settled — Dehradun is the capital of Uttarakhand.\n• Shiwaliks are composed of unconsolidated boulders and silt — they are geologically the youngest and most erodible of all Himalayan ranges."
+    },
+    "hi": {
+      "display_text": "Duns हिमालय में ________ और ________ के बीच बनने वाली अनुदैर्ध्य संरचनात्मक घाटियाँ हैं।\n\n(a) ट्रांस-हिमालयी श्रृंखलाएँ और ग्रेटर हिमालय\n(b) लेसर हिमालय (हिमाचल क्षेत्र) और शिवालिक पहाड़ियाँ\n(c) ग्रेटर हिमालय और लेसर हिमालय\n(d) शिवालिक पहाड़ियाँ और उत्तरी मैदानों की पहाड़ियों",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र जानते हैं कि 'Duns' देहरादून घाटी से संबंधित हैं और देहरादून को सामान्यतः ग्रेटर हिमालय क्षेत्र से जोड़ सकते हैं, न कि विशेष रूप से लेसर हिमालय और शिवालिक के बीच के क्षेत्र से।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: ट्रांस-हिमालय और ग्रेटर हिमालय के बीच की घाटियाँ उच्च ऊंचाई वाली ठंडी घाटियाँ हैं (जैसे लद्दाख में सिंधु घाटी), जो Duns नहीं हैं।",
+        "विकल्प (c) को हटाएं: ग्रेटर हिमालय और लेसर हिमालय की सीमा क्षेत्र उच्च हिमालयी कोर में संक्रमण है — जहाँ Duns नहीं बनते।",
+        "विकल्प (d) को हटाएं: शिवालिक के दक्षिण में की घाटियाँ मैदानों में विलीन हो जाती हैं — यहाँ कोई विशिष्ट संरचनात्मक घाटी नहीं बनती।",
+        "विकल्प (b) की पुष्टि करें: Duns लेसर हिमालय (हिमाचल क्षेत्र) और शिवालिक (उप-हिमालय) श्रृंखला के बीच की अनुदैर्ध्य घाटियाँ हैं — देहरादून इसका प्रमुख उदाहरण है।"
+      ],
+      "upsc_trap_explanation": "Duns के बनने वाली सटीक क्षेत्रीय सीमा ही जाल है। छात्र जानते हैं कि 'Duns = देहरादून क्षेत्र = हिमालयी घाटियाँ' लेकिन वे ठीक से याद नहीं कर पाते कि यह संरचनात्मक गठन लेसर हिमालय और शिवालिक के बीच होता है, न कि ग्रेटर और लेसर हिमालय के बीच। ग्रेटर हिमालय-लेसर हिमालय सीमा उच्च ऊंचाई वाला संक्रमण क्षेत्र है, जहाँ बसावट के अनुकूल Duns घाटियाँ नहीं बनतीं।",
+      "final_explanation": "Duns हिमालय की पहाड़ियों में विशिष्ट संरचनात्मक घाटियाँ हैं जो मानव बसावट और कृषि के लिए महत्वपूर्ण हैं।\n\n• विकल्प (a) — ट्रांस-हिमालय और ग्रेटर हिमालय: गलत। यह उच्च ऊंचाई वाला क्षेत्र ठंडी, शुष्क ट्रांस-हिमालयी घाटियों वाला है, उपजाऊ Duns नहीं।\n• विकल्प (b) — लेसर हिमालय और शिवालिक: सही। Duns लेसर हिमालयी श्रृंखलाओं और शिवालिक पहाड़ियों के बीच फंसी हुई अनुदैर्ध्य संरचनात्मक घाटियाँ हैं। देहरादून सबसे प्रसिद्ध उदाहरण है; पातली डून और कोटली डून अन्य हैं।\n• विकल्प (c) — ग्रेटर हिमालय और लेसर हिमालय: गलत। यह सीमा उच्च ऊंचाई वाला अल्पाइन संक्रमण क्षेत्र है — जहाँ घाटी वाले शहर और Duns नहीं होते।\n• विकल्प (d) — शिवालिक और उत्तरी मैदान: गलत। शिवालिक के दक्षिण में भू-भाग मैदानी इलाकों में विलीन हो जाता है — कोई सीमाबद्ध संरचनात्मक घाटियाँ नहीं।\n\nमूल्यवर्धन:\n• डूअर्स पूर्वी समकक्ष हैं Duns के, जो पश्चिम बंगाल और असम की पहाड़ियों और मैदानों के बीच पाए जाते हैं।\n• Duns कृषि के लिए उपजाऊ और घनी आबादी वाले हैं — देहरादून उत्तराखंड की राजधानी है।\n• शिवालिक असंगठित बोल्डर और सिल्ट से बने हैं — ये हिमालय की सबसे युवा और सबसे अधिक कटावशील श्रृंखलाएँ हैं।"
+    }
+  },
+  {
+    "uuid": "34c0457d-7683-44cb-8a1d-1e73ad460223",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Physiographic Regions and Their Drainage System Relationships: Integrated Overview"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Ganga originates India Indus Sutlej Brahmaputra originate Tibet",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Brahmaputra River — Originates from a glacier within the territory of India before entering the plains of Arunachal Pradesh\n(b) Ganga-Brahmaputra Delta — Formed exclusively within Indian territory; world's largest delta by area\n(c) Narmada River — Flows westward and drains into the Gulf of Mannar through an estuary\n(d) Indus, Sutlej, and Brahmaputra — All three originate in the Tibetan Plateau (China) and are trans-boundary rivers",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because students know 'Ganga–Brahmaputra delta is the largest in the world' and may accept the pairing without questioning whether the Meghna River (not a Himalayan river per se) should be included, or whether the 'shared with Bangladesh' qualifier is correct.",
+      "elimination_logic": [
+        "Evaluate option (a): Brahmaputra originates in Tibet (Chemayungdung glacier) — not in India. This pair is incorrectly matched.",
+        "Evaluate option (b): Ganga-Brahmaputra delta IS shared with Bangladesh and IS the world's largest delta — but technically the Sundarbans delta involves the Meghna River confluence too. Verify further.",
+        "Evaluate option (c): Narmada flows west into the Gulf of Khambhat (Gulf of Cambay), not the Gulf of Mannar. This pair is incorrectly matched — Gulf of Mannar is on the southeast (Tamil Nadu-Sri Lanka side).",
+        "Evaluate option (d): Indus, Sutlej, and Brahmaputra all originate in Tibet (China) and are trans-boundary rivers — this is correctly matched and is the precise UPSC-tested fact. Option (d) is correct."
+      ],
+      "upsc_trap_explanation": "Option (a) is the primary trap — students who know Brahmaputra flows through India and know it originates in some glacier may default to saying it originates in India (perhaps at Dihang gorge where it enters). The precise fact is that Brahmaputra (Tsangpo) originates from the Chemayungdung glacier in Tibet and flows through China before entering India. Option (c) exploits the Gulf of Mannar/Gulf of Khambhat confusion — both are coastal gulfs in western/southwestern India, and students may not remember which gulf Narmada drains into.",
+      "final_explanation": "River origin points and drainage termini are highly tested in UPSC Prelims.\n\n• Option (a) — Brahmaputra: originates in India: Incorrect. Brahmaputra (Tsangpo) originates from the Chemayungdung glacier near Lake Mansarovar in Tibet, China. It flows eastward through Tibet before making a U-turn around Namcha Barwa and entering India in Arunachal Pradesh.\n• Option (b) — Ganga-Brahmaputra delta: world's largest, shared with Bangladesh: Correct as far as it goes, but the question asks for the correctly matched pair. Verify option (d) first.\n• Option (c) — Narmada: drains into Gulf of Mannar: Incorrect. Narmada drains into the Gulf of Khambhat (Cambay) on the Arabian Sea coast of Gujarat. Gulf of Mannar is between Tamil Nadu and Sri Lanka.\n• Option (d) — Indus, Sutlej, Brahmaputra: all originate in Tibet: Correct. All three rivers have their source in the Tibetan Plateau (China) — a strategically significant trans-boundary water-sharing issue.\n\nValue Addition:\n• Ganga originates at Gangotri glacier in Uttarakhand — the only one of the four named rivers that originates within India.\n• The Indus Water Treaty (1960, India-Pakistan, brokered by World Bank) allocates Indus, Jhelum, and Chenab to Pakistan and Ravi, Beas, Sutlej to India.\n• Trans-boundary river origins are relevant to water diplomacy with both China (Brahmaputra, Indus, Sutlej) and Pakistan."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) ब्रह्मपुत्र नदी — अरुणाचल प्रदेश के मैदानों में प्रवेश करने से पहले भारत के क्षेत्र में किसी ग्लेशियर से उत्पन्न होती है\n(b) गंगा-ब्रह्मपुत्र डेल्टा — केवल भारतीय क्षेत्र में बना है; क्षेत्रफल के हिसाब से विश्व का सबसे बड़ा डेल्टा\n(c) नर्मदा नदी — पश्चिम की ओर बहती है और एक मुहाने के माध्यम से मन्नार की खाड़ी में जल गिराती है\n(d) सिंधु, सतलज और ब्रह्मपुत्र — ये तीनों तिब्बती पठार (चीन) में उत्पन्न होती हैं और सीमा-पार बहने वाली नदियाँ हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र जानते हैं कि 'गंगा-ब्रह्मपुत्र डेल्टा विश्व का सबसे बड़ा है' और बिना यह जांचे कि मेघना नदी (जो हिमालयी नदी नहीं है) शामिल होनी चाहिए या नहीं, या 'बांग्लादेश के साथ साझा' की शर्त सही है या नहीं, वे इस जोड़ी को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: ब्रह्मपुत्र तिब्बत (Chemayungdung ग्लेशियर) में उत्पन्न होता है — भारत में नहीं। यह जोड़ी गलत मेल खाती है।",
+        "विकल्प (b) का मूल्यांकन करें: गंगा-ब्रह्मपुत्र डेल्टा बांग्लादेश के साथ साझा है और विश्व का सबसे बड़ा डेल्टा है — लेकिन तकनीकी रूप से सुंदरबन डेल्टा में मेघना नदी का संगम भी शामिल है। आगे सत्यापन करें।",
+        "विकल्प (c) का मूल्यांकन करें: नर्मदा पश्चिम की ओर खंभात की खाड़ी (गulf of Khambhat) में बहती है, मन्नार की खाड़ी में नहीं। यह जोड़ी गलत मेल खाती है — मन्नार की खाड़ी दक्षिण-पूर्व (तमिलनाडु-श्रीलंका) की ओर है।",
+        "विकल्प (d) का मूल्यांकन करें: सिंधु, सतलज और ब्रह्मपुत्र सभी तिब्बत (चीन) में उत्पन्न होते हैं और ये सीमा-पार बहने वाली नदियाँ हैं — यह सही मेल है और UPSC में परखा गया तथ्य है। विकल्प (d) सही है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) मुख्य जाल है — जो छात्र जानते हैं कि ब्रह्मपुत्र भारत से होकर बहती है और यह किसी ग्लेशियर से उत्पन्न होती है, वे स्वाभाविक रूप से कह सकते हैं कि यह भारत में उत्पन्न होती है (शायद दिहांग घाटी के पास जहाँ यह प्रवेश करती है)। सटीक तथ्य यह है कि ब्रह्मपुत्र (त्सांगपो) तिब्बत के Chemayungdung ग्लेशियर से उत्पन्न होती है और चीन से होकर भारत में प्रवेश करती है। विकल्प (c) मन्नार की खाड़ी/खंभात की खाड़ी के भ्रम का उपयोग करता है — दोनों पश्चिम/दक्षिण-पश्चिम भारत के तटीय खाड़ी हैं, और छात्र याद नहीं रख पाते कि नर्मदा किस खाड़ी में बहती है।",
+      "final_explanation": "नदी के उद्गम स्थान और जल निकासी के अंत बिंदु UPSC प्रारंभिक परीक्षा में अत्यंत परखे जाते हैं।\n\n• विकल्प (a) — ब्रह्मपुत्र: भारत में उत्पन्न होती है: गलत। ब्रह्मपुत्र (त्सांगपो) तिब्बत, चीन के मानसरोवर झील के पास Chemayungdung ग्लेशियर से उत्पन्न होती है। यह पूर्व की ओर तिब्बत से बहती है, फिर नमचा बरवा के चारों ओर मुड़कर अरुणाचल प्रदेश में प्रवेश करती है।\n• विकल्प (b) — गंगा-ब्रह्मपुत्र डेल्टा: विश्व का सबसे बड़ा, बांग्लादेश के साथ साझा: जहाँ तक सही है, लेकिन प्रश्न सही मेल वाली जोड़ी पूछता है। पहले विकल्प (d) सत्यापित करें।\n• विकल्प (c) — नर्मदा: मन्नार की खाड़ी में बहती है: गलत। नर्मदा खंभात की खाड़ी (अरब सागर तट, गुजरात) में बहती है। मन्नार की खाड़ी तमिलनाडु और श्रीलंका के बीच है।\n• विकल्प (d) — सिंधु, सतलज, ब्रह्मपुत्र: सभी तिब्बती पठार (चीन) में उत्पन्न होती हैं: सही। ये तीनों नदियाँ तिब्बती पठार से निकलती हैं — जो एक रणनीतिक रूप से महत्वपूर्ण सीमा-पार जल-साझाकरण मुद्दा है।\n\nमूल्यवर्धन:\n• गंगा का उद्गम स्थल गंगोत्री ग्लेशियर, उत्तराखंड है — यह चारों में से एकमात्र नदी है जो भारत के भीतर उत्पन्न होती है।\n• सिंधु जल संधि (1960, भारत-पाकिस्तान, विश्व बैंक द्वारा मध्यस्थता) सिंधु, झेलम, चेनाब को पाकिस्तान को और रावी, बीस, सतलज को भारत को आवंटित करती है।\n• सीमा-पार नदी उद्गम जल कूटनीति के लिए चीन (ब्रह्मपुत्र, सिंधु, सतलज) और पाकिस्तान दोनों के साथ प्रासंगिक हैं।"
+    }
+  },
+  {
+    "uuid": "2f17e108-b694-40d7-9e31-1eef058cfd4e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Brahmaputra Plain and Assam Valley: Structural Uniqueness",
+        "Concept of Antecedent and Consequent Drainage in Indian Context"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Brahmaputra antecedent drainage Namcha Barwa U-turn",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Tsangpo River makes a dramatic hairpin bend (U-turn) in Tibet before entering India as the Dihang River in Arunachal Pradesh. Around which of the following geographical features does this U-turn occur?\n\n(a) Namcha Barwa massif\n(b) Gangdise (Kailash) Range\n(c) Kailash Peak near Lake Mansarovar\n(d) Mishmi Hills of Arunachal Pradesh",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c ('Kailash Range') is a strong distractor because students associate Brahmaputra's origin with the Mansarovar-Kailash area of Tibet, and may incorrectly attribute the U-turn to a Kailash Range obstruction rather than to Namcha Barwa specifically.",
+      "elimination_logic": [
+        "Eliminate option (b): Gangdise (Kailash) Range is in western Tibet near Mansarovar — Brahmaputra originates here but the dramatic hairpin bend occurs much further east at Namcha Barwa.",
+        "Eliminate option (c): Kailash Range is near Mansarovar lake — this is Brahmaputra's source region, not the U-turn point.",
+        "Eliminate option (d): Mishmi Hills are in Arunachal Pradesh — Brahmaputra enters India further west, near the Namcha Barwa area.",
+        "Confirm option (a): Namcha Barwa (7,782 m) is the peak around which the Tsangpo/Brahmaputra makes its spectacular hairpin bend before cutting south into Arunachal Pradesh through the Dihang gorge."
+      ],
+      "upsc_trap_explanation": "The Kailash Range/Mansarovar confusion is a classic geographic swap. Students who know 'Brahmaputra originates near Mansarovar in Tibet' may assign the U-turn to the Kailash area. But Brahmaputra flows eastward for much of its Tibetan course before the U-turn occurs around Namcha Barwa — thousands of kilometres east of its origin. Namcha Barwa marks the eastern syntaxis of the Himalayas — the structurally critical point where the mountain arc bends sharply southward.",
+      "final_explanation": "The Brahmaputra's dramatic course change is one of the most geographically spectacular phenomena in Asia and a regular Prelims topic.\n\n• Option (a) — Namcha Barwa: Correct. Namcha Barwa (7,782 m) is the eastern anchor of the Himalayan arc. The Tsangpo River, flowing eastward across the Tibetan Plateau, encounters this massif and makes a hairpin bend (U-turn) southward, cutting through the Dihang gorge — one of the deepest river gorges in the world — before emerging into Arunachal Pradesh as the Dihang.\n• Option (b) — Gangdise Range: Incorrect. This range is associated with the Brahmaputra's source region (Chemayungdung glacier) in western Tibet, not the U-turn location in eastern Tibet.\n• Option (c) — Kailash Range: Incorrect. Kailash (6,638 m) is near Lake Mansarovar — source region of Indus, Sutlej, and Karnali rivers, but not the Brahmaputra U-turn point.\n• Option (d) — Mishmi Hills: Incorrect. Mishmi Hills are in Arunachal Pradesh — downstream of the U-turn, not the cause of it.\n\nValue Addition:\n• The gorge cut by the Tsangpo around Namcha Barwa is deeper than the Grand Canyon — potential hydroelectric significance.\n• Antecedent drainage: Brahmaputra's course predates the Himalayan uplift — it maintained its route by downward erosion as the mountains rose.\n• Brahmaputra is known as Tsangpo (Tibet), Dihang (Arunachal Pradesh), Brahmaputra (Assam), and Jamuna (Bangladesh)."
+    },
+    "hi": {
+      "display_text": "त्सांगपो नदी तिब्बत में एक नाटकीय हेयरपिन मोड़ (यू-टर्न) बनाती है, जिसके बाद यह अरुणाचल प्रदेश में दीहांग नदी के रूप में भारत में प्रवेश करती है। निम्नलिखित में से किस भौगोलिक विशेषता के आसपास यह यू-टर्न होता है?\n\n(a) नमचा बर्वा पर्वतमाला\n(b) गंगडीसे (कैलाश) श्रेणी\n(c) मानसरोवर झील के पास कैलाश शिखर\n(d) अरुणाचल प्रदेश के मिश्मी पहाड़",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c ('कैलाश श्रेणी') एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र ब्रह्मपुत्र की उत्पत्ति को तिब्बत के मानसरोवर-कैलाश क्षेत्र से जोड़ते हैं, और यू-टर्न को कैलाश श्रेणी की बाधा के बजाय विशेष रूप से नमचा बर्वा से जोड़ने में गलती कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (b) को हटाएं: गंगडीसे (कैलाश) श्रेणी पश्चिमी तिब्बत में मानसरोवर के पास है — ब्रह्मपुत्र यहीं उत्पन्न होता है लेकिन नाटकीय हेयरपिन मोड़ नमचा बर्वा में बहुत आगे पूर्व में होता है।",
+        "विकल्प (c) को हटाएं: कैलाश श्रेणी मानसरोवर झील के पास है — यह ब्रह्मपुत्र का स्रोत क्षेत्र है, यू-टर्न का स्थान नहीं।",
+        "विकल्प (d) को हटाएं: मिश्मी पहाड़ अरुणाचल प्रदेश में हैं — ब्रह्मपुत्र भारत में नमचा बर्वा क्षेत्र के पास पश्चिम में प्रवेश करता है।",
+        "विकल्प (a) की पुष्टि करें: नमचा बर्वा (7,782 मीटर) वह शिखर है जिसके चारों ओर त्सांगपो/ब्रह्मपुत्र अपनी शानदार हेयरपिन मोड़ बनाता है और दीहांग घाटी के माध्यम से अरुणाचल प्रदेश में दक्षिण की ओर कटता है।"
+      ],
+      "upsc_trap_explanation": "कैलाश श्रेणी/मानसरोवर भ्रम एक क्लासिक भौगोलिक स्वैप है। जो छात्र जानते हैं कि 'ब्रह्मपुत्र तिब्बत के मानसरोवर के पास उत्पन्न होता है' वे यू-टर्न को कैलाश क्षेत्र से जोड़ सकते हैं। लेकिन ब्रह्मपुत्र अपने तिब्बती मार्ग के अधिकांश हिस्से में पूर्व की ओर बहता है, और यू-टर्न नमचा बर्वा के आसपास होता है — जो इसके स्रोत से हजारों किलोमीटर पूर्व में है। नमचा बर्वा हिमालय की पूर्वी संटैक्सिस है — वह संरचनात्मक रूप से महत्वपूर्ण बिंदु जहां पर्वत चाप तीव्र दक्षिण की ओर मुड़ता है।",
+      "final_explanation": "ब्रह्मपुत्र का नाटकीय मार्ग परिवर्तन एशिया में सबसे भौगोलिक रूप से शानदार घटनाओं में से एक है और यह प्रीलिम्स में नियमित विषय है।\n\n• विकल्प (a) — नमचा बर्वा: सही। नमचा बर्वा (7,782 मीटर) हिमालयी चाप का पूर्वी आधार है। त्सांगपो नदी, जो तिब्बती पठार के पार पूर्व की ओर बहती है, इस पर्वत समूह से टकराती है और एक हेयरपिन मोड़ (यू-टर्न) बनाकर दक्षिण की ओर दीहांग घाटी के माध्यम से कटती है — जो विश्व की सबसे गहरी नदी घाटियों में से एक है — और फिर अरुणाचल प्रदेश में दीहांग के रूप में निकलती है।\n• विकल्प (b) — गंगडीसे श्रेणी: गलत। यह श्रेणी ब्रह्मपुत्र के स्रोत क्षेत्र (चेमयुंगडुंग ग्लेशियर) से जुड़ी है, जो पश्चिमी तिब्बत में है, न कि पूर्वी तिब्बत में यू-टर्न के स्थान से।\n• विकल्प (c) — कैलाश श्रेणी: गलत। कैलाश (6,638 मीटर) मानसरोवर झील के पास है — सिंधु, सतलज और कर्णाली नदियों का स्रोत क्षेत्र, लेकिन ब्रह्मपुत्र के यू-टर्न का स्थान नहीं।\n• विकल्प (d) — मिश्मी पहाड़: गलत। मिश्मी पहाड़ अरुणाचल प्रदेश में हैं — यू-टर्न के नीचे की ओर, इसका कारण नहीं।\n\nमूल्य संवर्धन:\n• त्सांगपो द्वारा नमचा बर्वा के आसपास काटी गई घाटी ग्रैंड कैन्यन से भी गहरी है — संभावित जलविद्युत महत्व।\n• पूर्ववर्ती जल निकासी (Antecedent drainage): ब्रह्मपुत्र का मार्ग हिमालय के उठान से पहले का है — यह अपने मार्ग को नीचे की ओर कटाव द्वारा बनाए रखता है जब पर्वत उठे।\n• ब्रह्मपुत्र को तिब्बत में त्सांगपो, अरुणाचल प्रदेश में दीहांग, असम में ब्रह्मपुत्र, और बांग्लादेश में जमुना के नाम से जाना जाता है।"
+    }
+  },
+  {
+    "uuid": "e72419ba-5f91-4213-bb6d-b2e1088894b6",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Coastal Plains: East Coast vs. West Coast — Structural and Economic Differences",
+        "The Western Ghats vs. Eastern Ghats: Comparative Structural Analysis"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Kayals backwaters West Coast no deltas West Coast",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the coastal plains of India:\n\n1. The West Coast of India is characterised by backwaters (Kayals) and lagoons because it lacks major rivers capable of building deltas, while most large rivers of the peninsula drain eastward.\n2. The Eastern Coast of India is wider than the Western Coast because it has subsided tectonically, whereas the Western Coast has been uplifted, creating its steep and narrow profile.\n3. The Palakkad (Palghat) Gap is a significant break in the Western Ghats through which the southwest monsoon penetrates into the interior of Tamil Nadu, making it less of a rain-shadow zone than other parts of the state.\n\nWhich of the above statements is/are correct?\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The West Coast of India is characterised by backwaters (Kayals) and lagoons because it lacks major rivers capable of building deltas, while most large rivers of the peninsula drain eastward.",
+          "verdict": "Correct",
+          "reason": "The Western Ghats act as a watershed — rivers on the western side are short and swift (due to the steep gradient) and cannot build deltas. Major peninsular rivers (Godavari, Krishna, Mahanadi, Kaveri) drain eastward and build deltas on the East Coast. Kerala's backwaters form where short rivers and the sea meet in lagoonal conditions."
+        },
+        {
+          "statement": "The Eastern Coast of India is wider than the Western Coast because it has subsided tectonically, whereas the Western Coast has been uplifted, creating its steep and narrow profile.",
+          "verdict": "Incorrect",
+          "reason": "The width difference is primarily due to river sediment deposition — east-flowing rivers have deposited vast amounts of alluvium, building wide deltaic plains. The simplistic tectonic subsidence-uplift explanation is not the standard accepted explanation for the width differential in NCERT/standard sources."
+        },
+        {
+          "statement": "The Palakkad (Palghat) Gap is a significant break in the Western Ghats through which the southwest monsoon penetrates into the interior of Tamil Nadu, making it less of a rain-shadow zone than other parts of the state.",
+          "verdict": "Correct",
+          "reason": "Palakkad Gap (Palghat Gap) is a natural opening in the Western Ghats between the Nilgiri Hills and the Anaimalai Hills. Southwest monsoon moisture passes through this gap into Tamil Nadu's Coimbatore plateau and southern districts — reducing the rain-shadow effect for those areas."
+        }
+      ],
+      "strong_distractor": "d — Option d ('all three') is a strong distractor because Statement 2's tectonic language sounds academically valid — uplift and subsidence of coasts is a real geomorphic process, and students may not recall that the width differential's primary explanation is sediment deposition, not direct tectonic subsidence.",
+      "elimination_logic": [
+        "Evaluate Statement 2: tectonic subsidence as the explanation for East Coast width is an oversimplification not supported by standard NCERT/UPSC sources — the primary cause is alluvial deposition. Statement 2 is incorrect.",
+        "Confirm Statement 1: West Coast's Kayals form because rivers are too short to build deltas, and major peninsular rivers drain east — this is a standard, well-supported explanation. Statement 1 is correct.",
+        "Confirm Statement 3: Palakkad Gap's role in allowing monsoon penetration into Tamil Nadu is a well-established geographic fact. Statement 3 is correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses genuine geomorphic terminology ('tectonic subsidence,' 'uplift') applied plausibly to the coast context — but inverts the actual explanation. The East Coast's width is primarily a product of fluvial sediment deposition over millions of years by east-flowing rivers. While tectonic processes did contribute to the initial structural context, the standard explanation in UPSC-relevant sources (NCERT, GC Leong) emphasises sediment deposition, not tectonic subsidence/uplift, as the width differentiator.",
+      "final_explanation": "India's east and west coasts differ in almost every structural and ecological parameter.\n\n• Statement 1 — Correct: West Coast rivers are short and swift because the Western Ghats crest is close to the sea — insufficient length to carry and deposit sediment for delta building. Major peninsular rivers drain east. Kerala's backwaters (Kayals) form in the narrow zone where short rivers meet coastal lagoons.\n• Statement 2 — Incorrect: The East Coast's greater width is primarily a product of vast alluvial deposition by Mahanadi, Godavari, Krishna, and Kaveri rivers over geological time. The tectonic subsidence-uplift binary explanation is not the standard accepted account and constitutes a scope-extension distortion.\n• Statement 3 — Correct: Palakkad (Palghat) Gap — between Nilgiris and Anaimalais — is the only significant break in the Western Ghats. It allows SW monsoon to penetrate into Coimbatore and parts of Tamil Nadu, reducing their rain-shadow effect.\n\nValue Addition:\n• Chilika Lake (Odisha) is on the East Coast — India's largest brackish water lagoon; a Ramsar site.\n• Vembanad Lake (Kerala) is India's longest lake — a West Coast backwater on the Ramsar list.\n• Pal Ghat Gap is strategically important for rail/road connectivity between Kerala and Tamil Nadu."
+    },
+    "hi": {
+      "display_text": "भारत के तटीय मैदानों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत के पश्चिमी तट की विशेषता बैकवाटर (कयाल) और लैगून हैं क्योंकि यहाँ डेल्टा बनाने में सक्षम प्रमुख नदियाँ नहीं हैं, जबकि प्रायद्वीप की अधिकांश बड़ी नदियाँ पूर्व की ओर बहती हैं।\n2. भारत के पूर्वी तट की चौड़ाई पश्चिमी तट से अधिक है क्योंकि यह tectonically अवसादित है, जबकि पश्चिमी तट उठाया गया है, जिससे इसका तीव्र और संकीर्ण स्वरूप बनता है।\n3. पलक्कड़ (पालघाट) गैप पश्चिमी घाट में एक महत्वपूर्ण विराम है जिसके माध्यम से दक्षिण-पश्चिम मानसून तमिलनाडु के अंदरूनी भागों में प्रवेश करता है, जिससे यह राज्य के अन्य हिस्सों की तुलना में कम वर्षा छाया क्षेत्र बनता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The West Coast of India is characterised by backwaters (Kayals) and lagoons because it lacks major rivers capable of building deltas, while most large rivers of the peninsula drain eastward.",
+          "verdict": "सही है",
+          "reason": "पश्चिमी घाट जलविभाजक के रूप में कार्य करते हैं — पश्चिमी ओर की नदियाँ छोटी और तीव्र प्रवाह वाली होती हैं (ढाल अधिक होने के कारण) और वे डेल्टा नहीं बना पातीं। प्रमुख प्रायद्वीपीय नदियाँ (गोदावरी, कृष्णा, महानदी, कावेरी) पूर्व की ओर बहती हैं और पूर्वी तट पर डेल्टा बनाती हैं। केरल के बैकवाटर (कयाल) उन स्थानों पर बनते हैं जहाँ छोटी नदियाँ और समुद्र लैगूनल परिस्थितियों में मिलते हैं।"
+        },
+        {
+          "statement": "The Eastern Coast of India is wider than the Western Coast because it has subsided tectonically, whereas the Western Coast has been uplifted, creating its steep and narrow profile.",
+          "verdict": "गलत है",
+          "reason": "चौड़ाई का अंतर मुख्यतः नदियों द्वारा जमा किए गए तलछट के कारण है — पूर्व की ओर बहने वाली नदियों ने विशाल मात्रा में अलुवियम जमा किया है, जिससे विस्तृत डेल्टाई मैदान बने हैं। सरल tectonic subsidence-uplift व्याख्या NCERT/मानक स्रोतों में चौड़ाई के अंतर के लिए मान्य नहीं है।"
+        },
+        {
+          "statement": "The Palakkad (Palghat) Gap is a significant break in the Western Ghats through which the southwest monsoon penetrates into the interior of Tamil Nadu, making it less of a rain-shadow zone than other parts of the state.",
+          "verdict": "सही है",
+          "reason": "पलक्कड़ गैप (पालघाट गैप) पश्चिमी घाट में नीलगिरी पहाड़ों और अणैमलाई पहाड़ों के बीच एक प्राकृतिक खुला स्थान है। दक्षिण-पश्चिम मानसून की नमी इस गैप के माध्यम से तमिलनाडु के कोयंबटूर पठार और दक्षिणी जिलों में प्रवेश करती है — जिससे उन क्षेत्रों में वर्षा छाया प्रभाव कम होता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d ('सभी तीन') एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 2 में tectonic भाषा शैक्षणिक रूप से प्रामाणिक लगती है — तटों का उठान और अवसादन एक वास्तविक भूआकृतिक प्रक्रिया है, और छात्र यह याद नहीं रख पाते कि चौड़ाई के अंतर का मुख्य कारण तलछट जमा होना है, न कि सीधे tectonic subsidence।",
+      "elimination_logic": [
+        "कथन 2 का मूल्यांकन करें: पूर्वी तट की चौड़ाई के लिए tectonic subsidence को कारण मानना एक अतिसरलीकरण है जो NCERT/UPSC मानक स्रोतों द्वारा समर्थित नहीं है — मुख्य कारण अलुवियल जमा है। अतः कथन 2 गलत है।",
+        "कथन 1 की पुष्टि करें: पश्चिमी तट के कयाल इसलिए बनते हैं क्योंकि नदियाँ डेल्टा बनाने के लिए बहुत छोटी हैं, और प्रमुख प्रायद्वीपीय नदियाँ पूर्व की ओर बहती हैं — यह एक मानक, समर्थित व्याख्या है। अतः कथन 1 सही है।",
+        "कथन 3 की पुष्टि करें: पलक्कड़ गैप का तमिलनाडु के अंदर मानसून प्रवेश में योगदान एक स्थापित भौगोलिक तथ्य है। अतः कथन 3 सही है।",
+        "कथन 1 और 3 सही; कथन 2 गलत → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में वास्तविक भूआकृतिक शब्दावली ('tectonic subsidence,' 'uplift') का तट संदर्भ में प्रासंगिक रूप से उपयोग किया गया है — लेकिन यह वास्तविक व्याख्या को उलट देता है। पूर्वी तट की चौड़ाई मुख्यतः पूर्व की ओर बहने वाली नदियों द्वारा लाखों वर्षों में जमा किए गए तलछट का परिणाम है। जबकि tectonic प्रक्रियाओं ने प्रारंभिक संरचनात्मक संदर्भ में योगदान दिया, UPSC-संबंधित मानक स्रोतों (NCERT, GC Leong) में चौड़ाई के अंतर के लिए sediment deposition को प्राथमिक कारण माना जाता है, न कि tectonic subsidence/uplift।",
+      "final_explanation": "भारत के पूर्वी और पश्चिमी तट लगभग हर संरचनात्मक और पारिस्थितिकीय मापदंड में भिन्न हैं।\n\n• कथन 1 — सही: पश्चिमी तट की नदियाँ छोटी और तीव्र प्रवाह वाली हैं क्योंकि पश्चिमी घाट की चोटी समुद्र के निकट है — डेल्टा निर्माण के लिए पर्याप्त लंबाई और तलछट नहीं। प्रमुख प्रायद्वीपीय नदियाँ पूर्व की ओर बहती हैं। केरल के बैकवाटर (कयाल) उस संकीर्ण क्षेत्र में बनते हैं जहाँ छोटी नदियाँ तटीय लैगून से मिलती हैं।\n• कथन 2 — गलत: पूर्वी तट की अधिक चौड़ाई मुख्यतः महानदी, गोदावरी, कृष्णा और कावेरी नदियों द्वारा भूवैज्ञानिक काल में जमा किए गए विशाल अलुवियल तलछट का परिणाम है। tectonic subsidence-uplift द्वैत व्याख्या मानक स्वीकार्य विवरण नहीं है और यह दायरे-विस्तार विकृति है।\n• कथन 3 — सही: पलक्कड़ (पालघाट) गैप — नीलगिरी और अणैमलाई के बीच — पश्चिमी घाट में एकमात्र महत्वपूर्ण विराम है। यह दक्षिण-पश्चिम मानसून को कोयंबटूर और तमिलनाडु के कुछ हिस्सों में प्रवेश करने देता है, जिससे वहाँ वर्षा छाया प्रभाव कम होता है।\n\nमूल्यवर्धन:\n• चिलिका झील (ओडिशा) पूर्वी तट पर है — भारत की सबसे बड़ी खारी जल लैगून; एक रामसर स्थल।\n• वेंबनाड झील (केरल) भारत की सबसे लंबी झील है — पश्चिमी तट की एक बैकवाटर जो रामसर सूची में है।\n• पाल घाट गैप केरल और तमिलनाडु के बीच रेल/सड़क संपर्क के लिए रणनीतिक रूप से महत्वपूर्ण है।"
+    }
+  },
+  {
+    "uuid": "8fe2e3b3-4247-43f6-98fb-1052f81db742",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The North-East Hill Ranges (Purvanchal): Structural Linkage and Geopolitical Significance",
+        "Regional/Lateral Divisions of the Himalayas: Punjab, Kumaon, Nepal, and Assam Himalayas"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Purvanchal sedimentary rocks less rugged than main Himalayas",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Purvanchal hill ranges arc southward through India's northeastern states, extending from Arunachal Pradesh through Nagaland, Manipur, and Mizoram before continuing into Myanmar.\nReason (R): Unlike the main Himalayan axis, the Purvanchal hills are composed predominantly of sedimentary rocks such as sandstone and shale rather than granite and gneiss.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students who accept both facts at face value without questioning whether the sedimentary rock composition directly causes the southward arc will select 'a', when in fact the arc is a tectonic structural phenomenon, not a direct consequence of rock composition.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion correct? Purvanchal (Patkai, Naga, Manipur, Mizo hills) does arc southward from Arunachal through Nagaland, Manipur, and Mizoram into Myanmar — A is correct.",
+        "Step 2 — Is Reason correct? Purvanchal hills are composed predominantly of sedimentary rocks, unlike the granite/gneiss of the main Himalayan axis — R is correct.",
+        "Step 3 — Does R explain A? The southward arc is a tectonic structural feature — a result of the eastern syntaxis of the Himalayan fold system. It is not caused by the sedimentary rock composition. The rock type is a consequence of the depositional history, not the driver of the arc's direction. R does not explain A.",
+        "Both A and R correct, R does NOT explain A → option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Purvanchal ranges are the eastern continuation of the Himalayan system, bending southward through India's northeastern states into Myanmar.\n\n• Assertion (A): Correct. The Purvanchal ranges (Patkai Bum, Naga Hills, Manipur Hills, Mizo Hills, Tripura Hills) form a southward-arcing chain from Arunachal Pradesh through Nagaland, Manipur, Mizoram, and Tripura into Myanmar — they are the eastern structural extension of the Himalayan fold system.\n• Reason (R): Correct. Purvanchal hills are composed of sedimentary rocks (sandstone, shale), unlike the main Himalayan axis (granite, gneiss, metamorphic rocks). This makes them less rugged and more heavily dissected.\n• Causal link — R does NOT explain A: The southward arc is a tectonic structural phenomenon — it results from the eastern syntaxis of the Himalayan fold belt, where the mountain arc bends around the Indian plate's eastern edge. The sedimentary rock composition is a geological characteristic of these hills, not the cause of their orientation.\n\nValue Addition:\n• Major passes of Purvanchal: Diphu Pass, Tizu Pass, Manipur Pass — used in India's 'Act East Policy' connectivity projects.\n• Loktak Lake (Manipur) lies in a valley between these ranges — hosts the world's only floating national park.\n• Purvanchal's sedimentary rocks contain some petroleum deposits — Digboi (Assam) was India's first oil well (1889)."
+    },
+    "hi": {
+      "display_text": "कथन (A): पूर्वांचल पर्वतीय श्रृंखलाएँ भारत के पूर्वोत्तर राज्यों से होकर दक्षिण की ओर मेढ़ बनाती हैं, जो अरुणाचल प्रदेश से नागालैंड, मणिपुर, मिजोरम होते हुए म्यांमार तक विस्तृत हैं।\nकारण (R): मुख्य हिमालयी अक्ष के विपरीत, पूर्वांचल की पहाड़ियाँ मुख्यतः तलछटी चट्टानों जैसे सैंडस्टोन और शेल से बनी हैं, न कि ग्रेनाइट और ग्नाइस से।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रमकारी है क्योंकि छात्र बिना यह जांचे कि तलछटी चट्टानों की संरचना दक्षिण की ओर मेढ़ का कारण है या नहीं, दोनों तथ्यों को स्वीकार कर लेते हैं, जबकि वास्तव में यह मेढ़ एक टेक्टोनिक संरचनात्मक घटना है, न कि चट्टान की संरचना का प्रत्यक्ष परिणाम।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन सही है? पूर्वांचल (पटकै, नागा, मणिपुर, मिजो पहाड़) अरुणाचल से नागालैंड, मणिपुर, मिजोरम होते हुए म्यांमार तक दक्षिण की ओर मेढ़ बनाता है — A सही है।",
+        "चरण 2 — क्या कारण सही है? पूर्वांचल की पहाड़ियाँ मुख्य हिमालय की ग्रेनाइट/ग्नाइस के विपरीत मुख्यतः तलछटी चट्टानों से बनी हैं — R सही है।",
+        "चरण 3 — क्या R, A को समझाता है? दक्षिण की ओर मेढ़ एक टेक्टोनिक संरचनात्मक विशेषता है — यह हिमालयी फोल्ड प्रणाली के पूर्वी सिंटैक्सिस का परिणाम है। यह तलछटी चट्टानों की संरचना के कारण नहीं है। चट्टान का प्रकार जमा होने के इतिहास का परिणाम है, मेढ़ की दिशा का कारण नहीं। R, A को समझाता नहीं है।",
+        "A और R दोनों सही हैं, पर R, A को समझाता नहीं है → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "पूर्वांचल श्रृंखलाएँ हिमालयी प्रणाली की पूर्वी निरंतरता हैं, जो भारत के पूर्वोत्तर राज्यों से होकर म्यांमार तक दक्षिण की ओर मुड़ती हैं।\n\n• कथन (A): सही। पूर्वांचल श्रृंखलाएँ (पटकै बूम, नागा हिल्स, मणिपुर हिल्स, मिजो हिल्स, त्रिपुरा हिल्स) अरुणाचल प्रदेश से नागालैंड, मणिपुर, मिजोरम, त्रिपुरा होते हुए म्यांमार तक दक्षिण की ओर मेढ़ बनाती हैं — ये हिमालयी फोल्ड प्रणाली का पूर्वी संरचनात्मक विस्तार हैं।\n• कारण (R): सही। पूर्वांचल की पहाड़ियाँ तलछटी चट्टानों (सैंडस्टोन, शेल) से बनी हैं, जो मुख्य हिमालयी अक्ष (ग्रेनाइट, ग्नाइस, रूपांतरित चट्टानें) से भिन्न हैं। इससे ये कम खुरदरी और अधिक कटाव वाली होती हैं।\n• कारणात्मक संबंध — R, A को समझाता नहीं है: दक्षिण की ओर मेढ़ एक टेक्टोनिक संरचनात्मक घटना है — यह हिमालयी फोल्ड बेल्ट के पूर्वी सिंटैक्सिस का परिणाम है, जहाँ पर्वत मेढ़ भारतीय प्लेट के पूर्वी किनारे के चारों ओर मुड़ता है। तलछटी चट्टानों की संरचना इन पहाड़ियों की भौगोलिक विशेषता है, उनकी दिशा का कारण नहीं।\n\nमूल्यवर्धन:\n• पूर्वांचल के प्रमुख दर्रे: दिफू दर्रा, तिजू दर्रा, मणिपुर दर्रा — भारत की 'एक्ट ईस्ट पॉलिसी' कनेक्टिविटी परियोजनाओं में उपयोग।\n• लोकटक झील (मणिपुर) इन श्रृंखलाओं के बीच एक घाटी में स्थित है — विश्व का एकमात्र तैरता राष्ट्रीय उद्यान।\n• पूर्वांचल की तलछटी चट्टानों में कुछ पेट्रोलियम भंडार हैं — डिगबोई (असम) भारत का पहला तेल कुआँ (1889)।"
+    }
+  },
+  {
+    "uuid": "feb6c101-3aff-41da-898c-2d188c4fdc1c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Northern Plains: Formation, Composition, and Sub-divisions"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Punjab Haryana Ganga Brahmaputra plains sub-divisions Northern Plains",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are sub-divisions of the Northern Plains of India. Which one does NOT belong to this physiographic category?\n\n(a) Malwa Plateau\n(b) Punjab-Haryana Plain\n(c) Brahmaputra Plain\n(d) Ganga Plain",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (Brahmaputra Plain) is a strong distractor because students who know the Brahmaputra Plain is 'structurally distinct' from the rest of the Northern Plains may mark it as the odd one out — but it is still classified as part of the Northern Plains in standard NCERT/UPSC classification.",
+      "elimination_logic": [
+        "Identify the common attribute: Punjab-Haryana Plain, Ganga Plain, and Brahmaputra Plain are all alluvial plains formed by Himalayan rivers — sub-divisions of the Northern Plains physiographic unit.",
+        "Malwa Plateau is part of the Central Highlands (northern Peninsular Plateau, north of Narmada) — it is a plateau of ancient rocks, not an alluvial plain.",
+        "Brahmaputra Plain, though structurally distinct (tectonic depression), is classified as part of the Northern Plains in NCERT Class 11 geography.",
+        "Malwa Plateau is the odd one out — it is a peninsular plateau feature, not an alluvial plain sub-division of the Northern Plains."
+      ],
+      "upsc_trap_explanation": "The Brahmaputra Plain trap: students who know it is 'structurally distinct' from the rest of the Northern Plains (formed by tectonic subsidence rather than purely alluvial deposition) may mark it as the odd one out. However, in UPSC-standard classification (NCERT XI), the Brahmaputra Plain is listed as a sub-division of the Northern Plains alongside the Punjab-Haryana and Ganga Plains. Malwa Plateau is definitively a Peninsular Plateau feature — it is a plateau of igneous/sedimentary rocks, not an alluvial plain.",
+      "final_explanation": "The Northern Plains are divided into three broad sub-regions in standard classification.\n\n• Option (a) — Malwa Plateau: Correct odd one out. Malwa Plateau is part of the Central Highlands (northern Peninsular Plateau, Madhya Pradesh and Rajasthan). It is a plateau of sedimentary and igneous rocks — not an alluvial plain.\n• Option (b) — Punjab-Haryana Plain: Part of Northern Plains — formed by alluvial deposits of Indus system rivers (Sutlej, Beas, Ravi). Westernmost sub-division.\n• Option (c) — Brahmaputra Plain: Part of Northern Plains — the easternmost sub-division, formed in a tectonic depression filled with alluvium from the Brahmaputra and its tributaries. Structurally distinct but still classified under Northern Plains.\n• Option (d) — Ganga Plain: Core and largest sub-division of Northern Plains — the Uttar Pradesh-Bihar-West Bengal alluvial tract.\n\nValue Addition:\n• Northern Plains cover approximately 7 lakh sq km and support over 40% of India's population.\n• The Punjab-Haryana Plain was the Green Revolution's epicentre — fertile alluvium + canal irrigation + tube wells.\n• Ganga Plain is divided into Upper Ganga Plain (UP), Middle Ganga Plain (Bihar), and Lower Ganga Plain (West Bengal) in more detailed classifications."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन भारत के उत्तरी मैदानों के उपविभाग हैं। इनमें से कौन-सा इस भौगोलिक श्रेणी में नहीं आता?\n\n(a) मालवा पठार\n(b) पंजाब-हरियाणा मैदान\n(c) ब्रह्मपुत्र मैदान\n(d) गंगा मैदान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (ब्रह्मपुत्र मैदान) एक मजबूत भ्रमकारी विकल्प है क्योंकि जो छात्र जानते हैं कि ब्रह्मपुत्र मैदान 'संरचनात्मक रूप से' उत्तरी मैदानों से भिन्न है, वे इसे अलग विकल्प के रूप में चुन सकते हैं — लेकिन यह अभी भी मानक NCERT/UPSC वर्गीकरण में उत्तरी मैदानों का हिस्सा माना जाता है।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: पंजाब-हरियाणा मैदान, गंगा मैदान, और ब्रह्मपुत्र मैदान सभी हिमालयी नदियों द्वारा निर्मित अलुवियल मैदान हैं — जो उत्तरी मैदानों के भौगोलिक उपविभाग हैं।",
+        "मालवा पठार केंद्रीय उच्चभूमि (उत्तरी प्रायद्वीपीय पठार, नर्मदा के उत्तर) का हिस्सा है — यह प्राचीन चट्टानों का पठार है, अलुवियल मैदान नहीं।",
+        "ब्राह्मपुत्र मैदान, यद्यपि संरचनात्मक रूप से भिन्न (भूकंपीय अवसाद), NCERT कक्षा 11 भूगोल में उत्तरी मैदानों का हिस्सा माना जाता है।",
+        "मालवा पठार अलग विकल्प है — यह प्रायद्वीपीय पठार की विशेषता है, उत्तरी मैदानों के अलुवियल मैदान उपविभाग में से नहीं।"
+      ],
+      "upsc_trap_explanation": "ब्राह्मपुत्र मैदान का जाल: जो छात्र जानते हैं कि यह उत्तरी मैदानों से 'संरचनात्मक रूप से' भिन्न है (यह केवल अलुवियल निक्षेप से नहीं, बल्कि भूकंपीय अवसाद से बना है), वे इसे अलग विकल्प के रूप में चुन सकते हैं। हालांकि, UPSC-मानक वर्गीकरण (NCERT XI) में ब्राह्मपुत्र मैदान पंजाब-हरियाणा और गंगा मैदान के साथ उत्तरी मैदानों के उपविभाग के रूप में सूचीबद्ध है। मालवा पठार निश्चित रूप से प्रायद्वीपीय पठार की विशेषता है — यह आग्नेय/अवसादी चट्टानों का पठार है, अलुवियल मैदान नहीं।",
+      "final_explanation": "मानक वर्गीकरण में उत्तरी मैदानों को तीन व्यापक उप-क्षेत्रों में विभाजित किया गया है।\n\n• विकल्प (a) — मालवा पठार: सही अलग विकल्प। मालवा पठार केंद्रीय उच्चभूमि (उत्तरी प्रायद्वीपीय पठार, मध्य प्रदेश और राजस्थान) का हिस्सा है। यह अवसादी और आग्नेय चट्टानों का पठार है — अलुवियल मैदान नहीं।\n• विकल्प (b) — पंजाब-हरियाणा मैदान: उत्तरी मैदानों का हिस्सा — सिंधु प्रणाली की नदियों (सतलज, ब्यास, रावी) के अलुवियल निक्षेपों से बना। पश्चिमी सबसे दूर का उपविभाग।\n• विकल्प (c) — ब्रह्मपुत्र मैदान: उत्तरी मैदानों का हिस्सा — पूर्वी सबसे दूर का उपविभाग, जो भूकंपीय अवसाद में बना है और ब्रह्मपुत्र व उसकी सहायक नदियों के अलुवियम से भरा है। संरचनात्मक रूप से भिन्न लेकिन फिर भी उत्तरी मैदानों के अंतर्गत वर्गीकृत।\n• विकल्प (d) — गंगा मैदान: उत्तरी मैदानों का मुख्य और सबसे बड़ा उपविभाग — उत्तर प्रदेश- बिहार- पश्चिम बंगाल का अलुवियल क्षेत्र।\n\nमूल्यवर्धन:\n• उत्तरी मैदान लगभग 7 लाख वर्ग किलोमीटर क्षेत्र में फैले हैं और भारत की 40% से अधिक जनसंख्या का समर्थन करते हैं।\n• पंजाब-हरियाणा मैदान हरित क्रांति का केंद्र था — उपजाऊ अलुवियम + नहर सिंचाई + ट्यूबवेल।\n• गंगा मैदान को अधिक विस्तृत वर्गीकरण में ऊपरी गंगा मैदान (उत्तर प्रदेश), मध्य गंगा मैदान (बिहार), और निचला गंगा मैदान (पश्चिम बंगाल) में विभाजित किया गया है।"
+    }
+  },
+  {
+    "uuid": "fbe392d8-adc7-4c9f-8bd5-cda5476f0572",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Satpura and Vindhya Ranges: Structural Type and Drainage Divide Role",
+        "Concept of Antecedent and Consequent Drainage in Indian Context"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Narmada Tapi rift valley westward flow no delta estuary",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A major peninsular river flows in a direction opposite to most other peninsular rivers — westward into the Arabian Sea. Unlike east-flowing rivers, it does not form a delta at its mouth but terminates in an estuary. Geologists note that this river flows through a structural depression bounded by fault lines on either side, with an uplifted block to the south and a sedimentary escarpment to the north.\n\nWhich geographical principle best explains this river's unique characteristics?\n\n(a) The river follows the general westward tilt of the Deccan Plateau surface, which slopes toward the Arabian Sea in this region.\n(b) The river is controlled by a watershed created by the Vindhya and Satpura ranges acting as a combined drainage divide.\n(c) The river demonstrates antecedent drainage, having maintained its westward course as the surrounding terrain was uplifted.\n(d) The river flows through a rift valley (graben) formed by parallel faults, which channels it westward and prevents typical deltaic formation.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because students who know Narmada flows west may attribute it to the Vindhya-Satpura watershed creating a westward slope, rather than to the rift valley origin.",
+      "elimination_logic": [
+        "The scenario describes a river flowing westward into the Arabian Sea with no delta (estuary instead) — this uniquely describes Narmada or Tapi.",
+        "The scenario states the river flows 'through a structural depression bounded by faults on either side' — this is the definition of a rift valley (graben), linking to Narmada's rift valley origin.",
+        "Eliminate option (a): 'westward slope of a plateau' is the general plateau gradient explanation — but Narmada's westward flow is specifically because of its rift valley channel, not just topographic slope.",
+        "Eliminate options (b) and (c): drainage divide or antecedent drainage principles do not apply here. Narmada is neither an antecedent river nor controlled by an upland divide. Option (d) is correct: rift valley (graben) origin explains both westward flow and the estuarine mouth."
+      ],
+      "upsc_trap_explanation": "The reversal trap here is attribution of Narmada's westward flow to a 'plateau slope' or 'Vindhya-Satpura watershed' rather than to its rift valley tectonic origin. A student who explains 'Narmada flows west because the plateau tilts west' arrives at a partially correct but mechanistically wrong answer. The structural key is the graben (rift valley) bounded by faults — the river flows through this tectonic channel, which also explains why no delta forms (the river mouth is constrained by the rift structure, producing an estuary into the Gulf of Khambhat).",
+      "final_explanation": "This scenario describes the Narmada River — India's fifth-largest river and the most geologically unique among peninsular rivers.\n\nApplicable principle: Rift valley (graben) origin and westward drainage.\n\nScenario mapping:\n• 'Structural depression bounded by faults on either side' → graben (rift valley): Narmada flows between the Satpura horst (south) and the Vindhya escarpment (north), both fault-bounded.\n• 'Flows westward into the Arabian Sea': Unlike most peninsular rivers (which follow the eastward plateau tilt), Narmada flows west because its rift valley channel directs it toward the Arabian Sea.\n• 'Forms an estuary, not a delta': Narmada's mouth is constrained by the Gulf of Khambhat's tidal environment — no broad delta forms. Tapi (Tapti) shares the same characteristics.\n\n• Option (a) — westward tilt of the plateau: Incorrect. The plateau's general tilt does not explain Narmada's specific course; its rift valley is the structural cause.\n• Option (b) — Vindhya-Satpura watershed: Incorrect. Vindhyas are not a drainage divide; Satpura is a horst that bounds the rift, not creates a slope.\n• Option (c) — antecedent drainage: Incorrect. Antecedent drainage applies to rivers older than their mountains (Himalayan rivers). Narmada is a peninsular river flowing through a tectonic rift.\n• Option (d) — rift valley graben formation: Correct.\n\nValue Addition:\n• Tapi (Tapti) River has an identical structural origin — both Narmada and Tapi flow through parallel rift valleys west of the Satpura horst.\n• Narmada is the traditional boundary between North and South India culturally and physiographically.\n• Sardar Sarovar Dam is built on the Narmada — India's largest dam project by reservoir capacity."
+    },
+    "hi": {
+      "display_text": "एक प्रमुख प्रायद्वीपीय नदी अधिकांश अन्य प्रायद्वीपीय नदियों के विपरीत दिशा में बहती है — अरब सागर की ओर पश्चिम की ओर। पूर्व की ओर बहने वाली नदियों के विपरीत, यह नदी अपने मुहाने पर डेल्टा नहीं बनाती बल्कि एक एस्चुअरी में समाप्त होती है। भूवैज्ञानिकों ने नोट किया है कि यह नदी दोनों ओर से फॉल्ट लाइनों द्वारा सीमित एक संरचनात्मक अवसाद से होकर बहती है, जिसके दक्षिण में एक उठी हुई ब्लॉक और उत्तर में एक तलछटी चट्टान है।\n\nइस नदी की अनूठी विशेषताओं को सबसे अच्छी तरह कौन-सा भौगोलिक सिद्धांत समझाता है?\n\n(a) नदी डेक्कन पठार की सामान्य पश्चिम की ओर ढलान का अनुसरण करती है, जो इस क्षेत्र में अरब सागर की ओर ढलान करता है।\n(b) नदी विंध्य और सतपुड़ा पर्वतमालाओं द्वारा निर्मित जलग्रहण क्षेत्र द्वारा नियंत्रित है, जो एक संयुक्त जलग्रहण विभाजन के रूप में कार्य करता है।\n(c) नदी पूर्ववर्ती जल निकासी प्रदर्शित करती है, जिसने अपने पश्चिम की ओर मार्ग को तब भी बनाए रखा जब आसपास की भूमि उठाई गई।\n(d) नदी समानांतर फॉल्ट्स द्वारा निर्मित रिफ्ट घाटी (ग्रैबेन) से होकर बहती है, जो इसे पश्चिम की ओर मार्गदर्शित करती है और सामान्य डेल्टा निर्माण को रोकती है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रमकारी है क्योंकि जो छात्र जानते हैं कि नर्मदा पश्चिम की ओर बहती है, वे इसे विंध्य-सतपुड़ा जलग्रहण क्षेत्र द्वारा पश्चिम की ओर ढलान बनाए जाने के बजाय इसके रिफ्ट घाटी उत्पत्ति से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "यह परिदृश्य एक नदी का वर्णन करता है जो अरब सागर की ओर पश्चिम की ओर बहती है और जिसका मुहाना डेल्टा नहीं बल्कि एस्चुअरी है — यह विशिष्ट रूप से नर्मदा या तापी को दर्शाता है।",
+        "परिदृश्य में कहा गया है कि नदी 'दोनों ओर से फॉल्ट्स द्वारा सीमित संरचनात्मक अवसाद' से होकर बहती है — यह रिफ्ट घाटी (ग्रैबेन) की परिभाषा है, जो नर्मदा की रिफ्ट घाटी उत्पत्ति से जुड़ी है।",
+        "विकल्प (a) को हटाएं: 'प्लेटो की पश्चिम की ओर ढलान' सामान्य पठार ढलान की व्याख्या है — लेकिन नर्मदा का पश्चिम की ओर बहना विशेष रूप से इसके रिफ्ट घाटी चैनल के कारण है, केवल स्थलाकृति ढलान के कारण नहीं।",
+        "विकल्प (b) और (c) को हटाएं: जलग्रहण विभाजन या पूर्ववर्ती जल निकासी सिद्धांत यहाँ लागू नहीं होते। नर्मदा न तो पूर्ववर्ती नदी है और न ही किसी उच्चभूमि जलग्रहण द्वारा नियंत्रित है। विकल्प (d) सही है: रिफ्ट घाटी (ग्रैबेन) उत्पत्ति पश्चिम की ओर बहाव और एस्चुअरी मुहाने दोनों को समझाती है।"
+      ],
+      "upsc_trap_explanation": "यहां उलटफेर का जाल यह है कि नर्मदा के पश्चिम की ओर बहाव को 'प्लेटो की ढलान' या 'विंध्य-सतपुड़ा जलग्रहण क्षेत्र' के कारण माना जाए बजाय इसके रिफ्ट घाटी टेक्टोनिक उत्पत्ति के। जो छात्र कहते हैं 'नर्मदा पश्चिम की ओर इसलिए बहती है क्योंकि पठार पश्चिम की ओर झुका हुआ है', वे आंशिक रूप से सही लेकिन यांत्रिक रूप से गलत उत्तर देते हैं। संरचनात्मक कुंजी है फॉल्ट्स द्वारा सीमित ग्रैबेन (रिफ्ट घाटी) — नदी इसी टेक्टोनिक चैनल से बहती है, जो डेल्टा न बनने का कारण भी है (नदी का मुहाना रिफ्ट संरचना द्वारा सीमित है, जिससे खंभात की खाड़ी में एस्चुअरी बनती है)।",
+      "final_explanation": "यह परिदृश्य नर्मदा नदी का वर्णन करता है — भारत की पाँचवीं सबसे बड़ी नदी और प्रायद्वीपीय नदियों में सबसे भूवैज्ञानिक रूप से अनूठी।\n\nलागू सिद्धांत: रिफ्ट घाटी (ग्रैबेन) उत्पत्ति और पश्चिम की ओर जल निकासी।\n\nपरिदृश्य का मिलान:\n• 'दोनों ओर से फॉल्ट्स द्वारा सीमित संरचनात्मक अवसाद' → ग्रैबेन (रिफ्ट घाटी): नर्मदा सतपुड़ा होर्स्ट (दक्षिण) और विंध्य चट्टान (उत्तर) के बीच बहती है, दोनों फॉल्ट सीमित हैं।\n• 'अरब सागर की ओर पश्चिम की ओर बहती है': अधिकांश प्रायद्वीपीय नदियों के विपरीत (जो पूर्व की ओर पठार की ढलान का अनुसरण करती हैं), नर्मदा अपने रिफ्ट घाटी चैनल के कारण पश्चिम की ओर बहती है।\n• 'डेल्टा नहीं बनाती, एस्चुअरी बनाती है': नर्मदा का मुहाना खंभात की खाड़ी के ज्वारीय वातावरण द्वारा सीमित है — कोई व्यापक डेल्टा नहीं बनता। तापी (टपती) में भी समान विशेषताएँ हैं।\n\n• विकल्प (a) — पठार की पश्चिम की ओर ढलान: गलत। पठार की सामान्य ढलान नर्मदा के विशिष्ट मार्ग को नहीं समझाती; इसका रिफ्ट घाटी संरचनात्मक कारण है।\n• विकल्प (b) — विंध्य-सतपुड़ा जलग्रहण क्षेत्र: गलत। विंध्य जलग्रहण विभाजन नहीं है; सतपुड़ा एक होर्स्ट है जो रिफ्ट को सीमित करता है, ढलान नहीं बनाता।\n• विकल्प (c) — पूर्ववर्ती जल निकासी: गलत। पूर्ववर्ती जल निकासी उन नदियों पर लागू होती है जो अपने पहाड़ों से पुरानी हैं (हिमालयी नदियाँ)। नर्मदा एक प्रायद्वीपीय नदी है जो टेक्टोनिक रिफ्ट से होकर बहती है।\n• विकल्प (d) — रिफ्ट घाटी ग्रैबेन निर्माण: सही।\n\nमूल्य संवर्धन:\n• तापी (टपती) नदी की भी समान संरचनात्मक उत्पत्ति है — नर्मदा और तापी दोनों सतपुड़ा होर्स्ट के पश्चिम में समानांतर रिफ्ट घाटियों से होकर बहती हैं।\n• नर्मदा सांस्कृतिक और भौगोलिक रूप से उत्तर और दक्षिण भारत के बीच पारंपरिक सीमा है।\n• सरदार सरोवर बांध नर्मदा पर बना है — भारत की सबसे बड़ी जलाशय क्षमता वाला बांध परियोजना।"
+    }
+  },
+  {
+    "uuid": "f776cc23-937f-46df-9274-d4552f3d16d4",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Rann of Kutch: Physiographic Classification and Seasonal Character",
+        "The Indian Desert (Thar Desert): Formation, Extent, and Characteristics"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Great Rann vs Little Rann location and wild ass sanctuary",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Rann of Kutch:\n\n1. The Great Rann of Kutch lies to the east of the Kutch peninsula and is the habitat of the Indian Wild Ass (Ghudkhar) sanctuary.\n2. The Sir Creek dispute between India and Pakistan involves a tidal creek within the Rann of Kutch that has both maritime boundary and fishing rights implications.\n3. The Rann of Kutch is classified as a permanent shallow-water lake throughout the year and is therefore not associated with any desert physiography.\n\nWhich of the above statements is/are NOT correct?\n(a) 3 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Great Rann of Kutch lies to the east of the Kutch peninsula and is the habitat of the Indian Wild Ass (Ghudkhar) sanctuary.",
+          "verdict": "Incorrect",
+          "reason": "The Great Rann lies to the north of the Kutch peninsula, not to the east. The Indian Wild Ass (Ghudkhar) sanctuary is located in the Little Rann of Kutch (east of the Great Rann), not the Great Rann."
+        },
+        {
+          "statement": "The Sir Creek dispute between India and Pakistan involves a tidal creek within the Rann of Kutch that has both maritime boundary and fishing rights implications.",
+          "verdict": "Correct",
+          "reason": "Sir Creek is a disputed tidal inlet in the Rann of Kutch along the India-Pakistan border. The dispute affects not just the land boundary but also the Exclusive Economic Zone (EEZ) in the Arabian Sea, with implications for fishing rights and potential hydrocarbon exploration."
+        },
+        {
+          "statement": "The Rann of Kutch is classified as a permanent shallow-water lake throughout the year and is therefore not associated with any desert physiography.",
+          "verdict": "Incorrect",
+          "reason": "The Rann is a seasonal salt marsh — it floods during the monsoon and dries into a vast salt flat during summer. It is neither a permanent water body nor disconnected from arid/desert physiography; it lies adjacent to the Thar Desert region."
+        }
+      ],
+      "strong_distractor": "b — Option b ('2 only') is a strong distractor because Statement 1's geographic swap (east vs. north) is subtle and Statement 3's 'permanent lake' claim is so obviously wrong that students may not check whether Statement 1 has an error too — leading them to conclude only Statement 3 is incorrect.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Great Rann lies NORTH (not east) of Kutch peninsula. Wild Ass sanctuary is in the Little Rann (east of Great Rann), not Great Rann. Statement 1 has two errors — it is NOT correct.",
+        "Evaluate Statement 2: Sir Creek dispute, its location in the Rann, and its EEZ implications are all accurate — Statement 2 is correct.",
+        "Evaluate Statement 3: Rann as 'permanent lake throughout the year' is clearly incorrect — it is seasonal. Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 1 contains a double geographic swap: (i) 'east' instead of 'north' for the Great Rann's position relative to Kutch; (ii) attribution of the Wild Ass sanctuary to the Great Rann when it is actually in the Little Rann. A student who only checks the Wild Ass sanctuary fact and confirms it is in 'Rann of Kutch' (true in general) without specifying Great vs. Little Rann will accept Statement 1 as correct. The north-vs-east positional error adds another layer of precision testing.",
+      "final_explanation": "The Rann of Kutch's geography and ecological features are frequently tested with precision.\n\n• Statement 1 — Incorrect: The Great Rann lies to the NORTH of the Kutch peninsula (between Kutch and Sindh, Pakistan). The Indian Wild Ass (Ghudkhar) sanctuary is in the LITTLE Rann of Kutch, which lies east of the Great Rann — a completely different sub-unit.\n• Statement 2 — Correct: Sir Creek is a 96-km tidal creek in the Rann of Kutch region, contested between India and Pakistan. The dispute has significant implications for the EEZ and potential oil exploration in the Arabian Sea.\n• Statement 3 — Incorrect: The Rann is a seasonal salt marsh — monsoon flooding followed by complete desiccation in summer. It is among the largest salt deserts in the world when dry. It is geographically and ecologically linked to the arid landscape of the Thar Desert region.\n\nValue Addition:\n• The Rann of Kutch is a Ramsar wetland site — 'Rann of Kutch' was designated for its flamingo breeding grounds and migratory bird significance.\n• The 1819 Allah Bund earthquake created a natural dam that altered drainage in the region — one of the largest known earthquake-induced landscape changes in historical India.\n• Wild Ass (Equus hemionus khur) is an endangered species — its only remaining habitat is the Little Rann of Kutch."
+    },
+    "hi": {
+      "display_text": "कच्छ के रण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Great Rann of Kutch कच्छ प्रायद्वीप के पूर्व में स्थित है और यह Indian Wild Ass (Ghudkhar) अभयारण्य का आवास है।\n2. भारत और पाकिस्तान के बीच Sir Creek विवाद कच्छ के रण के भीतर एक ज्वारीय नाले से संबंधित है, जिसका समुद्री सीमा और मत्स्य पालन अधिकारों पर प्रभाव है।\n3. कच्छ का रण पूरे वर्ष एक स्थायी उथले जलाशय के रूप में वर्गीकृत है और इसलिए किसी भी मरुस्थलीय स्थलाकृति से जुड़ा नहीं है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n(a) केवल 3\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Great Rann of Kutch lies to the east of the Kutch peninsula and is the habitat of the Indian Wild Ass (Ghudkhar) sanctuary.",
+          "verdict": "गलत",
+          "reason": "Great Rann कच्छ प्रायद्वीप के पूर्व में नहीं बल्कि उत्तर में स्थित है। Indian Wild Ass (Ghudkhar) अभयारण्य Little Rann of Kutch (Great Rann के पूर्व में) में है, Great Rann में नहीं।"
+        },
+        {
+          "statement": "The Sir Creek dispute between India and Pakistan involves a tidal creek within the Rann of Kutch that has both maritime boundary and fishing rights implications.",
+          "verdict": "सही है",
+          "reason": "Sir Creek कच्छ के रण में भारत-पाक सीमा के पास एक विवादित ज्वारीय नाला है। यह विवाद न केवल भूमि सीमा बल्कि अरब सागर में विशेष आर्थिक क्षेत्र (EEZ) और मत्स्य पालन अधिकारों तथा संभावित हाइड्रोकार्बन अन्वेषण को प्रभावित करता है।"
+        },
+        {
+          "statement": "The Rann of Kutch is classified as a permanent shallow-water lake throughout the year and is therefore not associated with any desert physiography.",
+          "verdict": "गलत",
+          "reason": "Rann एक मौसमी लवण दलदल है — मानसून में यह जलमग्न हो जाता है और गर्मियों में सूखकर एक विशाल लवण मैदानी क्षेत्र बन जाता है। यह स्थायी जल निकाय नहीं है और शुष्क/मरुस्थलीय स्थलाकृति से जुड़ा है; यह थार मरुस्थल क्षेत्र के समीप स्थित है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प b ('केवल 2') एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 1 में भौगोलिक स्थान (पूर्व बनाम उत्तर) का अंतर सूक्ष्म है और कथन 3 का 'स्थायी झील' होना इतना स्पष्ट रूप से गलत है कि छात्र यह जांच नहीं करते कि कथन 1 में भी कोई त्रुटि है या नहीं — जिससे वे केवल कथन 3 को गलत मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: Great Rann कच्छ प्रायद्वीप के उत्तर में है (पूर्व में नहीं)। Wild Ass अभयारण्य Little Rann (Great Rann के पूर्व में) में है, Great Rann में नहीं। कथन 1 में दो त्रुटियाँ हैं — यह सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: Sir Creek विवाद, इसका कच्छ के रण में होना और EEZ पर प्रभाव सभी सही हैं — कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: Rann को 'पूरे वर्ष स्थायी झील' कहना स्पष्ट रूप से गलत है — यह मौसमी है। कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में दोहरी भौगोलिक त्रुटि है: (i) Great Rann की स्थिति के लिए 'पूर्व' के बजाय 'उत्तर' होना; (ii) Wild Ass अभयारण्य को Great Rann में बताना जबकि वह वास्तव में Little Rann में है। जो छात्र केवल Wild Ass अभयारण्य के तथ्य को देख कर और इसे 'Rann of Kutch' में होने की सामान्य बात मान कर (Great और Little Rann में अंतर न समझते हुए) कथन 1 को सही मान लेते हैं। उत्तर और पूर्व की स्थिति की त्रुटि एक अतिरिक्त सटीकता परीक्षण है।",
+      "final_explanation": "कच्छ के रण की भौगोलिक और पारिस्थितिक विशेषताएँ अक्सर सटीकता के साथ परीक्षा में पूछी जाती हैं।\n\n• कथन 1 — गलत: Great Rann कच्छ प्रायद्वीप के उत्तर में स्थित है (कच्छ और सिंध, पाकिस्तान के बीच)। Indian Wild Ass (Ghudkhar) अभयारण्य LITTLE Rann of Kutch में है, जो Great Rann के पूर्व में है — एक पूरी तरह अलग उप-इकाई।\n• कथन 2 — सही: Sir Creek कच्छ के रण क्षेत्र में 96 किमी लंबा ज्वारीय नाला है, जो भारत और पाकिस्तान के बीच विवादित है। इस विवाद का EEZ और अरब सागर में संभावित तेल अन्वेषण पर महत्वपूर्ण प्रभाव है।\n• कथन 3 — गलत: Rann एक मौसमी लवण दलदल है — मानसून में जलमग्न और गर्मियों में पूरी तरह सूख जाता है। सूखे समय में यह विश्व के सबसे बड़े लवण मरुस्थलों में से एक है। यह भौगोलिक और पारिस्थितिक रूप से थार मरुस्थल क्षेत्र के शुष्क परिदृश्य से जुड़ा है।\n\nमूल्यवर्धन:\n• कच्छ का रण रामसर जलभूमि स्थल है — 'Rann of Kutch' को इसके फ्लेमिंगो प्रजनन स्थलों और प्रवासी पक्षियों के महत्व के लिए नामित किया गया है।\n• 1819 का अल्ला बंड भूकंप एक प्राकृतिक बांध बना जिसने क्षेत्र की जल निकासी को बदल दिया — यह ऐतिहासिक भारत में भूकंप-प्रेरित सबसे बड़े भू-परिवर्तन में से एक है।\n• Wild Ass (Equus hemionus khur) एक संकटग्रस्त प्रजाति है — इसका एकमात्र शेष आवास Little Rann of Kutch है।"
+    }
+  },
+  {
+    "uuid": "e1a2479b-0315-46c8-8342-907de6e8b3c3",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "The Western Ghats vs. Eastern Ghats: Comparative Structural Analysis",
+        "The Aravalli Range: Age, Orientation, and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Physiographic unit distinctive attributes correct pairing",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the physiographic feature in List I with its most distinctive structural or functional attribute in List II:",
+        "columns": [
+          "List I (Feature)",
+          "List II (Distinctive Attribute)"
+        ],
+        "rows": [
+          [
+            "A. Western Ghats",
+            "1. Continuous chain acting as watershed between short west-flowing and long east-flowing rivers"
+          ],
+          [
+            "B. Satpura Range",
+            "2. Block mountain (horst) uplifted between two parallel rift valleys"
+          ],
+          [
+            "C. Aravalli Range",
+            "3. Drainage divide between rivers flowing into the Indus/inland system and those joining the Ganga system"
+          ],
+          [
+            "D. Eastern Ghats",
+            "4. Discontinuous ranges interrupted and cut through by major peninsular rivers"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n(a) A-3, B-2, C-1, D-4\n(b) A-1, B-2, C-3, D-4\n(c) A-1, B-4, C-3, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a swaps Aravalli and Western Ghats pairings, exploiting the fact that students know both are watersheds and may not recall that 'drainage divide between Indus/inland and Ganga system' is specifically the Aravalli attribute.",
+      "elimination_logic": [
+        "Anchor on the most certain: Eastern Ghats are discontinuous, cut by rivers (Godavari, Krishna) — D must match 4 ('discontinuous ranges cut through by rivers'). Eliminates options (c) and (d).",
+        "Aravallis' distinctive attribute is the drainage divide between Indus/inland drainage (west) and Ganga drainage (east) — C matches 3. Eliminates option (a).",
+        "Satpura as a block mountain (horst) between Narmada and Tapi rift valleys — B matches 2.",
+        "Western Ghats as a continuous watershed for east and west-flowing rivers — A matches 1. Correct combination: A-1, B-2, C-3, D-4 = option (b)."
+      ],
+      "upsc_trap_explanation": "The Aravalli-Western Ghats swap in option (a) is the planted trap. Both ranges serve as drainage divides, making them superficially similar. However, the specific dividing function differs: Western Ghats separate short west-flowing rivers from long east-flowing rivers (peninsular rivers); Aravallis separate rivers flowing into the Indus/inland system (west side) from rivers flowing into the Ganga system (east side). Students who know 'both are watersheds' without the specific directional precision will fall for the swap.",
+      "final_explanation": "Each major physiographic unit of India has a defining structural or functional attribute.\n\n• A – Western Ghats → 1 (continuous watershed for east and west-flowing rivers): The Western Ghats run unbroken as India's peninsular watershed — rivers west of the crest flow short and swift to the Arabian Sea; rivers east flow long distances to the Bay of Bengal.\n• B – Satpura Range → 2 (block mountain/horst between two parallel rift valleys): Satpura is the textbook horst, uplifted between the Narmada graben (north) and Tapi graben (south).\n• C – Aravalli Range → 3 (drainage divide between Indus/inland system and Ganga system): Rivers west of Aravallis (Luni, etc.) drain into the Rann or Indus system; rivers east (Chambal, Banas) drain into the Ganga system.\n• D – Eastern Ghats → 4 (discontinuous ranges cut through by major rivers): Eastern Ghats are interrupted by Mahanadi, Godavari, and Krishna cutting through — no continuous ridge, no watershed function.\n\nValue Addition:\n• Western Ghats were designated a UNESCO World Heritage Site in 2012 — one of the world's eight biodiversity hotspots.\n• Satpura's horst-graben structure has a direct economic implication: Narmada Valley Project dams (Sardar Sarovar) exploit the rift valley's river.\n• Aravallis' NE-SW orientation makes them ineffective as monsoon barriers — key reason for Thar Desert formation."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में भौगोलिक विशेषता को सूची II में उसकी सबसे विशिष्ट संरचनात्मक या कार्यात्मक विशेषता से मिलाइए:",
+        "columns": [
+          "सूची I (विशेषता)",
+          "सूची II (विशिष्ट विशेषता)"
+        ],
+        "rows": [
+          [
+            "A. पश्चिमी घाट",
+            "1. छोटे पश्चिम की ओर बहने वाली और लंबे पूर्व की ओर बहने वाली नदियों के बीच सतत जलविभाजक श्रृंखला"
+          ],
+          [
+            "B. सतपुड़ा पर्वतमाला",
+            "2. दो समानांतर रिफ्ट घाटियों के बीच उठी ब्लॉक पर्वत (हॉर्स्ट)"
+          ],
+          [
+            "C. अरावली पर्वतमाला",
+            "3. सिंधु/अंतर्देशीय प्रणाली में बहने वाली नदियों और गंगा प्रणाली में जुड़ने वाली नदियों के बीच जल निकासी विभाजन"
+          ],
+          [
+            "D. पूर्वी घाट",
+            "4. प्रमुख द्वीपीय नदियों द्वारा बाधित और कटे हुए असतत पर्वतमालाएँ"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n(a) A-3, B-2, C-1, D-4\n(b) A-1, B-2, C-3, D-4\n(c) A-1, B-4, C-3, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a में अरावली और पश्चिमी घाट की जोड़ी बदल दी गई है, यह इस तथ्य का लाभ उठाता है कि छात्र जानते हैं कि दोनों जलविभाजक हैं और यह याद नहीं रख पाते कि 'सिंधु/अंतर्देशीय और गंगा प्रणाली के बीच जल निकासी विभाजन' विशेष रूप से अरावली की विशेषता है।",
+      "elimination_logic": [
+        "सबसे निश्चित पर आधारित: पूर्वी घाट असतत हैं, नदियों (गोदावरी, कृष्णा) द्वारा कटे हुए — D का मिलान 4 ('नदियों द्वारा कटे असतत पर्वतमालाएँ') से होना चाहिए। विकल्प (c) और (d) समाप्त।",
+        "अरावली की विशिष्ट विशेषता सिंधु/अंतर्देशीय जल निकासी (पश्चिम) और गंगा जल निकासी (पूर्व) के बीच जल निकासी विभाजन है — C का मिलान 3 से। विकल्प (a) समाप्त।",
+        "सतपुड़ा एक ब्लॉक पर्वत (हॉर्स्ट) है जो नर्मदा और तापी रिफ्ट घाटियों के बीच स्थित है — B का मिलान 2 से।",
+        "पश्चिमी घाट एक सतत जलविभाजक हैं जो पूर्व और पश्चिम की ओर बहने वाली नदियों के लिए है — A का मिलान 1 से। सही संयोजन: A-1, B-2, C-3, D-4 = विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में अरावली-पश्चिमी घाट की अदला-बदली एक जाल है। दोनों पर्वतमालाएँ जलविभाजक के रूप में कार्य करती हैं, जिससे वे सतही रूप से समान लगती हैं। हालांकि, विशिष्ट विभाजन कार्य अलग है: पश्चिमी घाट छोटे पश्चिम की ओर बहने वाली नदियों को लंबी पूर्व की ओर बहने वाली नदियों (द्वीपीय नदियाँ) से अलग करते हैं; अरावली सिंधु/अंतर्देशीय प्रणाली (पश्चिमी ओर) में बहने वाली नदियों को गंगा प्रणाली (पूर्वी ओर) में बहने वाली नदियों से अलग करते हैं। जो छात्र 'दोनों जलविभाजक हैं' जानते हैं लेकिन दिशा संबंधी सटीकता नहीं जानते, वे इस अदला-बदली में फंस जाएंगे।",
+      "final_explanation": "भारत के प्रत्येक प्रमुख भौगोलिक इकाई की एक परिभाषित संरचनात्मक या कार्यात्मक विशेषता होती है।\n\n• A – पश्चिमी घाट → 1 (छोटे पश्चिम की ओर बहने वाली और लंबे पूर्व की ओर बहने वाली नदियों के बीच सतत जलविभाजक): पश्चिमी घाट भारत के द्वीपीय जलविभाजक के रूप में अविरल चलते हैं — शिखर के पश्चिम की ओर की नदियाँ अरब सागर की ओर छोटी और तीव्र बहती हैं; पूर्व की ओर की नदियाँ बंगाल की खाड़ी की ओर लंबी दूरी तक बहती हैं।\n• B – सतपुड़ा पर्वतमाला → 2 (दो समानांतर रिफ्ट घाटियों के बीच उठी ब्लॉक पर्वत/हॉर्स्ट): सतपुड़ा एक आदर्श हॉर्स्ट है, जो नर्मदा ग्रैबेन (उत्तर) और तापी ग्रैबेन (दक्षिण) के बीच उठी हुई है।\n• C – अरावली पर्वतमाला → 3 (सिंधु/अंतर्देशीय प्रणाली और गंगा प्रणाली के बीच जल निकासी विभाजन): अरावली के पश्चिम की ओर की नदियाँ (लूनी आदि) रन्न या सिंधु प्रणाली में बहती हैं; पूर्व की ओर की नदियाँ (चंबल, बनास) गंगा प्रणाली में बहती हैं।\n• D – पूर्वी घाट → 4 (प्रमुख द्वीपीय नदियों द्वारा कटे असतत पर्वतमालाएँ): पूर्वी घाट महानदी, गोदावरी, और कृष्णा द्वारा बाधित और कटे हुए हैं — कोई सतत पर्वतमाला नहीं, कोई जलविभाजक कार्य नहीं।\n\nमूल्य संवर्धन:\n• पश्चिमी घाट को 2012 में यूनेस्को विश्व धरोहर स्थल घोषित किया गया — विश्व के आठ जैव विविधता हॉटस्पॉट में से एक।\n• सतपुड़ा की हॉर्स्ट-ग्रैबेन संरचना का प्रत्यक्ष आर्थिक महत्व है: नर्मदा घाटी परियोजना के बांध (सरदार सरोवर) इस रिफ्ट घाटी की नदी का उपयोग करते हैं।\n• अरावली की उत्तर-पूर्व से दक्षिण-पश्चिम की अभिविन्यास उन्हें मानसून अवरोधक के रूप में अप्रभावी बनाती है — थार रेगिस्तान के निर्माण का मुख्य कारण।"
+    }
+  },
+  {
+    "uuid": "f300ee32-f244-4050-91bd-a8d698f75321",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Physiographic divisions of India — overview",
+      "concepts_used": [
+        "Longitudinal Divisions of the Himalayas: Trans-, Greater, Lesser, and Sub-Himalayas",
+        "Regional/Lateral Divisions of the Himalayas: Punjab, Kumaon, Nepal, and Assam Himalayas"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Himalayan regional division river demarcation east to west",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The regional (lateral) classification of the Himalayas uses major rivers as boundary markers that divide the mountain system from west to east. Which of the following represents the correct west-to-east sequence of these boundary rivers?\n\n(a) Indus → Kali/Sarda → Sutlej → Teesta\n(b) Indus → Teesta → Sutlej → Kali/Sarda\n(c) Sutlej → Indus → Kali/Sarda → Teesta\n(d) Indus → Sutlej → Kali/Sarda → Teesta",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because students who correctly place Indus in the west and Teesta in the east but are uncertain about the Sutlej vs. Kali/Sarda order in between may swap options (b) and (d), arriving at the wrong middle sequence.",
+      "elimination_logic": [
+        "The Indus River marks the western limit of the regional Himalayan classification — it must come first (westernmost). Eliminates any option not starting with Indus.",
+        "Moving east: the Sutlej River separates the Punjab Himalayas from the Kumaon Himalayas — Sutlej comes second.",
+        "Further east: the Kali (Sarda) River separates Kumaon Himalayas from the Nepal Himalayas — Kali comes third.",
+        "Teesta River is the eastern boundary separating Nepal Himalayas from Assam Himalayas — Teesta comes last. Correct west-to-east order: Indus → Sutlej → Kali/Sarda → Teesta = option (d)."
+      ],
+      "upsc_trap_explanation": "The Sutlej-Kali order is the precision trap. Students who know the four boundary rivers but are uncertain of the middle two may swap Kali and Sutlej. The key recall: moving east from Punjab, the next major river is the Sutlej (Punjab-Kumaon boundary), then the Kali/Sarda (Kumaon-Nepal boundary), and finally the Teesta (Nepal-Assam boundary). Getting the Sutlej-Kali order wrong represents a very specific geographic recall failure that costs one mark.",
+      "final_explanation": "The regional (lateral) classification of the Himalayas uses major rivers as east-west boundary markers, dividing the mountains into four sections from west to east.\n\n• Indus River: Westernmost boundary — marks the western limit of the regional Himalayan classification. West of Indus = Punjab Himalayas begin.\n• Sutlej River: Second boundary — separates Punjab Himalayas (west) from Kumaon Himalayas (east). The Sutlej gorge is one of the deepest river gorges in India.\n• Kali (Sarda) River: Third boundary — separates Kumaon Himalayas (west) from Nepal Himalayas (east). The Kali River marks the India-Nepal border in this region.\n• Teesta River: Easternmost boundary — separates Nepal Himalayas (west) from Assam Himalayas (east). Teesta flows through Sikkim and West Bengal.\n\nCorrect order (west to east): Indus → Sutlej → Kali/Sarda → Teesta = option (d).\n\nValue Addition:\n• Each river boundary corresponds to a section: Punjab (Indus to Sutlej), Kumaon (Sutlej to Kali), Nepal (Kali to Teesta), Assam (Teesta to Brahmaputra).\n• The Nepal Himalayas section, between Kali and Teesta, contains the world's highest peaks — Everest, Makalu, Kanchenjunga.\n• Purvanchal is considered the eastern extension beyond the Assam Himalayas — arcing south through Nagaland, Manipur, and Mizoram."
+    },
+    "hi": {
+      "display_text": "हिमालय की क्षेत्रीय (पार्श्व) वर्गीकरण में प्रमुख नदियों का उपयोग सीमा चिह्न के रूप में किया जाता है जो पर्वत प्रणाली को पश्चिम से पूर्व विभाजित करती हैं। निम्नलिखित में से कौन-सा इन सीमा नदियों का सही पश्चिम से पूर्व क्रम दर्शाता है?\n\n(a) सिंधु → काली/सरदा → सुतlej → तीस्ता\n(b) सिंधु → तीस्ता → सुतlej → काली/सरदा\n(c) सुतlej → सिंधु → काली/सरदा → तीस्ता\n(d) सिंधु → सुतlej → काली/सरदा → तीस्ता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रमकारी है क्योंकि छात्र जो सही ढंग से सिंधु को पश्चिम में और तीस्ता को पूर्व में रखते हैं लेकिन सुतlej और काली/सरदा के बीच क्रम के बारे में अनिश्चित हैं, वे विकल्प (b) और (d) को बदल सकते हैं, जिससे गलत मध्य क्रम बनता है।",
+      "elimination_logic": [
+        "सिंधु नदी क्षेत्रीय हिमालयी वर्गीकरण की पश्चिमी सीमा को चिह्नित करती है — यह सबसे पहले (पश्चिमी सबसे) आनी चाहिए। जो भी विकल्प सिंधु से शुरू नहीं होता उसे खारिज करता है।",
+        "पूर्व की ओर बढ़ते हुए: सुतlej नदी पंजाब हिमालय को कुमाऊं हिमालय से अलग करती है — सुतlej दूसरे स्थान पर आता है।",
+        "और आगे पूर्व में: काली (सरदा) नदी कुमाऊं हिमालय को नेपाल हिमालय से अलग करती है — काली तीसरे स्थान पर आती है।",
+        "तीस्ता नदी पूर्वी सीमा है जो नेपाल हिमालय को असम हिमालय से अलग करती है — तीस्ता अंतिम स्थान पर आती है। सही पश्चिम से पूर्व क्रम: सिंधु → सुतlej → काली/सरदा → तीस्ता = विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "सुतlej-काली क्रम सटीकता का जाल है। जो छात्र चार सीमा नदियों को जानते हैं लेकिन मध्य दो के बारे में अनिश्चित हैं, वे काली और सुतlej को बदल सकते हैं। मुख्य स्मरण: पंजाब से पूर्व की ओर बढ़ते हुए अगली प्रमुख नदी सुतlej है (पंजाब-कुमाऊं सीमा), फिर काली/सरदा (कुमाऊं-नेपाल सीमा), और अंत में तीस्ता (नेपाल-असम सीमा)। सुतlej-काली क्रम गलत होना एक विशिष्ट भौगोलिक स्मरण त्रुटि है जो एक अंक की हानि करती है।",
+      "final_explanation": "हिमालय की क्षेत्रीय (पार्श्व) वर्गीकरण में प्रमुख नदियों का उपयोग पूर्व से पश्चिम सीमा चिह्न के रूप में किया जाता है, जो पहाड़ों को पश्चिम से पूर्व चार भागों में विभाजित करता है।\n\n• सिंधु नदी: पश्चिमी सबसे सीमा — क्षेत्रीय हिमालयी वर्गीकरण की पश्चिमी सीमा को चिह्नित करती है। सिंधु के पश्चिम में = पंजाब हिमालय शुरू होता है।\n• सुतlej नदी: दूसरी सीमा — पंजाब हिमालय (पश्चिम) को कुमाऊं हिमालय (पूर्व) से अलग करती है। सुतlej घाटी भारत की सबसे गहरी नदी घाटियों में से एक है।\n• काली (सरदा) नदी: तीसरी सीमा — कुमाऊं हिमालय (पश्चिम) को नेपाल हिमालय (पूर्व) से अलग करती है। काली नदी इस क्षेत्र में भारत-नेपाल सीमा को चिह्नित करती है।\n• तीस्ता नदी: पूर्वी सबसे सीमा — नेपाल हिमालय (पश्चिम) को असम हिमालय (पूर्व) से अलग करती है। तीस्ता सिक्किम और पश्चिम बंगाल से होकर बहती है।\n\nसही क्रम (पश्चिम से पूर्व): सिंधु → सुतlej → काली/सरदा → तीस्ता = विकल्प (d)।\n\nमूल्य संवर्धन:\n• प्रत्येक नदी सीमा एक खंड के अनुरूप है: पंजाब (सिंधु से सुतlej), कुमाऊं (सुतlej से काली), नेपाल (काली से तीस्ता), असम (तीस्ता से ब्रह्मपुत्र)।\n• नेपाल हिमालय खंड, काली और तीस्ता के बीच, विश्व की सबसे ऊँची चोटियाँ रखता है — एवरेस्ट, मकालू, कंचनजंगा।\n• पूर्वांचल को असम हिमालय के पूर्वी विस्तार के रूप में माना जाता है — जो नागालैंड, मणिपुर और मिजोरम के माध्यम से दक्षिण की ओर घुमावदार है।"
+    }
+  }
+]

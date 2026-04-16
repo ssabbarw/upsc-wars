@@ -1,0 +1,1039 @@
+[
+  {
+    "uuid": "7d623182-7978-4f20-9160-f3ee17f1f995",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Ramakrishna Paramahamsa: Philosophy of Religious Harmony (Sarva Dharma Samanvaya)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Ramakrishna's experiential universalism vs. doctrinal eclecticism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately characterises Ramakrishna Paramahamsa's approach to religious pluralism?\n\n(a) Doctrinal eclecticism — a conscious synthesis of theological elements drawn from multiple religious traditions\n(b) Experiential universalism — a conviction in the unity of all religions derived from personal mystical practice across different faiths\n(c) Systematic philosophical reformulation of Hindu scripture to incorporate universal moral principles\n(d) Rejection of ritual and image worship in favour of a monotheistic conception shared across traditions",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Ramakrishna's approach superficially resembles syncretism, and many students conflate his spiritual practice with a formal philosophical system.",
+      "elimination_logic": [
+        "Eliminate (a): Ramakrishna's universalism arose from direct mystical experience of different religious paths, not from comparing doctrines intellectually — this rules out 'doctrinal eclecticism'.",
+        "Eliminate (c): Ramakrishna was not a systematic philosopher; he communicated through parables and personal experience — he did not produce a rational philosophical treatise.",
+        "Eliminate (d): Unlike the Brahmo Samaj, Ramakrishna fully embraced image worship and Bhakti — he did not reject ritual or icon-based devotion.",
+        "Confirm (b): His approach is best described as experiential universalism — he personally practised multiple religious paths and concluded all lead to the same ultimate reality."
+      ],
+      "upsc_trap_explanation": "The trap here is conflating Ramakrishna's approach with formal syncretism or with Vivekananda's Neo-Vedanta. Many students attribute systematic philosophical reformulation to Ramakrishna, which actually belongs to Vivekananda. Ramakrishna was a mystic practitioner — he experienced different faiths rather than arguing for their equivalence through reason or scripture. A partially prepared student may choose (a) because 'synthesising doctrines' sounds intellectually sophisticated, or choose (c) because Vivekananda's Neo-Vedanta was indeed systematic.",
+      "final_explanation": "Ramakrishna Paramahamsa's religious vision is best understood as experiential universalism — a conclusion drawn not from comparing scriptures or doctrines but from personally practising different religious paths including Vaishnavism, Tantra, Islam, and Christianity, and reporting the same ultimate experience through each.\n\n• Option (a) — Incorrect: Doctrinal eclecticism implies selecting and combining elements from different belief systems at an intellectual level. Ramakrishna operated at the level of direct spiritual practice, not doctrinal synthesis.\n• Option (b) — Correct: His universalism was rooted in lived mystical experience. He did not construct an argument for religious equivalence; he demonstrated it through his own sadhana across traditions.\n• Option (c) — Incorrect: Systematic philosophical reformulation describes Vivekananda's Neo-Vedanta, not Ramakrishna's approach. Ramakrishna taught through stories, songs, and personal example — not structured philosophy.\n• Option (d) — Incorrect: Ramakrishna was deeply rooted in the Bhakti tradition and embraced idol worship — this marks a clear divergence from the Brahmo Samaj's rejection of image worship.\n\nValue Addition:\n• Ramakrishna's approach is often described by scholars as 'spiritual empiricism' — testing religious truth through personal experience.\n• His relationship with goddess Kali as the Divine Mother was central to his spiritual practice and teaching.\n• The Brahmo Samaj, by contrast, drew heavily from Unitarian Christianity and rejected polytheism and idol worship."
+    },
+    "hi": {
+      "display_text": "रामकृष्ण परमहंस के धार्मिक बहुलवाद के दृष्टिकोण को निम्नलिखित में से कौन-सा सबसे सटीक रूप से वर्णित करता है?\n\n(a) सिद्धांतात्मक समन्वयवाद — कई धार्मिक परंपराओं से theological तत्वों का सचेत संश्लेषण\n(b) अनुभवजन्य सार्वभौमिकतावाद — विभिन्न आस्थाओं में व्यक्तिगत रहस्यमय साधना से प्राप्त सभी धर्मों की एकता में विश्वास\n(c) सार्वभौमिक नैतिक सिद्धांतों को समाहित करने के लिए हिंदू शास्त्रों का व्यवस्थित दार्शनिक पुनर्निर्माण\n(d) अनुष्ठान और मूर्ति पूजा का त्याग करते हुए सभी परंपराओं में साझा एकेश्वरवादी अवधारणा को अपनाना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि रामकृष्ण का दृष्टिकोण सतही रूप से समन्वयवाद जैसा प्रतीत होता है, और कई छात्र उनकी आध्यात्मिक साधना को औपचारिक दार्शनिक प्रणाली के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "(a) को निरस्त करें — रामकृष्ण का सार्वभौमिकतावाद विभिन्न धार्मिक मार्गों के प्रत्यक्ष रहस्यमय अनुभव से उत्पन्न हुआ, न कि बौद्धिक रूप से सिद्धांतों की तुलना से — इसलिए 'सिद्धांतात्मक समन्वयवाद' खारिज होता है।",
+        "(c) को निरस्त करें — रामकृष्ण कोई व्यवस्थित दार्शनिक नहीं थे; वे दृष्टांतों और व्यक्तिगत अनुभव के माध्यम से संवाद करते थे — उन्होंने कोई तर्कसंगत दार्शनिक ग्रंथ नहीं लिखा।",
+        "(d) को निरस्त करें — ब्रह्म समाज के विपरीत, रामकृष्ण ने पूरी तरह से मूर्ति पूजा और भक्ति को अपनाया — उन्होंने अनुष्ठान या मूर्ति आधारित भक्ति को अस्वीकार नहीं किया।",
+        "(b) सही है — उनका दृष्टिकोण सर्वश्रेष्ठ रूप से अनुभवजन्य सार्वभौमिकतावाद के रूप में वर्णित किया जा सकता है — उन्होंने व्यक्तिगत रूप से कई धार्मिक मार्गों का अभ्यास किया और निष्कर्ष निकाला कि सभी एक ही अंतिम सत्य की ओर ले जाते हैं।"
+      ],
+      "upsc_trap_explanation": "यह जाल रामकृष्ण के दृष्टिकोण को औपचारिक समन्वयवाद या विवेकानंद के नव-वैदिक दर्शन के साथ भ्रमित करने में है। कई छात्र रामकृष्ण को व्यवस्थित दार्शनिक सुधारकर्ता मान लेते हैं, जो वास्तव में विवेकानंद का क्षेत्र है। रामकृष्ण एक रहस्यमय साधक थे — वे विभिन्न धर्मों का अनुभव करते थे, न कि तर्क या शास्त्र के माध्यम से उनकी समानता का तर्क देते थे। आंशिक रूप से तैयार छात्र (a) चुन सकते हैं क्योंकि 'सिद्धांतों का संश्लेषण' बौद्धिक रूप से परिष्कृत लगता है, या (c) चुन सकते हैं क्योंकि विवेकानंद का नव-वैदिक दर्शन वास्तव में व्यवस्थित था।",
+      "final_explanation": "रामकृष्ण परमहंस का धार्मिक दृष्टिकोण अनुभवजन्य सार्वभौमिकतावाद के रूप में सबसे अच्छी तरह समझा जाता है — यह निष्कर्ष शास्त्रों या सिद्धांतों की तुलना से नहीं, बल्कि व्यक्तिगत रूप से वैष्णव धर्म, तंत्र, इस्लाम, और ईसाई धर्म सहित विभिन्न धार्मिक मार्गों का अभ्यास करने और प्रत्येक के माध्यम से समान अंतिम अनुभव की रिपोर्ट करने से निकला है।\n\n• विकल्प (a) — गलत: सिद्धांतात्मक समन्वयवाद का अर्थ है विभिन्न विश्वास प्रणालियों के तत्वों का बौद्धिक स्तर पर चयन और संयोजन। रामकृष्ण सीधे आध्यात्मिक साधना के स्तर पर कार्य करते थे, न कि सिद्धांतों के संश्लेषण पर।\n• विकल्प (b) — सही: उनका सार्वभौमिकतावाद जीवित रहस्यमय अनुभव में निहित था। उन्होंने धार्मिक समानता के लिए तर्क नहीं बनाया; उन्होंने इसे अपनी साधना के माध्यम से प्रदर्शित किया।\n• विकल्प (c) — गलत: व्यवस्थित दार्शनिक सुधार विवेकानंद के नव-वैदिक दर्शन का वर्णन करता है, रामकृष्ण के दृष्टिकोण का नहीं। रामकृष्ण कहानियों, गीतों और व्यक्तिगत उदाहरण के माध्यम से सिखाते थे — न कि संरचित दर्शन के।\n• विकल्प (d) — गलत: रामकृष्ण भक्ति परंपरा में गहराई से निहित थे और मूर्ति पूजा को अपनाया — यह ब्रह्म समाज के मूर्ति पूजा के अस्वीकार से स्पष्ट भिन्नता है।\n\nमूल्य संवर्धन:\n• रामकृष्ण के दृष्टिकोण को विद्वानों द्वारा अक्सर 'आध्यात्मिक अनुभववाद' कहा जाता है — जो व्यक्तिगत अनुभव के माध्यम से धार्मिक सत्य की परीक्षा करता है।\n• देवी काली के साथ उनका संबंध उनकी आध्यात्मिक साधना और शिक्षण का केंद्र था।\n• इसके विपरीत, ब्रह्म समाज ने यूनिटेरियन ईसाई धर्म से भारी रूप से प्रेरणा ली और बहुदेववाद तथा मूर्ति पूजा को अस्वीकार किया।"
+    }
+  },
+  {
+    "uuid": "50c1b626-9af3-4bec-847e-65b826e24658",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Founding and Institutional Structure of the Ramakrishna Mission (1897)",
+        "The Legal Status Controversy: Ramakrishna Mission as a Minority Religion"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Ramakrishna Math vs. Mission — legal and institutional distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Ramakrishna Mission and its institutional framework:\n\n1. Ramakrishna Math and Ramakrishna Mission are legally the same entity, sharing a common registration and governance structure.\n2. In 1995, the Supreme Court of India held that the Ramakrishna Mission constitutes a religion separate from Hinduism, entitling it to minority educational institution status under Article 30.\n3. The philosophical basis for the Ramakrishna Mission's institutionalised social service activities is the concept of karma yoga — action performed as an offering to the Divine without attachment to results.\n4. Belur Math serves as the headquarters of both Ramakrishna Math and the Ramakrishna Mission.\n\nHow many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Ramakrishna Math and Ramakrishna Mission are legally the same entity, sharing a common registration and governance structure.",
+          "verdict": "Incorrect",
+          "reason": "Ramakrishna Math (the monastic order) and Ramakrishna Mission (the service organisation) are legally distinct entities, though they share the same headquarters at Belur Math and a common philosophical heritage."
+        },
+        {
+          "statement": "In 1995, the Supreme Court of India held that the Ramakrishna Mission constitutes a religion separate from Hinduism, entitling it to minority educational institution status under Article 30.",
+          "verdict": "Incorrect",
+          "reason": "The Supreme Court ruled in 1995 that the Mission is part of Hinduism and cannot claim the status of a separate minority religion — the opposite of what this statement claims."
+        },
+        {
+          "statement": "The philosophical basis for the Ramakrishna Mission's institutionalised social service activities is the concept of karma yoga — action performed as an offering to the Divine without attachment to results.",
+          "verdict": "Correct",
+          "reason": "Vivekananda explicitly grounded the Mission's service work in karma yoga, arguing that selfless service to humanity is a form of worship and a legitimate spiritual path."
+        },
+        {
+          "statement": "Belur Math serves as the headquarters of both Ramakrishna Math and the Ramakrishna Mission.",
+          "verdict": "Correct",
+          "reason": "Belur Math on the western bank of the Hooghly River in West Bengal is the headquarters of both institutions, even though they are legally separate entities."
+        }
+      ],
+      "strong_distractor": "c — Option (c) 'Only three' tempts students who correctly identify Statements 3 and 4 as true but incorrectly believe the 1995 Supreme Court ruling granted minority status to the Mission.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Math and Mission are legally separate entities — this statement claiming they are the same entity is factually wrong. One incorrect.",
+        "Evaluate Statement 2: The 1995 Supreme Court judgment ruled the Mission IS part of Hinduism and denied minority status — the statement says the opposite. Two incorrect.",
+        "Evaluate Statements 3 and 4: Karma yoga as the philosophical basis for service is well-established; Belur Math as the common headquarters is accurate. Both correct.",
+        "Two correct statements (3 and 4) — correct answer is (b) Only two."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the central trap. Students who recall that the Ramakrishna Mission went to court seeking minority status may assume it succeeded — particularly because the Mission is associated with progressive reform. The 1995 ruling by the Supreme Court did the opposite: it affirmed the Mission as Hindu, denying minority status. This is a classic outcome-reversal trap frequently tested in both constitutional law and history sections.",
+      "final_explanation": "The institutional structure of the Ramakrishna movement involves subtle but legally significant distinctions that UPSC exploits repeatedly.\n\n• Statement 1 — Incorrect: Ramakrishna Math (monastic fraternity) and Ramakrishna Mission (service organisation) are legally separate entities. Their shared philosophy and headquarters at Belur Math can mislead students into treating them as one.\n• Statement 2 — Incorrect: The Mission's attempt in the 1980s–90s to claim minority status under Article 30 was rejected by the Supreme Court in 1995. The Court held that the Mission remains within the fold of Hinduism.\n• Statement 3 — Correct: Karma yoga — selfless action as worship — is the explicit philosophical pillar of the Mission's service activities, distinguishing its approach from Western-style philanthropy.\n• Statement 4 — Correct: Belur Math, located on the Hooghly's western bank near Kolkata, is the common headquarters of both institutions.\n\nValue Addition:\n• Article 30 of the Constitution grants minorities the right to establish and administer educational institutions.\n• The Lingayat community's demand for minority status involves similar legal questions about 'reform within religion vs. new religion'.\n• The 1995 case is studied in constitutional law under the broader question of what constitutes a 'religion' for Article 25–30 purposes."
+    },
+    "hi": {
+      "display_text": "रामकृष्ण मिशन और उसकी संस्थागत संरचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. रामकृष्ण मठ और रामकृष्ण मिशन कानूनी रूप से एक ही संस्था हैं, जो एक सामान्य पंजीकरण और शासन संरचना साझा करते हैं।\n2. 1995 में, भारत के सर्वोच्च न्यायालय ने यह निर्णय दिया कि रामकृष्ण मिशन हिंदू धर्म से अलग एक धर्म है, जिससे उसे अनुच्छेद 30 के तहत अल्पसंख्यक शैक्षिक संस्था का दर्जा प्राप्त होता है।\n3. रामकृष्ण मिशन की संस्थागत सामाजिक सेवा गतिविधियों का दार्शनिक आधार कर्म योग की अवधारणा है — वह क्रिया जो परिणामों से आसक्ति के बिना ईश्वर को अर्पित की जाती है।\n4. बेलूर मठ रामकृष्ण मठ और रामकृष्ण मिशन दोनों का मुख्यालय है।\n\nउपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "रामकृष्ण मठ और रामकृष्ण मिशन कानूनी रूप से एक ही संस्था हैं, जो एक सामान्य पंजीकरण और शासन संरचना साझा करते हैं।",
+          "verdict": "गलत",
+          "reason": "रामकृष्ण मठ (सन्न्यासी संघ) और रामकृष्ण मिशन (सेवा संगठन) कानूनी रूप से अलग संस्थाएं हैं, हालांकि वे बेलूर मठ में एक ही मुख्यालय और एक सामान्य दार्शनिक विरासत साझा करते हैं।"
+        },
+        {
+          "statement": "1995 में, भारत के सर्वोच्च न्यायालय ने यह निर्णय दिया कि रामकृष्ण मिशन हिंदू धर्म से अलग एक धर्म है, जिससे उसे अनुच्छेद 30 के तहत अल्पसंख्यक शैक्षिक संस्था का दर्जा प्राप्त होता है।",
+          "verdict": "गलत",
+          "reason": "सर्वोच्च न्यायालय ने 1995 में यह निर्णय दिया कि मिशन हिंदू धर्म का हिस्सा है और इसे अलग अल्पसंख्यक धर्म का दर्जा नहीं दिया जा सकता — यह कथन इसके विपरीत है।"
+        },
+        {
+          "statement": "रामकृष्ण मिशन की संस्थागत सामाजिक सेवा गतिविधियों का दार्शनिक आधार कर्म योग की अवधारणा है — वह क्रिया जो परिणामों से आसक्ति के बिना ईश्वर को अर्पित की जाती है।",
+          "verdict": "सही",
+          "reason": "विवेकानंद ने स्पष्ट रूप से मिशन के सेवा कार्य को कर्म योग में आधारित बताया, यह तर्क देते हुए कि निःस्वार्थ सेवा मानवता की पूजा और एक वैध आध्यात्मिक मार्ग है।"
+        },
+        {
+          "statement": "बेलूर मठ रामकृष्ण मठ और रामकृष्ण मिशन दोनों का मुख्यालय है।",
+          "verdict": "सही",
+          "reason": "पश्चिम बंगाल के हुगली नदी के पश्चिमी तट पर स्थित बेलूर मठ दोनों संस्थाओं का मुख्यालय है, हालांकि वे कानूनी रूप से अलग संस्थाएं हैं।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल तीन' उन छात्रों को भ्रमित करता है जो सही रूप से कथन 3 और 4 को सत्य मानते हैं लेकिन गलत तरीके से मानते हैं कि 1995 के सर्वोच्च न्यायालय के निर्णय ने मिशन को अल्पसंख्यक दर्जा दिया।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: मठ और मिशन कानूनी रूप से अलग संस्थाएं हैं — यह कथन जो कहता है कि वे एक ही संस्था हैं, तथ्यात्मक रूप से गलत है। एक गलत।",
+        "कथन 2 का मूल्यांकन करें: 1995 के सर्वोच्च न्यायालय के निर्णय में मिशन को हिंदू धर्म का हिस्सा माना गया और अल्पसंख्यक दर्जा अस्वीकार किया गया — यह कथन इसके विपरीत कहता है। दो गलत।",
+        "कथन 3 और 4 का मूल्यांकन करें: सेवा के दार्शनिक आधार के रूप में कर्म योग स्थापित है; बेलूर मठ दोनों संस्थाओं का सामान्य मुख्यालय है। दोनों सही।",
+        "दो सही कथन (3 और 4) — सही उत्तर है (b) केवल दो।"
+      ],
+      "upsc_trap_explanation": "कथन 2 मुख्य जाल है। जो छात्र याद करते हैं कि रामकृष्ण मिशन ने अल्पसंख्यक दर्जा पाने के लिए अदालत का रुख किया था, वे मान सकते हैं कि वह सफल रहा — विशेषकर क्योंकि मिशन प्रगतिशील सुधार से जुड़ा है। 1995 का सर्वोच्च न्यायालय का निर्णय इसके विपरीत था: उसने मिशन को हिंदू माना और अल्पसंख्यक दर्जा अस्वीकार किया। यह एक क्लासिक परिणाम-विपरीत जाल है जो संविधान कानून और इतिहास दोनों में अक्सर पूछा जाता है।",
+      "final_explanation": "रामकृष्ण आंदोलन की संस्थागत संरचना में सूक्ष्म लेकिन कानूनी रूप से महत्वपूर्ण भेद होते हैं जिन्हें UPSC बार-बार उपयोग करता है।\n\n• कथन 1 — गलत: रामकृष्ण मठ (सन्न्यासी संघ) और रामकृष्ण मिशन (सेवा संगठन) कानूनी रूप से अलग संस्थाएं हैं। उनकी साझा दार्शनिकता और बेलूर मठ में मुख्यालय छात्रों को भ्रमित कर सकता है कि वे एक ही हैं।\n• कथन 2 — गलत: 1980-90 के दशक में मिशन द्वारा अनुच्छेद 30 के तहत अल्पसंख्यक दर्जा पाने का प्रयास 1995 में सर्वोच्च न्यायालय द्वारा अस्वीकार कर दिया गया। न्यायालय ने कहा कि मिशन हिंदू धर्म के अंतर्गत आता है।\n• कथन 3 — सही: कर्म योग — निःस्वार्थ क्रिया के रूप में पूजा — मिशन की सेवा गतिविधियों का स्पष्ट दार्शनिक आधार है, जो पश्चिमी परोपकार से अलग है।\n• कथन 4 — सही: बेलूर मठ, जो हुगली नदी के पश्चिमी तट पर कोलकाता के पास स्थित है, दोनों संस्थाओं का सामान्य मुख्यालय है।\n\nमूल्यवर्धन:\n• संविधान का अनुच्छेद 30 अल्पसंख्यकों को शैक्षिक संस्थान स्थापित करने और संचालित करने का अधिकार देता है।\n• लिंगायत समुदाय की अल्पसंख्यक दर्जा मांग में भी 'धर्म के भीतर सुधार बनाम नया धर्म' जैसे कानूनी प्रश्न शामिल हैं।\n• 1995 का मामला संविधान कानून में अनुच्छेद 25-30 के तहत 'धर्म' की परिभाषा के व्यापक प्रश्न के अंतर्गत अध्ययन किया जाता है।"
+    }
+  },
+  {
+    "uuid": "09ecbaf2-3489-4e04-b497-9486d864ccf2",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda's Views on Women and Gender Reform",
+        "Sister Nivedita (Margaret Noble): Role and Contribution"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Vivekananda's women reform — philosophical not institutional",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT represent a direct institutional programme specifically dedicated to the education or social upliftment of women, as distinguished from philosophical advocacy or inspiration?\n\n(a) Sister Nivedita's establishment of a school for women's education in Calcutta\n(b) Pandita Ramabai's founding of the Mukti Mission for widows and destitute women in Maharashtra\n(c) Vivekananda's personal institutional programmes for women's reform within the early Ramakrishna Mission\n(d) Ramabai Ranade's co-founding of the Seva Sadan for women's education and social welfare",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Sister Nivedita seems the odd one out because she was Western-born, but she is correctly associated with women's education in Bengal and acted within Vivekananda's philosophical framework.",
+      "elimination_logic": [
+        "Identify the shared category: individuals or initiatives directly associated with the practical or institutional dimension of women's empowerment in 19th–early 20th century India.",
+        "Sister Nivedita: Founded a school for women in Calcutta (Nivedita School) — direct institutional work. Belongs to the category.",
+        "Pandita Ramabai: Founded Mukti Mission in Maharashtra, directly working for the emancipation and shelter of widows and women — direct social activism.",
+        "Ramabai Ranade: Co-founded the Seva Sadan, directly working for women's education and social upliftment in Maharashtra — direct institutional work.",
+        "Vivekananda's own early Ramakrishna Mission programs: His philosophy venerated womanhood through the Shakti ideal and he inspired others, but the early Mission had NO dedicated institutional women's reform programme under his personal leadership — his contribution was philosophical-inspirational, not programmatic. Vivekananda's direct programme is the odd one out among practical institutional reformers."
+      ],
+      "upsc_trap_explanation": "The trap is scope-extension — students associate Vivekananda's name so strongly with reform that they assume his women-related work must be comparable in institutional depth to the others listed. His genuine contribution to women's advancement was philosophical (Shakti veneration) and inspirational (motivating Nivedita), but he did not personally establish institutional women's reform programmes. The others directly founded or ran institutions serving women.",
+      "final_explanation": "Three of the four options represent direct institutional work for women's empowerment; one represents philosophical inspiration without a dedicated institutional programme.\n\n• Option (a) — Sister Nivedita: Founded the Nivedita School for women's education in Calcutta — direct institutional contribution. Belongs to the category.\n• Option (b) — Pandita Ramabai: Founded Mukti Mission in Pune for widows and destitute women — radical direct social activism. Belongs to the category.\n• Option (c) — Vivekananda's institutionalised women's reform programme: He venerated womanhood through the Shakti tradition and inspired Nivedita, but the early Ramakrishna Mission under his leadership did not establish a dedicated women's reform institution. His contribution was philosophical, not programmatic. This is the ODD ONE OUT.\n• Option (d) — Ramabai Ranade: Co-founded Seva Sadan, directly running women's education and social welfare — direct institutional work. Belongs to the category.\n\nValue Addition:\n• Pandita Ramabai was also a Christian convert — her Mukti Mission combined religious conversion with social service for women.\n• Sister Nivedita's political nationalism (Swadeshi movement support) went beyond what Vivekananda himself endorsed.\n• Vivekananda's statement 'Of all the nations of the world, India is the most backward in the treatment of women' shows his awareness — but awareness did not translate into institutional programmes during his lifetime."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा महिलाओं की शिक्षा या सामाजिक उत्थान के लिए विशेष रूप से समर्पित प्रत्यक्ष संस्थागत कार्यक्रम का प्रतिनिधित्व नहीं करता, जो दार्शनिक समर्थन या प्रेरणा से भिन्न हो?\n\n(a) सिस्टर निवेदिता द्वारा कोलकाता में महिलाओं की शिक्षा के लिए एक स्कूल की स्थापना\n(b) पंडिता रामाबाई द्वारा महाराष्ट्र में विधवाओं और बेसहारा महिलाओं के लिए मुक्त मिशन की स्थापना\n(c) विवेकानंद के प्रारंभिक रामकृष्ण मिशन के भीतर महिलाओं के सुधार के लिए व्यक्तिगत संस्थागत कार्यक्रम\n(d) रामाबाई रानाडे द्वारा महिलाओं की शिक्षा और सामाजिक कल्याण के लिए सेवा सदन की सह-स्थापना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — सिस्टर निवेदिता पश्चिमी मूल की थीं, इसलिए वे अलग लगती हैं, लेकिन वे बंगाल में महिलाओं की शिक्षा से जुड़ी थीं और विवेकानंद के दार्शनिक ढांचे के भीतर कार्य करती थीं।",
+      "elimination_logic": [
+        "साझा श्रेणी की पहचान करें: वे व्यक्ति या पहल जो 19वीं से प्रारंभिक 20वीं सदी के भारत में महिलाओं के सशक्तिकरण के व्यावहारिक या संस्थागत आयाम से सीधे जुड़े हैं।",
+        "सिस्टर निवेदिता: कोलकाता में महिलाओं के लिए एक स्कूल (निवेदिता स्कूल) की स्थापना की — प्रत्यक्ष संस्थागत कार्य। यह श्रेणी में आती हैं।",
+        "पंडिता रामाबाई: महाराष्ट्र में विधवाओं और महिलाओं के उद्धार के लिए मुक्त मिशन की स्थापना की — प्रत्यक्ष सामाजिक सक्रियता।",
+        "रामाबाई रानाडे: सेवा सदन की सह-स्थापना की, जो महाराष्ट्र में महिलाओं की शिक्षा और सामाजिक उत्थान के लिए काम करता था — प्रत्यक्ष संस्थागत कार्य।",
+        "विवेकानंद के अपने प्रारंभिक रामकृष्ण मिशन कार्यक्रम: उनकी दार्शनिकता ने शक्ति आदर्श के माध्यम से नारीत्व की पूजा की और उन्होंने दूसरों को प्रेरित किया, लेकिन उनके नेतृत्व में प्रारंभिक मिशन में महिलाओं के लिए कोई समर्पित संस्थागत सुधार कार्यक्रम नहीं था — उनका योगदान दार्शनिक-प्रेरणादायक था, न कि कार्यक्रमगत। विवेकानंद का प्रत्यक्ष कार्यक्रम व्यावहारिक संस्थागत सुधारकों के बीच अलग है।"
+      ],
+      "upsc_trap_explanation": "यह जाल विस्तार-क्षेत्र का है — छात्र विवेकानंद के नाम को सुधार से इतना जोड़ देते हैं कि वे मान लेते हैं कि उनका महिलाओं से संबंधित कार्य अन्य सूचीबद्धों के समान संस्थागत गहराई वाला होगा। उनका वास्तविक योगदान महिलाओं के उत्थान में दार्शनिक (शक्ति पूजा) और प्रेरणादायक (निवेदिता को प्रेरित करना) था, लेकिन उन्होंने व्यक्तिगत रूप से संस्थागत महिला सुधार कार्यक्रम स्थापित नहीं किए। अन्य सभी ने सीधे महिलाओं की सेवा करने वाले संस्थान स्थापित या संचालित किए।",
+      "final_explanation": "चार विकल्पों में से तीन सीधे संस्थागत कार्य के प्रतिनिधि हैं जो महिलाओं के सशक्तिकरण के लिए समर्पित हैं; एक दार्शनिक प्रेरणा का प्रतिनिधित्व करता है बिना समर्पित संस्थागत कार्यक्रम के।\n\n• विकल्प (a) — सिस्टर निवेदिता: कोलकाता में महिलाओं की शिक्षा के लिए निवेदिता स्कूल की स्थापना की — प्रत्यक्ष संस्थागत योगदान। श्रेणी में आती हैं।\n• विकल्प (b) — पंडिता रामाबाई: पुणे में विधवाओं और बेसहारा महिलाओं के लिए मुक्त मिशन की स्थापना की — कट्टर प्रत्यक्ष सामाजिक सक्रियता। श्रेणी में आती हैं।\n• विकल्प (c) — विवेकानंद का संस्थागत महिला सुधार कार्यक्रम: उन्होंने शक्ति परंपरा के माध्यम से नारीत्व की पूजा की और निवेदिता को प्रेरित किया, लेकिन उनके नेतृत्व में प्रारंभिक रामकृष्ण मिशन ने समर्पित महिला सुधार संस्थान स्थापित नहीं किया। उनका योगदान दार्शनिक था, कार्यक्रमगत नहीं। यह अलग विकल्प है।\n• विकल्प (d) — रामाबाई रानाडे: सेवा सदन की सह-स्थापना की, जो महिलाओं की शिक्षा और सामाजिक कल्याण के लिए प्रत्यक्ष संस्थागत कार्य करता था। श्रेणी में आती हैं।\n\nमूल्यवर्धन:\n• पंडिता रामाबाई एक ईसाई परिवर्तित भी थीं — उनका मुक्त मिशन धार्मिक परिवर्तन के साथ महिलाओं की सेवा को जोड़ता था।\n• सिस्टर निवेदिता का राजनीतिक राष्ट्रवाद (स्वदेशी आंदोलन का समर्थन) विवेकानंद के स्वयं के समर्थन से आगे था।\n• विवेकानंद का कथन 'सभी देशों में भारत महिलाओं के प्रति सबसे पिछड़ा है' उनकी जागरूकता दिखाता है — लेकिन यह जागरूकता उनके जीवनकाल में संस्थागत कार्यक्रमों में परिवर्तित नहीं हुई।"
+    }
+  },
+  {
+    "uuid": "ed6c55c7-b43a-4f96-9626-178a9c689b3a",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Sister Nivedita (Margaret Noble): Role and Contribution",
+        "Vivekananda and the Question of Hindu Nationalism vs. Universal Humanism"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nivedita's political nationalism vs. Vivekananda's caution on religion-politics mixing",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements:\n\nStatement 1: Vivekananda formally cautioned against the mixing of religion and politics, and his own public activities remained focused on spiritual and cultural revival rather than organisational participation in political movements.\n\nStatement 2: Sister Nivedita maintained the same position as Vivekananda by refraining from involvement in political nationalism, limiting her work to women's education and philosophical writing.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vivekananda formally cautioned against the mixing of religion and politics, and his own public activities remained focused on spiritual and cultural revival rather than organisational participation in political movements.",
+          "verdict": "Correct",
+          "reason": "Vivekananda never joined the Indian National Congress or any political organisation; he explicitly stated that mixing politics with religion would corrupt both, and his public work centred on spiritual regeneration."
+        },
+        {
+          "statement": "Sister Nivedita maintained the same position as Vivekananda by refraining from involvement in political nationalism, limiting her work to women's education and philosophical writing.",
+          "verdict": "Incorrect",
+          "reason": "Sister Nivedita departed significantly from Vivekananda's caution by actively supporting the Swadeshi movement and associating with revolutionary nationalists — her political nationalism was considerably more explicit than her guru's."
+        }
+      ],
+      "strong_distractor": "a — Students who know both Vivekananda and Nivedita as reformers may assume both held similar views, not recognising that Nivedita's political engagement was a point of departure from her teacher.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Vivekananda's record is clear — no INC membership, no political organisation involvement, and explicit statements cautioning against mixing religion with politics. Statement 1 is correct.",
+        "Evaluate Statement 2: Nivedita actively supported the Swadeshi movement and was associated with revolutionary nationalist figures — she went well beyond women's education into explicit political activism. Statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect → correct answer is (d)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works by attributing Vivekananda's political restraint to Nivedita as well. Students who study both figures together and know that both were associated with cultural nationalism may assume they held identical positions on political engagement. Nivedita's Swadeshi involvement and association with revolutionary nationalism actually represents a significant departure from her guru's position — a distinction that UPSC exploits by presenting them as a unified pair.",
+      "final_explanation": "The guru-disciple relationship between Vivekananda and Sister Nivedita does not mean they held identical political positions. Their divergence on the relationship between spiritual work and political nationalism is a significant distinction.\n\n• Statement 1 — Correct: Vivekananda consistently kept his work in the spiritual-cultural domain. He believed political action without inner transformation was superficial, and he explicitly avoided the Indian National Congress and all political organisations.\n• Statement 2 — Incorrect: Nivedita broke from this restraint. She actively participated in the Swadeshi movement, wrote articles supporting nationalist causes, and was associated with revolutionary nationalists including figures like the Anushilan Samiti circle. Her political engagement was explicit and public.\n\nValue Addition:\n• Nivedita's birth name was Margaret Elizabeth Noble; she was of Irish-Scottish origin and came to India in 1898.\n• She wrote 'Kali the Mother' and 'The Web of Indian Life' — two significant texts interpreting Indian culture for Western audiences.\n• After Vivekananda's death in 1902, Nivedita formally separated from the Ramakrishna Mission to pursue her nationalist activities more freely."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: विवेकानंद ने औपचारिक रूप से धर्म और राजनीति के मिश्रण के खिलाफ चेतावनी दी थी, और उनके अपने सार्वजनिक कार्य आध्यात्मिक और सांस्कृतिक पुनरुत्थान पर केंद्रित रहे, न कि राजनीतिक आंदोलनों में संगठनात्मक भागीदारी पर।\n\nकथन 2: सिस्टर निवेदिता ने राजनीतिक राष्ट्रवाद में भागीदारी से बचकर विवेकानंद की ही स्थिति बनाए रखी, और अपने कार्य को महिलाओं की शिक्षा और दार्शनिक लेखन तक सीमित रखा।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है पर कथन 2 गलत है\n(d) कथन 1 गलत है पर कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "विवेकानंद ने औपचारिक रूप से धर्म और राजनीति के मिश्रण के खिलाफ चेतावनी दी थी, और उनके अपने सार्वजनिक कार्य आध्यात्मिक और सांस्कृतिक पुनरुत्थान पर केंद्रित रहे, न कि राजनीतिक आंदोलनों में संगठनात्मक भागीदारी पर।",
+          "verdict": "सही",
+          "reason": "विवेकानंद ने कभी भारतीय राष्ट्रीय कांग्रेस या किसी राजनीतिक संगठन में भाग नहीं लिया; उन्होंने स्पष्ट रूप से कहा कि धर्म और राजनीति के मिश्रण से दोनों भ्रष्ट हो जाएंगे, और उनका सार्वजनिक कार्य आध्यात्मिक पुनर्जागरण पर केंद्रित था।"
+        },
+        {
+          "statement": "सिस्टर निवेदिता ने राजनीतिक राष्ट्रवाद में भागीदारी से बचकर विवेकानंद की ही स्थिति बनाए रखी, और अपने कार्य को महिलाओं की शिक्षा और दार्शनिक लेखन तक सीमित रखा।",
+          "verdict": "गलत",
+          "reason": "सिस्टर निवेदिता ने स्वदेशी आंदोलन का सक्रिय समर्थन किया और क्रांतिकारी राष्ट्रवादियों के साथ जुड़ीं — उनका राजनीतिक राष्ट्रवाद अपने गुरु से काफी अधिक स्पष्ट था।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र विवेकानंद और निवेदिता दोनों को सुधारक के रूप में जानते हैं, वे मान सकते हैं कि दोनों के विचार समान थे, यह न समझते हुए कि निवेदिता की राजनीतिक भागीदारी उनके गुरु से भिन्न थी।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: विवेकानंद का रिकॉर्ड स्पष्ट है — न तो उन्होंने कांग्रेस की सदस्यता ली, न किसी राजनीतिक संगठन में भाग लिया, और उन्होंने धर्म और राजनीति के मिश्रण के खिलाफ स्पष्ट चेतावनी दी। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: निवेदिता ने स्वदेशी आंदोलन का सक्रिय समर्थन किया और क्रांतिकारी राष्ट्रवादियों के साथ जुड़ीं — उन्होंने महिलाओं की शिक्षा से आगे जाकर स्पष्ट राजनीतिक सक्रियता दिखाई। कथन 2 गलत है।",
+        "कथन 1 सही + कथन 2 गलत → सही उत्तर (d) है।"
+      ],
+      "upsc_trap_explanation": "एंटिटी-स्वैप ट्रैप इस प्रकार काम करता है कि विवेकानंद की राजनीतिक संयम को निवेदिता को भी दिया जाता है। जो छात्र दोनों व्यक्तियों को सांस्कृतिक राष्ट्रवाद से जोड़कर देखते हैं, वे मान सकते हैं कि दोनों की राजनीतिक भागीदारी पर समान राय थी। निवेदिता की स्वदेशी भागीदारी और क्रांतिकारी राष्ट्रवाद के साथ जुड़ाव वास्तव में उनके गुरु की स्थिति से एक महत्वपूर्ण भिन्नता है — जिसे UPSC एकीकृत जोड़ी के रूप में प्रस्तुत करके परीक्षा में जाल बिछाता है।",
+      "final_explanation": "विवेकानंद और सिस्टर निवेदिता के गुरु-शिष्य संबंध का अर्थ यह नहीं कि वे समान राजनीतिक दृष्टिकोण रखते थे। आध्यात्मिक कार्य और राजनीतिक राष्ट्रवाद के बीच उनका भेद एक महत्वपूर्ण अंतर है।\n\n• कथन 1 — सही: विवेकानंद ने लगातार अपने कार्य को आध्यात्मिक-सांस्कृतिक क्षेत्र में रखा। वे मानते थे कि बिना आंतरिक परिवर्तन के राजनीतिक कार्य सतही है, और उन्होंने भारतीय राष्ट्रीय कांग्रेस और सभी राजनीतिक संगठनों से स्पष्ट रूप से दूरी बनाई।\n• कथन 2 — गलत: निवेदिता ने इस संयम को तोड़ा। उन्होंने स्वदेशी आंदोलन में सक्रिय भागीदारी की, राष्ट्रवादी कारणों का समर्थन करते हुए लेख लिखे, और अनुषीलन समिति जैसे क्रांतिकारी राष्ट्रवादियों के साथ जुड़ीं। उनकी राजनीतिक भागीदारी स्पष्ट और सार्वजनिक थी।\n\nमूल्यवर्धन:\n• निवेदिता का जन्म नाम मार्गरेट एलिजाबेथ नोबल था; वे आयरिश-स्कॉटिश मूल की थीं और 1898 में भारत आईं।\n• उन्होंने 'काली द मदर' और 'द वेब ऑफ इंडियन लाइफ' लिखे — दो महत्वपूर्ण ग्रंथ जो भारतीय संस्कृति की पश्चिमी दर्शकों के लिए व्याख्या करते हैं।\n• विवेकानंद के 1902 में निधन के बाद, निवेदिता ने रामकृष्ण मिशन से औपचारिक रूप से अलग होकर अपने राष्ट्रवादी कार्यों को स्वतंत्र रूप से आगे बढ़ाया।"
+    }
+  },
+  {
+    "uuid": "8d019682-18a7-4603-b312-e1aab7486d1b",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda's Speeches and Writings: Key Texts and Their Themes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "'Bartaman Bharat' — Bengali essay on social conditions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Vivekananda's ________ is a text written in the Bengali language that directly examines the social conditions of India and makes a case for the mass upliftment of common people — it is often overshadowed in popular memory by his English-language addresses and yoga texts.\n\n(a) Raja Yoga\n(b) Bartaman Bharat\n(c) Jnana Yoga\n(d) Vivekachudamani",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Jnana Yoga' is a genuine Vivekananda text and students may assume his Bengali-language social commentary would carry that philosophical title.",
+      "elimination_logic": [
+        "The blank requires a Vivekananda text written in Bengali that focused specifically on India's social conditions and the need for mass upliftment — not a metaphysical or yogic treatise.",
+        "Eliminate (a): 'Raja Yoga' deals with the science of mind and meditation — it is in English and does not focus on social conditions.",
+        "Eliminate (c): 'Jnana Yoga' is a philosophical text on the path of knowledge — not a social commentary written in Bengali.",
+        "Eliminate (d): 'Vivekachudamani' is a text by Adi Shankaracharya, not Vivekananda — a fabricated attribution.",
+        "Confirm (b): 'Bartaman Bharat' (Modern India) is Vivekananda's Bengali essay examining India's social conditions and arguing for mass upliftment — the correct answer."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap in option (d) uses a real Advaita Vedanta text (Vivekachudamani by Shankaracharya) and attributes it to Vivekananda — both names sound related (Viveka appears in both) and both are associated with Advaita. Students who don't know Bartaman Bharat specifically may guess a famous-sounding Sanskrit title. The key distinguishing feature is that Bartaman Bharat is in Bengali — a detail that signals social commentary for a popular audience rather than Sanskrit philosophical treatise.",
+      "final_explanation": "Among Vivekananda's writings, the English-language yoga texts (Raja, Karma, Jnana, Bhakti Yoga) receive most attention in examination preparation, but his Bengali works contain some of his most direct social commentary.\n\n• Option (a) — Incorrect: 'Raja Yoga' is Vivekananda's major text on the psychology of meditation and the mind, delivered in English to Western audiences. It does not address India's social conditions.\n• Option (b) — Correct: 'Bartaman Bharat' (Modern India) is Vivekananda's Bengali-language essay examining the historical conditions of India, the role of different social classes, and the urgent need for the upliftment of the masses — making it his most direct social analysis.\n• Option (c) — Incorrect: 'Jnana Yoga' deals with the path of knowledge and philosophical enquiry — a metaphysical text, not a social commentary.\n• Option (d) — Incorrect: 'Vivekachudamani' (Crest Jewel of Discrimination) is composed by Adi Shankaracharya, not Vivekananda — a plausible-sounding but fabricated attribution.\n\nValue Addition:\n• 'Bartaman Bharat' was first published in the journal 'Udbodhan' in 1899.\n• Vivekananda's letters are considered even more candid about his political and social views than his formal speeches.\n• He established Vedanta Societies in New York (1894) and London, making him one of the earliest figures in Indian cultural soft power projection."
+    },
+    "hi": {
+      "display_text": "विवेकानंद का ________ एक बंगाली भाषा में लिखा ग्रंथ है जो सीधे भारत की सामाजिक परिस्थितियों की समीक्षा करता है और आम लोगों के जनसामान्य के उत्थान की वकालत करता है — यह उनकी अंग्रेज़ी भाषी भाषणों और योग ग्रंथों की लोकप्रिय स्मृति में अक्सर छिप जाता है।\n\n(a) राज योग\n(b) वर्तमान भारत\n(c) ज्ञान योग\n(d) विवेकचूडामणि",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Jnana Yoga' is a genuine Vivekananda text and students may assume his Bengali-language social commentary would carry that philosophical title.",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए एक ऐसा विवेकानंद का बंगाली में लिखा हुआ ग्रंथ चाहिए जो विशेष रूप से भारत की सामाजिक परिस्थितियों और जनसामान्य के उत्थान की आवश्यकता पर केंद्रित हो — न कि कोई दार्शनिक या योगिक ग्रंथ।",
+        "(a) को निरस्त करें — 'राज योग' मन और ध्यान के विज्ञान से संबंधित है — यह अंग्रेज़ी में है और सामाजिक परिस्थितियों पर केंद्रित नहीं है।",
+        "(c) को निरस्त करें — 'ज्ञान योग' ज्ञान के मार्ग पर दार्शनिक ग्रंथ है — बंगाली में लिखा सामाजिक टिप्पणी नहीं है।",
+        "(d) को निरस्त करें — 'विवेकचूडामणि' आदि शंकराचार्य का ग्रंथ है, विवेकानंद का नहीं — एक निर्मित आरोप।",
+        "(b) सही है — 'वर्तमान भारत' (Bartaman Bharat) विवेकानंद का बंगाली निबंध है जो भारत की सामाजिक परिस्थितियों की समीक्षा करता है और जनसामान्य के उत्थान की वकालत करता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) में प्रयुक्त संभावित-निर्मित जाल में एक वास्तविक अद्वैत वेदांत ग्रंथ (विवेकचूडामणि, शंकराचार्य द्वारा) को विवेकानंद से जोड़ा गया है — दोनों नामों में 'विवेक' शब्द है और दोनों अद्वैत से जुड़े हैं। जो छात्र 'वर्तमान भारत' को विशेष रूप से नहीं जानते, वे संस्कृत के प्रसिद्ध शीर्षक का अनुमान लगा सकते हैं। मुख्य भेद यह है कि 'वर्तमान भारत' बंगाली में है — जो सामाजिक टिप्पणी के लिए एक संकेत है, न कि संस्कृत दार्शनिक ग्रंथ।",
+      "final_explanation": "विवेकानंद की रचनाओं में अंग्रेज़ी में लिखे योग ग्रंथ (राज योग, कर्म योग, ज्ञान योग, भक्ति योग) परीक्षा की तैयारी में अधिक ध्यान पाते हैं, लेकिन उनकी बंगाली रचनाएँ उनकी सबसे प्रत्यक्ष सामाजिक टिप्पणियाँ हैं।\n\n• विकल्प (a) — गलत: 'राज योग' विवेकानंद का ध्यान और मनोविज्ञान पर प्रमुख अंग्रेज़ी ग्रंथ है, जो पश्चिमी दर्शकों के लिए दिया गया था। यह भारत की सामाजिक परिस्थितियों को संबोधित नहीं करता।\n• विकल्प (b) — सही: 'वर्तमान भारत' (Bartaman Bharat) विवेकानंद का बंगाली निबंध है जो भारत की ऐतिहासिक सामाजिक परिस्थितियों, विभिन्न सामाजिक वर्गों की भूमिका, और जनसामान्य के उत्थान की तत्काल आवश्यकता की समीक्षा करता है — यह उनकी सबसे प्रत्यक्ष सामाजिक विश्लेषण है।\n• विकल्प (c) — गलत: 'ज्ञान योग' ज्ञान के मार्ग और दार्शनिक जांच से संबंधित है — एक दार्शनिक ग्रंथ, सामाजिक टिप्पणी नहीं।\n• विकल्प (d) — गलत: 'विवेकचूडामणि' आदि शंकराचार्य द्वारा रचित है, विवेकानंद द्वारा नहीं — एक संभावित-निर्मित लेकिन प्रसिद्ध लगने वाला आरोप।\n\nमूल्यवर्धन:\n• 'वर्तमान भारत' पहली बार 1899 में पत्रिका 'उद्बोधन' में प्रकाशित हुआ था।\n• विवेकानंद के पत्र उनके राजनीतिक और सामाजिक विचारों के बारे में उनकी औपचारिक भाषणों से भी अधिक स्पष्ट माने जाते हैं।\n• उन्होंने न्यूयॉर्क (1894) और लंदन में वेदांत सोसाइटी की स्थापना की, जिससे वे भारतीय सांस्कृतिक सॉफ्ट पावर प्रक्षेपण के प्रारंभिक व्यक्तियों में से एक बने।"
+    }
+  },
+  {
+    "uuid": "3b57319e-2358-40af-a7ea-e83d5aa3bd47",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Influence of Ramakrishna-Vivekananda on Indian Nationalism",
+        "Vivekananda and the Question of Hindu Nationalism vs. Universal Humanism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Vivekananda's influence on nationalist figures — precise attribution",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — of a political leader and the description of Vivekananda's relationship to that leader — is correctly matched?\n\n(a) Bal Gangadhar Tilak — explicitly acknowledged Vivekananda as his primary personal inspiration and modelled his political philosophy on Vivekananda's spiritual nationalism\n(b) Mahatma Gandhi — named Vivekananda as the single most important influence on his philosophy of non-violent resistance and social reform\n(c) Subhas Chandra Bose — explicitly and repeatedly acknowledged Vivekananda as the chief inspiration for his life and connected spiritual self-confidence to the struggle for political independence\n(d) B.R. Ambedkar — drew primarily from Vivekananda's critique of hereditary caste and used it as the philosophical foundation for his movement for Dalit rights",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Bal Gangadhar Tilak's association with assertive Hindu public identity makes him seem the natural inheritor of Vivekananda's influence, but Tilak's explicit acknowledgment of Vivekananda as personal inspiration is less documented than Bose's.",
+      "elimination_logic": [
+        "Evaluate (a): Tilak was influenced by the broader assertion of Hindu identity in the public sphere, but the explicit documented acknowledgment of Vivekananda as personal inspiration is not a defining feature of Tilak's recorded statements.",
+        "Evaluate (b): Mahatma Gandhi's primary spiritual influences were the Bhagavad Gita, Tolstoy, and Jainism — he acknowledged Vivekananda but was not his explicitly named inspiration; Gandhi's social reform approach also differed substantially.",
+        "Evaluate (c): Subhas Chandra Bose explicitly and repeatedly acknowledged Vivekananda as the primary inspiration for his life and political philosophy — this is historically documented and widely cited. This pair is correctly matched.",
+        "Evaluate (d): B.R. Ambedkar was fundamentally critical of the Hindu philosophical tradition including Vedanta — he would not have cited Vivekananda as his primary inspiration. Correct answer is (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap involves assigning Vivekananda's documented influence to Tilak rather than Bose. Tilak is more commonly associated with assertive cultural Hinduism in public life, and students may assume he was Vivekananda's primary political heir. Bose's explicit acknowledgment of Vivekananda is a more specific and documented fact that well-prepared students must know.",
+      "final_explanation": "Vivekananda's influence on political nationalism was real but indirect — he never joined any political movement. However, specific leaders explicitly cited him as an inspiration.\n\n• Option (a) — Incorrect: Tilak used Hindu festivals and symbolism for nationalist mobilisation, which resonated with Vivekananda's cultural assertiveness — but Tilak did not explicitly name Vivekananda as his primary personal inspiration.\n• Option (b) — Incorrect: Gandhi acknowledged Vivekananda's contribution but Gandhi's own spiritual framework was different; his primary influences were the Gita, Tolstoy, Jainism, and the Sermon on the Mount.\n• Option (c) — Correct: Subhas Chandra Bose explicitly stated that Vivekananda was the primary inspiration for his life, connecting the spiritual self-confidence Vivekananda preached to political action for India's freedom.\n• Option (d) — Incorrect: Ambedkar was a sharp critic of Vedantic Hinduism and its accommodation of caste — he would not have claimed Vivekananda as his primary inspiration.\n\nValue Addition:\n• Bose's connection to Vivekananda is part of a tradition linking spiritual revivalism to militant nationalism.\n• Aurobindo Ghose also drew inspiration from Vivekananda, transitioning from militant politics to spiritual nationalism.\n• Vivekananda never joined the Indian National Congress — his nationalism was cultural and spiritual, not organisational."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी — एक राजनीतिक नेता और उस नेता के साथ विवेकानंद के संबंध के वर्णन की — सही मेल खाती है?\n\n(a) बाल गंगाधर तिलक — विवेकानंद को अपनी मुख्य व्यक्तिगत प्रेरणा के रूप में स्पष्ट रूप से स्वीकार किया और अपनी राजनीतिक दर्शन को विवेकानंद के आध्यात्मिक राष्ट्रवाद पर आधारित बनाया\n(b) महात्मा गांधी — अपने अहिंसात्मक प्रतिरोध और सामाजिक सुधार के दर्शन पर विवेकानंद को सबसे महत्वपूर्ण प्रभाव के रूप में नामित किया\n(c) सुभाष चंद्र बोस — विवेकानंद को अपने जीवन के मुख्य प्रेरणा स्रोत के रूप में स्पष्ट और बार-बार स्वीकार किया और आध्यात्मिक आत्मविश्वास को राजनीतिक स्वतंत्रता संग्राम से जोड़ा\n(d) बी.आर. अम्बेडकर — मुख्य रूप से विवेकानंद की जन्मजात जाति की आलोचना से प्रेरित होकर दलित अधिकारों के आंदोलन के दार्शनिक आधार के रूप में उपयोग किया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — बाल गंगाधर तिलक का हिंदू सार्वजनिक पहचान के सशक्त स्वरूप से जुड़ाव उन्हें विवेकानंद के प्रभाव का स्वाभाविक उत्तराधिकारी प्रतीत कराता है, लेकिन तिलक द्वारा विवेकानंद को व्यक्तिगत प्रेरणा के रूप में स्पष्ट रूप से स्वीकार करने का दस्तावेजीकरण बोस की तुलना में कम है।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: तिलक व्यापक रूप से हिंदू पहचान के सार्वजनिक स्वरूप से प्रभावित थे, लेकिन विवेकानंद को व्यक्तिगत प्रेरणा के रूप में स्पष्ट रूप से स्वीकार करना तिलक के अभिलेखित वक्तव्यों की विशेषता नहीं है।",
+        "(b) का मूल्यांकन करें: महात्मा गांधी के मुख्य आध्यात्मिक प्रभाव भगवद गीता, टॉलस्टॉय और जैन धर्म थे — उन्होंने विवेकानंद को स्वीकार किया लेकिन वह उनकी स्पष्ट रूप से नामित प्रेरणा नहीं थे; गांधी का सामाजिक सुधार दृष्टिकोण भी काफी भिन्न था।",
+        "(c) का मूल्यांकन करें: सुभाष चंद्र बोस ने स्पष्ट और बार-बार विवेकानंद को अपने जीवन और राजनीतिक दर्शन के मुख्य प्रेरणा स्रोत के रूप में स्वीकार किया — यह ऐतिहासिक रूप से प्रमाणित और व्यापक रूप से उद्धृत है। यह जोड़ी सही मेल खाती है।",
+        "(d) का मूल्यांकन करें: बी.आर. अम्बेडकर हिंदू दार्शनिक परंपरा सहित वेदांत के मौलिक आलोचक थे — वे विवेकानंद को अपनी मुख्य प्रेरणा के रूप में उद्धृत नहीं करते। सही उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "एंटिटी-स्वैप (entity-swap) जाल में विवेकानंद के प्रमाणित प्रभाव को तिलक के बजाय बोस से जोड़ना शामिल है। तिलक सार्वजनिक जीवन में सशक्त सांस्कृतिक हिंदुत्व से अधिक जुड़े हैं, और छात्र मान सकते हैं कि वे विवेकानंद के मुख्य राजनीतिक उत्तराधिकारी थे। बोस द्वारा विवेकानंद को स्पष्ट रूप से स्वीकार करना एक अधिक विशिष्ट और प्रमाणित तथ्य है जिसे अच्छी तैयारी वाले छात्रों को जानना चाहिए।",
+      "final_explanation": "विवेकानंद का राजनीतिक राष्ट्रवाद पर प्रभाव वास्तविक था लेकिन अप्रत्यक्ष — वे कभी किसी राजनीतिक आंदोलन में शामिल नहीं हुए। हालांकि, कुछ विशिष्ट नेताओं ने उन्हें स्पष्ट रूप से प्रेरणा के रूप में उद्धृत किया।\n\n• विकल्प (a) — गलत: तिलक ने हिंदू त्योहारों और प्रतीकों का उपयोग राष्ट्रवादी जागरण के लिए किया, जो विवेकानंद की सांस्कृतिक सशक्तिकरण से मेल खाता था — लेकिन तिलक ने विवेकानंद को अपनी मुख्य व्यक्तिगत प्रेरणा के रूप में स्पष्ट रूप से नामित नहीं किया।\n• विकल्प (b) — गलत: गांधी ने विवेकानंद के योगदान को स्वीकार किया लेकिन उनका अपना आध्यात्मिक ढांचा अलग था; उनके मुख्य प्रभाव गीता, टॉलस्टॉय, जैन धर्म और पर्वत पर उपदेश थे।\n• विकल्प (c) — सही: सुभाष चंद्र बोस ने स्पष्ट रूप से कहा कि विवेकानंद उनके जीवन के लिए मुख्य प्रेरणा थे, जिन्होंने विवेकानंद द्वारा प्रचारित आध्यात्मिक आत्मविश्वास को भारत की स्वतंत्रता के लिए राजनीतिक कार्रवाई से जोड़ा।\n• विकल्प (d) — गलत: अम्बेडकर वेदांतिक हिंदुत्व और जाति व्यवस्था के कट्टर आलोचक थे — वे विवेकानंद को अपनी मुख्य प्रेरणा के रूप में नहीं मानते।\n\nमूल्य संवर्धन:\n• बोस का विवेकानंद से संबंध आध्यात्मिक पुनरुत्थान को उग्र राष्ट्रवाद से जोड़ने वाली परंपरा का हिस्सा है।\n• अरविंद घोष ने भी विवेकानंद से प्रेरणा ली, जो उग्र राजनीति से आध्यात्मिक राष्ट्रवाद की ओर बढ़े।\n• विवेकानंद कभी भारतीय राष्ट्रीय कांग्रेस में शामिल नहीं हुए — उनका राष्ट्रवाद सांस्कृतिक और आध्यात्मिक था, संगठनात्मक नहीं।"
+    }
+  },
+  {
+    "uuid": "52ea48bc-018b-4a9e-b716-04706cafb4ca",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda's Critique of Colonial Rule and Western Civilization"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Vivekananda's exchange model — not anti-Western",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding Vivekananda's critique of Western civilisation:\n\n1. Vivekananda rejected Western civilisation in its entirety, arguing that India must resist the import of Western science and technology as instruments of cultural imperialism.\n2. Vivekananda argued that India's spiritual wisdom constituted a gift to the world — a vision of cultural exchange that preceded modern concepts of soft power in international relations.\n3. Vivekananda's critique of Western materialism extended to a wholesale rejection of the political and organisational models of Western democratic institutions as inappropriate for India.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vivekananda rejected Western civilisation in its entirety, arguing that India must resist the import of Western science and technology as instruments of cultural imperialism.",
+          "verdict": "Incorrect",
+          "reason": "Vivekananda explicitly admired Western science, organisation, and rationalism — he argued for an exchange model where India adopts Western scientific method while offering spiritual wisdom in return; he was not anti-Western in a blanket sense."
+        },
+        {
+          "statement": "Vivekananda argued that India's spiritual wisdom constituted a form of gift to the world — a vision of cultural exchange that preceded modern concepts of soft power in international relations.",
+          "verdict": "Correct",
+          "reason": "This is an accurate characterisation of his position — he believed India had a spiritual mission to the world and that asserting this identity was a form of cultural contribution, not retreat."
+        },
+        {
+          "statement": "Vivekananda's critique of Western materialism extended to a wholesale rejection of the political and organisational models of Western democratic institutions as inappropriate for India.",
+          "verdict": "Incorrect",
+          "reason": "Vivekananda actually admired Western organisational efficiency and democratic energy — his critique was directed at spiritual materialism and imperialism, not at democratic institutions or organisational models per se."
+        }
+      ],
+      "strong_distractor": "c — Option (c) 'Only Statement 3' tempts students who know Statement 1 is wrong (he was not anti-Western) but misread Statement 3 as accurately capturing his critique of materialism.",
+      "elimination_logic": [
+        "Evaluate Statement 1: He praised Western science and advocated India learning from it — claiming he rejected Western civilisation entirely is factually wrong. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: His 'India's spiritual gift to the world' argument is well-documented and accurately described — Statement 2 IS correct, so it cannot be an answer to 'which is NOT correct'.",
+        "Evaluate Statement 3: He admired Western organisational capacity and democratic energy — his critique targeted materialism and imperial arrogance, not democratic governance. Statement 3 is NOT correct.",
+        "Statements NOT correct: 1 and 3. The question asks which are not correct — correct answer is (b) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Vivekananda's relationship with Western civilisation was nuanced — not a blanket critique but a selective engagement that praised Western scientific rationalism while critiquing spiritual materialism.\n\n• Statement 1 — Incorrect: He never rejected Western science or technology. His famous 'exchange model' explicitly called for India to learn Western scientific method.\n• Statement 2 — Correct: He did argue for India's spiritual mission as a gift to the world — an early articulation of what today would be called cultural soft power.\n• Statement 3 — Incorrect: Vivekananda admired Western democratic energy and organisational efficiency. His critique of the West was targeted at materialism, imperial violence, and the absence of spiritual depth — not at political institutions.\n\nValue Addition:\n• His lectures in the West contributed to growing Western interest in Eastern philosophy, later reflected in the Theosophical Society's activities.\n• Vivekananda's critique of colonialism was more cultural than political — he argued India's spiritual heritage made it inherently civilised, countering colonial narratives of 'civilising mission'.\n• The 'civilisational debate' between moderates and cultural nationalists within the Congress was partly shaped by Vivekananda's framework."
+    },
+    "hi": {
+      "display_text": "विवेकानंद की पश्चिमी सभ्यता की आलोचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. विवेकानंद ने पूरी तरह से पश्चिमी सभ्यता को अस्वीकार कर दिया, यह तर्क देते हुए कि भारत को सांस्कृतिक साम्राज्यवाद के उपकरण के रूप में पश्चिमी विज्ञान और तकनीक के आयात का विरोध करना चाहिए।\n2. विवेकानंद ने तर्क दिया कि भारत की आध्यात्मिक बुद्धिमत्ता विश्व को एक उपहार है — एक सांस्कृतिक आदान-प्रदान की दृष्टि जो अंतरराष्ट्रीय संबंधों में सॉफ्ट पावर की आधुनिक अवधारणाओं से पहले थी।\n3. विवेकानंद की पश्चिमी भौतिकवाद की आलोचना पश्चिमी लोकतांत्रिक संस्थानों के राजनीतिक और संगठनात्मक मॉडलों को भारत के लिए अनुपयुक्त मानते हुए पूरी तरह से अस्वीकार करने तक फैली हुई थी।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vivekananda rejected Western civilisation in its entirety, arguing that India must resist the import of Western science and technology as instruments of cultural imperialism.",
+          "verdict": "गलत",
+          "reason": "विवेकानंद ने स्पष्ट रूप से पश्चिमी विज्ञान, संगठन और तर्कवाद की प्रशंसा की — उन्होंने एक आदान-प्रदान मॉडल की वकालत की जहाँ भारत पश्चिमी वैज्ञानिक पद्धति को अपनाए जबकि बदले में आध्यात्मिक ज्ञान प्रदान करे; वे समग्र रूप से पश्चिम विरोधी नहीं थे।"
+        },
+        {
+          "statement": "Vivekananda argued that India's spiritual wisdom constituted a form of gift to the world — a vision of cultural exchange that preceded modern concepts of soft power in international relations.",
+          "verdict": "सही है",
+          "reason": "यह उनके दृष्टिकोण का सटीक वर्णन है — वे मानते थे कि भारत का एक आध्यात्मिक मिशन है और इस पहचान को स्थापित करना सांस्कृतिक योगदान का रूप है, पीछे हटना नहीं।"
+        },
+        {
+          "statement": "Vivekananda's critique of Western materialism extended to a wholesale rejection of the political and organisational models of Western democratic institutions as inappropriate for India.",
+          "verdict": "गलत",
+          "reason": "विवेकानंद वास्तव में पश्चिमी संगठनात्मक दक्षता और लोकतांत्रिक ऊर्जा की प्रशंसा करते थे — उनकी आलोचना आध्यात्मिक भौतिकवाद और साम्राज्यवाद की थी, न कि लोकतांत्रिक संस्थानों या संगठनात्मक मॉडलों की।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल कथन 3' उन छात्रों को भ्रमित करता है जो जानते हैं कि कथन 1 गलत है (वे पश्चिम विरोधी नहीं थे) लेकिन कथन 3 को उनकी भौतिकवाद की आलोचना के रूप में गलत समझते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: उन्होंने पश्चिमी विज्ञान की प्रशंसा की और भारत को इसे सीखने की वकालत की — यह कहना कि उन्होंने पूरी तरह से पश्चिमी सभ्यता को अस्वीकार किया, तथ्यात्मक रूप से गलत है। कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: उनका 'भारत की आध्यात्मिक उपहार विश्व को' तर्क अच्छी तरह से प्रलेखित और सटीक है — कथन 2 सही है, अतः यह 'सही नहीं है' के उत्तर में नहीं हो सकता।",
+        "कथन 3 का मूल्यांकन करें: उन्होंने पश्चिमी संगठनात्मक क्षमता और लोकतांत्रिक ऊर्जा की प्रशंसा की — उनकी आलोचना भौतिकवाद और साम्राज्यवादी अहंकार पर केंद्रित थी, न कि लोकतांत्रिक शासन पर। कथन 3 सही नहीं है।",
+        "गलत कथन: 1 और 3। प्रश्न पूछता है कि कौन-से कथन सही नहीं हैं — सही उत्तर है (b) केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "विवेकानंद का पश्चिमी सभ्यता के साथ संबंध जटिल था — यह समग्र आलोचना नहीं बल्कि चयनात्मक जुड़ाव था जिसमें उन्होंने पश्चिमी वैज्ञानिक तर्कवाद की प्रशंसा की और आध्यात्मिक भौतिकवाद की आलोचना की।\n\n• कथन 1 — गलत: उन्होंने कभी पश्चिमी विज्ञान या तकनीक को अस्वीकार नहीं किया। उनका प्रसिद्ध 'आदान-प्रदान मॉडल' स्पष्ट रूप से भारत को पश्चिमी वैज्ञानिक पद्धति सीखने के लिए कहता था।\n• कथन 2 — सही: उन्होंने भारत के आध्यात्मिक मिशन को विश्व को उपहार के रूप में प्रस्तुत किया — जो आज के सांस्कृतिक सॉफ्ट पावर के प्रारंभिक विचार के समान है।\n• कथन 3 — गलत: विवेकानंद ने पश्चिमी लोकतांत्रिक ऊर्जा और संगठनात्मक दक्षता की प्रशंसा की। उनकी पश्चिम की आलोचना भौतिकवाद, साम्राज्यवादी हिंसा और आध्यात्मिक गहराई की कमी पर केंद्रित थी — न कि राजनीतिक संस्थानों पर।\n\nमूल्य संवर्धन:\n• उनके पश्चिम में व्याख्यानों ने पूर्वी दर्शन में पश्चिमी रुचि बढ़ाने में योगदान दिया, जो बाद में थियोसोफिकल सोसाइटी की गतिविधियों में परिलक्षित हुआ।\n• विवेकानंद की औपनिवेशिकता की आलोचना राजनीतिक से अधिक सांस्कृतिक थी — वे तर्क देते थे कि भारत की आध्यात्मिक विरासत इसे स्वाभाविक रूप से सभ्य बनाती है, जो 'सभ्य बनाने के मिशन' के औपनिवेशिक कथनों का विरोध करती है।\n• कांग्रेस के भीतर मध्यमार्गी और सांस्कृतिक राष्ट्रवादियों के बीच 'सभ्यतावादी बहस' आंशिक रूप से विवेकानंद के ढांचे से प्रभावित थी।"
+    }
+  },
+  {
+    "uuid": "b5ead7d2-e36c-4209-b6a6-f650b93f376c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Legacy and Contemporary Relevance of Vivekananda's Ideas",
+        "Influence of Ramakrishna-Vivekananda on Indian Nationalism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "National Youth Day — January 12, Vivekananda's birthday",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "National Youth Day in India is observed on ________, marking the birth anniversary of Swami Vivekananda and reflecting the state's formal appropriation of his legacy as an inspiration for the country's youth.\n\n(a) January 2\n(b) January 28\n(c) January 12\n(d) September 11",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — January 28 is the birthday of Lala Lajpat Rai, a nationalist leader of the same era — students who know Vivekananda's date is in January but confuse the exact date may gravitate toward this option.",
+      "elimination_logic": [
+        "The question asks for the date of National Youth Day, which is observed on Vivekananda's birthday.",
+        "Eliminate (a): January 2 has no association with Vivekananda — it could be confused with other commemorations.",
+        "Eliminate (b): January 28 is Lala Lajpat Rai's birth anniversary — not Vivekananda's.",
+        "Eliminate (d): September 11 is the date of Vivekananda's famous Chicago address (1893) — a plausible trap for students who confuse the event date with his birthday.",
+        "Confirm (c): Vivekananda was born on January 12, 1863 — National Youth Day is observed on January 12."
+      ],
+      "upsc_trap_explanation": "Option (d) — September 11 — is a particularly elegant trap: it is the actual date of Vivekananda's Chicago address in 1893, and students who associate him primarily with Chicago may confuse his speech date with his birthday. The question tests whether students distinguish between the date of his most famous public act and his actual birth date.",
+      "final_explanation": "National Youth Day is observed on January 12 each year, commemorating the birth anniversary of Swami Vivekananda, who was born on January 12, 1863, in Calcutta.\n\n• Option (a) — Incorrect: January 2 has no documented association with Vivekananda's life or legacy.\n• Option (b) — Incorrect: January 28 marks the birth anniversary of Lala Lajpat Rai — a different nationalist figure of the same era.\n• Option (c) — Correct: Vivekananda's birthday, January 12, 1863, is observed as National Youth Day in India. The Government of India declared this observance in 1985.\n• Option (d) — Incorrect: September 11, 1893, was the date of Vivekananda's landmark address at the Parliament of the World's Religions in Chicago — an important date in his life but not his birthday.\n\nValue Addition:\n• The week from January 12 to January 18 is observed as National Youth Week in India.\n• Vivekananda's full monastic name was Swami Vivekananda; his pre-monastic name was Narendranath Datta.\n• He died on July 4, 1902, at Belur Math at the age of 39."
+    },
+    "hi": {
+      "display_text": "भारत में राष्ट्रीय युवा दिवस ________ को मनाया जाता है, जो स्वामी विवेकानंद की जन्म जयंती को चिह्नित करता है और देश के युवाओं के लिए उनकी विरासत को आधिकारिक रूप से प्रेरणा के रूप में स्वीकार करता है।\n\n(a) 2 जनवरी\n(b) 28 जनवरी\n(c) 12 जनवरी\n(d) 11 सितंबर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — January 28 is the birthday of Lala Lajpat Rai, a nationalist leader of the same era — students who know Vivekananda's date is in January but confuse the exact date may gravitate toward this option.",
+      "elimination_logic": [
+        "प्रश्न राष्ट्रीय युवा दिवस की तिथि पूछता है, जो विवेकानंद के जन्मदिन पर मनाया जाता है।",
+        "(a) को निरस्त करें — 2 जनवरी का विवेकानंद से कोई संबंध नहीं है — इसे अन्य स्मरणोत्सवों से भ्रमित किया जा सकता है।",
+        "(b) को निरस्त करें — 28 जनवरी लाला लाजपत राय का जन्मदिन है — विवेकानंद का नहीं।",
+        "(d) को निरस्त करें — 11 सितंबर विवेकानंद के प्रसिद्ध शिकागो भाषण (1893) की तिथि है — यह जन्मदिन के साथ भ्रमित करने के लिए एक संभावित जाल है।",
+        "(c) सही है — विवेकानंद का जन्म 12 जनवरी 1863 को हुआ था — राष्ट्रीय युवा दिवस 12 जनवरी को मनाया जाता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) — 11 सितंबर — एक विशेष रूप से चालाक जाल है: यह 1893 में विवेकानंद के शिकागो भाषण की वास्तविक तिथि है, और जो छात्र उन्हें मुख्य रूप से शिकागो से जोड़ते हैं, वे उनके भाषण की तिथि को जन्मदिन के साथ भ्रमित कर सकते हैं। प्रश्न यह जांचता है कि छात्र उनके सबसे प्रसिद्ध सार्वजनिक कार्य की तिथि और उनके वास्तविक जन्मदिन के बीच अंतर करते हैं या नहीं।",
+      "final_explanation": "राष्ट्रीय युवा दिवस प्रत्येक वर्ष 12 जनवरी को मनाया जाता है, जो स्वामी विवेकानंद की जन्म जयंती है, जिनका जन्म 12 जनवरी 1863 को कोलकाता में हुआ था।\n\n• विकल्प (a) — गलत: 2 जनवरी का विवेकानंद के जीवन या विरासत से कोई प्रमाणित संबंध नहीं है।\n• विकल्प (b) — गलत: 28 जनवरी लाला लाजपत राय की जन्म जयंती है — जो उसी युग के एक अलग राष्ट्रवादी नेता थे।\n• विकल्प (c) — सही: विवेकानंद का जन्मदिन, 12 जनवरी 1863, भारत में राष्ट्रीय युवा दिवस के रूप में मनाया जाता है। भारत सरकार ने 1985 में इस दिवस की घोषणा की।\n• विकल्प (d) — गलत: 11 सितंबर 1893, विवेकानंद के विश्व धर्म संसद, शिकागो में दिए गए ऐतिहासिक भाषण की तिथि है — यह उनके जीवन की एक महत्वपूर्ण तिथि है लेकिन जन्मदिन नहीं।\n\nमूल्यवर्धन:\n• 12 जनवरी से 18 जनवरी तक का सप्ताह भारत में राष्ट्रीय युवा सप्ताह के रूप में मनाया जाता है।\n• विवेकानंद का पूर्ण संन्यासी नाम स्वामी विवेकानंद था; उनका पूर्व-संन्यासी नाम नरेंद्रनाथ दत्त था।\n• उनकी मृत्यु 4 जुलाई 1902 को बेलूर मठ में 39 वर्ष की आयु में हुई।"
+    }
+  },
+  {
+    "uuid": "5d996d51-d4ac-4118-9bbc-43e1c5189ec5",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda and the Question of Hindu Nationalism vs. Universal Humanism",
+        "Influence of Ramakrishna-Vivekananda on Indian Nationalism"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Vivekananda never joined INC — cultural nationalism only",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — relating Vivekananda's ideas to their political implications or legacy — is correctly matched?\n\n(a) Vivekananda's assertion of Hindu civilisational pride: He endorsed Hindutva as the authentic political expression of the Hindu cultural revival he initiated\n(b) Vivekananda's cultural self-confidence narrative: It generated a form of cultural nationalism that inspired figures like Subhas Chandra Bose, while remaining distinct from organisational political activity that Vivekananda himself never engaged in\n(c) Vivekananda's spiritual assertiveness: It directly inspired Bal Gangadhar Tilak's specific strategy of mobilising Hindu festivals like Ganesh Chaturthi as instruments of political organisation\n(d) Vivekananda's nationalism: It was expressed through active participation in the Indian National Congress, within which he advocated for a spiritually grounded form of self-rule",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Vivekananda's spiritual nationalism directly inspired Tilak's political mobilisation of Hindu festivals' sounds plausible because the two share the same cultural-religious vocabulary.",
+      "elimination_logic": [
+        "Evaluate (a): Vivekananda was claimed by both universalist and Hindutva streams — but this statement claims he 'endorsed' Hindutva; he never used that term or endorsed any political organisation. This pairing is incorrect.",
+        "Evaluate (b): Vivekananda's cultural self-confidence argument ('be proud to be Indian') predated and influenced the cultural dimension of political nationalism, and Bose's explicit acknowledgment is documented. This is correctly characterised as cultural-spiritual nationalism distinct from organisational politics.",
+        "Evaluate (c): Tilak used Ganesh Chaturthi and Shivaji Jayanti for political mobilisation — while resonant with Vivekananda's cultural assertiveness, attributing Tilak's strategy directly to Vivekananda's 'inspiration' overstates a documented influence.",
+        "Evaluate (d): Vivekananda never joined the Indian National Congress — this is a documented fact that rules out any pairing suggesting he worked within the Congress framework. Correct answer is (b)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in option (a) extends Vivekananda's Hindu cultural pride into an endorsement of Hindutva as a political ideology — which he never made. Vivekananda's nationalism was cultural and spiritual; he never endorsed any political party, ideology, or organised political movement. Students who see his Hindu pride and assume it aligns with later Hindutva appropriations will choose incorrectly.",
+      "final_explanation": "Vivekananda's precise positioning in the political-ideological spectrum is a recurring UPSC testing point — his legacy has been claimed by multiple, often contradictory, political traditions.\n\n• Option (a) — Incorrect: Vivekananda never endorsed Hindutva as a political ideology. He expressed pride in Hindu civilisation but specifically cautioned against mixing religion with politics — a warning that Hindutva organisational politics would violate.\n• Option (b) — Correct: Vivekananda's contribution to nationalism was cultural and spiritual — generating self-confidence in Indian civilisational identity — not organisational. Bose's documented acknowledgment of Vivekananda as his primary inspiration connects this cultural revival to political action without claiming Vivekananda was himself politically active.\n• Option (c) — Incorrect: While Tilak's cultural nationalism shares a register with Vivekananda's ideas, directly attributing Tilak's political festival mobilisation to Vivekananda's direct inspiration overstates a general ambient influence.\n• Option (d) — Incorrect: Vivekananda never worked within the Indian National Congress framework — his conscious separation from organised politics is a defining biographical fact.\n\nValue Addition:\n• The tension between universalist and Hindu nationalist appropriations of Vivekananda's legacy continues in contemporary India.\n• Aurobindo Ghose's transition from militant politics to spiritual nationalism represents the closest institutional continuity with Vivekananda's framework.\n• Vivekananda's own writing explicitly states he admired Muslim and Christian saints and communities — making exclusivist appropriations of his legacy incomplete."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित जोड़ों में से कौन-सा विवेकानंद के विचारों को उनके राजनीतिक निहितार्थ या विरासत से सही ढंग से जोड़ता है?\n\n(a) विवेकानंद का हिंदू सभ्यात्मक गर्व का दावा: उन्होंने हिंदुत्व को उस हिंदू सांस्कृतिक पुनरुत्थान की प्रामाणिक राजनीतिक अभिव्यक्ति के रूप में स्वीकार किया जिसे उन्होंने आरंभ किया था\n(b) विवेकानंद की सांस्कृतिक आत्मविश्वास की कथा: इसने एक प्रकार का सांस्कृतिक राष्ट्रवाद उत्पन्न किया जिसने सुभाष चंद्र बोस जैसे व्यक्तियों को प्रेरित किया, जबकि यह संगठनात्मक राजनीतिक गतिविधि से अलग था जिसमें विवेकानंद स्वयं कभी संलग्न नहीं हुए\n(c) विवेकानंद की आध्यात्मिक आत्मविश्वता: इसने सीधे बाल गंगाधर तिलक की गणेश चतुर्थी जैसे हिंदू त्योहारों को राजनीतिक संगठन के उपकरण के रूप में संगठित करने की विशिष्ट रणनीति को प्रेरित किया\n(d) विवेकानंद का राष्ट्रवाद: यह भारतीय राष्ट्रीय कांग्रेस में सक्रिय भागीदारी के माध्यम से व्यक्त किया गया था, जिसके भीतर उन्होंने आत्म-शासन के आध्यात्मिक रूप का समर्थन किया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Vivekananda's spiritual nationalism directly inspired Tilak's political mobilisation of Hindu festivals' sounds plausible because the two share the same cultural-religious vocabulary.",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: विवेकानंद को सार्वभौमिकतावादी और हिंदुत्व धाराओं दोनों ने अपनाया था — लेकिन यह कथन कहता है कि उन्होंने 'हिंदुत्व' को स्वीकार किया; उन्होंने कभी इस शब्द का प्रयोग नहीं किया और न ही किसी राजनीतिक संगठन का समर्थन किया। यह जोड़ी गलत है।",
+        "(b) का मूल्यांकन करें: विवेकानंद का सांस्कृतिक आत्मविश्वास तर्क ('भारतीय होने पर गर्व करें') राजनीतिक राष्ट्रवाद के सांस्कृतिक आयाम से पहले और उससे प्रभावित था, और बोस की स्पष्ट स्वीकृति प्रलेखित है। इसे संगठनात्मक राजनीति से अलग सांस्कृतिक-आध्यात्मिक राष्ट्रवाद के रूप में सही रूप में वर्णित किया गया है।",
+        "(c) का मूल्यांकन करें: तिलक ने गणेश चतुर्थी और शिवाजी जयंती का राजनीतिक संगठित करने के लिए उपयोग किया — जबकि यह विवेकानंद की सांस्कृतिक आत्मविश्वास से मेल खाता है, तिलक की रणनीति को सीधे विवेकानंद की 'प्रेरणा' से जोड़ना एक प्रलेखित प्रभाव को अधिक महत्व देना है।",
+        "(d) का मूल्यांकन करें: विवेकानंद ने कभी भारतीय राष्ट्रीय कांग्रेस में शामिल नहीं हुए — यह एक प्रलेखित तथ्य है जो किसी भी जोड़ी को खारिज करता है जो यह सुझाव देती है कि उन्होंने कांग्रेस के ढांचे के भीतर काम किया। सही उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में स्कोप-एक्सटेंशन ट्रैप विवेकानंद के हिंदू सांस्कृतिक गर्व को हिंदुत्व को राजनीतिक विचारधारा के रूप में समर्थन में बढ़ा देता है — जो उन्होंने कभी नहीं किया। विवेकानंद का राष्ट्रवाद सांस्कृतिक और आध्यात्मिक था; उन्होंने कभी किसी राजनीतिक पार्टी, विचारधारा या संगठित राजनीतिक आंदोलन का समर्थन नहीं किया। जो छात्र उनके हिंदू गर्व को देखते हैं और मान लेते हैं कि यह बाद के हिंदुत्व के उपयोग से मेल खाता है, वे गलत विकल्प चुनेंगे।",
+      "final_explanation": "विवेकानंद की राजनीतिक-वैचारिक स्पेक्ट्रम में सटीक स्थिति UPSC में बार-बार परीक्षण का विषय है — उनकी विरासत को कई, अक्सर विरोधाभासी, राजनीतिक परंपराओं ने अपनाया है।\n\n• विकल्प (a) — गलत: विवेकानंद ने कभी हिंदुत्व को राजनीतिक विचारधारा के रूप में स्वीकार नहीं किया। उन्होंने हिंदू सभ्यता पर गर्व व्यक्त किया लेकिन स्पष्ट रूप से धर्म और राजनीति को मिलाने के खिलाफ चेतावनी दी — जो हिंदुत्व संगठनात्मक राजनीति का उल्लंघन करता।\n• विकल्प (b) — सही: विवेकानंद का राष्ट्रवाद सांस्कृतिक और आध्यात्मिक था — जो भारतीय सभ्यता की पहचान में आत्मविश्वास उत्पन्न करता था — न कि संगठनात्मक। बोस की विवेकानंद को अपनी मुख्य प्रेरणा के रूप में मान्यता इस सांस्कृतिक पुनरुत्थान को राजनीतिक क्रिया से जोड़ती है बिना यह दावा किए कि विवेकानंद स्वयं राजनीतिक रूप से सक्रिय थे।\n• विकल्प (c) — गलत: जबकि तिलक का सांस्कृतिक राष्ट्रवाद विवेकानंद के विचारों से मेल खाता है, तिलक की राजनीतिक त्योहारों की संगठित करने की रणनीति को सीधे विवेकानंद की प्रेरणा से जोड़ना सामान्य प्रभाव को अधिक महत्व देना है।\n• विकल्प (d) — गलत: विवेकानंद ने कभी भारतीय राष्ट्रीय कांग्रेस के ढांचे के भीतर काम नहीं किया — संगठित राजनीति से उनकी सचेत अलगाव उनकी जीवनी का एक निर्णायक तथ्य है।\n\nमूल्य संवर्धन:\n• विवेकानंद की विरासत के सार्वभौमिकतावादी और हिंदू राष्ट्रवादी उपयोग के बीच तनाव आज के भारत में जारी है।\n• अरविंद घोष का कट्टर राजनीति से आध्यात्मिक राष्ट्रवाद की ओर संक्रमण विवेकानंद के ढांचे के साथ निकटतम संस्थागत निरंतरता प्रस्तुत करता है।\n• विवेकानंद के अपने लेखन में स्पष्ट रूप से कहा गया है कि वे मुस्लिम और ईसाई संतों और समुदायों की प्रशंसा करते थे — इसलिए उनकी विरासत के विशेषाधिकारवादी उपयोग अधूरे हैं।"
+    }
+  },
+  {
+    "uuid": "307dc48f-be47-4143-a4c7-8ca441d687e1",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda's Views on Women and Gender Reform",
+        "Sister Nivedita (Margaret Noble): Role and Contribution"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Vivekananda women's reform — idealization not political emancipation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding Vivekananda's views on women and Sister Nivedita's role:\n\n1. Vivekananda's approach to women's empowerment was primarily philosophical and spiritual — venerating womanhood through the Shakti tradition — rather than advocating directly for women's political rights or legislative change.\n2. Sister Nivedita, as Vivekananda's Western disciple, confined her work entirely to philosophical writing and spiritual teaching in India, avoiding any engagement with political or nationalist movements.\n3. The early Ramakrishna Mission under Vivekananda's leadership did not establish a dedicated institutional programme specifically for women's reform and emancipation, distinguishing it from the direct social activism of reformers like Pandita Ramabai.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vivekananda's approach to women's empowerment was primarily philosophical and spiritual — venerating womanhood through the Shakti tradition — rather than advocating directly for women's political rights or legislative change.",
+          "verdict": "Correct",
+          "reason": "Vivekananda's engagement with the question of women was through the lens of Shakti — the Divine Feminine — which produced reverence for womanhood but did not translate into advocacy for women's suffrage, property rights, or institutional legal reform."
+        },
+        {
+          "statement": "Sister Nivedita, as Vivekananda's Western disciple, confined her work entirely to philosophical writing and spiritual teaching in India, avoiding any engagement with political or nationalist movements.",
+          "verdict": "Incorrect",
+          "reason": "Nivedita actively supported the Swadeshi movement, associated with revolutionary nationalists, and engaged in political causes — she went well beyond philosophical writing and eventually separated from the Mission to pursue political work more freely."
+        },
+        {
+          "statement": "The early Ramakrishna Mission under Vivekananda's leadership did not establish a dedicated institutional programme specifically for women's reform and emancipation, distinguishing it from the direct social activism of reformers like Pandita Ramabai.",
+          "verdict": "Correct",
+          "reason": "The early Mission's work on women was inspirational rather than institutional — Nivedita's school was her personal initiative rather than a Mission programme. Pandita Ramabai's Mukti Mission represented direct institutional social activism for women."
+        }
+      ],
+      "strong_distractor": "c — Option (c) '1 and 2 only' tempts students who correctly identify Statement 1 as true but also accept Statement 2 (Nivedita stayed away from politics) without knowing about her Swadeshi involvement.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Vivekananda's 'Shakti veneration without political advocacy' is well-established — Statement 1 is correct.",
+        "Evaluate Statement 2: Nivedita's Swadeshi movement participation and revolutionary nationalist associations are documented facts — Statement 2 claiming she avoided political engagement is incorrect. Eliminate options containing Statement 2.",
+        "Evaluate Statement 3: The early Mission did not have a dedicated women's institutional programme — this distinguishes it from Pandita Ramabai's direct social work. Statement 3 is correct.",
+        "Statements 1 and 3 correct — correct answer is (a) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The relationship between Vivekananda's philosophical framework and practical women's emancipation is a nuanced area where examination questions exploit the gap between idealization and activism.\n\n• Statement 1 — Correct: Vivekananda's reverence for womanhood operated within the Shakti tradition — women as embodiments of divine power. This philosophical position did not extend to advocacy for legal or political rights for women.\n• Statement 2 — Incorrect: Sister Nivedita was one of the most politically engaged figures in the nationalist milieu. She supported the Swadeshi movement, wrote nationalist articles, and associated with revolutionary circles. She formally separated from the Ramakrishna Mission after Vivekananda's death partly to pursue political work without institutional constraints.\n• Statement 3 — Correct: The Mission's contribution to women's advancement in the early period was inspirational, not institutional. Pandita Ramabai's Mukti Mission and Ramabai Ranade's Seva Sadan represent the direct institutional model — an important distinction.\n\nValue Addition:\n• Nivedita's book 'The Web of Indian Life' (1904) is a significant early defence of Indian civilisation against colonial critiques.\n• Vivekananda wrote: 'It is impossible to think about the welfare of the world unless the condition of women is improved' — showing awareness without institutional follow-through during his lifetime.\n• Sister Nivedita died in 1911 in Darjeeling."
+    },
+    "hi": {
+      "display_text": "विवेकानंद के महिलाओं के प्रति दृष्टिकोण और सिस्टर निवेदिता की भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. विवेकानंद का महिलाओं के सशक्तिकरण के प्रति दृष्टिकोण मुख्यतः दार्शनिक और आध्यात्मिक था — शक्ति परंपरा के माध्यम से नारीत्व की पूजा करना — न कि सीधे महिलाओं के राजनीतिक अधिकारों या विधायी परिवर्तन के लिए समर्थन देना।\n2. सिस्टर निवेदिता, विवेकानंद की पश्चिमी शिष्या के रूप में, अपने कार्य को पूरी तरह से भारत में दार्शनिक लेखन और आध्यात्मिक शिक्षण तक सीमित रखती थीं, और राजनीतिक या राष्ट्रीय आंदोलन में कोई भागीदारी नहीं करती थीं।\n3. विवेकानंद के नेतृत्व में प्रारंभिक रामकृष्ण मिशन ने महिलाओं के सुधार और मुक्ति के लिए कोई समर्पित संस्थागत कार्यक्रम स्थापित नहीं किया, जो पंडिता रामाबाई जैसे सुधारकों के प्रत्यक्ष सामाजिक सक्रियता से इसे अलग करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "विवेकानंद का महिलाओं के सशक्तिकरण के प्रति दृष्टिकोण मुख्यतः दार्शनिक और आध्यात्मिक था — शक्ति परंपरा के माध्यम से नारीत्व की पूजा करना — न कि सीधे महिलाओं के राजनीतिक अधिकारों या विधायी परिवर्तन के लिए समर्थन देना।",
+          "verdict": "सही",
+          "reason": "विवेकानंद ने महिलाओं के प्रश्न को शक्ति — दैवीय नारी — के दृष्टिकोण से देखा, जिससे नारीत्व के प्रति सम्मान उत्पन्न हुआ लेकिन यह महिलाओं के मताधिकार, संपत्ति अधिकार या संस्थागत कानूनी सुधार के लिए समर्थन में परिवर्तित नहीं हुआ।"
+        },
+        {
+          "statement": "सिस्टर निवेदिता, विवेकानंद की पश्चिमी शिष्या के रूप में, अपने कार्य को पूरी तरह से भारत में दार्शनिक लेखन और आध्यात्मिक शिक्षण तक सीमित रखती थीं, और राजनीतिक या राष्ट्रीय आंदोलन में कोई भागीदारी नहीं करती थीं।",
+          "verdict": "गलत",
+          "reason": "निवेदिता ने स्वदेशी आंदोलन का सक्रिय समर्थन किया, जो क्रांतिकारी राष्ट्रवादी से जुड़ा था, और राजनीतिक कारणों में संलग्न थीं — वह दार्शनिक लेखन से बहुत आगे बढ़ीं और अंततः मिशन से अलग होकर राजनीतिक कार्य स्वतंत्र रूप से करने लगीं।"
+        },
+        {
+          "statement": "विवेकानंद के नेतृत्व में प्रारंभिक रामकृष्ण मिशन ने महिलाओं के सुधार और मुक्ति के लिए कोई समर्पित संस्थागत कार्यक्रम स्थापित नहीं किया, जो पंडिता रामाबाई जैसे सुधारकों के प्रत्यक्ष सामाजिक सक्रियता से इसे अलग करता है।",
+          "verdict": "सही",
+          "reason": "प्रारंभिक मिशन का महिलाओं पर कार्य प्रेरणादायक था, संस्थागत नहीं — निवेदिता का स्कूल उनकी व्यक्तिगत पहल था, मिशन का कार्यक्रम नहीं। पंडिता रामाबाई का मुक्ति मिशन महिलाओं के लिए प्रत्यक्ष संस्थागत सामाजिक सक्रियता का उदाहरण था।"
+        }
+      ],
+      "strong_distractor": "क (c) — विकल्प (c) 'केवल 1 और 2' उन छात्रों को भ्रमित करता है जो कथन 1 को सही मानते हैं लेकिन कथन 2 (निवेदिता ने राजनीति से दूर रही) को भी स्वीकार कर लेते हैं बिना उनके स्वदेशी आंदोलन में भागीदारी के बारे में जाने।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: विवेकानंद का 'शक्ति की पूजा बिना राजनीतिक समर्थन के' स्थापित तथ्य है — कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: निवेदिता की स्वदेशी आंदोलन में भागीदारी और क्रांतिकारी राष्ट्रवादी संबंध प्रमाणित तथ्य हैं — कथन 2 जो कहता है कि उन्होंने राजनीतिक भागीदारी से बचा, गलत है। कथन 2 वाले विकल्पों को निरस्त करें।",
+        "कथन 3 का मूल्यांकन करें: प्रारंभिक मिशन के पास महिलाओं के लिए समर्पित संस्थागत कार्यक्रम नहीं था — यह पंडिता रामाबाई के प्रत्यक्ष सामाजिक कार्य से अलग करता है। कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं — सही उत्तर है (a) केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "विवेकानंद के दार्शनिक ढांचे और व्यावहारिक महिलाओं की मुक्ति के बीच संबंध एक सूक्ष्म क्षेत्र है जहाँ परीक्षा प्रश्न आदर्शीकरण और सक्रियता के बीच के अंतर का लाभ उठाते हैं।\n\n• कथन 1 — सही: विवेकानंद का नारीत्व के प्रति सम्मान शक्ति परंपरा के भीतर था — महिलाएं दैवीय शक्ति के रूप में। यह दार्शनिक दृष्टिकोण महिलाओं के कानूनी या राजनीतिक अधिकारों के लिए समर्थन तक नहीं बढ़ा।\n• कथन 2 — गलत: सिस्टर निवेदिता राष्ट्रवादी माहौल में सबसे अधिक राजनीतिक रूप से संलग्न व्यक्तियों में से थीं। उन्होंने स्वदेशी आंदोलन का समर्थन किया, राष्ट्रवादी लेख लिखे, और क्रांतिकारी मंडलों से जुड़ीं। विवेकानंद की मृत्यु के बाद उन्होंने राजनीतिक कार्य स्वतंत्र रूप से करने के लिए रामकृष्ण मिशन से औपचारिक रूप से अलगाव किया।\n• कथन 3 — सही: मिशन का महिलाओं के उत्थान में प्रारंभिक योगदान प्रेरणादायक था, संस्थागत नहीं। पंडिता रामाबाई का मुक्ति मिशन और रामाबाई रानाडे का सेवा सदन प्रत्यक्ष संस्थागत मॉडल का प्रतिनिधित्व करते हैं — एक महत्वपूर्ण भेद।\n\nमूल्यवर्धन:\n• निवेदिता की पुस्तक 'The Web of Indian Life' (1904) उपनिवेशवादी आलोचनाओं के विरुद्ध भारतीय सभ्यता का एक महत्वपूर्ण प्रारंभिक बचाव है।\n• विवेकानंद ने लिखा: 'जब तक महिलाओं की स्थिति सुधरेगी नहीं, तब तक विश्व के कल्याण की कल्पना असंभव है' — जो जागरूकता दिखाता है पर उनके जीवनकाल में संस्थागत कार्यान्वयन नहीं हुआ।\n• सिस्टर निवेदिता का 1911 में दार्जिलिंग में निधन हुआ।"
+    }
+  },
+  {
+    "uuid": "64907924-76c1-459f-bbd6-b0009b9606a5",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Ramakrishna Mission's Role in Disaster Relief and Humanitarian Work: Policy Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Mission disaster relief — non-proselytizing karma yoga model",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Ramakrishna Mission's disaster relief activities:\n\n1. The Ramakrishna Mission's first major public service act was relief work during the 1897 Calcutta plague, which coincided with the year of the Mission's founding and established the template of seva as a religious duty.\n2. The Ramakrishna Mission's disaster relief model is philosophically identical to the Christian missionary relief model — both are driven by faith, offer services to all regardless of religion, and use relief work as an opportunity for religious conversion.\n3. The Mission's engagement with large-scale disaster relief has included the 1943 Bengal famine, the 1999 Odisha super-cyclone, and the 2004 Indian Ocean tsunami — demonstrating a sustained multi-decade record of humanitarian response.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 2 only\n(c) 1 and 2 only\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Ramakrishna Mission's first major public service act was relief work during the 1897 Calcutta plague, which coincided with the year of the Mission's founding and established the template of seva as a religious duty.",
+          "verdict": "Correct",
+          "reason": "The Mission was founded in 1897, and the Calcutta plague of the same year provided the occasion for its first major public service operation — institutionalising the concept of seva as karma yoga."
+        },
+        {
+          "statement": "The Ramakrishna Mission's disaster relief model is philosophically identical to the Christian missionary relief model — both are driven by faith, offer services to all regardless of religion, and use relief work as an opportunity for religious conversion.",
+          "verdict": "Incorrect",
+          "reason": "While both models are faith-motivated and serve across religious lines, the Mission explicitly prohibits proselytisation — using relief work for conversion is antithetical to its karma yoga philosophy, which is precisely what distinguishes it from missionary charitable models."
+        },
+        {
+          "statement": "The Mission's engagement with large-scale disaster relief has included the 1943 Bengal famine, the 1999 Odisha super-cyclone, and the 2004 Indian Ocean tsunami — demonstrating a sustained multi-decade record of humanitarian response.",
+          "verdict": "Correct",
+          "reason": "The Mission's relief record across these major disasters is historically documented and reflects its institutionalised model of disaster response grounded in karma yoga."
+        }
+      ],
+      "strong_distractor": "c — Option (c) '1 and 3 only' is the incorrect answer here because the question asks which is NOT correct — only Statement 2 is incorrect.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The 1897 Calcutta plague as the Mission's founding public service act is historically accurate. Statement 1 is correct — not an answer to 'which is NOT correct'.",
+        "Evaluate Statement 2: The claim that the Mission uses relief work for conversion is factually wrong — the Mission explicitly maintains a non-proselytising character. Statement 2 is NOT correct.",
+        "Evaluate Statement 3: The 1943, 1999, and 2004 relief operations are documented. Statement 3 is correct — not an answer to 'which is NOT correct'.",
+        "Only Statement 2 is NOT correct — correct answer is (b) 2 only."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges two distinct faith-based relief models: the Ramakrishna Mission's karma yoga approach and Christian missionary charitable relief. Students who know both are faith-motivated and serve all religions may not recall the critical distinction — the Mission explicitly prohibits conversion activity in connection with its service, a point that defines its philosophical identity and distinguishes it from missionary models.",
+      "final_explanation": "The Ramakrishna Mission's disaster relief model is philosophically distinctive and has been a persistent source of UPSC questions that test whether students can distinguish faith-based service from proselytising charity.\n\n• Statement 1 — Correct: The 1897 Calcutta plague was the occasion for the Mission's founding public service work — in the same year as the Mission's establishment, making relief seva its inaugural institutional act.\n• Statement 2 — Incorrect: The Mission's relief work is explicitly non-proselytising. Vivekananda's karma yoga framework positions service as worship directed at the Divine in all people — it would be philosophically incoherent to use service as a conversion tool. This is the key distinction from missionary charity models.\n• Statement 3 — Correct: The Mission's sustained humanitarian presence across major disasters — 1943 Bengal famine, 1999 Odisha cyclone, 2004 tsunami — demonstrates an institutionalised model, not ad hoc charity.\n\nValue Addition:\n• The Mission's non-proselytising character is one reason it has been able to receive state and international funding without political controversy.\n• Its model has been studied by policy makers developing frameworks for 'faith-based organisations' in disaster management.\n• Maintaining the non-political, non-proselytising character while accessing external funding remains an ongoing institutional challenge for the Mission."
+    },
+    "hi": {
+      "display_text": "रामकृष्ण मिशन की आपदा राहत गतिविधियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. रामकृष्ण मिशन की पहली बड़ी सार्वजनिक सेवा कार्य 1897 के कोलकाता प्लेग के दौरान राहत कार्य था, जो मिशन की स्थापना के वर्ष के साथ मेल खाता है और सेवा को धार्मिक कर्तव्य के रूप में स्थापित करने का प्रारूप तैयार करता है।\n2. रामकृष्ण मिशन का आपदा राहत मॉडल दार्शनिक रूप से ईसाई मिशनरी राहत मॉडल के समान है — दोनों विश्वास से प्रेरित हैं, सभी धर्मों के लोगों को सेवा प्रदान करते हैं, और राहत कार्य को धार्मिक धर्मांतरण के अवसर के रूप में उपयोग करते हैं।\n3. मिशन की बड़ी आपदा राहत में 1943 का बंगाल अकाल, 1999 का ओडिशा सुपर-साइक्लोन, और 2004 का भारतीय महासागर सुनामी शामिल हैं — जो मानवीय प्रतिक्रिया का एक सतत बहु-दशकीय रिकॉर्ड दर्शाते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2\n(c) केवल 1 और 2\n(d) केवल 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "रामकृष्ण मिशन की पहली बड़ी सार्वजनिक सेवा कार्य 1897 के कोलकाता प्लेग के दौरान राहत कार्य था, जो मिशन की स्थापना के वर्ष के साथ मेल खाता है और सेवा को धार्मिक कर्तव्य के रूप में स्थापित करने का प्रारूप तैयार करता है।",
+          "verdict": "सही है",
+          "reason": "मिशन की स्थापना 1897 में हुई थी, और उसी वर्ष कोलकाता प्लेग ने इसके पहले बड़े सार्वजनिक सेवा अभियान का अवसर प्रदान किया — सेवा को कर्म योग के रूप में संस्थागत किया गया।"
+        },
+        {
+          "statement": "रामकृष्ण मिशन का आपदा राहत मॉडल दार्शनिक रूप से ईसाई मिशनरी राहत मॉडल के समान है — दोनों विश्वास से प्रेरित हैं, सभी धर्मों के लोगों को सेवा प्रदान करते हैं, और राहत कार्य को धार्मिक धर्मांतरण के अवसर के रूप में उपयोग करते हैं।",
+          "verdict": "गलत है",
+          "reason": "हालांकि दोनों मॉडल विश्वास-प्रेरित हैं और सभी धर्मों को सेवा देते हैं, मिशन स्पष्ट रूप से धर्मांतरण को प्रतिबंधित करता है — राहत कार्य को धर्मांतरण के लिए उपयोग करना उसके कर्म योग दर्शन के विपरीत है, जो इसे मिशनरी चैरिटी मॉडलों से अलग करता है।"
+        },
+        {
+          "statement": "मिशन की बड़ी आपदा राहत में 1943 का बंगाल अकाल, 1999 का ओडिशा सुपर-साइक्लोन, और 2004 का भारतीय महासागर सुनामी शामिल हैं — जो मानवीय प्रतिक्रिया का एक सतत बहु-दशकीय रिकॉर्ड दर्शाते हैं।",
+          "verdict": "सही है",
+          "reason": "इन प्रमुख आपदाओं में मिशन का राहत रिकॉर्ड ऐतिहासिक रूप से प्रलेखित है और इसके कर्म योग आधारित संस्थागत आपदा प्रतिक्रिया मॉडल को दर्शाता है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल 1 और 3' यहाँ गलत उत्तर है क्योंकि प्रश्न पूछता है कि कौन-सा कथन सही नहीं है — केवल कथन 2 गलत है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: 1897 के कोलकाता प्लेग को मिशन की स्थापना के सार्वजनिक सेवा कार्य के रूप में इतिहाससंगत माना जाता है। कथन 1 सही है — यह 'सही नहीं है' के लिए उत्तर नहीं है।",
+        "कथन 2 का मूल्यांकन करें: मिशन द्वारा राहत कार्य को धर्मांतरण के लिए उपयोग करने का दावा तथ्यात्मक रूप से गलत है — मिशन स्पष्ट रूप से गैर-धर्मांतरणीय है। कथन 2 सही नहीं है।",
+        "कथन 3 का मूल्यांकन करें: 1943, 1999, और 2004 के राहत कार्य प्रलेखित हैं। कथन 3 सही है — यह 'सही नहीं है' के लिए उत्तर नहीं है।",
+        "केवल कथन 2 सही नहीं है — सही उत्तर (b) केवल 2 है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल (conflation trap) दो अलग-अलग विश्वास-आधारित राहत मॉडलों को मिला देता है: रामकृष्ण मिशन का कर्म योग दृष्टिकोण और ईसाई मिशनरी चैरिटेबल राहत। जो छात्र जानते हैं कि दोनों विश्वास-प्रेरित हैं और सभी धर्मों को सेवा देते हैं, वे महत्वपूर्ण भेद भूल सकते हैं — मिशन स्पष्ट रूप से सेवा के साथ धर्मांतरण गतिविधि को प्रतिबंधित करता है, जो उसके दार्शनिक पहचान को परिभाषित करता है और मिशनरी मॉडलों से अलग करता है।",
+      "final_explanation": "रामकृष्ण मिशन का आपदा राहत मॉडल दार्शनिक रूप से विशिष्ट है और UPSC के प्रश्नों में अक्सर यह परीक्षण किया जाता है कि छात्र विश्वास-आधारित सेवा को धर्मांतरण-उन्मुख चैरिटी से अलग कर सकते हैं।\n\n• कथन 1 — सही: 1897 का कोलकाता प्लेग मिशन की स्थापना के वर्ष में पहला सार्वजनिक सेवा कार्य था — राहत सेवा को इसका उद्घाटन संस्थागत कार्य बनाया।\n• कथन 2 — गलत: मिशन का राहत कार्य स्पष्ट रूप से गैर-धर्मांतरणीय है। विवेकानंद का कर्म योग ढांचा सेवा को सभी में दिव्य के प्रति पूजा के रूप में देखता है — सेवा को धर्मांतरण उपकरण के रूप में उपयोग करना दार्शनिक रूप से असंगत होगा। यह मिशनरी चैरिटी मॉडलों से मुख्य भेद है।\n• कथन 3 — सही: मिशन की बड़ी आपदाओं में सतत मानवीय उपस्थिति — 1943 बंगाल अकाल, 1999 ओडिशा चक्रवात, 2004 सुनामी — एक संस्थागत मॉडल को दर्शाती है, न कि आकस्मिक चैरिटी।\n\nमूल्य संवर्धन:\n• मिशन का गैर-धर्मांतरणीय चरित्र एक कारण है कि इसे राजनीतिक विवाद के बिना राज्य और अंतरराष्ट्रीय वित्त पोषण प्राप्त हो सका है।\n• इसका मॉडल नीति निर्माताओं द्वारा 'विश्वास-आधारित संगठनों' के लिए आपदा प्रबंधन ढांचे विकसित करने में अध्ययन किया गया है।\n• बाहरी वित्त पोषण प्राप्त करते हुए गैर-राजनीतिक, गैर-धर्मांतरणीय चरित्र बनाए रखना मिशन के लिए एक सतत संस्थागत चुनौती है।"
+    }
+  },
+  {
+    "uuid": "234e42ae-15ea-4626-bea8-478a2146f82d",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda and the Bengal Renaissance: Positioning within the Reform Tradition",
+        "Ramakrishna Paramahamsa: Philosophy of Religious Harmony (Sarva Dharma Samanvaya)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Bengal Renaissance figures — matched to their defining positions",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Bengal Renaissance Figure) with List II (Defining Intellectual Position):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Ram Mohan Roy",
+            "1. Theistic-devotional consolidation of the Brahmo movement; known as 'Maharshi'"
+          ],
+          [
+            "B. Debendranath Tagore",
+            "2. Spiritual revivalism and assertive Hindu identity — a departure from the rationalist reform tradition"
+          ],
+          [
+            "C. Keshab Chandra Sen",
+            "3. Rationalist monotheism grounded in Upanishadic authority; challenged idol worship and sati; founded Brahmo Samaj"
+          ],
+          [
+            "D. Vivekananda",
+            "4. Eclectic reformer who incorporated elements from Christianity into the Brahmo movement; founded Brahmo Samaj of India as a separate body"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-4, C-1, D-2\n(c) A-2, B-1, C-3, D-4\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) swaps Keshab Chandra Sen and Debendranath Tagore, tempting students who know both were associated with the Brahmo Samaj but don't recall the precise theological distinctions between them.",
+      "elimination_logic": [
+        "Match A: Ram Mohan Roy — rational reformer who used Upanishads to challenge idol worship and sati; founded the Brahmo Samaj on rationalist-monotheist principles. A matches 3.",
+        "Match B: Debendranath Tagore — led the Brahmo Samaj after Roy in a more theistic-devotional direction; father of Rabindranath Tagore; known as 'Maharshi'. B matches 1.",
+        "Match C: Keshab Chandra Sen — eclectic reformer who incorporated elements from Christianity and other traditions into the Brahmo movement; established Brahmo Samaj of India. C matches 4.",
+        "Match D: Vivekananda — represents the spiritual revivalism phase, a departure from rationalist reform toward assertive Hindu identity. D matches 2. Correct answer: A-3, B-1, C-4, D-2 = option (d)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap operates on B and C — Debendranath Tagore and Keshab Chandra Sen are both mid-Bengal Renaissance Brahmo figures and students frequently interchange them. The critical distinction is that Debendranath represented the theistic-devotional consolidation phase while Keshab Chandra Sen moved the Samaj in a more eclectic, cosmopolitan, and cross-religious direction — ultimately founding a separate body (Brahmo Samaj of India).",
+      "final_explanation": "The Bengal Renaissance was not a monolithic movement but a succession of distinct intellectual phases, each represented by a key figure with a defining position.\n\nCorrect pairings:\n• A (Ram Mohan Roy) — 3 (Rationalist monotheism using Upanishads to challenge idol worship and sati; founded Brahmo Samaj): Roy drew on Upanishadic monotheism and Western rationalism to argue against idolatry and social evils.\n• B (Debendranath Tagore) — 1 (Theistic-devotional consolidation of the Brahmo movement; known as Maharshi): He moved the Samaj toward a more devotional but still non-idolatrous direction and gave it institutional stability.\n• C (Keshab Chandra Sen) — 4 (Eclectic reformer who incorporated Christian and other religious elements; founded Brahmo Samaj of India separately): His eclecticism caused a split in the Brahmo Samaj; he later founded the 'New Dispensation' movement.\n• D (Vivekananda) — 2 (Spiritual revivalism and assertive Hindu identity — a departure from rationalist reform): Vivekananda marks the turn from rationalism to spiritual assertion, representing the Bengal Renaissance's final major phase.\n\nTrap pairing to avoid: B-4 or C-1 — confusing Debendranath and Keshab Chandra Sen.\n\nValue Addition:\n• Debendranath Tagore initiated Rabindranath's early education with exposure to nature and Sanskrit — influencing Shantiniketan's later philosophy.\n• Keshab Chandra Sen's 'New Dispensation' attempted a synthesis of all world religions — an experiment that failed institutionally but influenced later universalist movements.\n• Henry Derozio, another Bengal Renaissance figure, predates all four — representing the radical sceptical rationalism of 'Young Bengal'."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (बंगाल पुनर्जागरण के व्यक्तित्व) को सूची II (परिभाषित बौद्धिक दृष्टिकोण) से मिलाएं:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. राम मोहन रॉय",
+            "1. ब्रह्म आंदोलन का धार्मिक-भक्तिपूर्ण समेकन; 'महर्षि' के नाम से प्रसिद्ध"
+          ],
+          [
+            "B. देबेंद्रनाथ टैगोर",
+            "2. आध्यात्मिक पुनरुत्थान और सशक्त हिंदू पहचान — तर्कसंगत सुधार परंपरा से अलग"
+          ],
+          [
+            "C. केशव चंद्र सेन",
+            "3. उपनिषदों के अधिकार पर आधारित तर्कसंगत एकेश्वरवाद; मूर्ति पूजा और सती को चुनौती; ब्रह्म समाज की स्थापना"
+          ],
+          [
+            "D. विवेकानंद",
+            "4. विविधतावादी सुधारक जिन्होंने ब्रह्म आंदोलन में ईसाई तत्व शामिल किए; ब्रह्म समाज ऑफ इंडिया की अलग संस्था की स्थापना की"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-4, C-1, D-2\n(c) A-2, B-1, C-3, D-4\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में केशव चंद्र सेन और देबेंद्रनाथ टैगोर का स्थान बदल दिया गया है, जो उन छात्रों को भ्रमित करता है जो जानते हैं कि दोनों ब्रह्म समाज से जुड़े थे लेकिन उनके सैद्धांतिक भेदों को ठीक से याद नहीं रखते।",
+      "elimination_logic": [
+        "A से मेल करें: राम मोहन रॉय — तर्कसंगत सुधारक जिन्होंने उपनिषदों का उपयोग मूर्ति पूजा और सती प्रथा को चुनौती देने के लिए किया; ब्रह्म समाज की स्थापना की जो तर्कसंगत-एकेश्वरवादी सिद्धांतों पर आधारित था। A मेल खाता है 3 से।",
+        "B से मेल करें: देबेंद्रनाथ टैगोर — रॉय के बाद ब्रह्म समाज का नेतृत्व किया, अधिक धार्मिक-भक्तिपूर्ण दिशा में; रवींद्रनाथ टैगोर के पिता; 'महर्षि' के नाम से प्रसिद्ध। B मेल खाता है 1 से।",
+        "C से मेल करें: केशव चंद्र सेन — विविधतावादी सुधारक जिन्होंने ईसाई और अन्य परंपराओं के तत्व ब्रह्म आंदोलन में शामिल किए; ब्रह्म समाज ऑफ इंडिया की स्थापना की। C मेल खाता है 4 से।",
+        "D से मेल करें: विवेकानंद — आध्यात्मिक पुनरुत्थान के चरण का प्रतिनिधित्व करते हैं, तर्कसंगत सुधार से हटकर एक सशक्त हिंदू पहचान। D मेल खाता है 2 से। सही उत्तर: A-3, B-1, C-4, D-2 = विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "सत्ता-स्थानांतरण जाल B और C पर काम करता है — देबेंद्रनाथ टैगोर और केशव चंद्र सेन दोनों मध्य बंगाल पुनर्जागरण के ब्रह्म समाज के प्रमुख हैं और छात्र अक्सर इन्हें उलट-पुलट देते हैं। महत्वपूर्ण भेद यह है कि देबेंद्रनाथ धार्मिक-भक्तिपूर्ण समेकन चरण का प्रतिनिधित्व करते थे जबकि केशव चंद्र सेन समाज को अधिक विविधतावादी, विश्वव्यापी और पार-धार्मिक दिशा में ले गए — अंततः एक अलग संस्था (ब्रह्म समाज ऑफ इंडिया) की स्थापना की।",
+      "final_explanation": "बंगाल पुनर्जागरण एक एकरूप आंदोलन नहीं था बल्कि विभिन्न बौद्धिक चरणों का क्रम था, जिनमें प्रत्येक का प्रतिनिधित्व एक प्रमुख व्यक्तित्व द्वारा किया गया।\n\nसही मेल:\n• A (राम मोहन रॉय) — 3 (उपनिषदों पर आधारित तर्कसंगत एकेश्वरवाद; मूर्ति पूजा और सती को चुनौती; ब्रह्म समाज की स्थापना): रॉय ने उपनिषदों के एकेश्वरवाद और पश्चिमी तर्कवाद का उपयोग मूर्ति पूजा और सामाजिक बुराइयों के विरुद्ध किया।\n• B (देबेंद्रनाथ टैगोर) — 1 (ब्रह्म आंदोलन का धार्मिक-भक्तिपूर्ण समेकन; 'महर्षि' के नाम से प्रसिद्ध): उन्होंने समाज को अधिक भक्तिपूर्ण परंतु गैर-मूर्तिपूजक दिशा में ले जाकर इसे संस्थागत स्थिरता दी।\n• C (केशव चंद्र सेन) — 4 (विविधतावादी सुधारक जिन्होंने ईसाई और अन्य धार्मिक तत्वों को शामिल किया; ब्रह्म समाज ऑफ इंडिया की अलग स्थापना): उनकी विविधता ने ब्रह्म समाज में विभाजन किया; बाद में उन्होंने 'न्यू डिस्पेंसशन' आंदोलन की स्थापना की।\n• D (विवेकानंद) — 2 (आध्यात्मिक पुनरुत्थान और सशक्त हिंदू पहचान — तर्कसंगत सुधार से अलग): विवेकानंद ने तर्कवाद से आध्यात्मिक अभिव्यक्ति की ओर मोड़ दर्शाया, बंगाल पुनर्जागरण के अंतिम प्रमुख चरण का प्रतिनिधित्व करते हैं।\n\nट्रैप जो बचना चाहिए: B-4 या C-1 — देबेंद्रनाथ और केशव चंद्र सेन को भ्रमित करना।\n\nमूल्य संवर्धन:\n• देबेंद्रनाथ टैगोर ने रवींद्रनाथ की प्रारंभिक शिक्षा प्रकृति और संस्कृत के संपर्क में दी — जिसने शांतिनिकेतन की बाद की दर्शनशास्त्र को प्रभावित किया।\n• केशव चंद्र सेन का 'न्यू डिस्पेंसशन' सभी विश्व धर्मों का संश्लेषण करने का प्रयास था — जो संस्थागत रूप से विफल रहा लेकिन बाद के सार्वभौमिक आंदोलनों को प्रभावित किया।\n• हेनरी डेरेज़ियो, एक अन्य बंगाल पुनर्जागरण के व्यक्तित्व, इन चारों से पहले थे — जो 'यंग बंगाल' के कट्टर संशयवादी तर्कवाद का प्रतिनिधित्व करते हैं।"
+    }
+  },
+  {
+    "uuid": "b04bf895-aec8-4003-b642-020cfac42340",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Vivekananda's Speeches and Writings: Key Texts and Their Themes"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Vivekananda's four yoga texts — themes correctly matched",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following pairings of Vivekananda's major yoga texts with their subject matter:\n\n1. Raja Yoga — Vivekananda's systematic presentation of the psychology of concentration, meditation, and the control of the mind as a path to spiritual realisation.\n2. Karma Yoga — Vivekananda's exposition of devotional love and surrender to a personal deity as the path best suited for emotional temperaments.\n3. Jnana Yoga — Vivekananda's treatment of the path of philosophical enquiry and discriminative reasoning, leading to direct realisation of the non-dual Brahman.\n4. Bhakti Yoga — Vivekananda's treatment of the psychology of devotion, including an analysis of different forms of love and the role of the Ishta (chosen deity) in spiritual development.\n\nHow many of the above pairings are correctly matched?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Raja Yoga — Vivekananda's systematic presentation of the psychology of concentration, meditation, and the control of the mind as a path to spiritual realisation.",
+          "verdict": "Correct",
+          "reason": "Raja Yoga deals with the science of the mind and the eightfold path of Patanjali's Yoga — Vivekananda's lectures in New York formed the basis of this text."
+        },
+        {
+          "statement": "Karma Yoga — Vivekananda's exposition of devotional love and surrender to a personal deity as the path best suited for emotional temperaments.",
+          "verdict": "Incorrect",
+          "reason": "This description belongs to Bhakti Yoga — Karma Yoga deals with the path of selfless action performed as worship without attachment to results. The devotional path is Bhakti, not Karma."
+        },
+        {
+          "statement": "Jnana Yoga — Vivekananda's treatment of the path of philosophical enquiry and discriminative reasoning, leading to direct realisation of the non-dual Brahman.",
+          "verdict": "Correct",
+          "reason": "Jnana Yoga systematises the path of knowledge — Viveka (discrimination between the real and unreal) and Vairagya (dispassion) — consistent with Advaita Vedanta."
+        },
+        {
+          "statement": "Bhakti Yoga — Vivekananda's treatment of the psychology of devotion, including an analysis of different forms of love and the role of the Ishta (chosen deity) in spiritual development.",
+          "verdict": "Correct",
+          "reason": "Bhakti Yoga deals with devotion, the forms of love, the guru-disciple relationship, and the Ishta concept — this is accurate."
+        }
+      ],
+      "strong_distractor": "c — 'Only three' is the correct answer here. The distractor for wrong answers would be (d) 'All four' for students who do not notice that Statement 2 describes Bhakti, not Karma Yoga.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Raja Yoga as the science of mind and meditation — accurate. Correct.",
+        "Evaluate Statement 2: Karma Yoga is selfless action; devotional surrender to a personal deity is Bhakti Yoga — Statement 2 confuses two texts. Incorrect.",
+        "Evaluate Statement 3: Jnana Yoga as the path of philosophical discrimination — accurate. Correct.",
+        "Evaluate Statement 4: Bhakti Yoga and the psychology of devotion including Ishta — accurate. Correct.",
+        "Three correct (1, 3, 4), one incorrect (2) — correct answer is (c) Only three."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the trap — it swaps the descriptions of Karma Yoga and Bhakti Yoga. Students who have a general sense that both involve feeling/action may not precisely distinguish them. Karma Yoga is action without attachment; Bhakti Yoga is love and devotion to a personal deity. The plausible-fabrication technique presents the Bhakti description using 'Karma Yoga' heading, relying on students' unfamiliarity with the precise content of each text.",
+      "final_explanation": "Vivekananda's four yoga texts systematise the classical Hindu paths to realisation (margas) for a modern audience, adapting them for different psychological temperaments.\n\n• Statement 1 — Correct: Raja Yoga is Vivekananda's commentary on Patanjali's Yoga Sutras, dealing with concentration, meditation, samadhi, and the psychology of the mind.\n• Statement 2 — Incorrect: The description given (devotional surrender to a personal deity for emotional temperaments) belongs to Bhakti Yoga. Karma Yoga deals with the performance of one's duty as worship — selfless action without ego-involvement or attachment to results.\n• Statement 3 — Correct: Jnana Yoga treats the path of knowledge and discrimination — enquiring 'What is real? What is unreal?' — leading to the direct realisation of non-dual Brahman.\n• Statement 4 — Correct: Bhakti Yoga analyses the nature of devotional love, its forms (shanta, dasya, sakhya, vatsalya, madhura), and the role of the chosen deity (Ishta) in spiritual development.\n\nValue Addition:\n• The four margas correspond to different human temperaments: Raja (scientific/psychologically oriented), Karma (active), Jnana (intellectual), Bhakti (devotional).\n• Vivekananda presented these as complementary, not competing — a synthesis characteristic of Neo-Vedanta.\n• His lectures delivered in New York and London formed the basis of these texts, published posthumously in some cases."
+    },
+    "hi": {
+      "display_text": "विवेकानंद के प्रमुख योग ग्रंथों को उनके विषय वस्तु के साथ निम्नलिखित जोड़ों पर विचार करें:\n\n1. राज योग — विवेकानंद की एकाग्रता, ध्यान और मन के नियंत्रण की मनोविज्ञान की व्यवस्थित प्रस्तुति, जो आध्यात्मिक साक्षात्कार का मार्ग है।\n2. कर्म योग — विवेकानंद का भक्तिपूर्ण प्रेम और व्यक्तिगत देवता के प्रति समर्पण का विवेचन, जो भावनात्मक स्वभाव के लिए सबसे उपयुक्त मार्ग है।\n3. ज्ञान योग — विवेकानंद का दार्शनिक जिज्ञासा और विवेचनात्मक तर्क के मार्ग का उपचार, जो अद्वैत ब्रह्म के प्रत्यक्ष साक्षात्कार की ओर ले जाता है।\n4. भक्ति योग — विवेकानंद का भक्ति की मनोविज्ञान का उपचार, जिसमें प्रेम के विभिन्न रूपों और आध्यात्मिक विकास में इष्ट (चयनित देवता) की भूमिका का विश्लेषण शामिल है।\n\nउपरोक्त में से कितने जोड़े सही मेल खाते हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "राज योग — विवेकानंद का ध्यान, एकाग्रता और मन के नियंत्रण की मनोविज्ञान की व्यवस्थित प्रस्तुति, जो आध्यात्मिक साक्षात्कार का मार्ग है।",
+          "verdict": "सही",
+          "reason": "राज योग मन के विज्ञान और पतंजलि के योग के अष्टांग मार्ग से संबंधित है — न्यूयॉर्क में विवेकानंद के व्याख्यान इस ग्रंथ का आधार बने।"
+        },
+        {
+          "statement": "कर्म योग — विवेकानंद का भक्तिपूर्ण प्रेम और व्यक्तिगत देवता के प्रति समर्पण का विवेचन, जो भावनात्मक स्वभाव के लिए सबसे उपयुक्त मार्ग है।",
+          "verdict": "गलत",
+          "reason": "यह विवरण भक्तियोग का है — कर्म योग निःस्वार्थ कर्म का मार्ग है जो फल की आसक्ति के बिना पूजा के रूप में किया जाता है। भक्तिपूर्ण मार्ग भक्तियोग है, कर्म योग नहीं।"
+        },
+        {
+          "statement": "ज्ञान योग — विवेकानंद का दार्शनिक जिज्ञासा और विवेचनात्मक तर्क के मार्ग का उपचार, जो अद्वैत ब्रह्म के प्रत्यक्ष साक्षात्कार की ओर ले जाता है।",
+          "verdict": "सही",
+          "reason": "ज्ञान योग ज्ञान के मार्ग को व्यवस्थित करता है — विवेक (वास्तविक और असत्य के बीच भेद) और वैराग्य (निर्लिप्तता) — जो अद्वैत वेदांत के अनुरूप है।"
+        },
+        {
+          "statement": "भक्ति योग — विवेकानंद का भक्ति की मनोविज्ञान का उपचार, जिसमें प्रेम के विभिन्न रूपों और आध्यात्मिक विकास में इष्ट (चयनित देवता) की भूमिका का विश्लेषण शामिल है।",
+          "verdict": "सही",
+          "reason": "भक्ति योग भक्ति, प्रेम के रूपों, गुरु-शिष्य संबंध और इष्ट की अवधारणा से संबंधित है — यह सही है।"
+        }
+      ],
+      "strong_distractor": "c — 'केवल तीन' यहाँ सही उत्तर है। गलत उत्तरों के लिए भ्रमित करने वाला विकल्प (d) 'सभी चार' होगा उन छात्रों के लिए जो ध्यान नहीं देते कि कथन 2 में भक्तियोग का वर्णन है, न कि कर्म योग का।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: राज योग मन और ध्यान का विज्ञान है — सटीक। सही।",
+        "कथन 2 का मूल्यांकन करें: कर्म योग निःस्वार्थ कर्म है; व्यक्तिगत देवता को समर्पण भक्तियोग है — कथन 2 दो ग्रंथों को भ्रमित करता है। गलत।",
+        "कथन 3 का मूल्यांकन करें: ज्ञान योग दार्शनिक विवेचना का मार्ग है — सटीक। सही।",
+        "कथन 4 का मूल्यांकन करें: भक्ति योग और भक्ति की मनोविज्ञान जिसमें इष्ट शामिल है — सटीक। सही।",
+        "तीन सही (1, 3, 4), एक गलत (2) — सही उत्तर (c) केवल तीन है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 जाल है — यह कर्म योग और भक्तियोग के वर्णनों को उलट देता है। जिन छात्रों को सामान्य ज्ञान है कि दोनों में भावना/कर्म शामिल है, वे इन्हें सटीक रूप से अलग नहीं कर पाते। कर्म योग फल की आसक्ति के बिना कर्म है; भक्तियोग व्यक्तिगत देवता के प्रति प्रेम और भक्ति है। यह संभावित-निर्माण तकनीक 'कर्म योग' शीर्षक के तहत भक्तियोग का वर्णन प्रस्तुत करती है, जो छात्रों की प्रत्येक ग्रंथ की सटीक सामग्री की अपरिचितता पर निर्भर है।",
+      "final_explanation": "विवेकानंद के चार योग ग्रंथ शास्त्रीय हिंदू मार्गों (मार्गों) को आधुनिक दर्शकों के लिए व्यवस्थित करते हैं, उन्हें विभिन्न मनोवैज्ञानिक स्वभावों के लिए अनुकूलित करते हुए।\n\n• कथन 1 — सही: राज योग पतंजलि के योग सूत्रों पर विवेकानंद की टिप्पणी है, जो एकाग्रता, ध्यान, समाधि और मनोविज्ञान से संबंधित है।\n• कथन 2 — गलत: दिया गया विवरण (भावनात्मक स्वभाव के लिए व्यक्तिगत देवता को समर्पण) भक्तियोग का है। कर्म योग अपने कर्तव्य का निर्वाह पूजा के रूप में करता है — अहंकार या फल की आसक्ति के बिना निःस्वार्थ कर्म।\n• कथन 3 — सही: ज्ञान योग ज्ञान और विवेक का मार्ग है — 'क्या वास्तविक है? क्या असत्य है?' — जो अद्वैत ब्रह्म के प्रत्यक्ष साक्षात्कार की ओर ले जाता है।\n• कथन 4 — सही: भक्ति योग भक्तिपूर्ण प्रेम के स्वरूपों (शांत, दास्य, सख्य, वात्सल्य, माधुर्य) और आध्यात्मिक विकास में चयनित देवता (इष्ट) की भूमिका का विश्लेषण करता है।\n\nमूल्यवर्धन:\n• ये चार मार्ग विभिन्न मानव स्वभावों के अनुरूप हैं: राज (वैज्ञानिक/मनोवैज्ञानिक), कर्म (सक्रिय), ज्ञान (बौद्धिक), भक्ति (भक्तिपूर्ण)।\n• विवेकानंद ने इन्हें प्रतिस्पर्धी नहीं बल्कि पूरक के रूप में प्रस्तुत किया — जो नव-वैदांत की विशेषता है।\n• उनके न्यूयॉर्क और लंदन में दिए गए व्याख्यान इन ग्रंथों का आधार बने, जिन्हें कुछ मामलों में मृत्यु के बाद प्रकाशित किया गया।"
+    }
+  },
+  {
+    "uuid": "f8708b39-d4f9-4fa6-b08a-0d1a3fdf90d6",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Ramakrishna Mission's Social Service Activities: Philosophy vs. Practice",
+        "Founding and Institutional Structure of the Ramakrishna Mission (1897)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Ramakrishna Mission founding and key institutional milestones — chronological sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of these events in the history of the Ramakrishna Mission and related milestones?\n\n1. Vivekananda's address at the Parliament of the World's Religions, Chicago\n2. Founding of the Ramakrishna Mission at Belur Math\n3. Death of Vivekananda at Belur Math\n4. Consecration of the main temple at Belur Math\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 3 → 2 → 4\n(d) 1 → 2 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) correctly places Chicago before the Mission's founding but places Belur Math temple consecration before Vivekananda's death, which reverses the actual sequence.",
+      "elimination_logic": [
+        "Parliament of the World's Religions, Chicago: 1893 — this must come first among the four events listed.",
+        "Founding of Ramakrishna Mission at Belur Math: 1897 — this follows Chicago by four years.",
+        "Death of Vivekananda: July 4, 1902 — this comes after the Mission's founding.",
+        "Consecration of the main temple at Belur Math: 1938 — this is the latest event, decades after Vivekananda's death. Correct sequence: Chicago (1893) → Mission founded (1897) → Vivekananda's death (1902) → Main temple consecrated (1938) = option (d)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap targets the relationship between the Mission's founding (1897) and the main temple's consecration (1938). Students who know Vivekananda was associated with Belur Math may assume the temple was built during his lifetime. The 36-year gap between his death and the temple's consecration is the precise fact that tests careful chronological knowledge.",
+      "final_explanation": "Four key events in the Ramakrishna-Vivekananda institutional timeline need to be placed in precise chronological order.\n\nCorrect sequence:\n1. Parliament of the World's Religions, Chicago (1893) — Vivekananda's global debut\n2. Founding of the Ramakrishna Mission at Belur Math (1897) — institutional founding coinciding with Calcutta plague relief\n3. Death of Vivekananda at Belur Math (4 July 1902) — end of his active leadership\n4. Consecration of the main temple at Belur Math (1938) — completed 36 years after his death\n\nWhy wrong options fail:\n• Options placing the temple consecration before Vivekananda's death reverse the actual sequence by 36 years.\n• Options placing the Mission's founding before Chicago reverse the causal relationship — Chicago success motivated fundraising and momentum that contributed to the Mission's founding.\n\nValue Addition:\n• The main temple at Belur Math was consecrated on 14 January 1938 by Swami Vijnanananda — one of Ramakrishna's direct disciples.\n• Vivekananda spent his final years at Belur Math and predicted he would not live to 40 — he died at 39.\n• The Mission's first major act (1897 plague relief) and its founding in the same year created an immediate association between the institution and seva."
+    },
+    "hi": {
+      "display_text": "रामकृष्ण मिशन के इतिहास और संबंधित मील के पत्थरों में इन घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. विश्व धर्म संसद, शिकागो में विवेकानंद का संबोधन\n2. बेलूर मठ में रामकृष्ण मिशन की स्थापना\n3. बेलूर मठ में विवेकानंद की मृत्यु\n4. बेलूर मठ के मुख्य मंदिर का अभिषेक\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 3 → 2 → 4\n(d) 1 → 2 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) सही ढंग से शिकागो को मिशन की स्थापना से पहले रखता है लेकिन बेलूर मठ के मुख्य मंदिर के अभिषेक को विवेकानंद की मृत्यु से पहले रखता है, जो वास्तविक क्रम को उलट देता है।",
+      "elimination_logic": [
+        "विश्व धर्म संसद, शिकागो: 1893 — यह सूचीबद्ध चार घटनाओं में सबसे पहले आनी चाहिए।",
+        "बेलूर मठ में रामकृष्ण मिशन की स्थापना: 1897 — यह शिकागो के चार वर्ष बाद है।",
+        "विवेकानंद की मृत्यु: 4 जुलाई, 1902 — यह मिशन की स्थापना के बाद की घटना है।",
+        "बेलूर मठ के मुख्य मंदिर का अभिषेक: 1938 — यह सबसे नवीनतम घटना है, विवेकानंद की मृत्यु के दशकों बाद। सही क्रम: शिकागो (1893) → मिशन की स्थापना (1897) → विवेकानंद की मृत्यु (1902) → मुख्य मंदिर का अभिषेक (1938) = विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक उलटफेर (temporal-swap) जाल मिशन की स्थापना (1897) और मुख्य मंदिर के अभिषेक (1938) के बीच संबंध को लक्षित करता है। जो छात्र जानते हैं कि विवेकानंद बेलूर मठ से जुड़े थे, वे मान सकते हैं कि मंदिर उनके जीवनकाल में बना था। उनकी मृत्यु और मंदिर के अभिषेक के बीच 36 वर्षों का अंतराल सावधानीपूर्वक कालानुक्रमिक ज्ञान की परीक्षा लेता है।",
+      "final_explanation": "रामकृष्ण-विवेकानंद संस्थागत समयरेखा की चार प्रमुख घटनाओं को सटीक कालानुक्रमिक क्रम में रखना आवश्यक है।\n\nसही क्रम:\n1. विश्व धर्म संसद, शिकागो (1893) — विवेकानंद का वैश्विक पदार्पण\n2. बेलूर मठ में रामकृष्ण मिशन की स्थापना (1897) — संस्थागत स्थापना जो कोलकाता प्लेग राहत के साथ हुई\n3. बेलूर मठ में विवेकानंद की मृत्यु (4 जुलाई 1902) — उनकी सक्रिय नेतृत्व का अंत\n4. बेलूर मठ के मुख्य मंदिर का अभिषेक (1938) — उनकी मृत्यु के 36 वर्ष बाद पूरा हुआ\n\nगलत विकल्प क्यों असफल होते हैं:\n• जो विकल्प मंदिर के अभिषेक को विवेकानंद की मृत्यु से पहले रखते हैं, वे वास्तविक क्रम को 36 वर्ष उलट देते हैं।\n• जो विकल्प मिशन की स्थापना को शिकागो से पहले रखते हैं, वे कारणात्मक संबंध को उलट देते हैं — शिकागो की सफलता ने मिशन की स्थापना के लिए धन जुटाने और गति प्रदान की।\n\nमूल्यवर्धन:\n• बेलूर मठ के मुख्य मंदिर का अभिषेक 14 जनवरी 1938 को स्वामी विज्ञानानंद — रामकृष्ण के प्रत्यक्ष शिष्य — द्वारा किया गया था।\n• विवेकानंद ने अपने अंतिम वर्ष बेलूर मठ में बिताए और भविष्यवाणी की थी कि वे 40 वर्ष के नहीं होंगे — वे 39 वर्ष की आयु में मृत्यु हो गई।\n• मिशन का पहला प्रमुख कार्य (1897 प्लेग राहत) और उसी वर्ष की स्थापना ने संस्था और सेवा के बीच तत्काल संबंध स्थापित किया।"
+    }
+  },
+  {
+    "uuid": "58d6ce17-3069-4f90-b850-a84f975d6fbd",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Chicago Parliament of Religions, 1893: Significance and Context",
+        "Neo-Vedanta: Vivekananda's Philosophical Reformulation"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Chicago Parliament — Vivekananda's representation and impact",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Parliament of the World's Religions and its context:\n\n1. Vivekananda's appearance at the Chicago Parliament of Religions in 1893 significantly enhanced Indian self-confidence during the colonial period by demonstrating that an Indian spiritual teacher could address a global audience as an intellectual equal.\n2. The Vedanta Society that Vivekananda established in New York was founded prior to his address at the Chicago Parliament of Religions, which was the occasion that brought him to America.\n3. Vivekananda's Chicago address included a critique of religious intolerance and an argument for universal brotherhood — themes consistent with his broader Neo-Vedantic framework of spiritual universalism.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vivekananda's appearance at the Chicago Parliament of Religions in 1893 significantly enhanced Indian self-confidence during the colonial period by demonstrating that an Indian spiritual teacher could address a global audience as an intellectual equal.",
+          "verdict": "Correct",
+          "reason": "This is one of the most documented impacts of the Chicago address — it generated enormous pride in India and challenged the colonial narrative of Indian civilisational inferiority."
+        },
+        {
+          "statement": "The Vedanta Society that Vivekananda established in New York was founded prior to his address at the Chicago Parliament of Religions, which was the occasion that brought him to America.",
+          "verdict": "Incorrect",
+          "reason": "Vivekananda established the Vedanta Society in New York in 1894 — after the 1893 Chicago Parliament, not before it. His success at Chicago enabled him to stay in America and subsequently establish the Society."
+        },
+        {
+          "statement": "Vivekananda's Chicago address included a critique of religious intolerance and an argument for universal brotherhood — themes consistent with his broader Neo-Vedantic framework of spiritual universalism.",
+          "verdict": "Correct",
+          "reason": "His Chicago speeches consistently emphasised tolerance, universal brotherhood, and the validity of all sincere religious paths — core themes of his Neo-Vedanta."
+        }
+      ],
+      "strong_distractor": "d — 'All three' tempts students who know the general facts about Chicago but do not recall the precise founding year of the New York Vedanta Society relative to Chicago.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Chicago's impact on Indian self-confidence is historically well-established. Statement 1 is correct.",
+        "Evaluate Statement 2: The New York Vedanta Society was founded in 1894 — after Chicago 1893, not before. Statement 2 claims it was founded prior to Chicago. Incorrect.",
+        "Evaluate Statement 3: Universal brotherhood and critique of religious intolerance were indeed the central themes of his Chicago addresses. Statement 3 is correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect — correct answer is (a) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The temporal-swap in Statement 2 exploits the reasonable assumption that Vivekananda may have established the Vedanta Society before his famous Chicago address. In fact, Chicago was the gateway — its success provided the financial support and invitations that enabled his extended stay in America, during which he founded the Vedanta Society in 1894.",
+      "final_explanation": "The Chicago Parliament of Religions was both a cause and a catalyst — it created the platform, reputation, and financial support for Vivekananda's subsequent work in the West.\n\n• Statement 1 — Correct: The impact of Chicago on colonial India's self-image was immediate and profound. Newspapers reported his reception; it became a source of national pride.\n• Statement 2 — Incorrect: The Vedanta Society of New York was established in 1894, a year after Chicago. The Parliament was his introduction to American audiences; the Society was a subsequent institutionalisation of that success.\n• Statement 3 — Correct: His Chicago speeches — particularly 'Response to Welcome' and 'Paper on Hinduism' — consistently argued for universal religious tolerance, mutual respect, and the validity of all sincere paths to God.\n\nValue Addition:\n• Vivekananda attended the Parliament as a self-representing monk without any official institutional sponsorship — he reportedly had difficulty getting a delegate ticket.\n• He spent nearly four years in the USA and UK after Chicago (1893–1896) before returning to India.\n• The Vedanta Societies he founded in the USA continue to function as his most direct institutional legacy in the West."
+    },
+    "hi": {
+      "display_text": "विश्व धर्म संसद और उसके संदर्भ के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 1893 में शिकागो धर्म संसद में विवेकानंद की उपस्थिति ने औपनिवेशिक काल में भारतीय आत्मविश्वास को महत्वपूर्ण रूप से बढ़ाया क्योंकि इसने यह दिखाया कि एक भारतीय आध्यात्मिक शिक्षक एक वैश्विक दर्शकों को बौद्धिक समकक्ष के रूप में संबोधित कर सकता है।\n2. वेदांत सोसाइटी जो विवेकानंद ने न्यूयॉर्क में स्थापित की थी, वह शिकागो धर्म संसद में उनके भाषण से पहले स्थापित की गई थी, जो उन्हें अमेरिका लाने का अवसर था।\n3. विवेकानंद के शिकागो भाषण में धार्मिक असहिष्णुता की आलोचना और सार्वभौमिक भ्रातृत्व के लिए तर्क शामिल थे — ये विषय उनके व्यापक नव-वेदांत आध्यात्मिक सार्वभौमिकता के ढांचे के अनुरूप थे।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1893 में शिकागो धर्म संसद में विवेकानंद की उपस्थिति ने औपनिवेशिक काल में भारतीय आत्मविश्वास को महत्वपूर्ण रूप से बढ़ाया क्योंकि इसने यह दिखाया कि एक भारतीय आध्यात्मिक शिक्षक एक वैश्विक दर्शकों को बौद्धिक समकक्ष के रूप में संबोधित कर सकता है।",
+          "verdict": "सही है",
+          "reason": "यह शिकागो भाषण के सबसे प्रलेखित प्रभावों में से एक है — इसने भारत में अत्यधिक गर्व उत्पन्न किया और भारतीय सभ्यता की हीनता के औपनिवेशिक कथानक को चुनौती दी।"
+        },
+        {
+          "statement": "वेदांत सोसाइटी जो विवेकानंद ने न्यूयॉर्क में स्थापित की थी, वह शिकागो धर्म संसद में उनके भाषण से पहले स्थापित की गई थी, जो उन्हें अमेरिका लाने का अवसर था।",
+          "verdict": "गलत",
+          "reason": "विवेकानंद ने न्यूयॉर्क में वेदांत सोसाइटी 1894 में स्थापित की — 1893 के शिकागो धर्म संसद के बाद, न कि उससे पहले। शिकागो में उनकी सफलता ने उन्हें अमेरिका में रहने और बाद में सोसाइटी स्थापित करने में सक्षम बनाया।"
+        },
+        {
+          "statement": "विवेकानंद के शिकागो भाषण में धार्मिक असहिष्णुता की आलोचना और सार्वभौमिक भ्रातृत्व के लिए तर्क शामिल थे — ये विषय उनके व्यापक नव-वेदांत आध्यात्मिक सार्वभौमिकता के ढांचे के अनुरूप थे।",
+          "verdict": "सही है",
+          "reason": "उनके शिकागो भाषणों में सहिष्णुता, सार्वभौमिक भ्रातृत्व, और सभी ईमानदार धार्मिक मार्गों की वैधता पर लगातार जोर दिया गया — जो उनके नव-वेदांत के मुख्य विषय हैं।"
+        }
+      ],
+      "strong_distractor": "d — 'सभी तीन' उन छात्रों को भ्रमित करता है जो शिकागो के सामान्य तथ्य जानते हैं लेकिन न्यूयॉर्क वेदांत सोसाइटी की स्थापना के सटीक वर्ष को शिकागो के सापेक्ष याद नहीं रखते।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: भारतीय आत्मविश्वास पर शिकागो का प्रभाव ऐतिहासिक रूप से अच्छी तरह स्थापित है। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: न्यूयॉर्क वेदांत सोसाइटी 1894 में स्थापित हुई — 1893 के शिकागो के बाद, न कि पहले। कथन 2 कहता है कि यह शिकागो से पहले स्थापित हुई थी। गलत।",
+        "कथन 3 का मूल्यांकन करें: धार्मिक असहिष्णुता की आलोचना और सार्वभौमिक भ्रातृत्व वास्तव में उनके शिकागो भाषणों के केंद्रीय विषय थे। कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — सही उत्तर (a) केवल 1 और 3 है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में कालानुक्रमिक स्थानांतरण इस उचित धारणा का फायदा उठाता है कि विवेकानंद ने प्रसिद्ध शिकागो भाषण से पहले वेदांत सोसाइटी स्थापित की होगी। वास्तव में, शिकागो उनका प्रवेश द्वार था — इसकी सफलता ने वित्तीय समर्थन और निमंत्रण प्रदान किए, जिससे वे अमेरिका में लंबी अवधि तक रह सके और 1894 में वेदांत सोसाइटी की स्थापना की।",
+      "final_explanation": "शिकागो धर्म संसद एक कारण और उत्प्रेरक दोनों था — इसने विवेकानंद के पश्चिम में बाद के कार्यों के लिए मंच, प्रतिष्ठा और वित्तीय समर्थन बनाया।\n\n• कथन 1 — सही: औपनिवेशिक भारत की आत्म-छवि पर शिकागो का प्रभाव तत्काल और गहरा था। समाचार पत्रों ने उनकी स्वागत रिपोर्ट की; यह राष्ट्रीय गर्व का स्रोत बन गया।\n• कथन 2 — गलत: न्यूयॉर्क की वेदांत सोसाइटी 1894 में स्थापित हुई, जो शिकागो के एक वर्ष बाद है। संसद उनके अमेरिकी दर्शकों से परिचय था; सोसाइटी उस सफलता का बाद का संस्थागत रूप थी।\n• कथन 3 — सही: उनके शिकागो भाषण — विशेष रूप से 'स्वागत के प्रति प्रतिक्रिया' और 'हिंदू धर्म पर पत्र' — लगातार सार्वभौमिक धार्मिक सहिष्णुता, पारस्परिक सम्मान, और सभी ईमानदार मार्गों की वैधता के लिए तर्क देते थे।\n\nमूल्य संवर्धन:\n• विवेकानंद संसद में एक स्व-प्रतिनिधि संन्यासी के रूप में गए थे, बिना किसी आधिकारिक संस्थागत प्रायोजन के — कहा जाता है कि उन्हें प्रतिनिधि टिकट पाने में कठिनाई हुई।\n• उन्होंने शिकागो के बाद लगभग चार वर्ष (1893–1896) अमेरिका और यूके में बिताए, फिर भारत लौटे।\n• अमेरिका में स्थापित वेदांत सोसाइटीज उनके पश्चिम में सबसे प्रत्यक्ष संस्थागत विरासत के रूप में कार्यरत हैं।"
+    }
+  },
+  {
+    "uuid": "7a2a131a-5154-437d-bc5a-3322711a8943",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Social and Religious Reform Movements",
+      "sub_topic": "Ramakrishna Mission — Vivekananda",
+      "concepts_used": [
+        "Comparison: Ramakrishna Mission vs. Arya Samaj as Reform Movements",
+        "Vivekananda's Concept of 'Practical Vedanta' and Social Reform"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Arya Samaj Shuddhi vs. Mission's universal acceptance — distinct responses to conversion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — of a reform movement and its defining doctrinal position — is correctly matched?\n\n(a) Brahmo Samaj: Acceptance of all image-based devotional forms as valid expressions of spiritual yearning within a reformed Hindu framework\n(b) Ramakrishna Mission: Conduct of the Shuddhi movement for the reconversion of those who had converted from Hinduism to Islam or Christianity\n(c) Arya Samaj: 'Back to the Vedas' as the sole scriptural authority, combined with rejection of image worship as a post-Vedic innovation alien to authentic Hindu practice\n(d) Arya Samaj: Philosophical acceptance of all religions as equally valid paths to the Divine, based on the universalist teachings of Dayananda Saraswati",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'Ramakrishna Mission and the Shuddhi movement for reconversion of non-Hindus' is deceptive because the Mission's philosophy of universal acceptance sounds like it might include welcoming converts back to Hinduism.",
+      "elimination_logic": [
+        "Evaluate (a): The Brahmo Samaj rejected image worship — this is accurate. But matching it with 'acceptance of all image-based devotional forms' is the opposite of its actual position. Incorrect.",
+        "Evaluate (b): The Shuddhi movement belongs to the Arya Samaj under Dayananda Saraswati's legacy, not the Ramakrishna Mission. The Mission explicitly maintained a non-proselytising, non-reconversion philosophy. Incorrect.",
+        "Evaluate (c): The Arya Samaj's 'Back to the Vedas' (Vedic authority only, rejecting post-Vedic additions) and its rejection of image worship are its two most defining doctrinal positions — this pair is correctly matched.",
+        "Evaluate (d): The Ramakrishna Mission's philosophy does hold that all religions lead to the same truth — but 'equal validity of all religions as paths to the Divine' is the Mission's position, not the Arya Samaj's. The Arya Samaj held Vedic religion as superior. Correct answer is (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap in option (b) is the primary trap — attributing the Shuddhi movement to the Ramakrishna Mission. Students who know both organisations responded to religious conversion pressure may not recall which one used Shuddhi (Arya Samaj) and which one used philosophical universalism (Mission). The Mission's non-proselytising character is explicitly incompatible with running a reconversion movement.",
+      "final_explanation": "Distinguishing between the Arya Samaj's and Ramakrishna Mission's responses to the challenge of religious conversion requires precise organisational knowledge.\n\n• Option (a) — Incorrect: The Brahmo Samaj rejected image worship — matching it with 'acceptance of all image-based devotional forms' completely inverts its actual position.\n• Option (b) — Incorrect: The Shuddhi movement was the Arya Samaj's initiative for reconverting those who had left Hinduism. The Ramakrishna Mission's philosophy of universal acceptance is philosophically incompatible with a reconversion programme.\n• Option (c) — Correct: The Arya Samaj's two most defining doctrinal positions are precisely 'Back to the Vedas' (Vedic texts as the sole authority, rejecting Puranas and post-Vedic accretions) and the rejection of image worship as an un-Vedic innovation.\n• Option (d) — Incorrect: The equal validity of all religious paths as descriptions of the Arya Samaj's philosophy is wrong — the Arya Samaj held that Vedic religion was the original and superior form of truth.\n\nValue Addition:\n• The Arya Samaj's Shuddhi movement in the 1920s–1930s was a major source of communal tension, particularly in Punjab.\n• Dayananda Saraswati founded the Arya Samaj in Bombay in 1875 — nearly a quarter century before the Ramakrishna Mission's 1897 founding.\n• The Arya Samaj's DAV institutions represent its most enduring social legacy, alongside the Gurukul system."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा — एक सुधार आंदोलन और उसके प्रमुख सैद्धांतिक सिद्धांत का — सही मेल खाता है?\n\n(a) ब्रह्म समाज: एक सुधारित हिंदू ढांचे के भीतर आध्यात्मिक आकांक्षा के वैध अभिव्यक्तियों के रूप में सभी मूर्ति-आधारित भक्तिपूर्ण रूपों की स्वीकृति\n(b) रामकृष्ण मिशन: उन लोगों के पुनरावर्तन के लिए शुद्धि आंदोलन का संचालन जो हिंदू धर्म से इस्लाम या ईसाई धर्म में परिवर्तित हो गए थे\n(c) आर्य समाज: केवल वेदों को एकमात्र शास्त्रीय अधिकार मानना, साथ ही मूर्ति पूजा को एक वैदिक बाद का नवाचार मानकर अस्वीकार करना जो प्रामाणिक हिंदू अभ्यास से अलग है\n(d) आर्य समाज: दयानंद सरस्वती की सार्वभौमिक शिक्षाओं के आधार पर सभी धर्मों को ईश्वरीय मार्ग के समान रूप से वैध मार्ग के रूप में दार्शनिक स्वीकृति",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'Ramakrishna Mission and the Shuddhi movement for reconversion of non-Hindus' is deceptive because the Mission's philosophy of universal acceptance sounds like it might include welcoming converts back to Hinduism.",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: ब्रह्म समाज ने मूर्ति पूजा को अस्वीकार किया — यह सही है। लेकिन इसे 'सभी मूर्ति-आधारित भक्तिपूर्ण रूपों की स्वीकृति' से जोड़ना इसके वास्तविक दृष्टिकोण के विपरीत है। गलत।",
+        "(b) का मूल्यांकन करें: शुद्धि आंदोलन आर्य समाज का है जो दयानंद सरस्वती की विरासत है, न कि रामकृष्ण मिशन का। मिशन स्पष्ट रूप से गैर-प्रचारक और गैर-पुनरावर्तन की नीति रखता है। गलत।",
+        "(c) का मूल्यांकन करें: आर्य समाज का 'वेदों की ओर वापसी' (केवल वैदिक अधिकार, वैदिक बाद के अतिरिक्तों को अस्वीकार करना) और मूर्ति पूजा का अस्वीकार इसके दो सबसे प्रमुख सैद्धांतिक सिद्धांत हैं — यह जोड़ी सही मेल खाती है।",
+        "(d) का मूल्यांकन करें: रामकृष्ण मिशन की विचारधारा यह मानती है कि सभी धर्म एक ही सत्य की ओर ले जाते हैं — लेकिन 'सभी धर्मों की समान वैधता' मिशन की स्थिति है, न कि आर्य समाज की। आर्य समाज ने वैदिक धर्म को श्रेष्ठ माना। सही उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "(b) विकल्प में इकाई-स्थानांतरण मुख्य जालसाजी है — शुद्धि आंदोलन को रामकृष्ण मिशन से जोड़ना। जो छात्र दोनों संगठनों को धार्मिक परिवर्तन के दबाव के प्रति प्रतिक्रिया देते हुए जानते हैं, वे याद नहीं रख पाते कि शुद्धि आंदोलन किसने किया (आर्य समाज) और किसने दार्शनिक सार्वभौमिकता अपनाई (मिशन)। मिशन का गैर-प्रचारक चरित्र पुनरावर्तन आंदोलन चलाने के साथ स्पष्ट रूप से असंगत है।",
+      "final_explanation": "धार्मिक परिवर्तन की चुनौती के प्रति आर्य समाज और रामकृष्ण मिशन की प्रतिक्रियाओं को अलग करने के लिए सटीक संगठनात्मक ज्ञान आवश्यक है।\n\n• विकल्प (a) — गलत: ब्रह्म समाज ने मूर्ति पूजा को अस्वीकार किया — इसे 'सभी मूर्ति-आधारित भक्तिपूर्ण रूपों की स्वीकृति' से जोड़ना इसके वास्तविक दृष्टिकोण को पूरी तरह उलट देता है।\n• विकल्प (b) — गलत: शुद्धि आंदोलन आर्य समाज की पहल थी जो हिंदू धर्म छोड़ने वालों को पुनः हिंदू धर्म में लाने के लिए था। रामकृष्ण मिशन की सार्वभौमिक स्वीकृति की विचारधारा पुनरावर्तन कार्यक्रम के साथ दार्शनिक रूप से असंगत है।\n• विकल्प (c) — सही: आर्य समाज के दो सबसे प्रमुख सैद्धांतिक सिद्धांत हैं 'वेदों की ओर वापसी' (केवल वैदिक ग्रंथों को अधिकार मानना, पुराणों और वैदिक बाद के अतिरिक्तों को अस्वीकार करना) और मूर्ति पूजा का अस्वीकार जो एक गैर-वैदिक नवाचार है।\n• विकल्प (d) — गलत: आर्य समाज की विचारधारा के रूप में सभी धार्मिक मार्गों की समान वैधता गलत है — आर्य समाज ने वैदिक धर्म को मूल और श्रेष्ठ सत्य माना।\n\nमूल्य संवर्धन:\n• 1920-1930 के दशक में आर्य समाज का शुद्धि आंदोलन पंजाब में साम्प्रदायिक तनाव का प्रमुख स्रोत था।\n• दयानंद सरस्वती ने 1875 में बॉम्बे में आर्य समाज की स्थापना की — जो रामकृष्ण मिशन की 1897 की स्थापना से लगभग एक चौथाई सदी पहले है।\n• आर्य समाज के DAV संस्थान इसके सबसे स्थायी सामाजिक विरासत हैं, गुरुकुल प्रणाली के साथ।"
+    }
+  }
+]

@@ -1,0 +1,1429 @@
+[
+  {
+    "uuid": "bc1611fd-097d-47a9-ab4f-716e908ea513",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Establishment: Statutory vs. Non-Statutory Phase"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "SEBI statutory empowerment year 1992",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following years marks the conferral of statutory status on the Securities and Exchange Board of India through an Act of Parliament?\n\n(a) 1988\n(b) 1992\n(c) 1994\n(d) 2000",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because 1988 is the real year SEBI was created, just not as a statutory body, making it the most tempting wrong answer.",
+      "elimination_logic": [
+        "Eliminate (a): 1988 is when SEBI was established as a non-statutory body under a government resolution — not when it received statutory backing.",
+        "Eliminate (c): 1994 is not associated with any foundational SEBI legislation — a fabricated temporal option.",
+        "Eliminate (d): 2000 relates to the IT Act and dot-com reforms, not SEBI's statutory birth.",
+        "Confirm (b): The SEBI Act was passed in 1992, conferring statutory status and independent regulatory powers."
+      ],
+      "upsc_trap_explanation": "The most common trap here is conflating establishment (1988) with statutory empowerment (1992). A student who has read that 'SEBI was set up in 1988' will instinctively mark (a). The question exploits the fact that SEBI existed for four years as a toothless administrative body before Parliament gave it legal teeth. The Harshad Mehta scam of 1992 is often cited as the proximate trigger for the SEBI Act — but the scam and the Act are both 1992 events, not 1988.",
+      "final_explanation": "SEBI's origin story has two distinct milestones that UPSC systematically conflates in its options. In 1988, the government set up SEBI through an executive resolution — it had no statutory authority, could not enforce compliance, and functioned more as an advisory body. The Harshad Mehta scam exposed how vulnerable the securities market was without a powerful independent regulator. Parliament responded with the SEBI Act, 1992, which gave SEBI quasi-legislative, quasi-executive, and quasi-judicial powers.\n\n• Option (a) — 1988: This is the year of non-statutory establishment — SEBI existed but lacked enforcement power. Incorrect.\n• Option (b) — 1992: The SEBI Act, 1992 granted statutory status. Correct.\n• Option (c) — 1994: No relevant SEBI legislation. Incorrect.\n• Option (d) — 2000: No SEBI foundational event. Incorrect.\n\nValue Addition:\n• SEBI's headquarters is in Mumbai (Bandra Kurla Complex).\n• The 1992 Act was amended significantly in 2002 and 2014 to expand SEBI's powers.\n• The Harshad Mehta scam involved manipulation of bank receipts (BRs) and the Bombay Stock Exchange index."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन सा वर्ष संसद के अधिनियम के माध्यम से भारतीय प्रतिभूति और विनिमय बोर्ड को सांविधिक दर्जा प्रदान करने का है?\n\n(a) 1988\n(b) 1992\n(c) 1994\n(d) 2000",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि 1988 वह वास्तविक वर्ष है जब SEBI की स्थापना हुई थी, केवल वह एक सांविधिक निकाय के रूप में नहीं था, जो इसे सबसे आकर्षक गलत उत्तर बनाता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: 1988 वह वर्ष है जब SEBI को एक गैर-सांविधिक निकाय के रूप में सरकार के प्रस्ताव के तहत स्थापित किया गया था — न कि जब इसे सांविधिक अधिकार प्राप्त हुए।",
+        "(c) को हटाएं: 1994 का SEBI के किसी भी मौलिक कानून से कोई संबंध नहीं है — एक काल्पनिक समय विकल्प।",
+        "(d) को हटाएं: 2000 आईटी अधिनियम और डॉट-कॉम सुधारों से संबंधित है, न कि SEBI के सांविधिक जन्म से।",
+        "(b) की पुष्टि करें: SEBI अधिनियम 1992 में पारित हुआ, जिसने सांविधिक दर्जा और स्वतंत्र नियामक शक्तियां प्रदान कीं।"
+      ],
+      "upsc_trap_explanation": "यहाँ सबसे आम जाल स्थापना (1988) को सांविधिक अधिकार (1992) से भ्रमित करना है। जो छात्र पढ़ चुका है कि 'SEBI की स्थापना 1988 में हुई थी' वह स्वाभाविक रूप से (a) को चिह्नित करेगा। प्रश्न इस तथ्य का उपयोग करता है कि SEBI चार वर्षों तक एक बिना दांत वाला प्रशासनिक निकाय था, इससे पहले कि संसद ने इसे कानूनी अधिकार दिए। 1992 का हर्षद मेहता घोटाला अक्सर SEBI अधिनियम के लिए निकटतम कारण के रूप में उद्धृत किया जाता है — लेकिन घोटाला और अधिनियम दोनों 1992 की घटनाएं हैं, न कि 1988 की।",
+      "final_explanation": "SEBI की उत्पत्ति की कहानी में दो अलग-अलग मील के पत्थर हैं जिन्हें UPSC अपने विकल्पों में व्यवस्थित रूप से मिलाता है। 1988 में, सरकार ने SEBI को एक कार्यकारी प्रस्ताव के माध्यम से स्थापित किया — इसके पास कोई सांविधिक अधिकार नहीं था, यह अनुपालन लागू नहीं कर सकता था, और यह अधिकतर एक सलाहकार निकाय के रूप में कार्य करता था। हर्षद मेहता घोटाले ने यह उजागर किया कि बिना एक शक्तिशाली स्वतंत्र नियामक के प्रतिभूति बाजार कितना असुरक्षित था। संसद ने SEBI अधिनियम, 1992 के साथ प्रतिक्रिया दी, जिसने SEBI को अर्ध-वैधानिक, अर्ध-कार्यकारी और अर्ध-न्यायिक शक्तियां दीं।\n\n• विकल्प (a) — 1988: यह गैर-सांविधिक स्थापना का वर्ष है — SEBI मौजूद था लेकिन उसके पास प्रवर्तन शक्ति नहीं थी। गलत।\n• विकल्प (b) — 1992: SEBI अधिनियम, 1992 ने सांविधिक दर्जा दिया। सही।\n• विकल्प (c) — 1994: कोई प्रासंगिक SEBI कानून नहीं। गलत।\n• विकल्प (d) — 2000: कोई SEBI मौलिक घटना नहीं। गलत।\n\nमूल्य संवर्धन:\n• SEBI का मुख्यालय मुंबई (बांद्रा कुर्ला कॉम्प्लेक्स) में है।\n• 1992 के अधिनियम में 2002 और 2014 में SEBI की शक्तियों को बढ़ाने के लिए महत्वपूर्ण संशोधन किए गए।\n• हर्षद मेहता घोटाले में बैंक रसीदों (BRs) और बॉम्बे स्टॉक एक्सचेंज सूचकांक का हेरफेर शामिल था।"
+    }
+  },
+  {
+    "uuid": "743faa64-9b9c-4ef0-9b1f-c6383d51de88",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Tri-Functional Mandate: Quasi-Legislative, Quasi-Executive, and Quasi-Judicial Powers"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "SEBI tri-functional quasi powers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about SEBI's functional powers:\n\n1. SEBI's power to frame regulations governing market intermediaries flows from its quasi-legislative function.\n2. SEBI can directly impose criminal imprisonment on individuals found guilty of market manipulation without routing the matter through courts.\n3. When SEBI conducts inspections of stock brokers and issues show-cause notices, it exercises its quasi-executive function.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEBI's power to frame regulations governing market intermediaries flows from its quasi-legislative function.",
+          "verdict": "Correct",
+          "reason": "Section 30 of the SEBI Act empowers SEBI to make regulations — this is the classic quasi-legislative power, analogous to delegated legislation."
+        },
+        {
+          "statement": "SEBI can directly impose criminal imprisonment on individuals found guilty of market manipulation without routing the matter through courts.",
+          "verdict": "Incorrect",
+          "reason": "SEBI can impose monetary penalties and debarment but cannot impose criminal penalties — criminal prosecution must be routed through a court of law."
+        },
+        {
+          "statement": "When SEBI conducts inspections of stock brokers and issues show-cause notices, it exercises its quasi-executive function.",
+          "verdict": "Correct",
+          "reason": "Investigation, inspection, and enforcement of compliance are quasi-executive functions — distinct from adjudication (quasi-judicial) or regulation-making (quasi-legislative)."
+        }
+      ],
+      "strong_distractor": "d — All three statements appear plausible because students often assume a powerful regulator like SEBI has complete enforcement authority including criminal powers.",
+      "elimination_logic": [
+        "Confirm Statement 1: Section 30 of the SEBI Act explicitly confers regulation-making power — this is textbook quasi-legislative authority.",
+        "Eliminate Statement 2: SEBI cannot impose criminal imprisonment — this is reserved for courts; SEBI's direct powers are civil in nature (monetary penalties, debarment).",
+        "Confirm Statement 3: Inspections and show-cause notices are enforcement actions — squarely within quasi-executive function.",
+        "Statements 1 and 3 are correct; Statement 2 is incorrect — correct option is (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the pivotal trap. Students who understand that SEBI is a powerful regulator often assume it can impose all forms of punishment including imprisonment. The reality is that SEBI's direct powers stop at monetary penalties and market bans. For criminal prosecution — say, for fraudulent trading — SEBI must file a complaint before a competent court. This boundary between civil regulatory power and criminal judicial power is a recurring UPSC distinction.",
+      "final_explanation": "SEBI is one of the rare Indian regulatory bodies that combines all three functional roles. Understanding their precise scope is critical for eliminating wrong options.\n\n• Statement 1 — Correct: Section 30 of the SEBI Act is the source of SEBI's regulation-making power. The regulations SEBI frames (e.g., LODR, Insider Trading Regulations) have the force of law — this is quasi-legislative power in action.\n• Statement 2 — Incorrect: SEBI's quasi-judicial power extends to adjudication, imposition of monetary penalties, and issuance of debarment orders. It does NOT include the power to sentence anyone to imprisonment — that requires a criminal court.\n• Statement 3 — Correct: Inspections of brokers, investigations into price manipulation, and issuance of show-cause notices are enforcement (quasi-executive) actions.\n\nValue Addition:\n• SEBI's adjudicating officers are appointed under Section 15-I of the SEBI Act.\n• CCI (Competition Commission of India) also has a similar tri-functional structure but is distinct from SEBI in subject matter.\n• SEBI's Securities Appellate Tribunal (SAT) reviews quasi-judicial orders — not quasi-executive or quasi-legislative ones."
+    },
+    "hi": {
+      "display_text": "SEBI के कार्यात्मक अधिकारों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बाजार मध्यस्थों को नियंत्रित करने वाले नियम बनाने का SEBI का अधिकार उसके अर्ध-विधायी (quasi-legislative) कार्य से उत्पन्न होता है।\n2. SEBI सीधे उन व्यक्तियों को जो बाजार में हेरफेर के दोषी पाए जाते हैं, बिना न्यायालय के माध्यम से जाए, आपराधिक कारावास लगा सकता है।\n3. जब SEBI स्टॉक ब्रोकर्स का निरीक्षण करता है और कारण बताओ नोटिस जारी करता है, तो वह अपना अर्ध-कार्यकारी (quasi-executive) कार्य करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEBI's power to frame regulations governing market intermediaries flows from its quasi-legislative function.",
+          "verdict": "सही",
+          "reason": "SEBI अधिनियम की धारा 30 SEBI को नियम बनाने का अधिकार देती है — यह पारंपरिक अर्ध-विधायी शक्ति है, जो प्रतिनिधि विधान के समान है।"
+        },
+        {
+          "statement": "SEBI can directly impose criminal imprisonment on individuals found guilty of market manipulation without routing the matter through courts.",
+          "verdict": "गलत",
+          "reason": "SEBI मौद्रिक दंड और प्रतिबंध लगा सकता है लेकिन आपराधिक दंड नहीं लगा सकता — आपराधिक अभियोजन न्यायालय के माध्यम से होना चाहिए।"
+        },
+        {
+          "statement": "When SEBI conducts inspections of stock brokers and issues show-cause notices, it exercises its quasi-executive function.",
+          "verdict": "सही",
+          "reason": "जांच, निरीक्षण, और अनुपालन प्रवर्तन अर्ध-कार्यकारी कार्य हैं — जो निर्णय (अर्ध-न्यायिक) या नियम निर्माण (अर्ध-विधायी) से भिन्न हैं।"
+        }
+      ],
+      "strong_distractor": "d — तीनों कथन विश्वसनीय प्रतीत होते हैं क्योंकि छात्र अक्सर मान लेते हैं कि SEBI जैसे शक्तिशाली नियामक के पास आपराधिक शक्तियां सहित पूर्ण प्रवर्तन अधिकार होते हैं।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें: SEBI अधिनियम की धारा 30 स्पष्ट रूप से नियम बनाने का अधिकार देती है — यह शास्त्रीय अर्ध-विधायी अधिकार है।",
+        "कथन 2 को खारिज करें: SEBI आपराधिक कारावास नहीं लगा सकता — यह अधिकार न्यायालयों के लिए आरक्षित है; SEBI के सीधे अधिकार नागरिक प्रकृति के हैं (मौद्रिक दंड, प्रतिबंध)।",
+        "कथन 3 की पुष्टि करें: निरीक्षण और कारण बताओ नोटिस प्रवर्तन क्रियाएं हैं — जो पूरी तरह से अर्ध-कार्यकारी कार्य के अंतर्गत आती हैं।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — सही विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 मुख्य जाल है। जो छात्र समझते हैं कि SEBI एक शक्तिशाली नियामक है, वे अक्सर मान लेते हैं कि इसके पास कारावास सहित सभी प्रकार की सजा लगाने की शक्ति है। वास्तविकता यह है कि SEBI के सीधे अधिकार मौद्रिक दंड और बाजार प्रतिबंध तक सीमित हैं। आपराधिक अभियोजन के लिए — जैसे धोखाधड़ी वाले व्यापार के लिए — SEBI को सक्षम न्यायालय के समक्ष शिकायत दर्ज करनी होती है। यह नागरिक नियामक शक्ति और आपराधिक न्यायिक शक्ति के बीच UPSC का बार-बार आने वाला भेद है।",
+      "final_explanation": "SEBI भारत के दुर्लभ नियामक निकायों में से एक है जो तीनों कार्यात्मक भूमिकाओं को संयोजित करता है। उनके सटीक दायरे को समझना गलत विकल्पों को हटाने के लिए महत्वपूर्ण है।\n\n• कथन 1 — सही: SEBI अधिनियम की धारा 30 SEBI के नियम बनाने के अधिकार का स्रोत है। SEBI द्वारा बनाए गए नियम (जैसे LODR, अंदरूनी व्यापार नियम) कानून के समान प्रभाव रखते हैं — यह अर्ध-विधायी शक्ति का प्रयोग है।\n• कथन 2 — गलत: SEBI की अर्ध-न्यायिक शक्ति निर्णय लेने, मौद्रिक दंड लगाने, और प्रतिबंध आदेश जारी करने तक सीमित है। इसमें किसी को कारावास की सजा देने का अधिकार नहीं है — इसके लिए आपराधिक न्यायालय आवश्यक है।\n• कथन 3 — सही: ब्रोकर्स के निरीक्षण, मूल्य हेरफेर की जांच, और कारण बताओ नोटिस जारी करना प्रवर्तन (अर्ध-कार्यकारी) क्रियाएं हैं।\n\nमूल्य वर्धन:\n• SEBI के निर्णय अधिकारी SEBI अधिनियम की धारा 15-I के तहत नियुक्त होते हैं।\n• CCI (प्रतिस्पर्धा आयोग ऑफ इंडिया) के पास भी समान त्रि-कार्यात्मक संरचना है लेकिन विषय वस्तु में SEBI से भिन्न है।\n• SEBI का सिक्योरिटीज अपीलीय अधिकरण (SAT) अर्ध-न्यायिक आदेशों की समीक्षा करता है — अर्ध-कार्यकारी या अर्ध-विधायी आदेशों की नहीं।"
+    }
+  },
+  {
+    "uuid": "fe707774-50d3-4a1b-9c8c-ca0ea657ba5e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Jurisdiction: Securities It Regulates vs. Does Not Regulate"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "FMC merger with SEBI commodity derivatives 2015",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Since 2015, SEBI has exercised regulatory jurisdiction over commodity derivatives markets in India.\n\nReason (R): The Forward Markets Commission (FMC), which previously regulated commodity futures, was a statutory body established under the Forward Contracts (Regulation) Act, 1952.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? A states that after 2015, SEBI has jurisdiction over commodity derivatives markets in India. This is factually correct — FMC was merged into SEBI in September 2015.",
+        "Step 2 — Is Reason (R) correct? R states that the Forward Markets Commission (FMC) was a statutory body established under the Forward Contracts (Regulation) Act, 1952. This is factually correct.",
+        "Step 3 — Does R causally explain A? R describes what FMC was, not why it was merged with SEBI. The reason SEBI gained commodity derivatives jurisdiction is the merger of FMC into SEBI — but R explains the origin of FMC, not the mechanism of transfer. Therefore R is correct but does not explain A.",
+        "Both A and R are correct but R does NOT explain A — correct option is (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The 2015 merger of the Forward Markets Commission (FMC) with SEBI was a landmark regulatory consolidation in India's financial architecture.\n\n• Assertion (A): Correct. SEBI assumed jurisdiction over commodity derivatives markets in September 2015 when FMC was dissolved and merged into SEBI. Before this, FMC regulated commodity futures trading.\n• Reason (R): Correct. FMC was indeed a statutory body constituted under the Forward Contracts (Regulation) Act, 1952. It regulated commodity futures trading on exchanges like MCX and NCDEX.\n• Causal Link: R correctly describes FMC's statutory origin but does not explain why SEBI now has commodity jurisdiction. The actual explanation is the merger — the government dissolved FMC and transferred all functions to SEBI via an amendment. R tells us what FMC was, not how its powers moved to SEBI.\n\nValue Addition:\n• MCX (Multi Commodity Exchange) and NCDEX (National Commodity and Derivatives Exchange) now fall under SEBI's oversight.\n• Agricultural commodity derivatives require Ministry of Consumer Affairs/Food approval for contracts — adding another regulatory layer.\n• SEBI established a separate Commodity Derivatives Market Regulation Department (CDMRD) post-merger."
+    },
+    "hi": {
+      "display_text": "कथन (A): 2015 से, SEBI ने भारत में कमोडिटी डेरिवेटिव्स बाजारों पर नियामक अधिकार क्षेत्र का प्रयोग किया है।\n\nकारण (R): फॉरवर्ड मार्केट्स कमीशन (FMC), जो पहले कमोडिटी फ्यूचर्स को नियंत्रित करता था, एक वैधानिक निकाय था जिसे फॉरवर्ड कॉन्ट्रैक्ट्स (रेगुलेशन) एक्ट, 1952 के तहत स्थापित किया गया था।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? A कहता है कि 2015 के बाद, SEBI के पास भारत में कमोडिटी डेरिवेटिव्स बाजारों पर अधिकार क्षेत्र है। यह तथ्यात्मक रूप से सही है — FMC को सितंबर 2015 में SEBI में विलय कर दिया गया था।",
+        "चरण 2 — क्या कारण (R) सही है? R कहता है कि फॉरवर्ड मार्केट्स कमीशन (FMC) एक वैधानिक निकाय था जो फॉरवर्ड कॉन्ट्रैक्ट्स (रेगुलेशन) एक्ट, 1952 के तहत स्थापित किया गया था। यह तथ्यात्मक रूप से सही है।",
+        "चरण 3 — क्या R, A को कारणात्मक रूप से समझाता है? R यह बताता है कि FMC क्या था, न कि इसे SEBI के साथ क्यों विलय किया गया। SEBI को कमोडिटी डेरिवेटिव्स का अधिकार क्षेत्र FMC के SEBI में विलय के कारण मिला — लेकिन R FMC की उत्पत्ति बताता है, अधिकार हस्तांतरण की प्रक्रिया नहीं। अतः R सही है लेकिन A को समझाता नहीं।",
+        "A और R दोनों सही हैं लेकिन R, A को समझाता नहीं है — सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "2015 में फॉरवर्ड मार्केट्स कमीशन (FMC) का SEBI के साथ विलय भारत की वित्तीय संरचना में एक महत्वपूर्ण नियामक समेकन था।\n\n• कथन (A): सही। SEBI ने सितंबर 2015 में FMC के विघटन और SEBI में विलय के बाद कमोडिटी डेरिवेटिव्स बाजारों पर अधिकार क्षेत्र ग्रहण किया। इससे पहले FMC कमोडिटी फ्यूचर्स ट्रेडिंग को नियंत्रित करता था।\n• कारण (R): सही। FMC वास्तव में फॉरवर्ड कॉन्ट्रैक्ट्स (रेगुलेशन) एक्ट, 1952 के तहत स्थापित एक वैधानिक निकाय था। यह MCX और NCDEX जैसे एक्सचेंजों पर कमोडिटी फ्यूचर्स ट्रेडिंग को नियंत्रित करता था।\n• कारणात्मक संबंध: R FMC की वैधानिक उत्पत्ति को सही बताता है लेकिन यह नहीं समझाता कि SEBI के पास अब कमोडिटी अधिकार क्षेत्र क्यों है। वास्तविक कारण विलय है — सरकार ने FMC को समाप्त कर उसके सभी कार्य SEBI को एक संशोधन के माध्यम से सौंप दिए। R हमें बताता है कि FMC क्या था, न कि उसके अधिकार SEBI को कैसे मिले।\n\nमूल्य संवर्धन:\n• MCX (मल्टी कमोडिटी एक्सचेंज) और NCDEX (नेशनल कमोडिटी एंड डेरिवेटिव्स एक्सचेंज) अब SEBI के नियंत्रण में हैं।\n• कृषि कमोडिटी डेरिवेटिव्स के लिए उपभोक्ता मामले/खाद्य मंत्रालय की स्वीकृति आवश्यक है — जो एक अतिरिक्त नियामक परत जोड़ता है।\n• विलय के बाद SEBI ने एक अलग कमोडिटी डेरिवेटिव्स मार्केट रेगुलेशन विभाग (CDMRD) स्थापित किया।"
+    }
+  },
+  {
+    "uuid": "eb28a261-1119-44f3-bfbb-c48223762fa0",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Insider Trading Regulations: Definition, Prohibition, and UPDI"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Insider trading regulations 1992 replaced 2015",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of events in SEBI's regulatory history?\n\n1. Enactment of the SEBI Act conferring statutory powers\n2. SEBI's original Prohibition of Insider Trading Regulations framed\n3. New Prohibition of Insider Trading Regulations replacing the earlier ones\n4. Implementation of the T+1 settlement cycle in Indian equity markets\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 4 → 3\n(c) 1 → 3 → 2 → 4\n(d) 2 → 3 → 1 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the 2015 regulations before the Harshad Mehta scandal context, which a student anchoring on 'newer = better' might choose.",
+      "elimination_logic": [
+        "The Harshad Mehta scam occurred in 1992, triggering the SEBI Act 1992 — this must come first in any SEBI regulatory chronology.",
+        "SEBI's original Insider Trading Regulations were framed in 1992 as one of the early exercises of its new statutory powers.",
+        "The SEBI (Prohibition of Insider Trading) Regulations, 2015 replaced the 1992 regulations — 2015 must come after 1992.",
+        "The T+1 settlement cycle was implemented in India starting 2022 — it must come last as a recent innovation.",
+        "Correct sequence: SEBI Act 1992 → Insider Trading Regulations 1992 → SEBI PIT Regulations 2015 → T+1 settlement 2022 — option (a)."
+      ],
+      "upsc_trap_explanation": "The trap targets students who know the 2015 regulations replaced the 1992 ones but may misremember the exact year of the original regulations. Option (b) places the 2015 regulation before the Takeover Code amendment, which is plausible if a student doesn't know the Takeover Code's 2011 date. Option (c) reverses 1992 and 2015, catching students who confuse 'replaced by' with 'preceded.'",
+      "final_explanation": "SEBI's regulatory history follows a clear arc from emergency legislation (1992) to systemic reform (2015) to market innovation (2022).\n\nCorrect sequence:\n1. SEBI Act enacted (1992) — statutory birth of SEBI, triggered by the Harshad Mehta securities scam.\n2. SEBI (Prohibition of Insider Trading) Regulations (1992) — among the earliest regulations framed by the newly empowered SEBI.\n3. SEBI (PIT) Regulations, 2015 — replaced the 1992 insider trading rules; expanded the definition of 'insider' and 'UPSI'; introduced trading plan defenses.\n4. T+1 settlement cycle implementation (2022 onwards) — India's pioneering move to compress the trade settlement window.\n\nWhy wrong options fail:\n• Option (b): Places 2015 before 2022 but inverts the 1992 SEBI Act and 1992 insider trading rules — conceptually wrong.\n• Option (c): Reverses 1992 and 2015 insider trading regulations.\n• Option (d): Misplaces T+1 before 2015 regulations.\n\nValue Addition:\n• The 2015 PIT Regulations introduced 'structured digital database' requirements for companies to track who accessed UPSI.\n• SEBI's 2018 amendment to PIT Regulations addressed 'insider trading by mutual funds.'\n• Trading Plan: An insider can trade if a pre-approved plan is filed with the stock exchange at least six months in advance."
+    },
+    "hi": {
+      "display_text": "SEBI के नियामक इतिहास में घटनाओं के सही कालानुक्रमिक क्रम का प्रतिनिधित्व कौन-सा करता है?\n\n1. SEBI अधिनियम का पारित होना जो वैधानिक अधिकार प्रदान करता है\n2. SEBI के मूल अंदरूनी व्यापार निषेध नियम बनाए जाना\n3. नए अंदरूनी व्यापार निषेध नियम जो पुराने नियमों को प्रतिस्थापित करते हैं\n4. भारतीय इक्विटी बाजारों में T+1 निपटान चक्र का कार्यान्वयन\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 4 → 3\n(c) 1 → 3 → 2 → 4\n(d) 2 → 3 → 1 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) 2015 के नियमों को हर्षद मेहता घोटाले के संदर्भ से पहले रखता है, जिसे 'नया = बेहतर' मानने वाला छात्र चुन सकता है।",
+      "elimination_logic": [
+        "हर्षद मेहता घोटाला 1992 में हुआ था, जिसने SEBI अधिनियम 1992 को प्रेरित किया — यह किसी भी SEBI नियामक कालक्रम में सबसे पहले आना चाहिए।",
+        "SEBI के मूल अंदरूनी व्यापार निषेध नियम 1992 में बनाए गए थे जो इसके नए वैधानिक अधिकारों के प्रारंभिक प्रयोगों में से एक थे।",
+        "SEBI (अंदरूनी व्यापार निषेध) नियम, 2015 ने 1992 के नियमों को प्रतिस्थापित किया — 2015, 1992 के बाद आना चाहिए।",
+        "T+1 निपटान चक्र भारत में 2022 से लागू हुआ — यह हाल की नवाचार के रूप में सबसे अंत में आना चाहिए।",
+        "सही क्रम: SEBI अधिनियम 1992 → अंदरूनी व्यापार नियम 1992 → SEBI PIT नियम 2015 → T+1 निपटान 2022 — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "यह जाल उन छात्रों को लक्षित करता है जो जानते हैं कि 2015 के नियम 1992 के नियमों को प्रतिस्थापित करते हैं लेकिन मूल नियमों के सही वर्ष को भूल सकते हैं। विकल्प (b) 2015 के नियम को टेकओवर कोड संशोधन से पहले रखता है, जो संभव है यदि छात्र टेकओवर कोड के 2011 के वर्ष को नहीं जानता। विकल्प (c) 1992 और 2015 को उलट देता है, उन छात्रों को पकड़ता है जो 'प्रतिस्थापित किया गया' को 'पूर्ववर्ती' के साथ भ्रमित करते हैं।",
+      "final_explanation": "SEBI का नियामक इतिहास आपातकालीन कानून (1992) से प्रणालीगत सुधार (2015) और बाजार नवाचार (2022) तक एक स्पष्ट क्रम का पालन करता है।\n\nसही क्रम:\n1. SEBI अधिनियम पारित (1992) — SEBI का वैधानिक जन्म, हर्षद मेहता प्रतिभूतियों के घोटाले से प्रेरित।\n2. SEBI (अंदरूनी व्यापार निषेध) नियम (1992) — नव सशक्त SEBI द्वारा बनाए गए प्रारंभिक नियमों में से एक।\n3. SEBI (PIT) नियम, 2015 — 1992 के अंदरूनी व्यापार नियमों को प्रतिस्थापित किया; 'अंदरूनी' और 'UPSI' की परिभाषा का विस्तार किया; ट्रेडिंग प्लान बचाव पेश किए।\n4. T+1 निपटान चक्र कार्यान्वयन (2022 से) — भारत की अग्रणी पहल जो व्यापार निपटान विंडो को संकुचित करती है।\n\nगलत विकल्प क्यों असफल होते हैं:\n• विकल्प (b): 2015 को 2022 से पहले रखता है लेकिन 1992 SEBI अधिनियम और 1992 अंदरूनी व्यापार नियमों को उलट देता है — अवधारणात्मक रूप से गलत।\n• विकल्प (c): 1992 और 2015 अंदरूनी व्यापार नियमों को उलट देता है।\n• विकल्प (d): T+1 को 2015 नियमों से पहले रखता है।\n\nमूल्यवर्धन:\n• 2015 के PIT नियमों ने कंपनियों के लिए 'संरचित डिजिटल डेटाबेस' की आवश्यकता पेश की ताकि यह ट्रैक किया जा सके कि UPSI तक किसने पहुंच बनाई।\n• SEBI के 2018 संशोधन ने 'म्यूचुअल फंड्स द्वारा अंदरूनी व्यापार' को संबोधित किया।\n• ट्रेडिंग प्लान: एक अंदरूनी व्यक्ति ट्रेड कर सकता है यदि एक पूर्व-स्वीकृत योजना कम से कम छह महीने पहले स्टॉक एक्सचेंज में दायर की गई हो।"
+    }
+  },
+  {
+    "uuid": "8ed550aa-87c3-45f6-b453-e3befcb01350",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Securities Appellate Tribunal (SAT): Jurisdiction and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SAT appellate jurisdiction multi-regulator body",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Securities Appellate Tribunal (SAT) has the jurisdiction to hear appeals against orders issued by certain regulators and bodies. Which of the following does NOT fall within the appellate jurisdiction of SAT?\n\n(a) Orders passed by SEBI in adjudicatory proceedings\n(b) Orders passed by a High Court on matters related to securities regulation\n(c) Orders passed by IRDAI under its regulatory functions\n(d) Orders passed by PFRDA in pension fund regulatory matters",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — PFRDA orders seem less obviously connected to SAT than SEBI or IRDAI, making students unsure whether PFRDA is included.",
+      "elimination_logic": [
+        "Recall that SAT hears appeals against SEBI, IRDAI, and PFRDA orders — it is a multi-regulator appellate body.",
+        "SEBI orders (a): SAT has jurisdiction — directly established under Chapter VIA of SEBI Act.",
+        "High Court orders (b): SAT does not hear appeals against High Court orders — SAT is subordinate to High Courts and Supreme Court, not the reverse.",
+        "IRDAI orders (c): SAT does hear appeals against certain IRDAI orders.",
+        "PFRDA orders (d): SAT was empowered to hear appeals against PFRDA orders.",
+        "Option (b) — High Court orders — is the one that does NOT belong."
+      ],
+      "upsc_trap_explanation": "The trap exploits the common misconception about the appellate hierarchy around SAT. Students who know that SAT appeals go to the Supreme Court (not High Court) may still fail to register that this means SAT CANNOT hear High Court orders — the relationship is directional. SAT is below both the High Court and Supreme Court in the judicial hierarchy; it only reviews orders of specified regulators (SEBI, IRDAI, PFRDA).",
+      "final_explanation": "The Securities Appellate Tribunal (SAT) is a specialized appellate body with a precisely defined jurisdiction that students often misunderstand due to its 'tribunal' label.\n\n• Option (a) — SEBI Orders: SAT was created under Chapter VIA of the SEBI Act specifically to hear appeals against SEBI orders. Belongs.\n• Option (b) — High Court Orders: SAT cannot hear appeals against orders of the High Court. The appellate flow is the reverse — SAT orders themselves are challenged before the Supreme Court. Does NOT belong.\n• Option (c) — IRDAI Orders: SAT's jurisdiction was expanded to cover certain IRDAI (insurance regulator) orders — it belongs.\n• Option (d) — PFRDA Orders: Pension Fund Regulatory and Development Authority orders are also appealable before SAT. Belongs.\n\nValue Addition:\n• SAT is presided over by a retired High Court or Supreme Court judge.\n• Appeals from SAT lie to the Supreme Court directly — bypassing the High Court.\n• SAT's multi-regulator jurisdiction (SEBI + IRDAI + PFRDA) makes it one of India's few cross-domain financial appellate bodies."
+    },
+    "hi": {
+      "display_text": "Securities Appellate Tribunal (SAT) को कुछ नियामकों और निकायों द्वारा जारी आदेशों के खिलाफ अपील सुनने का अधिकार प्राप्त है। निम्नलिखित में से कौन सा SAT की अपीलीय क्षेत्राधिकारिता में नहीं आता?\n\n(a) SEBI द्वारा निर्णयात्मक कार्यवाही में पारित आदेश\n(b) प्रतिभूति नियमन से संबंधित मामलों में हाई कोर्ट द्वारा पारित आदेश\n(c) IRDAI द्वारा उसके नियामक कार्यों के तहत पारित आदेश\n(d) पेंशन फंड नियामक मामलों में PFRDA द्वारा पारित आदेश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — PFRDA orders seem less obviously connected to SAT than SEBI or IRDAI, making students unsure whether PFRDA is included.",
+      "elimination_logic": [
+        "याद रखें कि SAT, SEBI, IRDAI, और PFRDA के आदेशों के खिलाफ अपील सुनता है — यह एक बहु-नियामक अपीलीय निकाय है।",
+        "SEBI के आदेश (a): SAT की क्षेत्राधिकारिता है — सीधे SEBI अधिनियम के अध्याय VIA के तहत स्थापित।",
+        "हाई कोर्ट के आदेश (b): SAT हाई कोर्ट के आदेशों के खिलाफ अपील नहीं सुनता — SAT हाई कोर्ट और सुप्रीम कोर्ट के अधीनस्थ है, उल्टा नहीं।",
+        "IRDAI के आदेश (c): SAT कुछ IRDAI आदेशों के खिलाफ अपील सुनता है।",
+        "PFRDA के आदेश (d): SAT को PFRDA आदेशों के खिलाफ अपील सुनने का अधिकार दिया गया था।",
+        "विकल्प (b) — हाई कोर्ट के आदेश — वह है जो शामिल नहीं है।"
+      ],
+      "upsc_trap_explanation": "यह जाल SAT के अपीलीय पदानुक्रम के बारे में आम गलतफहमी का उपयोग करता है। जो छात्र जानते हैं कि SAT की अपील सुप्रीम कोर्ट जाती है (हाई कोर्ट नहीं), वे यह समझने में असफल हो सकते हैं कि इसका अर्थ है कि SAT हाई कोर्ट के आदेश नहीं सुन सकता — यह संबंध दिशा-निर्दिष्ट है। SAT न्यायिक पदानुक्रम में हाई कोर्ट और सुप्रीम कोर्ट दोनों के नीचे है; यह केवल निर्दिष्ट नियामकों (SEBI, IRDAI, PFRDA) के आदेशों की समीक्षा करता है।",
+      "final_explanation": "Securities Appellate Tribunal (SAT) एक विशेष अपीलीय निकाय है जिसकी क्षेत्राधिकारिता स्पष्ट रूप से परिभाषित है, जिसे इसके 'ट्रिब्यूनल' लेबल के कारण छात्र अक्सर गलत समझते हैं।\n\n• विकल्प (a) — SEBI के आदेश: SAT को SEBI अधिनियम के अध्याय VIA के तहत विशेष रूप से SEBI के आदेशों के खिलाफ अपील सुनने के लिए बनाया गया था। शामिल है।\n• विकल्प (b) — हाई कोर्ट के आदेश: SAT हाई कोर्ट के आदेशों के खिलाफ अपील नहीं सुन सकता। अपीलीय प्रवाह उल्टा है — SAT के आदेशों को स्वयं सुप्रीम कोर्ट में चुनौती दी जाती है। शामिल नहीं है।\n• विकल्प (c) — IRDAI के आदेश: SAT की क्षेत्राधिकारिता को कुछ IRDAI (बीमा नियामक) आदेशों तक बढ़ाया गया है — यह शामिल है।\n• विकल्प (d) — PFRDA के आदेश: पेंशन फंड नियामक और विकास प्राधिकरण के आदेश भी SAT के समक्ष अपील योग्य हैं। शामिल है।\n\nमूल्य संवर्धन:\n• SAT की अध्यक्षता एक सेवानिवृत्त हाई कोर्ट या सुप्रीम कोर्ट न्यायाधीश करते हैं।\n• SAT से अपील सीधे सुप्रीम कोर्ट में जाती है — हाई कोर्ट को बायपास करते हुए।\n• SAT की बहु-नियामक क्षेत्राधिकारिता (SEBI + IRDAI + PFRDA) इसे भारत के कुछ क्रॉस-डोमेन वित्तीय अपीलीय निकायों में से एक बनाती है।"
+    }
+  },
+  {
+    "uuid": "af143941-e40f-429b-bac6-fc66f496994a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Collective Investment Schemes (CIS): SEBI's Special Jurisdiction"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "CIS jurisdiction chit funds exclusion Sahara case",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding SEBI's jurisdiction over Collective Investment Schemes:\n\nStatement 1: Under SEBI's framework, any pooled investment scheme involving 100 or more investors and a corpus of ₹20 crore or more must be registered with SEBI as a Collective Investment Scheme.\n\nStatement 2: Chit funds operating across multiple states are regulated by SEBI as a category of Collective Investment Scheme because they pool money from multiple subscribers.\n\nWhich one of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: Under SEBI's framework, any pooled investment scheme involving 100 or more investors and a corpus of ₹20 crore or more must be registered with SEBI as a Collective Investment Scheme.",
+          "verdict": "Correct",
+          "reason": "This is the threshold as specified under the SEBI (Collective Investment Schemes) Regulations, 1999 — 100 investors and ₹20 crore corpus triggers mandatory CIS registration."
+        },
+        {
+          "statement": "Statement 2: Chit funds operating across multiple states are regulated by SEBI as a category of Collective Investment Scheme because they pool money from multiple subscribers.",
+          "verdict": "Incorrect",
+          "reason": "Chit funds are explicitly excluded from SEBI's CIS jurisdiction under the SEBI Act. They are regulated by state governments under the Chit Funds Act, 1982 — even multi-state chit funds do not fall under SEBI."
+        }
+      ],
+      "strong_distractor": "a — Students who know about pooled schemes and SEBI's expanding jurisdiction may assume chit funds too are now regulated by SEBI, especially after the Sahara ruling expanded CIS interpretation.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The 100-investor and ₹20 crore corpus thresholds for mandatory CIS registration are codified under SEBI's CIS Regulations. Statement 1 is correct.",
+        "Evaluate Statement 2: The SEBI Act explicitly carves out chit funds from SEBI's CIS jurisdiction. Chit funds are a state subject regulated under the Chit Funds Act, 1982 — SEBI has no authority over them regardless of scale. Statement 2 is incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — correct option is (c)."
+      ],
+      "upsc_trap_explanation": "The Sahara Supreme Court ruling (which upheld SEBI's jurisdiction over Optionally Fully Convertible Debentures as securities and directed refund to investors) gave SEBI a broad CIS interpretation. Students who recall this may over-extend SEBI's reach to all pooled schemes including chit funds. But the SEBI Act has an explicit statutory exclusion for chit funds — they remain outside SEBI's reach no matter how large they grow. This is a classic scope-extension trap where knowledge of one ruling is misapplied to an excluded category.",
+      "final_explanation": "SEBI's Collective Investment Scheme jurisdiction is broad but has explicit statutory carve-outs that UPSC repeatedly tests.\n\n• Statement 1 — Correct: The registration threshold for CIS is well-established — 100 or more investors AND a corpus of ₹20 crore or more. Below this, schemes may operate without CIS registration, though SEBI has discretion to investigate.\n• Statement 2 — Incorrect: The SEBI Act expressly excludes chit funds from its definition of CIS. The Chit Funds Act, 1982 is a central law but implementation and regulation is with state governments. Even very large chit funds operating across states are not SEBI's domain.\n\nValue Addition:\n• The Sahara case (2012): Supreme Court held that Sahara's OFCDs were 'securities' and SEBI had jurisdiction to order refund of ₹24,000+ crore to investors.\n• Plantation and emu farming schemes have been brought under CIS ambit by SEBI to protect rural investors from fraud.\n• Chit funds in some states are regulated by the Registrar of Chits appointed by the state government."
+    },
+    "hi": {
+      "display_text": "SEBI के संयुक्त निवेश योजनाओं (Collective Investment Schemes) पर क्षेत्राधिकार के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: SEBI के ढांचे के तहत, कोई भी संयुक्त निवेश योजना जिसमें 100 या अधिक निवेशक और ₹20 करोड़ या उससे अधिक का कोष हो, उसे SEBI के साथ एक संयुक्त निवेश योजना के रूप में पंजीकृत कराना अनिवार्य है।\n\nकथन 2: कई राज्यों में संचालित चिट फंडों को SEBI द्वारा एक संयुक्त निवेश योजना की श्रेणी के रूप में नियंत्रित किया जाता है क्योंकि वे कई सदस्यों से धन एकत्र करते हैं।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: SEBI के ढांचे के तहत, कोई भी संयुक्त निवेश योजना जिसमें 100 या अधिक निवेशक और ₹20 करोड़ या उससे अधिक का कोष हो, उसे SEBI के साथ एक संयुक्त निवेश योजना (Collective Investment Scheme) के रूप में पंजीकृत कराना अनिवार्य है।",
+          "verdict": "सही है",
+          "reason": "यह SEBI (Collective Investment Schemes) Regulations, 1999 के तहत निर्दिष्ट सीमा है — 100 निवेशक और ₹20 करोड़ कोष CIS पंजीकरण के लिए अनिवार्य है।"
+        },
+        {
+          "statement": "कथन 2: कई राज्यों में संचालित चिट फंडों को SEBI द्वारा एक संयुक्त निवेश योजना की श्रेणी के रूप में नियंत्रित किया जाता है क्योंकि वे कई सदस्यों से धन एकत्र करते हैं।",
+          "verdict": "गलत है",
+          "reason": "चिट फंडों को SEBI अधिनियम के तहत SEBI की CIS क्षेत्राधिकार से स्पष्ट रूप से बाहर रखा गया है। इन्हें राज्य सरकारें चिट फंड अधिनियम, 1982 के तहत नियंत्रित करती हैं — यहां तक कि बहु-राज्यीय चिट फंड भी SEBI के अंतर्गत नहीं आते।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र संयुक्त योजनाओं और SEBI के बढ़ते क्षेत्राधिकार के बारे में जानते हैं, वे मान सकते हैं कि चिट फंड भी अब SEBI द्वारा नियंत्रित हैं, विशेषकर Sahara निर्णय के बाद CIS की व्याख्या के विस्तार के कारण।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: CIS पंजीकरण के लिए 100 निवेशक और ₹20 करोड़ कोष की सीमा SEBI के CIS नियमों में स्पष्ट रूप से निर्धारित है। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: SEBI अधिनियम में चिट फंडों को SEBI की CIS क्षेत्राधिकार से स्पष्ट रूप से बाहर रखा गया है। चिट फंड एक राज्य विषय हैं जिन्हें चिट फंड अधिनियम, 1982 के तहत राज्य सरकारें नियंत्रित करती हैं — SEBI का उन पर कोई अधिकार नहीं है, चाहे वे कितने भी बड़े क्यों न हों। कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत — सही विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "Sahara सुप्रीम कोर्ट निर्णय (जिसमें SEBI के विकल्प पूर्ण रूप से परिवर्तनीय डिबेंचर पर क्षेत्राधिकार को मान्यता दी गई और निवेशकों को धनवापसी का आदेश दिया गया) ने SEBI को CIS की व्यापक व्याख्या दी। जो छात्र इसे याद रखते हैं, वे SEBI के क्षेत्राधिकार को सभी संयुक्त योजनाओं तक, जिसमें चिट फंड भी शामिल हैं, बढ़ा सकते हैं। लेकिन SEBI अधिनियम में चिट फंडों के लिए स्पष्ट कानूनी अपवाद है — वे SEBI के क्षेत्र से बाहर रहते हैं चाहे वे कितने भी बड़े क्यों न हो जाएं। यह एक क्लासिक क्षेत्र-विस्तार जाल है जहां एक निर्णय का ज्ञान एक अपवाद श्रेणी पर गलत तरीके से लागू किया जाता है।",
+      "final_explanation": "SEBI का संयुक्त निवेश योजना (CIS) क्षेत्राधिकार व्यापक है लेकिन इसमें स्पष्ट कानूनी अपवाद हैं जिन्हें UPSC बार-बार परखता है।\n\n• कथन 1 — सही: CIS के लिए पंजीकरण की सीमा स्पष्ट है — 100 या अधिक निवेशक और ₹20 करोड़ या अधिक का कोष। इसके नीचे योजनाएं बिना CIS पंजीकरण के संचालित हो सकती हैं, हालांकि SEBI के पास जांच का विवेक होता है।\n• कथन 2 — गलत: SEBI अधिनियम में चिट फंडों को CIS की परिभाषा से स्पष्ट रूप से बाहर रखा गया है। चिट फंड अधिनियम, 1982 एक केंद्रीय कानून है लेकिन इसका क्रियान्वयन और नियंत्रण राज्य सरकारों के पास है। यहां तक कि बहुत बड़े बहु-राज्यीय चिट फंड भी SEBI के क्षेत्र में नहीं आते।\n\nमूल्यवर्धन:\n• Sahara मामला (2012): सुप्रीम कोर्ट ने Sahara के OFCDs को 'सिक्योरिटीज' माना और SEBI को निवेशकों को ₹24,000+ करोड़ की धनवापसी का आदेश देने का अधिकार दिया।\n• Plantation और इमू फार्मिंग योजनाओं को ग्रामीण निवेशकों को धोखाधड़ी से बचाने के लिए SEBI ने CIS के दायरे में लाया है।\n• कुछ राज्यों में चिट फंडों को राज्य सरकार द्वारा नियुक्त चिट रजिस्ट्रार द्वारा नियंत्रित किया जाता है।"
+    }
+  },
+  {
+    "uuid": "cbc91e42-689f-43fd-92dc-d4ff854e818c",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI and Mutual Funds: Regulatory Framework and Categorization"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "AMFI self-regulatory not statutory SEBI regulates",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "All mutual funds operating in India are mandatorily required to register with ________, which is the statutory authority empowered to regulate their operations, disclosures, and compliance under a dedicated regulatory framework established in 1996.\n\n(a) The Ministry of Finance, Government of India\n(b) AMFI (Association of Mutual Funds in India)\n(c) The Reserve Bank of India\n(d) SEBI (Securities and Exchange Board of India)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who have encountered 'AMFI regulates mutual funds' in popular financial content may mark AMFI as the correct statutory regulator.",
+      "elimination_logic": [
+        "Eliminate (a): Ministry of Finance does not regulate mutual funds — it has policy oversight but not day-to-day regulatory authority.",
+        "Eliminate (b): AMFI is the Association of Mutual Funds in India — it is a self-regulatory organization (SRO), not a statutory regulator. It facilitates, not regulates.",
+        "Eliminate (c): RBI regulates banking and monetary policy — mutual funds are securities market instruments, not RBI's domain.",
+        "Confirm (d): SEBI (Mutual Funds) Regulations, 1996 mandates that all mutual funds register with SEBI — SEBI is the statutory regulator."
+      ],
+      "upsc_trap_explanation": "AMFI is a widely mentioned name in the mutual funds space — its investor awareness tagline 'Mutual Funds Sahi Hai' makes it highly visible. Students confuse visibility with regulatory authority. AMFI is an industry body (like FICCI for industry) — it facilitates, standardizes, and promotes, but the actual statutory regulatory power lies with SEBI. Marking AMFI as the regulator is a textbook trap that UPSC has set in multiple permutations.",
+      "final_explanation": "All mutual funds in India must be registered with and regulated by SEBI under the SEBI (Mutual Funds) Regulations, 1996.\n\n• Option (a) — Ministry of Finance: Has policy jurisdiction and budget-level decisions, but does not regulate mutual fund operations or compliance. Incorrect.\n• Option (b) — AMFI: The Association of Mutual Funds in India is an industry self-regulatory body. It sets industry codes of conduct, distributes certifications, and runs investor awareness campaigns — but has no statutory power to regulate or penalize. Incorrect.\n• Option (c) — RBI: Regulates banks and monetary policy. Mutual funds are securities market instruments — RBI's domain does not extend here. Incorrect.\n• Option (d) — SEBI: The SEBI (Mutual Funds) Regulations, 1996 is the governing framework. SEBI mandates registration, disclosure, categorization, expense ratio caps, and compliance. Correct.\n\nValue Addition:\n• The 2017–18 SEBI categorization mandate forced all mutual funds to consolidate schemes into clearly defined categories (large-cap, mid-cap, small-cap, etc.).\n• Total Expense Ratio (TER) caps are set by SEBI and revised periodically to reduce investor costs.\n• Mutual fund trustees and Asset Management Companies (AMCs) both require SEBI registration."
+    },
+    "hi": {
+      "display_text": "भारत में संचालित सभी म्यूचुअल फंड्स के लिए अनिवार्य है कि वे ________ के साथ पंजीकृत हों, जो 1996 में स्थापित समर्पित नियामक ढांचे के तहत उनके संचालन, प्रकटीकरण, और अनुपालन को नियंत्रित करने वाला वैधानिक प्राधिकरण है।\n\n(a) भारत सरकार का वित्त मंत्रालय\n(b) AMFI (भारत में म्यूचुअल फंड्स का संघ)\n(c) भारतीय रिज़र्व बैंक\n(d) SEBI (भारतीय प्रतिभूति और विनिमय बोर्ड)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र 'AMFI regulates mutual funds' को लोकप्रिय वित्तीय सामग्री में देखते हैं, वे AMFI को सही वैधानिक नियामक मान सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: वित्त मंत्रालय म्यूचुअल फंड्स को नियंत्रित नहीं करता — इसका नीति संबंधी निरीक्षण होता है लेकिन दैनिक नियामक अधिकार नहीं।",
+        "(b) को हटाएं: AMFI भारत में म्यूचुअल फंड्स का संघ है — यह एक स्व-नियामक संगठन (SRO) है, वैधानिक नियामक नहीं। यह सुविधा प्रदान करता है, नियंत्रित नहीं करता।",
+        "(c) को हटाएं: RBI बैंकिंग और मौद्रिक नीति को नियंत्रित करता है — म्यूचुअल फंड्स प्रतिभूति बाजार के उपकरण हैं, RBI का क्षेत्र नहीं।",
+        "(d) की पुष्टि करें: SEBI (म्यूचुअल फंड्स) विनियम, 1996 के तहत सभी म्यूचुअल फंड्स को SEBI के साथ पंजीकरण करना अनिवार्य है — SEBI वैधानिक नियामक है।"
+      ],
+      "upsc_trap_explanation": "AMFI म्यूचुअल फंड्स क्षेत्र में एक व्यापक रूप से उल्लेखित नाम है — इसका निवेशक जागरूकता टैगलाइन 'Mutual Funds Sahi Hai' इसे अत्यंत दृश्य बनाता है। छात्र दृश्यता को नियामक अधिकार के साथ भ्रमित कर लेते हैं। AMFI एक उद्योग निकाय है (जैसे FICCI उद्योग के लिए) — यह सुविधा प्रदान करता है, मानकीकरण करता है, और प्रचार करता है, लेकिन वास्तविक वैधानिक नियामक शक्ति SEBI के पास है। AMFI को नियामक मानना UPSC द्वारा कई रूपों में स्थापित एक पाठ्यपुस्तक जाल है।",
+      "final_explanation": "भारत में संचालित सभी म्यूचुअल फंड्स को SEBI के साथ पंजीकृत होना और SEBI द्वारा विनियमित होना अनिवार्य है, जो SEBI (म्यूचुअल फंड्स) विनियम, 1996 के तहत स्थापित एक समर्पित नियामक ढांचा है।\n\n• विकल्प (a) — वित्त मंत्रालय: नीति अधिकार क्षेत्र और बजट स्तर के निर्णय करता है, लेकिन म्यूचुअल फंड संचालन या अनुपालन को नियंत्रित नहीं करता। गलत।\n• विकल्प (b) — AMFI: भारत में म्यूचुअल फंड्स का संघ एक उद्योग स्व-नियामक निकाय है। यह उद्योग आचार संहिता निर्धारित करता है, प्रमाणपत्र वितरित करता है, और निवेशक जागरूकता अभियान चलाता है — लेकिन नियामक या दंडात्मक वैधानिक शक्ति नहीं रखता। गलत।\n• विकल्प (c) — RBI: बैंक और मौद्रिक नीति को नियंत्रित करता है। म्यूचुअल फंड्स प्रतिभूति बाजार के उपकरण हैं — RBI का क्षेत्र नहीं। गलत।\n• विकल्प (d) — SEBI: SEBI (म्यूचुअल फंड्स) विनियम, 1996 शासन ढांचा है। SEBI पंजीकरण, प्रकटीकरण, वर्गीकरण, व्यय अनुपात की सीमा, और अनुपालन अनिवार्य करता है। सही।\n\nमूल्य संवर्धन:\n• 2017–18 के SEBI वर्गीकरण आदेश ने सभी म्यूचुअल फंड्स को स्पष्ट रूप से परिभाषित श्रेणियों (लार्ज-कैप, मिड-कैप, स्मॉल-कैप आदि) में योजनाओं को समेकित करने के लिए बाध्य किया।\n• कुल व्यय अनुपात (TER) की सीमाएं SEBI द्वारा निर्धारित और समय-समय पर संशोधित की जाती हैं ताकि निवेशक लागत कम हो सके।\n• म्यूचुअल फंड ट्रस्टी और एसेट मैनेजमेंट कंपनियों (AMC) दोनों को SEBI पंजीकरण की आवश्यकता होती है।"
+    }
+  },
+  {
+    "uuid": "6b2b2d79-9123-4ed1-8203-d633c30e79d2",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Takeover Code: SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Takeover Code 25% trigger threshold 2011 regulations",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011, the acquisition of what percentage of shares or voting rights in a listed company by a single acquirer triggers the mandatory obligation to make an open offer to remaining public shareholders?\n\n(a) 15%\n(b) 25%\n(c) 33%\n(d) 50%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — The earlier 1997 Takeover Code had a 15% trigger threshold; students who recall the older code will mark (a) confidently.",
+      "elimination_logic": [
+        "Eliminate (a): 15% was the open offer trigger under the 1997 Takeover Code — the 2011 regulations revised this upward to 25%.",
+        "Eliminate (c): 33% is not the trigger threshold under any edition of the Takeover Code.",
+        "Eliminate (d): 50% would defeat the purpose of a takeover trigger — at 50% a buyer already has majority control.",
+        "Confirm (b): The SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 set 25% as the threshold beyond which a mandatory open offer is triggered."
+      ],
+      "upsc_trap_explanation": "The 2011 Takeover Code replaced the 1997 Code and changed the mandatory open offer trigger from 15% to 25%. Students who have studied either the 1997 Code or read older reference books will instinctively mark 15%. This is a precise temporal-swap trap — the right threshold exists, but belongs to an earlier regulation. UPSC exploits this by making 15% the most tempting distractor.",
+      "final_explanation": "The SEBI Takeover Code determines when an acquirer is required to make a public offer to remaining shareholders — a critical investor protection mechanism.\n\n• Option (a) — 15%: This was the trigger under the older 1997 Takeover Regulations. The 2011 regulations raised it to 25%. Incorrect.\n• Option (b) — 25%: Under the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011, acquiring 25% or more of shares or voting rights triggers a mandatory open offer. Correct.\n• Option (c) — 33%: Not a threshold in any edition of the Takeover Code. Incorrect.\n• Option (d) — 50%: Not the trigger threshold; at 50% the acquirer already controls the company. Incorrect.\n\nValue Addition:\n• The mandatory open offer must be for at least 26% of total share capital from public shareholders.\n• Creeping acquisition (between 25–75% holding) allows up to 5% additional purchase per financial year without triggering an open offer.\n• The Takeover Code exempts inter-se transfers among promoters from open offer requirements under certain conditions."
+    },
+    "hi": {
+      "display_text": "SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 के तहत, एक सूचीबद्ध कंपनी में एक अधिग्रहक द्वारा कितने प्रतिशत शेयर या मतदान अधिकार प्राप्त करने पर शेष सार्वजनिक शेयरधारकों को अनिवार्य रूप से ओपन ऑफर देने का दायित्व उत्पन्न होता है?\n\n(a) 15%\n(b) 25%\n(c) 33%\n(d) 50%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 1997 के पुराने Takeover Code में 15% ट्रिगर थ्रेशोल्ड था; जो छात्र पुराने कोड को याद करते हैं वे आत्मविश्वास से (a) को चुनेंगे।",
+      "elimination_logic": [
+        "(a) को हटाएं: 1997 के Takeover Code के तहत 15% ओपन ऑफर ट्रिगर था — 2011 के नियमों ने इसे 25% तक बढ़ा दिया।",
+        "(c) को हटाएं: 33% किसी भी संस्करण के Takeover Code में ट्रिगर थ्रेशोल्ड नहीं है।",
+        "(d) को हटाएं: 50% ट्रिगर थ्रेशोल्ड नहीं हो सकता क्योंकि 50% पर खरीदार के पास पहले से ही बहुमत नियंत्रण होता है।",
+        "(b) की पुष्टि करें: SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 ने 25% को वह सीमा निर्धारित किया है जिसके बाद अनिवार्य ओपन ऑफर ट्रिगर होता है।"
+      ],
+      "upsc_trap_explanation": "2011 का Takeover Code 1997 के कोड की जगह लेता है और अनिवार्य ओपन ऑफर ट्रिगर को 15% से 25% कर देता है। जो छात्र 1997 के कोड या पुराने संदर्भ पुस्तकों को पढ़ चुके हैं, वे सहज रूप से 15% चुनेंगे। यह एक सटीक कालानुक्रमिक-स्वैप जाल है — सही थ्रेशोल्ड मौजूद है, लेकिन वह पुराने नियम से संबंधित है। UPSC इसे 15% को सबसे आकर्षक भ्रम के रूप में प्रस्तुत करके उपयोग करता है।",
+      "final_explanation": "SEBI Takeover Code यह निर्धारित करता है कि कब एक अधिग्रहक को शेष शेयरधारकों को सार्वजनिक प्रस्ताव देना आवश्यक होता है — जो एक महत्वपूर्ण निवेशक संरक्षण तंत्र है।\n\n• विकल्प (a) — 15%: यह पुराने 1997 के Takeover Regulations के तहत ट्रिगर था। 2011 के नियमों ने इसे 25% कर दिया। गलत।\n• विकल्प (b) — 25%: SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 के तहत, 25% या उससे अधिक शेयर या मतदान अधिकार प्राप्त करने पर अनिवार्य ओपन ऑफर ट्रिगर होता है। सही।\n• विकल्प (c) — 33%: किसी भी संस्करण के Takeover Code में यह थ्रेशोल्ड नहीं है। गलत।\n• विकल्प (d) — 50%: ट्रिगर थ्रेशोल्ड नहीं; 50% पर अधिग्रहक के पास पहले से ही कंपनी का नियंत्रण होता है। गलत।\n\nमूल्य संवर्धन:\n• अनिवार्य ओपन ऑफर कम से कम 26% कुल शेयर पूंजी का होना चाहिए जो सार्वजनिक शेयरधारकों से लिया जाए।\n• 25–75% होल्डिंग के बीच धीरे-धीरे अधिग्रहण (Creeping acquisition) वित्तीय वर्ष में 5% अतिरिक्त खरीद की अनुमति देता है बिना ओपन ऑफर ट्रिगर किए।\n• Takeover Code कुछ शर्तों के तहत प्रमोटरों के बीच अंतः-स्थानांतरण को ओपन ऑफर आवश्यकताओं से मुक्त करता है।"
+    }
+  },
+  {
+    "uuid": "042a5bd2-d3f9-4a6d-8e1e-49b35e14ce6e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Alternative Investment Funds (AIFs): SEBI's Three-Category Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "AIF three categories FPI AIF distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about SEBI's Alternative Investment Fund (AIF) regulatory framework:\n\n1. Category I AIFs, which include venture capital funds and social venture funds, are eligible for certain tax and regulatory incentives under SEBI's framework.\n2. Category III AIFs, which include hedge funds, are prohibited from using leverage or complex trading strategies under SEBI regulations.\n3. Foreign Portfolio Investors (FPIs) and Alternative Investment Funds (AIFs) are essentially the same regulatory category since both pool capital for investment in Indian securities.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 3 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Category I AIFs, which include venture capital funds and social venture funds, are eligible for certain tax and regulatory incentives under SEBI's framework.",
+          "verdict": "Correct",
+          "reason": "Category I AIFs do receive specific tax incentives and regulatory relaxations — they are encouraged because they fund startups, SMEs, and social enterprises."
+        },
+        {
+          "statement": "Category III AIFs, which include hedge funds, are prohibited from using leverage or complex trading strategies under SEBI regulations.",
+          "verdict": "Incorrect",
+          "reason": "Category III AIFs are specifically permitted to employ leverage and complex trading strategies — this is a defining characteristic that distinguishes them from other AIF categories."
+        },
+        {
+          "statement": "Foreign Portfolio Investors (FPIs) and Alternative Investment Funds (AIFs) are essentially the same regulatory category since both pool capital for investment in Indian securities.",
+          "verdict": "Incorrect",
+          "reason": "FPIs are foreign investors registered with SEBI who invest in Indian markets; AIFs are domestically pooled investment vehicles. They are distinct regulatory categories with different registration requirements, investor bases, and operating rules."
+        }
+      ],
+      "strong_distractor": "b — Students may mark only Statement 3 as incorrect because the FPI-AIF conflation is the more obvious error, missing the subtler error in Statement 2 about leverage prohibition.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Category I AIFs (venture capital, SME, social venture) are explicitly incentivized — Statement 1 is correct, not incorrect.",
+        "Evaluate Statement 2: Category III AIFs CAN use leverage and complex strategies — Statement 2 says they are 'prohibited,' which reverses the rule. Statement 2 is NOT correct.",
+        "Evaluate Statement 3: FPIs are foreign investors; AIFs are domestic pooled vehicles — calling them 'essentially the same' is wrong. Statement 3 is NOT correct.",
+        "Statements 2 and 3 are NOT correct — correct option is (d)."
+      ],
+      "upsc_trap_explanation": "Statement 2 employs a reversed-causation / scope-extension trap — Category III AIFs (hedge funds) are not just permitted leverage, it is their defining feature. A student who confuses Category III with Category II (which has no specific leverage restrictions) might think the prohibition applies. Statement 3 exploits the surface similarity between FPIs and AIFs — both pool capital and both are SEBI-registered — but they serve fundamentally different purposes and regulatory frameworks.",
+      "final_explanation": "SEBI's AIF framework categorizes pooled vehicles based on their investment strategy and the incentives or restrictions applicable.\n\n• Statement 1 — Correct: Category I AIFs (venture capital, SME funds, social ventures, infrastructure funds) receive preferential regulatory and tax treatment to encourage capital flow into priority sectors.\n• Statement 2 — NOT Correct: Category III AIFs (hedge funds, PIPE funds) are the category explicitly permitted to use leverage and complex, multi-strategy trading. Prohibiting leverage for Category III would eliminate its defining characteristic.\n• Statement 3 — NOT Correct: FPIs are foreign investors (individuals, funds, institutions outside India) who invest in Indian markets. AIFs are domestically constituted pooled vehicles (trusts, LLPs, or companies) that pool Indian or foreign money for investment. They have entirely different registration tracks, eligibility criteria, and regulatory obligations.\n\nValue Addition:\n• Category II AIFs (private equity, debt funds) have no specific incentives or restrictions on investment strategy.\n• Minimum corpus for an AIF is ₹20 crore (₹10 crore for angel funds).\n• An AIF can have a maximum of 1,000 investors (angel funds: 200)."
+    },
+    "hi": {
+      "display_text": "SEBI के वैकल्पिक निवेश निधि (AIF) नियामक ढांचे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Category I AIFs, जिनमें वेंचर कैपिटल फंड और सामाजिक उद्यम फंड शामिल हैं, SEBI के ढांचे के तहत कुछ कर और नियामक प्रोत्साहनों के पात्र हैं।\n2. Category III AIFs, जिनमें हेज फंड शामिल हैं, SEBI नियमों के तहत लीवरेज या जटिल ट्रेडिंग रणनीतियों का उपयोग करने से प्रतिबंधित हैं।\n3. विदेशी पोर्टफोलियो निवेशक (FPIs) और वैकल्पिक निवेश निधि (AIFs) मूल रूप से एक ही नियामक श्रेणी हैं क्योंकि दोनों भारतीय प्रतिभूतियों में निवेश के लिए पूंजी एकत्र करते हैं।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) 1 और 3 केवल\n(d) 2 और 3 केवल",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Category I AIFs, which include venture capital funds and social venture funds, are eligible for certain tax and regulatory incentives under SEBI's framework.",
+          "verdict": "सही है",
+          "reason": "Category I AIFs को विशिष्ट कर प्रोत्साहन और नियामक छूट प्राप्त होती हैं — इन्हें प्रोत्साहित किया जाता है क्योंकि ये स्टार्टअप, लघु और मध्यम उद्यम (SMEs), और सामाजिक उद्यमों को वित्तपोषित करते हैं।"
+        },
+        {
+          "statement": "Category III AIFs, which include hedge funds, are prohibited from using leverage or complex trading strategies under SEBI regulations.",
+          "verdict": "गलत है",
+          "reason": "Category III AIFs को विशेष रूप से लीवरेज और जटिल ट्रेडिंग रणनीतियों का उपयोग करने की अनुमति है — यह उनकी एक परिभाषित विशेषता है जो उन्हें अन्य AIF श्रेणियों से अलग करती है।"
+        },
+        {
+          "statement": "Foreign Portfolio Investors (FPIs) and Alternative Investment Funds (AIFs) are essentially the same regulatory category since both pool capital for investment in Indian securities.",
+          "verdict": "गलत है",
+          "reason": "FPIs वे विदेशी निवेशक हैं जो SEBI के साथ पंजीकृत होते हैं और भारतीय बाजारों में निवेश करते हैं; AIFs घरेलू पूल किए गए निवेश वाहन हैं। ये अलग-अलग नियामक श्रेणियाँ हैं जिनके पंजीकरण आवश्यकताएँ, निवेशक आधार, और संचालन नियम भिन्न हैं।"
+        }
+      ],
+      "strong_distractor": "b — छात्र केवल कथन 3 को गलत चिह्नित कर सकते हैं क्योंकि FPI-AIF का भ्रम अधिक स्पष्ट त्रुटि है, जबकि कथन 2 में लीवरेज प्रतिबंध के बारे में सूक्ष्म त्रुटि छूट जाती है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: Category I AIFs (वेंचर कैपिटल, SME, सामाजिक उद्यम) को स्पष्ट रूप से प्रोत्साहन दिया जाता है — कथन 1 सही है, गलत नहीं।",
+        "कथन 2 का मूल्यांकन करें: Category III AIFs लीवरेज और जटिल रणनीतियों का उपयोग कर सकते हैं — कथन 2 कहता है कि उन्हें 'प्रतिबंधित' किया गया है, जो नियम को उलट देता है। कथन 2 सही नहीं है।",
+        "कथन 3 का मूल्यांकन करें: FPIs विदेशी निवेशक हैं; AIFs घरेलू पूल वाहन हैं — उन्हें 'मूल रूप से समान' कहना गलत है। कथन 3 सही नहीं है।",
+        "कथन 2 और 3 सही नहीं हैं — सही विकल्प (d) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में उलटी-कारण / दायरा-विस्तार जाल है — Category III AIFs (हेज फंड) को केवल लीवरेज की अनुमति नहीं है, यह उनकी परिभाषित विशेषता है। जो छात्र Category III को Category II (जिसमें कोई विशिष्ट लीवरेज प्रतिबंध नहीं है) से भ्रमित करते हैं, वे सोच सकते हैं कि प्रतिबंध लागू है। कथन 3 FPIs और AIFs के सतही समानता का लाभ उठाता है — दोनों पूंजी एकत्र करते हैं और दोनों SEBI-पंजीकृत हैं — लेकिन वे मौलिक रूप से अलग उद्देश्य और नियामक ढांचे के अंतर्गत आते हैं।",
+      "final_explanation": "SEBI का AIF ढांचा पूल किए गए वाहनों को उनके निवेश रणनीति और लागू प्रोत्साहनों या प्रतिबंधों के आधार पर वर्गीकृत करता है।\n\n• कथन 1 — सही: Category I AIFs (वेंचर कैपिटल, SME फंड, सामाजिक उद्यम, अवसंरचना फंड) को प्राथमिक क्षेत्रों में पूंजी प्रवाह को प्रोत्साहित करने के लिए विशेष नियामक और कर उपचार प्राप्त होता है।\n• कथन 2 — सही नहीं: Category III AIFs (हेज फंड, PIPE फंड) वह श्रेणी है जिसे स्पष्ट रूप से लीवरेज और जटिल, बहु-रणनीति ट्रेडिंग की अनुमति है। Category III के लिए लीवरेज प्रतिबंधित करना इसकी परिभाषित विशेषता को समाप्त कर देगा।\n• कथन 3 — सही नहीं: FPIs विदेशी निवेशक (व्यक्ति, फंड, संस्थान जो भारत के बाहर हैं) हैं जो भारतीय बाजारों में निवेश करते हैं। AIFs घरेलू रूप से गठित पूल वाहन (ट्रस्ट, LLP, या कंपनियां) हैं जो भारतीय या विदेशी धन को निवेश के लिए एकत्र करते हैं। इनके पंजीकरण, पात्रता मानदंड, और नियामक दायित्व पूरी तरह भिन्न हैं।\n\nमूल्य संवर्धन:\n• Category II AIFs (प्राइवेट इक्विटी, ऋण फंड) के निवेश रणनीति पर कोई विशिष्ट प्रोत्साहन या प्रतिबंध नहीं हैं।\n• AIF के लिए न्यूनतम कोष ₹20 करोड़ है (एंजेल फंड के लिए ₹10 करोड़)।\n• एक AIF में अधिकतम 1,000 निवेशक हो सकते हैं (एंजेल फंड: 200)।"
+    }
+  },
+  {
+    "uuid": "b547588f-2908-46b7-82b4-7c00e8b649b7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "REITs and InvITs: SEBI as Regulator of Hybrid Investment Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "REITs completed revenue-generating real estate InvITs infrastructure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Real Estate Investment Trusts (REITs) — Regulated by SEBI; may invest in both completed and under-construction real estate projects\n(b) Infrastructure Investment Trusts (InvITs) — Must distribute at least 80% of net distributable cash flows to unit holders\n(c) Infrastructure Investment Trusts (InvITs) — Invest in infrastructure assets such as roads and power transmission lines; listed on stock exchanges\n(d) Real Estate Investment Trusts (REITs) — Introduced under SEBI's regulatory framework in 2019",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because REITs and SEBI regulation is a true pairing, but adding 'including under-construction projects' makes it false.",
+      "elimination_logic": [
+        "Eliminate (a): REITs are regulated by SEBI and do invest in real estate — but the claim 'including under-construction projects' is false. REITs must invest in completed, revenue-generating assets.",
+        "Eliminate (b): InvITs do distribute a high proportion of cash flows, but 'at least 80%' is incorrect — the mandatory distribution threshold is at least 90% of net distributable cash flows.",
+        "Evaluate (c): InvITs invest in infrastructure assets — roads, power lines, pipelines — and are listed on stock exchanges, combining income-like distributions with equity-like tradability. This pairing is fully correct.",
+        "Eliminate (d): REITs were introduced under SEBI's regulatory framework in 2014 — not 2019. The year is wrong."
+      ],
+      "upsc_trap_explanation": "Option (a) is the primary trap — it correctly identifies REITs as SEBI-regulated and real estate-focused, but smuggles in 'under-construction projects.' REITs are specifically restricted to completed, revenue-generating real estate to ensure steady income distribution to unitholders. Under-construction projects have uncertain cash flows and cannot support the mandatory 90% distribution requirement. A student who recalls 'SEBI + REITs + real estate' but misses the under-construction restriction will mark (a).",
+      "final_explanation": "REITs and InvITs are SEBI-regulated hybrid instruments that blend income (like bonds) with tradability (like equities).\n\n• Option (a) — Incorrect: REITs are indeed SEBI-regulated and real estate-focused. However, they are restricted to investing in completed, income-generating real estate assets — NOT under-construction projects.\n• Option (b) — Incorrect: The mandatory distribution threshold for both REITs and InvITs is at least 90% of net distributable cash flows — not 80%.\n• Option (c) — Correct: InvITs invest in infrastructure assets such as roads, highways, power transmission lines, and pipelines. They are listed on stock exchanges, combining regular income distributions with the liquidity of publicly traded instruments.\n• Option (d) — Incorrect: SEBI introduced the regulatory frameworks for REITs and InvITs in 2014, not 2019.\n\nValue Addition:\n• India's first REIT (Embassy Office Parks REIT) was listed in 2019 — distinguish this listing year from the regulatory framework year (2014).\n• REITs must hold at least 80% of assets in completed, revenue-generating properties.\n• InvITs can hold both operating assets (roads with stable toll revenue) and under-construction projects (up to a defined limit)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही रूप से मेल खाता है?\n\n(a) रियल एस्टेट इन्वेस्टमेंट ट्रस्ट (REITs) — SEBI द्वारा विनियमित; पूर्ण और निर्माणाधीन दोनों रियल एस्टेट परियोजनाओं में निवेश कर सकते हैं\n(b) इन्फ्रास्ट्रक्चर इन्वेस्टमेंट ट्रस्ट (InvITs) — यूनिट धारकों को कम से कम 80% शुद्ध वितरणीय नकदी प्रवाह वितरित करना आवश्यक है\n(c) इन्फ्रास्ट्रक्चर इन्वेस्टमेंट ट्रस्ट (InvITs) — सड़कों और पावर ट्रांसमिशन लाइनों जैसे अवसंरचना परिसंपत्तियों में निवेश करते हैं; स्टॉक एक्सचेंजों में सूचीबद्ध\n(d) रियल एस्टेट इन्वेस्टमेंट ट्रस्ट (REITs) — SEBI के नियामक ढांचे के तहत 2019 में पेश किए गए",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) — विकल्प (a) भ्रामक है क्योंकि REITs और SEBI विनियमन सही युग्म है, लेकिन 'निर्माणाधीन परियोजनाओं सहित' जोड़ना इसे गलत बनाता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: REITs SEBI द्वारा विनियमित हैं और रियल एस्टेट में निवेश करते हैं — लेकिन 'निर्माणाधीन परियोजनाओं सहित' का दावा गलत है। REITs को पूर्ण, राजस्व-सृजन करने वाली परिसंपत्तियों में निवेश करना आवश्यक है।",
+        "(b) को हटाएं: InvITs नकदी प्रवाह का उच्च अनुपात वितरित करते हैं, लेकिन 'कम से कम 80%' गलत है — अनिवार्य वितरण सीमा कम से कम 90% है।",
+        "(c) का मूल्यांकन करें: InvITs अवसंरचना परिसंपत्तियों — सड़कें, पावर लाइनें, पाइपलाइनों — में निवेश करते हैं और स्टॉक एक्सचेंजों में सूचीबद्ध होते हैं, जो आय जैसी वितरण और इक्विटी जैसी व्यापारिकता को जोड़ते हैं। यह युग्म पूरी तरह सही है।",
+        "(d) को हटाएं: REITs को SEBI के नियामक ढांचे के तहत 2014 में पेश किया गया था — 2019 नहीं। वर्ष गलत है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "REITs और InvITs SEBI द्वारा विनियमित हाइब्रिड उपकरण हैं जो आय (बॉन्ड की तरह) और व्यापारिकता (इक्विटी की तरह) को मिलाते हैं।\n\n• विकल्प (a) — गलत: REITs वास्तव में SEBI द्वारा विनियमित और रियल एस्टेट-केंद्रित हैं। हालांकि, वे केवल पूर्ण, आय-सृजन करने वाली रियल एस्टेट परिसंपत्तियों में निवेश करने के लिए प्रतिबंधित हैं — निर्माणाधीन परियोजनाओं में नहीं।\n• विकल्प (b) — गलत: REITs और InvITs दोनों के लिए अनिवार्य वितरण सीमा कम से कम 90% है, 80% नहीं।\n• विकल्प (c) — सही: InvITs सड़कें, राजमार्ग, पावर ट्रांसमिशन लाइनें, और पाइपलाइनों जैसी अवसंरचना परिसंपत्तियों में निवेश करते हैं। वे स्टॉक एक्सचेंजों में सूचीबद्ध होते हैं, नियमित आय वितरण को सार्वजनिक रूप से व्यापार योग्य उपकरणों की तरलता के साथ जोड़ते हैं।\n• विकल्प (d) — गलत: SEBI ने REITs और InvITs के नियामक ढांचे 2014 में पेश किए, 2019 में नहीं।\n\nमूल्य संवर्धन:\n• भारत का पहला REIT (Embassy Office Parks REIT) 2019 में सूचीबद्ध हुआ — इस सूचीकरण वर्ष को नियामक ढांचे के वर्ष (2014) से अलग करें।\n• REITs को कम से कम 80% परिसंपत्तियां पूर्ण, राजस्व-सृजन करने वाली संपत्तियों में रखनी होती हैं।\n• InvITs संचालन परिसंपत्तियां (स्थिर टोल राजस्व वाली सड़कें) और निर्माणाधीन परियोजनाएं (एक परिभाषित सीमा तक) दोनों रख सकते हैं।"
+    }
+  },
+  {
+    "uuid": "c485afcf-c2c1-4402-9da7-d5a9476b05c9",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's International Linkages: IOSCO Membership and Cross-Border Regulation"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "IOSCO global standard-setter securities regulation SEBI member",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "SEBI is a member of which international body that serves as the global standard-setter for securities market regulation and facilitates cross-border enforcement cooperation through a Multilateral Memorandum of Understanding?\n\n(a) International Monetary Fund (IMF)\n(b) International Organization of Securities Commissions (IOSCO)\n(c) Financial Stability Board (FSB)\n(d) Bank for International Settlements (BIS)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — BIS (Bank for International Settlements) sounds like a global financial standards body (because it is, for banking), making it a plausible distractor for students who know IOSCO but confuse the two.",
+      "elimination_logic": [
+        "Eliminate (a): IMF is the international monetary fund focused on exchange rates and balance of payments — not the standard-setter for securities market regulation.",
+        "Confirm (b): IOSCO is the International Organization of Securities Commissions — the global body that sets standards for securities regulation and of which SEBI is a member.",
+        "Eliminate (c): FSB (Financial Stability Board) coordinates global financial regulatory standards broadly — it is not specifically the securities regulation standard-setter.",
+        "Eliminate (d): BIS (Bank for International Settlements) serves central banks and sets banking/monetary standards — not securities regulation."
+      ],
+      "upsc_trap_explanation": "BIS and FSB are tempting wrong answers because they are genuine international financial standard-setting bodies. A student who has studied global financial architecture but not specifically matched regulators to their international counterparts may confuse BIS (which SEBI is not a member of) with IOSCO. The entity-swap here is precise: same domain (financial regulation), wrong organization.",
+      "final_explanation": "SEBI's international regulatory linkages connect it to global securities standard-setting, which has real implications for India's capital market credibility.\n\n• Option (a) — IMF: The International Monetary Fund deals with macroeconomic stability, exchange rate policies, and balance of payments — not securities market regulation. Incorrect.\n• Option (b) — IOSCO: The International Organization of Securities Commissions is the global standard-setter for securities regulation. SEBI is a full member and signatory to IOSCO's Multilateral MoU (MMoU), enabling cross-border enforcement cooperation. Correct.\n• Option (c) — FSB: The Financial Stability Board monitors and makes recommendations on the global financial system broadly — it covers banking, insurance, and securities, but is not the primary securities-specific standard-setter. Incorrect.\n• Option (d) — BIS: The Bank for International Settlements serves central banks and sets banking regulatory standards (Basel framework) — not securities regulation. Incorrect.\n\nValue Addition:\n• SEBI signed IOSCO's Enhanced MMoU (EMMoU) in 2018, enabling broader information-sharing including on collective investment schemes.\n• SEBI also signs bilateral MoUs with individual regulators like the US SEC and UK FCA.\n• IOSCO's membership includes securities regulators from over 130 jurisdictions."
+    },
+    "hi": {
+      "display_text": "SEBI किस अंतरराष्ट्रीय संस्था का सदस्य है जो प्रतिभूति बाजार विनियमन के लिए वैश्विक मानक निर्धारक के रूप में कार्य करती है और बहुपक्षीय समझौता ज्ञापन के माध्यम से सीमा-पार प्रवर्तन सहयोग की सुविधा प्रदान करती है?\n\n(a) अंतरराष्ट्रीय मुद्रा कोष (IMF)\n(b) अंतरराष्ट्रीय प्रतिभूति आयोगों का संगठन (IOSCO)\n(c) वित्तीय स्थिरता बोर्ड (FSB)\n(d) अंतरराष्ट्रीय निपटान बैंक (BIS)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — BIS (Bank for International Settlements) एक वैश्विक वित्तीय मानक निर्धारण संस्था की तरह लगता है (क्योंकि यह बैंकिंग के लिए है), जो उन छात्रों के लिए एक संभावित भ्रम पैदा करता है जो IOSCO को जानते हैं लेकिन दोनों को भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: IMF अंतरराष्ट्रीय मुद्रा कोष है जो विनिमय दरों और भुगतान संतुलन पर केंद्रित है — यह प्रतिभूति बाजार विनियमन के लिए मानक निर्धारक नहीं है।",
+        "(b) की पुष्टि करें: IOSCO अंतरराष्ट्रीय प्रतिभूति आयोगों का संगठन है — यह प्रतिभूति विनियमन के लिए वैश्विक मानक निर्धारक संस्था है और SEBI इसका सदस्य है।",
+        "(c) को हटाएं: FSB (वित्तीय स्थिरता बोर्ड) व्यापक रूप से वैश्विक वित्तीय नियामक मानकों का समन्वय करता है — यह विशेष रूप से प्रतिभूति विनियमन का मानक निर्धारक नहीं है।",
+        "(d) को हटाएं: BIS (अंतरराष्ट्रीय निपटान बैंक) केंद्रीय बैंकों की सेवा करता है और बैंकिंग/मौद्रिक मानक निर्धारित करता है — प्रतिभूति विनियमन नहीं।"
+      ],
+      "upsc_trap_explanation": "BIS और FSB आकर्षक गलत उत्तर हैं क्योंकि वे वास्तविक अंतरराष्ट्रीय वित्तीय मानक निर्धारण संस्थाएं हैं। जो छात्र वैश्विक वित्तीय संरचना का अध्ययन कर चुके हैं लेकिन नियामकों को उनके अंतरराष्ट्रीय समकक्षों से विशेष रूप से नहीं जोड़ा है, वे BIS (जिसका SEBI सदस्य नहीं है) को IOSCO से भ्रमित कर सकते हैं। यहाँ इकाई-स्थानांतरण सटीक है: समान क्षेत्र (वित्तीय विनियमन), गलत संगठन।",
+      "final_explanation": "SEBI के अंतरराष्ट्रीय नियामक संबंध इसे वैश्विक प्रतिभूति मानक निर्धारण से जोड़ते हैं, जिसका भारत के पूंजी बाजार की विश्वसनीयता पर वास्तविक प्रभाव है।\n\n• विकल्प (a) — IMF: अंतरराष्ट्रीय मुद्रा कोष मैक्रोइकॉनॉमिक स्थिरता, विनिमय दर नीतियों, और भुगतान संतुलन से संबंधित है — प्रतिभूति बाजार विनियमन से नहीं। गलत।\n• विकल्प (b) — IOSCO: अंतरराष्ट्रीय प्रतिभूति आयोगों का संगठन प्रतिभूति विनियमन के लिए वैश्विक मानक निर्धारक है। SEBI इसका पूर्ण सदस्य है और IOSCO के बहुपक्षीय समझौता ज्ञापन (MMoU) का हस्ताक्षरकर्ता है, जो सीमा-पार प्रवर्तन सहयोग सक्षम करता है। सही।\n• विकल्प (c) — FSB: वित्तीय स्थिरता बोर्ड व्यापक रूप से वैश्विक वित्तीय प्रणाली की निगरानी करता है और सिफारिशें करता है — यह बैंकिंग, बीमा, और प्रतिभूतियों को कवर करता है, लेकिन मुख्य प्रतिभूति-विशिष्ट मानक निर्धारक नहीं है। गलत।\n• विकल्प (d) — BIS: अंतरराष्ट्रीय निपटान बैंक केंद्रीय बैंकों की सेवा करता है और बैंकिंग नियामक मानक (बेसल फ्रेमवर्क) निर्धारित करता है — प्रतिभूति विनियमन नहीं। गलत।\n\nमूल्य संवर्धन:\n• SEBI ने 2018 में IOSCO के संवर्धित MMoU (EMMoU) पर हस्ताक्षर किए, जो सामूहिक निवेश योजनाओं सहित व्यापक सूचना-साझाकरण सक्षम करता है।\n• SEBI द्विपक्षीय समझौता ज्ञापनों पर भी हस्ताक्षर करता है जैसे कि US SEC और UK FCA के साथ।\n• IOSCO की सदस्यता में 130 से अधिक न्यायक्षेत्रों के प्रतिभूति नियामक शामिल हैं।"
+    }
+  },
+  {
+    "uuid": "b5649c8e-972f-4729-b422-ec3fce9dcd6e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Funding Mechanism and Financial Autonomy"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "partial-truth",
+      "concept_anchor": "SEBI financial autonomy vs government accountability tension",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): SEBI meets its operational expenses primarily through fees and charges levied on market participants such as registration fees and transaction charges, rather than through annual parliamentary appropriation.\n\nReason (R): Because SEBI generates its own revenue from market fees, neither its Chairman nor any Board member is appointed by the Central Government, ensuring complete structural independence.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? A states SEBI's operating expenses are funded through fees charged to market participants rather than parliamentary budget appropriation. This is factually correct.",
+        "Step 2 — Is Reason (R) correct? R states that because SEBI is funded through market fees, neither the Chairman nor any Board member is appointed by the Central Government. This is factually INCORRECT — the Chairman and government nominees are appointed by the Central Government.",
+        "Step 3 — Since R is incorrect, option is (c): A is correct but R is incorrect.",
+        "Correct option is (c)."
+      ],
+      "upsc_trap_explanation": "This is the central SEBI autonomy trap. Students who equate 'financial independence' with 'full independence' will mark both A and R as correct and choose option (a). The trap is that SEBI's fee-based funding is real and significant — but it does NOT eliminate government control over appointments. The Chairman is appointed by the Central Government, and two government nominees sit on the Board. Financial self-sufficiency and structural independence are entirely different concepts, and this question forces students to distinguish them precisely.",
+      "final_explanation": "SEBI's autonomy architecture is often misunderstood as 'complete independence' because of its fee-based funding model.\n\n• Assertion (A): Correct. SEBI is funded through registration fees, transaction charges, and other levies on market participants — it does not depend on annual parliamentary appropriations. This gives it financial insulation from budgetary pressures.\n• Reason (R): Incorrect. Fee-based funding does not translate to independence in appointments. The SEBI Act explicitly states that the Chairman and certain board members are appointed by the Central Government. Two ex-officio government nominees (from Finance and Law ministries) sit on the Board. SEBI has financial autonomy but not appointment autonomy.\n• Causal assessment: Irrelevant since R is factually wrong.\n\nValue Addition:\n• Surplus funds generated by SEBI beyond its operational needs are transferred to the Consolidated Fund of India after a Board decision.\n• SEBI maintains an Investor Protection and Education Fund (IPEF) funded partly from market fees and disgorgement proceeds.\n• Compare: RBI also faces a similar tension — operationally independent, but the Governor is appointed by the Central Government."
+    },
+    "hi": {
+      "display_text": "कथन (A): SEBI अपने परिचालन व्यय मुख्य रूप से बाजार प्रतिभागियों से लिए गए शुल्कों जैसे पंजीकरण शुल्क और लेन-देन शुल्क के माध्यम से पूरा करता है, न कि वार्षिक संसदीय आवंटन के माध्यम से।\n\nकारण (R): क्योंकि SEBI अपनी आय बाजार शुल्कों से उत्पन्न करता है, इसलिए न तो इसका अध्यक्ष और न ही कोई बोर्ड सदस्य केंद्रीय सरकार द्वारा नियुक्त किया जाता है, जिससे पूर्ण संरचनात्मक स्वतंत्रता सुनिश्चित होती है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? A कहता है कि SEBI के परिचालन व्यय बाजार प्रतिभागियों से लिए गए शुल्कों के माध्यम से वित्तपोषित होते हैं, न कि संसदीय बजट आवंटन से। यह तथ्यात्मक रूप से सही है।",
+        "चरण 2 — क्या कारण (R) सही है? R कहता है कि क्योंकि SEBI बाजार शुल्कों से वित्तपोषित है, इसलिए न तो इसके अध्यक्ष और न ही कोई बोर्ड सदस्य केंद्रीय सरकार द्वारा नियुक्त किए जाते हैं। यह तथ्यात्मक रूप से गलत है — अध्यक्ष और सरकारी नामांकित सदस्य केंद्रीय सरकार द्वारा नियुक्त किए जाते हैं।",
+        "चरण 3 — चूंकि R गलत है, विकल्प है (c): A सही है लेकिन R गलत है।",
+        "सही विकल्प है (c)।"
+      ],
+      "upsc_trap_explanation": "यह SEBI की स्वायत्तता का मुख्य जाल है। जो छात्र 'वित्तीय स्वतंत्रता' को 'पूर्ण स्वतंत्रता' के समान मानते हैं, वे A और R दोनों को सही मानकर विकल्प (a) चुनेंगे। जाल यह है कि SEBI का शुल्क-आधारित वित्तपोषण वास्तविक और महत्वपूर्ण है — लेकिन यह नियुक्तियों पर सरकारी नियंत्रण को समाप्त नहीं करता। अध्यक्ष केंद्रीय सरकार द्वारा नियुक्त होता है, और बोर्ड में दो सरकारी नामांकित सदस्य होते हैं। वित्तीय आत्मनिर्भरता और संरचनात्मक स्वतंत्रता पूरी तरह अलग अवधारणाएं हैं, और यह प्रश्न छात्रों को इन्हें स्पष्ट रूप से अलग करने के लिए बाध्य करता है।",
+      "final_explanation": "SEBI की स्वायत्तता की संरचना को अक्सर इसके शुल्क-आधारित वित्तपोषण मॉडल के कारण 'पूर्ण स्वतंत्रता' के रूप में गलत समझा जाता है।\n\n• कथन (A): सही। SEBI का वित्तपोषण पंजीकरण शुल्क, लेन-देन शुल्क, और अन्य बाजार शुल्कों से होता है — यह वार्षिक संसदीय आवंटन पर निर्भर नहीं है। इससे इसे बजटीय दबावों से वित्तीय सुरक्षा मिलती है।\n• कारण (R): गलत। शुल्क-आधारित वित्तपोषण नियुक्तियों में स्वतंत्रता में परिवर्तित नहीं होता। SEBI अधिनियम स्पष्ट रूप से कहता है कि अध्यक्ष और कुछ बोर्ड सदस्य केंद्रीय सरकार द्वारा नियुक्त किए जाते हैं। बोर्ड में दो पदेन सरकारी नामांकित सदस्य (वित्त और विधि मंत्रालय से) होते हैं। SEBI के पास वित्तीय स्वायत्तता है लेकिन नियुक्ति स्वायत्तता नहीं है।\n• कारणात्मक मूल्यांकन: अप्रासंगिक क्योंकि R तथ्यात्मक रूप से गलत है।\n\nमूल्यवर्धन:\n• SEBI द्वारा परिचालन आवश्यकताओं से अधिक उत्पन्न अधिशेष निधि बोर्ड के निर्णय के बाद भारत के समेकित कोष में स्थानांतरित की जाती है।\n• SEBI एक निवेशक संरक्षण और शिक्षा कोष (IPEF) बनाए रखता है, जो आंशिक रूप से बाजार शुल्कों और जब्ती की आय से वित्तपोषित होता है।\n• तुलना करें: RBI भी इसी तनाव का सामना करता है — परिचालन रूप से स्वतंत्र, लेकिन गवर्नर केंद्रीय सरकार द्वारा नियुक्त होता है।"
+    }
+  },
+  {
+    "uuid": "8df3481e-cedf-46ae-8e6e-53dd085b5806",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Securities Appellate Tribunal (SAT): Jurisdiction and Limitations",
+        "SEBI's Enforcement Powers: Penalties, Disgorgement, and Debarment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SAT appeal to Supreme Court not High Court",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about the Securities Appellate Tribunal (SAT):",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "The Securities Appellate Tribunal (SAT) is presided over by a retired judge who has served as a judge of the High Court or Supreme Court of India."
+          ],
+          [
+            "2",
+            "Appeals from SAT's orders lie to the High Court of the jurisdiction in which the SAT is located."
+          ],
+          [
+            "3",
+            "SAT has jurisdiction to hear appeals not only against SEBI orders but also against orders of IRDAI and PFRDA."
+          ],
+          [
+            "4",
+            "SEBI may directly approach SAT to seek enforcement of its orders in cases of non-compliance by market participants."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The Securities Appellate Tribunal (SAT) is presided over by a retired judge who has served as a judge of the High Court or Supreme Court of India.",
+          "verdict": "Correct",
+          "reason": "The SEBI Act mandates that SAT's Presiding Officer must be a retired High Court or Supreme Court judge — ensuring judicial expertise in the appellate body."
+        },
+        {
+          "statement": "Appeals from SAT's orders lie to the High Court of the jurisdiction in which the SAT is located.",
+          "verdict": "Incorrect",
+          "reason": "Appeals from SAT lie directly to the Supreme Court of India — not to any High Court. This is a critical design feature that makes SEBI-related litigation bypass High Courts entirely."
+        },
+        {
+          "statement": "SAT has jurisdiction to hear appeals not only against SEBI orders but also against orders of IRDAI and PFRDA.",
+          "verdict": "Correct",
+          "reason": "SAT was empowered to hear appeals against IRDAI and PFRDA orders in addition to SEBI orders — it is a multi-regulator appellate tribunal."
+        },
+        {
+          "statement": "SEBI may directly approach SAT to seek enforcement of its orders in cases of non-compliance by market participants.",
+          "verdict": "Incorrect",
+          "reason": "SAT is an appellate body — it reviews challenged orders, it does not enforce SEBI orders. Enforcement of SEBI orders is done through SEBI's own mechanisms or courts, not SAT."
+        }
+      ],
+      "strong_distractor": "b — This is the correct answer. The strong distractor for students is (c), who might assume SAT hears only SEBI appeals and mark Statement 3 as incorrect.",
+      "elimination_logic": [
+        "Evaluate Statement 1: SAT's Presiding Officer is a retired HC or SC judge — statutory requirement. Correct.",
+        "Evaluate Statement 2: SAT appeals go to the Supreme Court directly, not to any High Court. Statement 2 is incorrect.",
+        "Evaluate Statement 3: SAT covers SEBI, IRDAI, and PFRDA appeals — multi-regulator scope. Correct.",
+        "Evaluate Statement 4: SAT is appellate, not an enforcement body — SEBI enforces its own orders. Statement 4 is incorrect.",
+        "Two statements correct (1 and 3), two incorrect (2 and 4) — correct option is (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the classic SAT trap — students often assume the appeals hierarchy follows the normal civil court pattern (district → HC → SC) and place the High Court between SAT and the Supreme Court. The SEBI Act deliberately bypasses the High Court to speed up securities litigation — SAT orders are directly challengeable before the Supreme Court. This is one of the most frequently tested UPSC traps in the SEBI domain.",
+      "final_explanation": "SAT's design reflects a deliberate choice to create a specialized, fast-track appellate mechanism for securities regulation.\n\n• Statement 1 — Correct: The Presiding Officer must be a retired HC or SC judge, lending judicial credibility and expertise.\n• Statement 2 — Incorrect: The appellate path from SAT is directly to the Supreme Court — not the High Court. This is a fundamental departure from the standard civil court hierarchy and exists to ensure expert, fast adjudication.\n• Statement 3 — Correct: SAT's jurisdiction covers SEBI, IRDAI, and PFRDA orders — making it a cross-sector financial regulatory appellate body.\n• Statement 4 — Incorrect: SAT reviews challenged orders on appeal — it does not proactively enforce SEBI's orders. If a market participant ignores a SEBI order, enforcement goes through SEBI's own mechanisms or civil courts.\n\nValue Addition:\n• SAT is located in Mumbai, with a circuit bench in Delhi.\n• The limitation period for filing an appeal before SAT is 45 days from the date of the impugned order.\n• SAT orders can be stayed by the Supreme Court — the Supreme Court has original jurisdiction to stay SAT orders."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Securities Appellate Tribunal (SAT) के संबंध में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "Securities Appellate Tribunal (SAT) की अध्यक्षता एक सेवानिवृत्त न्यायाधीश करते हैं, जिन्होंने भारत के उच्च न्यायालय या सर्वोच्च न्यायालय में न्यायाधीश के रूप में सेवा की हो।"
+          ],
+          [
+            "2",
+            "SAT के आदेशों के खिलाफ अपील उस क्षेत्राधिकार के उच्च न्यायालय में की जाती है जहाँ SAT स्थित है।"
+          ],
+          [
+            "3",
+            "SAT के पास न केवल SEBI के आदेशों के खिलाफ अपील सुनने का अधिकार है बल्कि IRDAI और PFRDA के आदेशों के खिलाफ भी है।"
+          ],
+          [
+            "4",
+            "SEBI सीधे SAT के पास जाकर बाजार प्रतिभागियों द्वारा आदेशों के अनुपालन न करने की स्थिति में अपने आदेशों के प्रवर्तन की मांग कर सकता है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Securities Appellate Tribunal (SAT) की अध्यक्षता एक सेवानिवृत्त न्यायाधीश करते हैं, जिन्होंने भारत के उच्च न्यायालय या सर्वोच्च न्यायालय में न्यायाधीश के रूप में सेवा की हो।",
+          "verdict": "सही",
+          "reason": "SEBI अधिनियम यह अनिवार्य करता है कि SAT के अध्यक्ष एक सेवानिवृत्त उच्च न्यायालय या सर्वोच्च न्यायालय के न्यायाधीश हों — जिससे अपीलीय निकाय में न्यायिक विशेषज्ञता सुनिश्चित होती है।"
+        },
+        {
+          "statement": "SAT के आदेशों के खिलाफ अपील उस क्षेत्राधिकार के उच्च न्यायालय में की जाती है जहाँ SAT स्थित है।",
+          "verdict": "गलत",
+          "reason": "SAT से अपील सीधे भारत के सर्वोच्च न्यायालय में होती है — किसी भी उच्च न्यायालय में नहीं। यह SEBI से संबंधित मुकदमों को उच्च न्यायालयों से पूरी तरह से बचाने वाला एक महत्वपूर्ण डिजाइन विशेषता है।"
+        },
+        {
+          "statement": "SAT के पास न केवल SEBI के आदेशों के खिलाफ अपील सुनने का अधिकार है बल्कि IRDAI और PFRDA के आदेशों के खिलाफ भी है।",
+          "verdict": "सही",
+          "reason": "SAT को SEBI के आदेशों के अलावा IRDAI और PFRDA के आदेशों के खिलाफ अपील सुनने का अधिकार दिया गया है — यह एक बहु-नियामक अपीलीय न्यायाधिकरण है।"
+        },
+        {
+          "statement": "SEBI सीधे SAT के पास जाकर बाजार प्रतिभागियों द्वारा आदेशों के अनुपालन न करने की स्थिति में अपने आदेशों के प्रवर्तन की मांग कर सकता है।",
+          "verdict": "गलत",
+          "reason": "SAT एक अपीलीय निकाय है — यह चुनौती प्राप्त आदेशों की समीक्षा करता है, SEBI के आदेशों को प्रवर्तित नहीं करता। SEBI के आदेशों का प्रवर्तन SEBI के अपने तंत्र या न्यायालयों के माध्यम से होता है, SAT के माध्यम से नहीं।"
+        }
+      ],
+      "strong_distractor": "b — यह सही उत्तर है। छात्रों के लिए मजबूत भ्रम (distractor) विकल्प (c) है, जो मान सकते हैं कि SAT केवल SEBI की अपीलें सुनता है और कथन 3 को गलत चिह्नित कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: SAT के अध्यक्ष एक सेवानिवृत्त उच्च न्यायालय या सर्वोच्च न्यायालय के न्यायाधीश हैं — वैधानिक आवश्यकता। सही।",
+        "कथन 2 का मूल्यांकन करें: SAT से अपील सीधे सर्वोच्च न्यायालय जाती है, किसी भी उच्च न्यायालय को नहीं। कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: SAT SEBI, IRDAI, और PFRDA की अपीलें सुनता है — बहु-नियामक क्षेत्र। सही।",
+        "कथन 4 का मूल्यांकन करें: SAT अपीलीय है, प्रवर्तन निकाय नहीं — SEBI अपने आदेशों को स्वयं प्रवर्तित करता है। कथन 4 गलत है।",
+        "दो कथन सही हैं (1 और 3), दो गलत (2 और 4) — सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 SAT का क्लासिक जाल है — छात्र अक्सर मान लेते हैं कि अपील की श्रेणी सामान्य सिविल न्यायालय के पैटर्न (जिला → उच्च न्यायालय → सर्वोच्च न्यायालय) का पालन करती है और SAT और सर्वोच्च न्यायालय के बीच उच्च न्यायालय को रखते हैं। SEBI अधिनियम जानबूझकर उच्च न्यायालय को बायपास करता है ताकि प्रतिभूतियों से संबंधित मुकदमों में तेजी लाई जा सके — SAT के आदेश सीधे सर्वोच्च न्यायालय में चुनौती योग्य हैं। यह SEBI क्षेत्र में UPSC के सबसे बार-बार पूछे जाने वाले जालों में से एक है।",
+      "final_explanation": "SAT की संरचना प्रतिभूति विनियमन के लिए एक विशेष, त्वरित अपीलीय तंत्र बनाने के लिए जानबूझकर की गई है।\n\n• कथन 1 — सही: अध्यक्ष एक सेवानिवृत्त उच्च न्यायालय या सर्वोच्च न्यायालय के न्यायाधीश होने चाहिए, जो न्यायिक विश्वसनीयता और विशेषज्ञता प्रदान करता है।\n• कथन 2 — गलत: SAT से अपील का मार्ग सीधे सर्वोच्च न्यायालय है — उच्च न्यायालय नहीं। यह सामान्य सिविल न्यायालय पदानुक्रम से मौलिक भिन्नता है और विशेषज्ञ, त्वरित निर्णय सुनिश्चित करने के लिए है।\n• कथन 3 — सही: SAT का क्षेत्राधिकार SEBI, IRDAI, और PFRDA के आदेशों को कवर करता है — इसे एक बहु-क्षेत्रीय वित्तीय नियामक अपीलीय निकाय बनाता है।\n• कथन 4 — गलत: SAT चुनौती प्राप्त आदेशों की समीक्षा करता है — यह SEBI के आदेशों को सक्रिय रूप से प्रवर्तित नहीं करता। यदि कोई बाजार प्रतिभागी SEBI के आदेश की अवहेलना करता है, तो प्रवर्तन SEBI के अपने तंत्र या सिविल न्यायालयों के माध्यम से होता है।\n\nमूल्य वर्धन:\n• SAT मुंबई में स्थित है, दिल्ली में एक सर्किट बेंच है।\n• SAT के समक्ष अपील दायर करने की सीमा अवधि विवादित आदेश की तारीख से 45 दिन है।\n• SAT के आदेशों को सर्वोच्च न्यायालय द्वारा स्थगित किया जा सकता है — सर्वोच्च न्यायालय के पास SAT आदेशों को स्थगित करने का मूल अधिकार है।"
+    }
+  },
+  {
+    "uuid": "fd5de9f3-b462-4d76-b52e-8e928c4525cc",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Insider Trading Regulations: Definition, Prohibition, and UPDI"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "UPSI definition insider trading 2015 regulations trading plan defense",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Ms. Priya is a senior executive at a listed pharmaceutical company and is aware through her official role that her company is in advanced negotiations to acquire a major competitor — an announcement not yet made to the public. She sells a significant block of shares in her own company on the stock exchange before the announcement. Which of the following regulatory frameworks would SEBI primarily invoke when examining whether Ms. Priya's conduct was in violation of securities law?\n\n(a) SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 — since the transaction involves an acquisition by her company.\n(b) SEBI (Prohibition of Insider Trading) Regulations, 2015 — and her trading is absolutely prohibited regardless of any prior filing or plan.\n(c) SEBI (Prohibition of Insider Trading) Regulations, 2015 — as pending merger information constitutes unpublished price-sensitive information (UPSI) and her trading is prohibited unless a pre-approved trading plan was in place.\n(d) SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 — since the company has a disclosure obligation about the merger that overrides individual trading restrictions.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students may assume that 'knowing about a pending merger' automatically makes ALL trading by Ms. Priya illegal, without considering the trading plan defense.",
+      "elimination_logic": [
+        "Identify the key facts: Ms. Priya has UPSI (pending merger — qualifies as price-sensitive), is a connected person (senior executive), and trades on the exchange. This triggers insider trading analysis.",
+        "Eliminate (a): SEBI's insider trading rules are not restricted to stock promoters — they apply to any person who possesses UPSI, including employees and connected persons.",
+        "Evaluate (b): Trading while possessing UPSI is generally prohibited — but the trading plan defense under the 2015 PIT Regulations allows trading if a plan was pre-filed at least 6 months in advance with the exchange. If no such plan exists, trading is prohibited.",
+        "Confirm (c): The 2015 Regulations define UPSI to include pending merger announcements. A senior executive with this information is an 'insider.' Trading is prohibited unless a pre-approved trading plan was filed. The question asks which regulation applies — the 2015 PIT Regulations are directly applicable.",
+        "Eliminate (d): LODR (Listing Obligations and Disclosure Requirements) governs disclosure norms — it is not the regulation that prohibits insider trading. The applicable regulation is PIT 2015."
+      ],
+      "upsc_trap_explanation": "Option (b) is designed for students who know insider trading is prohibited but miss the nuance that the 2015 PIT Regulations introduced a legitimate trading plan defense. The scenario does not explicitly mention whether Ms. Priya filed a trading plan — but the question asks which regulation applies, not whether she is guilty. Option (d) traps students who conflate disclosure obligations (LODR) with trading prohibition rules (PIT). These are different instruments serving different purposes.",
+      "final_explanation": "The 2015 PIT Regulations significantly upgraded India's insider trading framework. Applying it to a scenario requires knowing its key definitions and defenses.\n\nApplicable principle: The SEBI (Prohibition of Insider Trading) Regulations, 2015 define 'UPSI' to include merger and acquisition information that is not yet public. Any person who is a 'connected person' (including senior executives) possessing such UPSI is classified as an 'insider.' Trading in securities while possessing UPSI is prohibited — unless a trading plan pre-filed at least 6 months earlier with the stock exchange is in place.\n\n• Option (a): Incorrect — PIT Regulations apply to all insiders (connected persons possessing UPSI), not only promoters.\n• Option (b): Partially correct on prohibition but ignores the trading plan defense and frames the answer as absolute. Incorrect as framed.\n• Option (c): Correct — SEBI (PIT) Regulations, 2015 directly govern this scenario; pending merger information qualifies as UPSI; Ms. Priya as a connected person possessing UPSI is prohibited from trading unless a valid trading plan exists.\n• Option (d): Incorrect — LODR governs what companies must disclose and when; it does not prohibit trading by individuals. The applicable regulation is PIT, not LODR.\n\nValue Addition:\n• The 2015 PIT Regulations introduced 'structured digital databases' — companies must record who accesses UPSI and when.\n• Contra-trade restrictions: After trading, an insider must wait 6 months before taking an opposite position.\n• 'Deemed UPSI' includes: financial results, dividends, rights issues, mergers, splits, and changes in key personnel."
+    },
+    "hi": {
+      "display_text": "मिस प्रिया एक सूचीबद्ध फार्मास्यूटिकल कंपनी में वरिष्ठ कार्यकारी हैं और अपने आधिकारिक पद के माध्यम से जानती हैं कि उनकी कंपनी एक प्रमुख प्रतिस्पर्धी को अधिग्रहित करने के लिए उन्नत वार्ता में है — जो घोषणा अभी तक सार्वजनिक नहीं की गई है। वह घोषणा से पहले अपनी कंपनी के शेयरों का एक महत्वपूर्ण ब्लॉक स्टॉक एक्सचेंज पर बेचती हैं। निम्नलिखित में से कौन-सा नियामक ढांचा SEBI मुख्य रूप से लागू करेगा जब यह जांच करेगा कि क्या मिस प्रिया का आचरण प्रतिभूतियों कानून का उल्लंघन करता है?\n\n(a) SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 — क्योंकि लेनदेन उनकी कंपनी द्वारा अधिग्रहण से संबंधित है।\n(b) SEBI (Prohibition of Insider Trading) Regulations, 2015 — और उनकी ट्रेडिंग किसी भी पूर्व फाइलिंग या योजना की परवाह किए बिना पूरी तरह से प्रतिबंधित है।\n(c) SEBI (Prohibition of Insider Trading) Regulations, 2015 — क्योंकि लंबित विलय की जानकारी अप्रकाशित मूल्य-संवेदनशील सूचना (UPSI) मानी जाती है और उनकी ट्रेडिंग तब तक प्रतिबंधित है जब तक कि पूर्व-स्वीकृत ट्रेडिंग प्लान मौजूद न हो।\n(d) SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 — क्योंकि कंपनी पर विलय के बारे में प्रकटीकरण दायित्व है जो व्यक्तिगत ट्रेडिंग प्रतिबंधों से ऊपर है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र यह मान सकते हैं कि 'एक लंबित विलय के बारे में जानना' अपने आप में मिस प्रिया द्वारा की गई सभी ट्रेडिंग को अवैध बनाता है, बिना ट्रेडिंग प्लान रक्षा पर विचार किए।",
+      "elimination_logic": [
+        "मुख्य तथ्यों की पहचान करें: मिस प्रिया के पास UPSI (लंबित विलय — जो मूल्य-संवेदनशील सूचना के रूप में योग्य है), वह एक कनेक्टेड व्यक्ति हैं (वरिष्ठ कार्यकारी), और वह एक्सचेंज पर ट्रेडिंग करती हैं। यह अंदरूनी ट्रेडिंग विश्लेषण को सक्रिय करता है।",
+        "(a) को खारिज करें: SEBI के अंदरूनी ट्रेडिंग नियम केवल स्टॉक प्रमोटरों तक सीमित नहीं हैं — ये किसी भी व्यक्ति पर लागू होते हैं जिसके पास UPSI हो, जिसमें कर्मचारी और कनेक्टेड व्यक्ति शामिल हैं।",
+        "(b) का मूल्यांकन करें: UPSI रखते हुए ट्रेडिंग आमतौर पर प्रतिबंधित है — लेकिन 2015 के PIT नियमों के तहत ट्रेडिंग प्लान रक्षा तब लागू होती है जब कम से कम 6 महीने पहले एक्सचेंज के साथ एक योजना पूर्व-फाइल की गई हो। यदि ऐसी कोई योजना नहीं है, तो ट्रेडिंग प्रतिबंधित है।",
+        "(c) की पुष्टि करें: 2015 के नियम UPSI को लंबित विलय की घोषणाओं सहित परिभाषित करते हैं। इस जानकारी वाला वरिष्ठ कार्यकारी 'अंदरूनी व्यक्ति' है। ट्रेडिंग तब तक प्रतिबंधित है जब तक कि पूर्व-स्वीकृत ट्रेडिंग प्लान फाइल न किया गया हो। प्रश्न पूछता है कि कौन सा नियम लागू होता है — 2015 के PIT नियम सीधे लागू होते हैं।",
+        "(d) को खारिज करें: LODR (सूचीबद्धता दायित्व और प्रकटीकरण आवश्यकताएं) प्रकटीकरण मानदंडों को नियंत्रित करता है — यह अंदरूनी ट्रेडिंग को प्रतिबंधित करने वाला नियम नहीं है। लागू नियम PIT 2015 है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) उन छात्रों के लिए डिज़ाइन किया गया है जो जानते हैं कि अंदरूनी ट्रेडिंग प्रतिबंधित है लेकिन यह नहीं समझते कि 2015 के PIT नियमों ने वैध ट्रेडिंग प्लान रक्षा पेश की है। परिदृश्य स्पष्ट रूप से यह नहीं बताता कि मिस प्रिया ने ट्रेडिंग प्लान फाइल किया है या नहीं — लेकिन प्रश्न यह पूछता है कि कौन सा नियम लागू होता है, न कि वह दोषी है या नहीं। विकल्प (d) उन छात्रों को फंसाता है जो प्रकटीकरण दायित्वों (LODR) को ट्रेडिंग प्रतिबंध नियमों (PIT) के साथ भ्रमित करते हैं। ये अलग-अलग उपकरण हैं जो अलग-अलग उद्देश्यों की सेवा करते हैं।",
+      "final_explanation": "2015 के PIT नियमों ने भारत के अंदरूनी ट्रेडिंग ढांचे को महत्वपूर्ण रूप से उन्नत किया। इसे किसी परिदृश्य पर लागू करने के लिए इसके प्रमुख परिभाषाओं और रक्षा तंत्रों को जानना आवश्यक है।\n\nलागू सिद्धांत: SEBI (प्रोहिबिशन ऑफ इनसाइडर ट्रेडिंग) नियम, 2015 'UPSI' को विलय और अधिग्रहण की ऐसी जानकारी के रूप में परिभाषित करते हैं जो अभी सार्वजनिक नहीं हुई है। कोई भी व्यक्ति जो 'कनेक्टेड व्यक्ति' है (जिसमें वरिष्ठ कार्यकारी शामिल हैं) और जिसके पास ऐसी UPSI है, उसे 'अंदरूनी व्यक्ति' माना जाता है। UPSI रखते हुए प्रतिभूतियों में ट्रेडिंग प्रतिबंधित है — जब तक कि कम से कम 6 महीने पहले एक्सचेंज के साथ पूर्व-फाइल किया गया ट्रेडिंग प्लान मौजूद न हो।\n\n• विकल्प (a): गलत — PIT नियम सभी अंदरूनी व्यक्तियों (UPSI रखने वाले कनेक्टेड व्यक्ति) पर लागू होते हैं, केवल प्रमोटरों पर नहीं।\n• विकल्प (b): प्रतिबंध के संदर्भ में आंशिक रूप से सही है लेकिन ट्रेडिंग प्लान रक्षा को नजरअंदाज करता है और उत्तर को पूर्ण रूप से प्रतिबंधित बताता है। प्रस्तुत रूप में गलत।\n• विकल्प (c): सही — SEBI (PIT) नियम, 2015 सीधे इस परिदृश्य को नियंत्रित करते हैं; लंबित विलय की जानकारी UPSI के रूप में योग्य है; मिस प्रिया एक कनेक्टेड व्यक्ति के रूप में UPSI रखती हैं और तब तक ट्रेडिंग प्रतिबंधित है जब तक वैध ट्रेडिंग प्लान न हो।\n• विकल्प (d): गलत — LODR यह नियंत्रित करता है कि कंपनियों को क्या और कब प्रकटीकरण करना है; यह व्यक्तियों द्वारा ट्रेडिंग को प्रतिबंधित नहीं करता। लागू नियम PIT है, LODR नहीं।\n\nमूल्य संवर्धन:\n• 2015 के PIT नियमों ने 'संरचित डिजिटल डेटाबेस' पेश किए — कंपनियों को रिकॉर्ड करना होता है कि UPSI तक किसने और कब पहुंच बनाई।\n• विरोधी-ट्रेड प्रतिबंध: ट्रेडिंग के बाद, अंदरूनी व्यक्ति को विपरीत स्थिति लेने से पहले 6 महीने इंतजार करना होता है।\n• 'माना गया UPSI' में शामिल हैं: वित्तीय परिणाम, लाभांश, राइट इश्यू, विलय, स्प्लिट, और प्रमुख कर्मियों में बदलाव।"
+    }
+  },
+  {
+    "uuid": "09752723-599f-4e69-9420-a59b1bc727b7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Organizational Structure and Composition",
+        "SEBI's Funding Mechanism and Financial Autonomy"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "SEBI independence limitations government nominees funding",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about SEBI's financial autonomy and organizational independence:\n\n1. SEBI's financial independence from parliamentary appropriation means that its Chairman cannot be removed by the Central Government during the term of office.\n2. SEBI is required to transfer its entire annual surplus to the Consolidated Fund of India immediately after the close of each financial year.\n3. Two members of SEBI's Board represent the Ministry of Finance and the Ministry of Law respectively as ex-officio members, which limits SEBI's complete regulatory independence from the government.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEBI's financial independence from parliamentary appropriation means that its Chairman cannot be removed by the Central Government during the term of office.",
+          "verdict": "Incorrect",
+          "reason": "Financial independence (fee-based funding) is entirely separate from appointment/removal powers. The Central Government retains the power to appoint and remove the SEBI Chairman — financial autonomy does not confer removal protection."
+        },
+        {
+          "statement": "SEBI is required to transfer its entire annual surplus to the Consolidated Fund of India immediately after the close of each financial year.",
+          "verdict": "Incorrect",
+          "reason": "SEBI may maintain a reserve fund and transfers surplus to the Consolidated Fund of India after a Board decision — the transfer is not automatic or immediate and the reserve fund is first maintained."
+        },
+        {
+          "statement": "Two members of SEBI's Board represent the Ministry of Finance and the Ministry of Law respectively as ex-officio members, which limits SEBI's complete regulatory independence from the government.",
+          "verdict": "Correct",
+          "reason": "This is factually accurate — ex-officio government nominees from both ministries sit on the SEBI Board, creating a structural link to the executive that constrains full independence."
+        }
+      ],
+      "strong_distractor": "b — Students may mark only Statement 1 as incorrect (financial autonomy ≠ removal protection) and overlook the subtle error in Statement 2 about immediate and entire surplus transfer.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Financial autonomy does not protect the Chairman from government-initiated removal — these are separate legal provisions. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: SEBI maintains a reserve fund; surplus transfer to CFI is a Board decision, not an automatic immediate obligation. Statement 2 is NOT correct.",
+        "Evaluate Statement 3: Ex-officio nominees from Finance and Law ministries sitting on SEBI Board is factually accurate. Statement 3 IS correct.",
+        "Statements 1 and 2 are NOT correct — correct option is (c)."
+      ],
+      "upsc_trap_explanation": "Statement 1 is the primary trap — it merges two different legal concepts (financial autonomy and removal protection) as if one implies the other. Students who have studied SEBI's financial independence may instinctively think it is fully autonomous and thus wrongly validate Statement 1. Statement 2 adds a secondary trap — the word 'immediately' and 'entire' both make it incorrect, but students who vaguely recall 'SEBI gives surplus to government' may not catch the inaccurate conditions attached.",
+      "final_explanation": "SEBI's autonomy is partial and layered — financial self-sufficiency coexists with significant governmental control over its leadership and composition.\n\n• Statement 1 — NOT Correct: Financial independence (not depending on parliamentary grants) is a fiscal arrangement, not a protective mechanism for the Chairman's tenure. The Central Government retains full power to appoint and remove the SEBI Chairman independent of SEBI's funding model.\n• Statement 2 — NOT Correct: SEBI is not required to transfer its entire surplus immediately. It maintains a reserve fund from which it can meet future needs. Surplus transfers to the Consolidated Fund of India occur after the Board decides on the quantum and timing.\n• Statement 3 — Correct: The SEBI Act provides for ex-officio government nominees on the Board — one each from Finance and Law ministries. This is a structural feature that ensures governmental accountability but simultaneously limits SEBI's full independence.\n\nValue Addition:\n• SEBI's annual report is submitted to the Central Government, which places it before Parliament.\n• The Chairman's term is typically 5 years — but Central Government can remove the Chairman on specified grounds.\n• Compare with RBI: Similar tension between operational independence and governmental accountability over appointments."
+    },
+    "hi": {
+      "display_text": "SEBI की वित्तीय स्वायत्तता और संगठनात्मक स्वतंत्रता के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. SEBI की संसदीय अनुदान से वित्तीय स्वतंत्रता का अर्थ है कि उसके अध्यक्ष को कार्यकाल के दौरान केंद्रीय सरकार द्वारा हटाया नहीं जा सकता।\n2. SEBI को प्रत्येक वित्तीय वर्ष के समाप्ति के तुरंत बाद अपना पूरा वार्षिक अधिशेष भारत के समेकित कोष में स्थानांतरित करना आवश्यक है।\n3. SEBI बोर्ड के दो सदस्य क्रमशः वित्त मंत्रालय और विधि मंत्रालय का पदेन प्रतिनिधित्व करते हैं, जो SEBI की सरकार से पूर्ण नियामक स्वतंत्रता को सीमित करता है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEBI's financial independence from parliamentary appropriation means that its Chairman cannot be removed by the Central Government during the term of office.",
+          "verdict": "गलत",
+          "reason": "वित्तीय स्वतंत्रता (शुल्क-आधारित वित्तपोषण) नियुक्ति/हटाने के अधिकारों से पूरी तरह अलग है। केंद्रीय सरकार के पास SEBI के अध्यक्ष को नियुक्त करने और हटाने का अधिकार है — वित्तीय स्वायत्तता हटाने की सुरक्षा प्रदान नहीं करती।"
+        },
+        {
+          "statement": "SEBI is required to transfer its entire annual surplus to the Consolidated Fund of India immediately after the close of each financial year.",
+          "verdict": "गलत",
+          "reason": "SEBI एक आरक्षित कोष बनाए रख सकता है और बोर्ड के निर्णय के बाद अधिशेष को भारत के समेकित कोष में स्थानांतरित करता है — यह स्थानांतरण स्वचालित या तत्काल नहीं होता और पहले आरक्षित कोष बनाए रखा जाता है।"
+        },
+        {
+          "statement": "Two members of SEBI's Board represent the Ministry of Finance and the Ministry of Law respectively as ex-officio members, which limits SEBI's complete regulatory independence from the government.",
+          "verdict": "सही",
+          "reason": "यह तथ्यात्मक रूप से सही है — दोनों मंत्रालयों के पदेन सरकारी नामित सदस्य SEBI बोर्ड में होते हैं, जो कार्यकारी से एक संरचनात्मक संबंध बनाता है जो पूर्ण स्वतंत्रता को सीमित करता है।"
+        }
+      ],
+      "strong_distractor": "b — छात्र केवल कथन 1 को गलत (वित्तीय स्वायत्तता ≠ हटाने की सुरक्षा) चिह्नित कर सकते हैं और कथन 2 में तत्काल और पूर्ण अधिशेष स्थानांतरण की सूक्ष्म त्रुटि को अनदेखा कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: वित्तीय स्वायत्तता अध्यक्ष को सरकार द्वारा हटाए जाने से सुरक्षा नहीं देती — ये अलग कानूनी प्रावधान हैं। कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: SEBI एक आरक्षित कोष बनाए रखता है; अधिशेष का समेकित कोष में स्थानांतरण बोर्ड के निर्णय पर निर्भर है, यह स्वचालित या तत्काल बाध्यता नहीं है। कथन 2 सही नहीं है।",
+        "कथन 3 का मूल्यांकन करें: वित्त और विधि मंत्रालयों के पदेन नामित सदस्य SEBI बोर्ड में होना तथ्यात्मक रूप से सही है। कथन 3 सही है।",
+        "कथन 1 और 2 सही नहीं हैं — सही विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 मुख्य जाल है — यह दो अलग कानूनी अवधारणाओं (वित्तीय स्वायत्तता और हटाने की सुरक्षा) को एक साथ मिला देता है जैसे कि एक दूसरे का परिणाम हों। जो छात्र SEBI की वित्तीय स्वतंत्रता पढ़ चुके हैं, वे सहज रूप से सोच सकते हैं कि यह पूरी तरह स्वायत्त है और इसलिए कथन 1 को गलत तरीके से सही मान लेते हैं। कथन 2 एक द्वितीयक जाल जोड़ता है — 'तत्काल' और 'पूर्ण' शब्द इसे गलत बनाते हैं, लेकिन जो छात्र केवल यह याद रखते हैं कि 'SEBI सरकार को अधिशेष देता है' वे संलग्न शर्तों की गलतियों को पकड़ नहीं पाते।",
+      "final_explanation": "SEBI की स्वायत्तता आंशिक और स्तरित है — वित्तीय आत्मनिर्भरता के साथ-साथ इसके नेतृत्व और संरचना पर सरकार का महत्वपूर्ण नियंत्रण भी मौजूद है।\n\n• कथन 1 — सही नहीं: वित्तीय स्वतंत्रता (संसदीय अनुदान पर निर्भर न होना) एक वित्तीय व्यवस्था है, अध्यक्ष के कार्यकाल की सुरक्षा का साधन नहीं। केंद्रीय सरकार के पास SEBI के अध्यक्ष को नियुक्त करने और हटाने का पूर्ण अधिकार है, जो SEBI के वित्तीय मॉडल से स्वतंत्र है।\n• कथन 2 — सही नहीं: SEBI को अपना पूरा अधिशेष तुरंत स्थानांतरित करने की आवश्यकता नहीं है। यह भविष्य की आवश्यकताओं के लिए एक आरक्षित कोष बनाए रखता है। अधिशेष का समेकित कोष में स्थानांतरण बोर्ड के निर्णय के बाद होता है।\n• कथन 3 — सही: SEBI अधिनियम बोर्ड में पदेन सरकारी नामित सदस्यों का प्रावधान करता है — एक वित्त मंत्रालय से और एक विधि मंत्रालय से। यह एक संरचनात्मक विशेषता है जो सरकारी जवाबदेही सुनिश्चित करती है लेकिन SEBI की पूर्ण स्वतंत्रता को सीमित भी करती है।\n\nमूल्य संवर्धन:\n• SEBI की वार्षिक रिपोर्ट केंद्रीय सरकार को प्रस्तुत की जाती है, जो इसे संसद के समक्ष रखती है।\n• अध्यक्ष का कार्यकाल सामान्यतः 5 वर्ष होता है — लेकिन केंद्रीय सरकार अध्यक्ष को निर्दिष्ट आधारों पर हटा सकती है।\n• RBI से तुलना करें: संचालनात्मक स्वतंत्रता और नियुक्तियों पर सरकारी जवाबदेही के बीच समान तनाव।"
+    }
+  },
+  {
+    "uuid": "75d39d2f-a345-4f58-b6c3-999c6d4540fe",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Collective Investment Schemes (CIS): SEBI's Special Jurisdiction",
+        "SEBI's Jurisdiction: Securities It Regulates vs. Does Not Regulate"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "partial-truth",
+      "concept_anchor": "CIS jurisdiction plantation emu farming chit funds exclusion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "SEBI has asserted or been confirmed to have regulatory jurisdiction over several types of pooled investment arrangements. Which of the following does NOT fall within SEBI's regulatory ambit?\n\n(a) Plantation and agro-investment schemes that pool investor money and promise returns from agricultural activities\n(b) Chit funds that collect periodic contributions from subscribers and make payouts through an auction or draw\n(c) Emu farming investment schemes where investors pool money to fund commercial emu rearing for profit\n(d) Optionally Fully Convertible Debentures issued to the public by corporates to pool investor funds",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Commodity derivatives seem like they might belong in a different category (not traditional securities), making students question whether they truly fall under SEBI.",
+      "elimination_logic": [
+        "Recall: SEBI's CIS jurisdiction covers any pooled scheme not specifically excluded by law — plantation schemes and emu farming schemes have been explicitly brought under SEBI's CIS ambit.",
+        "Plantation scheme (a): SEBI has asserted CIS jurisdiction over tree plantation and agro-investment schemes. Belongs under SEBI.",
+        "Chit fund (b): Chit funds are explicitly EXCLUDED from SEBI's CIS definition under the SEBI Act — regulated by states under Chit Funds Act, 1982. Does NOT belong under SEBI.",
+        "Emu farming scheme (c): SEBI has brought emu farming pooled investment schemes under CIS regulation to protect investors. Belongs under SEBI.",
+        "Optionally Fully Convertible Debentures (d): The Sahara Supreme Court ruling confirmed SEBI's jurisdiction over such securities when issued publicly — belongs under SEBI.",
+        "Option (b) — chit fund — is the odd one out."
+      ],
+      "upsc_trap_explanation": "The Sahara ruling and SEBI's aggressive expansion of CIS jurisdiction over exotic schemes (plantations, emu farming, resort memberships) creates a halo effect — students assume SEBI has expanded to cover everything pooled, including chit funds. The SEBI Act's explicit exclusion of chit funds is the specific knowledge point that distinguishes correct from incorrect answers here. Chit funds are the one category that looks like a CIS but is clearly outside SEBI's domain by statute.",
+      "final_explanation": "SEBI's CIS jurisdiction is broad and has been expanded to cover many unconventional pooled schemes — but statutory exclusions remain sharp.\n\n• Option (a) — Plantation schemes: Tree plantation, agroforestry, and similar investment schemes that pool investor money have been brought under SEBI's CIS ambit after widespread fraud. Belongs to SEBI.\n• Option (b) — Chit funds: The SEBI Act explicitly carves out chit funds from its CIS definition. Chit funds are regulated by state governments under the Chit Funds Act, 1982. Does NOT belong to SEBI — the odd one out.\n• Option (c) — Emu farming schemes: Following investor fraud in emu farming pooled ventures, SEBI asserted CIS jurisdiction over such schemes. Belongs to SEBI.\n• Option (d) — Optionally Fully Convertible Debentures: The Supreme Court in the Sahara case confirmed that OFCDs issued to the public qualify as 'securities' and fall under SEBI's jurisdiction. Belongs to SEBI.\n\nValue Addition:\n• The Sahara case (2012) is landmark — Supreme Court ordered refund of ₹24,000+ crore to investors.\n• Resort/timeshare membership schemes are another CIS category SEBI has tried to regulate.\n• Multi-level marketing (MLM) schemes are not automatically CIS — SEBI evaluates based on pooling and management criteria."
+    },
+    "hi": {
+      "display_text": "SEBI ने कई प्रकार की संयुक्त निवेश व्यवस्थाओं पर नियामक अधिकार क्षेत्र का दावा किया है या इसकी पुष्टि हुई है। निम्नलिखित में से कौन-सी योजना SEBI के नियामक दायरे में नहीं आती?\n\n(a) प्लांटेशन और कृषि-निवेश योजनाएं जो निवेशकों का धन एकत्र करती हैं और कृषि गतिविधियों से रिटर्न का वादा करती हैं\n(b) चिट फंड जो सदस्यों से आवधिक योगदान एकत्र करते हैं और नीलामी या ड्रा के माध्यम से भुगतान करते हैं\n(c) एमू फार्मिंग निवेश योजनाएं जहाँ निवेशक व्यावसायिक एमू पालन के लिए धन एकत्र करते हैं\n(d) वैकल्पिक पूर्ण रूप से परिवर्तनीय डिबेंचर जो कॉर्पोरेट्स द्वारा जनता को जारी किए जाते हैं ताकि निवेशकों का धन एकत्र किया जा सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — कमोडिटी डेरिवेटिव्स ऐसा प्रतीत होता है कि वे किसी अलग श्रेणी में आते हैं (पारंपरिक प्रतिभूतियों में नहीं), जिससे छात्र यह संदेह करते हैं कि क्या वे वास्तव में SEBI के अंतर्गत आते हैं।",
+      "elimination_logic": [
+        "स्मरण करें: SEBI का CIS अधिकार क्षेत्र किसी भी संयुक्त योजना को कवर करता है जिसे कानून द्वारा विशेष रूप से बाहर नहीं रखा गया है — प्लांटेशन योजनाओं और एमू फार्मिंग योजनाओं को स्पष्ट रूप से SEBI के CIS दायरे में लाया गया है।",
+        "प्लांटेशन योजना (a): SEBI ने पेड़ लगाने और कृषि-निवेश योजनाओं पर CIS अधिकार क्षेत्र का दावा किया है। SEBI के अंतर्गत आती है।",
+        "चिट फंड (b): चिट फंड्स को SEBI अधिनियम के तहत CIS की परिभाषा से स्पष्ट रूप से बाहर रखा गया है — ये राज्यों द्वारा चिट फंड्स अधिनियम, 1982 के तहत विनियमित होते हैं। SEBI के अंतर्गत नहीं आती।",
+        "एमू फार्मिंग योजना (c): SEBI ने निवेशकों की सुरक्षा के लिए एमू फार्मिंग संयुक्त निवेश योजनाओं को CIS विनियमन के अंतर्गत लाया है। SEBI के अंतर्गत आती है।",
+        "वैकल्पिक पूर्ण रूप से परिवर्तनीय डिबेंचर (d): सहारा सुप्रीम कोर्ट के निर्णय ने सार्वजनिक रूप से जारी ऐसी प्रतिभूतियों पर SEBI के अधिकार क्षेत्र की पुष्टि की — SEBI के अंतर्गत आती है।",
+        "विकल्प (b) — चिट फंड — अलग है।"
+      ],
+      "upsc_trap_explanation": "सहारा निर्णय और SEBI का CIS अधिकार क्षेत्र का विदेशी योजनाओं (प्लांटेशन, एमू फार्मिंग, रिसॉर्ट सदस्यता) पर आक्रामक विस्तार एक भ्रम पैदा करता है — छात्र मान लेते हैं कि SEBI ने सभी संयुक्त योजनाओं को कवर करने के लिए विस्तार किया है, जिसमें चिट फंड भी शामिल हैं। SEBI अधिनियम में चिट फंड्स का स्पष्ट बहिष्कार वह विशिष्ट ज्ञान बिंदु है जो सही और गलत उत्तरों को अलग करता है। चिट फंड एक ऐसी श्रेणी है जो CIS जैसी दिखती है लेकिन विधि द्वारा स्पष्ट रूप से SEBI के क्षेत्राधिकार से बाहर है।",
+      "final_explanation": "SEBI का CIS अधिकार क्षेत्र व्यापक है और इसे कई असामान्य संयुक्त योजनाओं को कवर करने के लिए बढ़ाया गया है — लेकिन वैधानिक बहिष्कार स्पष्ट हैं।\n\n• विकल्प (a) — प्लांटेशन योजनाएं: पेड़ लगाने, कृषि वानिकी और समान निवेश योजनाएं जो निवेशकों का धन एकत्र करती हैं, व्यापक धोखाधड़ी के बाद SEBI के CIS दायरे में लाई गई हैं। SEBI के अंतर्गत आती हैं।\n• विकल्प (b) — चिट फंड: SEBI अधिनियम चिट फंड्स को अपनी CIS परिभाषा से स्पष्ट रूप से बाहर करता है। चिट फंड्स राज्यों द्वारा चिट फंड्स अधिनियम, 1982 के तहत विनियमित होते हैं। SEBI के अंतर्गत नहीं आतीं — यह अलग है।\n• विकल्प (c) — एमू फार्मिंग योजनाएं: निवेशकों की धोखाधड़ी के बाद SEBI ने एमू फार्मिंग संयुक्त योजनाओं पर CIS अधिकार क्षेत्र का दावा किया है। SEBI के अंतर्गत आती हैं।\n• विकल्प (d) — वैकल्पिक पूर्ण रूप से परिवर्तनीय डिबेंचर: सहारा मामले में सुप्रीम कोर्ट ने पुष्टि की कि सार्वजनिक रूप से जारी OFCDs 'प्रतिभूतियां' हैं और SEBI के अधिकार क्षेत्र में आती हैं। SEBI के अंतर्गत आती हैं।\n\nमूल्य संवर्धन:\n• सहारा मामला (2012) मील का पत्थर है — सुप्रीम कोर्ट ने ₹24,000+ करोड़ निवेशकों को वापस करने का आदेश दिया।\n• रिसॉर्ट/टाइमशेयर सदस्यता योजनाएं CIS की एक अन्य श्रेणी हैं जिन्हें SEBI ने विनियमित करने की कोशिश की है।\n• मल्टी-लेवल मार्केटिंग (MLM) योजनाएं स्वचालित रूप से CIS नहीं हैं — SEBI पूलिंग और प्रबंधन मानदंडों के आधार पर मूल्यांकन करता है।"
+    }
+  },
+  {
+    "uuid": "e8518a58-e6fc-44b4-a111-c8fe2349c2a6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "Takeover Code: SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Open offer size 26 percent Takeover Code 2011",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011, when an acquirer crosses the threshold that triggers the mandatory open offer obligation, the open offer must be made to public shareholders for at least ________ of the total shares of the target company.\n\n(a) 10%\n(b) 25%\n(c) 33%\n(d) 26%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who recall '25%' from the trigger threshold often confuse it with the open offer size, conflating two different percentage requirements within the same regulation.",
+      "elimination_logic": [
+        "Eliminate (a): 10% is not the open offer size under any version of the Takeover Code — too small to be meaningful investor protection.",
+        "Eliminate (b): 25% is the trigger threshold for mandatory open offer — not the size of the open offer itself. A common conflation error.",
+        "Eliminate (c): 33% is not the mandated open offer size under the 2011 Takeover Regulations.",
+        "Confirm (d): The SEBI Takeover Code (2011) mandates that the open offer must be for at least 26% of the total shares from public shareholders."
+      ],
+      "upsc_trap_explanation": "The 25% vs 26% confusion is the sharpest trap in the Takeover Code. The regulation contains two adjacent percentages — 25% triggers the open offer obligation, and 26% is the size of the open offer. Students who learn '25%' in association with the Takeover Code may apply it to both the trigger AND the size, making option (b) feel definitive. Only precise reading of the regulation separates these two.",
+      "final_explanation": "The SEBI Takeover Code (2011) has two distinct percentage thresholds that must not be conflated.\n\n• Option (a) — 10%: Not mandated as the open offer size in any version of the Takeover Code. Incorrect.\n• Option (b) — 25%: This is the trigger threshold — when an acquirer reaches 25% of shares/voting rights, the open offer obligation is triggered. It is NOT the size of the open offer. Incorrect.\n• Option (c) — 33%: Not the mandated open offer size. Incorrect.\n• Option (d) — 26%: The SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 mandate that the open offer must be for at least 26% of the total shares of the target company. Correct.\n\nValue Addition:\n• Trigger: 25% → obligation to make open offer. Offer size: at least 26% from public shareholders.\n• Creeping acquisition allows up to 5% additional purchase per year when holdings are between 25% and 75%, without triggering a fresh open offer.\n• An acquirer who reaches 75% through an open offer must then reduce holdings to 75% to comply with minimum public shareholding norms."
+    },
+    "hi": {
+      "display_text": "SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 के तहत, जब कोई अधिग्रहक उस सीमा को पार करता है जो अनिवार्य ओपन ऑफर दायित्व को ट्रिगर करता है, तो ओपन ऑफर लक्ष्य कंपनी के कुल शेयरों के कम से कम ________ के लिए सार्वजनिक शेयरधारकों को किया जाना चाहिए।\n\n(a) 10%\n(b) 25%\n(c) 33%\n(d) 26%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र '25%' को ट्रिगर थ्रेशोल्ड के रूप में याद करते हैं, वे इसे ओपन ऑफर के आकार के साथ भ्रमित कर देते हैं, जो एक ही नियम में दो अलग-अलग प्रतिशत आवश्यकताओं को मिलाता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: 10% किसी भी संस्करण के तहत ओपन ऑफर का आकार नहीं है — निवेशक संरक्षण के लिए बहुत छोटा।",
+        "(b) को हटाएं: 25% अनिवार्य ओपन ऑफर के लिए ट्रिगर थ्रेशोल्ड है — ओपन ऑफर का आकार नहीं। यह एक सामान्य भ्रम है।",
+        "(c) को हटाएं: 33% 2011 के टेकोवर नियमों के तहत अनिवार्य ओपन ऑफर का आकार नहीं है।",
+        "(d) की पुष्टि करें: SEBI टेकोवर कोड (2011) के अनुसार, ओपन ऑफर कम से कम 26% होना चाहिए जो सार्वजनिक शेयरधारकों से कुल शेयरों का हिस्सा हो।"
+      ],
+      "upsc_trap_explanation": "25% और 26% के बीच भ्रम टेकोवर कोड में सबसे तीव्र जाल है। नियम में दो निकटवर्ती प्रतिशत हैं — 25% ओपन ऑफर दायित्व को ट्रिगर करता है, और 26% ओपन ऑफर का आकार है। जो छात्र '25%' को टेकोवर कोड के साथ सीखते हैं, वे इसे ट्रिगर और आकार दोनों के लिए लागू कर देते हैं, जिससे विकल्प (b) निश्चित लगता है। केवल नियम का सटीक अध्ययन इन दोनों को अलग करता है।",
+      "final_explanation": "SEBI टेकोवर कोड (2011) में दो अलग-अलग प्रतिशत थ्रेशोल्ड हैं जिन्हें मिलाना नहीं चाहिए।\n\n• विकल्प (a) — 10%: किसी भी संस्करण में ओपन ऑफर के आकार के रूप में अनिवार्य नहीं। गलत।\n• विकल्प (b) — 25%: यह ट्रिगर थ्रेशोल्ड है — जब अधिग्रहक 25% शेयर/मताधिकार तक पहुंचता है, तो ओपन ऑफर दायित्व शुरू होता है। यह ओपन ऑफर का आकार नहीं है। गलत।\n• विकल्प (c) — 33%: अनिवार्य ओपन ऑफर का आकार नहीं। गलत।\n• विकल्प (d) — 26%: SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011 के अनुसार, ओपन ऑफर कम से कम 26% होना चाहिए जो लक्ष्य कंपनी के कुल शेयरों का हिस्सा हो। सही।\n\nमूल्य संवर्धन:\n• ट्रिगर: 25% → ओपन ऑफर करने का दायित्व। ऑफर का आकार: कम से कम 26% सार्वजनिक शेयरधारकों से।\n• धीरे-धीरे अधिग्रहण (Creeping acquisition) 25% से 75% के बीच होल्डिंग के दौरान प्रति वर्ष 5% अतिरिक्त खरीद की अनुमति देता है, बिना नए ओपन ऑफर को ट्रिगर किए।\n• जो अधिग्रहक ओपन ऑफर के माध्यम से 75% तक पहुंचता है, उसे न्यूनतम सार्वजनिक शेयरधारक मानदंडों का पालन करने के लिए होल्डिंग को 75% तक कम करना होगा।"
+    }
+  },
+  {
+    "uuid": "b337b1d7-45c2-4793-8f34-62ba0ba34cc5",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "REITs and InvITs: SEBI as Regulator of Hybrid Investment Instruments",
+        "Alternative Investment Funds (AIFs): SEBI's Three-Category Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "REITs 90 percent distribution AIF Category I incentives",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements:\n\nStatement 1: Real Estate Investment Trusts (REITs) and Infrastructure Investment Trusts (InvITs) regulated by SEBI are required to distribute at least 90% of their net distributable cash flows to unit holders.\n\nStatement 2: Category I Alternative Investment Funds (AIFs) are eligible for special incentives because, like REITs and InvITs, they are also required to distribute 90% of their income to investors each year.\n\nWhich one of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: Real Estate Investment Trusts (REITs) and Infrastructure Investment Trusts (InvITs) regulated by SEBI are required to distribute at least 90% of their net distributable cash flows to unit holders.",
+          "verdict": "Correct",
+          "reason": "The 90% mandatory distribution requirement is a defining feature of both REITs and InvITs under their respective SEBI regulations, ensuring regular income to investors."
+        },
+        {
+          "statement": "Statement 2: Category I Alternative Investment Funds (AIFs) are eligible for special incentives because, like REITs and InvITs, they are also required to distribute 90% of their income to investors each year.",
+          "verdict": "Incorrect",
+          "reason": "Category I AIFs receive tax and regulatory incentives because of the sectors they fund (startups, SMEs, social enterprises), NOT because of any 90% distribution requirement. AIFs do not have a mandatory 90% distribution rule — that is specific to REITs and InvITs."
+        }
+      ],
+      "strong_distractor": "a — Students who know both Category I AIFs and REITs/InvITs receive favorable treatment may assume the same distribution rule applies to both, marking both statements correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The 90% net distributable cash flow distribution requirement is the fundamental investor protection feature of REITs and InvITs. Correct.",
+        "Evaluate Statement 2: This conflates two different types of regulatory favorability. Category I AIFs receive incentives because of their investment targets (priority sectors), not because of any distribution mandate. The 90% rule does not apply to AIFs. Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — correct option is (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a classic conflation trap — it takes two true facts (Category I AIFs get incentives; REITs must distribute 90%) and merges them with a false causal link. A student who knows both facts in isolation may accept Statement 2 as a coherent combination without noticing that the distribution rule is specific to REITs/InvITs, not a feature of AIFs. The incentive basis for Category I AIFs is their investment mandate (priority sectors), which is entirely different from distribution requirements.",
+      "final_explanation": "SEBI regulates both REITs/InvITs and AIFs, but the regulatory logic and obligations for each are structurally different.\n\n• Statement 1 — Correct: The 90% mandatory distribution of net distributable cash flows is the cornerstone of REITs and InvITs. It ensures that these instruments deliver regular income (like bonds) to unit holders, making them attractive for income-seeking investors.\n• Statement 2 — Incorrect: Category I AIFs are incentivized because they channel capital into economically important but commercially challenging sectors — startups, SMEs, social enterprises, and infrastructure. They do NOT have a 90% distribution mandate. AIF investors typically get returns at the end of the fund's tenure (like private equity), not annual distributions.\n\nValue Addition:\n• AIFs typically have a minimum investment of ₹1 crore per investor (₹25 lakh for employees/directors of the AIF).\n• REITs must invest at least 80% of assets in completed, revenue-generating properties — hence the steady cash flows to distribute.\n• Category II AIFs (private equity, debt funds) have no specific incentives or restrictions, making them the 'default' AIF category."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: SEBI द्वारा विनियमित रियल एस्टेट इन्वेस्टमेंट ट्रस्ट्स (REITs) और इन्फ्रास्ट्रक्चर इन्वेस्टमेंट ट्रस्ट्स (InvITs) को अपने नेट वितरित करने योग्य नकदी प्रवाह का कम से कम 90% यूनिट धारकों को वितरित करना आवश्यक है।\n\nकथन 2: श्रेणी I वैकल्पिक निवेश कोष (AIFs) विशेष प्रोत्साहनों के पात्र हैं क्योंकि, REITs और InvITs की तरह, उन्हें भी प्रत्येक वर्ष अपने आय का 90% निवेशकों को वितरित करना आवश्यक है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: SEBI द्वारा विनियमित रियल एस्टेट इन्वेस्टमेंट ट्रस्ट्स (REITs) और इन्फ्रास्ट्रक्चर इन्वेस्टमेंट ट्रस्ट्स (InvITs) को अपने नेट वितरित करने योग्य नकदी प्रवाह का कम से कम 90% यूनिट धारकों को वितरित करना आवश्यक है।",
+          "verdict": "सही",
+          "reason": "90% अनिवार्य वितरण आवश्यकता REITs और InvITs दोनों के SEBI विनियमों के तहत एक परिभाषित विशेषता है, जो निवेशकों को नियमित आय सुनिश्चित करती है।"
+        },
+        {
+          "statement": "कथन 2: श्रेणी I वैकल्पिक निवेश कोष (AIFs) विशेष प्रोत्साहनों के पात्र हैं क्योंकि, REITs और InvITs की तरह, उन्हें भी प्रत्येक वर्ष अपने आय का 90% निवेशकों को वितरित करना आवश्यक है।",
+          "verdict": "गलत",
+          "reason": "श्रेणी I AIFs को कर और नियामक प्रोत्साहन उनके द्वारा वित्तपोषित क्षेत्रों (स्टार्टअप, लघु एवं मध्यम उद्यम, सामाजिक उद्यम) के कारण मिलते हैं, न कि किसी 90% वितरण आवश्यकता के कारण। AIFs पर कोई अनिवार्य 90% वितरण नियम नहीं है — यह विशेष रूप से REITs और InvITs के लिए है।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र श्रेणी I AIFs और REITs/InvITs दोनों को अनुकूल व्यवहार प्राप्त होते जानते हैं, वे मान सकते हैं कि वितरण नियम दोनों पर लागू होता है, और दोनों कथनों को सही चिह्नित कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: 90% नेट वितरित करने योग्य नकदी प्रवाह वितरण आवश्यकता REITs और InvITs की मूल निवेशक सुरक्षा विशेषता है। सही।",
+        "कथन 2 का मूल्यांकन करें: यह दो अलग-अलग प्रकार की नियामक अनुकूलता को मिलाता है। श्रेणी I AIFs को प्रोत्साहन उनके निवेश लक्ष्यों (प्राथमिकता वाले क्षेत्र) के कारण मिलते हैं, न कि किसी वितरण अनिवार्य के कारण। 90% नियम AIFs पर लागू नहीं होता। गलत।",
+        "कथन 1 सही, कथन 2 गलत — सही विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक क्लासिक मिश्रण जाल है — यह दो सत्य तथ्यों (श्रेणी I AIFs को प्रोत्साहन मिलते हैं; REITs को 90% वितरण करना होता है) को एक गलत कारणात्मक संबंध के साथ जोड़ता है। जो छात्र दोनों तथ्यों को अलग-अलग जानते हैं, वे कथन 2 को एक संगत संयोजन के रूप में स्वीकार कर सकते हैं बिना यह ध्यान दिए कि वितरण नियम REITs/InvITs के लिए विशिष्ट है, AIFs की विशेषता नहीं। श्रेणी I AIFs के लिए प्रोत्साहन का आधार उनका निवेश अनुदेश (प्राथमिकता वाले क्षेत्र) है, जो वितरण आवश्यकताओं से पूरी तरह भिन्न है।",
+      "final_explanation": "SEBI दोनों REITs/InvITs और AIFs को विनियमित करता है, लेकिन प्रत्येक के लिए नियामक तर्क और दायित्व संरचनात्मक रूप से भिन्न हैं।\n\n• कथन 1 — सही: नेट वितरित करने योग्य नकदी प्रवाह का 90% अनिवार्य वितरण REITs और InvITs की आधारशिला है। यह सुनिश्चित करता है कि ये उपकरण यूनिट धारकों को नियमित आय (बॉन्ड्स की तरह) प्रदान करें, जिससे ये आय चाहने वाले निवेशकों के लिए आकर्षक बनते हैं।\n• कथन 2 — गलत: श्रेणी I AIFs को प्रोत्साहित किया जाता है क्योंकि वे आर्थिक रूप से महत्वपूर्ण लेकिन व्यावसायिक रूप से चुनौतीपूर्ण क्षेत्रों — स्टार्टअप, लघु एवं मध्यम उद्यम, सामाजिक उद्यम, और अवसंरचना — में पूंजी लगाते हैं। उनके पास 90% वितरण अनिवार्य नहीं है। AIF निवेशकों को आमतौर पर फंड की अवधि के अंत में रिटर्न मिलता है (प्राइवेट इक्विटी की तरह), वार्षिक वितरण नहीं।\n\nमूल्य संवर्धन:\n• AIFs में आमतौर पर प्रति निवेशक न्यूनतम निवेश ₹1 करोड़ होता है (AIF के कर्मचारियों/निदेशकों के लिए ₹25 लाख)।\n• REITs को कम से कम 80% संपत्तियों को पूर्ण, राजस्व-सृजन करने वाली संपत्तियों में निवेश करना होता है — इसलिए नियमित नकदी प्रवाह वितरण के लिए।\n• श्रेणी II AIFs (प्राइवेट इक्विटी, ऋण कोष) के लिए कोई विशिष्ट प्रोत्साहन या प्रतिबंध नहीं हैं, जो उन्हें 'डिफ़ॉल्ट' AIF श्रेणी बनाता है।"
+    }
+  },
+  {
+    "uuid": "6a0415dc-29d7-421e-af7f-5ecaaa4e8fdf",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's International Linkages: IOSCO Membership and Cross-Border Regulation",
+        "SEBI's Enforcement Powers: Penalties, Disgorgement, and Debarment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "IOSCO soft law obligations bilateral MoU enforcement cooperation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about SEBI's international regulatory linkages:\n\n1. SEBI's membership of IOSCO and its signatory status to the Multilateral MoU creates legally binding international treaty obligations on India, enforceable in international courts.\n2. Through IOSCO's Multilateral MoU, SEBI can share information with foreign securities regulators about Indian market participants suspected of cross-border market manipulation.\n3. SEBI signs bilateral MoUs with individual foreign regulators such as the US SEC and UK FCA for enforcement cooperation in addition to its multilateral IOSCO commitments.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEBI's membership of IOSCO and its signatory status to the Multilateral MoU creates legally binding international treaty obligations on India, enforceable in international courts.",
+          "verdict": "Incorrect",
+          "reason": "IOSCO's Multilateral MoU creates soft-law obligations — they are not legally binding international treaties enforceable in international courts. They represent regulatory commitments and cooperation frameworks."
+        },
+        {
+          "statement": "Through IOSCO's Multilateral MoU, SEBI can share information with foreign securities regulators about Indian market participants suspected of cross-border market manipulation.",
+          "verdict": "Correct",
+          "reason": "The MMoU's primary purpose is to enable cross-border information sharing on market misconduct — SEBI can and does share information with regulators like the US SEC under this framework."
+        },
+        {
+          "statement": "SEBI signs bilateral MoUs with individual foreign regulators such as the US SEC and UK FCA for enforcement cooperation in addition to its multilateral IOSCO commitments.",
+          "verdict": "Correct",
+          "reason": "Bilateral MoUs with specific regulators provide a supplementary enforcement cooperation layer beyond the multilateral IOSCO framework, covering jurisdiction-specific cooperation."
+        }
+      ],
+      "strong_distractor": "d — Students who know IOSCO is a prestigious international body may assume its MoU creates binding legal obligations like a UN treaty, marking Statement 1 as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: IOSCO's MMoU is a soft-law instrument — a regulatory commitment, not a binding treaty enforceable in international courts. Statement 1 is incorrect.",
+        "Evaluate Statement 2: Cross-border information sharing under IOSCO MMoU is precisely what the instrument is designed for — SEBI does share information with foreign regulators. Correct.",
+        "Evaluate Statement 3: Bilateral MoUs with US SEC, UK FCA etc. are a documented feature of SEBI's international engagement. Correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect — correct option is (b)."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the prestige heuristic — IOSCO sounds like a powerful international organization (similar to WTO, IMF), and students associate membership with binding legal obligations. In reality, IOSCO operates through soft law — its standards and MoUs are influential but not legally enforceable. A student who has not specifically studied the nature of IOSCO's regulatory architecture (soft law vs. hard treaty) will mark Statement 1 as correct, choosing option (d).",
+      "final_explanation": "SEBI's international regulatory linkages operate through multiple channels, each with different legal force.\n\n• Statement 1 — Incorrect: IOSCO's Multilateral MoU is a soft-law regulatory cooperation instrument. It enables information sharing and cooperation but does not create legally binding obligations enforceable in international courts. India's alignment with IOSCO standards is driven by reputational and market credibility considerations, not legal compulsion.\n• Statement 2 — Correct: The MMoU's core function is cross-border information exchange on market manipulation, fraud, and misconduct. SEBI routinely responds to and initiates requests under this framework.\n• Statement 3 — Correct: Bilateral MoUs (with SEC-USA, FCA-UK, and others) provide additional cooperation mechanisms tailored to specific bilateral relationships — useful when the multilateral framework's procedures are slower.\n\nValue Addition:\n• IOSCO's Enhanced MMoU (EMMoU), signed in 2018, expanded cooperation to include collective investment scheme investigations.\n• Soft law compliance is critical for maintaining India's FATF (Financial Action Task Force) and global market standing.\n• SEBI's cross-border cooperation is especially relevant for FPI-related investigations where the investor entity may be domiciled abroad."
+    },
+    "hi": {
+      "display_text": "SEBI के अंतरराष्ट्रीय नियामक संबंधों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. SEBI की IOSCO सदस्यता और बहुपक्षीय MoU पर हस्ताक्षर करने की स्थिति भारत पर कानूनी रूप से बाध्यकारी अंतरराष्ट्रीय संधि दायित्व बनाती है, जो अंतरराष्ट्रीय न्यायालयों में लागू की जा सकती है।\n2. IOSCO के बहुपक्षीय MoU के माध्यम से, SEBI सीमा-पार बाजार हेरफेर के संदेह वाले भारतीय बाजार प्रतिभागियों के बारे में विदेशी प्रतिभूति नियामकों के साथ जानकारी साझा कर सकता है।\n3. SEBI अपने बहुपक्षीय IOSCO प्रतिबद्धताओं के अतिरिक्त, US SEC और UK FCA जैसे व्यक्तिगत विदेशी नियामकों के साथ प्रवर्तन सहयोग के लिए द्विपक्षीय MoU पर हस्ताक्षर करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEBI's membership of IOSCO and its signatory status to the Multilateral MoU creates legally binding international treaty obligations on India, enforceable in international courts.",
+          "verdict": "गलत",
+          "reason": "IOSCO का Multilateral MoU सॉफ्ट-लॉ (soft-law) दायित्व बनाता है — ये कानूनी रूप से बाध्यकारी अंतरराष्ट्रीय संधियाँ नहीं हैं जिन्हें अंतरराष्ट्रीय न्यायालयों में लागू किया जा सके। ये नियामक प्रतिबद्धताएँ और सहयोग के ढांचे हैं।"
+        },
+        {
+          "statement": "Through IOSCO's Multilateral MoU, SEBI can share information with foreign securities regulators about Indian market participants suspected of cross-border market manipulation.",
+          "verdict": "सही है",
+          "reason": "MMoU का प्राथमिक उद्देश्य बाजार कदाचार पर सीमा-पार सूचना साझा करना है — SEBI इस ढांचे के तहत US SEC जैसे नियामकों के साथ जानकारी साझा कर सकता है और करता है।"
+        },
+        {
+          "statement": "SEBI signs bilateral MoUs with individual foreign regulators such as the US SEC and UK FCA for enforcement cooperation in addition to its multilateral IOSCO commitments.",
+          "verdict": "सही है",
+          "reason": "विशिष्ट नियामकों के साथ द्विपक्षीय MoU IOSCO के बहुपक्षीय ढांचे से परे एक पूरक प्रवर्तन सहयोग परत प्रदान करते हैं, जो क्षेत्राधिकार-विशिष्ट सहयोग को कवर करते हैं।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि IOSCO एक प्रतिष्ठित अंतरराष्ट्रीय संस्था है, वे मान सकते हैं कि इसका MoU एक संयुक्त राष्ट्र संधि की तरह बाध्यकारी कानूनी दायित्व बनाता है, इसलिए कथन 1 को सही चिह्नित करते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: IOSCO का MMoU एक सॉफ्ट-लॉ उपकरण है — एक नियामक प्रतिबद्धता, बाध्यकारी संधि नहीं जिसे अंतरराष्ट्रीय न्यायालयों में लागू किया जा सके। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: IOSCO MMoU के तहत सीमा-पार सूचना साझा करना इस उपकरण का मुख्य उद्देश्य है — SEBI नियामकों के साथ जानकारी साझा करता है। सही है।",
+        "कथन 3 का मूल्यांकन करें: US SEC, UK FCA आदि के साथ द्विपक्षीय MoU SEBI की अंतरराष्ट्रीय भागीदारी की एक प्रलेखित विशेषता है। सही है।",
+        "कथन 2 और 3 सही हैं, कथन 1 गलत है — सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 प्रतिष्ठा के आधार पर भ्रम पैदा करता है — IOSCO एक शक्तिशाली अंतरराष्ट्रीय संगठन जैसा लगता है (WTO, IMF के समान), और छात्र सदस्यता को बाध्यकारी कानूनी दायित्वों से जोड़ते हैं। वास्तव में, IOSCO सॉफ्ट लॉ के माध्यम से संचालित होता है — इसके मानक और MoU प्रभावशाली हैं लेकिन कानूनी रूप से लागू नहीं हैं। जो छात्र IOSCO की नियामक संरचना (सॉफ्ट लॉ बनाम हार्ड संधि) का विशिष्ट अध्ययन नहीं करते, वे कथन 1 को सही मानकर विकल्प (d) चुनते हैं।",
+      "final_explanation": "SEBI के अंतरराष्ट्रीय नियामक संबंध कई चैनलों के माध्यम से संचालित होते हैं, जिनमें अलग-अलग कानूनी प्रभाव होते हैं।\n\n• कथन 1 — गलत: IOSCO का Multilateral MoU एक सॉफ्ट-लॉ नियामक सहयोग उपकरण है। यह सूचना साझा करने और सहयोग को सक्षम बनाता है लेकिन कानूनी रूप से बाध्यकारी दायित्व नहीं बनाता जिसे अंतरराष्ट्रीय न्यायालयों में लागू किया जा सके। भारत का IOSCO मानकों के साथ संरेखण प्रतिष्ठा और बाजार विश्वसनीयता पर आधारित है, कानूनी बाध्यता पर नहीं।\n• कथन 2 — सही: MMoU का मुख्य कार्य सीमा-पार सूचना विनिमय है, जैसे बाजार हेरफेर, धोखाधड़ी और कदाचार। SEBI नियमित रूप से इस ढांचे के तहत अनुरोधों का जवाब देता है और उन्हें शुरू करता है।\n• कथन 3 — सही: द्विपक्षीय MoU (जैसे SEC-USA, FCA-UK) अतिरिक्त सहयोग तंत्र प्रदान करते हैं जो विशिष्ट द्विपक्षीय संबंधों के लिए उपयुक्त हैं — जब बहुपक्षीय ढांचे की प्रक्रियाएँ धीमी होती हैं।\n\nमूल्य संवर्धन:\n• IOSCO का Enhanced MMoU (EMMoU), जो 2018 में हस्ताक्षरित हुआ, सहयोग को सामूहिक निवेश योजना जांचों तक विस्तारित करता है।\n• सॉफ्ट लॉ अनुपालन भारत की FATF (Financial Action Task Force) और वैश्विक बाजार स्थिति बनाए रखने के लिए महत्वपूर्ण है।\n• SEBI का सीमा-पार सहयोग विशेष रूप से FPI-संबंधित जांचों के लिए प्रासंगिक है जहाँ निवेशक इकाई विदेश में स्थित हो सकती है।"
+    }
+  },
+  {
+    "uuid": "0b4ae89f-1133-437a-9216-4c7ba68c5972",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI and Mutual Funds: Regulatory Framework and Categorization",
+        "SEBI's Role in IPO Regulation: Disclosure Norms and DRHP"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "SEBI mutual funds 1996 LODR 2015 Takeover Code 2011 finfluencer 2024",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence in which these SEBI regulatory frameworks were enacted or introduced?\n\n1. SEBI (Mutual Funds) Regulations\n2. Current operative SEBI (Substantial Acquisition of Shares and Takeovers) Regulations\n3. SEBI (Listing Obligations and Disclosure Requirements) Regulations\n4. SEBI's regulatory framework for financial influencers (Finfluencer Regulation)\n\n(a) 1 → 3 → 2 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 2 → 3 → 4\n(d) 1 → 2 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Places the Takeover Code before Mutual Funds regulations, which a student might accept if they remember 'a takeover code was there in the 1990s' but confuse the 1997 and 2011 versions.",
+      "elimination_logic": [
+        "The SEBI (Mutual Funds) Regulations were enacted in 1996 — this must come first among these four.",
+        "The SEBI Takeover Code being referenced is the 2011 version (replacing 1997) — comes after 1996 Mutual Funds Regulations.",
+        "The LODR Regulations were enacted in 2015 — comes after the 2011 Takeover Code.",
+        "The Finfluencer Regulation is a 2024 development — must come last.",
+        "Correct sequence: Mutual Funds Regulations (1996) → Takeover Code (2011) → LODR Regulations (2015) → Finfluencer Regulation (2024) — option (c)."
+      ],
+      "upsc_trap_explanation": "The Takeover Code trap is most acute here — there were TWO versions (1997 and 2011). A student who recalls 'Takeover Code 1997' might place it before the 1996 Mutual Funds Regulations, choosing option (b). But the question's context refers to the current operative Takeover Code of 2011, which clearly comes after 1996. Students must be alert to which version of a regulation is being referenced when years are not given explicitly.",
+      "final_explanation": "SEBI's regulatory evolution follows a clear timeline that rewards students who track individual framework enactment years.\n\nCorrect sequence:\n1. SEBI (Mutual Funds) Regulations — 1996: Early exercise of SEBI's statutory powers to regulate the fast-growing mutual fund industry.\n2. SEBI (Substantial Acquisition and Takeovers) Regulations — 2011: Replaced the 1997 Takeover Code with the revised 25% trigger threshold.\n3. SEBI (Listing Obligations and Disclosure Requirements) Regulations — 2015: Replaced the older Listing Agreement; comprehensive corporate governance framework for listed companies.\n4. Finfluencer Regulation — 2024: SEBI's newest regulatory initiative addressing social media financial advice — unregistered persons barred from securities-specific advice.\n\nWhy wrong options fail:\n• Option (a): Reverses LODR and Takeover Code years.\n• Option (b): Places Takeover Code before Mutual Funds Regulations — confuses 2011 with pre-1996.\n• Option (d): Misplaces Finfluencer regulation before LODR.\n\nValue Addition:\n• The first Takeover Code (1997) set a 15% trigger threshold — revised to 25% in 2011.\n• SEBI (AIF) Regulations were introduced in 2012 — falls between Takeover Code 2011 and LODR 2015.\n• SEBI's ICDR (Issue of Capital and Disclosure Requirements) Regulations governing IPOs were comprehensively revised in 2018."
+    },
+    "hi": {
+      "display_text": "इनमें से कौन-सा सही कालानुक्रमिक क्रम है जिसमें ये SEBI नियामक ढांचे बनाए या लागू किए गए?\n\n1. SEBI (म्यूचुअल फंड) विनियम\n2. वर्तमान लागू SEBI (संपत्तियों के अधिग्रहण और टेकओवर) विनियम\n3. SEBI (सूचीबद्धता दायित्व और प्रकटीकरण आवश्यकताएँ) विनियम\n4. SEBI का वित्तीय प्रभावकों (फिनफ्लुएंसर विनियमन) के लिए नियामक ढांचा\n\n(a) 1 → 3 → 2 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 2 → 3 → 4\n(d) 1 → 2 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Places the Takeover Code before Mutual Funds regulations, which a student might accept if they remember 'a takeover code was there in the 1990s' but confuse the 1997 and 2011 versions.",
+      "elimination_logic": [
+        "SEBI (म्यूचुअल फंड) विनियम 1996 में बनाए गए थे — यह इन चारों में सबसे पहले होना चाहिए।",
+        "SEBI टेकओवर कोड संदर्भित 2011 संस्करण है (जो 1997 को बदलता है) — 1996 के म्यूचुअल फंड विनियमों के बाद आता है।",
+        "LODR विनियम 2015 में बनाए गए — 2011 टेकओवर कोड के बाद आता है।",
+        "फिनफ्लुएंसर विनियमन 2024 का विकास है — सबसे अंत में आना चाहिए।",
+        "सही क्रम: म्यूचुअल फंड विनियम (1996) → टेकओवर कोड (2011) → LODR विनियम (2015) → फिनफ्लुएंसर विनियमन (2024) — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "टेकओवर कोड का जाल सबसे तीव्र यहाँ है — इसके दो संस्करण थे (1997 और 2011)। जो छात्र 'टेकओवर कोड 1997' याद करते हैं, वे इसे 1996 के म्यूचुअल फंड विनियमों से पहले रख सकते हैं, विकल्प (b) चुनते हुए। लेकिन प्रश्न का संदर्भ वर्तमान लागू 2011 टेकओवर कोड से है, जो स्पष्ट रूप से 1996 के बाद आता है। छात्रों को यह सतर्क रहना चाहिए कि किस संस्करण का विनियमन संदर्भित किया जा रहा है जब वर्ष स्पष्ट रूप से नहीं दिए गए हों।",
+      "final_explanation": "SEBI का नियामक विकास एक स्पष्ट समयरेखा का पालन करता है जो उन छात्रों को लाभ देता है जो व्यक्तिगत ढांचे के निर्माण वर्षों को ट्रैक करते हैं।\n\nसही क्रम:\n1. SEBI (म्यूचुअल फंड) विनियम — 1996: तेजी से बढ़ते म्यूचुअल फंड उद्योग को नियंत्रित करने के लिए SEBI के वैधानिक अधिकारों का प्रारंभिक प्रयोग।\n2. SEBI (संपत्तियों का अधिग्रहण और टेकओवर) विनियम — 2011: 1997 के टेकओवर कोड को बदला गया, संशोधित 25% ट्रिगर सीमा के साथ।\n3. SEBI (सूचीबद्धता दायित्व और प्रकटीकरण आवश्यकताएँ) विनियम — 2015: पुराने सूचीबद्धता समझौते को बदला; सूचीबद्ध कंपनियों के लिए व्यापक कॉर्पोरेट शासन ढांचा।\n4. फिनफ्लुएंसर विनियमन — 2024: SEBI की नवीनतम नियामक पहल जो सोशल मीडिया वित्तीय सलाह को संबोधित करती है — बिना पंजीकरण वाले व्यक्तियों को प्रतिभूतियों से संबंधित सलाह देने से रोका गया।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (a): LODR और टेकओवर कोड के वर्षों को उलट देता है।\n• विकल्प (b): टेकओवर कोड को म्यूचुअल फंड विनियमों से पहले रखता है — 2011 को 1996 से पहले समझता है।\n• विकल्प (d): फिनफ्लुएंसर विनियमन को LODR से पहले रखता है।\n\nमूल्यवर्धन:\n• पहला टेकओवर कोड (1997) ने 15% ट्रिगर सीमा निर्धारित की — 2011 में इसे 25% पर संशोधित किया गया।\n• SEBI (AIF) विनियम 2012 में लागू हुए — टेकओवर कोड 2011 और LODR 2015 के बीच आते हैं।\n• SEBI के ICDR (पूंजी जारी और प्रकटीकरण आवश्यकताएँ) विनियम जो IPO को नियंत्रित करते हैं, 2018 में व्यापक रूप से संशोधित हुए।"
+    }
+  },
+  {
+    "uuid": "0597b1ac-8699-4456-8628-38d146a1d710",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Triple Role: Protector, Regulator, and Developer",
+        "SEBI's Role in Corporate Governance: LODR Regulations",
+        "SEBI's Tri-Functional Mandate: Quasi-Legislative, Quasi-Executive, and Quasi-Judicial Powers"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "SEBI quasi-judicial power adjudication penalties",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs correctly matches a SEBI action with the appropriate category of its tri-functional power?\n\n(a) Conducting adjudicatory proceedings against a broker for violating margin requirements and imposing a monetary penalty — Quasi-judicial function\n(b) Issuing a cease-and-desist order to halt ongoing market manipulation by a listed company — Quasi-legislative function\n(c) Framing regulations under Section 30 of the SEBI Act governing the conduct of market intermediaries — Quasi-executive function\n(d) Conducting inspections and investigations of the operations of a recognised stock exchange — Quasi-legislative function",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) describes Section 30 in a way that sounds plausible (regulations having 'force of law') but the attribution to SEBI's quasi-executive rather than quasi-legislative power reverses the correct categorization.",
+      "elimination_logic": [
+        "Evaluate (a): SEBI conducting adjudication proceedings to determine if a market intermediary violated regulations and imposing a monetary penalty is the textbook definition of its quasi-judicial power. This pairing is correct.",
+        "Evaluate (b): SEBI's power to issue cease-and-desist orders is quasi-judicial — issuing such orders to stop ongoing violations is an adjudicatory action, not a quasi-legislative one. Incorrect pairing.",
+        "Evaluate (c): Framing regulations under Section 30 is SEBI's quasi-legislative function — attributing it to quasi-executive reverses the categorization. Incorrect pairing.",
+        "Evaluate (d): Inspections and investigations of stock exchanges are quasi-executive functions — not quasi-legislative. Incorrect pairing.",
+        "Option (a) is the correctly matched pair."
+      ],
+      "upsc_trap_explanation": "Options (b) and (c) are the primary traps because they take real SEBI actions and assign them to the wrong functional category. Cease-and-desist orders (option b) sound like executive enforcement but are actually quasi-judicial — they involve a finding of violation and an order, not just enforcement activity. Option (c) reverses the label for Section 30 regulation-making, which is purely quasi-legislative. Students who have memorized the three categories but not internalized which specific actions belong where will struggle.",
+      "final_explanation": "Matching SEBI's specific actions to its three functional power categories is a precision knowledge task.\n\n• Option (a) — Correct: Adjudicatory proceedings to determine violation + monetary penalty imposition = quasi-judicial function. SEBI's adjudicating officers conduct hearings, evaluate evidence, and impose penalties — classic judicial-type activity.\n• Option (b) — Incorrect: Cease-and-desist orders are a quasi-judicial remedy (they require a finding of violation or likelihood of harm) — not a quasi-legislative action.\n• Option (c) — Incorrect: Framing regulations under Section 30 of the SEBI Act is the defining example of SEBI's quasi-legislative power — not quasi-executive. Section 30 gives SEBI the power to make rules with legal force.\n• Option (d) — Incorrect: Inspection and investigation of stock exchanges is quasi-executive (enforcement) function — not quasi-legislative.\n\nValue Addition:\n• Quasi-legislative → Section 30 SEBI Act → Regulations (like PIT, LODR, AIF Regulations).\n• Quasi-executive → Inspections, investigations, enforcement of compliance.\n• Quasi-judicial → Adjudication, penalties, cease-and-desist orders, debarment."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म SEBI की किसी क्रिया को उसकी त्रि-कार्यात्मक शक्ति की उपयुक्त श्रेणी के साथ सही रूप से मिलाता है?\n\n(a) मार्जिन आवश्यकताओं का उल्लंघन करने वाले दलाल के खिलाफ निर्णयात्मक कार्यवाही करना और मौद्रिक दंड लगाना — क्वासी-न्यायिक कार्य\n(b) सूचीबद्ध कंपनी द्वारा चल रहे बाजार हेरफेर को रोकने के लिए रोक-थाम आदेश जारी करना — क्वासी-विधायी कार्य\n(c) SEBI अधिनियम की धारा 30 के तहत बाजार मध्यस्थों के आचरण को नियंत्रित करने वाले नियम बनाना — क्वासी-कार्यकारी कार्य\n(d) मान्यता प्राप्त स्टॉक एक्सचेंज के संचालन का निरीक्षण और जांच करना — क्वासी-विधायी कार्य",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) सेक्शन 30 का वर्णन इस तरह करता है जो संभावित लगता है (नियमों का 'कानून के समान प्रभाव' होना) लेकिन इसे SEBI की क्वासी-कार्यकारी शक्ति के बजाय क्वासी-विधायी शक्ति से जोड़ना सही वर्गीकरण को उलट देता है।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: SEBI द्वारा यह निर्धारित करने के लिए निर्णयात्मक कार्यवाही करना कि क्या कोई बाजार मध्यस्थ नियमों का उल्लंघन कर रहा है और मौद्रिक दंड लगाना इसकी क्वासी-न्यायिक शक्ति की पाठ्यपुस्तक परिभाषा है। यह जोड़ी सही है।",
+        "(b) का मूल्यांकन करें: SEBI का रोक-थाम आदेश जारी करने का अधिकार क्वासी-न्यायिक है — ऐसे आदेश जारी करना जो चल रहे उल्लंघनों को रोकते हैं वह निर्णयात्मक कार्रवाई है, न कि क्वासी-विधायी। गलत जोड़ी।",
+        "(c) का मूल्यांकन करें: सेक्शन 30 के तहत नियम बनाना SEBI का क्वासी-विधायी कार्य है — इसे क्वासी-कार्यकारी से जोड़ना वर्गीकरण को उलट देता है। गलत जोड़ी।",
+        "(d) का मूल्यांकन करें: स्टॉक एक्सचेंजों के निरीक्षण और जांच क्वासी-कार्यकारी कार्य हैं — क्वासी-विधायी नहीं। गलत जोड़ी।",
+        "विकल्प (a) सही मेल खाती जोड़ी है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) और (c) मुख्य जाल हैं क्योंकि वे वास्तविक SEBI क्रियाओं को गलत कार्यात्मक श्रेणी में डालते हैं। रोक-थाम आदेश (विकल्प b) कार्यकारी प्रवर्तन जैसा लगता है लेकिन वास्तव में क्वासी-न्यायिक हैं — इनमें उल्लंघन का निर्धारण और आदेश शामिल होता है, केवल प्रवर्तन गतिविधि नहीं। विकल्प (c) सेक्शन 30 के नियम निर्माण के लेबल को उलट देता है, जो पूरी तरह से क्वासी-विधायी है। जो छात्र तीन श्रेणियों को याद कर चुके हैं लेकिन यह नहीं समझ पाए हैं कि कौन-सी क्रिया किस श्रेणी में आती है, उन्हें कठिनाई होगी।",
+      "final_explanation": "SEBI की विशिष्ट क्रियाओं को उसकी तीन कार्यात्मक शक्तियों की श्रेणियों से मिलाना एक सटीक ज्ञान कार्य है।\n\n• विकल्प (a) — सही: उल्लंघन निर्धारित करने के लिए निर्णयात्मक कार्यवाही + मौद्रिक दंड लगाना = क्वासी-न्यायिक कार्य। SEBI के निर्णय अधिकारी सुनवाई करते हैं, साक्ष्य का मूल्यांकन करते हैं, और दंड लगाते हैं — पारंपरिक न्यायिक प्रकार की गतिविधि।\n• विकल्प (b) — गलत: रोक-थाम आदेश क्वासी-न्यायिक उपाय हैं (इनमें उल्लंघन या हानि की संभावना का निर्धारण आवश्यक है) — क्वासी-विधायी कार्रवाई नहीं।\n• विकल्प (c) — गलत: SEBI अधिनियम की धारा 30 के तहत नियम बनाना SEBI की क्वासी-विधायी शक्ति का परिभाषित उदाहरण है — क्वासी-कार्यकारी नहीं। धारा 30 SEBI को कानूनी प्रभाव वाले नियम बनाने का अधिकार देती है।\n• विकल्प (d) — गलत: स्टॉक एक्सचेंजों का निरीक्षण और जांच क्वासी-कार्यकारी (प्रवर्तन) कार्य है — क्वासी-विधायी नहीं।\n\nमूल्य संवर्धन:\n• क्वासी-विधायी → SEBI अधिनियम की धारा 30 → नियम (जैसे PIT, LODR, AIF नियम)।\n• क्वासी-कार्यकारी → निरीक्षण, जांच, अनुपालन प्रवर्तन।\n• क्वासी-न्यायिक → निर्णय, दंड, रोक-थाम आदेश, प्रतिबंध।"
+    }
+  },
+  {
+    "uuid": "f6c6e5ac-7266-43d8-ae58-2396e61d5e11",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Role in Corporate Governance: LODR Regulations",
+        "SEBI and Mutual Funds: Regulatory Framework and Categorization"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "LODR application listed companies MCA unlisted governance boundary",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Zenith Pharma Ltd. is a large pharmaceutical company incorporated in India with annual revenues exceeding ₹5,000 crore. It is not listed on any recognised stock exchange. The company's minority shareholders have raised concerns about inadequate board independence and poor related-party transaction disclosures. Which regulatory authority has primary jurisdiction over Zenith Pharma's corporate governance practices?\n\n(a) SEBI, under the Listing Obligations and Disclosure Requirements Regulations, 2015, since the company's size makes it systemically significant\n(b) The Ministry of Corporate Affairs, through the Companies Act, 2013, since Zenith Pharma is an unlisted company outside SEBI's jurisdiction\n(c) The Securities Appellate Tribunal, which independently oversees corporate governance of large companies regardless of their listing status\n(d) IRDAI, since Zenith Pharma operates in the pharmaceutical sector which involves regulated pricing and public health obligations",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know SEBI has been strengthening corporate governance may instinctively assume its reach extends to all large companies, regardless of listing status.",
+      "elimination_logic": [
+        "Identify the scenario: Zenith Pharma Ltd. is a private unlisted company — large in revenue but not listed on any stock exchange. The board has concerns about governance.",
+        "Eliminate (a): SEBI's LODR Regulations apply only to companies listed on recognised stock exchanges — Zenith Pharma is unlisted, so SEBI has no jurisdiction under LODR.",
+        "Evaluate (b): The Ministry of Corporate Affairs governs all companies — listed and unlisted — through the Companies Act, 2013. For an unlisted company, MCA and the Companies Act is the primary (and only) governance authority. Correct.",
+        "Eliminate (c): SAT is SEBI's appellate body — it hears appeals against SEBI orders. An unlisted company outside SEBI's jurisdiction cannot be the subject of SEBI orders appealed before SAT.",
+        "Eliminate (d): IRDAI governs insurance companies — Zenith Pharma is a pharmaceutical company. Irrelevant regulator."
+      ],
+      "upsc_trap_explanation": "The listed/unlisted divide is a precision knowledge point that many students miss because SEBI's corporate governance work has been so prominent. The LODR framework — which mandates independent directors, audit committees, related-party disclosures — applies strictly to listed companies. An unlisted company, however large, falls solely under MCA's Companies Act framework. Option (a) is the trap for students who associate 'SEBI' with 'corporate governance' without the qualifier 'listed.'",
+      "final_explanation": "Corporate governance regulation in India is divided between SEBI and MCA based on listing status — one of the most practically important regulatory boundaries.\n\nApplicable principle: SEBI's LODR Regulations and all associated corporate governance mandates (independent directors, audit committees, BRSR disclosures) apply exclusively to companies listed on recognised stock exchanges. Unlisted companies — regardless of size — are governed by MCA under the Companies Act, 2013.\n\nScenario mapping: Zenith Pharma Ltd. is unlisted. No matter how large its revenue or how significant its operations, SEBI has no jurisdiction over its corporate governance. The applicable authority is MCA, which enforces the Companies Act provisions on board composition, auditing, related-party transactions, and disclosures for all companies.\n\n• Option (a): Incorrect — SEBI/LODR jurisdiction is limited to listed companies.\n• Option (b): Correct — MCA governs unlisted companies under the Companies Act, 2013.\n• Option (c): Incorrect — SAT is SEBI's appellate forum, irrelevant for unlisted companies.\n• Option (d): Incorrect — IRDAI regulates insurance; Zenith Pharma is a pharma company.\n\nValue Addition:\n• When a private company gets listed, it simultaneously comes under both SEBI (LODR) and MCA (Companies Act).\n• SEBI and MCA signed an MoU for coordination on overlapping jurisdiction for listed companies.\n• Unlisted public companies must have at least 3 directors; listed companies must additionally comply with LODR's independent director norms."
+    },
+    "hi": {
+      "display_text": "Zenith Pharma Ltd. भारत में स्थापित एक बड़ी फार्मास्यूटिकल कंपनी है जिसका वार्षिक राजस्व ₹5,000 करोड़ से अधिक है। यह किसी भी मान्यता प्राप्त स्टॉक एक्सचेंज पर सूचीबद्ध नहीं है। कंपनी के अल्पसंख्यक शेयरधारकों ने बोर्ड की स्वतंत्रता की कमी और संबंधित पक्ष लेनदेन के प्रकटीकरण की खराबी को लेकर चिंता जताई है। Zenith Pharma के कॉर्पोरेट गवर्नेंस प्रथाओं पर किस नियामक प्राधिकरण का प्राथमिक अधिकार क्षेत्र है?\n\n(a) SEBI, लिस्टिंग दायित्व और प्रकटीकरण आवश्यकताएँ नियम, 2015 के तहत, क्योंकि कंपनी का आकार इसे प्रणालीगत रूप से महत्वपूर्ण बनाता है\n(b) कॉर्पोरेट मामलों का मंत्रालय, कंपनियां अधिनियम, 2013 के माध्यम से, क्योंकि Zenith Pharma एक अनलिस्टेड कंपनी है जो SEBI के अधिकार क्षेत्र से बाहर है\n(c) सिक्योरिटीज अपीलीय न्यायाधिकरण, जो बड़ी कंपनियों के कॉर्पोरेट गवर्नेंस की स्वतंत्र रूप से निगरानी करता है, चाहे वे सूचीबद्ध हों या नहीं\n(d) IRDAI, क्योंकि Zenith Pharma फार्मास्यूटिकल क्षेत्र में कार्य करता है जिसमें विनियमित मूल्य निर्धारण और सार्वजनिक स्वास्थ्य दायित्व शामिल हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि SEBI कॉर्पोरेट गवर्नेंस को मजबूत कर रहा है, वे सहज रूप से मान सकते हैं कि इसका दायरा सभी बड़ी कंपनियों तक फैला है, चाहे वे सूचीबद्ध हों या नहीं।",
+      "elimination_logic": [
+        "परिदृश्य की पहचान करें: Zenith Pharma Ltd. एक निजी अनलिस्टेड कंपनी है — राजस्व में बड़ी लेकिन किसी भी मान्यता प्राप्त स्टॉक एक्सचेंज पर सूचीबद्ध नहीं। बोर्ड को गवर्नेंस को लेकर चिंताएं हैं।",
+        "(a) को खारिज करें: SEBI के LODR नियम केवल मान्यता प्राप्त स्टॉक एक्सचेंजों पर सूचीबद्ध कंपनियों पर लागू होते हैं — Zenith Pharma अनलिस्टेड है, अतः LODR के तहत SEBI का कोई अधिकार क्षेत्र नहीं है।",
+        "(b) का मूल्यांकन करें: कॉर्पोरेट मामलों का मंत्रालय (MCA) सभी कंपनियों — सूचीबद्ध और अनलिस्टेड — को कंपनियां अधिनियम, 2013 के माध्यम से नियंत्रित करता है। अनलिस्टेड कंपनी के लिए MCA और कंपनियां अधिनियम प्राथमिक (और एकमात्र) गवर्नेंस प्राधिकरण है। सही।",
+        "(c) को खारिज करें: SAT SEBI का अपीलीय निकाय है — यह SEBI के आदेशों के खिलाफ अपील सुनता है। SEBI के अधिकार क्षेत्र से बाहर अनलिस्टेड कंपनी SEBI आदेशों की अपील के विषय में नहीं हो सकती।",
+        "(d) को खारिज करें: IRDAI बीमा कंपनियों को नियंत्रित करता है — Zenith Pharma एक फार्मास्यूटिकल कंपनी है। अप्रासंगिक नियामक।"
+      ],
+      "upsc_trap_explanation": "सूचीबद्ध/अनलिस्टेड विभाजन एक सटीक ज्ञान बिंदु है जिसे कई छात्र चूक जाते हैं क्योंकि SEBI का कॉर्पोरेट गवर्नेंस कार्य बहुत प्रमुख रहा है। LODR ढांचा — जो स्वतंत्र निदेशकों, ऑडिट समितियों, संबंधित पक्ष प्रकटीकरणों को अनिवार्य करता है — केवल सूचीबद्ध कंपनियों पर लागू होता है। अनलिस्टेड कंपनी, चाहे कितनी भी बड़ी हो, केवल MCA के कंपनियां अधिनियम के अंतर्गत आती है। विकल्प (a) उन छात्रों के लिए जाल है जो 'SEBI' को 'कॉर्पोरेट गवर्नेंस' से जोड़ते हैं बिना 'सूचीबद्ध' की शर्त के।",
+      "final_explanation": "भारत में कॉर्पोरेट गवर्नेंस विनियमन सूचीबद्ध स्थिति के आधार पर SEBI और MCA के बीच विभाजित है — जो सबसे व्यावहारिक रूप से महत्वपूर्ण नियामक सीमाओं में से एक है।\n\nलागू सिद्धांत: SEBI के LODR नियम और सभी संबंधित कॉर्पोरेट गवर्नेंस अनिवार्यताएं (स्वतंत्र निदेशक, ऑडिट समितियां, BRSR प्रकटीकरण) केवल मान्यता प्राप्त स्टॉक एक्सचेंजों पर सूचीबद्ध कंपनियों पर लागू होती हैं। अनलिस्टेड कंपनियां — आकार की परवाह किए बिना — MCA के तहत कंपनियां अधिनियम, 2013 द्वारा नियंत्रित होती हैं।\n\nपरिदृश्य का मानचित्रण: Zenith Pharma Ltd. अनलिस्टेड है। चाहे इसका राजस्व कितना भी बड़ा हो या इसके संचालन कितने भी महत्वपूर्ण हों, SEBI का इसके कॉर्पोरेट गवर्नेंस पर कोई अधिकार क्षेत्र नहीं है। लागू प्राधिकरण MCA है, जो सभी कंपनियों के लिए बोर्ड संरचना, लेखा परीक्षा, संबंधित पक्ष लेनदेन, और प्रकटीकरण के प्रावधान लागू करता है।\n\n• विकल्प (a): गलत — SEBI/LODR का अधिकार क्षेत्र केवल सूचीबद्ध कंपनियों तक सीमित है।\n• विकल्प (b): सही — MCA अनलिस्टेड कंपनियों को कंपनियां अधिनियम, 2013 के तहत नियंत्रित करता है।\n• विकल्प (c): गलत — SAT SEBI का अपीलीय मंच है, अनलिस्टेड कंपनियों के लिए अप्रासंगिक।\n• विकल्प (d): गलत — IRDAI बीमा को नियंत्रित करता है; Zenith Pharma एक फार्मा कंपनी है।\n\nमूल्य संवर्धन:\n• जब कोई निजी कंपनी सूचीबद्ध होती है, तो वह एक साथ SEBI (LODR) और MCA (कंपनियां अधिनियम) दोनों के अंतर्गत आती है।\n• SEBI और MCA ने सूचीबद्ध कंपनियों के लिए ओवरलैपिंग अधिकार क्षेत्र पर समन्वय हेतु MoU पर हस्ताक्षर किए हैं।\n• अनलिस्टेड सार्वजनिक कंपनियों के कम से कम 3 निदेशक होने चाहिए; सूचीबद्ध कंपनियों को अतिरिक्त रूप से LODR के स्वतंत्र निदेशक मानदंडों का पालन करना होता है।"
+    }
+  },
+  {
+    "uuid": "85f40d1e-5e33-4921-bc3a-9800f7ba45af",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SCORES Platform and Investor Grievance Redressal Mechanism",
+        "SEBI's Triple Role: Protector, Regulator, and Developer"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "SCORES securities market only banking insurance different ombudsman",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A financial consumer wishes to use SEBI's SCORES platform to lodge a grievance. Which of the following complaints would be appropriately filed through SCORES?\n\n(a) A complaint that the insurer has wrongfully denied a life insurance claim citing policy exclusions\n(b) A complaint against a bank for charging unauthorised fees on a savings account\n(c) A complaint that a bank's advertisement for fixed deposits was misleading about the effective interest rate\n(d) A complaint that a mutual fund has unreasonably delayed processing a redemption request beyond the mandated period",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — IRDAI Bima Bharosa (previously IGMS) is the correct destination for insurance complaints, but students who associate both SEBI and IRDAI with SCORES (since SAT handles both) may mark this wrong.",
+      "elimination_logic": [
+        "Eliminate (a): SCORES handles only securities market complaints — life insurance policy complaints are not within SEBI's jurisdiction.",
+        "Eliminate (b): Bima Bharosa (IRDAI's grievance platform) handles insurance complaints — a student confused about which financial regulator handles insurance may pick this, but the question tests SCORES-specific scope.",
+        "Eliminate (c): An investor complaint about a listed equity company's non-disclosure of financials falls within SEBI/SCORES jurisdiction — but this is about a life insurance policy, not a listed security.",
+        "Confirm (d): A complaint about mutual fund redemption delays falls within SEBI's SCORES jurisdiction — mutual funds are SEBI-regulated, and operational complaints against them (including redemption delays) are SCORES-eligible."
+      ],
+      "upsc_trap_explanation": "This question tests SCORES's precise jurisdictional scope. Life insurance complaints (option a) go to IRDAI's Bima Bharosa; banking complaints go to RBI Ombudsman. Students who associate 'financial market complaint' broadly with SEBI may mark option (a) as SCORES-eligible — but life insurance products are not securities. Only option (d) — a mutual fund operational complaint — falls within SEBI's regulatory domain and is therefore SCORES-eligible.",
+      "final_explanation": "SCORES is the grievance mechanism specifically for the securities market — understanding its jurisdictional boundary is essential.\n\n• Option (a) — Life insurance policy: Life insurance is regulated by IRDAI. Complaints about policy terms, claim settlements, or service quality go to IRDAI's Bima Bharosa platform. Not SCORES-eligible.\n• Option (b) — Bank savings account: Banking products and services are RBI's domain. Savings account disputes go to the RBI Ombudsman. Not SCORES-eligible.\n• Option (c) — Misleading bank FD advertisement: Bank fixed deposits are banking products — RBI Ombudsman is the correct avenue. Not SCORES-eligible.\n• Option (d) — Mutual fund redemption delay: Mutual funds are SEBI-regulated. Operational complaints against mutual funds, including delays in processing redemptions, are within SEBI's jurisdiction and can be escalated via SCORES. SCORES-eligible — correct option.\n\nValue Addition:\n• National Consumer Disputes Redressal Commission (NCDRC) provides another avenue for financial service consumer disputes.\n• SEBI SCORES 2.0 introduced auto-routing of complaints to the correct regulated entity and enhanced tracking.\n• The Insurance Regulatory and Development Authority of India's integrated grievance platform was renamed to Bima Bharosa in 2023."
+    },
+    "hi": {
+      "display_text": "एक वित्तीय उपभोक्ता SEBI के SCORES मंच का उपयोग करके शिकायत दर्ज करना चाहता है। निम्नलिखित में से कौन-सी शिकायत SCORES के माध्यम से उचित रूप से दर्ज की जा सकती है?\n\n(a) एक शिकायत कि बीमाकर्ता ने पॉलिसी अपवादों का हवाला देते हुए जीवन बीमा दावा अनुचित रूप से अस्वीकार कर दिया है\n(b) एक शिकायत कि बैंक ने बचत खाते पर अनधिकृत शुल्क लगाए हैं\n(c) एक शिकायत कि बैंक का फिक्स्ड डिपॉजिट विज्ञापन प्रभावी ब्याज दर के बारे में भ्रामक था\n(d) एक शिकायत कि म्यूचुअल फंड ने अनिवार्य अवधि से अधिक समय तक रिडेम्प्शन अनुरोध को असामयिक रूप से संसाधित किया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — IRDAI Bima Bharosa (previously IGMS) is the correct destination for insurance complaints, but students who associate both SEBI and IRDAI with SCORES (since SAT handles both) may mark this wrong.",
+      "elimination_logic": [
+        "(a) को हटाएं: SCORES केवल प्रतिभूति बाजार की शिकायतों को संभालता है — जीवन बीमा पॉलिसी की शिकायतें SEBI के अधिकार क्षेत्र में नहीं आतीं।",
+        "(b) को हटाएं: बीमा भरोसा (IRDAI का शिकायत मंच) बीमा शिकायतों को संभालता है — जो छात्र भ्रमित हैं कि कौन सा वित्तीय नियामक बीमा को संभालता है, वे इसे चुन सकते हैं, लेकिन प्रश्न SCORES के विशिष्ट दायरे का परीक्षण करता है।",
+        "(c) को हटाएं: सूचीबद्ध इक्विटी कंपनी के वित्तीय विवरणों के गैर-प्रकटीकरण के बारे में निवेशक शिकायत SEBI/SCORES के अधिकार क्षेत्र में आती है — लेकिन यह जीवन बीमा पॉलिसी के बारे में है, न कि सूचीबद्ध प्रतिभूति के बारे में।",
+        "(d) की पुष्टि करें: म्यूचुअल फंड रिडेम्प्शन में देरी की शिकायत SEBI के SCORES अधिकार क्षेत्र में आती है — म्यूचुअल फंड SEBI द्वारा विनियमित हैं, और उनके खिलाफ परिचालन शिकायतें (जिसमें रिडेम्प्शन में देरी शामिल है) SCORES के अंतर्गत आती हैं।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न SCORES के सटीक अधिकार क्षेत्र को परखता है। जीवन बीमा शिकायतें (विकल्प a) IRDAI के बीमा भरोसा को जाती हैं; बैंकिंग शिकायतें RBI ओम्बड्समैन को जाती हैं। जो छात्र 'वित्तीय बाजार शिकायत' को व्यापक रूप से SEBI से जोड़ते हैं, वे विकल्प (a) को SCORES-योग्य मान सकते हैं — लेकिन जीवन बीमा उत्पाद प्रतिभूतियां नहीं हैं। केवल विकल्प (d) — म्यूचुअल फंड परिचालन शिकायत — SEBI के नियामक क्षेत्र में आती है और इसलिए SCORES-योग्य है।",
+      "final_explanation": "SCORES विशेष रूप से प्रतिभूति बाजार के लिए शिकायत निवारण तंत्र है — इसके अधिकार क्षेत्र की सीमा को समझना आवश्यक है।\n\n• विकल्प (a) — जीवन बीमा पॉलिसी: जीवन बीमा IRDAI द्वारा विनियमित है। पॉलिसी शर्तों, दावा निपटान, या सेवा गुणवत्ता की शिकायतें IRDAI के बीमा भरोसा मंच पर जाती हैं। SCORES-योग्य नहीं।\n• विकल्प (b) — बैंक बचत खाता: बैंकिंग उत्पाद और सेवाएं RBI के क्षेत्राधिकार में हैं। बचत खाते के विवाद RBI ओम्बड्समैन के पास जाते हैं। SCORES-योग्य नहीं।\n• विकल्प (c) — भ्रामक बैंक FD विज्ञापन: बैंक फिक्स्ड डिपॉजिट बैंकिंग उत्पाद हैं — RBI ओम्बड्समैन सही मंच है। SCORES-योग्य नहीं।\n• विकल्प (d) — म्यूचुअल फंड रिडेम्प्शन में देरी: म्यूचुअल फंड SEBI द्वारा विनियमित हैं। म्यूचुअल फंड के खिलाफ परिचालन शिकायतें, जिनमें रिडेम्प्शन में देरी शामिल है, SEBI के अधिकार क्षेत्र में आती हैं और SCORES के माध्यम से उठाई जा सकती हैं। SCORES-योग्य — सही विकल्प।\n\nमूल्य संवर्धन:\n• राष्ट्रीय उपभोक्ता विवाद निवारण आयोग (NCDRC) वित्तीय सेवा उपभोक्ता विवादों के लिए एक और मंच प्रदान करता है।\n• SEBI SCORES 2.0 ने शिकायतों को सही विनियमित इकाई तक स्वचालित मार्गदर्शन और बेहतर ट्रैकिंग शुरू की।\n• भारतीय बीमा नियामक एवं विकास प्राधिकरण के एकीकृत शिकायत मंच का नाम 2023 में बीमा भरोसा रखा गया।"
+    }
+  },
+  {
+    "uuid": "180c62de-bddb-4d33-8796-9da59e9d1a03",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Domestic Regulatory Bodies",
+      "sub_topic": "SEBI — Securities and Exchange Board of India",
+      "concepts_used": [
+        "SEBI's Enforcement Powers: Penalties, Disgorgement, and Debarment",
+        "Securities Appellate Tribunal (SAT): Jurisdiction and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Disgorgement penalty distinction SEBI enforcement toolkit",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about SEBI's enforcement toolkit:\n\n1. Disgorgement ordered by SEBI refers to the recovery of illegal gains made by a violator and is a remedy distinct from and additional to monetary penalties.\n2. Under the SEBI Act as amended, the maximum monetary penalty SEBI can impose is ₹25 crore per violation, regardless of the profit made from the violation.\n3. An entity debarred by SEBI from the securities markets can challenge the debarment order before the Securities Appellate Tribunal.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Disgorgement ordered by SEBI refers to the recovery of illegal gains made by a violator and is a remedy distinct from and additional to monetary penalties.",
+          "verdict": "Correct",
+          "reason": "Disgorgement specifically targets the illegal profit already made — it restores the status quo financially. Monetary penalty is an additional punitive sum. They serve different purposes and can be applied simultaneously."
+        },
+        {
+          "statement": "Under the SEBI Act as amended, the maximum monetary penalty SEBI can impose is ₹25 crore per violation, regardless of the profit made from the violation.",
+          "verdict": "Incorrect",
+          "reason": "Post-2014 amendment, the penalty is the higher of ₹25 crore OR 3 times the profit from the violation — the 'whichever is higher' formula means there is no absolute cap if profits exceed ₹8.33 crore."
+        },
+        {
+          "statement": "An entity debarred by SEBI from the securities markets can challenge the debarment order before the Securities Appellate Tribunal.",
+          "verdict": "Correct",
+          "reason": "SAT has jurisdiction to hear appeals against all SEBI adjudicatory orders, including debarment orders — this is a core component of SAT's appellate function."
+        }
+      ],
+      "strong_distractor": "d — Students who know SEBI has strong enforcement powers may assume all three statements are correct, missing the 'regardless of profit' qualifier in Statement 2.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Disgorgement = recovery of illegal gain; penalty = additional punitive sum. These are distinct and cumulative. Statement 1 is correct.",
+        "Evaluate Statement 2: The 'regardless of profit' qualifier makes this false — the formula is ₹25 crore OR 3x profit, whichever is higher. The ₹25 crore is not an absolute cap. Statement 2 is incorrect.",
+        "Evaluate Statement 3: SAT reviews SEBI's adjudicatory orders — debarment orders are appealable before SAT. Statement 3 is correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — correct option is (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the word 'regardless of profit' — it converts a conditional maximum into an absolute cap, which is factually wrong. The 2014 amendment was specifically designed to ensure that large-profit violations face penalties proportionate to the gain — capping at ₹25 crore would allow someone who made ₹100 crore in illegal profits to pay only ₹25 crore. The 3x formula removes this perverse incentive. Students who remember only '₹25 crore' without the 'whichever is higher' component will mark Statement 2 as correct.",
+      "final_explanation": "SEBI's post-2014 enforcement toolkit is designed to be proportionate, cumulative, and deterrent — three qualities that map precisely onto the three mechanisms tested here.\n\n• Statement 1 — Correct: Disgorgement is a distinct civil remedy that recovers the specific illegal profit. A SEBI order can simultaneously impose disgorgement (₹X illegal profit recovered) and a monetary penalty (additional punitive amount) — they are complementary, not alternative.\n• Statement 2 — Incorrect: The monetary penalty formula post-2014 is the higher of ₹25 crore OR 3 times the illegal profit. If a violator made ₹50 crore in illegal gains, the penalty can reach ₹150 crore. The ₹25 crore figure is a floor/reference point, not an absolute ceiling.\n• Statement 3 — Correct: SAT provides the appellate remedy for all SEBI adjudicatory orders. A debarred entity has 45 days to file an appeal before SAT.\n\nValue Addition:\n• Consent orders allow SEBI and an accused party to settle enforcement matters without admitting guilt — SEBI introduced a formal consent order mechanism in 2012.\n• Administrative warnings and censure are the lightest enforcement tools — below the monetary penalty level.\n• SEBI's enforcement actions are published in its Annual Report and on its website — promoting deterrence through transparency."
+    },
+    "hi": {
+      "display_text": "SEBI के प्रवर्तन उपकरण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. SEBI द्वारा आदेशित डिसगॉर्जमेंट का अर्थ है उल्लंघनकर्ता द्वारा अर्जित अवैध लाभ की वसूली, जो मौद्रिक दंड से भिन्न और अतिरिक्त उपचार है।\n2. संशोधित SEBI अधिनियम के तहत, SEBI द्वारा प्रत्येक उल्लंघन पर लगाया जा सकने वाला अधिकतम मौद्रिक दंड ₹25 करोड़ है, चाहे उल्लंघन से कितना भी लाभ हुआ हो।\n3. SEBI द्वारा प्रतिभूति बाजारों से प्रतिबंधित किसी इकाई को प्रतिबंध आदेश के खिलाफ प्रतिभूति अपीलीय न्यायाधिकरण में चुनौती दी जा सकती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Disgorgement ordered by SEBI refers to the recovery of illegal gains made by a violator and is a remedy distinct from and additional to monetary penalties.",
+          "verdict": "Correct",
+          "reason": "Disgorgement specifically targets the illegal profit already made — it restores the status quo financially. Monetary penalty is an additional punitive sum. They serve different purposes and can be applied simultaneously."
+        },
+        {
+          "statement": "Under the SEBI Act as amended, the maximum monetary penalty SEBI can impose is ₹25 crore per violation, regardless of the profit made from the violation.",
+          "verdict": "Incorrect",
+          "reason": "Post-2014 amendment, the penalty is the higher of ₹25 crore OR 3 times the profit from the violation — the 'whichever is higher' formula means there is no absolute cap if profits exceed ₹8.33 crore."
+        },
+        {
+          "statement": "An entity debarred by SEBI from the securities markets can challenge the debarment order before the Securities Appellate Tribunal.",
+          "verdict": "Correct",
+          "reason": "SAT has jurisdiction to hear appeals against all SEBI adjudicatory orders, including debarment orders — this is a core component of SAT's appellate function."
+        }
+      ],
+      "strong_distractor": "d — Students who know SEBI has strong enforcement powers may assume all three statements are correct, missing the 'regardless of profit' qualifier in Statement 2.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Disgorgement = recovery of illegal gain; penalty = additional punitive sum. These are distinct and cumulative. Statement 1 is correct.",
+        "Evaluate Statement 2: The 'regardless of profit' qualifier makes this false — the formula is ₹25 crore OR 3x profit, whichever is higher. The ₹25 crore is not an absolute cap. Statement 2 is incorrect.",
+        "Evaluate Statement 3: SAT reviews SEBI's adjudicatory orders — debarment orders are appealable before SAT. Statement 3 is correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — correct option is (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the word 'regardless of profit' — it converts a conditional maximum into an absolute cap, which is factually wrong. The 2014 amendment was specifically designed to ensure that large-profit violations face penalties proportionate to the gain — capping at ₹25 crore would allow someone who made ₹100 crore in illegal profits to pay only ₹25 crore. The 3x formula removes this perverse incentive. Students who remember only '₹25 crore' without the 'whichever is higher' component will mark Statement 2 as correct.",
+      "final_explanation": "SEBI's post-2014 enforcement toolkit is designed to be proportionate, cumulative, and deterrent — three qualities that map precisely onto the three mechanisms tested here.\n\n• Statement 1 — Correct: Disgorgement is a distinct civil remedy that recovers the specific illegal profit. A SEBI order can simultaneously impose disgorgement (₹X illegal profit recovered) and a monetary penalty (additional punitive amount) — they are complementary, not alternative.\n• Statement 2 — Incorrect: The monetary penalty formula post-2014 is the higher of ₹25 crore OR 3 times the illegal profit. If a violator made ₹50 crore in illegal gains, the penalty can reach ₹150 crore. The ₹25 crore figure is a floor/reference point, not an absolute ceiling.\n• Statement 3 — Correct: SAT provides the appellate remedy for all SEBI adjudicatory orders. A debarred entity has 45 days to file an appeal before SAT.\n\nValue Addition:\n• Consent orders allow SEBI and an accused party to settle enforcement matters without admitting guilt — SEBI introduced a formal consent order mechanism in 2012.\n• Administrative warnings and censure are the lightest enforcement tools — below the monetary penalty level.\n• SEBI's enforcement actions are published in its Annual Report and on its website — promoting deterrence through transparency."
+    }
+  }
+]

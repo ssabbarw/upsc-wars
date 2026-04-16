@@ -1,8 +1,8 @@
 class SessionSummary {
   const SessionSummary({
     required this.sessionId,
-    required this.subjectSlug,
-    required this.topicSlug,
+    required this.subject,
+    required this.topic,
     required this.mode,
     required this.status,
     required this.createdAt,
@@ -15,8 +15,8 @@ class SessionSummary {
     required this.avgTimeSpentSecs,
   });
   final String sessionId;
-  final String subjectSlug;
-  final String? topicSlug;
+  final String subject;
+  final String? topic;
   final String mode;
   final String status;
   final DateTime createdAt;

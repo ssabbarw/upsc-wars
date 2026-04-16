@@ -1,0 +1,215 @@
+[
+  {
+    "uuid": "24f3401e-3eb7-4a69-86b4-2b90bfded708",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Wetlands Conservation and Management Rules 2017",
+      "concepts_used": [
+        "Legislative Basis and Parent Act of Wetlands Rules 2017"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Wetlands Rules 2017 as subordinate legislation under EPA 1986",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under which of the following legislative provisions were the Wetlands (Conservation and Management) Rules, 2017 enacted?\n\n(a) A standalone Wetlands Protection Act passed by Parliament in 2017\n(b) Section 25 of the Environment (Protection) Act, 1986\n(c) Section 35 of the Wildlife (Protection) Act, 1972\n(d) Section 17 of the Water (Prevention and Control of Pollution) Act, 1974",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students familiar with wetland policy often assume a standalone Act governs wetlands, given the specificity and detail of the 2017 Rules.",
+      "elimination_logic": [
+        "Eliminate (a): There is no standalone 'Wetlands Protection Act' in Indian law — the 2017 Rules are subordinate legislation, not a parent act.",
+        "Eliminate (c): The Wildlife Protection Act 1972 deals with species and protected areas, not wetland management rules.",
+        "Eliminate (d): The Water (Prevention and Control of Pollution) Act 1974 addresses water pollution; it is not the parent legislation for the Wetlands Rules 2017.",
+        "Confirm (b): Section 25 of the Environment (Protection) Act, 1986 empowers the Central Government to make rules, under which the Wetlands Rules 2017 were enacted."
+      ],
+      "upsc_trap_explanation": "Many students, upon seeing the detailed and standalone-sounding structure of the Wetlands (Conservation and Management) Rules 2017, assume it derives from a dedicated wetlands statute. In reality, it is subordinate legislation framed under Section 25 of the Environment (Protection) Act, 1986. This trap targets students who confuse policy specificity with legislative independence. The correct answer requires knowing the enabling provision precisely.",
+      "final_explanation": "The Wetlands (Conservation and Management) Rules, 2017 are not a standalone enactment but subordinate legislation made under the rule-making power of the Central Government conferred by Section 25 of the Environment (Protection) Act (EPA), 1986. EPA 1986 is the omnibus environmental protection statute that empowers the government to frame specific rules for various environmental components.\n\n• Option (a): Incorrect. No 'Wetlands Protection Act' exists in Indian law.\n• Option (b): Correct. Section 25 of EPA 1986 is the legislative basis.\n• Option (c): Incorrect. The Wildlife Protection Act 1972 governs protected areas and species, not wetland management rules.\n• Option (d): Incorrect. The Water Act 1974 deals with water pollution control, not wetland governance.\n\nValue Addition:\n• EPA 1986 has been the parent act for several critical rules including EIA Notification 2006, CRZ Notification 2019, and Eco-Sensitive Zone rules.\n• The 2017 Rules supersede the earlier Wetlands (Conservation and Management) Rules, 2010.\n• Any violation of the 2017 Rules attracts penalties under EPA 1986 — up to 5 years imprisonment and/or ₹1 lakh fine."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से किस विधायी प्रावधान के तहत वेटलैंड्स (संरक्षण और प्रबंधन) नियम, 2017 बनाए गए थे?\n\n(a) संसद द्वारा 2017 में पारित एक स्वतंत्र वेटलैंड्स प्रोटेक्शन एक्ट\n(b) पर्यावरण (संरक्षण) अधिनियम, 1986 की धारा 25\n(c) वन्यजीव (संरक्षण) अधिनियम, 1972 की धारा 35\n(d) जल (प्रदूषण निवारण और नियंत्रण) अधिनियम, 1974 की धारा 17",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र वेटलैंड नीति से परिचित हैं वे अक्सर मान लेते हैं कि वेटलैंड्स के लिए कोई स्वतंत्र अधिनियम है, 2017 के नियमों की विशिष्टता और विस्तार के कारण।",
+      "elimination_logic": [
+        "(a) को हटाएं: भारतीय कानून में कोई स्वतंत्र 'वेटलैंड्स प्रोटेक्शन एक्ट' नहीं है — 2017 के नियम अधीनस्थ विधान हैं, कोई मूल अधिनियम नहीं।",
+        "(c) को हटाएं: वन्यजीव संरक्षण अधिनियम 1972 प्रजातियों और संरक्षित क्षेत्रों से संबंधित है, वेटलैंड प्रबंधन नियमों से नहीं।",
+        "(d) को हटाएं: जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974 जल प्रदूषण से संबंधित है; यह वेटलैंड्स नियमों का मूल विधान नहीं है।",
+        "(b) की पुष्टि करें: पर्यावरण (संरक्षण) अधिनियम, 1986 की धारा 25 केंद्रीय सरकार को नियम बनाने का अधिकार देती है, जिसके अंतर्गत वेटलैंड्स नियम 2017 बनाए गए।"
+      ],
+      "upsc_trap_explanation": "कई छात्र, वेटलैंड्स (संरक्षण और प्रबंधन) नियम 2017 की विस्तृत और स्वतंत्र प्रतीत होने वाली संरचना देखकर, मान लेते हैं कि यह किसी समर्पित वेटलैंड अधिनियम से उत्पन्न है। वास्तविकता में, यह पर्यावरण (संरक्षण) अधिनियम, 1986 की धारा 25 के तहत अधीनस्थ विधान है। यह जाल उन छात्रों को लक्षित करता है जो नीति की विशिष्टता को विधायी स्वतंत्रता समझ लेते हैं। सही उत्तर के लिए सक्षम प्रावधान की सटीक जानकारी आवश्यक है।",
+      "final_explanation": "वेटलैंड्स (संरक्षण और प्रबंधन) नियम, 2017 कोई स्वतंत्र अधिनियम नहीं हैं, बल्कि पर्यावरण (संरक्षण) अधिनियम, 1986 की धारा 25 द्वारा केंद्रीय सरकार को प्रदान किए गए नियम बनाने के अधिकार के तहत बनाए गए अधीनस्थ नियम हैं। EPA 1986 वह समग्र पर्यावरण संरक्षण अधिनियम है जो सरकार को विभिन्न पर्यावरणीय घटकों के लिए विशिष्ट नियम बनाने का अधिकार देता है।\n\n• विकल्प (a): गलत। भारतीय कानून में कोई 'वेटलैंड्स प्रोटेक्शन एक्ट' नहीं है।\n• विकल्प (b): सही। EPA 1986 की धारा 25 विधायी आधार है।\n• विकल्प (c): गलत। वन्यजीव संरक्षण अधिनियम 1972 संरक्षित क्षेत्र और प्रजातियों को नियंत्रित करता है, वेटलैंड प्रबंधन नियमों को नहीं।\n• विकल्प (d): गलत। जल अधिनियम 1974 जल प्रदूषण नियंत्रण से संबंधित है, वेटलैंड शासन से नहीं।\n\nमूल्यवर्धन:\n• EPA 1986 कई महत्वपूर्ण नियमों का मूल अधिनियम रहा है, जिनमें EIA अधिसूचना 2006, CRZ अधिसूचना 2019, और इको-सेंसिटिव जोन नियम शामिल हैं।\n• 2017 के नियम पुराने वेटलैंड्स (संरक्षण और प्रबंधन) नियम, 2010 को प्रतिस्थापित करते हैं।\n• 2017 के नियमों का उल्लंघन EPA 1986 के तहत दंडनीय है — 5 वर्ष तक की जेल और/या ₹1 लाख तक का जुर्माना।"
+    }
+  },
+  {
+    "uuid": "d675be53-a9ed-4b8e-ac53-0d6842c8ca45",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Wetlands Conservation and Management Rules 2017",
+      "concepts_used": [
+        "Definition of 'Wetland' under the 2017 Rules"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Wetland definition: inclusions and exclusions under 2017 Rules",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Wetlands (Conservation and Management) Rules, 2017, consider the following statements:\n\n1. Mangroves and coral reefs are included within the definition of 'wetland' under these Rules.\n2. Paddy fields are included within the definition of 'wetland' under these Rules.\n3. River channels, except in estuarine areas, are excluded from the definition of 'wetland' under these Rules.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Mangroves and coral reefs are included within the definition of 'wetland' under the Wetlands (Conservation and Management) Rules, 2017.",
+          "verdict": "Correct",
+          "reason": "The 2017 Rules explicitly include mangroves and coral reefs within the legal definition of wetland, covering both coastal and inland water bodies."
+        },
+        {
+          "statement": "Paddy fields are included within the definition of 'wetland' under the Wetlands (Conservation and Management) Rules, 2017.",
+          "verdict": "Incorrect",
+          "reason": "The 2017 Rules specifically exclude paddy fields from the definition of wetland, distinguishing agricultural water-dependent land uses from natural wetland ecosystems."
+        },
+        {
+          "statement": "River channels, except in estuarine areas, are excluded from the definition of 'wetland' under the 2017 Rules.",
+          "verdict": "Correct",
+          "reason": "The Rules exclude river channels from the wetland definition, with the exception of estuarine areas where rivers meet the sea, recognising their distinct ecological character."
+        }
+      ],
+      "strong_distractor": "d — A student who knows mangroves are included may also assume paddy fields are included due to their water-dependent nature, making the all-three-correct option tempting.",
+      "elimination_logic": [
+        "Confirm Statement 1 as correct: mangroves and coral reefs are explicitly named as wetlands under the 2017 Rules.",
+        "Reject Statement 2: paddy fields are explicitly excluded from the definition — a specific carve-out in the Rules.",
+        "Confirm Statement 3 as correct: river channels are excluded except in estuarine areas — a boundary condition stated in the definition.",
+        "Since Statements 1 and 3 are correct and Statement 2 is incorrect, the answer is (c)."
+      ],
+      "upsc_trap_explanation": "Paddy fields cover vast areas and are water-logged for significant parts of the year, making them appear ecologically similar to wetlands. Many students, including those aware of the Ramsar Convention's broader definition, assume paddy fields qualify. The 2017 Rules explicitly carve them out, and this exclusion is a recurring UPSC trap. Students who correctly identify mangroves as included may then assume the definition is broad enough to cover paddy fields — a classic scope-extension error.",
+      "final_explanation": "The Wetlands Rules 2017 define wetlands to include areas of marsh, fen, peatland — natural or artificial, permanent or temporary — with static or flowing water that may be fresh, brackish, or saline. This definition encompasses a wide range but contains specific inclusions and exclusions.\n\n• Statement 1 — Correct: Mangroves and coral reefs are explicitly included. This is significant because they also receive protection under the CRZ Notification 2019, creating a dual-protection regime.\n• Statement 2 — Incorrect: Paddy fields are specifically excluded. This is a deliberate policy choice to avoid burdening agricultural land with conservation regulations, though it has been criticised by ecologists.\n• Statement 3 — Correct: River channels are excluded from the definition, except where they form part of estuarine areas — recognising that estuaries have distinct wetland characteristics.\n\nValue Addition:\n• The Ramsar Convention's definition (Article 1.1) is broader than the 2017 Rules' definition and does not exclude paddy fields.\n• The exclusion of paddy fields from Indian wetland law has been criticised as a missed opportunity for agricultural biodiversity conservation.\n• Estuaries are among the most productive ecosystems globally and their inclusion as wetlands under the 2017 Rules is ecologically significant."
+    },
+    "hi": {
+      "display_text": "वेटलैंड्स (संरक्षण और प्रबंधन) नियम, 2017 के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. मैंग्रोव और कोरल रीफ को इन नियमों के तहत 'आर्द्रभूमि' की परिभाषा में शामिल किया गया है।\n2. धान के खेतों को इन नियमों के तहत 'आर्द्रभूमि' की परिभाषा में शामिल किया गया है।\n3. नदी के चैनलों को, मुहाना क्षेत्रों को छोड़कर, इन नियमों के तहत 'आर्द्रभूमि' की परिभाषा से बाहर रखा गया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Mangroves and coral reefs are included within the definition of 'wetland' under the Wetlands (Conservation and Management) Rules, 2017.",
+          "verdict": "सही है",
+          "reason": "2017 के नियमों में मैंग्रोव और कोरल रीफ को स्पष्ट रूप से आर्द्रभूमि की कानूनी परिभाषा में शामिल किया गया है, जो तटीय और अंतर्देशीय जल निकाय दोनों को कवर करता है।"
+        },
+        {
+          "statement": "Paddy fields are included within the definition of 'wetland' under the Wetlands (Conservation and Management) Rules, 2017.",
+          "verdict": "गलत है",
+          "reason": "2017 के नियमों में धान के खेतों को आर्द्रभूमि की परिभाषा से विशेष रूप से बाहर रखा गया है, जो कृषि आधारित जल-निर्भर भूमि उपयोग को प्राकृतिक आर्द्रभूमि पारिस्थितिक तंत्र से अलग करता है।"
+        },
+        {
+          "statement": "River channels, except in estuarine areas, are excluded from the definition of 'wetland' under the 2017 Rules.",
+          "verdict": "सही है",
+          "reason": "नियमों में नदी के चैनलों को आर्द्रभूमि की परिभाषा से बाहर रखा गया है, केवल उस क्षेत्र को छोड़कर जहाँ नदी समुद्र से मिलती है (मुहाना क्षेत्र), जो उनके विशिष्ट पारिस्थितिक चरित्र को मान्यता देता है।"
+        }
+      ],
+      "strong_distractor": "d — एक छात्र जो जानता है कि मैंग्रोव शामिल हैं, वह धान के खेतों को भी शामिल मान सकता है क्योंकि वे जल-निर्भर हैं, जिससे सभी तीन सही विकल्प आकर्षक हो जाता है।",
+      "elimination_logic": [
+        "कथन 1 को सही मानें: मैंग्रोव और कोरल रीफ को 2017 के नियमों के तहत स्पष्ट रूप से आर्द्रभूमि के रूप में नामित किया गया है।",
+        "कथन 2 को अस्वीकार करें: धान के खेतों को परिभाषा से स्पष्ट रूप से बाहर रखा गया है — नियमों में एक विशिष्ट अपवाद।",
+        "कथन 3 को सही मानें: नदी के चैनल को मुहाना क्षेत्रों को छोड़कर बाहर रखा गया है — परिभाषा में एक सीमा शर्त।",
+        "चूंकि कथन 1 और 3 सही हैं और कथन 2 गलत है, अतः उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "धान के खेत व्यापक क्षेत्र में फैले होते हैं और वर्ष के अधिकांश समय जलमग्न रहते हैं, जिससे वे पारिस्थितिक रूप से आर्द्रभूमि के समान प्रतीत होते हैं। कई छात्र, जिनमें रामसर कन्वेंशन की व्यापक परिभाषा से परिचित हैं, मान लेते हैं कि धान के खेत आर्द्रभूमि में आते हैं। 2017 के नियमों में उन्हें स्पष्ट रूप से बाहर रखा गया है, और यह अपवाद UPSC में एक बार-बार आने वाला जाल है। जो छात्र मैंग्रोव को शामिल मानते हैं, वे परिभाषा को इतना व्यापक मान लेते हैं कि धान के खेत भी शामिल होंगे — यह एक क्लासिक स्कोप-एक्सटेंशन त्रुटि है।",
+      "final_explanation": "वेटलैंड्स रूल्स 2017 आर्द्रभूमि को दलदली, फेन, पीटलैंड — प्राकृतिक या कृत्रिम, स्थायी या अस्थायी — स्थिर या बहते पानी वाले क्षेत्र के रूप में परिभाषित करते हैं, जो ताजा, खारा या ब्रैकिश हो सकता है। यह परिभाषा व्यापक है लेकिन इसमें विशिष्ट समावेशन और बहिष्कार हैं।\n\n• कथन 1 — सही: मैंग्रोव और कोरल रीफ स्पष्ट रूप से शामिल हैं। यह महत्वपूर्ण है क्योंकि इन्हें CRZ नोटिफिकेशन 2019 के तहत भी संरक्षण प्राप्त है, जिससे दोहरी संरक्षण व्यवस्था बनती है।\n• कथन 2 — गलत: धान के खेत विशेष रूप से बाहर रखे गए हैं। यह एक जानबूझकर नीति निर्णय है ताकि कृषि भूमि पर संरक्षण नियमों का बोझ न पड़े, हालांकि इसे पारिस्थितिकीविदों ने आलोचना की है।\n• कथन 3 — सही: नदी के चैनल को परिभाषा से बाहर रखा गया है, सिवाय उन क्षेत्रों के जहाँ वे मुहाना क्षेत्र बनाते हैं — यह मान्यता देता है कि मुहाने की आर्द्रभूमि की विशिष्ट विशेषताएँ होती हैं।\n\nमूल्य संवर्धन:\n• रामसर कन्वेंशन की परिभाषा (अनुच्छेद 1.1) 2017 के नियमों की तुलना में व्यापक है और धान के खेतों को बाहर नहीं करती।\n• भारतीय आर्द्रभूमि कानून से धान के खेतों को बाहर रखना कृषि जैव विविधता संरक्षण के लिए एक चूक माना गया है।\n• मुहाने विश्व के सबसे उत्पादक पारिस्थितिक तंत्रों में से हैं और 2017 के नियमों के तहत उन्हें आर्द्रभूमि के रूप में शामिल करना पारिस्थितिक दृष्टि से महत्वपूर्ण है।"
+    }
+  },
+  {
+    "uuid": "55a49c60-5d85-48f5-a0f9-f92885dd548e",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Wetlands Conservation and Management Rules 2017",
+      "concepts_used": [
+        "Abolition of Central Wetlands Regulatory Authority (CWRA)",
+        "Role of MoEFCC vs. State Wetlands Authority: Division of Powers"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "entity-swap",
+      "concept_anchor": "MoEFCC role vs. CWRA dissolution under 2017 Rules",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the regulatory architecture under the Wetlands (Conservation and Management) Rules, 2017:\n\n1. The Central Wetlands Regulatory Authority (CWRA), established under the 2010 Rules, continues to function under the 2017 Rules with a reduced mandate.\n2. Under the 2017 Rules, MoEFCC retains an advisory and coordinating role for wetland governance at the national level.\n3. The 2017 Rules empower State Wetlands Authorities to grant or refuse permissions for regulated activities within notified wetlands.\n4. The 2017 Rules vest direct regulatory authority over individual wetlands with MoEFCC rather than with State governments.\n\nHow many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Central Wetlands Regulatory Authority (CWRA), established under the 2010 Rules, continues to function under the 2017 Rules with a reduced mandate.",
+          "verdict": "Incorrect",
+          "reason": "The CWRA was dissolved upon enactment of the 2017 Rules — it was not retained even with a reduced mandate. No equivalent central regulatory body exists under the 2017 framework."
+        },
+        {
+          "statement": "Under the 2017 Rules, the Ministry of Environment, Forest and Climate Change (MoEFCC) retains an advisory and coordinating role for wetland governance at the national level.",
+          "verdict": "Correct",
+          "reason": "While direct regulatory power shifted to States, MoEFCC continues to issue guidelines, coordinate Ramsar obligations, and maintain the national wetland inventory — an advisory and coordinating function."
+        },
+        {
+          "statement": "The 2017 Rules empower State Wetlands Authorities to grant or refuse permissions for regulated activities within notified wetlands.",
+          "verdict": "Correct",
+          "reason": "The actual regulatory power — including granting or refusing permissions and preparing management plans — vests with State Wetlands Authorities under the 2017 Rules."
+        },
+        {
+          "statement": "The 2017 Rules vest direct regulatory authority over individual wetlands with MoEFCC rather than with State governments.",
+          "verdict": "Incorrect",
+          "reason": "This is precisely the opposite of what the 2017 Rules provide — direct regulation of individual wetlands is the mandate of State Wetlands Authorities, not MoEFCC."
+        }
+      ],
+      "strong_distractor": "c — Students may assume MoEFCC retains direct regulatory power given its role as nodal ministry and its continued role in Ramsar obligations, leading them to mark three statements as correct.",
+      "elimination_logic": [
+        "Statement 1 is incorrect: CWRA was dissolved entirely by the 2017 Rules, not retained with a reduced mandate.",
+        "Statement 2 is correct: MoEFCC retains advisory and coordinating functions but not direct regulatory power over individual wetlands.",
+        "Statement 3 is correct: State Wetlands Authorities hold the actual regulatory power to grant or refuse permissions.",
+        "Statement 4 is incorrect: MoEFCC does NOT directly regulate individual wetlands — this power belongs to State Wetlands Authorities. Only two statements (2 and 3) are correct, so the answer is (b)."
+      ],
+      "upsc_trap_explanation": "The most common error here is assuming MoEFCC retained direct regulatory authority because it is the nodal ministry and continues to discharge Ramsar-related functions. The 2017 Rules deliberately decentralised direct regulation to States — MoEFCC's role is confined to guidance, coordination, and national-level obligations. Additionally, students often believe CWRA was merely reformed rather than dissolved, another entity-swap error.",
+      "final_explanation": "The 2017 Rules fundamentally restructured wetland governance in India by dissolving the Central Wetlands Regulatory Authority and decentralising regulatory power to State Wetlands Authorities, while leaving MoEFCC in a background coordinating role.\n\n• Statement 1 — Incorrect: The CWRA was completely dissolved by the 2017 Rules, with no successor central regulatory body.\n• Statement 2 — Correct: MoEFCC retains an advisory and coordinating role — issuing guidelines, managing Ramsar obligations, and maintaining the national wetland inventory.\n• Statement 3 — Correct: State Wetlands Authorities hold the actual power to grant or refuse permissions for regulated activities in notified wetlands.\n• Statement 4 — Incorrect: MoEFCC has no direct regulatory authority over individual wetlands under the 2017 Rules — that power belongs exclusively to States.\n\nValue Addition:\n• This decentralisation has been criticised for potentially weakening uniform national standards for wetland protection.\n• India's Ramsar obligations are coordinated by MoEFCC as the national focal point.\n• The absence of a central regulatory body means there is no single national authority to enforce wetland protection standards consistently across states."
+    },
+    "hi": {
+      "display_text": "वेटलैंड्स (संरक्षण और प्रबंधन) नियम, 2017 के तहत नियामक संरचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 2010 नियमों के तहत स्थापित केंद्रीय वेटलैंड्स नियामक प्राधिकरण (CWRA) 2017 नियमों के तहत सीमित कार्यक्षेत्र के साथ कार्य करता रहता है।\n2. 2017 नियमों के तहत, MoEFCC राष्ट्रीय स्तर पर वेटलैंड शासन के लिए सलाहकार और समन्वयकारी भूमिका बनाए रखता है।\n3. 2017 नियम राज्यों के वेटलैंड्स प्राधिकरणों को अधिसूचित वेटलैंड्स में विनियमित गतिविधियों के लिए अनुमति देने या अस्वीकार करने का अधिकार देते हैं।\n4. 2017 नियम व्यक्तिगत वेटलैंड्स पर प्रत्यक्ष नियामक अधिकार MoEFCC को देते हैं, न कि राज्य सरकारों को।\n\nउपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "2010 नियमों के तहत स्थापित केंद्रीय वेटलैंड्स नियामक प्राधिकरण (CWRA) 2017 नियमों के तहत सीमित कार्यक्षेत्र के साथ कार्य करता रहता है।",
+          "verdict": "गलत",
+          "reason": "2017 नियमों के लागू होने पर CWRA को पूरी तरह से समाप्त कर दिया गया था — इसे सीमित कार्यक्षेत्र के साथ नहीं रखा गया था। 2017 के ढांचे के तहत कोई समकक्ष केंद्रीय नियामक निकाय मौजूद नहीं है।"
+        },
+        {
+          "statement": "2017 नियमों के तहत, पर्यावरण, वन और जलवायु परिवर्तन मंत्रालय (MoEFCC) राष्ट्रीय स्तर पर वेटलैंड शासन के लिए सलाहकार और समन्वयकारी भूमिका बनाए रखता है।",
+          "verdict": "सही",
+          "reason": "जहां प्रत्यक्ष नियामक शक्ति राज्यों को सौंपी गई है, वहीं MoEFCC दिशानिर्देश जारी करता रहता है, रामसर दायित्वों का समन्वय करता है, और राष्ट्रीय वेटलैंड सूची बनाए रखता है — यह एक सलाहकार और समन्वयकारी कार्य है।"
+        },
+        {
+          "statement": "2017 नियम राज्यों के वेटलैंड्स प्राधिकरणों को अधिसूचित वेटलैंड्स में विनियमित गतिविधियों के लिए अनुमति देने या अस्वीकार करने का अधिकार देते हैं।",
+          "verdict": "सही",
+          "reason": "वास्तविक नियामक शक्ति — जिसमें अनुमति देना या अस्वीकार करना और प्रबंधन योजनाएँ तैयार करना शामिल है — 2017 नियमों के तहत राज्यों के वेटलैंड्स प्राधिकरणों के पास है।"
+        },
+        {
+          "statement": "2017 नियमों के तहत व्यक्तिगत वेटलैंड्स पर प्रत्यक्ष नियामक अधिकार MoEFCC के पास है, न कि राज्य सरकारों के पास।",
+          "verdict": "गलत",
+          "reason": "यह 2017 नियमों के विपरीत है — व्यक्तिगत वेटलैंड्स का प्रत्यक्ष नियमन राज्यों के वेटलैंड्स प्राधिकरणों का कार्य है, MoEFCC का नहीं।"
+        }
+      ],
+      "strong_distractor": "c — छात्र यह मान सकते हैं कि MoEFCC के पास प्रत्यक्ष नियामक शक्ति बनी हुई है क्योंकि यह नोडल मंत्रालय है और रामसर दायित्वों में सक्रिय है, जिससे वे तीन कथनों को सही मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 गलत है: CWRA को 2017 नियमों द्वारा पूरी तरह समाप्त कर दिया गया, इसे सीमित कार्यक्षेत्र के साथ नहीं रखा गया।",
+        "कथन 2 सही है: MoEFCC सलाहकार और समन्वयकारी कार्य करता है, लेकिन व्यक्तिगत वेटलैंड्स पर प्रत्यक्ष नियामक शक्ति नहीं रखता।",
+        "कथन 3 सही है: राज्यों के वेटलैंड्स प्राधिकरणों के पास अनुमति देने या अस्वीकार करने की वास्तविक नियामक शक्ति है।",
+        "कथन 4 गलत है: MoEFCC व्यक्तिगत वेटलैंड्स का प्रत्यक्ष नियमन नहीं करता — यह शक्ति केवल राज्यों के पास है। अतः केवल दो कथन (2 और 3) सही हैं, इसलिए उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "यहाँ सबसे आम त्रुटि यह मान लेना है कि MoEFCC ने प्रत्यक्ष नियामक अधिकार बनाए रखा क्योंकि यह नोडल मंत्रालय है और रामसर से संबंधित कार्य करता रहता है। 2017 नियमों ने प्रत्यक्ष नियमन को राज्यों को विकेंद्रीकृत कर दिया है — MoEFCC की भूमिका केवल मार्गदर्शन, समन्वय और राष्ट्रीय स्तर के दायित्वों तक सीमित है। इसके अतिरिक्त, छात्र अक्सर यह सोचते हैं कि CWRA को केवल पुनर्गठित किया गया, न कि समाप्त किया गया, जो एक और इकाई-स्थानांतरण त्रुटि है।",
+      "final_explanation": "2017 नियमों ने भारत में वेटलैंड शासन की संरचना को मौलिक रूप से पुनर्गठित किया है, जिसमें केंद्रीय वेटलैंड्स नियामक प्राधिकरण को समाप्त कर दिया गया और नियामक शक्ति राज्यों के वेटलैंड्स प्राधिकरणों को सौंपी गई, जबकि MoEFCC पृष्ठभूमि में समन्वयकारी भूमिका में रहा।\n\n• कथन 1 — गलत: CWRA को 2017 नियमों द्वारा पूरी तरह समाप्त कर दिया गया, कोई केंद्रीय उत्तराधिकारी निकाय नहीं है।\n• कथन 2 — सही: MoEFCC सलाहकार और समन्वयकारी भूमिका निभाता है — दिशानिर्देश जारी करना, रामसर दायित्वों का प्रबंधन, और राष्ट्रीय वेटलैंड सूची बनाए रखना।\n• कथन 3 — सही: राज्यों के वेटलैंड्स प्राधिकरणों के पास अधिसूचित वेटलैंड्स में विनियमित गतिविधियों के लिए अनुमति देने या अस्वीकार करने की वास्तविक शक्ति है।\n• कथन 4 — गलत: 2017 नियमों के तहत MoEFCC के पास व्यक्तिगत वेटलैंड्स पर प्रत्यक्ष नियामक अधिकार नहीं है — यह शक्ति केवल राज्यों के पास है।\n\nमूल्य संवर्धन:\n• इस विकेंद्रीकरण की आलोचना राष्ट्रीय स्तर पर वेटलैंड संरक्षण के मानकों की एकरूपता को कमजोर करने के लिए की गई है।\n• भारत के रामसर दायित्वों का समन्वय MoEFCC द्वारा राष्ट्रीय फोकल प्वाइंट के रूप में किया जाता है।\n• केंद्रीय नियामक निकाय के अभाव में कोई एकल राष्ट्रीय प्राधिकरण नहीं है जो राज्यों में वेटलैंड संरक्षण मानकों को समान रूप से लागू कर सके।"
+    }
+  }
+]

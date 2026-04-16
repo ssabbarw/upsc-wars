@@ -78,7 +78,7 @@ class SubjectTestScreen extends HookConsumerWidget {
                       const SizedBox(height: AppSpacing.md),
                   itemBuilder: (context, i) {
                     final s = subjects[i];
-                    final def = SubjectConstants.bySlug(s.subjectSlug);
+                    final def = SubjectConstants.bySlug(s.subject);
                     return _SubjectCard(
                       info: s,
                       icon: def?.materialIcon ?? Icons.school_outlined,
@@ -86,7 +86,7 @@ class SubjectTestScreen extends HookConsumerWidget {
                       onTap: () => showTestConfigBottomSheet(
                         context: context,
                         args: TestConfigSheetArgs(
-                          subjectSlug: s.subjectSlug,
+                          subject: s.subject,
                           subjectDisplayName: s.displayName,
                           availableQuestionCount: s.questionCount,
                           topicCountWhenSubjectOnly: s.topicCount,

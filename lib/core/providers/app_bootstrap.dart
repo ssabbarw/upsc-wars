@@ -9,8 +9,5 @@ part 'app_bootstrap.g.dart';
 @Riverpod(keepAlive: true)
 Future<void> appBootstrap(Ref ref) async {
   final prefs = await ref.watch(sharedPreferencesProvider.future);
-  final svc = PrefsService(prefs);
-  if (!svc.dbInitialized) {
-    await QuestionBankSetup.ensureReady(prefs);
-  }
+  await QuestionBankSetup.ensureReady(prefs);
 }

@@ -1,8 +1,8 @@
 class SessionConfig {
   const SessionConfig({
-    required this.subjectSlug,
-    this.topicSlug,
-    this.subTopicSlug,
+    required this.subject,
+    this.topic,
+    this.subTopic,
     required this.mode,
     required this.questionCount,
     required this.isTimed,
@@ -10,9 +10,9 @@ class SessionConfig {
     required this.language,
   });
 
-  final String subjectSlug;
-  final String? topicSlug;
-  final String? subTopicSlug;
+  final String subject;
+  final String? topic;
+  final String? subTopic;
 
   /// 'exam' | 'learning'
   final String mode;

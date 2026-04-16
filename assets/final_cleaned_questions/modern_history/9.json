@@ -1,0 +1,1159 @@
+[
+  {
+    "uuid": "e55268bb-d762-4124-9fe3-b818a068cdb2",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "EIC's Trade Monopoly: Partial vs. Total Abolition Across Charter Acts"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "1813 Act — trade monopoly exception for tea and China",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Charter Act of 1813 opened British India's trade to private merchants, yet a specific commercial monopoly of the East India Company was explicitly preserved. Which of the following correctly identifies what was retained?\n\n(a) The EIC's monopoly over all trade with Asia was abolished completely\n(b) The EIC retained its monopoly over the tea trade and trade with China\n(c) The EIC retained its monopoly over the China trade until the Charter Act of 1853\n(d) The 1813 Act did not alter EIC's commercial status in any manner",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who know the 1813 Act ended the monopoly assume it was complete, missing the specific retention of tea and China trade.",
+      "elimination_logic": [
+        "Eliminate (a): The 1813 Act did NOT abolish all trade monopolies — tea and the China trade were explicitly retained.",
+        "Eliminate (c): The monopoly over trade with China was not retained only through 1853; it was abolished by the 1833 Act.",
+        "Eliminate (d): The 1813 Act did open trade to private merchants — only the tea and China exception survived."
+      ],
+      "upsc_trap_explanation": "The standard recall is that the 1813 Charter Act ended the EIC's trade monopoly. A superficially prepared student marks this as complete abolition. The precise fact is that tea trade and trade with China remained monopolies of the EIC after 1813 — these were only abolished in 1833. Questions exploiting this trap often present 'complete abolition' as a tempting option.",
+      "final_explanation": "The Charter Act of 1813 broke open British India's trade to private merchants but did so incompletely. The EIC retained its exclusive monopoly over the tea trade and trade with China even after 1813.\n\n• Option (a) — Incorrect: Complete abolition of the EIC's commercial monopoly happened only under the 1833 Act, not 1813.\n• Option (b) — Correct: The 1813 Act retained the tea and China trade monopoly specifically; all other Indian trade was opened to private British merchants.\n• Option (c) — Incorrect: The China trade monopoly did not survive until 1853 — it was abolished by the 1833 Act.\n• Option (d) — Incorrect: The 1813 Act did liberalize trade; it merely preserved specific exceptions.\n\nValue Addition:\n• The 1833 Act made the EIC a purely administrative body by abolishing even the tea and China monopolies.\n• After 1833, EIC shareholders continued to receive dividends charged on Indian revenues — a commercial obligation persisting even without commercial activity.\n• The tea trade exception in 1813 reflected the immense profitability of the China trade route for the EIC."
+    },
+    "hi": {
+      "display_text": "1813 का चार्टर अधिनियम ब्रिटिश भारत के व्यापार को निजी व्यापारियों के लिए खोलता है, फिर भी ईस्ट इंडिया कंपनी का एक विशिष्ट वाणिज्यिक एकाधिकार स्पष्ट रूप से संरक्षित रखा गया था। निम्नलिखित में से कौन-सा सही रूप से बताता है कि क्या रखा गया था?\n\n(a) ईस्ट इंडिया कंपनी का एशिया के साथ सभी व्यापार पर एकाधिकार पूरी तरह समाप्त कर दिया गया\n(b) ईस्ट इंडिया कंपनी ने चाय के व्यापार और चीन के साथ व्यापार पर अपना एकाधिकार रखा\n(c) ईस्ट इंडिया कंपनी ने चीन के व्यापार पर अपना एकाधिकार 1853 के चार्टर अधिनियम तक रखा\n(d) 1813 का अधिनियम ईस्ट इंडिया कंपनी की वाणिज्यिक स्थिति में किसी भी प्रकार का परिवर्तन नहीं करता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि 1813 का अधिनियम व्यापार एकाधिकार समाप्त करता है, वे मान लेते हैं कि यह पूर्ण था, जबकि चाय और चीन के व्यापार को विशेष रूप से रखा गया था।",
+      "elimination_logic": [
+        "(a) को निरस्त करें — 1813 का अधिनियम सभी व्यापार एकाधिकार समाप्त नहीं करता था — चाय और चीन के व्यापार को स्पष्ट रूप से रखा गया था।",
+        "(c) को निरस्त करें — चीन के व्यापार पर एकाधिकार केवल 1853 तक नहीं रहा; इसे 1833 के अधिनियम द्वारा समाप्त किया गया था।",
+        "(d) को निरस्त करें — 1813 का अधिनियम निजी व्यापारियों के लिए व्यापार खोलता था — केवल चाय और चीन का अपवाद बचा।"
+      ],
+      "upsc_trap_explanation": "सामान्य स्मृति यह है कि 1813 का चार्टर अधिनियम ईस्ट इंडिया कंपनी के व्यापार एकाधिकार को समाप्त करता है। सतही रूप से तैयार छात्र इसे पूर्ण समाप्ति के रूप में चिह्नित करते हैं। सटीक तथ्य यह है कि चाय का व्यापार और चीन के साथ व्यापार 1813 के बाद भी ईस्ट इंडिया कंपनी के एकाधिकार में रहे — इन्हें केवल 1833 में समाप्त किया गया। इस जाल का उपयोग करने वाले प्रश्न अक्सर 'पूर्ण समाप्ति' को आकर्षक विकल्प के रूप में प्रस्तुत करते हैं।",
+      "final_explanation": "1813 का चार्टर अधिनियम ब्रिटिश भारत के व्यापार को निजी व्यापारियों के लिए खोलता है, परंतु अधूरा। ईस्ट इंडिया कंपनी ने चाय के व्यापार और चीन के साथ व्यापार पर अपना विशेष एकाधिकार 1813 के बाद भी बनाए रखा।\n\n• विकल्प (a) — गलत: ईस्ट इंडिया कंपनी के वाणिज्यिक एकाधिकार की पूर्ण समाप्ति केवल 1833 के अधिनियम के तहत हुई, 1813 में नहीं।\n• विकल्प (b) — सही: 1813 के अधिनियम ने विशेष रूप से चाय और चीन के व्यापार का एकाधिकार रखा; अन्य सभी भारतीय व्यापार निजी ब्रिटिश व्यापारियों के लिए खोला गया।\n• विकल्प (c) — गलत: चीन के व्यापार का एकाधिकार 1853 तक नहीं रहा — इसे 1833 के अधिनियम द्वारा समाप्त किया गया।\n• विकल्प (d) — गलत: 1813 का अधिनियम व्यापार को उदार बनाता है; केवल विशिष्ट अपवादों को संरक्षित करता है।\n\nमूल्य संवर्धन:\n• 1833 के अधिनियम ने ईस्ट इंडिया कंपनी को एक शुद्ध प्रशासनिक निकाय बना दिया, चाय और चीन के एकाधिकार को भी समाप्त कर दिया।\n• 1833 के बाद, ईस्ट इंडिया कंपनी के शेयरधारकों को भारतीय राजस्व पर आधारित लाभांश मिलता रहा — एक वाणिज्यिक दायित्व जो वाणिज्यिक गतिविधि के बिना भी जारी रहा।\n• 1813 में चाय के व्यापार का अपवाद ईस्ट इंडिया कंपनी के लिए चीन व्यापार मार्ग की अत्यधिक लाभप्रदता को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "cd0d8bfd-5b73-4737-866b-0685d661dc81",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Governor-General of India: Creation by Charter Act 1833",
+        "Comparison Across All Three Acts: Key 'Firsts' and UPSC Traps"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Governor-General of India title — 1833 Charter Act",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the office of Governor-General under the Charter Acts:\n\n1. The Charter Act of 1833 transformed the designation of Governor-General of Bengal into Governor-General of India.\n2. The office of Governor-General of Bengal was first created by the Regulating Act of 1773.\n3. The Charter Act of 1853 further renamed the Governor-General of India as Viceroy of India.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Charter Act of 1833 transformed the designation of Governor-General of Bengal into Governor-General of India.",
+          "verdict": "Correct",
+          "reason": "The 1833 Act elevated the Bengal Presidency's Governor-General to become the supreme executive authority over all British India, with William Bentinck as the first holder of this new title."
+        },
+        {
+          "statement": "The office of Governor-General of Bengal was first created by the Regulating Act of 1773.",
+          "verdict": "Correct",
+          "reason": "The Regulating Act 1773 created the office of Governor-General of Bengal, with Warren Hastings as the first incumbent; the 1833 Act merely renamed and expanded the authority of this pre-existing office."
+        },
+        {
+          "statement": "The Charter Act of 1853 further renamed the Governor-General of India as Viceroy of India.",
+          "verdict": "Incorrect",
+          "reason": "The title 'Viceroy' was introduced only through the Government of India Act 1858 upon the transfer of power to the Crown; the 1853 Act made no change to the title."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students may believe all three statements are correct, conflating the 1858 Viceroy title with the 1853 Charter Act.",
+      "elimination_logic": [
+        "Confirm Statement 1: The 1833 Act explicitly created the Governor-General of India title — this is a well-established fact.",
+        "Confirm Statement 2: Governor-General of Bengal existed from 1773 under the Regulating Act — 1833 changed the title, not created the office from scratch.",
+        "Eliminate Statement 3: The Viceroy title came with the Government of India Act 1858, not the 1853 Charter Act — ruling out options (b) and (d).",
+        "Select option (c) — only Statements 1 and 2 are correct."
+      ],
+      "upsc_trap_explanation": "The progression of executive titles is a classic UPSC trap area. Students often conflate the 1853 Act (last Charter Act) with the 1858 Act (which created the Viceroy designation). The 1853 Act made significant changes to the council but left the title 'Governor-General of India' unchanged. Attributing the Viceroy title to 1853 is a frequent error among students who know the Viceroy came 'around the 1857 period' without pinning the exact legislative source.",
+      "final_explanation": "The evolution of executive titles under British India's constitutional framework spans multiple acts. The Regulating Act 1773 created the Governor-General of Bengal; the Charter Act 1833 elevated this to Governor-General of India; and the Government of India Act 1858 introduced the Viceroy designation.\n\n• Statement 1 — Correct: The 1833 Act explicitly redesignated the Governor-General of Bengal as Governor-General of India, with William Bentinck becoming the first holder.\n• Statement 2 — Correct: The office originated in 1773 under the Regulating Act; 1833 altered the title and jurisdiction, not the office's origin.\n• Statement 3 — Incorrect: The 'Viceroy' title was conferred by the Government of India Act 1858, following the 1857 Revolt and transfer of power to the Crown.\n\nValue Addition:\n• The Governors of Bombay and Madras lost their legislative powers under the 1833 Act — a major centralization measure.\n• Lord Canning was both the last Governor-General and first Viceroy of India (1858).\n• The 1853 Act significantly reformed the council's composition but did not alter the executive title."
+    },
+    "hi": {
+      "display_text": "चार्टर अधिनियमों के तहत Governor-General के कार्यालय के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 1833 का चार्टर अधिनियम Governor-General of Bengal की पदवी को Governor-General of India में परिवर्तित कर दिया।\n2. Governor-General of Bengal का कार्यालय पहली बार 1773 के विनियमन अधिनियम द्वारा बनाया गया था।\n3. 1853 का चार्टर अधिनियम Governor-General of India की पदवी को Viceroy of India में और परिवर्तित कर दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Charter Act of 1833 transformed the designation of Governor-General of Bengal into Governor-General of India.",
+          "verdict": "Correct",
+          "reason": "The 1833 Act elevated the Bengal Presidency's Governor-General to become the supreme executive authority over all British India, with William Bentinck as the first holder of this new title."
+        },
+        {
+          "statement": "The office of Governor-General of Bengal was first created by the Regulating Act of 1773.",
+          "verdict": "Correct",
+          "reason": "The Regulating Act 1773 created the office of Governor-General of Bengal, with Warren Hastings as the first incumbent; the 1833 Act merely renamed and expanded the authority of this pre-existing office."
+        },
+        {
+          "statement": "The Charter Act of 1853 further renamed the Governor-General of India as Viceroy of India.",
+          "verdict": "Incorrect",
+          "reason": "The title 'Viceroy' was introduced only through the Government of India Act 1858 upon the transfer of power to the Crown; the 1853 Act made no change to the title."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students may believe all three statements are correct, conflating the 1858 Viceroy title with the 1853 Charter Act.",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें: 1833 का अधिनियम स्पष्ट रूप से Governor-General of India की पदवी बनाता है — यह एक स्थापित तथ्य है।",
+        "कथन 2 की पुष्टि करें: Governor-General of Bengal 1773 के विनियमन अधिनियम के तहत अस्तित्व में था — 1833 ने पदवी बदली, कार्यालय की स्थापना नहीं की।",
+        "कथन 3 को निरस्त करें: Viceroy की पदवी 1858 के Government of India Act के साथ आई, 1853 के चार्टर अधिनियम के साथ नहीं — अतः विकल्प (b) और (d) को बाहर करें।",
+        "विकल्प (c) चुनें — केवल कथन 1 और 2 सही हैं।"
+      ],
+      "upsc_trap_explanation": "कार्यकारी पदवी के क्रम में प्रगति UPSC के लिए एक क्लासिक जाल क्षेत्र है। छात्र अक्सर 1853 के अधिनियम (अंतिम चार्टर अधिनियम) को 1858 के अधिनियम के साथ भ्रमित कर देते हैं (जिसमें Viceroy पदवी बनी)। 1853 के अधिनियम ने परिषद में महत्वपूर्ण बदलाव किए लेकिन 'Governor-General of India' पदवी को नहीं बदला। Viceroy पदवी को 1853 से जोड़ना एक सामान्य त्रुटि है, क्योंकि छात्र जानते हैं कि Viceroy 1857 के आसपास आया था पर सही विधायी स्रोत नहीं जानते।",
+      "final_explanation": "ब्रिटिश भारत के संवैधानिक ढांचे के तहत कार्यकारी पदवी का विकास कई अधिनियमों में फैला है। विनियमन अधिनियम 1773 ने Governor-General of Bengal का पद बनाया; चार्टर अधिनियम 1833 ने इसे Governor-General of India में परिवर्तित किया; और Government of India Act 1858 ने Viceroy पदवी शुरू की।\n\n• कथन 1 — सही: 1833 के अधिनियम ने स्पष्ट रूप से Governor-General of Bengal को Governor-General of India के रूप में पुनः नामित किया, जिसमें विलियम बेंटिंक पहले पदाधिकारी बने।\n• कथन 2 — सही: यह कार्यालय 1773 के विनियमन अधिनियम के तहत अस्तित्व में आया; 1833 ने पदवी और अधिकार क्षेत्र बदला, कार्यालय की उत्पत्ति नहीं।\n• कथन 3 — गलत: 'Viceroy' पदवी 1858 के Government of India Act द्वारा दी गई, 1857 के विद्रोह और सत्ता के क्राउन को हस्तांतरण के बाद।\n\nमूल्यवर्धन:\n• बॉम्बे और मद्रास के गवर्नर ने 1833 के अधिनियम के तहत अपने विधायी अधिकार खो दिए — यह एक बड़ा केंद्रीकरण कदम था।\n• लॉर्ड कैनिंग अंतिम Governor-General और प्रथम Viceroy थे (1858)।\n• 1853 के अधिनियम ने परिषद की संरचना में महत्वपूर्ण सुधार किए लेकिन कार्यकारी पदवी को नहीं बदला।"
+    }
+  },
+  {
+    "uuid": "f473f52b-84bd-45a6-a936-96ffb778205a",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "India as a British Territory: The 1833 Declaration",
+        "Renewal vs. Permanent Charter: The Nature of Each Act"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "1833 trust doctrine vs. 1858 Crown direct rule",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Charter Act of 1833 formally declared that the territories administered by the East India Company were held in trust for the British Crown, effectively acknowledging Crown sovereignty over British India.\n\nReason (R): The Government of India Act of 1858 transferred the administration of India directly to the British Crown, abolishing East India Company rule.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) misleads students who correctly identify both A and R as true but do not carefully examine whether the 1833 declaration directly caused or explained the 1858 transfer.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The 1833 Act explicitly declared EIC held Indian territories 'in trust for His Majesty', legally acknowledging Crown sovereignty.",
+        "Step 2: Is Reason (R) correct? — Yes. The Government of India Act 1858 did transfer administration directly to the British Crown, abolishing EIC rule.",
+        "Step 3: Does R causally explain A? — No. The 1858 transfer was primarily a political consequence of the 1857 Revolt, not a logical consequence of the 1833 trust declaration. The 1833 declaration established legal basis but did not cause the transfer — the revolt did.",
+        "Both A and R are correct but R is NOT the correct explanation of A — select option (b)."
+      ],
+      "upsc_trap_explanation": "This trap exploits reversed-causation reasoning. The 1833 Act's 'trust doctrine' and the 1858 transfer are genuinely connected — the 1833 declaration created the constitutional basis for eventual Crown takeover. However, the immediate cause of the 1858 transfer was the political fallout of the 1857 Revolt. Students who know both facts as true tend to mark (a) without scrutinizing whether R explains A causally. The 1833 declaration was a precondition but not the cause of the 1858 transfer.",
+      "final_explanation": "The 1833 Charter Act was a constitutionally significant act that formally acknowledged the British Crown's ultimate sovereignty over territories administered by the EIC. The Act declared that EIC held these territories 'in trust for His Majesty' — transforming EIC's legal status from a quasi-sovereign entity to an agent of the Crown.\n\n• Assertion (A) — Correct: The 1833 Act explicitly used trust language, establishing Crown sovereignty as a legal principle decades before it became administrative reality.\n• Reason (R) — Correct: The Government of India Act 1858 did abolish the EIC and vest direct administration in the Crown, with a Secretary of State for India replacing the Board of Control.\n• Causal link — Absent: The 1858 transfer was precipitated by the political crisis of the 1857 Revolt, not as a logical unfolding of the 1833 trust declaration. R states a true fact but does not explain why A (the 1833 declaration itself) was made.\n\nValue Addition:\n• The 1853 Act's open-ended charter (no fixed renewal period) structurally prepared the way for the 1858 abolition.\n• Lord Canning became the first Viceroy under the 1858 Government of India Act.\n• The trust doctrine in 1833 is foundational for understanding how Crown sovereignty was legally established before 1857."
+    },
+    "hi": {
+      "display_text": "कथन (A): 1833 का चार्टर अधिनियम औपचारिक रूप से घोषित करता है कि ईस्ट इंडिया कंपनी द्वारा प्रशासित क्षेत्र ब्रिटिश क्राउन के लिए ट्रस्ट में रखे गए थे, जो ब्रिटिश भारत पर क्राउन की संप्रभुता को प्रभावी रूप से स्वीकार करता है।\n\nकारण (R): 1858 का गवर्नमेंट ऑफ इंडिया एक्ट ने भारत के प्रशासन को सीधे ब्रिटिश क्राउन को स्थानांतरित कर दिया, जिससे ईस्ट इंडिया कंपनी का शासन समाप्त हो गया।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) उन छात्रों को भ्रमित करता है जो सही रूप से A और R दोनों को सत्य मानते हैं लेकिन यह ध्यान से नहीं देखते कि क्या 1833 का घोषणा पत्र सीधे 1858 के हस्तांतरण का कारण या व्याख्या करता है।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। 1833 अधिनियम ने स्पष्ट रूप से घोषित किया कि ईस्ट इंडिया कंपनी भारतीय क्षेत्रों को 'His Majesty के लिए ट्रस्ट में' रखती है, जो क्राउन की संप्रभुता को कानूनी रूप से स्वीकार करता है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। 1858 का गवर्नमेंट ऑफ इंडिया एक्ट ने प्रशासन को सीधे ब्रिटिश क्राउन को स्थानांतरित कर दिया, और ईस्ट इंडिया कंपनी के शासन को समाप्त कर दिया।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — नहीं। 1858 का हस्तांतरण मुख्य रूप से 1857 के विद्रोह का राजनीतिक परिणाम था, न कि 1833 के ट्रस्ट घोषणा का तार्किक परिणाम। 1833 की घोषणा ने कानूनी आधार स्थापित किया लेकिन हस्तांतरण का कारण नहीं बनी — विद्रोह ने किया।",
+        "A और R दोनों सही हैं लेकिन R, A की सही व्याख्या नहीं करता — अतः विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह जाल उल्टे कारण-प्रभाव तर्क का उपयोग करता है। 1833 अधिनियम का 'ट्रस्ट सिद्धांत' और 1858 का हस्तांतरण वास्तव में जुड़े हुए हैं — 1833 की घोषणा ने अंततः क्राउन के अधिग्रहण के लिए संवैधानिक आधार बनाया। हालांकि, 1858 के हस्तांतरण का तत्काल कारण 1857 के विद्रोह का राजनीतिक प्रभाव था। जो छात्र दोनों तथ्यों को सत्य मानते हैं, वे बिना यह जांचे कि क्या R, A को कारणात्मक रूप से समझाता है, विकल्प (a) चुन लेते हैं। 1833 की घोषणा एक पूर्वापेक्षा थी लेकिन 1858 के हस्तांतरण का कारण नहीं।",
+      "final_explanation": "1833 का चार्टर अधिनियम एक संवैधानिक रूप से महत्वपूर्ण अधिनियम था जिसने औपचारिक रूप से ब्रिटिश क्राउन की अंतिम संप्रभुता को स्वीकार किया जो ईस्ट इंडिया कंपनी द्वारा प्रशासित क्षेत्रों पर थी। इस अधिनियम ने घोषित किया कि ईस्ट इंडिया कंपनी ये क्षेत्र 'His Majesty के लिए ट्रस्ट में' रखती है — जिससे कंपनी की कानूनी स्थिति एक अर्ध-संप्रभु इकाई से क्राउन के एजेंट में बदल गई।\n\n• कथन (A) — सही: 1833 अधिनियम ने स्पष्ट रूप से ट्रस्ट भाषा का उपयोग किया, जो दशकों पहले क्राउन की संप्रभुता को कानूनी सिद्धांत के रूप में स्थापित करता है।\n• कारण (R) — सही: 1858 का गवर्नमेंट ऑफ इंडिया एक्ट ने ईस्ट इंडिया कंपनी को समाप्त कर दिया और प्रशासन सीधे क्राउन को सौंप दिया, जिसमें भारत के लिए सचिव की नियुक्ति की गई।\n• कारणात्मक संबंध — अनुपस्थित: 1858 का हस्तांतरण 1857 के विद्रोह के राजनीतिक संकट के कारण हुआ, न कि 1833 की ट्रस्ट घोषणा का तार्किक परिणाम। R एक सत्य तथ्य बताता है लेकिन यह नहीं समझाता कि A (1833 की घोषणा) क्यों की गई।\n\nमूल्य संवर्धन:\n• 1853 अधिनियम का खुला चार्टर (जिसमें नवीनीकरण की कोई निश्चित अवधि नहीं थी) ने 1858 के उन्मूलन के लिए संरचनात्मक रूप से मार्ग तैयार किया।\n• लॉर्ड कैनिंग 1858 के गवर्नमेंट ऑफ इंडिया एक्ट के तहत पहले वायसराय बने।\n• 1833 का ट्रस्ट सिद्धांत यह समझने के लिए मौलिक है कि कैसे क्राउन की संप्रभुता 1857 से पहले कानूनी रूप से स्थापित हुई।"
+    }
+  },
+  {
+    "uuid": "870a57ce-ac33-4ee8-9961-972591272415",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Renewal vs. Permanent Charter: The Nature of Each Act",
+        "The 'No Renewal Period' Clause of 1853 and Its Signaling Effect"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Charter Acts renewal pattern — 20-year cycles and 1853 anomaly",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The East India Company's charter was renewed multiple times through successive Parliamentary acts, each narrowing the Company's commercial and administrative autonomy. Which of the following represents the correct chronological sequence of Charter Acts?\n\n(a) 1813 → 1793 → 1833 → 1853\n(b) 1793 → 1833 → 1813 → 1853\n(c) 1793 → 1813 → 1833 → 1853\n(d) 1813 → 1833 → 1793 → 1853",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the 1813 Act before the 1793 Act in the renewal sequence, trapping students who confuse the gap between acts with the acts themselves.",
+      "elimination_logic": [
+        "The Pitt's India Act (1784) set up the dual government; the Charter Act 1793 was the first major renewal — it comes first.",
+        "1813 Act renewed the charter after the 1793 Act (20-year interval) — it is second in the sequence.",
+        "1833 Act came after 1813 (another 20-year interval) — third.",
+        "1853 Act was last and uniquely did NOT set a new 20-year period — fourth.",
+        "Correct sequence: 1793 → 1813 → 1833 → 1853 — select option (c)."
+      ],
+      "upsc_trap_explanation": "Students who memorize the Charter Acts as '1813, 1833, 1853' often forget that the 1793 Charter Act was the starting point for the 20-year renewal cycle. The 1813 Act was itself a renewal of the 1793 Act. Questions that include 1793 in the sequence test whether students understand the renewal framework, not just the three major acts. The trap option reverses 1793 and 1813 or omits 1793 entirely.",
+      "final_explanation": "The Charter Acts followed a pattern of 20-year renewals, beginning with the 1793 Act which renewed the EIC's charter following Pitt's India Act of 1784. Understanding the sequence reveals the systematic tightening of parliamentary control over EIC.\n\nCorrect sequence: 1793 → 1813 → 1833 → 1853\n\n• 1793: First major renewal — established the 20-year cycle and introduced civil servant covenants.\n• 1813: Renewed after 20 years — partially abolished trade monopoly, allowed missionaries, created education fund.\n• 1833: Renewed after 20 years — complete trade abolition, Governor-General of India, Law Member, centralized legislature.\n• 1853: Last Charter Act — uniquely did NOT set a new 20-year period, signaling Parliament's intention to review EIC status at any time.\n\nValue Addition:\n• The 1857 Revolt accelerated what the open-ended 1853 charter structurally permitted — EIC's abolition in 1858.\n• Each successive Charter Act transferred greater authority from the Court of Directors to Parliament and the Crown.\n• The 1793 Act is often overlooked but established key precedents including salary payments from Indian revenues."
+    },
+    "hi": {
+      "display_text": "ईस्ट इंडिया कंपनी के चार्टर को कई बार संसदीय अधिनियमों के माध्यम से नवीनीकृत किया गया, प्रत्येक ने कंपनी की वाणिज्यिक और प्रशासनिक स्वायत्तता को सीमित किया। निम्नलिखित में से कौन-सा चार्टर अधिनियमों का सही कालानुक्रमिक अनुक्रम दर्शाता है?\n\n(a) 1813 → 1793 → 1833 → 1853\n(b) 1793 → 1833 → 1813 → 1853\n(c) 1793 → 1813 → 1833 → 1853\n(d) 1813 → 1833 → 1793 → 1853",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the 1813 Act before the 1793 Act in the renewal sequence, trapping students who confuse the gap between acts with the acts themselves.",
+      "elimination_logic": [
+        "पिट्ट का इंडिया अधिनियम (1784) ने द्वैध सरकार स्थापित की; चार्टर अधिनियम 1793 पहला प्रमुख नवीनीकरण था — यह सबसे पहले आता है।",
+        "1813 का अधिनियम 1793 के बाद चार्टर का नवीनीकरण था (20-वर्षीय अंतराल) — यह अनुक्रम में दूसरा है।",
+        "1833 का अधिनियम 1813 के बाद आया (एक और 20-वर्षीय अंतराल) — तीसरा।",
+        "1853 का अधिनियम अंतिम था और विशिष्ट रूप से नया 20-वर्षीय अवधि निर्धारित नहीं किया — चौथा।",
+        "सही अनुक्रम: 1793 → 1813 → 1833 → 1853 — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "छात्र जो चार्टर अधिनियमों को '1813, 1833, 1853' के रूप में याद करते हैं, अक्सर भूल जाते हैं कि 1793 का चार्टर अधिनियम 20-वर्षीय नवीनीकरण चक्र की शुरुआत था। 1813 का अधिनियम स्वयं 1793 के अधिनियम का नवीनीकरण था। ऐसे प्रश्न जो अनुक्रम में 1793 को शामिल करते हैं, यह जांचते हैं कि छात्र नवीनीकरण ढांचे को समझते हैं, केवल तीन प्रमुख अधिनियमों को नहीं। फंसाने वाला विकल्प 1793 और 1813 को उलट देता है या 1793 को पूरी तरह छोड़ देता है।",
+      "final_explanation": "चार्टर अधिनियमों ने 20-वर्षीय नवीनीकरण के पैटर्न का पालन किया, जिसकी शुरुआत 1793 के अधिनियम से हुई जिसने पिट्ट के इंडिया अधिनियम 1784 के बाद ईस्ट इंडिया कंपनी के चार्टर का नवीनीकरण किया। अनुक्रम को समझने से संसदीय नियंत्रण की व्यवस्थित कड़ाई स्पष्ट होती है।\n\nसही अनुक्रम: 1793 → 1813 → 1833 → 1853\n\n• 1793: पहला प्रमुख नवीनीकरण — 20-वर्षीय चक्र स्थापित किया और सिविल सेवा अनुबंध शुरू किए।\n• 1813: 20 वर्षों के बाद नवीनीकरण — व्यापार एकाधिकार आंशिक रूप से समाप्त किया, मिशनरियों को अनुमति दी, शिक्षा कोष बनाया।\n• 1833: 20 वर्षों के बाद नवीनीकरण — पूर्ण व्यापार समाप्ति, भारत के गवर्नर-जनरल, विधि सदस्य, केंद्रीकृत विधानमंडल।\n• 1853: अंतिम चार्टर अधिनियम — विशिष्ट रूप से नया 20-वर्षीय अवधि निर्धारित नहीं किया, संसद की इच्छा को संकेत दिया कि वह किसी भी समय ईस्ट इंडिया कंपनी की स्थिति की समीक्षा कर सकती है।\n\nमूल्य संवर्धन:\n• 1857 के विद्रोह ने 1853 के खुला-समाप्त चार्टर द्वारा संरचनात्मक रूप से अनुमत प्रक्रिया को तेज किया — 1858 में ईस्ट इंडिया कंपनी का उन्मूलन।\n• प्रत्येक अगले चार्टर अधिनियम ने कोर्ट ऑफ डायरेक्टर्स से संसद और क्राउन को अधिक अधिकार स्थानांतरित किया।\n• 1793 का अधिनियम अक्सर अनदेखा किया जाता है लेकिन इसने भारतीय राजस्व से वेतन भुगतान सहित महत्वपूर्ण मिसालें स्थापित कीं।"
+    }
+  },
+  {
+    "uuid": "83cdc280-59c8-437e-b88d-84675543a947",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Covenanted vs. Uncovenanted Civil Services: 1833 Act's Role",
+        "Open Competition for Civil Services: Charter Act 1853"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "1833 Equality Clause — declaratory vs. implemented provision",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A well-educated Indian scholar in 1860 was formally eligible, under both the Charter Act of 1833 and the Charter Act of 1853, to compete for a position in the highest tier of the British Indian civil service. However, he found it practically impossible to secure the appointment. Which of the following best explains this outcome?\n\n(a) The Charter Act of 1813 had explicitly barred Indians from senior civil service positions, and this bar was not lifted until 1880\n(b) While the Charter Act of 1833 contained an equality clause, it was effectively implemented — the scholar likely failed on merit\n(c) The Charter Act of 1853 opened the civil service to all through examinations held across British India, but the scholar lacked the necessary qualifications\n(d) The 1833 equality clause was declaratory without enforcement, and the 1853 competitive examination was held exclusively in London — both created structural barriers despite formal eligibility",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students conflate the formal provision in the 1833 Act with actual implementation, assuming the Equality Clause delivered what it promised.",
+      "elimination_logic": [
+        "Eliminate (a): The 1813 Act had no equality clause for civil service appointments — it dealt with trade monopoly and missionaries.",
+        "Eliminate (b): The 1833 Act did contain an equality clause, but it was declaratory and never effectively implemented — Indians remained excluded from senior positions in practice.",
+        "Eliminate (c): The open competitive examination under 1853 opened the Covenanted Civil Service, but the exam was held only in London — practical exclusion continued even after 1853.",
+        "Select (d): Both provisions — 1833's equality clause and 1853's competitive exam — remained practically inaccessible to Indians due to structural barriers, illustrating the gap between legislative intent and ground reality."
+      ],
+      "upsc_trap_explanation": "The 1833 Equality Clause is one of the most deceptive provisions in Charter Act history. Students who read that 'no Indian shall be debarred from any office on grounds of religion, birth, or colour' naturally assume this opened civil service to Indians. The reality was the opposite — the provision was declaratory and unimplemented. The competitive examination under 1853 was similarly constrained by the London venue. Questions testing application of these provisions must distinguish between legal text and administrative reality.",
+      "final_explanation": "This scenario describes an administrative scenario where an Indian scholar was formally eligible for appointment under both the 1833 and 1853 frameworks but was unable to access the position in practice.\n\n• Option (a) — Incorrect: The 1813 Act contained no provisions regarding civil service eligibility for Indians — it addressed trade and missionary access.\n• Option (b) — Incorrect: While the 1833 Act contained the Equality Clause ('no Indian debarred on grounds of religion, birth, or colour'), this was a declaratory statement with no enforcement mechanism — Indians remained excluded from senior covenanted positions.\n• Option (c) — Incorrect: The 1853 Act did open competitive examination, but exclusively in London, with a syllabus weighted toward classical European subjects — a structural barrier that nominal 'openness' masked.\n• Option (d) — Correct: Both the 1833 equality provision and the 1853 competitive examination were structurally inaccessible to most Indians — the former through non-implementation, the latter through the London venue restriction.\n\nValue Addition:\n• The ICS examination was shifted to India only in 1922 following nationalist pressure.\n• Satyendranath Tagore (1863) and Surendranath Banerjee (later dismissed) were among the earliest Indians who navigated the London examination.\n• The 'Equality Clause' of 1833 is a precursor to non-discrimination provisions but had no practical enforcement mechanism."
+    },
+    "hi": {
+      "display_text": "1860 में एक शिक्षित भारतीय विद्वान औपचारिक रूप से 1833 और 1853 के चार्टर अधिनियमों के तहत ब्रिटिश भारतीय सिविल सेवा के उच्चतम स्तर के लिए पात्र था। फिर भी, उसे व्यवहार में नियुक्ति प्राप्त करना लगभग असंभव लगा। निम्नलिखित में से कौन-सा इस परिणाम की सबसे उपयुक्त व्याख्या करता है?\n\n(a) 1813 के चार्टर अधिनियम ने स्पष्ट रूप से भारतीयों को वरिष्ठ सिविल सेवा पदों से वंचित कर दिया था, और यह प्रतिबंध 1880 तक नहीं हटाया गया था\n(b) जबकि 1833 के चार्टर अधिनियम में समानता प्रावधान था, इसे प्रभावी रूप से लागू किया गया था — विद्वान संभवतः योग्यता में असफल रहा\n(c) 1853 के चार्टर अधिनियम ने ब्रिटिश भारत में आयोजित परीक्षाओं के माध्यम से सभी के लिए सिविल सेवा खोली, लेकिन विद्वान के पास आवश्यक योग्यता नहीं थी\n(d) 1833 का समानता प्रावधान घोषणात्मक था और लागू नहीं किया गया, तथा 1853 की प्रतियोगी परीक्षा केवल लंदन में आयोजित होती थी — दोनों ने औपचारिक पात्रता के बावजूद संरचनात्मक बाधाएं उत्पन्न कीं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students conflate the formal provision in the 1833 Act with actual implementation, assuming the Equality Clause delivered what it promised.",
+      "elimination_logic": [
+        "(a) को निरस्त करें — 1813 के अधिनियम में सिविल सेवा नियुक्तियों के लिए कोई समानता प्रावधान नहीं था — यह व्यापाराधिकार और मिशनरियों से संबंधित था।",
+        "(b) को निरस्त करें — 1833 के अधिनियम में समानता प्रावधान था, लेकिन यह केवल घोषणात्मक था और कभी प्रभावी रूप से लागू नहीं हुआ — व्यवहार में भारतीय वरिष्ठ पदों से वंचित रहे।",
+        "(c) को निरस्त करें — 1853 के अधिनियम के तहत खुला प्रतियोगी परीक्षा कोवेनेंटेड सिविल सेवा के लिए खोली गई, लेकिन परीक्षा केवल लंदन में आयोजित होती थी — 1853 के बाद भी व्यावहारिक रूप से बहिष्कार जारी रहा।",
+        "(d) को चुनें — 1833 के समानता प्रावधान और 1853 की प्रतियोगी परीक्षा दोनों भारतीयों के लिए संरचनात्मक बाधाओं के कारण व्यवहार में अप्राप्य रहे, जो विधायी इरादे और वास्तविकता के बीच अंतर को दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "1833 का समानता प्रावधान चार्टर अधिनियम के इतिहास में सबसे भ्रामक प्रावधानों में से एक है। जो छात्र पढ़ते हैं कि 'किसी भी भारतीय को धर्म, जन्म या रंग के आधार पर किसी पद से वंचित नहीं किया जाएगा', वे स्वाभाविक रूप से मान लेते हैं कि इससे भारतीयों के लिए सिविल सेवा खुल गई। वास्तविकता इसके विपरीत थी — यह प्रावधान केवल घोषणात्मक था और लागू नहीं किया गया। 1853 के तहत प्रतियोगी परीक्षा भी लंदन में आयोजित होने के कारण सीमित थी। इन प्रावधानों के आवेदन पर आधारित प्रश्नों में कानूनी पाठ और प्रशासनिक वास्तविकता के बीच अंतर करना आवश्यक है।",
+      "final_explanation": "यह परिदृश्य एक प्रशासनिक स्थिति का वर्णन करता है जहाँ 1860 में एक शिक्षित भारतीय विद्वान औपचारिक रूप से 1833 और 1853 के चार्टर अधिनियमों के तहत उच्चतम स्तर की ब्रिटिश भारतीय सिविल सेवा के लिए पात्र था, लेकिन व्यवहार में पद प्राप्त करना असंभव था।\n\n• विकल्प (a) — गलत: 1813 के अधिनियम में भारतीयों के लिए सिविल सेवा पात्रता संबंधी कोई प्रावधान नहीं था — यह व्यापार और मिशनरियों के प्रवेश से संबंधित था।\n• विकल्प (b) — गलत: 1833 के अधिनियम में समानता प्रावधान ('किसी भी भारतीय को धर्म, जन्म या रंग के आधार पर वंचित नहीं किया जाएगा') था, लेकिन यह केवल घोषणात्मक था और लागू नहीं किया गया — भारतीय वरिष्ठ कोवेनेंटेड पदों से वंचित रहे।\n• विकल्प (c) — गलत: 1853 के अधिनियम ने प्रतियोगी परीक्षा खोली, लेकिन केवल लंदन में आयोजित की गई, जिसमें पाठ्यक्रम मुख्यतः यूरोपीय विषयों पर आधारित था — यह एक संरचनात्मक बाधा थी जो नाममात्र की 'खुलापन' को छिपाती थी।\n• विकल्प (d) — सही: 1833 का समानता प्रावधान और 1853 की प्रतियोगी परीक्षा दोनों भारतीयों के लिए संरचनात्मक रूप से अप्राप्य थे — पहला लागू न होने के कारण, दूसरा लंदन में परीक्षा आयोजित होने के कारण।\n\nमूल्यवर्धन:\n• ICS परीक्षा को 1922 में राष्ट्रीय आंदोलन के दबाव के बाद भारत में स्थानांतरित किया गया।\n• सत्येंद्रनाथ टैगोर (1863) और सुरेंद्रनाथ बनर्जी (जो बाद में बर्खास्त हुए) लंदन परीक्षा में सफल होने वाले प्रारंभिक भारतीय थे।\n• 1833 का 'समानता प्रावधान' गैर-भेदभाव के लिए एक पूर्ववर्ती था, लेकिन इसका कोई व्यावहारिक प्रवर्तन तंत्र नहीं था।"
+    }
+  },
+  {
+    "uuid": "51078154-76f3-47b7-880e-0ecdf3ea944a",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Education Fund: The Rs. 1 Lakh Provision of 1813",
+        "Christian Missionaries and the 'Pious Clause' of 1813"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "1813 Charter Act provisions — education fund and missionary clause",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are directly associated with the Charter Act of 1813 or its immediate consequences. Which one does NOT belong to this group?\n\n(a) Wood's Dispatch on Education\n(b) Annual provision of Rs. 1 lakh for promotion of literature and science among Indians\n(c) The Orientalist versus Anglicist controversy over educational priorities\n(d) William Wilberforce's campaign to allow Christian missionaries into British India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because Wood's Dispatch (1854) is associated with education policy and students may link it to the same reform cluster as the Rs. 1 lakh provision.",
+      "elimination_logic": [
+        "The Rs. 1 lakh education fund, William Wilberforce's role in the Pious Clause, and the Orientalist-Anglicist controversy all directly connect to the 1813 Charter Act.",
+        "Wood's Dispatch of 1854 followed from the 1853 Charter Act reform era — it is NOT a provision or direct outcome of the 1813 Act.",
+        "The odd one out is Wood's Dispatch — select option (a) if it is placed there, or whichever option contains Wood's Dispatch."
+      ],
+      "upsc_trap_explanation": "Wood's Dispatch (1854) and the Rs. 1 lakh provision of 1813 both relate to education policy in British India, making Wood's Dispatch a plausible distractor in a list of 1813 Act-related items. Students who know the broad trajectory of education policy may group them together. The precise distinction is that the Rs. 1 lakh provision of 1813 was largely unimplemented and it was Wood's Dispatch (1854) that systematically organized education — the two belong to different legislative moments separated by four decades.",
+      "final_explanation": "The Charter Act of 1813 introduced three significant innovations: the Rs. 1 lakh annual education fund, the Pious Clause (allowing Christian missionaries), and the consequent debate between Orientalists and Anglicists over the purpose of that fund.\n\n• Option (a) — Wood's Dispatch (1854): This belongs to the 1853 Charter Act era and the post-1853 reform momentum — NOT to the 1813 Act. It is the odd one out.\n• Option (b) — Rs. 1 lakh education fund: Directly introduced by the 1813 Act.\n• Option (c) — Orientalist-Anglicist controversy: Arose directly from the ambiguity in the 1813 Act's education clause, resolved by Macaulay's Minute in 1835.\n• Option (d) — William Wilberforce's advocacy: Wilberforce championed the 'Pious Clause' in 1813 that permitted missionaries — directly connected to the 1813 Act.\n\nValue Addition:\n• Wood's Dispatch 1854 is called the 'Magna Carta of English Education in India'.\n• The Orientalist-Anglicist debate (1813–1835) was resolved in favour of English by Macaulay's Minute, supported by Governor-General Bentinck.\n• The Rs. 1 lakh fund remained largely unspent for years due to disagreement over what 'literature and science' meant."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन सीधे 1813 के चार्टर अधिनियम या उसके तत्काल परिणामों से संबंधित हैं। इनमें से कौन-सा इस समूह से संबंधित नहीं है?\n\n(a) शिक्षा पर वुड्स डिस्पैच\n(b) भारतीयों में साहित्य और विज्ञान के प्रचार के लिए 1 लाख रुपये की वार्षिक व्यवस्था\n(c) शैक्षिक प्राथमिकताओं को लेकर ओरिएंटलिस्ट और एंग्लिसिस्ट विवाद\n(d) ब्रिटिश भारत में ईसाई मिशनरियों को अनुमति देने के लिए विलियम विल्बरफोर्स का अभियान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि वुड्स डिस्पैच (1854) शिक्षा नीति से जुड़ा है और छात्र इसे 1 लाख रुपये की व्यवस्था के समान सुधार समूह से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "1 लाख रुपये की शिक्षा निधि, विलियम विल्बरफोर्स की पायस क्लॉज में भूमिका, और ओरिएंटलिस्ट-एंग्लिसिस्ट विवाद सभी सीधे 1813 के चार्टर अधिनियम से संबंधित हैं।",
+        "1854 का वुड्स डिस्पैच 1853 के चार्टर अधिनियम सुधार युग के बाद आया — यह 1813 अधिनियम का प्रावधान या प्रत्यक्ष परिणाम नहीं है।",
+        "असामान्य वस्तु वुड्स डिस्पैच है — यदि यह विकल्प (a) में है तो उसे चुनें, या जो भी विकल्प वुड्स डिस्पैच रखता हो।"
+      ],
+      "upsc_trap_explanation": "वुड्स डिस्पैच (1854) और 1813 के 1 लाख रुपये की व्यवस्था दोनों ब्रिटिश भारत में शिक्षा नीति से संबंधित हैं, जिससे वुड्स डिस्पैच 1813 अधिनियम से जुड़े आइटमों की सूची में एक संभावित भ्रम पैदा करता है। जो छात्र शिक्षा नीति के व्यापक क्रम को जानते हैं वे इन्हें एक साथ रख सकते हैं। सटीक अंतर यह है कि 1813 की 1 लाख रुपये की व्यवस्था अधिकांशतः लागू नहीं हुई थी और शिक्षा को व्यवस्थित रूप से संगठित करने वाला वुड्स डिस्पैच (1854) था — ये दोनों अलग-अलग विधायी क्षण हैं जो चार दशकों से अलग हैं।",
+      "final_explanation": "1813 के चार्टर अधिनियम ने तीन महत्वपूर्ण नवाचार प्रस्तुत किए: 1 लाख रुपये वार्षिक शिक्षा निधि, पायस क्लॉज (जो ईसाई मिशनरियों को अनुमति देता था), और इसके परिणामस्वरूप ओरिएंटलिस्ट और एंग्लिसिस्ट के बीच उस निधि के उद्देश्य को लेकर विवाद।\n\n• विकल्प (a) — वुड्स डिस्पैच (1854): यह 1853 के चार्टर अधिनियम युग और 1853 के बाद के सुधारों से संबंधित है — 1813 अधिनियम से नहीं। यह असामान्य वस्तु है।\n• विकल्प (b) — 1 लाख रुपये की शिक्षा निधि: सीधे 1813 अधिनियम द्वारा प्रस्तुत।\n• विकल्प (c) — ओरिएंटलिस्ट-एंग्लिसिस्ट विवाद: 1813 अधिनियम की शिक्षा क्लॉज की अस्पष्टता से उत्पन्न, जिसे 1835 में मैकाले के मिनट ने सुलझाया।\n• विकल्प (d) — विलियम विल्बरफोर्स का अभियान: विल्बरफोर्स ने 1813 में पायस क्लॉज का समर्थन किया जो मिशनरियों को अनुमति देता था — सीधे 1813 अधिनियम से जुड़ा।\n\nमूल्य संवर्धन:\n• वुड्स डिस्पैच 1854 को भारत में अंग्रेजी शिक्षा का 'मैग्ना कार्टा' कहा जाता है।\n• ओरिएंटलिस्ट-एंग्लिसिस्ट विवाद (1813–1835) मैकाले के मिनट के पक्ष में समाप्त हुआ, जिसे गवर्नर-जनरल बेंटिंक ने समर्थन दिया।\n• 1 लाख रुपये की निधि वर्षों तक अधिकांशतः खर्च नहीं हुई क्योंकि 'साहित्य और विज्ञान' का अर्थ विवादित था।"
+    }
+  },
+  {
+    "uuid": "615b4d1a-8c9f-45d3-94b3-81c532c6f84f",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Centralization of Legislative Power: 1833 Act's Constitutional Significance",
+        "Board of Control and Court of Directors: Power Balance Shifts"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "1833 — Presidencies lost legislative but retained executive power",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about the Charter Act of 1833:\n\nStatement 1: The Charter Act of 1833 vested exclusive legislative authority for all of British India in the Governor-General-in-Council, depriving the Presidencies of Bombay and Madras of their separate legislative powers.\n\nStatement 2: As a consequence of the 1833 Act's centralization, the Governors of Bombay and Madras lost both their legislative and executive powers, effectively reducing the Presidencies to administrative subdivisions without independent authority.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Charter Act of 1833 vested exclusive legislative authority for all of British India in the Governor-General-in-Council, depriving the Presidencies of Bombay and Madras of their separate legislative powers.",
+          "verdict": "Correct",
+          "reason": "The 1833 Act created a single legislature for all British India under the Governor-General-in-Council, ending the fragmented legislative system where each Presidency made its own laws — this was a landmark centralization of legislative authority."
+        },
+        {
+          "statement": "As a consequence of the 1833 Act's centralization, the Governors of Bombay and Madras lost both their legislative and executive powers, effectively reducing the Presidencies to administrative subdivisions without independent authority.",
+          "verdict": "Incorrect",
+          "reason": "While Bombay and Madras lost their legislative powers, they retained executive powers — the Governors continued to exercise executive authority in their respective Presidencies; only legislative competence was centralized."
+        }
+      ],
+      "strong_distractor": "a — Option (a) misleads students who know the 1833 Act centralized power and assume this affected both legislative and executive domains equally.",
+      "elimination_logic": [
+        "Statement 1 is correct — 1833 Act's legislative centralization removing Presidency legislative powers is well-established constitutional history.",
+        "Statement 2 is incorrect — the scope-extension error: the Presidencies lost legislative powers but retained executive powers; the option adds 'executive powers' falsely.",
+        "Select option (c): Statement 1 correct, Statement 2 incorrect."
+      ],
+      "upsc_trap_explanation": "The 1833 Act's centralization is frequently oversimplified. Students who know 'Bombay and Madras lost their powers' do not always distinguish between legislative and executive powers. The Governors retained executive authority — only legislative power was centralized. An option stating both legislative and executive powers were removed is a deliberate scope-extension trap that exploits imprecise recall.",
+      "final_explanation": "The Charter Act of 1833 represented a watershed in the centralization of governance in British India, but its scope was specifically legislative rather than total.\n\n• Statement 1 — Correct: The 1833 Act established a single legislature under the Governor-General-in-Council for all British India. Laws made here applied uniformly, replacing the fragmented system where Bengal, Bombay, and Madras each had separate legislative authority.\n• Statement 2 — Incorrect: The Governors of Bombay and Madras retained executive powers. The 1833 Act's centralization was specifically in the legislative domain — the Presidencies continued to administer their territories through executive mechanisms under their Governors.\n\nValue Addition:\n• Before 1833, conflicting laws from different Presidencies created legal confusion — the 1833 Act established the foundation for a uniform territorial law.\n• The First Law Commission under Macaulay (1834) was a direct consequence of this centralized legislative authority.\n• This centralization became the template for the Indian Councils Act 1861's restructured legislative council."
+    },
+    "hi": {
+      "display_text": "1833 के चार्टर अधिनियम के बारे में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: 1833 के चार्टर अधिनियम ने पूरे ब्रिटिश भारत के लिए विधायी अधिकार विशेष रूप से गवर्नर-जनरल-इन-काउंसिल को सौंप दिया, जिससे बॉम्बे और मद्रास प्रेसिडेंसी के पृथक विधायी अधिकार समाप्त हो गए।\n\nकथन 2: 1833 अधिनियम के केंद्रीकरण के परिणामस्वरूप, बॉम्बे और मद्रास के गवर्नरों ने अपने दोनों विधायी और कार्यकारी अधिकार खो दिए, जिससे प्रेसिडेंसी केवल प्रशासनिक उपविभाग बन गईं जिनके पास स्वतंत्र अधिकार नहीं था।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है पर कथन 2 गलत है\n(d) कथन 1 गलत है पर कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1833 के चार्टर अधिनियम ने पूरे ब्रिटिश भारत के लिए विधायी अधिकार विशेष रूप से गवर्नर-जनरल-इन-काउंसिल को सौंप दिया, जिससे बॉम्बे और मद्रास प्रेसिडेंसी के पृथक विधायी अधिकार समाप्त हो गए।",
+          "verdict": "सही",
+          "reason": "1833 का अधिनियम पूरे ब्रिटिश भारत के लिए गवर्नर-जनरल-इन-काउंसिल के अधीन एक एकल विधानमंडल का निर्माण करता है, जिससे प्रत्येक प्रेसिडेंसी के अपने-अपने कानून बनाने की व्यवस्था समाप्त हो गई — यह विधायी अधिकार के केंद्रीकरण का एक महत्वपूर्ण चरण था।"
+        },
+        {
+          "statement": "1833 अधिनियम के केंद्रीकरण के परिणामस्वरूप, बॉम्बे और मद्रास के गवर्नरों ने अपने दोनों विधायी और कार्यकारी अधिकार खो दिए, जिससे प्रेसिडेंसी केवल प्रशासनिक उपविभाग बन गईं जिनके पास स्वतंत्र अधिकार नहीं था।",
+          "verdict": "गलत",
+          "reason": "हालांकि बॉम्बे और मद्रास ने अपने विधायी अधिकार खो दिए, उन्होंने कार्यकारी अधिकार बनाए रखे — गवर्नर अपने-अपने प्रेसिडेंसी में कार्यकारी अधिकार जारी रखते थे; केवल विधायी अधिकार केंद्रीकृत हुए थे।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) उन छात्रों को भ्रमित करता है जो जानते हैं कि 1833 अधिनियम ने अधिकार केंद्रीकृत किए लेकिन यह मान लेते हैं कि यह विधायी और कार्यकारी दोनों क्षेत्रों को समान रूप से प्रभावित करता है।",
+      "elimination_logic": [
+        "कथन 1 सही है — 1833 अधिनियम का विधायी केंद्रीकरण प्रेसिडेंसी के विधायी अधिकारों को समाप्त करता है, जो स्थापित संवैधानिक इतिहास है।",
+        "कथन 2 गलत है — यह अधिकारों के दायरे का विस्तार करने वाली त्रुटि है: प्रेसिडेंसी ने विधायी अधिकार खोए लेकिन कार्यकारी अधिकार बनाए रखे; विकल्प ने 'कार्यकारी अधिकार' गलत रूप से जोड़े हैं।",
+        "विकल्प (c) चुनें: कथन 1 सही, कथन 2 गलत।"
+      ],
+      "upsc_trap_explanation": "1833 अधिनियम के केंद्रीकरण को अक्सर सरलीकृत किया जाता है। जो छात्र जानते हैं कि 'बॉम्बे और मद्रास ने अपने अधिकार खो दिए' वे हमेशा विधायी और कार्यकारी अधिकारों के बीच अंतर नहीं करते। गवर्नर कार्यकारी अधिकार बनाए रखते थे — केवल विधायी अधिकार केंद्रीकृत हुए थे। दोनों अधिकारों के हटाए जाने वाला विकल्प एक जानबूझकर दायरे का विस्तार करने वाला जाल है जो अस्पष्ट स्मृति का फायदा उठाता है।",
+      "final_explanation": "1833 का चार्टर अधिनियम ब्रिटिश भारत में शासन के केंद्रीकरण में एक मील का पत्थर था, लेकिन इसका दायरा विशेष रूप से विधायी था, न कि पूर्ण।\n\n• कथन 1 — सही: 1833 अधिनियम ने पूरे ब्रिटिश भारत के लिए गवर्नर-जनरल-इन-काउंसिल के अधीन एक एकल विधानमंडल स्थापित किया। यहां बनाए गए कानून समान रूप से लागू होते थे, जो बंगाल, बॉम्बे और मद्रास के अलग-अलग विधायी अधिकारों की विखंडित व्यवस्था को समाप्त करता था।\n• कथन 2 — गलत: बॉम्बे और मद्रास के गवर्नर कार्यकारी अधिकार बनाए रखते थे। 1833 अधिनियम का केंद्रीकरण विशेष रूप से विधायी क्षेत्र में था — प्रेसिडेंसी अपने क्षेत्रों का प्रशासन अपने गवर्नरों के अधीन कार्यकारी तंत्रों के माध्यम से जारी रखती थीं।\n\nमूल्यवर्धन:\n• 1833 से पहले, विभिन्न प्रेसिडेंसी के विरोधाभासी कानून कानूनी भ्रम पैदा करते थे — 1833 अधिनियम ने एक समान क्षेत्रीय कानून की नींव रखी।\n• मैकाले के अधीन पहली विधि आयोग (1834) इस केंद्रीकृत विधायी अधिकार का प्रत्यक्ष परिणाम था।\n• यह केंद्रीकरण 1861 के भारतीय परिषद अधिनियम के पुनर्गठित विधायी परिषद के लिए एक मॉडल बन गया।"
+    }
+  },
+  {
+    "uuid": "93941b8e-536e-43a3-853a-952a9253bc24",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Parliamentary Oversight and Select Committee: 1853 Act's Democratic Innovation",
+        "Press and Publications: Shift in Policy Context Across Charter Acts"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "1853 Parliamentary Select Committee — Indian testimony, not legislation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to the Charter Act of 1853 is correctly matched?\n\n(a) Charter Act of 1813 — Establishment of the first legislative council with Indian members\n(b) Parliamentary Select Committee (1853) — Indians given voting representation for the first time in British legislative proceedings\n(c) Parliamentary Select Committee (1853) — First formal recording of Indian testimony in British legislative deliberations\n(d) Charter Act of 1853 — Charles Grant's advocacy for Indian administrative representation before Parliament",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students know Indians were eventually given representation and may project this backward to 1853, accepting the fabricated 'voting representation' claim.",
+      "elimination_logic": [
+        "Eliminate (a): The 1813 Act did not establish any legislative council — councils came later; this pairing is fabricated.",
+        "Eliminate (b): Indians had no voting representation in the 1853 Parliamentary Select Committee — they appeared as witnesses, not legislators; this is a plausible-fabrication trap.",
+        "Eliminate (d): Charles Grant was associated with the 1813 Pious Clause advocacy, not with chairing the 1853 Select Committee; Jagannath Shankarseth is the correctly identified Indian witness.",
+        "Select (c): The 1853 Act was indeed preceded by a Parliamentary Select Committee that recorded formal testimony from Indians for the first time — correctly matched."
+      ],
+      "upsc_trap_explanation": "The 1853 Select Committee is a precise factual area where students conflate 'testimony' with 'representation'. Indians appeared before the committee as witnesses — this was constitutionally significant as the first formal hearing of Indian voices in British legislative proceedings, but they had no vote and were not members. Option (b) uses the word 'voting representation' which sounds like a natural progression and attracts students who know Indians eventually gained representation.",
+      "final_explanation": "The Charter Act of 1853 was preceded by a Parliamentary Select Committee — a significant procedural innovation because it formally recorded testimony from Indians, including notable figures like Jagannath Shankarseth.\n\n• Option (a) — Incorrect: The 1813 Act did not establish any legislative council — this pairing is fabricated.\n• Option (b) — Incorrect: Indians appeared before the 1853 Select Committee as witnesses, not as voting representatives — formal Indian representation came much later under the Morley-Minto Reforms (1909).\n• Option (c) — Correct: The 1853 Act was indeed preceded by a Parliamentary Select Committee that for the first time formally recorded Indian testimony in British legislative deliberations — a proto-representational moment.\n• Option (d) — Incorrect: Charles Grant was a key advocate for the Pious Clause in 1813; the 1853 committee's notable Indian witness was Jagannath Shankarseth, not Grant.\n\nValue Addition:\n• Jagannath Shankarseth was a Bombay merchant and philanthropist — his testimony before the 1853 committee is a landmark in Indian constitutional history.\n• The Indian Councils Act 1861 was influenced by the 1853 reforms and the testimony heard before the Select Committee.\n• Metcalfe's Press Act (1835) — which liberalized the press — was part of the reform climate created by the 1833 Charter Act."
+    },
+    "hi": {
+      "display_text": "1853 के चार्टर अधिनियम से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) 1813 का चार्टर अधिनियम — भारतीय सदस्यों के साथ पहली विधान परिषद की स्थापना\n(b) संसदीय चयन समिति (1853) — ब्रिटिश विधायी कार्यवाही में पहली बार भारतीयों को मताधिकार प्रतिनिधित्व दिया गया\n(c) संसदीय चयन समिति (1853) — ब्रिटिश विधायी विचार-विमर्श में पहली बार भारतीय गवाही का औपचारिक रिकॉर्ड\n(d) 1853 का चार्टर अधिनियम — संसद के समक्ष भारतीय प्रशासनिक प्रतिनिधित्व के लिए चार्ल्स ग्रांट की वकालत",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि छात्र जानते हैं कि अंततः भारतीयों को प्रतिनिधित्व मिला और वे इसे 1853 तक पीछे ले जाकर 'मताधिकार प्रतिनिधित्व' के निर्मित दावे को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "(a) को निरस्त करें — 1813 अधिनियम ने कोई विधान परिषद स्थापित नहीं की थी — परिषदें बाद में आईं; यह जोड़ी बनाई गई है।",
+        "(b) को निरस्त करें — 1853 संसदीय चयन समिति में भारतीयों को मताधिकार प्रतिनिधित्व नहीं मिला था — वे विधायक नहीं बल्कि गवाह के रूप में उपस्थित थे; यह एक संभावित-निर्मित जाल है।",
+        "(d) को निरस्त करें — चार्ल्स ग्रांट 1813 के पायस क्लॉज के पक्षधर थे, न कि 1853 चयन समिति के अध्यक्ष; जगन्नाथ शंकरसेठ सही भारतीय गवाह हैं।",
+        "(c) को चुनें — 1853 अधिनियम से पहले संसदीय चयन समिति थी जिसने पहली बार भारतीयों की औपचारिक गवाही दर्ज की — सही मेल।"
+      ],
+      "upsc_trap_explanation": "1853 चयन समिति एक सटीक तथ्यात्मक क्षेत्र है जहाँ छात्र 'गवाही' को 'प्रतिनिधित्व' से भ्रमित कर देते हैं। भारतीय समिति के समक्ष गवाह के रूप में उपस्थित हुए थे — यह ब्रिटिश विधायी कार्यवाही में भारतीय आवाज़ों की पहली औपचारिक सुनवाई थी, लेकिन उनके पास मत नहीं था और वे सदस्य नहीं थे। विकल्प (b) में 'मताधिकार प्रतिनिधित्व' शब्द का प्रयोग किया गया है जो एक स्वाभाविक प्रगति जैसा लगता है और उन छात्रों को आकर्षित करता है जो जानते हैं कि अंततः भारतीयों को प्रतिनिधित्व मिला।",
+      "final_explanation": "1853 के चार्टर अधिनियम से पहले संसदीय चयन समिति थी — एक महत्वपूर्ण प्रक्रिया नवाचार क्योंकि इसने पहली बार भारतीयों की औपचारिक गवाही दर्ज की, जिनमें जगन्नाथ शंकरसेठ जैसे प्रमुख व्यक्ति शामिल थे।\n\n• विकल्प (a) — गलत: 1813 अधिनियम ने कोई विधान परिषद स्थापित नहीं की थी — यह जोड़ी बनाई गई है।\n• विकल्प (b) — गलत: भारतीय 1853 चयन समिति के समक्ष गवाह के रूप में उपस्थित हुए, मताधिकार प्रतिनिधि के रूप में नहीं — औपचारिक भारतीय प्रतिनिधित्व बाद में मोर्ले-मिंटो सुधारों (1909) के तहत आया।\n• विकल्प (c) — सही: 1853 अधिनियम से पहले संसदीय चयन समिति थी जिसने पहली बार ब्रिटिश विधायी विचार-विमर्श में भारतीय गवाही औपचारिक रूप से दर्ज की — एक प्रारंभिक प्रतिनिधित्व क्षण।\n• विकल्प (d) — गलत: चार्ल्स ग्रांट 1813 के पायस क्लॉज के प्रमुख समर्थक थे; 1853 समिति के प्रमुख भारतीय गवाह जगन्नाथ शंकरसेठ थे, ग्रांट नहीं।\n\nमूल्य संवर्धन:\n• जगन्नाथ शंकरसेठ बॉम्बे के व्यापारी और परोपकारी थे — 1853 समिति के समक्ष उनकी गवाही भारतीय संवैधानिक इतिहास में एक मील का पत्थर है।\n• भारतीय परिषद अधिनियम 1861 पर 1853 सुधारों और चयन समिति के समक्ष सुनी गई गवाही का प्रभाव था।\n• मेटकाफ का प्रेस अधिनियम (1835) — जिसने प्रेस को उदार बनाया — 1833 के चार्टर अधिनियम द्वारा निर्मित सुधार वातावरण का हिस्सा था।"
+    }
+  },
+  {
+    "uuid": "c605c5b8-bdd2-4bc5-9a00-aff5957c76a3",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "EIC's Trade Monopoly: Partial vs. Total Abolition Across Charter Acts",
+        "Financial Provisions and EIC's Debt to the Crown: 1833 Act"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "1833 — EIC purely administrative, dividends charged to Indian revenues",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the East India Company's transformation under the Charter Act of 1833:\n\n1. The Charter Act of 1833 completed the abolition of the EIC's commercial monopoly by ending its exclusive rights over the tea trade and trade with China.\n2. Following the 1833 Act, the EIC ceased to have any commercial obligations and its shareholders received no further dividends.\n3. The financial restructuring under the 1833 Act institutionalized a system where India's revenues were used to service the EIC's private financial obligations to its shareholders.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Charter Act of 1833 completed the abolition of the EIC's commercial monopoly by ending its exclusive rights over the tea trade and trade with China.",
+          "verdict": "Correct",
+          "reason": "After the 1813 Act retained the tea and China trade monopoly, it was the 1833 Act that abolished these remaining monopolies, completing the EIC's transformation into a purely administrative body."
+        },
+        {
+          "statement": "Following the 1833 Act, the EIC ceased to have any commercial obligations and its shareholders received no further dividends.",
+          "verdict": "Incorrect",
+          "reason": "The 1833 Act fixed the EIC's dividends to shareholders and made them a charge on Indian revenues — shareholders continued to be paid, but the cost was borne by Indian financial resources rather than commercial profits."
+        },
+        {
+          "statement": "The financial restructuring under the 1833 Act institutionalized a system where India's revenues were used to service the EIC's private financial obligations to its shareholders.",
+          "verdict": "Correct",
+          "reason": "By making EIC dividends a charge on Indian revenues, the 1833 Act formalized the drain of Indian resources to meet EIC's commercial obligations — a structural arrangement foundational to Dadabhai Naoroji's later critique."
+        }
+      ],
+      "strong_distractor": "c — Option (c) attracts students who know Statement 1 is correct and assume Statement 2 is also true since the EIC became 'non-commercial', not realizing dividends continued from Indian revenues.",
+      "elimination_logic": [
+        "Statement 1 is correct — 1833 abolished remaining monopolies over tea and China trade; this is precise and verifiable.",
+        "Statement 2 is incorrect — dividends did NOT cease; they were fixed and charged to Indian revenues — a form of ongoing exploitation.",
+        "Statement 3 is correct — Indian revenues servicing EIC private obligations is the foundational drain mechanism.",
+        "Only Statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Students who know the EIC became 'purely administrative' after 1833 assume this means all financial obligations to shareholders also ended. The trap is that shareholders continued receiving fixed dividends — now explicitly charged to Indian revenues. This is actually more exploitative, not less, since India was now paying for the EIC's commercial history without receiving any commercial benefit. The financial restructuring is as significant as the trade monopoly abolition.",
+      "final_explanation": "The Charter Act of 1833 completed the EIC's transformation from a commercial entity to a purely administrative body, but this transition came with a critical financial arrangement that disadvantaged India.\n\n• Statement 1 — Correct: The 1833 Act abolished the EIC's monopoly over tea trade and trade with China — the last remnants of its commercial exclusivity retained after 1813.\n• Statement 2 — Incorrect: Dividends did NOT cease. The 1833 Act fixed EIC shareholder dividends and made them a direct charge on Indian revenues — India bore the cost of EIC's private obligations even as EIC ceased commercial activity.\n• Statement 3 — Correct: This institutionalized drain — Indian revenues paying EIC private dividends — is the structural foundation that Dadabhai Naoroji's 'Drain of Wealth' theory later documented as systematic economic exploitation.\n\nValue Addition:\n• After 1833, the EIC was essentially a management agent for the Crown, paid for by Indian revenues.\n• The 1857 Revolt led to the end of even this arrangement — under 1858, the Crown took over both administration and the financial obligations.\n• Naoroji's 'Poverty and Un-British Rule in India' (1901) traces the drain mechanism to these Charter Act-era financial arrangements."
+    },
+    "hi": {
+      "display_text": "1833 के चार्टर अधिनियम के तहत ईस्ट इंडिया कंपनी के रूपांतरण के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. 1833 का चार्टर अधिनियम ईस्ट इंडिया कंपनी के वाणिज्यिक एकाधिकार को पूरा समाप्त करते हुए चाय व्यापार और चीन के साथ व्यापार पर उसके विशेष अधिकारों को समाप्त कर दिया।\n2. 1833 के अधिनियम के बाद, ईस्ट इंडिया कंपनी के कोई वाणिज्यिक दायित्व नहीं रहे और उसके शेयरधारकों को कोई और लाभांश नहीं मिला।\n3. 1833 के अधिनियम के तहत वित्तीय पुनर्गठन ने एक ऐसा प्रणाली स्थापित किया जिसमें भारत की आय का उपयोग ईस्ट इंडिया कंपनी के निजी वित्तीय दायित्वों की पूर्ति के लिए किया गया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Charter Act of 1833 completed the abolition of the EIC's commercial monopoly by ending its exclusive rights over the tea trade and trade with China.",
+          "verdict": "Correct",
+          "reason": "After the 1813 Act retained the tea and China trade monopoly, it was the 1833 Act that abolished these remaining monopolies, completing the EIC's transformation into a purely administrative body."
+        },
+        {
+          "statement": "Following the 1833 Act, the EIC ceased to have any commercial obligations and its shareholders received no further dividends.",
+          "verdict": "Incorrect",
+          "reason": "The 1833 Act fixed the EIC's dividends to shareholders and made them a charge on Indian revenues — shareholders continued to be paid, but the cost was borne by Indian financial resources rather than commercial profits."
+        },
+        {
+          "statement": "The financial restructuring under the 1833 Act institutionalized a system where India's revenues were used to service the EIC's private financial obligations to its shareholders.",
+          "verdict": "Correct",
+          "reason": "By making EIC dividends a charge on Indian revenues, the 1833 Act formalized the drain of Indian resources to meet EIC's commercial obligations — a structural arrangement foundational to Dadabhai Naoroji's later critique."
+        }
+      ],
+      "strong_distractor": "c — Option (c) attracts students who know Statement 1 is correct and assume Statement 2 is also true since the EIC became 'non-commercial', not realizing dividends continued from Indian revenues.",
+      "elimination_logic": [
+        "Statement 1 is correct — 1833 abolished remaining monopolies over tea and China trade; this is precise and verifiable.",
+        "Statement 2 is incorrect — dividends did NOT cease; they were fixed and charged to Indian revenues — a form of ongoing exploitation.",
+        "Statement 3 is correct — Indian revenues servicing EIC private obligations is the foundational drain mechanism.",
+        "Only Statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Students who know the EIC became 'purely administrative' after 1833 assume this means all financial obligations to shareholders also ended. The trap is that shareholders continued receiving fixed dividends — now explicitly charged to Indian revenues. This is actually more exploitative, not less, since India was now paying for the EIC's commercial history without receiving any commercial benefit. The financial restructuring is as significant as the trade monopoly abolition.",
+      "final_explanation": "The Charter Act of 1833 completed the EIC's transformation from a commercial entity to a purely administrative body, but this transition came with a critical financial arrangement that disadvantaged India.\n\n• Statement 1 — Correct: The 1833 Act abolished the EIC's monopoly over tea trade and trade with China — the last remnants of its commercial exclusivity retained after 1813.\n• Statement 2 — Incorrect: Dividends did NOT cease. The 1833 Act fixed EIC shareholder dividends and made them a direct charge on Indian revenues — India bore the cost of EIC's private obligations even as EIC ceased commercial activity.\n• Statement 3 — Correct: This institutionalized drain — Indian revenues paying EIC private dividends — is the structural foundation that Dadabhai Naoroji's 'Drain of Wealth' theory later documented as systematic economic exploitation.\n\nValue Addition:\n• After 1833, the EIC was essentially a management agent for the Crown, paid for by Indian revenues.\n• The 1857 Revolt led to the end of even this arrangement — under 1858, the Crown took over both administration and the financial obligations.\n• Naoroji's 'Poverty and Un-British Rule in India' (1901) traces the drain mechanism to these Charter Act-era financial arrangements."
+    }
+  },
+  {
+    "uuid": "679a52d0-d501-4a3e-a775-bbf0a90f4edb",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Education Fund: The Rs. 1 Lakh Provision of 1813",
+        "Christian Missionaries and the 'Pious Clause' of 1813"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Rs. 1 lakh education fund — ambiguity and Orientalist-Anglicist controversy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Rs. 1 lakh education provision introduced by the Charter Act of 1813 contained an inherent ambiguity about whether it should support classical Indian learning or Western scientific education, leaving its implementation contested.\n\nReason (R): This ambiguity gave rise to the prolonged Orientalist versus Anglicist controversy, which remained unresolved until Macaulay's Minute of 1835 directed educational funds toward English-medium instruction.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The 1813 Act earmarked Rs. 1 lakh annually for education but did not specify whether it should be through English or classical Indian languages — the ambiguity is historically documented.",
+        "Step 2: Is Reason (R) correct? — Yes. The Orientalist-Anglicist controversy (1813–1835) was indeed a direct consequence of this ambiguity, with Orientalists (H.T. Prinsep, H.H. Wilson) favouring classical languages and Anglicists (Macaulay) favouring English.",
+        "Step 3: Does R causally explain A? — Yes. The ambiguity in the 1813 provision's language (which direction of education?) directly caused the two-decade controversy between Orientalists and Anglicists, making R the correct explanation of why A produced the outcome it did.",
+        "Both A and R are correct, and R is the correct explanation of A — select option (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Charter Act of 1813 earmarked Rs. 1 lakh annually for the 'revival and promotion of literature and science among the inhabitants of British India.' This seemingly straightforward provision contained a crucial ambiguity — it did not specify whether 'literature and science' referred to classical Indian traditions (Sanskrit, Arabic, Persian) or Western education through English.\n\n• Assertion (A) — Correct: The 1813 provision was genuinely ambiguous — Orientalists interpreted it as support for classical Indian learning while Anglicists saw it as an opportunity for Western scientific education.\n• Reason (R) — Correct: This ambiguity directly caused the Orientalist-Anglicist controversy, which raged from 1813 until Macaulay's Minute of 1835 resolved it in favour of English.\n• Causal link — Present: R correctly and directly explains A. The controversy was the logical consequence of the provision's ambiguity.\n\nValue Addition:\n• Macaulay's Minute (1835), accepted by Governor-General Bentinck, directed all funds toward English education — ending the Orientalist-Anglicist debate.\n• The Orientalist position was championed by H.T. Prinsep and H.H. Wilson; the Anglicist position by Macaulay and Charles Trevelyan.\n• Wood's Dispatch (1854) later systematized education policy, moving beyond the 1813 provision's limited scope."
+    },
+    "hi": {
+      "display_text": "कथन (A): 1813 के चार्टर अधिनियम द्वारा प्रस्तुत 1 लाख रुपये की शिक्षा व्यवस्था में एक अंतर्निहित अस्पष्टता थी कि क्या यह शास्त्रीय भारतीय शिक्षा का समर्थन करे या पश्चिमी वैज्ञानिक शिक्षा का, जिससे इसके क्रियान्वयन पर विवाद बना रहा।\n\nकारण (R): इस अस्पष्टता ने लंबे समय तक चलने वाले ओरिएंटलिस्ट बनाम एंग्लिसिस्ट विवाद को जन्म दिया, जो तब तक अनसुलझा रहा जब तक कि 1835 में मैकाले के मिनट ने शैक्षिक कोषों को अंग्रेज़ी माध्यम की शिक्षा की ओर निर्देशित नहीं किया।\n\n(a) A और R दोनों सही हैं तथा R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं परंतु R, A की सही व्याख्या नहीं है\n(c) A सही है परंतु R सही नहीं है\n(d) A सही नहीं है परंतु R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। 1813 के अधिनियम ने शिक्षा के लिए वार्षिक 1 लाख रुपये निर्धारित किए लेकिन यह स्पष्ट नहीं किया कि यह अंग्रेज़ी के माध्यम से हो या भारतीय शास्त्रीय भाषाओं के माध्यम से — यह अस्पष्टता ऐतिहासिक रूप से दर्ज है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। ओरिएंटलिस्ट-एंग्लिसिस्ट विवाद (1813–1835) वास्तव में इस अस्पष्टता का प्रत्यक्ष परिणाम था, जिसमें ओरिएंटलिस्ट (H.T. Prinsep, H.H. Wilson) शास्त्रीय भाषाओं के पक्षधर थे और एंग्लिसिस्ट (Macaulay) अंग्रेज़ी के पक्षधर थे।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — हाँ। 1813 के प्रावधान की भाषा में अस्पष्टता (शिक्षा का कौन सा मार्ग?) ने सीधे तौर पर ओरिएंटलिस्ट और एंग्लिसिस्ट के बीच दो दशकों तक चलने वाले विवाद को जन्म दिया, अतः R, A की सही व्याख्या है।",
+        "A और R दोनों सही हैं, और R, A की सही व्याख्या है — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "1813 के चार्टर अधिनियम ने ब्रिटिश भारत के निवासियों के बीच साहित्य और विज्ञान के पुनरुद्धार और संवर्धन के लिए वार्षिक 1 लाख रुपये निर्धारित किए। यह स्पष्ट प्रावधान एक महत्वपूर्ण अस्पष्टता लिए हुए था — यह निर्दिष्ट नहीं करता था कि 'साहित्य और विज्ञान' से तात्पर्य शास्त्रीय भारतीय परंपराओं (संस्कृत, अरबी, फारसी) से है या अंग्रेज़ी के माध्यम से पश्चिमी शिक्षा से।\n\n• कथन (A) — सही: 1813 का प्रावधान वास्तव में अस्पष्ट था — ओरिएंटलिस्ट इसे शास्त्रीय भारतीय शिक्षा के समर्थन के रूप में देखते थे जबकि एंग्लिसिस्ट इसे पश्चिमी वैज्ञानिक शिक्षा के अवसर के रूप में देखते थे।\n• कारण (R) — सही: इस अस्पष्टता ने सीधे ओरिएंटलिस्ट-एंग्लिसिस्ट विवाद को जन्म दिया, जो 1813 से शुरू होकर 1835 में मैकाले के मिनट द्वारा अंग्रेज़ी के पक्ष में समाप्त हुआ।\n• कारणात्मक संबंध — मौजूद: R सही और सीधे A की व्याख्या करता है। विवाद इस प्रावधान की अस्पष्टता का तार्किक परिणाम था।\n\nमूल्यवर्धन:\n• मैकाले का मिनट (1835), जिसे गवर्नर-जनरल बेंटिंक ने स्वीकार किया, ने सभी कोष अंग्रेज़ी शिक्षा की ओर निर्देशित किए — जिससे ओरिएंटलिस्ट-एंग्लिसिस्ट बहस समाप्त हुई।\n• ओरिएंटलिस्ट पक्ष का नेतृत्व H.T. Prinsep और H.H. Wilson ने किया; एंग्लिसिस्ट पक्ष का मैकाले और चार्ल्स ट्रेवलियन ने।\n• वुड का डिस्पैच (1854) ने बाद में शिक्षा नीति को व्यवस्थित किया, जो 1813 के प्रावधान की सीमितता से आगे बढ़ा।"
+    }
+  },
+  {
+    "uuid": "aa8388ee-82b6-4033-931d-4174d126bcc4",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Renewal vs. Permanent Charter: The Nature of Each Act",
+        "The 'No Renewal Period' Clause of 1853 and Its Signaling Effect"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "1853 Act — no fixed renewal period, open-ended charter",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Charter Act of 1853 differed from its predecessors of 1813 and 1833 in a structurally significant way regarding the duration of the East India Company's authority. Which of the following correctly describes this difference?\n\n(a) The 1853 Act, like its predecessors, renewed the EIC's charter for a fixed period of 20 years\n(b) The 1853 Act omitted a fixed renewal period, leaving the EIC's charter open-ended and subject to parliamentary review at any time\n(c) The 1853 Act formally transferred the EIC's authority to the British Crown, ending the Company's administrative role\n(d) The 1853 Act extended the EIC's charter permanently, removing the need for future renewals",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because students may conflate the 1853 Act (last Charter Act) with the 1858 transfer, assuming the 1853 Act itself transferred authority to the Crown.",
+      "elimination_logic": [
+        "Eliminate (a): All preceding Charter Acts (1793, 1813, 1833) set 20-year renewal periods — 1853 uniquely broke this pattern.",
+        "Eliminate (c): The 1853 Act did not transfer power to the Crown — that was the Government of India Act 1858; the 1853 Act merely removed the fixed renewal timeline.",
+        "Eliminate (d): The 1853 Act did not permanently extend EIC's charter indefinitely with no possibility of revocation — it left the duration open precisely to allow Parliament to revoke at any time.",
+        "Select (b): The 1853 Act omitted a fixed renewal period, leaving the charter open-ended and signaling that Parliament could review or revoke it without waiting for a 20-year cycle."
+      ],
+      "upsc_trap_explanation": "Students who know the 1853 Act was the last Charter Act before EIC's abolition tend to over-attribute its significance — some think it actually transferred power to the Crown (which 1858 did) or formally ended EIC rule. The precise significance of 1853 is subtler: it removed the 20-year renewal cycle, making EIC's continuation contingent on parliamentary will at any time. The 1857 Revolt then provided the political trigger that the open-ended charter had constitutionally permitted.",
+      "final_explanation": "The pattern of Charter Acts from 1793 onward followed 20-year renewal cycles. The 1793 Act established this pattern; 1813 and 1833 each renewed for another 20 years. The 1853 Act broke this pattern entirely.\n\n• Option (a) — Incorrect: The 20-year renewal cycle was the norm for preceding acts — 1853 departed from this pattern.\n• Option (b) — Correct: The 1853 Act did not specify a new renewal period, leaving the EIC's charter open-ended. This meant Parliament could revoke or review EIC's authority at any time — structurally preparing the ground for 1858.\n• Option (c) — Incorrect: Transfer of power to the Crown was effected by the Government of India Act 1858, following the 1857 Revolt — not by the 1853 Charter Act.\n• Option (d) — Incorrect: 'Open-ended' in 1853 meant the opposite of permanent extension — it meant no guaranteed future, not guaranteed continuity.\n\nValue Addition:\n• The 1857 Revolt provided the political moment that the open-ended 1853 charter had constitutionally enabled — EIC was abolished within five years of 1853.\n• The 1858 Government of India Act transferred all EIC powers to the Crown — creating the position of Secretary of State for India.\n• The trajectory: 1793 (20 years) → 1813 (20 years) → 1833 (20 years) → 1853 (open-ended) → 1858 (abolition)."
+    },
+    "hi": {
+      "display_text": "1853 का चार्टर अधिनियम 1813 और 1833 के अपने पूर्ववर्तियों से ईस्ट इंडिया कंपनी के अधिकार की अवधि के संदर्भ में संरचनात्मक रूप से किस प्रकार भिन्न था? निम्नलिखित में से कौन-सा इस भिन्नता का सही वर्णन करता है?\n\n(a) 1853 अधिनियम ने अपने पूर्ववर्तियों की तरह कंपनी के चार्टर को 20 वर्षों की निश्चित अवधि के लिए नवीनीकृत किया\n(b) 1853 अधिनियम ने निश्चित नवीनीकरण अवधि को हटा दिया, जिससे कंपनी का चार्टर खुला रह गया और इसे संसद कभी भी समीक्षा कर सकती थी\n(c) 1853 अधिनियम ने औपचारिक रूप से कंपनी के अधिकार ब्रिटिश क्राउन को स्थानांतरित कर दिए, जिससे कंपनी की प्रशासनिक भूमिका समाप्त हो गई\n(d) 1853 अधिनियम ने कंपनी के चार्टर को स्थायी रूप से बढ़ा दिया, जिससे भविष्य में नवीनीकरण की आवश्यकता समाप्त हो गई",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि छात्र 1853 अधिनियम (अंतिम चार्टर अधिनियम) को 1858 के हस्तांतरण के साथ मिला सकते हैं, यह मानते हुए कि 1853 अधिनियम ने स्वयं सत्ता क्राउन को स्थानांतरित कर दी।",
+      "elimination_logic": [
+        "(a) को निरस्त करें — सभी पूर्ववर्ती चार्टर अधिनियमों (1793, 1813, 1833) ने 20 वर्ष की नवीनीकरण अवधि निर्धारित की थी — 1853 ने इस पैटर्न को तोड़ा।",
+        "(c) को निरस्त करें — 1853 अधिनियम ने सत्ता क्राउन को स्थानांतरित नहीं की — वह भारत सरकार अधिनियम 1858 था; 1853 अधिनियम ने केवल निश्चित नवीनीकरण समयरेखा हटा दी।",
+        "(d) को निरस्त करें — 1853 अधिनियम ने ईस्ट इंडिया कंपनी के चार्टर को स्थायी रूप से अनिश्चितकाल के लिए नहीं बढ़ाया — यह अवधि खुली छोड़ दी ताकि संसद कभी भी इसे रद्द कर सके।",
+        "(b) को चुनें — 1853 अधिनियम ने निश्चित नवीनीकरण अवधि को हटा दिया, चार्टर को खुला छोड़ दिया और संकेत दिया कि संसद इसे 20 वर्ष के चक्र की प्रतीक्षा किए बिना समीक्षा या रद्द कर सकती है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र जानते हैं कि 1853 अधिनियम ईस्ट इंडिया कंपनी के उन्मूलन से पहले अंतिम चार्टर अधिनियम था, वे इसकी महत्ता को अधिक आंका करते हैं — कुछ सोचते हैं कि इसने वास्तव में सत्ता क्राउन को स्थानांतरित कर दी (जो 1858 ने किया) या औपचारिक रूप से कंपनी के शासन को समाप्त कर दिया। 1853 की सटीक महत्ता अधिक सूक्ष्म है: इसने 20 वर्ष के नवीनीकरण चक्र को हटा दिया, जिससे कंपनी का जारी रहना संसद की इच्छा पर कभी भी निर्भर हो गया। 1857 का विद्रोह उस राजनीतिक ट्रिगर के रूप में आया जिसे खुला चार्टर संवैधानिक रूप से अनुमति देता था।",
+      "final_explanation": "1793 से शुरू चार्टर अधिनियमों का पैटर्न 20 वर्ष के नवीनीकरण चक्र का पालन करता था। 1793 अधिनियम ने यह पैटर्न स्थापित किया; 1813 और 1833 ने प्रत्येक ने 20 वर्ष के लिए नवीनीकरण किया। 1853 अधिनियम ने इस पैटर्न को पूरी तरह तोड़ दिया।\n\n• विकल्प (a) — गलत: 20 वर्ष का नवीनीकरण चक्र पूर्व के अधिनियमों के लिए सामान्य था — 1853 ने इस पैटर्न से विचलन किया।\n• विकल्प (b) — सही: 1853 अधिनियम ने कोई नई नवीनीकरण अवधि निर्दिष्ट नहीं की, जिससे कंपनी का चार्टर खुला रह गया। इसका अर्थ था कि संसद कभी भी कंपनी के अधिकार को रद्द या समीक्षा कर सकती थी — जो 1858 के लिए संरचनात्मक आधार तैयार करता है।\n• विकल्प (c) — गलत: सत्ता का हस्तांतरण क्राउन को 1857 के विद्रोह के बाद भारत सरकार अधिनियम 1858 द्वारा किया गया — न कि 1853 चार्टर अधिनियम द्वारा।\n• विकल्प (d) — गलत: 1853 में 'खुला' का अर्थ स्थायी विस्तार नहीं था — इसका अर्थ था कोई निश्चित भविष्य नहीं, न कि निरंतरता की गारंटी।\n\nमूल्यवर्धन:\n• 1857 का विद्रोह वह राजनीतिक क्षण था जिसे खुला 1853 चार्टर संवैधानिक रूप से सक्षम करता था — कंपनी 1853 के पांच वर्षों के भीतर समाप्त कर दी गई।\n• 1858 का भारत सरकार अधिनियम सभी कंपनी के अधिकार क्राउन को स्थानांतरित कर गया — जिससे भारत के सचिव का पद बना।\n• क्रम: 1793 (20 वर्ष) → 1813 (20 वर्ष) → 1833 (20 वर्ष) → 1853 (खुला) → 1858 (उन्मूलन)।"
+    }
+  },
+  {
+    "uuid": "7fc1f72f-6540-42db-b8c5-81326c1c213b",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Covenanted vs. Uncovenanted Civil Services: 1833 Act's Role",
+        "Open Competition for Civil Services: Charter Act 1853"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "1833 Equality Clause — declaratory only, not implemented",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements:\n\nStatement 1: The Charter Act of 1833 contained a provision that no person of Indian origin should be excluded from any office under the East India Company solely on the basis of religion, place of birth, or colour.\n\nStatement 2: This provision of the 1833 Act was effectively implemented, leading to significant Indian representation in senior administrative positions during the Company's rule.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Charter Act of 1833 contained a provision that no person of Indian origin should be excluded from any office under the East India Company solely on the basis of religion, place of birth, or colour.",
+          "verdict": "Correct",
+          "reason": "The 1833 Act's Equality Clause is historically documented — it stated that no native of British India should be debarred from holding any office under EIC on grounds of religion, birth, or colour, making it the first such non-discrimination declaration in India's colonial history."
+        },
+        {
+          "statement": "This provision of the 1833 Act was effectively implemented, leading to significant Indian representation in senior administrative positions during the Company's rule.",
+          "verdict": "Incorrect",
+          "reason": "The 1833 Equality Clause was a declaratory provision with no enforcement mechanism; Indians remained effectively excluded from senior Covenanted Civil Service positions — the clause had no practical impact on the actual composition of the administration."
+        }
+      ],
+      "strong_distractor": "a — Option (a) attracts students who know the Equality Clause existed and assume it was effective, not distinguishing between the provision's text and its implementation.",
+      "elimination_logic": [
+        "Statement 1 is correct — the 1833 Act's Equality Clause is a documented historical provision, well-established in the record.",
+        "Statement 2 is incorrect — the clause was never effectively implemented; Indians remained excluded from senior positions in practice during EIC rule.",
+        "Select option (c): Statement 1 correct, Statement 2 incorrect."
+      ],
+      "upsc_trap_explanation": "The 1833 Equality Clause is a perfect trap for students who know British India had formal non-discrimination provisions but haven't studied their actual implementation. The clause sounds transformative — and was nominally significant as the first formal non-discrimination statement. But its practical impact was negligible. Senior covenanted positions remained effectively inaccessible to Indians until much later. The gap between the Act's text and ground reality is a recurring examination theme across multiple topics in Modern History.",
+      "final_explanation": "The Charter Act of 1833 introduced India's first formal non-discrimination provision in public employment — a remarkable declaratory statement for its era, yet one that produced no practical change.\n\n• Statement 1 — Correct: The Equality Clause of 1833 prohibited exclusion from EIC offices on grounds of religion, birth, or colour. This was legally significant as the first such declaration — but its significance was constitutional, not administrative.\n• Statement 2 — Incorrect: The clause was never effectively implemented. No enforcement mechanism existed, and the EIC's patronage system continued to favour Europeans. Indians were practically excluded from senior Covenanted Civil Service positions throughout EIC rule. Genuine access began — still limited — only with the competitive examinations mandated by the 1853 Act.\n\nValue Addition:\n• Open competitive examination (1853) was itself imperfect — the London venue excluded most Indians.\n• The Equality Clause of 1833 is an important precedent in Indian constitutional history — cited as an early anti-discrimination commitment.\n• Surendranath Banerjee's dismissal from ICS (1874) on technical grounds — despite qualifying — illustrates the continuing practical exclusion even post-1853."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: 1833 के चार्टर अधिनियम में एक प्रावधान था कि किसी भी भारतीय मूल के व्यक्ति को केवल धर्म, जन्म स्थान या रंग के आधार पर ईस्ट इंडिया कंपनी के किसी भी पद से बाहर नहीं किया जाएगा।\n\nकथन 2: 1833 अधिनियम का यह प्रावधान प्रभावी रूप से लागू किया गया था, जिसके कारण कंपनी के शासन के दौरान वरिष्ठ प्रशासनिक पदों पर भारतीयों की महत्वपूर्ण उपस्थिति हुई।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है पर कथन 2 गलत है\n(d) कथन 1 गलत है पर कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1833 के चार्टर अधिनियम में एक प्रावधान था कि किसी भी भारतीय मूल के व्यक्ति को केवल धर्म, जन्म स्थान या रंग के आधार पर ईस्ट इंडिया कंपनी के किसी भी पद से बाहर नहीं किया जाएगा।",
+          "verdict": "सही",
+          "reason": "1833 अधिनियम का समानता प्रावधान ऐतिहासिक रूप से प्रलेखित है — इसमें कहा गया था कि ब्रिटिश भारत के किसी भी स्वदेशी को धर्म, जन्म या रंग के आधार पर ईस्ट इंडिया कंपनी के किसी भी पद से वंचित नहीं किया जाएगा, जो भारत के औपनिवेशिक इतिहास में ऐसा पहला गैर-भेदभावात्मक घोषणा था।"
+        },
+        {
+          "statement": "1833 अधिनियम का यह प्रावधान प्रभावी रूप से लागू किया गया था, जिसके कारण कंपनी के शासन के दौरान वरिष्ठ प्रशासनिक पदों पर भारतीयों की महत्वपूर्ण उपस्थिति हुई।",
+          "verdict": "गलत",
+          "reason": "1833 का समानता प्रावधान केवल एक घोषणात्मक प्रावधान था जिसमें कोई प्रवर्तन तंत्र नहीं था; भारतीय प्रभावी रूप से वरिष्ठ कोवेनेंटेड सिविल सेवा पदों से बाहर ही रहे — इस प्रावधान का प्रशासन की वास्तविक संरचना पर कोई व्यावहारिक प्रभाव नहीं था।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) उन छात्रों को आकर्षित करता है जो जानते हैं कि समानता प्रावधान मौजूद था और मान लेते हैं कि यह प्रभावी था, लेकिन प्रावधान के पाठ और उसके क्रियान्वयन के बीच अंतर नहीं समझते।",
+      "elimination_logic": [
+        "कथन 1 सही है — 1833 अधिनियम का समानता प्रावधान एक प्रलेखित ऐतिहासिक प्रावधान है, जो रिकॉर्ड में अच्छी तरह स्थापित है।",
+        "कथन 2 गलत है — यह प्रावधान कभी प्रभावी रूप से लागू नहीं हुआ; भारतीय प्रभावी रूप से वरिष्ठ पदों से बाहर ही रहे।",
+        "विकल्प (c) चुनें: कथन 1 सही, कथन 2 गलत।"
+      ],
+      "upsc_trap_explanation": "1833 का समानता प्रावधान उन छात्रों के लिए एक आदर्श जाल है जो जानते हैं कि ब्रिटिश भारत में औपचारिक गैर-भेदभाव प्रावधान थे लेकिन उनके वास्तविक क्रियान्वयन का अध्ययन नहीं किया है। यह प्रावधान परिवर्तनकारी लगता है — और औपचारिक रूप से पहला गैर-भेदभावात्मक बयान था। लेकिन इसका व्यावहारिक प्रभाव नगण्य था। वरिष्ठ कोवेनेंटेड पद भारतीयों के लिए प्रभावी रूप से असंभव रहे जब तक कि बाद में 1853 के अधिनियम द्वारा प्रतिस्पर्धात्मक परीक्षाएं अनिवार्य नहीं हुईं। अधिनियम के पाठ और वास्तविकता के बीच का अंतर आधुनिक इतिहास के कई विषयों में परीक्षा का एक बार-बार आने वाला विषय है।",
+      "final_explanation": "1833 का चार्टर अधिनियम भारत में सार्वजनिक रोजगार में पहला औपचारिक गैर-भेदभाव प्रावधान लेकर आया — अपने समय के लिए एक उल्लेखनीय घोषणात्मक बयान, परंतु जिसने कोई व्यावहारिक परिवर्तन नहीं किया।\n\n• कथन 1 — सही: 1833 का समानता प्रावधान धर्म, जन्म या रंग के आधार पर ईस्ट इंडिया कंपनी के पदों से बाहर करने पर रोक लगाता था। यह कानूनी रूप से महत्वपूर्ण था क्योंकि यह पहला ऐसा घोषणा था — पर इसका महत्व संवैधानिक था, प्रशासनिक नहीं।\n• कथन 2 — गलत: यह प्रावधान कभी प्रभावी रूप से लागू नहीं हुआ। कोई प्रवर्तन तंत्र मौजूद नहीं था, और ईस्ट इंडिया कंपनी की संरक्षक प्रणाली यूरोपियनों को ही प्राथमिकता देती रही। भारतीय प्रभावी रूप से वरिष्ठ कोवेनेंटेड सिविल सेवा पदों से बाहर ही रहे। वास्तविक प्रवेश — जो अभी भी सीमित था — केवल 1853 के अधिनियम द्वारा अनिवार्य प्रतिस्पर्धात्मक परीक्षाओं के साथ शुरू हुआ।\n\nमूल्यवर्धन:\n• खुली प्रतिस्पर्धात्मक परीक्षा (1853) भी अपूर्ण थी — लंदन में परीक्षा केंद्र होने के कारण अधिकांश भारतीय बाहर रह गए।\n• 1833 का समानता प्रावधान भारतीय संवैधानिक इतिहास में एक महत्वपूर्ण मिसाल है — इसे प्रारंभिक गैर-भेदभाव प्रतिबद्धता के रूप में उद्धृत किया जाता है।\n• सुरेंद्रनाथ बनर्जी का ICS से (1874) तकनीकी कारणों से निष्कासन — बावजूद इसके कि वे योग्य थे — 1853 के बाद भी व्यावहारिक बहिष्कार को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "f6589f4e-aae0-478c-901c-eca97adf34e2",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Board of Control and Court of Directors: Power Balance Shifts",
+        "Comparison Across All Three Acts: Key 'Firsts' and UPSC Traps"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Court of Directors reforms — 1853 reduction and Crown nominations",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Description of Reform) with List II (Charter Act / Category):",
+        "columns": [
+          "List I — Reform Description",
+          "List II — Charter Act / Category"
+        ],
+        "rows": [
+          [
+            "A. No major structural change to the dual government of Board of Control and Court of Directors",
+            "1. Charter Act of 1853"
+          ],
+          [
+            "B. Board of Control's powers were strengthened; Governor-General's legislative acts subject to disallowance",
+            "2. Charter Act of 1813"
+          ],
+          [
+            "C. Court of Directors reduced from 24 to 18 members, with 6 members nominated by the Crown",
+            "3. Charter Act of 1833"
+          ],
+          [
+            "D. Each successive act incrementally transferred authority from the Court of Directors toward British Parliament and the Crown",
+            "4. Overall constitutional trajectory across all three acts"
+          ]
+        ],
+        "footer_text": "Select the correct matching combination:\n\n(a) A-3, B-1, C-2, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-1, B-2, C-3, D-4\n(d) A-2, B-3, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it correctly pairs the Court of Directors reduction with 1853 but misattributes the Board of Control strengthening to 1813 rather than 1833.",
+      "elimination_logic": [
+        "Match A: No major structural change to dual government in 1813 — this describes the Charter Act of 1813 correctly; A matches with 2.",
+        "Match B: Board of Control's authority was strengthened under 1833 — Board could disallow Governor-General's legislative acts; B matches with 3.",
+        "Match C: Court of Directors reduced from 24 to 18 with 6 Crown nominations was the 1853 reform; C matches with 1.",
+        "Match D: The trajectory of each act incrementally transferring power from Court of Directors to Parliament/Crown describes all three acts — this is a general observation matching with 4 (general trajectory statement) — but if List II has 4 = 1793, reconsider. Per design, D maps to the trajectory description item; best option is A-2, B-3, C-1, D-4 — select option (d)."
+      ],
+      "upsc_trap_explanation": "The Board of Control's power trajectory across acts is a precision trap. Students often know that later acts strengthened Parliamentary oversight but confuse which specific act strengthened the Board of Control versus which restructured the Court of Directors. The 1833 Act strengthened the Board of Control's supervisory role; the 1853 Act restructured the Court of Directors itself by reducing its size and injecting Crown nominees — two distinct reforms often conflated.",
+      "final_explanation": "The dual government structure (Board of Control + Court of Directors) established under Pitt's India Act 1784 was progressively reformed by each Charter Act.\n\nCorrect matches:\n• A (No major structural change to dual government) → 2 (Charter Act 1813): The 1813 Act focused on trade monopoly and missionaries — the dual government structure remained intact.\n• B (Board of Control's supervisory powers strengthened) → 3 (Charter Act 1833): The 1833 Act enhanced the Board of Control's authority to disallow legislative acts of the Governor-General-in-Council.\n• C (Court of Directors reduced from 24 to 18, with 6 Crown nominations) → 1 (Charter Act 1853): The 1853 Act restructured the Court of Directors, injecting Crown nominees and eroding EIC's self-governance.\n• D (Incremental transfer of power from Court of Directors to Parliament/Crown across all acts) → 4 (Overall trajectory): The overarching constitutional trajectory of all three acts.\n\nValue Addition:\n• The Board of Control, created under Pitt's India Act 1784, was the Cabinet's mechanism for overseeing EIC.\n• After the 1858 transfer, both the Board of Control and the Court of Directors were abolished — replaced by the Secretary of State for India.\n• The 1853 Act's injection of Crown nominees into the Court of Directors was a step toward the 1858 complete takeover."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (सुधार का विवरण) को सूची II (चार्टर अधिनियम / श्रेणी) से मिलाएं:",
+        "columns": [
+          "सूची I — सुधार का विवरण",
+          "सूची II — चार्टर अधिनियम / श्रेणी"
+        ],
+        "rows": [
+          [
+            "A. बोर्ड ऑफ कंट्रोल और कोर्ट ऑफ डायरेक्टर्स की द्वैध सरकार में कोई बड़ा संरचनात्मक परिवर्तन नहीं",
+            "1. चार्टर अधिनियम 1853"
+          ],
+          [
+            "B. बोर्ड ऑफ कंट्रोल के अधिकार सशक्त हुए; गवर्नर-जनरल के विधायी कार्य अस्वीकृत किए जा सकते हैं",
+            "2. चार्टर अधिनियम 1813"
+          ],
+          [
+            "C. कोर्ट ऑफ डायरेक्टर्स की संख्या 24 से घटाकर 18 की गई, जिसमें 6 सदस्यों को क्राउन ने नामित किया",
+            "3. चार्टर अधिनियम 1833"
+          ],
+          [
+            "D. प्रत्येक अधिनियम ने क्रमशः कोर्ट ऑफ डायरेक्टर्स से ब्रिटिश संसद और क्राउन को अधिकार स्थानांतरित किया",
+            "4. सभी तीन अधिनियमों में समग्र संवैधानिक प्रगति"
+          ]
+        ],
+        "footer_text": "सही मिलान संयोजन चुनें:\n\n(a) A-3, B-1, C-2, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-1, B-2, C-3, D-4\n(d) A-2, B-3, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि यह सही ढंग से कोर्ट ऑफ डायरेक्टर्स में कमी को 1853 से जोड़ता है लेकिन बोर्ड ऑफ कंट्रोल के सशक्तिकरण को 1813 के बजाय 1833 से जोड़ता है।",
+      "elimination_logic": [
+        "A से मेल करें: 1813 में द्वैध सरकार में कोई बड़ा संरचनात्मक परिवर्तन नहीं — यह 1813 के चार्टर अधिनियम का सही वर्णन है; A का मिलान 2 से।",
+        "B से मेल करें: बोर्ड ऑफ कंट्रोल का अधिकार 1833 के अधिनियम के तहत सशक्त हुआ — बोर्ड गवर्नर-जनरल के विधायी कार्यों को अस्वीकृत कर सकता था; B का मिलान 3 से।",
+        "C से मेल करें: कोर्ट ऑफ डायरेक्टर्स की संख्या 24 से घटाकर 18 की गई और 6 सदस्यों को क्राउन द्वारा नामित किया गया था, यह 1853 के सुधार थे; C का मिलान 1 से।",
+        "D से मेल करें: प्रत्येक अधिनियम की प्रगति में कोर्ट ऑफ डायरेक्टर्स से संसद/क्राउन को अधिकार का क्रमिक हस्तांतरण होता है — यह सभी तीन अधिनियमों का सामान्य अवलोकन है जो 4 (सामान्य प्रगति कथन) से मेल खाता है — यदि सूची II में 4 = 1793 है तो पुनर्विचार करें। डिज़ाइन के अनुसार, D प्रगति विवरण आइटम से मेल खाता है; सर्वोत्तम विकल्प है A-2, B-3, C-1, D-4 — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "बोर्ड ऑफ कंट्रोल के अधिकारों की प्रगति एक सटीकता जाल है। छात्र अक्सर जानते हैं कि बाद के अधिनियमों ने संसदीय नियंत्रण को मजबूत किया लेकिन भ्रमित हो जाते हैं कि किस अधिनियम ने बोर्ड ऑफ कंट्रोल को सशक्त किया और किसने कोर्ट ऑफ डायरेक्टर्स का पुनर्गठन किया। 1833 का अधिनियम बोर्ड ऑफ कंट्रोल की पर्यवेक्षी भूमिका को मजबूत करता है; 1853 का अधिनियम कोर्ट ऑफ डायरेक्टर्स का पुनर्गठन करता है जिसमें उसकी संख्या कम कर क्राउन के नामांकित सदस्यों को शामिल किया गया — ये दो अलग-अलग सुधार हैं जिन्हें अक्सर मिलाया जाता है।",
+      "final_explanation": "पिट के इंडिया एक्ट 1784 के तहत स्थापित द्वैध सरकार संरचना (बोर्ड ऑफ कंट्रोल + कोर्ट ऑफ डायरेक्टर्स) को प्रत्येक चार्टर अधिनियम द्वारा क्रमशः सुधारा गया।\n\nसही मिलान:\n• A (द्वैध सरकार में कोई बड़ा संरचनात्मक परिवर्तन नहीं) → 2 (चार्टर अधिनियम 1813): 1813 का अधिनियम व्यापार एकाधिकार और मिशनरियों पर केंद्रित था — द्वैध सरकार संरचना बनी रही।\n• B (बोर्ड ऑफ कंट्रोल के पर्यवेक्षी अधिकार सशक्त हुए) → 3 (चार्टर अधिनियम 1833): 1833 के अधिनियम ने बोर्ड ऑफ कंट्रोल को गवर्नर-जनरल-इन-काउंसिल के विधायी कार्यों को अस्वीकृत करने का अधिकार दिया।\n• C (कोर्ट ऑफ डायरेक्टर्स की संख्या 24 से घटाकर 18 की गई, जिसमें 6 सदस्यों को क्राउन ने नामित किया) → 1 (चार्टर अधिनियम 1853): 1853 के अधिनियम ने कोर्ट ऑफ डायरेक्टर्स का पुनर्गठन किया, क्राउन के नामांकित सदस्यों को शामिल किया और ईआईसी की स्व-शासन क्षमता को कम किया।\n• D (कोर्ट ऑफ डायरेक्टर्स से संसद/क्राउन को अधिकार का क्रमिक हस्तांतरण सभी अधिनियमों में) → 4 (सभी तीन अधिनियमों की समग्र संवैधानिक प्रगति): तीनों अधिनियमों की समग्र संवैधानिक प्रगति।\n\nमूल्य संवर्धन:\n• बोर्ड ऑफ कंट्रोल, जो पिट के इंडिया एक्ट 1784 के तहत बनाया गया था, कैबिनेट का ईआईसी पर पर्यवेक्षण तंत्र था।\n• 1858 के हस्तांतरण के बाद, बोर्ड ऑफ कंट्रोल और कोर्ट ऑफ डायरेक्टर्स दोनों को समाप्त कर दिया गया — और भारत के सचिव द्वारा प्रतिस्थापित किया गया।\n• 1853 के अधिनियम में कोर्ट ऑफ डायरेक्टर्स में क्राउन के नामांकित सदस्यों को शामिल करना 1858 के पूर्ण अधिग्रहण की ओर एक कदम था।"
+    }
+  },
+  {
+    "uuid": "ecd5effe-2e73-4297-9e89-e2f4c03b8dac",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Comparison Across All Three Acts: Key 'Firsts' and UPSC Traps",
+        "EIC's Trade Monopoly: Partial vs. Total Abolition Across Charter Acts",
+        "Governor-General of India: Creation by Charter Act 1833"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Charter Acts — correct attribution of provisions to 1813, 1833, 1853",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the key provisions of the Charter Acts:\n\n1. The creation of the Governor-General of India as a unified executive authority over all British India was a contribution of the Charter Act of 1833.\n2. The Charter Act of 1813 introduced open competitive examination for the Covenanted Civil Service, replacing the East India Company's nomination system.\n3. The Charter Act of 1853 did not grant any new charter renewal period, unlike its predecessors which renewed the EIC's charter for 20 years at a time.\n\nWhich of the above statements is/are correct?\n\n(a) 2 and 3 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The creation of the Governor-General of India as a unified executive authority over all British India was a contribution of the Charter Act of 1833.",
+          "verdict": "Correct",
+          "reason": "The 1833 Act transformed the Governor-General of Bengal into the Governor-General of India with authority over all British territories — William Bentinck was the first to hold this new title."
+        },
+        {
+          "statement": "The Charter Act of 1813 introduced open competitive examination for the Covenanted Civil Service, replacing the East India Company's nomination system.",
+          "verdict": "Incorrect",
+          "reason": "Open competitive examination for the Covenanted Civil Service was introduced by the Charter Act of 1853, not 1813; the 1813 Act dealt with trade monopoly modification, missionary access, and the education fund."
+        },
+        {
+          "statement": "The Charter Act of 1853 did not grant any new charter renewal period, unlike its predecessors which renewed the EIC's charter for 20 years at a time.",
+          "verdict": "Correct",
+          "reason": "The 1853 Act was unique in leaving the charter open-ended, unlike the 1793, 1813, and 1833 acts which each specified 20-year renewal periods — a deliberate signal of impending review."
+        }
+      ],
+      "strong_distractor": "d — Option (d) attracts students who hastily accept Statement 2 about competitive exams as correct, confusing 1813 and 1853.",
+      "elimination_logic": [
+        "Statement 1 is correct — Governor-General of India created by 1833 Act is foundational knowledge.",
+        "Statement 2 is incorrect — competitive exams were introduced by 1853 Act, not 1813; this is the classic entity-swap trap.",
+        "Statement 3 is correct — 1853 Act's open-ended charter is a distinctive and documented feature.",
+        "Statements 1 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a deliberate entity-swap: competitive civil service examination was the landmark reform of 1853, not 1813. Students who know the 1813 Act introduced major reforms may accept this statement without verifying the specific reform. The 1813 Act's three key contributions were: (a) partial trade monopoly abolition, (b) missionary access (Pious Clause), and (c) Rs. 1 lakh education fund — not civil service reform.",
+      "final_explanation": "Precise attribution of Charter Act provisions is a critical UPSC skill — one misattribution changes the entire answer.\n\n• Statement 1 — Correct: The 1833 Charter Act created the designation Governor-General of India. William Bentinck, who had been Governor-General of Bengal, became the first Governor-General of India.\n• Statement 2 — Incorrect: Open competitive examination was introduced by the 1853 Act, not 1813. The 1813 Act introduced the education fund, missionary access, and partial trade monopoly abolition — civil service reform came four decades later.\n• Statement 3 — Correct: The 1853 Act uniquely omitted a new renewal period — preceding acts (1793, 1813, 1833) each renewed for 20 years. The open-ended nature of 1853 signaled Parliament's readiness to revoke EIC's authority at any time.\n\nValue Addition:\n• 1813's three key 'firsts': trade monopoly partially abolished, missionaries allowed, Rs. 1 lakh education fund.\n• 1833's three key 'firsts': Governor-General of India, Law Member, complete trade monopoly abolition.\n• 1853's three key 'firsts': competitive civil service exam, legislative-executive separation, open-ended charter."
+    },
+    "hi": {
+      "display_text": "चार्टर अधिनियमों के मुख्य प्रावधानों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत के सभी ब्रिटिश क्षेत्रों पर एकीकृत कार्यकारी प्राधिकारी के रूप में गवर्नर-जनरल ऑफ इंडिया का सृजन 1833 के चार्टर अधिनियम का योगदान था।\n2. 1813 के चार्टर अधिनियम ने कवनेंटेड सिविल सेवा के लिए खुला प्रतियोगी परीक्षा प्रणाली शुरू की, जो ईस्ट इंडिया कंपनी की नामांकन प्रणाली की जगह ले गई।\n3. 1853 के चार्टर अधिनियम ने अपने पूर्ववर्तियों के विपरीत कोई नया चार्टर नवीनीकरण अवधि प्रदान नहीं की, जो ईआईसी के चार्टर को 20 वर्षों के लिए नवीनीकृत करते थे।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत के सभी ब्रिटिश क्षेत्रों पर एकीकृत कार्यकारी प्राधिकारी के रूप में गवर्नर-जनरल ऑफ इंडिया का सृजन 1833 के चार्टर अधिनियम का योगदान था।",
+          "verdict": "सही",
+          "reason": "1833 के अधिनियम ने बंगाल के गवर्नर-जनरल को भारत के गवर्नर-जनरल में परिवर्तित कर दिया, जिसे सभी ब्रिटिश क्षेत्रों पर अधिकार प्राप्त था — विलियम बेंटिंक इस नए पद को धारण करने वाले पहले व्यक्ति थे।"
+        },
+        {
+          "statement": "1813 के चार्टर अधिनियम ने कवनेंटेड सिविल सेवा के लिए खुला प्रतियोगी परीक्षा प्रणाली शुरू की, जो ईस्ट इंडिया कंपनी की नामांकन प्रणाली की जगह ले गई।",
+          "verdict": "गलत",
+          "reason": "कवनेंटेड सिविल सेवा के लिए खुली प्रतियोगी परीक्षा 1853 के चार्टर अधिनियम द्वारा शुरू की गई थी, न कि 1813 द्वारा; 1813 का अधिनियम व्यापार एकाधिकार में संशोधन, मिशनरी प्रवेश, और शिक्षा कोष से संबंधित था।"
+        },
+        {
+          "statement": "1853 के चार्टर अधिनियम ने अपने पूर्ववर्तियों के विपरीत कोई नया चार्टर नवीनीकरण अवधि प्रदान नहीं की, जो ईआईसी के चार्टर को 20 वर्षों के लिए नवीनीकृत करते थे।",
+          "verdict": "सही",
+          "reason": "1853 का अधिनियम अनिश्चितकालीन था, जबकि 1793, 1813, और 1833 के अधिनियमों में प्रत्येक ने 20 वर्ष की नवीनीकरण अवधि निर्दिष्ट की थी — यह एक स्पष्ट संकेत था कि समीक्षा होने वाली है।"
+        }
+      ],
+      "strong_distractor": "विकल्प (d) — यह उन छात्रों को आकर्षित करता है जो जल्दबाजी में कथन 2 को सही मान लेते हैं, और 1813 तथा 1853 को भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1 सही है — 1833 के अधिनियम द्वारा गवर्नर-जनरल ऑफ इंडिया का सृजन मौलिक ज्ञान है।",
+        "कथन 2 गलत है — प्रतियोगी परीक्षा 1853 के अधिनियम द्वारा शुरू की गई थी, न कि 1813 द्वारा; यह क्लासिक एंटिटी-स्वैप जाल है।",
+        "कथन 3 सही है — 1853 के अधिनियम का अनिश्चितकालीन चार्टर एक विशिष्ट और प्रलेखित विशेषता है।",
+        "कथन 1 और 3 सही हैं — अतः विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 जानबूझकर एंटिटी-स्वैप है: प्रतियोगी सिविल सेवा परीक्षा 1853 का प्रमुख सुधार था, न कि 1813 का। जो छात्र जानते हैं कि 1813 ने बड़े सुधार किए, वे बिना जांचे इस कथन को स्वीकार कर लेते हैं। 1813 के तीन मुख्य योगदान थे: (a) आंशिक व्यापार एकाधिकार समाप्ति, (b) मिशनरी प्रवेश (पायस क्लॉज), और (c) 1 लाख रुपये शिक्षा कोष — सिविल सेवा सुधार नहीं।",
+      "final_explanation": "चार्टर अधिनियमों के प्रावधानों का सटीक वर्गीकरण UPSC के लिए महत्वपूर्ण कौशल है — एक गलत वर्गीकरण पूरे उत्तर को बदल देता है।\n\n• कथन 1 — सही: 1833 के चार्टर अधिनियम ने गवर्नर-जनरल ऑफ इंडिया पद बनाया। विलियम बेंटिंक, जो बंगाल के गवर्नर-जनरल थे, पहले गवर्नर-जनरल ऑफ इंडिया बने।\n• कथन 2 — गलत: खुली प्रतियोगी परीक्षा 1853 के अधिनियम द्वारा शुरू की गई, न कि 1813 द्वारा। 1813 ने शिक्षा कोष, मिशनरी प्रवेश, और आंशिक व्यापार एकाधिकार समाप्ति शुरू की — सिविल सेवा सुधार चार दशकों बाद आया।\n• कथन 3 — सही: 1853 का अधिनियम अनिश्चितकालीन था — 1793, 1813, 1833 के अधिनियमों ने 20 वर्ष की नवीनीकरण अवधि निर्धारित की थी। 1853 की अनिश्चितकालीन प्रकृति संसद की तत्परता का संकेत थी कि वह कभी भी ईआईसी का अधिकार समाप्त कर सकती है।\n\nमूल्यवर्धन:\n• 1813 के तीन मुख्य 'पहले': आंशिक व्यापार एकाधिकार समाप्ति, मिशनरी प्रवेश, 1 लाख रुपये शिक्षा कोष।\n• 1833 के तीन मुख्य 'पहले': गवर्नर-जनरल ऑफ इंडिया, विधि सदस्य, पूर्ण व्यापार एकाधिकार समाप्ति।\n• 1853 के तीन मुख्य 'पहले': प्रतियोगी सिविल सेवा परीक्षा, विधायी-कार्यकारी पृथक्करण, अनिश्चितकालीन चार्टर।"
+    }
+  },
+  {
+    "uuid": "ed912419-dc77-4f9a-b22b-1ef07ea02819",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Financial Provisions and EIC's Debt to the Crown: 1833 Act",
+        "Law Codification and the First Law Commission: 1833 Mandate"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "1833 — Drain of Wealth connection and financial restructuring",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Charter Act of 1833 — Fixed EIC shareholder dividends as a direct charge on Indian revenues, institutionalizing a financial drain from India to England\n(b) Charter Act of 1813 — Introduction of open competitive examination for the Covenanted Civil Service replacing the patronage-based nomination system\n(c) Charter Act of 1833 — Establishment of the First Law Commission under Lord Macaulay through the provisions of the 1853 Charter Act\n(d) Charter Act of 1833 — Immediate abolition of slavery throughout EIC territories in India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because Macaulay and the 1833 Act are correctly linked, but the Law Commission was formed in 1834 (not 1833 itself), leading students to doubt the pairing.",
+      "elimination_logic": [
+        "Eliminate (b): The 1853 Act introduced the open competitive exam — not the 1813 Act; this is an entity-swap.",
+        "Eliminate (c): While Macaulay chaired the First Law Commission, it was formed in 1834 following the 1833 mandate — saying it was 'established under the 1853 Act' would be wrong, but the option as written should be checked for accuracy.",
+        "Eliminate (d): Slavery was not abolished by the 1833 Charter Act — only amelioration was mandated; abolition came through Indian Slavery Act 1843.",
+        "Select (a): The 1833 Act making EIC dividends a charge on Indian revenues — institutionalizing the financial drain — is the correctly matched pair, connecting directly to Naoroji's drain theory."
+      ],
+      "upsc_trap_explanation": "Option (d) is a common trap: students know both the 1833 Charter Act and slavery abolition are connected to the 1830s abolitionist moment and assume the Charter Act itself abolished slavery. The partial truth is that 1833 Act addressed slavery (mandated amelioration) but abolition came separately in 1843. Option (c) is a precision trap about whether the Law Commission was 'established' by the 1833 Act or merely mandated by it — it was formally established in 1834.",
+      "final_explanation": "This question tests precise knowledge of what the 1833 Charter Act actually accomplished versus what is commonly misattributed to it.\n\n• Option (a) — Correct: The 1833 Act fixed EIC shareholder dividends as a charge on Indian revenues — a structural mechanism that made Indian resources responsible for EIC's private commercial obligations. This is the foundational financial arrangement that Dadabhai Naoroji later critiqued as the 'Drain of Wealth.'\n• Option (b) — Incorrect: Open competitive examination was introduced by the 1853 Act — not the 1813 Act. This is an entity-swap distractor.\n• Option (c) — Incorrect: The First Law Commission was constituted in 1834 following the 1833 Act's mandate — it was not established under the 1853 Act. The pairing inverts the correct relationship.\n• Option (d) — Incorrect: The 1833 Charter Act did not abolish slavery — it only mandated amelioration of conditions. The Indian Slavery Act 1843 achieved actual abolition in EIC territories.\n\nValue Addition:\n• Dadabhai Naoroji's 'Drain of Wealth' theory directly addresses financial arrangements institutionalized by the 1833 Act.\n• The Second Law Commission (circa 1853) worked on civil procedure law, resulting eventually in the Code of Civil Procedure.\n• Indian Slavery Act 1843 was passed under Governor-General Lord Ellenborough."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) 1833 का चार्टर अधिनियम — ईस्ट इंडिया कंपनी के शेयरधारकों के लाभांश को भारतीय राजस्व पर एक प्रत्यक्ष शुल्क के रूप में निर्धारित किया, जिससे भारत से इंग्लैंड की ओर वित्तीय निकासी संस्थागत हुई\n(b) 1813 का चार्टर अधिनियम — कोवेनेंटेड सिविल सेवा के लिए खुला प्रतियोगी परीक्षा शुरू की, जो पदाधिकार-आधारित नामांकन प्रणाली की जगह लेती है\n(c) 1833 का चार्टर अधिनियम — 1853 के चार्टर अधिनियम की धाराओं के तहत लॉर्ड मैकाले द्वारा प्रथम विधि आयोग की स्थापना\n(d) 1833 का चार्टर अधिनियम — भारत में ईस्ट इंडिया कंपनी के क्षेत्रों में दासप्रथा का तत्काल उन्मूलन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि मैकाले और 1833 अधिनियम सही ढंग से जुड़े हैं, लेकिन प्रथम विधि आयोग 1834 में गठित हुआ था (1833 में नहीं), जिससे छात्र इस जोड़ी पर संदेह करते हैं।",
+      "elimination_logic": [
+        "(b) को निरस्त करें — 1853 अधिनियम ने खुला प्रतियोगी परीक्षा शुरू की थी, न कि 1813 अधिनियम; यह एक वस्तु-विनिमय है।",
+        "(c) को निरस्त करें — जबकि मैकाले प्रथम विधि आयोग के अध्यक्ष थे, यह 1833 के आदेश के बाद 1834 में गठित हुआ था — इसे '1853 अधिनियम के तहत स्थापित' कहना गलत होगा, पर विकल्प की सटीकता जांचनी चाहिए।",
+        "(d) को निरस्त करें — 1833 चार्टर अधिनियम ने दासप्रथा समाप्त नहीं की — केवल सुधार का आदेश दिया; समाप्ति भारतीय दासप्रथा अधिनियम 1843 के माध्यम से हुई।",
+        "(a) को चुनें — 1833 अधिनियम ने ईस्ट इंडिया कंपनी के लाभांश को भारतीय राजस्व पर एक शुल्क के रूप में स्थापित किया — जो वित्तीय निकासी को संस्थागत बनाता है — यह सही मेल है, जो नौरोजी के धन निकासी सिद्धांत से सीधे जुड़ा है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) एक सामान्य जाल है: छात्र जानते हैं कि 1833 चार्टर अधिनियम और दासप्रथा उन्मूलन दोनों 1830 के दशक के उन्मूलनवादी क्षण से जुड़े हैं और मान लेते हैं कि चार्टर अधिनियम ने दासप्रथा समाप्त की। आंशिक सत्य यह है कि 1833 अधिनियम ने दासप्रथा पर सुधार का आदेश दिया था, पर समाप्ति 1843 में हुई। विकल्प (c) एक सटीकता जाल है कि विधि आयोग '1833 अधिनियम द्वारा स्थापित' था या केवल आदेशित था — यह औपचारिक रूप से 1834 में स्थापित हुआ।",
+      "final_explanation": "यह प्रश्न 1833 चार्टर अधिनियम द्वारा वास्तव में किए गए कार्यों की सटीक जानकारी का परीक्षण करता है, न कि जो सामान्यतः उससे जोड़ा जाता है।\n\n• विकल्प (a) — सही: 1833 अधिनियम ने ईस्ट इंडिया कंपनी के शेयरधारकों के लाभांश को भारतीय राजस्व पर एक शुल्क के रूप में निर्धारित किया — यह एक संरचनात्मक व्यवस्था है जिसने भारतीय संसाधनों को कंपनी के निजी वाणिज्यिक दायित्वों के लिए जिम्मेदार बनाया। यह वह वित्तीय व्यवस्था है जिसे दादाभाई नौरोजी ने बाद में 'धन निकासी' के रूप में आलोचना की।\n• विकल्प (b) — गलत: खुला प्रतियोगी परीक्षा 1853 अधिनियम द्वारा शुरू की गई थी — न कि 1813 अधिनियम। यह एक वस्तु-विनिमय भ्रम है।\n• विकल्प (c) — गलत: प्रथम विधि आयोग 1833 अधिनियम के आदेश के बाद 1834 में गठित हुआ था — यह 1853 अधिनियम के तहत स्थापित नहीं था। यह जोड़ी सही संबंध को उलटती है।\n• विकल्प (d) — गलत: 1833 चार्टर अधिनियम ने दासप्रथा समाप्त नहीं की — केवल सुधार का आदेश दिया। वास्तविक समाप्ति भारतीय दासप्रथा अधिनियम 1843 द्वारा हुई।\n\nमूल्य संवर्धन:\n• दादाभाई नौरोजी का 'धन निकासी' सिद्धांत सीधे 1833 अधिनियम द्वारा संस्थागत वित्तीय व्यवस्थाओं को संबोधित करता है।\n• दूसरा विधि आयोग (लगभग 1853) ने दीवानी प्रक्रिया कानून पर कार्य किया, जिसके परिणामस्वरूप अंततः दीवानी प्रक्रिया संहिता बनी।\n• भारतीय दासप्रथा अधिनियम 1843 गवर्नर-जनरल लॉर्ड एलेनबोरो के अधीन पारित हुआ।"
+    }
+  },
+  {
+    "uuid": "5339c1bf-62e6-476a-841f-dd532e54314c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Legislative Council Expansion: Charter Act 1853 and the Seed of Legislature",
+        "Centralization of Legislative Power: 1833 Act's Constitutional Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "1853 quasi-federal seed — provincial representatives in central legislature",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A constitutional historian argues that a particular Charter Act introduced the first quasi-federal element into British India's governance by formally including nominees of provincial governments in the central legislative body. This meant that for the first time, the deliberative process at the centre reflected inputs from the major provincial administrations of Bengal, Bombay, Madras, and Agra. Which Charter Act or legislation does the historian refer to?\n\n(a) The Regulating Act of 1773, which established a Governor-General-in-Council with advisory representatives from major Presidencies\n(b) The Charter Act of 1833, which centralized legislative power but included provincial voices through elected Presidency representatives\n(c) The Indian Councils Act of 1861, which first introduced provincial nominees into the central legislative council\n(d) The Charter Act of 1853, which added four provincial representatives to the expanded legislative council alongside six new legislative members",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know 1833 Act centralized legislative power may attribute the quasi-federal element to 1833, not realizing provincial representatives came only in 1853.",
+      "elimination_logic": [
+        "Eliminate (a): The Regulating Act 1773 created the Governor-General of Bengal — it did not introduce provincial legislative representatives.",
+        "Eliminate (b): The 1833 Act centralized legislative power by removing Presidency legislative powers — it did not introduce provincial representatives into the central body.",
+        "Eliminate (c): The Indian Councils Act 1861 built upon the 1853 innovation — but the provincial representatives themselves originated in the 1853 Act.",
+        "Select (d): The Charter Act of 1853 introduced four provincial representatives from Bengal, Bombay, Madras, and Agra into the expanded legislative council — the first quasi-federal element in India's central governance."
+      ],
+      "upsc_trap_explanation": "Students who study the 1833 Act's centralization of legislative power may conflate it with the introduction of provincial representatives. The confusion: 1833 centralized power (removing provincial legislative authority) while 1853 then introduced provincial representation into that central body. The two acts moved in opposite directions — centralization in 1833, quasi-federal representation in 1853 — a counterintuitive but crucial distinction.",
+      "final_explanation": "This scenario describes a constitutional innovation introducing provincial voices into India's central legislative body for the first time — an early quasi-federal seed.\n\n• Option (a) — Incorrect: The Regulating Act 1773 established the Governor-General of Bengal — a purely executive creation with no provincial representative element.\n• Option (b) — Incorrect: The 1833 Act centralized legislative authority by stripping Presidencies of their independent legislative powers — the opposite of introducing provincial representation into the centre.\n• Option (c) — Incorrect: The Indian Councils Act 1861 expanded and formalized the legislative council but built upon the 1853 structure — it did not originate the provincial representative concept.\n• Option (d) — Correct: The Charter Act of 1853 introduced four representatives from the provincial governments of Bengal, Bombay, Madras, and Agra into the expanded legislative council — the first formal mechanism for provincial input into central legislation.\n\nValue Addition:\n• The 1853 quasi-federal seed flowered into the Indian Councils Act 1861's structured legislative council.\n• The Morley-Minto Reforms (1909) later introduced elected representation — a much larger step beyond 1853's nominated provincial representatives.\n• The interplay between centralization (1833) and quasi-federal representation (1853) reflects a tension in British India's constitutional evolution."
+    },
+    "hi": {
+      "display_text": "एक संवैधानिक इतिहासकार का तर्क है कि एक विशेष चार्टर अधिनियम ने ब्रिटिश भारत के शासन में पहला अर्ध-संघीय तत्व पेश किया, जिसमें औपचारिक रूप से प्रांतीय सरकारों के नामित प्रतिनिधियों को केंद्रीय विधायी निकाय में शामिल किया गया। इसका अर्थ यह था कि पहली बार केंद्र में विचार-विमर्श की प्रक्रिया में बंगाल, बॉम्बे, मद्रास और आगरा की प्रमुख प्रांतीय प्रशासनिक इकाइयों की आवाज़ें प्रतिबिंबित हुईं। इतिहासकार किस चार्टर अधिनियम या कानून का उल्लेख कर रहा है?\n\n(a) 1773 का विनियमन अधिनियम, जिसने प्रमुख प्रेसिडेंसी से सलाहकार प्रतिनिधियों के साथ गवर्नर-जनरल-इन-काउंसिल की स्थापना की\n(b) 1833 का चार्टर अधिनियम, जिसने विधायी शक्ति को केंद्रीकृत किया लेकिन निर्वाचित प्रेसिडेंसी प्रतिनिधियों के माध्यम से प्रांतीय आवाज़ें शामिल कीं\n(c) 1861 का भारतीय परिषद अधिनियम, जिसने पहली बार प्रांतीय नामित प्रतिनिधियों को केंद्रीय विधायी परिषद में शामिल किया\n(d) 1853 का चार्टर अधिनियम, जिसने छह नए विधायी सदस्यों के साथ-साथ विस्तारित विधायी परिषद में चार प्रांतीय प्रतिनिधि जोड़े",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know 1833 Act centralized legislative power may attribute the quasi-federal element to 1833, not realizing provincial representatives came only in 1853.",
+      "elimination_logic": [
+        "(a) को निरस्त करें — 1773 का विनियमन अधिनियम (Regulating Act) बंगाल के गवर्नर-जनरल की स्थापना करता है — इसमें प्रांतीय विधायी प्रतिनिधि शामिल नहीं थे।",
+        "(b) को निरस्त करें — 1833 का अधिनियम संसदीय शक्ति को केंद्रीकृत करता है और प्रेसिडेंसी की विधायी शक्तियों को समाप्त करता है — इसमें प्रांतीय प्रतिनिधि केंद्रीय निकाय में शामिल नहीं किए गए।",
+        "(c) को निरस्त करें — 1861 का भारतीय परिषद अधिनियम 1853 के नवाचार पर आधारित है — लेकिन प्रांतीय प्रतिनिधि स्वयं 1853 के अधिनियम में उत्पन्न हुए थे।",
+        "(d) को चुनें — 1853 के चार्टर अधिनियम ने बंगाल, बॉम्बे, मद्रास और आगरा के चार प्रांतीय प्रतिनिधियों को विस्तारित विधायी परिषद में शामिल किया — जो भारत के केंद्रीय शासन में पहला अर्ध-संघीय तत्व था।"
+      ],
+      "upsc_trap_explanation": "जो छात्र 1833 के अधिनियम द्वारा संसदीय शक्ति के केंद्रीकरण को पढ़ते हैं, वे इसे प्रांतीय प्रतिनिधियों के परिचय के साथ भ्रमित कर सकते हैं। भ्रम यह है कि 1833 ने शक्ति केंद्रीकृत की (प्रांतीय विधायी अधिकार हटाए) जबकि 1853 ने उस केंद्रीय निकाय में प्रांतीय प्रतिनिधित्व शुरू किया। ये दोनों अधिनियम विपरीत दिशा में गए — 1833 में केंद्रीकरण, 1853 में अर्ध-संघीय प्रतिनिधित्व — जो एक विरोधाभासी लेकिन महत्वपूर्ण भेद है।",
+      "final_explanation": "यह परिदृश्य एक संवैधानिक नवाचार का वर्णन करता है जिसने पहली बार भारत के केंद्रीय विधायी निकाय में प्रांतीय आवाज़ों को शामिल किया — एक प्रारंभिक अर्ध-संघीय बीज।\n\n• विकल्प (a) — गलत: 1773 का विनियमन अधिनियम बंगाल के गवर्नर-जनरल की स्थापना करता है — जो केवल कार्यकारी था और इसमें प्रांतीय प्रतिनिधि तत्व नहीं था।\n• विकल्प (b) — गलत: 1833 का अधिनियम संसदीय अधिकारों को केंद्रीकृत करता है और प्रेसिडेंसी की स्वतंत्र विधायी शक्तियों को समाप्त करता है — यह केंद्रीय निकाय में प्रांतीय प्रतिनिधित्व शुरू करने के विपरीत है।\n• विकल्प (c) — गलत: 1861 का भारतीय परिषद अधिनियम विधायी परिषद का विस्तार और औपचारिककरण करता है लेकिन यह 1853 की संरचना पर आधारित है — प्रांतीय प्रतिनिधि अवधारणा की उत्पत्ति नहीं करता।\n• विकल्प (d) — सही: 1853 का चार्टर अधिनियम बंगाल, बॉम्बे, मद्रास और आगरा के प्रांतीय सरकारों के चार प्रतिनिधियों को विस्तारित विधायी परिषद में शामिल करता है — जो केंद्रीय विधायिका में प्रांतीय इनपुट के लिए पहला औपचारिक तंत्र था।\n\nमूल्य संवर्धन:\n• 1853 का अर्ध-संघीय बीज 1861 के भारतीय परिषद अधिनियम के संरचित विधायी परिषद में विकसित हुआ।\n• मोर्ले-मिंटो सुधार (1909) ने बाद में निर्वाचित प्रतिनिधित्व शुरू किया — जो 1853 के नामित प्रांतीय प्रतिनिधियों से कहीं बड़ा कदम था।\n• केंद्रीकरण (1833) और अर्ध-संघीय प्रतिनिधित्व (1853) के बीच अंतःक्रिया ब्रिटिश भारत के संवैधानिक विकास में एक तनाव को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "f5524646-31f6-436c-ba71-187b54a038f7",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "The 'No Renewal Period' Clause of 1853 and Its Signaling Effect",
+        "India as a British Territory: The 1833 Declaration"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "1857 Revolt — political trigger vs. constitutional precondition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the constitutional transition from East India Company rule to Crown rule:\n\n1. The open-ended nature of the 1853 Charter Act — its omission of a fixed renewal period — removed the constitutional barrier that would otherwise have required Parliament to wait for a fixed term before reviewing EIC's authority.\n2. The 1857 Revolt was the direct constitutional cause of the end of EIC rule, while the 1853 Charter Act merely represented an administrative overhaul with no bearing on the timing of the transfer of power.\n3. The Government of India Act 1858 transferred EIC's administrative authority to the British Crown — an action that the 1833 Act's 'trust doctrine' had constitutionally anticipated, though not caused.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The open-ended nature of the 1853 Charter Act — its omission of a fixed renewal period — removed the constitutional barrier that would otherwise have required Parliament to wait for a fixed term before reviewing EIC's authority.",
+          "verdict": "Correct",
+          "reason": "By not specifying a new 20-year period (unlike 1793, 1813, and 1833), the 1853 Act left Parliament free to revoke or review EIC's charter at any time — a constitutional precondition for the 1858 transfer."
+        },
+        {
+          "statement": "The 1857 Revolt was the direct constitutional cause of the end of EIC rule, while the 1853 Charter Act merely represented an administrative overhaul with no bearing on the timing of the transfer of power.",
+          "verdict": "Incorrect",
+          "reason": "The 1853 Act's open-ended charter was constitutionally significant — it removed the timeline barrier to EIC revocation. The 1857 Revolt was the political trigger but operated within a constitutional framework that the 1853 Act had structurally prepared. Saying 1853 had 'no bearing' on the transfer is incorrect."
+        },
+        {
+          "statement": "The Government of India Act 1858 transferred EIC's administrative authority to the British Crown — an action that the 1833 Act's 'trust doctrine' had constitutionally anticipated, though not caused.",
+          "verdict": "Correct",
+          "reason": "The 1833 Act declared EIC held territories 'in trust for His Majesty', establishing the legal basis for Crown sovereignty — the 1858 transfer formalized what the 1833 Act had constitutionally anticipated, even though the 1857 political crisis was the immediate cause."
+        }
+      ],
+      "strong_distractor": "c — Option (c) attracts students who accept Statement 2 at face value, not recognizing that characterizing 1853 as having 'no bearing' on the transfer timeline is historically inaccurate.",
+      "elimination_logic": [
+        "Statement 1 is correct — the open-ended 1853 charter removed the 20-year wait barrier; this is documented constitutional history.",
+        "Statement 2 is incorrect — calling 1853 as having 'no bearing' on the timing is factually wrong; the open-ended charter was the constitutional mechanism that enabled the 1858 transfer.",
+        "Statement 3 is correct — the 1833 trust doctrine anticipated Crown sovereignty without causing the 1858 transfer; a nuanced but accurate characterization.",
+        "Statements 1 and 3 are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 employs a reversed-causation trap by presenting the 1857 Revolt as 'the direct constitutional cause' and erasing 1853's structural role. Students who know the 1857 Revolt triggered the 1858 transfer readily accept this framing, not recognizing that 'constitutional cause' and 'political trigger' are different things. The 1853 Act provided the constitutional mechanism; the 1857 Revolt provided the political motivation to use it.",
+      "final_explanation": "The transition from EIC rule to Crown rule in 1858 was not a single-cause event — it resulted from the intersection of constitutional preparation (1833 trust doctrine, 1853 open-ended charter) and political crisis (1857 Revolt).\n\n• Statement 1 — Correct: The 1853 Act's open-ended charter removed the 20-year timeline that had previously guaranteed EIC's continuity. Parliament could now act without waiting for a renewal date.\n• Statement 2 — Incorrect: Describing 1853 as having 'no bearing' on the transfer timing is historically inaccurate. The 1853 Act structurally enabled the 1858 transfer; the 1857 Revolt provided the political will to execute it.\n• Statement 3 — Correct: The 1833 trust declaration legally positioned EIC as an agent of the Crown, not an independent sovereign — the 1858 Act formalized this legal reality, which had been constitutionally anticipated since 1833.\n\nValue Addition:\n• Lord Canning was simultaneously the last Governor-General of India and first Viceroy — the transition figure of 1858.\n• The Secretary of State for India (replacing the Board of Control) and the India Council (replacing the Court of Directors) were created under the 1858 Government of India Act.\n• The 1858 Queen's Proclamation promised non-interference in Indian religious practices — a response to the 1857 context."
+    },
+    "hi": {
+      "display_text": "ईस्ट इंडिया कंपनी शासन से क्राउन शासन में संवैधानिक संक्रमण के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. 1853 के चार्टर अधिनियम की खुली अवधि — जिसमें निश्चित नवीनीकरण अवधि का अभाव था — उस संवैधानिक बाधा को हटा दिया जो अन्यथा संसद को ईस्ट इंडिया कंपनी के अधिकार की समीक्षा के लिए निश्चित अवधि तक प्रतीक्षा करने के लिए बाध्य करती।\n2. 1857 का विद्रोह ईस्ट इंडिया कंपनी शासन के अंत का प्रत्यक्ष संवैधानिक कारण था, जबकि 1853 का चार्टर अधिनियम केवल एक प्रशासनिक पुनर्गठन था जिसका सत्ता हस्तांतरण की समयावधि पर कोई प्रभाव नहीं था।\n3. 1858 का भारत सरकार अधिनियम ईस्ट इंडिया कंपनी के प्रशासनिक अधिकार को ब्रिटिश क्राउन को स्थानांतरित करता है — ऐसा कार्य जिसे 1833 अधिनियम के 'ट्रस्ट सिद्धांत' ने संवैधानिक रूप से पूर्वानुमानित किया था, हालांकि यह कारण नहीं था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "1853 के चार्टर अधिनियम की खुली अवधि — जिसमें निश्चित नवीनीकरण अवधि का अभाव था — उस संवैधानिक बाधा को हटा दिया जो अन्यथा संसद को ईस्ट इंडिया कंपनी के अधिकार की समीक्षा के लिए निश्चित अवधि तक प्रतीक्षा करने के लिए बाध्य करती।",
+          "verdict": "सही",
+          "reason": "1793, 1813, और 1833 के विपरीत, 1853 अधिनियम ने कोई नया 20-वर्षीय अवधि निर्दिष्ट नहीं किया, जिससे संसद को किसी भी समय कंपनी के चार्टर को रद्द या समीक्षा करने की स्वतंत्रता मिली — जो 1858 के हस्तांतरण के लिए एक संवैधानिक पूर्वशर्त थी।"
+        },
+        {
+          "statement": "1857 का विद्रोह ईस्ट इंडिया कंपनी शासन के अंत का प्रत्यक्ष संवैधानिक कारण था, जबकि 1853 का चार्टर अधिनियम केवल एक प्रशासनिक पुनर्गठन था जिसका सत्ता हस्तांतरण की समयावधि पर कोई प्रभाव नहीं था।",
+          "verdict": "गलत",
+          "reason": "1853 अधिनियम का खुला चार्टर संवैधानिक रूप से महत्वपूर्ण था — इसने कंपनी के रद्दीकरण के लिए समय सीमा बाधा को हटा दिया। 1857 का विद्रोह राजनीतिक ट्रिगर था लेकिन यह 1853 अधिनियम द्वारा संरचनात्मक रूप से तैयार संवैधानिक ढांचे के भीतर कार्य करता था। यह कहना कि 1853 का सत्ता हस्तांतरण पर 'कोई प्रभाव' नहीं था, गलत है।"
+        },
+        {
+          "statement": "1858 का भारत सरकार अधिनियम ईस्ट इंडिया कंपनी के प्रशासनिक अधिकार को ब्रिटिश क्राउन को स्थानांतरित करता है — ऐसा कार्य जिसे 1833 अधिनियम के 'ट्रस्ट सिद्धांत' ने संवैधानिक रूप से पूर्वानुमानित किया था, हालांकि यह कारण नहीं था।",
+          "verdict": "सही",
+          "reason": "1833 अधिनियम ने घोषित किया कि कंपनी 'His Majesty के लिए ट्रस्ट में' क्षेत्र रखती है, जो क्राउन संप्रभुता के लिए कानूनी आधार स्थापित करता है — 1858 का हस्तांतरण उस संवैधानिक पूर्वानुमान को औपचारिक रूप देता है, भले ही 1857 का राजनीतिक संकट तत्काल कारण था।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) उन छात्रों को आकर्षित करता है जो कथन 2 को सतही रूप से स्वीकार करते हैं, यह न पहचानते हुए कि 1853 को सत्ता हस्तांतरण की समयावधि पर 'कोई प्रभाव नहीं' कहना ऐतिहासिक रूप से गलत है।",
+      "elimination_logic": [
+        "कथन 1 सही है — 1853 का खुला चार्टर 20-वर्ष की प्रतीक्षा बाधा को हटा देता है; यह संवैधानिक इतिहास में दर्ज है।",
+        "कथन 2 गलत है — 1853 को सत्ता हस्तांतरण की समयावधि पर 'कोई प्रभाव नहीं' कहना तथ्यात्मक रूप से गलत है; खुला चार्टर 1858 के हस्तांतरण को सक्षम करने वाला संवैधानिक तंत्र था।",
+        "कथन 3 सही है — 1833 का ट्रस्ट सिद्धांत क्राउन संप्रभुता की पूर्वधारणा करता है बिना 1858 के हस्तांतरण का कारण बने; एक सूक्ष्म लेकिन सटीक वर्णन।",
+        "कथन 1 और 3 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक उल्टा-कारण जाल का उपयोग करता है जिसमें 1857 के विद्रोह को 'प्रत्यक्ष संवैधानिक कारण' बताया गया है और 1853 की संरचनात्मक भूमिका को मिटा दिया गया है। जो छात्र जानते हैं कि 1857 का विद्रोह 1858 के हस्तांतरण को प्रेरित करता है, वे इस प्रस्तुति को सहजता से स्वीकार कर लेते हैं, यह न समझते हुए कि 'संवैधानिक कारण' और 'राजनीतिक ट्रिगर' अलग-अलग हैं। 1853 अधिनियम ने संवैधानिक तंत्र प्रदान किया; 1857 का विद्रोह इसे लागू करने की राजनीतिक प्रेरणा था।",
+      "final_explanation": "1858 में ईस्ट इंडिया कंपनी शासन से क्राउन शासन में संक्रमण एक एकल कारण वाली घटना नहीं थी — यह संवैधानिक तैयारी (1833 ट्रस्ट सिद्धांत, 1853 खुला चार्टर) और राजनीतिक संकट (1857 विद्रोह) के संगम का परिणाम था।\n\n• कथन 1 — सही: 1853 अधिनियम का खुला चार्टर 20-वर्षीय समय सीमा को हटा देता है जो पहले कंपनी की निरंतरता की गारंटी देता था। संसद अब नवीनीकरण तिथि की प्रतीक्षा किए बिना कार्य कर सकता था।\n• कथन 2 — गलत: 1853 को सत्ता हस्तांतरण की समयावधि पर 'कोई प्रभाव नहीं' कहना ऐतिहासिक रूप से गलत है। 1853 अधिनियम ने 1858 के हस्तांतरण को संरचनात्मक रूप से सक्षम किया; 1857 विद्रोह ने इसे लागू करने की राजनीतिक इच्छा प्रदान की।\n• कथन 3 — सही: 1833 का ट्रस्ट घोषणा कानूनी रूप से कंपनी को क्राउन का एजेंट बनाता है, स्वतंत्र संप्रभु नहीं — 1858 अधिनियम ने इस कानूनी वास्तविकता को औपचारिक रूप दिया, जिसे 1833 से संवैधानिक रूप से पूर्वानुमानित किया गया था।\n\nमूल्य संवर्धन:\n• लॉर्ड कैनिंग एक साथ भारत के अंतिम गवर्नर-जनरल और पहले वाइसराय थे — 1858 के संक्रमण के प्रतीक।\n• भारत सचिव (जो बोर्ड ऑफ कंट्रोल की जगह लेता है) और इंडिया काउंसिल (जो कोर्ट ऑफ डायरेक्टर्स की जगह लेता है) 1858 के भारत सरकार अधिनियम के तहत बनाए गए।\n• 1858 की क्वीन की घोषणा ने भारतीय धार्मिक प्रथाओं में गैर-हस्तक्षेप का वादा किया — 1857 के संदर्भ में एक प्रतिक्रिया।"
+    }
+  },
+  {
+    "uuid": "7ed15b8d-c801-40d3-9829-baec3fef1f8c",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Press and Publications: Shift in Policy Context Across Charter Acts",
+        "Parliamentary Oversight and Select Committee: 1853 Act's Democratic Innovation"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "1853 Select Committee — Indian witnesses, not representatives",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The process preceding the Charter Act of 1853 included an important innovation in British India's constitutional history that concerned Indian participation in legislative deliberations. Which of the following correctly describes this innovation?\n\n(a) A Parliamentary Select Committee formally recorded testimony from Indian civilians, including figures like Jagannath Shankarseth, marking the first time Indian voices were heard in British legislative proceedings\n(b) The 1853 Charter Act process introduced the first Indian elected representative into the Parliamentary Select Committee reviewing EIC's administration\n(c) The Parliamentary Select Committee restricted its evidence collection to serving officers of the East India Company, ensuring administrative expertise guided the legislative process\n(d) The Charter Act of 1853 directly legislated on press freedom in British India, allowing Indian newspapers to report on legislative proceedings without prior censorship",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know the 1853 Act was more representative than its predecessors may accept the fabricated 'first Indian elected representative' claim.",
+      "elimination_logic": [
+        "Eliminate (b): Indians had no elected representation in the 1853 Parliamentary Select Committee — this is a plausible-fabrication; elected Indian representation came only with Morley-Minto Reforms 1909.",
+        "Eliminate (c): The 1853 Act's Select Committee did NOT restrict testimony to EIC servants — it heard from Indian civilians including merchants and public figures.",
+        "Eliminate (d): The press provisions were not directly legislated in the Charter Acts — Metcalfe's Press Act (1835) was a separate regulation under the administrative climate of the 1833 era.",
+        "Select (a): The 1853 Parliamentary Select Committee formally recorded Indian testimony for the first time in British legislative proceedings — Jagannath Shankarseth was among the notable Indian witnesses."
+      ],
+      "upsc_trap_explanation": "The 1853 Select Committee is often romanticized as the beginning of Indian legislative participation. The precise fact is that Indians appeared as witnesses — not as members, not as elected representatives. Option (b) introduces 'first Indian elected representative' which sounds like a natural progression but is a fabricated claim. Elected Indian representation in British legislative processes began with the Indian Councils Act 1892 and was significantly expanded under Morley-Minto Reforms 1909.",
+      "final_explanation": "The Parliamentary Select Committee that preceded the Charter Act of 1853 was a constitutional milestone — the first time Indian voices were formally recorded in British legislative proceedings.\n\n• Option (a) — Correct: The 1853 Select Committee formally heard testimony from Indians including Jagannath Shankarseth, a Bombay merchant and philanthropist — the first formal Indian input into British legislative deliberations.\n• Option (b) — Incorrect: Indians had no elected representation in the committee — they appeared as witnesses only. Elected Indian representation in legislative bodies began much later (Indian Councils Act 1892, significantly expanded 1909).\n• Option (c) — Incorrect: The committee was not restricted to EIC servants — it heard from Indian civilians and public figures, reflecting a broadening of the consultative process.\n• Option (d) — Incorrect: The Charter Acts did not directly legislate on press freedom — Metcalfe's Press Act (1835) was a separate gubernatorial regulation. The reform climate of the Charter Act era influenced press policy indirectly.\n\nValue Addition:\n• Jagannath Shankarseth co-founded the first school in Bombay and was a significant social reformer and public intellectual.\n• The Indian Councils Act 1861 built directly upon the 1853 reforms — incorporating insights from the Select Committee process.\n• True elected representation for Indians began modestly with the Indian Councils Act 1892 and grew substantially under the Morley-Minto Reforms (Government of India Act 1909)."
+    },
+    "hi": {
+      "display_text": "1853 के चार्टर अधिनियम से पहले की प्रक्रिया में ब्रिटिश भारत के संवैधानिक इतिहास में एक महत्वपूर्ण नवाचार था जो भारतीयों की विधायी विचार-विमर्श में भागीदारी से संबंधित था। निम्नलिखित में से कौन-सा इस नवाचार का सही वर्णन करता है?\n\n(a) एक संसदीय चयन समिति ने औपचारिक रूप से भारतीय नागरिकों से गवाही दर्ज की, जिनमें जगन्नाथ शंकरसेठ जैसे व्यक्ति शामिल थे, जो ब्रिटिश विधायी कार्यवाही में पहली बार भारतीय आवाज़ों को सुनने का संकेत था\n(b) 1853 के चार्टर अधिनियम की प्रक्रिया ने ईस्ट इंडिया कंपनी के प्रशासन की समीक्षा करने वाली संसदीय चयन समिति में पहला भारतीय निर्वाचित प्रतिनिधि प्रस्तुत किया\n(c) संसदीय चयन समिति ने अपनी गवाही केवल ईस्ट इंडिया कंपनी के सेवा में अधिकारीयों तक सीमित रखी, जिससे प्रशासनिक विशेषज्ञता विधायी प्रक्रिया का मार्गदर्शन करती रही\n(d) 1853 के चार्टर अधिनियम ने ब्रिटिश भारत में प्रेस स्वतंत्रता पर सीधे कानून बनाया, जिससे भारतीय समाचार पत्र बिना पूर्व सेंसरशिप के विधायी कार्यवाही की रिपोर्टिंग कर सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know the 1853 Act was more representative than its predecessors may accept the fabricated 'first Indian elected representative' claim.",
+      "elimination_logic": [
+        "(b) को निरस्त करें — 1853 के संसदीय चयन समिति में भारतीयों का निर्वाचित प्रतिनिधित्व नहीं था — यह एक संभावित मिथ्या दावा है; निर्वाचित भारतीय प्रतिनिधित्व केवल मोर्ले-मिंटो सुधार 1909 के साथ आया।",
+        "(c) को निरस्त करें — 1853 के अधिनियम की चयन समिति ने केवल ईस्ट इंडिया कंपनी के कर्मचारियों से गवाही सीमित नहीं की — उसने भारतीय नागरिकों सहित व्यापारियों और सार्वजनिक हस्तियों से भी सुना।",
+        "(d) को निरस्त करें — प्रेस संबंधी प्रावधान सीधे चार्टर अधिनियमों में विधायित नहीं थे — मेटकैल्फ का प्रेस अधिनियम (1835) 1833 के प्रशासनिक माहौल के तहत एक अलग नियम था।",
+        "(a) को चुनें — 1853 की संसदीय चयन समिति ने पहली बार ब्रिटिश विधायी कार्यवाही में औपचारिक रूप से भारतीय गवाही दर्ज की — जगन्नाथ शंकरसेठ जैसे प्रमुख भारतीय गवाह इसमें शामिल थे।"
+      ],
+      "upsc_trap_explanation": "1853 की चयन समिति को अक्सर भारतीय विधायी भागीदारी की शुरुआत के रूप में रोमांटिक रूप में देखा जाता है। सटीक तथ्य यह है कि भारतीय गवाह के रूप में उपस्थित हुए थे — सदस्य या निर्वाचित प्रतिनिधि के रूप में नहीं। विकल्प (b) में 'पहला भारतीय निर्वाचित प्रतिनिधि' शामिल है जो स्वाभाविक प्रगति जैसा लगता है पर यह एक मिथ्या दावा है। ब्रिटिश विधायी प्रक्रियाओं में निर्वाचित भारतीय प्रतिनिधित्व भारतीय परिषद अधिनियम 1892 से शुरू हुआ और मोर्ले-मिंटो सुधार 1909 के तहत काफी बढ़ा।",
+      "final_explanation": "चार्टर अधिनियम 1853 से पहले की संसदीय चयन समिति एक संवैधानिक मील का पत्थर थी — पहली बार ब्रिटिश विधायी कार्यवाही में औपचारिक रूप से भारतीय आवाजें दर्ज हुईं।\n\n• विकल्प (a) — सही: 1853 की चयन समिति ने भारतीयों से गवाही औपचारिक रूप से सुनी, जिनमें बंबई के व्यापारी और समाजसेवी जगन्नाथ शंकरसेठ भी थे — ब्रिटिश विधायी विचार-विमर्श में पहली औपचारिक भारतीय भागीदारी।\n• विकल्प (b) — गलत: समिति में भारतीयों का निर्वाचित प्रतिनिधित्व नहीं था — वे केवल गवाह के रूप में उपस्थित हुए। निर्वाचित भारतीय प्रतिनिधित्व बाद में (भारतीय परिषद अधिनियम 1892, 1909 के मोर्ले-मिंटो सुधार) शुरू हुआ।\n• विकल्प (c) — गलत: समिति केवल ईस्ट इंडिया कंपनी के कर्मचारियों तक सीमित नहीं थी — उसने भारतीय नागरिकों और सार्वजनिक हस्तियों से भी सुना, जो परामर्श प्रक्रिया के विस्तार को दर्शाता है।\n• विकल्प (d) — गलत: चार्टर अधिनियमों ने प्रेस स्वतंत्रता पर सीधे कानून नहीं बनाया — मेटकैल्फ का प्रेस अधिनियम (1835) एक अलग गवर्नर का नियम था। चार्टर अधिनियम युग के सुधार माहौल ने अप्रत्यक्ष रूप से प्रेस नीति को प्रभावित किया।\n\nमूल्यवर्धन:\n• जगन्नाथ शंकरसेठ ने बंबई में पहला स्कूल सह-स्थापित किया और वे एक महत्वपूर्ण सामाजिक सुधारक एवं सार्वजनिक बुद्धिजीवी थे।\n• भारतीय परिषद अधिनियम 1861 ने सीधे 1853 के सुधारों पर आधारित होकर चयन समिति की प्रक्रियाओं से अंतर्दृष्टि ली।\n• भारतीयों के लिए वास्तविक निर्वाचित प्रतिनिधित्व भारतीय परिषद अधिनियम 1892 से मामूली रूप से शुरू हुआ और मोर्ले-मिंटो सुधार (भारत सरकार अधिनियम 1909) के तहत काफी बढ़ा।"
+    }
+  },
+  {
+    "uuid": "31a639c9-35a4-4292-86c6-cc799d3ee7c7",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Open Competition for Civil Services: Charter Act 1853",
+        "Covenanted vs. Uncovenanted Civil Services: 1833 Act's Role"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "scope-extension",
+      "concept_anchor": "1853 civil service exam — London venue as systemic barrier",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Charter Act of 1853 introduced open competitive examination for the Covenanted Civil Service, replacing the East India Company's system of nominating candidates through patronage.\n\nReason (R): This reform was genuinely accessible to Indian candidates because the competitive examinations were held across British India, allowing qualified Indians to compete without the burden of travelling to England.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The 1853 Act did introduce open competitive examination for the Covenanted Civil Service — this is documented; merit replaced patronage as the formal criterion.",
+        "Step 2: Is Reason (R) correct? — No. The examination was held exclusively in London, not 'across British India' as R implies. The maximum age for candidates was 23 (later reduced to 19), and the syllabus favoured classical European education. These were systemic barriers — Indians could and did appear (Satyendranath Tagore, 1863), but the London venue was a deliberate practical barrier.",
+        "Step 3: Since R is incorrect (it falsely states the exam was held across British India), we do not need to assess causality.",
+        "A is correct, R is incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The Reason in this question contains a scope-extension error: stating the examination was conducted 'across British India' transforms what was a London-only examination into an accessible India-wide system. Students who know the 1853 Act introduced competitive examination but haven't studied the venue restriction will accept R as true. This is a precision trap — the nominal openness of the examination masks its practical exclusivity through the venue choice.",
+      "final_explanation": "The Charter Act of 1853 introduced competitive examination for the Covenanted Civil Service — a landmark reform in principle, but one that contained a structural exclusion in practice.\n\n• Assertion (A) — Correct: The 1853 Act replaced the EIC's patronage-based nomination system with open competitive examination, formally ending the Court of Directors' power to nominate civil servants.\n• Reason (R) — Incorrect: The examination was NOT held across British India. It was conducted exclusively in London, with a syllabus weighted toward classical English education, Latin, Greek, and European history. This made it practically inaccessible to most Indian candidates despite their nominal eligibility. The venue was a deliberate systemic barrier — not an inadvertent administrative choice.\n\nValue Addition:\n• Satyendranath Tagore (1863) overcame the London barrier to become the first Indian in the Covenanted Civil Service.\n• The age limit was reduced from 23 to 19 in 1878 — further disadvantaging Indian candidates who needed additional travel and preparation time.\n• The ICS examination was held simultaneously in India and England only from 1922 — following sustained nationalist campaigns."
+    },
+    "hi": {
+      "display_text": "कथन (A): 1853 का चार्टर अधिनियम कोवेनेंटेड सिविल सेवा के लिए खुली प्रतियोगी परीक्षा शुरू करता है, जिसने ईस्ट इंडिया कंपनी की संरक्षकवाद के माध्यम से उम्मीदवारों के नामांकन की प्रणाली को प्रतिस्थापित किया।\n\nकारण (R): यह सुधार भारतीय उम्मीदवारों के लिए वास्तव में सुलभ था क्योंकि प्रतियोगी परीक्षाएं पूरे ब्रिटिश भारत में आयोजित की जाती थीं, जिससे योग्य भारतीय बिना इंग्लैंड यात्रा के प्रतिस्पर्धा कर सकते थे।\n\n(a) A और R दोनों सही हैं तथा R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं परंतु R, A की सही व्याख्या नहीं है\n(c) A सही है परंतु R सही नहीं है\n(d) A सही नहीं है परंतु R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। 1853 के अधिनियम ने कोवेनेंटेड सिविल सेवा के लिए खुला प्रतियोगी परीक्षा शुरू किया — यह प्रलेखित है; मेरिट ने संरक्षकवाद की जगह औपचारिक मानदंड के रूप में ली।",
+        "चरण 2: क्या कारण (R) सही है? — नहीं। परीक्षा केवल लंदन में आयोजित की गई थी, 'ब्रिटिश भारत में' नहीं जैसा कि R बताता है। उम्मीदवारों की अधिकतम आयु 23 थी (बाद में 19 कर दी गई), और पाठ्यक्रम शास्त्रीय यूरोपीय शिक्षा के पक्ष में था। ये प्रणालीगत बाधाएं थीं — भारतीय उम्मीदवार उपस्थित हुए (सत्येंद्रनाथ टैगोर, 1863), लेकिन लंदन का स्थान एक जानबूझकर व्यावहारिक बाधा था।",
+        "चरण 3: चूंकि R गलत है (यह गलत रूप से कहता है कि परीक्षा ब्रिटिश भारत में हुई), इसलिए हमें कारणात्मकता का मूल्यांकन करने की आवश्यकता नहीं है।",
+        "A सही है, R गलत है — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "इस प्रश्न में कारण में एक क्षेत्र-प्रसार त्रुटि है: यह कहकर कि परीक्षा 'ब्रिटिश भारत में' आयोजित हुई, एक केवल लंदन में आयोजित परीक्षा को भारत-व्यापी सुलभ प्रणाली में बदल दिया गया है। जो छात्र जानते हैं कि 1853 के अधिनियम ने प्रतियोगी परीक्षा शुरू की लेकिन स्थान की सीमा का अध्ययन नहीं किया, वे R को सही मान लेंगे। यह एक सटीकता जाल है — परीक्षा की नाममात्र खुलापन व्यावहारिक रूप से स्थान के चयन के कारण विशिष्टता को छुपाता है।",
+      "final_explanation": "1853 का चार्टर अधिनियम कोवेनेंटेड सिविल सेवा के लिए प्रतियोगी परीक्षा शुरू करने वाला एक महत्वपूर्ण सुधार था — सिद्धांत में एक मील का पत्थर, लेकिन व्यवहार में एक संरचनात्मक बहिष्कार था।\n\n• कथन (A) — सही: 1853 के अधिनियम ने ईस्ट इंडिया कंपनी की संरक्षकवाद-आधारित नामांकन प्रणाली को प्रतिस्थापित कर खुली प्रतियोगी परीक्षा शुरू की, जिससे कोर्ट ऑफ डायरेक्टर्स की सिविल सेवकों को नामित करने की शक्ति समाप्त हुई।\n• कारण (R) — गलत: परीक्षा ब्रिटिश भारत में आयोजित नहीं हुई। यह केवल लंदन में आयोजित हुई, जिसमें पाठ्यक्रम शास्त्रीय अंग्रेजी शिक्षा, लैटिन, ग्रीक और यूरोपीय इतिहास पर आधारित था। इससे अधिकांश भारतीय उम्मीदवारों के लिए व्यावहारिक रूप से पहुंच असंभव हो गई, भले ही वे नाममात्र पात्र थे। स्थान एक जानबूझकर प्रणालीगत बाधा था — कोई आकस्मिक प्रशासनिक निर्णय नहीं।\n\nमूल्यवर्धन:\n• सत्येंद्रनाथ टैगोर (1863) ने लंदन की बाधा को पार कर कोवेनेंटेड सिविल सेवा में पहला भारतीय बनने का गौरव प्राप्त किया।\n• आयु सीमा 1878 में 23 से घटाकर 19 कर दी गई — जिससे भारतीय उम्मीदवारों को अतिरिक्त यात्रा और तैयारी के लिए कम समय मिला।\n• ICS परीक्षा भारत और इंग्लैंड दोनों में 1922 से ही एक साथ आयोजित होने लगी — लगातार राष्ट्रीयतावादी अभियानों के बाद।"
+    }
+  },
+  {
+    "uuid": "bd1010c2-8335-4d75-b89c-a920b5cdaab7",
+    "meta": {
+      "subject": "Modern History",
+      "topic": "Constitutional Developments",
+      "sub_topic": "Charter Acts — 1813, 1833, 1853",
+      "concepts_used": [
+        "Comparison Across All Three Acts: Key 'Firsts' and UPSC Traps",
+        "Christian Missionaries and the 'Pious Clause' of 1813",
+        "Covenanted vs. Uncovenanted Civil Services: 1833 Act's Role",
+        "Legislative Council Expansion: Charter Act 1853 and the Seed of Legislature",
+        "Education Fund: The Rs. 1 Lakh Provision of 1813"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "1833 Act provisions — Equality Clause is correct; Wood's Dispatch is not",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are provisions or direct innovations of the Charter Act of 1833. Which one does NOT belong to this group?\n\n(a) Introduction of the 'Equality Clause' declaring that no Indian should be excluded from EIC office on grounds of religion, birth, or colour\n(b) Addition of six new members to the Governor-General's Council specifically for legislative business, formally separating legislative from executive functions\n(c) Vesting exclusive legislative authority for all British Indian territories in the Governor-General-in-Council, ending separate Presidency legislation\n(d) Addition of a Law Member to the Governor-General's Executive Council mandated to oversee law codification",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because 'single legislature for all British India' is a 1833 provision, and students may confuse it with 1853's legislative council expansion, doubting whether it belongs to 1833.",
+      "elimination_logic": [
+        "Identify provisions that belong to the 1833 Charter Act: (a) Equality Clause — yes, 1833; (c) single legislature for British India — yes, 1833; (d) Law Member in Executive Council — yes, 1833.",
+        "Identify the option that does NOT belong to 1833: (b) six new legislative members — this is the 1853 Act's innovation, not 1833.",
+        "Select option (b) as the odd one out."
+      ],
+      "upsc_trap_explanation": "The 1833 Act did expand the council (adding the Law Member as the fourth member), and the 1853 Act added six legislative members. Students who know both acts reformed the council may accept 'six new legislative members' as a 1833 provision, especially because the Law Member number (four members in 1833) is less memorable than the more dramatic '1853 six new members.' This entity-swap exploits the council reform confusion between the two acts.",
+      "final_explanation": "Three of the four options are provisions of the Charter Act of 1833; one belongs to the Charter Act of 1853.\n\n• Option (a) — 1833 Act: The Equality Clause ('no Indian debarred from any office on grounds of religion, birth, or colour') — a declaratory non-discrimination provision.\n• Option (b) — NOT 1833 Act: Six new members added to the council exclusively for legislative business was a provision of the Charter Act of 1853, not 1833. The 1833 Act added the Law Member (fourth member), not six legislative members.\n• Option (c) — 1833 Act: Vesting exclusive legislative authority in the Governor-General-in-Council for all British India — ending fragmented Presidency legislation.\n• Option (d) — 1833 Act: Adding the Law Member to the Executive Council — first holder was Lord Macaulay, mandated to codify Indian laws.\n\nValue Addition:\n• The 1833 council had four members (including the Law Member); the 1853 expanded it to ten (four original + six new legislative members).\n• The Equality Clause (1833) had no enforcement mechanism — open competition (1853) was the subsequent, if imperfect, practical step.\n• The 'single legislature for British India' principle in 1833 is the foundational constitutional idea behind all subsequent federal legislative structures."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन चार्टर अधिनियम 1833 की व्यवस्थाएँ या प्रत्यक्ष नवाचार हैं। इनमें से कौन-सा इस समूह से संबंधित नहीं है?\n\n(a) 'समानता प्रावधान' की शुरुआत, जिसमें कहा गया कि धर्म, जन्म या रंग के आधार पर किसी भारतीय को ईस्ट इंडिया कंपनी के पद से वंचित नहीं किया जाएगा\n(b) गवर्नर-जनरल की परिषद में छह नए सदस्य जोड़ना, जो विशेष रूप से विधायी कार्यों के लिए थे, जिससे विधायी और कार्यकारी कार्य औपचारिक रूप से अलग हो गए\n(c) पूरे ब्रिटिश भारत के लिए गवर्नर-जनरल-इन-काउंसिल को विशेष विधायी अधिकार देना, जिससे अलग-अलग प्रेसिडेंसी विधान समाप्त हो गया\n(d) कार्यकारी परिषद में एक विधि सदस्य जोड़ना, जिसे कानून संहिताकरण की देखरेख का दायित्व सौंपा गया था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because 'single legislature for all British India' is a 1833 provision, and students may confuse it with 1853's legislative council expansion, doubting whether it belongs to 1833.",
+      "elimination_logic": [
+        "1833 के चार्टर अधिनियम की व्यवस्थाओं की पहचान करें: (a) समानता प्रावधान — हाँ, 1833; (c) पूरे ब्रिटिश भारत के लिए एकल विधानमंडल — हाँ, 1833; (d) कार्यकारी परिषद में विधि सदस्य — हाँ, 1833।",
+        "ऐसा विकल्प पहचानें जो 1833 से संबंधित नहीं है: (b) छह नए विधायी सदस्य — यह 1853 अधिनियम की नवीनता है, 1833 की नहीं।",
+        "असामान्य विकल्प के रूप में (b) को चुनें।"
+      ],
+      "upsc_trap_explanation": "1833 अधिनियम ने परिषद का विस्तार किया (विधि सदस्य को चौथा सदस्य बनाकर), और 1853 अधिनियम ने छह नए विधायी सदस्य जोड़े। जो छात्र दोनों अधिनियमों को जानते हैं वे 'छह नए विधायी सदस्य' को 1833 की व्यवस्था मान सकते हैं, खासकर क्योंकि 1833 में विधि सदस्य की संख्या (चार सदस्य) 1853 के छह नए सदस्यों की तुलना में कम यादगार है। यह भ्रम परिषद सुधार के संदर्भ में दोनों अधिनियमों के बीच भ्रम पैदा करता है।",
+      "final_explanation": "चार विकल्पों में से तीन 1833 के चार्टर अधिनियम की व्यवस्थाएँ हैं; एक 1853 के चार्टर अधिनियम की है।\n\n• विकल्प (a) — 1833 अधिनियम: समानता प्रावधान ('धर्म, जन्म या रंग के आधार पर किसी भारतीय को कंपनी के किसी पद से वंचित नहीं किया जाएगा') — एक घोषणात्मक गैर-भेदभाव प्रावधान।\n• विकल्प (b) — 1833 अधिनियम नहीं: परिषद में केवल विधायी कार्यों के लिए छह नए सदस्य जोड़ना 1853 अधिनियम की व्यवस्था थी, 1833 की नहीं। 1833 अधिनियम ने विधि सदस्य (चौथा सदस्य) जोड़ा था, छह विधायी सदस्य नहीं।\n• विकल्प (c) — 1833 अधिनियम: पूरे ब्रिटिश भारत के लिए गवर्नर-जनरल-इन-काउंसिल को विशेष विधायी अधिकार देना — अलग-अलग प्रेसिडेंसी विधान को समाप्त करना।\n• विकल्प (d) — 1833 अधिनियम: कार्यकारी परिषद में विधि सदस्य जोड़ना — पहला सदस्य लॉर्ड मैकाले था, जिसे भारतीय कानूनों के संहिताकरण का कार्य सौंपा गया था।\n\nमूल्यवर्धन:\n• 1833 की परिषद में चार सदस्य थे (विधि सदस्य सहित); 1853 में इसे दस सदस्य किया गया (मूल चार + छह नए विधायी सदस्य)।\n• समानता प्रावधान (1833) के पास कोई प्रवर्तन तंत्र नहीं था — खुला प्रतिस्पर्धा (1853) इसके बाद का, यद्यपि अपूर्ण, व्यावहारिक कदम था।\n• 1833 में 'ब्रिटिश भारत के लिए एकल विधानमंडल' का सिद्धांत सभी बाद के संघीय विधायी ढांचों की मौलिक संवैधानिक अवधारणा है।"
+    }
+  }
+]

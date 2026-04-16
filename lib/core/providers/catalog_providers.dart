@@ -41,16 +41,13 @@ import '../domain/entities/home_state.dart';
 import '../domain/entities/revision_queue_item.dart';
 import '../domain/entities/bookmark_item.dart';
 import 'prefs_provider.dart';
-import 'question_db_provider.dart';
 import 'user_database_provider.dart';
 
 part 'catalog_providers.g.dart';
 
 @Riverpod(keepAlive: true)
 Future<TestCatalogRepository> testCatalogRepository(Ref ref) async {
-  final q = await ref.watch(questionDbProvider.future);
   return TestCatalogRepositoryImpl(
-    questionDb: q,
     userDatabase: ref.watch(userDatabaseProvider),
   );
 }
@@ -69,9 +66,7 @@ Future<GetTopicListUseCase> getTopicListUseCase(Ref ref) async {
 
 @Riverpod(keepAlive: true)
 Future<CreateSessionRepository> createSessionRepository(Ref ref) async {
-  final q = await ref.watch(questionDbProvider.future);
   return CreateSessionRepositoryImpl(
-    questionDb: q,
     userDatabase: ref.watch(userDatabaseProvider),
   );
 }
@@ -96,20 +91,18 @@ Future<List<SubjectInfo>> subjectTestList(Ref ref) async {
 }
 
 @riverpod
-Future<List<TopicInfo>> topicTestTopics(Ref ref, String subjectSlug) async {
+Future<List<TopicInfo>> topicTestTopics(Ref ref, String subject) async {
   final lang = await ref.watch(appLanguageProvider.future);
   final uc = await ref.watch(getTopicListUseCaseProvider.future);
-  return uc.execute(subjectSlug, lang);
+  return uc.execute(subject, lang);
 }
 
 
 @Riverpod(keepAlive: true)
 Future<TestEngineRepository> testEngineRepository(Ref ref) async {
-  final q = await ref.watch(questionDbProvider.future);
   final prefs = await ref.watch(prefsServiceProvider.future);
   return TestEngineRepositoryImpl(
     userDb: ref.watch(userDatabaseProvider),
-    questionDb: q,
     prefsService: prefs,
   );
 }
@@ -186,11 +179,11 @@ Future<SessionResult> sessionResult(Ref ref, String sessionId) async {
 @riverpod
 Future<List<SessionSummary>> sessionSummaries(
   Ref ref, {
-  String? subjectSlug,
+  String? subject,
   String? mode,
 }) async {
   final uc = ref.watch(getSessionListUseCaseProvider);
-  return uc.execute(subjectSlug: subjectSlug, mode: mode);
+  return uc.execute(subject: subject, mode: mode);
 }
 
 @riverpod
@@ -202,8 +195,7 @@ Future<int> dailyProgressCount(Ref ref) async {
 
 @Riverpod(keepAlive: true)
 Future<RevisionRepository> revisionRepository(Ref ref) async {
-  final q = await ref.watch(questionDbProvider.future);
-  return RevisionRepositoryImpl(userDb: ref.watch(userDatabaseProvider), questionDb: q);
+  return RevisionRepositoryImpl(userDb: ref.watch(userDatabaseProvider));
 }
 
 @Riverpod(keepAlive: true)
@@ -220,8 +212,7 @@ Future<UpdateRevisionQueueProgressUseCase> updateRevisionQueueProgressUseCase(Re
 
 @Riverpod(keepAlive: true)
 Future<BookmarksRepository> bookmarksRepository(Ref ref) async {
-  final q = await ref.watch(questionDbProvider.future);
-  return BookmarksRepositoryImpl(userDb: ref.watch(userDatabaseProvider), questionDb: q);
+  return BookmarksRepositoryImpl(userDb: ref.watch(userDatabaseProvider));
 }
 
 @Riverpod(keepAlive: true)
@@ -276,4 +267,10 @@ Future<List<BookmarkItem>> bookmarksList(Ref ref) async {
 Future<HomeState> homeState(Ref ref) async {
   final uc = await ref.watch(getHomeStateUseCaseProvider.future);
   return uc.execute();
+}
+
+@riverpod
+Future<int> totalQuestionCount(Ref ref) async {
+  final db = ref.watch(userDatabaseProvider);
+  return db.questionsDao.getTotalQuestionCount();
 }

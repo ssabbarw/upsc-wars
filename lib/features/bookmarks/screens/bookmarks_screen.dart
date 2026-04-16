@@ -30,7 +30,7 @@ class BookmarksScreen extends HookConsumerWidget {
             label: 'Undo',
             onPressed: () async {
               final add = await ref.read(addBookmarkUseCaseProvider.future);
-              await add.execute(item.questionUuid, note: item.note);
+              await add.execute(item.questionUuid, note: item.userNote);
               ref.invalidate(bookmarksListProvider);
             },
           ),
@@ -87,7 +87,7 @@ class BookmarksScreen extends HookConsumerWidget {
                     separatorBuilder: (c, i) => const SizedBox(height: AppSpacing.sm),
                     itemBuilder: (c, i) {
                       final b = items[i];
-                      final subj = SubjectConstants.bySlug(b.subjectSlug)?.displayName ?? b.subjectSlug;
+                      final subj = SubjectConstants.bySlug(b.subject)?.displayName ?? b.subject;
                       final isDark = Theme.of(context).brightness == Brightness.dark;
                       final border = isDark ? AppColors.borderDark : AppColors.borderLight;
                       return Container(
@@ -98,12 +98,12 @@ class BookmarksScreen extends HookConsumerWidget {
                           border: Border.all(color: border, width: 0.5),
                         ),
                         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                          Text('$subj · ${b.topicSlug}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
+                          Text('$subj · ${b.topic}', style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant)),
                           const SizedBox(height: AppSpacing.xs),
                           Text(b.questionStem, maxLines: 3, overflow: TextOverflow.ellipsis, style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurface)),
-                          if (b.note != null) ...[
+                          if (b.userNote != null) ...[
                             const SizedBox(height: AppSpacing.xs),
-                            Text(b.note!, style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant, fontStyle: FontStyle.italic)),
+                            Text(b.userNote!, style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant, fontStyle: FontStyle.italic)),
                           ],
                           const SizedBox(height: AppSpacing.sm),
                           Row(children: [

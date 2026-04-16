@@ -1,9 +1,9 @@
 class SessionResult {
   const SessionResult({
     required this.sessionId,
-    required this.subjectSlug,
-    required this.topicSlug,
-    required this.subTopicSlug,
+    required this.subject,
+    required this.topic,
+    required this.subTopic,
     required this.mode,
     required this.createdAt,
     required this.completedAt,
@@ -21,9 +21,9 @@ class SessionResult {
     required this.language,
   });
   final String sessionId;
-  final String subjectSlug;
-  final String? topicSlug;
-  final String? subTopicSlug;
+  final String subject;
+  final String? topic;
+  final String? subTopic;
   final String mode;
   final DateTime createdAt;
   final DateTime? completedAt;
