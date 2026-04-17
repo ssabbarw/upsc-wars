@@ -329,7 +329,10 @@ class _PrimaryActionCard extends HookConsumerWidget {
     return Material(
       color: AppColors.transparent,
       child: InkWell(
-        onTap: () => context.go(hasRevision ? '/revision-queue' : '/subject-test'),
+        onTap:
+            () => context.push(
+              hasRevision ? '/revision-queue' : '/subject-test',
+            ),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
           padding: const EdgeInsets.all(AppSpacing.lg),
@@ -426,7 +429,10 @@ class _QuickCard extends HookConsumerWidget {
     return Material(
       color: AppColors.transparent,
       child: InkWell(
-        onTap: () => context.go(q.route),
+        onTap:
+            () => q.route == '/history'
+                ? context.go(q.route)
+                : context.push(q.route),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
           padding: const EdgeInsets.all(AppSpacing.lg),
@@ -513,7 +519,7 @@ class _LastSessionCard extends HookConsumerWidget {
             alignment: Alignment.centerRight,
             child: inProgress
                 ? ElevatedButton(
-                    onPressed: () => context.go('/test/${s.sessionId}'),
+                    onPressed: () => context.push('/test/${s.sessionId}'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
                     ),
@@ -521,7 +527,7 @@ class _LastSessionCard extends HookConsumerWidget {
                   )
                 : OutlinedButton(
                     onPressed: () =>
-                        context.go('/history/${s.sessionId}'),
+                        context.push('/history/${s.sessionId}'),
                     child: Text('Review', style: AppTextStyles.labelSm()),
                   ),
           ),

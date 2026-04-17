@@ -45,7 +45,12 @@ class BookmarksScreen extends HookConsumerWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
               child: Row(children: [
-                IconButton(onPressed: () => context.go('/'), icon: const Icon(Icons.chevron_left)),
+                IconButton(
+                  onPressed:
+                      () =>
+                          context.canPop() ? context.pop() : context.go('/'),
+                  icon: const Icon(Icons.chevron_left),
+                ),
                 Expanded(
                   child: async.when(
                     data: (items) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

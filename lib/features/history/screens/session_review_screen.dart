@@ -69,7 +69,11 @@ class SessionReviewScreen extends HookConsumerWidget {
               },
               onNext: () {
                 if (current == total) {
-                  context.go('/');
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go('/');
+                  }
                 } else {
                   index.value = index.value + 1;
                 }
@@ -338,7 +342,7 @@ class _TopBar extends StatelessWidget {
       child: Row(
         children: [
           InkWell(
-            onTap: () => context.go('/'),
+            onTap: () => context.canPop() ? context.pop() : context.go('/'),
             child: Container(
               width: 32,
               height: 32,

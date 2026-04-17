@@ -39,17 +39,17 @@ abstract final class SubjectConstants {
       materialIcon: Icons.palette_outlined,
     ),
     SubjectDefinition(
-      slug: 'geography',
+      slug: 'Geography',
       displayName: 'Geography',
       materialIcon: Icons.public_outlined,
     ),
     SubjectDefinition(
-      slug: 'economy',
+      slug: 'Economy',
       displayName: 'Economy',
       materialIcon: Icons.trending_up_outlined,
     ),
     SubjectDefinition(
-      slug: 'environment',
+      slug: 'Environment',
       displayName: 'Environment',
       materialIcon: Icons.park_outlined,
     ),
@@ -63,6 +63,10 @@ abstract final class SubjectConstants {
   static SubjectDefinition? bySlug(String slug) {
     for (final s in ordered) {
       if (s.slug == slug) return s;
+    }
+    final normalized = slug.trim().toLowerCase();
+    for (final s in ordered) {
+      if (s.slug.toLowerCase() == normalized) return s;
     }
     return null;
   }

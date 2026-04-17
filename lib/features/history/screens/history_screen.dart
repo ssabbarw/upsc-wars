@@ -282,12 +282,13 @@ class _SessionCard extends HookConsumerWidget {
                   if (summary.status == 'completed')
                     OutlinedButton(
                       onPressed: () =>
-                          context.go('/history/${summary.sessionId}'),
+                          context.push('/history/${summary.sessionId}'),
                       child: Text('Review', style: AppTextStyles.labelSm()),
                     )
                   else if (summary.status == 'in_progress')
                     ElevatedButton(
-                      onPressed: () => context.go('/test/${summary.sessionId}'),
+                      onPressed: () =>
+                          context.push('/test/${summary.sessionId}'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                       ),
@@ -295,7 +296,7 @@ class _SessionCard extends HookConsumerWidget {
                     )
                   else
                     OutlinedButton(
-                      onPressed: () => context.go(
+                      onPressed: () => context.push(
                         summary.topic == null
                             ? '/subject-test'
                             : '/topic-test',

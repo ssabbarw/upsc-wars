@@ -90,8 +90,7 @@ class SubjectTestScreen extends HookConsumerWidget {
                           subjectDisplayName: s.displayName,
                           availableQuestionCount: s.questionCount,
                           topicCountWhenSubjectOnly: s.topicCount,
-                          onSessionCreated: (id) =>
-                              context.go('/test/$id'),
+                          onSessionCreated: (id) => context.push('/test/$id'),
                         ),
                       ),
                     );

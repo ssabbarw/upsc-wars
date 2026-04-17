@@ -66,7 +66,12 @@ class ResultsScreen extends HookConsumerWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
                 child: Row(children: [
-                  IconButton(onPressed: () => context.go('/'), icon: const Icon(Icons.chevron_left)),
+                  IconButton(
+                    onPressed:
+                        () =>
+                            context.canPop() ? context.pop() : context.go('/'),
+                    icon: const Icon(Icons.chevron_left),
+                  ),
                   Text('Results', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
                 ]),
               ),
@@ -136,7 +141,7 @@ class ResultsScreen extends HookConsumerWidget {
                       _BreakdownBar(correct: r.correct, wrong: r.wrong, unattempted: unattemptedForDisplay),
                     ])),
                     const SizedBox(height: AppSpacing.lg),
-                    OutlinedButton(onPressed: () => context.go('/history/${r.sessionId}'), child: Text('Review answers', style: AppTextStyles.label())),
+                    OutlinedButton(onPressed: () => context.push('/history/${r.sessionId}'), child: Text('Review answers', style: AppTextStyles.label())),
                     const SizedBox(height: AppSpacing.sm),
                     ElevatedButton(onPressed: () => context.go('/'), child: Text('Go home', style: AppTextStyles.label())),
                   ],

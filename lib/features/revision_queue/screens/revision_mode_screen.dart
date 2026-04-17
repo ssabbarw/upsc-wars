@@ -61,7 +61,11 @@ class RevisionModeScreen extends HookConsumerWidget {
               },
               onNext: () {
                 if (current == total) {
-                  context.go('/');
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go('/');
+                  }
                 } else {
                   index.value = index.value + 1;
                 }

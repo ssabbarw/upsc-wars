@@ -203,7 +203,7 @@ class TopicTestScreen extends HookConsumerWidget {
                             availableQuestionCount: t.questionCount,
                             topicCountWhenSubjectOnly: 0,
                             onSessionCreated: (id) =>
-                                context.go('/test/$id'),
+                                context.push('/test/$id'),
                           ),
                         ),
                       );
