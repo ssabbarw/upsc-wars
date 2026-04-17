@@ -8,6 +8,7 @@ import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 
@@ -140,6 +141,7 @@ class ReviewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final isHindi = uiLanguage == 'hi';
     final displayText = isHindi ? question.displayTextHi : question.displayText;
+    final tableData = isHindi ? question.tableDataHi : question.tableData;
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
     final progress = total == 0 ? 0.0 : current / total;
@@ -241,6 +243,15 @@ class ReviewBody extends StatelessWidget {
                       ),
                     ),
                   ),
+              ],
+              if (question.hasTable && tableData != null) ...[
+                SizedBox(
+                  height: parsed.stem.trim().isNotEmpty ||
+                          parsed.statements.isNotEmpty
+                      ? 10
+                      : 0,
+                ),
+                QuestionTableView(table: tableData),
               ],
               const SizedBox(height: 8),
               _Options(

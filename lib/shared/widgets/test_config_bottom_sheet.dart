@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+import '../../core/constants/timed_exam_debug_constants.dart';
 import '../../core/domain/entities/session_config.dart';
 import '../../core/providers/catalog_providers.dart';
 import '../../core/theme/app_colors.dart';
@@ -110,7 +111,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
         int? timeLimitSecs;
         if (isExam.value) {
           if (examTimed.value) {
-            timeLimitSecs = effectiveCount * 72;
+            timeLimitSecs = effectiveCount * kDebugSecondsPerQuestion;
           }
         } else {
           timeLimitSecs = learningSecs.value;
@@ -430,7 +431,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
   }
 
   static String _formatExamDuration(int questionCount) {
-    final totalSecs = questionCount * 72;
+    final totalSecs = questionCount * kDebugSecondsPerQuestion;
     final minutes = (totalSecs / 60).round();
     return '$minutes minutes total';
   }

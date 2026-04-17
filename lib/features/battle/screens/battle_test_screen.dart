@@ -10,11 +10,13 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/features/battle/battle_submit_navigation.dart';
 import 'package:upsc_wars/features/battle/providers/battle_session_provider.dart';
-import 'package:upsc_wars/features/battle/widgets/battle_score_header.dart';
+import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/test_engine/providers/test_session_state.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
 class BattleTestScreen extends ConsumerWidget {
@@ -57,12 +59,6 @@ class _BattleTestSessionView extends HookConsumerWidget {
     return '$mm:$ss';
   }
 
-  static String _initialLetter(String name) {
-    final t = name.trim();
-    if (t.isEmpty) return '?';
-    return t[0].toUpperCase();
-  }
-
   static int _remainingSecs(BattleSessionUiState s) {
     final b = s.battleSession;
     if (b == null) return 0;
@@ -88,11 +84,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
         if (autoSubmitDone.value) return;
         autoSubmitDone.value = true;
         try {
-          final id = await notifier.submit();
-          final payload = notifier.buildResultPayload();
-          if (context.mounted) {
-            context.go('/battle-results/$id', extra: payload);
-          }
+          await submitBattleWithOptionalSpectate(context, ref, sessionId);
         } catch (_) {
           autoSubmitDone.value = false;
         }
@@ -106,13 +98,6 @@ class _BattleTestSessionView extends HookConsumerWidget {
     final idx = state.currentIndex;
     final q = session.questions[idx];
     final isLast = idx == session.questions.length - 1;
-    final payload = notifier.buildResultPayload();
-    final playerOutcomes =
-        payload?.playerOutcomeByQuestion ??
-        List<bool?>.filled(session.questions.length, null);
-    final opponentOutcomes =
-        payload?.opponentOutcomeByQuestion ??
-        List<bool?>.filled(session.questions.length, null);
     final selectedForCurrent =
         battle.playerResponsesByQuestion[q.uuid] ?? q.selectedOption;
     final revealed = selectedForCurrent != null || q.status != 'unattempted';
@@ -202,14 +187,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: BattleScoresCollapsible(
-                  opponentName: battle.opponent.displayName,
-                  playerOutcomeByQuestion: playerOutcomes,
-                  opponentOutcomeByQuestion: opponentOutcomes,
-                  opponentInitial: _initialLetter(battle.opponent.displayName),
-                  playerInitial: _initialLetter(battle.player.displayName),
-                  playerPhotoUrl: battle.player.photoUrl,
-                ),
+                child: BattleLiveScoreboard(sessionId: sessionId),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(
@@ -268,15 +246,11 @@ class _BattleTestSessionView extends HookConsumerWidget {
                               ? null
                               : () async {
                                   try {
-                                    final id = await notifier.submit();
-                                    final resultPayload =
-                                        notifier.buildResultPayload();
-                                    if (context.mounted) {
-                                      context.go(
-                                        '/battle-results/$id',
-                                        extra: resultPayload,
-                                      );
-                                    }
+                                    await submitBattleWithOptionalSpectate(
+                                      context,
+                                      ref,
+                                      sessionId,
+                                    );
                                   } catch (_) {
                                     if (!context.mounted) return;
                                     showTopSnackBar(
@@ -416,15 +390,11 @@ class _BattleTestSessionView extends HookConsumerWidget {
                                         ? null
                                         : () async {
                                           try {
-                                            final id = await notifier.submit();
-                                            final resultPayload =
-                                                notifier.buildResultPayload();
-                                            if (context.mounted) {
-                                              context.go(
-                                                '/battle-results/$id',
-                                                extra: resultPayload,
-                                              );
-                                            }
+                                            await submitBattleWithOptionalSpectate(
+                                              context,
+                                              ref,
+                                              sessionId,
+                                            );
                                           } catch (_) {
                                             if (!context.mounted) return;
                                             showTopSnackBar(
@@ -648,16 +618,12 @@ Future<void> _showBattleQuestionGrid(
                                 ? null
                                 : () async {
                                   try {
-                                    final id = await notifier.submit();
-                                    final payload =
-                                        notifier.buildResultPayload();
                                     if (ctx.mounted) Navigator.pop(ctx);
-                                    if (context.mounted) {
-                                      context.go(
-                                        '/battle-results/$id',
-                                        extra: payload,
-                                      );
-                                    }
+                                    await submitBattleWithOptionalSpectate(
+                                      context,
+                                      ref,
+                                      sessionId,
+                                    );
                                   } catch (_) {
                                     if (!context.mounted) return;
                                     showTopSnackBar(
@@ -869,7 +835,7 @@ class _BattleQuestionBlock extends StatelessWidget {
           SizedBox(
             height: trimmed.isNotEmpty ? AppSpacing.sm : AppSpacing.xs,
           ),
-          _BattleQuestionTable(table: tableData),
+          QuestionTableView(table: tableData),
         ],
         const SizedBox(height: AppSpacing.lg),
         for (final opt in const ['a', 'b', 'c', 'd']) ...[
@@ -1033,105 +999,6 @@ class _BattleOptionRow extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _BattleQuestionTable extends StatelessWidget {
-  const _BattleQuestionTable({required this.table});
-
-  final QuestionTableData table;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = context.isDarkMode;
-    final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final header = table.header?.trim();
-    final footer = table.footer?.trim();
-    final columnCount = table.columns.length;
-
-    if (columnCount == 0) return const SizedBox.shrink();
-
-    final allRows = <List<String>>[
-      table.columns,
-      ...table.rows.map((row) {
-        if (row.length == columnCount) return row;
-        if (row.length < columnCount) {
-          return [...row, ...List.filled(columnCount - row.length, '')];
-        }
-        return row.take(columnCount).toList();
-      }),
-    ];
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        if (header != null && header.isNotEmpty) ...[
-          Text(
-            header,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-        ],
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(color: border, width: 0.5),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            child: Table(
-              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-              border: TableBorder.all(color: border, width: 0.5),
-              columnWidths: {
-                for (var i = 0; i < columnCount; i++)
-                  i: const FlexColumnWidth(),
-              },
-              children: [
-                for (var rowIndex = 0; rowIndex < allRows.length; rowIndex++)
-                  TableRow(
-                    decoration: BoxDecoration(
-                      color: rowIndex == 0
-                          ? scheme.surfaceContainerLow
-                          : scheme.surface,
-                    ),
-                    children: [
-                      for (final cell in allRows[rowIndex])
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: AppSpacing.sm,
-                            vertical: AppSpacing.sm,
-                          ),
-                          child: Text(
-                            cell,
-                            textAlign: TextAlign.left,
-                            style: (rowIndex == 0
-                                    ? AppTextStyles.labelSm()
-                                    : AppTextStyles.bodySm())
-                                .copyWith(color: scheme.onSurface),
-                          ),
-                        ),
-                    ],
-                  ),
-              ],
-            ),
-          ),
-        ),
-        if (footer != null && footer.isNotEmpty) ...[
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            footer,
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-        ],
-      ],
     );
   }
 }

@@ -6,6 +6,7 @@ import '../core/providers/prefs_provider.dart';
 import '../core/router/app_router.dart';
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/theme/app_theme.dart';
+import '../features/battle/widgets/battle_spectate_overlay.dart';
 
 class UpscWarsApp extends HookConsumerWidget {
   const UpscWarsApp({super.key});
@@ -63,6 +64,15 @@ class _RootMaterialApp extends HookConsumerWidget {
       darkTheme: AppTheme.dark(),
       themeMode: themeMode,
       routerConfig: router,
+      builder: (context, child) {
+        return Stack(
+          fit: StackFit.expand,
+          children: [
+            ?child,
+            const BattleSpectateFabHost(),
+          ],
+        );
+      },
     );
   }
 }

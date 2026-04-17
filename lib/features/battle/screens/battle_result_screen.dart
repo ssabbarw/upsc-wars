@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.dart';
-import 'package:upsc_wars/features/battle/widgets/battle_score_header.dart';
+import 'package:upsc_wars/features/battle/providers/battle_spectate_provider.dart';
+import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
+import 'package:upsc_wars/features/battle/widgets/battle_spectate_overlay.dart';
 
-class BattleResultScreen extends StatelessWidget {
+class BattleResultScreen extends ConsumerWidget {
   const BattleResultScreen({super.key, required this.payload});
 
   final BattleResultPayload payload;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final message = _resultMessage(
       mine: payload.playerScore,
       other: payload.opponentScore,
     );
-    String letter(String name) {
-      final t = name.trim();
-      if (t.isEmpty) return '?';
-      return t[0].toUpperCase();
-    }
+    final live = ref.watch(battleSpectateProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Battle Result')),
@@ -43,14 +42,21 @@ class BattleResultScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            if (live != null && live.sessionId == payload.sessionId) ...[
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                battleSpectateVerdictLine(live),
+                style: AppTextStyles.bodyMd().copyWith(
+                  color: scheme.primary,
+                  fontStyle: FontStyle.italic,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
             const SizedBox(height: AppSpacing.lg),
-            BattleScoresCollapsible(
-              opponentName: payload.opponentName,
-              playerOutcomeByQuestion: payload.playerOutcomeByQuestion,
-              opponentOutcomeByQuestion: payload.opponentOutcomeByQuestion,
-              opponentInitial: letter(payload.opponentName),
-              playerInitial: letter(payload.playerName),
-              initiallyExpanded: true,
+            BattleLiveScoreboard(
+              sessionId: payload.sessionId,
+              fallbackPayload: payload,
             ),
             const SizedBox(height: AppSpacing.lg),
             OutlinedButton.icon(

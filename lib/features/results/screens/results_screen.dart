@@ -14,6 +14,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/extensions/time_formatting.dart';
+import '../../battle/widgets/battle_live_scoreboard.dart';
 
 class ResultsScreen extends HookConsumerWidget {
   const ResultsScreen({super.key, required this.sessionId});
@@ -109,6 +110,8 @@ class ResultsScreen extends HookConsumerWidget {
                       AppSpacing.xxl,
                     ),
                     children: [
+                      BattleLiveScoreboard(sessionId: sessionId),
+                      const SizedBox(height: AppSpacing.md),
                       _Card(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

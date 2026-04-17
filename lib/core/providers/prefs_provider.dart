@@ -12,6 +12,8 @@ abstract final class PrefKeys {
   static const dbInitialized = 'db_initialized';
   static const dbAssetVersion = 'db_asset_version';
   static const darkModeEnabled = 'dark_mode_enabled';
+  /// JSON payload to restore battle spectate after app restart.
+  static const battleSpectateRecovery = 'battle_spectate_recovery_v1';
 }
 
 class PrefsService {
@@ -48,6 +50,17 @@ class PrefsService {
 
   bool get darkModeEnabled => _p.getBool(PrefKeys.darkModeEnabled) ?? false;
   set darkModeEnabled(bool v) => _p.setBool(PrefKeys.darkModeEnabled, v);
+
+  /// JSON for restoring battle spectate after restart; null clears.
+  String? get battleSpectateRecoveryJson =>
+      _p.getString(PrefKeys.battleSpectateRecovery);
+  set battleSpectateRecoveryJson(String? v) {
+    if (v == null || v.isEmpty) {
+      _p.remove(PrefKeys.battleSpectateRecovery);
+    } else {
+      _p.setString(PrefKeys.battleSpectateRecovery, v);
+    }
+  }
 }
 
 @Riverpod(keepAlive: true)

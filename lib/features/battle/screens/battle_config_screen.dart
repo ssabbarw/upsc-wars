@@ -6,6 +6,7 @@ import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
+import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
@@ -69,7 +70,8 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'One subject · 10 MCQs · Timed (${(10 * 72 / 60).round()} min)',
+                        'One subject · 10 MCQs · Timed '
+                        '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -228,7 +230,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         mode: 'exam',
         questionCount: 10,
         isTimed: true,
-        timeLimitSecs: 10 * 72,
+        timeLimitSecs: 10 * kDebugSecondsPerQuestion,
         language: language,
       );
       final sessionId = await uc.execute(config);

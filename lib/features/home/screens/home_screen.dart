@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -989,7 +990,8 @@ class _QuickPracticeCard extends HookConsumerWidget {
             mode: isTutor ? 'learning' : 'exam',
             questionCount: 10,
             isTimed: true,
-            timeLimitSecs: isTutor ? 60 : capped * 72,
+            timeLimitSecs:
+                isTutor ? 60 : capped * kDebugSecondsPerQuestion,
             language: 'en',
           ),
         );
