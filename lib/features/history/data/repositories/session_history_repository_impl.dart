@@ -41,6 +41,23 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
     final attempted = correct + wrong;
     final accuracy = attempted == 0 ? 0.0 : (correct / attempted) * 100;
     final avg = attemptedTimeCount == 0 ? null : (attemptedTimeSum / attemptedTimeCount);
+
+    var graduatedCount = 0;
+    if (session.subject == 'revision_quick') {
+      for (final r in rows) {
+        if (r.status == 'correct') {
+          final rqItem = await _userDb.revisionQueueDao
+              .getRevisionQueueItemByQuestionUuid(r.questionUuid);
+          if (rqItem != null &&
+              rqItem.hasGraduatedFromQueue &&
+              rqItem.dateGraduated != null &&
+              !rqItem.dateGraduated!.isBefore(session.createdAt)) {
+            graduatedCount++;
+          }
+        }
+      }
+    }
+
     return SessionResult(
       sessionId: session.id,
       subject: session.subject,
@@ -61,6 +78,7 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
       totalTimeSpentSecs: totalTimeSecs,
       accuracyTier: _tierFor(attempted, accuracy),
       language: session.language,
+      graduatedCount: graduatedCount,
     );
   }
 

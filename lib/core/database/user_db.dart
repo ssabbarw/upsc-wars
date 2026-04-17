@@ -583,6 +583,22 @@ class BookmarksDao extends DatabaseAccessor<UserDatabase> with _$BookmarksDaoMix
 
   Future<List<Bookmark>> getAllBookmarksOrderedByCreatedAtDesc() =>
       (select(bookmarks)..orderBy([(t) => OrderingTerm.desc(t.createdAt)])).get();
+
+  Future<List<String>> getRandomBookmarkUuids(int limit) async {
+    final rows = await customSelect(
+      'SELECT question_uuid FROM bookmarks ORDER BY RANDOM() LIMIT ?',
+      variables: [Variable.withInt(limit)],
+      readsFrom: {bookmarks},
+    ).get();
+    return rows.map((row) => row.read<String>('question_uuid')).toList();
+  }
+
+  Stream<int> watchBookmarkCount() {
+    return customSelect(
+      'SELECT COUNT(*) AS c FROM bookmarks',
+      readsFrom: {bookmarks},
+    ).watchSingle().map((row) => row.read<int>('c'));
+  }
 }
 
 @DriftAccessor(tables: [RevisionQueue])
@@ -658,6 +674,22 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
             ..where((t) => t.hasGraduatedFromQueue.equals(false))
             ..orderBy([(t) => OrderingTerm.asc(t.dateAddedToQueue)]))
           .get();
+
+  Future<List<String>> fetchActiveQueueRandomized(int limit) async {
+    final rows = await customSelect(
+      'SELECT question_uuid FROM revision_queue WHERE has_graduated_from_queue = 0 ORDER BY RANDOM() LIMIT ?',
+      variables: [Variable.withInt(limit)],
+      readsFrom: {revisionQueue},
+    ).get();
+    return rows.map((row) => row.read<String>('question_uuid')).toList();
+  }
+
+  Stream<int> watchActiveQueueCount() {
+    return customSelect(
+      'SELECT COUNT(*) AS c FROM revision_queue WHERE has_graduated_from_queue = 0',
+      readsFrom: {revisionQueue},
+    ).watchSingle().map((row) => row.read<int>('c'));
+  }
 
   Future<Map<String, int>> getActiveQueueCountByTopic(String subject) async {
     final rows = await customSelect(

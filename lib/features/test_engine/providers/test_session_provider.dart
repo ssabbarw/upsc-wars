@@ -103,7 +103,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
         selectedOption: option,
       );
 
-      if (isCorrect && s.subject == 'revision') {
+      if (isCorrect && (s.subject == 'revision' || s.subject == 'revision_quick')) {
         final rev = await ref.read(
           updateRevisionQueueProgressUseCaseProvider.future,
         );

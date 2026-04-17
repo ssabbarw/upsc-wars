@@ -80,7 +80,7 @@ class RevisionRepositoryImpl implements RevisionRepository {
         .where((e) => e.questionUuid == questionUuid)
         .firstOrNull;
     if (updated != null &&
-        updated.numberOfTimesAnsweredCorrectlyInRevision >= 2) {
+        updated.numberOfTimesAnsweredCorrectlyInRevision >= 1) {
       await _userDb.revisionQueueDao.graduate(questionUuid, DateTime.now());
     }
   }

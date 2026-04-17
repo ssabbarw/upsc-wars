@@ -32,6 +32,14 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
       final active = await _userDatabase.revisionQueueDao.fetchActiveQueue();
       final uuids = active.take(config.questionCount).map((e) => e.questionUuid).toList();
       picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
+    } else if (config.subject == 'revision_quick') {
+      final uuids = await _userDatabase.revisionQueueDao
+          .fetchActiveQueueRandomized(config.questionCount);
+      picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
+    } else if (config.subject == 'bookmarks') {
+      final uuids = await _userDatabase.bookmarksDao
+          .getRandomBookmarkUuids(config.questionCount);
+      picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
     } else if (topic != null) {
       picked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
         subject: config.subject,

@@ -1,0 +1,520 @@
+{
+  "mode": "apply",
+  "input_dir": "/Users/sachinsabbarwal/Desktop/upsc_wars_april/upsc_wars/assets/final_cleaned_questions",
+  "replacement_map_size": 1,
+  "summary": {
+    "files_scanned": 928,
+    "files_changed": 127,
+    "total_replacements": 149
+  },
+  "changed_files": [
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/31.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/32.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/40.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/44.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/50.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/62.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/66.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/78.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/84.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/86.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/90.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/95.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/ancient_history/97.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/101.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/104.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/107.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/110.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/111.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/18.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/2.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/20.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/33.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/39.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/45.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/47.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/50.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/54.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/56.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/65.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/72.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/81.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/91.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/95.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/art_and_culture/97.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/1.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/135.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/144.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/161.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/21.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/22.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/36.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/60.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/64.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/66.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/75.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/economy/85.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/102.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/104.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/12.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/21.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/42.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/54.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/57.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/58.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/59.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/60.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/62.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/90.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/98.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/environment/99.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/geography/115.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/geography/18.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/geography/42.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/geography/61.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/1.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/15.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/17.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/21.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/23.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/30.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/31.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/33.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/41.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/67.json",
+      "replacement_count": 3
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/69.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/75.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/76.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/medieval_history/8.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/100.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/108.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/115.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/12.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/22.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/26.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/29.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/31.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/32.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/38.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/39.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/40.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/42.json",
+      "replacement_count": 3
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/43.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/45.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/5.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/51.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/52.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/60.json",
+      "replacement_count": 3
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/63.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/73.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/74.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/77.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/85.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/modern_history/88.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/103.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/106.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/107.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/108.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/110.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/111.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/122.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/125.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/128.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/131.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/19.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/20.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/29.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/50.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/51.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/59.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/63.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/66.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/67.json",
+      "replacement_count": 2
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/68.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/72.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/77.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/80.json",
+      "replacement_count": 1
+    },
+    {
+      "file": "assets/final_cleaned_questions/polity/97.json",
+      "replacement_count": 1
+    }
+  ]
+}

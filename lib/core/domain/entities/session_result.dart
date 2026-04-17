@@ -19,6 +19,7 @@ class SessionResult {
     required this.avgTimeSpentSecs,
     required this.totalTimeSpentSecs,
     required this.language,
+    this.graduatedCount = 0,
   });
   final String sessionId;
   final String subject;
@@ -40,4 +41,7 @@ class SessionResult {
   /// Sum of per-question time spent (for timed session summary).
   final int totalTimeSpentSecs;
   final String language;
+  /// Number of revision queue questions graduated during this session.
+  /// Only populated for sessions with subject == 'revision_quick'.
+  final int graduatedCount;
 }

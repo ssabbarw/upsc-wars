@@ -11,10 +11,13 @@ import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
+import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/prelims_countdown_card.dart';
+import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
@@ -167,6 +170,8 @@ class HomeScreen extends HookConsumerWidget {
                 ],
               ),
               const SizedBox(height: AppSpacing.md),
+              const PrelimsCountdownCard(),
+              const SizedBox(height: AppSpacing.md),
               Material(
                 color: scheme.surfaceContainerLow,
                 borderRadius: BorderRadius.circular(AppRadius.md),
@@ -269,6 +274,8 @@ class HomeScreen extends HookConsumerWidget {
                       ),
                       const SizedBox(height: AppSpacing.xl),
                       _PrimaryActionCard(home: h, borderColor: borderColor),
+                      const SizedBox(height: AppSpacing.md),
+                      _QuickPracticeSection(borderColor: borderColor),
                       const SizedBox(height: AppSpacing.md),
                       _QuickGrid(home: h, borderColor: borderColor),
                       if (h.revisionTrapCount > 0) ...[
@@ -713,4 +720,198 @@ class _Q {
   final IconData icon;
   final Color color;
   final String route;
+}
+
+// ── Quick Practice Section ────────────────────────────────────────────────────
+
+class _QuickPracticeSection extends HookConsumerWidget {
+  const _QuickPracticeSection({required this.borderColor});
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final revisionCount = ref.watch(activeRevisionQueueCountProvider);
+    final bookmarkCount = ref.watch(bookmarkCountStreamProvider);
+
+    final revN = revisionCount.asData?.value ?? 0;
+    final bmN = bookmarkCount.asData?.value ?? 0;
+
+    final showRevision = revN >= 3;
+    final showBookmarks = bmN >= 3;
+
+    if (!showRevision && !showBookmarks) return const SizedBox.shrink();
+
+    final scheme = Theme.of(context).colorScheme;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'QUICK PRACTICE',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        if (showRevision) ...[
+          _QuickPracticeCard(
+            title: 'Revise Incorrects',
+            subtitle: 'Unmastered questions',
+            count: revN,
+            icon: Icons.replay_outlined,
+            color: AppColors.wrong,
+            borderColor: borderColor,
+            subject: 'revision_quick',
+          ),
+        ],
+        if (showRevision && showBookmarks)
+          const SizedBox(height: AppSpacing.sm),
+        if (showBookmarks) ...[
+          _QuickPracticeCard(
+            title: 'Bookmarked Questions',
+            subtitle: 'Questions you saved',
+            count: bmN,
+            icon: Icons.bookmark_outline,
+            color: AppColors.info,
+            borderColor: borderColor,
+            subject: 'bookmarks',
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _QuickPracticeCard extends HookConsumerWidget {
+  const _QuickPracticeCard({
+    required this.title,
+    required this.subtitle,
+    required this.count,
+    required this.icon,
+    required this.color,
+    required this.borderColor,
+    required this.subject,
+  });
+
+  final String title;
+  final String subtitle;
+  final int count;
+  final IconData icon;
+  final Color color;
+  final Color borderColor;
+  final String subject;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final loading = useState(false);
+    final capped = count.clamp(1, 10);
+    final btnLabel = count >= 10
+        ? 'Start 10-question test'
+        : 'Start $capped-question test';
+    final iconBg = isDark
+        ? color.withValues(alpha: 0.25)
+        : color.withValues(alpha: 0.12);
+
+    Future<void> startSession() async {
+      if (loading.value) return;
+      if (!context.mounted) return;
+
+      final mode = await showQuickPracticeModeSheet(context);
+      if (mode == null) return;
+      if (!context.mounted) return;
+
+      loading.value = true;
+      try {
+        final create = await ref.read(createSessionUseCaseProvider.future);
+        final isTutor = mode == 'tutor';
+        final id = await create.execute(
+          SessionConfig(
+            subject: subject,
+            mode: isTutor ? 'learning' : 'exam',
+            questionCount: 10,
+            isTimed: true,
+            timeLimitSecs: isTutor ? 60 : capped * 72,
+            language: 'en',
+          ),
+        );
+        if (context.mounted) context.push('/test/$id');
+      } finally {
+        loading.value = false;
+      }
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: iconBg,
+              borderRadius: BorderRadius.circular(AppRadius.sm),
+            ),
+            child: Icon(icon, color: color, size: 20),
+          ),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  subtitle,
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  '$count available',
+                  style: AppTextStyles.caption().copyWith(color: color),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          loading.value
+              ? SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: color,
+                  ),
+                )
+              : FilledButton(
+                  onPressed: startSession,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: color,
+                    foregroundColor: AppColors.onPrimary,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.md,
+                      vertical: AppSpacing.sm,
+                    ),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(btnLabel, style: AppTextStyles.caption()),
+                ),
+        ],
+      ),
+    );
+  }
 }
