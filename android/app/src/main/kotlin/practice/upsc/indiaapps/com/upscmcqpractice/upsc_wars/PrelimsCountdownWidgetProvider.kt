@@ -1,8 +1,9 @@
 package practice.upsc.indiaapps.com.upscmcqpractice.upsc_wars
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.widget.RemoteViews
-import es.antonborri.home_widget.HomeWidgetPlugin
+import es.antonborri.home_widget.HomeWidgetLaunchIntent
 import es.antonborri.home_widget.HomeWidgetProvider
 
 class PrelimsCountdownWidgetProvider : HomeWidgetProvider() {
@@ -10,17 +11,17 @@ class PrelimsCountdownWidgetProvider : HomeWidgetProvider() {
         context: Context,
         appWidgetManager: android.appwidget.AppWidgetManager,
         appWidgetIds: IntArray,
-        widgetData: android.os.Bundle
+        widgetData: SharedPreferences
     ) {
         appWidgetIds.forEach { widgetId ->
             val views = RemoteViews(context.packageName, R.layout.prelims_countdown_widget)
-            val daysLabel = widgetData.getString("prelims_days_label", "UPSC Prelims soon")
-            val quote = widgetData.getString("prelims_quote", "Show up daily. Results follow.")
+            val timerLabel = widgetData.getString("prelims_timer_label", "0")
+            val quote = widgetData.getString("prelims_quote", "“The trouble is, you think you have time.” by Buddha")
 
-            views.setTextViewText(R.id.prelims_days_label, daysLabel)
+            views.setTextViewText(R.id.prelims_timer_label, "Days: $timerLabel")
             views.setTextViewText(R.id.prelims_quote, quote)
 
-            val pendingIntent = HomeWidgetPlugin.getLaunchPendingIntent(context)
+            val pendingIntent = HomeWidgetLaunchIntent.getActivity(context, MainActivity::class.java)
             views.setOnClickPendingIntent(R.id.prelims_widget_root, pendingIntent)
 
             appWidgetManager.updateAppWidget(widgetId, views)

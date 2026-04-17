@@ -18,11 +18,20 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/prelims_days_label"
+        android:id="@+id/prelims_labels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="0 days to UPSC Prelims"
+        android:text="Days"
+        android:textColor="#FF1D4E75"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/prelims_timer_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Days: 0"
         android:textColor="#FF0E2438"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -34,7 +43,7 @@
         android:layout_marginTop="10dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="Discipline beats motivation."
+        android:text="“The trouble is, you think you have time.” by Buddha"
         android:textColor="#FF1D4E75"
         android:textSize="13sp" />
 

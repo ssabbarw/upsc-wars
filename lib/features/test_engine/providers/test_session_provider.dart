@@ -18,7 +18,7 @@ part 'test_session_provider.g.dart';
 class TestSessionNotifier extends _$TestSessionNotifier {
   @override
   Future<TestSessionState> build(String sessionId) async {
-    final load = await ref.watch(loadSessionUseCaseProvider.future);
+    final load = await ref.read(loadSessionUseCaseProvider.future);
     final active = await load.execute(sessionId);
     final repo = await ref.read(testEngineRepositoryProvider.future);
     final bm = <String, bool>{};

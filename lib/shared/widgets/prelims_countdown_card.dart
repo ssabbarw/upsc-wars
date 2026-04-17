@@ -20,7 +20,7 @@ class PrelimsCountdownCard extends HookWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     useEffect(() {
-      final timer = Timer.periodic(const Duration(minutes: 1), (_) {
+      final timer = Timer.periodic(const Duration(seconds: 1), (_) {
         now.value = DateTime.now();
       });
       return timer.cancel;
@@ -31,7 +31,7 @@ class PrelimsCountdownCard extends HookWidget {
       return null;
     }, [now.value.day]);
 
-    final daysLabel = PrelimsCountdown.daysLabel(now: now.value);
+    final timerLabel = PrelimsCountdown.timerLabel(now: now.value);
     final quote = PrelimsCountdown.quoteForDate(now: now.value);
     final cardColor = isDark ? AppColors.infoBgDark : AppColors.infoBg;
     final quoteColor = isDark ? AppColors.infoTextDark : AppColors.infoText;
@@ -55,7 +55,15 @@ class PrelimsCountdownCard extends HookWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            daysLabel,
+            'Days : Hours : Min : Sec',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              letterSpacing: 0.3,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            timerLabel,
             style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
           ),
           const SizedBox(height: AppSpacing.sm),

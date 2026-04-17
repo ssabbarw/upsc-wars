@@ -1,22 +1,21 @@
 class PrelimsCountdown {
   PrelimsCountdown._();
 
-  // Update this when UPSC publishes the next prelims date.
-  static final DateTime prelimsDate = DateTime(2026, 5, 24);
+  // UPSC Prelims start time (local device time): 24 May, 09:30 AM.
+  static final DateTime prelimsDate = DateTime(2026, 5, 24, 9, 30);
 
-  static const List<String> _quotes = [
-    'Discipline beats motivation.',
-    'Small daily gains win big exams.',
-    'Consistency today, confidence tomorrow.',
-    'One focused session at a time.',
-    'Show up daily. Results follow.',
-    'Calm mind, sharp attempt.',
-    'Progress compounds every day.',
-  ];
+  static const String motivationQuote =
+      '“The trouble is, you think you have time.” by Buddha';
 
-  static int daysLeft({DateTime? now}) {
+  static Duration remaining({DateTime? now}) {
     final current = now ?? DateTime.now();
     final diff = prelimsDate.difference(current);
+    if (diff.isNegative) return Duration.zero;
+    return diff;
+  }
+
+  static int daysLeft({DateTime? now}) {
+    final diff = remaining(now: now);
     if (diff.inSeconds <= 0) return 0;
     final fullDays = diff.inDays;
     final hasRemainder = diff - Duration(days: fullDays) > Duration.zero;
@@ -30,8 +29,17 @@ class PrelimsCountdown {
   }
 
   static String quoteForDate({DateTime? now}) {
-    final current = now ?? DateTime.now();
-    final dayOfYear = current.difference(DateTime(current.year, 1, 1)).inDays;
-    return _quotes[dayOfYear % _quotes.length];
+    return motivationQuote;
+  }
+
+  static String timerLabel({DateTime? now}) {
+    final diff = remaining(now: now);
+    final days = diff.inDays;
+    final hours = diff.inHours.remainder(24);
+    final minutes = diff.inMinutes.remainder(60);
+    final seconds = diff.inSeconds.remainder(60);
+
+    String two(int value) => value.toString().padLeft(2, '0');
+    return '${two(days)}:${two(hours)}:${two(minutes)}:${two(seconds)}';
   }
 }
