@@ -220,7 +220,7 @@ class _TestEngineLoaded extends HookConsumerWidget {
         _ExamActionRow(
           sessionId: sessionId,
           onPalette: () => _showTestPaletteSheet(context, ref, sessionId),
-          onSubmit: () => _showTestSubmitSheet(context, ref, sessionId),
+          onSubmit: () => _showTestPaletteSheet(context, ref, sessionId),
         ),
         Expanded(
           child: _QuestionArea(
@@ -269,6 +269,11 @@ Future<void> _showTestPaletteSheet(
   if (state == null || state.session == null) return;
   final session = state.session!;
   if (session.mode != 'exam') return;
+  final attempted =
+      session.questions.where((q) => q.status != 'unattempted').length;
+  final flagged = session.questions.where((q) => q.flagged).length;
+  final skipped =
+      session.questions.where((q) => q.status == 'unattempted').length;
   final isDark = Theme.of(context).brightness == Brightness.dark;
   final scheme = Theme.of(context).colorScheme;
   await showModalBottomSheet<void>(
@@ -277,8 +282,19 @@ Future<void> _showTestPaletteSheet(
     builder: (ctx) {
       return Container(
         decoration: BoxDecoration(
-          color: scheme.surface,
+          color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          border: Border.all(
+            color: isDark ? AppColors.borderDark : AppColors.borderLight,
+            width: 0.8,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.gray900.withValues(alpha: isDark ? 0.45 : 0.14),
+              blurRadius: 16,
+              offset: const Offset(0, -4),
+            ),
+          ],
         ),
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
@@ -305,6 +321,33 @@ Future<void> _showTestPaletteSheet(
             ),
             const SizedBox(height: AppSpacing.md),
             Wrap(
+              spacing: AppSpacing.md,
+              runSpacing: AppSpacing.xs,
+              children: [
+                _LegendItem(
+                  label: 'Current',
+                  bg: AppColors.primary,
+                  fg: AppColors.onPrimary,
+                ),
+                _LegendItem(
+                  label: 'Attempted',
+                  bg: isDark ? AppColors.correctBgDark : AppColors.correctBg,
+                  fg: isDark ? AppColors.correctTextDark : AppColors.correctText,
+                ),
+                _LegendItem(
+                  label: 'Flagged',
+                  bg: isDark ? AppColors.warningBgDark : AppColors.warningBg,
+                  fg: isDark ? AppColors.warningTextDark : AppColors.warningText,
+                ),
+                _LegendItem(
+                  label: 'Not visited',
+                  bg: scheme.surfaceContainerLow,
+                  fg: scheme.onSurfaceVariant,
+                ),
+              ],
+            ),
+            const SizedBox(height: AppSpacing.md),
+            Wrap(
               spacing: AppSpacing.sm,
               runSpacing: AppSpacing.sm,
               children: [
@@ -324,11 +367,62 @@ Future<void> _showTestPaletteSheet(
               ],
             ),
             const SizedBox(height: AppSpacing.lg),
-            Text(
-              'Current · Attempted · Flagged · Not visited',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(AppRadius.md),
+                border: Border.all(
+                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                  width: 0.6,
+                ),
               ),
+              child: Table(
+                border: TableBorder.symmetric(
+                  inside: BorderSide(
+                    color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                    width: 0.6,
+                  ),
+                ),
+                children: [
+                  TableRow(
+                    children: [
+                      _CountCell(label: 'Attempted', value: '$attempted'),
+                      _CountCell(label: 'Skipped', value: '$skipped'),
+                      _CountCell(label: 'Flagged', value: '$flagged'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: AppSpacing.lg),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () => Navigator.of(ctx).pop(),
+                    child: const Text('Go back'),
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      try {
+                        final id = await notifier.submit();
+                        if (ctx.mounted) Navigator.pop(ctx);
+                        if (context.mounted) context.go('/results/$id');
+                      } catch (_) {}
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          isDark ? scheme.errorContainer : AppColors.wrong,
+                      foregroundColor: isDark ? scheme.onErrorContainer : null,
+                    ),
+                    child: const Text('Submit Test'),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -337,67 +431,75 @@ Future<void> _showTestPaletteSheet(
   );
 }
 
-Future<void> _showTestSubmitSheet(
-  BuildContext context,
-  WidgetRef ref,
-  String sessionId,
-) async {
-  final async = ref.read(testSessionProvider(sessionId));
-  final state = async.asData?.value;
-  final notifier = ref.read(testSessionProvider(sessionId).notifier);
-  if (state == null || state.session == null) return;
-  final session = state.session!;
-  if (session.mode != 'exam') return;
-  final attempted =
-      session.questions.where((q) => q.status != 'unattempted').length;
-  final flagged = session.questions.where((q) => q.flagged).length;
-  final skipped =
-      session.questions.where((q) => q.status == 'unattempted').length;
+class _CountCell extends HookConsumerWidget {
+  const _CountCell({required this.label, required this.value});
 
-  await showModalBottomSheet<void>(
-    context: context,
-    backgroundColor: AppColors.transparent,
-    builder: (ctx) {
-      final scheme = Theme.of(ctx).colorScheme;
-      final isDark = Theme.of(ctx).brightness == Brightness.dark;
-      return Container(
-        decoration: BoxDecoration(
-          color: scheme.surface,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        padding: const EdgeInsets.all(AppSpacing.xxl),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text('Attempted: $attempted', style: AppTextStyles.body()),
-            Text('Flagged: $flagged', style: AppTextStyles.body()),
-            Text('Skipped: $skipped', style: AppTextStyles.body()),
-            const SizedBox(height: AppSpacing.xl),
-            OutlinedButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('Go back'),
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.sm,
+      ),
+      child: Column(
+        children: [
+          Text(
+            label,
+            style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            value,
+            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LegendItem extends HookConsumerWidget {
+  const _LegendItem({required this.label, required this.bg, required this.fg});
+
+  final String label;
+  final Color bg;
+  final Color fg;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 16,
+          height: 16,
+          decoration: BoxDecoration(
+            color: bg,
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Center(
+            child: Text(
+              '•',
+              style: AppTextStyles.caption().copyWith(color: fg, height: 1),
             ),
-            const SizedBox(height: AppSpacing.sm),
-            ElevatedButton(
-              onPressed: () async {
-                try {
-                  final id = await notifier.submit();
-                  if (ctx.mounted) Navigator.pop(ctx);
-                  if (context.mounted) context.go('/results/$id');
-                } catch (_) {}
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: isDark ? scheme.errorContainer : AppColors.wrong,
-                foregroundColor: isDark ? scheme.onErrorContainer : null,
-              ),
-              child: const Text('Submit'),
-            ),
-          ],
+          ),
         ),
-      );
-    },
-  );
+        const SizedBox(width: AppSpacing.xs),
+        Text(
+          label,
+          style: AppTextStyles.caption().copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ],
+    );
+  }
 }
 
 class _TopBar extends HookConsumerWidget {
@@ -832,7 +934,7 @@ class _OptionRow extends HookConsumerWidget {
             border: Border.all(color: border, width: borderWidth),
           ),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 24,
