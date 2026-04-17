@@ -8,6 +8,78 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:468016404938:android:09ced49032bc967bbf5733",
+        "android_client_info": {
+          "package_name": "com.example.risa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468016404938-50s9phccd2d80mecnqv0tul8kqtp8fmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuYXRJm8fAM4Qk3BiqgncBz9ZQ-ptivdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468016404938-50s9phccd2d80mecnqv0tul8kqtp8fmd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468016404938-69n2j7mckch6ou5burti018kgpn00445.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.risa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468016404938:android:20502d32afeda3bfbf5733",
+        "android_client_info": {
+          "package_name": "com.r"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468016404938-50s9phccd2d80mecnqv0tul8kqtp8fmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuYXRJm8fAM4Qk3BiqgncBz9ZQ-ptivdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468016404938-50s9phccd2d80mecnqv0tul8kqtp8fmd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "468016404938-69n2j7mckch6ou5burti018kgpn00445.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.risa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:468016404938:android:43994d0f71785750bf5733",
         "android_client_info": {
           "package_name": "com.upsc.prelims.test.series.topic.wise.mcqs.current.affairs.tinyminyapps.upscwars"
@@ -120,10 +192,10 @@
               "client_type": 3
             },
             {
-              "client_id": "468016404938-89juqge75kpq900k3so2jh26q7jtdaft.apps.googleusercontent.com",
+              "client_id": "468016404938-69n2j7mckch6ou5burti018kgpn00445.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.indiaapps.Kickel-Stats"
+                "bundle_id": "com.example.risa"
               }
             }
           ]
@@ -144,6 +216,14 @@
           "android_info": {
             "package_name": "practice.upsc.indiaapps.com.upscmcqpractice",
             "certificate_hash": "d2398c18fc2a3d687c577bf1edfb2670dd9ad680"
+          }
+        },
+        {
+          "client_id": "468016404938-1tu5i7535u955d6cu0u65pg6mq2lfnjn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "practice.upsc.indiaapps.com.upscmcqpractice",
+            "certificate_hash": "12d1559696930b273d9f563c86cd4a58a7b00f09"
           }
         },
         {
@@ -252,10 +332,10 @@
               "client_type": 3
             },
             {
-              "client_id": "468016404938-89juqge75kpq900k3so2jh26q7jtdaft.apps.googleusercontent.com",
+              "client_id": "468016404938-69n2j7mckch6ou5burti018kgpn00445.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.indiaapps.Kickel-Stats"
+                "bundle_id": "com.example.risa"
               }
             }
           ]

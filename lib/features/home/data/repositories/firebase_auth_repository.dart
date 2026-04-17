@@ -15,9 +15,14 @@ class FirebaseAuthRepository implements AuthRepository {
   final GoogleSignIn _googleSignIn;
   bool _initialized = false;
 
+  // serverClientId (web client ID) is required on Android for Google Sign-In
+  // to include an idToken in the auth response, which Firebase Auth needs.
+  static const _serverClientId =
+      '468016404938-50s9phccd2d80mecnqv0tul8kqtp8fmd.apps.googleusercontent.com';
+
   Future<void> _ensureInitialized() async {
     if (_initialized) return;
-    await _googleSignIn.initialize();
+    await _googleSignIn.initialize(serverClientId: _serverClientId);
     _initialized = true;
   }
 
