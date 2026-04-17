@@ -1,0 +1,46 @@
+{
+  "input_dir": "/Users/sachinsabbarwal/Desktop/upsc_wars_april/upsc_wars/assets/final_cleaned_questions",
+  "totals": {
+    "questions_scanned": 24587,
+    "questions_with_issues": 3
+  },
+  "issues_by_type": {
+    "hi_parse_missing_options": 3
+  },
+  "issues_by_subject": {
+    "Art and Culture": 1,
+    "Economy": 1,
+    "Modern History": 1
+  },
+  "issues_by_subject_topic": {
+    "Art and Culture :: Classical Dance Forms": 1,
+    "Economy :: Agriculture": 1,
+    "Modern History :: Peasant and Tribal Movements": 1
+  },
+  "findings": [
+    {
+      "uuid": "6fcafc7f-e267-43eb-a024-83732403be32",
+      "subject": "Art and Culture",
+      "topic": "Classical Dance Forms",
+      "checks": [
+        "hi_parse_missing_options"
+      ]
+    },
+    {
+      "uuid": "fadabc1e-42fc-4781-b150-499e842cd5bc",
+      "subject": "Economy",
+      "topic": "Agriculture",
+      "checks": [
+        "hi_parse_missing_options"
+      ]
+    },
+    {
+      "uuid": "2990fc0a-1f0c-428c-8feb-226602398ee2",
+      "subject": "Modern History",
+      "topic": "Peasant and Tribal Movements",
+      "checks": [
+        "hi_parse_missing_options"
+      ]
+    }
+  ]
+}

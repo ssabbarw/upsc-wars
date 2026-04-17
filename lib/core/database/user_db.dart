@@ -677,14 +677,27 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
     };
   }
 
-  Future<int> getActiveDistinctTrapTypeCount() async {
+  Future<int> getActiveDistinctTrapTypeCount({
+    required String negativeFramingTrapType,
+  }) async {
     final row = await customSelect(
       '''
-      SELECT COUNT(DISTINCT q.trap_type) AS trap_count
-      FROM revision_queue rq
-      INNER JOIN questions q ON q.uuid = rq.question_uuid
-      WHERE rq.has_graduated_from_queue = 0 AND q.trap_type IS NOT NULL
+      SELECT COUNT(*) AS trap_count
+      FROM (
+        SELECT DISTINCT q.trap_type AS trap_key
+        FROM revision_queue rq
+        INNER JOIN questions q ON q.uuid = rq.question_uuid
+        WHERE rq.has_graduated_from_queue = 0 AND q.trap_type IS NOT NULL
+
+        UNION
+
+        SELECT DISTINCT ? AS trap_key
+        FROM revision_queue rq
+        INNER JOIN questions q ON q.uuid = rq.question_uuid
+        WHERE rq.has_graduated_from_queue = 0 AND q.negative_framing = 1
+      )
       ''',
+      variables: [Variable.withString(negativeFramingTrapType)],
       readsFrom: {revisionQueue, questions},
     ).getSingle();
 

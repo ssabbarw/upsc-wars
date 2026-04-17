@@ -94,14 +94,16 @@ class HomeScreen extends HookConsumerWidget {
                         children: [
                           Text(
                             'Question bank unavailable',
-                            style: AppTextStyles.label()
-                                .copyWith(color: scheme.onSurface),
+                            style: AppTextStyles.label().copyWith(
+                              color: scheme.onSurface,
+                            ),
                           ),
                           const SizedBox(height: AppSpacing.xs),
                           Text(
                             'The question database could not be opened. Reinstall the app or ensure storage is available, then restart.',
-                            style: AppTextStyles.bodySm()
-                                .copyWith(color: scheme.onSurfaceVariant),
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
                           ),
                         ],
                       ),
@@ -117,13 +119,15 @@ class HomeScreen extends HookConsumerWidget {
                       children: [
                         Text(
                           greeting,
-                          style: AppTextStyles.h2()
-                              .copyWith(color: scheme.onSurface),
+                          style: AppTextStyles.h2().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                         Text(
                           'Aspirant',
-                          style: AppTextStyles.bodySm()
-                              .copyWith(color: scheme.onSurfaceVariant),
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
                         ),
                       ],
                     ),
@@ -153,8 +157,9 @@ class HomeScreen extends HookConsumerWidget {
                                 : '${h.streakCount} days',
                             orElse: () => 'Start your streak',
                           ),
-                          style: AppTextStyles.caption()
-                              .copyWith(color: scheme.onSurface),
+                          style: AppTextStyles.caption().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                       ],
                     ),
@@ -173,17 +178,21 @@ class HomeScreen extends HookConsumerWidget {
                   child: totalQuestions.when(
                     data: (count) => Text(
                       'Temp debug: Total questions in DB = $count',
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurface),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurface,
+                      ),
                     ),
                     loading: () => Text(
                       'Temp debug: Reading total questions...',
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                     error: (e, _) => Text(
                       'Temp debug: Failed to read question count: $e',
-                      style: AppTextStyles.bodySm().copyWith(color: AppColors.wrong),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: AppColors.wrong,
+                      ),
                     ),
                   ),
                 ),
@@ -222,8 +231,8 @@ class HomeScreen extends HookConsumerWidget {
                   final progress = h.dailyGoalTarget == 0
                       ? 0.0
                       : (h.dailyGoalProgress / h.dailyGoalTarget)
-                          .clamp(0.0, 1.0)
-                          .toDouble();
+                            .clamp(0.0, 1.0)
+                            .toDouble();
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -231,8 +240,9 @@ class HomeScreen extends HookConsumerWidget {
                         children: [
                           Text(
                             "Today's goal",
-                            style: AppTextStyles.labelSm()
-                                .copyWith(color: scheme.onSurface),
+                            style: AppTextStyles.labelSm().copyWith(
+                              color: scheme.onSurface,
+                            ),
                           ),
                           const Spacer(),
                           Text(
@@ -352,13 +362,16 @@ class _PrimaryActionCard extends HookConsumerWidget {
                     children: [
                       Text(
                         'Start a test',
-                        style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                        style: AppTextStyles.h3().copyWith(
+                          color: scheme.onSurface,
+                        ),
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
                         'No weak areas identified yet',
-                        style: AppTextStyles.bodySm()
-                            .copyWith(color: scheme.onSurfaceVariant),
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
                       ),
                     ],
                   ),
@@ -380,14 +393,16 @@ class _PrimaryActionCard extends HookConsumerWidget {
       try {
         final create = await ref.read(createSessionUseCaseProvider.future);
         final count = home.revisionQueueCount.clamp(1, 50);
-        final id = await create.execute(SessionConfig(
-          subject: 'revision',
-          mode: 'learning',
-          questionCount: count,
-          isTimed: true,
-          timeLimitSecs: 60,
-          language: 'en',
-        ));
+        final id = await create.execute(
+          SessionConfig(
+            subject: 'revision',
+            mode: 'learning',
+            questionCount: count,
+            isTimed: true,
+            timeLimitSecs: 60,
+            language: 'en',
+          ),
+        );
         if (context.mounted) context.push('/test/$id');
       } finally {
         loading.value = false;
@@ -421,8 +436,9 @@ class _PrimaryActionCard extends HookConsumerWidget {
             summaryParts.isNotEmpty
                 ? summaryParts.join(' · ')
                 : '${home.revisionQueueCount} questions to review',
-            style: AppTextStyles.bodySm()
-                .copyWith(color: AppColors.onPrimary.withValues(alpha: 0.8)),
+            style: AppTextStyles.bodySm().copyWith(
+              color: AppColors.onPrimary.withValues(alpha: 0.8),
+            ),
           ),
           const SizedBox(height: AppSpacing.md),
           Row(
@@ -474,14 +490,34 @@ class _QuickGrid extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final data = [
-      _Q('Subject test', '6 subjects', Icons.menu_book_outlined,
-          AppColors.info, '/subject-test'),
-      _Q('Topic test', 'Pick any chapter', Icons.topic_outlined,
-          AppColors.warning, '/topic-test'),
-      _Q('Bookmarks', '${home.bookmarkCount} saved',
-          Icons.bookmark_outline, AppColors.wrong, '/bookmarks'),
-      _Q('History', 'Past sessions', Icons.history, AppColors.correct,
-          '/history'),
+      _Q(
+        'Subject test',
+        '6 subjects',
+        Icons.menu_book_outlined,
+        AppColors.info,
+        '/subject-test',
+      ),
+      _Q(
+        'Topic test',
+        'Pick any chapter',
+        Icons.topic_outlined,
+        AppColors.warning,
+        '/topic-test',
+      ),
+      _Q(
+        'Bookmarks',
+        '${home.bookmarkCount} saved',
+        Icons.bookmark_outline,
+        AppColors.wrong,
+        '/bookmarks',
+      ),
+      _Q(
+        'History',
+        'Past sessions',
+        Icons.history,
+        AppColors.correct,
+        '/history',
+      ),
     ];
     return GridView.count(
       crossAxisCount: 2,
@@ -505,15 +541,14 @@ class _QuickCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final iconBg =
-        isDark ? q.color.withValues(alpha: 0.25) : q.color.withValues(alpha: 0.15);
+    final iconBg = isDark
+        ? q.color.withValues(alpha: 0.25)
+        : q.color.withValues(alpha: 0.15);
     return Material(
       color: AppColors.transparent,
       child: InkWell(
-        onTap:
-            () => q.route == '/history'
-                ? context.go(q.route)
-                : context.push(q.route),
+        onTap: () =>
+            q.route == '/history' ? context.go(q.route) : context.push(q.route),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
           padding: const EdgeInsets.all(AppSpacing.lg),
@@ -541,8 +576,9 @@ class _QuickCard extends HookConsumerWidget {
               ),
               Text(
                 q.subtitle,
-                style: AppTextStyles.caption()
-                    .copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ],
           ),
@@ -553,10 +589,7 @@ class _QuickCard extends HookConsumerWidget {
 }
 
 class _TrapPatternsCard extends StatelessWidget {
-  const _TrapPatternsCard({
-    required this.trapCount,
-    required this.borderColor,
-  });
+  const _TrapPatternsCard({required this.trapCount, required this.borderColor});
 
   final int trapCount;
   final Color borderColor;
@@ -584,13 +617,16 @@ class _TrapPatternsCard extends StatelessWidget {
                   children: [
                     Text(
                       'Trap Patterns',
-                      style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                      ),
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
                       "You've been caught by $trapCount trap ${trapCount == 1 ? 'type' : 'types'}",
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ],
                 ),
@@ -613,8 +649,7 @@ class _LastSessionCard extends HookConsumerWidget {
     final s = home.lastSession;
     final scheme = Theme.of(context).colorScheme;
     if (s == null) return const SizedBox.shrink();
-    final subj =
-        SubjectConstants.bySlug(s.subject)?.displayName ?? s.subject;
+    final subj = SubjectConstants.bySlug(s.subject)?.displayName ?? s.subject;
     final title = s.topic == null ? subj : '$subj · ${s.topic}';
     final inProgress = s.status == 'in_progress';
     return Container(
@@ -629,8 +664,9 @@ class _LastSessionCard extends HookConsumerWidget {
         children: [
           Text(
             'LAST SESSION',
-            style: AppTextStyles.caption()
-                .copyWith(color: scheme.onSurfaceVariant),
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
@@ -644,8 +680,9 @@ class _LastSessionCard extends HookConsumerWidget {
             inProgress
                 ? '${s.questionCount}Q · in progress'
                 : '${s.questionCount}Q · ${s.accuracy?.toStringAsFixed(1) ?? '—'}% · net ${s.netScore?.toStringAsFixed(1) ?? '—'}',
-            style: AppTextStyles.bodySm()
-                .copyWith(color: scheme.onSurfaceVariant),
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
           ),
           const SizedBox(height: AppSpacing.sm),
           Align(
@@ -659,8 +696,7 @@ class _LastSessionCard extends HookConsumerWidget {
                     child: Text('Resume', style: AppTextStyles.labelSm()),
                   )
                 : OutlinedButton(
-                    onPressed: () =>
-                        context.push('/history/${s.sessionId}'),
+                    onPressed: () => context.push('/history/${s.sessionId}'),
                     child: Text('Review', style: AppTextStyles.labelSm()),
                   ),
           ),

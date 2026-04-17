@@ -43,5 +43,10 @@
     "trap_type": "negation-trap",
     "display_name": "Negation Trap",
     "description": "Uses 'not','never','except', or 'which of the following is incorrect' framing to flip the task. Students answer as if selecting correct statements and pick the wrong option."
+  },
+  {
+    "trap_type": "negative-framing",
+    "display_name": "Negative Framing",
+    "description": "The question itself is framed in a negative form (for example asking for the incorrect statement, exception, or NOT true option). This framing increases error risk even when content knowledge is adequate."
   }
 ]

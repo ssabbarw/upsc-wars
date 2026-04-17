@@ -64,28 +64,27 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       );
       if (trEn == null && trHi == null) {
         developer.log(
-          'No translation for uuid=${sq.questionUuid} lang=${session.language}',
+          'No translation for uuid=${sq.questionUuid}; falling back to question text',
           name: 'TestEngineRepository',
         );
-        continue;
       }
 
       final displayTextEn = q.enDisplayText ?? '';
       final displayTextHi = q.hiDisplayText ?? displayTextEn;
       final parsedEn = QuestionDisplayTextParser.parse(displayTextEn);
       final parsedHi = QuestionDisplayTextParser.parse(displayTextHi);
-      final parsedPrimary = session.language == 'hi' ? parsedHi : parsedEn;
-      final oa = parsedPrimary.optionA.trim();
-      final ob = parsedPrimary.optionB.trim();
-      final oc = parsedPrimary.optionC.trim();
-      final od = parsedPrimary.optionD.trim();
-      if (oa.isEmpty || ob.isEmpty || oc.isEmpty || od.isEmpty) {
-        developer.log(
-          'Skipping question with empty options uuid=${sq.questionUuid}',
-          name: 'TestEngineRepository',
-        );
-        continue;
+      String pickOption(String primary, String secondary, String fallback) {
+        final p = primary.trim();
+        if (p.isNotEmpty) return p;
+        final s = secondary.trim();
+        if (s.isNotEmpty) return s;
+        return fallback;
       }
+
+      final optionA = pickOption(parsedEn.optionA, parsedHi.optionA, 'Option A');
+      final optionB = pickOption(parsedEn.optionB, parsedHi.optionB, 'Option B');
+      final optionC = pickOption(parsedEn.optionC, parsedHi.optionC, 'Option C');
+      final optionD = pickOption(parsedEn.optionD, parsedHi.optionD, 'Option D');
 
       final table = await _userDb.questionTablesDao.getByQuestionUuid(
         sq.questionUuid,
@@ -97,22 +96,14 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
           displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
           displayTextHi:
               parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
-          optionA: parsedEn.optionA.trim(),
-          optionAHi: parsedHi.optionA.trim().isEmpty
-              ? parsedEn.optionA.trim()
-              : parsedHi.optionA.trim(),
-          optionB: parsedEn.optionB.trim(),
-          optionBHi: parsedHi.optionB.trim().isEmpty
-              ? parsedEn.optionB.trim()
-              : parsedHi.optionB.trim(),
-          optionC: parsedEn.optionC.trim(),
-          optionCHi: parsedHi.optionC.trim().isEmpty
-              ? parsedEn.optionC.trim()
-              : parsedHi.optionC.trim(),
-          optionD: parsedEn.optionD.trim(),
-          optionDHi: parsedHi.optionD.trim().isEmpty
-              ? parsedEn.optionD.trim()
-              : parsedHi.optionD.trim(),
+          optionA: optionA,
+          optionAHi: optionA,
+          optionB: optionB,
+          optionBHi: optionB,
+          optionC: optionC,
+          optionCHi: optionC,
+          optionD: optionD,
+          optionDHi: optionD,
           correctOption: q.correctOption,
           questionType: q.questionType,
           trapType: q.trapType,
