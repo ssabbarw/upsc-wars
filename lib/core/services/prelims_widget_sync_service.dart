@@ -9,8 +9,7 @@ class PrelimsWidgetSyncService {
 
   static const String _androidWidgetProvider = 'PrelimsCountdownWidgetProvider';
   static const String _iosWidgetKind = 'PrelimsCountdownWidget';
-  static const String _iosAppGroupId =
-      'group.practice.upsc.indiaapps.com.upscmcqpractice.upscWars';
+  static const String _iosAppGroupId = 'group.tinyminyapps.upsc.wars';
   static const String _timerKey = 'prelims_timer_label';
   static const String _quoteKey = 'prelims_quote';
 

@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.dart';
-import 'package:upsc_wars/features/battle/widgets/battle_question_score_grid.dart';
+import 'package:upsc_wars/features/battle/widgets/battle_score_header.dart';
 
 class BattleResultScreen extends StatelessWidget {
   const BattleResultScreen({super.key, required this.payload});
@@ -17,9 +17,15 @@ class BattleResultScreen extends StatelessWidget {
       mine: payload.playerScore,
       other: payload.opponentScore,
     );
+    String letter(String name) {
+      final t = name.trim();
+      if (t.isEmpty) return '?';
+      return t[0].toUpperCase();
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text('Battle Result')),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -38,27 +44,27 @@ class BattleResultScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: AppSpacing.lg),
-            BattleQuestionScoreGrid(
-              playerName: payload.playerName,
+            BattleScoresCollapsible(
               opponentName: payload.opponentName,
               playerOutcomeByQuestion: payload.playerOutcomeByQuestion,
               opponentOutcomeByQuestion: payload.opponentOutcomeByQuestion,
+              opponentInitial: letter(payload.opponentName),
+              playerInitial: letter(payload.playerName),
+              initiallyExpanded: true,
             ),
             const SizedBox(height: AppSpacing.lg),
-            _ScoreRow(
-              label: payload.playerName,
-              score: payload.playerScore.toStringAsFixed(2),
+            OutlinedButton.icon(
+              onPressed:
+                  () => context.push('/history/${payload.sessionId}'),
+              icon: const Icon(Icons.menu_book_outlined),
+              label: const Text('Review explanations'),
             ),
             const SizedBox(height: AppSpacing.sm),
-            _ScoreRow(
-              label: payload.opponentName,
-              score: payload.opponentScore.toStringAsFixed(2),
-            ),
-            const Spacer(),
             ElevatedButton(
               onPressed: () => context.go('/'),
               child: const Text('Back to Home'),
             ),
+            const SizedBox(height: AppSpacing.lg),
           ],
         ),
       ),
@@ -76,29 +82,5 @@ class BattleResultScreen extends StatelessWidget {
       return ('Victory unlocked!', 'You outplayed your opponent this round.');
     }
     return ('So close!', 'You lost this one. Come back stronger.');
-  }
-}
-
-class _ScoreRow extends StatelessWidget {
-  const _ScoreRow({required this.label, required this.score});
-  final String label;
-  final String score;
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Row(
-      children: [
-        Expanded(
-          child: Text(
-            label,
-            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-          ),
-        ),
-        Text(
-          score,
-          style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-        ),
-      ],
-    );
   }
 }

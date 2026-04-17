@@ -127,6 +127,7 @@ GoRouter appRouter(Ref ref) {
             sessionId: state.pathParameters['sessionId']!,
             playerName: (data['playerName'] as String?) ?? 'You',
             opponentName: (data['opponentName'] as String?) ?? 'Opponent',
+            playerPhotoUrl: data['playerPhotoUrl'] as String?,
           );
         },
       ),

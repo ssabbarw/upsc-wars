@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
+import 'package:upsc_wars/core/theme/app_colors.dart';
+import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
@@ -19,85 +21,202 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
   String? _selectedSubject;
   bool _submitting = false;
 
+  static const _tileWidth = 108.0;
+  static const _tileHeight = 48.0;
+
   @override
   Widget build(BuildContext context) {
     final subjectsAsync = ref.watch(subjectTestListProvider);
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final me = ref.watch(authStateChangesProvider).asData?.value;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Configure Battle')),
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _VsHeader(
-              me: me?.displayName ?? 'You',
-              opponent: BattleNameService.pickFromSeed('random-preview'),
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            Text(
-              'Choose subject',
-              style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            Expanded(
+      backgroundColor: isDark
+          ? AppColors.surfaceSecondaryDark
+          : AppColors.surfaceSecondaryLight,
+      appBar: AppBar(
+        title: const Text('Configure battle'),
+        elevation: 0,
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.onPrimary,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: ColoredBox(
+              color: isDark
+                  ? AppColors.surfacePrimaryDark
+                  : AppColors.surfacePrimaryLight,
               child: subjectsAsync.when(
                 data: (subjects) => SingleChildScrollView(
-                  child: Center(
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: AppSpacing.sm,
-                      runSpacing: AppSpacing.sm,
-                      children: [
-                        for (final subject in subjects)
-                          ChoiceChip(
-                            label: Text(subject.displayName),
-                            selected: _selectedSubject == subject.subject,
-                            onSelected: (_) {
-                              setState(
-                                () => _selectedSubject = subject.subject,
-                              );
-                            },
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                    AppSpacing.md,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'Pick your battlefield',
+                        style: AppTextStyles.h1().copyWith(
+                          color: scheme.onSurface,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.xs),
+                      Text(
+                        'One subject · 10 MCQs · Timed (${(10 * 72 / 60).round()} min)',
+                        style: AppTextStyles.bodySm().copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.lg),
+                      Text(
+                        'Subject',
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                          const SizedBox(height: AppSpacing.sm),
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(AppRadius.lg),
+                              border: Border.all(
+                                color: isDark
+                                    ? AppColors.borderDark
+                                    : AppColors.borderLight,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(AppSpacing.md),
+                              child: Wrap(
+                                alignment: WrapAlignment.center,
+                                spacing: AppSpacing.sm,
+                                runSpacing: AppSpacing.sm,
+                                children: [
+                                  for (final subject in subjects)
+                                    SizedBox(
+                                      width: _tileWidth,
+                                      height: _tileHeight,
+                                      child: _SubjectPickTile(
+                                        label: subject.displayName,
+                                        selected:
+                                            _selectedSubject ==
+                                            subject.subject,
+                                        onTap:
+                                            () => setState(
+                                              () => _selectedSubject =
+                                                  subject.subject,
+                                            ),
+                                        scheme: scheme,
+                                        isDark: isDark,
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
                           ),
-                      ],
+                          const SizedBox(height: AppSpacing.lg),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.timer_outlined,
+                                size: 18,
+                                color: scheme.onSurfaceVariant,
+                              ),
+                              const SizedBox(width: AppSpacing.sm),
+                              Expanded(
+                                child: Text(
+                                  'Timer runs during the battle. Answers lock in once chosen, with explanations shown so you learn as you go.',
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                    height: 1.4,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    loading:
+                        () => const Center(child: CircularProgressIndicator()),
+                    error:
+                        (e, st) => Center(
+                          child: Text(
+                            'Could not load subjects',
+                            style: AppTextStyles.body(),
+                          ),
+                        ),
+                  ),
+            ),
+          ),
+          Material(
+            elevation: 8,
+            shadowColor: AppColors.gray900.withValues(alpha: 0.08),
+            color: isDark
+                ? AppColors.surfacePrimaryDark
+                : AppColors.surfacePrimaryLight,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.lg,
+              ),
+              child: SafeArea(
+                top: false,
+                child: FilledButton(
+                  onPressed:
+                      _submitting || _selectedSubject == null
+                          ? null
+                          : () => _startBattle(
+                            context,
+                            me?.displayName ?? 'You',
+                            me?.photoURL,
+                          ),
+                  style: FilledButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
                   ),
+                  child:
+                      _submitting
+                          ? const SizedBox(
+                            height: 22,
+                            width: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: AppColors.onPrimary,
+                            ),
+                          )
+                          : Text(
+                            'Start battle',
+                            style: AppTextStyles.label().copyWith(
+                              color: AppColors.onPrimary,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                 ),
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (_, stackTrace) =>
-                    const Center(child: Text('Could not load subjects')),
               ),
             ),
-            const SizedBox(height: AppSpacing.md),
-            Text(
-              'Battle format: 10 MCQs · Timed (${(10 * 72 / 60).round()} min)',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            ElevatedButton(
-              onPressed: _submitting || _selectedSubject == null
-                  ? null
-                  : () => _startBattle(context, me?.displayName ?? 'You'),
-              child: _submitting
-                  ? const SizedBox(
-                      height: 18,
-                      width: 18,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : const Text('Send Invite'),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Future<void> _startBattle(BuildContext context, String playerName) async {
+  Future<void> _startBattle(
+    BuildContext context,
+    String playerName,
+    String? playerPhotoUrl,
+  ) async {
     final subject = _selectedSubject;
     if (subject == null || _submitting) return;
     setState(() => _submitting = true);
@@ -115,9 +234,14 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
       final sessionId = await uc.execute(config);
       final opponentName = BattleNameService.pickFromSeed(sessionId);
       if (!context.mounted) return;
+      final photo = playerPhotoUrl?.trim();
       context.go(
         '/battle/wait/$sessionId',
-        extra: {'playerName': playerName, 'opponentName': opponentName},
+        extra: {
+          'playerName': playerName,
+          'opponentName': opponentName,
+          if (photo != null && photo.isNotEmpty) 'playerPhotoUrl': photo,
+        },
       );
     } finally {
       if (mounted) setState(() => _submitting = false);
@@ -125,44 +249,64 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
   }
 }
 
-class _VsHeader extends StatelessWidget {
-  const _VsHeader({required this.me, required this.opponent});
-  final String me;
-  final String opponent;
+class _SubjectPickTile extends StatelessWidget {
+  const _SubjectPickTile({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    required this.scheme,
+    required this.isDark,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final ColorScheme scheme;
+  final bool isDark;
+
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.md),
-      decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              children: [
-                const CircleAvatar(child: Icon(Icons.person)),
-                const SizedBox(height: 6),
-                Text(me, maxLines: 1, overflow: TextOverflow.ellipsis),
-              ],
+    final fill =
+        selected
+            ? (isDark
+                ? AppColors.primaryDeep.withValues(alpha: 0.45)
+                : AppColors.primaryLight)
+            : scheme.surface;
+    final border =
+        selected
+            ? AppColors.primary
+            : (isDark ? AppColors.borderDark : AppColors.borderLight);
+    final borderW = selected ? 2.0 : 1.0;
+
+    return Material(
+      color: fill,
+      borderRadius: BorderRadius.circular(AppRadius.md),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          width: 108,
+          height: 48,
+          alignment: Alignment.center,
+          padding: const EdgeInsets.symmetric(horizontal: 6),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            border: Border.all(color: border, width: borderW),
+          ),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.bodySm().copyWith(
+              color: selected
+                  ? (isDark ? AppColors.onPrimary : AppColors.primaryDeep)
+                  : scheme.onSurface,
+              fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
+              height: 1.2,
             ),
           ),
-          Text(
-            'VS',
-            style: AppTextStyles.h3().copyWith(color: scheme.onSurfaceVariant),
-          ),
-          Expanded(
-            child: Column(
-              children: [
-                const CircleAvatar(child: Icon(Icons.person_outline)),
-                const SizedBox(height: 6),
-                Text(opponent, maxLines: 1, overflow: TextOverflow.ellipsis),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -1,120 +1,321 @@
 import 'package:flutter/material.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
+import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
-import 'package:upsc_wars/features/battle/domain/battle_scoring.dart';
-import 'package:upsc_wars/features/battle/widgets/battle_question_score_grid.dart';
 
-class BattleScoreHeader extends StatelessWidget {
-  const BattleScoreHeader({
+/// Collapsible battle scores: two players in one row with compact per-question
+/// outcome circles (primary green strip, on-brand with the app).
+class BattleScoresCollapsible extends StatelessWidget {
+  const BattleScoresCollapsible({
     super.key,
-    required this.playerName,
     required this.opponentName,
-    required this.playerScore,
-    required this.opponentScore,
+    required this.opponentInitial,
+    required this.playerInitial,
     required this.playerOutcomeByQuestion,
     required this.opponentOutcomeByQuestion,
+    this.playerPhotoUrl,
+    this.opponentMonogramBackground,
+    this.playerMonogramBackground,
+    this.initiallyExpanded = true,
   });
 
-  final String playerName;
   final String opponentName;
-  final BattleScore playerScore;
-  final BattleScore opponentScore;
+  final String opponentInitial;
+  final String playerInitial;
   final List<bool?> playerOutcomeByQuestion;
   final List<bool?> opponentOutcomeByQuestion;
+  final String? playerPhotoUrl;
+
+  /// When set (e.g. match screen), monogram uses this fill; when null, uses
+  /// fixed translucent chips on the primary strip (battle test / results).
+  final Color? opponentMonogramBackground;
+  final Color? playerMonogramBackground;
+  final bool initiallyExpanded;
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(AppSpacing.md),
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(AppRadius.lg),
+      child: Theme(
+        data: Theme.of(context).copyWith(dividerColor: AppColors.transparent),
+        child: ExpansionTile(
+          initiallyExpanded: initiallyExpanded,
+          tilePadding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.md,
+            vertical: AppSpacing.xs,
           ),
-          child: Row(
-            children: [
-              Expanded(
-                child: _ScoreTile(
-                  name: playerName,
-                  points: playerScore.points,
-                  highlight: true,
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              Text(
-                'VS',
-                style: AppTextStyles.label().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: _ScoreTile(
-                  name: opponentName,
-                  points: opponentScore.points,
-                  highlight: false,
-                ),
-              ),
-            ],
+          childrenPadding: const EdgeInsets.fromLTRB(
+            AppSpacing.sm,
+            0,
+            AppSpacing.sm,
+            AppSpacing.sm,
           ),
+          backgroundColor: AppColors.primary,
+          collapsedBackgroundColor: AppColors.primary,
+          iconColor: AppColors.onPrimary,
+          collapsedIconColor: AppColors.onPrimary,
+          title: Text(
+            'Scores',
+            style: AppTextStyles.label().copyWith(
+              color: AppColors.onPrimary,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: _PlayerScoreColumn(
+                    alignEnd: false,
+                    avatar: _MonogramAvatar(
+                      letter: opponentInitial,
+                      onPrimaryStrip: opponentMonogramBackground == null,
+                      backgroundColor: opponentMonogramBackground,
+                      foregroundColor: opponentMonogramBackground != null
+                          ? battleMatchMonogramForeground(
+                              opponentMonogramBackground!,
+                            )
+                          : null,
+                    ),
+                    title: opponentName,
+                    outcomes: opponentOutcomeByQuestion,
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: _PlayerScoreColumn(
+                    alignEnd: true,
+                    avatar: _PlayerAvatarStrip(
+                      initial: playerInitial,
+                      photoUrl: playerPhotoUrl,
+                      onPrimaryStrip: playerMonogramBackground == null,
+                      monogramBackground: playerMonogramBackground,
+                      monogramForeground: playerMonogramBackground != null
+                          ? battleMatchMonogramForeground(
+                              playerMonogramBackground!,
+                            )
+                          : null,
+                    ),
+                    title: 'You',
+                    outcomes: playerOutcomeByQuestion,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        const SizedBox(height: AppSpacing.sm),
-        BattleQuestionScoreGrid(
-          playerName: playerName,
-          opponentName: opponentName,
-          playerOutcomeByQuestion: playerOutcomeByQuestion,
-          opponentOutcomeByQuestion: opponentOutcomeByQuestion,
+      ),
+    );
+  }
+}
+
+class _PlayerScoreColumn extends StatelessWidget {
+  const _PlayerScoreColumn({
+    required this.alignEnd,
+    required this.avatar,
+    required this.title,
+    required this.outcomes,
+  });
+
+  final bool alignEnd;
+  final Widget avatar;
+  final String title;
+  final List<bool?> outcomes;
+
+  @override
+  Widget build(BuildContext context) {
+    final cross = alignEnd ? CrossAxisAlignment.end : CrossAxisAlignment.start;
+    final rowMain = alignEnd ? MainAxisAlignment.end : MainAxisAlignment.start;
+    return Column(
+      crossAxisAlignment: cross,
+      children: [
+        Row(
+          mainAxisAlignment: rowMain,
+          children: [
+            if (!alignEnd) ...[avatar, const SizedBox(width: AppSpacing.sm)],
+            Flexible(
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: alignEnd ? TextAlign.right : TextAlign.left,
+                style: AppTextStyles.label().copyWith(
+                  color: AppColors.onPrimary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            if (alignEnd) ...[const SizedBox(width: AppSpacing.sm), avatar],
+          ],
+        ),
+        const SizedBox(height: 4),
+        LayoutBuilder(
+          builder: (context, constraints) {
+            return SizedBox(
+              height: 16,
+              width: constraints.maxWidth,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: alignEnd ? Alignment.centerRight : Alignment.centerLeft,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    for (var i = 0; i < outcomes.length; i++) ...[
+                      if (i > 0) const SizedBox(width: 2),
+                      _TinyOutcomeCircle(
+                        questionNumber: i + 1,
+                        outcome: outcomes[i],
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ],
     );
   }
 }
 
-class _ScoreTile extends StatelessWidget {
-  const _ScoreTile({
-    required this.name,
-    required this.points,
-    required this.highlight,
+class _TinyOutcomeCircle extends StatelessWidget {
+  const _TinyOutcomeCircle({
+    required this.questionNumber,
+    required this.outcome,
   });
 
-  final String name;
-  final double points;
-  final bool highlight;
+  final int questionNumber;
+  final bool? outcome;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = switch (outcome) {
+      true => AppColors.correct,
+      false => AppColors.wrong,
+      null => AppColors.onPrimary.withValues(alpha: 0.22),
+    };
+    final textColor = switch (outcome) {
+      true => AppColors.onPrimary,
+      false => AppColors.onPrimary,
+      null => AppColors.onPrimary.withValues(alpha: 0.9),
+    };
+
+    return Container(
+      width: 13,
+      height: 13,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: color,
+        border: Border.all(
+          color: AppColors.onPrimary.withValues(alpha: 0.35),
+          width: 0.5,
+        ),
+      ),
+      child: Text(
+        '$questionNumber',
+        style: TextStyle(
+          fontSize: 7,
+          fontWeight: FontWeight.w700,
+          height: 1,
+          color: textColor,
+        ),
+      ),
+    );
+  }
+}
+
+class _MonogramAvatar extends StatelessWidget {
+  const _MonogramAvatar({
+    required this.letter,
+    required this.onPrimaryStrip,
+    this.backgroundColor,
+    this.foregroundColor,
+  });
+
+  final String letter;
+  final bool onPrimaryStrip;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.md,
-        vertical: AppSpacing.sm,
+    final Color bg;
+    final Color fg;
+    if (backgroundColor != null && foregroundColor != null) {
+      bg = backgroundColor!;
+      fg = foregroundColor!;
+    } else if (onPrimaryStrip) {
+      bg = AppColors.onPrimary.withValues(alpha: 0.22);
+      fg = AppColors.onPrimary;
+    } else {
+      bg = scheme.surfaceContainerHighest;
+      fg = scheme.onSurface;
+    }
+    return CircleAvatar(
+      radius: 18,
+      backgroundColor: bg,
+      child: Text(
+        letter,
+        style: AppTextStyles.label().copyWith(
+          color: fg,
+          fontWeight: FontWeight.w700,
+        ),
       ),
-      decoration: BoxDecoration(
-        color: highlight ? AppColors.primaryLight : scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
+    );
+  }
+}
+
+class _PlayerAvatarStrip extends StatelessWidget {
+  const _PlayerAvatarStrip({
+    required this.initial,
+    this.photoUrl,
+    required this.onPrimaryStrip,
+    this.monogramBackground,
+    this.monogramForeground,
+  });
+
+  final String initial;
+  final String? photoUrl;
+  final bool onPrimaryStrip;
+  final Color? monogramBackground;
+  final Color? monogramForeground;
+
+  @override
+  Widget build(BuildContext context) {
+    final url = photoUrl?.trim();
+    if (url != null && url.isNotEmpty) {
+      return CircleAvatar(
+        radius: 18,
+        backgroundColor: AppColors.onPrimary.withValues(alpha: 0.22),
+        child: ClipOval(
+          child: Image.network(
+            url,
+            width: 36,
+            height: 36,
+            fit: BoxFit.cover,
+            errorBuilder: (_, _, _) => Center(
+              child: Text(
+                initial,
+                style: AppTextStyles.label().copyWith(
+                  color: AppColors.onPrimary,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
           ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            points.toStringAsFixed(2),
-            style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
-          ),
-        ],
-      ),
+        ),
+      );
+    }
+    return _MonogramAvatar(
+      letter: initial,
+      onPrimaryStrip: onPrimaryStrip,
+      backgroundColor: monogramBackground,
+      foregroundColor: monogramForeground,
     );
   }
 }

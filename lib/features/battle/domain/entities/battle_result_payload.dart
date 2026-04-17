@@ -1,5 +1,6 @@
 class BattleResultPayload {
   const BattleResultPayload({
+    required this.sessionId,
     required this.playerName,
     required this.opponentName,
     required this.playerScore,
@@ -8,6 +9,7 @@ class BattleResultPayload {
     required this.opponentOutcomeByQuestion,
   });
 
+  final String sessionId;
   final String playerName;
   final String opponentName;
   final double playerScore;

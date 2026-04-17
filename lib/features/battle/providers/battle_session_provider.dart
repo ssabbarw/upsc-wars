@@ -29,6 +29,8 @@ class BattleSessionUiState {
     required this.battleSession,
     required this.roomId,
     required this.errorMessage,
+    required this.totalElapsedSecs,
+    required this.bookmarkedByUuid,
   });
 
   factory BattleSessionUiState.initial() {
@@ -39,6 +41,8 @@ class BattleSessionUiState {
       battleSession: null,
       roomId: null,
       errorMessage: null,
+      totalElapsedSecs: 0,
+      bookmarkedByUuid: {},
     );
   }
 
@@ -48,6 +52,8 @@ class BattleSessionUiState {
   final BattleSession? battleSession;
   final String? roomId;
   final String? errorMessage;
+  final int totalElapsedSecs;
+  final Map<String, bool> bookmarkedByUuid;
 
   BattleScore? get playerScore {
     final current = battleSession;
@@ -75,6 +81,8 @@ class BattleSessionUiState {
     String? roomId,
     String? errorMessage,
     bool clearError = false,
+    int? totalElapsedSecs,
+    Map<String, bool>? bookmarkedByUuid,
   }) {
     return BattleSessionUiState(
       isLoading: isLoading ?? this.isLoading,
@@ -83,6 +91,8 @@ class BattleSessionUiState {
       battleSession: battleSession ?? this.battleSession,
       roomId: roomId ?? this.roomId,
       errorMessage: clearError ? null : (errorMessage ?? this.errorMessage),
+      totalElapsedSecs: totalElapsedSecs ?? this.totalElapsedSecs,
+      bookmarkedByUuid: bookmarkedByUuid ?? this.bookmarkedByUuid,
     );
   }
 }
@@ -108,12 +118,31 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
       final base = await _loadSessionWithRetry();
       final user = ref.read(authStateChangesProvider).asData?.value;
       final playerId = (user?.email ?? user?.uid ?? 'player').toLowerCase();
+      final photo = user?.photoURL?.trim();
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      final bookmarked = <String, bool>{};
+      for (final q in base.questions) {
+        bookmarked[q.uuid] = await repo.isBookmarked(q.uuid);
+      }
+      var totalElapsed = 0;
+      if (base.mode == 'exam' &&
+          base.isTimed &&
+          base.timeLimitSecs != null) {
+        final saved = base.savedExamRemainingSecs;
+        if (saved != null) {
+          totalElapsed = (base.timeLimitSecs! - saved).clamp(
+            0,
+            base.timeLimitSecs!,
+          );
+        }
+      }
       final battle = BattleSession(
         id: sessionId,
         baseSession: base,
         player: BattleParticipant(
           id: playerId,
           displayName: user?.displayName ?? 'You',
+          photoUrl: (photo == null || photo.isEmpty) ? null : photo,
         ),
         opponent: BattleParticipant(
           id: _opponentId,
@@ -135,6 +164,8 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         battleSession: battle,
         roomId: roomId,
         currentIndex: _startIndex(base),
+        totalElapsedSecs: totalElapsed,
+        bookmarkedByUuid: bookmarked,
         clearError: true,
       );
       _scheduleBotAnswerForCurrentQuestion();
@@ -248,6 +279,83 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     _scheduleBotAnswerForCurrentQuestion();
   }
 
+  void jumpToIndex(int index) {
+    final current = state.battleSession;
+    if (current == null) return;
+    if (index < 0 || index >= current.baseSession.questions.length) return;
+    state = state.copyWith(currentIndex: index, clearError: true);
+    _scheduleBotAnswerForCurrentQuestion();
+  }
+
+  void tickSecond() {
+    final current = state.battleSession;
+    if (current == null) return;
+    final s = current.baseSession;
+    if (!s.isTimed || s.timeLimitSecs == null) return;
+    final next = state.totalElapsedSecs + 1;
+    state = state.copyWith(totalElapsedSecs: next, clearError: true);
+    if (next > 0 && next % 10 == 0) {
+      final remain = (s.timeLimitSecs! - next).clamp(0, s.timeLimitSecs!);
+      unawaited(_persistExamRemaining(remain));
+    }
+  }
+
+  Future<void> _persistExamRemaining(int remainingSecs) async {
+    try {
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      await repo.saveExamRemainingSeconds(
+        sessionId: sessionId,
+        remainingSecs: remainingSecs,
+      );
+    } catch (_) {}
+  }
+
+  Future<bool> toggleBookmark() async {
+    final current = state.battleSession;
+    if (current == null) return false;
+    final q = current.baseSession.questions[state.currentIndex];
+    final isMarked = state.bookmarkedByUuid[q.uuid] ?? false;
+    try {
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      if (isMarked) {
+        await repo.removeBookmark(q.uuid);
+      } else {
+        await repo.addBookmark(q.uuid);
+      }
+      final nextMap = {...state.bookmarkedByUuid, q.uuid: !isMarked};
+      state = state.copyWith(bookmarkedByUuid: nextMap, clearError: true);
+      return !isMarked;
+    } catch (_) {
+      return isMarked;
+    }
+  }
+
+  Future<void> toggleFlag() async {
+    final current = state.battleSession;
+    if (current == null) return;
+    final q = current.baseSession.questions[state.currentIndex];
+    final next = !q.flagged;
+    try {
+      final uc = await ref.read(flagQuestionUseCaseProvider.future);
+      await uc.execute(sessionId: sessionId, questionUuid: q.uuid, flagged: next);
+      final updated = [...current.baseSession.questions];
+      updated[state.currentIndex] = q.copyWith(flagged: next);
+      state = state.copyWith(
+        battleSession: current.copyWith(
+          baseSession: _copySession(current.baseSession, updated),
+        ),
+        clearError: true,
+      );
+    } catch (_) {}
+  }
+
+  Future<void> markAbandoned() async {
+    try {
+      final uc = await ref.read(markSessionAbandonedUseCaseProvider.future);
+      await uc.execute(sessionId);
+    } catch (_) {}
+  }
+
   Future<String> submit() async {
     final current = state.battleSession;
     if (current == null) throw StateError('No battle session');
@@ -295,6 +403,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         )
         .toList();
     return BattleResultPayload(
+      sessionId: sessionId,
       playerName: current.player.displayName,
       opponentName: current.opponent.displayName,
       playerScore: player.points,

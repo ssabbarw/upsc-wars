@@ -1,7 +1,7 @@
 import SwiftUI
 import WidgetKit
 
-private let widgetGroupId = "group.practice.upsc.indiaapps.com.upscmcqpractice.upscWars"
+private let widgetGroupId = "group.tinyminyapps.upsc.wars"
 
 struct PrelimsCountdownEntry: TimelineEntry {
   let date: Date

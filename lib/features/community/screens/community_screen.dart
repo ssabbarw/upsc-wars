@@ -531,7 +531,7 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
               child: FilledButton(
                 onPressed: () {
                   Navigator.of(context).pop();
-                  context.push('/community/connect');
+                  context.push('/battle/config');
                 },
                 child: const Text('Random Connect'),
               ),
