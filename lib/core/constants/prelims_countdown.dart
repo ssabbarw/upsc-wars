@@ -5,7 +5,7 @@ class PrelimsCountdown {
   static final DateTime prelimsDate = DateTime(2026, 5, 24, 9, 30);
 
   static const String motivationQuote =
-      '“The trouble is, you think you have time.” by Buddha';
+      '“The trouble is, you think you have time.”\n- Buddha';
 
   static Duration remaining({DateTime? now}) {
     final current = now ?? DateTime.now();

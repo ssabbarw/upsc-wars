@@ -16,7 +16,7 @@ class PrelimsCountdownWidgetProvider : HomeWidgetProvider() {
         appWidgetIds.forEach { widgetId ->
             val views = RemoteViews(context.packageName, R.layout.prelims_countdown_widget)
             val timerLabel = widgetData.getString("prelims_timer_label", "0")
-            val quote = widgetData.getString("prelims_quote", "“The trouble is, you think you have time.” by Buddha")
+            val quote = widgetData.getString("prelims_quote", "“The trouble is, you think you have time.”\n- Buddha")
 
             views.setTextViewText(R.id.prelims_timer_label, "Days: $timerLabel")
             views.setTextViewText(R.id.prelims_quote, quote)

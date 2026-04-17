@@ -43,7 +43,9 @@
         android:layout_marginTop="10dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="“The trouble is, you think you have time.” by Buddha"
+        android:gravity="start"
+        android:text="“The trouble is, you think you have time.”&#10;- Buddha"
+        android:textAlignment="viewStart"
         android:textColor="#FF1D4E75"
         android:textSize="13sp" />
 

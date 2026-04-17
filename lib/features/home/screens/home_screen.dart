@@ -11,6 +11,7 @@ import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -30,6 +31,7 @@ class HomeScreen extends HookConsumerWidget {
     final home = ref.watch(homeStateProvider);
     final totalQuestions = ref.watch(totalQuestionCountProvider);
     final bootstrap = ref.watch(appBootstrapProvider);
+    final cachedStreakText = useState<String?>(null);
 
     final past200ms = useState(false);
     useEffect(() {
@@ -47,6 +49,14 @@ class HomeScreen extends HookConsumerWidget {
       });
       return null;
     }, const []);
+
+    useEffect(() {
+      home.whenData((h) {
+        cachedStreakText.value =
+            h.streakCount == 0 ? 'Start your streak' : '${h.streakCount} days';
+      });
+      return null;
+    }, [home]);
 
     final greeting = _greeting();
 
@@ -135,6 +145,31 @@ class HomeScreen extends HookConsumerWidget {
                       ],
                     ),
                   ),
+                  Material(
+                    color: AppColors.transparent,
+                    child: InkWell(
+                      onTap: () async {
+                        final prefs = await ref.read(prefsServiceProvider.future);
+                        prefs.darkModeEnabled = !isDark;
+                        ref.invalidate(prefsServiceProvider);
+                      },
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                      child: Container(
+                        padding: const EdgeInsets.all(AppSpacing.sm),
+                        margin: const EdgeInsets.only(right: AppSpacing.sm),
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          border: Border.all(color: borderColor, width: 0.5),
+                        ),
+                        child: Icon(
+                          isDark ? Icons.dark_mode : Icons.light_mode,
+                          size: 18,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                  ),
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: AppSpacing.md,
@@ -154,11 +189,14 @@ class HomeScreen extends HookConsumerWidget {
                         ),
                         const SizedBox(width: AppSpacing.xs),
                         Text(
-                          home.maybeWhen(
+                          home.when(
                             data: (h) => h.streakCount == 0
                                 ? 'Start your streak'
                                 : '${h.streakCount} days',
-                            orElse: () => 'Start your streak',
+                            loading: () =>
+                                cachedStreakText.value ?? 'Start your streak',
+                            error: (_, __) =>
+                                cachedStreakText.value ?? 'Start your streak',
                           ),
                           style: AppTextStyles.caption().copyWith(
                             color: scheme.onSurface,
