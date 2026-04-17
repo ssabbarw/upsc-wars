@@ -9,6 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/top_snack_bar.dart';
 
 class BookmarksScreen extends HookConsumerWidget {
   const BookmarksScreen({super.key});
@@ -23,17 +24,16 @@ class BookmarksScreen extends HookConsumerWidget {
       await uc.execute(item.questionUuid);
       ref.invalidate(bookmarksListProvider);
       if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text('Bookmark removed'),
-          action: SnackBarAction(
-            label: 'Undo',
-            onPressed: () async {
-              final add = await ref.read(addBookmarkUseCaseProvider.future);
-              await add.execute(item.questionUuid, note: item.userNote);
-              ref.invalidate(bookmarksListProvider);
-            },
-          ),
+      showTopSnackBar(
+        context,
+        content: const Text('Bookmark removed'),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () async {
+            final add = await ref.read(addBookmarkUseCaseProvider.future);
+            await add.execute(item.questionUuid, note: item.userNote);
+            ref.invalidate(bookmarksListProvider);
+          },
         ),
       );
     }

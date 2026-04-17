@@ -8,6 +8,7 @@ import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
 import 'test_session_state.dart';
 
@@ -332,13 +333,12 @@ class TestSessionNotifier extends _$TestSessionNotifier {
   void _showStorageSnack() {
     final ctx = rootNavigatorKey.currentContext;
     if (ctx == null) return;
-    ScaffoldMessenger.of(ctx).showSnackBar(
-      SnackBar(
-        content: Text(
-          'Could not save progress. Please check your device storage.',
-          style: AppTextStyles.bodyMd().copyWith(
-            color: Theme.of(ctx).colorScheme.onSurface,
-          ),
+    showTopSnackBar(
+      ctx,
+      content: Text(
+        'Could not save progress. Please check your device storage.',
+        style: AppTextStyles.bodyMd().copyWith(
+          color: Theme.of(ctx).colorScheme.onSurface,
         ),
       ),
     );

@@ -8,10 +8,12 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
+import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/top_snack_bar.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
@@ -215,6 +217,11 @@ class _TestEngineLoaded extends HookConsumerWidget {
           uiLanguage: uiLanguage.value,
           onLanguageChanged: (value) => uiLanguage.value = value,
         ),
+        _ExamActionRow(
+          sessionId: sessionId,
+          onPalette: () => _showTestPaletteSheet(context, ref, sessionId),
+          onSubmit: () => _showTestSubmitSheet(context, ref, sessionId),
+        ),
         Expanded(
           child: _QuestionArea(
             sessionId: sessionId,
@@ -226,8 +233,19 @@ class _TestEngineLoaded extends HookConsumerWidget {
           sessionId: sessionId,
           onPrev: notifier.movePrev,
           onNext: notifier.moveNext,
-          onPalette: () => _showTestPaletteSheet(context, ref, sessionId),
-          onSubmit: () => _showTestSubmitSheet(context, ref, sessionId),
+          onBookmark: () async {
+            final marked = await notifier.toggleBookmark();
+            if (!context.mounted) return;
+            showTopSnackBar(
+              context,
+              content: Text(
+                marked ? 'Bookmarked' : 'Bookmark removed',
+                style: AppTextStyles.bodyMd().copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+            );
+          },
           onSubmitLearning: () async {
             try {
               final id = await notifier.submit();
@@ -266,6 +284,26 @@ Future<void> _showTestPaletteSheet(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Question Grid',
+                style: AppTextStyles.h3().copyWith(
+                  color: scheme.onSurface,
+                ),
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Tap any number to jump to that question',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            const SizedBox(height: AppSpacing.md),
             Wrap(
               spacing: AppSpacing.sm,
               runSpacing: AppSpacing.sm,
@@ -321,6 +359,7 @@ Future<void> _showTestSubmitSheet(
     backgroundColor: AppColors.transparent,
     builder: (ctx) {
       final scheme = Theme.of(ctx).colorScheme;
+      final isDark = Theme.of(ctx).brightness == Brightness.dark;
       return Container(
         decoration: BoxDecoration(
           color: scheme.surface,
@@ -348,7 +387,10 @@ Future<void> _showTestSubmitSheet(
                   if (context.mounted) context.go('/results/$id');
                 } catch (_) {}
               },
-              style: ElevatedButton.styleFrom(backgroundColor: AppColors.wrong),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: isDark ? scheme.errorContainer : AppColors.wrong,
+                foregroundColor: isDark ? scheme.onErrorContainer : null,
+              ),
               child: const Text('Submit'),
             ),
           ],
@@ -388,7 +430,6 @@ class _TopBar extends HookConsumerWidget {
           s.topic,
           q.flagged,
           v.explanationVisible,
-          v.bookmarkedByUuid[q.uuid] ?? false,
         );
       }),
     );
@@ -403,7 +444,6 @@ class _TopBar extends HookConsumerWidget {
       topic,
       flagged,
       explanationVisible,
-      bookmarked,
     ) = snap;
 
     final subj =
@@ -480,37 +520,34 @@ class _TopBar extends HookConsumerWidget {
               ),
             ),
           const SizedBox(width: AppSpacing.sm),
-          InkWell(
-            onTap: () async {
-              final marked =
-                  await ref
-                      .read(testSessionProvider(sessionId).notifier)
-                      .toggleBookmark();
-              if (!context.mounted) return;
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    marked ? 'Bookmarked' : 'Bookmark removed',
-                    style: AppTextStyles.bodyMd().copyWith(
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                ),
-              );
-            },
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            child: Padding(
-              padding: const EdgeInsets.all(AppSpacing.sm),
-              child: Icon(
-                bookmarked ? Icons.bookmark : Icons.bookmark_border,
-                size: 18,
-                color: bookmarked ? AppColors.primary : scheme.onSurfaceVariant,
-              ),
-            ),
-          ),
-          const SizedBox(width: AppSpacing.md),
-          _TopBarTimerLabel(sessionId: sessionId),
+          const _TopBarDarkModeToggle(),
         ],
+      ),
+    );
+  }
+}
+
+class _TopBarDarkModeToggle extends HookConsumerWidget {
+  const _TopBarDarkModeToggle();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return InkWell(
+      onTap: () async {
+        final prefs = await ref.read(prefsServiceProvider.future);
+        prefs.darkModeEnabled = !isDark;
+        ref.invalidate(prefsServiceProvider);
+      },
+      borderRadius: BorderRadius.circular(AppRadius.md),
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.sm),
+        child: Icon(
+          isDark ? Icons.dark_mode : Icons.light_mode,
+          size: 18,
+          color: scheme.onSurfaceVariant,
+        ),
       ),
     );
   }
@@ -1048,16 +1085,14 @@ class _BottomBar extends HookConsumerWidget {
     required this.sessionId,
     required this.onPrev,
     required this.onNext,
-    required this.onPalette,
-    required this.onSubmit,
+    required this.onBookmark,
     required this.onSubmitLearning,
   });
 
   final String sessionId;
   final Future<void> Function() onPrev;
   final Future<void> Function() onNext;
-  final Future<void> Function() onPalette;
-  final Future<void> Function() onSubmit;
+  final Future<void> Function() onBookmark;
   final Future<void> Function() onSubmitLearning;
 
   @override
@@ -1072,6 +1107,7 @@ class _BottomBar extends HookConsumerWidget {
           v.currentIndex,
           s.questions.length,
           v.furthestAnsweredIndex,
+          v.bookmarkedByUuid[s.questions[v.currentIndex].uuid] ?? false,
           s.questions[v.currentIndex].selectedOption != null ||
               s.questions[v.currentIndex].status == 'timed_out',
         );
@@ -1085,6 +1121,7 @@ class _BottomBar extends HookConsumerWidget {
       currentIndex,
       qLen,
       furthestAnsweredIndex,
+      currentBookmarked,
       currentQuestionAnswered,
     ) = snap;
     final last = currentIndex == qLen - 1;
@@ -1112,18 +1149,14 @@ class _BottomBar extends HookConsumerWidget {
             ),
           ),
           const SizedBox(width: AppSpacing.sm),
-          if (mode == 'exam') ...[
-            IconButton(
-              onPressed: onPalette,
-              icon: const Icon(Icons.grid_view_outlined, size: 18),
+          IconButton(
+            onPressed: onBookmark,
+            icon: Icon(
+              currentBookmarked ? Icons.bookmark : Icons.bookmark_border,
+              size: 20,
             ),
-            ElevatedButton(
-              onPressed: onSubmit,
-              style: ElevatedButton.styleFrom(backgroundColor: AppColors.wrong),
-              child: const Text('Submit'),
-            ),
-            const SizedBox(width: AppSpacing.sm),
-          ],
+          ),
+          const SizedBox(width: AppSpacing.sm),
           Expanded(
             child:
                 mode == 'learning' && last
@@ -1140,6 +1173,61 @@ class _BottomBar extends HookConsumerWidget {
                       icon: const Icon(Icons.chevron_right, size: 18),
                       label: const Text('Next'),
                     ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ExamActionRow extends HookConsumerWidget {
+  const _ExamActionRow({
+    required this.sessionId,
+    required this.onPalette,
+    required this.onSubmit,
+  });
+
+  final String sessionId;
+  final Future<void> Function() onPalette;
+  final Future<void> Function() onSubmit;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final mode = ref.watch(
+      testSessionProvider(
+        sessionId,
+      ).select((a) => a.asData?.value.session?.mode ?? 'exam'),
+    );
+    if (mode != 'exam') return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.lg,
+        0,
+        AppSpacing.lg,
+        AppSpacing.sm,
+      ),
+      child: Row(
+        children: [
+          OutlinedButton(
+            onPressed: onPalette,
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size(44, 44),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+            ),
+            child: const Icon(Icons.grid_view_outlined, size: 18),
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          _TopBarTimerLabel(sessionId: sessionId),
+          const Spacer(),
+          ElevatedButton(
+            onPressed: onSubmit,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isDark ? scheme.errorContainer : AppColors.wrong,
+              foregroundColor: isDark ? scheme.onErrorContainer : null,
+            ),
+            child: const Text('Submit'),
           ),
         ],
       ),

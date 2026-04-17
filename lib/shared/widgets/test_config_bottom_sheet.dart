@@ -8,6 +8,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
+import 'top_snack_bar.dart';
 import '../extensions/count_formatting.dart';
 
 class TestConfigSheetArgs {
@@ -125,13 +126,12 @@ class TestConfigBottomSheet extends HookConsumerWidget {
         args.onSessionCreated(id);
       } catch (_) {
         if (!context.mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              'Something went wrong. Please try again.',
-              style: AppTextStyles.bodyMd().copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
-              ),
+        showTopSnackBar(
+          context,
+          content: Text(
+            'Something went wrong. Please try again.',
+            style: AppTextStyles.bodyMd().copyWith(
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         );
