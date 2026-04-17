@@ -28,6 +28,7 @@ class RevisionModeScreen extends HookConsumerWidget {
               ),
           data: (state) {
             final index = useState(0);
+            final uiLanguage = useState('en');
             final bookmarks = useState<Map<String, bool>>(
               state.bookmarkedByUuid,
             );
@@ -70,6 +71,8 @@ class RevisionModeScreen extends HookConsumerWidget {
                   index.value = index.value + 1;
                 }
               },
+              uiLanguage: uiLanguage.value,
+              onLanguageChanged: (lang) => uiLanguage.value = lang,
             );
           },
         ),

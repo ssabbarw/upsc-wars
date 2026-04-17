@@ -44,6 +44,8 @@ class ExplanationCard extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final deepDiveOpen = useState(false);
     final hasStatements =
         showStatements && translation.statementAnalysis.isNotEmpty;
@@ -65,10 +67,10 @@ class ExplanationCard extends HookConsumerWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: scheme.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.black.withValues(alpha: 0.12),
+          color: scheme.outlineVariant.withValues(alpha: 0.7),
           width: 0.5,
         ),
       ),
@@ -81,10 +83,10 @@ class ExplanationCard extends HookConsumerWidget {
               children: [
                 Text(
                   body,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     height: 1.65,
-                    color: Color(0xFF1A1A1A),
+                    color: scheme.onSurface,
                   ),
                 ),
                 if (valueAdd.isNotEmpty) ...[
@@ -93,28 +95,28 @@ class ExplanationCard extends HookConsumerWidget {
                     width: double.infinity,
                     padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF7F7F5),
+                      color: scheme.surfaceContainerLow,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'Value addition',
                           style: TextStyle(
                             fontSize: 10,
                             letterSpacing: 0.4,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xFF888888),
+                            color: scheme.onSurfaceVariant,
                           ),
                         ),
                         const SizedBox(height: 5),
                         Text(
                           valueAdd,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 12,
                             height: 1.6,
-                            color: Color(0xFF555555),
+                            color: scheme.onSurfaceVariant,
                           ),
                         ),
                       ],
@@ -132,22 +134,22 @@ class ExplanationCard extends HookConsumerWidget {
             child: Container(
               padding: const EdgeInsets.fromLTRB(14, 11, 14, 11),
               decoration: BoxDecoration(
-                color: const Color(0xFFF7F7F5),
+                color: scheme.surfaceContainerLow,
                 border: Border(
                   top: BorderSide(
-                    color: Colors.black.withValues(alpha: 0.12),
+                    color: scheme.outlineVariant.withValues(alpha: 0.7),
                     width: 0.5,
                   ),
                 ),
               ),
               child: Row(
                 children: [
-                  const Text(
+                  Text(
                     'Deep dive',
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xFF1A1A1A),
+                      color: scheme.onSurface,
                     ),
                   ),
                   const Spacer(),
@@ -156,7 +158,7 @@ class ExplanationCard extends HookConsumerWidget {
                         ? Icons.keyboard_arrow_up
                         : Icons.keyboard_arrow_down,
                     size: 18,
-                    color: const Color(0xFF888888),
+                    color: scheme.onSurfaceVariant,
                   ),
                 ],
               ),
@@ -182,7 +184,7 @@ class ExplanationCard extends HookConsumerWidget {
                               width: 2,
                             ),
                             top: BorderSide(
-                              color: Colors.black.withValues(alpha: 0.12),
+                              color: scheme.outlineVariant.withValues(alpha: 0.7),
                               width: 0.5,
                             ),
                           ),
@@ -198,7 +200,7 @@ class ExplanationCard extends HookConsumerWidget {
                             color:
                                 activeTab.value == i
                                     ? primary
-                                    : const Color(0xFF555555),
+                                    : scheme.onSurfaceVariant,
                           ),
                         ),
                       ),
@@ -212,6 +214,7 @@ class ExplanationCard extends HookConsumerWidget {
                 tab: tabs[activeTab.value],
                 translation: translation,
                 watchOut: watchOut,
+                isDark: isDark,
               ),
             ),
           ],
@@ -226,14 +229,17 @@ class _TabBody extends StatelessWidget {
     required this.tab,
     required this.translation,
     required this.watchOut,
+    required this.isDark,
   });
 
   final String tab;
   final QuestionTranslation translation;
   final ({String title, String reason})? watchOut;
+  final bool isDark;
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     switch (tab) {
       case 'Statements':
         return Column(
@@ -254,7 +260,7 @@ class _TabBody extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFAEEDA),
+                  color: isDark ? const Color(0xFF39290E) : const Color(0xFFFAEEDA),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
@@ -262,20 +268,20 @@ class _TabBody extends StatelessWidget {
                   children: [
                     Text(
                       'Watch out - ${watchOut!.title}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
                         letterSpacing: 0.4,
-                        color: Color(0xFF854F0B),
+                        color: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       watchOut!.reason,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         height: 1.55,
-                        color: Color(0xFF633806),
+                        color: isDark ? const Color(0xFFF4D39E) : const Color(0xFF633806),
                       ),
                     ),
                   ],
@@ -291,20 +297,20 @@ class _TabBody extends StatelessWidget {
                   children: [
                     Text(
                       '${i + 1}',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFF888888),
+                        color: scheme.onSurfaceVariant,
                       ),
                     ),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
                         translation.eliminationLogic[i],
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           height: 1.55,
-                          color: Color(0xFF1A1A1A),
+                          color: scheme.onSurface,
                         ),
                       ),
                     ),
@@ -319,10 +325,10 @@ class _TabBody extends StatelessWidget {
           children: [
             Text(
               (translation.upscTrapExplanation ?? '').trim(),
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12,
                 height: 1.65,
-                color: Color(0xFF1A1A1A),
+                color: scheme.onSurface,
               ),
             ),
             if (translation.conceptsUsed.isNotEmpty) ...[
@@ -338,18 +344,18 @@ class _TabBody extends StatelessWidget {
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF7F7F5),
+                        color: scheme.surfaceContainerLow,
                         border: Border.all(
-                          color: Colors.black.withValues(alpha: 0.22),
+                          color: scheme.outlineVariant.withValues(alpha: 0.8),
                           width: 0.5,
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
                         tag,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 11,
-                          color: Color(0xFF555555),
+                          color: scheme.onSurfaceVariant,
                         ),
                       ),
                     ),
@@ -369,16 +375,22 @@ class _StatementRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final pillBg =
-        item.isCorrect ? const Color(0xFFC0DD97) : const Color(0xFFF7C1C1);
+        item.isCorrect
+            ? (isDark ? const Color(0xFF2F5B35) : const Color(0xFFC0DD97))
+            : (isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF7C1C1));
     final pillText =
-        item.isCorrect ? const Color(0xFF173404) : const Color(0xFF501313);
+        item.isCorrect
+            ? (isDark ? const Color(0xFFD4F4D9) : const Color(0xFF173404))
+            : (isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313));
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Colors.black.withValues(alpha: 0.12),
+            color: scheme.outlineVariant.withValues(alpha: 0.7),
             width: 0.5,
           ),
         ),
@@ -393,10 +405,10 @@ class _StatementRow extends StatelessWidget {
                 width: 18,
                 child: Text(
                   '$index',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    color: Color(0xFF888888),
+                    color: scheme.onSurfaceVariant,
                   ),
                 ),
               ),
@@ -404,10 +416,10 @@ class _StatementRow extends StatelessWidget {
               Expanded(
                 child: Text(
                   item.statement,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
                     height: 1.55,
-                    color: Color(0xFF1A1A1A),
+                    color: scheme.onSurface,
                   ),
                 ),
               ),
@@ -434,10 +446,10 @@ class _StatementRow extends StatelessWidget {
             padding: const EdgeInsets.only(left: 26),
             child: Text(
               item.reason,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12,
                 height: 1.55,
-                color: Color(0xFF555555),
+                color: scheme.onSurfaceVariant,
               ),
             ),
           ),

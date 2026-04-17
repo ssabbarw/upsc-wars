@@ -13,6 +13,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/extensions/context_extensions.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../providers/test_session_provider.dart';
@@ -274,7 +275,7 @@ Future<void> _showTestPaletteSheet(
   final flagged = session.questions.where((q) => q.flagged).length;
   final skipped =
       session.questions.where((q) => q.status == 'unattempted').length;
-  final isDark = Theme.of(context).brightness == Brightness.dark;
+  final isDark = context.isDarkMode;
   final scheme = Theme.of(context).colorScheme;
   await showModalBottomSheet<void>(
     context: context,
@@ -608,7 +609,7 @@ class _TopBar extends HookConsumerWidget {
                 decoration: BoxDecoration(
                   color:
                       flagged
-                          ? (Theme.of(context).brightness == Brightness.dark
+                          ? (context.isDarkMode
                               ? AppColors.warningBgDark
                               : AppColors.warningBg)
                           : AppColors.transparent,
@@ -635,7 +636,7 @@ class _TopBarDarkModeToggle extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = context.isDarkMode;
     return InkWell(
       onTap: () async {
         final prefs = await ref.read(prefsServiceProvider.future);
@@ -880,7 +881,7 @@ class _OptionRow extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = context.isDarkMode;
 
     Color bg;
     Color border;
@@ -972,7 +973,7 @@ class _QuestionTable extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = context.isDarkMode;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
     final header = table.header?.trim();
     final footer = table.footer?.trim();
@@ -1077,7 +1078,7 @@ class _ExplanationCard extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = context.isDarkMode;
     final isHindi = uiLanguage == 'hi';
     final finalExplanation = isHindi
         ? question.finalExplanationHi
@@ -1296,7 +1297,7 @@ class _ExamActionRow extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = context.isDarkMode;
     final mode = ref.watch(
       testSessionProvider(
         sessionId,

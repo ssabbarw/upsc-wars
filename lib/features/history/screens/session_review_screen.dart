@@ -5,7 +5,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
+import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 
@@ -30,6 +32,7 @@ class SessionReviewScreen extends HookConsumerWidget {
               ),
           data: (state) {
             final index = useState(0);
+            final uiLanguage = useState('en');
             final bookmarks = useState<Map<String, bool>>(
               state.bookmarkedByUuid,
             );
@@ -88,6 +91,8 @@ class SessionReviewScreen extends HookConsumerWidget {
                 );
                 queue.value = {...queue.value, q.uuid: true};
               },
+              uiLanguage: uiLanguage.value,
+              onLanguageChanged: (lang) => uiLanguage.value = lang,
             );
           },
         ),
@@ -111,6 +116,8 @@ class ReviewBody extends StatelessWidget {
     required this.onNext,
     this.onAddToRevision,
     this.isRevisionMode = false,
+    required this.uiLanguage,
+    required this.onLanguageChanged,
   });
 
   final String title;
@@ -126,12 +133,18 @@ class ReviewBody extends StatelessWidget {
   final VoidCallback onNext;
   final VoidCallback? onAddToRevision;
   final bool isRevisionMode;
+  final String uiLanguage;
+  final ValueChanged<String> onLanguageChanged;
 
   @override
   Widget build(BuildContext context) {
+    final isHindi = uiLanguage == 'hi';
+    final displayText = isHindi ? question.displayTextHi : question.displayText;
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = context.isDarkMode;
     final progress = total == 0 ? 0.0 : current / total;
-    final status = _statusFor(question.status, isRevisionMode);
-    final parsed = _parseStatements(question.displayText);
+    final status = _statusFor(question.status, isRevisionMode, isDark);
+    final parsed = _parseStatements(displayText);
     return Column(
       children: [
         _TopBar(
@@ -139,6 +152,8 @@ class ReviewBody extends StatelessWidget {
           isBookmarked: isBookmarked,
           showRevisionBadge: showRevisionBadge,
           onBookmark: onToggleBookmark,
+          uiLanguage: uiLanguage,
+          onLanguageChanged: onLanguageChanged,
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
@@ -148,9 +163,9 @@ class ReviewBody extends StatelessWidget {
                 children: [
                   Text(
                     'Question $current of $total',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF888888),
+                      color: scheme.onSurfaceVariant,
                     ),
                   ),
                   const Spacer(),
@@ -160,8 +175,8 @@ class ReviewBody extends StatelessWidget {
                       fontSize: 12,
                       color:
                           showRevisionBadge
-                              ? const Color(0xFF1D9E75)
-                              : const Color(0xFF888888),
+                              ? scheme.primary
+                              : scheme.onSurfaceVariant,
                     ),
                   ),
                 ],
@@ -172,8 +187,8 @@ class ReviewBody extends StatelessWidget {
                 child: LinearProgressIndicator(
                   minHeight: 3,
                   value: progress.clamp(0, 1),
-                  color: const Color(0xFF1D9E75),
-                  backgroundColor: Colors.black.withValues(alpha: 0.12),
+                  color: scheme.primary,
+                  backgroundColor: scheme.outlineVariant.withValues(alpha: 0.4),
                 ),
               ),
             ],
@@ -190,17 +205,17 @@ class ReviewBody extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 11,
                   letterSpacing: 0.5,
-                  color: Color(0xFF888888),
+                  color: Color(0xFF888888), // neutral section heading
                   fontWeight: FontWeight.w500,
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 parsed.stem,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13.5,
                   height: 1.6,
-                  color: Color(0xFF1A1A1A),
+                  color: scheme.onSurface,
                 ),
               ),
               if (parsed.statements.isNotEmpty) ...[
@@ -212,39 +227,44 @@ class ReviewBody extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border(
                         left: BorderSide(
-                          color: Colors.black.withValues(alpha: 0.22),
+                          color: scheme.outline.withValues(alpha: 0.5),
                           width: 2,
                         ),
                       ),
                     ),
                     child: Text(
                       st,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 13,
                         height: 1.55,
-                        color: Color(0xFF555555),
+                        color: scheme.onSurfaceVariant,
                       ),
                     ),
                   ),
               ],
               const SizedBox(height: 8),
-              _Options(question: question, isRevisionMode: isRevisionMode),
+              _Options(
+                question: question,
+                isRevisionMode: isRevisionMode,
+                uiLanguage: uiLanguage,
+              ),
               const SizedBox(height: 14),
               const Text(
                 'EXPLANATION',
                 style: TextStyle(
                   fontSize: 11,
                   letterSpacing: 0.5,
-                  color: Color(0xFF888888),
+                  color: Color(0xFF888888), // neutral section heading
                   fontWeight: FontWeight.w500,
                 ),
               ),
               const SizedBox(height: 8),
               ExplanationCard(
                 translation: QuestionTranslation(
-                  finalExplanation: question.finalExplanation,
+                  finalExplanation:
+                      isHindi ? question.finalExplanationHi : question.finalExplanation,
                   statementAnalysis:
-                      question.statementAnalysis
+                      (isHindi ? question.statementAnalysisHi : question.statementAnalysis)
                           .map(
                             (e) => StatementAnalysisVm(
                               statement: e.label,
@@ -253,12 +273,19 @@ class ReviewBody extends StatelessWidget {
                             ),
                           )
                           .toList(),
-                  eliminationLogic: question.eliminationLogic,
-                  strongDistractor: question.strongDistractor,
-                  upscTrapExplanation: question.upscTrapExplanation,
+                  eliminationLogic:
+                      isHindi ? question.eliminationLogicHi : question.eliminationLogic,
+                  strongDistractor:
+                      isHindi ? question.strongDistractorHi : question.strongDistractor,
+                  upscTrapExplanation:
+                      isHindi
+                          ? question.upscTrapExplanationHi
+                          : question.upscTrapExplanation,
                   conceptsUsed: question.conceptsUsed,
                 ),
-                showStatements: question.statementAnalysis.isNotEmpty,
+                showStatements:
+                    (isHindi ? question.statementAnalysisHi : question.statementAnalysis)
+                        .isNotEmpty,
               ),
             ],
           ),
@@ -277,7 +304,8 @@ class ReviewBody extends StatelessWidget {
               Expanded(
                 child: FilledButton(
                   style: FilledButton.styleFrom(
-                    backgroundColor: const Color(0xFF1D9E75),
+                    backgroundColor: scheme.primary,
+                    foregroundColor: scheme.onPrimary,
                   ),
                   onPressed: onNext,
                   child: Text(current == total ? 'Done' : 'Next →'),
@@ -301,11 +329,11 @@ class ReviewBody extends StatelessWidget {
                     )
                     : InkWell(
                       onTap: onAddToRevision,
-                      child: const Text(
+                      child: Text(
                         'Add to revision queue',
                         style: TextStyle(
                           fontSize: 11,
-                          color: Color(0xFF888888),
+                          color: scheme.onSurfaceVariant,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -316,25 +344,31 @@ class ReviewBody extends StatelessWidget {
   }
 }
 
-class _TopBar extends StatelessWidget {
+class _TopBar extends HookConsumerWidget {
   const _TopBar({
     required this.title,
     required this.isBookmarked,
     required this.showRevisionBadge,
     required this.onBookmark,
+    required this.uiLanguage,
+    required this.onLanguageChanged,
   });
   final String title;
   final bool isBookmarked;
   final bool showRevisionBadge;
   final VoidCallback onBookmark;
+  final String uiLanguage;
+  final ValueChanged<String> onLanguageChanged;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = context.isDarkMode;
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 14, 16, 10),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Colors.black.withValues(alpha: 0.12),
+            color: scheme.outlineVariant.withValues(alpha: 0.6),
             width: 0.5,
           ),
         ),
@@ -347,27 +381,27 @@ class _TopBar extends StatelessWidget {
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: const Color(0xFFF7F7F5),
+                color: scheme.surfaceContainerLow,
                 border: Border.all(
-                  color: Colors.black.withValues(alpha: 0.12),
+                  color: scheme.outlineVariant.withValues(alpha: 0.7),
                   width: 0.5,
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.chevron_left,
                 size: 18,
-                color: Color(0xFF555555),
+                color: scheme.onSurfaceVariant,
               ),
             ),
           ),
           const SizedBox(width: 8),
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: Color(0xFF1A1A1A),
+              color: scheme.onSurface,
             ),
           ),
           const Spacer(),
@@ -376,27 +410,55 @@ class _TopBar extends StatelessWidget {
               margin: const EdgeInsets.only(right: 10),
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
-                color: const Color(0xFFE1F5EE),
+                color: isDark ? scheme.primaryContainer : const Color(0xFFE1F5EE),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Text(
+              child: Text(
                 'Revision mode',
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF0F6E56),
+                  color: isDark ? scheme.onPrimaryContainer : const Color(0xFF0F6E56),
                 ),
               ),
             ),
+          const SizedBox(width: 8),
+          ToggleButtons(
+            isSelected: [uiLanguage == 'en', uiLanguage == 'hi'],
+            onPressed: (index) => onLanguageChanged(index == 0 ? 'en' : 'hi'),
+            constraints: const BoxConstraints(minHeight: 28, minWidth: 36),
+            borderRadius: BorderRadius.circular(8),
+            children: const [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6),
+                child: Text('EN'),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6),
+                child: Text('HI'),
+              ),
+            ],
+          ),
+          const SizedBox(width: 8),
+          InkWell(
+            onTap: () async {
+              final prefs = await ref.read(prefsServiceProvider.future);
+              prefs.darkModeEnabled = !isDark;
+              ref.invalidate(prefsServiceProvider);
+            },
+            child: Icon(
+              isDark ? Icons.dark_mode : Icons.light_mode,
+              size: 20,
+              color: const Color(0xFF888888),
+            ),
+          ),
+          const SizedBox(width: 8),
           InkWell(
             onTap: onBookmark,
             child: Icon(
               isBookmarked ? Icons.bookmark : Icons.bookmark_border,
               size: 20,
-              color:
-                  isBookmarked
-                      ? const Color(0xFF1D9E75)
-                      : const Color(0xFF888888),
+              color: isBookmarked ? scheme.primary : scheme.onSurfaceVariant,
             ),
           ),
         ],
@@ -411,6 +473,8 @@ class _VerdictStrip extends StatelessWidget {
   final _VerdictStatus status;
   @override
   Widget build(BuildContext context) {
+    final isDark = context.isDarkMode;
+    final scheme = Theme.of(context).colorScheme;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
@@ -442,17 +506,17 @@ class _VerdictStrip extends StatelessWidget {
               if (status.showYouAndCorrect) ...[
                 Text(
                   'You: (${(question.selectedOption ?? '').toLowerCase()})',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
-                    color: Color(0xFFA32D2D),
+                    color: isDark ? scheme.error : const Color(0xFFA32D2D),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Text(
                   'Correct: (${question.correctOption.toLowerCase()})',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
-                    color: Color(0xFF3B6D11),
+                    color: isDark ? scheme.primary : const Color(0xFF3B6D11),
                   ),
                 ),
               ] else
@@ -484,32 +548,40 @@ class _VerdictStrip extends StatelessWidget {
 }
 
 class _Options extends StatelessWidget {
-  const _Options({required this.question, required this.isRevisionMode});
+  const _Options({
+    required this.question,
+    required this.isRevisionMode,
+    required this.uiLanguage,
+  });
   final TestQuestion question;
   final bool isRevisionMode;
+  final String uiLanguage;
   @override
   Widget build(BuildContext context) {
+    final isHindi = uiLanguage == 'hi';
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = context.isDarkMode;
     return Column(
       children: [
         _OptionRow(
           letter: 'a',
-          text: question.optionA,
-          state: _optionState(question, 'a', isRevisionMode),
+          text: isHindi ? question.optionAHi : question.optionA,
+          state: _optionState(question, 'a', isRevisionMode, isDark, scheme),
         ),
         _OptionRow(
           letter: 'b',
-          text: question.optionB,
-          state: _optionState(question, 'b', isRevisionMode),
+          text: isHindi ? question.optionBHi : question.optionB,
+          state: _optionState(question, 'b', isRevisionMode, isDark, scheme),
         ),
         _OptionRow(
           letter: 'c',
-          text: question.optionC,
-          state: _optionState(question, 'c', isRevisionMode),
+          text: isHindi ? question.optionCHi : question.optionC,
+          state: _optionState(question, 'c', isRevisionMode, isDark, scheme),
         ),
         _OptionRow(
           letter: 'd',
-          text: question.optionD,
-          state: _optionState(question, 'd', isRevisionMode),
+          text: isHindi ? question.optionDHi : question.optionD,
+          state: _optionState(question, 'd', isRevisionMode, isDark, scheme),
         ),
       ],
     );
@@ -625,57 +697,57 @@ class _VerdictStatus {
   final bool showOnlyCorrect;
 }
 
-_VerdictStatus _statusFor(String status, bool revisionMode) {
+_VerdictStatus _statusFor(String status, bool revisionMode, bool isDark) {
   if (revisionMode) {
-    return const _VerdictStatus(
+    return _VerdictStatus(
       label: 'Correct answer',
-      bg: Color(0xFFE1F5EE),
-      pillBg: Color(0xFFC0DD97),
-      pillText: Color(0xFF173404),
-      anchorColor: Color(0xFF0F6E56),
+      bg: isDark ? const Color(0xFF153126) : const Color(0xFFE1F5EE),
+      pillBg: isDark ? const Color(0xFF275941) : const Color(0xFFC0DD97),
+      pillText: isDark ? const Color(0xFFC8F5E0) : const Color(0xFF173404),
+      anchorColor: isDark ? const Color(0xFF9FE1CB) : const Color(0xFF0F6E56),
       showYouAndCorrect: false,
       showOnlyCorrect: true,
     );
   }
   if (status == 'wrong') {
-    return const _VerdictStatus(
+    return _VerdictStatus(
       label: 'Incorrect',
-      bg: Color(0xFFFCEBEB),
-      pillBg: Color(0xFFF09595),
-      pillText: Color(0xFF501313),
-      anchorColor: Color(0xFF993C1D),
+      bg: isDark ? const Color(0xFF3B1515) : const Color(0xFFFCEBEB),
+      pillBg: isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF09595),
+      pillText: isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313),
+      anchorColor: isDark ? const Color(0xFFF3B2B2) : const Color(0xFF993C1D),
       showYouAndCorrect: true,
       showOnlyCorrect: false,
     );
   }
   if (status == 'correct') {
-    return const _VerdictStatus(
+    return _VerdictStatus(
       label: 'Correct',
-      bg: Color(0xFFE1F5EE),
-      pillBg: Color(0xFFC0DD97),
-      pillText: Color(0xFF173404),
-      anchorColor: Color(0xFF0F6E56),
+      bg: isDark ? const Color(0xFF153126) : const Color(0xFFE1F5EE),
+      pillBg: isDark ? const Color(0xFF275941) : const Color(0xFFC0DD97),
+      pillText: isDark ? const Color(0xFFC8F5E0) : const Color(0xFF173404),
+      anchorColor: isDark ? const Color(0xFF9FE1CB) : const Color(0xFF0F6E56),
       showYouAndCorrect: false,
       showOnlyCorrect: false,
     );
   }
   if (status == 'timed_out') {
-    return const _VerdictStatus(
+    return _VerdictStatus(
       label: "Time's up",
-      bg: Color(0xFFFAEEDA),
-      pillBg: Color(0xFFFAEEDA),
-      pillText: Color(0xFF854F0B),
-      anchorColor: Color(0xFF854F0B),
+      bg: isDark ? const Color(0xFF39290E) : const Color(0xFFFAEEDA),
+      pillBg: isDark ? const Color(0xFF5B3F14) : const Color(0xFFFAEEDA),
+      pillText: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
+      anchorColor: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
       showYouAndCorrect: false,
       showOnlyCorrect: true,
     );
   }
-  return const _VerdictStatus(
+  return _VerdictStatus(
     label: 'Skipped',
-    bg: Color(0xFFFAEEDA),
-    pillBg: Color(0xFFFAEEDA),
-    pillText: Color(0xFF854F0B),
-    anchorColor: Color(0xFF854F0B),
+    bg: isDark ? const Color(0xFF39290E) : const Color(0xFFFAEEDA),
+    pillBg: isDark ? const Color(0xFF5B3F14) : const Color(0xFFFAEEDA),
+    pillText: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
+    anchorColor: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
     showYouAndCorrect: false,
     showOnlyCorrect: true,
   );
@@ -702,41 +774,47 @@ class _OptionState {
   final Color tagColor;
 }
 
-_OptionState _optionState(TestQuestion q, String letter, bool revisionMode) {
+_OptionState _optionState(
+  TestQuestion q,
+  String letter,
+  bool revisionMode,
+  bool isDark,
+  ColorScheme scheme,
+) {
   final lower = letter.toLowerCase();
   final isCorrect = q.correctOption.toLowerCase() == lower;
   final isSelected = (q.selectedOption ?? '').toLowerCase() == lower;
 
   if (isCorrect) {
-    return const _OptionState(
-      bg: Color(0xFFEAF3DE),
-      border: Color(0xFF97C459),
-      letterColor: Color(0xFF3B6D11),
-      textColor: Color(0xFF1A1A1A),
+    return _OptionState(
+      bg: isDark ? const Color(0xFF1E3320) : const Color(0xFFEAF3DE),
+      border: isDark ? const Color(0xFF5F8A63) : const Color(0xFF97C459),
+      letterColor: isDark ? const Color(0xFFA7D7AD) : const Color(0xFF3B6D11),
+      textColor: scheme.onSurface,
       strong: true,
       tag: 'Correct',
-      tagBg: Color(0xFFC0DD97),
-      tagColor: Color(0xFF173404),
+      tagBg: isDark ? const Color(0xFF2F5B35) : const Color(0xFFC0DD97),
+      tagColor: isDark ? const Color(0xFFD4F4D9) : const Color(0xFF173404),
     );
   }
   if (!revisionMode && q.status == 'wrong' && isSelected) {
-    return const _OptionState(
-      bg: Color(0xFFFCEBEB),
-      border: Color(0xFFF09595),
-      letterColor: Color(0xFFA32D2D),
-      textColor: Color(0xFF1A1A1A),
+    return _OptionState(
+      bg: isDark ? const Color(0xFF3B1515) : const Color(0xFFFCEBEB),
+      border: isDark ? const Color(0xFF8F4747) : const Color(0xFFF09595),
+      letterColor: isDark ? const Color(0xFFE2A8A8) : const Color(0xFFA32D2D),
+      textColor: scheme.onSurface,
       strong: true,
       tag: 'Your pick',
-      tagBg: Color(0xFFF7C1C1),
-      tagColor: Color(0xFF501313),
+      tagBg: isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF7C1C1),
+      tagColor: isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313),
     );
   }
   final muted = revisionMode;
   return _OptionState(
-    bg: Colors.white,
-    border: Colors.black.withValues(alpha: 0.12),
-    letterColor: const Color(0xFF888888),
-    textColor: muted ? const Color(0xFF555555) : const Color(0xFF1A1A1A),
+    bg: scheme.surface,
+    border: scheme.outlineVariant.withValues(alpha: 0.8),
+    letterColor: scheme.onSurfaceVariant,
+    textColor: muted ? scheme.onSurfaceVariant : scheme.onSurface,
     strong: false,
   );
 }
