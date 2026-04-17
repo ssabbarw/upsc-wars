@@ -19,8 +19,10 @@ final communityRecentUsersProvider =
 class CommunityRecentUsersNotifier extends AsyncNotifier<List<CommunityUser>> {
   int _bucketOffset = 0;
   bool _hasMore = true;
+  DateTime? _lastRefreshedAt;
 
   bool get hasMore => _hasMore;
+  DateTime? get lastRefreshedAt => _lastRefreshedAt;
 
   @override
   Future<List<CommunityUser>> build() async {
@@ -33,6 +35,7 @@ class CommunityRecentUsersNotifier extends AsyncNotifier<List<CommunityUser>> {
     final repo = ref.read(communityRepositoryProvider);
     final users = await repo.fetchRecentUsers(bucketOffset: _bucketOffset);
     _hasMore = _bucketOffset < CommunityBucketUtils.maxBucketLookback - 1;
+    _lastRefreshedAt = DateTime.now();
     return users;
   }
 

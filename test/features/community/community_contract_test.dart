@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:upsc_wars/features/community/data/community_repository.dart';
 import 'package:upsc_wars/features/community/domain/community_bucket_utils.dart';
 import 'package:upsc_wars/features/community/domain/community_legacy_contract.dart';
+import 'package:upsc_wars/features/community/domain/entities/community_user.dart';
 
 void main() {
   group('communityUserFromLegacyMap', () {
@@ -36,6 +38,61 @@ void main() {
       expect(_bucketAtHour(17), '15');
       expect(_bucketAtHour(20), '18');
       expect(_bucketAtHour(23), '21');
+    });
+  });
+
+  group('decodeCommunityJsonPayload', () {
+    test('decodes valid json map payload', () {
+      final decoded = decodeCommunityJsonPayload(
+        '{"name":"Foo","lastOnlineTime":1}',
+      );
+      expect(decoded, isNotNull);
+      expect(decoded?['name'], 'Foo');
+    });
+
+    test('returns null for malformed payload', () {
+      final decoded = decodeCommunityJsonPayload('{bad json');
+      expect(decoded, isNull);
+    });
+  });
+
+  group('dedupeCommunityUsersByLatest', () {
+    test('keeps latest timestamp for duplicate user', () {
+      const older = CommunityUser(
+        email: 'a@example.com',
+        name: 'A',
+        photoUrl: 'x',
+        lastOnlineTime: 100,
+        acceptingBattleInvites: true,
+        isInBattleTill: null,
+        appVersion: null,
+        telegram: null,
+        instagram: null,
+        optionalContact: null,
+        status: null,
+        openChallengeTimestamp: null,
+        openChallengeSubject: null,
+      );
+      const newer = CommunityUser(
+        email: 'a@example.com',
+        name: 'A2',
+        photoUrl: 'y',
+        lastOnlineTime: 200,
+        acceptingBattleInvites: false,
+        isInBattleTill: null,
+        appVersion: null,
+        telegram: null,
+        instagram: null,
+        optionalContact: null,
+        status: null,
+        openChallengeTimestamp: null,
+        openChallengeSubject: null,
+      );
+
+      final deduped = dedupeCommunityUsersByLatest([older, newer]);
+      expect(deduped.length, 1);
+      expect(deduped.first.lastOnlineTime, 200);
+      expect(deduped.first.name, 'A2');
     });
   });
 }

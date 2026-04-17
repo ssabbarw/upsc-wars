@@ -54,7 +54,7 @@ class CommunityRepository {
           ),
         );
       } else if (value is String) {
-        final decoded = _tryDecodeJsonMap(value);
+        final decoded = decodeCommunityJsonPayload(value);
         if (decoded != null) {
           users.add(communityUserFromLegacyMap(entry.key, decoded));
         }
@@ -62,7 +62,7 @@ class CommunityRepository {
     }
 
     users.sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
-    return _dedupeByEmail(users);
+    return dedupeCommunityUsersByLatest(users);
   }
 
   Future<List<CommunityUser>> _fetchRecentUsersFromUsersCollection() async {
@@ -83,7 +83,7 @@ class CommunityRepository {
         .map((doc) => communityUserFromLegacyMap(doc.id, doc.data()))
         .toList();
     if (users.isNotEmpty) {
-      return _dedupeByEmail(users);
+      return dedupeCommunityUsersByLatest(users);
     }
 
     final unfiltered = await _firestore
@@ -96,7 +96,7 @@ class CommunityRepository {
             .map((doc) => communityUserFromLegacyMap(doc.id, doc.data()))
             .toList()
           ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
-    return _dedupeByEmail(fallbackUsers);
+    return dedupeCommunityUsersByLatest(fallbackUsers);
   }
 
   Future<List<CommunityUser>> fetchChallengers() async {
@@ -145,32 +145,32 @@ class CommunityRepository {
               DateTime.now().millisecondsSinceEpoch,
         }, SetOptions(merge: true));
   }
+}
 
-  static List<CommunityUser> _dedupeByEmail(List<CommunityUser> users) {
-    final map = <String, CommunityUser>{};
-    for (final user in users) {
-      final existing = map[user.email];
-      if (existing == null || user.lastOnlineTime > existing.lastOnlineTime) {
-        map[user.email] = user;
-      }
+List<CommunityUser> dedupeCommunityUsersByLatest(List<CommunityUser> users) {
+  final map = <String, CommunityUser>{};
+  for (final user in users) {
+    final existing = map[user.email];
+    if (existing == null || user.lastOnlineTime > existing.lastOnlineTime) {
+      map[user.email] = user;
     }
-    final values = map.values.toList()
-      ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
-    return values;
   }
+  final values = map.values.toList()
+    ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
+  return values;
+}
 
-  static Map<String, dynamic>? _tryDecodeJsonMap(String raw) {
-    try {
-      final decoded = jsonDecode(raw);
-      if (decoded is Map<String, dynamic>) {
-        return decoded;
-      }
-      if (decoded is Map) {
-        return Map<String, dynamic>.from(decoded);
-      }
-      return null;
-    } catch (_) {
-      return null;
+Map<String, dynamic>? decodeCommunityJsonPayload(String raw) {
+  try {
+    final decoded = jsonDecode(raw);
+    if (decoded is Map<String, dynamic>) {
+      return decoded;
     }
+    if (decoded is Map) {
+      return Map<String, dynamic>.from(decoded);
+    }
+    return null;
+  } catch (_) {
+    return null;
   }
 }

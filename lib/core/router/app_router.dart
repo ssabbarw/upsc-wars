@@ -5,9 +5,11 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
+import '../../features/battle/screens/battle_test_screen.dart';
 import '../../features/history/screens/history_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
+import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/providers/community_providers.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
@@ -24,6 +26,7 @@ import '../../features/weak_areas/screens/concept_detail_screen.dart'
     show SubTopicDetailScreen;
 import '../../features/weak_areas/screens/trap_patterns_screen.dart';
 import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
+import '../../shared/widgets/google_login_bottom_sheet.dart';
 import '../providers/app_bootstrap.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -86,8 +89,19 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
+        path: '/community/connect',
+        builder: (context, state) {
+          return CommunityConnectScreen(selectedUser: state.extra);
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
         path: '/subject-test',
-        builder: (context, state) => const SubjectTestScreen(),
+        builder: (context, state) {
+          final extra = state.extra;
+          final isBotBattle = extra is Map && extra['battleMode'] == 'bot';
+          return SubjectTestScreen(botBattleMode: isBotBattle);
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -99,6 +113,12 @@ GoRouter appRouter(Ref ref) {
         path: '/test/:sessionId',
         builder: (context, state) =>
             TestEngineScreen(sessionId: state.pathParameters['sessionId']!),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/battle/:sessionId',
+        builder: (context, state) =>
+            BattleTestScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -177,6 +197,9 @@ class _AppShell extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final authState = ref.watch(authStateChangesProvider);
+    final authActions = ref.watch(authActionsProvider);
+    final isAuthBusy = authActions.isLoading;
     final navItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(
         icon: Icon(Icons.home_outlined, size: 22),
@@ -210,9 +233,25 @@ class _AppShell extends HookConsumerWidget {
           BottomNavigationBar(
             currentIndex: navigationShell.currentIndex,
             onTap: (index) async {
-              if (FeatureFlags.communityTab && index == navItems.length - 1) {
-                // Always reload recents when user re-enters Community tab.
+              final communityTabIndex = FeatureFlags.communityTab
+                  ? navItems.length - 1
+                  : -1;
+
+              if (FeatureFlags.communityTab && index == communityTabIndex) {
+                if (authState.asData?.value == null) {
+                  await showGoogleLoginBottomSheet(
+                    context: context,
+                    isLoading: isAuthBusy,
+                    onGoogleTap: () {
+                      Navigator.of(context).pop();
+                      ref.read(authActionsProvider.notifier).signInWithGoogle();
+                    },
+                  );
+                  return;
+                }
+                // Always reload recents whenever Community tab is tapped.
                 await ref.read(communityRecentUsersProvider.notifier).refresh();
+                ref.invalidate(communityChallengersProvider);
               }
               navigationShell.goBranch(
                 index,

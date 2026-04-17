@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../providers/auth_providers.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
+import '../../../shared/widgets/tappable_circular_avatar.dart';
 
 class ProfileScreen extends HookConsumerWidget {
   const ProfileScreen({super.key});
@@ -37,6 +40,7 @@ class ProfileScreen extends HookConsumerWidget {
     final isBusy = authActions.isLoading;
 
     return Scaffold(
+      appBar: AppBar(title: const Text('Profile')),
       body: SafeArea(
         child: authState.when(
           data: (user) {
@@ -56,15 +60,10 @@ class ProfileScreen extends HookConsumerWidget {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            CircleAvatar(
-                              radius: 32,
-                              backgroundColor:
-                                  Theme.of(context).colorScheme.primaryContainer,
-                              child: Icon(
-                                Icons.person_outline_rounded,
-                                size: 34,
-                                color: Theme.of(context).colorScheme.primary,
-                              ),
+                            const TappableCircularAvatar(
+                              imageUrl: null,
+                              displayName: 'User',
+                              size: 64,
                             ),
                             const SizedBox(height: 16),
                             Text(
@@ -84,18 +83,22 @@ class ProfileScreen extends HookConsumerWidget {
                                 onPressed: isBusy
                                     ? null
                                     : () => showGoogleLoginBottomSheet(
-                                          context: context,
-                                          isLoading: isBusy,
-                                          onGoogleTap: () {
-                                            Navigator.of(context).pop();
-                                            ref
-                                                .read(authActionsProvider.notifier)
-                                                .signInWithGoogle();
-                                          },
-                                        ),
+                                        context: context,
+                                        isLoading: isBusy,
+                                        onGoogleTap: () {
+                                          Navigator.of(context).pop();
+                                          ref
+                                              .read(
+                                                authActionsProvider.notifier,
+                                              )
+                                              .signInWithGoogle();
+                                        },
+                                      ),
                                 icon: const Icon(Icons.login_rounded),
                                 label: Text(
-                                  isBusy ? 'Signing in...' : 'Continue with Google',
+                                  isBusy
+                                      ? 'Signing in...'
+                                      : 'Continue with Google',
                                 ),
                               ),
                             ),
@@ -108,119 +111,282 @@ class ProfileScreen extends HookConsumerWidget {
               );
             }
 
-            return SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(20, 24, 20, 28),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 520),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(24),
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              Theme.of(context).colorScheme.primaryContainer,
-                              Theme.of(context)
-                                  .colorScheme
-                                  .secondaryContainer
-                                  .withValues(alpha: 0.85),
-                            ],
-                          ),
-                        ),
+            return Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 520),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            CircleAvatar(
-                              radius: 42,
-                              backgroundImage: user.photoURL != null
-                                  ? NetworkImage(user.photoURL!)
-                                  : null,
-                              backgroundColor:
-                                  Theme.of(context).colorScheme.surface,
-                              child: user.photoURL == null
-                                  ? Icon(
-                                      Icons.person,
-                                      size: 40,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onSurfaceVariant,
-                                    )
-                                  : null,
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Theme.of(
+                                      context,
+                                    ).colorScheme.primaryContainer,
+                                    Theme.of(context)
+                                        .colorScheme
+                                        .secondaryContainer
+                                        .withValues(alpha: 0.85),
+                                  ],
+                                ),
+                              ),
+                              child: Column(
+                                children: [
+                                  TappableCircularAvatar(
+                                    imageUrl: user.photoURL,
+                                    displayName:
+                                        user.displayName ??
+                                        user.email ??
+                                        'Signed in user',
+                                    size: 84,
+                                  ),
+                                  const SizedBox(height: 14),
+                                  Text(
+                                    user.displayName ?? 'Signed in user',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleLarge,
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    user.email ?? 'No email',
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.bodyMedium,
+                                  ),
+                                ],
+                              ),
                             ),
-                            const SizedBox(height: 14),
-                            Text(
-                              user.displayName ?? 'Signed in user',
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.titleLarge,
+                            const SizedBox(height: 16),
+                            Card(
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(18),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Account',
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.titleMedium,
+                                    ),
+                                    const SizedBox(height: 12),
+                                    _InfoRow(
+                                      icon: Icons.verified_user_outlined,
+                                      label: 'Authentication',
+                                      value: 'Google account connected',
+                                    ),
+                                    const SizedBox(height: 10),
+                                    _InfoRow(
+                                      icon: Icons.shield_outlined,
+                                      label: 'Privacy',
+                                      value: 'Your account data remains secure',
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              user.email ?? 'No email',
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.bodyMedium,
+                            const SizedBox(height: 16),
+                            _CommunityProfileCard(
+                              email: user.email,
+                              isBusy: isBusy,
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 16),
-                      Card(
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(18),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Account',
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              const SizedBox(height: 12),
-                              _InfoRow(
-                                icon: Icons.verified_user_outlined,
-                                label: 'Authentication',
-                                value: 'Google account connected',
-                              ),
-                              const SizedBox(height: 10),
-                              _InfoRow(
-                                icon: Icons.shield_outlined,
-                                label: 'Privacy',
-                                value: 'Your account data remains secure',
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton.icon(
-                          onPressed: isBusy
-                              ? null
-                              : () async {
-                                  final shouldLogout =
-                                      await _confirmLogout(context);
-                                  if (!shouldLogout) return;
-                                  ref.read(authActionsProvider.notifier).signOut();
-                                },
-                          icon: const Icon(Icons.logout_rounded),
-                          label: Text(isBusy ? 'Logging out...' : 'Log out'),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+                SafeArea(
+                  top: false,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                        onPressed: isBusy
+                            ? null
+                            : () async {
+                                final shouldLogout = await _confirmLogout(
+                                  context,
+                                );
+                                if (!shouldLogout) return;
+                                ref
+                                    .read(authActionsProvider.notifier)
+                                    .signOut();
+                              },
+                        icon: const Icon(Icons.logout_rounded),
+                        label: Text(isBusy ? 'Logging out...' : 'Log out'),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             );
           },
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text(error.toString())),
+        ),
+      ),
+    );
+  }
+}
+
+class _CommunityProfileCard extends HookConsumerWidget {
+  const _CommunityProfileCard({required this.email, required this.isBusy});
+
+  final String? email;
+  final bool isBusy;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final statusController = useTextEditingController();
+    final optionalController = useTextEditingController();
+    final instagramController = useTextEditingController();
+    final telegramController = useTextEditingController();
+    final didLoad = useState(false);
+    final saving = useState(false);
+
+    Future<void> loadCommunityProfile() async {
+      final userEmail = email;
+      if (userEmail == null || userEmail.isEmpty || didLoad.value) return;
+      final snap = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userEmail.toLowerCase())
+          .get();
+      final data = snap.data();
+      if (data != null) {
+        statusController.text = (data['my_status'] as String?) ?? '';
+        optionalController.text = (data['optional'] as String?) ?? '';
+        instagramController.text = (data['insta'] as String?) ?? '';
+        telegramController.text = (data['telegram'] as String?) ?? '';
+      }
+      didLoad.value = true;
+    }
+
+    useEffect(() {
+      Future(loadCommunityProfile);
+      return null;
+    }, [email]);
+
+    Future<void> saveCommunityProfile() async {
+      final userEmail = email;
+      if (userEmail == null || userEmail.isEmpty) return;
+      if (saving.value) return;
+
+      final insta = instagramController.text.trim();
+      final tele = telegramController.text.trim();
+      if (insta.contains('/') || tele.contains('/')) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Instagram/Telegram should not contain /'),
+          ),
+        );
+        return;
+      }
+
+      saving.value = true;
+      try {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userEmail.toLowerCase())
+            .set({
+              'my_status': statusController.text.trim(),
+              'optional': optionalController.text.trim(),
+              'insta': insta,
+              'telegram': tele,
+              'lastOnlineTime': DateTime.now().millisecondsSinceEpoch,
+            }, SetOptions(merge: true));
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Community profile updated')),
+          );
+        }
+      } finally {
+        saving.value = false;
+      }
+    }
+
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Padding(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Community Profile',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Complete these fields so aspirants can connect with you.',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: statusController,
+              maxLength: 280,
+              minLines: 2,
+              maxLines: 3,
+              decoration: const InputDecoration(
+                labelText: 'Status',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              controller: optionalController,
+              maxLength: 50,
+              decoration: const InputDecoration(
+                labelText: 'Optional Subject',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              controller: instagramController,
+              maxLength: 30,
+              decoration: const InputDecoration(
+                labelText: 'Instagram (without @)',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              controller: telegramController,
+              maxLength: 30,
+              decoration: const InputDecoration(
+                labelText: 'Telegram (without @)',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: isBusy || saving.value ? null : saveCommunityProfile,
+                child: Text(saving.value ? 'Updating...' : 'Update'),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -14,7 +14,9 @@ import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 
 class SubjectTestScreen extends HookConsumerWidget {
-  const SubjectTestScreen({super.key});
+  const SubjectTestScreen({super.key, this.botBattleMode = false});
+
+  final bool botBattleMode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,14 +50,18 @@ class SubjectTestScreen extends HookConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Subject test',
-                          style: AppTextStyles.h2()
-                              .copyWith(color: scheme.onSurface),
+                          botBattleMode ? 'Battle setup' : 'Subject test',
+                          style: AppTextStyles.h2().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                         Text(
-                          'Choose a subject to begin',
-                          style: AppTextStyles.bodySm()
-                              .copyWith(color: scheme.onSurfaceVariant),
+                          botBattleMode
+                              ? 'Choose a subject to start battle'
+                              : 'Choose a subject to begin',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
                         ),
                       ],
                     ),
@@ -90,7 +96,14 @@ class SubjectTestScreen extends HookConsumerWidget {
                           subjectDisplayName: s.displayName,
                           availableQuestionCount: s.questionCount,
                           topicCountWhenSubjectOnly: s.topicCount,
-                          onSessionCreated: (id) => context.push('/test/$id'),
+                          lockedQuestionCount: botBattleMode ? 10 : null,
+                          forceExamMode: botBattleMode,
+                          startButtonLabel: botBattleMode
+                              ? 'Start battle'
+                              : null,
+                          onSessionCreated: (id) => context.push(
+                            botBattleMode ? '/battle/$id' : '/test/$id',
+                          ),
                         ),
                       ),
                     );
@@ -124,17 +137,15 @@ class SubjectTestScreen extends HookConsumerWidget {
                         Text(
                           'Could not load subjects.',
                           textAlign: TextAlign.center,
-                          style: AppTextStyles.body()
-                              .copyWith(color: scheme.onSurface),
+                          style: AppTextStyles.body().copyWith(
+                            color: scheme.onSurface,
+                          ),
                         ),
                         const SizedBox(height: AppSpacing.lg),
                         OutlinedButton(
                           onPressed: () =>
                               ref.invalidate(subjectTestListProvider),
-                          child: Text(
-                            'Retry',
-                            style: AppTextStyles.label(),
-                          ),
+                          child: Text('Retry', style: AppTextStyles.label()),
                         ),
                       ],
                     ),
@@ -188,14 +199,16 @@ class _SubjectCard extends HookConsumerWidget {
                   children: [
                     Text(
                       info.displayName,
-                      style: AppTextStyles.label()
-                          .copyWith(color: scheme.onSurface),
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                      ),
                     ),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
                       '${formatIntCount(info.questionCount)} questions · ${info.topicCount} topics',
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurfaceVariant),
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                     const SizedBox(height: AppSpacing.sm),
                     AccuracyPercentageText(

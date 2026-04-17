@@ -21,6 +21,9 @@ class TestConfigSheetArgs {
     required this.availableQuestionCount,
     required this.topicCountWhenSubjectOnly,
     required this.onSessionCreated,
+    this.lockedQuestionCount,
+    this.forceExamMode = false,
+    this.startButtonLabel,
   });
 
   final String subject;
@@ -31,6 +34,9 @@ class TestConfigSheetArgs {
   final int availableQuestionCount;
   final int topicCountWhenSubjectOnly;
   final void Function(String sessionId) onSessionCreated;
+  final int? lockedQuestionCount;
+  final bool forceExamMode;
+  final String? startButtonLabel;
 }
 
 Future<void> showTestConfigBottomSheet({
@@ -42,9 +48,7 @@ Future<void> showTestConfigBottomSheet({
     isScrollControlled: true,
     backgroundColor: AppColors.transparent,
     builder: (ctx) => Padding(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.viewInsetsOf(ctx).bottom,
-      ),
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(ctx).bottom),
       child: TestConfigBottomSheet(args: args),
     ),
   );
@@ -63,8 +67,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    final isExam = useState(true);
-    final selectedPreset = useState(25);
+    final isExam = useState(args.forceExamMode ? true : true);
+    final selectedPreset = useState(args.lockedQuestionCount ?? 25);
     final examTimed = useState(true);
     final learningSecs = useState(60);
     final isSubmitting = useState(false);
@@ -80,8 +84,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
     useEffect(() {
       if (maxQ <= 0) return null;
       final choices = _presetCounts.where((n) => n <= maxQ).toList();
-      final effectiveChoices =
-          choices.isNotEmpty ? choices : <int>[maxQ];
+      final effectiveChoices = choices.isNotEmpty ? choices : <int>[maxQ];
       if (selectedPreset.value > maxQ) {
         selectedPreset.value = maxQ;
       }
@@ -93,7 +96,9 @@ class TestConfigBottomSheet extends HookConsumerWidget {
 
     final effectiveCount = maxQ == 0
         ? 0
-        : (selectedPreset.value > maxQ ? maxQ : selectedPreset.value);
+        : ((args.lockedQuestionCount ?? selectedPreset.value) > maxQ
+              ? maxQ
+              : (args.lockedQuestionCount ?? selectedPreset.value));
     final capped = maxQ > 0 && selectedPreset.value > maxQ;
 
     Future<void> onStart() async {
@@ -178,55 +183,62 @@ class TestConfigBottomSheet extends HookConsumerWidget {
               if (args.topicDisplayName != null) ...[
                 Text(
                   args.topicDisplayName!,
-                  style: AppTextStyles.bodyMd()
-                      .copyWith(color: scheme.onSurfaceVariant),
+                  style: AppTextStyles.bodyMd().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.xs),
                 Text(
                   '${formatIntCount(maxQ)} questions available',
-                  style: AppTextStyles.bodySm()
-                      .copyWith(color: scheme.onSurfaceVariant),
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
               ] else
                 Text(
                   '${formatIntCount(maxQ)} questions · ${args.topicCountWhenSubjectOnly} topics',
-                  style: AppTextStyles.bodyMd()
-                      .copyWith(color: scheme.onSurfaceVariant),
+                  style: AppTextStyles.bodyMd().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
                 ),
               const SizedBox(height: AppSpacing.xxl),
-              Text(
-                'Mode',
-                style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-              ),
-              const SizedBox(height: AppSpacing.md),
-              Row(
-                children: [
-                  Expanded(
-                    child: _ModeOptionCard(
-                      title: 'Exam',
-                      description:
-                          'Simulate real conditions. Explanation after test ends.',
-                      icon: Icons.timer_outlined,
-                      selected: isExam.value,
-                      examStyle: true,
-                      borderColor: borderColor,
-                      onTap: () => isExam.value = true,
-                    ),
+              if (!args.forceExamMode) ...[
+                Text(
+                  'Mode',
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
                   ),
-                  const SizedBox(width: AppSpacing.md),
-                  Expanded(
-                    child: _ModeOptionCard(
-                      title: 'Learning',
-                      description: 'See explanation after each question.',
-                      icon: Icons.lightbulb_outline,
-                      selected: !isExam.value,
-                      examStyle: false,
-                      borderColor: borderColor,
-                      onTap: () => isExam.value = false,
+                ),
+                const SizedBox(height: AppSpacing.md),
+                Row(
+                  children: [
+                    Expanded(
+                      child: _ModeOptionCard(
+                        title: 'Exam',
+                        description:
+                            'Simulate real conditions. Explanation after test ends.',
+                        icon: Icons.timer_outlined,
+                        selected: isExam.value,
+                        examStyle: true,
+                        borderColor: borderColor,
+                        onTap: () => isExam.value = true,
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                    const SizedBox(width: AppSpacing.md),
+                    Expanded(
+                      child: _ModeOptionCard(
+                        title: 'Learning',
+                        description: 'See explanation after each question.',
+                        icon: Icons.lightbulb_outline,
+                        selected: !isExam.value,
+                        examStyle: false,
+                        borderColor: borderColor,
+                        onTap: () => isExam.value = false,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
               const SizedBox(height: AppSpacing.xxl),
               Text(
                 'Number of questions',
@@ -236,16 +248,37 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                 const SizedBox(height: AppSpacing.sm),
                 Text(
                   'Only ${formatIntCount(maxQ)} questions available for this topic.',
-                  style: AppTextStyles.caption()
-                      .copyWith(color: AppColors.warning),
+                  style: AppTextStyles.caption().copyWith(
+                    color: AppColors.warning,
+                  ),
                 ),
               ],
               const SizedBox(height: AppSpacing.md),
               if (maxQ == 0) ...[
                 Text(
                   'No questions available for this topic.',
-                  style: AppTextStyles.bodySm()
-                      .copyWith(color: scheme.onSurfaceVariant),
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ] else if (args.lockedQuestionCount != null) ...[
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.sm,
+                  ),
+                  decoration: BoxDecoration(
+                    color: scheme.surfaceContainerLow,
+                    borderRadius: BorderRadius.circular(AppRadius.md),
+                    border: Border.all(color: borderColor, width: 0.5),
+                  ),
+                  child: Text(
+                    '${args.lockedQuestionCount} questions (fixed for battle)',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
                 ),
               ] else
                 Row(
@@ -258,8 +291,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           selected: selectedPreset.value == countChoices[i],
                           examMode: isExam.value,
                           isDark: isDark,
-                          onTap: () =>
-                              selectedPreset.value = countChoices[i],
+                          onTap: () => selectedPreset.value = countChoices[i],
                         ),
                       ),
                     ],
@@ -283,8 +315,9 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                   children: [
                     Text(
                       'Timed test',
-                      style: AppTextStyles.label()
-                          .copyWith(color: scheme.onSurface),
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                      ),
                     ),
                     Switch(
                       value: examTimed.value,
@@ -298,16 +331,18 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.sm),
                   Text(
                     _formatExamDuration(effectiveCount),
-                    style: AppTextStyles.bodySm()
-                        .copyWith(color: scheme.onSurfaceVariant),
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                 ],
               ] else ...[
                 const SizedBox(height: AppSpacing.xxl),
                 Text(
                   'Time per question',
-                  style: AppTextStyles.label()
-                      .copyWith(color: scheme.onSurface),
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Row(
@@ -345,11 +380,13 @@ class TestConfigBottomSheet extends HookConsumerWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed:
-                      isSubmitting.value || effectiveCount <= 0 ? null : onStart,
+                  onPressed: isSubmitting.value || effectiveCount <= 0
+                      ? null
+                      : onStart,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isExam.value ? AppColors.info : AppColors.primary,
+                    backgroundColor: isExam.value
+                        ? AppColors.info
+                        : AppColors.primary,
                     foregroundColor: AppColors.onPrimary,
                     disabledBackgroundColor: scheme.surfaceContainerLow,
                     disabledForegroundColor: scheme.onSurfaceVariant,
@@ -369,9 +406,10 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                           ),
                         )
                       : Text(
-                          isExam.value
-                              ? 'Start exam'
-                              : 'Start learning session',
+                          args.startButtonLabel ??
+                              (isExam.value
+                                  ? 'Start exam'
+                                  : 'Start learning session'),
                           style: AppTextStyles.label(),
                         ),
                 ),
@@ -449,10 +487,7 @@ class _ModeOptionCard extends HookConsumerWidget {
         decoration: BoxDecoration(
           color: bg,
           borderRadius: BorderRadius.circular(AppRadius.lg),
-          border: Border.all(
-            color: border,
-            width: selected ? 2 : 0.5,
-          ),
+          border: Border.all(color: border, width: selected ? 2 : 0.5),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -509,8 +544,9 @@ class _CountTile extends HookConsumerWidget {
         ),
         child: Text(
           label,
-          style: AppTextStyles.labelSm()
-              .copyWith(color: scheme.onSurfaceVariant),
+          style: AppTextStyles.labelSm().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
         ),
       );
     }
@@ -547,7 +583,10 @@ class _CountTile extends HookConsumerWidget {
             borderRadius: BorderRadius.circular(AppRadius.md),
             border: Border.all(color: border, width: selected ? 2 : 0.5),
           ),
-          child: Text(label, style: AppTextStyles.labelSm().copyWith(color: fg)),
+          child: Text(
+            label,
+            style: AppTextStyles.labelSm().copyWith(color: fg),
+          ),
         ),
       ),
     );
@@ -576,8 +615,9 @@ class _LearningTimeTile extends HookConsumerWidget {
     final fg = selected
         ? (isDark ? AppColors.onPrimary : AppColors.primaryDeep)
         : scheme.onSurface;
-    final border =
-        selected ? AppColors.primary : (isDark ? AppColors.borderDark : AppColors.borderLight);
+    final border = selected
+        ? AppColors.primary
+        : (isDark ? AppColors.borderDark : AppColors.borderLight);
 
     return Material(
       color: AppColors.transparent,
@@ -592,7 +632,10 @@ class _LearningTimeTile extends HookConsumerWidget {
             borderRadius: BorderRadius.circular(AppRadius.md),
             border: Border.all(color: border, width: selected ? 2 : 0.5),
           ),
-          child: Text(label, style: AppTextStyles.labelSm().copyWith(color: fg)),
+          child: Text(
+            label,
+            style: AppTextStyles.labelSm().copyWith(color: fg),
+          ),
         ),
       ),
     );
