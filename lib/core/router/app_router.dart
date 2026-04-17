@@ -9,6 +9,7 @@ import '../../features/history/screens/session_review_screen.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
+import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
@@ -16,9 +17,11 @@ import '../../features/subject_test/screens/subject_test_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
 import '../../features/topic_test/screens/topic_test_screen.dart';
 import '../../features/weak_areas/screens/weak_areas_hub_screen.dart';
-import '../../features/weak_areas/screens/concept_detail_screen.dart' show SubTopicDetailScreen;
+import '../../features/weak_areas/screens/concept_detail_screen.dart'
+    show SubTopicDetailScreen;
 import '../../features/weak_areas/screens/trap_patterns_screen.dart';
 import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
+import '../../shared/widgets/google_login_bottom_sheet.dart';
 import '../providers/app_bootstrap.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -88,24 +91,20 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/test/:sessionId',
-        builder:
-            (context, state) =>
-                TestEngineScreen(sessionId: state.pathParameters['sessionId']!),
+        builder: (context, state) =>
+            TestEngineScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/results/:sessionId',
-        builder:
-            (context, state) =>
-                ResultsScreen(sessionId: state.pathParameters['sessionId']!),
+        builder: (context, state) =>
+            ResultsScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/history/:sessionId',
-        builder:
-            (context, state) => SessionReviewScreen(
-              sessionId: state.pathParameters['sessionId']!,
-            ),
+        builder: (context, state) =>
+            SessionReviewScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -115,10 +114,8 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/revision-queue/session/:sessionId',
-        builder:
-            (context, state) => RevisionModeScreen(
-              sessionId: state.pathParameters['sessionId']!,
-            ),
+        builder: (context, state) =>
+            RevisionModeScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -133,9 +130,8 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/weak-areas/subtopic/:subTopic',
-        builder: (context, state) => SubTopicDetailScreen(
-          subTopic: state.pathParameters['subTopic']!,
-        ),
+        builder: (context, state) =>
+            SubTopicDetailScreen(subTopic: state.pathParameters['subTopic']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -160,9 +156,24 @@ class _AppShell extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(authActionsProvider, (previous, next) {
+      next.whenOrNull(
+        error: (error, _) {
+          final messenger = ScaffoldMessenger.of(context);
+          messenger.hideCurrentSnackBar();
+          messenger.showSnackBar(
+            SnackBar(content: Text(authErrorMessage(error))),
+          );
+        },
+      );
+    });
+
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final authState = ref.watch(authStateChangesProvider);
+    final authActions = ref.watch(authActionsProvider);
+    final isAuthBusy = authActions.isLoading;
 
     return Scaffold(
       body: navigationShell,
@@ -172,11 +183,24 @@ class _AppShell extends HookConsumerWidget {
           Container(height: 0.5, color: borderColor),
           BottomNavigationBar(
             currentIndex: navigationShell.currentIndex,
-            onTap:
-                (index) => navigationShell.goBranch(
-                  index,
-                  initialLocation: index == navigationShell.currentIndex,
-                ),
+            onTap: (index) async {
+              if (index == 3 && authState.asData?.value == null) {
+                await showGoogleLoginBottomSheet(
+                  context: context,
+                  isLoading: isAuthBusy,
+                  onGoogleTap: () {
+                    Navigator.of(context).pop();
+                    ref.read(authActionsProvider.notifier).signInWithGoogle();
+                  },
+                );
+                return;
+              }
+
+              navigationShell.goBranch(
+                index,
+                initialLocation: index == navigationShell.currentIndex,
+              );
+            },
             type: BottomNavigationBarType.fixed,
             elevation: 0,
             backgroundColor: scheme.surface,

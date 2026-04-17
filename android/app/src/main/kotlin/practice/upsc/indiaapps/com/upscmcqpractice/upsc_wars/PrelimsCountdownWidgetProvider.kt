@@ -1,4 +1,4 @@
-package practice.upsc.indiaapps.com.upscmcqpractice.upsc_wars
+package practice.upsc.indiaapps.com.upscmcqpractice
 
 import android.content.Context
 import android.content.SharedPreferences
