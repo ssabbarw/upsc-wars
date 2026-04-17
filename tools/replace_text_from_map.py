@@ -36,29 +36,7 @@ DEFAULT_REPORT_PATH = REPO_ROOT / "tools" / "reports" / "replace_text_from_map_r
 # ---------------------------------------------------------------------------
 REPLACEMENTS: dict[str, str] = {
     # Example provided by user
-    '"strong_distractor": "ख': '"strong_distractor": "b',
-
-    # Common label normalization
-    "मूल्य संवर्धन": "Value Addition",
-    "मूल्यवर्धन": "Value Addition",
-
-    # Option marker normalization (exact bracketed markers)
-    "(क)": "(a)",
-    "(ख)": "(b)",
-    "(ग)": "(c)",
-    "(घ)": "(d)",
-    "(अ)": "(a)",
-    "(ब)": "(b)",
-    "(स)": "(c)",
-    "(द)": "(d)",
-    "[क]": "[a]",
-    "[ख]": "[b]",
-    "[ग]": "[c]",
-    "[घ]": "[d]",
-    "[अ]": "[a]",
-    "[ब]": "[b]",
-    "[स]": "[c]",
-    "[द]": "[d]",
+    "aथन": "कथन"
 }
 
 
