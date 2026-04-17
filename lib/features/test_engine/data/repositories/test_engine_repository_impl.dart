@@ -82,48 +82,76 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       String pickOption(
         String primary,
         String secondary,
-        String? footerEn,
-        String? footerHi,
+        String? footerPrimary,
+        String? footerSecondary,
         String fallback,
       ) {
         final p = primary.trim();
         if (p.isNotEmpty) return p;
         final s = secondary.trim();
         if (s.isNotEmpty) return s;
-        final fe = (footerEn ?? '').trim();
-        if (fe.isNotEmpty) return fe;
-        final fh = (footerHi ?? '').trim();
-        if (fh.isNotEmpty) return fh;
+        final fp = (footerPrimary ?? '').trim();
+        if (fp.isNotEmpty) return fp;
+        final fs = (footerSecondary ?? '').trim();
+        if (fs.isNotEmpty) return fs;
         return fallback;
       }
 
-      final optionA = pickOption(
+      final optionAEn = pickOption(
         parsedEn.optionA,
         parsedHi.optionA,
         footerEnOptions?.$1,
         footerHiOptions?.$1,
         'Option A',
       );
-      final optionB = pickOption(
+      final optionBEn = pickOption(
         parsedEn.optionB,
         parsedHi.optionB,
         footerEnOptions?.$2,
         footerHiOptions?.$2,
         'Option B',
       );
-      final optionC = pickOption(
+      final optionCEn = pickOption(
         parsedEn.optionC,
         parsedHi.optionC,
         footerEnOptions?.$3,
         footerHiOptions?.$3,
         'Option C',
       );
-      final optionD = pickOption(
+      final optionDEn = pickOption(
         parsedEn.optionD,
         parsedHi.optionD,
         footerEnOptions?.$4,
         footerHiOptions?.$4,
         'Option D',
+      );
+      final optionAHi = pickOption(
+        parsedHi.optionA,
+        parsedEn.optionA,
+        footerHiOptions?.$1,
+        footerEnOptions?.$1,
+        optionAEn,
+      );
+      final optionBHi = pickOption(
+        parsedHi.optionB,
+        parsedEn.optionB,
+        footerHiOptions?.$2,
+        footerEnOptions?.$2,
+        optionBEn,
+      );
+      final optionCHi = pickOption(
+        parsedHi.optionC,
+        parsedEn.optionC,
+        footerHiOptions?.$3,
+        footerEnOptions?.$3,
+        optionCEn,
+      );
+      final optionDHi = pickOption(
+        parsedHi.optionD,
+        parsedEn.optionD,
+        footerHiOptions?.$4,
+        footerEnOptions?.$4,
+        optionDEn,
       );
 
       questions.add(
@@ -132,14 +160,14 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
           displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
           displayTextHi:
               parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
-          optionA: optionA,
-          optionAHi: optionA,
-          optionB: optionB,
-          optionBHi: optionB,
-          optionC: optionC,
-          optionCHi: optionC,
-          optionD: optionD,
-          optionDHi: optionD,
+          optionA: optionAEn,
+          optionAHi: optionAHi,
+          optionB: optionBEn,
+          optionBHi: optionBHi,
+          optionC: optionCEn,
+          optionCHi: optionCHi,
+          optionD: optionDEn,
+          optionDHi: optionDHi,
           correctOption: q.correctOption,
           questionType: q.questionType,
           trapType: q.trapType,

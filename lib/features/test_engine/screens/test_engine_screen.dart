@@ -619,6 +619,7 @@ class _QuestionArea extends HookConsumerWidget {
     final optionC = isHindi ? question.optionCHi : question.optionC;
     final optionD = isHindi ? question.optionDHi : question.optionD;
     final tableData = isHindi ? question.tableDataHi : question.tableData;
+    final trimmedDisplayText = displayText.trim();
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -626,12 +627,17 @@ class _QuestionArea extends HookConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            displayText,
-            style: AppTextStyles.question().copyWith(color: scheme.onSurface),
-          ),
+          if (trimmedDisplayText.isNotEmpty)
+            Text(
+              trimmedDisplayText,
+              style: AppTextStyles.question().copyWith(color: scheme.onSurface),
+            ),
           if (question.hasTable && tableData != null) ...[
-            const SizedBox(height: AppSpacing.lg),
+            SizedBox(
+              height: trimmedDisplayText.isNotEmpty
+                  ? AppSpacing.sm
+                  : AppSpacing.xs,
+            ),
             _QuestionTable(table: tableData),
           ],
           const SizedBox(height: AppSpacing.lg),
