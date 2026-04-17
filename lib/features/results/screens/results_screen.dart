@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/domain/entities/revision_queue_item.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
@@ -19,6 +20,7 @@ class ResultsScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(sessionResultProvider(sessionId));
+    final revisionAsync = ref.watch(revisionQueueItemsProvider);
     final scheme = Theme.of(context).colorScheme;
 
     return Scaffold(
@@ -134,6 +136,11 @@ class ResultsScreen extends HookConsumerWidget {
                         ),
                       ])),
                     ],
+                    ..._buildWeakAreasCallout(
+                      revisionAsync,
+                      r.createdAt,
+                      scheme,
+                    ),
                     const SizedBox(height: AppSpacing.md),
                     _Card(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Text('Breakdown', style: AppTextStyles.label().copyWith(color: scheme.onSurface)),
@@ -153,6 +160,70 @@ class ResultsScreen extends HookConsumerWidget {
       ),
     );
   }
+}
+
+List<Widget> _buildWeakAreasCallout(
+  AsyncValue<List<RevisionQueueItem>> revisionAsync,
+  DateTime sessionCreatedAt,
+  ColorScheme scheme,
+) {
+  return revisionAsync.when(
+    loading: () => [],
+    error: (e, st) => [],
+    data: (items) {
+      final newItems = items
+          .where((i) => !i.dateAddedToQueue.isBefore(sessionCreatedAt))
+          .toList();
+      if (newItems.isEmpty) return [];
+
+      final concepts = newItems.map((i) => i.conceptAnchor).toSet().toList();
+      final traps = newItems
+          .map((i) => i.trapType)
+          .whereType<String>()
+          .toSet()
+          .toList();
+
+      final totalNew = concepts.length + traps.length;
+      final parts = [
+        ...concepts.take(2),
+        ...traps.take(2).map((t) => t
+            .split('-')
+            .map((w) => w.isEmpty ? w : '${w[0].toUpperCase()}${w.substring(1)}')
+            .join(' ')),
+      ];
+
+      return [
+        const SizedBox(height: AppSpacing.md),
+        Container(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          decoration: BoxDecoration(
+            color: scheme.errorContainer,
+            borderRadius: BorderRadius.circular(AppRadius.md),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '$totalNew new weak ${totalNew == 1 ? 'area' : 'areas'} identified',
+                style: AppTextStyles.label()
+                    .copyWith(color: scheme.onErrorContainer),
+              ),
+              if (parts.isNotEmpty) ...[
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  parts.join(' · '),
+                  style: AppTextStyles.bodySm()
+                      .copyWith(color: scheme.onErrorContainer),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ],
+          ),
+        ),
+      ];
+    },
+  );
 }
 
 Color _accuracyColor(String tier, Color fallback, double accuracy) {

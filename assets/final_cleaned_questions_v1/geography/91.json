@@ -1,0 +1,1527 @@
+[
+  {
+    "uuid": "7e378143-5d69-497e-8a5d-5188a904ec8b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Kangchenjunga: Rank, Location, and Territorial Claims",
+        "Global Ranking of Peaks and India's Position"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Kangchenjunga global rank — third not second",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly states the global rank of Kangchenjunga among the world's highest peaks?\n\n(a) Second highest peak in the world\n(b) Third highest peak in the world\n(c) Fourth highest peak in the world\n(d) Fifth highest peak in the world",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students frequently conflate 'highest in the eastern Himalayas' with 'second highest in the world', confusing Kangchenjunga's regional prominence with its global rank.",
+      "elimination_logic": [
+        "Eliminate (a): K2, not Kangchenjunga, holds the second position globally at 8,611 m.",
+        "Eliminate (c): Kangchenjunga sits at 8,586 m, far above the 8,000 m threshold for fourth place; Lhotse (8,516 m) is fourth.",
+        "Eliminate (d): Fifth place belongs to Makalu (8,485 m) — Kangchenjunga ranks higher.",
+        "Confirm (b): Kangchenjunga at 8,586 m is the world's third highest peak after Everest and K2."
+      ],
+      "upsc_trap_explanation": "The trap here exploits the visual and phonetic prominence of Kangchenjunga in Indian geography syllabi. Because it is the highest peak associated with Indian territory (Sikkim border), students often mentally elevate it to second place globally. The sequence Everest–K2–Kangchenjunga must be memorised precisely, because UPSC has historically tested the rank of the third peak rather than the first or second, knowing most candidates slip here.",
+      "final_explanation": "Kangchenjunga (8,586 m) is the world's third highest peak — a fact UPSC tests by exploiting students' tendency to confuse regional supremacy with global rank.\n\n• Option (a) — Incorrect: Second place globally belongs to K2 (8,611 m), located in the Karakoram Range in Pakistan-Occupied Kashmir.\n• Option (b) — Correct: Kangchenjunga is indeed the third highest peak in the world.\n• Option (c) — Incorrect: Fourth place is held by Lhotse (8,516 m) in Nepal/Tibet.\n• Option (d) — Incorrect: Fifth place belongs to Makalu (8,485 m); Kangchenjunga ranks well above fifth.\n\nValue Addition:\n• The global top-5: Everest (8,849 m) → K2 (8,611 m) → Kangchenjunga (8,586 m) → Lhotse (8,516 m) → Makalu (8,485 m).\n• Kangchenjunga is the highest peak on Indian territory by border claim but is shared with Nepal.\n• Nanda Devi (7,816 m) is the highest peak lying entirely within India."
+    },
+    "hi": {
+      "display_text": "कंचनजंगा की विश्व की सबसे ऊँची चोटियों में वैश्विक रैंक निम्नलिखित में से कौन-सा सही रूप से दर्शाता है?\n\n(a) विश्व की दूसरी सबसे ऊँची चोटी\n(b) विश्व की तीसरी सबसे ऊँची चोटी\n(c) विश्व की चौथी सबसे ऊँची चोटी\n(d) विश्व की पाँचवीं सबसे ऊँची चोटी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र अक्सर 'पूर्वी हिमालय की सबसे ऊँची चोटी' को 'दुनिया की दूसरी सबसे ऊँची चोटी' के साथ भ्रमित कर लेते हैं, जिससे कंचनजंगा की क्षेत्रीय प्रमुखता को उसकी वैश्विक रैंक के साथ मिलाया जाता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: K2, कंचनजंगा नहीं, विश्व में दूसरी स्थिति पर है जिसकी ऊँचाई 8,611 मीटर है।",
+        "(c) को हटाएं: कंचनजंगा 8,586 मीटर ऊँचा है, जो चौथे स्थान के लिए 8,000 मीटर की सीमा से काफी ऊपर है; ल्होत्से (8,516 मीटर) चौथे स्थान पर है।",
+        "(d) को हटाएं: पाँचवाँ स्थान मकालू (8,485 मीटर) का है — कंचनजंगा इससे ऊपर है।",
+        "(b) की पुष्टि करें: कंचनजंगा 8,586 मीटर के साथ एवरेस्ट और K2 के बाद विश्व की तीसरी सबसे ऊँची चोटी है।"
+      ],
+      "upsc_trap_explanation": "यह जाल भारतीय भूगोल पाठ्यक्रम में कंचनजंगा की दृश्य और ध्वन्यात्मक प्रमुखता का उपयोग करता है। क्योंकि यह भारतीय क्षेत्र से जुड़ी सबसे ऊँची चोटी है (सिक्किम सीमा), छात्र इसे मानसिक रूप से विश्व में दूसरी जगह पर रख देते हैं। एवरेस्ट–K2–कंचनजंगा क्रम को ठीक से याद रखना आवश्यक है, क्योंकि UPSC ने ऐतिहासिक रूप से तीसरी चोटी की रैंक पर परीक्षा ली है, यह जानते हुए कि अधिकांश उम्मीदवार यहाँ गलती करते हैं।",
+      "final_explanation": "कंचनजंगा (8,586 मीटर) विश्व की तीसरी सबसे ऊँची चोटी है — यह तथ्य UPSC इस तरह से परखता है कि छात्र क्षेत्रीय श्रेष्ठता को वैश्विक रैंक के साथ भ्रमित करते हैं।\n\n• विकल्प (a) — गलत: विश्व में दूसरा स्थान K2 (8,611 मीटर) का है, जो कराकोरम श्रृंखला में पाकिस्तान-प्रशासित कश्मीर में स्थित है।\n• विकल्प (b) — सही: कंचनजंगा वास्तव में विश्व की तीसरी सबसे ऊँची चोटी है।\n• विकल्प (c) — गलत: चौथा स्थान ल्होत्से (8,516 मीटर) का है, जो नेपाल/तिब्बत में है।\n• विकल्प (d) — गलत: पाँचवाँ स्थान मकालू (8,485 मीटर) का है; कंचनजंगा पाँचवें से काफी ऊपर है।\n\nमूल्यवर्धन:\n• विश्व की शीर्ष 5 चोटियाँ: एवरेस्ट (8,849 मीटर) → K2 (8,611 मीटर) → कंचनजंगा (8,586 मीटर) → ल्होत्से (8,516 मीटर) → मकालू (8,485 मीटर)।\n• कंचनजंगा भारतीय क्षेत्र की सबसे ऊँची चोटी है, लेकिन नेपाल के साथ साझा है।\n• नंदा देवी (7,816 मीटर) पूरी तरह से भारत के भीतर स्थित सबसे ऊँची चोटी है।"
+    }
+  },
+  {
+    "uuid": "b8f8d2f3-f095-41d0-a18f-6809d3f661fb",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Nanda Devi: Highest Peak Entirely within India",
+        "Kangchenjunga: Rank, Location, and Territorial Claims"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Nanda Devi — highest peak entirely within India",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding major peaks associated with India:\n\n1. Kangchenjunga is the highest peak on Indian territory.\n2. Nanda Devi is the highest peak located entirely within the political boundaries of India.\n3. K2, despite being taller than Nanda Devi, is not considered part of undisputed Indian territory.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Kangchenjunga is the highest peak on Indian territory.",
+          "verdict": "Incorrect",
+          "reason": "Kangchenjunga sits on the border between Sikkim and Nepal; it is not entirely on Indian territory. The statement is partially true (it is the highest peak bordering India) but the unqualified phrasing 'on Indian territory' is misleading when contrasted with Nanda Devi."
+        },
+        {
+          "statement": "Nanda Devi is the highest peak located entirely within the political boundaries of India.",
+          "verdict": "Correct",
+          "reason": "At 7,816 m, Nanda Devi in Uttarakhand's Chamoli district is wholly within Indian territory, making it the highest peak entirely inside India's borders."
+        },
+        {
+          "statement": "K2, despite being taller than Nanda Devi, is not considered part of undisputed Indian territory.",
+          "verdict": "Correct",
+          "reason": "K2 (8,611 m) is located in Gilgit-Baltistan in Pakistan-Occupied Kashmir; while India claims the territory, it is not under Indian administration, making K2 part of disputed rather than undisputed territory."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because it includes Statement 1, which sounds plausible since Kangchenjunga is geographically on India's border and is colloquially called 'India's highest peak' in popular literature.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Kangchenjunga is on the Sikkim–Nepal border, not entirely within India — Statement 1 is incorrect.",
+        "Evaluate Statement 2: Nanda Devi at 7,816 m lies entirely in Chamoli district, Uttarakhand — Statement 2 is correct.",
+        "Evaluate Statement 3: K2 is in PoK (Gilgit-Baltistan), not under Indian administration — Statement 3 is correct.",
+        "Only Statements 2 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 1 is a classic scope-extension trap. Kangchenjunga is indeed associated with India's Sikkim border and is often described as India's highest peak in casual usage. UPSC exploits this by not adding the qualifier 'entirely' — students who accept the loose definition mark Statement 1 correct and choose options that include it, leading them to (d). The precise distinction between 'bordering India' and 'lying entirely within India' is the core discriminator.",
+      "final_explanation": "This question tests the critical distinction between a peak on India's border and a peak entirely within India — one of UPSC's favourite conceptual traps in physical geography.\n\n• Statement 1 — Incorrect: Kangchenjunga (8,586 m) straddles the India–Nepal border along the Sikkim–Taplejung boundary. It cannot be described as being 'on Indian territory' without qualification; it is a shared peak.\n• Statement 2 — Correct: Nanda Devi (7,816 m), located in Chamoli district, Uttarakhand, lies entirely within India's sovereign territory, making it the highest peak wholly inside India.\n• Statement 3 — Correct: K2 (8,611 m), though claimed by India as part of its position on Jammu & Kashmir, is physically located in Gilgit-Baltistan under Pakistani administration — it is disputed, not undisputed, Indian territory.\n\nValue Addition:\n• Nanda Devi's Chamoli district location is relevant for state-level GK questions on Uttarakhand.\n• Saltoro Kangri (7,742 m) in Ladakh is sometimes cited as the highest peak in undisputed Indian-administered territory outside PoK claims.\n• The distinction 'highest border peak vs. highest interior peak' recurs across UPSC Prelims papers."
+    },
+    "hi": {
+      "display_text": "भारत से संबंधित प्रमुख शिखरों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. कंचनजंगा भारतीय क्षेत्र में सबसे ऊँचा शिखर है।\n2. नंदा देवी राजनीतिक सीमाओं के भीतर पूरी तरह भारत में स्थित सबसे ऊँचा शिखर है।\n3. K2, नंदा देवी से ऊँचा होने के बावजूद, निर्विवाद भारतीय क्षेत्र का हिस्सा नहीं माना जाता।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Kangchenjunga is the highest peak on Indian territory.",
+          "verdict": "गलत",
+          "reason": "कंचनजंगा सिक्किम और नेपाल की सीमा पर स्थित है; यह पूरी तरह भारतीय क्षेत्र में नहीं है। यह कथन आंशिक रूप से सही है (यह भारत की सीमा पर सबसे ऊँचा शिखर है) लेकिन बिना शर्त 'भारतीय क्षेत्र में' कहना नंदा देवी के साथ तुलना में भ्रामक है।"
+        },
+        {
+          "statement": "Nanda Devi is the highest peak located entirely within the political boundaries of India.",
+          "verdict": "सही",
+          "reason": "7,816 मीटर ऊँचा नंदा देवी, जो उत्तराखंड के चमोली जिले में है, पूरी तरह भारतीय क्षेत्र में स्थित है, इसलिए यह भारत के अंदर पूरी तरह से स्थित सबसे ऊँचा शिखर है।"
+        },
+        {
+          "statement": "K2, despite being taller than Nanda Devi, is not considered part of undisputed Indian territory.",
+          "verdict": "सही",
+          "reason": "K2 (8,611 मीटर) गिलगित-बाल्टिस्तान में पाकिस्तान-प्रशासित कश्मीर में स्थित है; भारत इस क्षेत्र का दावा करता है, लेकिन यह भारतीय प्रशासन में नहीं है, इसलिए K2 विवादित क्षेत्र का हिस्सा है, न कि निर्विवाद भारतीय क्षेत्र का।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) भ्रामक है क्योंकि इसमें कथन 1 शामिल है, जो प्रामाणिक लगता है क्योंकि कंचनजंगा भौगोलिक रूप से भारत की सीमा पर है और लोकप्रिय साहित्य में इसे 'भारत का सबसे ऊँचा शिखर' कहा जाता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: कंचनजंगा सिक्किम–नेपाल सीमा पर है, पूरी तरह भारत में नहीं — कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: नंदा देवी 7,816 मीटर ऊँचा है और पूरी तरह चमोली जिले, उत्तराखंड में स्थित है — कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: K2 पाकिस्तान-प्रशासित कश्मीर (गिलगित-बाल्टिस्तान) में है, भारतीय प्रशासन में नहीं — कथन 3 सही है।",
+        "केवल कथन 2 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 एक क्लासिक स्कोप-एक्सटेंशन जाल है। कंचनजंगा वास्तव में भारत के सिक्किम सीमा से जुड़ा है और आम बोलचाल में इसे भारत का सबसे ऊँचा शिखर कहा जाता है। UPSC इस भ्रम का फायदा उठाता है क्योंकि 'पूरी तरह' शब्द नहीं जोड़ा जाता — जो छात्र इस ढीली परिभाषा को स्वीकार करते हैं वे कथन 1 को सही मान लेते हैं और ऐसे विकल्प चुनते हैं जिनमें यह शामिल होता है, जिससे वे (d) विकल्प पर पहुँच जाते हैं। 'भारत की सीमा पर स्थित' और 'पूरी तरह भारत के अंदर' के बीच सटीक भेद यही है।",
+      "final_explanation": "यह प्रश्न भारत की सीमा पर स्थित शिखर और पूरी तरह भारत के अंदर स्थित शिखर के बीच महत्वपूर्ण भेद को परखता है — जो UPSC के भौतिक भूगोल में पसंदीदा अवधारणात्मक जालों में से एक है।\n\n• कथन 1 — गलत: कंचनजंगा (8,586 मीटर) भारत–नेपाल सीमा पर सिक्किम–टाप्लेजुंग सीमा के साथ स्थित है। इसे बिना शर्त 'भारतीय क्षेत्र में' कहना सही नहीं होगा; यह एक साझा शिखर है।\n• कथन 2 — सही: नंदा देवी (7,816 मीटर), जो उत्तराखंड के चमोली जिले में है, पूरी तरह भारत के संप्रभु क्षेत्र में है, इसलिए यह भारत के अंदर पूरी तरह स्थित सबसे ऊँचा शिखर है।\n• कथन 3 — सही: K2 (8,611 मीटर), हालांकि भारत द्वारा जम्मू-कश्मीर के हिस्से के रूप में दावा किया गया है, भौतिक रूप से पाकिस्तान-प्रशासित गिलगित-बाल्टिस्तान में है — यह विवादित क्षेत्र है, निर्विवाद नहीं।\n\nमूल्यवर्धन:\n• नंदा देवी का चमोली जिला उत्तराखंड के राज्य स्तरीय सामान्य ज्ञान प्रश्नों के लिए प्रासंगिक है।\n• लद्दाख में साल्टोरो कांगरी (7,742 मीटर) को कभी-कभी पाकिस्तान-प्रशासित कश्मीर के दावों के बाहर निर्विवाद भारतीय प्रशासन वाले क्षेत्र का सबसे ऊँचा शिखर माना जाता है।\n• 'सबसे ऊँचा सीमा शिखर बनाम सबसे ऊँचा आंतरिक शिखर' का भेद UPSC प्रीलिम्स प्रश्नपत्रों में बार-बार आता है।"
+    }
+  },
+  {
+    "uuid": "418cc8ea-2288-4277-b2a8-59f45e83abd6",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Karakoram Range vs. Himalayan Range: Key Distinctions",
+        "K2: Geopolitical and Geographic Status"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "K2 in Karakoram — not Himalayan range",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements:\n\n1. K2 is part of the Himalayan Range, making it geographically continuous with peaks such as Kangchenjunga and Nanda Devi.\n2. The Siachen Glacier, which has strategic military importance, is located within the Himalayan Range.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Neither 1 nor 2\n(d) Both 1 and 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "K2 is part of the Himalayan Range, making it geographically continuous with peaks such as Kangchenjunga and Nanda Devi.",
+          "verdict": "Incorrect",
+          "reason": "K2 belongs to the Karakoram Range, a geologically distinct range lying northwest of the Himalayas; it shares no sub-range continuity with Kangchenjunga or Nanda Devi."
+        },
+        {
+          "statement": "The Siachen Glacier, which has strategic military importance, is located within the Himalayan Range.",
+          "verdict": "Incorrect",
+          "reason": "Siachen Glacier is part of the Karakoram Range, specifically along the Saltoro Ridge — not the Himalayas. It is the world's second-longest non-polar glacier."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because students who correctly identify Statement 1 as wrong may assume Statement 2 about Siachen must be correct given its proximity to J&K and its common grouping with 'Himalayan' border issues in news coverage.",
+      "elimination_logic": [
+        "Evaluate Statement 1: K2 is in the Karakoram Range — calling it part of the Himalayan Range is factually wrong. Statement 1 is incorrect.",
+        "Evaluate Statement 2: Siachen Glacier lies along the Saltoro Ridge in the Karakoram — placing it in the Himalayan Range is also wrong. Statement 2 is incorrect.",
+        "Both statements are incorrect — the answer asking which are NOT correct must be 'Both 1 and 2', which is option (d)."
+      ],
+      "upsc_trap_explanation": "Both statements exploit the same conflation trap: students habitually bundle Karakoram features (K2, Siachen) under the 'Himalayas' label because all these features are in the greater India–Pakistan northern mountain region. UPSC capitalises on this by making both statements false — a student who catches one error but not the other will choose option (a) or (b) and lose the mark. Precise knowledge that the Karakoram is a distinct range northwest of the Himalayas is the discriminating fact.",
+      "final_explanation": "Both statements contain the same category error — attributing Karakoram features to the Himalayan Range.\n\n• Statement 1 — Incorrect: K2 (8,611 m) is part of the Karakoram Range, a geologically and geographically distinct mountain system lying northwest of the Greater Himalayas. Kangchenjunga (Kangchenjunga Himal sub-range) and Nanda Devi (Garhwal Himalaya) are genuinely Himalayan peaks.\n• Statement 2 — Incorrect: Siachen Glacier, the world's second-longest non-polar glacier, is located in the Karakoram Range along the Saltoro Ridge — not in the Himalayas. Its strategic importance stems from its position on the India–Pakistan line of actual control in this sector.\n\nValue Addition:\n• The Karakoram Range contains the highest concentration of peaks above 8,000 m outside the Himalayas.\n• Karakoram Pass has historically been a trade route linking Ladakh with Xinjiang.\n• Siachen's position in the Karakoram is a recurring fact in both Geography and IR security questions."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथनों पर विचार करें:\n\n1. K2 हिमालयी श्रेणी का हिस्सा है, जो इसे कंचनजंगा और नंदा देवी जैसी चोटियों के साथ भौगोलिक रूप से निरंतर बनाता है।\n2. सियाचिन ग्लेशियर, जिसकी सामरिक सैन्य महत्ता है, हिमालयी श्रेणी के भीतर स्थित है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) न तो 1, न ही 2\n(d) दोनों 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "K2 is part of the Himalayan Range, making it geographically continuous with peaks such as Kangchenjunga and Nanda Devi.",
+          "verdict": "गलत",
+          "reason": "K2 कराकोरम श्रेणी का हिस्सा है, जो हिमालय से भौगोलिक रूप से अलग श्रेणी है; इसका कंचनजंगा या नंदा देवी के साथ कोई उप-श्रृंखला संबंध नहीं है।"
+        },
+        {
+          "statement": "The Siachen Glacier, which has strategic military importance, is located within the Himalayan Range.",
+          "verdict": "गलत",
+          "reason": "सियाचिन ग्लेशियर कराकोरम श्रेणी का हिस्सा है, विशेषकर साल्टोरो रिज के साथ — यह हिमालय में नहीं है। यह विश्व का दूसरा सबसे लंबा गैर-ध्रुवीय ग्लेशियर है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि जो छात्र कथन 1 को गलत समझते हैं, वे मान सकते हैं कि कथन 2 सियाचिन के बारे में सही होगा क्योंकि यह जम्मू-कश्मीर के निकट है और समाचारों में 'हिमालयी' सीमा मुद्दों के साथ सामान्यतः जोड़ा जाता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: K2 कराकोरम श्रेणी में है — इसे हिमालयी श्रेणी का हिस्सा कहना तथ्यात्मक रूप से गलत है। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: सियाचिन ग्लेशियर साल्टोरो रिज के साथ कराकोरम में है — इसे हिमालयी श्रेणी में रखना भी गलत है। कथन 2 गलत है।",
+        "दोनों कथन गलत हैं — जो उत्तर पूछता है कि कौन-से सही नहीं हैं, वह होगा 'दोनों 1 और 2', जो विकल्प (d) है।"
+      ],
+      "upsc_trap_explanation": "दोनों कथन एक ही भ्रमित करने वाले जाल का उपयोग करते हैं: छात्र सामान्यतः कराकोरम की विशेषताओं (K2, सियाचिन) को 'हिमालय' के अंतर्गत जोड़ देते हैं क्योंकि ये सभी भारत–पाकिस्तान के उत्तरी पर्वतीय क्षेत्र में हैं। UPSC इसका लाभ उठाता है और दोनों कथनों को गलत बनाता है — जो छात्र एक गलती पकड़ लेते हैं पर दूसरी नहीं, वे विकल्प (a) या (b) चुनेंगे और अंक खो देंगे। कराकोरम हिमालय के उत्तर-पश्चिम में एक अलग श्रेणी है, यह सटीक ज्ञान निर्णायक तथ्य है।",
+      "final_explanation": "दोनों कथनों में समान श्रेणीगत त्रुटि है — कराकोरम की विशेषताओं को हिमालयी श्रेणी से जोड़ना।\n\n• कथन 1 — गलत: K2 (8,611 मीटर) कराकोरम श्रेणी का हिस्सा है, जो भौगोलिक और भूवैज्ञानिक रूप से ग्रेटर हिमालय से अलग पर्वत प्रणाली है। कंचनजंगा (कंचनजंगा हिमाल उप-श्रृंखला) और नंदा देवी (गढ़वाल हिमालय) वास्तव में हिमालयी चोटियाँ हैं।\n• कथन 2 — गलत: सियाचिन ग्लेशियर, जो विश्व का दूसरा सबसे लंबा गैर-ध्रुवीय ग्लेशियर है, कराकोरम श्रेणी में साल्टोरो रिज के साथ स्थित है — हिमालय में नहीं। इसकी सामरिक महत्ता भारत–पाकिस्तान की वास्तविक नियंत्रण रेखा पर इसके स्थान से है।\n\nमूल्यवर्धन:\n• कराकोरम श्रेणी में हिमालय के बाहर 8,000 मीटर से ऊपर की चोटियों का सबसे अधिक संकेंद्रण है।\n• कराकोरम पास ऐतिहासिक रूप से लद्दाख को शिनजियांग से जोड़ने वाला व्यापार मार्ग रहा है।\n• सियाचिन का कराकोरम में होना भूगोल और अंतरराष्ट्रीय सुरक्षा दोनों विषयों में बार-बार पूछा जाने वाला तथ्य है।"
+    }
+  },
+  {
+    "uuid": "2a730d00-cba4-426c-9f63-d3d276401ad1",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Sub-ranges of the Himalayas and Peak Distribution",
+        "Administrative and Political Geography of Peak Locations",
+        "Highest Peaks in Each Himalayan State of India"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Peak-to-state and peak-to-sub-range mapping",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Peak) with List II (Associated State / Sub-range):",
+        "columns": [
+          "List I (Peak)",
+          "List II (State / Sub-range)"
+        ],
+        "rows": [
+          [
+            "A. Kangchenjunga",
+            "1. Himachal Pradesh"
+          ],
+          [
+            "B. Nanda Devi",
+            "2. Sikkim"
+          ],
+          [
+            "C. Reo Purgyil",
+            "3. Ladakh / J&K"
+          ],
+          [
+            "D. Saltoro Kangri",
+            "4. Garhwal Himalaya"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-1, C-4, D-3\n(c) A-2, B-4, C-1, D-3\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because it correctly places Kangchenjunga with Sikkim and Nanda Devi with Garhwal Himalaya but swaps Reo Purgyil's state (giving it to J&K/Ladakh instead of Himachal Pradesh), which many students accept without scrutiny.",
+      "elimination_logic": [
+        "A (Kangchenjunga) belongs to Sikkim on India's side — matches with 2 (Sikkim). This eliminates options that pair A with anything else.",
+        "B (Nanda Devi) is in Chamoli district, part of Garhwal Himalaya — matches with 4 (Garhwal Himalaya). Eliminate options pairing B with Kumaon.",
+        "C (Reo Purgyil) is Himachal Pradesh's highest peak, not Ladakh's — matches with 1 (Himachal Pradesh). This eliminates option (a) which would place it in J&K.",
+        "D (Saltoro Kangri) is in Ladakh/J&K near Siachen — matches with 3 (Ladakh / J&K). Only option (c) satisfies all four pairings: A-2, B-4, C-1, D-3."
+      ],
+      "upsc_trap_explanation": "The trap lies with Reo Purgyil (C). Because Reo Purgyil is a high-altitude peak in the remote northern reaches, students associate it with Ladakh or J&K, which is the geographic region they mentally map to 'extreme northern high peaks'. In reality, Reo Purgyil (6,816 m) is the highest peak of Himachal Pradesh, located in the Kinnaur district near the Tibet border. This geographic-swap between Himachal Pradesh and Ladakh/J&K is the pivot on which this question turns.",
+      "final_explanation": "This question tests whether candidates can precisely map peaks to their correct states and sub-ranges — a recurrent UPSC design in physical geography.\n\nCorrect pairings:\n• A (Kangchenjunga) → 2 (Sikkim): Kangchenjunga sits on the Sikkim–Nepal border and is the highest peak of Sikkim state.\n• B (Nanda Devi) → 4 (Garhwal Himalaya): Nanda Devi is located in Chamoli district within the Garhwal sub-range, though it is also near the Kumaon boundary — the Garhwal classification is more precise.\n• C (Reo Purgyil) → 1 (Himachal Pradesh): Reo Purgyil (6,816 m) in Kinnaur district is Himachal Pradesh's highest peak, often mistaken for a Ladakh peak due to its remote northern location.\n• D (Saltoro Kangri) → 3 (Ladakh / J&K): Saltoro Kangri (7,742 m) lies in the Karakoram near Siachen and is the highest peak in undisputed Indian-administered territory within Ladakh.\n\nValue Addition:\n• Reo Purgyil's location near the Tibet border in Kinnaur makes it strategically relevant for HP–China border discussions.\n• Saltoro Kangri is sometimes cited as India's highest peak in undisputed territory, contrasting with K2 in PoK.\n• Knowing the highest peak of each Himalayan state is a standard state GK preparation item."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (शिखर) को सूची II (संबंधित राज्य / उप-श्रेणी) से मिलाइए:",
+        "columns": [
+          "सूची I (शिखर)",
+          "सूची II (राज्य / उप-श्रेणी)"
+        ],
+        "rows": [
+          [
+            "A. कंचनजंगा",
+            "1. हिमाचल प्रदेश"
+          ],
+          [
+            "B. नंदा देवी",
+            "2. सिक्किम"
+          ],
+          [
+            "C. रियो पुरग्यिल",
+            "3. लद्दाख / जम्मू-कश्मीर"
+          ],
+          [
+            "D. साल्टोरो कांग्री",
+            "4. गढ़वाल हिमालय"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-1, C-4, D-3\n(c) A-2, B-4, C-1, D-3\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि यह कंचनजंगा को सिक्किम और नंदा देवी को गढ़वाल हिमालय के साथ सही ढंग से जोड़ता है लेकिन रियो पुरग्यिल के राज्य को (हिमाचल प्रदेश के बजाय) जम्मू-कश्मीर/लद्दाख दे देता है, जिसे कई छात्र बिना जांच के स्वीकार कर लेते हैं।",
+      "elimination_logic": [
+        "A (कंचनजंगा) भारत की ओर सिक्किम में है — 2 (सिक्किम) से मेल खाता है। यह उन विकल्पों को समाप्त करता है जो A को किसी और के साथ जोड़ते हैं।",
+        "B (नंदा देवी) चमोली जिले में है, जो गढ़वाल हिमालय का हिस्सा है — 4 (गढ़वाल हिमालय) से मेल खाता है। B को कुमाऊं के साथ जोड़ने वाले विकल्प समाप्त करें।",
+        "C (रियो पुरग्यिल) हिमाचल प्रदेश का सबसे ऊँचा शिखर है, लद्दाख का नहीं — 1 (हिमाचल प्रदेश) से मेल खाता है। यह विकल्प (a) को समाप्त करता है जो इसे जम्मू-कश्मीर में रखता।",
+        "D (साल्टोरो कांग्री) लद्दाख/जम्मू-कश्मीर में सियाचिन के पास है — 3 (लद्दाख / जम्मू-कश्मीर) से मेल खाता है। केवल विकल्प (c) सभी चार जोड़ों को संतुष्ट करता है: A-2, B-4, C-1, D-3।"
+      ],
+      "upsc_trap_explanation": "फंदा रियो पुरग्यिल (C) में है। क्योंकि रियो पुरग्यिल एक उच्च ऊंचाई वाला शिखर है जो दूर-दराज़ उत्तरी क्षेत्र में है, छात्र इसे लद्दाख या जम्मू-कश्मीर से जोड़ते हैं, जो वे 'अत्यंत उत्तरी उच्च शिखर' के रूप में मानसिक रूप से मानते हैं। वास्तविकता में, रियो पुरग्यिल (6,816 मीटर) हिमाचल प्रदेश का सबसे ऊँचा शिखर है, जो किन्नौर जिले में तिब्बत सीमा के पास स्थित है। हिमाचल प्रदेश और लद्दाख/जम्मू-कश्मीर के बीच यह भौगोलिक-स्थानांतरण इस प्रश्न का मुख्य बिंदु है।",
+      "final_explanation": "यह प्रश्न यह परीक्षण करता है कि उम्मीदवार शिखरों को उनके सही राज्यों और उप-श्रेणियों के साथ सटीक रूप से जोड़ सकते हैं या नहीं — जो भौतिक भूगोल में UPSC की एक बार-बार आने वाली डिज़ाइन है।\n\nसही जोड़े:\n• A (कंचनजंगा) → 2 (सिक्किम): कंचनजंगा सिक्किम-नेपाल सीमा पर स्थित है और सिक्किम राज्य का सबसे ऊँचा शिखर है।\n• B (नंदा देवी) → 4 (गढ़वाल हिमालय): नंदा देवी चमोली जिले में गढ़वाल उप-श्रेणी में है, हालांकि यह कुमाऊं सीमा के पास भी है — गढ़वाल वर्गीकरण अधिक सटीक है।\n• C (रियो पुरग्यिल) → 1 (हिमाचल प्रदेश): रियो पुरग्यिल (6,816 मीटर) किन्नौर जिले में हिमाचल प्रदेश का सबसे ऊँचा शिखर है, जो दूर-दराज़ उत्तरी स्थान के कारण अक्सर लद्दाख का शिखर समझा जाता है।\n• D (साल्टोरो कांग्री) → 3 (लद्दाख / जम्मू-कश्मीर): साल्टोरो कांग्री (7,742 मीटर) कराकोरम में सियाचिन के पास है और लद्दाख के भारतीय-प्रशासित विवादित क्षेत्र में सबसे ऊँचा शिखर है।\n\nमूल्य संवर्धन:\n• रियो पुरग्यिल का तिब्बत सीमा के पास किन्नौर में होना इसे हिमाचल प्रदेश-चीन सीमा वार्ता के लिए रणनीतिक रूप से महत्वपूर्ण बनाता है।\n• साल्टोरो कांग्री को कभी-कभी भारत का सबसे ऊँचा शिखर माना जाता है जो विवादित क्षेत्र में नहीं है, जो पीओके के K2 से भिन्न है।\n• प्रत्येक हिमालयी राज्य के सबसे ऊँचे शिखर को जानना एक मानक राज्य सामान्य ज्ञान तैयारी का हिस्सा है।"
+    }
+  },
+  {
+    "uuid": "f8bbb65c-e2a6-42bc-88d1-351514bd72b6",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "K2: Geopolitical and Geographic Status",
+        "Administrative and Political Geography of Peak Locations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "K2 geopolitical status and Karakoram location",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): K2, while claimed by India as part of Jammu & Kashmir, is not currently under Indian administration and lies within Gilgit-Baltistan under Pakistani control.\n\nReason (R): K2 belongs to the Karakoram Range, which is a geologically distinct mountain system separate from the Himalayas.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because both A and R are factually true, and students who do not carefully analyse the causal link assume that being in PoK is what makes K2 'not in the Himalayas', conflating a geopolitical fact with a geographic one.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — K2 is administered by Pakistan as part of Gilgit-Baltistan in PoK, even though India claims the territory. A is factually correct.",
+        "Step 2: Is Reason (R) correct? — K2 belongs to the Karakoram Range, not the Himalayas. This is a verified geographic fact. R is factually correct.",
+        "Step 3: Does R causally explain A? — K2's location in the Karakoram Range does not explain why it is not under Indian administration. The reason for its non-Indian control is the unresolved territorial dispute over Kashmir since 1947, not its range classification. R does not explain A.",
+        "Both A and R are correct but R does NOT explain A — the answer is (b)."
+      ],
+      "upsc_trap_explanation": "This is a classic 'both true but unconnected' assertion-reason trap. Students confirm A (PoK status) and R (Karakoram location) as independently correct facts and assume the proximity of these two truths implies causation. In reality, K2 falls under Pakistani control because of the 1947 Partition and subsequent Kashmir dispute — not because it is in the Karakoram Range. The range classification is a geographic fact; the administrative status is a geopolitical-historical fact. These are causally independent.",
+      "final_explanation": "K2's geopolitical and geographic identities are frequently confused in UPSC preparation — this question forces separation of two independently true facts.\n\nAssertion (A): K2, though claimed by India as part of Jammu & Kashmir, is currently not under Indian administration — it lies in Gilgit-Baltistan, administered by Pakistan. This is factually correct.\n\nReason (R): K2 belongs to the Karakoram Range, a geologically distinct system northwest of the Greater Himalayas. This is also factually correct.\n\nCausal link: The reason K2 is not under Indian control is the 1947 Partition and the unresolved Kashmir territorial dispute — not the fact that it belongs to the Karakoram instead of the Himalayas. A mountain's range classification does not determine which country administers it. R does not explain A.\n\nValue Addition:\n• K2 is also called Mount Godwin-Austen (after Colonel Henry Haversham Godwin-Austen who surveyed it) and Chhogori (in Balti language).\n• Gilgit-Baltistan was declared a provisional province of Pakistan in 2009 — a move India protested.\n• India's official maps show K2 as part of J&K, reflecting its territorial claim."
+    },
+    "hi": {
+      "display_text": "कथन (A): K2, जबकि भारत द्वारा जम्मू और कश्मीर का हिस्सा माना जाता है, वर्तमान में भारतीय प्रशासन में नहीं है और गिलगित-बाल्टिस्तान में पाकिस्तान के नियंत्रण में है।\n\nकारण (R): K2 कराकोरम श्रृंखला का हिस्सा है, जो हिमालय से भौगोलिक रूप से अलग पर्वत प्रणाली है।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि दोनों A और R तथ्यात्मक रूप से सही हैं, और जो छात्र कारणात्मक संबंध को सावधानीपूर्वक विश्लेषित नहीं करते वे मान लेते हैं कि PoK में होना ही K2 को 'हिमालय में नहीं' बनाता है, जो एक भौगोलिक तथ्य के साथ एक भू-राजनीतिक तथ्य को मिला देता है।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — K2 पाकिस्तान द्वारा PoK के गिलगित-बाल्टिस्तान के हिस्से के रूप में प्रशासित है, हालांकि भारत इस क्षेत्र का दावा करता है। A तथ्यात्मक रूप से सही है।",
+        "चरण 2: क्या कारण (R) सही है? — K2 कराकोरम श्रृंखला का हिस्सा है, हिमालय नहीं। यह एक सत्यापित भौगोलिक तथ्य है। R तथ्यात्मक रूप से सही है।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — K2 का कराकोरम श्रृंखला में होना यह नहीं बताता कि यह भारतीय प्रशासन में क्यों नहीं है। इसका कारण 1947 से कश्मीर पर अनसुलझा क्षेत्रीय विवाद है, न कि इसकी पर्वत श्रृंखला की श्रेणी। R, A को समझाता नहीं है।",
+        "A और R दोनों सही हैं लेकिन R, A को समझाता नहीं है — उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "यह एक क्लासिक 'दोनों सही लेकिन असंबंधित' कथन-कारण जाल है। छात्र A (PoK स्थिति) और R (कराकोरम स्थान) को स्वतंत्र रूप से सही तथ्य मान लेते हैं और मान लेते हैं कि इन दोनों सत्यताओं की निकटता कारण है। वास्तविकता में, K2 पाकिस्तान के नियंत्रण में है क्योंकि 1947 के विभाजन और बाद के कश्मीर विवाद के कारण — न कि इसलिए कि यह कराकोरम श्रृंखला में है। श्रृंखला वर्गीकरण एक भौगोलिक तथ्य है; प्रशासनिक स्थिति एक भू-राजनीतिक-ऐतिहासिक तथ्य है। ये कारणात्मक रूप से स्वतंत्र हैं।",
+      "final_explanation": "K2 की भू-राजनीतिक और भौगोलिक पहचान अक्सर UPSC तैयारी में भ्रमित हो जाती है — यह प्रश्न दो स्वतंत्र रूप से सही तथ्यों को अलग करने के लिए बाध्य करता है।\n\nकथन (A): K2, हालांकि भारत द्वारा जम्मू और कश्मीर का हिस्सा माना जाता है, वर्तमान में भारतीय प्रशासन में नहीं है — यह गिलगित-बाल्टिस्तान में है, जो पाकिस्तान द्वारा प्रशासित है। यह तथ्यात्मक रूप से सही है।\n\nकारण (R): K2 कराकोरम श्रृंखला का हिस्सा है, जो भौगोलिक रूप से महान हिमालय से अलग एक पर्वत प्रणाली है। यह भी तथ्यात्मक रूप से सही है।\n\nकारणात्मक संबंध: K2 भारतीय नियंत्रण में न होने का कारण 1947 का विभाजन और अनसुलझा कश्मीर क्षेत्रीय विवाद है — न कि यह कि यह हिमालय के बजाय कराकोरम में है। किसी पर्वत की श्रृंखला वर्गीकरण यह निर्धारित नहीं करती कि कौन सा देश उसे प्रशासित करता है। R, A को समझाता नहीं है।\n\nमूल्य संवर्धन:\n• K2 को माउंट गॉडविन-ऑस्टेन भी कहा जाता है (कर्नल हेनरी हेवर्शम गॉडविन-ऑस्टेन के नाम पर जिन्होंने इसका सर्वेक्षण किया था) और बल्ती भाषा में छोगोरी कहा जाता है।\n• गिलगित-बाल्टिस्तान को 2009 में पाकिस्तान का अस्थायी प्रांत घोषित किया गया था — जिसका भारत ने विरोध किया।\n• भारत के आधिकारिक नक्शे K2 को जम्मू और कश्मीर का हिस्सा दिखाते हैं, जो उसके क्षेत्रीय दावे को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "87685870-1236-4500-ac52-db2c690a129a",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "First Ascents and Mountaineering History"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "First ascents of major peaks — chronological order",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological order of the first successful ascents of these peaks?\n\n1. Nanda Devi\n2. K2\n3. Kangchenjunga\n\n(a) 1 → 2 → 3\n(b) 3 → 1 → 2\n(c) 2 → 1 → 3\n(d) 1 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) swaps the order of Nanda Devi and Kangchenjunga, which is the most common error: students who remember '1930s for Nanda Devi' but place it after the 1950s Himalayan rush make this mistake.",
+      "elimination_logic": [
+        "Nanda Devi was first summited in 1936 — the earliest of the three. It must come first in the sequence.",
+        "K2 was first summited in 1954 by an Italian expedition — this is between 1936 and 1955.",
+        "Kangchenjunga was first summited in 1955 by a British expedition — the latest of the three.",
+        "Correct chronological order: Nanda Devi (1936) → K2 (1954) → Kangchenjunga (1955). This matches option (a)."
+      ],
+      "upsc_trap_explanation": "The trap targets students who know the decade of these ascents but not the precise sequence. Many students associate K2 with extreme difficulty and assume it was summited last, after Kangchenjunga. In reality, K2 was first summited in 1954 and Kangchenjunga a year later in 1955. The 1936 date for Nanda Devi is also surprising — it predates the famous 1953 Everest summit by 17 years and held the record for the highest summited peak for 14 years.",
+      "final_explanation": "The chronology of first ascents follows the pattern: least technically challenging (relatively) to most, though this does not map neatly onto height.\n\nCorrect sequence: Nanda Devi (1936) → K2 (1954) → Kangchenjunga (1955)\n\n• Nanda Devi (1936): H.W. Tilman and Noel Odell made the first ascent. At the time, no peak above 7,816 m had been climbed — Nanda Devi held this distinction for 14 years until Annapurna was summited in 1950.\n• K2 (1954): The Italian expedition led by Ardito Desio, with Lacedelli and Compagnoni reaching the summit. K2 remains the only 8,000 m peak never summited in winter until 2021 (Pakistani–Nepali team).\n• Kangchenjunga (1955): British expedition members George Band and Norman Hardie completed the first ascent; subsequent summiters honoured the sacred peak by stopping just short of the very top.\n\nOption (b) incorrectly places Kangchenjunga before K2; option (c) places K2 first; option (d) reverses all three.\n\nValue Addition:\n• Nanda Devi's 1936 first ascent predates Edmund Hillary's Everest climb by 17 years.\n• K2's first winter ascent occurred in January 2021 — a landmark in mountaineering history.\n• Bachendri Pal became the first Indian woman to summit Everest in 1984."
+    },
+    "hi": {
+      "display_text": "इन चोटियों के प्रथम सफल आरोहणों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. नंदा देवी\n2. K2\n3. कंचनजंगा\n\n(a) 1 → 2 → 3\n(b) 3 → 1 → 2\n(c) 2 → 1 → 3\n(d) 1 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) नंदा देवी और कंचनजंगा के क्रम को बदल देता है, जो सबसे सामान्य त्रुटि है: छात्र जो 'नंदा देवी के लिए 1930 के दशक' को याद रखते हैं लेकिन इसे 1950 के दशक के हिमालयी दौड़ के बाद रखते हैं, यह गलती करते हैं।",
+      "elimination_logic": [
+        "नंदा देवी का प्रथम आरोहण 1936 में हुआ था — यह तीनों में सबसे पहला है। इसे क्रम में सबसे पहले आना चाहिए।",
+        "K2 का प्रथम आरोहण 1954 में एक इतालवी अभियान द्वारा किया गया था — यह 1936 और 1955 के बीच है।",
+        "कंचनजंगा का प्रथम आरोहण 1955 में एक ब्रिटिश अभियान द्वारा किया गया था — यह तीनों में सबसे अंतिम है।",
+        "सही कालानुक्रमिक क्रम: नंदा देवी (1936) → K2 (1954) → कंचनजंगा (1955)। यह विकल्प (a) से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल उन छात्रों को लक्षित करता है जो इन आरोहणों के दशक को जानते हैं लेकिन सटीक क्रम नहीं जानते। कई छात्र K2 को अत्यंत कठिन मानते हैं और मान लेते हैं कि इसे कंचनजंगा के बाद सबसे अंत में आरोहित किया गया था। वास्तव में, K2 का प्रथम आरोहण 1954 में हुआ था और कंचनजंगा का एक वर्ष बाद 1955 में। नंदा देवी की 1936 की तिथि भी आश्चर्यजनक है — यह प्रसिद्ध 1953 के एवरेस्ट आरोहण से 17 वर्ष पहले है और 14 वर्षों तक सबसे ऊँची आरोहित चोटी का रिकॉर्ड रखती थी।",
+      "final_explanation": "प्रथम आरोहणों का कालानुक्रम इस प्रकार है: तकनीकी रूप से कम चुनौतीपूर्ण (तुलनात्मक रूप से) से अधिक चुनौतीपूर्ण की ओर, हालांकि यह ऊँचाई के साथ पूरी तरह मेल नहीं खाता।\n\nसही क्रम: नंदा देवी (1936) → K2 (1954) → कंचनजंगा (1955)\n\n• नंदा देवी (1936): H.W. Tilman और Noel Odell ने प्रथम आरोहण किया। उस समय, 7,816 मीटर से ऊपर कोई चोटी नहीं चढ़ी गई थी — नंदा देवी ने यह विशेषता 14 वर्षों तक रखी जब तक कि 1950 में अन्नपूर्णा का आरोहण नहीं हुआ।\n• K2 (1954): इतालवी अभियान जिसका नेतृत्व Ardito Desio ने किया, जिसमें Lacedelli और Compagnoni ने शिखर पर पहुँचकर प्रथम आरोहण पूरा किया। K2 2021 तक (पाकिस्तानी–नेपाली टीम द्वारा) सर्दियों में कभी आरोहित न होने वाली एकमात्र 8,000 मीटर की चोटी बनी रही।\n• कंचनजंगा (1955): ब्रिटिश अभियान के सदस्य George Band और Norman Hardie ने प्रथम आरोहण पूरा किया; बाद के आरोहणकर्ताओं ने इस पवित्र चोटी का सम्मान करते हुए शिखर के ठीक नीचे ही रुकना पसंद किया।\n\nविकल्प (b) गलत तरीके से कंचनजंगा को K2 से पहले रखता है; विकल्प (c) K2 को पहले रखता है; विकल्प (d) तीनों का क्रम उलट देता है।\n\nमूल्यवर्धन:\n• नंदा देवी का 1936 का प्रथम आरोहण Edmund Hillary के एवरेस्ट आरोहण से 17 वर्ष पहले है।\n• K2 का प्रथम सर्दियों में आरोहण जनवरी 2021 में हुआ — पर्वतारोहण इतिहास में एक महत्वपूर्ण घटना।\n• बछेंद्री पाल 1984 में एवरेस्ट की पहली भारतीय महिला विजेता बनीं।"
+    }
+  },
+  {
+    "uuid": "3181a707-4221-46e0-8b61-1451bba1d559",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Nanda Devi Biosphere Reserve: Conservation and UNESCO Status",
+        "National Parks and Protected Areas Linked to Major Peaks"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Core zone vs. buffer zone — Nanda Devi Biosphere Reserve",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A botanical researcher wishes to study endemic high-altitude flora within the Inner Sanctuary of a major biosphere reserve in Uttarakhand. The area is known as one of India's most strictly protected natural zones, home to species including the state flower of Uttarakhand. The researcher applies for permission from the relevant forest department. Which of the following principles most accurately governs whether the researcher can access the area?\n\n(a) Biosphere reserve buffer zone rules permit scientific research with prior governmental approval, so access can be granted under standard protocols.\n(b) Wildlife Sanctuary regulations allow entry for research purposes with written permission from the Chief Wildlife Warden, making access possible.\n(c) The Inner Sanctuary has been completely closed to all human entry since 1982 as a strict core zone — access is not permissible under current policy.\n(d) Ramsar Convention wise-use principles require that scientific research not be impeded in listed wetlands, overriding national closure orders.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students familiar with biosphere reserve rules know that buffer zones allow limited human activity, and may assume this applies universally, not realising the Inner Sanctuary's additional layer of restriction since 1982.",
+      "elimination_logic": [
+        "The scenario involves a researcher seeking access to high-altitude endemic flora within the Inner Sanctuary — this is explicitly the core zone of the Nanda Devi Biosphere Reserve.",
+        "Eliminate (a): Buffer zone rules allow limited scientific access but the Inner Sanctuary has been closed to all external access since 1982 — a blanket prohibition, not a regulated permission zone.",
+        "Eliminate (b): Wildlife Sanctuary designation allows regulated human entry; but the Inner Sanctuary operates under stricter core-zone closure that overrides normal wildlife sanctuary permissions.",
+        "Eliminate (d): The Ramsar Convention governs wetlands and their wise-use; it does not apply to this high-altitude core zone closure.",
+        "Select (c): The closure of the Nanda Devi Inner Sanctuary since 1982 as a strict core zone of the biosphere reserve is the operative principle — no trekking, research entry, or commercial activity is permitted."
+      ],
+      "upsc_trap_explanation": "The trap is a scope-extension error in option (a): students who know buffer zones permit scientific research may extend this to the Inner Sanctuary without recognising the 1982 blanket closure. The Inner Sanctuary is not merely a restricted buffer — it is a closed core zone with an absolute prohibition on human entry, a policy made after ecological damage from expeditions. The question tests whether candidates know this additional layer of protection beyond standard biosphere reserve rules.",
+      "final_explanation": "This scenario tests the application of India's strictest protected area rules — specifically, the unique closure policy of the Nanda Devi Inner Sanctuary.\n\nApplicable principle: The Nanda Devi Inner Sanctuary has been completely closed to all human entry — including trekkers, researchers, and mountaineers — since 1982. This closure was imposed by the Indian government following documented ecological degradation from mountaineering expeditions. It operates as a strict core zone within the biosphere reserve where even scientific research requires special governmental dispensation that is rarely granted.\n\n• Option (a) — Incorrect: While biosphere reserve buffer zones normally allow regulated scientific access, the Inner Sanctuary is the core zone under an absolute closure since 1982 — the buffer zone rules do not apply here.\n• Option (b) — Incorrect: Wildlife Sanctuary status permits certain human activities with permission; the Inner Sanctuary's core-zone closure supersedes standard wildlife sanctuary access rules.\n• Option (c) — Correct: The 1982 complete closure of the Inner Sanctuary as the biosphere reserve's core zone is the governing rule. The researcher cannot legally access the area under current policy.\n• Option (d) — Incorrect: Ramsar Convention applies to wetlands for wise use; the Nanda Devi Inner Sanctuary is a high-altitude core zone, not a Ramsar-designated wetland.\n\nValue Addition:\n• Nanda Devi National Park is a UNESCO World Heritage Site (1988) and forms the core of the biosphere reserve.\n• The Valley of Flowers, added to the heritage listing in 2005, is also a Ramsar Wetland.\n• Biosphere reserves have three zones: core (no human activity), buffer (limited research), and transition/manipulation zone (sustainable use)."
+    },
+    "hi": {
+      "display_text": "उत्तराखंड के एक प्रमुख बायोस्फीयर रिजर्व के इनर सैंक्चुअरी में स्थानीय उच्च-altitude पौधों का अध्ययन करने के लिए एक वनस्पति शोधकर्ता अनुमति चाहता है। यह क्षेत्र भारत के सबसे कड़े संरक्षित प्राकृतिक क्षेत्रों में से एक माना जाता है, जिसमें उत्तराखंड के राज्य फूल सहित कई प्रजातियाँ पाई जाती हैं। शोधकर्ता संबंधित वन विभाग से अनुमति के लिए आवेदन करता है। निम्नलिखित में से कौन-सा सिद्धांत सबसे सटीक रूप से यह निर्धारित करता है कि शोधकर्ता को क्षेत्र में प्रवेश मिल सकता है या नहीं?\n\n(a) बायोस्फीयर रिजर्व के बफर जोन नियम prior सरकारी अनुमति के साथ वैज्ञानिक अनुसंधान की अनुमति देते हैं, अतः मानक प्रोटोकॉल के तहत प्रवेश दिया जा सकता है।\n(b) वन्यजीव अभयारण्य नियम अनुसंधान के लिए मुख्य वन्यजीव रक्षक से लिखित अनुमति के साथ प्रवेश की अनुमति देते हैं, जिससे प्रवेश संभव होता है।\n(c) इनर सैंक्चुअरी 1982 से एक कड़ा कोर जोन के रूप में सभी मानव प्रवेश के लिए पूरी तरह बंद है — वर्तमान नीति के तहत प्रवेश अनुमत नहीं है।\n(d) रामसर कन्वेंशन के विवेकपूर्ण उपयोग सिद्धांत सूचीबद्ध आर्द्रभूमि में वैज्ञानिक अनुसंधान को अवरुद्ध नहीं करने की आवश्यकता रखते हैं, जो राष्ट्रीय बंदी आदेशों से ऊपर हैं।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि बायोस्फीयर रिजर्व नियमों से परिचित छात्र जानते हैं कि बफर जोन में सीमित मानव गतिविधि की अनुमति होती है, और वे यह मान सकते हैं कि यह सार्वभौमिक रूप से लागू होता है, यह न समझते हुए कि 1982 से इनर सैंक्चुअरी में अतिरिक्त प्रतिबंध लागू हैं।",
+      "elimination_logic": [
+        "परिदृश्य में एक शोधकर्ता नंदा देवी बायोस्फीयर रिजर्व के इनर सैंक्चुअरी के उच्च-altitude स्थानीय पौधों का अध्ययन करना चाहता है — यह स्पष्ट रूप से रिजर्व का कोर जोन है।",
+        "विकल्प (a) को हटाएं: बफर जोन नियम सीमित वैज्ञानिक पहुँच की अनुमति देते हैं लेकिन इनर सैंक्चुअरी 1982 से सभी बाहरी पहुँच के लिए बंद है — यह एक पूर्ण प्रतिबंध है, कोई नियंत्रित अनुमति क्षेत्र नहीं।",
+        "विकल्प (b) को हटाएं: वन्यजीव अभयारण्य का दर्जा नियंत्रित मानव प्रवेश की अनुमति देता है; लेकिन इनर सैंक्चुअरी का कड़ा कोर जोन बंद नियम सामान्य वन्यजीव अभयारण्य अनुमतियों से ऊपर है।",
+        "विकल्प (d) को हटाएं: रामसर कन्वेंशन आर्द्रभूमि और उनके विवेकपूर्ण उपयोग को नियंत्रित करता है; यह उच्च-altitude कोर जोन बंदी पर लागू नहीं होता।",
+        "विकल्प (c) चुनें: नंदा देवी इनर सैंक्चुअरी का 1982 से कोर जोन के रूप में पूर्ण बंद होना लागू सिद्धांत है — वर्तमान नीति के तहत कोई ट्रेकिंग, शोध प्रवेश या वाणिज्यिक गतिविधि अनुमत नहीं है।"
+      ],
+      "upsc_trap_explanation": "फंदा विकल्प (a) में दायरा-विस्तार की गलती है: जो छात्र जानते हैं कि बफर जोन में वैज्ञानिक अनुसंधान की अनुमति होती है, वे इसे इनर सैंक्चुअरी पर भी लागू कर सकते हैं बिना यह समझे कि 1982 से यहाँ पूर्ण बंदी है। इनर सैंक्चुअरी केवल प्रतिबंधित बफर नहीं है — यह एक बंद कोर जोन है जहाँ मानव प्रवेश पर पूर्ण प्रतिबंध है, जो पर्वतारोहण अभियानों से हुए पारिस्थितिक नुकसान के बाद लागू किया गया। प्रश्न यह जांचता है कि उम्मीदवार इस अतिरिक्त सुरक्षा स्तर को जानते हैं या नहीं।",
+      "final_explanation": "यह परिदृश्य भारत के सबसे कड़े संरक्षित क्षेत्र नियमों के अनुप्रयोग की परीक्षा लेता है — विशेष रूप से नंदा देवी इनर सैंक्चुअरी की अनूठी बंदी नीति।\n\nलागू सिद्धांत: नंदा देवी इनर सैंक्चुअरी 1982 से सभी मानव प्रवेश के लिए पूरी तरह बंद है — इसमें ट्रेकर्स, शोधकर्ता और पर्वतारोही शामिल हैं। यह बंदी भारतीय सरकार द्वारा पर्वतारोहण अभियानों से हुए पारिस्थितिक क्षरण के दस्तावेजीकरण के बाद लगाई गई थी। यह बायोस्फीयर रिजर्व के भीतर एक कड़ा कोर जोन के रूप में संचालित होता है जहाँ वैज्ञानिक अनुसंधान के लिए भी विशेष सरकारी अनुमति आवश्यक है जो शायद ही कभी दी जाती है।\n\n• विकल्प (a) — गलत: जबकि बायोस्फीयर रिजर्व के बफर जोन सामान्यतः नियंत्रित वैज्ञानिक पहुँच की अनुमति देते हैं, इनर सैंक्चुअरी कोर जोन है जहाँ 1982 से पूर्ण बंदी है — बफर जोन नियम यहाँ लागू नहीं होते।\n• विकल्प (b) — गलत: वन्यजीव अभयारण्य का दर्जा कुछ मानव गतिविधियों की अनुमति देता है; इनर सैंक्चुअरी की कोर जोन बंदी सामान्य वन्यजीव अभयारण्य नियमों से ऊपर है।\n• विकल्प (c) — सही: 1982 से इनर सैंक्चुअरी का पूर्ण बंद होना बायोस्फीयर रिजर्व के कोर जोन के रूप में शासन नियम है। वर्तमान नीति के तहत शोधकर्ता को क्षेत्र में कानूनी प्रवेश नहीं है।\n• विकल्प (d) — गलत: रामसर कन्वेंशन आर्द्रभूमि के विवेकपूर्ण उपयोग के लिए है; नंदा देवी इनर सैंक्चुअरी एक उच्च-altitude कोर जोन है, रामसर नामित आर्द्रभूमि नहीं।\n\nमूल्य संवर्धन:\n• नंदा देवी राष्ट्रीय उद्यान यूनेस्को विश्व धरोहर स्थल (1988) है और बायोस्फीयर रिजर्व का कोर है।\n• वैली ऑफ फ्लावर्स, जो 2005 में धरोहर सूची में जोड़ा गया, एक रामसर आर्द्रभूमि भी है।\n• बायोस्फीयर रिजर्व में तीन जोन होते हैं: कोर (कोई मानव गतिविधि नहीं), बफर (सीमित अनुसंधान), और ट्रांजिशन/मैनिपुलेशन जोन (सतत उपयोग)।"
+    }
+  },
+  {
+    "uuid": "54a9d578-baa5-4bfc-a617-6690101c224f",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Glaciers Associated with Major Peaks",
+        "Karakoram Range vs. Himalayan Range: Key Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Glaciers — Himalayan vs. Karakoram classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following glaciers does NOT belong to the same mountain range as the others?\n\n(a) Zemu Glacier\n(b) Siachen Glacier\n(c) Pindari Glacier\n(d) Gangotri Glacier",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) Gangotri is deceptive because it is the most famous Himalayan glacier in popular consciousness and students might assume a 'trick' makes it the odd one out, when actually Siachen is the true outlier by range.",
+      "elimination_logic": [
+        "Identify the shared attribute: Zemu, Milam, Pindari, and Gangotri are all glaciers in the Himalayan Range.",
+        "Siachen Glacier is in the Karakoram Range (Saltoro Ridge), not the Himalayas — it is the odd one out.",
+        "Eliminate (d): Gangotri is a major Himalayan glacier (Uttarkashi, Uttarakhand) — it belongs to the Himalayan group.",
+        "Select (b): Siachen alone belongs to the Karakoram Range — all others are Himalayan glaciers."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This question tests range-level classification of glaciers — a detail that separates precise preparation from superficial awareness.\n\n• Option (a) — Zemu Glacier: The largest glacier in the eastern Himalayas, originating from the Kangchenjunga massif in Sikkim. Himalayan range.\n• Option (b) — Siachen Glacier: The world's second-longest non-polar glacier, located in the Karakoram Range along the Saltoro Ridge in Ladakh. This is the odd one out — it belongs to the Karakoram, not the Himalayas.\n• Option (c) — Pindari Glacier: Located in the Kumaon Himalayas, Uttarakhand — a popular trekking destination. Himalayan range.\n• Option (d) — Gangotri Glacier: One of the largest glaciers in the Himalayas, source of the Bhagirathi (headwater of the Ganga), in Uttarakhand. Himalayan range.\n\nValue Addition:\n• Siachen's Karakoram location makes it strategically significant — it is controlled by the Indian Army at altitudes exceeding 6,000 m.\n• Milam Glacier in Kumaon Himalayas is a source of the Gori Ganga river.\n• Glacier retreat is accelerating across both ranges — a GS-3 environment-climate change crossover."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा हिमनद अन्य सभी के समान पर्वतमाला से संबंधित नहीं है?\n\n(a) जेमू हिमनद\n(b) सियाचिन हिमनद\n(c) पिंडारी हिमनद\n(d) गंगोत्री हिमनद",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) गंगोत्री भ्रामक है क्योंकि यह लोकप्रिय धारणा में सबसे प्रसिद्ध हिमालयी हिमनद है और छात्र सोच सकते हैं कि 'चाल' इसे अलग बनाती है, जबकि वास्तव में सियाचिन ही क्षेत्र के हिसाब से असली अलग है।",
+      "elimination_logic": [
+        "साझा विशेषता पहचानें: जेमू, मिलम, पिंडारी, और गंगोत्री सभी हिमालय पर्वतमाला के हिमनद हैं।",
+        "सियाचिन हिमनद काराकोरम पर्वतमाला (साल्टोरो रिज) में है, हिमालय में नहीं — यह अलग है।",
+        "(d) को हटाएं: गंगोत्री एक प्रमुख हिमालयी हिमनद है (उत्तरकाशी, उत्तराखंड) — यह हिमालयी समूह का हिस्सा है।",
+        "(b) चुनें: केवल सियाचिन काराकोरम पर्वतमाला का है — बाकी सभी हिमालयी हिमनद हैं।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह प्रश्न हिमनदों के पर्वतमाला स्तर के वर्गीकरण की परीक्षा लेता है — जो सटीक तैयारी और सतही जानकारी में अंतर करता है।\n\n• विकल्प (a) — जेमू हिमनद: पूर्वी हिमालय का सबसे बड़ा हिमनद, सिक्किम के कंचनजंगा समूह से उत्पन्न। हिमालय पर्वतमाला।\n• विकल्प (b) — सियाचिन हिमनद: विश्व का दूसरा सबसे लंबा गैर-ध्रुवीय हिमनद, लद्दाख में काराकोरम पर्वतमाला के साल्टोरो रिज पर स्थित। यह अलग है — यह हिमालय नहीं, काराकोरम का है।\n• विकल्प (c) — पिंडारी हिमनद: कुमाऊं हिमालय, उत्तराखंड में स्थित — लोकप्रिय ट्रेकिंग स्थल। हिमालय पर्वतमाला।\n• विकल्प (d) — गंगोत्री हिमनद: हिमालय के सबसे बड़े हिमनदों में से एक, भागीरथी (गंगा का उद्गम) का स्रोत, उत्तराखंड में। हिमालय पर्वतमाला।\n\nमूल्यवर्धन:\n• सियाचिन का काराकोरम में होना इसे रणनीतिक रूप से महत्वपूर्ण बनाता है — इसे भारतीय सेना 6,000 मीटर से अधिक ऊंचाई पर नियंत्रित करती है।\n• कुमाऊं हिमालय में मिलम हिमनद गोरि गंगा नदी का स्रोत है।\n• दोनों पर्वतमालाओं में हिमनदों का पिघलना तेज हो रहा है — यह पर्यावरण-जलवायु परिवर्तन के GS-3 विषय से जुड़ा है।"
+    }
+  },
+  {
+    "uuid": "ee056e91-cd6a-48d0-ae55-8eff683f8ace",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "K2: Geopolitical and Geographic Status"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "K2 alternative names — Godwin-Austen and Chhogori",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "K2, the second highest peak in the world, is also referred to as ________ — a name honouring the British officer who conducted the first detailed survey of the peak in the mid-nineteenth century.\n\n(a) Dhaulagiri\n(b) Nanda Kot\n(c) Mount Godwin-Austen\n(d) Rakaposhi",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because 'Dhaulagiri' is a well-known Himalayan peak name that sounds like it could be an alternative designation for a major peak, and students unfamiliar with K2's specific alternate names may select it.",
+      "elimination_logic": [
+        "K2 is located in the Karakoram Range and was surveyed by British officer Colonel Henry Haversham Godwin-Austen — it is named after him as an alternative designation.",
+        "Eliminate (a) Dhaulagiri: This is a separate 8,167 m peak in Nepal — not an alternative name for K2.",
+        "Eliminate (b) Nanda Kot: This is a peak in the Kumaon Himalayas, unrelated to K2.",
+        "Eliminate (d) Rakaposhi: This is a peak in Gilgit-Baltistan but is distinct from K2.",
+        "Select (c) Mount Godwin-Austen: The correct alternative name for K2, honouring the British surveyor."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "K2 carries multiple names — a feature UPSC exploits in MCQ design to test precise identification.\n\n• Option (a) — Dhaulagiri: An 8,167 m peak in the Dhaulagiri Himal of western Nepal — entirely distinct from K2.\n• Option (b) — Nanda Kot: A 6,861 m peak in the Kumaon Himalayas, Uttarakhand — unrelated to K2.\n• Option (c) — Mount Godwin-Austen: Correct. Named after Colonel Henry Haversham Godwin-Austen, who conducted the first detailed survey of the peak in 1856. 'K2' itself comes from the Karakoram survey notation (Karakoram Peak 2).\n• Option (d) — Rakaposhi: A 7,788 m peak in the Karakoram in Gilgit-Baltistan — a real peak in the same range as K2 but a different mountain.\n\nValue Addition:\n• K2's Balti name is 'Chhogori', meaning 'Great Mountain' — a third name that may appear in UPSC options.\n• K2 designation came from T.G. Montgomerie's 1856 Great Trigonometric Survey notation.\n• K2 had no summit ascent in winter until January 2021, when a Nepalese-led team made history."
+    },
+    "hi": {
+      "display_text": "K2, जो विश्व का दूसरा सबसे ऊँचा शिखर है, को ________ भी कहा जाता है — यह नाम उस ब्रिटिश अधिकारी के सम्मान में है जिसने उन्नीसवीं सदी के मध्य में इस शिखर का पहला विस्तृत सर्वेक्षण किया था।\n\n(a) धौलागिरी\n(b) नंदा कोट\n(c) माउंट गोडविन-ऑस्टेन\n(d) राकापोशी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि 'धौलागिरी' एक प्रसिद्ध हिमालयी शिखर का नाम है जो किसी प्रमुख शिखर के वैकल्पिक नाम के रूप में लग सकता है, और जो छात्र K2 के विशिष्ट वैकल्पिक नामों से परिचित नहीं हैं वे इसे चुन सकते हैं।",
+      "elimination_logic": [
+        "K2 काराकोरम श्रृंखला में स्थित है और इसे ब्रिटिश अधिकारी कर्नल हेनरी हेवर्शम गोडविन-ऑस्टेन ने सर्वे किया था — इसका वैकल्पिक नाम उनके नाम पर रखा गया है।",
+        "विकल्प (a) धौलागिरी को हटा दें: यह नेपाल में स्थित 8,167 मीटर ऊँचा अलग शिखर है — K2 का वैकल्पिक नाम नहीं है।",
+        "विकल्प (b) नंदा कोट को हटा दें: यह कुमाऊं हिमालय में स्थित एक शिखर है, जिसका K2 से कोई संबंध नहीं है।",
+        "विकल्प (d) राकापोशी को हटा दें: यह गिलगित-बाल्टिस्तान में स्थित एक शिखर है लेकिन K2 से अलग है।",
+        "विकल्प (c) माउंट गोडविन-ऑस्टेन चुनें: K2 का सही वैकल्पिक नाम, जो ब्रिटिश सर्वेक्षक को सम्मानित करता है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "K2 के कई नाम हैं — यह UPSC द्वारा MCQ डिज़ाइन में सटीक पहचान की परीक्षा के लिए उपयोग किया जाता है।\n\n• विकल्प (a) — धौलागिरी: पश्चिमी नेपाल के धौलागिरी हिम में 8,167 मीटर ऊँचा शिखर — K2 से पूरी तरह अलग।\n• विकल्प (b) — नंदा कोट: उत्तराखंड के कुमाऊं हिमालय में 6,861 मीटर ऊँचा शिखर — K2 से असंबंधित।\n• विकल्प (c) — माउंट गोडविन-ऑस्टेन: सही। कर्नल हेनरी हेवर्शम गोडविन-ऑस्टेन के नाम पर, जिन्होंने 1856 में इस शिखर का पहला विस्तृत सर्वेक्षण किया। 'K2' नाम काराकोरम सर्वेक्षण संकेतन (Karakoram Peak 2) से आया है।\n• विकल्प (d) — राकापोशी: गिलगित-बाल्टिस्तान के काराकोरम में 7,788 मीटर ऊँचा शिखर — K2 के समान श्रृंखला में है लेकिन अलग पर्वत है।\n\nमूल्यवर्धन:\n• K2 का बाल्टी नाम 'छोगोरी' है, जिसका अर्थ है 'महान पर्वत' — यह UPSC विकल्पों में तीसरा नाम हो सकता है।\n• K2 का नाम T.G. मोंटगोमेरी के 1856 के ग्रेट ट्रिगोनोमेट्रिक सर्वेक्षण संकेतन से आया।\n• जनवरी 2021 तक K2 पर सर्दियों में कोई चढ़ाई नहीं हुई थी, जब एक नेपाली नेतृत्व वाली टीम ने इतिहास रचा।"
+    }
+  },
+  {
+    "uuid": "6db041b6-49b2-4c0a-b285-339c0ad51fea",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Kangchenjunga Conservation Area and Transboundary Significance",
+        "Ecological Zones and Biodiversity of High-Altitude Peaks"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Red panda — Kangchenjunga region flagship species",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — wildlife species and the mountain region with which it is most specifically associated as a flagship conservation species — is correctly matched?\n\n(a) Snow leopard — Kangchenjunga region\n(b) Red panda — Kangchenjunga region\n(c) Hangul — Kangchenjunga region\n(d) Brahma Kamal — Nanda Devi region",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is deceptive because Brahma Kamal and Nanda Devi are both genuine, making students think it is the safest 'known correct pair', causing them to overlook the equally correct red panda–Kangchenjunga association.",
+      "elimination_logic": [
+        "Evaluate (a): Snow leopard is found in the Kangchenjunga region but is NOT the flagship species for Kangchenjunga conservation campaigns — red panda is. This pair's attribution is misaligned.",
+        "Evaluate (b): Red panda is the flagship conservation species for the Kangchenjunga region — this pairing is correct.",
+        "Evaluate (c): Hangul (Kashmir stag) is native to Dachigam National Park in J&K, not the Kangchenjunga region — incorrect geographic pairing.",
+        "Evaluate (d): Brahma Kamal is indeed associated with Nanda Devi — this appears correct but the question asks which is correctly matched, and (b) is more precisely accurate as stated."
+      ],
+      "upsc_trap_explanation": "Option (a) is the primary trap: snow leopard is genuinely found in the Kangchenjunga region and is a well-known conservation flagship, causing students to accept this pairing. However, the specific flagship species for Kangchenjunga conservation campaigns is the red panda. Option (d) with Brahma Kamal–Nanda Devi is also correct in isolation, but the question tests precision — option (b)'s red panda–Kangchenjunga pairing is the more specifically supported answer drawn directly from the conservation significance of the region.",
+      "final_explanation": "Flagship species–habitat pairings are a standard UPSC ecology format.\n\n• Option (a) — Partially misleading: Snow leopard inhabits the Kangchenjunga region but is not the designated flagship species specifically for Kangchenjunga conservation campaigns — that role belongs to the red panda.\n• Option (b) — Correct: The red panda (Ailurus fulgens) is the flagship species of the Kangchenjunga region's conservation campaigns, including the Kanchenjunga National Park in Sikkim and the transboundary Kangchenjunga Conservation Area in Nepal.\n• Option (c) — Incorrect: The Hangul (Kashmir stag, Cervus hanglu hanglu) is the state animal of J&K and is found in Dachigam National Park — it has no association with the Kangchenjunga region.\n• Option (d) — Correct as a standalone fact, but the stem asks for the correctly matched pair, and (b) is the specifically targeted answer per the conservation campaign context.\n\nValue Addition:\n• Red panda is classified as Endangered on the IUCN Red List.\n• Kanchenjunga National Park is on UNESCO's tentative World Heritage list.\n• The transboundary Kangchenjunga Conservation Area spans both Sikkim (India) and Taplejung (Nepal)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी — वन्यजीव प्रजाति और वह पर्वतीय क्षेत्र जिसके साथ वह प्रमुख संरक्षण प्रजाति के रूप में सबसे विशिष्ट रूप से जुड़ी है — सही मेल खाती है?\n\n(a) स्नो लेपर्ड — कंचनजंगा क्षेत्र\n(b) रेड पांडा — कंचनजंगा क्षेत्र\n(c) हैंगुल — कंचनजंगा क्षेत्र\n(d) ब्रह्म कमल — नंदा देवी क्षेत्र",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) भ्रामक है क्योंकि ब्रह्म कमल और नंदा देवी दोनों वास्तविक हैं, जिससे छात्र इसे सबसे सुरक्षित 'ज्ञात सही जोड़ी' समझते हैं, और वे समान रूप से सही रेड पांडा–कंचनजंगा संबंध को नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: स्नो लेपर्ड कंचनजंगा क्षेत्र में पाया जाता है लेकिन कंचनजंगा संरक्षण अभियानों के लिए प्रमुख प्रजाति नहीं है — रेड पांडा है। इस जोड़ी का संबंध गलत है।",
+        "(b) का मूल्यांकन करें: रेड पांडा कंचनजंगा क्षेत्र के संरक्षण अभियानों की प्रमुख प्रजाति है — यह जोड़ी सही है।",
+        "(c) का मूल्यांकन करें: हैंगुल (कश्मीर हरिण) जम्मू-कश्मीर के डाचीगाम राष्ट्रीय उद्यान का स्वदेशी है, कंचनजंगा क्षेत्र का नहीं — भौगोलिक जोड़ी गलत है।",
+        "(d) का मूल्यांकन करें: ब्रह्म कमल वास्तव में नंदा देवी से जुड़ा है — यह सही प्रतीत होता है लेकिन प्रश्न सही मेल खाने वाली जोड़ी पूछता है, और (b) अधिक सटीक रूप से सही है जैसा कि बताया गया है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) मुख्य जाल है: स्नो लेपर्ड वास्तव में कंचनजंगा क्षेत्र में पाया जाता है और एक प्रसिद्ध संरक्षण प्रमुख प्रजाति है, जिससे छात्र इस जोड़ी को स्वीकार कर लेते हैं। हालांकि, कंचनजंगा संरक्षण अभियानों के लिए विशिष्ट प्रमुख प्रजाति रेड पांडा है। विकल्प (d) ब्रह्म कमल–नंदा देवी भी अकेले सही है, लेकिन प्रश्न सटीकता पर परीक्षण करता है — विकल्प (b) की रेड पांडा–कंचनजंगा जोड़ी क्षेत्र की संरक्षण महत्ता से सीधे समर्थित अधिक विशिष्ट उत्तर है।",
+      "final_explanation": "प्रमुख प्रजाति–आवास जोड़ी UPSC पारिस्थितिकी प्रारूप का एक मानक है।\n\n• विकल्प (a) — आंशिक रूप से भ्रामक: स्नो लेपर्ड कंचनजंगा क्षेत्र में रहता है लेकिन कंचनजंगा संरक्षण अभियानों के लिए नामित प्रमुख प्रजाति नहीं है — वह भूमिका रेड पांडा की है।\n• विकल्प (b) — सही: रेड पांडा (Ailurus fulgens) कंचनजंगा क्षेत्र के संरक्षण अभियानों की प्रमुख प्रजाति है, जिसमें सिक्किम का कंचनजंगा राष्ट्रीय उद्यान और नेपाल का सीमा-पार कंचनजंगा संरक्षण क्षेत्र शामिल हैं।\n• विकल्प (c) — गलत: हैंगुल (कश्मीर हरिण, Cervus hanglu hanglu) जम्मू-कश्मीर का राज्य पशु है और डाचीगाम राष्ट्रीय उद्यान में पाया जाता है — इसका कंचनजंगा क्षेत्र से कोई संबंध नहीं है।\n• विकल्प (d) — अकेले तथ्य के रूप में सही है, लेकिन प्रश्न सही मेल खाने वाली जोड़ी पूछता है, और (b) संरक्षण अभियान संदर्भ के अनुसार विशिष्ट उत्तर है।\n\nमूल्य वर्धन:\n• रेड पांडा को IUCN रेड लिस्ट में संकटग्रस्त (Endangered) वर्गीकृत किया गया है।\n• कंचनजंगा राष्ट्रीय उद्यान यूनेस्को की अस्थायी विश्व धरोहर सूची में है।\n• सीमा-पार कंचनजंगा संरक्षण क्षेत्र सिक्किम (भारत) और टाप्लेजुंग (नेपाल) दोनों में फैला हुआ है।"
+    }
+  },
+  {
+    "uuid": "9993abfc-27ff-4ba2-9966-dd35d937e14c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Sub-ranges of the Himalayas and Peak Distribution",
+        "Trishul, Kedarnath, and Other Notable Peaks near Nanda Devi"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Garhwal Himalaya peaks — Trishul, Kamet, Kedarnath confusion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about notable peaks in and around the Garhwal Himalaya:\n\n1. Trishul, at approximately 7,120 m, was the first peak exceeding 7,000 m to be successfully climbed, with its first ascent achieved in 1907.\n2. Kedarnath Peak and Kedarnath Temple are located at the same site, both being in Rudraprayag district of Uttarakhand.\n3. Kamet (7,756 m) is the second highest peak in Uttarakhand and is located in the Garhwal Himalaya.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Trishul, at approximately 7,120 m, was the first peak exceeding 7,000 m to be successfully climbed, with its first ascent achieved in 1907.",
+          "verdict": "Correct",
+          "reason": "Trishul (7,120 m), part of the Nanda Devi massif in the Garhwal Himalaya, was first climbed in 1907 by Tom Longstaff — making it the highest peak climbed at that time."
+        },
+        {
+          "statement": "Kedarnath Peak and Kedarnath Temple are located at the same site, both being in Rudraprayag district of Uttarakhand.",
+          "verdict": "Incorrect",
+          "reason": "Kedarnath Peak (6,940 m) is a mountain in the Garhwal Himalaya, distinct from Kedarnath Temple. The temple is in Rudraprayag district, while the peak is a separate geographic feature — a common and deliberate UPSC confusion trap."
+        },
+        {
+          "statement": "Kamet (7,756 m) is the second highest peak in Uttarakhand and is located in the Garhwal Himalaya.",
+          "verdict": "Correct",
+          "reason": "Kamet (7,756 m) in the Chamoli district of Garhwal is Uttarakhand's second highest peak after Nanda Devi (7,816 m), and it sits in the Garhwal sub-range."
+        }
+      ],
+      "strong_distractor": "d — Option (d) including all three is the strong distractor because both Statement 1 and 3 are genuinely correct and well-supported, causing students who casually accept Statement 2 (without checking the Kedarnath Temple vs Peak distinction) to select 'all three'.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Trishul was first climbed in 1907 and was the highest peak summited at that time — correct.",
+        "Evaluate Statement 2: Kedarnath Peak is a mountain; Kedarnath Temple is a pilgrimage site — they are not co-located. The claim that both are at the same site is incorrect.",
+        "Evaluate Statement 3: Kamet at 7,756 m is Uttarakhand's second highest peak in the Garhwal Himalaya — correct.",
+        "Statements 1 and 3 are correct; Statement 2 is incorrect — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the Kedarnath name-confusion trap that UPSC has used in multiple forms. The religious site Kedarnath Temple (one of the Char Dham) and the mountain peak Kedarnath Peak are entirely different entities. Students steeped in the news coverage of the 2013 Kedarnath floods often conflate the pilgrimage town's geography with the mountain peak of the same name. They are in the same broad district area but are not co-located — and more importantly, the statement's claim that they are 'at the same site' is unambiguously false.",
+      "final_explanation": "This question maps the Garhwal Himalaya sub-range's key peaks and tests the notorious Kedarnath name-conflation.\n\n• Statement 1 — Correct: Trishul (7,120 m), adjacent to the Nanda Devi massif in Garhwal, was first summited in 1907 by British mountaineer Tom Longstaff — the highest altitude achieved by humans at that point in history.\n• Statement 2 — Incorrect: Kedarnath Peak (6,940 m) is a mountain in the Garhwal Himalaya; Kedarnath Temple is a Hindu shrine in Rudraprayag district, roughly 22 km away from the peak area. They are distinct geographic features sharing only a name.\n• Statement 3 — Correct: Kamet (7,756 m) in Chamoli district, Garhwal, is Uttarakhand's second highest peak after Nanda Devi (7,816 m).\n\nValue Addition:\n• Trishul's 1907 first ascent preceded the Himalayan summit race era by nearly five decades.\n• Kamet was first summited in 1931 by Frank Smythe's British expedition.\n• The Char Dham pilgrimage circuit includes Kedarnath Temple — not to be confused with any mountain peak."
+    },
+    "hi": {
+      "display_text": "गढ़वाल हिमालय की प्रमुख चोटियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. त्रिशूल, लगभग 7,120 मीटर, पहली चोटी थी जो 7,000 मीटर से अधिक ऊँचाई वाली सफलतापूर्वक चढ़ी गई थी, जिसकी पहली चढ़ाई 1907 में हुई।\n2. केदारनाथ चोटी और केदारनाथ मंदिर एक ही स्थान पर स्थित हैं, दोनों उत्तराखंड के रुद्रप्रयाग जिले में हैं।\n3. कामेत (7,756 मीटर) उत्तराखंड की दूसरी सबसे ऊँची चोटी है और गढ़वाल हिमालय में स्थित है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "त्रिशूल, लगभग 7,120 मीटर, पहली चोटी थी जो 7,000 मीटर से अधिक ऊँचाई वाली सफलतापूर्वक चढ़ी गई थी, जिसकी पहली चढ़ाई 1907 में हुई।",
+          "verdict": "सही",
+          "reason": "त्रिशूल (7,120 मीटर), जो गढ़वाल हिमालय में नंदा देवी समूह का हिस्सा है, पहली बार 1907 में टॉम लॉन्गस्टाफ द्वारा चढ़ी गई थी — जो उस समय सबसे ऊँची चोटी थी।"
+        },
+        {
+          "statement": "केदारनाथ चोटी और केदारनाथ मंदिर एक ही स्थान पर स्थित हैं, दोनों उत्तराखंड के रुद्रप्रयाग जिले में हैं।",
+          "verdict": "गलत",
+          "reason": "केदारनाथ चोटी (6,940 मीटर) गढ़वाल हिमालय की एक पर्वत चोटी है, जो केदारनाथ मंदिर से भिन्न है। मंदिर रुद्रप्रयाग जिले में है, जबकि चोटी एक अलग भौगोलिक स्थल है — यह UPSC द्वारा जानबूझकर बनाया गया भ्रम है।"
+        },
+        {
+          "statement": "कामेत (7,756 मीटर) उत्तराखंड की दूसरी सबसे ऊँची चोटी है और गढ़वाल हिमालय में स्थित है।",
+          "verdict": "सही",
+          "reason": "कामेत (7,756 मीटर) गढ़वाल के चमोली जिले में है और नंदा देवी (7,816 मीटर) के बाद उत्तराखंड की दूसरी सबसे ऊँची चोटी है, तथा यह गढ़वाल उप-श्रेणी में आती है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें तीनों शामिल हैं, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 दोनों सही और प्रमाणित हैं, जिससे छात्र जो बिना केदारनाथ मंदिर और चोटी के भेद को जांचे कथन 2 को स्वीकार कर लेते हैं, वे 'तीनों' चुन लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: त्रिशूल पहली बार 1907 में चढ़ा गया था और उस समय सबसे ऊँची चोटी थी — सही।",
+        "कथन 2 का मूल्यांकन करें: केदारनाथ चोटी एक पर्वत है; केदारनाथ मंदिर एक तीर्थ स्थल है — ये एक ही स्थान पर नहीं हैं। दोनों के एक ही स्थान पर होने का दावा गलत है।",
+        "कथन 3 का मूल्यांकन करें: कामेत 7,756 मीटर ऊँचाई पर गढ़वाल हिमालय में उत्तराखंड की दूसरी सबसे ऊँची चोटी है — सही।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 केदारनाथ नाम के भ्रम का उपयोग करता है, जिसे UPSC ने कई रूपों में प्रयोग किया है। धार्मिक स्थल केदारनाथ मंदिर (चार धाम में से एक) और पर्वत चोटी केदारनाथ चोटी पूरी तरह अलग हैं। 2013 के केदारनाथ बाढ़ समाचार कवरेज में छात्र तीर्थ नगर की भौगोलिक स्थिति को उसी नाम की पर्वत चोटी के साथ भ्रमित कर लेते हैं। वे एक ही जिले में हैं लेकिन एक ही स्थान पर नहीं — और सबसे महत्वपूर्ण, कथन का यह दावा कि वे 'एक ही स्थान पर' हैं, स्पष्ट रूप से गलत है।",
+      "final_explanation": "यह प्रश्न गढ़वाल हिमालय उप-श्रेणी की प्रमुख चोटियों का मानचित्रण करता है और कुख्यात केदारनाथ नाम-संमिश्रण की परीक्षा लेता है।\n\n• कथन 1 — सही: त्रिशूल (7,120 मीटर), गढ़वाल में नंदा देवी समूह के समीप, पहली बार 1907 में ब्रिटिश पर्वतारोही टॉम लॉन्गस्टाफ द्वारा चढ़ा गया — उस समय मानव द्वारा प्राप्त सबसे ऊँची ऊँचाई।\n• कथन 2 — गलत: केदारनाथ चोटी (6,940 मीटर) गढ़वाल हिमालय की एक पर्वत चोटी है; केदारनाथ मंदिर रुद्रप्रयाग जिले में एक हिंदू तीर्थ स्थल है, जो चोटी से लगभग 22 किमी दूर है। ये अलग-अलग भौगोलिक स्थल हैं जो केवल नाम साझा करते हैं।\n• कथन 3 — सही: कामेत (7,756 मीटर) चमोली जिले, गढ़वाल में नंदा देवी (7,816 मीटर) के बाद उत्तराखंड की दूसरी सबसे ऊँची चोटी है।\n\nमूल्यवर्धन:\n• त्रिशूल की 1907 की पहली चढ़ाई हिमालय शिखर दौड़ युग से लगभग पांच दशक पहले हुई।\n• कामेत को पहली बार 1931 में फ्रैंक स्मिथ की ब्रिटिश अभियान टीम ने चढ़ा था।\n• चार धाम तीर्थ यात्रा में केदारनाथ मंदिर शामिल है — इसे किसी पर्वत चोटी के साथ भ्रमित न करें।"
+    }
+  },
+  {
+    "uuid": "7009d9d6-03fe-4bbe-a51c-ecb4aca75c56",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Cultural and Mythological Significance of Major Peaks",
+        "Kangchenjunga: Rank, Location, and Territorial Claims"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Kangchenjunga — Five Treasures of Snow cultural significance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly identifies a peak with its traditional cultural epithet as used by the local communities of the region?\n\n(a) Nanda Devi — 'Jewel of the Himalayas' as revered by communities of Uttarakhand\n(b) Nanda Devi — 'Five Treasures of Snow' as worshipped by the Sikkimese people\n(c) K2 — 'Five Treasures of Snow' as revered by communities of Gilgit-Baltistan\n(d) Kangchenjunga — 'Five Treasures of Snow' as worshipped by the Sikkimese people",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Nanda Devi is indeed revered as a goddess in Uttarakhand and students may conflate 'sacred peak with restricted summit' with 'Five Treasures of Snow', which is specifically Kangchenjunga's Sikkimese name.",
+      "elimination_logic": [
+        "Eliminate (a): 'Jewel of the Himalayas' is a popular media epithet, not a specific cultural name given by any particular community with documented significance.",
+        "Eliminate (b): Nanda Devi is the tutelary goddess of Uttarakhand but its cultural epithet is not 'Five Treasures of Snow' — that phrase belongs to Kangchenjunga.",
+        "Eliminate (c): K2 has no significant Indian or regional cultural association; it has no documented traditional name meaning 'Five Treasures of Snow'.",
+        "Select (d): Kangchenjunga is worshipped as 'Kanchendzonga' — the 'Five Treasures of Snow' — by the Sikkimese people, representing five repositories of god: gold, silver, gems, grain, and holy scriptures."
+      ],
+      "upsc_trap_explanation": "The entity-swap here exploits students' stronger familiarity with Nanda Devi's religious significance (it is a goddess, Uttarakhand's tutelary deity, with an elaborate Raj Jat Yatra tradition). Students may assign the 'sacred mountain with special summit rules' description to Nanda Devi, but the specific 'Five Treasures of Snow' epithet belongs exclusively to Kangchenjunga in Sikkimese Buddhist and Hindu traditions.",
+      "final_explanation": "The cultural geography of India's peaks is a GS-1 integration point between physical and human geography.\n\n• Option (a) — 'Jewel of the Himalayas' for Nanda Devi: This is a descriptive epithet used in tourism literature, not a specific traditional cultural name with documented significance.\n• Option (b) — 'Five Treasures of Snow' for Nanda Devi: Incorrect. Nanda Devi is revered as a goddess in Uttarakhand but its cultural identity is as a tutelary deity, not under this specific epithet.\n• Option (c) — 'Five Treasures of Snow' for K2: Incorrect. K2 has no significant Indian or regional cultural association — it lacks traditional reverence among any Indian community.\n• Option (d) — Correct: Kangchenjunga is called 'Kanchendzonga' or 'Five Treasures of Snow' by the Sikkimese, representing five divine repositories. By convention, summiteers stop short of the very top to respect this sacred status.\n\nValue Addition:\n• The Nanda Devi Raj Jat Yatra is a 12-year pilgrimage cycle in Uttarakhand — one of Asia's largest religious journeys.\n• Kanchendzonga National Park in Sikkim was inscribed as a UNESCO Mixed Heritage Site in 2016 — combining natural and cultural significance.\n• This 'mixed heritage' designation reflects the Five Treasures of Snow cultural dimension."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा पर्वत अपने क्षेत्र की स्थानीय समुदायों द्वारा प्रयुक्त पारंपरिक सांस्कृतिक उपनाम के साथ सही रूप से पहचाना गया है?\n\n(a) नंदा देवी — उत्तराखंड के समुदायों द्वारा पूजी जाने वाली 'हिमालय का रत्न'\n(b) नंदा देवी — सिक्किमी लोगों द्वारा पूजी जाने वाली 'फाइव ट्रेज़र्स ऑफ स्नो'\n(c) K2 — गिलगित-बाल्टिस्तान के समुदायों द्वारा पूजी जाने वाली 'फाइव ट्रेज़र्स ऑफ स्नो'\n(d) कंचेनजंगा — सिक्किमी लोगों द्वारा पूजी जाने वाली 'फाइव ट्रेज़र्स ऑफ स्नो'",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि नंदा देवी वास्तव में उत्तराखंड में एक देवी के रूप में पूजी जाती है और छात्र 'पवित्र शिखर जिसके शिखर पर प्रतिबंधित नियम हैं' को 'फाइव ट्रेज़र्स ऑफ स्नो' के साथ भ्रमित कर सकते हैं, जो विशेष रूप से कंचेनजंगा का सिक्किमी नाम है।",
+      "elimination_logic": [
+        "(a) को हटाएँ: 'हिमालय का रत्न' एक लोकप्रिय मीडिया उपनाम है, किसी विशेष समुदाय द्वारा दिए गए किसी विशिष्ट सांस्कृतिक नाम के रूप में प्रलेखित महत्व नहीं रखता।",
+        "(b) को हटाएँ: नंदा देवी उत्तराखंड की संरक्षक देवी हैं लेकिन इसका सांस्कृतिक उपनाम 'फाइव ट्रेज़र्स ऑफ स्नो' नहीं है — यह पद कंचेनजंगा का है।",
+        "(c) को हटाएँ: K2 का कोई महत्वपूर्ण भारतीय या क्षेत्रीय सांस्कृतिक संबंध नहीं है; इसका कोई पारंपरिक नाम नहीं है जिसका अर्थ 'फाइव ट्रेज़र्स ऑफ स्नो' हो।",
+        "(d) को चुनें: कंचेनजंगा को सिक्किमी लोग 'कंचेन्ज़ोंगा' के रूप में पूजते हैं — जिसका अर्थ है 'फाइव ट्रेज़र्स ऑफ स्नो' — जो भगवान के पाँच भंडारों का प्रतिनिधित्व करता है: सोना, चाँदी, रत्न, अनाज, और पवित्र शास्त्र।"
+      ],
+      "upsc_trap_explanation": "यह एंटिटी-स्वैप छात्रों की नंदा देवी की धार्मिक महत्ता की अधिक परिचितता का लाभ उठाता है (यह एक देवी है, उत्तराखंड की संरक्षक देवी, जिसके राज जात यात्रा की विस्तृत परंपरा है)। छात्र 'विशेष शिखर नियमों वाला पवित्र पर्वत' विवरण नंदा देवी को दे सकते हैं, लेकिन विशिष्ट 'फाइव ट्रेज़र्स ऑफ स्नो' उपनाम केवल सिक्किमी बौद्ध और हिंदू परंपराओं में कंचेनजंगा का है।",
+      "final_explanation": "भारत के पर्वतों की सांस्कृतिक भूगोल भौतिक और मानव भूगोल के बीच GS-1 का एक समन्वय बिंदु है।\n\n• विकल्प (a) — नंदा देवी के लिए 'हिमालय का रत्न': यह पर्यटन साहित्य में प्रयुक्त एक वर्णनात्मक उपनाम है, न कि किसी विशिष्ट पारंपरिक सांस्कृतिक नाम के रूप में प्रलेखित महत्व।\n• विकल्प (b) — नंदा देवी के लिए 'फाइव ट्रेज़र्स ऑफ स्नो': गलत। नंदा देवी उत्तराखंड में देवी के रूप में पूजी जाती है लेकिन इसका सांस्कृतिक परिचय संरक्षक देवी के रूप में है, न कि इस विशिष्ट उपनाम के तहत।\n• विकल्प (c) — K2 के लिए 'फाइव ट्रेज़र्स ऑफ स्नो': गलत। K2 का कोई महत्वपूर्ण भारतीय या क्षेत्रीय सांस्कृतिक संबंध नहीं है — यह किसी भारतीय समुदाय में पारंपरिक रूप से पूजित नहीं है।\n• विकल्प (d) — सही: कंचेनजंगा को सिक्किमी लोग 'कंचेन्ज़ोंगा' या 'फाइव ट्रेज़र्स ऑफ स्नो' कहते हैं, जो पाँच दिव्य भंडारों का प्रतिनिधित्व करता है। परंपरा के अनुसार, शिखर पर चढ़ने वाले लोग इस पवित्र स्थिति का सम्मान करते हुए सबसे ऊपर तक नहीं जाते।\n\nमूल्य संवर्धन:\n• नंदा देवी राज जात यात्रा उत्तराखंड में 12-वर्षीय तीर्थयात्रा चक्र है — जो एशिया की सबसे बड़ी धार्मिक यात्राओं में से एक है।\n• सिक्किम का कंचेन्ज़ोंगा राष्ट्रीय उद्यान 2016 में यूनेस्को मिश्रित धरोहर स्थल के रूप में नामित किया गया — जिसमें प्राकृतिक और सांस्कृतिक महत्व दोनों शामिल हैं।\n• यह 'मिश्रित धरोहर' पदनाम फाइव ट्रेज़र्स ऑफ स्नो के सांस्कृतिक आयाम को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "075f0817-d944-4457-b056-2d339fef0d00",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Structural Geology: How the Himalayan Peaks Formed"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Himalayas — fold mountains, not block mountains",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the geological character of the Himalayan peaks:\n\n1. The Himalayas are classified as block mountains, formed by the upthrust of crustal blocks between parallel faults during the Indo-Eurasian plate collision.\n2. Because Himalayan peaks are geologically young fold mountains, they continue to rise marginally each year and experience high seismic activity.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Himalayas are classified as block mountains, formed by the upthrust of crustal blocks between parallel faults during the Indo-Eurasian plate collision.",
+          "verdict": "Incorrect",
+          "reason": "The Himalayas are fold mountains, not block mountains. They were formed by the compressional forces of the Indo-Eurasian plate collision folding sedimentary rocks upward — block mountains (horsts) form by differential faulting and subsidence, which is a different geological process."
+        },
+        {
+          "statement": "Because Himalayan peaks are geologically young fold mountains, they continue to rise marginally each year and experience high seismic activity.",
+          "verdict": "Correct",
+          "reason": "The Himalayas are indeed geologically young (formed in the Cenozoic era), still rising due to ongoing tectonic convergence between the Indian and Eurasian plates, and are one of the world's most seismically active zones."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is deceptive because students who correctly know the Himalayas are fold mountains may second-guess Statement 2's assertion about ongoing uplift — some may not be aware that seismically active young fold mountains continue to rise.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Himalayas are fold mountains formed by compressional plate tectonics — calling them 'block mountains' is factually wrong. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: Himalayas are geologically young, seismically active, and still rising — this is correct. Statement 2 IS correct.",
+        "The question asks which is NOT correct — only Statement 1 is incorrect.",
+        "Select option (a): 1 only."
+      ],
+      "upsc_trap_explanation": "The block mountain vs. fold mountain distinction is a standard UPSC geography trap. Block mountains (like the Vindhyas or Vosges) form by fault-block tectonics; fold mountains (like the Himalayas, Alps, Andes) form by compressional folding. Students who have superficially read that 'the Indo-Eurasian collision formed the Himalayas' without processing the mechanism may accept 'upthrust of crustal blocks between parallel faults' as sounding plausible and miss the category error.",
+      "final_explanation": "Mountain classification — fold vs. block — is one of the most fundamental and most commonly misapplied concepts in UPSC physical geography.\n\n• Statement 1 — Incorrect: The Himalayas are fold mountains (also called young fold mountains), formed when the northward-drifting Indian plate collided with the Eurasian plate approximately 50 million years ago, compressing and folding sedimentary rocks of the ancient Tethys Sea into successive mountain ranges. Block mountains form through faulting and differential vertical movement — an entirely different mechanism.\n• Statement 2 — Correct: Because the Indian plate continues to move northward at roughly 5 cm per year, the Himalayas are still rising. This ongoing convergence also makes the region one of the world's most seismically active zones, contributing to frequent earthquakes in Nepal, Sikkim, Uttarakhand, and Himachal Pradesh.\n\nValue Addition:\n• The Aravalli Range is one of the world's oldest fold mountains — in contrast to the Himalayas' youth.\n• The Western Ghats are classified as block mountains (escarpment type), not fold mountains.\n• Karakoram (K2's range) shares the same Indo-Eurasian collision origin but is a geologically distinct block from the main Himalayan arc."
+    },
+    "hi": {
+      "display_text": "हिमालयी चोटियों के भूवैज्ञानिक स्वरूप के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. हिमालय को ब्लॉक पर्वत के रूप में वर्गीकृत किया गया है, जो इंडो-यूरैशियाई प्लेट टकराव के दौरान समानांतर फॉल्टों के बीच क्रस्टल ब्लॉकों के उठाव से बने हैं।\n2. क्योंकि हिमालयी चोटियाँ भूवैज्ञानिक रूप से युवा फोल्ड पर्वत हैं, वे प्रत्येक वर्ष मामूली रूप से उठती रहती हैं और उच्च भूकंपीय गतिविधि का अनुभव करती हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1, न ही 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Himalayas are classified as block mountains, formed by the upthrust of crustal blocks between parallel faults during the Indo-Eurasian plate collision.",
+          "verdict": "गलत",
+          "reason": "हिमालय फोल्ड पर्वत हैं, ब्लॉक पर्वत नहीं। ये इंडो-यूरैशियाई प्लेट टकराव के संपीड़न बलों द्वारा तलछटी चट्टानों को ऊपर की ओर मोड़ने से बने हैं — ब्लॉक पर्वत (हॉर्स्ट) भिन्न प्रकार के फॉल्टिंग और अवसादन से बनते हैं, जो एक अलग भूवैज्ञानिक प्रक्रिया है।"
+        },
+        {
+          "statement": "Because Himalayan peaks are geologically young fold mountains, they continue to rise marginally each year and experience high seismic activity.",
+          "verdict": "सही है",
+          "reason": "हिमालय वास्तव में भूवैज्ञानिक रूप से युवा (सिनोज़ोइक युग में बने) हैं, जो भारतीय और यूरैशियाई प्लेटों के बीच चल रहे टेक्टोनिक संकुचन के कारण अभी भी उठ रहे हैं, और ये विश्व के सबसे भूकंपीय सक्रिय क्षेत्रों में से एक हैं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि जो छात्र सही रूप से जानते हैं कि हिमालय फोल्ड पर्वत हैं, वे कथन 2 के सतत् उठाव के दावे पर संदेह कर सकते हैं — कुछ को यह पता नहीं होता कि भूकंपीय सक्रिय युवा फोल्ड पर्वत अभी भी उठ रहे हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: हिमालय फोल्ड पर्वत हैं जो संपीड़न प्लेट टेक्टोनिक्स द्वारा बने हैं — उन्हें 'ब्लॉक पर्वत' कहना तथ्यात्मक रूप से गलत है। कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: हिमालय भूवैज्ञानिक रूप से युवा, भूकंपीय सक्रिय और अभी भी उठ रहे हैं — यह सही है। कथन 2 सही है।",
+        "प्रश्न पूछता है कि कौन सा कथन सही नहीं है — केवल कथन 1 गलत है।",
+        "विकल्प (a) चुनें: केवल 1।"
+      ],
+      "upsc_trap_explanation": "ब्लॉक पर्वत और फोल्ड पर्वत के बीच का भेद UPSC भूगोल में एक सामान्य जाल है। ब्लॉक पर्वत (जैसे विंध्य या वोज़) फॉल्ट-ब्लॉक टेक्टोनिक्स से बनते हैं; फोल्ड पर्वत (जैसे हिमालय, आल्प्स, एंडीज़) संपीड़न मोड़न से बनते हैं। जो छात्र केवल 'इंडो-यूरैशियाई टकराव ने हिमालय बनाए' पढ़ते हैं बिना प्रक्रिया को समझे, वे 'समानांतर फॉल्टों के बीच क्रस्टल ब्लॉकों का उठाव' को सही मान सकते हैं और श्रेणीगत त्रुटि कर सकते हैं।",
+      "final_explanation": "पर्वत वर्गीकरण — फोल्ड बनाम ब्लॉक — UPSC भौतिक भूगोल में सबसे मौलिक और सबसे अधिक गलत समझे जाने वाले अवधारणाओं में से एक है।\n\n• कथन 1 — गलत: हिमालय फोल्ड पर्वत हैं (जिन्हें युवा फोल्ड पर्वत भी कहा जाता है), जो लगभग 50 मिलियन वर्ष पहले उत्तर की ओर बढ़ती भारतीय प्लेट के यूरैशियाई प्लेट से टकराने पर बने, जिससे प्राचीन थेथिस सागर की तलछटी चट्टानें संकुचित और मोड़ी गईं। ब्लॉक पर्वत फॉल्टिंग और भिन्न ऊर्ध्वाधर गति से बनते हैं — एक पूरी तरह अलग प्रक्रिया।\n• कथन 2 — सही: क्योंकि भारतीय प्लेट लगभग 5 सेमी प्रति वर्ष उत्तर की ओर बढ़ रही है, हिमालय अभी भी उठ रहे हैं। यह सतत् संकुचन क्षेत्र को विश्व के सबसे भूकंपीय सक्रिय क्षेत्रों में से एक बनाता है, जिससे नेपाल, सिक्किम, उत्तराखंड और हिमाचल प्रदेश में बार-बार भूकंप आते हैं।\n\nमूल्यवर्धन:\n• अरावली श्रृंखला विश्व के सबसे पुराने फोल्ड पर्वतों में से एक है — हिमालय की युवावस्था के विपरीत।\n• पश्चिमी घाटों को ब्लॉक पर्वत (एस्कार्पमेंट प्रकार) के रूप में वर्गीकृत किया गया है, फोल्ड पर्वत के रूप में नहीं।\n• कराकोरम (K2 की श्रृंखला) का भी इंडो-यूरैशियाई टकराव मूल है लेकिन यह मुख्य हिमालयी चाप से भूवैज्ञानिक रूप से अलग ब्लॉक है।"
+    }
+  },
+  {
+    "uuid": "7794a36a-9b78-474b-a056-3b0c80772184",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "First Ascents and Mountaineering History",
+        "Kangchenjunga: Rank, Location, and Territorial Claims"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "K2 first ascent — Italian expedition, not British",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — peak and its first-ascent expedition details — is correctly matched?\n\n(a) K2 — First summited in 1954 by a British mountaineering expedition\n(b) Kangchenjunga — First summited in 1955 by a joint Indian–British expedition\n(c) Nanda Devi — First summited in 1936 by a British-American expedition including H.W. Tilman\n(d) Kangchenjunga — First summited by Bachendri Pal as part of India's national mountaineering programme",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because many students know a British expedition summited a major Himalayan peak in the 1950s (specifically Everest in 1953 and Kangchenjunga in 1955) and may wrongly attribute K2's 1954 ascent to the British as well.",
+      "elimination_logic": [
+        "Evaluate (a): K2's first ascent in 1954 was by an Italian expedition (Lacedelli and Compagnoni) — not British. This pair is incorrectly matched.",
+        "Evaluate (b): Kangchenjunga was first summited in 1955 but by a British expedition (George Band and Norman Hardie) — not a joint Indian-British team. This pair is incorrectly matched.",
+        "Evaluate (c): Nanda Devi was first summited in 1936 by a British-American expedition with Tilman and Odell — this is correctly matched.",
+        "Evaluate (d): Bachendri Pal summited Everest in 1984, not Kangchenjunga — this pair is incorrectly matched.",
+        "Only option (c) is correctly matched."
+      ],
+      "upsc_trap_explanation": "The entity-swap in option (a) is the primary trap. Students who know the 1950s were the golden decade of Himalayan mountaineering with British expeditions (Everest 1953, Kangchenjunga 1955) may extend this to K2 — but K2's 1954 first ascent was an Italian achievement. The confusion between nationalities of expeditions for different peaks in consecutive years (1953 Everest British, 1954 K2 Italian, 1955 Kangchenjunga British) is deliberately exploited here.",
+      "final_explanation": "Mountaineering history pairs — peak with first-ascent nationality and year — are a recurring UPSC fact-check format.\n\n• Option (a) — Incorrectly matched: K2's first ascent (1954) was by an Italian expedition led by Ardito Desio; Achille Compagnoni and Lino Lacedelli reached the summit on 31 July 1954. It was not a British team.\n• Option (b) — Incorrectly matched: Kangchenjunga was first summited in 1955 by British mountaineers George Band and Norman Hardie — not by an Indian–British joint team.\n• Option (c) — Correctly matched: Nanda Devi was first summited in 1936 by a British-American expedition; H.W. Tilman and Noel Odell reached the top. At that time, no higher peak had been climbed.\n• Option (d) — Incorrectly matched: Bachendri Pal became the first Indian woman to summit Everest in 1984 — not Kangchenjunga.\n\nValue Addition:\n• Nanda Devi's 1936 record as the highest climbed peak lasted until Annapurna (8,091 m) was summited in 1950.\n• A 1978 US–India joint expedition on Nanda Devi ended controversially and accelerated the 1982 Inner Sanctuary closure.\n• India's first Everest summit was by Avtar Singh Cheema and Sonam Wangyal in 1965."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा — शिखर और उसकी पहली चढ़ाई के अभियान विवरण — सही मेल खाता है?\n\n(a) K2 — पहली बार 1954 में एक ब्रिटिश पर्वतारोहण अभियान द्वारा फतह किया गया\n(b) कंचनजंगा — पहली बार 1955 में एक संयुक्त भारतीय- ब्रिटिश अभियान द्वारा फतह किया गया\n(c) नंदा देवी — पहली बार 1936 में H.W. टिलमैन सहित एक ब्रिटिश-अमेरिकी अभियान द्वारा फतह किया गया\n(d) कंचनजंगा — भारत के राष्ट्रीय पर्वतारोहण कार्यक्रम के तहत बछेंद्री पाल द्वारा पहली बार फतह किया गया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि कई छात्र जानते हैं कि 1950 के दशक में ब्रिटिश अभियान ने एक प्रमुख हिमालयी शिखर पर चढ़ाई की थी (विशेष रूप से एवरेस्ट 1953 और कंचनजंगा 1955 में) और वे गलत तरीके से K2 की 1954 की चढ़ाई को भी ब्रिटिश मान सकते हैं।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: K2 की पहली चढ़ाई 1954 में एक इतालवी अभियान (Lacedelli और Compagnoni) द्वारा की गई थी — न कि ब्रिटिश द्वारा। यह जोड़ी गलत मेल खाती है।",
+        "(b) का मूल्यांकन करें: कंचनजंगा को पहली बार 1955 में ब्रिटिश अभियान (जॉर्ज बैंड और नॉर्मन हार्डी) ने फतह किया था — न कि भारतीय- ब्रिटिश संयुक्त टीम ने। यह जोड़ी गलत मेल खाती है।",
+        "(c) का मूल्यांकन करें: नंदा देवी को पहली बार 1936 में ब्रिटिश-अमेरिकी अभियान ने फतह किया था जिसमें टिलमैन और ओडेल शामिल थे — यह सही मेल खाती है।",
+        "(d) का मूल्यांकन करें: बछेंद्री पाल ने 1984 में एवरेस्ट फतह किया था, कंचनजंगा नहीं — यह जोड़ी गलत मेल खाती है।",
+        "केवल विकल्प (c) सही मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में वस्तु-स्थानांतरण (entity-swap) मुख्य जाल है। जो छात्र जानते हैं कि 1950 का दशक हिमालयी पर्वतारोहण का स्वर्ण युग था जिसमें ब्रिटिश अभियान (एवरेस्ट 1953, कंचनजंगा 1955) शामिल थे, वे इसे K2 तक बढ़ा सकते हैं — लेकिन K2 की 1954 की पहली चढ़ाई एक इतालवी उपलब्धि थी। लगातार वर्षों में विभिन्न शिखरों के अभियानों की राष्ट्रीयताओं (1953 एवरेस्ट ब्रिटिश, 1954 K2 इतालवी, 1955 कंचनजंगा ब्रिटिश) के बीच भ्रम को जानबूझकर यहां इस्तेमाल किया गया है।",
+      "final_explanation": "पर्वतारोहण इतिहास के जोड़े — शिखर के साथ पहली चढ़ाई की राष्ट्रीयता और वर्ष — UPSC में बार-बार तथ्य-जांच के लिए पूछे जाते हैं।\n\n• विकल्प (a) — गलत मेल खाता है: K2 की पहली चढ़ाई (1954) अरडिटो डेसियो के नेतृत्व में एक इतालवी अभियान द्वारा की गई थी; अचिले कॉम्पग्नोनी और लीनो लैसिडेली ने 31 जुलाई 1954 को शिखर पर पहुंचा। यह कोई ब्रिटिश टीम नहीं थी।\n• विकल्प (b) — गलत मेल खाता है: कंचनजंगा को पहली बार 1955 में ब्रिटिश पर्वतारोहियों जॉर्ज बैंड और नॉर्मन हार्डी ने फतह किया था — न कि भारतीय- ब्रिटिश संयुक्त टीम ने।\n• विकल्प (c) — सही मेल खाता है: नंदा देवी को पहली बार 1936 में ब्रिटिश-अमेरिकी अभियान ने फतह किया था; H.W. टिलमैन और नोएल ओडेल ने शिखर पर पहुंचा। उस समय, इससे ऊँचा कोई शिखर फतह नहीं किया गया था।\n• विकल्प (d) — गलत मेल खाता है: बछेंद्री पाल 1984 में एवरेस्ट फतह करने वाली पहली भारतीय महिला बनीं — कंचनजंगा नहीं।\n\nमूल्य वर्धन:\n• नंदा देवी का 1936 का रिकॉर्ड सबसे ऊँचा फतह किया गया शिखर था जो 1950 में अन्नपूर्णा (8,091 मीटर) के फतह होने तक रहा।\n• 1978 में नंदा देवी पर एक अमेरिकी-भारतीय संयुक्त अभियान विवादास्पद रूप से समाप्त हुआ और 1982 में आंतरिक अभयारण्य (Inner Sanctuary) के बंद होने को तेज किया।\n• भारत की पहली एवरेस्ट चढ़ाई अवतार सिंह चीमा और सोनम वांगयाल ने 1965 में की।"
+    }
+  },
+  {
+    "uuid": "76448eca-b327-4588-8dd6-89f0ab100222",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "National Parks and Protected Areas Linked to Major Peaks",
+        "Nanda Devi Biosphere Reserve: Conservation and UNESCO Status"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Protected area categories — national park vs. wildlife sanctuary vs. biosphere reserve",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Protected Area) with List II (Key Feature / Designation):",
+        "columns": [
+          "List I (Protected Area)",
+          "List II (Key Feature / Designation)"
+        ],
+        "rows": [
+          [
+            "A. Kanchenjunga National Park",
+            "1. Core zone of biosphere reserve — no human activity permitted"
+          ],
+          [
+            "B. Nanda Devi National Park",
+            "2. Ramsar Wetland and UNESCO World Heritage extension (2005)"
+          ],
+          [
+            "C. Karakoram Wildlife Sanctuary",
+            "3. UNESCO Mixed Heritage Site designated in 2016"
+          ],
+          [
+            "D. Valley of Flowers National Park",
+            "4. Located in Ladakh; habitat of snow leopard and bharal"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-1, B-4, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is deceptive because it correctly pairs Nanda Devi NP and Karakoram WLS but swaps the Kanchenjunga NP's UNESCO status, which students unfamiliar with the 2016 Mixed Heritage listing may not catch.",
+      "elimination_logic": [
+        "A (Kanchenjunga National Park): It was inscribed as a UNESCO Mixed Heritage Site in 2016 — matches with 3 (UNESCO Mixed Heritage Site, 2016).",
+        "B (Nanda Devi National Park): Core zone of the biosphere reserve, no human activity permitted — matches with 1 (core zone of biosphere reserve, no human activity permitted).",
+        "C (Karakoram Wildlife Sanctuary): Located in Ladakh, protects snow leopard and bharal — matches with 4 (Ladakh, snow leopard habitat).",
+        "D (Valley of Flowers NP): Added to Nanda Devi UNESCO World Heritage extension in 2005 AND is a Ramsar Wetland — matches with 2 (Ramsar Wetland and UNESCO extension, 2005).",
+        "Correct matching: A-3, B-1, C-4, D-2 → option (b)."
+      ],
+      "upsc_trap_explanation": "The conflation trap operates on Kanchenjunga National Park's UNESCO status. Students know Nanda Devi is a UNESCO World Heritage Site (1988) and may assign the 'World Heritage' tag to all listed parks, missing that Kanchenjunga received a 'Mixed Heritage' designation in 2016 — a distinct category recognising both natural and cultural values. Conflating 'natural' and 'mixed' UNESCO heritage is the specific confusion this question exploits.",
+      "final_explanation": "Protected area classification and their specific designations is a high-frequency UPSC topic requiring precise memorisation.\n\nCorrect pairings:\n• A (Kanchenjunga NP) → 3 (UNESCO Mixed Heritage Site, 2016): Kanchenjunga National Park in Sikkim received UNESCO World Heritage status in 2016 under the 'Mixed' category — combining outstanding natural values with the cultural significance of the 'Five Treasures of Snow' tradition.\n• B (Nanda Devi NP) → 1 (core zone, no human activity): Nanda Devi National Park forms the strictly protected core of the biosphere reserve; Inner Sanctuary closed since 1982, no human activity permitted.\n• C (Karakoram WLS) → 4 (Ladakh, snow leopard habitat): The Karakoram Wildlife Sanctuary in Ladakh is the protected area near K2's regional range, harbouring snow leopard, bharal (blue sheep), and other high-altitude fauna.\n• D (Valley of Flowers NP) → 2 (Ramsar Wetland, UNESCO 2005 extension): Valley of Flowers is both a Ramsar Wetland and was added to the Nanda Devi UNESCO World Heritage listing as an extension in 2005.\n\nValue Addition:\n• India has 5 UNESCO Mixed Heritage Sites (combining natural and cultural criteria) — Kanchenjunga NP is one.\n• Wildlife Sanctuaries (unlike National Parks) allow some human activities including regulated grazing.\n• Biosphere reserves have three zones: core, buffer, and transition — National Parks typically form the core."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संरक्षित क्षेत्र) को सूची II (मुख्य विशेषता / मान्यता) से मिलाइए:",
+        "columns": [
+          "सूची I (संरक्षित क्षेत्र)",
+          "सूची II (मुख्य विशेषता / मान्यता)"
+        ],
+        "rows": [
+          [
+            "A. कंचनजंगा राष्ट्रीय उद्यान",
+            "1. बायोस्फीयर रिजर्व का कोर जोन — कोई मानव गतिविधि अनुमति नहीं"
+          ],
+          [
+            "B. नंदा देवी राष्ट्रीय उद्यान",
+            "2. रामसर वेटलैंड और यूनेस्को विश्व धरोहर विस्तार (2005)"
+          ],
+          [
+            "C. काराकोरम वन्यजीव अभयारण्य",
+            "3. 2016 में नामित यूनेस्को मिश्रित विरासत स्थल"
+          ],
+          [
+            "D. फूलों की घाटी राष्ट्रीय उद्यान",
+            "4. लद्दाख में स्थित; हिम तेंदुआ और भाराल का आवास"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-1, B-4, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) भ्रामक है क्योंकि यह नंदा देवी राष्ट्रीय उद्यान और काराकोरम वन्यजीव अभयारण्य को सही जोड़ता है लेकिन कंचनजंगा राष्ट्रीय उद्यान की यूनेस्को स्थिति को बदल देता है, जिसे 2016 के मिश्रित विरासत सूचीकरण से अनजान छात्र पकड़ नहीं पाते।",
+      "elimination_logic": [
+        "A (कंचनजंगा राष्ट्रीय उद्यान): इसे 2016 में यूनेस्को मिश्रित विरासत स्थल के रूप में नामित किया गया था — मेल खाता है 3 (यूनेस्को मिश्रित विरासत स्थल, 2016) से।",
+        "B (नंदा देवी राष्ट्रीय उद्यान): बायोस्फीयर रिजर्व का कोर जोन, कोई मानव गतिविधि अनुमति नहीं — मेल खाता है 1 (बायोस्फीयर रिजर्व का कोर जोन, कोई मानव गतिविधि अनुमति नहीं) से।",
+        "C (काराकोरम वन्यजीव अभयारण्य): लद्दाख में स्थित, हिम तेंदुआ और भाराल की रक्षा करता है — मेल खाता है 4 (लद्दाख, हिम तेंदुआ आवास) से।",
+        "D (फूलों की घाटी राष्ट्रीय उद्यान): 2005 में नंदा देवी यूनेस्को विश्व धरोहर विस्तार में जोड़ा गया और रामसर वेटलैंड भी है — मेल खाता है 2 (रामसर वेटलैंड और यूनेस्को विस्तार, 2005) से।",
+        "सही मिलान: A-3, B-1, C-4, D-2 → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल कंचनजंगा राष्ट्रीय उद्यान की यूनेस्को स्थिति पर आधारित है। छात्र जानते हैं कि नंदा देवी यूनेस्को विश्व धरोहर स्थल (1988) है और सभी सूचीबद्ध उद्यानों को 'विश्व धरोहर' टैग दे सकते हैं, लेकिन कंचनजंगा को 2016 में 'मिश्रित विरासत' श्रेणी मिली — जो प्राकृतिक और सांस्कृतिक दोनों मूल्यों को मान्यता देती है। 'प्राकृतिक' और 'मिश्रित' यूनेस्को विरासत को मिलाना इस प्रश्न द्वारा उत्पन्न भ्रम है।",
+      "final_explanation": "संरक्षित क्षेत्र वर्गीकरण और उनकी विशिष्ट मान्यताएँ UPSC में उच्च आवृत्ति वाले विषय हैं जिनके लिए सटीक स्मरण आवश्यक है।\n\nसही जोड़:\n• A (कंचनजंगा राष्ट्रीय उद्यान) → 3 (यूनेस्को मिश्रित विरासत स्थल, 2016): सिक्किम में कंचनजंगा राष्ट्रीय उद्यान को 2016 में 'मिश्रित' श्रेणी के तहत यूनेस्को विश्व धरोहर का दर्जा मिला — जो उत्कृष्ट प्राकृतिक मूल्यों के साथ 'पाँच हिम खजाने' की सांस्कृतिक महत्ता को जोड़ता है।\n• B (नंदा देवी राष्ट्रीय उद्यान) → 1 (कोर जोन, कोई मानव गतिविधि नहीं): नंदा देवी राष्ट्रीय उद्यान बायोस्फीयर रिजर्व का सख्त संरक्षित कोर है; आंतरिक अभयारण्य 1982 से बंद है, कोई मानव गतिविधि अनुमति नहीं।\n• C (काराकोरम वन्यजीव अभयारण्य) → 4 (लद्दाख, हिम तेंदुआ आवास): लद्दाख में काराकोरम वन्यजीव अभयारण्य K2 के क्षेत्रीय क्षेत्र के निकट है, जो हिम तेंदुआ, भाराल (नीली भेड़) और अन्य उच्च ऊंचाई के जीवों का आवास है।\n• D (फूलों की घाटी राष्ट्रीय उद्यान) → 2 (रामसर वेटलैंड, यूनेस्को 2005 विस्तार): फूलों की घाटी रामसर वेटलैंड है और 2005 में नंदा देवी यूनेस्को विश्व धरोहर सूची में विस्तार के रूप में जोड़ा गया।\n\nमूल्यवर्धन:\n• भारत के पास 5 यूनेस्को मिश्रित विरासत स्थल हैं (जो प्राकृतिक और सांस्कृतिक मानदंडों को मिलाते हैं) — कंचनजंगा राष्ट्रीय उद्यान उनमें से एक है।\n• वन्यजीव अभयारण्य (राष्ट्रीय उद्यानों के विपरीत) कुछ मानव गतिविधियों जैसे नियंत्रित चराई की अनुमति देते हैं।\n• बायोस्फीयर रिजर्व में तीन क्षेत्र होते हैं: कोर, बफर, और ट्रांजिशन — राष्ट्रीय उद्यान आमतौर पर कोर क्षेत्र बनाते हैं।"
+    }
+  },
+  {
+    "uuid": "200351c1-2ce8-462e-94b4-e63a61ccc737",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Global Ranking of Peaks and India's Position",
+        "Highest Peaks in Each Himalayan State of India"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Saltoro Kangri — highest peak undisputed Indian territory",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the ranking and location of India's major peaks:\n\n1. Among peaks entirely under India's undisputed administrative control, Nanda Devi (7,816 m) ranks higher than Saltoro Kangri (7,742 m).\n2. Kangchenjunga, at 8,586 m, is included in India's territorial claim but is not entirely within India's administered boundary.\n3. Reo Purgyil is the highest peak of Jammu & Kashmir and is located near the border with Pakistan.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Among peaks entirely under India's undisputed administrative control, Nanda Devi (7,816 m) ranks higher than Saltoro Kangri (7,742 m).",
+          "verdict": "Correct",
+          "reason": "Nanda Devi at 7,816 m is higher than Saltoro Kangri at 7,742 m; both are in undisputed Indian-administered territory (Uttarakhand and Ladakh respectively), making this ranking accurate."
+        },
+        {
+          "statement": "Kangchenjunga, at 8,586 m, is included in India's territorial claim but is not entirely within India's administered boundary.",
+          "verdict": "Correct",
+          "reason": "Kangchenjunga sits on the Sikkim (India)–Taplejung (Nepal) border; while India administers the Sikkim side, the peak is shared with Nepal and cannot be claimed as entirely within India's sovereign territory."
+        },
+        {
+          "statement": "Reo Purgyil is the highest peak of Jammu & Kashmir and is located near the border with Pakistan.",
+          "verdict": "Incorrect",
+          "reason": "Reo Purgyil (6,816 m) is the highest peak of Himachal Pradesh (in Kinnaur district near the Tibet/China border) — not Jammu & Kashmir, and not near Pakistan. This is a deliberate state-swap and geographic-swap trap."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because Statements 1 and 2 are both verifiably correct, and students who accept the Reo Purgyil statement without checking the state attribution will select 'all three'.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Nanda Devi (7,816 m) > Saltoro Kangri (7,742 m), both in undisputed Indian territory — correct.",
+        "Evaluate Statement 2: Kangchenjunga is on the India–Nepal border, not entirely within India — correct.",
+        "Evaluate Statement 3: Reo Purgyil is the highest peak of Himachal Pradesh (Kinnaur), not J&K, and borders China/Tibet — not Pakistan. Statement 3 is incorrect.",
+        "Only Statements 1 and 2 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 3 executes a double swap: state (Himachal Pradesh falsely attributed to J&K) and geographic boundary (Tibet border falsely stated as Pakistan border). Reo Purgyil is in Kinnaur district of Himachal Pradesh, bordering Tibet. Students who know it is a 'northern high-altitude peak' but haven't pinned its state may accept J&K as plausible, and students who associate 'border with Pakistan' with northern peaks in a general sense complete the trap.",
+      "final_explanation": "This question tests the hierarchy of peaks by administrative status and the precise state-level attribution of Himalayan peaks.\n\n• Statement 1 — Correct: In undisputed Indian-administered territory, Nanda Devi (7,816 m, Uttarakhand) ranks above Saltoro Kangri (7,742 m, Ladakh). Both are entirely within Indian administration — the distinction from K2 (PoK) and Kangchenjunga (shared with Nepal) is important.\n• Statement 2 — Correct: Kangchenjunga is a border peak, not an interior Indian peak. The India–Nepal boundary runs through or near its summit, making it a shared rather than exclusively Indian peak.\n• Statement 3 — Incorrect: Reo Purgyil (6,816 m) is the highest peak of Himachal Pradesh, located in Kinnaur district near the Tibet (China) border — not J&K and not the Pakistan border.\n\nValue Addition:\n• The hierarchy for Indian territorial claim: Kangchenjunga (8,586 m, shared) > K2 (8,611 m, PoK, claimed) > Nanda Devi (7,816 m, undisputed interior).\n• Saltoro Kangri's location near Siachen makes it strategically significant for Ladakh border management.\n• Himachal Pradesh borders China (Tibet) in the Kinnaur, Lahaul-Spiti, and Pangi areas — a commonly tested geographic fact."
+    },
+    "hi": {
+      "display_text": "भारत के प्रमुख शिखरों की रैंकिंग और स्थान के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. उन शिखरों में जो पूरी तरह भारत के विवाद रहित प्रशासनिक नियंत्रण में हैं, नन्दा देवी (7,816 मीटर) सोल्टोरो कांगरी (7,742 मीटर) से ऊँची है।\n2. कंचनजंगा, जिसकी ऊँचाई 8,586 मीटर है, भारत के क्षेत्रीय दावे में शामिल है लेकिन पूरी तरह भारत के प्रशासनिक क्षेत्र में नहीं है।\n3. रियो पुरगिल जम्मू एवं कश्मीर का सबसे ऊँचा शिखर है और यह पाकिस्तान सीमा के पास स्थित है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Among peaks entirely under India's undisputed administrative control, Nanda Devi (7,816 m) ranks higher than Saltoro Kangri (7,742 m).",
+          "verdict": "सही है",
+          "reason": "नन्दा देवी 7,816 मीटर की ऊँचाई के साथ सोल्टोरो कांगरी (7,742 मीटर) से ऊँची है; दोनों पूरी तरह से भारत के विवाद रहित प्रशासनिक क्षेत्र (उत्तराखंड और लद्दाख क्रमशः) में हैं, इसलिए यह रैंकिंग सही है।"
+        },
+        {
+          "statement": "Kangchenjunga, at 8,586 m, is included in India's territorial claim but is not entirely within India's administered boundary.",
+          "verdict": "सही है",
+          "reason": "कंचनजंगा सिक्किम (भारत)–टाप्लेजुंग (नेपाल) सीमा पर स्थित है; जबकि भारत सिक्किम पक्ष का प्रशासन करता है, यह शिखर नेपाल के साथ साझा है और इसे पूरी तरह से भारत के संप्रभु क्षेत्र के भीतर नहीं माना जा सकता।"
+        },
+        {
+          "statement": "Reo Purgyil is the highest peak of Jammu & Kashmir and is located near the border with Pakistan.",
+          "verdict": "गलत है",
+          "reason": "रियो पुरगिल (6,816 मीटर) हिमाचल प्रदेश का सबसे ऊँचा शिखर है (किन्नौर जिले में, तिब्बत/चीन सीमा के पास) — न कि जम्मू एवं कश्मीर का, और न ही यह पाकिस्तान सीमा के पास है। यह जानबूझकर राज्य और भौगोलिक भ्रम पैदा करने वाला जाल है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) भ्रामक है क्योंकि कथन 1 और 2 दोनों सत्यापित रूप से सही हैं, और जो छात्र रियो पुरगिल के कथन को बिना राज्य के सही आवंटन की जांच किए स्वीकार करते हैं वे 'सभी तीन' चुनेंगे।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: नन्दा देवी (7,816 मीटर) > सोल्टोरो कांगरी (7,742 मीटर), दोनों विवाद रहित भारतीय क्षेत्र में — सही।",
+        "कथन 2 का मूल्यांकन करें: कंचनजंगा भारत–नेपाल सीमा पर है, पूरी तरह भारत के भीतर नहीं — सही।",
+        "कथन 3 का मूल्यांकन करें: रियो पुरगिल हिमाचल प्रदेश (किन्नौर) का सबसे ऊँचा शिखर है, न कि जम्मू एवं कश्मीर का, और यह चीन/तिब्बत सीमा के पास है — पाकिस्तान सीमा के पास नहीं। कथन 3 गलत है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में दोहरे भ्रम का प्रयोग किया गया है: राज्य (हिमाचल प्रदेश को गलत तरीके से जम्मू एवं कश्मीर बताया गया) और भौगोलिक सीमा (तिब्बत सीमा को गलत तरीके से पाकिस्तान सीमा बताया गया)। रियो पुरगिल हिमाचल प्रदेश के किन्नौर जिले में है, जो तिब्बत से सटा हुआ है। जो छात्र इसे 'उत्तर की उच्च ऊँचाई वाला शिखर' जानते हैं लेकिन राज्य नहीं जानते, वे जम्मू एवं कश्मीर को संभावित मान सकते हैं, और जो छात्र 'पाकिस्तान सीमा' को सामान्य रूप से उत्तरी शिखरों से जोड़ते हैं वे इस जाल में फंस जाते हैं।",
+      "final_explanation": "यह प्रश्न प्रशासनिक स्थिति के अनुसार पर्वतों की श्रेणी और हिमालयी शिखरों के सटीक राज्य-स्तरीय आवंटन की परीक्षा लेता है।\n\n• कथन 1 — सही: विवाद रहित भारतीय प्रशासनिक क्षेत्र में, नन्दा देवी (7,816 मीटर, उत्तराखंड) सोल्टोरो कांगरी (7,742 मीटर, लद्दाख) से ऊँचा है। दोनों पूरी तरह से भारतीय प्रशासन में हैं — K2 (PoK) और कंचनजंगा (नेपाल के साथ साझा) से यह भेद महत्वपूर्ण है।\n• कथन 2 — सही: कंचनजंगा एक सीमा शिखर है, आंतरिक भारतीय शिखर नहीं। भारत–नेपाल सीमा इसके शिखर से होकर गुजरती है, इसलिए यह पूरी तरह से भारत का शिखर नहीं है।\n• कथन 3 — गलत: रियो पुरगिल (6,816 मीटर) हिमाचल प्रदेश का सबसे ऊँचा शिखर है, जो किन्नौर जिले में तिब्बत (चीन) सीमा के पास है — न कि जम्मू एवं कश्मीर का और न ही पाकिस्तान सीमा के पास।\n\nमूल्यवर्धन:\n• भारतीय क्षेत्रीय दावे के लिए श्रेणी: कंचनजंगा (8,586 मीटर, साझा) > K2 (8,611 मीटर, PoK, दावा किया गया) > नन्दा देवी (7,816 मीटर, विवाद रहित आंतरिक)।\n• सोल्टोरो कांगरी का स्थान सियाचिन के पास होने के कारण लद्दाख सीमा प्रबंधन के लिए रणनीतिक रूप से महत्वपूर्ण है।\n• हिमाचल प्रदेश की सीमा चीन (तिब्बत) से किन्नौर, लाहौल-स्पीति और पांगी क्षेत्रों में लगती है — एक सामान्यतः पूछे जाने वाला भौगोलिक तथ्य।"
+    }
+  },
+  {
+    "uuid": "990b0ac4-d88d-401d-bb58-7f04ce342948",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Ecological Zones and Biodiversity of High-Altitude Peaks",
+        "Nanda Devi Biosphere Reserve: Conservation and UNESCO Status"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Altitudinal zonation — bugyals and nival zones near Nanda Devi",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An ecologist studying high-altitude meadows near the Nanda Devi massif observes that these grasslands, locally called bugyals, exist at elevations above the treeline but below the permanent snowline. She notes that they act as critical water catchments for glacier-fed rivers in the region and are ecologically fragile due to the harsh climatic conditions. Which ecological principle most accurately explains the existence and hydrological significance of these meadows at their specific elevation?\n\n(a) Social forestry principles governing the transition from forest to open land in degraded mountain ecosystems\n(b) Altitudinal zonation that places these meadows in the alpine zone between the temperate forest belt and the nival zone\n(c) Biosphere reserve buffer zone regulations that mandate maintenance of transitional vegetation between core and human-use zones\n(d) Ramsar Convention wise-use principles that require preservation of wetland-adjacent grasslands for migratory bird habitat",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because students familiar with the biosphere reserve framework know that buffer zones permit scientific study and may assume this is the governing framework for the bugyals, without recognising that bugyals also have specific ecological and cultural use implications.",
+      "elimination_logic": [
+        "The scenario involves high-altitude meadows (bugyals) near Nanda Devi that are hydrologically important and ecologically fragile — this maps to the altitudinal zonation concept.",
+        "Eliminate (a): Social forestry principles govern tree plantation on degraded land — not applicable to high-altitude meadows above the treeline.",
+        "Eliminate (c): Biosphere reserve buffer zone rules apply but the question asks which principle best governs the meadows' ecological classification and hydrological role — altitudinal zonation is the more precise conceptual answer.",
+        "Eliminate (d): Ramsar wise-use applies to wetlands; bugyals are high-altitude meadows, not Ramsar-designated wetlands per se.",
+        "Select (b): Altitudinal zonation — the transition from temperate to alpine to nival zones — explains why bugyals exist at their specific elevation, their ecological fragility, and their hydrological role as water catchments."
+      ],
+      "upsc_trap_explanation": "Option (c) is the trap: it is partially applicable (bugyals near Nanda Devi do fall within the biosphere reserve's buffer zone) but the question asks for the principle governing why these meadows are ecologically significant and hydrologically important — which is altitudinal zonation, not buffer zone administration. Students who focus on the 'protected area management' aspect rather than the 'ecological principle' aspect will select (c).",
+      "final_explanation": "Bugyals (high-altitude meadows) are a distinctive ecological feature of the Garhwal and Kumaon Himalayas, sitting in the alpine zone of the altitudinal zonation gradient.\n\nApplicable principle: Altitudinal zonation explains the sequence of ecological communities from tropical at the base through temperate (broadleaf and conifer forests), alpine (shrubs and meadows including bugyals), to the nival zone (permanent snow and ice). Bugyals exist in the alpine zone because conditions — temperature, soil, wind exposure — are below treeline but above permanent snow. Their hydrological importance comes from their role as sponge catchments that regulate water flow into glacier-fed rivers like Rishi Ganga.\n\n• Option (a) — Incorrect: Social forestry targets degraded lowland/mid-altitude areas for plantation; it does not govern high-altitude meadow ecology.\n• Option (b) — Correct: Altitudinal zonation is the governing ecological principle explaining bugyals' existence, their position in the alpine zone, and their hydrological significance.\n• Option (c) — Partially relevant but imprecise: Buffer zone administration governs human use of bugyals near Nanda Devi, but does not explain their ecological character or hydrological role.\n• Option (d) — Incorrect: Ramsar Convention applies to wetlands formally listed — bugyals as seasonal high-altitude meadows are not Ramsar-classified.\n\nValue Addition:\n• Famous bugyals in Uttarakhand include Bedni Bugyal and Ali Bugyal near Roopkund.\n• The alpine zone in the Himalayas typically begins around 3,500–4,000 m depending on latitude.\n• Overgrazing of bugyals by migratory livestock is a documented ecological threat."
+    },
+    "hi": {
+      "display_text": "नंदा देवी पर्वतमाला के पास उच्च-ऊंचाई वाले घास के मैदानों का अध्ययन कर रही एक पारिस्थितिकीविद् ने देखा कि ये घास के मैदान, जिन्हें स्थानीय रूप से बुग्याल कहा जाता है, वृक्षरेखा से ऊपर लेकिन स्थायी हिमरेखा से नीचे की ऊंचाई पर स्थित हैं। उन्होंने नोट किया कि ये क्षेत्र हिमनद-नदीयों के लिए महत्वपूर्ण जल संचयन क्षेत्र के रूप में कार्य करते हैं और कठोर जलवायु परिस्थितियों के कारण पारिस्थितिक रूप से नाजुक हैं। कौन-सा पारिस्थितिक सिद्धांत इन मैदानों के विशिष्ट ऊंचाई पर अस्तित्व और जलविज्ञान की महत्ता को सबसे सटीक रूप से समझाता है?\n\n(a) सामाजिक वानिकी सिद्धांत जो अपदस्थ पर्वतीय पारिस्थितिक तंत्र में वन से खुले भूमि में संक्रमण को नियंत्रित करता है\n(b) ऊंचाई के अनुसार क्षेत्रीकरण जो इन मैदानों को समशीतोष्ण वन पट्टी और निवार क्षेत्र के बीच अल्पाइन क्षेत्र में रखता है\n(c) बायोस्फीयर रिजर्व के बफर जोन नियम जो कोर और मानव उपयोग क्षेत्रों के बीच संक्रमणीय वनस्पति के रखरखाव का आदेश देते हैं\n(d) रामसर कन्वेंशन के विवेकपूर्ण उपयोग सिद्धांत जो प्रवासी पक्षी आवास के लिए जल निकटवर्ती घास के मैदानों के संरक्षण की आवश्यकता बताते हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि बायोस्फीयर रिजर्व ढांचे से परिचित छात्र जानते हैं कि बफर जोन वैज्ञानिक अध्ययन की अनुमति देते हैं और यह मान सकते हैं कि यही बुग्याल के लिए शासनकारी ढांचा है, बिना यह समझे कि बुग्याल के विशिष्ट पारिस्थितिक और सांस्कृतिक उपयोग के प्रभाव भी होते हैं।",
+      "elimination_logic": [
+        "परिदृश्य में नंदा देवी के पास उच्च-ऊंचाई वाले घास के मैदान (बुग्याल) शामिल हैं जो जलविज्ञान की दृष्टि से महत्वपूर्ण और पारिस्थितिक रूप से नाजुक हैं — यह ऊंचाई के अनुसार क्षेत्रीकरण (altitudinal zonation) की अवधारणा से मेल खाता है।",
+        "विकल्प (a) को हटाएं: सामाजिक वानिकी सिद्धांत अपदस्थ भूमि पर वृक्षारोपण को नियंत्रित करते हैं — जो वृक्षरेखा से ऊपर के उच्च-ऊंचाई वाले मैदानों पर लागू नहीं होता।",
+        "विकल्प (c) को हटाएं: बायोस्फीयर रिजर्व के बफर जोन नियम लागू होते हैं लेकिन प्रश्न पूछता है कि कौन-सा सिद्धांत मैदानों के पारिस्थितिक वर्गीकरण और जलविज्ञान की भूमिका को सबसे अच्छी तरह नियंत्रित करता है — ऊंचाई के अनुसार क्षेत्रीकरण अधिक सटीक अवधारणा है।",
+        "विकल्प (d) को हटाएं: रामसर समझौता सतही जल क्षेत्रों पर लागू होता है; बुग्याल उच्च-ऊंचाई वाले घास के मैदान हैं, न कि रामसर-निर्धारित जल क्षेत्र।",
+        "विकल्प (b) चुनें: ऊंचाई के अनुसार क्षेत्रीकरण — समशीतोष्ण से अल्पाइन और निवार क्षेत्र तक संक्रमण — यह समझाता है कि बुग्याल अपनी विशिष्ट ऊंचाई पर क्यों मौजूद हैं, उनकी पारिस्थितिक नाजुकता और जलविज्ञान की भूमिका जल संचयन के रूप में क्यों है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) जाल है: यह आंशिक रूप से लागू है (नंदा देवी के पास बुग्याल बायोस्फीयर रिजर्व के बफर जोन में आते हैं) लेकिन प्रश्न पूछता है कि कौन-सा सिद्धांत इन मैदानों को पारिस्थितिक रूप से महत्वपूर्ण और जलविज्ञान की दृष्टि से महत्वपूर्ण बनाता है — जो कि ऊंचाई के अनुसार क्षेत्रीकरण है, न कि बफर जोन प्रशासन। जो छात्र 'संरक्षित क्षेत्र प्रबंधन' पहलू पर ध्यान केंद्रित करते हैं बजाय 'पारिस्थितिक सिद्धांत' के, वे (c) चुनेंगे।",
+      "final_explanation": "बुग्याल (उच्च-ऊंचाई वाले घास के मैदान) गढ़वाल और कुमाऊं हिमालय की विशिष्ट पारिस्थितिक विशेषता हैं, जो ऊंचाई के अनुसार क्षेत्रीकरण के अल्पाइन क्षेत्र में स्थित हैं।\n\nलागू सिद्धांत: ऊंचाई के अनुसार क्षेत्रीकरण पारिस्थितिक समुदायों के क्रम को समझाता है, जो आधार पर उष्णकटिबंधीय से शुरू होकर समशीतोष्ण (चौड़ी पत्ती और शंकुधारी वन), अल्पाइन (झाड़ियाँ और मैदान जिनमें बुग्याल शामिल हैं), और निवार क्षेत्र (स्थायी हिम और बर्फ) तक जाता है। बुग्याल अल्पाइन क्षेत्र में इसलिए मौजूद हैं क्योंकि परिस्थितियाँ — तापमान, मिट्टी, हवा का प्रभाव — वृक्षरेखा से नीचे लेकिन स्थायी हिम से ऊपर हैं। उनकी जलविज्ञान की महत्ता उनके स्पंज कैचमेंट के रूप में भूमिका से आती है जो ऋषि गंगा जैसे हिमनद-नदीयों में जल प्रवाह को नियंत्रित करता है।\n\n• विकल्प (a) — गलत: सामाजिक वानिकी अपदस्थ निम्न/मध्य-ऊंचाई वाले क्षेत्रों में वृक्षारोपण के लिए है; यह उच्च-ऊंचाई वाले मैदानों की पारिस्थितिकी को नियंत्रित नहीं करता।\n• विकल्प (b) — सही: ऊंचाई के अनुसार क्षेत्रीकरण बुग्याल के अस्तित्व, उनकी अल्पाइन क्षेत्र में स्थिति, और जलविज्ञान की महत्ता को समझाने वाला पारिस्थितिक सिद्धांत है।\n• विकल्प (c) — आंशिक रूप से प्रासंगिक लेकिन अस्पष्ट: बफर जोन प्रशासन नंदा देवी के पास बुग्याल के मानव उपयोग को नियंत्रित करता है, लेकिन उनके पारिस्थितिक चरित्र या जलविज्ञान की भूमिका को नहीं समझाता।\n• विकल्प (d) — गलत: रामसर कन्वेंशन औपचारिक रूप से सूचीबद्ध जल क्षेत्रों पर लागू होता है — बुग्याल मौसमी उच्च-ऊंचाई वाले मैदान हैं, जो रामसर-श्रेणीबद्ध नहीं हैं।\n\nमूल्यवर्धन:\n• उत्तराखंड के प्रसिद्ध बुग्यालों में बेदनी बुग्याल और रूपकुंड के पास अली बुग्याल शामिल हैं।\n• हिमालय में अल्पाइन क्षेत्र आमतौर पर 3,500–4,000 मीटर की ऊंचाई से शुरू होता है, जो अक्षांश पर निर्भर करता है।\n• प्रवासी पशुओं द्वारा बुग्यालों का अति चराई एक प्रलेखित पारिस्थितिक खतरा है।"
+    }
+  },
+  {
+    "uuid": "025bf481-d77d-4a2a-a1fb-82c3fb70d85d",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Sub-ranges of the Himalayas and Peak Distribution"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Kumaon vs. Garhwal Himalaya — peak sub-range classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are associated with the Garhwal Himalaya sub-range, while one is not. Which one does NOT belong to the same sub-range as the others?\n\n(a) Trishul\n(b) Nanda Devi\n(c) Kamet\n(d) Milam Glacier",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) Nanda Devi is deceptive because it sits at the Garhwal–Kumaon boundary and students may think it belongs to the Kumaon sub-range, making it the 'odd one out' — when in fact Kedarnath Peak belongs to a different sub-region group.",
+      "elimination_logic": [
+        "Identify the shared attribute: Trishul, Nanda Devi, and Kamet are all peaks of the Garhwal Himalaya sub-range.",
+        "Milam Glacier is in the Kumaon Himalaya — it is not a peak of the Garhwal sub-range.",
+        "Eliminate (b): Nanda Devi, though near the Garhwal–Kumaon boundary, is classified as a Garhwal Himalaya peak (Chamoli district).",
+        "Select (d): Milam Glacier is a Kumaon feature, not a Garhwal Himalaya peak — it is the odd one out among these primarily Garhwal features."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Sub-range classification within the Himalayas — Garhwal vs. Kumaon — is a precision test in UPSC physical geography.\n\n• Option (a) — Trishul: A 7,120 m peak that is part of the Nanda Devi massif in Chamoli district, Garhwal Himalaya. It shares the Garhwal identity.\n• Option (b) — Nanda Devi: Located in Chamoli district, Garhwal Himalaya — despite being near the Kumaon boundary, it is classified as a Garhwal peak.\n• Option (c) — Kamet: At 7,756 m, Kamet is in Chamoli district, firmly within the Garhwal Himalaya — Uttarakhand's second highest peak.\n• Option (d) — Milam Glacier: The Milam Glacier is located in Munsiyari tehsil of Pithoragarh district in the Kumaon Himalaya — it is geographically, administratively, and sub-range-wise a Kumaon feature, making it the odd one out in this Garhwal-dominated list.\n\nValue Addition:\n• Milam Glacier feeds the Gori Ganga river, a tributary of the Kali (Sharda) river.\n• Pindari Glacier is another well-known Kumaon Himalaya glacier, distinct from Garhwal.\n• The Garhwal–Kumaon distinction also aligns with divisional administration in Uttarakhand."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन गढ़वाल हिमालय उप-श्रेणी से संबंधित हैं, जबकि एक नहीं है। कौन सा अन्य सभी के समान उप-श्रेणी से नहीं है?\n\n(a) त्रिशूल\n(b) नंदा देवी\n(c) कामेत\n(d) मिलम ग्लेशियर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) नंदा देवी भ्रमित करने वाला है क्योंकि यह गढ़वाल–कुमाऊं सीमा पर स्थित है और छात्र सोच सकते हैं कि यह कुमाऊं उप-श्रेणी से है, जिससे यह 'अलग' बन जाता है — जबकि वास्तव में केदारनाथ शिखर एक अलग उप-क्षेत्र समूह से है।",
+      "elimination_logic": [
+        "साझा विशेषता की पहचान करें: त्रिशूल, नंदा देवी, और कामेत सभी गढ़वाल हिमालय उप-श्रेणी के शिखर हैं।",
+        "मिलम ग्लेशियर कुमाऊं हिमालय में है — यह गढ़वाल उप-श्रेणी का शिखर नहीं है।",
+        "विकल्प (b) को हटाएं: नंदा देवी, यद्यपि गढ़वाल–कुमाऊं सीमा के पास है, इसे गढ़वाल हिमालय के शिखर के रूप में वर्गीकृत किया गया है (चमोली जिला)।",
+        "विकल्प (d) चुनें: मिलम ग्लेशियर कुमाऊं का तत्व है, गढ़वाल हिमालय का शिखर नहीं — यह इन मुख्यतः गढ़वाल तत्वों में अलग है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "हिमालय के भीतर उप-श्रेणी वर्गीकरण — गढ़वाल बनाम कुमाऊं — यूपीएससी भौतिक भूगोल में एक सटीकता परीक्षा है।\n\n• विकल्प (a) — त्रिशूल: 7,120 मीटर ऊँचा शिखर जो चमोली जिले, गढ़वाल हिमालय में नंदा देवी समूह का हिस्सा है। यह गढ़वाल पहचान साझा करता है।\n• विकल्प (b) — नंदा देवी: चमोली जिले, गढ़वाल हिमालय में स्थित — कुमाऊं सीमा के पास होने के बावजूद, इसे गढ़वाल शिखर के रूप में वर्गीकृत किया गया है।\n• विकल्प (c) — कामेत: 7,756 मीटर ऊँचा, कामेत चमोली जिले में है, जो गढ़वाल हिमालय के अंतर्गत आता है — उत्तराखंड का दूसरा सबसे ऊँचा शिखर।\n• विकल्प (d) — मिलम ग्लेशियर: मिलम ग्लेशियर कुमाऊं हिमालय के पिथौरागढ़ जिले के मुनस्यारी तहसील में स्थित है — यह भौगोलिक, प्रशासनिक और उप-श्रेणी के हिसाब से कुमाऊं का तत्व है, जो इसे इस गढ़वाल-प्रधान सूची में अलग बनाता है।\n\nमूल्यवर्धन:\n• मिलम ग्लेशियर गोरी गंगा नदी को जल प्रदान करता है, जो काली (शारदा) नदी की उपनदी है।\n• पिंडारी ग्लेशियर एक अन्य प्रसिद्ध कुमाऊं हिमालय ग्लेशियर है, जो गढ़वाल से अलग है।\n• गढ़वाल–कुमाऊं भेद उत्तराखंड के प्रभागीय प्रशासन से भी मेल खाता है।"
+    }
+  },
+  {
+    "uuid": "cda49ee2-3cae-4f8b-8d29-6b1ff92c7e99",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Administrative and Political Geography of Peak Locations",
+        "Kangchenjunga: Rank, Location, and Territorial Claims"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "two-statement-relationship",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sikkim merger 1975 — Kangchenjunga Indian border context",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the political and administrative geography of the Kangchenjunga region:\n\nStatement 1: Sikkim formally merged with India in 1975, after which Kangchenjunga became a peak on India's international border with Nepal.\nStatement 2: The Taplejung district of Nepal forms the Nepali side of the Kangchenjunga border region adjacent to Sikkim.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sikkim formally merged with India in 1975, after which Kangchenjunga became a peak on India's international border with Nepal.",
+          "verdict": "Correct",
+          "reason": "Sikkim joined India as its 22nd state in 1975. Prior to this merger, Kangchenjunga was on the border of the Kingdom of Sikkim (a protectorate) and Nepal. After 1975, it became a peak on India's border with Nepal."
+        },
+        {
+          "statement": "The Taplejung district of Nepal forms the Nepali side of the Kangchenjunga border region on India's east.",
+          "verdict": "Correct",
+          "reason": "Taplejung district in northeastern Nepal is indeed on the Nepali side of the Kangchenjunga massif, bordering Sikkim (India). This is the precise administrative geography of the region."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is deceptive because students who are uncertain about Sikkim's exact merger year (1975 vs. 1971 — the year Bangladesh was formed — or 1973 when Sikkim's political status was contested) may doubt Statement 1 and select 'both incorrect'.",
+      "elimination_logic": [
+        "Verify Statement 1: Sikkim became India's 22nd state in 1975 (the 36th Constitutional Amendment) — after which Kangchenjunga became an India–Nepal border peak. Statement 1 is correct.",
+        "Verify Statement 2: Taplejung district in northeastern Nepal is on the Nepali side of Kangchenjunga — this is accurate administrative geography. Statement 2 is correct.",
+        "Both statements are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap targets Sikkim's merger year. Students may confuse 1975 with 1971 (Bangladesh liberation, also a major 1970s event) or 1973 (when Sikkim's Chogyal requested Indian protection), leading them to doubt Statement 1. The precise year — 1975, through the 35th and 36th Constitutional Amendments — is the fact that must be pinned to confirm Statement 1 as correct.",
+      "final_explanation": "Sikkim's merger with India is both a political history fact and a physical geography anchor — it changed the nationality of Kangchenjunga's border.\n\n• Statement 1 — Correct: The Kingdom of Sikkim acceded to India in 1975 following a referendum; Sikkim became India's 22nd state through the 36th Constitutional Amendment (1975). Before this, Kangchenjunga was on the border between Sikkim (a protectorate) and Nepal. After 1975, it became a peak on India's international border.\n• Statement 2 — Correct: Taplejung district (also spelled Taplejunga) in northeastern Nepal is the Nepali administrative district that borders Sikkim along the Kangchenjunga massif — a precise geographic fact tested in state-level and district-level geography questions.\n\nValue Addition:\n• The 35th Constitutional Amendment (1974) gave Sikkim 'associated state' status; the 36th (1975) made it a full state.\n• Kangchenjunga's cultural reverence as 'Five Treasures of Snow' predates the 1975 merger and is rooted in Sikkimese Buddhist tradition.\n• India's border with Nepal in the east runs through the Kangchenjunga Himal — a detail relevant for GS-2 neighbourhood diplomacy questions."
+    },
+    "hi": {
+      "display_text": "कंचनजंगा क्षेत्र की राजनीतिक और प्रशासनिक भूगोल के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: सिक्किम ने औपचारिक रूप से 1975 में भारत के साथ विलय किया, जिसके बाद कंचनजंगा भारत और नेपाल की अंतरराष्ट्रीय सीमा पर एक शिखर बन गया।\nकथन 2: नेपाल के तप्लेजुंग जिला सिक्किम के समीप कंचनजंगा सीमा क्षेत्र के नेपाली पक्ष का गठन करता है।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sikkim formally merged with India in 1975, after which Kangchenjunga became a peak on India's international border with Nepal.",
+          "verdict": "Correct",
+          "reason": "Sikkim joined India as its 22nd state in 1975. Prior to this merger, Kangchenjunga was on the border of the Kingdom of Sikkim (a protectorate) and Nepal. After 1975, it became a peak on India's border with Nepal."
+        },
+        {
+          "statement": "The Taplejung district of Nepal forms the Nepali side of the Kangchenjunga border region on India's east.",
+          "verdict": "Correct",
+          "reason": "Taplejung district in northeastern Nepal is indeed on the Nepali side of the Kangchenjunga massif, bordering Sikkim (India). This is the precise administrative geography of the region."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is deceptive because students who are uncertain about Sikkim's exact merger year (1975 vs. 1971 — the year Bangladesh was formed — or 1973 when Sikkim's political status was contested) may doubt Statement 1 and select 'both incorrect'.",
+      "elimination_logic": [
+        "Verify Statement 1: Sikkim became India's 22nd state in 1975 (the 36th Constitutional Amendment) — after which Kangchenjunga became an India–Nepal border peak. Statement 1 is correct.",
+        "Verify Statement 2: Taplejung district in northeastern Nepal is on the Nepali side of Kangchenjunga — this is accurate administrative geography. Statement 2 is correct.",
+        "Both statements are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap targets Sikkim's merger year. Students may confuse 1975 with 1971 (Bangladesh liberation, also a major 1970s event) or 1973 (when Sikkim's Chogyal requested Indian protection), leading them to doubt Statement 1. The precise year — 1975, through the 35th and 36th Constitutional Amendments — is the fact that must be pinned to confirm Statement 1 as correct.",
+      "final_explanation": "Sikkim's merger with India is both a political history fact and a physical geography anchor — it changed the nationality of Kangchenjunga's border.\n\n• Statement 1 — Correct: The Kingdom of Sikkim acceded to India in 1975 following a referendum; Sikkim became India's 22nd state through the 36th Constitutional Amendment (1975). Before this, Kangchenjunga was on the border between Sikkim (a protectorate) and Nepal. After 1975, it became a peak on India's international border.\n• Statement 2 — Correct: Taplejung district (also spelled Taplejunga) in northeastern Nepal is the Nepali administrative district that borders Sikkim along the Kangchenjunga massif — a precise geographic fact tested in state-level and district-level geography questions.\n\nValue Addition:\n• The 35th Constitutional Amendment (1974) gave Sikkim 'associated state' status; the 36th (1975) made it a full state.\n• Kangchenjunga's cultural reverence as 'Five Treasures of Snow' predates the 1975 merger and is rooted in Sikkimese Buddhist tradition.\n• India's border with Nepal in the east runs through the Kangchenjunga Himal — a detail relevant for GS-2 neighbourhood diplomacy questions."
+    }
+  },
+  {
+    "uuid": "e5ca51a7-99b5-4429-b4ab-ac6ba0c943ce",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Glaciers Associated with Major Peaks",
+        "Rivers Originating Near Major Peaks"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Zemu Glacier — largest glacier eastern Himalayas, Kangchenjunga",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The ________ is the largest glacier in the eastern Himalayas and originates from the massif of the third highest peak in the world, contributing to the headwaters of a river that flows through Sikkim into West Bengal.\n\n(a) Siachen Glacier\n(b) Gangotri Glacier\n(c) Baltoro Glacier\n(d) Zemu Glacier",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Gangotri is the most famous Himalayan glacier and students associate 'largest' with 'most famous', making them choose Gangotri without checking the 'eastern Himalayas' qualifier.",
+      "elimination_logic": [
+        "The blank requires the largest glacier in the eastern Himalayas specifically — this eliminates any western Himalayan or Karakoram glacier.",
+        "Eliminate (a) Siachen: Siachen is in the Karakoram, not the eastern Himalayas.",
+        "Eliminate (b) Gangotri: Gangotri is in the western Garhwal Himalaya — not the eastern Himalayas.",
+        "Eliminate (c) Baltoro: Baltoro is in the Karakoram Range — not the Himalayas at all.",
+        "Select (d) Zemu: Zemu Glacier in Sikkim, originating from the Kangchenjunga massif, is the largest glacier in the eastern Himalayas."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Glacier identification by region is a recurring UPSC physical geography test.\n\n• Option (a) — Siachen: The world's second-longest non-polar glacier, located in the Karakoram Range in Ladakh — not in the eastern Himalayas.\n• Option (b) — Gangotri: A major glacier in Uttarkashi district, Uttarakhand, source of the Bhagirathi river — located in the western Garhwal Himalaya, not the eastern Himalayas.\n• Option (c) — Baltoro: Located in the Karakoram Range in Gilgit-Baltistan near K2 — not a Himalayan glacier.\n• Option (d) — Correct: Zemu Glacier in North Sikkim originates from the Kangchenjunga massif and is the largest glacier in the eastern Himalayas. The Teesta river's tributaries are fed by Zemu's meltwater.\n\nValue Addition:\n• Zemu Glacier is approximately 26 km long — one of India's longest glaciers.\n• Milam and Pindari glaciers in Kumaon are smaller Himalayan glaciers associated with the Nanda Devi region.\n• Glaciers in the eastern Himalayas receive more precipitation (from Bay of Bengal monsoon) than those in the Karakoram."
+    },
+    "hi": {
+      "display_text": "________ पूर्वी हिमालय का सबसे बड़ा ग्लेशियर है और विश्व के तीसरे सबसे ऊँचे शिखर के मासीफ से उत्पन्न होता है, जो सिक्किम से होकर पश्चिम बंगाल में बहने वाली एक नदी के स्रोत में योगदान देता है।\n\n(a) सियाचिन ग्लेशियर\n(b) गंगोत्री ग्लेशियर\n(c) बाल्टोरो ग्लेशियर\n(d) ज़ेमू ग्लेशियर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि गंगोत्री सबसे प्रसिद्ध हिमालयी ग्लेशियर है और छात्र 'सबसे बड़ा' को 'सबसे प्रसिद्ध' से जोड़ते हैं, जिससे वे 'पूर्वी हिमालय' की शर्त जांचे बिना गंगोत्री चुन लेते हैं।",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए विशेष रूप से पूर्वी हिमालय का सबसे बड़ा ग्लेशियर चाहिए — इससे कोई भी पश्चिमी हिमालय या काराकोरम ग्लेशियर बाहर हो जाता है।",
+        "(a) सियाचिन को बाहर करें: सियाचिन काराकोरम में है, पूर्वी हिमालय में नहीं।",
+        "(b) गंगोत्री को बाहर करें: गंगोत्री पश्चिमी गढ़वाल हिमालय में है — पूर्वी हिमालय में नहीं।",
+        "(c) बाल्टोरो को बाहर करें: बाल्टोरो काराकोरम रेंज में है — हिमालय में नहीं।",
+        "(d) ज़ेमू को चुनें: सिक्किम में स्थित ज़ेमू ग्लेशियर, कंचनजंगा मासीफ से उत्पन्न, पूर्वी हिमालय का सबसे बड़ा ग्लेशियर है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "क्षेत्र के अनुसार ग्लेशियर की पहचान UPSC भौतिक भूगोल परीक्षा में बार-बार आती है।\n\n• विकल्प (a) — सियाचिन: दुनिया का दूसरा सबसे लंबा गैर-ध्रुवीय ग्लेशियर, जो काराकोरम रेंज, लद्दाख में स्थित है — पूर्वी हिमालय में नहीं।\n• विकल्प (b) — गंगोत्री: उत्तरकाशी जिले, उत्तराखंड का प्रमुख ग्लेशियर, भागीरथी नदी का स्रोत — पश्चिमी गढ़वाल हिमालय में है, पूर्वी हिमालय में नहीं।\n• विकल्प (c) — बाल्टोरो: काराकोरम रेंज, गिलगित-बाल्टिस्तान में K2 के पास स्थित — हिमालयी ग्लेशियर नहीं है।\n• विकल्प (d) — सही: उत्तर सिक्किम में स्थित ज़ेमू ग्लेशियर कंचनजंगा मासीफ से उत्पन्न होता है और पूर्वी हिमालय का सबसे बड़ा ग्लेशियर है। तीस्ता नदी की उपनदियाँ ज़ेमू के पिघलने वाले पानी से पोषित होती हैं।\n\nमूल्यवर्धन:\n• ज़ेमू ग्लेशियर लगभग 26 किमी लंबा है — भारत के सबसे लंबे ग्लेशियरों में से एक।\n• कुमाऊं के मिलम और पिंडारी ग्लेशियर नंदा देवी क्षेत्र से जुड़े छोटे हिमालयी ग्लेशियर हैं।\n• पूर्वी हिमालय के ग्लेशियरों को काराकोरम की तुलना में अधिक वर्षा मिलती है (बंगाल की खाड़ी मानसून से)।"
+    }
+  },
+  {
+    "uuid": "6ac44551-0d62-456c-80f3-30ab5fbbe622",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Climate and Orographic Effects of Major Peaks",
+        "Kangchenjunga: Rank, Location, and Territorial Claims"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Kangchenjunga orographic rainfall — windward Sikkim effect",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the climatic effects of the Kangchenjunga massif:\n\n1. The southern and western slopes of Kangchenjunga receive heavy orographic rainfall because they face the moisture-laden southwest monsoon winds.\n2. The Tibetan side (leeward side) of Kangchenjunga lies in a pronounced rain shadow and therefore has arid conditions with sparse vegetation.\n3. The orographic rainfall caused by Kangchenjunga makes Sikkim one of the driest states in India.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The southern and western slopes of Kangchenjunga receive heavy orographic rainfall because they face the moisture-laden southwest monsoon winds.",
+          "verdict": "Correct",
+          "reason": "Sikkim's windward slopes facing the Bay of Bengal branch of the southwest monsoon receive extremely heavy rainfall — Mawsynram and Cherrapunji are nearby but Sikkim's western slopes also receive among India's highest precipitation due to this orographic effect."
+        },
+        {
+          "statement": "The Tibetan side (leeward side) of Kangchenjunga lies in a pronounced rain shadow and therefore has arid conditions with sparse vegetation.",
+          "verdict": "Correct",
+          "reason": "The Tibetan plateau on the leeward/northern side of Kangchenjunga receives very little precipitation as the Himalayas block the monsoon, creating classic rain shadow arid conditions."
+        },
+        {
+          "statement": "The orographic rainfall caused by Kangchenjunga makes Sikkim one of the driest states in India.",
+          "verdict": "Incorrect",
+          "reason": "The orographic effect of Kangchenjunga makes Sikkim one of the wettest states in India — not driest. This statement reverses the direction of the climatic impact, making it a scope-extension/reversed-causation trap."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students who confirm Statements 1 and 2 as correct but carelessly read Statement 3 as 'wettest' instead of 'driest' would select all three — but the statement says 'driest', which is factually reversed.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Southwest monsoon hits Kangchenjunga's windward slopes — heavy orographic rainfall results. Correct.",
+        "Evaluate Statement 2: Tibetan leeward side loses moisture after crossing the peaks — rain shadow aridity results. Correct.",
+        "Evaluate Statement 3: The claim makes Sikkim one of 'driest' — but orographic rainfall makes Sikkim extremely wet, not dry. Statement 3 is incorrect.",
+        "Only Statements 1 and 2 are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 uses a reversed-outcome trap embedded in otherwise familiar orographic language. Students who process only 'Kangchenjunga causes orographic rainfall in Sikkim' and skip reading 'one of the driest states' carefully will mark Statement 3 correct, having mentally substituted 'wettest' for 'driest'. Reading every qualifier in a UPSC statement is essential — the single word 'driest' flips Statement 3 from correct to incorrect.",
+      "final_explanation": "Kangchenjunga's role in shaping Sikkim's climate is a geography-climatology crossover.\n\n• Statement 1 — Correct: The southwest monsoon, especially the Bay of Bengal branch, strikes Kangchenjunga's windward southern and western slopes, producing heavy orographic rainfall. Sikkim consistently ranks among India's highest rainfall states, with parts receiving over 3,000 mm annually.\n• Statement 2 — Correct: The Tibetan plateau on Kangchenjunga's northern leeward side lies in a pronounced rain shadow. The mountains block moisture, creating the cold, arid conditions characteristic of the Tibetan plateau.\n• Statement 3 — Incorrect: The orographic effect makes Sikkim one of the wettest (not driest) states in India. This reversal is the critical error.\n\nValue Addition:\n• Mawsynram (Meghalaya) receives the world's highest average annual rainfall — Sikkim's western slopes benefit from the same Bay of Bengal moisture branch.\n• Orographic lift: moist air rises, cools, condenses → precipitation on windward side; dry, warm air descends on leeward side (Foehn/Chinook effect).\n• Sikkim's high rainfall supports its dense biodiversity, including red panda habitat in rhododendron forests."
+    },
+    "hi": {
+      "display_text": "कंचनजंगा पर्वतमाला के जलवायु प्रभावों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. कंचनजंगा के दक्षिणी और पश्चिमी ढलान भारी ऑरोग्राफिक वर्षा प्राप्त करते हैं क्योंकि वे नमी से भरे दक्षिण-पश्चिम मानसूनी हवाओं की ओर मुखातिब हैं।\n2. कंचनजंगा का तिब्बती पक्ष (लीवार्ड साइड) एक स्पष्ट वर्षा छाया क्षेत्र में स्थित है और इसलिए वहाँ शुष्क परिस्थितियाँ और विरल वनस्पति है।\n3. कंचनजंगा द्वारा उत्पन्न ऑरोग्राफिक वर्षा सिक्किम को भारत के सबसे शुष्क राज्यों में से एक बनाती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कंचनजंगा के दक्षिणी और पश्चिमी ढलान भारी ऑरोग्राफिक वर्षा प्राप्त करते हैं क्योंकि वे नमी से भरे दक्षिण-पश्चिम मानसूनी हवाओं की ओर मुखातिब हैं।",
+          "verdict": "सही है",
+          "reason": "सिक्किम के विंडवर्ड ढलान जो बंगाल की खाड़ी शाखा की ओर मुखातिब हैं, अत्यंत भारी वर्षा प्राप्त करते हैं — मावसिनराम और चेरापूंजी इसके निकट हैं लेकिन सिक्किम के पश्चिमी ढलान भी इस ऑरोग्राफिक प्रभाव के कारण भारत में सबसे अधिक वर्षा प्राप्त करने वाले क्षेत्रों में हैं।"
+        },
+        {
+          "statement": "कंचनजंगा का तिब्बती पक्ष (लीवार्ड साइड) एक स्पष्ट वर्षा छाया क्षेत्र में स्थित है और इसलिए वहाँ शुष्क परिस्थितियाँ और विरल वनस्पति है।",
+          "verdict": "सही है",
+          "reason": "कंचनजंगा के लीवार्ड/उत्तर दिशा में तिब्बती पठार को बहुत कम वर्षा प्राप्त होती है क्योंकि हिमालय मानसून को अवरुद्ध करता है, जिससे पारंपरिक वर्षा छाया शुष्क परिस्थितियाँ बनती हैं।"
+        },
+        {
+          "statement": "कंचनजंगा द्वारा उत्पन्न ऑरोग्राफिक वर्षा सिक्किम को भारत के सबसे शुष्क राज्यों में से एक बनाती है।",
+          "verdict": "गलत है",
+          "reason": "कंचनजंगा का ऑरोग्राफिक प्रभाव सिक्किम को भारत के सबसे गीले राज्यों में से एक बनाता है — न कि सबसे शुष्क। यह कथन जलवायु प्रभाव की दिशा को उलट देता है, जो एक स्कोप-एक्सटेंशन/उलटा कारण जाल है।"
+        }
+      ],
+      "strong_distractor": "विकल्प (d) भ्रमित करने वाला है क्योंकि छात्र जो कथन 1 और 2 को सही मानते हैं लेकिन कथन 3 को 'सबसे गीला' के बजाय 'सबसे शुष्क' पढ़ लेते हैं, वे तीनों को सही मानकर विकल्प (d) चुन सकते हैं — जबकि कथन में 'सबसे शुष्क' लिखा है, जो तथ्यात्मक रूप से उलटा है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: दक्षिण-पश्चिम मानसून कंचनजंगा के विंडवर्ड ढलानों पर पड़ता है — भारी ऑरोग्राफिक वर्षा होती है। सही।",
+        "कथन 2 का मूल्यांकन करें: तिब्बती लीवार्ड साइड पर्वतों को पार करने के बाद नमी खो देता है — वर्षा छाया शुष्कता होती है। सही।",
+        "कथन 3 का मूल्यांकन करें: यह दावा करता है कि सिक्किम 'सबसे शुष्क' है — लेकिन ऑरोग्राफिक वर्षा सिक्किम को अत्यंत गीला बनाती है, शुष्क नहीं। कथन 3 गलत है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में उलटा परिणाम जाल है जो अन्यथा परिचित ऑरोग्राफिक भाषा में छिपा है। जो छात्र केवल 'कंचनजंगा सिक्किम में ऑरोग्राफिक वर्षा करता है' पढ़ते हैं और 'सबसे शुष्क राज्यों में से एक' को ध्यान से नहीं पढ़ते, वे कथन 3 को सही मान लेंगे, मानसिक रूप से 'सबसे गीला' को 'सबसे शुष्क' के स्थान पर रखकर। UPSC के प्रत्येक कथन में हर एक शब्द को ध्यान से पढ़ना आवश्यक है — 'सबसे शुष्क' शब्द कथन 3 को सही से गलत में बदल देता है।",
+      "final_explanation": "कंचनजंगा की सिक्किम के जलवायु निर्माण में भूमिका भूगोल-जलवायु विज्ञान का संगम है।\n\n• कथन 1 — सही: दक्षिण-पश्चिम मानसून, विशेषकर बंगाल की खाड़ी शाखा, कंचनजंगा के विंडवर्ड दक्षिणी और पश्चिमी ढलानों पर पड़ती है, जिससे भारी ऑरोग्राफिक वर्षा होती है। सिक्किम लगातार भारत के उच्चतम वर्षा प्राप्त राज्यों में से एक है, जहाँ कुछ हिस्सों में वार्षिक 3,000 मिमी से अधिक वर्षा होती है।\n• कथन 2 — सही: कंचनजंगा के उत्तरी लीवार्ड साइड पर तिब्बती पठार एक स्पष्ट वर्षा छाया क्षेत्र में है। पर्वत नमी को अवरुद्ध करते हैं, जिससे तिब्बती पठार की ठंडी, शुष्क परिस्थितियाँ बनती हैं।\n• कथन 3 — गलत: ऑरोग्राफिक प्रभाव सिक्किम को भारत के सबसे गीले (न कि सबसे शुष्क) राज्यों में से एक बनाता है। यह उलटफेर मुख्य त्रुटि है।\n\nमूल्यवर्धन:\n• मावसिनराम (मेघालय) विश्व में सबसे अधिक औसत वार्षिक वर्षा प्राप्त करता है — सिक्किम के पश्चिमी ढलान भी उसी बंगाल की खाड़ी की नमी शाखा से लाभान्वित होते हैं।\n• ऑरोग्राफिक लिफ्ट: नम हवा ऊपर उठती है, ठंडी होती है, संघनित होती है → विंडवर्ड साइड पर वर्षा; शुष्क, गर्म हवा लीवार्ड साइड पर उतरती है (फोएन/चिनूक प्रभाव)।\n• सिक्किम की उच्च वर्षा उसकी घनी जैव विविधता का समर्थन करती है, जिसमें रोडोडेंड्रॉन जंगलों में लाल पांडा का आवास शामिल है।"
+    }
+  },
+  {
+    "uuid": "919492e7-f6e7-45f5-a4ea-58463940a0b8",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Cultural and Mythological Significance of Major Peaks",
+        "Nanda Devi: Highest Peak Entirely within India"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nanda Devi Raj Jat Yatra — 12-year pilgrimage cycle",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following religious traditions is associated with a 12-year pilgrimage cycle celebrating the tutelary goddess of Uttarakhand, whose name is also that of India's highest peak lying entirely within the country?\n\n(a) Amarnath Yatra, conducted annually in Jammu & Kashmir\n(b) Kedarnath pilgrimage, conducted annually as part of the Char Dham circuit\n(c) Nanda Devi Raj Jat Yatra, a pilgrimage held once every twelve years in Uttarakhand\n(d) Kailash Mansarovar Yatra, a trans-Himalayan pilgrimage to a sacred lake in Tibet",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Kedarnath is the most famous pilgrimage destination in Uttarakhand (Char Dham) and students may attribute major religious yatras to the Kedarnath region rather than to Nanda Devi.",
+      "elimination_logic": [
+        "Eliminate (a): Amarnath Yatra is in Jammu & Kashmir and is an annual event — not a 12-year cycle linked to Nanda Devi.",
+        "Eliminate (b): Kedarnath is a Char Dham site with an annual pilgrimage — not a 12-year cycle yatra linked to a peak goddess.",
+        "Eliminate (d): Kailash Mansarovar Yatra is a trans-Himalayan pilgrimage to Lake Mansarovar in Tibet — not associated with Nanda Devi's 12-year cycle.",
+        "Select (c): Nanda Devi Raj Jat Yatra is the 12-year pilgrimage in Uttarakhand celebrating Nanda Devi as the tutelary goddess — one of Asia's largest religious journeys."
+      ],
+      "upsc_trap_explanation": "The entity-swap here is between Kedarnath and Nanda Devi as the primary religious focus in Uttarakhand. Kedarnath's fame from the Char Dham circuit and the 2013 disaster makes it the first Uttarakhand pilgrimage name in students' minds. The Nanda Devi Raj Jat Yatra, though one of Asia's largest religious events, is less prominently covered in standard preparation material, making it the answer that separates deep from superficial learners.",
+      "final_explanation": "Nanda Devi's cultural significance extends beyond geography into living religious tradition.\n\n• Option (a) — Amarnath Yatra: An annual pilgrimage in J&K to the Amarnath cave shrine — no 12-year cycle, no Nanda Devi connection.\n• Option (b) — Kedarnath: A Char Dham shrine in Rudraprayag district with annual pilgrimage season — not a 12-year yatra linked to a goddess peak.\n• Option (c) — Correct: Nanda Devi Raj Jat Yatra is held every 12 years in Uttarakhand, following a route through the Garhwal and Kumaon regions. It celebrates Nanda Devi as the tutelary goddess of the region. The last major Raj Jat was in 2014.\n• Option (d) — Kailash Mansarovar Yatra: A trans-Himalayan pilgrimage to Tibet's sacred lake and mountain — not a 12-year cycle, and not associated with Nanda Devi.\n\nValue Addition:\n• The Nanda Devi Raj Jat Yatra typically involves a four-horned ram (chaudasa) that leads the procession — a unique cultural tradition.\n• Nanda Devi is the state goddess of Uttarakhand and the Nanda Ashtami festival is also associated with her.\n• The 12-year cycle coincides with the Hindu astrological Jupiter cycle (Barhana or Guru cycle)."
+    },
+    "hi": {
+      "display_text": "उत्तराखंड की संरक्षक देवी के रूप में जानी जाने वाली और जिसका नाम भारत की सबसे ऊँची पूरी तरह से देश में स्थित चोटी के नाम पर है, निम्नलिखित धार्मिक परंपराओं में से कौन-सी 12-वर्षीय तीर्थयात्रा चक्र से जुड़ी है?\n\n(a) अमरनाथ यात्रा, जो जम्मू और कश्मीर में वार्षिक रूप से आयोजित होती है\n(b) केदारनाथ तीर्थयात्रा, जो चार धाम यात्रा के हिस्से के रूप में वार्षिक रूप से आयोजित होती है\n(c) नंदा देवी राज जात यात्रा, जो उत्तराखंड में बारह वर्षों में एक बार आयोजित होती है\n(d) कैलाश मानसरोवर यात्रा, जो तिब्बत के एक पवित्र झील की ट्रांस-हिमालयन तीर्थयात्रा है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि केदारनाथ उत्तराखंड (चार धाम) में सबसे प्रसिद्ध तीर्थ स्थल है और छात्र प्रमुख धार्मिक यात्राओं को नंदा देवी के बजाय केदारनाथ क्षेत्र से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: अमरनाथ यात्रा जम्मू और कश्मीर में होती है और यह एक वार्षिक आयोजन है — न कि नंदा देवी से जुड़ा 12-वर्षीय चक्र।",
+        "(b) को हटाएं: केदारनाथ चार धाम स्थल है जहाँ वार्षिक तीर्थयात्रा होती है — न कि किसी पर्वत देवी से जुड़ी 12-वर्षीय यात्रा।",
+        "(d) को हटाएं: कैलाश मानसरोवर यात्रा तिब्बत के मानसरोवर झील की ट्रांस-हिमालयन तीर्थयात्रा है — नंदा देवी के 12-वर्षीय चक्र से संबंधित नहीं।",
+        "(c) को चुनें: नंदा देवी राज जात यात्रा उत्तराखंड में हर 12 वर्ष में आयोजित होती है, जो नंदा देवी को क्षेत्र की संरक्षक देवी के रूप में मनाती है — एशिया की सबसे बड़ी धार्मिक यात्राओं में से एक।"
+      ],
+      "upsc_trap_explanation": "यहाँ केदारनाथ और नंदा देवी के बीच धार्मिक केंद्र के रूप में पहचान का स्थानांतरण है। केदारनाथ की चार धाम यात्रा और 2013 की आपदा के कारण यह उत्तराखंड की प्रमुख तीर्थयात्रा के रूप में छात्रों के मन में पहले स्थान पर है। जबकि नंदा देवी राज जात यात्रा, जो एशिया की सबसे बड़ी धार्मिक यात्राओं में से एक है, सामान्य तैयारी सामग्री में कम प्रमुखता से आती है, इसलिए यह गहरे और सतही शिक्षार्थियों के बीच अंतर करती है।",
+      "final_explanation": "नंदा देवी का सांस्कृतिक महत्व केवल भौगोलिक नहीं बल्कि जीवंत धार्मिक परंपरा में भी है।\n\n• विकल्प (a) — अमरनाथ यात्रा: जम्मू-कश्मीर में अमरनाथ गुफा मंदिर की वार्षिक यात्रा — न तो 12-वर्षीय चक्र है, न ही नंदा देवी से संबंध।\n• विकल्प (b) — केदारनाथ: रुद्रप्रयाग जिले में चार धाम का मंदिर, वार्षिक तीर्थयात्रा का स्थान — नंदा देवी जैसी देवी से जुड़ी 12-वर्षीय यात्रा नहीं।\n• विकल्प (c) — सही: नंदा देवी राज जात यात्रा हर 12 वर्ष में उत्तराखंड में होती है, जिसमें गढ़वाल और कुमाऊं क्षेत्र से होकर मार्ग तय किया जाता है। यह नंदा देवी को क्षेत्र की संरक्षक देवी के रूप में मनाती है। अंतिम प्रमुख राज जात 2014 में हुआ था।\n• विकल्प (d) — कैलाश मानसरोवर यात्रा: तिब्बत के पवित्र झील और पर्वत की ट्रांस-हिमालयन तीर्थयात्रा — न तो 12-वर्षीय चक्र है, न ही नंदा देवी से जुड़ी।\n\nमूल्यवर्धन:\n• नंदा देवी राज जात यात्रा में आमतौर पर एक चौदह सिंग वाला मेमना (चौदासा) होता है जो जुलूस का नेतृत्व करता है — एक अनूठी सांस्कृतिक परंपरा।\n• नंदा देवी उत्तराखंड की राज्य देवी हैं और नंदा अष्टमी त्योहार भी उनसे जुड़ा है।\n• 12-वर्षीय चक्र हिंदू ज्योतिषीय गुरु (बृहस्पति) चक्र (बरहना या गुरु चक्र) से मेल खाता है।"
+    }
+  },
+  {
+    "uuid": "256ed0fa-0e44-4f9b-b575-94b80bad61ea",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Trishul, Kedarnath, and Other Notable Peaks near Nanda Devi",
+        "Highest Peaks in Each Himalayan State of India"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Kedarnath Peak vs. Kedarnath Temple — distinct geographic entities",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Kedarnath Peak — Co-located with Kedarnath Temple in Rudraprayag district of Uttarakhand\n(b) Nanda Devi — Highest peak lying entirely within India's sovereign territorial boundaries at 7,816 m\n(c) Trishul — First peak above 8,000 m to be successfully climbed, in the Nanda Devi massif\n(d) Kamet — Second highest peak in Uttarakhand, located in the Kumaon Himalaya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students associate 'Kedarnath' exclusively with the temple site and may accept that Kedarnath Peak and Kedarnath Temple share the same location in Rudraprayag district, when in fact the peak is a distinct geographic feature.",
+      "elimination_logic": [
+        "Evaluate (a): Kedarnath Peak (6,940 m) and Kedarnath Temple are distinct — the temple is the pilgrimage site in Rudraprayag but the peak is a separate mountain feature. Claiming they are 'co-located' is incorrect.",
+        "Evaluate (b): Nanda Devi at 7,816 m is described as the highest peak lying entirely within India's sovereign territory — this is factually correct and precisely stated.",
+        "Evaluate (c): Trishul is part of the Nanda Devi massif area at 7,120 m — the first ascent was in 1907, making it the first peak above 7,000 m climbed. The pairing with 'first 8,000 m peak climbed' is incorrect.",
+        "Evaluate (d): Kamet is in Garhwal Himalaya, Chamoli district — not Kumaon. The state attribution is correct (Uttarakhand) but the sub-range attribution (Kumaon vs Garhwal) is wrong.",
+        "Only option (b) is correctly matched — select (b)."
+      ],
+      "upsc_trap_explanation": "Option (a) performs a conflation between Kedarnath Peak and Kedarnath Temple — two entities sharing a name but not a location. This is one of UPSC's most reusable traps in Uttarakhand geography. Students overwhelmingly know 'Kedarnath' as a temple destination and automatically assume any reference to Kedarnath Peak points to the same site. The mountain peak Kedarnath (6,940 m) is a separate geographic entity, tested here precisely to exploit this conflation.",
+      "final_explanation": "Name-conflation between religious sites and mountain peaks is a classic UPSC design in Uttarakhand geography.\n\n• Option (a) — Incorrectly matched: Kedarnath Peak (6,940 m) is a mountain in the Garhwal Himalaya; Kedarnath Temple is the Char Dham pilgrimage site in Rudraprayag district. They share a name and general region but are distinct geographic features — not co-located at the same site.\n• Option (b) — Correctly matched: Nanda Devi (7,816 m) in Chamoli district, Uttarakhand, is the highest peak lying entirely within India's international boundaries — a precisely stated and accurate claim.\n• Option (c) — Incorrectly matched: Trishul (7,120 m) was the first peak above 7,000 m to be climbed (1907) — not the first peak above 8,000 m. No peak above 8,000 m was climbed until Annapurna in 1950.\n• Option (d) — Incorrectly matched: Kamet (7,756 m) belongs to the Garhwal Himalaya (Chamoli district), not the Kumaon Himalaya. The state (Uttarakhand) is correct but the sub-range is wrong.\n\nValue Addition:\n• Kedarnath Temple was severely damaged in the June 2013 Uttarakhand floods — one of India's worst natural disasters.\n• The four Char Dham sites in Uttarakhand are Badrinath, Kedarnath, Gangotri, and Yamunotri.\n• Trishul's 1907 first ascent was by Tom Longstaff — predating the Himalayan Club era."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा सही मेल खाता है?\n\n(a) केदारनाथ पीक — उत्तराखंड के रुद्रप्रयाग जिले में केदारनाथ मंदिर के साथ एक ही स्थान पर\n(b) नंदा देवी — 7,816 मीटर ऊँचा, जो पूरी तरह से भारत की संप्रभु क्षेत्रीय सीमाओं के भीतर स्थित सबसे ऊँचा शिखर है\n(c) त्रिशूल — नंदा देवी समूह में 8,000 मीटर से ऊपर पहली सफलतापूर्वक चढ़ी गई चोटी\n(d) कामेट — उत्तराखंड का दूसरा सबसे ऊँचा शिखर, जो कुमाऊं हिमालय में स्थित है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र 'केदारनाथ' को केवल मंदिर स्थल से जोड़ते हैं और मान लेते हैं कि केदारनाथ पीक और केदारनाथ मंदिर दोनों रुद्रप्रयाग जिले में एक ही स्थान पर हैं, जबकि वास्तव में पीक एक अलग भौगोलिक विशेषता है।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: केदारनाथ पीक (6,940 मीटर) और केदारनाथ मंदिर अलग-अलग हैं — मंदिर रुद्रप्रयाग में तीर्थ स्थल है लेकिन पीक एक पृथक पर्वतीय स्थल है। यह कहना कि वे 'साथ-साथ' हैं, गलत है।",
+        "(b) का मूल्यांकन करें: नंदा देवी 7,816 मीटर ऊँची है और पूरी तरह से भारत के संप्रभु क्षेत्र में स्थित है — यह तथ्यात्मक रूप से सही और सटीक रूप से व्यक्त किया गया है।",
+        "(c) का मूल्यांकन करें: त्रिशूल नंदा देवी समूह का हिस्सा है जिसकी ऊँचाई 7,120 मीटर है — इसकी पहली चढ़ाई 1907 में हुई थी, जो 7,000 मीटर से ऊपर की पहली चढ़ाई थी। 'पहली 8,000 मीटर की चढ़ाई' के साथ जोड़ी गलत है।",
+        "(d) का मूल्यांकन करें: कामेट गढ़वाल हिमालय में है, चमोली जिले में — कुमाऊं में नहीं। राज्य का उल्लेख सही है (उत्तराखंड) लेकिन उप-श्रेणी (कुमाऊं बनाम गढ़वाल) गलत है।",
+        "केवल विकल्प (b) सही मेल खाता है — (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) केदारनाथ पीक और केदारनाथ मंदिर के बीच भ्रम करता है — दो अलग-अलग संस्थाएँ जो नाम साझा करती हैं लेकिन स्थान नहीं। यह उत्तराखंड भूगोल में UPSC का एक बार-बार उपयोग किया जाने वाला जाल है। छात्र 'केदारनाथ' को तीर्थ स्थल के रूप में जानते हैं और स्वचालित रूप से मान लेते हैं कि केदारनाथ पीक भी उसी स्थान पर है। केदारनाथ पर्वत शिखर (6,940 मीटर) एक अलग भौगोलिक इकाई है, जिसे इस भ्रम का लाभ उठाने के लिए यहाँ परखा गया है।",
+      "final_explanation": "धार्मिक स्थलों और पर्वत चोटियों के बीच नाम-संबंधित भ्रम उत्तराखंड भूगोल में UPSC की एक क्लासिक डिज़ाइन है।\n\n• विकल्प (a) — गलत मेल: केदारनाथ पीक (6,940 मीटर) गढ़वाल हिमालय में एक पर्वत है; केदारनाथ मंदिर रुद्रप्रयाग जिले में चार धाम तीर्थ स्थल है। वे नाम और सामान्य क्षेत्र साझा करते हैं लेकिन अलग-अलग भौगोलिक विशेषताएँ हैं — एक ही स्थान पर नहीं हैं।\n• विकल्प (b) — सही मेल: नंदा देवी (7,816 मीटर) चमोली जिले, उत्तराखंड में भारत की अंतरराष्ट्रीय सीमाओं के भीतर पूरी तरह स्थित सबसे ऊँचा शिखर है — एक सटीक और सही दावा।\n• विकल्प (c) — गलत मेल: त्रिशूल (7,120 मीटर) 7,000 मीटर से ऊपर पहली चढ़ाई (1907) थी — 8,000 मीटर से ऊपर की पहली चढ़ाई नहीं। 8,000 मीटर से ऊपर की पहली चढ़ाई 1950 में अन्नपूर्णा पर हुई।\n• विकल्प (d) — गलत मेल: कामेट (7,756 मीटर) गढ़वाल हिमालय (चमोली जिला) में है, कुमाऊं हिमालय में नहीं। राज्य (उत्तराखंड) सही है लेकिन उप-श्रेणी गलत है।\n\nमूल्यवर्धन:\n• जून 2013 के उत्तराखंड बाढ़ में केदारनाथ मंदिर को गंभीर क्षति पहुँची — भारत की सबसे भयंकर प्राकृतिक आपदाओं में से एक।\n• उत्तराखंड के चार धाम स्थल हैं: बद्रीनाथ, केदारनाथ, गंगोत्री, और यमुनोत्री।\n• त्रिशूल की 1907 की पहली चढ़ाई टॉम लॉन्गस्टाफ द्वारा की गई थी — हिमालयन क्लब युग से पहले।"
+    }
+  },
+  {
+    "uuid": "ffa9d8a4-6ea1-4886-b5e6-0df799fb0dd1",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Kangchenjunga Conservation Area and Transboundary Significance",
+        "National Parks and Protected Areas Linked to Major Peaks"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Kanchenjunga NP — UNESCO Mixed Heritage 2016 cultural-natural designation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Kanchenjunga National Park in Sikkim was inscribed as a UNESCO World Heritage Site in 2016 under the 'Mixed Heritage' category, recognising both its natural biodiversity and its cultural significance.\n\nReason (R): The park was granted UNESCO World Heritage status primarily because it constitutes a critical transboundary biodiversity corridor shared with Nepal's Kangchenjunga Conservation Area across the international border.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who know Kanchenjunga NP is a UNESCO site and know the sacred peak tradition may instinctively assume the cultural tradition is the reason for the UNESCO designation, merging two true facts into a false causal link.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Kanchenjunga National Park received UNESCO World Heritage status in 2016 under the Mixed Heritage category. A is factually correct.",
+        "Step 2: Is Reason (R) correct? — R states the park was inscribed because it is a transboundary biodiversity corridor shared with Nepal's Kangchenjunga Conservation Area. While transboundary significance is ecologically important, the UNESCO inscription specifically cited Kanchenjunga's Mixed Heritage status (natural AND cultural values — including the Five Treasures of Snow tradition). The 'transboundary corridor' alone is not what drove the Mixed Heritage classification. R is not precisely correct as the primary reason for UNESCO inscription.",
+        "Step 3: Causal link — A is correct; R contains a partial truth but misattributes the primary cause of the UNESCO designation. A is correct but R is imprecise/incorrect as the driving reason.",
+        "A is correct but R is incorrect — the answer is (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Kanchenjunga National Park's UNESCO inscription carries a specific designation that distinguishes it from other Heritage Sites — and that distinction is what this question tests.\n\nAssertion (A): Kanchenjunga National Park in Sikkim was inscribed as a UNESCO World Heritage Site in 2016 under the 'Mixed Heritage' category — combining outstanding universal natural values with cultural significance (the Five Treasures of Snow tradition, sacred peak practices). A is factually correct.\n\nReason (R): R attributes the UNESCO inscription primarily to its role as a transboundary biodiversity corridor with Nepal's Kangchenjunga Conservation Area. While the Kanchenjunga region is indeed a transboundary biodiversity zone, the UNESCO Mixed Heritage inscription was driven by the combination of natural biodiversity values AND cultural traditions (Sikkimese Five Treasures of Snow reverence, sacred peak practices). Transboundary corridor status alone does not explain the 'Mixed' classification — R is an incomplete and misleading explanation.\n\nA is correct; R is incorrect as stated — the answer is (c).\n\nValue Addition:\n• UNESCO Mixed Heritage Sites combine natural and cultural criteria — India has relatively few such designations.\n• Nepal's Kangchenjunga Conservation Area (KCA) and India's Kanchenjunga NP form a transboundary biodiversity corridor — relevant for GS-2 international environmental cooperation.\n• India's Kanchenjunga NP is also on UNESCO's tentative list pending formal Mixed Heritage procedures confirmation — the 2016 listing solidified this."
+    },
+    "hi": {
+      "display_text": "कथन (A): सिक्किम में कंचनजंगा राष्ट्रीय उद्यान को 2016 में 'मिश्रित विरासत' श्रेणी के तहत यूनेस्को विश्व धरोहर स्थल के रूप में नामित किया गया था, जिसमें इसके प्राकृतिक जैव विविधता और सांस्कृतिक महत्व दोनों को मान्यता दी गई।\n\nकारण (R): पार्क को मुख्य रूप से इसलिए यूनेस्को विश्व धरोहर दर्जा दिया गया क्योंकि यह नेपाल के कंचनजंगा संरक्षण क्षेत्र के साथ अंतरराष्ट्रीय सीमा के पार एक महत्वपूर्ण सीमा-पार जैव विविधता गलियारा है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि जो छात्र जानते हैं कि कंचनजंगा राष्ट्रीय उद्यान यूनेस्को स्थल है और पवित्र शिखर परंपरा को जानते हैं, वे सहज रूप से मान सकते हैं कि सांस्कृतिक परंपरा ही यूनेस्को नामांकन का कारण है, जो दो सत्य तथ्यों को गलत कारणात्मक संबंध में जोड़ता है।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — कंचनजंगा राष्ट्रीय उद्यान को 2016 में मिश्रित विरासत श्रेणी के तहत यूनेस्को विश्व धरोहर का दर्जा मिला था। A तथ्यात्मक रूप से सही है।",
+        "चरण 2: क्या कारण (R) सही है? — R कहता है कि पार्क को इसलिए नामित किया गया क्योंकि यह नेपाल के कंचनजंगा संरक्षण क्षेत्र के साथ साझा एक सीमा-पार जैव विविधता गलियारा है। जबकि सीमा-पार महत्व पारिस्थितिक रूप से महत्वपूर्ण है, यूनेस्को नामांकन में विशेष रूप से कंचनजंगा के मिश्रित विरासत दर्जे (प्राकृतिक और सांस्कृतिक दोनों मूल्य — जिसमें स्नो के पांच खजाने की परंपरा शामिल है) का उल्लेख है। केवल 'सीमा-पार गलियारा' मिश्रित विरासत वर्गीकरण का मुख्य कारण नहीं है। R प्राथमिक कारण के रूप में पूरी तरह सही नहीं है।",
+        "चरण 3: कारणात्मक संबंध — A सही है; R आंशिक सत्य है लेकिन यूनेस्को नामांकन के मुख्य कारण को गलत रूप से दर्शाता है। A सही है लेकिन R कारण के रूप में असटीक/गलत है।",
+        "A सही है लेकिन R गलत है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "कंचनजंगा राष्ट्रीय उद्यान का यूनेस्को नामांकन एक विशिष्ट वर्गीकरण है जो इसे अन्य धरोहर स्थलों से अलग करता है — और यही इस प्रश्न का परीक्षण है।\n\nकथन (A): सिक्किम में कंचनजंगा राष्ट्रीय उद्यान को 2016 में 'मिश्रित विरासत' श्रेणी में यूनेस्को विश्व धरोहर स्थल के रूप में नामित किया गया था — जिसमें असाधारण सार्वभौमिक प्राकृतिक मूल्य और सांस्कृतिक महत्व (स्नो के पांच खजाने की परंपरा, पवित्र शिखर प्रथाएँ) शामिल हैं। A तथ्यात्मक रूप से सही है।\n\nकारण (R): R यूनेस्को नामांकन का मुख्य कारण इसे नेपाल के कंचनजंगा संरक्षण क्षेत्र के साथ साझा सीमा-पार जैव विविधता गलियारा बताता है। जबकि कंचनजंगा क्षेत्र वास्तव में एक सीमा-पार जैव विविधता क्षेत्र है, यूनेस्को मिश्रित विरासत नामांकन प्राकृतिक जैव विविधता मूल्य और सांस्कृतिक परंपराओं (सिक्किम के स्नो के पांच खजाने की श्रद्धा, पवित्र शिखर प्रथाएँ) के संयोजन से प्रेरित था। केवल सीमा-पार गलियारा स्थिति 'मिश्रित' वर्गीकरण को नहीं समझाती — R अधूरा और भ्रामक स्पष्टीकरण है।\n\nA सही है; R गलत है जैसा कि कहा गया है — उत्तर (c) है।\n\nमूल्य संवर्धन:\n• यूनेस्को मिश्रित विरासत स्थल प्राकृतिक और सांस्कृतिक मानदंडों का संयोजन होते हैं — भारत में ऐसे नामांकन अपेक्षाकृत कम हैं।\n• नेपाल का कंचनजंगा संरक्षण क्षेत्र (KCA) और भारत का कंचनजंगा राष्ट्रीय उद्यान एक सीमा-पार जैव विविधता गलियारा बनाते हैं — जो GS-2 के लिए अंतरराष्ट्रीय पर्यावरण सहयोग से संबंधित है।\n• भारत का कंचनजंगा राष्ट्रीय उद्यान यूनेस्को की अस्थायी सूची में भी है, औपचारिक मिश्रित विरासत प्रक्रियाओं की पुष्टि के लिए — 2016 का नामांकन इसे स्थिर करता है।"
+    }
+  },
+  {
+    "uuid": "5e25c546-fe5e-47cd-977b-fc42cb6fa879",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Nanda Devi: Highest Peak Entirely within India",
+        "Nanda Devi Biosphere Reserve: Conservation and UNESCO Status"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Nanda Devi Inner Sanctuary closure year — 1982",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Inner Sanctuary of the Nanda Devi Biosphere Reserve was closed to all trekkers, mountaineers, and general visitors in ________, following documented ecological degradation caused by earlier expeditions — a closure that remains in effect and predated the area's UNESCO World Heritage inscription.\n\n(a) 1975\n(b) 1986\n(c) 1982\n(d) 1993",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) 1986 is deceptive because it falls in the era of heightened global environmental awareness (post-1984 Bhopal disaster, pre-1988 UNESCO World Heritage inscription) and feels like a plausible policy-response year.",
+      "elimination_logic": [
+        "Eliminate (a) 1975: This is the year of Sikkim's merger with India — no documented connection to Nanda Devi sanctuary closure.",
+        "Eliminate (b) 1986: A plausible distractor year but incorrect — the closure preceded the UNESCO inscription and followed ecological damage from a joint US–India expedition.",
+        "Eliminate (d) 1993: Too late — the UNESCO inscription was already 1988 and the closure came before it.",
+        "Select (c) 1982: The Inner Sanctuary was closed to all visitors in 1982 following documented ecological damage from mountaineering expeditions."
+      ],
+      "upsc_trap_explanation": "The 1982 closure is a specific date that many students have read about but not pinned with precision. The temporal-swap options (1975, 1986, 1993) are all credible years in Indian environmental policy history — 1975 (emergency era), 1986 (Environment Protection Act), 1993 (post-Earth Summit follow-through). None of these is the correct year, but each can fool a student who remembers 'mid-1980s environmental action' as a vague anchor rather than the specific 1982 closure.",
+      "final_explanation": "The Nanda Devi Inner Sanctuary closure is a specific policy event with an exact year — 1982.\n\n• Option (a) — 1975: This year marks Sikkim's merger with India and also Emergency-era policies but has no documented connection to Nanda Devi's sanctuary closure.\n• Option (b) — 1986: The Environment Protection Act was passed in 1986 — a significant year in Indian environmental law but not the year of Nanda Devi's Inner Sanctuary closure.\n• Option (c) — Correct: 1982. The Inner Sanctuary was closed by government order following documented ecological degradation from mountaineering expeditions, including a controversial 1978 joint US–India operation. The closure predates the UNESCO inscription by six years.\n• Option (d) — 1993: This year follows the 1992 Rio Earth Summit and saw several Indian conservation measures — but the Nanda Devi closure came a decade earlier.\n\nValue Addition:\n• The 1978 US–India joint operation on Nanda Devi involved accusations of environmental damage and left equipment in the sanctuary — a controversy that catalysed the 1982 closure.\n• UNESCO World Heritage inscription followed in 1988, six years after the closure.\n• Valley of Flowers was added to the UNESCO listing in 2005 as an extension."
+    },
+    "hi": {
+      "display_text": "नंदा देवी बायोस्फीयर रिजर्व के आंतरिक अभयारण्य को सभी ट्रेकर्स, पर्वतारोहियों और सामान्य आगंतुकों के लिए ________ में बंद कर दिया गया था, जो पहले के अभियानों से हुए प्रलेखित पारिस्थितिक क्षरण के बाद हुआ — यह बंदी अभी भी प्रभावी है और क्षेत्र के यूनेस्को विश्व धरोहर नामांकन से पहले हुई थी।\n\n(a) 1975\n(b) 1986\n(c) 1982\n(d) 1993",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) 1986 भ्रामक है क्योंकि यह वैश्विक पर्यावरण जागरूकता के उच्च स्तर के युग (1984 के भोपाल हादसे के बाद, 1988 के यूनेस्को विश्व धरोहर नामांकन से पहले) में आता है और एक संभावित नीति-प्रतिक्रिया वर्ष जैसा लगता है।",
+      "elimination_logic": [
+        "(a) 1975 को हटा दें: यह सिक्किम के भारत में विलय का वर्ष है — नंदा देवी अभयारण्य के बंद होने से कोई प्रलेखित संबंध नहीं है।",
+        "(b) 1986 को हटा दें: एक संभावित भ्रमित करने वाला वर्ष है लेकिन गलत है — बंद करना यूनेस्को नामांकन से पहले हुआ था और संयुक्त अमेरिका-भारत अभियान से हुए पारिस्थितिक नुकसान के बाद हुआ था।",
+        "(d) 1993 को हटा दें: बहुत देर हो चुकी है — यूनेस्को नामांकन पहले ही 1988 में हो चुका था और बंद करना उससे पहले हुआ था।",
+        "(c) 1982 को चुनें: आंतरिक अभयारण्य को 1982 में सभी आगंतुकों के लिए बंद कर दिया गया था, जो पर्वतारोहण अभियानों से हुए पारिस्थितिक नुकसान के प्रलेखित प्रमाण के बाद था।"
+      ],
+      "upsc_trap_explanation": "1982 का बंद होना एक विशिष्ट तिथि है जिसे कई छात्रों ने पढ़ा है लेकिन सटीकता से याद नहीं किया है। समय-संबंधित विकल्प (1975, 1986, 1993) सभी भारतीय पर्यावरण नीति इतिहास में विश्वसनीय वर्ष हैं — 1975 (आपातकाल काल), 1986 (पर्यावरण संरक्षण अधिनियम), 1993 (पृथ्वी सम्मेलन के बाद की कार्रवाई)। इनमें से कोई भी सही वर्ष नहीं है, लेकिन प्रत्येक उस छात्र को भ्रमित कर सकता है जो 'मध्य-1980 के दशक की पर्यावरण कार्रवाई' को एक अस्पष्ट आधार के रूप में याद करता है बजाय विशिष्ट 1982 के बंद होने के।",
+      "final_explanation": "नंदा देवी आंतरिक अभयारण्य का बंद होना एक विशिष्ट नीति घटना है जिसका सटीक वर्ष — 1982 है।\n\n• विकल्प (a) — 1975: यह वर्ष सिक्किम के भारत में विलय और आपातकालीन काल की नीतियों का है लेकिन नंदा देवी अभयारण्य के बंद होने से इसका कोई प्रलेखित संबंध नहीं है।\n• विकल्प (b) — 1986: पर्यावरण संरक्षण अधिनियम 1986 में पारित हुआ — भारतीय पर्यावरण कानून में एक महत्वपूर्ण वर्ष लेकिन नंदा देवी के आंतरिक अभयारण्य के बंद होने का वर्ष नहीं।\n• विकल्प (c) — सही: 1982। आंतरिक अभयारण्य को सरकारी आदेश द्वारा बंद कर दिया गया था, जो पर्वतारोहण अभियानों से हुए पारिस्थितिक क्षरण के प्रलेखित प्रमाणों के बाद था, जिसमें 1978 का विवादास्पद संयुक्त अमेरिका-भारत अभियान भी शामिल था। यह बंद होना यूनेस्को नामांकन से छह वर्ष पहले हुआ।\n• विकल्प (d) — 1993: यह वर्ष 1992 के रियो पृथ्वी सम्मेलन के बाद है और कई भारतीय संरक्षण उपायों का वर्ष था — लेकिन नंदा देवी का बंद होना इससे एक दशक पहले हुआ था।\n\nमूल्य संवर्धन:\n• 1978 का संयुक्त अमेरिका-भारत अभियान नंदा देवी पर पर्यावरण क्षति के आरोपों में शामिल था और अभयारण्य में उपकरण छोड़ गया था — यह विवाद 1982 के बंद होने को प्रेरित करने वाला था।\n• यूनेस्को विश्व धरोहर नामांकन 1988 में हुआ, जो बंद होने के छह वर्ष बाद था।\n• फूलों की घाटी को 2005 में यूनेस्को सूची में विस्तार के रूप में जोड़ा गया।"
+    }
+  },
+  {
+    "uuid": "3ce54cae-742f-4529-983a-bd6e1beefd67",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Physical Geography of India",
+      "sub_topic": "Important peaks of India — Kangchenjunga, K2, Nanda Devi",
+      "concepts_used": [
+        "Passes Near Major Peaks and Their Strategic Importance",
+        "Administrative and Political Geography of Peak Locations"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Nathu La — Sikkim India-China trade route strategic pass",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A researcher studying India–China border trade is documenting a mountain pass in the Kangchenjunga region that served as a major Silk Road trade route in the pre-colonial era, was closed after a military conflict between India and China in 1962, and was formally reopened for limited bilateral border trade in 2006 under a bilateral agreement. The pass is located in East Sikkim and connects India with Tibet through a strategically significant valley. Which of the following passes is the researcher documenting?\n\n(a) Nathu La\n(b) Karakoram Pass\n(c) Jelep La\n(d) Mana Pass",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because Jelep La is a real Sikkim pass that also connects the region with the eastern side (Tibet via Chumbi Valley) and students who know Jelep La exists in Sikkim may substitute it for Nathu La without checking which pass was specifically reopened for trade.",
+      "elimination_logic": [
+        "The scenario describes a Sikkim pass reopened for India–China trade in 2006 after decades of closure following a 1962 military conflict — this is Nathu La.",
+        "Eliminate (b) Karakoram Pass: This connects Ladakh with Xinjiang — not Sikkim, and not reopened for trade in 2006.",
+        "Eliminate (c) Jelep La: Jelep La connects Sikkim with Tibet via Chumbi Valley but was NOT the pass specifically reopened for bilateral trade in 2006. Nathu La was the designated trade route restoration.",
+        "Eliminate (d) Mana Pass: This connects Uttarakhand with Tibet — not Sikkim.",
+        "Select (a): Nathu La in East Sikkim was reopened for limited border trade with China in 2006."
+      ],
+      "upsc_trap_explanation": "Jelep La is the geographic-swap trap. Both Nathu La and Jelep La are Sikkim passes that historically connected India (Sikkim) with Tibet. Students who recall 'a Sikkim pass was used for Silk Road trade and then closed in 1962' may pick either — but the specifically reopened trade route in 2006 under the India–China border trade agreement was Nathu La. Jelep La remains closed. This distinction requires precise memorisation rather than general regional knowledge.",
+      "final_explanation": "Strategic passes in the Himalayan states are a GS-2/GS-1 crossover topic — trade, diplomacy, and geography intersecting.\n\nApplicable principle: Nathu La (4,310 m) in East Sikkim connects India with Tibet (China) via the Chumbi Valley approach. It was a major trade route on the old India–Tibet Silk Road before being closed after the 1962 Sino-Indian War. Under the 2003 India–China bilateral agreement, Nathu La was reopened for limited border trade in July 2006 — making it the only operational legal cross-border trade point between India and China through a Himalayan pass.\n\n• Option (a) — Correct: Nathu La is the pass described — East Sikkim, closed 1962, reopened for trade 2006.\n• Option (b) — Incorrect: Karakoram Pass connects Ladakh with Xinjiang; it has not been formally reopened as a trade route.\n• Option (c) — Incorrect: Jelep La is another Sikkim–Tibet pass but is not the one reopened for trade in 2006; it remains closed to general use.\n• Option (d) — Incorrect: Mana Pass is in Uttarakhand (Chamoli district) connecting to Tibet — not Sikkim.\n\nValue Addition:\n• Nathu La is also the only pass through which Kailash Mansarovar Yatra pilgrims travel via the Sikkim route.\n• Jelep La was historically more important than Nathu La during British India–Tibet trade.\n• The Sikkim route to Kailash (via Nathu La) was inaugurated in 2015."
+    },
+    "hi": {
+      "display_text": "भारत-चीन सीमा व्यापार का अध्ययन कर रहा एक शोधकर्ता कंचनजंगा क्षेत्र में एक पर्वतीय दर्रे का दस्तावेजीकरण कर रहा है जो उपनिवेशकालीन युग में एक प्रमुख सिल्क रोड व्यापार मार्ग था, 1962 में भारत और चीन के बीच सैन्य संघर्ष के बाद बंद हो गया था, और 2006 में एक द्विपक्षीय समझौते के तहत सीमित द्विपक्षीय सीमा व्यापार के लिए औपचारिक रूप से पुनः खोला गया था। यह दर्रा पूर्व सिक्किम में स्थित है और एक रणनीतिक रूप से महत्वपूर्ण घाटी के माध्यम से भारत को तिब्बत से जोड़ता है। निम्नलिखित में से कौन सा दर्रा शोधकर्ता द्वारा दस्तावेजीकृत किया जा रहा है?\n\n(a) नाथू ला\n(b) काराकोरम पास\n(c) जेलेप ला\n(d) मना पास",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि जेलेप ला एक वास्तविक सिक्किम दर्रा है जो क्षेत्र को पूर्वी दिशा (चुम्बी घाटी के माध्यम से तिब्बत) से जोड़ता है और जो छात्र जानते हैं कि जेलेप ला सिक्किम में है, वे बिना जांचे कि कौन सा दर्रा विशेष रूप से व्यापार के लिए पुनः खोला गया था, उसे नाथू ला के स्थान पर चुन सकते हैं।",
+      "elimination_logic": [
+        "यह परिदृश्य एक सिक्किम दर्रे का वर्णन करता है जिसे 1962 के सैन्य संघर्ष के बाद दशकों तक बंद रहने के बाद 2006 में भारत-चीन व्यापार के लिए पुनः खोला गया — यह नाथू ला है।",
+        "विकल्प (b) काराकोरम पास को हटा दें: यह लद्दाख को शिनजियांग से जोड़ता है — न सिक्किम से, न ही 2006 में व्यापार के लिए पुनः खोला गया।",
+        "विकल्प (c) जेलेप ला को हटा दें: जेलेप ला सिक्किम को चुम्बी घाटी के माध्यम से तिब्बत से जोड़ता है लेकिन यह 2006 में द्विपक्षीय व्यापार के लिए विशेष रूप से पुनः खोला गया दर्रा नहीं था। नाथू ला को व्यापार मार्ग पुनर्स्थापना के लिए नामित किया गया था।",
+        "विकल्प (d) मना पास को हटा दें: यह उत्तराखंड को तिब्बत से जोड़ता है — न सिक्किम से।",
+        "विकल्प (a) चुनें: पूर्व सिक्किम में नाथू ला को 2006 में चीन के साथ सीमांत व्यापार के लिए पुनः खोला गया था।"
+      ],
+      "upsc_trap_explanation": "जेलेप ला भौगोलिक-स्वैप जाल है। नाथू ला और जेलेप ला दोनों सिक्किम के दर्रे हैं जो ऐतिहासिक रूप से भारत (सिक्किम) को तिब्बत से जोड़ते थे। जो छात्र याद करते हैं कि 'एक सिक्किम दर्रा सिल्क रोड व्यापार के लिए उपयोग किया गया था और फिर 1962 में बंद हो गया' वे दोनों में से कोई भी चुन सकते हैं — लेकिन 2006 में भारत-चीन सीमा व्यापार समझौते के तहत विशेष रूप से पुनः खोला गया व्यापार मार्ग नाथू ला था। जेलेप ला बंद ही रहता है। यह अंतर सामान्य क्षेत्रीय ज्ञान के बजाय सटीक स्मरण की मांग करता है।",
+      "final_explanation": "हिमालयी राज्यों में रणनीतिक दर्रे GS-2/GS-1 क्रॉसओवर विषय हैं — व्यापार, कूटनीति और भूगोल का संगम।\n\nलागू सिद्धांत: पूर्व सिक्किम में नाथू ला (4,310 मीटर) भारत को तिब्बत (चीन) से चुम्बी घाटी मार्ग के माध्यम से जोड़ता है। यह पुरानी भारत-तिब्बत सिल्क रोड पर एक प्रमुख व्यापार मार्ग था जो 1962 के भारत-चीन युद्ध के बाद बंद हो गया था। 2003 के भारत-चीन द्विपक्षीय समझौते के तहत, नाथू ला को जुलाई 2006 में सीमांत व्यापार के लिए पुनः खोला गया — जिससे यह हिमालयी दर्रे के माध्यम से भारत और चीन के बीच एकमात्र वैध सीमापार व्यापार बिंदु बन गया।\n\n• विकल्प (a) — सही: नाथू ला वह दर्रा है जिसका वर्णन किया गया है — पूर्व सिक्किम, 1962 में बंद, 2006 में व्यापार के लिए पुनः खोला गया।\n• विकल्प (b) — गलत: काराकोरम पास लद्दाख को शिनजियांग से जोड़ता है; इसे औपचारिक रूप से व्यापार मार्ग के रूप में पुनः नहीं खोला गया है।\n• विकल्प (c) — गलत: जेलेप ला एक अन्य सिक्किम-तिब्बत दर्रा है लेकिन यह 2006 में व्यापार के लिए पुनः खोला गया नहीं है; यह सामान्य उपयोग के लिए बंद है।\n• विकल्प (d) — गलत: मना पास उत्तराखंड (चमोली जिला) में है जो तिब्बत से जुड़ता है — न सिक्किम से।\n\nमूल्य संवर्धन:\n• नाथू ला वह एकमात्र दर्रा है जिसके माध्यम से कैलाश मानसरोवर यात्रा के तीर्थयात्री सिक्किम मार्ग से यात्रा करते हैं।\n• ब्रिटिश भारत-तिब्बत व्यापार के दौरान जेलेप ला ऐतिहासिक रूप से नाथू ला से अधिक महत्वपूर्ण था।\n• कैलाश के लिए सिक्किम मार्ग (नाथू ला के माध्यम से) 2015 में उद्घाटित किया गया था।"
+    }
+  }
+]

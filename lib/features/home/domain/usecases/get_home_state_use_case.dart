@@ -7,12 +7,18 @@ import 'package:upsc_wars/features/revision_queue/domain/usecases/get_revision_q
 import '../../../../core/providers/prefs_provider.dart';
 
 class GetHomeStateUseCase {
-  const GetHomeStateUseCase({required PrefsService prefs, required GetDailyProgressUseCase daily, required GetRevisionQueueUseCase revision, required GetBookmarksUseCase bookmarks, required GetSessionListUseCase sessions})
-      : _prefs = prefs,
+  const GetHomeStateUseCase({
+    required PrefsService prefs,
+    required GetDailyProgressUseCase daily,
+    required GetRevisionQueueUseCase revision,
+    required GetBookmarksUseCase bookmarks,
+    required GetSessionListUseCase sessions,
+  })  : _prefs = prefs,
         _daily = daily,
         _revision = revision,
         _bookmarks = bookmarks,
         _sessions = sessions;
+
   final PrefsService _prefs;
   final GetDailyProgressUseCase _daily;
   final GetRevisionQueueUseCase _revision;
@@ -24,10 +30,11 @@ class GetHomeStateUseCase {
       _daily.execute(DateTime.now()),
       _revision.count(),
       _bookmarks.count(),
-      _revision.subjects(limit: 3),
+      _revision.uniqueSubTopicCount(),
+      _revision.uniqueTrapTypeCount(),
       _sessions.execute(),
     ]);
-    final sessionList = futures[4] as List<SessionSummary>;
+    final sessionList = futures[5] as List<SessionSummary>;
     final inProgress =
         sessionList.where((e) => e.status == 'in_progress').firstOrNull;
     final lastCompleted =
@@ -40,7 +47,8 @@ class GetHomeStateUseCase {
       dailyGoalProgress: futures[0] as int,
       revisionQueueCount: futures[1] as int,
       bookmarkCount: futures[2] as int,
-      revisionSubjects: futures[3] as List<String>,
+      revisionSubTopicCount: futures[3] as int,
+      revisionTrapCount: futures[4] as int,
       lastSession: lastSession,
     );
   }

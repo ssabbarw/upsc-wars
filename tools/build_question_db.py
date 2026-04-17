@@ -177,7 +177,8 @@ def create_schema(conn: sqlite3.Connection) -> None:
             -- questions it may be NULL and content comes from question_tables.
             en_display_text           TEXT,
             hi_display_text           TEXT,
-            has_table                 INTEGER NOT NULL DEFAULT 0
+            has_table                 INTEGER NOT NULL DEFAULT 0,
+            negative_framing          INTEGER NOT NULL DEFAULT 0
         );
 
         CREATE INDEX IF NOT EXISTS idx_questions_subject
@@ -340,7 +341,8 @@ def insert_questions(
       uuid, subject, topic, sub_topic,
       question_type, trap_type, correct_option,
       concept_anchor, concepts_used (JSON string),
-      en_display_text, hi_display_text, has_table (0/1)
+      en_display_text, hi_display_text, has_table (0/1),
+      negative_framing (0/1)
     """
     cur = conn.cursor()
     sql = """
@@ -356,7 +358,8 @@ def insert_questions(
           concepts_used,
           en_display_text,
           hi_display_text,
-          has_table
+          has_table,
+          negative_framing
         ) VALUES (
           :uuid,
           :subject,
@@ -369,7 +372,8 @@ def insert_questions(
           :concepts_used,
           :en_display_text,
           :hi_display_text,
-          :has_table
+          :has_table,
+          :negative_framing
         );
         """
     rows_list = list(rows)
@@ -595,6 +599,7 @@ def populate_static_data(conn: sqlite3.Connection) -> None:
                         "en_display_text": en["display_text"],
                         "hi_display_text": hi["display_text"],
                         "has_table": 1 if shared.get("has_table") else 0,
+                        "negative_framing": 1 if item.get("negative_framing") is True else 0,
                     }
                     subject_rows.append(row)
 

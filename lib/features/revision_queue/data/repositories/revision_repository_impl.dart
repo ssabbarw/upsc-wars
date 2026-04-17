@@ -1,5 +1,7 @@
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/revision_queue_item.dart';
+import 'package:upsc_wars/core/domain/entities/weak_concept_group.dart';
+import 'package:upsc_wars/core/domain/entities/trap_pattern_group.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
 import 'package:upsc_wars/features/revision_queue/domain/repositories/revision_repository.dart';
 
@@ -28,6 +30,9 @@ class RevisionRepositoryImpl implements RevisionRepository {
         subject: q.subject,
         topic: q.topic,
         questionStem: parsed.stem,
+        conceptAnchor: q.conceptAnchor,
+        subTopic: q.subTopic,
+        trapType: q.trapType,
       ));
     }
     return items;
@@ -77,4 +82,63 @@ class RevisionRepositoryImpl implements RevisionRepository {
       await _userDb.revisionQueueDao.graduate(questionUuid, DateTime.now());
     }
   }
+
+  @override
+  Future<List<WeakSubTopicGroup>> getWeakSubTopicGroups() async {
+    final rows = await _userDb.revisionQueueDao.fetchActiveQueue();
+    // subTopic -> (failureCount, uuids)
+    final map = <String, ({int failures, List<String> uuids})>{};
+    for (final r in rows) {
+      final q = await _userDb.questionsDao.getByUuid(r.questionUuid);
+      if (q == null) continue;
+      final sub = q.subTopic;
+      final existing = map[sub];
+      if (existing == null) {
+        map[sub] = (failures: r.numberOfTimesAnsweredIncorrectlyInRevision + 1, uuids: [r.questionUuid]);
+      } else {
+        map[sub] = (
+          failures: existing.failures + r.numberOfTimesAnsweredIncorrectlyInRevision + 1,
+          uuids: [...existing.uuids, r.questionUuid],
+        );
+      }
+    }
+    final groups = map.entries
+        .map((e) => WeakSubTopicGroup(
+              subTopic: e.key,
+              failureCount: e.value.failures,
+              questionUuids: e.value.uuids,
+            ))
+        .toList()
+      ..sort((a, b) => b.failureCount.compareTo(a.failureCount));
+    return groups;
+  }
+
+  @override
+  Future<List<TrapPatternGroup>> getWeakTrapGroups() async {
+    final rows = await _userDb.revisionQueueDao.fetchActiveQueue();
+    final map = <String, List<String>>{};
+    for (final r in rows) {
+      final q = await _userDb.questionsDao.getByUuid(r.questionUuid);
+      if (q == null) continue;
+      final trap = q.trapType;
+      if (trap == null) continue;
+      map.putIfAbsent(trap, () => []).add(r.questionUuid);
+    }
+    return map.entries
+        .map((e) => TrapPatternGroup(
+              trapType: e.key,
+              questionCount: e.value.length,
+              questionUuids: e.value,
+            ))
+        .toList()
+      ..sort((a, b) => b.questionCount.compareTo(a.questionCount));
+  }
+
+  @override
+  Future<int> getUniqueSubTopicCount() async =>
+      (await getWeakSubTopicGroups()).length;
+
+  @override
+  Future<int> getUniqueTrapTypeCount() async =>
+      _userDb.revisionQueueDao.getActiveDistinctTrapTypeCount();
 }

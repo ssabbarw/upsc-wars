@@ -5,7 +5,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/topic_info.dart';
-import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -13,7 +12,6 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/count_formatting.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
-import '../domain/topic_list_filter.dart';
 import '../providers/topic_test_ui_providers.dart';
 
 class _NoScrollbarBehavior extends ScrollBehavior {
@@ -39,13 +37,8 @@ class TopicTestScreen extends HookConsumerWidget {
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final selectedSlug = ref.watch(topicTestSelectedSubjectSlugProvider);
     final searchController = useTextEditingController();
-    final topicsAsync = ref.watch(topicTestTopicsProvider(selectedSlug));
-    final searchQuery = ref.watch(topicTestSearchQueryProvider);
-    final topicsForList = useMemoized(() {
-      final data = topicsAsync.asData?.value;
-      if (data == null) return <TopicInfo>[];
-      return TopicListFilter.filter(data, searchQuery);
-    }, [topicsAsync.asData?.value, searchQuery]);
+    final topicsAsync = ref.watch(topicTestDisplayedTopicsProvider);
+    final revisionCountsAsync = ref.watch(topicRevisionQueueCountsByTopicProvider);
 
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
@@ -164,8 +157,7 @@ class TopicTestScreen extends HookConsumerWidget {
             const SizedBox(height: AppSpacing.md),
             Expanded(
               child: topicsAsync.when(
-                data: (_) {
-                  final topics = topicsForList;
+                data: (topics) {
                   if (topics.isEmpty) {
                     return Center(
                       child: Text(
@@ -189,9 +181,16 @@ class TopicTestScreen extends HookConsumerWidget {
                     itemBuilder: (context, i) {
                       final t = topics[i];
                       final subj = SubjectConstants.bySlug(t.subject);
+                      final revisionQueueCount = revisionCountsAsync.maybeWhen(
+                        data: (counts) => counts[t.topic] ?? 0,
+                        orElse: () => 0,
+                      );
+                      final isWeak = t.attemptCount > 0 && (t.accuracyPercent ?? 0) < 50;
                       return _TopicRow(
                         topic: t,
                         borderColor: borderColor,
+                        revisionQueueCount: revisionQueueCount,
+                        isWeak: isWeak,
                         onTap: () => showTestConfigBottomSheet(
                           context: context,
                           args: TestConfigSheetArgs(
@@ -244,9 +243,8 @@ class TopicTestScreen extends HookConsumerWidget {
                         const SizedBox(height: AppSpacing.lg),
                         OutlinedButton(
                           onPressed: () {
-                            ref.invalidate(
-                              topicTestTopicsProvider(selectedSlug),
-                            );
+                            ref.invalidate(topicTestDisplayedTopicsProvider);
+                            ref.invalidate(topicRevisionQueueCountsByTopicProvider);
                           },
                           child: Text('Retry', style: AppTextStyles.label()),
                         ),
@@ -267,11 +265,15 @@ class _TopicRow extends HookConsumerWidget {
   const _TopicRow({
     required this.topic,
     required this.borderColor,
+    required this.revisionQueueCount,
+    required this.isWeak,
     required this.onTap,
   });
 
   final TopicInfo topic;
   final Color borderColor;
+  final int revisionQueueCount;
+  final bool isWeak;
   final VoidCallback onTap;
 
   @override
@@ -284,7 +286,7 @@ class _TopicRow extends HookConsumerWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
+          clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             color: scheme.surface,
             borderRadius: BorderRadius.circular(AppRadius.lg),
@@ -292,31 +294,52 @@ class _TopicRow extends HookConsumerWidget {
           ),
           child: Row(
             children: [
+              Container(
+                width: 4,
+                color: isWeak ? AppColors.wrong : AppColors.transparent,
+              ),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      topic.displayName,
-                      style: AppTextStyles.label()
-                          .copyWith(color: scheme.onSurface),
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      '${formatIntCount(topic.questionCount)} questions',
-                      style: AppTextStyles.bodySm()
-                          .copyWith(color: scheme.onSurfaceVariant),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    AccuracyPercentageText(
-                      attemptCount: topic.attemptCount,
-                      accuracyPercent: topic.accuracyPercent,
-                      tier: topic.accuracyTier,
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              topic.displayName,
+                              style: AppTextStyles.label()
+                                  .copyWith(color: scheme.onSurface),
+                            ),
+                            const SizedBox(height: AppSpacing.xs),
+                            Text(
+                              '${formatIntCount(topic.questionCount)} questions',
+                              style: AppTextStyles.bodySm()
+                                  .copyWith(color: scheme.onSurfaceVariant),
+                            ),
+                            const SizedBox(height: AppSpacing.sm),
+                            AccuracyPercentageText(
+                              attemptCount: topic.attemptCount,
+                              accuracyPercent: topic.accuracyPercent,
+                              tier: topic.accuracyTier,
+                            ),
+                            if (revisionQueueCount > 0) ...[
+                              const SizedBox(height: AppSpacing.xs),
+                              Text(
+                                '$revisionQueueCount in revision queue',
+                                style: AppTextStyles.caption()
+                                    .copyWith(color: scheme.onSurfaceVariant),
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
+                    ],
+                  ),
                 ),
               ),
-              Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
             ],
           ),
         ),

@@ -1,0 +1,1124 @@
+[
+  {
+    "uuid": "fc515987-c704-4f0e-af7f-1ecf7c7efa02",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Delhi-Mumbai Industrial Corridor (DMIC): Structure and Governance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "DMIC backbone and Western DFC linkage",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following serves as the primary transport backbone of the Delhi-Mumbai Industrial Corridor (DMIC), around which industrial nodes and clusters are developed?\n\n(a) Eastern Dedicated Freight Corridor\n(b) North-South Road Freight Corridor under NHDP\n(c) Western Dedicated Freight Corridor\n(d) Golden Quadrilateral Highway Network",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because the Eastern DFC is prominently associated with the Amritsar-Kolkata corridor, making students confuse the two DFC-corridor pairings.",
+      "elimination_logic": [
+        "Eliminate options naming the Eastern DFC as DMIC's backbone — the Eastern DFC serves the Amritsar-Kolkata corridor, not DMIC.",
+        "Eliminate options referencing the Southern or Northern freight corridors — these are not the identified backbone for DMIC.",
+        "Confirm that the Western Dedicated Freight Corridor, running from JNPT (Mumbai) to Dadri (UP), is explicitly described as the spine of DMIC."
+      ],
+      "upsc_trap_explanation": "Students who know both the Western DFC and Eastern DFC exist but have not mapped them carefully to their respective corridors will select option (a). The Eastern DFC is more frequently discussed in the context of eastern economic development, making it feel intuitively 'correct' for a question about a corridor that spans the north. The Western DFC's association with DMIC is a precise factual pairing that requires deliberate recall.",
+      "final_explanation": "The Delhi-Mumbai Industrial Corridor is designed around a dedicated transport spine that provides efficient freight movement between Delhi and Mumbai, enabling industries located along the corridor to reduce logistics costs. This spine is the Western Dedicated Freight Corridor (WDFC), running approximately 1,500 km from Jawaharlal Nehru Port Terminal near Mumbai to Dadri in Uttar Pradesh.\n\n• Option (a) — Eastern DFC: Incorrect. The EDFC connects Ludhiana to Dankuni (West Bengal) and serves as the backbone of the Amritsar-Kolkata Industrial Corridor, not DMIC.\n• Option (b) — North-South Corridor: Incorrect. This is a road/highway concept under NHDP, not the freight rail spine of DMIC.\n• Option (c) — Western DFC: Correct. The WDFC is explicitly identified as the transport backbone of DMIC, and Japan's JICA financed both the WDFC and DMIC.\n• Option (d) — Golden Quadrilateral: Incorrect. The GQ is a highway network under NHDP, unrelated to DMIC's rail-freight architecture.\n\nValue Addition:\n• JICA financed both the Western DFC and DMIC — a rare case of the same bilateral partner funding both the spine and the corridor superstructure.\n• The WDFC reduces freight transit time between Delhi and Mumbai from ~60 hours to ~14 hours.\n• DFCCIL (under Railways) operates DFCs; DMICDC (under Commerce Ministry) governs DMIC nodes — two separate institutional chains."
+    },
+    "hi": {
+      "display_text": "दिल्ली-मुंबई औद्योगिक कॉरिडोर (DMIC) की प्राथमिक परिवहन रीढ़ कौन-सी है, जिसके इर्द-गिर्द औद्योगिक नोड्स और क्लस्टर विकसित किए गए हैं?\n\n(a) Eastern Dedicated Freight Corridor\n(b) NHDP के तहत North-South रोड फ्रेट कॉरिडोर\n(c) Western Dedicated Freight Corridor\n(d) Golden Quadrilateral हाईवे नेटवर्क",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमकारी विकल्प है क्योंकि Eastern DFC प्रमुख रूप से Amritsar-Kolkata कॉरिडोर से जुड़ा है, जिससे छात्र दोनों DFC-कॉरिडोर जोड़ों को भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "DMIC की रीढ़ के रूप में Eastern DFC को नामित करने वाले विकल्पों को हटा दें — Eastern DFC Amritsar-Kolkata कॉरिडोर की सेवा करता है, DMIC की नहीं।",
+        "Southern या Northern फ्रेट कॉरिडोर का उल्लेख करने वाले विकल्पों को हटा दें — ये DMIC के लिए पहचानी गई रीढ़ नहीं हैं।",
+        "पुष्टि करें कि Western Dedicated Freight Corridor, जो JNPT (मुंबई) से Dadri (उत्तर प्रदेश) तक चलता है, स्पष्ट रूप से DMIC की रीढ़ के रूप में वर्णित है।"
+      ],
+      "upsc_trap_explanation": "वे छात्र जो जानते हैं कि Western DFC और Eastern DFC दोनों मौजूद हैं लेकिन उन्हें उनके संबंधित कॉरिडोरों के साथ सावधानीपूर्वक नहीं जोड़ा है, वे विकल्प (a) चुनेंगे। Eastern DFC को पूर्वी आर्थिक विकास के संदर्भ में अधिक बार चर्चा की जाती है, जिससे यह उत्तर के लिए सहज रूप से 'सही' लगता है जबकि Western DFC का DMIC के साथ संबंध एक सटीक तथ्यात्मक जोड़ी है जिसे जानबूझकर याद रखना आवश्यक है।",
+      "final_explanation": "दिल्ली-मुंबई औद्योगिक कॉरिडोर (DMIC) एक समर्पित परिवहन रीढ़ के इर्द-गिर्द डिज़ाइन किया गया है जो दिल्ली और मुंबई के बीच कुशल माल परिवहन प्रदान करता है, जिससे कॉरिडोर के साथ स्थित उद्योगों को लॉजिस्टिक्स लागत कम करने में मदद मिलती है। यह रीढ़ Western Dedicated Freight Corridor (WDFC) है, जो लगभग 1,500 किमी लंबा है और जवाहरलाल नेहरू पोर्ट टर्मिनल (मुंबई के पास) से उत्तर प्रदेश के दादरी तक चलता है।\n\n• विकल्प (a) — Eastern DFC: गलत। EDFC लुधियाना से डांकुनी (पश्चिम बंगाल) तक जुड़ा है और Amritsar-Kolkata औद्योगिक कॉरिडोर की रीढ़ के रूप में कार्य करता है, DMIC की नहीं।\n• विकल्प (b) — North-South Corridor: गलत। यह NHDP के तहत सड़क/हाईवे अवधारणा है, DMIC की फ्रेट रेल रीढ़ नहीं।\n• विकल्प (c) — Western DFC: सही। WDFC को स्पष्ट रूप से DMIC की परिवहन रीढ़ के रूप में पहचाना गया है, और जापान की JICA ने WDFC और DMIC दोनों को वित्तपोषित किया है।\n• विकल्प (d) — Golden Quadrilateral: गलत। GQ NHDP के तहत एक हाईवे नेटवर्क है, जो DMIC की रेल-फ्रेट संरचना से संबंधित नहीं है।\n\nमूल्य संवर्धन:\n• JICA ने Western DFC और DMIC दोनों को वित्तपोषित किया — एक दुर्लभ मामला जहां एक ही द्विपक्षीय साझेदार ने रीढ़ और कॉरिडोर सुपरस्ट्रक्चर दोनों को वित्तपोषित किया।\n• WDFC दिल्ली और मुंबई के बीच माल परिवहन समय को लगभग 60 घंटे से घटाकर लगभग 14 घंटे कर देता है।\n• DFCCIL (रेल मंत्रालय के तहत) DFCs संचालित करता है; DMICDC (वाणिज्य मंत्रालय के तहत) DMIC नोड्स का प्रबंधन करता है — दो अलग-अलग संस्थागत श्रृंखलाएं।"
+    }
+  },
+  {
+    "uuid": "4333324f-f656-4acc-8197-92a46521f0a2",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Bengaluru-Mumbai Economic Corridor (BMEC) and Hyderabad-Nagpur-Mumbai Corridor"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sequence of industrial corridor announcements under NICDP",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Arrange the following industrial corridors in the chronological order of their formal announcement or conception by the Government of India:\n\n1. Amritsar-Kolkata Industrial Corridor (AKIC)\n2. Delhi-Mumbai Industrial Corridor (DMIC)\n3. Chennai-Bengaluru Industrial Corridor (CBIC)\n4. Hyderabad-Nagpur-Mumbai Industrial Corridor\n\nWhich of the following represents the correct chronological sequence?\n\n(a) 2 → 4 → 1 → 3\n(b) 2 → 3 → 1 → 4\n(c) 2 → 1 → 3 → 4\n(d) 3 → 2 → 1 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) placing the Hyderabad-Nagpur-Mumbai corridor before AKIC is a strong distractor because students who know HNMC is a 'newer' addition under NICDP but are unsure whether AKIC preceded or followed it will guess this order.",
+      "elimination_logic": [
+        "DMIC was the first corridor — announced in 2006-07 with Japan during PM Manmohan Singh's tenure; it anchors any chronology as the earliest.",
+        "CBIC and AKIC were announced in the 2013-2014 period as DMIC expanded into a multi-corridor programme — they come after DMIC.",
+        "Hyderabad-Nagpur-Mumbai corridor is among the newest additions under the expanded NICDP framework announced in the 2017-2019 period — it comes last.",
+        "Correct sequence: DMIC (2006-07) → CBIC/AKIC (2013-14) → Hyderabad-Nagpur-Mumbai (2017+), corresponding to option (b)."
+      ],
+      "upsc_trap_explanation": "Students who know DMIC came first but are uncertain about the relative sequencing of CBIC, AKIC, and newer corridors will struggle. The trap is the positioning of Hyderabad-Nagpur-Mumbai corridor — its Telangana connection (post-bifurcation of AP in 2014) is a temporal anchor that helps date it to post-2014, placing it after CBIC and AKIC.",
+      "final_explanation": "India's industrial corridor programme grew incrementally, starting with a single flagship corridor and expanding into a multi-corridor network under NICDP.\n\nCorrect sequence: DMIC → CBIC → AKIC → Hyderabad-Nagpur-Mumbai Corridor\n\n• DMIC (2006-07): The foundational corridor, announced during PM Manmohan Singh's visit to Japan. It established the template — DFC backbone, greenfield nodes, Japan financing.\n• CBIC (2013): Announced as part of the broader expansion of corridor policy, leveraging existing industrial strengths of Karnataka, AP, and Tamil Nadu.\n• AKIC (2014): Announced to extend corridor benefits to eastern and agrarian states along the Eastern DFC alignment.\n• Hyderabad-Nagpur-Mumbai (2017+): A newer addition under the expanded NICDP framework, notable as Telangana's (formed 2014) primary corridor linkage.\n\nWrong options place newer corridors before older ones or invert the CBIC-AKIC order, which are the primary traps.\n\nValue Addition:\n• Andhra Pradesh's bifurcation in 2014 created Telangana — the Hyderabad-Nagpur-Mumbai corridor could only be conceived as a Telangana-specific instrument post-2014.\n• NICDP as a formal umbrella was articulated more clearly post-2017 Cabinet approvals.\n• PM Gati Shakti (2021) provided the GIS planning layer that retroactively integrated all corridors into a single master plan."
+    },
+    "hi": {
+      "display_text": "भारत सरकार द्वारा औपचारिक रूप से घोषित या अवधारित निम्नलिखित औद्योगिक गलियारों को उनकी घोषणा की कालानुक्रमिक क्रम में व्यवस्थित कीजिए:\n\n1. अमृतसर-कोलकाता औद्योगिक गलियारा (AKIC)\n2. दिल्ली-मुंबई औद्योगिक गलियारा (DMIC)\n3. चेन्नई-बेंगलुरु औद्योगिक गलियारा (CBIC)\n4. हैदराबाद-नागपुर-मुंबई औद्योगिक गलियारा\n\nनिम्नलिखित में से कौन सा सही कालानुक्रमिक क्रम दर्शाता है?\n\n(a) 2 → 4 → 1 → 3\n(b) 2 → 3 → 1 → 4\n(c) 2 → 1 → 3 → 4\n(d) 3 → 2 → 1 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) में Hyderabad-Nagpur-Mumbai गलियारे को AKIC से पहले रखने वाला विकल्प एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र जानते हैं कि HNMC NICDP के तहत एक 'नया' अतिरिक्त है लेकिन यह निश्चित नहीं है कि AKIC इससे पहले था या बाद में, वे इस क्रम का अनुमान लगाएंगे।",
+      "elimination_logic": [
+        "DMIC पहला गलियारा था — 2006-07 में प्रधानमंत्री मनमोहन सिंह के कार्यकाल के दौरान जापान के साथ घोषित; यह किसी भी अनुक्रम के लिए सबसे प्रारंभिक आधार है।",
+        "CBIC और AKIC 2013-2014 के दौरान घोषित किए गए जब DMIC एक बहु-गलियारा कार्यक्रम में विस्तारित हुआ — ये DMIC के बाद आते हैं।",
+        "Hyderabad-Nagpur-Mumbai गलियारा NICDP के विस्तारित ढांचे के तहत 2017-2019 के दौरान घोषित सबसे नए अतिरिक्तों में से है — यह सबसे अंत में आता है।",
+        "सही अनुक्रम: DMIC (2006-07) → CBIC/AKIC (2013-14) → Hyderabad-Nagpur-Mumbai (2017+), जो विकल्प (b) के अनुरूप है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र जानते हैं कि DMIC सबसे पहले आया लेकिन CBIC, AKIC और नए गलियारों के सापेक्ष अनुक्रम के बारे में अनिश्चित हैं, उन्हें कठिनाई होगी। जाल Hyderabad-Nagpur-Mumbai गलियारे की स्थिति है — इसका तेलंगाना से संबंध (2014 में AP के विभाजन के बाद) एक कालिक आधार है जो इसे 2014 के बाद का बनाता है, इसलिए यह CBIC और AKIC के बाद आता है।",
+      "final_explanation": "भारत का औद्योगिक गलियारा कार्यक्रम क्रमिक रूप से विकसित हुआ, एक प्रमुख गलियारे से शुरू होकर NICDP के तहत बहु-गलियारा नेटवर्क में विस्तारित हुआ।\n\nसही अनुक्रम: DMIC → CBIC → AKIC → Hyderabad-Nagpur-Mumbai गलियारा\n\n• DMIC (2006-07): आधारभूत गलियारा, जो प्रधानमंत्री मनमोहन सिंह के जापान दौरे के दौरान घोषित हुआ। इसने ढांचा स्थापित किया — DFC रीढ़, ग्रीनफील्ड नोड्स, जापान वित्तपोषण।\n• CBIC (2013): गलियारा नीति के व्यापक विस्तार के हिस्से के रूप में घोषित, कर्नाटक, AP और तमिलनाडु की मौजूदा औद्योगिक ताकतों का लाभ उठाते हुए।\n• AKIC (2014): गलियारा लाभों को पूर्वी और कृषि प्रधान राज्यों तक विस्तारित करने के लिए घोषित, जो पूर्वी DFC संरेखण के साथ है।\n• Hyderabad-Nagpur-Mumbai (2017+): NICDP के विस्तारित ढांचे के तहत नया अतिरिक्त, जो तेलंगाना (2014 में बना) का प्रमुख गलियारा लिंक है।\n\nगलत विकल्प नए गलियारों को पुराने से पहले रखते हैं या CBIC-AKIC क्रम को उलटते हैं, जो मुख्य जाल हैं।\n\nमूल्य संवर्धन:\n• 2014 में आंध्र प्रदेश के विभाजन ने तेलंगाना बनाया — Hyderabad-Nagpur-Mumbai गलियारा केवल 2014 के बाद तेलंगाना-विशिष्ट उपकरण के रूप में सोचा जा सकता है।\n• NICDP को एक औपचारिक छत्र के रूप में 2017 के बाद कैबिनेट अनुमोदनों के बाद स्पष्ट रूप से परिभाषित किया गया।\n• प्रधानमंत्री गति शक्ति (2021) ने GIS योजना परत प्रदान की जिसने सभी गलियारों को एक एकीकृत मास्टर प्लान में पीछे से जोड़ा।"
+    }
+  },
+  {
+    "uuid": "e01e6e84-d269-4405-8030-e3c77f1da193",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Special Investment Regions (SIRs) and Special Economic Zones (SEZs): Conceptual Overlap with Corridors"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "SEZ vs industrial corridor node jurisdictional distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A manufacturing company has set up a unit within a designated node of a central government-approved industrial corridor. The company claims it is entitled to export duty exemptions and tax holidays applicable to units in export processing areas, citing its location within a gazetted corridor node. The Ministry of Commerce's DPIIT has approved the corridor node but has not separately notified it under any fiscal exemption statute.\n\nWhich of the following principles correctly applies to the company's claim?\n\n(a) The company is entitled to export duty exemptions under the SEZ Act 2005 because industrial corridor nodes are legally equivalent to Special Economic Zones for fiscal purposes.\n(b) The company qualifies for NIMZ-status fiscal benefits under the National Manufacturing Policy 2011 by virtue of being in a corridor node.\n(c) Industrial corridor node designation provides infrastructure benefits but does not automatically confer SEZ-type fiscal exemptions; a separate notification under the SEZ Act 2005 is required.\n(d) Registration with NICDIT under NICDP automatically entitles corridor-based units to Central Government tax exemptions equivalent to those in export processing zones.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because the scenario involves an industrial zone and manufacturing exemptions, which students reflexively associate with SEZ benefits, overlooking that corridor nodes and SEZs are institutionally separate instruments.",
+      "elimination_logic": [
+        "The scenario describes a manufacturing unit in a designated industrial corridor node seeking export tax exemptions — this points to SEZ benefits, which are distinct from corridor infrastructure provisions.",
+        "Industrial corridor nodes provide physical infrastructure (plug-and-play); they do not automatically confer SEZ-type tax exemptions unless the node is separately notified as an SEZ.",
+        "Eliminate option (a): SEZ Act 2005 governs tax exemptions, but corridor nodal designation alone does not trigger SEZ status.",
+        "The correct principle is that SEZs and corridor nodes can co-exist but are NOT synonymous — a unit in a corridor node must seek separate SEZ notification for tax benefits, pointing to option (c)."
+      ],
+      "upsc_trap_explanation": "The scenario is designed to make students conflate the two instruments — 'industrial zone' triggers 'SEZ' in trained recall, and 'corridor node' triggers 'industrial zone.' The correct analysis requires distinguishing between physical infrastructure provision (corridor) and fiscal benefit provision (SEZ), which are legally and institutionally separate.",
+      "final_explanation": "This scenario tests a fundamental conceptual distinction: industrial corridor nodes provide infrastructure advantages; Special Economic Zones provide fiscal advantages. These two instruments serve different policy goals and are governed by different legal frameworks.\n\nApplicable principle: Under the SEZ Act 2005, a unit must be notified and operate within a formally designated Special Economic Zone to avail export tax exemptions and duty drawbacks. Merely being located in an industrial corridor node does not confer SEZ status. The two designations can overlap geographically if a corridor node is separately notified as an SEZ, but co-location is not automatic.\n\n• Option (a) — Incorrect: Applying SEZ Act 2005 benefits based solely on corridor node location is legally impermissible. The unit requires a separate SEZ notification.\n• Option (b) — Incorrect: NIMZ status under NMP 2011 provides self-governance but not automatic export tax exemptions equivalent to SEZs.\n• Option (c) — Correct: The unit must seek a separate SEZ notification under SEZ Act 2005 to access fiscal exemptions. Corridor node designation provides infrastructure benefits, not fiscal ones.\n• Option (d) — Incorrect: NICDP registration is not a legal instrument for tax exemption; it is a planning and development framework.\n\nValue Addition:\n• SEZ Act 2005 is the operative law for fiscal exemptions; corridor development is governed through administrative orders and SPV agreements, not a single legislation.\n• All industrial corridor nodes are NOT SEZs — this is explicitly tested as a conceptual boundary.\n• NIMZs under NMP 2011 were envisioned as self-governing bodies but did not provide SEZ-equivalent tax treatment."
+    },
+    "hi": {
+      "display_text": "एक विनिर्माण कंपनी ने केंद्रीय सरकार द्वारा अनुमोदित एक औद्योगिक कॉरिडोर के नामित नोड के भीतर एक इकाई स्थापित की है। कंपनी दावा करती है कि उसे निर्यात प्रक्रिया क्षेत्रों में इकाइयों के लिए लागू निर्यात शुल्क छूट और कर अवकाश का अधिकार है, क्योंकि वह एक अधिसूचित कॉरिडोर नोड में स्थित है। वाणिज्य मंत्रालय के DPIIT ने कॉरिडोर नोड को मंजूरी दी है लेकिन इसे किसी भी वित्तीय छूट अधिनियम के तहत अलग से अधिसूचित नहीं किया है।\n\nकंपनी के दावे पर निम्नलिखित में से कौन-सा सिद्धांत सही रूप से लागू होता है?\n\n(a) कंपनी को SEZ अधिनियम 2005 के तहत निर्यात शुल्क छूट का अधिकार है क्योंकि औद्योगिक कॉरिडोर नोड वित्तीय दृष्टि से विशेष आर्थिक क्षेत्रों के समान कानूनी इकाई हैं।\n(b) कंपनी कॉरिडोर नोड में होने के कारण राष्ट्रीय विनिर्माण नीति 2011 के तहत NIMZ-स्थिति के वित्तीय लाभों के लिए पात्र है।\n(c) औद्योगिक कॉरिडोर नोड नामांकन अवसंरचना लाभ प्रदान करता है लेकिन स्वचालित रूप से SEZ प्रकार की वित्तीय छूट प्रदान नहीं करता; SEZ अधिनियम 2005 के तहत अलग अधिसूचना आवश्यक है।\n(d) NICDP के तहत NICDIT पंजीकरण स्वचालित रूप से कॉरिडोर आधारित इकाइयों को केंद्रीय सरकार की निर्यात प्रक्रिया क्षेत्रों के समान कर छूट का अधिकार देता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमकारी विकल्प है क्योंकि परिदृश्य में एक औद्योगिक क्षेत्र और विनिर्माण छूट शामिल हैं, जिन्हें छात्र स्वाभाविक रूप से SEZ लाभों से जोड़ते हैं, जबकि वे यह नहीं देखते कि कॉरिडोर नोड और SEZ संस्थागत रूप से अलग उपकरण हैं।",
+      "elimination_logic": [
+        "परिदृश्य में एक विनिर्माण इकाई का वर्णन है जो एक नामित औद्योगिक कॉरिडोर नोड में निर्यात कर छूट की मांग कर रही है — यह SEZ लाभों की ओर संकेत करता है, जो कॉरिडोर अवसंरचना प्रावधानों से भिन्न हैं।",
+        "औद्योगिक कॉरिडोर नोड भौतिक अवसंरचना (प्लग-एंड-प्ले) प्रदान करते हैं; वे स्वचालित रूप से SEZ प्रकार की कर छूट प्रदान नहीं करते जब तक कि नोड को अलग से SEZ के रूप में अधिसूचित न किया गया हो।",
+        "विकल्प (a) को हटाएं: SEZ अधिनियम 2005 कर छूटों को नियंत्रित करता है, लेकिन केवल कॉरिडोर नोड नामांकन SEZ स्थिति को सक्रिय नहीं करता।",
+        "सही सिद्धांत यह है कि SEZ और कॉरिडोर नोड सह-अस्तित्व में हो सकते हैं लेकिन समानार्थी नहीं हैं — कॉरिडोर नोड में एक इकाई को कर लाभों के लिए अलग SEZ अधिसूचना लेनी होगी, जो विकल्प (c) की ओर संकेत करता है।"
+      ],
+      "upsc_trap_explanation": "यह परिदृश्य छात्रों को दोनों उपकरणों को भ्रमित करने के लिए डिज़ाइन किया गया है — 'औद्योगिक क्षेत्र' से 'SEZ' याद आता है, और 'कॉरिडोर नोड' से 'औद्योगिक क्षेत्र'। सही विश्लेषण के लिए भौतिक अवसंरचना प्रावधान (कॉरिडोर) और वित्तीय लाभ प्रावधान (SEZ) के बीच अंतर करना आवश्यक है, जो कानूनी और संस्थागत रूप से अलग हैं।",
+      "final_explanation": "यह परिदृश्य एक मौलिक वैचारिक भेद को परखता है: औद्योगिक कॉरिडोर नोड अवसंरचना लाभ प्रदान करते हैं; विशेष आर्थिक क्षेत्र (SEZ) वित्तीय लाभ प्रदान करते हैं। ये दोनों उपकरण अलग-अलग नीति लक्ष्यों की पूर्ति करते हैं और अलग-अलग कानूनी ढांचे द्वारा शासित हैं।\n\nलागू सिद्धांत: SEZ अधिनियम 2005 के तहत, निर्यात कर छूट और शुल्क वापसी पाने के लिए एक इकाई को औपचारिक रूप से नामित विशेष आर्थिक क्षेत्र में अधिसूचित और संचालित होना आवश्यक है। केवल औद्योगिक कॉरिडोर नोड में स्थित होना SEZ स्थिति प्रदान नहीं करता। यदि कोई कॉरिडोर नोड अलग से SEZ के रूप में अधिसूचित है तो भौगोलिक ओवरलैप हो सकता है, लेकिन सह-स्थान स्वचालित नहीं है।\n\n• विकल्प (a) — गलत: केवल कॉरिडोर नोड स्थान के आधार पर SEZ अधिनियम 2005 के लाभ लागू करना कानूनी रूप से अस्वीकार्य है। इकाई को अलग SEZ अधिसूचना चाहिए।\n• विकल्प (b) — गलत: NMP 2011 के तहत NIMZ स्थिति स्व-शासन प्रदान करती है लेकिन SEZ के समान निर्यात कर छूट नहीं देती।\n• विकल्प (c) — सही: इकाई को SEZ अधिनियम 2005 के तहत कर छूट पाने के लिए अलग SEZ अधिसूचना लेनी होगी। कॉरिडोर नोड नामांकन अवसंरचना लाभ प्रदान करता है, वित्तीय लाभ नहीं।\n• विकल्प (d) — गलत: NICDP के तहत NICDIT पंजीकरण कर छूट के लिए कानूनी उपकरण नहीं है; यह योजना और विकास ढांचा है।\n\nमूल्य संवर्धन:\n• SEZ अधिनियम 2005 वित्तीय छूटों के लिए लागू कानून है; कॉरिडोर विकास प्रशासनिक आदेशों और SPV समझौतों के माध्यम से नियंत्रित होता है, न कि एकल कानून द्वारा।\n• सभी औद्योगिक कॉरिडोर नोड SEZ नहीं होते — यह एक वैचारिक सीमा के रूप में स्पष्ट रूप से परखा गया है।\n• NMP 2011 के तहत NIMZ स्व-शासन निकाय के रूप में कल्पित थे लेकिन SEZ के समान कर उपचार प्रदान नहीं करते।"
+    }
+  },
+  {
+    "uuid": "3b49f7eb-cec6-45ad-9347-f0357614ffc3",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "National Manufacturing Policy (NMP) 2011 and Its Relationship with Industrial Corridors"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "NMP 2011 targets and NIMZ concept",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four items are associated with the National Manufacturing Policy (NMP) 2011 or are features correctly attributed to it. Which one does NOT correctly belong to this set?\n\n(a) A target to increase manufacturing's share in GDP to 25% by 2022\n(b) Being formally replaced by a statutory successor National Manufacturing Policy before 2020\n(c) A target of creating 100 million additional jobs in manufacturing by 2022\n(d) Introduction of National Investment and Manufacturing Zones (NIMZs) as self-governing autonomous bodies",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because '100 million jobs' sounds like an inflated, suspicious figure that students might second-guess, when it is actually the correct NMP target — making them incorrectly identify it as the 'odd' fabricated item.",
+      "elimination_logic": [
+        "NMP 2011's stated target: raise manufacturing's share in GDP to 25% by 2022 — this is a real and well-documented target, so it belongs.",
+        "NIMZs as 'self-governing autonomous bodies' is the defining characteristic of NIMZs under NMP 2011 — real concept, belongs.",
+        "100 million additional jobs by 2022 is the actual NMP 2011 employment target — real, belongs.",
+        "NMP 2011 having a formally notified statutory successor policy is the fabricated element — NMP 2011 was never replaced by an explicit successor NMP; corridors continued under NICDP without a new formal policy."
+      ],
+      "upsc_trap_explanation": "Students who are uncertain about whether NMP 2011 was updated or replaced may accept the 'statutory successor policy' option as plausible — government policies are routinely updated, so a successor seems natural. The trap exploits the expectation of policy continuity. The actual situation is that industrial corridors evolved under NICDP without a new formal National Manufacturing Policy replacing NMP 2011.",
+      "final_explanation": "The National Manufacturing Policy 2011 was India's first explicit sectoral manufacturing policy, setting ambitious targets and introducing the NIMZ concept.\n\n• Option (a) — Raising manufacturing share to 25% of GDP by 2022: Real NMP 2011 target. India's manufacturing share hovered around 15-17%, making 25% an ambitious goal.\n• Option (b) — NMP 2011 being replaced by a formally notified statutory successor policy: This is the odd one out. NMP 2011 has no explicit successor — the industrial corridor programme continued under NICDP as an administrative evolution, not under a new NMP. This option does NOT belong.\n• Option (c) — Creating 100 million additional jobs by 2022: Real NMP 2011 target. The job creation target was ambitious and explicitly stated.\n• Option (d) — NIMZs as self-governing autonomous bodies: Real NMP 2011 concept. NIMZs were to have SPV-based governance with significant autonomy.\n\nValue Addition:\n• NMP 2011 targets of 25% GDP share and 100 million jobs by 2022 were both missed — India's manufacturing share remains ~15-17%.\n• NIMZs under NMP 2011 can exist outside industrial corridors — they are conceptually related but institutionally separate.\n• Make in India (2014) operationally superseded NMP's intent without formally replacing it as a policy document."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार वस्तुओं में से तीन राष्ट्रीय विनिर्माण नीति (NMP) 2011 से संबंधित हैं या उन्हें सही रूप से उससे जोड़ा गया है। इनमें से कौन-सी वस्तु सही रूप से इस सेट से संबंधित नहीं है?\n\n(a) 2022 तक GDP में विनिर्माण के हिस्से को 25% तक बढ़ाने का लक्ष्य\n(b) 2020 से पहले औपचारिक रूप से अधिसूचित वैधानिक उत्तराधिकारी राष्ट्रीय विनिर्माण नीति द्वारा प्रतिस्थापित होना\n(c) 2022 तक विनिर्माण में 100 मिलियन अतिरिक्त नौकरियाँ सृजित करने का लक्ष्य\n(d) राष्ट्रीय निवेश और विनिर्माण क्षेत्र (NIMZs) को स्वशासित स्वायत्त निकाय के रूप में प्रस्तुत करना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रमित करने वाला है क्योंकि '100 मिलियन नौकरियाँ' एक बढ़ा-चढ़ा कर प्रस्तुत की गई, संदिग्ध संख्या लगती है जिसे छात्र संदेह कर सकते हैं, जबकि यह वास्तव में सही NMP लक्ष्य है — जिससे वे इसे गलत तरीके से 'अलग' निर्मित वस्तु के रूप में पहचानते हैं।",
+      "elimination_logic": [
+        "NMP 2011 का घोषित लक्ष्य: 2022 तक GDP में विनिर्माण का हिस्सा 25% तक बढ़ाना — यह एक वास्तविक और अच्छी तरह से प्रलेखित लक्ष्य है, इसलिए यह संबंधित है।",
+        "NIMZs को 'स्वशासित स्वायत्त निकाय' के रूप में परिभाषित करना NMP 2011 के तहत NIMZs की विशेषता है — वास्तविक अवधारणा, संबंधित है।",
+        "2022 तक 100 मिलियन अतिरिक्त नौकरियाँ बनाना NMP 2011 का वास्तविक रोजगार लक्ष्य है — वास्तविक, संबंधित है।",
+        "NMP 2011 का औपचारिक रूप से अधिसूचित वैधानिक उत्तराधिकारी नीति होना निर्मित तत्व है — NMP 2011 को कभी भी स्पष्ट उत्तराधिकारी NMP द्वारा प्रतिस्थापित नहीं किया गया; कॉरिडोर NICDP के तहत जारी रहे बिना किसी नई औपचारिक नीति के।"
+      ],
+      "upsc_trap_explanation": "जो छात्र यह सुनिश्चित नहीं कर पाते कि NMP 2011 को अपडेट या प्रतिस्थापित किया गया था या नहीं, वे 'वैधानिक उत्तराधिकारी नीति' विकल्प को संभावित मान सकते हैं — क्योंकि सरकारी नीतियाँ नियमित रूप से अपडेट होती हैं, इसलिए उत्तराधिकारी होना स्वाभाविक लगता है। यह जाल नीति निरंतरता की अपेक्षा का उपयोग करता है। वास्तविक स्थिति यह है कि औद्योगिक कॉरिडोर NICDP के तहत विकसित हुए बिना किसी नई औपचारिक राष्ट्रीय विनिर्माण नीति के जो NMP 2011 को प्रतिस्थापित करती हो।",
+      "final_explanation": "राष्ट्रीय विनिर्माण नीति 2011 भारत की पहली स्पष्ट क्षेत्रीय विनिर्माण नीति थी, जिसने महत्वाकांक्षी लक्ष्य निर्धारित किए और NIMZ अवधारणा प्रस्तुत की।\n\n• विकल्प (a) — 2022 तक GDP में विनिर्माण का हिस्सा 25% तक बढ़ाना: वास्तविक NMP 2011 लक्ष्य। भारत का विनिर्माण हिस्सा लगभग 15-17% के बीच था, इसलिए 25% एक महत्वाकांक्षी लक्ष्य था।\n• विकल्प (b) — 2020 से पहले NMP 2011 को औपचारिक रूप से अधिसूचित वैधानिक उत्तराधिकारी नीति द्वारा प्रतिस्थापित किया जाना: यह अलग विकल्प है। NMP 2011 का कोई स्पष्ट उत्तराधिकारी नहीं है — औद्योगिक कॉरिडोर कार्यक्रम NICDP के तहत प्रशासनिक विकास के रूप में जारी रहा, न कि किसी नई NMP के तहत। यह विकल्प संबंधित नहीं है।\n• विकल्प (c) — 2022 तक विनिर्माण में 100 मिलियन अतिरिक्त नौकरियाँ बनाना: वास्तविक NMP 2011 लक्ष्य। रोजगार सृजन लक्ष्य महत्वाकांक्षी और स्पष्ट रूप से घोषित था।\n• विकल्प (d) — NIMZs को स्वशासित स्वायत्त निकाय के रूप में प्रस्तुत करना: वास्तविक NMP 2011 अवधारणा। NIMZs को SPV आधारित शासन के साथ महत्वपूर्ण स्वायत्तता दी जानी थी।\n\nमूल्य संवर्धन:\n• 2022 तक 25% GDP हिस्सा और 100 मिलियन नौकरियों के NMP 2011 लक्ष्य दोनों चूक गए — भारत का विनिर्माण हिस्सा लगभग 15-17% ही बना रहा।\n• NMP 2011 के तहत NIMZs औद्योगिक कॉरिडोर के बाहर भी मौजूद हो सकते हैं — वे अवधारणात्मक रूप से संबंधित हैं लेकिन संस्थागत रूप से अलग हैं।\n• मेक इन इंडिया (2014) ने NMP के उद्देश्य को औपचारिक रूप से प्रतिस्थापित किए बिना परिचालन रूप से अधिग्रहित कर लिया।"
+    }
+  },
+  {
+    "uuid": "c976a425-034f-4e86-a409-a212434d9e28",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "East Coast Economic Corridor (ECEC) and Vizag-Chennai Industrial Corridor (VCIC)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "VCIC as ECEC first phase and ADB funding",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the East Coast Economic Corridor (ECEC) and the Vizag-Chennai Industrial Corridor (VCIC):\n\nStatement 1: The Vizag-Chennai Industrial Corridor (VCIC) constitutes the first developmental phase of the broader East Coast Economic Corridor (ECEC), which extends the maritime-industrial development concept along India's eastern coastline.\n\nStatement 2: The East Coast Economic Corridor receives its primary multilateral development financing from the Japan International Cooperation Agency (JICA), consistent with Japan's role as India's lead industrial corridor partner.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Vizag-Chennai Industrial Corridor (VCIC) constitutes the first developmental phase of the broader East Coast Economic Corridor (ECEC), which extends the maritime-industrial development concept along India's eastern coastline.",
+          "verdict": "Correct",
+          "reason": "VCIC is explicitly identified as the first phase of ECEC; ECEC is a broader concept combining port-led industrialization with coastal shipping along the Bay of Bengal coast."
+        },
+        {
+          "statement": "The East Coast Economic Corridor receives its primary multilateral development financing from the Japan International Cooperation Agency (JICA), consistent with Japan's role as India's lead industrial corridor partner.",
+          "verdict": "Incorrect",
+          "reason": "VCIC/ECEC is funded by the Asian Development Bank (ADB), not JICA. Japan's primary corridor investments are in DMIC (Western) and CBIC — not the eastern coast corridor."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know both VCIC and ECEC are real programmes, and who know Japan is India's main industrial corridor partner, naturally assume Japan funds ECEC too — the conflation of Japan with all industrial corridor financing is the trap.",
+      "elimination_logic": [
+        "Verify Statement 1: VCIC as the first phase of ECEC is a documented planning structure — Statement 1 is correct.",
+        "Verify Statement 2: Japan (JICA) funds DMIC and CBIC; ADB funds VCIC/ECEC — Statement 2 incorrectly attributes ADB's role to JICA.",
+        "Since Statement 1 is correct and Statement 2 is incorrect, option (c) is the answer."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 2 exploits the student's heuristic that 'Japan = industrial corridor financing in India.' While this holds for DMIC and CBIC, ADB is the multilateral partner for ECEC/VCIC. Students who have not mapped funding sources to specific corridors precisely will accept Statement 2 as consistent with the broader pattern and choose option (a).",
+      "final_explanation": "The ECEC represents a distinctive model of industrial corridor development — combining port infrastructure, coastal shipping lanes, and manufacturing nodes along India's eastern seaboard.\n\n• Statement 1 — Correct: VCIC (Visakhapatnam to Chennai) is explicitly the Phase 1 of the larger ECEC concept. ECEC aims to extend this port-led industrial development further along the Bay of Bengal coast, eventually connecting to Bangladesh and Southeast Asia.\n• Statement 2 — Incorrect: ADB (Asian Development Bank), not JICA, is the primary multilateral financing partner for VCIC/ECEC. ADB has provided technical assistance and financing for the corridor's development plan. JICA's corridor investments are concentrated on DMIC (Western DFC) and CBIC.\n\nValue Addition:\n• ECEC is unique in combining coastal shipping (blue economy) with industrial nodes — unlike purely land-based corridors.\n• Krishnapatnam and Ennore/Kamarajar ports are key nodes appearing in both ECEC and Sagarmala documents — a frequent cross-programme mapping question.\n• ADB identified VCIC as a priority project under its South Asia Subregional Economic Cooperation (SASEC) framework."
+    },
+    "hi": {
+      "display_text": "पूर्वी तट आर्थिक कॉरिडोर (ECEC) और विशाखापत्तनम-चेन्नई औद्योगिक कॉरिडोर (VCIC) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: विशाखापत्तनम-चेन्नई औद्योगिक कॉरिडोर (VCIC) व्यापक पूर्वी तट आर्थिक कॉरिडोर (ECEC) के पहले विकासात्मक चरण का गठन करता है, जो भारत के पूर्वी तट के साथ समुद्री-औद्योगिक विकास की अवधारणा को विस्तारित करता है।\n\nकथन 2: पूर्वी तट आर्थिक कॉरिडोर को जापान इंटरनेशनल कोऑपरेशन एजेंसी (JICA) से इसका प्राथमिक बहुपक्षीय विकास वित्तपोषण प्राप्त होता है, जो जापान की भारत के प्रमुख औद्योगिक कॉरिडोर साझेदार के रूप में भूमिका के अनुरूप है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Vizag-Chennai Industrial Corridor (VCIC) constitutes the first developmental phase of the broader East Coast Economic Corridor (ECEC), which extends the maritime-industrial development concept along India's eastern coastline.",
+          "verdict": "सही",
+          "reason": "VCIC को स्पष्ट रूप से ECEC के पहले चरण के रूप में पहचाना गया है; ECEC एक व्यापक अवधारणा है जो बंगाल की खाड़ी के तट के साथ बंदरगाह-आधारित औद्योगिकीकरण को तटीय नौवहन के साथ जोड़ती है।"
+        },
+        {
+          "statement": "The East Coast Economic Corridor receives its primary multilateral development financing from the Japan International Cooperation Agency (JICA), consistent with Japan's role as India's lead industrial corridor partner.",
+          "verdict": "गलत",
+          "reason": "VCIC/ECEC को एशियाई विकास बैंक (ADB) द्वारा वित्तपोषित किया जाता है, न कि JICA द्वारा। जापान के मुख्य औद्योगिक कॉरिडोर निवेश DMIC (पश्चिमी) और CBIC में हैं — न कि पूर्वी तट कॉरिडोर में।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र जानते हैं कि VCIC और ECEC दोनों वास्तविक कार्यक्रम हैं, और जो जानते हैं कि जापान भारत का मुख्य औद्योगिक कॉरिडोर साझेदार है, वे स्वाभाविक रूप से मान लेते हैं कि जापान ECEC को भी वित्तपोषित करता है — जापान को सभी औद्योगिक कॉरिडोर वित्तपोषण से जोड़ना ही यह जाल है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: VCIC को ECEC के पहले चरण के रूप में एक प्रलेखित योजना संरचना के रूप में मान्यता प्राप्त है — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: जापान (JICA) DMIC और CBIC को वित्तपोषित करता है; ADB VCIC/ECEC को वित्तपोषित करता है — कथन 2 में ADB की भूमिका को गलत तरीके से JICA को दिया गया है।",
+        "चूंकि कथन 1 सही है और कथन 2 गलत है, अतः विकल्प (c) उत्तर है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में जाल इस छात्र की सहज धारणा का उपयोग करता है कि 'जापान = भारत में औद्योगिक कॉरिडोर वित्तपोषण।' जबकि यह DMIC और CBIC के लिए सही है, ECEC/VCIC के लिए ADB बहुपक्षीय साझेदार है। जो छात्र वित्तपोषण स्रोतों को विशिष्ट कॉरिडोर से ठीक से नहीं जोड़ पाते, वे कथन 2 को व्यापक पैटर्न के अनुरूप मानकर विकल्प (a) चुन लेते हैं।",
+      "final_explanation": "ECEC एक विशिष्ट औद्योगिक कॉरिडोर विकास मॉडल का प्रतिनिधित्व करता है — जो भारत के पूर्वी तट के साथ बंदरगाह अवसंरचना, तटीय नौवहन मार्ग और विनिर्माण केंद्रों को जोड़ता है।\n\n• कथन 1 — सही: VCIC (विशाखापत्तनम से चेन्नई) स्पष्ट रूप से बड़े ECEC अवधारणा का चरण 1 है। ECEC का उद्देश्य इस बंदरगाह-आधारित औद्योगिक विकास को बंग्लादेश और दक्षिण पूर्व एशिया तक विस्तारित करना है।\n• कथन 2 — गलत: VCIC/ECEC के लिए मुख्य बहुपक्षीय वित्तपोषण साझेदार JICA नहीं, बल्कि ADB (एशियाई विकास बैंक) है। ADB ने कॉरिडोर के विकास योजना के लिए तकनीकी सहायता और वित्तपोषण प्रदान किया है। JICA के कॉरिडोर निवेश DMIC (पश्चिमी DFC) और CBIC में केंद्रित हैं।\n\nमूल्य संवर्धन:\n• ECEC तटीय नौवहन (नीली अर्थव्यवस्था) को औद्योगिक केंद्रों के साथ जोड़ने में अद्वितीय है — केवल भूमि आधारित कॉरिडोर के विपरीत।\n• कृष्णापत्तनम और एन्नोर/कमराजर बंदरगाह ECEC और सागरमाला दस्तावेजों दोनों में प्रमुख केंद्र हैं — जो अक्सर क्रॉस-प्रोग्राम मैपिंग प्रश्न बनते हैं।\n• ADB ने VCIC को अपने दक्षिण एशिया उपक्षेत्रीय आर्थिक सहयोग (SASEC) ढांचे के तहत प्राथमिक परियोजना के रूप में पहचाना है।"
+    }
+  },
+  {
+    "uuid": "a2eb9d21-05c4-40ab-b727-16b1f8c176c3",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Sagarmala Programme and Its Synergy/Distinction from Industrial Corridors"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Sagarmala ministry and port-led industrialization distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Sagarmala Programme, which promotes port-led industrialization and aims to create Coastal Economic Zones as manufacturing clusters, is administered under the ________.\n\n(a) Ministry of Ports, Shipping and Waterways\n(b) Ministry of Commerce and Industry\n(c) Ministry of Road Transport and Highways\n(d) Ministry of Heavy Industries",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) Ministry of Commerce and Industry is a strong distractor because industrial corridors are under Commerce, and students who conflate Sagarmala with the corridor programme assign it the same ministry.",
+      "elimination_logic": [
+        "Sagarmala is a port-led programme — its natural institutional home is the Ministry handling ports and shipping, not industry or roads.",
+        "Eliminate Ministry of Commerce (DPIIT) — that governs industrial corridors under NICDP, not Sagarmala.",
+        "Eliminate Ministry of Road Transport — Sagarmala is port-centric, not highway-centric.",
+        "The Ministry of Ports, Shipping and Waterways administers Sagarmala — confirm option (a)."
+      ],
+      "upsc_trap_explanation": "Sagarmala's industrial component — Coastal Economic Zones and port-based manufacturing clusters — makes students associate it with the Ministry of Commerce. The conflation is reinforced by both programmes targeting manufacturing. The precise institutional distinction — Sagarmala under Ministry of Ports; corridors under Commerce — is the tested fact.",
+      "final_explanation": "Sagarmala is India's flagship programme for port-led development, encompassing port modernization, connectivity enhancement, port-linked industrialization, and coastal community development.\n\n• Option (a) — Ministry of Ports, Shipping and Waterways: Correct. Sagarmala is administered by this ministry, reflecting its core focus on maritime infrastructure and port connectivity.\n• Option (b) — Ministry of Commerce and Industry: Incorrect. This ministry (through DPIIT) governs industrial corridors under NICDP, not Sagarmala.\n• Option (c) — Ministry of Road Transport and Highways: Incorrect. Road connectivity is one component of Sagarmala's hinterland linkage, but the programme is not under this ministry.\n• Option (d) — Ministry of Heavy Industries: Incorrect. This ministry handles capital goods and industrial machinery — unrelated to port-led development.\n\nValue Addition:\n• Sagarmala's four pillars: Port Modernisation, Port Connectivity Enhancement, Port-Linked Industrialisation, and Coastal Community Development.\n• Coastal Economic Zones (CEZs) under Sagarmala are conceptually similar to corridor nodes but governed by a different ministry — a critical distinction.\n• Krishnapatnam and Ennore ports appear in both Sagarmala and ECEC documents, creating a genuine institutional overlap zone."
+    },
+    "hi": {
+      "display_text": "सागरमाला कार्यक्रम, जो बंदरगाह-प्रेरित औद्योगिकीकरण को बढ़ावा देता है और तटीय आर्थिक क्षेत्रों को विनिर्माण क्लस्टर के रूप में बनाने का लक्ष्य रखता है, ________ के अंतर्गत प्रशासित है।\n\n(a) बंदरगाह, नौवहन और जलमार्ग मंत्रालय\n(b) वाणिज्य और उद्योग मंत्रालय\n(c) सड़क परिवहन और राजमार्ग मंत्रालय\n(d) भारी उद्योग मंत्रालय",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) वाणिज्य और उद्योग मंत्रालय एक मजबूत भ्रमकारी विकल्प है क्योंकि औद्योगिक गलियारे वाणिज्य के अंतर्गत आते हैं, और छात्र जो सागरमाला को गलियारे कार्यक्रम के साथ मिलाते हैं, उसे उसी मंत्रालय से जोड़ देते हैं।",
+      "elimination_logic": [
+        "सागरमाला एक बंदरगाह-प्रेरित कार्यक्रम है — इसका स्वाभाविक संस्थागत घर वह मंत्रालय है जो बंदरगाहों और नौवहन को संभालता है, न कि उद्योग या सड़क।",
+        "वाणिज्य मंत्रालय (DPIIT) को हटा दें — वह NICDP के तहत औद्योगिक गलियारों को नियंत्रित करता है, सागरमाला को नहीं।",
+        "सड़क परिवहन मंत्रालय को हटा दें — सागरमाला बंदरगाह-केंद्रित है, राजमार्ग-केंद्रित नहीं।",
+        "सागरमाला का प्रशासन बंदरगाह, नौवहन और जलमार्ग मंत्रालय करता है — विकल्प (a) की पुष्टि करें।"
+      ],
+      "upsc_trap_explanation": "सागरमाला के औद्योगिक घटक — तटीय आर्थिक क्षेत्र और बंदरगाह आधारित विनिर्माण क्लस्टर — छात्रों को इसे वाणिज्य मंत्रालय से जोड़ने पर मजबूर करते हैं। दोनों कार्यक्रमों का विनिर्माण लक्षित होना इस भ्रम को बढ़ाता है। सटीक संस्थागत भेद — सागरमाला बंदरगाह मंत्रालय के अंतर्गत; गलियारे वाणिज्य मंत्रालय के अंतर्गत — यह परीक्षा में परखा गया तथ्य है।",
+      "final_explanation": "सागरमाला भारत का प्रमुख कार्यक्रम है जो बंदरगाह-प्रेरित विकास को बढ़ावा देता है, जिसमें बंदरगाह आधुनिकीकरण, कनेक्टिविटी सुधार, बंदरगाह-संबंधित औद्योगिकीकरण, और तटीय समुदाय विकास शामिल हैं।\n\n• विकल्प (a) — बंदरगाह, नौवहन और जलमार्ग मंत्रालय: सही। सागरमाला का प्रशासन इस मंत्रालय द्वारा किया जाता है, जो इसके समुद्री अवसंरचना और बंदरगाह कनेक्टिविटी पर केंद्रित होने को दर्शाता है।\n• विकल्प (b) — वाणिज्य और उद्योग मंत्रालय: गलत। यह मंत्रालय (DPIIT के माध्यम से) NICDP के तहत औद्योगिक गलियारों को नियंत्रित करता है, सागरमाला को नहीं।\n• विकल्प (c) — सड़क परिवहन और राजमार्ग मंत्रालय: गलत। सड़क कनेक्टिविटी सागरमाला के अंतर्देशीय संबंध का एक घटक है, लेकिन यह कार्यक्रम इस मंत्रालय के अंतर्गत नहीं है।\n• विकल्प (d) — भारी उद्योग मंत्रालय: गलत। यह मंत्रालय पूंजीगत वस्तुओं और औद्योगिक मशीनरी को संभालता है — जो बंदरगाह-प्रेरित विकास से संबंधित नहीं है।\n\nमूल्य संवर्धन:\n• सागरमाला के चार स्तंभ: बंदरगाह आधुनिकीकरण, बंदरगाह कनेक्टिविटी सुधार, बंदरगाह-संबंधित औद्योगिकीकरण, और तटीय समुदाय विकास।\n• सागरमाला के अंतर्गत तटीय आर्थिक क्षेत्र (CEZs) अवधारणात्मक रूप से गलियारे नोड्स के समान हैं लेकिन एक अलग मंत्रालय द्वारा नियंत्रित हैं — एक महत्वपूर्ण भेद।\n• कृष्णापत्तनम और एन्नोर बंदरगाह दोनों सागरमाला और ECEC दस्तावेजों में आते हैं, जिससे एक वास्तविक संस्थागत ओवरलैप क्षेत्र बनता है।"
+    }
+  },
+  {
+    "uuid": "24f2a57a-cc86-4db5-bcc8-eae5b331202e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Dholera Special Investment Region (Dholera SIR): India's Flagship Greenfield Industrial City"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Dholera SIR notified before DMIC formalization",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Dholera Special Investment Region (Dholera SIR):\n\n1. Dholera Special Investment Region was notified under the Gujarat Special Investment Region Act, 2009 — predating the formal structuring of the DMIC programme.\n2. Dholera's governance is managed by the Dholera Industrial City Development Limited (DICDL), a joint venture between the Government of India and the Gujarat state government.\n3. Dholera is located on the Gulf of Mannar, providing it strategic coastal access for export-oriented industries.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Dholera Special Investment Region was notified under the Gujarat Special Investment Region Act, 2009 — predating the formal structuring of the DMIC programme.",
+          "verdict": "Correct",
+          "reason": "Dholera SIR was indeed notified under Gujarat SIR Act 2009 as a state initiative, and the DMIC programme was formally structured/incorporated later — Dholera was subsequently subsumed into the DMIC framework."
+        },
+        {
+          "statement": "Dholera's governance is managed by the Dholera Industrial City Development Limited (DICDL), a joint venture between the Government of India and the Gujarat state government.",
+          "verdict": "Correct",
+          "reason": "DICDL is the designated SPV (Special Purpose Vehicle) for Dholera's development, jointly owned by GoI and Gujarat government — consistent with the DMIC funding and governance model."
+        },
+        {
+          "statement": "Dholera is located on the Gulf of Mannar, providing it strategic coastal access for export-oriented industries.",
+          "verdict": "Incorrect",
+          "reason": "Dholera is located on the Gulf of Khambhat (also known as Gulf of Cambay), not the Gulf of Mannar. The Gulf of Mannar is on India's southeastern coast between Tamil Nadu and Sri Lanka."
+        }
+      ],
+      "strong_distractor": "d — Option (d) would suggest all three statements are correct, which students who overlook the Gulf of Mannar vs Gulf of Khambhat substitution will select after correctly identifying Statements 1 and 2 as true.",
+      "elimination_logic": [
+        "Statement 3 names the Gulf of Mannar as Dholera's coastal location — Gulf of Mannar is in Tamil Nadu/Sri Lanka region, not Gujarat. Dholera is on the Gulf of Khambhat. Statement 3 is incorrect.",
+        "Eliminate option (d) — all three cannot be correct since Statement 3 is wrong.",
+        "Eliminate option (b) — Statement 1's temporal claim (notified 2009, before DMIC formalization) is correct.",
+        "Both Statements 1 and 2 are correct; Statement 3 is incorrect — answer is option (c)."
+      ],
+      "upsc_trap_explanation": "The Gulf of Mannar substitution is a classic geographic-swap: both are named 'gulfs' on Indian coasts, both have industrial relevance (Gulf of Mannar has marine biodiversity reserves; Gulf of Khambhat has Dholera). Students who know Dholera has coastal access but haven't memorized 'Gulf of Khambhat' specifically will accept Gulf of Mannar as plausible.",
+      "final_explanation": "Dholera represents India's most ambitious greenfield industrial city development — a template for future smart industrial cities under DMIC.\n\n• Statement 1 — Correct: The Gujarat SIR Act, 2009 predates DMIC's full institutional structuring (DMICDC incorporated 2012). Dholera began as a Gujarat state initiative and was later integrated into DMIC — the chronological sequence is tested repeatedly.\n• Statement 2 — Correct: DICDL (Dholera Industrial City Development Limited) is the implementing SPV, jointly owned by GoI (50%) and Gujarat (50%), mirroring the DMIC equity partnership model.\n• Statement 3 — Incorrect: Dholera is on the Gulf of Khambhat, an inlet of the Arabian Sea on Gujarat's southeastern coast. The Gulf of Mannar lies between southern Tamil Nadu and Sri Lanka — thousands of kilometres away. This is a geographic-swap trap.\n\nValue Addition:\n• Gulf of Khambhat (Cambay) experiences the highest tidal range in India — relevant to any port/coastal industrial development in the area.\n• Dholera is designated India's first greenfield smart industrial city — a superlative frequently tested.\n• Dholera's area (~920 sq km) makes it larger than Mumbai city — its scale is a commonly cited fact in UPSC-context discussions."
+    },
+    "hi": {
+      "display_text": "Dholera Special Investment Region (Dholera SIR) के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. Dholera Special Investment Region को गुजरात Special Investment Region Act, 2009 के तहत अधिसूचित किया गया था — जो DMIC कार्यक्रम के औपचारिक गठन से पहले था।\n2. Dholera का शासन Dholera Industrial City Development Limited (DICDL) द्वारा प्रबंधित किया जाता है, जो भारत सरकार और गुजरात राज्य सरकार के बीच एक संयुक्त उद्यम है।\n3. Dholera Gulf of Mannar पर स्थित है, जो इसे निर्यात-उन्मुख उद्योगों के लिए रणनीतिक तटीय पहुंच प्रदान करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Dholera Special Investment Region was notified under the Gujarat Special Investment Region Act, 2009 — predating the formal structuring of the DMIC programme.",
+          "verdict": "सही",
+          "reason": "Dholera SIR वास्तव में गुजरात SIR अधिनियम 2009 के तहत एक राज्य पहल के रूप में अधिसूचित किया गया था, और DMIC कार्यक्रम बाद में औपचारिक रूप से संरचित/समाविष्ट किया गया — Dholera बाद में DMIC ढांचे में सम्मिलित किया गया।"
+        },
+        {
+          "statement": "Dholera's governance is managed by the Dholera Industrial City Development Limited (DICDL), a joint venture between the Government of India and the Gujarat state government.",
+          "verdict": "सही",
+          "reason": "DICDL Dholera के विकास के लिए नामित SPV (विशेष प्रयोजन वाहन) है, जो भारत सरकार और गुजरात सरकार के संयुक्त स्वामित्व में है — जो DMIC के वित्तपोषण और शासन मॉडल के अनुरूप है।"
+        },
+        {
+          "statement": "Dholera is located on the Gulf of Mannar, providing it strategic coastal access for export-oriented industries.",
+          "verdict": "गलत",
+          "reason": "Dholera खंभात की खाड़ी (जिसे Gulf of Cambay भी कहा जाता है) पर स्थित है, न कि Gulf of Mannar पर। Gulf of Mannar भारत के दक्षिण-पूर्वी तट पर तमिलनाडु और श्रीलंका के बीच है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) यह सुझाव देगा कि तीनों कथन सही हैं, जो छात्र जो Gulf of Mannar और Gulf of Khambhat के स्थानांतरण को नजरअंदाज कर देते हैं, वे कथन 1 और 2 को सही पहचानने के बाद इसे चुनेंगे।",
+      "elimination_logic": [
+        "कथन 3 में Dholera के तटीय स्थान के रूप में Gulf of Mannar का उल्लेख है — Gulf of Mannar तमिलनाडु/श्रीलंका क्षेत्र में है, गुजरात में नहीं। Dholera खंभात की खाड़ी पर है। अतः कथन 3 गलत है।",
+        "विकल्प (d) को हटा दें — तीनों कथन सही नहीं हो सकते क्योंकि कथन 3 गलत है।",
+        "विकल्प (b) को हटा दें — कथन 1 का कालानुक्रमिक दावा (2009 में अधिसूचित, DMIC के औपचारिक गठन से पहले) सही है।",
+        "कथन 1 और 2 दोनों सही हैं; कथन 3 गलत है — उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "Gulf of Mannar का स्थानांतरण एक क्लासिक भौगोलिक-स्वैप है: दोनों भारतीय तटों पर 'gulfs' कहलाते हैं, दोनों का औद्योगिक महत्व है (Gulf of Mannar में समुद्री जैव विविधता आरक्षित क्षेत्र हैं; Gulf of Khambhat में Dholera है)। जो छात्र जानते हैं कि Dholera के पास तटीय पहुंच है लेकिन 'Gulf of Khambhat' को विशेष रूप से याद नहीं रखते, वे Gulf of Mannar को संभावित मान लेंगे।",
+      "final_explanation": "Dholera भारत के सबसे महत्वाकांक्षी ग्रीनफील्ड औद्योगिक शहर विकास का प्रतिनिधित्व करता है — DMIC के तहत भविष्य के स्मार्ट औद्योगिक शहरों के लिए एक मॉडल।\n\n• कथन 1 — सही: गुजरात SIR अधिनियम, 2009 DMIC के पूर्ण संस्थागत गठन (DMICDC का 2012 में समावेश) से पहले है। Dholera एक गुजरात राज्य पहल के रूप में शुरू हुआ और बाद में DMIC में सम्मिलित किया गया — कालानुक्रमिक अनुक्रम बार-बार परखा जाता है।\n• कथन 2 — सही: DICDL (Dholera Industrial City Development Limited) कार्यान्वयन SPV है, जो भारत सरकार (50%) और गुजरात (50%) के संयुक्त स्वामित्व में है, जो DMIC इक्विटी साझेदारी मॉडल को दर्शाता है।\n• कथन 3 — गलत: Dholera खंभात की खाड़ी पर है, जो गुजरात के दक्षिण-पूर्वी तट पर अरब सागर की एक खाड़ी है। Gulf of Mannar दक्षिण तमिलनाडु और श्रीलंका के बीच है — हजारों किलोमीटर दूर। यह एक भौगोलिक-स्वैप जाल है।\n\nमूल्य संवर्धन:\n• Gulf of Khambhat (Cambay) भारत में सबसे अधिक ज्वारीय सीमा अनुभव करता है — जो क्षेत्र में किसी भी बंदरगाह/तटीय औद्योगिक विकास के लिए प्रासंगिक है।\n• Dholera को भारत का पहला ग्रीनफील्ड स्मार्ट औद्योगिक शहर घोषित किया गया है — एक ऐसा तथ्य जो UPSC संदर्भ में बार-बार पूछा जाता है।\n• Dholera का क्षेत्रफल (~920 वर्ग किमी) मुंबई शहर से बड़ा है — इसका आकार UPSC चर्चाओं में सामान्यतः उल्लेखित तथ्य है।"
+    }
+  },
+  {
+    "uuid": "9971bda6-dcd5-43d0-8dc6-cfb2f0fd705c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Regional Balance and Industrial Corridor Coverage: Which States Are Left Out"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "North-East India absence from industrial corridor network",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Regarding the geographic coverage of India's industrial corridor network under the National Industrial Corridor Development Programme (NICDP), which of the following statements is accurate?\n\n(a) North-East India does not have any designated industrial corridor under the NICDP framework, representing a significant gap in the programme's regional coverage.\n(b) The Brahmaputra Industrial Corridor connecting Assam to Arunachal Pradesh is one of the eight approved corridors under NICDP.\n(c) The Act East Policy provides an equivalent industrial corridor framework for North-East India, fulfilling the NICDP mandate for the region.\n(d) North-East India is covered under the Amritsar-Kolkata Industrial Corridor's eastern extension into the Brahmaputra valley.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because Act East Policy is closely associated with North-East development, and students conflate 'Act East Policy corridors' with the formal NICDP industrial corridor network.",
+      "elimination_logic": [
+        "North-East India has no industrial corridor under the NICDP framework — this is a documented policy gap explicitly discussed in regional balance analyses.",
+        "Eliminate option (c): Act East Policy promotes connectivity and trade with South-East Asia but does not include a formal industrial corridor for North-East India under NICDP.",
+        "Eliminate option (b): A 'Brahmaputra Industrial Corridor' is not an officially notified corridor under NICDP — it may appear in aspirational documents but is not a current operational or formally approved corridor.",
+        "The absence of North-East India from the NICDP corridor map is the correct and tested fact — option (a)."
+      ],
+      "upsc_trap_explanation": "Option (c) exploits the Act East Policy association: students who know the Act East Policy focuses on North-East India's development as a gateway to ASEAN may assume it includes an industrial corridor component equivalent to NICDP corridors. The trap is the institutional distinction — Act East Policy corridors are connectivity/trade corridors, not manufacturing-focused industrial corridors under NICDP governance.",
+      "final_explanation": "India's industrial corridor network has significant geographic gaps, with North-East India being the most prominent region without a formal NICDP corridor.\n\n• Option (a) — North-East India has no designated industrial corridor under NICDP: Correct. The eight North-Eastern states are not covered by any currently notified industrial corridor under the NICDP framework. This is explicitly cited as a regional development concern.\n• Option (b) — Brahmaputra Industrial Corridor connecting Assam to Arunachal Pradesh: Incorrect. No such corridor is currently notified under NICDP. The Brahmaputra river basin has infrastructure plans, but not an operational/approved industrial corridor.\n• Option (c) — Act East Policy provides an equivalent industrial corridor framework for North-East India: Incorrect. Act East Policy focuses on connectivity and trade facilitation with South-East Asia, not on manufacturing-industrial corridor development under NICDP governance.\n• Option (d) — North-East India is covered under the Amritsar-Kolkata corridor's eastern extension: Incorrect. AKIC terminates at Kolkata/Dankuni (West Bengal) and does not extend into the North-East.\n\nValue Addition:\n• The North-East's exclusion from industrial corridors reflects infrastructure deficits, difficult terrain, and connectivity challenges.\n• Brahmaputra Economic Corridor is a proposed concept but distinct from formal NICDP corridors.\n• Southern states (TN, Karnataka, AP) have multiple corridor linkages — creating an over-representation critique in regional balance discussions."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय औद्योगिक कॉरिडोर विकास कार्यक्रम (NICDP) के तहत भारत के औद्योगिक कॉरिडोर नेटवर्क के भौगोलिक कवरेज के संबंध में, निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) उत्तर-पूर्व भारत के पास NICDP ढांचे के तहत कोई नामित औद्योगिक कॉरिडोर नहीं है, जो कार्यक्रम के क्षेत्रीय कवरेज में एक महत्वपूर्ण अंतर को दर्शाता है।\n(b) असम को अरुणाचल प्रदेश से जोड़ने वाला ब्रह्मपुत्र औद्योगिक कॉरिडोर NICDP के आठ अनुमोदित कॉरिडोरों में से एक है।\n(c) Act East Policy उत्तर-पूर्व भारत के लिए NICDP के समकक्ष औद्योगिक कॉरिडोर ढांचा प्रदान करती है, जो क्षेत्र के लिए NICDP का मण्डल पूरा करती है।\n(d) उत्तर-पूर्व भारत अमृतसर-कोलकाता औद्योगिक कॉरिडोर के पूर्वी विस्तार के तहत ब्रह्मपुत्र घाटी में शामिल है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि Act East Policy का उत्तर-पूर्व विकास से घनिष्ठ संबंध है, और छात्र 'Act East Policy corridors' को औपचारिक NICDP औद्योगिक कॉरिडोर नेटवर्क के साथ भ्रमित कर लेते हैं।",
+      "elimination_logic": [
+        "उत्तर-पूर्व भारत के पास NICDP ढांचे के तहत कोई औद्योगिक कॉरिडोर नहीं है — यह क्षेत्रीय संतुलन विश्लेषणों में स्पष्ट रूप से चर्चा किया गया एक नीति अंतराल है।",
+        "विकल्प (c) को हटाएं: Act East Policy दक्षिण-पूर्व एशिया के साथ कनेक्टिविटी और व्यापार को बढ़ावा देती है लेकिन NICDP के तहत उत्तर-पूर्व भारत के लिए कोई औपचारिक औद्योगिक कॉरिडोर शामिल नहीं है।",
+        "विकल्प (b) को हटाएं: 'ब्रह्मपुत्र औद्योगिक कॉरिडोर' NICDP के तहत आधिकारिक रूप से अधिसूचित कॉरिडोर नहीं है — यह आकांक्षात्मक दस्तावेजों में हो सकता है लेकिन वर्तमान में कोई परिचालन या औपचारिक रूप से स्वीकृत कॉरिडोर नहीं है।",
+        "NICDP कॉरिडोर मानचित्र में उत्तर-पूर्व भारत की अनुपस्थिति सही और परीक्षण किया गया तथ्य है — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) Act East Policy के संबंध का लाभ उठाता है: जो छात्र जानते हैं कि Act East Policy उत्तर-पूर्व भारत के विकास पर केंद्रित है और इसे ASEAN के लिए एक द्वार के रूप में देखता है, वे मान सकते हैं कि इसमें NICDP कॉरिडोर के समान औद्योगिक कॉरिडोर घटक शामिल है। यह जाल संस्थागत भेद है — Act East Policy कॉरिडोर कनेक्टिविटी/व्यापार कॉरिडोर हैं, NICDP शासन के तहत विनिर्माण-केंद्रित औद्योगिक कॉरिडोर नहीं।",
+      "final_explanation": "भारत के औद्योगिक कॉरिडोर नेटवर्क में महत्वपूर्ण भौगोलिक अंतराल हैं, जिसमें उत्तर-पूर्व भारत सबसे प्रमुख क्षेत्र है जहाँ कोई औपचारिक NICDP कॉरिडोर नहीं है।\n\n• विकल्प (a) — उत्तर-पूर्व भारत के पास NICDP के तहत कोई नामित औद्योगिक कॉरिडोर नहीं है: सही। आठ उत्तर-पूर्वी राज्य वर्तमान में NICDP ढांचे के तहत किसी भी अधिसूचित औद्योगिक कॉरिडोर से कवर नहीं हैं। इसे स्पष्ट रूप से क्षेत्रीय विकास की चिंता के रूप में उद्धृत किया गया है।\n• विकल्प (b) — असम को अरुणाचल प्रदेश से जोड़ने वाला ब्रह्मपुत्र औद्योगिक कॉरिडोर: गलत। NICDP के तहत ऐसा कोई कॉरिडोर वर्तमान में अधिसूचित नहीं है। ब्रह्मपुत्र नदी बेसिन के लिए अवसंरचना योजनाएँ हैं, लेकिन कोई परिचालन/स्वीकृत औद्योगिक कॉरिडोर नहीं है।\n• विकल्प (c) — Act East Policy उत्तर-पूर्व भारत के लिए NICDP के समकक्ष औद्योगिक कॉरिडोर ढांचा प्रदान करती है: गलत। Act East Policy दक्षिण-पूर्व एशिया के साथ कनेक्टिविटी और व्यापार सुविधा पर केंद्रित है, NICDP शासन के तहत विनिर्माण-औद्योगिक कॉरिडोर विकास पर नहीं।\n• विकल्प (d) — उत्तर-पूर्व भारत अमृतसर-कोलकाता कॉरिडोर के पूर्वी विस्तार के तहत आता है: गलत। AKIC कोलकाता/डांकुनी (पश्चिम बंगाल) पर समाप्त होता है और उत्तर-पूर्व में नहीं जाता।\n\nमूल्य संवर्धन:\n• औद्योगिक कॉरिडोरों से उत्तर-पूर्व का बहिष्कार अवसंरचना की कमी, कठिन भूभाग और कनेक्टिविटी चुनौतियों को दर्शाता है।\n• ब्रह्मपुत्र आर्थिक कॉरिडोर एक प्रस्तावित अवधारणा है लेकिन औपचारिक NICDP कॉरिडोर से अलग है।\n• दक्षिणी राज्य (तमिलनाडु, कर्नाटक, आंध्र प्रदेश) के पास कई कॉरिडोर लिंक हैं — जो क्षेत्रीय संतुलन चर्चाओं में अतिनिर्देशन की आलोचना उत्पन्न करता है।"
+    }
+  },
+  {
+    "uuid": "a6cb5795-39ee-48e4-bd5e-5dbd3e36d24f",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Environmental and Social Concerns: Land Acquisition and Displacement in Corridor Development"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "EIA trigger for corridor development — project-level not programme-level",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the environmental and social dimensions of industrial corridor development in India:\n\n1. The Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 applies to land acquired for industrial corridor node development.\n2. An Environment Impact Assessment (EIA) is mandatorily triggered at the industrial corridor programme-planning stage — before individual projects are approved within corridor nodes.\n3. The greenfield city model of industrial corridor development creates a structural conflict with agricultural land preservation, as greenfield nodes require large contiguous land parcels often sourced from agricultural zones.\n\nWhich of the above statements is/are correct?\n\n(a) 2 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 applies to land acquired for industrial corridor node development.",
+          "verdict": "Correct",
+          "reason": "LARR Act 2013 is the governing legislation for land acquisition in India, applicable to corridor node land acquisition — it mandates consent requirements and R&R provisions."
+        },
+        {
+          "statement": "An Environment Impact Assessment (EIA) is mandatorily triggered at the industrial corridor programme-planning stage — before individual projects are approved within corridor nodes.",
+          "verdict": "Incorrect",
+          "reason": "EIA under the EIA Notification 2006 is triggered project-by-project within nodes, not at the corridor programme-planning stage. Corridor designation itself does not automatically require a programme-level EIA."
+        },
+        {
+          "statement": "The greenfield city model of industrial corridor development creates a structural conflict with agricultural land preservation, as greenfield nodes require large contiguous land parcels often sourced from agricultural zones.",
+          "verdict": "Correct",
+          "reason": "Greenfield industrial city development inherently requires large land parcels; India's available land is predominantly agricultural, creating the identified policy tension between industrialization and farmland preservation."
+        }
+      ],
+      "strong_distractor": "b — Option (b) marking only Statement 2 as correct is a strong distractor because students who believe corridor programme-level EIA is mandatory (sounding like good environmental governance) will accept Statement 2 and potentially flag Statement 3 as an opinion rather than a fact.",
+      "elimination_logic": [
+        "Statement 2 claims EIA is triggered at programme-planning stage — EIA under the 2006 notification applies to individual projects/activities, not to spatial planning programmes like corridor designation. Statement 2 is incorrect.",
+        "Eliminate options (b) and (c) that include Statement 2 as correct.",
+        "Statements 1 and 3 are both factually grounded — LARR 2013 applies, and the farmland-industrialization tension is documented. Answer is option (d) — 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap exploits environmental governance expectations — students who believe large industrial programmes should have programme-level EIAs (which would be good policy) accept this as current law. The actual EIA framework in India operates project-by-project under the EIA Notification 2006; strategic environmental assessments at programme level are not mandatory in India. This distinction between desirable policy and current law is a high-value UPSC trap.",
+      "final_explanation": "Industrial corridor development involves significant land acquisition and environmental governance challenges that UPSC tests through statutory framework questions.\n\n• Statement 1 — Correct: LARR Act 2013 governs all land acquisition for public purposes including corridor nodes, requiring Social Impact Assessment, consent from affected families (for PPP projects), and R&R provisions.\n• Statement 2 — Incorrect: India's EIA framework (EIA Notification 2006) applies to specific categories of projects/activities, not to spatial planning programmes. Corridor designation does not itself trigger an EIA. Each factory, industrial unit, or infrastructure project within a node must seek its own environmental clearance. Strategic Environmental Assessment at programme level is not legally mandated in India.\n• Statement 3 — Correct: Dholera's development involves the fertile Bhal region of Gujarat — an area of productive agricultural land — illustrating the structural tension between greenfield industrial city aspirations and farmland preservation.\n\nValue Addition:\n• EIA Notification 2006 lists specific project categories (Annexure I) requiring environmental clearance — industrial corridors as spatial plans are not among them.\n• LARR 2013 requires consent of 80% of affected families for private projects and 70% for PPP projects.\n• Dholera's Bhal region controversy is a documented case of fertile black soil farmland being acquired for industrial development."
+    },
+    "hi": {
+      "display_text": "भारत में औद्योगिक कॉरिडोर विकास के पर्यावरणीय और सामाजिक आयामों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भूमि अधिग्रहण, पुनर्वास और पुनर्स्थापन में उचित मुआवजा और पारदर्शिता का अधिकार अधिनियम, 2013 औद्योगिक कॉरिडोर नोड विकास के लिए अधिग्रहित भूमि पर लागू होता है।\n2. औद्योगिक कॉरिडोर कार्यक्रम-योजना चरण में पर्यावरण प्रभाव मूल्यांकन (EIA) अनिवार्य रूप से लागू होता है — इससे पहले कि कॉरिडोर नोड के भीतर व्यक्तिगत परियोजनाओं को मंजूरी दी जाए।\n3. औद्योगिक कॉरिडोर विकास का ग्रीनफील्ड सिटी मॉडल कृषि भूमि संरक्षण के साथ संरचनात्मक संघर्ष उत्पन्न करता है, क्योंकि ग्रीनफील्ड नोड्स के लिए बड़े contiguous भूमि भूखंडों की आवश्यकता होती है जो अक्सर कृषि क्षेत्रों से आते हैं।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 2\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 applies to land acquired for industrial corridor node development.",
+          "verdict": "सही है",
+          "reason": "LARR अधिनियम 2013 भारत में भूमि अधिग्रहण के लिए शासनकारी कानून है, जो कॉरिडोर नोड भूमि अधिग्रहण पर लागू होता है — यह सहमति आवश्यकताओं और पुनर्वास एवं पुनर्स्थापन प्रावधानों को अनिवार्य करता है।"
+        },
+        {
+          "statement": "An Environment Impact Assessment (EIA) is mandatorily triggered at the industrial corridor programme-planning stage — before individual projects are approved within corridor nodes.",
+          "verdict": "गलत है",
+          "reason": "EIA अधिसूचना 2006 के तहत EIA परियोजना-दर-परियोजना नोड के भीतर लागू होती है, न कि कॉरिडोर कार्यक्रम-योजना चरण में। कॉरिडोर नामांकन स्वयं स्वचालित रूप से कार्यक्रम-स्तरीय EIA की आवश्यकता नहीं बनाता।"
+        },
+        {
+          "statement": "The greenfield city model of industrial corridor development creates a structural conflict with agricultural land preservation, as greenfield nodes require large contiguous land parcels often sourced from agricultural zones.",
+          "verdict": "सही है",
+          "reason": "ग्रीनफील्ड औद्योगिक शहर विकास स्वाभाविक रूप से बड़े भूमि भूखंडों की मांग करता है; भारत की उपलब्ध भूमि मुख्यतः कृषि भूमि है, जिससे औद्योगिकीकरण और कृषि भूमि संरक्षण के बीच नीति तनाव उत्पन्न होता है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) जो केवल कथन 2 को सही मानता है, एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र मानते हैं कि कॉरिडोर कार्यक्रम-स्तरीय EIA अनिवार्य है (जो पर्यावरणीय शासन के लिए अच्छा लगता है) वे कथन 2 को स्वीकार कर सकते हैं और कथन 3 को तथ्य के बजाय राय मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 2 कहता है कि EIA कार्यक्रम-योजना चरण में लागू होती है — 2006 अधिसूचना के तहत EIA व्यक्तिगत परियोजनाओं/गतिविधियों पर लागू होती है, न कि कॉरिडोर नामांकन जैसे स्थानिक योजना कार्यक्रमों पर। अतः कथन 2 गलत है।",
+        "विकल्प (b) और (c) को हटा दें जिनमें कथन 2 को सही माना गया है।",
+        "कथन 1 और 3 दोनों तथ्यात्मक रूप से सही हैं — LARR 2013 लागू होता है, और कृषि भूमि-औद्योगिकीकरण तनाव प्रलेखित है। उत्तर विकल्प (d) है — केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का जाल पर्यावरणीय शासन की अपेक्षाओं का उपयोग करता है — जो छात्र मानते हैं कि बड़े औद्योगिक कार्यक्रमों के लिए कार्यक्रम-स्तरीय EIA होना चाहिए (जो अच्छी नीति होगी) वे इसे वर्तमान कानून मान लेते हैं। भारत में वास्तविक EIA ढांचा EIA अधिसूचना 2006 के तहत परियोजना-दर-परियोजना काम करता है; कार्यक्रम-स्तरीय रणनीतिक पर्यावरण मूल्यांकन कानूनी रूप से अनिवार्य नहीं है। यह वांछनीय नीति और वर्तमान कानून के बीच का अंतर UPSC के लिए एक उच्च-मूल्य जाल है।",
+      "final_explanation": "औद्योगिक कॉरिडोर विकास में महत्वपूर्ण भूमि अधिग्रहण और पर्यावरणीय शासन की चुनौतियाँ शामिल हैं, जिन्हें UPSC वैधानिक ढांचे के प्रश्नों के माध्यम से परखता है।\n\n• कथन 1 — सही: LARR अधिनियम 2013 सार्वजनिक प्रयोजनों के लिए सभी भूमि अधिग्रहण को नियंत्रित करता है, जिसमें कॉरिडोर नोड शामिल हैं, सामाजिक प्रभाव मूल्यांकन, प्रभावित परिवारों की सहमति (PPP परियोजनाओं के लिए), और पुनर्वास एवं पुनर्स्थापन प्रावधान आवश्यक हैं।\n• कथन 2 — गलत: भारत का EIA ढांचा (EIA अधिसूचना 2006) विशिष्ट परियोजनाओं/गतिविधियों पर लागू होता है, न कि स्थानिक योजना कार्यक्रमों पर। कॉरिडोर नामांकन स्वयं EIA को ट्रिगर नहीं करता। प्रत्येक फैक्ट्री, औद्योगिक इकाई, या बुनियादी ढांचा परियोजना को अपनी पर्यावरण मंजूरी लेनी होती है। कार्यक्रम-स्तरीय रणनीतिक पर्यावरण मूल्यांकन कानूनी रूप से अनिवार्य नहीं है।\n• कथन 3 — सही: धोलेरा का विकास गुजरात के उपजाऊ भाल क्षेत्र में होता है — जो उत्पादक कृषि भूमि है — जो ग्रीनफील्ड औद्योगिक शहर आकांक्षाओं और कृषि भूमि संरक्षण के बीच संरचनात्मक तनाव को दर्शाता है।\n\nमूल्य संवर्धन:\n• EIA अधिसूचना 2006 विशिष्ट परियोजना श्रेणियाँ (परिशिष्ट I) सूचीबद्ध करती है जिन्हें पर्यावरण मंजूरी चाहिए — औद्योगिक कॉरिडोर स्थानिक योजनाओं में शामिल नहीं हैं।\n• LARR 2013 निजी परियोजनाओं के लिए प्रभावित परिवारों की 80% सहमति और PPP परियोजनाओं के लिए 70% सहमति आवश्यक करता है।\n• धोलेरा के भाल क्षेत्र विवाद में उपजाऊ काली मिट्टी की कृषि भूमि औद्योगिक विकास के लिए अधिग्रहित की गई है।"
+    }
+  },
+  {
+    "uuid": "be7c2a50-3847-478f-9bc9-dd2a1de265cb",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Delhi-Mumbai Industrial Corridor (DMIC): Structure and Governance",
+        "National Industrial Corridor Development Programme (NICDP): Umbrella Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "DMIC nodal agency DMICDC identity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The ________ serves as the nodal agency specifically responsible for overall planning, coordination, and implementation of the Delhi-Mumbai Industrial Corridor (DMIC) programme, liaising with state governments, JICA, and individual project special purpose vehicles.\n\n(a) DMIC Development Corporation (DMICDC)\n(b) Dedicated Freight Corridor Corporation of India Ltd. (DFCCIL)\n(c) National Industrial Corridor Development and Implementation Trust (NICDIT)\n(d) Department for Promotion of Industry and Internal Trade (DPIIT)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because NICDIT is the apex body for all corridors under NICDP, making students confuse the apex coordination body (NICDIT) with the specific implementing agency for DMIC (DMICDC).",
+      "elimination_logic": [
+        "NICDIT is the apex body for NICDP overall — not the DMIC-specific nodal agency. Eliminate option (c).",
+        "DFCCIL manages the Dedicated Freight Corridor operation — it is under Railways and does not govern DMIC nodes. Eliminate option (b).",
+        "DPIIT is the nodal ministry/department, not a corporation implementing DMIC. Eliminate option (d).",
+        "DMICDC (Delhi Mumbai Industrial Corridor Development Corporation) is the specific nodal agency for DMIC — confirm option (a)."
+      ],
+      "upsc_trap_explanation": "NICDIT and DMICDC are both real governance bodies in the corridor ecosystem. Students who have learned NICDIT as the 'apex body' for corridors may substitute it for DMICDC as DMIC's specific nodal implementing agency. The hierarchical distinction — NICDIT oversees all corridors; DMICDC specifically implements DMIC — requires precise institutional mapping.",
+      "final_explanation": "India's industrial corridor governance involves a layered institutional structure: a ministry (DPIIT), an apex coordination body (NICDIT), and corridor-specific implementation agencies.\n\n• Option (a) — DMIC Development Corporation (DMICDC): Correct. DMICDC is the specific nodal agency for implementing DMIC — it coordinates between central government, state agencies, and JICA, and manages the overall DMIC programme.\n• Option (b) — Dedicated Freight Corridor Corporation of India Ltd. (DFCCIL): Incorrect. DFCCIL builds and operates the DFC rail infrastructure under the Ministry of Railways — separate from DMIC node governance.\n• Option (c) — National Industrial Corridor Development and Implementation Trust (NICDIT): Incorrect. NICDIT is the apex body for the entire NICDP programme, overseeing all corridors. It is above DMICDC in the institutional hierarchy, not the DMIC-specific implementing agency.\n• Option (d) — Department for Promotion of Industry and Internal Trade (DPIIT): Incorrect. DPIIT is the nodal ministry/department — it provides policy direction but is not the implementing corporation for DMIC.\n\nValue Addition:\n• DMICDC was incorporated in 2008 as a company under the Companies Act — a joint venture between GoI and JICA.\n• The equity split in DMICDC: Government of India holds 49% and JICA holds 26%, with state governments and others holding the remainder — approximate proportions.\n• NICDIT was set up in 2016 to provide unified governance across all NICDP corridors."
+    },
+    "hi": {
+      "display_text": "______ विशेष रूप से दिल्ली-मुंबई औद्योगिक कॉरिडोर (DMIC) कार्यक्रम की समग्र योजना, समन्वय और कार्यान्वयन के लिए नोडल एजेंसी के रूप में कार्य करता है, जो राज्य सरकारों, JICA, और व्यक्तिगत परियोजना विशेष प्रयोजन वाहनों के साथ संपर्क करता है।\n\n(a) DMIC डेवलपमेंट कॉरपोरेशन (DMICDC)\n(b) समर्पित माल ढुलाई कॉरिडोर कॉरपोरेशन ऑफ इंडिया लिमिटेड (DFCCIL)\n(c) राष्ट्रीय औद्योगिक कॉरिडोर विकास एवं कार्यान्वयन ट्रस्ट (NICDIT)\n(d) उद्योग और आंतरिक व्यापार संवर्धन विभाग (DPIIT)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि NICDIT NICDP के अंतर्गत सभी कॉरिडोरों के लिए शीर्ष निकाय है, जो छात्रों को NICDIT को DMIC के लिए विशिष्ट कार्यान्वयन एजेंसी DMICDC के साथ भ्रमित कर देता है।",
+      "elimination_logic": [
+        "NICDIT NICDP के लिए समग्र शीर्ष निकाय है — DMIC-विशिष्ट नोडल एजेंसी नहीं। अतः विकल्प (c) को हटा दें।",
+        "DFCCIL समर्पित माल ढुलाई कॉरिडोर का संचालन करता है — यह रेलवे के अंतर्गत है और DMIC नोड्स का संचालन नहीं करता। अतः विकल्प (b) को हटा दें।",
+        "DPIIT नोडल मंत्रालय/विभाग है, DMIC को लागू करने वाली निगम नहीं। अतः विकल्प (d) को हटा दें।",
+        "DMICDC (दिल्ली मुंबई इंडस्ट्रियल कॉरिडोर डेवलपमेंट कॉरपोरेशन) DMIC के लिए विशिष्ट नोडल एजेंसी है — विकल्प (a) को पुष्टि करें।"
+      ],
+      "upsc_trap_explanation": "NICDIT और DMICDC दोनों ही कॉरिडोर पारिस्थितिकी तंत्र में वास्तविक शासन निकाय हैं। जो छात्र NICDIT को कॉरिडोरों के 'शीर्ष निकाय' के रूप में जानते हैं, वे इसे DMIC के विशिष्ट नोडल कार्यान्वयन एजेंसी DMICDC के स्थान पर रख सकते हैं। पदानुक्रमिक भेद — NICDIT सभी कॉरिडोरों की देखरेख करता है; DMICDC विशेष रूप से DMIC को लागू करता है — इसके लिए सटीक संस्थागत मानचित्रण आवश्यक है।",
+      "final_explanation": "भारत के औद्योगिक कॉरिडोर शासन में एक स्तरीय संस्थागत संरचना शामिल है: एक मंत्रालय (DPIIT), एक शीर्ष समन्वय निकाय (NICDIT), और कॉरिडोर-विशिष्ट कार्यान्वयन एजेंसियाँ।\n\n• विकल्प (a) — DMIC डेवलपमेंट कॉरपोरेशन (DMICDC): सही। DMICDC DMIC को लागू करने के लिए विशिष्ट नोडल एजेंसी है — यह केंद्र सरकार, राज्य एजेंसियों, और JICA के बीच समन्वय करता है तथा पूरे DMIC कार्यक्रम का प्रबंधन करता है।\n• विकल्प (b) — समर्पित माल ढुलाई कॉरिडोर कॉरपोरेशन ऑफ इंडिया लिमिटेड (DFCCIL): गलत। DFCCIL रेलवे मंत्रालय के अंतर्गत DFC रेल अवसंरचना का निर्माण और संचालन करता है — DMIC नोड शासन से अलग।\n• विकल्प (c) — राष्ट्रीय औद्योगिक कॉरिडोर विकास एवं कार्यान्वयन ट्रस्ट (NICDIT): गलत। NICDIT पूरे NICDP कार्यक्रम के लिए शीर्ष निकाय है, जो सभी कॉरिडोरों की देखरेख करता है। यह संस्थागत पदानुक्रम में DMICDC से ऊपर है, DMIC-विशिष्ट कार्यान्वयन एजेंसी नहीं।\n• विकल्प (d) — उद्योग और आंतरिक व्यापार संवर्धन विभाग (DPIIT): गलत। DPIIT नोडल मंत्रालय/विभाग है — यह नीति निर्देशन प्रदान करता है लेकिन DMIC के लिए कार्यान्वयन निगम नहीं है।\n\nमूल्य संवर्धन:\n• DMICDC को 2008 में कंपनी अधिनियम के तहत एक कंपनी के रूप में स्थापित किया गया था — यह भारत सरकार और JICA के बीच एक संयुक्त उद्यम है।\n• DMICDC में इक्विटी विभाजन: भारत सरकार के पास 49% और JICA के पास 26% हिस्सेदारी है, शेष राज्य सरकारों और अन्य के पास है — लगभग अनुपात।\n• NICDIT को 2016 में सभी NICDP कॉरिडोरों में एकीकृत शासन प्रदान करने के लिए स्थापित किया गया था।"
+    }
+  },
+  {
+    "uuid": "091c9b77-6e06-4a4b-b4bf-4a9d699a0067",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Amritsar-Kolkata Industrial Corridor (AKIC): Alignment and Significance",
+        "Regional Balance and Industrial Corridor Coverage: Which States Are Left Out"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "AKIC states coverage and strategic rationale",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Amritsar-Kolkata Industrial Corridor (AKIC):\n\n1. The Amritsar-Kolkata Industrial Corridor covers the largest number of states among all industrial corridors under NICDP, spanning seven states from Punjab in the northwest to West Bengal in the east.\n2. Bihar and Jharkhand are included in AKIC primarily because they are established industrial states with pre-existing manufacturing infrastructure that the corridor is designed to enhance.\n3. AKIC's strategic significance includes connecting India's agrarian heartland states with the industrial east, offering a regional development rationale beyond pure manufacturing efficiency.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Amritsar-Kolkata Industrial Corridor covers the largest number of states among all industrial corridors under NICDP, spanning seven states from Punjab in the northwest to West Bengal in the east.",
+          "verdict": "Correct",
+          "reason": "AKIC covers Punjab, Haryana, Uttar Pradesh, Uttarakhand, Bihar, Jharkhand, and West Bengal — seven states, which is the highest state coverage among NICDP corridors."
+        },
+        {
+          "statement": "Bihar and Jharkhand are included in AKIC primarily because they are established industrial states with pre-existing manufacturing infrastructure that the corridor is designed to enhance.",
+          "verdict": "Incorrect",
+          "reason": "Bihar and Jharkhand are included to promote industrial development in relatively industrially underdeveloped states — the rationale is regional development and balanced growth, not enhancement of pre-existing industrial infrastructure. Jharkhand has mineral resources; Bihar has agrarian economy — both need industrial catalysts."
+        },
+        {
+          "statement": "AKIC's strategic significance includes connecting India's agrarian heartland states with the industrial east, offering a regional development rationale beyond pure manufacturing efficiency.",
+          "verdict": "Correct",
+          "reason": "The corridor's route through Bihar, UP, and Jharkhand explicitly serves a regional development objective — bringing industrial investment to states with lower manufacturing bases, not just optimizing existing industrial geography."
+        }
+      ],
+      "strong_distractor": "d — Option (d) suggesting all three statements are correct is a strong distractor because Statement 2 uses 'established industrial states' language that sounds like a reasonable description of any state that is in a corridor — students may not question whether Bihar is indeed an established industrial state.",
+      "elimination_logic": [
+        "Statement 2 claims Bihar and Jharkhand are 'established industrial states' — Bihar has India's lowest per capita income and minimal manufacturing base; Jharkhand has minerals but limited industrial infrastructure. The inclusion rationale is regional development, not infrastructure enhancement. Statement 2 is incorrect.",
+        "Eliminate option (d) which requires all three to be correct.",
+        "Statements 1 and 3 are both factually supported — seven states and the regional development rationale are documented features of AKIC.",
+        "Answer: option (c) — 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a scope-extension trap with a plausible-sounding rationale: corridors do enhance existing infrastructure, so 'established industrial states' sounds reasonable. But the precise characterization of Bihar as an 'established industrial state' is incorrect — it is included precisely because it is NOT industrially established and needs the corridor's catalytic effect. Students who apply the general 'corridors enhance existing capacity' logic without checking Bihar's specific profile will accept Statement 2.",
+      "final_explanation": "AKIC represents the most geographically expansive industrial corridor in India's network, with a deliberate regional development mandate.\n\n• Statement 1 — Correct: Seven states (Punjab, Haryana, UP, Uttarakhand, Bihar, Jharkhand, West Bengal) give AKIC the widest state footprint among all NICDP corridors. The Eastern DFC (Ludhiana to Dankuni) defines its transport spine.\n• Statement 2 — Incorrect: Bihar is one of India's least industrialized states by manufacturing output share. Jharkhand has mineral wealth but limited industrial diversification. Their inclusion is a deliberate policy choice for regional rebalancing — to use the corridor as a catalyst for industrial development, not to augment pre-existing manufacturing capacity.\n• Statement 3 — Correct: AKIC's route through the Gangetic plains and eastern India serves dual objectives — manufacturing efficiency (using EDFC logistics) and regional development (bringing industry to agrarian-economy states). This dual rationale is its defining strategic characteristic.\n\nValue Addition:\n• Bihar has the lowest per capita Net State Domestic Product (NSDP) among major states — its inclusion in AKIC reflects intent to address this disparity.\n• Jharkhand's mineral wealth (coal, iron ore) makes it a strategic addition to the industrial corridor for value-chain integration.\n• AKIC is sometimes described as the 'industrial lifeline of the Ganga-Brahmaputra plain.'"
+    },
+    "hi": {
+      "display_text": "अमृतसर-कोलकाता औद्योगिक गलियारे (AKIC) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अमृतसर-कोलकाता औद्योगिक गलियारा NICDP के अंतर्गत सभी औद्योगिक गलियारों में सबसे अधिक राज्यों को कवर करता है, जो उत्तर-पश्चिम में पंजाब से पूर्व में पश्चिम बंगाल तक सात राज्यों में फैला हुआ है।\n2. बिहार और झारखंड को AKIC में मुख्यतः इसलिए शामिल किया गया है क्योंकि वे स्थापित औद्योगिक राज्य हैं जिनके पास पूर्व-विद्यमान विनिर्माण अवसंरचना है जिसे यह गलियारा बढ़ाने के लिए डिज़ाइन किया गया है।\n3. AKIC का रणनीतिक महत्व भारत के कृषि प्रधान हृदयभूमि राज्यों को औद्योगिक पूर्व से जोड़ना है, जो केवल शुद्ध विनिर्माण दक्षता से परे एक क्षेत्रीय विकास तर्क प्रदान करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अमृतसर-कोलकाता औद्योगिक गलियारा (AKIC) NICDP के अंतर्गत सभी औद्योगिक गलियारों में सबसे अधिक राज्यों को कवर करता है, जो उत्तर-पश्चिम में पंजाब से पूर्व में पश्चिम बंगाल तक सात राज्यों में फैला हुआ है।",
+          "verdict": "सही है",
+          "reason": "AKIC पंजाब, हरियाणा, उत्तर प्रदेश, उत्तराखंड, बिहार, झारखंड और पश्चिम बंगाल को कवर करता है — सात राज्य, जो NICDP गलियारों में सबसे अधिक राज्य कवरेज है।"
+        },
+        {
+          "statement": "बिहार और झारखंड को AKIC में मुख्यतः इसलिए शामिल किया गया है क्योंकि वे स्थापित औद्योगिक राज्य हैं जिनके पास पूर्व-विद्यमान विनिर्माण अवसंरचना है जिसे यह गलियारा बढ़ाने के लिए डिज़ाइन किया गया है।",
+          "verdict": "गलत है",
+          "reason": "बिहार और झारखंड को औद्योगिक रूप से अपेक्षाकृत पिछड़े राज्यों में औद्योगिक विकास को बढ़ावा देने के लिए शामिल किया गया है — तर्क क्षेत्रीय विकास और संतुलित वृद्धि है, न कि पूर्व-विद्यमान औद्योगिक अवसंरचना का संवर्धन। झारखंड के पास खनिज संसाधन हैं; बिहार की अर्थव्यवस्था कृषि आधारित है — दोनों को औद्योगिक उत्प्रेरक की आवश्यकता है।"
+        },
+        {
+          "statement": "AKIC का रणनीतिक महत्व भारत के कृषि प्रधान हृदयभूमि राज्यों को औद्योगिक पूर्व से जोड़ना है, जो केवल शुद्ध विनिर्माण दक्षता से परे एक क्षेत्रीय विकास तर्क प्रदान करता है।",
+          "verdict": "सही है",
+          "reason": "गलियारे का मार्ग बिहार, यूपी और झारखंड से होकर गुजरता है जो स्पष्ट रूप से क्षेत्रीय विकास उद्देश्य की सेवा करता है — कम विनिर्माण आधार वाले राज्यों में औद्योगिक निवेश लाना, न कि केवल मौजूदा औद्योगिक भूगोल का अनुकूलन।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जो कहता है कि तीनों कथन सही हैं, एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 2 में 'स्थापित औद्योगिक राज्य' की भाषा है जो किसी भी गलियारे में शामिल राज्य के लिए तार्किक लग सकती है — छात्र यह जांच नहीं करते कि क्या बिहार वास्तव में एक स्थापित औद्योगिक राज्य है।",
+      "elimination_logic": [
+        "कथन 2 कहता है कि बिहार और झारखंड 'स्थापित औद्योगिक राज्य' हैं — बिहार की प्रति व्यक्ति आय भारत में सबसे कम है और विनिर्माण आधार न्यूनतम है; झारखंड के पास खनिज हैं लेकिन औद्योगिक अवसंरचना सीमित है। शामिल करने का तर्क क्षेत्रीय विकास है, अवसंरचना संवर्धन नहीं। अतः कथन 2 गलत है।",
+        "विकल्प (d) को हटा दें क्योंकि उसमें तीनों कथन सही होने चाहिए।",
+        "कथन 1 और 3 दोनों तथ्यात्मक रूप से समर्थित हैं — सात राज्य और क्षेत्रीय विकास तर्क AKIC की दस्तावेजीकृत विशेषताएँ हैं।",
+        "उत्तर: विकल्प (c) — केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक दायरा-विस्तार जाल है जिसमें एक संभावित तार्किक तर्क है: गलियारे मौजूदा अवसंरचना को बढ़ाते हैं, इसलिए 'स्थापित औद्योगिक राज्य' शब्द तार्किक लगता है। लेकिन बिहार को 'स्थापित औद्योगिक राज्य' के रूप में वर्णित करना गलत है — इसे शामिल इसलिए किया गया है क्योंकि यह औद्योगिक रूप से स्थापित नहीं है और गलियारे के उत्प्रेरक प्रभाव की आवश्यकता है। जो छात्र सामान्य 'गलियारे मौजूदा क्षमता बढ़ाते हैं' तर्क लगाते हैं बिना बिहार की विशिष्ट स्थिति जांचे, वे कथन 2 को स्वीकार कर लेंगे।",
+      "final_explanation": "AKIC भारत के औद्योगिक गलियारों में सबसे भौगोलिक रूप से विस्तृत गलियारा है, जिसमें एक स्पष्ट क्षेत्रीय विकास जनादेश है।\n\n• कथन 1 — सही: सात राज्य (पंजाब, हरियाणा, यूपी, उत्तराखंड, बिहार, झारखंड, पश्चिम बंगाल) AKIC को NICDP गलियारों में सबसे व्यापक राज्य कवरेज देते हैं। पूर्वी DFC (लुधियाना से डांकुनी) इसका परिवहन रीढ़ निर्धारित करता है।\n• कथन 2 — गलत: बिहार विनिर्माण उत्पादन हिस्सेदारी के हिसाब से भारत के सबसे कम औद्योगिक राज्यों में से एक है। झारखंड के पास खनिज संपदा है लेकिन औद्योगिक विविधीकरण सीमित है। उनका समावेश क्षेत्रीय पुनर्संतुलन के लिए एक नीति निर्णय है — गलियारे को औद्योगिक विकास के उत्प्रेरक के रूप में उपयोग करना, न कि पूर्व-विद्यमान विनिर्माण क्षमता को बढ़ाना।\n• कथन 3 — सही: AKIC का मार्ग गंगा मैदानों और पूर्वी भारत से होकर गुजरता है, जो दोहरे उद्देश्य सेवा करता है — विनिर्माण दक्षता (EDFC लॉजिस्टिक्स का उपयोग) और क्षेत्रीय विकास (कृषि-आधारित अर्थव्यवस्था वाले राज्यों में उद्योग लाना)। यह द्वैध तर्क इसकी रणनीतिक विशेषता है।\n\nमूल्य संवर्धन:\n• बिहार का प्रति व्यक्ति शुद्ध राज्य घरेलू उत्पाद (NSDP) प्रमुख राज्यों में सबसे कम है — AKIC में इसका समावेश इस असमानता को दूर करने की मंशा दर्शाता है।\n• झारखंड की खनिज संपदा (कोयला, लौह अयस्क) इसे औद्योगिक गलियारे के लिए मूल्य श्रृंखला एकीकरण में रणनीतिक जोड़ बनाती है।\n• AKIC को कभी-कभी 'गंगा-ब्रह्मपुत्र मैदान की औद्योगिक जीवनरेखा' के रूप में वर्णित किया जाता है।"
+    }
+  },
+  {
+    "uuid": "de46e7ef-d40c-49a8-adef-e15b11a4b74b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Bengaluru-Mumbai Economic Corridor (BMEC) and Hyderabad-Nagpur-Mumbai Corridor"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Nagpur as multi-corridor junction node",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched regarding India's industrial corridors?\n\n(a) Bengaluru-Mumbai Economic Corridor (BMEC) — Spans the states of Karnataka and Goa along the coastal route to Mumbai\n(b) Nagpur — Functions as a multi-corridor junction node connected to both the Bengaluru-Mumbai Economic Corridor axis and the Hyderabad-Nagpur-Mumbai Industrial Corridor\n(c) Hyderabad-Nagpur-Mumbai Industrial Corridor — Serves as Andhra Pradesh's primary direct industrial corridor linkage under NICDP\n(d) Hyderabad-Nagpur-Mumbai Industrial Corridor — Functions as a sub-component of the Delhi-Mumbai Industrial Corridor (DMIC) rather than a separate NICDP corridor",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) pairing BMEC with Karnataka-Goa is a strong distractor because BMEC connects Bengaluru (Karnataka) to Mumbai (Maharashtra), and students may add Goa as an intermediary coastal state on this route — it sounds geographically plausible.",
+      "elimination_logic": [
+        "BMEC connects Bengaluru (Karnataka) to Mumbai (Maharashtra) — two states, not Karnataka-Goa. Eliminate option (a).",
+        "Hyderabad-Nagpur-Mumbai corridor gives Telangana its only direct corridor linkage — not Andhra Pradesh's primary corridor (CBIC serves AP). Eliminate option (c) if it assigns this corridor to AP.",
+        "Nagpur as a junction node connecting both BMEC (extension) and the Hyderabad-Nagpur-Mumbai corridor is the correctly matched pair — option (b).",
+        "Option (d) claiming Hyderabad-Nagpur-Mumbai is a sub-component of DMIC is incorrect — it is a separate NICDP corridor entry."
+      ],
+      "upsc_trap_explanation": "The Nagpur multi-corridor junction is a high-value geographic fact: Nagpur sits at the intersection of multiple transport and industrial planning vectors. Students who know Nagpur is important but cannot precisely name which corridors converge there may accept plausible-sounding wrong pairings. The correct fact — Nagpur connects BMEC's extension and the Hyderabad-Nagpur-Mumbai corridor — requires deliberate node-geography mapping.",
+      "final_explanation": "Nagpur's central location in peninsular India makes it a natural multi-corridor junction — a geographic reality that UPSC exploits in corridor mapping questions.\n\n• Option (a) — BMEC spanning Karnataka and Goa: Incorrect. BMEC runs between Bengaluru (Karnataka) and Mumbai (Maharashtra). Goa is not a BMEC state, though it lies on the approximate geographic route. Two states: Karnataka and Maharashtra.\n• Option (b) — Nagpur as a junction node connected to both the BMEC extension and the Hyderabad-Nagpur-Mumbai corridor: Correct. Nagpur's central Maharashtra location makes it a node in the BMEC axis (Bengaluru-Mumbai) and simultaneously the anchoring city in the Hyderabad-Nagpur-Mumbai corridor. This dual-corridor role is explicitly noted in NICDP planning documents.\n• Option (c) — Hyderabad-Nagpur-Mumbai corridor as Andhra Pradesh's primary corridor linkage: Incorrect. This corridor's Hyderabad end is in Telangana (not Andhra Pradesh). It is Telangana's primary direct corridor linkage under NICDP.\n• Option (d) — Hyderabad-Nagpur-Mumbai corridor as a sub-component of DMIC: Incorrect. It is a separate NICDP corridor, not a sub-component of DMIC.\n\nValue Addition:\n• Nagpur is India's geographic center and a key rail junction — its multi-corridor role is consistent with its existing connectivity.\n• Telangana (formed 2014) got its first dedicated corridor linkage through the Hyderabad-Nagpur-Mumbai corridor — post-bifurcation corridor policy.\n• BMEC runs through the Western Ghats region — terrain challenges make it more complex than plains-based corridors."
+    },
+    "hi": {
+      "display_text": "भारत के औद्योगिक कोरिडोरों के संबंध में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) बेंगलुरु-मुंबई आर्थिक कोरिडोर (BMEC) — कर्नाटक और गोवा राज्यों को मुंबई तक तटीय मार्ग के साथ जोड़ता है\n(b) नागपुर — एक बहु-कोरिडोर जंक्शन नोड के रूप में कार्य करता है जो बेंगलुरु-मुंबई आर्थिक कोरिडोर अक्ष और हैदराबाद-नागपुर-मुंबई औद्योगिक कोरिडोर दोनों से जुड़ा है\n(c) हैदराबाद-नागपुर-मुंबई औद्योगिक कोरिडोर — NICDP के तहत आंध्र प्रदेश का प्राथमिक प्रत्यक्ष औद्योगिक कोरिडोर लिंक है\n(d) हैदराबाद-नागपुर-मुंबई औद्योगिक कोरिडोर — दिल्ली-मुंबई औद्योगिक कोरिडोर (DMIC) का उप-घटक है, न कि एक अलग NICDP कोरिडोर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) में BMEC को कर्नाटक-गोवा के साथ जोड़ना एक मजबूत भ्रम है क्योंकि BMEC बेंगलुरु (कर्नाटक) को मुंबई (महाराष्ट्र) से जोड़ता है, और छात्र इस मार्ग पर गोवा को एक मध्यवर्ती तटीय राज्य के रूप में जोड़ सकते हैं — यह भौगोलिक रूप से संभावित लगता है।",
+      "elimination_logic": [
+        "BMEC बेंगलुरु (कर्नाटक) को मुंबई (महाराष्ट्र) से जोड़ता है — दो राज्य हैं, कर्नाटक-गोवा नहीं। विकल्प (a) को हटा दें।",
+        "हैदराबाद-नागपुर-मुंबई कोरिडोर तेलंगाना को इसका एकमात्र प्रत्यक्ष कोरिडोर लिंक देता है — यह आंध्र प्रदेश का प्राथमिक कोरिडोर नहीं है (CBIC आंध्र प्रदेश की सेवा करता है)। यदि विकल्प (c) इस कोरिडोर को आंध्र प्रदेश से जोड़ता है तो इसे हटा दें।",
+        "नागपुर, जो BMEC (विस्तार) और हैदराबाद-नागपुर-मुंबई कोरिडोर दोनों को जोड़ने वाला जंक्शन नोड है, सही मेल खाता जोड़ा है — विकल्प (b)।",
+        "विकल्प (d) जो कहता है कि हैदराबाद-नागपुर-मुंबई DMIC का उप-घटक है, गलत है — यह एक अलग NICDP कोरिडोर है।"
+      ],
+      "upsc_trap_explanation": "नागपुर बहु-कोरिडोर जंक्शन एक उच्च-मूल्य भौगोलिक तथ्य है: नागपुर कई परिवहन और औद्योगिक योजना वेक्टरों के चौराहे पर स्थित है। जो छात्र जानते हैं कि नागपुर महत्वपूर्ण है लेकिन यह ठीक से नहीं बता पाते कि कौन से कोरिडोर वहां मिलते हैं, वे संभावित गलत जोड़ों को स्वीकार कर सकते हैं। सही तथ्य — नागपुर BMEC के विस्तार और हैदराबाद-नागपुर-मुंबई कोरिडोर को जोड़ता है — इसके लिए जानबूझकर नोड-भूगोल मानचित्रण आवश्यक है।",
+      "final_explanation": "नागपुर का प्रायद्वीपीय भारत में केंद्रीय स्थान इसे एक प्राकृतिक बहु-कोरिडोर जंक्शन बनाता है — यह एक भौगोलिक वास्तविकता है जिसका UPSC कोरिडोर मानचित्रण प्रश्नों में उपयोग करता है।\n\n• विकल्प (a) — BMEC जो कर्नाटक और गोवा को जोड़ता है: गलत। BMEC बेंगलुरु (कर्नाटक) और मुंबई (महाराष्ट्र) के बीच चलता है। गोवा BMEC राज्य नहीं है, हालांकि यह लगभग इसी भौगोलिक मार्ग पर स्थित है। दो राज्य: कर्नाटक और महाराष्ट्र।\n• विकल्प (b) — नागपुर जो BMEC विस्तार और हैदराबाद-नागपुर-मुंबई कोरिडोर दोनों से जुड़ा जंक्शन नोड है: सही। नागपुर का मध्य महाराष्ट्र स्थान इसे BMEC अक्ष (बेंगलुरु-मुंबई) में एक नोड बनाता है और साथ ही हैदराबाद-नागपुर-मुंबई कोरिडोर में एक मुख्य शहर भी है। यह द्वैध-कोरिडोर भूमिका NICDP योजना दस्तावेजों में स्पष्ट रूप से उल्लिखित है।\n• विकल्प (c) — हैदराबाद-नागपुर-मुंबई कोरिडोर को आंध्र प्रदेश का प्राथमिक प्रत्यक्ष कोरिडोर लिंक मानना: गलत। इस कोरिडोर का हैदराबाद छोर तेलंगाना में है (आंध्र प्रदेश में नहीं)। यह NICDP के तहत तेलंगाना का प्राथमिक प्रत्यक्ष कोरिडोर लिंक है।\n• विकल्प (d) — हैदराबाद-नागपुर-मुंबई कोरिडोर को DMIC का उप-घटक मानना: गलत। यह एक अलग NICDP कोरिडोर है, DMIC का उप-घटक नहीं।\n\nमूल्य संवर्धन:\n• नागपुर भारत का भौगोलिक केंद्र है और एक प्रमुख रेल जंक्शन है — इसकी बहु-कोरिडोर भूमिका इसकी मौजूदा कनेक्टिविटी के अनुरूप है।\n• तेलंगाना (2014 में बना) को हैदराबाद-नागपुर-मुंबई कोरिडोर के माध्यम से अपनी पहली समर्पित कोरिडोर लिंक मिली — विभाजन के बाद की कोरिडोर नीति।\n• BMEC पश्चिमी घाट क्षेत्र से होकर गुजरता है — भौगोलिक चुनौतियाँ इसे मैदान आधारित कोरिडोरों से अधिक जटिल बनाती हैं।"
+    }
+  },
+  {
+    "uuid": "5282aa32-555c-470d-b6cb-b9612e00f964",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "East Coast Economic Corridor (ECEC) and Vizag-Chennai Industrial Corridor (VCIC)",
+        "Sagarmala Programme and Its Synergy/Distinction from Industrial Corridors"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Corridor funding partner and ministry mapping",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (programme/corridor) with List II (primary funding partner or nodal ministry):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Delhi-Mumbai Industrial Corridor (DMIC)",
+            "1. Asian Development Bank (ADB)"
+          ],
+          [
+            "B. Amritsar-Kolkata Industrial Corridor (AKIC)",
+            "2. Japan International Cooperation Agency (JICA)"
+          ],
+          [
+            "C. Vizag-Chennai Industrial Corridor (VCIC/ECEC)",
+            "3. Ministry of Ports, Shipping and Waterways"
+          ],
+          [
+            "D. Sagarmala Programme",
+            "4. World Bank (via Eastern DFC alignment)"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-2, B-4, C-1, D-3\n(c) A-1, B-2, C-4, D-3\n(d) A-2, B-4, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because it correctly places JICA with DMIC but incorrectly assigns ADB to AKIC (instead of World Bank), exploiting the ADB-eastern region association.",
+      "elimination_logic": [
+        "DMIC → JICA: Well-established funding pairing — any option placing DMIC with another funder is wrong. Narrow to options with DMIC-JICA.",
+        "AKIC → World Bank (Eastern DFC): ADB funds VCIC/ECEC, not AKIC. Options assigning ADB to AKIC are wrong.",
+        "VCIC/ECEC → ADB: This is the correct pairing — eliminate options assigning VCIC to JICA.",
+        "Sagarmala → Ministry of Ports, Shipping and Waterways: Options placing Sagarmala under Commerce or Railways are wrong. Only option (b) correctly maps all four pairings."
+      ],
+      "upsc_trap_explanation": "The ADB-AKIC substitution is the primary trap: ADB operates extensively in eastern and South-East Asian infrastructure, making 'ADB funds eastern India corridor' feel natural. The correct fact — World Bank funds the Eastern DFC underlying AKIC while ADB funds the eastern coast corridor (VCIC) — requires precise source-to-project mapping that trips up partially prepared candidates.",
+      "final_explanation": "Corridor governance and funding involves precise institutional mappings — ministry, multilateral partner, and implementing body — tested together in match-the-column format.\n\nCorrect matches:\n• A (DMIC) → 2 (JICA): JICA provides ODA loans for DMIC and also co-funded the Western DFC — Japan is DMIC's bilateral partner.\n• B (AKIC) → 4 (World Bank/domestic funding via Eastern DFC): The Eastern DFC is World Bank-funded; AKIC is aligned along it. ADB is not involved in AKIC.\n• C (VCIC/ECEC) → 1 (ADB): ADB is the multilateral financing partner for VCIC under its SASEC framework — the key differentiator from Japan-funded corridors.\n• D (Sagarmala) → 3 (Ministry of Ports, Shipping and Waterways): Sagarmala is administered by the ports ministry, not Commerce — the institutional distinction from NICDP corridors.\n\nTrap pairing: AKIC-ADB confusion (B-1 in wrong options) is the designed trap — ADB operates in eastern corridors but through VCIC, not AKIC.\n\nValue Addition:\n• SASEC (South Asia Subregional Economic Cooperation) is ADB's framework for eastern South Asia connectivity — VCIC is its flagship India project.\n• World Bank's Eastern DFC financing is separate from its Urban/social sector lending to India.\n• Sagarmala and industrial corridor nodes sometimes share physical locations (Krishnapatnam, Ennore) but are governed by different ministries."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (कार्यक्रम/कॉरिडोर) को सूची II (प्राथमिक वित्तपोषण साझेदार या nodal मंत्रालय) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. दिल्ली-मुंबई औद्योगिक कॉरिडोर (DMIC)",
+            "1. एशियाई विकास बैंक (ADB)"
+          ],
+          [
+            "B. अमृतसर-कोलकाता औद्योगिक कॉरिडोर (AKIC)",
+            "2. जापान इंटरनेशनल कोऑपरेशन एजेंसी (JICA)"
+          ],
+          [
+            "C. विजाग-चेन्नई औद्योगिक कॉरिडोर (VCIC/ECEC)",
+            "3. बंदरगाह, नौवहन और जलमार्ग मंत्रालय"
+          ],
+          [
+            "D. सागरमाला कार्यक्रम",
+            "4. विश्व बैंक (पूर्वी DFC संरेखण के माध्यम से)"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-2, B-1, C-4, D-3\n(b) A-2, B-4, C-1, D-3\n(c) A-1, B-2, C-4, D-3\n(d) A-2, B-4, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमकारी विकल्प है क्योंकि यह सही ढंग से JICA को DMIC के साथ जोड़ता है लेकिन ADB को AKIC के बजाय (World Bank के बजाय) गलत रूप से सौंपता है, जो ADB-पूर्वी क्षेत्र संबंध का लाभ उठाता है।",
+      "elimination_logic": [
+        "DMIC → JICA: अच्छी तरह स्थापित वित्तपोषण जोड़ी — कोई भी विकल्प जो DMIC को किसी अन्य फंडर के साथ जोड़ता है वह गलत है। DMIC-JICA वाले विकल्पों तक सीमित करें।",
+        "AKIC → World Bank (पूर्वी DFC): ADB VCIC/ECEC को फंड करता है, AKIC को नहीं। जो विकल्प ADB को AKIC सौंपते हैं वे गलत हैं।",
+        "VCIC/ECEC → ADB: यह सही जोड़ी है — VCIC को JICA सौंपने वाले विकल्पों को हटा दें।",
+        "सागरमाला → बंदरगाह, नौवहन और जलमार्ग मंत्रालय: जो विकल्प सागरमाला को वाणिज्य या रेलवे के अंतर्गत रखते हैं वे गलत हैं। केवल विकल्प (b) सभी चार जोड़ों को सही ढंग से मैप करता है।"
+      ],
+      "upsc_trap_explanation": "ADB-AKIC प्रतिस्थापन मुख्य जाल है: ADB पूर्वी और दक्षिण-पूर्व एशियाई बुनियादी ढांचे में व्यापक रूप से कार्य करता है, जिससे 'ADB पूर्वी भारत कॉरिडोर को फंड करता है' स्वाभाविक लगता है। सही तथ्य — World Bank पूर्वी DFC के तहत AKIC को फंड करता है जबकि ADB पूर्वी तट कॉरिडोर (VCIC) को फंड करता है — सटीक स्रोत-से-परियोजना मैपिंग की आवश्यकता है जो आंशिक रूप से तैयार उम्मीदवारों को भ्रमित करती है।",
+      "final_explanation": "कॉरिडोर शासन और वित्तपोषण में सटीक संस्थागत मैपिंग शामिल है — मंत्रालय, बहुपक्षीय साझेदार, और कार्यान्वयन निकाय — जो मिलान-स्तंभ प्रारूप में एक साथ परखा जाता है।\n\nसही मिलान:\n• A (DMIC) → 2 (JICA): JICA DMIC के लिए ODA ऋण प्रदान करता है और पश्चिमी DFC को भी सह-फंड किया है — जापान DMIC का द्विपक्षीय साझेदार है।\n• B (AKIC) → 4 (World Bank/पूर्वी DFC के माध्यम से घरेलू वित्तपोषण): पूर्वी DFC विश्व बैंक द्वारा वित्तपोषित है; AKIC इसके साथ संरेखित है। ADB AKIC में शामिल नहीं है।\n• C (VCIC/ECEC) → 1 (ADB): ADB VCIC के लिए बहुपक्षीय वित्तपोषण साझेदार है इसके SASEC ढांचे के तहत — जो जापान-फंडेड कॉरिडोर से मुख्य भेदक है।\n• D (सागरमाला) → 3 (बंदरगाह, नौवहन और जलमार्ग मंत्रालय): सागरमाला बंदरगाह मंत्रालय द्वारा प्रशासित है, न कि वाणिज्य मंत्रालय द्वारा — NICDP कॉरिडोर से संस्थागत भेद।\n\nजाल जोड़ी: AKIC-ADB भ्रम (गलत विकल्पों में B-1) डिज़ाइन किया गया जाल है — ADB पूर्वी कॉरिडोर में काम करता है लेकिन VCIC के माध्यम से, AKIC के माध्यम से नहीं।\n\nमूल्य संवर्धन:\n• SASEC (South Asia Subregional Economic Cooperation) ADB का पूर्वी दक्षिण एशिया कनेक्टिविटी के लिए ढांचा है — VCIC इसका प्रमुख भारत परियोजना है।\n• विश्व बैंक का पूर्वी DFC वित्तपोषण भारत के शहरी/सामाजिक क्षेत्र ऋण से अलग है।\n• सागरमाला और औद्योगिक कॉरिडोर नोड कभी-कभी भौतिक स्थान साझा करते हैं (कृष्णापत्तनम, एन्नोर) लेकिन अलग-अलग मंत्रालयों द्वारा शासित होते हैं।"
+    }
+  },
+  {
+    "uuid": "3b440456-b61b-4f29-b2f7-a0cad8db9985",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "National Manufacturing Policy (NMP) 2011 and Its Relationship with Industrial Corridors",
+        "Current Status and Challenges of Industrial Corridor Implementation"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "NMP 2011 GDP and employment targets as policy evaluation baseline",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A parliamentary standing committee tasked with reviewing India's manufacturing sector performance in 2022 wishes to identify the specific policy framework that established quantified targets for India's manufacturing GDP share and manufacturing employment by 2022 — to serve as the formal evaluation baseline for assessing whether government programmes achieved their stated objectives. The committee notes that multiple programmes (DMIC, Make in India, NICDP, PM Gati Shakti) were operational during this period.\n\nWhich policy framework correctly provides the specific quantified 2022 baseline targets the committee should use?\n\n(a) National Industrial Corridor Development Programme (NICDP), which sets corridor-level GDP contribution targets for each state\n(b) Make in India initiative (2014), which replaced the earlier manufacturing policy framework and set revised sector-specific output targets for 2022\n(c) National Manufacturing Policy 2011, which explicitly targeted raising manufacturing's GDP share to 25% and creating 100 million additional manufacturing jobs by 2022\n(d) PM Gati Shakti National Master Plan (2021), which established integrated infrastructure-linked manufacturing output targets across 16 ministries",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who know Make in India (2014) was a major manufacturing push may conclude it formally replaced NMP 2011 as the governing policy framework — when in fact Make in India is an investment promotion initiative, not a statutory policy replacement for NMP.",
+      "elimination_logic": [
+        "The scenario asks which policy framework provides the baseline targets against which the 2022 manufacturing outcomes should be assessed — this requires identifying the policy that set specific 2022 targets.",
+        "NMP 2011 explicitly set 25% GDP share and 100 million job targets by 2022 — this is the evaluation baseline.",
+        "Make in India (2014) is an investment promotion initiative without a formal statutory manufacturing target for 2022 — eliminate option (b).",
+        "NICDP provides infrastructure framework, not GDP/employment targets. PM Gati Shakti is a 2021 planning tool, too recent to have set 2022 targets. Only NMP 2011 set the specific 2022 benchmark — option (c)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap: Make in India (2014) is more prominent in public discourse than NMP 2011, and students who associate 'manufacturing targets' with the more visible programme will choose Make in India as the evaluation benchmark. The precise fact — NMP 2011 set the specific quantified 2022 targets that Make in India sought to operationalize — requires knowing the policy sequence and the distinction between a target-setting policy (NMP) and an implementation initiative (Make in India).",
+      "final_explanation": "This scenario tests the ability to identify the correct policy baseline for evaluating manufacturing sector outcomes — a distinction between target-setting frameworks and implementation programmes.\n\nApplicable principle: The National Manufacturing Policy 2011 is the specific policy framework that established India's 2022 manufacturing targets: increase the manufacturing sector's share in GDP to 25% (from ~15%) and create 100 million additional manufacturing jobs. These quantified, time-bound targets make NMP 2011 the correct evaluation baseline.\n\n• Option (a) — NICDP as the evaluation framework: Incorrect. NICDP provides industrial infrastructure — it does not set GDP or employment targets against which outcomes are measured.\n• Option (b) — Make in India (2014) as the replacement policy: Incorrect. Make in India is an investment attraction and brand promotion initiative, not a statutory policy with quantified 2022 manufacturing targets. It operationalizes NMP's intent but does not replace it as a target-setting framework.\n• Option (c) — NMP 2011 as the correct evaluation baseline: Correct. NMP 2011's explicit 25% GDP and 100 million job targets by 2022 are the benchmarks against which 2022 manufacturing outcomes are measured. India's actual manufacturing GDP share (~15-17% in 2022) represents a significant miss against NMP targets.\n• Option (d) — PM Gati Shakti (2021) as the framework: Incorrect. Gati Shakti is a planning coordination platform launched in 2021 — it cannot serve as the baseline for targets set before 2022.\n\nValue Addition:\n• India's manufacturing share in GDP was approximately 15-17% in 2022, against the NMP 2011 target of 25% — a significant policy gap.\n• NMP 2011 also aimed to make India a global manufacturing hub through technology upgradation and cluster development.\n• Make in India 2.0 (post-2020) focuses on 27 priority sectors — a refinement of the earlier broad-based approach."
+    },
+    "hi": {
+      "display_text": "भारत के विनिर्माण क्षेत्र के 2022 के प्रदर्शन की समीक्षा के लिए गठित एक संसदीय स्थायी समिति यह पहचानना चाहती है कि कौन-सी विशिष्ट नीति ढांचा भारत के विनिर्माण GDP हिस्से और विनिर्माण रोजगार के लिए 2022 तक मात्रात्मक लक्ष्य स्थापित करती है — ताकि यह औपचारिक मूल्यांकन आधार के रूप में काम कर सके कि क्या सरकारी कार्यक्रमों ने अपने घोषित उद्देश्यों को पूरा किया। समिति नोट करती है कि इस अवधि के दौरान कई कार्यक्रम (DMIC, Make in India, NICDP, PM Gati Shakti) संचालित थे।\n\nकौन-सी नीति ढांचा सही रूप से वह विशिष्ट मात्रात्मक 2022 आधारभूत लक्ष्य प्रदान करती है जिसका उपयोग समिति को करना चाहिए?\n\n(a) राष्ट्रीय औद्योगिक कॉरिडोर विकास कार्यक्रम (NICDP), जो प्रत्येक राज्य के लिए कॉरिडोर स्तर के GDP योगदान लक्ष्य निर्धारित करता है\n(b) Make in India पहल (2014), जिसने पूर्व की विनिर्माण नीति ढांचे को प्रतिस्थापित किया और 2022 के लिए संशोधित क्षेत्र-विशिष्ट उत्पादन लक्ष्य निर्धारित किए\n(c) राष्ट्रीय विनिर्माण नीति 2011, जिसने स्पष्ट रूप से 2022 तक विनिर्माण के GDP हिस्से को 25% तक बढ़ाने और 100 मिलियन अतिरिक्त विनिर्माण रोजगार सृजित करने का लक्ष्य रखा\n(d) PM गति शक्ति राष्ट्रीय मास्टर प्लान (2021), जिसने 16 मंत्रालयों में एकीकृत अवसंरचना-संबंधित विनिर्माण उत्पादन लक्ष्य स्थापित किए",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि Make in India (2014) एक प्रमुख विनिर्माण प्रोत्साहन था, वे यह निष्कर्ष निकाल सकते हैं कि इसने औपचारिक रूप से NMP 2011 को शासकीय नीति के रूप में प्रतिस्थापित कर दिया — जबकि वास्तव में Make in India एक निवेश प्रोत्साहन पहल है, न कि NMP का वैधानिक प्रतिस्थापन।",
+      "elimination_logic": [
+        "परिदृश्य यह पूछता है कि कौन-सी नीति ढांचा वह आधारभूत लक्ष्य प्रदान करती है जिसके विरुद्ध 2022 के विनिर्माण परिणामों का मूल्यांकन किया जाना चाहिए — इसके लिए उस नीति की पहचान आवश्यक है जिसने 2022 के लिए विशिष्ट लक्ष्य निर्धारित किए।",
+        "NMP 2011 ने स्पष्ट रूप से 2022 तक 25% GDP हिस्सेदारी और 100 मिलियन रोजगार के लक्ष्य निर्धारित किए — यही मूल्यांकन आधार है।",
+        "Make in India (2014) एक निवेश प्रोत्साहन पहल है जिसमें 2022 के लिए औपचारिक वैधानिक विनिर्माण लक्ष्य नहीं हैं — अतः विकल्प (b) को हटा दें।",
+        "NICDP अवसंरचना ढांचा प्रदान करता है, न कि GDP/रोजगार लक्ष्य। PM Gati Shakti 2021 की योजना उपकरण है, जो 2022 के लक्ष्य निर्धारित करने के लिए बहुत नया है। केवल NMP 2011 ने विशिष्ट 2022 मानक निर्धारित किए हैं — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "उल्टा कारण-प्रभाव (reversed-causation) जाल: Make in India (2014) सार्वजनिक चर्चा में NMP 2011 से अधिक प्रमुख है, और जो छात्र 'विनिर्माण लक्ष्य' को अधिक दृश्य कार्यक्रम से जोड़ते हैं, वे मूल्यांकन मानक के रूप में Make in India चुनेंगे। सटीक तथ्य यह है कि NMP 2011 ने विशिष्ट मात्रात्मक 2022 लक्ष्य निर्धारित किए जिन्हें Make in India ने लागू करने का प्रयास किया — इसके लिए नीति अनुक्रम और लक्ष्य निर्धारण नीति (NMP) तथा कार्यान्वयन पहल (Make in India) के बीच अंतर को जानना आवश्यक है।",
+      "final_explanation": "यह परिदृश्य विनिर्माण क्षेत्र के परिणामों के मूल्यांकन के लिए सही नीति आधार की पहचान करने की क्षमता का परीक्षण करता है — लक्ष्य निर्धारण ढाँचों और कार्यान्वयन कार्यक्रमों के बीच अंतर।\n\nलागू सिद्धांत: राष्ट्रीय विनिर्माण नीति 2011 वह विशिष्ट नीति ढांचा है जिसने भारत के 2022 के विनिर्माण लक्ष्यों को स्थापित किया: GDP में विनिर्माण क्षेत्र का हिस्सा 25% तक बढ़ाना (लगभग 15% से) और 100 मिलियन अतिरिक्त विनिर्माण रोजगार सृजित करना। ये मात्रात्मक, समयबद्ध लक्ष्य NMP 2011 को सही मूल्यांकन आधार बनाते हैं।\n\n• विकल्प (a) — NICDP को मूल्यांकन ढांचा मानना: गलत। NICDP औद्योगिक अवसंरचना प्रदान करता है — यह GDP या रोजगार लक्ष्यों को निर्धारित नहीं करता जिनके विरुद्ध परिणाम मापे जाते हैं।\n• विकल्प (b) — Make in India (2014) को प्रतिस्थापन नीति मानना: गलत। Make in India एक निवेश आकर्षण और ब्रांड प्रचार पहल है, न कि 2022 के मात्रात्मक विनिर्माण लक्ष्यों वाली वैधानिक नीति। यह NMP के उद्देश्य को लागू करता है पर लक्ष्य निर्धारण ढांचे के रूप में प्रतिस्थापित नहीं करता।\n• विकल्प (c) — NMP 2011 को सही मूल्यांकन आधार मानना: सही। NMP 2011 के स्पष्ट 25% GDP और 100 मिलियन रोजगार लक्ष्य 2022 तक वे मानक हैं जिनके विरुद्ध 2022 के विनिर्माण परिणामों का मूल्यांकन किया जाता है। भारत का वास्तविक विनिर्माण GDP हिस्सा (~15-17% 2022 में) NMP लक्ष्यों के मुकाबले एक महत्वपूर्ण चूक दर्शाता है।\n• विकल्प (d) — PM Gati Shakti (2021) को ढांचा मानना: गलत। Gati Shakti 2021 में शुरू हुआ एक योजना समन्वय मंच है — यह 2022 से पहले निर्धारित लक्ष्यों के लिए आधार नहीं हो सकता।\n\nमूल्य संवर्धन:\n• भारत का विनिर्माण GDP में हिस्सा 2022 में लगभग 15-17% था, जबकि NMP 2011 का लक्ष्य 25% था — एक महत्वपूर्ण नीति अंतर।\n• NMP 2011 का उद्देश्य भारत को तकनीकी उन्नयन और क्लस्टर विकास के माध्यम से वैश्विक विनिर्माण केंद्र बनाना भी था।\n• Make in India 2.0 (2020 के बाद) 27 प्राथमिक क्षेत्रों पर केंद्रित है — जो पहले के व्यापक दृष्टिकोण का परिष्करण है।"
+    }
+  },
+  {
+    "uuid": "ae8ca73f-4b30-4747-82da-6c231b04f685",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Industrial Corridors and 'Make in India' + PM Gati Shakti Integration",
+        "Financing Mechanisms of Industrial Corridors: Multilateral, Bilateral, and Domestic Funding"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "National Logistics Policy and logistics cost reduction target",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the integration of industrial corridors with broader policy frameworks:\n\n1. The National Logistics Policy (2022) aims to reduce India's logistics cost from approximately 13–14% of GDP to below 10% of GDP, and industrial corridor development is identified as a contributing mechanism for achieving this reduction.\n2. PM Gati Shakti National Master Plan directly allocates dedicated budgetary funds to industrial corridor construction, making it the primary financing vehicle for NICDP corridors from 2021 onwards.\n3. Make in India 2.0 focuses on 27 priority sectors, and industrial corridors function as the physical infrastructure platform through which the manufacturing capacity for these sectors is to be developed.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The National Logistics Policy (2022) aims to reduce India's logistics cost from approximately 13–14% of GDP to below 10% of GDP, and industrial corridor development is identified as a contributing mechanism for achieving this reduction.",
+          "verdict": "Correct",
+          "reason": "NLP 2022 explicitly targets reducing logistics costs from 13-14% of GDP to sub-10%, and industrial corridor infrastructure (DFC spines, multi-modal nodes) is a key contributing element."
+        },
+        {
+          "statement": "PM Gati Shakti National Master Plan directly allocates dedicated budgetary funds to industrial corridor construction, making it the primary financing vehicle for NICDP corridors from 2021 onwards.",
+          "verdict": "Incorrect",
+          "reason": "PM Gati Shakti is a GIS-based planning and coordination platform, not a funding programme. It integrates infrastructure plans across ministries but does not independently allocate construction budgets for corridors."
+        },
+        {
+          "statement": "Make in India 2.0 focuses on 27 priority sectors, and industrial corridors function as the physical infrastructure platform through which the manufacturing capacity for these sectors is to be developed.",
+          "verdict": "Correct",
+          "reason": "Make in India 2.0's 27 sectors include electronics, automobiles, pharmaceuticals, and textiles — all requiring the cluster-based, plug-and-play infrastructure that corridor nodes are designed to provide."
+        }
+      ],
+      "strong_distractor": "d — Option (d) marking all three statements as correct is a strong distractor because Statement 2's claim about Gati Shakti as a 'primary financing vehicle' sounds like upgraded policy — students who know Gati Shakti is important but haven't precisely parsed its funding vs. planning role will accept all three.",
+      "elimination_logic": [
+        "Statement 2 claims Gati Shakti 'directly allocates dedicated budgetary funds' to corridor construction — Gati Shakti is explicitly a planning/GIS coordination platform, not a funding vehicle. Statement 2 is incorrect.",
+        "Eliminate option (d) which requires all three to be correct.",
+        "Statements 1 and 3 are both factually grounded — NLP 2022's sub-10% target and Make in India 2.0's 27 sectors are documented facts.",
+        "Answer: option (b) — 1 and 3 only. Confirm correct_option is b."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the 'partial truth plus false extension' technique: Gati Shakti IS important for corridor planning (true) and DOES affect corridor implementation timelines (true), but it does NOT directly allocate construction budgets (false addition). Students who know Gati Shakti improves corridor outcomes accept the causal chain without examining whether it does so through planning or funding — a precision gap that differentiates high scorers.",
+      "final_explanation": "India's industrial corridor programme integrates with multiple policy layers — logistics policy, investment promotion, and infrastructure planning — each playing a distinct role.\n\n• Statement 1 — Correct: NLP 2022 targets bringing logistics costs below 10% of GDP (from the current 13-14%), making India more competitive with global manufacturing hubs (China ~8%, Germany ~6%). Industrial corridors' DFC spines and multi-modal logistics nodes are central to achieving this target.\n• Statement 2 — Incorrect: PM Gati Shakti is a GIS-based planning platform that integrates 16 ministries' infrastructure plans to identify synergies, eliminate duplication, and fast-track approvals. It does not have a dedicated capital fund for corridor construction. Corridor financing remains through JICA, ADB, World Bank, VGF, and state budgets.\n• Statement 3 — Correct: Make in India 2.0's 27 priority sectors (including electronics, automobiles, defence, pharmaceuticals, textiles) require clustered industrial infrastructure — precisely the plug-and-play, single-window model that corridor nodes offer.\n\nValue Addition:\n• India's logistics cost of 13-14% of GDP is significantly higher than the global average of 8% — reducing it is a key competitiveness objective.\n• NLP 2022 was released in September 2022 — it created the LEADS (Logistics Ease Across Different States) index as a ranking tool.\n• Gati Shakti has mapped over 1,600 layers of infrastructure data, enabling ministries to plan synergistically rather than in isolation."
+    },
+    "hi": {
+      "display_text": "औद्योगिक गलियारों के व्यापक नीति ढाँचे के साथ एकीकरण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. राष्ट्रीय लॉजिस्टिक्स नीति (2022) का उद्देश्य भारत की लॉजिस्टिक्स लागत को लगभग 13–14% जीडीपी से घटाकर 10% से नीचे लाना है, और औद्योगिक गलियारे इस कमी को प्राप्त करने के लिए एक योगदानकारी तंत्र के रूप में पहचाने गए हैं।\n2. पीएम गति शक्ति राष्ट्रीय मास्टर प्लान सीधे औद्योगिक गलियारों के निर्माण के लिए समर्पित बजटीय निधियाँ आवंटित करता है, जिससे यह 2021 से NICDP गलियारों के लिए प्राथमिक वित्तपोषण वाहन बन जाता है।\n3. मेक इन इंडिया 2.0 27 प्राथमिक क्षेत्रों पर केंद्रित है, और औद्योगिक गलियारे उन क्षेत्रों के विनिर्माण क्षमता के विकास के लिए भौतिक अवसंरचना मंच के रूप में कार्य करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The National Logistics Policy (2022) aims to reduce India's logistics cost from approximately 13–14% of GDP to below 10% of GDP, and industrial corridor development is identified as a contributing mechanism for achieving this reduction.",
+          "verdict": "Correct",
+          "reason": "NLP 2022 explicitly targets reducing logistics costs from 13-14% of GDP to sub-10%, and industrial corridor infrastructure (DFC spines, multi-modal nodes) is a key contributing element."
+        },
+        {
+          "statement": "PM Gati Shakti National Master Plan directly allocates dedicated budgetary funds to industrial corridor construction, making it the primary financing vehicle for NICDP corridors from 2021 onwards.",
+          "verdict": "Incorrect",
+          "reason": "PM Gati Shakti is a GIS-based planning and coordination platform, not a funding programme. It integrates infrastructure plans across ministries but does not independently allocate construction budgets for corridors."
+        },
+        {
+          "statement": "Make in India 2.0 focuses on 27 priority sectors, and industrial corridors function as the physical infrastructure platform through which the manufacturing capacity for these sectors is to be developed.",
+          "verdict": "Correct",
+          "reason": "Make in India 2.0's 27 sectors include electronics, automobiles, pharmaceuticals, and textiles — all requiring the cluster-based, plug-and-play infrastructure that corridor nodes are designed to provide."
+        }
+      ],
+      "strong_distractor": "d — Option (d) marking all three statements as correct is a strong distractor because Statement 2's claim about Gati Shakti as a 'primary financing vehicle' sounds like upgraded policy — students who know Gati Shakti is important but haven't precisely parsed its funding vs. planning role will accept all three.",
+      "elimination_logic": [
+        "Statement 2 claims Gati Shakti 'directly allocates dedicated budgetary funds' to corridor construction — Gati Shakti is explicitly a planning/GIS coordination platform, not a funding vehicle. Statement 2 is incorrect.",
+        "Eliminate option (d) which requires all three to be correct.",
+        "Statements 1 and 3 are both factually grounded — NLP 2022's sub-10% target and Make in India 2.0's 27 sectors are documented facts.",
+        "Answer: option (b) — 1 and 3 only. Confirm correct_option is b."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the 'partial truth plus false extension' technique: Gati Shakti IS important for corridor planning (true) and DOES affect corridor implementation timelines (true), but it does NOT directly allocate construction budgets (false addition). Students who know Gati Shakti improves corridor outcomes accept the causal chain without examining whether it does so through planning or funding — a precision gap that differentiates high scorers.",
+      "final_explanation": "India's industrial corridor programme integrates with multiple policy layers — logistics policy, investment promotion, and infrastructure planning — each playing a distinct role.\n\n• Statement 1 — Correct: NLP 2022 targets bringing logistics costs below 10% of GDP (from the current 13-14%), making India more competitive with global manufacturing hubs (China ~8%, Germany ~6%). Industrial corridors' DFC spines and multi-modal logistics nodes are central to achieving this target.\n• Statement 2 — Incorrect: PM Gati Shakti is a GIS-based planning platform that integrates 16 ministries' infrastructure plans to identify synergies, eliminate duplication, and fast-track approvals. It does not have a dedicated capital fund for corridor construction. Corridor financing remains through JICA, ADB, World Bank, VGF, and state budgets.\n• Statement 3 — Correct: Make in India 2.0's 27 priority sectors (including electronics, automobiles, defence, pharmaceuticals, textiles) require clustered industrial infrastructure — precisely the plug-and-play, single-window model that corridor nodes offer.\n\nValue Addition:\n• India's logistics cost of 13-14% of GDP is significantly higher than the global average of 8% — reducing it is a key competitiveness objective.\n• NLP 2022 was released in September 2022 — it created the LEADS (Logistics Ease Across Different States) index as a ranking tool.\n• Gati Shakti has mapped over 1,600 layers of infrastructure data, enabling ministries to plan synergistically rather than in isolation."
+    }
+  },
+  {
+    "uuid": "6f343639-f1b7-43fb-8700-b2d8fb7a2f71",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Delhi-Mumbai Industrial Corridor (DMIC): Structure and Governance",
+        "Regional Balance and Industrial Corridor Coverage: Which States Are Left Out"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "DMIC states coverage including Delhi/NCT trap",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about the states covered by the Delhi-Mumbai Industrial Corridor (DMIC):",
+        "columns": [
+          "Statement",
+          "State"
+        ],
+        "rows": [
+          [
+            "1",
+            "Maharashtra is one of the states through which the Delhi-Mumbai Industrial Corridor passes."
+          ],
+          [
+            "2",
+            "Rajasthan is one of the states through which the Delhi-Mumbai Industrial Corridor passes."
+          ],
+          [
+            "3",
+            "Madhya Pradesh is one of the states through which the Delhi-Mumbai Industrial Corridor passes."
+          ],
+          [
+            "4",
+            "Punjab is one of the states through which the Delhi-Mumbai Industrial Corridor passes."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Maharashtra is one of the states through which the Delhi-Mumbai Industrial Corridor passes.",
+          "verdict": "Correct",
+          "reason": "Maharashtra is a core DMIC state, with Shendra-Bidkin (Aurangabad) being its primary node and JNPT in Mumbai being the corridor's southern terminus."
+        },
+        {
+          "statement": "Rajasthan is one of the states through which the Delhi-Mumbai Industrial Corridor passes.",
+          "verdict": "Correct",
+          "reason": "Rajasthan is a DMIC state, with nodes at Neemrana-Khushkhera-Bhiwadi-Tapukara — the largest DMIC investment region by area in Rajasthan."
+        },
+        {
+          "statement": "Madhya Pradesh is one of the states through which the Delhi-Mumbai Industrial Corridor passes.",
+          "verdict": "Correct",
+          "reason": "Madhya Pradesh is included in DMIC, with Pithampur-Dhar-Mhow as its designated node — the corridor passes through the Malwa plateau region of MP."
+        },
+        {
+          "statement": "Punjab is one of the states through which the Delhi-Mumbai Industrial Corridor passes.",
+          "verdict": "Incorrect",
+          "reason": "Punjab is NOT a DMIC state. DMIC covers Maharashtra, Gujarat, Rajasthan, Haryana, Uttar Pradesh, and Madhya Pradesh — plus Delhi/NCT. Punjab is part of the Amritsar-Kolkata corridor, not DMIC."
+        }
+      ],
+      "strong_distractor": "d — Option (d) 'All four' is a strong distractor because students who know DMIC spans multiple northern states and associate Punjab with northwestern India's industrial corridor (without precisely mapping DMIC vs. AKIC states) will accept Punjab's inclusion.",
+      "elimination_logic": [
+        "DMIC runs between Delhi and Mumbai — its geographic logic excludes Punjab, which is northwest of Delhi and not on the Delhi-Mumbai route.",
+        "Verify: DMIC states are Maharashtra, Gujarat, Rajasthan, Haryana, Uttar Pradesh, Madhya Pradesh, and Delhi/NCT — six states plus Delhi. Punjab is absent.",
+        "Punjab is the AKIC starting point (Amritsar), not a DMIC state — Punjab is incorrect.",
+        "Three statements correct (Maharashtra, Rajasthan, Madhya Pradesh); one incorrect (Punjab) — answer is option (c) Only three."
+      ],
+      "upsc_trap_explanation": "Punjab is a deliberate geographic-swap trap: students who know DMIC spans 'six states' but haven't memorized the exact state list may include Punjab (a major northwestern state) while excluding a less prominent DMIC state. The key is that Punjab is the Amritsar end of AKIC — its association with industrial corridors is real but attached to the wrong corridor.",
+      "final_explanation": "DMIC's six-state coverage is a foundational geographic fact, with the corridor's route from Delhi to Mumbai defining which states are included.\n\n• Statement 1 (Maharashtra) — Correct: Maharashtra hosts Shendra-Bidkin (AURIC) and has JNPT as the southern terminus. Core DMIC state.\n• Statement 2 (Rajasthan) — Correct: Rajasthan hosts the Neemrana-Khushkhera-Bhiwadi-Tapukara Investment Region — also home to a Japan Industrial Township at Neemrana.\n• Statement 3 (Madhya Pradesh) — Correct: MP hosts the Pithampur-Dhar-Mhow node in the Malwa region. DMIC's route through MP is less publicized but confirmed in official documents.\n• Statement 4 (Punjab) — Incorrect: Punjab is NOT a DMIC state. DMIC's six states are Maharashtra, Gujarat, Rajasthan, Haryana, Uttar Pradesh, and Madhya Pradesh, plus Delhi/NCT as a Union Territory. Punjab is the Amritsar terminus of AKIC — a different corridor.\n\nValue Addition:\n• DMIC's 'six states + 2 UTs' formulation: states are MH, GJ, RJ, HR, UP, MP; UTs are Delhi and Dadra & Nagar Haveli (in some formulations).\n• Haryana hosts Manesar-Bawal-Rewari-Khushkhera Investment Region — connecting to the Greater Delhi manufacturing belt.\n• Gujarat has two major DMIC nodes: Dholera SIR and the DMIC zone in Bharuch-Dahej region."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "दिल्ली-मुंबई औद्योगिक गलियारे (DMIC) द्वारा कवर किए गए राज्यों के बारे में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन",
+          "राज्य"
+        ],
+        "rows": [
+          [
+            "1",
+            "महाराष्ट्र उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।"
+          ],
+          [
+            "2",
+            "राजस्थान उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।"
+          ],
+          [
+            "3",
+            "मध्य प्रदेश उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।"
+          ],
+          [
+            "4",
+            "पंजाब उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "महाराष्ट्र उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।",
+          "verdict": "सही",
+          "reason": "महाराष्ट्र एक मुख्य DMIC राज्य है, जिसमें शेंद्र-बिदकन (औरंगाबाद) इसका प्रमुख नोड है और मुंबई में JNPT गलियारे का दक्षिणी टर्मिनस है।"
+        },
+        {
+          "statement": "राजस्थान उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।",
+          "verdict": "सही",
+          "reason": "राजस्थान एक DMIC राज्य है, जिसमें निम्मराना-खुश्केरा-भिवाड़ी-टापुकारा नोड्स हैं — जो राजस्थान में क्षेत्रफल के हिसाब से सबसे बड़ा DMIC निवेश क्षेत्र है।"
+        },
+        {
+          "statement": "मध्य प्रदेश उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।",
+          "verdict": "सही",
+          "reason": "मध्य प्रदेश DMIC में शामिल है, जिसमें पिथमपुर-धार-म्हो नोड है — गलियारा मध्य प्रदेश के मालवा पठार क्षेत्र से होकर गुजरता है।"
+        },
+        {
+          "statement": "पंजाब उन राज्यों में से एक है जिनके माध्यम से दिल्ली-मुंबई औद्योगिक गलियारा गुजरता है।",
+          "verdict": "गलत",
+          "reason": "पंजाब DMIC राज्य नहीं है। DMIC में महाराष्ट्र, गुजरात, राजस्थान, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश और दिल्ली/एनसीटी शामिल हैं। पंजाब अमृतसर-कोलकाता गलियारे का हिस्सा है, DMIC का नहीं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) 'सभी चार' एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि DMIC कई उत्तरी राज्यों में फैला है और पंजाब को उत्तर-पश्चिमी भारत के औद्योगिक गलियारे से जोड़ते हैं (बिना DMIC और AKIC राज्यों को ठीक से समझे) वे पंजाब को शामिल मान लेंगे।",
+      "elimination_logic": [
+        "DMIC दिल्ली और मुंबई के बीच चलता है — इसका भौगोलिक तर्क पंजाब को बाहर करता है, जो दिल्ली के उत्तर-पश्चिम में है और दिल्ली-मुंबई मार्ग पर नहीं है।",
+        "सत्यापित करें: DMIC के राज्य हैं महाराष्ट्र, गुजरात, राजस्थान, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश, और दिल्ली/एनसीटी — कुल छह राज्य और दिल्ली। पंजाब शामिल नहीं है।",
+        "पंजाब AKIC का आरंभिक बिंदु (अमृतसर) है, DMIC राज्य नहीं — पंजाब गलत है।",
+        "तीन कथन सही हैं (महाराष्ट्र, राजस्थान, मध्य प्रदेश); एक गलत है (पंजाब) — उत्तर विकल्प (c) केवल तीन है।"
+      ],
+      "upsc_trap_explanation": "पंजाब एक जानबूझकर बनाया गया भौगोलिक-स्वैप जाल है: जो छात्र जानते हैं कि DMIC 'छह राज्य' में फैला है लेकिन सही राज्य सूची याद नहीं है, वे पंजाब (एक प्रमुख उत्तर-पश्चिमी राज्य) को शामिल कर सकते हैं जबकि एक कम प्रसिद्ध DMIC राज्य को छोड़ देते हैं। मुख्य बात यह है कि पंजाब AKIC का अमृतसर टर्मिनस है — इसका औद्योगिक गलियारों से संबंध सही है लेकिन गलत गलियारे से जुड़ा है।",
+      "final_explanation": "DMIC के छह राज्यों का कवरेज एक मौलिक भौगोलिक तथ्य है, जिसमें गलियारे का मार्ग दिल्ली से मुंबई तक यह निर्धारित करता है कि कौन से राज्य शामिल हैं।\n\n• कथन 1 (महाराष्ट्र) — सही: महाराष्ट्र में शेंद्र-बिदकन (AURIC) है और JNPT दक्षिणी टर्मिनस है। मुख्य DMIC राज्य।\n• कथन 2 (राजस्थान) — सही: राजस्थान में निम्मराना-खुश्केरा-भिवाड़ी-टापुकारा निवेश क्षेत्र है — साथ ही निम्मराना में जापान औद्योगिक नगर भी है।\n• कथन 3 (मध्य प्रदेश) — सही: मध्य प्रदेश में पिथमपुर-धार-म्हो नोड है जो मालवा क्षेत्र में है। DMIC का मध्य प्रदेश से गुजरना कम प्रचारित है लेकिन आधिकारिक दस्तावेजों में पुष्टि है।\n• कथन 4 (पंजाब) — गलत: पंजाब DMIC राज्य नहीं है। DMIC के छह राज्य हैं महाराष्ट्र, गुजरात, राजस्थान, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश, और दिल्ली/एनसीटी। पंजाब AKIC का अमृतसर टर्मिनस है — एक अलग गलियारा।\n\nमूल्य संवर्धन:\n• DMIC का 'छह राज्य + 2 केंद्र शासित प्रदेश' सूत्रीकरण: राज्य हैं MH, GJ, RJ, HR, UP, MP; केंद्र शासित प्रदेश हैं दिल्ली और दादरा एवं नगर हवेली (कुछ सूत्रीकरण में)।\n• हरियाणा में मानेसर-बावल-रेवाड़ी-खुश्केरा निवेश क्षेत्र है — जो ग्रेटर दिल्ली विनिर्माण बेल्ट से जुड़ा है।\n• गुजरात में दो प्रमुख DMIC नोड हैं: धोलेरा SIR और भरूच-दहेज क्षेत्र में DMIC जोन।"
+    }
+  },
+  {
+    "uuid": "2de9baa4-80dd-4888-bba8-92596db03ace",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Industrial Corridors vs. Economic Corridors: Conceptual Distinction",
+        "Amritsar-Kolkata Industrial Corridor (AKIC): Alignment and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "BBIN Motor Vehicle Agreement vs domestic industrial corridors",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Bangladesh-Bhutan-India-Nepal (BBIN) Motor Vehicle Agreement, which facilitates road-based passenger and cargo movement across the four countries, is best described as which of the following in the context of India's industrial and economic corridor policy?\n\n(a) A designated industrial corridor under the National Industrial Corridor Development Programme (NICDP) that specifically addresses North-East India's manufacturing development gap\n(b) A regional transport connectivity initiative that facilitates cross-border trade and movement, distinct from India's domestic industrial corridor framework under NICDP\n(c) An economic corridor equivalent to NICDP industrial corridors, serving as the North-East India region's substitute for a formal domestic industrial corridor\n(d) A sub-programme of the Sagarmala maritime corridor adapted for land-based connectivity in India's northeastern frontier states",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because BBIN MV Agreement involves India's northeastern gateway — students who associate connectivity corridors with industrial development may conflate the BBIN transport corridor with an industrial corridor that would benefit North-East India.",
+      "elimination_logic": [
+        "The BBIN Motor Vehicle Agreement facilitates road transport between Bangladesh, Bhutan, India, and Nepal — it is a regional connectivity/trade agreement, not a domestic industrial corridor.",
+        "Eliminate option (a): BBIN is not classified under NICDP as a domestic industrial corridor.",
+        "Eliminate option (c): BBIN's connectivity function does not make it an industrial corridor — connectivity and manufacturing cluster development are distinct objectives.",
+        "BBIN MV Agreement is a regional transport connectivity framework — option (b) correctly identifies it as a connectivity initiative under regional cooperation, separate from domestic industrial corridor policy."
+      ],
+      "upsc_trap_explanation": "Students who know India's North-East lacks an industrial corridor (correct) and that BBIN involves the North-East as a transit route (correct) may conclude that BBIN 'fills the gap' as the North-East's industrial corridor — a conflation of regional transport connectivity with domestic industrial cluster policy. BBIN's purpose is trade facilitation and transport connectivity, not manufacturing hub development under NICDP.",
+      "final_explanation": "The BBIN Motor Vehicle Agreement exemplifies the conceptual overlap between regional connectivity frameworks and industrial corridor terminology — a distinction UPSC exploits.\n\n• Option (a) — BBIN MV Agreement as an NICDP industrial corridor for North-East India: Incorrect. BBIN (Bangladesh, Bhutan, India, Nepal) is a multilateral transport and trade facilitation agreement — it enables vehicle movement across borders but does not constitute a manufacturing cluster programme under NICDP governance.\n• Option (b) — BBIN MV Agreement as a regional transport connectivity initiative separate from NICDP's domestic industrial corridor framework: Correct. BBIN is a diplomatic/trade connectivity instrument; India's domestic industrial corridors (NICDP) are separate manufacturing infrastructure programmes. North-East India currently has no NICDP industrial corridor.\n• Option (c) — BBIN as an economic corridor equivalent to NICDP corridors for the North-Eastern region: Incorrect. Economic corridor in the BBIN context means trade route connectivity, not the manufacturing-cluster-plus-infrastructure model of NICDP corridors.\n• Option (d) — BBIN as a sub-programme of the Sagarmala maritime corridor: Incorrect. BBIN is a land transport agreement; Sagarmala is a maritime/port programme — they operate in entirely different domains.\n\nValue Addition:\n• Bhutan suspended BBIN ratification — the agreement currently operates as a Bangladesh-India-Nepal trilateral in practice.\n• Act East Policy (2014) promotes connectivity with ASEAN but is also separate from NICDP industrial corridors.\n• Asian Highway Network is another regional connectivity framework distinct from industrial corridor policy."
+    },
+    "hi": {
+      "display_text": "बांग्लादेश-भूटान-भारत-नेपाल (BBIN) मोटर वाहन समझौता, जो चार देशों के बीच सड़क आधारित यात्री और माल परिवहन को सुगम बनाता है, भारत की औद्योगिक और आर्थिक कॉरिडोर नीति के संदर्भ में निम्नलिखित में से किस रूप में सबसे उपयुक्त है?\n\n(a) राष्ट्रीय औद्योगिक कॉरिडोर विकास कार्यक्रम (NICDP) के तहत पूर्वोत्तर भारत के विनिर्माण विकास अंतर को विशेष रूप से संबोधित करने वाला एक नामित औद्योगिक कॉरिडोर\n(b) एक क्षेत्रीय परिवहन कनेक्टिविटी पहल जो सीमा पार व्यापार और आवागमन को सुगम बनाती है, और जो NICDP के तहत भारत के घरेलू औद्योगिक कॉरिडोर ढांचे से अलग है\n(c) एक आर्थिक कॉरिडोर जो NICDP औद्योगिक कॉरिडोर के समकक्ष है, और पूर्वोत्तर भारत क्षेत्र के लिए औपचारिक घरेलू औद्योगिक कॉरिडोर के विकल्प के रूप में कार्य करता है\n(d) सागरमाला समुद्री कॉरिडोर का एक उप-कार्यक्रम जो भारत के पूर्वोत्तर सीमांत राज्यों में भूमि आधारित कनेक्टिविटी के लिए अनुकूलित है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि BBIN MV Agreement भारत के पूर्वोत्तर द्वार से जुड़ा है — छात्र जो कनेक्टिविटी कॉरिडोर को औद्योगिक विकास से जोड़ते हैं, वे BBIN परिवहन कॉरिडोर को एक औद्योगिक कॉरिडोर समझ सकते हैं जो पूर्वोत्तर भारत के लिए लाभकारी होगा।",
+      "elimination_logic": [
+        "BBIN मोटर वाहन समझौता बांग्लादेश, भूटान, भारत और नेपाल के बीच सड़क परिवहन को सुगम बनाता है — यह एक क्षेत्रीय कनेक्टिविटी/व्यापार समझौता है, घरेलू औद्योगिक कॉरिडोर नहीं।",
+        "विकल्प (a) को खारिज करें: BBIN को NICDP के तहत घरेलू औद्योगिक कॉरिडोर के रूप में वर्गीकृत नहीं किया गया है।",
+        "विकल्प (c) को खारिज करें: BBIN की कनेक्टिविटी भूमिका इसे औद्योगिक कॉरिडोर नहीं बनाती — कनेक्टिविटी और विनिर्माण क्लस्टर विकास अलग-अलग उद्देश्य हैं।",
+        "BBIN MV Agreement एक क्षेत्रीय परिवहन कनेक्टिविटी ढांचा है — विकल्प (b) इसे क्षेत्रीय सहयोग के तहत कनेक्टिविटी पहल के रूप में सही रूप से पहचानता है, जो घरेलू औद्योगिक कॉरिडोर नीति से अलग है।"
+      ],
+      "upsc_trap_explanation": "छात्र जो जानते हैं कि भारत के पूर्वोत्तर में कोई औद्योगिक कॉरिडोर नहीं है (सही) और कि BBIN पूर्वोत्तर को एक पारगमन मार्ग के रूप में शामिल करता है (सही), वे यह निष्कर्ष निकाल सकते हैं कि BBIN पूर्वोत्तर के औद्योगिक कॉरिडोर के रूप में 'खाली जगह भरता है' — जो क्षेत्रीय परिवहन कनेक्टिविटी को घरेलू औद्योगिक क्लस्टर नीति के साथ भ्रमित करना है। BBIN का उद्देश्य व्यापार सुविधा और परिवहन कनेक्टिविटी है, न कि NICDP के तहत विनिर्माण केंद्र विकास।",
+      "final_explanation": "BBIN मोटर वाहन समझौता क्षेत्रीय कनेक्टिविटी ढांचों और औद्योगिक कॉरिडोर शब्दावली के बीच वैचारिक ओवरलैप का उदाहरण है — एक भेद UPSC द्वारा उपयोग किया जाता है।\n\n• विकल्प (a) — BBIN MV Agreement को NICDP के तहत पूर्वोत्तर भारत के लिए औद्योगिक कॉरिडोर के रूप में देखना: गलत। BBIN (बांग्लादेश, भूटान, भारत, नेपाल) एक बहुपक्षीय परिवहन और व्यापार सुविधा समझौता है — यह सीमाओं के पार वाहन आवागमन सक्षम करता है लेकिन NICDP के तहत विनिर्माण क्लस्टर कार्यक्रम नहीं है।\n• विकल्प (b) — BBIN MV Agreement को NICDP के घरेलू औद्योगिक कॉरिडोर ढांचे से अलग एक क्षेत्रीय परिवहन कनेक्टिविटी पहल के रूप में देखना: सही। BBIN एक कूटनीतिक/व्यापार कनेक्टिविटी उपकरण है; भारत के घरेलू औद्योगिक कॉरिडोर (NICDP) अलग विनिर्माण अवसंरचना कार्यक्रम हैं। पूर्वोत्तर भारत में वर्तमान में कोई NICDP औद्योगिक कॉरिडोर नहीं है।\n• विकल्प (c) — BBIN को पूर्वोत्तर क्षेत्र के लिए NICDP कॉरिडोर के समकक्ष आर्थिक कॉरिडोर के रूप में देखना: गलत। BBIN संदर्भ में आर्थिक कॉरिडोर का अर्थ व्यापार मार्ग कनेक्टिविटी है, न कि NICDP कॉरिडोर के विनिर्माण क्लस्टर और अवसंरचना मॉडल।\n• विकल्प (d) — BBIN को सागरमाला समुद्री कॉरिडोर के एक उप-कार्यक्रम के रूप में देखना जो भारत के पूर्वोत्तर सीमांत राज्यों में भूमि आधारित कनेक्टिविटी के लिए अनुकूलित है: गलत। BBIN एक भूमि परिवहन समझौता है; सागरमाला एक समुद्री/बंदरगाह कार्यक्रम है — ये पूरी तरह अलग क्षेत्रों में कार्य करते हैं।\n\nमूल्य संवर्धन:\n• भूटान ने BBIN अनुमोदन को निलंबित कर दिया है — यह समझौता वर्तमान में व्यवहार में बांग्लादेश-भारत-नेपाल त्रिपक्षीय रूप में संचालित होता है।\n• एक्ट ईस्ट पॉलिसी (2014) ASEAN के साथ कनेक्टिविटी को बढ़ावा देती है लेकिन यह भी NICDP औद्योगिक कॉरिडोर से अलग है।\n• एशियाई राजमार्ग नेटवर्क एक अन्य क्षेत्रीय कनेक्टिविटी ढांचा है जो औद्योगिक कॉरिडोर नीति से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "715837c6-e660-4b3c-8acf-e38dc63bcef4",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Industrial corridors",
+      "concepts_used": [
+        "Integrated Manufacturing Clusters (IMCs) and Smart Industrial Cities within Corridors",
+        "Industrial Corridor Nodes: Plug-and-Play Infrastructure Model and Ease of Doing Business"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Single-window clearance and plug-and-play node governance model",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A pharmaceutical company is setting up a manufacturing unit in an industrial corridor node that has been certified as a 'plug-and-play ready' facility with an operational single-window clearance system. The company's management team believes that by virtue of being in this corridor node, they will have access to pre-installed power and water connections AND will be exempt from all further regulatory approvals, including environmental clearances and drug manufacturing licenses.\n\nWhich of the following correctly describes the regulatory and infrastructure reality the company will actually encounter?\n\n(a) The company's understanding is correct — the single-window clearance system in certified corridor nodes consolidates and replaces all regulatory requirements, including environmental impact assessments and sector-specific licenses, making the company fully compliant upon node registration.\n(b) The company's understanding is partially correct — pre-installed utilities are available, but it must independently install its own power and water connections as the 'plug-and-play' designation only applies to road and sewage infrastructure.\n(c) Pre-installed utilities eliminate the need for independent infrastructure setup, but mandatory regulatory clearances (environmental, product-specific) remain applicable and are processed through the single-window system rather than being eliminated by it.\n(d) Corridor node designation creates a special regulatory zone where all sector-specific regulations are suspended for the first five years of operation to attract industrial investment.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who associate industrial corridor nodes with 'complete infrastructure readiness' may assume a single-window clearance would cover all regulatory requirements — when in reality individual project-level environmental and sectoral clearances remain mandatory even within nodes.",
+      "elimination_logic": [
+        "Single-window clearance within corridor nodes streamlines approvals but does not replace mandatory regulatory clearances (environmental, sector-specific) — eliminate option (a).",
+        "The plug-and-play model means utilities are pre-installed — the company does not need to build its own power/water infrastructure; eliminate option (b) which suggests they must still install utilities independently.",
+        "The correct principle: pre-installed utilities eliminate the need for individual utility setup, but sector-specific regulatory clearances (environmental, product-specific) still apply through the single-window system. Option (c) captures this correctly.",
+        "Eliminate option (d): corridor node designation does not exempt companies from all sector-specific regulations — only administrative/approval processes are streamlined."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in option (a): students may extend the single-window clearance concept to cover ALL clearances including environmental and product-specific ones — when the correct understanding is that single-window consolidates the process but does not eliminate mandatory statutory clearances. 'Streamlining' ≠ 'exempting' — a precision distinction that separates high-scorers.",
+      "final_explanation": "This scenario tests the precise operational boundaries of the plug-and-play model and single-window clearance within corridor nodes.\n\nApplicable principle: Corridor nodes offer two distinct advantages: (1) Pre-installed physical utilities (power, water, roads, sewage) — eliminating the need for companies to invest in basic infrastructure setup; and (2) Single-window clearance systems — consolidating multiple regulatory approvals into one channel to reduce time and transaction costs. However, mandatory statutory clearances (environmental, product safety, sector-specific licenses) remain applicable and are channelled through the single window, not eliminated by it.\n\n• Option (a) — Single window covers all clearances including environmental: Incorrect. Environmental clearances under the EPA/EIA Notification, product licensing, and sector-specific approvals remain mandatory — the single window streamlines their processing, not their applicability.\n• Option (b) — Company must independently install utilities: Incorrect. The plug-and-play model's core feature is pre-installed utilities — the company does NOT need to build its own power or water infrastructure.\n• Option (c) — Pre-installed utilities remove setup burden; single window streamlines (not eliminates) regulatory clearances: Correct. This accurately describes both features of the corridor node model and their precise operational scope.\n• Option (d) — Corridor node designation exempts all sector-specific regulations: Incorrect. Corridor nodes do not create regulatory exemptions — they improve regulatory process efficiency.\n\nValue Addition:\n• India's single-window systems at state and central levels are ranked in the Ease of Doing Business framework — corridor nodes with effective single windows improve India's ranking.\n• Plug-and-play infrastructure reduces industrial setup time from 2-3 years to 3-6 months in well-implemented nodes.\n• AURIC (Shendra-Bidkin) is cited as the benchmark for plug-and-play implementation — with commissioned utilities and functional single-window clearance."
+    },
+    "hi": {
+      "display_text": "एक फार्मास्यूटिकल कंपनी एक औद्योगिक कॉरिडोर नोड में एक निर्माण इकाई स्थापित कर रही है जिसे 'प्लग-एंड-प्ले रेडी' सुविधा के रूप में प्रमाणित किया गया है और जिसमें एक परिचालित सिंगल-विंडो क्लियरेंस सिस्टम है। कंपनी की प्रबंधन टीम का मानना है कि इस कॉरिडोर नोड में होने के कारण उन्हें पूर्व-स्थापित बिजली और पानी के कनेक्शन मिलेंगे और वे सभी आगे की नियामक मंजूरियों, जिनमें पर्यावरणीय मंजूरियाँ और दवा निर्माण लाइसेंस शामिल हैं, से मुक्त होंगे।\n\nनिम्नलिखित में से कौन-सा विकल्प उस नियामक और अवसंरचना वास्तविकता का सही वर्णन करता है जिसका कंपनी वास्तव में सामना करेगी?\n\n(a) कंपनी की समझ सही है — प्रमाणित कॉरिडोर नोड्स में सिंगल-विंडो क्लियरेंस सिस्टम सभी नियामक आवश्यकताओं को समेकित और प्रतिस्थापित करता है, जिसमें पर्यावरणीय प्रभाव आकलन और क्षेत्र-विशिष्ट लाइसेंस शामिल हैं, जिससे कंपनी नोड पंजीकरण के साथ पूरी तरह अनुपालन में होती है।\n(b) कंपनी की समझ आंशिक रूप से सही है — पूर्व-स्थापित उपयोगिताएँ उपलब्ध हैं, लेकिन कंपनी को अपनी बिजली और पानी के कनेक्शन स्वतंत्र रूप से स्थापित करने होंगे क्योंकि 'प्लग-एंड-प्ले' नामांकन केवल सड़क और सीवेज अवसंरचना पर लागू होता है।\n(c) पूर्व-स्थापित उपयोगिताएँ स्वतंत्र अवसंरचना स्थापना की आवश्यकता समाप्त करती हैं, लेकिन अनिवार्य नियामक मंजूरियाँ (पर्यावरणीय, उत्पाद-विशिष्ट) लागू रहती हैं और उन्हें सिंगल-विंडो प्रणाली के माध्यम से संसाधित किया जाता है, न कि उससे समाप्त किया जाता है।\n(d) कॉरिडोर नोड नामांकन एक विशेष नियामक क्षेत्र बनाता है जहाँ सभी क्षेत्र-विशिष्ट नियम पहले पांच वर्षों के लिए निलंबित कर दिए जाते हैं ताकि औद्योगिक निवेश आकर्षित किया जा सके।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र जो औद्योगिक कॉरिडोर नोड्स को 'पूर्ण अवसंरचना तत्परता' से जोड़ते हैं, वे यह मान सकते हैं कि सिंगल-विंडो क्लियरेंस सभी नियामक आवश्यकताओं को कवर करता है — जबकि वास्तविकता में नोड्स के भीतर भी व्यक्तिगत परियोजना-स्तरीय पर्यावरणीय और क्षेत्रीय मंजूरियाँ अनिवार्य रहती हैं।",
+      "elimination_logic": [
+        "कॉरिडोर नोड्स के भीतर सिंगल-विंडो क्लियरेंस अनुमोदनों को सुव्यवस्थित करता है लेकिन अनिवार्य नियामक मंजूरियों (पर्यावरणीय, क्षेत्र-विशिष्ट) को प्रतिस्थापित नहीं करता — अतः विकल्प (a) को खारिज करें।",
+        "प्लग-एंड-प्ले मॉडल का अर्थ है कि उपयोगिताएँ पूर्व-स्थापित होती हैं — कंपनी को अपनी बिजली/पानी की अवसंरचना स्वयं स्थापित करने की आवश्यकता नहीं है; इसलिए विकल्प (b) को खारिज करें जो सुझाव देता है कि उन्हें अभी भी स्वतंत्र रूप से उपयोगिताएँ स्थापित करनी होंगी।",
+        "सही सिद्धांत: पूर्व-स्थापित उपयोगिताएँ व्यक्तिगत उपयोगिता सेटअप की आवश्यकता को समाप्त करती हैं, लेकिन क्षेत्र-विशिष्ट नियामक मंजूरियाँ (पर्यावरणीय, उत्पाद-विशिष्ट) सिंगल-विंडो प्रणाली के माध्यम से लागू रहती हैं। विकल्प (c) इसे सही रूप में दर्शाता है।",
+        "विकल्प (d) को खारिज करें: कॉरिडोर नोड नामांकन कंपनियों को सभी क्षेत्र-विशिष्ट नियमों से मुक्त नहीं करता — केवल प्रशासनिक/अनुमोदन प्रक्रियाओं को सुव्यवस्थित करता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में स्कोप-एक्सटेंशन ट्रैप: छात्र सिंगल-विंडो क्लियरेंस की अवधारणा को सभी मंजूरियों सहित पर्यावरणीय और उत्पाद-विशिष्ट मंजूरियों तक बढ़ा सकते हैं — जबकि सही समझ यह है कि सिंगल-विंडो प्रक्रिया को समेकित करता है लेकिन अनिवार्य वैधानिक मंजूरियों को समाप्त नहीं करता। 'सुव्यवस्थित करना' ≠ 'मुक्ति देना' — यह एक सटीक भेद है जो उच्च अंक प्राप्त करने वालों को अलग करता है।",
+      "final_explanation": "यह परिदृश्य कॉरिडोर नोड्स के भीतर प्लग-एंड-प्ले मॉडल और सिंगल-विंडो क्लियरेंस की सटीक परिचालन सीमाओं का परीक्षण करता है।\n\nलागू सिद्धांत: कॉरिडोर नोड्स दो विशिष्ट लाभ प्रदान करते हैं: (1) पूर्व-स्थापित भौतिक उपयोगिताएँ (बिजली, पानी, सड़कें, सीवेज) — जिससे कंपनियों को बुनियादी अवसंरचना स्थापना में निवेश करने की आवश्यकता समाप्त हो जाती है; और (2) सिंगल-विंडो क्लियरेंस सिस्टम — जो कई नियामक अनुमोदनों को एक चैनल में समेकित करता है ताकि समय और लेन-देन लागत कम हो। हालांकि, अनिवार्य वैधानिक मंजूरियाँ (पर्यावरणीय, उत्पाद सुरक्षा, क्षेत्र-विशिष्ट लाइसेंस) लागू रहती हैं और उन्हें सिंगल-विंडो के माध्यम से संसाधित किया जाता है, न कि उससे समाप्त किया जाता है।\n\n• विकल्प (a) — सिंगल विंडो सभी मंजूरियाँ कवर करता है जिसमें पर्यावरणीय भी शामिल हैं: गलत। EPA/EIA अधिसूचना के तहत पर्यावरणीय मंजूरियाँ, उत्पाद लाइसेंसिंग, और क्षेत्र-विशिष्ट अनुमोदन अनिवार्य रहते हैं — सिंगल विंडो उनकी प्रक्रिया को सुव्यवस्थित करता है, उनकी वैधता को नहीं।\n• विकल्प (b) — कंपनी को स्वतंत्र रूप से उपयोगिताएँ स्थापित करनी होंगी: गलत। प्लग-एंड-प्ले मॉडल की मुख्य विशेषता पूर्व-स्थापित उपयोगिताएँ हैं — कंपनी को अपनी बिजली या पानी की अवसंरचना स्वयं स्थापित करने की आवश्यकता नहीं है।\n• विकल्प (c) — पूर्व-स्थापित उपयोगिताएँ सेटअप का बोझ समाप्त करती हैं; सिंगल विंडो नियामक मंजूरियों को सुव्यवस्थित करता है (न कि समाप्त): सही। यह कॉरिडोर नोड मॉडल की दोनों विशेषताओं और उनके परिचालन दायरे का सटीक वर्णन करता है।\n• विकल्प (d) — कॉरिडोर नोड नामांकन सभी क्षेत्र-विशिष्ट नियमों से छूट देता है: गलत। कॉरिडोर नोड नियामक छूट नहीं देते — वे नियामक प्रक्रिया की दक्षता बढ़ाते हैं।\n\nमूल्य संवर्धन:\n• भारत के राज्य और केंद्रीय स्तर पर सिंगल-विंडो सिस्टम को Ease of Doing Business फ्रेमवर्क में रैंक किया गया है — प्रभावी सिंगल विंडो वाले कॉरिडोर नोड भारत की रैंकिंग सुधारते हैं।\n• प्लग-एंड-प्ले अवसंरचना औद्योगिक स्थापना समय को 2-3 वर्षों से घटाकर 3-6 महीने कर देती है।\n• AURIC (शेंद्र-बिदकिण) को प्लग-एंड-प्ले कार्यान्वयन के लिए मानक के रूप में उद्धृत किया जाता है — जिसमें कमीशन्ड उपयोगिताएँ और कार्यात्मक सिंगल-विंडो क्लियरेंस शामिल हैं।"
+    }
+  }
+]

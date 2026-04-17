@@ -1,0 +1,1321 @@
+[
+  {
+    "uuid": "c8f9a673-6147-452f-90cb-99a902242f15",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Historical Evolution of Cotton Textile Industry in India"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "First cotton mill vs. first jute mill — chronological order",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of foundational events in India's textile industrialisation?\n\n(a) Establishment of the first jute mill at Rishra → Establishment of the first cotton textile mill in Bombay → Expansion of powerloom sector\n(b) Establishment of the first cotton textile mill in Bombay → Establishment of the first jute mill at Rishra → Expansion of powerloom sector\n(c) Dominance of handloom production → Establishment of the first cotton textile mill in Bombay (1858) → Establishment of the first jute mill at Rishra (1855)\n(d) Establishment of the first cotton textile mill in Bombay (1854) → Establishment of the first jute mill at Rishra (1860) → Decline of handloom sector",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because both mills were established in the 1850s just one year apart, making it easy to invert their order or assume the jute mill preceded the cotton mill.",
+      "elimination_logic": [
+        "Recall that India's first cotton textile mill was established in Bombay in 1854 — not 1855 or 1856.",
+        "Recall that India's first jute mill was established at Rishra (near Calcutta) in 1855 — one year after the cotton mill.",
+        "The correct sequence must show the Bombay cotton mill (1854) before the Rishra jute mill (1855) — eliminate any option that reverses this.",
+        "Option (b) alone places cotton (1854) before jute (1855) before later developments — confirm this matches the correct order."
+      ],
+      "upsc_trap_explanation": "The trap here exploits the one-year gap between two foundational industrial events. Students who associate the 1850s broadly with both mills — without fixing the precise year of each — tend to reverse the order or place them in the same year. The further distraction is that jute mills are strongly associated with Bengal/Calcutta, which was then a more dominant industrial and colonial centre, leading students to incorrectly assume jute industrialisation preceded cotton.",
+      "final_explanation": "India's modern textile industry has two distinct foundational moments separated by just one year. The first cotton textile mill was established in Bombay in 1854, with Cowasji Nanabhai Davar as the key entrepreneur. The first jute mill came one year later in 1855 at Rishra, near Serampore in Bengal.\n\nThe chronological sequence across the answer choices:\n• Option (a): Jute (1855) → Cotton (1854) — Incorrect: reverses the actual order.\n• Option (b): Cotton Bombay (1854) → Jute Rishra (1855) → Powerloom expansion — Correct: matches established historical record.\n• Option (c): Handloom dominance → Cotton (1858) → Jute (1855) — Incorrect: wrong year for cotton mill; internal sequence incoherent.\n• Option (d): Cotton (1854) → Jute (1860) — Incorrect: wrong year for jute mill.\n\nValue Addition:\n• Cowasji Nanabhai Davar is credited as the founding entrepreneur of India's first cotton mill — the Bombay Spinning and Weaving Company.\n• The jute industry grew primarily in Bengal due to proximity to raw jute in the Ganga-Brahmaputra delta and colonial port access through Calcutta.\n• Colonial tariff policies actively disadvantaged Indian cotton mills vis-à-vis Lancashire cloth, constraining early growth despite entrepreneurial initiative."
+    },
+    "hi": {
+      "display_text": "भारत के वस्त्र उद्योगीकरण में मौलिक घटनाओं के सही कालानुक्रमिक क्रम का प्रतिनिधित्व निम्नलिखित में से कौन सा करता है?\n\n(a) रिषड़ा में पहली जूट मिल की स्थापना → बॉम्बे में पहली कपास वस्त्र मिल की स्थापना → पावरलूम क्षेत्र का विस्तार\n(b) बॉम्बे में पहली कपास वस्त्र मिल की स्थापना → रिषड़ा में पहली जूट मिल की स्थापना → पावरलूम क्षेत्र का विस्तार\n(c) हथकरघा उत्पादन का प्रभुत्व → बॉम्बे में पहली कपास वस्त्र मिल की स्थापना (1858) → रिषड़ा में पहली जूट मिल की स्थापना (1855)\n(d) बॉम्बे में पहली कपास वस्त्र मिल की स्थापना (1854) → रिषड़ा में पहली जूट मिल की स्थापना (1860) → हथकरघा क्षेत्र का पतन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि दोनों मिलें 1850 के दशक में केवल एक वर्ष के अंतराल पर स्थापित हुई थीं, जिससे उनकी क्रम को उलटने या यह मानने में आसानी होती है कि जूट मिल कपास मिल से पहले थी।",
+      "elimination_logic": [
+        "याद रखें कि भारत की पहली कपास वस्त्र मिल बॉम्बे में 1854 में स्थापित हुई थी — न कि 1855 या 1856 में।",
+        "याद रखें कि भारत की पहली जूट मिल रिषड़ा (कोलकाता के पास) में 1855 में स्थापित हुई थी — कपास मिल के एक वर्ष बाद।",
+        "सही क्रम में बॉम्बे की कपास मिल (1854) को रिषड़ा की जूट मिल (1855) से पहले दिखाना चाहिए — जो भी विकल्प इसे उलटता है उसे हटा दें।",
+        "केवल विकल्प (b) में कपास (1854) को जूट (1855) से पहले रखा गया है और बाद में पावरलूम विस्तार है — पुष्टि करें कि यह सही क्रम से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल दो मौलिक औद्योगिक घटनाओं के बीच एक वर्ष के अंतर का उपयोग करता है। जो छात्र 1850 के दशक को दोनों मिलों से सामान्य रूप से जोड़ते हैं — बिना प्रत्येक के सटीक वर्ष को निश्चित किए — वे क्रम को उलट देते हैं या दोनों को एक ही वर्ष में मान लेते हैं। एक और भ्रम यह है कि जूट मिलें बंगाल/कोलकाता से जुड़ी हैं, जो उस समय एक अधिक प्रभावशाली औद्योगिक और औपनिवेशिक केंद्र था, जिससे छात्र गलत तरीके से मान लेते हैं कि जूट उद्योग कपास से पहले था।",
+      "final_explanation": "भारत के आधुनिक वस्त्र उद्योग के दो अलग-अलग मौलिक क्षण हैं जो केवल एक वर्ष के अंतर से अलग हैं। पहली कपास वस्त्र मिल बॉम्बे में 1854 में स्थापित हुई थी, जिसमें Cowasji Nanabhai Davar मुख्य उद्यमी थे। पहली जूट मिल एक वर्ष बाद 1855 में बंगाल के सेरामपुर के पास रिषड़ा में आई।\n\nउत्तर विकल्पों में कालानुक्रमिक क्रम:\n• विकल्प (a): जूट (1855) → कपास (1854) — गलत: वास्तविक क्रम को उलटता है।\n• विकल्प (b): कपास बॉम्बे (1854) → जूट रिषड़ा (1855) → पावरलूम विस्तार — सही: स्थापित ऐतिहासिक रिकॉर्ड से मेल खाता है।\n• विकल्प (c): हथकरघा प्रभुत्व → कपास (1858) → जूट (1855) — गलत: कपास मिल का वर्ष गलत है; आंतरिक क्रम असंगत है।\n• विकल्प (d): कपास (1854) → जूट (1860) — गलत: जूट मिल का वर्ष गलत है।\n\nमूल्य संवर्धन:\n• Cowasji Nanabhai Davar को भारत की पहली कपास मिल — बॉम्बे स्पिनिंग एंड वीविंग कंपनी — का संस्थापक उद्यमी माना जाता है।\n• जूट उद्योग मुख्यतः बंगाल में विकसित हुआ क्योंकि गंगा-ब्रह्मपुत्र डेल्टा में कच्चे जूट की निकटता और कोलकाता के औपनिवेशिक बंदरगाह तक पहुंच थी।\n• औपनिवेशिक टैरिफ नीतियों ने भारतीय कपास मिलों को लैंकेशायर कपड़े के मुकाबले असमर्थित किया, जिससे शुरुआती विकास बाधित हुआ, हालांकि उद्यमशीलता थी।"
+    }
+  },
+  {
+    "uuid": "4b1c5f4d-8e41-45ff-b698-0439a2eaa95e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Three-Tier Structure: Mills, Powerlooms, and Handlooms"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Powerloom share of fabric production vs. handloom employment share",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the three-tier structure of India's cotton textile industry:\n\n1. The handloom sector is the largest source of employment in India's textile industry and the second largest employer after agriculture.\n2. The organized composite mill sector contributes the highest share of fabric production among all three tiers of the cotton textile industry.\n3. The powerloom sector operates largely outside the scope of legislation that governs composite textile mills in terms of labour and factory regulations.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The handloom sector is the largest source of employment in India's textile industry and the second largest employer after agriculture.",
+          "verdict": "Correct",
+          "reason": "Handlooms employ approximately 43 lakh weavers, making it India's largest cottage industry and the second largest employment provider after agriculture — a frequently tested UPSC fact."
+        },
+        {
+          "statement": "The organized composite mill sector contributes the highest share of fabric production among all three tiers of the cotton textile industry.",
+          "verdict": "Incorrect",
+          "reason": "It is the decentralized powerloom sector, not the composite mill sector, that contributes the highest share of fabric production (approximately 60%), having far outpaced the organized mill sector in output."
+        },
+        {
+          "statement": "The powerloom sector operates largely outside the scope of legislation that governs composite textile mills in terms of labour and factory regulations.",
+          "verdict": "Correct",
+          "reason": "Powerloom units, being decentralized and often small-scale, are substantially outside the regulatory ambit of labour and factory laws that apply to organized composite mills, which is a key reason for their cost competitiveness."
+        }
+      ],
+      "strong_distractor": "d — Option (d) would suggest all three statements are correct, tempting students who correctly identify Statements 1 and 3 but do not scrutinize Statement 2's claim about the mill sector's output dominance.",
+      "elimination_logic": [
+        "Verify Statement 1: handloom as largest employer after agriculture — this is a standard textbook fact; mark as Correct.",
+        "Scrutinize Statement 2 carefully: the claim attributes highest fabric production to the mill sector — recall that powerlooms produce ~60% of fabric, not mills; mark Statement 2 as Incorrect.",
+        "Verify Statement 3: decentralized powerlooms do operate outside composite mill regulations — mark as Correct.",
+        "With Statements 1 and 3 correct and Statement 2 incorrect, the answer is option (c): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the critical trap. Students associate 'organized mill sector' with industrial dominance and instinctively mark it as the largest fabric producer. The reality is the opposite — the decentralized powerloom sector dwarfs the mill sector in fabric output precisely because of its lower costs and regulatory flexibility. A partially prepared student who knows the handloom employment fact (Statement 1) but is unsure about Statement 2 will likely choose option (d) — all three correct — falling into the trap.",
+      "final_explanation": "India's textile industry is structured across three distinct tiers: the organized composite mill sector, the decentralized powerloom sector, and the handloom sector. Each differs sharply in output share, employment, and regulation.\n\n• Statement 1 — Correct: The handloom sector employs approximately 43 lakh weavers and is unambiguously the largest employment provider in the textile value chain and the second largest overall after agriculture.\n• Statement 2 — Incorrect: The composite mill sector does NOT lead in fabric production. The powerloom sector contributes roughly 60% of total fabric output — the mill sector's share has fallen dramatically since the 1980s closures.\n• Statement 3 — Correct: Powerloom units are largely decentralized and small-scale, enabling them to operate outside the stricter factory and labour laws that apply to organized composite mills — a major source of cost advantage.\n\nValue Addition:\n• The Handloom Reservation Act originally reserved certain products exclusively for handloom production, protecting weavers from competition.\n• Bhiwandi, Surat, and Ichalkaranji are among India's largest powerloom clusters.\n• The mill sector's decline accelerated after the 1982 Bombay textile workers' strike led by Datta Samant."
+    },
+    "hi": {
+      "display_text": "भारत की कपास वस्त्र उद्योग की तीन-स्तरीय संरचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. हैंडलूम क्षेत्र भारत की वस्त्र उद्योग में सबसे बड़ा रोजगार स्रोत है और कृषि के बाद दूसरा सबसे बड़ा रोजगारदाता है।\n2. संगठित संयोजित मिल क्षेत्र कपास वस्त्र उद्योग के तीनों स्तरों में सबसे अधिक कपड़ा उत्पादन में योगदान देता है।\n3. पावरलूम क्षेत्र श्रम और फैक्ट्री नियमों के संदर्भ में संयोजित वस्त्र मिलों को नियंत्रित करने वाले कानूनों के दायरे से मुख्यतः बाहर काम करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The handloom sector is the largest source of employment in India's textile industry and the second largest employer after agriculture.",
+          "verdict": "सही",
+          "reason": "हैंडलूम क्षेत्र लगभग 43 लाख बुनकरों को रोजगार देता है, जो इसे भारत की सबसे बड़ी कुटीर उद्योग और कृषि के बाद दूसरा सबसे बड़ा रोजगार प्रदाता बनाता है — यह UPSC में बार-बार पूछा जाने वाला तथ्य है।"
+        },
+        {
+          "statement": "The organized composite mill sector contributes the highest share of fabric production among all three tiers of the cotton textile industry.",
+          "verdict": "गलत",
+          "reason": "सबसे अधिक कपड़ा उत्पादन का योगदान संयोजित मिल क्षेत्र नहीं, बल्कि विकेन्द्रीकृत पावरलूम क्षेत्र करता है (लगभग 60%), जिसने संगठित मिल क्षेत्र को उत्पादन में काफी पीछे छोड़ दिया है।"
+        },
+        {
+          "statement": "The powerloom sector operates largely outside the scope of legislation that governs composite textile mills in terms of labour and factory regulations.",
+          "verdict": "सही",
+          "reason": "पावरलूम इकाइयाँ, जो विकेन्द्रीकृत और अक्सर लघु पैमाने की होती हैं, श्रम और फैक्ट्री कानूनों के नियामक दायरे से काफी हद तक बाहर हैं जो संगठित संयोजित मिलों पर लागू होते हैं — यह उनकी लागत प्रतिस्पर्धा का एक प्रमुख कारण है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) यह सुझाव देगा कि तीनों कथन सही हैं, जो उन छात्रों को भ्रमित करता है जो कथन 1 और 3 को सही पहचानते हैं लेकिन कथन 2 के मिल क्षेत्र के उत्पादन प्रभुत्व के दावे की जांच नहीं करते।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: हैंडलूम कृषि के बाद सबसे बड़ा रोजगार स्रोत है — यह एक मानक पाठ्यपुस्तक तथ्य है; इसे सही चिह्नित करें।",
+        "कथन 2 को सावधानी से जांचें: यह दावा करता है कि मिल क्षेत्र का कपड़ा उत्पादन में सबसे अधिक हिस्सा है — याद रखें कि पावरलूम लगभग 60% कपड़ा उत्पादन करता है, न कि मिल; कथन 2 को गलत चिह्नित करें।",
+        "कथन 3 सत्यापित करें: विकेन्द्रीकृत पावरलूम वास्तव में संयोजित मिल नियमों के बाहर काम करते हैं — इसे सही चिह्नित करें।",
+        "कथन 1 और 3 सही हैं और कथन 2 गलत है, अतः उत्तर विकल्प (c) है: केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 मुख्य जाल है। छात्र 'संगठित मिल क्षेत्र' को औद्योगिक प्रभुत्व से जोड़ते हैं और सहज रूप से इसे सबसे बड़ा कपड़ा उत्पादक मान लेते हैं। वास्तविकता इसके विपरीत है — विकेन्द्रीकृत पावरलूम क्षेत्र अपने कम लागत और नियामक लचीलापन के कारण मिल क्षेत्र से कहीं अधिक कपड़ा उत्पादन करता है। जो छात्र कथन 1 के हैंडलूम रोजगार तथ्य को जानते हैं लेकिन कथन 2 के बारे में अनिश्चित हैं, वे विकल्प (d) — तीनों सही — चुन सकते हैं और जाल में फंस सकते हैं।",
+      "final_explanation": "भारत की वस्त्र उद्योग तीन स्पष्ट स्तरों में संरचित है: संगठित संयोजित मिल क्षेत्र, विकेन्द्रीकृत पावरलूम क्षेत्र, और हैंडलूम क्षेत्र। प्रत्येक का उत्पादन, रोजगार और नियमन में स्पष्ट अंतर है।\n\n• कथन 1 — सही: हैंडलूम क्षेत्र लगभग 43 लाख बुनकरों को रोजगार देता है और वस्त्र मूल्य श्रृंखला में सबसे बड़ा रोजगार प्रदाता तथा कृषि के बाद दूसरा सबसे बड़ा रोजगार स्रोत है।\n• कथन 2 — गलत: संयोजित मिल क्षेत्र कपड़ा उत्पादन में अग्रणी नहीं है। पावरलूम क्षेत्र कुल कपड़ा उत्पादन का लगभग 60% योगदान देता है — मिल क्षेत्र का हिस्सा 1980 के दशक के बंद होने के बाद काफी घट गया है।\n• कथन 3 — सही: पावरलूम इकाइयाँ मुख्यतः विकेन्द्रीकृत और लघु पैमाने की होती हैं, जिससे वे संगठित संयोजित मिलों पर लागू कठोर फैक्ट्री और श्रम कानूनों के बाहर काम कर पाती हैं — जो लागत लाभ का मुख्य स्रोत है।\n\nमूल्य संवर्धन:\n• हैंडलूम आरक्षण अधिनियम ने मूलतः कुछ उत्पादों को केवल हैंडलूम उत्पादन के लिए आरक्षित किया था, जिससे बुनकरों को प्रतिस्पर्धा से सुरक्षा मिली।\n• भिवंडी, सूरत, और इचलकरंजी भारत के सबसे बड़े पावरलूम क्लस्टरों में शामिल हैं।\n• मिल क्षेत्र का पतन 1982 के बॉम्बे वस्त्र श्रमिक हड़ताल के बाद तेज हुआ, जिसका नेतृत्व दत्ता समंत ने किया था।"
+    }
+  },
+  {
+    "uuid": "b3ec3225-a0ab-4331-94b2-af6cdfe07e64",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Decline of Mumbai Mill Sector and Structural Shift"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "1982 Mumbai textile mill strike — leader Datta Samant",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The prolonged textile mill workers' strike in Bombay that began in 1982 and proved to be a watershed event in the decline of the organized mill sector was led by which of the following?\n\n(a) Datta Samant\n(b) George Fernandes\n(c) Bal Thackeray\n(d) S. A. Dange",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) names George Fernandes, who was a prominent Mumbai-based labour union leader in an earlier era, making him a plausible-sounding but incorrect answer.",
+      "elimination_logic": [
+        "Recall that the 1982 Bombay textile workers' strike was a landmark industrial action — identify who led it.",
+        "Datta Samant was the union leader who called and led this prolonged strike — not a politician or mill owner.",
+        "Eliminate George Fernandes (earlier labour leader, later politician) and eliminate mill owners or government officials as strike leaders.",
+        "Option (a) — Datta Samant — is the only correct attribution."
+      ],
+      "upsc_trap_explanation": "George Fernandes is a strong distractor because he was prominently associated with Mumbai's working class and labour politics in the 1960s–70s, including the 1974 railway strike. Students who recall a famous Mumbai labour leader but do not specifically anchor the 1982 textile strike to Datta Samant will choose Fernandes.",
+      "final_explanation": "The 1982 textile mill workers' strike in Bombay is considered a watershed moment in the history of India's organized textile sector.\n\n• Option (a): Datta Samant — Correct. Dr Datta Samant, a labour union leader known for his aggressive negotiating style, led the strike which lasted over 18 months. It resulted in the closure of many composite mills and accelerated the shift of production to decentralized powerloom clusters.\n• Option (b): George Fernandes — Incorrect. Fernandes was a prominent labour and political leader who led the 1974 railway strike, not the 1982 textile strike.\n• Option (c): Bal Thackeray — Incorrect. Thackeray was a political figure, not a textile union leader.\n• Option (d): S. A. Dange — Incorrect. Dange was a communist trade union leader of an earlier generation.\n\nValue Addition:\n• The 1982 strike paradoxically destroyed the very mill sector it sought to protect — production migrated to Bhiwandi, Surat, and Ichalkaranji powerlooms.\n• Mill lands in central Mumbai subsequently became sites of intense legal and political battles over urban redevelopment under DCR 58.\n• Mumbai's composite mill closure is a textbook case study in deindustrialisation driven by labour conflict and land economics."
+    },
+    "hi": {
+      "display_text": "1982 में शुरू हुई और संगठित मिल क्षेत्र के पतन में एक मील का पत्थर साबित हुई बॉम्बे की लंबी टेक्सटाइल मिल श्रमिक हड़ताल का नेतृत्व निम्नलिखित में से किसने किया था?\n\n(a) दत्ता सामंत\n(b) जॉर्ज फर्नांडीस\n(c) बाल ठाकरे\n(d) एस. ए. डांगे",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में जॉर्ज फर्नांडीस का नाम है, जो एक पूर्व युग के मुंबई आधारित श्रमिक संघ नेता थे, जिससे यह एक संभावित लेकिन गलत उत्तर बनता है।",
+      "elimination_logic": [
+        "1982 के बॉम्बे टेक्सटाइल श्रमिकों के हड़ताल को एक ऐतिहासिक औद्योगिक आंदोलन के रूप में याद करें — यह पहचानें कि इसे किसने नेतृत्व दिया।",
+        "दत्ता सामंत वह संघ नेता थे जिन्होंने इस लंबी हड़ताल को बुलाया और नेतृत्व किया — वे कोई राजनेता या मिल मालिक नहीं थे।",
+        "जॉर्ज फर्नांडीस (पूर्व श्रमिक नेता, बाद में राजनेता) को हटा दें और मिल मालिकों या सरकारी अधिकारियों को हड़ताल के नेताओं के रूप में खारिज करें।",
+        "विकल्प (a) — दत्ता सामंत — ही सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "जॉर्ज फर्नांडीस एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि वे 1960-70 के दशक में मुंबई के कामगार वर्ग और श्रमिक राजनीति से प्रमुख रूप से जुड़े थे, जिसमें 1974 की रेलवे हड़ताल भी शामिल है। जो छात्र एक प्रसिद्ध मुंबई श्रमिक नेता को याद करते हैं लेकिन 1982 की टेक्सटाइल हड़ताल को विशेष रूप से दत्ता सामंत से नहीं जोड़ पाते, वे फर्नांडीस को चुनेंगे।",
+      "final_explanation": "1982 की बॉम्बे टेक्सटाइल मिल श्रमिकों की हड़ताल को भारत के संगठित वस्त्र क्षेत्र के इतिहास में एक मील का पत्थर माना जाता है।\n\n• विकल्प (a): दत्ता सामंत — सही। डॉ. दत्ता सामंत, एक श्रमिक संघ नेता जो अपनी आक्रामक वार्ता शैली के लिए जाने जाते थे, ने इस हड़ताल का नेतृत्व किया जो 18 महीने से अधिक चली। इसके परिणामस्वरूप कई सम्मिलित मिल बंद हो गए और उत्पादन का स्थान विकेंद्रीकृत पावरलूम क्लस्टरों की ओर बढ़ गया।\n• विकल्प (b): जॉर्ज फर्नांडीस — गलत। फर्नांडीस एक प्रमुख श्रमिक और राजनीतिक नेता थे जिन्होंने 1974 की रेलवे हड़ताल का नेतृत्व किया था, न कि 1982 की टेक्सटाइल हड़ताल का।\n• विकल्प (c): बाल ठाकरे — गलत। ठाकरे एक राजनीतिक व्यक्ति थे, टेक्सटाइल संघ नेता नहीं।\n• विकल्प (d): एस. ए. डांगे — गलत। डांगे एक पूर्व पीढ़ी के कम्युनिस्ट ट्रेड यूनियन नेता थे।\n\nमूल्य संवर्धन:\n• 1982 की हड़ताल विरोधाभासी रूप से उसी मिल क्षेत्र को नष्ट कर गई जिसे यह बचाने का प्रयास कर रही थी — उत्पादन भिवंडी, सूरत और इचलकरंजी के पावरलूम में स्थानांतरित हो गया।\n• मुंबई के केंद्रीय मिल के भूखंड बाद में DCR 58 के तहत शहरी पुनर्विकास को लेकर तीव्र कानूनी और राजनीतिक संघर्ष के स्थल बन गए।\n• मुंबई के सम्मिलित मिल बंद होना श्रम संघर्ष और भूमि अर्थशास्त्र से प्रेरित औद्योगिकीकरण के पतन का एक पाठ्यपुस्तक अध्ययन मामला है।"
+    }
+  },
+  {
+    "uuid": "c75dcc3e-f55a-491b-a952-58824faf4296",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Integrated Textile Parks and Cluster Development Schemes"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "PM MITRA parks vs. SITP — distinction of objectives and structure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about integrated textile park schemes in India:\n\n1. The Scheme for Integrated Textile Parks (SITP) was structured on a Public-Private Partnership model to create shared infrastructure for textile units within a defined cluster.\n2. PM MITRA (Mega Integrated Textile Region and Apparel) parks are envisaged to host the entire value chain from fibre to fashion under one location, which distinguishes them from the more limited scope of SITP clusters.\n3. PM MITRA parks and Special Economic Zones (SEZs) for textiles offer identical fiscal incentives, differing only in their geographical size.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1, 2 and 3\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Scheme for Integrated Textile Parks (SITP) was structured on a Public-Private Partnership model to create shared infrastructure for textile units within a defined cluster.",
+          "verdict": "Correct",
+          "reason": "SITP was explicitly a PPP-based scheme where government funding was combined with industry contribution to create common infrastructure such as effluent treatment plants, roads, and utilities within a textile cluster."
+        },
+        {
+          "statement": "PM MITRA (Mega Integrated Textile Region and Apparel) parks are envisaged to host the entire value chain from fibre to fashion under one location, which distinguishes them from the more limited scope of SITP clusters.",
+          "verdict": "Correct",
+          "reason": "PM MITRA parks are designed as large greenfield locations that integrate spinning, weaving, processing, dyeing, and garmenting — the full value chain — which is a broader scope than SITP's infrastructure-only focus within existing clusters."
+        },
+        {
+          "statement": "PM MITRA parks and Special Economic Zones (SEZs) for textiles offer identical fiscal incentives, differing only in their geographical size.",
+          "verdict": "Incorrect",
+          "reason": "PM MITRA and textile SEZs operate under different policy frameworks with distinct fiscal structures, governance mechanisms, and eligibility conditions — they are not interchangeable."
+        }
+      ],
+      "strong_distractor": "c — Option (c) would suggest all three statements are correct; students who correctly identify Statements 1 and 2 but do not scrutinize Statement 3's 'identical incentives' claim may choose this.",
+      "elimination_logic": [
+        "Evaluate Statement 1: SITP as a PPP model for shared infrastructure in textile clusters — this is accurate; Statement 1 is Correct.",
+        "Evaluate Statement 2: PM MITRA parks integrating full fibre-to-fashion value chain vs. SITP's infrastructure focus — this distinction is accurate; Statement 2 is Correct.",
+        "Evaluate Statement 3: PM MITRA and SEZs offering 'identical' fiscal incentives — SEZs have their own statutory framework under the SEZ Act 2005; PM MITRA operates under a different government scheme structure. The word 'identical' makes this false.",
+        "With Statements 1 and 2 correct and Statement 3 incorrect, the answer is option (d): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the genuine similarity between industrial park schemes and SEZs. Both involve large-scale zones with infrastructure support, and students who have not specifically compared their fiscal structures will accept the 'identical incentives' claim.",
+      "final_explanation": "India's textile industrial park ecosystem has evolved through multiple generations of schemes, each with distinct objectives and structures.\n\n• Statement 1 — Correct: SITP was explicitly PPP-based, leveraging both central government grants and private industry contributions to build common infrastructure — effluent treatment, roads, power — within existing textile cluster locations.\n• Statement 2 — Correct: PM MITRA (announced 2021, with seven parks planned) is an ambitious greenfield initiative designed to house the complete fibre-to-fashion value chain, enabling economies of agglomeration far beyond the infrastructure-only mandate of SITP.\n• Statement 3 — Incorrect: SEZs operate under the SEZ Act 2005 with its own set of tax exemptions, export obligations, and regulatory regime. PM MITRA parks have their own incentive architecture — development capital support and competitive incentive support — which differs substantively from SEZ fiscal benefits.\n\nValue Addition:\n• Seven PM MITRA parks were announced across Tamil Nadu, Telangana, Karnataka, Gujarat, MP, Rajasthan, and UP.\n• SITP was primarily focused on existing industrial clusters; PM MITRA targets new greenfield locations for maximum agglomeration.\n• The PLI scheme for textiles complements PM MITRA by providing production-linked incentives to units within and outside the parks."
+    },
+    "hi": {
+      "display_text": "भारत में एकीकृत वस्त्र पार्क योजनाओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. एकीकृत वस्त्र पार्क योजना (SITP) को एक सार्वजनिक-निजी भागीदारी मॉडल पर संरचित किया गया था ताकि एक परिभाषित क्लस्टर के भीतर वस्त्र इकाइयों के लिए साझा अवसंरचना बनाई जा सके।\n2. पीएम MITRA (मेगा इंटीग्रेटेड टेक्सटाइल रीजन एंड अपैरल) पार्कों की कल्पना पूरी मूल्य श्रृंखला को एक स्थान पर फाइबर से फैशन तक समाहित करने की है, जो SITP क्लस्टरों की सीमित सीमा से भिन्न है।\n3. पीएम MITRA पार्क और वस्त्रों के लिए विशेष आर्थिक क्षेत्र (SEZ) समान वित्तीय प्रोत्साहन प्रदान करते हैं, केवल उनके भौगोलिक आकार में अंतर होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) 1, 2 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Scheme for Integrated Textile Parks (SITP) was structured on a Public-Private Partnership model to create shared infrastructure for textile units within a defined cluster.",
+          "verdict": "सही",
+          "reason": "SITP स्पष्ट रूप से एक PPP-आधारित योजना थी जहाँ सरकार की वित्तीय सहायता उद्योग के योगदान के साथ मिलकर प्रवाल क्लस्टर के भीतर सामान्य अवसंरचना जैसे अपशिष्ट जल उपचार संयंत्र, सड़कें और उपयोगिताएँ बनाती है।"
+        },
+        {
+          "statement": "PM MITRA (Mega Integrated Textile Region and Apparel) parks are envisaged to host the entire value chain from fibre to fashion under one location, which distinguishes them from the more limited scope of SITP clusters.",
+          "verdict": "सही",
+          "reason": "PM MITRA पार्क बड़े ग्रीनफील्ड स्थान के रूप में डिज़ाइन किए गए हैं जो कताई, बुनाई, प्रसंस्करण, रंगाई और वस्त्र निर्माण — पूरी मूल्य श्रृंखला — को एकीकृत करते हैं, जो SITP के मौजूदा क्लस्टरों में केवल अवसंरचना पर केंद्रित दायरे से व्यापक है।"
+        },
+        {
+          "statement": "PM MITRA parks and Special Economic Zones (SEZs) for textiles offer identical fiscal incentives, differing only in their geographical size.",
+          "verdict": "गलत",
+          "reason": "PM MITRA और वस्त्र SEZ अलग-अलग नीति ढांचे के अंतर्गत काम करते हैं जिनमें भिन्न वित्तीय संरचनाएँ, शासन तंत्र और पात्रता शर्तें होती हैं — ये एक-दूसरे के स्थानापन्न नहीं हैं।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) यह सुझाव देगा कि तीनों कथन सही हैं; जो छात्र कथन 1 और 2 को सही पहचानते हैं लेकिन कथन 3 के 'समान प्रोत्साहन' दावे की जांच नहीं करते, वे इसे चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: SITP एक PPP मॉडल के रूप में वस्त्र क्लस्टरों में साझा अवसंरचना के लिए — यह सही है; कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: PM MITRA पार्क पूरे फाइबर-से-फैशन मूल्य श्रृंखला को एकीकृत करते हैं जबकि SITP केवल अवसंरचना पर केंद्रित है — यह भेद स्पष्ट है; कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: PM MITRA और SEZ 'समान' वित्तीय प्रोत्साहन देते हैं — SEZ का अपना SEZ अधिनियम 2005 के तहत वैधानिक ढांचा है; PM MITRA अलग सरकारी योजना के अंतर्गत है। 'समान' शब्द इसे गलत बनाता है।",
+        "कथन 1 और 2 सही हैं और कथन 3 गलत है, अतः उत्तर विकल्प (d) है: केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 औद्योगिक पार्क योजनाओं और SEZ के बीच वास्तविक समानता का लाभ उठाता है। दोनों में बड़े पैमाने पर क्षेत्र और अवसंरचना समर्थन होता है, और जो छात्र उनके वित्तीय ढांचे की तुलना नहीं करते, वे 'समान प्रोत्साहन' दावे को स्वीकार कर लेते हैं।",
+      "final_explanation": "भारत के वस्त्र औद्योगिक पार्क पारिस्थितिकी तंत्र ने कई पीढ़ियों की योजनाओं के माध्यम से विकास किया है, जिनके उद्देश्य और संरचनाएँ भिन्न हैं।\n\n• कथन 1 — सही: SITP स्पष्ट रूप से PPP-आधारित था, जिसमें केंद्र सरकार की अनुदान और निजी उद्योग के योगदान से सामान्य अवसंरचना — अपशिष्ट जल उपचार, सड़कें, बिजली — मौजूदा वस्त्र क्लस्टर स्थानों में निर्मित की गई।\n• कथन 2 — सही: PM MITRA (2021 में घोषित, सात पार्कों की योजना) एक महत्वाकांक्षी ग्रीनफील्ड पहल है जो पूरी फाइबर-से-फैशन मूल्य श्रृंखला को समाहित करती है, जो SITP के केवल अवसंरचना-आधारित दायरे से कहीं अधिक है।\n• कथन 3 — गलत: SEZ SEZ अधिनियम 2005 के तहत अपने कर छूट, निर्यात दायित्व और नियामक व्यवस्था के साथ संचालित होते हैं। PM MITRA पार्कों की अपनी प्रोत्साहन संरचना है — विकास पूंजी सहायता और प्रतिस्पर्धात्मक प्रोत्साहन सहायता — जो SEZ के वित्तीय लाभों से मौलिक रूप से भिन्न है।\n\nमूल्य संवर्धन:\n• तमिलनाडु, तेलंगाना, कर्नाटक, गुजरात, मध्य प्रदेश, राजस्थान और उत्तर प्रदेश में सात PM MITRA पार्क घोषित किए गए।\n• SITP मुख्यतः मौजूदा औद्योगिक क्लस्टरों पर केंद्रित था; PM MITRA अधिकतम एकत्रीकरण के लिए नए ग्रीनफील्ड स्थानों को लक्षित करता है।\n• वस्त्रों के लिए PLI योजना PM MITRA को पूरक करती है, जो पार्कों के भीतर और बाहर इकाइयों को उत्पादन-लिंक्ड प्रोत्साहन प्रदान करती है।"
+    }
+  },
+  {
+    "uuid": "049403aa-79f5-483c-961a-755a65dec4c0",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Production Linked Incentive (PLI) Scheme for Textiles"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "PLI for textiles — deliberate exclusion of cotton apparel",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Production Linked Incentive (PLI) Scheme for Textiles in India was specifically designed to cover which of the following product segments?\n\n(a) Cotton apparel, MMF apparel, and technical textiles\n(b) All apparel segments including cotton, wool, and man-made fibre garments\n(c) Cotton fabrics, synthetic fabrics, and handloom products\n(d) MMF apparel, MMF fabrics, and technical textiles",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) states that PLI covers cotton apparel along with MMF segments, which is precisely what many students assume given that cotton dominates India's textile identity — the deliberate exclusion of cotton apparel is counterintuitive.",
+      "elimination_logic": [
+        "Recall that the PLI scheme for textiles was specifically designed to push India into higher-value MMF and technical textile segments where India underperforms globally.",
+        "Cotton apparel was deliberately excluded from PLI textiles — not because cotton is unimportant but because India already has competitive advantages in cotton and policy-makers sought to address gaps in MMF and technical textiles.",
+        "Eliminate options that include cotton apparel as a PLI-covered segment.",
+        "Option (d) — MMF apparel, MMF fabrics, and technical textiles only — correctly captures the deliberate scope of PLI for textiles."
+      ],
+      "upsc_trap_explanation": "The exclusion of cotton apparel is counterintuitive given India's deep cotton identity. Students reasoning from India's textile strength instinctively assume cotton apparel is covered. Only those who have specifically noted the deliberate MMF-focus rationale of PLI will get this right.",
+      "final_explanation": "The PLI Scheme for Textiles was approved by the Union Cabinet and is notable for what it deliberately leaves out.\n\n• Option (a): Cotton apparel, MMF apparel, and technical textiles — Incorrect. Cotton apparel is specifically excluded from PLI for textiles.\n• Option (b): All apparel segments including cotton, wool, and MMF — Incorrect. Multiple segments including cotton and wool are excluded.\n• Option (c): Cotton fabrics, synthetic fabrics, and handloom products — Incorrect. This conflates multiple unrelated policy baskets.\n• Option (d): MMF apparel, MMF fabrics, and technical textiles — Correct. The PLI scheme for textiles specifically covers these three product categories to incentivise investment in segments where India lags global benchmarks.\n\nValue Addition:\n• The rationale for excluding cotton apparel is that India already has natural competitive advantages in cotton; PLI was designed to close the gap in MMF and technical textiles where China dominates globally.\n• PLI for textiles has minimum investment thresholds to screen for serious investors seeking scale.\n• PM MITRA parks complement PLI by providing the physical infrastructure within which PLI-eligible units can operate."
+    },
+    "hi": {
+      "display_text": "भारत में वस्त्रों के लिए उत्पादन लिंक्ड प्रोत्साहन (PLI) योजना विशेष रूप से निम्नलिखित उत्पाद सेगमेंट को कवर करने के लिए डिज़ाइन की गई है?\n\n(a) कपास परिधान, MMF परिधान, और तकनीकी वस्त्र\n(b) सभी परिधान सेगमेंट जिनमें कपास, ऊन, और मानव निर्मित फाइबर के वस्त्र शामिल हैं\n(c) कपास कपड़े, सिंथेटिक कपड़े, और हथकरघा उत्पाद\n(d) MMF परिधान, MMF कपड़े, और तकनीकी वस्त्र",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) कहता है कि PLI में कपास परिधान के साथ MMF सेगमेंट भी शामिल हैं, जो कि कई छात्रों की धारणा है क्योंकि भारत की वस्त्र पहचान में कपास प्रमुख है — कपास परिधान का जानबूझकर बहिष्कार विरोधाभासी है।",
+      "elimination_logic": [
+        "याद रखें कि वस्त्रों के लिए PLI योजना विशेष रूप से भारत को उच्च-मूल्य वाले MMF और तकनीकी वस्त्र सेगमेंट में धकेलने के लिए डिज़ाइन की गई थी जहाँ भारत वैश्विक स्तर पर पिछड़ता है।",
+        "कपास परिधान को जानबूझकर PLI वस्त्रों से बाहर रखा गया है — इसका कारण यह नहीं कि कपास महत्वहीन है, बल्कि इसलिए कि भारत के पास कपास में पहले से ही प्रतिस्पर्धात्मक लाभ हैं और नीति निर्माता MMF और तकनीकी वस्त्रों में अंतर को दूर करना चाहते थे।",
+        "जो विकल्प कपास परिधान को PLI के अंतर्गत शामिल करते हैं, उन्हें हटा दें।",
+        "विकल्प (d) — MMF परिधान, MMF कपड़े, और तकनीकी वस्त्र ही — वस्त्रों के लिए PLI की जानबूझकर सीमाओं को सही ढंग से दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "कपास परिधान का बहिष्कार भारत की गहरी कपास पहचान के कारण विरोधाभासी है। भारत की वस्त्र ताकत से तर्क करने वाले छात्र सहज रूप से मान लेते हैं कि कपास परिधान शामिल है। केवल वे जो PLI के जानबूझकर MMF-केंद्रित तर्क को जानते हैं, सही उत्तर देंगे।",
+      "final_explanation": "वस्त्रों के लिए PLI योजना को केंद्रीय मंत्रिमंडल ने मंजूरी दी है और यह इस बात के लिए उल्लेखनीय है कि इसमें जानबूझकर क्या शामिल नहीं किया गया है।\n\n• विकल्प (a): कपास परिधान, MMF परिधान, और तकनीकी वस्त्र — गलत। कपास परिधान को वस्त्रों के लिए PLI से विशेष रूप से बाहर रखा गया है।\n• विकल्प (b): सभी परिधान सेगमेंट जिनमें कपास, ऊन, और MMF शामिल हैं — गलत। कई सेगमेंट जैसे कपास और ऊन को बाहर रखा गया है।\n• विकल्प (c): कपास कपड़े, सिंथेटिक कपड़े, और हथकरघा उत्पाद — गलत। यह कई असंबंधित नीति वर्गों को मिला देता है।\n• विकल्प (d): MMF परिधान, MMF कपड़े, और तकनीकी वस्त्र — सही। वस्त्रों के लिए PLI योजना विशेष रूप से इन तीन उत्पाद श्रेणियों को कवर करती है ताकि उन सेगमेंटों में निवेश को प्रोत्साहित किया जा सके जहाँ भारत वैश्विक मानकों से पीछे है।\n\nमूल्य संवर्धन:\n• कपास परिधान को बाहर रखने का तर्क यह है कि भारत के पास कपास में प्राकृतिक प्रतिस्पर्धात्मक लाभ पहले से हैं; PLI को MMF और तकनीकी वस्त्रों में अंतर को बंद करने के लिए डिज़ाइन किया गया था जहाँ चीन वैश्विक रूप से प्रभुत्व रखता है।\n• वस्त्रों के लिए PLI में न्यूनतम निवेश सीमा है ताकि गंभीर निवेशकों को चुना जा सके जो पैमाने पर काम करना चाहते हैं।\n• पीएम MITRA पार्क PLI को पूरक करते हैं जो भौतिक अवसंरचना प्रदान करते हैं जिनके भीतर PLI-योग्य इकाइयाँ संचालित हो सकती हैं।"
+    }
+  },
+  {
+    "uuid": "0a04298c-3757-4ea5-9950-0e3753761a99",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Environmental Concerns and Sustainability in Cotton Textile Industry"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Tirupur cluster — Noyyal river pollution and ZLD norms",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about environmental concerns in India's cotton textile industry:\n\n1. Zero Liquid Discharge (ZLD) norms, as applied to textile dyeing units, require that all wastewater generated be treated and recycled within the plant with no effluent released into external water bodies.\n2. The Tirupur textile cluster in Tamil Nadu discharges its dyeing effluents into the Cauvery river, causing significant downstream pollution to agricultural land in the delta region.\n3. The Better Cotton Initiative (BCI) is an international standard that promotes water-efficient cotton cultivation practices, and India is one of its participating producing countries.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 3 only\n(c) 2 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Zero Liquid Discharge (ZLD) norms, as applied to textile dyeing units, require that all wastewater generated be treated and recycled within the plant with no effluent released into external water bodies.",
+          "verdict": "Correct",
+          "reason": "This is precisely the definition of ZLD — a closed-loop system mandating complete internal treatment and recycling of all liquid waste, as ordered by the NGT and courts for textile clusters including Tirupur."
+        },
+        {
+          "statement": "The Tirupur textile cluster in Tamil Nadu discharges its dyeing effluents into the Cauvery river, causing significant downstream pollution to agricultural land in the delta region.",
+          "verdict": "Incorrect",
+          "reason": "Tirupur's dyeing units discharge into the Noyyal river — a tributary of the Cauvery — not the Cauvery itself. The pollution of the Noyyal and its effect on downstream Orathupalayam reservoir and agricultural land is the documented controversy."
+        },
+        {
+          "statement": "The Better Cotton Initiative (BCI) is an international standard that promotes water-efficient cotton cultivation practices, and India is one of its participating producing countries.",
+          "verdict": "Correct",
+          "reason": "BCI is an international multi-stakeholder initiative promoting sustainable cotton farming practices including water efficiency, and India's cotton farmers participate in the BCI programme — making India one of the largest BCI cotton producers globally."
+        }
+      ],
+      "strong_distractor": "b — Option (b) would identify only Statement 3 as incorrect; a student who knows the ZLD definition (Statement 1 correct) and vaguely recalls Tirupur's river pollution but cannot name the specific river (Noyyal vs. Cauvery) may choose this.",
+      "elimination_logic": [
+        "Evaluate Statement 1: ZLD definition — complete internal recycling, no external discharge — this is accurate; Statement 1 is Correct, not the answer.",
+        "Evaluate Statement 2: Tirupur effluents into the Cauvery — the documented pollution is of the Noyyal river, not the Cauvery directly; Statement 2 is Incorrect (NOT correct).",
+        "Evaluate Statement 3: BCI promoting sustainable cotton, India participating — this is accurate; Statement 3 is Correct, not the answer.",
+        "Only Statement 2 is NOT correct — the answer is option (c): 2 only."
+      ],
+      "upsc_trap_explanation": "Students who know Tirupur's pollution controversy and associate Tamil Nadu's major river with the Cauvery will substitute the Cauvery for the Noyyal. The Noyyal is a smaller tributary whose name requires specific recall — it is the precise geographic test.",
+      "final_explanation": "Environmental issues in India's textile sector, particularly around wet processing and dyeing, are increasingly prominent in policy and litigation.\n\n• Statement 1 — Correct: ZLD is a closed-loop system requiring all effluent to be treated and recycled internally, with zero discharge into external water bodies. Courts and the NGT have mandated ZLD for Tirupur and other textile processing clusters.\n• Statement 2 — Incorrect: Tirupur's dyeing and bleaching units discharge into the Noyyal river — a westward-flowing tributary of the Cauvery — not the Cauvery itself. The Orathupalayam dam on the Noyyal has been severely impacted, affecting downstream agriculture.\n• Statement 3 — Correct: The Better Cotton Initiative is a global standard promoting sustainable practices, and India is among the world's largest BCI cotton producers, with substantial farmer enrolment in Maharashtra, Gujarat, and Karnataka.\n\nValue Addition:\n• Tirupur is India's largest knitwear export cluster, contributing significantly to hosiery exports.\n• The Madras High Court ordered partial closure of dyeing units in Tirupur in 2010 over Noyyal river pollution before ZLD compliance was enforced.\n• Organic cotton certification (GOTS — Global Organic Textile Standard) is distinct from BCI and requires chemical-free cultivation."
+    },
+    "hi": {
+      "display_text": "भारत के कपास वस्त्र उद्योग में पर्यावरणीय चिंताओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. वस्त्र रंगाई इकाइयों पर लागू शून्य तरल निकासी (ZLD) मानदंड यह आवश्यक करते हैं कि उत्पन्न सभी अपशिष्ट जल का संयंत्र के भीतर उपचार और पुनर्चक्रण किया जाए और कोई अपशिष्ट बाहरी जल स्रोतों में न छोड़ा जाए।\n2. तमिलनाडु के तिरुपुर वस्त्र क्लस्टर अपने रंगाई अपशिष्ट जल को कावेरी नदी में छोड़ता है, जिससे डेल्टा क्षेत्र की कृषि भूमि में महत्वपूर्ण नीचे की ओर प्रदूषण होता है।\n3. Better Cotton Initiative (BCI) एक अंतरराष्ट्रीय मानक है जो जल-कुशल कपास खेती के अभ्यासों को बढ़ावा देता है, और भारत इसके सहभागी उत्पादक देशों में से एक है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) केवल 2\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Zero Liquid Discharge (ZLD) norms, as applied to textile dyeing units, require that all wastewater generated be treated and recycled within the plant with no effluent released into external water bodies.",
+          "verdict": "सही है",
+          "reason": "यह शून्य तरल निकासी (ZLD) की परिभाषा है — एक बंद चक्र प्रणाली जो सभी तरल अपशिष्ट का पूर्ण आंतरिक उपचार और पुनर्चक्रण अनिवार्य करती है, जैसा कि NGT और न्यायालयों ने तिरुपुर सहित वस्त्र क्लस्टरों के लिए आदेशित किया है।"
+        },
+        {
+          "statement": "The Tirupur textile cluster in Tamil Nadu discharges its dyeing effluents into the Cauvery river, causing significant downstream pollution to agricultural land in the delta region.",
+          "verdict": "गलत है",
+          "reason": "तिरुपुर के रंगाई इकाइयाँ कावेरी नदी में नहीं, बल्कि कावेरी की एक उपनदी नॉय्याल नदी में अपशिष्ट जल छोड़ती हैं। नॉय्याल नदी का प्रदूषण और इसके प्रभाव से नीचे ओराथुपालयम जलाशय और कृषि भूमि प्रभावित हुई है, जो विवादित विषय है।"
+        },
+        {
+          "statement": "The Better Cotton Initiative (BCI) is an international standard that promotes water-efficient cotton cultivation practices, and India is one of its participating producing countries.",
+          "verdict": "सही है",
+          "reason": "BCI एक अंतरराष्ट्रीय बहु-हितधारक पहल है जो टिकाऊ कपास खेती के अभ्यासों को बढ़ावा देती है, जिसमें जल दक्षता भी शामिल है, और भारत इसके कार्यक्रम में भाग लेता है — जिससे भारत विश्व के सबसे बड़े BCI कपास उत्पादकों में से एक है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) केवल कथन 3 को गलत बताएगा; जो छात्र ZLD की परिभाषा (कथन 1 सही) जानता है और तिरुपुर के नदी प्रदूषण को याद करता है लेकिन विशिष्ट नदी (नॉय्याल बनाम कावेरी) का नाम नहीं जानता, वह इसे चुन सकता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: ZLD की परिभाषा — पूर्ण आंतरिक पुनर्चक्रण, कोई बाहरी निकासी नहीं — यह सही है; कथन 1 सही है, उत्तर नहीं।",
+        "कथन 2 का मूल्यांकन करें: तिरुपुर के अपशिष्ट कावेरी में — दस्तावेजीकृत प्रदूषण नॉय्याल नदी का है, सीधे कावेरी का नहीं; कथन 2 गलत है (सही नहीं)।",
+        "कथन 3 का मूल्यांकन करें: BCI टिकाऊ कपास को बढ़ावा देता है, भारत भाग लेता है — यह सही है; कथन 3 सही है, उत्तर नहीं।",
+        "केवल कथन 2 सही नहीं है — उत्तर विकल्प (c): केवल 2।"
+      ],
+      "upsc_trap_explanation": "जो छात्र तिरुपुर के प्रदूषण विवाद को जानते हैं और तमिलनाडु की प्रमुख नदी को कावेरी से जोड़ते हैं, वे कावेरी को नॉय्याल के स्थान पर रख देंगे। नॉय्याल एक छोटी उपनदी है जिसका नाम विशेष रूप से याद रखना आवश्यक है — यही सटीक भौगोलिक परीक्षा है।",
+      "final_explanation": "भारत के वस्त्र क्षेत्र में पर्यावरणीय मुद्दे, विशेषकर गीले प्रसंस्करण और रंगाई के संदर्भ में, नीति और मुकदमों में बढ़ते हुए प्रमुख हैं।\n\n• कथन 1 — सही: ZLD एक बंद चक्र प्रणाली है जो सभी अपशिष्ट जल का आंतरिक उपचार और पुनर्चक्रण अनिवार्य करती है, बाहरी जल स्रोतों में कोई निकासी नहीं। न्यायालयों और NGT ने तिरुपुर और अन्य वस्त्र प्रसंस्करण क्लस्टरों के लिए ZLD लागू किया है।\n• कथन 2 — गलत: तिरुपुर के रंगाई और ब्लीचिंग इकाइयाँ नॉय्याल नदी में अपशिष्ट जल छोड़ती हैं — जो कावेरी की पश्चिम दिशा में बहने वाली उपनदी है — न कि सीधे कावेरी में। नॉय्याल पर ओराथुपालयम बांध गंभीर रूप से प्रभावित हुआ है, जिससे नीचे की कृषि प्रभावित हुई है।\n• कथन 3 — सही: Better Cotton Initiative एक वैश्विक मानक है जो टिकाऊ प्रथाओं को बढ़ावा देता है, और भारत विश्व के सबसे बड़े BCI कपास उत्पादकों में से एक है, जिसमें महाराष्ट्र, गुजरात और कर्नाटक के किसानों की बड़ी संख्या शामिल है।\n\nमूल्य वर्धन:\n• तिरुपुर भारत का सबसे बड़ा निटवियर निर्यात क्लस्टर है, जो होजरी निर्यात में महत्वपूर्ण योगदान देता है।\n• मद्रास उच्च न्यायालय ने 2010 में नॉय्याल नदी प्रदूषण के कारण तिरुपुर के रंगाई इकाइयों को आंशिक रूप से बंद करने का आदेश दिया था, इससे पहले कि ZLD अनुपालन लागू हुआ।\n• जैविक कपास प्रमाणन (GOTS — Global Organic Textile Standard) BCI से अलग है और रासायनिक मुक्त खेती की मांग करता है।"
+    }
+  },
+  {
+    "uuid": "31be1ec7-e604-48e4-b973-d8eca7cd3a72",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Coimbatore and South Indian Textile Hub: Comparative Geography"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Tirupur as global knitwear export hub — supply chain ecosystem",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following towns in India is recognised as the country's leading hub for cotton knitwear and hosiery exports, functioning as a globally integrated buyer-driven textile cluster?\n\n(a) Tirupur\n(b) Coimbatore\n(c) Ludhiana\n(d) Erode",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) names Coimbatore, which is geographically adjacent to Tirupur and is the region's major city and administrative centre, leading students to attribute Tirupur's knitwear fame to Coimbatore.",
+      "elimination_logic": [
+        "Recall which specific town in Tamil Nadu is known as India's leading knitwear and hosiery export cluster.",
+        "Tirupur — not Coimbatore (which is the larger neighbouring city) — is the actual knitwear export hub.",
+        "Eliminate Ludhiana (Punjab) which is known for woollen hosiery, not cotton knitwear exports at this scale.",
+        "Eliminate Erode, which is a textile trading centre but not specifically the knitwear export cluster — confirm Tirupur as option (a)."
+      ],
+      "upsc_trap_explanation": "Coimbatore is the regional headquarters and a major textile city, leading students to attribute Tirupur's knitwear export fame to Coimbatore. Tirupur is a distinct, smaller town with its own specialised global supply chain.",
+      "final_explanation": "South India's textile geography involves several distinct urban clusters, each with a specific functional specialisation.\n\n• Option (a): Tirupur — Correct. Tirupur is India's foremost knitwear export hub, contributing a dominant share of India's cotton knitwear and hosiery exports. It operates a buyer-driven global commodity chain connecting small manufacturers to European and American retail brands.\n• Option (b): Coimbatore — Incorrect. Coimbatore is called the 'Manchester of South India' and is a major spinning and engineering hub, but the knitwear export specialisation belongs specifically to Tirupur.\n• Option (c): Ludhiana — Incorrect. Ludhiana is Punjab's hosiery and woollen textile hub — a different fibre type and geographic region.\n• Option (d): Erode — Incorrect. Erode is a significant textile trading and processing centre (especially for power-loom fabric and turmeric) but is not the primary knitwear export cluster.\n\nValue Addition:\n• Tirupur's dyeing and bleaching industry caused severe pollution of the Noyyal river, leading to landmark NGT and court orders on ZLD compliance.\n• The Tirupur Exporters' Association is a key industry body coordinating the cluster's global sourcing relationships.\n• Ichalkaranji (Maharashtra) and Bhiwandi are western India's powerloom equivalents — large decentralised fabric production clusters."
+    },
+    "hi": {
+      "display_text": "भारत के निम्नलिखित किस शहर को देश के प्रमुख कपास निटवेयर और होजरी निर्यात केंद्र के रूप में मान्यता प्राप्त है, जो एक वैश्विक रूप से एकीकृत खरीदार-चालित वस्त्र क्लस्टर के रूप में कार्य करता है?\n\n(a) तिरुपुर\n(b) कोयम्बटूर\n(c) लुधियाना\n(d) एरोड",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में कोयम्बटूर का नाम है, जो तिरुपुर के भौगोलिक रूप से समीप है और क्षेत्र का प्रमुख शहर तथा प्रशासनिक केंद्र है, जिससे छात्र तिरुपुर की निटवेयर प्रसिद्धि को कोयम्बटूर से जोड़ देते हैं।",
+      "elimination_logic": [
+        "यह याद करें कि तमिलनाडु का कौन सा विशिष्ट शहर भारत के प्रमुख निटवेयर और होजरी निर्यात क्लस्टर के रूप में जाना जाता है।",
+        "तिरुपुर — न कि कोयम्बटूर (जो बड़ा पड़ोसी शहर है) — वास्तविक निटवेयर निर्यात केंद्र है।",
+        "लुधियाना (पंजाब) को हटा दें, जो ऊनी होजरी के लिए जाना जाता है, इस पैमाने पर कपास निटवेयर निर्यात के लिए नहीं।",
+        "एरोड को हटा दें, जो एक वस्त्र व्यापार केंद्र है लेकिन विशेष रूप से निटवेयर निर्यात क्लस्टर नहीं है — तिरुपुर को विकल्प (a) के रूप में पुष्टि करें।"
+      ],
+      "upsc_trap_explanation": "कोयम्बटूर क्षेत्रीय मुख्यालय और एक प्रमुख वस्त्र शहर है, जिससे छात्र तिरुपुर की निटवेयर निर्यात प्रसिद्धि को कोयम्बटूर से जोड़ देते हैं। तिरुपुर एक अलग, छोटा शहर है जिसकी अपनी विशिष्ट वैश्विक आपूर्ति श्रृंखला है।",
+      "final_explanation": "दक्षिण भारत की वस्त्र भूगोल में कई विशिष्ट शहरी क्लस्टर शामिल हैं, जिनमें प्रत्येक की एक विशिष्ट कार्यात्मक विशेषज्ञता होती है।\n\n• विकल्प (a): तिरुपुर — सही। तिरुपुर भारत का प्रमुख निटवेयर निर्यात केंद्र है, जो भारत के कपास निटवेयर और होजरी निर्यात में प्रमुख हिस्सा देता है। यह छोटे निर्माताओं को यूरोपीय और अमेरिकी खुदरा ब्रांडों से जोड़ने वाली खरीदार-चालित वैश्विक वस्तु श्रृंखला संचालित करता है।\n• विकल्प (b): कोयम्बटूर — गलत। कोयम्बटूर को 'दक्षिण भारत का मैनचेस्टर' कहा जाता है और यह एक प्रमुख स्पिनिंग और इंजीनियरिंग केंद्र है, लेकिन निटवेयर निर्यात विशेषज्ञता विशेष रूप से तिरुपुर की है।\n• विकल्प (c): लुधियाना — गलत। लुधियाना पंजाब का होजरी और ऊनी वस्त्र केंद्र है — एक अलग फाइबर प्रकार और भौगोलिक क्षेत्र।\n• विकल्प (d): एरोड — गलत। एरोड एक महत्वपूर्ण वस्त्र व्यापार और प्रसंस्करण केंद्र है (विशेष रूप से पावर-लूम कपड़ा और हल्दी के लिए) लेकिन यह प्राथमिक निटवेयर निर्यात क्लस्टर नहीं है।\n\nमूल्य संवर्धन:\n• तिरुपुर की रंगाई और ब्लीचिंग उद्योग ने नॉय्याल नदी को गंभीर प्रदूषित किया, जिससे राष्ट्रीय हरित अधिकरण और न्यायालय के ज़ीरो लिक्विड डिस्चार्ज (ZLD) अनुपालन के आदेश आए।\n• तिरुपुर निर्यातकों का संघ क्लस्टर के वैश्विक स्रोत संबंधों का समन्वय करने वाला एक प्रमुख उद्योग निकाय है।\n• इचलकरंजी (महाराष्ट्र) और भिवंडी पश्चिमी भारत के पावरलूम समकक्ष हैं — बड़े विकेंद्रीकृत कपड़ा उत्पादन क्लस्टर।"
+    }
+  },
+  {
+    "uuid": "fd589dec-01bc-4f4c-835c-e2e5da88ab2f",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "India's Cotton Cultivation: Linkage between Agriculture and Industry"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Cotton Corporation of India — MSP procurement and raw cotton export policy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about India's cotton cultivation and its linkage to the textile industry:\n\n1. India is simultaneously the world's largest producer of raw cotton and one of the largest domestic consumers of cotton, maintaining a delicate balance between export earnings and industrial supply.\n2. The Cotton Corporation of India (CCI) functions as a price support agency that procures cotton at Minimum Support Price when market prices fall below the support level, acting as a buffer to stabilise farmer incomes.\n3. Restrictions on raw cotton exports imposed by the Government of India have consistently benefited both domestic cotton farmers and cotton textile mills simultaneously.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India is simultaneously the world's largest producer of raw cotton and one of the largest domestic consumers of cotton, maintaining a delicate balance between export earnings and industrial supply.",
+          "verdict": "Correct",
+          "reason": "India is indeed the world's largest cotton producer (surpassing China in recent years) and also the largest consumer domestically, with its vast spinning and weaving industry absorbing the majority of output."
+        },
+        {
+          "statement": "The Cotton Corporation of India (CCI) functions as a price support agency that procures cotton at Minimum Support Price when market prices fall below the support level, acting as a buffer to stabilise farmer incomes.",
+          "verdict": "Correct",
+          "reason": "CCI is the nodal price support agency for cotton under the MSP framework. It procures cotton directly from farmers when market prices fall below MSP, thereby providing a price floor and stabilising supply."
+        },
+        {
+          "statement": "Restrictions on raw cotton exports imposed by the Government of India have consistently benefited both domestic cotton farmers and cotton textile mills simultaneously.",
+          "verdict": "Incorrect",
+          "reason": "Raw cotton export restrictions are fundamentally a trade-off: they benefit mills by keeping domestic cotton prices lower, but they directly hurt cotton farmers who lose access to higher international prices. The interests of farmers and mills are opposed on this issue."
+        }
+      ],
+      "strong_distractor": "d — Option (d) would suggest all three statements are correct; students who accept Statement 3 without analysing the conflicting interests of farmers versus mills will select this.",
+      "elimination_logic": [
+        "Evaluate Statement 1: India as largest cotton producer and largest consumer — standard agricultural statistics; Correct.",
+        "Evaluate Statement 2: CCI as MSP procurement agency for cotton — this is CCI's primary function; Correct.",
+        "Evaluate Statement 3: Export restrictions benefiting both farmers AND mills 'simultaneously' — these interests are directly opposed: lower domestic prices hurt farmers while helping mills. The word 'consistently' and 'simultaneously' make this statement false.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — answer is option (c): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Students who think 'industry benefits = sector-wide benefit' do not separately evaluate farmer interests. Export restrictions and domestic price levels create a zero-sum tension between farming and manufacturing that the statement's 'simultaneously' claim glosses over.",
+      "final_explanation": "India's cotton economy sits at the intersection of agriculture, trade policy, and textile industry interests.\n\n• Statement 1 — Correct: India has in recent years consistently ranked as the world's largest cotton producer (alongside the USA and China alternating positions) and is also the world's largest consumer of cotton for its domestic spinning and weaving industry.\n• Statement 2 — Correct: CCI is the designated government procurement agency under the price support scheme. When market arrivals drive prices below MSP, CCI procures to defend the floor price and maintain farmer income stability.\n• Statement 3 — Incorrect: Raw cotton export restrictions create an explicit conflict of interest: they depress domestic cotton prices (hurting farmers but helping mills reduce input costs). Cotton farmer organisations have historically lobbied against export restrictions, while textile mills lobby for them. The claim that both benefit simultaneously is factually false.\n\nValue Addition:\n• Cotton MSP is announced annually by the Cabinet Committee on Economic Affairs (CCEA) based on CACP recommendations.\n• Bt cotton adoption transformed India from a cotton importer to an exporter after 2002–03.\n• The periodic export bans/restrictions on raw cotton (2012 being a notable instance) triggered significant controversy between farmer groups and textile associations."
+    },
+    "hi": {
+      "display_text": "भारत में कपास की खेती और इसके वस्त्र उद्योग से संबंध के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत एक साथ कच्चे कपास का विश्व का सबसे बड़ा उत्पादक और कपास का एक सबसे बड़ा घरेलू उपभोक्ता है, जो निर्यात आय और औद्योगिक आपूर्ति के बीच एक नाजुक संतुलन बनाए रखता है।\n2. कपास निगम (CCI) एक मूल्य समर्थन एजेंसी के रूप में कार्य करता है जो न्यूनतम समर्थन मूल्य पर कपास की खरीद करता है जब बाजार मूल्य समर्थन स्तर से नीचे गिर जाते हैं, और किसान आय को स्थिर करने के लिए एक बफर के रूप में काम करता है।\n3. भारत सरकार द्वारा लगाए गए कच्चे कपास के निर्यात प्रतिबंधों ने घरेलू कपास किसानों और कपास वस्त्र मिलों दोनों को लगातार एक साथ लाभ पहुंचाया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India is simultaneously the world's largest producer of raw cotton and one of the largest domestic consumers of cotton, maintaining a delicate balance between export earnings and industrial supply.",
+          "verdict": "सही",
+          "reason": "भारत वास्तव में विश्व का सबसे बड़ा कपास उत्पादक है (हाल के वर्षों में चीन से आगे) और घरेलू स्तर पर भी सबसे बड़ा उपभोक्ता है, जिसकी विशाल कताई और बुनाई उद्योग उत्पादन का अधिकांश हिस्सा अवशोषित करता है।"
+        },
+        {
+          "statement": "The Cotton Corporation of India (CCI) functions as a price support agency that procures cotton at Minimum Support Price when market prices fall below the support level, acting as a buffer to stabilise farmer incomes.",
+          "verdict": "सही",
+          "reason": "CCI MSP ढांचे के तहत कपास के लिए मूल्य समर्थन की मुख्य एजेंसी है। जब बाजार मूल्य MSP से नीचे गिरते हैं, तो यह सीधे किसानों से कपास खरीदता है, जिससे मूल्य की न्यूनतम सीमा बनी रहती है और आपूर्ति स्थिर होती है।"
+        },
+        {
+          "statement": "Restrictions on raw cotton exports imposed by the Government of India have consistently benefited both domestic cotton farmers and cotton textile mills simultaneously.",
+          "verdict": "गलत",
+          "reason": "कच्चे कपास के निर्यात प्रतिबंध मूलतः एक समझौता हैं: ये मिलों को घरेलू कपास की कीमतें कम रखकर लाभ पहुंचाते हैं, लेकिन सीधे तौर पर किसानों को नुकसान पहुंचाते हैं क्योंकि वे उच्च अंतरराष्ट्रीय कीमतों तक पहुंच खो देते हैं। किसानों और मिलों के हित इस मुद्दे पर विरोधाभासी हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) यह सुझाव देगा कि तीनों कथन सही हैं; जो छात्र कथन 3 को किसानों और मिलों के विरोधाभासी हितों का विश्लेषण किए बिना स्वीकार करते हैं, वे इसे चुनेंगे।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: भारत कच्चे कपास का सबसे बड़ा उत्पादक और सबसे बड़ा उपभोक्ता है — यह मानक कृषि सांख्यिकी है; सही।",
+        "कथन 2 का मूल्यांकन करें: CCI कपास के लिए MSP खरीद एजेंसी है — यह CCI का मुख्य कार्य है; सही।",
+        "कथन 3 का मूल्यांकन करें: निर्यात प्रतिबंध घरेलू किसानों और मिलों दोनों को 'सतत' लाभ पहुंचाते हैं — ये हित सीधे विरोधाभासी हैं: कम घरेलू मूल्य किसानों को नुकसान पहुंचाते हैं जबकि मिलों को लाभ। 'लगातार' और 'एक साथ' शब्द इस कथन को गलत बनाते हैं।",
+        "कथन 1 और 2 सही हैं, कथन 3 गलत है — उत्तर विकल्प (c) है: केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "जो छात्र सोचते हैं कि 'उद्योग को लाभ = पूरे क्षेत्र को लाभ' होता है, वे किसानों के हितों का अलग से मूल्यांकन नहीं करते। निर्यात प्रतिबंध और घरेलू मूल्य स्तर कृषि और विनिर्माण के बीच शून्य-योग तनाव पैदा करते हैं, जिसे कथन का 'एक साथ' दावा छुपाता है।",
+      "final_explanation": "भारत की कपास अर्थव्यवस्था कृषि, व्यापार नीति और वस्त्र उद्योग के हितों के संगम पर स्थित है।\n\n• कथन 1 — सही: भारत हाल के वर्षों में लगातार विश्व का सबसे बड़ा कपास उत्पादक रहा है (संयुक्त राज्य अमेरिका और चीन के साथ स्थान बदलते हुए) और घरेलू कताई और बुनाई उद्योग के लिए कपास का सबसे बड़ा उपभोक्ता भी है।\n• कथन 2 — सही: CCI मूल्य समर्थन योजना के तहत नामित सरकारी खरीद एजेंसी है। जब बाजार में आपूर्ति के कारण कीमतें MSP से नीचे गिरती हैं, तो CCI न्यूनतम मूल्य बनाए रखने और किसान आय स्थिरता के लिए खरीद करता है।\n• कथन 3 — गलत: कच्चे कपास के निर्यात प्रतिबंध स्पष्ट हितों के टकराव को जन्म देते हैं: ये घरेलू कपास की कीमतों को दबाते हैं (जो किसानों को नुकसान पहुंचाते हैं लेकिन मिलों के लिए इनपुट लागत कम करते हैं)। कपास किसान संगठन ऐतिहासिक रूप से निर्यात प्रतिबंधों के खिलाफ रहे हैं, जबकि वस्त्र मिलें इनके पक्ष में हैं। दोनों के एक साथ लाभान्वित होने का दावा तथ्यात्मक रूप से गलत है।\n\nमूल्य संवर्धन:\n• कपास MSP वार्षिक रूप से कैबिनेट समिति ऑन इकोनॉमिक अफेयर्स (CCEA) द्वारा CACP की सिफारिशों के आधार पर घोषित किया जाता है।\n• बीटी कपास के अपनाने ने भारत को 2002–03 के बाद कपास आयातक से निर्यातक में बदल दिया।\n• कच्चे कपास पर आवधिक निर्यात प्रतिबंध/प्रतिबंध (2012 एक उल्लेखनीय उदाहरण) ने किसान समूहों और वस्त्र संघों के बीच महत्वपूर्ण विवाद को जन्म दिया है।"
+    }
+  },
+  {
+    "uuid": "89ac6a6d-62d2-4a4a-88ba-39e3c5ba4ffc",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Apparel and Garment Export Ecosystem: Value Chain Analysis"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "AEPC vs. TEXPROCIL — sector coverage distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The export promotion council specifically mandated to promote India's ready-made garment and finished apparel exports — and which plays a central role in connecting Indian manufacturers with global retail buyers — is the ________.\n\n(a) SRTEPC (Synthetic and Rayon Textiles Export Promotion Council)\n(b) TEXPROCIL (Cotton Textiles Export Promotion Council)\n(c) HEPC (Handloom Export Promotion Council)\n(d) AEPC (Apparel Export Promotion Council)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) names TEXPROCIL for apparel exports, which is wrong — TEXPROCIL covers cotton textiles (yarn, fabric), not finished garments. Students who know both bodies exist but have not fixed their sector coverage will swap them.",
+      "elimination_logic": [
+        "Identify which export promotion council specifically covers finished garment and apparel exports.",
+        "AEPC (Apparel Export Promotion Council) handles finished garment/apparel — not TEXPROCIL which handles cotton textile intermediates (yarn, fabric).",
+        "Eliminate HEPC (Handloom Export Promotion Council) and SEPC (Silk Export Promotion Council) — these cover different sub-sectors.",
+        "Option (d) — AEPC — is the correct answer."
+      ],
+      "upsc_trap_explanation": "TEXPROCIL and AEPC are easily confused because both are prominent cotton sector councils. The distinction — TEXPROCIL for yarn/fabric intermediates, AEPC for finished garments — requires deliberate memorisation of their specific mandates.",
+      "final_explanation": "India's textile export promotion is managed through sector-specific councils, each with a defined product mandate.\n\n• Option (a): SRTEPC — Incorrect. SRTEPC (Synthetic and Rayon Textiles Export Promotion Council) covers synthetic/rayon fibres and fabrics, not apparel.\n• Option (b): TEXPROCIL — Incorrect. TEXPROCIL (Cotton Textiles Export Promotion Council) covers cotton yarn, fabrics, and made-ups — not finished garments.\n• Option (c): HEPC — Incorrect. HEPC (Handloom Export Promotion Council) promotes handloom fabric and products, not apparel broadly.\n• Option (d): AEPC — Correct. The Apparel Export Promotion Council specifically handles promotion of ready-made garments and apparel exports — it is the nodal body for India's garment export industry.\n\nValue Addition:\n• TEXPROCIL and AEPC together cover the bulk of India's textile export base — intermediates and finished garments respectively.\n• China+1 strategy benefits largely flow through AEPC's member exporters who are positioned to receive diverted garment orders.\n• AEPC administers the ROSC (Rebate on State and Central Taxes and Levies) scheme for garment exporters."
+    },
+    "hi": {
+      "display_text": "भारत के रेडीमेड गारमेंट और तैयार परिधान निर्यात को विशेष रूप से बढ़ावा देने के लिए और जो भारतीय निर्माताओं को वैश्विक खुदरा खरीदारों से जोड़ने में केंद्रीय भूमिका निभाता है, वह निर्यात संवर्धन परिषद है ________।\n\n(a) SRTEPC (Synthetic and Rayon Textiles Export Promotion Council)\n(b) TEXPROCIL (Cotton Textiles Export Promotion Council)\n(c) HEPC (Handloom Export Promotion Council)\n(d) AEPC (Apparel Export Promotion Council)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में TEXPROCIL को परिधान निर्यात के लिए नामित किया गया है, जो गलत है — TEXPROCIL कपास वस्त्र (सूती यार्न, कपड़ा) को कवर करता है, तैयार परिधान को नहीं। जो छात्र दोनों संस्थाओं के अस्तित्व को जानते हैं लेकिन उनके क्षेत्रीय कवरेज को ठीक से नहीं जानते, वे इन्हें आपस में बदल देंगे।",
+      "elimination_logic": [
+        "यह पहचानें कि कौन सा निर्यात संवर्धन परिषद विशेष रूप से तैयार परिधान और परिधान निर्यात को कवर करता है।",
+        "AEPC (Apparel Export Promotion Council) तैयार परिधान/परिधान को संभालता है — TEXPROCIL नहीं, जो कपास वस्त्र मध्यवर्ती (सूती यार्न, कपड़ा) को संभालता है।",
+        "HEPC (Handloom Export Promotion Council) और SEPC (Silk Export Promotion Council) को हटा दें — ये अलग उप-क्षेत्रों को कवर करते हैं।",
+        "विकल्प (d) — AEPC — सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "TEXPROCIL और AEPC को आसानी से भ्रमित किया जाता है क्योंकि दोनों प्रमुख कपास क्षेत्रीय परिषदें हैं। अंतर यह है — TEXPROCIL यार्न/कपड़ा मध्यवर्ती के लिए है, AEPC तैयार परिधानों के लिए — इसके विशिष्ट कार्यों को जानबूझकर याद रखना आवश्यक है।",
+      "final_explanation": "भारत के वस्त्र निर्यात संवर्धन का प्रबंधन क्षेत्र-विशिष्ट परिषदों के माध्यम से होता है, जिनके पास परिभाषित उत्पाद कार्यक्षेत्र होते हैं।\n\n• विकल्प (a): SRTEPC — गलत। SRTEPC (Synthetic and Rayon Textiles Export Promotion Council) सिंथेटिक/रेयन फाइबर और कपड़े को कवर करता है, परिधान को नहीं।\n• विकल्प (b): TEXPROCIL — गलत। TEXPROCIL (Cotton Textiles Export Promotion Council) कपास यार्न, कपड़े, और मेड-अप्स को कवर करता है — तैयार परिधान को नहीं।\n• विकल्प (c): HEPC — गलत। HEPC (Handloom Export Promotion Council) हथकरघा कपड़ा और उत्पादों को बढ़ावा देता है, व्यापक रूप से परिधान को नहीं।\n• विकल्प (d): AEPC — सही। Apparel Export Promotion Council विशेष रूप से रेडीमेड गारमेंट्स और परिधान निर्यात के संवर्धन को संभालता है — यह भारत के परिधान निर्यात उद्योग का मुख्य निकाय है।\n\nमूल्य संवर्धन:\n• TEXPROCIL और AEPC मिलकर भारत के वस्त्र निर्यात आधार का अधिकांश हिस्सा कवर करते हैं — क्रमशः मध्यवर्ती और तैयार परिधान।\n• चीन+1 रणनीति के लाभ मुख्यतः AEPC के सदस्य निर्यातकों के माध्यम से प्रवाहित होते हैं, जो स्थानांतरित परिधान आदेश प्राप्त करने के लिए तैयार हैं।\n• AEPC परिधान निर्यातकों के लिए ROSC (राज्य और केंद्रीय करों और शुल्कों पर छूट) योजना का प्रशासन करता है।"
+    }
+  },
+  {
+    "uuid": "067ceade-5759-4a6a-8bf2-cdaa8dbfed42",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Geographical Concentration and Locational Factors of Cotton Textile Mills",
+        "Coimbatore and South Indian Textile Hub: Comparative Geography"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Shift of cotton textile industry to southern states — hydropower and labour factors",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A textile entrepreneur in the 1970s was evaluating whether to establish a new cotton textile spinning mill in Maharashtra's traditional industrial belt or relocate to the Coimbatore region of Tamil Nadu. After analysis, she chose Coimbatore, citing documented advantages that had attracted several mills to the region over the preceding two decades.\n\nWhich of the following most accurately represents the factors that would have informed her locational decision in favour of Tamil Nadu?\n\n(a) Abundant raw cotton supply from Tamil Nadu's black-soil cotton-growing districts and proximity to domestic markets in southern India\n(b) Availability of hydroelectric power from the Western Ghats and relatively lower industrial labour costs compared to Maharashtra\n(c) Proximity to colonial-era export ports and a heritage of British-established administrative infrastructure supporting textile trade\n(d) Proximity to synthetic fibre manufacturing clusters in Tamil Nadu enabling integrated man-made fibre textile production",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) attributes the shift entirely to raw cotton proximity in southern states, which sounds geographically logical but is factually incorrect — southern states are not in the black-soil cotton belt.",
+      "elimination_logic": [
+        "The scenario describes a textile mill investor choosing Tamil Nadu over Maharashtra — identify the actual factors driving this locational shift.",
+        "Raw cotton is NOT the reason: Tamil Nadu is not a primary cotton-growing state; Maharashtra is. So Option (a) is eliminated.",
+        "Hydroelectric power availability from the Western Ghats is a documented locational advantage for Tamil Nadu textile mills — the Western Ghats run along Tamil Nadu's western border.",
+        "Combined with lower labour costs and a growing domestic market in the south, and the irrelevance of port access being a unique Maharashtra advantage (Chennai also has good port access), Option (b) — hydroelectric power and lower labour costs — is the correct application of documented locational factors."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the classic 'industry locates near raw material' geographical principle. Students apply it without recognising that the southern shift is precisely an exception — southern mills source cotton from distant black-soil states, demonstrating that power and labour advantages can override material proximity.",
+      "final_explanation": "The southward shift of India's cotton textile industry from its traditional Maharashtra-Gujarat core is a well-documented case of industry locating away from raw material sources.\n\nScenario analysis: The investor's move to Tamil Nadu cannot be explained by raw cotton proximity (Tamil Nadu is not in the black-soil cotton belt) or by port access exclusively (both Mumbai and Chennai have port access). The documented factors driving the southern shift are:\n\n• Option (a): Abundant raw cotton — Incorrect. Tamil Nadu is not a primary cotton-growing state; cotton cultivation is concentrated in Maharashtra, Gujarat, and MP. Southern mills import cotton by rail from these states.\n• Option (b): Hydroelectric power and lower labour costs — Correct. Tamil Nadu's proximity to the Western Ghats provides hydroelectric power; lower wage rates relative to Mumbai and the availability of trained labour communities (especially around Coimbatore) drove the shift.\n• Option (c): Proximity to export ports and colonial administrative heritage — Partially true (Chennai has port access) but colonial heritage is not a contemporary locational factor and does not explain the shift.\n• Option (d): Proximity to synthetic fibre manufacturing clusters — Incorrect. Synthetic fibre production is concentrated in Gujarat (Surat), not Tamil Nadu.\n\nValue Addition:\n• Coimbatore is the focal point of the southern textile shift — it developed a complete ecosystem of spinning mills, machinery manufacturers, and ancillary services.\n• The Western Ghats hydroelectric potential (from rivers like Parambikulam and Cauvery tributaries) historically provided reliable cheap power before thermal power became dominant.\n• Southern mill workers in Tamil Nadu belong to established weaving and spinning communities with multi-generational skills."
+    },
+    "hi": {
+      "display_text": "1970 के दशक में एक वस्त्र उद्यमी यह मूल्यांकन कर रही थी कि महाराष्ट्र के पारंपरिक औद्योगिक क्षेत्र में एक नई कपास वस्त्र कताई मिल स्थापित की जाए या तमिलनाडु के कोयम्बटूर क्षेत्र में स्थानांतरित किया जाए। विश्लेषण के बाद, उसने कोयम्बटूर को चुना, यह बताते हुए कि पिछले दो दशकों में कई मिलों को इस क्षेत्र की प्रलेखित विशेषताएँ आकर्षित कर चुकी हैं।\n\nनिम्नलिखित में से कौन-से कारक तमिलनाडु के पक्ष में उसके स्थानिक निर्णय को सबसे सटीक रूप से दर्शाते हैं?\n\n(a) तमिलनाडु के काले मिट्टी वाले कपास-उत्पादक जिलों से प्रचुर कच्चा कपास आपूर्ति और दक्षिण भारत के घरेलू बाजारों के निकटता\n(b) पश्चिमी घाट से जलविद्युत शक्ति की उपलब्धता और महाराष्ट्र की तुलना में औद्योगिक श्रम लागत में अपेक्षाकृत कमी\n(c) औपनिवेशिक काल के निर्यात बंदरगाहों के निकटता और वस्त्र व्यापार का समर्थन करने वाले ब्रिटिश-स्थापित प्रशासनिक ढांचे की विरासत\n(d) तमिलनाडु में सिंथेटिक फाइबर निर्माण क्लस्टरों के निकटता जिससे मानव निर्मित फाइबर वस्त्र उत्पादन एकीकृत होता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) इस बदलाव को पूरी तरह से कच्चे कपास की निकटता से जोड़ता है, जो भौगोलिक रूप से तार्किक लगता है लेकिन तथ्यात्मक रूप से गलत है — दक्षिणी राज्य काले मिट्टी वाले कपास बेल्ट में नहीं हैं।",
+      "elimination_logic": [
+        "परिदृश्य में एक वस्त्र मिल निवेशक महाराष्ट्र के पारंपरिक औद्योगिक क्षेत्र के बजाय तमिलनाडु के कोयम्बटूर क्षेत्र को चुन रहा है — इस स्थानांतरण के वास्तविक कारणों की पहचान करें।",
+        "कच्चा कपास कारण नहीं है: तमिलनाडु मुख्य कपास उत्पादक राज्य नहीं है; महाराष्ट्र है। अतः विकल्प (a) खारिज।",
+        "पश्चिमी घाट से उपलब्ध जलविद्युत शक्ति तमिलनाडु वस्त्र मिलों के लिए एक प्रलेखित स्थानिक लाभ है — पश्चिमी घाट तमिलनाडु की पश्चिमी सीमा के साथ चलता है।",
+        "कम मजदूरी लागत और दक्षिण में बढ़ते घरेलू बाजार के साथ, तथा बंदरगाह पहुंच का महाराष्ट्र के लिए विशिष्ट लाभ न होना (चेन्नई के पास भी अच्छा बंदरगाह है), विकल्प (b) — जलविद्युत शक्ति और कम मजदूरी लागत — प्रलेखित स्थानिक कारणों का सही अनुप्रयोग है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) 'उद्योग कच्चे माल के निकट होता है' इस पारंपरिक भौगोलिक सिद्धांत का उपयोग करता है। छात्र इसे लागू करते हैं बिना यह समझे कि दक्षिणी स्थानांतरण एक अपवाद है — दक्षिणी मिलें दूर के काले मिट्टी वाले राज्यों से कपास आयात करती हैं, जो दिखाता है कि शक्ति और श्रम लाभ कच्चे माल की निकटता से अधिक महत्वपूर्ण हो सकते हैं।",
+      "final_explanation": "भारत की कपास वस्त्र उद्योग का महाराष्ट्र-गुजरात के पारंपरिक केंद्र से दक्षिण की ओर स्थानांतरण एक प्रलेखित उदाहरण है जहाँ उद्योग कच्चे माल के स्रोत से दूर स्थित होता है।\n\nपरिदृश्य विश्लेषण: निवेशक का तमिलनाडु जाना कच्चे कपास की निकटता से समझाया नहीं जा सकता (तमिलनाडु काले मिट्टी वाले कपास बेल्ट में नहीं है) या केवल बंदरगाह पहुंच से (मुंबई और चेन्नई दोनों के पास बंदरगाह है)। दक्षिणी स्थानांतरण के प्रलेखित कारण हैं:\n\n• विकल्प (a): प्रचुर कच्चा कपास — गलत। तमिलनाडु मुख्य कपास उत्पादक राज्य नहीं है; कपास उत्पादन महाराष्ट्र, गुजरात और मध्य प्रदेश में केंद्रित है। दक्षिणी मिलें इन राज्यों से रेल द्वारा कपास आयात करती हैं।\n• विकल्प (b): जलविद्युत शक्ति और कम मजदूरी लागत — सही। तमिलनाडु की पश्चिमी घाट के निकटता से जलविद्युत शक्ति मिलती है; मुंबई की तुलना में कम मजदूरी दरें और प्रशिक्षित श्रमिक समुदाय (विशेषकर कोयम्बटूर के आसपास) ने स्थानांतरण को प्रेरित किया।\n• विकल्प (c): औपनिवेशिक काल के निर्यात बंदरगाहों के निकटता और ब्रिटिश प्रशासनिक विरासत — आंशिक रूप से सही (चेन्नई के पास बंदरगाह है) लेकिन औपनिवेशिक विरासत समकालीन स्थानिक कारण नहीं है और स्थानांतरण को नहीं समझाती।\n• विकल्प (d): तमिलनाडु में सिंथेटिक फाइबर निर्माण क्लस्टरों के निकटता — गलत। सिंथेटिक फाइबर उत्पादन गुजरात (सूरत) में केंद्रित है, तमिलनाडु में नहीं।\n\nमूल्य संवर्धन:\n• कोयम्बटूर दक्षिणी वस्त्र स्थानांतरण का केंद्र है — यहाँ कातने की मिलों, मशीनरी निर्माताओं और सहायक सेवाओं का पूरा पारिस्थितिकी तंत्र विकसित हुआ।\n• पश्चिमी घाट की जलविद्युत क्षमता (परम्बिकुलम और कावेरी की सहायक नदियों से) ऐतिहासिक रूप से विश्वसनीय सस्ती बिजली प्रदान करती थी, इससे पहले कि थर्मल पावर प्रमुख हो।\n• तमिलनाडु की दक्षिणी मिलों के श्रमिक स्थापित बुनाई और कताई समुदायों से आते हैं जिनके पास बहु-पीढ़ी कौशल है।"
+    }
+  },
+  {
+    "uuid": "00953198-cb58-4cd3-9f25-185c9a227adc",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Handloom Sector: Significance, Challenges, and Government Support"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Handloom Mark vs. India Handloom Brand — distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to quality certification mechanisms in India's handloom sector, consider the following statements:\n\nStatement 1: The Handloom Mark is a certification scheme that authenticates a product as genuine handloom, ensuring that the fabric was woven on a handloom — applicable to both natural and blended fibre handloom products.\nStatement 2: The India Handloom Brand, launched in 2015, certifies premium-quality handloom products meeting higher standards including emphasis on natural fibres and eco-friendly processing, making it a more stringent certification than the basic Handloom Mark.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Handloom Mark is a certification scheme that authenticates a product as genuine handloom, ensuring that the fabric was woven on a handloom — applicable to both natural and blended fibre handloom products.",
+          "verdict": "Correct",
+          "reason": "The Handloom Mark is a government certification scheme that guarantees a product was woven on a handloom; it covers a broad range of handloom products including natural and blended fibre fabrics."
+        },
+        {
+          "statement": "The India Handloom Brand, launched in 2015, is a premium sub-category of the Handloom Mark and certifies only products made from 100% natural fibres with zero harmful chemical inputs — a higher standard than the Handloom Mark.",
+          "verdict": "Correct",
+          "reason": "The India Handloom Brand is indeed a premium certification launched in 2015 targeting high-quality handloom products with more stringent standards than the basic Handloom Mark, focusing on natural fibres and eco-friendly processing."
+        }
+      ],
+      "strong_distractor": "b — Option (b) claims both statements are incorrect, which a student might choose if they confuse the India Handloom Brand with the Handloom Mark or believe both statements overstate the scheme's scope.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Handloom Mark authenticating genuine handloom weaving, covering natural and blended products — this is consistent with the scheme's documented scope; Correct.",
+        "Evaluate Statement 2: India Handloom Brand as a premium 2015 certification with higher standards focusing on natural fibres and eco-processing — this accurately describes the brand's positioning relative to the basic Handloom Mark; Correct.",
+        "Both statements are individually accurate — the answer is option (a): both statements are correct.",
+        "Confirm correct_option is (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses 'only' in describing India Handloom Brand's natural-fibre focus — students trained to flag extreme qualifiers may doubt this claim without realising the IHB's documented criteria genuinely emphasise natural fibres. The trap induces doubt about an accurate statement.",
+      "final_explanation": "India's handloom certification landscape has two distinct instruments with a hierarchical quality relationship.\n\n• Statement 1 — Correct: The Handloom Mark is a quality certification scheme that verifies handloom origin — it is a broad authentication covering diverse fibres and weave types, providing consumers assurance about the production method.\n• Statement 2 — Correct: The India Handloom Brand (IHB), launched on National Handloom Day (7 August 2015), represents a premium tier with stricter conditions: high natural fibre content, eco-friendly dyes, and superior quality standards. It targets export markets and premium domestic consumers who seek authenticated high-quality handloom products.\n\nBoth statements accurately describe the scope and relationship of these two certification instruments.\n\nValue Addition:\n• National Handloom Day is observed on 7 August, commemorating the Swadeshi Movement launched on that date in 1905.\n• The Handloom Mark was launched in 2006 and can be woven into the fabric itself as a tamper-proof authenticity tag.\n• GI tags protect the geographic origin of specific handloom products, complementing but not replacing the Handloom Mark and IHB quality certification systems."
+    },
+    "hi": {
+      "display_text": "भारत के हैंडलूम क्षेत्र में गुणवत्ता प्रमाणन तंत्र के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: हैंडलूम मार्क एक प्रमाणन योजना है जो उत्पाद को असली हैंडलूम के रूप में प्रमाणित करती है, यह सुनिश्चित करती है कि कपड़ा हाथ से बुना गया है — यह प्राकृतिक और मिश्रित फाइबर वाले हैंडलूम उत्पादों दोनों पर लागू होती है।\nकथन 2: इंडिया हैंडलूम ब्रांड, जो 2015 में शुरू किया गया था, उच्च गुणवत्ता वाले हैंडलूम उत्पादों को प्रमाणित करता है जो प्राकृतिक फाइबर और पर्यावरण-अनुकूल प्रक्रिया पर अधिक जोर देते हुए हैंडलूम मार्क की तुलना में अधिक कड़ा प्रमाणन है।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Handloom Mark is a certification scheme that authenticates a product as genuine handloom, ensuring that the fabric was woven on a handloom — applicable to both natural and blended fibre handloom products.",
+          "verdict": "सही",
+          "reason": "हैंडलूम मार्क एक सरकारी प्रमाणन योजना है जो यह सुनिश्चित करती है कि उत्पाद हाथ से बुना गया है; यह प्राकृतिक और मिश्रित फाइबर वाले हैंडलूम उत्पादों की एक विस्तृत श्रृंखला को कवर करती है।"
+        },
+        {
+          "statement": "The India Handloom Brand, launched in 2015, is a premium sub-category of the Handloom Mark and certifies only products made from 100% natural fibres with zero harmful chemical inputs — a higher standard than the Handloom Mark.",
+          "verdict": "सही",
+          "reason": "इंडिया हैंडलूम ब्रांड वास्तव में 2015 में शुरू की गई एक प्रीमियम प्रमाणन योजना है जो हैंडलूम मार्क की तुलना में अधिक कड़े मानकों के साथ उच्च गुणवत्ता वाले हैंडलूम उत्पादों को लक्षित करती है, जो प्राकृतिक फाइबर और पर्यावरण-अनुकूल प्रक्रिया पर केंद्रित है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) दोनों कथनों को गलत बताता है, जिसे छात्र तब चुन सकते हैं जब वे इंडिया हैंडलूम ब्रांड को हैंडलूम मार्क से भ्रमित कर लें या दोनों कथनों को योजना के दायरे से अधिक मान लें।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: हैंडलूम मार्क असली हैंडलूम बुनाई को प्रमाणित करता है, जो प्राकृतिक और मिश्रित उत्पादों को कवर करता है — यह योजना के प्रलेखित दायरे के अनुरूप है; सही।",
+        "कथन 2 का मूल्यांकन करें: इंडिया हैंडलूम ब्रांड एक प्रीमियम 2015 प्रमाणन है जिसमें प्राकृतिक फाइबर और पर्यावरण-अनुकूल प्रक्रिया पर अधिक ध्यान देते हुए उच्च मानक हैं — यह ब्रांड की स्थिति को मूल हैंडलूम मार्क के सापेक्ष सही रूप से दर्शाता है; सही।",
+        "दोनों कथन व्यक्तिगत रूप से सही हैं — उत्तर विकल्प (a) है: दोनों कथन सही हैं।",
+        "सुनिश्चित करें कि correct_option (a) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'केवल' शब्द का उपयोग इंडिया हैंडलूम ब्रांड के प्राकृतिक फाइबर पर ध्यान देने के लिए किया गया है — छात्र जो चरम सीमाओं को चिन्हित करने के लिए प्रशिक्षित हैं, वे इस दावे पर संदेह कर सकते हैं बिना यह समझे कि IHB के प्रलेखित मानदंड वास्तव में प्राकृतिक फाइबर पर जोर देते हैं। यह जाल एक सही कथन पर संदेह उत्पन्न करता है।",
+      "final_explanation": "भारत के हैंडलूम प्रमाणन क्षेत्र में दो अलग-अलग उपकरण हैं जिनके बीच गुणवत्ता का एक पदानुक्रम संबंध है।\n\n• कथन 1 — सही: हैंडलूम मार्क एक गुणवत्ता प्रमाणन योजना है जो हैंडलूम मूल को सत्यापित करती है — यह विभिन्न फाइबर और बुनाई प्रकारों को कवर करने वाला व्यापक प्रमाणीकरण है, जो उपभोक्ताओं को उत्पादन विधि के बारे में आश्वासन देता है।\n• कथन 2 — सही: इंडिया हैंडलूम ब्रांड (IHB), जो राष्ट्रीय हैंडलूम दिवस (7 अगस्त 2015) पर शुरू किया गया था, एक प्रीमियम स्तर का प्रतिनिधित्व करता है जिसमें कड़े शर्तें हैं: उच्च प्राकृतिक फाइबर सामग्री, पर्यावरण-अनुकूल रंग, और श्रेष्ठ गुणवत्ता मानक। यह निर्यात बाजारों और प्रीमियम घरेलू उपभोक्ताओं को लक्षित करता है जो प्रमाणित उच्च गुणवत्ता वाले हैंडलूम उत्पाद चाहते हैं।\n\nदोनों कथन इन दो प्रमाणन उपकरणों के दायरे और संबंध को सही रूप से वर्णित करते हैं।\n\nमूल्यवर्धन:\n• राष्ट्रीय हैंडलूम दिवस 7 अगस्त को मनाया जाता है, जो 1905 में उस दिन शुरू हुए स्वदेशी आंदोलन की स्मृति में है।\n• हैंडलूम मार्क 2006 में शुरू किया गया था और इसे कपड़े में बुना जा सकता है जो छेड़छाड़-रोधी प्रमाणीकरण टैग के रूप में कार्य करता है।\n• GI टैग विशिष्ट हैंडलूम उत्पादों की भौगोलिक उत्पत्ति की रक्षा करते हैं, जो हैंडलूम मार्क और IHB गुणवत्ता प्रमाणन प्रणालियों के पूरक हैं लेकिन उनका स्थान नहीं लेते।"
+    }
+  },
+  {
+    "uuid": "390a6392-aceb-43e6-a47d-2c3322e919f1",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Textile Policy Framework and Regulatory Bodies",
+        "Institutional Framework: Promotional Bodies and Councils in Textile Sector"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NIFT — statutory body under Ministry of Textiles",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the institutional framework governing India's textile sector:\n\n1. The National Institute of Fashion Technology (NIFT) is an autonomous body under the Ministry of Human Resource Development, established to promote design education across creative sectors including fashion, interior design, and film.\n2. The Textile Commissioner's office exercises regulatory powers over textile units under the Textiles (Development and Regulation) Order and falls under the administrative jurisdiction of the Ministry of Textiles.\n3. The Ministry of Commerce and Industry exercises primary jurisdiction over all textile export promotion councils, including AEPC and TEXPROCIL, with the Ministry of Textiles playing only an advisory role in export policy.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 only\n(b) 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The National Institute of Fashion Technology (NIFT) is an autonomous body under the Ministry of Human Resource Development, established to promote design education across creative sectors including fashion, interior design, and film.",
+          "verdict": "Incorrect",
+          "reason": "NIFT is a statutory body under the Ministry of Textiles, not the Ministry of Human Resource Development. It was established under the NIFT Act, 2006, specifically for fashion and design education linked to the textile sector."
+        },
+        {
+          "statement": "The Textile Commissioner's office exercises regulatory powers over textile units under the Textiles (Development and Regulation) Order and falls under the administrative jurisdiction of the Ministry of Textiles.",
+          "verdict": "Correct",
+          "reason": "The Textile Commissioner operates under the Ministry of Textiles and administers regulatory orders including the Textiles (Development and Regulation) Order — this statement is accurate."
+        },
+        {
+          "statement": "The Ministry of Commerce and Industry exercises primary jurisdiction over all textile export promotion councils, including AEPC and TEXPROCIL, with the Ministry of Textiles playing only an advisory role in export policy.",
+          "verdict": "Incorrect",
+          "reason": "Export promotion councils in the textile sector are under the joint purview of both the Ministry of Textiles and the Ministry of Commerce — there is an acknowledged coordination overlap, but it is incorrect to say the Ministry of Textiles plays 'only an advisory role'."
+        }
+      ],
+      "strong_distractor": "b — Option (b) identifies only Statement 3 as incorrect, which a student choosing correctly on Statement 1 (NIFT's ministry) might still select if they incorrectly consider Statement 2 to also be false.",
+      "elimination_logic": [
+        "Evaluate Statement 1: NIFT under Ministry of HRD — NIFT is established under NIFT Act 2006 under Ministry of Textiles, not HRD; Statement 1 is NOT correct.",
+        "Evaluate Statement 2: Textile Commissioner under Ministry of Textiles with regulatory powers — this is accurate; Statement 2 is Correct, not the answer.",
+        "Evaluate Statement 3: Ministry of Commerce as primary over all textile export councils with Textiles in only advisory role — this overstates Commerce's role; Ministry of Textiles has substantive say in textile export policy and councils. Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct — answer is option (c): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "NIFT's placement under Ministry of Textiles (not Education/HRD) is counterintuitive because it is a design education institution. Students who associate educational institutions with the education ministry will attribute NIFT to HRD/Education — the NIFT Act, 2006, mandates Ministry of Textiles jurisdiction.",
+      "final_explanation": "India's textile institutional landscape involves overlapping jurisdictions that UPSC frequently exploits.\n\n• Statement 1 — Incorrect: NIFT is a statutory body established under the NIFT Act, 2006, under the Ministry of Textiles — not the Ministry of Human Resource Development/Education. Its focus is fashion design and management specifically linked to the textile industry.\n• Statement 2 — Correct: The Textile Commissioner's office, based in Mumbai, exercises regulatory and developmental functions over textile units under statutory orders including the Textiles (Development and Regulation) Order, under the Ministry of Textiles.\n• Statement 3 — Incorrect: Export promotion councils like AEPC and TEXPROCIL are under the joint oversight of the Ministry of Textiles and the Ministry of Commerce. The Ministry of Textiles is not limited to an advisory role — it has substantive policy and budget authority over textile export promotion.\n\nValue Addition:\n• NIFT has campuses across 18 cities in India, making it the largest fashion education network in Asia.\n• The Ministry of Textiles administers TUFS/ATUFS, PM MITRA, PLI for textiles, NHDP, Samarth, and various cluster development schemes.\n• Jurisdictional overlap between Ministry of Textiles and Ministry of Commerce on export matters is a known governance challenge, occasionally leading to policy coordination gaps."
+    },
+    "hi": {
+      "display_text": "भारत के वस्त्र क्षेत्र के संस्थागत ढांचे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. नेशनल इंस्टिट्यूट ऑफ फैशन टेक्नोलॉजी (NIFT) मानव संसाधन विकास मंत्रालय के अधीन एक स्वायत्त निकाय है, जिसे फैशन, इंटीरियर डिजाइन और फिल्म सहित रचनात्मक क्षेत्रों में डिजाइन शिक्षा को बढ़ावा देने के लिए स्थापित किया गया है।\n2. टेक्सटाइल कमिश्नर का कार्यालय टेक्सटाइल (विकास और विनियमन) आदेश के तहत वस्त्र इकाइयों पर नियामक शक्तियां प्रयोग करता है और वस्त्र मंत्रालय के प्रशासनिक अधिकार क्षेत्र में आता है।\n3. वाणिज्य और उद्योग मंत्रालय सभी वस्त्र निर्यात संवर्धन परिषदों, जिनमें AEPC और TEXPROCIL शामिल हैं, पर प्राथमिक अधिकार रखता है, जबकि वस्त्र मंत्रालय निर्यात नीति में केवल सलाहकार भूमिका निभाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2\n(b) केवल 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The National Institute of Fashion Technology (NIFT) is an autonomous body under the Ministry of Human Resource Development, established to promote design education across creative sectors including fashion, interior design, and film.",
+          "verdict": "गलत",
+          "reason": "NIFT वस्त्र मंत्रालय के अधीन एक वैधानिक निकाय है, न कि मानव संसाधन विकास मंत्रालय के अधीन। इसे NIFT अधिनियम, 2006 के तहत स्थापित किया गया था, जो विशेष रूप से वस्त्र क्षेत्र से जुड़ी फैशन और डिजाइन शिक्षा के लिए है।"
+        },
+        {
+          "statement": "The Textile Commissioner's office exercises regulatory powers over textile units under the Textiles (Development and Regulation) Order and falls under the administrative jurisdiction of the Ministry of Textiles.",
+          "verdict": "सही है",
+          "reason": "टेक्सटाइल कमिश्नर वस्त्र मंत्रालय के अधीन कार्य करता है और टेक्सटाइल (विकास और विनियमन) आदेश सहित नियामक आदेशों का प्रशासन करता है — यह कथन सटीक है।"
+        },
+        {
+          "statement": "The Ministry of Commerce and Industry exercises primary jurisdiction over all textile export promotion councils, including AEPC and TEXPROCIL, with the Ministry of Textiles playing only an advisory role in export policy.",
+          "verdict": "गलत",
+          "reason": "वस्त्र क्षेत्र के निर्यात संवर्धन परिषदें वस्त्र मंत्रालय और वाणिज्य मंत्रालय दोनों के संयुक्त अधिकार क्षेत्र में हैं — वस्त्र मंत्रालय केवल सलाहकार भूमिका में है कहना गलत है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) केवल कथन 3 को गलत बताता है, जो कि छात्र कथन 1 (NIFT के मंत्रालय) को सही समझकर भी कथन 2 को गलत मानने पर चुन सकता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: NIFT मानव संसाधन विकास मंत्रालय के अधीन — NIFT को NIFT अधिनियम 2006 के तहत वस्त्र मंत्रालय के अधीन स्थापित किया गया है, न कि HRD के अधीन; कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: टेक्सटाइल कमिश्नर वस्त्र मंत्रालय के अधीन नियामक शक्तियों के साथ — यह सही है; कथन 2 सही है, उत्तर नहीं।",
+        "कथन 3 का मूल्यांकन करें: सभी वस्त्र निर्यात संवर्धन परिषदों पर वाणिज्य मंत्रालय का प्राथमिक अधिकार और वस्त्र मंत्रालय की केवल सलाहकार भूमिका — यह वाणिज्य मंत्रालय की भूमिका को अधिक आंकता है; वस्त्र मंत्रालय का वस्त्र निर्यात नीति और परिषदों पर महत्वपूर्ण अधिकार है। कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं — उत्तर विकल्प (c) है: केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "NIFT का वस्त्र मंत्रालय के अधीन होना (शिक्षा/HRD नहीं) विरोधाभासी लगता है क्योंकि यह एक डिजाइन शिक्षा संस्थान है। जो छात्र शैक्षिक संस्थानों को शिक्षा मंत्रालय से जोड़ते हैं, वे NIFT को HRD/शिक्षा मंत्रालय से जोड़ेंगे — लेकिन NIFT अधिनियम, 2006 वस्त्र मंत्रालय के अधिकार क्षेत्र को निर्धारित करता है।",
+      "final_explanation": "भारत के वस्त्र संस्थागत ढांचे में अधिकार क्षेत्र का ओवरलैप है, जिसका UPSC अक्सर उपयोग करता है।\n\n• कथन 1 — गलत: NIFT एक वैधानिक निकाय है जो NIFT अधिनियम, 2006 के तहत वस्त्र मंत्रालय के अधीन स्थापित है — न कि मानव संसाधन विकास/शिक्षा मंत्रालय के अधीन। इसका फोकस वस्त्र उद्योग से जुड़ी फैशन डिजाइन और प्रबंधन पर है।\n• कथन 2 — सही: मुंबई स्थित टेक्सटाइल कमिश्नर कार्यालय वस्त्र मंत्रालय के अधीन टेक्सटाइल (विकास और विनियमन) आदेश सहित वैधानिक आदेशों के तहत वस्त्र इकाइयों पर नियामक और विकासात्मक कार्य करता है।\n• कथन 3 — गलत: AEPC और TEXPROCIL जैसे निर्यात संवर्धन परिषदें वस्त्र मंत्रालय और वाणिज्य मंत्रालय दोनों के संयुक्त नियंत्रण में हैं। वस्त्र मंत्रालय केवल सलाहकार भूमिका में नहीं है — इसके पास वस्त्र निर्यात संवर्धन पर नीति और बजट अधिकार हैं।\n\nमूल्यवर्धन:\n• NIFT के भारत के 18 शहरों में कैंपस हैं, जो इसे एशिया का सबसे बड़ा फैशन शिक्षा नेटवर्क बनाते हैं।\n• वस्त्र मंत्रालय TUFS/ATUFS, PM MITRA, PLI फॉर टेक्सटाइल्स, NHDP, समर्थ और विभिन्न क्लस्टर विकास योजनाओं का प्रशासन करता है।\n• वस्त्र मंत्रालय और वाणिज्य मंत्रालय के बीच निर्यात मामलों में अधिकार क्षेत्र का ओवरलैप एक ज्ञात शासन चुनौती है, जो कभी-कभी नीति समन्वय में अंतराल पैदा करता है।"
+    }
+  },
+  {
+    "uuid": "4e5a9eec-0f6b-49ff-b975-2cb611122c9c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Decline of Mumbai Mill Sector and Structural Shift",
+        "Geographical Concentration and Locational Factors of Cotton Textile Mills"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "quantitative-pairing",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Powerloom clusters that replaced Mumbai mill production — Surat Bhiwandi Ichalkaranji",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about powerloom clusters that emerged as alternatives to Mumbai's declining composite mill sector:",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "Surat (Gujarat) emerged as a major synthetic and blended fabric powerloom cluster, filling part of the production vacuum left by Mumbai's declining composite mills."
+          ],
+          [
+            "2",
+            "Bhiwandi (Maharashtra) developed as one of India's largest powerloom clusters, specialising in grey fabric production for further processing, located in the Mumbai metropolitan region."
+          ],
+          [
+            "3",
+            "Ichalkaranji in Maharashtra is a significant powerloom textile cluster known for cotton and polyester fabric production."
+          ],
+          [
+            "4",
+            "Ludhiana in Punjab expanded its cotton composite mill sector in direct response to government incentives offered to northern states following the closure of Mumbai mills in the 1980s."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Surat (Gujarat) emerged as a major synthetic and blended fabric powerloom cluster, filling part of the production vacuum left by Mumbai's declining composite mills.",
+          "verdict": "Correct",
+          "reason": "Surat is India's largest MMF/synthetic fabric production hub and its growth correlates with the decline of Mumbai's composite mills as decentralised powerloom production became dominant."
+        },
+        {
+          "statement": "Bhiwandi (Maharashtra) developed as one of India's largest powerloom clusters, specialising in grey fabric production for further processing, located in the Mumbai metropolitan region.",
+          "verdict": "Correct",
+          "reason": "Bhiwandi in Thane district, part of the Mumbai Metropolitan Region, is indeed one of India's largest powerloom grey fabric clusters and directly absorbed production displaced from central Mumbai's composite mills."
+        },
+        {
+          "statement": "Ichalkaranji in Maharashtra is a significant powerloom textile cluster known for cotton and polyester fabric production, often called the 'Manchester of Maharashtra'.",
+          "verdict": "Correct",
+          "reason": "Ichalkaranji in Kolhapur district is a major powerloom cluster in Maharashtra and has been described with such regional industrial labels — it specialises in cotton and blended fabrics."
+        },
+        {
+          "statement": "Ludhiana in Punjab expanded its cotton composite mill sector in direct response to government incentives offered to northern states following the closure of Mumbai mills in the 1980s.",
+          "verdict": "Incorrect",
+          "reason": "Ludhiana is primarily known for its woollen hosiery and knitwear industry, not cotton composite mills. Its textile growth was not directly linked to government incentives specifically responding to Mumbai mill closures — this is a fabricated causal chain."
+        }
+      ],
+      "strong_distractor": "c — Option (c) states 'only three' are correct, which is actually the correct answer — wait, re-examine: Statements 1, 2, 3 are correct and Statement 4 is incorrect, so 'only three' is correct, meaning option (c) is correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Surat as MMF powerloom hub filling Mumbai's production vacuum — documented and accurate; Correct.",
+        "Evaluate Statement 2: Bhiwandi as large grey fabric powerloom cluster in Mumbai Metropolitan Region — accurate; Correct.",
+        "Evaluate Statement 3: Ichalkaranji as Maharashtra powerloom cluster for cotton/blended fabrics — accurate; Correct.",
+        "Evaluate Statement 4: Ludhiana expanding cotton composite mills in direct response to Mumbai closures — Ludhiana's textile strength is in woollen hosiery, not cotton composite mills; and the causal chain to Mumbai closures is fabricated; Incorrect.",
+        "Three of four are correct — answer is option (c): Only three."
+      ],
+      "upsc_trap_explanation": "Ludhiana is a real textile city but its specialism is woollen knitwear, not cotton composite mills. The causal story linking Ludhiana's expansion to Mumbai mill closures is fabricated but plausible-sounding — students who know Ludhiana as a textile hub but have not fixed its fibre-type specialism will accept Statement 4.",
+      "final_explanation": "The decentralisation of Indian cotton textile production following Mumbai's mill closures created several major regional powerloom clusters.\n\n• Statement 1 — Correct: Surat's synthetic fabric powerloom industry grew dramatically in the 1990s–2000s, partly absorbing demand for fabric production as Mumbai's composite mills shuttered.\n• Statement 2 — Correct: Bhiwandi, just 40 km from Mumbai's former mill district, is one of Asia's largest powerloom clusters. Its grey fabric is finished and processed across western India.\n• Statement 3 — Correct: Ichalkaranji in Kolhapur district is Maharashtra's other major powerloom cluster, specialising in cotton and blended fabric with a large number of independent weaving units.\n• Statement 4 — Incorrect: Ludhiana's textile identity is in woollen knitwear and hosiery — Punjab's climate and raw material base (wool from northern pastoral areas) shaped this specialisation. The causal link to Mumbai mill closures is fabricated; Ludhiana's textile growth had independent drivers.\n\nValue Addition:\n• Bhiwandi also serves as a major logistics hub for western India — its textiles and warehousing functions coexist.\n• Surat's polyester fabric market operates through a complex trading network centred on the city's Surat Textile Market complex.\n• The shift from composite mills to powerloom clusters fundamentally changed India's textile labour market — mill workers lost formal employment while powerloom expanded informal employment."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "मुंबई के घटते कंपोजिट मिल क्षेत्र के विकल्प के रूप में उभरे पावरलूम क्लस्टरों के बारे में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "सूरत (गुजरात) एक प्रमुख सिंथेटिक और मिश्रित कपड़ा पावरलूम क्लस्टर के रूप में उभरा, जो मुंबई के घटते कंपोजिट मिलों द्वारा छोड़े गए उत्पादन रिक्त स्थान का हिस्सा भरता है।"
+          ],
+          [
+            "2",
+            "भिवंडी (महाराष्ट्र) भारत के सबसे बड़े पावरलूम क्लस्टरों में से एक के रूप में विकसित हुआ, जो आगे प्रसंस्करण के लिए ग्रे फैब्रिक उत्पादन में विशेषज्ञ है, और यह मुंबई महानगरीय क्षेत्र में स्थित है।"
+          ],
+          [
+            "3",
+            "महाराष्ट्र के इचलकरंजी एक महत्वपूर्ण पावरलूम वस्त्र क्लस्टर है जो कपास और पॉलिएस्टर कपड़ा उत्पादन के लिए जाना जाता है।"
+          ],
+          [
+            "4",
+            "पंजाब के लुधियाना ने 1980 के दशक में मुंबई मिलों के बंद होने के बाद उत्तरी राज्यों को दिए गए सरकारी प्रोत्साहनों के सीधे जवाब में अपने कपास कंपोजिट मिल क्षेत्र का विस्तार किया।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Surat (Gujarat) emerged as a major synthetic and blended fabric powerloom cluster, filling part of the production vacuum left by Mumbai's declining composite mills.",
+          "verdict": "सही है",
+          "reason": "सूरत भारत का सबसे बड़ा MMF/सिंथेटिक फैब्रिक उत्पादन केंद्र है और इसका विकास मुंबई के कंपोजिट मिलों के पतन के साथ मेल खाता है क्योंकि विकेंद्रीकृत पावरलूम उत्पादन प्रमुख हो गया।"
+        },
+        {
+          "statement": "Bhiwandi (Maharashtra) developed as one of India's largest powerloom clusters, specialising in grey fabric production for further processing, located in the Mumbai metropolitan region.",
+          "verdict": "सही है",
+          "reason": "ठाणे जिले का भिवंडी, जो मुंबई महानगरीय क्षेत्र का हिस्सा है, वास्तव में भारत के सबसे बड़े पावरलूम ग्रे फैब्रिक क्लस्टरों में से एक है और यह सीधे मुंबई के केंद्रीय कंपोजिट मिलों से विस्थापित उत्पादन को अवशोषित करता है।"
+        },
+        {
+          "statement": "Ichalkaranji in Maharashtra is a significant powerloom textile cluster known for cotton and polyester fabric production, often called the 'Manchester of Maharashtra'.",
+          "verdict": "सही है",
+          "reason": "कोल्हापुर जिले का इचलकरंजी महाराष्ट्र का एक प्रमुख पावरलूम क्लस्टर है और इसे इस क्षेत्रीय औद्योगिक उपनाम के साथ वर्णित किया गया है — यह कपास और मिश्रित कपड़ों में विशेषज्ञता रखता है।"
+        },
+        {
+          "statement": "Ludhiana in Punjab expanded its cotton composite mill sector in direct response to government incentives offered to northern states following the closure of Mumbai mills in the 1980s.",
+          "verdict": "गलत है",
+          "reason": "लुधियाना मुख्यतः अपनी ऊनी होजरी और निटवेयर उद्योग के लिए जाना जाता है, न कि कपास कंपोजिट मिलों के लिए। इसका वस्त्र विकास सीधे मुंबई मिलों के बंद होने के जवाब में सरकार द्वारा दिए गए प्रोत्साहनों से जुड़ा नहीं है — यह एक निर्मित कारणात्मक श्रृंखला है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) कहता है कि 'केवल तीन' सही हैं, जो वास्तव में सही उत्तर है — पुनः जाँच करें: कथन 1, 2, 3 सही हैं और कथन 4 गलत है, अतः 'केवल तीन' सही है, मतलब विकल्प (c) सही है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: सूरत को MMF पावरलूम हब के रूप में मुंबई के उत्पादन रिक्त स्थान को भरना — प्रलेखित और सटीक; सही।",
+        "कथन 2 का मूल्यांकन करें: भिवंडी को मुंबई महानगरीय क्षेत्र में बड़े ग्रे फैब्रिक पावरलूम क्लस्टर के रूप में विकसित होना — सटीक; सही।",
+        "कथन 3 का मूल्यांकन करें: इचलकरंजी को महाराष्ट्र में कपास/मिश्रित कपड़ों के लिए पावरलूम क्लस्टर के रूप में मान्यता — सटीक; सही।",
+        "कथन 4 का मूल्यांकन करें: लुधियाना का कपास कंपोजिट मिल क्षेत्र का विस्तार मुंबई मिलों के बंद होने के जवाब में — लुधियाना की वस्त्र ताकत ऊनी होजरी में है, कपास कंपोजिट मिलों में नहीं; और मुंबई बंद होने से कारणात्मक श्रृंखला निर्मित है; गलत।",
+        "चार में से तीन सही हैं — उत्तर विकल्प (c) है: केवल तीन।"
+      ],
+      "upsc_trap_explanation": "लुधियाना एक वास्तविक वस्त्र शहर है लेकिन इसकी विशेषज्ञता ऊनी निटवेयर में है, न कि कपास कंपोजिट मिलों में। लुधियाना के विस्तार को मुंबई मिलों के बंद होने से जोड़ने वाली कारणात्मक कहानी निर्मित है लेकिन विश्वसनीय लगती है — जो छात्र लुधियाना को वस्त्र केंद्र के रूप में जानते हैं लेकिन इसके फाइबर-प्रकार की विशेषज्ञता नहीं जानते, वे कथन 4 को स्वीकार कर लेंगे।",
+      "final_explanation": "मुंबई के मिल बंद होने के बाद भारतीय कपास वस्त्र उत्पादन का विकेंद्रीकरण कई प्रमुख क्षेत्रीय पावरलूम क्लस्टरों का सृजन किया।\n\n• कथन 1 — सही: सूरत का सिंथेटिक फैब्रिक पावरलूम उद्योग 1990-2000 के दशक में तेजी से बढ़ा, जिसने आंशिक रूप से मुंबई के कंपोजिट मिलों के बंद होने के कारण फैब्रिक उत्पादन की मांग को अवशोषित किया।\n• कथन 2 — सही: भिवंडी, जो मुंबई के पूर्व मिल जिले से मात्र 40 किमी दूर है, एशिया के सबसे बड़े पावरलूम क्लस्टरों में से एक है। इसका ग्रे फैब्रिक पश्चिमी भारत में फिनिशिंग और प्रसंस्करण के लिए जाता है।\n• कथन 3 — सही: कोल्हापुर जिले का इचलकरंजी महाराष्ट्र का दूसरा प्रमुख पावरलूम क्लस्टर है, जो कपास और मिश्रित कपड़ों में विशेषज्ञता रखता है और स्वतंत्र बुनाई इकाइयों की बड़ी संख्या है।\n• कथन 4 — गलत: लुधियाना की वस्त्र पहचान ऊनी निटवेयर और होजरी में है — पंजाब की जलवायु और कच्चे माल (उत्तर के पशुपालन क्षेत्रों से ऊन) ने इस विशेषज्ञता को आकार दिया। मुंबई मिलों के बंद होने से इसका कोई कारणात्मक संबंध नहीं है; लुधियाना के वस्त्र विकास के स्वतंत्र कारण थे।\n\nमूल्य संवर्धन:\n• भिवंडी पश्चिमी भारत के लिए एक प्रमुख लॉजिस्टिक्स हब भी है — इसके वस्त्र और गोदाम कार्य सह-अस्तित्व में हैं।\n• सूरत का पॉलिएस्टर फैब्रिक बाजार शहर के सूरत टेक्सटाइल मार्केट परिसर के केंद्रित जटिल व्यापार नेटवर्क के माध्यम से संचालित होता है।\n• कंपोजिट मिलों से पावरलूम क्लस्टरों में बदलाव ने भारत के वस्त्र श्रम बाजार को मौलिक रूप से बदल दिया — मिल श्रमिकों ने औपचारिक रोजगार खोया जबकि पावरलूम ने अनौपचारिक रोजगार बढ़ाया।"
+    }
+  },
+  {
+    "uuid": "15102e44-519c-4873-9128-f91005c31163",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Historical Evolution of Cotton Textile Industry in India",
+        "Textile Policy Framework and Regulatory Bodies"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Textile Policy 1985 vs. National Textile Policy 2000 — chronological sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of key milestones in India's textile policy and trade history?\n\n(a) National Textile Policy 2000 → Textile Policy 1985 → Expiry of Multi-Fibre Arrangement\n(b) Textile Policy 1985 → National Textile Policy 2000 → Expiry of Multi-Fibre Arrangement\n(c) Expiry of Multi-Fibre Arrangement → Textile Policy 1985 → National Textile Policy 2000\n(d) National Textile Policy 2000 → Expiry of Multi-Fibre Arrangement → Textile Policy 1985",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) places National Textile Policy 2000 before Textile Policy 1985, which inverts the actual sequence — a student who only vaguely recalls that both policies exist without fixing their years will make this error.",
+      "elimination_logic": [
+        "Anchor the first major modern textile policy to 1985 — this was the Textile Policy of 1985 which allowed powerlooms to produce items previously reserved for mills.",
+        "Anchor the MFA expiry to 1 January 2005 — this is fixed international trade history.",
+        "Anchor the National Textile Policy to 2000 — between 1985 and the MFA expiry in 2005.",
+        "Correct sequence: Textile Policy 1985 → National Textile Policy 2000 → MFA expiry 2005 — this is option (b)."
+      ],
+      "upsc_trap_explanation": "Students may assume the 'National' Textile Policy is foundational and therefore earlier, reversing 1985 and 2000. The 1985 Textile Policy predates the 2000 National Textile Policy — students without year-fixed memory will invert them.",
+      "final_explanation": "India's textile policy evolution follows a clear chronological progression anchored by three milestones.\n\nCorrect sequence: Textile Policy 1985 → National Textile Policy 2000 → MFA expiry 2005\n\n• Textile Policy 1985: A landmark liberalisation — it removed production restrictions on powerlooms and decentralised the textile sector, accelerating the shift away from composite mills.\n• National Textile Policy 2000: A comprehensive policy framework setting targets for export growth (USD 50 billion by 2010), encouraging technological modernisation, and introducing TUFS as an implementation instrument.\n• MFA expiry 2005: On 1 January 2005, the Multi-Fibre Arrangement expired, ending quota-based global textile trade and opening both opportunities and competitive threats for India.\n\nWhy wrong options fail:\n• Option (a): Places NTP 2000 before Textile Policy 1985 — temporal inversion.\n• Option (c): Places MFA expiry before NTP 2000 — another inversion; MFA expired in 2005, after NTP 2000.\n• Option (d): Mixes the order arbitrarily without anchoring to known years.\n\nValue Addition:\n• The Textile Policy 1985 was a major deregulation milestone — it enabled the decentralised powerloom sector to legally produce blended and synthetic fabrics.\n• Post-MFA, India's exports did grow, but China's even faster growth — unconstrained by quota — intensified competition.\n• A new National Textiles Policy is under consideration as of recent years to replace the 2000 framework."
+    },
+    "hi": {
+      "display_text": "भारत की टेक्सटाइल पॉलिसी और व्यापार इतिहास में प्रमुख मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) नेशनल टेक्सटाइल पॉलिसी 2000 → टेक्सटाइल पॉलिसी 1985 → मल्टी-फाइबर एग्रीमेंट की समाप्ति\n(b) टेक्सटाइल पॉलिसी 1985 → नेशनल टेक्सटाइल पॉलिसी 2000 → मल्टी-फाइबर एग्रीमेंट की समाप्ति\n(c) मल्टी-फाइबर एग्रीमेंट की समाप्ति → टेक्सटाइल पॉलिसी 1985 → नेशनल टेक्सटाइल पॉलिसी 2000\n(d) नेशनल टेक्सटाइल पॉलिसी 2000 → मल्टी-फाइबर एग्रीमेंट की समाप्ति → टेक्सटाइल पॉलिसी 1985",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) नेशनल टेक्सटाइल पॉलिसी 2000 को टेक्सटाइल पॉलिसी 1985 से पहले रखता है, जो वास्तविक क्रम को उलट देता है — जो छात्र केवल यह याद रखते हैं कि दोनों नीतियाँ हैं लेकिन उनके वर्ष निश्चित नहीं हैं, वे यह गलती करेंगे।",
+      "elimination_logic": [
+        "पहली प्रमुख आधुनिक टेक्सटाइल पॉलिसी को 1985 से जोड़ें — यह 1985 की टेक्सटाइल पॉलिसी थी जिसने पावरलूम को उन वस्तुओं का उत्पादन करने की अनुमति दी जो पहले मिलों के लिए आरक्षित थीं।",
+        "MFA की समाप्ति को 1 जनवरी 2005 से जोड़ें — यह अंतरराष्ट्रीय व्यापार का निश्चित इतिहास है।",
+        "नेशनल टेक्सटाइल पॉलिसी को 2000 से जोड़ें — 1985 और 2005 के बीच।",
+        "सही क्रम: टेक्सटाइल पॉलिसी 1985 → नेशनल टेक्सटाइल पॉलिसी 2000 → MFA समाप्ति 2005 — यह विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "छात्र मान सकते हैं कि 'नेशनल' टेक्सटाइल पॉलिसी मौलिक है और इसलिए पहले है, जिससे 1985 और 2000 उलट जाते हैं। 1985 की टेक्सटाइल पॉलिसी 2000 की नेशनल टेक्सटाइल पॉलिसी से पहले है — वर्ष निश्चित स्मृति न रखने वाले छात्र इन्हें उलट देंगे।",
+      "final_explanation": "भारत की टेक्सटाइल पॉलिसी का विकास तीन प्रमुख मील के पत्थरों द्वारा स्पष्ट कालानुक्रमिक प्रगति का पालन करता है।\n\nसही क्रम: टेक्सटाइल पॉलिसी 1985 → नेशनल टेक्सटाइल पॉलिसी 2000 → MFA समाप्ति 2005\n\n• टेक्सटाइल पॉलिसी 1985: एक महत्वपूर्ण उदारीकरण — इसने पावरलूम पर उत्पादन प्रतिबंध हटाए और टेक्सटाइल क्षेत्र को विकेंद्रीकृत किया, जिससे कंपोजिट मिलों से दूर जाने की प्रक्रिया तेज हुई।\n• नेशनल टेक्सटाइल पॉलिसी 2000: एक व्यापक नीति ढांचा जिसने निर्यात वृद्धि (2010 तक 50 बिलियन USD) के लक्ष्य निर्धारित किए, तकनीकी आधुनिकीकरण को प्रोत्साहित किया, और TUFS को कार्यान्वयन उपकरण के रूप में पेश किया।\n• MFA समाप्ति 2005: 1 जनवरी 2005 को मल्टी-फाइबर एग्रीमेंट समाप्त हो गया, जिससे कोटा-आधारित वैश्विक टेक्सटाइल व्यापार समाप्त हुआ और भारत के लिए अवसर और प्रतिस्पर्धात्मक खतरे दोनों खुले।\n\nगलत विकल्प क्यों असफल होते हैं:\n• विकल्प (a): NTP 2000 को टेक्सटाइल पॉलिसी 1985 से पहले रखता है — कालानुक्रमिक उलट।\n• विकल्प (c): MFA समाप्ति को NTP 2000 से पहले रखता है — एक और उलट; MFA 2005 में समाप्त हुआ, NTP 2000 के बाद।\n• विकल्प (d): क्रम को बिना ज्ञात वर्षों के आधार के मनमाने ढंग से मिलाता है।\n\nमूल्य संवर्धन:\n• टेक्सटाइल पॉलिसी 1985 एक प्रमुख उदारीकरण मील का पत्थर थी — इसने विकेंद्रीकृत पावरलूम क्षेत्र को मिश्रित और सिंथेटिक कपड़े कानूनी रूप से उत्पादन करने में सक्षम बनाया।\n• MFA के बाद, भारत के निर्यात बढ़े, लेकिन चीन की तेज वृद्धि — कोटा से मुक्त — प्रतिस्पर्धा को तीव्र किया।\n• हाल के वर्षों में 2000 के ढांचे को बदलने के लिए एक नई नेशनल टेक्सटाइल पॉलिसी पर विचार किया जा रहा है।"
+    }
+  },
+  {
+    "uuid": "3f8cba42-2e39-484b-805d-ccddbe9be508",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Technical Textiles: Emerging Segment and Policy Push"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "12 segments of technical textiles — classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT belong to India's classified technical textile segments under the National Technical Textiles Mission framework?\n\n(a) Agrotech\n(b) Sportech\n(c) Retailtech\n(d) Geotech",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) names 'Sportech', which sounds informal and non-technical. Students unfamiliar with the full 12-segment classification may doubt whether sportswear qualifies as a 'technical textile' and select this as the odd one out.",
+      "elimination_logic": [
+        "Recall the 12 classified technical textile segments: Agrotech, Meditech, Buildtech, Geotech, Hometech, Clothtech, Indutech, Mobiltech, Protech, Sportech, Packtech, Oekotech.",
+        "Check each option: Agrotech — agricultural applications, Sportech — sports applications, Geotech — geotechnical applications; all three are in the 12-segment classification.",
+        "Check option (c): 'Retailtech' — this is NOT one of the 12 classified technical textile segments; it is a fabricated term.",
+        "Retailtech is the odd one out — option (c)."
+      ],
+      "upsc_trap_explanation": "Sportech sounds informal and students may doubt whether sportswear is a 'technical' textile. It is a legitimate segment. 'Retailtech' sounds plausible in modern retail context but is entirely fabricated as a technical textile classification — the trap exploits incomplete recall of the 12-segment taxonomy.",
+      "final_explanation": "Technical textiles are defined by their functional end-use application rather than aesthetic or fashion properties, and India recognises exactly 12 classified segments.\n\n• Option (a): Agrotech — Correct technical textile segment. Covers agricultural applications including crop covers, shade nets, ground cover, and greenhouse materials.\n• Option (b): Sportech — Correct technical textile segment. Covers sports and leisure applications including performance sportswear, sports safety equipment, and artificial turf.\n• Option (c): Retailtech — NOT a recognised technical textile segment. This is a fabricated category — it does not appear in India's or any major international classification of technical textiles. This is the odd one out.\n• Option (d): Geotech — Correct technical textile segment. Covers geotechnical applications including geotextiles used in road construction, erosion control, and embankment stabilisation.\n\nValue Addition:\n• The 12 technical textile segments follow a standardised international classification, each with the suffix '-tech' (Meditech, Buildtech, Packtech, etc.).\n• Oekotech (ecological/environmental applications) and Hometech (home furnishing and upholstery) are among the less commonly recalled segments.\n• India's NTTM mission specifically targets import substitution in Meditech (medical textiles) and Geotech (geotextiles) as priority segments."
+    },
+    "hi": {
+      "display_text": "भारत के राष्ट्रीय तकनीकी वस्त्र मिशन के अंतर्गत वर्गीकृत तकनीकी वस्त्र खंडों में से निम्नलिखित में से कौन सा शामिल नहीं है?\n\n(a) Agrotech\n(b) Sportech\n(c) Retailtech\n(d) Geotech",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में 'Sportech' नाम है, जो अनौपचारिक और गैर-तकनीकी लगता है। 12-खंड वर्गीकरण से अपरिचित छात्र संदेह कर सकते हैं कि क्या खेल वस्त्र 'तकनीकी वस्त्र' माने जाते हैं और इसे अलग विकल्प के रूप में चुन सकते हैं।",
+      "elimination_logic": [
+        "12 वर्गीकृत तकनीकी वस्त्र खंडों को याद करें: Agrotech, Meditech, Buildtech, Geotech, Hometech, Clothtech, Indutech, Mobiltech, Protech, Sportech, Packtech, Oekotech।",
+        "प्रत्येक विकल्प की जाँच करें: Agrotech — कृषि अनुप्रयोग, Sportech — खेल अनुप्रयोग, Geotech — भू-तकनीकी अनुप्रयोग; ये तीनों 12-खंड वर्गीकरण में हैं।",
+        "विकल्प (c) की जाँच करें: 'Retailtech' — यह 12 वर्गीकृत तकनीकी वस्त्र खंडों में से नहीं है; यह एक निर्मित शब्द है।",
+        "Retailtech अलग विकल्प है — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "Sportech अनौपचारिक लगता है और छात्र संदेह कर सकते हैं कि क्या खेल वस्त्र 'तकनीकी' वस्त्र हैं। यह एक वैध खंड है। 'Retailtech' आधुनिक खुदरा संदर्भ में संभावित लगता है पर तकनीकी वस्त्र वर्गीकरण में पूरी तरह निर्मित है — यह जाल 12-खंड वर्गीकरण की अधूरी स्मृति का उपयोग करता है।",
+      "final_explanation": "तकनीकी वस्त्र उनके कार्यात्मक अंतिम उपयोग के आधार पर परिभाषित होते हैं, न कि सौंदर्य या फैशन गुणों के आधार पर, और भारत में ठीक 12 वर्गीकृत खंड मान्यता प्राप्त हैं।\n\n• विकल्प (a): Agrotech — सही तकनीकी वस्त्र खंड। इसमें कृषि अनुप्रयोग जैसे फसल आवरण, छाया जाल, भूमि आवरण, और ग्रीनहाउस सामग्री शामिल हैं।\n• विकल्प (b): Sportech — सही तकनीकी वस्त्र खंड। इसमें खेल और अवकाश अनुप्रयोग जैसे प्रदर्शन खेल वस्त्र, खेल सुरक्षा उपकरण, और कृत्रिम घास शामिल हैं।\n• विकल्प (c): Retailtech — मान्यता प्राप्त तकनीकी वस्त्र खंड नहीं है। यह एक निर्मित श्रेणी है — यह भारत या किसी प्रमुख अंतरराष्ट्रीय तकनीकी वस्त्र वर्गीकरण में नहीं आता। यह अलग विकल्प है।\n• विकल्प (d): Geotech — सही तकनीकी वस्त्र खंड। इसमें भू-तकनीकी अनुप्रयोग जैसे सड़क निर्माण, कटाव नियंत्रण, और तटबंध स्थिरीकरण में उपयोग होने वाले भू-वस्त्र शामिल हैं।\n\nमूल्य संवर्धन:\n• 12 तकनीकी वस्त्र खंड एक मानकीकृत अंतरराष्ट्रीय वर्गीकरण का पालन करते हैं, प्रत्येक के अंत में '-tech' प्रत्यय होता है (Meditech, Buildtech, Packtech आदि)।\n• Oekotech (पर्यावरणीय अनुप्रयोग) और Hometech (गृह सज्जा और अपहोल्स्ट्री) कम ज्ञात खंडों में हैं।\n• भारत का NTTM मिशन विशेष रूप से Meditech (चिकित्सा वस्त्र) और Geotech (भू-वस्त्र) में आयात प्रतिस्थापन को प्राथमिकता देता है।"
+    }
+  },
+  {
+    "uuid": "a0706c42-c274-48cb-95b8-beb60fc838b1",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Man-Made Fibers (MMF) and Synthetic Textiles Segment",
+        "Production Linked Incentive (PLI) Scheme for Textiles"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "MMF global dominance vs. India's underperformance — policy response",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about India's man-made fibre (MMF) textile segment and related policy:\n\n1. Man-made fibres account for approximately 70% of global textile fibre consumption, yet India's textile export basket remains disproportionately skewed towards cotton-based products relative to this global trend.\n2. Surat in Gujarat is India's dominant centre for man-made fibre and synthetic textile production, with polyester fabric forming the core of its output.\n3. The PLI Scheme for Textiles covers the entire range of man-made fibre products including MMF yarn, MMF fabrics, and MMF apparel, as well as all categories of technical textiles without any product-specific exclusions.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Man-made fibres (MMF) account for approximately 70% of global textile fibre consumption, yet India's textile export basket remains disproportionately skewed towards cotton-based products relative to this global trend.",
+          "verdict": "Correct",
+          "reason": "Globally, MMF (including polyester, nylon, viscose) dominates textile consumption at approximately 70%. India's export basket, however, is heavily cotton-oriented, representing a structural mismatch with global demand — a key policy concern."
+        },
+        {
+          "statement": "Surat in Gujarat is India's dominant centre for man-made fibre and synthetic textile production, with polyester fabric forming the core of its output.",
+          "verdict": "Correct",
+          "reason": "Surat is unambiguously India's largest MMF/synthetic textile production hub, with a massive concentration of weaving, processing, and trading units centred on polyester and blended fabrics."
+        },
+        {
+          "statement": "The PLI Scheme for Textiles covers the entire range of man-made fibre products including MMF yarn, MMF fabrics, and MMF apparel, as well as all categories of technical textiles without any product-specific exclusions.",
+          "verdict": "Incorrect",
+          "reason": "While PLI for textiles does cover MMF fabrics, MMF apparel, and technical textiles, it is not accurate that there are 'no product-specific exclusions' — the scheme has defined eligibility criteria and specific product categories; the phrase 'entire range without any exclusions' is an overstatement."
+        }
+      ],
+      "strong_distractor": "d — Option (d) suggesting all three are correct will attract students who correctly identify Statements 1 and 2 but accept Statement 3's claim about PLI coverage without examining the 'without any exclusions' qualifier.",
+      "elimination_logic": [
+        "Evaluate Statement 1: MMF at ~70% of global textile consumption vs. India's cotton-heavy exports — standard industry statistic; Correct.",
+        "Evaluate Statement 2: Surat as India's MMF production hub with polyester dominance — unambiguous; Correct.",
+        "Evaluate Statement 3: PLI covering 'entire range without any product-specific exclusions' — the 'without any exclusions' qualifier is a scope-extension that makes this false; PLI has defined eligible products and exclusions; Incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — answer is option (a): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "The phrase 'without any product-specific exclusions' is an absolute qualifier that students overlook when they correctly identify PLI's MMF focus. The sweeping 'no exclusions' claim collapses when one recalls that cotton apparel is explicitly excluded from PLI — the exam tests whether students read absolute qualifiers carefully.",
+      "final_explanation": "India's MMF sector is at the centre of the country's textile export competitiveness strategy.\n\n• Statement 1 — Correct: MMF accounts for approximately 70% of global textile fibre consumption. India's export basket remains skewed towards cotton, creating a strategic gap in India's ability to serve the largest segment of global textile demand — a key motivation for MMF-focused policy interventions.\n• Statement 2 — Correct: Surat is India's undisputed MMF hub. Its powerloom and processing ecosystem, fed by petrochemical inputs from nearby Gujarat refineries, produces vast quantities of polyester and blended fabrics for both domestic and export markets.\n• Statement 3 — Incorrect: The PLI Scheme for Textiles has specific eligible product categories — MMF apparel, MMF fabrics, and technical textiles. The claim of 'no product-specific exclusions' is false; cotton apparel alone is a notable deliberate exclusion, and the scheme has defined minimum investment and turnover thresholds that further limit coverage.\n\nValue Addition:\n• The historical inverted duty structure on MMF raw materials disadvantaged Indian manufacturers for decades before successive budget corrections.\n• Surat's MMF industry sources raw polyester chips from Reliance Industries' petrochemical plants in Gujarat.\n• India's National Fiber Policy has recommended increasing MMF's share in India's textile export mix to align with global demand patterns."
+    },
+    "hi": {
+      "display_text": "भारत के मानव-निर्मित फाइबर (MMF) वस्त्र खंड और संबंधित नीति के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. मानव-निर्मित फाइबर वैश्विक वस्त्र फाइबर खपत का लगभग 70% हिस्सा हैं, फिर भी भारत का वस्त्र निर्यात बास्केट इस वैश्विक प्रवृत्ति की तुलना में कपास-आधारित उत्पादों की ओर असमान रूप से झुका हुआ है।\n2. गुजरात का सूरत मानव-निर्मित फाइबर और सिंथेटिक वस्त्र उत्पादन के लिए भारत का प्रमुख केंद्र है, जिसका उत्पादन मुख्य रूप से पॉलिएस्टर कपड़े पर आधारित है।\n3. वस्त्रों के लिए PLI योजना मानव-निर्मित फाइबर उत्पादों की पूरी श्रृंखला को कवर करती है, जिसमें MMF यार्न, MMF कपड़े, और MMF परिधान शामिल हैं, साथ ही तकनीकी वस्त्रों की सभी श्रेणियाँ बिना किसी उत्पाद-विशिष्ट अपवाद के।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Man-made fibres (MMF) account for approximately 70% of global textile fibre consumption, yet India's textile export basket remains disproportionately skewed towards cotton-based products relative to this global trend.",
+          "verdict": "सही",
+          "reason": "वैश्विक स्तर पर, MMF (जिसमें पॉलिएस्टर, नायलॉन, विस्कोस शामिल हैं) लगभग 70% तक वस्त्र फाइबर खपत में प्रभुत्व रखता है। भारत का निर्यात बास्केट हालांकि भारी रूप से कपास-केंद्रित है, जो वैश्विक मांग के साथ संरचनात्मक असंगति दर्शाता है — यह एक प्रमुख नीति संबंधी चिंता है।"
+        },
+        {
+          "statement": "Surat in Gujarat is India's dominant centre for man-made fibre and synthetic textile production, with polyester fabric forming the core of its output.",
+          "verdict": "सही",
+          "reason": "सूरत स्पष्ट रूप से भारत का सबसे बड़ा MMF/सिंथेटिक वस्त्र उत्पादन केंद्र है, जहाँ पॉलिएस्टर और मिश्रित कपड़ों पर आधारित बुनाई, प्रसंस्करण और व्यापार इकाइयों का विशाल संकेंद्रण है।"
+        },
+        {
+          "statement": "The PLI Scheme for Textiles covers the entire range of man-made fibre products including MMF yarn, MMF fabrics, and MMF apparel, as well as all categories of technical textiles without any product-specific exclusions.",
+          "verdict": "गलत",
+          "reason": "हालांकि वस्त्रों के लिए PLI में MMF कपड़े, MMF परिधान, और तकनीकी वस्त्र शामिल हैं, यह कहना कि 'कोई उत्पाद-विशिष्ट अपवाद नहीं हैं' सही नहीं है — योजना में पात्रता मानदंड और विशिष्ट उत्पाद श्रेणियाँ परिभाषित हैं; 'पूरे दायरे में बिना किसी अपवाद के' कहना अतिशयोक्ति है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जो तीनों को सही मानता है, उन छात्रों को आकर्षित करेगा जो कथन 1 और 2 को सही पहचानते हैं लेकिन कथन 3 के PLI कवरेज के 'बिना किसी अपवाद के' दावे को बिना जांचे स्वीकार कर लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: वैश्विक वस्त्र खपत में लगभग 70% MMF बनाम भारत के कपास-प्रधान निर्यात — मानक उद्योग तथ्य; सही।",
+        "कथन 2 का मूल्यांकन करें: सूरत को भारत का MMF उत्पादन केंद्र मानना और पॉलिएस्टर प्रभुत्व — स्पष्ट; सही।",
+        "कथन 3 का मूल्यांकन करें: PLI द्वारा 'कोई उत्पाद-विशिष्ट अपवाद नहीं' के दावे को एक दायरा-विस्तार के रूप में देखें जो इसे गलत बनाता है; PLI में पात्र उत्पाद और अपवाद परिभाषित हैं; गलत।",
+        "कथन 1 और 2 सही हैं, कथन 3 गलत है — उत्तर विकल्प (a): केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "'कोई उत्पाद-विशिष्ट अपवाद नहीं' वाक्यांश एक पूर्णतावादी योग्यता है जिसे छात्र PLI के MMF फोकस को सही पहचानते हुए नजरअंदाज कर देते हैं। 'कोई अपवाद नहीं' का व्यापक दावा तब टूट जाता है जब याद किया जाता है कि कपास परिधान स्पष्ट रूप से PLI से बाहर हैं — परीक्षा यह जांचती है कि छात्र पूर्णतावादी योग्यताओं को सावधानी से पढ़ते हैं।",
+      "final_explanation": "भारत का MMF क्षेत्र देश की वस्त्र निर्यात प्रतिस्पर्धात्मकता रणनीति का केंद्र है।\n\n• कथन 1 — सही: MMF वैश्विक वस्त्र फाइबर खपत का लगभग 70% हिस्सा है। भारत का निर्यात बास्केट कपास की ओर झुका हुआ है, जिससे भारत की वैश्विक वस्त्र मांग के सबसे बड़े खंड को पूरा करने की क्षमता में रणनीतिक अंतर पैदा होता है — MMF-केंद्रित नीति हस्तक्षेपों के लिए एक प्रमुख प्रेरणा।\n• कथन 2 — सही: सूरत भारत का निर्विवाद MMF केंद्र है। इसका पावरलूम और प्रसंस्करण पारिस्थितिकी तंत्र, जो गुजरात के रिफाइनरियों से पेट्रोकेमिकल इनपुट प्राप्त करता है, घरेलू और निर्यात बाजारों के लिए विशाल मात्रा में पॉलिएस्टर और मिश्रित कपड़े उत्पादन करता है।\n• कथन 3 — गलत: वस्त्रों के लिए PLI योजना में विशिष्ट पात्र उत्पाद श्रेणियाँ हैं — MMF परिधान, MMF कपड़े, और तकनीकी वस्त्र। 'कोई उत्पाद-विशिष्ट अपवाद नहीं' का दावा गलत है; केवल कपास परिधान ही एक उल्लेखनीय जानबूझकर अपवाद है, और योजना में न्यूनतम निवेश और कारोबार सीमा भी हैं जो कवरेज को सीमित करती हैं।\n\nमूल्य संवर्धन:\n• MMF कच्चे माल पर ऐतिहासिक उलटा शुल्क ढांचा दशकों तक भारतीय निर्माताओं के लिए हानिकारक रहा, जिसे बाद के बजट सुधारों ने सुधारा।\n• सूरत का MMF उद्योग गुजरात में रिलायंस इंडस्ट्रीज के पेट्रोकेमिकल संयंत्रों से कच्चे पॉलिएस्टर चिप्स प्राप्त करता है।\n• भारत की राष्ट्रीय फाइबर नीति ने वैश्विक मांग पैटर्न के अनुरूप भारत के वस्त्र निर्यात मिश्रण में MMF के हिस्से को बढ़ाने की सिफारिश की है।"
+    }
+  },
+  {
+    "uuid": "0fc45df2-2be5-44d1-b951-34f330b3f8ae",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Three-Tier Structure: Mills, Powerlooms, and Handlooms",
+        "Handloom Sector: Significance, Challenges, and Government Support"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Khadi definition — hand-spun AND hand-woven vs. handloom machine-spun hand-woven",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs correctly matches a type of hand-textile fabric with its defining production characteristic?\n\n(a) Khadi — fabric that is hand-woven using yarn that has been machine-spun on industrial spindles\n(b) Handloom — fabric produced entirely by hand, including the hand-spinning of yarn, without any mechanised input at any stage\n(c) Khadi — fabric made from yarn that has been hand-spun and subsequently hand-woven\n(d) Handloom — fabric woven on power-assisted looms with finishing and embellishment done by hand",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) describes Khadi as hand-woven using machine-spun yarn, which is the definition of handloom fabric — a direct conflation of the two categories.",
+      "elimination_logic": [
+        "Recall the precise definition of Khadi: both yarn-spinning and fabric-weaving must be done by hand.",
+        "Recall that handloom fabric only requires hand-weaving — the yarn may be machine-spun.",
+        "Option (c) pairs the definition 'hand-spun yarn that is hand-woven' with Khadi — this is exactly correct.",
+        "Eliminate options that attribute machine-spun yarn to Khadi or hand-weaving alone to Khadi — these describe handloom, not khadi."
+      ],
+      "upsc_trap_explanation": "Khadi and handloom both involve hand-weaving, making their definitions superficially similar. The critical distinction — Khadi requires hand-spinning also — is what separates them definitionally. Option (a) places the handloom definition under the Khadi label, exploiting students' partial recall.",
+      "final_explanation": "The distinction between Khadi and handloom fabric is a definitional precision test with regulatory implications.\n\n• Option (a): Khadi — fabric hand-woven using machine-spun yarn — Incorrect. This is the definition of handloom fabric, not Khadi. Attributing machine-spun yarn to Khadi is the central conflation error.\n• Option (b): Handloom — fabric produced entirely by hand including yarn spinning — Incorrect. This describes Khadi, not handloom. Handloom only mandates hand-weaving.\n• Option (c): Khadi — fabric made from yarn that is both hand-spun and hand-woven — Correct. The dual hand-process requirement (spinning on a charkha AND weaving on a handloom) is the defining characteristic of Khadi and the basis for KVIC's certification.\n• Option (d): Handloom — fabric woven by power-assisted looms with hand-finishing — Incorrect. Handloom specifically requires weaving by hand, not power-assisted looms.\n\nValue Addition:\n• The Khadi Mark certifies this dual hand-process requirement and is administered by KVIC.\n• India Handloom Brand (for handloom) and Khadi Mark (for khadi) are parallel but distinct certification schemes.\n• KVIC operates under Ministry of MSME and promotes khadi as part of village industry development — not under Ministry of Textiles."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म एक प्रकार के हस्त-निर्मित वस्त्र को उसकी परिभाषित उत्पादन विशेषता के साथ सही रूप से मिलाता है?\n\n(a) खादी — ऐसा वस्त्र जो मशीन से कताई किए गए यार्न का उपयोग कर हाथ से बुना गया हो\n(b) हथकरघा — ऐसा वस्त्र जो पूरी तरह हाथ से बना हो, जिसमें यार्न की हाथ से कताई भी शामिल हो, बिना किसी यांत्रिक सहायता के\n(c) खादी — ऐसा वस्त्र जो हाथ से काता हुआ यार्न लेकर बाद में हाथ से बुना गया हो\n(d) हथकरघा — ऐसा वस्त्र जो पावर-सहायता प्राप्त करघों पर बुना गया हो और फिनिशिंग तथा सजावट हाथ से की गई हो",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) में खादी को मशीन से काता हुआ यार्न उपयोग कर हाथ से बुना हुआ बताया गया है, जो कि हथकरघा वस्त्र की परिभाषा है — यह दोनों श्रेणियों का सीधा मिश्रण है।",
+      "elimination_logic": [
+        "खादी की सटीक परिभाषा याद करें: यार्न कातना और वस्त्र बुनना दोनों हाथ से होना चाहिए।",
+        "याद रखें कि हथकरघा वस्त्र में केवल बुनाई हाथ से होती है — यार्न मशीन से काता जा सकता है।",
+        "विकल्प (c) में 'हाथ से काता हुआ यार्न जो हाथ से बुना गया हो' की परिभाषा खादी के साथ सही जोड़ी बनाती है।",
+        "उन विकल्पों को हटा दें जो खादी के लिए मशीन से काता हुआ यार्न या केवल हाथ से बुनाई को बताते हैं — ये हथकरघा के लिए हैं, खादी के लिए नहीं।"
+      ],
+      "upsc_trap_explanation": "खादी और हथकरघा दोनों में हाथ से बुनाई होती है, जिससे उनकी परिभाषाएँ सतही रूप से समान लगती हैं। मुख्य अंतर यह है कि खादी में हाथ से कातना भी आवश्यक है — यही उन्हें परिभाषागत रूप से अलग करता है। विकल्प (a) में हथकरघा की परिभाषा को खादी के अंतर्गत रखकर छात्रों की आंशिक स्मृति का लाभ उठाया गया है।",
+      "final_explanation": "खादी और हथकरघा वस्त्र के बीच का अंतर परिभाषागत सटीकता का परीक्षण है, जिसका नियामक महत्व है।\n\n• विकल्प (a): खादी — ऐसा वस्त्र जो मशीन से काता हुआ यार्न उपयोग कर हाथ से बुना गया हो — गलत। यह हथकरघा वस्त्र की परिभाषा है, खादी की नहीं। मशीन से काता हुआ यार्न खादी को देना मुख्य मिश्रण त्रुटि है।\n• विकल्प (b): हथकरघा — ऐसा वस्त्र जो पूरी तरह हाथ से बना हो, जिसमें यार्न का हाथ से कातना भी शामिल हो, बिना किसी यांत्रिक सहायता के — गलत। यह खादी की परिभाषा है, हथकरघा की नहीं। हथकरघा में केवल बुनाई हाथ से होती है।\n• विकल्प (c): खादी — ऐसा वस्त्र जो हाथ से काता हुआ यार्न लेकर हाथ से बुना गया हो — सही। दोनों हाथ से किए गए कार्य (चर्खे पर कातना और हथकरघा पर बुनाई) खादी की परिभाषा और KVIC के प्रमाणन का आधार हैं।\n• विकल्प (d): हथकरघा — ऐसा वस्त्र जो पावर-सहायता प्राप्त करघों पर बुना गया हो और फिनिशिंग हाथ से की गई हो — गलत। हथकरघा में विशेष रूप से हाथ से बुनाई आवश्यक है, पावर-सहायता प्राप्त करघा नहीं।\n\nमूल्यवर्धन:\n• खादी मार्क इस दोहरे हाथ से किए गए कार्य की आवश्यकता को प्रमाणित करता है और इसे KVIC संचालित करता है।\n• इंडिया हथकरघा ब्रांड (हथकरघा के लिए) और खादी मार्क (खादी के लिए) समानांतर लेकिन भिन्न प्रमाणन योजनाएँ हैं।\n• KVIC सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय के अंतर्गत काम करता है और खादी को ग्राम उद्योग विकास के हिस्से के रूप में बढ़ावा देता है — वस्त्र मंत्रालय के अंतर्गत नहीं।"
+    }
+  },
+  {
+    "uuid": "d9d527b3-6c6e-48ef-b7cb-91610768c4da",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Sericulture and Silk Sub-sector within Textile Industry",
+        "Institutional Framework: Promotional Bodies and Councils in Textile Sector"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SEPC vs. HEPC — sector coverage; Muga silk GI exclusivity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about India's silk sub-sector and its institutional framework:\n\n1. Among India's four types of natural silk, Muga silk is produced exclusively in Assam and carries a Geographical Indication (GI) tag, making it the only naturally golden-coloured silk in the world.\n2. The Silk Export Promotion Council (SEPC) is the designated body for promoting exports of silk and silk products, while the Handloom Export Promotion Council (HEPC) specifically handles export promotion for handloom-woven fabrics.\n3. The Central Silk Board (CSB), being a statutory body under the Ministry of Textiles, performs the same promotional and regulatory functions as the Khadi and Village Industries Commission (KVIC) in their respective sub-sectors.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 3 only\n(c) 1, 2 and 3\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Among India's four types of natural silk, Muga silk is produced exclusively in Assam and carries a Geographical Indication (GI) tag, making it the only naturally golden-coloured silk in the world.",
+          "verdict": "Correct",
+          "reason": "Muga silk, produced from Antheraea assamensis, is exclusively found in Assam and has a GI tag. Its natural golden-brown colour is a unique characteristic — it deepens with age and washing, distinguishing it globally."
+        },
+        {
+          "statement": "The Silk Export Promotion Council (SEPC) is the designated body for promoting exports of silk and silk products, while the Handloom Export Promotion Council (HEPC) specifically handles export promotion for handloom-woven fabrics.",
+          "verdict": "Correct",
+          "reason": "SEPC handles silk export promotion and HEPC handles handloom product exports — these are distinct councils with separate sectoral mandates, accurately described here."
+        },
+        {
+          "statement": "The Central Silk Board (CSB), being a statutory body under the Ministry of Textiles, performs the same promotional and regulatory functions as the Khadi and Village Industries Commission (KVIC) in their respective sub-sectors.",
+          "verdict": "Incorrect",
+          "reason": "While both are statutory bodies related to traditional textile sub-sectors, CSB and KVIC operate under different ministries (Textiles vs. MSME respectively), have different enabling legislations, different mandates, and serve structurally different industry segments. The claim that they 'perform the same functions' in their respective domains is a misleading conflation."
+        }
+      ],
+      "strong_distractor": "c — Option (c) would suggest all three statements are correct, attracting students who correctly identify Statements 1 and 2 but accept Statement 3's symmetrical framing of CSB and KVIC without examining their different ministerial homes and mandates.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Muga silk exclusive to Assam, GI-tagged, naturally golden-coloured — accurate; Correct.",
+        "Evaluate Statement 2: SEPC for silk exports, HEPC for handloom exports — these are correctly distinguished promotional councils; Correct.",
+        "Evaluate Statement 3: CSB and KVIC performing the 'same functions' in respective sub-sectors — CSB is under Ministry of Textiles; KVIC is under Ministry of MSME; their mandates, legal basis, and sector coverage are different; Incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — answer is option (d): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "The symmetrical framing 'CSB does for silk what KVIC does for khadi' is the trap. While superficially parallel, the two bodies differ in ministry, mandate, enabling legislation, and sector scope. Students who have not separately fixed CSB's and KVIC's ministry attributions will accept the symmetry.",
+      "final_explanation": "India's silk and handloom sub-sectors each have distinct institutional architecture.\n\n• Statement 1 — Correct: Muga silk from Assam is the world's only naturally golden-hued silk. The GI tag protects its geographical exclusivity. Produced from the Antheraea assamensis silkworm, it feeds exclusively on aromatic plants of the Lauraceae family found in Assam's river valleys.\n• Statement 2 — Correct: SEPC (Silk Export Promotion Council) and HEPC (Handloom Export Promotion Council) are correctly delineated — each covers its respective sub-sector's export promotion without overlap.\n• Statement 3 — Incorrect: CSB (Central Silk Board, Ministry of Textiles) and KVIC (Ministry of MSME) have fundamentally different institutional homes, mandates, and target sectors. CSB focuses on sericulture research, quality, and sector development; KVIC promotes employment through village industries including khadi. The parallel framing obscures real institutional differences.\n\nValue Addition:\n• India is the second-largest silk producer after China; Karnataka leads in mulberry silk, Assam in Muga.\n• Tasar silk is produced in Jharkhand, Chhattisgarh, and Odisha from the Antheraea mylitta silkworm.\n• Anti-dumping duties have been applied to Chinese raw silk imports at various times to protect Indian sericulture."
+    },
+    "hi": {
+      "display_text": "भारत के रेशम उप-क्षेत्र और इसकी संस्थागत संरचना के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत के चार प्रकार के प्राकृतिक रेशम में से, मृगा रेशम केवल असम में उत्पादित होता है और इसके पास भौगोलिक संकेत (GI) टैग है, जो इसे विश्व का एकमात्र प्राकृतिक सुनहरे रंग का रेशम बनाता है।\n2. सिल्क एक्सपोर्ट प्रमोशन काउंसिल (SEPC) रेशम और रेशम उत्पादों के निर्यात को बढ़ावा देने के लिए नामित निकाय है, जबकि हैंडलूम एक्सपोर्ट प्रमोशन काउंसिल (HEPC) विशेष रूप से हैंडलूम बुने हुए वस्त्रों के निर्यात प्रचार का कार्य करती है।\n3. सेंट्रल सिल्क बोर्ड (CSB), जो वस्त्र मंत्रालय के अधीन एक सांविधिक निकाय है, अपने संबंधित उप-क्षेत्रों में खादी और ग्राम उद्योग आयोग (KVIC) के समान प्रचार और नियामक कार्य करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) 1, 2 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत के चार प्रकार के प्राकृतिक रेशम में से, मृगा रेशम केवल असम में उत्पादित होता है और इसके पास भौगोलिक संकेत (GI) टैग है, जो इसे विश्व का एकमात्र प्राकृतिक सुनहरे रंग का रेशम बनाता है।",
+          "verdict": "सही है",
+          "reason": "मृगा रेशम, जो Antheraea assamensis से उत्पादित होता है, केवल असम में पाया जाता है और इसके पास GI टैग है। इसका प्राकृतिक सुनहरा-भूरा रंग एक अनूठी विशेषता है — यह उम्र और धुलाई के साथ गहरा होता जाता है, जो इसे विश्व स्तर पर विशिष्ट बनाता है।"
+        },
+        {
+          "statement": "सिल्क एक्सपोर्ट प्रमोशन काउंसिल (SEPC) रेशम और रेशम उत्पादों के निर्यात को बढ़ावा देने के लिए नामित निकाय है, जबकि हैंडलूम एक्सपोर्ट प्रमोशन काउंसिल (HEPC) विशेष रूप से हैंडलूम बुने हुए वस्त्रों के निर्यात प्रचार का कार्य करती है।",
+          "verdict": "सही है",
+          "reason": "SEPC रेशम निर्यात प्रचार संभालती है और HEPC हैंडलूम उत्पाद निर्यात को संभालती है — ये अलग-अलग काउंसिल हैं जिनके अलग-अलग क्षेत्रीय दायित्व हैं, जो यहाँ सही रूप में वर्णित हैं।"
+        },
+        {
+          "statement": "सेंट्रल सिल्क बोर्ड (CSB), जो वस्त्र मंत्रालय के अधीन एक सांविधिक निकाय है, अपने संबंधित उप-क्षेत्रों में खादी और ग्राम उद्योग आयोग (KVIC) के समान प्रचार और नियामक कार्य करता है।",
+          "verdict": "गलत है",
+          "reason": "हालांकि दोनों पारंपरिक वस्त्र उप-क्षेत्रों से संबंधित सांविधिक निकाय हैं, CSB और KVIC अलग-अलग मंत्रालयों (वस्त्र मंत्रालय बनाम MSME मंत्रालय), अलग-अलग सक्षम कानून, अलग-अलग दायित्व और संरचनात्मक रूप से भिन्न उद्योग क्षेत्रों के लिए काम करते हैं। यह दावा कि वे अपने-अपने क्षेत्रों में 'समान कार्य' करते हैं, एक भ्रामक समरूपता है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) यह सुझाव देगा कि तीनों कथन सही हैं, जो उन छात्रों को आकर्षित करता है जो कथन 1 और 2 को सही पहचानते हैं लेकिन कथन 3 के CSB और KVIC के समानांतर स्वरूप को बिना उनके विभिन्न मंत्रालयों और दायित्वों की जांच किए स्वीकार कर लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: मृगा रेशम केवल असम में, GI टैग के साथ, प्राकृतिक रूप से सुनहरे रंग का — सटीक; सही।",
+        "कथन 2 का मूल्यांकन करें: SEPC रेशम निर्यात के लिए, HEPC हैंडलूम निर्यात के लिए — ये प्रचार काउंसिल सही ढंग से भेदित हैं; सही।",
+        "कथन 3 का मूल्यांकन करें: CSB और KVIC अपने-अपने उप-क्षेत्रों में 'समान कार्य' करते हैं — CSB वस्त्र मंत्रालय के अधीन है; KVIC MSME मंत्रालय के अधीन है; उनके दायित्व, कानूनी आधार और क्षेत्रीय कवरेज अलग हैं; गलत।",
+        "कथन 1 और 2 सही हैं, कथन 3 गलत है — उत्तर विकल्प (d) है: केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "'CSB वस्त्र के लिए वही करता है जो KVIC खादी के लिए करता है' यह समरूपता जाल है। सतही रूप से समान लगने के बावजूद, दोनों निकाय मंत्रालय, दायित्व, सक्षम कानून और क्षेत्रीय दायरे में भिन्न हैं। जो छात्र CSB और KVIC के मंत्रालयों को अलग से नहीं जानते, वे इस समरूपता को स्वीकार कर लेते हैं।",
+      "final_explanation": "भारत के रेशम और हैंडलूम उप-क्षेत्रों की संस्थागत संरचना भिन्न है।\n\n• कथन 1 — सही: असम का मृगा रेशम विश्व का एकमात्र प्राकृतिक सुनहरे रंग का रेशम है। GI टैग इसकी भौगोलिक विशिष्टता की रक्षा करता है। यह Antheraea assamensis सिल्कवर्म से उत्पादित होता है, जो असम की नदियों की घाटियों में पाए जाने वाले Lauraceae परिवार के सुगंधित पौधों पर ही निर्भर करता है।\n• कथन 2 — सही: SEPC (सिल्क एक्सपोर्ट प्रमोशन काउंसिल) और HEPC (हैंडलूम एक्सपोर्ट प्रमोशन काउंसिल) सही ढंग से विभक्त हैं — प्रत्येक अपने उप-क्षेत्र के निर्यात प्रचार को बिना ओवरलैप के संभालती है।\n• कथन 3 — गलत: CSB (सेंट्रल सिल्क बोर्ड, वस्त्र मंत्रालय) और KVIC (MSME मंत्रालय) के संस्थागत घर, दायित्व और लक्षित क्षेत्र मौलिक रूप से भिन्न हैं। CSB रेशम अनुसंधान, गुणवत्ता और क्षेत्र विकास पर केंद्रित है; KVIC खादी सहित ग्राम उद्योगों के माध्यम से रोजगार को बढ़ावा देता है। समानांतर स्वरूप वास्तविक संस्थागत भिन्नताओं को छुपाता है।\n\nमूल्यवर्धन:\n• भारत चीन के बाद दूसरा सबसे बड़ा रेशम उत्पादक है; कर्नाटक मलबेरी रेशम में अग्रणी है, असम मृगा रेशम में।\n• तसर रेशम झारखंड, छत्तीसगढ़ और ओडिशा में Antheraea mylitta सिल्कवर्म से उत्पादित होता है।\n• भारतीय रेशम उद्योग की सुरक्षा के लिए चीनी कच्चे रेशम के आयात पर विभिन्न समयों पर एंटी-डंपिंग शुल्क लगाए गए हैं।"
+    }
+  },
+  {
+    "uuid": "0bd8b9bd-3443-4d4e-80fb-75fb508813d9",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Environmental Concerns and Sustainability in Cotton Textile Industry",
+        "India's Cotton Cultivation: Linkage between Agriculture and Industry"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Virtual water trade — water embedded in cotton textile exports",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A researcher studying India's water security notes that while India faces acute water stress in its major cotton-growing states, it continues to export large volumes of cotton textiles. She argues that through these exports, India is effectively transferring water embedded in the production process to importing countries — water that will never return to India's water table. The economic geography concept that best describes this phenomenon is:\n\n(a) Virtual water trade\n(b) Embedded energy accounting\n(c) Water Footprint standard\n(d) Hydro-diplomacy framework",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) invokes the Water Footprint standard, which is a real concept and tool but describes a measurement methodology rather than the trade-theoretical concept the scenario calls for — students who partially know environmental accounting will select this.",
+      "elimination_logic": [
+        "The scenario describes a situation where a nation is effectively exporting the water used in cotton cultivation and processing through its textile exports — identify the economic geography concept.",
+        "Virtual water trade is the concept that describes water embedded in goods traded internationally — when India exports cotton textiles, it exports the water used to produce them.",
+        "Water footprint is a measurement tool/standard — not the trade concept being described in the scenario.",
+        "Eliminate embedded energy (refers to energy, not water) and Hydro-diplomacy (refers to river water sharing between countries). Option (a) — virtual water trade — is correct."
+      ],
+      "upsc_trap_explanation": "Water Footprint is a real, related, and sophisticated concept that partially overlaps with virtual water — distinguishing them requires understanding that water footprint is a measurement methodology while virtual water trade is the economic/geographic concept explaining water transfers through commodity trade. Students who know one concept may substitute it for the other.",
+      "final_explanation": "The intersection of water scarcity and trade in cotton textile economics has a specific conceptual framework.\n\nScenario analysis: When India exports cotton fabric, it effectively exports the thousands of litres of water embedded in producing that cotton and processing it into fabric. This invisible export of water through traded goods is the economic geography concept of virtual water trade.\n\n• Option (a): Virtual water trade — Correct. Introduced by John Allan, virtual water (or embedded water) theory holds that international trade in water-intensive goods represents an implicit transfer of water between water-rich and water-scarce regions. India's cotton textile exports represent substantial virtual water exports from a country facing water stress.\n• Option (b): Embedded energy accounting — Incorrect. This concept tracks energy inputs in production and trade, not water — a parallel but different environmental accounting framework.\n• Option (c): Water Footprint standard — Incorrect. The Water Footprint Network's standard is a measurement and reporting methodology for quantifying water use — it describes how to measure, not the trade theoretical concept of why exporting water-intensive goods is equivalent to exporting water.\n• Option (d): Hydro-diplomacy framework — Incorrect. Hydro-diplomacy refers to international negotiations over transboundary water resources (river sharing, aquifer agreements) — not embedded water in trade goods.\n\nValue Addition:\n• India is one of the largest virtual water exporters in the world, given its cotton, rice, and sugarcane exports.\n• Cotton requires approximately 10,000 litres of water per kilogram of lint — making it one of the most water-intensive crops.\n• The Aral Sea disaster in Central Asia is the most extreme documented case of irrigation-driven water depletion linked to cotton cultivation."
+    },
+    "hi": {
+      "display_text": "भारत के जल सुरक्षा का अध्ययन कर रही एक शोधकर्ता नोट करती है कि जबकि भारत अपने प्रमुख कपास-उगाने वाले राज्यों में तीव्र जल-संकट का सामना कर रहा है, फिर भी वह बड़ी मात्रा में कपास वस्त्र निर्यात करता रहता है। वह तर्क देती है कि इन निर्यातों के माध्यम से, भारत उत्पादन प्रक्रिया में निहित जल को आयातक देशों को प्रभावी रूप से स्थानांतरित कर रहा है — ऐसा जल जो कभी भारत के जलस्तर में वापस नहीं आएगा। इस घटना का सबसे उपयुक्त आर्थिक भूगोल अवधारणा है:\n\n(a) वर्चुअल वाटर ट्रेड\n(b) एंबेडेड एनर्जी लेखांकन\n(c) वाटर फुटप्रिंट मानक\n(d) हाइड्रो-डिप्लोमेसी ढांचा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) वाटर फुटप्रिंट मानक को संदर्भित करता है, जो एक वास्तविक अवधारणा और उपकरण है लेकिन यह मापन पद्धति का वर्णन करता है न कि उस व्यापार-सैद्धांतिक अवधारणा का जो परिदृश्य में मांगी गई है — पर्यावरणीय लेखांकन का आंशिक ज्ञान रखने वाले छात्र इसे चुनेंगे।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसी स्थिति का वर्णन करता है जहाँ एक राष्ट्र कपास की खेती और प्रसंस्करण में उपयोग किए गए जल को अपने वस्त्र निर्यात के माध्यम से प्रभावी रूप से निर्यात कर रहा है — आर्थिक भूगोल की अवधारणा की पहचान करें।",
+        "वर्चुअल वाटर ट्रेड वह अवधारणा है जो अंतरराष्ट्रीय व्यापार में वस्तुओं में निहित जल का वर्णन करती है — जब भारत कपास वस्त्र निर्यात करता है, तो वह उन वस्त्रों के उत्पादन में उपयोग किए गए जल का निर्यात करता है।",
+        "वाटर फुटप्रिंट एक मापन उपकरण/मानक है — परिदृश्य में वर्णित व्यापार अवधारणा नहीं।",
+        "एंबेडेड एनर्जी (जो ऊर्जा से संबंधित है, जल से नहीं) और हाइड्रो-डिप्लोमेसी (जो देशों के बीच नदी जल साझा करने से संबंधित है) को हटा दें। विकल्प (a) — वर्चुअल वाटर ट्रेड — सही है।"
+      ],
+      "upsc_trap_explanation": "वाटर फुटप्रिंट एक वास्तविक, संबंधित और परिष्कृत अवधारणा है जो आंशिक रूप से वर्चुअल वाटर से ओवरलैप करती है — इनके बीच अंतर समझने के लिए यह जानना आवश्यक है कि वाटर फुटप्रिंट मापन पद्धति है जबकि वर्चुअल वाटर ट्रेड वह आर्थिक/भूगोलिक अवधारणा है जो वस्तु व्यापार के माध्यम से जल हस्तांतरण को समझाती है। जो छात्र एक अवधारणा जानते हैं, वे उसे दूसरी के स्थान पर उपयोग कर सकते हैं।",
+      "final_explanation": "जल संकट और कपास वस्त्र अर्थशास्त्र में व्यापार के संगम की एक विशिष्ट सैद्धांतिक रूपरेखा है।\n\nपरिदृश्य विश्लेषण: जब भारत कपास के वस्त्र निर्यात करता है, तो वह वस्त्र उत्पादन में उपयोग किए गए हजारों लीटर जल का अप्रत्यक्ष निर्यात करता है। व्यापार की गई वस्तुओं के माध्यम से जल का यह अदृश्य निर्यात वर्चुअल वाटर ट्रेड की आर्थिक भूगोल अवधारणा है।\n\n• विकल्प (a): वर्चुअल वाटर ट्रेड — सही। जॉन एलन द्वारा प्रस्तुत, वर्चुअल वाटर (या निहित जल) सिद्धांत कहता है कि जल-गहन वस्तुओं का अंतरराष्ट्रीय व्यापार जल-समृद्ध और जल-संकटग्रस्त क्षेत्रों के बीच जल का अप्रत्यक्ष हस्तांतरण है। भारत के कपास वस्त्र निर्यात जल-संकट से जूझ रहे देश से महत्वपूर्ण वर्चुअल वाटर निर्यात का प्रतिनिधित्व करते हैं।\n• विकल्प (b): एंबेडेड एनर्जी लेखांकन — गलत। यह अवधारणा उत्पादन और व्यापार में ऊर्जा इनपुट को ट्रैक करती है, जल को नहीं — एक समान लेकिन अलग पर्यावरणीय लेखांकन ढांचा।\n• विकल्प (c): वाटर फुटप्रिंट मानक — गलत। वाटर फुटप्रिंट नेटवर्क का मानक जल उपयोग को मापने और रिपोर्ट करने की पद्धति है — यह मापन कैसे करें बताता है, न कि व्यापार सैद्धांतिक अवधारणा कि जल-गहन वस्तुओं के निर्यात का अर्थ जल का निर्यात है।\n• विकल्प (d): हाइड्रो-डिप्लोमेसी ढांचा — गलत। हाइड्रो-डिप्लोमेसी सीमापार जल संसाधनों (नदी साझा करना, भूजल समझौते) पर अंतरराष्ट्रीय वार्ता को संदर्भित करता है — व्यापार वस्तुओं में निहित जल को नहीं।\n\nमूल्य संवर्धन:\n• भारत कपास, चावल और गन्ना निर्यात के कारण विश्व के सबसे बड़े वर्चुअल वाटर निर्यातकों में से एक है।\n• कपास के एक किलोग्राम लिंट के लिए लगभग 10,000 लीटर जल की आवश्यकता होती है — जो इसे सबसे जल-गहन फसलों में से एक बनाता है।\n• मध्य एशिया में अराल सागर आपदा कपास की खेती से जुड़ी सिंचाई-प्रेरित जल क्षरण का सबसे चरम दस्तावेजीकृत मामला है।"
+    }
+  },
+  {
+    "uuid": "251d458a-bd87-43e9-92cb-43fce7f38254",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Industries of India",
+      "sub_topic": "Cotton textile industry",
+      "concepts_used": [
+        "Apparel and Garment Export Ecosystem: Value Chain Analysis",
+        "Institutional Framework: Promotional Bodies and Councils in Textile Sector"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Export promotion councils — sector mapping TEXPROCIL AEPC SRTEPC HEPC",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Export Promotion Council (List I) with its designated product sector (List II):",
+        "columns": [
+          "List I — Export Promotion Council",
+          "List II — Product Sector"
+        ],
+        "rows": [
+          [
+            "A. TEXPROCIL",
+            "1. Handloom fabrics and products"
+          ],
+          [
+            "B. AEPC",
+            "2. Synthetic and rayon textiles"
+          ],
+          [
+            "C. SRTEPC",
+            "3. Ready-made garments and apparel"
+          ],
+          [
+            "D. HEPC",
+            "4. Cotton yarns, fabrics, and made-ups"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-4, C-2, D-1\n(b) A-4, B-3, C-2, D-1\n(c) A-3, B-4, C-1, D-2\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) swaps TEXPROCIL and AEPC, attributing garment/apparel to TEXPROCIL and cotton fabrics/yarn to AEPC — the most common confusion between these two councils.",
+      "elimination_logic": [
+        "Anchor AEPC to apparel/ready-made garments — the 'Apparel' in AEPC makes this unambiguous once recalled.",
+        "Anchor TEXPROCIL to cotton textiles (yarn, fabric, made-ups) — 'Cotton Textiles' is the full name's core.",
+        "SRTEPC covers synthetic and rayon textiles — eliminate options placing it elsewhere.",
+        "HEPC handles handloom exports — confirm and identify option (b) as placing all four correctly."
+      ],
+      "upsc_trap_explanation": "TEXPROCIL and AEPC are the most commonly swapped export councils in UPSC preparation. Both are prominent, both deal with cotton-related exports, and the specific mandate boundary (intermediates vs. finished garments) requires deliberate memorisation. The acronym expansion — Cotton Textiles (TEXPROCIL) vs. Apparel (AEPC) — is the reliable disambiguation tool.",
+      "final_explanation": "India's textile export architecture is managed through sector-specific promotional councils, each with a defined product mandate.\n\nCorrect matches:\n• TEXPROCIL → Cotton yarns, fabrics, and made-ups: The Cotton Textiles Export Promotion Council covers textile intermediates — yarn, grey fabric, processed fabric, and made-up articles — not finished garments.\n• AEPC → Ready-made garments and apparel: The Apparel Export Promotion Council is specifically mandated for finished garment and apparel exports — the downstream, higher-value segment.\n• SRTEPC → Synthetic and rayon textiles: The Synthetic and Rayon Textiles Export Promotion Council covers MMF-based fabrics, yarns, and products.\n• HEPC → Handloom fabrics and products: The Handloom Export Promotion Council promotes export of handloom-woven textiles.\n\nThe TEXPROCIL–AEPC swap is the primary trap in option (c).\n\nValue Addition:\n• SEPC (Silk Export Promotion Council) is the fifth major export promotion council in the textile sector — completing the quintet.\n• AEPC administers the ROSC (Rebate of State and Central Taxes and Levies) scheme for garment exporters.\n• TEXPROCIL's focus on intermediates makes it more relevant for India's spinning and weaving mills; AEPC is more directly linked to the garment assembly and fashion segments."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "निर्यात प्रचार परिषद (सूची I) को उसके निर्दिष्ट उत्पाद क्षेत्र (सूची II) से मिलाइए:",
+        "columns": [
+          "सूची I — निर्यात प्रचार परिषद",
+          "सूची II — उत्पाद क्षेत्र"
+        ],
+        "rows": [
+          [
+            "A. TEXPROCIL",
+            "1. हस्तकरघा कपड़े और उत्पाद"
+          ],
+          [
+            "B. AEPC",
+            "2. सिंथेटिक और रेयन वस्त्र"
+          ],
+          [
+            "C. SRTEPC",
+            "3. तैयार वस्त्र और परिधान"
+          ],
+          [
+            "D. HEPC",
+            "4. सूती यार्न, कपड़े, और तैयार वस्तुएं"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-4, C-2, D-1\n(b) A-4, B-3, C-2, D-1\n(c) A-3, B-4, C-1, D-2\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) swaps TEXPROCIL and AEPC, attributing garment/apparel to TEXPROCIL and cotton fabrics/yarn to AEPC — the most common confusion between these two councils.",
+      "elimination_logic": [
+        "AEPC को परिधान/तैयार वस्त्रों से जोड़ें — AEPC में 'Apparel' इसे याद करने पर स्पष्ट कर देता है।",
+        "TEXPROCIL को कपास वस्त्र (सूती यार्न, कपड़ा, तैयार वस्तुएं) से जोड़ें — 'Cotton Textiles' इसका मूल नाम है।",
+        "SRTEPC सिंथेटिक और रेयन वस्त्रों को कवर करता है — इसे अन्यत्र रखने वाले विकल्पों को हटा दें।",
+        "HEPC हस्तकरघा निर्यात को संभालता है — पुष्टि करें और विकल्प (b) को सभी चार को सही स्थान पर रखने वाला पहचानें।"
+      ],
+      "upsc_trap_explanation": "TEXPROCIL और AEPC UPSC तैयारी में सबसे अधिक भ्रमित किए जाने वाले निर्यात परिषद हैं। दोनों प्रमुख हैं, दोनों सूती संबंधित निर्यात से जुड़े हैं, और विशिष्ट कार्यक्षेत्र (मध्यवर्ती बनाम तैयार वस्त्र) को याद रखना आवश्यक है। संक्षिप्त नाम का विस्तार — Cotton Textiles (TEXPROCIL) बनाम Apparel (AEPC) — विश्वसनीय भेदभाव का साधन है।",
+      "final_explanation": "भारत के वस्त्र निर्यात ढांचे का प्रबंधन क्षेत्र-विशिष्ट प्रचार परिषदों के माध्यम से होता है, जिनका प्रत्येक का एक निश्चित उत्पाद कार्यक्षेत्र होता है।\n\nसही मिलान:\n• TEXPROCIL → सूती यार्न, कपड़े, और तैयार वस्तुएं: Cotton Textiles Export Promotion Council वस्त्र मध्यवर्ती — यार्न, ग्रे कपड़ा, संसाधित कपड़ा, और तैयार वस्तुएं — संभालता है, न कि तैयार वस्त्र।\n• AEPC → तैयार वस्त्र और परिधान: Apparel Export Promotion Council विशेष रूप से तैयार वस्त्र और परिधान निर्यात के लिए जिम्मेदार है — डाउनस्ट्रीम, उच्च-मूल्य खंड।\n• SRTEPC → सिंथेटिक और रेयन वस्त्र: Synthetic and Rayon Textiles Export Promotion Council MMF आधारित कपड़े, यार्न, और उत्पादों को कवर करता है।\n• HEPC → हस्तकरघा कपड़े और उत्पाद: Handloom Export Promotion Council हस्तकरघा बुने वस्त्रों के निर्यात को बढ़ावा देता है।\n\nविकल्प (c) में TEXPROCIL–AEPC का स्वैप मुख्य जाल है।\n\nमूल्य संवर्धन:\n• SEPC (Silk Export Promotion Council) वस्त्र क्षेत्र की पांचवीं प्रमुख निर्यात प्रचार परिषद है — जो पंचम को पूरा करती है।\n• AEPC वस्त्र निर्यातकों के लिए ROSC (राज्य और केंद्रीय करों तथा शुल्कों की छूट) योजना का प्रशासन करता है।\n• TEXPROCIL का मध्यवर्ती उत्पादों पर ध्यान भारत के कताई और बुनाई कारखानों के लिए अधिक प्रासंगिक बनाता है; AEPC अधिक सीधे वस्त्र असेंबली और फैशन खंड से जुड़ा है।"
+    }
+  }
+]

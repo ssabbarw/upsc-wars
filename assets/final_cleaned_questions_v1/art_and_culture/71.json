@@ -1,0 +1,1592 @@
+[
+  {
+    "uuid": "db845108-3a87-4775-bdb7-fed90766ed9c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Dhrupad: Origins, Structure, and Historical Evolution"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Dhrupad four-part compositional structure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly identifies the four compositional sections of a Dhrupad bandish in their traditional order?\n\n(a) Sthayi, Antara, Alap, Jod\n(b) Sthayi, Antara, Sanchari, Abhog\n(c) Raga, Tala, Bhava, Laya\n(d) Alap, Jod, Jhala, Bandish",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students familiar with Dhrupad's structure often memorise only Sthayi and Antara, mapping it onto Khyal's two-part format and assuming Sanchari and Abhog belong elsewhere.",
+      "elimination_logic": [
+        "Eliminate (a): Dhrupad has FOUR sections, not two — Sthayi and Antara alone describe Khyal's structure.",
+        "Eliminate (c): Raga, Tala, Bhava are philosophical categories, not structural sections of a Dhrupad composition.",
+        "Eliminate (d): Alap, Jod, Jhala are pre-compositional improvisation stages, not the four named sections of the bandish.",
+        "Confirm (b): The four-part Dhrupad structure is Sthayi, Antara, Sanchari, Abhog — this is the textbook formulation."
+      ],
+      "upsc_trap_explanation": "A student who has studied Khyal will recall that a Khyal bandish has two parts — Sthayi and Antara — and may incorrectly map this onto Dhrupad. The trap here is the entity-swap: Dhrupad does share Sthayi and Antara with Khyal but adds Sanchari and Abhog, making it a four-part structure. Choosing (a) reflects surface familiarity with one form projected onto another.",
+      "final_explanation": "Dhrupad is the oldest surviving form of Hindustani classical vocal music. Its bandish (fixed composition) is structured in four distinct sections: Sthayi (the foundational refrain, set in the lower octave), Antara (ascends to the upper octave), Sanchari (a wandering section that explores the middle and lower octaves for emotional depth), and Abhog (the concluding section, often containing the composer's name or signature). This four-part architecture distinguishes Dhrupad from Khyal, which uses only Sthayi and Antara.\n\n• Option (a): Incorrect — Sthayi and Antara are only two of the four sections; this describes Khyal's structure, not Dhrupad's.\n• Option (b): Correct — Sthayi, Antara, Sanchari, Abhog are the four canonical parts of a Dhrupad composition.\n• Option (c): Incorrect — Raga, Tala, Bhava are conceptual pillars of Indian music, not structural sections of a composition.\n• Option (d): Incorrect — Alap, Jod, Jhala are the three progressive stages of the pre-composition improvisation phase, not the bandish sections.\n\nValue Addition:\n• Abhog literally means 'enjoyment' and traditionally embeds the composer's signature (mudra).\n• Sanchari provides contrast and is the most improvisatory of the four fixed sections.\n• The four-part structure of Dhrupad is rooted in the Prabandha form of medieval Sanskrit musicology."
+    },
+    "hi": {
+      "display_text": "ध्रुपद बंधिश के चार रचनात्मक भागों को उनकी पारंपरिक क्रम में सही रूप से कौन-सा विकल्प दर्शाता है?\n\n(a) स्थायी, अंतरा, आलाप, जोड़\n(b) स्थायी, अंतरा, संचारी, अभोग\n(c) राग, ताल, भाव, लय\n(d) आलाप, जोड़, झाला, बंधिश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि ध्रुपद की संरचना से परिचित छात्र अक्सर केवल स्थायी और अंतरा को याद करते हैं, इसे ख्याल की दो-भागीय संरचना से जोड़ते हैं और संचारी तथा अभोग को कहीं और मान लेते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएँ: ध्रुपद में चार भाग होते हैं, दो नहीं — स्थायी और अंतरा केवल ख्याल की संरचना को दर्शाते हैं।",
+        "(c) को हटाएँ: राग, ताल, भाव दार्शनिक श्रेणियाँ हैं, ध्रुपद रचना के संरचनात्मक भाग नहीं।",
+        "(d) को हटाएँ: आलाप, जोड़, झाला पूर्व-रचना की स्वरोंचित्त अवस्था के चरण हैं, बंधिश के चार नामित भाग नहीं।",
+        "(b) की पुष्टि करें: ध्रुपद की चार-भागीय संरचना है स्थायी, अंतरा, संचारी, अभोग — यह पाठ्यपुस्तक में वर्णित रूप है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र ख्याल का अध्ययन कर चुके हैं, वे याद रखेंगे कि ख्याल बंधिश के दो भाग होते हैं — स्थायी और अंतरा — और वे इसे गलत तरीके से ध्रुपद पर लागू कर सकते हैं। यहाँ जाल है इकाई-स्थानांतरण का: ध्रुपद में स्थायी और अंतरा ख्याल के समान हैं, पर इसमें संचारी और अभोग भी होते हैं, जो इसे चार-भागीय बनाते हैं। (a) चुनना केवल एक रूप की सतही परिचितता को दूसरे पर लागू करने जैसा है।",
+      "final_explanation": "ध्रुपद हिंदुस्तानी शास्त्रीय गायन का सबसे प्राचीन जीवित रूप है। इसकी बंधिश (स्थिर रचना) चार विशिष्ट भागों में विभाजित होती है: स्थायी (नीचे के सप्तक में आधारभूत पुनरावृत्ति), अंतरा (ऊपर के सप्तक तक आरोहण), संचारी (मध्य और निचले सप्तक में भावनात्मक गहराई के लिए विचरण), और अभोग (समापन भाग, जिसमें अक्सर रचनाकार का नाम या हस्ताक्षर होता है)। यह चार-भागीय संरचना ध्रुपद को ख्याल से अलग करती है, जिसमें केवल स्थायी और अंतरा होते हैं।\n\n• विकल्प (a): गलत — स्थायी और अंतरा चार भागों में से केवल दो हैं; यह ख्याल की संरचना है, ध्रुपद की नहीं।\n• विकल्प (b): सही — स्थायी, अंतरा, संचारी, अभोग ध्रुपद रचना के चार मानक भाग हैं।\n• विकल्प (c): गलत — राग, ताल, भाव भारतीय संगीत के वैचारिक स्तंभ हैं, रचना के संरचनात्मक भाग नहीं।\n• विकल्प (d): गलत — आलाप, जोड़, झाला पूर्व-रचना की तीन प्रगतिशील अवस्थाएँ हैं, बंधिश के भाग नहीं।\n\nमूल्यवर्धन:\n• अभोग का शाब्दिक अर्थ 'आनंद' है और पारंपरिक रूप से इसमें रचनाकार का हस्ताक्षर (मुद्रा) होता है।\n• संचारी विरोधाभास प्रदान करता है और चार स्थिर भागों में सबसे अधिक स्वरोंचित्त है।\n• ध्रुपद की चार-भागीय संरचना मध्यकालीन संस्कृत संगीतशास्त्र के प्रबंध रूप में निहित है।"
+    }
+  },
+  {
+    "uuid": "a0cd7d0c-180d-4aee-a3de-cab1a0fc662a",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Alap in Dhrupad: The Nom-Tom Tradition",
+        "Khyal: Origins, Meaning, and Transition from Dhrupad"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Nom-Tom alap exclusive to Dhrupad tradition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the alap tradition in Dhrupad:\n\n1. The Nom-Tom alap in Dhrupad uses syllables derived from Sanskrit Vedic syllables such as Om, Anant, Hari, Narayan, and Tom, and is performed without tabla accompaniment.\n2. In Khyal, the alap is also performed in Nom-Tom style, reflecting Dhrupad's historical influence on Khyal's development.\n3. The Dhrupad alap progresses through three stages — Alap, Jod, and Jhala — representing increasing rhythmic density before the bandish commences.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Nom-Tom alap in Dhrupad uses syllables derived from Sanskrit Vedic syllables such as Om, Anant, Hari, Narayan, and Tom, and is performed without tabla accompaniment.",
+          "verdict": "Correct",
+          "reason": "Nom-Tom alap is uniquely Dhrupad's pre-compositional improvisation using Vedic-derived syllables; the absence of tabla is a defining feature that distinguishes it from Khyal alap."
+        },
+        {
+          "statement": "In Khyal, the alap is also performed in Nom-Tom style, reflecting Dhrupad's historical influence on Khyal's development.",
+          "verdict": "Incorrect",
+          "reason": "Khyal alap uses aakar (the open vowel sound 'Aa'), not Nom-Tom syllables; Nom-Tom is exclusive to the Dhrupad tradition."
+        },
+        {
+          "statement": "The Dhrupad alap progresses through three stages — Alap, Jod, and Jhala — representing increasing rhythmic density before the bandish commences.",
+          "verdict": "Correct",
+          "reason": "These three stages mark the journey from unmetered, free-flowing exploration (Alap) through a pulse-driven middle phase (Jod) to the fast, rhythmically intense Jhala before the composition begins."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students aware that Khyal developed from Dhrupad may assume Khyal inherited Nom-Tom alap, making all three statements appear correct.",
+      "elimination_logic": [
+        "Verify Statement 1: Nom-Tom syllables are Vedic-derived and tabla is absent in Dhrupad alap — Statement 1 is correct.",
+        "Verify Statement 2: Khyal alap uses aakar, NOT Nom-Tom — this is a known distinction; Statement 2 is incorrect.",
+        "Verify Statement 3: Alap → Jod → Jhala is the three-stage progression before the Dhrupad bandish — Statement 3 is correct.",
+        "Only Statements 1 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "The trap exploits the historical connection between Dhrupad and Khyal. Since Agra gharana of Khyal retains some Dhrupad-like features, students may incorrectly generalise that Khyal uses Nom-Tom alap. In reality, Nom-Tom is strictly a Dhrupad convention; Khyal performers use aakar (the 'Aa' vowel) in their alap. Statement 2 is designed to exploit this partial knowledge.",
+      "final_explanation": "The Dhrupad alap is one of the most philosophically rich elements of Indian classical music. Its Nom-Tom form uses syllables (Om, Anant, Hari, Narayan, Tom) that trace their lineage to Vedic chanting, giving the improvisation a meditative, almost sacred character. The entire alap unfolds without rhythmic accompaniment — no tabla marks time — which sets it apart from Khyal.\n\n• Statement 1 — Correct: Nom-Tom uses Vedic syllables and the absence of tabla is a structural feature of Dhrupad alap.\n• Statement 2 — Incorrect: Khyal alap uses aakar (the vowel 'Aa'), not Nom-Tom syllables. This distinction is musicologically significant and frequently tested.\n• Statement 3 — Correct: The three-stage progression Alap (free rhythm) → Jod (pulse introduced) → Jhala (fast rhythmic density) is canonical to Dhrupad before the bandish.\n\nValue Addition:\n• Jod introduces a steady pulse through a drone-like rhythmic feel without a fixed tala cycle.\n• Jhala resembles fast strumming in sitar — its vocal equivalent in Dhrupad is intense and percussive.\n• The Agra gharana of Khyal is exceptional in occasionally incorporating nom-tom flavour, but this is not standard Khyal practice."
+    },
+    "hi": {
+      "display_text": "Dhrupad में alap परंपरा के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Dhrupad में Nom-Tom alap संस्कृत वैदिक अक्षरों जैसे ओम, अनंत, हरि, नारायण, और टॉम से व्युत्पन्न अक्षरों का उपयोग करता है, और इसे तबला की संगति के बिना प्रस्तुत किया जाता है।\n2. Khyal में भी alap Nom-Tom शैली में प्रस्तुत किया जाता है, जो Khyal के विकास में Dhrupad के ऐतिहासिक प्रभाव को दर्शाता है।\n3. Dhrupad alap तीन चरणों — Alap, Jod, और Jhala — से होकर गुजरता है, जो bandish शुरू होने से पहले बढ़ती लयात्मक घनत्व को दर्शाते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Dhrupad में Nom-Tom alap संस्कृत वैदिक अक्षरों जैसे ओम, अनंत, हरि, नारायण, और टॉम से व्युत्पन्न अक्षरों का उपयोग करता है, और इसे तबला की संगति के बिना प्रस्तुत किया जाता है।",
+          "verdict": "सही है",
+          "reason": "Nom-Tom alap विशिष्ट रूप से Dhrupad की पूर्व-रचना आधारित त्वरित प्रस्तुति है जो वैदिक व्युत्पन्न अक्षरों का उपयोग करती है; तबला की अनुपस्थिति इसे Khyal alap से अलग करती है।"
+        },
+        {
+          "statement": "Khyal में भी alap Nom-Tom शैली में प्रस्तुत किया जाता है, जो Khyal के विकास में Dhrupad के ऐतिहासिक प्रभाव को दर्शाता है।",
+          "verdict": "गलत है",
+          "reason": "Khyal alap में aakar (खुला स्वर 'आ') का उपयोग होता है, न कि Nom-Tom अक्षरों का; Nom-Tom केवल Dhrupad परंपरा तक सीमित है।"
+        },
+        {
+          "statement": "Dhrupad alap तीन चरणों — Alap, Jod, और Jhala — से होकर गुजरता है, जो bandish शुरू होने से पहले बढ़ती लयात्मक घनत्व को दर्शाते हैं।",
+          "verdict": "सही है",
+          "reason": "ये तीन चरण बिना ताल के स्वतंत्र प्रवाह (Alap) से लेकर ताल आधारित मध्य चरण (Jod) और तेज़, लयात्मक रूप से तीव्र Jhala तक की यात्रा को दर्शाते हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि Khyal का विकास Dhrupad से हुआ है, वे सोच सकते हैं कि Khyal ने Nom-Tom alap अपनाया है, जिससे तीनों कथन सही लगते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: Nom-Tom अक्षर वैदिक व्युत्पन्न हैं और Dhrupad alap में तबला नहीं होता — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: Khyal alap में Nom-Tom नहीं, बल्कि aakar का उपयोग होता है — यह एक ज्ञात भेद है; कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: Alap → Jod → Jhala Dhrupad bandish से पहले तीन चरण हैं — कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह जाल Dhrupad और Khyal के ऐतिहासिक संबंध का उपयोग करता है। चूंकि Khyal के आगरा घराने में कुछ Dhrupad जैसे तत्व होते हैं, छात्र गलत रूप से मान सकते हैं कि Khyal में Nom-Tom alap होता है। वास्तविकता में Nom-Tom केवल Dhrupad की परंपरा है; Khyal कलाकार अपने alap में aakar (स्वर 'आ') का उपयोग करते हैं। कथन 2 इस आंशिक ज्ञान का शोषण करता है।",
+      "final_explanation": "Dhrupad alap भारतीय शास्त्रीय संगीत के सबसे दार्शनिक रूप से समृद्ध तत्वों में से एक है। इसका Nom-Tom रूप ऐसे अक्षरों (ओम, अनंत, हरि, नारायण, टॉम) का उपयोग करता है जो वैदिक मंत्रोच्चारण से उत्पन्न हुए हैं, जिससे यह त्वरित प्रस्तुति ध्यानात्मक और लगभग पवित्र स्वरूप की होती है। पूरा alap बिना ताल के चलता है — कोई तबला समय नहीं बताता — जो इसे Khyal से अलग करता है।\n\n• कथन 1 — सही: Nom-Tom वैदिक अक्षरों का उपयोग करता है और तबला की अनुपस्थिति Dhrupad alap की संरचनात्मक विशेषता है।\n• कथन 2 — गलत: Khyal alap में Nom-Tom अक्षर नहीं, बल्कि aakar (स्वर 'आ') का उपयोग होता है। यह संगीतशास्त्रीय दृष्टि से महत्वपूर्ण भेद है और अक्सर परीक्षा में पूछा जाता है।\n• कथन 3 — सही: तीन चरण Alap (मुक्त लय) → Jod (ताल की शुरुआत) → Jhala (तेज लयात्मक घनत्व) Dhrupad bandish से पहले पारंपरिक हैं।\n\nमूल्यवर्धन:\n• Jod ताल चक्र के बिना एक स्थिर ताल की अनुभूति देता है।\n• Jhala सितार की तेज़ तान की तरह है — Dhrupad में इसका स्वरूप तीव्र और तालबद्ध होता है।\n• Khyal के आगरा घराने में कभी-कभी Nom-Tom का स्वाद मिलता है, लेकिन यह सामान्य Khyal अभ्यास नहीं है।"
+    }
+  },
+  {
+    "uuid": "300cbea0-9211-437b-808e-65d290433f9a",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Thumri: Characteristics, Origins, and Stylistic Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Thumri as semi-classical form allowing raga liberties",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A vocalist performing at a classical music festival concludes her recital with a composition expressing the longing of Radha for Krishna. During the performance, she deliberately uses notes from two adjacent ragas within the same rendition to heighten the emotional colour of the lyric, and the audience — including senior musicologists — appreciates this as an authentic practice. Which of the following principles best explains why this is considered acceptable in the form she is performing?\n\n(a) In Thumri, emotional expression (bhav) may override strict raga adherence, permitting raga liberties that are not allowed in Dhrupad or Khyal.\n(b) Classical vocal forms permit raga mixing when the performer is a recognised senior artist with established credentials.\n(c) The Ragam-Tanam-Pallavi framework specifically allows movement between related ragas for emotional elaboration.\n(d) Layakari — the rhythmic interplay with the tala cycle — allows a performer to introduce notes from adjacent ragas at structurally appropriate moments.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — A student who knows that Thumri uses standard ragas might assume strict raga rules apply, especially since the performance is in a classical music context.",
+      "elimination_logic": [
+        "Identify the critical musical feature in the scenario: mixing of notes from two ragas in a single composition to heighten emotional impact.",
+        "Eliminate (b): Strict raga adherence is a feature of Dhrupad and Khyal — this does not describe Thumri's philosophy.",
+        "Eliminate (c): Ragam-Tanam-Pallavi is a Carnatic form — entirely outside the Hindustani framework.",
+        "Eliminate (d): Layakari (rhythmic play with tala cycles) is a technique, not a philosophical principle justifying raga mixing.",
+        "Confirm (a): Thumri allows 'raga liberties' — mixing notes from related ragas for emotional expression (bhav) — this is the defining philosophical distinction of Thumri from Dhrupad and Khyal."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap works by setting up a classical concert scenario where Thumri is performed. Students familiar with the rule that 'classical music follows strict raga grammar' over-extend this principle to Thumri, which is semi-classical. Thumri's defining feature is precisely that bhav (emotional expression) may override strict raga adherence — an exception that a partially prepared student will not apply.",
+      "final_explanation": "Thumri occupies a unique position in the Hindustani music spectrum as a semi-classical form. Unlike Dhrupad or Khyal, which demand strict adherence to raga grammar (defined aroh, avaroh, vadi, samvadi, and prescribed notes), Thumri privileges bhav — the emotional or devotional sentiment of the text — above technical raga correctness. This means a performer may move between notes of related ragas within a single rendering to heighten the emotional arc of the composition.\n\nThe scenario describes a vocalist deliberately borrowing notes from an adjacent raga to intensify the Shringar rasa of the lyric. This is entirely consistent with Thumri's philosophical framework.\n\n• Option (a): Correct — Thumri permits 'raga liberties' where emotional expression (bhav) may override strict raga grammar; raga mixing is an accepted convention.\n• Option (b): Incorrect — Strict raga adherence is the norm in Khyal and Dhrupad, not Thumri.\n• Option (c): Incorrect — Ragam-Tanam-Pallavi belongs to the Carnatic tradition, not Hindustani.\n• Option (d): Incorrect — Layakari refers to rhythmic complexity within a tala cycle, unrelated to raga mixing.\n\nValue Addition:\n• Thumri ragas are predominantly from the Kafi thaat: Kafi, Khamaj, Bhairavi, Pilu, Tilang.\n• Shringar rasa (romantic/devotional love) dominates Thumri, often through Radha-Krishna imagery.\n• The term 'raga liberties' (sometimes called 'raga mischief') is discussed in musicology as Thumri's most distinctive feature."
+    },
+    "hi": {
+      "display_text": "एक शास्त्रीय संगीत महोत्सव में प्रस्तुति देते हुए एक गायक अपनी प्रस्तुति को राधा की कृष्ण के प्रति तड़प व्यक्त करने वाली रचना से समाप्त करती है। प्रदर्शन के दौरान, वह जानबूझकर एक ही प्रस्तुति में दो समीपवर्ती रागों के स्वरों का उपयोग करती है ताकि गीत की भावात्मक रंगत बढ़ाई जा सके, और दर्शक — जिनमें वरिष्ठ संगीतशास्त्री भी शामिल हैं — इसे एक प्रामाणिक अभ्यास के रूप में स्वीकार करते हैं। निम्नलिखित में से कौन-सा सिद्धांत इस बात को सबसे बेहतर तरीके से समझाता है कि वह जिस रूप में प्रस्तुत कर रही है, उसमें यह स्वीकार्य क्यों माना जाता है?\n\n(a) ठुमरी में भाव (भावना) कड़े राग पालन से ऊपर हो सकता है, जिससे राग स्वतंत्रता की अनुमति मिलती है जो ध्रुपद या ख्याल में स्वीकार्य नहीं है।\n(b) शास्त्रीय गायन रूपों में तब राग मिश्रण की अनुमति होती है जब कलाकार एक मान्यता प्राप्त वरिष्ठ कलाकार हो जिसके प्रमाण स्थापित हों।\n(c) रागम-तानम-पल्लवी रूपरेखा विशेष रूप से भावात्मक विस्तार के लिए संबंधित रागों के बीच स्थानांतरण की अनुमति देती है।\n(d) लयकारी — ताल चक्र के साथ तालमेल — कलाकार को संरचनात्मक रूप से उपयुक्त क्षणों पर समीपवर्ती रागों के स्वर प्रस्तुत करने की अनुमति देती है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — एक छात्र जो जानता है कि ठुमरी में मानक रागों का उपयोग होता है, वह मान सकता है कि कड़ी राग नियम लागू होते हैं, विशेष रूप से क्योंकि प्रदर्शन शास्त्रीय संगीत संदर्भ में है।",
+      "elimination_logic": [
+        "परिदृश्य में महत्वपूर्ण संगीत विशेषता की पहचान करें: एक ही रचना में दो रागों के स्वरों का मिश्रण भावात्मक प्रभाव बढ़ाने के लिए।",
+        "(b) को हटाएं: कड़ा राग पालन ध्रुपद और ख्याल की विशेषता है — यह ठुमरी के दर्शन को वर्णित नहीं करता।",
+        "(c) को हटाएं: रागम-तानम-पल्लवी कर्नाटक संगीत की एक विधा है — जो पूरी तरह से हिंदुस्तानी संगीत के दायरे से बाहर है।",
+        "(d) को हटाएं: लयकारी (ताल चक्रों के साथ तालमेल) एक तकनीक है, न कि राग मिश्रण को न्यायसंगत ठहराने वाला दार्शनिक सिद्धांत।",
+        "(a) की पुष्टि करें: ठुमरी 'राग स्वतंत्रता' की अनुमति देता है — भाव (भावना) के लिए संबंधित रागों के स्वरों का मिश्रण — यह ठुमरी को ध्रुपद और ख्याल से अलग करने वाला दार्शनिक भेद है।"
+      ],
+      "upsc_trap_explanation": "स्कोप-एक्सटेंशन ट्रैप इस प्रकार काम करता है कि एक शास्त्रीय संगीत समारोह की स्थिति बनाकर जहाँ ठुमरी प्रस्तुत की जाती है। जो छात्र जानते हैं कि 'शास्त्रीय संगीत कड़े राग व्याकरण का पालन करता है' वे इस सिद्धांत को ठुमरी पर भी लागू कर देते हैं, जबकि ठुमरी अर्ध-शास्त्रीय है। ठुमरी की विशेषता यह है कि भाव (भावना) कड़े राग पालन से ऊपर हो सकता है — यह एक अपवाद है जिसे आंशिक रूप से तैयार छात्र लागू नहीं करते।",
+      "final_explanation": "ठुमरी हिंदुस्तानी संगीत के स्पेक्ट्रम में एक विशिष्ट स्थान रखती है, जो अर्ध-शास्त्रीय रूप है। ध्रुपद या ख्याल के विपरीत, जो कड़े राग व्याकरण (परिभाषित आरोह, अवरोह, वादी, संवादी, और निर्धारित स्वर) का पालन करते हैं, ठुमरी में भाव — अर्थात् गीत की भावनात्मक या भक्तिपूर्ण अभिव्यक्ति — तकनीकी राग शुद्धता से ऊपर है। इसका अर्थ है कि कलाकार एक ही प्रस्तुति में संबंधित रागों के स्वरों के बीच स्थानांतरित हो सकता है ताकि रचना की भावात्मक गहराई बढ़ाई जा सके।\n\nपरिदृश्य में एक गायक जानबूझकर एक समीपवर्ती राग के स्वरों का उपयोग करता है ताकि गीत की श्रृंगार रस की तीव्रता बढ़ाई जा सके। यह पूरी तरह से ठुमरी के दार्शनिक ढांचे के अनुरूप है।\n\n• विकल्प (a): सही — ठुमरी 'राग स्वतंत्रता' की अनुमति देता है जहाँ भाव (भावना) कड़े राग व्याकरण से ऊपर हो सकता है; राग मिश्रण एक स्वीकृत परंपरा है।\n• विकल्प (b): गलत — कड़ा राग पालन ख्याल और ध्रुपद में सामान्य है, ठुमरी में नहीं।\n• विकल्प (c): गलत — रागम-तानम-पल्लवी कर्नाटक संगीत की परंपरा से संबंधित है, हिंदुस्तानी से नहीं।\n• विकल्प (d): गलत — लयकारी ताल चक्र के भीतर ताल की जटिलता को दर्शाता है, राग मिश्रण से संबंधित नहीं है।\n\nमूल्य संवर्धन:\n• ठुमरी के राग मुख्यतः काफ़ी ठाट से हैं: काफ़ी, खमाज, भैरवी, पिलू, तिलंग।\n• श्रृंगार रस (रोमांटिक/भक्तिपूर्ण प्रेम) ठुमरी में प्रमुख है, अक्सर राधा-कृष्ण की छवियों के माध्यम से।\n• 'राग स्वतंत्रता' (जिसे कभी-कभी 'राग शरारत' भी कहा जाता है) संगीतशास्त्र में ठुमरी की सबसे विशिष्ट विशेषता के रूप में चर्चा की जाती है।"
+    }
+  },
+  {
+    "uuid": "38bd8c50-59b3-46bd-98ed-9f2b2b21f19e",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Amir Khusrau's Contributions to Indian Music"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Amir Khusrau — disputed vs. established contributions",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following claims about Amir Khusrau's contributions to Indian music:",
+        "columns": [
+          "#",
+          "Claim"
+        ],
+        "rows": [
+          [
+            "1",
+            "Khusrau is credited with the early development of Khyal and the creation of Tarana as a vocal form."
+          ],
+          [
+            "2",
+            "Khusrau introduced the ghazal poetic form into Indian music by integrating Persian poetic traditions."
+          ],
+          [
+            "3",
+            "Khusrau's invention of the tabla is accepted as an established historical fact by mainstream musicologists."
+          ],
+          [
+            "4",
+            "Khusrau created ragas by blending Persian and Indian scales, including Yaman Kalyan and Zeelaf."
+          ]
+        ],
+        "footer_text": "How many of the above claims are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Amir Khusrau is credited with early development of Khyal and the creation of Tarana as a vocal form.",
+          "verdict": "Correct",
+          "reason": "Both Khyal's early conceptual development and Tarana's invention are attributed to Khusrau in musicological literature."
+        },
+        {
+          "statement": "Khusrau introduced the ghazal poetic form into Indian music by integrating Persian poetic traditions.",
+          "verdict": "Correct",
+          "reason": "Khusrau is recognised as a pioneering figure in integrating Persian poetic forms, including the ghazal, into the Indian musical tradition."
+        },
+        {
+          "statement": "Khusrau's invention of the tabla is accepted as an established historical fact by mainstream musicologists.",
+          "verdict": "Incorrect",
+          "reason": "Khusrau's association with the tabla is disputed — most musicologists treat this as a popular attribution, not an established historical fact; the tabla's origins are considered contested."
+        },
+        {
+          "statement": "Khusrau created ragas by blending Persian and Indian scales, including Yaman Kalyan and Zeelaf.",
+          "verdict": "Correct",
+          "reason": "Ragas like Yaman Kalyan, Zeelaf, and Sazgiri are attributed to Khusrau's synthesis of Persian maqam scales with Indian raga frameworks."
+        }
+      ],
+      "strong_distractor": "d — Students who have read that Khusrau 'invented' tabla and sitar without encountering the qualifier 'disputed' will count all four statements as correct.",
+      "elimination_logic": [
+        "Pair 1 (Khyal + Tarana): Both are attributed to Khusrau in standard references — correct.",
+        "Pair 2 (ghazal integration): Accepted attribution — correct.",
+        "Pair 3 (tabla invention as established fact): This is specifically disputed — the key word 'accepted as established historical fact' makes this incorrect.",
+        "Pair 4 (Yaman Kalyan, Zeelaf): Standard attribution — correct.",
+        "Three pairs correct, one incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The trap exploits the widespread but imprecise popular claim that Khusrau 'invented' the tabla and sitar. Many textbooks and general reference sources repeat these claims without qualification, conditioning students to accept them as fact. The question inserts the qualifier 'accepted as an established historical fact by mainstream musicologists' — which is false, since the tabla's invention by Khusrau is contested. A student who has not read past the popular attribution will incorrectly count all four as correct.",
+      "final_explanation": "Amir Khusrau (1253–1325) was a polymath poet, musician, and scholar in the Delhi Sultanate period whose contributions to Indian music are celebrated but must be distinguished between established attributions and disputed claims.\n\n• Pair 1 — Correct: Khyal and Tarana are both attributed to Khusrau in musicological literature.\n• Pair 2 — Correct: Khusrau integrated Persian ghazal poetic forms into Indian musical practice.\n• Pair 3 — Incorrect: The claim that Khusrau invented the tabla is NOT accepted as an established historical fact — it is a popular but disputed attribution. Most musicologists regard the tabla's origins as uncertain.\n• Pair 4 — Correct: Ragas such as Yaman Kalyan, Zeelaf, and Sazgiri are attributed to Khusrau's fusion of Persian and Indian scales.\n\nThree of the four pairs are correct.\n\nValue Addition:\n• Khusrau's invention of the sitar is similarly disputed — many scholars trace the sitar to the rabab family rather than to a Khusrau invention.\n• Tarana uses syllables of Persian/Arabic origin (yalali, tadeem) and tabla bols as vocal material.\n• Khusrau wrote in multiple languages: Persian, Hindi (Braj Bhasha), and Khari Boli."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "अमीर खुसरो के भारतीय संगीत में योगदानों के संबंध में निम्नलिखित दावों पर विचार करें:",
+        "columns": [
+          "#",
+          "दावा"
+        ],
+        "rows": [
+          [
+            "1",
+            "खुसरो को ख्याल के प्रारंभिक विकास और ताराना के स्वरूप के रूप में सृजन का श्रेय दिया जाता है।"
+          ],
+          [
+            "2",
+            "खुसरो ने फारसी काव्य परंपराओं को समाहित करके भारतीय संगीत में ग़ज़ल काव्य रूप को प्रस्तुत किया।"
+          ],
+          [
+            "3",
+            "खुसरो का तबला का आविष्कार मुख्यधारा के संगीतशास्त्रियों द्वारा एक स्थापित ऐतिहासिक तथ्य के रूप में स्वीकार किया जाता है।"
+          ],
+          [
+            "4",
+            "खुसरो ने फारसी और भारतीय स्वरमालाओं को मिलाकर राग बनाए, जिनमें यमन कल्याण और ज़ीलाफ़ शामिल हैं।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने दावे सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "अमीर खुसरो को ख्याल के प्रारंभिक विकास और ताराना के स्वरूप के रूप में सृजन का श्रेय दिया जाता है।",
+          "verdict": "सही",
+          "reason": "संगीतशास्त्रीय साहित्य में ख्याल के प्रारंभिक वैचारिक विकास और ताराना के आविष्कार दोनों को खुसरो से जोड़ा गया है।"
+        },
+        {
+          "statement": "खुसरो ने फारसी काव्य परंपराओं को समाहित करके भारतीय संगीत में ग़ज़ल काव्य रूप को प्रस्तुत किया।",
+          "verdict": "सही",
+          "reason": "खुसरो को फारसी काव्य रूपों, जिनमें ग़ज़ल शामिल है, को भारतीय संगीत परंपरा में एकीकृत करने वाला अग्रणी व्यक्ति माना जाता है।"
+        },
+        {
+          "statement": "खुसरो का तबला का आविष्कार मुख्यधारा के संगीतशास्त्रियों द्वारा एक स्थापित ऐतिहासिक तथ्य के रूप में स्वीकार किया जाता है।",
+          "verdict": "गलत",
+          "reason": "खुसरो का तबला से संबंध विवादित है — अधिकांश संगीतशास्त्री इसे एक लोकप्रिय मान्यता मानते हैं, न कि स्थापित ऐतिहासिक तथ्य; तबले की उत्पत्ति विवादित मानी जाती है।"
+        },
+        {
+          "statement": "खुसरो ने फारसी और भारतीय स्वरमालाओं को मिलाकर राग बनाए, जिनमें यमन कल्याण और ज़ीलाफ़ शामिल हैं।",
+          "verdict": "सही",
+          "reason": "यमन कल्याण, ज़ीलाफ़, और साज़गिरी जैसे राग खुसरो के फारसी मक़ाम स्वरमालाओं और भारतीय राग संरचनाओं के संश्लेषण को दिया जाता है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र पढ़ चुके हैं कि खुसरो ने तबला और सितार 'आविष्कार' किया बिना 'विवादित' शब्द के, वे सभी चार कथनों को सही मानेंगे।",
+      "elimination_logic": [
+        "जोड़ी 1 (ख्याल + ताराना): दोनों को मानक संदर्भों में खुसरो से जोड़ा गया है — सही।",
+        "जोड़ी 2 (ग़ज़ल समाकलन): स्वीकार्य मान्यता — सही।",
+        "जोड़ी 3 (तबला आविष्कार को स्थापित तथ्य के रूप में): यह विशेष रूप से विवादित है — 'मुख्यधारा के संगीतशास्त्रियों द्वारा स्थापित ऐतिहासिक तथ्य के रूप में स्वीकार' शब्द इसे गलत बनाता है।",
+        "जोड़ी 4 (यमन कल्याण, ज़ीलाफ़): मानक मान्यता — सही।",
+        "तीन जोड़ी सही, एक गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह जाल व्यापक लेकिन अस्पष्ट लोकप्रिय दावे का उपयोग करता है कि खुसरो ने तबला और सितार 'आविष्कार' किया। कई पाठ्यपुस्तकें और सामान्य संदर्भ स्रोत बिना शर्त इन दावों को दोहराते हैं, जिससे छात्र इन्हें तथ्य मान लेते हैं। प्रश्न में 'मुख्यधारा के संगीतशास्त्रियों द्वारा स्थापित ऐतिहासिक तथ्य के रूप में स्वीकार' शब्द जोड़ा गया है — जो गलत है, क्योंकि तबले का आविष्कार खुसरो द्वारा विवादित है। जो छात्र केवल लोकप्रिय मान्यता पढ़े हैं, वे सभी चार को सही मानेंगे।",
+      "final_explanation": "अमीर खुसरो (1253–1325) दिल्ली सल्तनत काल के एक बहुआयामी कवि, संगीतकार और विद्वान थे जिनके भारतीय संगीत में योगदानों का जश्न मनाया जाता है, लेकिन स्थापित मान्यताओं और विवादित दावों के बीच अंतर करना आवश्यक है।\n\n• जोड़ी 1 — सही: ख्याल और ताराना दोनों को संगीतशास्त्रीय साहित्य में खुसरो से जोड़ा गया है।\n• जोड़ी 2 — सही: खुसरो ने फारसी ग़ज़ल काव्य रूपों को भारतीय संगीत अभ्यास में समाहित किया।\n• जोड़ी 3 — गलत: खुसरो द्वारा तबला के आविष्कार का दावा स्थापित ऐतिहासिक तथ्य के रूप में स्वीकार नहीं किया जाता — यह एक लोकप्रिय लेकिन विवादित मान्यता है। अधिकांश संगीतशास्त्री तबले की उत्पत्ति को अनिश्चित मानते हैं।\n• जोड़ी 4 — सही: यमन कल्याण, ज़ीलाफ़, और साज़गिरी जैसे राग खुसरो के फारसी और भारतीय स्वरमालाओं के संश्लेषण को दिया जाता है।\n\nचार में से तीन जोड़ी सही हैं।\n\nमूल्य संवर्धन:\n• खुसरो द्वारा सितार के आविष्कार को भी विवादित माना जाता है — कई विद्वान सितार को रबाब परिवार से जोड़ते हैं, न कि खुसरो के आविष्कार से।\n• ताराना में फारसी/अरबी मूल के अक्षर (यलाली, तदीम) और तबला बोलों का उपयोग होता है।\n• खुसरो ने कई भाषाओं में लिखा: फारसी, हिंदी (ब्रज भाषा), और खड़ी बोली।"
+    }
+  },
+  {
+    "uuid": "97ab21c9-4f8e-48be-9a61-d59b89297deb",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Wajid Ali Shah and the Lucknow Cultural Renaissance",
+        "Thumri: Characteristics, Origins, and Stylistic Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Wajid Ali Shah — Thumri and Kathak patron",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to Nawab Wajid Ali Shah is correctly matched?\n\n(a) Nawab Wajid Ali Shah — Patron who elevated Dhrupad to its classical peak in the Awadh court\n(b) Nawab Wajid Ali Shah — Last Nawab of Awadh who composed Thumri under the pen name 'Akhtar'\n(c) Nawab Wajid Ali Shah — Composed devotional poetry under the pen name 'Raunaq' and patronised Qawwali\n(d) Nawab Wajid Ali Shah — Renowned for patronising Bharatanatyam as a court performance tradition in Lucknow",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — A student who knows Wajid Ali Shah was the last Nawab and a great patron of the arts may not recall his specific associations and may accept his connection with Bharatanatyam based on vague recall of 'Indian classical dance'.",
+      "elimination_logic": [
+        "Eliminate (a): Wajid Ali Shah was not a patron of Dhrupad — Dhrupad flourished under Mughal court patronage earlier; Wajid Ali Shah is associated with Thumri.",
+        "Eliminate (c): Wajid Ali Shah composed under the pen name 'Akhtar', not 'Raunaq' — pen name swap is the trap.",
+        "Eliminate (d): Bharatanatyam is a South Indian dance form; Wajid Ali Shah patronised Kathak, a North Indian dance form.",
+        "Confirm (b): Wajid Ali Shah was the last Nawab of Awadh (r. 1847–1856) and composed under the pen name 'Akhtar' — both facts are correct."
+      ],
+      "upsc_trap_explanation": "The entity-swap in option (d) replaces Kathak with Bharatanatyam. Both are classical Indian dance forms, but Kathak is the North Indian form that flourished under Awadh's Nawabs. Bharatanatyam is a Carnatic-rooted South Indian form with no connection to Wajid Ali Shah. A student who knows he was 'a patron of classical dance' without the specific form will accept this distractor.",
+      "final_explanation": "Wajid Ali Shah (r. 1847–1856) was the last Nawab of Awadh and one of India's most culturally prolific rulers despite his political weakness.\n\n• Option (a): Incorrectly matched — Wajid Ali Shah is associated with Thumri, not Dhrupad. Dhrupad was patronised primarily by Mughal emperors and earlier courts.\n• Option (b): Correctly matched — Wajid Ali Shah was indeed the last Nawab of Awadh and composed Thumri and other light classical forms under the pen name 'Akhtar'.\n• Option (c): Incorrectly matched — 'Raunaq' is a fabricated pen name. His actual pen name was 'Akhtar'.\n• Option (d): Incorrectly matched — Wajid Ali Shah patronised Kathak (North Indian classical dance), not Bharatanatyam, which belongs to the South Indian Carnatic tradition.\n\nValue Addition:\n• The Lucknow gharana of Kathak developed its emphasis on grace, expressiveness, and thumri accompaniment under Wajid Ali Shah's court.\n• Wajid Ali Shah was deposed by the British in 1856 — the annexation of Awadh was a major trigger of the 1857 uprising.\n• Dadra and Chaiti are other light classical forms associated with the Lucknow cultural tradition he patronised."
+    },
+    "hi": {
+      "display_text": "नवाब वाजिद अली शाह से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) नवाब वाजिद अली शाह — अवध के दरबार में ध्रुपद को उसके शास्त्रीय शिखर तक पहुँचाने वाले संरक्षक\n(b) नवाब वाजिद अली शाह — अवध के अंतिम नवाब जिन्होंने 'अख्तर' छद्म नाम से ठुमरी की रचना की\n(c) नवाब वाजिद अली शाह — 'रौनक' छद्म नाम से भक्ति काव्य रचे और क़व्वाली के संरक्षक\n(d) नवाब वाजिद अली शाह — लखनऊ में दरबारी प्रदर्शन परंपरा के रूप में भरतनाट्यम के संरक्षक के रूप में प्रसिद्ध",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — जो छात्र जानते हैं कि वाजिद अली शाह अंतिम नवाब थे और कला के महान संरक्षक थे, वे उनकी विशिष्ट संबद्धताओं को याद नहीं रख सकते और 'भारतीय शास्त्रीय नृत्य' की अस्पष्ट स्मृति के आधार पर उनके भरतनाट्यम से संबंध को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: वाजिद अली शाह ध्रुपद के संरक्षक नहीं थे — ध्रुपद पहले मुगल दरबार के संरक्षण में फला-फूला; वाजिद अली शाह का संबंध ठुमरी से है।",
+        "(c) को हटाएं: वाजिद अली शाह ने 'रौनक' छद्म नाम से नहीं, बल्कि 'अख्तर' नाम से रचना की — छद्म नाम का स्वैप ही जाल है।",
+        "(d) को हटाएं: भरतनाट्यम दक्षिण भारतीय नृत्य है; वाजिद अली शाह ने कथक, जो उत्तर भारतीय नृत्य है, का संरक्षण किया।",
+        "(b) की पुष्टि करें: वाजिद अली शाह अवध के अंतिम नवाब थे (शासन 1847–1856) और 'अख्तर' छद्म नाम से रचना करते थे — दोनों तथ्य सही हैं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) में इकाई-स्वैप ने कथक को भरतनाट्यम से बदल दिया है। दोनों भारतीय शास्त्रीय नृत्य हैं, लेकिन कथक अवध के नवाबों के संरक्षण में विकसित हुआ उत्तर भारतीय रूप है। भरतनाट्यम कर्नाटक मूल का दक्षिण भारतीय नृत्य है जिसका वाजिद अली शाह से कोई संबंध नहीं है। जो छात्र जानते हैं कि वे 'शास्त्रीय नृत्य के संरक्षक' थे पर विशिष्ट नृत्य रूप नहीं जानते, वे इस भ्रम को स्वीकार कर सकते हैं।",
+      "final_explanation": "वाजिद अली शाह (शासन 1847–1856) अवध के अंतिम नवाब थे और राजनीतिक कमजोरी के बावजूद भारत के सबसे सांस्कृतिक रूप से समृद्ध शासकों में से एक थे।\n\n• विकल्प (a): गलत मेल — वाजिद अली शाह का संबंध ठुमरी से है, ध्रुपद से नहीं। ध्रुपद मुख्यतः मुगल सम्राटों और पूर्व के दरबारों द्वारा संरक्षित था।\n• विकल्प (b): सही मेल — वाजिद अली शाह वास्तव में अवध के अंतिम नवाब थे और 'अख्तर' छद्म नाम से ठुमरी और अन्य हल्के शास्त्रीय रूपों की रचना की।\n• विकल्प (c): गलत मेल — 'रौनक' एक काल्पनिक छद्म नाम है। उनका वास्तविक छद्म नाम 'अख्तर' था।\n• विकल्प (d): गलत मेल — वाजिद अली शाह ने कथक (उत्तर भारतीय शास्त्रीय नृत्य) का संरक्षण किया, न कि भरतनाट्यम, जो दक्षिण भारतीय कर्नाटिक परंपरा का हिस्सा है।\n\nमूल्य संवर्धन:\n• कथक का लखनऊ घराना वाजिद अली शाह के दरबार के तहत अपनी गरिमा, अभिव्यक्तिशीलता और ठुमरी संगत पर जोर देकर विकसित हुआ।\n• वाजिद अली शाह को 1856 में ब्रिटिशों ने पदच्युत किया — अवध का विलय 1857 के विद्रोह का एक प्रमुख कारण था।\n• दादरा और चैती अन्य हल्के शास्त्रीय रूप हैं जो लखनऊ की सांस्कृतिक परंपरा से जुड़े हैं, जिनका उन्होंने संरक्षण किया।"
+    }
+  },
+  {
+    "uuid": "3cbaeb84-fb87-4763-bca9-d242da11bcee",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Gharana System: Concept, Transmission, and Guru-Shishya Parampara",
+        "Dhrupad Gharanas: Dagar, Darbhanga, Betiya, Talwandi"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Gharana vs. Bani distinction in Dhrupad",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Gharana system in Indian classical music:\n\n1. In the context of Dhrupad, a 'Bani' refers to a stylistic school defined by distinct vocalisation characteristics, while a 'Gharana' refers to a hereditary lineage of musical transmission — the two concepts are distinct.\n2. The Gharana system of music transmission is a feature common to both Hindustani and Carnatic classical traditions, with Carnatic music also using the term 'Gharana' for its hereditary lineage schools.\n3. The Darbhanga Gharana of Dhrupad is associated with the Mithila region and received patronage from the Maithili cultural tradition.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the context of Dhrupad, a 'Bani' refers to a stylistic school defined by distinct vocalisation characteristics, while a 'Gharana' refers to a hereditary lineage of musical transmission — the two concepts are distinct.",
+          "verdict": "Correct",
+          "reason": "Bani (stylistic school) and Gharana (lineage) are different organisational frameworks: the four Banis are Gauhar, Khandar, Dagur, and Nauhar; Gharanas are lineage groups like Dagar, Darbhanga, and Betiya."
+        },
+        {
+          "statement": "The Gharana system of music transmission is a feature common to both Hindustani and Carnatic classical traditions, with Carnatic music also using the term 'Gharana' for its hereditary lineage schools.",
+          "verdict": "Incorrect",
+          "reason": "Carnatic music uses the term 'Sampradaya' (not Gharana) for its tradition-based lineage schools; the Gharana system as a named institution is specific to Hindustani music."
+        },
+        {
+          "statement": "The Darbhanga Gharana of Dhrupad is associated with the Mithila region and received patronage from the Maithili cultural tradition.",
+          "verdict": "Correct",
+          "reason": "The Darbhanga gharana historically flourished in the Mithila region (present-day Bihar) under Maithili patronage, distinguishing it geographically and culturally from the Dagar gharana."
+        }
+      ],
+      "strong_distractor": "d — Students may reject Statement 3 as too specific and regional, assuming all major Dhrupad gharanas are based in Rajasthan or Agra.",
+      "elimination_logic": [
+        "Verify Statement 1: Bani = stylistic school (4 Banis); Gharana = lineage school — distinction is established in musicology; Statement 1 is correct.",
+        "Verify Statement 2: Carnatic music uses 'Sampradaya' not 'Gharana' — Statement 2 is incorrect.",
+        "Verify Statement 3: Darbhanga gharana and Mithila-Maithili association is a documented fact — Statement 3 is correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect — select option (a)."
+      ],
+      "upsc_trap_explanation": "The conflation trap in Statement 2 merges two distinct institutional frameworks — Gharana (Hindustani) and Sampradaya (Carnatic) — by falsely claiming Carnatic music also uses the term 'Gharana'. Students who know both traditions have lineage-based schools of transmission may accept Statement 2 without noticing the specific terminology difference.",
+      "final_explanation": "The organisational frameworks of Indian classical music transmission are form-specific and terminology-specific.\n\n• Statement 1 — Correct: Bani and Gharana are distinct. The four Dhrupad Banis (Gauhar, Khandar, Dagur/Dagar, Nauhar) are stylistic schools; Gharanas (Dagar, Darbhanga, Betiya, Talwandi) are hereditary lineages. A gharana may be associated with a particular Bani but they are not the same concept.\n• Statement 2 — Incorrect: Carnatic music's lineage-based schools are called 'Sampradaya', not 'Gharana'. The Gharana system as an institution is specific to Hindustani music.\n• Statement 3 — Correct: The Darbhanga gharana is geographically and culturally rooted in the Mithila region of Bihar, with historical Maithili royal patronage.\n\nValue Addition:\n• Guru-Shishya Parampara is oral transmission through demonstration and imitation — knowledge is 'caught, not taught'.\n• The Dagar gharana (associated with the Dagur Bani) is today the most prominent performing Dhrupad gharana globally.\n• Ustad Zia Fariduddin Dagar and Ustad Wasifuddin Dagar are contemporary masters of the Dagar gharana."
+    },
+    "hi": {
+      "display_text": "भारतीय शास्त्रीय संगीत में घराना प्रणाली के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ध्रुपद के संदर्भ में, 'बानी' एक शैलीगत विद्यालय को संदर्भित करती है जो विशिष्ट गायन विशेषताओं द्वारा परिभाषित होती है, जबकि 'घराना' संगीत संचरण की वंशानुगत परंपरा को संदर्भित करता है — ये दोनों अवधारणाएँ भिन्न हैं।\n2. संगीत संचरण की घराना प्रणाली हिंदुस्तानी और कर्नाटक दोनों शास्त्रीय परंपराओं में सामान्य है, जिसमें कर्नाटक संगीत भी अपनी वंशानुगत परंपरा विद्यालयों के लिए 'घराना' शब्द का उपयोग करता है।\n3. ध्रुपद का दरभंगा घराना मिथिला क्षेत्र से जुड़ा है और इसे मैथिली सांस्कृतिक परंपरा से संरक्षण प्राप्त था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "ध्रुपद के संदर्भ में, 'बानी' एक शैलीगत विद्यालय को संदर्भित करती है जो विशिष्ट गायन विशेषताओं द्वारा परिभाषित होती है, जबकि 'घराना' संगीत संचरण की वंशानुगत परंपरा को संदर्भित करता है — ये दोनों अवधारणाएँ भिन्न हैं।",
+          "verdict": "सही",
+          "reason": "बानी (शैलीगत विद्यालय) और घराना (वंश) अलग-अलग संगठनात्मक ढांचे हैं: चार बानी गौहर, खंडर, डगर, और नौहर हैं; घराने वंशानुगत समूह हैं जैसे डगर, दरभंगा, और बेटिया।"
+        },
+        {
+          "statement": "संगीत संचरण की घराना प्रणाली हिंदुस्तानी और कर्नाटक दोनों शास्त्रीय परंपराओं में सामान्य है, जिसमें कर्नाटक संगीत भी अपनी वंशानुगत परंपरा विद्यालयों के लिए 'घराना' शब्द का उपयोग करता है।",
+          "verdict": "गलत",
+          "reason": "कर्नाटक संगीत अपनी परंपरा-आधारित वंशानुगत विद्यालयों के लिए 'सम्प्रदाय' शब्द का उपयोग करता है, न कि 'घराना'; घराना प्रणाली एक नामित संस्था के रूप में केवल हिंदुस्तानी संगीत तक सीमित है।"
+        },
+        {
+          "statement": "ध्रुपद का दरभंगा घराना मिथिला क्षेत्र से जुड़ा है और इसे मैथिली सांस्कृतिक परंपरा से संरक्षण प्राप्त था।",
+          "verdict": "सही",
+          "reason": "दरभंगा घराना ऐतिहासिक रूप से मिथिला क्षेत्र (वर्तमान बिहार) में मैथिली संरक्षण के तहत फल-फूल रहा था, जो इसे भौगोलिक और सांस्कृतिक रूप से डगर घराने से अलग करता है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र कथन 3 को बहुत विशिष्ट और क्षेत्रीय मानकर अस्वीकार कर सकते हैं, यह मानते हुए कि सभी प्रमुख ध्रुपद घराने राजस्थान या आगरा में आधारित हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: बानी = शैलीगत विद्यालय (4 बानी); घराना = वंशानुगत विद्यालय — संगीतशास्त्र में भेद स्थापित है; कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: कर्नाटक संगीत 'सम्प्रदाय' शब्द का उपयोग करता है, 'घराना' नहीं — कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: दरभंगा घराना और मिथिला-मैथिली संबंध एक प्रलेखित तथ्य है — कथन 3 सही है।",
+        "कथन 1 और 3 सही; कथन 2 गलत — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में भ्रम का जाल दो अलग-अलग संस्थागत ढांचों — घराना (हिंदुस्तानी) और सम्प्रदाय (कर्नाटक) — को मिलाकर बनता है, यह गलत दावा करते हुए कि कर्नाटक संगीत भी 'घराना' शब्द का उपयोग करता है। जो छात्र दोनों परंपराओं के वंशानुगत विद्यालयों को जानते हैं, वे कथन 2 को बिना विशिष्ट शब्दावली के अंतर को देखे स्वीकार कर सकते हैं।",
+      "final_explanation": "भारतीय शास्त्रीय संगीत संचरण के संगठनात्मक ढांचे रूप-विशिष्ट और शब्दावली-विशिष्ट हैं।\n\n• कथन 1 — सही: बानी और घराना भिन्न हैं। चार ध्रुपद बानी (गौहर, खंडर, डगर/डगर, नौहर) शैलीगत विद्यालय हैं; घराने (डगर, दरभंगा, बेटिया, तलवंडी) वंशानुगत हैं। एक घराना किसी विशेष बानी से जुड़ा हो सकता है पर वे समान अवधारणा नहीं हैं।\n• कथन 2 — गलत: कर्नाटक संगीत के वंशानुगत विद्यालयों को 'सम्प्रदाय' कहा जाता है, 'घराना' नहीं। घराना प्रणाली एक संस्था के रूप में केवल हिंदुस्तानी संगीत तक सीमित है।\n• कथन 3 — सही: दरभंगा घराना भौगोलिक और सांस्कृतिक रूप से बिहार के मिथिला क्षेत्र में स्थित है, जहाँ ऐतिहासिक रूप से मैथिली शाही संरक्षण था।\n\nमूल्य संवर्धन:\n• गुरु-शिष्य परंपरा मौखिक संचरण है जो प्रदर्शन और अनुकरण के माध्यम से होती है — ज्ञान 'पकड़ा जाता है, सिखाया नहीं जाता।'\n• डगर घराना (डगर बानी से जुड़ा) आज विश्व में सबसे प्रमुख प्रदर्शनकारी ध्रुपद घराना है।\n• उस्ताद जिया फरीदुद्दीन डगर और उस्ताद वसीफुद्दीन डगर डगर घराने के समकालीन गुरु हैं।"
+    }
+  },
+  {
+    "uuid": "dd42016d-ea1b-423c-b555-a1795168baa0",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Khyal Structure: Bada Khyal vs. Chota Khyal"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Bada Khyal and Chota Khyal tala assignments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Bada Khyal and Chota Khyal:\n\n1. Bada Khyal is performed in slow tempo (vilambit) and is typically set to Ektaal of 12 beats or Tilwada of 16 beats.\n2. Chota Khyal, being fast-tempo, uses Ektaal of 16 beats while Bada Khyal uses Teentaal of 12 beats.\n3. Unlike Dhrupad which has four compositional sections, both Bada Khyal and Chota Khyal consist of only two sections — Sthayi and Antara.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Bada Khyal is performed in slow tempo (vilambit) and is typically set to Ektaal of 12 beats or Tilwada of 16 beats.",
+          "verdict": "Correct",
+          "reason": "Bada Khyal (vilambit) is indeed set to Ektaal (12 beats) or Tilwada (16 beats) — both are slow-tempo talas suitable for elaborate improvisation."
+        },
+        {
+          "statement": "Chota Khyal, being fast-tempo, uses Ektaal of 16 beats while Bada Khyal uses Teentaal of 12 beats.",
+          "verdict": "Incorrect",
+          "reason": "This reverses the tala-beat assignments: Ektaal has 12 beats (not 16) and is used in Bada Khyal; Teentaal has 16 beats (not 12) and is used in Chota Khyal (drut)."
+        },
+        {
+          "statement": "Unlike Dhrupad which has four compositional sections, both Bada Khyal and Chota Khyal consist of only two sections — Sthayi and Antara.",
+          "verdict": "Correct",
+          "reason": "Khyal bandish in both its tempo variants has only two sections (Sthayi and Antara), in contrast to Dhrupad's four-section structure."
+        }
+      ],
+      "strong_distractor": "a — Students who recall that Ektaal appears in both Khyal and Dhrupad discussions may not verify the beat count, accepting Statement 2's inverted numbers.",
+      "elimination_logic": [
+        "Check Statement 1: Bada Khyal with Ektaal (12 beats) and Tilwada (16 beats) — both correct; Statement 1 is correct, not the answer.",
+        "Check Statement 2: Claims Ektaal has 16 beats (wrong — it has 12) and Teentaal has 12 beats (wrong — it has 16); Statement 2 is incorrect — this is the answer.",
+        "Check Statement 3: Both Bada and Chota Khyal have two sections (Sthayi + Antara) — correct; Statement 3 is correct, not the answer.",
+        "Only Statement 2 is NOT correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "The trap inverts the beat counts of Ektaal and Teentaal while also misassigning them between Bada and Chota Khyal. Since the question mixes two layers of confusion (tala name vs. beat count), a student who gets the tala-form association right but not the beat counts will still be misled. The specific statement 'Ektaal of 16 beats' is the key falsification — Ektaal has 12 beats.",
+      "final_explanation": "Khyal's two tempo variants — Bada (slow/vilambit) and Chota (fast/drut) — are each associated with specific talas.\n\n• Statement 1 — Correct: Bada Khyal uses Ektaal (12 beats) and Tilwada (16 beats) for its slow, elaborately improvised unfolding.\n• Statement 2 — Incorrect on two counts: Ektaal has 12 beats, not 16; and Teentaal has 16 beats, not 12. Furthermore, the tala-form assignments are reversed — Ektaal belongs to Bada Khyal, and Teentaal (16 beats) belongs to Chota Khyal.\n• Statement 3 — Correct: Both Bada and Chota Khyal use the two-section bandish (Sthayi + Antara), unlike Dhrupad's four-part structure.\n\nValue Addition:\n• Ektaal's 12 beats are arranged as 6 vibhags of 2 beats each.\n• Teentaal's 16 beats are arranged as 4 vibhags of 4 beats each.\n• Chota Khyal's fast energy provides a contrasting climax to the meditative Bada Khyal in a classical recital."
+    },
+    "hi": {
+      "display_text": "Bada Khyal और Chota Khyal के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Bada Khyal धीमी गति (विलंबित) में प्रस्तुत किया जाता है और आमतौर पर 12 ताल के Ektaal या 16 ताल के Tilwada पर आधारित होता है।\n2. Chota Khyal, जो तेज गति का है, 16 ताल के Ektaal का उपयोग करता है जबकि Bada Khyal 12 ताल के Teentaal का उपयोग करता है।\n3. Dhrupad के चार रचनात्मक भागों के विपरीत, Bada Khyal और Chota Khyal दोनों में केवल दो भाग होते हैं — स्थायी और अंतरा।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Bada Khyal is performed in slow tempo (vilambit) and is typically set to Ektaal of 12 beats or Tilwada of 16 beats.",
+          "verdict": "सही है",
+          "reason": "Bada Khyal (vilambit) वास्तव में Ektaal (12 ताल) या Tilwada (16 ताल) में होता है — दोनों धीमी गति के ताल हैं जो विस्तृत अलंकरण के लिए उपयुक्त हैं।"
+        },
+        {
+          "statement": "Chota Khyal, being fast-tempo, uses Ektaal of 16 beats while Bada Khyal uses Teentaal of 12 beats.",
+          "verdict": "गलत है",
+          "reason": "यह ताल-ताल की संख्या को उलट देता है: Ektaal में 12 ताल होते हैं (16 नहीं) और यह Bada Khyal में उपयोग होता है; Teentaal में 16 ताल होते हैं (12 नहीं) और यह Chota Khyal (drut) में उपयोग होता है।"
+        },
+        {
+          "statement": "Unlike Dhrupad which has four compositional sections, both Bada Khyal and Chota Khyal consist of only two sections — Sthayi and Antara.",
+          "verdict": "सही है",
+          "reason": "Khyal की बंदिश दोनों गति रूपों में केवल दो भागों (स्थायी और अंतरा) में होती है, जो Dhrupad के चार-भागीय ढांचे से भिन्न है।"
+        }
+      ],
+      "strong_distractor": "a — छात्र जो याद करते हैं कि Ektaal दोनों Khyal और Dhrupad में आता है, ताल की संख्या की पुष्टि नहीं करते और कथन 2 की उलटी संख्या को स्वीकार कर लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: Bada Khyal Ektaal (12 ताल) और Tilwada (16 ताल) के साथ — दोनों सही हैं; कथन 1 सही है, उत्तर नहीं।",
+        "कथन 2 जांचें: दावा करता है कि Ektaal में 16 ताल हैं (गलत — इसमें 12 ताल हैं) और Teentaal में 12 ताल हैं (गलत — इसमें 16 ताल हैं); कथन 2 गलत है — यह उत्तर है।",
+        "कथन 3 जांचें: Bada और Chota Khyal दोनों में दो भाग (स्थायी + अंतरा) हैं — सही; कथन 3 सही है, उत्तर नहीं।",
+        "केवल कथन 2 सही नहीं है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह जाल Ektaal और Teentaal की ताल संख्या को उलट देता है और साथ ही उन्हें Bada और Chota Khyal के बीच गलत तरीके से असाइन करता है। चूंकि प्रश्न दो स्तरों की भ्रम पैदा करता है (ताल का नाम बनाम ताल की संख्या), जो छात्र ताल-रूप संबंध सही समझते हैं लेकिन ताल संख्या नहीं, वे भ्रमित हो जाएंगे। 'Ektaal के 16 ताल' वाला कथन मुख्य गलत है — Ektaal में 12 ताल होते हैं।",
+      "final_explanation": "Khyal के दो गति रूप — Bada (धीमा/विलंबित) और Chota (तेज/द्रुत) — प्रत्येक विशिष्ट तालों से जुड़े हैं।\n\n• कथन 1 — सही: Bada Khyal अपने धीमे, विस्तृत अलंकरण के लिए Ektaal (12 ताल) और Tilwada (16 ताल) का उपयोग करता है।\n• कथन 2 — दो कारणों से गलत: Ektaal में 12 ताल होते हैं, 16 नहीं; और Teentaal में 16 ताल होते हैं, 12 नहीं। इसके अलावा, ताल-रूप असाइनमेंट उलट हैं — Ektaal Bada Khyal के लिए है, और Teentaal (16 ताल) Chota Khyal के लिए।\n• कथन 3 — सही: Bada और Chota Khyal दोनों दो-भागीय बंदिश (स्थायी + अंतरा) का उपयोग करते हैं, जो Dhrupad के चार-भागीय ढांचे से अलग है।\n\nमूल्य संवर्धन:\n• Ektaal के 12 ताल 6 विभाजनों में 2-2 ताल के रूप में व्यवस्थित हैं।\n• Teentaal के 16 ताल 4 विभाजनों में 4-4 ताल के रूप में व्यवस्थित हैं।\n• Chota Khyal की तेज ऊर्जा शास्त्रीय गायन में ध्यानमग्न Bada Khyal के विपरीत चरमोत्कर्ष प्रदान करती है।"
+    }
+  },
+  {
+    "uuid": "d0896e95-2d62-41e9-bdae-dbf5ba041fe0",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Girija Devi and the Banaras Gharana: Preservation of Thumri"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Girija Devi — Banaras gharana Thumri exponent",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements about Girija Devi is correct?\n\n(a) She was a leading exponent of the Kirana gharana of Khyal and received the Padma Vibhushan for her contributions to classical music.\n(b) She was the foremost representative of the Lucknow gharana of Thumri, which originated under the patronage of Nawab Wajid Ali Shah.\n(c) She was associated with the Banaras gharana of Thumri and was a Padma Vibhushan awardee known for Poorab Ang renderings.\n(d) She was primarily a Dhrupad vocalist who later adopted Thumri to make classical music accessible to wider audiences.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Lucknow is the birthplace of Thumri and that Girija Devi performed Thumri may incorrectly associate her with the Lucknow gharana.",
+      "elimination_logic": [
+        "Eliminate (a): Girija Devi was associated with Thumri, not Khyal — her primary form is Poorab Ang Thumri.",
+        "Eliminate (b): The Lucknow gharana is a Thumri center, but Girija Devi belonged to the Banaras (Varanasi) gharana, not Lucknow.",
+        "Eliminate (d): Girija Devi's specialisation was Thumri and allied light classical forms — she was not primarily known for Dhrupad.",
+        "Confirm (c): Girija Devi (1929–2017) was a Padma Vibhushan awardee, the foremost exponent of Poorab Ang Thumri, and belonged to the Banaras gharana."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap exploits the historical connection between Thumri and Lucknow. Since Thumri originated in Nawab Wajid Ali Shah's Lucknow court, students assume the preeminent Thumri exponents belong to the Lucknow gharana. Girija Devi, however, represented the Banaras (Varanasi) gharana — a distinct Thumri tradition characterised by greater raga depth.",
+      "final_explanation": "Girija Devi (1929–2017) was the most celebrated exponent of Poorab Ang Thumri in the 20th century, and a Padma Vibhushan awardee.\n\n• Option (a): Incorrect — Girija Devi specialised in Thumri and allied semi-classical forms such as Kajri, Chaiti, and Dadra, not Khyal.\n• Option (b): Incorrect — Lucknow is a Thumri center, but Girija Devi belonged to the Banaras (Varanasi) gharana, not the Lucknow gharana. Both are Poorab Ang centers but are distinct in style.\n• Option (c): Correct — Girija Devi was the foremost exponent of the Banaras gharana of Thumri and was awarded the Padma Vibhushan.\n• Option (d): Incorrect — Girija Devi was not known for Dhrupad; her domain was the semi-classical Thumri tradition.\n\nValue Addition:\n• Banaras gharana Thumri is known for its raga-oriented depth and leisurely emotional elaboration.\n• Girija Devi also popularised Kajri, Chaiti, Hori, and Dadra — seasonal folk-rooted light classical genres.\n• She was awarded Padma Shri (1972), Padma Bhushan (1989), and Padma Vibhushan (2016)."
+    },
+    "hi": {
+      "display_text": "गिरिजा देवी के संबंध में निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) वह खयाल के किराना घराने की प्रमुख प्रस्तोता थीं और शास्त्रीय संगीत में उनके योगदान के लिए पद्म विभूषण प्राप्त किया।\n(b) वह ठुमरी के लखनऊ घराने की प्रमुख प्रतिनिधि थीं, जो नवाब वाजिद अली शाह के संरक्षण में उत्पन्न हुआ था।\n(c) वह बनारस घराने की ठुमरी से जुड़ी थीं और पूरब अंग प्रस्तुतियों के लिए पद्म विभूषण पुरस्कार प्राप्त थीं।\n(d) वह मुख्यतः ध्रुपद गायिका थीं जिन्होंने बाद में ठुमरी अपनाई ताकि शास्त्रीय संगीत को व्यापक दर्शकों तक पहुँचाया जा सके।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि ठुमरी की उत्पत्ति लखनऊ में हुई और गिरिजा देवी ने ठुमरी प्रस्तुत की, वे गलती से उन्हें लखनऊ घराने से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: गिरिजा देवी ठुमरी से जुड़ी थीं, खयाल से नहीं — उनका मुख्य रूप पूरब अंग ठुमरी था।",
+        "(b) को हटाएं: लखनऊ घराना ठुमरी का केंद्र है, लेकिन गिरिजा देवी बनारस (वाराणसी) घराने से थीं, लखनऊ से नहीं।",
+        "(d) को हटाएं: गिरिजा देवी का विशेष क्षेत्र ठुमरी और उससे संबंधित लघु शास्त्रीय रूप थे — वे मुख्यतः ध्रुपद के लिए जानी नहीं जाती थीं।",
+        "(c) की पुष्टि करें: गिरिजा देवी (1929–2017) पद्म विभूषण पुरस्कार प्राप्त थीं, पूरब अंग ठुमरी की प्रमुख प्रस्तोता थीं और बनारस घराने से थीं।"
+      ],
+      "upsc_trap_explanation": "भूगोल-स्थानांतरण जाल ठुमरी और लखनऊ के ऐतिहासिक संबंध का उपयोग करता है। चूंकि ठुमरी नवाब वाजिद अली शाह के लखनऊ दरबार में उत्पन्न हुई, छात्र मान लेते हैं कि प्रमुख ठुमरी प्रस्तोता लखनऊ घराने से हैं। परंतु गिरिजा देवी बनारस (वाराणसी) घराने की प्रतिनिधि थीं — जो ठुमरी की एक अलग परंपरा है, जिसमें राग की गहराई अधिक होती है।",
+      "final_explanation": "गिरिजा देवी (1929–2017) 20वीं सदी की पूरब अंग ठुमरी की सबसे प्रसिद्ध प्रस्तोता थीं और पद्म विभूषण पुरस्कार प्राप्त थीं।\n\n• विकल्प (a): गलत — गिरिजा देवी ठुमरी और उससे संबंधित अर्ध-शास्त्रीय रूपों जैसे कजरी, चैती, और दादरा में विशेषज्ञ थीं, खयाल में नहीं।\n• विकल्प (b): गलत — लखनऊ ठुमरी का केंद्र है, लेकिन गिरिजा देवी बनारस (वाराणसी) घराने से थीं, लखनऊ घराने से नहीं। दोनों पूरब अंग के केंद्र हैं पर शैली में भिन्न हैं।\n• विकल्प (c): सही — गिरिजा देवी बनारस घराने की ठुमरी की प्रमुख प्रस्तोता थीं और पद्म विभूषण से सम्मानित थीं।\n• विकल्प (d): गलत — गिरिजा देवी ध्रुपद के लिए जानी नहीं जाती थीं; उनका क्षेत्र अर्ध-शास्त्रीय ठुमरी परंपरा थी।\n\nमूल्यवर्धन:\n• बनारस घराने की ठुमरी राग-प्रधान गहराई और भावपूर्ण विस्तार के लिए जानी जाती है।\n• गिरिजा देवी ने कजरी, चैती, होरी, और दादरा जैसे मौसमी लोक-आधारित लघु शास्त्रीय शैलियों को भी लोकप्रिय बनाया।\n• उन्हें पद्म श्री (1972), पद्म भूषण (1989), और पद्म विभूषण (2016) से सम्मानित किया गया।"
+    }
+  },
+  {
+    "uuid": "3d0a650c-f305-436a-9593-1adcf0b76ac8",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Hindustani vs. Carnatic: Structural Distinctions in Vocal Traditions",
+        "Raga Grammar and its Application Across Vocal Forms"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Melakarta vs. Thaat — Carnatic vs. Hindustani parent scale systems",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the structural distinctions between Hindustani and Carnatic classical music:\n\n1. In the Carnatic system, parent ragas are organised through the Melakarta system of 72 parent scales, whereas the Hindustani system organises ragas through 10 parent scales called Thaats.\n2. The Carnatic equivalent of the Hindustani Dhrupad alap-jod-jhala structure is the Kriti form, which similarly begins with an unmetered melodic exploration followed by rhythmic sections.\n3. Both Hindustani and Carnatic classical traditions use the concept of 'raga', but the Hindustani tradition applies a time-based theory (Samay Siddhanta) to raga performance that is less strictly followed in the Carnatic tradition.\n\nWhich of the above statements is/are correct?\n\n(a) 2 and 3 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the Carnatic system, parent ragas are organised through the Melakarta system of 72 parent scales, whereas the Hindustani system organises ragas through 10 parent scales called Thaats.",
+          "verdict": "Correct",
+          "reason": "The Melakarta system (72 janya-janaka parent ragas) is the framework of Carnatic raga classification; Hindustani uses the Thaat system (10 parent scales) codified by Vishnu Narayan Bhatkhande."
+        },
+        {
+          "statement": "The Carnatic equivalent of the Hindustani Dhrupad alap-jod-jhala structure is the Kriti form, which similarly begins with an unmetered melodic exploration followed by rhythmic sections.",
+          "verdict": "Incorrect",
+          "reason": "Ragam-Tanam-Pallavi is the Carnatic equivalent of Dhrupad's alap-jod-jhala framework; the Kriti is the Carnatic equivalent of the Khyal bandish — a fixed composition, not an improvisatory form."
+        },
+        {
+          "statement": "Both Hindustani and Carnatic classical traditions use the concept of 'raga', but the Hindustani tradition applies a time-based theory (Samay Siddhanta) to raga performance that is less strictly followed in the Carnatic tradition.",
+          "verdict": "Correct",
+          "reason": "Samay Siddhanta (time theory of ragas) assigns morning, afternoon, evening, and night ragas in Hindustani; Carnatic music does not follow an equivalent strict time-based system for raga performance."
+        }
+      ],
+      "strong_distractor": "d — Students who know 'Ragam-Tanam-Pallavi' is the Carnatic counterpart of something in Hindustani may misidentify it as the counterpart of Kriti rather than of alap-jod-jhala, accepting Statement 2.",
+      "elimination_logic": [
+        "Verify Statement 1: Melakarta (72) for Carnatic, Thaat (10) for Hindustani — standard textbook distinction; Statement 1 is correct.",
+        "Verify Statement 2: Kriti is NOT the equivalent of Dhrupad alap-jod-jhala — Ragam-Tanam-Pallavi is; Kriti = Khyal bandish; Statement 2 is incorrect.",
+        "Verify Statement 3: Samay Siddhanta is a distinctly Hindustani concept with no strict Carnatic parallel — Statement 3 is correct.",
+        "Statements 1 and 3 correct; select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 conflates Kriti and Ragam-Tanam-Pallavi. Both are Carnatic forms, but they serve different analogical roles: Kriti corresponds to the Khyal bandish (fixed composition), while Ragam-Tanam-Pallavi corresponds to Dhrupad's alap-jod-jhala (free improvisatory exploration). A student who recalls that 'Carnatic has something equivalent to Dhrupad improvisation' but confuses which Carnatic form it is will accept Statement 2.",
+      "final_explanation": "The Hindustani and Carnatic systems share common roots but have developed distinct technical frameworks for raga classification and performance.\n\n• Statement 1 — Correct: Carnatic music uses the Melakarta system (72 parent ragas called janaka ragas), while Hindustani uses the Thaat system (10 parent scales) codified by Bhatkhande in the early 20th century.\n• Statement 2 — Incorrect: Ragam-Tanam-Pallavi is the Carnatic equivalent of Dhrupad's alap-jod-jhala (unmetered to metered improvisation). The Kriti is the Carnatic equivalent of the Khyal bandish — a fixed composition.\n• Statement 3 — Correct: Samay Siddhanta (time theory) assigns specific times of day to ragas in Hindustani music. Carnatic music does not apply this doctrine strictly.\n\nValue Addition:\n• Bhatkhande's Thaat system: Bilawal, Khamaj, Kafi, Asavari, Bhairavi, Bhairav, Kalyan, Marwa, Poorvi, Todi.\n• Carnatic kriti composers: Tyagaraja, Muthuswami Dikshitar, Syama Sastri — the 'Trinity'.\n• Ragam-Tanam-Pallavi is considered the pinnacle of Carnatic improvisation, paralleling Dhrupad alap in its gravity and depth."
+    },
+    "hi": {
+      "display_text": "हिंदुस्तानी और कर्नाटिक शास्त्रीय संगीत के संरचनात्मक भेदों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. कर्नाटिक प्रणाली में, मूल रागों को 72 मूल स्वरूपों के मेलकार्ता प्रणाली के माध्यम से व्यवस्थित किया जाता है, जबकि हिंदुस्तानी प्रणाली में रागों को 10 मूल स्वरूपों के थाट के माध्यम से व्यवस्थित किया जाता है।\n2. हिंदुस्तानी ध्रुपद के आलाप-जोड़-झाला संरचना के कर्नाटिक समकक्ष कृति रूप है, जो इसी तरह बिना ताल के स्वरसंगीत अन्वेषण से शुरू होकर तालबद्ध भागों के साथ समाप्त होता है।\n3. हिंदुस्तानी और कर्नाटिक दोनों शास्त्रीय परंपराएँ 'राग' की अवधारणा का उपयोग करती हैं, लेकिन हिंदुस्तानी परंपरा राग प्रदर्शन में समय-आधारित सिद्धांत (समय सिद्धांत) लागू करती है जो कर्नाटिक परंपरा में कम सख्ती से पालन किया जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कर्नाटिक प्रणाली में, मूल रागों को 72 मूल स्वरूपों के मेलकार्ता प्रणाली के माध्यम से व्यवस्थित किया जाता है, जबकि हिंदुस्तानी प्रणाली में रागों को 10 मूल स्वरूपों के थाट के माध्यम से व्यवस्थित किया जाता है।",
+          "verdict": "सही है",
+          "reason": "मेलकार्ता प्रणाली (72 जनक-जनक मूल राग) कर्नाटिक राग वर्गीकरण की रूपरेखा है; हिंदुस्तानी में थाट प्रणाली (10 मूल स्वरूप) का उपयोग किया जाता है जिसे विष्णु नारायण भाटखंडे ने संहिताबद्ध किया।"
+        },
+        {
+          "statement": "हिंदुस्तानी ध्रुपद के आलाप-जोड़-झाला संरचना के कर्नाटिक समकक्ष कृति रूप है, जो इसी तरह बिना ताल के स्वरसंगीत अन्वेषण से शुरू होकर तालबद्ध भागों के साथ समाप्त होता है।",
+          "verdict": "गलत है",
+          "reason": "रागम-तानम-पल्लवी कर्नाटिक में ध्रुपद के आलाप-जोड़-झाला संरचना के समकक्ष है; कृति कर्नाटिक में ख्याल बंदिश के समकक्ष है — एक निश्चित रचना, न कि स्वच्छंद रूप।"
+        },
+        {
+          "statement": "हिंदुस्तानी और कर्नाटिक दोनों शास्त्रीय परंपराएँ 'राग' की अवधारणा का उपयोग करती हैं, लेकिन हिंदुस्तानी परंपरा राग प्रदर्शन में समय-आधारित सिद्धांत (समय सिद्धांत) लागू करती है जो कर्नाटिक परंपरा में कम सख्ती से पालन किया जाता है।",
+          "verdict": "सही है",
+          "reason": "समय सिद्धांत (रागों का समय सिद्धांत) हिंदुस्तानी में सुबह, दोपहर, शाम और रात के राग निर्धारित करता है; कर्नाटिक संगीत में राग प्रदर्शन के लिए ऐसा कोई सख्त समय-आधारित सिद्धांत नहीं है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि 'रागम-तानम-पल्लवी' कर्नाटिक में हिंदुस्तानी के किसी रूप का समकक्ष है, वे इसे कृति के बजाय आलाप-जोड़-झाला का समकक्ष समझकर कथन 2 को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: कर्नाटिक के लिए मेलकार्ता (72), हिंदुस्तानी के लिए थाट (10) — मानक पाठ्यपुस्तक भेद; कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: कृति ध्रुपद के आलाप-जोड़-झाला का समकक्ष नहीं है — रागम-तानम-पल्लवी है; कृति = ख्याल बंदिश; कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: समय सिद्धांत विशिष्ट रूप से हिंदुस्तानी अवधारणा है जिसका कर्नाटिक में कोई सख्त समकक्ष नहीं है — कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं; विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में कृति और रागम-तानम-पल्लवी को भ्रमित किया गया है। दोनों कर्नाटिक रूप हैं, लेकिन उनकी तुलनात्मक भूमिकाएँ भिन्न हैं: कृति ख्याल बंदिश (निश्चित रचना) के समकक्ष है, जबकि रागम-तानम-पल्लवी ध्रुपद के आलाप-जोड़-झाला (स्वच्छंद अन्वेषण) के समकक्ष है। जो छात्र याद करते हैं कि 'कर्नाटिक में ध्रुपद के समकक्ष कुछ है' लेकिन किस रूप का है यह भ्रमित करते हैं, वे कथन 2 को स्वीकार कर लेंगे।",
+      "final_explanation": "हिंदुस्तानी और कर्नाटिक प्रणालियाँ सामान्य जड़ें साझा करती हैं लेकिन राग वर्गीकरण और प्रदर्शन के लिए अलग तकनीकी रूपरेखाएँ विकसित की हैं।\n\n• कथन 1 — सही: कर्नाटिक संगीत मेलकार्ता प्रणाली (72 जनक राग) का उपयोग करता है, जबकि हिंदुस्तानी में भाटखंडे द्वारा 20वीं सदी की शुरुआत में संहिताबद्ध थाट प्रणाली (10 मूल स्वरूप) है।\n• कथन 2 — गलत: रागम-तानम-पल्लवी ध्रुपद के आलाप-जोड़-झाला (बिना ताल से तालबद्ध तक का स्वच्छंद अन्वेषण) का कर्नाटिक समकक्ष है। कृति ख्याल बंदिश (निश्चित रचना) का कर्नाटिक समकक्ष है।\n• कथन 3 — सही: समय सिद्धांत (समय सिद्धांत) हिंदुस्तानी संगीत में रागों को दिन के विशिष्ट समय आवंटित करता है। कर्नाटिक संगीत इस सिद्धांत का सख्ती से पालन नहीं करता।\n\nमूल्यवर्धन:\n• भाटखंडे की थाट प्रणाली: बिलावल, खमाज, काफ़ी, असावरी, भैरवी, भैरव, कल्याण, मारवा, पूरवी, तोड़ी।\n• कर्नाटिक कृति रचनाकार: त्यागराज, मुथुस्वामी दीक्षितर, श्यामा शास्त्री — 'त्रिमूर्ति'।\n• रागम-तानम-पल्लवी कर्नाटिक स्वच्छंदता की चरम सीमा माना जाता है, जो ध्रुपद आलाप की गंभीरता और गहराई के समानांतर है।"
+    }
+  },
+  {
+    "uuid": "d4700cda-b567-423e-bc5f-42e1fc624b8f",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Bhairavi and Bhairav: Two Distinct Ragas and Their Cultural Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": "conflation",
+      "concept_anchor": "Bhairav morning raga vs. Bhairavi concluding/thumri raga",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Raga Bhairav is considered a morning raga and is conventionally performed at the commencement of classical music concerts.\n\nReason (R): Bhairav thaat, to which raga Bhairav belongs, is characterised by komal (flat) Rishabh and komal Dhaivat, creating a grave and contemplative tonal character suited to early morning hours.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know Bhairavi is 'the emotional raga' may not recognise that both A (Bhairav as morning raga) and R (Bhairav thaat's serious character) are correct and causally linked.",
+      "elimination_logic": [
+        "Step 1: Is A correct? Bhairav is indeed traditionally performed at dawn and is used to open classical concerts — A is correct.",
+        "Step 2: Is R correct? Bhairav thaat is characterised by komal Re and komal Dha with the other notes shuddh — it is a serious, contemplative thaat — R is correct.",
+        "Step 3: Does R explain A? The meditative, grave character that Bhairav's tonal structure (especially its komal Re and Dha) creates makes it suited to the early morning mood — R causally explains why Bhairav is a morning raga.",
+        "A correct + R correct + R explains A — select option (a)."
+      ],
+      "upsc_trap_explanation": "The conflation trap plays on the Bhairav/Bhairavi name confusion. Students aware that 'Bhairavi is the concluding raga' may incorrectly apply this to A (which is about Bhairav, not Bhairavi) and mark A as incorrect. The question tests whether the student correctly distinguishes the two distinct ragas with nearly identical names.",
+      "final_explanation": "Bhairav and Bhairavi are two entirely distinct ragas despite their near-identical names — this is one of the most tested confusions in music-related UPSC questions.\n\nAssertion (A): Raga Bhairav is a morning raga, typically performed at dawn, and is conventionally used to open classical concerts. This is correct.\n\nReason (R): Bhairav thaat, to which raga Bhairav belongs, is characterised by komal (flat) Rishabh and komal Dhaivat with the remaining notes in their natural (shuddh) form. This tonal structure creates a grave, contemplative mood. This is correct.\n\nCausal relationship: R correctly explains A. The specific tonal colour of Bhairav — with its komal Re and Dha creating a pensive, introspective quality — is precisely why it is suited to the stillness of early morning. R provides the musical-theoretical explanation for A.\n\nValue Addition:\n• Bhairavi (NOT Bhairav) is the concluding raga of concerts and is the dominant raga in Thumri.\n• Bhairavi thaat has all four komal swaras: Re, Ga, Dha, Ni — making it the 'lightest' and most emotionally cathartic thaat.\n• Bhairav thaat has only two komal swaras: Re and Dha — a more austere sound world than Bhairavi thaat."
+    },
+    "hi": {
+      "display_text": "कथन (A): राग भैरव को सुबह का राग माना जाता है और इसे पारंपरिक रूप से शास्त्रीय संगीत समारोहों की शुरुआत में प्रस्तुत किया जाता है।\n\nकारण (R): भैरव ठाट, जिसमें राग भैरव आता है, को कोमल (फ्लैट) ऋषभ और कोमल धैवत से विशेषित किया जाता है, जो एक गंभीर और चिंतनशील स्वर चरित्र बनाता है जो सुबह के समय के लिए उपयुक्त है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि भैरवी 'भावनात्मक राग' है, वे यह पहचान नहीं पाते कि दोनों A (भैरव एक सुबह का राग है) और R (भैरव ठाट का गंभीर स्वभाव) सही हैं और कारणात्मक रूप से जुड़े हुए हैं।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? भैरव वास्तव में पारंपरिक रूप से भोर में प्रस्तुत किया जाता है और शास्त्रीय संगीत समारोहों की शुरुआत के लिए उपयोग किया जाता है — अतः A सही है।",
+        "चरण 2: क्या R सही है? भैरव ठाट कोमल रे और कोमल धा से विशेषित है, अन्य स्वर शुद्ध हैं — यह एक गंभीर, चिंतनशील ठाट है — अतः R सही है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? भैरव की स्वर संरचना (विशेषकर कोमल रे और धा) जो एक ध्यानात्मक, गंभीर स्वभाव उत्पन्न करती है, इसे सुबह के मूड के लिए उपयुक्त बनाती है — अतः R कारणात्मक रूप से A की व्याख्या करता है।",
+        "A सही + R सही + R, A की व्याख्या करता है — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "भैरव/भैरवी नाम के भ्रम पर आधारित यह जाल है। जो छात्र जानते हैं कि 'भैरवी समापन राग है', वे इसे गलत तरीके से A (जो भैरव के बारे में है, भैरवी के बारे में नहीं) पर लागू कर सकते हैं और A को गलत चिह्नित कर सकते हैं। प्रश्न यह जांचता है कि छात्र दो भिन्न रागों को सही ढंग से पहचानते हैं जिनके नाम लगभग समान हैं।",
+      "final_explanation": "भैरव और भैरवी दो पूरी तरह से भिन्न राग हैं, हालांकि उनके नाम लगभग समान हैं — यह संगीत से संबंधित UPSC प्रश्नों में सबसे अधिक परीक्षण किए जाने वाले भ्रमों में से एक है।\n\nकथन (A): राग भैरव एक सुबह का राग माना जाता है, जो आमतौर पर भोर में प्रस्तुत किया जाता है, और पारंपरिक रूप से शास्त्रीय संगीत समारोहों की शुरुआत के लिए उपयोग किया जाता है। यह सही है।\n\nकारण (R): भैरव ठाट, जिसमें राग भैरव आता है, को कोमल (फ्लैट) ऋषभ और कोमल धैवत से विशेषित किया जाता है, जबकि अन्य स्वर शुद्ध रूप में होते हैं। यह स्वर संरचना एक गंभीर, चिंतनशील मूड बनाती है। यह सही है।\n\nकारणात्मक संबंध: R सही ढंग से A की व्याख्या करता है। भैरव का विशिष्ट स्वर रंग — जिसमें कोमल रे और धा एक चिंतनशील, अंतर्मुखी गुण उत्पन्न करते हैं — यही कारण है कि यह सुबह की शांति के लिए उपयुक्त है। R, A के लिए संगीत-सैद्धांतिक व्याख्या प्रदान करता है।\n\nमूल्य संवर्धन:\n• भैरवी (भैरव नहीं) समारोहों का समापन राग है और ठुमरी में प्रमुख राग है।\n• भैरवी ठाट में चार कोमल स्वर होते हैं: रे, ग, धा, नि — जो इसे सबसे 'हल्का' और भावनात्मक रूप से शुद्ध करने वाला ठाट बनाता है।\n• भैरव ठाट में केवल दो कोमल स्वर होते हैं: रे और धा — जो भैरवी ठाट की तुलना में अधिक कठोर ध्वनि संसार है।"
+    }
+  },
+  {
+    "uuid": "694cd466-4ce7-4331-8eba-83ef70d1e3b5",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Tansen: Musician, Legacy, and Mythological Attribution",
+        "Dhrupad Gharanas: Dagar, Darbhanga, Betiya, Talwandi"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Tansen ragas — Darbari Kanada, Miyan ki Todi, Miyan ki Malhar",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — Musician : Raga attributed to his creation — is correctly matched?\n\n(a) Tansen : Yaman Kalyan\n(b) Tansen : Miyan ki Sarang\n(c) Tansen : Bhupali\n(d) Tansen : Darbari Kanada",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'Miyan ki Sarang' sounds plausible because 'Miyan' is Tansen's epithet and Sarang is a real raga family — students unfamiliar with the specific list will accept this as a Tansen raga.",
+      "elimination_logic": [
+        "Eliminate (a): Yaman Kalyan is attributed to Amir Khusrau, not Tansen — entity-swap distractor.",
+        "Eliminate (b): 'Miyan ki Sarang' is a plausible-fabrication — Tansen's confirmed ragas are Miyan ki Todi, Miyan ki Malhar, and Darbari Kanada; Miyan ki Sarang is not in standard attribution.",
+        "Eliminate (c): Bhupali is an ancient raga not attributed to Tansen's creation.",
+        "Confirm (d): Darbari Kanada is one of the three ragas most definitively attributed to Tansen's creation, along with Miyan ki Todi and Miyan ki Malhar."
+      ],
+      "upsc_trap_explanation": "Option (b) uses the 'Miyan ki' prefix — which is Tansen's signature on his created ragas — combined with a real raga family name (Sarang) to fabricate a convincing but non-existent raga attribution. A student who knows only that 'Tansen created ragas beginning with Miyan ki' will accept (b) without checking the specific list.",
+      "final_explanation": "Tansen is credited with creating several ragas that bear his name-prefix 'Miyan ki' (meaning 'of the respected one') and the raga Darbari Kanada, named for his association with the Darbar (royal court).\n\n• Option (a): Incorrectly matched — Yaman Kalyan is attributed to Amir Khusrau, not Tansen. Khusrau created ragas by blending Persian maqam scales with Indian raga frameworks.\n• Option (b): Incorrectly matched — 'Miyan ki Sarang' is not among the standard ragas attributed to Tansen. The three most definitively credited are Miyan ki Todi, Miyan ki Malhar, and Darbari Kanada.\n• Option (c): Incorrectly matched — Bhupali is an ancient raga of the Kalyan thaat with no attribution to Tansen.\n• Option (d): Correctly matched — Darbari Kanada is one of the ragas definitively attributed to Tansen's creation; it is a late-night raga of grave, majestic character.\n\nValue Addition:\n• Miyan ki Malhar is a Malhar-family raga associated with the monsoon season.\n• Miyan ki Todi is a morning raga of the Todi thaat family.\n• Tansen's annual Samaroha festival is held every December at his tomb in Gwalior, Madhya Pradesh."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित जोड़े — संगीतकार : उनके द्वारा रचित राग — में से कौन सा सही मेल खाता है?\n\n(a) तानसेन : यमन कल्याण\n(b) तानसेन : मियाँ की सारंग\n(c) तानसेन : भूपाली\n(d) तानसेन : दरबारी कनाडा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'Miyan ki Sarang' सुनने में विश्वसनीय लगता है क्योंकि 'मियाँ' तानसेन का उपनाम है और सारंग एक वास्तविक राग परिवार है — जो छात्र इस विशिष्ट सूची से परिचित नहीं हैं वे इसे तानसेन का राग मान लेंगे।",
+      "elimination_logic": [
+        "(a) को हटाएँ: यमन कल्याण अमीर खुसरो को दिया जाता है, तानसेन को नहीं — यह एक पहचान-स्थानांतरण भ्रम है।",
+        "(b) को हटाएँ: 'मियाँ की सारंग' एक विश्वसनीय-निर्मित नाम है — तानसेन के पुष्ट राग मियाँ की तोड़ी, मियाँ की मल्हार, और दरबारी कनाडा हैं; मियाँ की सारंग मानक सूची में नहीं है।",
+        "(c) को हटाएँ: भूपाली एक प्राचीन राग है जो तानसेन की रचना नहीं है।",
+        "(d) को स्वीकार करें: दरबारी कनाडा उन तीन रागों में से एक है जो तानसेन की रचना के रूप में सबसे निश्चित रूप से मान्यता प्राप्त हैं, मियाँ की तोड़ी और मियाँ की मल्हार के साथ।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में 'मियाँ की' उपसर्ग का उपयोग किया गया है — जो तानसेन के बनाए रागों की पहचान है — और इसे सारंग नामक वास्तविक राग परिवार के साथ जोड़कर एक विश्वसनीय लेकिन अस्तित्वहीन राग का निर्माण किया गया है। जो छात्र केवल यह जानते हैं कि 'तानसेन ने मियाँ की से शुरू होने वाले राग बनाए' वे बिना सूची जांचे (b) को स्वीकार कर लेंगे।",
+      "final_explanation": "तानसेन को कई ऐसे राग बनाने का श्रेय दिया जाता है जिनके नाम के आगे 'मियाँ की' उपसर्ग होता है (जिसका अर्थ है 'सम्मानित व्यक्ति का') और दरबारी कनाडा राग, जो उनके दरबार से जुड़ा है।\n\n• विकल्प (a): गलत मेल — यमन कल्याण अमीर खुसरो को दिया जाता है, तानसेन को नहीं। खुसरो ने फारसी मक़ाम स्केल को भारतीय राग संरचना के साथ मिलाकर राग बनाए।\n• विकल्प (b): गलत मेल — 'मियाँ की सारंग' तानसेन को मान्यता प्राप्त मानक रागों में नहीं है। सबसे निश्चित रूप से मान्यता प्राप्त तीन राग हैं मियाँ की तोड़ी, मियाँ की मल्हार, और दरबारी कनाडा।\n• विकल्प (c): गलत मेल — भूपाली एक प्राचीन राग है जो कल्याण थाट का है और तानसेन से जुड़ा नहीं है।\n• विकल्प (d): सही मेल — दरबारी कनाडा उन रागों में से एक है जो निश्चित रूप से तानसेन की रचना माने जाते हैं; यह एक गंभीर, भव्य स्वभाव का देर रात का राग है।\n\nमूल्यवर्धन:\n• मियाँ की मल्हार मल्हार परिवार का राग है जो मानसून से जुड़ा है।\n• मियाँ की तोड़ी तोड़ी थाट परिवार का सुबह का राग है।\n• तानसेन का वार्षिक समारोह हर दिसंबर मध्य प्रदेश के ग्वालियर में उनके मकबरे पर आयोजित होता है।"
+    }
+  },
+  {
+    "uuid": "60196363-1fb3-4354-99b6-322d5616929e",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Raga Grammar and its Application Across Vocal Forms"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Vadi and Samvadi — most and second most important raga notes",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the grammar of a Hindustani raga, the note around which the entire melodic framework is built and which receives the greatest emphasis during improvisation is called the ________.\n\n(a) Vivadi\n(b) Vadi\n(c) Anuvadi\n(d) Samvadi",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Anuvadi' sounds like a technical term for the 'first' or 'primary' note, and students who confuse Sanskrit prefixes may swap Vadi and Anuvadi.",
+      "elimination_logic": [
+        "Eliminate (a): Vivadi is the 'discordant' note that should be avoided or used sparingly in a raga — opposite of the most important note.",
+        "Eliminate (c): Anuvadi notes are the 'consonant' supporting notes that can be freely used but are neither the primary nor secondary pivots.",
+        "Eliminate (d): Samvadi is the SECOND most important note, not the first.",
+        "Confirm (b): Vadi is defined as the most important note (the 'king' note) of a raga around which the melodic structure is built."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places Samvadi in the 'most important' position in option (d), exploiting the fact that students who know both terms exist in raga grammar may reverse their hierarchy. The 'Vadi-Samvadi' pair must be memorised in sequence: Vadi = king (most important), Samvadi = minister (second most important).",
+      "final_explanation": "Raga grammar in Hindustani music assigns specific hierarchical roles to the notes (swaras) of a raga.\n\n• Option (a): Incorrect — Vivadi is the dissonant note to be used sparingly or avoided; it is the least important or potentially disruptive note.\n• Option (b): Correct — Vadi is the most important note ('king note') of a raga; it receives the most emphasis in melodic development and is often the note on which phrases rest.\n• Option (c): Incorrect — Anuvadi notes are consonant supporting notes that may be freely used but are not the primary pivot of the raga.\n• Option (d): Incorrect — Samvadi is the second most important note ('minister note'), not the first.\n\nValue Addition:\n• The Vadi and Samvadi are typically a fourth or fifth apart from each other.\n• A raga's identity is closely tied to its Vadi — changing the Vadi can effectively create a different raga.\n• Vivadi use in skilled compositions can add tension and resolution — it is not categorically forbidden, just restricted."
+    },
+    "hi": {
+      "display_text": "हिंदुस्तानी राग के व्याकरण में वह स्वर जिसके चारों ओर संपूर्ण राग की रचनात्मक संरचना बनती है और जिसे अलाप के दौरान सबसे अधिक महत्व दिया जाता है, उसे ________ कहा जाता है।\n\n(a) विवादी\n(b) वादी\n(c) अनुवादी\n(d) संवादी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'अनुवादी' एक तकनीकी शब्द की तरह लगता है जो 'प्रथम' या 'प्रमुख' स्वर के लिए हो सकता है, और संस्कृत उपसर्गों को भ्रमित करने वाले छात्र वादी और अनुवादी को उलट सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: विवादी वह 'विरोधी' स्वर है जिसे राग में कम या सावधानी से उपयोग करना चाहिए — यह सबसे महत्वपूर्ण स्वर का विपरीत है।",
+        "(c) को हटाएं: अनुवादी स्वर वे 'सहायक' स्वर होते हैं जिन्हें स्वतंत्र रूप से उपयोग किया जा सकता है लेकिन वे न तो प्राथमिक न ही द्वितीयक केंद्र हैं।",
+        "(d) को हटाएं: संवादी दूसरा सबसे महत्वपूर्ण स्वर है, पहला नहीं।",
+        "(b) की पुष्टि करें: वादी को राग का सबसे महत्वपूर्ण स्वर (राजा स्वर) माना जाता है जिसके चारों ओर राग की रचनात्मक संरचना बनती है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में संवादी को विकल्प (d) में 'सबसे महत्वपूर्ण' स्थान पर रखा गया है, यह तथ्य का लाभ उठाते हुए कि जो छात्र दोनों शब्दों को जानते हैं वे उनकी पदानुक्रम को उलट सकते हैं। 'वादी-संवादी' जोड़ी को क्रम में याद रखना चाहिए: वादी = राजा (सबसे महत्वपूर्ण), संवादी = मंत्री (दूसरा सबसे महत्वपूर्ण)।",
+      "final_explanation": "हिंदुस्तानी संगीत में राग व्याकरण राग के स्वरों को विशिष्ट पदानुक्रमित भूमिकाएँ देता है।\n\n• विकल्प (a): गलत — विवादी वह असंगत स्वर है जिसे कम या बिल्कुल नहीं उपयोग करना चाहिए; यह सबसे कम महत्वपूर्ण या संभावित रूप से विघटनकारी स्वर है।\n• विकल्प (b): सही — वादी राग का सबसे महत्वपूर्ण स्वर ('राजा स्वर') है; इसे राग की रचनात्मकता में सबसे अधिक महत्व दिया जाता है और अक्सर वाक्यांश इसी स्वर पर टिकते हैं।\n• विकल्प (c): गलत — अनुवादी स्वर सहायक स्वर होते हैं जिन्हें स्वतंत्र रूप से उपयोग किया जा सकता है लेकिन वे राग के प्राथमिक केंद्र नहीं हैं।\n• विकल्प (d): गलत — संवादी दूसरा सबसे महत्वपूर्ण स्वर ('मंत्री स्वर') है, पहला नहीं।\n\nमूल्यवर्धन:\n• वादी और संवादी आमतौर पर एक चौथाई या पंचम अंतराल पर होते हैं।\n• राग की पहचान उसके वादी से गहराई से जुड़ी होती है — वादी बदलने से नया राग बन सकता है।\n• विवादी का कुशल रचनाओं में उपयोग तनाव और समाधान जोड़ सकता है — यह पूरी तरह से निषिद्ध नहीं है, केवल सीमित है।"
+    }
+  },
+  {
+    "uuid": "ae1d3cc7-a4b5-4f4b-97f2-5d5b2254b8fd",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Thumri Sub-styles: Poorab Ang vs. Punjab Ang",
+        "Thumri: Characteristics, Origins, and Stylistic Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Poorab Ang vs. Punjab Ang Thumri stylistic differences",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Thumri and its sub-styles:\n\n1. Poorab Ang Thumri, associated with the Benares and Lucknow traditions, tends to be slower and more raga-oriented, while Punjab Ang Thumri is faster, more rhythmically vigorous, and influenced by the tappa style.\n2. Bhairavi is both the most common raga in Thumri and the traditional raga used to conclude classical Hindustani concerts, which means it is exclusively associated with the Thumri form and is not used in other classical genres.\n3. The Shringar rasa — expressing romantic longing and devotional love — is the dominant emotional sentiment in Thumri, often conveyed through Radha-Krishna imagery.\n\nWhich of the above statements is/are correct?\n\n(a) 2 and 3 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Poorab Ang Thumri, associated with the Benares and Lucknow traditions, tends to be slower and more raga-oriented, while Punjab Ang Thumri is faster, more rhythmically vigorous, and influenced by the tappa style.",
+          "verdict": "Correct",
+          "reason": "These stylistic differences are well-established: Poorab Ang prioritises raga elaboration and emotional depth; Punjab Ang (also called Patiala Ang) is rhythmically brisk and shows tappa influence."
+        },
+        {
+          "statement": "Bhairavi is both the most common raga in Thumri and the traditional raga used to conclude classical Hindustani concerts, which means it is exclusively associated with the Thumri form and is not used in other classical genres.",
+          "verdict": "Incorrect",
+          "reason": "While Bhairavi is heavily used in Thumri AND is the traditional concert-closing raga, the claim that it is 'exclusively associated with Thumri' is false — Bhairavi appears in Khyal, light classical, and folk forms as well."
+        },
+        {
+          "statement": "The Shringar rasa — expressing romantic longing and devotional love — is the dominant emotional sentiment in Thumri, often conveyed through Radha-Krishna imagery.",
+          "verdict": "Correct",
+          "reason": "Shringar rasa (erotic/romantic sentiment in its devotional form) is the defining emotional orientation of Thumri, expressed through the Radha-Krishna narrative framework."
+        }
+      ],
+      "strong_distractor": "d — Students who know Bhairavi 'belongs to' Thumri and 'closes concerts' may accept Statement 2 without noticing the 'exclusively' qualifier that makes it false.",
+      "elimination_logic": [
+        "Verify Statement 1: Poorab Ang = slow, raga-oriented (Benares/Lucknow); Punjab Ang = fast, tappa-influenced — correct.",
+        "Verify Statement 2: 'Exclusively associated with Thumri' is the scope-extension that makes this false — Bhairavi appears in Khyal and other forms; incorrect.",
+        "Verify Statement 3: Shringar rasa and Radha-Krishna themes — definitional feature of Thumri; correct.",
+        "Statements 1 and 3 correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap adds 'exclusively associated with Thumri' to a set of true facts about Bhairavi (used in Thumri + closes concerts). The two true facts are well known; the false qualifier is easy to miss. A student who recalls 'Bhairavi = Thumri + concert closing' will process both parts as true and miss the 'exclusively' that invalidates Statement 2.",
+      "final_explanation": "Thumri's two regional styles represent distinct aesthetic philosophies within the same form.\n\n• Statement 1 — Correct: Poorab Ang (Eastern style) from Benares and Lucknow is characterised by leisurely raga exploration and emotional depth. Punjab Ang is brisk, percussive, and shows the influence of tappa (a rhythmically intense Punjab folk-classical form).\n• Statement 2 — Incorrect: Bhairavi is heavily used in Thumri and is the conventional concert-closing raga, but it is NOT exclusively associated with Thumri. Bhairavi compositions exist in Khyal, devotional, and folk traditions as well. The word 'exclusively' makes this false.\n• Statement 3 — Correct: Shringar rasa in its devotional manifestation (Madhura Bhakti — loving devotion) is Thumri's dominant sentiment, expressed through the Radha-Krishna narrative.\n\nValue Addition:\n• Girija Devi (Banaras gharana) was the foremost modern exponent of Poorab Ang Thumri.\n• Tappa originated as a camel-driver's folk song in Punjab — this folk energy entered Punjab Ang Thumri.\n• Kafi, Khamaj, Pilu, and Tilang are the other ragas most commonly used in Thumri."
+    },
+    "hi": {
+      "display_text": "ठुमरी और उसकी उप-शैलियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बनारस और लखनऊ परंपराओं से जुड़ा पूरब अंग ठुमरी धीमा और राग-केंद्रित होता है, जबकि पंजाब अंग ठुमरी तेज, तालबद्ध रूप से अधिक सक्रिय और टप्पा शैली से प्रभावित होता है।\n2. भैरवी ठुमरी में सबसे सामान्य राग होने के साथ-साथ शास्त्रीय हिंदुस्तानी संगीत समारोहों को समाप्त करने वाला पारंपरिक राग भी है, जिसका अर्थ है कि यह केवल ठुमरी रूप से जुड़ा है और अन्य शास्त्रीय शैलियों में उपयोग नहीं होता।\n3. शृंगार रस — जो रोमांटिक लालसा और भक्तिपूर्ण प्रेम को व्यक्त करता है — ठुमरी में प्रमुख भावनात्मक भावना है, जो अक्सर राधा-कृष्ण की छवियों के माध्यम से व्यक्त की जाती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "बनारस और लखनऊ परंपराओं से जुड़ा पूरब अंग ठुमरी धीमा और राग-केंद्रित होता है, जबकि पंजाब अंग ठुमरी तेज, तालबद्ध रूप से अधिक सक्रिय और टप्पा शैली से प्रभावित होता है।",
+          "verdict": "सही",
+          "reason": "ये शैलीगत भेद स्पष्ट हैं: पूरब अंग राग विस्तार और भावनात्मक गहराई को प्राथमिकता देता है; पंजाब अंग (जिसे पटियाला अंग भी कहा जाता है) तालबद्ध रूप से तेज और टप्पा प्रभाव दिखाता है।"
+        },
+        {
+          "statement": "भैरवी ठुमरी में सबसे सामान्य राग होने के साथ-साथ शास्त्रीय हिंदुस्तानी संगीत समारोहों को समाप्त करने वाला पारंपरिक राग भी है, जिसका अर्थ है कि यह केवल ठुमरी रूप से जुड़ा है और अन्य शास्त्रीय शैलियों में उपयोग नहीं होता।",
+          "verdict": "गलत",
+          "reason": "हालांकि भैरवी ठुमरी में भारी रूप से उपयोग होता है और यह पारंपरिक समारोह समाप्ति राग है, यह दावा कि यह 'केवल ठुमरी से जुड़ा है' गलत है — भैरवी ख्याल, लघु शास्त्रीय और लोक शैलियों में भी पाया जाता है।"
+        },
+        {
+          "statement": "शृंगार रस — जो रोमांटिक लालसा और भक्तिपूर्ण प्रेम को व्यक्त करता है — ठुमरी में प्रमुख भावनात्मक भावना है, जो अक्सर राधा-कृष्ण की छवियों के माध्यम से व्यक्त की जाती है।",
+          "verdict": "सही",
+          "reason": "शृंगार रस (भक्तिपूर्ण रूप में कामुक/रोमांटिक भावना) ठुमरी की परिभाषित भावनात्मक अभिविन्यास है, जो राधा-कृष्ण कथा ढांचे के माध्यम से व्यक्त होती है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र भैरवी को 'ठुमरी से संबंधित' और 'समारोह समाप्त करता है' जानते हैं, वे कथन 2 को 'केवल' शब्द की उपेक्षा कर सही मान सकते हैं, जो इसे गलत बनाता है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: पूरब अंग = धीमा, राग-केंद्रित (बनारस/लखनऊ); पंजाब अंग = तेज, टप्पा-प्रभावित — सही।",
+        "कथन 2 सत्यापित करें: 'केवल ठुमरी से जुड़ा' दायरा-विस्तार है जो इसे गलत बनाता है — भैरवी ख्याल और अन्य शैलियों में भी है; गलत।",
+        "कथन 3 सत्यापित करें: शृंगार रस और राधा-कृष्ण विषय — ठुमरी की परिभाषित विशेषता; सही।",
+        "कथन 1 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "दायरा-विस्तार जाल कथन 2 में भैरवी के बारे में सत्य तथ्यों के समूह में 'केवल ठुमरी से जुड़ा' जोड़ता है (ठुमरी में उपयोग + समारोह समाप्ति)। ये दो सत्य तथ्य ज्ञात हैं; गलत योग्यता को देखना आसान नहीं है। जो छात्र 'भैरवी = ठुमरी + समारोह समाप्ति' याद रखते हैं, वे दोनों भागों को सत्य मानेंगे और 'केवल' शब्द को नजरअंदाज कर देंगे, जो कथन 2 को अमान्य करता है।",
+      "final_explanation": "ठुमरी की दो क्षेत्रीय शैलियाँ एक ही रूप के भीतर भिन्न सौंदर्यशास्त्र दर्शाती हैं।\n\n• कथन 1 — सही: पूरब अंग (पूर्वी शैली) बनारस और लखनऊ से है, जिसमें धीमी राग खोज और भावनात्मक गहराई होती है। पंजाब अंग तेज, तालबद्ध और टप्पा (तालबद्ध रूप से तीव्र पंजाब लोक-शास्त्रीय रूप) के प्रभाव को दर्शाता है।\n• कथन 2 — गलत: भैरवी ठुमरी में भारी उपयोग होता है और पारंपरिक समारोह समाप्ति राग है, लेकिन यह केवल ठुमरी से जुड़ा नहीं है। भैरवी रचनाएँ ख्याल, भक्तिपूर्ण और लोक परंपराओं में भी हैं। 'केवल' शब्द इसे गलत बनाता है।\n• कथन 3 — सही: शृंगार रस अपने भक्तिपूर्ण रूप (मधुर भक्ति — प्रेमपूर्ण भक्ति) में ठुमरी की प्रमुख भावना है, जो राधा-कृष्ण कथा के माध्यम से व्यक्त होती है।\n\nमूल्यवर्धन:\n• गिरिजा देवी (बनारस घराना) पूरब अंग ठुमरी की प्रमुख आधुनिक प्रवर्तक थीं।\n• टप्पा पंजाब में ऊँट चालकों का लोक गीत था — यह लोक ऊर्जा पंजाब अंग ठुमरी में आई।\n• काफ़ी, खमाज, पिलू और तिलंग ठुमरी में सबसे अधिक प्रयुक्त अन्य राग हैं।"
+    }
+  },
+  {
+    "uuid": "dd30ebbd-1b79-4c18-aca7-330422ebc92e",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Khyal Gharanas: Gwalior, Agra, Jaipur-Atrauli, Kirana",
+        "Gharana System: Concept, Transmission, and Guru-Shishya Parampara"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Agra gharana — Dhrupad influence retained in Khyal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A young classical vocalist performs a Khyal recital. Observers note that his alap retains elements reminiscent of Dhrupad's nom-tom style, his voice production is open-throated and forceful, and the overall aesthetic of the performance leans towards gravity and weight rather than lyrical delicacy or rhythmic complexity. Based on these stylistic characteristics, to which Khyal gharana does his training most likely belong?\n\n(a) Gwalior gharana, known for its seniority and emphasis on clear sargam\n(b) Agra gharana, which retains strong Dhrupad influence in vocalisation and alap approach\n(c) Kirana gharana, distinguished by its sustained notes and emotional sincerity\n(d) Jaipur-Atrauli gharana, celebrated for intricate taal play and layakari",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know Gwalior is the 'oldest' Khyal gharana may assume the described characteristics (forceful voice, nom-tom-like alap) are Gwalior's, not Agra's.",
+      "elimination_logic": [
+        "Identify key traits in scenario: forceful voice production, Dhrupad-like nom-tom alap elements retained, emphasis on weight and gravity over delicacy.",
+        "Eliminate (a): Gwalior gharana emphasises clear sargam and gamak — not nom-tom alap retention; its style is more expansive and clear, not specifically Dhrupad-influenced in the nom-tom sense.",
+        "Eliminate (c): Kirana gharana's hallmark is sustained notes (kana swar) and emotional depth — not Dhrupad nom-tom influence.",
+        "Eliminate (d): Jaipur-Atrauli's speciality is complex taal play and layakari — not Dhrupad-heavy vocalisation.",
+        "Confirm (b): Agra gharana retains strong Dhrupad influence, emphasises forceful open-throated voice production, and carries elements of nom-tom alap into its Khyal practice — hallmarks of the Faiyaz Khan lineage."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap works here by attributing Agra gharana characteristics to Gwalior. Both are old, respected Khyal gharanas, and Gwalior is the oldest — so students confident about Gwalior's seniority may project Dhrupad influence onto it. The specific feature distinguishing Agra is its retention of nom-tom alap flavour and heavy, Dhrupad-inflected vocalisation.",
+      "final_explanation": "Each Khyal gharana developed a distinct vocal aesthetic (gayaki) that reflects its historical origins and key masters. The scenario describes a vocalist whose style is characterised by Dhrupad-like gravity, forceful voice, and nom-tom alap elements — these are the defining markers of the Agra gharana.\n\n• Option (a): Gwalior is the oldest Khyal gharana but its hallmarks are clarity of notes, expansive gamak, and clean sargam — not Dhrupad nom-tom influence.\n• Option (b): Correct — Agra gharana is known for its strong Dhrupad lineage (it retained nom-tom-like alap elements and forceful, open-throated voice production). Faiyaz Khan is its defining 20th-century exponent.\n• Option (c): Kirana gharana prizes sustained notes (kana swar) and deep emotional sincerity — its approach is gentle rather than forceful.\n• Option (d): Jaipur-Atrauli gharana is celebrated for intricate taal play (layakari) and rhythmic complexity — not Dhrupad-influenced vocalisation.\n\nValue Addition:\n• Faiyaz Khan's title 'Aftab-e-Mouiiqat' (Sun of Music) reflects his stature in the Agra gharana.\n• The Agra gharana's Dhrupad influence comes from its lineage through Haji Sujan Khan, who trained in Dhrupad before Khyal.\n• Layakari (rhythmic play with tala subdivisions) is the Jaipur-Atrauli gharana's most celebrated stylistic feature."
+    },
+    "hi": {
+      "display_text": "एक युवा शास्त्रीय गायक ख्याल गायन प्रस्तुत करता है। दर्शकों ने नोट किया कि उसके आलाप में ध्रुपद के नॉम-टॉम शैली के तत्व बने हुए हैं, उसकी आवाज़ खुली और प्रबल है, और प्रदर्शन की समग्र शैली गीतात्मक नाजुकता या लयात्मक जटिलता की बजाय गुरुत्व और भार की ओर झुकती है। इन शैलीगत विशेषताओं के आधार पर, उसकी प्रशिक्षण सबसे अधिक संभावना किस ख्याल घराने से संबंधित है?\n\n(a) ग्वालियर घराना, जो अपनी वरिष्ठता और स्पष्ट सरगम पर जोर देने के लिए जाना जाता है\n(b) आगरा घराना, जो गायन और आलाप में प्रबल ध्रुपद प्रभाव बनाए रखता है\n(c) किराना घराना, जो निरंतर स्वर और भावनात्मक सच्चाई के लिए विशिष्ट है\n(d) जयपुर-अत्रौली घराना, जो जटिल ताल वादन और लयकारी के लिए प्रसिद्ध है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि ग्वालियर सबसे 'पुराना' ख्याल घराना है, वे मान सकते हैं कि वर्णित विशेषताएँ (प्रबल आवाज, नॉम-टॉम जैसी आलाप) ग्वालियर की हैं, न कि आगरा की।",
+      "elimination_logic": [
+        "परिदृश्य में मुख्य लक्षण पहचानें: प्रबल आवाज़ का उत्पादन, ध्रुपद-समान नॉम-टॉम आलाप तत्वों का संरक्षण, नाजुकता की बजाय भार और गुरुत्व पर जोर।",
+        "(a) को हटाएँ: ग्वालियर घराना स्पष्ट सरगम और गमक पर जोर देता है — नॉम-टॉम आलाप संरक्षण नहीं; इसकी शैली अधिक विस्तृत और स्पष्ट है, न कि विशेष रूप से नॉम-टॉम अर्थ में ध्रुपद-प्रभावित।",
+        "(c) को हटाएँ: किराना घराने की विशेषता है निरंतर स्वर (काना स्वर) और भावनात्मक गहराई — न कि ध्रुपद नॉम-टॉम प्रभाव।",
+        "(d) को हटाएँ: जयपुर-अत्रौली की विशेषता जटिल ताल वादन और लयकारी है — न कि ध्रुपद-प्रधान गायन।",
+        "(b) की पुष्टि करें: आगरा घराना प्रबल ध्रुपद प्रभाव रखता है, प्रबल खुली गले की आवाज़ उत्पादन पर जोर देता है, और अपने ख्याल अभ्यास में नॉम-टॉम आलाप के तत्वों को बनाए रखता है — फैयाज खान की विरासत के प्रमुख लक्षण।"
+      ],
+      "upsc_trap_explanation": "यह आंशिक-सत्य जाल यहाँ काम करता है क्योंकि आगरा घराने की विशेषताओं को ग्वालियर से जोड़ दिया जाता है। दोनों पुराने, सम्मानित ख्याल घराने हैं, और ग्वालियर सबसे पुराना है — इसलिए ग्वालियर की वरिष्ठता के प्रति आश्वस्त छात्र ध्रुपद प्रभाव को उस पर प्रक्षेपित कर सकते हैं। आगरा को विशिष्ट रूप से अलग करने वाली विशेषता है इसका नॉम-टॉम आलाप स्वाद और भारी, ध्रुपद-प्रभावित गायन।",
+      "final_explanation": "प्रत्येक ख्याल घराने ने एक विशिष्ट गायकी विकसित की जो उसके ऐतिहासिक मूल और प्रमुख गुरुजनों को दर्शाती है। परिदृश्य में वर्णित गायक की शैली ध्रुपद-समान गुरुत्व, प्रबल आवाज़, और नॉम-टॉम आलाप तत्वों से परिभाषित है — ये आगरा घराने के प्रमुख चिन्ह हैं।\n\n• विकल्प (a): ग्वालियर सबसे पुराना ख्याल घराना है लेकिन इसकी विशेषताएँ हैं स्वर की स्पष्टता, विस्तृत गमक, और साफ सरगम — न कि ध्रुपद नॉम-टॉम प्रभाव।\n• विकल्प (b): सही — आगरा घराना अपने प्रबल ध्रुपद वंश के लिए जाना जाता है (इसने नॉम-टॉम जैसे आलाप तत्व और प्रबल, खुली गले की आवाज़ को बनाए रखा)। फैयाज खान इसके 20वीं सदी के प्रमुख प्रवर्तक हैं।\n• विकल्प (c): किराना घराना निरंतर स्वर (काना स्वर) और गहरी भावनात्मक सच्चाई को महत्व देता है — इसकी शैली कोमल है, प्रबल नहीं।\n• विकल्प (d): जयपुर-अत्रौली घराना जटिल ताल वादन (लयकारी) और लयात्मक जटिलता के लिए प्रसिद्ध है — न कि ध्रुपद-प्रभावित गायन।\n\nमूल्य संवर्धन:\n• फैयाज खान का उपनाम 'आफ़ताब-ए-मौईक़ात' (संगीत का सूरज) आगरा घराने में उनकी प्रतिष्ठा को दर्शाता है।\n• आगरा घराने का ध्रुपद प्रभाव हाजी सुजान खान की विरासत से आता है, जिन्होंने ख्याल से पहले ध्रुपद में प्रशिक्षण लिया था।\n• लयकारी (ताल उपविभाजनों के साथ लयात्मक खेल) जयपुर-अत्रौली घराने की सबसे प्रसिद्ध शैलीगत विशेषता है।"
+    }
+  },
+  {
+    "uuid": "6b71672c-3e02-4590-9987-3cf55be2d065",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Dhrupad Gharanas: Dagar, Darbhanga, Betiya, Talwandi"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Four Dhrupad Banis — Gauhar, Khandar, Dagur, Nauhar",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly lists the four traditional Banis (stylistic schools) of Dhrupad?\n\n(a) Gauhar, Khandar, Dagur, Nauhar\n(b) Gauhar, Khandar, Meend, Nauhar\n(c) Poorab, Khandar, Dagar, Beenkar\n(d) Gauhar, Senia, Dagar, Nauhar",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Poorab, Khandar, Dagar, Beenkar' sounds plausible because 'Poorab' is a real directional style in Thumri and 'Beenkar' is a real instrumental style — mixing them with two actual Bani names creates a convincing distractor.",
+      "elimination_logic": [
+        "Eliminate (b): 'Meend' is a performance technique (glide between notes), not a Dhrupad Bani.",
+        "Eliminate (c): 'Poorab' is a Thumri stylistic direction, not a Dhrupad Bani; 'Beenkar' is an instrumental bin-playing style.",
+        "Eliminate (d): 'Senia' is a lineage name (Senia gharana from Tansen's tradition), not a Bani name.",
+        "Confirm (a): The four Dhrupad Banis are Gauhar, Khandar, Dagur (Dagar), and Nauhar — this is the standard musicological formulation."
+      ],
+      "upsc_trap_explanation": "The entity-swap in option (c) combines two real terms from Indian music (Poorab — a Thumri direction; Beenkar — a bin/rudra-veena playing style) with two actual Bani names to create a list that sounds authoritative. A student who cannot recall all four Banis precisely will be drawn to the familiar 'Poorab' label.",
+      "final_explanation": "The Dhrupad tradition is organised into four stylistic schools called Banis, each associated with a distinct vocalisation approach and lineage.\n\n• Option (a): Correct — The four Dhrupad Banis are Gauhar Bani, Khandar Bani, Dagur (Dagar) Bani, and Nauhar Bani. Each represents a distinct approach to vowel production, ornamentation, and phrase construction.\n• Option (b): Incorrect — 'Meend' is a melodic ornament (portamento glide between notes), not a Bani.\n• Option (c): Incorrect — 'Poorab' is a regional stylistic direction in Thumri; 'Beenkar' refers to players of the bin (rudra veena), not a Dhrupad Bani.\n• Option (d): Incorrect — 'Senia' refers to the lineage tradition descending from Tansen (Miyan Tansen's school), not a Bani name.\n\nValue Addition:\n• The Dagar gharana is associated with the Dagur Bani and is today the most prominent performing Dhrupad school.\n• Bani literally means 'voice' or 'style of speech' — reflecting the vocal character each school emphasises.\n• The Gauhar Bani is considered the oldest and most orthodox of the four styles."
+    },
+    "hi": {
+      "display_text": "ध्रुपद की चार पारंपरिक बानी (शैलीगत स्कूल) निम्नलिखित में से कौन-सी सही सूचीबद्ध करती है?\n\n(a) गौहर, खंडार, डगुर, नौहर\n(b) गौहर, खंडार, मींड, नौहर\n(c) पूरब, खंडार, डागर, बीनकार\n(d) गौहर, सेनिया, डागर, नौहर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'पूरब, खंडार, डागर, बीनकार' विश्वसनीय लगता है क्योंकि 'पूरब' ठुमरी में एक वास्तविक दिशात्मक शैली है और 'बीनकार' एक वास्तविक वाद्य शैली है — इन्हें दो वास्तविक बानी नामों के साथ मिलाकर एक विश्वसनीय भ्रम पैदा किया गया है।",
+      "elimination_logic": [
+        "(b) को हटाएं: 'मींड' एक प्रदर्शन तकनीक है (स्वरों के बीच ग्लाइड), ध्रुपद बानी नहीं है।",
+        "(c) को हटाएं: 'पूरब' ठुमरी की एक शैलीगत दिशा है, ध्रुपद बानी नहीं; 'बीनकार' बीन वादन की शैली है।",
+        "(d) को हटाएं: 'सेनिया' वंश नाम है (तansen की परंपरा से सेनिया घराना), बानी नाम नहीं।",
+        "(a) की पुष्टि करें: चार ध्रुपद बानी हैं गौहर, खंडार, डगुर (डागर), और नौहर — यह मानक संगीतशास्त्रीय व्याख्या है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) में वस्तु-स्थानांतरण है जो भारतीय संगीत के दो वास्तविक शब्दों (पूरब — ठुमरी की दिशा; बीनकार — बीन/रुद्रवीणा वादन शैली) को दो वास्तविक बानी नामों के साथ जोड़कर एक ऐसा सूची बनाता है जो अधिकारिक लगती है। जो छात्र चारों बानी ठीक से याद नहीं कर पाते, वे परिचित 'पूरब' शब्द की ओर आकर्षित होंगे।",
+      "final_explanation": "ध्रुपद परंपरा को चार शैलीगत स्कूलों में विभाजित किया गया है जिन्हें बानी कहा जाता है, प्रत्येक की अपनी विशिष्ट गायन पद्धति और वंशावली होती है।\n\n• विकल्प (a): सही — चार ध्रुपद बानी हैं गौहर बानी, खंडार बानी, डगुर (डागर) बानी, और नौहर बानी। प्रत्येक स्वर उत्पादन, अलंकरण, और वाक्य रचना में विशिष्ट दृष्टिकोण दर्शाता है।\n• विकल्प (b): गलत — 'मींड' एक सुर अलंकरण है (स्वरों के बीच पोर्टामेंटो ग्लाइड), बानी नहीं।\n• विकल्प (c): गलत — 'पूरब' ठुमरी की क्षेत्रीय शैलीगत दिशा है; 'बीनकार' बीन (रुद्रवीणा) वादक को कहते हैं, ध्रुपद बानी नहीं।\n• विकल्प (d): गलत — 'सेनिया' तansen की परंपरा से संबंधित वंश है, बानी नाम नहीं।\n\nमूल्यवर्धन:\n• डागर घराना डगुर बानी से जुड़ा है और आज सबसे प्रमुख प्रदर्शनकारी ध्रुपद स्कूल है।\n• बानी का शाब्दिक अर्थ है 'स्वर' या 'बोलने की शैली' — जो प्रत्येक स्कूल की गायन विशेषता को दर्शाता है।\n• गौहर बानी को चारों में सबसे पुराना और सबसे रूढ़िवादी माना जाता है।"
+    }
+  },
+  {
+    "uuid": "8beda0bc-bdcb-4a4c-961e-8b51c2a75825",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Hindustani vs. Carnatic: Structural Distinctions in Vocal Traditions",
+        "Gharana System: Concept, Transmission, and Guru-Shishya Parampara"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Hindustani-Carnatic form equivalents and key terminology",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Musical Term / Form) with List II (Correct Description or Equivalent):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Gharana",
+            "1. System of 10 parent scales used to classify ragas in Hindustani music"
+          ],
+          [
+            "B. Thaat",
+            "2. Carnatic fixed composition equivalent to the Khyal bandish"
+          ],
+          [
+            "C. Ragam-Tanam-Pallavi",
+            "3. Lineage-based hereditary school of music transmission in Hindustani tradition"
+          ],
+          [
+            "D. Kriti",
+            "4. Carnatic counterpart of the Dhrupad alap-jod-jhala improvisatory sequence"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-3, B-1, C-4, D-2\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Swapping Ragam-Tanam-Pallavi (C) with Kriti (D) is the most likely error because students know both are Carnatic forms and may not precisely anchor each to its Hindustani counterpart.",
+      "elimination_logic": [
+        "Anchor A (Gharana) with 3 (Hindustani lineage school) — unambiguous; Sampradaya is the Carnatic equivalent.",
+        "Anchor B (Thaat) with 1 (parent scale system, 10 in Hindustani) — Thaat = 10 parent scales; Melakarta = 72 parent ragas.",
+        "Anchor C (Ragam-Tanam-Pallavi) with 4 (Carnatic counterpart of Dhrupad alap-jod-jhala) — both are improvisatory frameworks.",
+        "By elimination, D (Kriti) matches with 2 (Carnatic equivalent of Khyal bandish — fixed composition); confirming option (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap misassigns Ragam-Tanam-Pallavi as the Carnatic equivalent of the Khyal bandish (a fixed composition) rather than of Dhrupad's alap-jod-jhala (an improvisatory sequence). Both are major Carnatic forms, but their functional roles are distinct. A student who simply knows they are 'important Carnatic forms' without anchoring each to its functional equivalent will select the swapped option.",
+      "final_explanation": "Mapping structural equivalents between Hindustani and Carnatic traditions requires precision.\n\nCorrect pairings:\n• A (Gharana) — 3 (Lineage-based school of music transmission in Hindustani): Gharana is a hereditary lineage school specific to Hindustani music; Carnatic uses 'Sampradaya'.\n• B (Thaat) — 1 (System of 10 parent scales in Hindustani): Bhatkhande's Thaat system; Carnatic equivalent is Melakarta (72 parent ragas).\n• C (Ragam-Tanam-Pallavi) — 4 (Carnatic counterpart of Dhrupad's alap-jod-jhala): Both are extended improvisatory frameworks; Ragam = unmetered exploration, Tanam = pulse development, Pallavi = composed refrain.\n• D (Kriti) — 2 (Carnatic equivalent of the Khyal bandish): Both are fixed composed pieces with Sthayi/Antara-like structure (Pallavi, Anupallavi, Charanam) serving as the improvisational anchor.\n\nValue Addition:\n• The Carnatic Trinity — Tyagaraja, Muthuswami Dikshitar, Syama Sastri — are the foremost composers of Kriti.\n• Ragam-Tanam-Pallavi is the apex form of Carnatic improvisation and requires the highest level of raga mastery.\n• The Melakarta system was codified by Venkatamakhi in the 17th century."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संगीत शब्द / स्वरूप) को सूची II (सही विवरण या समकक्ष) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. घराना",
+            "1. हिंदुस्तानी संगीत में रागों को वर्गीकृत करने के लिए प्रयुक्त 10 मूल स्वरूप प्रणाली"
+          ],
+          [
+            "B. ठाट",
+            "2. ख्याल बंदिश के कर्नाटक निश्चित रचना समकक्ष"
+          ],
+          [
+            "C. रागम-तानम-पल्लवी",
+            "3. हिंदुस्तानी परंपरा में वंशानुगत संगीत विद्यालय"
+          ],
+          [
+            "D. कृति",
+            "4. ध्रुपद के अलाप-जोड़-झाला आविष्कारात्मक अनुक्रम का कर्नाटक समकक्ष"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-3, B-1, C-4, D-2\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — रागम-तानम-पल्लवी (C) को कृति (D) के साथ बदलना सबसे संभावित त्रुटि है क्योंकि छात्र जानते हैं कि दोनों कर्नाटक के स्वरूप हैं और प्रत्येक को उसके हिंदुस्तानी समकक्ष से सटीक रूप से जोड़ना नहीं जानते।",
+      "elimination_logic": [
+        "एंकर A (घराना) को 3 (हिंदुस्तानी वंशानुगत संगीत विद्यालय) के साथ जोड़ना — स्पष्ट; संप्रदाय कर्नाटक का समकक्ष है।",
+        "एंकर B (ठाट) को 1 (हिंदुस्तानी में 10 मूल स्वरूप प्रणाली) के साथ जोड़ना — ठाट = 10 मूल स्वरूप; मेलakarta = 72 मूल राग।",
+        "एंकर C (रागम-तानम-पल्लवी) को 4 (ध्रुपद के अलाप-जोड़-झाला का कर्नाटक समकक्ष) के साथ जोड़ना — दोनों आविष्कारात्मक रूपरेखा हैं।",
+        "निकास द्वारा, D (कृति) मेल खाता है 2 (ख्याल बंदिश का कर्नाटक समकक्ष — निश्चित रचना); विकल्प (b) की पुष्टि।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में रागम-तानम-पल्लवी को ख्याल बंदिश (एक निश्चित रचना) के कर्नाटक समकक्ष के बजाय ध्रुपद के अलाप-जोड़-झाला (एक आविष्कारात्मक अनुक्रम) के कर्नाटक समकक्ष के रूप में गलत रूप से सौंपा जाता है। दोनों प्रमुख कर्नाटक स्वरूप हैं, लेकिन उनकी कार्यात्मक भूमिकाएँ भिन्न हैं। जो छात्र केवल यह जानते हैं कि ये 'महत्वपूर्ण कर्नाटक स्वरूप' हैं पर प्रत्येक को उसके कार्यात्मक समकक्ष से नहीं जोड़ते, वे इस स्थानांतरित विकल्प को चुनेंगे।",
+      "final_explanation": "हिंदुस्तानी और कर्नाटक परंपराओं के बीच संरचनात्मक समकक्षों का मिलान सटीकता मांगता है।\n\nसही जोड़:\n• A (घराना) — 3 (हिंदुस्तानी में वंशानुगत संगीत विद्यालय): घराना हिंदुस्तानी संगीत का वंशानुगत विद्यालय है; कर्नाटक में इसे 'संप्रदाय' कहते हैं।\n• B (ठाट) — 1 (हिंदुस्तानी में 10 मूल स्वरूप प्रणाली): भाटखंडे का ठाट प्रणाली; कर्नाटक समकक्ष मेलakarta (72 मूल राग) है।\n• C (रागम-तानम-पल्लवी) — 4 (ध्रुपद के अलाप-जोड़-झाला का कर्नाटक समकक्ष): दोनों विस्तारित आविष्कारात्मक रूपरेखा हैं; रागम = बिना ताल के अन्वेषण, तानम = ताल विकास, पल्लवी = रचित पुनरावृत्ति।\n• D (कृति) — 2 (ख्याल बंदिश का कर्नाटक समकक्ष): दोनों निश्चित रचित रचनाएँ हैं जिनमें स्थायी/अंतरा जैसी संरचना (पल्लवी, अनुपल्लवी, चरण) आविष्कारात्मक आधार के रूप में होती है।\n\nमूल्य संवर्धन:\n• कर्नाटक त्रिमूर्ति — त्यागराज, मुथुस्वामी दीक्षितर, श्यामा शास्त्री — कृति के प्रमुख रचनाकार हैं।\n• रागम-तानम-पल्लवी कर्नाटक आविष्कार का शीर्ष स्वरूप है और उच्चतम राग निपुणता मांगता है।\n• मेलakarta प्रणाली का संहिताकरण 17वीं सदी में वेंकटमाखी ने किया था।"
+    }
+  },
+  {
+    "uuid": "564de946-877e-41bc-8470-1ac4e688ff16",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Khyal: Origins, Meaning, and Transition from Dhrupad",
+        "Sadarang and Adarang: Systematizers of Khyal in the Mughal Court"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Khyal's rise during Mughal decline — causation direction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): During the 18th century, Khyal gradually replaced Dhrupad as the dominant form of Hindustani classical vocal music in both court and public performance contexts.\n\nReason (R): The weakening of Mughal imperial power during the 18th century caused the dispersal of court musicians to regional patronage centres, creating conditions for new musical forms to flourish.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who see both A and R as factually true and know they are both connected to the same historical period will assume R explains A without examining the causal direction.",
+      "elimination_logic": [
+        "Step 1: Is A correct? Khyal replaced Dhrupad as the dominant Hindustani court musical form during the 18th century — A is correct.",
+        "Step 2: Is R correct? The decline of Mughal imperial power in the 18th century led to the dispersal of court musicians to regional courts — R is correct.",
+        "Step 3: Does R explain A? The dispersal of musicians to regional courts actually supported Khyal's spread and adaptation — but the primary reason Khyal eclipsed Dhrupad is its greater accessibility, improvisation freedom, and romantic character; R is a contextual factor but not the direct causal explanation of A.",
+        "A correct + R correct + R does NOT directly explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap presents a contextual factor (Mughal decline dispersing musicians) as the direct causal explanation for Khyal's rise. In reality, Khyal eclipsed Dhrupad primarily because of its intrinsic musical qualities — greater improvisatory freedom, lighter tone, romantic themes — that appealed to both regional courts and general audiences. The Mughal decline is the historical context, not the musical cause.",
+      "final_explanation": "The transition from Dhrupad to Khyal as the dominant Hindustani classical form is one of the most significant shifts in Indian music history.\n\nAssertion (A): Khyal replaced Dhrupad as the preferred court and classical musical form during the 18th century — this is correct. The shift was already underway under Muhammad Shah Rangile's reign (1719–1748).\n\nReason (R): The decline of Mughal imperial power in the 18th century resulted in court musicians dispersing to regional patronage centres — this is also correct. Musicians moved to Lucknow, Jaipur, Mysore, and other courts.\n\nCausal relationship: R is a historically accurate contextual factor but does not directly explain why Khyal replaced Dhrupad. The musical reasons for Khyal's rise include its greater improvisatory freedom, romantic lyrical content, lighter technical demands on listeners, and the genius of composers like Sadarang who created an appealing, accessible repertoire. The dispersal of musicians actually spread both Khyal AND Dhrupad — so R cannot be called the explanation of A. This makes option (b) correct.\n\nValue Addition:\n• Nadir Shah's 1739 sack of Delhi accelerated Mughal decline and cultural dispersal.\n• Regional courts (Lucknow, Jaipur, Mysore) became new classical music hubs in the 18th–19th centuries.\n• The Lucknow court under the Nawabs of Awadh became Thumri's premier patron in this same period."
+    },
+    "hi": {
+      "display_text": "कथन (A): 18वीं सदी के दौरान, ख़याल ने धीरे-धीरे ध्रुपद की जगह हिंदुस्तानी शास्त्रीय गायन के प्रमुख रूप के रूप में दरबार और सार्वजनिक प्रदर्शन दोनों में ले ली।\n\nकारण (R): 18वीं सदी में मुग़ल साम्राज्य की शक्ति के कमजोर होने से दरबारी संगीतकार क्षेत्रीय संरक्षक केंद्रों में फैल गए, जिससे नए संगीत रूपों के विकास के लिए परिस्थितियाँ बनीं।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो दोनों A और R को तथ्यात्मक रूप से सही मानते हैं और जानते हैं कि वे एक ही ऐतिहासिक काल से संबंधित हैं, वे बिना कारण संबंध की दिशा की जांच किए R को A का स्पष्टीकरण मान लेंगे।",
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? 18वीं सदी में ख़याल ने ध्रुपद की जगह हिंदुस्तानी दरबारी संगीत के प्रमुख रूप के रूप में ली — A सही है।",
+        "चरण 2: क्या R सही है? 18वीं सदी में मुग़ल साम्राज्य की शक्ति का पतन दरबारी संगीतकारों के क्षेत्रीय दरबारों में फैलाव का कारण बना — R सही है।",
+        "चरण 3: क्या R, A को समझाता है? संगीतकारों का क्षेत्रीय दरबारों में फैलाव वास्तव में ख़याल के प्रसार और अनुकूलन को बढ़ावा देता है — लेकिन ख़याल ने ध्रुपद को पीछे छोड़ा क्योंकि यह अधिक सुलभ, स्वरों की स्वतंत्रता और रोमांटिक चरित्र वाला था; R एक संदर्भ कारक है लेकिन A का प्रत्यक्ष कारण नहीं है।",
+        "A सही + R सही + R सीधे A को नहीं समझाता — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "उल्टा कारण संबंध का जाल संदर्भ कारक (मुग़ल पतन से संगीतकारों का फैलाव) को ख़याल के उदय का प्रत्यक्ष कारण बताता है। वास्तव में, ख़याल ने ध्रुपद को मुख्यतः अपनी अंतर्निहित संगीतात्मक विशेषताओं — अधिक स्वरों की स्वतंत्रता, हल्का स्वर, रोमांटिक विषय — के कारण पीछे छोड़ा जो क्षेत्रीय दरबारों और आम दर्शकों दोनों को आकर्षित करती थीं। मुग़ल पतन ऐतिहासिक संदर्भ है, संगीतात्मक कारण नहीं।",
+      "final_explanation": "ध्रुपद से ख़याल के रूप में हिंदुस्तानी शास्त्रीय संगीत के प्रमुख स्वरूप में परिवर्तन भारतीय संगीत इतिहास के सबसे महत्वपूर्ण परिवर्तनों में से एक है।\n\nकथन (A): 18वीं सदी में ख़याल ने दरबार और शास्त्रीय संगीत के रूप में ध्रुपद की जगह ले ली — यह सही है। यह परिवर्तन पहले से ही मुहम्मद शाह रंगीले (1719–1748) के शासनकाल में शुरू हो चुका था।\n\nकारण (R): 18वीं सदी में मुग़ल साम्राज्य की शक्ति के पतन के कारण दरबारी संगीतकार क्षेत्रीय संरक्षक केंद्रों में फैल गए — यह भी सही है। संगीतकार लखनऊ, जयपुर, मैसूर और अन्य दरबारों में चले गए।\n\nकारण संबंध: R ऐतिहासिक रूप से सही संदर्भ कारक है लेकिन यह सीधे यह नहीं बताता कि ख़याल ने ध्रुपद को क्यों पीछे छोड़ा। ख़याल के उदय के संगीत कारणों में इसकी अधिक स्वरों की स्वतंत्रता, रोमांटिक गीतात्मक विषय, श्रोताओं पर हल्की तकनीकी मांगें, और सदरंग जैसे रचनाकारों की प्रतिभा शामिल है जिन्होंने आकर्षक और सुलभ रचनाएँ बनाई। संगीतकारों का फैलाव वास्तव में ख़याल और ध्रुपद दोनों को फैलाने वाला था — अतः R को A का स्पष्टीकरण नहीं कहा जा सकता। इसलिए विकल्प (b) सही है।\n\nमूल्यवर्धन:\n• नादिर शाह का 1739 में दिल्ली पर आक्रमण मुग़ल पतन और सांस्कृतिक फैलाव को तेज़ करता है।\n• क्षेत्रीय दरबार (लखनऊ, जयपुर, मैसूर) 18वीं–19वीं सदी में नए शास्त्रीय संगीत केंद्र बने।\n• अवध के नवाबों के अधीन लखनऊ दरबार इसी अवधि में ठुमरी का प्रमुख संरक्षक बना।"
+    }
+  },
+  {
+    "uuid": "63f7b630-940e-4b41-b042-e780318fb049",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Tala Systems: Teentaal, Ektaal, Rupak, Dhamar — and their Form Associations",
+        "Dhrupad: Origins, Structure, and Historical Evolution"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Tala-to-form correct assignments",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following pairs of Tala and its associated Hindustani vocal form:",
+        "columns": [
+          "Tala (Beat Count)",
+          "Associated Vocal Form"
+        ],
+        "rows": [
+          [
+            "1. Chautal (12 beats)",
+            "Primary tala for Dhrupad compositions"
+          ],
+          [
+            "2. Dhamar taal (14 beats)",
+            "Associated with Dhammar, a Dhrupad variant performed during Holi"
+          ],
+          [
+            "3. Teentaal (12 beats)",
+            "Most commonly used tala in Khyal"
+          ],
+          [
+            "4. Ektaal (12 beats)",
+            "Used in Bada Khyal (slow-tempo Khyal) as a primary tala"
+          ]
+        ],
+        "footer_text": "How many of the above pairs are correctly matched?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Chautal (12 beats) — Primary tala for Dhrupad compositions",
+          "verdict": "Correct",
+          "reason": "Chautal is the canonical tala for Dhrupad bandishes in standard 12-beat cycle."
+        },
+        {
+          "statement": "Dhamar taal (14 beats) — Associated with Dhammar, a Dhrupad variant performed during the Holi festival",
+          "verdict": "Correct",
+          "reason": "Dhamar taal (14 beats) is definitionally linked to Dhammar — the festive Dhrupad-family form performed during Holi."
+        },
+        {
+          "statement": "Teentaal (12 beats) — Most commonly used tala in Khyal",
+          "verdict": "Incorrect",
+          "reason": "Teentaal has 16 beats, not 12. The beat count '12' belongs to Ektaal and Chautal; Teentaal's 16-beat cycle is its defining characteristic."
+        },
+        {
+          "statement": "Ektaal (12 beats) — Used in Bada Khyal (slow-tempo Khyal) as a primary tala",
+          "verdict": "Correct",
+          "reason": "Ektaal (12 beats) is one of the standard talas for Bada Khyal, alongside Tilwada (16 beats)."
+        }
+      ],
+      "strong_distractor": "d — Students who know Teentaal is 'the most common Khyal tala' may accept the 12-beat figure without questioning it, counting all four as correct.",
+      "elimination_logic": [
+        "Pair 1 (Chautal 12 beats → Dhrupad): Standard assignment — correct.",
+        "Pair 2 (Dhamar taal 14 beats → Dhammar/Holi): Standard assignment — correct.",
+        "Pair 3 (Teentaal 12 beats → Khyal): Teentaal has 16 beats, NOT 12 — incorrect.",
+        "Pair 4 (Ektaal 12 beats → Bada Khyal): Standard assignment — correct.",
+        "Three correct, one incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap substitutes '12 beats' for '16 beats' in the Teentaal description. Since 12 is the beat count of both Ektaal and Chautal (two other talas the student just processed correctly), the number '12' feels familiar and correct in context, increasing the risk of accepting the false Teentaal description.",
+      "final_explanation": "Tala assignments are form-specific in Hindustani music and require precise memorisation of both the tala name and its beat count.\n\n• Pair 1 — Correct: Chautal has 12 beats and is the primary tala for Dhrupad compositions.\n• Pair 2 — Correct: Dhamar taal has 14 beats (arranged as 5+2+3+4) and is associated with Dhammar — the Holi-season Dhrupad variant.\n• Pair 3 — Incorrect: Teentaal has 16 beats (4+4+4+4), NOT 12. Twelve beats correspond to Chautal and Ektaal. Teentaal is the most common tala in Khyal, but its beat count is 16.\n• Pair 4 — Correct: Ektaal has 12 beats and is used in Bada Khyal (slow-tempo Khyal), alongside Tilwada (16 beats).\n\nValue Addition:\n• Jhaptaal (10 beats) is used in Khyal and instrumental music — another commonly tested tala.\n• Rupak taal (7 beats) is notable for having khali (empty beat) on the first beat — unusual among talas.\n• The vibhag structure of Teentaal: Tin (1-4) + Tin (5-8) + Dhaa (9-12) + Tin (13-16)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "निम्न ताल और उनके संबंधित हिंदुस्तानी गायन स्वरूप के जोड़ों पर विचार करें:",
+        "columns": [
+          "ताल (ताल संख्या)",
+          "संबंधित गायन स्वरूप"
+        ],
+        "rows": [
+          [
+            "1. चौताल (12 ताल)",
+            "ध्रुपद रचनाओं के लिए प्राथमिक ताल"
+          ],
+          [
+            "2. धमार ताल (14 ताल)",
+            "धम्मर से जुड़ा, जो होली के दौरान प्रस्तुत होने वाला ध्रुपद रूप है"
+          ],
+          [
+            "3. तीनताल (12 ताल)",
+            "ख्याल में सबसे अधिक प्रयुक्त ताल"
+          ],
+          [
+            "4. एकताल (12 ताल)",
+            "बड़ा ख्याल (धीमी गति वाला ख्याल) में प्राथमिक ताल के रूप में प्रयुक्त"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने जोड़े सही रूप से मेल खाते हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "चौताल (12 ताल) — ध्रुपद रचनाओं के लिए प्राथमिक ताल",
+          "verdict": "सही",
+          "reason": "चौताल ध्रुपद बंदिशों के लिए मानक 12-ताल चक्र है।"
+        },
+        {
+          "statement": "धमार ताल (14 ताल) — धम्मर से जुड़ा, जो होली त्योहार के दौरान प्रस्तुत होने वाला ध्रुपद का एक रूप है",
+          "verdict": "सही",
+          "reason": "धमार ताल (14 ताल) परिभाषा के अनुसार धम्मर से जुड़ा है — जो होली के दौरान प्रस्तुत होने वाला उत्सवात्मक ध्रुपद परिवार का रूप है।"
+        },
+        {
+          "statement": "तीनताल (12 ताल) — ख्याल में सबसे अधिक प्रयुक्त ताल",
+          "verdict": "गलत",
+          "reason": "तीनताल में 16 ताल होते हैं, 12 नहीं। 12 ताल की गिनती एकताल और चौताल के लिए है; तीनताल का 16-ताल चक्र इसकी विशेषता है।"
+        },
+        {
+          "statement": "एकताल (12 ताल) — बड़ा ख्याल (धीमी गति वाला ख्याल) में प्राथमिक ताल के रूप में प्रयुक्त",
+          "verdict": "सही",
+          "reason": "एकताल (12 ताल) बड़ा ख्याल के लिए मानक तालों में से एक है, साथ ही तिलवाड़ा (16 ताल) भी है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि तीनताल 'ख्याल का सबसे सामान्य ताल' है, वे बिना जांचे 12 ताल की संख्या स्वीकार कर सकते हैं, जिससे सभी चार को सही मानने की गलती हो सकती है।",
+      "elimination_logic": [
+        "जोड़ी 1 (चौताल 12 ताल → ध्रुपद): मानक असाइनमेंट — सही।",
+        "जोड़ी 2 (धमार ताल 14 ताल → धम्मर/होली): मानक असाइनमेंट — सही।",
+        "जोड़ी 3 (तीनताल 12 ताल → ख्याल): तीनताल में 16 ताल होते हैं, 12 नहीं — गलत।",
+        "जोड़ी 4 (एकताल 12 ताल → बड़ा ख्याल): मानक असाइनमेंट — सही।",
+        "तीन सही, एक गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "काल-स्थानांतरण जाल में तीनताल के विवरण में '16 ताल' के स्थान पर '12 ताल' दिया गया है। चूंकि 12 ताल एकताल और चौताल दोनों का ताल संख्या है (जो छात्र ने सही पहचाना है), इसलिए संख्या '12' परिचित और सही लगती है, जिससे गलत तीनताल विवरण स्वीकार करने का जोखिम बढ़ जाता है।",
+      "final_explanation": "ताल असाइनमेंट हिंदुस्तानी संगीत में स्वरूप-विशिष्ट होते हैं और ताल नाम तथा उसकी ताल संख्या दोनों का सटीक स्मरण आवश्यक है।\n\n• जोड़ी 1 — सही: चौताल में 12 ताल होते हैं और यह ध्रुपद रचनाओं के लिए प्राथमिक ताल है।\n• जोड़ी 2 — सही: धमार ताल में 14 ताल होते हैं (5+2+3+4 के रूप में व्यवस्थित) और यह धम्मर से जुड़ा है — जो होली के मौसम में प्रस्तुत होने वाला ध्रुपद रूप है।\n• जोड़ी 3 — गलत: तीनताल में 16 ताल होते हैं (4+4+4+4), 12 नहीं। बारह ताल चौताल और एकताल के लिए हैं। तीनताल ख्याल में सबसे सामान्य ताल है, लेकिन इसकी ताल संख्या 16 है।\n• जोड़ी 4 — सही: एकताल में 12 ताल होते हैं और यह बड़ा ख्याल (धीमी गति वाला ख्याल) में प्रयुक्त होता है, साथ ही तिलवाड़ा (16 ताल) भी है।\n\nमूल्यवर्धन:\n• झपताल (10 ताल) ख्याल और वाद्य संगीत में प्रयुक्त होता है — एक अन्य सामान्य रूप से परीक्षण किया जाने वाला ताल।\n• रूपक ताल (7 ताल) अपनी पहली ताल पर खाली (खाली ताल) होने के लिए प्रसिद्ध है — तालों में असामान्य।\n• तीनताल की विभाग संरचना: टिन (1-4) + टिन (5-8) + धा (9-12) + टिन (13-16)।"
+    }
+  },
+  {
+    "uuid": "4671ec79-74c9-4c10-9f63-5b7e48e19b4c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Wajid Ali Shah and the Lucknow Cultural Renaissance",
+        "Girija Devi and the Banaras Gharana: Preservation of Thumri"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Lucknow vs. Banaras — distinct Thumri centers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about patrons and exponents of Thumri:\n\n1. Nawab Wajid Ali Shah of Lucknow is credited with developing Thumri as a distinct semi-classical form in the 19th century and was himself a composer who wrote under the pen name 'Akhtar'.\n2. Girija Devi, the foremost exponent of Poorab Ang Thumri, was associated with the Lucknow gharana of Thumri — the same tradition developed under Wajid Ali Shah's patronage.\n3. The Lucknow gharana of Kathak dance also flourished under Wajid Ali Shah's patronage, making his court a dual centre for both Thumri music and Kathak dance.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 3 only\n(c) 2 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Nawab Wajid Ali Shah of Lucknow is credited with developing Thumri as a distinct semi-classical form in the 19th century and was himself a composer who wrote under the pen name 'Akhtar'.",
+          "verdict": "Correct",
+          "reason": "Both facts are accurate: Wajid Ali Shah patronised and developed Thumri in the Awadh court and composed under the pen name 'Akhtar'."
+        },
+        {
+          "statement": "Girija Devi, the foremost exponent of Poorab Ang Thumri, was associated with the Lucknow gharana of Thumri — the same tradition developed under Wajid Ali Shah's patronage.",
+          "verdict": "Incorrect",
+          "reason": "Girija Devi belonged to the Banaras (Varanasi) gharana, not the Lucknow gharana. Although both are Poorab Ang centers, they are distinct traditions with different stylistic emphases."
+        },
+        {
+          "statement": "The Lucknow gharana of Kathak dance also flourished under Wajid Ali Shah's patronage, making his court a dual center for both Thumri music and Kathak dance.",
+          "verdict": "Correct",
+          "reason": "Wajid Ali Shah was a patron of both Thumri and Kathak; the Lucknow gharana of Kathak (with its emphasis on grace and expressiveness) developed under his court."
+        }
+      ],
+      "strong_distractor": "a — Students who know Lucknow is the birthplace of Thumri and that Girija Devi performed Thumri may conflate her with the Lucknow gharana, accepting Statement 2 as correct.",
+      "elimination_logic": [
+        "Check Statement 1: Wajid Ali Shah developed Thumri and composed as 'Akhtar' — both correct; Statement 1 is correct, not the answer.",
+        "Check Statement 2: Girija Devi was associated with the BANARAS gharana, not Lucknow — Statement 2 is INCORRECT; this is the answer.",
+        "Check Statement 3: Lucknow gharana of Kathak under Wajid Ali Shah — correct; Statement 3 is correct, not the answer.",
+        "Only Statement 2 is NOT correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap places Girija Devi in the Lucknow gharana instead of the Banaras gharana. Since Thumri originated in Lucknow and Girija Devi was its foremost 20th-century exponent, the association 'Girija Devi = Lucknow Thumri' feels inevitable to a student who hasn't memorised her specific gharana. Lucknow and Banaras are both 'Poorab Ang' Thumri centres, increasing the confusion.",
+      "final_explanation": "The Thumri tradition has two distinct geographic centres within the Poorab Ang style — Lucknow and Banaras — and confusing them is a classic examination trap.\n\n• Statement 1 — Correct: Wajid Ali Shah (r. 1847–1856) developed Thumri at his Lucknow court and composed under the pen name 'Akhtar'. He is the figure most associated with Thumri's crystallisation as a semi-classical form.\n• Statement 2 — Incorrect: Girija Devi (1929–2017) belonged to the Banaras (Varanasi) gharana of Thumri, not the Lucknow gharana. The Banaras tradition is noted for its deeper raga orientation and slower, more contemplative rendering compared to Lucknow's more ornate style.\n• Statement 3 — Correct: The Lucknow gharana of Kathak dance (emphasising grace, lyrical expressiveness, and emotional communication) developed under Wajid Ali Shah's active patronage — making his court a dual cultural hub.\n\nValue Addition:\n• Girija Devi's awards: Padma Shri (1972), Padma Bhushan (1989), Padma Vibhushan (2016).\n• The Banaras gharana of Thumri is closely associated with Kajri, Chaiti, and Hori — seasonal folk-rooted forms.\n• Kathak's Lucknow gharana contrasts with the Jaipur gharana: Lucknow emphasises bhav (expression), Jaipur emphasises footwork (nritta)."
+    },
+    "hi": {
+      "display_text": "ठुमरी के संरक्षक और प्रस्तोताओं के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. लखनऊ के नवाब वाजिद अली शाह को 19वीं सदी में ठुमरी को एक विशिष्ट अर्ध-शास्त्रीय रूप के रूप में विकसित करने का श्रेय दिया जाता है और वे स्वयं 'अख्तर' छद्म नाम से रचनाकार थे।\n2. पूर्व अंग ठुमरी की प्रमुख प्रस्तोता गिरिजा देवी लखनऊ ठुमरी घराने से संबंधित थीं — वही परंपरा जो वाजिद अली शाह के संरक्षण में विकसित हुई।\n3. कथक नृत्य का लखनऊ घराना भी वाजिद अली शाह के संरक्षण में फल-फूल रहा था, जिससे उनका दरबार ठुमरी संगीत और कथक नृत्य दोनों का केंद्र बन गया।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) केवल 2\n(d) 1 और 2 दोनों",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "लखनऊ के नवाब वाजिद अली शाह को 19वीं सदी में ठुमरी को एक विशिष्ट अर्ध-शास्त्रीय रूप के रूप में विकसित करने का श्रेय दिया जाता है और वे स्वयं 'अख्तर' छद्म नाम से रचनाकार थे।",
+          "verdict": "सही है",
+          "reason": "दोनों तथ्य सही हैं: वाजिद अली शाह ने अवध दरबार में ठुमरी का संरक्षण और विकास किया और 'अख्तर' छद्म नाम से रचना की।"
+        },
+        {
+          "statement": "पूर्व अंग ठुमरी की प्रमुख प्रस्तोता गिरिजा देवी लखनऊ ठुमरी घराने से संबंधित थीं — वही परंपरा जो वाजिद अली शाह के संरक्षण में विकसित हुई।",
+          "verdict": "गलत है",
+          "reason": "गिरिजा देवी बनारस (वाराणसी) घराने से थीं, लखनऊ घराने से नहीं। दोनों पूर्व अंग केंद्र हैं, पर वे अलग-अलग परंपराएँ हैं जिनका शैलीगत जोर भिन्न है।"
+        },
+        {
+          "statement": "ठुमरी संगीत के साथ-साथ कथक नृत्य का लखनऊ घराना भी वाजिद अली शाह के संरक्षण में फल-फूल रहा था, जिससे उनका दरबार ठुमरी और कथक दोनों का केंद्र बन गया।",
+          "verdict": "सही है",
+          "reason": "वाजिद अली शाह ठुमरी और कथक दोनों के संरक्षक थे; कथक का लखनऊ घराना (जो सौंदर्य और भावपूर्ण अभिव्यक्ति पर जोर देता है) उनके दरबार में विकसित हुआ।"
+        }
+      ],
+      "strong_distractor": "विकल्प (a) — जो छात्र जानते हैं कि ठुमरी का जन्मस्थान लखनऊ है और गिरिजा देवी ने ठुमरी प्रस्तुत की, वे उन्हें लखनऊ घराने से जोड़कर कथन 2 को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: वाजिद अली शाह ने ठुमरी विकसित की और 'अख्तर' के नाम से रचना की — दोनों सही हैं; कथन 1 सही है, उत्तर नहीं।",
+        "कथन 2 जांचें: गिरिजा देवी बनारस घराने से थीं, लखनऊ से नहीं — कथन 2 गलत है; यह उत्तर है।",
+        "कथन 3 जांचें: वाजिद अली शाह के संरक्षण में कथक का लखनऊ घराना — सही है; कथन 3 सही है, उत्तर नहीं।",
+        "केवल कथन 2 सही नहीं है — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "भूगोल-स्थानांतरण जाल गिरिजा देवी को बनारस घराने के बजाय लखनऊ घराने से जोड़ता है। चूंकि ठुमरी की उत्पत्ति लखनऊ में हुई और गिरिजा देवी 20वीं सदी की प्रमुख प्रस्तोता थीं, इसलिए 'गिरिजा देवी = लखनऊ ठुमरी' का संबंध उन छात्रों के लिए स्वाभाविक लगता है जिन्होंने उनका विशिष्ट घराना याद नहीं रखा। लखनऊ और बनारस दोनों पूर्व अंग ठुमरी केंद्र हैं, जो भ्रम को बढ़ाता है।",
+      "final_explanation": "ठुमरी परंपरा के पूर्व अंग शैली में दो भौगोलिक केंद्र हैं — लखनऊ और बनारस — और इन्हें भ्रमित करना एक पारंपरिक परीक्षा जाल है।\n\n• कथन 1 — सही: वाजिद अली शाह (शासनकाल 1847–1856) ने लखनऊ के अपने दरबार में ठुमरी का विकास किया और 'अख्तर' छद्म नाम से रचना की। वे ठुमरी के अर्ध-शास्त्रीय रूप के रूप में सृजन के प्रमुख व्यक्ति हैं।\n• कथन 2 — गलत: गिरिजा देवी (1929–2017) ठुमरी के बनारस (वाराणसी) घराने से थीं, लखनऊ घराने से नहीं। बनारस परंपरा अपनी गहरी रागात्मकता और धीमी, अधिक चिंतनशील प्रस्तुति के लिए जानी जाती है, जबकि लखनऊ की शैली अधिक अलंकृत है।\n• कथन 3 — सही: कथक नृत्य का लखनऊ घराना (जो सौंदर्य, गीतात्मक अभिव्यक्ति और भाव संप्रेषण पर जोर देता है) वाजिद अली शाह के सक्रिय संरक्षण में विकसित हुआ — जिससे उनका दरबार एक द्वैध सांस्कृतिक केंद्र बन गया।\n\nमूल्यवर्धन:\n• गिरिजा देवी को पद्मश्री (1972), पद्मभूषण (1989), पद्मविभूषण (2016) पुरस्कार मिले।\n• बनारस ठुमरी घराना कजरी, चैती और होरी जैसे मौसमी लोक-आधारित रूपों से जुड़ा है।\n• कथक का लखनऊ घराना जयपुर घराने से भिन्न है: लखनऊ में भाव (अभिव्यक्ति) पर जोर है, जयपुर में पदचालन (नृत्य) पर।"
+    }
+  },
+  {
+    "uuid": "e5c9bd65-8bce-4aee-b8a7-d98de3c79875",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Raga Grammar and its Application Across Vocal Forms",
+        "Thumri: Characteristics, Origins, and Stylistic Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Samay Siddhanta — time theory of ragas in Hindustani music",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A vocalist performs raga Bhairav at an early morning concert beginning at 6 AM in a Hindustani classical music recital. Senior musicologists present praise the choice of raga as deeply appropriate for the occasion. Which of the following principles best explains why the performance time is considered consistent with the raga chosen?\n\n(a) Samay Siddhanta — the Hindustani time-of-day raga assignment system — classifies Bhairav as a dawn and early morning raga, making a 6 AM performance appropriate.\n(b) Raga Bhairav is designated for performance only in northern regions during winter months, and a morning concert aligns with this geographic and seasonal specification.\n(c) The time theory of ragas is a 20th-century musicological convention introduced by Bhatkhande, and Bhairav's morning association is a modern performance preference rather than a classical rule.\n(d) Both Hindustani and Carnatic traditions follow Samay Siddhanta, and in both systems Bhairav is universally designated as the opening raga of all classical concerts regardless of time.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Students who know Carnatic music also uses ragas may assume time theory applies there equally, making option (d) seem like a comprehensive correct answer.",
+      "elimination_logic": [
+        "Identify the principle being tested: a morning raga (Bhairav is dawn/morning) performed at a 6 AM concert — is this consistent with raga time theory?",
+        "Eliminate (b): Raga time theory is not about geographic region — it is about time of day; geographic restrictions on ragas do not exist in this system.",
+        "Eliminate (c): The claim that time theory is a recent 20th-century invention is false — Samay Siddhanta has ancient roots documented in texts like Narada's Sangita Makarand.",
+        "Eliminate (d): Carnatic music does NOT strictly follow raga time theory — this is a distinctly Hindustani principle; option (d) overgeneralises.",
+        "Confirm (a): Samay Siddhanta assigns specific times of day to ragas in Hindustani music; Bhairav is a dawn raga, making a 6 AM performance entirely appropriate."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in option (d) extends Samay Siddhanta to Carnatic music, which does not apply this doctrine strictly. A student who knows 'both traditions use ragas' may generalise time theory to Carnatic, selecting (d) as the more comprehensive answer. The key distinction is that Samay Siddhanta is a Hindustani doctrine — Carnatic music classifies ragas differently and does not use time of day as a primary performance criterion.",
+      "final_explanation": "Samay Siddhanta (time theory of ragas) is a fundamental principle of Hindustani classical music that assigns each raga to a specific time of day or season based on its emotional and tonal character.\n\nThe scenario involves a vocalist performing raga Bhairav at dawn — 6 AM. Bhairav is one of the canonical morning ragas, traditionally associated with the period between sunrise and mid-morning (approximately 6–9 AM). Its komal (flat) Re and Dha create a contemplative, introspective atmosphere suited to early morning stillness.\n\n• Option (a): Correct — Samay Siddhanta, the Hindustani time-of-day raga assignment system, classifies Bhairav as a dawn/morning raga. The 6 AM performance is entirely consistent with this doctrine.\n• Option (b): Incorrect — Samay Siddhanta relates to time of day, not geographic location of performance.\n• Option (c): Incorrect — Samay Siddhanta has ancient historical roots (referenced in medieval musicological texts); it is not a modern 20th-century construct.\n• Option (d): Incorrect — Carnatic music does not apply Samay Siddhanta; the time-of-day raga assignment is specific to the Hindustani tradition.\n\nValue Addition:\n• Yaman is the canonical evening raga (6–9 PM) in Hindustani music.\n• Ragas are also classified by season: Malhar family → monsoon; Bahar → spring.\n• Samay Siddhanta is associated with the theoretical work codified by Vishnu Narayan Bhatkhande in the early 20th century, though its roots are older."
+    },
+    "hi": {
+      "display_text": "एक गायक हिंदुस्तानी शास्त्रीय संगीत समारोह में सुबह 6 बजे शुरू होने वाले प्रातःकालीन संगीत कार्यक्रम में राग भैरव प्रस्तुत करता है। वरिष्ठ संगीतशास्त्री इस राग के चयन की प्रशंसा करते हैं कि यह अवसर के लिए अत्यंत उपयुक्त है। निम्नलिखित में से कौन-सा सिद्धांत इस बात की सबसे अच्छी व्याख्या करता है कि प्रदर्शन का समय चुने गए राग के अनुरूप क्यों माना जाता है?\n\n(a) समय सिद्धांत — हिंदुस्तानी संगीत में दिन के समय के अनुसार रागों का वर्गीकरण — भैरव को प्रातःकालीन राग के रूप में वर्गीकृत करता है, अतः सुबह 6 बजे का प्रदर्शन उपयुक्त है।\n(b) राग भैरव केवल उत्तरी क्षेत्रों में सर्दियों के महीनों में प्रस्तुत किया जाता है, और सुबह का संगीत समारोह इस भौगोलिक और मौसमी विनिर्देशन के अनुरूप है।\n(c) रागों का समय सिद्धांत 20वीं सदी का संगीतशास्त्रीय संकल्पना है जिसे भटखण्डे ने प्रस्तुत किया, और भैरव का सुबह से जुड़ाव आधुनिक प्रदर्शन की प्राथमिकता है न कि शास्त्रीय नियम।\n(d) हिंदुस्तानी और कर्नाटक दोनों परंपराएँ समय सिद्धांत का पालन करती हैं, और दोनों प्रणालियों में भैरव को सभी शास्त्रीय संगीत समारोहों के उद्घाटन राग के रूप में सार्वभौमिक रूप से नामित किया गया है, चाहे समय कोई भी हो।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — जो छात्र जानते हैं कि कर्नाटक संगीत में भी रागों का उपयोग होता है, वे मान सकते हैं कि समय सिद्धांत वहाँ भी समान रूप से लागू होता है, जिससे विकल्प (d) एक व्यापक सही उत्तर प्रतीत होता है।",
+      "elimination_logic": [
+        "परीक्षण किए जा रहे सिद्धांत की पहचान करें: एक सुबह का राग (भैरव सुबह/प्रातःकाल का राग है) जो सुबह 6 बजे के संगीत समारोह में प्रस्तुत किया गया है — क्या यह राग समय सिद्धांत के अनुरूप है?",
+        "(b) को खारिज करें: राग समय सिद्धांत भौगोलिक क्षेत्र के बारे में नहीं है — यह दिन के समय के बारे में है; इस प्रणाली में रागों पर भौगोलिक प्रतिबंध नहीं होते।",
+        "(c) को खारिज करें: यह दावा कि समय सिद्धांत 20वीं सदी का नया आविष्कार है, गलत है — समय सिद्धांत के प्राचीन स्रोत हैं, जैसे नारद का संगीत मकरंद।",
+        "(d) को खारिज करें: कर्नाटक संगीत समय सिद्धांत का सख्ती से पालन नहीं करता — यह स्पष्ट रूप से हिंदुस्तानी संगीत का सिद्धांत है; विकल्प (d) अतिशयोक्ति करता है।",
+        "(a) की पुष्टि करें: समय सिद्धांत हिंदुस्तानी संगीत में रागों को दिन के विशिष्ट समय से जोड़ता है; भैरव एक प्रातःकालीन राग है, अतः सुबह 6 बजे का प्रदर्शन पूरी तरह उपयुक्त है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) में स्कोप-एक्सटेंशन ट्रैप समय सिद्धांत को कर्नाटक संगीत तक बढ़ा देता है, जो इस सिद्धांत को सख्ती से लागू नहीं करता। जो छात्र 'दोनों परंपराओं में राग होते हैं' जानते हैं, वे समय सिद्धांत को कर्नाटक तक सामान्यीकृत कर सकते हैं और (d) को अधिक व्यापक उत्तर मान सकते हैं। मुख्य अंतर यह है कि समय सिद्धांत हिंदुस्तानी संगीत का सिद्धांत है — कर्नाटक संगीत रागों को अलग ढंग से वर्गीकृत करता है और दिन के समय को प्राथमिक प्रदर्शन मानदंड के रूप में उपयोग नहीं करता।",
+      "final_explanation": "समय सिद्धांत (रागों का समय सिद्धांत) हिंदुस्तानी शास्त्रीय संगीत का एक मौलिक सिद्धांत है जो प्रत्येक राग को उसके भावात्मक और स्वरों के आधार पर दिन के किसी विशिष्ट समय या ऋतु से जोड़ता है।\n\nपरिदृश्य में एक गायक राग भैरव को सुबह 6 बजे प्रस्तुत कर रहा है। भैरव प्रातःकालीन रागों में से एक है, जो पारंपरिक रूप से सूर्योदय से मध्य-सुबह (लगभग 6–9 बजे) के बीच जुड़ा होता है। इसके कोमल रे और धा एक चिंतनशील, अंतर्मुखी वातावरण बनाते हैं जो सुबह की शांति के अनुकूल है।\n\n• विकल्प (a): सही — समय सिद्धांत, जो हिंदुस्तानी संगीत में रागों को दिन के समय से जोड़ता है, भैरव को प्रातःकालीन राग के रूप में वर्गीकृत करता है। सुबह 6 बजे का प्रदर्शन पूरी तरह उपयुक्त है।\n• विकल्प (b): गलत — समय सिद्धांत दिन के समय से संबंधित है, न कि प्रदर्शन के भौगोलिक स्थान से।\n• विकल्प (c): गलत — समय सिद्धांत के प्राचीन ऐतिहासिक स्रोत हैं (मध्यकालीन संगीतशास्त्रीय ग्रंथों में संदर्भित); यह 20वीं सदी का आधुनिक निर्माण नहीं है।\n• विकल्प (d): गलत — कर्नाटक संगीत समय सिद्धांत को लागू नहीं करता; दिन के समय के अनुसार राग वर्गीकरण विशेष रूप से हिंदुस्तानी परंपरा का है।\n\nमूल्यवर्धन:\n• यमन हिंदुस्तानी संगीत में पारंपरिक सांध्यकालीन राग (6–9 बजे) है।\n• रागों को ऋतु के अनुसार भी वर्गीकृत किया जाता है: मल्हार परिवार → मानसून; बहार → वसंत।\n• समय सिद्धांत का सैद्धांतिक कार्य विष्णु नारायण भटखण्डे द्वारा 20वीं सदी की शुरुआत में संहिताबद्ध किया गया, हालांकि इसके स्रोत पुराने हैं।"
+    }
+  },
+  {
+    "uuid": "7ee375a0-f2cf-47b6-92d1-15baee5e5c36",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Alap in Dhrupad: The Nom-Tom Tradition",
+        "Bandish: The Compositional Core of Vocal Forms"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Components of a Dhrupad performance structure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are sequential stages or elements within the structure of a traditional Dhrupad performance, while one belongs to a different category. Which of the following does NOT belong to the Dhrupad performance structure?\n\n(a) Alap\n(b) Tarana\n(c) Jod\n(d) Jhala",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Abhog is a real Dhrupad bandish section; a student who confuses 'performance stages' with 'bandish sections' may not identify it as the odd one out.",
+      "elimination_logic": [
+        "Alap: pre-compositional improvisatory stage in Dhrupad — belongs to Dhrupad performance structure.",
+        "Jod: second stage of Dhrupad alap, introduces pulse — belongs to Dhrupad performance structure.",
+        "Tarana: a separate, independent vocal form using Persian/Arabic syllables — does NOT belong to the Dhrupad performance structure; it is a distinct genre.",
+        "Jhala: third stage of Dhrupad alap, fast rhythmic density — belongs to Dhrupad performance structure.",
+        "Tarana is the odd one out."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap works because all four items are real elements of Hindustani classical music, and three of them (Alap, Jod, Jhala) are sequential stages within Dhrupad performance. Tarana is a separate vocal form — not a stage within Dhrupad. A student who groups all four as 'classical music elements' without distinguishing performance stages from independent genres will fail to identify Tarana as the odd one out.",
+      "final_explanation": "A complete Dhrupad performance follows a structured sequence: Alap (unmetered melodic exploration using Nom-Tom syllables) → Jod (pulse introduced without fixed tala) → Jhala (fast rhythmic intensity) → Bandish (the fixed composition in Chautal or another tala).\n\n• Option (a) — Alap: Belongs. It is the first and longest pre-compositional stage of a Dhrupad performance.\n• Option (b) — Tarana: Does NOT belong. Tarana is an independent vocal form using Persian/Arabic syllables and tabla bols. It is not a stage within Dhrupad performance.\n• Option (c) — Jod: Belongs. It is the second stage of the Dhrupad pre-composition sequence, introducing rhythmic pulse.\n• Option (d) — Jhala: Belongs. It is the third stage, characterised by fast rhythmic density before the bandish commences.\n\nValue Addition:\n• The Alap-Jod-Jhala sequence is unique to Dhrupad among vocal forms — Khyal alap does not typically include Jod and Jhala.\n• Tarana is performed as the finale of a recital, not as part of Dhrupad.\n• Instrumental forms like sitar and sarod also follow an Alap-Jod-Jhala structure before the gat (composition)."
+    },
+    "hi": {
+      "display_text": "परंपरागत ध्रुपद प्रस्तुति की संरचना में निम्नलिखित में से तीन क्रमिक चरण या तत्व हैं, जबकि एक अलग श्रेणी से संबंधित है। निम्नलिखित में से कौन-सा ध्रुपद प्रस्तुति संरचना का हिस्सा नहीं है?\n\n(a) आलाप\n(b) तराना\n(c) जोड़\n(d) झला",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — अभोग एक वास्तविक ध्रुपद बंदिश खंड है; जो छात्र 'प्रस्तुति चरणों' को 'बंदिश खंडों' से भ्रमित करता है, वह इसे अलग हटाने वाला नहीं पहचान पाएगा।",
+      "elimination_logic": [
+        "आलाप: ध्रुपद में पूर्व-संगीतात्मक स्वरों की आविष्कारात्मक अवस्था — ध्रुपद प्रस्तुति संरचना का हिस्सा है।",
+        "जोड़: ध्रुपद आलाप का दूसरा चरण, जिसमें ताल की गति आती है — ध्रुपद प्रस्तुति संरचना का हिस्सा है।",
+        "तराना: फारसी/अरबी अक्षरों का उपयोग करने वाला एक स्वतंत्र, अलग गायन रूप — ध्रुपद प्रस्तुति संरचना का हिस्सा नहीं है; यह एक अलग शैली है।",
+        "झलाः ध्रुपद आलाप का तीसरा चरण, तीव्र तालबद्धता — ध्रुपद प्रस्तुति संरचना का हिस्सा है।",
+        "तराना अलग हटाने वाला है।"
+      ],
+      "upsc_trap_explanation": "आंशिक-सत्य जाल इसलिए काम करता है क्योंकि ये चारों वस्तुएं हिंदुस्तानी शास्त्रीय संगीत के वास्तविक तत्व हैं, और इनमें से तीन (आलाप, जोड़, झला) ध्रुपद प्रस्तुति के क्रमिक चरण हैं। तराना एक स्वतंत्र गायन रूप है — ध्रुपद के भीतर कोई चरण नहीं। जो छात्र इन्हें सभी 'शास्त्रीय संगीत तत्व' के रूप में समूहित करता है और प्रस्तुति चरणों को स्वतंत्र शैलियों से अलग नहीं करता, वह तराना को अलग हटाने वाला नहीं पहचान पाएगा।",
+      "final_explanation": "एक पूर्ण ध्रुपद प्रस्तुति एक संरचित क्रम का पालन करती है: आलाप (नोम-टॉम अक्षरों का उपयोग करते हुए बिना मीटर के स्वरों की खोज) → जोड़ (ताल के बिना गति का परिचय) → झला (तीव्र तालबद्धता) → बंदिश (चौताल या अन्य ताल में निश्चित रचना)।\n\n• विकल्प (a) — आलाप: शामिल है। यह ध्रुपद प्रस्तुति का पहला और सबसे लंबा पूर्व-संगीतात्मक चरण है।\n• विकल्प (b) — तराना: शामिल नहीं है। तराना फारसी/अरबी अक्षरों और तबला बोल का उपयोग करने वाला स्वतंत्र गायन रूप है। यह ध्रुपद प्रस्तुति का कोई चरण नहीं है।\n• विकल्प (c) — जोड़: शामिल है। यह ध्रुपद पूर्व-संगीतात्मक क्रम का दूसरा चरण है, जिसमें ताल की गति आती है।\n• विकल्प (d) — झला: शामिल है। यह तीसरा चरण है, जो बंदिश शुरू होने से पहले तीव्र तालबद्धता से युक्त होता है।\n\nमूल्यवर्धन:\n• आलाप-जोड़-झला क्रम ध्रुपद में विशिष्ट है — ख्याल आलाप में आमतौर पर जोड़ और झला नहीं होते।\n• तराना गायन कार्यक्रम के समापन के रूप में प्रस्तुत किया जाता है, ध्रुपद का हिस्सा नहीं।\n• सितार और सरोद जैसे वाद्य रूप भी गात (रचना) से पहले आलाप-जोड़-झला संरचना का पालन करते हैं।"
+    }
+  },
+  {
+    "uuid": "21d4e3f2-2e1d-44dd-ace1-6c6119dd4ab0",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Khyal Gharanas: Gwalior, Agra, Jaipur-Atrauli, Kirana"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Kirana gharana — Abdul Karim Khan and Gangubai Hangal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — Vocalist : Khyal Gharana — is correctly matched?\n\n(a) Nathan Khan : Kirana gharana\n(b) Gangubai Hangal : Kirana gharana\n(c) Kesarbai Kerkar : Kirana gharana\n(d) Faiyaz Khan : Kirana gharana",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Kesarbai Kerkar and Kirana is a plausible swap because Kesarbai Kerkar is a famous female vocalist; students who know she is from one of the major Khyal gharanas may not recall whether it is Kirana or Jaipur-Atrauli.",
+      "elimination_logic": [
+        "Eliminate (a): Nathan Khan is associated with the Gwalior gharana, not Kirana.",
+        "Eliminate (c): Kesarbai Kerkar was an exponent of the Jaipur-Atrauli gharana, not Kirana.",
+        "Eliminate (d): Faiyaz Khan was the iconic exponent of the Agra gharana, not Kirana.",
+        "Confirm (b): Gangubai Hangal is the celebrated modern exponent of the Kirana gharana; her masters were Abdul Karim Khan and the Kirana tradition."
+      ],
+      "upsc_trap_explanation": "The entity-swap between Kesarbai Kerkar (Jaipur-Atrauli) and Gangubai Hangal (Kirana) is the primary trap. Both are celebrated female vocalists from major Khyal gharanas of similar periods. Students who know 'Kesarbai Kerkar is a great classical vocalist from a major gharana' may assign her to Kirana without precision.",
+      "final_explanation": "The Kirana gharana is one of the four major Khyal gharanas, distinguished by its emphasis on sustained notes (kana swar) and deep emotional sincerity.\n\n• Option (a): Incorrectly matched — Nathan Khan is associated with the Gwalior gharana, not Kirana. Gwalior is the oldest Khyal gharana.\n• Option (b): Correctly matched — Gangubai Hangal (1913–2009) was the foremost modern exponent of the Kirana gharana, a Padma Vibhushan awardee known for her deep, powerful voice and emotional intensity.\n• Option (c): Incorrectly matched — Kesarbai Kerkar was an exponent of the Jaipur-Atrauli gharana, not Kirana. The swap of these two celebrated female vocalists across gharanas is a classic UPSC-style trap.\n• Option (d): Incorrectly matched — Faiyaz Khan ('Aftab-e-Mouiiqat') was the iconic exponent of the Agra gharana.\n\nValue Addition:\n• Abdul Karim Khan and Abdul Wahid Khan are the founding masters of the Kirana gharana.\n• Kirana gharana's hallmark sustained note technique is sometimes compared to the dhrupad tradition's meditative stillness.\n• Gangubai Hangal was awarded the Padma Vibhushan in 2002."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म — गायक : ख्याल घराना — सही मेल खाता है?\n\n(a) नाथन खान : किराना घराना\n(b) गंगुबाई हंगल : किराना घराना\n(c) केसरबाई केरकर : किराना घराना\n(d) फैयाज खान : किराना घराना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Kesarbai Kerkar and Kirana is a plausible swap because Kesarbai Kerkar is a famous female vocalist; students who know she is from one of the major Khyal gharanas may not recall whether it is Kirana or Jaipur-Atrauli.",
+      "elimination_logic": [
+        "(a) को खारिज करें: नाथन खान ग्वालियर घराने से संबंधित हैं, किराना से नहीं।",
+        "(c) को खारिज करें: केसरबाई केरकर जयपुर-अत्रौली घराने की प्रवक्ता थीं, किराना की नहीं।",
+        "(d) को खारिज करें: फैयाज खान आगरा घराने के प्रतिष्ठित प्रवक्ता थे, किराना के नहीं।",
+        "(b) की पुष्टि करें: गंगुबाई हंगल किराना घराने की प्रसिद्ध आधुनिक प्रवक्ता हैं; उनके गुरु अब्दुल करीम खान और किराना परंपरा थे।"
+      ],
+      "upsc_trap_explanation": "केसरबाई केरकर (जयपुर-अत्रौली) और गंगुबाई हंगल (किराना) के बीच वस्तु-स्थानांतरण मुख्य जाल है। दोनों प्रमुख ख्याल घरानों की प्रसिद्ध महिला गायक हैं और समान काल की हैं। जो छात्र जानते हैं कि 'केसरबाई केरकर एक महान शास्त्रीय गायिका हैं जो एक प्रमुख घराने से हैं' वे उन्हें बिना सटीकता के किराना से जोड़ सकते हैं।",
+      "final_explanation": "किराना घराना चार प्रमुख ख्याल घरानों में से एक है, जो निरंतर स्वर (काना स्वर) और गहरे भावपूर्ण सच्चाई पर विशेष जोर देता है।\n\n• विकल्प (a): गलत मेल — नाथन खान ग्वालियर घराने से हैं, किराना से नहीं। ग्वालियर सबसे पुराना ख्याल घराना है।\n• विकल्प (b): सही मेल — गंगुबाई हंगल (1913–2009) किराना घराने की प्रमुख आधुनिक प्रवक्ता थीं, पद्म विभूषण से सम्मानित, जिनकी आवाज़ गहरी, शक्तिशाली और भावपूर्ण थी।\n• विकल्प (c): गलत मेल — केसरबाई केरकर जयपुर-अत्रौली घराने की प्रवक्ता थीं, किराना की नहीं। इन दो प्रसिद्ध महिला गायिकाओं का घरानों के बीच स्थानांतरण UPSC शैली का क्लासिक जाल है।\n• विकल्प (d): गलत मेल — फैयाज खान ('अफ़ताब-ए-मौईक़ात') आगरा घराने के प्रतिष्ठित प्रवक्ता थे।\n\nमूल्य संवर्धन:\n• अब्दुल करीम खान और अब्दुल वाहिद खान किराना घराने के संस्थापक गुरु हैं।\n• किराना घराने की निरंतर स्वर तकनीक को कभी-कभी ध्रुपद परंपरा की ध्यानमग्न स्थिरता से तुलना की जाती है।\n• गंगुबाई हंगल को 2002 में पद्म विभूषण से सम्मानित किया गया था।"
+    }
+  },
+  {
+    "uuid": "3c868c42-1492-4394-aa3e-e58df74f9e73",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Khyal: Origins, Meaning, and Transition from Dhrupad",
+        "Thumri: Characteristics, Origins, and Stylistic Features",
+        "Tarana and Trivat: Distinct Vocal Forms within Hindustani Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Distinguishing features of Khyal, Thumri, and Tarana",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about distinctions between Hindustani vocal forms:\n\n1. Khyal's defining characteristic over Dhrupad is its greater scope for improvisation and its use of romantic or devotional poetic text in Braj Bhasha or Urdu, whereas Dhrupad's bandish is composed in Sanskrit or Braj Bhasha with devotional or heroic themes.\n2. Thumri is classified as a classical form with the same grammatical strictness as Khyal, since both are performed by trained classical vocalists on formal concert stages.\n3. Tarana is distinguished from Khyal by its use of non-semantic syllabic material (yalali, tadeem) rather than the words of a poetic composition, and is performed at a fast tempo.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Khyal's defining characteristic over Dhrupad is its greater scope for improvisation and its use of romantic or devotional poetic text (bandish) in Braj Bhasha or Urdu, whereas Dhrupad's bandish is composed in Sanskrit or Braj Bhasha with devotional or heroic themes.",
+          "verdict": "Correct",
+          "reason": "This accurately captures the distinction: Khyal's improvisatory freedom and its romantic-devotional lyric repertoire in Braj Bhasha/Urdu vs. Dhrupad's more austere Sanskrit/Braj Bhasha devotional-heroic compositions."
+        },
+        {
+          "statement": "Thumri is classified as a classical form with the same grammatical strictness as Khyal, since both are performed by trained classical vocalists on formal concert stages.",
+          "verdict": "Incorrect",
+          "reason": "Thumri is semi-classical, not classical — it permits raga liberties that Khyal does not; its classification is distinct from Khyal regardless of the performance venue or performer."
+        },
+        {
+          "statement": "Tarana is distinguished from Khyal by its use of non-semantic syllabic material (yalali, tadeem) rather than the words of a poetic composition, and is performed at a fast tempo.",
+          "verdict": "Correct",
+          "reason": "This is the precise distinction: Tarana uses syllables without semantic content, while Khyal's bandish uses words of a poetic composition; Tarana is always drut (fast)."
+        }
+      ],
+      "strong_distractor": "d — Students who see trained classical vocalists performing Thumri on concert stages may accept Statement 2's conflation of performance context with formal classification.",
+      "elimination_logic": [
+        "Verify Statement 1: Khyal's greater improvisation + Braj Bhasha/Urdu romantic themes vs. Dhrupad's Sanskrit/Braj Bhasha devotional-heroic content — both distinctions are correct; Statement 1 correct.",
+        "Verify Statement 2: Thumri = semi-classical, not classical; 'same grammatical strictness as Khyal' is false; Statement 2 incorrect.",
+        "Verify Statement 3: Tarana = syllables (yalali, tadeem) + drut tempo, not poetic text — correct; Statement 3 correct.",
+        "Statements 1 and 3 correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2's scope-extension trap equates performance venue and performer calibre with formal musical classification. Thumri is performed by classically trained singers on concert stages — this is true. But its classification remains semi-classical because of its intrinsic musical grammar (raga liberties, bhav over raga precision), not because of who performs it or where.",
+      "final_explanation": "The classification of Hindustani vocal forms requires attention to musical grammar, not performance context.\n\n• Statement 1 — Correct: Khyal's distinguishing feature over Dhrupad is its expansive improvisation scope and its lyric content (Braj Bhasha/Urdu, romantic-devotional themes). Dhrupad uses Sanskrit/Braj Bhasha with devotional or heroic themes in a stricter musical framework.\n• Statement 2 — Incorrect: Thumri is semi-classical regardless of who performs it or where. Its classification is determined by its raga liberties and bhav-over-grammar philosophy, not by the concert stage it is performed on.\n• Statement 3 — Correct: Tarana's defining distinction from Khyal is the use of non-semantic syllabic material (Persian/Arabic syllables: yalali, tadeem, yadere) rather than a poetic bandish text, always at fast tempo.\n\nValue Addition:\n• Dadra and Ghazal are lighter than Thumri on the classical-semi-classical-light spectrum.\n• The term 'bandish' literally means 'binding' — it is the fixed compositional anchor around which improvisation flows.\n• In Tarana, the syllables themselves become the musical canvas — showcasing laya (rhythmic) mastery."
+    },
+    "hi": {
+      "display_text": "हिंदुस्तानी गायन रूपों के बीच भेदों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ख़याल की ध्रुपद पर प्रमुख विशेषता इसकी अधिक स्वरों की स्वतंत्रता और ब्रज भाषा या उर्दू में रोमांटिक या भक्तिपूर्ण काव्यात्मक बंधिश का उपयोग है, जबकि ध्रुपद की बंधिश संस्कृत या ब्रज भाषा में भक्तिपूर्ण या वीर रस वाली होती है।\n2. ठुमरी को ख़याल के समान व्याकरणिक कठोरता के साथ शास्त्रीय रूप माना जाता है, क्योंकि दोनों प्रशिक्षित शास्त्रीय गायकों द्वारा औपचारिक संगीत समारोहों में प्रस्तुत किए जाते हैं।\n3. तराना ख़याल से इस आधार पर भिन्न है कि इसमें काव्यात्मक शब्दों के बजाय अर्थहीन अक्षर (यलाली, तदीम) का उपयोग होता है, और इसे तीव्र गति में प्रस्तुत किया जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "ख़याल की ध्रुपद पर प्रमुख विशेषता इसकी अधिक स्वरों की स्वतंत्रता और ब्रज भाषा या उर्दू में रोमांटिक या भक्तिपूर्ण काव्यात्मक बंधिश का उपयोग है, जबकि ध्रुपद की बंधिश संस्कृत या ब्रज भाषा में भक्तिपूर्ण या वीर रस वाली होती है।",
+          "verdict": "सही",
+          "reason": "यह सही भेद दर्शाता है: ख़याल की स्वरों की स्वतंत्रता और ब्रज भाषा/उर्दू में रोमांटिक-भक्तिपूर्ण गीतात्मक सामग्री बनाम ध्रुपद की अधिक कठोर संस्कृत/ब्रज भाषा में भक्तिपूर्ण-वीर रस वाली रचनाएँ।"
+        },
+        {
+          "statement": "ठुमरी को ख़याल के समान व्याकरणिक कठोरता के साथ शास्त्रीय रूप माना जाता है, क्योंकि दोनों प्रशिक्षित शास्त्रीय गायकों द्वारा औपचारिक संगीत समारोहों में प्रस्तुत किए जाते हैं।",
+          "verdict": "गलत",
+          "reason": "ठुमरी अर्ध-शास्त्रीय है, शास्त्रीय नहीं — यह राग की स्वतंत्रताएँ अनुमति देता है जो ख़याल नहीं देता; इसका वर्गीकरण प्रस्तुति स्थल या कलाकार की योग्यता से भिन्न है।"
+        },
+        {
+          "statement": "तराना ख़याल से इस आधार पर भिन्न है कि इसमें काव्यात्मक शब्दों के बजाय अर्थहीन अक्षर (यलाली, तदीम) का उपयोग होता है, और इसे तीव्र गति में प्रस्तुत किया जाता है।",
+          "verdict": "सही",
+          "reason": "यह सटीक भेद है: तराना में अर्थहीन अक्षर होते हैं, जबकि ख़याल की बंधिश में काव्यात्मक शब्द होते हैं; तराना हमेशा द्रुत (तेज) होता है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो ठुमरी को प्रशिक्षित शास्त्रीय गायकों द्वारा संगीत समारोहों में प्रस्तुत होते देखते हैं, वे कथन 2 में प्रस्तुति संदर्भ को औपचारिक वर्गीकरण के साथ जोड़ सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: ख़याल की अधिक स्वरों की स्वतंत्रता + ब्रज भाषा/उर्दू रोमांटिक विषय बनाम ध्रुपद की संस्कृत/ब्रज भाषा भक्तिपूर्ण-वीर रस सामग्री — दोनों भेद सही हैं; कथन 1 सही।",
+        "कथन 2 सत्यापित करें: ठुमरी = अर्ध-शास्त्रीय, शास्त्रीय नहीं; 'ख़याल के समान व्याकरणिक कठोरता' गलत है; कथन 2 गलत।",
+        "कथन 3 सत्यापित करें: तराना = अक्षर (यलाली, तदीम) + द्रुत गति, काव्यात्मक शब्द नहीं — सही; कथन 3 सही।",
+        "कथन 1 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का दायरा-विस्तार जाल प्रस्तुति स्थल और कलाकार की योग्यता को औपचारिक संगीत वर्गीकरण के बराबर मानता है। ठुमरी को प्रशिक्षित शास्त्रीय गायकों द्वारा संगीत समारोहों में प्रस्तुत किया जाता है — यह सत्य है। लेकिन इसका वर्गीकरण अर्ध-शास्त्रीय ही रहता है क्योंकि इसकी अंतर्निहित संगीत व्याकरण (राग की स्वतंत्रताएँ, भाव की प्रधानता) के कारण, न कि प्रस्तुति स्थल या कलाकार के कारण।",
+      "final_explanation": "हिंदुस्तानी गायन रूपों का वर्गीकरण संगीत व्याकरण पर आधारित होता है, प्रस्तुति संदर्भ पर नहीं।\n\n• कथन 1 — सही: ख़याल की ध्रुपद पर प्रमुख विशेषता इसकी व्यापक स्वरों की स्वतंत्रता और ब्रज भाषा/उर्दू में रोमांटिक-भक्तिपूर्ण गीतात्मक सामग्री है। ध्रुपद संस्कृत/ब्रज भाषा में भक्तिपूर्ण या वीर रस वाली कठोर संगीत रचनाएँ उपयोग करता है।\n• कथन 2 — गलत: ठुमरी अर्ध-शास्त्रीय है, चाहे इसे कोई भी गाए या कहीं भी प्रस्तुत करे। इसका वर्गीकरण इसके राग की स्वतंत्रताओं और भाव प्रधानता के कारण होता है, न कि प्रस्तुति स्थल के कारण।\n• कथन 3 — सही: तराना की ख़याल से प्रमुख भिन्नता अर्थहीन अक्षरों (फ़ारसी/अरबी अक्षर: यलाली, तदीम, यदरे) का उपयोग है, न कि काव्यात्मक बंधिश; यह हमेशा द्रुत गति में होता है।\n\nमूल्यवर्धन:\n• दादरा और ग़ज़ल ठुमरी की तुलना में शास्त्रीय-अर्ध-शास्त्रीय-हल्का स्पेक्ट्रम में हल्के होते हैं।\n• 'बंधिश' शब्द का शाब्दिक अर्थ 'बंधन' है — यह वह निश्चित रचना है जिसके चारों ओर स्वरों की स्वतंत्रता बहती है।\n• तराना में अक्षर स्वयं संगीत का कैनवास बन जाते हैं — लय (ताल) की महारत प्रदर्शित करते हैं।"
+    }
+  },
+  {
+    "uuid": "5bd1dec8-2498-42d9-8e5a-97ab3d802756",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Dhrupad, Khyal, Thumri — vocal forms",
+      "concepts_used": [
+        "Sadarang and Adarang: Systematizers of Khyal in the Mughal Court",
+        "Tansen: Musician, Legacy, and Mythological Attribution"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sadarang's pen name in Khyal compositions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Nyamat Khan, the court musician of Emperor Muhammad Shah, composed foundational Khyal bandishes that are still performed today. In these compositions, he embedded his identity through the pen name ________.\n\n(a) Rangile\n(b) Akhtar\n(c) Sadarang\n(d) Miyan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Rangile' is Muhammad Shah's epithet, which is immediately associated with the Sadarang story; students may confuse the king's epithet with the musician's pen name.",
+      "elimination_logic": [
+        "Eliminate (a): 'Rangile' is the epithet of Muhammad Shah (Muhammad Shah Rangile) — the patron king, not the musician's pen name.",
+        "Eliminate (b): 'Akhtar' is the pen name of Nawab Wajid Ali Shah of Awadh — associated with Thumri, not Khyal.",
+        "Eliminate (d): 'Miyan' is an honorific prefix used for Tansen (Miyan Tansen) — not a pen name used in compositions.",
+        "Confirm (c): Sadarang (Nyamat Khan) used 'Sadarang' as his compositional pen name (mudra) — it appears in his Khyal bandishes."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap uses 'Rangile' — Muhammad Shah's epithet — as the most seductive distractor. The story of Sadarang is always told in conjunction with Muhammad Shah Rangile, making 'Rangile' the first association that comes to mind when a student processes this question. Selecting 'Rangile' confuses the patron's identifier with the musician's pen name.",
+      "final_explanation": "In Hindustani classical music, composers embed their identity in compositions through a 'mudra' (pen name/signature) — a practice that allows listeners and scholars to attribute compositions accurately.\n\n• Option (a): Incorrect — 'Rangile' is the epithet of Emperor Muhammad Shah, not Sadarang's pen name. The epithet reflects the emperor's colourful, pleasure-loving personality.\n• Option (b): Incorrect — 'Akhtar' is the pen name used by Nawab Wajid Ali Shah of Awadh in his Thumri compositions — a different historical figure and form.\n• Option (c): Correct — Nyamat Khan composed Khyal bandishes under the pen name 'Sadarang'. These compositions are still actively performed and are identifiable by this mudra.\n• Option (d): Incorrect — 'Miyan' is an honorific prefix (meaning 'respected sir') associated with Tansen (Miyan Tansen) and used in the names of ragas he created (Miyan ki Todi, Miyan ki Malhar) — not a compositional pen name.\n\nValue Addition:\n• Adarang (Feroz Khan), Sadarang's nephew, used 'Adarang' as his own mudra.\n• The practice of embedding the composer's mudra in the Abhog section of Dhrupad and in Khyal bandishes allows oral tradition to preserve attribution.\n• Muhammad Shah Rangile's reign (1719–1748) is often called the 'golden age of Khyal'."
+    },
+    "hi": {
+      "display_text": "नयमत खान, सम्राट मुहम्मद शाह के दरबारी संगीतकार, ने ऐसे ख्याल बंदिशें रचीं जो आज भी प्रस्तुत की जाती हैं। इन रचनाओं में, उन्होंने अपनी पहचान कलम नाम ________ के माध्यम से छुपाई।\n\n(a) रंगीले\n(b) अख़्तर\n(c) सदरंग\n(d) मियाँ",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'Rangile' मुहम्मद शाह का उपनाम है, जो तुरंत सदरंग की कहानी से जुड़ा होता है; छात्र राजा के उपनाम को संगीतकार के कलम नाम से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएँ: 'रंगीले' मुहम्मद शाह (मुहम्मद शाह रंगीले) का उपनाम है — संरक्षक राजा का, संगीतकार के कलम नाम का नहीं।",
+        "(b) को हटाएँ: 'अख़्तर' अवध के नवाब वाजिद अली शाह का कलम नाम है — थुमरी से जुड़ा, ख्याल से नहीं।",
+        "(d) को हटाएँ: 'मियाँ' तानसेन (मियाँ तानसेन) के लिए एक सम्मानसूचक उपसर्ग है — रचनाओं में प्रयुक्त कलम नाम नहीं।",
+        "(c) की पुष्टि करें: सदरंग (नयमत खान) ने 'सदरंग' को अपने ख्याल बंदिशों में कलम नाम (मुद्रा) के रूप में उपयोग किया।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण (entity-swap) जाल में 'रंगीले' — मुहम्मद शाह का उपनाम — सबसे आकर्षक भ्रमक के रूप में उपयोग किया गया है। सदरंग की कहानी हमेशा मुहम्मद शाह रंगीले के साथ बताई जाती है, जिससे छात्र इस प्रश्न को समझते समय 'रंगीले' को सबसे पहले जोड़ते हैं। 'रंगीले' चुनना संरक्षक के पहचानकर्ता को संगीतकार के कलम नाम से भ्रमित करता है।",
+      "final_explanation": "हिंदुस्तानी शास्त्रीय संगीत में, रचनाकार अपनी पहचान रचनाओं में 'मुद्रा' (कलम नाम/हस्ताक्षर) के माध्यम से छुपाते हैं — यह अभ्यास श्रोताओं और विद्वानों को रचनाओं को सही ढंग से पहचानने में सक्षम बनाता है।\n\n• विकल्प (a): गलत — 'रंगीले' सम्राट मुहम्मद शाह का उपनाम है, सदरंग का कलम नाम नहीं। यह उपनाम सम्राट के रंगीन, आनंदप्रिय व्यक्तित्व को दर्शाता है।\n• विकल्प (b): गलत — 'अख़्तर' अवध के नवाब वाजिद अली शाह द्वारा अपनी थुमरी रचनाओं में प्रयुक्त कलम नाम है — एक अलग ऐतिहासिक व्यक्ति और शैली।\n• विकल्प (c): सही — नयमत खान ने ख्याल बंदिशें 'सदरंग' कलम नाम से रचीं। ये रचनाएँ आज भी सक्रिय रूप से प्रस्तुत की जाती हैं और इस मुद्रा से पहचानी जाती हैं।\n• विकल्प (d): गलत — 'मियाँ' तानसेन (मियाँ तानसेन) के लिए सम्मानसूचक उपसर्ग है और उनके बनाए रागों (मियाँ की तोड़ी, मियाँ की मल्हार) के नाम में प्रयुक्त होता है — रचनात्मक कलम नाम नहीं।\n\nमूल्यवर्धन:\n• आदरंग (फिरोज खान), सदरंग के भतीजे, ने 'आदरंग' को अपनी मुद्रा के रूप में उपयोग किया।\n• ध्रुपद के अभोग भाग और ख्याल बंदिशों में रचनाकार की मुद्रा छुपाने की प्रथा मौखिक परंपरा को पहचान सुरक्षित रखने में मदद करती है।\n• मुहम्मद शाह रंगीले का शासनकाल (1719–1748) को अक्सर 'ख्याल का स्वर्ण युग' कहा जाता है।"
+    }
+  }
+]

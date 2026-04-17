@@ -10,6 +10,9 @@ class RevisionQueueItem {
     required this.subject,
     required this.topic,
     required this.questionStem,
+    required this.conceptAnchor,
+    required this.subTopic,
+    this.trapType,
   });
 
   final String id;
@@ -23,4 +26,7 @@ class RevisionQueueItem {
   final String subject;
   final String topic;
   final String questionStem;
+  final String conceptAnchor;
+  final String subTopic;
+  final String? trapType;
 }

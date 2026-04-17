@@ -1,0 +1,1259 @@
+[
+  {
+    "uuid": "9d2c5b71-366f-48d1-b043-bb42c7c50bcf",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Green GDP: Definition and Conceptual Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Green GDP formula and welfare illusion critique",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements about the relationship between Green GDP and conventional GDP is correct?\n\n(a) Green GDP is always lower than conventional GDP because environmental adjustments are exclusively subtractive\n(b) Green GDP is derived by subtracting the cost of environmental degradation and natural resource depletion from conventional GDP\n(c) In conventional GDP, extraction of oil and minerals is treated as a drawdown of national wealth, whereas Green GDP counts it as income\n(d) Standard GDP offsets ecosystem service gains against resource depletion losses, making it a partial welfare measure",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students associate Green GDP with environmental adjustments that reduce output, making it intuitive that Green GDP is always lower than conventional GDP.",
+      "elimination_logic": [
+        "Eliminate (a): Green GDP can exceed conventional GDP if environmental investments are treated as additions — the formula does not guarantee a downward adjustment in all cases.",
+        "Eliminate (c): Conventional GDP counts resource extraction as income; Green GDP reclassifies it as wealth depletion — so the treatment differs fundamentally.",
+        "Eliminate (d): Standard GDP ignores negative externalities like pollution damage — it does not undercount them by offsetting with ecosystem benefits.",
+        "Retain (b): Green GDP = GDP minus cost of environmental degradation minus depletion of natural resources — option (b) captures this net adjustment correctly."
+      ],
+      "upsc_trap_explanation": "The trap here is the intuitive but incorrect assumption that Green GDP is always lower than conventional GDP. Students who memorise only the subtraction side of the formula will choose option (a). However, in frameworks where environmental protection expenditures or ecosystem restoration investments are treated as capital additions to the natural capital stock, the net adjustment could theoretically raise the adjusted figure above conventional GDP. The correct understanding is that Green GDP is generally lower but not necessarily always so.",
+      "final_explanation": "Conventional GDP captures the total market value of goods and services produced but ignores negative externalities — pollution damage, biodiversity loss, and resource depletion. Green GDP corrects this by subtracting the cost of environmental degradation and the depletion of natural resources from GDP, making it a better approximation of sustainable income.\n\n• Option (a) — Incorrect: Green GDP is not always lower than GDP. If environmental investment is accounted for as a capital addition, the adjustment need not be uniformly downward.\n• Option (b) — Correct: Green GDP = GDP − Cost of Environmental Degradation − Depletion of Natural Resources captures the standard formula accurately.\n• Option (c) — Incorrect: In conventional GDP, resource extraction is booked as current income, not reclassified as asset drawdown — this reclassification is precisely what Green GDP attempts.\n• Option (d) — Incorrect: Standard GDP does not offset ecosystem benefits against extraction losses; it simply ignores both.\n\nValue Addition:\n• The term 'welfare illusion' refers to the overestimation of societal well-being when GDP rises through resource depletion.\n• China's pilot Green GDP exercise (2004–2007) showed some provinces had near-zero or negative growth — leading to political resistance and abandonment of the project.\n• UPSC has tested the concept of 'defensive expenditures' — spending on pollution cleanup that inflates GDP without improving welfare."
+    },
+    "hi": {
+      "display_text": "ग्रीन GDP और पारंपरिक GDP के संबंध में निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) ग्रीन GDP हमेशा पारंपरिक GDP से कम होता है क्योंकि पर्यावरणीय समायोजन केवल घटावात्मक होते हैं\n(b) ग्रीन GDP पारंपरिक GDP से पर्यावरणीय क्षति की लागत और प्राकृतिक संसाधनों की ह्रास घटाकर प्राप्त किया जाता है\n(c) पारंपरिक GDP में तेल और खनिज निष्कर्षण को राष्ट्रीय संपदा की ह्रास माना जाता है, जबकि ग्रीन GDP इसे आय के रूप में गिनता है\n(d) मानक GDP पारिस्थितिकी तंत्र सेवा लाभों को संसाधन ह्रास हानियों के खिलाफ ऑफसेट करता है, जिससे यह आंशिक कल्याण माप बन जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि छात्र ग्रीन GDP को पर्यावरणीय समायोजनों से जोड़ते हैं जो उत्पादन को कम करते हैं, जिससे यह सहज लगता है कि ग्रीन GDP हमेशा पारंपरिक GDP से कम होता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: यदि पर्यावरणीय निवेश को पूंजीगत वृद्धि के रूप में माना जाए तो ग्रीन GDP पारंपरिक GDP से अधिक हो सकता है — सूत्र सभी मामलों में नीचे की ओर समायोजन की गारंटी नहीं देता।",
+        "(c) को हटाएं: पारंपरिक GDP में संसाधन निष्कर्षण को आय के रूप में गिना जाता है; ग्रीन GDP इसे संपत्ति ह्रास के रूप में पुनर्वर्गीकृत करता है — इसलिए उपचार मौलिक रूप से भिन्न है।",
+        "(d) को हटाएं: मानक GDP नकारात्मक बाहरीताओं जैसे प्रदूषण क्षति को नजरअंदाज करता है — यह पारिस्थितिकी तंत्र के लाभों के साथ उन्हें ऑफसेट नहीं करता।",
+        "(b) को रखें: ग्रीन GDP = GDP − पर्यावरणीय क्षति की लागत − प्राकृतिक संसाधनों की ह्रास; विकल्प (b) इस शुद्ध समायोजन को सही ढंग से दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल सहज लेकिन गलत धारणा है कि ग्रीन GDP हमेशा पारंपरिक GDP से कम होता है। जो छात्र केवल सूत्र के घटाव पक्ष को याद करते हैं, वे विकल्प (a) चुनेंगे। हालांकि, उन ढांचों में जहां पर्यावरण संरक्षण व्यय या पारिस्थितिकी तंत्र पुनर्स्थापन निवेश को प्राकृतिक पूंजी स्टॉक में पूंजीगत वृद्धि के रूप में माना जाता है, शुद्ध समायोजन सैद्धांतिक रूप से समायोजित आंकड़े को पारंपरिक GDP से ऊपर उठा सकता है। सही समझ यह है कि ग्रीन GDP सामान्यतः कम होता है लेकिन आवश्यक रूप से हमेशा ऐसा नहीं होता।",
+      "final_explanation": "पारंपरिक GDP उत्पादित वस्तुओं और सेवाओं के कुल बाजार मूल्य को दर्शाता है लेकिन नकारात्मक बाहरीताओं — प्रदूषण क्षति, जैव विविधता ह्रास, और संसाधन ह्रास — को नजरअंदाज करता है। ग्रीन GDP इसे सुधारता है, पर्यावरणीय क्षति की लागत और प्राकृतिक संसाधनों की ह्रास को GDP से घटाकर, जिससे यह सतत आय का बेहतर अनुमान बनता है।\n\n• विकल्प (a) — गलत: ग्रीन GDP हमेशा GDP से कम नहीं होता। यदि पर्यावरणीय निवेश को पूंजीगत वृद्धि के रूप में माना जाए, तो समायोजन आवश्यक रूप से नीचे की ओर नहीं होगा।\n• विकल्प (b) — सही: ग्रीन GDP = GDP − पर्यावरणीय क्षति की लागत − प्राकृतिक संसाधनों की ह्रास, यह मानक सूत्र सही ढंग से दर्शाता है।\n• विकल्प (c) — गलत: पारंपरिक GDP में संसाधन निष्कर्षण को वर्तमान आय के रूप में दर्ज किया जाता है, न कि संपत्ति ह्रास के रूप में पुनर्वर्गीकृत किया जाता है — यह पुनर्वर्गीकरण ग्रीन GDP का प्रयास है।\n• विकल्प (d) — गलत: मानक GDP पारिस्थितिकी तंत्र के लाभों को निष्कर्षण हानियों के खिलाफ ऑफसेट नहीं करता; यह दोनों को नजरअंदाज करता है।\n\nमूल्य संवर्धन:\n• 'कल्याण भ्रम' शब्द का अर्थ है जब GDP संसाधन ह्रास के माध्यम से बढ़ता है तो सामाजिक कल्याण का अतिशयोक्ति।\n• चीन के पायलट ग्रीन GDP अभ्यास (2004–2007) ने दिखाया कि कुछ प्रांतों में लगभग शून्य या नकारात्मक वृद्धि हुई — जिससे राजनीतिक विरोध और परियोजना का परित्याग हुआ।\n• UPSC ने 'रक्षात्मक व्यय' की अवधारणा का परीक्षण किया है — प्रदूषण सफाई पर खर्च जो GDP को बढ़ाता है लेकिन कल्याण में सुधार नहीं करता।"
+    }
+  },
+  {
+    "uuid": "3562c322-8569-4cff-bc6f-3aed924c9e48",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "System of Environmental-Economic Accounting (SEEA)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "SEEA structure and relationship to SNA",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the System of Environmental-Economic Accounting (SEEA):\n\n1. The System of Environmental-Economic Accounting (SEEA) was adopted by the United Nations Statistical Commission in 2012 as the international standard for integrating environmental data into national economic accounts.\n2. SEEA replaces the System of National Accounts (SNA) in countries that have fully adopted it, providing a more comprehensive basis for GDP computation.\n3. SEEA Ecosystem Accounting (SEEA EA) is one of the three components of SEEA and focuses on measuring ecosystem assets and the services they provide to economies and people.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The System of Environmental-Economic Accounting (SEEA) was adopted by the United Nations Statistical Commission in 2012 as the international standard for integrating environmental data into national economic accounts.",
+          "verdict": "Correct",
+          "reason": "SEEA was formally adopted by the UN Statistical Commission in 2012, making it the globally recognised statistical standard for environmental-economic integration."
+        },
+        {
+          "statement": "SEEA replaces the System of National Accounts (SNA) in countries that have fully adopted it, providing a more comprehensive basis for GDP computation.",
+          "verdict": "Incorrect",
+          "reason": "SEEA is a satellite account framework — it supplements the SNA rather than replacing it. It sits alongside the core SNA and does not alter GDP computation."
+        },
+        {
+          "statement": "SEEA Ecosystem Accounting (SEEA EA) is one of the three components of SEEA and focuses on measuring ecosystem assets and the services they provide to economies and people.",
+          "verdict": "Correct",
+          "reason": "SEEA EA is a distinct pillar within the SEEA family, specifically designed to account for ecosystem extent, condition, and service flows — separate from the Central Framework."
+        }
+      ],
+      "strong_distractor": "d — A student might choose '1 and 2 only' believing that adoption of SEEA implies it replaces SNA, a common misconception about satellite accounting frameworks.",
+      "elimination_logic": [
+        "Verify Statement 2: SEEA is explicitly designed as a 'satellite account' — it runs parallel to SNA, not as a replacement. Statement 2 is false.",
+        "Verify Statement 1: UN Statistical Commission adopted SEEA in 2012 — this is accurate. Statement 1 is correct.",
+        "Verify Statement 3: SEEA EA is indeed a named component within the SEEA family, focused on ecosystem assets and services. Statement 3 is correct.",
+        "Only Statements 1 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 2 is the word 'replaces.' Students familiar with SEEA as a framework for environmental integration may conflate adoption with replacement of SNA. In reality, satellite accounts are precisely defined as supplementary frameworks that do not disturb core national accounts. A student who has read only headlines about SEEA will mark Statement 2 as correct, leading to a wrong answer.",
+      "final_explanation": "SEEA is the UN's statistical architecture for linking environmental data to economic activity. Adopted in 2012, it comprises three pillars: the Central Framework (flow and stock accounts for natural assets and environmental transactions), SEEA Ecosystem Accounting (ecosystem extent, condition, and service flows), and SEEA Extensions and Applications.\n\n• Statement 1 — Correct: The UN Statistical Commission adopted SEEA in 2012 as the global standard.\n• Statement 2 — Incorrect: SEEA is a satellite account. It supplements the SNA without altering how GDP is computed — the two systems coexist.\n• Statement 3 — Correct: SEEA EA is a distinct component addressing ecosystem assets and the services they provide to economies and society.\n\nValue Addition:\n• India has undertaken partial SEEA implementation through MoSPI's pilot natural resource accounting exercises.\n• Satellite accounts in general — tourism, health, environment — are extensions of SNA, not substitutes.\n• The SEEA Central Framework was adopted in 2012; SEEA EA was adopted as an international statistical standard in 2021 — a timeline distinction worth noting."
+    },
+    "hi": {
+      "display_text": "पर्यावरण-आर्थिक लेखांकन प्रणाली (SEEA) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पर्यावरण-आर्थिक लेखांकन प्रणाली (SEEA) को संयुक्त राष्ट्र सांख्यिकी आयोग ने 2012 में राष्ट्रीय आर्थिक खातों में पर्यावरणीय डेटा को एकीकृत करने के लिए अंतरराष्ट्रीय मानक के रूप में अपनाया था।\n2. SEEA उन देशों में राष्ट्रीय खातों की प्रणाली (SNA) की जगह लेता है जिन्होंने इसे पूरी तरह से अपनाया है, जिससे GDP की गणना के लिए एक अधिक व्यापक आधार मिलता है।\n3. SEEA पारिस्थितिकी तंत्र लेखांकन (SEEA EA) SEEA के तीन घटकों में से एक है और यह पारिस्थितिकी तंत्र की संपत्तियों और वे सेवाएं जो यह अर्थव्यवस्था और लोगों को प्रदान करता है, मापने पर केंद्रित है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The System of Environmental-Economic Accounting (SEEA) was adopted by the United Nations Statistical Commission in 2012 as the international standard for integrating environmental data into national economic accounts.",
+          "verdict": "सही है",
+          "reason": "SEEA को 2012 में संयुक्त राष्ट्र सांख्यिकी आयोग द्वारा औपचारिक रूप से अपनाया गया था, जिससे यह पर्यावरण-आर्थिक एकीकरण के लिए वैश्विक मान्यता प्राप्त सांख्यिकीय मानक बन गया।"
+        },
+        {
+          "statement": "SEEA replaces the System of National Accounts (SNA) in countries that have fully adopted it, providing a more comprehensive basis for GDP computation.",
+          "verdict": "गलत है",
+          "reason": "SEEA एक उपग्रह खाता ढांचा है — यह SNA की जगह नहीं लेता बल्कि उसे पूरक करता है। यह मुख्य SNA के साथ चलता है और GDP की गणना को प्रभावित नहीं करता।"
+        },
+        {
+          "statement": "SEEA Ecosystem Accounting (SEEA EA) is one of the three components of SEEA and focuses on measuring ecosystem assets and the services they provide to economies and people.",
+          "verdict": "सही है",
+          "reason": "SEEA EA SEEA परिवार का एक विशिष्ट स्तंभ है, जो पारिस्थितिकी तंत्र की सीमा, स्थिति और सेवा प्रवाहों का लेखा-जोखा रखने के लिए डिज़ाइन किया गया है — जो केंद्रीय ढांचे से अलग है।"
+        }
+      ],
+      "strong_distractor": "d — एक छात्र '1 और 2 केवल' विकल्प चुन सकता है यह सोचकर कि SEEA को अपनाने का अर्थ है कि यह SNA की जगह लेता है, जो उपग्रह खाता ढाँचों के बारे में एक सामान्य गलतफहमी है।",
+      "elimination_logic": [
+        "कथन 2 सत्यापित करें: SEEA स्पष्ट रूप से एक 'उपग्रह खाता' के रूप में डिज़ाइन किया गया है — यह SNA के समानांतर चलता है, प्रतिस्थापन के रूप में नहीं। कथन 2 गलत है।",
+        "कथन 1 सत्यापित करें: संयुक्त राष्ट्र सांख्यिकी आयोग ने 2012 में SEEA को अपनाया — यह सही है। कथन 1 सही है।",
+        "कथन 3 सत्यापित करें: SEEA EA वास्तव में SEEA परिवार के भीतर एक नामित घटक है, जो पारिस्थितिकी तंत्र की संपत्तियों और सेवाओं पर केंद्रित है। कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'replaces' शब्द एक जाल है। SEEA को पर्यावरणीय एकीकरण के लिए एक ढांचे के रूप में जानने वाले छात्र इसे अपनाने को SNA की जगह लेने के रूप में समझ सकते हैं। वास्तव में, उपग्रह खाते स्पष्ट रूप से पूरक ढांचे होते हैं जो मुख्य राष्ट्रीय खातों को प्रभावित नहीं करते। जो छात्र केवल SEEA के शीर्षक पढ़े हैं, वे कथन 2 को सही मानकर गलत उत्तर देंगे।",
+      "final_explanation": "SEEA संयुक्त राष्ट्र की वह सांख्यिकीय संरचना है जो पर्यावरणीय डेटा को आर्थिक गतिविधि से जोड़ती है। इसे 2012 में अपनाया गया था, और यह तीन स्तंभों से मिलकर बना है: केंद्रीय ढांचा (प्राकृतिक संपत्तियों और पर्यावरणीय लेनदेन के प्रवाह और स्टॉक खाते), SEEA पारिस्थितिकी तंत्र लेखांकन (पारिस्थितिकी तंत्र की सीमा, स्थिति और सेवा प्रवाह), और SEEA विस्तार एवं अनुप्रयोग।\n\n• कथन 1 — सही: संयुक्त राष्ट्र सांख्यिकी आयोग ने 2012 में SEEA को वैश्विक मानक के रूप में अपनाया।\n• कथन 2 — गलत: SEEA एक उपग्रह खाता है। यह SNA को पूरक करता है और GDP की गणना को नहीं बदलता — दोनों प्रणाली सह-अस्तित्व में हैं।\n• कथन 3 — सही: SEEA EA एक विशिष्ट घटक है जो पारिस्थितिकी तंत्र की संपत्तियों और वे सेवाएं जो यह अर्थव्यवस्था और समाज को प्रदान करता है, को संबोधित करता है।\n\nमूल्य संवर्धन:\n• भारत ने MoSPI के पायलट प्राकृतिक संसाधन लेखांकन अभ्यासों के माध्यम से आंशिक SEEA कार्यान्वयन किया है।\n• सामान्यतः उपग्रह खाते — पर्यटन, स्वास्थ्य, पर्यावरण — SNA के विस्तार हैं, प्रतिस्थापन नहीं।\n• SEEA केंद्रीय ढांचा 2012 में अपनाया गया था; SEEA EA को 2021 में एक अंतरराष्ट्रीय सांख्यिकीय मानक के रूप में अपनाया गया — यह समयरेखा का एक महत्वपूर्ण अंतर है।"
+    }
+  },
+  {
+    "uuid": "080053ae-1015-49c7-b2f5-4bf553191964",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Natural Capital Accounting (NCA)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Natural capital — scope beyond mineral resources",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Natural Capital Accounting (NCA):\n\n1. Natural capital refers exclusively to subsoil mineral and fossil fuel assets because these are the only natural resources that are physically depleted through economic activity.\n2. The World Bank's Wealth of Nations framework distinguishes among produced capital, human capital, and natural capital as three distinct components of total national wealth.\n3. In natural capital accounting, the 'flow' approach measures the annual services yielded by natural assets, while the 'capital stock' approach values the total asset base at a point in time.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 and 3 only\n(b) 1 only\n(c) 1 and 3 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Natural capital refers exclusively to subsoil mineral and fossil fuel assets because these are the only natural resources that are physically depleted through economic activity.",
+          "verdict": "Incorrect",
+          "reason": "Natural capital encompasses all stocks of natural assets — soil, water, air, and biodiversity — including non-marketed ecosystem services such as pollination, not merely subsoil resources."
+        },
+        {
+          "statement": "The World Bank's Wealth of Nations framework distinguishes among produced capital, human capital, and natural capital as three distinct components of total national wealth.",
+          "verdict": "Correct",
+          "reason": "The World Bank's Wealth of Nations Report explicitly categorises total wealth into these three pillars, with natural capital representing the environmental asset base."
+        },
+        {
+          "statement": "In natural capital accounting, the 'flow' approach measures the annual services yielded by natural assets, while the 'capital stock' approach values the total asset base at a point in time.",
+          "verdict": "Correct",
+          "reason": "This distinction is foundational in NCA: flows represent the annual ecosystem service outputs, while stocks represent the asset value from which those services are generated."
+        }
+      ],
+      "strong_distractor": "d — Students may incorrectly identify Statement 3 as wrong, confusing 'flow' with income accounting and 'stock' with depreciation schedules from conventional accounting.",
+      "elimination_logic": [
+        "Examine Statement 1: Natural capital includes soil, water, air, biodiversity, and non-marketed services like pollination — not exclusively subsoil minerals. Statement 1 is NOT correct.",
+        "Examine Statement 2: World Bank's Wealth of Nations framework explicitly uses produced capital, human capital, and natural capital as the three pillars. Statement 2 is correct.",
+        "Examine Statement 3: The flow vs. stock distinction is accurately stated — flows are annual service outputs, stocks are asset base values. Statement 3 is correct.",
+        "Only Statement 1 is NOT correct — select option (b): 1 only."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 1 exploits the intuitive association between natural resources and extractive industries. Students who think of natural capital only as oil, gas, and minerals will read Statement 1 as plausible. The key fact is that natural capital explicitly includes non-marketed ecosystem services such as pollination, flood regulation, and air purification — assets that are depleted or degraded without any market signal.",
+      "final_explanation": "Natural Capital Accounting (NCA) treats nature's assets as productive capital stocks that generate flows of ecosystem services over time. The concept extends far beyond subsoil resources to encompass soil health, freshwater systems, biodiversity, and atmospheric quality.\n\n• Statement 1 — NOT Correct: Natural capital is not limited to subsoil assets. It includes non-marketed services like pollination and flood regulation that have no market price but deliver real economic value.\n• Statement 2 — Correct: The World Bank's Wealth of Nations Report tripartite framework (produced capital, human capital, natural capital) is a standard reference in NCA literature.\n• Statement 3 — Correct: The stock-flow distinction is central to NCA — stocks are the asset balance sheet entries; flows are the annual service yields derived from those stocks.\n\nValue Addition:\n• Pollination services, estimated at trillions of dollars globally, are a classic example of non-marketed natural capital.\n• India's natural capital per capita has been declining even as produced capital grows — a key IWI finding.\n• The SEEA Ecosystem Accounting framework operationalises the stock-flow distinction at the national level."
+    },
+    "hi": {
+      "display_text": "Natural Capital Accounting (NCA) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. प्राकृतिक पूंजी केवल भूमिगत खनिज और जीवाश्म ईंधन संपत्तियों को संदर्भित करती है क्योंकि ये ही वे प्राकृतिक संसाधन हैं जो आर्थिक गतिविधि के माध्यम से भौतिक रूप से समाप्त होते हैं।\n2. विश्व बैंक की Wealth of Nations रूपरेखा कुल राष्ट्रीय संपत्ति के तीन अलग-अलग घटकों के रूप में उत्पादित पूंजी, मानव पूंजी, और प्राकृतिक पूंजी को अलग करती है।\n3. प्राकृतिक पूंजी लेखांकन में, 'प्रवाह' दृष्टिकोण प्राकृतिक संपत्तियों द्वारा उत्पन्न वार्षिक सेवाओं को मापता है, जबकि 'पूंजी भंडार' दृष्टिकोण किसी समय बिंदु पर कुल संपत्ति आधार का मूल्यांकन करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1\n(c) केवल 1 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Natural capital refers exclusively to subsoil mineral and fossil fuel assets because these are the only natural resources that are physically depleted through economic activity.",
+          "verdict": "गलत",
+          "reason": "प्राकृतिक पूंजी में सभी प्राकृतिक संपत्तियों के भंडार शामिल होते हैं — मिट्टी, जल, वायु, और जैव विविधता — जिनमें गैर-बाजार पारिस्थितिकी तंत्र सेवाएं जैसे परागण भी शामिल हैं, न कि केवल भूमिगत संसाधन।"
+        },
+        {
+          "statement": "The World Bank's Wealth of Nations framework distinguishes among produced capital, human capital, and natural capital as three distinct components of total national wealth.",
+          "verdict": "सही है",
+          "reason": "विश्व बैंक की Wealth of Nations रिपोर्ट स्पष्ट रूप से कुल संपत्ति को इन तीन स्तंभों में वर्गीकृत करती है, जिसमें प्राकृतिक पूंजी पर्यावरणीय संपत्ति आधार का प्रतिनिधित्व करती है।"
+        },
+        {
+          "statement": "In natural capital accounting, the 'flow' approach measures the annual services yielded by natural assets, while the 'capital stock' approach values the total asset base at a point in time.",
+          "verdict": "सही है",
+          "reason": "यह भेदभाव NCA में मौलिक है: प्रवाह वार्षिक पारिस्थितिकी तंत्र सेवा उत्पादन को दर्शाते हैं, जबकि भंडार उस संपत्ति मूल्य का प्रतिनिधित्व करते हैं जिससे ये सेवाएं उत्पन्न होती हैं।"
+        }
+      ],
+      "strong_distractor": "d — छात्र कथन 3 को गलत समझ सकते हैं, 'प्रवाह' को आय लेखांकन और 'भंडार' को पारंपरिक लेखांकन के मूल्यह्रास अनुसूचियों से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें: प्राकृतिक पूंजी में मिट्टी, जल, वायु, जैव विविधता और परागण जैसी गैर-बाजार सेवाएं शामिल हैं — केवल भूमिगत खनिज नहीं। अतः कथन 1 सही नहीं है।",
+        "कथन 2 की जाँच करें: विश्व बैंक की Wealth of Nations रूपरेखा स्पष्ट रूप से उत्पादित पूंजी, मानव पूंजी, और प्राकृतिक पूंजी को तीन स्तंभों के रूप में उपयोग करती है। अतः कथन 2 सही है।",
+        "कथन 3 की जाँच करें: प्रवाह और भंडार का भेद सही बताया गया है — प्रवाह वार्षिक सेवा उत्पादन हैं, भंडार संपत्ति मूल्य हैं। अतः कथन 3 सही है।",
+        "केवल कथन 1 सही नहीं है — विकल्प (b) चुनें: केवल 1।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में फंदा प्राकृतिक संसाधनों और खनन उद्योगों के सहज संबंध का उपयोग करता है। जो छात्र प्राकृतिक पूंजी को केवल तेल, गैस, और खनिज के रूप में सोचते हैं, वे कथन 1 को संभावित समझेंगे। मुख्य तथ्य यह है कि प्राकृतिक पूंजी में स्पष्ट रूप से परागण, बाढ़ नियंत्रण, और वायु शुद्धिकरण जैसी गैर-बाजार पारिस्थितिकी तंत्र सेवाएं शामिल हैं — ऐसी संपत्तियां जो बिना किसी बाजार संकेत के क्षतिग्रस्त या समाप्त हो जाती हैं।",
+      "final_explanation": "Natural Capital Accounting (NCA) प्रकृति की संपत्तियों को उत्पादक पूंजी भंडार के रूप में मानता है जो समय के साथ पारिस्थितिकी तंत्र सेवाओं के प्रवाह उत्पन्न करते हैं। यह अवधारणा केवल भूमिगत संसाधनों से बहुत आगे बढ़कर मिट्टी की गुणवत्ता, ताजे पानी की प्रणालियों, जैव विविधता, और वायुमंडलीय गुणवत्ता को भी शामिल करती है।\n\n• कथन 1 — सही नहीं है: प्राकृतिक पूंजी केवल भूमिगत संपत्तियों तक सीमित नहीं है। इसमें परागण और बाढ़ नियंत्रण जैसी गैर-बाजार सेवाएं शामिल हैं जिनका कोई बाजार मूल्य नहीं है लेकिन वे वास्तविक आर्थिक मूल्य प्रदान करती हैं।\n• कथन 2 — सही है: विश्व बैंक की Wealth of Nations रिपोर्ट की त्रिपक्षीय रूपरेखा (उत्पादित पूंजी, मानव पूंजी, प्राकृतिक पूंजी) NCA साहित्य में एक मानक संदर्भ है।\n• कथन 3 — सही है: भंडार-प्रवाह भेद NCA का केंद्रीय सिद्धांत है — भंडार संपत्ति के बैलेंस शीट प्रविष्टियां हैं; प्रवाह उन भंडारों से प्राप्त वार्षिक सेवा उत्पादन हैं।\n\nमूल्य संवर्धन:\n• परागण सेवाएं, जो वैश्विक स्तर पर ट्रिलियनों डॉलर का अनुमानित मूल्य रखती हैं, गैर-बाजार प्राकृतिक पूंजी का एक क्लासिक उदाहरण हैं।\n• भारत की प्रति व्यक्ति प्राकृतिक पूंजी घट रही है जबकि उत्पादित पूंजी बढ़ रही है — यह IWI की एक प्रमुख खोज है।\n• SEEA पारिस्थितिकी तंत्र लेखांकन रूपरेखा राष्ट्रीय स्तर पर भंडार-प्रवाह भेद को लागू करती है।"
+    }
+  },
+  {
+    "uuid": "432a7529-c400-466e-9da6-cb62cd2518db",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Ecosystem Services Valuation Methods",
+        "Wealth Accounting and Valuation of Ecosystem Services (WAVES) Partnership"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": null,
+      "concept_anchor": "Sequence of international environmental accounting milestones",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of international environmental accounting milestones?\n\n1. Launch of the WAVES (Wealth Accounting and Valuation of Ecosystem Services) Partnership by the World Bank\n2. Adoption of SEEA (System of Environmental-Economic Accounting) as the international statistical standard by the UN Statistical Commission\n3. Initiation of the TEEB (The Economics of Ecosystems and Biodiversity) study\n\n(a) 3 → 2 → 1\n(b) 3 → 1 → 2\n(c) 1 → 3 → 2\n(d) 2 → 3 → 1",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may place TEEB before WAVES because TEEB (2007–2010) is better known, but confuse when WAVES was formally launched (2010) versus when SEEA was adopted (2012).",
+      "elimination_logic": [
+        "TEEB initiative was launched in 2007 at the G8+5 environment ministers' meeting in Potsdam — this is the earliest event.",
+        "WAVES Partnership was launched in 2010 by the World Bank — after TEEB but before SEEA adoption.",
+        "SEEA was adopted as the international statistical standard by the UN Statistical Commission in 2012 — the latest of the three events.",
+        "Correct sequence: TEEB (2007) → WAVES (2010) → SEEA adoption (2012) = option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Three landmark milestones in environmental-economic accounting occurred in sequence. TEEB (The Economics of Ecosystems and Biodiversity) was initiated in 2007 under a mandate from G8+5 environment ministers meeting in Potsdam, aimed at making biodiversity values visible in economic decisions. WAVES Partnership was launched by the World Bank in 2010 to operationalise natural capital accounting in national statistical systems, with India as a pilot country. SEEA was formally adopted by the UN Statistical Commission as the international statistical standard in 2012.\n\n• Correct sequence: TEEB Initiative (2007) → WAVES Partnership launched (2010) → SEEA adopted as international standard (2012).\n• Option (a) places SEEA before WAVES — incorrect, SEEA adoption came in 2012, WAVES in 2010.\n• Option (c) places WAVES before TEEB — incorrect, TEEB preceded WAVES by three years.\n• Option (d) reverses TEEB and SEEA — TEEB is earlier.\n\nValue Addition:\n• WAVES uses SEEA as its methodological foundation — WAVES implements what SEEA prescribes.\n• The TEEB study's landmark finding was that the world loses ecosystem services worth USD 2–4.5 trillion annually due to deforestation.\n• India's forest and water accounts under WAVES were piloted through MoSPI."
+    },
+    "hi": {
+      "display_text": "अंतरराष्ट्रीय पर्यावरणीय लेखांकन मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. विश्व बैंक द्वारा WAVES (Wealth Accounting and Valuation of Ecosystem Services) साझेदारी की शुरुआत\n2. संयुक्त राष्ट्र सांख्यिकी आयोग द्वारा SEEA (System of Environmental-Economic Accounting) को अंतरराष्ट्रीय सांख्यिकीय मानक के रूप में अपनाना\n3. TEEB (The Economics of Ecosystems and Biodiversity) अध्ययन की शुरुआत\n\n(a) 3 → 2 → 1\n(b) 3 → 1 → 2\n(c) 1 → 3 → 2\n(d) 2 → 3 → 1",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र TEEB को WAVES से पहले रख सकते हैं क्योंकि TEEB (2007–2010) अधिक प्रसिद्ध है, लेकिन WAVES के औपचारिक शुभारंभ (2010) और SEEA के अंगीकरण (2012) के बीच भ्रमित हो जाते हैं।",
+      "elimination_logic": [
+        "TEEB पहल 2007 में G8+5 पर्यावरण मंत्रियों की बैठक, पॉट्सडैम में शुरू हुई — यह सबसे पहला आयोजन है।",
+        "WAVES साझेदारी 2010 में विश्व बैंक द्वारा शुरू की गई — TEEB के बाद लेकिन SEEA के अंगीकरण से पहले।",
+        "SEEA को 2012 में संयुक्त राष्ट्र सांख्यिकी आयोग द्वारा अंतरराष्ट्रीय सांख्यिकीय मानक के रूप में अपनाया गया — तीनों घटनाओं में सबसे नवीन।",
+        "सही अनुक्रम: TEEB (2007) → WAVES (2010) → SEEA अंगीकरण (2012) = विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "पर्यावरण-आर्थिक लेखांकन में तीन महत्वपूर्ण मील के पत्थर क्रमवार हुए। TEEB (The Economics of Ecosystems and Biodiversity) की शुरुआत 2007 में G8+5 पर्यावरण मंत्रियों की पॉट्सडैम बैठक के तहत हुई, जिसका उद्देश्य जैव विविधता के मूल्य को आर्थिक निर्णयों में स्पष्ट करना था। WAVES साझेदारी 2010 में विश्व बैंक द्वारा शुरू की गई ताकि राष्ट्रीय सांख्यिकीय प्रणालियों में प्राकृतिक पूंजी लेखांकन को लागू किया जा सके, जिसमें भारत एक पायलट देश था। SEEA को 2012 में संयुक्त राष्ट्र सांख्यिकी आयोग द्वारा अंतरराष्ट्रीय सांख्यिकीय मानक के रूप में औपचारिक रूप से अपनाया गया।\n\n• सही अनुक्रम: TEEB पहल (2007) → WAVES साझेदारी शुरू (2010) → SEEA को अंतरराष्ट्रीय मानक के रूप में अपनाया गया (2012)।\n• विकल्प (a) में SEEA को WAVES से पहले रखा गया है — गलत, SEEA अंगीकरण 2012 में हुआ, WAVES 2010 में।\n• विकल्प (c) में WAVES को TEEB से पहले रखा गया है — गलत, TEEB WAVES से तीन साल पहले था।\n• विकल्प (d) में TEEB और SEEA को उलट दिया गया है — TEEB पहले है।\n\nमूल्य संवर्धन:\n• WAVES अपने कार्यान्वयन के लिए SEEA को अपनी पद्धतिगत आधार के रूप में उपयोग करता है।\n• TEEB अध्ययन का महत्वपूर्ण निष्कर्ष था कि वनों की कटाई के कारण विश्व हर साल 2–4.5 ट्रिलियन अमेरिकी डॉलर के पारिस्थितिकी तंत्र सेवाओं का नुकसान करता है।\n• भारत के वन और जल खाते WAVES के तहत MoSPI के माध्यम से पायलट किए गए।"
+    }
+  },
+  {
+    "uuid": "9df217a7-865b-4cdd-a0d3-fa13a655bb47",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Welfare Cost of Pollution and the 'Genuine GDP' Concept"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Defensive expenditures inflate GDP — pollution paradox",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A district's industrial cluster discharges effluents into a river, causing a sharp increase in waterborne diseases. The state government incurs ₹500 crore on medical treatment for affected populations and ₹200 crore on water purification infrastructure. A regional economic report records a rise in the district's measured economic output for the quarter.\n\nWhich of the following best explains why standard GDP accounting would record this rise rather than a decline, even though genuine welfare has deteriorated?\n\n(a) Standard GDP automatically declines when environmental quality deteriorates because pollution reduces the productive capacity of labour and land\n(b) Standard GDP nets out remediation expenditures against the economic damage caused by pollution, resulting in a neutral effect on output\n(c) In conventional national accounts, expenditure on treating pollution-induced illness and environmental cleanup is recorded as value-added output regardless of the welfare loss it is compensating\n(d) Standard GDP counts only private sector transactions, so government spending on pollution remediation is excluded from the GDP computation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students familiar with the idea that pollution reduces welfare may intuitively assume GDP falls when pollution rises, overlooking the paradox of defensive expenditures being counted as output.",
+      "elimination_logic": [
+        "The scenario describes spending on pollution-induced healthcare and industrial cleanup — both are market transactions counted as final output in GDP. Identify this as the 'defensive expenditure' paradox.",
+        "Eliminate (a): GDP does not automatically fall when pollution rises; expenditure on treating pollution effects is counted as positive output in standard GDP.",
+        "Eliminate (b): This describes the Green GDP correction, not what happens in standard GDP accounting. The scenario asks about standard GDP treatment.",
+        "Eliminate (d): GDP counts healthcare spending regardless of its cause — there is no provision in standard GDP to net out pollution-induced spending.",
+        "Select (c): Defensive expenditures — spending on pollution cleanup and healthcare caused by environmental damage — are counted as value-added output in conventional GDP, paradoxically raising GDP even as welfare falls."
+      ],
+      "upsc_trap_explanation": "The trap exploits the intuitive but incorrect assumption that rising pollution necessarily lowers GDP. In reality, standard GDP is indifferent to the cause of expenditure — spending on treating pollution-induced illness or cleaning up contaminated water is recorded as economic output. This fundamental flaw is called the 'defensive expenditure paradox.' Students who apply welfare reasoning instead of national accounting rules will choose option (a).",
+      "final_explanation": "A district's industrial cluster discharges effluents into a river, causing a spike in waterborne diseases. The state government spends ₹500 crore on medical treatment for affected populations and an additional ₹200 crore on water purification infrastructure. A media report claims 'economic activity in the district rose sharply this quarter.'\n\nThe applicable principle is the defensive expenditure paradox. In conventional GDP accounting, all market transactions that represent final goods and services are counted as output — regardless of whether they improve or merely restore welfare. Healthcare spending on pollution-related illness is a market transaction and is counted as GDP output. Water purification spending adds to investment or government expenditure. Both appear as economic growth.\n\n• Option (a) — Incorrect: Standard GDP does not automatically register a decline from pollution events; it records the remediation spending as positive output.\n• Option (b) — Incorrect: This describes Green GDP or ANS adjustments — not the behaviour of conventional GDP.\n• Option (c) — Correct: The defensive expenditure paradox means spending to counter pollution's damage is counted as output, raising GDP even when true welfare has declined.\n• Option (d) — Incorrect: There is no netting mechanism in standard GDP for pollution-caused healthcare spending.\n\nValue Addition:\n• Defensive expenditures include crime prevention, pollution cleanup, and accident recovery — all count as GDP output.\n• WHO/World Bank estimates suggest pollution costs India approximately 8.5% of GDP annually in welfare terms.\n• This paradox is a central argument for replacing GDP with Genuine Progress Indicator (GPI), which explicitly subtracts defensive expenditures."
+    },
+    "hi": {
+      "display_text": "एक जिले के औद्योगिक समूह से नदी में अपशिष्ट निकलते हैं, जिससे जलजनित रोगों में तीव्र वृद्धि होती है। राज्य सरकार प्रभावित जनसंख्या के चिकित्सा उपचार पर ₹500 करोड़ और जल शुद्धिकरण अवसंरचना पर ₹200 करोड़ खर्च करती है। एक क्षेत्रीय आर्थिक रिपोर्ट में जिले की मापी गई आर्थिक उत्पादन में इस तिमाही वृद्धि दर्ज की गई है।\n\nनिम्नलिखित में से कौन-सा सबसे अच्छा समझाता है कि मानक GDP लेखांकन इस वृद्धि को क्यों दर्ज करेगा जबकि वास्तविक कल्याण घट गया है?\n\n(a) मानक GDP अपने आप गिर जाता है जब पर्यावरण गुणवत्ता खराब होती है क्योंकि प्रदूषण श्रम और भूमि की उत्पादक क्षमता को कम करता है\n(b) मानक GDP प्रदूषण से हुए आर्थिक नुकसान के विरुद्ध सुधारात्मक खर्च को नेट करता है, जिससे उत्पादन पर तटस्थ प्रभाव पड़ता है\n(c) पारंपरिक राष्ट्रीय लेखांकन में, प्रदूषण-प्रेरित बीमारी के उपचार और पर्यावरणीय सफाई पर खर्च को कल्याण हानि की परवाह किए बिना मूल्य-वर्धित उत्पादन के रूप में दर्ज किया जाता है\n(d) मानक GDP केवल निजी क्षेत्र के लेनदेन को गिनता है, इसलिए प्रदूषण सुधार पर सरकारी खर्च GDP गणना से बाहर रहता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — प्रदूषण कल्याण को कम करता है, यह विचार जानने वाले छात्र सहज रूप से मान सकते हैं कि प्रदूषण बढ़ने पर GDP घटेगा, जबकि रक्षात्मक व्यय को उत्पादन के रूप में गिनने का विरोधाभास छूट जाता है।",
+      "elimination_logic": [
+        "परिदृश्य में प्रदूषण से उत्पन्न स्वास्थ्य देखभाल और औद्योगिक सफाई पर खर्च का वर्णन है — दोनों बाजार लेनदेन हैं जिन्हें GDP में अंतिम उत्पादन के रूप में गिना जाता है। इसे 'रक्षात्मक व्यय' विरोधाभास के रूप में पहचानें।",
+        "(a) को हटाएं: प्रदूषण बढ़ने पर GDP अपने आप नहीं घटता; प्रदूषण के प्रभावों के उपचार पर खर्च को मानक GDP में सकारात्मक उत्पादन के रूप में गिना जाता है।",
+        "(b) को हटाएं: यह ग्रीन GDP सुधार का वर्णन है, न कि मानक GDP लेखांकन में क्या होता है। परिदृश्य मानक GDP उपचार के बारे में पूछता है।",
+        "(d) को हटाएं: GDP स्वास्थ्य देखभाल खर्च को उसके कारण की परवाह किए बिना गिनता है — मानक GDP में प्रदूषण-प्रेरित खर्च को नेट आउट करने का प्रावधान नहीं है।",
+        "(c) को चुनें: रक्षात्मक व्यय — प्रदूषण सफाई और पर्यावरणीय क्षति से हुए स्वास्थ्य देखभाल पर खर्च — पारंपरिक GDP में मूल्य-वर्धित उत्पादन के रूप में गिने जाते हैं, विरोधाभासी रूप से GDP को बढ़ाते हैं जबकि कल्याण घटता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल सहज लेकिन गलत धारणा का उपयोग करता है कि बढ़ता प्रदूषण अनिवार्य रूप से GDP को कम करता है। वास्तव में, मानक GDP खर्च के कारण से असंवेदनशील है — प्रदूषण-प्रेरित बीमारी के उपचार या दूषित जल की सफाई पर खर्च को आर्थिक उत्पादन के रूप में दर्ज किया जाता है। इस मौलिक दोष को 'रक्षात्मक व्यय विरोधाभास' कहा जाता है। जो छात्र राष्ट्रीय लेखांकन नियमों के बजाय कल्याण तर्क लागू करते हैं, वे विकल्प (a) चुनेंगे।",
+      "final_explanation": "एक जिले के औद्योगिक समूह से नदी में अपशिष्ट निकलते हैं, जिससे जलजनित रोगों में वृद्धि होती है। राज्य सरकार प्रभावित जनसंख्या के चिकित्सा उपचार पर ₹500 करोड़ और जल शुद्धिकरण अवसंरचना पर ₹200 करोड़ खर्च करती है। एक मीडिया रिपोर्ट में कहा गया कि 'जिले की आर्थिक गतिविधि इस तिमाही में तेज़ी से बढ़ी।'\n\nलागू सिद्धांत रक्षात्मक व्यय विरोधाभास है। पारंपरिक GDP लेखांकन में, सभी बाजार लेनदेन जो अंतिम वस्तुएं और सेवाएं दर्शाते हैं, उन्हें उत्पादन के रूप में गिना जाता है — चाहे वे कल्याण में सुधार करें या केवल उसे पुनर्स्थापित करें। प्रदूषण-संबंधित बीमारी के उपचार पर स्वास्थ्य देखभाल खर्च एक बाजार लेनदेन है और इसे GDP उत्पादन के रूप में गिना जाता है। जल शुद्धिकरण खर्च निवेश या सरकारी व्यय में जुड़ता है। दोनों आर्थिक वृद्धि के रूप में प्रकट होते हैं।\n\n• विकल्प (a) — गलत: मानक GDP प्रदूषण घटनाओं से अपने आप गिरावट दर्ज नहीं करता; यह उपचार खर्च को सकारात्मक उत्पादन के रूप में दर्ज करता है।\n• विकल्प (b) — गलत: यह ग्रीन GDP या ANS समायोजन का वर्णन है — पारंपरिक GDP का व्यवहार नहीं।\n• विकल्प (c) — सही: रक्षात्मक व्यय विरोधाभास का अर्थ है कि प्रदूषण के नुकसान को कम करने के लिए खर्च को उत्पादन के रूप में गिना जाता है, जिससे GDP बढ़ता है जबकि वास्तविक कल्याण घटता है।\n• विकल्प (d) — गलत: मानक GDP में प्रदूषण-प्रेरित स्वास्थ्य देखभाल खर्च के लिए कोई नेटिंग तंत्र नहीं है।\n\nमूल्य संवर्धन:\n• रक्षात्मक व्यय में अपराध रोकथाम, प्रदूषण सफाई, और दुर्घटना पुनर्प्राप्ति शामिल हैं — ये सभी GDP उत्पादन के रूप में गिने जाते हैं।\n• WHO/विश्व बैंक के अनुमान के अनुसार, प्रदूषण भारत के GDP का लगभग 8.5% वार्षिक कल्याण लागत के रूप में है।\n• यह विरोधाभास GDP को Genuine Progress Indicator (GPI) से बदलने के लिए एक केंद्रीय तर्क है, जो स्पष्ट रूप से रक्षात्मक व्यय को घटाता है।"
+    }
+  },
+  {
+    "uuid": "e45925bd-a494-408e-a6df-58c7ba80e46a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Gross Environment Product (GEP)",
+        "Inclusive Wealth Index (IWI)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Stock vs. flow distinction in welfare measures",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT belong to the same conceptual category as the others, based on whether it measures an annual economic flow or a stock of wealth?\n\n(a) Inclusive Wealth Index (IWI)\n(b) Gross Domestic Product (GDP)\n(c) Gross Environment Product (GEP)\n(d) Green GDP",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may identify GEP as the odd one out because it is China-originated and less universally adopted, missing the stock-vs-flow distinction that is the actual classification principle.",
+      "elimination_logic": [
+        "Identify the classification principle: which items measure annual flows of output or services, and which measures a stock of wealth?",
+        "GDP — annual flow of output. Green GDP — annual flow of output adjusted for environmental costs. GEP — annual flow of monetary value of ecosystem services. All three are flow measures.",
+        "IWI — measures total capital stock (produced + human + natural capital) at a point in time. IWI is a stock/wealth measure, not an annual flow measure.",
+        "IWI does not belong to the same category (annual flow measures) as the others — select option (a)."
+      ],
+      "upsc_trap_explanation": "The trap is the surface-level association between GEP and China — students may pick GEP as the odd one out because it is less universally adopted or because it is a China-specific concept. However, GEP shares the fundamental characteristic of measuring annual ecosystem service flows, putting it in the same category as GDP and Green GDP. IWI is categorically different — it is a stock/balance sheet measure, not a flow measure. A student who does not know the stock-flow distinction will likely choose (c) GEP.",
+      "final_explanation": "This question tests the stock-versus-flow distinction in welfare accounting — one of the most conceptually important differentiations in national income analysis.\n\n• GDP — Flow measure: annual output of goods and services at market prices.\n• Green GDP — Flow measure: GDP adjusted downward for environmental degradation costs and resource depletion.\n• GEP (Gross Environment Product) — Flow measure: the monetary value of ecosystem service flows generated by natural ecosystems in a given period, pioneered by China.\n• IWI (Inclusive Wealth Index) — Stock measure: the total capital wealth of a nation (produced + human + natural capital) at a point in time, tracking long-run sustainability.\n\nIWI is the odd one out because it measures a stock of wealth, not an annual economic flow. The others — despite their differences — all measure annual output or service flows.\n\nValue Addition:\n• GDP, GNI, Green GDP, and GEP are all flow concepts; IWI and Natural Capital Accounts are stock concepts.\n• China introduced GEP to ensure that local governments do not sacrifice ecosystem services for GDP growth.\n• A falling IWI even with rising GDP signals that a country is liquidating natural and human capital to finance current output."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन सा अन्य के समान वैचारिक श्रेणी में नहीं आता, यह देखते हुए कि यह वार्षिक आर्थिक प्रवाह को मापता है या संपदा के स्टॉक को?\n\n(a) समावेशी संपदा सूचकांक (IWI)\n(b) सकल घरेलू उत्पाद (GDP)\n(c) सकल पर्यावरण उत्पाद (GEP)\n(d) ग्रीन GDP",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र GEP को अलग विकल्प के रूप में पहचान सकते हैं क्योंकि यह चीन-उत्पन्न है और कम सार्वभौमिक रूप से अपनाया गया है, जबकि वे स्टॉक-और-फ्लो के बीच के अंतर को नहीं समझ पाते जो कि वास्तविक वर्गीकरण सिद्धांत है।",
+      "elimination_logic": [
+        "वर्गीकरण सिद्धांत की पहचान करें: कौन से आइटम वार्षिक उत्पादन या सेवाओं के प्रवाह को मापते हैं, और कौन सा संपत्ति के स्टॉक को मापता है?",
+        "GDP — वार्षिक उत्पादन का प्रवाह। Green GDP — पर्यावरणीय लागतों के लिए समायोजित वार्षिक उत्पादन का प्रवाह। GEP — पारिस्थितिकी तंत्र सेवाओं के मौद्रिक मूल्य का वार्षिक प्रवाह। ये सभी प्रवाह माप हैं।",
+        "IWI — एक समय बिंदु पर कुल पूंजी स्टॉक (उत्पादित + मानव + प्राकृतिक पूंजी) को मापता है। IWI स्टॉक/धन माप है, वार्षिक प्रवाह माप नहीं।",
+        "IWI अन्य के समान श्रेणी (वार्षिक प्रवाह माप) में नहीं आता — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "फंदा GEP और चीन के बीच सतही संबंध है — छात्र GEP को अलग विकल्प के रूप में चुन सकते हैं क्योंकि यह कम सार्वभौमिक रूप से अपनाया गया है या यह चीन-विशिष्ट अवधारणा है। हालांकि, GEP वार्षिक पारिस्थितिकी तंत्र सेवा प्रवाह को मापने की मूलभूत विशेषता साझा करता है, जो इसे GDP और Green GDP के समान श्रेणी में रखता है। IWI श्रेणीगत रूप से भिन्न है — यह स्टॉक/बैलेंस शीट माप है, प्रवाह माप नहीं। जो छात्र स्टॉक-फ्लो अंतर को नहीं जानते, वे संभवतः (c) GEP चुनेंगे।",
+      "final_explanation": "यह प्रश्न कल्याण लेखांकन में स्टॉक-और-फ्लो के बीच के अंतर को परखता है — जो राष्ट्रीय आय विश्लेषण में सबसे महत्वपूर्ण अवधारणात्मक भेदों में से एक है।\n\n• GDP — प्रवाह माप: बाजार मूल्य पर वार्षिक वस्तुओं और सेवाओं का उत्पादन।\n• Green GDP — प्रवाह माप: पर्यावरणीय क्षरण लागतों और संसाधन क्षय के लिए समायोजित GDP।\n• GEP (Gross Environment Product) — प्रवाह माप: प्राकृतिक पारिस्थितिक तंत्रों द्वारा उत्पन्न पारिस्थितिकी तंत्र सेवा प्रवाह का मौद्रिक मूल्य, जिसे चीन ने शुरू किया।\n• IWI (Inclusive Wealth Index) — स्टॉक माप: एक समय बिंदु पर राष्ट्र की कुल पूंजी संपदा (उत्पादित + मानव + प्राकृतिक पूंजी), दीर्घकालिक स्थिरता को ट्रैक करता है।\n\nIWI अलग है क्योंकि यह संपदा का स्टॉक मापता है, वार्षिक आर्थिक प्रवाह नहीं। अन्य सभी — उनके भेदों के बावजूद — वार्षिक उत्पादन या सेवा प्रवाह मापते हैं।\n\nमूल्य संवर्धन:\n• GDP, GNI, Green GDP, और GEP सभी प्रवाह अवधारणाएं हैं; IWI और प्राकृतिक पूंजी खाते स्टॉक अवधारणाएं हैं।\n• चीन ने GEP को इस उद्देश्य से शुरू किया कि स्थानीय सरकारें GDP वृद्धि के लिए पारिस्थितिकी तंत्र सेवाओं का बलिदान न करें।\n• GDP बढ़ने के बावजूद IWI गिरना संकेत है कि देश वर्तमान उत्पादन के लिए प्राकृतिक और मानव पूंजी को समाप्त कर रहा है।"
+    }
+  },
+  {
+    "uuid": "58d343db-64b3-4e3c-84c1-03f2c5c516ca",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Human Development Index (HDI) as a Welfare Measure"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "HDI uses GNI per capita, not GDP per capita",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about the Human Development Index (HDI) and its variants:\n\nStatement 1: The Human Development Index uses GDP per capita (at purchasing power parity) as the income dimension because GDP reflects the productive output of an economy available to its residents.\nStatement 2: The Inequality-adjusted HDI (IHDI) corrects for distributional inequality across HDI's three dimensions but does not incorporate any adjustment for ecological sustainability or environmental pressures.\n\nWhich one of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: The Human Development Index uses GDP per capita (at purchasing power parity) as the income dimension because GDP reflects the productive output of an economy available to its residents.",
+          "verdict": "Incorrect",
+          "reason": "HDI uses GNI per capita (at PPP), not GDP per capita. GNI captures the income of residents regardless of where production occurs, making it conceptually more appropriate for measuring living standards than GDP."
+        },
+        {
+          "statement": "Statement 2: The Inequality-adjusted HDI (IHDI) corrects for distributional inequality across HDI's three dimensions but does not incorporate any adjustment for ecological sustainability or environmental pressures.",
+          "verdict": "Correct",
+          "reason": "IHDI discounts HDI scores for inequality in health, education, and income — but it contains no ecological or environmental correction. The Planetary Pressures-Adjusted HDI (PHDI) is the separate index that incorporates environmental pressures."
+        }
+      ],
+      "strong_distractor": "a — Students who know HDI includes an income component expressed in PPP terms may assume it is GDP per capita at PPP, without noticing the GNI/GDP distinction.",
+      "elimination_logic": [
+        "Verify Statement 1: HDI's income dimension uses GNI per capita (PPP), not GDP per capita. GNI includes net factor income from abroad, making it resident-based. Statement 1 is incorrect.",
+        "Verify Statement 2: IHDI adjusts for inequality across health, education, and income dimensions — no environmental correction is built in. PHDI handles environmental pressures separately. Statement 2 is correct.",
+        "Statement 1 incorrect, Statement 2 correct — select option (d)."
+      ],
+      "upsc_trap_explanation": "The HDI-GNI vs. GDP confusion is a recurring UPSC trap. Students memorise 'HDI includes income at PPP' and assume it is GDP at PPP — the standard income measure. The UNDP deliberately chose GNI because it measures what residents actually receive, not what is produced within borders. Net factor income from abroad (remittances, corporate profits) makes GNI different from GDP in open economies like India.",
+      "final_explanation": "HDI is UNDP's composite measure of human development across health, education, and income. The income dimension uses GNI per capita at PPP — not GDP per capita. GNI = GDP + Net Factor Income from Abroad. For countries like India with significant diaspora remittances, GNI can differ meaningfully from GDP.\n\n• Statement 1 — Incorrect: The income component of HDI is GNI per capita at PPP, not GDP per capita. The distinction matters because GNI captures resident income flows, not just domestic production.\n• Statement 2 — Correct: IHDI discounts the three HDI dimensions for inequality but introduces no environmental variable. PHDI, introduced in the 2020 Human Development Report, is the index that adjusts for planetary pressures (carbon footprint, material footprint).\n\nValue Addition:\n• In practice, GNI and GDP differ significantly for remittance-receiving countries (e.g., Philippines, Bangladesh) and tax havens.\n• IHDI was introduced in the 2010 Human Development Report.\n• PHDI showed that high-HDI countries' rankings fell significantly when adjusted for ecological footprint."
+    },
+    "hi": {
+      "display_text": "मानव विकास सूचकांक (HDI) और इसके प्रकारों के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: मानव विकास सूचकांक आय आयाम के रूप में GDP प्रति व्यक्ति (खरीद शक्ति समानता पर) का उपयोग करता है क्योंकि GDP अर्थव्यवस्था के निवासियों के लिए उपलब्ध उत्पादक उत्पादन को दर्शाता है।\nकथन 2: असमानता-समायोजित HDI (IHDI) HDI के तीन आयामों में वितरण असमानता को सुधारता है लेकिन पारिस्थितिक स्थिरता या पर्यावरणीय दबावों के लिए कोई समायोजन शामिल नहीं करता।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: मानव विकास सूचकांक (HDI) आय आयाम के रूप में GDP प्रति व्यक्ति (खरीद शक्ति समानता पर) का उपयोग करता है क्योंकि GDP अर्थव्यवस्था के निवासियों के लिए उपलब्ध उत्पादक उत्पादन को दर्शाता है।",
+          "verdict": "गलत",
+          "reason": "HDI आय आयाम के लिए GDP प्रति व्यक्ति का नहीं बल्कि GNI प्रति व्यक्ति (PPP पर) का उपयोग करता है। GNI निवासियों की आय को कैप्चर करता है चाहे उत्पादन कहीं भी हो, जो जीवन स्तर मापने के लिए GDP की तुलना में अधिक उपयुक्त है।"
+        },
+        {
+          "statement": "कथन 2: असमानता-समायोजित HDI (IHDI) HDI के तीन आयामों में वितरण असमानता को सुधारता है लेकिन पारिस्थितिक स्थिरता या पर्यावरणीय दबावों के लिए कोई समायोजन शामिल नहीं करता।",
+          "verdict": "सही",
+          "reason": "IHDI स्वास्थ्य, शिक्षा और आय में असमानता के लिए HDI स्कोर को घटाता है — लेकिन इसमें कोई पारिस्थितिक या पर्यावरणीय समायोजन नहीं है। पर्यावरणीय दबावों को शामिल करने वाला पृथक सूचकांक है Planetary Pressures-Adjusted HDI (PHDI)।"
+        }
+      ],
+      "strong_distractor": "a — छात्र जो जानते हैं कि HDI में PPP शब्दों में आय घटक शामिल है, वे मान सकते हैं कि यह GDP प्रति व्यक्ति PPP है, बिना GNI/GDP के अंतर को देखे।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: HDI का आय आयाम GNI प्रति व्यक्ति (PPP) का उपयोग करता है, GDP प्रति व्यक्ति का नहीं। GNI में विदेश से शुद्ध कारक आय शामिल होती है, जो इसे निवासी-आधारित बनाती है। अतः कथन 1 गलत है।",
+        "कथन 2 सत्यापित करें: IHDI स्वास्थ्य, शिक्षा और आय आयामों में असमानता के लिए समायोजित करता है — कोई पर्यावरणीय समायोजन नहीं है। PHDI पर्यावरणीय दबावों को अलग से संभालता है। अतः कथन 2 सही है।",
+        "कथन 1 गलत, कथन 2 सही — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "HDI-GNI बनाम GDP भ्रम UPSC में बार-बार आने वाला जाल है। छात्र याद करते हैं 'HDI में PPP पर आय शामिल है' और मान लेते हैं कि यह GDP PPP है — जो मानक आय माप है। UNDP ने जानबूझकर GNI चुना क्योंकि यह मापता है कि निवासी वास्तव में क्या प्राप्त करते हैं, न कि केवल सीमा के भीतर क्या उत्पादित होता है। विदेश से शुद्ध कारक आय (प्रेषण, कॉर्पोरेट लाभ) GNI को भारत जैसे खुले अर्थव्यवस्थाओं में GDP से अलग बनाती है।",
+      "final_explanation": "HDI UNDP का मानव विकास का सम्मिश्रित माप है जो स्वास्थ्य, शिक्षा और आय को शामिल करता है। आय आयाम GNI प्रति व्यक्ति PPP पर उपयोग करता है — GDP प्रति व्यक्ति नहीं। GNI = GDP + विदेश से शुद्ध कारक आय। भारत जैसे देशों में जहां प्रवासी प्रेषण महत्वपूर्ण हैं, GNI GDP से अर्थपूर्ण रूप से भिन्न हो सकता है।\n\n• कथन 1 — गलत: HDI का आय घटक GNI प्रति व्यक्ति PPP पर है, GDP प्रति व्यक्ति पर नहीं। यह अंतर महत्वपूर्ण है क्योंकि GNI निवासी आय प्रवाह को कैप्चर करता है, केवल घरेलू उत्पादन को नहीं।\n• कथन 2 — सही: IHDI तीन HDI आयामों को असमानता के लिए घटाता है लेकिन कोई पर्यावरणीय चर नहीं जोड़ता। PHDI, जो 2020 मानव विकास रिपोर्ट में पेश किया गया, वह सूचकांक है जो ग्रहीय दबावों (कार्बन पदचिह्न, भौतिक पदचिह्न) के लिए समायोजित करता है।\n\nमूल्य संवर्धन:\n• व्यवहार में, GNI और GDP प्रवासी प्रेषण प्राप्त करने वाले देशों (जैसे फिलीपींस, बांग्लादेश) और टैक्स हेवन के लिए काफी भिन्न होते हैं।\n• IHDI 2010 मानव विकास रिपोर्ट में पेश किया गया था।\n• PHDI ने दिखाया कि उच्च HDI वाले देशों की रैंकिंग पारिस्थितिक पदचिह्न के समायोजन पर काफी गिर गई।"
+    }
+  },
+  {
+    "uuid": "cd272739-58c4-448d-a639-6e80c3577e93",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Happiness and Well-being Indices: GNH and World Happiness Report"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "World Happiness Report publisher — SDSN not UN",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) World Happiness Report — uses the Cantril Ladder and is an official annual publication of the United Nations\n(b) World Happiness Report — published by UNDP as part of the annual Human Development Report series\n(c) World Happiness Report — published by the Sustainable Development Solutions Network (SDSN)\n(d) Gross National Happiness (GNH) — an annually updated statistical metric published by Bhutan's National Statistics Office based on its four pillars",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'World Happiness Report — published by UNDP as part of the annual Human Development Report series' is highly deceptive because both WHR and HDR deal with human welfare and both have UN associations.",
+      "elimination_logic": [
+        "Evaluate option (b): WHR is not published by UNDP and is not part of the HDR series — eliminate as incorrectly matched.",
+        "Evaluate option (a): The Cantril Ladder is indeed the life evaluation tool used in WHR — this is correct. But check if the pairing with 'UN official report' is accurate — it is not, WHR is published by SDSN.",
+        "Evaluate option (c): 'World Happiness Report — published by the Sustainable Development Solutions Network (SDSN)' — this is the correctly matched pair. WHR is an SDSN publication, not a UN official report.",
+        "Evaluate option (d): GNH's four pillars do include environmental conservation, cultural preservation, good governance, and sustainable development — but pairing GNH with 'statistical measure updated annually by Bhutan's NSO' is inaccurate; GNH is a governance philosophy, not an annual statistical metric. Select (c)."
+      ],
+      "upsc_trap_explanation": "The WHR-UN conflation is a classic UPSC trap. Because WHR discusses global happiness in the context of sustainable development and uses data sources overlapping with UN agencies, students assume it is a UN publication. In fact, it is published by the Sustainable Development Solutions Network (SDSN), an independent academic network. UNDP is associated with the HDR and HDI — not the World Happiness Report.",
+      "final_explanation": "The World Happiness Report uses the Cantril Ladder (a 0–10 life evaluation scale) alongside six explanatory variables to rank countries. It is published annually by the Sustainable Development Solutions Network (SDSN), not by any UN agency.\n\n• Option (a) — Incorrect: While the Cantril Ladder is correctly identified as WHR's tool, pairing it with 'official UN publication' is wrong — WHR is SDSN's publication.\n• Option (b) — Incorrect: WHR is not published by UNDP and has no connection to the Human Development Report series.\n• Option (c) — Correct: World Happiness Report is published by the SDSN — this is the accurately matched pair.\n• Option (d) — Incorrect: GNH is Bhutan's governance philosophy based on four pillars — it is not an annually updated statistical metric by Bhutan's NSO.\n\nValue Addition:\n• WHR's six variables: GDP per capita, social support, healthy life expectancy, freedom, generosity, corruption perceptions.\n• GNH has nine domains and 33 indicators — far more elaborate than the four-pillar description commonly simplified in exam contexts.\n• Finland has ranked first in the World Happiness Report for multiple consecutive years."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) World Happiness Report — Cantril Ladder का उपयोग करता है और संयुक्त राष्ट्र की आधिकारिक वार्षिक प्रकाशन है\n(b) World Happiness Report — UNDP द्वारा वार्षिक Human Development Report श्रृंखला के हिस्से के रूप में प्रकाशित\n(c) World Happiness Report — Sustainable Development Solutions Network (SDSN) द्वारा प्रकाशित\n(d) Gross National Happiness (GNH) — भूटान के राष्ट्रीय सांख्यिकी कार्यालय द्वारा इसके चार स्तंभों के आधार पर वार्षिक रूप से अपडेट किया जाने वाला सांख्यिकीय माप",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'World Happiness Report — published by UNDP as part of the annual Human Development Report series' is highly deceptive because both WHR and HDR deal with human welfare and both have UN associations.",
+      "elimination_logic": [
+        "विकल्प (b) का मूल्यांकन करें: WHR को UNDP द्वारा प्रकाशित नहीं किया जाता है और यह HDR श्रृंखला का हिस्सा नहीं है — अतः इसे गलत जोड़ी के रूप में हटा दें।",
+        "विकल्प (a) का मूल्यांकन करें: Cantril Ladder वास्तव में WHR में उपयोग किया जाने वाला जीवन मूल्यांकन उपकरण है — यह सही है। लेकिन 'संयुक्त राष्ट्र का आधिकारिक रिपोर्ट' के साथ जोड़ी सही नहीं है — WHR SDSN द्वारा प्रकाशित है।",
+        "विकल्प (c) का मूल्यांकन करें: 'World Happiness Report — Sustainable Development Solutions Network (SDSN) द्वारा प्रकाशित' — यह सही जोड़ी है। WHR SDSN की प्रकाशन है, कोई संयुक्त राष्ट्र का आधिकारिक रिपोर्ट नहीं।",
+        "विकल्प (d) का मूल्यांकन करें: GNH के चार स्तंभों में पर्यावरण संरक्षण, सांस्कृतिक संरक्षण, सुशासन, और सतत विकास शामिल हैं — लेकिन GNH को 'भूटान के राष्ट्रीय सांख्यिकी कार्यालय द्वारा वार्षिक रूप से अपडेट किए जाने वाला सांख्यिकीय माप' के साथ जोड़ना गलत है; GNH एक शासन दर्शन है, वार्षिक सांख्यिकीय माप नहीं। अतः (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "WHR-UN की भ्रमित करने वाली स्थिति UPSC की एक क्लासिक जाल है। क्योंकि WHR सतत विकास के संदर्भ में वैश्विक खुशी पर चर्चा करता है और इसके डेटा स्रोत संयुक्त राष्ट्र एजेंसियों से ओवरलैप करते हैं, छात्र इसे संयुक्त राष्ट्र की प्रकाशन मान लेते हैं। वास्तव में, इसे Sustainable Development Solutions Network (SDSN), एक स्वतंत्र शैक्षणिक नेटवर्क द्वारा प्रकाशित किया जाता है। UNDP का संबंध HDR और HDI से है — World Happiness Report से नहीं।",
+      "final_explanation": "World Happiness Report Cantril Ladder (0–10 जीवन मूल्यांकन पैमाना) का उपयोग करता है और छह व्याख्यात्मक चर के साथ देशों को रैंक करता है। इसे Sustainable Development Solutions Network (SDSN) द्वारा वार्षिक रूप से प्रकाशित किया जाता है, न कि किसी संयुक्त राष्ट्र एजेंसी द्वारा।\n\n• विकल्प (a) — गलत: जबकि Cantril Ladder को सही रूप से WHR के उपकरण के रूप में पहचाना गया है, इसे 'संयुक्त राष्ट्र की आधिकारिक प्रकाशन' के साथ जोड़ना गलत है — WHR SDSN की प्रकाशन है।\n• विकल्प (b) — गलत: WHR को UNDP द्वारा प्रकाशित नहीं किया जाता और इसका Human Development Report श्रृंखला से कोई संबंध नहीं है।\n• विकल्प (c) — सही: World Happiness Report SDSN द्वारा प्रकाशित है — यह सही जोड़ी है।\n• विकल्प (d) — गलत: GNH भूटान का शासन दर्शन है जो चार स्तंभों पर आधारित है — यह भूटान के राष्ट्रीय सांख्यिकी कार्यालय द्वारा वार्षिक रूप से अपडेट किया जाने वाला सांख्यिकीय माप नहीं है।\n\nमूल्य संवर्धन:\n• WHR के छह चर: प्रति व्यक्ति GDP, सामाजिक समर्थन, स्वस्थ जीवन प्रत्याशा, स्वतंत्रता, उदारता, भ्रष्टाचार की धारणा।\n• GNH के नौ क्षेत्र और 33 संकेतक हैं — जो परीक्षा संदर्भों में सामान्यतः सरल किए गए चार स्तंभों के विवरण से कहीं अधिक विस्तृत हैं।\n• फिनलैंड ने World Happiness Report में कई लगातार वर्षों तक प्रथम स्थान प्राप्त किया है।"
+    }
+  },
+  {
+    "uuid": "977ea38f-ba41-41a6-8c8b-eb45c0490f03",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Satellite Accounts in National Accounting"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Satellite accounts — supplementary not replacement role",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of national income accounting, which one of the following statements best describes the role of satellite accounts?\n\n(a) Satellite accounts directly modify the GDP computation by adding non-market activities and subtracting environmental degradation costs from the core national accounts framework\n(b) Satellite accounts replace GDP as the primary economic measure for the specific sectors they cover, such as tourism or the environment\n(c) Satellite accounts are used exclusively to value unpaid household and care work that conventional GDP excludes, thereby correcting for gender-based measurement biases\n(d) Satellite accounts extend the System of National Accounts by providing supplementary data on non-market activities and sectoral details without altering the core GDP computation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know that environmental satellite accounts include more information than standard GDP may conclude they 'replace' GDP for environmental purposes, missing the explicit supplementary nature of satellite accounts.",
+      "elimination_logic": [
+        "Eliminate (a): Satellite accounts do not alter the core GDP computation — they sit alongside SNA without disrupting it.",
+        "Eliminate (b): Satellite accounts extend the SNA, not replace it even for specific sectors — 'replacement for GDP in sectors they cover' is the scope-extension trap.",
+        "Eliminate (c): Household Production Satellite Accounts do value unpaid domestic work — but this does not make satellite accounts replacements for core accounts.",
+        "Select (d): Satellite accounts are explicitly supplementary frameworks that extend national accounts without modifying the core SNA or GDP computation."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in option (b) is subtle — it grants satellite accounts a legitimate domain ('environmental sector') and then overstates their role by calling them a 'replacement.' Since satellite accounts do provide richer information in their domain, students may accept the 'replacement' characterisation within that domain. The precise definition is that satellite accounts are supplementary — they never replace the core SNA.",
+      "final_explanation": "Satellite accounts are supplementary statistical frameworks that extend the System of National Accounts (SNA) into areas not captured by standard GDP — environment, health, tourism, household production — without altering how GDP itself is computed.\n\n• Option (a) — Incorrect: Satellite accounts do not modify the core GDP computation; they run parallel to it.\n• Option (b) — Incorrect: Satellite accounts do not replace GDP even within the sector they cover — they supplement the SNA with additional data.\n• Option (c) — Incorrect: While Household Production Satellite Accounts do value unpaid domestic work, this does not constitute a replacement of core accounts — it is an additional layer.\n• Option (d) — Correct: The defining characteristic of satellite accounts is their supplementary, non-disruptive nature — they enrich national accounting without replacing the SNA framework.\n\nValue Addition:\n• Examples: Tourism Satellite Account (TSA), Health Satellite Account, Environmental Satellite Account, Household Production Satellite Account.\n• India has a Tourism Satellite Account; an Environmental Satellite Account is proposed under SEEA.\n• Unpaid domestic and care work — predominantly performed by women — is excluded from GDP but can be captured in Household Production Satellite Accounts."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय आय लेखांकन के संदर्भ में, निम्नलिखित में से कौन-सा कथन उपग्रह खातों की भूमिका का सर्वोत्तम वर्णन करता है?\n\n(a) उपग्रह खाते सीधे GDP गणना को संशोधित करते हैं, गैर-बाजार गतिविधियों को जोड़कर और पर्यावरणीय क्षति की लागत को मुख्य राष्ट्रीय खातों के ढांचे से घटाकर\n(b) उपग्रह खाते उन विशिष्ट क्षेत्रों के लिए GDP की जगह लेते हैं जिन्हें वे कवर करते हैं, जैसे पर्यटन या पर्यावरण\n(c) उपग्रह खाते केवल बिना वेतन वाले घरेलू और देखभाल कार्य का मूल्यांकन करने के लिए उपयोग किए जाते हैं जिन्हें पारंपरिक GDP शामिल नहीं करता, इस प्रकार लिंग आधारित मापन पूर्वाग्रहों को सुधारते हैं\n(d) उपग्रह खाते गैर-बाजार गतिविधियों और क्षेत्रीय विवरणों पर पूरक डेटा प्रदान करके राष्ट्रीय खातों की प्रणाली का विस्तार करते हैं बिना मुख्य GDP गणना को बदले",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि पर्यावरणीय उपग्रह खाते मानक GDP की तुलना में अधिक जानकारी देते हैं, वे यह निष्कर्ष निकाल सकते हैं कि वे पर्यावरणीय उद्देश्यों के लिए GDP को 'प्रतिस्थापित' करते हैं, जबकि उपग्रह खातों की स्पष्ट पूरक प्रकृति को वे नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: उपग्रह खाते मुख्य GDP गणना को परिवर्तित नहीं करते — वे SNA के साथ साथ चलते हैं बिना इसे बाधित किए।",
+        "(b) को हटाएं: उपग्रह खाते SNA का विस्तार करते हैं, प्रतिस्थापन नहीं, भले ही वे विशिष्ट क्षेत्रों के लिए हों — 'वे जिन क्षेत्रों को कवर करते हैं वहां GDP के लिए प्रतिस्थापन' एक दायरा-विस्तार जाल है।",
+        "(c) को हटाएं: घरेलू उत्पादन उपग्रह खाते बिना वेतन वाले घरेलू कार्य का मूल्यांकन करते हैं — लेकिन इससे उपग्रह खाते मुख्य खातों के प्रतिस्थापन नहीं बनते।",
+        "(d) चुनें: उपग्रह खाते स्पष्ट रूप से पूरक ढांचे हैं जो राष्ट्रीय खातों का विस्तार करते हैं बिना मुख्य SNA या GDP गणना को बदले।"
+      ],
+      "upsc_trap_explanation": "(b) विकल्प में दायरा-विस्तार जाल सूक्ष्म है — यह उपग्रह खातों को एक वैध क्षेत्र ('पर्यावरणीय क्षेत्र') देता है और फिर उनकी भूमिका को 'प्रतिस्थापन' कहकर बढ़ा-चढ़ा कर प्रस्तुत करता है। चूंकि उपग्रह खाते अपने क्षेत्र में अधिक समृद्ध जानकारी प्रदान करते हैं, छात्र उस क्षेत्र में 'प्रतिस्थापन' की व्याख्या स्वीकार कर सकते हैं। सटीक परिभाषा यह है कि उपग्रह खाते पूरक होते हैं — वे कभी भी मुख्य SNA को प्रतिस्थापित नहीं करते।",
+      "final_explanation": "उपग्रह खाते पूरक सांख्यिकीय ढांचे हैं जो राष्ट्रीय खातों की प्रणाली (SNA) को उन क्षेत्रों में विस्तारित करते हैं जिन्हें मानक GDP में शामिल नहीं किया जाता — पर्यावरण, स्वास्थ्य, पर्यटन, घरेलू उत्पादन — बिना GDP की गणना के तरीके को बदले।\n\n• विकल्प (a) — गलत: उपग्रह खाते मुख्य GDP गणना को संशोधित नहीं करते; वे इसके समानांतर चलते हैं।\n• विकल्प (b) — गलत: उपग्रह खाते उस क्षेत्र में भी GDP को प्रतिस्थापित नहीं करते जिसे वे कवर करते हैं — वे SNA को अतिरिक्त डेटा के साथ पूरक करते हैं।\n• विकल्प (c) — गलत: जबकि घरेलू उत्पादन उपग्रह खाते बिना वेतन वाले घरेलू कार्य का मूल्यांकन करते हैं, यह मुख्य खातों का प्रतिस्थापन नहीं है — यह एक अतिरिक्त परत है।\n• विकल्प (d) — सही: उपग्रह खातों की परिभाषित विशेषता उनकी पूरक, गैर-विघटनकारी प्रकृति है — वे राष्ट्रीय लेखांकन को समृद्ध करते हैं बिना SNA ढांचे को प्रतिस्थापित किए।\n\nमूल्य संवर्धन:\n• उदाहरण: पर्यटन उपग्रह खाता (TSA), स्वास्थ्य उपग्रह खाता, पर्यावरण उपग्रह खाता, घरेलू उत्पादन उपग्रह खाता।\n• भारत के पास पर्यटन उपग्रह खाता है; SEEA के तहत पर्यावरण उपग्रह खाता प्रस्तावित है।\n• बिना वेतन वाले घरेलू और देखभाल कार्य — जो मुख्यतः महिलाएं करती हैं — GDP में शामिल नहीं हैं लेकिन घरेलू उत्पादन उपग्रह खातों में शामिल किए जा सकते हैं।"
+    }
+  },
+  {
+    "uuid": "c0675012-6263-4bf6-8cad-81508c7154d5",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Ecosystem Services Valuation Methods"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Ecosystem services categories and valuation methods",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Ecosystem Service Category) with List II (Primary Valuation Method or Treatment):",
+        "columns": [
+          "List I (Ecosystem Service Category)",
+          "List II (Primary Valuation Method or Treatment)"
+        ],
+        "rows": [
+          [
+            "A. Provisioning services (food, timber, freshwater)",
+            "1. Market price method"
+          ],
+          [
+            "B. Regulating services (flood control, water purification)",
+            "2. Replacement cost method"
+          ],
+          [
+            "C. Cultural services (recreation, aesthetic value)",
+            "3. Contingent Valuation Method (CVM)"
+          ],
+          [
+            "D. Supporting services (nutrient cycling, soil formation)",
+            "4. Not directly valued in SEEA EA — excluded to avoid double-counting"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-1, B-2, C-3, D-4\n(c) A-2, B-1, C-3, D-4\n(d) A-1, B-2, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students may pair 'Regulating services' with 'Market price method' because climate regulation services sometimes have carbon market prices, confusing the valuation method category.",
+      "elimination_logic": [
+        "Anchor on Supporting services: SEEA EA explicitly excludes supporting services from final valuation to avoid double-counting — they are intermediate services. List I item D matches List II item 4.",
+        "Contingent Valuation Method (CVM) is used for non-market, hard-to-quantify services — Cultural services (recreation, aesthetic value) are the classic application. C matches 3.",
+        "Market price method applies most directly to Provisioning services (food, timber, water) which have observable market prices. A matches 1.",
+        "Replacement cost method is used for Regulating services (flood control, water purification) by estimating what it would cost to replace them with built infrastructure. B matches 2. Correct combination: A-1, B-2, C-3, D-4 = option (b)."
+      ],
+      "upsc_trap_explanation": "The trap is in pairing Regulating services with CVM (option a's distractor). Since regulating services (like climate regulation) seem abstract and hard to price, students may assume they are valued using CVM. However, Regulating services are typically valued using the Replacement Cost method — estimating what human-built alternatives (flood barriers, water treatment plants) would cost. CVM, which uses surveys to elicit willingness to pay, is more naturally applied to Cultural services like recreation and aesthetic value.",
+      "final_explanation": "Ecosystem services are classified into four categories, and each category is typically valued using methods appropriate to its market characteristics.\n\nCorrect pairings:\n• A (Provisioning services) → 1 (Market price method): Provisioning services — food, timber, freshwater — have observable market prices, making the market price method most directly applicable.\n• B (Regulating services) → 2 (Replacement cost method): Regulating services like flood control and water purification are valued by estimating the cost of built infrastructure that would replace them.\n• C (Cultural services) → 3 (Contingent Valuation Method): Cultural services — recreation, spiritual value, aesthetic enjoyment — have no market price. CVM uses surveys to elicit willingness to pay.\n• D (Supporting services) → 4 (Not directly valued in SEEA EA): Supporting services like nutrient cycling and soil formation underpin all other ecosystem services. SEEA EA excludes them from final valuation to prevent double-counting intermediate contributions.\n\nValue Addition:\n• TEEB (The Economics of Ecosystems and Biodiversity) systematised ecosystem service valuation for policy use.\n• Benefit Transfer method uses valuations from one site to estimate values at another site — used when primary data collection is costly.\n• Hedonic pricing uses property values or wage differentials to infer environmental values not traded in markets."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (पारिस्थितिकी तंत्र सेवा श्रेणी) को सूची II (प्राथमिक मूल्यांकन विधि या उपचार) से मिलाइए:",
+        "columns": [
+          "सूची I (पारिस्थितिकी तंत्र सेवा श्रेणी)",
+          "सूची II (प्राथमिक मूल्यांकन विधि या उपचार)"
+        ],
+        "rows": [
+          [
+            "A. Provisioning services (खाद्य, लकड़ी, ताजे पानी)",
+            "1. Market price method"
+          ],
+          [
+            "B. Regulating services (बाढ़ नियंत्रण, जल शुद्धिकरण)",
+            "2. Replacement cost method"
+          ],
+          [
+            "C. Cultural services (मनोरंजन, सौंदर्य मूल्य)",
+            "3. Contingent Valuation Method (CVM)"
+          ],
+          [
+            "D. Supporting services (पोषक तत्व चक्रण, मिट्टी निर्माण)",
+            "4. SEEA EA में सीधे मूल्यांकित नहीं — दोहरी गणना से बचने के लिए बाहर रखा गया"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-1, B-2, C-3, D-4\n(c) A-2, B-1, C-3, D-4\n(d) A-1, B-2, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र 'Regulating services' को 'Market price method' के साथ जोड़ सकते हैं क्योंकि जलवायु नियंत्रण सेवाओं के लिए कभी-कभी कार्बन बाजार मूल्य होते हैं, जिससे मूल्यांकन विधि श्रेणी भ्रमित हो जाती है।",
+      "elimination_logic": [
+        "Supporting services पर एंकर: SEEA EA स्पष्ट रूप से अंतिम मूल्यांकन से Supporting services को बाहर करता है ताकि दोहरी गणना से बचा जा सके — ये मध्यवर्ती सेवाएं हैं। सूची I का आइटम D सूची II के आइटम 4 से मेल खाता है।",
+        "Contingent Valuation Method (CVM) का उपयोग गैर-बाजार, मापने में कठिन सेवाओं के लिए किया जाता है — सांस्कृतिक सेवाएं (मनोरंजन, सौंदर्य मूल्य) इसका क्लासिक अनुप्रयोग हैं। C सूची II के 3 से मेल खाता है।",
+        "Market price method Provisioning services (खाद्य, लकड़ी, जल) पर सबसे सीधे लागू होता है जिनके बाजार मूल्य देखे जा सकते हैं। A सूची II के 1 से मेल खाता है।",
+        "Replacement cost method Regulating services (बाढ़ नियंत्रण, जल शुद्धिकरण) के लिए उपयोग किया जाता है, जो यह अनुमान लगाता है कि इन्हें मानव निर्मित अवसंरचना से बदलने में कितना खर्च आएगा। B सूची II के 2 से मेल खाता है। सही संयोजन: A-1, B-2, C-3, D-4 = विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "फंदा Regulating services को CVM (विकल्प a का भ्रम) के साथ जोड़ने में है। चूंकि Regulating services (जैसे जलवायु नियंत्रण) अमूर्त और मूल्य निर्धारण में कठिन लगती हैं, छात्र मान सकते हैं कि इन्हें CVM से मूल्यांकित किया जाता है। हालांकि, Regulating services आमतौर पर Replacement Cost विधि से मूल्यांकित होती हैं — यह अनुमान लगाते हुए कि मानव निर्मित विकल्प (बाढ़ अवरोधक, जल उपचार संयंत्र) की लागत क्या होगी। CVM, जो भुगतान की इच्छा को सर्वेक्षण के माध्यम से निकालता है, अधिक स्वाभाविक रूप से सांस्कृतिक सेवाओं जैसे मनोरंजन और सौंदर्य मूल्य पर लागू होता है।",
+      "final_explanation": "पारिस्थितिकी तंत्र सेवाओं को चार श्रेणियों में वर्गीकृत किया गया है, और प्रत्येक श्रेणी को उसके बाजार लक्षणों के अनुसार उपयुक्त विधियों से मूल्यांकित किया जाता है।\n\nसही संयोजन:\n• A (Provisioning services) → 1 (Market price method): Provisioning services — खाद्य, लकड़ी, ताजे पानी — के बाजार मूल्य देखे जा सकते हैं, जिससे Market price method सबसे सीधे लागू होता है।\n• B (Regulating services) → 2 (Replacement cost method): बाढ़ नियंत्रण और जल शुद्धिकरण जैसी Regulating services का मूल्यांकन मानव निर्मित अवसंरचना की लागत का अनुमान लगाकर किया जाता है जो इन्हें प्रतिस्थापित कर सके।\n• C (Cultural services) → 3 (Contingent Valuation Method): Cultural services — मनोरंजन, आध्यात्मिक मूल्य, सौंदर्य आनंद — का कोई बाजार मूल्य नहीं होता। CVM सर्वेक्षणों के माध्यम से भुगतान की इच्छा को निकालता है।\n• D (Supporting services) → 4 (SEEA EA में सीधे मूल्यांकित नहीं): Supporting services जैसे पोषक तत्व चक्रण और मिट्टी निर्माण सभी अन्य पारिस्थितिकी तंत्र सेवाओं का आधार हैं। SEEA EA इन्हें अंतिम मूल्यांकन से बाहर करता है ताकि मध्यवर्ती योगदानों की दोहरी गणना से बचा जा सके।\n\nमूल्य संवर्धन:\n• TEEB (The Economics of Ecosystems and Biodiversity) ने नीति उपयोग के लिए पारिस्थितिकी तंत्र सेवा मूल्यांकन को व्यवस्थित किया।\n• Benefit Transfer विधि एक स्थल से प्राप्त मूल्यांकन का उपयोग दूसरे स्थल के मूल्यांकन के लिए करती है — जब प्राथमिक डेटा संग्रह महंगा हो।\n• Hedonic pricing संपत्ति मूल्यों या वेतन भेदों का उपयोग पर्यावरणीय मूल्यों का अनुमान लगाने के लिए करता है जो बाजारों में व्यापारित नहीं होते।"
+    }
+  },
+  {
+    "uuid": "80cdf2ca-f05c-49fc-93f3-06bf9ae11124",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Wealth Accounting and Valuation of Ecosystem Services (WAVES) Partnership",
+        "System of Environmental-Economic Accounting (SEEA)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "WAVES uses SEEA methodology — implementation versus framework",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Wealth Accounting and Valuation of Ecosystem Services (WAVES) Partnership uses the System of Environmental-Economic Accounting (SEEA) as its methodological foundation for natural capital accounting exercises.\n\nReason (R): India, as a pilot country under the WAVES Partnership, has focused its natural capital accounting exercises on forests, water, and land accounts under the coordination of the Ministry of Statistics and Programme Implementation.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both facts (WAVES uses SEEA, and India is a WAVES pilot country) may assume the reason explains the assertion — but the reason provided about India's pilot focus does not explain why WAVES uses SEEA methodology.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — A states that WAVES Partnership uses SEEA as its methodological foundation. This is accurate; WAVES explicitly applies SEEA methodology in pilot countries. A is correct.",
+        "Step 2: Is Reason (R) correct? — R states that India, as a WAVES pilot country, has focused its accounting exercises on forests, water, and land accounts. This is accurate — India's WAVES pilot covers these three natural asset categories. R is correct.",
+        "Step 3: Does R causally explain A? — R describes India's specific focus areas within WAVES; it does not explain WHY the WAVES Partnership adopted SEEA as its methodological base. R is a factual statement about what India does within WAVES, not an explanation of WAVES' methodological choice. R does NOT explain A.",
+        "Both A and R are correct but R does not explain A — select option (b)."
+      ],
+      "upsc_trap_explanation": "This is a classic (b) vs. (a) trap. Both A and R are true, and R is about the same general topic (WAVES and India). Students who check only factual accuracy without verifying causal relationship will choose (a). The reason (India's pilot focus on forests, water, land) is a consequence or application of WAVES — not the reason WAVES chose SEEA as its methodology. WAVES adopted SEEA because SEEA is the UN's internationally agreed statistical standard — not because India pilots forests and water accounts.",
+      "final_explanation": "WAVES Partnership and SEEA are distinct but linked frameworks. SEEA provides the methodological architecture; WAVES is the World Bank-led implementation platform that applies SEEA in pilot countries.\n\n• Assertion (A): Correct. WAVES explicitly uses SEEA Central Framework methodology for its natural capital accounting exercises. SEEA provides the accounting rules; WAVES operationalises them.\n• Reason (R): Correct. India's WAVES pilot indeed focuses on forest accounts, water accounts, and land accounts — these are the three natural asset categories piloted under MoSPI.\n• Causal link: R does not explain A. R describes India's specific domain focus within WAVES. The reason WAVES uses SEEA is that SEEA is the internationally adopted UN standard for environmental-economic accounting — not because of India's pilot coverage. R is a factual detail about an implementing country, not an explanation of WAVES' methodological foundation.\n\nSince both A and R are correct but R does not explain A, the answer is (b).\n\nValue Addition:\n• WAVES was launched in 2010 by the World Bank; it operates in multiple pilot countries across Africa, Asia, and Latin America.\n• SEEA Central Framework was adopted in 2012; it provides the rules WAVES applies.\n• Distinguishing the 'what' from the 'why' in assertion-reason questions is the critical skill tested here."
+    },
+    "hi": {
+      "display_text": "कथन (A): Wealth Accounting and Valuation of Ecosystem Services (WAVES) Partnership अपने प्राकृतिक पूंजी लेखांकन अभ्यासों के लिए System of Environmental-Economic Accounting (SEEA) को अपनी पद्धतिगत आधार के रूप में उपयोग करता है।\n\nकारण (R): भारत, WAVES Partnership के तहत एक पायलट देश के रूप में, अपने प्राकृतिक पूंजी लेखांकन अभ्यासों को Ministry of Statistics and Programme Implementation के समन्वय में वन, जल, और भूमि खातों पर केंद्रित करता है।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both facts (WAVES uses SEEA, and India is a WAVES pilot country) may assume the reason explains the assertion — but the reason provided about India's pilot focus does not explain why WAVES uses SEEA methodology.",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — A कहता है कि WAVES Partnership अपने प्राकृतिक पूंजी लेखांकन अभ्यासों के लिए SEEA को अपनी पद्धतिगत आधार के रूप में उपयोग करता है। यह सही है; WAVES स्पष्ट रूप से पायलट देशों में SEEA पद्धति लागू करता है। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — R कहता है कि भारत, एक WAVES पायलट देश के रूप में, अपने प्राकृतिक पूंजी लेखांकन अभ्यासों को वन, जल, और भूमि खातों पर केंद्रित करता है। यह सही है — भारत का WAVES पायलट इन तीन प्राकृतिक संपत्ति वर्गों को कवर करता है। R सही है।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — R भारत के WAVES के भीतर विशिष्ट फोकस क्षेत्रों का वर्णन करता है; यह यह नहीं बताता कि WAVES Partnership ने SEEA को अपनी पद्धतिगत आधार क्यों अपनाया। R एक तथ्यात्मक कथन है कि भारत WAVES के भीतर क्या करता है, न कि WAVES की पद्धतिगत पसंद की व्याख्या। R, A को समझाता नहीं है।",
+        "दोनों A और R सही हैं लेकिन R, A को समझाता नहीं है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह एक क्लासिक (b) बनाम (a) जाल है। दोनों A और R सत्य हैं, और R उसी सामान्य विषय (WAVES और भारत) के बारे में है। जो छात्र केवल तथ्यात्मक सत्यता जांचते हैं बिना कारणात्मक संबंध की पुष्टि किए, वे (a) चुनेंगे। कारण (भारत का वन, जल, भूमि पर पायलट फोकस) WAVES का परिणाम या अनुप्रयोग है — WAVES ने SEEA को अपनी पद्धति के रूप में इसलिए चुना क्योंकि SEEA संयुक्त राष्ट्र का अंतरराष्ट्रीय रूप से स्वीकृत सांख्यिकीय मानक है — न कि इसलिए कि भारत वन और जल खातों का पायलट करता है।",
+      "final_explanation": "WAVES Partnership और SEEA अलग लेकिन जुड़े हुए ढांचे हैं। SEEA पद्धतिगत संरचना प्रदान करता है; WAVES विश्व बैंक द्वारा संचालित कार्यान्वयन मंच है जो पायलट देशों में SEEA लागू करता है।\n\n• कथन (A): सही। WAVES स्पष्ट रूप से SEEA केंद्रीय ढांचा पद्धति का उपयोग अपने प्राकृतिक पूंजी लेखांकन अभ्यासों के लिए करता है। SEEA लेखांकन नियम प्रदान करता है; WAVES उन्हें क्रियान्वित करता है।\n• कारण (R): सही। भारत का WAVES पायलट वास्तव में वन खाते, जल खाते, और भूमि खाते पर केंद्रित है — ये तीन प्राकृतिक संपत्ति वर्ग हैं जिन्हें MoSPI के तहत पायलट किया गया है।\n• कारणात्मक संबंध: R, A को समझाता नहीं है। R भारत के WAVES के भीतर विशिष्ट क्षेत्रीय फोकस का वर्णन करता है। WAVES ने SEEA इसलिए चुना क्योंकि SEEA पर्यावरण-आर्थिक लेखांकन के लिए संयुक्त राष्ट्र का अंतरराष्ट्रीय रूप से अपनाया गया मानक है — न कि भारत के पायलट कवरेज के कारण। R एक कार्यान्वयन देश के बारे में तथ्यात्मक विवरण है, WAVES की पद्धतिगत आधार की व्याख्या नहीं।\n\nचूंकि दोनों A और R सही हैं लेकिन R, A को समझाता नहीं है, उत्तर है (b)।\n\nमूल्य संवर्धन:\n• WAVES को 2010 में विश्व बैंक द्वारा लॉन्च किया गया था; यह अफ्रीका, एशिया, और लैटिन अमेरिका के कई पायलट देशों में संचालित होता है।\n• SEEA केंद्रीय ढांचा 2012 में अपनाया गया था; यह नियम प्रदान करता है जिन्हें WAVES लागू करता है।\n• कथन-कारण प्रश्नों में 'क्या' और 'क्यों' को अलग करना महत्वपूर्ण कौशल है जो यहां परखा जाता है।"
+    }
+  },
+  {
+    "uuid": "87e622cd-9814-4eab-ac53-65bfa6d79fb6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Genuine Progress Indicator (GPI)",
+        "OECD Better Life Index (BLI)",
+        "Happiness and Well-being Indices: GNH and World Happiness Report"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sequence of major welfare index developments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of the development or first publication of these welfare measurement frameworks?\n\n1. Introduction of the Planetary Pressures-Adjusted HDI (PHDI) in the Human Development Report\n2. First publication of the World Happiness Report by the Sustainable Development Solutions Network\n3. Development of the Genuine Progress Indicator (GPI) as an alternative to the Index of Sustainable Economic Welfare\n\n(a) 3 → 2 → 1\n(b) 2 → 3 → 1\n(c) 3 → 1 → 2\n(d) 2 → 1 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may place GNH before GPI because Bhutan's GNH philosophy is associated with the 1970s (when the term was coined by the 4th King), but GNH as a formalised 4-pillar framework developed progressively through the 1990s and 2000s. GPI (1995) is the anchor for this question.",
+      "elimination_logic": [
+        "GPI was developed by Cobb, Halstead, and Rowe in 1995 — this is a dateable academic publication.",
+        "The World Happiness Report was first published by SDSN in 2012 — after GPI.",
+        "PHDI was introduced in the 2020 Human Development Report — the most recent of the three.",
+        "Correct chronological order: GPI (1995) → World Happiness Report first published (2012) → PHDI introduced (2020) = option (a)."
+      ],
+      "upsc_trap_explanation": "The GNH-GPI sequencing is a known confusion point, but this question does not include GNH — the temporal trap is between WHR and PHDI. Students who know WHR is recent may not know its precise launch year (2012) and might place it after PHDI (2020). The PHDI's recency (2020 HDR) is the anchor for the correct terminal position.",
+      "final_explanation": "Three welfare measures emerged at distinct historical moments, reflecting the evolution of criticism of GDP.\n\n• GPI (1995): Developed by Clifford Cobb, Ted Halstead, and Jonathan Rowe as an operationalisation of ISEW — the first major comprehensive alternative welfare indicator combining social, economic, and environmental adjustments.\n• World Happiness Report (2012): First published by the Sustainable Development Solutions Network (SDSN) in 2012, anchored by the Cantril Ladder life evaluation scores.\n• PHDI (2020): Planetary Pressures-Adjusted HDI was introduced in the 2020 Human Development Report, discounting HDI scores for carbon and material footprints.\n\nCorrect sequence: GPI (1995) → World Happiness Report (2012) → PHDI (2020).\n\nValue Addition:\n• The first Human Development Report (and HDI) was published in 1990 — predating GPI.\n• IHDI was introduced in the 2010 HDR — a useful anchor date.\n• The Cantril Ladder (0–10 scale, 'worst to best possible life') has been used consistently in WHR since 2012."
+    },
+    "hi": {
+      "display_text": "इन कल्याण मापन ढांचों के विकास या पहली बार प्रकाशन का सही कालानुक्रमिक क्रम क्या है?\n\n1. ह्यूमन डेवलपमेंट रिपोर्ट में प्लैनेटरी प्रेशर-एडजस्टेड HDI (PHDI) का परिचय\n2. सस्टेनेबल डेवलपमेंट सॉल्यूशंस नेटवर्क द्वारा वर्ल्ड हैप्पीनेस रिपोर्ट का पहला प्रकाशन\n3. इंडेक्स ऑफ सस्टेनेबल इकोनॉमिक वेलफेयर के विकल्प के रूप में Genuine Progress Indicator (GPI) का विकास\n\n(a) 3 → 2 → 1\n(b) 2 → 3 → 1\n(c) 3 → 1 → 2\n(d) 2 → 1 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र GNH को GPI से पहले रख सकते हैं क्योंकि भूटान का GNH दर्शन 1970 के दशक से जुड़ा है (जब यह शब्द 4वें राजा द्वारा गढ़ा गया था), लेकिन GNH एक औपचारिक 4-स्तंभ ढांचे के रूप में 1990 और 2000 के दशक में क्रमिक रूप से विकसित हुआ। GPI (1995) इस प्रश्न के लिए आधार है।",
+      "elimination_logic": [
+        "GPI को कॉब, हालस्टेड, और रोवे ने 1995 में विकसित किया था — यह एक तिथि योग्य अकादमिक प्रकाशन है।",
+        "वर्ल्ड हैप्पीनेस रिपोर्ट को पहली बार SDSN ने 2012 में प्रकाशित किया था — जो GPI के बाद है।",
+        "PHDI को 2020 के ह्यूमन डेवलपमेंट रिपोर्ट में पेश किया गया था — तीनों में सबसे हाल का।",
+        "सही कालानुक्रमिक क्रम: GPI (1995) → वर्ल्ड हैप्पीनेस रिपोर्ट पहली बार प्रकाशित (2012) → PHDI पेश किया गया (2020) = विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "GNH-GPI क्रमांकन एक ज्ञात भ्रम बिंदु है, लेकिन इस प्रश्न में GNH शामिल नहीं है — काल संबंधी जाल WHR और PHDI के बीच है। जो छात्र जानते हैं कि WHR हाल की है, वे इसके सटीक लॉन्च वर्ष (2012) को नहीं जानते होंगे और इसे PHDI (2020) के बाद रख सकते हैं। PHDI की नवीनता (2020 HDR) सही अंतिम स्थिति के लिए आधार है।",
+      "final_explanation": "तीन कल्याण मापदंड अलग-अलग ऐतिहासिक क्षणों में उभरे, जो GDP की आलोचना के विकास को दर्शाते हैं।\n\n• GPI (1995): क्लिफोर्ड कॉब, टेड हालस्टेड, और जोनाथन रोवे द्वारा ISEW के कार्यान्वयन के रूप में विकसित — पहला प्रमुख व्यापक वैकल्पिक कल्याण सूचकांक जो सामाजिक, आर्थिक, और पर्यावरणीय समायोजनों को जोड़ता है।\n• वर्ल्ड हैप्पीनेस रिपोर्ट (2012): पहली बार सस्टेनेबल डेवलपमेंट सॉल्यूशंस नेटवर्क (SDSN) द्वारा 2012 में प्रकाशित, कैन्ट्रिल लैडर जीवन मूल्यांकन स्कोर द्वारा आधारित।\n• PHDI (2020): प्लैनेटरी प्रेशर-एडजस्टेड HDI को 2020 के ह्यूमन डेवलपमेंट रिपोर्ट में पेश किया गया, जो HDI स्कोर को कार्बन और भौतिक पदचिह्नों के लिए समायोजित करता है।\n\nसही क्रम: GPI (1995) → वर्ल्ड हैप्पीनेस रिपोर्ट (2012) → PHDI (2020)।\n\nमूल्य संवर्धन:\n• पहला ह्यूमन डेवलपमेंट रिपोर्ट (और HDI) 1990 में प्रकाशित हुआ था — जो GPI से पहले है।\n• IHDI को 2010 HDR में पेश किया गया — एक उपयोगी आधार तिथि।\n• कैन्ट्रिल लैडर (0–10 पैमाना, 'सबसे खराब से सबसे अच्छा संभव जीवन') WHR में 2012 से लगातार उपयोग किया जा रहा है।"
+    }
+  },
+  {
+    "uuid": "14b801f8-215f-4397-84f2-0470f2de553a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Gross Environment Product (GEP)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "GEP measures ecosystem service flows not natural capital stock",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of environmental-economic accounting, the concept of Gross Environment Product (GEP) is best described as:\n\n(a) A stock measure of the total natural capital base within a country, equivalent to the natural capital component of the Inclusive Wealth Index\n(b) An aggregate measure that replaces GDP in China's national accounts by incorporating both produced output and ecosystem service values into a single metric\n(c) The monetary value of ecosystem service flows provided by natural ecosystems in a defined area during a given time period, intended to complement rather than replace GDP\n(d) An internationally standardised measure mandated by the SEEA framework for all countries to compute alongside their System of National Accounts",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students may conflate GEP with IWI, assuming GEP measures the stock of natural capital since both are associated with ecosystem or environmental value.",
+      "elimination_logic": [
+        "Eliminate (a): GEP measures annual ecosystem service FLOWS, not the stock of natural capital — that is IWI's domain.",
+        "Eliminate (b): GEP does not replace GDP in Chinese national accounts — it is a complementary parallel measure designed to ensure ecosystem service values do not decline as GDP grows.",
+        "Eliminate (d): GEP was pioneered by China at the provincial and national level — calling it an 'SEEA-mandated international standard' is false.",
+        "Select (c): GEP is defined as the monetary value of ecosystem service flows provided by natural ecosystems in a defined area during a given period — a complement to GDP, not a stock measure."
+      ],
+      "upsc_trap_explanation": "The GEP-IWI conflation is the core trap. Both concepts relate to ecosystem or natural capital value, and students who have encountered them together in study material may confuse GEP (ecosystem service flow measure) with IWI (natural capital stock measure). The distinguishing phrase is 'flows provided during a period' for GEP versus 'total stock at a point in time' for IWI.",
+      "final_explanation": "Gross Environment Product (GEP) is a concept pioneered by China to measure the monetary value of ecosystem service flows — the annual benefits that natural ecosystems provide to human welfare and economic activity within a defined territory.\n\n• Option (a) — Incorrect: GEP measures ecosystem service flows, not the stock of natural capital. The stock of natural capital is measured by IWI or natural capital accounts.\n• Option (b) — Incorrect: GEP is a complementary measure running alongside GDP, not a replacement. China's policy goal is that GEP should not decline as GDP grows — implying both are tracked simultaneously.\n• Option (c) — Correct: GEP = monetary value of ecosystem service flows from natural ecosystems in a given area and period. This is the precise definition.\n• Option (d) — Incorrect: GEP is a Chinese innovation — it is not mandated by SEEA as an international standard, though it is conceptually compatible with SEEA EA's ecosystem service accounting.\n\nValue Addition:\n• China's GEP pilot covered provinces like Qinghai and Inner Mongolia where ecosystem services are large relative to GDP.\n• India's forest and wetland ecosystem service valuations by FSI and TERI use similar flow-based approaches.\n• GEP complements GDP by capturing the value of clean air, biodiversity, carbon storage, and water regulation — services that generate no market transactions."
+    },
+    "hi": {
+      "display_text": "पर्यावरण-आर्थिक लेखांकन के संदर्भ में, ग्रॉस एनवायरनमेंट प्रोडक्ट (GEP) की अवधारणा को सबसे उपयुक्त रूप में इस प्रकार वर्णित किया जा सकता है:\n\n(a) किसी देश के कुल प्राकृतिक पूंजी आधार का भंडार माप, जो Inclusive Wealth Index के प्राकृतिक पूंजी घटक के बराबर है\n(b) एक समग्र माप जो चीन के राष्ट्रीय खातों में GDP की जगह लेता है, जिसमें उत्पादित उत्पादन और पारिस्थितिकी तंत्र सेवा मूल्यों को एकल मीट्रिक में शामिल किया गया है\n(c) प्राकृतिक पारिस्थितिकी तंत्र द्वारा एक निर्दिष्ट क्षेत्र में एक दिए गए समय अवधि के दौरान प्रदान किए गए पारिस्थितिकी तंत्र सेवा प्रवाहों का मौद्रिक मूल्य, जो GDP के प्रतिस्थापन के बजाय पूरक के रूप में है\n(d) SEEA फ्रेमवर्क द्वारा सभी देशों के लिए उनके राष्ट्रीय खातों की प्रणाली के साथ-साथ गणना के लिए अनिवार्य एक अंतरराष्ट्रीय मानकीकृत माप",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र GEP को IWI के साथ भ्रमित कर सकते हैं, यह मानते हुए कि GEP प्राकृतिक पूंजी के भंडार को मापता है क्योंकि दोनों पारिस्थितिकी तंत्र या पर्यावरणीय मूल्य से संबंधित हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: GEP वार्षिक पारिस्थितिकी तंत्र सेवा प्रवाहों को मापता है, प्राकृतिक पूंजी के भंडार को नहीं — वह IWI का क्षेत्र है।",
+        "(b) को हटाएं: GEP चीनी राष्ट्रीय खातों में GDP की जगह नहीं लेता — यह एक पूरक समानांतर माप है जो सुनिश्चित करता है कि पारिस्थितिकी तंत्र सेवा के मूल्य GDP के बढ़ने के साथ घटें नहीं।",
+        "(d) को हटाएं: GEP की शुरुआत चीन ने प्रांतीय और राष्ट्रीय स्तर पर की — इसे 'SEEA-निर्दिष्ट अंतरराष्ट्रीय मानक' कहना गलत है।",
+        "(c) को चुनें: GEP को परिभाषित किया गया है प्राकृतिक पारिस्थितिकी तंत्र द्वारा एक निर्दिष्ट क्षेत्र में एक दिए गए समय अवधि के दौरान प्रदान किए गए पारिस्थितिकी तंत्र सेवा प्रवाहों के मौद्रिक मूल्य के रूप में — यह GDP का पूरक है, भंडार माप नहीं।"
+      ],
+      "upsc_trap_explanation": "GEP-IWI भ्रम मुख्य जाल है। दोनों अवधारणाएं पारिस्थितिकी तंत्र या प्राकृतिक पूंजी मूल्य से संबंधित हैं, और जो छात्र इन्हें अध्ययन सामग्री में एक साथ देखते हैं वे GEP (पारिस्थितिकी तंत्र सेवा प्रवाह माप) को IWI (प्राकृतिक पूंजी भंडार माप) के साथ भ्रमित कर सकते हैं। भेद करने वाला वाक्यांश है 'एक अवधि के दौरान प्रदान किए गए प्रवाह' GEP के लिए बनाम 'किसी बिंदु पर कुल भंडार' IWI के लिए।",
+      "final_explanation": "ग्रॉस एनवायरनमेंट प्रोडक्ट (GEP) एक अवधारणा है जिसकी शुरुआत चीन ने की है, जो पारिस्थितिकी तंत्र सेवा प्रवाहों के मौद्रिक मूल्य को मापती है — वे वार्षिक लाभ जो प्राकृतिक पारिस्थितिकी तंत्र एक निर्दिष्ट क्षेत्र में मानव कल्याण और आर्थिक गतिविधि को प्रदान करते हैं।\n\n• विकल्प (a) — गलत: GEP पारिस्थितिकी तंत्र सेवा प्रवाहों को मापता है, प्राकृतिक पूंजी के भंडार को नहीं। प्राकृतिक पूंजी का भंडार IWI या प्राकृतिक पूंजी खातों द्वारा मापा जाता है।\n• विकल्प (b) — गलत: GEP GDP के साथ चलने वाला एक पूरक माप है, प्रतिस्थापन नहीं। चीन की नीति यह है कि GDP के बढ़ने के साथ GEP घटना नहीं चाहिए — इसका अर्थ है दोनों को एक साथ ट्रैक किया जाता है।\n• विकल्प (c) — सही: GEP = प्राकृतिक पारिस्थितिकी तंत्र से एक निर्दिष्ट क्षेत्र और अवधि में पारिस्थितिकी तंत्र सेवा प्रवाहों का मौद्रिक मूल्य। यह सटीक परिभाषा है।\n• विकल्प (d) — गलत: GEP एक चीनी नवाचार है — यह SEEA द्वारा एक अंतरराष्ट्रीय मानक के रूप में अनिवार्य नहीं है, हालांकि यह SEEA EA के पारिस्थितिकी तंत्र सेवा लेखांकन के साथ सैद्धांतिक रूप से संगत है।\n\nमूल्य संवर्धन:\n• चीन के GEP पायलट में किंगहाई और आंतरिक मंगोलिया जैसे प्रांत शामिल थे जहाँ पारिस्थितिकी तंत्र सेवाएं GDP की तुलना में बड़ी हैं।\n• भारत में FSI और TERI द्वारा वन और आर्द्रभूमि पारिस्थितिकी तंत्र सेवा मूल्यांकन इसी प्रवाह-आधारित दृष्टिकोण का उपयोग करते हैं।\n• GEP GDP का पूरक है जो स्वच्छ हवा, जैव विविधता, कार्बन भंडारण, और जल नियमन जैसे सेवाओं का मूल्य कैप्चर करता है — ये सेवाएं बाजार लेनदेन उत्पन्न नहीं करतीं।"
+    }
+  },
+  {
+    "uuid": "4dd9c71c-22a8-439a-ba0a-18b4c049d203",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Adjusted Net Savings (ANS) / Genuine Savings",
+        "Green GDP: Definition and Conceptual Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "ANS versus Green GDP — savings indicator vs. output indicator",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Adjusted Net Savings (ANS) — includes education expenditure as a deduction from gross savings to reflect the depreciation of human capital\n(b) Adjusted Net Savings (ANS) vs. Green GDP — ANS is a savings and investment sustainability indicator, while Green GDP is an adjusted output and income indicator\n(c) Negative Adjusted Net Savings (ANS) — indicates that a country's GDP has turned negative, reflecting a net contraction of the entire economy\n(d) Green GDP — derived by adding pollution abatement expenditure to conventional GDP to reflect the cost of maintaining environmental quality",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'ANS includes education expenditure as a deduction to reflect human capital depreciation' is a partial truth trap — ANS includes education expenditure but as an ADDITION (investment), not a deduction.",
+      "elimination_logic": [
+        "Evaluate (a): ANS adds education expenditure as investment in human capital — it is NOT deducted. This pairing is incorrect.",
+        "Evaluate (b): ANS is a savings sustainability indicator; Green GDP is an output/income indicator — this distinction is correctly stated and is the key conceptual difference between the two. Select (b).",
+        "Evaluate (c): Negative ANS signals unsustainable development — it does NOT mean a country is operating at negative GDP. ANS can be negative while GDP is strongly positive.",
+        "Evaluate (d): Green GDP subtracts environmental degradation costs from GDP — it does not add pollution abatement spending. This is a reversal."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the fact that students know education expenditure is treated specially in ANS. Knowing that ANS 'does something different' with education spending, students may misremember the direction — deducting instead of adding. The correct treatment is addition (education as human capital investment). Option (c) conflates negative ANS with negative GDP — a significant conceptual error that sounds plausible to students who associate 'negative' with negative growth.",
+      "final_explanation": "ANS and Green GDP are both alternatives to conventional GDP but serve different analytical purposes.\n\n• Option (a) — Incorrect: ANS ADDS education expenditure — treating it as investment in human capital formation, not as a cost. Deducting education would incorrectly treat it as resource consumption.\n• Option (b) — Correct: ANS is a savings/investment sustainability indicator — it tells whether a country is building or eroding its total capital base through annual savings flows. Green GDP is an output/income indicator — it tells what the adjusted annual production value is after environmental costs. This is the correctly matched distinction.\n• Option (c) — Incorrect: Negative ANS signals that a country is eroding its wealth — total capital consumption exceeds savings. This does not mean GDP is negative; GDP can be strongly positive while ANS is negative.\n• Option (d) — Incorrect: Green GDP subtracts costs of environmental degradation from conventional GDP. It does not add pollution abatement spending — such spending might even offset some degradation costs.\n\nValue Addition:\n• ANS formula: Gross National Savings − Capital Depreciation − Resource Depletion − Pollution Damage + Education Expenditure.\n• A country can have high GDP, positive conventional savings, and still have negative ANS if resource depletion is large.\n• Sub-Saharan Africa and Middle Eastern oil exporters have historically shown negative ANS despite positive GDP growth."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) समायोजित शुद्ध बचत (ANS) — मानव पूंजी के ह्रास को दर्शाने के लिए सकल बचत से शिक्षा व्यय को घटाता है\n(b) समायोजित शुद्ध बचत (ANS) बनाम ग्रीन GDP — ANS बचत और निवेश स्थिरता सूचक है, जबकि ग्रीन GDP समायोजित उत्पादन और आय सूचक है\n(c) नकारात्मक समायोजित शुद्ध बचत (ANS) — संकेत देता है कि किसी देश का GDP नकारात्मक हो गया है, जो पूरे अर्थव्यवस्था के संकुचन को दर्शाता है\n(d) ग्रीन GDP — पर्यावरण गुणवत्ता बनाए रखने की लागत को दर्शाने के लिए पारंपरिक GDP में प्रदूषण नियंत्रण व्यय जोड़कर प्राप्त किया जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — 'ANS includes education expenditure as a deduction to reflect human capital depreciation' is a partial truth trap — ANS includes education expenditure but as an ADDITION (investment), not a deduction.",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: ANS शिक्षा व्यय को मानव पूंजी में निवेश के रूप में जोड़ता है — इसे घटाया नहीं जाता। यह जोड़ी गलत है।",
+        "(b) का मूल्यांकन करें: ANS एक बचत स्थिरता सूचक है; ग्रीन GDP एक उत्पादन/आय सूचक है — यह भेद सही ढंग से बताया गया है और दोनों के बीच मुख्य वैचारिक अंतर है। (b) चुनें।",
+        "(c) का मूल्यांकन करें: नकारात्मक ANS अस्थिर विकास का संकेत देता है — इसका अर्थ यह नहीं है कि किसी देश का GDP नकारात्मक है। ANS नकारात्मक हो सकता है जबकि GDP सकारात्मक हो।",
+        "(d) का मूल्यांकन करें: ग्रीन GDP GDP से पर्यावरणीय क्षति की लागत घटाता है — यह प्रदूषण नियंत्रण व्यय नहीं जोड़ता। यह उल्टा है।"
+      ],
+      "upsc_trap_explanation": "(a) विकल्प इस तथ्य का लाभ उठाता है कि छात्र जानते हैं कि ANS में शिक्षा व्यय को विशेष रूप से माना जाता है। यह जानकर कि ANS शिक्षा व्यय के साथ 'कुछ अलग' करता है, छात्र दिशा को गलत याद कर सकते हैं — घटाने के बजाय जोड़ना। सही उपचार जोड़ना है (शिक्षा को मानव पूंजी निवेश के रूप में)। (c) विकल्प नकारात्मक ANS को नकारात्मक GDP के साथ मिलाता है — एक महत्वपूर्ण वैचारिक त्रुटि जो छात्रों को सही लग सकती है जो 'नकारात्मक' को नकारात्मक विकास से जोड़ते हैं।",
+      "final_explanation": "ANS और ग्रीन GDP दोनों पारंपरिक GDP के विकल्प हैं लेकिन अलग-अलग विश्लेषणात्मक उद्देश्यों के लिए हैं।\n\n• विकल्प (a) — गलत: ANS शिक्षा व्यय को जोड़ता है — इसे मानव पूंजी निर्माण में निवेश के रूप में मानते हुए, न कि लागत के रूप में। शिक्षा को घटाना इसे संसाधन खपत के रूप में गलत तरीके से मानना होगा।\n• विकल्प (b) — सही: ANS बचत/निवेश स्थिरता सूचक है — यह बताता है कि कोई देश अपनी कुल पूंजी आधार को वार्षिक बचत प्रवाह के माध्यम से बना रहा है या घटा रहा है। ग्रीन GDP एक उत्पादन/आय सूचक है — यह बताता है कि पर्यावरणीय लागतों के बाद समायोजित वार्षिक उत्पादन मूल्य क्या है। यह सही मेल खाता भेद है।\n• विकल्प (c) — गलत: नकारात्मक ANS संकेत देता है कि कोई देश अपनी संपत्ति घटा रहा है — कुल पूंजी खपत बचत से अधिक है। इसका अर्थ यह नहीं है कि GDP नकारात्मक है; GDP सकारात्मक हो सकता है जबकि ANS नकारात्मक हो।\n• विकल्प (d) — गलत: ग्रीन GDP पारंपरिक GDP से पर्यावरणीय क्षति की लागत घटाता है। यह प्रदूषण नियंत्रण व्यय नहीं जोड़ता — ऐसा व्यय कुछ क्षति लागतों की भरपाई भी कर सकता है।\n\nमूल्य संवर्धन:\n• ANS सूत्र: सकल राष्ट्रीय बचत − पूंजी ह्रास − संसाधन क्षय − प्रदूषण क्षति + शिक्षा व्यय।\n• कोई देश उच्च GDP, सकारात्मक पारंपरिक बचत के साथ भी नकारात्मक ANS हो सकता है यदि संसाधन क्षय अधिक हो।\n• उप-सहारा अफ्रीका और मध्य पूर्व के तेल निर्यातक ऐतिहासिक रूप से सकारात्मक GDP वृद्धि के बावजूद नकारात्मक ANS दिखाते रहे हैं।"
+    }
+  },
+  {
+    "uuid": "d9a8788e-93dd-44f2-a24b-1305ca5faa0a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Happiness and Well-being Indices: GNH and World Happiness Report",
+        "Stiglitz-Sen-Fitoussi Commission and 'Beyond GDP' Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "GNH as governance philosophy not statistical measure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements:\n\n1. Gross National Happiness (GNH), as developed in Bhutan, is a statistical index updated annually by Bhutan's National Statistics Office and is directly comparable to GDP as a national accounting measure.\n2. The World Happiness Report's country rankings are based on the Cantril Ladder self-evaluation scores supplemented by six explanatory variables including GDP per capita, social support, healthy life expectancy, freedom to make life choices, generosity, and perceptions of corruption.\n3. The Stiglitz-Sen-Fitoussi Commission was convened by the Secretary-General of the United Nations in 2008 to develop a global alternative to GDP for measuring sovereign nations' progress toward the Millennium Development Goals.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 and 3 only\n(b) 3 only\n(c) 1 and 3 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Gross National Happiness (GNH), as developed in Bhutan, is a statistical index updated annually by Bhutan's National Statistics Office and is directly comparable to GDP as a national accounting measure.",
+          "verdict": "Incorrect",
+          "reason": "GNH is a governance philosophy and policy framework, not an annually updated statistical index comparable to GDP. While Bhutan conducts periodic GNH surveys, GNH is not a standard national accounting metric."
+        },
+        {
+          "statement": "The World Happiness Report's country rankings are based on the Cantril Ladder self-evaluation scores supplemented by six explanatory variables including GDP per capita, social support, healthy life expectancy, freedom to make life choices, generosity, and perceptions of corruption.",
+          "verdict": "Correct",
+          "reason": "This accurately describes WHR's methodology — the Cantril Ladder provides the primary ranking score, and the six factors are used to explain variation in the scores across countries."
+        },
+        {
+          "statement": "The Stiglitz-Sen-Fitoussi Commission was convened by the Secretary-General of the United Nations in 2008 to develop a global alternative to GDP for measuring sovereign nations' progress toward the Millennium Development Goals.",
+          "verdict": "Incorrect",
+          "reason": "The commission was convened by French President Nicolas Sarkozy, not the UN Secretary-General. Its mandate was to examine GDP's limitations for measuring societal well-being — not specifically to measure MDG progress."
+        }
+      ],
+      "strong_distractor": "b — Students who know Statement 2 is correct but misattribute the Stiglitz Commission to the UN (Statement 3) will select '3 only' as NOT correct — but Statement 1 is also NOT correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: GNH is a governance philosophy with periodic surveys, not an annually updated statistical index comparable to GDP. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: The WHR methodology description is accurate — Cantril Ladder + 6 factors. Statement 2 is correct.",
+        "Evaluate Statement 3: The Stiglitz Commission was initiated by French President Sarkozy, not the UN Secretary-General, and its mandate was GDP's societal well-being limitations, not MDG measurement. Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct — select option (c): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Two separate traps operate here. Statement 1 exploits the widespread association of GNH with measurable well-being — students who know GNH involves surveys and indicators may characterise it as a statistical index comparable to GDP. Statement 3 exploits the UN association — since the commission's work influenced UN frameworks and Amartya Sen (a Nobel laureate with strong UN connections) co-chaired it, students may attribute the commission's mandate to the UN rather than to Sarkozy.",
+      "final_explanation": "GNH, WHR, and the Stiglitz Commission each represent distinct approaches to 'beyond GDP' measurement, with precise institutional and methodological details that are frequently confused.\n\n• Statement 1 — NOT Correct: GNH is Bhutan's governance philosophy built on four pillars (sustainable development, cultural preservation, environmental conservation, good governance). It is assessed through periodic GNH surveys, not annually updated like a national account. It is not directly comparable to GDP.\n• Statement 2 — Correct: WHR ranks countries using Cantril Ladder scores (primary) and explains them through six variables: GDP per capita, social support, life expectancy, freedom, generosity, and corruption perceptions.\n• Statement 3 — NOT Correct: The commission was established by French President Nicolas Sarkozy in 2008. Its purpose was to assess the adequacy of GDP for measuring societal well-being — not MDG progress measurement, which is a UN SDG/MDG framework activity.\n\nValue Addition:\n• Bhutan's GNH surveys are conducted every 3–5 years, not annually.\n• The Stiglitz Commission report influenced the OECD Better Life Index and the EU's Beyond GDP initiative.\n• Amartya Sen's capabilities approach is philosophically embedded in the commission's multi-dimensional recommendations."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथनों पर विचार करें:\n\n1. भूटान में विकसित ग्रॉस नेशनल हैप्पीनेस (GNH) एक सांख्यिकीय सूचकांक है जिसे भूटान के राष्ट्रीय सांख्यिकी कार्यालय द्वारा वार्षिक रूप से अपडेट किया जाता है और यह राष्ट्रीय लेखांकन उपाय के रूप में GDP के सीधे तुलनीय है।\n2. वर्ल्ड हैप्पीनेस रिपोर्ट के देश रैंकिंग कैन्ट्रिल लैडर आत्म-मूल्यांकन स्कोर पर आधारित हैं, जिन्हें GDP प्रति व्यक्ति, सामाजिक समर्थन, स्वस्थ जीवन प्रत्याशा, जीवन विकल्प बनाने की स्वतंत्रता, उदारता, और भ्रष्टाचार की धारणा सहित छह व्याख्यात्मक चर द्वारा पूरक किया गया है।\n3. स्टिग्लिट्ज़-सेन-फिटौसी आयोग को 2008 में संयुक्त राष्ट्र के महासचिव द्वारा Millennium Development Goals की प्रगति को मापने के लिए GDP के एक वैश्विक विकल्प के रूप में विकसित करने हेतु बुलाया गया था।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 3\n(c) केवल 1 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भूटान में विकसित ग्रॉस नेशनल हैप्पीनेस (GNH) एक सांख्यिकीय सूचकांक है जिसे भूटान के राष्ट्रीय सांख्यिकी कार्यालय द्वारा वार्षिक रूप से अपडेट किया जाता है और यह राष्ट्रीय लेखांकन उपाय के रूप में GDP के सीधे तुलनीय है।",
+          "verdict": "गलत",
+          "reason": "GNH एक शासन दर्शन और नीति ढांचा है, न कि GDP के तुलनीय वार्षिक रूप से अपडेट किया जाने वाला सांख्यिकीय सूचकांक। जबकि भूटान समय-समय पर GNH सर्वेक्षण करता है, GNH कोई मानक राष्ट्रीय लेखांकन मीट्रिक नहीं है।"
+        },
+        {
+          "statement": "वर्ल्ड हैप्पीनेस रिपोर्ट के देश रैंकिंग कैन्ट्रिल लैडर आत्म-मूल्यांकन स्कोर पर आधारित हैं, जिन्हें GDP प्रति व्यक्ति, सामाजिक समर्थन, स्वस्थ जीवन प्रत्याशा, जीवन विकल्प बनाने की स्वतंत्रता, उदारता, और भ्रष्टाचार की धारणा सहित छह व्याख्यात्मक चर द्वारा पूरक किया गया है।",
+          "verdict": "सही",
+          "reason": "यह WHR की कार्यप्रणाली का सही वर्णन करता है — कैन्ट्रिल लैडर प्राथमिक रैंकिंग स्कोर प्रदान करता है, और छह कारक देशों के बीच स्कोर में भिन्नता को समझाने के लिए उपयोग किए जाते हैं।"
+        },
+        {
+          "statement": "स्टिग्लिट्ज़-सेन-फिटौसी आयोग को 2008 में संयुक्त राष्ट्र के महासचिव द्वारा Millennium Development Goals की प्रगति को मापने के लिए GDP के एक वैश्विक विकल्प के रूप में विकसित करने हेतु बुलाया गया था।",
+          "verdict": "गलत",
+          "reason": "यह आयोग फ्रांसीसी राष्ट्रपति निकोलस सारकोजी द्वारा बुलाया गया था, न कि संयुक्त राष्ट्र महासचिव द्वारा। इसका कार्य GDP की सीमाओं की जांच करना था, जो सामाजिक कल्याण को मापने के लिए है — न कि विशेष रूप से MDG प्रगति को मापने के लिए।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र जानते हैं कि कथन 2 सही है लेकिन स्टिग्लिट्ज़ आयोग को संयुक्त राष्ट्र से जोड़ते हैं (कथन 3), वे 'केवल 3' को सही नहीं मानेंगे — जबकि कथन 1 भी सही नहीं है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: GNH एक शासन दर्शन है जिसमें समय-समय पर सर्वेक्षण होते हैं, यह GDP के तुलनीय वार्षिक रूप से अपडेट किए जाने वाले सांख्यिकीय सूचकांक नहीं है। अतः कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: WHR की कार्यप्रणाली का वर्णन सटीक है — कैन्ट्रिल लैडर + 6 कारक। अतः कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: स्टिग्लिट्ज़ आयोग फ्रांसीसी राष्ट्रपति सारकोजी द्वारा शुरू किया गया था, न कि संयुक्त राष्ट्र महासचिव द्वारा, और इसका कार्य GDP की सामाजिक कल्याण सीमाओं का आकलन करना था, न कि MDG मापन। अतः कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं — विकल्प (c) चुनें: केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "यहाँ दो अलग-अलग जाल काम कर रहे हैं। कथन 1 GNH को मापनीय कल्याण से जोड़ने की व्यापक प्रवृत्ति का उपयोग करता है — जो छात्र जानते हैं कि GNH सर्वेक्षण और संकेतकों से जुड़ा है, वे इसे GDP के तुलनीय सांख्यिकीय सूचकांक के रूप में वर्णित कर सकते हैं। कथन 3 संयुक्त राष्ट्र से जुड़ाव का उपयोग करता है — क्योंकि आयोग का कार्य संयुक्त राष्ट्र के ढांचे को प्रभावित करता है और अमर्त्य सेन (जो संयुक्त राष्ट्र से जुड़े नोबेल पुरस्कार विजेता हैं) इसके सह-अध्यक्ष थे, छात्र आयोग के कार्य को सारकोजी के बजाय संयुक्त राष्ट्र से जोड़ सकते हैं।",
+      "final_explanation": "GNH, WHR, और स्टिग्लिट्ज़ आयोग प्रत्येक 'बियॉन्ड GDP' मापन के लिए अलग-अलग दृष्टिकोण प्रस्तुत करते हैं, जिनमें संस्थागत और कार्यप्रणालीगत विवरण अक्सर भ्रमित हो जाते हैं।\n\n• कथन 1 — सही नहीं: GNH भूटान का शासन दर्शन है जो चार स्तंभों (सतत विकास, सांस्कृतिक संरक्षण, पर्यावरण संरक्षण, अच्छा शासन) पर आधारित है। इसे समय-समय पर GNH सर्वेक्षणों के माध्यम से आंका जाता है, यह राष्ट्रीय लेखांकन की तरह वार्षिक रूप से अपडेट नहीं होता। यह सीधे GDP के तुलनीय नहीं है।\n• कथन 2 — सही: WHR देशों को कैन्ट्रिल लैडर स्कोर (प्राथमिक) के आधार पर रैंक करता है और छह चर: GDP प्रति व्यक्ति, सामाजिक समर्थन, जीवन प्रत्याशा, स्वतंत्रता, उदारता, और भ्रष्टाचार की धारणा के माध्यम से व्याख्या करता है।\n• कथन 3 — सही नहीं: आयोग फ्रांसीसी राष्ट्रपति निकोलस सारकोजी द्वारा 2008 में स्थापित किया गया था। इसका उद्देश्य GDP की सामाजिक कल्याण मापन के लिए उपयुक्तता का आकलन करना था — न कि MDG प्रगति मापन, जो संयुक्त राष्ट्र के SDG/MDG ढांचे की गतिविधि है।\n\nमूल्य संवर्धन:\n• भूटान के GNH सर्वेक्षण हर 3–5 वर्ष में होते हैं, वार्षिक नहीं।\n• स्टिग्लिट्ज़ आयोग की रिपोर्ट ने OECD के बेहतर जीवन सूचकांक और EU की Beyond GDP पहल को प्रभावित किया।\n• अमर्त्य सेन की क्षमताओं की दृष्टिकोण आयोग की बहुआयामी सिफारिशों में दार्शनिक रूप से निहित है।"
+    }
+  },
+  {
+    "uuid": "a9514323-8cd0-4af9-a050-0997d7429ca6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Natural Capital Accounting (NCA)",
+        "Wealth Accounting and Valuation of Ecosystem Services (WAVES) Partnership"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Valuation methods for non-market ecosystem services",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In natural capital accounting, when estimating the economic value of non-market ecosystem services such as biodiversity conservation or scenic landscapes, practitioners use a survey-based approach that poses hypothetical scenarios to individuals and elicits their willingness to pay for the service. This approach is known as the ________.\n\n(a) Contingent Valuation Method (CVM)\n(b) Benefit Transfer method\n(c) Hedonic Pricing method\n(d) Travel Cost Method",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Hedonic pricing is a real and well-known ecosystem service valuation method that uses property values to infer environmental values. Students familiar with valuation methods may choose it because it is a genuine and commonly referenced method, without recognising that the blank specifically describes the survey-based willingness-to-pay approach.",
+      "elimination_logic": [
+        "The blank describes a method that uses survey questionnaires to ask individuals about their willingness to pay for non-market environmental goods — this is a specific and named methodology.",
+        "Hedonic pricing uses market prices (property values, wages) to infer environmental values indirectly — it does not use surveys. Eliminate (c).",
+        "Travel cost method uses recreation spending to infer the value of natural sites — not a survey-based willingness-to-pay approach. Eliminate (d).",
+        "Contingent Valuation Method (CVM) is the survey-based approach that asks respondents directly about hypothetical willingness to pay — select (a)."
+      ],
+      "upsc_trap_explanation": "Hedonic pricing and CVM are both non-market valuation methods, and students who have encountered both may not recall which uses surveys versus market proxies. Hedonic pricing is often better known in Indian competitive exam preparation because of its intuitive property value connection. CVM is less intuitively named — 'contingent' (depending on the hypothetical scenario) — making students uncertain and prone to selecting the more familiar 'hedonic pricing.'",
+      "final_explanation": "Non-market ecosystem services — those without direct market prices — require indirect valuation methods to be incorporated into natural capital accounts. The survey-based approach uses structured questionnaires asking individuals how much they would be willing to pay for a specific environmental good or service under a hypothetical scenario.\n\n• Option (a) Contingent Valuation Method (CVM) — Correct: CVM constructs a hypothetical market scenario and surveys respondents for their willingness to pay (WTP) or willingness to accept (WTA). It is the primary survey-based approach for non-market environmental goods.\n• Option (b) Benefit Transfer method — Incorrect: Benefit Transfer applies valuations estimated at one site to another site without conducting new primary surveys. It is not itself a survey methodology.\n• Option (c) Hedonic Pricing — Incorrect: Hedonic pricing uses market data (property values, wages) to infer the implicit value of environmental attributes — no surveys involved.\n• Option (d) Travel Cost Method — Incorrect: Travel Cost Method uses recreation expenditure and travel distance to infer the value of a natural site — revealed preference, not stated preference.\n\nValue Addition:\n• CVM produces 'stated preference' values; Hedonic Pricing and Travel Cost Method produce 'revealed preference' values.\n• CVM's main criticism is hypothetical bias — respondents may state higher WTP than they would actually pay.\n• WAVES uses CVM and other non-market methods to value forest and wetland ecosystem services in pilot country accounts."
+    },
+    "hi": {
+      "display_text": "प्राकृतिक पूंजी लेखांकन में, जैव विविधता संरक्षण या मनोरम परिदृश्यों जैसी गैर-बाजार पारिस्थितिकी तंत्र सेवाओं के आर्थिक मूल्य का अनुमान लगाते समय, विशेषज्ञ एक सर्वेक्षण-आधारित दृष्टिकोण का उपयोग करते हैं जो व्यक्तियों को काल्पनिक परिदृश्य प्रस्तुत करता है और सेवा के लिए उनकी भुगतान करने की इच्छा को प्राप्त करता है। इस दृष्टिकोण को ________ कहा जाता है।\n\n(a) Contingent Valuation Method (CVM)\n(b) Benefit Transfer method\n(c) Hedonic Pricing method\n(d) Travel Cost Method",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Hedonic pricing एक वास्तविक और प्रसिद्ध पारिस्थितिकी तंत्र सेवा मूल्यांकन विधि है जो पर्यावरणीय मूल्यों का अनुमान लगाने के लिए संपत्ति मूल्यों का उपयोग करती है। मूल्यांकन विधियों से परिचित छात्र इसे चुन सकते हैं क्योंकि यह एक वास्तविक और सामान्यतः संदर्भित विधि है, बिना यह समझे कि रिक्त स्थान विशेष रूप से सर्वेक्षण-आधारित भुगतान करने की इच्छा (willingness-to-pay) दृष्टिकोण का वर्णन करता है।",
+      "elimination_logic": [
+        "रिक्त स्थान एक ऐसी विधि का वर्णन करता है जो गैर-बाजार पर्यावरणीय वस्तुओं के लिए व्यक्तियों से उनकी भुगतान करने की इच्छा के बारे में सर्वेक्षण प्रश्नावली का उपयोग करती है — यह एक विशिष्ट और नामित पद्धति है।",
+        "Hedonic pricing बाजार मूल्य (संपत्ति मूल्य, वेतन) का उपयोग पर्यावरणीय मूल्यों का अप्रत्यक्ष अनुमान लगाने के लिए करता है — यह सर्वेक्षणों का उपयोग नहीं करता। अतः (c) को हटा दें।",
+        "Travel cost method प्राकृतिक स्थलों के मूल्य का अनुमान लगाने के लिए मनोरंजन व्यय का उपयोग करता है — यह सर्वेक्षण-आधारित भुगतान करने की इच्छा दृष्टिकोण नहीं है। अतः (d) को हटा दें।",
+        "Contingent Valuation Method (CVM) वह सर्वेक्षण-आधारित दृष्टिकोण है जो उत्तरदाताओं से सीधे काल्पनिक भुगतान करने की इच्छा के बारे में पूछता है — अतः (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "Hedonic pricing और CVM दोनों गैर-बाजार मूल्यांकन विधियाँ हैं, और जिन छात्रों ने दोनों देखी हैं वे याद नहीं रख पाते कि कौन सी सर्वेक्षणों का उपयोग करती है और कौन सी बाजार संकेतकों का। Hedonic pricing भारतीय प्रतियोगी परीक्षा तैयारी में अधिक परिचित है क्योंकि इसका संपत्ति मूल्य से सहज संबंध है। CVM का नाम कम सहज है — 'contingent' (काल्पनिक पर निर्भर) — जिससे छात्र अनिश्चित हो जाते हैं और अधिक परिचित 'hedonic pricing' को चुनने की प्रवृत्ति रखते हैं।",
+      "final_explanation": "गैर-बाजार पारिस्थितिकी तंत्र सेवाएँ — जिनके सीधे बाजार मूल्य नहीं होते — उन्हें प्राकृतिक पूंजी खातों में शामिल करने के लिए अप्रत्यक्ष मूल्यांकन विधियों की आवश्यकता होती है। सर्वेक्षण-आधारित दृष्टिकोण में संरचित प्रश्नावली का उपयोग किया जाता है जिसमें व्यक्तियों से पूछा जाता है कि वे किसी विशिष्ट पर्यावरणीय वस्तु या सेवा के लिए काल्पनिक परिदृश्य के तहत कितना भुगतान करने को तैयार होंगे।\n\n• विकल्प (a) Contingent Valuation Method (CVM) — सही: CVM एक काल्पनिक बाजार परिदृश्य बनाता है और उत्तरदाताओं से उनकी भुगतान करने की इच्छा (WTP) या स्वीकार करने की इच्छा (WTA) के बारे में सर्वेक्षण करता है। यह गैर-बाजार पर्यावरणीय वस्तुओं के लिए मुख्य सर्वेक्षण-आधारित दृष्टिकोण है।\n• विकल्प (b) Benefit Transfer method — गलत: Benefit Transfer एक साइट पर अनुमानित मूल्यांकन को दूसरी साइट पर लागू करता है बिना नए प्राथमिक सर्वेक्षण किए। यह स्वयं एक सर्वेक्षण पद्धति नहीं है।\n• विकल्प (c) Hedonic Pricing — गलत: Hedonic pricing बाजार डेटा (संपत्ति मूल्य, वेतन) का उपयोग पर्यावरणीय गुणों के निहित मूल्य का अनुमान लगाने के लिए करता है — इसमें सर्वेक्षण शामिल नहीं हैं।\n• विकल्प (d) Travel Cost Method — गलत: Travel Cost Method मनोरंजन व्यय और यात्रा दूरी का उपयोग प्राकृतिक स्थल के मूल्य का अनुमान लगाने के लिए करता है — यह प्रकट प्राथमिकता (revealed preference) है, न कि व्यक्त प्राथमिकता (stated preference)।\n\nमूल्य संवर्धन:\n• CVM 'व्यक्त प्राथमिकता' (stated preference) मूल्य उत्पन्न करता है; Hedonic Pricing और Travel Cost Method 'प्रकट प्राथमिकता' (revealed preference) मूल्य उत्पन्न करते हैं।\n• CVM की मुख्य आलोचना काल्पनिक पक्षपात (hypothetical bias) है — उत्तरदाता वास्तविक भुगतान से अधिक WTP व्यक्त कर सकते हैं।\n• WAVES CVM और अन्य गैर-बाजार विधियों का उपयोग पायलट देश खातों में वन और आर्द्रभूमि पारिस्थितिकी तंत्र सेवाओं का मूल्यांकन करने के लिए करता है।"
+    }
+  },
+  {
+    "uuid": "d6e860be-9774-4dc3-aab5-3f8884680270",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Welfare Cost of Pollution and the 'Genuine GDP' Concept",
+        "Adjusted Net Savings (ANS) / Genuine Savings"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Pollution costs, defensive expenditures, and welfare accounting",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the welfare cost of pollution and its treatment in national income accounting:\n\n1. According to World Bank and WHO estimates, pollution costs India approximately 8.5% of GDP annually in welfare terms — a figure that, if incorporated into national accounts, would significantly reduce India's 'Genuine GDP'.\n2. In the Adjusted Net Savings framework, pollution damage is subtracted from gross national savings, reflecting the fact that environmental degradation represents a drawdown of natural capital that reduces true national wealth.\n3. Defensive expenditures improve national welfare because they represent the economy's productive response to environmental challenges, generating employment and demand in the healthcare and environmental services sectors.\n4. The welfare cost of air pollution includes both direct health expenditure (treatment costs) and indirect productivity losses (morbidity and premature mortality), but only direct health expenditure is counted in standard GDP computations.\n\nHow many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "According to World Bank and WHO estimates, pollution costs India approximately 8.5% of GDP annually in welfare terms — a figure that, if incorporated into national accounts, would significantly reduce India's 'Genuine GDP'.",
+          "verdict": "Correct",
+          "reason": "WHO and World Bank estimates of pollution's welfare cost to India are cited at approximately 8–9% of GDP annually, encompassing health expenditure, productivity loss, and premature mortality — factoring this would substantially reduce genuine output."
+        },
+        {
+          "statement": "In the Adjusted Net Savings framework, pollution damage is subtracted from gross national savings, reflecting the fact that environmental degradation represents a drawdown of natural capital that reduces true national wealth.",
+          "verdict": "Correct",
+          "reason": "ANS formula explicitly deducts pollution damage: ANS = GNS − Fixed Capital Depreciation − Natural Resource Depletion − Pollution Damage + Education Expenditure. Pollution damage is treated as capital destruction."
+        },
+        {
+          "statement": "Defensive expenditures improve national welfare because they represent the economy's productive response to environmental challenges, generating employment and demand in the healthcare and environmental services sectors.",
+          "verdict": "Incorrect",
+          "reason": "Defensive expenditures do not improve welfare — they merely restore lost welfare. GDP counts them as output, but GPI and Genuine GDP frameworks subtract them because they compensate for welfare losses rather than add to well-being."
+        },
+        {
+          "statement": "The welfare cost of air pollution includes both direct health expenditure (treatment costs) and indirect productivity losses (morbidity and premature mortality), but only direct health expenditure is counted in standard GDP computations.",
+          "verdict": "Incorrect",
+          "reason": "Standard GDP counts direct healthcare spending as output. Lost productivity from morbidity and premature mortality represents a reduction in labour input and is generally reflected in lower output — but GDP does not separately capture this as a welfare cost. The claim that 'only direct health expenditure is counted' is partially true but the framing overstates the precision of the distinction."
+        }
+      ],
+      "strong_distractor": "c — Students may count Statement 4 as correct because the health expenditure/productivity loss distinction sounds plausible and technically nuanced — accepting the statement at face value.",
+      "elimination_logic": [
+        "Evaluate Statement 3: Defensive expenditures compensate for welfare losses — they do not generate net welfare gains. The claim that they 'improve national welfare' is incorrect. Statement 3 is wrong.",
+        "Evaluate Statement 4: The claim that only direct health expenditure is counted in standard GDP is an oversimplification — productivity losses also affect GDP indirectly through reduced output, but the framing mischaracterises the relationship. Statement 4 is not precisely correct.",
+        "Statements 1 and 2 are accurately stated — pollution's 8.5% GDP cost and ANS's deduction of pollution damage are both correct.",
+        "Two statements are correct (1 and 2) — select option (b): Only two."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the intuitive 'silver lining' logic — pollution creates demand for healthcare and cleanup, which generates economic activity. Students who think in terms of GDP multiplier effects may mark Statement 3 as correct, missing the welfare accounting principle that defensive expenditures restore welfare rather than create it. Statement 4 appears technically sophisticated and may lure students into accepting it without verifying the precise accounting mechanism.",
+      "final_explanation": "Pollution's relationship with GDP and welfare measurement is one of the most counterintuitive areas in national income accounting.\n\n• Statement 1 — Correct: WHO/World Bank estimates of pollution costs to India at approximately 8.5% of GDP annually are the standard cited figures for this concept.\n• Statement 2 — Correct: ANS's pollution damage deduction treats environmental degradation as a destruction of natural capital — reducing true savings below the conventional savings rate.\n• Statement 3 — Incorrect: Defensive expenditures do not improve welfare — they compensate for welfare losses that should not have occurred. GPI subtracts them; standard GDP counts them as output. The employment and demand generated are offset by the welfare destruction that necessitated them.\n• Statement 4 — Incorrect: The productivity loss from pollution (morbidity, premature mortality) is not neatly separated in standard GDP — it manifests as lower labour productivity and output, not as a separately recorded welfare cost. The statement's framing overstates the accounting precision.\n\nValue Addition:\n• India's Lancet Commission on Pollution and Health (2017) estimated pollution caused 2.5 million premature deaths annually.\n• Defensive expenditure paradox: GDP rises when society spends on treating pollution damage — a fundamental measurement failure.\n• GPI explicitly subtracts defensive expenditures; this is one of its key advantages over GDP as a welfare measure."
+    },
+    "hi": {
+      "display_text": "प्रदूषण की कल्याण लागत और राष्ट्रीय आय लेखांकन में इसके उपचार के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. विश्व बैंक और WHO के अनुमानों के अनुसार, प्रदूषण भारत को वार्षिक रूप से GDP के लगभग 8.5% की कल्याण लागत पहुंचाता है — यदि इसे राष्ट्रीय खातों में शामिल किया जाए, तो यह भारत के 'सच्चे GDP' को महत्वपूर्ण रूप से कम कर देगा।\n2. समायोजित शुद्ध बचत (Adjusted Net Savings) ढांचे में, प्रदूषण क्षति को सकल राष्ट्रीय बचत से घटाया जाता है, जो इस तथ्य को दर्शाता है कि पर्यावरणीय क्षरण प्राकृतिक पूंजी की कमी है जो वास्तविक राष्ट्रीय संपदा को कम करता है।\n3. रक्षात्मक व्यय राष्ट्रीय कल्याण में सुधार करते हैं क्योंकि वे पर्यावरणीय चुनौतियों के प्रति अर्थव्यवस्था की उत्पादक प्रतिक्रिया का प्रतिनिधित्व करते हैं, जो स्वास्थ्य सेवा और पर्यावरणीय सेवा क्षेत्रों में रोजगार और मांग उत्पन्न करते हैं।\n4. वायु प्रदूषण की कल्याण लागत में सीधे स्वास्थ्य व्यय (उपचार लागत) और अप्रत्यक्ष उत्पादकता हानि (रोगग्रस्तता और समयपूर्व मृत्यु) दोनों शामिल हैं, लेकिन केवल सीधे स्वास्थ्य व्यय को मानक GDP गणनाओं में गिना जाता है।\n\nउपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "विश्व बैंक और WHO के अनुमानों के अनुसार, प्रदूषण भारत को वार्षिक रूप से सकल घरेलू उत्पाद (GDP) के लगभग 8.5% की कल्याण लागत पहुंचाता है — यदि इसे राष्ट्रीय खातों में शामिल किया जाए, तो यह भारत के 'सच्चे GDP' को महत्वपूर्ण रूप से कम कर देगा।",
+          "verdict": "सही",
+          "reason": "WHO और विश्व बैंक के अनुमानों के अनुसार भारत में प्रदूषण की कल्याण लागत लगभग 8–9% GDP वार्षिक है, जिसमें स्वास्थ्य व्यय, उत्पादकता हानि, और समयपूर्व मृत्यु शामिल हैं — इसे शामिल करने से सच्चे उत्पादन में काफी कमी आएगी।"
+        },
+        {
+          "statement": "समायोजित शुद्ध बचत (Adjusted Net Savings) ढांचे में, प्रदूषण क्षति को सकल राष्ट्रीय बचत से घटाया जाता है, जो इस तथ्य को दर्शाता है कि पर्यावरणीय क्षरण प्राकृतिक पूंजी की कमी है जो वास्तविक राष्ट्रीय संपदा को कम करता है।",
+          "verdict": "सही",
+          "reason": "ANS सूत्र स्पष्ट रूप से प्रदूषण क्षति को घटाता है: ANS = GNS − स्थिर पूंजी ह्रास − प्राकृतिक संसाधन क्षय − प्रदूषण क्षति + शिक्षा व्यय। प्रदूषण क्षति को पूंजी विनाश के रूप में माना जाता है।"
+        },
+        {
+          "statement": "रक्षात्मक व्यय राष्ट्रीय कल्याण में सुधार करते हैं क्योंकि वे पर्यावरणीय चुनौतियों के प्रति अर्थव्यवस्था की उत्पादक प्रतिक्रिया का प्रतिनिधित्व करते हैं, जो स्वास्थ्य सेवा और पर्यावरणीय सेवा क्षेत्रों में रोजगार और मांग उत्पन्न करते हैं।",
+          "verdict": "गलत",
+          "reason": "रक्षात्मक व्यय कल्याण में सुधार नहीं करते — वे केवल खोए हुए कल्याण की भरपाई करते हैं। GDP उन्हें उत्पादन के रूप में गिनता है, लेकिन GPI और सच्चे GDP के ढांचे उन्हें घटाते हैं क्योंकि वे कल्याण हानि की भरपाई करते हैं न कि कल्याण में वृद्धि।"
+        },
+        {
+          "statement": "वायु प्रदूषण की कल्याण लागत में सीधे स्वास्थ्य व्यय (उपचार लागत) और अप्रत्यक्ष उत्पादकता हानि (रोगग्रस्तता और समयपूर्व मृत्यु) दोनों शामिल हैं, लेकिन केवल सीधे स्वास्थ्य व्यय को मानक GDP गणनाओं में गिना जाता है।",
+          "verdict": "गलत",
+          "reason": "मानक GDP सीधे स्वास्थ्य सेवा व्यय को उत्पादन के रूप में गिनता है। रोगग्रस्तता और समयपूर्व मृत्यु से उत्पादकता हानि श्रम इनपुट में कमी का प्रतिनिधित्व करती है और आमतौर पर कम उत्पादन में परिलक्षित होती है — लेकिन GDP इसे अलग से कल्याण लागत के रूप में नहीं दर्शाता। 'केवल सीधे स्वास्थ्य व्यय गिना जाता है' कथन आंशिक रूप से सही है परंतु यह विवरण अधिक सटीकता का दावा करता है।"
+        }
+      ],
+      "strong_distractor": "c — छात्र कथन 4 को सही मान सकते हैं क्योंकि स्वास्थ्य व्यय/उत्पादकता हानि का भेद सुनने में तर्कसंगत और तकनीकी रूप से सूक्ष्म लगता है — कथन को बिना जांचे स्वीकार कर लेना।",
+      "elimination_logic": [
+        "कथन 3 का मूल्यांकन करें: रक्षात्मक व्यय कल्याण हानि की भरपाई करते हैं — वे शुद्ध कल्याण लाभ उत्पन्न नहीं करते। यह दावा कि वे 'राष्ट्रीय कल्याण में सुधार करते हैं' गलत है। अतः कथन 3 गलत है।",
+        "कथन 4 का मूल्यांकन करें: केवल सीधे स्वास्थ्य व्यय को मानक GDP में गिने जाने का दावा अतिसरलीकरण है — उत्पादकता हानि भी कम उत्पादन के माध्यम से अप्रत्यक्ष रूप से GDP को प्रभावित करती है, परंतु कथन इसका गलत चित्रण करता है। अतः कथन 4 सटीक रूप से सही नहीं है।",
+        "कथन 1 और 2 सही हैं — प्रदूषण की 8.5% GDP लागत और ANS में प्रदूषण क्षति की कटौती दोनों सही हैं।",
+        "दो कथन सही हैं (1 और 2) — विकल्प (b) चुनें: केवल दो।"
+      ],
+      "upsc_trap_explanation": "कथन 3 सहज 'सकारात्मक पहलू' तर्क का उपयोग करता है — प्रदूषण स्वास्थ्य सेवा और सफाई की मांग पैदा करता है, जो आर्थिक गतिविधि उत्पन्न करता है। जो छात्र GDP गुणक प्रभावों के संदर्भ में सोचते हैं, वे कथन 3 को सही मान सकते हैं, जबकि कल्याण लेखांकन सिद्धांत यह बताता है कि रक्षात्मक व्यय कल्याण की भरपाई करते हैं, निर्माण नहीं। कथन 4 तकनीकी रूप से परिष्कृत प्रतीत होता है और छात्रों को बिना सटीक लेखांकन तंत्र की जांच किए इसे स्वीकार करने के लिए आकर्षित कर सकता है।",
+      "final_explanation": "प्रदूषण का GDP और कल्याण मापन के साथ संबंध राष्ट्रीय आय लेखांकन में सबसे विरोधाभासी क्षेत्रों में से एक है।\n\n• कथन 1 — सही: WHO/विश्व बैंक के अनुमानों के अनुसार भारत में प्रदूषण की वार्षिक लागत लगभग 8.5% GDP है, जो इस अवधारणा के लिए मानक आंकड़ा है।\n• कथन 2 — सही: ANS में प्रदूषण क्षति की कटौती पर्यावरणीय क्षरण को प्राकृतिक पूंजी के विनाश के रूप में मानती है — जो वास्तविक बचत को पारंपरिक बचत दर से कम करती है।\n• कथन 3 — गलत: रक्षात्मक व्यय कल्याण में सुधार नहीं करते — वे उन कल्याण हानियों की भरपाई करते हैं जो नहीं होनी चाहिए थीं। GPI उन्हें घटाता है; मानक GDP उन्हें उत्पादन के रूप में गिनता है। उत्पन्न रोजगार और मांग उस कल्याण विनाश से संतुलित होती है जिसने उन्हें आवश्यक बनाया।\n• कथन 4 — गलत: प्रदूषण से उत्पादकता हानि (रोगग्रस्तता, समयपूर्व मृत्यु) मानक GDP में स्पष्ट रूप से अलग नहीं होती — यह कम श्रम उत्पादकता और उत्पादन के रूप में प्रकट होती है, न कि अलग दर्ज की गई कल्याण लागत के रूप में। कथन का विवरण लेखांकन सटीकता को अधिक दर्शाता है।\n\nमूल्य संवर्धन:\n• भारत की Lancet Commission on Pollution and Health (2017) ने अनुमान लगाया कि प्रदूषण से वार्षिक 2.5 मिलियन समयपूर्व मृत्यु होती हैं।\n• रक्षात्मक व्यय विरोधाभास: जब समाज प्रदूषण क्षति के उपचार पर खर्च करता है तो GDP बढ़ता है — यह एक मौलिक मापन त्रुटि है।\n• GPI स्पष्ट रूप से रक्षात्मक व्यय को घटाता है; यह GDP की तुलना में कल्याण मापक के रूप में इसका एक प्रमुख लाभ है।"
+    }
+  },
+  {
+    "uuid": "24e6c891-cc30-497e-af86-d30a7926fc5d",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Ecosystem Services Valuation Methods",
+        "Gross Environment Product (GEP)",
+        "System of Environmental-Economic Accounting (SEEA)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Supporting services double-counting in SEEA EA",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about ecosystem service valuation frameworks:\n\n1. Under SEEA Ecosystem Accounting, supporting ecosystem services such as nutrient cycling and soil formation are not independently valued to avoid double-counting, since they underpin all other ecosystem service categories.\n2. The TEEB (The Economics of Ecosystems and Biodiversity) initiative was launched under the auspices of the World Bank to quantify the global economic value of natural capital for integration into WAVES partnership accounts.\n3. The four categories of ecosystem services — Provisioning, Regulating, Cultural, and Supporting — were developed in the Millennium Ecosystem Assessment (MA) framework, which predates SEEA's formal adoption as an international standard.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under SEEA Ecosystem Accounting, supporting ecosystem services such as nutrient cycling and soil formation are not independently valued to avoid double-counting, since they underpin all other ecosystem service categories.",
+          "verdict": "Correct",
+          "reason": "SEEA EA explicitly values only final ecosystem services to avoid double-counting intermediate services. Supporting services are intermediate services — their value is already embedded in the provisioning, regulating, and cultural services they enable."
+        },
+        {
+          "statement": "The TEEB (The Economics of Ecosystems and Biodiversity) initiative was launched under the auspices of the World Bank to quantify the global economic value of natural capital for integration into WAVES partnership accounts.",
+          "verdict": "Incorrect",
+          "reason": "TEEB was initiated under the G8+5 Environment Ministers meeting (Potsdam, 2007) and is coordinated through UNEP, not the World Bank. WAVES is a separate World Bank initiative — the two are distinct programmes with different institutional homes."
+        },
+        {
+          "statement": "The four categories of ecosystem services — Provisioning, Regulating, Cultural, and Supporting — were developed in the Millennium Ecosystem Assessment (MA) framework, which predates SEEA's formal adoption as an international standard.",
+          "verdict": "Correct",
+          "reason": "The four-category classification originates from the 2005 Millennium Ecosystem Assessment. SEEA EA was formally adopted as an international statistical standard in 2021 — well after the MA's 2005 publication."
+        }
+      ],
+      "strong_distractor": "d — Students who vaguely recall both TEEB and World Bank having connections to environmental accounting may mark Statement 2 as correct, selecting '1, 2 and 3.'",
+      "elimination_logic": [
+        "Verify Statement 2: TEEB was initiated by G8+5 environment ministers in Potsdam and is a UNEP-coordinated initiative — not a World Bank programme. The conflation with WAVES (World Bank) makes Statement 2 incorrect.",
+        "Verify Statement 1: SEEA EA's avoidance of double-counting by excluding supporting service valuations is a well-established principle. Statement 1 is correct.",
+        "Verify Statement 3: The MA's four-category framework (2005) predates SEEA EA's adoption as an international standard (2021). Statement 3 is correct.",
+        "Statements 1 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is institutional conflation — TEEB, WAVES, World Bank, and UNEP all operate in the environmental valuation space. Students may reason: 'TEEB is about ecosystem economics, WAVES is about ecosystem accounting, both involve World Bank' — without knowing that TEEB is specifically a UNEP/G8+5 initiative while WAVES is the World Bank platform. The institutional precision required here is exactly the type UPSC tests.",
+      "final_explanation": "Ecosystem service valuation frameworks evolved through multiple international initiatives, each with distinct institutional homes and methodological contributions.\n\n• Statement 1 — Correct: SEEA EA's principle of valuing only final ecosystem services (not supporting services) is a foundational design choice to prevent intermediate service values from being double-counted in final output measures.\n• Statement 2 — Incorrect: TEEB was launched in 2007 under the G8+5 Environment Ministers' mandate at Potsdam. UNEP coordinates TEEB, not the World Bank. WAVES is the World Bank initiative — these are separate programmes.\n• Statement 3 — Correct: The Millennium Ecosystem Assessment (2005) established the four-category classification of ecosystem services. SEEA EA was adopted as an international statistical standard in 2021, 16 years later.\n\nValue Addition:\n• SEEA Central Framework was adopted in 2012; SEEA EA was adopted in 2021 — a 9-year gap between the two pillars.\n• The MA's 2005 report was a landmark synthesis by 1,360 scientists assessing ecosystem condition and services globally.\n• TEEB's landmark contribution was estimating that global ecosystem service losses due to deforestation amount to USD 2–4.5 trillion annually."
+    },
+    "hi": {
+      "display_text": "पारिस्थितिकी तंत्र सेवा मूल्यांकन ढाँचों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. SEEA Ecosystem Accounting के अंतर्गत, पोषण चक्रण और मिट्टी निर्माण जैसी सहायक पारिस्थितिकी तंत्र सेवाओं का स्वतंत्र मूल्यांकन नहीं किया जाता ताकि दोहरी गणना से बचा जा सके, क्योंकि ये सभी अन्य पारिस्थितिकी तंत्र सेवा श्रेणियों का आधार हैं।\n2. TEEB (The Economics of Ecosystems and Biodiversity) पहल विश्व बैंक के संरक्षण में शुरू की गई थी ताकि प्राकृतिक पूंजी के वैश्विक आर्थिक मूल्य को मापा जा सके और इसे WAVES साझेदारी खातों में एकीकृत किया जा सके।\n3. पारिस्थितिकी तंत्र सेवाओं की चार श्रेणियाँ — प्रावधान, नियमन, सांस्कृतिक, और सहायक — मिलेनियम पारिस्थितिकी तंत्र आकलन (MA) ढांचे में विकसित की गई थीं, जो SEEA के आधिकारिक अंतरराष्ट्रीय मानक के रूप में अपनाए जाने से पहले की है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "SEEA Ecosystem Accounting के अंतर्गत, पोषण चक्रण और मिट्टी निर्माण जैसे सहायक पारिस्थितिकी तंत्र सेवाओं का स्वतंत्र मूल्यांकन नहीं किया जाता ताकि दोहरी गणना से बचा जा सके, क्योंकि ये सभी अन्य पारिस्थितिकी तंत्र सेवा श्रेणियों का आधार हैं।",
+          "verdict": "सही है",
+          "reason": "SEEA EA स्पष्ट रूप से केवल अंतिम पारिस्थितिकी तंत्र सेवाओं का मूल्यांकन करता है ताकि मध्यवर्ती सेवाओं की दोहरी गणना से बचा जा सके। सहायक सेवाएँ मध्यवर्ती सेवाएँ हैं — उनका मूल्य पहले से ही उन प्रावधान, नियमन, और सांस्कृतिक सेवाओं में निहित है जिन्हें वे सक्षम बनाती हैं।"
+        },
+        {
+          "statement": "TEEB (The Economics of Ecosystems and Biodiversity) पहल विश्व बैंक के संरक्षण में शुरू की गई थी ताकि प्राकृतिक पूंजी के वैश्विक आर्थिक मूल्य को मापा जा सके और इसे WAVES साझेदारी खातों में एकीकृत किया जा सके।",
+          "verdict": "गलत है",
+          "reason": "TEEB की शुरुआत G8+5 पर्यावरण मंत्रियों की बैठक (पॉट्सडैम, 2007) के तहत हुई थी और इसे UNEP के माध्यम से समन्वित किया जाता है, न कि विश्व बैंक द्वारा। WAVES एक अलग विश्व बैंक पहल है — ये दोनों अलग-अलग संस्थागत कार्यक्रम हैं।"
+        },
+        {
+          "statement": "पारिस्थितिकी तंत्र सेवाओं की चार श्रेणियाँ — प्रावधान, नियमन, सांस्कृतिक, और सहायक — मिलेनियम पारिस्थितिकी तंत्र आकलन (MA) ढांचे में विकसित की गई थीं, जो SEEA के आधिकारिक अंतरराष्ट्रीय मानक के रूप में अपनाए जाने से पहले की है।",
+          "verdict": "सही है",
+          "reason": "चार-श्रेणी वर्गीकरण 2005 के मिलेनियम पारिस्थितिकी तंत्र आकलन से उत्पन्न हुआ है। SEEA EA को 2021 में एक अंतरराष्ट्रीय सांख्यिकीय मानक के रूप में औपचारिक रूप से अपनाया गया था — जो MA के 2005 प्रकाशन के बाद है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो TEEB और विश्व बैंक दोनों को पर्यावरणीय लेखांकन से जुड़ा हुआ याद करते हैं, वे कथन 2 को सही मानकर '1, 2 और 3' विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 2 सत्यापित करें: TEEB की शुरुआत G8+5 पर्यावरण मंत्रियों द्वारा पॉट्सडैम में की गई थी और यह UNEP समन्वित पहल है — विश्व बैंक का कार्यक्रम नहीं। WAVES (विश्व बैंक) के साथ भ्रम के कारण कथन 2 गलत है।",
+        "कथन 1 सत्यापित करें: SEEA EA द्वारा सहायक सेवा मूल्यांकन को छोड़कर दोहरी गणना से बचना एक स्थापित सिद्धांत है। कथन 1 सही है।",
+        "कथन 3 सत्यापित करें: MA का चार-श्रेणी ढांचा (2005) SEEA EA के अंतरराष्ट्रीय मानक (2021) बनने से पहले का है। कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का जाल संस्थागत भ्रम है — TEEB, WAVES, विश्व बैंक, और UNEP सभी पर्यावरणीय मूल्यांकन क्षेत्र में काम करते हैं। छात्र सोच सकते हैं: 'TEEB पारिस्थितिकी तंत्र अर्थशास्त्र है, WAVES पारिस्थितिकी तंत्र लेखांकन है, दोनों में विश्व बैंक शामिल है' — बिना यह जाने कि TEEB विशेष रूप से UNEP/G8+5 पहल है जबकि WAVES विश्व बैंक का मंच है। यह संस्थागत सटीकता UPSC द्वारा परखी जाती है।",
+      "final_explanation": "पारिस्थितिकी तंत्र सेवा मूल्यांकन ढांचे कई अंतरराष्ट्रीय पहलों के माध्यम से विकसित हुए, जिनके अलग-अलग संस्थागत घर और पद्धतिगत योगदान हैं।\n\n• कथन 1 — सही: SEEA EA का केवल अंतिम पारिस्थितिकी तंत्र सेवाओं का मूल्यांकन करने का सिद्धांत (सहायक सेवाओं को नहीं) मध्यवर्ती सेवा मूल्यों की दोहरी गणना से बचने के लिए एक मौलिक डिज़ाइन विकल्प है।\n• कथन 2 — गलत: TEEB की शुरुआत 2007 में G8+5 पर्यावरण मंत्रियों के पॉट्सडैम आदेश के तहत हुई थी। UNEP TEEB का समन्वय करता है, न कि विश्व बैंक। WAVES विश्व बैंक की पहल है — ये अलग-अलग कार्यक्रम हैं।\n• कथन 3 — सही: मिलेनियम पारिस्थितिकी तंत्र आकलन (2005) ने पारिस्थितिकी तंत्र सेवाओं की चार-श्रेणी वर्गीकरण स्थापित की। SEEA EA को 2021 में एक अंतरराष्ट्रीय सांख्यिकीय मानक के रूप में अपनाया गया, 16 वर्ष बाद।\n\nमूल्य संवर्धन:\n• SEEA केंद्रीय ढांचा 2012 में अपनाया गया; SEEA EA 2021 में — दोनों स्तंभों के बीच 9 वर्ष का अंतर।\n• MA की 2005 रिपोर्ट 1,360 वैज्ञानिकों द्वारा वैश्विक स्तर पर पारिस्थितिकी तंत्र की स्थिति और सेवाओं का एक महत्वपूर्ण संश्लेषण थी।\n• TEEB का महत्वपूर्ण योगदान था वैश्विक पारिस्थितिकी तंत्र सेवा हानि का अनुमान लगाना, जो वनों की कटाई के कारण वार्षिक USD 2–4.5 ट्रिलियन तक है।"
+    }
+  },
+  {
+    "uuid": "80e47753-1033-4093-91b1-5936a4114718",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Satellite Accounts in National Accounting",
+        "System of Environmental-Economic Accounting (SEEA)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Satellite account — supplements SNA, does not replace GDP",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An interministerial committee recommends that India formally measure the economic contribution of unpaid domestic and care work — including cooking, childcare, and eldercare — through a methodologically rigorous framework consistent with international national accounting standards. The committee stipulates that this measurement must not alter India's officially reported GDP figure submitted to international organisations.\n\nWhich of the following frameworks would best meet the committee's requirements?\n\n(a) Adopting the System of Environmental-Economic Accounting (SEEA) as an alternative to GDP specifically for environmental and social policy purposes while retaining conventional GDP for trade and fiscal reporting\n(b) Constructing a Household Production Satellite Account that values unpaid domestic work using time-use data and appropriate wage rates, published as a supplementary account alongside the core national accounts\n(c) Computing Adjusted Net Savings (ANS) for India to incorporate unpaid labour as human capital investment, thereby capturing its contribution to national wealth without modifying GDP\n(d) Adopting the Genuine Progress Indicator (GPI) as India's official national welfare measure, which explicitly adds the value of household and volunteer work to the consumption baseline",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students may select option (a) because a comprehensive environmental account 'replacing GDP for environmental policy' sounds like what SEEA does — confusing SEEA's broader scope with a full GDP replacement.",
+      "elimination_logic": [
+        "The question asks: what framework would allow India to measure household labour's economic contribution without modifying official GDP? This requires a supplementary framework that adds information without disrupting core accounts.",
+        "Eliminate (a): A framework that 'replaces GDP for environmental policy purposes' is not what SEEA does — SEEA is supplementary, not a replacement.",
+        "Eliminate (c): ANS is a savings sustainability indicator, not a framework for measuring household labour value.",
+        "Eliminate (d): GPI measures broader welfare but is not an official national accounting framework — it is an academic/advocacy measure.",
+        "Select (b): A Household Production Satellite Account extends the SNA by valuing unpaid domestic and care work without altering core GDP computation — exactly the supplementary framework the scenario requires."
+      ],
+      "upsc_trap_explanation": "The SEEA conflation trap (option a) is the primary distractor. Students who associate SEEA with supplementary environmental accounting may select it, reasoning that if SEEA can value environmental services without disrupting GDP, it can value household services too. However, household production is specifically the domain of a Household Production Satellite Account — SEEA addresses natural capital, not domestic labour. The scenario's specific mention of 'household labour contribution' is the key to identifying the correct framework.",
+      "final_explanation": "An interministerial committee proposes that India should formally quantify the economic contribution of unpaid domestic work — cooking, childcare, eldercare — performed predominantly by women. The committee specifies that this quantification should be methodologically rigorous and consistent with national accounting principles, but should not alter India's official GDP figure reported to international organisations.\n\nThe applicable principle is the Satellite Account framework. Satellite accounts extend the System of National Accounts into domains excluded from core GDP without modifying the core accounts — precisely what the scenario requires.\n\n• Option (a) — Incorrect: A framework replacing GDP for environmental policy is a mischaracterisation of SEEA — SEEA supplements SNA, and it addresses natural capital, not household labour.\n• Option (b) — Correct: A Household Production Satellite Account uses time-use surveys and appropriate wage rates to estimate the value of unpaid domestic and care work, adding it as a parallel account to SNA without altering GDP.\n• Option (c) — Incorrect: ANS is a savings sustainability measure that deducts resource depletion and adds education investment. It does not address household labour valuation.\n• Option (d) — Incorrect: GPI is an academic welfare measure, not an official national accounting framework. It cannot serve as the official measurement tool the committee envisions.\n\nValue Addition:\n• India's National Time Use Survey (2019) provides the primary data for estimating unpaid household work value.\n• Global estimates suggest unpaid care work, if valued at market rates, would add 10–40% to measured GDP.\n• Household Production Satellite Accounts are part of the broader SNA2008 recommendations that India has progressively implemented."
+    },
+    "hi": {
+      "display_text": "एक अंतर-मंत्रालयी समिति अनुशंसा करती है कि भारत अप्रतिदत्त घरेलू और देखभाल कार्य — जिसमें खाना बनाना, बाल देखभाल, और वृद्ध देखभाल शामिल हैं — के आर्थिक योगदान को विधिवत कठोर ढांचे के माध्यम से मापे जो अंतरराष्ट्रीय राष्ट्रीय लेखांकन मानकों के अनुरूप हो। समिति यह शर्त लगाती है कि यह मापन भारत के आधिकारिक रूप से रिपोर्ट किए गए GDP आंकड़े को जो अंतरराष्ट्रीय संगठनों को प्रस्तुत किया जाता है, परिवर्तित नहीं करेगा।\n\nनिम्नलिखित में से कौन-सा ढांचा समिति की आवश्यकताओं को सबसे बेहतर तरीके से पूरा करेगा?\n\n(a) पर्यावरणीय और सामाजिक नीति उद्देश्यों के लिए GDP के विकल्प के रूप में System of Environmental-Economic Accounting (SEEA) को अपनाना जबकि व्यापार और राजकोषीय रिपोर्टिंग के लिए पारंपरिक GDP को बनाए रखना\n(b) समय उपयोग डेटा और उपयुक्त वेतन दरों का उपयोग करके अप्रतिदत्त घरेलू कार्य का मूल्यांकन करने वाला घरेलू उत्पादन उपग्रह खाता बनाना, जिसे मुख्य राष्ट्रीय खातों के साथ एक पूरक खाता के रूप में प्रकाशित किया जाए\n(c) भारत के लिए Adjusted Net Savings (ANS) की गणना करना ताकि अप्रतिदत्त श्रम को मानव पूंजी निवेश के रूप में शामिल किया जा सके, इस प्रकार राष्ट्रीय संपदा में इसके योगदान को कैप्चर करना बिना GDP को संशोधित किए\n(d) Genuine Progress Indicator (GPI) को भारत के आधिकारिक राष्ट्रीय कल्याण माप के रूप में अपनाना, जो स्पष्ट रूप से घरेलू और स्वयंसेवी कार्य के मूल्य को उपभोग आधार में जोड़ता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र विकल्प (a) चुन सकते हैं क्योंकि एक व्यापक पर्यावरणीय खाता 'पर्यावरण नीति के लिए GDP को प्रतिस्थापित करना' जैसा लगता है — SEEA के व्यापक दायरे को पूर्ण GDP प्रतिस्थापन के साथ भ्रमित करना।",
+      "elimination_logic": [
+        "प्रश्न पूछता है: कौन-सा ढांचा भारत को आधिकारिक GDP को संशोधित किए बिना घरेलू श्रम के आर्थिक योगदान को मापने की अनुमति देगा? इसके लिए एक पूरक ढांचे की आवश्यकता है जो मुख्य खातों को बाधित किए बिना जानकारी जोड़ता है।",
+        "(a) को हटाएं: 'पर्यावरण नीति उद्देश्यों के लिए GDP को प्रतिस्थापित करने वाला' ढांचा SEEA नहीं है — SEEA पूरक है, प्रतिस्थापन नहीं।",
+        "(c) को हटाएं: ANS एक बचत स्थिरता संकेतक है, घरेलू श्रम मूल्य मापन का ढांचा नहीं।",
+        "(d) को हटाएं: GPI व्यापक कल्याण मापता है लेकिन आधिकारिक राष्ट्रीय लेखांकन ढांचा नहीं है — यह एक शैक्षणिक/वकालत माप है।",
+        "(b) चुनें: एक घरेलू उत्पादन उपग्रह खाता SNA का विस्तार करता है जो बिना मुख्य GDP गणना को बदले बिना अप्रतिदत्त घरेलू और देखभाल कार्य का मूल्यांकन करता है — बिल्कुल वह पूरक ढांचा जो परिदृश्य में आवश्यक है।"
+      ],
+      "upsc_trap_explanation": "SEEA भ्रम जाल (विकल्प a) मुख्य भटकाव है। छात्र जो SEEA को पूरक पर्यावरणीय लेखांकन से जोड़ते हैं, वे इसे चुन सकते हैं, यह सोचकर कि यदि SEEA पर्यावरणीय सेवाओं का मूल्यांकन बिना GDP को बाधित किए कर सकता है, तो यह घरेलू सेवाओं का भी मूल्यांकन कर सकता है। हालांकि, घरेलू उत्पादन विशेष रूप से घरेलू उत्पादन उपग्रह खाते का क्षेत्र है — SEEA प्राकृतिक पूंजी को संबोधित करता है, घरेलू श्रम को नहीं। 'घरेलू श्रम योगदान' का विशेष उल्लेख सही ढांचे की पहचान की कुंजी है।",
+      "final_explanation": "एक अंतर-मंत्रालयी समिति ने प्रस्तावित किया है कि भारत को अप्रतिदत्त घरेलू कार्य — जैसे खाना बनाना, बाल देखभाल, वृद्ध देखभाल — जो मुख्य रूप से महिलाएं करती हैं, के आर्थिक योगदान को औपचारिक रूप से मापना चाहिए। समिति ने निर्दिष्ट किया है कि यह मापन विधिवत कठोर और राष्ट्रीय लेखांकन सिद्धांतों के अनुरूप होना चाहिए, लेकिन भारत के आधिकारिक GDP आंकड़े को जो अंतरराष्ट्रीय संगठनों को रिपोर्ट किया जाता है, उसे परिवर्तित नहीं करना चाहिए।\n\nलागू सिद्धांत उपग्रह खाता ढांचा है। उपग्रह खाते राष्ट्रीय लेखांकन प्रणाली (SNA) को उन क्षेत्रों में विस्तारित करते हैं जो मुख्य GDP से बाहर हैं बिना मुख्य खातों को बदले — बिल्कुल वही जो परिदृश्य में आवश्यक है।\n\n• विकल्प (a) — गलत: पर्यावरण नीति के लिए GDP को प्रतिस्थापित करने वाला ढांचा SEEA का गलत वर्णन है — SEEA SNA को पूरक करता है, और यह घरेलू श्रम नहीं बल्कि प्राकृतिक पूंजी को संबोधित करता है।\n• विकल्प (b) — सही: घरेलू उत्पादन उपग्रह खाता समय उपयोग सर्वेक्षण और उपयुक्त वेतन दरों का उपयोग करके अप्रतिदत्त घरेलू और देखभाल कार्य का मूल्यांकन करता है, इसे SNA के साथ एक पूरक खाता के रूप में प्रकाशित करता है बिना GDP को बदले।\n• विकल्प (c) — गलत: ANS एक बचत स्थिरता माप है जो संसाधन क्षय को घटाता है और शिक्षा निवेश जोड़ता है। यह घरेलू श्रम मूल्यांकन को संबोधित नहीं करता।\n• विकल्प (d) — गलत: GPI एक शैक्षणिक कल्याण माप है, आधिकारिक राष्ट्रीय लेखांकन ढांचा नहीं। यह समिति द्वारा कल्पित आधिकारिक मापन उपकरण के रूप में काम नहीं कर सकता।\n\nमूल्य संवर्धन:\n• भारत का राष्ट्रीय समय उपयोग सर्वेक्षण (2019) अप्रतिदत्त घरेलू कार्य के मूल्यांकन के लिए प्राथमिक डेटा प्रदान करता है।\n• वैश्विक अनुमान बताते हैं कि यदि अप्रतिदत्त देखभाल कार्य को बाजार दरों पर मूल्यांकित किया जाए, तो यह मापे गए GDP में 10–40% की वृद्धि करेगा।\n• घरेलू उत्पादन उपग्रह खाते व्यापक SNA2008 सिफारिशों का हिस्सा हैं जिन्हें भारत ने क्रमिक रूप से लागू किया है।"
+    }
+  },
+  {
+    "uuid": "7c724a8e-3503-43b8-8fba-4fc2af22aa8a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Carbon Accounting and GDP: Green National Accounts",
+        "Green GDP: Definition and Conceptual Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Social Cost of Carbon — definition and national accounts implication",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of carbon accounting and green national accounts, the Social Cost of Carbon (SCC) is best defined as:\n\n(a) The total estimated economic damage inflicted by all greenhouse gas emissions released since industrialisation began, expressed as a present-value sum in today's prices\n(b) The estimated monetary value of economic damage caused by emitting one additional metric tonne of CO₂ into the atmosphere, used to quantify the negative externality of carbon emissions\n(c) The total carbon tax revenue collected by a government from fossil fuel industries in a fiscal year, which represents the market price society assigns to carbon emissions\n(d) The net cost-benefit ratio of investing in emissions reduction technologies, calculated to determine the optimal level of abatement for each tonne of CO₂",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'The total carbon tax revenue collected by a government from fossil fuel industries in a fiscal year' sounds like an authoritative economic definition because it involves government action, fiscal measurement, and fossil fuels — all legitimate carbon policy concepts.",
+      "elimination_logic": [
+        "Eliminate (a): Social Cost of Carbon is a damage measure — it measures economic harm per tonne, not the total cumulative damage from all historical emissions. The temporal scope is 'one additional tonne' not 'all historical emissions.'",
+        "Eliminate (c): SCC is a damage estimate, not a tax revenue measure. Carbon tax revenue is an observed government collection; SCC is an estimated economic damage — conceptually distinct.",
+        "Eliminate (d): SCC is a forward-looking economic damage estimate, not a cost-benefit analysis of emissions reduction investments.",
+        "Select (b): SCC = estimated monetary value of economic damage caused by emitting one additional metric tonne of CO₂ — a marginal damage cost concept used to price carbon externalities."
+      ],
+      "upsc_trap_explanation": "Option (c) traps students because 'carbon tax' and 'Social Cost of Carbon' are both pricing mechanisms in climate economics. Students who know SCC is used to set carbon prices may conflate the concept with the revenue generated from carbon pricing — confusing the theoretical damage estimate with the observed fiscal outcome. SCC is a pre-policy damage estimate used to inform carbon price-setting; carbon tax revenue is what results from implementing a carbon price.",
+      "final_explanation": "The Social Cost of Carbon (SCC) is a central concept in environmental economics and green national accounting. It represents the marginal damage from carbon emissions — the harm caused by adding one more tonne of CO₂ to the atmosphere.\n\n• Option (a) — Incorrect: SCC refers to the damage from one additional (marginal) tonne of CO₂, not the total accumulated damage from all historical emissions. The temporal scope is marginal and prospective.\n• Option (b) — Correct: SCC is the estimated monetary value of economic damage caused by emitting one additional metric tonne of CO₂, encompassing climate change impacts on agriculture, health, flooding, and ecosystems.\n• Option (c) — Incorrect: Carbon tax revenue is what governments collect from pricing emissions — an observed fiscal flow. SCC is an estimated economic damage used to determine what the carbon price should be.\n• Option (d) — Incorrect: SCC is a damage estimate, not a cost-benefit analysis of emissions reduction investments specifically.\n\nValue Addition:\n• The Biden administration's US SCC estimate was approximately $51 per tonne of CO₂; recent estimates incorporating updated climate models exceed $200/tonne.\n• Incorporating SCC into Indian national accounts would significantly reduce the apparent income of coal-mining states.\n• The discount rate used to calculate SCC is deeply contested — lower discount rates imply higher SCC and greater urgency for climate action."
+    },
+    "hi": {
+      "display_text": "कार्बन लेखांकन और हरित राष्ट्रीय लेखांकन के संदर्भ में, कार्बन का सामाजिक लागत (SCC) को सबसे उपयुक्त रूप से परिभाषित किया गया है:\n\n(a) औद्योगिकीकरण शुरू होने के बाद से जारी सभी ग्रीनहाउस गैस उत्सर्जनों द्वारा किए गए कुल अनुमानित आर्थिक नुकसान, जिसे आज के मूल्य में वर्तमान-मूल्य योग के रूप में व्यक्त किया गया हो\n(b) वायुमंडल में एक अतिरिक्त मीट्रिक टन CO₂ उत्सर्जन से होने वाली आर्थिक क्षति का अनुमानित मौद्रिक मूल्य, जिसका उपयोग कार्बन उत्सर्जन की नकारात्मक बाह्यताओं को मापने के लिए किया जाता है\n(c) एक वित्तीय वर्ष में जीवाश्म ईंधन उद्योगों से सरकार द्वारा एकत्रित कुल कार्बन कर राजस्व, जो कार्बन उत्सर्जन के लिए समाज द्वारा निर्धारित बाजार मूल्य का प्रतिनिधित्व करता है\n(d) उत्सर्जन कटौती प्रौद्योगिकियों में निवेश के शुद्ध लागत-लाभ अनुपात, जिसे प्रत्येक टन CO₂ के लिए इष्टतम कटौती स्तर निर्धारित करने के लिए गणना की गई हो",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'सरकार द्वारा एक वित्तीय वर्ष में जीवाश्म ईंधन उद्योगों से एकत्रित कुल कार्बन कर राजस्व' एक अधिकारिक आर्थिक परिभाषा जैसा लगता है क्योंकि इसमें सरकारी कार्रवाई, वित्तीय मापन, और जीवाश्म ईंधन शामिल हैं — ये सभी कार्बन नीति की वैध अवधारणाएँ हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: कार्बन का सामाजिक लागत (SCC) एक क्षति माप है — यह प्रति टन आर्थिक नुकसान को मापता है, न कि सभी ऐतिहासिक उत्सर्जनों से हुई कुल संचयी क्षति को। इसका कालिक दायरा 'एक अतिरिक्त टन' है, न कि 'सभी ऐतिहासिक उत्सर्जन।'",
+        "(c) को हटाएं: SCC एक क्षति का अनुमान है, कर राजस्व मापन नहीं। कार्बन कर राजस्व एक सरकार द्वारा एकत्रित वास्तविक राशि है; SCC एक अनुमानित आर्थिक क्षति है — अवधारणात्मक रूप से भिन्न।",
+        "(d) को हटाएं: SCC एक भविष्यसूचक आर्थिक क्षति का अनुमान है, न कि उत्सर्जन कटौती निवेशों के लागत-लाभ विश्लेषण का।",
+        "(b) को चुनें: SCC = एक अतिरिक्त मीट्रिक टन CO₂ उत्सर्जन से होने वाली आर्थिक क्षति का अनुमानित मौद्रिक मूल्य — एक सीमांत क्षति लागत अवधारणा जो कार्बन बाह्यताओं के मूल्य निर्धारण के लिए उपयोग होती है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) छात्रों को फंसाता है क्योंकि 'कार्बन कर' और 'कार्बन का सामाजिक लागत' दोनों जलवायु अर्थशास्त्र में मूल्य निर्धारण तंत्र हैं। जो छात्र जानते हैं कि SCC कार्बन मूल्य निर्धारण के लिए उपयोग होता है, वे इस अवधारणा को कार्बन मूल्य निर्धारण से प्राप्त राजस्व के साथ भ्रमित कर सकते हैं — सैद्धांतिक क्षति अनुमान को वास्तविक वित्तीय परिणाम के साथ। SCC एक नीति पूर्व क्षति अनुमान है जो कार्बन मूल्य निर्धारण को सूचित करता है; कार्बन कर राजस्व वह है जो कार्बन मूल्य लागू करने से प्राप्त होता है।",
+      "final_explanation": "कार्बन का सामाजिक लागत (SCC) पर्यावरणीय अर्थशास्त्र और हरित राष्ट्रीय लेखांकन में एक केंद्रीय अवधारणा है। यह कार्बन उत्सर्जन से होने वाली सीमांत क्षति का प्रतिनिधित्व करता है — वायुमंडल में एक अतिरिक्त टन CO₂ जोड़ने से होने वाली हानि।\n\n• विकल्प (a) — गलत: SCC एक अतिरिक्त (सीमांत) टन CO₂ से होने वाली क्षति को संदर्भित करता है, न कि सभी ऐतिहासिक उत्सर्जनों से हुई कुल संचयी क्षति को। इसका कालिक दायरा सीमांत और भविष्यसूचक है।\n• विकल्प (b) — सही: SCC एक अतिरिक्त मीट्रिक टन CO₂ उत्सर्जन से होने वाली आर्थिक क्षति का अनुमानित मौद्रिक मूल्य है, जिसमें कृषि, स्वास्थ्य, बाढ़, और पारिस्थितिकी तंत्र पर जलवायु परिवर्तन के प्रभाव शामिल हैं।\n• विकल्प (c) — गलत: कार्बन कर राजस्व वह है जो सरकारें उत्सर्जन मूल्य निर्धारण से एकत्रित करती हैं — एक वास्तविक वित्तीय प्रवाह। SCC एक अनुमानित आर्थिक क्षति है जिसका उपयोग कार्बन मूल्य निर्धारित करने के लिए किया जाता है।\n• विकल्प (d) — गलत: SCC एक क्षति अनुमान है, न कि उत्सर्जन कटौती निवेशों के लागत-लाभ विश्लेषण का।\n\nमूल्य संवर्धन:\n• बाइडेन प्रशासन का अमेरिकी SCC अनुमान लगभग $51 प्रति टन CO₂ था; हाल के अनुमान जो अद्यतन जलवायु मॉडल शामिल करते हैं, $200/टन से अधिक हैं।\n• भारतीय राष्ट्रीय लेखांकन में SCC को शामिल करने से कोयला खनन राज्यों की दिखने वाली आय में काफी कमी आएगी।\n• SCC की गणना में प्रयुक्त छूट दर विवादास्पद है — कम छूट दर उच्च SCC और जलवायु कार्रवाई की अधिक आवश्यकता को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "65f1d98d-25b6-4606-85fe-9fa657840f0c",
+    "meta": {
+      "subject": "Economy",
+      "topic": "National Income Accounting",
+      "sub_topic": "Green GDP and welfare measures",
+      "concepts_used": [
+        "Inclusive Wealth Index (IWI)",
+        "Natural Capital Accounting (NCA)",
+        "Adjusted Net Savings (ANS) / Genuine Savings"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "IWI declining with rising GDP — unsustainability signal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Inclusive Wealth Index (IWI):\n\n1. The Inclusive Wealth Index (IWI) is developed and published jointly by UNEP and IPBES, and a country reporting rising GDP alongside falling IWI is considered to be on an unsustainable development path.\n2. A country's IWI will necessarily be positive whenever its GDP growth rate exceeds its rate of natural capital depletion, because produced capital formation automatically compensates for natural capital losses.\n3. Unlike GDP, which can rise due to resource extraction revenues, IWI treats the same extraction event as a capital reclassification — the natural capital stock falls while produced or financial capital rises — leaving total wealth unchanged only if reinvested.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Inclusive Wealth Index (IWI) is developed and published jointly by UNEP and IPBES, and a country reporting rising GDP alongside falling IWI is considered to be on an unsustainable development path.",
+          "verdict": "Correct",
+          "reason": "IWI is a UNEP/IPBES product, and the defining insight of IWI is precisely this: GDP can rise while total wealth (produced + human + natural capital) falls, indicating capital liquidation rather than genuine development — an unsustainable path."
+        },
+        {
+          "statement": "A country's IWI will necessarily be positive whenever its GDP growth rate exceeds its rate of natural capital depletion, because produced capital formation automatically compensates for natural capital losses.",
+          "verdict": "Incorrect",
+          "reason": "IWI changes depend on the net change across all three capital components. Even if GDP grows faster than natural capital depletion, inadequate human capital investment or large produced capital depreciation could still result in falling IWI — there is no automatic compensation."
+        },
+        {
+          "statement": "Unlike GDP, which can rise due to resource extraction revenues, IWI treats the same extraction event as a capital reclassification — the natural capital stock falls while produced or financial capital rises — leaving total wealth unchanged only if reinvested.",
+          "verdict": "Correct",
+          "reason": "This is the core logic of sustainable resource management in IWI: extracting natural capital converts it to produced or financial capital. Total IWI is unchanged only if proceeds are reinvested in other capital forms — echoing the Hartwick Rule."
+        }
+      ],
+      "strong_distractor": "b — Students may identify Statement 3 as NOT correct, misunderstanding the capital reclassification concept as an accounting identity that always holds, rather than seeing it as conditional on reinvestment.",
+      "elimination_logic": [
+        "Evaluate Statement 2: The claim that 'produced capital formation automatically compensates' is a scope-extension error — IWI does not assume automatic compensation. Human capital changes and produced capital depreciation are independent. Statement 2 is NOT correct.",
+        "Evaluate Statement 1: UNEP/IPBES publish IWI; rising GDP with falling IWI signals unsustainability. Both facts are accurate. Statement 1 is correct.",
+        "Evaluate Statement 3: The capital reclassification logic is correctly stated — extraction converts natural capital to other forms, but only reinvestment maintains total IWI. Statement 3 is correct.",
+        "Only Statement 2 is NOT correct — select option (a): 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the 'automatic compensation' fallacy. Students who know that sustainable resource use involves reinvesting resource rents (Hartwick Rule) may infer that produced capital formation automatically compensates for natural capital loss. But IWI does not assume this — human capital can also decline (poor education, health outcomes), and produced capital depreciates rapidly. The 'automatically compensates' phrase is the scope-extension that makes Statement 2 incorrect.",
+      "final_explanation": "IWI's power as a sustainability indicator lies in its ability to reveal when GDP growth is financed by drawing down the total capital base rather than generating genuine new wealth.\n\n• Statement 1 — Correct: UNEP and IPBES publish IWI through the Inclusive Wealth Report. The GDP-rising, IWI-falling pattern is the definitive signal of unsustainable development.\n• Statement 2 — NOT Correct: Produced capital formation does not automatically offset natural capital depletion in IWI. Human capital must also be maintained; produced capital depreciates; and the three components are not interchangeable without deliberate reinvestment decisions. The 'automatic compensation' claim is wrong.\n• Statement 3 — Correct: IWI treats resource extraction as capital reclassification — natural capital converts to produced or financial capital. Total wealth is maintained only if extraction proceeds are reinvested (the Hartwick Rule logic).\n\nValue Addition:\n• India's natural capital per capita has been declining in IWI reports despite strong GDP growth — a key policy concern.\n• Hartwick Rule: invest all resource rents in produced capital to maintain constant total wealth — the theoretical basis for Statement 3's logic.\n• IWI's three components: Produced capital (machines, infrastructure), Human capital (education, health), Natural capital (forests, minerals, water, fisheries)."
+    },
+    "hi": {
+      "display_text": "Inclusive Wealth Index (IWI) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Inclusive Wealth Index (IWI) संयुक्त रूप से UNEP और IPBES द्वारा विकसित और प्रकाशित किया जाता है, और यदि किसी देश में GDP बढ़ रहा हो जबकि IWI घट रहा हो, तो उसे अस्थायी विकास पथ पर माना जाता है।\n2. जब भी किसी देश की GDP वृद्धि दर उसकी प्राकृतिक पूंजी की ह्रास दर से अधिक होती है, तो उसका IWI अनिवार्य रूप से सकारात्मक होगा, क्योंकि उत्पादित पूंजी निर्माण स्वचालित रूप से प्राकृतिक पूंजी के नुकसान की भरपाई करता है।\n3. GDP के विपरीत, जो संसाधन निष्कर्षण से होने वाली आय के कारण बढ़ सकता है, IWI उसी निष्कर्षण घटना को पूंजी पुनर्वर्गीकरण के रूप में देखता है — प्राकृतिक पूंजी का भंडार घटता है जबकि उत्पादित या वित्तीय पूंजी बढ़ती है — कुल संपत्ति केवल तभी अपरिवर्तित रहती है जब पुनर्निवेश किया जाए।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2\n(b) 1 और 2 केवल\n(c) 2 और 3 केवल\n(d) केवल 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Inclusive Wealth Index (IWI) is developed and published jointly by UNEP and IPBES, and a country reporting rising GDP alongside falling IWI is considered to be on an unsustainable development path.",
+          "verdict": "Correct",
+          "reason": "IWI is a UNEP/IPBES product, and the defining insight of IWI is precisely this: GDP can rise while total wealth (produced + human + natural capital) falls, indicating capital liquidation rather than genuine development — an unsustainable path."
+        },
+        {
+          "statement": "A country's IWI will necessarily be positive whenever its GDP growth rate exceeds its rate of natural capital depletion, because produced capital formation automatically compensates for natural capital losses.",
+          "verdict": "Incorrect",
+          "reason": "IWI changes depend on the net change across all three capital components. Even if GDP grows faster than natural capital depletion, inadequate human capital investment or large produced capital depreciation could still result in falling IWI — there is no automatic compensation."
+        },
+        {
+          "statement": "Unlike GDP, which can rise due to resource extraction revenues, IWI treats the same extraction event as a capital reclassification — the natural capital stock falls while produced or financial capital rises — leaving total wealth unchanged only if reinvested.",
+          "verdict": "Correct",
+          "reason": "This is the core logic of sustainable resource management in IWI: extracting natural capital converts it to produced or financial capital. Total IWI is unchanged only if proceeds are reinvested in other capital forms — echoing the Hartwick Rule."
+        }
+      ],
+      "strong_distractor": "b — Students may identify Statement 3 as NOT correct, misunderstanding the capital reclassification concept as an accounting identity that always holds, rather than seeing it as conditional on reinvestment.",
+      "elimination_logic": [
+        "Evaluate Statement 2: The claim that 'produced capital formation automatically compensates' is a scope-extension error — IWI does not assume automatic compensation. Human capital changes and produced capital depreciation are independent. Statement 2 is NOT correct.",
+        "Evaluate Statement 1: UNEP/IPBES publish IWI; rising GDP with falling IWI signals unsustainability. Both facts are accurate. Statement 1 is correct.",
+        "Evaluate Statement 3: The capital reclassification logic is correctly stated — extraction converts natural capital to other forms, but only reinvestment maintains total IWI. Statement 3 is correct.",
+        "Only Statement 2 is NOT correct — select option (a): 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is the 'automatic compensation' fallacy. Students who know that sustainable resource use involves reinvesting resource rents (Hartwick Rule) may infer that produced capital formation automatically compensates for natural capital loss. But IWI does not assume this — human capital can also decline (poor education, health outcomes), and produced capital depreciates rapidly. The 'automatically compensates' phrase is the scope-extension that makes Statement 2 incorrect.",
+      "final_explanation": "IWI's power as a sustainability indicator lies in its ability to reveal when GDP growth is financed by drawing down the total capital base rather than generating genuine new wealth.\n\n• Statement 1 — Correct: UNEP and IPBES publish IWI through the Inclusive Wealth Report. The GDP-rising, IWI-falling pattern is the definitive signal of unsustainable development.\n• Statement 2 — NOT Correct: Produced capital formation does not automatically offset natural capital depletion in IWI. Human capital must also be maintained; produced capital depreciates; and the three components are not interchangeable without deliberate reinvestment decisions. The 'automatic compensation' claim is wrong.\n• Statement 3 — Correct: IWI treats resource extraction as capital reclassification — natural capital converts to produced or financial capital. Total wealth is maintained only if extraction proceeds are reinvested (the Hartwick Rule logic).\n\nValue Addition:\n• India's natural capital per capita has been declining in IWI reports despite strong GDP growth — a key policy concern.\n• Hartwick Rule: invest all resource rents in produced capital to maintain constant total wealth — the theoretical basis for Statement 3's logic.\n• IWI's three components: Produced capital (machines, infrastructure), Human capital (education, health), Natural capital (forests, minerals, water, fisheries)."
+    }
+  }
+]

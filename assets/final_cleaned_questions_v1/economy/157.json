@@ -1,0 +1,1336 @@
+[
+  {
+    "uuid": "c2104aa8-b676-4462-8285-b14b0c9c5466",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Foundational Identity and Classification of Brookings Institution"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Brookings as non-partisan think tank vs. intergovernmental body",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following most accurately describes the institutional character of the Brookings Institution?\n\n(a) A statutory body established under US federal legislation to advise the executive branch on economic policy\n(b) A non-partisan, non-profit public policy research organization registered as a tax-exempt entity under US law\n(c) An intergovernmental research affiliate jointly sponsored by the United Nations and the World Bank\n(d) A political advocacy organization that channels private donor interests into legislative lobbying",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because Brookings frequently collaborates with World Bank researchers and its outputs are cited in multilateral forums, making a UN or intergovernmental affiliation seem plausible.",
+      "elimination_logic": [
+        "Eliminate option (a): Brookings is not a statutory body created by any government legislation; it is a private non-profit organization.",
+        "Eliminate option (c): Despite frequent collaboration with multilateral bodies, Brookings has no formal affiliation with the United Nations system or the World Bank group.",
+        "Eliminate option (d): Brookings is explicitly non-partisan — it does not advocate for any political party or ideology, distinguishing it from lobbying or advocacy organizations.",
+        "Confirm option (b): Brookings is a non-profit, non-partisan public policy research organization classified under US law as a 501(c)(3) tax-exempt entity."
+      ],
+      "upsc_trap_explanation": "Students who have encountered Brookings only in the context of IMF or World Bank policy discussions often assume it must be affiliated with an intergovernmental body. The trap here conflates frequent collaboration with formal institutional membership. Brookings operates entirely as a private non-profit, and its 501(c)(3) status specifically prohibits it from engaging in political advocacy — a key distinction from lobbying organizations that superficially resemble think tanks.",
+      "final_explanation": "The Brookings Institution is a private, non-partisan, non-profit public policy think tank headquartered in Washington D.C. It is legally registered under Section 501(c)(3) of the US Internal Revenue Code, which grants tax-exempt status to organizations serving public purposes without engaging in political advocacy.\n\n• Option (a): Incorrect. Brookings was not created by any government statute; it evolved from private organizational mergers and is governed by an independent Board of Trustees.\n• Option (b): Correct. It is a non-partisan, non-profit public policy research organization — this precisely captures its legal and operational identity.\n• Option (c): Incorrect. Brookings has no formal affiliation with the UN system, World Bank, or any intergovernmental organization, though its research is widely cited by such bodies.\n• Option (d): Incorrect. Brookings explicitly distinguishes itself from advocacy or lobbying organizations; its 501(c)(3) status legally restricts partisan political activity.\n\nValue Addition:\n• 501(c)(3) status means Brookings cannot endorse candidates or make political contributions — this legally enforces its non-partisan character.\n• Think tanks differ from advocacy organizations in that they produce research for informing policy rather than campaigning for specific outcomes.\n• The UPSC frequently tests this distinction when asking about the institutional character of international research bodies."
+    },
+    "hi": {
+      "display_text": "ब्रुकिंग्स संस्थान के संस्थागत चरित्र का सबसे सटीक वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) अमेरिकी संघीय कानून के तहत स्थापित एक वैधानिक निकाय जो कार्यकारी शाखा को आर्थिक नीति पर सलाह देता है\n(b) एक गैर-पक्षपाती, गैर-लाभकारी सार्वजनिक नीति अनुसंधान संगठन जो अमेरिकी कानून के तहत कर-मुक्त इकाई के रूप में पंजीकृत है\n(c) संयुक्त राष्ट्र और विश्व बैंक द्वारा संयुक्त रूप से प्रायोजित एक अंतरसरकारी अनुसंधान सहयोगी\n(d) एक राजनीतिक वकालत संगठन जो निजी दाताओं के हितों को विधायी लॉबिंग में परिवर्तित करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रामक है क्योंकि ब्रुकिंग्स अक्सर विश्व बैंक के शोधकर्ताओं के साथ सहयोग करता है और इसके निष्कर्ष बहुपक्षीय मंचों में उद्धृत होते हैं, जिससे यह संयुक्त राष्ट्र या अंतरसरकारी निकाय से संबद्ध प्रतीत होता है।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: ब्रुकिंग्स कोई सरकारी विधि द्वारा स्थापित वैधानिक निकाय नहीं है; यह एक निजी गैर-लाभकारी संगठन है।",
+        "विकल्प (c) को खारिज करें: बहुपक्षीय निकायों के साथ बार-बार सहयोग के बावजूद, ब्रुकिंग्स का संयुक्त राष्ट्र प्रणाली या विश्व बैंक समूह के साथ कोई औपचारिक संबद्धता नहीं है।",
+        "विकल्प (d) को खारिज करें: ब्रुकिंग्स स्पष्ट रूप से गैर-पक्षपाती है — यह किसी भी राजनीतिक पार्टी या विचारधारा के लिए वकालत नहीं करता, जो इसे लॉबिंग या वकालत संगठनों से अलग करता है।",
+        "विकल्प (b) की पुष्टि करें: ब्रुकिंग्स एक गैर-लाभकारी, गैर-पक्षपाती सार्वजनिक नीति अनुसंधान संगठन है जिसे अमेरिकी कानून के तहत 501(c)(3) कर-मुक्त इकाई के रूप में वर्गीकृत किया गया है।"
+      ],
+      "upsc_trap_explanation": "छात्र जो ब्रुकिंग्स को केवल IMF या विश्व बैंक की नीति चर्चाओं के संदर्भ में जानते हैं, अक्सर मान लेते हैं कि यह किसी अंतरसरकारी निकाय से संबद्ध होगा। यहाँ का जाल बार-बार सहयोग को औपचारिक संस्थागत सदस्यता के साथ भ्रमित करता है। ब्रुकिंग्स पूरी तरह से एक निजी गैर-लाभकारी संस्था के रूप में कार्य करता है, और इसका 501(c)(3) दर्जा इसे राजनीतिक वकालत में संलग्न होने से विशेष रूप से रोकता है — जो लॉबिंग संगठनों से इसका एक महत्वपूर्ण भेद है जो सतही रूप से थिंक टैंकों जैसे दिखते हैं।",
+      "final_explanation": "ब्रुकिंग्स संस्थान एक निजी, गैर-पक्षपाती, गैर-लाभकारी सार्वजनिक नीति थिंक टैंक है जिसका मुख्यालय वाशिंगटन डी.सी. में है। यह अमेरिकी आंतरिक राजस्व संहिता की धारा 501(c)(3) के तहत कानूनी रूप से पंजीकृत है, जो राजनीतिक वकालत में संलग्न हुए बिना सार्वजनिक उद्देश्यों की सेवा करने वाले संगठनों को कर-मुक्त स्थिति प्रदान करता है।\n\n• विकल्प (a): गलत। ब्रुकिंग्स किसी सरकारी विधि द्वारा स्थापित नहीं है; यह निजी संगठनात्मक विलय से विकसित हुआ है और स्वतंत्र ट्रस्टी बोर्ड द्वारा शासित है।\n• विकल्प (b): सही। यह एक गैर-पक्षपाती, गैर-लाभकारी सार्वजनिक नीति अनुसंधान संगठन है — जो इसके कानूनी और परिचालन पहचान को सटीक रूप से दर्शाता है।\n• विकल्प (c): गलत। ब्रुकिंग्स का संयुक्त राष्ट्र प्रणाली, विश्व बैंक या किसी भी अंतरसरकारी संगठन के साथ कोई औपचारिक संबद्धता नहीं है, हालांकि इसके शोध का व्यापक रूप से ऐसे निकायों द्वारा उल्लेख किया जाता है।\n• विकल्प (d): गलत। ब्रुकिंग्स स्पष्ट रूप से वकालत या लॉबिंग संगठनों से अलग है; इसका 501(c)(3) दर्जा पक्षपाती राजनीतिक गतिविधि को कानूनी रूप से प्रतिबंधित करता है।\n\nमूल्य संवर्धन:\n• 501(c)(3) दर्जा का अर्थ है कि ब्रुकिंग्स उम्मीदवारों का समर्थन नहीं कर सकता या राजनीतिक योगदान नहीं दे सकता — यह कानूनी रूप से इसके गैर-पक्षपाती चरित्र को लागू करता है।\n• थिंक टैंक वकालत संगठनों से इस आधार पर भिन्न होते हैं कि वे नीति सूचित करने के लिए शोध करते हैं, न कि विशिष्ट परिणामों के लिए अभियान चलाने के लिए।\n• UPSC अक्सर इस भेद को अंतरराष्ट्रीय अनुसंधान निकायों के संस्थागत चरित्र के बारे में प्रश्न पूछते समय परखता है।"
+    }
+  },
+  {
+    "uuid": "fc4a7510-cace-49a4-a0bb-f8c58e57dcf6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Historical Origin and Evolution of Brookings Institution"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Brookings founding history 1916 and 1927",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the historical origins of the Brookings Institution:\n\n1. The Institute for Government Research, founded in 1916, was the first private organization in the United States dedicated to analyzing public policy.\n2. The Brookings Institution in its current form was created in 1916 when Robert S. Brookings merged three separate research organizations.\n3. Over the twentieth century, Brookings expanded its focus from exclusively domestic US policy matters to encompass global policy research.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Institute for Government Research, founded in 1916, was the first private organization in the United States dedicated to analyzing public policy.",
+          "verdict": "Correct",
+          "reason": "The Institute for Government Research was indeed founded in 1916 and holds the distinction of being the first private organization in the US devoted to public policy analysis."
+        },
+        {
+          "statement": "The Brookings Institution in its current form was created in 1916 when Robert S. Brookings merged three separate research organizations.",
+          "verdict": "Incorrect",
+          "reason": "The merger that created the Brookings Institution occurred in 1927, not 1916. Robert S. Brookings merged the Institute for Government Research (1916), the Institute of Economics (1922), and the Robert Brookings Graduate School to form Brookings Institution in 1927."
+        },
+        {
+          "statement": "Over the twentieth century, Brookings expanded its focus from exclusively domestic US policy matters to encompass global policy research.",
+          "verdict": "Correct",
+          "reason": "Brookings began with a domestic US policy focus and progressively broadened to international and global development research, eventually establishing centers in India and Qatar."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) tempts students who correctly identify statements 1 and 3 but do not recall that the formal merger creating 'Brookings Institution' happened in 1927, not 1916.",
+      "elimination_logic": [
+        "Statement 1 is correct: 1916 is the founding year of the Institute for Government Research, the precursor and first private US public policy body.",
+        "Statement 2 is incorrect: The Brookings Institution was formally constituted in 1927, not 1916 — 1916 is the founding year of just one of the three merged organizations.",
+        "Statement 3 is correct: Brookings' evolution from domestic to global research scope over the 20th century is well-documented through its international centers.",
+        "Since statements 1 and 3 are correct and statement 2 is incorrect, the answer is option (c)."
+      ],
+      "upsc_trap_explanation": "The year 1916 is memorable because it marks the origin of the earliest precursor body. Students often conflate this with the founding of the Brookings Institution itself, which did not formally come into existence until 1927. This temporal-swap trap is particularly effective because 1916 is genuinely associated with Brookings' institutional history — it is not a fabricated date — making the distractor factually grounded but contextually misplaced.",
+      "final_explanation": "The Brookings Institution's founding history involves two distinct milestones separated by over a decade. The Institute for Government Research, established in 1916, was the pioneer — the first private body in the US dedicated to public policy analysis. Robert S. Brookings later facilitated the merger of three organizations (the Institute for Government Research, the Institute of Economics, and the Robert Brookings Graduate School) to create the Brookings Institution in 1927.\n\n• Statement 1 — Correct: The 1916 founding of the Institute for Government Research as the first private US public policy body is historically accurate.\n• Statement 2 — Incorrect: The formation of Brookings Institution by merger occurred in 1927, not 1916. Conflating the two dates is the core trap.\n• Statement 3 — Correct: Brookings progressively shifted from domestic US focus to global research, evidenced by centers in India (2013) and Qatar.\n\nValue Addition:\n• The Council on Foreign Relations (CFR), another major US think tank, was also founded in 1921 — contemporaneous with Brookings' evolution period.\n• Robert S. Brookings was a businessman and philanthropist, not an academic — this shaped the institution's applied, policy-oriented character.\n• Brookings' expansion to New Delhi (2013) marked its first major developing-world presence."
+    },
+    "hi": {
+      "display_text": "Brookings Institution के ऐतिहासिक मूल के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Institute for Government Research, जिसकी स्थापना 1916 में हुई थी, संयुक्त राज्य अमेरिका में सार्वजनिक नीति विश्लेषण के लिए समर्पित पहली निजी संस्था थी।\n2. वर्तमान रूप में Brookings Institution की स्थापना 1916 में हुई थी जब Robert S. Brookings ने तीन अलग-अलग अनुसंधान संस्थाओं का विलय किया था।\n3. बीसवीं सदी के दौरान, Brookings ने केवल घरेलू अमेरिकी नीति मामलों से अपने ध्यान को बढ़ाकर वैश्विक नीति अनुसंधान तक विस्तारित किया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Institute for Government Research, founded in 1916, was the first private organization in the United States dedicated to analyzing public policy.",
+          "verdict": "सही है",
+          "reason": "Institute for Government Research वास्तव में 1916 में स्थापित हुआ था और यह अमेरिका में सार्वजनिक नीति विश्लेषण के लिए समर्पित पहली निजी संस्था होने का गौरव रखता है।"
+        },
+        {
+          "statement": "The Brookings Institution in its current form was created in 1916 when Robert S. Brookings merged three separate research organizations.",
+          "verdict": "गलत है",
+          "reason": "Brookings Institution का गठन 1927 में हुआ था, न कि 1916 में। Robert S. Brookings ने 1927 में Institute for Government Research (1916), Institute of Economics (1922), और Robert Brookings Graduate School को मिलाकर Brookings Institution बनाया था।"
+        },
+        {
+          "statement": "Over the twentieth century, Brookings expanded its focus from exclusively domestic US policy matters to encompass global policy research.",
+          "verdict": "सही है",
+          "reason": "Brookings ने शुरुआत में केवल घरेलू अमेरिकी नीति पर ध्यान केंद्रित किया और बाद में इसे अंतरराष्ट्रीय और वैश्विक विकास अनुसंधान तक विस्तारित किया, अंततः भारत और कतर में केंद्र स्थापित किए।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) उन छात्रों को भ्रमित करता है जो कथन 1 और 3 को सही पहचानते हैं लेकिन यह याद नहीं रखते कि 'Brookings Institution' का औपचारिक विलय 1927 में हुआ था, न कि 1916 में।",
+      "elimination_logic": [
+        "कथन 1 सही है: 1916 Institute for Government Research की स्थापना का वर्ष है, जो अमेरिका की पहली निजी सार्वजनिक नीति संस्था थी।",
+        "कथन 2 गलत है: Brookings Institution का औपचारिक गठन 1927 में हुआ था, न कि 1916 में — 1916 केवल तीन विलयित संस्थाओं में से एक की स्थापना का वर्ष है।",
+        "कथन 3 सही है: 20वीं सदी में Brookings ने घरेलू से वैश्विक अनुसंधान क्षेत्र में विस्तार किया है, जो इसके अंतरराष्ट्रीय केंद्रों से प्रमाणित है।",
+        "चूंकि कथन 1 और 3 सही हैं और कथन 2 गलत है, अतः उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "1916 वर्ष इसलिए यादगार है क्योंकि यह सबसे प्रारंभिक पूर्ववर्ती संस्था की उत्पत्ति को दर्शाता है। छात्र अक्सर इसे Brookings Institution की स्थापना के साथ भ्रमित कर देते हैं, जो वास्तव में 1927 में औपचारिक रूप से अस्तित्व में आया था। यह कालानुक्रमिक भ्रम (temporal-swap) जाल प्रभावी है क्योंकि 1916 वास्तव में Brookings के संस्थागत इतिहास से जुड़ा है — यह कोई काल्पनिक तिथि नहीं है — जिससे यह भ्रम तथ्यात्मक रूप से सही लेकिन संदर्भ में गलत है।",
+      "final_explanation": "Brookings Institution के स्थापना इतिहास में दो अलग-अलग महत्वपूर्ण मील के पत्थर हैं जो एक दशक से अधिक अलग हैं। Institute for Government Research, जो 1916 में स्थापित हुआ, वह पहला निजी अमेरिकी सार्वजनिक नीति विश्लेषण संस्था था। बाद में Robert S. Brookings ने तीन संस्थाओं (Institute for Government Research, Institute of Economics, और Robert Brookings Graduate School) का विलय कर 1927 में Brookings Institution का निर्माण किया।\n\n• कथन 1 — सही: 1916 में Institute for Government Research की स्थापना पहली निजी अमेरिकी सार्वजनिक नीति संस्था के रूप में हुई।\n• कथन 2 — गलत: Brookings Institution का गठन विलय के माध्यम से 1927 में हुआ, न कि 1916 में। इन दोनों तिथियों को मिलाना मुख्य जाल है।\n• कथन 3 — सही: Brookings ने धीरे-धीरे घरेलू अमेरिकी फोकस से वैश्विक अनुसंधान की ओर रुख किया, जिसका प्रमाण भारत (2013) और कतर में केंद्र हैं।\n\nमूल्यवर्धन:\n• Council on Foreign Relations (CFR), एक अन्य प्रमुख अमेरिकी थिंक टैंक, 1921 में स्थापित हुआ — जो Brookings के विकास काल के समकालीन है।\n• Robert S. Brookings एक व्यवसायी और परोपकारी थे, अकादमिक नहीं — जिसने संस्था के व्यावहारिक, नीति-केंद्रित चरित्र को आकार दिया।\n• Brookings का नई दिल्ली (2013) में विस्तार इसके विकासशील विश्व में पहले बड़े उपस्थिति को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "6a86fb89-7cdf-4ad7-99b6-92cb69f08946",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings India: Establishment, Mandate, and Current Status",
+        "Centre for Social and Economic Progress (CSEP): Post-Brookings India Trajectory"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Brookings India renamed CSEP in 2020",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Brookings India, the New Delhi-based affiliate of the Brookings Institution established in 2013, was restructured and rebranded as the Centre for Social and Economic Progress (CSEP) in ________, partly in response to India's evolving regulatory framework governing foreign-affiliated non-governmental organizations.\n\n(a) 2018\n(b) 2020\n(c) 2022\n(d) 2016",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a tempts students who know the rebranding occurred but conflate the year with 2013 (when Brookings India was established) or 2019 (when Brookings-Tsinghua closed), placing the CSEP transition at a different point.",
+      "elimination_logic": [
+        "Eliminate option (a): 2018 predates the regulatory pressure that culminated in the rebranding; FCRA amendment concerns intensified after 2019.",
+        "Eliminate option (c): 2022 is after the actual transition; by 2022, CSEP was already operational as an independent body.",
+        "Eliminate option (d): 2016 is far too early; Brookings India had only been established three years prior and had not yet faced the regulatory environment that triggered rebranding.",
+        "Confirm option (b): Brookings India was renamed and restructured as the Centre for Social and Economic Progress (CSEP) in 2020."
+      ],
+      "upsc_trap_explanation": "This question exploits date confusion among a cluster of Brookings-related milestones: 2013 (Brookings India established), 2016 (NY Times funding controversy), 2019 (Brookings-Tsinghua closed), 2020 (CSEP rebranding). Students who recall the CSEP transition without precise year recall are likely to oscillate between 2018 and 2022, both of which are plausible given the FCRA regulatory environment narrative.",
+      "final_explanation": "Brookings India, established in New Delhi in 2013 as an affiliate of the US-based Brookings Institution, was rebranded as the Centre for Social and Economic Progress (CSEP) in 2020. This transition was driven by India's evolving regulatory environment — particularly concerns about FCRA compliance for organizations bearing foreign institutional branding.\n\n• Option (a) — 2018: Incorrect. The rebranding had not yet occurred; Brookings India continued under its original name until 2020.\n• Option (b) — 2020: Correct. CSEP was formally constituted as a fully independent Indian institution in 2020.\n• Option (c) — 2022: Incorrect. CSEP was already independently operational by this point.\n• Option (d) — 2016: Incorrect. This predates the regulatory pressures that necessitated the transition by several years.\n\nValue Addition:\n• CSEP's founding leadership included Yamini Aiyar as President, providing policy credibility continuity.\n• CSEP's research agenda covers macroeconomic policy, state capacity, social policy, and India's global economic positioning.\n• The FCRA Amendment of 2020 tightened restrictions on foreign-funded organizations in India, creating the immediate regulatory context for CSEP's independent establishment."
+    },
+    "hi": {
+      "display_text": "Brookings India, जो 2013 में स्थापित न्यू दिल्ली स्थित Brookings Institution की सहायक संस्था है, को भारत में विदेशी-संबद्ध गैर-सरकारी संगठनों के लिए विकसित हो रहे नियामक ढांचे के जवाब में आंशिक रूप से ________ में Centre for Social and Economic Progress (CSEP) के रूप में पुनर्गठित और पुनःब्रांड किया गया।\n\n(a) 2018\n(b) 2020\n(c) 2022\n(d) 2016",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a उन छात्रों को लुभाता है जो जानते हैं कि पुनःब्रांडिंग हुई थी लेकिन वर्ष को 2013 (जब Brookings India स्थापित हुआ था) या 2019 (जब Brookings-Tsinghua बंद हुआ) के साथ भ्रमित कर देते हैं, जिससे CSEP संक्रमण को किसी अन्य समय पर रख देते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 2018 उस नियामक दबाव से पहले का है जो पुनःब्रांडिंग में परिणत हुआ; FCRA संशोधन की चिंताएँ 2019 के बाद तीव्र हुईं।",
+        "विकल्प (c) को हटाएं: 2022 वास्तविक संक्रमण के बाद का है; 2022 तक CSEP स्वतंत्र संस्था के रूप में पहले से ही कार्यरत था।",
+        "विकल्प (d) को हटाएं: 2016 बहुत पहले का है; Brookings India केवल तीन वर्ष पहले स्थापित हुआ था और उस समय पुनःब्रांडिंग के लिए आवश्यक नियामक वातावरण का सामना नहीं किया था।",
+        "विकल्प (b) की पुष्टि करें: Brookings India का नाम बदलकर और पुनर्गठित कर 2020 में Centre for Social and Economic Progress (CSEP) बनाया गया।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न Brookings से संबंधित कई महत्वपूर्ण तिथियों के बीच भ्रम का लाभ उठाता है: 2013 (Brookings India की स्थापना), 2016 (NY Times फंडिंग विवाद), 2019 (Brookings-Tsinghua बंद), 2020 (CSEP पुनःब्रांडिंग)। जो छात्र CSEP संक्रमण को याद करते हैं लेकिन वर्ष ठीक से याद नहीं रखते, वे 2018 और 2022 के बीच झूल सकते हैं, जो FCRA नियामक वातावरण की कथा के अनुसार दोनों संभावित हैं।",
+      "final_explanation": "Brookings India, जो 2013 में न्यू दिल्ली में US-आधारित Brookings Institution की सहायक संस्था के रूप में स्थापित हुआ था, को 2020 में Centre for Social and Economic Progress (CSEP) के रूप में पुनःब्रांड और पुनर्गठित किया गया। यह परिवर्तन भारत के विकसित हो रहे नियामक वातावरण — विशेष रूप से विदेशी संस्थागत ब्रांडिंग वाली संस्थाओं के लिए FCRA अनुपालन की चिंताओं — के कारण हुआ।\n\n• विकल्प (a) — 2018: गलत। पुनःब्रांडिंग तब तक नहीं हुई थी; Brookings India अपने मूल नाम के तहत 2020 तक जारी रहा।\n• विकल्प (b) — 2020: सही। CSEP को 2020 में पूरी तरह स्वतंत्र भारतीय संस्था के रूप में औपचारिक रूप से स्थापित किया गया।\n• विकल्प (c) — 2022: गलत। इस समय तक CSEP पहले से स्वतंत्र रूप से कार्यरत था।\n• विकल्प (d) — 2016: गलत। यह उस नियामक दबाव से कई वर्ष पहले का है जिसने संक्रमण को आवश्यक बनाया।\n\nमूल्य संवर्धन:\n• CSEP के संस्थापक नेतृत्व में यामिनी अय्यर अध्यक्ष थीं, जो नीति विश्वसनीयता की निरंतरता प्रदान करती हैं।\n• CSEP का अनुसंधान एजेंडा मैक्रोइकॉनॉमिक नीति, राज्य क्षमता, सामाजिक नीति, और भारत की वैश्विक आर्थिक स्थिति को कवर करता है।\n• 2020 के FCRA संशोधन ने भारत में विदेशी वित्त पोषित संगठनों पर प्रतिबंध कड़े किए, जो CSEP की स्वतंत्र स्थापना के लिए तत्काल नियामक संदर्भ बना।"
+    }
+  },
+  {
+    "uuid": "18f83e94-9f39-4fc4-b31c-5e02a5a8109b",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings Institution's Global Think Tank Rankings"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Go To Think Tank Index published by University of Pennsylvania",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Brookings Institution consistently features among the top-ranked think tanks globally, occupying the first or second position in the world's most prominent annual think tank index.\n\nReason (R): This index, which ranks think tanks by policy impact and research quality, is compiled and published by the Brookings Institution itself as part of its outreach mandate.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a attracts students who correctly identify both facts but mistakenly believe that the ranking body publishing the index must be the same institution being ranked, creating a false causal link.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? The Brookings Institution has consistently been ranked among the top think tanks globally, including the #1 or #2 position in the Global Go To Think Tank Index. A is correct.",
+        "Step 2 — Is Reason (R) correct? The Global Go To Think Tank Index is published by the University of Pennsylvania's Think Tanks and Civil Societies Program (TTCSP), NOT by Brookings Institution. R is incorrect.",
+        "Since A is correct but R is incorrect, the answer is option (c)."
+      ],
+      "upsc_trap_explanation": "This question exploits a straightforward but commonly held confusion: students who know Brookings tops the think tank rankings often assume Brookings itself compiles or publishes the ranking, especially since it is the most prominent institution associated with it. The Go To Think Tank Index is, in fact, a product of the University of Pennsylvania's Think Tanks and Civil Societies Program — an entirely separate academic enterprise. Selecting option (a) is the trap for students who know both facts but incorrectly connect them causally.",
+      "final_explanation": "The Global Go To Think Tank Index is the world's most widely cited ranking of policy research organizations. It is published annually by the Think Tanks and Civil Societies Program (TTCSP) at the University of Pennsylvania — not by Brookings or any of the ranked institutions.\n\nAssertion (A): Correct. The Brookings Institution has consistently been ranked #1 or #2 globally in this index, reflecting its research quality, policy impact, and outreach.\n\nReason (R): Incorrect. The index is produced by the University of Pennsylvania's TTCSP. Brookings has no role in publishing or compiling this ranking — attributing it to Brookings is factually wrong.\n\nSince A is correct but R is false, option (c) applies.\n\nValue Addition:\n• The TTCSP at the University of Pennsylvania has published the Go To Think Tank Index since 2008.\n• Ranking criteria include: quality of research, policy impact, funding diversity, media citations, and government engagement.\n• Other top-ranked think tanks include Chatham House (UK), Carnegie Endowment for International Peace (US), and SIPRI (Sweden).\n• In India, CPR (Centre for Policy Research) and ORF frequently appear in regional think tank rankings."
+    },
+    "hi": {
+      "display_text": "कथन (A): ब्रुकिंग्स संस्थान लगातार विश्व के शीर्ष रैंक वाले थिंक टैंकों में शामिल है, जो विश्व के सबसे प्रमुख वार्षिक थिंक टैंक सूचकांक में प्रथम या द्वितीय स्थान पर है।\n\nकारण (R): यह सूचकांक, जो नीति प्रभाव और अनुसंधान गुणवत्ता के आधार पर थिंक टैंकों को रैंक करता है, ब्रुकिंग्स संस्थान द्वारा स्वयं इसके आउटरीच दायित्व के हिस्से के रूप में संकलित और प्रकाशित किया जाता है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a उन छात्रों को आकर्षित करता है जो दोनों तथ्यों को सही ढंग से पहचानते हैं लेकिन गलती से मानते हैं कि सूचकांक प्रकाशित करने वाला रैंकिंग निकाय वही संस्था है जिसे रैंक किया जा रहा है, जिससे एक गलत कारणात्मक संबंध बनता है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? ब्रुकिंग्स संस्थान लगातार विश्व के शीर्ष थिंक टैंकों में रैंक किया गया है, जिसमें ग्लोबल गो टू थिंक टैंक इंडेक्स में #1 या #2 स्थान शामिल है। A सही है।",
+        "चरण 2 — क्या कारण (R) सही है? ग्लोबल गो टू थिंक टैंक इंडेक्स यूनिवर्सिटी ऑफ पेंसिल्वेनिया के थिंक टैंक्स एंड सिविल सोसाइटीज प्रोग्राम (TTCSP) द्वारा प्रकाशित किया जाता है, न कि ब्रुकिंग्स संस्थान द्वारा। R गलत है।",
+        "चूंकि A सही है लेकिन R गलत है, इसलिए उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न एक सरल लेकिन आम भ्रम का उपयोग करता है: जो छात्र जानते हैं कि ब्रुकिंग्स थिंक टैंक रैंकिंग में शीर्ष पर है, वे अक्सर मान लेते हैं कि रैंकिंग स्वयं ब्रुकिंग्स द्वारा संकलित या प्रकाशित की जाती है, खासकर क्योंकि यह सबसे प्रमुख संस्था है जो इससे जुड़ी है। गो टू थिंक टैंक इंडेक्स वास्तव में यूनिवर्सिटी ऑफ पेंसिल्वेनिया के थिंक टैंक्स एंड सिविल सोसाइटीज प्रोग्राम का उत्पाद है — एक पूरी तरह से अलग शैक्षणिक संस्था। विकल्प (a) चुनना उन छात्रों के लिए जाल है जो दोनों तथ्यों को जानते हैं लेकिन उन्हें गलत कारणात्मक रूप से जोड़ते हैं।",
+      "final_explanation": "ग्लोबल गो टू थिंक टैंक इंडेक्स नीति अनुसंधान संगठनों की दुनिया में सबसे व्यापक रूप से उद्धृत रैंकिंग है। इसे वार्षिक रूप से यूनिवर्सिटी ऑफ पेंसिल्वेनिया के थिंक टैंक्स एंड सिविल सोसाइटीज प्रोग्राम (TTCSP) द्वारा प्रकाशित किया जाता है — न कि ब्रुकिंग्स या किसी रैंक की गई संस्था द्वारा।\n\nकथन (A): सही। ब्रुकिंग्स संस्थान इस सूचकांक में लगातार #1 या #2 स्थान पर रहा है, जो इसके अनुसंधान गुणवत्ता, नीति प्रभाव, और पहुंच को दर्शाता है।\n\nकारण (R): गलत। यह सूचकांक यूनिवर्सिटी ऑफ पेंसिल्वेनिया के TTCSP द्वारा तैयार किया जाता है। ब्रुकिंग्स का इस रैंकिंग को प्रकाशित या संकलित करने में कोई भूमिका नहीं है — इसे ब्रुकिंग्स से जोड़ना तथ्यात्मक रूप से गलत है।\n\nचूंकि A सही है लेकिन R गलत है, विकल्प (c) लागू होता है।\n\nमूल्य संवर्धन:\n• यूनिवर्सिटी ऑफ पेंसिल्वेनिया के TTCSP ने 2008 से गो टू थिंक टैंक इंडेक्स प्रकाशित किया है।\n• रैंकिंग मानदंडों में शामिल हैं: अनुसंधान की गुणवत्ता, नीति प्रभाव, वित्त पोषण विविधता, मीडिया उद्धरण, और सरकारी सहभागिता।\n• अन्य शीर्ष रैंक वाले थिंक टैंक में चाथम हाउस (यूके), कार्नेगी एंडोमेंट फॉर इंटरनेशनल पीस (यूएस), और SIPRI (स्वीडन) शामिल हैं।\n• भारत में, CPR (सेंटर फॉर पॉलिसी रिसर्च) और ORF अक्सर क्षेत्रीय थिंक टैंक रैंकिंग में दिखाई देते हैं।"
+    }
+  },
+  {
+    "uuid": "ea4d4ffe-523f-4aa6-a802-e2af79f6fb79",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings Institution vs. Other Major Think Tanks: Key Differentiators"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Think tank ideological and functional differentiation",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Think Tank) with List II (Primary Institutional Character):",
+        "columns": [
+          "List I — Think Tank",
+          "List II — Primary Character"
+        ],
+        "rows": [
+          [
+            "A. Brookings Institution",
+            "1. Contract research primarily for US government and defense agencies"
+          ],
+          [
+            "B. Heritage Foundation",
+            "2. Non-partisan, broad public policy research across multiple domains"
+          ],
+          [
+            "C. RAND Corporation",
+            "3. Conservative ideological orientation; advocates limited government"
+          ],
+          [
+            "D. Carnegie Endowment for International Peace",
+            "4. Independent think tank focused exclusively on international relations"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-3, C-4, D-1\n(b) A-2, B-3, C-1, D-4\n(c) A-4, B-3, C-1, D-2\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because it correctly pairs Brookings (non-partisan/broad) and Heritage Foundation (conservative) but swaps RAND and Carnegie, exploiting the fact that both do international research.",
+      "elimination_logic": [
+        "RAND Corporation is known for conducting contract research primarily for US government and defense clients — eliminating options that pair RAND with 'independent broad-based research.'",
+        "Carnegie Endowment for International Peace focuses specifically on international relations — eliminate options pairing Carnegie with domestic economic or technology policy.",
+        "Heritage Foundation is the US conservative think tank — any option misidentifying its orientation as libertarian should be eliminated (that is Cato Institute).",
+        "Brookings is the non-partisan, broad policy research body — confirm the option that places Brookings at non-partisan/broad, Heritage at conservative, RAND at government contract research, and Carnegie at international relations: option (b)."
+      ],
+      "upsc_trap_explanation": "The conflation trap targets RAND and Carnegie — both are associated with international/security research, making students likely to swap them. RAND's primary identity is as a US government-contract research organization (defense, intelligence, and policy contracts), whereas Carnegie is an independent endowment focused exclusively on international relations. Students who know both names in the context of foreign policy research tend to conflate their institutional models.",
+      "final_explanation": "Distinguishing major US think tanks by functional orientation and ideological character is a frequently tested UPSC dimension.\n\nCorrect pairings:\n• Brookings Institution — Non-partisan, broad public policy research (economic, foreign, governance, urban, climate)\n• Heritage Foundation — Conservative ideological orientation, advocates for free markets and limited government\n• RAND Corporation — Primarily conducts contract research for US government agencies including defense and intelligence\n• Carnegie Endowment for International Peace — Independent think tank focused specifically on international relations and global peace\n\nThe trap pairing is RAND and Carnegie: both appear in foreign policy contexts, but their institutional models differ fundamentally. RAND is contract-driven (government-funded); Carnegie is endowment-funded and fully independent.\n\nValue Addition:\n• Cato Institute (libertarian) is frequently confused with Heritage Foundation (conservative) — both are right-of-center but with distinct ideological underpinnings.\n• Council on Foreign Relations (CFR), unlike Brookings, is a membership organization that produces Foreign Affairs journal.\n• In India, analogous differentiations: NITI Aayog (government body) vs. CPR (independent) vs. ORF (strategic affairs focus)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (थिंक टैंक) को सूची II (प्राथमिक संस्थागत चरित्र) से मिलाइए:",
+        "columns": [
+          "सूची I — थिंक टैंक",
+          "सूची II — प्राथमिक चरित्र"
+        ],
+        "rows": [
+          [
+            "A. Brookings Institution",
+            "1. मुख्य रूप से अमेरिकी सरकार और रक्षा एजेंसियों के लिए अनुबंध अनुसंधान"
+          ],
+          [
+            "B. Heritage Foundation",
+            "2. गैर-पक्षपाती, कई क्षेत्रों में व्यापक सार्वजनिक नीति अनुसंधान"
+          ],
+          [
+            "C. RAND Corporation",
+            "3. रूढ़िवादी वैचारिक अभिविन्यास; सीमित सरकार का समर्थन करता है"
+          ],
+          [
+            "D. Carnegie Endowment for International Peace",
+            "4. स्वतंत्र थिंक टैंक जो विशेष रूप से अंतरराष्ट्रीय संबंधों पर केंद्रित है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-3, C-4, D-1\n(b) A-2, B-3, C-1, D-4\n(c) A-4, B-3, C-1, D-2\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि यह सही ढंग से Brookings (गैर-पक्षपाती/व्यापक) और Heritage Foundation (रूढ़िवादी) को जोड़ता है लेकिन RAND और Carnegie को बदल देता है, यह तथ्य का लाभ उठाता है कि दोनों अंतरराष्ट्रीय अनुसंधान करते हैं।",
+      "elimination_logic": [
+        "RAND Corporation मुख्य रूप से अमेरिकी सरकार और रक्षा ग्राहकों के लिए अनुबंध अनुसंधान करने के लिए जाना जाता है — इसलिए उन विकल्पों को हटा दें जो RAND को 'स्वतंत्र व्यापक अनुसंधान' के साथ जोड़ते हैं।",
+        "Carnegie Endowment for International Peace विशेष रूप से अंतरराष्ट्रीय संबंधों पर केंद्रित है — इसलिए उन विकल्पों को हटा दें जो Carnegie को घरेलू आर्थिक या प्रौद्योगिकी नीति के साथ जोड़ते हैं।",
+        "Heritage Foundation अमेरिकी रूढ़िवादी थिंक टैंक है — कोई भी विकल्प जो इसकी विचारधारा को लिबर्टेरियन बताता है (जैसे Cato Institute), उसे हटा देना चाहिए।",
+        "Brookings गैर-पक्षपाती, व्यापक नीति अनुसंधान संस्था है — उस विकल्प की पुष्टि करें जो Brookings को गैर-पक्षपाती/व्यापक, Heritage को रूढ़िवादी, RAND को सरकारी अनुबंध अनुसंधान, और Carnegie को अंतरराष्ट्रीय संबंधों में रखता है: विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल RAND और Carnegie को लक्षित करता है — दोनों अंतरराष्ट्रीय/सुरक्षा अनुसंधान से जुड़े हैं, जिससे छात्र उन्हें बदलने की संभावना रखते हैं। RAND की मुख्य पहचान अमेरिकी सरकार के अनुबंध अनुसंधान संगठन के रूप में है (रक्षा, खुफिया, और नीति अनुबंध), जबकि Carnegie एक स्वतंत्र निधि है जो विशेष रूप से अंतरराष्ट्रीय संबंधों पर केंद्रित है। जो छात्र दोनों नामों को विदेशी नीति अनुसंधान के संदर्भ में जानते हैं, वे उनके संस्थागत मॉडल को भ्रमित कर देते हैं।",
+      "final_explanation": "प्रमुख अमेरिकी थिंक टैंकों को उनके कार्यात्मक अभिविन्यास और वैचारिक चरित्र के आधार पर अलग करना UPSC में अक्सर परखा जाने वाला आयाम है।\n\nसही जोड़े:\n• Brookings Institution — गैर-पक्षपाती, व्यापक सार्वजनिक नीति अनुसंधान (आर्थिक, विदेशी, शासन, शहरी, जलवायु)\n• Heritage Foundation — रूढ़िवादी वैचारिक अभिविन्यास, मुक्त बाजार और सीमित सरकार का समर्थन करता है\n• RAND Corporation — मुख्य रूप से अमेरिकी सरकारी एजेंसियों के लिए अनुबंध अनुसंधान करता है जिसमें रक्षा और खुफिया शामिल हैं\n• Carnegie Endowment for International Peace — स्वतंत्र थिंक टैंक जो विशेष रूप से अंतरराष्ट्रीय संबंधों और वैश्विक शांति पर केंद्रित है\n\nमिश्रण जाल है RAND और Carnegie का: दोनों विदेशी नीति संदर्भों में आते हैं, लेकिन उनके संस्थागत मॉडल मौलिक रूप से भिन्न हैं। RAND अनुबंध-चालित (सरकारी वित्त पोषित) है; Carnegie निधि-चालित और पूरी तरह स्वतंत्र है।\n\nमूल्य संवर्धन:\n• Cato Institute (लिबर्टेरियन) को अक्सर Heritage Foundation (रूढ़िवादी) के साथ भ्रमित किया जाता है — दोनों दाएं केंद्र हैं लेकिन उनके वैचारिक आधार अलग हैं।\n• Council on Foreign Relations (CFR), Brookings के विपरीत, एक सदस्यता संगठन है जो Foreign Affairs पत्रिका प्रकाशित करता है।\n• भारत में समान भेदभाव: नीति आयोग (सरकारी निकाय) बनाम CPR (स्वतंत्र) बनाम ORF (रणनीतिक मामलों पर केंद्रित)।"
+    }
+  },
+  {
+    "uuid": "8049520f-b40c-4d9e-ab58-f449c1b0bd8e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Funding Model, Donor Base, and Neutrality Concerns",
+        "Academic-Policy Interface: How Brookings Influences Policymaking"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Think tank ethics: research influence vs. lobbying distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A prominent non-profit public policy research organization headquartered in a national capital receives substantial funding from major corporations operating in the energy sector. Over three years, the organization publishes multiple research papers recommending market-led approaches to energy transition while underemphasizing regulatory mandates. A journalist investigation reveals correlations between donor contributions and research conclusions, though no direct editorial instructions from donors are found. Which of the following most precisely describes the ethical concern raised by this situation?\n\n(a) Compromise of research independence through donor-aligned funding — the academic freedom debate specific to think tanks\n(b) Institutional lobbying using the cover of non-profit research status to circumvent lobbying disclosure requirements\n(c) Violation of 501(c)(3) tax-exempt conditions that prohibit any form of policy influence by tax-exempt organizations\n(d) An unlawful conflict of interest that should be prosecuted under anti-corruption statutes applicable to advisory bodies",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because the revolving door phenomenon is real and well-documented at Brookings, making the 'institutional lobbying' characterization feel accurate to students who associate policy influence with lobbying.",
+      "elimination_logic": [
+        "Identify the core tension: the scenario describes a think tank receiving corporate funding and producing research that aligns with donor interests — the question is whether this constitutes 'lobbying' or compromised but still legitimate research.",
+        "Eliminate option (b): The revolving door describes individual career movements, not the institutional funding-research nexus described in the scenario.",
+        "Eliminate option (c): 501(c)(3) status prohibits direct political campaigning, not merely having donor-aligned research outputs — the restriction is more specific than a blanket prohibition on policy influence.",
+        "Eliminate option (d): Think tanks can constitutionally produce policy-aligned research; the issue is disclosure and transparency, not legal prohibition.",
+        "Confirm option (a): The academic freedom debate in think tanks centers on whether donor funding compromises research independence — this is the precise ethical concern raised by the 2016 New York Times investigation into Brookings."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The ethical integrity of think tanks rests on the independence of their research outputs from donor preferences. When a think tank receives substantial funding from corporations or governments and subsequently produces research favorable to those funders, it raises questions about whether the institution is functioning as a genuine research body or as a sophisticated vehicle for laundering donor interests into credible-sounding policy recommendations.\n\nThe scenario describes the core tension investigated in the 2016 New York Times exposé on Brookings — where donor-aligned research outputs raised questions about academic independence without crossing the legal threshold of lobbying.\n\n• Option (a): Correct. This is the academic freedom and research independence debate specific to think tanks — the most precise framing of the ethical concern.\n• Option (b): Incorrect. The revolving door refers to personnel movement between think tanks and government, a distinct phenomenon from donor-funded research alignment.\n• Option (c): Incorrect. 501(c)(3) restrictions prohibit partisan political activity, not policy-aligned research outputs.\n• Option (d): Incorrect. Producing policy-aligned research is not legally prohibited; the issue is ethical transparency and disclosure.\n\nValue Addition:\n• Brookings responded to the 2016 controversy by enhancing its donor disclosure mechanisms in annual reports.\n• FCRA in India serves a partially analogous function — regulating foreign money entering Indian civil society organizations.\n• The distinction between 'research influence' and 'lobbying' is critical for India's debate on formalizing think tank roles in policymaking."
+    },
+    "hi": {
+      "display_text": "राष्ट्रीय राजधानी में मुख्यालय वाले एक प्रमुख गैर-लाभकारी सार्वजनिक नीति अनुसंधान संगठन को ऊर्जा क्षेत्र में काम करने वाली प्रमुख कंपनियों से पर्याप्त फंडिंग प्राप्त होती है। तीन वर्षों में, संगठन कई अनुसंधान पत्र प्रकाशित करता है जो ऊर्जा संक्रमण के लिए बाजार-आधारित दृष्टिकोणों की सिफारिश करते हैं जबकि नियामक आदेशों को कम महत्व देते हैं। एक पत्रकार जांच में दाता योगदान और अनुसंधान निष्कर्षों के बीच सहसंबंध पाए जाते हैं, हालांकि दाताओं से कोई प्रत्यक्ष संपादकीय निर्देश नहीं मिले। निम्नलिखित में से कौन-सा इस स्थिति द्वारा उठाई गई नैतिक चिंता का सबसे सटीक वर्णन करता है?\n\n(a) दाता-समर्थित फंडिंग के माध्यम से अनुसंधान स्वतंत्रता का समझौता — थिंक टैंकों के लिए विशिष्ट अकादमिक स्वतंत्रता बहस\n(b) गैर-लाभकारी अनुसंधान स्थिति के आवरण का उपयोग करके संस्थागत लॉबिंग जो लॉबिंग प्रकटीकरण आवश्यकताओं से बचती है\n(c) 501(c)(3) कर-मुक्त शर्तों का उल्लंघन जो कर-मुक्त संगठनों द्वारा किसी भी प्रकार के नीति प्रभाव को प्रतिबंधित करता है\n(d) एक अवैध हित संघर्ष जिसे सलाहकार निकायों पर लागू भ्रष्टाचार विरोधी कानूनों के तहत अभियोजित किया जाना चाहिए",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रामक है क्योंकि ब्रुकिंग्स में revolving door घटना वास्तविक और अच्छी तरह से प्रलेखित है, जिससे नीति प्रभाव को लॉबिंग से जोड़ने वाले छात्रों के लिए 'संस्थागत लॉबिंग' की व्याख्या सटीक लगती है।",
+      "elimination_logic": [
+        "मूल तनाव की पहचान करें: परिदृश्य एक थिंक टैंक का वर्णन करता है जो कॉर्पोरेट फंडिंग प्राप्त करता है और ऐसे अनुसंधान प्रस्तुत करता है जो दाताओं के हितों के अनुरूप है — प्रश्न यह है कि क्या यह 'लॉबिंग' है या समझौता किया गया लेकिन अभी भी वैध अनुसंधान।",
+        "विकल्प (b) को हटाएं: revolving door व्यक्तिगत करियर आंदोलनों का वर्णन करता है, न कि परिदृश्य में वर्णित संस्थागत फंडिंग-अनुसंधान संबंध।",
+        "विकल्प (c) को हटाएं: 501(c)(3) स्थिति सीधे राजनीतिक अभियान को प्रतिबंधित करती है, केवल दाता-समर्थित अनुसंधान परिणामों को नहीं — प्रतिबंध नीति प्रभाव पर एक समग्र निषेध से अधिक विशिष्ट है।",
+        "विकल्प (d) को हटाएं: थिंक टैंक संवैधानिक रूप से नीति-समर्थित अनुसंधान कर सकते हैं; मुद्दा प्रकटीकरण और पारदर्शिता है, कानूनी प्रतिबंध नहीं।",
+        "विकल्प (a) की पुष्टि करें: थिंक टैंकों में अकादमिक स्वतंत्रता बहस इस बात पर केंद्रित है कि क्या दाता फंडिंग अनुसंधान स्वतंत्रता को समझौता करती है — यह 2016 न्यूयॉर्क टाइम्स की ब्रुकिंग्स जांच द्वारा उठाया गया सटीक नैतिक मुद्दा है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "थिंक टैंकों की नैतिक अखंडता उनके अनुसंधान परिणामों की दाता प्राथमिकताओं से स्वतंत्रता पर निर्भर करती है। जब कोई थिंक टैंक कॉर्पोरेशनों या सरकारों से पर्याप्त फंडिंग प्राप्त करता है और बाद में उन फंडर्स के पक्ष में अनुसंधान प्रस्तुत करता है, तो यह सवाल उठता है कि क्या संस्था एक वास्तविक अनुसंधान निकाय के रूप में कार्य कर रही है या दाता हितों को विश्वसनीय नीति सिफारिशों में बदलने के लिए एक परिष्कृत माध्यम के रूप में।\n\nपरिदृश्य 2016 न्यूयॉर्क टाइम्स की ब्रुकिंग्स पर की गई जांच में वर्णित मूल तनाव को दर्शाता है — जहां दाता-समर्थित अनुसंधान परिणामों ने अकादमिक स्वतंत्रता पर सवाल उठाए बिना लॉबिंग के कानूनी दायरे को पार किए बिना।\n\n• विकल्प (a): सही। यह थिंक टैंकों के लिए अकादमिक स्वतंत्रता और अनुसंधान स्वतंत्रता की बहस है — नैतिक चिंता का सबसे सटीक स्वरूप।\n• विकल्प (b): गलत। revolving door का तात्पर्य थिंक टैंकों और सरकार के बीच कर्मियों की आवाजाही से है, जो दाता-प्रायोजित अनुसंधान संरेखण से अलग घटना है।\n• विकल्प (c): गलत। 501(c)(3) प्रतिबंध पक्षपाती राजनीतिक गतिविधि को रोकते हैं, नीति-समर्थित अनुसंधान परिणामों को नहीं।\n• विकल्प (d): गलत। नीति-समर्थित अनुसंधान का उत्पादन कानूनी रूप से प्रतिबंधित नहीं है; मुद्दा नैतिक पारदर्शिता और प्रकटीकरण है।\n\nमूल्य संवर्धन:\n• ब्रुकिंग्स ने 2016 विवाद के बाद अपने वार्षिक रिपोर्टों में दाता प्रकटीकरण तंत्र को मजबूत किया।\n• भारत में FCRA आंशिक रूप से समान कार्य करता है — भारतीय नागरिक समाज संगठनों में विदेशी धन के प्रवेश को नियंत्रित करता है।\n• 'अनुसंधान प्रभाव' और 'लॉबिंग' के बीच अंतर भारत में नीति निर्माण में थिंक टैंक की भूमिकाओं को औपचारिक बनाने की बहस के लिए महत्वपूर्ण है।"
+    }
+  },
+  {
+    "uuid": "ff17ebb0-951d-4213-b99c-183f55514096",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Role in Poverty and Inequality Measurement",
+        "Global Economy and Development Program: Key Outputs"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Brookings poverty research vs. World Bank methodology",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Brookings Institution's contributions to poverty research:\n\n1. Brookings scholars have contributed significantly to global debates on poverty measurement, including discussions around the adequacy of income-based poverty lines versus multidimensional poverty frameworks.\n2. The Brookings Institution has developed and maintains the official global poverty line used by the World Bank in its annual poverty assessments.\n3. Brookings research on middle-class growth in developing economies has relevance to India's domestic consumption story and has been cited in discussions on India's economic aspirations.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings scholars have contributed significantly to global debates on poverty measurement, including discussions around the adequacy of income-based poverty lines versus multidimensional poverty frameworks.",
+          "verdict": "Correct",
+          "reason": "Brookings has been centrally involved in poverty measurement debates, including critiques of the dollar-a-day income poverty line and advocacy for multidimensional approaches relevant to India's MPI discussions."
+        },
+        {
+          "statement": "The Brookings Institution has developed and maintains the official global poverty line used by the World Bank in its annual poverty assessments.",
+          "verdict": "Incorrect",
+          "reason": "The World Bank develops and maintains its own global poverty line (currently $2.15/day in 2017 PPP terms). Brookings scholars participate in the broader academic debate but do not set or maintain the World Bank's official poverty threshold."
+        },
+        {
+          "statement": "Brookings research on middle-class growth in developing economies has relevance to India's domestic consumption story and has been cited in discussions on India's economic aspirations.",
+          "verdict": "Correct",
+          "reason": "Brookings' Global Economy and Development program has produced influential research on the expanding global middle class, with India's consumption-driven growth being a central case study."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is the trap for students who know statements 1 and 3 are correct and wrongly assume that Brookings' prominence in poverty debates means it also sets the World Bank's official poverty line.",
+      "elimination_logic": [
+        "Statement 1 is correct: Brookings' engagement with income poverty vs. multidimensional poverty frameworks is well-documented and directly relevant to India's MPI debates.",
+        "Statement 2 is incorrect: The World Bank exclusively determines its own official poverty line. Brookings participates in academic debate but has no role in setting World Bank's official threshold.",
+        "Statement 3 is correct: Brookings' middle-class research in developing economies is a core output of its Global Economy and Development program.",
+        "Statements 1 and 3 are correct; statement 2 is incorrect — answer is option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 deploys a scope-extension trap: Brookings scholars genuinely participated in the 'dollar-a-day' poverty line debates and contributed to evolving the conceptual framework — but 'contributing to debate' is very different from 'developing and maintaining the official World Bank poverty line.' Students who know Brookings is influential in poverty metrics may accept the overstated claim without recognizing the institutional distinction.",
+      "final_explanation": "Brookings' Global Economy and Development program has been one of the most influential non-governmental contributors to global poverty measurement debates. Its scholars have challenged income-only measures and advocated for multidimensional approaches — work directly relevant to India's National MPI framework and NITI Aayog's poverty reduction reporting.\n\n• Statement 1 — Correct: Brookings scholars have actively contributed to the income vs. multidimensional poverty debate, relevant to India's MPI trajectory.\n• Statement 2 — Incorrect: The World Bank independently determines its official poverty line (currently $2.15/day at 2017 PPP). Brookings influences the academic and policy conversation but does not set or maintain the Bank's official threshold.\n• Statement 3 — Correct: Brookings' research on the expanding middle class in developing nations is a significant contribution to understanding India's consumption-driven growth story.\n\nValue Addition:\n• India's National MPI is published jointly by NITI Aayog and UNDP — not by Brookings or the World Bank.\n• The World Bank's poverty line was revised from $1.90/day to $2.15/day in September 2022 (using 2017 PPP).\n• IFPRI (International Food Policy Research Institute) is the primary institutional competitor to Brookings in global food security and poverty research."
+    },
+    "hi": {
+      "display_text": "गरीबी अनुसंधान में Brookings Institution के योगदान के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Brookings के विद्वानों ने वैश्विक गरीबी मापन बहसों में महत्वपूर्ण योगदान दिया है, जिसमें आय आधारित गरीबी रेखाओं की पर्याप्तता बनाम बहुआयामी गरीबी ढांचे पर चर्चा शामिल है।\n2. Brookings Institution ने विश्व बैंक द्वारा वार्षिक गरीबी आकलनों में उपयोग की जाने वाली आधिकारिक वैश्विक गरीबी रेखा विकसित की है और उसे बनाए रखता है।\n3. विकसित होती अर्थव्यवस्थाओं में मध्यवर्गीय वृद्धि पर Brookings का शोध भारत की घरेलू खपत कहानी से संबंधित है और भारत की आर्थिक आकांक्षाओं पर चर्चाओं में उद्धृत किया गया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings scholars have contributed significantly to global debates on poverty measurement, including discussions around the adequacy of income-based poverty lines versus multidimensional poverty frameworks.",
+          "verdict": "सही है",
+          "reason": "Brookings गरीबी मापन बहसों में केंद्रीय रूप से शामिल रहा है, जिसमें डॉलर-ए-डे आय आधारित गरीबी रेखा की आलोचना और भारत के MPI चर्चाओं से संबंधित बहुआयामी दृष्टिकोणों के पक्षधर शामिल हैं।"
+        },
+        {
+          "statement": "The Brookings Institution has developed and maintains the official global poverty line used by the World Bank in its annual poverty assessments.",
+          "verdict": "गलत है",
+          "reason": "विश्व बैंक अपनी आधिकारिक वैश्विक गरीबी रेखा (वर्तमान में 2017 PPP के अनुसार $2.15/दिन) स्वयं विकसित और बनाए रखता है। Brookings के विद्वान व्यापक शैक्षणिक बहस में भाग लेते हैं लेकिन विश्व बैंक की आधिकारिक गरीबी सीमा निर्धारित या बनाए नहीं रखते।"
+        },
+        {
+          "statement": "Brookings research on middle-class growth in developing economies has relevance to India's domestic consumption story and has been cited in discussions on India's economic aspirations.",
+          "verdict": "सही है",
+          "reason": "Brookings का ग्लोबल इकोनॉमी एंड डेवलपमेंट प्रोग्राम विकसित होती अर्थव्यवस्थाओं में बढ़ती मध्यवर्गीय आबादी पर प्रभावशाली शोध प्रस्तुत करता है, जिसमें भारत की खपत-चालित वृद्धि एक केंद्रीय अध्ययन मामला है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन) उन छात्रों के लिए जाल है जो जानते हैं कि कथन 1 और 3 सही हैं और गलत तरीके से मान लेते हैं कि Brookings की गरीबी बहसों में प्रमुखता का अर्थ है कि यह विश्व बैंक की आधिकारिक गरीबी रेखा भी निर्धारित करता है।",
+      "elimination_logic": [
+        "कथन 1 सही है: Brookings की आय आधारित गरीबी बनाम बहुआयामी गरीबी ढांचे के साथ संलग्नता अच्छी तरह से प्रलेखित है और भारत के MPI बहसों से सीधे संबंधित है।",
+        "कथन 2 गलत है: विश्व बैंक अपनी आधिकारिक गरीबी रेखा अकेले निर्धारित करता है। Brookings शैक्षणिक बहस में भाग लेता है लेकिन विश्व बैंक की आधिकारिक सीमा निर्धारित करने में कोई भूमिका नहीं है।",
+        "कथन 3 सही है: विकसित होती अर्थव्यवस्थाओं में Brookings का मध्यवर्गीय शोध इसके ग्लोबल इकोनॉमी एंड डेवलपमेंट प्रोग्राम का मुख्य उत्पाद है।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में स्कोप-एक्सटेंशन जाल लगाया गया है: Brookings के विद्वान वास्तव में 'डॉलर-ए-डे' गरीबी रेखा बहसों में भाग लेते रहे और अवधारणात्मक ढांचे के विकास में योगदान दिया — लेकिन 'बहस में योगदान' और 'विश्व बैंक की आधिकारिक गरीबी रेखा विकसित और बनाए रखने' में बहुत अंतर है। जो छात्र जानते हैं कि Brookings गरीबी मापन में प्रभावशाली है, वे इस संस्थागत भेद को पहचाने बिना अतिशयोक्ति स्वीकार कर सकते हैं।",
+      "final_explanation": "Brookings का ग्लोबल इकोनॉमी एंड डेवलपमेंट प्रोग्राम वैश्विक गरीबी मापन बहसों में सबसे प्रभावशाली गैर-सरकारी योगदानकर्ताओं में से एक रहा है। इसके विद्वानों ने केवल आय आधारित मापों को चुनौती दी है और बहुआयामी दृष्टिकोणों के पक्षधर रहे हैं — जो भारत के राष्ट्रीय MPI ढांचे और नीति आयोग की गरीबी कमी रिपोर्टिंग से सीधे संबंधित है।\n\n• कथन 1 — सही: Brookings के विद्वानों ने आय बनाम बहुआयामी गरीबी बहस में सक्रिय योगदान दिया है, जो भारत के MPI मार्ग से संबंधित है।\n• कथन 2 — गलत: विश्व बैंक स्वतंत्र रूप से अपनी आधिकारिक गरीबी रेखा निर्धारित करता है (वर्तमान में 2017 PPP के अनुसार $2.15/दिन)। Brookings शैक्षणिक और नीति संवाद को प्रभावित करता है लेकिन बैंक की आधिकारिक सीमा निर्धारित या बनाए नहीं रखता।\n• कथन 3 — सही: विकसित देशों में बढ़ती मध्यवर्गीय आबादी पर Brookings का शोध भारत की खपत-चालित वृद्धि कहानी को समझने में महत्वपूर्ण योगदान है।\n\nमूल्य संवर्धन:\n• भारत का राष्ट्रीय MPI नीति आयोग और UNDP द्वारा संयुक्त रूप से प्रकाशित होता है — न कि Brookings या विश्व बैंक द्वारा।\n• विश्व बैंक की गरीबी रेखा को सितंबर 2022 में $1.90/दिन से $2.15/दिन (2017 PPP के अनुसार) संशोधित किया गया।\n• IFPRI (अंतर्राष्ट्रीय खाद्य नीति अनुसंधान संस्थान) वैश्विक खाद्य सुरक्षा और गरीबी शोध में Brookings का प्रमुख संस्थागत प्रतिस्पर्धी है।"
+    }
+  },
+  {
+    "uuid": "05bdc251-305a-4aa2-a90a-6f97263b44e2",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Research on Climate Change and Sustainable Development"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Brookings ESCI vs. WRI vs. IISD on climate research",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Energy Security and Climate Initiative (ESCI) — International Institute for Sustainable Development (IISD)\n(b) Energy Security and Climate Initiative (ESCI) — Brookings Institution\n(c) Energy Security and Climate Initiative (ESCI) — World Resources Institute (WRI)\n(d) Energy Security and Climate Initiative (ESCI) — RAND Corporation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because WRI's CAIT database is the most widely cited emissions tracking tool and students may associate WRI with the ESCI program label.",
+      "elimination_logic": [
+        "Eliminate option (a): IISD's primary mandate is sustainable development, not exclusively clean energy transition — the ESCI label belongs to Brookings.",
+        "Eliminate option (c): WRI (World Resources Institute) does not host ESCI. WRI operates its own Climate Program and CAIT emissions database.",
+        "Eliminate option (d): RAND Corporation is a policy research body focused primarily on defense and security; clean energy transition is not its primary domain.",
+        "Confirm option (b): The Energy Security and Climate Initiative (ESCI) is Brookings Institution's dedicated program focusing on clean energy transitions, carbon pricing, and energy security."
+      ],
+      "upsc_trap_explanation": "The entity-swap targets WRI and Brookings — both are prominent non-governmental organizations producing climate research. Students familiar with WRI's Climate Program may conflate it with Brookings' ESCI, especially since both focus on clean energy transitions. The ESCI label specifically belongs to Brookings, but without precise institutional recall, WRI (as a more climate-prominent brand) seems the natural host.",
+      "final_explanation": "The Energy Security and Climate Initiative (ESCI) is the Brookings Institution's dedicated program examining clean energy transitions, energy security, and climate policy — including coal phase-out timelines and carbon pricing mechanisms relevant to India's climate commitments.\n\n• Option (a): Incorrect. IISD (International Institute for Sustainable Development) is a Canadian think tank focused on sustainable development broadly, not the host of ESCI.\n• Option (b): Correct. ESCI is a Brookings program, making this the correctly matched pair.\n• Option (c): Incorrect. WRI operates its own independent Climate Program and hosts the Climate Analysis Indicators Tool (CAIT) — not ESCI.\n• Option (d): Incorrect. RAND Corporation's primary mandate is defense and security research; it does not host a dedicated clean energy transition program.\n\nValue Addition:\n• WRI's CAIT database is the most widely used open-source greenhouse gas emissions tracking tool, frequently cited in UNFCCC negotiations.\n• IISD publishes the Earth Negotiations Bulletin — the most authoritative real-time reporting on UNFCCC and CBD negotiations.\n• Brookings' ESCI research on carbon pricing has informed India's discussions on domestic carbon markets under the Energy Conservation (Amendment) Act 2022."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) — इंटरनेशनल इंस्टिट्यूट फॉर सस्टेनेबल डेवलपमेंट (IISD)\n(b) एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) — ब्रुकिंग्स संस्थान\n(c) एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) — वर्ल्ड रिसोर्सेज इंस्टिट्यूट (WRI)\n(d) एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) — RAND कॉर्पोरेशन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रामक है क्योंकि WRI का CAIT डेटाबेस सबसे व्यापक रूप से उद्धृत उत्सर्जन ट्रैकिंग उपकरण है और छात्र WRI को ESCI कार्यक्रम लेबल से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: IISD का प्राथमिक कार्य सतत विकास है, न कि केवल स्वच्छ ऊर्जा संक्रमण — ESCI लेबल ब्रुकिंग्स का है।",
+        "विकल्प (c) को हटाएं: WRI (World Resources Institute) ESCI की मेजबानी नहीं करता। WRI अपना स्वयं का क्लाइमेट प्रोग्राम और CAIT उत्सर्जन डेटाबेस संचालित करता है।",
+        "विकल्प (d) को हटाएं: RAND Corporation एक नीति अनुसंधान संस्था है जो मुख्य रूप से रक्षा और सुरक्षा पर केंद्रित है; स्वच्छ ऊर्जा संक्रमण इसका प्राथमिक क्षेत्र नहीं है।",
+        "विकल्प (b) की पुष्टि करें: एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) ब्रुकिंग्स संस्थान का समर्पित कार्यक्रम है जो स्वच्छ ऊर्जा संक्रमण, कार्बन मूल्य निर्धारण, और ऊर्जा सुरक्षा पर केंद्रित है।"
+      ],
+      "upsc_trap_explanation": "यह एंटिटी-स्वैप WRI और ब्रुकिंग्स को लक्षित करता है — दोनों प्रमुख गैर-सरकारी संगठन हैं जो जलवायु अनुसंधान करते हैं। WRI के क्लाइमेट प्रोग्राम से परिचित छात्र इसे ब्रुकिंग्स के ESCI से भ्रमित कर सकते हैं, खासकर क्योंकि दोनों स्वच्छ ऊर्जा संक्रमण पर ध्यान केंद्रित करते हैं। ESCI लेबल विशेष रूप से ब्रुकिंग्स का है, लेकिन सटीक संस्थागत स्मृति के बिना, WRI (जो जलवायु क्षेत्र में अधिक प्रसिद्ध है) स्वाभाविक मेजबान प्रतीत होता है।",
+      "final_explanation": "एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) ब्रुकिंग्स संस्थान का समर्पित कार्यक्रम है जो स्वच्छ ऊर्जा संक्रमण, ऊर्जा सुरक्षा, और जलवायु नीति की जांच करता है — जिसमें भारत की जलवायु प्रतिबद्धताओं से संबंधित कोयला चरणबद्ध समाप्ति समयसीमा और कार्बन मूल्य निर्धारण तंत्र शामिल हैं।\n\n• विकल्प (a): गलत। IISD (International Institute for Sustainable Development) एक कनाडाई थिंक टैंक है जो व्यापक रूप से सतत विकास पर केंद्रित है, न कि ESCI का मेजबान।\n• विकल्प (b): सही। ESCI ब्रुकिंग्स का कार्यक्रम है, अतः यह सही मेल जोड़ी है।\n• विकल्प (c): गलत। WRI अपना स्वतंत्र क्लाइमेट प्रोग्राम संचालित करता है और क्लाइमेट एनालिसिस इंडिकेटर्स टूल (CAIT) की मेजबानी करता है — न कि ESCI।\n• विकल्प (d): गलत। RAND Corporation का प्राथमिक कार्य रक्षा और सुरक्षा अनुसंधान है; यह समर्पित स्वच्छ ऊर्जा संक्रमण कार्यक्रम की मेजबानी नहीं करता।\n\nमूल्य संवर्धन:\n• WRI का CAIT डेटाबेस सबसे व्यापक रूप से उपयोग किया जाने वाला खुला स्रोत ग्रीनहाउस गैस उत्सर्जन ट्रैकिंग उपकरण है, जिसे अक्सर UNFCCC वार्ताओं में उद्धृत किया जाता है।\n• IISD अर्थ नेगोशिएशंस बुलेटिन प्रकाशित करता है — UNFCCC और CBD वार्ताओं पर सबसे अधिकारिक वास्तविक समय रिपोर्टिंग।\n• ब्रुकिंग्स का ESCI कार्बन मूल्य निर्धारण पर अनुसंधान भारत की घरेलू कार्बन बाजारों पर ऊर्जा संरक्षण (संशोधन) अधिनियम 2022 के तहत चर्चाओं को सूचित करता है।"
+    }
+  },
+  {
+    "uuid": "363ee123-ec2d-44bc-a0fc-713da62b8800",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Role in Global Financial Governance Research"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Brookings G20 and SDR research relevance to India's G20 Presidency",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Brookings Institution's role in global financial governance research, consider the following statements:\n\n1. Brookings Institution's research on IMF reform and Special Drawing Rights (SDRs) has been particularly relevant to global financial governance discussions, including during India's G20 Presidency in 2023.\n2. As a condition of its participation in G20 policy dialogues, the Brookings Institution formally reports to the G20 Secretariat and is accountable to member country governments for its research outputs.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's research on IMF reform and Special Drawing Rights (SDRs) has been particularly relevant to global financial governance discussions, including during India's G20 Presidency in 2023.",
+          "verdict": "Correct",
+          "reason": "Brookings has a significant body of work on IMF reform and SDR allocations; its relevance to India's G20 Presidency in 2023 is well-established, as G20 discussions prominently featured multilateral financial institution reform."
+        },
+        {
+          "statement": "As a condition of its participation in G20 policy dialogues, the Brookings Institution formally reports to the G20 Secretariat and is accountable to member country governments for its research outputs.",
+          "verdict": "Incorrect",
+          "reason": "Brookings has no formal accountability relationship with any government or multilateral forum. It participates in G20-adjacent discussions as an independent research contributor, not as a formally accountable participant."
+        }
+      ],
+      "strong_distractor": "a — Option a (only statement 1 incorrect) is the trap for students who accept the false accountability claim in statement 2 as plausible, given that major think tanks do interact with G20 processes through Think20 (T20) engagement groups.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Brookings does produce substantial research on IMF reform and SDRs; India's G20 Presidency in 2023 prominently featured multilateral financial governance reform. Statement 1 is factually accurate — it is NOT incorrect.",
+        "Evaluate Statement 2: Brookings has no formal accountability to G20 Secretariat or member governments. Think tanks engage with G20 through the T20 (Think20) engagement group as advisory contributors, not as accountable participants. Statement 2 IS incorrect.",
+        "The question asks which statement is NOT correct — only Statement 2 qualifies. Answer is option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a partial-truth trap: Think tanks like Brookings do participate in G20-adjacent processes through T20 (Think20), a formal engagement group that submits policy recommendations to G20 leaders. Students familiar with T20 may accept the statement's general claim about formal G20 participation while missing the critical distinction — T20 participation is advisory and voluntary, not a formal accountability relationship to member governments.",
+      "final_explanation": "Brookings Institution's research on global financial governance — particularly IMF reform, SDR allocation debates, and debt sustainability — has had direct policy relevance to G20 discussions, especially during India's G20 Presidency in 2023.\n\n• Statement 1 — Correct (NOT the answer to 'which is incorrect'): Brookings' SDR and IMF reform research has genuine G20 relevance, including during India's presidency.\n• Statement 2 — Incorrect: Brookings participates in G20-adjacent policy processes through the Think20 (T20) engagement group as an advisory body, but it has no formal accountability relationship with the G20 Secretariat or member governments.\n\nValue Addition:\n• Think20 (T20) is one of the official G20 engagement groups alongside Business20 (B20), Civil20 (C20), and Women20 (W20) — it channels think tank research into G20 policy recommendations.\n• India's G20 Presidency theme was 'Vasudhaiva Kutumbakam' — One Earth, One Family, One Future.\n• SDR allocations became prominent after the COVID-19 emergency: the IMF allocated SDR 456 billion in August 2021 to support member countries."
+    },
+    "hi": {
+      "display_text": "वैश्विक वित्तीय शासन शोध में Brookings Institution की भूमिका के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. Brookings Institution का IMF सुधार और विशेष ड्रॉइंग राइट्स (SDRs) पर शोध वैश्विक वित्तीय शासन चर्चाओं के लिए विशेष रूप से प्रासंगिक रहा है, जिसमें भारत की G20 अध्यक्षता 2023 भी शामिल है।\n2. G20 नीति संवादों में भागीदारी की शर्त के रूप में, Brookings Institution औपचारिक रूप से G20 सचिवालय को रिपोर्ट करता है और अपने शोध परिणामों के लिए सदस्य देशों की सरकारों के प्रति जवाबदेह है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1 और न ही 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's research on IMF reform and Special Drawing Rights (SDRs) has been particularly relevant to global financial governance discussions, including during India's G20 Presidency in 2023.",
+          "verdict": "सही",
+          "reason": "Brookings के पास IMF सुधार और SDR आवंटन पर महत्वपूर्ण शोध कार्य है; भारत की G20 अध्यक्षता 2023 में बहुपक्षीय वित्तीय संस्थान सुधार पर चर्चा प्रमुख थी, इसलिए इसका प्रासंगिकता स्थापित है।"
+        },
+        {
+          "statement": "As a condition of its participation in G20 policy dialogues, the Brookings Institution formally reports to the G20 Secretariat and is accountable to member country governments for its research outputs.",
+          "verdict": "गलत",
+          "reason": "Brookings का किसी भी सरकार या बहुपक्षीय मंच के साथ औपचारिक जवाबदेही संबंध नहीं है। यह G20 से संबंधित चर्चाओं में स्वतंत्र शोध योगदानकर्ता के रूप में भाग लेता है, न कि औपचारिक रूप से जवाबदेह प्रतिभागी के रूप में।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प a (केवल कथन 1 गलत) उन छात्रों के लिए जाल है जो कथन 2 में दिए गए गलत जवाबदेही दावे को संभव मान लेते हैं, क्योंकि प्रमुख थिंक टैंक Think20 (T20) समूह के माध्यम से G20 प्रक्रियाओं से जुड़ते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: Brookings IMF सुधार और SDR पर पर्याप्त शोध करता है; भारत की G20 अध्यक्षता 2023 में बहुपक्षीय वित्तीय शासन सुधार प्रमुख था। कथन 1 तथ्यात्मक रूप से सही है — यह गलत नहीं है।",
+        "कथन 2 का मूल्यांकन करें: Brookings का G20 सचिवालय या सदस्य सरकारों के प्रति कोई औपचारिक जवाबदेही नहीं है। थिंक टैंक T20 (Think20) समूह के माध्यम से सलाहकार योगदानकर्ता के रूप में G20 से जुड़ते हैं, न कि जवाबदेह प्रतिभागी के रूप में। कथन 2 गलत है।",
+        "प्रश्न पूछता है कि कौन-सा कथन सही नहीं है — केवल कथन 2 सही बैठता है। उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक आंशिक-सत्य जाल है: Brookings जैसे थिंक टैंक T20 (Think20) के माध्यम से G20 से संबंधित प्रक्रियाओं में भाग लेते हैं, जो एक औपचारिक समूह है जो G20 नेताओं को नीति सिफारिशें देता है। T20 की जानकारी रखने वाले छात्र कथन के सामान्य दावे को स्वीकार कर सकते हैं कि यह G20 में औपचारिक भागीदारी है, जबकि महत्वपूर्ण भेद भूल जाते हैं — T20 की भागीदारी सलाहकार और स्वैच्छिक है, न कि सदस्य सरकारों के प्रति औपचारिक जवाबदेही।",
+      "final_explanation": "Brookings Institution का वैश्विक वित्तीय शासन पर शोध — विशेष रूप से IMF सुधार, SDR आवंटन बहस, और ऋण स्थिरता — का G20 चर्चाओं में प्रत्यक्ष नीति संबंध रहा है, खासकर भारत की G20 अध्यक्षता 2023 के दौरान।\n\n• कथन 1 — सही (गलत कथन का उत्तर नहीं): Brookings का SDR और IMF सुधार शोध G20 के लिए वास्तविक प्रासंगिकता रखता है, जिसमें भारत की अध्यक्षता भी शामिल है।\n• कथन 2 — गलत: Brookings Think20 (T20) समूह के माध्यम से G20 से संबंधित नीति प्रक्रियाओं में सलाहकार के रूप में भाग लेता है, लेकिन इसका G20 सचिवालय या सदस्य सरकारों के प्रति कोई औपचारिक जवाबदेही संबंध नहीं है।\n\nमूल्यवर्धन:\n• Think20 (T20) आधिकारिक G20 जुड़ाव समूहों में से एक है, जैसे Business20 (B20), Civil20 (C20), और Women20 (W20) — यह थिंक टैंक शोध को G20 नीति सिफारिशों में परिवर्तित करता है।\n• भारत की G20 अध्यक्षता का विषय था 'वसुधैव कुटुम्बकम' — एक पृथ्वी, एक परिवार, एक भविष्य।\n• COVID-19 आपातकाल के बाद SDR आवंटन प्रमुख हुआ: IMF ने अगस्त 2021 में सदस्य देशों का समर्थन करने के लिए 456 बिलियन SDR आवंटित किए।"
+    }
+  },
+  {
+    "uuid": "18fc7315-8a01-432f-b06f-c52ce60cbf13",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Centre for Social and Economic Progress (CSEP): Post-Brookings India Trajectory"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CSEP founding president Yamini Aiyar",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Who was appointed as the founding President of the Centre for Social and Economic Progress (CSEP) when it was reconstituted as a fully independent Indian institution in 2020?\n\n(a) Vikram Singh Mehta\n(b) Pratap Bhanu Mehta\n(c) Yamini Aiyar\n(d) Kiran Mazumdar-Shaw",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because Vikram Singh Mehta was the founding Chairman/President of Brookings India before the CSEP transition, making him a plausible but incorrect answer for CSEP's leadership.",
+      "elimination_logic": [
+        "Eliminate option (a): Vikram Singh Mehta was associated with Brookings India's leadership phase, not CSEP's post-2020 independent identity.",
+        "Eliminate option (b): Pratap Bhanu Mehta is associated with CPR (Centre for Policy Research), not CSEP.",
+        "Eliminate option (d): Kiran Mazumdar-Shaw is a business leader and philanthropist, not a policy research institution head.",
+        "Confirm option (c): Yamini Aiyar became the President of CSEP when it was established as a fully independent institution in 2020."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap exploits the leadership continuity between Brookings India and CSEP. Vikram Singh Mehta had a prominent association with Brookings India's earlier phase, making him the natural (but incorrect) answer for CSEP leadership. Students who recall 'Mehta' in connection with Brookings India will select option (a) without realizing that Yamini Aiyar led the institution specifically as CSEP post-2020.",
+      "final_explanation": "The Centre for Social and Economic Progress (CSEP) was established in 2020 as a fully independent Indian think tank, succeeding Brookings India. Yamini Aiyar became its founding President, bringing credibility from her prior work on governance, public services, and fiscal federalism.\n\n• Option (a) — Vikram Singh Mehta: Incorrect. He was associated with the Brookings India phase, not the CSEP independent identity.\n• Option (b) — Pratap Bhanu Mehta: Incorrect. He is associated with CPR (Centre for Policy Research), a separate institution.\n• Option (c) — Yamini Aiyar: Correct. She became CSEP's President when it was reconstituted as an independent Indian institution in 2020.\n• Option (d) — Kiran Mazumdar-Shaw: Incorrect. She is a biotech entrepreneur and philanthropist with no leadership role at CSEP.\n\nValue Addition:\n• CSEP's research agenda focuses on macroeconomic policy, state capacity, social policy, and India's global economic role.\n• CSEP reports have been cited in Economic Survey discussions and parliamentary committee deliberations.\n• Yamini Aiyar's prior work at the Accountability Initiative (AI) at CPR directly informed CSEP's focus on service delivery and state capacity."
+    },
+    "hi": {
+      "display_text": "2020 में जब Centre for Social and Economic Progress (CSEP) को एक पूर्ण स्वतंत्र भारतीय संस्था के रूप में पुनर्गठित किया गया, तो इसके संस्थापक अध्यक्ष के रूप में किसे नियुक्त किया गया?\n\n(a) विक्रम सिंह मेहता\n(b) प्रताप भानु मेहता\n(c) यामिनी अय्यर\n(d) किरण मजूमदार-शॉ",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रामक है क्योंकि विक्रम सिंह मेहता ब्रुकिंग्स इंडिया के नेतृत्व चरण के संस्थापक अध्यक्ष/प्रेसिडेंट थे, जो CSEP के नेतृत्व के लिए एक संभावित लेकिन गलत उत्तर बनाता है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: विक्रम सिंह मेहता ब्रुकिंग्स इंडिया के नेतृत्व चरण से जुड़े थे, न कि 2020 के बाद CSEP की स्वतंत्र पहचान से।",
+        "विकल्प (b) को हटाएं: प्रताप भानु मेहता CPR (Centre for Policy Research) से जुड़े हैं, न कि CSEP से।",
+        "विकल्प (d) को हटाएं: किरण मजूमदार-शॉ एक व्यवसायी और परोपकारी हैं, न कि नीति अनुसंधान संस्थान की प्रमुख।",
+        "विकल्प (c) की पुष्टि करें: यामिनी अय्यर 2020 में CSEP के पूर्ण स्वतंत्र संस्थान के रूप में स्थापित होने पर इसकी अध्यक्ष बनीं।"
+      ],
+      "upsc_trap_explanation": "यह एंटिटी-स्वैप ट्रैप ब्रुकिंग्स इंडिया और CSEP के नेतृत्व की निरंतरता का फायदा उठाता है। विक्रम सिंह मेहता ब्रुकिंग्स इंडिया के पूर्व चरण से प्रमुख रूप से जुड़े थे, जो CSEP नेतृत्व के लिए स्वाभाविक (लेकिन गलत) उत्तर बनाता है। जो छात्र 'मेहता' को ब्रुकिंग्स इंडिया से जोड़कर याद करते हैं, वे विकल्प (a) चुनेंगे बिना यह समझे कि यामिनी अय्यर ने विशेष रूप से 2020 के बाद CSEP के रूप में इस संस्था का नेतृत्व किया।",
+      "final_explanation": "Centre for Social and Economic Progress (CSEP) की स्थापना 2020 में एक पूर्ण स्वतंत्र भारतीय थिंक टैंक के रूप में ब्रुकिंग्स इंडिया के उत्तराधिकारी के रूप में हुई। यामिनी अय्यर इसकी संस्थापक अध्यक्ष बनीं, जिन्होंने शासन, सार्वजनिक सेवाओं और वित्तीय संघवाद पर अपने पूर्व कार्य से विश्वसनीयता लाई।\n\n• विकल्प (a) — विक्रम सिंह मेहता: गलत। वे ब्रुकिंग्स इंडिया चरण से जुड़े थे, न कि CSEP की स्वतंत्र पहचान से।\n• विकल्प (b) — प्रताप भानु मेहता: गलत। वे CPR (Centre for Policy Research) से जुड़े हैं, जो एक अलग संस्था है।\n• विकल्प (c) — यामिनी अय्यर: सही। वे 2020 में CSEP के स्वतंत्र भारतीय संस्थान के रूप में पुनर्गठन के समय अध्यक्ष बनीं।\n• विकल्प (d) — किरण मजूमदार-शॉ: गलत। वे एक बायोटेक उद्यमी और परोपकारी हैं, जिनका CSEP में कोई नेतृत्व भूमिका नहीं है।\n\nमूल्य संवर्धन:\n• CSEP का अनुसंधान एजेंडा मैक्रोइकॉनॉमिक नीति, राज्य क्षमता, सामाजिक नीति और भारत की वैश्विक आर्थिक भूमिका पर केंद्रित है।\n• CSEP की रिपोर्टें आर्थिक सर्वेक्षण चर्चाओं और संसदीय समिति विचार-विमर्श में उद्धृत हुई हैं।\n• यामिनी अय्यर का CPR के अकाउंटेबिलिटी इनिशिएटिव (AI) में पूर्व कार्य सीधे CSEP के सेवा वितरण और राज्य क्षमता पर फोकस को प्रभावित करता है।"
+    }
+  },
+  {
+    "uuid": "dff9fa4c-da25-4a7b-869b-f4ecbd784b68",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Metropolitan Policy Program and Urban Development Research"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Brookings Metropolitan Policy Program and Global Metro Monitor",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Brookings Institution's Metropolitan Policy Program:\n\n1. Brookings Institution's Metropolitan Policy Program focuses on city-level economic development and has produced the 'Global Metro Monitor,' which ranks metropolitan economies worldwide including major Indian cities.\n2. The Metropolitan Policy Program's findings on urban economic productivity are exclusively applicable to American cities and have no direct research output targeting developing economies.\n3. Brookings' urbanization research has relevance to India's Smart Cities Mission, particularly in areas of smart governance frameworks and metropolitan economic planning.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's Metropolitan Policy Program focuses on city-level economic development and has produced the 'Global Metro Monitor,' which ranks metropolitan economies worldwide including major Indian cities.",
+          "verdict": "Correct",
+          "reason": "The Metropolitan Policy Program is a major Brookings initiative, and the Global Metro Monitor is its flagship output ranking metropolitan economies globally — Indian cities have featured in these rankings."
+        },
+        {
+          "statement": "The Metropolitan Policy Program's findings on urban economic productivity are exclusively applicable to American cities and have no direct research output targeting developing economies.",
+          "verdict": "Incorrect",
+          "reason": "The program explicitly includes global metropolitan economies in its research scope. The Global Metro Monitor covers major cities across developing economies, making this scope-exclusion claim false."
+        },
+        {
+          "statement": "Brookings' urbanization research has relevance to India's Smart Cities Mission, particularly in areas of smart governance frameworks and metropolitan economic planning.",
+          "verdict": "Correct",
+          "reason": "India's Smart Cities Mission explicitly draws on international urban governance frameworks; Brookings' metropolitan research on smart cities and regional economies is directly applicable and has been referenced in Indian urban policy discussions."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) attracts students who correctly identify statements 1 and 3 but fail to notice the 'exclusively applicable to American cities' scope restriction in statement 2, which is the key error.",
+      "elimination_logic": [
+        "Statement 1 is correct: The Global Metro Monitor is a real Brookings Metropolitan Policy Program output that includes global city rankings.",
+        "Statement 2 is incorrect: 'Exclusively applicable to American cities' is a scope-extension error. The Global Metro Monitor covers international metropolitan economies including in developing nations.",
+        "Statement 3 is correct: Brookings urban governance research relevance to India's Smart Cities Mission is well-established.",
+        "Statements 1 and 3 correct; statement 2 incorrect — answer is option (b)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Statement 2 uses the word 'exclusively' to transform a partially true observation into a false one. Brookings did begin as a US-focused institution, and much of its urban research originates from American cities. Students who associate Brookings Metropolitan Program primarily with US cities may not catch the 'exclusively' qualifier that makes Statement 2 factually wrong.",
+      "final_explanation": "Brookings' Metropolitan Policy Program is one of its most distinctive research units, examining city-level economic dynamics, smart governance, and regional competitiveness. Its Global Metro Monitor provides comparative data on metropolitan economic performance worldwide.\n\n• Statement 1 — Correct: The Global Metro Monitor is a real, globally scoped output ranking metropolitan economies including Indian cities.\n• Statement 2 — Incorrect: The program's scope explicitly covers global metropolitan economies. Claiming it applies 'exclusively' to American cities ignores the Global Metro Monitor's international comparative mandate.\n• Statement 3 — Correct: Brookings' research on smart city governance and metropolitan economic planning has direct relevance to India's Smart Cities Mission framework.\n\nValue Addition:\n• India's Smart Cities Mission (launched 2015) draws on international urban governance models from Singapore, Barcelona, and US metro research.\n• UN-Habitat and McKinsey Global Institute are the primary institutional comparators to Brookings in urbanization research.\n• The Global Metro Monitor has tracked pandemic-driven economic impacts on cities, with Indian metros showing distinct recovery patterns compared to OECD cities."
+    },
+    "hi": {
+      "display_text": "ब्रुकिंग्स संस्थान के Metropolitan Policy Program के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ब्रुकिंग्स संस्थान का Metropolitan Policy Program शहर-स्तरीय आर्थिक विकास पर केंद्रित है और इसने 'Global Metro Monitor' तैयार किया है, जो विश्वभर के महानगरीय अर्थव्यवस्थाओं को रैंक करता है जिसमें प्रमुख भारतीय शहर भी शामिल हैं।\n2. Metropolitan Policy Program के शहरी आर्थिक उत्पादकता पर निष्कर्ष केवल अमेरिकी शहरों पर लागू होते हैं और इसका विकासशील अर्थव्यवस्थाओं पर कोई प्रत्यक्ष अनुसंधान परिणाम नहीं है।\n3. ब्रुकिंग्स का शहरीकरण अनुसंधान भारत के स्मार्ट सिटी मिशन के लिए प्रासंगिक है, विशेषकर स्मार्ट शासन ढांचे और महानगरीय आर्थिक योजना के क्षेत्रों में।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's Metropolitan Policy Program focuses on city-level economic development and has produced the 'Global Metro Monitor,' which ranks metropolitan economies worldwide including major Indian cities.",
+          "verdict": "सही है",
+          "reason": "Metropolitan Policy Program ब्रुकिंग्स की एक प्रमुख पहल है, और Global Metro Monitor इसका प्रमुख उत्पाद है जो विश्वव्यापी महानगरीय अर्थव्यवस्थाओं को रैंक करता है — भारतीय शहर भी इन रैंकिंग में शामिल हैं।"
+        },
+        {
+          "statement": "The Metropolitan Policy Program's findings on urban economic productivity are exclusively applicable to American cities and have no direct research output targeting developing economies.",
+          "verdict": "गलत है",
+          "reason": "यह कार्यक्रम स्पष्ट रूप से वैश्विक महानगरीय अर्थव्यवस्थाओं को अपने अनुसंधान दायरे में शामिल करता है। Global Metro Monitor विकासशील अर्थव्यवस्थाओं के प्रमुख शहरों को कवर करता है, अतः यह दायरा-बहिष्कार कथन गलत है।"
+        },
+        {
+          "statement": "Brookings' urbanization research has relevance to India's Smart Cities Mission, particularly in areas of smart governance frameworks and metropolitan economic planning.",
+          "verdict": "सही है",
+          "reason": "भारत का स्मार्ट सिटी मिशन अंतरराष्ट्रीय शहरी शासन ढांचों पर आधारित है; ब्रुकिंग्स का महानगरीय अनुसंधान स्मार्ट शहरों और क्षेत्रीय अर्थव्यवस्थाओं पर सीधे लागू होता है और भारतीय शहरी नीति चर्चाओं में संदर्भित किया गया है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन) उन छात्रों को आकर्षित करता है जो कथन 1 और 3 को सही पहचानते हैं लेकिन कथन 2 में 'केवल अमेरिकी शहरों पर लागू' दायरा प्रतिबंध को नहीं देखते, जो मुख्य त्रुटि है।",
+      "elimination_logic": [
+        "कथन 1 सही है: Global Metro Monitor ब्रुकिंग्स Metropolitan Policy Program का वास्तविक उत्पाद है जो वैश्विक शहर रैंकिंग शामिल करता है।",
+        "कथन 2 गलत है: 'केवल अमेरिकी शहरों पर लागू' एक दायरा-विस्तार त्रुटि है। Global Metro Monitor विकासशील देशों सहित अंतरराष्ट्रीय महानगरीय अर्थव्यवस्थाओं को कवर करता है।",
+        "कथन 3 सही है: ब्रुकिंग्स का शहरी शासन अनुसंधान भारत के स्मार्ट सिटी मिशन के लिए प्रासंगिक है।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में दायरा-विस्तार जाल 'केवल' शब्द का उपयोग करता है जिससे आंशिक सत्य को पूर्ण रूप से गलत बना दिया गया है। ब्रुकिंग्स की शुरुआत अमेरिकी केंद्रित संस्था के रूप में हुई थी और इसका अधिकांश शहरी अनुसंधान अमेरिकी शहरों से आता है। जो छात्र ब्रुकिंग्स Metropolitan Program को मुख्यतः अमेरिकी शहरों से जोड़ते हैं, वे कथन 2 में 'केवल' शब्द की त्रुटि को नहीं पकड़ पाते।",
+      "final_explanation": "ब्रुकिंग्स का Metropolitan Policy Program इसकी सबसे विशिष्ट अनुसंधान इकाइयों में से एक है, जो शहर-स्तरीय आर्थिक गतिशीलता, स्मार्ट शासन, और क्षेत्रीय प्रतिस्पर्धात्मकता की जांच करता है। इसका Global Metro Monitor विश्वव्यापी महानगरीय आर्थिक प्रदर्शन पर तुलनात्मक डेटा प्रदान करता है।\n\n• कथन 1 — सही: Global Metro Monitor एक वास्तविक, वैश्विक दायरे वाला उत्पाद है जो भारतीय शहरों सहित महानगरीय अर्थव्यवस्थाओं को रैंक करता है।\n• कथन 2 — गलत: कार्यक्रम का दायरा स्पष्ट रूप से वैश्विक महानगरीय अर्थव्यवस्थाओं को कवर करता है। इसे 'केवल' अमेरिकी शहरों पर लागू कहना Global Metro Monitor के अंतरराष्ट्रीय तुलनात्मक दायित्व को नजरअंदाज करना है।\n• कथन 3 — सही: ब्रुकिंग्स का स्मार्ट सिटी शासन और महानगरीय आर्थिक योजना पर अनुसंधान भारत के स्मार्ट सिटी मिशन के ढांचे के लिए सीधे प्रासंगिक है।\n\nमूल्य संवर्धन:\n• भारत का स्मार्ट सिटी मिशन (2015 में शुरू) सिंगापुर, बार्सिलोना, और अमेरिकी महानगरीय अनुसंधान जैसे अंतरराष्ट्रीय शहरी शासन मॉडलों पर आधारित है।\n• UN-Habitat और McKinsey Global Institute शहरीकरण अनुसंधान में ब्रुकिंग्स के मुख्य संस्थागत तुलनात्मक हैं।\n• Global Metro Monitor ने महामारी-प्रेरित आर्थिक प्रभावों को शहरों पर ट्रैक किया है, जिसमें भारतीय महानगरों ने OECD शहरों की तुलना में विशिष्ट पुनर्प्राप्ति पैटर्न दिखाए हैं।"
+    }
+  },
+  {
+    "uuid": "495f9bcb-bf2b-4086-bc6e-cf201691ec2c",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Indian Think Tanks Compared to Brookings Model",
+        "Brookings India: Establishment, Mandate, and Current Status"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "FCRA implications for foreign-affiliated think tanks in India",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An Indian research organization is registered as a Society under state law and formally affiliates itself with a prominent US-based policy research institution, using the latter's branding and receiving partial operational support from it. The organization conducts policy research on economic governance and social policy, and publishes reports independently. The Government of India raises regulatory concerns about the organization's foreign institutional affiliation and foreign funding flows, citing potential compliance obligations. Which regulatory framework is most directly applicable to the concerns raised by the government in this scenario?\n\n(a) Foreign Contribution Regulation Act (FCRA)\n(b) Foreign Exchange Management Act (FEMA)\n(c) Companies Act provisions on foreign subsidiaries\n(d) Prevention of Money Laundering Act (PMLA)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because FEMA does regulate cross-border financial flows and could plausibly be cited in a foreign-affiliation context, but FCRA is the specific statute governing foreign contributions to Indian NGOs and civil society organizations.",
+      "elimination_logic": [
+        "Identify the regulatory issue: An Indian organization receiving foreign funding and operating under a foreign institutional brand faces regulatory scrutiny — identify the correct statute.",
+        "FCRA (Foreign Contribution Regulation Act) specifically governs the receipt and utilization of foreign contributions by Indian associations, societies, and NGOs — this is the applicable law.",
+        "Eliminate option (b): FEMA governs foreign exchange management for commercial transactions, not NGO foreign contributions.",
+        "Eliminate option (c): Companies Act governs corporate entities; a Society registered under state law is not subject to Companies Act for foreign funding issues.",
+        "Eliminate option (d): The Prevention of Money Laundering Act (PMLA) addresses money laundering, not the structural regulatory question of foreign institutional affiliation.",
+        "Confirm option (a): FCRA is the directly applicable statute governing the scenario described."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The scenario describes the regulatory challenge that led to Brookings India's rebranding as CSEP in 2020. The Foreign Contribution Regulation Act (FCRA) is the central statute governing foreign contributions to Indian non-governmental organizations — it regulates both the receipt of foreign funds and the operational affiliation with foreign entities.\n\nThe key regulatory concern for Brookings India was that its institutional branding as an affiliate of a US-based organization, combined with potential foreign funding flows, created FCRA compliance risks. Restructuring as CSEP — a fully independent Indian Society — resolved the regulatory vulnerability.\n\n• Option (a) — FCRA: Correct. This is the directly applicable statute for foreign-affiliated NGOs receiving or at risk of receiving foreign contributions.\n• Option (b) — FEMA: Incorrect. FEMA governs foreign exchange transactions in commercial contexts, not NGO foreign institutional affiliation.\n• Option (c) — Companies Act: Incorrect. This applies to incorporated companies, not Societies registered under Indian law.\n• Option (d) — PMLA: Incorrect. PMLA addresses money laundering offences, not the structural question of foreign affiliation.\n\nValue Addition:\n• FCRA Amendment 2020 tightened restrictions including sub-granting prohibitions — directly impacting Brookings India's operational model.\n• Amnesty International India and several other foreign-affiliated NGOs ceased operations in India due to FCRA compliance issues around the same period.\n• Indian think tanks registered as Societies primarily operate under state-level Societies Registration Acts, distinct from company law frameworks."
+    },
+    "hi": {
+      "display_text": "एक भारतीय अनुसंधान संगठन राज्य कानून के तहत एक सोसाइटी के रूप में पंजीकृत है और औपचारिक रूप से एक प्रमुख अमेरिकी आधारित नीति अनुसंधान संस्थान के साथ संबद्ध है, जो बाद वाले के ब्रांडिंग का उपयोग करता है और आंशिक परिचालन समर्थन प्राप्त करता है। संगठन आर्थिक शासन और सामाजिक नीति पर नीति अनुसंधान करता है, और स्वतंत्र रूप से रिपोर्ट प्रकाशित करता है। भारत सरकार संगठन की विदेशी संस्थागत संबद्धता और विदेशी वित्त पोषण प्रवाहों को लेकर नियामक चिंताएं व्यक्त करती है, संभावित अनुपालन दायित्वों का हवाला देते हुए। इस परिदृश्य में सरकार द्वारा उठाई गई चिंताओं के लिए कौन-सा नियामक ढांचा सबसे सीधे लागू होता है?\n\n(a) विदेशी योगदान विनियमन अधिनियम (FCRA)\n(b) विदेशी मुद्रा प्रबंधन अधिनियम (FEMA)\n(c) विदेशी सहायक कंपनियों पर कंपनी अधिनियम के प्रावधान\n(d) मनी लॉन्ड्रिंग निवारण अधिनियम (PMLA)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रामक है क्योंकि FEMA सीमा-पार वित्तीय प्रवाहों को नियंत्रित करता है और विदेशी संबद्धता के संदर्भ में संभावित रूप से उद्धृत किया जा सकता है, लेकिन FCRA वह विशिष्ट अधिनियम है जो भारतीय एनजीओ और नागरिक समाज संगठनों को विदेशी योगदानों के लिए नियंत्रित करता है।",
+      "elimination_logic": [
+        "नियामक मुद्दे की पहचान करें: एक भारतीय संगठन जो विदेशी वित्त पोषण प्राप्त करता है और विदेशी संस्थागत ब्रांड के तहत संचालित होता है, उसे नियामक जांच का सामना करना पड़ता है — सही अधिनियम की पहचान करें।",
+        "FCRA (विदेशी योगदान विनियमन अधिनियम) विशेष रूप से भारतीय संघों, समितियों और एनजीओ द्वारा विदेशी योगदानों की प्राप्ति और उपयोग को नियंत्रित करता है — यह लागू कानून है।",
+        "विकल्प (b) को हटाएं: FEMA वाणिज्यिक लेनदेन के लिए विदेशी मुद्रा प्रबंधन करता है, न कि एनजीओ के विदेशी योगदानों के लिए।",
+        "विकल्प (c) को हटाएं: कंपनी अधिनियम कॉर्पोरेट संस्थाओं को नियंत्रित करता है; राज्य कानून के तहत पंजीकृत एक सोसाइटी विदेशी वित्त पोषण के मुद्दों के लिए कंपनी अधिनियम के अधीन नहीं है।",
+        "विकल्प (d) को हटाएं: मनी लॉन्ड्रिंग निवारण अधिनियम (PMLA) मनी लॉन्ड्रिंग से संबंधित है, न कि विदेशी संस्थागत संबद्धता के संरचनात्मक नियामक प्रश्न से।",
+        "विकल्प (a) की पुष्टि करें: FCRA सीधे लागू अधिनियम है जो वर्णित परिदृश्य को नियंत्रित करता है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह परिदृश्य उस नियामक चुनौती का वर्णन करता है जिसके कारण ब्रुकिंग्स इंडिया ने 2020 में CSEP के रूप में पुनः ब्रांडिंग की। विदेशी योगदान विनियमन अधिनियम (FCRA) भारतीय गैर-सरकारी संगठनों को विदेशी योगदानों के लिए केंद्रीय अधिनियम है — यह विदेशी निधियों की प्राप्ति और विदेशी संस्थाओं के साथ परिचालन संबद्धता दोनों को नियंत्रित करता है।\n\nब्रुकिंग्स इंडिया के लिए मुख्य नियामक चिंता यह थी कि एक अमेरिकी आधारित संगठन के सहयोगी के रूप में इसकी संस्थागत ब्रांडिंग, संभावित विदेशी वित्त पोषण प्रवाहों के साथ मिलकर, FCRA अनुपालन जोखिम उत्पन्न करती थी। CSEP के रूप में पुनर्गठन — एक पूरी तरह से स्वतंत्र भारतीय सोसाइटी — ने इस नियामक जोखिम को समाप्त कर दिया।\n\n• विकल्प (a) — FCRA: सही। यह विदेशी संबद्ध एनजीओ के लिए सीधे लागू अधिनियम है जो विदेशी योगदान प्राप्त करते हैं या प्राप्त करने के जोखिम में हैं।\n• विकल्प (b) — FEMA: गलत। FEMA वाणिज्यिक संदर्भों में विदेशी मुद्रा लेनदेन को नियंत्रित करता है, न कि एनजीओ की विदेशी संस्थागत संबद्धता को।\n• विकल्प (c) — कंपनी अधिनियम: गलत। यह पंजीकृत कंपनियों पर लागू होता है, न कि भारतीय कानून के तहत पंजीकृत सोसाइटी पर।\n• विकल्प (d) — PMLA: गलत। PMLA मनी लॉन्ड्रिंग अपराधों को संबोधित करता है, न कि विदेशी संबद्धता के संरचनात्मक प्रश्न को।\n\nमूल्य संवर्धन:\n• FCRA संशोधन 2020 ने प्रतिबंधों को कड़ा किया जिसमें उप-ग्रांटिंग निषेध शामिल है — जिसने सीधे ब्रुकिंग्स इंडिया के परिचालन मॉडल को प्रभावित किया।\n• अमनेस्टी इंटरनेशनल इंडिया और कई अन्य विदेशी संबद्ध एनजीओ ने उसी अवधि में FCRA अनुपालन मुद्दों के कारण भारत में संचालन बंद कर दिया।\n• भारतीय थिंक टैंक जो सोसाइटी के रूप में पंजीकृत हैं, वे मुख्य रूप से राज्य स्तरीय सोसाइटी पंजीकरण अधिनियमों के तहत संचालित होते हैं, जो कंपनी कानून के ढांचे से भिन्न हैं।"
+    }
+  },
+  {
+    "uuid": "f6499902-b5eb-4f03-9ab3-dce47ec257e9",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Digital Economy and Technology Policy Research at Brookings"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Brookings Center for Technology Innovation vs. ORF technology research",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to technology policy research institutions, consider the following statements:\n\nStatement 1: Brookings Institution's Center for Technology Innovation (CTI) focuses on AI governance, digital trade, and data privacy — research areas that have been cited in India's digital economy policy discussions.\nStatement 2: Observer Research Foundation (ORF), India's equivalent technology policy body, operates as a government-funded institution under the Ministry of Electronics and Information Technology (MeitY).\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's Center for Technology Innovation (CTI) focuses on AI governance, digital trade, and data privacy — research areas that have been cited in India's digital economy policy discussions.",
+          "verdict": "Correct",
+          "reason": "The CTI at Brookings is a real program focused on these technology governance areas. Its research has relevance to India's Personal Data Protection Bill debates and Digital India policy discourse."
+        },
+        {
+          "statement": "Observer Research Foundation (ORF), India's equivalent technology policy body, operates as a government-funded institution under the Ministry of Electronics and Information Technology (MeitY).",
+          "verdict": "Incorrect",
+          "reason": "ORF (Observer Research Foundation) is an independent, privately funded think tank. It is not government-funded and has no institutional affiliation with MeitY or any other government ministry."
+        }
+      ],
+      "strong_distractor": "a — Option a (both correct) attracts students who know CTI is real but accept the ORF-MeitY affiliation claim because ORF does engage extensively with digital governance issues and government initiatives.",
+      "elimination_logic": [
+        "Statement 1: CTI is a verified Brookings program covering AI governance, data privacy, and digital trade — correct as stated.",
+        "Statement 2: ORF is an independent, privately funded think tank — it has no government funding or MeitY affiliation. Students who know ORF as prominent in digital governance may accept the false government-funding claim.",
+        "Statement 1 correct, Statement 2 incorrect — answer is option (d)."
+      ],
+      "upsc_trap_explanation": "The entity-swap targets ORF's institutional status. ORF is highly visible in government policy discussions — it hosts the Raisina Dialogue, engages with G20 discussions, and produces research on Digital India — making a government-funding claim feel plausible. However, ORF remains a privately funded independent institution. This confusion between 'government-engaged research' and 'government-funded institution' is a classic UPSC preparation trap.",
+      "final_explanation": "Understanding the distinction between government-funded research bodies and independent think tanks that engage with government is critical for accurate institutional classification.\n\n• Statement 1 — Correct: Brookings' Center for Technology Innovation (CTI) focuses on AI governance, data privacy, and digital trade. Its research on platform regulation and data protection has been cited in the context of India's Personal Data Protection Bill.\n• Statement 2 — Incorrect: ORF (Observer Research Foundation) is an independent, privately funded think tank. It engages extensively with government on digital policy and hosts major conferences like Raisina Dialogue but receives no government funding and has no MeitY affiliation.\n\nValue Addition:\n• ORF was founded in 1990 and is associated with the Reliance Industries group in terms of its founding support, though it functions independently.\n• India's Data Protection framework (DPDP Act 2023) drew on research from multiple independent bodies including ORF, NLSIU, and international references.\n• MeitY does have associated research bodies — C-DAC and STQC — but these are entirely different from independent think tanks."
+    },
+    "hi": {
+      "display_text": "तकनीकी नीति अनुसंधान संस्थानों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: Brookings Institution का Center for Technology Innovation (CTI) AI शासन, डिजिटल व्यापार, और डेटा गोपनीयता पर केंद्रित है — ये अनुसंधान क्षेत्र भारत की डिजिटल अर्थव्यवस्था नीति चर्चाओं में उद्धृत हुए हैं।\nकथन 2: Observer Research Foundation (ORF), भारत का समकक्ष तकनीकी नीति निकाय, Ministry of Electronics and Information Technology (MeitY) के तहत एक सरकारी वित्तपोषित संस्था के रूप में संचालित होता है।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution का Center for Technology Innovation (CTI) AI शासन, डिजिटल व्यापार, और डेटा गोपनीयता पर केंद्रित है — ये अनुसंधान क्षेत्र भारत की डिजिटल अर्थव्यवस्था नीति चर्चाओं में उद्धृत हुए हैं।",
+          "verdict": "सही",
+          "reason": "Brookings में CTI एक वास्तविक कार्यक्रम है जो इन तकनीकी शासन क्षेत्रों पर केंद्रित है। इसका अनुसंधान भारत के Personal Data Protection Bill बहसों और Digital India नीति विमर्श से संबंधित है।"
+        },
+        {
+          "statement": "Observer Research Foundation (ORF), भारत का समकक्ष तकनीकी नीति निकाय, Ministry of Electronics and Information Technology (MeitY) के तहत एक सरकारी वित्तपोषित संस्था के रूप में संचालित होता है।",
+          "verdict": "गलत",
+          "reason": "ORF (Observer Research Foundation) एक स्वतंत्र, निजी वित्तपोषित थिंक टैंक है। यह सरकारी वित्तपोषित नहीं है और MeitY या किसी अन्य सरकारी मंत्रालय से कोई संस्थागत संबद्धता नहीं रखता।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प a (दोनों सही) उन छात्रों को आकर्षित करता है जो जानते हैं कि CTI वास्तविक है लेकिन ORF-MeitY संबद्धता के दावे को स्वीकार कर लेते हैं क्योंकि ORF डिजिटल शासन मुद्दों और सरकारी पहलों के साथ व्यापक रूप से जुड़ा हुआ है।",
+      "elimination_logic": [
+        "कथन 1: CTI एक सत्यापित Brookings कार्यक्रम है जो AI शासन, डेटा गोपनीयता, और डिजिटल व्यापार को कवर करता है — जैसा कहा गया है, सही है।",
+        "कथन 2: ORF एक स्वतंत्र, निजी वित्तपोषित थिंक टैंक है — इसे कोई सरकारी वित्तपोषण या MeitY संबद्धता नहीं है। जो छात्र ORF को डिजिटल शासन में प्रमुख मानते हैं, वे गलत सरकारी वित्तपोषण दावे को स्वीकार कर सकते हैं।",
+        "कथन 1 सही, कथन 2 गलत — उत्तर विकल्प (d) है।"
+      ],
+      "upsc_trap_explanation": "यह entity-swap ORF की संस्थागत स्थिति को लक्षित करता है। ORF सरकारी नीति चर्चाओं में अत्यंत दृश्य है — यह Raisina Dialogue की मेजबानी करता है, G20 चर्चाओं में भाग लेता है, और Digital India पर अनुसंधान करता है — जिससे सरकारी वित्तपोषण का दावा संभावित लगता है। हालांकि, ORF एक निजी वित्तपोषित स्वतंत्र संस्था है। 'सरकारी-संलग्न अनुसंधान' और 'सरकारी वित्तपोषित संस्था' के बीच यह भ्रम UPSC तैयारी का एक क्लासिक जाल है।",
+      "final_explanation": "सरकारी वित्तपोषित अनुसंधान संस्थाओं और स्वतंत्र थिंक टैंकों के बीच अंतर को समझना सटीक संस्थागत वर्गीकरण के लिए आवश्यक है।\n\n• कथन 1 — सही: Brookings का Center for Technology Innovation (CTI) AI शासन, डेटा गोपनीयता, और डिजिटल व्यापार पर केंद्रित है। इसका प्लेटफॉर्म विनियमन और डेटा संरक्षण पर अनुसंधान भारत के Personal Data Protection Bill के संदर्भ में उद्धृत हुआ है।\n• कथन 2 — गलत: ORF (Observer Research Foundation) एक स्वतंत्र, निजी वित्तपोषित थिंक टैंक है। यह डिजिटल नीति पर सरकार के साथ व्यापक रूप से जुड़ा है और Raisina Dialogue जैसे प्रमुख सम्मेलनों की मेजबानी करता है, लेकिन इसे कोई सरकारी वित्तपोषण नहीं मिलता और इसका MeitY से कोई संबद्धता नहीं है।\n\nमूल्य संवर्धन:\n• ORF की स्थापना 1990 में हुई थी और यह Reliance Industries समूह के साथ अपनी स्थापना समर्थन के संदर्भ में जुड़ा है, हालांकि यह स्वतंत्र रूप से कार्य करता है।\n• भारत का डेटा संरक्षण ढांचा (DPDP Act 2023) ORF, NLSIU, और अंतरराष्ट्रीय संदर्भों सहित कई स्वतंत्र निकायों के अनुसंधान पर आधारित है।\n• MeitY के पास संबंधित अनुसंधान संस्थान हैं — C-DAC और STQC — लेकिन ये स्वतंत्र थिंक टैंकों से पूरी तरह भिन्न हैं।"
+    }
+  },
+  {
+    "uuid": "677d1466-4e77-46ab-989b-7c754c4aeba8",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings Papers on Economic Activity (BPEA)",
+        "Global Economy and Development Program: Key Outputs"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "BPEA launched 1970 semi-annual macroeconomics journal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Brookings Papers on Economic Activity (BPEA), Brookings Institution's flagship semi-annual journal dedicated to macroeconomic analysis of real-world economic problems, was first launched in ________.\n\n(a) 1962\n(b) 1970\n(c) 1982\n(d) 1995",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c (1982) is the strongest distractor because it falls during the major macroeconomic policy debates (Volcker disinflation, stagflation aftermath) that BPEA is known for contributing to, making the temporal association feel correct.",
+      "elimination_logic": [
+        "Eliminate option (a): 1962 predates Brookings' major programmatic expansion phase; no major Brookings publication was launched in this year.",
+        "Eliminate option (c): 1982 is a prominent year in macroeconomic history but is not when BPEA was launched — BPEA was already well-established by then.",
+        "Eliminate option (d): 1995 is far too late for a flagship publication that contributed to 1970s stagflation debates.",
+        "Confirm option (b): The Brookings Papers on Economic Activity was launched in 1970, making it coincide with the early stagflation era debates that defined its early policy relevance."
+      ],
+      "upsc_trap_explanation": "The 1982 temporal-swap exploits the fact that BPEA's most influential policy contributions are associated with the early 1980s macroeconomic crises (Volcker shock, US recession debates). Students who associate BPEA's prominence with the 1980s naturally anchor its launch to that era. However, BPEA was launched in 1970 specifically to address macroeconomic analysis of real-world problems — it had already built its reputation by the time 1982 policy debates occurred.",
+      "final_explanation": "The Brookings Papers on Economic Activity (BPEA) is Brookings' flagship academic journal for macroeconomic analysis. It was launched in 1970 as a semi-annual publication focused on real-world macroeconomic problems — unemployment, fiscal policy, inflation, and financial stability.\n\n• Option (a) — 1962: Incorrect. No major Brookings publication was launched in 1962; this predates BPEA's founding era.\n• Option (b) — 1970: Correct. BPEA was launched in 1970, coinciding with the onset of the stagflation era that would define its early relevance.\n• Option (c) — 1982: Incorrect. By 1982, BPEA was already a 12-year-old publication contributing to Volcker-era macroeconomic debates.\n• Option (d) — 1995: Incorrect. This would place BPEA's launch decades after its actual contributions to 1970s and 1980s policy debates.\n\nValue Addition:\n• BPEA differs from IMF Working Papers in being a peer-reviewed journal, not a staff research series.\n• The journal is distinguished from policy briefs by its longer analytical format and academic peer review process.\n• BPEA research has influenced Federal Reserve monetary policy thinking, particularly on unemployment-inflation tradeoffs."
+    },
+    "hi": {
+      "display_text": "ब्रुकिंग्स पेपर्स ऑन इकोनॉमिक एक्टिविटी (BPEA), ब्रुकिंग्स संस्थान का प्रमुख अर्धवार्षिक जर्नल जो वास्तविक आर्थिक समस्याओं के मैक्रोइकॉनॉमिक विश्लेषण के लिए समर्पित है, पहली बार ________ में लॉन्च हुआ था।\n\n(a) 1962\n(b) 1970\n(c) 1982\n(d) 1995",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c (1982) सबसे मजबूत भ्रमित करने वाला है क्योंकि यह उस प्रमुख मैक्रोइकॉनॉमिक नीति बहसों (वोल्कर डिसइन्फ्लेशन, स्टैगफ्लेशन के बाद) के दौरान आता है जिनमें BPEA ने योगदान दिया है, जिससे समय संबंध सही प्रतीत होता है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 1962 ब्रुकिंग्स के प्रमुख कार्यक्रम विस्तार चरण से पहले का है; इस वर्ष कोई प्रमुख ब्रुकिंग्स प्रकाशन शुरू नहीं हुआ था।",
+        "विकल्प (c) को हटाएं: 1982 मैक्रोइकॉनॉमिक इतिहास में एक प्रमुख वर्ष है लेकिन BPEA इसी वर्ष लॉन्च नहीं हुआ था — तब तक BPEA पहले से ही अच्छी तरह स्थापित था।",
+        "विकल्प (d) को हटाएं: 1995 एक प्रमुख प्रकाशन के लिए बहुत देर है जिसने 1970 के दशक के स्टैगफ्लेशन बहसों में योगदान दिया।",
+        "विकल्प (b) की पुष्टि करें: ब्रुकिंग्स पेपर्स ऑन इकोनॉमिक एक्टिविटी 1970 में लॉन्च हुआ था, जो उसके प्रारंभिक नीति प्रासंगिकता को परिभाषित करने वाले शुरुआती स्टैगफ्लेशन युग की बहसों के साथ मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "1982 का समय-संबंध भ्रम इस तथ्य का उपयोग करता है कि BPEA के सबसे प्रभावशाली नीति योगदान 1980 के दशक की शुरुआत के मैक्रोइकॉनॉमिक संकटों (वोल्कर शॉक, अमेरिकी मंदी बहस) से जुड़े हैं। छात्र जो BPEA की प्रमुखता को 1980 के दशक से जोड़ते हैं, स्वाभाविक रूप से इसके लॉन्च को उस युग से जोड़ते हैं। हालांकि, BPEA 1970 में विशेष रूप से वास्तविक दुनिया की मैक्रोइकॉनॉमिक समस्याओं के विश्लेषण के लिए लॉन्च किया गया था — 1982 की नीति बहसों के समय तक इसका नाम पहले ही स्थापित हो चुका था।",
+      "final_explanation": "ब्रुकिंग्स पेपर्स ऑन इकोनॉमिक एक्टिविटी (BPEA) ब्रुकिंग्स का प्रमुख शैक्षणिक जर्नल है जो मैक्रोइकॉनॉमिक विश्लेषण के लिए समर्पित है। इसे 1970 में अर्धवार्षिक प्रकाशन के रूप में लॉन्च किया गया था, जो वास्तविक दुनिया की मैक्रोइकॉनॉमिक समस्याओं — बेरोजगारी, राजकोषीय नीति, मुद्रास्फीति, और वित्तीय स्थिरता — पर केंद्रित था।\n\n• विकल्प (a) — 1962: गलत। 1962 में कोई प्रमुख ब्रुकिंग्स प्रकाशन शुरू नहीं हुआ था; यह BPEA की स्थापना के युग से पहले है।\n• विकल्प (b) — 1970: सही। BPEA 1970 में लॉन्च हुआ था, जो स्टैगफ्लेशन युग की शुरुआत के साथ मेल खाता है जिसने इसकी प्रारंभिक प्रासंगिकता को परिभाषित किया।\n• विकल्प (c) — 1982: गलत। 1982 तक, BPEA पहले से ही 12 वर्ष पुराना प्रकाशन था जो वोल्कर युग की मैक्रोइकॉनॉमिक बहसों में योगदान दे रहा था।\n• विकल्प (d) — 1995: गलत। यह BPEA के 1970 और 1980 के दशक की नीति बहसों में वास्तविक योगदान के कई दशक बाद लॉन्च को दर्शाएगा।\n\nमूल्य संवर्धन:\n• BPEA IMF वर्किंग पेपर्स से अलग है क्योंकि यह एक सहकर्मी-समीक्षित जर्नल है, न कि स्टाफ रिसर्च सीरीज।\n• यह जर्नल नीति संक्षेपों से अपने लंबे विश्लेषणात्मक प्रारूप और शैक्षणिक सहकर्मी समीक्षा प्रक्रिया के कारण अलग है।\n• BPEA के शोध ने विशेष रूप से बेरोजगारी-मुद्रास्फीति व्यापार-समझौतों पर फेडरल रिजर्व की मौद्रिक नीति सोच को प्रभावित किया है।"
+    }
+  },
+  {
+    "uuid": "d4a6f99e-7f6b-4579-b066-57e41474caeb",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Role in Poverty and Inequality Measurement",
+        "Metropolitan Policy Program and Urban Development Research"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Brookings program outputs matched to research domains",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Brookings Program) with List II (Primary Research Output or Focus):",
+        "columns": [
+          "List I — Brookings Program",
+          "List II — Primary Output/Focus"
+        ],
+        "rows": [
+          [
+            "A. Metropolitan Policy Program",
+            "1. Brookings Papers on Economic Activity — macroeconomic analysis journal"
+          ],
+          [
+            "B. Global Economy and Development",
+            "2. US-India strategic partnership, Quad, and Indo-Pacific security research"
+          ],
+          [
+            "C. Economic Studies",
+            "3. Global Metro Monitor — ranking of metropolitan economies worldwide"
+          ],
+          [
+            "D. Foreign Policy Program",
+            "4. Poverty measurement debates, SDG financing, and middle-class growth research"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-4, C-3, D-2\n(b) A-4, B-3, C-1, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-3, B-2, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b swaps the Global Metro Monitor and the MPI contribution, which is deceptive because both are about measuring economic conditions — one for cities, one for households — and students may conflate measurement frameworks.",
+      "elimination_logic": [
+        "Global Metro Monitor is explicitly associated with the Metropolitan Policy Program — this is the anchor pair.",
+        "The 'Dollar-a-Day' poverty line debates and multidimensional poverty contributions belong to Brookings scholars within the Global Economy and Development program.",
+        "The BPEA journal (macroeconomic analysis) belongs to Economic Studies, not Metropolitan Policy.",
+        "US-India strategic partnership research is within the Foreign Policy program.",
+        "Correct matching: A-3 (Metropolitan/Global Metro Monitor), B-4 (Global Economy and Development/poverty metrics), C-1 (Economic Studies/BPEA), D-2 (Foreign Policy/US-India Quad research). This is option (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap targets the Global Metro Monitor and poverty metrics pairing. Both involve quantitative measurement of socioeconomic conditions — Global Metro Monitor measures city-level economic performance, while poverty metrics measure household-level welfare. Students who associate 'measuring development' broadly with the same program may swap these two pairings, selecting option (b) or (d) instead of the correct (c).",
+      "final_explanation": "Matching Brookings programs to their flagship outputs requires knowledge of each program's specific mandate.\n\nCorrect pairings:\n• Metropolitan Policy Program → Global Metro Monitor (city-level economic rankings)\n• Global Economy and Development → Contributions to poverty measurement debates including the Dollar-a-Day discussions and SDG monitoring\n• Economic Studies → Brookings Papers on Economic Activity (flagship macroeconomics journal)\n• Foreign Policy Program → US-India strategic partnership and Quad research\n\nThe trap pairing is A and B: both involve quantitative frameworks, but Metropolitan Policy measures city economies while Global Economy and Development measures household poverty metrics. Swapping these is the most common error.\n\nValue Addition:\n• Governance Studies (not in this question) covers democratic institutions, judicial behavior, and legislative dynamics.\n• Brookings' Energy Security and Climate Initiative (ESCI) often operates within the Foreign Policy or Global Economy and Development umbrella.\n• India's NITI Aayog has cited both Brookings' poverty metrics work and metropolitan competitiveness research in its own policy documents."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (Brookings कार्यक्रम) को सूची II (प्राथमिक अनुसंधान आउटपुट या फोकस) से मिलाइए:",
+        "columns": [
+          "सूची I — Brookings कार्यक्रम",
+          "सूची II — प्राथमिक आउटपुट/फोकस"
+        ],
+        "rows": [
+          [
+            "A. Metropolitan Policy Program",
+            "1. Brookings Papers on Economic Activity — मैक्रोइकॉनॉमिक विश्लेषण जर्नल"
+          ],
+          [
+            "B. Global Economy and Development",
+            "2. US-India रणनीतिक साझेदारी, Quad, और Indo-Pacific सुरक्षा अनुसंधान"
+          ],
+          [
+            "C. Economic Studies",
+            "3. Global Metro Monitor — विश्वव्यापी महानगरीय अर्थव्यवस्थाओं की रैंकिंग"
+          ],
+          [
+            "D. Foreign Policy Program",
+            "4. गरीबी मापन बहसें, SDG वित्तपोषण, और मध्यम वर्ग विकास अनुसंधान"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-4, C-3, D-2\n(b) A-4, B-3, C-1, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-3, B-2, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b में Global Metro Monitor और MPI योगदान को स्वैप किया गया है, जो भ्रामक है क्योंकि दोनों आर्थिक स्थितियों के मापन से संबंधित हैं — एक शहरों के लिए, एक परिवारों के लिए — और छात्र मापन ढांचों को भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "Global Metro Monitor स्पष्ट रूप से Metropolitan Policy Program से जुड़ा है — यह एंकर जोड़ी है।",
+        "'डॉलर-ए-डे' गरीबी रेखा बहसें और बहुआयामी गरीबी योगदान Global Economy and Development कार्यक्रम के Brookings विद्वानों से संबंधित हैं।",
+        "BPEA जर्नल (मैकроइकॉनॉमिक विश्लेषण) Economic Studies से संबंधित है, न कि Metropolitan Policy से।",
+        "US-India रणनीतिक साझेदारी अनुसंधान Foreign Policy कार्यक्रम के अंतर्गत है।",
+        "सही मिलान: A-3 (Metropolitan/Global Metro Monitor), B-4 (Global Economy and Development/गरीबी मापन), C-1 (Economic Studies/BPEA), D-2 (Foreign Policy/US-India Quad अनुसंधान)। यह विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "यह entity-swap Global Metro Monitor और गरीबी मापन के जोड़े को लक्षित करता है। दोनों सामाजिक-आर्थिक स्थितियों के मात्रात्मक मापन से संबंधित हैं — Global Metro Monitor शहर-स्तरीय आर्थिक प्रदर्शन मापता है, जबकि गरीबी मेट्रिक्स परिवार-स्तरीय कल्याण मापते हैं। जो छात्र 'विकास मापन' को व्यापक रूप से एक ही कार्यक्रम से जोड़ते हैं, वे इन दो जोड़ों को स्वैप कर सकते हैं, और सही (c) के बजाय विकल्प (b) या (d) चुन सकते हैं।",
+      "final_explanation": "Brookings कार्यक्रमों को उनके प्रमुख आउटपुट से मिलाने के लिए प्रत्येक कार्यक्रम के विशिष्ट दायित्व का ज्ञान आवश्यक है।\n\nसही जोड़े:\n• Metropolitan Policy Program → Global Metro Monitor (शहर-स्तरीय आर्थिक रैंकिंग)\n• Global Economy and Development → गरीबी मापन बहसों में योगदान, जिसमें डॉलर-ए-डे चर्चा और SDG निगरानी शामिल है\n• Economic Studies → Brookings Papers on Economic Activity (प्रमुख मैक्रोइकॉनॉमिक्स जर्नल)\n• Foreign Policy Program → US-India रणनीतिक साझेदारी और Quad अनुसंधान\n\nट्रैप जोड़ी है A और B: दोनों मात्रात्मक ढांचे शामिल करते हैं, लेकिन Metropolitan Policy शहर की अर्थव्यवस्थाओं को मापता है जबकि Global Economy and Development परिवारों की गरीबी मेट्रिक्स को। इनका स्वैप करना सबसे सामान्य त्रुटि है।\n\nमूल्य संवर्धन:\n• Governance Studies (इस प्रश्न में नहीं) लोकतांत्रिक संस्थानों, न्यायिक व्यवहार, और विधायी गतिशीलता को कवर करता है।\n• Brookings का Energy Security and Climate Initiative (ESCI) अक्सर Foreign Policy या Global Economy and Development छत्र के अंतर्गत काम करता है।\n• भारत का NITI आयोग ने अपनी नीति दस्तावेजों में Brookings के गरीबी मेट्रिक्स कार्य और महानगरीय प्रतिस्पर्धा अनुसंधान दोनों का हवाला दिया है।"
+    }
+  },
+  {
+    "uuid": "55988484-0e13-426c-a9b9-e1322ddeb838",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Academic-Policy Interface: How Brookings Influences Policymaking",
+        "Funding Model, Donor Base, and Neutrality Concerns"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Revolving door: Brookings scholars to government positions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of the Brookings Institution's influence on policymaking, the 'revolving door' phenomenon most precisely refers to which of the following?\n\n(a) The flow of corporate donor funding into Brookings research programs in exchange for policy-favorable research outputs\n(b) The movement of Brookings scholars into government advisory and decision-making positions, translating research expertise directly into policy implementation\n(c) A legal mechanism that restricts former government officials from joining think tanks within a defined cooling-off period\n(d) The practice of recruiting senior government officials into Brookings leadership roles to lend institutional legitimacy to its research outputs",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is deceptive because it suggests Brookings actively recruits government insiders to legitimize its research — the reverse of the actual revolving door dynamic where Brookings scholars move into government.",
+      "elimination_logic": [
+        "Eliminate option (a): Revolving door is not a negative term for donor influence — it specifically refers to the career movement between think tanks and government positions.",
+        "Eliminate option (c): The concept does not describe legal mechanisms restricting government employment of think tank scholars.",
+        "Eliminate option (d): This reverses the causal direction — the revolving door primarily describes think tank scholars entering government, not government officials recruited into think tanks for legitimacy.",
+        "Confirm option (b): The revolving door describes Brookings scholars moving into government advisory or decision-making roles (e.g., Obama and Biden administrations), thereby translating research influence into direct policy implementation."
+      ],
+      "upsc_trap_explanation": "Option (d) deploys a reversed-causation trap: it describes the opposite direction of the revolving door (government to think tank) as if it were the defining phenomenon. In reality, the revolving door is primarily directional from think tank to government — scholars with research credibility entering administration roles. While some government officials do join think tanks after service, the policy influence mechanism of the revolving door flows from research to governance, not the reverse.",
+      "final_explanation": "The 'revolving door' in think tank discourse describes the career pathway by which researchers at institutions like Brookings move into government advisory or decision-making positions, directly translating their research expertise into policy implementation.\n\n• Option (a): Incorrect. Donor influence on research is a separate ethical concern — not what the revolving door describes.\n• Option (b): Correct. Brookings scholars have entered Obama and Biden administration positions, making the revolving door a recognized mechanism of research-to-policy translation.\n• Option (c): Incorrect. No legal mechanism restricts think tank scholars from government employment — the revolving door is a descriptive sociological observation, not a legal constraint.\n• Option (d): Incorrect. This reverses the primary direction — the defining feature is scholars leaving think tanks for government, not government officials entering think tanks.\n\nValue Addition:\n• The revolving door exists in both directions but its policy influence mechanism flows primarily from think tank to government.\n• In India's governance ecosystem, NITI Aayog appointments sometimes draw on independent think tank talent, creating a partial domestic equivalent.\n• The revolving door raises conflict-of-interest concerns — scholars may moderate research conclusions to preserve government access."
+    },
+    "hi": {
+      "display_text": "ब्रुकिंग्स संस्थान के नीति निर्माण पर प्रभाव के संदर्भ में, 'रिवॉल्विंग डोर' घटना सबसे सटीक रूप से निम्नलिखित में से किसे संदर्भित करती है?\n\n(a) नीति के अनुकूल शोध परिणामों के बदले ब्रुकिंग्स अनुसंधान कार्यक्रमों में कॉर्पोरेट दाता निधि का प्रवाह\n(b) ब्रुकिंग्स के विद्वानों का सरकारी सलाहकार और निर्णय लेने वाले पदों में जाना, जो शोध विशेषज्ञता को सीधे नीति कार्यान्वयन में बदलता है\n(c) एक कानूनी तंत्र जो पूर्व सरकारी अधिकारियों को एक निर्धारित कूलिंग-ऑफ अवधि के भीतर थिंक टैंक में शामिल होने से रोकता है\n(d) वरिष्ठ सरकारी अधिकारियों को ब्रुकिंग्स नेतृत्व भूमिकाओं में भर्ती करने की प्रथा ताकि उसके शोध परिणामों को संस्थागत वैधता प्रदान की जा सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d भ्रामक है क्योंकि यह सुझाव देता है कि ब्रुकिंग्स सक्रिय रूप से सरकारी अंदरूनी लोगों को अपने शोध को वैधता देने के लिए भर्ती करता है — जबकि वास्तविक रिवॉल्विंग डोर गतिशीलता इसके विपरीत है जहाँ ब्रुकिंग्स के विद्वान सरकार में जाते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: रिवॉल्विंग डोर दाता प्रभाव के लिए नकारात्मक शब्द नहीं है — यह विशेष रूप से थिंक टैंक और सरकारी पदों के बीच कैरियर आंदोलन को संदर्भित करता है।",
+        "विकल्प (c) को हटाएं: यह अवधारणा थिंक टैंक विद्वानों की सरकारी नौकरी पर कानूनी प्रतिबंधों का वर्णन नहीं करती।",
+        "विकल्प (d) को हटाएं: यह कारणात्मक दिशा को उलट देता है — रिवॉल्विंग डोर मुख्य रूप से थिंक टैंक विद्वानों के सरकार में प्रवेश को दर्शाता है, न कि सरकारी अधिकारियों के वैधता के लिए थिंक टैंक में भर्ती होने को।",
+        "विकल्प (b) की पुष्टि करें: रिवॉल्विंग डोर ब्रुकिंग्स के विद्वानों के सरकारी सलाहकार या निर्णय लेने वाले पदों (जैसे ओबामा और बाइडेन प्रशासन) में जाने को दर्शाता है, जिससे शोध प्रभाव सीधे नीति कार्यान्वयन में बदलता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) उलटी कारणता का जाल लगाता है: यह रिवॉल्विंग डोर की विपरीत दिशा (सरकार से थिंक टैंक) को मानो वह परिभाषित घटना हो, के रूप में वर्णित करता है। वास्तविकता में, रिवॉल्विंग डोर मुख्य रूप से थिंक टैंक से सरकार की ओर है — शोध विश्वसनीयता वाले विद्वान प्रशासनिक भूमिकाओं में जाते हैं। जबकि कुछ सरकारी अधिकारी सेवा के बाद थिंक टैंक में शामिल होते हैं, रिवॉल्विंग डोर का नीति प्रभाव तंत्र शोध से शासन की ओर प्रवाहित होता है, विपरीत नहीं।",
+      "final_explanation": "थिंक टैंक विमर्श में 'रिवॉल्विंग डोर' उस कैरियर मार्ग को दर्शाता है जिसके द्वारा ब्रुकिंग्स जैसे संस्थानों के शोधकर्ता सरकारी सलाहकार या निर्णय लेने वाले पदों में जाते हैं, और सीधे अपने शोध विशेषज्ञता को नीति कार्यान्वयन में बदलते हैं।\n\n• विकल्प (a): गलत। दाता प्रभाव एक अलग नैतिक चिंता है — रिवॉल्विंग डोर इसका वर्णन नहीं करता।\n• विकल्प (b): सही। ब्रुकिंग्स के विद्वान ओबामा और बाइडेन प्रशासन में गए हैं, जिससे रिवॉल्विंग डोर शोध से नीति अनुवाद का मान्यता प्राप्त तंत्र बन गया है।\n• विकल्प (c): गलत। कोई कानूनी तंत्र थिंक टैंक विद्वानों की सरकारी नौकरी पर प्रतिबंध नहीं लगाता — रिवॉल्विंग डोर एक वर्णनात्मक समाजशास्त्रीय अवलोकन है, कानूनी प्रतिबंध नहीं।\n• विकल्प (d): गलत। यह मुख्य दिशा को उलट देता है — परिभाषित विशेषता है विद्वानों का थिंक टैंक छोड़कर सरकार जाना, न कि सरकारी अधिकारियों का थिंक टैंक में जाना।\n\nमूल्य संवर्धन:\n• रिवॉल्विंग डोर दोनों दिशाओं में मौजूद है लेकिन इसका नीति प्रभाव तंत्र मुख्य रूप से थिंक टैंक से सरकार की ओर प्रवाहित होता है।\n• भारत के शासन तंत्र में, नीति आयोग की नियुक्तियाँ कभी-कभी स्वतंत्र थिंक टैंक प्रतिभा पर निर्भर करती हैं, जो आंशिक घरेलू समकक्ष बनाती हैं।\n• रिवॉल्विंग डोर हित संघर्ष की चिंताएँ उत्पन्न करता है — विद्वान सरकारी पहुँच बनाए रखने के लिए शोध निष्कर्षों को मध्यम कर सकते हैं।"
+    }
+  },
+  {
+    "uuid": "976a9696-b181-4da4-89a0-64f1043ac8ef",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings Institution's Global Think Tank Rankings",
+        "Foundational Identity and Classification of Brookings Institution"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Go To Think Tank Index criteria and publisher identity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Global Go To Think Tank Index and the Brookings Institution's performance in it:\n\n1. The Global Go To Think Tank Index evaluates institutions on criteria that include quality of research, policy impact, funding diversity, and outreach — not solely on academic publication metrics.\n2. The Global Go To Think Tank Index is an annual publication produced by the Think Tanks and Civil Societies Program (TTCSP) at the University of Pennsylvania.\n3. Brookings Institution's #1 ranking in the Go To Think Tank Index reflects its status as an official advisory body to the US federal government.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Global Go To Think Tank Index evaluates institutions on criteria that include quality of research, policy impact, funding diversity, and outreach — not solely on academic publication metrics.",
+          "verdict": "Correct",
+          "reason": "The TTCSP's ranking methodology explicitly uses multiple criteria beyond academic citations, including policy impact, media engagement, and funding diversity."
+        },
+        {
+          "statement": "The Global Go To Think Tank Index is an annual publication produced by the Think Tanks and Civil Societies Program (TTCSP) at the University of Pennsylvania.",
+          "verdict": "Correct",
+          "reason": "TTCSP at the University of Pennsylvania is the producer of the Go To Think Tank Index — not Brookings or any think tank being ranked."
+        },
+        {
+          "statement": "Brookings Institution's #1 ranking in the Go To Think Tank Index reflects its status as an official advisory body to the US federal government.",
+          "verdict": "Incorrect",
+          "reason": "Brookings' ranking reflects its research quality and policy influence, not any official government advisory status. Brookings has no formal government advisory role — it influences policy through informal channels."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) captures students who verify statements 1 and 2 correctly but accept statement 3's false 'official advisory body' claim because it seems to logically follow that a #1 ranked institution would have a formal government role.",
+      "elimination_logic": [
+        "Statement 1 is correct: Multi-criteria ranking including policy impact and funding diversity is verified for TTCSP methodology.",
+        "Statement 2 is correct: TTCSP at University of Pennsylvania publishes the index — a verified fact that directly counters the UPSC trap of attributing it to Brookings.",
+        "Statement 3 is incorrect: Brookings has no official advisory status to the US federal government. Its policy influence is informal — through testimony, publications, and the revolving door.",
+        "Statements 1 and 2 correct; statement 3 incorrect — answer is option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 deploys an entity-swap trap: top ranking implies official status. Students who correctly associate Brookings with #1 rankings may accept the logical extension that such prominence translates to formal advisory status — but Brookings explicitly operates outside the government structure. The informal influence mechanisms (testimony, policy briefs) are more powerful precisely because they are not institutionalized.",
+      "final_explanation": "The Global Go To Think Tank Index is the most cited annual ranking of policy research institutions worldwide. Two facts about it are critical for UPSC: it is published by TTCSP at the University of Pennsylvania (not Brookings), and it uses multi-dimensional criteria beyond academic metrics.\n\n• Statement 1 — Correct: Ranking criteria encompass policy impact, research quality, outreach, media engagement, and funding diversity.\n• Statement 2 — Correct: The TTCSP at the University of Pennsylvania is the publisher — a fact that directly counters the common misconception that Brookings publishes rankings about itself.\n• Statement 3 — Incorrect: Brookings' top ranking reflects research influence, not formal government advisory status. Brookings has no institutionalized government advisory role.\n\nValue Addition:\n• TTCSP has published the index since 2008; the report surveys thousands of experts and practitioners globally.\n• Chatham House (UK-based Royal Institute of International Affairs) consistently ranks among the top 5 globally in this index.\n• India's CPR and ORF have appeared in regional and specialized category rankings within the TTCSP index."
+    },
+    "hi": {
+      "display_text": "Global Go To Think Tank Index और Brookings Institution के प्रदर्शन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Global Go To Think Tank Index संस्थानों का मूल्यांकन ऐसे मानदंडों पर करता है जिनमें अनुसंधान की गुणवत्ता, नीति प्रभाव, वित्त पोषण विविधता, और आउटरीच शामिल हैं — केवल अकादमिक प्रकाशन मेट्रिक्स पर नहीं।\n2. Global Go To Think Tank Index एक वार्षिक प्रकाशन है जिसे पेंसिल्वेनिया विश्वविद्यालय के Think Tanks and Civil Societies Program (TTCSP) द्वारा प्रकाशित किया जाता है।\n3. Brookings Institution की Go To Think Tank Index में #1 रैंकिंग उसके अमेरिकी संघीय सरकार के आधिकारिक सलाहकार निकाय के रूप में दर्जा को दर्शाती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Global Go To Think Tank Index evaluates institutions on criteria that include quality of research, policy impact, funding diversity, and outreach — not solely on academic publication metrics.",
+          "verdict": "सही है",
+          "reason": "TTCSP की रैंकिंग पद्धति स्पष्ट रूप से अकादमिक उद्धरणों के अलावा कई मानदंडों का उपयोग करती है, जिनमें नीति प्रभाव, मीडिया सहभागिता, और वित्त पोषण विविधता शामिल हैं।"
+        },
+        {
+          "statement": "The Global Go To Think Tank Index is an annual publication produced by the Think Tanks and Civil Societies Program (TTCSP) at the University of Pennsylvania.",
+          "verdict": "सही है",
+          "reason": "पेंसिल्वेनिया विश्वविद्यालय में TTCSP ही Go To Think Tank Index का प्रकाशक है — न कि Brookings या कोई रैंकिंग में शामिल थिंक टैंक।"
+        },
+        {
+          "statement": "Brookings Institution's #1 ranking in the Go To Think Tank Index reflects its status as an official advisory body to the US federal government.",
+          "verdict": "गलत है",
+          "reason": "Brookings की रैंकिंग उसके अनुसंधान गुणवत्ता और नीति प्रभाव को दर्शाती है, न कि किसी आधिकारिक सरकारी सलाहकार स्थिति को। Brookings का कोई औपचारिक सरकारी सलाहकार भूमिका नहीं है — यह अनौपचारिक चैनलों के माध्यम से नीति को प्रभावित करता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) उन छात्रों को पकड़ता है जो कथन 1 और 2 को सही मानते हैं लेकिन कथन 3 के गलत 'आधिकारिक सलाहकार निकाय' दावे को स्वीकार कर लेते हैं क्योंकि यह तार्किक रूप से लगता है कि #1 रैंकिंग वाला संस्थान औपचारिक सरकारी भूमिका रखेगा।",
+      "elimination_logic": [
+        "कथन 1 सही है: TTCSP पद्धति के लिए नीति प्रभाव और वित्त पोषण विविधता सहित बहु-मानदंड रैंकिंग सत्यापित है।",
+        "कथन 2 सही है: पेंसिल्वेनिया विश्वविद्यालय में TTCSP इस सूचकांक का प्रकाशक है — यह तथ्य UPSC के उस जाल को सीधे खारिज करता है जो इसे Brookings से जोड़ता है।",
+        "कथन 3 गलत है: Brookings का अमेरिकी संघीय सरकार के लिए कोई आधिकारिक सलाहकार दर्जा नहीं है। इसका नीति प्रभाव अनौपचारिक है — गवाही, प्रकाशनों, और रिवॉल्विंग डोर के माध्यम से।",
+        "कथन 1 और 2 सही; कथन 3 गलत — उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 3 एक entity-swap जाल लगाता है: शीर्ष रैंकिंग का अर्थ आधिकारिक दर्जा है। जो छात्र Brookings को #1 रैंकिंग से जोड़ते हैं, वे तार्किक रूप से यह मान सकते हैं कि ऐसी प्रमुखता औपचारिक सलाहकार स्थिति में बदल जाती है — लेकिन Brookings स्पष्ट रूप से सरकार की संरचना के बाहर काम करता है। गवाही, नीति ब्रीफ जैसे अनौपचारिक प्रभाव तंत्र अधिक प्रभावशाली हैं क्योंकि वे संस्थागत नहीं हैं।",
+      "final_explanation": "Global Go To Think Tank Index नीति अनुसंधान संस्थानों की सबसे अधिक उद्धृत वार्षिक रैंकिंग है। UPSC के लिए इसके दो तथ्य महत्वपूर्ण हैं: इसे पेंसिल्वेनिया विश्वविद्यालय के TTCSP द्वारा प्रकाशित किया जाता है (Brookings द्वारा नहीं), और यह अकादमिक मेट्रिक्स से परे बहुआयामी मानदंडों का उपयोग करता है।\n\n• कथन 1 — सही: रैंकिंग मानदंडों में नीति प्रभाव, अनुसंधान गुणवत्ता, आउटरीच, मीडिया सहभागिता, और वित्त पोषण विविधता शामिल हैं।\n• कथन 2 — सही: पेंसिल्वेनिया विश्वविद्यालय में TTCSP प्रकाशक है — यह तथ्य आम गलतफहमी को सीधे खारिज करता है कि Brookings स्वयं के बारे में रैंकिंग प्रकाशित करता है।\n• कथन 3 — गलत: Brookings की शीर्ष रैंकिंग अनुसंधान प्रभाव को दर्शाती है, न कि औपचारिक सरकारी सलाहकार स्थिति को। Brookings की कोई संस्थागत सरकारी सलाहकार भूमिका नहीं है।\n\nमूल्य संवर्धन:\n• TTCSP ने 2008 से सूचकांक प्रकाशित किया है; रिपोर्ट में विश्वभर के हजारों विशेषज्ञ और प्रैक्टिशनर शामिल हैं।\n• चाथम हाउस (यूके आधारित रॉयल इंस्टिट्यूट ऑफ इंटरनेशनल अफेयर्स) इस सूचकांक में लगातार शीर्ष 5 में है।\n• भारत के CPR और ORF ने TTCSP सूचकांक में क्षेत्रीय और विशेष श्रेणी रैंकिंग में स्थान बनाया है।"
+    }
+  },
+  {
+    "uuid": "aef83994-9f2f-4b5f-914f-7cb312ceaf68",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Role in Global Financial Governance Research",
+        "Core Research Programs and Policy Domains"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Independent research bodies influencing multilateral financial institutions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Brookings Institution's research on IMF reform, Special Drawing Rights, and G20 financial governance frameworks carries significant weight in multilateral policy forums, including discussions that were particularly prominent during India's G20 Presidency.\n\nReason (R): Independent research bodies like Brookings can influence multilateral financial institutions precisely because their politically neutral, evidence-based analysis provides a credible intellectual framework that helps member states build consensus on sensitive governance reforms.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b tempts students who correctly verify both A and R as factually true but then question whether the causal relationship is genuine — the connection between independent analysis and multilateral policy positions is real but operates through indirect channels.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? Brookings research on IMF reform, SDR allocations, and G20 frameworks has been cited in multilateral policy discussions, including India's G20 Presidency debates. A is correct.",
+        "Step 2 — Is Reason (R) correct? Independent think tanks like Brookings influence multilateral financial institutions by providing evidence-based analysis that fills gaps in official institutional research, offering politically neutral framing that helps build consensus among member states. R is correct.",
+        "Step 3 — Does R causally explain A? Yes — the reason Brookings research carries weight in IMF and G20 forums is precisely its independence and evidence-based analysis, which provides neutral intellectual framing that multilateral institutions find useful for building member-country consensus. R does explain A.",
+        "A correct + R correct + R explains A — answer is option (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Independent think tanks influence multilateral financial governance through a specific mechanism: they provide evidence-based, politically neutral analysis that fills intellectual gaps in official institutional research and helps build consensus among member states who may distrust each other's government-produced analyses.\n\nAssertion (A): Correct. Brookings' research on IMF reform, SDR allocations, and debt sustainability in developing nations has been directly relevant to G20 financial governance discussions, including India's 2023 Presidency focus on reforming multilateral development banks.\n\nReason (R): Correct. Independent research bodies offer politically neutral framing — no member government can dismiss them as advocacy for another government's position. This neutrality is precisely their value in multilateral settings.\n\nCausal relationship: R correctly explains A. Brookings' influence in IMF and G20 forums derives from the credibility and neutrality that independent research status confers — exactly what R describes.\n\nValue Addition:\n• India's G20 Presidency prioritized MDB (Multilateral Development Bank) reform and climate finance — both areas where Brookings had prior research outputs.\n• Think20 (T20) formalized the role of think tanks like Brookings in G20 preparatory discussions.\n• The IMF's Independent Evaluation Office serves a complementary but distinct function — internal accountability rather than external independent research."
+    },
+    "hi": {
+      "display_text": "कथन (A): ब्रुकिंग्स संस्थान का IMF सुधार, विशेष आहरण अधिकार, और G20 वित्तीय शासन ढांचों पर शोध बहुपक्षीय नीति मंचों में महत्वपूर्ण प्रभाव रखता है, जिसमें भारत की G20 अध्यक्षता के दौरान विशेष रूप से प्रमुख चर्चाएँ शामिल हैं।\n\nकारण (R): ब्रुकिंग्स जैसे स्वतंत्र अनुसंधान संस्थान बहुपक्षीय वित्तीय संस्थाओं को इसलिए प्रभावित कर सकते हैं क्योंकि उनका राजनीतिक रूप से तटस्थ, प्रमाण-आधारित विश्लेषण एक विश्वसनीय बौद्धिक रूपरेखा प्रदान करता है जो सदस्य राज्यों को संवेदनशील शासन सुधारों पर सहमति बनाने में मदद करता है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b उन छात्रों को आकर्षित करता है जो सही रूप से दोनों A और R को तथ्यात्मक रूप से सही मानते हैं लेकिन फिर कारणात्मक संबंध पर संदेह करते हैं — स्वतंत्र विश्लेषण और बहुपक्षीय नीति स्थितियों के बीच संबंध वास्तविक है लेकिन अप्रत्यक्ष माध्यमों से संचालित होता है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? IMF सुधार, SDR आवंटन, और G20 ढांचों पर ब्रुकिंग्स के शोध को बहुपक्षीय नीति चर्चाओं में उद्धृत किया गया है, जिसमें भारत की G20 अध्यक्षता की बहसें भी शामिल हैं। A सही है।",
+        "चरण 2 — क्या कारण (R) सही है? ब्रुकिंग्स जैसे स्वतंत्र थिंक टैंक बहुपक्षीय वित्तीय संस्थाओं को प्रमाण-आधारित विश्लेषण प्रदान करके प्रभावित करते हैं जो आधिकारिक संस्थागत शोध में अंतर को भरता है, और राजनीतिक रूप से तटस्थ रूपरेखा प्रदान करता है जो सदस्य राज्यों के बीच सहमति बनाने में मदद करता है। R सही है।",
+        "चरण 3 — क्या R, A को कारणात्मक रूप से समझाता है? हाँ — ब्रुकिंग्स के शोध का IMF और G20 मंचों में प्रभाव इसका स्वतंत्र और प्रमाण-आधारित विश्लेषण है, जो बहुपक्षीय संस्थाओं को सदस्य देशों के बीच सहमति बनाने के लिए उपयोगी तटस्थ बौद्धिक रूपरेखा प्रदान करता है। R, A को समझाता है।",
+        "A सही + R सही + R, A को समझाता है — उत्तर विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "स्वतंत्र थिंक टैंक बहुपक्षीय वित्तीय शासन को एक विशिष्ट तंत्र के माध्यम से प्रभावित करते हैं: वे प्रमाण-आधारित, राजनीतिक रूप से तटस्थ विश्लेषण प्रदान करते हैं जो आधिकारिक संस्थागत शोध में बौद्धिक अंतर को भरता है और उन सदस्य राज्यों के बीच सहमति बनाने में मदद करता है जो एक-दूसरे की सरकारी-निर्मित विश्लेषणों पर संदेह कर सकते हैं।\n\nकथन (A): सही। ब्रुकिंग्स का IMF सुधार, SDR आवंटन, और विकासशील देशों में ऋण स्थिरता पर शोध सीधे G20 वित्तीय शासन चर्चाओं से संबंधित रहा है, जिसमें भारत की 2023 अध्यक्षता का बहुपक्षीय विकास बैंक सुधार पर फोकस शामिल है।\n\nकारण (R): सही। स्वतंत्र अनुसंधान संस्थाएँ राजनीतिक रूप से तटस्थ रूपरेखा प्रदान करती हैं — कोई भी सदस्य सरकार उन्हें किसी अन्य सरकार के पक्षपात के रूप में खारिज नहीं कर सकती। यह तटस्थता बहुपक्षीय सेटिंग्स में उनकी मूल्यवान भूमिका है।\n\nकारणात्मक संबंध: R सही ढंग से A को समझाता है। ब्रुकिंग्स का IMF और G20 मंचों में प्रभाव स्वतंत्र अनुसंधान की विश्वसनीयता और तटस्थता से आता है — ठीक वही जो R वर्णित करता है।\n\nमूल्य संवर्धन:\n• भारत की G20 अध्यक्षता ने MDB (बहुपक्षीय विकास बैंक) सुधार और जलवायु वित्त को प्राथमिकता दी — दोनों क्षेत्र जहाँ ब्रुकिंग्स के पूर्व शोध परिणाम थे।\n• Think20 (T20) ने G20 की तैयारी चर्चाओं में ब्रुकिंग्स जैसे थिंक टैंकों की भूमिका को औपचारिक रूप दिया।\n• IMF का स्वतंत्र मूल्यांकन कार्यालय पूरक लेकिन भिन्न कार्य करता है — आंतरिक जवाबदेही न कि बाहरी स्वतंत्र शोध।"
+    }
+  },
+  {
+    "uuid": "bf763c9f-03d0-40bd-8145-fae83d400ae6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Research on Climate Change and Sustainable Development",
+        "Global Economy and Development Program: Key Outputs"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Brookings ESCI vs. WRI vs. IISD comparative research mandates",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about international research institutions and their flagship contributions to climate and development research:\n\n1. Brookings Institution's Energy Security and Climate Initiative (ESCI) focuses on clean energy transitions, carbon pricing mechanisms, and energy security — areas directly relevant to India's coal phase-out timeline debates.\n2. The World Resources Institute (WRI) maintains the Climate Analysis Indicators Tool (CAIT), which is the most widely used open-source greenhouse gas emissions tracking database used in UNFCCC negotiations.\n3. The International Institute for Sustainable Development (IISD) is primarily known for publishing the Global Metro Monitor, which tracks metropolitan economic performance across developed and developing economies.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's Energy Security and Climate Initiative (ESCI) focuses on clean energy transitions, carbon pricing mechanisms, and energy security — areas directly relevant to India's coal phase-out timeline debates.",
+          "verdict": "Correct",
+          "reason": "ESCI is Brookings' dedicated climate program; its research on coal phase-out timelines and carbon pricing has been referenced in India's climate policy discussions."
+        },
+        {
+          "statement": "The World Resources Institute (WRI) maintains the Climate Analysis Indicators Tool (CAIT), which is the most widely used open-source greenhouse gas emissions tracking database used in UNFCCC negotiations.",
+          "verdict": "Correct",
+          "reason": "WRI's CAIT database is genuinely the most widely cited open-source emissions tracking tool; it is distinct from Brookings' climate research and represents WRI's primary contribution to climate governance infrastructure."
+        },
+        {
+          "statement": "The International Institute for Sustainable Development (IISD) is primarily known for publishing the Global Metro Monitor, which tracks metropolitan economic performance across developed and developing economies.",
+          "verdict": "Incorrect",
+          "reason": "The Global Metro Monitor is published by Brookings Institution's Metropolitan Policy Program, not by IISD. IISD is primarily known for the Earth Negotiations Bulletin and sustainable development policy research."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) traps students who verify the ESCI and WRI facts but do not recall that the Global Metro Monitor belongs to Brookings, not IISD — an entity-swap between two non-US research bodies.",
+      "elimination_logic": [
+        "Statement 1 is correct: Brookings ESCI and coal phase-out/carbon pricing research is verified.",
+        "Statement 2 is correct: WRI's CAIT database is a well-established fact in climate governance.",
+        "Statement 3 is incorrect: Global Metro Monitor belongs to Brookings Metropolitan Policy Program — attributing it to IISD is an entity-swap error. IISD produces the Earth Negotiations Bulletin.",
+        "Statements 1 and 2 correct; statement 3 incorrect — answer is option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 swaps IISD for Brookings as the publisher of the Global Metro Monitor. Both are non-US international research bodies, and students who associate IISD with 'monitoring and measurement' frameworks (which is accurate for ENB) may extend this association to metro economic monitoring. The Global Metro Monitor is unambiguously a Brookings Metropolitan Policy Program product.",
+      "final_explanation": "Three major non-governmental research bodies contribute to climate and development monitoring, each with distinct flagship outputs.\n\n• Statement 1 — Correct: Brookings' ESCI research on clean energy transitions and carbon pricing is directly relevant to India's climate commitments under the Paris Agreement.\n• Statement 2 — Correct: WRI's CAIT (Climate Analysis Indicators Tool) is the standard emissions tracking database used in UNFCCC preparatory work — a distinct contribution from Brookings' analytical research.\n• Statement 3 — Incorrect: The Global Metro Monitor is published by Brookings Institution's Metropolitan Policy Program, not IISD. IISD is primarily known for the Earth Negotiations Bulletin, which provides real-time reporting on UNFCCC and CBD negotiations.\n\nValue Addition:\n• IISD (International Institute for Sustainable Development) is headquartered in Winnipeg, Canada — frequently confused with WRI (Washington D.C.-based).\n• India's Updated NDC (Nationally Determined Contribution) submitted in 2022 draws on CAIT and related databases for baseline emissions data.\n• Brookings ESCI research on just transition frameworks has relevance to India's coal-dependent states' economic restructuring plans."
+    },
+    "hi": {
+      "display_text": "अंतरराष्ट्रीय शोध संस्थानों और उनके जलवायु तथा विकास अनुसंधान के प्रमुख योगदानों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ब्रुकिंग्स संस्थान की एनर्जी सिक्योरिटी एंड क्लाइमेट इनिशिएटिव (ESCI) स्वच्छ ऊर्जा संक्रमण, कार्बन मूल्य निर्धारण तंत्र, और ऊर्जा सुरक्षा पर केंद्रित है — जो भारत के कोयला चरणबद्ध समाप्ति समयरेखा विवादों से सीधे संबंधित हैं।\n2. वर्ल्ड रिसोर्सेज इंस्टिट्यूट (WRI) क्लाइमेट एनालिसिस इंडिकेटर्स टूल (CAIT) का रखरखाव करता है, जो UNFCCC वार्ताओं में उपयोग किया जाने वाला सबसे व्यापक रूप से प्रयुक्त ओपन-सोर्स ग्रीनहाउस गैस उत्सर्जन ट्रैकिंग डेटाबेस है।\n3. इंटरनेशनल इंस्टिट्यूट फॉर सस्टेनेबल डेवलपमेंट (IISD) मुख्य रूप से ग्लोबल मेट्रो मॉनिटर प्रकाशित करने के लिए जाना जाता है, जो विकसित और विकासशील अर्थव्यवस्थाओं में महानगरीय आर्थिक प्रदर्शन को ट्रैक करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Brookings Institution's Energy Security and Climate Initiative (ESCI) focuses on clean energy transitions, carbon pricing mechanisms, and energy security — areas directly relevant to India's coal phase-out timeline debates.",
+          "verdict": "सही है",
+          "reason": "ESCI ब्रुकिंग्स का समर्पित जलवायु कार्यक्रम है; इसके कोयला चरणबद्ध समाप्ति समयरेखा और कार्बन मूल्य निर्धारण पर शोध को भारत की जलवायु नीति चर्चाओं में संदर्भित किया गया है।"
+        },
+        {
+          "statement": "The World Resources Institute (WRI) maintains the Climate Analysis Indicators Tool (CAIT), which is the most widely used open-source greenhouse gas emissions tracking database used in UNFCCC negotiations.",
+          "verdict": "सही है",
+          "reason": "WRI का CAIT डेटाबेस वास्तव में सबसे व्यापक रूप से उद्धृत ओपन-सोर्स उत्सर्जन ट्रैकिंग उपकरण है; यह ब्रुकिंग्स के जलवायु शोध से भिन्न है और जलवायु शासन अवसंरचना में WRI का मुख्य योगदान है।"
+        },
+        {
+          "statement": "The International Institute for Sustainable Development (IISD) is primarily known for publishing the Global Metro Monitor, which tracks metropolitan economic performance across developed and developing economies.",
+          "verdict": "गलत है",
+          "reason": "Global Metro Monitor ब्रुकिंग्स संस्थान के मेट्रोपॉलिटन पॉलिसी प्रोग्राम द्वारा प्रकाशित है, IISD द्वारा नहीं। IISD मुख्य रूप से Earth Negotiations Bulletin और सतत विकास नीति शोध के लिए जाना जाता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) उन छात्रों को फंसाता है जो ESCI और WRI तथ्यों की पुष्टि करते हैं लेकिन यह याद नहीं रखते कि Global Metro Monitor ब्रुकिंग्स का है, IISD का नहीं — दो गैर-अमेरिकी शोध संस्थानों के बीच एक पहचान-परिवर्तन।",
+      "elimination_logic": [
+        "कथन 1 सही है: ब्रुकिंग्स ESCI और कोयला चरणबद्ध समाप्ति/कार्बन मूल्य निर्धारण शोध सत्यापित है।",
+        "कथन 2 सही है: WRI का CAIT डेटाबेस जलवायु शासन में एक स्थापित तथ्य है।",
+        "कथन 3 गलत है: Global Metro Monitor ब्रुकिंग्स मेट्रोपॉलिटन पॉलिसी प्रोग्राम का है — इसे IISD को देना पहचान-परिवर्तन त्रुटि है। IISD Earth Negotiations Bulletin बनाता है।",
+        "कथन 1 और 2 सही हैं; कथन 3 गलत है — उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में IISD को Global Metro Monitor के प्रकाशक के रूप में ब्रुकिंग्स के स्थान पर रखा गया है। दोनों गैर-अमेरिकी अंतरराष्ट्रीय शोध संस्थान हैं, और जो छात्र IISD को 'मॉनिटरिंग और मापन' ढांचों से जोड़ते हैं (जो ENB के लिए सही है) वे इस संबंध को मेट्रो आर्थिक निगरानी तक बढ़ा सकते हैं। Global Metro Monitor स्पष्ट रूप से ब्रुकिंग्स मेट्रोपॉलिटन पॉलिसी प्रोग्राम का उत्पाद है।",
+      "final_explanation": "जलवायु और विकास निगरानी में तीन प्रमुख गैर-सरकारी शोध संस्थान योगदान देते हैं, प्रत्येक के विशिष्ट प्रमुख उत्पाद हैं।\n\n• कथन 1 — सही: ब्रुकिंग्स का ESCI शोध स्वच्छ ऊर्जा संक्रमण और कार्बन मूल्य निर्धारण पर भारत की पेरिस समझौते के तहत जलवायु प्रतिबद्धताओं से सीधे संबंधित है।\n• कथन 2 — सही: WRI का CAIT (Climate Analysis Indicators Tool) UNFCCC तैयारी कार्य में उपयोग किया जाने वाला मानक उत्सर्जन ट्रैकिंग डेटाबेस है — ब्रुकिंग्स के विश्लेषणात्मक शोध से अलग योगदान।\n• कथन 3 — गलत: Global Metro Monitor ब्रुकिंग्स संस्थान के मेट्रोपॉलिटन पॉलिसी प्रोग्राम द्वारा प्रकाशित है, IISD द्वारा नहीं। IISD मुख्य रूप से Earth Negotiations Bulletin के लिए जाना जाता है, जो UNFCCC और CBD वार्ताओं पर वास्तविक समय रिपोर्टिंग प्रदान करता है।\n\nमूल्य संवर्धन:\n• IISD (International Institute for Sustainable Development) का मुख्यालय विनिपेग, कनाडा में है — जिसे अक्सर वाशिंगटन डी.सी. आधारित WRI से भ्रमित किया जाता है।\n• भारत का अद्यतन NDC (Nationally Determined Contribution) 2022 में CAIT और संबंधित डेटाबेस से आधारभूत उत्सर्जन डेटा पर आधारित है।\n• ब्रुकिंग्स ESCI का न्यायसंगत संक्रमण ढांचे पर शोध भारत के कोयला-निर्भर राज्यों की आर्थिक पुनर्गठन योजनाओं के लिए प्रासंगिक है।"
+    }
+  },
+  {
+    "uuid": "d1083a3c-711c-4032-af62-289f2755fc2e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Digital Economy and Technology Policy Research at Brookings",
+        "Indian Think Tanks Compared to Brookings Model"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Technology policy research: CTI Brookings vs. ORF India comparison",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Brookings Institution's Center for Technology Innovation (CTI) functions as an independent, non-partisan research unit producing policy analysis on AI governance, digital trade regulation, data privacy frameworks, and platform governance. Policymakers in the US Congress and executive agencies frequently cite CTI research when deliberating on digital economy legislation. Which of the following Indian institutions most closely approximates this institutional model — functioning as an independent, non-governmental body that produces research on digital economy governance without representing specific industry or government interests?\n\n(a) Telecom Regulatory Authority of India (TRAI)\n(b) NASSCOM (National Association of Software and Service Companies)\n(c) Observer Research Foundation (ORF)\n(d) Ministry of Electronics and Information Technology (MeitY)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because NASSCOM is a prominent voice in India's technology sector and does publish policy positions on data protection and AI, leading students to equate industry association advocacy with independent think tank research.",
+      "elimination_logic": [
+        "The scenario requires identifying an independent think tank (not a government body or industry association) that produces research on AI governance, data privacy, and digital trade — analogous to Brookings' CTI.",
+        "Eliminate option (a): TRAI is a statutory regulatory authority, not an independent research institution producing policy research — it regulates; it does not produce independent analysis.",
+        "Eliminate option (b): NASSCOM is an industry association representing technology companies — its policy positions reflect member interests, not independent research.",
+        "Eliminate option (d): MeitY is a government ministry. It implements digital policy but is not an independent research or think tank body.",
+        "Confirm option (c): ORF's technology policy research program is the closest Indian independent think tank equivalent to Brookings' Center for Technology Innovation in terms of producing non-governmental, non-partisan research on digital governance."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Brookings' Center for Technology Innovation (CTI) occupies a specific institutional niche: independent, non-partisan research on AI governance, digital trade, data privacy, and platform regulation. The question asks for the Indian institutional equivalent in terms of research model.\n\n• Option (a) — TRAI: Incorrect. TRAI is a statutory telecom regulator — it issues regulations and adjudicates disputes. It does not function as an independent research think tank.\n• Option (b) — NASSCOM: Incorrect. NASSCOM is an industry association. Its policy outputs represent industry interests, not independent research — fundamentally different from a think tank's non-partisan mandate.\n• Option (c) — ORF: Correct. Observer Research Foundation's technology policy program produces independent, non-partisan research on digital governance, AI regulation, and data protection — the closest functional equivalent to Brookings' CTI in the Indian ecosystem.\n• Option (d) — MeitY: Incorrect. As a government ministry, MeitY formulates and implements policy. It is not an independent research institution.\n\nValue Addition:\n• ORF's Cyber and Digital Economy program actively contributes to debates on India's DPDP Act 2023, AI governance frameworks, and digital trade negotiations.\n• CTI at Brookings has published extensively on algorithmic accountability and AI governance — research cited in US Congressional hearings.\n• India's absence of a strong tech-focused independent think tank (beyond ORF) is cited as a gap in evidence-based digital policymaking."
+    },
+    "hi": {
+      "display_text": "ब्रुकिंग्स संस्थान का सेंटर फॉर टेक्नोलॉजी इनोवेशन (CTI) एक स्वतंत्र, गैर-पक्षपाती अनुसंधान इकाई के रूप में कार्य करता है जो एआई शासन, डिजिटल व्यापार नियमन, डेटा गोपनीयता ढांचे, और प्लेटफॉर्म शासन पर नीति विश्लेषण करता है। अमेरिकी कांग्रेस और कार्यकारी एजेंसियों के नीति निर्माता डिजिटल अर्थव्यवस्था कानून पर विचार करते समय अक्सर CTI अनुसंधान का हवाला देते हैं। निम्नलिखित में से कौन-सा भारतीय संस्थान इस संस्थागत मॉडल के सबसे निकट है — जो एक स्वतंत्र, गैर-सरकारी निकाय के रूप में कार्य करता है और जो डिजिटल अर्थव्यवस्था शासन पर अनुसंधान करता है बिना किसी विशिष्ट उद्योग या सरकारी हित का प्रतिनिधित्व किए?\n\n(a) भारतीय दूरसंचार नियामक प्राधिकरण (TRAI)\n(b) NASSCOM (नेशनल एसोसिएशन ऑफ़ सॉफ्टवेयर एंड सर्विस कंपनीज)\n(c) ऑब्जर्वर रिसर्च फाउंडेशन (ORF)\n(d) इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी मंत्रालय (MeitY)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रमित करने वाला है क्योंकि NASSCOM भारत के प्रौद्योगिकी क्षेत्र में एक प्रमुख आवाज़ है और डेटा संरक्षण और एआई पर नीति स्थिति प्रकाशित करता है, जिससे छात्र उद्योग संघ की वकालत को स्वतंत्र थिंक टैंक अनुसंधान के साथ समान मान लेते हैं।",
+      "elimination_logic": [
+        "परिदृश्य में एक स्वतंत्र थिंक टैंक (सरकारी निकाय या उद्योग संघ नहीं) की पहचान करनी है जो एआई शासन, डेटा गोपनीयता, और डिजिटल व्यापार पर अनुसंधान करता हो — जो ब्रुकिंग्स के CTI के समान हो।",
+        "विकल्प (a) को हटाएं: TRAI एक सांविधिक नियामक प्राधिकरण है, स्वतंत्र अनुसंधान संस्था नहीं जो नीति अनुसंधान करती हो — यह नियमन करता है; स्वतंत्र विश्लेषण नहीं करता।",
+        "विकल्प (b) को हटाएं: NASSCOM एक उद्योग संघ है जो प्रौद्योगिकी कंपनियों का प्रतिनिधित्व करता है — इसकी नीति स्थिति सदस्य हितों को दर्शाती है, स्वतंत्र अनुसंधान नहीं।",
+        "विकल्प (d) को हटाएं: MeitY एक सरकारी मंत्रालय है। यह डिजिटल नीति लागू करता है लेकिन स्वतंत्र अनुसंधान या थिंक टैंक संस्था नहीं है।",
+        "विकल्प (c) की पुष्टि करें: ORF का प्रौद्योगिकी नीति अनुसंधान कार्यक्रम ब्रुकिंग्स के सेंटर फॉर टेक्नोलॉजी इनोवेशन के समान भारतीय स्वतंत्र थिंक टैंक है जो गैर-सरकारी, गैर-पक्षपाती डिजिटल शासन अनुसंधान करता है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "ब्रुकिंग्स का सेंटर फॉर टेक्नोलॉजी इनोवेशन (CTI) एक विशिष्ट संस्थागत भूमिका निभाता है: एआई शासन, डिजिटल व्यापार, डेटा गोपनीयता, और प्लेटफॉर्म नियमन पर स्वतंत्र, गैर-पक्षपाती अनुसंधान। प्रश्न भारतीय संस्थागत समकक्ष के बारे में है।\n\n• विकल्प (a) — TRAI: गलत। TRAI एक सांविधिक दूरसंचार नियामक है — यह नियम जारी करता है और विवादों का निपटारा करता है। यह स्वतंत्र अनुसंधान थिंक टैंक के रूप में कार्य नहीं करता।\n• विकल्प (b) — NASSCOM: गलत। NASSCOM एक उद्योग संघ है। इसकी नीति उत्पाद उद्योग हितों का प्रतिनिधित्व करते हैं, स्वतंत्र अनुसंधान नहीं — जो थिंक टैंक के गैर-पक्षपाती दायित्व से भिन्न है।\n• विकल्प (c) — ORF: सही। Observer Research Foundation का प्रौद्योगिकी नीति कार्यक्रम स्वतंत्र, गैर-पक्षपाती अनुसंधान करता है जो डिजिटल शासन, एआई नियमन, और डेटा संरक्षण पर केंद्रित है — भारतीय संदर्भ में ब्रुकिंग्स के CTI के सबसे निकट समकक्ष।\n• विकल्प (d) — MeitY: गलत। एक सरकारी मंत्रालय के रूप में MeitY नीति बनाता और लागू करता है। यह स्वतंत्र अनुसंधान संस्था नहीं है।\n\nमूल्य संवर्धन:\n• ORF का साइबर और डिजिटल अर्थव्यवस्था कार्यक्रम भारत के DPDP अधिनियम 2023, एआई शासन ढांचे, और डिजिटल व्यापार वार्ताओं में सक्रिय योगदान देता है।\n• ब्रुकिंग्स के CTI ने एल्गोरिदमिक जवाबदेही और एआई शासन पर व्यापक प्रकाशन किया है — जो अमेरिकी कांग्रेस की सुनवाई में उद्धृत हैं।\n• भारत में ORF के अलावा एक मजबूत तकनीकी-केंद्रित स्वतंत्र थिंक टैंक की कमी को साक्ष्य-आधारित डिजिटल नीति निर्माण में एक अंतर के रूप में माना जाता है।"
+    }
+  },
+  {
+    "uuid": "adbf620f-b903-4c46-88f6-e6897260a313",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings India: Establishment, Mandate, and Current Status",
+        "Centre for Social and Economic Progress (CSEP): Post-Brookings India Trajectory",
+        "Indian Think Tanks Compared to Brookings Model"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "FCRA Amendment 2020 and CSEP establishment sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological sequence of events related to Brookings' India operations and associated regulatory developments?\n\n1. Brookings India established in New Delhi\n2. New York Times investigation into Brookings' donor influence on research outputs\n3. FCRA Amendment tightening regulations on foreign-affiliated NGOs in India\n4. Centre for Social and Economic Progress (CSEP) established as a fully independent Indian institution\n\n(a) 1 – 2 – 3 – 4\n(b) 2 – 1 – 4 – 3\n(c) 1 – 3 – 2 – 4\n(d) 2 – 1 – 3 – 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because it places the FCRA Amendment before CSEP's establishment (which is sequentially correct) but reverses the Brookings India establishment and the NY Times funding controversy, which both occurred before 2020.",
+      "elimination_logic": [
+        "Anchor the earliest event: Brookings India was established in New Delhi in 2013 — this must come first.",
+        "The New York Times investigation into Brookings' donor influence was published in 2016 — this comes after 2013 but before 2020.",
+        "The FCRA Amendment, 2020 and CSEP's establishment as an independent institution both occurred in 2020 — FCRA Amendment preceded CSEP's formal establishment within 2020.",
+        "Correct sequence: Brookings India established (2013) → NY Times investigation (2016) → FCRA Amendment 2020 → CSEP established (2020). This is option (a)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap targets the 2016 NY Times investigation date. Students who know about the funding controversy but not its precise year may place it before 2013 or after 2020, disrupting the sequence. Additionally, students who know the FCRA Amendment and CSEP establishment both occurred in 2020 may incorrectly reverse their within-year ordering or conflate them as simultaneous events.",
+      "final_explanation": "The Brookings India–to–CSEP transition follows a logical causal sequence across seven years.\n\nCorrect sequence and rationale:\n1. Brookings India established in New Delhi (2013): The starting point of the India operations.\n2. New York Times investigation into Brookings' donor influence (2016): Raised international concerns about think tank funding transparency.\n3. FCRA Amendment, 2020: Tightened India's regulatory framework for foreign-affiliated NGOs, creating immediate compliance pressure.\n4. CSEP established as independent institution (2020): Direct response to the post-FCRA regulatory environment, severing the Brookings brand affiliation.\n\nWrong options disrupt this sequence by: placing the 2016 investigation before 2013 establishment; or placing FCRA Amendment after CSEP's establishment; or reversing the 2013 and 2016 events.\n\nValue Addition:\n• The FCRA Amendment 2020 also prohibited sub-granting of foreign contributions — a provision that directly affected multi-layered NGO funding models.\n• CSEP's complete institutional independence from Brookings branding was a deliberate strategy to comply with FCRA spirit while maintaining research continuity.\n• The NY Times 2016 investigation became a reference point in global think tank transparency debates, influencing disclosure norms beyond Brookings."
+    },
+    "hi": {
+      "display_text": "ब्रुकिंग्स इंडिया के संचालन और संबंधित नियामक विकासों से जुड़ी घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. ब्रुकिंग्स इंडिया की नई दिल्ली में स्थापना\n2. ब्रुकिंग्स के दाता प्रभाव पर न्यूयॉर्क टाइम्स की जांच\n3. भारत में विदेशी-संबद्ध NGO पर कड़े नियम लाने वाला FCRA संशोधन\n4. सामाजिक और आर्थिक प्रगति केंद्र (CSEP) की पूरी तरह स्वतंत्र भारतीय संस्था के रूप में स्थापना\n\n(a) 1 – 2 – 3 – 4\n(b) 2 – 1 – 4 – 3\n(c) 1 – 3 – 2 – 4\n(d) 2 – 1 – 3 – 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रामक है क्योंकि यह FCRA संशोधन को CSEP की स्थापना से पहले रखता है (जो अनुक्रमिक रूप से सही है) लेकिन ब्रुकिंग्स इंडिया की स्थापना और NY Times फंडिंग विवाद को उलट देता है, जो दोनों 2020 से पहले हुए थे।",
+      "elimination_logic": [
+        "सबसे प्रारंभिक घटना को आधार बनाएं: ब्रुकिंग्स इंडिया की स्थापना नई दिल्ली में 2013 में हुई — यह सबसे पहले आनी चाहिए।",
+        "ब्रुकिंग्स के दाता प्रभाव पर न्यूयॉर्क टाइम्स की जांच 2016 में प्रकाशित हुई — यह 2013 के बाद लेकिन 2020 से पहले है।",
+        "FCRA संशोधन, 2020 और CSEP की स्वतंत्र संस्था के रूप में स्थापना दोनों 2020 में हुई — FCRA संशोधन CSEP की औपचारिक स्थापना से पहले हुआ।",
+        "सही अनुक्रम: ब्रुकिंग्स इंडिया की स्थापना (2013) → न्यूयॉर्क टाइम्स जांच (2016) → FCRA संशोधन 2020 → CSEP की स्थापना (2020)। यह विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्थानांतरण जाल 2016 की न्यूयॉर्क टाइम्स जांच की तारीख को लक्षित करता है। जो छात्र फंडिंग विवाद के बारे में जानते हैं लेकिन सही वर्ष नहीं जानते, वे इसे 2013 से पहले या 2020 के बाद रख सकते हैं, जिससे अनुक्रम बिगड़ जाता है। इसके अतिरिक्त, जो छात्र जानते हैं कि FCRA संशोधन और CSEP की स्थापना दोनों 2020 में हुई, वे इनके वर्ष के भीतर क्रम को उलट सकते हैं या इन्हें एक साथ होने वाली घटनाएं समझ सकते हैं।",
+      "final_explanation": "ब्रुकिंग्स इंडिया से CSEP संक्रमण सात वर्षों में एक तार्किक कारणात्मक अनुक्रम का पालन करता है।\n\nसही अनुक्रम और तर्क:\n1. ब्रुकिंग्स इंडिया की स्थापना नई दिल्ली में (2013): भारत में संचालन की शुरुआत।\n2. ब्रुकिंग्स के दाता प्रभाव पर न्यूयॉर्क टाइम्स की जांच (2016): थिंक टैंक फंडिंग पारदर्शिता पर अंतरराष्ट्रीय चिंता उत्पन्न की।\n3. FCRA संशोधन, 2020: भारत में विदेशी-संबद्ध NGO के लिए नियामक ढांचे को कड़ा किया, जिससे तत्काल अनुपालन दबाव बना।\n4. CSEP की स्वतंत्र संस्था के रूप में स्थापना (2020): FCRA के बाद के नियामक माहौल का सीधा जवाब, ब्रुकिंग्स ब्रांड संबद्धता को समाप्त करते हुए।\n\nगलत विकल्प इस अनुक्रम को बाधित करते हैं: 2016 की जांच को 2013 की स्थापना से पहले रखना; या CSEP की स्थापना के बाद FCRA संशोधन रखना; या 2013 और 2016 की घटनाओं को उलटना।\n\nमूल्य संवर्धन:\n• FCRA संशोधन 2020 ने विदेशी योगदान के उप-दान को भी प्रतिबंधित किया — एक प्रावधान जिसने बहु-स्तरीय NGO फंडिंग मॉडलों को सीधे प्रभावित किया।\n• CSEP की ब्रुकिंग्स ब्रांडिंग से पूर्ण संस्थागत स्वतंत्रता FCRA की भावना के अनुरूप अनुसंधान निरंतरता बनाए रखने की रणनीति थी।\n• न्यूयॉर्क टाइम्स की 2016 की जांच वैश्विक थिंक टैंक पारदर्शिता बहसों में एक संदर्भ बिंदु बन गई, जिसने ब्रुकिंग्स से परे प्रकटीकरण मानदंडों को प्रभावित किया।"
+    }
+  },
+  {
+    "uuid": "3d1a73fc-a0dd-4634-b381-21afb104c90a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Statistical and Research Bodies",
+      "sub_topic": "Brookings Institution",
+      "concepts_used": [
+        "Brookings' Role in Poverty and Inequality Measurement",
+        "Brookings' Role in Global Financial Governance Research"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Brookings poverty research cited in NITI Aayog reports",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Brookings Institution's research on multidimensional poverty measurement and middle-class growth in developing economies has been cited in NITI Aayog documents and featured in India's poverty reduction policy discussions.\n\nReason (R): NITI Aayog is the apex public policy institution of the Government of India with a mandate that includes monitoring India's poverty reduction trajectory and tracking progress on development outcomes.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a attracts students who verify both A and R as factually true and then accept the causal link without examining its direction — the causal relationship is real but the direction stated in R partially reverses the actual influence pathway.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? Brookings research on multidimensional poverty and middle-class growth has been referenced in NITI Aayog documents and India's poverty reduction narratives. A is correct.",
+        "Step 2 — Is Reason (R) correct? NITI Aayog's mandate includes monitoring poverty reduction and India's development trajectory — this is factually accurate. R is correct.",
+        "Step 3 — Does R causally explain A? R describes NITI Aayog's mandate, but this does not explain why Brookings research specifically is cited. NITI Aayog cites Brookings because of Brookings' independent analytical credibility and global methodology standards — not because NITI Aayog has a poverty monitoring mandate. The mandate explains why NITI Aayog produces poverty reports, not why it cites Brookings. R does NOT explain A.",
+        "A correct + R correct + R does NOT explain A — answer is option (b)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap works subtly: R is a true fact (NITI Aayog has a poverty monitoring mandate), and A is a true fact (Brookings research is cited in NITI Aayog reports). But R explains why NITI Aayog monitors poverty — not why it specifically cites an external foreign think tank. The actual reason for citing Brookings is its independent methodology credibility and multidimensional poverty framework — a different causal chain from what R describes.",
+      "final_explanation": "Both the Assertion and Reason in this question are factually accurate, but they do not have a causal relationship.\n\nAssertion (A): Correct. Brookings' research on multidimensional poverty, dollar-a-day poverty line debates, and middle-class growth in developing economies has been cited in NITI Aayog reports and India's poverty reduction policy discussions.\n\nReason (R): Correct. NITI Aayog's mandate does include monitoring India's poverty reduction trajectory and development outcomes.\n\nCausal relationship: R explains why NITI Aayog produces poverty monitoring reports — but not why those reports specifically reference Brookings. NITI Aayog cites Brookings because of its methodological credibility and independent analytical frameworks, not because of NITI Aayog's monitoring mandate. Two independently true facts without a causal link.\n\nValue Addition:\n• India's National MPI is published by NITI Aayog in partnership with UNDP — using the Alkire-Foster methodology developed at Oxford's OPHI.\n• Brookings scholars have contributed to global MPI methodology debates, distinguishing their work from the World Bank's income-only poverty threshold.\n• NITI Aayog replaced the Planning Commission in 2015 and has a broader development monitoring role than its predecessor."
+    },
+    "hi": {
+      "display_text": "कथन (A): Brookings संस्थान के बहुआयामी गरीबी मापन और विकासशील अर्थव्यवस्थाओं में मध्यम वर्ग विकास पर शोध को NITI आयोग के दस्तावेजों में उद्धृत किया गया है और भारत की गरीबी उन्मूलन नीति चर्चाओं में शामिल किया गया है।\n\nकारण (R): NITI आयोग भारत सरकार की शीर्ष सार्वजनिक नीति संस्था है जिसका दायित्व भारत की गरीबी उन्मूलन प्रगति की निगरानी और विकास परिणामों की प्रगति को ट्रैक करना शामिल है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a उन छात्रों को आकर्षित करता है जो A और R दोनों को तथ्यात्मक रूप से सही मानकर कारण संबंध की दिशा की जांच किए बिना स्वीकार कर लेते हैं — कारण संबंध वास्तविक है लेकिन R में बताई गई दिशा वास्तविक प्रभाव मार्ग को आंशिक रूप से उलट देती है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? Brookings का बहुआयामी गरीबी और मध्यम वर्ग विकास पर शोध NITI आयोग के दस्तावेजों और भारत की गरीबी उन्मूलन कथाओं में संदर्भित है। A सही है।",
+        "चरण 2 — क्या कारण (R) सही है? NITI आयोग का दायित्व गरीबी उन्मूलन और भारत के विकास मार्ग की निगरानी करना शामिल है — यह तथ्यात्मक रूप से सही है। R सही है।",
+        "चरण 3 — क्या R, A को कारणात्मक रूप से समझाता है? R NITI आयोग के दायित्व का वर्णन करता है, लेकिन यह स्पष्ट नहीं करता कि विशेष रूप से Brookings के शोध को क्यों उद्धृत किया गया है। NITI आयोग Brookings को इसलिए उद्धृत करता है क्योंकि Brookings की स्वतंत्र विश्लेषणात्मक विश्वसनीयता और वैश्विक कार्यप्रणाली मानक हैं — न कि इसलिए कि NITI आयोग के पास गरीबी निगरानी का दायित्व है। यह दायित्व बताता है कि NITI आयोग गरीबी रिपोर्ट क्यों बनाता है, न कि क्यों वह Brookings को उद्धृत करता है। R, A को समझाता नहीं है।",
+        "A सही + R सही + R, A को नहीं समझाता — उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "उल्टा कारण संबंध जाल सूक्ष्म रूप से काम करता है: R एक सत्य तथ्य है (NITI आयोग के पास गरीबी निगरानी का दायित्व है), और A भी एक सत्य तथ्य है (Brookings के शोध को NITI आयोग की रिपोर्टों में उद्धृत किया गया है)। लेकिन R यह बताता है कि NITI आयोग गरीबी की निगरानी क्यों करता है — न कि वह विशेष रूप से एक विदेशी थिंक टैंक को क्यों उद्धृत करता है। Brookings को उद्धृत करने का वास्तविक कारण इसकी स्वतंत्र कार्यप्रणाली विश्वसनीयता और बहुआयामी गरीबी ढांचा है — जो R द्वारा वर्णित कारण श्रृंखला से अलग है।",
+      "final_explanation": "इस प्रश्न में दोनों कथन, कथन (A) और कारण (R), तथ्यात्मक रूप से सही हैं, लेकिन इनके बीच कोई कारणात्मक संबंध नहीं है।\n\nकथन (A): सही। Brookings के बहुआयामी गरीबी, डॉलर-प्रति-दिन गरीबी रेखा बहस, और विकासशील अर्थव्यवस्थाओं में मध्यम वर्ग विकास पर शोध को NITI आयोग की रिपोर्टों और भारत की गरीबी उन्मूलन नीति चर्चाओं में उद्धृत किया गया है।\n\nकारण (R): सही। NITI आयोग का दायित्व भारत की गरीबी उन्मूलन प्रगति और विकास परिणामों की निगरानी करना शामिल है।\n\nकारणात्मक संबंध: R यह बताता है कि NITI आयोग गरीबी निगरानी रिपोर्ट क्यों बनाता है — लेकिन यह नहीं बताता कि वे रिपोर्ट विशेष रूप से Brookings को क्यों संदर्भित करती हैं। NITI आयोग Brookings को इसकी कार्यप्रणाली विश्वसनीयता और स्वतंत्र विश्लेषणात्मक ढांचे के कारण उद्धृत करता है, न कि NITI आयोग के निगरानी दायित्व के कारण। ये दो स्वतंत्र सत्य तथ्य हैं जिनमें कोई कारणात्मक लिंक नहीं है।\n\nमूल्य संवर्धन:\n• भारत का राष्ट्रीय MPI NITI आयोग द्वारा UNDP के साथ साझेदारी में प्रकाशित किया जाता है — जिसमें ऑक्सफोर्ड के OPHI द्वारा विकसित Alkire-Foster कार्यप्रणाली का उपयोग होता है।\n• Brookings के विद्वानों ने वैश्विक MPI कार्यप्रणाली बहसों में योगदान दिया है, जो उनके कार्य को विश्व बैंक की केवल आय आधारित गरीबी सीमा से अलग करता है।\n• NITI आयोग ने 2015 में योजना आयोग की जगह ली और इसके पास अपने पूर्ववर्ती की तुलना में व्यापक विकास निगरानी भूमिका है।"
+    }
+  }
+]

@@ -1,0 +1,65 @@
+trap_type,total_count,subject,subject_count
+entity-swap,5623,Economy,965
+entity-swap,5623,Art and Culture,764
+entity-swap,5623,Polity,694
+entity-swap,5623,Geography,691
+entity-swap,5623,Modern History,683
+entity-swap,5623,Ancient History,647
+entity-swap,5623,Environment,618
+entity-swap,5623,Medieval History,561
+scope-extension,4980,Economy,948
+scope-extension,4980,Polity,809
+scope-extension,4980,Environment,634
+scope-extension,4980,Geography,596
+scope-extension,4980,Modern History,564
+scope-extension,4980,Art and Culture,553
+scope-extension,4980,Ancient History,470
+scope-extension,4980,Medieval History,406
+reversed-causation,1296,Economy,255
+reversed-causation,1296,Geography,179
+reversed-causation,1296,Polity,166
+reversed-causation,1296,Modern History,161
+reversed-causation,1296,Environment,141
+reversed-causation,1296,Ancient History,138
+reversed-causation,1296,Medieval History,136
+reversed-causation,1296,Art and Culture,120
+conflation,3522,Economy,698
+conflation,3522,Art and Culture,497
+conflation,3522,Environment,447
+conflation,3522,Geography,425
+conflation,3522,Polity,423
+conflation,3522,Modern History,406
+conflation,3522,Ancient History,327
+conflation,3522,Medieval History,299
+temporal-swap,3176,Economy,584
+temporal-swap,3176,Modern History,522
+temporal-swap,3176,Polity,463
+temporal-swap,3176,Environment,352
+temporal-swap,3176,Art and Culture,349
+temporal-swap,3176,Ancient History,335
+temporal-swap,3176,Geography,290
+temporal-swap,3176,Medieval History,281
+partial-truth,2873,Economy,507
+partial-truth,2873,Polity,400
+partial-truth,2873,Geography,381
+partial-truth,2873,Modern History,360
+partial-truth,2873,Art and Culture,329
+partial-truth,2873,Environment,324
+partial-truth,2873,Ancient History,299
+partial-truth,2873,Medieval History,273
+plausible-fabrication,1198,Economy,237
+plausible-fabrication,1198,Polity,194
+plausible-fabrication,1198,Environment,173
+plausible-fabrication,1198,Art and Culture,155
+plausible-fabrication,1198,Ancient History,122
+plausible-fabrication,1198,Geography,119
+plausible-fabrication,1198,Modern History,111
+plausible-fabrication,1198,Medieval History,87
+geographic-swap,1086,Geography,326
+geographic-swap,1086,Art and Culture,177
+geographic-swap,1086,Ancient History,149
+geographic-swap,1086,Environment,112
+geographic-swap,1086,Modern History,99
+geographic-swap,1086,Medieval History,87
+geographic-swap,1086,Economy,73
+geographic-swap,1086,Polity,63

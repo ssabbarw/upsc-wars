@@ -25,7 +25,10 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
 
     final List<Question> picked;
     final topic = config.topic;
-    if (config.subject == 'revision') {
+    if (config.specificQuestionUuids != null) {
+      picked = await _userDatabase.questionsDao
+          .getByUuidsInOrder(config.specificQuestionUuids!);
+    } else if (config.subject == 'revision') {
       final active = await _userDatabase.revisionQueueDao.fetchActiveQueue();
       final uuids = active.take(config.questionCount).map((e) => e.questionUuid).toList();
       picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);

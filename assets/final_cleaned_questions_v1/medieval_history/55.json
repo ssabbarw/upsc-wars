@@ -1,0 +1,1528 @@
+[
+  {
+    "uuid": "19c63ec7-52a3-4756-a745-2334899e6658",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Dual Rank Structure: Zat and Sawar"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Zat vs Sawar — functional distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly describes the primary function of the Zat rank in the Mughal Mansabdari system?\n\n(a) It determined the number of horsemen a mansabdar was obligated to maintain for imperial service\n(b) It fixed the personal status and salary entitlement of the mansabdar within the imperial hierarchy\n(c) It specified the cavalry contingent to be mustered during wartime campaigns only\n(d) It was conferred after the Sawar rank as recognition of distinguished military service",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who have read about mansabdars superficially tend to associate Zat with military duty since military rank and personal status are often treated as interchangeable.",
+      "elimination_logic": [
+        "Eliminate (a): Zat did not determine the number of horsemen to be maintained — that was the function of Sawar rank.",
+        "Eliminate (c): Sawar rank did not determine personal salary entitlement — that was governed exclusively by Zat rank.",
+        "Eliminate (d): Both ranks were numerically assigned and simultaneously held — they were not sequential awards."
+      ],
+      "upsc_trap_explanation": "The conflation trap here exploits the surface similarity between 'rank' and 'military obligation.' A student who has memorised that mansabdars had both Zat and Sawar ranks but not their precise functions will likely choose (a), reasoning that a military rank system must tie personal status to horsemen. The correct distinction — Zat governs pay and hierarchy while Sawar governs cavalry obligation — requires precise knowledge of the dual-rank mechanics.",
+      "final_explanation": "The Mansabdari system rested on a dual-rank architecture. Every mansabdar held two simultaneous numerical designations that served entirely different administrative purposes.\n\n• Option (a): Incorrect. Zat rank did not determine the number of horsemen; that was the Sawar rank's purpose.\n• Option (b): Correct. Zat rank fixed personal status within the imperial hierarchy and determined the salary the mansabdar was entitled to draw from the treasury.\n• Option (c): Incorrect. Sawar rank specified the cavalry contingent obligation, not the personal emolument.\n• Option (d): Incorrect. Both ranks were awarded together as a pair — there was no sequential conferral.\n\nValue Addition:\n• A mansabdar's Sawar rank could, in exceptional cases, exceed the Zat rank — an administrative anomaly with specific financial implications.\n• The Ain-i-Akbari by Abu'l Fazl remains the foundational documentary source for the Zat-Sawar bifurcation.\n• For UPSC: whenever a question asks what 'determines salary' vs. what 'determines military obligation,' the answer is Zat and Sawar respectively."
+    },
+    "hi": {
+      "display_text": "मुगल मंसबदारी प्रणाली में ज़ात पद का प्राथमिक कार्य निम्नलिखित में से कौन-सा सही रूप से वर्णित करता है?\n\n(a) यह निर्धारित करता था कि एक मंसबदार को कितने घुड़सवार बनाए रखना अनिवार्य है\n(b) यह मंसबदार की व्यक्तिगत स्थिति और वेतन अधिकार को साम्राज्य के पदक्रम में निर्धारित करता था\n(c) यह केवल युद्धकालीन अभियानों के दौरान जुटाए जाने वाले घुड़सवार दस्ते को निर्दिष्ट करता था\n(d) यह सवार पद के बाद विशिष्ट सैन्य सेवा के सम्मान के रूप में दिया जाता था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि जो छात्र मंसबदारों के बारे में सतही रूप से पढ़ते हैं वे ज़ात को सैन्य कर्तव्य से जोड़ने की प्रवृत्ति रखते हैं क्योंकि सैन्य पद और व्यक्तिगत स्थिति को अक्सर समान माना जाता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: ज़ात यह निर्धारित नहीं करता था कि कितने घुड़सवार बनाए जाएं — यह सवार पद का कार्य था।",
+        "(c) को हटाएं: सवार पद व्यक्तिगत वेतन अधिकार निर्धारित नहीं करता था — यह पूरी तरह से ज़ात पद द्वारा नियंत्रित था।",
+        "(d) को हटाएं: दोनों पद संख्यात्मक रूप से दिए जाते थे और एक साथ धारण किए जाते थे — ये क्रमिक पुरस्कार नहीं थे।"
+      ],
+      "upsc_trap_explanation": "यह भ्रम जाल 'पद' और 'सैन्य दायित्व' के बीच सतही समानता का उपयोग करता है। जो छात्र याद करते हैं कि मंसबदारों के पास ज़ात और सवार दोनों पद थे लेकिन उनके सटीक कार्य नहीं जानते, वे (a) चुनेंगे, यह सोचकर कि सैन्य पद प्रणाली व्यक्तिगत स्थिति को घुड़सवारों से जोड़ती है। सही भेद — ज़ात वेतन और पदक्रम को नियंत्रित करता है जबकि सवार घुड़सवार दायित्व को नियंत्रित करता है — द्वि-पद प्रणाली की सटीक जानकारी आवश्यक है।",
+      "final_explanation": "मंसबदारी प्रणाली द्वि-पद संरचना पर आधारित थी। प्रत्येक मंसबदार के पास दो संख्यात्मक पद होते थे जो पूरी तरह से अलग प्रशासनिक उद्देश्यों के लिए होते थे।\n\n• विकल्प (a): गलत। ज़ात पद घुड़सवारों की संख्या निर्धारित नहीं करता था; यह सवार पद का कार्य था।\n• विकल्प (b): सही। ज़ात पद ने मंसबदार की व्यक्तिगत स्थिति और वेतन अधिकार को निर्धारित किया जो उसे खजाने से प्राप्त होता था।\n• विकल्प (c): गलत। सवार पद केवल युद्धकालीन अभियान में घुड़सवार दस्ते की जिम्मेदारी बताता था, व्यक्तिगत वेतन नहीं।\n• विकल्प (d): गलत। दोनों पद एक साथ जोड़े के रूप में दिए जाते थे — कोई क्रमिक पुरस्कार नहीं था।\n\nमूल्यवर्धन:\n• एक मंसबदार का सवार पद असाधारण मामलों में ज़ात पद से अधिक हो सकता था — एक प्रशासनिक असामान्यता जिसके वित्तीय प्रभाव होते थे।\n• अबुल फज़ल की ऐन-ए-अकबरी ज़ात-सवार विभाजन का मौलिक दस्तावेजी स्रोत है।\n• UPSC के लिए: जब भी प्रश्न पूछा जाए कि 'वेतन किससे निर्धारित होता है' बनाम 'सैन्य दायित्व किससे निर्धारित होता है,' तो उत्तर क्रमशः ज़ात और सवार होता है।"
+    }
+  },
+  {
+    "uuid": "cac2ec43-4c41-4397-b8f5-e3915c4f9d58",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Jagir Assignment vs. Salary Payment (Jagirdari-Mansabdari Overlap)",
+        "Comparison of Mansabdari with Delhi Sultanate's Iqta System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Jagir vs Mansab — rank versus payment mode",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the relationship between the Mansabdari and Jagirdari systems under the Mughals:\n\n1. A mansab indicated a holder's rank and status in the imperial service, while a jagir was the assigned territory whose revenue served as the mode of payment against that rank.\n2. Jagir holders under the Mughal system enjoyed hereditary rights over their assigned territories, which distinguished them from the Iqta holders of the Delhi Sultanate.\n3. Jagirs were periodically transferred to prevent mansabdars from building entrenched local power bases, a practice that structurally distinguished Mughal jagirdari from European feudal landholding.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A mansab indicated a holder's rank and status in the imperial service, while a jagir was the assigned territory whose revenue served as the mode of payment against that rank.",
+          "verdict": "Correct",
+          "reason": "This is the fundamental distinction preserved in Mughal administrative records: mansab = rank/status, jagir = revenue assignment as payment substitute."
+        },
+        {
+          "statement": "Jagir holders under the Mughal system enjoyed hereditary rights over their assigned territories, which distinguished them from the Iqta holders of the Delhi Sultanate.",
+          "verdict": "Incorrect",
+          "reason": "Mughal jagirs were explicitly non-hereditary and transferable; it was the Iqta system of the Delhi Sultanate that was semi-hereditary in practice — the statement reverses the comparison."
+        },
+        {
+          "statement": "Jagirs were periodically transferred to prevent mansabdars from building entrenched local power bases, a practice that structurally distinguished Mughal jagirdari from European feudal landholding.",
+          "verdict": "Correct",
+          "reason": "Transferability of jagirs was a deliberate imperial policy to prevent local entrenchment; European feudalism, by contrast, involved heritable territorial sovereignty."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is a strong distractor because it includes Statement 2 which sounds authoritative, and students confuse the direction of the Iqta-Jagir comparison, selecting (b) thinking both 1 and 2 are correct.",
+      "elimination_logic": [
+        "Verify Statement 1: Mansab = rank, Jagir = revenue assignment for payment — this is the textbook distinction. Statement 1 is correct.",
+        "Verify Statement 2: Mughal jagirs were non-hereditary and transferable; it was Iqta that was semi-hereditary — Statement 2 reverses the comparison and is incorrect.",
+        "Verify Statement 3: Periodic transfer of jagirs to prevent local entrenchment is a documented Mughal policy distinguishing it from European feudalism — Statement 3 is correct.",
+        "Statements 1 and 3 are correct; Statement 2 is incorrect — the answer is (c)."
+      ],
+      "upsc_trap_explanation": "The trap exploits a very common confusion in which students remember that both Iqta and Jagir are revenue assignments but invert their hereditary properties. Statement 2 sounds plausible because it correctly identifies a difference between Iqta and Jagir — but it attributes the wrong property to each. A partially prepared student will mark (b) thinking all three statements about revenue systems are essentially correct.",
+      "final_explanation": "The Mansabdari and Jagirdari systems were architecturally distinct: mansab conferred rank and status while jagir was merely the payment mechanism — a revenue assignment, not land ownership.\n\n• Statement 1 — Correct: Every mansabdar held a rank (mansab) and was paid either in cash or through a jagir — a territory whose collected revenue equalled the salary due.\n• Statement 2 — Incorrect: Mughal jagirs were non-hereditary and regularly transferred. It was the Delhi Sultanate's Iqta that operated semi-hereditarily in practice; the statement inverts this.\n• Statement 3 — Correct: Periodic jagir transfers were a deliberate anti-entrenchment policy, fundamentally unlike European feudalism where lords held heritable territorial rights.\n\nValue Addition:\n• The 'Jagir Crisis' under Aurangzeb arose because Mughal territorial expansion stagnated while mansab ranks proliferated, creating a shortfall of revenue-yielding territories.\n• Irfan Habib's 'The Agrarian System of Mughal India' provides the most systematic analysis of the jagir crisis as a structural contradiction.\n• For UPSC: 'Mansab = rank; Jagir = payment' is one of the most tested one-liners in medieval history."
+    },
+    "hi": {
+      "display_text": "मुगलों के तहत मंसबदारी और जागीरदारी प्रणालियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. एक मंसब धारक की दरबार सेवा में पद और स्थिति को दर्शाता था, जबकि जागीर वह आवंटित क्षेत्र था जिसका राजस्व उस पद के बदले भुगतान के रूप में कार्य करता था।\n2. मुगल प्रणाली के तहत जागीर धारकों को उनके आवंटित क्षेत्रों पर वंशानुगत अधिकार प्राप्त थे, जो उन्हें दिल्ली सल्तनत के इक़्ता धारकों से अलग करता था।\n3. जागीरों को समय-समय पर स्थानांतरित किया जाता था ताकि मंसबदार स्थानीय सत्ता के मजबूत आधार न बना सकें, यह प्रथा मुगल जागीरदारी को यूरोपीय सामंती भूमि-धारण से संरचनात्मक रूप से अलग करती थी।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "एक मंसब धारक की दरबार सेवा में पद और स्थिति को दर्शाता था, जबकि जागीर वह आवंटित क्षेत्र था जिसका राजस्व उस पद के बदले भुगतान के रूप में कार्य करता था।",
+          "verdict": "सही",
+          "reason": "यह मुगल प्रशासनिक अभिलेखों में संरक्षित मौलिक भेद है: मंसब = पद/स्थिति, जागीर = भुगतान के विकल्प के रूप में राजस्व आवंटन।"
+        },
+        {
+          "statement": "मुगल प्रणाली के तहत जागीर धारकों को उनके आवंटित क्षेत्रों पर वंशानुगत अधिकार प्राप्त थे, जो उन्हें दिल्ली सल्तनत के इक़्ता धारकों से अलग करता था।",
+          "verdict": "गलत",
+          "reason": "मुगल जागीर स्पष्ट रूप से गैर-वंशानुगत और हस्तांतरणीय थे; यह दिल्ली सल्तनत की इक़्ता प्रणाली थी जो व्यवहार में अर्ध-वंशानुगत थी — कथन तुलना को उलट देता है।"
+        },
+        {
+          "statement": "जागीरों को समय-समय पर स्थानांतरित किया जाता था ताकि मंसबदार स्थानीय सत्ता के मजबूत आधार न बना सकें, यह प्रथा मुगल जागीरदारी को यूरोपीय सामंती भूमि-धारण से संरचनात्मक रूप से अलग करती थी।",
+          "verdict": "सही",
+          "reason": "जागीरों की स्थानांतरणीयता एक जानबूझकर सम्राट की नीति थी ताकि स्थानीय गढ़न को रोका जा सके; इसके विपरीत यूरोपीय सामंती व्यवस्था में वंशानुगत क्षेत्रीय संप्रभुता होती थी।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि इसमें कथन 2 शामिल है जो अधिकारपूर्ण लगता है, और छात्र इक़्ता-जागीर तुलना की दिशा उलट समझते हैं, (b) को चुनते हैं यह सोचकर कि 1 और 2 दोनों सही हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: मंसब = पद, जागीर = भुगतान के लिए राजस्व आवंटन — यह पाठ्यपुस्तक भेद है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: मुगल जागीर गैर-वंशानुगत और हस्तांतरणीय थे; अर्ध-वंशानुगत इक़्ता थी — कथन 2 तुलना उलट देता है और गलत है।",
+        "कथन 3 सत्यापित करें: स्थानीय गढ़न रोकने के लिए जागीरों का आवधिक स्थानांतरण मुगल नीति थी जो यूरोपीय सामंती व्यवस्था से भिन्न है — कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "यह जाल एक सामान्य भ्रम का उपयोग करता है जिसमें छात्र याद करते हैं कि इक़्ता और जागीर दोनों राजस्व आवंटन हैं लेकिन उनकी वंशानुगत विशेषताओं को उलट देते हैं। कथन 2 विश्वसनीय लगता है क्योंकि यह इक़्ता और जागीर के बीच अंतर सही बताता है — लेकिन यह प्रत्येक को गलत गुण देता है। आंशिक रूप से तैयार छात्र (b) को चिह्नित करते हैं यह सोचकर कि राजस्व प्रणालियों के बारे में तीनों कथन मूलतः सही हैं।",
+      "final_explanation": "मंसबदारी और जागीरदारी प्रणालियाँ संरचनात्मक रूप से भिन्न थीं: मंसब पद और स्थिति प्रदान करता था जबकि जागीर केवल भुगतान का माध्यम था — एक राजस्व आवंटन, भूमि स्वामित्व नहीं।\n\n• कथन 1 — सही: प्रत्येक मंसबदार के पास एक पद (मंसब) होता था और उसे नकद या जागीर के माध्यम से भुगतान किया जाता था — एक ऐसा क्षेत्र जिसका संग्रहित राजस्व वेतन के बराबर होता था।\n• कथन 2 — गलत: मुगल जागीर गैर-वंशानुगत और नियमित रूप से स्थानांतरित होते थे। दिल्ली सल्तनत की इक़्ता प्रणाली व्यवहार में अर्ध-वंशानुगत थी; कथन इसे उलट देता है।\n• कथन 3 — सही: जागीरों का आवधिक स्थानांतरण स्थानीय गढ़न को रोकने की जानबूझकर नीति थी, जो यूरोपीय सामंती व्यवस्था से मौलिक रूप से भिन्न थी जहाँ प्रभु वंशानुगत क्षेत्रीय अधिकार रखते थे।\n\nमूल्यवर्धन:\n• औरंगजेब के शासनकाल में 'जागीर संकट' उत्पन्न हुआ क्योंकि मुगल क्षेत्रीय विस्तार ठप हो गया जबकि मंसब पदों की संख्या बढ़ गई, जिससे राजस्व-उत्पादक क्षेत्रों की कमी हुई।\n• इरफान हबीब की 'The Agrarian System of Mughal India' जागीर संकट का सबसे व्यवस्थित विश्लेषण प्रदान करती है।\n• UPSC के लिए: 'मंसब = पद; जागीर = भुगतान' मध्यकालीन इतिहास में सबसे अधिक परीक्षण किए जाने वाले एक-लाइनर में से एक है।"
+    }
+  },
+  {
+    "uuid": "688b5f60-3b5a-4d67-9094-4d57fe8a24eb",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Role of the Mir Bakhshi in the Mansabdari System",
+        "Salary Structure and the Cash Payment System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mir Bakhshi vs Diwan — functional distinction",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I (Office / Term)",
+          "List II (Function / Description)"
+        ],
+        "rows": [
+          [
+            "A. Mir Bakhshi",
+            "1. Finance minister responsible for revenue assessment and salary disbursement"
+          ],
+          [
+            "B. Diwan",
+            "2. System of branding horses at muster to prevent fraudulent substitution"
+          ],
+          [
+            "C. Abu'l Fazl",
+            "3. Head of the military department who presented mansab candidates and conducted troop inspections"
+          ],
+          [
+            "D. Dagh",
+            "4. Author of the Ain-i-Akbari, the primary documentary source on Akbar's administrative system"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-1, B-4, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) pairs Mir Bakhshi with finance, which is the most common confusion; students who have not precisely memorised the functional boundary between Mir Bakhshi and Diwan will choose this.",
+      "elimination_logic": [
+        "Identify A: Mir Bakhshi — head of military department, presented mansab candidates and conducted musters, NOT the paymaster. This maps to 3 (military administration and muster).",
+        "Identify B: Diwan — the finance minister responsible for revenue and salary disbursement. Maps to 1.",
+        "Identify C: Abu'l Fazl — authored the Ain-i-Akbari, the primary source on the Mansabdari system. Maps to 4.",
+        "Identify D: Dagh system — branding of horses to prevent fraudulent substitution at muster. Maps to 2.",
+        "Correct matching: A-3, B-1, C-4, D-2 → option (b)."
+      ],
+      "upsc_trap_explanation": "The Mir Bakhshi trap is one of the most frequently set in Mughal administration questions. Students conflate the Mir Bakhshi with the Diwan because both dealt with mansabdars' pay-related matters — the Mir Bakhshi verified contingents while the Diwan disbursed salaries. Option (a) exploits this by placing Mir Bakhshi against finance administration. A student who has not precisely separated military verification (Mir Bakhshi) from fiscal disbursement (Diwan) will fall into this trap.",
+      "final_explanation": "The Mughal imperial administration had strictly delineated departments, and the Mansabdari system touched several of them.\n\nCorrect pairings:\n• A (Mir Bakhshi) — 3: The Mir Bakhshi was the head of the military department, responsible for presenting candidates for mansabs, maintaining military rolls, and conducting musters. He was NOT the paymaster.\n• B (Diwan) — 1: The Diwan (finance minister) handled revenue collection, salary disbursement, and audit of mansabdar accounts.\n• C (Abu'l Fazl) — 4: Abu'l Fazl authored the Ain-i-Akbari, the primary contemporary source documenting the mature Mansabdari system under Akbar.\n• D (Dagh system) — 2: Dagh was the branding of horses at imperial musters to prevent mansabdars from substituting inferior animals or inflating troop numbers fraudulently.\n\nValue Addition:\n• Three Bakhshis functioned below the Mir Bakhshi, each overseeing divisional military administration.\n• The Diwan-Mir Bakhshi separation was a deliberate checks-and-balances design — military verification and financial disbursement were kept in separate hands.\n• For UPSC: 'Mir Bakhshi = military records + muster; Diwan = finance + salary' is a frequently tested distinction."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I (कार्यालय / पद)",
+          "सूची II (कार्य / विवरण)"
+        ],
+        "rows": [
+          [
+            "A. मीर बख़्शी",
+            "1. राजस्व आकलन और वेतन वितरण के लिए वित्त मंत्री"
+          ],
+          [
+            "B. दीवान",
+            "2. फौज की जांच में धोखाधड़ी से बचाने के लिए घोड़ों पर ब्रांडिंग की प्रणाली"
+          ],
+          [
+            "C. अबुल फज़ल",
+            "3. सैन्य विभाग के प्रमुख जो मंसब उम्मीदवारों को प्रस्तुत करता था और फौज की जांच करता था"
+          ],
+          [
+            "D. दाग़",
+            "4. ऐन-ए-अकबरी के लेखक, जो अकबर के प्रशासनिक तंत्र का मुख्य दस्तावेजी स्रोत है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-4, C-1, D-2\n(d) A-1, B-4, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) में मीर बख़्शी को वित्त से जोड़ा गया है, जो सबसे आम भ्रम है; जो छात्र मीर बख़्शी और दीवान के कार्यात्मक विभाजन को सटीक रूप से याद नहीं रखते, वे इसे चुनेंगे।",
+      "elimination_logic": [
+        "A की पहचान करें: मीर बख़्शी — सैन्य विभाग के प्रमुख, जो मंसब उम्मीदवारों को प्रस्तुत करता था और फौज की जांच करता था, वे वेतनदाता नहीं थे। यह 3 (सैन्य प्रशासन और फौज की जांच) से मेल खाता है।",
+        "B की पहचान करें: दीवान — वित्त मंत्री जो राजस्व और वेतन वितरण के लिए जिम्मेदार था। यह 1 से मेल खाता है।",
+        "C की पहचान करें: अबुल फज़ल — ऐन-ए-अकबरी के लेखक, जो मंसबदारी प्रणाली का मुख्य स्रोत है। यह 4 से मेल खाता है।",
+        "D की पहचान करें: दाग़ प्रणाली — फौज की जांच में घोड़ों पर ब्रांडिंग, ताकि धोखाधड़ी से प्रतिस्थापन रोका जा सके। यह 2 से मेल खाती है।",
+        "सही मिलान: A-3, B-1, C-4, D-2 → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "मीर बख़्शी का जाल मुगल प्रशासन के प्रश्नों में सबसे अधिक लगाया जाने वाला जाल है। छात्र मीर बख़्शी को दीवान के साथ भ्रमित करते हैं क्योंकि दोनों मंसबदारों के वेतन से संबंधित मामलों से जुड़े थे — मीर बख़्शी फौज की जांच करता था जबकि दीवान वेतन वितरित करता था। विकल्प (a) इस भ्रम का फायदा उठाता है और मीर बख़्शी को वित्त प्रशासन के साथ जोड़ता है। जो छात्र सैन्य जांच (मीर बख़्शी) और वित्तीय वितरण (दीवान) को स्पष्ट रूप से अलग नहीं कर पाते, वे इस जाल में फंस जाते हैं।",
+      "final_explanation": "मुगल शाही प्रशासन में विभागों का सख्त विभाजन था, और मंसबदारी प्रणाली कई विभागों को छूती थी।\n\nसही जोड़ी:\n• A (मीर बख़्शी) — 3: मीर बख़्शी सैन्य विभाग के प्रमुख थे, जो मंसब उम्मीदवारों को प्रस्तुत करने, सैन्य रजिस्टर बनाए रखने और फौज की जांच करने के लिए जिम्मेदार थे। वे वेतनदाता नहीं थे।\n• B (दीवान) — 1: दीवान (वित्त मंत्री) राजस्व संग्रह, वेतन वितरण और मंसबदार खातों के लेखा परीक्षण का कार्य करते थे।\n• C (अबुल फज़ल) — 4: अबुल फज़ल ने ऐन-ए-अकबरी लिखा, जो अकबर के शासनकाल में परिपक्व मंसबदारी प्रणाली का प्रमुख समकालीन स्रोत है।\n• D (दाग़ प्रणाली) — 2: दाग़ प्रणाली में घोड़ों पर ब्रांडिंग की जाती थी ताकि मंसबदार धोखाधड़ी से घटिया जानवरों को प्रतिस्थापित न कर सकें या फौज की संख्या बढ़ा-चढ़ाकर न दिखा सकें।\n\nमूल्यवर्धन:\n• तीन बख़्शी मीर बख़्शी के अधीन काम करते थे, जो प्रत्येक क्षेत्रीय सैन्य प्रशासन की देखरेख करते थे।\n• दीवान-मीर बख़्शी का पृथक्करण एक जानबूझकर संतुलन और नियंत्रण की व्यवस्था थी — सैन्य जांच और वित्तीय वितरण अलग-अलग हाथों में थे।\n• UPSC के लिए: 'मीर बख़्शी = सैन्य अभिलेख + फौज की जांच; दीवान = वित्त + वेतन' एक बार-बार पूछी जाने वाली भेद है।"
+    }
+  },
+  {
+    "uuid": "9ad7c582-6567-4fe5-a2ae-a325e4505ffb",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Non-Hereditary Nature of Mansabs (Contrast with Feudalism)",
+        "Comparison of Mansabdari with Delhi Sultanate's Iqta System"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Non-hereditary mansab — centralization mechanism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): A mansabdar's rank and the privileges associated with it did not automatically transfer to his heirs upon his death; instead, properties reverted to the imperial crown.\n\nReason (R): The non-hereditary design of the Mansabdari system ensured that every rank-holder remained dependent on the emperor's continued favour, thereby concentrating political authority in the central imperial institution.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because both A and R are individually correct, and students who cannot identify the precise causal link may default to 'both correct but R doesn't explain A' without working through the logic.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Mansabs were non-hereditary; upon a mansabdar's death the rank lapsed and property reverted to the crown (Escheat). Yes, A is factually correct.",
+        "Step 2: Is Reason (R) correct? — The non-hereditary nature of mansabs made every holder directly dependent on imperial favour for continuation of status, thereby concentrating power in the emperor. Yes, R is factually correct.",
+        "Step 3: Does R causally explain A? — The non-hereditary design was precisely the mechanism that created dependence on the emperor and centralised power. R is not merely correlated with A; it describes the political logic that made A administratively purposeful. Yes, R explains A.",
+        "Both A and R are correct, and R is the correct explanation of A → correct_option is (a)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap here is subtle: some students read R as a consequence of A rather than an explanation. They reason that A (non-hereditary nature) caused centralisation, so R is a consequence, not an explanation, and choose (b). However, R correctly states the functional purpose that the non-hereditary principle served — explaining WHY Akbar designed it that way — which makes R the valid explanatory statement for A.",
+      "final_explanation": "The non-hereditary principle was one of the most structurally significant features of the Mansabdari system, and it was not accidental.\n\nAssertion (A): Correct. Upon a mansabdar's death, the rank did not pass to heirs. Under the doctrine of Escheat, properties accumulated by the mansabdar reverted to the imperial treasury. This was consistently enforced, particularly under Akbar and Aurangzeb.\n\nReason (R): Correct. Because no mansabdar could pass status to his children automatically, every holder's position depended on continuous imperial patronage and favour. This structural dependency was the engine of centralisation — no independent regional power base could form across generations.\n\nCausal relationship: R explains A precisely. The non-hereditary rule was designed to ensure the dependence described in R. Unlike European feudalism, where heritable fiefs created autonomous barons, Mughal mansabdars remained imperial servants.\n\nValue Addition:\n• Escheat (return of property to crown) was explicitly enforced and is documented in Mughal chronicles as a tool against accumulation of independent wealth.\n• W.H. Moreland identified this mechanism as the foundation of Mughal 'fiscal despotism.'\n• For UPSC: the contrast between 'heritable European fief' and 'non-heritable Mughal mansab' is a recurring comparison in history questions."
+    },
+    "hi": {
+      "display_text": "कथन (A): मंसबदार का पद और उससे जुड़ी विशेषताएँ उसकी मृत्यु पर अपने उत्तराधिकारियों को स्वतः नहीं मिलती थीं; इसके बजाय, संपत्तियाँ सम्राट के राज्य को वापस चली जाती थीं।\n\nकारण (R): मंसबदारी प्रणाली की गैर-विरासत योग्य संरचना सुनिश्चित करती थी कि हर पदाधिकारी सम्राट की निरंतर कृपा पर निर्भर रहे, जिससे राजनीतिक सत्ता केंद्रीय सम्राटीय संस्था में सन्निहित हो जाती थी।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि दोनों A और R व्यक्तिगत रूप से सही हैं, और जो छात्र सटीक कारणात्मक संबंध पहचान नहीं पाते वे बिना तर्क समझे 'दोनों सही हैं लेकिन R, A की व्याख्या नहीं करता' को चुन सकते हैं।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — मंसब गैर-विरासत योग्य थे; मंसबदार की मृत्यु पर पद समाप्त हो जाता था और संपत्ति राज्य को वापस चली जाती थी (Escheat)। हाँ, A तथ्यात्मक रूप से सही है।",
+        "चरण 2: क्या कारण (R) सही है? — मंसबों की गैर-विरासत योग्य प्रकृति ने हर पदाधिकारी को सीधे सम्राट की कृपा पर निर्भर बना दिया था, जिससे सत्ता सम्राट के केंद्र में सन्निहित हो गई। हाँ, R तथ्यात्मक रूप से सही है।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — गैर-विरासत योग्य डिज़ाइन वह तंत्र था जिसने सम्राट पर निर्भरता और सत्ता के केंद्रीकरण को जन्म दिया। R केवल A के साथ सहसंबंधित नहीं है; यह वह राजनीतिक तर्क बताता है जिसने A को प्रशासनिक रूप से सार्थक बनाया। हाँ, R, A की व्याख्या करता है।",
+        "A और R दोनों सही हैं, और R, A की सही व्याख्या है → सही विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": "यहां उल्टा कारण-प्रभाव का भ्रम सूक्ष्म है: कुछ छात्र R को A का परिणाम समझते हैं बजाय व्याख्या के। वे तर्क करते हैं कि A (गैर-विरासत योग्य प्रकृति) ने केंद्रीकरण को जन्म दिया, अतः R परिणाम है, व्याख्या नहीं, और (b) चुनते हैं। हालांकि, R सही रूप से उस कार्यात्मक उद्देश्य को बताता है जो गैर-विरासत सिद्धांत ने पूरा किया — यह समझाता है कि अकबर ने इसे इस तरह क्यों बनाया — जो R को A के लिए वैध व्याख्यात्मक कथन बनाता है।",
+      "final_explanation": "गैर-विरासत सिद्धांत मंसबदारी प्रणाली की सबसे संरचनात्मक रूप से महत्वपूर्ण विशेषताओं में से एक था, और यह आकस्मिक नहीं था।\n\nकथन (A): सही। मंसबदार की मृत्यु पर पद उत्तराधिकारियों को नहीं मिलता था। Escheat सिद्धांत के तहत, मंसबदार द्वारा संचित संपत्तियाँ सम्राट के खजाने में वापस चली जाती थीं। यह विशेष रूप से अकबर और औरंगजेब के शासनकाल में सख्ती से लागू किया गया।\n\nकारण (R): सही। क्योंकि कोई भी मंसबदार अपने पद को अपने बच्चों को स्वतः नहीं दे सकता था, हर पदाधिकारी की स्थिति निरंतर सम्राट की कृपा और संरक्षण पर निर्भर थी। यह संरचनात्मक निर्भरता केंद्रीकरण का इंजन थी — पीढ़ियों तक कोई स्वतंत्र क्षेत्रीय सत्ता आधार नहीं बन सका।\n\nकारणात्मक संबंध: R, A की सटीक व्याख्या करता है। गैर-विरासत नियम इस निर्भरता को सुनिश्चित करने के लिए डिज़ाइन किया गया था। यूरोपीय सामंती व्यवस्था के विपरीत, जहाँ विरासत में मिलने वाले फief स्वतंत्र बारोन बनाते थे, मुगल मंसबदार सम्राट के सेवक बने रहे।\n\nमूल्यवर्धन:\n• Escheat (संपत्ति का राज्य को वापसी) स्पष्ट रूप से लागू किया गया था और मुगल इतिहास में स्वतंत्र धन संचय के खिलाफ एक उपकरण के रूप में दर्ज है।\n• W.H. Moreland ने इस तंत्र को मुगल 'राजकोषीय निरंकुशता' की नींव बताया।\n• UPSC के लिए: 'विरासत में मिलने वाला यूरोपीय फief' और 'गैर-विरासत योग्य मुगल मंसब' के बीच तुलना इतिहास के प्रश्नों में बार-बार आती है।"
+    }
+  },
+  {
+    "uuid": "1c5f9a8e-df58-4b6e-9b50-da3cf1770c3f",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Akbar's Reforms to the System (1570s Formalization)",
+        "Origins and Antecedents of the Mansabdari System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Mansabdari formalization timeline — 1570s codification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of administrative developments related to the Mughal Mansabdari system?\n\n1. Introduction of decimal military organization under Timur\n2. Operation of the Iqta system under the Delhi Sultanate\n3. Akbar's formalization of the dual Zat-Sawar rank structure\n4. Compilation of the Ain-i-Akbari documenting the mature system\n\n(a) 3 → 1 → 2 → 4\n(b) 2 → 3 → 1 → 4\n(c) 1 → 2 → 3 → 4\n(d) 1 → 2 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students know Akbar's early reign was marked by consolidation and tend to push the Mansabdari formalization earlier than the 1570s.",
+      "elimination_logic": [
+        "Eliminate (a): Placing Timur's decimal military organization after Akbar's formalization is chronologically impossible — Timur preceded the Mughals by over a century.",
+        "Eliminate (b): Placing the Ain-i-Akbari's compilation before the 1570s formalization is incorrect — Abu'l Fazl documented the mature system, which means the formalization preceded the documentary record.",
+        "Eliminate (d): This sequence places Akbar's 1570s reforms after the Ain-i-Akbari, which inverts the relationship between the reform and its documentation.",
+        "The correct sequence is: Timur's decimal system → Delhi Sultanate Iqta system → Akbar's 1570s Zat-Sawar formalization → Ain-i-Akbari documentation → option (c)."
+      ],
+      "upsc_trap_explanation": "The temporal trap exploits uncertainty about exactly when Akbar formalized the system versus when Abu'l Fazl wrote about it. Students who treat the Ain-i-Akbari as a concurrent reform document (rather than a later synthesis) will sequence it wrongly. Additionally, the Delhi Sultanate Iqta system as a precursor to Akbar is sometimes placed too late in students' mental timelines.",
+      "final_explanation": "The Mansabdari system did not emerge in isolation — it built on a long lineage of military administrative traditions.\n\nCorrect sequence:\n1. Timur's decimal military organization (14th–15th century) → Central Asian antecedent of ranked military command.\n2. Delhi Sultanate's Iqta system (13th–16th century) → Revenue assignment model that the Mughals adapted.\n3. Akbar's Zat-Sawar formalization (1570s) → The dual-rank codification as Akbar's specific administrative innovation.\n4. Ain-i-Akbari by Abu'l Fazl (completed c. 1590s) → Documentary record of the mature system.\n\nWrong options fail because they either place Timur after the Mughals, sequence the Ain-i-Akbari before the reforms, or invert the Iqta-Mansabdari relationship.\n\nValue Addition:\n• Abu'l Fazl completed the Ain-i-Akbari approximately in the 1590s — after the reforms it documents.\n• Akbar's military campaigns in Gujarat and Bengal (1570s) were the practical drivers that necessitated administrative codification.\n• For UPSC: any question on 'what preceded the Mansabdari system' — the answer involves both Timurid decimal organization and the Delhi Sultanate Iqta system."
+    },
+    "hi": {
+      "display_text": "मुगल मंसबदारी प्रणाली से संबंधित प्रशासनिक विकासों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. तैमूर के तहत दशमलव सैन्य संगठन की शुरुआत\n2. दिल्ली सल्तनत के तहत इक़्ता प्रणाली का संचालन\n3. अकबर का द्वि-रैंक ज़ात-सवार संरचना का औपचारिककरण\n4. परिपक्व प्रणाली का दस्तावेजीकरण करते हुए ऐन-ए-अकबरी का संकलन\n\n(a) 3 → 1 → 2 → 4\n(b) 2 → 3 → 1 → 4\n(c) 1 → 2 → 3 → 4\n(d) 1 → 2 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि छात्र जानते हैं कि अकबर का प्रारंभिक शासन समेकन से चिह्नित था और वे मंसबदारी के औपचारिककरण को 1570 के दशक से पहले मानने की प्रवृत्ति रखते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: अकबर के औपचारिककरण के बाद तैमूर की दशमलव सैन्य व्यवस्था को रखना कालानुक्रमिक रूप से असंभव है — तैमूर मुगलों से एक सदी से अधिक पहले था।",
+        "(b) को हटाएं: 1570 के दशक के औपचारिककरण से पहले ऐन-ए-अकबरी के संकलन को रखना गलत है — अबुल फजल ने परिपक्व प्रणाली का दस्तावेजीकरण किया, जिसका अर्थ है कि औपचारिककरण दस्तावेजी रिकॉर्ड से पहले हुआ।",
+        "(d) को हटाएं: यह क्रम अकबर के 1570 के दशक के सुधारों को ऐन-ए-अकबरी के बाद रखता है, जो सुधार और उसके दस्तावेजीकरण के बीच संबंध को उलट देता है।",
+        "सही क्रम है: तैमूर की दशमलव प्रणाली → दिल्ली सल्तनत की इक़्ता प्रणाली → अकबर के 1570 के दशक का ज़ात-सवार औपचारिककरण → ऐन-ए-अकबरी का दस्तावेजीकरण → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक जाल अकबर द्वारा प्रणाली के औपचारिककरण और अबुल फजल द्वारा इसके लेखन के समय के बारे में अनिश्चितता का लाभ उठाता है। जो छात्र ऐन-ए-अकबरी को एक समकालीन सुधार दस्तावेज के रूप में लेते हैं (बाद के संश्लेषण के बजाय), वे इसे गलत क्रम में रखेंगे। इसके अतिरिक्त, दिल्ली सल्तनत की इक़्ता प्रणाली को अकबर से पहले के रूप में कभी-कभी छात्रों के मानसिक कालक्रम में बहुत बाद में रखा जाता है।",
+      "final_explanation": "मंसबदारी प्रणाली अकेले नहीं उभरी — यह सैन्य प्रशासनिक परंपराओं की लंबी विरासत पर आधारित थी।\n\nसही क्रम:\n1. तैमूर की दशमलव सैन्य व्यवस्था (14वीं–15वीं सदी) → रैंक वाले सैन्य कमांड की मध्य एशियाई पूर्वज।\n2. दिल्ली सल्तनत की इक़्ता प्रणाली (13वीं–16वीं सदी) → राजस्व आवंटन मॉडल जिसे मुगलों ने अपनाया।\n3. अकबर का ज़ात-सवार औपचारिककरण (1570 के दशक) → द्वि-रैंक कोडिफिकेशन जो अकबर की विशिष्ट प्रशासनिक नवाचार थी।\n4. अबुल फजल द्वारा ऐन-ए-अकबरी (लगभग 1590 के दशक में पूर्ण) → परिपक्व प्रणाली का दस्तावेजी रिकॉर्ड।\n\nगलत विकल्प इसलिए असफल हैं क्योंकि वे या तो तैमूर को मुगलों के बाद रखते हैं, ऐन-ए-अकबरी को सुधारों से पहले रखते हैं, या इक़्ता-मंसबदारी संबंध को उलट देते हैं।\n\nमूल्य संवर्धन:\n• अबुल फजल ने ऐन-ए-अकबरी लगभग 1590 के दशक में पूर्ण किया — सुधारों के बाद जो यह दस्तावेजित करता है।\n• गुजरात और बंगाल में अकबर के सैन्य अभियान (1570 के दशक) प्रशासनिक कोडिफिकेशन के व्यावहारिक चालक थे।\n• UPSC के लिए: 'मंसबदारी प्रणाली से पहले क्या था' पर कोई भी प्रश्न — उत्तर में तैमूरी दशमलव संगठन और दिल्ली सल्तनत की इक़्ता प्रणाली दोनों शामिल हैं।"
+    }
+  },
+  {
+    "uuid": "ab5cec0d-d3ab-4ac4-be04-8a40135dec8d",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Decline and Distortions of the Mansabdari System under Later Mughals",
+        "Jagir Assignment vs. Salary Payment (Jagirdari-Mansabdari Overlap)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Jagir Crisis under Aurangzeb — structural contradiction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A historian studying late 17th-century Mughal records observes that the imperial government had distributed ranks to a far greater number of officials than could be accommodated with revenue-yielding territory assignments. Many ranked officials remained without an assigned revenue territory for years and had to accept inferior or distant assignments yielding far less than their entitled compensation. In desperation, some began sub-contracting revenue collection to local strongmen. Which of the following structural phenomena does this scenario most precisely describe?\n\n(a) Proliferation of Mashrut sawar ranks beyond wartime necessity\n(b) Emergence of Ijaradari as the dominant mode of revenue collection\n(c) Breakdown of the Dagh and Chehra verification mechanisms\n(d) The Jagir Crisis arising from a mismatch between mansabdar numbers and available revenue assignments",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students associate revenue farming (Ijaradari) with corruption and may jump to it as the explanation without connecting it to the prior cause — the Jagir Crisis.",
+      "elimination_logic": [
+        "The scenario describes a situation where the number of ranked officials exceeds available revenue territories — this matches the documented 'Jagir Crisis' of the later Mughal period.",
+        "Eliminate (a): Mashrut sawar ranks address conditional military obligations, not territorial revenue shortfalls for payment.",
+        "Eliminate (b): Ijaradari (revenue farming) was a consequence of the Jagir Crisis, not its definition or primary cause.",
+        "Eliminate (c): The Dagh system addresses military muster fraud, not revenue assignment shortfalls.",
+        "The structural phenomenon described — more mansabdars than available jagirs — is the Jagir Crisis, making (d) correct."
+      ],
+      "upsc_trap_explanation": "The scenario deliberately includes revenue farming (Ijaradari) as a red herring by mentioning it as an emerging workaround, tempting students to identify it as the primary phenomenon. However, the scenario's core description — a numerical mismatch between mansabdars and available jagirs — precisely defines the Jagir Crisis. Ijaradari was one of its symptoms, not the crisis itself.",
+      "final_explanation": "The scenario describes a late Mughal administrative predicament where the supply of revenue-yielding territories could not keep pace with the growing number of ranked officials.\n\nApplicable principle — Jagir Crisis: As Mughal territorial expansion stagnated (and later reversed) under Aurangzeb while mansab ranks continued to be distributed as patronage, the empire ran out of productive jagirs to assign. Mansabdars who could not receive a jagir went unpaid or received assignments yielding far less than their entitled salary.\n\n• Option (a): Mashrut sawar ranks deal with conditional military service obligations — irrelevant to a revenue assignment shortfall.\n• Option (b): Ijaradari (revenue farming) emerged as one desperate response to the Jagir Crisis, but it is a symptom, not the phenomenon itself.\n• Option (c): Dagh (horse-branding) was an anti-fraud muster mechanism — unrelated to jagir allocation.\n• Option (d): Correct. The Jagir Crisis is the documented structural phenomenon — a mismatch between the number of mansabdars entitled to jagirs and the available jagir pool — that the scenario encapsulates.\n\nValue Addition:\n• Irfan Habib argues the Jagir Crisis was the primary systemic cause of Mughal imperial decline.\n• Under Aurangzeb, Deccan campaigns consumed revenue but did not generate proportionate new jagir territories.\n• For UPSC: 'more mansabdars than jagirs' = Jagir Crisis — one of the most important cause-effect pairings in Mughal decline questions."
+    },
+    "hi": {
+      "display_text": "एक इतिहासकार जो 17वीं सदी के अंत के मुगल अभिलेखों का अध्ययन कर रहा है, वह देखता है कि शाही सरकार ने पदों की संख्या इतनी अधिक अधिकारियों को दी थी कि उन्हें राजस्व-उत्पादक क्षेत्र आवंटित करना संभव नहीं था। कई पदधारी अधिकारी वर्षों तक बिना किसी राजस्व क्षेत्र के रहे और उन्हें अपने वेतन से बहुत कम देने वाले दूरस्थ या निम्नतर क्षेत्र स्वीकार करने पड़े। हताशा में, कुछ ने राजस्व संग्रह को स्थानीय ताकतवरों को उप-ठेका देना शुरू कर दिया। निम्नलिखित में से कौन-सी संरचनात्मक घटना इस परिदृश्य का सबसे सटीक वर्णन करती है?\n\n(a) युद्धकालीन आवश्यकता से अधिक मशरूत सवार पदों का प्रसार\n(b) राजस्व संग्रह के प्रमुख तरीके के रूप में इजारा दारी का उदय\n(c) दाग और चेहरा सत्यापन तंत्रों का विफल होना\n(d) mansabdars की संख्या और उपलब्ध राजस्व आवंटनों के बीच असंगति से उत्पन्न जागीर संकट",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि छात्र राजस्व फार्मिंग (इजारा दारी) को भ्रष्टाचार से जोड़ते हैं और इसे पूर्व कारण — जागीर संकट — से जोड़ने के बिना ही इसे व्याख्या के रूप में चुन सकते हैं।",
+      "elimination_logic": [
+        "यह परिदृश्य उस स्थिति का वर्णन करता है जहाँ पदों की संख्या उपलब्ध राजस्व क्षेत्रों से अधिक है — यह बाद के मुगल काल के 'जागीर संकट' से मेल खाता है।",
+        "(a) को हटाएं: मशरूत सवार पद शर्तीय सैन्य दायित्वों से संबंधित हैं, भुगतान के लिए क्षेत्रीय राजस्व की कमी से नहीं।",
+        "(b) को हटाएं: इजारा दारी (राजस्व फार्मिंग) जागीर संकट का परिणाम थी, न कि उसकी परिभाषा या प्राथमिक कारण।",
+        "(c) को हटाएं: दाग प्रणाली सैन्य Muster धोखाधड़ी से संबंधित है, राजस्व आवंटन की कमी से नहीं।",
+        "वर्णित संरचनात्मक घटना — mansabdars की संख्या जागीरों से अधिक होना — जागीर संकट है, अतः (d) सही है।"
+      ],
+      "upsc_trap_explanation": "परिदृश्य जानबूझकर राजस्व फार्मिंग (इजारा दारी) को एक लाल हेर के रूप में शामिल करता है, इसे एक उभरते हुए समाधान के रूप में उल्लेख करके छात्रों को इसे मुख्य घटना मानने के लिए प्रोत्साहित करता है। हालांकि, परिदृश्य का मूल विवरण — mansabdars और उपलब्ध जागीरों के बीच संख्यात्मक असंगति — जागीर संकट को सटीक रूप से परिभाषित करता है। इजारा दारी इसका एक लक्षण था, संकट स्वयं नहीं।",
+      "final_explanation": "यह परिदृश्य एक बाद के मुगल प्रशासनिक संकट का वर्णन करता है जहाँ राजस्व-उत्पादक क्षेत्रों की आपूर्ति पदों की बढ़ती संख्या के साथ तालमेल नहीं रख पाई।\n\nलागू सिद्धांत — जागीर संकट: जैसे-जैसे औरंगजेब के शासनकाल में मुगल क्षेत्रीय विस्तार ठहर गया (और बाद में उलटा), जबकि पदों का वितरण संरक्षण के रूप में जारी रहा, साम्राज्य के पास आवंटित करने के लिए उत्पादक जागीर समाप्त हो गए। जिन mansabdars को जागीर नहीं मिली, वे बिना वेतन के रह गए या वेतन से बहुत कम देने वाले जागीर प्राप्त किए।\n\n• विकल्प (a): मशरूत सवार पद शर्तीय सैन्य सेवा दायित्वों से संबंधित हैं — राजस्व आवंटन की कमी से अप्रासंगिक।\n• विकल्प (b): इजारा दारी जागीर संकट के प्रति एक हताश प्रतिक्रिया के रूप में उभरी, लेकिन यह संकट का लक्षण है, स्वयं घटना नहीं।\n• विकल्प (c): दाग (घोड़े पर छाप) धोखाधड़ी विरोधी Muster तंत्र था — जागीर आवंटन से असंबंधित।\n• विकल्प (d): सही। जागीर संकट वह प्रलेखित संरचनात्मक घटना है — mansabdars की संख्या और उपलब्ध जागीरों के बीच असंगति — जिसे यह परिदृश्य दर्शाता है।\n\nमूल्य संवर्धन:\n• इरफान हबीब का तर्क है कि जागीर संकट मुगल साम्राज्य के पतन का मुख्य प्रणालीगत कारण था।\n• औरंगजेब के शासनकाल में, दक्कन अभियान राजस्व खर्च करते थे लेकिन अनुपातिक नए जागीर क्षेत्र उत्पन्न नहीं करते थे।\n• UPSC के लिए: 'ज्यादा mansabdars बनाम जागीर' = जागीर संकट — मुगल पतन प्रश्नों में सबसे महत्वपूर्ण कारण-प्रभाव संबंधों में से एक।"
+    }
+  },
+  {
+    "uuid": "b4b5cabd-cafe-489f-8fac-a4525a004cbd",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Recruitment and Composition of Mansabdars",
+        "Mansabdari as an Instrument of Political Integration (Rajput Policy)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Hindu mansabdars under Akbar — Birbal vs Todar Mal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Akbar's Mansabdari system is often cited as the institutional mechanism for his policy of political integration through inclusion of diverse communities in imperial service. Which of the following does NOT belong to the group of Hindu nobles who served as prominent mansabdars symbolizing this inclusive policy?\n\n(a) Raja Man Singh\n(b) Adham Khan\n(c) Todar Mal\n(d) Birbal",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) Todar Mal is a strong distractor because he is associated with land revenue reforms (Zabti) more than the mansabdari list, leading students to doubt his mansabdar status even though he was indeed a prominent Hindu mansabdar.",
+      "elimination_logic": [
+        "Identify the common category: Hindu/Rajput mansabdars who were prominent members of Akbar's court.",
+        "Raja Man Singh — Rajput chief, prominent mansabdar, commander: belongs to the category.",
+        "Adham Khan — son of Akbar's wet nurse, a Mughal noble of Afghan/Central Asian lineage, not a Hindu mansabdar included as part of the Rajput integration policy: does NOT belong.",
+        "Todar Mal — Hindu mansabdar, revenue reformer, prominent in Akbar's service: belongs.",
+        "Birbal — Hindu mansabdar, court wit and intimate of Akbar: belongs.",
+        "Adham Khan is the odd one out → option (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places Adham Khan — a real and prominent figure from Akbar's court — in a list of Hindu mansabdars symbolizing Akbar's policy of religious inclusion. Adham Khan was not a Hindu noble; he was the son of Maham Anga (Akbar's wet nurse) and was eventually executed by Akbar himself. Students who recall only that he was a significant figure in Akbar's early reign without remembering his ethnic and religious background will incorrectly keep him in the list and instead doubt one of the genuine Hindu mansabdars.",
+      "final_explanation": "Akbar's deliberate policy of recruiting Hindu, particularly Rajput, nobles as mansabdars was a cornerstone of his political integration strategy.\n\n• Option (a) Raja Man Singh: A Kachhwaha Rajput, one of Akbar's most trusted generals and a high-ranking mansabdar — belongs.\n• Option (b) Adham Khan: Son of Maham Anga (Akbar's wet nurse), a Mughal courtier of non-Hindu background who was eventually killed by Akbar — does NOT belong to the category of Hindu mansabdars symbolizing inclusion.\n• Option (c) Todar Mal: A Hindu mansabdar and revenue reformer credited with the Zabti system — belongs.\n• Option (d) Birbal: A Hindu mansabdar, court poet, and Akbar's close confidant — belongs.\n\nValue Addition:\n• Adham Khan was executed by Akbar in 1562 after murdering Ataga Khan — a dramatic episode in Akbar's early consolidation of power.\n• M. Athar Ali's statistical study documents that Hindu mansabdars formed a significant proportion of the Mughal nobility under Akbar.\n• For UPSC: Birbal, Todar Mal, and Raja Man Singh are the standard trio of Hindu mansabdars cited in Akbar's Sulh-i-Kul policy questions."
+    },
+    "hi": {
+      "display_text": "अकबर की मंसबदारी प्रणाली को अक्सर उनके राजनीतिक समावेशन नीति के लिए संस्थागत तंत्र के रूप में उद्धृत किया जाता है, जिसमें विविध समुदायों को साम्राज्य सेवा में शामिल किया गया। निम्नलिखित में से कौन अकबर की इस समावेशी नीति का प्रतीक बनने वाले प्रमुख हिंदू नवाबों के समूह में नहीं आता?\n\n(a) राजा मान सिंह\n(b) अधम खान\n(c) टोडर मल\n(d) बीरबल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) टोडर मल एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि वे ज़ब्ती (भूमि राजस्व सुधार) से अधिक जुड़े हैं न कि मंसबदारी सूची से, जिससे छात्र उनके मंसबदार होने पर संदेह करते हैं जबकि वे वास्तव में एक प्रमुख हिंदू मंसबदार थे।",
+      "elimination_logic": [
+        "सामान्य श्रेणी की पहचान करें: हिंदू/राजपूत मंसबदार जो अकबर के दरबार के प्रमुख सदस्य थे।",
+        "राजा मान सिंह — राजपूत प्रमुख, प्रमुख मंसबदार, सेनापति: इस श्रेणी में आते हैं।",
+        "अधम खान — अकबर की दाई का पुत्र, अफगान/मध्य एशियाई वंश का मुगल नवाब, राजपूत समावेशन नीति के तहत हिंदू मंसबदार नहीं: इस श्रेणी में नहीं आता।",
+        "टोडर मल — हिंदू मंसबदार, राजस्व सुधारक, अकबर की सेवा में प्रमुख: इस श्रेणी में आता है।",
+        "बीरबल — हिंदू मंसबदार, दरबारी विदूषक और अकबर के निकटतम: इस श्रेणी में आता है।",
+        "अधम खान अलग है → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण (entity-swap) जाल में अधम खान — जो अकबर के दरबार का एक वास्तविक और प्रमुख व्यक्ति था — को हिंदू मंसबदारों की सूची में रखा गया है जो अकबर की धार्मिक समावेशन नीति का प्रतीक हैं। अधम खान हिंदू नवाब नहीं था; वह महम अंगा (अकबर की दाई) का पुत्र था और अंततः अकबर द्वारा ही मृत्युदंड दिया गया था। जो छात्र केवल यह याद रखते हैं कि वह अकबर के प्रारंभिक शासन में एक महत्वपूर्ण व्यक्ति था लेकिन उसकी जातीय और धार्मिक पृष्ठभूमि नहीं जानते, वे उसे गलत तरीके से सूची में रखेंगे और असली हिंदू मंसबदारों में से किसी एक पर संदेह करेंगे।",
+      "final_explanation": "अकबर की हिंदू, विशेषकर राजपूत, नवाबों को मंसबदार नियुक्त करने की नीति उनके राजनीतिक समावेशन रणनीति की आधारशिला थी।\n\n• विकल्प (a) राजा मान सिंह: कछवाहा राजपूत, अकबर के सबसे विश्वसनीय सेनापतियों में से एक और उच्च पदस्थ मंसबदार — इस श्रेणी में आता है।\n• विकल्प (b) अधम खान: महम अंगा (अकबर की दाई) का पुत्र, गैर-हिंदू पृष्ठभूमि वाला मुगल दरबारी, जिसे अंततः अकबर ने मार डाला — समावेशन का प्रतीक हिंदू मंसबदारों की श्रेणी में नहीं आता।\n• विकल्प (c) टोडर मल: हिंदू मंसबदार और ज़ब्ती प्रणाली के लिए प्रसिद्ध राजस्व सुधारक — इस श्रेणी में आता है।\n• विकल्प (d) बीरबल: हिंदू मंसबदार, दरबारी कवि और अकबर के निकटतम सहयोगी — इस श्रेणी में आता है।\n\nमूल्यवर्धन:\n• अधम खान को अकबर ने 1562 में अटागा खान की हत्या के बाद फांसी दी — यह अकबर के प्रारंभिक सत्ता समेकन का नाटकीय प्रसंग है।\n• एम. अथर अली के सांख्यिकीय अध्ययन से पता चलता है कि अकबर के शासनकाल में हिंदू मंसबदार मुगल नवाबों का एक महत्वपूर्ण हिस्सा थे।\n• UPSC के लिए: बीरबल, टोडर मल और राजा मान सिंह अकबर की सुलह-ए-कुल नीति के प्रश्नों में उद्धृत किए जाने वाले मानक हिंदू मंसबदार त्रय हैं।"
+    }
+  },
+  {
+    "uuid": "ad01be02-02f6-4d93-b950-ab9479d5b3e1",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "The Dagh (Branding) and Chehra (Descriptive Roll) System",
+        "Military Obligations of Mansabdars"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Dagh and Chehra — anti-fraud mechanisms",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about anti-fraud mechanisms in the Mughal Mansabdari system:\n\nStatement 1: The Dagh system involved the physical branding of horses presented at imperial musters to ensure that mansabdars could not substitute inferior or borrowed animals between inspections.\n\nStatement 2: The Chehra system required mansabdars themselves to be physically described and registered to prevent the same individual from drawing pay under multiple identities across different mansabdari records.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Dagh system involved the physical branding of horses presented at imperial musters to ensure that mansabdars could not substitute inferior or borrowed animals between inspections.",
+          "verdict": "Correct",
+          "reason": "Dagh (branding of horses) was precisely designed to mark animals so they could not be exchanged with substandard substitutes at subsequent musters — a direct anti-fraud measure."
+        },
+        {
+          "statement": "The Chehra system required mansabdars themselves to be physically described and registered to prevent the same individual from drawing pay under multiple identities across different mansabdari records.",
+          "verdict": "Incorrect",
+          "reason": "The Chehra system maintained descriptive rolls of soldiers (troopers), not of the mansabdars themselves, to prevent 'ghost soldiers' being listed in a contingent — it was a troop-level, not a mansabdar-level, verification mechanism."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because both statements sound administratively plausible and well-constructed; students who have general knowledge of the anti-fraud systems but not the specific target of the Chehra system will accept both as correct.",
+      "elimination_logic": [
+        "Verify Statement 1: Dagh = branding of horses to prevent substitution at muster. This is precisely correct — Statement 1 is correct.",
+        "Verify Statement 2: Chehra maintained physical descriptions of soldiers (troopers in the contingent), not the mansabdars as commanders. The statement misidentifies the target of the Chehra system — Statement 2 is incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in Statement 2 takes the genuine fact about the Chehra system (physical description for identification) and reassigns it from soldiers/troopers to mansabdars themselves. A student who recalls only that 'Chehra = physical description register' will accept the statement without questioning whose descriptions were being recorded. The Chehra was a troop-level anti-ghost-soldier mechanism, not a mansabdar-level identity register.",
+      "final_explanation": "The Dagh and Chehra systems were the two principal anti-fraud mechanisms targeting military contingent integrity in the Mansabdari system.\n\n• Statement 1 — Correct: Dagh involved branding horses at the muster so that animals could be individually identified at future inspections. This prevented the common fraud of borrowing superior horses from a fellow mansabdar for muster day and returning them afterward.\n• Statement 2 — Incorrect: Chehra maintained physical descriptive rolls of the soldiers (troopers) in a mansabdar's contingent, not the mansabdar himself. The purpose was to detect 'phantom soldiers' — names on the payroll with no actual body attached.\n\nValue Addition:\n• Despite Dagh and Chehra, fraud persisted through bribery of imperial inspectors — a limitation documented in contemporary sources.\n• The Mir Bakhshi oversaw the muster process in which both Dagh and Chehra were verified.\n• For UPSC: Dagh = horses; Chehra = soldiers/troopers — the objects of each system are a standard exam distinction."
+    },
+    "hi": {
+      "display_text": "मुगल मंसबदारी प्रणाली में धोखाधड़ी विरोधी तंत्रों के बारे में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: दाग प्रणाली में शाही मुस्तैदी पर प्रस्तुत घोड़ों को शारीरिक रूप से ब्रांड करना शामिल था ताकि मंसबदार निरीक्षणों के बीच घटिया या उधार लिए गए जानवरों को बदल न सकें।\n\nकथन 2: चेहरा प्रणाली में मंसबदारों को स्वयं शारीरिक रूप से वर्णित और पंजीकृत करने की आवश्यकता थी ताकि एक ही व्यक्ति विभिन्न मंसबदारी रिकॉर्डों में कई पहचान के तहत वेतन न ले सके।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "दाग प्रणाली में शाही मुस्तैदी पर प्रस्तुत घोड़ों को शारीरिक रूप से ब्रांड करना शामिल था ताकि यह सुनिश्चित किया जा सके कि मंसबदार निरीक्षणों के बीच घटिया या उधार लिए गए जानवरों को बदल न सकें।",
+          "verdict": "सही है",
+          "reason": "दाग (घोड़ों का ब्रांडिंग) जानवरों को चिन्हित करने के लिए विशेष रूप से डिज़ाइन किया गया था ताकि उन्हें बाद के मुस्तैदी में घटिया विकल्पों के साथ बदला न जा सके — यह एक प्रत्यक्ष धोखाधड़ी विरोधी उपाय था।"
+        },
+        {
+          "statement": "चेहरा प्रणाली में मंसबदारों को स्वयं शारीरिक रूप से वर्णित और पंजीकृत करने की आवश्यकता थी ताकि एक ही व्यक्ति विभिन्न मंसबदारी रिकॉर्डों में कई पहचान के तहत वेतन न ले सके।",
+          "verdict": "गलत है",
+          "reason": "चेहरा प्रणाली सैनिकों (ट्रूपर्स) के वर्णनात्मक रोल बनाए रखती थी, न कि मंसबदारों के स्वयं के, ताकि किसी टुकड़ी में 'भूत सैनिकों' की सूचीबद्धता को रोका जा सके — यह मंसबदार स्तर का नहीं, बल्कि टुकड़ी स्तर का सत्यापन तंत्र था।"
+        }
+      ],
+      "strong_distractor": "क — विकल्प (क) एक मजबूत भ्रम है क्योंकि दोनों कथन प्रशासनिक रूप से संभावित और सुव्यवस्थित लगते हैं; जो छात्र धोखाधड़ी विरोधी तंत्रों का सामान्य ज्ञान रखते हैं लेकिन चेहरा प्रणाली के विशिष्ट लक्ष्य को नहीं जानते, वे दोनों को सही मान लेंगे।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: दाग = मुस्तैदी पर घोड़ों का ब्रांडिंग ताकि प्रतिस्थापन न हो सके। यह बिल्कुल सही है — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: चेहरा सैनिकों (टुकड़ी के ट्रूपर्स) के शारीरिक विवरण रखता था, न कि कमांडरों के रूप में मंसबदारों का। कथन चेहरा प्रणाली के लक्ष्य को गलत पहचानता है — कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (ग)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में आंशिक-सत्य का जाल चेहरा प्रणाली के वास्तविक तथ्य (पहचान के लिए शारीरिक विवरण) को सैनिकों/ट्रूपर्स से मंसबदारों तक पुनः आवंटित करता है। जो छात्र केवल याद रखते हैं कि 'चेहरा = शारीरिक विवरण पंजी' वे बिना यह पूछे स्वीकार कर लेते हैं कि किसके विवरण दर्ज किए जा रहे थे। चेहरा एक टुकड़ी स्तर का धोखाधड़ी विरोधी तंत्र था, मंसबदार स्तर की पहचान पंजी नहीं।",
+      "final_explanation": "दाग और चेहरा प्रणाली मंसबदारी प्रणाली में सैन्य टुकड़ी की अखंडता को लक्षित करने वाले दो मुख्य धोखाधड़ी विरोधी तंत्र थे।\n\n• कथन 1 — सही: दाग में मुस्तैदी पर घोड़ों को ब्रांड किया जाता था ताकि भविष्य के निरीक्षणों में जानवरों की व्यक्तिगत पहचान हो सके। इससे यह धोखाधड़ी रोकी जाती थी कि मंसबदार मुस्तैदी के दिन बेहतर घोड़ों को उधार लेकर बाद में वापस कर देते।\n• कथन 2 — गलत: चेहरा मंसबदार की टुकड़ी के सैनिकों (ट्रूपर्स) के शारीरिक वर्णनात्मक रोल बनाए रखता था, न कि मंसबदार स्वयं का। इसका उद्देश्य 'भूत सैनिकों' का पता लगाना था — वेतन सूची में नाम लेकिन वास्तविक व्यक्ति नहीं।\n\nमूल्यवर्धन:\n• दाग और चेहरा के बावजूद, रिश्वतखोरी के कारण धोखाधड़ी जारी रही — यह समकालीन स्रोतों में दर्ज है।\n• मीर बख्शी मुस्तैदी प्रक्रिया की देखरेख करता था जिसमें दाग और चेहरा दोनों की जांच होती थी।\n• UPSC के लिए: दाग = घोड़े; चेहरा = सैनिक/ट्रूपर्स — प्रत्येक प्रणाली के उद्देश्य परीक्षा में एक मानक भेद है।"
+    }
+  },
+  {
+    "uuid": "4bc8ba2a-ef7b-453a-baf1-ccc59d241afc",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Conditional and Unconditional Sawar Ranks (Mashrut/Ghair-Mashrut)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mashrut vs Ghair-Mashrut sawar rank distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the Mughal Mansabdari system, a sawar rank awarded temporarily to a mansabdar during active military campaigns — which added to his military obligation without permanently increasing his salary entitlement — was classified as a ________ rank.\n\n(a) Ghair-Mashrut\n(b) Mashrut\n(c) Du-aspa Sih-aspa\n(d) Jama",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because 'Du-aspa Sih-aspa' is a real Mansabdari term in the same domain, and students who confuse special sawar categories may insert it here.",
+      "elimination_logic": [
+        "The blank requires the Arabic/Persian term for 'conditional' sawar rank — the type awarded temporarily, especially for campaigns.",
+        "Eliminate (a) Ghair-Mashrut: this is the unconditional/permanent sawar rank — the opposite of what is described.",
+        "Eliminate (c) Du-aspa Sih-aspa: this is a special category of enhanced sawar introduced by Jahangir, not the conditional rank designation.",
+        "Eliminate (d) Jama: this refers to the fixed salary scale, not a sawar rank category.",
+        "The conditional sawar rank is Mashrut → option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Mansabdari system used precise Persian-Arabic terminology to classify the nature of sawar obligations.\n\n• Option (a) Ghair-Mashrut: The unconditional, permanent sawar rank — a mansabdar held this rank and its obligations at all times, not just during campaigns.\n• Option (b) Mashrut: Correct. The conditional sawar rank, activated under specific circumstances such as wartime campaigns. It did not increase permanent salary but allowed temporary mobilization of larger forces.\n• Option (c) Du-aspa Sih-aspa: A special enhanced sawar category (two-three horse) introduced by Jahangir for exceptional service — not the conditional rank designation.\n• Option (d) Jama: The fixed salary scale correlated to Zat rank — a finance term, not a sawar rank category.\n\nValue Addition:\n• Mashrut ranks were Akbar's tool for wartime army expansion without permanently inflating the imperial payroll.\n• Ghair-Mashrut (unconditional) sawar ranks carried full year-round maintenance obligations.\n• For UPSC: Mashrut = conditional; Ghair-Mashrut = unconditional — both terms may appear in translation-based questions."
+    },
+    "hi": {
+      "display_text": "मुगल मंसबदारी प्रणाली में, एक सवार पद जो सक्रिय सैन्य अभियानों के दौरान अस्थायी रूप से मंसबदार को दिया जाता था — जो उसकी सैन्य दायित्व में वृद्धि करता था पर स्थायी वेतन अधिकार नहीं बढ़ाता था — उसे ________ पद के रूप में वर्गीकृत किया जाता था।\n\n(a) गैर-शर्तीय\n(b) मंशुत\n(c) Du-aspa Sih-aspa\n(d) जमा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि 'Du-aspa Sih-aspa' उसी क्षेत्र का एक वास्तविक मंसबदारी पद है, और जो छात्र विशेष सवार श्रेणियों में भ्रमित होते हैं वे इसे यहाँ डाल सकते हैं।",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए 'शर्तीय' सवार पद का अरबी/फ़ारसी शब्द आवश्यक है — वह प्रकार जो अस्थायी रूप से, विशेषकर अभियानों के दौरान दिया जाता था।",
+        "(a) गैर-शर्तीय को हटा दें: यह शर्तीय/अस्थायी सवार पद का विपरीत, स्थायी सवार पद है।",
+        "(c) Du-aspa Sih-aspa को हटा दें: यह जहाँगीर द्वारा प्रस्तुत एक विशेष उन्नत सवार श्रेणी है, न कि शर्तीय पद।",
+        "(d) जमा को हटा दें: यह निश्चित वेतन पैमाना है, सवार पद श्रेणी नहीं।",
+        "शर्तीय सवार पद मंशुत (Mashrut) है → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "मंसबदारी प्रणाली में सवार दायित्वों की प्रकृति को वर्गीकृत करने के लिए सटीक फ़ारसी-अरबी शब्दावली का उपयोग किया गया था।\n\n• विकल्प (a) गैर-शर्तीय: शर्त रहित, स्थायी सवार पद — एक मंसबदार के पास यह पद और दायित्व हमेशा रहते थे, केवल अभियानों के दौरान नहीं।\n• विकल्प (b) मंशुत: सही। शर्तीय सवार पद, जो विशिष्ट परिस्थितियों जैसे युद्ध अभियानों में सक्रिय होता था। यह स्थायी वेतन नहीं बढ़ाता था, पर अस्थायी रूप से बड़ी सेना जुटाने की अनुमति देता था।\n• विकल्प (c) Du-aspa Sih-aspa: जहाँगीर द्वारा प्रस्तुत एक विशेष उन्नत सवार श्रेणी (दो-तीन घोड़े) — शर्तीय पद नहीं।\n• विकल्प (d) जमा: निश्चित वेतन पैमाना जो ज़ात पद से संबंधित है — वित्तीय शब्द, सवार पद श्रेणी नहीं।\n\nमूल्यवर्धन:\n• मंशुत पद अकबर का युद्धकालीन सेना विस्तार का उपकरण था बिना स्थायी वेतन बढ़ाए।\n• गैर-शर्तीय सवार पद पूरे वर्ष रखरखाव दायित्व के साथ होते थे।\n• UPSC के लिए: मंशुत = शर्तीय; गैर-शर्तीय = शर्त रहित — दोनों शब्द अनुवाद आधारित प्रश्नों में आ सकते हैं।"
+    }
+  },
+  {
+    "uuid": "02d441cb-2e91-483c-b393-cb5fe3ee3596",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Salary Structure and the Cash Payment System",
+        "Mansabdari System and Revenue Administration (Link to Todar Mal's Reforms)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Cash salary system and Diwan's role in Mansabdari",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the salary structure and fiscal architecture of the Mughal Mansabdari system:\n\n1. Fixed salary scales in the Mansabdari system, as recorded in the Ain-i-Akbari, were correlated to the mansabdar's Zat rank rather than to the Sawar rank.\n2. The Diwan was responsible solely for disbursing mansabdar salaries and had no role in auditing or verifying the accounts of revenue assignments.\n3. The rationalization of land revenue under Todar Mal's Zabti system provided the fiscal foundation that made accurate jagir assignments and mansab salary payments feasible.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Fixed salary scales in the Mansabdari system, as recorded in the Ain-i-Akbari, were correlated to the mansabdar's Zat rank rather than to the Sawar rank.",
+          "verdict": "Correct",
+          "reason": "The Ain-i-Akbari explicitly correlates Jama (salary scales) to Zat rank; the Sawar rank determined military obligation, not salary entitlement."
+        },
+        {
+          "statement": "The Diwan was responsible solely for disbursing mansabdar salaries and had no role in auditing or verifying the accounts of revenue assignments.",
+          "verdict": "Incorrect",
+          "reason": "The Diwan's functions included both disbursement and audit of mansabdar salaries and jagir accounts — limiting his role to 'solely disbursing' is a scope-extension error."
+        },
+        {
+          "statement": "The rationalization of land revenue under Todar Mal's Zabti system provided the fiscal foundation that made accurate jagir assignments and mansab salary payments feasible.",
+          "verdict": "Correct",
+          "reason": "Without accurate revenue measurement, jagir assignments would be arbitrary — Todar Mal's surveys were the prerequisite for the functioning jagirdari that underlay mansab salary payments."
+        }
+      ],
+      "strong_distractor": "d — Option (d) including all three is a strong distractor because Statements 1 and 3 are solidly correct, and students who do not examine Statement 2 closely for the 'solely' qualifier will accept all three.",
+      "elimination_logic": [
+        "Verify Statement 1: Jama correlated to Zat rank is documented in Ain-i-Akbari — Correct.",
+        "Verify Statement 2: 'Solely disbursing' is a scope-extension; the Diwan also audited accounts — Incorrect.",
+        "Verify Statement 3: Todar Mal's Zabti as fiscal foundation for jagirdari is a standard administrative linkage — Correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect → option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses 'solely' to transform a broadly true fact (Diwan disbursed salaries) into an incorrect absolute (Diwan had no audit role). This is a classic scope-extension trap. Students who recall that the Diwan disbursed salaries without remembering his audit functions will accept Statement 2 as correct and choose option (d).",
+      "final_explanation": "The salary mechanism of the Mansabdari system was embedded in a broader fiscal architecture that depended on reliable revenue data.\n\n• Statement 1 — Correct: The Ain-i-Akbari records salary scales (Jama) tied to Zat rank. A higher Zat rank entitled the holder to a proportionally larger salary, from which maintenance costs for horses and equipment were deducted.\n• Statement 2 — Incorrect: The Diwan's responsibilities extended beyond disbursement to include auditing jagir accounts and verifying that revenue assignments matched salary entitlements. 'Solely disbursing' removes his audit function.\n• Statement 3 — Correct: Todar Mal's measurement surveys (Zabti/Ain-i-Dahsala) generated reliable revenue data without which jagir assignments would have been arbitrary. This administrative linkage is a cross-concept question favourite in UPSC.\n\nValue Addition:\n• The Diwan and Mir Bakhshi operated as checks on each other — finance and military verification were kept deliberately separate.\n• Todar Mal served under both Akbar and Sher Shah Sur, making him a cross-dynasty administrative figure.\n• For UPSC: Mansabdari + Zabti = the two administrative reforms most commonly linked in Akbar's governance questions."
+    },
+    "hi": {
+      "display_text": "मुगल मंसबदारी प्रणाली की वेतन संरचना और वित्तीय वास्तुकला के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. मंसबदारी प्रणाली में निश्चित वेतन पैमाने, जैसा कि ऐन-ए-अकबरी में दर्ज है, मंसबदार के ज़ात रैंक से संबंधित थे, न कि सवार रैंक से।\n2. दीवान केवल मंसबदार के वेतन का भुगतान करने के लिए जिम्मेदार था और राजस्व आवंटनों के खातों के लेखा परीक्षण या सत्यापन में उसकी कोई भूमिका नहीं थी।\n3. टोडर मल की ज़ब्ती प्रणाली के तहत भूमि राजस्व का तर्कसंगतकरण वह वित्तीय आधार प्रदान करता था जिसने सटीक जागीर आवंटन और मंसब वेतन भुगतान को संभव बनाया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मंसबदारी प्रणाली में निश्चित वेतन पैमाने, जैसा कि ऐन-ए-अकबरी में दर्ज है, मंसबदार के ज़ात रैंक से संबंधित थे, न कि सवार रैंक से।",
+          "verdict": "सही",
+          "reason": "ऐन-ए-अकबरी स्पष्ट रूप से जमा (वेतन पैमाने) को ज़ात रैंक से जोड़ता है; सवार रैंक सैन्य दायित्व निर्धारित करता था, वेतन अधिकार नहीं।"
+        },
+        {
+          "statement": "दीवान केवल मंसबदार के वेतन का भुगतान करने के लिए जिम्मेदार था और राजस्व आवंटनों के खातों के लेखा परीक्षण या सत्यापन में उसकी कोई भूमिका नहीं थी।",
+          "verdict": "गलत",
+          "reason": "दीवान के कार्यों में मंसबदार वेतन और जागीर खातों का भुगतान और लेखा परीक्षण दोनों शामिल थे — केवल 'भुगतान करने' तक सीमित करना दायरे का विस्तार है।"
+        },
+        {
+          "statement": "टोडर मल की ज़ब्ती प्रणाली के तहत भूमि राजस्व का तर्कसंगतकरण वह वित्तीय आधार प्रदान करता था जिसने सटीक जागीर आवंटन और मंसब वेतन भुगतान को संभव बनाया।",
+          "verdict": "सही",
+          "reason": "सटीक राजस्व मापन के बिना जागीर आवंटन मनमाने होते — टोडर मल के सर्वेक्षण मंसब वेतन भुगतान के लिए आवश्यक जागीरदारी के लिए पूर्वापेक्षा थे।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें सभी तीन शामिल हैं, एक मजबूत भ्रम है क्योंकि कथन 1 और 3 ठोस रूप से सही हैं, और जो छात्र कथन 2 में 'केवल' शब्द को ध्यान से नहीं देखेंगे वे सभी तीन स्वीकार कर लेंगे।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: जमा का ज़ात रैंक से संबंध ऐन-ए-अकबरी में दर्ज है — सही।",
+        "कथन 2 सत्यापित करें: 'केवल भुगतान' दायरे का विस्तार है; दीवान खातों का लेखा परीक्षण भी करता था — गलत।",
+        "कथन 3 सत्यापित करें: जागीरदारी के लिए वित्तीय आधार के रूप में टोडर मल की ज़ब्ती एक मानक प्रशासनिक संबंध है — सही।",
+        "कथन 1 और 3 सही, कथन 2 गलत → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'केवल' शब्द का उपयोग एक व्यापक सत्य तथ्य (दीवान वेतन का भुगतान करता था) को एक गलत पूर्णता (दीवान का कोई लेखा परीक्षण कार्य नहीं था) में बदल देता है। यह एक क्लासिक दायरे का विस्तार जाल है। जो छात्र याद करते हैं कि दीवान वेतन देता था लेकिन उसके लेखा परीक्षण कार्य को नहीं जानते, वे कथन 2 को सही मानकर विकल्प (d) चुनेंगे।",
+      "final_explanation": "मंसबदारी प्रणाली की वेतन व्यवस्था एक व्यापक वित्तीय संरचना में निहित थी जो विश्वसनीय राजस्व आंकड़ों पर निर्भर थी।\n\n• कथन 1 — सही: ऐन-ए-अकबरी में वेतन पैमाने (जमा) को ज़ात रैंक से जोड़ा गया है। उच्च ज़ात रैंक धारक को अनुपातिक रूप से अधिक वेतन मिलता था, जिसमें घोड़ों और उपकरणों के रखरखाव की लागत घटाई जाती थी।\n• कथन 2 — गलत: दीवान की जिम्मेदारियां केवल भुगतान तक सीमित नहीं थीं, बल्कि जागीर खातों का लेखा परीक्षण और यह सत्यापित करना भी शामिल था कि राजस्व आवंटन वेतन अधिकारों से मेल खाते हैं। 'केवल भुगतान' उसके लेखा परीक्षण कार्य को हटा देता है।\n• कथन 3 — सही: टोडर मल के मापन सर्वेक्षण (ज़ब्ती/ऐन-ए-दहसाला) विश्वसनीय राजस्व आंकड़े उत्पन्न करते थे, जिनके बिना जागीर आवंटन मनमाने होते। यह प्रशासनिक संबंध UPSC में एक लोकप्रिय क्रॉस-कॉन्सेप्ट प्रश्न है।\n\nमूल्य संवर्धन:\n• दीवान और मीर बख्शी एक-दूसरे पर नियंत्रण के रूप में कार्य करते थे — वित्त और सैन्य सत्यापन को जानबूझकर अलग रखा गया था।\n• टोडर मल अकबर और शेर शाह सूरी दोनों के अधीन कार्यरत थे, जिससे वे एक क्रॉस-वंशीय प्रशासनिक व्यक्ति बन गए।\n• UPSC के लिए: मंसबदारी + ज़ब्ती = अकबर के शासन के प्रश्नों में सबसे सामान्य रूप से जुड़े दो प्रशासनिक सुधार।"
+    }
+  },
+  {
+    "uuid": "60db7181-a76a-46b0-a9e7-5c20ea6fa453",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Role of the Mir Bakhshi in the Mansabdari System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mir Bakhshi — military head, not paymaster",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Mir Bakhshi served as the head of the military department in the Mughal administrative structure, with responsibilities that included presenting candidates for mansab appointments and overseeing the muster and inspection of mansabdar contingents.\n\nReason (R): As the head of the military department, the Mir Bakhshi was also responsible for disbursing the salaries of mansabdars from the imperial treasury, ensuring that payments corresponded to verified Zat ranks.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because both A and R are correct and causally related at surface level; students who do not distinguish between the Mir Bakhshi's verification role and the Diwan's payment role may accept R as explaining A.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — The Mir Bakhshi was head of the military department, responsible for presenting candidates for mansabs, maintaining military records, and conducting musters. Yes, A is correct.",
+        "Step 2: Is Reason (R) correct? — The statement that the Mir Bakhshi disbursed salaries to mansabdars is incorrect; salary disbursement was the Diwan's function. R is factually incorrect.",
+        "Step 3: Since R is incorrect, the correct option must be (c): A is correct but R is incorrect.",
+        "Correct option is (c)."
+      ],
+      "upsc_trap_explanation": "This question directly exploits the most common Mughal administrative trap: conflating the Mir Bakhshi with the Diwan. The Assertion correctly describes the Mir Bakhshi's military administrative role. The Reason incorrectly assigns salary disbursement to the Mir Bakhshi — that was the Diwan's domain. A student who has a fuzzy sense that both officials dealt with mansabdars (which is true) but has not separated their distinct functions will accept R as correct and choose option (a).",
+      "final_explanation": "The Mughal imperial administration separated military verification from financial disbursement across two distinct offices.\n\nAssertion (A): Correct. The Mir Bakhshi was the head of the military department. His functions included presenting candidates for mansab appointments to the emperor, maintaining military rolls (including Dagh and Chehra records), and overseeing musters to verify that mansabdars maintained their stipulated contingents.\n\nReason (R): Incorrect. The Mir Bakhshi did not disburse salaries. Salary disbursement and the audit of revenue accounts were functions of the Diwan (finance minister). This separation was a deliberate design to prevent any single official from controlling both military verification and financial payment.\n\nSince A is correct but R is factually wrong, the answer is (c).\n\nValue Addition:\n• Three Bakhshis functioned below the Mir Bakhshi, each overseeing divisional military record-keeping.\n• The Diwan-Mir Bakhshi separation is analogous to the modern separation between military payroll and defence procurement functions.\n• For UPSC: 'Who disbursed mansabdar salaries?' = Diwan. 'Who verified mansabdar contingents?' = Mir Bakhshi. These are among the most tested Mughal administrative distinctions."
+    },
+    "hi": {
+      "display_text": "कथन (A): मीर बख्शी मुगल प्रशासनिक संरचना में सैन्य विभाग के प्रमुख के रूप में कार्यरत थे, जिनकी जिम्मेदारियों में मंसब नियुक्तियों के लिए उम्मीदवार प्रस्तुत करना और मंसबदार टुकड़ियों की मस्टरिंग एवं निरीक्षण की देखरेख शामिल थी।\n\nकारण (R): सैन्य विभाग के प्रमुख के रूप में, मीर बख्शी ने सम्राट के खजाने से मंसबदारों के वेतन का वितरण भी किया, यह सुनिश्चित करते हुए कि भुगतान सत्यापित ज़ात रैंक के अनुसार हो।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि दोनों A और R सही हैं और सतही स्तर पर कारणात्मक रूप से संबंधित हैं; जो छात्र मीर बख्शी की सत्यापन भूमिका और दीवान की भुगतान भूमिका के बीच अंतर नहीं करते, वे R को A की व्याख्या मान सकते हैं।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — मीर बख्शी सैन्य विभाग के प्रमुख थे, जो मंसब के उम्मीदवार प्रस्तुत करने, सैन्य अभिलेख रखने और मंसबदारों की मस्टरिंग करने के लिए जिम्मेदार थे। हाँ, A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — मीर बख्शी द्वारा मंसबदारों को वेतन देने का कथन गलत है; वेतन वितरण दीवान का कार्य था। R तथ्यात्मक रूप से गलत है।",
+        "चरण 3: चूंकि R गलत है, सही विकल्प (c) होना चाहिए: A सही है लेकिन R गलत है।",
+        "सही विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न सीधे सबसे आम मुगल प्रशासनिक भ्रम का उपयोग करता है: मीर बख्शी को दीवान के साथ भ्रमित करना। कथन सही ढंग से मीर बख्शी की सैन्य प्रशासनिक भूमिका को दर्शाता है। कारण गलत तरीके से वेतन वितरण मीर बख्शी को सौंपता है — यह दीवान का क्षेत्र था। जो छात्र यह समझते हैं कि दोनों अधिकारी मंसबदारों से संबंधित थे (जो सही है) लेकिन उनके अलग-अलग कार्यों को नहीं समझते, वे R को सही मानकर विकल्प (a) चुन सकते हैं।",
+      "final_explanation": "मुगल शाही प्रशासन ने सैन्य सत्यापन और वित्तीय भुगतान को दो अलग-अलग कार्यालयों में विभाजित किया था।\n\nकथन (A): सही। मीर बख्शी सैन्य विभाग के प्रमुख थे। उनके कार्यों में मंसब नियुक्तियों के लिए उम्मीदवारों को सम्राट के समक्ष प्रस्तुत करना, सैन्य रजिस्टर (जैसे दाग़ और चेहरा अभिलेख) बनाए रखना, और मंसबदारों की निर्धारित टुकड़ियों की पुष्टि के लिए मस्टरिंग करना शामिल था।\n\nकारण (R): गलत। मीर बख्शी वेतन वितरण नहीं करते थे। वेतन वितरण और राजस्व खातों का लेखा-जोखा दीवान (वित्त मंत्री) के कार्य थे। यह विभाजन जानबूझकर किया गया था ताकि कोई एक अधिकारी सैन्य सत्यापन और वित्तीय भुगतान दोनों पर नियंत्रण न रख सके।\n\nचूंकि A सही है लेकिन R तथ्यात्मक रूप से गलत है, उत्तर (c) है।\n\nमूल्यवर्धन:\n• मीर बख्शी के अधीन तीन बख्शी काम करते थे, जो क्षेत्रीय सैन्य अभिलेखों की देखरेख करते थे।\n• दीवान-मीर बख्शी का विभाजन आधुनिक सैन्य वेतन और रक्षा खरीद कार्यों के विभाजन के समान है।\n• UPSC के लिए: 'मंसबदारों के वेतन किसने वितरित किए?' = दीवान। 'मंसबदारों की टुकड़ियों का सत्यापन किसने किया?' = मीर बख्शी। ये मुगल प्रशासन के सबसे अधिक परीक्षण किए गए भेद हैं।"
+    }
+  },
+  {
+    "uuid": "4d2cb172-8c3f-45a9-af30-19ef6e8e3fd8",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Origins and Antecedents of the Mansabdari System",
+        "Comparison of Mansabdari with Delhi Sultanate's Iqta System"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Primary source for understanding the Mansabdari system",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following texts is recognized as the primary contemporary source for understanding the structure, salary scales, and organizational details of the Mughal Mansabdari system under Akbar?\n\n(a) Ain-i-Akbari by Abu'l Fazl\n(b) Tarikh-i-Firishta by Muhammad Qasim Firishta\n(c) Tabaqat-i-Akbari by Nizamuddin Ahmad\n(d) Tuzuk-i-Jahangiri by Emperor Jahangir",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) 'Tabaqat-i-Akbari' is a strong distractor because it is a real contemporary chronicle of Akbar's reign by Nizamuddin Ahmad, and students who know multiple Akbari chronicles may confuse it with the administrative manual.",
+      "elimination_logic": [
+        "Eliminate (b): Tarikh-i-Firishta is a general history of India by Muhammad Qasim Firishta — not an administrative document and not the primary source for the Mansabdari system.",
+        "Eliminate (c): Tabaqat-i-Akbari is a chronicle of Akbar's reign by Nizamuddin Ahmad — a historical narrative, not the administrative codification of the system.",
+        "Eliminate (d): Tuzuk-i-Jahangiri is Jahangir's memoir — it postdates Akbar and is not the primary administrative source for his Mansabdari.",
+        "Abu'l Fazl's Ain-i-Akbari is universally recognized as the primary administrative record of the Mansabdari system → option (a)."
+      ],
+      "upsc_trap_explanation": "The Tabaqat-i-Akbari trap works because students studying Akbar's reign encounter multiple contemporary chronicles and may not distinguish the administrative manual (Ain-i-Akbari) from the historical narrative (Tabaqat-i-Akbari). Both were written in the same period and both deal with Akbar's reign — but only the Ain-i-Akbari contains the codified salary tables and rank specifications of the Mansabdari system.",
+      "final_explanation": "The Mansabdari system is studied through a limited set of primary sources, and the question of which is the most authoritative is itself a testable fact.\n\n• Option (a): Correct. The Ain-i-Akbari by Abu'l Fazl is the foundational administrative document — it contains detailed salary scales by Zat rank, lists of mansabdars, their obligations, and the organizational structure of the imperial service.\n• Option (b): Tarikh-i-Firishta (by Muhammad Qasim Firishta) is a general narrative history of India — not an administrative manual and not the primary source for Mansabdari structure.\n• Option (c): Tabaqat-i-Akbari (by Nizamuddin Ahmad) is a chronicle of Akbar's reign — a historical narrative, not the codified administrative record.\n• Option (d): Tuzuk-i-Jahangiri is Emperor Jahangir's personal memoir — it postdates Akbar's Mansabdari formalization and is not the foundational source.\n\nValue Addition:\n• The Ain-i-Akbari is part of a larger work, the Akbarnama — the Ain is its administrative appendix.\n• Abu'l Fazl was Akbar's court historian and a Navratna (nine gems) of Akbar's court.\n• For UPSC: 'Which text documents Akbar's administrative system?' = Ain-i-Akbari, every time."
+    },
+    "hi": {
+      "display_text": "अकबर के शासनकाल में मुगल मंसबदारी प्रणाली की संरचना, वेतनमान, और संगठनात्मक विवरण को समझने के लिए निम्नलिखित में से कौन-सा ग्रंथ प्राथमिक समकालीन स्रोत के रूप में मान्यता प्राप्त है?\n\n(a) अबुल फज़ल द्वारा ऐन-ए-अकबरी\n(b) मुहम्मद क़ासिम फिरिश्ता द्वारा तारीख-ए-फिरिश्ता\n(c) नज़मुद्दीन अहमद द्वारा तबक़ात-ए-अकबरी\n(d) सम्राट जहाँगीर द्वारा तुज़ुक-ए-जाहाँगीरी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) 'तबक़ात-ए-अकबरी' एक मजबूत भ्रम है क्योंकि यह नज़मुद्दीन अहमद द्वारा अकबर के शासन का एक वास्तविक समकालीन इतिहास है, और जो छात्र कई अकबरी इतिहास जानते हैं वे इसे प्रशासनिक मैनुअल से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "(b) को हटाएं: तारीख-ए-फिरिश्ता मुहम्मद क़ासिम फिरिश्ता द्वारा भारत का सामान्य इतिहास है — यह प्रशासनिक दस्तावेज़ नहीं है और मंसबदारी प्रणाली के लिए प्राथमिक स्रोत नहीं है।",
+        "(c) को हटाएं: तबक़ात-ए-अकबरी नज़मुद्दीन अहमद द्वारा अकबर के शासन का इतिहास है — यह प्रशासनिक प्रणाली का संहिताबद्ध दस्तावेज़ नहीं है।",
+        "(d) को हटाएं: तुज़ुक-ए-जाहाँगीरी जहाँगीर की आत्मकथा है — यह अकबर के बाद की है और मंसबदारी के लिए प्राथमिक प्रशासनिक स्रोत नहीं है।",
+        "अबुल फज़ल की ऐन-ए-अकबरी मंसबदारी प्रणाली का सार्वभौमिक रूप से मान्यता प्राप्त प्राथमिक प्रशासनिक अभिलेख है → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "तबक़ात-ए-अकबरी का भ्रम इसलिए काम करता है क्योंकि अकबर के शासन का अध्ययन करने वाले छात्र कई समकालीन इतिहासों से परिचित होते हैं और वे प्रशासनिक मैनुअल (ऐन-ए-अकबरी) को ऐतिहासिक विवरण (तबक़ात-ए-अकबरी) से अलग नहीं कर पाते। दोनों एक ही काल में लिखे गए थे और दोनों अकबर के शासन से संबंधित हैं — लेकिन केवल ऐन-ए-अकबरी में मंसबदारी प्रणाली के वेतन तालिकाएँ और पदों के विवरण संहिताबद्ध हैं।",
+      "final_explanation": "मंसबदारी प्रणाली का अध्ययन सीमित प्राथमिक स्रोतों के माध्यम से किया जाता है, और यह प्रश्न कि सबसे अधिक अधिकारिक स्रोत कौन सा है, स्वयं एक परीक्षण योग्य तथ्य है।\n\n• विकल्प (a): सही। अबुल फज़ल की ऐन-ए-अकबरी आधारभूत प्रशासनिक दस्तावेज़ है — इसमें ज़ात रैंक के अनुसार विस्तृत वेतनमान, मंसबदारों की सूचियाँ, उनके दायित्व, और शाही सेवा की संगठनात्मक संरचना शामिल है।\n• विकल्प (b): तारीख-ए-फिरिश्ता (मुहम्मद क़ासिम फिरिश्ता द्वारा) भारत का सामान्य इतिहास है — प्रशासनिक मैनुअल नहीं और मंसबदारी संरचना के लिए प्राथमिक स्रोत नहीं।\n• विकल्प (c): तबक़ात-ए-अकबरी (नज़मुद्दीन अहमद द्वारा) अकबर के शासन का इतिहास है — संहिताबद्ध प्रशासनिक अभिलेख नहीं।\n• विकल्प (d): तुज़ुक-ए-जाहाँगीरी सम्राट जहाँगीर की व्यक्तिगत आत्मकथा है — यह अकबर की मंसबदारी की औपचारिकता के बाद की है और आधारभूत स्रोत नहीं है।\n\nमूल्यवर्धन:\n• ऐन-ए-अकबरी अकबरनामा के बड़े ग्रंथ का हिस्सा है — ऐन इसका प्रशासनिक परिशिष्ट है।\n• अबुल फज़ल अकबर के दरबार के इतिहासकार और नौ रत्नों में से एक थे।\n• UPSC के लिए: 'अकबर की प्रशासनिक प्रणाली किस ग्रंथ में दर्ज है?' = ऐन-ए-अकबरी, हर बार।"
+    }
+  },
+  {
+    "uuid": "1207b2e9-001d-46cd-a5c9-eaebcf83a181",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Military Obligations of Mansabdars",
+        "The Dagh (Branding) and Chehra (Descriptive Roll) System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Mir Bakhshi's muster role and penalty for contingent shortfall",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During an imperial muster conducted under the supervision of the Mir Bakhshi, a mansabdar holding a sawar rank of 500 is found to have presented only 300 horsemen — significantly below the number his rank required him to maintain. The horses presented have been verified through the Dagh system and are genuine. The deficiency in the contingent size is thus confirmed. Under the Mughal Mansabdari system, what administrative consequence would this mansabdar most appropriately face?\n\n(a) Automatic forfeiture of his Zat rank and removal from the imperial rolls\n(b) Imposition of financial penalties and potential demotion of rank in proportion to the established shortfall\n(c) Mandatory application of the Dagh and Chehra system to his full contingent before any further action\n(d) Immediate transfer of his jagir revenue to the Diwan pending an inquiry by the imperial court",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because Dagh and Chehra are the anti-fraud verification mechanisms most associated with muster inspection, and students may select the verification process rather than the consequence of failing it.",
+      "elimination_logic": [
+        "The scenario describes a mansabdar presenting fewer soldiers than his sawar rank requires and asks what administrative consequence follows.",
+        "Eliminate (a): Automatic forfeiture of the Zat rank is too extreme — Zat rank reflects personal status, not military contingent compliance. A shortfall in cavalry did not terminate the personal rank.",
+        "Eliminate (c): Dagh and Chehra are verification tools used during muster — the scenario has already passed that stage (the inspection has revealed the shortfall). The question asks about the consequence.",
+        "Eliminate (d): Reassignment of jagir to the Diwan is not the documented response to a contingent shortfall — jagir reassignment follows death or rebellion, not muster failure.",
+        "Failure to maintain the stipulated contingent resulted in penalties and potential rank demotion — option (b)."
+      ],
+      "upsc_trap_explanation": "Option (c) traps students who associate the Dagh-Chehra system with muster inspection — they recognise the muster scenario and jump to the anti-fraud mechanism rather than reading the question as asking about the consequence of a discovered shortfall. The distinction is between the verification process (Dagh and Chehra) and the consequence of failing it (penalties and rank demotion).",
+      "final_explanation": "The Mansabdari system had teeth: a mansabdar who could not field the contingent required by his sawar rank faced tangible administrative consequences.\n\nApplicable principle: Failure to maintain the stipulated cavalry contingent at muster was subject to penalties, including proportional salary deduction and, in serious cases, demotion of rank.\n\n• Option (a): Automatic forfeiture of Zat rank is incorrect. Zat rank represented personal status in the hierarchy — it was not directly tied to cavalry maintenance failures. The Sawar rank and its associated compensation were affected, not the Zat rank as a rule.\n• Option (b): Correct. Documented administrative practice imposed penalties (typically salary deductions proportional to the shortfall) and could lead to demotion, reflecting that military obligation and financial entitlement were tightly linked.\n• Option (c): Dagh and Chehra are the tools used to detect the shortfall at muster — not the consequence applied after it is detected.\n• Option (d): Jagir reassignment to the Diwan was not the standard consequence for a muster shortfall; it followed death (Escheat) or specific political acts.\n\nValue Addition:\n• The Mir Bakhshi oversaw musters and reported compliance or shortfalls to the emperor.\n• Persistent evasion through bribery of inspectors was documented — illustrating the gap between the system's design and its implementation.\n• For UPSC: the muster system's effectiveness was limited precisely because bribery of inspectors was common — a nuanced point for essay-type questions."
+    },
+    "hi": {
+      "display_text": "मीर बख़्शी की देखरेख में आयोजित एक शाही मुस्तरी के दौरान, एक मंसबदार जिसका सवार रैंक 500 है, केवल 300 घुड़सवार प्रस्तुत करता पाया गया — जो उसके रैंक द्वारा बनाए रखने की अपेक्षा काफी कम है। प्रस्तुत घोड़े दाग़ प्रणाली के माध्यम से सत्यापित किए गए हैं और वास्तविक हैं। दल के आकार में कमी इस प्रकार पुष्टि हो चुकी है। मुगल मंसबदारी प्रणाली के तहत, इस मंसबदार को सबसे उपयुक्त प्रशासनिक परिणाम क्या भुगतना होगा?\n\n(a) उसके ज़ात रैंक का स्वचालित विलोपन और शाही रजिस्टर से हटाया जाना\n(b) स्थापित कमी के अनुपात में वित्तीय दंड और संभावित पदोन्नति\n(c) आगे की कार्रवाई से पहले उसके पूरे दल पर दाग़ और चेहरा प्रणाली का अनिवार्य प्रयोग\n(d) शाही न्यायालय की जांच के दौरान उसकी जागीर की आय का तत्काल दीवान को स्थानांतरण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि दाग़ और चेहरा मुस्तरी निरीक्षण से जुड़े धोखाधड़ी विरोधी सत्यापन तंत्र हैं, और छात्र सत्यापन प्रक्रिया को दंड के बजाय चुन सकते हैं।",
+      "elimination_logic": [
+        "परिदृश्य में एक मंसबदार को उसके सवार रैंक की अपेक्षा कम सैनिक प्रस्तुत करते हुए दिखाया गया है और पूछा गया है कि इसके प्रशासनिक परिणाम क्या होंगे।",
+        "(a) को हटाएं: ज़ात रैंक का स्वचालित विलोपन अत्यंत कठोर है — ज़ात रैंक व्यक्तिगत स्थिति को दर्शाता है, सैन्य दल की अनुपालन को नहीं। घुड़सवारों की कमी से व्यक्तिगत रैंक समाप्त नहीं होती।",
+        "(c) को हटाएं: दाग़ और चेहरा मुस्तरी के दौरान उपयोग किए जाने वाले सत्यापन उपकरण हैं — परिदृश्य में वह चरण पहले ही पार हो चुका है (निरीक्षण में कमी सामने आ चुकी है)। प्रश्न परिणाम के बारे में है।",
+        "(d) को हटाएं: जागीर का दीवान को पुनः आवंटन दल की कमी के लिए प्रलेखित प्रतिक्रिया नहीं है — जागीर पुनः आवंटन मृत्यु या विद्रोह के बाद होता है, मुस्तरी विफलता के बाद नहीं।",
+        "निर्धारित दल को बनाए रखने में विफलता के लिए दंड और संभावित रैंक पदोन्नति हुई — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) उन छात्रों को फंसाता है जो दाग़-चेहरा प्रणाली को मुस्तरी निरीक्षण से जोड़ते हैं — वे मुस्तरी परिदृश्य को पहचानते हैं और कमी के परिणाम के बजाय धोखाधड़ी विरोधी तंत्र पर ध्यान केंद्रित कर लेते हैं। अंतर सत्यापन प्रक्रिया (दाग़ और चेहरा) और विफलता के परिणाम (दंड और पदोन्नति) के बीच है।",
+      "final_explanation": "मंसबदारी प्रणाली में कड़ाई थी: जो मंसबदार अपने सवार रैंक के अनुसार निर्धारित दल प्रस्तुत नहीं कर सका, उसे स्पष्ट प्रशासनिक परिणाम भुगतने पड़े।\n\nलागू सिद्धांत: मुस्तरी में निर्धारित घुड़सवार दल बनाए रखने में विफलता पर दंड लगाए जाते थे, जिनमें कमी के अनुपात में वेतन कटौती और गंभीर मामलों में पदोन्नति शामिल थी।\n\n• विकल्प (a): ज़ात रैंक का स्वचालित विलोपन गलत है। ज़ात रैंक व्यक्तिगत स्थिति दर्शाता था — यह घुड़सवार रखरखाव की विफलता से सीधे जुड़ा नहीं था। सवार रैंक और उससे जुड़ी क्षतिपूर्ति प्रभावित होती थी, ज़ात रैंक नहीं।\n• विकल्प (b): सही। प्रलेखित प्रशासनिक प्रथा में दंड (आमतौर पर कमी के अनुपात में वेतन कटौती) और पदोन्नति शामिल थी, जो सैन्य दायित्व और वित्तीय अधिकार के घनिष्ठ संबंध को दर्शाता है।\n• विकल्प (c): दाग़ और चेहरा मुस्तरी में कमी का पता लगाने के उपकरण हैं — यह कमी पाए जाने के बाद लागू परिणाम नहीं हैं।\n• विकल्प (d): जागीर का दीवान को पुनः आवंटन मुस्तरी कमी के लिए मानक प्रतिक्रिया नहीं था; यह मृत्यु (एस्कीट) या विशेष राजनीतिक कृत्यों के बाद होता था।\n\nमूल्यवर्धन:\n• मीर बख़्शी मुस्तरी की देखरेख करता था और सम्राट को अनुपालन या कमी की रिपोर्ट करता था।\n• निरीक्षकों को रिश्वत देकर बचने के मामले प्रलेखित हैं — जो प्रणाली की डिज़ाइन और क्रियान्वयन के बीच अंतर को दर्शाता है।\n• UPSC के लिए: मुस्तरी प्रणाली की प्रभावशीलता सीमित थी क्योंकि निरीक्षकों को रिश्वत देना आम था — निबंध प्रकार के प्रश्नों के लिए एक सूक्ष्म बिंदु।"
+    }
+  },
+  {
+    "uuid": "af913ef0-7df5-4f91-a718-6e163881fe40",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Jagir Assignment vs. Salary Payment (Jagirdari-Mansabdari Overlap)",
+        "Comparison of Mansabdari with Delhi Sultanate's Iqta System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Jagir as revenue assignment — not land ownership",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following statements correctly describe the nature and functioning of the Mughal jagir system. Which one does NOT correctly characterize Mughal jagirs?\n\n(a) Jagirs were non-hereditary and regularly transferred to prevent mansabdars from building independent local power bases\n(b) A jagir was essentially a revenue assignment serving as a substitute for cash salary payment — it did not constitute ownership of the assigned land\n(c) Jagir holders exercised quasi-autonomous judicial and revenue powers over their assigned territories independent of direct imperial oversight\n(d) The chronic shortage of available jagir territories relative to the growing number of mansabdars under Aurangzeb precipitated a structural administrative crisis",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because describing jagir as a 'mode of payment' rather than 'land ownership' is the counter-intuitive correct fact — students who have not absorbed this distinction may doubt this option and look elsewhere.",
+      "elimination_logic": [
+        "Identify the common category: true statements about Mughal jagirs.",
+        "Option (a): Jagirs were transferable and non-hereditary — this is a correct characterization of Mughal jagirs. Belongs.",
+        "Option (b): Jagir was a revenue assignment serving as a payment substitute, not ownership of land — this is a correct characterization. Belongs.",
+        "Option (c): Describing jagir holders as having 'quasi-autonomous judicial and revenue powers independent of imperial oversight' describes Iqta holders (Muqtis) of the Delhi Sultanate, NOT Mughal jagirdars. Does NOT belong.",
+        "Option (d): The chronic shortage of jagirs under Aurangzeb precipitating administrative crisis — this correctly describes the Jagir Crisis. Belongs.",
+        "The odd one out is (c)."
+      ],
+      "upsc_trap_explanation": "Option (c) conflates the attributes of Delhi Sultanate Muqtis (Iqta holders) with Mughal jagirdars. Both administered revenue territories, but Muqtis had genuine quasi-autonomous powers while Mughal jagirdars remained centrally supervised servants. A student who remembers that 'Iqta and Jagir are both revenue assignments' but has not internalised the difference in local autonomy will accept option (c) as a valid description of Mughal jagirs.",
+      "final_explanation": "Mughal jagirs were revenue assignments under tight imperial control — they were not autonomous territorial grants.\n\n• Option (a): Correct characterization — jagirs were non-hereditary and routinely transferred to prevent entrenchment.\n• Option (b): Correct characterization — jagir was the payment mechanism (revenue assignment in lieu of cash salary), not a form of land ownership.\n• Option (c): Incorrect characterization — describing jagir holders as having 'quasi-autonomous judicial and revenue powers' describes Iqta holders (Muqtis) of the Delhi Sultanate. Mughal jagirdars remained imperial servants under central supervision.\n• Option (d): Correct characterization — the Jagir Crisis under Aurangzeb, when mansabdar numbers outpaced available jagir territories, is a documented structural problem.\n\nValue Addition:\n• The critical operational difference: Mughal jagirdars collected revenue but could not administer justice or raise local armies independently — Muqtis could.\n• The UPSC trap here is the conflation of Iqta and Jagir as equivalent systems — they had fundamentally different degrees of local autonomy.\n• For UPSC: Iqta holder = quasi-autonomous; Jagirdar = centrally supervised servant."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन कथन मुगल जागीर प्रणाली की प्रकृति और कार्यप्रणाली का सही वर्णन करते हैं। कौन-सा कथन मुगल जागीरों का सही वर्णन नहीं करता?\n\n(a) जागीर गैर-विरासत थी और mansabdars को स्वतंत्र स्थानीय सत्ता आधार बनाने से रोकने के लिए नियमित रूप से हस्तांतरित की जाती थी\n(b) जागीर मूलतः एक राजस्व आवंटन था जो नकद वेतन भुगतान के विकल्प के रूप में कार्य करता था — यह आवंटित भूमि का स्वामित्व नहीं था\n(c) जागीर धारकों के पास उनके आवंटित क्षेत्रों पर साम्राज्य की प्रत्यक्ष निगरानी से स्वतंत्र अर्ध-स्वायत्त न्यायिक और राजस्व शक्तियाँ थीं\n(d) औरंगजेब के शासनकाल में mansabdars की बढ़ती संख्या के मुकाबले उपलब्ध जागीर क्षेत्रों की गंभीर कमी ने एक संरचनात्मक प्रशासनिक संकट को जन्म दिया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जागीर को 'भुगतान का माध्यम' बताना 'भूमि स्वामित्व' के बजाय एक विरोधाभासी सही तथ्य है — जो छात्र इस भेद को नहीं समझ पाए हैं वे इस विकल्प पर संदेह कर सकते हैं और अन्य विकल्पों की ओर देखेंगे।",
+      "elimination_logic": [
+        "सामान्य श्रेणी की पहचान करें: मुगल जागीरों के बारे में सही कथन।",
+        "विकल्प (a): जागीर हस्तांतरणीय और गैर-विरासत थी — यह मुगल जागीरों का सही वर्णन है। शामिल है।",
+        "विकल्प (b): जागीर एक राजस्व आवंटन था जो नकद वेतन के स्थान पर भुगतान के रूप में कार्य करता था, भूमि का स्वामित्व नहीं था — यह सही वर्णन है। शामिल है।",
+        "विकल्प (c): जागीर धारकों को 'साम्राज्य की प्रत्यक्ष निगरानी से स्वतंत्र अर्ध-स्वायत्त न्यायिक और राजस्व शक्तियाँ' होने का वर्णन दिल्ली सल्तनत के इक़्ता धारकों (मुक्तियों) का है, न कि मुगल जागीरदारों का। शामिल नहीं है।",
+        "विकल्प (d): औरंगजेब के शासनकाल में जागीरों की गंभीर कमी जिसने प्रशासनिक संकट को जन्म दिया — यह जागीर संकट का सही वर्णन है। शामिल है।",
+        "अलग विकल्प (odd one out) है (c)।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) दिल्ली सल्तनत के मुक्तियों (इक़्ता धारकों) के गुणों को मुगल जागीरदारों के साथ मिला देता है। दोनों राजस्व क्षेत्र का प्रशासन करते थे, लेकिन मुक्तियों के पास वास्तविक अर्ध-स्वायत्त शक्तियाँ थीं जबकि मुगल जागीरदार केंद्रीय नियंत्रण में सेवक बने रहते थे। जो छात्र याद रखते हैं कि 'इक़्ता और जागीर दोनों राजस्व आवंटन हैं' लेकिन स्थानीय स्वायत्तता के अंतर को नहीं समझ पाए हैं, वे विकल्प (c) को मुगल जागीरों का सही वर्णन मान लेंगे।",
+      "final_explanation": "मुगल जागीरें कड़ी साम्राज्यिक नियंत्रण के तहत राजस्व आवंटन थीं — वे स्वायत्त क्षेत्रीय अनुदान नहीं थीं।\n\n• विकल्प (a): सही वर्णन — जागीर गैर-विरासत थी और जागीरदारों के स्थानीय स्वतंत्र सत्ता आधार बनाने से रोकने के लिए नियमित रूप से हस्तांतरित की जाती थी।\n• विकल्प (b): सही वर्णन — जागीर भुगतान तंत्र था (नकद वेतन के बदले राजस्व आवंटन), भूमि स्वामित्व का रूप नहीं था।\n• विकल्प (c): गलत वर्णन — जागीर धारकों को 'अर्ध-स्वायत्त न्यायिक और राजस्व शक्तियाँ' होने का वर्णन दिल्ली सल्तनत के इक़्ता धारकों (मुक्तियों) का है। मुगल जागीरदार केंद्रीय नियंत्रण में साम्राज्य के सेवक बने रहते थे।\n• विकल्प (d): सही वर्णन — औरंगजेब के शासनकाल में जागीरों की संख्या कम पड़ने से जो mansabdars की संख्या बढ़ गई, वह एक संरचनात्मक समस्या थी।\n\nमूल्यवर्धन:\n• महत्वपूर्ण परिचालन अंतर: मुगल जागीरदार राजस्व एकत्र करते थे लेकिन स्वतंत्र रूप से न्याय प्रशासन या स्थानीय सेना नहीं खड़ी कर सकते थे — मुक्तियों के पास यह अधिकार था।\n• UPSC का जाल यहाँ इक़्ता और जागीर को समान प्रणाली मान लेने में है — वे स्थानीय स्वायत्तता के स्तर में मौलिक रूप से भिन्न थे।\n• UPSC के लिए: इक़्ता धारक = अर्ध-स्वायत्त; जागीरदार = केंद्रीय नियंत्रण में सेवक।"
+    }
+  },
+  {
+    "uuid": "b70a6736-be8d-4612-a465-41bb7702f060",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Non-Hereditary Nature of Mansabs (Contrast with Feudalism)",
+        "Comparison of Mansabdari with Delhi Sultanate's Iqta System"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "two-statement-relationship",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Escheat doctrine — crown absorption of mansabdar property",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about the non-hereditary nature of the Mughal Mansabdari system:\n\nStatement 1: Under the Mughal system, the property accumulated by a mansabdar during his service reverted to the imperial crown upon his death, a practice consistent with the non-hereditary principle of mansab.\n\nStatement 2: The non-hereditary character of mansabs fundamentally distinguished the Mughal system from European feudalism, where fiefs were heritable territories that passed to successors, creating autonomous power centres over generations.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Mughal system, the property accumulated by a mansabdar during his service reverted to the imperial crown upon his death, a practice consistent with the non-hereditary principle of mansab.",
+          "verdict": "Correct",
+          "reason": "Escheat — the reversion of a mansabdar's accumulated property to the crown — is a well-documented practice that operationalized the non-hereditary nature of the rank."
+        },
+        {
+          "statement": "The non-hereditary character of mansabs fundamentally distinguished the Mughal system from European feudalism, where fiefs were heritable territories that passed to successors, creating autonomous power centres over generations.",
+          "verdict": "Correct",
+          "reason": "The heritable nature of European fiefs created multi-generational independent power centres — precisely the outcome that the non-hereditary Mughal mansab was designed to prevent."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is a strong distractor because students may have learned Escheat as a concept but doubt whether the European feudalism comparison is precise enough to be 'correct,' leading them to accept Statement 1 while rejecting Statement 2.",
+      "elimination_logic": [
+        "Verify Statement 1: Escheat (crown absorption of mansabdar property on death) is a documented and enforced Mughal practice — Correct.",
+        "Verify Statement 2: European feudal fiefs were heritable, creating independent baronies across generations — this contrast with Mughal non-hereditary mansabs is a standard textbook comparison. Correct.",
+        "Both statements are independently correct → option (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The non-hereditary principle was both a legal norm and a political tool in the Mughal system, with direct comparisons to European feudalism providing analytical clarity.\n\n• Statement 1 — Correct: Escheat describes the systematic reversion of a deceased mansabdar's accumulated wealth to the imperial treasury. This was not an occasional practice but a consistent policy that prevented generational wealth accumulation and kept the nobility financially dependent on imperial service.\n• Statement 2 — Correct: European feudalism was built on heritable fiefs — land that passed from lord to heir, creating noble houses with entrenched territorial power. The Mughal non-hereditary mansab was structurally the opposite: every generation started fresh, dependent on imperial patronage.\n\nValue Addition:\n• W.H. Moreland identified Escheat as a key mechanism of Mughal 'fiscal despotism' — the emperor could absorb the wealth of every deceased noble.\n• The contrast with European feudalism is one of the most UPSC-relevant analytical comparisons in medieval history.\n• For UPSC: 'What happened to a mansabdar's property on death?' = Escheat — reverted to the crown."
+    },
+    "hi": {
+      "display_text": "मुगल मंसबदारी प्रणाली की गैर-विरासत प्रकृति के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: मुगल प्रणाली के तहत, एक मंसबदार द्वारा अपनी सेवा के दौरान संचित संपत्ति उसकी मृत्यु पर शाही ताज को वापस चली जाती थी, जो मंसब के गैर-विरासत सिद्धांत के अनुरूप एक प्रथा थी।\n\nकथन 2: मंसबों की गैर-विरासत प्रकृति ने मौलिक रूप से मुगल प्रणाली को यूरोपीय सामंती व्यवस्था से अलग किया, जहाँ फiefs विरासत में मिलने वाले क्षेत्र थे जो उत्तराधिकारियों को मिलते थे, जिससे पीढ़ियों तक स्वायत्त शक्ति केंद्र बनते थे।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मुगल प्रणाली के तहत, एक मंसबदार द्वारा अपनी सेवा के दौरान संचित संपत्ति उसकी मृत्यु पर शाही ताज को वापस चली जाती थी, जो मंसब के गैर-विरासत सिद्धांत के अनुरूप एक प्रथा थी।",
+          "verdict": "सही",
+          "reason": "Escheat — मंसबदार की संचित संपत्ति का ताज को वापस जाना — एक अच्छी तरह से प्रलेखित प्रथा है जो मंसब की गैर-विरासत प्रकृति को लागू करती है।"
+        },
+        {
+          "statement": "मंसबों की गैर-विरासत प्रकृति ने मौलिक रूप से मुगल प्रणाली को यूरोपीय सामंती व्यवस्था से अलग किया, जहाँ फiefs विरासत में मिलने वाले क्षेत्र थे जो उत्तराधिकारियों को मिलते थे, जिससे पीढ़ियों तक स्वायत्त शक्ति केंद्र बनते थे।",
+          "verdict": "सही",
+          "reason": "यूरोपीय फiefs की विरासत में मिलने वाली प्रकृति ने बहु-पीढ़ी स्वतंत्र शक्ति केंद्र बनाए — ठीक वही परिणाम जिसे गैर-विरासत मुगल मंसब रोकने के लिए डिज़ाइन किया गया था।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि छात्र Escheat को एक अवधारणा के रूप में जानते होंगे लेकिन यूरोपीय सामंती व्यवस्था की तुलना को 'सही' मानने में संदेह कर सकते हैं, जिससे वे कथन 1 को स्वीकार करते हुए कथन 2 को अस्वीकार कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: Escheat (मृत्यु पर मंसबदार की संपत्ति का ताज में समावेश) एक प्रलेखित और लागू मुगल प्रथा है — सही।",
+        "कथन 2 सत्यापित करें: यूरोपीय सामंती फiefs विरासत में मिलने वाले थे, जो पीढ़ियों तक स्वतंत्र बारोनियाँ बनाते थे — यह मुगल गैर-विरासत मंसबों के साथ एक मानक पाठ्यपुस्तक तुलना है। सही।",
+        "दोनों कथन स्वतंत्र रूप से सही हैं → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "गैर-विरासत सिद्धांत मुगल प्रणाली में एक कानूनी मानदंड और राजनीतिक उपकरण दोनों था, जिसमें यूरोपीय सामंती व्यवस्था के साथ प्रत्यक्ष तुलना विश्लेषणात्मक स्पष्टता प्रदान करती है।\n\n• कथन 1 — सही: Escheat मृत मंसबदार की संचित संपत्ति के समष्टिगत रूप से शाही खजाने में वापस जाने को दर्शाता है। यह एक आकस्मिक प्रथा नहीं बल्कि एक सुसंगत नीति थी जिसने पीढ़ीगत संपत्ति संचय को रोका और कुलीन वर्ग को शाही सेवा पर आर्थिक रूप से निर्भर रखा।\n• कथन 2 — सही: यूरोपीय सामंती व्यवस्था विरासत में मिलने वाले फiefs पर आधारित थी — भूमि जो स्वामी से वारिस को जाती थी, जिससे कुलीन परिवारों के क्षेत्रीय अधिकार स्थापित होते थे। मुगल गैर-विरासत मंसब संरचनात्मक रूप से इसका विपरीत था: हर पीढ़ी नई शुरुआत करती थी, जो शाही संरक्षण पर निर्भर थी।\n\nमूल्य संवर्धन:\n• डब्ल्यू.एच. मोरलैंड ने Escheat को मुगल 'राजकोषीय निरंकुशता' की एक प्रमुख प्रक्रिया के रूप में पहचाना — सम्राट हर मृत कुलीन की संपत्ति को समाहित कर सकता था।\n• यूरोपीय सामंती व्यवस्था के साथ तुलना मध्यकालीन इतिहास में UPSC के लिए सबसे प्रासंगिक विश्लेषणात्मक तुलनाओं में से एक है।\n• UPSC के लिए: 'मंसबदार की मृत्यु पर उसकी संपत्ति का क्या हुआ?' = Escheat — ताज को वापस चली गई।"
+    }
+  },
+  {
+    "uuid": "bea8f195-c93b-4f6f-bf31-9f9f235025a5",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Akbar's Reforms to the System (1570s Formalization)",
+        "Origins and Antecedents of the Mansabdari System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Pre-1570 vs post-1570 Mansabdari codification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Akbar's transformation of informal rank assignments into a systematically codified dual Zat-Sawar structure — the defining architectural innovation of the Mansabdari system — is historically associated with the ________.\n\n(a) 1556, coinciding with his formal accession to the Mughal throne\n(b) 1560s, during the period of his early military consolidation and transition from the regency\n(c) 1570s, driven by the administrative demands of major military campaigns in Gujarat, Bengal, and Rajputana\n(d) 1580s, as part of the administrative documentation project that produced the Ain-i-Akbari",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) '1556' is a strong distractor because Akbar's reign formally began in 1556 (after the Second Battle of Panipat), and students associate the beginning of his reign with the beginning of his administrative reforms.",
+      "elimination_logic": [
+        "Eliminate (a) 1556: This is when Akbar's reign began — administrative consolidation and military campaigns preceded the formal Mansabdari codification.",
+        "Eliminate (b) 1560s: While Akbar consolidated power in the 1560s (defeating Hemu, managing regency), the dual Zat-Sawar formalization is specifically associated with the 1570s.",
+        "Eliminate (d) 1580s: By the 1580s, the system was already operating in its mature form as documented in the Ain-i-Akbari — the formalization preceded this.",
+        "The Zat-Sawar bifurcation was formalized in the 1570s → option (c)."
+      ],
+      "upsc_trap_explanation": "The 1556 trap exploits students who conflate Akbar's accession year with the date of his administrative innovations. Akbar came to the throne in 1556 but spent the first decade consolidating military and political control — the administrative codification of the Mansabdari system followed later in the 1570s, driven by the demands of major campaigns in Gujarat, Bengal, and Rajputana.",
+      "final_explanation": "The Mansabdari system underwent a specific transition from informal rank assignments to a codified dual-rank architecture.\n\n• Option (a) 1556: Akbar's accession year — administrative codification had not yet begun; this period was dominated by military consolidation.\n• Option (b) 1560s: Akbar consolidated power and began the policy of Rajput inclusion in this decade, but the formal Zat-Sawar bifurcation came later.\n• Option (c) 1570s: Correct. The systematic numerical dual-rank codification — distinguishing Zat (personal status/salary) from Sawar (military obligation) — was formalized during the 1570s, driven by the administrative demands of major military campaigns.\n• Option (d) 1580s: By this decade the system was mature and being documented by Abu'l Fazl — the formalization preceded the documentation.\n\nValue Addition:\n• Military campaigns in Gujarat (1572–73) and Bengal (1574–76) created the administrative pressure that necessitated the systematic codification.\n• Pre-1570 arrangements involved ad hoc rank assignments without the precise numerical dual structure.\n• For UPSC: '1570s = Mansabdari formalization' is a standard date association."
+    },
+    "hi": {
+      "display_text": "अकबर द्वारा अनौपचारिक पद आवंटन को व्यवस्थित रूप से संहिताबद्ध द्वैध ज़ात-सवार संरचना में परिवर्तित करना — मानसबदारी प्रणाली की परिभाषित वास्तुशिल्प नवाचार — ऐतिहासिक रूप से ________ से जुड़ा है।\n\n(a) 1556, जो उनके मुगल सिंहासन पर औपचारिक आरोहण के साथ मेल खाता है\n(b) 1560 के दशक, उनके प्रारंभिक सैन्य समेकन और रेजेंसी से संक्रमण के दौरान\n(c) 1570 के दशक, गुजरात, बंगाल और राजपूताना के प्रमुख सैन्य अभियानों की प्रशासनिक मांगों से प्रेरित\n(d) 1580 के दशक, प्रशासनिक दस्तावेजीकरण परियोजना के हिस्से के रूप में जिसने ऐन-ए-अकबरी का निर्माण किया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) '1556' एक मजबूत भ्रम है क्योंकि अकबर का शासन औपचारिक रूप से 1556 में शुरू हुआ (दूसरे पानीपत के युद्ध के बाद), और छात्र उनके शासन की शुरुआत को उनके प्रशासनिक सुधारों की शुरुआत से जोड़ते हैं।",
+      "elimination_logic": [
+        "(a) 1556 को हटा दें: यह वह वर्ष है जब अकबर का शासन शुरू हुआ — प्रशासनिक समेकन और सैन्य अभियानों ने मानसबदारी संहिता से पहलेpreceded।",
+        "(b) 1560 के दशक को हटा दें: जबकि अकबर ने 1560 के दशक में सत्ता समेकित की (हेमू को हराया, रेजेंसी का प्रबंधन किया), द्वैध ज़ात-सवार औपचारिकता विशेष रूप से 1570 के दशक से जुड़ी है।",
+        "(d) 1580 के दशक को हटा दें: 1580 के दशक तक यह प्रणाली अपने परिपक्व रूप में चल रही थी जैसा कि ऐन-ए-अकबरी में दर्ज है — औपचारिकता इससे पहले हुई थी।",
+        "ज़ात-सवार विभाजन 1570 के दशक में औपचारिक हुआ → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "1556 का भ्रम उन छात्रों को फंसाता है जो अकबर के सिंहासनारोहण वर्ष को उनके प्रशासनिक नवाचारों की तिथि से जोड़ देते हैं। अकबर 1556 में सिंहासन पर आए लेकिन पहले दशक में सैन्य और राजनीतिक नियंत्रण समेकित किया — मानसबदारी प्रणाली की प्रशासनिक संहिता बाद में 1570 के दशक में, गुजरात, बंगाल और राजपूताना के प्रमुख अभियानों की मांगों से प्रेरित होकर हुई।",
+      "final_explanation": "मानसबदारी प्रणाली ने अनौपचारिक पदों के आवंटन से लेकर एक संहिताबद्ध द्वैध पद संरचना में विशिष्ट संक्रमण किया।\n\n• विकल्प (a) 1556: अकबर का सिंहासनारोहण वर्ष — प्रशासनिक संहिता अभी शुरू नहीं हुई थी; यह अवधि सैन्य समेकन से भरी थी।\n• विकल्प (b) 1560 के दशक: अकबर ने इस दशक में सत्ता समेकित की और राजपूत समावेशन की नीति शुरू की, लेकिन औपचारिक ज़ात-सवार विभाजन बाद में आया।\n• विकल्प (c) 1570 के दशक: सही। संख्यात्मक द्वैध पद संहिता — ज़ात (व्यक्तिगत स्थिति/वेतन) और सवार (सैन्य दायित्व) को अलग करने वाली — 1570 के दशक में औपचारिक हुई, जो प्रमुख सैन्य अभियानों की प्रशासनिक मांगों से प्रेरित थी।\n• विकल्प (d) 1580 के दशक: इस दशक तक प्रणाली परिपक्व थी और अबू ल फज़ल द्वारा दस्तावेजीकृत हो रही थी — औपचारिकता दस्तावेजीकरण से पहले हुई थी।\n\nमूल्य संवर्धन:\n• गुजरात (1572–73) और बंगाल (1574–76) के सैन्य अभियान प्रशासनिक दबाव पैदा करते थे जिसने संहिताबद्धता को आवश्यक बनाया।\n• 1570 से पहले की व्यवस्थाओं में सटीक संख्यात्मक द्वैध संरचना के बिना आकस्मिक पद आवंटन शामिल था।\n• UPSC के लिए: '1570 के दशक = मानसबदारी संहिता' एक मानक तिथि संबंध है।"
+    }
+  },
+  {
+    "uuid": "5ddc2ebd-0878-453f-ac38-8a225b65a990",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Recruitment and Composition of Mansabdars",
+        "Historiographical Debates on the Mansabdari System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "M. Athar Ali — ethnic composition statistical study",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following historian-contribution pairs is correctly matched?\n\n(a) Irfan Habib — Statistical study documenting the ethnic and religious composition of the Mughal mansabdari across different reigns\n(b) M. Athar Ali — Statistical study tracking shifts in the proportional representation of Turanis, Iranis, Indian Muslims, and Hindus among Mughal mansabdars\n(c) W.H. Moreland — Analysis of Akbar's deliberate Rajput inclusion policy as the primary mechanism of political integration\n(d) Abu'l Fazl — Historiographical debate on whether the Mansabdari system represented a feudal or centralized bureaucratic model",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because Irfan Habib is the most cited historian for Mughal agrarian history, and students may attribute the ethnic composition study to him rather than to Athar Ali.",
+      "elimination_logic": [
+        "Eliminate (a): Irfan Habib is associated with the Jagir Crisis and agrarian structure — not the statistical study of ethnic composition of mansabdars. Wrong entity-attribute pairing.",
+        "Evaluate (b): M. Athar Ali + statistical tracking of ethnic/religious composition of the Mughal nobility = correct and distinctive attribution. This is the correct pair.",
+        "Eliminate (c): W.H. Moreland's thesis concerns fiscal centralization and imperial despotism — not Rajput policy analysis.",
+        "Eliminate (d): Abu'l Fazl was a court chronicler, not a modern historian debating feudal vs. bureaucratic models."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places Irfan Habib (the most famous Mughal historian) in option (a) attached to a study that actually belongs to Athar Ali. Students who remember Habib as the dominant name in Mughal historiography may credit him with the ethnic composition study without recalling that this was Athar Ali's specific and distinctive contribution.",
+      "final_explanation": "Mughal historiography has distinct contributions from different scholars, and their specific research areas are examinable.\n\n• Option (a): Incorrect. Irfan Habib's landmark contribution is the analysis of the Mughal agrarian system and the Jagir Crisis — not the statistical study of ethnic composition.\n• Option (b): Correct. M. Athar Ali conducted the systematic statistical study of the ethnic and religious composition of the Mughal mansabdari, tracking shifts across reigns from Akbar to Aurangzeb and documenting the proportional representation of Turanis, Iranis, Indian Muslims, and Hindus.\n• Option (c): Incorrect. W.H. Moreland's thesis characterises the Mansabdari as an instrument of fiscal centralization and imperial despotism — not Rajput policy analysis.\n• Option (d): Incorrect. Abu'l Fazl was a 16th-century court chronicler, not a modern historian. The feudal vs. bureaucratic debate is a 20th-century historiographical construction.\n\nValue Addition:\n• Athar Ali's data showed Hindu representation declined sharply in higher mansabs under Aurangzeb — used to support arguments about Aurangzeb's religious policies.\n• Irfan Habib: 'Agrarian System'; Athar Ali: 'ethnic composition' — keep these distinct.\n• For UPSC: historian-to-contribution matching in Mughal history is a standard question pattern."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा इतिहासकार-योगदान जोड़ा सही मेल खाता है?\n\n(a) इरफ़ान हबीब — विभिन्न शासनकालों में मुगल मंसबदारी की जातीय और धार्मिक संरचना का सांख्यिकीय अध्ययन\n(b) एम. अथर अली — मुगल मंसबदारों में टूरानी, ईरानी, भारतीय मुसलमान और हिंदुओं के अनुपात में बदलावों को ट्रैक करने वाला सांख्यिकीय अध्ययन\n(c) डब्ल्यू.एच. मोरलैंड — राजनीतिक एकीकरण के मुख्य तंत्र के रूप में अकबर की जानबूझकर राजपूत समावेशन नीति का विश्लेषण\n(d) अबुल फज़ल — यह बहस कि मंसबदारी प्रणाली जमींदारी या केंद्रीकृत नौकरशाही मॉडल का प्रतिनिधित्व करती है, पर इतिहासलेखन बहस",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि इरफ़ान हबीब मुगल कृषि इतिहास के सबसे अधिक उद्धृत इतिहासकार हैं, और छात्र जातीय संरचना अध्ययन को अथर अली के बजाय उन्हें ही मान सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: इरफ़ान हबीब जगीर संकट और कृषि संरचना से जुड़े हैं — न कि मंसबदारों की जातीय संरचना के सांख्यिकीय अध्ययन से। गलत इकाई-गुण जोड़ी।",
+        "(b) का मूल्यांकन करें: एम. अथर अली + मुगल नवाबों की जातीय/धार्मिक संरचना के सांख्यिकीय ट्रैकिंग = सही और विशिष्ट अभिज्ञान। यह सही जोड़ी है।",
+        "(c) को हटाएं: डब्ल्यू.एच. मोरलैंड का सिद्धांत राजकोषीय केंद्रीकरण और साम्राज्यवादी निरंकुशता से संबंधित है — न कि राजपूत नीति विश्लेषण।",
+        "(d) को हटाएं: अबुल फज़ल एक दरबारी इतिहासकार थे, आधुनिक इतिहासकार नहीं जो जमींदारी बनाम नौकरशाही मॉडल पर बहस करते हों।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण भ्रम में इरफ़ान हबीब (सबसे प्रसिद्ध मुगल इतिहासकार) को विकल्प (a) में रखा गया है जो वास्तव में अथर अली के अध्ययन से संबंधित है। जो छात्र हबीब को मुगल इतिहासलेखन में प्रमुख नाम के रूप में याद करते हैं, वे जातीय संरचना अध्ययन को उनके नाम कर सकते हैं बिना यह याद किए कि यह अथर अली का विशिष्ट योगदान था।",
+      "final_explanation": "मुगल इतिहासलेखन में विभिन्न विद्वानों के विशिष्ट योगदान होते हैं, और उनके शोध क्षेत्र परीक्षा के लिए महत्वपूर्ण हैं।\n\n• विकल्प (a): गलत। इरफ़ान हबीब का प्रमुख योगदान मुगल कृषि प्रणाली और जगीर संकट का विश्लेषण है — न कि जातीय संरचना का सांख्यिकीय अध्ययन।\n• विकल्प (b): सही। एम. अथर अली ने मुगल मंसबदारी की जातीय और धार्मिक संरचना का व्यवस्थित सांख्यिकीय अध्ययन किया, जिसमें अकबर से औरंगज़ेब तक के शासनकाल में टूरानी, ईरानी, भारतीय मुसलमान और हिंदुओं के अनुपात में बदलावों को ट्रैक किया।\n• विकल्प (c): गलत। डब्ल्यू.एच. मोरलैंड का सिद्धांत मंसबदारी को राजकोषीय केंद्रीकरण और साम्राज्यवादी निरंकुशता के उपकरण के रूप में देखता है — न कि राजपूत नीति के विश्लेषण के रूप में।\n• विकल्प (d): गलत। अबुल फज़ल 16वीं सदी के दरबारी इतिहासकार थे, आधुनिक इतिहासकार नहीं। जमींदारी बनाम नौकरशाही बहस 20वीं सदी का इतिहासलेखन निर्माण है।\n\nमूल्यवर्धन:\n• अथर अली के आंकड़ों ने दिखाया कि औरंगज़ेब के शासनकाल में उच्च मंसबों में हिंदू प्रतिनिधित्व में तीव्र गिरावट आई — जिसका उपयोग औरंगज़ेब की धार्मिक नीतियों के तर्क के लिए किया गया।\n• इरफ़ान हबीब: 'कृषि प्रणाली'; अथर अली: 'जातीय संरचना' — इन्हें अलग रखें।\n• UPSC के लिए: मुगल इतिहास में इतिहासकार-से-योगदान मिलान एक मानक प्रश्न पैटर्न है।"
+    }
+  },
+  {
+    "uuid": "28ede7b0-e303-4a8c-9a17-468e4c95d70d",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Decline and Distortions of the Mansabdari System under Later Mughals",
+        "Jagir Assignment vs. Salary Payment (Jagirdari-Mansabdari Overlap)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Ijaradari as a symptom of Jagir Crisis — later Mughal decline",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the distortions and decline of the Mansabdari system under the later Mughals:\n\n1. The Jagir Crisis under Aurangzeb arose primarily because Mughal territorial conquest generated far more revenue-yielding jagir lands than the mansabdari rolls required, leading to a surplus that was mismanaged.\n2. Ijaradari, the practice of sub-contracting revenue collection to local intermediaries, emerged as a consequence of the Jagir Crisis when jagir holders could no longer directly administer their assigned territories.\n3. The inflation of Zat ranks up to 12,000 under Aurangzeb strengthened the Mansabdari system by creating a larger and more effective military establishment for the empire.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 3 only\n(c) 2 and 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Jagir Crisis under Aurangzeb arose primarily because Mughal territorial conquest generated far more revenue-yielding jagir lands than the mansabdari rolls required, leading to a surplus that was mismanaged.",
+          "verdict": "Incorrect",
+          "reason": "The Jagir Crisis arose from the opposite condition: stagnation and eventual shrinkage of productive territory meant insufficient jagirs for a growing mansabdari, not a surplus."
+        },
+        {
+          "statement": "Ijaradari, the practice of sub-contracting revenue collection to local intermediaries, emerged as a consequence of the Jagir Crisis when jagir holders could no longer directly administer their assigned territories.",
+          "verdict": "Correct",
+          "reason": "Ijaradari is documented as a consequence of the Jagir Crisis — not an incorrect statement, so it does not belong to the set of NOT correct statements. But the question asks which are NOT correct. Since Statement 2 is correct, it is NOT in the 'incorrect' category."
+        },
+        {
+          "statement": "The inflation of Zat ranks up to 12,000 under Aurangzeb strengthened the Mansabdari system by creating a larger and more effective military establishment for the empire.",
+          "verdict": "Incorrect",
+          "reason": "Rank inflation diluted the exclusivity and value of high mansabs and exacerbated the Jagir Crisis — it weakened, not strengthened, the system."
+        }
+      ],
+      "strong_distractor": "b — Option (b) identifying only Statement 3 is a strong distractor because Statement 3 is obviously incorrect to a well-prepared student, who may then stop and choose (b) without fully analysing Statement 1.",
+      "elimination_logic": [
+        "Examine Statement 1: 'Surplus jagir lands' inverts the actual Jagir Crisis condition (shortage, not surplus) — Statement 1 is NOT correct.",
+        "Examine Statement 2: Ijaradari as a consequence of the Jagir Crisis is accurately described — Statement 2 IS correct (not 'not correct').",
+        "Examine Statement 3: Rank inflation under Aurangzeb weakened the system by diluting exclusivity and worsening the jagir shortage — 'strengthened' is wrong. Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct → option (d)."
+      ],
+      "upsc_trap_explanation": "Statement 1 uses 'surplus jagir lands' — a complete inversion of the actual Jagir Crisis. Students who remember there was a 'jagir problem' but have not retained whether it was a surplus or shortage will find this plausible. Statement 3 uses a more obvious trap (inflation 'strengthened' the system) but students may stop after identifying Statement 3 without returning to re-examine Statement 1, missing the correct answer of (d).",
+      "final_explanation": "The decline of the Mansabdari system under Aurangzeb involved interconnected structural failures, not isolated events.\n\n• Statement 1 — NOT Correct: The Jagir Crisis arose from a shortage of productive jagir territories relative to the number of mansabdars entitled to them — precisely the opposite of a surplus. Aurangzeb's Deccan campaigns were costly but did not generate equivalent new productive territories.\n• Statement 2 — Correct (not in the 'incorrect' category): Ijaradari did emerge as a desperate response to the Jagir Crisis — jagir holders who could not directly administer distant or contested territories sub-contracted revenue collection to local strongmen.\n• Statement 3 — NOT Correct: Inflating ranks to 12,000 Zat diluted the value and exclusivity of high mansabs, created more claimants to an already scarce jagir pool, and accelerated the system's structural breakdown — it did not strengthen the military establishment.\n\nValue Addition:\n• The Deccan campaigns under Aurangzeb drained the treasury while failing to add commensurate productive territory — the central economic irony of his reign.\n• Ijaradari created local power intermediaries who eventually undermined Mughal authority at the ground level.\n• For UPSC: Jagir Crisis = shortage (not surplus); Rank inflation = weakening (not strengthening) — both inversions are exam traps."
+    },
+    "hi": {
+      "display_text": "बाद के मुगलों के तहत मंसबदारी प्रणाली के विकृतियों और पतन के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. औरंगजेब के तहत जागीर संकट मुख्यतः इसलिए उत्पन्न हुआ क्योंकि मुगल क्षेत्रीय विजय ने मंसबदारी रोल की आवश्यकता से कहीं अधिक राजस्व देने वाली जागीर भूमि उत्पन्न की, जिससे एक अधिशेष हुआ जिसे गलत तरीके से प्रबंधित किया गया।\n2. इजारादारी, राजस्व संग्रह को स्थानीय मध्यस्थों को उप-ठेका देने की प्रथा, जागीर संकट के परिणामस्वरूप उभरी जब जागीरधारक अपने आवंटित क्षेत्रों का सीधे प्रशासन नहीं कर सके।\n3. औरंगजेब के तहत जात रैंक को 12,000 तक बढ़ाने से मंसबदारी प्रणाली मजबूत हुई क्योंकि इससे साम्राज्य के लिए एक बड़ा और अधिक प्रभावी सैन्य संगठन बना।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1 और 2\n(b) केवल 3\n(c) केवल 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Jagir Crisis under Aurangzeb arose primarily because Mughal territorial conquest generated far more revenue-yielding jagir lands than the mansabdari rolls required, leading to a surplus that was mismanaged.",
+          "verdict": "गलत",
+          "reason": "जागीर संकट विपरीत स्थिति से उत्पन्न हुआ: उत्पादक क्षेत्र की स्थिरता और अंततः सिकुड़न के कारण बढ़ती हुई मंसबदारी के लिए जागीर अपर्याप्त थे, न कि अधिशेष।"
+        },
+        {
+          "statement": "Ijaradari, the practice of sub-contracting revenue collection to local intermediaries, emerged as a consequence of the Jagir Crisis when jagir holders could no longer directly administer their assigned territories.",
+          "verdict": "सही",
+          "reason": "इजारादारी जागीर संकट के परिणामस्वरूप उभरी थी — यह गलत कथन नहीं है, इसलिए यह 'सही नहीं' वाले कथनों में नहीं आता। लेकिन प्रश्न पूछता है कि कौन-से कथन सही नहीं हैं। चूंकि कथन 2 सही है, इसलिए यह 'गलत' श्रेणी में नहीं है।"
+        },
+        {
+          "statement": "The inflation of Zat ranks up to 12,000 under Aurangzeb strengthened the Mansabdari system by creating a larger and more effective military establishment for the empire.",
+          "verdict": "गलत",
+          "reason": "रैंक की वृद्धि ने उच्च मंसबों की विशिष्टता और मूल्य को कम किया और जागीर संकट को बढ़ाया — इसने प्रणाली को मजबूत नहीं किया, बल्कि कमजोर किया।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) जो केवल कथन 3 को गलत बताता है, एक मजबूत भ्रम है क्योंकि कथन 3 स्पष्ट रूप से गलत है, जिससे एक अच्छी तैयारी वाला छात्र बिना कथन 1 का पूरी तरह विश्लेषण किए (b) चुन सकता है।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें: 'अधिशेष जागीर भूमि' वास्तविक जागीर संकट की स्थिति (कमी, अधिशेष नहीं) का उल्टा है — कथन 1 सही नहीं है।",
+        "कथन 2 की जाँच करें: जागीर संकट के परिणामस्वरूप इजारादारी का वर्णन सटीक है — कथन 2 सही है (गलत नहीं)।",
+        "कथन 3 की जाँच करें: औरंगजेब के तहत रैंक वृद्धि ने विशिष्टता को कम कर प्रणाली को कमजोर किया और जागीर की कमी को बढ़ाया — 'मजबूत किया' गलत है। कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं → विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में 'अधिशेष जागीर भूमि' का प्रयोग वास्तविक जागीर संकट का पूर्ण उलट है। जो छात्र याद करते हैं कि 'जागीर समस्या' थी लेकिन यह नहीं जानते कि वह अधिशेष था या कमी, वे इसे सही मान सकते हैं। कथन 3 में अधिक स्पष्ट जाल है (रैंक वृद्धि ने प्रणाली को 'मजबूत' किया), लेकिन छात्र कथन 3 की पहचान के बाद कथन 1 को पुनः नहीं देख सकते, जिससे सही उत्तर (d) छूट जाता है।",
+      "final_explanation": "औरंगजेब के तहत मंसबदारी प्रणाली का पतन परस्पर जुड़े संरचनात्मक विफलताओं का परिणाम था, न कि पृथक घटनाओं का।\n\n• कथन 1 — सही नहीं: जागीर संकट उत्पादक जागीर क्षेत्रों की कमी के कारण हुआ, जो मंसबदारों की संख्या के अनुपात में था — यह अधिशेष का उलटा है। औरंगजेब के दक्कन अभियान महंगे थे लेकिन समान उत्पादक क्षेत्र नहीं जोड़े।\n• कथन 2 — सही (गलत श्रेणी में नहीं): इजारादारी जागीर संकट के प्रति एक हताश प्रतिक्रिया के रूप में उभरी — वे जागीरधारक जो दूरस्थ या विवादित क्षेत्रों का सीधे प्रशासन नहीं कर सके, उन्होंने राजस्व संग्रह स्थानीय ताकतवरों को सौंप दिया।\n• कथन 3 — सही नहीं: 12,000 जात तक रैंक वृद्धि ने उच्च मंसबों के मूल्य और विशिष्टता को कम किया, जागीर की कमी वाले पूल में अधिक दावेदार बनाए, और प्रणाली के टूटने को तेज किया — इसने सैन्य स्थापना को मजबूत नहीं किया।\n\nमूल्यवर्धन:\n• औरंगजेब के दक्कन अभियान ने खजाने को खाली किया लेकिन समान उत्पादक क्षेत्र नहीं जोड़ा — उनके शासन की केंद्रीय आर्थिक विडंबना।\n• इजारादारी ने स्थानीय शक्ति मध्यस्थ बनाए जो अंततः मुगल सत्ता को जमीनी स्तर पर कमजोर कर गए।\n• UPSC के लिए: जागीर संकट = कमी (अधिशेष नहीं); रैंक वृद्धि = कमजोर करना (मजबूत करना नहीं) — दोनों उलटफेर परीक्षा के जाल हैं।"
+    }
+  },
+  {
+    "uuid": "51809e16-0229-4f7e-8d24-09de5be3101d",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Rank Hierarchy and Numerical Gradations",
+        "Recruitment and Composition of Mansabdars"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Ethnic groups and numerical rank thresholds in Mansabdari",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I (Rank / Group)",
+          "List II (Description)"
+        ],
+        "rows": [
+          [
+            "A. 500 Zat threshold",
+            "1. Benchmark for classification as high nobility in the Mughal imperial hierarchy"
+          ],
+          [
+            "B. 1,000 Zat threshold",
+            "2. Nobles of Persian origin who formed a significant rival faction to the Central Asian core of the Mughal nobility"
+          ],
+          [
+            "C. Turanis",
+            "3. Entry-level threshold for inclusion in the Umara (nobility) class in the Mansabdari system"
+          ],
+          [
+            "D. Iranis",
+            "4. Central Asian nobles of Timurid lineage who formed the original core of the Mughal military aristocracy"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because it correctly matches Turanis and Iranis to their general positions but swaps the 500/1,000 Zat thresholds, a distinction that requires precise recall.",
+      "elimination_logic": [
+        "Identify A (500 Zat threshold): This marks the entry point into the Umara (nobility) class — maps to 3.",
+        "Identify B (1,000 Zat threshold): This marks the high nobility tier (Amir-ul-Umara level) — maps to 1.",
+        "Identify C (Turanis): Central Asian (Turan region) nobles who formed the original core of the Mughal nobility — maps to 4.",
+        "Identify D (Iranis): Nobles from Iran/Persia who formed a significant and often rival faction to Turanis — maps to 2.",
+        "Correct matching: A-3, B-1, C-4, D-2 → option (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap operates on the Turanis-Iranis distinction. Both were non-Indian Muslim groups at the Mughal court and are frequently confused. Turanis were Central Asians (from Transoxiana/Turan) who formed the oldest core of Mughal nobility, while Iranis were Persians who entered imperial service later, often as administrators and cultural figures. Options (a) and (d) swap these attributions to catch students who know both existed but not which description fits which group.",
+      "final_explanation": "The Mughal nobility combined numerical rank thresholds with a deliberately managed ethnic diversity.\n\nCorrect pairings:\n• A (500 Zat threshold) — 3: The floor of the Umara (nobility) — mansabdars below 500 Zat were commoners in terms of social status.\n• B (1,000 Zat threshold) — 1: The high nobility benchmark, associated with Amir-ul-Umara level status within the imperial hierarchy.\n• C (Turanis) — 4: Central Asian nobles from Transoxiana (Turan), the original Timurid-descended core of the Mughal nobility who accompanied Babur and Humayun.\n• D (Iranis) — 2: Persian nobles from Iran who formed a distinct and often competing faction within the Mughal court, frequently associated with administrative and cultural roles.\n\nValue Addition:\n• Athar Ali's data shows Turanis declined in relative proportion over successive reigns while Iranis and Indian Muslims grew.\n• The ethnic balancing among Turanis, Iranis, Indian Muslims, Afghans, and Hindus was Akbar's deliberate strategy to prevent any single faction from dominating.\n• For UPSC: Turani = Central Asian origin; Irani = Persian origin — a standard distinction in Mughal nobility questions."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I (रैंक / समूह)",
+          "सूची II (विवरण)"
+        ],
+        "rows": [
+          [
+            "A. 500 ज़ात सीमा",
+            "1. मुगल साम्राज्य की पदानुक्रम में उच्च कुलीनता के रूप में वर्गीकरण का मानक"
+          ],
+          [
+            "B. 1,000 ज़ात सीमा",
+            "2. फारसी मूल के कुलीन जो मुगल कुलीनता के मध्य एशियाई मूल के एक महत्वपूर्ण प्रतिद्वंद्वी गुट बनाते थे"
+          ],
+          [
+            "C. तूरानी",
+            "3. मंसबदारी प्रणाली में उमरा (कुलीन वर्ग) में शामिल होने के लिए प्रवेश स्तर की सीमा"
+          ],
+          [
+            "D. ईरानी",
+            "4. तिमुरिद वंश के मध्य एशियाई कुलीन जो मुगल सैन्य अभिजात वर्ग की मूल संरचना बनाते थे"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह तूरानी और ईरानी को उनके सामान्य स्थानों से सही ढंग से मिलाता है लेकिन 500/1,000 ज़ात सीमा को बदल देता है, जो एक सटीक स्मृति की आवश्यकता वाला अंतर है।",
+      "elimination_logic": [
+        "A की पहचान (500 ज़ात सीमा): यह उमरा (शाही कुलीन वर्ग) में प्रवेश का स्तर है — 3 से मेल खाता है।",
+        "B की पहचान (1,000 ज़ात सीमा): यह उच्च कुलीनता स्तर (अमीर-उल-उमरा स्तर) को दर्शाता है — 1 से मेल खाता है।",
+        "C की पहचान (तूरानी): मध्य एशियाई (तूरान क्षेत्र) कुलीन जो मुगल कुलीनता की मूल संरचना बनाते थे — 4 से मेल खाता है।",
+        "D की पहचान (ईरानी): ईरान/फारस के कुलीन जो तूरानियों के एक महत्वपूर्ण और अक्सर प्रतिद्वंद्वी गुट थे — 2 से मेल खाता है।",
+        "सही मिलान: A-3, B-1, C-4, D-2 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "यह इकाई-स्थानांतरण भ्रम तूरानी-ईरानी भेद पर आधारित है। दोनों मुगल दरबार में गैर-भारतीय मुस्लिम समूह थे और अक्सर भ्रमित किए जाते हैं। तूरानी मध्य एशियाई (ट्रांसऑक्सियाना/तूरान) थे जो मुगल कुलीनता की सबसे पुरानी संरचना बनाते थे, जबकि ईरानी फारसी थे जो बाद में प्रशासनिक और सांस्कृतिक भूमिकाओं में साम्राज्य सेवा में आए। विकल्प (a) और (d) इन विवरणों को बदल देते हैं ताकि उन छात्रों को फंसाया जा सके जो दोनों समूहों को जानते हैं लेकिन यह नहीं जानते कि कौन सा विवरण किस समूह पर लागू होता है।",
+      "final_explanation": "मुगल कुलीनता ने संख्यात्मक रैंक सीमाओं को जानबूझकर प्रबंधित जातीय विविधता के साथ जोड़ा।\n\nसही जोड़े:\n• A (500 ज़ात सीमा) — 3: उमरा (कुलीन वर्ग) की न्यूनतम सीमा — 500 ज़ात से नीचे के मंसबदार सामाजिक स्थिति में आम लोग थे।\n• B (1,000 ज़ात सीमा) — 1: उच्च कुलीनता का मानक, जो अमीर-उल-उमरा स्तर की स्थिति से जुड़ा था।\n• C (तूरानी) — 4: ट्रांसऑक्सियाना (तूरान) के मध्य एशियाई कुलीन, जो बाबर और हुमायूं के साथ मुगल कुलीनता की मूल तिमुरिद वंश की संरचना थे।\n• D (ईरानी) — 2: ईरान के फारसी कुलीन, जो मुगल दरबार में एक अलग और अक्सर प्रतिस्पर्धी गुट बनाते थे, जो प्रशासनिक और सांस्कृतिक भूमिकाओं से जुड़े थे।\n\nमूल्य संवर्धन:\n• अथर अली के आंकड़े दिखाते हैं कि तूरानी का अनुपात लगातार शासनकालों में घटा जबकि ईरानी और भारतीय मुसलमान बढ़े।\n• तूरानी, ईरानी, भारतीय मुसलमान, अफगान और हिंदुओं के बीच जातीय संतुलन अकबर की रणनीति थी ताकि कोई एक गुट प्रभुत्व न स्थापित कर सके।\n• UPSC के लिए: तूरानी = मध्य एशियाई मूल; ईरानी = फारसी मूल — मुगल कुलीनता प्रश्नों में एक मानक भेद।"
+    }
+  },
+  {
+    "uuid": "cbec2fac-a492-4fa6-a1b7-02e95e58cad8",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Conditional and Unconditional Sawar Ranks (Mashrut/Ghair-Mashrut)",
+        "Military Obligations of Mansabdars"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Mashrut sawar ranks — strategic fiscal implications",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about conditional and unconditional sawar ranks in the Mughal Mansabdari system:",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "Mashrut (conditional) sawar ranks did not increase the permanent salary entitlement of the mansabdar but obligated him to field an enlarged cavalry contingent during the specified period."
+          ],
+          [
+            "2",
+            "Ghair-Mashrut (unconditional) sawar ranks represented a permanent entitlement, obligating the mansabdar to maintain the specified cavalry contingent at all times throughout the year."
+          ],
+          [
+            "3",
+            "Akbar used Mashrut ranks exclusively during peacetime to reward loyal mansabdars, as these ranks carried no additional military obligation and thus did not burden the treasury."
+          ],
+          [
+            "4",
+            "The strategic value of Mashrut sawar ranks for the Mughal treasury was that they allowed the mobilization of larger armies during campaigns without permanently expanding the imperial payroll."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Mashrut (conditional) sawar ranks did not increase the permanent salary entitlement of the mansabdar but obligated him to field an enlarged cavalry contingent during the specified period.",
+          "verdict": "Correct",
+          "reason": "This is the defining feature of Mashrut ranks — military obligation was temporarily expanded without a permanent increase in the base salary, which was governed by Zat rank."
+        },
+        {
+          "statement": "Ghair-Mashrut (unconditional) sawar ranks represented a permanent entitlement, obligating the mansabdar to maintain the specified cavalry contingent at all times throughout the year.",
+          "verdict": "Correct",
+          "reason": "Ghair-Mashrut = unconditional and permanent — the cavalry maintenance obligation was year-round and the corresponding compensation was part of the permanent salary structure."
+        },
+        {
+          "statement": "Akbar used Mashrut ranks exclusively during peacetime to reward loyal mansabdars, as these ranks carried no additional military obligation and thus did not burden the treasury.",
+          "verdict": "Incorrect",
+          "reason": "Mashrut ranks were used during wartime campaigns (not peacetime), and they did carry military obligations — the whole point was to increase military output temporarily."
+        },
+        {
+          "statement": "The strategic value of Mashrut sawar ranks for the Mughal treasury was that they allowed the mobilization of larger armies during campaigns without permanently expanding the imperial payroll.",
+          "verdict": "Correct",
+          "reason": "This precisely captures the fiscal logic of Mashrut ranks — temporary military expansion at contained long-term cost."
+        }
+      ],
+      "strong_distractor": "d — Option (d) 'All four' is a strong distractor because three of the four statements are correct, and students who do not carefully examine Statement 3's 'exclusively during peacetime' qualifier may accept all four.",
+      "elimination_logic": [
+        "Statement 1: Mashrut = no permanent salary increase but temporary enlarged contingent obligation — Correct.",
+        "Statement 2: Ghair-Mashrut = permanent year-round cavalry obligation — Correct.",
+        "Statement 3: 'Exclusively during peacetime' and 'no additional military obligation' — both are false. Mashrut ranks were wartime instruments and they did carry military obligations. Incorrect.",
+        "Statement 4: Fiscal logic of Mashrut (larger wartime army without permanent payroll expansion) — Correct.",
+        "Three statements correct (1, 2, 4) → option (c) Only three."
+      ],
+      "upsc_trap_explanation": "Statement 3 stacks two errors: attributing Mashrut ranks to peacetime use (when they were wartime instruments) and claiming they carried no military obligation (when the military obligation was precisely their purpose). A student who has a general sense that conditional ranks were 'less demanding' may miss both inversions.",
+      "final_explanation": "The Mashrut/Ghair-Mashrut distinction reflects sophisticated fiscal engineering in the Mughal military system.\n\n• Statement 1 — Correct: Mashrut ranks increased military obligation temporarily without raising the permanent salary baseline — the Zat rank alone determined base pay.\n• Statement 2 — Correct: Ghair-Mashrut ranks were permanent and year-round — the mansabdar maintained the full contingent continuously and received proportional permanent compensation.\n• Statement 3 — Incorrect: Mashrut ranks were specifically a wartime instrument (not peacetime), and they absolutely carried military obligations — the contingent had to be fielded when the condition (campaign) was activated.\n• Statement 4 — Correct: The strategic fiscal logic was precisely this: the emperor could double the effective army size for a campaign by issuing Mashrut ranks without doubling the permanent salary bill.\n\nValue Addition:\n• Three statements (1, 2, 4) are correct → answer is 'Only three.'\n• The Mashrut/Ghair-Mashrut design is an early example of military surge capacity management.\n• For UPSC: the question 'which type of sawar rank was a wartime instrument?' = Mashrut, not Ghair-Mashrut."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "मुगल मंसबदारी प्रणाली में शर्तीय और अशर्तीय सवार रैंकों के बारे में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "मशरूत (शर्तीय) सवार रैंक ने मंसबदार के स्थायी वेतन अधिकार को नहीं बढ़ाया, लेकिन निर्दिष्ट अवधि के दौरान उसे एक विस्तारित घुड़सवार दस्ते को मैदान में उतारने का दायित्व दिया।"
+          ],
+          [
+            "2",
+            "ग़ैर-मशरूत (अशर्त) सवार रैंक एक स्थायी अधिकार का प्रतिनिधित्व करते थे, जो मंसबदार को पूरे वर्ष निर्दिष्ट घुड़सवार दस्ते को हमेशा बनाए रखने का दायित्व देते थे।"
+          ],
+          [
+            "3",
+            "अकबर ने मशरूत रैंकों का उपयोग केवल शांति काल में वफादार मंसबदारों को पुरस्कृत करने के लिए किया, क्योंकि इन रैंकों के साथ कोई अतिरिक्त सैन्य दायित्व नहीं था और इसलिए वे खजाने पर बोझ नहीं डालते थे।"
+          ],
+          [
+            "4",
+            "मुगल खजाने के लिए मशरूत सवार रैंकों का रणनीतिक मूल्य यह था कि वे अभियानों के दौरान बड़ी सेनाओं को जुटाने की अनुमति देते थे बिना स्थायी रूप से शाही वेतन सूची का विस्तार किए।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "मशरूत (शर्तीय) सवार रैंक ने मंसबदार के स्थायी वेतन अधिकार को नहीं बढ़ाया, लेकिन निर्दिष्ट अवधि के दौरान उसे एक विस्तारित घुड़सवार दस्ते को मैदान में उतारने का दायित्व दिया।",
+          "verdict": "सही",
+          "reason": "यह मशरूत रैंकों की परिभाषित विशेषता है — सैन्य दायित्व अस्थायी रूप से बढ़ाया गया था बिना स्थायी वेतन में वृद्धि के, जो कि ज़ात रैंक द्वारा नियंत्रित था।"
+        },
+        {
+          "statement": "ग़ैर-मशरूत (अशर्त) सवार रैंक एक स्थायी अधिकार का प्रतिनिधित्व करते थे, जो मंसबदार को पूरे वर्ष निर्दिष्ट घुड़सवार दस्ते को हमेशा बनाए रखने का दायित्व देते थे।",
+          "verdict": "सही",
+          "reason": "ग़ैर-मशरूत = अशर्त और स्थायी — घुड़सवार रखरखाव का दायित्व पूरे वर्ष था और संबंधित मुआवजा स्थायी वेतन संरचना का हिस्सा था।"
+        },
+        {
+          "statement": "अकबर ने मशरूत रैंकों का उपयोग केवल शांति काल में वफादार मंसबदारों को पुरस्कृत करने के लिए किया, क्योंकि इन रैंकों के साथ कोई अतिरिक्त सैन्य दायित्व नहीं था और इसलिए वे खजाने पर बोझ नहीं डालते थे।",
+          "verdict": "गलत",
+          "reason": "मशरूत रैंक युद्धकालीन अभियानों के दौरान उपयोग किए जाते थे (शांति काल में नहीं), और इनमें सैन्य दायित्व होते थे — मुख्य उद्देश्य अस्थायी रूप से सैन्य क्षमता बढ़ाना था।"
+        },
+        {
+          "statement": "मुगल खजाने के लिए मशरूत सवार रैंकों का रणनीतिक मूल्य यह था कि वे अभियानों के दौरान बड़ी सेनाओं को जुटाने की अनुमति देते थे बिना स्थायी रूप से शाही वेतन सूची का विस्तार किए।",
+          "verdict": "सही",
+          "reason": "यह मशरूत रैंकों की वित्तीय तर्कशक्ति को ठीक से दर्शाता है — सीमित दीर्घकालिक लागत पर अस्थायी सैन्य विस्तार।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) 'सभी चार' एक मजबूत भ्रम पैदा करने वाला है क्योंकि चार में से तीन कथन सही हैं, और जो छात्र कथन 3 के 'केवल शांति काल में' वाले शर्त को ध्यान से नहीं पढ़ते वे सभी चार स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: मशरूत = स्थायी वेतन वृद्धि नहीं लेकिन अस्थायी विस्तारित दस्ते का दायित्व — सही।",
+        "कथन 2: गैर-मशरूत = स्थायी पूरे वर्ष घुड़सवार दायित्व — सही।",
+        "कथन 3: 'केवल शांति काल में' और 'कोई अतिरिक्त सैन्य दायित्व नहीं' — दोनों गलत हैं। मशरूत रैंक युद्धकालीन उपकरण थे और इनमें सैन्य दायित्व थे। गलत।",
+        "कथन 4: मशरूत की वित्तीय तर्कशक्ति (अस्थायी युद्धकालीन सेना बिना स्थायी वेतन विस्तार के) — सही।",
+        "तीन कथन सही (1, 2, 4) → विकल्प (c) केवल तीन।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में दो त्रुटियाँ हैं: मशरूत रैंकों को शांति काल में उपयोग करने का आरोप (जबकि वे युद्धकालीन उपकरण थे) और यह दावा कि इनमें कोई सैन्य दायित्व नहीं था (जबकि सैन्य दायित्व ही उनका उद्देश्य था)। जो छात्र सामान्य रूप से समझते हैं कि शर्तीय रैंक 'कम मांग वाले' थे, वे दोनों उलटफेर को चूक सकते हैं।",
+      "final_explanation": "मशरूत/ग़ैर-मशरूत का भेद मुगल सैन्य प्रणाली में परिष्कृत वित्तीय अभियांत्रिकी को दर्शाता है।\n\n• कथन 1 — सही: मशरूत रैंक ने स्थायी वेतन आधार को बढ़ाए बिना सैन्य दायित्व अस्थायी रूप से बढ़ाया — आधार वेतन केवल ज़ात रैंक द्वारा निर्धारित होता था।\n• कथन 2 — सही: गैर-मशरूत रैंक स्थायी और पूरे वर्ष के लिए थे — मंसबदार ने पूरा दस्ते लगातार बनाए रखा और स्थायी मुआवजा प्राप्त किया।\n• कथन 3 — गलत: मशरूत रैंक विशेष रूप से युद्धकालीन उपकरण थे (शांति काल में नहीं), और इनमें निश्चित रूप से सैन्य दायित्व थे — जब शर्त (अभियान) सक्रिय होती थी तो दस्ते को मैदान में उतारना पड़ता था।\n• कथन 4 — सही: रणनीतिक वित्तीय तर्क यही था: सम्राट मशरूत रैंक जारी करके अभियान के लिए प्रभावी सेना का आकार दोगुना कर सकता था बिना स्थायी वेतन बिल को दोगुना किए।\n\nमूल्य संवर्धन:\n• तीन कथन (1, 2, 4) सही → उत्तर है 'केवल तीन।'\n• मशरूत/ग़ैर-मशरूत डिज़ाइन सैन्य उछाल क्षमता प्रबंधन का एक प्रारंभिक उदाहरण है।\n• UPSC के लिए: प्रश्न 'कौन सा सवार रैंक युद्धकालीन उपकरण था?' = मशरूत, गैर-मशरूत नहीं।"
+    }
+  },
+  {
+    "uuid": "412a60ee-f7e8-49f3-8f43-a58108ef2bca",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Comparison of Mansabdari with Delhi Sultanate's Iqta System",
+        "Non-Hereditary Nature of Mansabs (Contrast with Feudalism)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Administrative evolution from Iqta to Mansabdari — timeline",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of administrative developments in the evolution from the Delhi Sultanate's revenue system to the mature Mughal Mansabdari?\n\n1. Operation of the Iqta system as the dominant revenue-military mechanism under the Delhi Sultanate\n2. Establishment of the Mughal dynasty by Babur following the First Battle of Panipat\n3. Humayun's interrupted reign and early Mughal administrative arrangements\n4. Akbar's formal codification of the dual Zat-Sawar rank structure in the 1570s\n\n(a) 1 → 2 → 3 → 4\n(b) 3 → 1 → 2 → 4\n(c) 1 → 2 → 4 → 3\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because it places the Iqta system before Babur's invasions (which is correct) but swaps the order of Humayun's interrupted reign and Akbar's 1570s formalization, which students may not precisely sequence.",
+      "elimination_logic": [
+        "Eliminate (b): Placing Akbar's 1570s formalization before the Iqta system of the Delhi Sultanate is chronologically impossible — the Sultanate preceded Akbar by centuries.",
+        "Eliminate (c): This sequence places Humayun's interrupted reign after Akbar's formalization — historically impossible since Humayun preceded Akbar.",
+        "Eliminate (d): Placing Babur's establishment of the Mughal dynasty after the Iqta system has operated for centuries is broadly true but this option places Akbar's reforms before Humayun which is wrong.",
+        "The correct sequence: Iqta under Delhi Sultanate → Babur establishes Mughal dynasty (1526) → Humayun's interrupted reign (1530–1556) → Akbar's 1570s Zat-Sawar formalization → option (a)."
+      ],
+      "upsc_trap_explanation": "The temporal trap targets the Humayun-Akbar sequence within the Mughal dynasty itself. Students who know Humayun 'came before Akbar' may still be tripped by option (c), which correctly places the pre-Mughal Iqta system first but then inverts the Humayun-Akbar order within the Mughal sequence itself.",
+      "final_explanation": "The evolution of revenue-based military administrative systems followed a clear chronological path.\n\nCorrect sequence:\n1. Iqta system under the Delhi Sultanate (13th–16th century) — semi-hereditary revenue assignments with quasi-autonomous local powers.\n2. Babur establishes the Mughal dynasty (1526, First Battle of Panipat) — the Timurid inheritance brings Central Asian administrative traditions.\n3. Humayun's interrupted reign (1530–1540 and 1555–1556) — administrative consolidation disrupted by Sher Shah's interregnum.\n4. Akbar's 1570s Zat-Sawar formalization — the mature dual-rank codification as a deliberate departure from ad hoc arrangements.\n\nWrong options fail by placing Akbar before Humayun, or the Delhi Sultanate Iqta system after Mughal consolidation.\n\nValue Addition:\n• Sher Shah Sur's decade (1540–1555) itself influenced Mughal administration — Todar Mal served under Sher Shah before Akbar.\n• The First Battle of Panipat (1526) ended Lodi (Delhi Sultanate) rule — marking the transition from Iqta to nascent Mughal administration.\n• For UPSC: the Mughal dynasty sequence Babur → Humayun → Akbar is foundational — administrative reform questions require this as background."
+    },
+    "hi": {
+      "display_text": "दिल्ली सल्तनत की राजस्व प्रणाली से विकसित होकर परिपक्व मुग़ल मंसबदारी तक प्रशासनिक विकासों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. दिल्ली सल्तनत के तहत प्रमुख राजस्व-सैन्य तंत्र के रूप में इक़्ता प्रणाली का संचालन\n2. पानीपत की पहली लड़ाई के बाद बाबर द्वारा मुग़ल वंश की स्थापना\n3. हुमायूँ का अवरुद्ध शासन और प्रारंभिक मुग़ल प्रशासनिक व्यवस्थाएँ\n4. 1570 के दशक में अकबर द्वारा द्वि-ज़ात-सवार रैंक संरचना का औपचारिक कोडिफिकेशन\n\n(a) 1 → 2 → 3 → 4\n(b) 3 → 1 → 2 → 4\n(c) 1 → 2 → 4 → 3\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because it places the Iqta system before Babur's invasions (which is correct) but swaps the order of Humayun's interrupted reign and Akbar's 1570s formalization, which students may not precisely sequence.",
+      "elimination_logic": [
+        "(b) को खारिज करें: अकबर के 1570 के दशक में औपचारिकीकरण को दिल्ली सल्तनत की इक़्ता प्रणाली से पहले रखना कालानुक्रमिक रूप से असंभव है — सल्तनत अकबर से सदियों पहले थी।",
+        "(c) को खारिज करें: यह क्रम अकबर के औपचारिकीकरण के बाद हुमायूँ के अवरुद्ध शासन को रखता है — ऐतिहासिक रूप से असंभव क्योंकि हुमायूँ अकबर से पहले था।",
+        "(d) को खारिज करें: बाबर द्वारा मुग़ल वंश की स्थापना को इक़्ता प्रणाली के सदियों तक चलने के बाद रखना सामान्यतः सही है लेकिन यह विकल्प अकबर के सुधारों को हुमायूँ से पहले रखता है जो गलत है।",
+        "सही क्रम: दिल्ली सल्तनत के तहत इक़्ता → बाबर द्वारा मुग़ल वंश की स्थापना (1526) → हुमायूँ का अवरुद्ध शासन (1530–1556) → अकबर का 1570 के दशक में ज़ात-सवार औपचारिकीकरण → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक जाल मुग़ल वंश के भीतर हुमायूँ-अकबर क्रम को लक्षित करता है। जो छात्र जानते हैं कि हुमायूँ 'अकबर से पहले आया', वे फिर भी विकल्प (c) से भ्रमित हो सकते हैं, जो सही रूप से मुग़ल से पहले की इक़्ता प्रणाली को पहले रखता है लेकिन मुग़ल अनुक्रम में हुमायूँ-अकबर क्रम को उलट देता है।",
+      "final_explanation": "राजस्व आधारित सैन्य प्रशासनिक प्रणालियों का विकास स्पष्ट कालानुक्रमिक मार्ग का पालन करता है।\n\nसही क्रम:\n1. दिल्ली सल्तनत के तहत इक़्ता प्रणाली (13वीं–16वीं सदी) — अर्ध-विरासत राजस्व आवंटन के साथ अर्ध-स्वायत्त स्थानीय शक्तियाँ।\n2. बाबर द्वारा मुग़ल वंश की स्थापना (1526, पानीपत की पहली लड़ाई) — तैमूरी विरासत के साथ मध्य एशियाई प्रशासनिक परंपराएँ।\n3. हुमायूँ का अवरुद्ध शासन (1530–1540 और 1555–1556) — शेर शाह के अंतराल से प्रशासनिक समेकन बाधित।\n4. अकबर का 1570 के दशक में ज़ात-सवार औपचारिकीकरण — परिपक्व द्वि-रैंक कोडिफिकेशन, आकस्मिक व्यवस्थाओं से जानबूझकर अलग।\n\nगलत विकल्प अकबर को हुमायूँ से पहले या मुग़ल समेकन के बाद दिल्ली सल्तनत की इक़्ता प्रणाली को रखते हैं।\n\nमूल्य संवर्धन:\n• शेर शाह सूरी का दशक (1540–1555) स्वयं मुग़ल प्रशासन को प्रभावित करता है — टोडरमल शेर शाह के अधीन अकबर से पहले सेवा में थे।\n• पानीपत की पहली लड़ाई (1526) ने लोदी (दिल्ली सल्तनत) शासन को समाप्त किया — इक़्ता से प्रारंभिक मुग़ल प्रशासन में संक्रमण को चिह्नित करता है।\n• UPSC के लिए: मुग़ल वंश का क्रम बाबर → हुमायूँ → अकबर मौलिक है — प्रशासनिक सुधार प्रश्नों के लिए यह पृष्ठभूमि आवश्यक है।"
+    }
+  },
+  {
+    "uuid": "042183e8-af97-4285-bd49-cafcd2ac0818",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Salary Structure and the Cash Payment System",
+        "Jagir Assignment vs. Salary Payment (Jagirdari-Mansabdari Overlap)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Jagir as payment substitute — not land ownership",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A mansabdar holding a Zat rank of 1,000 is informed by the imperial administration that instead of receiving his salary directly from the treasury in cash, he will be assigned a territory in the Doab region whose agricultural revenue yield approximately equals his annual salary entitlement. He is expected to collect this revenue personally and administer no judicial or military functions in that territory independently. Which of the following administrative principles most accurately describes this arrangement?\n\n(a) The mansabdar is being granted heritable territorial rights over the Doab territory as a reward for distinguished service in the previous campaign season\n(b) The mansabdar is receiving a jagir — a revenue assignment serving as a substitute for direct cash salary payment, carrying no land ownership or hereditary right\n(c) The Mir Bakhshi is transferring administrative responsibility for the territory to the mansabdar pending a revenue audit by the Diwan\n(d) The arrangement constitutes a Dagh-Chehra verification exercise to confirm the mansabdar's contingent strength relative to his assigned revenue territory",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who conflate jagir with land ownership may accept that a mansabdar holds 'territorial rights' over his jagir.",
+      "elimination_logic": [
+        "The scenario describes a mansabdar who has been given a territory whose revenue equals his salary — the question asks about the nature of this assignment.",
+        "Eliminate (a): The mansabdar does not acquire territorial sovereignty or ownership — describing the assignment as granting 'heritable territorial rights' is wrong on both counts (not territorial sovereignty, not heritable).",
+        "Evaluate (b): A jagir is a revenue assignment in lieu of cash salary, non-hereditary and transferable — this precisely describes the scenario. Correct.",
+        "Eliminate (c): The Mir Bakhshi handles military records and muster — revenue assignment is a Diwan-level administrative function, not initiated by the Mir Bakhshi.",
+        "Eliminate (d): While Dagh and Chehra are anti-fraud tools, they apply to military contingent verification, not to revenue assignment grants."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the natural but incorrect inference that receiving a territory whose revenue supports you is equivalent to owning or having sovereignty over that territory. Students who have not rigorously absorbed the 'jagir = revenue assignment ≠ land ownership' distinction will select (a), treating the revenue assignment as a territorial grant.",
+      "final_explanation": "This scenario illustrates the foundational jagir mechanism — the most important and most frequently misunderstood feature of Mughal fiscal-military administration.\n\nApplicable principle: A jagir is a revenue assignment, not a territorial grant. The mansabdar collects the revenue of the assigned territory as his salary substitute — he does not own the land, cannot pass it to heirs, and the assignment is revocable and transferable at imperial will.\n\n• Option (a): Incorrect. No territorial rights — heritable or otherwise — were conferred. The Mughal jagir was explicitly non-hereditary and did not transfer ownership.\n• Option (b): Correct. The scenario describes a jagir assignment — a standard Mughal practice of substituting a revenue territory for a cash salary payment. The assignment matched the mansabdar's Zat-rank salary entitlement.\n• Option (c): Incorrect. The Mir Bakhshi dealt with military records and troop verification, not with revenue territory assignments — that was the Diwan's administrative domain.\n• Option (d): Incorrect. Dagh and Chehra are muster verification tools — they are activated when a mansabdar presents his cavalry contingent, not when he receives a revenue assignment.\n\nValue Addition:\n• The emperor could reassign, reduce, or revoke a jagir at will — a tool of political discipline.\n• 'Jagir = salary substitute, not land ownership' is the single most important administrative distinction in Mughal history for UPSC.\n• The Diwan administered jagir assignments and verified their revenue yields — connecting fiscal and administrative functions."
+    },
+    "hi": {
+      "display_text": "एक मंसबदार जिसकी ज़ात रैंक 1,000 है, उसे सम्राट प्रशासन द्वारा सूचित किया जाता है कि उसे नकद वेतन सीधे खजाने से प्राप्त करने के बजाय, दोआब क्षेत्र में एक ऐसा क्षेत्र दिया जाएगा जिसका कृषि राजस्व लगभग उसके वार्षिक वेतन के बराबर होगा। उसे यह राजस्व स्वयं संग्रह करना होगा और उस क्षेत्र में स्वतंत्र रूप से कोई न्यायिक या सैन्य कार्य नहीं करना है। निम्नलिखित में से कौन-सा प्रशासनिक सिद्धांत इस व्यवस्था का सबसे सटीक वर्णन करता है?\n\n(a) मंसबदार को पिछले अभियान सत्र में उत्कृष्ट सेवा के पुरस्कार स्वरूप दोआब क्षेत्र पर वंशानुगत क्षेत्रीय अधिकार दिए जा रहे हैं\n(b) मंसबदार को जागीर मिल रही है — नकद वेतन भुगतान के विकल्प के रूप में राजस्व नियुक्ति, जिसमें भूमि स्वामित्व या वंशानुगत अधिकार नहीं है\n(c) मीर बख्शी दीवान द्वारा राजस्व लेखा परीक्षा तक क्षेत्र की प्रशासनिक जिम्मेदारी मंसबदार को सौंप रहा है\n(d) यह व्यवस्था दाग-चेहरा सत्यापन अभ्यास है ताकि मंसबदार की फौज की ताकत उसके नियुक्त राजस्व क्षेत्र के सापेक्ष पुष्टि की जा सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who conflate jagir with land ownership may accept that a mansabdar holds 'territorial rights' over his jagir.",
+      "elimination_logic": [
+        "यह परिदृश्य एक ऐसे मंसबदार का वर्णन करता है जिसे एक ऐसा क्षेत्र दिया गया है जिसका राजस्व उसकी वेतन के बराबर है — प्रश्न इस नियुक्ति की प्रकृति के बारे में है।",
+        "(a) को खारिज करें: मंसबदार को क्षेत्रीय संप्रभुता या स्वामित्व प्राप्त नहीं होता — 'वंशानुगत क्षेत्रीय अधिकार' देने का वर्णन दोनों ही दृष्टिकोण से गलत है (न तो क्षेत्रीय संप्रभुता, न ही वंशानुगत)।",
+        "(b) का मूल्यांकन करें: जागीर नकद वेतन के स्थान पर राजस्व नियुक्ति है, जो गैर-वंशानुगत और हस्तांतरणीय होती है — यह परिदृश्य ठीक इसी प्रकार वर्णित करता है। सही।",
+        "(c) को खारिज करें: मीर बख्शी सैन्य अभिलेख और फौज की गिनती संभालता है — राजस्व नियुक्ति दीवान स्तर का प्रशासनिक कार्य है, जो मीर बख्शी द्वारा शुरू नहीं किया जाता।",
+        "(d) को खारिज करें: दाग और चेहरा धोखाधड़ी विरोधी उपकरण हैं, जो सैन्य दस्ते की सत्यापन के लिए लागू होते हैं, न कि राजस्व नियुक्ति के लिए।"
+      ],
+      "upsc_trap_explanation": "(a) विकल्प इस स्वाभाविक लेकिन गलत निष्कर्ष का फायदा उठाता है कि जिस क्षेत्र का राजस्व आपको मिलता है, वह क्षेत्र आपके स्वामित्व या संप्रभुता के बराबर है। जो छात्र 'जागीर = राजस्व नियुक्ति ≠ भूमि स्वामित्व' के भेद को ठीक से नहीं समझ पाए हैं, वे (a) चुनेंगे, राजस्व नियुक्ति को क्षेत्रीय अनुदान मानते हुए।",
+      "final_explanation": "यह परिदृश्य जागीर तंत्र की मूलभूत प्रक्रिया को दर्शाता है — मुगल वित्तीय-सैन्य प्रशासन की सबसे महत्वपूर्ण और सबसे अधिक गलत समझी जाने वाली विशेषता।\n\nलागू सिद्धांत: जागीर एक राजस्व नियुक्ति है, क्षेत्रीय अनुदान नहीं। मंसबदार को नियुक्त क्षेत्र का राजस्व वेतन के विकल्प के रूप में मिलता है — वह भूमि का मालिक नहीं होता, इसे उत्तराधिकार में नहीं दे सकता, और यह नियुक्ति सम्राट की इच्छा से रद्द या हस्तांतरित की जा सकती है।\n\n• विकल्प (a): गलत। कोई क्षेत्रीय अधिकार — वंशानुगत या अन्यथा — प्रदान नहीं किए गए। मुगल जागीर स्पष्ट रूप से गैर-वंशानुगत थी और स्वामित्व हस्तांतरण नहीं करती थी।\n• विकल्प (b): सही। परिदृश्य एक जागीर नियुक्ति का वर्णन करता है — नकद वेतन के स्थान पर राजस्व क्षेत्र देने की मुगल प्रथा। नियुक्ति मंसबदार के ज़ात रैंक वेतन के अनुरूप थी।\n• विकल्प (c): गलत। मीर बख्शी सैन्य अभिलेख और फौज की गिनती संभालता था, राजस्व क्षेत्र की नियुक्ति नहीं — वह दीवान का प्रशासनिक क्षेत्र था।\n• विकल्प (d): गलत। दाग और चेहरा फौज की गिनती के सत्यापन के उपकरण हैं — ये तब सक्रिय होते हैं जब मंसबदार अपनी फौज प्रस्तुत करता है, न कि जब उसे राजस्व नियुक्ति मिलती है।\n\nमूल्यवर्धन:\n• सम्राट किसी भी समय जागीर को पुनः नियुक्त, घटा या रद्द कर सकता था — यह राजनीतिक अनुशासन का उपकरण था।\n• 'जागीर = वेतन का विकल्प, भूमि स्वामित्व नहीं' मुगल इतिहास में UPSC के लिए सबसे महत्वपूर्ण प्रशासनिक भेद है।\n• दीवान जागीर नियुक्ति का प्रशासन करता था और उनके राजस्व की पुष्टि करता था — वित्तीय और प्रशासनिक कार्यों को जोड़ता था।"
+    }
+  },
+  {
+    "uuid": "09dd77c7-ff69-43b0-a0f4-0af02df5125a",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "Mansabdari as an Instrument of Political Integration (Rajput Policy)",
+        "Historiographical Debates on the Mansabdari System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Sulh-i-Kul policy — institutional mechanism via Mansabdari",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Mansabdari system as an instrument of political integration:\n\n1. Akbar's policy of Sulh-i-Kul (universal peace) found its institutional expression partly through the Mansabdari system, which incorporated Rajput and other Hindu chiefs into the imperial service structure.\n2. Birbal and Todar Mal were both included in Akbar's Mansabdari as Hindu mansabdars, and both held military commands as their primary imperial function, with no administrative or cultural roles.\n3. The declining representation of Hindu mansabdars at higher ranks under Aurangzeb is considered by historians, including M. Athar Ali, to have contributed to the erosion of the political coalition Akbar had constructed.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Akbar's policy of Sulh-i-Kul (universal peace) found its institutional expression partly through the Mansabdari system, which incorporated Rajput and other Hindu chiefs into the imperial service structure.",
+          "verdict": "Correct",
+          "reason": "The Mansabdari was the administrative mechanism through which Sulh-i-Kul was operationalized — Rajput chiefs were given mansabs that integrated them into the imperial hierarchy while preserving their local authority."
+        },
+        {
+          "statement": "Birbal and Todar Mal were both included in Akbar's Mansabdari as Hindu mansabdars, and both held military commands as their primary imperial function, with no administrative or cultural roles.",
+          "verdict": "Incorrect",
+          "reason": "Todar Mal was primarily a revenue administrator (land reforms) and Birbal was known as a court wit and literary figure — restricting both to 'military commands as primary function' ignores their distinctive non-military roles."
+        },
+        {
+          "statement": "The declining representation of Hindu mansabdars at higher ranks under Aurangzeb is considered by historians, including M. Athar Ali, to have contributed to the erosion of the political coalition Akbar had constructed.",
+          "verdict": "Correct",
+          "reason": "Athar Ali's statistical data supports this observation, and historians broadly link reduced Hindu inclusion in the upper mansabdari under Aurangzeb to the breakdown of the broad-based Mughal political coalition."
+        }
+      ],
+      "strong_distractor": "d — Option (d) selecting all three is a strong distractor because Statement 1 and 3 are solidly correct, and students who know Birbal and Todar Mal were mansabdars may accept Statement 2 without examining whether 'military commands as primary function' is accurate.",
+      "elimination_logic": [
+        "Statement 1: Sulh-i-Kul + Mansabdari as institutional mechanism for Rajput inclusion — standard and correct. Correct.",
+        "Statement 2: 'Military commands as primary function' — Todar Mal's primary function was revenue administration; Birbal's was court/literary/advisory. The restriction to military commands is a partial-truth error. Incorrect.",
+        "Statement 3: Athar Ali + declining Hindu representation under Aurangzeb + erosion of Akbar's coalition — documented historical analysis. Correct.",
+        "Statements 1 and 3 correct → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses a partial-truth trap: Birbal and Todar Mal were genuine Hindu mansabdars (true) but the addition 'military commands as primary function' is false for both. Todar Mal was an administrator of revenue; Birbal was a literary and advisory presence. Students who recall only that both were mansabdars without remembering their specific roles will accept this statement.",
+      "final_explanation": "The Mansabdari was not merely a military administrative system — it was a political instrument of inclusion.\n\n• Statement 1 — Correct: Sulh-i-Kul was Akbar's philosophical commitment to universal harmony; the Mansabdari was its administrative expression. Rajput chiefs received mansabs that integrated them without requiring conversion, creating a politically stable coalition.\n• Statement 2 — Incorrect: Birbal's primary role was as a court wit, poet, and close confidant of Akbar — not a military commander. Todar Mal's primary contribution was revenue reform (Zabti system), not military leadership. Restricting both to 'military commands' ignores their actual functions.\n• Statement 3 — Correct: M. Athar Ali's data shows a measurable decline in Hindu representation at the amir level under Aurangzeb. This statistical shift is correlated with the increasing alienation of Rajput chiefs and the breakdown of Akbar's inclusive political model.\n\nValue Addition:\n• Raja Man Singh, not Birbal, was the prominent Rajput military commander among Akbar's Hindu mansabdars.\n• Akbar's nine gems (Navratnas) included Birbal and Todar Mal — but their roles were cultural/administrative, not primarily military.\n• For UPSC: always verify both the fact (these were mansabdars) AND the attributed function when evaluating statement accuracy."
+    },
+    "hi": {
+      "display_text": "राजनीतिक समाकलन के उपकरण के रूप में मंसबदारी प्रणाली के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. अकबर की सुलह-ए-कुल (सार्वभौमिक शांति) नीति ने आंशिक रूप से मंसबदारी प्रणाली के माध्यम से अपना संस्थागत अभिव्यक्ति पाया, जिसने राजपूत और अन्य हिंदू प्रमुखों को शाही सेवा संरचना में शामिल किया।\n2. बीरबल और टोडर मल दोनों को अकबर की मंसबदारी में हिंदू मंसबदार के रूप में शामिल किया गया था, और दोनों के पास उनकी मुख्य शाही भूमिका के रूप में केवल सैन्य कमानें थीं, कोई प्रशासनिक या सांस्कृतिक भूमिका नहीं थी।\n3. औरंगजेब के शासनकाल में उच्च पदों पर हिंदू मंसबदारों की घटती उपस्थिति को इतिहासकारों, जिनमें एम. अथर अली भी शामिल हैं, अकबर द्वारा निर्मित राजनीतिक गठबंधन के क्षरण में योगदान देने वाला माना जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अकबर की सुलह-ए-कुल (सार्वभौमिक शांति) नीति ने आंशिक रूप से मंसबदारी प्रणाली के माध्यम से अपना संस्थागत अभिव्यक्ति पाया, जिसने राजपूत और अन्य हिंदू प्रमुखों को शाही सेवा संरचना में शामिल किया।",
+          "verdict": "सही",
+          "reason": "मंसबदारी वह प्रशासनिक तंत्र था जिसके माध्यम से सुलह-ए-कुल को लागू किया गया — राजपूत प्रमुखों को मंसब दिए गए जो उन्हें स्थानीय अधिकार बनाए रखते हुए शाही पदानुक्रम में सम्मिलित करते थे।"
+        },
+        {
+          "statement": "बीरबल और टोडर मल दोनों को अकबर की मंसबदारी में हिंदू मंसबदार के रूप में शामिल किया गया था, और दोनों के पास उनकी मुख्य शाही भूमिका के रूप में केवल सैन्य कमानें थीं, कोई प्रशासनिक या सांस्कृतिक भूमिका नहीं थी।",
+          "verdict": "गलत",
+          "reason": "टोडर मल मुख्य रूप से राजस्व प्रशासक (भूमि सुधार) थे और बीरबल एक दरबारी विद्वान और साहित्यिक व्यक्ति के रूप में जाने जाते थे — दोनों को केवल 'मुख्य रूप से सैन्य कमानें' तक सीमित करना उनकी विशिष्ट गैर-सैन्य भूमिकाओं की अनदेखी है।"
+        },
+        {
+          "statement": "औरंगजेब के शासनकाल में उच्च पदों पर हिंदू मंसबदारों की घटती उपस्थिति को इतिहासकारों, जिनमें एम. अथर अली भी शामिल हैं, अकबर द्वारा निर्मित राजनीतिक गठबंधन के क्षरण में योगदान देने वाला माना जाता है।",
+          "verdict": "सही",
+          "reason": "अथर अली के सांख्यिकीय आंकड़े इस अवलोकन का समर्थन करते हैं, और इतिहासकार व्यापक रूप से औरंगजेब के शासनकाल में उच्च मंसबदारी में हिंदू समावेशन में कमी को मुगल राजनीतिक गठबंधन के टूटने से जोड़ते हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें तीनों को चुनना एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 1 और 3 ठोस रूप से सही हैं, और जो छात्र जानते हैं कि बीरबल और टोडर मल मंसबदार थे, वे बिना यह जांचे कि 'मुख्य रूप से सैन्य कमानें' सही है या नहीं, कथन 2 को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: सुलह-ए-कुल + मंसबदारी राजपूत समावेशन के लिए संस्थागत तंत्र — मानक और सही। सही।",
+        "कथन 2: 'मुख्य रूप से सैन्य कमानें' — टोडर मल का मुख्य कार्य राजस्व प्रशासन था; बीरबल का दरबार/साहित्य/सलाहकार था। सैन्य कमानें तक सीमित करना आंशिक-सत्य त्रुटि है। गलत।",
+        "कथन 3: अथर अली + औरंगजेब के शासनकाल में हिंदू प्रतिनिधित्व में गिरावट + अकबर के गठबंधन का क्षरण — प्रलेखित ऐतिहासिक विश्लेषण। सही।",
+        "कथन 1 और 3 सही → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में आंशिक-सत्य का जाल है: बीरबल और टोडर मल वास्तव में हिंदू मंसबदार थे (सत्य) लेकिन 'मुख्य रूप से सैन्य कमानें' जोड़ना दोनों के लिए गलत है। टोडर मल राजस्व प्रशासक थे; बीरबल साहित्यिक और सलाहकार थे। जो छात्र केवल यह याद रखते हैं कि दोनों मंसबदार थे, लेकिन उनकी विशिष्ट भूमिकाएं नहीं, वे इस कथन को स्वीकार कर लेंगे।",
+      "final_explanation": "मंसबदारी केवल एक सैन्य प्रशासनिक प्रणाली नहीं थी — यह समावेशन का एक राजनीतिक उपकरण था।\n\n• कथन 1 — सही: सुलह-ए-कुल अकबर की सार्वभौमिक सद्भावना की दार्शनिक प्रतिबद्धता थी; मंसबदारी इसका प्रशासनिक अभिव्यक्ति थी। राजपूत प्रमुखों को मंसब दिए गए जो उन्हें बिना धर्मांतरण के शाही पदानुक्रम में सम्मिलित करते थे, जिससे एक राजनीतिक रूप से स्थिर गठबंधन बना।\n• कथन 2 — गलत: बीरबल की मुख्य भूमिका दरबारी विद्वान, कवि और अकबर के निकट सहयोगी के रूप में थी — सैन्य कमांडर के रूप में नहीं। टोडर मल का मुख्य योगदान राजस्व सुधार (ज़ब्ती प्रणाली) था, सैन्य नेतृत्व नहीं। दोनों को केवल 'सैन्य कमानें' तक सीमित करना उनकी वास्तविक भूमिकाओं की अनदेखी है।\n• कथन 3 — सही: एम. अथर अली के आंकड़े दिखाते हैं कि औरंगजेब के शासनकाल में अमीर स्तर पर हिंदू प्रतिनिधित्व में मापन योग्य गिरावट आई। यह सांख्यिकीय बदलाव राजपूत प्रमुखों के बढ़ते अलगाव और अकबर के समावेशी राजनीतिक मॉडल के टूटने से जुड़ा है।\n\nमूल्यवर्धन:\n• राजा मान सिंह, बीरबल नहीं, अकबर के हिंदू मंसबदारों में प्रमुख राजपूत सैन्य कमांडर थे।\n• अकबर के नौ रत्नों (नवरत्न) में बीरबल और टोडर मल शामिल थे — लेकिन उनकी भूमिकाएं सांस्कृतिक/प्रशासनिक थीं, मुख्य रूप से सैन्य नहीं।\n• UPSC के लिए: कथन की सटीकता का मूल्यांकन करते समय दोनों तथ्य (वे मंसबदार थे) और उनके सौंपे गए कार्य की जांच अवश्य करें।"
+    }
+  },
+  {
+    "uuid": "485bbe28-bd6d-471b-a70a-c5e4c0da936a",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's Mansabdari system — structure and ranks",
+      "concepts_used": [
+        "The Dagh (Branding) and Chehra (Descriptive Roll) System",
+        "Role of the Mir Bakhshi in the Mansabdari System",
+        "Military Obligations of Mansabdars"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Muster verification system — limitations and bribery",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the muster verification mechanisms in the Mughal Mansabdari system:\n\n1. The Dagh and Chehra systems were fully effective in eliminating fraudulent practices in the Mansabdari system because the Mir Bakhshi conducted personal inspections at every muster without delegating to subordinate officers.\n2. The Mir Bakhshi conducted musters to verify the quality and number of troops maintained by mansabdars, and reported findings directly to the emperor — a function that was separate from salary disbursement, which fell under the Diwan.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Dagh and Chehra systems were fully effective in eliminating fraudulent practices in the Mansabdari system because the Mir Bakhshi conducted personal inspections at every muster without delegating to subordinate officers.",
+          "verdict": "Incorrect",
+          "reason": "Contemporary sources document that the systems were not fully effective — fraud persisted through bribery of inspectors. The claim of 'fully effective' and 'personal inspections without delegation' are both false absolutes."
+        },
+        {
+          "statement": "The Mir Bakhshi conducted musters to verify the quality and number of troops maintained by mansabdars, and reported findings directly to the emperor — a function that was separate from salary disbursement, which fell under the Diwan.",
+          "verdict": "Correct",
+          "reason": "This accurately describes the Mir Bakhshi's verification role (muster and reporting) and its separation from the Diwan's salary disbursement function — a key administrative distinction."
+        }
+      ],
+      "strong_distractor": "c — Option (c) 'Both 1 and 2' is a strong distractor because students who are uncertain about the effectiveness claim in Statement 1 may hedge and select both as incorrect rather than recognising that Statement 2 is precisely correct.",
+      "elimination_logic": [
+        "Examine Statement 1: 'Fully effective' and 'without delegating' are both scope-extension errors. Sources confirm fraud persisted through bribery of inspectors. Statement 1 is NOT correct.",
+        "Examine Statement 2: Mir Bakhshi's muster role separated from Diwan's salary function is accurately stated — this is correct (i.e., not 'not correct').",
+        "Only Statement 1 is NOT correct → option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 1 converts the partially effective Dagh-Chehra system into a perfectly effective one using 'fully effective' — a scope-extension. Contemporary Mughal chronicles and administrative records document persistent fraud through inspector bribery. The additional claim of 'personal inspections without delegation' further compounds the error. Students who know the Dagh and Chehra systems existed but haven't studied their documented limitations will accept Statement 1.",
+      "final_explanation": "The muster verification systems were well-designed but imperfectly implemented — a distinction that carries exam relevance.\n\n• Statement 1 — NOT Correct: 'Fully effective' ignores documented evidence of persistent fraud. Bribery of imperial inspectors was a recognised limitation of the Dagh and Chehra systems. The Mir Bakhshi also worked through subordinate Bakhshis for divisional inspections — the claim of exclusive personal inspection is another false absolute.\n• Statement 2 — Correct: The Mir Bakhshi's verification role (presenting candidates, conducting musters, maintaining military records) was administratively separated from salary disbursement, which was the Diwan's domain. This separation was a deliberate checks-and-balances design.\n\nValue Addition:\n• Three Bakhshis below the Mir Bakhshi handled divisional military administration — delegation was built into the system's structure.\n• The gap between the Mansabdari system's design and its actual implementation is a favourite UPSC essay theme.\n• For UPSC: 'effectiveness of Dagh-Chehra' = partial, not complete — bribery of inspectors is the documented limitation."
+    },
+    "hi": {
+      "display_text": "मुगल मनसबदारी प्रणाली में मुस्तर सत्यापन तंत्र के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. दाग़ और चेहरा प्रणालियाँ मनसबदारी प्रणाली में धोखाधड़ी प्रथाओं को समाप्त करने में पूरी तरह प्रभावी थीं क्योंकि मीर बख़्शी हर मुस्तर पर व्यक्तिगत निरीक्षण करते थे और अधीनस्थ अधिकारियों को प्रतिनिधि नहीं बनाते थे।\n2. मीर बख़्शी मनसबदारों द्वारा रखे गए सैनिकों की गुणवत्ता और संख्या की पुष्टि के लिए मुस्तर करते थे, और अपनी रिपोर्ट सीधे सम्राट को देते थे — यह वेतन वितरण से अलग कार्य था, जो दीवान के अधीन था।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1, न ही 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "दाग़ और चेहरा प्रणालियाँ मनसबदारी प्रणाली में धोखाधड़ी प्रथाओं को समाप्त करने में पूरी तरह प्रभावी थीं क्योंकि मीर बख़्शी हर मुस्तर पर व्यक्तिगत निरीक्षण करते थे और अधीनस्थ अधिकारियों को प्रतिनिधि नहीं बनाते थे।",
+          "verdict": "गलत",
+          "reason": "समकालीन स्रोत दस्तावेज़ करते हैं कि ये प्रणालियाँ पूरी तरह प्रभावी नहीं थीं — निरीक्षकों की रिश्वतखोरी के माध्यम से धोखाधड़ी जारी रही। 'पूरी तरह प्रभावी' और 'प्रतिनिधि न बनाना' दोनों ही पूर्णतया गलत दावे हैं।"
+        },
+        {
+          "statement": "मीर बख़्शी मनसबदारों द्वारा रखे गए सैनिकों की गुणवत्ता और संख्या की पुष्टि के लिए मुस्तर करते थे, और अपनी रिपोर्ट सीधे सम्राट को देते थे — यह वेतन वितरण से अलग कार्य था, जो दीवान के अधीन था।",
+          "verdict": "सही",
+          "reason": "यह मीर बख़्शी की सत्यापन भूमिका (मुस्तर और रिपोर्टिंग) और दीवान के वेतन वितरण कार्य से इसके पृथक्करण का सही वर्णन करता है — एक महत्वपूर्ण प्रशासनिक भेद।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) '1 और 2 दोनों' एक मजबूत भ्रम है क्योंकि जो छात्र कथन 1 की प्रभावशीलता के दावे को लेकर अनिश्चित हैं, वे दोनों को गलत मानकर चुन सकते हैं जबकि कथन 2 बिल्कुल सही है।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें: 'पूरी तरह प्रभावी' और 'प्रतिनिधि न बनाना' दोनों दायरा-विस्तार की त्रुटियाँ हैं। स्रोत पुष्टि करते हैं कि निरीक्षकों की रिश्वतखोरी के कारण धोखाधड़ी जारी रही। कथन 1 सही नहीं है।",
+        "कथन 2 की जाँच करें: मीर बख़्शी की मुस्तर भूमिका का दीवान के वेतन कार्य से पृथक्करण सही बताया गया है — यह सही है (अर्थात् 'सही नहीं' नहीं)।",
+        "केवल कथन 1 सही नहीं है → विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 आंशिक रूप से प्रभावी दाग़-चेहरा प्रणाली को 'पूरी तरह प्रभावी' में बदल देता है — यह दायरा-विस्तार है। समकालीन मुगल इतिहास और प्रशासनिक अभिलेख निरीक्षक रिश्वतखोरी के माध्यम से धोखाधड़ी की निरंतरता को दर्शाते हैं। 'प्रतिनिधि न बनाना' का अतिरिक्त दावा त्रुटि को और बढ़ाता है। जो छात्र दाग़ और चेहरा प्रणालियों के अस्तित्व को जानते हैं लेकिन उनकी सीमाओं का अध्ययन नहीं किया है, वे कथन 1 को स्वीकार कर लेंगे।",
+      "final_explanation": "मुस्तर सत्यापन प्रणालियाँ अच्छी डिज़ाइन की गई थीं लेकिन अपूर्ण रूप से लागू हुईं — यह परीक्षा के लिए महत्वपूर्ण भेद है।\n\n• कथन 1 — सही नहीं: 'पूरी तरह प्रभावी' निरंतर धोखाधड़ी के दस्तावेजी साक्ष्यों को नजरअंदाज करता है। निरीक्षकों की रिश्वतखोरी दाग़-चेहरा प्रणालियों की मान्यता प्राप्त सीमा थी। मीर बख़्शी भी क्षेत्रीय निरीक्षणों के लिए अधीनस्थ बख्शियों के माध्यम से कार्य करते थे — व्यक्तिगत निरीक्षण का दावा एक और पूर्णतया गलत दाव है।\n• कथन 2 — सही: मीर बख़्शी की सत्यापन भूमिका (उम्मीदवार प्रस्तुत करना, मुस्तर करना, सैन्य अभिलेख रखना) वेतन वितरण से प्रशासनिक रूप से अलग थी, जो दीवान का क्षेत्र था। यह पृथक्करण जानबूझकर संतुलन और नियंत्रण के लिए बनाया गया था।\n\nमूल्यवर्धन:\n• मीर बख़्शी के नीचे तीन बख्शी क्षेत्रीय सैन्य प्रशासन संभालते थे — प्रतिनिधि प्रणाली संरचना में अंतर्निहित थी।\n• मनसबदारी प्रणाली के डिज़ाइन और वास्तविक कार्यान्वयन के बीच अंतर UPSC निबंध विषयों में लोकप्रिय है।\n• UPSC के लिए: 'दाग़-चेहरा की प्रभावशीलता' आंशिक है, पूर्ण नहीं — निरीक्षक रिश्वतखोरी इसकी मान्यता प्राप्त सीमा है।"
+    }
+  }
+]

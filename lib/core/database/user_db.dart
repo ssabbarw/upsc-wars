@@ -21,6 +21,8 @@ class Questions extends Table {
   TextColumn get hiDisplayText => text().named('hi_display_text').nullable()();
   BoolColumn get hasTable =>
       boolean().named('has_table').withDefault(const Constant(false))();
+  BoolColumn get negativeFraming =>
+      boolean().named('negative_framing').withDefault(const Constant(false))();
 
   @override
   Set<Column> get primaryKey => {uuid};
@@ -656,6 +658,38 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
             ..where((t) => t.hasGraduatedFromQueue.equals(false))
             ..orderBy([(t) => OrderingTerm.asc(t.dateAddedToQueue)]))
           .get();
+
+  Future<Map<String, int>> getActiveQueueCountByTopic(String subject) async {
+    final rows = await customSelect(
+      '''
+      SELECT q.topic AS topic, COUNT(*) AS queue_count
+      FROM revision_queue rq
+      INNER JOIN questions q ON q.uuid = rq.question_uuid
+      WHERE rq.has_graduated_from_queue = 0 AND q.subject = ?
+      GROUP BY q.topic
+      ''',
+      variables: [Variable.withString(subject)],
+      readsFrom: {revisionQueue, questions},
+    ).get();
+
+    return {
+      for (final row in rows) row.read<String>('topic'): row.read<int>('queue_count'),
+    };
+  }
+
+  Future<int> getActiveDistinctTrapTypeCount() async {
+    final row = await customSelect(
+      '''
+      SELECT COUNT(DISTINCT q.trap_type) AS trap_count
+      FROM revision_queue rq
+      INNER JOIN questions q ON q.uuid = rq.question_uuid
+      WHERE rq.has_graduated_from_queue = 0 AND q.trap_type IS NOT NULL
+      ''',
+      readsFrom: {revisionQueue, questions},
+    ).getSingle();
+
+    return row.read<int>('trap_count');
+  }
 }
 
 @DriftAccessor(tables: [UserTopicStats])

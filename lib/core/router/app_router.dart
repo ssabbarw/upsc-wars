@@ -15,6 +15,10 @@ import '../../features/revision_queue/screens/revision_mode_screen.dart';
 import '../../features/subject_test/screens/subject_test_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
 import '../../features/topic_test/screens/topic_test_screen.dart';
+import '../../features/weak_areas/screens/weak_areas_hub_screen.dart';
+import '../../features/weak_areas/screens/concept_detail_screen.dart' show SubTopicDetailScreen;
+import '../../features/weak_areas/screens/trap_patterns_screen.dart';
+import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
 import '../providers/app_bootstrap.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -120,6 +124,30 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/bookmarks',
         builder: (context, state) => const BookmarksScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/weak-areas',
+        builder: (context, state) => const WeakAreasHubScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/weak-areas/subtopic/:subTopic',
+        builder: (context, state) => SubTopicDetailScreen(
+          subTopic: state.pathParameters['subTopic']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/weak-areas/traps',
+        builder: (context, state) => const TrapPatternsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/weak-areas/trap/:trapType',
+        builder: (context, state) => TrapPatternDetailScreen(
+          trapType: state.pathParameters['trapType']!,
+        ),
       ),
     ],
   );

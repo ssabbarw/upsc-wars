@@ -1,0 +1,1287 @@
+[
+  {
+    "uuid": "36dacede-ce5f-4bcb-a711-a006a3de7575",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Constitutional Basis and Legislative Competence of EPA 1986"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "EPA 1986 constitutional basis Article 253",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Environment Protection Act 1986 was enacted by Parliament primarily invoking which constitutional provision as its legislative competence?\n\n(a) Article 252 — Legislation with consent of two or more state legislatures\n(b) Article 253 — Legislation to give effect to international agreements and conference decisions\n(c) Article 249 — Legislation by Parliament on State List in national interest\n(d) Article 246 — Subject-matter of laws made by Parliament and by legislatures of states",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Article 252 is the constitutional vehicle for both the Water Act 1974 and Air Act 1981, making it a plausible but incorrect choice for EPA 1986.",
+      "elimination_logic": [
+        "Eliminate (a): Article 252 requires prior state consent and was used for Water Act 1974 and Air Act 1981 — EPA 1986 did not follow this route.",
+        "Eliminate (c): Article 249 empowers Parliament to legislate on State List subjects in national interest — not the basis for implementing international treaty obligations.",
+        "Eliminate (d): Article 246 distributes legislative subjects but does not itself provide the power to implement international conference decisions.",
+        "Confirm (b): EPA 1986 was enacted to give effect to decisions of the Stockholm Conference on Human Environment 1972 — this squarely invokes Article 253, which empowers Parliament to make laws implementing international agreements and conference decisions."
+      ],
+      "upsc_trap_explanation": "Students familiar with India's environmental law framework know that the Water Act 1974 and Air Act 1981 were enacted under Article 252 — with state legislatures passing resolutions authorising Parliament to legislate. This makes Article 252 feel like the natural constitutional anchor for EPA 1986 as well. The critical distinction is that EPA 1986 was enacted to fulfil India's commitments arising from the 1972 Stockholm Conference on the Human Environment, which is precisely the domain of Article 253 (treaties and international conference decisions). EPA thus derives its constitutional legitimacy from Parliament's treaty-implementing power, not from state consent.",
+      "final_explanation": "The Environment Protection Act 1986 occupies a distinctive constitutional position. While the Water Act 1974 and the Air Act 1981 were enacted under Article 252 — which requires state legislatures to pass resolutions consenting to central legislation on subjects in the State or Concurrent List — EPA 1986 was enacted under Article 253, which empowers Parliament to make any law to implement India's obligations arising from international agreements, treaties, or decisions of international conferences.\n\n• Option (a) — Article 252: Incorrect. This is the constitutional basis for the Water Act 1974 and Air Act 1981, not EPA 1986.\n• Option (b) — Article 253: Correct. EPA 1986 gives legislative effect to the decisions of the United Nations Conference on the Human Environment held in Stockholm in 1972.\n• Option (c) — Article 249: Incorrect. This empowers Parliament to legislate on State List subjects in the national interest by a Rajya Sabha resolution — unrelated to international treaty obligations.\n• Option (d) — Article 246: Incorrect. This distributes legislative competence across Union, State, and Concurrent Lists but is not itself a source of power for treaty implementation.\n\nValue Addition:\n• Articles 48A (DPSP — state to protect environment) and 51A(g) (fundamental duty to protect environment) provide supplementary justification for EPA 1986.\n• Because EPA derives from Article 253, it overrides state laws without requiring state consent — unlike the Water/Air Acts.\n• Entry 13 of the Union List (participation in international conferences) read with Article 253 forms the complete constitutional basis."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 को संसद द्वारा मुख्य रूप से किस संवैधानिक प्रावधान को अपनी विधायी क्षमता के रूप में लागू करते हुए बनाया गया था?\n\n(a) अनुच्छेद 252 — दो या अधिक राज्य विधानसभाओं की सहमति से विधायिका\n(b) अनुच्छेद 253 — अंतरराष्ट्रीय समझौतों और सम्मेलन निर्णयों को लागू करने के लिए विधायिका\n(c) अनुच्छेद 249 — राष्ट्रीय हित में राज्य सूची पर संसद द्वारा विधायिका\n(d) अनुच्छेद 246 — संसद और राज्य विधानसभाओं द्वारा बनाए गए कानूनों के विषय",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि अनुच्छेद 252 जल अधिनियम 1974 और वायु अधिनियम 1981 दोनों के लिए संवैधानिक आधार है, जो EPA 1986 के लिए एक संभावित लेकिन गलत विकल्प बनाता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: अनुच्छेद 252 पूर्व राज्य की सहमति की आवश्यकता रखता है और जल अधिनियम 1974 तथा वायु अधिनियम 1981 के लिए उपयोग किया गया था — EPA 1986 ने इस मार्ग का पालन नहीं किया।",
+        "(c) को हटाएं: अनुच्छेद 249 संसद को राष्ट्रीय हित में राज्य सूची के विषयों पर विधायिका करने का अधिकार देता है — यह अंतरराष्ट्रीय संधि दायित्वों को लागू करने का आधार नहीं है।",
+        "(d) को हटाएं: अनुच्छेद 246 विधायी विषयों का वितरण करता है लेकिन स्वयं अंतरराष्ट्रीय सम्मेलन के निर्णयों को लागू करने का अधिकार प्रदान नहीं करता।",
+        "(b) की पुष्टि करें: EPA 1986 को 1972 के स्टॉकहोम सम्मेलन के मानव पर्यावरण संबंधी निर्णयों को लागू करने के लिए बनाया गया था — यह स्पष्ट रूप से अनुच्छेद 253 को लागू करता है, जो संसद को अंतरराष्ट्रीय समझौतों और सम्मेलन निर्णयों को लागू करने के लिए कानून बनाने का अधिकार देता है।"
+      ],
+      "upsc_trap_explanation": "भारत के पर्यावरण कानून ढांचे से परिचित छात्र जानते हैं कि जल अधिनियम 1974 और वायु अधिनियम 1981 अनुच्छेद 252 के तहत बनाए गए थे — जिसमें राज्य विधानसभाओं ने संसद को विधायिका करने के लिए प्रस्ताव पारित किए। इससे अनुच्छेद 252 EPA 1986 के लिए भी स्वाभाविक संवैधानिक आधार प्रतीत होता है। महत्वपूर्ण अंतर यह है कि EPA 1986 भारत की 1972 के स्टॉकहोम मानव पर्यावरण सम्मेलन से उत्पन्न प्रतिबद्धताओं को पूरा करने के लिए बनाया गया था, जो कि अनुच्छेद 253 (संधि और अंतरराष्ट्रीय सम्मेलन निर्णय) का क्षेत्र है। अतः EPA अपनी संवैधानिक वैधता संसद की संधि-कार्यान्वयन शक्ति से प्राप्त करता है, न कि राज्य की सहमति से।",
+      "final_explanation": "पर्यावरण संरक्षण अधिनियम 1986 की संवैधानिक स्थिति विशिष्ट है। जबकि जल अधिनियम 1974 और वायु अधिनियम 1981 अनुच्छेद 252 के तहत बनाए गए थे — जिसमें राज्य विधानसभाओं को केंद्र सरकार के लिए सहमति प्रस्ताव पारित करना आवश्यक था — EPA 1986 अनुच्छेद 253 के तहत बनाया गया, जो संसद को अंतरराष्ट्रीय समझौतों, संधियों या अंतरराष्ट्रीय सम्मेलनों के निर्णयों को लागू करने के लिए कोई भी कानून बनाने का अधिकार देता है।\n\n• विकल्प (a) — अनुच्छेद 252: गलत। यह जल अधिनियम 1974 और वायु अधिनियम 1981 का संवैधानिक आधार है, EPA 1986 का नहीं।\n• विकल्प (b) — अनुच्छेद 253: सही। EPA 1986 1972 में स्टॉकहोम में आयोजित संयुक्त राष्ट्र मानव पर्यावरण सम्मेलन के निर्णयों को विधायी प्रभाव देता है।\n• विकल्प (c) — अनुच्छेद 249: गलत। यह संसद को राज्य सूची के विषयों पर राष्ट्रीय हित में राजसभा के प्रस्ताव द्वारा विधायिका करने का अधिकार देता है — अंतरराष्ट्रीय संधि दायित्वों से असंबंधित।\n• विकल्प (d) — अनुच्छेद 246: गलत। यह संघ, राज्य और समवर्ती सूचियों में विधायी विषयों का वितरण करता है लेकिन संधि कार्यान्वयन के लिए स्वयं अधिकार स्रोत नहीं है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 48A (DPSP — राज्य को पर्यावरण की रक्षा करनी है) और 51A(g) (पर्यावरण की रक्षा का मौलिक कर्तव्य) EPA 1986 के लिए पूरक औचित्य प्रदान करते हैं।\n• चूंकि EPA अनुच्छेद 253 से उत्पन्न होता है, यह राज्य की सहमति के बिना राज्य कानूनों को अधिलेखित करता है — जल/वायु अधिनियमों के विपरीत।\n• संघ सूची की प्रविष्टि 13 (अंतरराष्ट्रीय सम्मेलनों में भागीदारी) को अनुच्छेद 253 के साथ पढ़ना पूर्ण संवैधानिक आधार बनाता है।"
+    }
+  },
+  {
+    "uuid": "20c7a5c2-a70d-4b73-a79e-1f01893ec319",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Definition of 'Environment' and 'Environmental Pollutant' under EPA 1986"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Noise as environmental pollutant under EPA 1986",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the definitional framework of the Environment Protection Act 1986:\n\n1. Under the Environment Protection Act 1986, 'environment' is defined to include only water, air, and land.\n2. Noise is recognised as an 'environmental pollutant' under the Environment Protection Act 1986.\n3. The term 'environmental pollution' under EPA 1986 refers to the presence of any environmental pollutant in the environment.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Environment Protection Act 1986, 'environment' is defined to include only water, air, and land.",
+          "verdict": "Incorrect",
+          "reason": "Section 2(a) defines 'environment' to include water, air, land AND the interrelationship between and among these and human beings, other living creatures, plants, micro-organisms, and property — it is an expansive relational definition, not a narrow physical one."
+        },
+        {
+          "statement": "Noise is recognised as an 'environmental pollutant' under the Environment Protection Act 1986.",
+          "verdict": "Correct",
+          "reason": "The definition of 'environmental pollutant' under Section 2(b) covers any solid, liquid, or gaseous substance present in the environment in concentrations that may be injurious — judicially and regulatorily interpreted to include noise, as reflected in the Noise Pollution (Regulation and Control) Rules 2000 framed under EPA 1986."
+        },
+        {
+          "statement": "The term 'environmental pollution' under EPA 1986 refers to the presence of any environmental pollutant in the environment.",
+          "verdict": "Correct",
+          "reason": "Section 2(c) defines 'environmental pollution' as the presence in the environment of any environmental pollutant — it is derived from Section 2(b) and is broader than the narrower sector-specific definitions in the Water Act 1974 and Air Act 1981."
+        }
+      ],
+      "strong_distractor": "a — A student who knows the Water Act 1974's narrower definition of 'environment' may incorrectly think EPA's definition is similarly limited to physical media, making the 'only water, air, and land' restriction in Statement 1 feel accurate.",
+      "elimination_logic": [
+        "Examine Statement 1: EPA Section 2(a) includes the interrelationship with living organisms — the word 'only' makes this statement incorrect by omitting this relational dimension.",
+        "Examine Statement 2: Noise Pollution Rules 2000 were framed under EPA 1986, confirming noise is an environmental pollutant — Statement 2 is correct.",
+        "Examine Statement 3: Section 2(c) defines environmental pollution as the presence of any environmental pollutant — Statement 3 accurately restates this and is correct.",
+        "Since Statements 2 and 3 are correct and Statement 1 is incorrect, the answer is (b) — 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 1 is the word 'only' — a classic scope-extension technique. Students who recall that EPA's definition covers water, air, and land may not register that the Act crucially extends to the interrelationships among these media and with living organisms. Similarly, noise as an environmental pollutant surprises many students who associate the term 'pollutant' only with chemical discharges. The Noise Pollution (Regulation and Control) Rules 2000 being framed under EPA 1986 confirms noise is within the Act's scope.",
+      "final_explanation": "The definitional provisions of EPA 1986 are deliberately expansive, designed to give the Act an umbrella character over the entire environment.\n\n• Statement 1 — Incorrect: Section 2(a) does not confine 'environment' to physical media alone. It includes water, air, land, and their interrelationships with living creatures, micro-organisms, and property. The word 'only' in the statement renders it false.\n• Statement 2 — Correct: Noise is included within the ambit of 'environmental pollutant' under Section 2(b). The Noise Pollution (Regulation and Control) Rules 2000, framed under EPA 1986, operationalise this inclusion.\n• Statement 3 — Correct: Section 2(c) defines 'environmental pollution' as the presence in the environment of any environmental pollutant — a derivative and circular but legally precise definition.\n\nValue Addition:\n• The Water Act 1974 and Air Act 1981 use sector-specific definitions; EPA's definitions intentionally cut across sectors.\n• The distinction between 'environmental pollutant' (substance) and 'environmental pollution' (condition/state) is a recurring UPSC theme.\n• E-waste and plastic waste rules are also framed under EPA 1986, further demonstrating the Act's broad definitional scope."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 की परिभाषात्मक रूपरेखा के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पर्यावरण संरक्षण अधिनियम 1986 के तहत, 'पर्यावरण' को केवल जल, वायु और भूमि तक सीमित परिभाषित किया गया है।\n2. पर्यावरण संरक्षण अधिनियम 1986 के तहत शोर को 'पर्यावरण प्रदूषक' के रूप में मान्यता प्राप्त है।\n3. EPA 1986 के तहत 'पर्यावरण प्रदूषण' शब्द का अर्थ पर्यावरण में किसी भी पर्यावरण प्रदूषक की उपस्थिति से है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Environment Protection Act 1986, 'environment' is defined to include only water, air, and land.",
+          "verdict": "गलत",
+          "reason": "धारा 2(क) में 'पर्यावरण' को जल, वायु, भूमि और इनके बीच तथा मानव, अन्य जीवित प्राणियों, पौधों, सूक्ष्मजीवों और संपत्ति के बीच अंतर्संबंध सहित परिभाषित किया गया है — यह एक व्यापक संबंधपरक परिभाषा है, संकीर्ण भौतिक नहीं।"
+        },
+        {
+          "statement": "Noise is recognised as an 'environmental pollutant' under the Environment Protection Act 1986.",
+          "verdict": "सही है",
+          "reason": "धारा 2(ख) के तहत 'पर्यावरण प्रदूषक' की परिभाषा में कोई भी ठोस, द्रव या गैसीय पदार्थ शामिल है जो पर्यावरण में ऐसी सांद्रता में हो जो हानिकारक हो सकती है — न्यायिक और नियामक रूप से इसे शोर के रूप में भी माना गया है, जैसा कि EPA 1986 के तहत बनाए गए Noise Pollution (Regulation and Control) Rules 2000 में परिलक्षित है।"
+        },
+        {
+          "statement": "The term 'environmental pollution' under EPA 1986 refers to the presence of any environmental pollutant in the environment.",
+          "verdict": "सही है",
+          "reason": "धारा 2(ग) में 'पर्यावरण प्रदूषण' को पर्यावरण में किसी भी पर्यावरण प्रदूषक की उपस्थिति के रूप में परिभाषित किया गया है — यह धारा 2(ख) से व्युत्पन्न है और जल अधिनियम 1974 तथा वायु अधिनियम 1981 की संकीर्ण क्षेत्र-विशिष्ट परिभाषाओं से व्यापक है।"
+        }
+      ],
+      "strong_distractor": "कथन 1 — जो छात्र जल अधिनियम 1974 की संकीर्ण 'पर्यावरण' परिभाषा जानते हैं, वे गलती से EPA की परिभाषा को भी केवल भौतिक माध्यमों तक सीमित समझ सकते हैं, जिससे कथन 1 में 'केवल जल, वायु और भूमि' की सीमा सही लगती है।",
+      "elimination_logic": [
+        "कथन 1 का परीक्षण करें: EPA की धारा 2(क) में जीवित जीवों के साथ अंतर्संबंध शामिल है — 'केवल' शब्द इस संबंध को छोड़ देता है, अतः यह कथन गलत है।",
+        "कथन 2 का परीक्षण करें: Noise Pollution Rules 2000 EPA 1986 के तहत बनाए गए हैं, जो पुष्टि करते हैं कि शोर पर्यावरण प्रदूषक है — अतः कथन 2 सही है।",
+        "कथन 3 का परीक्षण करें: धारा 2(ग) पर्यावरण प्रदूषण को किसी भी पर्यावरण प्रदूषक की उपस्थिति के रूप में परिभाषित करती है — कथन 3 सही है।",
+        "चूंकि कथन 2 और 3 सही हैं और कथन 1 गलत है, अतः उत्तर (b) — केवल 2 और 3 है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में 'केवल' शब्द एक क्लासिक स्कोप-एक्सटेंशन तकनीक है। जो छात्र EPA की परिभाषा में जल, वायु और भूमि को शामिल पाते हैं, वे इस बात को नहीं समझ पाते कि अधिनियम इन माध्यमों के बीच और जीवित जीवों के साथ अंतर्संबंध को भी शामिल करता है। इसी प्रकार, शोर को पर्यावरण प्रदूषक के रूप में स्वीकार करना कई छात्रों के लिए आश्चर्यजनक होता है जो 'प्रदूषक' शब्द को केवल रासायनिक उत्सर्जन तक सीमित समझते हैं। Noise Pollution (Regulation and Control) Rules 2000 का EPA 1986 के तहत बनना इस बात की पुष्टि करता है कि शोर अधिनियम के दायरे में है।",
+      "final_explanation": "EPA 1986 की परिभाषात्मक प्रावधान जानबूझकर व्यापक हैं, ताकि अधिनियम को पूरे पर्यावरण पर छत्र के रूप में स्थापित किया जा सके।\n\n• कथन 1 — गलत: धारा 2(क) 'पर्यावरण' को केवल भौतिक माध्यमों तक सीमित नहीं करती। इसमें जल, वायु, भूमि और इनके बीच जीवित प्राणियों, सूक्ष्मजीवों और संपत्ति के साथ अंतर्संबंध शामिल हैं। कथन में 'केवल' शब्द इसे गलत बनाता है।\n• कथन 2 — सही: धारा 2(ख) के तहत शोर को 'पर्यावरण प्रदूषक' के दायरे में शामिल किया गया है। Noise Pollution (Regulation and Control) Rules 2000, जो EPA 1986 के तहत बनाए गए हैं, इस समावेशन को लागू करते हैं।\n• कथन 3 — सही: धारा 2(ग) 'पर्यावरण प्रदूषण' को पर्यावरण में किसी भी पर्यावरण प्रदूषक की उपस्थिति के रूप में परिभाषित करती है — यह एक व्युत्पन्न और विधिक रूप से सटीक परिभाषा है।\n\nमूल्यवर्धन:\n• जल अधिनियम 1974 और वायु अधिनियम 1981 क्षेत्र-विशिष्ट परिभाषाएं उपयोग करते हैं; EPA की परिभाषाएं जानबूझकर क्षेत्रों के पार हैं।\n• 'पर्यावरण प्रदूषक' (पदार्थ) और 'पर्यावरण प्रदूषण' (स्थिति/अवस्था) के बीच अंतर UPSC में बार-बार पूछा जाने वाला विषय है।\n• ई-कचरा और प्लास्टिक कचरा नियम भी EPA 1986 के तहत बनाए गए हैं, जो अधिनियम की व्यापक परिभाषात्मक सीमा को और दर्शाते हैं।"
+    }
+  },
+  {
+    "uuid": "6768efe4-4679-46c6-9537-319bf4e5d48c",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Powers of the Central Government under EPA 1986: Scope and Extent"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Central Government exclusive powers under EPA 1986",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the powers of the Central Government under the Environment Protection Act 1986:\n\n1. Under the Environment Protection Act 1986, both the Central Government and State Governments have direct statutory powers to take measures for protecting and improving environmental quality.\n2. Section 3 of EPA 1986 gives the Central Government an omnibus power to take all measures it deems necessary for protecting and improving the quality of the environment.\n3. The Central Government can delegate its powers under EPA 1986 to any officer or authority, including State Governments, without any statutory limit on such delegation.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Environment Protection Act 1986, both the Central Government and State Governments have direct statutory powers to take measures for protecting and improving environmental quality.",
+          "verdict": "Incorrect",
+          "reason": "EPA 1986 vests all regulatory powers exclusively in the Central Government — State Governments have no direct powers under EPA 1986. Powers may be delegated by the Central Government under Section 23, but states do not independently hold EPA powers."
+        },
+        {
+          "statement": "Section 3 of EPA 1986 gives the Central Government an omnibus power to take all measures it deems necessary for protecting and improving the quality of the environment.",
+          "verdict": "Correct",
+          "reason": "Section 3 is correctly described — it is the foundational omnibus power provision that authorises the Central Government to take measures across a wide spectrum of activities including co-ordination, standards-setting, planning, and resource mobilisation."
+        },
+        {
+          "statement": "The Central Government can delegate its powers under EPA 1986 to any officer or authority, including State Governments, without any statutory limit on such delegation.",
+          "verdict": "Incorrect",
+          "reason": "Section 23 allows delegation but only to officers or authorities, and such delegation cannot include the power to further delegate (non-delegable delegation doctrine); moreover, it is subject to conditions specified by the Central Government — it is not unlimited."
+        }
+      ],
+      "strong_distractor": "a — Students who know that State Pollution Control Boards operate environmental enforcement on the ground may incorrectly assume EPA grants state governments direct powers, making Statement 1's error easy to overlook.",
+      "elimination_logic": [
+        "Examine Statement 1: EPA 1986 does not grant State Governments any direct powers — only the Central Government holds powers under the Act; delegation is possible but not the same as direct statutory power. Statement 1 is NOT correct.",
+        "Examine Statement 2: Section 3's omnibus character is well established and accurately described — Statement 2 IS correct, so it cannot be the answer to a 'NOT correct' question.",
+        "Examine Statement 3: Section 23 delegation has limits — the phrase 'without any statutory limit' makes this statement NOT correct.",
+        "Statements 1 and 3 are NOT correct; the answer is (c) — 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The dominant trap here exploits the real-world visibility of State Pollution Control Boards (SPCBs) enforcing environmental norms. Students conflate SPCB enforcement activity (which derives from Water Act 1974 and Air Act 1981) with direct powers under EPA 1986. EPA 1986 is a Central Act that vests power solely in the Central Government. States act under EPA only when the Central Government specifically delegates powers under Section 23.",
+      "final_explanation": "EPA 1986 establishes a centralised regulatory architecture, which is a defining feature distinguishing it from the Water Act 1974 and Air Act 1981.\n\n• Statement 1 — NOT correct: EPA 1986 confers all primary powers on the Central Government alone. State Governments hold no direct powers under this Act. SPCBs enforcing environmental norms on the ground do so under the Water and Air Acts, not under EPA directly.\n• Statement 2 — Correct: Section 3 is the omnibus enabling provision, granting the Central Government wide powers to plan, co-ordinate, implement, and enforce environment protection measures.\n• Statement 3 — NOT correct: Section 23 permits delegation but subject to conditions. The statement's claim of 'no statutory limit' is incorrect — the delegating authority cannot confer unlimited or further-delegatable powers.\n\nValue Addition:\n• Section 23 delegation can be made to officers or other authorities, but the Central Government remains the principal authority.\n• SPCBs are creatures of the Water Act 1974, not EPA 1986 — a frequently tested distinction.\n• The Central Pollution Control Board (CPCB) is also a creation of the Water Act 1974, not EPA 1986."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 के तहत केंद्र सरकार की शक्तियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पर्यावरण संरक्षण अधिनियम 1986 के तहत, केंद्र सरकार और राज्य सरकारों दोनों के पास पर्यावरण गुणवत्ता की रक्षा और सुधार के लिए प्रत्यक्ष वैधानिक शक्तियाँ हैं।\n2. EPA 1986 की धारा 3 केंद्र सरकार को पर्यावरण की गुणवत्ता की रक्षा और सुधार के लिए आवश्यक सभी उपाय करने की सर्वसमावेशी शक्ति देती है।\n3. केंद्र सरकार EPA 1986 के तहत अपनी शक्तियों को किसी भी अधिकारी या प्राधिकरण को, जिसमें राज्य सरकारें भी शामिल हैं, बिना किसी वैधानिक सीमा के सौंप सकती है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "पर्यावरण संरक्षण अधिनियम 1986 के तहत, केंद्र सरकार और राज्य सरकारों दोनों के पास पर्यावरण गुणवत्ता की रक्षा और सुधार के लिए प्रत्यक्ष वैधानिक शक्तियाँ हैं।",
+          "verdict": "गलत",
+          "reason": "EPA 1986 सभी नियामक शक्तियाँ केवल केंद्र सरकार को प्रदान करता है — राज्य सरकारों के पास EPA 1986 के तहत कोई प्रत्यक्ष शक्तियाँ नहीं हैं। शक्तियाँ केंद्र सरकार द्वारा धारा 23 के तहत सौंपा जा सकता है, लेकिन राज्य स्वतंत्र रूप से EPA शक्तियाँ नहीं रखते।"
+        },
+        {
+          "statement": "EPA 1986 की धारा 3 केंद्र सरकार को पर्यावरण की गुणवत्ता की रक्षा और सुधार के लिए आवश्यक सभी उपाय करने की सर्वसमावेशी शक्ति देती है।",
+          "verdict": "सही",
+          "reason": "धारा 3 का वर्णन सही है — यह आधारभूत सर्वसमावेशी शक्ति प्रावधान है जो केंद्र सरकार को समन्वय, मानक निर्धारण, योजना और संसाधन जुटाने सहित व्यापक गतिविधियों के लिए उपाय करने का अधिकार देता है।"
+        },
+        {
+          "statement": "केंद्र सरकार EPA 1986 के तहत अपनी शक्तियों को किसी भी अधिकारी या प्राधिकरण को, जिसमें राज्य सरकारें भी शामिल हैं, बिना किसी वैधानिक सीमा के सौंप सकती है।",
+          "verdict": "गलत",
+          "reason": "धारा 23 सौंपने की अनुमति देती है लेकिन केवल अधिकारियों या प्राधिकरणों को, और ऐसी सौंपने की शक्ति आगे सौंपने की शक्ति (non-delegable delegation doctrine) शामिल नहीं हो सकती; इसके अलावा, यह केंद्र सरकार द्वारा निर्दिष्ट शर्तों के अधीन है — यह असीमित नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि राज्य प्रदूषण नियंत्रण बोर्ड (SPCB) पर्यावरण प्रवर्तन करते हैं, वे गलतफहमी में आ सकते हैं कि EPA राज्य सरकारों को प्रत्यक्ष शक्तियाँ देता है, जिससे कथन 1 की गलती आसानी से नजरअंदाज हो जाती है।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें: EPA 1986 राज्य सरकारों को कोई प्रत्यक्ष शक्तियाँ नहीं देता — केवल केंद्र सरकार के पास अधिनियम के तहत शक्तियाँ हैं; सौंपना संभव है लेकिन यह प्रत्यक्ष वैधानिक शक्ति के समान नहीं है। अतः कथन 1 सही नहीं है।",
+        "कथन 2 की जाँच करें: धारा 3 की सर्वसमावेशी प्रकृति स्थापित और सही वर्णित है — कथन 2 सही है, इसलिए यह 'सही नहीं है' वाले प्रश्न का उत्तर नहीं हो सकता।",
+        "कथन 3 की जाँच करें: धारा 23 के सौंपने की सीमाएँ हैं — 'कोई वैधानिक सीमा नहीं' कथन को गलत बनाता है।",
+        "कथन 1 और 3 सही नहीं हैं; उत्तर है (c) — केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "यह मुख्य जाल राज्य प्रदूषण नियंत्रण बोर्डों (SPCBs) की वास्तविक दुनिया में पर्यावरण नियमों के प्रवर्तन की दृश्यता का उपयोग करता है। छात्र SPCB प्रवर्तन गतिविधि (जो जल अधिनियम 1974 और वायु अधिनियम 1981 से आती है) को EPA 1986 के तहत प्रत्यक्ष शक्तियों के साथ भ्रमित कर देते हैं। EPA 1986 एक केंद्रीय अधिनियम है जो शक्ति केवल केंद्र सरकार को देता है। राज्य केवल तब EPA के तहत कार्य करते हैं जब केंद्र सरकार विशेष रूप से धारा 23 के तहत शक्तियाँ सौंपती है।",
+      "final_explanation": "EPA 1986 एक केंद्रीकृत नियामक संरचना स्थापित करता है, जो इसे जल अधिनियम 1974 और वायु अधिनियम 1981 से अलग करता है।\n\n• कथन 1 — सही नहीं: EPA 1986 सभी प्राथमिक शक्तियाँ केवल केंद्र सरकार को देता है। राज्य सरकारों के पास इस अधिनियम के तहत कोई प्रत्यक्ष शक्तियाँ नहीं हैं। SPCB जो पर्यावरण नियमों को लागू करते हैं, वे जल और वायु अधिनियमों के तहत कार्य करते हैं, EPA के तहत नहीं।\n• कथन 2 — सही: धारा 3 सर्वसमावेशी प्रावधान है, जो केंद्र सरकार को पर्यावरण संरक्षण के लिए योजना, समन्वय, क्रियान्वयन और प्रवर्तन की व्यापक शक्तियाँ देता है।\n• कथन 3 — सही नहीं: धारा 23 सौंपने की अनुमति देती है लेकिन शर्तों के अधीन। 'कोई वैधानिक सीमा नहीं' कथन गलत है — सौंपने वाली प्राधिकरण असीमित या आगे सौंपने योग्य शक्तियाँ नहीं दे सकती।\n\nमूल्य संवर्धन:\n• धारा 23 के तहत सौंपना अधिकारियों या अन्य प्राधिकरणों को किया जा सकता है, लेकिन केंद्र सरकार प्रधान प्राधिकरण बनी रहती है।\n• SPCB जल अधिनियम 1974 के सृजन हैं, EPA 1986 के नहीं — यह एक बार-बार पूछी जाने वाली भेद है।\n• केंद्रीय प्रदूषण नियंत्रण बोर्ड (CPCB) भी जल अधिनियम 1974 का सृजन है, EPA 1986 का नहीं।"
+    }
+  },
+  {
+    "uuid": "08d9289e-a5dd-404a-bd72-69d57f676833",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Environmental Quality Standards and Schedule Provisions",
+        "Relationship Between EPA 1986 and Other Environmental Laws: Hierarchy and Overlaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "State authority to set stricter standards under EPA 1986",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): State governments in India are not prohibited from prescribing environmental standards stricter than those set under the Environment Protection Act 1986, though they cannot prescribe more lenient standards.\n\nReason (R): The Environment Protection Act 1986 was enacted under Entry 17A and Entry 17B of the Concurrent List inserted by the 42nd Constitutional Amendment 1976, which enables both Parliament and state legislatures to legislate on environmental matters.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who correctly identify both A and R as true may assume R explains A without scrutinising the causal direction — the fact that EPA sets national minimum standards does not by itself explain why states can set stricter norms; the constitutional framework of Article 253 and EPA's Section 24 is the actual explanation.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? Yes. States cannot set more lenient standards than those prescribed under EPA 1986, but they can prescribe stricter standards — this reflects EPA's minimum floor character.",
+        "Step 2 — Is Reason (R) correct? No. EPA 1986 was enacted under Article 253 (international treaty obligations), NOT under Entry 17A or 17B of the Concurrent List. Entry 17A (forests) and 17B (protection of wild animals) were added by the 42nd Amendment 1976 but are not the primary constitutional basis for EPA.",
+        "Step 3 — Since R is factually incorrect, the answer must be (c): A is correct but R is incorrect.",
+        "Confirm: correct_option is (c) — matches the elimination conclusion."
+      ],
+      "upsc_trap_explanation": "The trap exploits knowledge that the 42nd Constitutional Amendment 1976 inserted Entries 17A and 17B into the Concurrent List, which are associated with environmental legislation. Students who know this may assume EPA 1986 derives from these Concurrent List entries. However, EPA 1986's primary constitutional basis is Article 253 (Stockholm Conference 1972), not the Concurrent List entries. The Assertion about states setting stricter standards is correctly stated, but the Reason attributes EPA's basis to the wrong constitutional provision.",
+      "final_explanation": "This question probes the precise constitutional genealogy of EPA 1986 and its implications for federal regulatory authority.\n\nAssertion (A): Correct. EPA 1986 prescribes minimum national environmental standards. State governments and pollution control boards are not precluded from prescribing stricter standards for their jurisdictions — they simply cannot go below the national floor set by EPA.\n\nReason (R): Incorrect. EPA 1986 was enacted under Article 253 of the Constitution, which empowers Parliament to make laws implementing decisions of international conferences (specifically, the 1972 Stockholm Conference on the Human Environment). While Entries 17A (forests) and 17B (protection of wild animals and birds) were added to the Concurrent List by the 42nd Amendment 1976, these are not the primary constitutional basis for EPA 1986. The Water Act 1974 and Air Act 1981 derive from Article 252, not the Concurrent List entries either.\n\nSince A is correct but R is factually incorrect, the answer is (c).\n\nValue Addition:\n• The 42nd Amendment 1976 inserted 'forest' and 'protection of wild animals and birds' into the Concurrent List — but these entries relate primarily to the Forest Conservation Act 1980 and Wildlife Protection Act 1972.\n• Article 48A (DPSP) and Article 51A(g) (fundamental duty) provide normative but not legislative competence for EPA.\n• States can — and several have — prescribed stricter emission standards than EPA's national minimums."
+    },
+    "hi": {
+      "display_text": "कथन (A): भारत में राज्य सरकारों को पर्यावरण संरक्षण अधिनियम 1986 के तहत निर्धारित मानकों से कड़े पर्यावरणीय मानक निर्धारित करने से रोका नहीं गया है, हालांकि वे अधिक उदार मानक निर्धारित नहीं कर सकते।\n\nकारण (R): पर्यावरण संरक्षण अधिनियम 1986 को 42वें संवैधानिक संशोधन 1976 द्वारा समवर्ती सूची में जोड़ी गई प्रविष्टि 17A और प्रविष्टि 17B के तहत अधिनियमित किया गया था, जो संसद और राज्य विधानसभाओं दोनों को पर्यावरणीय मामलों पर कानून बनाने का अधिकार देता है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र सही रूप से दोनों A और R को सत्य मानते हैं, वे बिना कारणात्मक दिशा की जांच किए R को A का स्पष्टीकरण मान सकते हैं — यह तथ्य कि EPA राष्ट्रीय न्यूनतम मानक निर्धारित करता है, अपने आप में यह नहीं बताता कि राज्य कड़े मानक क्यों निर्धारित कर सकते हैं; संविधान के अनुच्छेद 253 और EPA की धारा 24 का ढांचा वास्तविक स्पष्टीकरण है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? हाँ। राज्य EPA 1986 के तहत निर्धारित न्यूनतम मानकों से अधिक उदार मानक निर्धारित नहीं कर सकते, लेकिन वे कड़े मानक निर्धारित कर सकते हैं — यह EPA के न्यूनतम स्तर के चरित्र को दर्शाता है।",
+        "चरण 2 — क्या कारण (R) सही है? नहीं। EPA 1986 को अनुच्छेद 253 (अंतरराष्ट्रीय संधि दायित्वों) के तहत अधिनियमित किया गया था, न कि समवर्ती सूची के प्रविष्टि 17A या 17B के तहत। प्रविष्टि 17A (वन) और 17B (जंगली जानवरों की सुरक्षा) 42वें संशोधन 1976 द्वारा जोड़े गए थे लेकिन EPA के लिए प्राथमिक संवैधानिक आधार नहीं हैं।",
+        "चरण 3 — चूंकि R तथ्यात्मक रूप से गलत है, उत्तर (c) होना चाहिए: A सही है लेकिन R गलत है।",
+        "पुष्टि करें: correct_option (c) है — जो निष्कर्ष से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल यह ज्ञान का उपयोग करता है कि 42वां संवैधानिक संशोधन 1976 ने समवर्ती सूची में प्रविष्टि 17A और 17B जोड़ी, जो पर्यावरणीय कानूनों से संबंधित हैं। जो छात्र इसे जानते हैं, वे मान सकते हैं कि EPA 1986 इन समवर्ती सूची प्रविष्टियों से व्युत्पन्न है। हालांकि, EPA 1986 का प्राथमिक संवैधानिक आधार अनुच्छेद 253 (स्टॉकहोम सम्मेलन 1972) है, न कि समवर्ती सूची प्रविष्टियाँ। राज्यों द्वारा कड़े मानक निर्धारित करने के बारे में कथन सही है, लेकिन कारण EPA के आधार को गलत संवैधानिक प्रावधान से जोड़ता है।",
+      "final_explanation": "यह प्रश्न EPA 1986 के संवैधानिक वंश और इसके संघीय नियामक अधिकारों के प्रभावों की सटीक जांच करता है।\n\nकथन (A): सही। EPA 1986 राष्ट्रीय पर्यावरणीय न्यूनतम मानक निर्धारित करता है। राज्य सरकारें और प्रदूषण नियंत्रण बोर्ड अपने क्षेत्रों के लिए कड़े मानक निर्धारित करने से वंचित नहीं हैं — वे केवल EPA द्वारा निर्धारित राष्ट्रीय न्यूनतम स्तर से नीचे नहीं जा सकते।\n\nकारण (R): गलत। EPA 1986 संविधान के अनुच्छेद 253 के तहत अधिनियमित किया गया था, जो संसद को अंतरराष्ट्रीय सम्मेलनों (विशेष रूप से 1972 के स्टॉकहोम सम्मेलन) के निर्णयों को लागू करने के लिए कानून बनाने का अधिकार देता है। जबकि प्रविष्टि 17A (वन) और 17B (जंगली जानवरों और पक्षियों की सुरक्षा) 42वें संशोधन 1976 द्वारा समवर्ती सूची में जोड़ी गईं, ये EPA 1986 के लिए प्राथमिक संवैधानिक आधार नहीं हैं। जल अधिनियम 1974 और वायु अधिनियम 1981 अनुच्छेद 252 से व्युत्पन्न हैं, न कि समवर्ती सूची प्रविष्टियों से।\n\nचूंकि A सही है लेकिन R तथ्यात्मक रूप से गलत है, उत्तर (c) है।\n\nमूल्य संवर्धन:\n• 42वें संशोधन 1976 ने समवर्ती सूची में 'वन' और 'जंगली जानवरों और पक्षियों की सुरक्षा' जोड़ी — लेकिन ये प्रविष्टियाँ मुख्य रूप से वन संरक्षण अधिनियम 1980 और वन्यजीव संरक्षण अधिनियम 1972 से संबंधित हैं।\n• अनुच्छेद 48A (DPSP) और अनुच्छेद 51A(g) (मौलिक कर्तव्य) EPA के लिए वैधानिक नहीं बल्कि मानकात्मक अधिकार प्रदान करते हैं।\n• राज्य EPA के राष्ट्रीय न्यूनतम मानकों से कड़े उत्सर्जन मानक निर्धारित कर सकते हैं — और कई राज्यों ने ऐसा किया है।"
+    }
+  },
+  {
+    "uuid": "0609b20f-6f98-45f3-9926-8d37859f8217",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Persons Authorized to Perform Functions: Section 4 and Delegation Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CPCB created under Water Act not EPA 1986",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A parliamentary committee reviewing India's environmental institutional architecture notes that a central statutory Board monitors water quality, sets effluent standards, and co-ordinates with state-level bodies for enforcement. The committee observes that this Board performs critical functions under both the Environment Protection Act 1986 and other environmental statutes. A member questions which statute originally constituted this Board and gave it its primary legal identity.\n\nWhich of the following correctly identifies the statutory basis for the constitution of the Central Pollution Control Board?\n\n(a) Section 3(3) of the Environment Protection Act 1986, which empowers the Central Government to constitute authorities\n(b) Section 3 of the Water (Prevention and Control of Pollution) Act 1974\n(c) Section 4 of the Environment Protection Act 1986, which authorises appointment of officers\n(d) The Environment (Protection) Rules 1986 framed under EPA's rule-making power",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — The scenario's reference to environmental enforcement and pollution monitoring strongly evokes CPCB, leading many students to assume CPCB's authority derives from EPA 1986 rather than from the Water Act 1974.",
+      "elimination_logic": [
+        "Identify the legal question: under which statute was the Central Pollution Control Board constituted?",
+        "Eliminate (a): EPA 1986 Section 3(3) empowers the Central Government to constitute authorities — but CPCB was not constituted under this provision; it pre-dates EPA.",
+        "Eliminate (c): Section 4 of EPA 1986 authorises appointment of officers — but CPCB is a statutory Board, not an officer appointed under Section 4.",
+        "Eliminate (d): The Environment (Protection) Rules 1986 provide procedural mechanisms but did not create CPCB.",
+        "Confirm (b): CPCB was established under Section 3 of the Water (Prevention and Control of Pollution) Act 1974 — it is a pre-EPA institution whose mandate was expanded through co-ordination arrangements."
+      ],
+      "upsc_trap_explanation": "The scenario deliberately describes CPCB performing core EPA-linked functions (pollution monitoring, enforcement, standard-setting) to exploit the natural association between CPCB and EPA. Most students who have studied environmental law associate CPCB with EPA 1986 because CPCB is EPA's primary enforcement partner. However, CPCB was established under the Water Act 1974 and was not reconstituted under EPA 1986. This is one of the most reliably tested distinctions in UPSC environmental law questions.",
+      "final_explanation": "The Central Pollution Control Board (CPCB) is one of India's most important environmental regulatory bodies, but its statutory origins are frequently misattributed.\n\nThe scenario requires identifying the statute under which CPCB was constituted. CPCB was established under Section 3 of the Water (Prevention and Control of Pollution) Act 1974 — more than a decade before EPA 1986 was enacted. When EPA 1986 came into force, CPCB's mandate was co-ordinated with EPA's framework, but no new CPCB was created under EPA.\n\n• Option (a) — Section 3(3) of EPA 1986: Incorrect. Section 3(3) allows the Central Government to constitute authorities for specific purposes, but CPCB was not constituted under this provision.\n• Option (b) — Section 3 of Water Act 1974: Correct. This is the founding provision for CPCB.\n• Option (c) — Section 4 of EPA 1986: Incorrect. Section 4 authorises appointment of individual officers, not the creation of a statutory Board.\n• Option (d) — Environment (Protection) Rules 1986: Incorrect. These rules provide procedural frameworks under EPA but did not constitute CPCB.\n\nValue Addition:\n• SPCBs (State Pollution Control Boards) are also creatures of the Water Act 1974 (Section 4), not EPA 1986.\n• Under EPA 1986, the Central Government can constitute separate authorities — for example, the National Environment Appellate Authority (now superseded by NGT).\n• CPCB's Air Act functions derive from the Air (Prevention and Control of Pollution) Act 1981."
+    },
+    "hi": {
+      "display_text": "भारत की पर्यावरणीय संस्थागत संरचना की समीक्षा कर रही एक संसदीय समिति नोट करती है कि एक केंद्रीय सांविधिक बोर्ड जल गुणवत्ता की निगरानी करता है, अपशिष्ट मानक निर्धारित करता है, और प्रवर्तन के लिए राज्य स्तरीय निकायों के साथ समन्वय करता है। समिति यह देखती है कि यह बोर्ड पर्यावरण संरक्षण अधिनियम 1986 और अन्य पर्यावरणीय अधिनियमों के तहत महत्वपूर्ण कार्य करता है। एक सदस्य प्रश्न करता है कि किस अधिनियम ने मूल रूप से इस बोर्ड का गठन किया और इसे इसकी प्राथमिक कानूनी पहचान दी।\n\nनिम्नलिखित में से कौन सा केंद्रीय प्रदूषण नियंत्रण बोर्ड के गठन के लिए सांविधिक आधार को सही रूप से पहचानता है?\n\n(a) पर्यावरण संरक्षण अधिनियम 1986 की धारा 3(3), जो केंद्र सरकार को प्राधिकरण गठित करने का अधिकार देती है\n(b) जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974 की धारा 3\n(c) पर्यावरण संरक्षण अधिनियम 1986 की धारा 4, जो अधिकारियों की नियुक्ति का प्रावधान देती है\n(d) EPA के नियम बनाने के अधिकार के तहत बनाए गए पर्यावरण (संरक्षण) नियम 1986",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — पर्यावरण प्रवर्तन और प्रदूषण निगरानी के संदर्भ में परिदृश्य केंद्रीय प्रदूषण नियंत्रण बोर्ड (CPCB) को प्रबल रूप से दर्शाता है, जिससे कई छात्र मान लेते हैं कि CPCB का अधिकार EPA 1986 से है जबकि यह जल अधिनियम 1974 से है।",
+      "elimination_logic": [
+        "कानूनी प्रश्न की पहचान करें: केंद्रीय प्रदूषण नियंत्रण बोर्ड किस अधिनियम के तहत गठित किया गया था?",
+        "(a) को हटाएं: EPA 1986 की धारा 3(3) केंद्र सरकार को प्राधिकरण गठित करने का अधिकार देती है — लेकिन CPCB इस प्रावधान के तहत गठित नहीं किया गया था; यह EPA से पहले का है।",
+        "(c) को हटाएं: EPA 1986 की धारा 4 अधिकारियों की नियुक्ति का प्रावधान देती है — लेकिन CPCB एक सांविधिक बोर्ड है, न कि धारा 4 के तहत नियुक्त अधिकारी।",
+        "(d) को हटाएं: पर्यावरण (संरक्षण) नियम 1986 प्रक्रियात्मक तंत्र प्रदान करते हैं लेकिन CPCB का निर्माण नहीं किया।",
+        "(b) की पुष्टि करें: CPCB जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974 की धारा 3 के तहत स्थापित किया गया था — यह EPA से पूर्व की संस्था है जिसका दायित्व समन्वय व्यवस्था के माध्यम से बढ़ाया गया।"
+      ],
+      "upsc_trap_explanation": "परिदृश्य जानबूझकर CPCB को EPA से जुड़े मुख्य कार्य (प्रदूषण निगरानी, प्रवर्तन, मानक निर्धारण) करते हुए दर्शाता है ताकि CPCB और EPA के बीच स्वाभाविक संबंध का लाभ उठाया जा सके। अधिकांश पर्यावरण कानून पढ़ने वाले छात्र CPCB को EPA 1986 से जोड़ते हैं क्योंकि CPCB EPA का मुख्य प्रवर्तन सहयोगी है। हालांकि, CPCB जल अधिनियम 1974 के तहत स्थापित हुआ था और EPA 1986 के तहत पुनः गठित नहीं किया गया। यह UPSC पर्यावरण कानून के प्रश्नों में सबसे विश्वसनीय रूप से परखा गया अंतर है।",
+      "final_explanation": "केंद्रीय प्रदूषण नियंत्रण बोर्ड (CPCB) भारत के सबसे महत्वपूर्ण पर्यावरण नियामक निकायों में से एक है, लेकिन इसके सांविधिक मूल अक्सर गलत तरीके से समझे जाते हैं।\n\nपरिदृश्य में यह पहचानना आवश्यक है कि CPCB किस अधिनियम के तहत गठित किया गया था। CPCB जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974 की धारा 3 के तहत स्थापित किया गया था — जो EPA 1986 के लागू होने से एक दशक से अधिक पहले था। जब EPA 1986 लागू हुआ, तो CPCB के दायित्व को EPA के ढांचे के साथ समन्वित किया गया, लेकिन EPA के तहत कोई नया CPCB नहीं बनाया गया।\n\n• विकल्प (a) — EPA 1986 की धारा 3(3): गलत। यह धारा केंद्र सरकार को विशिष्ट उद्देश्यों के लिए प्राधिकरण गठित करने की अनुमति देती है, लेकिन CPCB इस प्रावधान के तहत गठित नहीं हुआ।\n• विकल्प (b) — जल अधिनियम 1974 की धारा 3: सही। यह CPCB के गठन का मूल प्रावधान है।\n• विकल्प (c) — EPA 1986 की धारा 4: गलत। यह धारा व्यक्तिगत अधिकारियों की नियुक्ति का प्रावधान देती है, न कि सांविधिक बोर्ड के गठन का।\n• विकल्प (d) — पर्यावरण (संरक्षण) नियम 1986: गलत। ये नियम EPA के तहत प्रक्रियात्मक ढांचे प्रदान करते हैं लेकिन CPCB का गठन नहीं किया।\n\nमूल्य संवर्धन:\n• राज्य प्रदूषण नियंत्रण बोर्ड (SPCB) भी जल अधिनियम 1974 (धारा 4) के अंतर्गत आते हैं, न कि EPA 1986 के।\n• EPA 1986 के तहत केंद्र सरकार अलग प्राधिकरण गठित कर सकती है — जैसे राष्ट्रीय पर्यावरण अपीलीय प्राधिकरण (जो अब NGT द्वारा प्रतिस्थापित है)।\n• CPCB के वायु अधिनियम संबंधी कार्य वायु (प्रदूषण निवारण और नियंत्रण) अधिनियम 1981 से आते हैं।"
+    }
+  },
+  {
+    "uuid": "f5701b86-b1be-4657-8d42-f78b6182f60c",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Offences, Penalties and Enforcement Mechanisms under EPA 1986"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Vicarious liability under EPA 1986 Section 16 and 17",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four provisions of the Environment Protection Act 1986 relate to the imposition of liability or penalties for environmental offences, while one does NOT belong to this category. Which one does NOT belong?\n\n(a) Section 15 — Penalty for contravention of provisions of the Act\n(b) Section 17 — Offences by government departments and liability of their heads\n(c) Section 18 — Protection of action taken in good faith by government officers\n(d) Section 16 — Offences by companies and vicarious liability of persons-in-charge",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) involves government departments and students may assume government bodies enjoy blanket immunity, making it feel like the 'odd one out' that does not attract liability — but Section 17 expressly includes government departments.",
+      "elimination_logic": [
+        "Identify the common attribute: provisions under EPA 1986 that attract criminal/penal liability for environmental offences.",
+        "Check (a): Section 15 prescribes penalties for contravention — clearly within the liability framework.",
+        "Check (b): Section 17 makes the Head of a Government Department liable for offences by that department — government departments are NOT immune and belong in the liability category.",
+        "Check (c): Section 18 provides good faith immunity to government officers — this is a protection provision, not a liability provision. It does NOT extend to private companies or individuals.",
+        "Check (d): Section 16 imposes vicarious liability on persons-in-charge of companies — within the liability framework.",
+        "Option (c) — Section 18 — is the odd one out: it provides immunity, not liability."
+      ],
+      "upsc_trap_explanation": "The trap is in Option (b) — students who assume government departments enjoy immunity under EPA may select it as the 'odd one out.' Section 17 expressly pierces the government shield and makes heads of departments personally liable. The genuine odd one out is Section 18, which is the only provision among the options that provides protection (good faith immunity) rather than imposing liability. A student who reads options superficially and conflates 'government provision' with 'immunity provision' will be misled.",
+      "final_explanation": "EPA 1986 contains a comprehensive penal framework with provisions that impose liability on individuals, companies, and government departments alike.\n\n• Option (a) — Section 15: Within the group. It is the primary penalty provision, prescribing imprisonment up to 5 years or fine up to ₹1 lakh or both for contraventions.\n• Option (b) — Section 17: Within the group. It holds the Head of a Government Department personally liable for environmental offences committed by the department — no blanket government immunity.\n• Option (c) — Section 18: THE ODD ONE OUT. Section 18 provides good faith immunity to government officials and officers for actions taken in good faith under EPA. It is a protection provision, not a liability provision.\n• Option (d) — Section 16: Within the group. It imposes vicarious liability on persons-in-charge of companies and on the company itself.\n\nValue Addition:\n• Section 18 immunity does NOT extend to private companies or individuals — only government officers acting in good faith.\n• After 7 years of a continuing offence, enhanced minimum imprisonment is prescribed under Section 15.\n• Section 17's inclusion of government departments distinguishes EPA from several other statutes that grant government immunity."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 के निम्नलिखित चार प्रावधानों में से तीन पर्यावरणीय अपराधों के लिए दायित्व या दंड लगाने से संबंधित हैं, जबकि एक इस श्रेणी में नहीं आता। कौन सा प्रावधान इस श्रेणी में नहीं आता?\n\n(a) धारा 15 — अधिनियम के प्रावधानों के उल्लंघन के लिए दंड\n(b) धारा 17 — सरकारी विभागों द्वारा अपराध और उनके प्रमुखों की दायित्व\n(c) धारा 18 — सरकारी अधिकारियों द्वारा सद्भावना में लिए गए कार्यों की सुरक्षा\n(d) धारा 16 — कंपनियों द्वारा अपराध और प्रभारी व्यक्तियों की अप्रत्यक्ष दायित्व",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में सरकारी विभाग शामिल हैं और छात्र मान सकते हैं कि सरकारी संस्थाओं को पूर्ण छूट प्राप्त है, जिससे यह 'अलग' विकल्प प्रतीत होता है जो दायित्व नहीं लाता — लेकिन धारा 17 स्पष्ट रूप से सरकारी विभागों को शामिल करती है।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: EPA 1986 के तहत पर्यावरणीय अपराधों के लिए आपराधिक/दंडात्मक दायित्व लगाने वाले प्रावधान।",
+        "(a) जांचें: धारा 15 उल्लंघन के लिए दंड निर्धारित करती है — स्पष्ट रूप से दायित्व ढांचे के अंतर्गत।",
+        "(b) जांचें: धारा 17 सरकारी विभाग के प्रमुख को उस विभाग द्वारा किए गए अपराधों के लिए दायित्व देती है — सरकारी विभाग छूट प्राप्त नहीं हैं और दायित्व श्रेणी में आते हैं।",
+        "(c) जांचें: धारा 18 सरकारी अधिकारियों को सद्भावना में लिए गए कार्यों के लिए छूट प्रदान करती है — यह एक सुरक्षा प्रावधान है, दायित्व प्रावधान नहीं। यह निजी कंपनियों या व्यक्तियों पर लागू नहीं होती।",
+        "(d) जांचें: धारा 16 कंपनियों के प्रभारी व्यक्तियों पर अप्रत्यक्ष दायित्व लगाती है — दायित्व ढांचे के अंतर्गत।",
+        "विकल्प (c) — धारा 18 — अलग विकल्प है: यह दायित्व नहीं, बल्कि छूट प्रदान करती है।"
+      ],
+      "upsc_trap_explanation": "फंदा विकल्प (b) में है — जो छात्र मानते हैं कि EPA के तहत सरकारी विभागों को छूट प्राप्त है, वे इसे 'अलग' विकल्प के रूप में चुन सकते हैं। धारा 17 स्पष्ट रूप से सरकारी सुरक्षा कवच को तोड़ती है और विभागों के प्रमुखों को व्यक्तिगत रूप से दायित्व देती है। वास्तविक अलग विकल्प धारा 18 है, जो विकल्पों में से एकमात्र ऐसा प्रावधान है जो दायित्व लगाने के बजाय सुरक्षा (सद्भावना छूट) प्रदान करता है। जो छात्र विकल्पों को सतही रूप से पढ़ते हैं और 'सरकारी प्रावधान' को 'छूट प्रावधान' समझ लेते हैं, वे भ्रमित हो सकते हैं।",
+      "final_explanation": "EPA 1986 में एक व्यापक दंडात्मक ढांचा है जिसमें व्यक्तियों, कंपनियों और सरकारी विभागों पर समान रूप से दायित्व लगाए जाते हैं।\n\n• विकल्प (a) — धारा 15: समूह के भीतर। यह मुख्य दंड प्रावधान है, जो उल्लंघनों के लिए 5 वर्ष तक की कैद या ₹1 लाख तक का जुर्माना या दोनों निर्धारित करता है।\n• विकल्प (b) — धारा 17: समूह के भीतर। यह सरकारी विभाग के प्रमुख को विभाग द्वारा किए गए पर्यावरणीय अपराधों के लिए व्यक्तिगत रूप से दायित्व देता है — कोई सरकारी छूट नहीं।\n• विकल्प (c) — धारा 18: अलग विकल्प। धारा 18 सरकारी अधिकारियों को EPA के तहत सद्भावना में लिए गए कार्यों के लिए छूट प्रदान करती है। यह दायित्व प्रावधान नहीं, बल्कि सुरक्षा प्रावधान है।\n• विकल्प (d) — धारा 16: समूह के भीतर। यह कंपनियों के प्रभारी व्यक्तियों और कंपनी पर अप्रत्यक्ष दायित्व लगाती है।\n\nमूल्यवर्धन:\n• धारा 18 की छूट निजी कंपनियों या व्यक्तियों पर लागू नहीं होती — केवल सद्भावना में कार्यरत सरकारी अधिकारियों पर।\n• सात वर्षों तक जारी अपराध के बाद, धारा 15 के तहत न्यूनतम कैद अवधि बढ़ाई जाती है।\n• धारा 17 में सरकारी विभागों को शामिल करना EPA को कई अन्य अधिनियमों से अलग करता है जो सरकारी छूट प्रदान करते हैं।"
+    }
+  },
+  {
+    "uuid": "40f5ccc9-a341-4eb7-8664-aeb2f6fb5a9a",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Cognizance of Offences: Section 19 and Locus Standi",
+        "Citizen Suit Provision and Public Participation Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Section 19 cognizance restriction and 60-day notice",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about cognizance of offences under the Environment Protection Act 1986:\n\nStatement 1: Under Section 19 of EPA 1986, a court cannot take cognizance of an offence under the Act except on a complaint by the Central Government or its authorised officer; however, a citizen may also file a complaint after providing sixty days' written notice of the alleged offence to the Central Government.\n\nStatement 2: The National Green Tribunal, like courts under Section 19 of EPA 1986, cannot take suo motu cognizance of environmental violations and requires a formal complaint or application from an aggrieved person before it can act.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under Section 19 of EPA 1986, a court cannot take cognizance of an offence under the Act except on a complaint by the Central Government or its authorised officer; however, a citizen may also file a complaint after providing sixty days' written notice of the alleged offence to the Central Government.",
+          "verdict": "Correct",
+          "reason": "Section 19 restricts cognizance to complaints by the Central Government or authorised officers, but its proviso permits citizens to file complaints after a mandatory 60-day prior notice to the Central Government — accurately stated."
+        },
+        {
+          "statement": "The National Green Tribunal, like courts under Section 19 of EPA 1986, cannot take suo motu cognizance of environmental violations and requires a formal complaint or application from an aggrieved person before it can act.",
+          "verdict": "Incorrect",
+          "reason": "Unlike the Section 19 restriction on courts, the NGT Act 2010 permits the NGT to take suo motu cognizance of environmental matters — it is not restricted to complaints initiated by specified authorities."
+        }
+      ],
+      "strong_distractor": "a — Students who know that both EPA and NGT deal with environmental matters may assume both follow the same cognizance rules, selecting (a) as both statements being correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The 60-day prior notice requirement before citizens can file complaints under Section 19 is an accurately stated procedural fact — Statement 1 is correct.",
+        "Evaluate Statement 2: NGT's suo motu powers distinguish it from courts under Section 19 — NGT can act suo motu while Section 19 courts cannot. Statement 2 is incorrect.",
+        "Since Statement 1 is correct and Statement 2 is incorrect, the answer is (c)."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 2 exploits the surface similarity between courts operating under Section 19 and the NGT — both deal with EPA violations, and students may assume both follow the same procedural restrictions. The critical distinction is that NGT's design deliberately expanded public access beyond the narrow Section 19 framework. NGT can take suo motu cognizance; courts bound by Section 19 cannot. This distinction is one of the most tested contrasts between EPA 1986 and the NGT Act 2010.",
+      "final_explanation": "The procedural framework for taking cognizance of EPA violations has two distinct tracks — the court route under Section 19 and the NGT route under the NGT Act 2010.\n\n• Statement 1 — Correct: Section 19 restricts courts from taking cognizance except on complaints by the Central Government or authorised officers. The proviso creates a narrow citizen suit pathway: a citizen must give 60 days' written notice to the government before filing a complaint. If the government fails to act, the citizen can then approach the court.\n• Statement 2 — Incorrect: The NGT Act 2010 does not replicate the Section 19 restriction. NGT can take suo motu cognizance of environmental violations — a significant expansion of judicial reach that Section 19 courts do not possess.\n\nValue Addition:\n• The 60-day notice under Section 19 is a mandatory procedural requirement; non-compliance is fatal to the complaint.\n• PILs under Articles 32 and 226 have historically been used to bypass the Section 19 restrictions (MC Mehta cases).\n• NGT's suo motu jurisdiction has been exercised in cases involving river pollution, waste dumping, and forest encroachment."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 के तहत अपराधों की जानकारी के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: EPA 1986 की धारा 19 के तहत, अधिनियम के तहत किसी अपराध की जानकारी केवल केंद्रीय सरकार या उसके अधिकृत अधिकारी की शिकायत पर ही अदालत ले सकती है; हालांकि, एक नागरिक भी कथित अपराध की केंद्रीय सरकार को साठ दिनों की लिखित सूचना देने के बाद शिकायत दर्ज कर सकता है।\n\nकथन 2: राष्ट्रीय हरित अधिकरण, EPA 1986 की धारा 19 के तहत अदालतों की तरह, पर्यावरणीय उल्लंघनों की स्व-प्रेरित जानकारी नहीं ले सकता और कार्रवाई करने से पहले पीड़ित व्यक्ति से औपचारिक शिकायत या आवेदन की आवश्यकता होती है।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "EPA 1986 की धारा 19 के तहत, अधिनियम के तहत किसी अपराध की जानकारी केवल केंद्रीय सरकार या उसके अधिकृत अधिकारी की शिकायत पर ही अदालत ले सकती है; हालांकि, एक नागरिक भी कथित अपराध की केंद्रीय सरकार को साठ दिनों की लिखित सूचना देने के बाद शिकायत दर्ज कर सकता है।",
+          "verdict": "सही",
+          "reason": "धारा 19 शिकायतों को केवल केंद्रीय सरकार या अधिकृत अधिकारियों तक सीमित करती है, लेकिन इसका उपबंध नागरिकों को केंद्रीय सरकार को अनिवार्य 60-दिन पूर्व सूचना देने के बाद शिकायत दर्ज करने की अनुमति देता है — यह सटीक रूप से बताया गया है।"
+        },
+        {
+          "statement": "राष्ट्रीय हरित अधिकरण, EPA 1986 की धारा 19 के तहत अदालतों की तरह, पर्यावरणीय उल्लंघनों की स्व-प्रेरित जानकारी नहीं ले सकता और कार्रवाई करने से पहले पीड़ित व्यक्ति से औपचारिक शिकायत या आवेदन की आवश्यकता होती है।",
+          "verdict": "गलत",
+          "reason": "धारा 19 के तहत अदालतों पर लगी पाबंदी के विपरीत, NGT अधिनियम 2010 राष्ट्रीय हरित अधिकरण को पर्यावरणीय मामलों की स्व-प्रेरित जानकारी लेने की अनुमति देता है — यह केवल निर्दिष्ट प्राधिकरणों द्वारा शुरू की गई शिकायतों तक सीमित नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि EPA और NGT दोनों पर्यावरणीय मामलों से संबंधित हैं, वे मान सकते हैं कि दोनों समान जानकारी नियमों का पालन करते हैं, इसलिए दोनों कथनों को सही मानकर (a) चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: धारा 19 के तहत नागरिकों द्वारा शिकायत दर्ज करने से पहले 60-दिन की पूर्व सूचना की आवश्यकता एक सटीक प्रक्रियात्मक तथ्य है — कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: NGT के स्व-प्रेरित अधिकार इसे धारा 19 के तहत अदालतों से अलग करते हैं — NGT स्व-प्रेरित कार्रवाई कर सकता है जबकि धारा 19 के तहत अदालतें नहीं कर सकतीं। कथन 2 गलत है।",
+        "चूंकि कथन 1 सही है और कथन 2 गलत है, अतः उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में जाल धारा 19 के तहत काम करने वाली अदालतों और NGT के बीच सतही समानता का फायदा उठाता है — दोनों EPA उल्लंघनों से संबंधित हैं, और छात्र मान सकते हैं कि दोनों समान प्रक्रियात्मक प्रतिबंधों का पालन करते हैं। महत्वपूर्ण अंतर यह है कि NGT की संरचना ने सार्वजनिक पहुंच को धारा 19 के संकुचित ढांचे से परे विस्तारित किया है। NGT स्व-प्रेरित जानकारी ले सकता है; धारा 19 से बंधी अदालतें नहीं। यह अंतर EPA 1986 और NGT अधिनियम 2010 के बीच सबसे अधिक परीक्षण किए गए विरोधाभासों में से एक है।",
+      "final_explanation": "EPA उल्लंघनों की जानकारी लेने के लिए प्रक्रियात्मक ढांचे में दो अलग-अलग मार्ग हैं — धारा 19 के तहत अदालत मार्ग और NGT अधिनियम 2010 के तहत NGT मार्ग।\n\n• कथन 1 — सही: धारा 19 अदालतों को केवल केंद्रीय सरकार या अधिकृत अधिकारियों की शिकायत पर ही जानकारी लेने की अनुमति देती है। उपबंध एक संकुचित नागरिक मुकदमे का मार्ग बनाता है: नागरिक को शिकायत दर्ज करने से पहले सरकार को 60 दिनों की लिखित सूचना देनी होती है। यदि सरकार कार्रवाई नहीं करती है, तो नागरिक अदालत का रुख कर सकता है।\n• कथन 2 — गलत: NGT अधिनियम 2010 धारा 19 की पाबंदी को दोहराता नहीं है। NGT पर्यावरणीय उल्लंघनों की स्व-प्रेरित जानकारी ले सकता है — यह न्यायिक पहुंच का एक महत्वपूर्ण विस्तार है जो धारा 19 के तहत अदालतों के पास नहीं है।\n\nमूल्य संवर्धन:\n• धारा 19 के तहत 60-दिन की सूचना एक अनिवार्य प्रक्रियात्मक आवश्यकता है; इसका पालन न करना शिकायत के लिए घातक है।\n• अनुच्छेद 32 और 226 के तहत PIL का उपयोग ऐतिहासिक रूप से धारा 19 की पाबंदियों को दरकिनार करने के लिए किया गया है (MC Mehta मामले)।\n• NGT ने स्व-प्रेरित अधिकार का उपयोग नदी प्रदूषण, कचरा डंपिंग, और वन अतिक्रमण से संबंधित मामलों में किया है।"
+    }
+  },
+  {
+    "uuid": "a3106f32-aaa6-48ff-bf37-6d49007f5f68",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Hazardous Substances Regulation under EPA: Sections 6, 7, 8"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Hazardous Waste Rules under EPA not Factories Act",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Hazardous Waste (Management, Handling and Transboundary Movement) Rules, which regulate the generation, storage, treatment, and disposal of hazardous waste in India, are subordinate legislation framed under the ________.\n\n(a) Water (Prevention and Control of Pollution) Act 1974\n(b) Factories Act 1948\n(c) Public Liability Insurance Act 1991\n(d) Environment Protection Act 1986",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who associate hazardous substances with industrial safety and the Factories Act 1948 (which does regulate workplace hazardous materials) may select option (b), confusing occupational safety law with environmental law.",
+      "elimination_logic": [
+        "Identify what the blank refers to: the parent statute under which Hazardous Waste Management Rules are framed.",
+        "Eliminate (a): The Water Act 1974 regulates water pollution but does not provide the framework for hazardous waste management rules.",
+        "Eliminate (b): The Factories Act 1948 governs worker safety with respect to hazardous substances in workplaces — it is not the basis for the Hazardous Waste Management Rules applicable to environment protection.",
+        "Eliminate (c): The Public Liability Insurance Act 1991 mandates insurance for handling hazardous substances but is not the parent statute for Hazardous Waste Management Rules.",
+        "Confirm (d): Hazardous Waste Management Rules (framed in 1989 and subsequently revised) are subordinate legislation under EPA 1986, specifically deriving from Sections 6, 7, and 8 of the Act."
+      ],
+      "upsc_trap_explanation": "The Factories Act 1948 regulates hazardous substances in the context of worker and workplace safety. Students who associate 'hazardous substances' primarily with industrial/factory settings may conflate the occupational safety framework with the environmental law framework. However, Hazardous Waste Management Rules are environmental regulations framed under EPA 1986 — not under the Factories Act. The Manufacture, Storage and Import of Hazardous Chemicals Rules 1989 are also framed under EPA 1986.",
+      "final_explanation": "The regulation of hazardous waste in India's environmental law framework flows from EPA 1986.\n\n• Option (a) — Water Act 1974: Incorrect. The Water Act regulates pollution of water bodies but does not provide the basis for comprehensive hazardous waste management rules.\n• Option (b) — Factories Act 1948: Incorrect. The Factories Act governs worker safety in relation to hazardous chemicals at the workplace — a distinct regulatory domain from environmental waste management.\n• Option (c) — Public Liability Insurance Act 1991: Incorrect. This Act mandates liability insurance for industries handling hazardous substances but does not itself frame waste management rules.\n• Option (d) — Environment Protection Act 1986: Correct. Sections 6, 7, and 8 of EPA 1986 empower the Central Government to regulate hazardous substances. The Hazardous Waste (Management, Handling and Transboundary Movement) Rules and the Manufacture, Storage and Import of Hazardous Chemicals Rules 1989 are framed under EPA 1986.\n\nValue Addition:\n• E-waste Rules, Plastic Waste Rules, and Biomedical Waste Rules are also framed under EPA 1986.\n• Section 8 of EPA prohibits handling of hazardous substances except in compliance with prescribed procedures.\n• The Bhopal Gas Tragedy (1984) directly catalysed the enactment of EPA 1986 and its hazardous substance provisions."
+    },
+    "hi": {
+      "display_text": "भारत में खतरनाक अपशिष्ट (प्रबंधन, संचालन और सीमा पार आंदोलन) नियम, जो खतरनाक अपशिष्ट के उत्पादन, भंडारण, उपचार और निपटान को नियंत्रित करते हैं, निम्नलिखित अधिनियम के तहत बनाए गए उप-नियम हैं ________।\n\n(a) जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974\n(b) फैक्ट्री अधिनियम 1948\n(c) सार्वजनिक दायित्व बीमा अधिनियम 1991\n(d) पर्यावरण संरक्षण अधिनियम 1986",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो खतरनाक पदार्थों को औद्योगिक सुरक्षा और फैक्ट्री अधिनियम 1948 (जो कार्यस्थल के खतरनाक पदार्थों को नियंत्रित करता है) से जोड़ते हैं, वे विकल्प (b) चुन सकते हैं, जिससे व्यावसायिक सुरक्षा कानून और पर्यावरण कानून में भ्रम होता है।",
+      "elimination_logic": [
+        "रिक्त स्थान किसका संदर्भ है यह पहचानें: वह मूल अधिनियम जिसके अंतर्गत खतरनाक अपशिष्ट प्रबंधन नियम बनाए गए हैं।",
+        "विकल्प (a) को हटाएं: जल अधिनियम 1974 जल प्रदूषण को नियंत्रित करता है लेकिन खतरनाक अपशिष्ट प्रबंधन नियमों के लिए ढांचा प्रदान नहीं करता।",
+        "विकल्प (b) को हटाएं: फैक्ट्री अधिनियम 1948 कार्यस्थल में खतरनाक पदार्थों के संबंध में श्रमिक सुरक्षा को नियंत्रित करता है — यह पर्यावरण संरक्षण के लिए लागू खतरनाक अपशिष्ट प्रबंधन नियमों का आधार नहीं है।",
+        "विकल्प (c) को हटाएं: सार्वजनिक दायित्व बीमा अधिनियम 1991 खतरनाक पदार्थों के संचालन के लिए बीमा अनिवार्य करता है लेकिन खतरनाक अपशिष्ट प्रबंधन नियमों का मूल अधिनियम नहीं है।",
+        "विकल्प (d) की पुष्टि करें: खतरनाक अपशिष्ट (प्रबंधन, संचालन और सीमा पार आंदोलन) नियम 1989 और बाद में संशोधित नियम पर्यावरण संरक्षण अधिनियम 1986 के तहत बनाए गए अधिनियम के खंड 6, 7, और 8 के अधीन उप-नियम हैं।"
+      ],
+      "upsc_trap_explanation": "फैक्ट्री अधिनियम 1948 श्रमिक और कार्यस्थल सुरक्षा के संदर्भ में खतरनाक पदार्थों को नियंत्रित करता है। जो छात्र 'खतरनाक पदार्थ' को मुख्यतः औद्योगिक/फैक्ट्री संदर्भ में देखते हैं, वे व्यावसायिक सुरक्षा ढांचे को पर्यावरण कानून से भ्रमित कर सकते हैं। हालांकि, खतरनाक अपशिष्ट प्रबंधन नियम पर्यावरण संरक्षण अधिनियम 1986 के तहत बनाए गए पर्यावरणीय नियम हैं — फैक्ट्री अधिनियम के तहत नहीं। खतरनाक रसायनों के निर्माण, भंडारण और आयात नियम 1989 भी पर्यावरण संरक्षण अधिनियम 1986 के तहत बनाए गए हैं।",
+      "final_explanation": "भारत के पर्यावरण कानून ढांचे में खतरनाक अपशिष्ट का नियमन पर्यावरण संरक्षण अधिनियम 1986 से होता है।\n\n• विकल्प (a) — जल अधिनियम 1974: गलत। जल अधिनियम जल निकायों के प्रदूषण को नियंत्रित करता है लेकिन व्यापक खतरनाक अपशिष्ट प्रबंधन नियमों का आधार नहीं है।\n• विकल्प (b) — फैक्ट्री अधिनियम 1948: गलत। फैक्ट्री अधिनियम कार्यस्थल पर खतरनाक रसायनों के संबंध में श्रमिक सुरक्षा को नियंत्रित करता है — जो पर्यावरणीय अपशिष्ट प्रबंधन से अलग नियामक क्षेत्र है।\n• विकल्प (c) — सार्वजनिक दायित्व बीमा अधिनियम 1991: गलत। यह अधिनियम खतरनाक पदार्थों को संभालने वाले उद्योगों के लिए बीमा अनिवार्य करता है लेकिन स्वयं अपशिष्ट प्रबंधन नियम नहीं बनाता।\n• विकल्प (d) — पर्यावरण संरक्षण अधिनियम 1986: सही। पर्यावरण संरक्षण अधिनियम 1986 के खंड 6, 7, और 8 केंद्रीय सरकार को खतरनाक पदार्थों को नियंत्रित करने का अधिकार देते हैं। खतरनाक अपशिष्ट (प्रबंधन, संचालन और सीमा पार आंदोलन) नियम और खतरनाक रसायनों के निर्माण, भंडारण और आयात नियम 1989 इसी अधिनियम के तहत बनाए गए हैं।\n\nमूल्यवर्धन:\n• ई-कचरा नियम, प्लास्टिक कचरा नियम, और जैव चिकित्सा कचरा नियम भी पर्यावरण संरक्षण अधिनियम 1986 के तहत बनाए गए हैं।\n• पर्यावरण संरक्षण अधिनियम की धारा 8 खतरनाक पदार्थों के संचालन को केवल निर्धारित प्रक्रियाओं के अनुपालन में अनुमति देती है।\n• भोपाल गैस त्रासदी (1984) ने सीधे पर्यावरण संरक्षण अधिनियम 1986 और इसके खतरनाक पदार्थ प्रावधानों के निर्माण को प्रेरित किया।"
+    }
+  },
+  {
+    "uuid": "a2c22261-e078-4db6-a0e8-10176e2312cc",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Duty to Furnish Information: Section 9 and Accident Reporting",
+        "Entry and Inspection Powers: Section 10 and Section 11"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Section 9 accident reporting and Section 10 inspection powers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — of a section number and its corresponding subject matter under the Environment Protection Act 1986 — is correctly matched?\n\n(a) Section 9 — Power of authorised persons to enter and inspect premises and seize records\n(b) Section 9 — Mandatory duty to report accidents causing or likely to cause environmental pollution\n(c) Section 10 — Power to analyze samples and submit reports as evidence in court\n(d) Section 13 — Prescribed procedure for reporting industrial accidents to authorities",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may conflate Section 11 (power to analyze samples) with Section 10 (entry and inspection) because both relate to field enforcement activities, making option (c)'s description feel plausible for Section 10.",
+      "elimination_logic": [
+        "Evaluate (a): Section 9 is about mandatory accident reporting — not about entry and inspection. The pairing with 'power to enter and inspect premises' is incorrect.",
+        "Evaluate (b): Section 9 mandates the duty to furnish information about accidents causing or likely to cause environmental pollution. This matches correctly.",
+        "Evaluate (c): Section 10 deals with entry, inspection, examination of equipment, and seizure of records — not sample analysis. Sample analysis powers are under Section 11.",
+        "Evaluate (d): Section 13 relates to appointment of Government Analysts — not accident reporting procedures. The pairing is incorrect.",
+        "Option (b) is the correctly matched pair."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges Sections 10 and 11, which are adjacent provisions dealing with related field enforcement activities (entry/inspection and sample analysis respectively). Option (c) attributes Section 10's domain (physical entry and inspection) to sample analysis, which is actually Section 11's domain. Students who have not carefully distinguished these adjacent sections will be confused between (b) and (c).",
+      "final_explanation": "EPA 1986's enforcement architecture is structured across Sections 9–13, each with a distinct function.\n\n• Option (a) — Section 9 with 'entry and inspection': Incorrectly matched. Section 9 deals with the mandatory duty to report accidents, not entry/inspection powers.\n• Option (b) — Section 9 with 'duty to report accidents': Correctly matched. Section 9 imposes a mandatory obligation on persons handling hazardous substances or responsible for activities causing accidents to report to the prescribed authority and render necessary assistance.\n• Option (c) — Section 10 with 'power to analyze samples': Incorrectly matched. Section 10 grants authorized persons the power to enter and inspect premises, examine equipment, and seize records. Sample analysis powers are under Section 11.\n• Option (d) — Section 13 with 'procedure for accident reporting': Incorrectly matched. Section 13 relates to the appointment of Government Analysts.\n\nValue Addition:\n• The Bhopal Gas Tragedy was the direct catalyst for Section 9's accident-reporting mandate.\n• Section 10 entry powers require prior authorization under Section 4 of EPA — unauthorized entry is invalid.\n• Government Analysts appointed under Section 13 are the only persons whose sample analysis reports carry evidentiary value in EPA prosecutions."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 के अंतर्गत निम्नलिखित में से कौन-सा जोड़ा — एक धारा संख्या और उसके संबंधित विषय वस्तु का — सही मेल खाता है?\n\n(a) धारा 9 — अधिकृत व्यक्तियों को परिसर में प्रवेश करने, निरीक्षण करने और अभिलेख जब्त करने का अधिकार\n(b) धारा 9 — पर्यावरण प्रदूषण उत्पन्न करने वाली या उत्पन्न करने की संभावना वाली दुर्घटनाओं की अनिवार्य रिपोर्टिंग कर्तव्य\n(c) धारा 10 — नमूने विश्लेषण करने और अदालत में साक्ष्य के रूप में रिपोर्ट प्रस्तुत करने का अधिकार\n(d) धारा 13 — औद्योगिक दुर्घटनाओं की रिपोर्टिंग के लिए निर्धारित प्रक्रिया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may conflate Section 11 (power to analyze samples) with Section 10 (entry and inspection) because both relate to field enforcement activities, making option (c)'s description feel plausible for Section 10.",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: धारा 9 अनिवार्य दुर्घटना रिपोर्टिंग के बारे में है — प्रवेश और निरीक्षण के बारे में नहीं। 'प्रवेश और निरीक्षण करने का अधिकार' के साथ जोड़ी गलत है।",
+        "(b) का मूल्यांकन करें: धारा 9 पर्यावरण प्रदूषण उत्पन्न करने वाली या उत्पन्न करने की संभावना वाली दुर्घटनाओं की सूचना देने का अनिवार्य कर्तव्य निर्धारित करती है। यह सही मेल खाता है।",
+        "(c) का मूल्यांकन करें: धारा 10 में प्रवेश, निरीक्षण, उपकरण की जांच और अभिलेख जब्ती शामिल है — नमूना विश्लेषण नहीं। नमूना विश्लेषण के अधिकार धारा 11 के अंतर्गत हैं।",
+        "(d) का मूल्यांकन करें: धारा 13 सरकारी विश्लेषकों की नियुक्ति से संबंधित है — दुर्घटना रिपोर्टिंग प्रक्रिया से नहीं। जोड़ी गलत है।",
+        "(b) विकल्प सही मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल धारा 10 और 11 को मिलाता है, जो संबंधित क्षेत्रीय प्रवर्तन गतिविधियों (प्रवेश/निरीक्षण और नमूना विश्लेषण) से संबंधित निकटवर्ती प्रावधान हैं। विकल्प (c) धारा 10 के क्षेत्र (भौतिक प्रवेश और निरीक्षण) को नमूना विश्लेषण से जोड़ता है, जो वास्तव में धारा 11 का क्षेत्र है। जो छात्र इन निकटवर्ती धाराओं को सावधानीपूर्वक अलग नहीं कर पाए हैं, वे (b) और (c) के बीच भ्रमित होंगे।",
+      "final_explanation": "EPA 1986 की प्रवर्तन संरचना धारा 9–13 के अंतर्गत व्यवस्थित है, प्रत्येक की विशिष्ट भूमिका है।\n\n• विकल्प (a) — धारा 9 के साथ 'प्रवेश और निरीक्षण का अधिकार': गलत मेल। धारा 9 अनिवार्य दुर्घटना रिपोर्टिंग से संबंधित है, प्रवेश/निरीक्षण अधिकार से नहीं।\n• विकल्प (b) — धारा 9 के साथ 'दुर्घटना रिपोर्टिंग का अनिवार्य कर्तव्य': सही मेल। धारा 9 खतरनाक पदार्थों को संभालने वाले या दुर्घटना के लिए जिम्मेदार व्यक्तियों पर दुर्घटना की सूचना संबंधित प्राधिकरण को देने और आवश्यक सहायता प्रदान करने का अनिवार्य दायित्व लगाती है।\n• विकल्प (c) — धारा 10 के साथ 'नमूना विश्लेषण का अधिकार': गलत मेल। धारा 10 अधिकृत व्यक्तियों को परिसर में प्रवेश, निरीक्षण, उपकरण जांच और अभिलेख जब्त करने का अधिकार देती है। नमूना विश्लेषण का अधिकार धारा 11 के अंतर्गत है।\n• विकल्प (d) — धारा 13 के साथ 'दुर्घटना रिपोर्टिंग की प्रक्रिया': गलत मेल। धारा 13 सरकारी विश्लेषकों की नियुक्ति से संबंधित है।\n\nमूल्यवर्धन:\n• भोपाल गैस त्रासदी ने धारा 9 के दुर्घटना-रिपोर्टिंग अनिवार्यता के लिए प्रत्यक्ष उत्प्रेरक का काम किया।\n• धारा 10 के प्रवेश अधिकार EPA की धारा 4 के तहत पूर्व अनुमति पर निर्भर हैं — बिना अनुमति प्रवेश अमान्य है।\n• धारा 13 के तहत नियुक्त सरकारी विश्लेषक ही वे व्यक्ति हैं जिनकी नमूना विश्लेषण रिपोर्ट EPA अभियोगों में साक्ष्य के रूप में मान्य होती है।"
+    }
+  },
+  {
+    "uuid": "dbc3556c-a227-4d9e-b671-3ea449e8ebdf",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Precautionary Principle and Polluter Pays Principle: Judicial Embedding into EPA"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Vellore Citizens — Precautionary and Polluter Pays judicial reading into EPA",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the judicial embedding of environmental principles into the Environment Protection Act 1986:\n\n1. In Vellore Citizens Welfare Forum v. Union of India (1996), the Supreme Court held that the Precautionary Principle and the Polluter Pays Principle are part of Indian law by virtue of their incorporation through customary international law.\n2. The 'precautionary principle' and the 'polluter pays principle' are distinct doctrines: the former aims to prevent harm before it occurs, while the latter assigns responsibility for remediation after harm has occurred.\n3. The text of the Environment Protection Act 1986 explicitly incorporates the Precautionary Principle and the Polluter Pays Principle as statutory mandates.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In Vellore Citizens Welfare Forum v. Union of India (1996), the Supreme Court held that the Precautionary Principle and the Polluter Pays Principle are part of Indian law by virtue of their incorporation through customary international law.",
+          "verdict": "Correct",
+          "reason": "The Supreme Court in Vellore Citizens Welfare Forum (1996) explicitly read these principles into Indian domestic law through the pathway of customary international law, supplemented by Articles 48A, 51A(g), and the EPA framework."
+        },
+        {
+          "statement": "The 'precautionary principle' and the 'polluter pays principle' are distinct doctrines: the former aims to prevent harm before it occurs, while the latter assigns responsibility for remediation after harm has occurred.",
+          "verdict": "Correct",
+          "reason": "These are legally distinct principles — the precautionary principle is preventive (halt activity under uncertainty of harm), while the polluter pays principle is remedial/compensatory (make the polluter bear the cost of remediation)."
+        },
+        {
+          "statement": "The text of the Environment Protection Act 1986 explicitly incorporates the Precautionary Principle and the Polluter Pays Principle as statutory mandates.",
+          "verdict": "Incorrect",
+          "reason": "Neither principle is mentioned by name anywhere in the text of EPA 1986. They were judicially read into the Act through interpretive tools — the actual statute is silent on these principles."
+        }
+      ],
+      "strong_distractor": "d — Students who recall that Vellore Citizens Welfare Forum is a landmark environmental case and that both principles are now well-established may assume all three statements are correct, selecting (d).",
+      "elimination_logic": [
+        "Examine Statement 1: The Vellore Citizens case (1996) specifically cited customary international law as the pathway for incorporating both principles — Statement 1 is correct.",
+        "Examine Statement 2: The distinction between preventive (precautionary) and remedial (polluter pays) is a well-established doctrinal distinction — Statement 2 is correct.",
+        "Examine Statement 3: EPA 1986 does not use the words 'precautionary principle' or 'polluter pays principle' anywhere in its text — the incorporation was entirely judicial. Statement 3 is incorrect.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — answer is (a) 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 3 exploits the strength of the association between EPA 1986 and these principles. Because Vellore Citizens Welfare Forum used EPA as a vehicle for applying these principles, and because they are now so deeply embedded in India's environmental jurisprudence, students naturally assume EPA must explicitly state them. The reality is that these principles entered Indian law through judicial interpretation, not through explicit statutory text.",
+      "final_explanation": "The Precautionary Principle and the Polluter Pays Principle are cornerstones of India's environmental jurisprudence, but their statutory status under EPA 1986 is frequently misunderstood.\n\n• Statement 1 — Correct: The Supreme Court in Vellore Citizens Welfare Forum v. Union of India (1996) held that these principles have become part of Indian domestic law through customary international law, and their adoption is implicit in Articles 48A, 51A(g), and EPA 1986.\n• Statement 2 — Correct: The two principles serve distinct functions. The precautionary principle mandates that where there is scientific uncertainty about harm, protective action must be taken. The polluter pays principle holds that whoever causes environmental damage bears the cost of remediation — a backward-looking, compensatory doctrine.\n• Statement 3 — Incorrect: EPA 1986's statutory text does not mention either principle by name. Their legal status in India is entirely the product of judicial interpretation, not legislative articulation.\n\nValue Addition:\n• Indian Council for Enviro-Legal Action v. Union of India applied absolute liability of polluters for remediation costs under the EPA framework.\n• The precautionary principle has been applied to GM crops, mining in ecologically sensitive areas, and coastal development.\n• The distinction between precautionary (ex ante) and polluter pays (ex post) is a standard UPSC question theme."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 में पर्यावरणीय सिद्धांतों के न्यायिक समावेशन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Vellore Citizens Welfare Forum v. Union of India (1996) में, सुप्रीम कोर्ट ने कहा कि Precautionary Principle और Polluter Pays Principle प्रथागत अंतरराष्ट्रीय कानून के माध्यम से भारतीय कानून का हिस्सा हैं।\n2. 'precautionary principle' और 'polluter pays principle' अलग-अलग सिद्धांत हैं: पहला हानि होने से पहले रोकथाम का लक्ष्य रखता है, जबकि दूसरा हानि के बाद पुनर्वास की जिम्मेदारी सौंपता है।\n3. Environment Protection Act 1986 के पाठ में स्पष्ट रूप से Precautionary Principle और Polluter Pays Principle को वैधानिक आदेश के रूप में शामिल किया गया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In Vellore Citizens Welfare Forum v. Union of India (1996), the Supreme Court held that the Precautionary Principle and the Polluter Pays Principle are part of Indian law by virtue of their incorporation through customary international law.",
+          "verdict": "सही है",
+          "reason": "सुप्रीम कोर्ट ने Vellore Citizens Welfare Forum (1996) में स्पष्ट रूप से इन सिद्धांतों को भारतीय घरेलू कानून में प्रथागत अंतरराष्ट्रीय कानून के माध्यम से शामिल किया, जिसे अनुच्छेद 48A, 51A(g), और EPA ढांचे द्वारा पूरक किया गया।"
+        },
+        {
+          "statement": "'precautionary principle' और 'polluter pays principle' अलग-अलग सिद्धांत हैं: पहला हानि होने से पहले रोकथाम का लक्ष्य रखता है, जबकि दूसरा हानि के बाद पुनर्वास की जिम्मेदारी सौंपता है।",
+          "verdict": "सही है",
+          "reason": "ये कानूनी रूप से भिन्न सिद्धांत हैं — precautionary principle निवारक है (हानि की अनिश्चितता में गतिविधि रोकना), जबकि polluter pays principle उपचारात्मक/प्रतिपूर्ति संबंधी है (प्रदूषक को पुनर्वास की लागत वहन कराना)।"
+        },
+        {
+          "statement": "Environment Protection Act 1986 के पाठ में स्पष्ट रूप से Precautionary Principle और Polluter Pays Principle को वैधानिक आदेश के रूप में शामिल किया गया है।",
+          "verdict": "गलत है",
+          "reason": "EPA 1986 के पाठ में कहीं भी इन सिद्धांतों का नाम नहीं लिया गया है। इन्हें न्यायिक व्याख्या के माध्यम से अधिनियम में पढ़ा गया है — वास्तविक विधि में ये सिद्धांत मौन हैं।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र याद करते हैं कि Vellore Citizens Welfare Forum एक महत्वपूर्ण पर्यावरणीय मामला है और दोनों सिद्धांत अब अच्छी तरह स्थापित हैं, वे मान सकते हैं कि तीनों कथन सही हैं, इसलिए (d) चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 का परीक्षण करें: Vellore Citizens मामला (1996) ने दोनों सिद्धांतों को शामिल करने के लिए प्रथागत अंतरराष्ट्रीय कानून को विशेष रूप से उद्धृत किया — कथन 1 सही है।",
+        "कथन 2 का परीक्षण करें: निवारक (precautionary) और उपचारात्मक (polluter pays) के बीच भेद एक स्थापित सैद्धांतिक भेद है — कथन 2 सही है।",
+        "कथन 3 का परीक्षण करें: EPA 1986 के पाठ में 'precautionary principle' या 'polluter pays principle' शब्द कहीं नहीं हैं — समावेशन पूरी तरह न्यायिक था। कथन 3 गलत है।",
+        "कथन 1 और 2 सही हैं, कथन 3 गलत है — उत्तर है (a) केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में फंदा EPA 1986 और इन सिद्धांतों के बीच मजबूत संबंध का लाभ उठाता है। क्योंकि Vellore Citizens Welfare Forum ने EPA को इन सिद्धांतों को लागू करने के वाहन के रूप में उपयोग किया, और ये अब भारत के पर्यावरण न्यायशास्त्र में गहराई से समाहित हैं, छात्र स्वाभाविक रूप से मान लेते हैं कि EPA में इन्हें स्पष्ट रूप से उल्लेखित किया गया होगा। वास्तविकता यह है कि ये सिद्धांत न्यायिक व्याख्या के माध्यम से भारतीय कानून में आए, न कि स्पष्ट वैधानिक पाठ के माध्यम से।",
+      "final_explanation": "Precautionary Principle और Polluter Pays Principle भारत के पर्यावरण न्यायशास्त्र के आधार स्तंभ हैं, लेकिन EPA 1986 के तहत उनकी वैधानिक स्थिति अक्सर गलत समझी जाती है।\n\n• कथन 1 — सही: सुप्रीम कोर्ट ने Vellore Citizens Welfare Forum v. Union of India (1996) में कहा कि ये सिद्धांत प्रथागत अंतरराष्ट्रीय कानून के माध्यम से भारतीय घरेलू कानून का हिस्सा बन गए हैं, और उनका अंगीकरण अनुच्छेद 48A, 51A(g), और EPA 1986 में निहित है।\n• कथन 2 — सही: ये दोनों सिद्धांत अलग-अलग कार्य करते हैं। precautionary principle कहता है कि जहां वैज्ञानिक अनिश्चितता हो, वहां सुरक्षा उपाय किए जाएं। polluter pays principle कहता है कि जो पर्यावरणीय क्षति करता है, वह पुनर्वास की लागत वहन करे — यह एक प्रतिपूरक सिद्धांत है।\n• कथन 3 — गलत: EPA 1986 के वैधानिक पाठ में इन सिद्धांतों का नाम कहीं नहीं है। भारत में इनकी कानूनी स्थिति पूरी तरह न्यायिक व्याख्या का परिणाम है, न कि विधायी अभिव्यक्ति।\n\nमूल्यवर्धन:\n• Indian Council for Enviro-Legal Action v. Union of India ने EPA के तहत प्रदूषकों की पूर्ण दायित्व सिद्धांत को लागू किया।\n• precautionary principle का उपयोग GM फसलों, पारिस्थितिक रूप से संवेदनशील क्षेत्रों में खनन, और तटीय विकास में किया गया है।\n• precautionary (पूर्व-घटना) और polluter pays (पश्चात-घटना) के बीच भेद UPSC के मानक प्रश्न विषय हैं।"
+    }
+  },
+  {
+    "uuid": "00e7b1df-9de1-4e74-866b-b6f308446b87",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Offences, Penalties and Enforcement Mechanisms under EPA 1986"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Section 15 penalty provisions and continuing offence enhanced punishment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about offences and penalties under the Environment Protection Act 1986:\n\n1. Under Section 15 of EPA 1986, the maximum imprisonment for a first offence is seven years, and for a continuing offence, an additional fine of ₹5,000 per day may be imposed.\n2. Section 16 of EPA 1986 provides that where a company commits an offence under the Act, both the person in charge of and responsible for the conduct of the company's business AND the company itself are liable to be proceeded against.\n3. Under Section 17 of EPA 1986, where a government department commits an offence, the Head of the Department is deemed to be guilty of the offence unless they prove the offence was committed without their knowledge or that they exercised due diligence.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under Section 15 of EPA 1986, the maximum imprisonment for a first offence is seven years, and for a continuing offence, an additional fine of ₹5,000 per day may be imposed.",
+          "verdict": "Incorrect",
+          "reason": "Section 15 prescribes imprisonment up to 5 years (not 7 years) for a first offence, with a fine up to ₹1 lakh or both. For a continuing offence beyond conviction, an additional fine of ₹5,000 per day is prescribed — but after 1 year of continuation of offence, minimum imprisonment of 2 years is triggered."
+        },
+        {
+          "statement": "Section 16 of EPA 1986 provides that where a company commits an offence under the Act, both the person in charge of and responsible for the conduct of the company's business AND the company itself are liable to be proceeded against.",
+          "verdict": "Correct",
+          "reason": "Section 16 establishes vicarious liability by holding both the person-in-charge and the company jointly liable — this dual liability is the hallmark of corporate environmental liability under EPA 1986."
+        },
+        {
+          "statement": "Under Section 17 of EPA 1986, where a government department commits an offence, the Head of the Department is deemed to be guilty of the offence unless they prove the offence was committed without their knowledge or that they exercised due diligence.",
+          "verdict": "Correct",
+          "reason": "Section 17 imposes a presumptive liability on the Head of Department — they are deemed guilty and must rebut this by proving lack of knowledge or exercise of due diligence, which is consistent with the Act's objective of making environmental compliance a leadership responsibility."
+        }
+      ],
+      "strong_distractor": "d — Students who associate environmental offences with long imprisonment (like 7 years) from other regulatory statutes may mark Statement 1 as correct, leading them to select (d) — all three correct.",
+      "elimination_logic": [
+        "Check Statement 1: Section 15 prescribes maximum 5 years imprisonment, not 7 years — the temporal/numerical swap makes Statement 1 incorrect.",
+        "Check Statement 2: Section 16's dual liability on person-in-charge and company is accurately described — Statement 2 is correct.",
+        "Check Statement 3: Section 17's presumptive liability on heads of government departments with a due diligence defence is accurately stated — Statement 3 is correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect — answer is (b) 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "The temporal/numerical swap in Statement 1 targets students who associate environmental offences with 7 years imprisonment — a figure that appears in other Acts like the Wildlife Protection Act (for certain grave offences) or the Forest Conservation Act. EPA 1986's Section 15 caps first-offence imprisonment at 5 years. The confusing detail about the continuing offence's ₹5,000 per day fine is correctly stated, making the statement partially true and harder to reject.",
+      "final_explanation": "EPA 1986's penalty framework is calibrated to create deterrence at multiple levels — individual, corporate, and governmental.\n\n• Statement 1 — Incorrect: Section 15 prescribes imprisonment up to 5 years (not 7 years) or fine up to ₹1 lakh or both. After conviction, if the offence continues, an additional fine of ₹5,000 per day is levied. After 1 year of the continuing offence, a minimum imprisonment of 2 years is triggered.\n• Statement 2 — Correct: Section 16 creates a dual liability structure — both the person-in-charge of the company and the company itself face prosecution. Directors, managers, secretaries, and other officers may also be held liable if they consented or were negligent.\n• Statement 3 — Correct: Section 17 makes the head of a government department presumptively liable when the department commits an offence — a rebuttable presumption that can be displaced by proving lack of knowledge or due diligence.\n\nValue Addition:\n• After 7 years of a continuing offence, enhanced minimum imprisonment applies under Section 15.\n• Section 17 is significant because it prevents government departments from using sovereign immunity as a shield against EPA prosecution.\n• EPA's penalty levels are lower than some other environmental statutes — the NGT Act 2010 can impose much larger penalties."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 के तहत अपराधों और दंडों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. EPA 1986 की धारा 15 के तहत, पहली अपराध के लिए अधिकतम कारावास सात वर्ष है, और जारी अपराध के लिए प्रति दिन ₹5,000 का अतिरिक्त जुर्माना लगाया जा सकता है।\n2. EPA 1986 की धारा 16 यह प्रावधान करती है कि यदि कोई कंपनी अधिनियम के तहत अपराध करती है, तो कंपनी के व्यवसाय के संचालन के प्रभारी और जिम्मेदार व्यक्ति तथा कंपनी दोनों के खिलाफ कार्रवाई की जा सकती है।\n3. EPA 1986 की धारा 17 के तहत, यदि कोई सरकारी विभाग अपराध करता है, तो विभाग के प्रमुख को अपराध का दोषी माना जाता है जब तक कि वे यह साबित न कर दें कि अपराध उनके ज्ञान के बिना हुआ या उन्होंने उचित परिश्रम (due diligence) का पालन किया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "EPA 1986 की धारा 15 के तहत, पहली अपराध के लिए अधिकतम कारावास सात वर्ष है, और जारी अपराध के लिए प्रति दिन ₹5,000 का अतिरिक्त जुर्माना लगाया जा सकता है।",
+          "verdict": "गलत",
+          "reason": "धारा 15 पहली अपराध के लिए अधिकतम 5 वर्ष की कारावास (7 वर्ष नहीं) और ₹1 लाख तक का जुर्माना या दोनों निर्धारित करती है। दोषसिद्धि के बाद जारी अपराध के लिए प्रति दिन ₹5,000 का अतिरिक्त जुर्माना लगाया जाता है — लेकिन जारी अपराध के 1 वर्ष बाद न्यूनतम 2 वर्ष की कारावास लागू होती है।"
+        },
+        {
+          "statement": "EPA 1986 की धारा 16 यह प्रावधान करती है कि यदि कोई कंपनी अधिनियम के तहत अपराध करती है, तो कंपनी के व्यवसाय के संचालन के प्रभारी और जिम्मेदार व्यक्ति तथा कंपनी दोनों के खिलाफ कार्रवाई की जा सकती है।",
+          "verdict": "सही",
+          "reason": "धारा 16 में कंपनी के प्रभारी व्यक्ति और कंपनी दोनों को संयुक्त रूप से उत्तरदायी ठहराकर परोक्ष दायित्व स्थापित किया गया है — यह द्वैध दायित्व EPA 1986 के तहत कॉर्पोरेट पर्यावरणीय दायित्व की विशेषता है।"
+        },
+        {
+          "statement": "EPA 1986 की धारा 17 के तहत, यदि कोई सरकारी विभाग अपराध करता है, तो विभाग के प्रमुख को अपराध का दोषी माना जाता है जब तक कि वे यह साबित न कर दें कि अपराध उनके ज्ञान के बिना हुआ या उन्होंने उचित परिश्रम (due diligence) का पालन किया।",
+          "verdict": "सही",
+          "reason": "धारा 17 विभाग के प्रमुख पर अनुमानित दायित्व लगाती है — उन्हें दोषी माना जाता है और उन्हें यह साबित करना होता है कि उन्हें जानकारी नहीं थी या उन्होंने उचित परिश्रम किया, जो अधिनियम के पर्यावरणीय अनुपालन को नेतृत्व की जिम्मेदारी बनाने के उद्देश्य के अनुरूप है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो पर्यावरणीय अपराधों को अन्य नियामक अधिनियमों से जुड़े लंबे कारावास (जैसे 7 वर्ष) से जोड़ते हैं, वे कथन 1 को सही मानकर (d) — सभी तीन सही विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: धारा 15 अधिकतम 5 वर्ष की कारावास निर्धारित करती है, 7 वर्ष नहीं — समय/संख्या में बदलाव के कारण कथन 1 गलत है।",
+        "कथन 2 जांचें: धारा 16 में कंपनी के प्रभारी व्यक्ति और कंपनी दोनों की द्वैध दायित्व सही रूप से वर्णित है — कथन 2 सही है।",
+        "कथन 3 जांचें: धारा 17 में सरकारी विभागों के प्रमुखों पर अनुमानित दायित्व और उचित परिश्रम की रक्षा सही रूप से बताई गई है — कथन 3 सही है।",
+        "कथन 2 और 3 सही, कथन 1 गलत — उत्तर (b) केवल 2 और 3 है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में समय/संख्या का बदलाव उन छात्रों को भ्रमित करता है जो पर्यावरणीय अपराधों को 7 वर्ष की कारावास से जोड़ते हैं — यह संख्या अन्य अधिनियमों जैसे वन्यजीव संरक्षण अधिनियम (कुछ गंभीर अपराधों के लिए) या वन संरक्षण अधिनियम में मिलती है। EPA 1986 की धारा 15 पहली अपराध के लिए अधिकतम 5 वर्ष कारावास निर्धारित करती है। जारी अपराध के प्रति दिन ₹5,000 जुर्माने का विवरण सही है, जिससे कथन आंशिक रूप से सही और अस्वीकार करना कठिन हो जाता है।",
+      "final_explanation": "EPA 1986 का दंड ढांचा व्यक्तिगत, कॉर्पोरेट और सरकारी स्तर पर निवारक प्रभाव पैदा करने के लिए समायोजित है।\n\n• कथन 1 — गलत: धारा 15 अधिकतम 5 वर्ष की कारावास (7 वर्ष नहीं) या ₹1 लाख तक का जुर्माना या दोनों निर्धारित करती है। दोषसिद्धि के बाद, यदि अपराध जारी रहता है, तो प्रति दिन ₹5,000 का अतिरिक्त जुर्माना लगाया जाता है। जारी अपराध के 1 वर्ष बाद न्यूनतम 2 वर्ष की कारावास लागू होती है।\n• कथन 2 — सही: धारा 16 द्वैध दायित्व संरचना बनाती है — कंपनी के प्रभारी व्यक्ति और कंपनी दोनों के खिलाफ कार्रवाई होती है। निदेशक, प्रबंधक, सचिव और अन्य अधिकारी भी जिम्मेदार ठहराए जा सकते हैं यदि उन्होंने सहमति दी हो या लापरवाही की हो।\n• कथन 3 — सही: धारा 17 सरकारी विभाग के प्रमुख को अनुमानित दायित्व देती है — यह एक प्रत्याख्येय अनुमान है जिसे ज्ञान की कमी या उचित परिश्रम साबित करके खंडित किया जा सकता है।\n\nमूल्य संवर्धन:\n• जारी अपराध के 7 वर्ष बाद धारा 15 के तहत बढ़ी हुई न्यूनतम कारावास लागू होती है।\n• धारा 17 महत्वपूर्ण है क्योंकि यह सरकारी विभागों को EPA अभियोजन के खिलाफ संप्रभु अभयारण्य का उपयोग करने से रोकती है।\n• EPA के दंड स्तर कुछ अन्य पर्यावरणीय अधिनियमों की तुलना में कम हैं — NGT अधिनियम 2010 बहुत बड़े दंड लगा सकता है।"
+    }
+  },
+  {
+    "uuid": "fefb3e57-b501-47dc-b203-21c3d9e59c64",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Constitutional Basis and Legislative Competence of EPA 1986",
+        "Relationship Between EPA 1986 and Other Environmental Laws: Hierarchy and Overlaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Article 252 state consent Water Air Acts vs Article 253 EPA",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Environment Protection Act 1986 does not require the prior consent of state legislatures and applies uniformly across all states and union territories of India.\n\nReason (R): The Water (Prevention and Control of Pollution) Act 1974 and the Air (Prevention and Control of Pollution) Act 1981 were enacted under Article 252 of the Constitution, which necessitates resolutions from state legislatures before Parliament can legislate on the concerned subjects.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who correctly identify both A and R as true may assume the relationship is causal without recognising that R describes the constitutional mechanism for Water/Air Acts, not the reason EPA does not need state consent.",
+      "elimination_logic": [
+        "Step 1 — Is A correct? Yes. EPA 1986 does not require prior state legislative consent because it is enacted under Article 253 (international agreements), which grants Parliament unilateral legislative power.",
+        "Step 2 — Is R correct? Yes. The Water Act 1974 and Air Act 1981 were indeed enacted under Article 252, which requires state legislatures to pass resolutions enabling Parliament to legislate.",
+        "Step 3 — Does R causally explain A? No. R correctly describes how the Water and Air Acts were enacted, but the reason EPA 1986 does not require state consent is its own basis — Article 253 — not merely the contrast with Article 252 Acts. R is a true comparative fact, not the causal explanation for A.",
+        "Both A and R correct, R does NOT explain A — answer is (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "This question probes the constitutional architecture of India's environmental legislation and the distinct pathways Parliament used to legislate.\n\nAssertion (A): Correct. EPA 1986 derives from Article 253, which gives Parliament unilateral power to make laws implementing India's international obligations. No state consent is required — Parliament can legislate regardless of state opposition.\n\nReason (R): Correct. The Water Act 1974 and Air Act 1981 were enacted under Article 252, which requires state legislatures to pass resolutions authorising Parliament to legislate on subjects in the State or Concurrent List. Several states passed such resolutions before these Acts were enacted.\n\nCausal relationship: R does not explain A. R accurately describes the mechanism for the Water/Air Acts, but the reason EPA does not need state consent is its own constitutional basis — Article 253 — not the contrast with Article 252. Both facts are independently true but R does not cause or explain A.\n\nThe answer is (b): Both A and R are correct, but R is NOT the correct explanation of A.\n\nValue Addition:\n• Article 252 Acts (Water, Air) apply only to states that have consented; other states may adopt them later by passing resolutions.\n• Article 253 legislation applies to all of India automatically, making EPA a truly pan-Indian statute.\n• This constitutional difference has implications for amendment, repeal, and state override of these Acts."
+    },
+    "hi": {
+      "display_text": "दावा (A): पर्यावरण संरक्षण अधिनियम 1986 को राज्य विधानसभाओं की पूर्व सहमति की आवश्यकता नहीं है और यह भारत के सभी राज्यों और केंद्र शासित प्रदेशों में समान रूप से लागू होता है।\n\nकारण (R): जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974 और वायु (प्रदूषण निवारण और नियंत्रण) अधिनियम 1981 संविधान के अनुच्छेद 252 के तहत अधिनियमित किए गए थे, जिसके लिए संबंधित विषयों पर संसद द्वारा विधायिका करने से पहले राज्य विधानसभाओं के प्रस्ताव आवश्यक होते हैं।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who correctly identify both A and R as true may assume the relationship is causal without recognising that R describes the constitutional mechanism for Water/Air Acts, not the reason EPA does not need state consent.",
+      "elimination_logic": [
+        "चरण 1 — क्या A सही है? हाँ। EPA 1986 को राज्य विधानसभाओं की पूर्व सहमति की आवश्यकता नहीं है क्योंकि इसे अनुच्छेद 253 (अंतरराष्ट्रीय समझौते) के तहत अधिनियमित किया गया है, जो संसद को एकपक्षीय विधायी शक्ति प्रदान करता है।",
+        "चरण 2 — क्या R सही है? हाँ। जल अधिनियम 1974 और वायु अधिनियम 1981 वास्तव में अनुच्छेद 252 के तहत अधिनियमित किए गए थे, जिसके लिए राज्य विधानसभाओं को संसद को विधायिका करने के लिए प्रस्ताव पारित करना आवश्यक है।",
+        "चरण 3 — क्या R, A की कारणात्मक व्याख्या करता है? नहीं। R सही ढंग से बताता है कि जल और वायु अधिनियम कैसे अधिनियमित हुए, लेकिन EPA 1986 को राज्य की सहमति की आवश्यकता न होने का कारण इसका अपना आधार है — अनुच्छेद 253 — न कि केवल अनुच्छेद 252 अधिनियमों के विपरीत। R एक सत्य तुलनात्मक तथ्य है, न कि A के लिए कारणात्मक व्याख्या।",
+        "A और R दोनों सही हैं, लेकिन R, A की व्याख्या नहीं करता — उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह प्रश्न भारत के पर्यावरणीय विधायिका की संवैधानिक संरचना और संसद द्वारा विधायिका के लिए अपनाए गए अलग-अलग मार्गों की जांच करता है।\n\nदावा (A): सही। EPA 1986 अनुच्छेद 253 से उत्पन्न होता है, जो संसद को भारत की अंतरराष्ट्रीय प्रतिबद्धताओं को लागू करने के लिए एकपक्षीय विधायिका शक्ति देता है। राज्य की सहमति आवश्यक नहीं है — संसद राज्य के विरोध के बावजूद विधायिका कर सकती है।\n\nकारण (R): सही। जल अधिनियम 1974 और वायु अधिनियम 1981 अनुच्छेद 252 के तहत अधिनियमित किए गए थे, जो राज्य विधानसभाओं को संसद को राज्य या समवर्ती सूची के विषयों पर विधायिका करने के लिए प्रस्ताव पारित करने की आवश्यकता रखता है। कई राज्यों ने इन अधिनियमों के अधिनियमित होने से पहले ऐसे प्रस्ताव पारित किए थे।\n\nकारणात्मक संबंध: R, A की व्याख्या नहीं करता। R जल/वायु अधिनियमों के लिए तंत्र को सही ढंग से बताता है, लेकिन EPA को राज्य की सहमति की आवश्यकता न होने का कारण इसका अपना संवैधानिक आधार है — अनुच्छेद 253 — न कि अनुच्छेद 252 के विपरीत। दोनों तथ्य स्वतंत्र रूप से सही हैं लेकिन R, A का कारण या व्याख्या नहीं है।\n\nउत्तर है (b): A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 252 अधिनियम (जल, वायु) केवल उन राज्यों पर लागू होते हैं जिन्होंने सहमति दी है; अन्य राज्य बाद में प्रस्ताव पारित करके इन्हें अपना सकते हैं।\n• अनुच्छेद 253 विधायिका स्वतः पूरे भारत पर लागू होती है, जिससे EPA एक वास्तविक पैन-इंडियन अधिनियम बन जाता है।\n• यह संवैधानिक अंतर संशोधन, निरस्तीकरण और राज्य द्वारा अधिनियमों के अधिलेखन के लिए प्रभाव डालता है।"
+    }
+  },
+  {
+    "uuid": "bfa1cea1-d37d-4808-a5c8-fea9bebcb210",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Protection of Bona Fide Actions: Section 18 and Good Faith Immunity"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Section 18 good faith immunity limited to government officers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Section 18 of the Environment Protection Act 1986 provides protection from suits or prosecution for actions taken in good faith. This protection extends to ________.\n\n(a) Any person, including private companies, acting in compliance with EPA notifications and directions\n(b) All persons acting pursuant to EPA directions, including private regulated entities operating under EPA-issued closure or prohibition orders\n(c) Government officers for all actions taken under EPA 1986, regardless of the intent or manner in which such actions are taken\n(d) The Central Government and officers of the government acting in good faith in the exercise or purported exercise of powers under EPA 1986",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Section 18 provides immunity may extend it to all actors involved in environmental regulation, including private companies acting under EPA-issued directions.",
+      "elimination_logic": [
+        "Identify what the blank tests: the extent/beneficiaries of good faith immunity under Section 18.",
+        "Eliminate (a): Section 18 immunity cannot be unlimited — malicious or arbitrary actions are not protected.",
+        "Eliminate (b): Private companies and individuals are not covered by Section 18 immunity — only government officers and the government itself.",
+        "Eliminate (c): Section 18 specifically protects bona fide actions — it does not protect actions taken mala fide or arbitrarily, even if taken by a government officer.",
+        "Confirm (d): Section 18 good faith immunity is confined to the Central Government and its officers acting in good faith under EPA 1986 — it does not extend to private companies or individuals."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap makes students assume that because Section 18 exists to protect environmental enforcement actions, it must cover all actors who participate in such enforcement — including regulated companies. In reality, Section 18 is a shield only for the state and its officers. A private company that damages property while purportedly following an EPA direction cannot claim Section 18 immunity.",
+      "final_explanation": "Section 18 of EPA 1986 is a standard good faith immunity provision protecting the government and its regulatory officers from civil suits and criminal prosecution for actions taken in good faith under the Act.\n\n• Option (a) — 'any person including private companies': Incorrect. Section 18 does not extend to private companies or individuals.\n• Option (b) — 'all persons acting pursuant to EPA directions including private regulated entities': Incorrect. Private entities acting under EPA directions cannot invoke Section 18 immunity.\n• Option (c) — 'government officers regardless of intent or manner of action': Incorrect. The immunity is conditional on good faith — malicious, arbitrary, or negligent actions are not protected even if taken by a government officer.\n• Option (d) — 'the Central Government and officers acting in good faith': Correct. Section 18 protects the Central Government and officers who act in good faith under EPA 1986 — it is a limited, conditional immunity.\n\nValue Addition:\n• Analogous provisions exist in Water Act 1974 (Section 63) and Air Act 1981 (Section 55).\n• 'Good faith' in Indian law generally means honest intention without negligence — it is a question of fact in each case.\n• Section 18 immunity does not bar NGT from ordering restoration or compensation, which are civil remedies, not prosecutions."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 की धारा 18 सद्भावना से किए गए कार्यों के लिए मुकदमों या अभियोजन से सुरक्षा प्रदान करती है। यह सुरक्षा ________ तक फैली है।\n\n(a) कोई भी व्यक्ति, जिसमें निजी कंपनियां भी शामिल हैं, जो EPA अधिसूचनाओं और निर्देशों का पालन करते हैं\n(b) EPA निर्देशों के अनुसार कार्य करने वाले सभी व्यक्ति, जिनमें EPA द्वारा जारी बंद या प्रतिबंध आदेशों के तहत संचालित निजी विनियमित संस्थाएं भी शामिल हैं\n(c) EPA 1986 के तहत किए गए सभी कार्यों के लिए सरकारी अधिकारी, चाहे कार्य की मंशा या तरीका कोई भी हो\n(d) केंद्रीय सरकार और वे सरकारी अधिकारी जो EPA 1986 के तहत शक्तियों के प्रयोग या कथित प्रयोग में सद्भावना से कार्य करते हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि धारा 18 प्रतिरक्षा प्रदान करती है, वे इसे पर्यावरणीय नियमन में शामिल सभी कर्ताओं तक बढ़ा सकते हैं, जिनमें EPA द्वारा जारी निर्देशों के तहत कार्य करने वाली निजी कंपनियां भी शामिल हैं।",
+      "elimination_logic": [
+        "यह पहचानें कि रिक्त स्थान किस बात का परीक्षण करता है: धारा 18 के तहत सद्भावना प्रतिरक्षा की सीमा/लाभार्थी।",
+        "(a) को हटाएं: धारा 18 की प्रतिरक्षा असीमित नहीं हो सकती — दुर्भावनापूर्ण या मनमाने कार्य संरक्षित नहीं हैं।",
+        "(b) को हटाएं: निजी कंपनियां और व्यक्ति धारा 18 की प्रतिरक्षा के अंतर्गत नहीं आते — केवल सरकारी अधिकारी और सरकार स्वयं।",
+        "(c) को हटाएं: धारा 18 विशेष रूप से सद्भावना से किए गए कार्यों की रक्षा करती है — यह दुर्भावनापूर्ण या मनमाने कार्यों की रक्षा नहीं करती, भले ही वे सरकारी अधिकारी द्वारा किए गए हों।",
+        "(d) की पुष्टि करें: धारा 18 की सद्भावना प्रतिरक्षा केवल केंद्रीय सरकार और उसके सद्भावना से कार्य करने वाले अधिकारियों तक सीमित है — यह निजी कंपनियों या व्यक्तियों तक नहीं फैली है।"
+      ],
+      "upsc_trap_explanation": "सीमा-विस्तार जाल छात्रों को यह मानने पर मजबूर करता है कि क्योंकि धारा 18 पर्यावरणीय प्रवर्तन कार्यों की रक्षा के लिए है, इसलिए यह उन सभी कर्ताओं को कवर करती है जो ऐसे प्रवर्तन में भाग लेते हैं — जिनमें विनियमित कंपनियां भी शामिल हैं। वास्तविकता में, धारा 18 केवल राज्य और उसके अधिकारियों के लिए एक ढाल है। एक निजी कंपनी जो EPA के निर्देश का पालन करते हुए संपत्ति को नुकसान पहुंचाती है, वह धारा 18 की प्रतिरक्षा का दावा नहीं कर सकती।",
+      "final_explanation": "EPA 1986 की धारा 18 एक मानक सद्भावना प्रतिरक्षा प्रावधान है जो सरकार और उसके नियामक अधिकारियों को अधिनियम के तहत सद्भावना से किए गए कार्यों के लिए नागरिक मुकदमों और आपराधिक अभियोजन से सुरक्षा प्रदान करता है।\n\n• विकल्प (a) — 'कोई भी व्यक्ति जिसमें निजी कंपनियां भी शामिल हैं': गलत। धारा 18 निजी कंपनियों या व्यक्तियों तक नहीं फैली है।\n• विकल्प (b) — 'EPA निर्देशों के अनुसार कार्य करने वाले सभी व्यक्ति, जिनमें EPA द्वारा जारी बंद या प्रतिबंध आदेशों के तहत संचालित निजी विनियमित संस्थाएं भी शामिल हैं': गलत। EPA निर्देशों के तहत कार्य करने वाली निजी संस्थाएं धारा 18 की प्रतिरक्षा का उपयोग नहीं कर सकतीं।\n• विकल्प (c) — 'सरकारी अधिकारी, चाहे कार्य की मंशा या तरीका कोई भी हो': गलत। प्रतिरक्षा सद्भावना पर निर्भर है — दुर्भावनापूर्ण, मनमाने या लापरवाह कार्य संरक्षित नहीं हैं, भले ही वे सरकारी अधिकारी द्वारा किए गए हों।\n• विकल्प (d) — 'केंद्रीय सरकार और सद्भावना से कार्य करने वाले सरकारी अधिकारी': सही। धारा 18 केंद्रीय सरकार और EPA 1986 के तहत सद्भावना से कार्य करने वाले अधिकारियों की रक्षा करती है — यह एक सीमित, सशर्त प्रतिरक्षा है।\n\nमूल्य संवर्धन:\n• जल अधिनियम 1974 (धारा 63) और वायु अधिनियम 1981 (धारा 55) में समान प्रावधान मौजूद हैं।\n• भारतीय कानून में 'सद्भावना' का अर्थ आमतौर पर ईमानदार इरादा होता है जिसमें लापरवाही नहीं होती — यह प्रत्येक मामले में तथ्य का प्रश्न है।\n• धारा 18 की प्रतिरक्षा NGT को पुनर्स्थापना या मुआवजा आदेश देने से नहीं रोकती, जो नागरिक उपचार हैं, अभियोजन नहीं।"
+    }
+  },
+  {
+    "uuid": "2673d716-1c89-474e-bd65-dea1e76125e9",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "EPA Rules 1986: Key Provisions and Procedural Requirements"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Mandatory prior notice before sample collection under EPA Rules",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Regarding the procedure for collecting samples under the Environment Protection Rules 1986, which of the following correctly describes the mandatory procedural requirement?\n\n(a) Authorized officers may collect samples from any premises at any time without prior procedural formalities, provided they display their authorisation\n(b) A prior notice of the intention to collect a sample must be served on the occupier or their agent before samples are taken under EPA Rules 1986\n(c) The authorized officer must give 24 hours' advance notice to the jurisdictional court before proceeding to collect environmental samples\n(d) No procedural requirements apply at the sampling stage; notice requirements under EPA 1986 arise only when a complaint is filed before a court",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Students who conflate the 60-day notice under Section 19 (for citizen complaints) with the sample-collection notice under EPA Rules may assume notice requirements operate only at the complaint stage, not at the sampling stage.",
+      "elimination_logic": [
+        "Eliminate (a): Authorized officers do not have unfettered discretionary power to collect samples — procedural requirements including prior notice must be followed.",
+        "Eliminate (c): The requirement is a prior notice, not a 24-hour advance notice to the court — courts are not involved at the sampling stage.",
+        "Eliminate (d): There is indeed a procedural requirement at the sampling stage itself, not only at the complaint stage.",
+        "Confirm (b): EPA Rules 1986 (Rules 4-6) require that before collecting a sample, the authorized officer must serve a notice on the occupier or his agent of the intention to collect the sample — failure to do so can render the sample inadmissible."
+      ],
+      "upsc_trap_explanation": "Students who remember the 60-day notice under Section 19 (citizen complaints) may assume that notice requirements in EPA are confined to the litigation stage. The sample-collection notice under Rules 4-6 is a separate, earlier procedural requirement at the enforcement/investigation stage. Omitting this prior notice can be fatal to a prosecution because the sample's admissibility may be successfully challenged.",
+      "final_explanation": "EPA Rules 1986 create a structured procedural framework for sample collection to ensure that enforcement evidence is legally valid.\n\n• Option (a) — Authorized officers may collect samples at any time without procedural formalities: Incorrect. The rules prescribe mandatory procedural steps including prior notice before sampling.\n• Option (b) — A prior notice of intent to collect a sample must be served on the occupier or their agent before samples are taken: Correct. Rules 4-6 of the EPA Rules 1986 require this prior notice as a mandatory procedural step. Failure to serve notice can compromise the admissibility of the sample analysis.\n• Option (c) — A 24-hour advance notice must be given to the jurisdictional court: Incorrect. Courts are not involved at the sampling stage — notice is given to the occupier, not to the court.\n• Option (d) — No procedural requirements apply at the sampling stage; notice requirements arise only when filing a complaint: Incorrect. The sampling stage itself carries procedural requirements under Rules 4-6.\n\nValue Addition:\n• Even after proper notice, the sample must be divided into three parts — one for analysis, one for the occupier, one retained as reference.\n• The chain of custody from sampling to analyst report is critical for admissibility in EPA prosecutions.\n• Only Government Analysts (Section 13) can provide valid analysis reports for EPA enforcement proceedings."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण नियम 1986 के तहत नमूना संग्रह की प्रक्रिया के संबंध में, निम्नलिखित में से कौन-सा अनिवार्य प्रक्रियात्मक आवश्यकता को सही रूप से वर्णित करता है?\n\n(a) अधिकृत अधिकारी बिना किसी पूर्व प्रक्रियात्मक औपचारिकता के, अपनी अधिकृतता दिखाने पर, किसी भी परिसर से कभी भी नमूना ले सकते हैं\n(b) EPA नियम 1986 के तहत नमूना लेने से पहले अधिवासी या उसके एजेंट को नमूना लेने के इरादे का पूर्व नोटिस दिया जाना आवश्यक है\n(c) पर्यावरणीय नमूने लेने से पहले क्षेत्राधिकार न्यायालय को 24 घंटे का पूर्व नोटिस देना आवश्यक है\n(d) नमूना संग्रह के चरण में कोई प्रक्रियात्मक आवश्यकताएँ लागू नहीं होतीं; EPA 1986 के तहत नोटिस की आवश्यकताएँ केवल न्यायालय में शिकायत दर्ज करने पर होती हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — वे छात्र जो सेक्शन 19 के तहत 60-दिन के नोटिस (नागरिक शिकायतों के लिए) को EPA नियमों के तहत नमूना संग्रह के नोटिस के साथ भ्रमित करते हैं, वे मान सकते हैं कि नोटिस की आवश्यकताएँ केवल शिकायत के चरण पर लागू होती हैं, न कि नमूना संग्रह के चरण पर।",
+      "elimination_logic": [
+        "(a) को खारिज करें: अधिकृत अधिकारियों के पास नमूने इकट्ठा करने के लिए असीमित विवेकाधिकार नहीं है — पूर्व नोटिस सहित प्रक्रियात्मक आवश्यकताओं का पालन करना अनिवार्य है।",
+        "(c) को खारिज करें: आवश्यक पूर्व नोटिस है, न कि न्यायालय को 24 घंटे पहले सूचित करना — न्यायालय नमूना संग्रह के चरण में शामिल नहीं होते।",
+        "(d) को खारिज करें: नमूना संग्रह के चरण में भी प्रक्रियात्मक आवश्यकताएँ होती हैं, केवल शिकायत के चरण में नहीं।",
+        "(b) की पुष्टि करें: EPA नियम 1986 (नियम 4-6) के अनुसार, नमूना लेने से पहले अधिकृत अधिकारी को अधिवासी या उसके एजेंट को नमूना लेने के इरादे का नोटिस देना आवश्यक है — ऐसा न करने पर नमूना अस्वीकार्य हो सकता है।"
+      ],
+      "upsc_trap_explanation": "वे छात्र जो सेक्शन 19 के तहत 60-दिन के नोटिस (नागरिक शिकायतों के लिए) को याद रखते हैं, वे मान सकते हैं कि EPA में नोटिस की आवश्यकताएँ केवल मुकदमेबाजी के चरण तक सीमित हैं। नियम 4-6 के तहत नमूना संग्रह का नोटिस एक अलग, प्रारंभिक प्रक्रियात्मक आवश्यकता है जो प्रवर्तन/जांच के चरण में होती है। इस पूर्व नोटिस की अनुपस्थिति अभियोजन के लिए घातक हो सकती है क्योंकि नमूने की स्वीकार्यता को सफलतापूर्वक चुनौती दी जा सकती है।",
+      "final_explanation": "EPA नियम 1986 नमूना संग्रह के लिए एक संरचित प्रक्रियात्मक ढांचा बनाते हैं ताकि प्रवर्तन साक्ष्य कानूनी रूप से मान्य हो सके।\n\n• विकल्प (a) — अधिकृत अधिकारी बिना किसी प्रक्रियात्मक औपचारिकता के कभी भी किसी भी परिसर से नमूना ले सकते हैं: गलत। नियम नमूना लेने से पहले पूर्व नोटिस सहित अनिवार्य प्रक्रियात्मक कदम निर्धारित करते हैं।\n• विकल्प (b) — नमूना लेने से पहले अधिवासी या उसके एजेंट को नमूना लेने के इरादे का पूर्व नोटिस देना आवश्यक है: सही। EPA नियम 1986 के नियम 4-6 इस पूर्व नोटिस को अनिवार्य प्रक्रियात्मक कदम के रूप में निर्धारित करते हैं। नोटिस न देने पर नमूने की स्वीकार्यता प्रभावित हो सकती है।\n• विकल्प (c) — पर्यावरणीय नमूने लेने से पहले क्षेत्राधिकार न्यायालय को 24 घंटे का पूर्व नोटिस देना आवश्यक है: गलत। न्यायालय नमूना संग्रह के चरण में शामिल नहीं होते — नोटिस अधिवासी को दिया जाता है, न्यायालय को नहीं।\n• विकल्प (d) — नमूना संग्रह के चरण में कोई प्रक्रियात्मक आवश्यकताएँ लागू नहीं होतीं; नोटिस की आवश्यकताएँ केवल शिकायत दर्ज करने पर होती हैं: गलत। नियम 4-6 के तहत नमूना संग्रह के चरण में भी प्रक्रियात्मक आवश्यकताएँ होती हैं।\n\nमूल्यवर्धन:\n• उचित नोटिस के बाद भी, नमूने को तीन भागों में विभाजित किया जाना चाहिए — एक विश्लेषण के लिए, एक अधिवासी के लिए, और एक संदर्भ के रूप में रखा जाता है।\n• नमूना संग्रह से लेकर विश्लेषक रिपोर्ट तक की कस्टडी श्रृंखला EPA अभियोजनों में स्वीकार्यता के लिए महत्वपूर्ण है।\n• केवल सरकारी विश्लेषक (सेक्शन 13) EPA प्रवर्तन कार्यवाहियों के लिए वैध विश्लेषण रिपोर्ट प्रदान कर सकते हैं।"
+    }
+  },
+  {
+    "uuid": "4611438b-28cc-4ee2-813d-286cbbd33f3f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Citizen Suit Provision and Public Participation Framework",
+        "Cognizance of Offences: Section 19 and Locus Standi"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Section 19 citizen complaint pathway 60-day notice bypass via PIL",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A resident near an industrial zone discovers that a chemical manufacturing unit has been discharging effluents into a local river in violation of prescribed standards under the Environment Protection Act 1986. She approaches the district environmental officer, who refuses to act citing internal administrative reasons. The resident has not previously given any formal notice to the Central Government about the violation. She wishes to pursue legal remedies immediately.\n\nWhich of the following legal remedies is most appropriately available to her given the procedural constraints of EPA 1986?\n\n(a) Filing a writ petition as a Public Interest Litigation before the High Court under Article 226 of the Constitution, bypassing the procedural restrictions of Section 19\n(b) Directly approaching the National Green Tribunal as an aggrieved person under Section 19 of EPA 1986, which permits any citizen to seek cognizance of EPA violations\n(c) Filing a direct criminal complaint before the magistrate without prior notice, since more than 60 days have elapsed since the violation began\n(d) Approaching the District Collector to issue a closure order under EPA 1986, which grants district authorities enforcement powers",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students may assume that any 'aggrieved person' can directly approach the NGT for all EPA violations, not realising that the Section 19 restriction applies to courts and NGT's suo motu jurisdiction is a different pathway.",
+      "elimination_logic": [
+        "Identify the legal issue: what are the options for a citizen to challenge a continuing EPA violation when the government has not acted?",
+        "Evaluate (a): Filing a writ petition under Article 226 (PIL route) is a well-established bypass to Section 19's restrictions — High Courts retain PIL jurisdiction over environmental matters.",
+        "Evaluate (b): Citizens cannot directly approach NGT 'as an aggrieved person under Section 19' for criminal cognizance — Section 19's citizen suit pathway is for criminal complaints to courts with 60-day notice, not NGT applications.",
+        "Evaluate (c): 60 days have already elapsed — but the statement says 'without further notice,' which would be valid only if the original 60-day notice was given. The scenario says no notice was given — making direct complaint invalid.",
+        "Evaluate (d): Approaching the District Collector has no specific basis in EPA 1986 for enforcement against a private company.",
+        "Option (a) — PIL under Article 226 — is the correct available remedy."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap in option (b) conflates NGT's jurisdiction over EPA violations with the Section 19 citizen suit pathway. While NGT can hear EPA matters, Section 19's citizen suit provision specifically governs criminal cognizance by courts — it is not the same as filing an application before NGT. The PIL route under Articles 32 and 226 has historically been used precisely because it bypasses the Section 19 bottleneck, allowing citizens to enforce environmental rights without the 60-day procedural constraint.",
+      "final_explanation": "The question tests the interplay between Section 19's procedural restrictions and the broader remedial landscape available to citizens.\n\nSection 19 of EPA 1986 restricts courts from taking cognizance of offences except on complaints by the Central Government or its authorized officers. A citizen can file a complaint only after giving 60 days' prior written notice to the Central Government — and waiting for it to act.\n\nIn the scenario, the citizen has not given any prior notice, making a direct criminal complaint to court invalid. The options must be evaluated against this constraint:\n\n• Option (a) — PIL under Article 226: Correct. Filing a writ petition in the High Court as a Public Interest Litigation bypasses the Section 19 restriction entirely. The PIL route has been used extensively in landmark cases (MC Mehta cases) to enforce environmental obligations directly.\n• Option (b) — Direct NGT application 'under Section 19': Incorrect. Section 19 governs criminal complaints to courts, not NGT applications. While NGT can hear EPA matters, this option mischaracterises the applicable procedure.\n• Option (c) — Direct criminal complaint without prior notice: Incorrect. Without the mandatory 60-day prior notice, the citizen lacks locus standi to file a direct criminal complaint.\n• Option (d) — District Collector approach: Incorrect. EPA 1986 does not designate the District Collector as an enforcement authority for this purpose.\n\nValue Addition:\n• MC Mehta v. Union of India established the PIL route as a powerful complement to the narrow Section 19 pathway.\n• Citizens who complete the 60-day notice procedure and the government still fails to act can then file a criminal complaint themselves.\n• NGT offers a parallel civil/compensatory remedy track — applicable without the Section 19 restriction."
+    },
+    "hi": {
+      "display_text": "एक औद्योगिक क्षेत्र के पास रहने वाली एक निवासी पाती है कि एक रासायनिक निर्माण इकाई पर्यावरण संरक्षण अधिनियम 1986 के तहत निर्धारित मानकों का उल्लंघन करते हुए स्थानीय नदी में अपशिष्ट पदार्थ छोड़ रही है। वह जिला पर्यावरण अधिकारी के पास जाती है, जो आंतरिक प्रशासनिक कारण बताते हुए कार्रवाई करने से इनकार कर देता है। निवासी ने उल्लंघन के बारे में केंद्रीय सरकार को पहले कोई औपचारिक नोटिस नहीं दिया है। वह तुरंत कानूनी उपचार करना चाहती है।\n\nEPA 1986 की प्रक्रियात्मक सीमाओं को ध्यान में रखते हुए, निम्नलिखित में से कौन-सा कानूनी उपचार उसके लिए सबसे उपयुक्त है?\n\n(a) संविधान के अनुच्छेद 226 के तहत उच्च न्यायालय में सार्वजनिक हित याचिका के रूप में रिट याचिका दाखिल करना, जो धारा 19 की प्रक्रियात्मक सीमाओं को बायपास करता है\n(b) EPA 1986 की धारा 19 के तहत पीड़ित व्यक्ति के रूप में सीधे राष्ट्रीय हरित अधिकरण (NGT) के पास जाना, जो किसी भी नागरिक को EPA उल्लंघनों का संज्ञान लेने की अनुमति देता है\n(c) उल्लंघन शुरू होने के 60 दिन से अधिक समय बीत जाने के कारण बिना पूर्व नोटिस के सीधे मजिस्ट्रेट के समक्ष आपराधिक शिकायत दर्ज करना\n(d) EPA 1986 के तहत जिला कलेक्टर के पास जाकर बंदी आदेश जारी करने का अनुरोध करना, जो जिला अधिकारियों को प्रवर्तन शक्तियां प्रदान करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र यह मान सकते हैं कि कोई भी 'पीड़ित व्यक्ति' सीधे NGT के पास EPA उल्लंघनों के लिए जा सकता है, यह न समझते हुए कि धारा 19 की सीमा अदालतों पर लागू होती है और NGT की स्व-प्रेरित क्षेत्राधिकार एक अलग मार्ग है।",
+      "elimination_logic": [
+        "कानूनी मुद्दे की पहचान करें: जब सरकार ने कार्रवाई नहीं की हो तो नागरिक के पास EPA उल्लंघन को चुनौती देने के क्या विकल्प हैं?",
+        "(a) का मूल्यांकन करें: अनुच्छेद 226 के तहत रिट याचिका दाखिल करना (PIL मार्ग) धारा 19 की सीमाओं को बायपास करने का एक स्थापित तरीका है — उच्च न्यायालय पर्यावरण मामलों में PIL क्षेत्राधिकार बनाए रखता है।",
+        "(b) का मूल्यांकन करें: नागरिक सीधे NGT के पास 'पीड़ित व्यक्ति के रूप में धारा 19 के तहत' आपराधिक संज्ञान के लिए नहीं जा सकते — धारा 19 का नागरिक मुकदमा मार्ग अदालतों में आपराधिक शिकायतों के लिए है जिसमें 60 दिन का नोटिस आवश्यक है, न कि NGT आवेदन के लिए।",
+        "(c) का मूल्यांकन करें: 60 दिन पहले ही बीत चुके हैं — लेकिन कथन कहता है 'बिना आगे के नोटिस के,' जो केवल तभी मान्य होगा जब मूल 60-दिन का नोटिस दिया गया हो। परिदृश्य में कोई नोटिस नहीं दिया गया — इसलिए सीधे शिकायत अमान्य है।",
+        "(d) का मूल्यांकन करें: जिला कलेक्टर के पास EPA 1986 के तहत निजी कंपनी के खिलाफ प्रवर्तन के लिए कोई विशिष्ट आधार नहीं है।",
+        "विकल्प (a) — अनुच्छेद 226 के तहत PIL — सही उपलब्ध उपाय है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में इकाई-स्थानांतरण जाल EPA उल्लंघनों पर NGT के क्षेत्राधिकार को धारा 19 के नागरिक मुकदमा मार्ग के साथ भ्रमित करता है। जबकि NGT EPA मामलों को सुन सकता है, धारा 19 का नागरिक मुकदमा प्रावधान विशेष रूप से अदालतों द्वारा आपराधिक संज्ञान के लिए है — यह NGT के समक्ष आवेदन दाखिल करने के समान नहीं है। अनुच्छेद 32 और 226 के तहत PIL मार्ग का उपयोग ऐतिहासिक रूप से इसलिए किया गया है क्योंकि यह धारा 19 की बाधा को बायपास करता है, जिससे नागरिक 60-दिन की प्रक्रिया बाधा के बिना पर्यावरणीय अधिकारों को लागू कर सकते हैं।",
+      "final_explanation": "यह प्रश्न धारा 19 की प्रक्रियात्मक सीमाओं और नागरिकों के लिए उपलब्ध व्यापक उपचारात्मक परिदृश्य के बीच अंतर्संबंध का परीक्षण करता है।\n\nEPA 1986 की धारा 19 अदालतों को केवल केंद्रीय सरकार या उसके अधिकृत अधिकारियों की शिकायत पर ही अपराधों का संज्ञान लेने की अनुमति देती है। नागरिक केवल केंद्रीय सरकार को 60 दिन पूर्व लिखित नोटिस देने के बाद ही शिकायत दर्ज कर सकता है — और उसके कार्रवाई करने का इंतजार करना होता है।\n\nपरिदृश्य में, नागरिक ने कोई पूर्व नोटिस नहीं दिया है, इसलिए सीधे आपराधिक शिकायत अदालत में अमान्य है। विकल्पों का मूल्यांकन इस सीमा के अनुसार किया जाना चाहिए:\n\n• विकल्प (a) — अनुच्छेद 226 के तहत PIL: सही। उच्च न्यायालय में सार्वजनिक हित याचिका के रूप में रिट याचिका दाखिल करना धारा 19 की सीमा को पूरी तरह बायपास करता है। PIL मार्ग का उपयोग पर्यावरणीय दायित्वों को सीधे लागू करने के लिए महत्वपूर्ण मामलों (MC Mehta मामले) में व्यापक रूप से किया गया है।\n• विकल्प (b) — सीधे NGT आवेदन 'धारा 19 के तहत': गलत। धारा 19 आपराधिक शिकायतों के लिए अदालतों को नियंत्रित करती है, NGT आवेदन के लिए नहीं। जबकि NGT EPA मामलों को सुन सकता है, यह विकल्प लागू प्रक्रिया को गलत दर्शाता है।\n• विकल्प (c) — बिना पूर्व नोटिस के सीधे आपराधिक शिकायत: गलत। अनिवार्य 60-दिन पूर्व नोटिस के बिना नागरिक के पास सीधे आपराधिक शिकायत दर्ज करने का अधिकार नहीं है।\n• विकल्प (d) — जिला कलेक्टर से संपर्क: गलत। EPA 1986 में जिला कलेक्टर को इस उद्देश्य के लिए प्रवर्तन प्राधिकारी के रूप में नामित नहीं किया गया है।\n\nमूल्य संवर्धन:\n• MC Mehta बनाम भारत संघ ने धारा 19 के संकुचित मार्ग के पूरक के रूप में PIL मार्ग को स्थापित किया।\n• जो नागरिक 60-दिन की नोटिस प्रक्रिया पूरी करते हैं और सरकार फिर भी कार्रवाई नहीं करती, वे स्वयं आपराधिक शिकायत दर्ज कर सकते हैं।\n• NGT एक समान नागरिक/मुआवजा उपचार मार्ग प्रदान करता है — जो धारा 19 की सीमा के बिना लागू होता है।"
+    }
+  },
+  {
+    "uuid": "f79b5c99-a9b8-4101-888e-0b0b2ae8bd82",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Persons Authorized to Perform Functions: Section 4 and Delegation Framework",
+        "Powers of the Central Government under EPA 1986: Scope and Extent"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Section 3 4 23 delegation and authority framework EPA",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Section of EPA 1986) with List II (Function or Power conferred):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Section 3(1)",
+            "1. Constitution of authorities for specific purposes under the Act"
+          ],
+          [
+            "B. Section 3(3)",
+            "2. Delegation of Central Government powers to officers or authorities subject to conditions"
+          ],
+          [
+            "C. Section 4",
+            "3. Omnibus power of the Central Government to take all measures for environment protection"
+          ],
+          [
+            "D. Section 23",
+            "4. Appointment of officers with designated powers and functions for enforcement"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-3, B-4, C-1, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students may conflate Section 3(3) (which creates authorities) with Section 4 (which appoints individual officers), and conflate Section 23 (delegation) with Section 3 (general powers) — making option (a)'s cross-matching feel plausible.",
+      "elimination_logic": [
+        "Match A — Section 3(1): This is the omnibus power provision — Central Government power to take all measures for environment protection. Matches with 3.",
+        "Match B — Section 3(3): This sub-section empowers constituting authorities for specific purposes under EPA. Matches with 1.",
+        "Match C — Section 4: Authorisation of officers with specific powers and functions. Matches with 4.",
+        "Match D — Section 23: Delegation of Central Government powers to officers/authorities under conditions. Matches with 2.",
+        "Correct combination: A-3, B-1, C-4, D-2 → answer is (c)."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges Section 3(3) (constituting authorities) with Section 4 (appointing officers) — both involve 'creating' EPA enforcers, making these two the most likely swapped pair in student answers. The distinction is significant: Section 3(3) creates institutional authorities (like a committee or board), while Section 4 appoints individual officers. Section 23 (delegation) is sometimes confused with Section 3 (powers) because delegation presupposes the existence of powers — but they are distinct provisions.",
+      "final_explanation": "EPA 1986's institutional architecture is built through Sections 3, 4, and 23 — each serving a distinct role.\n\n• A — Section 3(1) — 3 (Central Government's omnibus power): Section 3(1) is the foundational provision granting the Central Government power to take all measures it deems necessary for environment protection — the ultimate source of all EPA regulatory authority.\n• B — Section 3(3) — 1 (Constitution of authorities for specific purposes): Sub-section (3) of Section 3 empowers the Central Government to constitute authorities (institutional bodies, not individual officers) for carrying out specified purposes under the Act.\n• C — Section 4 — 4 (Appointment of officers with designated powers): Section 4 authorises the Central Government to appoint individual officers — not institutions — with specific powers and functions for EPA enforcement.\n• D — Section 23 — 2 (Delegation of Central Government powers): Section 23 allows the Central Government to delegate its powers to officers or other authorities subject to conditions — it is the delegation mechanism, not the source of original power.\n\nValue Addition:\n• Section 3(3) authorities and Section 4 officers both derive from Central Government decision — but Section 3(3) creates bodies while Section 4 designates persons.\n• Section 23 delegation must be explicit — implied delegation is not valid under EPA.\n• CPCB cannot be constituted under either Section 3(3) or Section 4 — it exists under the Water Act 1974."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (EPA 1986 की धारा) को सूची II (प्रदान की गई शक्ति या कार्य) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. धारा 3(1)",
+            "1. अधिनियम के तहत विशिष्ट उद्देश्यों के लिए प्राधिकरणों का गठन"
+          ],
+          [
+            "B. धारा 3(3)",
+            "2. केंद्रीय सरकार की शक्तियों का अधिकारियों या प्राधिकरणों को शर्तों के अधीन प्रतिनिधित्व"
+          ],
+          [
+            "C. धारा 4",
+            "3. पर्यावरण संरक्षण के लिए केंद्रीय सरकार की सर्वसमावेशी शक्ति"
+          ],
+          [
+            "D. धारा 23",
+            "4. प्रवर्तन के लिए विशिष्ट शक्तियों और कार्यों वाले अधिकारियों की नियुक्ति"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-3, B-4, C-1, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र धारा 3(3) (जो प्राधिकरण बनाती है) को धारा 4 (जो व्यक्तिगत अधिकारियों की नियुक्ति करती है) से और धारा 23 (प्रतिनिधित्व) को धारा 3 (सामान्य शक्तियाँ) से भ्रमित कर सकते हैं — जिससे विकल्प (a) का क्रॉस-मिलान संभावित लगता है।",
+      "elimination_logic": [
+        "मिलान A — धारा 3(1): यह सर्वसमावेशी शक्ति प्रावधान है — केंद्रीय सरकार की पर्यावरण संरक्षण के लिए सभी उपाय करने की शक्ति। इसका मिलान 3 से है।",
+        "मिलान B — धारा 3(3): यह उप-धारा EPA के तहत विशिष्ट उद्देश्यों के लिए प्राधिकरण बनाने का अधिकार देती है। इसका मिलान 1 से है।",
+        "मिलान C — धारा 4: अधिकारियों को विशिष्ट शक्तियों और कार्यों के साथ अधिकृत करना। इसका मिलान 4 से है।",
+        "मिलान D — धारा 23: केंद्रीय सरकार की शक्तियों का अधिकारियों/प्राधिकरणों को शर्तों के अधीन प्रतिनिधित्व। इसका मिलान 2 से है।",
+        "सही संयोजन: A-3, B-1, C-4, D-2 → उत्तर है (c)।"
+      ],
+      "upsc_trap_explanation": "संमिश्रण जाल धारा 3(3) (प्राधिकरण बनाना) को धारा 4 (अधिकारियों की नियुक्ति) के साथ मिला देता है — दोनों EPA प्रवर्तनकर्ताओं को 'निर्माण' से संबंधित हैं, जिससे ये दो छात्र उत्तरों में सबसे अधिक स्वैप किए जाने वाले जोड़े बन जाते हैं। अंतर महत्वपूर्ण है: धारा 3(3) संस्थागत प्राधिकरण बनाती है (जैसे समिति या बोर्ड), जबकि धारा 4 व्यक्तिगत अधिकारियों की नियुक्ति करती है। धारा 23 (प्रतिनिधित्व) को कभी-कभी धारा 3 (शक्तियाँ) के साथ भ्रमित किया जाता है क्योंकि प्रतिनिधित्व के लिए शक्तियों का होना आवश्यक है — लेकिन ये अलग प्रावधान हैं।",
+      "final_explanation": "EPA 1986 की संस्थागत संरचना धारा 3, 4, और 23 के माध्यम से निर्मित होती है — प्रत्येक की अलग भूमिका है।\n\n• A — धारा 3(1) — 3 (केंद्रीय सरकार की सर्वसमावेशी शक्ति): धारा 3(1) वह मूल प्रावधान है जो केंद्रीय सरकार को पर्यावरण संरक्षण के लिए आवश्यक सभी उपाय करने की शक्ति देता है — EPA के सभी नियामक अधिकारों का अंतिम स्रोत।\n• B — धारा 3(3) — 1 (विशिष्ट उद्देश्यों के लिए प्राधिकरणों का गठन): धारा 3 की उप-धारा (3) केंद्रीय सरकार को प्राधिकरण (संस्थागत निकाय, व्यक्तिगत अधिकारी नहीं) बनाने का अधिकार देती है जो अधिनियम के तहत विशिष्ट उद्देश्यों को पूरा करते हैं।\n• C — धारा 4 — 4 (विशिष्ट शक्तियों वाले अधिकारियों की नियुक्ति): धारा 4 केंद्रीय सरकार को EPA प्रवर्तन के लिए विशिष्ट शक्तियों और कार्यों वाले व्यक्तिगत अधिकारियों की नियुक्ति करने का अधिकार देती है — संस्थान नहीं।\n• D — धारा 23 — 2 (केंद्रीय सरकार की शक्तियों का प्रतिनिधित्व): धारा 23 केंद्रीय सरकार को अपनी शक्तियों का प्रतिनिधित्व अधिकारियों या अन्य प्राधिकरणों को शर्तों के अधीन करने की अनुमति देती है — यह प्रतिनिधित्व तंत्र है, मूल शक्ति का स्रोत नहीं।\n\nमूल्य संवर्धन:\n• धारा 3(3) के प्राधिकरण और धारा 4 के अधिकारी दोनों केंद्रीय सरकार के निर्णय से आते हैं — लेकिन धारा 3(3) निकाय बनाती है जबकि धारा 4 व्यक्तियों को नामित करती है।\n• धारा 23 का प्रतिनिधित्व स्पष्ट होना चाहिए — EPA के तहत निहित प्रतिनिधित्व मान्य नहीं है।\n• CPCB को न तो धारा 3(3) के तहत और न ही धारा 4 के तहत गठित किया जा सकता है — यह जल अधिनियम 1974 के तहत अस्तित्व में है।"
+    }
+  },
+  {
+    "uuid": "a654caa5-2b03-4857-a640-4398a42a3497",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Cognizance of Offences: Section 19 and Locus Standi",
+        "EPA 1986 and the National Green Tribunal: Jurisdictional Interface"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NGT suo motu vs Section 19 court cognizance restriction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about enforcement mechanisms under the Environment Protection Act 1986 and related law:\n\n1. Under EPA 1986, no court shall take cognizance of an offence except on a complaint made by the Central Government or its authorised officer, and a citizen can file a complaint only after giving 30 days' prior notice to the Central Government.\n2. The National Green Tribunal possesses suo motu jurisdiction over EPA violations and can initiate proceedings without waiting for a complaint or application from any party.\n3. Violation of a condition imposed under a CRZ notification issued under EPA 1986 is prosecuted under a separate coastal zone management law, not under EPA 1986 itself.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under EPA 1986, no court shall take cognizance of an offence except on a complaint made by the Central Government or its authorised officer, and a citizen can file a complaint only after giving 30 days' prior notice to the Central Government.",
+          "verdict": "Incorrect",
+          "reason": "The notice period under Section 19 proviso is 60 days, not 30 days — this is a specific numerical fact and a common UPSC trap substituting 30 days (familiar from other Acts) for the correct 60-day requirement."
+        },
+        {
+          "statement": "The National Green Tribunal possesses suo motu jurisdiction over EPA violations and can initiate proceedings without waiting for a complaint or application from any party.",
+          "verdict": "Correct",
+          "reason": "Unlike courts bound by Section 19's cognizance restriction, the NGT Act 2010 confers suo motu jurisdiction on the NGT — it can initiate proceedings on its own motion for environmental violations."
+        },
+        {
+          "statement": "Violation of a condition imposed under a CRZ notification issued under EPA 1986 is prosecuted under a separate coastal zone management law, not under EPA 1986 itself.",
+          "verdict": "Incorrect",
+          "reason": "CRZ notifications are issued under EPA 1986 — violations of CRZ conditions are prosecuted under EPA 1986 (Sections 15, 16, 17), not under any separate law since no independent coastal zone management statute exists."
+        }
+      ],
+      "strong_distractor": "b — Students who know NGT has broader jurisdiction than courts under Section 19 may accept Statement 2 as correct (it is) and assume Statement 3 is also correct given CRZ's distinct identity — making (b) tempting but incorrect.",
+      "elimination_logic": [
+        "Examine Statement 1: The citizen suit notice period under Section 19 is 60 days, not 30 days — Statement 1 is NOT correct.",
+        "Examine Statement 2: NGT's suo motu jurisdiction is well established under the NGT Act 2010 — Statement 2 IS correct, so it is not an answer to 'NOT correct.'",
+        "Examine Statement 3: CRZ is an EPA notification — violations prosecuted under EPA, not a separate coastal law. Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct — answer is (d) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 1 substitutes 30 days for the correct 60-day notice period — exploiting students' familiarity with 30-day notice periods from other contexts. Statement 3 fabricates the existence of a separate coastal zone management law, which does not exist. Both traps rely on the student's general environmental knowledge being sufficient to make the wrong answer feel authoritative.",
+      "final_explanation": "This question tests three commonly confused facts about EPA's enforcement architecture.\n\n• Statement 1 — NOT correct: Section 19's citizen suit proviso requires 60 days' prior notice to the Central Government — not 30 days. Substituting 30 days is a standard UPSC temporal trap.\n• Statement 2 — Correct: NGT has suo motu jurisdiction. Unlike courts bound by Section 19's cognizance restriction, NGT can initiate proceedings on its own motion — a fundamental difference in design philosophy between EPA's court-based enforcement and NGT's tribunal-based model.\n• Statement 3 — NOT correct: CRZ notifications are issued under Section 3 of EPA 1986 and are not standalone legislation. Violations of CRZ conditions are prosecuted under EPA 1986's penalty provisions — there is no separate coastal zone management Act in India.\n\nValue Addition:\n• The 60-day notice under Section 19 gives the government an opportunity to take action before a citizen resorts to court — it is a mandatory pre-litigation step.\n• ESZ violations are similarly prosecuted under EPA 1986, not under the Wildlife Protection Act.\n• NGT's suo motu jurisdiction was exercised notably in matters of river pollution and unauthorized construction in ecologically sensitive areas."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 और संबंधित कानून के तहत प्रवर्तन तंत्र के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. EPA 1986 के तहत, कोई भी न्यायालय अपराध की संज्ञान केवल केंद्रीय सरकार या उसके अधिकृत अधिकारी द्वारा की गई शिकायत पर ही लेगा, और एक नागरिक केवल केंद्रीय सरकार को 30 दिन पूर्व सूचना देने के बाद ही शिकायत दर्ज कर सकता है।\n2. राष्ट्रीय हरित अधिकरण (NGT) के पास EPA उल्लंघनों पर स्व-प्रेरित क्षेत्राधिकार है और यह किसी भी पक्ष की शिकायत या आवेदन की प्रतीक्षा किए बिना कार्यवाही शुरू कर सकता है।\n3. EPA 1986 के तहत जारी CRZ अधिसूचना के अंतर्गत लगाए गए किसी भी शर्त के उल्लंघन का अभियोजन एक अलग तटीय क्षेत्र प्रबंधन कानून के तहत किया जाता है, न कि EPA 1986 के तहत।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "EPA 1986 के तहत, कोई भी न्यायालय अपराध की संज्ञान केवल केंद्रीय सरकार या उसके अधिकृत अधिकारी द्वारा की गई शिकायत पर ही लेगा, और एक नागरिक केवल केंद्रीय सरकार को 30 दिन पूर्व सूचना देने के बाद ही शिकायत दर्ज कर सकता है।",
+          "verdict": "गलत",
+          "reason": "धारा 19 की उपधारा के तहत सूचना अवधि 60 दिन है, 30 दिन नहीं — यह एक विशिष्ट संख्यात्मक तथ्य है और UPSC की सामान्य चाल है जो अन्य अधिनियमों से परिचित 30 दिन की अवधि को सही 60 दिन की आवश्यकता के स्थान पर प्रस्तुत करती है।"
+        },
+        {
+          "statement": "राष्ट्रीय हरित अधिकरण (NGT) के पास EPA उल्लंघनों पर स्व-प्रेरित (suo motu) क्षेत्राधिकार है और यह किसी भी पक्ष की शिकायत या आवेदन की प्रतीक्षा किए बिना कार्यवाही शुरू कर सकता है।",
+          "verdict": "सही",
+          "reason": "धारा 19 की संज्ञान प्रतिबंध से बंधे न्यायालयों के विपरीत, NGT अधिनियम 2010 NGT को स्व-प्रेरित क्षेत्राधिकार प्रदान करता है — यह पर्यावरण उल्लंघनों के लिए स्वयं से कार्यवाही शुरू कर सकता है।"
+        },
+        {
+          "statement": "EPA 1986 के तहत जारी CRZ अधिसूचना के अंतर्गत लगाए गए किसी भी शर्त के उल्लंघन का अभियोजन एक अलग तटीय क्षेत्र प्रबंधन कानून के तहत किया जाता है, न कि EPA 1986 के तहत।",
+          "verdict": "गलत",
+          "reason": "CRZ अधिसूचनाएँ EPA 1986 के तहत जारी की जाती हैं — CRZ शर्तों के उल्लंघन का अभियोजन EPA 1986 (धारा 15, 16, 17) के तहत किया जाता है, क्योंकि कोई स्वतंत्र तटीय क्षेत्र प्रबंधन अधिनियम मौजूद नहीं है।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र जानते हैं कि NGT का क्षेत्राधिकार धारा 19 के तहत न्यायालयों से व्यापक है, वे कथन 2 को सही मान सकते हैं (जो सही है) और CRZ की अलग पहचान को देखते हुए कथन 3 को भी सही मान सकते हैं — जिससे (b) आकर्षक लेकिन गलत विकल्प बन जाता है।",
+      "elimination_logic": [
+        "कथन 1 का परीक्षण करें: धारा 19 के तहत नागरिक शिकायत की सूचना अवधि 60 दिन है, 30 दिन नहीं — कथन 1 सही नहीं है।",
+        "कथन 2 का परीक्षण करें: NGT का स्व-प्रेरित क्षेत्राधिकार NGT अधिनियम 2010 के तहत स्थापित है — कथन 2 सही है, अतः यह 'सही नहीं' के लिए उत्तर नहीं हो सकता।",
+        "कथन 3 का परीक्षण करें: CRZ एक EPA अधिसूचना है — उल्लंघन EPA के तहत अभियोजित होते हैं, कोई अलग तटीय कानून नहीं है। कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं — उत्तर है (d) केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में सही 60 दिन की सूचना अवधि के स्थान पर 30 दिन का उपयोग किया गया है — यह छात्रों की अन्य संदर्भों से परिचित 30 दिन की सूचना अवधि का उपयोग कर उन्हें भ्रमित करने की UPSC चाल है। कथन 3 में एक अलग तटीय क्षेत्र प्रबंधन कानून के अस्तित्व का निर्माण किया गया है, जो वास्तव में मौजूद नहीं है। दोनों जाल छात्रों के सामान्य पर्यावरण ज्ञान पर आधारित हैं जो गलत उत्तर को विश्वसनीय बनाते हैं।",
+      "final_explanation": "यह प्रश्न EPA के प्रवर्तन तंत्र के तीन सामान्यतः भ्रमित किए जाने वाले तथ्यों का परीक्षण करता है।\n\n• कथन 1 — सही नहीं: धारा 19 की नागरिक शिकायत उपधारा केंद्रीय सरकार को 60 दिन पूर्व सूचना की मांग करती है — 30 दिन नहीं। 30 दिन का स्थानापन्न UPSC का सामान्य समय संबंधी जाल है।\n• कथन 2 — सही: NGT के पास स्व-प्रेरित क्षेत्राधिकार है। धारा 19 की संज्ञान प्रतिबंध से बंधे न्यायालयों के विपरीत, NGT स्वयं से कार्यवाही शुरू कर सकता है — यह EPA के न्यायालय आधारित प्रवर्तन और NGT के अधिकरण आधारित मॉडल के बीच मौलिक डिजाइन अंतर है।\n• कथन 3 — सही नहीं: CRZ अधिसूचनाएँ EPA 1986 की धारा 3 के तहत जारी होती हैं और स्वतंत्र कानून नहीं हैं। CRZ शर्तों के उल्लंघन का अभियोजन EPA 1986 की दंडात्मक धाराओं के तहत होता है — भारत में कोई अलग तटीय क्षेत्र प्रबंधन अधिनियम नहीं है।\n\nमूल्य संवर्धन:\n• धारा 19 के तहत 60 दिन की सूचना सरकार को नागरिक के न्यायालय जाने से पहले कार्रवाई का अवसर देती है — यह एक अनिवार्य पूर्व-याचिका कदम है।\n• ESZ उल्लंघन भी EPA 1986 के तहत अभियोजित होते हैं, न कि वन्यजीव संरक्षण अधिनियम के तहत।\n• NGT ने स्व-प्रेरित क्षेत्राधिकार का उपयोग विशेष रूप से नदी प्रदूषण और पारिस्थितिक रूप से संवेदनशील क्षेत्रों में अनधिकृत निर्माण के मामलों में किया है।"
+    }
+  },
+  {
+    "uuid": "5a61598c-0e35-448a-a546-c84f638bb806",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Notifications Under EPA: CRZ, EIA, Eco-Sensitive Zones as Statutory Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "ESZ notified under EPA not Wildlife Protection Act",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four legal instruments are notifications or subordinate instruments issued under the Environment Protection Act 1986, while one is an independent legislation enacted by Parliament. Which one does NOT belong to the same category as the others?\n\n(a) The Wildlife Protection Act 1972\n(b) The Environment Impact Assessment Notification 2006\n(c) Eco-Sensitive Zone notifications issued around Protected Areas\n(d) The Coastal Regulation Zone Notification 2019",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know Eco-Sensitive Zones are related to Protected Areas under the Wildlife Protection Act may assume ESZ notifications are issued under WPA, making option (c) feel like the odd one out alongside (a).",
+      "elimination_logic": [
+        "Identify the common attribute: legal instruments issued under EPA 1986 as subordinate notifications.",
+        "Check (a): The Wildlife Protection Act 1972 is an independent statute — it is not a notification or instrument issued under EPA 1986. It is a full Act of Parliament.",
+        "Check (b): EIA Notification 2006 is issued under EPA 1986 — within the group.",
+        "Check (c): Eco-Sensitive Zone notifications are issued under Section 3 of EPA 1986, NOT under the Wildlife Protection Act — within the group.",
+        "Check (d): CRZ Notification 2019 is issued under EPA 1986 — within the group.",
+        "Option (a) — Wildlife Protection Act 1972 — is the odd one out: it is an independent Act, not a notification under EPA."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap exploits the close association between Eco-Sensitive Zones and the Wildlife Protection Act 1972. ESZs are declared around Protected Areas (National Parks, Wildlife Sanctuaries) which are governed by WPA — so students naturally assume ESZ notifications come from WPA. In reality, ESZ notifications are issued under EPA 1986's Section 3 powers. This distinction is one of the most tested in UPSC environmental questions.",
+      "final_explanation": "The question asks students to identify the instrument that does not derive from EPA 1986.\n\n• Option (a) — Wildlife Protection Act 1972: THE ODD ONE OUT. This is a standalone Act of Parliament — it is not issued under EPA 1986 and has its own constitutional basis. It governs Protected Areas but does NOT issue Eco-Sensitive Zone notifications.\n• Option (b) — EIA Notification 2006: Within the group. Issued under Sections 3(1) and 3(2)(v) of EPA 1986 — a classic subordinate instrument.\n• Option (c) — Eco-Sensitive Zone notifications: Within the group. Despite being geographically associated with Protected Areas governed by WPA, ESZ notifications are issued under Section 3 of EPA 1986.\n• Option (d) — CRZ Notification 2019: Within the group. Issued under Section 3 of EPA 1986 to regulate activities in coastal areas.\n\nValue Addition:\n• ESZ violations are prosecuted under EPA 1986, not WPA — another consequence of ESZs being EPA notifications.\n• The Supreme Court has issued consolidated directions on ESZ widths (minimum 1 km from PA boundaries) in a landmark 2022 judgment.\n• EIA, CRZ, and ESZ notifications can be amended through fresh notifications without Parliamentary approval — because they are subordinate legislation."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार कानूनी उपकरणों में से तीन पर्यावरण संरक्षण अधिनियम 1986 के तहत जारी अधिसूचनाएँ या उप-उपकरण हैं, जबकि एक स्वतंत्र विधान है जिसे संसद ने पारित किया है। इनमें से कौन सा अन्य के समान श्रेणी में नहीं आता?\n\n(a) वन्यजीव संरक्षण अधिनियम 1972\n(b) पर्यावरण प्रभाव आकलन अधिसूचना 2006\n(c) संरक्षित क्षेत्रों के आसपास जारी इको-सेंसिटिव जोन अधिसूचनाएँ\n(d) तटीय नियमन क्षेत्र अधिसूचना 2019",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि इको-सेंसिटिव जोन संरक्षित क्षेत्रों से संबंधित हैं जो वन्यजीव संरक्षण अधिनियम के अंतर्गत आते हैं, वे मान सकते हैं कि ESZ अधिसूचनाएँ WPA के तहत जारी की जाती हैं, जिससे विकल्प (c) (a) के साथ असामान्य विकल्प जैसा लगे।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: EPA 1986 के तहत अधिसूचित उप-नोटिफिकेशन के रूप में जारी कानूनी उपकरण।",
+        "(a) जांचें: वन्यजीव संरक्षण अधिनियम 1972 एक स्वतंत्र अधिनियम है — यह EPA 1986 के तहत जारी कोई अधिसूचना या उपकरण नहीं है। यह संसद का पूर्ण अधिनियम है।",
+        "(b) जांचें: EIA अधिसूचना 2006 EPA 1986 के तहत जारी है — समूह के भीतर।",
+        "(c) जांचें: इको-सेंसिटिव जोन अधिसूचनाएँ EPA 1986 की धारा 3 के तहत जारी होती हैं, वन्यजीव संरक्षण अधिनियम के तहत नहीं — समूह के भीतर।",
+        "(d) जांचें: CRZ अधिसूचना 2019 EPA 1986 के तहत जारी है — समूह के भीतर।",
+        "विकल्प (a) — वन्यजीव संरक्षण अधिनियम 1972 — असामान्य विकल्प है: यह एक स्वतंत्र अधिनियम है, EPA के तहत कोई अधिसूचना नहीं।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल इको-सेंसिटिव जोन और वन्यजीव संरक्षण अधिनियम 1972 के बीच निकट संबंध का लाभ उठाता है। ESZ संरक्षित क्षेत्रों (राष्ट्रीय उद्यान, वन्यजीव अभयारण्य) के आसपास घोषित किए जाते हैं जो WPA द्वारा नियंत्रित हैं — इसलिए छात्र स्वाभाविक रूप से मान लेते हैं कि ESZ अधिसूचनाएँ WPA से आती हैं। वास्तविकता में, ESZ अधिसूचनाएँ EPA 1986 की धारा 3 के अधिकारों के तहत जारी की जाती हैं। यह भेद UPSC पर्यावरणीय प्रश्नों में सबसे अधिक परीक्षण किए जाने वाले विषयों में से एक है।",
+      "final_explanation": "प्रश्न छात्रों से EPA 1986 से उत्पन्न न होने वाले उपकरण की पहचान करने को कहता है।\n\n• विकल्प (a) — वन्यजीव संरक्षण अधिनियम 1972: असामान्य विकल्प। यह संसद का स्वतंत्र अधिनियम है — यह EPA 1986 के तहत जारी नहीं होता और इसका अपना संवैधानिक आधार है। यह संरक्षित क्षेत्रों को नियंत्रित करता है लेकिन इको-सेंसिटिव जोन अधिसूचनाएँ जारी नहीं करता।\n• विकल्प (b) — EIA अधिसूचना 2006: समूह के भीतर। EPA 1986 की धारा 3(1) और 3(2)(v) के तहत जारी — एक पारंपरिक उप-उपकरण।\n• विकल्प (c) — इको-सेंसिटिव जोन अधिसूचनाएँ: समूह के भीतर। संरक्षित क्षेत्रों से भौगोलिक रूप से संबंधित होने के बावजूद, जो WPA द्वारा नियंत्रित हैं, ESZ अधिसूचनाएँ EPA 1986 की धारा 3 के तहत जारी होती हैं।\n• विकल्प (d) — CRZ अधिसूचना 2019: समूह के भीतर। तटीय क्षेत्रों में गतिविधियों को नियंत्रित करने के लिए EPA 1986 की धारा 3 के तहत जारी।\n\nमूल्यवर्धन:\n• ESZ उल्लंघनों का अभियोजन EPA 1986 के तहत होता है, WPA के तहत नहीं — ESZ के EPA अधिसूचनाएँ होने का एक और परिणाम।\n• सुप्रीम कोर्ट ने ESZ चौड़ाई (संरक्षित क्षेत्र की सीमाओं से न्यूनतम 1 किमी) पर 2022 के एक महत्वपूर्ण निर्णय में समेकित निर्देश जारी किए हैं।\n• EIA, CRZ, और ESZ अधिसूचनाओं को संसद की मंजूरी के बिना नई अधिसूचनाओं के माध्यम से संशोधित किया जा सकता है — क्योंकि ये उप-व्यवस्था हैं।"
+    }
+  },
+  {
+    "uuid": "ba875d70-57de-4dbc-95ac-6fdafa2b98ce",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Constitutional Basis and Legislative Competence of EPA 1986",
+        "Relationship Between EPA 1986 and Other Environmental Laws: Hierarchy and Overlaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Article 253 EPA overrides state laws without state consent",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A coastal state has enacted a state environmental law permitting certain regulated industrial discharges into estuaries at concentrations that are 20% higher than national standards prescribed under EPA 1986, on the ground that local ecological conditions make stricter standards impracticable. The Central Government issues a written direction under Section 5 of EPA 1986 to a company in that state requiring it to comply with national standards. The company argues that the state regulation should prevail because environmental matters are in the Concurrent List and the state law, having received Presidential assent under Article 254(2), is valid.\n\nWhich of the following correctly describes the legal position?\n\n(a) The state regulation prevails because Article 254(2) of the Constitution permits a state law on a Concurrent List subject, once it has received Presidential assent, to override a central law on the same subject\n(b) The Central Government's Section 5 direction prevails because EPA 1986 was enacted under Article 253 and its Section 24 gives the Act overriding effect over inconsistent provisions in other laws\n(c) The state's stricter environmental standard automatically prevails as states are free to set any standard in the interest of their environment without being bound by Central Government directions\n(d) The High Court must decide which law prevails by applying the doctrine of harmonious construction between the state environmental law and the EPA 1986 direction",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know that environmental matters appear in the Concurrent List (Entries 17A, 17B) may conclude that the state law should prevail when it is stricter, misapplying the doctrine of repugnancy under Article 254 instead of recognising EPA's Article 253 basis.",
+      "elimination_logic": [
+        "Identify the legal question: when a Central Government direction under EPA 1986 conflicts with a state environmental regulation, which prevails?",
+        "Eliminate (a): Because EPA 1986 derives from Article 253 (international treaties), not from a Concurrent List entry, the normal Article 254 repugnancy doctrine (where stricter state law can prevail with Presidential assent) does not apply in the same way.",
+        "Eliminate (c): State laws do not automatically prevail over EPA directions merely because they are stricter — EPA's Article 253 basis gives it supremacy over state laws.",
+        "Eliminate (d): The court cannot simply declare the EPA direction inapplicable to the state — EPA applies uniformly to all states.",
+        "Confirm (b): EPA 1986, enacted under Article 253, overrides inconsistent state laws. Section 24 gives EPA overriding effect. A Section 5 direction from the Central Government prevails over the state regulation."
+      ],
+      "upsc_trap_explanation": "The scenario is designed to trigger Article 254 reasoning — students familiar with the doctrine of repugnancy between Union and state laws on Concurrent List subjects may apply Article 254(2) (state law with Presidential assent prevails). However, EPA 1986 is not a Concurrent List legislation — it derives from Article 253. This means the normal repugnancy analysis does not apply, and EPA's Section 24 overriding effect is the governing principle.",
+      "final_explanation": "This scenario tests the constitutional supremacy question between EPA 1986 and state environmental regulations.\n\nEPA 1986 derives its authority from Article 253 — Parliament's power to implement international agreements. This gives EPA a constitutional status distinct from ordinary Concurrent List legislation. Section 24 of EPA 1986 explicitly provides that its provisions override any inconsistent provisions in any other law currently in force.\n\n• Option (a) — State law prevails because Article 254(2) allows stricter state laws: Incorrect. Article 254(2) applies to state laws on Concurrent List subjects. Since EPA derives from Article 253 (not a Concurrent List entry), Article 254 does not govern the conflict. EPA's Section 24 overrides the state regulation.\n• Option (b) — EPA's Section 5 direction prevails; EPA overrides inconsistent state laws: Correct. Section 24 gives EPA overriding effect over other laws, and Article 253 grants Parliament plenary power to enact EPA without state consent. The Section 5 direction is legally superior.\n• Option (c) — Stricter state standard prevails automatically: Incorrect. While states can set stricter standards, a Section 5 direction is a specific enforcement measure — it overrides conflicting state regulations.\n• Option (d) — Court declares EPA direction inapplicable to the state: Incorrect. EPA applies uniformly across India without state consent requirements.\n\nValue Addition:\n• States can prescribe stricter ambient standards but cannot override Central Government enforcement directions under Section 5.\n• The Article 254(2) pathway is available for Concurrent List conflicts — not for Article 253-based legislation like EPA.\n• Section 24's harmonious construction with Water/Air Acts distinguishes EPA's relationship with those Acts from its relationship with other state laws."
+    },
+    "hi": {
+      "display_text": "एक तटीय राज्य ने एक राज्य पर्यावरण कानून बनाया है जो EPA 1986 के तहत निर्धारित राष्ट्रीय मानकों की तुलना में कुछ नियंत्रित औद्योगिक निर्वहन को जलमिश्रणों में 20% अधिक सांद्रता पर अनुमति देता है, यह तर्क देते हुए कि स्थानीय पारिस्थितिक परिस्थितियाँ अधिक कड़े मानकों को लागू करना व्यावहारिक नहीं बनातीं। केंद्रीय सरकार EPA 1986 की धारा 5 के तहत उस राज्य में एक कंपनी को लिखित निर्देश जारी करती है कि वह राष्ट्रीय मानकों का पालन करे। कंपनी तर्क देती है कि राज्य का नियम प्राथमिक होना चाहिए क्योंकि पर्यावरणीय मामले समवर्ती सूची में हैं और राज्य कानून, जिसे अनुच्छेद 254(2) के तहत राष्ट्रपति की सहमति मिली है, वैध है।\n\nनिम्नलिखित में से कौन सा कानूनी स्थिति को सही रूप से वर्णित करता है?\n\n(a) राज्य नियम प्राथमिक होगा क्योंकि संविधान का अनुच्छेद 254(2) समवर्ती सूची विषय पर राज्य कानून को, जब उसे राष्ट्रपति की सहमति मिलती है, केंद्रीय कानून पर प्राथमिकता देने की अनुमति देता है\n(b) केंद्रीय सरकार का धारा 5 का निर्देश प्राथमिक होगा क्योंकि EPA 1986 अनुच्छेद 253 के तहत बनाया गया है और इसकी धारा 24 अधिनियम को अन्य कानूनों के असंगत प्रावधानों पर अधिलेखित प्रभाव देती है\n(c) राज्य का अधिक कड़ा पर्यावरण मानक अपने आप प्राथमिक होगा क्योंकि राज्य अपने पर्यावरण के हित में कोई भी मानक निर्धारित करने के लिए स्वतंत्र हैं और केंद्रीय सरकार के निर्देशों से बंधे नहीं हैं\n(d) उच्च न्यायालय को यह निर्णय लेना होगा कि कौन सा कानून प्राथमिक है, राज्य पर्यावरण कानून और EPA 1986 के निर्देश के बीच सामंजस्यपूर्ण व्याख्या के सिद्धांत को लागू करके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि पर्यावरणीय मामले समवर्ती सूची (Entries 17A, 17B) में आते हैं, वे यह निष्कर्ष निकाल सकते हैं कि जब राज्य का कानून अधिक कड़ा हो तो उसे प्राथमिकता मिलनी चाहिए, और वे अनुच्छेद 254 के तहत विरोधाभास के सिद्धांत को गलत तरीके से लागू करते हैं, जबकि उन्हें EPA के अनुच्छेद 253 के आधार को समझना चाहिए।",
+      "elimination_logic": [
+        "कानूनी प्रश्न पहचानें: जब EPA 1986 के तहत केंद्रीय सरकार का निर्देश राज्य के पर्यावरणीय नियम से टकराता है, तो कौन सा कानून प्राथमिक होगा?",
+        "(a) को खारिज करें: क्योंकि EPA 1986 अनुच्छेद 253 (अंतरराष्ट्रीय संधियाँ) से उत्पन्न होता है, न कि समवर्ती सूची की प्रविष्टि से, इसलिए सामान्य अनुच्छेद 254 के विरोधाभास के सिद्धांत (जहाँ अधिक कड़ा राज्य कानून राष्ट्रपति की सहमति से प्राथमिक हो सकता है) वैसे लागू नहीं होता।",
+        "(c) को खारिज करें: केवल इसलिए कि राज्य के कानून अधिक कड़े हैं, वे अपने आप EPA के निर्देशों पर प्राथमिकता नहीं रखते — EPA का अनुच्छेद 253 का आधार इसे राज्य कानूनों पर सर्वोच्चता देता है।",
+        "(d) को खारिज करें: न्यायालय केवल यह घोषित नहीं कर सकता कि EPA का निर्देश राज्य पर लागू नहीं होता — EPA सभी राज्यों पर समान रूप से लागू होता है।",
+        "(b) की पुष्टि करें: EPA 1986, जो अनुच्छेद 253 के तहत बनाया गया है, असंगत राज्य कानूनों को अधिलेखित करता है। धारा 24 EPA को अधिलेखित प्रभाव देती है। केंद्रीय सरकार का धारा 5 का निर्देश राज्य के नियमों पर प्राथमिक होता है।"
+      ],
+      "upsc_trap_explanation": "यह परिदृश्य अनुच्छेद 254 के तर्क को सक्रिय करने के लिए डिज़ाइन किया गया है — जो छात्र समवर्ती सूची विषयों पर संघ और राज्य कानूनों के बीच विरोधाभास के सिद्धांत से परिचित हैं, वे अनुच्छेद 254(2) (राष्ट्रपति की सहमति से राज्य कानून प्राथमिक होता है) लागू कर सकते हैं। हालांकि, EPA 1986 समवर्ती सूची का कानून नहीं है — यह अनुच्छेद 253 से उत्पन्न होता है। इसका अर्थ है कि सामान्य विरोधाभास विश्लेषण लागू नहीं होता, और EPA की धारा 24 का अधिलेखित प्रभाव शासन सिद्धांत है।",
+      "final_explanation": "यह परिदृश्य EPA 1986 और राज्य पर्यावरणीय नियमों के बीच संवैधानिक सर्वोच्चता के प्रश्न का परीक्षण करता है।\n\nEPA 1986 अपनी शक्ति अनुच्छेद 253 से प्राप्त करता है — संसद की अंतरराष्ट्रीय समझौतों को लागू करने की शक्ति। इससे EPA को सामान्य समवर्ती सूची कानूनों से अलग संवैधानिक स्थिति मिलती है। EPA 1986 की धारा 24 स्पष्ट रूप से प्रदान करती है कि इसके प्रावधान किसी भी अन्य लागू कानून के असंगत प्रावधानों पर अधिलेखित होंगे।\n\n• विकल्प (a) — राज्य कानून प्राथमिक होगा क्योंकि अनुच्छेद 254(2) समवर्ती सूची विषयों पर अधिक कड़े राज्य कानूनों को अनुमति देता है: गलत। अनुच्छेद 254(2) समवर्ती सूची विषयों पर राज्य कानूनों पर लागू होता है। चूंकि EPA अनुच्छेद 253 से उत्पन्न होता है (समवर्ती सूची प्रविष्टि नहीं), अनुच्छेद 254 संघर्ष को नियंत्रित नहीं करता। EPA की धारा 24 राज्य नियमों को अधिलेखित करती है।\n• विकल्प (b) — EPA की धारा 5 का निर्देश प्राथमिक होगा; EPA असंगत राज्य कानूनों को अधिलेखित करता है: सही। धारा 24 EPA को अन्य कानूनों पर अधिलेखित प्रभाव देती है, और अनुच्छेद 253 संसद को बिना राज्य की सहमति के EPA बनाने की पूर्ण शक्ति देता है। धारा 5 का निर्देश कानूनी रूप से श्रेष्ठ है।\n• विकल्प (c) — अधिक कड़ा राज्य मानक अपने आप प्राथमिक होगा: गलत। जबकि राज्य अधिक कड़े मानक निर्धारित कर सकते हैं, धारा 5 का निर्देश एक विशिष्ट प्रवर्तन उपाय है — यह विरोधाभासी राज्य नियमों को अधिलेखित करता है।\n• विकल्प (d) — उच्च न्यायालय यह निर्णय करेगा कि कौन सा कानून प्राथमिक है, EPA 1986 के निर्देश और राज्य पर्यावरण कानून के बीच सामंजस्यपूर्ण व्याख्या लागू करके: गलत। EPA पूरे भारत में बिना राज्य की सहमति के समान रूप से लागू होता है।\n\nमूल्य संवर्धन:\n• राज्य अधिक कड़े पर्यावरणीय मानक निर्धारित कर सकते हैं लेकिन केंद्रीय सरकार के धारा 5 के प्रवर्तन निर्देशों को अधिलेखित नहीं कर सकते।\n• अनुच्छेद 254(2) का मार्ग समवर्ती सूची संघर्षों के लिए उपलब्ध है — न कि अनुच्छेद 253 आधारित कानूनों जैसे EPA के लिए।\n• धारा 24 का जल/वायु अधिनियमों के साथ सामंजस्यपूर्ण निर्माण EPA के उन अधिनियमों के साथ संबंध को राज्य के अन्य कानूनों से अलग करता है।"
+    }
+  },
+  {
+    "uuid": "5b5509de-49e8-432a-9359-31805e48dea8",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Section 5 Directions: Nature, Scope and Judicial Interpretation",
+        "Relationship Between EPA 1986 and Other Environmental Laws: Hierarchy and Overlaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Section 5 directions override other Acts except essential services",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Section 5 of the Environment Protection Act 1986 empowers the Central Government to issue written directions to any person, officer, or authority, and such directions shall have effect notwithstanding anything inconsistent with them in any other law. However, this overriding power is expressly subject to one statutory exception — it shall not apply to directions that would affect ________.\n\n(a) Provisions of any other Act dealing with environmental regulation\n(b) The Constitution of India and fundamental rights guaranteed under Part III\n(c) Essential services\n(d) The Water (Prevention and Control of Pollution) Act 1974 and its established standards",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who associate 'essential services' exceptions with labour law rather than environmental law may not recognise this as the correct limitation, instead assuming the Constitution is the operative limit.",
+      "elimination_logic": [
+        "Identify what the blank tests: the specific exception to Section 5 directions' overriding power.",
+        "Eliminate (a): Section 5 directions do override other Acts — 'any other Act' is not the correct blank filler because that is precisely what Section 5 directions DO override.",
+        "Eliminate (b): The Constitution is not stated as the specific exception in Section 5's text — constitutional provisions are always supreme but are not the statutory exception identified in Section 5.",
+        "Eliminate (d): Water Act 1974 is not the stated exception to Section 5's override — Section 24 handles the Water/Air Act relationship, not Section 5.",
+        "Confirm (c): Section 5 explicitly carves out essential services from its overriding effect — this is the stated statutory exception."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes 'the Constitution' (option b) or 'the Water Act 1974' (option d) for 'essential services' — the actual carved-out exception in Section 5. Students who know Section 5 is broadly overriding may assume the only limit is constitutional supremacy. The specific text of Section 5, however, carves out essential services — a practical safeguard preventing EPA directions from shutting down hospitals, power stations, and water supply systems.",
+      "final_explanation": "Section 5 of EPA 1986 grants the Central Government extraordinarily broad directive power, but this power contains one specific internal limitation.\n\n• Option (a) — 'provisions of any other Act': Incorrect. This is precisely what Section 5 directions DO override — the blank must name the exception, not the general rule.\n• Option (b) — 'the Constitution of India': Incorrect. The Constitution is always supreme, but it is not the specific statutory exception carved out within Section 5's text.\n• Option (c) — 'essential services': Correct. Section 5 directions override all other laws but are expressly excepted from disrupting essential services — this prevents environmental enforcement from shutting down hospitals, electricity generation, water treatment, and similar critical infrastructure.\n• Option (d) — 'the Water (Prevention and Control of Pollution) Act 1974': Incorrect. The relationship between EPA and the Water Act is governed by Section 24 and harmonious construction principles — not by an exception within Section 5.\n\nValue Addition:\n• The essential services exception prevents enforcement actions from creating greater public harm than the environmental violation being addressed.\n• Section 5 directions can be appealed but remain operative during the appeal unless the court grants a stay.\n• The overlap between Section 5 of EPA and Section 33A of the Water Act is resolved by applying whichever direction is more stringent."
+    },
+    "hi": {
+      "display_text": "पर्यावरण संरक्षण अधिनियम 1986 के सेक्शन 5 के तहत केंद्र सरकार को किसी भी व्यक्ति, अधिकारी, या प्राधिकरण को लिखित निर्देश जारी करने का अधिकार है, और ऐसे निर्देश अन्य किसी भी कानून में उनके साथ असंगत कुछ भी होने के बावजूद प्रभावी होंगे। हालांकि, इस अधिमान्य शक्ति पर एक विशिष्ट वैधानिक छूट लागू होती है — यह उन निर्देशों पर लागू नहीं होगी जो ________ को प्रभावित करें।\n\n(a) पर्यावरणीय विनियमन से संबंधित किसी अन्य अधिनियम के प्रावधान\n(b) भारत का संविधान और भाग III के तहत सुनिश्चित मौलिक अधिकार\n(c) आवश्यक सेवाएं\n(d) जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974 और उसके स्थापित मानक",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो 'आवश्यक सेवाओं' की छूट को श्रम कानून से जोड़ते हैं न कि पर्यावरण कानून से, वे इसे सही सीमा के रूप में नहीं पहचान सकते, बल्कि संविधान को लागू सीमा मान लेते हैं।",
+      "elimination_logic": [
+        "यह पहचानें कि रिक्त स्थान क्या परखता है: सेक्शन 5 निर्देशों की अधिमान्यता की विशिष्ट छूट।",
+        "(a) को हटाएं: सेक्शन 5 निर्देश अन्य अधिनियमों पर अधिमान्य होते हैं — 'किसी अन्य अधिनियम' रिक्त स्थान के लिए सही उत्तर नहीं है क्योंकि यही तो सेक्शन 5 निर्देशों का प्रभाव है।",
+        "(b) को हटाएं: संविधान को सेक्शन 5 के पाठ में विशिष्ट छूट के रूप में नहीं बताया गया है — संविधान हमेशा सर्वोच्च होता है लेकिन यह सेक्शन 5 में उल्लिखित वैधानिक छूट नहीं है।",
+        "(d) को हटाएं: जल अधिनियम 1974 सेक्शन 5 की अधिमान्यता की छूट नहीं है — जल/वायु अधिनियम संबंध सेक्शन 24 द्वारा नियंत्रित हैं, न कि सेक्शन 5 द्वारा।",
+        "(c) की पुष्टि करें: सेक्शन 5 स्पष्ट रूप से आवश्यक सेवाओं को अपने अधिमान्य प्रभाव से बाहर करता है — यह वैधानिक छूट है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में 'संविधान' (विकल्प b) या 'जल अधिनियम 1974' (विकल्प d) को 'आवश्यक सेवाओं' के स्थान पर रखा गया है — जो कि सेक्शन 5 में वास्तविक रूप से बाहर रखी गई छूट है। जो छात्र जानते हैं कि सेक्शन 5 व्यापक अधिमान्य है, वे मान सकते हैं कि केवल सीमा संविधान की सर्वोच्चता है। परंतु सेक्शन 5 का विशिष्ट पाठ आवश्यक सेवाओं को बाहर करता है — यह एक व्यावहारिक सुरक्षा है जो EPA निर्देशों को अस्पताल, विद्युत स्टेशन, और जल आपूर्ति प्रणालियों को बंद करने से रोकती है।",
+      "final_explanation": "EPA 1986 के सेक्शन 5 में केंद्र सरकार को अत्यंत व्यापक निर्देशात्मक शक्ति दी गई है, लेकिन इस शक्ति में एक विशिष्ट आंतरिक सीमा है।\n\n• विकल्प (a) — 'किसी अन्य अधिनियम के प्रावधान': गलत। यही तो सेक्शन 5 निर्देशों द्वारा अधिमान्य किया जाता है — रिक्त स्थान में छूट का नाम होना चाहिए, सामान्य नियम नहीं।\n• विकल्प (b) — 'भारत का संविधान': गलत। संविधान हमेशा सर्वोच्च होता है, लेकिन यह सेक्शन 5 के पाठ में उल्लिखित विशिष्ट वैधानिक छूट नहीं है।\n• विकल्प (c) — 'आवश्यक सेवाएं': सही। सेक्शन 5 के निर्देश सभी अन्य कानूनों पर अधिमान्य होते हैं लेकिन आवश्यक सेवाओं को बाधित करने से स्पष्ट रूप से मुक्त हैं — यह पर्यावरण प्रवर्तन को अस्पताल, विद्युत उत्पादन, जल शोधन, और इसी तरह के महत्वपूर्ण बुनियादी ढांचे को बंद करने से रोकता है।\n• विकल्प (d) — 'जल (प्रदूषण निवारण और नियंत्रण) अधिनियम 1974': गलत। EPA और जल अधिनियम के बीच संबंध सेक्शन 24 और सामंजस्यपूर्ण व्याख्या सिद्धांतों द्वारा नियंत्रित है — न कि सेक्शन 5 के भीतर किसी छूट द्वारा।\n\nमूल्यवर्धन:\n• आवश्यक सेवाओं की छूट प्रवर्तन कार्यवाहियों को पर्यावरण उल्लंघन से अधिक सार्वजनिक हानि पैदा करने से रोकती है।\n• सेक्शन 5 के निर्देशों के खिलाफ अपील की जा सकती है लेकिन अपील के दौरान वे लागू रहते हैं जब तक कि न्यायालय स्थगन आदेश न दे।\n• EPA के सेक्शन 5 और जल अधिनियम के सेक्शन 33A के बीच ओवरलैप अधिक कड़ाई वाले निर्देश को लागू करके सुलझाया जाता है।"
+    }
+  },
+  {
+    "uuid": "acc9cba8-dd91-4894-b0be-38b71ef701a9",
+    "meta": {
+      "subject": "Environment",
+      "topic": "Environmental Legislation",
+      "sub_topic": "Environment Protection Act 1986",
+      "concepts_used": [
+        "Environmental Quality Standards and Schedule Provisions",
+        "EPA Rules 1986: Key Provisions and Procedural Requirements",
+        "Prohibition and Restriction on Location of Industries: Section 3(2)(v) and EIA Linkage"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "EPA Rules provisions Rule 3 Rule 13 and EIA Section 3 linkage",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Provision of EPA 1986 or EPA Rules 1986) with List II (Subject Matter or Regulatory Function):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Rule 3 of EPA Rules 1986",
+            "1. Statutory basis for the EIA Notification — power to restrict areas where industries may be established"
+          ],
+          [
+            "B. Rule 13 of EPA Rules 1986",
+            "2. Standards for emission or discharge of environmental pollutants from specified industries"
+          ],
+          [
+            "C. Section 3(2)(v) of EPA 1986",
+            "3. Rule-making power to prescribe standards for quality of environment and emission/discharge"
+          ],
+          [
+            "D. Section 6 of EPA 1986",
+            "4. Prohibition and restriction on handling of hazardous substances"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-4, C-2, D-1\n(b) A-2, B-4, C-1, D-3\n(c) A-2, B-1, C-4, D-3\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students may place EIA Notification's authority under Section 6 (which is the rule-making power for standards) rather than Section 3(2)(v) (which is the power to restrict areas where industries may be established), confusing standard-setting with area restriction.",
+      "elimination_logic": [
+        "Match A — Rule 3 of EPA Rules 1986: prescribes standards for emission/discharge of environmental pollutants. Matches with 2.",
+        "Match B — Rule 13 of EPA Rules 1986: prohibition and restriction on handling hazardous substances. Matches with 4.",
+        "Match C — Section 3(2)(v) of EPA 1986: power to restrict or prohibit industries in specified areas — this is the authority for EIA Notification. Matches with 1.",
+        "Match D — Section 6 of EPA 1986: rule-making power to prescribe standards for emission/discharge. Matches with 3.",
+        "Correct combination: A-2, B-4, C-1, D-3 → answer is (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places EIA Notification's authority under Section 6 (standards prescription) in option (a) rather than under Section 3(2)(v) (area restriction and industry location control). Students who associate EIA with 'environmental standards' may incorrectly link it to Section 6. The actual basis for EIA Notification is Section 3(2)(v), which empowers restriction of industries in specified areas — EIA is about controlling where and under what conditions industries may be established, not about prescribing ambient standards.",
+      "final_explanation": "EPA 1986's Rules and power provisions have distinct and non-interchangeable roles in the regulatory framework.\n\n• A — Rule 3 (2): Rule 3 of EPA Rules 1986 prescribes standards for emission or discharge of environmental pollutants from specified industries and processes — it operationalises Section 6's rule-making power.\n• B — Rule 13 (4): Rule 13 prohibits and restricts the handling of hazardous substances — the operational rule giving effect to Section 8's mandate.\n• C — Section 3(2)(v) (1): This sub-clause specifically empowers the Central Government to restrict areas where industries or operations may be carried out — it is the statutory authority underlying the EIA Notification 2006, which regulates where and how new projects can be established.\n• D — Section 6 (3): Section 6 is the rule-making power for prescribing environmental quality standards and emission/discharge standards — the parent provision for Rule 3.\n\nThe critical trap is C: EIA Notification derives from Section 3(2)(v) (area/location control), NOT from Section 6 (standards prescription).\n\nValue Addition:\n• Section 3(2)(v) is also the basis for CRZ Notifications — both EIA and CRZ regulate where industries/activities can occur.\n• Rule 3 standards form the legal basis for prosecution under Section 7 (discharge prohibition).\n• Section 6's rule-making power generates Schedule I and Schedule VI standards in the EPA Rules."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (EPA 1986 या EPA नियम 1986 के प्रावधान) को सूची II (विषय वस्तु या नियामक कार्य) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. EPA नियम 1986 का नियम 3",
+            "1. EIA अधिसूचना का वैधानिक आधार — उन क्षेत्रों को प्रतिबंधित करने का अधिकार जहाँ उद्योग स्थापित हो सकते हैं"
+          ],
+          [
+            "B. EPA नियम 1986 का नियम 13",
+            "2. निर्दिष्ट उद्योगों से पर्यावरणीय प्रदूषकों के उत्सर्जन या निकासी के लिए मानक"
+          ],
+          [
+            "C. EPA 1986 की धारा 3(2)(v)",
+            "3. पर्यावरण की गुणवत्ता और उत्सर्जन/निकासी के लिए मानक निर्धारित करने का नियम बनाने का अधिकार"
+          ],
+          [
+            "D. EPA 1986 की धारा 6",
+            "4. खतरनाक पदार्थों के संचालन पर प्रतिबंध और रोक"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-4, C-2, D-1\n(b) A-2, B-4, C-1, D-3\n(c) A-2, B-1, C-4, D-3\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र EIA अधिसूचना के अधिकार को धारा 6 के अंतर्गत (जो मानकों के लिए नियम बनाने का अधिकार है) के बजाय धारा 3(2)(v) के अंतर्गत (जो उद्योगों के स्थापित होने वाले क्षेत्रों को प्रतिबंधित करने का अधिकार है) रख सकते हैं, जिससे मानक निर्धारण और क्षेत्र प्रतिबंध में भ्रम होता है।",
+      "elimination_logic": [
+        "A से मेल खाता है — EPA नियम 1986 का नियम 3: पर्यावरणीय प्रदूषकों के उत्सर्जन/निकासी के लिए मानक निर्धारित करता है। यह 2 से मेल खाता है।",
+        "B से मेल खाता है — EPA नियम 1986 का नियम 13: खतरनाक पदार्थों के संचालन पर प्रतिबंध और रोक। यह 4 से मेल खाता है।",
+        "C से मेल खाता है — EPA 1986 की धारा 3(2)(v): निर्दिष्ट क्षेत्रों में उद्योगों को प्रतिबंधित या निषेध करने का अधिकार — यह EIA अधिसूचना का अधिकार क्षेत्र है। यह 1 से मेल खाता है।",
+        "D से मेल खाता है — EPA 1986 की धारा 6: उत्सर्जन/निकासी के लिए मानक निर्धारित करने का नियम बनाने का अधिकार। यह 3 से मेल खाता है।",
+        "सही संयोजन: A-2, B-4, C-1, D-3 → उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में EIA अधिसूचना के अधिकार को धारा 6 (मानक निर्धारण) के अंतर्गत विकल्प (a) में रखा गया है, जबकि वास्तविक अधिकार धारा 3(2)(v) (क्षेत्र प्रतिबंध और उद्योग स्थान नियंत्रण) के अंतर्गत है। जो छात्र EIA को 'पर्यावरणीय मानकों' से जोड़ते हैं, वे इसे गलत तरीके से धारा 6 से जोड़ सकते हैं। EIA अधिसूचना का वास्तविक आधार धारा 3(2)(v) है, जो निर्दिष्ट क्षेत्रों में उद्योगों को प्रतिबंधित करने का अधिकार देती है — EIA इस बात को नियंत्रित करता है कि उद्योग कहाँ और किन शर्तों पर स्थापित हो सकते हैं, न कि पर्यावरणीय मानक निर्धारित करने के लिए।",
+      "final_explanation": "EPA 1986 के नियम और अधिकार प्रावधान नियामक ढांचे में विशिष्ट और अदला-बदली न किए जाने वाले कार्य करते हैं।\n\n• A — नियम 3 (2): EPA नियम 1986 का नियम 3 निर्दिष्ट उद्योगों और प्रक्रियाओं से पर्यावरणीय प्रदूषकों के उत्सर्जन या निकासी के लिए मानक निर्धारित करता है — यह धारा 6 के नियम बनाने के अधिकार को क्रियान्वित करता है।\n• B — नियम 13 (4): नियम 13 खतरनाक पदार्थों के संचालन पर प्रतिबंध और रोक लगाता है — यह धारा 8 के आदेश को लागू करने वाला नियम है।\n• C — धारा 3(2)(v) (1): यह उप-धारा केंद्रीय सरकार को निर्दिष्ट क्षेत्रों में उद्योगों या संचालन को प्रतिबंधित करने का अधिकार देती है — यह EIA अधिसूचना 2006 का वैधानिक आधार है, जो नए परियोजनाओं के स्थान और स्थापना के तरीके को नियंत्रित करती है।\n• D — धारा 6 (3): धारा 6 पर्यावरण गुणवत्ता मानकों और उत्सर्जन/निकासी मानकों के लिए नियम बनाने का अधिकार है — नियम 3 के लिए मूल प्रावधान।\n\nमहत्वपूर्ण जाल है C: EIA अधिसूचना धारा 3(2)(v) (क्षेत्र/स्थान नियंत्रण) से उत्पन्न होती है, न कि धारा 6 (मानक निर्धारण) से।\n\nमूल्य संवर्धन:\n• धारा 3(2)(v) CRZ अधिसूचनाओं का भी आधार है — दोनों EIA और CRZ यह नियंत्रित करते हैं कि उद्योग/गतिविधियाँ कहाँ हो सकती हैं।\n• नियम 3 के मानक धारा 7 (निकासी निषेध) के तहत अभियोजन का कानूनी आधार बनाते हैं।\n• धारा 6 का नियम बनाने का अधिकार EPA नियमों में अनुसूची I और अनुसूची VI मानक उत्पन्न करता है।"
+    }
+  }
+]

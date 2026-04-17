@@ -1,0 +1,1185 @@
+[
+  {
+    "uuid": "d7a1a87b-6cd4-4b0d-b193-b69fbb2d6f8a",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Mansabdari System: Structure and Dual Rank Mechanism"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Zat vs Sawar rank functions in Mansabdari",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the Mansabdari system introduced by Akbar, which of the following correctly distinguishes the functions of the Zat and Sawar ranks?\n\n(a) Zat rank determined the size of cavalry contingent while Sawar rank fixed personal salary\n(b) Zat rank determined personal status and pay while Sawar rank specified the cavalry obligation\n(c) Sawar rank determined personal salary while Zat rank specified the cavalry obligation\n(d) Both ranks were effectively interchangeable and together determined total military strength",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because students often conflate Zat with cavalry since both relate to military standing, when in fact Zat governs personal pay and status while Sawar governs cavalry obligation.",
+      "elimination_logic": [
+        "Eliminate option (a): Zat rank does not determine cavalry contingent size — that is the function of Sawar rank.",
+        "Eliminate option (c): Sawar rank does not fix personal salary — salary and precedence are determined by Zat rank.",
+        "Eliminate option (d): The two ranks are not interchangeable; each has a distinct and separate administrative function."
+      ],
+      "upsc_trap_explanation": "The most common trap here is conflating Zat with cavalry obligations. A student who has read only surface-level descriptions may recall that mansabdars maintained cavalry and incorrectly assign that function to Zat rank. The trap exploits the fact that both ranks appear in a military context, making their functional distinction easy to blur. Precise knowledge requires knowing that Zat is entirely about the holder's personal status and pay grade, while Sawar is the operational cavalry obligation.",
+      "final_explanation": "The Mansabdari system operated on a dual-rank mechanism where each official held two numerical grades simultaneously. Understanding which rank served which function is the key to this question.\n\n• Option (a) — Incorrect: Zat rank did not determine cavalry contingent. That function belonged to Sawar rank.\n• Option (b) — Correct: Zat rank fixed the holder's personal status, pay grade, and precedence at court. Sawar rank specified the number of cavalry soldiers the mansabdar was obligated to maintain for imperial service.\n• Option (c) — Incorrect: Sawar rank does not determine personal salary — Zat rank does.\n• Option (d) — Incorrect: The two ranks served distinct purposes and were never interchangeable.\n\nValue Addition:\n• A mansabdar whose Sawar rank equalled his Zat rank fell in the first category — the highest obligation.\n• Jahangir introduced Du-aspa Sih-aspa, effectively doubling cavalry obligations without raising Zat rank.\n• Aurangzeb's period saw the Mashrut (conditional) Sawar rank introduced, further complicating the system."
+    },
+    "hi": {
+      "display_text": "अकबर द्वारा स्थापित मंसबदारी प्रणाली में, निम्नलिखित में से कौन-सा विकल्प ज़ात और सवार पदों के कार्यों को सही ढंग से अलग करता है?\n\n(a) ज़ात पद घुड़सवार दस्ते के आकार को निर्धारित करता था जबकि सवार पद व्यक्तिगत वेतन निर्धारित करता था\n(b) ज़ात पद व्यक्तिगत स्थिति और वेतन निर्धारित करता था जबकि सवार पद घुड़सवार दायित्व निर्दिष्ट करता था\n(c) सवार पद व्यक्तिगत वेतन निर्धारित करता था जबकि ज़ात पद घुड़सवार दायित्व निर्दिष्ट करता था\n(d) दोनों पद प्रभावी रूप से विनिमेय थे और मिलकर कुल सैन्य शक्ति निर्धारित करते थे",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र अक्सर ज़ात को घुड़सवार से जोड़ देते हैं क्योंकि दोनों सैन्य स्थिति से संबंधित हैं, जबकि वास्तव में ज़ात व्यक्तिगत वेतन और स्थिति को नियंत्रित करता है और सवार घुड़सवार दायित्व को नियंत्रित करता है।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: ज़ात पद घुड़सवार दस्ते के आकार को निर्धारित नहीं करता — यह सवार पद का कार्य है।",
+        "विकल्प (c) को खारिज करें: सवार पद व्यक्तिगत वेतन निर्धारित नहीं करता — वेतन और प्राथमिकता ज़ात पद द्वारा निर्धारित होती है।",
+        "विकल्प (d) को खारिज करें: ये दोनों पद परस्पर विनिमेय नहीं हैं; प्रत्येक का अलग और विशिष्ट प्रशासनिक कार्य है।"
+      ],
+      "upsc_trap_explanation": "यहाँ सबसे सामान्य जाल ज़ात को घुड़सवार दायित्वों के साथ मिलाना है। जो छात्र केवल सतही विवरण पढ़ते हैं, वे याद रख सकते हैं कि मंसबदारों ने घुड़सवार बनाए और गलती से यह कार्य ज़ात पद को सौंप देते हैं। यह जाल इस तथ्य का फायदा उठाता है कि दोनों पद सैन्य संदर्भ में आते हैं, जिससे उनके कार्यात्मक भेद को धुंधला करना आसान हो जाता है। सटीक ज्ञान के लिए यह जानना आवश्यक है कि ज़ात पूरी तरह से धारक की व्यक्तिगत स्थिति और वेतन स्तर से संबंधित है, जबकि सवार घुड़सवार दायित्व है।",
+      "final_explanation": "मंसबदारी प्रणाली दोहरे पद प्रणाली पर आधारित थी जहाँ प्रत्येक अधिकारी के पास दो संख्यात्मक पद एक साथ होते थे। यह समझना कि कौन सा पद किस कार्य के लिए था, इस प्रश्न की कुंजी है।\n\n• विकल्प (a) — गलत: ज़ात पद घुड़सवार दस्ते को निर्धारित नहीं करता था। यह कार्य सवार पद का था।\n• विकल्प (b) — सही: ज़ात पद धारक की व्यक्तिगत स्थिति, वेतन स्तर और दरबार में प्राथमिकता निर्धारित करता था। सवार पद यह निर्दिष्ट करता था कि मंसबदार को कितने घुड़सवार सैनिक बनाए रखने हैं।\n• विकल्प (c) — गलत: सवार पद व्यक्तिगत वेतन निर्धारित नहीं करता — ज़ात पद करता है।\n• विकल्प (d) — गलत: ये दोनों पद अलग-अलग उद्देश्य सेवा करते थे और कभी भी विनिमेय नहीं थे।\n\nमूल्यवर्धन:\n• जिसका सवार पद उसके ज़ात पद के बराबर होता था, वह पहली श्रेणी में आता था — सबसे उच्च दायित्व।\n• जहांगीर ने दुआस्पा-सिहस्पा प्रणाली शुरू की, जिससे घुड़सवार दायित्व दोगुना हो गया बिना ज़ात पद बढ़ाए।\n• औरंगजेब के काल में मशरूत (शर्तीय) सवार पद पेश किया गया, जिससे प्रणाली और जटिल हो गई।"
+    }
+  },
+  {
+    "uuid": "32a2c644-6e9a-4e4e-84a1-53a54f755c7d",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Jagirdari System: Assignment, Types, and Inherent Contradictions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Jagir types — Watan, Tankha, Altamgha distinctions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Jagirdari system under the Mughal Empire, consider the following statements:\n\n1. Watan Jagirs were hereditary grants given primarily to Rajput chiefs and were not transferable at the emperor's will.\n2. Tankha Jagirs were permanent grants made in perpetuity to favoured nobles as a mark of imperial munificence.\n3. The Jagirdari system was structurally linked to the Mansabdari system in that a mansabdar's salary was typically disbursed through assignment of jagir revenue rather than direct cash payment.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Watan Jagirs were hereditary grants given primarily to Rajput chiefs and were not transferable at the emperor's will.",
+          "verdict": "Correct",
+          "reason": "Watan Jagirs were a special category granted to local hereditary chiefs, especially Rajput rulers, allowing them to retain their ancestral territories within the Mughal revenue framework on a hereditary basis."
+        },
+        {
+          "statement": "Tankha Jagirs were permanent grants made in perpetuity to favoured nobles as a mark of imperial munificence.",
+          "verdict": "Incorrect",
+          "reason": "Tankha Jagirs were transferable and non-hereditary — they were periodically reassigned. It is Altamgha Jagirs that were grants in perpetuity."
+        },
+        {
+          "statement": "The Jagirdari system was structurally linked to the Mansabdari system in that a mansabdar's salary was typically disbursed through assignment of jagir revenue rather than direct cash payment.",
+          "verdict": "Correct",
+          "reason": "Mansabdars were generally not paid in cash from the treasury; instead, jagirs whose revenue equalled their assessed salary were assigned to them, making the two systems functionally interdependent."
+        }
+      ],
+      "strong_distractor": "b — Option b is a strong distractor because students who partially know the topic may correctly reject Statement 2 but mistakenly also doubt Statement 3, assuming cash payment was the norm.",
+      "elimination_logic": [
+        "Verify Statement 1: Watan Jagirs were indeed hereditary grants to Rajput chiefs — Statement 1 is correct.",
+        "Verify Statement 2: The description of 'permanent grants in perpetuity' applies to Altamgha Jagirs, not Tankha Jagirs — Statement 2 is incorrect.",
+        "Verify Statement 3: The salary-via-jagir mechanism is well-established — Statement 3 is correct.",
+        "Only Statements 1 and 3 are correct, pointing to option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the tendency to confuse Tankha and Altamgha Jagirs. A student who remembers 'Tankha' as an important jagir type may incorrectly accept its description as permanent, because 'Altamgha' is a less-recalled term. The scope-extension trap lies in applying the permanence attribute of Altamgha to Tankha.",
+      "final_explanation": "The Jagirdari system comprised several distinct categories of land assignment, each with different conditions of tenure and purpose.\n\n• Statement 1 — Correct: Watan Jagirs were hereditary in nature, typically granted to Rajput chiefs over their ancestral territories. Unlike other jagirs, these were not routinely transferred.\n• Statement 2 — Incorrect: Tankha Jagirs were the transferable, non-hereditary type reassigned periodically. Altamgha Jagirs were the perpetual grants — this is the precise distinction Statement 2 collapses.\n• Statement 3 — Correct: The mansabdar-jagir link was structural: the empire rarely paid salaries in cash. Instead, jagirs whose assessed revenue matched the mansabdar's pay grade were assigned, making both systems inseparable.\n\nValue Addition:\n• The 'Jagirdari Crisis' of the later Mughal period emerged when the number of mansabdars exceeded the available jagir land, generating fierce competition.\n• Aurangzeb's expansion of mansab ranks without proportional territorial gains accelerated this crisis.\n• Altamgha Jagirs were rare and typically granted to religious figures or saints."
+    },
+    "hi": {
+      "display_text": "मुगल साम्राज्य के तहत जागीरदारी प्रणाली के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. वतन जागीरें मुख्यतः राजपूत प्रमुखों को दी जाने वाली वंशानुगत भेंट थीं और इन्हें सम्राट की इच्छा से स्थानांतरित नहीं किया जा सकता था।\n2. तनखा जागीरें सम्राट की उदारता के प्रतीक के रूप में अनंतकालीन स्थायी भेंट थीं।\n3. जागीरदारी प्रणाली संरचनात्मक रूप से मंसबदारी प्रणाली से जुड़ी थी क्योंकि मंसबदार का वेतन आमतौर पर सीधे नकद भुगतान के बजाय जागीर राजस्व के आवंटन के माध्यम से दिया जाता था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "वतन जागीरें मुख्यतः राजपूत प्रमुखों को दी जाने वाली वंशानुगत भेंट थीं और इन्हें सम्राट की इच्छा से स्थानांतरित नहीं किया जा सकता था।",
+          "verdict": "सही है",
+          "reason": "वतन जागीरें स्थानीय वंशानुगत प्रमुखों, विशेषकर राजपूत शासकों को दी जाने वाली विशेष श्रेणी थीं, जो उन्हें मुगल राजस्व व्यवस्था के अंतर्गत वंशानुगत आधार पर अपने पूर्वजों की भूमि बनाए रखने की अनुमति देती थीं।"
+        },
+        {
+          "statement": "तनखा जागीरें सम्राट की उदारता के प्रतीक के रूप में अनंतकालीन स्थायी भेंट थीं।",
+          "verdict": "गलत है",
+          "reason": "तनखा जागीरें स्थानांतरित की जाने वाली और गैर-वंशानुगत थीं — इन्हें समय-समय पर पुनः आवंटित किया जाता था। अनंतकालीन भेंटें अल्तमघा जागीरें थीं।"
+        },
+        {
+          "statement": "जागीरदारी प्रणाली संरचनात्मक रूप से मंसबदारी प्रणाली से जुड़ी थी क्योंकि मंसबदार का वेतन आमतौर पर सीधे नकद भुगतान के बजाय जागीर राजस्व के आवंटन के माध्यम से दिया जाता था।",
+          "verdict": "सही है",
+          "reason": "मंसबदारों को सामान्यतः खजाने से नकद वेतन नहीं दिया जाता था; इसके बजाय, उन्हें वे जागीरें आवंटित की जाती थीं जिनका राजस्व उनके आकलित वेतन के बराबर होता था, जिससे दोनों प्रणालियाँ कार्यात्मक रूप से परस्पर निर्भर हो जाती थीं।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि विषय का आंशिक ज्ञान रखने वाले छात्र कथन 2 को सही ढंग से खारिज कर सकते हैं लेकिन गलती से कथन 3 पर भी संदेह कर लेते हैं, यह मानते हुए कि नकद भुगतान सामान्य था।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: वतन जागीरें वास्तव में राजपूत प्रमुखों को दी जाने वाली वंशानुगत भेंट थीं — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: 'अनंतकालीन स्थायी भेंट' का वर्णन अल्तमघा जागीरों पर लागू होता है, तनखा जागीरों पर नहीं — कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: जागीर के माध्यम से वेतन देने की व्यवस्था स्थापित है — कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं, अतः विकल्प (c) सही है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 तनखा और अल्तमघा जागीरों को भ्रमित करने की प्रवृत्ति का लाभ उठाता है। जो छात्र 'तनखा' को एक महत्वपूर्ण जागीर प्रकार के रूप में याद रखते हैं, वे इसकी स्थायित्व की व्याख्या गलत तरीके से स्वीकार कर सकते हैं क्योंकि 'अल्तमघा' कम याद किया जाने वाला शब्द है। दायरा-विस्तार का जाल अल्तमघा की स्थायित्व विशेषता को तनखा पर लागू करने में है।",
+      "final_explanation": "जागीरदारी प्रणाली में भूमि आवंटन की कई विशिष्ट श्रेणियाँ शामिल थीं, जिनमें अलग-अलग अधिकार और उद्देश्य थे।\n\n• कथन 1 — सही: वतन जागीरें वंशानुगत थीं, जो आमतौर पर राजपूत प्रमुखों को उनके पूर्वजों की भूमि पर दी जाती थीं। अन्य जागीरों के विपरीत, इन्हें नियमित रूप से स्थानांतरित नहीं किया जाता था।\n• कथन 2 — गलत: तनखा जागीरें स्थानांतरित की जाने वाली, गैर-वंशानुगत प्रकार की थीं जिन्हें समय-समय पर पुनः आवंटित किया जाता था। अल्तमघा जागीरें अनंतकालीन भेंट थीं — यही कथन 2 की गलती है।\n• कथन 3 — सही: मंसबदार-जागीर संबंध संरचनात्मक था: साम्राज्य शायद ही कभी नकद वेतन देता था। इसके बजाय, मंसबदार के वेतन के बराबर राजस्व वाली जागीरें आवंटित की जाती थीं, जिससे दोनों प्रणालियाँ अविभाज्य बन जाती थीं।\n\nमूल्यवर्धन:\n• बाद के मुगल काल में 'जागीरदारी संकट' तब उत्पन्न हुआ जब मंसबदारों की संख्या उपलब्ध जागीर भूमि से अधिक हो गई, जिससे तीव्र प्रतिस्पर्धा हुई।\n• औरंगजेब द्वारा मंसबद रैंक का विस्तार बिना समानुपाती क्षेत्रीय लाभ के इस संकट को तेज़ कर गया।\n• अल्तमघा जागीरें दुर्लभ थीं और आमतौर पर धार्मिक व्यक्तियों या संतों को दी जाती थीं।"
+    }
+  },
+  {
+    "uuid": "a8a5cdd7-a57c-48ab-9507-64b9f81e41cc",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Todar Mal's Revenue Settlement (Zabti/Ain-i-Dahsala System)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Ain-i-Dahsala methodology and land classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Todar Mal's revenue settlement under Akbar:\n\n1. The Ain-i-Dahsala system fixed revenue demand based on a five-year average of cultivated area and prevailing prices.\n2. Under Todar Mal's land classification, Parauti land was that which had been left fallow for more than five years and attracted no revenue concession.\n3. Sher Shah Suri's revenue system, which used Patta and Qabuliyat documents, was an entirely different conceptual approach from Todar Mal's Zabti system.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 1, 2 and 3\n(c) 2 and 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Ain-i-Dahsala system fixed revenue demand based on a five-year average of cultivated area and prevailing prices.",
+          "verdict": "Incorrect",
+          "reason": "The system used a ten-year average spanning 1571–1580, not five years — 'Dahsala' itself means 'ten-year' in Persian."
+        },
+        {
+          "statement": "Under Todar Mal's land classification, Parauti land was that which had been left fallow for more than five years and attracted no revenue concession.",
+          "verdict": "Incorrect",
+          "reason": "Parauti was land temporarily left uncultivated (short fallow); it was Banjar land that had been fallow for more than five years. Banjar attracted lower or no revenue; Parauti received a concession to encourage recultivation."
+        },
+        {
+          "statement": "Sher Shah Suri's revenue system, which used Patta and Qabuliyat documents, was an entirely different conceptual approach from Todar Mal's Zabti system.",
+          "verdict": "Incorrect",
+          "reason": "Akbar's Zabti system built directly on Sher Shah's framework — it refined and systematized the earlier approach rather than replacing it with an entirely different concept. Todar Mal had himself served under Sher Shah's successor and absorbed that tradition."
+        }
+      ],
+      "strong_distractor": "c — Option c is a strong distractor because students who correctly identify Statement 1 as wrong may assume Statement 3 is correct, not realizing Akbar's system was a refinement of Sher Shah's rather than a complete departure.",
+      "elimination_logic": [
+        "Statement 1: 'Dahsala' literally means ten-year; a five-year average is factually wrong — Statement 1 is incorrect.",
+        "Statement 2: Parauti is short-fallow land; Banjar is long-fallow (over five years) — the description in Statement 2 conflates the two, making it incorrect.",
+        "Statement 3: Todar Mal's system evolved from Sher Shah's framework — calling it 'entirely different' is false.",
+        "All three statements are incorrect — option (b) is correct."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the temporal-swap trap: students who recall the system involved averaging but misremember the period often guess five years (half-decade seems intuitive). The word 'Dahsala' is the giveaway. Statement 2 exploits the confusion between Parauti and Banjar — two adjacent categories often collapsed in memory.",
+      "final_explanation": "Todar Mal's Ain-i-Dahsala (ten-year settlement) was the cornerstone of Akbar's revenue administration, systematically measuring land productivity over a decade.\n\n• Statement 1 — Incorrect: 'Dahsala' means ten years. The assessment averaged data from 1571 to 1580 — a decade, not five years.\n• Statement 2 — Incorrect: Parauti was temporarily uncultivated land (short fallow) that received concessions to encourage return to cultivation. Banjar was land left fallow for over five years — that is the category with no standard revenue.\n• Statement 3 — Incorrect: Akbar's Zabti system was a refinement of Sher Shah's Patta-Qabuliyat system, not a conceptual rupture. Todar Mal had administrative exposure to the earlier tradition.\n\nValue Addition:\n• Polaj was the best category — permanently cultivated, assessed at full rate.\n• Chachar was intermediate fallow land (three to four years uncultivated) assessed at a reduced rate.\n• The Zabti system was applied mainly in northern India; Gallah-bakshi (crop-sharing) was used in regions where measurement was impractical."
+    },
+    "hi": {
+      "display_text": "अकबर के अधीन टोडरमल की राजस्व व्यवस्था के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. दहसाला प्रणाली में उपजाई गई भूमि के क्षेत्रफल और प्रचलित मूल्यों के पांच वर्ष के औसत के आधार पर राजस्व की मांग निर्धारित की जाती थी।\n2. टोडरमल की भूमि वर्गीकरण के अनुसार, पारौती भूमि वह थी जिसे पांच वर्ष से अधिक समय तक बंजर छोड़ा गया हो और जिस पर कोई राजस्व छूट न दी जाती हो।\n3. शेर शाह सूरी की राजस्व प्रणाली, जिसमें पट्टा और क़बूलियत दस्तावेज़ों का उपयोग होता था, टोडरमल की ज़ब्ती प्रणाली से पूरी तरह अलग अवधारणात्मक दृष्टिकोण थी।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1 और 2\n(b) 1, 2 और 3\n(c) केवल 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Ain-i-Dahsala system fixed revenue demand based on a five-year average of cultivated area and prevailing prices.",
+          "verdict": "गलत",
+          "reason": "यह प्रणाली 1571–1580 के दस वर्षों के औसत पर आधारित थी, न कि पांच वर्षों पर — 'दहसाला' का अर्थ ही फारसी में 'दस वर्ष' होता है।"
+        },
+        {
+          "statement": "Under Todar Mal's land classification, Parauti land was that which had been left fallow for more than five years and attracted no revenue concession.",
+          "verdict": "गलत",
+          "reason": "पारौती वह भूमि थी जो अस्थायी रूप से बंजर छोड़ी गई थी (संक्षिप्त बंजर); पांच वर्षों से अधिक समय के लिए बंजर भूमि वह थी जिसे बनजार कहा जाता था। बनजार भूमि पर कम या कोई राजस्व नहीं लगता था; पारौती भूमि को पुनः खेती के लिए प्रोत्साहन हेतु छूट दी जाती थी।"
+        },
+        {
+          "statement": "Sher Shah Suri's revenue system, which used Patta and Qabuliyat documents, was an entirely different conceptual approach from Todar Mal's Zabti system.",
+          "verdict": "गलत",
+          "reason": "अकबर की ज़ब्ती प्रणाली सीधे शेर शाह के ढांचे पर आधारित थी — यह पूर्व की प्रणाली का सुधार और व्यवस्थित रूप था, न कि पूरी तरह अलग अवधारणा। टोडरमल स्वयं शेर शाह के उत्तराधिकारी के अधीन कार्यरत थे और उस परंपरा को ग्रहण किया था।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 1 को गलत समझते हैं, वे कथन 3 को सही मान सकते हैं, यह न समझते हुए कि अकबर की प्रणाली शेर शाह की प्रणाली का सुधार थी, पूरी तरह अलग नहीं।",
+      "elimination_logic": [
+        "कथन 1: 'दहसाला' का शाब्दिक अर्थ दस वर्ष है; पांच वर्ष का औसत तथ्यात्मक रूप से गलत है — अतः कथन 1 गलत है।",
+        "कथन 2: पारौती संक्षिप्त बंजर भूमि है; बनजार लंबी अवधि (पांच वर्ष से अधिक) की बंजर भूमि है — कथन 2 में दोनों को मिलाकर गलत वर्णन किया गया है।",
+        "कथन 3: टोडरमल की प्रणाली शेर शाह के ढांचे से विकसित हुई — इसे 'पूरी तरह अलग' कहना गलत है।",
+        "तीनों कथन गलत हैं — अतः विकल्प (b) सही है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में काल संबंधी भ्रम का प्रयोग किया गया है: जो छात्र प्रणाली में औसत लेने को याद रखते हैं पर अवधि भूल जाते हैं, वे अक्सर पांच वर्ष अनुमान लगाते हैं (आधा दशक सहज लगता है)। 'दहसाला' शब्द ही इसका संकेत है। कथन 2 में पारौती और बनजार के बीच भ्रम का फायदा उठाया गया है — ये दो निकटवर्ती श्रेणियाँ अक्सर स्मृति में मिल जाती हैं।",
+      "final_explanation": "टोडरमल की दहसाला (दस वर्षीय) व्यवस्था अकबर के राजस्व प्रशासन की आधारशिला थी, जो एक दशक में भूमि की उत्पादकता को व्यवस्थित रूप से मापती थी।\n\n• कथन 1 — गलत: 'दहसाला' का अर्थ दस वर्ष है। आकलन 1571 से 1580 तक के आंकड़ों का औसत था — पांच वर्ष नहीं।\n• कथन 2 — गलत: पारौती अस्थायी रूप से बंजर छोड़ी गई भूमि थी जिसे पुनः खेती के लिए प्रोत्साहन दिया जाता था। बनजार वह भूमि थी जो पांच वर्ष से अधिक समय से बंजर थी — इस श्रेणी पर सामान्य राजस्व नहीं लगता था।\n• कथन 3 — गलत: अकबर की ज़ब्ती प्रणाली शेर शाह के पट्टा-क़बूलियत प्रणाली का सुधार थी, कोई अवधारणात्मक भेद नहीं। टोडरमल को पूर्व की परंपरा का प्रशासनिक अनुभव था।\n\nमूल्यवर्धन:\n• पोलाज सर्वोत्तम श्रेणी थी — स्थायी रूप से खेती की गई, पूर्ण दर से आंका गया।\n• चचर मध्यवर्ती बंजर भूमि थी (तीन से चार वर्ष तक बंजर) जिसे कम दर से आंका गया।\n• ज़ब्ती प्रणाली मुख्यतः उत्तरी भारत में लागू थी; गल्ला-बक्शी (फसल-भागीदारी) उन क्षेत्रों में उपयोग होती थी जहाँ मापन संभव नहीं था।"
+    }
+  },
+  {
+    "uuid": "8135cd37-deee-4db9-a123-edf0b45e95f8",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Provincial Administration: Suba, Sarkar, Pargana Hierarchy"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Provincial officials — Subadar, Faujdar, Shiqdar, Qanungo levels",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Mughal administrative officials in List I with their respective levels/functions in List II:",
+        "columns": [
+          "List I (Official)",
+          "List II (Level / Primary Function)"
+        ],
+        "rows": [
+          [
+            "A. Subadar (Sipahsalar)",
+            "1. Military command at Sarkar level"
+          ],
+          [
+            "B. Faujdar",
+            "2. Hereditary land-record keeper at Pargana level"
+          ],
+          [
+            "C. Shiqdar",
+            "3. Civil and military governor of a Suba"
+          ],
+          [
+            "D. Qanungo",
+            "4. Executive officer at Pargana level"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-3, B-1, C-2, D-4\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because it correctly places Subadar and Faujdar but swaps Shiqdar and Amalguzar, exploiting the confusion between executive and revenue functions at the Sarkar level.",
+      "elimination_logic": [
+        "Anchor on the most certain match: Subadar/Sipahsalar headed the Suba — A matches 3.",
+        "Faujdar maintained military order at the Sarkar level — B matches 1.",
+        "Shiqdar was the executive officer at Pargana level — C matches 4.",
+        "Qanungo maintained hereditary land records at the Pargana level — D matches 2, confirming option (a)."
+      ],
+      "upsc_trap_explanation": "The trap lies in confusing Shiqdar and Amalguzar at the Sarkar level. Amalguzar was the revenue collector at the Sarkar level, while Shiqdar was the executive at the Pargana level. Students who recall both names as 'revenue-related' at the local level tend to swap them, making option (b) appear plausible.",
+      "final_explanation": "Akbar's provincial hierarchy had distinct officials at each territorial level, each with carefully demarcated functions.\n\n• A–3 (Subadar → Suba): The Subadar (also called Sipahsalar) was the governor of a Suba — the largest provincial unit — responsible for civil and military administration.\n• B–1 (Faujdar → Sarkar): The Faujdar held military command and maintained order at the Sarkar level, the intermediate territorial unit below Suba.\n• C–4 (Shiqdar → Pargana): The Shiqdar was the executive officer at the Pargana level — the smallest administrative unit.\n• D–2 (Qanungo → Hereditary record keeper): Qanungo was uniquely hereditary — unlike most Mughal appointments — and maintained detailed land records at the Pargana level.\n\nThe trap pairing involves Amalguzar (revenue collector at Sarkar level) being confused with Shiqdar — both are sub-Suba officials but at different tiers.\n\nValue Addition:\n• The Diwan at the Suba level handled revenue independently of the Subadar — a deliberate separation of powers.\n• Bakshi at the Suba level maintained military muster records, mirroring the Mir Bakshi at the centre.\n• Akbar's 15 Subas expanded to 17 under Jahangir with the addition of new territories."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में मुगल प्रशासनिक अधिकारियों को उनकी संबंधित स्तरों/प्राथमिक कार्यों के साथ सूची II में मिलाइए:",
+        "columns": [
+          "सूची I (अधिकारी)",
+          "सूची II (स्तर / प्राथमिक कार्य)"
+        ],
+        "rows": [
+          [
+            "A. सूबेदार (सिपहसालार)",
+            "1. सरकार स्तर पर सैन्य कमान"
+          ],
+          [
+            "B. फौजदार",
+            "2. परगना स्तर पर वंशानुगत भूमि अभिलेखकर्ता"
+          ],
+          [
+            "C. शिकदार",
+            "3. सूबा का नागरिक एवं सैन्य राज्यपाल"
+          ],
+          [
+            "D. कानूनगो",
+            "4. परगना स्तर पर कार्यकारी अधिकारी"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा मेल सही है?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-3, B-1, C-2, D-4\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह सही ढंग से सूबेदार और फौजदार को रखता है लेकिन शिकदार और अमलगुजार को बदल देता है, जो सरकार स्तर पर कार्यकारी और राजस्व कार्यों के बीच भ्रम का फायदा उठाता है।",
+      "elimination_logic": [
+        "सबसे निश्चित मेल पर ध्यान केंद्रित करें: सूबेदार/सिपहसालार सूबा के प्रमुख थे — A मेल खाता है 3 से।",
+        "फौजदार सरकार स्तर पर सैन्य व्यवस्था बनाए रखता था — B मेल खाता है 1 से।",
+        "शिकदार परगना स्तर पर कार्यकारी अधिकारी था — C मेल खाता है 4 से।",
+        "कानूनगो परगना स्तर पर वंशानुगत भूमि अभिलेख रखता था — D मेल खाता है 2 से, जो विकल्प (a) की पुष्टि करता है।"
+      ],
+      "upsc_trap_explanation": "फंदा सरकार स्तर पर शिकदार और अमलगुजार को भ्रमित करने में है। अमलगुजार सरकार स्तर पर राजस्व संग्रहकर्ता था, जबकि शिकदार परगना स्तर पर कार्यकारी था। जो छात्र दोनों नामों को स्थानीय स्तर पर 'राजस्व-संबंधित' के रूप में याद करते हैं, वे इन्हें बदल देते हैं, जिससे विकल्प (b) संभावित लगता है।",
+      "final_explanation": "अकबर की प्रांतीय पदानुक्रम में प्रत्येक क्षेत्रीय स्तर पर विशिष्ट अधिकारी थे, जिनके कार्य सावधानीपूर्वक विभाजित थे।\n\n• A–3 (सूबेदार → सूबा): सूबेदार (जिसे सिपहसालार भी कहा जाता था) सूबा का राज्यपाल था — सबसे बड़ा प्रांतीय इकाई — जो नागरिक और सैन्य प्रशासन के लिए जिम्मेदार था।\n• B–1 (फौजदार → सरकार): फौजदार सरकार स्तर पर सैन्य कमान संभालता था और व्यवस्था बनाए रखता था, जो सूबा के नीचे मध्यवर्ती क्षेत्रीय इकाई थी।\n• C–4 (शिकदार → परगना): शिकदार परगना स्तर पर कार्यकारी अधिकारी था — सबसे छोटी प्रशासनिक इकाई।\n• D–2 (कानूनगो → वंशानुगत अभिलेखकर्ता): कानूनगो विशिष्ट रूप से वंशानुगत था — अधिकांश मुगल नियुक्तियों के विपरीत — और परगना स्तर पर विस्तृत भूमि अभिलेख रखता था।\n\nफंदा जोड़ी में अमलगुजार (सरकार स्तर पर राजस्व संग्रहकर्ता) को शिकदार के साथ भ्रमित किया जाता है — दोनों सूबा के अधीन अधिकारी हैं लेकिन अलग-अलग स्तरों पर।\n\nमूल्य संवर्धन:\n• सूबा स्तर पर दीवान राजस्व को सूबेदार से स्वतंत्र रूप से संभालता था — शक्तियों का जानबूझकर पृथक्करण।\n• सूबा स्तर पर बख्शी सैन्य रजिस्टर रखता था, जो केंद्र के मीर बख्शी की तरह था।\n• अकबर के 15 सूबे जहांगीर के शासन में नए क्षेत्रों के जुड़ने से 17 हो गए।"
+    }
+  },
+  {
+    "uuid": "6560da53-30fe-4ff5-8e81-7211c55e378c",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Central Diwan and the Concept of Separation of Military and Revenue Powers"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Mir Bakshi role — military records, NOT army command",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the central administrative structure under Akbar, consider the following:\n\nAssertion (A): The Mir Bakshi was responsible for maintaining mansab rolls and supervising the imperial intelligence network, and did not function as the field commander of the Mughal army.\n\nReason (R): The Wakil's office declined in importance under Akbar because the Mir Bakshi gradually assumed the Wakil's administrative and supervisory functions.\n\nWhich one of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because both statements are factually true, leading a student to assume R explains A without carefully testing the causal logic.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Mir Bakshi maintained mansab records, processed intelligence reports through Waqia-navis and Khufia-navis, and was NOT the field commander of the army.",
+        "Step 2: Is Reason (R) correct? — No. The Wakil's office declined in importance because Akbar deliberately weakened it after Bairam Khan's regency, not because Mir Bakshi assumed the Wakil's functions. Mir Bakshi and Wakil held entirely different portfolios.",
+        "Step 3: Since R is factually incorrect as stated, the answer is (c) — A is correct but R is incorrect."
+      ],
+      "upsc_trap_explanation": "This question exploits reversed-causation by linking two true elements — decline of the Wakil and rise of Mir Bakshi's administrative prominence — into a false causal chain. A student who knows both facts in isolation may construct the narrative that Mir Bakshi 'replaced' the Wakil's functions, which is incorrect. The Wakil's decline was a deliberate political act by Akbar post-Bairam Khan, not a consequence of Mir Bakshi's expanding role.",
+      "final_explanation": "The central administrative apparatus under Akbar featured four key ministers with carefully separated portfolios. Understanding what Mir Bakshi did — and did not do — is central to this question.\n\nAssertion (A): Correct. The Mir Bakshi was the military paymaster and chief of the intelligence department. He maintained mansab rolls, supervised the branding of horses (Dagh), and oversaw news reporters (Waqia-navis, Khufia-navis). He was emphatically NOT the army's field commander — that is a common misconception.\n\nReason (R): Incorrect as stated. Akbar deliberately curtailed the Wakil's powers after dismissing Bairam Khan in 1560 to prevent any single minister from wielding excessive authority. This was a political decision rooted in Akbar's desire for personal supremacy, not a structural consequence of Mir Bakshi's expanding role.\n\nSince A is correct but R is incorrect, the answer is (c).\n\nValue Addition:\n• Mir Saman, often confused with Mir Bakshi, oversaw the imperial karkhanas (workshops).\n• The Diwan/Wazir handled state finances — entirely separate from Mir Bakshi's military paymaster role.\n• Sadr-us-Sudur managed charitable endowments and judicial matters relating to religious law."
+    },
+    "hi": {
+      "display_text": "अकबर के केंद्रीय प्रशासनिक ढांचे के संदर्भ में, निम्नलिखित पर विचार करें:\n\nकथन (A): मीर बख्शी मंसब रोल बनाए रखने और शाही खुफिया नेटवर्क की निगरानी के लिए जिम्मेदार था, और मुगल सेना के फील्ड कमांडर के रूप में कार्य नहीं करता था।\n\nकारण (R): अकबर के शासनकाल में वकील का कार्यालय महत्व में गिर गया क्योंकि मीर बख्शी ने धीरे-धीरे वकील के प्रशासनिक और पर्यवेक्षी कार्यों को संभाल लिया।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because both statements are factually true, leading a student to assume R explains A without carefully testing the causal logic.",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। मीर बख्शी ने मंसब रिकॉर्ड बनाए रखे, वाक़िया-नवीस और ख़ुफ़िया-नवीस के माध्यम से खुफिया रिपोर्टों को संसाधित किया, और वह सेना का फील्ड कमांडर नहीं था।",
+        "चरण 2: क्या कारण (R) सही है? — नहीं। वकील का कार्यालय महत्व में गिर गया क्योंकि अकबर ने बैरम खान की रेजेंसी के बाद जानबूझकर इसे कमजोर किया, न कि इसलिए कि मीर बख्शी ने वकील के कार्य संभाले। मीर बख्शी और वकील के विभाग पूरी तरह अलग थे।",
+        "चरण 3: चूंकि R तथ्यात्मक रूप से गलत है, अतः उत्तर (c) है — A सही है लेकिन R गलत है।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न उल्टे कारण-प्रभाव का उपयोग करता है, जिसमें दो सत्य तथ्यों — वकील के पतन और मीर बख्शी की प्रशासनिक प्रमुखता — को एक गलत कारणात्मक श्रृंखला में जोड़ा गया है। जो छात्र दोनों तथ्यों को अलग-अलग जानते हैं, वे यह कथा बना सकते हैं कि मीर बख्शी ने वकील के कार्यों को 'प्रतिस्थापित' किया, जो गलत है। वकील का पतन अकबर द्वारा बैरम खान के बाद की राजनीतिक कार्रवाई थी, न कि मीर बख्शी की भूमिका के विस्तार का परिणाम।",
+      "final_explanation": "अकबर के केंद्रीय प्रशासनिक तंत्र में चार प्रमुख मंत्री थे जिनके विभाग सावधानीपूर्वक अलग-अलग थे। मीर बख्शी ने क्या किया और क्या नहीं किया, इसे समझना इस प्रश्न के लिए केंद्रीय है।\n\nकथन (A): सही। मीर बख्शी सैन्य वेतनदाता और खुफिया विभाग के प्रमुख थे। उन्होंने मंसब रोल बनाए रखे, घोड़ों पर दाग (दाग) की निगरानी की, और समाचार रिपोर्टरों (वाक़िया-नवीस, ख़ुफ़िया-नवीस) की देखरेख की। वे स्पष्ट रूप से सेना के फील्ड कमांडर नहीं थे — यह एक सामान्य भ्रांति है।\n\nकारण (R): कथित रूप में गलत। अकबर ने 1560 में बैरम खान को हटाने के बाद वकील के अधिकारों को जानबूझकर सीमित किया ताकि कोई एक मंत्री अत्यधिक शक्ति न रख सके। यह अकबर की व्यक्तिगत सर्वोच्चता की राजनीतिक इच्छा पर आधारित था, न कि मीर बख्शी की भूमिका के विस्तार का संरचनात्मक परिणाम।\n\nचूंकि A सही है लेकिन R गलत है, अतः उत्तर (c) है।\n\nमूल्य संवर्धन:\n• मीर सामान, जिसे अक्सर मीर बख्शी से भ्रमित किया जाता है, ने शाही कारखानों (वर्कशॉप) की देखरेख की।\n• दीवान/वज़ीर ने राज्य के वित्त संभाले — जो मीर बख्शी के सैन्य वेतनदाता के कार्य से पूरी तरह अलग था।\n• सदर-उस-सदूर ने धार्मिक कानून से संबंधित चैरिटेबल एन्डोमेंट्स और न्यायिक मामलों का प्रबंधन किया।"
+    }
+  },
+  {
+    "uuid": "05d92693-7838-4e5a-a6b7-ace10227bcb6",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Sulh-i-Kul Policy and Its Administrative Manifestations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Sulh-i-Kul as state policy — administrative expressions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A historian studying Akbar's reign notes that the emperor abolished a discriminatory tax levied on non-Muslim subjects, removed a levy collected from Hindu pilgrims travelling to religious sites, and issued orders permitting the construction of temples in imperial territories — all as formal administrative actions rather than personal spiritual gestures. The historian argues these measures reflect a coherent state-level philosophy binding subjects of all faiths equally to the emperor's authority.\n\nWhich of the following principles most precisely describes the administrative philosophy the historian is identifying?\n\n(a) Mazhar Declaration — asserting imperial authority over all religious communities\n(b) Sulh-i-Kul — universal peace as a formal state policy of interfaith administrative equity\n(c) Ibadat Khana discourse — creating a deliberative forum for interfaith theological debate\n(d) Din-i-Ilahi — a syncretic spiritual order open to followers of all faiths",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is a strong distractor because Din-i-Ilahi is Akbar's most famous religious initiative and students may assume a question about religious tolerance automatically points to it, overlooking that Sulh-i-Kul was the overarching state policy.",
+      "elimination_logic": [
+        "The scenario describes a state-level policy of interfaith tolerance expressed through tax abolition and temple construction — this is not a personal spiritual practice.",
+        "Eliminate option (a): Mazhar Declaration dealt with imperial authority over religious disputes, not interfaith administrative toleration.",
+        "Eliminate option (c): Ibadat Khana was a debating forum — it did not generate the administrative measures described.",
+        "Eliminate option (d): Din-i-Ilahi was a small spiritual order, not a state administrative policy — the scenario describes state-level administrative action."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Akbar's administrative tolerance was not merely a personal stance — it was encoded into formal state policy. This scenario describes three concrete administrative expressions of that policy.\n\nThe principle at work is Sulh-i-Kul ('Universal Peace') — a policy of treating all religious communities equitably as subjects of the emperor rather than classifying them by faith.\n\n• Option (a) — Incorrect: The Mazhar Declaration was specifically about Akbar's authority to adjudicate between conflicting religious opinions among Muslims, not about inter-religious administrative equity.\n• Option (b) — Correct: Sulh-i-Kul was the underlying philosophical and administrative framework. Abolishing Jizya (1564), removing pilgrimage taxes, and permitting temple construction were all its direct administrative manifestations.\n• Option (c) — Incorrect: Ibadat Khana was a debating venue — its effect was intellectual dialogue, not administrative policy generation.\n• Option (d) — Incorrect: Din-i-Ilahi was a syncretic order with fewer than 20 members; it was not a state administrative instrument.\n\nValue Addition:\n• Sulh-i-Kul served Mughal legitimacy by binding diverse subjects to the emperor's person rather than to Islamic identity.\n• Aurangzeb's reimposition of Jizya in 1679 is best understood as the reversal of Sulh-i-Kul.\n• Abul Fazl articulated Sulh-i-Kul as the ideological cornerstone of Akbar's kingship in the Ain-i-Akbari."
+    },
+    "hi": {
+      "display_text": "एक इतिहासकार जो अकबर के शासन का अध्ययन कर रहा है, वह नोट करता है कि सम्राट ने गैर-मुस्लिम विषयों पर लगाए गए भेदभावपूर्ण कर को समाप्त कर दिया, हिंदू तीर्थयात्रियों से लिए जाने वाले कर को हटा दिया, और साम्राज्य के क्षेत्रों में मंदिर निर्माण की अनुमति देने के आदेश जारी किए — ये सभी औपचारिक प्रशासनिक कार्य थे, न कि व्यक्तिगत आध्यात्मिक संकेत। इतिहासकार तर्क देता है कि ये उपाय एक सुसंगत राज्य-स्तरीय दर्शन को दर्शाते हैं जो सभी धर्मों के विषयों को समान रूप से सम्राट की सत्ता से जोड़ता है।\n\nनिम्नलिखित में से कौन-सा सिद्धांत उस प्रशासनिक दर्शन का सबसे सटीक वर्णन करता है जिसे इतिहासकार पहचान रहा है?\n\n(a) मज़हर घोषणा — सभी धार्मिक समुदायों पर साम्राज्य की सत्ता का दावा\n(b) सुलह-ए-कुल — अंतर-धार्मिक प्रशासनिक समानता के रूप में सार्वभौमिक शांति की औपचारिक राज्य नीति\n(c) इबादत ख़ाना संवाद — अंतर-धार्मिक धार्मिक बहस के लिए एक विचार-विमर्श मंच बनाना\n(d) दीन-ए-इलाही — सभी धर्मों के अनुयायियों के लिए खुला एक समन्वयी आध्यात्मिक आदेश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d एक मजबूत भ्रम पैदा करने वाला है क्योंकि दीन-ए-इलाही अकबर की सबसे प्रसिद्ध धार्मिक पहल है और छात्र धार्मिक सहिष्णुता के प्रश्न को स्वतः ही इसे मान सकते हैं, यह भूलते हुए कि सुलह-ए-कुल समग्र राज्य नीति थी।",
+      "elimination_logic": [
+        "परिदृश्य एक राज्य-स्तरीय सह-अस्तित्व नीति का वर्णन करता है जो कर उन्मूलन और मंदिर निर्माण के माध्यम से अभिव्यक्त होती है — यह कोई व्यक्तिगत आध्यात्मिक अभ्यास नहीं है।",
+        "विकल्प (a) को हटाएं: मज़हर घोषणा धार्मिक विवादों पर साम्राज्य की सत्ता से संबंधित थी, न कि अंतर-धार्मिक प्रशासनिक सहिष्णुता से।",
+        "विकल्प (c) को हटाएं: इबादत ख़ाना एक बहस मंच था — इसने वर्णित प्रशासनिक उपाय उत्पन्न नहीं किए।",
+        "विकल्प (d) को हटाएं: दीन-ए-इलाही एक छोटा आध्यात्मिक आदेश था, राज्य प्रशासनिक नीति नहीं — परिदृश्य राज्य-स्तरीय प्रशासनिक कार्रवाई का वर्णन करता है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अकबर की प्रशासनिक सहिष्णुता केवल व्यक्तिगत दृष्टिकोण नहीं थी — यह औपचारिक राज्य नीति में संहिताबद्ध थी। यह परिदृश्य उस नीति की तीन ठोस प्रशासनिक अभिव्यक्तियों का वर्णन करता है।\n\nकार्य में सिद्धांत है सुलह-ए-कुल ('सार्वभौमिक शांति') — एक ऐसी नीति जो सभी धार्मिक समुदायों को समता के साथ सम्राट के अधीन विषय के रूप में देखती है, न कि धर्म के आधार पर वर्गीकृत करती है।\n\n• विकल्प (a) — गलत: मज़हर घोषणा विशेष रूप से अकबर की मुस्लिम धार्मिक मतभेदों के मध्य निर्णय लेने की सत्ता के बारे में थी, न कि अंतर-धार्मिक प्रशासनिक समानता के बारे में।\n• विकल्प (b) — सही: सुलह-ए-कुल मूल दार्शनिक और प्रशासनिक ढांचा था। जिज़िया (1564) का उन्मूलन, तीर्थयात्रा करों को हटाना, और मंदिर निर्माण की अनुमति इसके सीधे प्रशासनिक अभिव्यक्तियाँ थीं।\n• विकल्प (c) — गलत: इबादत ख़ाना एक बहस स्थल था — इसका प्रभाव बौद्धिक संवाद था, प्रशासनिक नीति निर्माण नहीं।\n• विकल्प (d) — गलत: दीन-ए-इलाही एक समन्वयी आदेश था जिसमें 20 से कम सदस्य थे; यह राज्य प्रशासनिक उपकरण नहीं था।\n\nमूल्य संवर्धन:\n• सुलह-ए-कुल ने मुगल वैधता को इस प्रकार सेवा दी कि विविध विषयों को इस्लामी पहचान के बजाय सम्राट के व्यक्तित्व से जोड़ा।\n• औरंगजेब द्वारा 1679 में जिज़िया का पुनः प्रवर्तन सुलह-ए-कुल की वापसी के रूप में सबसे अच्छी तरह समझा जाता है।\n• अबुल फज़ल ने सुलह-ए-कुल को ऐन-ए-अकबरी में अकबर की राजशाही की वैचारिक आधारशिला के रूप में व्यक्त किया।"
+    }
+  },
+  {
+    "uuid": "20dd13cd-f2cc-43f5-b6cf-addd676ba6ea",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Rajput Policy: Matrimonial Alliances and Subordinate Integration"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Rajput clans that allied with Akbar vs. those that refused",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following Rajput kingdoms/clans formed matrimonial alliances or formally submitted to Akbar's suzerainty, while one consistently refused to do so. Which of the following does NOT belong to the group that allied with Akbar?\n\n(a) Amber (Kachwaha)\n(b) Bikaner (Rathore)\n(c) Mewar (Sisodia)\n(d) Jaisalmer (Bhati)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because Amber (Jaipur) is the most famous Rajput ally and students might momentarily doubt this, making them second-guess a well-known fact.",
+      "elimination_logic": [
+        "Amber (Kachwaha clan) entered a matrimonial alliance with Akbar in 1562 — it allied with Akbar.",
+        "Bikaner's ruling clan also submitted and provided mansabdars to Akbar's court — it allied.",
+        "Jaisalmer similarly formed a matrimonial alliance with Akbar — it allied.",
+        "Mewar (Sisodias) under Rana Pratap refused to submit — Mewar is the odd one out, confirming option (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works by listing three unambiguous allies (Amber, Bikaner, Jaisalmer) alongside Mewar, which was the most prominent holdout. A student who conflates Rajput states — recalling that 'Rajputs allied with Akbar' as a general fact — may not isolate Mewar as the exception. The question requires remembering specifically which Rajput power refused, not just that some did.",
+      "final_explanation": "Akbar's Rajput policy sought to integrate Rajput chiefs through a combination of matrimonial alliances, mansab grants, and Watan Jagirs (hereditary land assignments). Most Rajput clans accepted this framework.\n\n• Option (a) — Amber: Bharmal of Amber gave his daughter in marriage to Akbar in 1562 — the founding act of the Akbar-Rajput alliance.\n• Option (b) — Bikaner: The Bikaner Rathores submitted to Akbar and supplied prominent commanders.\n• Option (c) — Mewar (Sisodias): The Sisodias under Rana Pratap consistently refused submission. This led to the Battle of Haldighati (1576). Mewar was the principal Rajput state that did not ally with Akbar — making it the odd one out.\n• Option (d) — Jaisalmer: Jaisalmer contracted a matrimonial alliance with Akbar and integrated into the mansab system.\n\nValue Addition:\n• Man Singh of Amber (grandson of Bharmal) rose to a Mansab of 7000 — one of the highest in Akbar's court.\n• Even after Rana Pratap's death (1597), his son Amar Singh continued resistance until 1615 when he submitted to Jahangir.\n• Akbar's policy of granting Rajputs Watan Jagirs (hereditary) was a deliberate concession not extended to most other nobles."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन राजपूत राज्य/कुलों ने अकबर के अधीनता को स्वीकार करते हुए विवाहिक गठबंधन किए या औपचारिक रूप से समर्पण किया, जबकि एक ने लगातार इनकार किया। निम्नलिखित में से कौन अकबर के साथ गठबंधन करने वाले समूह में नहीं आता?\n\n(a) आमेर (कछवाहा)\n(b) बीकानेर (राठौड़)\n(c) मेवाड़ (सिसोदिया)\n(d) जैसलमेर (भाटी)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला है क्योंकि आमेर (जयपुर) सबसे प्रसिद्ध राजपूत सहयोगी है और छात्र इसे लेकर क्षणिक संदेह कर सकते हैं, जिससे वे एक प्रसिद्ध तथ्य पर पुनर्विचार कर सकते हैं।",
+      "elimination_logic": [
+        "आमेर (कछवाहा कुल) ने 1562 में अकबर के साथ विवाहिक गठबंधन किया — यह अकबर के साथ गठबंधन में था।",
+        "बीकानेर के शासक कुल ने भी समर्पण किया और अकबर के दरबार में मंसबदार प्रदान किए — यह गठबंधन में था।",
+        "जैसलमेर ने भी अकबर के साथ विवाहिक गठबंधन किया — यह गठबंधन में था।",
+        "मेवाड़ (सिसोदिया) राणा प्रताप के अधीन समर्पण करने से इनकार किया — मेवाड़ अलग है, जो विकल्प (c) की पुष्टि करता है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण (entity-swap) भ्रम तब काम करता है जब तीन स्पष्ट सहयोगी (आमेर, बीकानेर, जैसलमेर) के साथ मेवाड़ को सूचीबद्ध किया जाता है, जो सबसे प्रमुख असहयोगी था। जो छात्र राजपूत राज्यों को मिलाकर याद करते हैं — कि 'राजपूत अकबर के साथ गठबंधन में थे' — वे मेवाड़ को अपवाद के रूप में अलग नहीं कर पाते। प्रश्न विशेष रूप से याद करने को कहता है कि कौन सा राजपूत राज्य इनकार करता था, न कि केवल कि कुछ ने किया था।",
+      "final_explanation": "अकबर की राजपूत नीति ने राजपूत प्रमुखों को विवाहिक गठबंधनों, मंसबद प्रावधानों और वतन जागीरों (वंशानुगत भूमि आवंटन) के संयोजन के माध्यम से एकीकृत करने का प्रयास किया। अधिकांश राजपूत कुलों ने इस ढांचे को स्वीकार किया।\n\n• विकल्प (a) — आमेर: आमेर के भरमल ने 1562 में अपनी पुत्री अकबर को विवाह के लिए दी — अकबर-राजपूत गठबंधन की स्थापना।\n• विकल्प (b) — बीकानेर: बीकानेर के राठौड़ों ने अकबर के समक्ष समर्पण किया और प्रमुख सेनापतियों की आपूर्ति की।\n• विकल्प (c) — मेवाड़ (सिसोदिया): राणा प्रताप के अधीन सिसोदिया ने लगातार समर्पण से इनकार किया। इससे हल्दीघाटी का युद्ध (1576) हुआ। मेवाड़ वह मुख्य राजपूत राज्य था जिसने अकबर के साथ गठबंधन नहीं किया — इसलिए यह अलग है।\n• विकल्प (d) — जैसलमेर: जैसलमेर ने अकबर के साथ विवाहिक गठबंधन किया और मंसबद प्रणाली में शामिल हो गया।\n\nमूल्यवर्धन:\n• आमेर के मान सिंह (भरमल के पोते) ने 7000 की मंसबद प्राप्त की — जो अकबर के दरबार में सबसे उच्च मंसबदों में से एक थी।\n• राणा प्रताप की मृत्यु (1597) के बाद भी, उनके पुत्र अमर सिंह ने 1615 तक प्रतिरोध जारी रखा जब उन्होंने जहांगीर के समक्ष समर्पण किया।\n• अकबर की राजपूतों को वतन जागीर देने की नीति (वंशानुगत) एक जानबूझकर दी गई छूट थी जो अधिकांश अन्य नवाबों को नहीं दी गई।"
+    }
+  },
+  {
+    "uuid": "1d769e5d-5060-4c91-b44a-416928b055a9",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Military Reforms: Artillery, War Elephants, and Cavalry Reorganization"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Dagh and Chehra as Mughal anti-corruption military measures",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "To prevent fraudulent practices in the Mughal military where nobles might present borrowed horses or substitute soldiers during imperial inspection, Akbar introduced the Dagh (branding of horses) and Chehra (descriptive rolls of soldiers) systems. The supervision of these anti-corruption mechanisms was the primary responsibility of the __________.\n\n(a) Abul Fazl\n(b) Mir Bakshi\n(c) Todar Mal\n(d) Mir Saman",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because Todar Mal is associated with measurement and record-keeping in revenue administration, making it plausible to students who recall that records were his domain.",
+      "elimination_logic": [
+        "Eliminate option (a): Abul Fazl was a court chronicler and ideologue, not primarily a military administrator.",
+        "Eliminate option (c): Todar Mal's record-keeping functions were confined to the revenue system (Ain-i-Dahsala), not the military.",
+        "Eliminate option (d): Mir Saman oversaw karkhanas (workshops), not military records.",
+        "Option (b) Mir Bakshi maintained Chehra (descriptive rolls) and supervised Dagh (horse-branding) — the correct answer."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places Todar Mal as an attractive distractor because students associate him with systematic record-keeping. However, Todar Mal's records concerned agricultural land and revenue — not military personnel. Mir Bakshi's domain was precisely military record integrity.",
+      "final_explanation": "Akbar introduced two key anti-corruption mechanisms in military administration to prevent ghost soldiers and inflated cavalry returns.\n\n• Option (a) — Incorrect: Abul Fazl was the court historian and ideologue; he had no administrative role in military record-keeping.\n• Option (b) — Correct: The Mir Bakshi supervised both Dagh (branding of horses to ensure real cavalry) and Chehra (maintaining physical descriptions of soldiers to prevent substitution). These checks ensured that mansabdars maintained the cavalry contingents they claimed.\n• Option (c) — Incorrect: Todar Mal's systematic measurement work was confined to agricultural land and revenue assessment under the Zabti system.\n• Option (d) — Incorrect: Mir Saman administered imperial workshops (karkhanas), not military rolls.\n\nValue Addition:\n• The Dagh system required horses to be branded with the imperial seal after inspection, preventing reuse of fewer horses across multiple musters.\n• Chehra created a physical description register to prevent nobles from presenting different soldiers during different reviews.\n• These measures were directly supervised through the Mir Bakshi's office, which also oversaw the intelligence network."
+    },
+    "hi": {
+      "display_text": "मुगल सैन्य में धोखाधड़ी से बचने के लिए जहाँ नवाब निरीक्षण के दौरान उधार लिए घोड़े या स्थानापन्न सैनिक प्रस्तुत कर सकते थे, अकबर ने दाग (घोड़ों पर छाप) और चेहरा (सैनिकों के वर्णनात्मक रजिस्टर) प्रणालियाँ शुरू कीं। इन भ्रष्टाचार विरोधी उपायों की निगरानी मुख्य रूप से ___________ की जिम्मेदारी थी।\n\n(a) अबुल फजल\n(b) मीर बख्शी\n(c) तोदार मल\n(d) मीर समां",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम है क्योंकि तोदार मल राजस्व प्रशासन में मापन और अभिलेख-रखने से जुड़े थे, जो छात्रों के लिए प्रासंगिक है जो याद करते हैं कि अभिलेख उनका क्षेत्र था।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: अबुल फजल दरबारी इतिहासकार और विचारक थे, मुख्य रूप से सैन्य प्रशासक नहीं।",
+        "विकल्प (c) को हटाएं: तोदार मल के अभिलेख-रखने के कार्य केवल राजस्व प्रणाली (आइन-ए-दहसाला) तक सीमित थे, सैन्य तक नहीं।",
+        "विकल्प (d) को हटाएं: मीर समां कारखानों (कार्यशालाओं) के प्रभारी थे, सैन्य अभिलेखों के नहीं।",
+        "विकल्प (b) मीर बख्शी ने चेहरा (वर्णनात्मक रजिस्टर) बनाए रखा और दाग (घोड़ों पर छाप) की निगरानी की — सही उत्तर।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण भ्रम तोदार मल को एक आकर्षक भ्रम के रूप में प्रस्तुत करता है क्योंकि छात्र उन्हें व्यवस्थित अभिलेख-रखने से जोड़ते हैं। हालांकि, तोदार मल के अभिलेख कृषि भूमि और राजस्व से संबंधित थे — सैन्य कर्मियों से नहीं। मीर बख्शी का क्षेत्र सैन्य अभिलेखों की सटीकता थी।",
+      "final_explanation": "अकबर ने सैन्य प्रशासन में दो प्रमुख भ्रष्टाचार विरोधी उपाय लागू किए ताकि भूत सैनिकों और बढ़ा-चढ़ाकर घुड़सवारों की संख्या प्रस्तुत करने से बचा जा सके।\n\n• विकल्प (a) — गलत: अबुल फजल दरबारी इतिहासकार और विचारक थे; उनका सैन्य अभिलेख-रखने में प्रशासनिक कोई भूमिका नहीं थी।\n• विकल्प (b) — सही: मीर बख्शी ने दाग (घोड़ों पर छाप लगाना ताकि असली घुड़सवार सुनिश्चित हो) और चेहरा (सैनिकों के शारीरिक विवरण का रखरखाव ताकि स्थानापन्न न हो) दोनों की निगरानी की। ये जांच सुनिश्चित करती थीं कि मंसबदार अपने दावे के अनुसार घुड़सवार इकाइयाँ बनाए रखें।\n• विकल्प (c) — गलत: तोदार मल का व्यवस्थित मापन कार्य केवल कृषि भूमि और ज़ब्ती प्रणाली के तहत राजस्व आकलन तक सीमित था।\n• विकल्प (d) — गलत: मीर समां ने शाही कारखानों (कारखाने) का प्रशासन किया, सैन्य अभिलेखों का नहीं।\n\nमूल्यवर्धन:\n• दाग प्रणाली में निरीक्षण के बाद घोड़ों पर शाही मुहर लगाई जाती थी, जिससे कम घोड़ों का कई बार उपयोग रोकता था।\n• चेहरा एक शारीरिक विवरण रजिस्टर बनाता था ताकि नवाब अलग-अलग निरीक्षणों में अलग सैनिक प्रस्तुत न कर सकें।\n• ये उपाय मीर बख्शी के कार्यालय के माध्यम से सीधे निगरानी में थे, जो खुफिया नेटवर्क की भी देखरेख करता था।"
+    }
+  },
+  {
+    "uuid": "7daa21ba-70ef-4236-9d4c-76b3f6514d75",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Abul Fazl and the Ain-i-Akbari: As Administrative Record and Ideological Document"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Ain-i-Akbari — structure, authorship, and ideological purpose",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs related to the Ain-i-Akbari is correctly matched?\n\n(a) Ain-i-Akbari — constitutes Part II of the Akbarnama and focuses on Akbar's military campaigns\n(b) Concept of 'Insan-i-Kamil' (Perfect Man) — first articulated in Sher Shah Suri's court chronicles to describe ideal rulership\n(c) Ain-i-Akbari — authored by Abul Fazl and contains detailed revenue statistics and population data of Akbar's empire\n(d) Nur-i-Ilahi kingship theory — described in the Baburnama as a foundation of Timurid imperial legitimacy",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students who know the Ain-i-Akbari is part of the Akbarnama may conflate 'Part III of Akbarnama' with being a separate work, or misidentify which part it constitutes.",
+      "elimination_logic": [
+        "Eliminate option (a): Ain-i-Akbari is Part III of Akbarnama — but option (a) claims it is Part II. This is incorrect.",
+        "Eliminate option (b): The concept of 'Perfect Man' (Insan-i-Kamil) was applied to Akbar in the Ain-i-Akbari — but attributing this concept to Sher Shah Suri's chronicles is false.",
+        "Verify option (c): Abul Fazl authored Ain-i-Akbari, and it does contain detailed revenue statistics and population data — this pairing is correct.",
+        "Eliminate option (d): Nur-i-Ilahi (Divine Light) kingship theory is from Ain-i-Akbari, not from Baburnama — option (d) is incorrect."
+      ],
+      "upsc_trap_explanation": "Option (a) is the primary trap: students who know the Ain-i-Akbari is part of the Akbarnama may not precisely recall that it is Part III rather than Part II. The partial-truth technique places a correct entity (Ain-i-Akbari / Akbarnama relationship) with an incorrect attribute (the part number).",
+      "final_explanation": "The Ain-i-Akbari is one of the most important administrative and cultural records of the Mughal period.\n\n• Option (a) — Incorrect: The Ain-i-Akbari is Part III of the Akbarnama (not Part II). Parts I and II constitute the historical narrative; Part III is the administrative gazetteer.\n• Option (b) — Incorrect: The concept of 'Insan-i-Kamil' (Perfect Man) as applied to Akbar is from Abul Fazl's Ain-i-Akbari — it has no connection to Sher Shah Suri's chronicles.\n• Option (c) — Correct: Abul Fazl authored Ain-i-Akbari, and it contains remarkable statistical detail — revenue assessments, population estimates, agricultural data — making it a valuable historical source despite its pro-Akbar bias.\n• Option (d) — Incorrect: The Nur-i-Ilahi (Divine Light) theory of kingship was articulated by Abul Fazl in the Ain-i-Akbari, not in Baburnama (Babur's memoir, which is a personal autobiography).\n\nValue Addition:\n• Ain-i-Akbari covers five books (Ains): imperial household, military, judiciary and revenue, learned men, and Hindu philosophy.\n• Akbar's personal illiteracy makes his patronage of the Ain-i-Akbari particularly notable — it was read aloud to him.\n• The Ain-i-Akbari is a primary source for estimating Mughal agricultural productivity and urban population in the 16th century."
+    },
+    "hi": {
+      "display_text": "ऐन-ए-अकबरी से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) ऐन-ए-अकबरी — अकबरनामा का भाग II है और अकबर के सैन्य अभियानों पर केंद्रित है\n(b) 'इंसान-ए-कामिल' (परफेक्ट मैन) की अवधारणा — आदर्श शासन का वर्णन करने के लिए पहली बार शेर शाह सूरी के दरबार के इतिहास में व्यक्त की गई\n(c) ऐन-ए-अकबरी — अबुल फज़ल द्वारा रचित और इसमें अकबर के साम्राज्य के विस्तृत राजस्व आंकड़े और जनसंख्या डेटा शामिल हैं\n(d) नूर-ए-इलाही राजतंत्र सिद्धांत — तैमूरिड साम्राज्य की वैधता के आधार के रूप में बाबरनामा में वर्णित",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि ऐन-ए-अकबरी अकबरनामा का हिस्सा है, वे 'अकबरनामा का भाग III' को एक अलग कृति समझ सकते हैं, या यह गलत पहचान सकते हैं कि यह किस भाग का प्रतिनिधित्व करता है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: ऐन-ए-अकबरी अकबरनामा का भाग III है — लेकिन विकल्प (a) कहता है कि यह भाग II है। यह गलत है।",
+        "विकल्प (b) को हटाएं: 'इंसान-ए-कामिल' (परफेक्ट मैन) की अवधारणा ऐन-ए-अकबरी में अकबर पर लागू की गई थी — लेकिन इसे शेर शाह सूरी के इतिहास में जोड़ना गलत है।",
+        "विकल्प (c) की पुष्टि करें: ऐन-ए-अकबरी के लेखक अबुल फज़ल हैं, और इसमें अकबर के साम्राज्य के विस्तृत राजस्व आंकड़े और जनसंख्या डेटा शामिल हैं — यह जोड़ी सही है।",
+        "विकल्प (d) को हटाएं: नूर-ए-इलाही (दिव्य प्रकाश) राजतंत्र सिद्धांत ऐन-ए-अकबरी से है, बाबरनामा से नहीं — विकल्प (d) गलत है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) मुख्य जाल है: जो छात्र जानते हैं कि ऐन-ए-अकबरी अकबरनामा का हिस्सा है, वे ठीक से याद नहीं रख पाते कि यह भाग II नहीं बल्कि भाग III है। आंशिक-सत्य तकनीक सही इकाई (ऐन-ए-अकबरी / अकबरनामा संबंध) को गलत विशेषता (भाग संख्या) के साथ जोड़ती है।",
+      "final_explanation": "ऐन-ए-अकबरी मुगल काल की सबसे महत्वपूर्ण प्रशासनिक और सांस्कृतिक अभिलेखों में से एक है।\n\n• विकल्प (a) — गलत: ऐन-ए-अकबरी अकबरनामा का भाग III है (भाग II नहीं)। भाग I और II ऐतिहासिक वर्णन हैं; भाग III प्रशासनिक गजटियर है।\n• विकल्प (b) — गलत: 'इंसान-ए-कामिल' की अवधारणा जो अकबर पर लागू है, वह अबुल फज़ल के ऐन-ए-अकबरी से है — इसका शेर शाह सूरी के इतिहास से कोई संबंध नहीं है।\n• विकल्प (c) — सही: अबुल फज़ल ने ऐन-ए-अकबरी की रचना की, और इसमें राजस्व आकलन, जनसंख्या अनुमान, कृषि डेटा जैसे विस्तृत सांख्यिकीय विवरण हैं — यह ऐतिहासिक स्रोत के रूप में मूल्यवान है, भले ही इसमें अकबर पक्षपात हो।\n• विकल्प (d) — गलत: नूर-ए-इलाही (दिव्य प्रकाश) राजतंत्र सिद्धांत अबुल फज़ल ने ऐन-ए-अकबरी में प्रस्तुत किया, बाबरनामा (बाबर की आत्मकथा) में नहीं।\n\nमूल्यवर्धन:\n• ऐन-ए-अकबरी पाँच पुस्तकों (ऐन) को कवर करता है: शाही परिवार, सैन्य, न्यायपालिका और राजस्व, विद्वान, और हिंदू दर्शन।\n• अकबर की व्यक्तिगत निरक्षरता के कारण ऐन-ए-अकबरी का संरक्षण विशेष रूप से उल्लेखनीय है — इसे उन्हें पढ़कर सुनाया जाता था।\n• ऐन-ए-अकबरी 16वीं सदी में मुगल कृषि उत्पादकता और शहरी जनसंख्या का अनुमान लगाने के लिए एक प्राथमिक स्रोत है।"
+    }
+  },
+  {
+    "uuid": "24982d22-bcca-44f5-93a4-0dc2083b08f7",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Territorial Expansion Strategy: Sequence and Methods of Conquest"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sequence of Akbar's territorial acquisitions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of Akbar's major territorial acquisitions?\n\n(a) Bengal → Gujarat → Kabul → Kashmir\n(b) Gujarat → Bengal → Kashmir → Kabul\n(c) Kabul → Gujarat → Bengal → Kashmir\n(d) Gujarat → Bengal → Kabul → Kashmir",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because it correctly places Gujarat before Bengal but reverses Kabul and Kashmir, exploiting uncertainty about whether Akbar secured Kabul or Kashmir first.",
+      "elimination_logic": [
+        "Gujarat was conquered in 1572 — among the earlier major acquisitions after Rajputana.",
+        "Bengal was subdued in 1576, after Gujarat — this anchors the Gujarat–Bengal sequence.",
+        "Kabul was secured in 1581 (against Mirza Hakim), before Kashmir.",
+        "Kashmir was annexed in 1586 — later than Kabul, confirming Gujarat → Bengal → Kabul → Kashmir as the correct sequence, option (d)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap targets the Kabul–Kashmir sequence. Students who recall both were acquired in the 1580s may reverse them. Kabul (1581) came before Kashmir (1586), but both fall within a five-year window, making the reversal an easy error. Additionally, Gujarat (1572) is sometimes placed after Bengal (1576) by students who focus on eastern expansion as 'early.'",
+      "final_explanation": "Akbar's territorial expansion followed a strategic sequence: first securing the core and immediate periphery, then moving to more distant territories.\n\n• Gujarat (1572): Akbar's first major western conquest, giving access to ports and trade wealth. He personally led two campaigns.\n• Bengal (1576): After subduing Rajputana and Gujarat, Akbar turned east. The Bengal conquest completed his control of the Indo-Gangetic plain.\n• Kabul (1581): Akbar's half-brother Mirza Hakim controlled Kabul and posed a dynastic threat. Akbar led a campaign that secured Kabul and restored it to Mughal authority.\n• Kashmir (1586): Annexed through a combination of military pressure and the submission of the local ruler — part of Akbar's northwestern consolidation.\n\nCorrect sequence: Gujarat → Bengal → Kabul → Kashmir, which is option (d).\n\nValue Addition:\n• Sindh was annexed in 1591, after Kashmir.\n• Akbar's Deccan campaigns (Ahmadnagar, Berar, Khandesh) were partially successful but he could not fully subdue the Deccan before his death in 1605.\n• The Battle of Haldighati (1576) — against Rana Pratap — falls in the same year as Bengal's conquest, a useful chronological anchor."
+    },
+    "hi": {
+      "display_text": "अकबर के प्रमुख क्षेत्रीय अधिग्रहणों के सही कालानुक्रमिक क्रम में से कौन-सा है?\n\n(a) बंगाल → गुजरात → काबुल → कश्मीर\n(b) गुजरात → बंगाल → कश्मीर → काबुल\n(c) काबुल → गुजरात → बंगाल → कश्मीर\n(d) गुजरात → बंगाल → काबुल → कश्मीर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रमकारी है क्योंकि यह गुजरात को बंगाल से पहले सही स्थान पर रखता है लेकिन काबुल और कश्मीर को उलट देता है, जिससे यह अनिश्चितता पैदा होती है कि अकबर ने पहले काबुल सुरक्षित किया या कश्मीर।",
+      "elimination_logic": [
+        "गुजरात 1572 में जीता गया था — राजपूताना के बाद शुरुआती प्रमुख अधिग्रहणों में से एक।",
+        "बंगाल 1576 में subdued किया गया, गुजरात के बाद — यह गुजरात–बंगाल क्रम को स्थापित करता है।",
+        "काबुल 1581 में सुरक्षित किया गया (मिर्जा हाकिम के खिलाफ), कश्मीर से पहले।",
+        "कश्मीर 1586 में शामिल किया गया — काबुल के बाद, जो गुजरात → बंगाल → काबुल → कश्मीर के सही क्रम की पुष्टि करता है, विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्थानांतरण जाल काबुल–कश्मीर क्रम को लक्षित करता है। छात्र जो याद करते हैं कि दोनों 1580 के दशक में अधिग्रहित हुए थे, वे इन्हें उलट सकते हैं। काबुल (1581) कश्मीर (1586) से पहले आया, लेकिन दोनों पांच साल की अवधि में आते हैं, जिससे उलटफेर एक आसान त्रुटि बन जाती है। इसके अतिरिक्त, गुजरात (1572) को कभी-कभी बंगाल (1576) के बाद रखा जाता है उन छात्रों द्वारा जो पूर्वी विस्तार को 'प्रारंभिक' मानते हैं।",
+      "final_explanation": "अकबर का क्षेत्रीय विस्तार एक रणनीतिक क्रम का पालन करता था: पहले मुख्य और निकटवर्ती क्षेत्रों को सुरक्षित करना, फिर दूरस्थ क्षेत्रों की ओर बढ़ना।\n\n• गुजरात (1572): अकबर का पहला प्रमुख पश्चिमी विजय, जिसने बंदरगाहों और व्यापारिक धन तक पहुंच दी। उन्होंने व्यक्तिगत रूप से दो अभियान चलाए।\n• बंगाल (1576): राजपूताना और गुजरात को subdued करने के बाद, अकबर ने पूर्व की ओर रुख किया। बंगाल की विजय ने उनके हिंदू-गंगा मैदान पर नियंत्रण को पूरा किया।\n• काबुल (1581): अकबर के सौतेले भाई मिर्जा हाकिम ने काबुल पर नियंत्रण रखा था और एक राजवंशीय खतरा था। अकबर ने एक अभियान चलाया जिसने काबुल को सुरक्षित किया और मुगल अधिकार में पुनः स्थापित किया।\n• कश्मीर (1586): सैन्य दबाव और स्थानीय शासक की समर्पण के संयोजन से शामिल किया गया — अकबर के उत्तर-पश्चिमी समेकन का हिस्सा।\n\nसही क्रम: गुजरात → बंगाल → काबुल → कश्मीर, जो विकल्प (d) है।\n\nमूल्य संवर्धन:\n• सिंध 1591 में कश्मीर के बाद शामिल किया गया।\n• अकबर के दक्कन अभियान (अहमदनगर, बेरार, खंडेश) आंशिक रूप से सफल रहे लेकिन वे 1605 में अपनी मृत्यु से पहले दक्कन को पूरी तरह subdued नहीं कर सके।\n• हल्दीघाटी का युद्ध (1576) — राणा प्रताप के खिलाफ — बंगाल की विजय के समान वर्ष में आता है, जो एक उपयोगी कालानुक्रमिक आधार है।"
+    }
+  },
+  {
+    "uuid": "084b6885-5fbf-4308-86ba-5b4477cc4634",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Provincial Administration: Suba, Sarkar, Pargana Hierarchy",
+        "Central Diwan and the Concept of Separation of Military and Revenue Powers"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sadr-us-Sudur — religious and charitable portfolio at the centre",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among the four principal central ministers of Akbar's administration, the official responsible for supervising charitable endowments (awqaf), making appointments to religious offices, and adjudicating matters relating to religious law was the __________.\n\n(a) Diwan (Wazir)\n(b) Mir Bakshi\n(c) Wakil\n(d) Sadr-us-Sudur",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Mir Bakshi supervised intelligence operatives (news-writers) and students may conflate intelligence oversight with oversight of religious/judicial matters.",
+      "elimination_logic": [
+        "Eliminate option (a): The Diwan/Wazir managed state finances — not charitable endowments or religious disputes.",
+        "Eliminate option (b): The Mir Bakshi managed military records and intelligence — not religious or charitable portfolios.",
+        "Eliminate option (c): The Wakil was the Prime Minister (declining importance under Akbar) — not specifically the religious/charitable minister.",
+        "Option (d) Sadr-us-Sudur managed religious endowments (awqaf) and appointments to religious offices — the correct blank."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works here because students who know four central ministers exist may default to Mir Bakshi (the most prominent non-treasury minister) when asked about a supervisory role. The specific portfolio of Sadr-us-Sudur — religious endowments and appointments — is less frequently recalled than Mir Bakshi's intelligence oversight.",
+      "final_explanation": "Akbar's central administration distributed distinct portfolios across four key ministers to prevent any single official from accumulating total power.\n\n• Option (a) — Incorrect: The Diwan (also called Wazir) managed state revenue and finances — the imperial treasury, not religious grants.\n• Option (b) — Incorrect: Mir Bakshi oversaw military payroll, maintained mansab rolls, supervised Dagh and Chehra, and ran the intelligence network. Religious matters were outside his portfolio.\n• Option (c) — Incorrect: The Wakil was nominally the Prime Minister but Akbar deliberately curtailed the office after Bairam Khan. The Wakil had general supervisory duties, not specifically religious endowments.\n• Option (d) — Correct: The Sadr-us-Sudur supervised charitable endowments (awqaf), religious grants (madad-i-maash), appointments to mosques and religious offices, and administered Muslim law in relevant cases.\n\nValue Addition:\n• The Sadr at the Suba (provincial) level mirrored the Sadr-us-Sudur at the centre — a vertical replication of the religious-charitable portfolio.\n• Madad-i-maash were revenue-free grants given to religious scholars and pious individuals — separate from the Jagir system.\n• Akbar's Sulh-i-Kul policy technically extended the Sadr-us-Sudur's oversight to include grants for non-Muslim religious purposes as well."
+    },
+    "hi": {
+      "display_text": "अकबर के प्रशासन के चार प्रमुख केंद्रीय मंत्रियों में से, वह अधिकारी जो धर्मार्थ निधियों (अवकाफ) की निगरानी, धार्मिक पदों पर नियुक्तियां करने, और धार्मिक कानून से संबंधित मामलों का निर्णय लेने के लिए जिम्मेदार था, वह __________ था।\n\n(a) दीवान (वज़ीर)\n(b) मीर बक्शी\n(c) वकील\n(d) सादर-उस-सुदूर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम है क्योंकि मीर बक्शी खुफिया कर्मचारियों (खबर लेखक) की निगरानी करता था और छात्र खुफिया निगरानी को धार्मिक/न्यायिक मामलों की निगरानी से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: दीवान/वज़ीर राज्य के वित्त का प्रबंधन करता था — न कि धर्मार्थ निधियों या धार्मिक विवादों का।",
+        "विकल्प (b) को हटाएं: मीर बक्शी सैन्य अभिलेख और खुफिया का प्रबंधन करता था — न कि धार्मिक या धर्मार्थ पोर्टफोलियो।",
+        "विकल्प (c) को हटाएं: वकील प्रधानमंत्री था (अकबर के शासन में महत्व कम होता गया) — न कि विशेष रूप से धार्मिक/धर्मार्थ मंत्री।",
+        "विकल्प (d) सादर-उस-सुदूर धार्मिक धर्मार्थ निधियों (अवकाफ) और धार्मिक पदों की नियुक्तियों का प्रबंधन करता था — सही विकल्प।"
+      ],
+      "upsc_trap_explanation": "यह इकाई-स्थानांतरण (entity-swap) जाल इसलिए काम करता है क्योंकि जो छात्र जानते हैं कि चार केंद्रीय मंत्री होते हैं, वे पर्यवेक्षी भूमिका के बारे में पूछे जाने पर मीर बक्शी (सबसे प्रमुख गैर-कोषागार मंत्री) को चुन सकते हैं। सादर-उस-सुदूर का विशिष्ट पोर्टफोलियो — धार्मिक धर्मार्थ निधियां और नियुक्तियां — मीर बक्शी की खुफिया निगरानी की तुलना में कम याद किया जाता है।",
+      "final_explanation": "अकबर के केंद्रीय प्रशासन ने चार प्रमुख मंत्रियों के बीच विशिष्ट पोर्टफोलियो बांटे ताकि किसी एक अधिकारी के पास पूर्ण शक्ति न आ सके।\n\n• विकल्प (a) — गलत: दीवान (जिसे वज़ीर भी कहा जाता था) राज्य के राजस्व और वित्त का प्रबंधन करता था — साम्राज्य के कोषागार का, न कि धार्मिक अनुदान का।\n• विकल्प (b) — गलत: मीर बक्शी सैन्य वेतन, मंसब रजिस्टर, दाग़ और चेहरा की निगरानी करता था, और खुफिया नेटवर्क चलाता था। धार्मिक मामले उसके पोर्टफोलियो में नहीं थे।\n• विकल्प (c) — गलत: वकील नाममात्र प्रधानमंत्री था लेकिन अकबर ने बैरम खान के बाद इस पद का महत्व घटा दिया था। वकील के सामान्य पर्यवेक्षी कर्तव्य थे, न कि विशेष रूप से धार्मिक धर्मार्थ निधियों के।\n• विकल्प (d) — सही: सादर-उस-सुदूर धर्मार्थ निधियों (अवकाफ), धार्मिक अनुदान (मदद-ए-माश), मस्जिदों और धार्मिक पदों की नियुक्तियों की निगरानी करता था, और संबंधित मामलों में मुस्लिम कानून का प्रशासन करता था।\n\nमूल्यवर्धन:\n• सूबा (प्रांतीय) स्तर पर सादर ने केंद्र के सादर-उस-सुदूर की भूमिका की नकल की — धार्मिक-धर्मार्थ पोर्टफोलियो की ऊर्ध्वाधर पुनरावृत्ति।\n• मदद-ए-माश वे राजस्व-मुक्त अनुदान थे जो धार्मिक विद्वानों और धर्मपरायण व्यक्तियों को दिए जाते थे — जागीर प्रणाली से अलग।\n• अकबर की सुलह-ए-कुल नीति तकनीकी रूप से सादर-उस-सुदूर की निगरानी को गैर-मुस्लिम धार्मिक उद्देश्यों के लिए अनुदानों तक भी विस्तारित करती थी।"
+    }
+  },
+  {
+    "uuid": "b68c8fa3-0b06-4585-a453-760d4ef18bca",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Rajput Policy: Matrimonial Alliances and Subordinate Integration",
+        "Sulh-i-Kul Policy and Its Administrative Manifestations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Rajput policy — Watan Jagir as distinct from regular mansab grants",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Akbar's Rajput policy:\n\n1. Akbar's Rajput policy treated Rajput chiefs identically to other nobles — assigning them the same type of Tankha (transferable) Jagirs and the same mansab conditions as Turani or Irani nobles.\n2. Man Singh of Amber held one of the highest mansab ranks in Akbar's court and served as a military commander in campaigns including the Bengal and Kabul operations.\n3. The Mewar Sisodia clan under Rana Pratap persistently refused to enter a matrimonial alliance or formally acknowledge Mughal suzerainty throughout Akbar's reign.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 and 3 only\n(b) 1 only\n(c) 1 and 2 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Akbar's Rajput policy treated Rajput chiefs identically to other nobles — assigning them the same type of Tankha (transferable) Jagirs and the same mansab conditions as Turani or Irani nobles.",
+          "verdict": "Incorrect",
+          "reason": "Rajput chiefs received Watan Jagirs (hereditary) over their ancestral territories — a special concession not extended to Turani or Irani nobles, who held Tankha (transferable) Jagirs. This differential treatment was deliberate."
+        },
+        {
+          "statement": "Man Singh of Amber held one of the highest mansab ranks in Akbar's court and served as a military commander in campaigns including the Bengal and Kabul operations.",
+          "verdict": "Correct",
+          "reason": "Man Singh held a Mansab of 7000 and commanded imperial armies in multiple theaters — his administrative and military role exemplified the successful integration of Rajput chiefs into the Mughal system."
+        },
+        {
+          "statement": "The Mewar Sisodia clan under Rana Pratap persistently refused to enter a matrimonial alliance or formally acknowledge Mughal suzerainty throughout Akbar's reign.",
+          "verdict": "Correct",
+          "reason": "Rana Pratap of Mewar consistently refused submission, maintaining Mewar's independence throughout Akbar's reign. The Battle of Haldighati (1576) was the military expression of this refusal, though Rana Pratap survived and continued resistance."
+        }
+      ],
+      "strong_distractor": "c — Option c is a strong distractor because students who correctly identify Statement 1 as incorrect (not correct) may also doubt Statement 2, unsure whether Man Singh specifically served in Bengal and Kabul.",
+      "elimination_logic": [
+        "Statement 1: Rajputs received Watan Jagirs (hereditary), not Tankha Jagirs — the claim of identical treatment is false. Statement 1 IS incorrect.",
+        "Statement 2: Man Singh's high rank (7000) and multiple military commands are historically documented — Statement 2 is correct, not incorrect.",
+        "Statement 3: Rana Pratap's consistent refusal throughout Akbar's reign is historically accurate — Statement 3 is correct, not incorrect.",
+        "Only Statement 1 is NOT correct — option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 1 uses scope-extension: by saying Rajput chiefs were treated 'identically' to other nobles, it suppresses the crucial distinction of Watan Jagirs. A student who knows Rajputs received mansabs but is less precise about the Jagir type may accept the 'identical treatment' claim.",
+      "final_explanation": "Akbar's Rajput policy was deliberately differentiated from his treatment of other noble groups — this differentiation was the policy's strategic core.\n\n• Statement 1 — Incorrect: Rajput chiefs received Watan Jagirs over their ancestral territories — a hereditary concession. Turani and Irani nobles typically held Tankha Jagirs (transferable). Treating them 'identically' would have eliminated the very incentive that made Rajput cooperation attractive.\n• Statement 2 — Correct (not an incorrect statement): Man Singh of Amber held a Mansab of 7000 — among the very highest in Akbar's court — and commanded armies in Bengal, Kabul, and other fronts. He embodied the successful Rajput integration model.\n• Statement 3 — Correct (not an incorrect statement): Rana Pratap's resistance continued throughout Akbar's reign. After Haldighati (1576), Rana Pratap never formally submitted. His son Amar Singh eventually submitted — but to Jahangir, not Akbar.\n\nOnly Statement 1 is NOT correct — option (b).\n\nValue Addition:\n• The Kachwaha clan of Amber was politically the closest to the Mughal centre — Man Singh was Akbar's nephew by marriage.\n• Todar Mal was also a Rajput (Khatri) — his prominence shows Hindu integration at the highest administrative levels.\n• Akbar's Rajput policy contrasts sharply with Aurangzeb's, whose religious policies alienated the Rajput alliance and triggered armed resistance."
+    },
+    "hi": {
+      "display_text": "अकबर की राजपूत नीति के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अकबर की राजपूत नीति ने राजपूत प्रमुखों को अन्य नवाबों के समान माना — उन्हें टंका (स्थानांतरणीय) जागीरें और तुरानी या ईरानी नवाबों जैसी मंसब शर्तें दीं।\n2. अंबर के मान सिंह ने अकबर के दरबार में सबसे उच्च मंसब रैंक में से एक धारण की और बंगाल और काबुल अभियानों सहित कई सैन्य अभियानों में सेनापति के रूप में सेवा की।\n3. मेवाड़ के सिसोदिया वंश ने राणा प्रताप के नेतृत्व में अकबर के शासनकाल में विवाहिक गठजोड़ करने या औपचारिक रूप से मुगल अधीनता स्वीकार करने से लगातार इनकार किया।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1\n(c) केवल 1 और 2\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अकबर की राजपूत नीति ने राजपूत प्रमुखों को अन्य नवाबों के समान माना — उन्हें टंका (स्थानांतरणीय) जागीरें और तुरानी या ईरानी नवाबों जैसी मंसब शर्तें दीं।",
+          "verdict": "गलत",
+          "reason": "राजपूत प्रमुखों को उनके पूर्वजों की भूमि पर वतन जागीरें (वंशानुगत) दी गईं — यह एक विशेष रियायत थी जो तुरानी या ईरानी नवाबों को नहीं दी गई, जो टंका (स्थानांतरणीय) जागीरें रखते थे। यह भेदभाव जानबूझकर किया गया था।"
+        },
+        {
+          "statement": "अंबर के मान सिंह ने अकबर के दरबार में सबसे उच्च मंसब रैंक में से एक धारण की और बंगाल और काबुल अभियानों सहित कई सैन्य अभियानों में सेनापति के रूप में सेवा की।",
+          "verdict": "सही",
+          "reason": "मान सिंह के पास 7000 की मंसब थी और उन्होंने कई मोर्चों पर सम्राट की सेनाओं का नेतृत्व किया — उनका प्रशासनिक और सैन्य योगदान राजपूत प्रमुखों के मुगल व्यवस्था में सफल समावेशन का उदाहरण है।"
+        },
+        {
+          "statement": "मेवाड़ के सिसोदिया वंश ने राणा प्रताप के नेतृत्व में अकबर के शासनकाल में विवाहिक गठजोड़ करने या औपचारिक रूप से मुगल अधीनता स्वीकार करने से लगातार इनकार किया।",
+          "verdict": "सही",
+          "reason": "मेवाड़ के राणा प्रताप ने अकबर के शासनकाल में लगातार अधीनता से इनकार किया और मेवाड़ की स्वतंत्रता बनाए रखी। हल्दीघाटी की लड़ाई (1576) इस इनकार का सैन्य रूप थी, हालांकि राणा प्रताप जीवित रहे और प्रतिरोध जारी रखा।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 1 को गलत (सही नहीं) पहचानते हैं, वे कथन 2 पर भी संदेह कर सकते हैं कि क्या मान सिंह ने विशेष रूप से बंगाल और काबुल में सेवा की।",
+      "elimination_logic": [
+        "कथन 1: राजपूतों को वतन जागीरें (वंशानुगत) मिलीं, टंका जागीरें नहीं — समान व्यवहार का दावा गलत है। कथन 1 गलत है।",
+        "कथन 2: मान सिंह की उच्च रैंक (7000) और कई सैन्य कमानें ऐतिहासिक रूप से प्रमाणित हैं — कथन 2 सही है, गलत नहीं।",
+        "कथन 3: राणा प्रताप का अकबर के शासनकाल में लगातार इनकार ऐतिहासिक रूप से सही है — कथन 3 सही है, गलत नहीं।",
+        "केवल कथन 1 सही नहीं है — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में स्कोप-एक्सटेंशन है: यह कहकर कि राजपूत प्रमुखों के साथ 'समान' व्यवहार किया गया, वतन जागीरों के महत्वपूर्ण भेद को दबा दिया गया है। जो छात्र जानते हैं कि राजपूतों को मंसब मिले लेकिन जागीर के प्रकार के बारे में कम सटीक हैं, वे 'समान व्यवहार' के दावे को स्वीकार कर सकते हैं।",
+      "final_explanation": "अकबर की राजपूत नीति जानबूझकर अन्य नवाबों के व्यवहार से भिन्न थी — यह भेदभाव नीति का रणनीतिक मूल था।\n\n• कथन 1 — गलत: राजपूत प्रमुखों को उनके पूर्वजों की भूमि पर वतन जागीरें मिलीं — एक वंशानुगत रियायत। तुरानी और ईरानी नवाबों के पास सामान्यतः टंका जागीरें (स्थानांतरणीय) थीं। उन्हें 'समान' मानना उस प्रोत्साहन को समाप्त कर देता जो राजपूत सहयोग को आकर्षक बनाता था।\n• कथन 2 — सही (गलत कथन नहीं): अंबर के मान सिंह के पास 7000 की मंसब थी — अकबर के दरबार में सबसे उच्च में से एक — और उन्होंने बंगाल, काबुल और अन्य मोर्चों पर सेनाओं का नेतृत्व किया। वे सफल राजपूत समावेशन मॉडल के प्रतीक थे।\n• कथन 3 — सही (गलत कथन नहीं): राणा प्रताप का प्रतिरोध अकबर के शासनकाल में जारी रहा। हल्दीघाटी (1576) के बाद राणा प्रताप ने कभी औपचारिक रूप से समर्पण नहीं किया। उनके पुत्र अमर सिंह ने अंततः समर्पण किया — लेकिन जहांगीर को, अकबर को नहीं।\n\nकेवल कथन 1 सही नहीं है — विकल्प (b)।\n\nमूल्य संवर्धन:\n• अंबर का कछवाहा वंश राजनीतिक रूप से मुगल केंद्र के सबसे निकट था — मान सिंह अकबर के भांजे थे।\n• टोडर मल भी राजपूत (खत्री) थे — उनकी प्रमुखता उच्चतम प्रशासनिक स्तरों पर हिंदू समावेशन को दर्शाती है।\n• अकबर की राजपूत नीति और औरंगजेब की धार्मिक नीतियों में तीव्र अंतर था, जिसने राजपूत गठबंधन को दूर किया और सशस्त्र प्रतिरोध को जन्म दिया।"
+    }
+  },
+  {
+    "uuid": "37ea5bb3-6cd8-4758-a9ba-c1c14dec4f3e",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Military Reforms: Artillery, War Elephants, and Cavalry Reorganization"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Battle of Haldighati — military limits despite administrative strength",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion and Reason:\n\nAssertion (A): The Battle of Haldighati (1576) demonstrated the limits of Akbar's military power — despite Mughal forces holding the battlefield, Rana Pratap escaped and Mewar's resistance continued, making the engagement strategically inconclusive.\n\nReason (R): The Mughal army under Akbar benefited from Ottoman-influenced artillery technology, making it superior to most contemporary Indian armies in set-piece engagements.\n\nWhich one of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students may reason that Mughal artillery superiority (R) is the obvious reason why they 'won' at Haldighati (A), without carefully noting that the battle result was strategically inconclusive.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The Battle of Haldighati (1576) demonstrated that Akbar could not eliminate Mewar's resistance — Rana Pratap escaped and continued guerrilla operations. The battle was militarily indecisive in strategic terms despite Mughal forces holding the field.",
+        "Step 2: Is Reason (R) correct? — Yes. Ottoman-influenced artillery, introduced through figures like Ustad Ali Quli, was indeed a significant component of Mughal military advantage in open engagements.",
+        "Step 3: Does R explain A? — No. Haldighati was fought in a narrow mountain pass where artillery advantage was neutralized by terrain. Rana Pratap's use of terrain and the inconclusive strategic outcome were not caused by artillery superiority — if anything, the terrain negated Mughal artillery, contributing to the indecisive result. R does not explain A — answer is (b)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap lies in the apparent logical flow: 'Mughals had artillery → they won battles.' But at Haldighati, the narrow pass terrain precisely negated artillery effectiveness, which is part of why the battle was indecisive. A student who assumes artillery advantage → decisive victory will accept R as explaining A and choose option (a).",
+      "final_explanation": "The Battle of Haldighati is a critical test case for understanding the limits of Mughal military power despite their administrative and technological advantages.\n\nAssertion (A): Correct. Despite Mughal forces technically occupying the field at Haldighati, Rana Pratap escaped with his army intact and continued resistance from the Aravalli hills. The battle failed to eliminate Mewar's resistance — making it strategically indecisive even if tactically a Mughal success.\n\nReason (R): Correct. Ottoman-influenced artillery — associated with figures like Ustad Ali Quli (Quli Khan) — was a genuine military advantage of the Mughal army in open-field battles and siege operations.\n\nCausal Test: At Haldighati, the narrow mountain pass terrain severely limited the effectiveness of artillery and large cavalry formations — precisely the conditions that helped Rana Pratap resist. R (artillery advantage) does not explain A (indecisive outcome) — the terrain neutralized the artillery, and R provides no explanatory link to A's content. Both are correct but causally unconnected — answer is (b).\n\nValue Addition:\n• Haldighati was commanded on the Mughal side by Man Singh of Amber, not Akbar personally.\n• The Chetak (Rana Pratap's horse) legend originates from this battle.\n• Akbar's Deccan campaigns also revealed similar logistical and terrain limits — his military reach was not unlimited despite administrative sophistication."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथन और कारण पर विचार करें:\n\nकथन (A): हल्दीघाटी का युद्ध (1576) अकबर की सैन्य शक्ति की सीमाएँ दर्शाता है — भले ही मुगल सेना ने युद्धभूमि पर कब्ज़ा किया, राणा प्रताप बच निकले और मेवाड़ का प्रतिरोध जारी रहा, जिससे यह लड़ाई रणनीतिक रूप से अनिर्णायक बनी।\n\nकारण (R): अकबर के अधीन मुगल सेना को ओटोमन-प्रभावित तोपखाने की तकनीक का लाभ मिला, जिससे यह समकालीन भारतीय सेनाओं की तुलना में सेट-पीस लड़ाइयों में श्रेष्ठ थी।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a एक मजबूत भ्रम है क्योंकि छात्र सोच सकते हैं कि मुगल तोपखाने की श्रेष्ठता (R) स्पष्ट कारण है कि उन्होंने हल्दीघाटी (A) में 'जीत' हासिल की, बिना ध्यान दिए कि युद्ध का परिणाम रणनीतिक रूप से अनिर्णायक था।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। हल्दीघाटी का युद्ध (1576) यह दर्शाता है कि अकबर मेवाड़ के प्रतिरोध को समाप्त नहीं कर सके — राणा प्रताप बच निकले और गुरिल्ला युद्ध जारी रखा। युद्ध रणनीतिक दृष्टि से अनिर्णायक था, भले ही मुगल सेना ने मैदान पर कब्ज़ा रखा।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। उस्ताद अली क़ुली जैसे व्यक्तियों के माध्यम से ओटोमन-प्रभावित तोपखाना वास्तव में मुगल सेना की खुली लड़ाइयों में एक महत्वपूर्ण सैन्य लाभ था।",
+        "चरण 3: क्या R, A को समझाता है? — नहीं। हल्दीघाटी एक संकीर्ण पर्वतीय मार्ग में लड़ा गया था जहाँ तोपखाने का लाभ स्थलाकृति द्वारा निरस्त कर दिया गया था। राणा प्रताप का स्थलाकृति का उपयोग और अनिर्णायक रणनीतिक परिणाम तोपखाने की श्रेष्ठता के कारण नहीं थे — यदि कुछ था तो स्थलाकृति ने मुगल तोपखाने को निरस्त किया, जिससे अनिर्णायक परिणाम हुआ। R, A को नहीं समझाता — उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "उल्टा-कारण संबंधी भ्रम इस स्पष्ट तार्किक प्रवाह में है: 'मुगल के पास तोपखाना था → वे युद्ध जीत गए।' लेकिन हल्दीघाटी में संकीर्ण मार्ग की स्थलाकृति ने तोपखाने की प्रभावशीलता को निरस्त कर दिया, जो युद्ध के अनिर्णायक होने का एक कारण था। जो छात्र मानते हैं कि तोपखाने की श्रेष्ठता → निर्णायक विजय है, वे R को A का स्पष्टीकरण मानकर विकल्प (a) चुनेंगे।",
+      "final_explanation": "हल्दीघाटी का युद्ध मुगल सैन्य शक्ति की सीमाओं को समझने के लिए एक महत्वपूर्ण परीक्षण मामला है, भले ही उनकी प्रशासनिक और तकनीकी श्रेष्ठताएँ हों।\n\nकथन (A): सही। हल्दीघाटी में तकनीकी रूप से मुगल सेना ने मैदान पर कब्ज़ा किया, लेकिन राणा प्रताप अपनी सेना के साथ बच निकले और अरावली पहाड़ियों से प्रतिरोध जारी रखा। युद्ध मेवाड़ के प्रतिरोध को समाप्त करने में विफल रहा — जिससे यह रणनीतिक रूप से अनिर्णायक बना, भले ही टैक्टिकली मुगल सफलता थी।\n\nकारण (R): सही। ओटोमन-प्रभावित तोपखाना — जो उस्ताद अली क़ुली (क़ुली खान) जैसे व्यक्तियों से जुड़ा है — खुली लड़ाइयों और घेराबंदी अभियानों में मुगल सेना का वास्तविक सैन्य लाभ था।\n\nकारणात्मक परीक्षण: हल्दीघाटी में संकीर्ण पर्वतीय मार्ग की स्थलाकृति ने तोपखाने और बड़ी घुड़सवार सेना की प्रभावशीलता को गंभीर रूप से सीमित कर दिया — ठीक वही परिस्थितियाँ थीं जिन्होंने राणा प्रताप को प्रतिरोध करने में मदद की। R (तोपखाने का लाभ) A (अनिर्णायक परिणाम) को नहीं समझाता — स्थलाकृति ने तोपखाने को निरस्त किया, और R का A के विषय से कोई कारणात्मक संबंध नहीं है। दोनों सही हैं लेकिन कारणात्मक रूप से असंबंधित — उत्तर है (b)।\n\nमूल्यवर्धन:\n• हल्दीघाटी में मुगल पक्ष का नेतृत्व अकबर ने नहीं, बल्कि आमेर के मान सिंह ने किया था।\n• चेतक (राणा प्रताप का घोड़ा) की कथा इसी युद्ध से उत्पन्न हुई है।\n• अकबर के दक्कन अभियान में भी इसी तरह की लॉजिस्टिक और स्थलाकृति सीमाएँ सामने आईं — उनकी सैन्य पहुँच प्रशासनिक परिष्कार के बावजूद असीमित नहीं थी।"
+    }
+  },
+  {
+    "uuid": "bdab1b4e-7ba5-4870-8738-b87b372df1c2",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Provincial Administration: Suba, Sarkar, Pargana Hierarchy",
+        "Todar Mal's Revenue Settlement (Zabti/Ain-i-Dahsala System)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Land classification categories — Polaj, Parauti, Chachar, Banjar definitions",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the land categories under Todar Mal's revenue classification (List I) with their correct descriptions (List II):",
+        "columns": [
+          "List I (Land Category)",
+          "List II (Description)"
+        ],
+        "rows": [
+          [
+            "A. Polaj",
+            "1. Land left uncultivated for three to four years, assessed at a reduced revenue rate"
+          ],
+          [
+            "B. Parauti",
+            "2. Temporarily uncultivated land (short fallow) receiving revenue concessions to encourage recultivation"
+          ],
+          [
+            "C. Chachar",
+            "3. Long-term fallow land (uncultivated for more than five years) attracting minimal or no standard revenue"
+          ],
+          [
+            "D. Banjar",
+            "4. Permanently cultivated land assessed at the full revenue rate"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-4, B-2, C-1, D-3\n(b) A-4, B-1, C-2, D-3\n(c) A-3, B-2, C-1, D-4\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because it correctly places Polaj but swaps Parauti and Chachar, exploiting the common confusion between short-fallow and medium-fallow land.",
+      "elimination_logic": [
+        "Polaj is permanently cultivated land assessed at full rate — A matches 4.",
+        "Parauti is temporarily uncultivated (short-fallow) land, given concessions to encourage recultivation — B matches 2.",
+        "Chachar is medium-fallow land (3–4 years uncultivated) assessed at a reduced rate — C matches 1.",
+        "Banjar is long-fallow land (more than five years uncultivated) attracting minimal or no revenue — D matches 3, confirming option (a)."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap is embedded in the Parauti-Chachar distinction. Both are fallow lands — the distinction is duration of fallowness. Students who recall both terms as 'fallow land' but not their relative duration often swap them. Option (b) exploits this by correctly placing Polaj and Banjar while swapping the two middle categories.",
+      "final_explanation": "Todar Mal's land classification system categorized cultivated and fallow land into four grades, each with different revenue treatment to incentivize cultivation.\n\n• A–4 (Polaj → Permanently cultivated): Polaj land was cultivated every year without interruption — the highest-quality agricultural land assessed at full revenue rate.\n• B–2 (Parauti → Short-term fallow): Parauti was temporarily uncultivated land left fallow for a brief period to restore fertility. It received revenue concessions when brought back under cultivation.\n• C–1 (Chachar → Medium-term fallow, 3–4 years): Chachar had been uncultivated for three to four years. It was assessed at reduced rates to encourage its return to production.\n• D–3 (Banjar → Long-term fallow, over 5 years): Banjar land had been uncultivated for more than five years. It attracted minimal revenue and required significant concessions to attract cultivators.\n\nThe trap pairing is Parauti-Chachar — both are fallow categories distinguished only by duration.\n\nValue Addition:\n• The revenue concessions for fallow land were staggered across years of recultivation — not a one-time remission.\n• Ain-i-Dahsala also recorded the type of crop, not just the area, to set revenue in local price terms.\n• The Zabti system required extensive land measurement (using the Ilahi Gaz, a standardized unit introduced by Akbar)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "टोडरमल के राजस्व वर्गीकरण के तहत भूमि श्रेणियों (सूची I) को उनके सही विवरणों (सूची II) से मिलाइए:",
+        "columns": [
+          "सूची I (भूमि श्रेणी)",
+          "सूची II (विवरण)"
+        ],
+        "rows": [
+          [
+            "A. पोलाज",
+            "1. तीन से चार वर्षों तक बंजर छोड़ी गई भूमि, जिस पर कम राजस्व दर लगती है"
+          ],
+          [
+            "B. परौटी",
+            "2. अस्थायी रूप से बंजर (अल्पकालिक बंजर) भूमि जिसे पुनः खेती के लिए राजस्व छूट दी जाती है"
+          ],
+          [
+            "C. चचर",
+            "3. दीर्घकालिक बंजर भूमि (5 वर्ष से अधिक समय तक बंजर) जिस पर न्यूनतम या कोई मानक राजस्व नहीं लगता"
+          ],
+          [
+            "D. बंजर",
+            "4. स्थायी रूप से खेती की जाने वाली भूमि जिस पर पूर्ण राजस्व दर लगती है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-4, B-2, C-1, D-3\n(b) A-4, B-1, C-2, D-3\n(c) A-3, B-2, C-1, D-4\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह पोलाज को सही स्थान देता है लेकिन परौटी और चचर को बदल देता है, जो अल्पकालिक और मध्यमकालिक बंजर भूमि के बीच आम भ्रम का लाभ उठाता है।",
+      "elimination_logic": [
+        "पोलाज स्थायी रूप से खेती की जाने वाली भूमि है जिस पर पूर्ण दर से मूल्यांकन होता है — A मेल खाता है 4 से।",
+        "परौटी अस्थायी रूप से बंजर (अल्पकालिक बंजर) भूमि है, जिसे पुनः खेती को प्रोत्साहित करने के लिए छूट दी जाती है — B मेल खाता है 2 से।",
+        "चचर मध्यमकालिक बंजर भूमि है (3–4 वर्ष तक बंजर) जिस पर कम दर से मूल्यांकन होता है — C मेल खाता है 1 से।",
+        "बंजर दीर्घकालिक बंजर भूमि है (5 वर्ष से अधिक समय तक बंजर) जिस पर न्यूनतम या कोई राजस्व नहीं लगता — D मेल खाता है 3 से, जो विकल्प (a) की पुष्टि करता है।"
+      ],
+      "upsc_trap_explanation": "आंशिक-सत्य का जाल परौटी-चचर के भेद में निहित है। दोनों बंजर भूमि हैं — अंतर केवल बंजर रहने की अवधि का है। जो छात्र दोनों शब्दों को 'बंजर भूमि' के रूप में याद करते हैं लेकिन उनकी अवधि नहीं जानते, वे अक्सर इन्हें बदल देते हैं। विकल्प (b) इसका लाभ उठाता है क्योंकि यह पोलाज और बंजर को सही स्थान देता है जबकि बीच के दो वर्गों को बदल देता है।",
+      "final_explanation": "टोडरमल की भूमि वर्गीकरण प्रणाली ने खेती योग्य और बंजर भूमि को चार श्रेणियों में विभाजित किया, जिनमें से प्रत्येक पर राजस्व का अलग व्यवहार था ताकि खेती को प्रोत्साहित किया जा सके।\n\n• A–4 (पोलाज → स्थायी रूप से खेती की जाने वाली): पोलाज भूमि हर साल बिना रुके खेती की जाती थी — उच्चतम गुणवत्ता वाली कृषि भूमि जिस पर पूर्ण राजस्व दर लगती थी।\n• B–2 (परौटी → अल्पकालिक बंजर): परौटी अस्थायी रूप से बंजर छोड़ी गई भूमि थी जिसे उर्वरता बहाल करने के लिए थोड़े समय के लिए छोड़ा जाता था। इसे पुनः खेती में लाने पर राजस्व में छूट मिलती थी।\n• C–1 (चचर → मध्यमकालिक बंजर, 3–4 वर्ष): चचर भूमि तीन से चार वर्षों तक बंजर रही थी। इसे उत्पादन में वापस लाने के लिए कम दर पर मूल्यांकन किया जाता था।\n• D–3 (बंजर → दीर्घकालिक बंजर, 5 वर्ष से अधिक): बंजर भूमि पांच वर्षों से अधिक समय तक बंजर रही थी। इस पर न्यूनतम राजस्व लगता था और इसे खेती के लिए आकर्षित करने हेतु बड़ी छूट दी जाती थी।\n\nजाल जोड़ी परौटी-चचर है — दोनों बंजर श्रेणियाँ हैं जो केवल अवधि से भिन्न हैं।\n\nमूल्य संवर्धन:\n• बंजर भूमि के लिए राजस्व छूट पुनः खेती के वर्षों के अनुसार क्रमबद्ध थी — एक बार की छूट नहीं।\n• ऐन-ए-दहसाला में केवल क्षेत्रफल ही नहीं, फसल का प्रकार भी दर्ज किया जाता था ताकि स्थानीय मूल्य के अनुसार राजस्व निर्धारित किया जा सके।\n• ज़ब्ती प्रणाली में भूमि के मापन की व्यापक आवश्यकता थी (इलाही गज का उपयोग, जो अकबर द्वारा स्थापित एक मानकीकृत इकाई थी)।"
+    }
+  },
+  {
+    "uuid": "106ab496-b58b-4e1c-a457-22ba4857e1ad",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Succession Crisis and Revolt of Princes: Administrative Implications",
+        "Nobility Composition Under Akbar: Ethnic Balance as Administrative Policy"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Mughal succession — Mirzas' revolts and no-primogeniture structural weakness",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to succession challenges and administrative implications under Akbar, consider the following statements:\n\n1. Akbar dealt firmly with the revolts of his Mirzas (cousins) in the early years of his reign, using these crises to establish administrative centralization by reducing the independent power of Timurid kinsmen.\n2. The Mughal Empire codified a law of tanistry (succession by the fittest male heir) to regulate succession, which Aurangzeb invoked to justify his war against his brothers.\n3. Prince Salim's (Jahangir's) revolt against Akbar was rooted in part in the concentration of power that the Mansabdari system created — powerful nobles supporting rival princes became vehicles for factionalism.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Akbar dealt firmly with the revolts of his Mirzas (cousins) in the early years of his reign, using these crises to establish administrative centralization by reducing the independent power of Timurid kinsmen.",
+          "verdict": "Correct",
+          "reason": "The Mirzas' revolts in the 1560s–70s gave Akbar justification to curb the semi-independent power of Timurid princes and assert central imperial authority — a process that directly contributed to administrative consolidation."
+        },
+        {
+          "statement": "The Mughal Empire codified a law of tanistry (succession by the fittest male heir) to regulate succession, which Aurangzeb invoked to justify his war against his brothers.",
+          "verdict": "Incorrect",
+          "reason": "The Mughal Empire had NO codified law of succession of any kind — neither primogeniture nor tanistry. Aurangzeb justified his actions through military success and claimed divine sanction, not a legal succession principle."
+        },
+        {
+          "statement": "Prince Salim's (Jahangir's) revolt against Akbar was rooted in part in the concentration of power that the Mansabdari system created — powerful nobles supporting rival princes became vehicles for factionalism.",
+          "verdict": "Correct",
+          "reason": "The Mansabdari system's concentration of patronage in the emperor's hands paradoxically created incentives for nobles to align with rival princes, as backing the winning prince meant securing future patronage. Salim's revolt drew on noble factional support."
+        }
+      ],
+      "strong_distractor": "c — Option c is a strong distractor because students who correctly identify Statement 2 as false may then doubt Statement 3, thinking the Mansabdari-succession link is also too structural/abstract to be 'correct.'",
+      "elimination_logic": [
+        "Verify Statement 1: The Mirzas' revolts in the early reign and Akbar's firm response establishing centralization — documented — Statement 1 is correct.",
+        "Verify Statement 2: 'Law of tanistry' is a plausible fabrication — the Mughals had no codified succession law at all — Statement 2 is incorrect.",
+        "Verify Statement 3: Noble factionalism feeding succession conflicts through Mansabdari incentives — historically supported — Statement 3 is correct.",
+        "Statements 1 and 3 correct — option (d) requires checking: options (a) and (d) — option (d) '1 and 3 only' is the correct choice."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a plausible-fabrication trap: 'tanistry' is a real historical concept (from Celtic succession traditions) that sounds authoritative in a medieval history context. A student without precise knowledge may accept it as a Mughal legal principle, not recognizing that the Mughals had no codified succession rule whatsoever. The fabrication exploits the knowledge gap about what succession mechanisms other empires used.",
+      "final_explanation": "Succession instability was a structural feature of the Mughal system, not an aberration — and the early revolts under Akbar established the pattern.\n\n• Statement 1 — Correct: The Mirzas — Akbar's Timurid cousins who held semi-autonomous positions — revolted multiple times in the 1560s–70s. Akbar's suppression of these revolts allowed him to centralize authority and reduce the independent power of kinsmen, a defining act of administrative consolidation.\n• Statement 2 — Incorrect: 'Tanistry' (succession by the fittest male heir, formally codified) was never a Mughal legal institution. The Mughals had no written succession law. Each succession was determined by armed conflict and noble alignment. Attributing tanistry to Aurangzeb or any Mughal is a fabrication.\n• Statement 3 — Correct: The Mansabdari system's patronage concentration meant nobles had powerful incentives to back rival princes. Salim's revolt against Akbar (c. 1600–1604) involved significant noble factionalism — nobles calculating their future under a different emperor.\n\nValue Addition:\n• Bairam Khan's regency (1556–1560) was the first instance where Akbar had to assert personal control against an overly powerful regent.\n• Akbar's handling of Salim — firm enough to suppress the revolt but lenient enough not to execute him — reflects a pragmatic dynastic calculus.\n• Aurangzeb's war of succession (1657–58) remains the bloodiest expression of the no-primogeniture structural problem."
+    },
+    "hi": {
+      "display_text": "अकबर के तहत उत्तराधिकार चुनौतियों और प्रशासनिक प्रभावों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. अकबर ने अपने शासन के प्रारंभिक वर्षों में अपने मिर्ज़ाओं (चचेरे भाइयों) के विद्रोहों को दृढ़ता से निपटाया, इन संकटों का उपयोग टिमुरिड संबंधियों की स्वतंत्र शक्ति को कम करके प्रशासनिक केंद्रीकरण स्थापित करने के लिए किया।\n2. मुगल साम्राज्य ने उत्तराधिकार को नियंत्रित करने के लिए टैनिस्ट्री (सबसे योग्य पुरुष वारिस द्वारा उत्तराधिकार) का एक कानून संहिताबद्ध किया था, जिसे औरंगजेब ने अपने भाइयों के खिलाफ युद्ध को न्यायसंगत ठहराने के लिए लागू किया।\n3. राजकुमार सलीम (जहांगीर) का अकबर के खिलाफ विद्रोह आंशिक रूप से उस शक्ति के संकेंद्रण में निहित था जो मंसबदारी प्रणाली ने उत्पन्न की थी — शक्तिशाली नवाब जो प्रतिद्वंद्वी राजकुमारों का समर्थन करते थे, वे गुटबंदी के वाहक बन गए।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अकबर ने अपने शासन के प्रारंभिक वर्षों में अपने मिर्ज़ाओं (चचेरे भाइयों) के विद्रोहों को दृढ़ता से निपटाया, इन संकटों का उपयोग टिमुरिड संबंधियों की स्वतंत्र शक्ति को कम करके प्रशासनिक केंद्रीकरण स्थापित करने के लिए किया।",
+          "verdict": "सही",
+          "reason": "1560-70 के दशक में मिर्ज़ाओं के विद्रोहों ने अकबर को टिमुरिड राजकुमारों की अर्ध-स्वतंत्र शक्ति को सीमित करने और केंद्रीय साम्राज्यिक अधिकार स्थापित करने का औचित्य दिया — यह प्रक्रिया सीधे प्रशासनिक समेकन में योगदान देने वाली थी।"
+        },
+        {
+          "statement": "मुगल साम्राज्य ने उत्तराधिकार को नियंत्रित करने के लिए टैनिस्ट्री (सबसे योग्य पुरुष वारिस द्वारा उत्तराधिकार) का एक कानून संहिताबद्ध किया था, जिसे औरंगजेब ने अपने भाइयों के खिलाफ युद्ध को न्यायसंगत ठहराने के लिए लागू किया।",
+          "verdict": "गलत",
+          "reason": "मुगल साम्राज्य के पास किसी भी प्रकार का उत्तराधिकार का संहिताबद्ध कानून नहीं था — न तो प्रथमजन्मसिद्धि और न ही टैनिस्ट्री। औरंगजेब ने अपने कार्यों को सैन्य सफलता और दैवीय अनुमोदन के माध्यम से न्यायसंगत ठहराया, न कि किसी कानूनी उत्तराधिकार सिद्धांत के द्वारा।"
+        },
+        {
+          "statement": "राजकुमार सलीम (जहांगीर) का अकबर के खिलाफ विद्रोह आंशिक रूप से उस शक्ति के संकेंद्रण में निहित था जो मंसबदारी प्रणाली ने उत्पन्न की थी — शक्तिशाली नवाब जो प्रतिद्वंद्वी राजकुमारों का समर्थन करते थे, वे गुटबंदी के वाहक बन गए।",
+          "verdict": "सही",
+          "reason": "मंसबदारी प्रणाली में संरक्षण का संकेंद्रण सम्राट के हाथों में था, जिससे नवाबों को प्रतिद्वंद्वी राजकुमारों के साथ गठबंधन करने के प्रबल प्रोत्साहन मिले, क्योंकि विजेता राजकुमार का समर्थन करने का अर्थ था भविष्य में संरक्षण सुनिश्चित करना। सलीम का विद्रोह नवाबों के गुटबंदी समर्थन पर आधारित था।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 2 को गलत पहचानते हैं, वे कथन 3 पर भी संदेह कर सकते हैं, सोचते हैं कि मंसबदारी-उत्तराधिकार संबंध भी बहुत संरचनात्मक/सैद्धांतिक है इसलिए 'सही' नहीं हो सकता।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: प्रारंभिक शासन में मिर्ज़ाओं के विद्रोह और अकबर की दृढ़ प्रतिक्रिया जिसने केंद्रीकरण स्थापित किया — प्रलेखित — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: 'टैनिस्ट्री का कानून' एक संभावित मिथ्या है — मुगलों के पास कोई संहिताबद्ध उत्तराधिकार कानून नहीं था — कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: मंसबदारी प्रोत्साहनों के माध्यम से नवाबी गुटबंदी जो उत्तराधिकार संघर्षों को बढ़ावा देती है — ऐतिहासिक रूप से समर्थित — कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं — विकल्प (d) की जांच करें: विकल्प (a) और (d) — विकल्प (d) 'केवल 1 और 3' सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक संभावित मिथ्या जाल है: 'टैनिस्ट्री' एक वास्तविक ऐतिहासिक अवधारणा है (सेल्टिक उत्तराधिकार परंपराओं से) जो मध्यकालीन इतिहास के संदर्भ में अधिकारसंगत लगती है। बिना सटीक ज्ञान वाले छात्र इसे मुगल कानूनी सिद्धांत मान सकते हैं, यह न समझते हुए कि मुगलों के पास कोई संहिताबद्ध उत्तराधिकार नियम नहीं था। यह मिथ्या उस ज्ञान अंतर को भुनाती है कि अन्य साम्राज्यों ने कौन से उत्तराधिकार तंत्र अपनाए।",
+      "final_explanation": "उत्तराधिकार अस्थिरता मुगल प्रणाली की एक संरचनात्मक विशेषता थी, कोई अपवाद नहीं — और अकबर के तहत प्रारंभिक विद्रोहों ने इस पैटर्न को स्थापित किया।\n\n• कथन 1 — सही: मिर्ज़ा — अकबर के टिमुरिड चचेरे भाई जो अर्ध-स्वायत्त पदों पर थे — 1560-70 के दशक में कई बार विद्रोह किए। अकबर द्वारा इन विद्रोहों का दमन उसे अधिकार केंद्रीकृत करने और संबंधियों की स्वतंत्र शक्ति कम करने की अनुमति देता है, जो प्रशासनिक समेकन की एक परिभाषित क्रिया है।\n• कथन 2 — गलत: 'टैनिस्ट्री' (सबसे योग्य पुरुष वारिस द्वारा उत्तराधिकार, औपचारिक रूप से संहिताबद्ध) कभी भी मुगल कानूनी संस्था नहीं थी। मुगलों के पास कोई लिखित उत्तराधिकार कानून नहीं था। प्रत्येक उत्तराधिकार सशस्त्र संघर्ष और नवाबी गठबंधन से निर्धारित होता था। टैनिस्ट्री को औरंगजेब या किसी मुगल से जोड़ना मिथ्या है।\n• कथन 3 — सही: मंसबदारी प्रणाली में संरक्षण का संकेंद्रण नवाबों को प्रतिद्वंद्वी राजकुमारों का समर्थन करने के प्रबल प्रोत्साहन देता था। सलीम का अकबर के खिलाफ विद्रोह (लगभग 1600-1604) महत्वपूर्ण नवाबी गुटबंदी शामिल करता था — नवाब भविष्य में एक अलग सम्राट के अधीन अपने भविष्य की गणना कर रहे थे।\n\nमूल्य संवर्धन:\n• बैरम खान की रेजेंसी (1556-1560) पहला अवसर था जब अकबर को अत्यधिक शक्तिशाली रेजेंट के खिलाफ व्यक्तिगत नियंत्रण स्थापित करना पड़ा।\n• सलीम के साथ अकबर का व्यवहार — विद्रोह को दबाने के लिए पर्याप्त दृढ़ लेकिन उसे मृत्युदंड न देने के लिए उदार — एक व्यावहारिक राजवंशीय गणना को दर्शाता है।\n• औरंगजेब का उत्तराधिकार युद्ध (1657-58) बिना प्रथमजन्मसिद्धि के संरचनात्मक समस्या की सबसे खूनी अभिव्यक्ति बनी हुई है।"
+    }
+  },
+  {
+    "uuid": "f5ce3702-f5a6-4faa-8134-17516d408c45",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Todar Mal's Revenue Settlement (Zabti/Ain-i-Dahsala System)",
+        "Provincial Administration: Suba, Sarkar, Pargana Hierarchy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Gallah-bakshi crop-sharing — regional variation in revenue collection",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A revenue officer of the Mughal Empire reports to his Diwan that the territory under his charge consists of heavily forested hills with irregular terrain, where cultivated plots are small and scattered, and annual harvests are highly variable due to unpredictable rainfall. He notes that conducting systematic multi-year land measurements required under the standard northern Indian procedure would be impractical in these conditions.\n\nWhich of the following revenue collection methods would be most appropriate for the Diwan to recommend for this region, consistent with Akbar's administrative practice?\n\n(a) Ain-i-Dahsala (Zabti) system — fixing demand based on the ten-year average of cultivated area and prices\n(b) Gallah-bakshi — collecting revenue as a share of the actual harvested crop rather than through prior measurement\n(c) Patta and Qabuliyat — issuing formal land deeds and cultivator agreements specifying fixed revenue obligations\n(d) Nasaq — applying a uniform standard rate to all cultivated land regardless of crop type or yield variation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students familiar with the Ain-i-Dahsala system know it was Akbar's principal revenue method and may assume it applied universally, missing the regional limitation.",
+      "elimination_logic": [
+        "The scenario describes mountainous terrain with irregular crops — conditions incompatible with the land measurement requirements of the Zabti system.",
+        "Eliminate option (a): Ain-i-Dahsala/Zabti required systematic land measurement over ten years — impractical in geographically inaccessible terrain with unpredictable harvests.",
+        "Eliminate option (c): Patta and Qabuliyat were Sher Shah Suri's documents — a pre-Akbar system, not applied in Akbar's administration as the primary method.",
+        "Eliminate option (d): Nasaq was an estimation-based system used in some regions — the description of crop-sharing most precisely matches Gallah-bakshi."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Akbar's revenue administration was not a uniform national system — it adapted to regional geographic and agricultural realities.\n\nThe scenario describes conditions in a hilly, forested region with irregular crop patterns where systematic land measurement over multiple years is impossible. Under such conditions, the Ain-i-Dahsala (Zabti) system — which required decade-long measurement of cultivated area — was inapplicable.\n\n• Option (a) — Incorrect: The Zabti/Ain-i-Dahsala system was the standard method for northern Indian plains — it required precise land measurement and a stable cultivated area over ten years. Mountainous, inaccessible terrain with irregular harvests made this impossible.\n• Option (b) — Correct: Gallah-bakshi (also called Batai or crop-sharing) was the alternative revenue method applied in regions where measurement-based assessment was impractical. The state took a share of the actual harvest, removing the need for prior land surveys.\n• Option (c) — Incorrect: Patta (land deed) and Qabuliyat (cultivator's acceptance deed) were Sher Shah's instruments — retained as documentation tools but not as the primary revenue assessment method under Akbar.\n• Option (d) — Incorrect: Nasaq was a rough estimation method used as an approximation — distinct from Gallah-bakshi's actual harvest-share mechanism.\n\nValue Addition:\n• Kankut was yet another revenue method — estimating yield by visual inspection of standing crops before harvest.\n• The regional variation in revenue methods shows that Mughal administration was pragmatically adaptive, not rigidly uniform.\n• Bengal and parts of Rajputana used Gallah-bakshi where geographical conditions warranted."
+    },
+    "hi": {
+      "display_text": "मुगल साम्राज्य के एक राजस्व अधिकारी ने अपने दीवान को सूचित किया कि उसके क्षेत्र में घने वन वाले पहाड़ी इलाके हैं जहाँ भू-भाग अनियमित है, खेती के भूखंड छोटे और बिखरे हुए हैं, और अनियमित वर्षा के कारण वार्षिक फसलें अत्यंत अस्थिर हैं। उसने यह भी उल्लेख किया कि मानक उत्तरी भारतीय प्रक्रिया के तहत आवश्यक व्यवस्थित बहु-वर्षीय भूमि मापन इन परिस्थितियों में व्यावहारिक नहीं होगा।\n\nअकबर के प्रशासनिक अभ्यास के अनुरूप, इस क्षेत्र के लिए दीवान को कौन-सी राजस्व संग्रह विधि सबसे उपयुक्त सलाह देनी चाहिए?\n\n(a) ऐन-ए-दहसाला (ज़ब्ती) प्रणाली — दस वर्षों के औसत खेती क्षेत्र और कीमतों के आधार पर मांग निर्धारित करना\n(b) गल्ला-बक्शी — पूर्व मापन के बजाय वास्तविक कटाई गई फसल के हिस्से के रूप में राजस्व संग्रह\n(c) पट्टा और क़बूलियत — औपचारिक भूमि दस्तावेज़ और कृषक समझौतों के माध्यम से निश्चित राजस्व दायित्व जारी करना\n(d) नासक — फसल के प्रकार या उपज में भिन्नता की परवाह किए बिना सभी खेती भूमि पर समान मानक दर लागू करना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि ऐन-ए-दहसाला प्रणाली से परिचित छात्र जानते हैं कि यह अकबर की मुख्य राजस्व प्रणाली थी और वे यह मान सकते हैं कि यह सर्वत्र लागू थी, जबकि यह क्षेत्रीय सीमितता को नजरअंदाज करता है।",
+      "elimination_logic": [
+        "परिदृश्य में पहाड़ी इलाका और अनियमित फसलें वर्णित हैं — जो ज़ब्ती प्रणाली की भूमि मापन आवश्यकताओं के अनुकूल नहीं हैं।",
+        "विकल्प (a) को हटाएं: ऐन-ए-दहसाला/ज़ब्ती में दस वर्षों के व्यवस्थित भूमि मापन की आवश्यकता होती है — जो भौगोलिक रूप से दुर्गम और अनियमित फसल वाले इलाके में व्यावहारिक नहीं है।",
+        "विकल्प (c) को हटाएं: पट्टा और क़बूलियत शेर शाह सूरी के दस्तावेज़ थे — अकबर के प्रशासन में मुख्य विधि के रूप में लागू नहीं थे।",
+        "विकल्प (d) को हटाएं: नासक एक अनुमान आधारित प्रणाली थी जो कुछ क्षेत्रों में उपयोग होती थी — फसल-भागीदारी के लिए गल्ला-बक्शी अधिक सटीक मेल खाती है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अकबर का राजस्व प्रशासन एक समान राष्ट्रीय प्रणाली नहीं था — यह क्षेत्रीय भौगोलिक और कृषि वास्तविकताओं के अनुसार अनुकूलित था।\n\nपरिदृश्य में पहाड़ी, वनाच्छादित क्षेत्र और अनियमित फसल पैटर्न का वर्णन है जहाँ कई वर्षों तक व्यवस्थित भूमि मापन असंभव है। ऐसी परिस्थितियों में ऐन-ए-दहसाला (ज़ब्ती) प्रणाली — जिसमें दस वर्षों तक खेती की गई भूमि का मापन आवश्यक था — लागू नहीं हो सकती थी।\n\n• विकल्प (a) — गलत: ज़ब्ती/ऐन-ए-दहसाला प्रणाली उत्तरी भारतीय मैदानों की मानक विधि थी — इसमें सटीक भूमि मापन और दस वर्षों तक स्थिर खेती क्षेत्र की आवश्यकता होती थी। पहाड़ी, दुर्गम इलाके और अनियमित फसलें इसे असंभव बनाती थीं।\n• विकल्प (b) — सही: गल्ला-बक्शी (जिसे बताई या फसल-भागीदारी भी कहा जाता है) वैकल्पिक राजस्व विधि थी जो उन क्षेत्रों में लागू होती थी जहाँ मापन आधारित आकलन व्यावहारिक नहीं था। राज्य वास्तविक फसल का हिस्सा लेता था, जिससे पूर्व भूमि सर्वेक्षण की आवश्यकता समाप्त हो जाती थी।\n• विकल्प (c) — गलत: पट्टा (भूमि दस्तावेज़) और क़बूलियत (किसान की स्वीकृति दस्तावेज़) शेर शाह के उपकरण थे — जिन्हें दस्तावेज़ीकरण के लिए रखा गया था, लेकिन अकबर के तहत मुख्य राजस्व आकलन विधि नहीं थे।\n• विकल्प (d) — गलत: नासक एक मोटा अनुमान विधि थी जो एक प्रकार का आकलन था — जो गल्ला-बक्शी के वास्तविक फसल-भागीदारी तंत्र से भिन्न थी।\n\nमूल्य संवर्धन:\n• कंकूट एक और राजस्व विधि थी — जिसमें कटाई से पहले खड़ी फसलों का दृश्य निरीक्षण कर उपज का अनुमान लगाया जाता था।\n• राजस्व विधियों में क्षेत्रीय भिन्नता यह दर्शाती है कि मुगल प्रशासन व्यावहारिक रूप से अनुकूल था, कठोर रूप से एकरूप नहीं।\n• बंगाल और राजपूताना के कुछ हिस्सों में गल्ला-बक्शी का उपयोग किया जाता था जहाँ भौगोलिक परिस्थितियाँ उपयुक्त थीं।"
+    }
+  },
+  {
+    "uuid": "1a179b8a-5f84-4006-a62e-b9d5ac50017a",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Central Diwan and the Concept of Separation of Military and Revenue Powers",
+        "Karkhana System: Imperial Workshops and Economic Control"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mir Bakshi portfolio — intelligence network operatives",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following designations were categories of officials forming part of the intelligence and news-reporting network supervised by the Mir Bakshi in Akbar's administration. Which one does NOT belong to this network?\n\n(a) Waqia-navis\n(b) Sawanih-navis\n(c) Amin/Amil\n(d) Khufia-navis",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because 'Sawanih-navis' sounds like a news-writing designation and students who recall the intelligence system partly may include it, not realizing Khufia-navis is the precise term for secret reporters.",
+      "elimination_logic": [
+        "Waqia-navis were news-writers reporting on provincial affairs — part of Mir Bakshi's intelligence network.",
+        "Sawanih-navis were event-recorders attached to nobles — also part of the intelligence apparatus.",
+        "Khufia-navis were secret (covert) intelligence reporters — also under Mir Bakshi.",
+        "Amin/Amil was a revenue assessment officer at the Pargana level — entirely in the revenue administration, not the intelligence network. Option (c) is the odd one out."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places Amin/Amil — a well-known revenue officer — among intelligence operatives. A student who knows Waqia-navis and Khufia-navis but is less certain about Sawanih-navis may focus on eliminating Sawanih-navis (which is indeed intelligence-related) rather than identifying Amin/Amil as the non-intelligence officer.",
+      "final_explanation": "Mir Bakshi supervised an intelligence network comprising several categories of reporters, each with distinct functions within the information-gathering apparatus.\n\n• Option (a) — Waqia-navis: News-writers posted at provincial courts, noble establishments, and military camps — reporting on significant events to the centre. Part of Mir Bakshi's network.\n• Option (b) — Sawanih-navis: Event-recorders attached specifically to individual nobles to report on their activities. Part of the intelligence system.\n• Option (c) — Amin/Amil: Revenue assessment and collection officer at the Pargana level under the revenue administration. This is the ODD ONE OUT — the Amin/Amil had no connection to the intelligence network; he worked under the revenue hierarchy (Diwan), not Mir Bakshi.\n• Option (d) — Khufia-navis: Covert or 'secret' intelligence reporters operating undercover. Part of Mir Bakshi's network.\n\nValue Addition:\n• The intelligence system under Mir Bakshi gave the emperor direct information flows, bypassing the potentially biased reports of governors (Subadars).\n• Qanungo (hereditary record-keeper at Pargana level) is another revenue official frequently confused with intelligence roles.\n• The separation of intelligence (Mir Bakshi) and revenue (Diwan) oversight was a deliberate check-and-balance mechanism."
+    },
+    "hi": {
+      "display_text": "अकबर के प्रशासन में मीर बख्शी के अधीन खुफिया और समाचार-रिपोर्टिंग नेटवर्क के अधिकारी वर्गों में से निम्नलिखित में से तीन पद थे। इनमें से कौन सा इस नेटवर्क का हिस्सा नहीं है?\n\n(a) वाक़िया-नवीस\n(b) सवानिह-नवीस\n(c) अमीन/अमील\n(d) खुफिया-नवीस",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि 'सवानिह-नवीस' समाचार लेखन पदनाम जैसा लगता है और जो छात्र खुफिया प्रणाली को आंशिक रूप से याद करते हैं वे इसे शामिल कर सकते हैं, यह न समझते हुए कि खुफिया-नवीस गुप्त रिपोर्टर के लिए सटीक पद है।",
+      "elimination_logic": [
+        "वाक़िया-नवीस प्रांतीय मामलों की रिपोर्ट करने वाले समाचार लेखक थे — जो मीर बख्शी के खुफिया नेटवर्क का हिस्सा थे।",
+        "सवानिह-नवीस रईसों से जुड़े घटना-लेखक थे — जो खुफिया तंत्र का भी हिस्सा थे।",
+        "खुफिया-नवीस गुप्त (छुपे हुए) खुफिया रिपोर्टर थे — जो मीर बख्शी के अधीन थे।",
+        "अमीन/अमील परगना स्तर पर राजस्व आकलन अधिकारी था — पूरी तरह से राजस्व प्रशासन में, खुफिया नेटवर्क में नहीं। अतः विकल्प (c) अलग है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण (entity-swap) जाल में अमीन/अमील — जो एक प्रसिद्ध राजस्व अधिकारी है — को खुफिया अधिकारियों के बीच रखा गया है। जो छात्र वाक़िया-नवीस और खुफिया-नवीस को जानते हैं लेकिन सवानिह-नवीस के बारे में कम निश्चित हैं, वे सवानिह-नवीस को हटाने पर ध्यान केंद्रित कर सकते हैं (जो वास्तव में खुफिया से संबंधित है) बजाय इसके कि अमीन/अमील को गैर-खुफिया अधिकारी के रूप में पहचानें।",
+      "final_explanation": "मीर बख्शी के अधीन एक खुफिया नेटवर्क था जिसमें कई प्रकार के रिपोर्टर शामिल थे, जिनके सूचना-संग्रह तंत्र में विशिष्ट कार्य थे।\n\n• विकल्प (a) — वाक़िया-नवीस: प्रांतीय अदालतों, रईसों के आवासों और सैन्य शिविरों में तैनात समाचार लेखक — महत्वपूर्ण घटनाओं की रिपोर्ट केंद्र को देते थे। मीर बख्शी के नेटवर्क का हिस्सा।\n• विकल्प (b) — सवानिह-नवीस: विशेष रूप से व्यक्तिगत रईसों से जुड़े घटना-लेखक जो उनकी गतिविधियों की रिपोर्ट करते थे। खुफिया तंत्र का हिस्सा।\n• विकल्प (c) — अमीन/अमील: परगना स्तर पर राजस्व आकलन और संग्रह अधिकारी, राजस्व प्रशासन के अधीन। यह अलग विकल्प है — अमीन/अमील का खुफिया नेटवर्क से कोई संबंध नहीं था; वह राजस्व पदानुक्रम (दिवान) के अधीन कार्य करता था, मीर बख्शी के अधीन नहीं।\n• विकल्प (d) — खुफिया-नवीस: गुप्त या 'खुफिया' रिपोर्टर जो छुपे हुए काम करते थे। मीर बख्शी के नेटवर्क का हिस्सा।\n\nमूल्यवर्धन:\n• मीर बख्शी के अधीन खुफिया तंत्र सम्राट को सीधे सूचना प्रवाह देता था, जो संभावित रूप से पक्षपाती सूबेदारों की रिपोर्टों को दरकिनार करता था।\n• क़ानूंगो (परगना स्तर पर वंशानुगत अभिलेख-रक्षक) एक अन्य राजस्व अधिकारी है जिसे अक्सर खुफिया भूमिकाओं के साथ भ्रमित किया जाता है।\n• खुफिया (मीर बख्शी) और राजस्व (दिवान) की निगरानी का पृथक्करण एक जानबूझकर संतुलन और नियंत्रण तंत्र था।"
+    }
+  },
+  {
+    "uuid": "5e384347-94dd-40e6-99bc-f6bb8b746d3e",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Territorial Expansion Strategy: Sequence and Methods of Conquest",
+        "Akbar's Military Reforms: Artillery, War Elephants, and Cavalry Reorganization"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Battle of Panipat II (1556) significance and context",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the Second Battle of Panipat (1556) and its immediate significance for the Mughal Empire?\n\n(a) It was fought against Hemu (Hemachandra Vikramaditya) and his defeat under Mughal forces commanded by Bairam Khan re-established Mughal control over the Delhi-Agra heartland at the beginning of Akbar's reign\n(b) It was fought against Sher Shah Suri and ended the Sur dynasty's control of northern India, enabling Humayun's restoration\n(c) It was personally commanded by Akbar against a resurgent Afghan coalition, marking the first military victory of Akbar's reign without regent assistance\n(d) It took place in 1565 and eliminated the last major Hindu kingdom capable of challenging Mughal expansion into central India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because Hemu is the correct figure at Panipat II, but option (c) attributes the battle to Akbar personally leading the forces when it was actually Bairam Khan (as regent) who commanded the Mughal side.",
+      "elimination_logic": [
+        "Eliminate option (b): Panipat II was not against Sher Shah Suri — Sher Shah died in 1545, over a decade before this battle.",
+        "Eliminate option (c): Bairam Khan commanded the Mughal forces at Panipat II as Akbar's regent — Akbar was present but Bairam Khan directed the engagement.",
+        "Eliminate option (d): Panipat II was in 1556, not 1565 — a temporal-swap error.",
+        "Option (a) correctly states that the battle was against Hemu (Hemachandra Vikramaditya) and that his defeat secured Mughal re-establishment in north India — correct."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap in option (c) places Akbar as personally commanding the battle when it was Bairam Khan, his regent, who commanded. Students who know Akbar was present at the battle (he was, as a young emperor) may accept 'Akbar commanded' as close enough to correct. Precise knowledge requires distinguishing Akbar's presence from Bairam Khan's command authority.",
+      "final_explanation": "The Second Battle of Panipat (1556) was decisive in re-establishing Mughal rule in northern India after the disruption of Humayun's exile.\n\n• Option (a) — Correct: Panipat II was fought against Hemu (Hemachandra Vikramaditya), the Hindu general who had declared himself 'Vikramaditya' and occupied Delhi on behalf of the Afghan Surs. His defeat by Mughal forces secured Akbar's hold on the Delhi-Agra heartland at the very start of his reign.\n• Option (b) — Incorrect: Sher Shah Suri died in 1545 — over a decade before Panipat II. The battle was against Hemu, who served the Sur dynasty's remnants.\n• Option (c) — Incorrect: Bairam Khan commanded the Mughal forces as Akbar's regent. Akbar was present on the battlefield but the strategic and tactical command was Bairam Khan's.\n• Option (d) — Incorrect: Panipat II was in 1556, not 1565. The year 1565 is associated with the Battle of Talikota (the Vijayanagara-Deccan Sultanate conflict).\n\nValue Addition:\n• Hemu was hit by an arrow in the eye during the battle — his incapacitation led to the collapse of his forces.\n• Bairam Khan served as regent from 1556 to 1560 before Akbar dismissed him.\n• All three Battles of Panipat are UPSC-recurring questions: Panipat I (1526 — Babur vs. Ibrahim Lodi), Panipat II (1556 — Akbar/Bairam Khan vs. Hemu), Panipat III (1761 — Marathas vs. Ahmad Shah Durrani)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा विकल्प पानिपत का दूसरा युद्ध (1556) और उसके मुग़ल साम्राज्य के लिए तत्काल महत्व को सबसे सटीक रूप से वर्णित करता है?\n\n(a) यह हेमू (हेमचंद्र विक्रमादित्य) के खिलाफ लड़ा गया था और बैरम खान के नेतृत्व में मुग़ल सेनाओं द्वारा उनकी हार ने अकबर के शासन की शुरुआत में दिल्ली-आगरा क्षेत्र में मुग़ल नियंत्रण पुनः स्थापित किया।\n(b) यह शेर शाह सूरी के खिलाफ लड़ा गया था और इसने सूरी वंश के उत्तर भारत पर नियंत्रण को समाप्त कर हुमायूँ की पुनर्स्थापना को सक्षम किया।\n(c) इसे अकबर ने व्यक्तिगत रूप से एक पुनरुत्थित अफगान गठबंधन के खिलाफ कमान संभाली थी, जो अकबर के शासन की पहली सैन्य विजय थी बिना रजेंट की सहायता के।\n(d) यह 1565 में हुआ था और इसने मध्य भारत में मुग़ल विस्तार को चुनौती देने वाले अंतिम प्रमुख हिंदू राज्य को समाप्त कर दिया।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि पानिपत द्वितीय में हेमू सही व्यक्ति हैं, लेकिन विकल्प (c) इस युद्ध को अकबर द्वारा व्यक्तिगत रूप से नेतृत्व किए जाने का श्रेय देता है जबकि वास्तव में बैरम खान (रजेंट के रूप में) ने मुग़ल पक्ष का नेतृत्व किया था।",
+      "elimination_logic": [
+        "विकल्प (b) को हटाएं: पानिपत द्वितीय का मुकाबला शेर शाह सूरी से नहीं था — शेर शाह 1545 में मर चुके थे, जो इस युद्ध से एक दशक से अधिक पहले है।",
+        "विकल्प (c) को हटाएं: पानिपत द्वितीय में मुग़ल सेनाओं का नेतृत्व अकबर के रजेंट बैरम खान ने किया था — अकबर मौजूद थे लेकिन बैरम खान ने युद्ध का निर्देशन किया।",
+        "विकल्प (d) को हटाएं: पानिपत द्वितीय 1556 में हुआ था, 1565 में नहीं — यह एक कालानुक्रमिक त्रुटि है।",
+        "विकल्प (a) सही है क्योंकि यह बताता है कि यह युद्ध हेमू (हेमचंद्र विक्रमादित्य) के खिलाफ था और उनकी हार ने मुग़लों को उत्तर भारत में पुनः स्थापित किया — सही।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) में भौगोलिक-स्थानांतरण की गलती है जो अकबर को युद्ध का व्यक्तिगत कमांडर बताती है जबकि वास्तव में बैरम खान, जो अकबर के रजेंट थे, ने कमान संभाली थी। जो छात्र जानते हैं कि अकबर युद्ध में मौजूद थे (वे एक युवा सम्राट के रूप में थे) वे 'अकबर ने कमान संभाली' को लगभग सही मान सकते हैं। सटीक ज्ञान के लिए अकबर की उपस्थिति और बैरम खान के कमांड अधिकार के बीच अंतर करना आवश्यक है।",
+      "final_explanation": "पानिपत का दूसरा युद्ध (1556) हुमायूँ के निर्वासन के बाद उत्तर भारत में मुग़ल शासन की पुनः स्थापना में निर्णायक था।\n\n• विकल्प (a) — सही: पानिपत द्वितीय हेमू (हेमचंद्र विक्रमादित्य) के खिलाफ लड़ा गया था, जो हिंदू सेनापति थे और जिन्होंने खुद को 'विक्रमादित्य' घोषित कर अफगान सूरी वंश की ओर से दिल्ली पर कब्ज़ा कर लिया था। मुग़ल सेनाओं द्वारा उनकी हार ने अकबर के शासन की शुरुआत में दिल्ली-आगरा क्षेत्र में मुग़ल नियंत्रण सुनिश्चित किया।\n• विकल्प (b) — गलत: शेर शाह सूरी 1545 में मर चुके थे — पानिपत द्वितीय से एक दशक से अधिक पहले। यह युद्ध हेमू के खिलाफ था, जो सूरी वंश के अवशेषों की सेवा कर रहा था।\n• विकल्प (c) — गलत: बैरम खान ने अकबर के रजेंट के रूप में मुग़ल सेनाओं का नेतृत्व किया। अकबर युद्ध में मौजूद थे लेकिन रणनीतिक और सामरिक कमान बैरम खान की थी।\n• विकल्प (d) — गलत: पानिपत द्वितीय 1556 में हुआ था, 1565 में नहीं। वर्ष 1565 तलिकोटा के युद्ध से जुड़ा है (विजयनगर-डेक्कन सुल्तानत संघर्ष)।\n\nमूल्यवर्धन:\n• युद्ध के दौरान हेमू को आंख में तीर लगा था — उनकी अक्षमता ने उनकी सेनाओं के पतन का कारण बनी।\n• बैरम खान 1556 से 1560 तक रजेंट के रूप में कार्यरत रहे, उसके बाद अकबर ने उन्हें हटा दिया।\n• पानिपत के तीनों युद्ध UPSC में बार-बार पूछे जाते हैं: पानिपत I (1526 — बाबर बनाम इब्राहिम लोदी), पानिपत II (1556 — अकबर/बैरम खान बनाम हेमू), पानिपत III (1761 — मराठा बनाम अहमद शाह दुर्रानी)।"
+    }
+  },
+  {
+    "uuid": "a5c3fd1e-3c2b-4133-a9af-534714bdbc20",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Policy on Trade and Urban Administration: Kotwali and Market Regulation",
+        "Provincial Administration: Suba, Sarkar, Pargana Hierarchy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Kotwal role — urban multi-function officer",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — official and primary functions — is correctly matched in the context of Mughal urban and local administration?\n\n(a) Qanungo — urban market supervisor responsible for regulating prices and inspecting weights and measures in town markets\n(b) Kotwal — combined functions of urban policing, market supervision, maintenance of civic order, and registration of commercial transactions\n(c) Amalguzar — city-level officer responsible for collecting transit duties on goods entering urban markets from rural areas\n(d) Faujdar — urban market regulator and police officer responsible for maintaining order in town bazaars and enforcing price controls",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is a strong distractor because Faujdar is a real and important Mughal officer at the Sarkar level — students who recall Faujdar as a law-and-order official may assign urban market regulation to him, missing that his role was military command at Sarkar level, not urban market supervision.",
+      "elimination_logic": [
+        "Eliminate option (a): Qanungo maintained land records at the Pargana level — not an urban officer with market supervision functions.",
+        "Verify option (b): Kotwal combined urban policing, market regulation, transaction registration, and civil order — this multi-function description is precisely correct.",
+        "Eliminate option (c): Amalguzar was the revenue collector at the Sarkar level — not an urban market supervisor.",
+        "Eliminate option (d): Faujdar held military command at the Sarkar level — market supervision and transaction registration were not his functions."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap pairs Faujdar (a real law-and-order figure) with urban market functions. Students who associate Faujdar with 'order maintenance' — which is correct in a military/policing sense at the Sarkar level — may extend that to urban market order, confusing his territorial military role with the Kotwal's urban civilian police-and-market role.",
+      "final_explanation": "Urban administration under the Mughal Empire was distinct from rural and military administration, with the Kotwal serving as the pivotal urban officer.\n\n• Option (a) — Incorrect: Qanungo was a hereditary land-record keeper at the Pargana (rural administrative) level — urban market supervision was entirely outside his remit.\n• Option (b) — Correct: The Kotwal's office combined urban policing, market price regulation, registration of sales and commercial transactions, weights-and-measures inspection, and maintenance of civic order. It was one of the most comprehensive single offices in Mughal administration.\n• Option (c) — Incorrect: Amalguzar was the revenue assessment and collection officer at the Sarkar level — a rural/agricultural revenue function, not an urban market role.\n• Option (d) — Incorrect: Faujdar maintained military order and police functions at the Sarkar (district) level — his jurisdiction was territorial military command, not urban market supervision or transaction registration.\n\nValue Addition:\n• Standardization of weights and measures — attributed to Todar Mal's broader contributions — was enforced at the market level through Kotwal supervision.\n• The Kotwal's transaction registration function gave the state a degree of commercial oversight — a form of economic intelligence.\n• Modern municipal police functions (market regulation, commercial registration) have historical parallels in the Mughal Kotwal's office."
+    },
+    "hi": {
+      "display_text": "मुगल शहरी और स्थानीय प्रशासन के संदर्भ में निम्नलिखित में से कौन-सा जोड़ा — अधिकारी और प्राथमिक कार्य — सही मेल खाता है?\n\n(a) कानूंगो — शहरी बाजार पर्यवेक्षक जो शहर के बाजारों में कीमतों के नियंत्रण और भार एवं माप की जांच के लिए जिम्मेदार था\n(b) कोटवाल — शहरी पुलिसिंग, बाजार पर्यवेक्षण, नागरिक व्यवस्था बनाए रखने, और वाणिज्यिक लेन-देन के पंजीकरण के कार्यों का संयोजन\n(c) अमलगुजार — ग्रामीण क्षेत्रों से शहरी बाजारों में प्रवेश करने वाले माल पर ट्रांजिट शुल्क वसूलने वाला शहर-स्तरीय अधिकारी\n(d) फौजदार — शहरी बाजार नियंत्रक और पुलिस अधिकारी जो शहर के बाज़ारों में व्यवस्था बनाए रखने और मूल्य नियंत्रण लागू करने के लिए जिम्मेदार था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d एक मजबूत भ्रम पैदा करने वाला है क्योंकि फौजदार सर्कार स्तर पर एक वास्तविक और महत्वपूर्ण मुगल अधिकारी था — जो छात्र फौजदार को कानून-व्यवस्था अधिकारी के रूप में याद करते हैं, वे उसे शहरी बाजार नियंत्रण सौंप सकते हैं, जबकि उसका कार्यक्षेत्र सर्कार स्तर पर सैन्य कमान था, न कि शहरी बाजार पर्यवेक्षण।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: कानूंगो परगना स्तर पर भूमि अभिलेखों का रखरखाव करता था — वह शहरी अधिकारी नहीं था और न ही बाजार पर्यवेक्षण के कार्य करता था।",
+        "विकल्प (b) की पुष्टि करें: कोटवाल ने शहरी पुलिसिंग, बाजार नियंत्रण, लेन-देन पंजीकरण, और नागरिक व्यवस्था को संयोजित किया — यह बहु-कार्य विवरण बिल्कुल सही है।",
+        "विकल्प (c) को हटाएं: अमलगुजार सर्कार स्तर पर राजस्व संग्रहकर्ता था — वह शहरी बाजार पर्यवेक्षक नहीं था।",
+        "विकल्प (d) को हटाएं: फौजदार सर्कार स्तर पर सैन्य कमान संभालता था — बाजार पर्यवेक्षण और लेन-देन पंजीकरण उसके कार्य नहीं थे।"
+      ],
+      "upsc_trap_explanation": "सत्ता-वस्तु अदला-बदली का जाल फौजदार (जो एक वास्तविक कानून-व्यवस्था अधिकारी था) को शहरी बाजार कार्यों से जोड़ता है। जो छात्र फौजदार को 'व्यवस्था बनाए रखने वाला' समझते हैं — जो सर्कार स्तर पर सैन्य/पुलिसिंग संदर्भ में सही है — वे इसे शहरी बाजार व्यवस्था तक बढ़ा देते हैं, जिससे उसकी क्षेत्रीय सैन्य भूमिका और कोटवाल की शहरी नागरिक पुलिस एवं बाजार भूमिका में भ्रम होता है।",
+      "final_explanation": "मुगल साम्राज्य के तहत शहरी प्रशासन ग्रामीण और सैन्य प्रशासन से अलग था, जिसमें कोटवाल शहरी प्रशासन का मुख्य अधिकारी था।\n\n• विकल्प (a) — गलत: कानूंगो परगना (ग्रामीण प्रशासन) स्तर पर वंशानुगत भूमि अभिलेखकर्ता था — शहरी बाजार पर्यवेक्षण पूरी तरह से उसके दायरे से बाहर था।\n• विकल्प (b) — सही: कोटवाल का कार्यालय शहरी पुलिसिंग, बाजार मूल्य नियंत्रण, बिक्री और वाणिज्यिक लेन-देन का पंजीकरण, भार और माप की जांच, और नागरिक व्यवस्था बनाए रखने का संयोजन था। यह मुगल प्रशासन के सबसे व्यापक एकल कार्यालयों में से एक था।\n• विकल्प (c) — गलत: अमलगुजार सर्कार स्तर पर राजस्व आकलन और संग्रह अधिकारी था — एक ग्रामीण/कृषि राजस्व कार्य, न कि शहरी बाजार भूमिका।\n• विकल्प (d) — गलत: फौजदार सर्कार (जिला) स्तर पर सैन्य व्यवस्था और पुलिस कार्य संभालता था — उसका अधिकार क्षेत्र क्षेत्रीय सैन्य कमान था, न कि शहरी बाजार पर्यवेक्षण या लेन-देन पंजीकरण।\n\nमूल्य संवर्धन:\n• भार और माप का मानकीकरण — जो टोडरमल के व्यापक योगदानों से जुड़ा है — बाजार स्तर पर कोटवाल पर्यवेक्षण के माध्यम से लागू किया गया था।\n• कोटवाल का लेन-देन पंजीकरण कार्य राज्य को वाणिज्यिक निगरानी की एक डिग्री देता था — एक प्रकार की आर्थिक खुफिया।\n• आधुनिक नगरपालिका पुलिस कार्य (बाजार नियंत्रण, वाणिज्यिक पंजीकरण) के ऐतिहासिक समकक्ष मुगल कोटवाल के कार्यालय में पाए जाते हैं।"
+    }
+  },
+  {
+    "uuid": "928fbc80-dae7-4a26-b96d-668cf2486f71",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar — administrative reforms",
+      "concepts_used": [
+        "Akbar's Educational and Cultural Policy: Integration of Persian and Sanskrit Traditions",
+        "Abul Fazl and the Ain-i-Akbari: As Administrative Record and Ideological Document"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Akbar's personal illiteracy vs intellectual patronage — nuance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Akbar's cultural and educational patronage, consider the following statements:\n\n1. Akbar was personally illiterate throughout his life, yet he actively patronized literary translation projects, scholarly debates, and the production of the Ain-i-Akbari — demonstrating that imperial patronage of learning was independent of the emperor's personal literacy.\n2. The translation of the Mahabharata into Persian under Akbar was named 'Razmnama' (Book of Wars) and was commissioned as a state project aimed at making Hindu philosophical traditions accessible to Persian-educated Mughal courtiers.\n3. The 'Navaratnas' of Akbar's court was a formally designated category officially recognized in the Ain-i-Akbari, listing exactly nine courtiers by name as the emperor's principal advisors.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Akbar was personally illiterate throughout his life, yet he actively patronized literary translation projects, scholarly debates, and the production of the Ain-i-Akbari — demonstrating that imperial patronage of learning was independent of the emperor's personal literacy.",
+          "verdict": "Correct",
+          "reason": "Akbar's illiteracy is historically documented, yet he patronized extensive learning through oral engagement — texts were read aloud to him. The Ain-i-Akbari, Razmnama, and other projects proceeded under his direction despite his inability to read."
+        },
+        {
+          "statement": "The translation of the Mahabharata into Persian under Akbar was named 'Razmnama' (Book of Wars) and was commissioned as a state project aimed at making Hindu philosophical traditions accessible to Persian-educated Mughal courtiers.",
+          "verdict": "Correct",
+          "reason": "Razmnama (Book of Wars) is the correct Persian name for the translated Mahabharata, and its commission was indeed state-sponsored with the explicit goal of cultural synthesis and accessibility."
+        },
+        {
+          "statement": "The 'Navaratnas' of Akbar's court was a formally designated category officially recognized in the Ain-i-Akbari, listing exactly nine courtiers by name as the emperor's principal advisors.",
+          "verdict": "Incorrect",
+          "reason": "The 'Navaratnas' is a retrospective popular construction — no formal official designation of 'nine gems' appears in the Ain-i-Akbari or any contemporaneous Mughal document. The list varies across sources and the ninth member is disputed."
+        }
+      ],
+      "strong_distractor": "d — Option d is a strong distractor because students who know the Navaratnas as a well-established historical concept may not realize it was a popular/later construction rather than a formally designated official category — making 'all three correct' seem plausible.",
+      "elimination_logic": [
+        "Verify Statement 1: Akbar's illiteracy alongside active intellectual patronage — both are documented — Statement 1 is correct.",
+        "Verify Statement 2: Razmnama as the Persian Mahabharata under state commission — correct.",
+        "Verify Statement 3: 'Formally designated category officially recognized in the Ain-i-Akbari' — the Navaratnas framework was retrospective and unofficial — Statement 3 is incorrect.",
+        "Statements 1 and 2 correct — option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the widespread familiarity with 'Navaratnas' as a historical fact. Students who know the names of the nine gems may assume the category was formally designated — the trap lies in the word 'formally designated' and 'officially recognized in the Ain-i-Akbari.' The Ain-i-Akbari does not contain a formal list of 'nine gems' as an official category.",
+      "final_explanation": "Akbar's court culture was remarkable for its intellectual vitality — but separating documented history from popular myth is essential for examination precision.\n\n• Statement 1 — Correct: Akbar was illiterate — this is explicitly noted by contemporaneous sources. Texts were read aloud to him. Yet his engagement with ideas was active and genuine — he commissioned translations, participated in Ibadat Khana debates, and directed cultural projects. His literacy status did not limit his intellectual authority.\n• Statement 2 — Correct: The Mahabharata's Persian translation was named Razmnama ('Book of Wars') and was a state-commissioned project, fitting Akbar's broader Sulh-i-Kul vision of making different civilizational traditions mutually intelligible.\n• Statement 3 — Incorrect: The 'Navaratnas' label was not a formal official designation in Akbar's time. The Ain-i-Akbari does not list 'nine gems.' The concept developed retrospectively in popular historiography, and the composition of the nine varies across sources — particularly the disputed ninth member.\n\nValue Addition:\n• Akbar's engagement with oral knowledge was so sophisticated that courtiers noted his exceptional memory and ability to discuss complex topics after hearing them read aloud once.\n• The Razmnama project employed a team of scholars — it was not a single translator's work.\n• The ninth Navaratna — often cited as Mullah Do Piaza — appears in folk anecdotes but lacks contemporary documentation."
+    },
+    "hi": {
+      "display_text": "अकबर के सांस्कृतिक और शैक्षिक संरक्षण के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. अकबर अपने जीवन भर व्यक्तिगत रूप से निरक्षर थे, फिर भी उन्होंने साहित्यिक अनुवाद परियोजनाओं, विद्वत् बहसों, और ऐन-ए-अकबरी के निर्माण को सक्रिय रूप से संरक्षण दिया — यह दर्शाता है कि सम्राट का शिक्षा संरक्षण उनकी व्यक्तिगत साक्षरता से स्वतंत्र था।\n2. अकबर के शासनकाल में महाभारत का फारसी में अनुवाद 'रज़्मनामा' (युद्धों की पुस्तक) नाम से किया गया था और इसे एक राज्य परियोजना के रूप में कमीशन किया गया था, जिसका उद्देश्य फारसी-शिक्षित मुगल दरबारियों के लिए हिंदू दार्शनिक परंपराओं को सुलभ बनाना था।\n3. अकबर के दरबार के 'नवरत्न' एक औपचारिक रूप से नामित श्रेणी थी जिसे ऐन-ए-अकबरी में आधिकारिक रूप से मान्यता प्राप्त थी, जिसमें सम्राट के मुख्य सलाहकारों के रूप में ठीक नौ दरबारी नामित थे।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अकबर अपने जीवन भर व्यक्तिगत रूप से निरक्षर थे, फिर भी उन्होंने साहित्यिक अनुवाद परियोजनाओं, विद्वत् बहसों और ऐन-ए-अकबरी के निर्माण को सक्रिय रूप से संरक्षण दिया — यह दर्शाता है कि सम्राट का शिक्षा संरक्षण उनकी व्यक्तिगत साक्षरता से स्वतंत्र था।",
+          "verdict": "सही",
+          "reason": "अकबर की निरक्षरता ऐतिहासिक रूप से प्रमाणित है, फिर भी उन्होंने मौखिक संवाद के माध्यम से व्यापक शिक्षा का संरक्षण किया — ग्रंथ उन्हें ज़ोर से पढ़कर सुनाए जाते थे। ऐन-ए-अकबरी, रज़्मनामा और अन्य परियोजनाएँ उनकी निर्देशन में चलीं, भले ही वे स्वयं पढ़ न सकते थे।"
+        },
+        {
+          "statement": "अकबर के शासनकाल में महाभारत का फारसी में अनुवाद 'रज़्मनामा' (युद्धों की पुस्तक) नाम से किया गया था और इसे एक राज्य परियोजना के रूप में कमीशन किया गया था, जिसका उद्देश्य फारसी-शिक्षित मुगल दरबारियों के लिए हिंदू दार्शनिक परंपराओं को सुलभ बनाना था।",
+          "verdict": "सही",
+          "reason": "रज़्मनामा (युद्धों की पुस्तक) महाभारत के फारसी अनुवाद का सही नाम है, और इसका कमीशन वास्तव में राज्य द्वारा सांस्कृतिक समन्वय और सुलभता के स्पष्ट लक्ष्य के साथ किया गया था।"
+        },
+        {
+          "statement": "अकबर के दरबार के 'नवरत्न' एक औपचारिक रूप से नामित श्रेणी थी जिसे ऐन-ए-अकबरी में आधिकारिक रूप से मान्यता प्राप्त थी, जिसमें सम्राट के मुख्य सलाहकारों के रूप में ठीक नौ दरबारी नामित थे।",
+          "verdict": "गलत",
+          "reason": "'नवरत्न' एक पश्चवर्ती लोकप्रिय निर्माण है — ऐन-ए-अकबरी या किसी समकालीन मुगल दस्तावेज़ में 'नौ रत्नों' की कोई औपचारिक आधिकारिक सूची नहीं है। सूची स्रोतों के अनुसार भिन्न होती है और नौवें सदस्य पर विवाद है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d एक मजबूत भ्रमकारी है क्योंकि जो छात्र नवरत्नों को एक स्थापित ऐतिहासिक अवधारणा के रूप में जानते हैं, वे यह नहीं समझ पाते कि यह एक लोकप्रिय/पश्चवर्ती निर्माण है न कि औपचारिक रूप से नामित आधिकारिक श्रेणी — जिससे 'तीनों सही' विकल्प संभव लगता है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: अकबर की निरक्षरता के साथ सक्रिय बौद्धिक संरक्षण — दोनों प्रमाणित हैं — कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: रज़्मनामा के रूप में फारसी महाभारत राज्य कमीशन के तहत — सही।",
+        "कथन 3 सत्यापित करें: 'ऐन-ए-अकबरी में औपचारिक रूप से मान्यता प्राप्त श्रेणी' — नवरत्न का ढांचा पश्चवर्ती और अनौपचारिक था — कथन 3 गलत है।",
+        "कथन 1 और 2 सही हैं — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 3 'नवरत्न' के व्यापक परिचय का लाभ उठाता है जिसे ऐतिहासिक तथ्य के रूप में जाना जाता है। जो छात्र नौ रत्नों के नाम जानते हैं, वे मान सकते हैं कि यह श्रेणी औपचारिक रूप से नामित थी — जाल 'औपचारिक रूप से नामित' और 'ऐन-ए-अकबरी में आधिकारिक रूप से मान्यता प्राप्त' शब्दों में है। ऐन-ए-अकबरी में 'नौ रत्नों' की कोई औपचारिक सूची नहीं है।",
+      "final_explanation": "अकबर के दरबार की संस्कृति अपनी बौद्धिक जीवंतता के लिए उल्लेखनीय थी — लेकिन परीक्षा की सटीकता के लिए प्रमाणित इतिहास और लोकप्रिय मिथक को अलग करना आवश्यक है।\n\n• कथन 1 — सही: अकबर निरक्षर थे — यह समकालीन स्रोतों द्वारा स्पष्ट रूप से उल्लेखित है। ग्रंथ उन्हें ज़ोर से पढ़कर सुनाए जाते थे। फिर भी उनकी विचारों के साथ संलग्नता सक्रिय और वास्तविक थी — उन्होंने अनुवादों का कमीशन दिया, इबादत ख़ाना बहसों में भाग लिया, और सांस्कृतिक परियोजनाओं का निर्देशन किया। उनकी साक्षरता की स्थिति ने उनकी बौद्धिक अधिकारिता को सीमित नहीं किया।\n• कथन 2 — सही: महाभारत का फारसी अनुवाद रज़्मनामा ('युद्धों की पुस्तक') था और यह एक राज्य-आयोगित परियोजना थी, जो अकबर के व्यापक सुलह-ए-कुल दृष्टिकोण के अनुरूप थी, जो विभिन्न सभ्यताओं की परंपराओं को पारस्परिक रूप से समझने योग्य बनाना चाहता था।\n• कथन 3 — गलत: 'नवरत्न' लेबल अकबर के समय में कोई औपचारिक आधिकारिक नामांकन नहीं था। ऐन-ए-अकबरी में 'नौ रत्नों' की कोई सूची नहीं है। यह अवधारणा लोकप्रिय इतिहासलेखन में पश्चवर्ती विकसित हुई, और नौ रत्नों की संरचना स्रोतों के अनुसार भिन्न है — विशेष रूप से विवादित नौवें सदस्य।\n\nमूल्यवर्धन:\n• अकबर की मौखिक ज्ञान के साथ संलग्नता इतनी परिष्कृत थी कि दरबारियों ने उनकी असाधारण स्मृति और जटिल विषयों पर एक बार सुनने के बाद चर्चा करने की क्षमता को नोट किया।\n• रज़्मनामा परियोजना में विद्वानों की एक टीम लगी थी — यह एक अकेले अनुवादक का कार्य नहीं था।\n• नौवें नवरत्न — जिसे अक्सर मुल्ला दो पियाज़ा कहा जाता है — लोककथाओं में आता है लेकिन समकालीन दस्तावेज़ीकरण में नहीं मिलता।"
+    }
+  }
+]

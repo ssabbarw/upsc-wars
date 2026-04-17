@@ -1,0 +1,1482 @@
+[
+  {
+    "uuid": "7bb4bcd2-69b0-4843-a368-5e71e1a57040",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Head of the Commonwealth: Role, Selection, and Succession",
+        "Commonwealth Heads of Government Meeting (CHOGM): Structure and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CHOGM declarations and Head of Commonwealth succession",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (CHOGM events/declarations) with List II (their key features or outcomes):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. 2018 CHOGM, London",
+            "1. Decisions taken by consensus, not by voting — non-binding in nature"
+          ],
+          [
+            "B. Millbrook Action Programme (1995)",
+            "2. Operationalised the Harare Declaration; established CMAG for enforcing democratic norms"
+          ],
+          [
+            "C. Lusaka Declaration (1979)",
+            "3. Addressed racial discrimination and the crisis of white-minority rule in Southern Africa"
+          ],
+          [
+            "D. CHOGM decision-making process",
+            "4. First formal designation of a successor as Head of the Commonwealth"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-3, C-4, D-1\n(b) A-4, B-3, C-2, D-1\n(c) A-4, B-2, C-3, D-1\n(d) A-3, B-2, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know Lusaka (1979) and Millbrook (1995) correctly may swap the descriptions of these two declarations, placing the enforcement mechanism with the earlier Lusaka Declaration.",
+      "elimination_logic": [
+        "Match A (2018 CHOGM London): This is where Prince Charles was designated as successor to Queen Elizabeth II as Head of the Commonwealth — matches with 4.",
+        "Match B (Millbrook Action Programme 1995): This operationalised the Harare Declaration and created CMAG for enforcement — matches with 2.",
+        "Match C (Lusaka Declaration 1979): Focused on Zimbabwe/Rhodesia and racial discrimination in Southern Africa — matches with 3.",
+        "Match D (CHOGM — decision-making): CHOGM operates by consensus, not voting — matches with 1. Correct answer is (c): A-4, B-2, C-3, D-1."
+      ],
+      "upsc_trap_explanation": "The Lusaka-Millbrook swap is the primary trap. Both declarations relate to Commonwealth enforcement themes but in entirely different contexts and eras. Students who know these declarations existed but have not studied their specific content will swap descriptions B and C.",
+      "final_explanation": "CHOGM declarations span different eras and purposes, requiring careful period-specific knowledge.\n\n• A–4: The 2018 CHOGM in London was the first time the succession to the Head of the Commonwealth was formally decided — Prince Charles was designated, breaking the assumption that the role automatically passes to the British monarch.\n• B–2: The Millbrook Action Programme (1995) operationalised the Harare Declaration by establishing CMAG — giving the Commonwealth its only enforcement mechanism (suspension).\n• C–3: The Lusaka Declaration (1979) addressed racial discrimination and the crisis around white-minority rule in Rhodesia/Zimbabwe — a Southern Africa-specific political context.\n• D–1: CHOGM decisions are reached by consensus, not voting — distinguishing it from the UN General Assembly and making Commonwealth decisions non-binding.\n\nTrap pairing: B (Millbrook) and C (Lusaka) are easily swapped because both involve political enforcement contexts — but Lusaka is geographic/racial discrimination focused while Millbrook is institutional/CMAG focused.\n\nValue Addition:\n• CHOGM is held every two years; the host country rotates among members.\n• The Head of the Commonwealth has no executive, legislative, or judicial authority over member states.\n• Rwanda hosted CHOGM 2022 — significant given its non-British colonial history."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (CHOGM घटनाएँ/घोषणाएँ) को सूची II (उनकी मुख्य विशेषताएँ या परिणाम) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. 2018 CHOGM, लंदन",
+            "1. निर्णय सहमति से लिए जाते हैं, मतदान से नहीं — गैर-बाध्यकारी प्रकृति के"
+          ],
+          [
+            "B. मिलब्रुक एक्शन प्रोग्राम (1995)",
+            "2. हारारे घोषणा को लागू किया; लोकतांत्रिक मानदंडों के प्रवर्तन के लिए CMAG की स्थापना की"
+          ],
+          [
+            "C. लुसाका घोषणा (1979)",
+            "3. दक्षिण अफ्रीका में नस्लीय भेदभाव और श्वेत अल्पसंख्यक शासन के संकट को संबोधित किया"
+          ],
+          [
+            "D. CHOGM निर्णय लेने की प्रक्रिया",
+            "4. कॉमनवेल्थ के प्रमुख के उत्तराधिकारी का पहला औपचारिक नामांकन"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-3, C-4, D-1\n(b) A-4, B-3, C-2, D-1\n(c) A-4, B-2, C-3, D-1\n(d) A-3, B-2, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र लुसाका (1979) और मिलब्रुक (1995) को सही जानते हैं, वे इन दोनों घोषणाओं का विवरण बदल सकते हैं, जिससे प्रवर्तन तंत्र पहले के लुसाका घोषणा के साथ जुड़ जाता है।",
+      "elimination_logic": [
+        "A (2018 CHOGM लंदन) से मेल खाता है: यहीं प्रिंस चार्ल्स को क्वीन एलिजाबेथ द्वितीय के उत्तराधिकारी के रूप में कॉमनवेल्थ के प्रमुख के रूप में नामित किया गया था — यह 4 के साथ मेल खाता है।",
+        "B (मिलब्रुक एक्शन प्रोग्राम 1995) से मेल खाता है: इसने हारारे घोषणा को लागू किया और प्रवर्तन के लिए CMAG बनाया — यह 2 के साथ मेल खाता है।",
+        "C (लुसाका घोषणा 1979) से मेल खाता है: यह जिम्बाब्वे/रोडेशिया और दक्षिण अफ्रीका में नस्लीय भेदभाव पर केंद्रित था — यह 3 के साथ मेल खाता है।",
+        "D (CHOGM — निर्णय लेने की प्रक्रिया) से मेल खाता है: CHOGM सहमति से काम करता है, मतदान से नहीं — यह 1 के साथ मेल खाता है। सही उत्तर है (c): A-4, B-2, C-3, D-1।"
+      ],
+      "upsc_trap_explanation": "लुसाका-मिलब्रुक स्वैप मुख्य जाल है। दोनों घोषणाएं कॉमनवेल्थ प्रवर्तन विषयों से संबंधित हैं लेकिन पूरी तरह से अलग संदर्भों और युगों में। जो छात्र जानते हैं कि ये घोषणाएं मौजूद थीं लेकिन उनके विशिष्ट विषय का अध्ययन नहीं किया है, वे विवरण B और C को बदल देंगे।",
+      "final_explanation": "CHOGM घोषणाएं विभिन्न युगों और उद्देश्यों को कवर करती हैं, जिसके लिए युग-विशिष्ट ज्ञान आवश्यक है।\n\n• A–4: 2018 का लंदन CHOGM पहली बार था जब कॉमनवेल्थ के प्रमुख के उत्तराधिकारी को औपचारिक रूप से तय किया गया — प्रिंस चार्ल्स को नामित किया गया, जिससे यह धारणा टूट गई कि यह पद स्वचालित रूप से ब्रिटिश सम्राट को मिलता है।\n• B–2: मिलब्रुक एक्शन प्रोग्राम (1995) ने हारारे घोषणा को लागू किया और CMAG की स्थापना की — जिससे कॉमनवेल्थ को उसका एकमात्र प्रवर्तन तंत्र (निलंबन) मिला।\n• C–3: लुसाका घोषणा (1979) ने रोडेशिया/जिम्बाब्वे में श्वेत अल्पसंख्यक शासन के संकट और नस्लीय भेदभाव को संबोधित किया — यह दक्षिण अफ्रीका-विशिष्ट राजनीतिक संदर्भ था।\n• D–1: CHOGM निर्णय सहमति से लिए जाते हैं, मतदान से नहीं — जो इसे संयुक्त राष्ट्र महासभा से अलग करता है और कॉमनवेल्थ के निर्णय गैर-बाध्यकारी बनाता है।\n\nजाल जोड़ी: B (मिलब्रुक) और C (लुसाका) को आसानी से बदला जा सकता है क्योंकि दोनों राजनीतिक प्रवर्तन संदर्भों से संबंधित हैं — लेकिन लुसाका भौगोलिक/नस्लीय भेदभाव पर केंद्रित है जबकि मिलब्रुक संस्थागत/CMAG केंद्रित है।\n\nमूल्य संवर्धन:\n• CHOGM हर दो साल में आयोजित होता है; मेजबान देश सदस्यों के बीच घुमावदार होता है।\n• कॉमनवेल्थ के प्रमुख के पास सदस्य राज्यों पर कोई कार्यकारी, विधायी या न्यायिक अधिकार नहीं है।\n• रवांडा ने 2022 का CHOGM आयोजित किया — जो इसके गैर-ब्रिटिश औपनिवेशिक इतिहास को देखते हुए महत्वपूर्ण है।"
+    }
+  },
+  {
+    "uuid": "c354b148-d1c3-4301-9f35-a08f1e3c49dc",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "India and the Commonwealth: Strategic and Economic Dimensions",
+        "London Declaration (1949): Legal and Constitutional Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "London Declaration enabling republic membership — India precedent",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Country X, a newly independent republic with no intention of restoring a monarchy, wishes to join the Commonwealth of Nations. Its leadership is concerned that, as a republic, it may be ineligible for membership. A constitutional advisor is asked to clarify the legal position.\n\nWhich of the following best represents the correct legal position under the current Commonwealth framework?\n\n(a) Country X must first transition to dominion status with formal allegiance to the British Crown before applying for membership.\n(b) Country X must sign a bilateral treaty with the United Kingdom acknowledging the British monarch's symbolic authority before membership is granted.\n(c) Country X can join as a republic by accepting the British monarch as the symbolic Head of the Commonwealth without any requirement of Crown allegiance.\n(d) Country X must amend its constitution to allow for a constitutional monarchy before it is eligible for Commonwealth membership.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students may think a country must first become a dominion before joining the Commonwealth, confusing the pre-1949 requirement with the post-London Declaration framework.",
+      "elimination_logic": [
+        "Identify the scenario's constitutional issue: Country X wants to join the Commonwealth but is a republic with no historical intention of restoring monarchy — the question is whether such membership is legally possible.",
+        "Eliminate (a): Changing to a dominion status is the pre-1949 requirement. The London Declaration (1949) specifically abolished this requirement — it is not applicable post-1949.",
+        "Eliminate (b): The Commonwealth has no formal treaty — membership is based on values; a bilateral treaty is not a prerequisite.",
+        "Eliminate (d): Renouncing the republican constitution is not required — India demonstrated in 1949 that a republic can join without constitutional changes.",
+        "Confirm (c): Under the 1949 London Declaration framework, Country X can join as a republic as long as it accepts the Commonwealth's values and the British monarch as the symbolic Head of the Commonwealth — no Crown allegiance or constitutional change is required."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The scenario tests whether a student can apply the legal innovation of the 1949 London Declaration to a practical membership situation. Prior to 1949, Commonwealth membership required dominion status and allegiance to the British Crown. India's desire to become a republic in 1950 while remaining in the Commonwealth forced a creative constitutional solution.\n\nThe London Declaration resolved this by creating a new role — the British monarch as 'symbol of free association' and Head of the Commonwealth — detached from Head-of-State functions. This enabled republics to join without Crown allegiance.\n\n• Option (a) — Incorrect: Dominion status requirement was abolished by the 1949 Declaration.\n• Option (b) — Incorrect: No bilateral treaty is required for Commonwealth membership.\n• Option (c) — Correct: Country X can join as a republic under the 1949 framework, accepting only the symbolic role of the Commonwealth Head.\n• Option (d) — Incorrect: Republics need not alter their constitutions — India, South Africa, and Nigeria are republics and full members.\n\nValue Addition:\n• India was the direct occasion for the London Declaration — Jawaharlal Nehru's insistence on remaining in the Commonwealth as a republic drove the constitutional innovation.\n• Mozambique (1995) and Rwanda (2009) joined without even British colonial ties — further expanding the membership criteria.\n• There is currently no formal written criteria document; membership is by CHOGM consensus on shared values."
+    },
+    "hi": {
+      "display_text": "देश X, एक नया स्वतंत्र गणराज्य जो राजशाही बहाल करने का कोई इरादा नहीं रखता, कॉमनवेल्थ ऑफ नेशंस में शामिल होना चाहता है। इसकी नेतृत्व टीम चिंतित है कि एक गणराज्य होने के नाते यह सदस्यता के लिए अयोग्य हो सकता है। एक संवैधानिक सलाहकार से कानूनी स्थिति स्पष्ट करने को कहा गया है।\n\nनिम्नलिखित में से कौन-सा वर्तमान कॉमनवेल्थ ढांचे के तहत सही कानूनी स्थिति का सर्वोत्तम प्रतिनिधित्व करता है?\n\n(a) देश X को सदस्यता के लिए आवेदन करने से पहले ब्रिटिश क्राउन के प्रति औपचारिक निष्ठा के साथ डोमिनियन स्थिति में पहले परिवर्तित होना होगा।\n(b) देश X को सदस्यता मिलने से पहले ब्रिटिश सम्राट के प्रतीकात्मक अधिकार को स्वीकार करते हुए यूनाइटेड किंगडम के साथ द्विपक्षीय संधि पर हस्ताक्षर करना होगा।\n(c) देश X गणराज्य के रूप में शामिल हो सकता है यदि वह ब्रिटिश सम्राट को कॉमनवेल्थ के प्रतीकात्मक प्रमुख के रूप में स्वीकार करता है, बिना किसी क्राउन प्रति निष्ठा की आवश्यकता के।\n(d) देश X को सदस्यता के लिए पात्र होने से पहले अपने संविधान में संशोधन करना होगा ताकि संवैधानिक राजशाही की अनुमति हो।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र सोच सकते हैं कि किसी देश को कॉमनवेल्थ में शामिल होने से पहले डोमिनियन बनना आवश्यक है, जो 1949 से पहले की आवश्यकता को लंदन घोषणा के बाद के ढांचे से भ्रमित करता है।",
+      "elimination_logic": [
+        "परिदृश्य की संवैधानिक समस्या की पहचान करें: देश X कॉमनवेल्थ में शामिल होना चाहता है लेकिन वह एक गणराज्य है और राजशाही बहाल करने का कोई ऐतिहासिक इरादा नहीं रखता — प्रश्न यह है कि क्या ऐसी सदस्यता कानूनी रूप से संभव है।",
+        "(a) को हटाएं: डोमिनियन स्थिति में परिवर्तन 1949 से पहले की आवश्यकता थी। लंदन घोषणा (1949) ने विशेष रूप से इस आवश्यकता को समाप्त कर दिया — यह 1949 के बाद लागू नहीं होती।",
+        "(b) को हटाएं: कॉमनवेल्थ का कोई औपचारिक संधि नहीं है — सदस्यता मूल्य आधारित है; द्विपक्षीय संधि आवश्यक नहीं है।",
+        "(d) को हटाएं: गणराज्य संविधान त्यागना आवश्यक नहीं है — भारत ने 1949 में दिखाया कि गणराज्य बिना संवैधानिक बदलाव के शामिल हो सकता है।",
+        "(c) की पुष्टि करें: 1949 की लंदन घोषणा के तहत, देश X गणराज्य के रूप में शामिल हो सकता है जब तक वह कॉमनवेल्थ के मूल्यों और ब्रिटिश सम्राट को प्रतीकात्मक कॉमनवेल्थ प्रमुख के रूप में स्वीकार करता है — कोई क्राउन प्रति निष्ठा या संवैधानिक बदलाव आवश्यक नहीं है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह परिदृश्य यह परीक्षण करता है कि छात्र 1949 की लंदन घोषणा के कानूनी नवाचार को व्यावहारिक सदस्यता स्थिति में लागू कर सकता है या नहीं। 1949 से पहले, कॉमनवेल्थ सदस्यता के लिए डोमिनियन स्थिति और ब्रिटिश क्राउन के प्रति निष्ठा आवश्यक थी। भारत की 1950 में गणराज्य बनने की इच्छा जबकि कॉमनवेल्थ में बने रहने की आवश्यकता ने संवैधानिक नवाचार को मजबूर किया।\n\nलंदन घोषणा ने इसे हल किया और ब्रिटिश सम्राट को 'स्वतंत्र संघ का प्रतीक' और कॉमनवेल्थ प्रमुख के रूप में एक नया पद दिया — जो राज्य प्रमुख के कार्यों से अलग था। इससे गणराज्यों को क्राउन प्रति निष्ठा के बिना शामिल होने की अनुमति मिली।\n\n• विकल्प (a) — गलत: डोमिनियन स्थिति की आवश्यकता 1949 की घोषणा द्वारा समाप्त कर दी गई।\n• विकल्प (b) — गलत: कॉमनवेल्थ सदस्यता के लिए कोई द्विपक्षीय संधि आवश्यक नहीं है।\n• विकल्प (c) — सही: देश X 1949 के ढांचे के तहत गणराज्य के रूप में शामिल हो सकता है, केवल कॉमनवेल्थ प्रमुख की प्रतीकात्मक भूमिका स्वीकार करते हुए।\n• विकल्प (d) — गलत: गणराज्यों को अपने संविधान में बदलाव करने की आवश्यकता नहीं है — भारत, दक्षिण अफ्रीका और नाइजीरिया गणराज्य हैं और पूर्ण सदस्य हैं।\n\nमूल्य संवर्धन:\n• भारत लंदन घोषणा के लिए प्रत्यक्ष कारण था — जवाहरलाल नेहरू की गणराज्य के रूप में कॉमनवेल्थ में बने रहने की जिद ने संवैधानिक नवाचार को प्रेरित किया।\n• मोजाम्बिक (1995) और रवांडा (2009) ने ब्रिटिश औपनिवेशिक संबंधों के बिना शामिल होकर सदस्यता मानदंडों का और विस्तार किया।\n• वर्तमान में कोई औपचारिक लिखित मानदंड दस्तावेज नहीं है; सदस्यता CHOGM की साझा मूल्यों पर सहमति से होती है।"
+    }
+  },
+  {
+    "uuid": "afdce19e-0185-4e81-95d7-f214538a2d6b",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Games: Link to the Grouping and Governance",
+        "Commonwealth Secretariat: Functions, Structure, and Headquarters"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "CGF independence from Commonwealth Secretariat",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following statements about the Commonwealth Games and its governing body share a common attribute of being factually correct. Which one does NOT belong to this group?\n\n(a) The first Commonwealth Games were held in 1930 in Hamilton, Canada, under the name 'British Empire Games.'\n(b) The Games were formally renamed 'Commonwealth Games' in 1978.\n(c) The Commonwealth Games Federation (CGF) operates as a subsidiary body under the Commonwealth Secretariat.\n(d) Dependent territories such as Guernsey and the Isle of Man participate separately in Commonwealth Games despite not being sovereign states.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students familiar with Commonwealth Games history know the 1930 inaugural games were called 'British Empire Games' and may doubt whether this makes CGF distinct, rather than focusing on the institutional independence question.",
+      "elimination_logic": [
+        "Identify the common category: The question groups institutional features or facts about the Commonwealth Games and its relationship with the Commonwealth's governing bodies.",
+        "Options (a), (b), and (d) describe features of the Commonwealth Games or CGF that are accurate and relate to the Games' history, structure, or participation rules.",
+        "Option (c) claims the CGF operates under the Commonwealth Secretariat — this is factually incorrect. The CGF is an independent body entirely separate from the Secretariat.",
+        "Options (a), (b), and (d) share the attribute of being correct facts about the Commonwealth Games; option (c) is the one false claim — making it the odd one out."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap presents CGF as operating under the Secretariat — a logical-sounding but false claim. The CGF's independence means it can include non-sovereign territories as separate competitors, which the Commonwealth Secretariat (which deals with sovereign states) cannot accommodate.",
+      "final_explanation": "The Commonwealth Games Federation (CGF) is an independent sports body — it has no formal institutional link to the Commonwealth Secretariat or CHOGM process.\n\n• Option (a): Correct fact — The first Commonwealth Games were held in 1930 in Hamilton, Canada, under the name 'British Empire Games.'\n• Option (b): Correct fact — The games were renamed 'Commonwealth Games' in 1978, reflecting the post-colonial rebranding of the association.\n• Option (c): Incorrect — The CGF is an independent body, NOT under the Commonwealth Secretariat. This is the odd one out.\n• Option (d): Correct fact — Dependent territories like Guernsey, Isle of Man, and Gibraltar participate separately in Commonwealth Games — they are not sovereign states but are CGF members.\n\nValue Addition:\n• India hosted the Commonwealth Games in 2010 (Delhi) — the most recent Indian hosting.\n• The 1951 Asian Games in Delhi are sometimes confused with a Commonwealth Games event — they are separate competitions.\n• CGF membership includes over 70 teams, exceeding the 56 sovereign Commonwealth members."
+    },
+    "hi": {
+      "display_text": "Commonwealth Games और इसके शासकीय निकाय के बारे में निम्नलिखित तीन कथन तथ्यात्मक रूप से सही हैं। इनमें से कौन सा कथन इस समूह में शामिल नहीं है?\n\n(a) पहले Commonwealth Games 1930 में हैमिल्टन, कनाडा में 'British Empire Games' के नाम से आयोजित हुए।\n(b) खेलों का औपचारिक नाम 1978 में 'Commonwealth Games' रखा गया।\n(c) Commonwealth Games Federation (CGF) Commonwealth Secretariat के अधीन एक सहायक निकाय के रूप में कार्य करता है।\n(d) Guernsey और Isle of Man जैसे आश्रित क्षेत्र संप्रभु राज्य न होने के बावजूद Commonwealth Games में अलग से भाग लेते हैं।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र Commonwealth Games के इतिहास से परिचित हैं वे जानते हैं कि 1930 के उद्घाटन खेलों को 'British Empire Games' कहा जाता था और वे इस बात पर संदेह कर सकते हैं कि क्या इससे CGF अलग है, बजाय इसके कि वे संस्थागत स्वतंत्रता के प्रश्न पर ध्यान दें।",
+      "elimination_logic": [
+        "सामान्य श्रेणी की पहचान करें: प्रश्न Commonwealth Games और इसके संबंध में Commonwealth के शासकीय निकायों के संस्थागत पहलुओं या तथ्यों को समूहित करता है।",
+        "विकल्प (a), (b), और (d) Commonwealth Games या CGF की विशेषताएँ बताते हैं जो सही हैं और खेलों के इतिहास, संरचना, या भागीदारी नियमों से संबंधित हैं।",
+        "विकल्प (c) दावा करता है कि CGF Commonwealth Secretariat के अधीन कार्य करता है — यह तथ्यात्मक रूप से गलत है। CGF एक स्वतंत्र निकाय है जो Secretariat से पूरी तरह अलग है।",
+        "विकल्प (a), (b), और (d) में Commonwealth Games के बारे में सही तथ्य साझा हैं; विकल्प (c) एक गलत दावा है — इसलिए यह अलग है।"
+      ],
+      "upsc_trap_explanation": "प्रामाणिक-निर्मित भ्रम (plausible-fabrication) जाल CGF को Secretariat के अधीन दिखाता है — एक तार्किक लगने वाला लेकिन गलत दावा। CGF की स्वतंत्रता का अर्थ है कि यह गैर-संप्रभु क्षेत्रों को अलग प्रतियोगी के रूप में शामिल कर सकता है, जो Commonwealth Secretariat (जो संप्रभु राज्यों से संबंधित है) नहीं कर सकता।",
+      "final_explanation": "Commonwealth Games Federation (CGF) एक स्वतंत्र खेल निकाय है — इसका Commonwealth Secretariat या CHOGM प्रक्रिया से कोई औपचारिक संस्थागत संबंध नहीं है।\n\n• विकल्प (a): सही तथ्य — पहले Commonwealth Games 1930 में हैमिल्टन, कनाडा में 'British Empire Games' के नाम से आयोजित हुए।\n• विकल्प (b): सही तथ्य — खेलों का नाम 1978 में औपचारिक रूप से 'Commonwealth Games' रखा गया, जो संघ के उपनिवेशोत्तर पुनःब्रांडिंग को दर्शाता है।\n• विकल्प (c): गलत — CGF एक स्वतंत्र निकाय है, जो Commonwealth Secretariat के अधीन नहीं है। यह अलग विकल्प है।\n• विकल्प (d): सही तथ्य — Guernsey, Isle of Man जैसे आश्रित क्षेत्र Commonwealth Games में अलग से भाग लेते हैं, ये संप्रभु राज्य नहीं हैं लेकिन CGF सदस्य हैं।\n\nमूल्य संवर्धन:\n• भारत ने 2010 (दिल्ली) में Commonwealth Games की मेजबानी की — यह भारत की नवीनतम मेजबानी है।\n• 1951 के एशियाई खेल दिल्ली में कभी-कभी Commonwealth Games की प्रतियोगिता के साथ भ्रमित किए जाते हैं — ये अलग प्रतियोगिताएँ हैं।\n• CGF की सदस्यता में 70 से अधिक टीमें शामिल हैं, जो 56 संप्रभु Commonwealth सदस्यों से अधिक हैं।"
+    }
+  },
+  {
+    "uuid": "ef8bae29-c4dd-4d69-be6f-f831aea1e9ab",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth and Trade: CPTPP, Commonwealth Advantage, and Intra-Commonwealth Trade"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Commonwealth Advantage and absence of common external tariff",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements regarding trade within the Commonwealth of Nations:\n\nStatement 1: Studies on 'Commonwealth Advantage' suggest that trade between Commonwealth members is approximately 19–21% cheaper due to shared language, legal systems, and business norms.\n\nStatement 2: The Commonwealth functions as a formal free trade area with a common external tariff, similar to the European Union's single market framework.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Studies on 'Commonwealth Advantage' suggest that trade between Commonwealth members is approximately 19–21% cheaper due to shared language, legal systems, and business norms.",
+          "verdict": "Correct",
+          "reason": "This is a well-documented empirical finding cited in Commonwealth Secretariat trade reports — shared institutional heritage reduces transaction costs."
+        },
+        {
+          "statement": "The Commonwealth functions as a formal free trade area with a common external tariff, similar to the European Union's single market framework.",
+          "verdict": "Incorrect",
+          "reason": "The Commonwealth has no common external tariff, no free trade agreement, and no single market. Trade facilitation within the Commonwealth is informal and based on shared institutional frameworks, not a binding legal trade architecture."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know the Commonwealth Advantage figure (19–21%) may assume that such a structured trade benefit implies a formal trade architecture, making both statements seem plausible.",
+      "elimination_logic": [
+        "Check Statement 1: The 19–21% trade cost reduction from Commonwealth Advantage is correctly cited in Secretariat research. Statement 1 is correct.",
+        "Check Statement 2: The Commonwealth has NO common external tariff and NO free trade area — it is explicitly NOT a trading bloc like the EU. Statement 2 is incorrect.",
+        "Since Statement 1 is correct and Statement 2 is incorrect, the answer is (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 extends the informal Commonwealth Advantage concept into a false claim of formal trade architecture. The EU comparison is deliberately introduced — students who know the EU has a common external tariff may not have specifically verified the Commonwealth's absence of one.",
+      "final_explanation": "The Commonwealth's trade relationship is built on informal institutional complementarity — shared legal systems, English language, similar accounting standards — not on formal trade agreements.\n\n• Statement 1 — Correct: Commonwealth Advantage studies (notably the Commonwealth Secretariat's own research) estimate 19–21% lower bilateral trade costs among members.\n• Statement 2 — Incorrect: The Commonwealth has no common external tariff, no customs union, and no free trade area. Individual members maintain their own trade policies and belong to separate trade blocs (ASEAN, AfCFTA, EU, CPTPP).\n\nValue Addition:\n• The intra-Commonwealth trade target set at CHOGM 2018 was USD 2 trillion by 2030.\n• Commonwealth members overlap with CPTPP, RCEP, AfCFTA — creating complementary but not unified trade frameworks.\n• The EU's common external tariff is a supranational feature; the Commonwealth is strictly intergovernmental with no such mechanism."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ ऑफ नेशंस के भीतर व्यापार के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: 'कॉमनवेल्थ एडवांटेज' पर अध्ययन सुझाव देते हैं कि कॉमनवेल्थ सदस्यों के बीच व्यापार लगभग 19–21% सस्ता होता है क्योंकि भाषा, कानूनी प्रणाली, और व्यावसायिक मानदंड साझा होते हैं।\n\nकथन 2: कॉमनवेल्थ एक औपचारिक मुक्त व्यापार क्षेत्र के रूप में कार्य करता है जिसमें यूरोपीय संघ के एकल बाजार ढांचे के समान एक सामान्य बाहरी शुल्क होता है।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "'कॉमनवेल्थ एडवांटेज' पर अध्ययन सुझाव देते हैं कि कॉमनवेल्थ सदस्यों के बीच व्यापार लगभग 19–21% सस्ता होता है क्योंकि भाषा, कानूनी प्रणाली, और व्यावसायिक मानदंड साझा होते हैं।",
+          "verdict": "सही है",
+          "reason": "यह कॉमनवेल्थ सचिवालय के व्यापार रिपोर्टों में उद्धृत एक अच्छी तरह से प्रलेखित अनुभवजन्य निष्कर्ष है — साझा संस्थागत विरासत लेनदेन लागत को कम करती है।"
+        },
+        {
+          "statement": "कॉमनवेल्थ एक औपचारिक मुक्त व्यापार क्षेत्र के रूप में कार्य करता है जिसमें यूरोपीय संघ के एकल बाजार ढांचे के समान एक सामान्य बाहरी शुल्क होता है।",
+          "verdict": "गलत है",
+          "reason": "कॉमनवेल्थ के पास कोई सामान्य बाहरी शुल्क नहीं है, न ही कोई मुक्त व्यापार समझौता है, और न ही कोई एकल बाजार है। कॉमनवेल्थ के भीतर व्यापार सुविधा अनौपचारिक है और साझा संस्थागत ढांचों पर आधारित है, न कि बाध्यकारी कानूनी व्यापार संरचना पर।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि जो छात्र कॉमनवेल्थ एडवांटेज के आंकड़े (19–21%) को जानते हैं, वे यह मान सकते हैं कि ऐसा संरचित व्यापार लाभ एक औपचारिक व्यापार संरचना को दर्शाता है, जिससे दोनों कथन संभावित लगते हैं।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें: कॉमनवेल्थ एडवांटेज से 19–21% व्यापार लागत में कमी सचिवालय के शोध में सही रूप से उद्धृत है। कथन 1 सही है।",
+        "कथन 2 की जाँच करें: कॉमनवेल्थ के पास कोई सामान्य बाहरी शुल्क नहीं है और न ही कोई मुक्त व्यापार क्षेत्र है — यह स्पष्ट रूप से यूरोपीय संघ जैसे व्यापार ब्लॉक नहीं है। कथन 2 गलत है।",
+        "चूंकि कथन 1 सही है और कथन 2 गलत है, अतः उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 अनौपचारिक कॉमनवेल्थ एडवांटेज अवधारणा को औपचारिक व्यापार संरचना के झूठे दावे में बढ़ा देता है। यूरोपीय संघ की तुलना जानबूझकर शामिल की गई है — जो छात्र जानते हैं कि यूरोपीय संघ के पास सामान्य बाहरी शुल्क है, वे विशेष रूप से कॉमनवेल्थ में इसकी अनुपस्थिति की पुष्टि नहीं कर पाए।",
+      "final_explanation": "कॉमनवेल्थ का व्यापार संबंध अनौपचारिक संस्थागत पूरकता पर आधारित है — साझा कानूनी प्रणाली, अंग्रेज़ी भाषा, समान लेखांकन मानक — न कि औपचारिक व्यापार समझौतों पर।\n\n• कथन 1 — सही: कॉमनवेल्थ एडवांटेज अध्ययन (विशेष रूप से कॉमनवेल्थ सचिवालय के अपने शोध) सदस्यों के बीच द्विपक्षीय व्यापार लागत को 19–21% कम आंकते हैं।\n• कथन 2 — गलत: कॉमनवेल्थ के पास कोई सामान्य बाहरी शुल्क, कोई कस्टम्स यूनियन, और कोई मुक्त व्यापार क्षेत्र नहीं है। व्यक्तिगत सदस्य अपनी स्वयं की व्यापार नीतियाँ बनाए रखते हैं और अलग-अलग व्यापार ब्लॉकों (ASEAN, AfCFTA, EU, CPTPP) के सदस्य हैं।\n\nमूल्य संवर्धन:\n• CHOGM 2018 में निर्धारित कॉमनवेल्थ के भीतर व्यापार का लक्ष्य 2030 तक 2 ट्रिलियन अमेरिकी डॉलर था।\n• कॉमनवेल्थ सदस्य CPTPP, RCEP, AfCFTA के साथ ओवरलैप करते हैं — जो पूरक लेकिन एकीकृत व्यापार ढांचे नहीं बनाते।\n• यूरोपीय संघ का सामान्य बाहरी शुल्क एक अधिशासी राष्ट्रीय विशेषता है; कॉमनवेल्थ पूरी तरह से अंतर-सरकारी है और ऐसी कोई व्यवस्था नहीं है।"
+    }
+  },
+  {
+    "uuid": "41c7500f-4ea4-4aff-af66-d43833c646a6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Mozambique and Rwanda: Non-British-Colonial Members — Precedent and Implications"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Mozambique and Rwanda non-British colonial Commonwealth members",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched with respect to Commonwealth membership of non-British-colonial states?\n\n(a) Mozambique — Former German colony; admitted to the Commonwealth in 1995\n(b) Mozambique — Former Portuguese colony; admitted to the Commonwealth in 1995\n(c) Rwanda — Former Belgian/German colony; admitted to the Commonwealth in 1995\n(d) Mozambique — Former Portuguese colony; admitted to the Commonwealth in 2009",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because students who know Rwanda was admitted in 2009 under Kagame may misremember it as the first non-British-colonial member, swapping its position with Mozambique.",
+      "elimination_logic": [
+        "Identify which pair is correctly matched: the question tests specific knowledge of which country was admitted in which year and what their colonial background was.",
+        "Eliminate (a): Mozambique was a Portuguese colony, not a German colony — geographic swap error.",
+        "Eliminate (c): Rwanda admitted in 2009, not 1995; Rwanda's realignment was from Francophonie, not from the British sphere — entity-swap and temporal-swap combined.",
+        "Eliminate (d): Mozambique was not admitted in 2009 — it was admitted in 1995; 2009 is Rwanda's admission year.",
+        "Confirm (b): Mozambique (admitted 1995, former Portuguese colony) is correctly matched — first non-British-colonial exception to Commonwealth membership."
+      ],
+      "upsc_trap_explanation": "The entity-swap between Mozambique and Rwanda years and colonial backgrounds is the primary trap. Students who know both countries are non-British-colonial exceptions but have not memorised which was admitted first (Mozambique 1995, Rwanda 2009) will make errors.",
+      "final_explanation": "Mozambique and Rwanda represent two landmark exceptions to the 'British colonial history' norm for Commonwealth membership.\n\n• Option (a) — Incorrect: Mozambique was a Portuguese colony, not German. Geographic/colonial attribution swap.\n• Option (b) — Correct: Mozambique, admitted in 1995 as a former Portuguese colony, was the first non-British-colonial member — driven by post-apartheid solidarity and geographic proximity to Commonwealth states.\n• Option (c) — Incorrect: Rwanda was admitted in 2009, not 1995; and it realigned from Francophonie, not the British sphere.\n• Option (d) — Incorrect: Mozambique was admitted in 1995; Rwanda in 2009 — years are swapped.\n\nValue Addition:\n• No formal amendment to membership criteria was made for either admission — decisions were taken by CHOGM consensus.\n• Rwanda's President Kagame has been a strong champion of Commonwealth engagement and hosted CHOGM 2022.\n• Both Mozambique and Rwanda are also members of La Francophonie, illustrating overlapping institutional memberships."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा गैर-ब्रिटिश-औपनिवेशिक राज्यों की राष्ट्रमंडल सदस्यता के संदर्भ में सही मेल खाता है?\n\n(a) मोज़ाम्बिक — पूर्व जर्मन उपनिवेश; 1995 में राष्ट्रमंडल में शामिल\n(b) मोज़ाम्बिक — पूर्व पुर्तगाली उपनिवेश; 1995 में राष्ट्रमंडल में शामिल\n(c) रवांडा — पूर्व बेल्जियम/जर्मन उपनिवेश; 1995 में राष्ट्रमंडल में शामिल\n(d) मोज़ाम्बिक — पूर्व पुर्तगाली उपनिवेश; 2009 में राष्ट्रमंडल में शामिल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि रवांडा को 2009 में कागमे के तहत शामिल किया गया था, वे इसे पहले गैर-ब्रिटिश-औपनिवेशिक सदस्य के रूप में गलत याद कर सकते हैं, और इसे मोज़ाम्बिक के स्थान के साथ बदल सकते हैं।",
+      "elimination_logic": [
+        "सही जोड़ी की पहचान करें: प्रश्न यह परीक्षण करता है कि किस देश को किस वर्ष शामिल किया गया था और उनका औपनिवेशिक पृष्ठभूमि क्या थी।",
+        "(a) को हटाएं: मोज़ाम्बिक पुर्तगाली उपनिवेश था, जर्मन उपनिवेश नहीं — भौगोलिक स्थान की गलती।",
+        "(c) को हटाएं: रवांडा 2009 में शामिल हुआ था, 1995 में नहीं; रवांडा का पुनः संरेखण फ्रैंकोफोनी से था, ब्रिटिश क्षेत्र से नहीं — इकाई और काल दोनों की गलती।",
+        "(d) को हटाएं: मोज़ाम्बिक 2009 में शामिल नहीं हुआ था — इसे 1995 में शामिल किया गया था; 2009 रवांडा का शामिल होने का वर्ष है।",
+        "(b) की पुष्टि करें: मोज़ाम्बिक (1995 में शामिल, पूर्व पुर्तगाली उपनिवेश) सही मेल खाता है — राष्ट्रमंडल सदस्यता के लिए पहला गैर-ब्रिटिश-औपनिवेशिक अपवाद।"
+      ],
+      "upsc_trap_explanation": "मोज़ाम्बिक और रवांडा के वर्षों और औपनिवेशिक पृष्ठभूमि के बीच इकाई-स्थानांतरण मुख्य जाल है। जो छात्र जानते हैं कि दोनों देश गैर-ब्रिटिश-औपनिवेशिक अपवाद हैं लेकिन यह याद नहीं रखते कि किसे पहले शामिल किया गया (मोज़ाम्बिक 1995, रवांडा 2009), वे गलती करेंगे।",
+      "final_explanation": "मोज़ाम्बिक और रवांडा राष्ट्रमंडल सदस्यता के 'ब्रिटिश औपनिवेशिक इतिहास' मानक के दो महत्वपूर्ण अपवाद हैं।\n\n• विकल्प (a) — गलत: मोज़ाम्बिक पुर्तगाली उपनिवेश था, जर्मन नहीं। भौगोलिक/औपनिवेशिक गलत वर्गीकरण।\n• विकल्प (b) — सही: मोज़ाम्बिक, जो 1995 में पूर्व पुर्तगाली उपनिवेश के रूप में शामिल हुआ, पहला गैर-ब्रिटिश-औपनिवेशिक सदस्य था — यह दक्षिण अफ्रीका के बाद की एकजुटता और राष्ट्रमंडल राज्यों के भौगोलिक निकटता से प्रेरित था।\n• विकल्प (c) — गलत: रवांडा 2009 में शामिल हुआ था, 1995 में नहीं; और यह फ्रैंकोफोनी से पुनः संरेखित हुआ था, ब्रिटिश क्षेत्र से नहीं।\n• विकल्प (d) — गलत: मोज़ाम्बिक 1995 में शामिल हुआ था; रवांडा 2009 में — वर्षों का स्थानांतरण हुआ है।\n\nमूल्य संवर्धन:\n• दोनों प्रवेशों के लिए सदस्यता मानदंडों में कोई औपचारिक संशोधन नहीं किया गया — निर्णय CHOGM सहमति से लिए गए।\n• रवांडा के राष्ट्रपति कागमे राष्ट्रमंडल सहभागिता के मजबूत समर्थक रहे हैं और उन्होंने CHOGM 2022 की मेजबानी की।\n• मोज़ाम्बिक और रवांडा दोनों ला फ्रैंकोफोनी के सदस्य भी हैं, जो संस्थागत सदस्यताओं के ओवरलैप को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "22f38da4-05f9-4f94-92ef-82e1ed5d9c08",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Small States: Special Provisions and Vulnerabilities",
+        "Commonwealth and the United Nations: Relationship and Voting Blocs"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Commonwealth SIDS advocacy and UN voting bloc distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Commonwealth's engagement with small states and its role in the United Nations system, which of the following statements is/are NOT correct?\n\n1. Over 30 of the Commonwealth's 56 members are classified as small states, predominantly Small Island Developing States (SIDS), and are disproportionately vulnerable to climate change, debt distress, and trade shocks.\n2. The Commonwealth Secretariat acts as a formal voting bloc at the United Nations General Assembly, ensuring all 56 member states vote uniformly on resolutions affecting SIDS and climate change.\n3. The Blue Charter, adopted at CHOGM 2018, focuses exclusively on climate adaptation strategies for landlocked Commonwealth developing countries.\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Over 30 of the Commonwealth's 56 members are classified as small states, predominantly Small Island Developing States (SIDS), and are disproportionately vulnerable to climate change, debt distress, and trade shocks.",
+          "verdict": "Correct",
+          "reason": "This is accurate — more than half of Commonwealth members are small states with populations under 1.5 million, and most are SIDS facing existential climate threats."
+        },
+        {
+          "statement": "The Commonwealth Secretariat acts as a formal voting bloc at the United Nations General Assembly, ensuring all 56 member states vote uniformly on resolutions affecting SIDS and climate change.",
+          "verdict": "Incorrect",
+          "reason": "The Commonwealth Secretariat has only Observer Status at the UNGA and coordinates positions informally through consultations. It does not function as a formal binding voting bloc — member states vote independently."
+        },
+        {
+          "statement": "The Blue Charter, adopted at CHOGM 2018, focuses exclusively on climate adaptation strategies for landlocked Commonwealth developing countries.",
+          "verdict": "Incorrect",
+          "reason": "The Blue Charter focuses on ocean sustainability and maritime issues — it is specifically oriented toward island and coastal Commonwealth nations, not landlocked ones. The 'blue' in Blue Charter refers to ocean/marine environments."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because Statement 1 is correct, but students who see 'both 1 and 2' in option (a) might accept Statement 2's formal bloc-voting claim without checking.",
+      "elimination_logic": [
+        "Check Statement 1: Over 30 of 56 members are small states — SIDS characterisation and vulnerability description are accurate. Statement 1 is correct, NOT incorrect.",
+        "Check Statement 2: Commonwealth Secretariat has Observer Status at UNGA; it coordinates informally, not as a formal binding voting bloc. Statement 2 is NOT correct — it is incorrect.",
+        "Check Statement 3: Blue Charter is about ocean sustainability for island/coastal nations, not landlocked countries. Statement 3 is NOT correct — it is incorrect.",
+        "Since the question asks which are NOT correct, the answer is Statements 2 and 3. This matches option (b) — 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2's scope-extension (informal coordination → formal bloc voting) and Statement 3's geographic swap (island/coastal → landlocked) are both designed to test precision. The 'blue' in Blue Charter is a direct clue to its marine/ocean focus that careless readers miss.",
+      "final_explanation": "The Commonwealth's role in global governance is consultative and advocacy-based — not binding or structured like the EU's coordinated positions.\n\n• Statement 1 — Correct: Over 30 of 56 members are small states (population under 1.5 million), mostly SIDS. Their vulnerability is the basis for Commonwealth advocacy at UNFCCC and WTO.\n• Statement 2 — Incorrect: The Secretariat has only Observer Status at UNGA. Commonwealth coordination is informal consultation — not formal bloc voting. Each member state votes independently.\n• Statement 3 — Incorrect: The Blue Charter (2018) focuses on ocean sustainability — specifically for island and coastal nations, NOT landlocked developing countries.\n\nValue Addition:\n• AOSIS (Alliance of Small Island States) has significant membership overlap with Commonwealth SIDS — creating complementary advocacy channels.\n• The Commonwealth Vulnerable Countries Initiative works alongside UNFCCC processes to advocate for climate finance for SIDS.\n• Commonwealth's 56 members represent nearly 29% of UN membership — a potentially significant but informally exercised influence."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ के छोटे राज्यों के साथ जुड़ाव और संयुक्त राष्ट्र प्रणाली में इसकी भूमिका के संदर्भ में, निम्नलिखित में से कौन-से कथन सही नहीं हैं?\n\n1. कॉमनवेल्थ के 56 सदस्यों में से 30 से अधिक को छोटे राज्यों के रूप में वर्गीकृत किया गया है, जिनमें से अधिकांश छोटे द्वीप विकासशील राज्य (SIDS) हैं, और वे जलवायु परिवर्तन, ऋण संकट, और व्यापार झटकों के प्रति असमान रूप से संवेदनशील हैं।\n2. कॉमनवेल्थ सचिवालय संयुक्त राष्ट्र महासभा में एक औपचारिक मतदान ब्लॉक के रूप में कार्य करता है, यह सुनिश्चित करते हुए कि सभी 56 सदस्य राज्य SIDS और जलवायु परिवर्तन को प्रभावित करने वाले प्रस्तावों पर समान रूप से मतदान करें।\n3. ब्लू चार्टर, जो CHOGM 2018 में अपनाया गया था, केवल भू-आबद्ध कॉमनवेल्थ विकासशील देशों के लिए जलवायु अनुकूलन रणनीतियों पर केंद्रित है।\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Over 30 of the Commonwealth's 56 members are classified as small states, predominantly Small Island Developing States (SIDS), and are disproportionately vulnerable to climate change, debt distress, and trade shocks.",
+          "verdict": "सही है",
+          "reason": "यह सटीक है — कॉमनवेल्थ के आधे से अधिक सदस्य छोटे राज्य हैं जिनकी आबादी 1.5 मिलियन से कम है, और अधिकांश SIDS हैं जो अस्तित्वगत जलवायु खतरों का सामना कर रहे हैं।"
+        },
+        {
+          "statement": "The Commonwealth Secretariat acts as a formal voting bloc at the United Nations General Assembly, ensuring all 56 member states vote uniformly on resolutions affecting SIDS and climate change.",
+          "verdict": "गलत है",
+          "reason": "कॉमनवेल्थ सचिवालय को केवल संयुक्त राष्ट्र महासभा में पर्यवेक्षक दर्जा प्राप्त है और यह परामर्श के माध्यम से अनौपचारिक रूप से पदों का समन्वय करता है। यह एक औपचारिक बाध्यकारी मतदान ब्लॉक के रूप में कार्य नहीं करता — सदस्य राज्य स्वतंत्र रूप से मतदान करते हैं।"
+        },
+        {
+          "statement": "The Blue Charter, adopted at CHOGM 2018, focuses exclusively on climate adaptation strategies for landlocked Commonwealth developing countries.",
+          "verdict": "गलत है",
+          "reason": "ब्लू चार्टर महासागरीय स्थिरता और समुद्री मुद्दों पर केंद्रित है — यह विशेष रूप से द्वीप और तटीय कॉमनवेल्थ देशों के लिए है, न कि भू-आबद्ध देशों के लिए। ब्लू चार्टर में 'ब्लू' का अर्थ महासागर/समुद्री पर्यावरण से है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 1 सही है, लेकिन जो छात्र विकल्प (a) में 'केवल 1 और 2' देखते हैं वे बिना जांचे कथन 2 के औपचारिक ब्लॉक-मतदान दावे को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: 56 सदस्यों में से 30 से अधिक छोटे राज्य हैं — SIDS की पहचान और संवेदनशीलता विवरण सटीक है। कथन 1 सही है, गलत नहीं।",
+        "कथन 2 जांचें: कॉमनवेल्थ सचिवालय को महासभा में पर्यवेक्षक दर्जा प्राप्त है; यह अनौपचारिक समन्वय करता है, औपचारिक बाध्यकारी मतदान ब्लॉक के रूप में नहीं। कथन 2 सही नहीं है — यह गलत है।",
+        "कथन 3 जांचें: ब्लू चार्टर महासागर स्थिरता के लिए है, द्वीप/तटीय देशों के लिए, भू-आबद्ध देशों के लिए नहीं। कथन 3 सही नहीं है — यह गलत है।",
+        "चूंकि प्रश्न पूछता है कि कौन-से कथन सही नहीं हैं, उत्तर है कथन 2 और 3। यह विकल्प (b) — केवल 2 और 3 से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का दायरा-विस्तार (अनौपचारिक समन्वय → औपचारिक ब्लॉक मतदान) और कथन 3 का भौगोलिक परिवर्तन (द्वीप/तटीय → भू-आबद्ध) दोनों सटीकता की परीक्षा के लिए डिज़ाइन किए गए हैं। ब्लू चार्टर में 'ब्लू' महासागरीय/समुद्री केंद्रितता का सीधा संकेत है जिसे लापरवाह पाठक चूक जाते हैं।",
+      "final_explanation": "कॉमनवेल्थ की वैश्विक शासन में भूमिका परामर्शात्मक और वकालत-आधारित है — यह यूरोपीय संघ की समन्वित स्थितियों की तरह बाध्यकारी या संरचित नहीं है।\n\n• कथन 1 — सही: 56 सदस्यों में से 30 से अधिक छोटे राज्य हैं (आबादी 1.5 मिलियन से कम), ज्यादातर SIDS। उनकी संवेदनशीलता UNFCCC और WTO में कॉमनवेल्थ की वकालत का आधार है।\n• कथन 2 — गलत: सचिवालय को महासभा में केवल पर्यवेक्षक दर्जा प्राप्त है। कॉमनवेल्थ समन्वय अनौपचारिक परामर्श है — औपचारिक ब्लॉक मतदान नहीं। प्रत्येक सदस्य स्वतंत्र रूप से मतदान करता है।\n• कथन 3 — गलत: ब्लू चार्टर (2018) महासागर स्थिरता पर केंद्रित है — विशेष रूप से द्वीप और तटीय देशों के लिए, भू-आबद्ध विकासशील देशों के लिए नहीं।\n\nमूल्य संवर्धन:\n• AOSIS (छोटे द्वीप राज्यों का गठबंधन) का कॉमनवेल्थ SIDS के साथ महत्वपूर्ण सदस्यता ओवरलैप है — जो पूरक वकालत चैनल बनाता है।\n• कॉमनवेल्थ संवेदनशील देशों की पहल UNFCCC प्रक्रियाओं के साथ मिलकर SIDS के लिए जलवायु वित्त की वकालत करती है।\n• कॉमनवेल्थ के 56 सदस्य संयुक्त राष्ट्र सदस्यता का लगभग 29% प्रतिनिधित्व करते हैं — एक संभावित महत्वपूर्ण लेकिन अनौपचारिक रूप से व्यायाम किया गया प्रभाव।"
+    }
+  },
+  {
+    "uuid": "57f777ac-e816-439b-862f-7407b43738e3",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Recent Developments: Republicanism within Commonwealth Realms and Future of the Institution"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Barbados republic 2021 — Commonwealth membership retained",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Barbados became a republic in November 2021 by removing the British monarch as its head of state, while continuing to remain a full member of the Commonwealth of Nations.\n\nReason (R): India established the precedent in 1949 that a republic could be a full Commonwealth member without owing allegiance to the British Crown, under the framework of the London Declaration.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Barbados became a republic in November 2021, removing the British monarch as head of state, while remaining a full Commonwealth member.",
+        "Step 2: Is Reason (R) correct? — Yes. India's 1949 precedent — joining as a republic under the London Declaration — established that Commonwealth membership does not require the British monarch as head of state.",
+        "Step 3: Does R causally explain A? — No. Barbados's decision to become a republic was a sovereign political choice driven by Caribbean decolonisation sentiment, not causally triggered by India's 1949 precedent. The precedent enabled the legal framework but did not cause Barbados's specific decision. These are independent facts — R provides legal context but not causal explanation.",
+        "A correct + R correct + R does NOT causally explain A → answer is (b)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap presents India's legal precedent as the cause of Barbados's decision. In causal logic: A's enabling condition ≠ A's cause. The actual cause of Barbados becoming a republic was domestic political will and decolonisation sentiment — India's precedent simply confirmed the legal pathway was open.",
+      "final_explanation": "Barbados's 2021 transition to republican status is the most recent high-profile example of Caribbean republicanism and set a precedent for other nations like Jamaica and Belize considering similar transitions.\n\n• Assertion (A): Correct. Barbados became a republic on 30 November 2021 (its independence anniversary), with Dame Sandra Mason becoming the first President. It remained a full Commonwealth member.\n• Reason (R): Correct. India's 1949 precedent under the London Declaration established that republics can be full Commonwealth members without Crown allegiance.\n• Causal link: R does not causally explain A. India's precedent is a legal enabler — not the reason Barbados chose republicanism. Barbados's decision was driven by its own decolonisation agenda and the broader 'Caribbean republicanism' movement.\n\nValue Addition:\n• Jamaica, Belize, and the Bahamas are among Caribbean nations publicly exploring transition to republic status.\n• Queen Elizabeth II's death in 2022 accelerated discussions on republicanism in several Commonwealth Realms.\n• Australia and Canada have had periodic public debates on becoming republics — both remain Realms as of 2024."
+    },
+    "hi": {
+      "display_text": "कथन (A): बारबाडोस ने नवंबर 2021 में ब्रिटिश सम्राट को राज्य प्रमुख के रूप में हटाकर गणराज्य बन गया, जबकि राष्ट्रमंडल का पूर्ण सदस्य बना रहा।\n\nकारण (R): भारत ने 1949 में लंदन घोषणा के तहत यह उदाहरण स्थापित किया कि गणराज्य बिना ब्रिटिश क्राउन के प्रति निष्ठा के पूर्ण राष्ट्रमंडल सदस्य हो सकता है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। बारबाडोस ने नवंबर 2021 में गणराज्य बनकर ब्रिटिश सम्राट को राज्य प्रमुख के रूप में हटाया, जबकि राष्ट्रमंडल का पूर्ण सदस्य बना रहा।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। भारत का 1949 का उदाहरण — लंदन घोषणा के तहत गणराज्य के रूप में शामिल होना — स्थापित करता है कि राष्ट्रमंडल सदस्यता के लिए ब्रिटिश सम्राट का होना आवश्यक नहीं है।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — नहीं। बारबाडोस का गणराज्य बनने का निर्णय कैरेबियाई उपनिवेशवाद विरोधी भावना से प्रेरित एक संप्रभु राजनीतिक विकल्प था, जो भारत के 1949 के उदाहरण से कारणात्मक रूप से प्रेरित नहीं था। उदाहरण ने कानूनी ढांचा सक्षम किया लेकिन बारबाडोस के विशिष्ट निर्णय का कारण नहीं था। ये स्वतंत्र तथ्य हैं — R कानूनी संदर्भ देता है लेकिन कारणात्मक व्याख्या नहीं।",
+        "A सही + R सही + R कारणात्मक रूप से A को नहीं समझाता → उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "उल्टा-कारणात्मक जाल भारत के कानूनी उदाहरण को बारबाडोस के निर्णय का कारण बताता है। कारणात्मक तर्क में: A की सक्षम शर्त ≠ A का कारण। बारबाडोस के गणराज्य बनने का वास्तविक कारण घरेलू राजनीतिक इच्छा और उपनिवेशवाद विरोधी भावना थी — भारत का उदाहरण केवल कानूनी मार्ग की पुष्टि करता है।",
+      "final_explanation": "बारबाडोस का 2021 में गणराज्य बनने का संक्रमण कैरेबियाई गणराज्यवाद का नवीनतम प्रमुख उदाहरण है और जमैका तथा बेलीज जैसे अन्य देशों के लिए उदाहरण स्थापित करता है जो समान संक्रमण पर विचार कर रहे हैं।\n\n• कथन (A): सही। बारबाडोस 30 नवंबर 2021 (अपनी स्वतंत्रता वर्षगांठ) को गणराज्य बना, जिसमें डेम सैंड्रा मेसन पहली राष्ट्रपति बनीं। यह राष्ट्रमंडल का पूर्ण सदस्य बना रहा।\n• कारण (R): सही। भारत का 1949 का लंदन घोषणा के तहत उदाहरण स्थापित करता है कि गणराज्य बिना क्राउन की निष्ठा के पूर्ण राष्ट्रमंडल सदस्य हो सकते हैं।\n• कारणात्मक संबंध: R, A को कारणात्मक रूप से नहीं समझाता। भारत का उदाहरण कानूनी सक्षमकर्ता है — बारबाडोस के गणराज्यवाद चुनने का कारण नहीं। बारबाडोस का निर्णय उसके अपने उपनिवेशवाद विरोधी एजेंडे और व्यापक 'कैरेबियाई गणराज्यवाद' आंदोलन से प्रेरित था।\n\nमूल्य संवर्धन:\n• जमैका, बेलीज, और बहामास कैरेबियाई देश हैं जो गणराज्य बनने की संभावना सार्वजनिक रूप से तलाश रहे हैं।\n• 2022 में क्वीन एलिजाबेथ द्वितीय के निधन ने कई राष्ट्रमंडल राज्यों में गणराज्यवाद पर चर्चा को तेज किया।\n• ऑस्ट्रेलिया और कनाडा में गणराज्य बनने पर समय-समय पर सार्वजनिक बहस हुई है — दोनों 2024 तक रियल्म बने हुए हैं।"
+    }
+  },
+  {
+    "uuid": "18c42a35-2658-4ac2-bc8e-f8eb275d5a8a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Day, Symbols, and Institutional Identity"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Commonwealth Flag globe symbol vs Union Jack distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly describes a feature of the Commonwealth of Nations' institutional identity?\n\n(a) The Commonwealth Flag features the Union Jack on a blue background, symbolising the institution's British origins.\n(b) The Commonwealth maintains a common currency called the Commonwealth Pound to facilitate intra-Commonwealth trade.\n(c) The Commonwealth Flag features a globe symbol on a blue background, representing the global reach of the association.\n(d) Commonwealth Day is observed on the last Monday of May, marked by a message from the Head of the Commonwealth.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because most students associate Commonwealth symbols with British iconography and assume the Union Jack forms the central element of the Commonwealth Flag.",
+      "elimination_logic": [
+        "Eliminate (a): The Commonwealth Flag does NOT feature the Union Jack — this is a deliberate design choice to signal that the Commonwealth is not a British-dominated institution.",
+        "Eliminate (b): The Commonwealth does not have a common currency — there is no 'Commonwealth Pound' or equivalent; this is a plausible-fabrication distractor.",
+        "Eliminate (d): Commonwealth Day is not the last Monday of May (which would confuse it with other public holidays) — it is the second Monday of March.",
+        "Confirm (c): The Commonwealth Flag features a globe symbol on a blue background — the globe represents global reach; the blue background avoids any national colour association. This is the correct description."
+      ],
+      "upsc_trap_explanation": "The Union Jack substitution for the globe symbol exploits the natural assumption that a British-origin organisation's flag would feature British national imagery. The specific choice of a globe on blue — excluding the Union Jack — is a deliberate institutional statement of equality that UPSC has previously tested.",
+      "final_explanation": "The Commonwealth's institutional symbols were deliberately designed to move away from British-centric imagery. The Flag's globe on a blue background represents global reach and equal membership rather than British dominance.\n\n• Option (a) — Incorrect: The Union Jack is NOT on the Commonwealth Flag — the globe symbol is the central element.\n• Option (b) — Incorrect: The Commonwealth has no common currency — it is strictly an intergovernmental forum without monetary integration.\n• Option (c) — Correct: A globe on a blue background is the Commonwealth Flag design — intentionally distinct from any national flag.\n• Option (d) — Incorrect: Commonwealth Day is the second Monday of March, not the last Monday of May.\n\nValue Addition:\n• Commonwealth Day features the largest annual inter-faith gathering globally.\n• Marlborough House (London) — headquarters of the Secretariat — was gifted by the Crown in 1959, not built for the Commonwealth.\n• The Commonwealth has no common parliament, no common court, and no common currency — strictly intergovernmental."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा कॉमनवेल्थ ऑफ नेशंस की संस्थागत पहचान की विशेषता को सही रूप से वर्णित करता है?\n\n(a) कॉमनवेल्थ ध्वज में नीले पृष्ठभूमि पर यूनियन जैक है, जो संस्था की ब्रिटिश उत्पत्ति का प्रतीक है।\n(b) कॉमनवेल्थ के पास कॉमनवेल्थ पाउंड नामक एक सामान्य मुद्रा है जो कॉमनवेल्थ के भीतर व्यापार को सुगम बनाती है।\n(c) कॉमनवेल्थ ध्वज में नीले पृष्ठभूमि पर एक ग्लोब प्रतीक है, जो संघ की वैश्विक पहुंच का प्रतिनिधित्व करता है।\n(d) कॉमनवेल्थ दिवस मई के अंतिम सोमवार को मनाया जाता है, जिसे कॉमनवेल्थ के प्रमुख के संदेश के साथ चिह्नित किया जाता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि अधिकांश छात्र कॉमनवेल्थ के प्रतीकों को ब्रिटिश प्रतीकों से जोड़ते हैं और मान लेते हैं कि यूनियन जैक कॉमनवेल्थ ध्वज का केंद्रीय तत्व है।",
+      "elimination_logic": [
+        "(a) को खारिज करें: कॉमनवेल्थ ध्वज में यूनियन जैक नहीं है — यह जानबूझकर डिज़ाइन किया गया है ताकि यह संकेत मिले कि कॉमनवेल्थ कोई ब्रिटिश-प्रधान संस्था नहीं है।",
+        "(b) को खारिज करें: कॉमनवेल्थ की कोई सामान्य मुद्रा नहीं है — कोई 'कॉमनवेल्थ पाउंड' या समकक्ष नहीं है; यह एक संभावित-गलत सूचना फैलाने वाला विकल्प है।",
+        "(d) को खारिज करें: कॉमनवेल्थ दिवस मई के अंतिम सोमवार को नहीं मनाया जाता (जो अन्य सार्वजनिक छुट्टियों से भ्रमित कर सकता है) — यह मार्च के दूसरे सोमवार को होता है।",
+        "(c) की पुष्टि करें: कॉमनवेल्थ ध्वज में नीले पृष्ठभूमि पर एक ग्लोब प्रतीक है — ग्लोब वैश्विक पहुंच का प्रतिनिधित्व करता है; नीली पृष्ठभूमि किसी भी राष्ट्रीय रंग से अलगाव दर्शाती है। यह सही विवरण है।"
+      ],
+      "upsc_trap_explanation": "यूनियन जैक को ग्लोब प्रतीक के स्थान पर रखना इस प्राकृतिक धारणा का फायदा उठाता है कि ब्रिटिश मूल की संस्था का ध्वज ब्रिटिश राष्ट्रीय प्रतीकों को प्रदर्शित करेगा। नीले रंग पर ग्लोब का विशेष चयन — यूनियन जैक को छोड़कर — समानता का जानबूझकर संस्थागत बयान है जिसे UPSC ने पहले भी परखा है।",
+      "final_explanation": "कॉमनवेल्थ के संस्थागत प्रतीक जानबूझकर ब्रिटिश-केंद्रित प्रतीकों से अलग बनाए गए हैं। ध्वज का नीले पृष्ठभूमि पर ग्लोब वैश्विक पहुंच और समान सदस्यता का प्रतिनिधित्व करता है, न कि ब्रिटिश प्रभुत्व का।\n\n• विकल्प (a) — गलत: यूनियन जैक कॉमनवेल्थ ध्वज पर नहीं है — ग्लोब प्रतीक केंद्रीय तत्व है।\n• विकल्प (b) — गलत: कॉमनवेल्थ की कोई सामान्य मुद्रा नहीं है — यह केवल एक अंतर-सरकारी मंच है बिना मौद्रिक एकीकरण के।\n• विकल्प (c) — सही: नीले पृष्ठभूमि पर ग्लोब कॉमनवेल्थ ध्वज का डिज़ाइन है — जानबूझकर किसी भी राष्ट्रीय ध्वज से अलग।\n• विकल्प (d) — गलत: कॉमनवेल्थ दिवस मार्च के दूसरे सोमवार को होता है, मई के अंतिम सोमवार को नहीं।\n\nमूल्यवर्धन:\n• कॉमनवेल्थ दिवस विश्व का सबसे बड़ा वार्षिक अंतर-धार्मिक सम्मेलन है।\n• मार्लबोरो हाउस (लंदन) — सचिवालय का मुख्यालय — 1959 में क्राउन द्वारा उपहार स्वरूप दिया गया था, कॉमनवेल्थ के लिए निर्मित नहीं।\n• कॉमनवेल्थ की कोई सामान्य संसद, कोई सामान्य न्यायालय, और कोई सामान्य मुद्रा नहीं है — यह पूरी तरह से अंतर-सरकारी है।"
+    }
+  },
+  {
+    "uuid": "36bc96a4-2ff8-4756-9486-1dfa1388b82a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Singapore Declaration (1971) and Harare Declaration (1991): Value Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Singapore vs Harare Declaration content distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the value framework of the Commonwealth of Nations, consider the following statements:\n\n1. The Singapore Declaration (1971) was the first formal articulation of Commonwealth values, including commitments to world peace, individual liberty, and opposition to racial discrimination.\n2. The Harare Declaration (1991) added commitments to democracy, good governance, gender equality, and sustainable development, reflecting post-Cold War priorities.\n3. Both the Singapore Declaration (1971) and the Harare Declaration (1991) are legally binding treaties under international law, creating enforceable obligations for member states.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Singapore Declaration (1971) was the first formal articulation of Commonwealth values, including commitments to world peace, individual liberty, and opposition to racial discrimination.",
+          "verdict": "Correct",
+          "reason": "The Singapore Declaration was indeed the first time the Commonwealth collectively articulated shared values — moving from a purely institutional to a values-based association. Opposition to racial discrimination was particularly significant given apartheid South Africa."
+        },
+        {
+          "statement": "The Harare Declaration (1991) added commitments to democracy, good governance, gender equality, and sustainable development, reflecting post-Cold War priorities.",
+          "verdict": "Correct",
+          "reason": "The Harare Declaration expanded the Singapore framework to include good governance and democracy — responding to the collapse of Cold War-era authoritarian accommodations and the emergence of democratic norms as a global expectation."
+        },
+        {
+          "statement": "Both the Singapore Declaration (1971) and the Harare Declaration (1991) are legally binding treaties under international law, creating enforceable obligations for member states.",
+          "verdict": "Incorrect",
+          "reason": "Both declarations are political commitments — non-binding soft law instruments. They are not treaties and create no legally enforceable obligations under international law. This is a fundamental distinction between Commonwealth declarations and formal treaties."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is a strong distractor because students who correctly identify Statements 1 and 2 as accurate may assume the institutional weight of two consecutive declarations implies legal bindingness — treating political weight as legal force.",
+      "elimination_logic": [
+        "Check Statement 3: Both declarations are explicitly political commitments, not treaties — they are non-binding soft law. Statement 3 is incorrect.",
+        "Check Statement 1: Singapore Declaration (1971) — first Commonwealth values articulation including world peace, liberty, anti-racial discrimination. Correct.",
+        "Check Statement 2: Harare Declaration (1991) — added democracy, governance, gender equality, sustainable development post-Cold War. Correct.",
+        "Since Statements 1 and 2 are correct and Statement 3 is incorrect, the answer is (a) — 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 tests the soft-law vs. hard-law distinction. Students who know the content of both declarations but have not focused on their legal character assume institutional declarations carry treaty-level obligations. This is one of the most tested conceptual distinctions in international relations questions.",
+      "final_explanation": "The Singapore and Harare Declarations form the core of the Commonwealth's value framework across two distinct geopolitical eras.\n\n• Statement 1 — Correct: Singapore (1971) addressed anti-colonialism, racial equality, and individual liberty — shaped by the apartheid era and decolonisation.\n• Statement 2 — Correct: Harare (1991) added democracy, good governance, and gender equality — shaped by post-Cold War democratisation expectations.\n• Statement 3 — Incorrect: Neither declaration is a legally binding treaty. They are political commitments — soft law — with enforcement relying only on CMAG's suspension power.\n\nValue Addition:\n• The Millbrook Action Programme (1995) was the operational follow-up to the Harare Declaration — creating CMAG.\n• The Commonwealth Charter (2013) consolidated all these declarations but remained equally non-binding.\n• The distinction between soft law (declarations) and hard law (treaties) is fundamental to understanding why the Commonwealth's enforcement capacity is structurally limited."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ ऑफ नेशंस के मूल्य ढांचे के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. सिंगापुर घोषणा (1971) कॉमनवेल्थ मूल्यों की पहली औपचारिक अभिव्यक्ति थी, जिसमें विश्व शांति, व्यक्तिगत स्वतंत्रता, और नस्लीय भेदभाव के विरुद्ध प्रतिबद्धताएँ शामिल थीं।\n2. हारारे घोषणा (1991) ने लोकतंत्र, अच्छे शासन, लैंगिक समानता, और सतत विकास के लिए प्रतिबद्धताएँ जोड़ीं, जो शीत युद्ध के बाद की प्राथमिकताओं को दर्शाती हैं।\n3. सिंगापुर घोषणा (1971) और हारारे घोषणा (1991) दोनों अंतरराष्ट्रीय कानून के तहत कानूनी रूप से बाध्यकारी संधियाँ हैं, जो सदस्य राज्यों के लिए लागू दायित्व बनाती हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Singapore Declaration (1971) was the first formal articulation of Commonwealth values, including commitments to world peace, individual liberty, and opposition to racial discrimination.",
+          "verdict": "सही है",
+          "reason": "सिंगापुर घोषणा वास्तव में कॉमनवेल्थ द्वारा साझा मूल्यों की पहली औपचारिक अभिव्यक्ति थी — जो एक शुद्ध संस्थागत संघ से मूल्य-आधारित संघ की ओर बढ़ी। नस्लीय भेदभाव के विरुद्ध विरोध विशेष रूप से महत्वपूर्ण था क्योंकि उस समय दक्षिण अफ्रीका में अपार्थाइड था।"
+        },
+        {
+          "statement": "The Harare Declaration (1991) added commitments to democracy, good governance, gender equality, and sustainable development, reflecting post-Cold War priorities.",
+          "verdict": "सही है",
+          "reason": "हारारे घोषणा ने सिंगापुर ढांचे का विस्तार किया जिसमें अच्छे शासन और लोकतंत्र को शामिल किया गया — जो शीत युद्ध के बाद के तानाशाही समझौतों के पतन और लोकतांत्रिक मानदंडों के वैश्विक अपेक्षा के उदय का जवाब था।"
+        },
+        {
+          "statement": "Both the Singapore Declaration (1971) and the Harare Declaration (1991) are legally binding treaties under international law, creating enforceable obligations for member states.",
+          "verdict": "गलत है",
+          "reason": "दोनों घोषणाएँ राजनीतिक प्रतिबद्धताएँ हैं — गैर-बाध्यकारी सॉफ्ट लॉ उपकरण। ये संधियाँ नहीं हैं और अंतरराष्ट्रीय कानून के तहत कानूनी रूप से लागू करने योग्य दायित्व उत्पन्न नहीं करतीं। यह कॉमनवेल्थ घोषणाओं और औपचारिक संधियों के बीच एक मौलिक अंतर है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 1 और 2 को सही पहचानते हैं, वे यह मान सकते हैं कि दो लगातार घोषणाओं का संस्थागत महत्व कानूनी बाध्यता को दर्शाता है — राजनीतिक महत्व को कानूनी शक्ति समझते हैं।",
+      "elimination_logic": [
+        "कथन 3 जांचें: दोनों घोषणाएँ स्पष्ट रूप से राजनीतिक प्रतिबद्धताएँ हैं, संधियाँ नहीं — ये गैर-बाध्यकारी सॉफ्ट लॉ हैं। कथन 3 गलत है।",
+        "कथन 1 जांचें: सिंगापुर घोषणा (1971) — कॉमनवेल्थ मूल्यों की पहली अभिव्यक्ति जिसमें विश्व शांति, स्वतंत्रता, नस्लीय भेदभाव के विरुद्ध प्रतिबद्धता शामिल है। सही है।",
+        "कथन 2 जांचें: हारारे घोषणा (1991) — शीत युद्ध के बाद लोकतंत्र, शासन, लैंगिक समानता, सतत विकास को जोड़ा। सही है।",
+        "चूंकि कथन 1 और 2 सही हैं और कथन 3 गलत है, अतः उत्तर (a) — केवल 1 और 2 है।"
+      ],
+      "upsc_trap_explanation": "कथन 3 सॉफ्ट-लॉ और हार्ड-लॉ के बीच के अंतर को परखता है। जो छात्र दोनों घोषणाओं की सामग्री जानते हैं लेकिन उनके कानूनी स्वरूप पर ध्यान नहीं देते, वे संस्थागत घोषणाओं को संधि स्तर के दायित्व समझ लेते हैं। यह अंतरराष्ट्रीय संबंधों के प्रश्नों में सबसे अधिक परीक्षण किया जाने वाला अवधारणात्मक अंतर है।",
+      "final_explanation": "सिंगापुर और हारारे घोषणाएँ कॉमनवेल्थ के मूल्य ढांचे का मूल हैं, जो दो भिन्न भू-राजनीतिक युगों को दर्शाती हैं।\n\n• कथन 1 — सही: सिंगापुर (1971) ने उपनिवेशवाद-विरोध, नस्लीय समानता, और व्यक्तिगत स्वतंत्रता को संबोधित किया — जो अपार्थाइड युग और उपनिवेशवाद के अंत से प्रभावित था।\n• कथन 2 — सही: हारारे (1991) ने लोकतंत्र, अच्छे शासन, और लैंगिक समानता को जोड़ा — जो शीत युद्ध के बाद लोकतंत्रीकरण की अपेक्षाओं से प्रेरित था।\n• कथन 3 — गलत: कोई भी घोषणा कानूनी रूप से बाध्यकारी संधि नहीं है। ये राजनीतिक प्रतिबद्धताएँ हैं — सॉफ्ट लॉ — जिनका प्रवर्तन केवल CMAG के निलंबन अधिकार पर निर्भर है।\n\nमूल्य संवर्धन:\n• मिलब्रुक एक्शन प्रोग्राम (1995) हारारे घोषणा का कार्यान्वयन था — जिसने CMAG का निर्माण किया।\n• कॉमनवेल्थ चार्टर (2013) ने इन सभी घोषणाओं को समेकित किया लेकिन यह भी गैर-बाध्यकारी रहा।\n• सॉफ्ट लॉ (घोषणाएँ) और हार्ड लॉ (संधियाँ) के बीच का अंतर यह समझने के लिए मौलिक है कि कॉमनवेल्थ की प्रवर्तन क्षमता संरचनात्मक रूप से सीमित क्यों है।"
+    }
+  },
+  {
+    "uuid": "b649944f-17a9-4095-8448-e31d1aea1fbc",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Head of the Commonwealth: Role, Selection, and Succession"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Head of Commonwealth not hereditary — CHOGM decides",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about the Head of the Commonwealth:\n\nStatement 1: The position of Head of the Commonwealth is automatically inherited by the British monarch upon the death of the previous monarch, as it is inherently tied to the British Crown.\n\nStatement 2: The Head of the Commonwealth performs a purely ceremonial and symbolic role with no legislative, executive, or binding authority over member states.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The position of Head of the Commonwealth is automatically inherited by the British monarch upon the death of the previous monarch, as it is inherently tied to the British Crown.",
+          "verdict": "Incorrect",
+          "reason": "The position is not hereditary — it is decided by Commonwealth Heads of Government at CHOGM. The 2018 CHOGM formally designated Prince Charles (now King Charles III) as successor — this was the first time succession was explicitly decided by member consensus, confirming that automatic inheritance does not apply."
+        },
+        {
+          "statement": "The Head of the Commonwealth performs a purely ceremonial and symbolic role with no legislative, executive, or binding authority over member states.",
+          "verdict": "Correct",
+          "reason": "The role is explicitly ceremonial — the Head of the Commonwealth sends messages on Commonwealth Day, attends CHOGM, and represents the association's unity, but has no power to direct member state policies, pass legislation, or make binding decisions."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know King Charles III became Head of the Commonwealth after Queen Elizabeth II's death assume this automatic succession confirms Statement 1, not realising the 2018 CHOGM pre-designation made this a consensus decision.",
+      "elimination_logic": [
+        "Check Statement 1: The 2018 CHOGM explicitly designated Prince Charles as successor — this was a member decision, not automatic inheritance. Statement 1 is incorrect.",
+        "Check Statement 2: The role is ceremonial and symbolic — no executive or legislative power. Statement 2 is correct.",
+        "Statement 1 incorrect + Statement 2 correct = option (d)."
+      ],
+      "upsc_trap_explanation": "The automatic-inheritance claim feels true because the British monarch has always been the Head of the Commonwealth. The 2018 CHOGM designation is the specific fact that reveals this is a consensus-based appointment, not an automatic succession. Students who have not read about the 2018 CHOGM decision will mark Statement 1 as correct.",
+      "final_explanation": "The Head of the Commonwealth position requires active member consensus — it is not an automatic attribute of being the British monarch.\n\n• Statement 1 — Incorrect: The 2018 CHOGM was the first time succession was formally decided by member governments. This broke the assumption of automatic inheritance. Theoretically, CHOGM could choose a non-British head in the future.\n• Statement 2 — Correct: The role is purely ceremonial — symbolic messages, CHOGM attendance, representing the Commonwealth's unity. No binding authority whatsoever.\n\nValue Addition:\n• Queen Elizabeth II held the position from 1952 until her death in September 2022 — 70 years.\n• King Charles III became Head of the Commonwealth in September 2022 following the 2018 CHOGM designation.\n• The 2018 decision set a precedent that the role can theoretically be separated from the British monarchy in the future."
+    },
+    "hi": {
+      "display_text": "Commonwealth के प्रमुख के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: Commonwealth के प्रमुख का पद स्वचालित रूप से ब्रिटिश सम्राट को पिछले सम्राट की मृत्यु पर विरासत में मिलता है, क्योंकि यह स्वाभाविक रूप से ब्रिटिश क्राउन से जुड़ा है।\n\nकथन 2: Commonwealth के प्रमुख की भूमिका पूरी तरह से समारोहात्मक और सांकेतिक होती है, और उसके पास सदस्य राज्यों पर कोई विधायी, कार्यकारी, या बाध्यकारी अधिकार नहीं होता।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The position of Head of the Commonwealth is automatically inherited by the British monarch upon the death of the previous monarch, as it is inherently tied to the British Crown.",
+          "verdict": "गलत",
+          "reason": "यह पद वंशानुगत नहीं है — इसे Commonwealth Heads of Government द्वारा CHOGM में तय किया जाता है। 2018 के CHOGM ने आधिकारिक रूप से प्रिंस चार्ल्स (अब किंग चार्ल्स III) को उत्तराधिकारी के रूप में नामित किया — यह पहली बार था जब उत्तराधिकार सदस्य देशों की सहमति से स्पष्ट रूप से तय किया गया, जो यह पुष्टि करता है कि स्वचालित उत्तराधिकार लागू नहीं होता।"
+        },
+        {
+          "statement": "The Head of the Commonwealth performs a purely ceremonial and symbolic role with no legislative, executive, or binding authority over member states.",
+          "verdict": "सही है",
+          "reason": "यह भूमिका स्पष्ट रूप से सांकेतिक है — Commonwealth Day पर संदेश भेजना, CHOGM में भाग लेना, और संघ की एकता का प्रतिनिधित्व करना शामिल है, लेकिन सदस्य राज्यों की नीतियों को निर्देशित करने, कानून बनाने, या बाध्यकारी निर्णय लेने का कोई अधिकार नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि किंग चार्ल्स III क्वीन एलिजाबेथ II की मृत्यु के बाद Commonwealth के प्रमुख बने, वे मान लेते हैं कि यह स्वचालित उत्तराधिकार कथन 1 को सही साबित करता है, यह नहीं समझते कि 2018 के CHOGM पूर्व-नामांकन ने इसे सदस्य सहमति से तय किया।",
+      "elimination_logic": [
+        "कथन 1 जांचें: 2018 के CHOGM ने स्पष्ट रूप से प्रिंस चार्ल्स को उत्तराधिकारी के रूप में नामित किया — यह सदस्य निर्णय था, स्वचालित उत्तराधिकार नहीं। कथन 1 गलत है।",
+        "कथन 2 जांचें: यह भूमिका सांकेतिक और समारोहात्मक है — कोई कार्यकारी या विधायी शक्ति नहीं। कथन 2 सही है।",
+        "कथन 1 गलत + कथन 2 सही = विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "स्वचालित उत्तराधिकार का दावा सत्य प्रतीत होता है क्योंकि ब्रिटिश सम्राट हमेशा Commonwealth के प्रमुख रहे हैं। 2018 के CHOGM नामांकन यह विशेष तथ्य है जो दर्शाता है कि यह सहमति-आधारित नियुक्ति है, स्वचालित उत्तराधिकार नहीं। जो छात्र 2018 के CHOGM निर्णय के बारे में नहीं जानते, वे कथन 1 को सही चिह्नित करेंगे।",
+      "final_explanation": "Commonwealth के प्रमुख का पद सक्रिय सदस्य सहमति पर निर्भर करता है — यह ब्रिटिश सम्राट होने का स्वचालित गुण नहीं है।\n\n• कथन 1 — गलत: 2018 का CHOGM पहली बार था जब उत्तराधिकार औपचारिक रूप से सदस्य सरकारों द्वारा तय किया गया। इसने स्वचालित उत्तराधिकार की धारणा को तोड़ा। सैद्धांतिक रूप से, भविष्य में CHOGM गैर-ब्रिटिश प्रमुख चुन सकता है।\n• कथन 2 — सही: यह भूमिका पूरी तरह से समारोहात्मक है — सांकेतिक संदेश, CHOGM में भागीदारी, Commonwealth की एकता का प्रतिनिधित्व। कोई बाध्यकारी अधिकार नहीं।\n\nमूल्य संवर्धन:\n• क्वीन एलिजाबेथ II ने 1952 से सितंबर 2022 तक यह पद संभाला — 70 वर्ष।\n• किंग चार्ल्स III सितंबर 2022 में 2018 के CHOGM नामांकन के बाद Commonwealth के प्रमुख बने।\n• 2018 के निर्णय ने यह मिसाल कायम की कि यह भूमिका सैद्धांतिक रूप से भविष्य में ब्रिटिश राजशाही से अलग हो सकती है।"
+    }
+  },
+  {
+    "uuid": "c283ec5a-9e5a-4f52-bdf2-a9d61a888c27",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Secretariat: Functions, Structure, and Headquarters",
+        "Commonwealth and Human Rights: Enforcement Gap and Criticism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Commonwealth Secretariat functions and Secretary-General",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Commonwealth Secretariat, which of the following statements is/are NOT correct?\n\n1. The Commonwealth Secretariat was established in 1965 and is headquartered at Marlborough House, London, which was specifically constructed for the purpose of housing the Commonwealth's principal intergovernmental organ.\n2. Baroness Patricia Scotland became the first Secretary-General from Africa and the Caribbean when she assumed the role in 2016.\n3. The primary functions of the Commonwealth Secretariat include technical assistance to member governments, election monitoring, legal advisory services, and trade facilitation.\n\n(a) 1 only\n(b) 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Commonwealth Secretariat was established in 1965 and is headquartered at Marlborough House, London, which was specifically constructed for the purpose of housing the Commonwealth's principal intergovernmental organ.",
+          "verdict": "Incorrect",
+          "reason": "Marlborough House was not constructed for the Commonwealth — it is a historic royal residence that was gifted by the Crown to the Commonwealth in 1959. It was not built for this purpose."
+        },
+        {
+          "statement": "Baroness Patricia Scotland became the first Secretary-General from Africa and the Caribbean when she assumed the role in 2016.",
+          "verdict": "Incorrect",
+          "reason": "Patricia Scotland is described as the first African-Caribbean woman to hold the post — not the first from Africa and the Caribbean as separate regions. The framing conflates the African-Caribbean identity with being simply the first from Africa or first from the Caribbean, which is imprecise and potentially incorrect."
+        },
+        {
+          "statement": "The primary functions of the Commonwealth Secretariat include technical assistance to member governments, election monitoring, legal advisory services, and trade facilitation.",
+          "verdict": "Correct",
+          "reason": "These are accurately listed functions of the Secretariat — providing expertise and support to member governments across development, democratic governance, and trade domains."
+        }
+      ],
+      "strong_distractor": "d — Option (d) 'all three incorrect' is a strong distractor because Statement 2 uses a subtle factual reframing that sounds authoritative, making students doubt Statement 3's accuracy too.",
+      "elimination_logic": [
+        "Check Statement 1: Marlborough House was NOT constructed for the Commonwealth — it was a royal residence gifted by the Crown in 1959. Statement 1 is NOT correct.",
+        "Check Statement 2: Patricia Scotland is the first African-Caribbean woman to hold the post — the statement's framing ('first from Africa and the Caribbean') subtly misrepresents this. Statement 2 is NOT correct as phrased.",
+        "Check Statement 3: Technical assistance, election monitoring, legal advisory, trade facilitation — all correct Secretariat functions. Statement 3 IS correct.",
+        "The question asks which are NOT correct: Statements 1 and 2. This matches option (c) — 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 1's 'specifically constructed' claim is a plausible fabrication — major international organisations often have purpose-built headquarters (like the UN in New York), making this seem credible. Marlborough House's royal-residence origin and gift-by-Crown history are the specific facts needed to identify the error.",
+      "final_explanation": "The Commonwealth Secretariat's history and leadership carry specific testable details that reward precise preparation.\n\n• Statement 1 — Incorrect: Marlborough House is a historic royal residence dating to the 17th century — gifted by the Crown to the Commonwealth in 1959. It was not built for Commonwealth purposes.\n• Statement 2 — Incorrect as stated: Baroness Patricia Scotland is described as the first African-Caribbean woman to hold the Secretary-General post — not simply 'first from Africa and the Caribbean' as two separate categories.\n• Statement 3 — Correct: Technical assistance, election monitoring, trade facilitation, and legal advisory services accurately represent Secretariat functions.\n\nValue Addition:\n• The Secretariat also manages the CFTC (Commonwealth Fund for Technical Co-operation) programmes.\n• The Secretary-General serves a four-year renewable term and is selected by CHOGM consensus.\n• Marlborough House has served as the Secretariat's headquarters since 1965 when the Secretariat was established."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ सचिवालय के संदर्भ में, निम्नलिखित में से कौन-से कथन सही नहीं हैं?\n\n1. कॉमनवेल्थ सचिवालय की स्थापना 1965 में हुई थी और इसका मुख्यालय लंदन के मार्लबोरो हाउस में है, जिसे विशेष रूप से कॉमनवेल्थ के प्रमुख अंतर-सरकारी अंग के आवास के लिए बनाया गया था।\n2. बारोनेस पैट्रीशिया स्कॉटलैंड 2016 में सचिव-जनरल के पद पर नियुक्त होने पर अफ्रीका और कैरेबियन से पहली सचिव-जनरल बनीं।\n3. कॉमनवेल्थ सचिवालय के प्राथमिक कार्यों में सदस्य सरकारों को तकनीकी सहायता, चुनाव निगरानी, कानूनी सलाहकार सेवाएं, और व्यापार सुविधा शामिल हैं।\n\n(a) केवल 1\n(b) केवल 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कॉमनवेल्थ सचिवालय की स्थापना 1965 में हुई थी और इसका मुख्यालय लंदन के मार्लबोरो हाउस में है, जिसे विशेष रूप से कॉमनवेल्थ के प्रमुख अंतर-सरकारी अंग के आवास के लिए बनाया गया था।",
+          "verdict": "गलत",
+          "reason": "मार्लबोरो हाउस कॉमनवेल्थ के लिए नहीं बनाया गया था — यह एक ऐतिहासिक शाही निवास है जिसे 1959 में क्राउन द्वारा कॉमनवेल्थ को उपहार स्वरूप दिया गया था। इसे इस उद्देश्य के लिए निर्मित नहीं किया गया था।"
+        },
+        {
+          "statement": "बारोनेस पैट्रीशिया स्कॉटलैंड 2016 में सचिव-जनरल के पद पर नियुक्त होने पर अफ्रीका और कैरेबियन से पहली सचिव-जनरल बनीं।",
+          "verdict": "गलत",
+          "reason": "पैट्रीशिया स्कॉटलैंड को इस पद पर नियुक्त होने वाली पहली अफ्रीकी-कैरेबियाई महिला के रूप में वर्णित किया गया है — न कि अफ्रीका और कैरेबियन को अलग-अलग क्षेत्र के रूप में पहली। यह प्रस्तुति अफ्रीकी-कैरेबियाई पहचान को केवल अफ्रीका या कैरेबियन से पहली के रूप में गलत और संभावित रूप से असत्य रूप में प्रस्तुत करती है।"
+        },
+        {
+          "statement": "कॉमनवेल्थ सचिवालय के प्राथमिक कार्यों में सदस्य सरकारों को तकनीकी सहायता, चुनाव निगरानी, कानूनी सलाहकार सेवाएं, और व्यापार सुविधा शामिल हैं।",
+          "verdict": "सही",
+          "reason": "ये सचिवालय के सटीक सूचीबद्ध कार्य हैं — विकास, लोकतांत्रिक शासन, और व्यापार क्षेत्रों में सदस्य सरकारों को विशेषज्ञता और समर्थन प्रदान करना।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) 'तीनों गलत' एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 2 में एक सूक्ष्म तथ्यात्मक पुनः प्रस्तुति है जो प्रामाणिक लगती है, जिससे छात्र कथन 3 की सटीकता पर भी संदेह करते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: मार्लबोरो हाउस कॉमनवेल्थ के लिए नहीं बनाया गया था — यह 1959 में क्राउन द्वारा दिया गया एक शाही निवास था। कथन 1 सही नहीं है।",
+        "कथन 2 जांचें: पैट्रीशिया स्कॉटलैंड पहली अफ्रीकी-कैरेबियाई महिला हैं — कथन का प्रस्तुतीकरण ('अफ्रीका और कैरेबियन से पहली') सूक्ष्म रूप से गलत है। कथन 2 सही नहीं है।",
+        "कथन 3 जांचें: तकनीकी सहायता, चुनाव निगरानी, कानूनी सलाहकार, व्यापार सुविधा — ये सभी सचिवालय के सही कार्य हैं। कथन 3 सही है।",
+        "प्रश्न पूछता है कि कौन-से कथन सही नहीं हैं: कथन 1 और 2। यह विकल्प (c) — केवल 1 और 2 से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 का 'विशेष रूप से निर्मित' दावा एक संभावित मिथ्या तथ्य है — प्रमुख अंतरराष्ट्रीय संस्थानों के लिए अक्सर उद्देश्य-निर्मित मुख्यालय होते हैं (जैसे न्यूयॉर्क में संयुक्त राष्ट्र), जिससे यह विश्वसनीय लगता है। मार्लबोरो हाउस का शाही निवास होना और क्राउन द्वारा उपहार दिया जाना इस त्रुटि की पहचान के लिए आवश्यक तथ्य हैं।",
+      "final_explanation": "कॉमनवेल्थ सचिवालय का इतिहास और नेतृत्व विशिष्ट परीक्षण योग्य विवरण रखते हैं जो सटीक तैयारी को पुरस्कृत करते हैं।\n\n• कथन 1 — गलत: मार्लबोरो हाउस 17वीं सदी का ऐतिहासिक शाही निवास है — जिसे 1959 में क्राउन द्वारा कॉमनवेल्थ को उपहार में दिया गया। इसे कॉमनवेल्थ के उद्देश्यों के लिए नहीं बनाया गया था।\n• कथन 2 — कथन के अनुसार गलत: बारोनेस पैट्रीशिया स्कॉटलैंड को सचिव-जनरल पद पर नियुक्त होने वाली पहली अफ्रीकी-कैरेबियाई महिला के रूप में वर्णित किया गया है — न कि 'अफ्रीका और कैरेबियन से पहली' दो अलग श्रेणियों के रूप में।\n• कथन 3 — सही: तकनीकी सहायता, चुनाव निगरानी, व्यापार सुविधा, और कानूनी सलाहकार सेवाएं सचिवालय के कार्यों का सही प्रतिनिधित्व हैं।\n\nमूल्य संवर्धन:\n• सचिवालय CFTC (कॉमनवेल्थ फंड फॉर टेक्निकल को-ऑपरेशन) कार्यक्रमों का भी प्रबंधन करता है।\n• सचिव-जनरल का कार्यकाल चार वर्ष का होता है जिसे CHOGM सहमति से नवीनीकृत किया जा सकता है।\n• मार्लबोरो हाउस 1965 से सचिवालय का मुख्यालय रहा है जब सचिवालय की स्थापना हुई थी।"
+    }
+  },
+  {
+    "uuid": "210ae3cc-ef90-4615-8a6e-3287b7ba0eca",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth and the United Nations: Relationship and Voting Blocs",
+        "Commonwealth Small States: Special Provisions and Vulnerabilities"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Commonwealth Secretariat Observer Status at UNGA",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Commonwealth Secretariat, which serves as the principal intergovernmental organ of the 56-member Commonwealth of Nations, holds ________ at the United Nations General Assembly — enabling it to participate in deliberations but not to cast votes on resolutions.\n\n(a) Full member status\n(b) Observer Status\n(c) Associate member status\n(d) Non-governmental observer status",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students assume that an organisation with 56 member states and nearly 29% of UN membership would logically have full voting member status at the UNGA — not merely Observer Status.",
+      "elimination_logic": [
+        "Identify what is being described: the formal status of the Commonwealth Secretariat at the United Nations General Assembly.",
+        "Eliminate (a): Full member status at UNGA belongs to sovereign states — the Secretariat is an intergovernmental organisation, not a state. It cannot be a full UN member.",
+        "Eliminate (c): Associate member status does not exist for intergovernmental organisations at the UNGA in this form.",
+        "Eliminate (d): 'Non-governmental observer' describes NGO status — the Secretariat is an intergovernmental body and has a distinct Observer status category.",
+        "Confirm (b): The Commonwealth Secretariat holds Observer Status at the UN General Assembly — the standard status for intergovernmental organisations that are not UN specialised agencies."
+      ],
+      "upsc_trap_explanation": "The confusion between Commonwealth member states' collective presence in the UN (56 sovereign members with individual votes) and the Secretariat's own institutional status (Observer only) is the core trap. Students who conflate the organisation's member states' voting power with the Secretariat's own status will select option (a).",
+      "final_explanation": "Intergovernmental organisations typically hold Observer Status at the UN General Assembly — not full membership, which is reserved for sovereign states.\n\n• Option (a) — Incorrect: Full member status at UNGA is for sovereign states only — the Secretariat is an intergovernmental body.\n• Option (b) — Correct: Observer Status allows the Secretariat to participate in UNGA proceedings without voting rights — the standard arrangement for major intergovernmental organisations.\n• Option (c) — Incorrect: Associate member is not a standard UNGA status for intergovernmental organisations.\n• Option (d) — Incorrect: Non-governmental observer is a different category for civil society and NGOs — the Secretariat is an intergovernmental body.\n\nValue Addition:\n• Other Observer Status holders at UNGA include the African Union, the European Union, and the Organisation of Islamic Cooperation.\n• The Holy See and Palestine hold Permanent Observer State status — a distinct category from intergovernmental organisations.\n• Commonwealth coordination at UNFCCC and WTO is informal consultation, not structured bloc advocacy."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ सचिवालय, जो 56 सदस्यीय कॉमनवेल्थ ऑफ नेशंस का प्रमुख अंतरसरकारी अंग है, संयुक्त राष्ट्र महासभा में ________ रखता है — जिससे इसे विचार-विमर्श में भाग लेने की अनुमति मिलती है लेकिन प्रस्तावों पर मतदान करने का अधिकार नहीं होता।\n\n(a) पूर्ण सदस्यता\n(b) पर्यवेक्षक स्थिति\n(c) सहयोगी सदस्यता\n(d) गैर-सरकारी पर्यवेक्षक स्थिति",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि छात्र मान लेते हैं कि 56 सदस्य देशों और लगभग 29% संयुक्त राष्ट्र सदस्यता वाले संगठन के पास तर्कसंगत रूप से संयुक्त राष्ट्र महासभा में पूर्ण मतदान सदस्यता होनी चाहिए — केवल पर्यवेक्षक स्थिति नहीं।",
+      "elimination_logic": [
+        "यह पहचानें कि क्या वर्णित किया जा रहा है: संयुक्त राष्ट्र महासभा में कॉमनवेल्थ सचिवालय की औपचारिक स्थिति।",
+        "(a) को हटाएं: संयुक्त राष्ट्र महासभा में पूर्ण सदस्यता संप्रभु राज्यों के लिए होती है — सचिवालय एक अंतरसरकारी संगठन है, राज्य नहीं। यह पूर्ण संयुक्त राष्ट्र सदस्य नहीं हो सकता।",
+        "(c) को हटाएं: संयुक्त राष्ट्र महासभा में इस रूप में अंतरसरकारी संगठनों के लिए सहयोगी सदस्यता की स्थिति नहीं होती।",
+        "(d) को हटाएं: 'गैर-सरकारी पर्यवेक्षक' एनजीओ की स्थिति को दर्शाता है — सचिवालय एक अंतरसरकारी निकाय है और इसकी एक विशिष्ट पर्यवेक्षक स्थिति श्रेणी है।",
+        "(b) की पुष्टि करें: कॉमनवेल्थ सचिवालय संयुक्त राष्ट्र महासभा में पर्यवेक्षक स्थिति रखता है — यह उन अंतरसरकारी संगठनों के लिए मानक स्थिति है जो संयुक्त राष्ट्र के विशेष एजेंसियां नहीं हैं।"
+      ],
+      "upsc_trap_explanation": "कॉमनवेल्थ सदस्य राज्यों की संयुक्त राष्ट्र में सामूहिक उपस्थिति (56 संप्रभु सदस्य जिनके व्यक्तिगत वोट हैं) और सचिवालय की अपनी संस्थागत स्थिति (केवल पर्यवेक्षक) के बीच भ्रम मुख्य जाल है। जो छात्र संगठन के सदस्य राज्यों की मतदान शक्ति को सचिवालय की अपनी स्थिति के साथ मिलाते हैं, वे विकल्प (a) चुनेंगे।",
+      "final_explanation": "अंतरसरकारी संगठन आमतौर पर संयुक्त राष्ट्र महासभा में पर्यवेक्षक स्थिति रखते हैं — पूर्ण सदस्यता संप्रभु राज्यों के लिए आरक्षित होती है।\n\n• विकल्प (a) — गलत: संयुक्त राष्ट्र महासभा में पूर्ण सदस्यता केवल संप्रभु राज्यों के लिए है — सचिवालय एक अंतरसरकारी निकाय है।\n• विकल्प (b) — सही: पर्यवेक्षक स्थिति सचिवालय को संयुक्त राष्ट्र महासभा की कार्यवाही में भाग लेने की अनुमति देती है लेकिन मतदान अधिकार नहीं — प्रमुख अंतरसरकारी संगठनों के लिए मानक व्यवस्था।\n• विकल्प (c) — गलत: सहयोगी सदस्यता अंतरसरकारी संगठनों के लिए संयुक्त राष्ट्र महासभा की मानक स्थिति नहीं है।\n• विकल्प (d) — गलत: गैर-सरकारी पर्यवेक्षक नागरिक समाज और एनजीओ के लिए एक अलग श्रेणी है — सचिवालय एक अंतरसरकारी निकाय है।\n\nमूल्य संवर्धन:\n• संयुक्त राष्ट्र महासभा में अन्य पर्यवेक्षक स्थिति धारकों में अफ्रीकी संघ, यूरोपीय संघ, और इस्लामिक सहयोग संगठन शामिल हैं।\n• होली सी और फिलिस्तीन स्थायी पर्यवेक्षक राज्य की स्थिति रखते हैं — जो अंतरसरकारी संगठनों से अलग श्रेणी है।\n• संयुक्त राष्ट्र जलवायु परिवर्तन फ्रेमवर्क कन्वेंशन (UNFCCC) और विश्व व्यापार संगठन (WTO) में कॉमनवेल्थ समन्वय अनौपचारिक परामर्श है, संरचित ब्लॉक वकालत नहीं।"
+    }
+  },
+  {
+    "uuid": "8011c856-2aa4-47be-b8d9-6423a336a253",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Charter (2013): Nature, Provisions, and Limitations",
+        "Commonwealth and Human Rights: Enforcement Gap and Criticism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Commonwealth Charter 2013 nature — political document not constitution",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs correctly describes the Commonwealth Charter and its essential legal character?\n\n(a) Commonwealth Charter — Signed by Queen Elizabeth II on 11 March 2012; contains 16 core Commonwealth values\n(b) Commonwealth Charter — A legally binding treaty creating enforcement obligations on all Commonwealth member states\n(c) Commonwealth Charter — A non-binding political commitment signed on 11 March 2013, consolidating 16 core Commonwealth values from previous declarations\n(d) Commonwealth Charter — The constitution of the Commonwealth, conferring supranational authority over member states' domestic legislation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because 'signed by Queen Elizabeth II' combined with '16 core values' sounds complete and accurate — students who know the Charter was signed by the Queen on Commonwealth Day may not pause to check the date or confuse the Charter with a constitutional document.",
+      "elimination_logic": [
+        "Option (a) pairs Commonwealth Charter with 'signed on 11 March 2012' — the Charter was signed on 11 March 2013, not 2012. Temporal-swap error.",
+        "Option (b) pairs it with 'legally binding treaty creating enforcement obligations' — the Charter is explicitly non-binding. Incorrect.",
+        "Option (c) pairs Commonwealth Charter with 'non-binding political commitment signed on 11 March 2013, consolidating 16 core Commonwealth values' — factually accurate on all dimensions.",
+        "Option (d) pairs it with 'a constitution for the Commonwealth with supranational authority over members' — the Charter explicitly has no supranational authority. Incorrect."
+      ],
+      "upsc_trap_explanation": "Option (a)'s 2012 vs. 2013 year swap catches students who have studied the Charter but haven't memorised its exact signing year. Combined with the correct Queen-signed detail, it feels credibly accurate to a partially prepared student.",
+      "final_explanation": "The Commonwealth Charter (2013) is a consolidation document — bringing together the values from Singapore, Harare, and Millbrook into one place — but it is emphatically not a treaty or constitution.\n\n• Option (a) — Incorrect: Year error — the Charter was signed on 11 March 2013, not 2012.\n• Option (b) — Incorrect: The Charter is a non-binding political commitment, not a legally binding treaty.\n• Option (c) — Correct: Non-binding political commitment, signed 11 March 2013, consolidating 16 core values — all elements accurate.\n• Option (d) — Incorrect: The Commonwealth has no supranational authority — it is strictly intergovernmental, unlike EU institutions.\n\nValue Addition:\n• The 16 values include democracy, human rights, international peace, freedom of expression, separation of powers, and sustainable development.\n• EU treaties (like the Treaty of Lisbon) are the contrast case — binding, with supranational enforcement through the Court of Justice of the EU.\n• Commonwealth Day is always the second Monday of March — in 2013 this fell on 11 March."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म कॉमनवेल्थ चार्टर और उसके आवश्यक कानूनी स्वरूप का सही वर्णन करता है?\n\n(a) कॉमनवेल्थ चार्टर — 11 मार्च 2012 को क्वीन एलिजाबेथ द्वितीय द्वारा हस्ताक्षरित; 16 मूल कॉमनवेल्थ मूल्य शामिल\n(b) कॉमनवेल्थ चार्टर — एक कानूनी रूप से बाध्यकारी संधि जो सभी कॉमनवेल्थ सदस्य राज्यों पर प्रवर्तन दायित्व बनाती है\n(c) कॉमनवेल्थ चार्टर — 11 मार्च 2013 को हस्ताक्षरित गैर-बाध्यकारी राजनीतिक प्रतिबद्धता, जो पिछले घोषणापत्रों से 16 मूल कॉमनवेल्थ मूल्यों को समेकित करती है\n(d) कॉमनवेल्थ चार्टर — कॉमनवेल्थ का संविधान, जो सदस्य राज्यों के घरेलू कानूनों पर अधिसंप्रभु अधिकार प्रदान करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि 'क्वीन एलिजाबेथ द्वितीय द्वारा हस्ताक्षरित' और '16 मूलभूत मूल्य' का संयोजन पूर्ण और सटीक प्रतीत होता है — जो छात्र जानते हैं कि चार्टर कॉमनवेल्थ दिवस पर रानी द्वारा हस्ताक्षरित था, वे तारीख जांचने के लिए रुकते नहीं हैं या चार्टर को संवैधानिक दस्तावेज से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) कॉमनवेल्थ चार्टर को '11 मार्च 2012 को हस्ताक्षरित' के साथ जोड़ता है — चार्टर 11 मार्च 2013 को हस्ताक्षरित था, 2012 को नहीं। यह समय संबंधी त्रुटि है।",
+        "विकल्प (b) इसे 'सभी कॉमनवेल्थ सदस्य राज्यों पर प्रवर्तन दायित्व बनाने वाला कानूनी रूप से बाध्यकारी संधि' के साथ जोड़ता है — चार्टर स्पष्ट रूप से गैर-बाध्यकारी है। गलत।",
+        "विकल्प (c) कॉमनवेल्थ चार्टर को '11 मार्च 2013 को हस्ताक्षरित गैर-बाध्यकारी राजनीतिक प्रतिबद्धता, जो पिछले घोषणापत्रों से 16 मूल कॉमनवेल्थ मूल्यों को समेकित करती है' के साथ जोड़ता है — सभी पहलुओं में तथ्यात्मक रूप से सही।",
+        "विकल्प (d) इसे 'कॉमनवेल्थ का संविधान, जो सदस्य राज्यों के घरेलू कानूनों पर अधिसंप्रभु अधिकार प्रदान करता है' के साथ जोड़ता है — चार्टर में स्पष्ट रूप से कोई अधिसंप्रभु अधिकार नहीं है। गलत।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में 2012 और 2013 के वर्ष का अंतर उन छात्रों को भ्रमित करता है जिन्होंने चार्टर का अध्ययन किया है लेकिन इसके सटीक हस्ताक्षर वर्ष को याद नहीं रखा है। रानी द्वारा हस्ताक्षरित सही विवरण के साथ यह आंशिक रूप से तैयार छात्र के लिए विश्वसनीय लगता है।",
+      "final_explanation": "कॉमनवेल्थ चार्टर (2013) एक समेकन दस्तावेज है — जो सिंगापुर, हारारे, और मिलब्रुक के मूल्यों को एक स्थान पर लाता है — लेकिन यह स्पष्ट रूप से कोई संधि या संविधान नहीं है।\n\n• विकल्प (a) — गलत: वर्ष की त्रुटि — चार्टर 11 मार्च 2013 को हस्ताक्षरित था, 2012 को नहीं।\n• विकल्प (b) — गलत: चार्टर एक गैर-बाध्यकारी राजनीतिक प्रतिबद्धता है, कानूनी रूप से बाध्यकारी संधि नहीं।\n• विकल्प (c) — सही: गैर-बाध्यकारी राजनीतिक प्रतिबद्धता, 11 मार्च 2013 को हस्ताक्षरित, 16 मूल कॉमनवेल्थ मूल्यों का समेकन — सभी तत्व सही।\n• विकल्प (d) — गलत: कॉमनवेल्थ के पास कोई अधिसंप्रभु अधिकार नहीं है — यह पूरी तरह से अंतर-सरकारी है, यूरोपीय संघ की संस्थाओं के विपरीत।\n\nमूल्य संवर्धन:\n• 16 मूल्यों में लोकतंत्र, मानवाधिकार, अंतरराष्ट्रीय शांति, अभिव्यक्ति की स्वतंत्रता, शक्तियों का पृथक्करण, और सतत विकास शामिल हैं।\n• यूरोपीय संघ की संधियाँ (जैसे लिस्बन संधि) इसके विपरीत हैं — बाध्यकारी, और न्यायालय के माध्यम से अधिसंप्रभु प्रवर्तन।\n• कॉमनवेल्थ दिवस हमेशा मार्च के दूसरे सोमवार को होता है — 2013 में यह 11 मार्च था।"
+    }
+  },
+  {
+    "uuid": "1d6e01e1-77e4-4aea-95b4-ce809e9557cf",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Fund for Technical Co-operation (CFTC)",
+        "Commonwealth Secretariat: Functions, Structure, and Headquarters"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CFTC debt management — CS-DRMS South-South cooperation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Country Y, a developing Commonwealth member state, is facing challenges in recording and managing its external debt portfolio. Its finance ministry seeks technical expertise, training for officials, and an institutional framework for debt sustainability analysis — without taking on new loans or conditionality-based assistance. Which Commonwealth mechanism is most directly appropriate for Country Y's requirement?\n\n(a) Commonwealth Fund for Technical Co-operation (CFTC), through its Commonwealth Debt Recording and Management System (CS-DRMS)\n(b) World Bank Technical Assistance Programme for Commonwealth Member States\n(c) Commonwealth Business Forum's Private Sector Advisory Panel on Debt Management\n(d) Commonwealth Heads of Government Meeting (CHOGM) Working Group on Fiscal Sustainability",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because the World Bank also provides technical assistance and capacity building — students who know about World Bank debt management programmes may not distinguish between bilateral/multilateral bank assistance and the CFTC's specific intra-Commonwealth framework.",
+      "elimination_logic": [
+        "Identify what Country Y needs: technical assistance for debt recording and management — not a loan, not budget support, but expertise and training within a Commonwealth framework.",
+        "Eliminate (b): World Bank assistance is multilateral, loan-based, and involves conditionalities — it is not an intra-Commonwealth technical cooperation mechanism.",
+        "Eliminate (c): The Commonwealth Business Forum is a private sector engagement platform — not a technical assistance body for government debt management.",
+        "Eliminate (d): CHOGM is a political heads-of-government meeting — it does not provide direct technical assistance to finance ministries.",
+        "Confirm (a): The CFTC, through its CS-DRMS (Commonwealth Debt Recording and Management System) programme, is specifically designed to provide technical assistance, training, and debt management expertise to Commonwealth developing member states — exactly matching Country Y's requirement."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The CFTC is the appropriate mechanism for this scenario because it provides exactly the type of non-loan technical assistance and expertise that Country Y is seeking within the Commonwealth framework.\n\n• Option (a) — Correct: The CFTC's Commonwealth Debt Recording and Management System (CS-DRMS) provides debt management technical assistance — funded by voluntary member contributions, not loans.\n• Option (b) — Incorrect: World Bank assistance involves lending and conditionalities — it is multilateral, not intra-Commonwealth, and is loan-based rather than purely technical.\n• Option (c) — Incorrect: Commonwealth Business Forum is a private sector dialogue platform — not a government technical assistance mechanism.\n• Option (d) — Incorrect: CHOGM is a political summit for heads of government — it sets policy direction but does not directly deliver technical programmes to finance ministries.\n\nValue Addition:\n• CFTC is distinguished from multilateral development banks by being South-South and North-South cooperation within a single institutional family — not a lending institution.\n• CS-DRMS is used by numerous developing Commonwealth members for debt portfolio management and sustainability analysis.\n• CFTC funding is voluntary — reflecting the Commonwealth's non-mandatory financial architecture."
+    },
+    "hi": {
+      "display_text": "देश Y, एक विकासशील कॉमनवेल्थ सदस्य राज्य, अपने बाहरी ऋण पोर्टफोलियो को रिकॉर्ड करने और प्रबंधित करने में चुनौतियों का सामना कर रहा है। इसका वित्त मंत्रालय तकनीकी विशेषज्ञता, अधिकारियों के लिए प्रशिक्षण, और ऋण स्थिरता विश्लेषण के लिए एक संस्थागत ढांचा चाहता है — बिना नए ऋण या शर्त-आधारित सहायता लिए। देश Y की आवश्यकता के लिए कौन सा कॉमनवेल्थ तंत्र सबसे उपयुक्त है?\n\n(a) कॉमनवेल्थ फंड फॉर टेक्निकल को-ऑपरेशन (CFTC), अपने कॉमनवेल्थ डेट रिकॉर्डिंग एंड मैनेजमेंट सिस्टम (CS-DRMS) के माध्यम से\n(b) कॉमनवेल्थ सदस्य राज्यों के लिए विश्व बैंक तकनीकी सहायता कार्यक्रम\n(c) कॉमनवेल्थ बिजनेस फोरम का निजी क्षेत्र सलाहकार पैनल ऑन डेट मैनेजमेंट\n(d) कॉमनवेल्थ हेड्स ऑफ गवर्नमेंट मीटिंग (CHOGM) का वित्तीय स्थिरता पर कार्य समूह",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि विश्व बैंक भी तकनीकी सहायता और क्षमता निर्माण प्रदान करता है — जो छात्र विश्व बैंक के ऋण प्रबंधन कार्यक्रमों को जानते हैं वे द्विपक्षीय/बहुपक्षीय बैंक सहायता और CFTC के विशिष्ट अंतर-कॉमनवेल्थ ढांचे के बीच अंतर नहीं कर पाएंगे।",
+      "elimination_logic": [
+        "देश Y की आवश्यकता क्या है यह पहचानें: ऋण रिकॉर्डिंग और प्रबंधन के लिए तकनीकी सहायता — न कि ऋण, न बजट समर्थन, बल्कि कॉमनवेल्थ ढांचे के भीतर विशेषज्ञता और प्रशिक्षण।",
+        "(b) को हटाएं: विश्व बैंक सहायता बहुपक्षीय, ऋण-आधारित और शर्तों के साथ होती है — यह अंतर-कोमनवेल्थ तकनीकी सहयोग तंत्र नहीं है।",
+        "(c) को हटाएं: कॉमनवेल्थ बिजनेस फोरम एक निजी क्षेत्र की भागीदारी मंच है — सरकार के ऋण प्रबंधन के लिए तकनीकी सहायता निकाय नहीं है।",
+        "(d) को हटाएं: CHOGM एक राजनीतिक प्रमुखों की बैठक है — यह वित्त मंत्रालयों को प्रत्यक्ष तकनीकी सहायता प्रदान नहीं करता।",
+        "(a) की पुष्टि करें: CFTC, अपने CS-DRMS (कॉमनवेल्थ डेट रिकॉर्डिंग एंड मैनेजमेंट सिस्टम) कार्यक्रम के माध्यम से, विशेष रूप से कॉमनवेल्थ के विकासशील सदस्य राज्यों को तकनीकी सहायता, प्रशिक्षण और ऋण प्रबंधन विशेषज्ञता प्रदान करने के लिए डिज़ाइन किया गया है — जो देश Y की आवश्यकता से पूरी तरह मेल खाता है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "यह परिदृश्य के लिए उपयुक्त तंत्र CFTC है क्योंकि यह देश Y की कॉमनवेल्थ ढांचे के भीतर गैर-ऋण तकनीकी सहायता और विशेषज्ञता प्रदान करता है।\n\n• विकल्प (a) — सही: CFTC का कॉमनवेल्थ डेट रिकॉर्डिंग एंड मैनेजमेंट सिस्टम (CS-DRMS) ऋण प्रबंधन तकनीकी सहायता प्रदान करता है — जो सदस्य देशों के स्वैच्छिक योगदानों से वित्तपोषित है, ऋण नहीं।\n• विकल्प (b) — गलत: विश्व बैंक सहायता ऋण और शर्तों के साथ होती है — यह बहुपक्षीय है, अंतर-कोमनवेल्थ नहीं, और केवल तकनीकी नहीं बल्कि ऋण-आधारित है।\n• विकल्प (c) — गलत: कॉमनवेल्थ बिजनेस फोरम एक निजी क्षेत्र संवाद मंच है — सरकार की तकनीकी सहायता तंत्र नहीं।\n• विकल्प (d) — गलत: CHOGM सरकार प्रमुखों की राजनीतिक शिखर बैठक है — यह नीति निर्धारण करता है लेकिन वित्त मंत्रालयों को प्रत्यक्ष तकनीकी कार्यक्रम प्रदान नहीं करता।\n\nमूल्य संवर्धन:\n• CFTC को बहुपक्षीय विकास बैंकों से अलग करता है कि यह एकल संस्थागत परिवार के भीतर दक्षिण-दक्षिण और उत्तर-दक्षिण सहयोग है — यह ऋण देने वाला संस्थान नहीं है।\n• CS-DRMS का उपयोग कई विकासशील कॉमनवेल्थ सदस्य देशों द्वारा ऋण पोर्टफोलियो प्रबंधन और स्थिरता विश्लेषण के लिए किया जाता है।\n• CFTC का वित्तपोषण स्वैच्छिक है — जो कॉमनवेल्थ की गैर-आवश्यक वित्तीय संरचना को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "5d43ab84-4bbf-4c08-aeb1-1e6e5fb5785e",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Mozambique and Rwanda: Non-British-Colonial Members — Precedent and Implications",
+        "Membership Criteria, Suspension, and Expulsion"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Rwanda admission 2009 — Francophonie realignment not formal criteria change",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Rwanda was admitted to the Commonwealth in 2009 despite having no historical ties to the British Empire, being a former Belgian and German colonial territory.\n\nReason (R): The Commonwealth's membership criteria were not formally amended by any treaty or constitutional document to accommodate Rwanda's admission — the decision was taken by Commonwealth Heads of Government by consensus.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Rwanda was admitted to the Commonwealth in 2009 despite being a former Belgian/German colony with no historical ties to the British Empire.",
+        "Step 2: Is Reason (R) correct? — Yes. The Commonwealth's membership criteria were not formally amended by any treaty or constitutional document — the decision was taken by CHOGM by consensus as an exception.",
+        "Step 3: Does R causally explain A? — Partially, but not fully. R correctly states no formal criteria amendment occurred, which is relevant context. However, the more complete causal explanation for Rwanda's admission is President Kagame's deliberate geopolitical realignment away from Francophonie toward Commonwealth influence — not merely the absence of a formal criteria change. R describes what did NOT happen rather than what did cause the admission.",
+        "A correct + R correct + R does NOT fully/causally explain A (it describes an absence rather than the positive cause) → answer is (b)."
+      ],
+      "upsc_trap_explanation": "R describes the absence of a formal criteria barrier (no amendment was made) and presents this as the explanation for Rwanda's admission. This reverses causation — the absence of a blocking rule is not the same as the positive cause. Students who see 'no formal amendment' as explaining admission confuse enabling conditions with causal drivers.",
+      "final_explanation": "Rwanda's 2009 admission to the Commonwealth is the most striking example of the organisation's evolution beyond its British colonial origins. President Paul Kagame strategically repositioned Rwanda toward Commonwealth membership as part of a deliberate shift away from Francophone influence — adding English as an official language and pivoting economically toward East African Community partners.\n\n• Assertion (A): Correct. Rwanda joined the Commonwealth in 2009 — the second non-British-colonial member after Mozambique (1995).\n• Reason (R): Correct. No formal amendment to membership criteria was made — the decision was taken by CHOGM consensus, confirming the flexibility of the consensus-based admissions process.\n• Causal link: R explains what procedurally enabled the admission (no formal barrier existed) but does not explain why Rwanda sought membership. The positive cause was Rwanda's deliberate Francophonie realignment under Kagame — R addresses enabling conditions, not causation.\n\nValue Addition:\n• Rwanda adopted English as an official language in 2009 — the same year it joined the Commonwealth.\n• Rwanda hosted CHOGM 2022 — a significant diplomatic milestone for a non-British-colonial member.\n• The admission of Mozambique and Rwanda signals a potential future where any country sharing Commonwealth values could apply, regardless of colonial history."
+    },
+    "hi": {
+      "display_text": "कथन (A): रवांडा को 2009 में राष्ट्रमंडल में शामिल किया गया था जबकि उसका ब्रिटिश साम्राज्य से कोई ऐतिहासिक संबंध नहीं था, वह पूर्व बेल्जियम और जर्मन उपनिवेश था।\n\nकारण (R): राष्ट्रमंडल के सदस्यता मानदंडों में रवांडा की सदस्यता के लिए किसी भी संधि या संवैधानिक दस्तावेज द्वारा औपचारिक संशोधन नहीं किया गया था — यह निर्णय राष्ट्रमंडल के सरकार प्रमुखों द्वारा सर्वसम्मति से लिया गया था।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। रवांडा को 2009 में राष्ट्रमंडल में शामिल किया गया था जबकि वह बेल्जियम/जर्मन उपनिवेश था और ब्रिटिश साम्राज्य से कोई ऐतिहासिक संबंध नहीं था।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। राष्ट्रमंडल के सदस्यता मानदंडों में किसी भी संधि या संवैधानिक दस्तावेज द्वारा औपचारिक संशोधन नहीं किया गया था — यह निर्णय CHOGM द्वारा सर्वसम्मति से लिया गया था जो एक अपवाद था।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — आंशिक रूप से, लेकिन पूरी तरह नहीं। R सही रूप से बताता है कि कोई औपचारिक मानदंड संशोधन नहीं हुआ, जो प्रासंगिक संदर्भ है। हालांकि, रवांडा की सदस्यता का अधिक पूर्ण कारण राष्ट्रपति कगामे का फ्रैंकोफोनी से राष्ट्रमंडल प्रभाव की ओर जानबूझकर भू-राजनीतिक पुनर्संरेखण था — न कि केवल औपचारिक मानदंड परिवर्तन का अभाव। R यह बताता है कि क्या नहीं हुआ, न कि क्या हुआ।",
+        "A सही + R सही + R पूरी तरह/कारणात्मक रूप से A को नहीं समझाता (यह अनुपस्थिति बताता है न कि सकारात्मक कारण) → उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "R औपचारिक मानदंड बाधा की अनुपस्थिति (कोई संशोधन नहीं हुआ) को बताता है और इसे रवांडा की सदस्यता का कारण बताता है। यह कारण और प्रभाव को उलट देता है — बाधा की अनुपस्थिति सकारात्मक कारण के समान नहीं है। जो छात्र 'कोई औपचारिक संशोधन नहीं' को सदस्यता का कारण समझते हैं, वे सक्षम करने वाली स्थितियों को कारणात्मक प्रेरकों से भ्रमित करते हैं।",
+      "final_explanation": "रवांडा की 2009 में राष्ट्रमंडल में सदस्यता संगठन के ब्रिटिश उपनिवेशीय मूल से परे विकास का सबसे उल्लेखनीय उदाहरण है। राष्ट्रपति पॉल कगामे ने फ्रैंकोफोन प्रभाव से दूर राष्ट्रमंडल सदस्यता की ओर रणनीतिक रूप से रवांडा को पुनर्स्थापित किया — अंग्रेजी को आधिकारिक भाषा के रूप में जोड़ा और आर्थिक रूप से पूर्वी अफ्रीकी समुदाय के साझेदारों की ओर झुका।\n\n• कथन (A): सही। रवांडा 2009 में राष्ट्रमंडल में शामिल हुआ — मोजाम्बिक (1995) के बाद दूसरा गैर-ब्रिटिश उपनिवेशीय सदस्य।\n• कारण (R): सही। सदस्यता मानदंडों में कोई औपचारिक संशोधन नहीं किया गया — निर्णय CHOGM की सर्वसम्मति से लिया गया, जो सर्वसम्मति आधारित प्रवेश प्रक्रिया की लचीलापन को दर्शाता है।\n• कारणात्मक संबंध: R बताता है कि प्रक्रिया में क्या सक्षम किया (कोई औपचारिक बाधा नहीं थी) लेकिन यह नहीं बताता कि रवांडा ने सदस्यता क्यों चाही। सकारात्मक कारण कगामे के तहत फ्रैंकोफोनी से जानबूझकर पुनर्संरेखण था — R सक्षम करने वाली स्थितियों को बताता है, कारण को नहीं।\n\nमूल्य संवर्धन:\n• रवांडा ने 2009 में अंग्रेजी को आधिकारिक भाषा के रूप में अपनाया — उसी वर्ष जब वह राष्ट्रमंडल में शामिल हुआ।\n• रवांडा ने 2022 में CHOGM की मेजबानी की — एक गैर-ब्रिटिश उपनिवेशीय सदस्य के लिए महत्वपूर्ण कूटनीतिक मील का पत्थर।\n• मोजाम्बिक और रवांडा की सदस्यता संकेत देती है कि भविष्य में कोई भी देश जो राष्ट्रमंडल के मूल्यों को साझा करता है, उपनिवेशीय इतिहास की परवाह किए बिना आवेदन कर सकता है।"
+    }
+  },
+  {
+    "uuid": "ccda7e35-aa61-404f-ad33-904ada87c0b6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "India and the Commonwealth: Strategic and Economic Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "India CHOGM non-attendance and Commonwealth strategic ambivalence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to India's membership and engagement with the Commonwealth of Nations, consider the following statements:\n\n1. India is the largest democracy and one of the two largest economies within the Commonwealth of Nations, making it a pivotal member in terms of economic weight.\n2. India skipped the 2011 CHOGM in Perth and the 2013 CHOGM in Colombo, with the 2013 absence specifically linked to concerns over Sri Lanka's human rights record and treatment of Tamil civilians during the civil war.\n3. India joined the Commonwealth in 1949 under the London Declaration specifically to gain trade preferences unavailable to non-member developing countries at the time.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India is the largest democracy and one of the two largest economies within the Commonwealth of Nations, making it a pivotal member in terms of economic weight.",
+          "verdict": "Correct",
+          "reason": "India is correctly identified as the largest democracy within the Commonwealth and, as of recent years, one of the two largest economies — the other being the United Kingdom. India's economic significance within the grouping is well-established."
+        },
+        {
+          "statement": "India skipped the 2011 CHOGM in Perth and the 2013 CHOGM in Colombo, with the 2013 absence specifically linked to concerns over Sri Lanka's human rights record and treatment of Tamil civilians during the civil war.",
+          "verdict": "Correct",
+          "reason": "India's absence from the 2013 Colombo CHOGM was publicly attributed to concerns about Sri Lanka's human rights record following the end of the civil war — particularly the treatment of Tamil civilians. Domestic political pressure from Tamil Nadu-based parties also played a role."
+        },
+        {
+          "statement": "India joined the Commonwealth in 1949 under the London Declaration specifically to gain trade preferences unavailable to non-member developing countries at the time.",
+          "verdict": "Incorrect",
+          "reason": "India joined the Commonwealth in 1949 primarily to maintain strategic, diplomatic, and institutional relationships while transitioning to a republic — not for trade preferences. At the time, the GATT framework (not Commonwealth preferences) governed most trade. The statement fabricates a trade motivation not supported by historical record."
+        }
+      ],
+      "strong_distractor": "d — Option (d) '1, 2 and 3' is a strong distractor because Statements 1 and 2 are clearly correct, and Statement 3 sounds like a plausible economic rationale for India's 1949 membership decision.",
+      "elimination_logic": [
+        "Verify Statement 3: India's 1949 Commonwealth membership was driven by Nehru's diplomatic vision of retaining institutional links while becoming a republic — not by trade preference motivations. Statement 3 is incorrect.",
+        "Verify Statement 1: India's economic and democratic status within the Commonwealth — correct.",
+        "Verify Statement 2: The 2013 Colombo CHOGM absence over Sri Lanka human rights — correct.",
+        "Since Statements 1 and 2 are correct and Statement 3 is incorrect, the answer is (c) — 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 constructs a plausible but historically unfounded economic rationale for India's 1949 membership. The actual driver was Nehru's diplomatic pragmatism — maintaining Commonwealth membership despite becoming a republic. Trade preference motivations are a post-hoc economic reading, not the historical cause.",
+      "final_explanation": "India's relationship with the Commonwealth is characterised by strategic ambivalence — engaged but selective, influential but not always present.\n\n• Statement 1 — Correct: India is the Commonwealth's largest democracy and among its two largest economies alongside the UK.\n• Statement 2 — Correct: The 2013 Colombo CHOGM absence was explicitly linked to Sri Lanka's human rights record — a notable example of India using CHOGM non-attendance as a diplomatic signal.\n• Statement 3 — Incorrect: India's 1949 membership decision was driven by Nehru's diplomatic vision of maintaining institutional connections during the republic transition — not trade preferences. GATT, not Commonwealth preference systems, governed post-war trade.\n\nValue Addition:\n• India uses the Commonwealth as a soft power platform for African and Caribbean diaspora engagement and legal cooperation.\n• India's CHOGM attendance record reflects domestic political pressures — particularly from Tamil Nadu parties on Sri Lanka-related issues.\n• The London Declaration's India-specific origin makes India's membership historically unique within the Commonwealth framework."
+    },
+    "hi": {
+      "display_text": "भारत की कॉमनवेल्थ ऑफ नेशंस सदस्यता और सहभागिता के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. भारत कॉमनवेल्थ ऑफ नेशंस का सबसे बड़ा लोकतंत्र है और दो सबसे बड़ी अर्थव्यवस्थाओं में से एक है, जो इसे आर्थिक दृष्टि से एक महत्वपूर्ण सदस्य बनाता है।\n2. भारत ने 2011 का पर्थ CHOGM और 2013 का कोलंबो CHOGM छोड़ दिया, जिसमें 2013 की अनुपस्थिति विशेष रूप से गृहयुद्ध के दौरान श्रीलंका के मानवाधिकार रिकॉर्ड और तमिल नागरिकों के साथ व्यवहार को लेकर चिंताओं से जुड़ी थी।\n3. भारत ने 1949 में लंदन घोषणा के तहत कॉमनवेल्थ में शामिल होकर विशेष रूप से उस समय गैर-सदस्य विकासशील देशों के लिए उपलब्ध नहीं व्यापार प्राथमिकताएं प्राप्त कीं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India is the largest democracy and one of the two largest economies within the Commonwealth of Nations, making it a pivotal member in terms of economic weight.",
+          "verdict": "सही है",
+          "reason": "भारत को कॉमनवेल्थ के भीतर सबसे बड़ा लोकतंत्र और हाल के वर्षों में दो सबसे बड़ी अर्थव्यवस्थाओं में से एक के रूप में सही रूप से पहचाना गया है — दूसरी अर्थव्यवस्था यूनाइटेड किंगडम है। समूह के भीतर भारत का आर्थिक महत्व अच्छी तरह से स्थापित है।"
+        },
+        {
+          "statement": "India skipped the 2011 CHOGM in Perth and the 2013 CHOGM in Colombo, with the 2013 absence specifically linked to concerns over Sri Lanka's human rights record and treatment of Tamil civilians during the civil war.",
+          "verdict": "सही है",
+          "reason": "2013 के कोलंबो CHOGM में भारत की अनुपस्थिति को विशेष रूप से श्रीलंका के मानवाधिकार रिकॉर्ड और गृहयुद्ध के दौरान तमिल नागरिकों के साथ व्यवहार को लेकर चिंताओं से जोड़ा गया था। तमिलनाडु आधारित राजनीतिक दलों से घरेलू राजनीतिक दबाव ने भी भूमिका निभाई।"
+        },
+        {
+          "statement": "India joined the Commonwealth in 1949 under the London Declaration specifically to gain trade preferences unavailable to non-member developing countries at the time.",
+          "verdict": "गलत है",
+          "reason": "भारत ने 1949 में कॉमनवेल्थ में शामिल होना मुख्य रूप से एक गणराज्य बनने के दौरान रणनीतिक, कूटनीतिक और संस्थागत संबंध बनाए रखने के लिए किया था — न कि व्यापार प्राथमिकताओं के लिए। उस समय अधिकांश व्यापार GATT ढांचे द्वारा नियंत्रित था, न कि कॉमनवेल्थ प्राथमिकताओं द्वारा। यह कथन व्यापार प्रेरणा का एक काल्पनिक कारण प्रस्तुत करता है जो ऐतिहासिक रिकॉर्ड द्वारा समर्थित नहीं है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) '1, 2 और 3' एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 2 स्पष्ट रूप से सही हैं, और कथन 3 भारत के 1949 सदस्यता निर्णय के लिए एक संभावित आर्थिक तर्क जैसा लगता है।",
+      "elimination_logic": [
+        "कथन 3 की पुष्टि करें: भारत की 1949 की कॉमनवेल्थ सदस्यता नेहरू के कूटनीतिक दृष्टिकोण द्वारा प्रेरित थी, जिसमें गणराज्य बनने के दौरान संस्थागत संबंध बनाए रखना था — न कि व्यापार प्राथमिकताओं के कारण। इसलिए कथन 3 गलत है।",
+        "कथन 1 की पुष्टि करें: भारत की कॉमनवेल्थ में आर्थिक और लोकतांत्रिक स्थिति — सही है।",
+        "कथन 2 की पुष्टि करें: 2013 के कोलंबो CHOGM में श्रीलंका के मानवाधिकार मुद्दों के कारण भारत की अनुपस्थिति — सही है।",
+        "चूंकि कथन 1 और 2 सही हैं और कथन 3 गलत है, अतः उत्तर (c) — केवल 1 और 2 है।"
+      ],
+      "upsc_trap_explanation": "कथन 3 एक संभावित लेकिन ऐतिहासिक रूप से असत्य आर्थिक तर्क प्रस्तुत करता है कि भारत ने 1949 में सदस्यता इसलिए ली। वास्तविक प्रेरणा नेहरू की कूटनीतिक व्यावहारिकता थी — गणराज्य बनने के बावजूद कॉमनवेल्थ सदस्यता बनाए रखना। व्यापार प्राथमिकता कारण बाद में जोड़ा गया आर्थिक व्याख्या है, न कि ऐतिहासिक कारण।",
+      "final_explanation": "भारत का कॉमनवेल्थ के साथ संबंध रणनीतिक द्विविधा से परिभाषित है — संलग्न लेकिन चयनात्मक, प्रभावशाली लेकिन हमेशा उपस्थित नहीं।\n\n• कथन 1 — सही: भारत कॉमनवेल्थ का सबसे बड़ा लोकतंत्र है और यूके के साथ दो सबसे बड़ी अर्थव्यवस्थाओं में से एक है।\n• कथन 2 — सही: 2013 के कोलंबो CHOGM में अनुपस्थिति स्पष्ट रूप से श्रीलंका के मानवाधिकार रिकॉर्ड से जुड़ी थी — यह भारत द्वारा CHOGM अनुपस्थिति को कूटनीतिक संकेत के रूप में उपयोग करने का एक उल्लेखनीय उदाहरण है।\n• कथन 3 — गलत: भारत का 1949 सदस्यता निर्णय नेहरू के कूटनीतिक दृष्टिकोण द्वारा प्रेरित था, जिसमें गणराज्य संक्रमण के दौरान संस्थागत संबंध बनाए रखना था — न कि व्यापार प्राथमिकताएं। युद्धोत्तर व्यापार GATT द्वारा नियंत्रित था, न कि कॉमनवेल्थ प्राथमिकता प्रणाली द्वारा।\n\nमूल्य संवर्धन:\n• भारत कॉमनवेल्थ का उपयोग अफ्रीकी और कैरिबियाई प्रवासी समुदायों के साथ सॉफ्ट पावर मंच के रूप में करता है और कानूनी सहयोग करता है।\n• भारत का CHOGM उपस्थिति रिकॉर्ड घरेलू राजनीतिक दबावों को दर्शाता है — विशेष रूप से तमिलनाडु के दलों से श्रीलंका संबंधित मुद्दों पर।\n• लंदन घोषणा की भारत-विशिष्ट उत्पत्ति भारत की सदस्यता को कॉमनवेल्थ ढांचे में ऐतिहासिक रूप से अनूठा बनाती है।"
+    }
+  },
+  {
+    "uuid": "b855c16a-575f-42d0-bcbc-ec7a0eb576f5",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth Heads of Government Meeting (CHOGM): Structure and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "quantitative-pairing",
+      "trap_type": "scope-extension",
+      "concept_anchor": "CHOGM structure frequency non-binding consensus decisions",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about the Commonwealth Heads of Government Meeting (CHOGM):",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "CHOGM is held annually, with each session hosted by a different Commonwealth member state on a rotational basis."
+          ],
+          [
+            "2",
+            "CHOGM decisions are reached by consensus rather than formal voting, making its outcomes non-binding on member states."
+          ],
+          [
+            "3",
+            "The Commonwealth Finance Ministers Meeting and Commonwealth Business Forum are separate engagement tracks that occur alongside but distinct from CHOGM."
+          ],
+          [
+            "4",
+            "CHOGM can expel a member state by a two-thirds majority vote if CMAG recommends such action after repeated democratic norm violations."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "CHOGM is held annually, with each session hosted by a different Commonwealth member state on a rotational basis.",
+          "verdict": "Incorrect",
+          "reason": "CHOGM is held every two years (biennially), not annually. The annual frequency claim is incorrect — this is a frequent factual error in preparation."
+        },
+        {
+          "statement": "CHOGM decisions are reached by consensus rather than formal voting, making its outcomes non-binding on member states.",
+          "verdict": "Correct",
+          "reason": "Unlike the UN General Assembly which uses voting, CHOGM operates entirely on consensus — no formal votes are taken. This makes all CHOGM declarations and communiqués politically significant but legally non-binding."
+        },
+        {
+          "statement": "The Commonwealth Finance Ministers Meeting and Commonwealth Business Forum are separate engagement tracks that occur alongside but distinct from CHOGM.",
+          "verdict": "Correct",
+          "reason": "CHOGM has multiple parallel engagement tracks — the Finance Ministers Meeting for economic policy coordination and the Business Forum for private sector engagement — but these are separate processes, not part of the CHOGM plenary itself."
+        },
+        {
+          "statement": "CHOGM can expel a member state by a two-thirds majority vote if CMAG recommends such action after repeated democratic norm violations.",
+          "verdict": "Incorrect",
+          "reason": "CHOGM does not use voting (it operates by consensus) and has no formal expulsion mechanism. CMAG can only recommend suspension — formal expulsion has never occurred and no such two-thirds majority provision exists."
+        }
+      ],
+      "strong_distractor": "c — Option (c) 'Only three' is a strong distractor because students who correctly identify Statements 2 and 3 as correct may also accept Statement 3 without noting Statement 4's false expulsion mechanism, and some may not catch the annual vs. biennial error in Statement 1.",
+      "elimination_logic": [
+        "Check Statement 1: CHOGM is biennial (every two years), not annual. Statement 1 is incorrect.",
+        "Check Statement 2: Consensus-based, non-binding outcomes — correct. Statement 2 is correct.",
+        "Check Statement 3: Finance Ministers Meeting and Business Forum as separate parallel tracks — correct. Statement 3 is correct.",
+        "Check Statement 4: No voting mechanism and no expulsion provision exists at CHOGM — Statement 4 is incorrect.",
+        "Two statements (2 and 3) are correct — answer is (b) Only two."
+      ],
+      "upsc_trap_explanation": "Statement 4's fabricated expulsion mechanism exploits students' assumption that CHOGM must have a voting mechanism for serious violations. The Commonwealth's complete absence of formal voting and expulsion powers is precisely what makes it weaker than organisations like the EU or CoE.",
+      "final_explanation": "CHOGM's structure and decision-making process reflect the Commonwealth's intergovernmental, non-binding character.\n\n| Statement | Verdict |\n|---|---|\n| CHOGM held annually | Incorrect — biennial (every 2 years) |\n| Consensus-based, non-binding outcomes | Correct |\n| Finance Ministers Meeting as separate track | Correct |\n| Two-thirds majority expulsion mechanism | Incorrect — no such mechanism exists |\n\nOnly Statements 2 and 3 are correct.\n\nValue Addition:\n• CHOGM 2022 was held in Kigali, Rwanda — significant as hosted by a non-British-colonial member.\n• The Commonwealth Business Forum, Commonwealth Youth Forum, and People's Forum all run parallel to CHOGM.\n• The absence of a formal expulsion mechanism makes CMAG suspension the maximum disciplinary tool — a structural weakness frequently criticised."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "राष्ट्रमंडल प्रमुखों की सरकार बैठक (CHOGM) के संबंध में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "CHOGM वार्षिक आयोजित होता है, प्रत्येक सत्र को एक अलग राष्ट्रमंडल सदस्य राज्य द्वारा घुमावदार आधार पर होस्ट किया जाता है।"
+          ],
+          [
+            "2",
+            "CHOGM के निर्णय सहमति से लिए जाते हैं, औपचारिक मतदान से नहीं, जिससे इसके परिणाम सदस्य राज्यों पर बाध्यकारी नहीं होते।"
+          ],
+          [
+            "3",
+            "राष्ट्रमंडल वित्त मंत्रियों की बैठक और राष्ट्रमंडल बिजनेस फोरम CHOGM के साथ-साथ लेकिन उससे अलग अलग सत्र हैं।"
+          ],
+          [
+            "4",
+            "यदि CMAG बार-बार लोकतांत्रिक मानदंडों के उल्लंघन के बाद ऐसा सुझाव देता है, तो CHOGM दो-तिहाई बहुमत से किसी सदस्य राज्य को निष्कासित कर सकता है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "CHOGM is held annually, with each session hosted by a different Commonwealth member state on a rotational basis.",
+          "verdict": "गलत",
+          "reason": "CHOGM हर दो साल में (द्विवार्षिक) आयोजित होता है, वार्षिक नहीं। वार्षिक आवृत्ति का दावा गलत है — यह तैयारी में एक सामान्य तथ्यात्मक त्रुटि है।"
+        },
+        {
+          "statement": "CHOGM decisions are reached by consensus rather than formal voting, making its outcomes non-binding on member states.",
+          "verdict": "सही है",
+          "reason": "संयुक्त राष्ट्र महासभा के विपरीत जो मतदान का उपयोग करती है, CHOGM पूरी तरह से सहमति पर आधारित है — कोई औपचारिक मतदान नहीं होता। इससे CHOGM के सभी घोषणापत्र और संवाद राजनीतिक रूप से महत्वपूर्ण होते हैं लेकिन कानूनी रूप से बाध्यकारी नहीं।"
+        },
+        {
+          "statement": "The Commonwealth Finance Ministers Meeting and Commonwealth Business Forum are separate engagement tracks that occur alongside but distinct from CHOGM.",
+          "verdict": "सही है",
+          "reason": "CHOGM के कई समानांतर सत्र होते हैं — आर्थिक नीति समन्वय के लिए वित्त मंत्रियों की बैठक और निजी क्षेत्र की भागीदारी के लिए बिजनेस फोरम — लेकिन ये अलग प्रक्रियाएं हैं, CHOGM के पूर्ण सत्र का हिस्सा नहीं।"
+        },
+        {
+          "statement": "CHOGM can expel a member state by a two-thirds majority vote if CMAG recommends such action after repeated democratic norm violations.",
+          "verdict": "गलत",
+          "reason": "CHOGM में मतदान नहीं होता (यह सहमति से चलता है) और कोई औपचारिक निष्कासन तंत्र नहीं है। CMAG केवल निलंबन की सिफारिश कर सकता है — औपचारिक निष्कासन कभी नहीं हुआ और ऐसा दो-तिहाई बहुमत प्रावधान मौजूद नहीं है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल तीन' एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 2 और 3 को सही पहचानते हैं वे कथन 4 के गलत निष्कासन तंत्र को नोट किए बिना कथन 3 को भी स्वीकार कर सकते हैं, और कुछ छात्र कथन 1 में वार्षिक और द्विवार्षिक त्रुटि को पकड़ नहीं पाते।",
+      "elimination_logic": [
+        "कथन 1 जांचें: CHOGM द्विवार्षिक (हर दो साल) होता है, वार्षिक नहीं। कथन 1 गलत है।",
+        "कथन 2 जांचें: सहमति आधारित, गैर-बाध्यकारी परिणाम — सही। कथन 2 सही है।",
+        "कथन 3 जांचें: वित्त मंत्रियों की बैठक और बिजनेस फोरम अलग समानांतर सत्र हैं — सही। कथन 3 सही है।",
+        "कथन 4 जांचें: CHOGM में कोई मतदान तंत्र और निष्कासन प्रावधान नहीं है — कथन 4 गलत है।",
+        "दो कथन (2 और 3) सही हैं — उत्तर है (b) केवल दो।"
+      ],
+      "upsc_trap_explanation": "कथन 4 का निर्मित निष्कासन तंत्र छात्रों की इस धारणा का फायदा उठाता है कि गंभीर उल्लंघनों के लिए CHOGM में मतदान तंत्र होना चाहिए। राष्ट्रमंडल में औपचारिक मतदान और निष्कासन शक्तियों का पूर्ण अभाव इसे EU या CoE जैसे संगठनों से कमजोर बनाता है।",
+      "final_explanation": "CHOGM की संरचना और निर्णय प्रक्रिया राष्ट्रमंडल की अंतरसरकारी, गैर-बाध्यकारी प्रकृति को दर्शाती है।\n\n| कथन | निर्णय |\n|---|---|\n| CHOGM वार्षिक आयोजित होता है | गलत — द्विवार्षिक (हर 2 साल) |\n| सहमति आधारित, गैर-बाध्यकारी परिणाम | सही |\n| वित्त मंत्रियों की बैठक अलग सत्र के रूप में | सही |\n| दो-तिहाई बहुमत से निष्कासन तंत्र | गलत — ऐसा कोई तंत्र नहीं |\n\nकेवल कथन 2 और 3 सही हैं।\n\nमूल्य संवर्धन:\n• CHOGM 2022 किगाली, रवांडा में आयोजित हुआ — महत्वपूर्ण क्योंकि इसे गैर-ब्रिटिश उपनिवेश सदस्य ने होस्ट किया।\n• राष्ट्रमंडल बिजनेस फोरम, राष्ट्रमंडल युवा फोरम, और पीपुल्स फोरम सभी CHOGM के समानांतर चलते हैं।\n• औपचारिक निष्कासन तंत्र के अभाव में CMAG निलंबन अधिकतम अनुशासनात्मक उपकरण है — एक संरचनात्मक कमजोरी जिसे अक्सर आलोचना का सामना करना पड़ता है।"
+    }
+  },
+  {
+    "uuid": "0d0f6dbb-e453-440e-b9f5-2852f2be2e57",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Origins and Evolution: From British Empire to Commonwealth",
+        "London Declaration (1949): Legal and Constitutional Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Old Commonwealth dominions vs New Commonwealth post-colonial members",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of the Commonwealth of Nations, the term 'Old Commonwealth' is conventionally used to refer to which of the following?\n\n(a) The original white-majority settler dominions — primarily Canada, Australia, New Zealand, and South Africa — that formed the core of the British Commonwealth before the wave of post-colonial memberships\n(b) The republics that joined after the 1949 London Declaration, in contrast to the monarchical dominions that preceded them\n(c) The six dominions specifically enumerated under the Statute of Westminster (1931), including Ireland and Newfoundland\n(d) Commonwealth members that retain the British monarch as their head of state, distinguishing them from republics and members with their own monarchies",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because 'original six dominions under the Statute of Westminster' sounds like 'Old Commonwealth' but mixes up the Statute of Westminster's specific dominion list with the post-1949 'Old Commonwealth' concept.",
+      "elimination_logic": [
+        "Eliminate (b): 'New Commonwealth' refers to post-colonial African, Asian, and Caribbean members — not to republics specifically (Old Commonwealth also gained some republics).",
+        "Eliminate (c): The Statute of Westminster (1931) covered six dominions including the Irish Free State and Newfoundland — Newfoundland later joined Canada, and Ireland left the Commonwealth. 'Old Commonwealth' is a broader conceptual term, not identical to the Statute's exact list.",
+        "Eliminate (d): This conflates Old Commonwealth with monarchies — Australia and New Zealand are Old Commonwealth dominions but their monarchical status does not define 'Old Commonwealth.'",
+        "Confirm (a): 'Old Commonwealth' conventionally refers to the original white-majority settler dominions — Canada, Australia, New Zealand, and South Africa — that formed the core of the pre-1949 British Commonwealth. This is the standard usage in Commonwealth studies."
+      ],
+      "upsc_trap_explanation": "Option (c)'s entity-swap between the Statute's six dominions and 'Old Commonwealth' catches students who have memorised the Statute of Westminster without understanding that the 'Old Commonwealth' is a post-1949 conceptual term, not a formal Statute-era legal category.",
+      "final_explanation": "The Old/New Commonwealth distinction is a conceptual one — not a formal constitutional category — reflecting the pre- and post-decolonisation waves of membership.\n\n• Option (a) — Correct: Old Commonwealth conventionally refers to the original white-majority settler dominions (Canada, Australia, New Zealand, South Africa) that formed the British Commonwealth's core before the post-colonial expansion.\n• Option (b) — Incorrect: New Commonwealth includes all post-colonial members from Africa, Asia, and the Caribbean — not merely republics.\n• Option (c) — Incorrect: The Statute of Westminster (1931) covered six specific dominions including Ireland and Newfoundland — not identical to the 'Old Commonwealth' concept.\n• Option (d) — Incorrect: Monarchical status does not define Old Commonwealth membership — the distinction is historical timing and colonial settlement patterns.\n\nValue Addition:\n• South Africa left the Commonwealth in 1961 (due to apartheid pressure) and rejoined in 1994 post-apartheid.\n• The Old/New Commonwealth distinction carries political resonance in debates about immigration (e.g., UK immigration preferences) and development assistance.\n• The Commonwealth today has 56 members spanning all regions — the 'New Commonwealth' now constitutes the overwhelming majority."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ ऑफ नेशंस के संदर्भ में, 'Old Commonwealth' शब्द पारंपरिक रूप से किसके लिए उपयोग किया जाता है?\n\n(a) मूल श्वेत-बहुलता वाले सेटलर डोमिनियन्स — मुख्य रूप से कनाडा, ऑस्ट्रेलिया, न्यूजीलैंड, और दक्षिण अफ्रीका — जो उपनिवेशोत्तर सदस्यता की लहर से पहले ब्रिटिश कॉमनवेल्थ का मूल हिस्सा थे\n(b) वे गणराज्य जो 1949 के लंदन घोषणा के बाद शामिल हुए, इसके विपरीत वे राजशाही डोमिनियन्स जो उनसे पहले थे\n(c) Statute of Westminster (1931) के तहत विशेष रूप से उल्लिखित छह डोमिनियन्स, जिनमें आयरलैंड और Newfoundland शामिल हैं\n(d) कॉमनवेल्थ सदस्य जो ब्रिटिश सम्राट को अपना राज्य प्रमुख बनाए रखते हैं, जो उन्हें गणराज्यों और अपने स्वयं के राजाओं वाले सदस्यों से अलग करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला है क्योंकि 'Statute of Westminster के तहत मूल छह डोमिनियन्स' सुनने में 'Old Commonwealth' जैसा लगता है लेकिन यह Statute of Westminster की विशिष्ट डोमिनियन्स सूची को 1949 के बाद के 'Old Commonwealth' अवधारणा के साथ मिला देता है।",
+      "elimination_logic": [
+        "(b) को हटाएं: 'New Commonwealth' से आशय उपनिवेशोत्तर अफ्रीकी, एशियाई और कैरिबियाई सदस्य हैं — विशेष रूप से गणराज्यों से नहीं (Old Commonwealth में भी कुछ गणराज्य शामिल हुए)।",
+        "(c) को हटाएं: Statute of Westminster (1931) में छह डोमिनियन्स शामिल थे जिनमें Irish Free State और Newfoundland थे — Newfoundland बाद में कनाडा में शामिल हो गया, और आयरलैंड ने Commonwealth छोड़ दिया। 'Old Commonwealth' एक व्यापक वैचारिक शब्द है, जो Statute की सटीक सूची के समान नहीं है।",
+        "(d) को हटाएं: यह Old Commonwealth को राजशाही से जोड़ता है — ऑस्ट्रेलिया और न्यूजीलैंड Old Commonwealth डोमिनियन्स हैं लेकिन उनकी राजशाही स्थिति 'Old Commonwealth' को परिभाषित नहीं करती।",
+        "(a) की पुष्टि करें: 'Old Commonwealth' पारंपरिक रूप से मूल श्वेत-बहुलता वाले सेटलर डोमिनियन्स — कनाडा, ऑस्ट्रेलिया, न्यूजीलैंड, और दक्षिण अफ्रीका — को संदर्भित करता है जो 1949 से पहले ब्रिटिश Commonwealth का मूल हिस्सा थे। यह Commonwealth अध्ययन में मानक उपयोग है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) में Statute के छह डोमिनियन्स और 'Old Commonwealth' के बीच की इकाई-स्थानांतरण उन छात्रों को भ्रमित करता है जिन्होंने Statute of Westminster को याद किया है लेकिन यह नहीं समझा कि 'Old Commonwealth' 1949 के बाद की वैचारिक अवधारणा है, कोई औपचारिक Statute-कालीन कानूनी श्रेणी नहीं।",
+      "final_explanation": "Old/New Commonwealth का भेद एक वैचारिक भेद है — कोई औपचारिक संवैधानिक श्रेणी नहीं — जो सदस्यता की उपनिवेशोत्तर और पूर्व-उपनिवेशी लहरों को दर्शाता है।\n\n• विकल्प (a) — सही: Old Commonwealth पारंपरिक रूप से मूल श्वेत-बहुलता वाले सेटलर डोमिनियन्स (कनाडा, ऑस्ट्रेलिया, न्यूजीलैंड, दक्षिण अफ्रीका) को संदर्भित करता है जो उपनिवेशोत्तर विस्तार से पहले ब्रिटिश Commonwealth का मूल हिस्सा थे।\n• विकल्प (b) — गलत: New Commonwealth में अफ्रीका, एशिया, और कैरिबियन के सभी उपनिवेशोत्तर सदस्य शामिल हैं — केवल गणराज्य नहीं।\n• विकल्प (c) — गलत: Statute of Westminster (1931) में छह विशिष्ट डोमिनियन्स शामिल थे जिनमें आयरलैंड और Newfoundland थे — जो 'Old Commonwealth' अवधारणा के समान नहीं हैं।\n• विकल्प (d) — गलत: राजशाही स्थिति Old Commonwealth सदस्यता को परिभाषित नहीं करती — भेद ऐतिहासिक समय और उपनिवेशी बसावट के पैटर्न पर आधारित है।\n\nमूल्यवर्धन:\n• दक्षिण अफ्रीका ने 1961 में (अपार्थाइड दबाव के कारण) Commonwealth छोड़ा और 1994 में अपार्थाइड के बाद पुनः शामिल हुआ।\n• Old/New Commonwealth भेद राजनीतिक विमर्श में महत्वपूर्ण है जैसे आव्रजन (जैसे यूके आव्रजन प्राथमिकताएं) और विकास सहायता पर।\n• आज Commonwealth के 56 सदस्य हैं जो सभी क्षेत्रों में फैले हैं — 'New Commonwealth' अब बहुमत है।"
+    }
+  },
+  {
+    "uuid": "f5e7b42f-e9bf-4ae8-8642-069692831fe7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Commonwealth and Trade: CPTPP, Commonwealth Advantage, and Intra-Commonwealth Trade",
+        "Commonwealth Day, Symbols, and Institutional Identity"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Commonwealth institutional features — trade targets and headquarters",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Commonwealth features/institutions) with List II (their descriptions or associated facts):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Commonwealth Advantage",
+            "1. Headquarters of the Commonwealth Secretariat — a historic building gifted by the Crown in 1959"
+          ],
+          [
+            "B. Marlborough House, London",
+            "2. Established in 1966 to support civil society organisations, artists, and professional associations across Commonwealth members"
+          ],
+          [
+            "C. USD 2 trillion by 2030",
+            "3. Studies estimate this percentage reduction in bilateral trade costs among Commonwealth members due to shared language and legal systems: 19–21%"
+          ],
+          [
+            "D. Commonwealth Foundation",
+            "4. Intra-Commonwealth trade target set at CHOGM 2018 in London"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-2, C-4, D-1\n(c) A-3, B-1, C-4, D-2\n(d) A-4, B-1, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who correctly link Marlborough House with the Secretariat may then swap the USD 2 trillion trade target's year (2018 CHOGM) with the Commonwealth Foundation's establishment year, creating a plausible-looking but wrong matching.",
+      "elimination_logic": [
+        "Match A (Commonwealth Advantage — 19-21%): The specific percentage from Commonwealth trade studies — matches with 3.",
+        "Match B (Marlborough House): Headquarters of the Commonwealth Secretariat, gifted by the Crown in 1959 — matches with 1.",
+        "Match C (USD 2 trillion by 2030): Intra-Commonwealth trade target set at CHOGM 2018 — matches with 4.",
+        "Match D (Commonwealth Foundation): Established in 1966, supports civil society organisations — matches with 2. Correct answer: A-3, B-1, C-4, D-2 = option (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap between Secretariat (Marlborough House) and Foundation (civil society) is the main trap. Both are Commonwealth institutions based in London — students without specific knowledge of which body occupies Marlborough House will make this error.",
+      "final_explanation": "This question requires distinguishing between several Commonwealth institutional elements across trade, geography, and organisational structure.\n\n• A–3: Commonwealth Advantage studies estimate 19–21% lower trade costs between Commonwealth members due to shared institutional heritage.\n• B–1: Marlborough House is the headquarters of the Commonwealth Secretariat — gifted by the British Crown in 1959.\n• C–4: The USD 2 trillion intra-Commonwealth trade target was set at CHOGM 2018 in London.\n• D–2: The Commonwealth Foundation (established 1966) specifically supports civil society organisations — distinct from the Secretariat which supports governments.\n\nTrap pairings: B (Marlborough House) and D (Commonwealth Foundation) are commonly swapped — students who know Marlborough House is a key address may assign it to the wrong institution.\n\nValue Addition:\n• The Commonwealth Foundation was established one year after the Secretariat (1965 vs. 1966).\n• Commonwealth Advantage is an informal benefit — there is no formal preferential trade agreement between members.\n• The USD 2 trillion target reflects Commonwealth members' combined economic ambition but requires individual bilateral and multilateral trade agreements to achieve."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (कॉमनवेल्थ विशेषताएँ/संस्थाएँ) को सूची II (उनका विवरण या संबंधित तथ्य) से मिलाएँ:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. कॉमनवेल्थ एडवांटेज",
+            "1. कॉमनवेल्थ सचिवालय का मुख्यालय — 1959 में क्राउन द्वारा उपहार में दिया गया ऐतिहासिक भवन"
+          ],
+          [
+            "B. मार्लबोरो हाउस, लंदन",
+            "2. 1966 में स्थापित, जो कॉमनवेल्थ सदस्यों के बीच नागरिक समाज संगठनों, कलाकारों और पेशेवर संघों का समर्थन करता है"
+          ],
+          [
+            "C. USD 2 ट्रिलियन तक 2030",
+            "3. अध्ययन अनुमान लगाते हैं कि कॉमनवेल्थ सदस्यों के बीच द्विपक्षीय व्यापार लागत में साझा भाषा और कानूनी प्रणालियों के कारण यह प्रतिशत कमी होती है: 19–21%"
+          ],
+          [
+            "D. कॉमनवेल्थ फाउंडेशन",
+            "4. लंदन में CHOGM 2018 में निर्धारित इन्ट्रा-कॉमनवेल्थ व्यापार लक्ष्य"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-2, C-4, D-1\n(c) A-3, B-1, C-4, D-2\n(d) A-4, B-1, C-3, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि जो छात्र सही ढंग से मार्लबोरो हाउस को सचिवालय से जोड़ते हैं, वे फिर USD 2 ट्रिलियन व्यापार लक्ष्य के वर्ष (2018 CHOGM) को कॉमनवेल्थ फाउंडेशन की स्थापना वर्ष के साथ बदल सकते हैं, जिससे एक संभावित दिखने वाला लेकिन गलत मिलान बनता है।",
+      "elimination_logic": [
+        "A का मिलान (कॉमनवेल्थ एडवांटेज — 19-21%): कॉमनवेल्थ व्यापार अध्ययनों से विशिष्ट प्रतिशत — 3 के साथ मेल खाता है।",
+        "B का मिलान (मार्लबोरो हाउस): कॉमनवेल्थ सचिवालय का मुख्यालय, 1959 में क्राउन द्वारा उपहार स्वरूप दिया गया — 1 के साथ मेल खाता है।",
+        "C का मिलान (USD 2 ट्रिलियन तक 2030): CHOGM 2018 में निर्धारित इन्ट्रा-कॉमनवेल्थ व्यापार लक्ष्य — 4 के साथ मेल खाता है।",
+        "D का मिलान (कॉमनवेल्थ फाउंडेशन): 1966 में स्थापित, नागरिक समाज संगठनों का समर्थन करता है — 2 के साथ मेल खाता है। सही उत्तर: A-3, B-1, C-4, D-2 = विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "सचिवालय (मार्लबोरो हाउस) और फाउंडेशन (नागरिक समाज) के बीच इकाई-स्वैप मुख्य जालसाजी है। दोनों लंदन में आधारित कॉमनवेल्थ संस्थान हैं — जो छात्र यह नहीं जानते कि मार्लबोरो हाउस किस संस्था का मुख्यालय है, वे यह गलती करेंगे।",
+      "final_explanation": "यह प्रश्न कॉमनवेल्थ के कई संस्थागत तत्वों को व्यापार, भौगोलिक और संगठनात्मक संरचना के संदर्भ में अलग करने की आवश्यकता रखता है।\n\n• A–3: कॉमनवेल्थ एडवांटेज अध्ययन अनुमान लगाते हैं कि कॉमनवेल्थ सदस्यों के बीच साझा संस्थागत विरासत के कारण द्विपक्षीय व्यापार लागत 19–21% कम होती है।\n• B–1: मार्लबोरो हाउस कॉमनवेल्थ सचिवालय का मुख्यालय है — जिसे 1959 में ब्रिटिश क्राउन ने उपहार में दिया था।\n• C–4: USD 2 ट्रिलियन का इन्ट्रा-कॉमनवेल्थ व्यापार लक्ष्य CHOGM 2018 में लंदन में निर्धारित किया गया था।\n• D–2: कॉमनवेल्थ फाउंडेशन (1966 में स्थापित) विशेष रूप से नागरिक समाज संगठनों का समर्थन करता है — जो सचिवालय से अलग है जो सरकारों का समर्थन करता है।\n\nजालसाजी जोड़ी: B (मार्लबोरो हाउस) और D (कॉमनवेल्थ फाउंडेशन) को अक्सर उलट दिया जाता है — जो छात्र जानते हैं कि मार्लबोरो हाउस एक प्रमुख पता है, वे इसे गलत संस्था को दे सकते हैं।\n\nमूल्य संवर्धन:\n• कॉमनवेल्थ फाउंडेशन सचिवालय की स्थापना के एक वर्ष बाद स्थापित हुआ (1965 बनाम 1966)।\n• कॉमनवेल्थ एडवांटेज एक अनौपचारिक लाभ है — सदस्यों के बीच कोई औपचारिक वरीयता व्यापार समझौता नहीं है।\n• USD 2 ट्रिलियन लक्ष्य कॉमनवेल्थ सदस्यों की संयुक्त आर्थिक महत्वाकांक्षा को दर्शाता है लेकिन इसे प्राप्त करने के लिए व्यक्तिगत द्विपक्षीय और बहुपक्षीय व्यापार समझौतों की आवश्यकता है।"
+    }
+  },
+  {
+    "uuid": "d48cfc06-9382-4071-81f2-75a1a05f0e4d",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Membership Criteria, Suspension, and Expulsion",
+        "Singapore Declaration (1971) and Harare Declaration (1991): Value Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "CMAG suspension powers — Harare Declaration and Millbrook enforcement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A military general in a Commonwealth member state stages a coup, suspends the constitution, dissolves parliament, and imprisons elected officials. The new military government refuses international calls for restoration of civilian rule. A Commonwealth member state formally requests that appropriate Commonwealth action be taken against the country in violation.\n\nWhich of the following correctly describes the available Commonwealth institutional response?\n\n(a) The Commonwealth Ministerial Action Group (CMAG) can immediately expel the country from the Commonwealth for violating the Harare Declaration.\n(b) An emergency session of CHOGM can be convened within 30 days to vote on the suspension of the offending member by a two-thirds majority.\n(c) CMAG, established under the Millbrook Action Programme to implement the Harare Declaration, can review the situation and recommend the country's suspension from Commonwealth membership.\n(d) The Commonwealth Judicial Committee can issue a binding order requiring the military government to restore democratic governance within a specified timeline.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because 'immediate expulsion' sounds like the proportionate response to a military coup, and students who know CMAG deals with democratic norm violations may assume expulsion (not just suspension) is available.",
+      "elimination_logic": [
+        "Identify the applicable framework: A military coup followed by suppression of democratic institutions triggers the Harare Declaration commitments and the Millbrook Action Programme's CMAG enforcement mechanism.",
+        "Eliminate (a): CMAG cannot expel members — it can only suspend. No Commonwealth member has ever been formally expelled. Immediate expulsion is not a CMAG power.",
+        "Eliminate (b): CHOGM does not meet between its biennial schedule for emergency sessions — it is not an emergency response body.",
+        "Eliminate (d): The Commonwealth has no judicial body — there is no equivalent of the ICJ within the Commonwealth framework.",
+        "Confirm (c): CMAG — established by the Millbrook Action Programme (1995) to implement the Harare Declaration — is the correct body. It can review the situation and recommend suspension from Commonwealth membership. This is the maximum enforcement tool available."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The CMAG framework under the Millbrook Action Programme (1995) is the operative mechanism when a Commonwealth member experiences a military coup or democratic breakdown.\n\n• Option (a) — Incorrect: CMAG cannot expel — it can only suspend. Expulsion would require a CHOGM consensus decision, which has never been executed.\n• Option (b) — Incorrect: CHOGM does not convene emergency sessions between its biennial schedule — it is a summit, not a crisis management body.\n• Option (c) — Correct: CMAG, established by the Millbrook Action Programme to implement the Harare Declaration, can review the situation and recommend suspension — this is the correct and available enforcement tool.\n• Option (d) — Incorrect: The Commonwealth has no judicial body — it has no court equivalent to the ICJ or any regional human rights court.\n\nValue Addition:\n• Pakistan (1999, 2007), Fiji (multiple times), Zimbabwe (2002), and Maldives (2016) have all faced CMAG processes.\n• Suspension means being excluded from Commonwealth meetings and ministerial forums — not from all Commonwealth programmes.\n• The absence of expulsion power is cited as the Commonwealth's fundamental enforcement weakness."
+    },
+    "hi": {
+      "display_text": "राष्ट्रमंडल के एक सदस्य राज्य में एक सैन्य जनरल तख्तापलट करता है, संविधान को निलंबित कर देता है, संसद को भंग कर देता है, और निर्वाचित अधिकारियों को जेल में डाल देता है। नई सैन्य सरकार नागरिक शासन की बहाली के लिए अंतरराष्ट्रीय आह्वानों को अस्वीकार कर देती है। एक राष्ट्रमंडल सदस्य राज्य औपचारिक रूप से अनुरोध करता है कि देश के विरुद्ध उपयुक्त राष्ट्रमंडल कार्रवाई की जाए जो उल्लंघन कर रहा है।\n\nनिम्नलिखित में से कौन-सा सही रूप से उपलब्ध राष्ट्रमंडल संस्थागत प्रतिक्रिया का वर्णन करता है?\n\n(a) राष्ट्रमंडल मंत्री स्तरीय कार्य समूह (CMAG) हरेरे घोषणा का उल्लंघन करने के लिए देश को तुरंत राष्ट्रमंडल से निष्कासित कर सकता है।\n(b) CHOGM का एक आपातकालीन सत्र 30 दिनों के भीतर बुलाया जा सकता है ताकि दोषी सदस्य के निलंबन पर दो-तिहाई बहुमत से मतदान किया जा सके।\n(c) CMAG, जो हरेरे घोषणा को लागू करने के लिए मिलब्रुक एक्शन प्रोग्राम के तहत स्थापित है, स्थिति की समीक्षा कर सकता है और देश के राष्ट्रमंडल सदस्यता से निलंबन की सिफारिश कर सकता है।\n(d) राष्ट्रमंडल न्यायिक समिति एक बाध्यकारी आदेश जारी कर सकती है जिसमें सैन्य सरकार को निर्दिष्ट समय सीमा के भीतर लोकतांत्रिक शासन बहाल करने का निर्देश दिया जाए।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि 'तत्काल निष्कासन' सैन्य तख्तापलट के लिए अनुपातिक प्रतिक्रिया जैसा लगता है, और जो छात्र जानते हैं कि CMAG लोकतांत्रिक मानदंड उल्लंघनों से संबंधित है, वे मान सकते हैं कि निष्कासन (केवल निलंबन नहीं) उपलब्ध है।",
+      "elimination_logic": [
+        "लागू ढांचे की पहचान करें: एक सैन्य तख्तापलट जिसके बाद लोकतांत्रिक संस्थानों का दमन होता है, वह हरेरे घोषणा प्रतिबद्धताओं और मिलब्रुक एक्शन प्रोग्राम के CMAG प्रवर्तन तंत्र को सक्रिय करता है।",
+        "(a) को हटाएं: CMAG सदस्यों को निष्कासित नहीं कर सकता — यह केवल निलंबित कर सकता है। किसी भी राष्ट्रमंडल सदस्य को कभी औपचारिक रूप से निष्कासित नहीं किया गया है। तत्काल निष्कासन CMAG की शक्ति नहीं है।",
+        "(b) को हटाएं: CHOGM अपनी द्विवार्षिक अनुसूची के बीच आपातकालीन सत्र नहीं बुलाता — यह आपातकालीन प्रतिक्रिया निकाय नहीं है।",
+        "(d) को हटाएं: राष्ट्रमंडल के पास कोई न्यायिक निकाय नहीं है — राष्ट्रमंडल ढांचे में ICJ के समान कोई निकाय नहीं है।",
+        "(c) की पुष्टि करें: CMAG — जो मिलब्रुक एक्शन प्रोग्राम (1995) द्वारा हरेरे घोषणा को लागू करने के लिए स्थापित किया गया है — सही निकाय है। यह स्थिति की समीक्षा कर सकता है और राष्ट्रमंडल सदस्यता से निलंबन की सिफारिश कर सकता है। यह उपलब्ध अधिकतम प्रवर्तन उपकरण है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "जब किसी राष्ट्रमंडल सदस्य देश में सैन्य तख्तापलट या लोकतांत्रिक विफलता होती है, तो मिलब्रुक एक्शन प्रोग्राम (1995) के तहत CMAG ढांचा लागू तंत्र होता है।\n\n• विकल्प (a) — गलत: CMAG निष्कासन नहीं कर सकता — यह केवल निलंबन कर सकता है। निष्कासन के लिए CHOGM की सर्वसम्मति आवश्यक होती है, जो कभी लागू नहीं हुई।\n• विकल्प (b) — गलत: CHOGM अपनी द्विवार्षिक अनुसूची के बीच आपातकालीन सत्र नहीं बुलाता — यह एक शिखर सम्मेलन है, संकट प्रबंधन निकाय नहीं।\n• विकल्प (c) — सही: CMAG, जो मिलब्रुक एक्शन प्रोग्राम द्वारा हरेरे घोषणा को लागू करने के लिए स्थापित है, स्थिति की समीक्षा कर सकता है और निलंबन की सिफारिश कर सकता है — यह सही और उपलब्ध प्रवर्तन उपकरण है।\n• विकल्प (d) — गलत: राष्ट्रमंडल के पास कोई न्यायिक निकाय नहीं है — इसका ICJ या किसी क्षेत्रीय मानवाधिकार न्यायालय के समान कोई न्यायालय नहीं है।\n\nमूल्य संवर्धन:\n• पाकिस्तान (1999, 2007), फिजी (कई बार), जिम्बाब्वे (2002), और मालदीव (2016) सभी ने CMAG प्रक्रियाओं का सामना किया है।\n• निलंबन का अर्थ है राष्ट्रमंडल की बैठकों और मंत्री स्तरीय मंचों से बाहर होना — सभी राष्ट्रमंडल कार्यक्रमों से नहीं।\n• निष्कासन शक्ति की अनुपस्थिति को राष्ट्रमंडल की मौलिक प्रवर्तन कमजोरी माना जाता है।"
+    }
+  },
+  {
+    "uuid": "e4efc8b7-8319-4f14-b069-9b98afaa8d30",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Overlap and Comparison: Commonwealth vs. La Francophonie vs. CPLP",
+        "Commonwealth Fund for Technical Co-operation (CFTC)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CPLP 9 members vs La Francophonie 88 members vs Commonwealth 56",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among the Commonwealth of Nations, the Organisation internationale de la Francophonie (La Francophonie), and the Community of Portuguese Language Countries (CPLP), which of the following statements correctly describes their relative size by membership?\n\n(a) The CPLP is the largest of the three groupings, with the Commonwealth being the smallest.\n(b) La Francophonie is the largest of the three groupings with 88 members and observers, followed by the Commonwealth with 56 members and CPLP with 9 members.\n(c) The Commonwealth is the largest of the three groupings, followed by La Francophonie and then CPLP.\n(d) The Commonwealth is the largest but also the only one with a common external tariff among its members.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because students who know the Commonwealth is the larger of the two better-known language groupings (Commonwealth and La Francophonie) may extend this to incorrectly rank CPLP as having more members than La Francophonie.",
+      "elimination_logic": [
+        "Eliminate (a): CPLP has 9 members — the smallest of the three. Commonwealth has 56. CPLP is not larger.",
+        "Eliminate (c): La Francophonie has 88 members/observers — larger than the Commonwealth's 56. Commonwealth is not larger than La Francophonie by membership count.",
+        "Eliminate (d): The Commonwealth does not have a common external tariff — it is not a customs union. This fact is unrelated to a comparative membership count question.",
+        "Confirm (b): La Francophonie (88 members/observers) > Commonwealth (56) > CPLP (9) — by membership count, La Francophonie is the largest of the three language-based international groupings."
+      ],
+      "upsc_trap_explanation": "The entity-swap substitutes institutional prominence (Commonwealth) for membership count (La Francophonie). Students who associate 'largest' with 'most prominent' or 'most economically significant' will select the Commonwealth over La Francophonie — reversing the correct answer.",
+      "final_explanation": "Among the three major language-based international groupings, membership count does not align with economic or institutional significance.\n\n• Option (a) — Incorrect: CPLP has only 9 members — the smallest of the three. It is certainly not larger than the Commonwealth.\n• Option (b) — Correct: La Francophonie (Organisation internationale de la Francophonie) has 88 members and observers — the largest by membership count, exceeding the Commonwealth's 56 sovereign members.\n• Option (c) — Incorrect: The Commonwealth (56 members) is smaller than La Francophonie (88) by membership count, despite being more economically significant.\n• Option (d) — Incorrect: The Commonwealth has no common external tariff — it is irrelevant to the membership count question and also factually inaccurate.\n\nValue Addition:\n• La Francophonie has a stronger cultural mandate than the Commonwealth — language preservation is central to its mission.\n• CPLP's 9 members include Brazil (Latin America), Portugal (Europe), and 7 African/Asian states.\n• Economic weight and institutional depth of the Commonwealth far exceed La Francophonie's despite lower membership count."
+    },
+    "hi": {
+      "display_text": "कॉमनवेल्थ ऑफ नेशंस, Organisation internationale de la Francophonie (ला फ्रैंकोफोनी), और Community of Portuguese Language Countries (CPLP) में से, निम्नलिखित में से कौन-सा कथन उनके सदस्यता के सापेक्ष आकार को सही रूप से दर्शाता है?\n\n(a) CPLP तीनों समूहों में सबसे बड़ा है, जबकि कॉमनवेल्थ सबसे छोटा है।\n(b) ला फ्रैंकोफोनी तीनों समूहों में सबसे बड़ा है जिसमें 88 सदस्य और पर्यवेक्षक हैं, इसके बाद कॉमनवेल्थ के 56 सदस्य और CPLP के 9 सदस्य हैं।\n(c) कॉमनवेल्थ तीनों समूहों में सबसे बड़ा है, इसके बाद ला फ्रैंकोफोनी और फिर CPLP है।\n(d) कॉमनवेल्थ सबसे बड़ा है लेकिन इसके सदस्यों के बीच एकमात्र ऐसा समूह है जिसके पास सामान्य बाहरी शुल्क है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि कॉमनवेल्थ दो प्रसिद्ध भाषा समूहों (कॉमनवेल्थ और ला फ्रैंकोफोनी) में बड़ा है, वे गलत तरीके से CPLP को ला फ्रैंकोफोनी से अधिक सदस्यों वाला मान सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: CPLP के 9 सदस्य हैं — तीनों में सबसे कम। कॉमनवेल्थ के 56 सदस्य हैं। CPLP बड़ा नहीं है।",
+        "(c) को हटाएं: ला फ्रैंकोफोनी के 88 सदस्य/पर्यवेक्षक हैं — जो कॉमनवेल्थ के 56 से अधिक हैं। सदस्य संख्या के आधार पर कॉमनवेल्थ ला फ्रैंकोफोनी से बड़ा नहीं है।",
+        "(d) को हटाएं: कॉमनवेल्थ का कोई सामान्य बाहरी शुल्क नहीं है — यह एक कस्टम्स यूनियन नहीं है। यह तथ्य सदस्य संख्या के तुलनात्मक प्रश्न से संबंधित नहीं है।",
+        "(b) की पुष्टि करें: ला फ्रैंकोफोनी (88 सदस्य/पर्यवेक्षक) > कॉमनवेल्थ (56) > CPLP (9) — सदस्य संख्या के अनुसार, ला फ्रैंकोफोनी तीनों भाषा-आधारित अंतरराष्ट्रीय समूहों में सबसे बड़ा है।"
+      ],
+      "upsc_trap_explanation": "यह इकाई-स्थानांतरण संस्थागत प्रमुखता (कॉमनवेल्थ) को सदस्य संख्या (ला फ्रैंकोफोनी) के स्थान पर रखता है। जो छात्र 'सबसे बड़ा' को 'सबसे प्रमुख' या 'सबसे आर्थिक रूप से महत्वपूर्ण' से जोड़ते हैं, वे सही उत्तर के विपरीत कॉमनवेल्थ को ला फ्रैंकोफोनी पर चुनेंगे।",
+      "final_explanation": "तीन प्रमुख भाषा-आधारित अंतरराष्ट्रीय समूहों में सदस्य संख्या आर्थिक या संस्थागत महत्व के अनुरूप नहीं है।\n\n• विकल्प (a) — गलत: CPLP के केवल 9 सदस्य हैं — तीनों में सबसे कम। यह निश्चित रूप से कॉमनवेल्थ से बड़ा नहीं है।\n• विकल्प (b) — सही: ला फ्रैंकोफोनी (Organisation internationale de la Francophonie) के 88 सदस्य और पर्यवेक्षक हैं — सदस्य संख्या के आधार पर सबसे बड़ा, जो कॉमनवेल्थ के 56 संप्रभु सदस्यों से अधिक है।\n• विकल्प (c) — गलत: सदस्य संख्या के आधार पर कॉमनवेल्थ (56 सदस्य) ला फ्रैंकोफोनी (88) से छोटा है, हालांकि यह आर्थिक रूप से अधिक महत्वपूर्ण है।\n• विकल्प (d) — गलत: कॉमनवेल्थ का कोई सामान्य बाहरी शुल्क नहीं है — यह सदस्य संख्या के प्रश्न से अप्रासंगिक है और तथ्यात्मक रूप से भी गलत है।\n\nमूल्य संवर्धन:\n• ला फ्रैंकोफोनी का सांस्कृतिक जनादेश कॉमनवेल्थ से अधिक मजबूत है — भाषा संरक्षण इसका केंद्रीय मिशन है।\n• CPLP के 9 सदस्यों में ब्राजील (लैटिन अमेरिका), पुर्तगाल (यूरोप), और 7 अफ्रीकी/एशियाई राज्य शामिल हैं।\n• कॉमनवेल्थ का आर्थिक भार और संस्थागत गहराई सदस्य संख्या कम होने के बावजूद ला फ्रैंकोफोनी से कहीं अधिक है।"
+    }
+  },
+  {
+    "uuid": "3e27ace9-e606-4327-963c-5048cb6fdfe6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "London Declaration (1949): Legal and Constitutional Significance",
+        "Head of the Commonwealth: Role, Selection, and Succession",
+        "Commonwealth Day, Symbols, and Institutional Identity"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": null,
+      "concept_anchor": "Head of Commonwealth symbolic role and Commonwealth intergovernmental nature",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the institutional character of the Commonwealth of Nations and the role of its Head:\n\n1. The British monarch serves as Head of the Commonwealth in a symbolic capacity — the role carries no executive, legislative, or judicial authority over Commonwealth member states.\n2. The Commonwealth of Nations has no common currency, no common parliament, and no common court — functioning strictly as an intergovernmental forum without supranational institutional features.\n3. The position of Head of the Commonwealth was created by the 1949 London Declaration and carries the same legal status as the role of Head of State in a constitutional monarchy.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The British monarch serves as Head of the Commonwealth in a symbolic capacity — the role carries no executive, legislative, or judicial authority over Commonwealth member states.",
+          "verdict": "Correct",
+          "reason": "This is a foundational principle of the London Declaration framework — the Head of the Commonwealth is a symbol of free association, not a governing authority. All member states retain full sovereignty."
+        },
+        {
+          "statement": "The Commonwealth of Nations has no common currency, no common parliament, and no common court — functioning strictly as an intergovernmental forum without supranational institutional features.",
+          "verdict": "Correct",
+          "reason": "This is an accurate summary of the Commonwealth's institutional character — it lacks all the supranational features that distinguish organisations like the EU. It is purely an intergovernmental consultative body."
+        },
+        {
+          "statement": "The position of Head of the Commonwealth was created by the 1949 London Declaration and carries the same legal status as the role of Head of State in a constitutional monarchy.",
+          "verdict": "Incorrect",
+          "reason": "The Head of the Commonwealth position has no legal equivalence to Head of State in a constitutional monarchy. Heads of State have defined constitutional powers within their countries; the Head of the Commonwealth has no such powers over any member state. The roles are entirely different in legal character."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is a strong distractor because Statements 1 and 2 are clearly correct and Statement 3 sounds authoritative — students may accept it without critically examining the 'same legal status' claim.",
+      "elimination_logic": [
+        "Check Statement 3: The Head of the Commonwealth has no defined constitutional powers over any state — equating it with Head of State in a constitutional monarchy is legally inaccurate. Statement 3 is incorrect.",
+        "Check Statement 1: Symbolic role with no executive/legislative/judicial authority — correct and foundational.",
+        "Check Statement 2: No common currency, parliament, or court — intergovernmental not supranational — correct.",
+        "Statements 1 and 2 correct, Statement 3 incorrect — answer is (a) 1 and 2 only."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Commonwealth's institutional character is defined precisely by what it lacks compared to supranational organisations like the EU.\n\n• Statement 1 — Correct: Head of the Commonwealth is symbolic — no executive, legislative, or judicial authority over member states.\n• Statement 2 — Correct: No common currency, parliament, or court — strictly intergovernmental. This distinguishes it from the EU in every supranational dimension.\n• Statement 3 — Incorrect: Head of the Commonwealth and Head of State in a constitutional monarchy are legally incomparable. The former has no defined constitutional powers anywhere; the latter has constitutionally defined powers within one country.\n\nValue Addition:\n• The EU's Court of Justice, European Parliament, and Euro currency are all features that the Commonwealth explicitly does not have.\n• The Commonwealth is often described as 'soft power without hard infrastructure' — values and networks without binding institutions.\n• King Charles III became Head of the Commonwealth following the 2018 CHOGM designation — not automatic succession."
+    },
+    "hi": {
+      "display_text": "राष्ट्रमंडल के संस्थागत स्वरूप और इसके प्रमुख की भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ब्रिटिश सम्राट राष्ट्रमंडल के प्रमुख के रूप में एक प्रतीकात्मक भूमिका निभाते हैं — इस भूमिका में राष्ट्रमंडल के सदस्य राज्यों पर कोई कार्यकारी, विधायी या न्यायिक अधिकार नहीं होता।\n2. राष्ट्रमंडल के पास कोई सामान्य मुद्रा, कोई सामान्य संसद, और कोई सामान्य न्यायालय नहीं है — यह पूरी तरह से एक अंतर-सरकारी मंच के रूप में कार्य करता है जिसमें कोई अधिसंवैधानिक संस्थागत विशेषताएँ नहीं हैं।\n3. राष्ट्रमंडल के प्रमुख का पद 1949 की लंदन घोषणा द्वारा स्थापित किया गया था और इसका कानूनी दर्जा संवैधानिक राजतंत्र में राष्ट्राध्यक्ष के पद के समान है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "ब्रिटिश सम्राट राष्ट्रमंडल के प्रमुख के रूप में एक प्रतीकात्मक भूमिका निभाते हैं — इस भूमिका में राष्ट्रमंडल के सदस्य राज्यों पर कोई कार्यकारी, विधायी या न्यायिक अधिकार नहीं होता।",
+          "verdict": "सही",
+          "reason": "यह लंदन घोषणा के ढांचे का एक मौलिक सिद्धांत है — राष्ट्रमंडल के प्रमुख स्वतंत्र संघ का प्रतीक हैं, न कि शासक प्राधिकारी। सभी सदस्य राज्य पूर्ण संप्रभुता बनाए रखते हैं।"
+        },
+        {
+          "statement": "राष्ट्रमंडल के पास कोई सामान्य मुद्रा, कोई सामान्य संसद, और कोई सामान्य न्यायालय नहीं है — यह पूरी तरह से एक अंतर-सरकारी मंच के रूप में कार्य करता है जिसमें कोई अधिसंवैधानिक संस्थागत विशेषताएँ नहीं हैं।",
+          "verdict": "सही",
+          "reason": "यह राष्ट्रमंडल की संस्थागत प्रकृति का सटीक सारांश है — इसमें वे सभी अधिसंवैधानिक विशेषताएँ नहीं हैं जो यूरोपीय संघ जैसे संगठनों को अलग करती हैं। यह केवल एक अंतर-सरकारी परामर्शी निकाय है।"
+        },
+        {
+          "statement": "राष्ट्रमंडल के प्रमुख का पद 1949 की लंदन घोषणा द्वारा स्थापित किया गया था और इसका कानूनी दर्जा संवैधानिक राजतंत्र में राष्ट्राध्यक्ष के पद के समान है।",
+          "verdict": "गलत",
+          "reason": "राष्ट्रमंडल के प्रमुख का पद संवैधानिक राजतंत्र में राष्ट्राध्यक्ष के पद के कानूनी समकक्ष नहीं है। राष्ट्राध्यक्षों के पास अपने देशों में परिभाषित संवैधानिक शक्तियाँ होती हैं; राष्ट्रमंडल के प्रमुख के पास किसी भी सदस्य राज्य पर ऐसी कोई शक्ति नहीं है। ये भूमिकाएँ कानूनी रूप से पूरी तरह भिन्न हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 1 और 2 स्पष्ट रूप से सही हैं और कथन 3 अधिकारप्रदर्शक लगता है — छात्र 'समान कानूनी दर्जा' के दावे की आलोचनात्मक जाँच किए बिना इसे स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 3 की जाँच करें: राष्ट्रमंडल के प्रमुख के पास किसी भी राज्य पर परिभाषित संवैधानिक शक्तियाँ नहीं हैं — इसे संवैधानिक राजतंत्र में राष्ट्राध्यक्ष के समान मानना कानूनी रूप से गलत है। अतः कथन 3 गलत है।",
+        "कथन 1 की जाँच करें: प्रतीकात्मक भूमिका जिसमें कोई कार्यकारी/विधायी/न्यायिक अधिकार नहीं है — सही और मौलिक।",
+        "कथन 2 की जाँच करें: कोई सामान्य मुद्रा, संसद या न्यायालय नहीं — अंतर-सरकारी है, अधिसंवैधानिक नहीं — सही।",
+        "कथन 1 और 2 सही हैं, कथन 3 गलत है — उत्तर है (a) केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "राष्ट्रमंडल की संस्थागत प्रकृति ठीक उसी से परिभाषित होती है जो इसकी कमी है, जैसे कि यूरोपीय संघ जैसे अधिसंवैधानिक संगठनों की तुलना में।\n\n• कथन 1 — सही: राष्ट्रमंडल के प्रमुख प्रतीकात्मक हैं — सदस्य राज्यों पर कोई कार्यकारी, विधायी या न्यायिक अधिकार नहीं।\n• कथन 2 — सही: कोई सामान्य मुद्रा, संसद या न्यायालय नहीं — पूरी तरह से अंतर-सरकारी। यह इसे हर अधिसंवैधानिक आयाम में यूरोपीय संघ से अलग करता है।\n• कथन 3 — गलत: राष्ट्रमंडल के प्रमुख और संवैधानिक राजतंत्र में राष्ट्राध्यक्ष कानूनी रूप से तुलनीय नहीं हैं। पूर्व के पास कहीं भी परिभाषित संवैधानिक शक्तियाँ नहीं हैं; बाद वाले के पास एक देश के भीतर संवैधानिक रूप से परिभाषित शक्तियाँ होती हैं।\n\nमूल्य संवर्धन:\n• यूरोपीय संघ का न्यायालय, यूरोपीय संसद, और यूरो मुद्रा वे सभी विशेषताएँ हैं जो राष्ट्रमंडल के पास स्पष्ट रूप से नहीं हैं।\n• राष्ट्रमंडल को अक्सर 'कठोर अवसंरचना के बिना सौम्य शक्ति' के रूप में वर्णित किया जाता है — मूल्य और नेटवर्क बिना बाध्यकारी संस्थानों के।\n• किंग चार्ल्स III 2018 के CHOGM नामांकन के बाद राष्ट्रमंडल के प्रमुख बने — यह स्वचालित उत्तराधिकार नहीं था।"
+    }
+  },
+  {
+    "uuid": "05e47e9d-17ed-4f69-9ec5-1c67473c11ce",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Global Economic Groupings",
+      "sub_topic": "Commonwealth of Nations",
+      "concepts_used": [
+        "Membership Criteria, Suspension, and Expulsion",
+        "Commonwealth and Human Rights: Enforcement Gap and Criticism"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Harare Declaration 1991 value framework basis for membership",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Commonwealth membership is based on shared values rather than a formal treaty. Alongside the Singapore Declaration (1971), the ________ specifically added commitments to democracy, good governance, human rights, and gender equality — forming the core post-Cold War value framework on which membership obligations are grounded.\n\n(a) Millbrook Action Programme (1995)\n(b) Singapore Declaration (1971)\n(c) Harare Declaration (1991)\n(d) Commonwealth Charter (2013)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because the Singapore Declaration (1971) was the first Commonwealth values statement, making students who know it was 'first' assume it is the document that membership values are formally based on — when in fact the Harare Declaration strengthened and expanded this into the current membership values framework.",
+      "elimination_logic": [
+        "Identify what the blank requires: the declaration that, along with the Singapore Declaration, forms the basis of the values framework on which Commonwealth membership is grounded — particularly post-Cold War democracy and governance standards.",
+        "Eliminate (a): The Millbrook Action Programme (1995) operationalised the Harare Declaration — it created CMAG, not the values themselves.",
+        "Eliminate (b): Singapore Declaration (1971) was the first values statement but was succeeded and expanded by Harare — both together form the framework, but Harare is specifically described as the strengthening instrument.",
+        "Eliminate (d): Commonwealth Charter (2013) consolidated all previous declarations — it is the most recent consolidation, not the post-Cold War addition to the values framework.",
+        "Confirm (c): The Harare Declaration (1991) specifically added democracy, good governance, human rights, and gender equality to the Commonwealth's value framework — this is the declaration that completed the membership values basis alongside Singapore."
+      ],
+      "upsc_trap_explanation": "The temporal-swap between Singapore (1971, first) and Harare (1991, post-Cold War expansion) is the primary trap. Students who associate 'first values document' with the operative basis for membership confuse the initiating document with the strengthening document. Harare's post-Cold War context makes democracy and governance standards the direct addition.",
+      "final_explanation": "Commonwealth membership is not based on a formal treaty but on shared values articulated progressively across multiple declarations.\n\n• Option (a) — Incorrect: The Millbrook Action Programme (1995) created enforcement machinery (CMAG) — it did not establish the values themselves.\n• Option (b) — Incorrect: Singapore Declaration (1971) was the first values statement — but the question specifically asks about post-Cold War democracy and governance additions.\n• Option (c) — Correct: The Harare Declaration (1991) strengthened Commonwealth values by adding democracy, good governance, human rights, and gender equality — directly responding to the post-Cold War global context.\n• Option (d) — Incorrect: Commonwealth Charter (2013) consolidated all previous declarations — it is a consolidation instrument, not the original source of post-Cold War values.\n\nValue Addition:\n• Zimbabwe and Pakistan's suspensions were both justified under the Harare Declaration framework.\n• The CMAG's mandate flows from Millbrook (1995), which implemented Harare (1991) — a two-step institutional development.\n• Gender equality was specifically added in the Harare Declaration — the Singapore Declaration did not include it."
+    },
+    "hi": {
+      "display_text": "Commonwealth सदस्यता औपचारिक संधि के बजाय साझा मूल्यों पर आधारित है। Singapore Declaration (1971) के साथ-साथ, ________ ने विशेष रूप से लोकतंत्र, सुशासन, मानवाधिकार, और लैंगिक समानता के लिए प्रतिबद्धताएँ जोड़ीं — जो सदस्यता दायित्वों के आधार पर शीत युद्ध के बाद के मूल्य ढांचे का मूल हैं।\n\n(a) Millbrook Action Programme (1995)\n(b) Singapore Declaration (1971)\n(c) Harare Declaration (1991)\n(d) Commonwealth Charter (2013)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि Singapore Declaration (1971) पहला Commonwealth मूल्य कथन था, जिससे जो छात्र जानते हैं कि यह 'पहला' था, वे मान लेते हैं कि सदस्यता के मूल्य औपचारिक रूप से इसी दस्तावेज़ पर आधारित हैं — जबकि वास्तव में Harare Declaration ने इसे मजबूत और विस्तारित किया और वर्तमान सदस्यता मूल्य ढांचे का आधार बनाया।",
+      "elimination_logic": [
+        "यह पहचानें कि रिक्त स्थान में क्या चाहिए: वह घोषणा जो Singapore Declaration के साथ मिलकर उस मूल्य ढांचे का आधार बनाती है जिस पर Commonwealth सदस्यता आधारित है — विशेष रूप से शीत युद्ध के बाद के लोकतंत्र और शासन मानकों के संदर्भ में।",
+        "(a) को हटाएं: Millbrook Action Programme (1995) ने Harare Declaration को लागू किया — इसने CMAG बनाया, न कि स्वयं मूल्य।",
+        "(b) को हटाएं: Singapore Declaration (1971) पहला मूल्य कथन था लेकिन इसे Harare ने प्रतिस्थापित और विस्तारित किया — दोनों मिलकर ढांचा बनाते हैं, लेकिन Harare को विशेष रूप से सुदृढ़ीकरण उपकरण के रूप में वर्णित किया गया है।",
+        "(d) को हटाएं: Commonwealth Charter (2013) ने सभी पूर्व घोषणाओं को समेकित किया — यह सबसे हाल की समेकन है, न कि शीत युद्ध के बाद के मूल्य ढांचे में जोड़ा गया।",
+        "(c) की पुष्टि करें: Harare Declaration (1991) ने विशेष रूप से लोकतंत्र, सुशासन, मानवाधिकार, और लैंगिक समानता को Commonwealth के मूल्य ढांचे में जोड़ा — यह घोषणा सदस्यता मूल्यों के आधार को Singapore के साथ पूरा करती है।"
+      ],
+      "upsc_trap_explanation": "Singapore (1971, पहला) और Harare (1991, शीत युद्ध के बाद का विस्तार) के बीच कालानुक्रमिक भ्रम मुख्य जाल है। जो छात्र 'पहला मूल्य दस्तावेज़' को सदस्यता के लिए परिचालन आधार समझते हैं, वे आरंभिक दस्तावेज़ को सुदृढ़ीकरण दस्तावेज़ से भ्रमित कर देते हैं। Harare का शीत युद्ध के बाद का संदर्भ लोकतंत्र और शासन मानकों को सीधे जोड़ता है।",
+      "final_explanation": "Commonwealth सदस्यता किसी औपचारिक संधि पर आधारित नहीं है बल्कि साझा मूल्यों पर आधारित है जो कई घोषणाओं के माध्यम से क्रमिक रूप से व्यक्त किए गए हैं।\n\n• विकल्प (a) — गलत: Millbrook Action Programme (1995) ने प्रवर्तन तंत्र (CMAG) बनाया — इसने स्वयं मूल्य स्थापित नहीं किए।\n• विकल्प (b) — गलत: Singapore Declaration (1971) पहला मूल्य कथन था — लेकिन प्रश्न विशेष रूप से शीत युद्ध के बाद के लोकतंत्र और शासन परिवर्धन के बारे में है।\n• विकल्प (c) — सही: Harare Declaration (1991) ने लोकतंत्र, सुशासन, मानवाधिकार, और लैंगिक समानता जोड़कर Commonwealth के मूल्यों को मजबूत किया — जो शीत युद्ध के बाद के वैश्विक संदर्भ का प्रत्यक्ष उत्तर है।\n• विकल्प (d) — गलत: Commonwealth Charter (2013) ने सभी पूर्व घोषणाओं को समेकित किया — यह एक समेकन उपकरण है, शीत युद्ध के बाद के मूल्यों का मूल स्रोत नहीं।\n\nमूल्य संवर्धन:\n• जिम्बाब्वे और पाकिस्तान के निलंबन दोनों Harare Declaration ढांचे के तहत न्यायसंगत थे।\n• CMAG का जनादेश Millbrook (1995) से आता है, जिसने Harare (1991) को लागू किया — एक दो-चरणीय संस्थागत विकास।\n• लैंगिक समानता विशेष रूप से Harare Declaration में जोड़ी गई थी — Singapore Declaration में यह शामिल नहीं थी।"
+    }
+  }
+]

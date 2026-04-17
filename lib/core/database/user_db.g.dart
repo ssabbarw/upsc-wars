@@ -286,6 +286,21 @@ class $QuestionsTable extends Questions
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _negativeFramingMeta = const VerificationMeta(
+    'negativeFraming',
+  );
+  @override
+  late final GeneratedColumn<bool> negativeFraming = GeneratedColumn<bool>(
+    'negative_framing',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("negative_framing" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     uuid,
@@ -300,6 +315,7 @@ class $QuestionsTable extends Questions
     enDisplayText,
     hiDisplayText,
     hasTable,
+    negativeFraming,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -419,6 +435,15 @@ class $QuestionsTable extends Questions
         hasTable.isAcceptableOrUnknown(data['has_table']!, _hasTableMeta),
       );
     }
+    if (data.containsKey('negative_framing')) {
+      context.handle(
+        _negativeFramingMeta,
+        negativeFraming.isAcceptableOrUnknown(
+          data['negative_framing']!,
+          _negativeFramingMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -476,6 +501,10 @@ class $QuestionsTable extends Questions
         DriftSqlType.bool,
         data['${effectivePrefix}has_table'],
       )!,
+      negativeFraming: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}negative_framing'],
+      )!,
     );
   }
 
@@ -498,6 +527,7 @@ class Question extends DataClass implements Insertable<Question> {
   final String? enDisplayText;
   final String? hiDisplayText;
   final bool hasTable;
+  final bool negativeFraming;
   const Question({
     required this.uuid,
     required this.subject,
@@ -511,6 +541,7 @@ class Question extends DataClass implements Insertable<Question> {
     this.enDisplayText,
     this.hiDisplayText,
     required this.hasTable,
+    required this.negativeFraming,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -533,6 +564,7 @@ class Question extends DataClass implements Insertable<Question> {
       map['hi_display_text'] = Variable<String>(hiDisplayText);
     }
     map['has_table'] = Variable<bool>(hasTable);
+    map['negative_framing'] = Variable<bool>(negativeFraming);
     return map;
   }
 
@@ -556,6 +588,7 @@ class Question extends DataClass implements Insertable<Question> {
           ? const Value.absent()
           : Value(hiDisplayText),
       hasTable: Value(hasTable),
+      negativeFraming: Value(negativeFraming),
     );
   }
 
@@ -577,6 +610,7 @@ class Question extends DataClass implements Insertable<Question> {
       enDisplayText: serializer.fromJson<String?>(json['enDisplayText']),
       hiDisplayText: serializer.fromJson<String?>(json['hiDisplayText']),
       hasTable: serializer.fromJson<bool>(json['hasTable']),
+      negativeFraming: serializer.fromJson<bool>(json['negativeFraming']),
     );
   }
   @override
@@ -595,6 +629,7 @@ class Question extends DataClass implements Insertable<Question> {
       'enDisplayText': serializer.toJson<String?>(enDisplayText),
       'hiDisplayText': serializer.toJson<String?>(hiDisplayText),
       'hasTable': serializer.toJson<bool>(hasTable),
+      'negativeFraming': serializer.toJson<bool>(negativeFraming),
     };
   }
 
@@ -611,6 +646,7 @@ class Question extends DataClass implements Insertable<Question> {
     Value<String?> enDisplayText = const Value.absent(),
     Value<String?> hiDisplayText = const Value.absent(),
     bool? hasTable,
+    bool? negativeFraming,
   }) => Question(
     uuid: uuid ?? this.uuid,
     subject: subject ?? this.subject,
@@ -628,6 +664,7 @@ class Question extends DataClass implements Insertable<Question> {
         ? hiDisplayText.value
         : this.hiDisplayText,
     hasTable: hasTable ?? this.hasTable,
+    negativeFraming: negativeFraming ?? this.negativeFraming,
   );
   Question copyWithCompanion(QuestionsCompanion data) {
     return Question(
@@ -655,6 +692,9 @@ class Question extends DataClass implements Insertable<Question> {
           ? data.hiDisplayText.value
           : this.hiDisplayText,
       hasTable: data.hasTable.present ? data.hasTable.value : this.hasTable,
+      negativeFraming: data.negativeFraming.present
+          ? data.negativeFraming.value
+          : this.negativeFraming,
     );
   }
 
@@ -672,7 +712,8 @@ class Question extends DataClass implements Insertable<Question> {
           ..write('conceptsUsed: $conceptsUsed, ')
           ..write('enDisplayText: $enDisplayText, ')
           ..write('hiDisplayText: $hiDisplayText, ')
-          ..write('hasTable: $hasTable')
+          ..write('hasTable: $hasTable, ')
+          ..write('negativeFraming: $negativeFraming')
           ..write(')'))
         .toString();
   }
@@ -691,6 +732,7 @@ class Question extends DataClass implements Insertable<Question> {
     enDisplayText,
     hiDisplayText,
     hasTable,
+    negativeFraming,
   );
   @override
   bool operator ==(Object other) =>
@@ -707,7 +749,8 @@ class Question extends DataClass implements Insertable<Question> {
           other.conceptsUsed == this.conceptsUsed &&
           other.enDisplayText == this.enDisplayText &&
           other.hiDisplayText == this.hiDisplayText &&
-          other.hasTable == this.hasTable);
+          other.hasTable == this.hasTable &&
+          other.negativeFraming == this.negativeFraming);
 }
 
 class QuestionsCompanion extends UpdateCompanion<Question> {
@@ -723,6 +766,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
   final Value<String?> enDisplayText;
   final Value<String?> hiDisplayText;
   final Value<bool> hasTable;
+  final Value<bool> negativeFraming;
   final Value<int> rowid;
   const QuestionsCompanion({
     this.uuid = const Value.absent(),
@@ -737,6 +781,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     this.enDisplayText = const Value.absent(),
     this.hiDisplayText = const Value.absent(),
     this.hasTable = const Value.absent(),
+    this.negativeFraming = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   QuestionsCompanion.insert({
@@ -752,6 +797,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     this.enDisplayText = const Value.absent(),
     this.hiDisplayText = const Value.absent(),
     this.hasTable = const Value.absent(),
+    this.negativeFraming = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : uuid = Value(uuid),
        subject = Value(subject),
@@ -774,6 +820,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     Expression<String>? enDisplayText,
     Expression<String>? hiDisplayText,
     Expression<bool>? hasTable,
+    Expression<bool>? negativeFraming,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -789,6 +836,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
       if (enDisplayText != null) 'en_display_text': enDisplayText,
       if (hiDisplayText != null) 'hi_display_text': hiDisplayText,
       if (hasTable != null) 'has_table': hasTable,
+      if (negativeFraming != null) 'negative_framing': negativeFraming,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -806,6 +854,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     Value<String?>? enDisplayText,
     Value<String?>? hiDisplayText,
     Value<bool>? hasTable,
+    Value<bool>? negativeFraming,
     Value<int>? rowid,
   }) {
     return QuestionsCompanion(
@@ -821,6 +870,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
       enDisplayText: enDisplayText ?? this.enDisplayText,
       hiDisplayText: hiDisplayText ?? this.hiDisplayText,
       hasTable: hasTable ?? this.hasTable,
+      negativeFraming: negativeFraming ?? this.negativeFraming,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -864,6 +914,9 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     if (hasTable.present) {
       map['has_table'] = Variable<bool>(hasTable.value);
     }
+    if (negativeFraming.present) {
+      map['negative_framing'] = Variable<bool>(negativeFraming.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -885,6 +938,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
           ..write('enDisplayText: $enDisplayText, ')
           ..write('hiDisplayText: $hiDisplayText, ')
           ..write('hasTable: $hasTable, ')
+          ..write('negativeFraming: $negativeFraming, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -5175,6 +5229,7 @@ typedef $$QuestionsTableCreateCompanionBuilder =
       Value<String?> enDisplayText,
       Value<String?> hiDisplayText,
       Value<bool> hasTable,
+      Value<bool> negativeFraming,
       Value<int> rowid,
     });
 typedef $$QuestionsTableUpdateCompanionBuilder =
@@ -5191,6 +5246,7 @@ typedef $$QuestionsTableUpdateCompanionBuilder =
       Value<String?> enDisplayText,
       Value<String?> hiDisplayText,
       Value<bool> hasTable,
+      Value<bool> negativeFraming,
       Value<int> rowid,
     });
 
@@ -5382,6 +5438,11 @@ class $$QuestionsTableFilterComposer
 
   ColumnFilters<bool> get hasTable => $composableBuilder(
     column: $table.hasTable,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get negativeFraming => $composableBuilder(
+    column: $table.negativeFraming,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -5579,6 +5640,11 @@ class $$QuestionsTableOrderingComposer
     column: $table.hasTable,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get negativeFraming => $composableBuilder(
+    column: $table.negativeFraming,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$QuestionsTableAnnotationComposer
@@ -5637,6 +5703,11 @@ class $$QuestionsTableAnnotationComposer
 
   GeneratedColumn<bool> get hasTable =>
       $composableBuilder(column: $table.hasTable, builder: (column) => column);
+
+  GeneratedColumn<bool> get negativeFraming => $composableBuilder(
+    column: $table.negativeFraming,
+    builder: (column) => column,
+  );
 
   Expression<T> questionTranslationsRefs<T extends Object>(
     Expression<T> Function($$QuestionTranslationsTableAnnotationComposer a) f,
@@ -5811,6 +5882,7 @@ class $$QuestionsTableTableManager
                 Value<String?> enDisplayText = const Value.absent(),
                 Value<String?> hiDisplayText = const Value.absent(),
                 Value<bool> hasTable = const Value.absent(),
+                Value<bool> negativeFraming = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => QuestionsCompanion(
                 uuid: uuid,
@@ -5825,6 +5897,7 @@ class $$QuestionsTableTableManager
                 enDisplayText: enDisplayText,
                 hiDisplayText: hiDisplayText,
                 hasTable: hasTable,
+                negativeFraming: negativeFraming,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -5841,6 +5914,7 @@ class $$QuestionsTableTableManager
                 Value<String?> enDisplayText = const Value.absent(),
                 Value<String?> hiDisplayText = const Value.absent(),
                 Value<bool> hasTable = const Value.absent(),
+                Value<bool> negativeFraming = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => QuestionsCompanion.insert(
                 uuid: uuid,
@@ -5855,6 +5929,7 @@ class $$QuestionsTableTableManager
                 enDisplayText: enDisplayText,
                 hiDisplayText: hiDisplayText,
                 hasTable: hasTable,
+                negativeFraming: negativeFraming,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

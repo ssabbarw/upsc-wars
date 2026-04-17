@@ -1,0 +1,1085 @@
+[
+  {
+    "uuid": "9757679d-e6bc-48b7-ab7c-d2b0a3044827",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Constitutional Basis and Nature of Impeachment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 61 sole provision for presidential impeachment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following correctly describes the ONLY constitutional mechanism through which the President of India can be removed from office during tenure?\n\n(a) By passing a motion of no-confidence in the Lok Sabha\n(b) By impeachment under Article 61 for violation of the Constitution\n(c) By invoking Article 356 with the concurrence of both Houses of Parliament\n(d) By a Supreme Court order on a petition filed by Parliament",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students familiar with parliamentary conventions may assume that a motion of no-confidence, which removes the Prime Minister, could logically extend to the President as well.",
+      "elimination_logic": [
+        "Eliminate (a): A motion of no-confidence applies only to the Council of Ministers, not the President.",
+        "Eliminate (c): Article 356 concerns President's Rule in states — not a mechanism to remove the President.",
+        "Eliminate (d): Courts have no power to remove the President; Article 361 grants immunity during tenure.",
+        "Confirm (b): Article 61 is the sole constitutional provision for removing the President — impeachment for violation of the Constitution."
+      ],
+      "upsc_trap_explanation": "Students familiar with Westminster parliamentary systems may instinctively associate removal of the head of the executive with a no-confidence motion. The trap here is scope-extension — applying a parliamentary mechanism to a constitutional office where it explicitly does not apply. Article 61 is the only route, and no other mechanism — judicial, parliamentary no-confidence, or presidential order — can remove the President.",
+      "final_explanation": "The President of India, being a constitutional head elected through a special electoral college, cannot be removed through the same mechanisms that apply to the Cabinet or ordinary functionaries. Article 61 is the sole constitutional provision governing the President's removal, and it prescribes impeachment only on the ground of violation of the Constitution.\n\n• Option (a): Incorrect. A no-confidence motion under Article 75 applies to the Council of Ministers and has no applicability to the President's office.\n• Option (b): Correct. Article 61 lays down the exclusive procedure for presidential impeachment — no other mechanism exists.\n• Option (c): Incorrect. Article 356 authorises the President to proclaim President's Rule in a state; it does not operate against the President.\n• Option (d): Incorrect. Courts cannot remove the President; Article 361 immunises the President from court proceedings during tenure.\n\nValue Addition:\n• The Vice President is removed under Article 67(b) — a separate, simpler mechanism not called 'impeachment.'\n• No President of India has ever been impeached.\n• The quasi-judicial nature of Article 61 distinguishes India's process from the purely political US impeachment model."
+    },
+    "hi": {
+      "display_text": "भारत के राष्ट्रपति को कार्यकाल के दौरान पद से हटाने की केवल कौन-सी संवैधानिक प्रक्रिया सही रूप से वर्णित करती है?\n\n(a) लोकसभा में अविश्वास प्रस्ताव पारित करके\n(b) संविधान के उल्लंघन के लिए अनुच्छेद 61 के तहत महाभियोग द्वारा\n(c) संसद के दोनों सदनों की सहमति से अनुच्छेद 356 लागू करके\n(d) संसद द्वारा दायर याचिका पर सर्वोच्च न्यायालय के आदेश द्वारा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि संसदीय परंपराओं से परिचित छात्र यह मान सकते हैं कि अविश्वास प्रस्ताव, जो प्रधानमंत्री को हटाता है, तर्कसंगत रूप से राष्ट्रपति पर भी लागू हो सकता है।",
+      "elimination_logic": [
+        "(a) को हटाएं: अविश्वास प्रस्ताव केवल मंत्रीमंडल पर लागू होता है, राष्ट्रपति पर नहीं।",
+        "(c) को हटाएं: अनुच्छेद 356 राज्यों में राष्ट्रपति शासन से संबंधित है — यह राष्ट्रपति को हटाने की प्रक्रिया नहीं है।",
+        "(d) को हटाएं: न्यायालयों के पास राष्ट्रपति को हटाने का अधिकार नहीं है; अनुच्छेद 361 कार्यकाल के दौरान संरक्षण प्रदान करता है।",
+        "(b) की पुष्टि करें: अनुच्छेद 61 राष्ट्रपति को हटाने के लिए एकमात्र संवैधानिक प्रावधान है — संविधान के उल्लंघन पर महाभियोग।"
+      ],
+      "upsc_trap_explanation": "वेस्टमिंस्टर संसदीय प्रणाली से परिचित छात्र स्वाभाविक रूप से कार्यपालिका प्रमुख को हटाने को अविश्वास प्रस्ताव से जोड़ सकते हैं। यहाँ जाल है दायरे का विस्तार — संसदीय प्रक्रिया को उस संवैधानिक पद पर लागू करना जहाँ यह स्पष्ट रूप से लागू नहीं होती। अनुच्छेद 61 ही एकमात्र मार्ग है, और कोई अन्य प्रक्रिया — न्यायिक, संसदीय अविश्वास, या राष्ट्रपति आदेश — राष्ट्रपति को हटा नहीं सकती।",
+      "final_explanation": "भारत के राष्ट्रपति, जो एक विशेष निर्वाचक मंडल के माध्यम से निर्वाचित संवैधानिक प्रमुख हैं, उन्हें कैबिनेट या सामान्य कार्यकारियों पर लागू होने वाली समान प्रक्रियाओं से हटाया नहीं जा सकता। अनुच्छेद 61 राष्ट्रपति की हटाने की एकमात्र संवैधानिक व्यवस्था है, जो केवल संविधान के उल्लंघन के आधार पर महाभियोग का प्रावधान करता है।\n\n• विकल्प (a): गलत। अनुच्छेद 75 के तहत अविश्वास प्रस्ताव मंत्रीमंडल पर लागू होता है और राष्ट्रपति के पद पर लागू नहीं होता।\n• विकल्प (b): सही। अनुच्छेद 61 राष्ट्रपति के महाभियोग की विशिष्ट प्रक्रिया निर्धारित करता है — कोई अन्य प्रक्रिया नहीं है।\n• विकल्प (c): गलत। अनुच्छेद 356 राष्ट्रपति को राज्यों में राष्ट्रपति शासन घोषित करने का अधिकार देता है; यह राष्ट्रपति के विरुद्ध नहीं है।\n• विकल्प (d): गलत। न्यायालय राष्ट्रपति को हटा नहीं सकते; अनुच्छेद 361 कार्यकाल के दौरान राष्ट्रपति को न्यायालयीन कार्यवाही से मुक्त करता है।\n\nमूल्य संवर्धन:\n• उपराष्ट्रपति को अनुच्छेद 67(बी) के तहत हटाया जाता है — एक अलग, सरल प्रक्रिया जिसे 'महाभियोग' नहीं कहा जाता।\n• भारत के किसी भी राष्ट्रपति को कभी महाभियोग का सामना नहीं करना पड़ा।\n• अनुच्छेद 61 की अर्ध-न्यायिक प्रकृति भारत की प्रक्रिया को पूरी तरह राजनीतिक अमेरिकी महाभियोग मॉडल से अलग करती है।"
+    }
+  },
+  {
+    "uuid": "259af475-7cdb-4491-ab28-01b66933fdfc",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Grounds for Impeachment: 'Violation of the Constitution'",
+        "Impeachment vs. Removal Due to Incapacity or Death"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Grounds for impeachment — violation of Constitution only",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the grounds for impeachment of the President of India under Article 61, consider the following statements:\n\n1. The term 'violation of the Constitution' as used in Article 61 has been precisely defined by a constitutional amendment.\n2. Physical or mental incapacity of the President is not a valid ground for impeachment under Article 61.\n3. Misconduct not amounting to violation of the Constitution can also serve as a ground for initiating impeachment proceedings.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The term 'violation of the Constitution' as used in Article 61 has been precisely defined by a constitutional amendment.",
+          "verdict": "Incorrect",
+          "reason": "The Constitution deliberately leaves the term undefined — there is no amendment or statutory definition of what constitutes 'violation of the Constitution' for impeachment purposes."
+        },
+        {
+          "statement": "Physical or mental incapacity of the President is not a valid ground for impeachment under Article 61.",
+          "verdict": "Correct",
+          "reason": "Article 61 exclusively covers violation of the Constitution; unlike the US 25th Amendment, India has no constitutional provision for removing the President on grounds of incapacity."
+        },
+        {
+          "statement": "Misconduct not amounting to violation of the Constitution can also serve as a ground for initiating impeachment proceedings.",
+          "verdict": "Incorrect",
+          "reason": "Article 61 restricts impeachment strictly to 'violation of the Constitution' — misconduct or maladministration that does not amount to a constitutional violation is not a valid ground."
+        }
+      ],
+      "strong_distractor": "d — Selecting 'all three' is tempting because students may assume that a comprehensive constitution would define impeachment grounds broadly, making statements 1 and 3 plausible.",
+      "elimination_logic": [
+        "Eliminate any option including Statement 1: The term 'violation of the Constitution' is intentionally undefined — no amendment has defined it.",
+        "Eliminate any option including Statement 3: Article 61 does not extend to misconduct that falls short of constitutional violation.",
+        "Confirm Statement 2: Incapacity is explicitly outside Article 61's scope — India lacks a US 25th Amendment equivalent.",
+        "The only correct statement is 2, so select (b)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap works on two levels here. First, students may assume that 'violation of the Constitution' has been codified somewhere, making Statement 1 feel correct. Second, the word 'misconduct' in Statement 3 sounds severe enough to qualify as a constitutional violation — the trap lies in assuming severity of conduct automatically elevates it to a constitutional ground. Only a student who knows that Article 61 is strictly limited to constitutional violation, and that India has no incapacity-removal mechanism, will correctly isolate Statement 2.",
+      "final_explanation": "Article 61 governs presidential impeachment on the sole ground of 'violation of the Constitution.' This phrase is left deliberately undefined, making its interpretation a matter of parliamentary and political judgment rather than legal prescription.\n\n• Statement 1 — Incorrect: No constitutional amendment or statute defines 'violation of the Constitution' for Article 61 purposes. The ambiguity is intentional, mirroring similar open-ended formulations in constitutional design.\n• Statement 2 — Correct: India has no provision equivalent to the US 25th Amendment. Physical or mental incapacity of the President is a constitutional gap — Article 61 does not apply, and no other article fills this void.\n• Statement 3 — Incorrect: Article 61 is narrow; only constitutional violations qualify. Misconduct, corruption, or maladministration that does not rise to a constitutional breach cannot ground impeachment.\n\nValue Addition:\n• The US grounds of 'high crimes and misdemeanors' are also undefined, but India's 'violation of the Constitution' is arguably narrower in one reading.\n• India's constitution has no equivalent to the 25th Amendment — a noted structural gap.\n• The deliberate ambiguity in Article 61 gives Parliament discretion but also creates political accountability risk."
+    },
+    "hi": {
+      "display_text": "अनुच्छेद 61 के अंतर्गत भारत के राष्ट्रपति के महाभियोग के आधारों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 61 में प्रयुक्त 'संविधान का उल्लंघन' शब्द को संवैधानिक संशोधन द्वारा सटीक रूप से परिभाषित किया गया है।\n2. अनुच्छेद 61 के अंतर्गत राष्ट्रपति की शारीरिक या मानसिक अक्षमता महाभियोग का वैध आधार नहीं है।\n3. ऐसा दुराचार जो संविधान के उल्लंघन के बराबर न हो, महाभियोग प्रक्रिया शुरू करने का आधार बन सकता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The term 'violation of the Constitution' as used in Article 61 has been precisely defined by a constitutional amendment.",
+          "verdict": "गलत",
+          "reason": "संविधान जानबूझकर इस शब्द को अपरिभाषित छोड़ता है — 'संविधान का उल्लंघन' क्या है, इसके लिए कोई संशोधन या वैधानिक परिभाषा नहीं है।"
+        },
+        {
+          "statement": "Physical or mental incapacity of the President is not a valid ground for impeachment under Article 61.",
+          "verdict": "सही है",
+          "reason": "अनुच्छेद 61 केवल संविधान के उल्लंघन को कवर करता है; अमेरिका के 25वें संशोधन के विपरीत, भारत में राष्ट्रपति को अक्षमता के आधार पर हटाने का कोई संवैधानिक प्रावधान नहीं है।"
+        },
+        {
+          "statement": "Misconduct not amounting to violation of the Constitution can also serve as a ground for initiating impeachment proceedings.",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 61 में महज 'संविधान के उल्लंघन' तक ही महदूद है — ऐसा दुराचार या कुप्रशासन जो संवैधानिक उल्लंघन नहीं है, वह अयोग्यता का आधार नहीं बन सकता।"
+        }
+      ],
+      "strong_distractor": "d — 'सभी तीन' चुनना आकर्षक है क्योंकि छात्र मान सकते हैं कि एक व्यापक संविधान में महाभियोग के आधार व्यापक रूप से परिभाषित होंगे, जिससे कथन 1 और 3 संभावित लगते हैं।",
+      "elimination_logic": [
+        "किसी भी विकल्प को हटा दें जिसमें कथन 1 शामिल हो: 'संविधान का उल्लंघन' जानबूझकर अपरिभाषित है — कोई संशोधन इसे परिभाषित नहीं करता।",
+        "किसी भी विकल्प को हटा दें जिसमें कथन 3 शामिल हो: अनुच्छेद 61 ऐसा दुराचार जो संवैधानिक उल्लंघन नहीं है, उसे शामिल नहीं करता।",
+        "कथन 2 की पुष्टि करें: अक्षमता स्पष्ट रूप से अनुच्छेद 61 के दायरे से बाहर है — भारत में अमेरिका के 25वें संशोधन के समान कोई प्रावधान नहीं है।",
+        "केवल कथन 2 सही है, अतः (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह दायरा-विस्तार जाल दो स्तरों पर काम करता है। पहला, छात्र मान सकते हैं कि 'संविधान का उल्लंघन' कहीं परिभाषित है, जिससे कथन 1 सही लगता है। दूसरा, कथन 3 में 'दुराचार' शब्द इतना गंभीर लगता है कि वह संवैधानिक उल्लंघन माना जा सकता है — जाल यह मानने में है कि कृत्य की गंभीरता अपने आप इसे संवैधानिक आधार बना देती है। केवल वही छात्र जो जानते हैं कि अनुच्छेद 61 केवल संविधान के उल्लंघन तक सीमित है, और भारत में अक्षमता के आधार पर हटाने का प्रावधान नहीं है, सही रूप से कथन 2 को अलग कर पाएंगे।",
+      "final_explanation": "अनुच्छेद 61 राष्ट्रपति के महाभियोग को केवल 'संविधान के उल्लंघन' के आधार पर नियंत्रित करता है। यह शब्द जानबूझकर अपरिभाषित छोड़ा गया है, जिससे इसका अर्थ संसद और राजनीतिक निर्णय का विषय बनता है, न कि कानूनी परिभाषा।\n\n• कथन 1 — गलत: अनुच्छेद 61 के लिए 'संविधान का उल्लंघन' को परिभाषित करने वाला कोई संवैधानिक संशोधन या विधि नहीं है। यह अस्पष्टता जानबूझकर है, जो संवैधानिक डिजाइन में इसी तरह के खुले स्वरूपों को दर्शाती है।\n• कथन 2 — सही: भारत में अमेरिका के 25वें संशोधन के समान कोई प्रावधान नहीं है। राष्ट्रपति की शारीरिक या मानसिक अक्षमता एक संवैधानिक अंतराल है — अनुच्छेद 61 लागू नहीं होता, और कोई अन्य अनुच्छेद इसे पूरा नहीं करता।\n• कथन 3 — गलत: अनुच्छेद 61 संकीर्ण है; केवल संवैधानिक उल्लंघन ही मान्य हैं। ऐसा दुराचार, भ्रष्टाचार या कुप्रशासन जो संवैधानिक उल्लंघन नहीं है, महाभियोग का आधार नहीं बन सकता।\n\nमूल्यवर्धन:\n• अमेरिका के 'high crimes and misdemeanors' भी अपरिभाषित हैं, लेकिन भारत का 'संविधान का उल्लंघन' एक अर्थ में संकीर्ण है।\n• भारत के संविधान में 25वें संशोधन के समान कोई प्रावधान नहीं है — यह एक संरचनात्मक अंतराल है।\n• अनुच्छेद 61 की जानबूझकर अस्पष्टता संसद को विवेक देती है, पर राजनीतिक जवाबदेही का जोखिम भी पैदा करती है।"
+    }
+  },
+  {
+    "uuid": "af10ea8e-21e4-4fb1-959f-22c8c01b8768",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "President's Right to Defence During Impeachment",
+        "Participation of Both Houses: No Joint Sitting"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Quasi-judicial nature — audi alteram partem in impeachment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The President of India has the constitutional right to appear and be represented by counsel during the investigation conducted by the second house in impeachment proceedings.\n\nReason (R): The impeachment process under Article 61 is characterised as quasi-judicial in nature, distinguishing it from purely political removal processes in other democracies.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who correctly identify both A and R as true may automatically select (a) without testing whether R actually explains A — the quasi-judicial label does not logically follow solely from the right to representation.",
+      "elimination_logic": [
+        "Step 1 — Is A correct? Yes. Article 61(3) expressly guarantees the President the right to appear and be represented by counsel during investigation by the other house.",
+        "Step 2 — Is R correct? Yes. The impeachment process is widely described as quasi-judicial because both houses perform investigatory functions and the President has due-process rights.",
+        "Step 3 — Does R explain A? No. The quasi-judicial characterisation is a consequence of features including the right to representation — it does not causally explain why that right exists. The right exists because of the audi alteram partem principle, not because the process is labelled quasi-judicial.",
+        "Both A and R are correct but R does not explain A — correct option is (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 61(3) embeds a fundamental principle of natural justice — audi alteram partem (hear the other side) — directly into the impeachment procedure. The President's right to appear personally or through counsel before the investigating house is constitutionally guaranteed, not merely a matter of convention.\n\n• Assertion (A) — Correct: Article 61(3) explicitly provides that the President shall have the right to appear and be represented at the investigation conducted by the second house.\n• Reason (R) — Correct: The impeachment process is indeed characterised as quasi-judicial — both houses perform functions resembling a tribunal: examining evidence, hearing representations, and adjudicating a constitutional violation.\n• Causal relationship: R is true independently, but it does not explain why the right to representation exists. The right flows from the natural justice principle of audi alteram partem, which is constitutionally mandated. The quasi-judicial label describes the overall process — it is an effect of features including this right, not their cause.\n\nValue Addition:\n• Compare with Article 124(4): SC judges also have representation rights during parliamentary investigation — a parallel quasi-judicial feature.\n• The Judges Inquiry Act, 1968 provides detailed procedural rules for judicial investigations — no equivalent legislation exists for Article 61.\n• Audi alteram partem is one of two pillars of natural justice; the other is nemo judex in causa sua (no person shall be a judge in their own case)."
+    },
+    "hi": {
+      "display_text": "कथन (A): भारत के राष्ट्रपति को महाभियोग कार्यवाही में दूसरे सदन द्वारा की जा रही जांच के दौरान उपस्थित होने और वकील द्वारा प्रतिनिधित्व किए जाने का संवैधानिक अधिकार प्राप्त है।\n\nकारण (R): अनुच्छेद 61 के अंतर्गत महाभियोग प्रक्रिया को अर्ध-न्यायिक स्वरूप का बताया गया है, जो इसे अन्य लोकतंत्रों में शुद्ध राजनीतिक हटाने की प्रक्रियाओं से अलग करता है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who correctly identify both A and R as true may automatically select (a) without testing whether R actually explains A — the quasi-judicial label does not logically follow solely from the right to representation.",
+      "elimination_logic": [
+        "चरण 1 — क्या A सही है? हाँ। अनुच्छेद 61(3) स्पष्ट रूप से राष्ट्रपति को दूसरे सदन द्वारा की जा रही जांच के दौरान उपस्थित होने और वकील द्वारा प्रतिनिधित्व किए जाने का अधिकार प्रदान करता है।",
+        "चरण 2 — क्या R सही है? हाँ। महाभियोग प्रक्रिया को व्यापक रूप से अर्ध-न्यायिक (quasi-judicial) कहा जाता है क्योंकि दोनों सदन जांच संबंधी कार्य करते हैं और राष्ट्रपति के पास उचित प्रक्रिया के अधिकार होते हैं।",
+        "चरण 3 — क्या R, A की व्याख्या करता है? नहीं। अर्ध-न्यायिक स्वरूप उन विशेषताओं का परिणाम है जिनमें प्रतिनिधित्व का अधिकार शामिल है — यह कारणात्मक रूप से यह नहीं बताता कि वह अधिकार क्यों मौजूद है। यह अधिकार audi alteram partem सिद्धांत के कारण है, न कि इसलिए कि प्रक्रिया को अर्ध-न्यायिक कहा जाता है।",
+        "A और R दोनों सही हैं लेकिन R, A की व्याख्या नहीं करता — सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 61(3) प्राकृतिक न्याय के एक मौलिक सिद्धांत — audi alteram partem (दूसरी पक्ष की सुनवाई) — को सीधे महाभियोग प्रक्रिया में समाहित करता है। राष्ट्रपति का व्यक्तिगत रूप से या वकील के माध्यम से जांच करने वाले सदन के समक्ष उपस्थित होने का अधिकार संवैधानिक रूप से सुनिश्चित है, केवल परंपरा का विषय नहीं है।\n\n• कथन (A) — सही: अनुच्छेद 61(3) स्पष्ट रूप से प्रदान करता है कि राष्ट्रपति को दूसरे सदन द्वारा की जा रही जांच में उपस्थित होने और प्रतिनिधित्व किए जाने का अधिकार होगा।\n• कारण (R) — सही: महाभियोग प्रक्रिया को वास्तव में अर्ध-न्यायिक कहा जाता है — दोनों सदन एक न्यायाधिकरण के समान कार्य करते हैं: साक्ष्य की जांच, प्रस्तुतियाँ सुनना, और संवैधानिक उल्लंघन पर निर्णय लेना।\n• कारणात्मक संबंध: R स्वतंत्र रूप से सही है, लेकिन यह यह नहीं बताता कि प्रतिनिधित्व का अधिकार क्यों है। यह अधिकार प्राकृतिक न्याय के audi alteram partem सिद्धांत से आता है, जो संवैधानिक रूप से अनिवार्य है। अर्ध-न्यायिक लेबल पूरी प्रक्रिया का वर्णन करता है — यह उन विशेषताओं का परिणाम है जिनमें यह अधिकार शामिल है, उनका कारण नहीं।\n\nमूल्यवर्धन:\n• अनुच्छेद 124(4) से तुलना करें: सर्वोच्च न्यायालय के न्यायाधीशों को भी संसदीय जांच के दौरान प्रतिनिधित्व का अधिकार है — एक समान अर्ध-न्यायिक विशेषता।\n• जजेस इन्क्वायरी एक्ट, 1968 न्यायिक जांच के लिए विस्तृत प्रक्रियात्मक नियम प्रदान करता है — अनुच्छेद 61 के लिए ऐसा कोई समकक्ष कानून नहीं है।\n• audi alteram partem प्राकृतिक न्याय के दो स्तंभों में से एक है; दूसरा है nemo judex in causa sua (कोई व्यक्ति अपने ही मामले में न्यायाधीश नहीं हो सकता)।"
+    }
+  },
+  {
+    "uuid": "44c3b6a8-021c-497c-b99d-ad389f7a77d3",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Elected vs. Nominated Members' Voting Rights in Impeachment",
+        "Role of State Legislatures in Impeachment"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": null,
+      "concept_anchor": "Sequential stages of impeachment process under Article 61",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following stages in the impeachment of the President of India:\n\nP. Written notice signed by not less than one-fourth of the total membership of the house is given to the President.\nQ. The initiating house passes the impeachment resolution by two-thirds of its total membership.\nR. The other house sits as an investigating body; the President appears or is represented by counsel.\nS. The second house passes the resolution by two-thirds of its total membership, and the President stands removed.\n\nWhich of the following represents the correct chronological sequence under Article 61?\n\n(a) Q → P → R → S\n(b) P → R → Q → S\n(c) P → Q → R → S\n(d) R → P → Q → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the investigation before the notice, which a partially prepared student may accept if they recall that 'investigation' is central to impeachment without recalling the strict sequence.",
+      "elimination_logic": [
+        "The process must begin with the notice: 14-day advance written notice signed by one-fourth of total membership is a pre-requisite before the resolution is even moved — so P must come first.",
+        "The initiating house then passes the resolution by two-thirds of total membership (Q) — this must precede the other house's investigation.",
+        "Only after the resolution is passed does the second house investigate (R) — including the President's right to appear.",
+        "Correct sequence is P → Q → R → S, which is option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 61 prescribes a strict sequential procedure. Understanding this sequence is essential both for factual recall and for application questions.\n\nCorrect sequence: P → Q → R → S\n• P (14-day notice): The process cannot begin without a written notice signed by at least one-fourth of the total membership and addressed to the President — this is a constitutional pre-condition.\n• Q (Initiating house passes resolution): After the notice period, the initiating house debates and passes the resolution by two-thirds of its total membership.\n• R (Other house investigates): The passed resolution is transmitted to the second house, which then sits as an investigating body. The President may appear or send counsel.\n• S (Second house passes resolution): If the investigation concludes against the President, the second house passes the resolution by two-thirds of its total membership — at which point the President stands removed.\n\nWhy wrong options fail: Any option placing R before Q reverses the constitutional sequence. Any option placing S before R skips the investigation stage entirely.\n\nValue Addition:\n• Removal takes effect immediately and automatically upon the second house passing the resolution — no Presidential order is needed.\n• The Vice President takes over as Acting President under Article 65 upon removal.\n• Nominated MPs participate in both the initiating and investigating house votes — unlike Presidential elections where they are excluded."
+    },
+    "hi": {
+      "display_text": "भारत के राष्ट्रपति के महाभियोग के निम्नलिखित चरणों पर विचार करें:\n\nP. सदन की कुल सदस्यता के कम से कम एक-चौथाई द्वारा हस्ताक्षरित लिखित नोटिस राष्ट्रपति को दिया जाता है।\nQ. प्रारंभिक सदन अपने कुल सदस्यता के दो-तिहाई बहुमत से महाभियोग प्रस्ताव पारित करता है।\nR. दूसरा सदन जांच समिति के रूप में बैठता है; राष्ट्रपति उपस्थित होता है या उसका प्रतिनिधि वकील होता है।\nS. दूसरा सदन अपने कुल सदस्यता के दो-तिहाई बहुमत से प्रस्ताव पारित करता है, और राष्ट्रपति पद से हट जाता है।\n\nअनुच्छेद 61 के तहत सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) Q → P → R → S\n(b) P → R → Q → S\n(c) P → Q → R → S\n(d) R → P → Q → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में जांच को नोटिस से पहले रखा गया है, जिसे आंशिक रूप से तैयार छात्र स्वीकार कर सकता है यदि वह याद करता है कि 'जांच' महाभियोग का केंद्र है लेकिन सख्त क्रम को याद नहीं रखता।",
+      "elimination_logic": [
+        "प्रक्रिया नोटिस से शुरू होनी चाहिए: कुल सदस्यता के कम से कम एक-चौथाई द्वारा हस्ताक्षरित 14-दिन का अग्रिम लिखित नोटिस आवश्यक है, इससे पहले कि प्रस्ताव पारित किया जाए — अतः P पहले आना चाहिए।",
+        "प्रारंभिक सदन फिर कुल सदस्यता के दो-तिहाई बहुमत से प्रस्ताव पारित करता है (Q) — यह दूसरे सदन की जांच से पहले होना चाहिए।",
+        "केवल प्रस्ताव पारित होने के बाद दूसरा सदन जांच करता है (R) — जिसमें राष्ट्रपति के उपस्थित होने का अधिकार शामिल है।",
+        "सही क्रम है P → Q → R → S, जो विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 61 एक सख्त क्रमिक प्रक्रिया निर्धारित करता है। इस क्रम को समझना तथ्यात्मक स्मृति और आवेदन प्रश्नों दोनों के लिए आवश्यक है।\n\nसही क्रम: P → Q → R → S\n• P (14-दिन नोटिस): प्रक्रिया बिना कुल सदस्यता के कम से कम एक-चौथाई द्वारा हस्ताक्षरित और राष्ट्रपति को संबोधित लिखित नोटिस के शुरू नहीं हो सकती — यह एक संवैधानिक पूर्व-शर्त है।\n• Q (प्रारंभिक सदन प्रस्ताव पारित करता है): नोटिस अवधि के बाद, प्रारंभिक सदन बहस करता है और अपने कुल सदस्यता के दो-तिहाई बहुमत से प्रस्ताव पारित करता है।\n• R (दूसरा सदन जांच करता है): पारित प्रस्ताव दूसरे सदन को भेजा जाता है, जो जांच समिति के रूप में बैठता है। राष्ट्रपति उपस्थित हो सकता है या वकील भेज सकता है।\n• S (दूसरा सदन प्रस्ताव पारित करता है): यदि जांच राष्ट्रपति के खिलाफ समाप्त होती है, तो दूसरा सदन अपने कुल सदस्यता के दो-तिहाई बहुमत से प्रस्ताव पारित करता है — इस बिंदु पर राष्ट्रपति पद से हट जाता है।\n\nगलत विकल्प क्यों असफल होते हैं: कोई भी विकल्प जो R को Q से पहले रखता है वह संवैधानिक क्रम को उलट देता है। कोई भी विकल्प जो S को R से पहले रखता है वह जांच चरण को पूरी तरह छोड़ देता है।\n\nमूल्यवर्धन:\n• हटाना तुरंत और स्वचालित रूप से दूसरे सदन के प्रस्ताव पारित होते ही प्रभावी हो जाता है — राष्ट्रपति के आदेश की आवश्यकता नहीं होती।\n• हटाए जाने पर उपराष्ट्रपति अनुच्छेद 65 के तहत कार्यकारी राष्ट्रपति के रूप में कार्यभार संभालते हैं।\n• नामित सांसद प्रारंभिक और जांच दोनों सदन के मतदान में भाग लेते हैं — जैसे कि राष्ट्रपति चुनावों में वे शामिल नहीं होते।"
+    }
+  },
+  {
+    "uuid": "9edd8137-0b66-44a2-ae88-23d5b7a7556f",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Elected vs. Nominated Members' Voting Rights in Impeachment",
+        "Role of State Legislatures in Impeachment"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nominated MPs vote in impeachment; state legislatures excluded",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A group of constitutional law scholars is advising a parliamentary committee on the composition of the body that votes on an impeachment resolution against the President of India. One scholar argues that the same set of persons who elect the President should be the ones who remove him. A second scholar disagrees, citing Article 61.\n\nWhich of the following correctly describes the set of persons entitled to participate in the impeachment vote?\n\n(a) Elected members of both Houses of Parliament and elected members of State Legislative Assemblies\n(b) Only elected members of both Houses of Parliament, excluding nominated members\n(c) Elected and nominated members of Rajya Sabha only, since it is the upper house\n(d) Both elected and nominated members of both Houses of Parliament, with no role for State Legislature members",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students remember that the Presidential election involves state legislators and nominated MPs are excluded from that process, and may incorrectly apply the same rule to impeachment.",
+      "elimination_logic": [
+        "Eliminate (a): State Legislative Assembly members have no role in impeachment — unlike in the Presidential election, state legislatures are entirely excluded from impeachment.",
+        "Eliminate (b): Nominated members of Parliament ARE entitled to participate in impeachment — this is the reverse of the Presidential election rule.",
+        "Eliminate (c): The claim that only elected members of Rajya Sabha may vote is incorrect — all nominated members of both houses may participate.",
+        "Confirm (d): The correct position is that nominated MPs of both houses participate, while state legislators have no role — option (d) correctly states this."
+      ],
+      "upsc_trap_explanation": "This is a high-yield entity-swap trap. The Presidential election rule (nominated MPs excluded, state legislators included) is directly inverted in impeachment (nominated MPs included, state legislators excluded). Students who memorise these two features together tend to swap their application. The scenario-based format forces the student to apply the rule rather than merely recall it — a student who has only surface knowledge will apply the election rule to the removal scenario.",
+      "final_explanation": "A constitutional law scholar's advice in the scenario must reflect a precise understanding of which bodies participate in presidential impeachment.\n\nArticle 61 makes impeachment a purely parliamentary function. State legislatures, which participate in the President's election through their elected members, have absolutely no role in his removal. This is a significant asymmetry that reflects the federal character of election versus the parliamentary character of accountability.\n\nThe more counterintuitive rule is that nominated members of Parliament — who cannot vote in the Presidential election under Article 54 — are fully entitled to participate in impeachment proceedings. No constitutional provision excludes them, unlike the explicit exclusion in the election context.\n\n• Option (a): Incorrect. State legislators are entirely excluded — impeachment is a parliamentary, not federal, process.\n• Option (b): Incorrect. Nominated MPs do participate — the exclusion applies only to Presidential elections.\n• Option (c): Incorrect. Both Lok Sabha and Rajya Sabha nominated members participate, not just Rajya Sabha's.\n• Option (d): Correct. Nominated MPs of both houses vote; state legislators have no role.\n\nValue Addition:\n• Article 54 excludes nominated members from the Presidential electoral college — making impeachment a notable exception.\n• This distinction is a favourite UPSC pairing — always link Presidential election composition with impeachment composition.\n• The VP's removal under Article 67(b) also excludes state legislators."
+    },
+    "hi": {
+      "display_text": "एक संवैधानिक कानून विशेषज्ञों का समूह संसद की एक समिति को भारत के राष्ट्रपति के खिलाफ महाभियोग प्रस्ताव पर मतदान करने वाले निकाय की संरचना के बारे में सलाह दे रहा है। एक विशेषज्ञ का तर्क है कि राष्ट्रपति का चुनाव करने वाले वही लोग उसे हटाने वाले भी होने चाहिए। दूसरा विशेषज्ञ अनुच्छेद 61 का हवाला देते हुए असहमत है।\n\nनिम्नलिखित में से कौन-सा सही रूप से महाभियोग मतदान में भाग लेने वाले व्यक्तियों के समूह का वर्णन करता है?\n\n(a) दोनों सदनों के निर्वाचित सदस्य और राज्य विधानसभाओं के निर्वाचित सदस्य\n(b) केवल दोनों सदनों के निर्वाचित सदस्य, नामित सदस्यों को छोड़कर\n(c) केवल राज्यसभा के निर्वाचित और नामित सदस्य, क्योंकि यह उच्च सदन है\n(d) दोनों सदनों के निर्वाचित और नामित सदस्य, राज्य विधानसभाओं के सदस्यों की कोई भूमिका नहीं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि छात्र याद करते हैं कि राष्ट्रपति चुनाव में राज्य विधानसभाएँ शामिल होती हैं और नामित सांसद उस प्रक्रिया से बाहर होते हैं, और वे गलत तरीके से उसी नियम को महाभियोग पर लागू कर सकते हैं।",
+      "elimination_logic": [
+        "(a) को खारिज करें: राज्य विधान सभा के सदस्य महाभियोग में कोई भूमिका नहीं रखते — राष्ट्रपति चुनाव के विपरीत, राज्य विधानसभाएँ महाभियोग से पूरी तरह बाहर हैं।",
+        "(b) को खारिज करें: संसद के नामित सदस्य महाभियोग में भाग लेने के पात्र हैं — यह राष्ट्रपति चुनाव के नियम का उल्टा है।",
+        "(c) को खारिज करें: केवल राज्यसभा के निर्वाचित सदस्यों को मतदान का अधिकार है, यह दावा गलत है — दोनों सदनों के सभी नामित सदस्य भाग ले सकते हैं।",
+        "(d) को स्वीकार करें: सही स्थिति यह है कि दोनों सदनों के नामित सांसद भाग लेते हैं, जबकि राज्य विधानसभाओं की कोई भूमिका नहीं है — विकल्प (d) इसे सही रूप से बताता है।"
+      ],
+      "upsc_trap_explanation": "यह एक उच्च-मूल्य का इकाई-स्थानांतरण जाल है। राष्ट्रपति चुनाव का नियम (नामित सांसद बाहर, राज्य विधायक शामिल) महाभियोग में उल्टा है (नामित सांसद शामिल, राज्य विधायक बाहर)। जो छात्र इन दोनों विशेषताओं को एक साथ याद करते हैं, वे इनके अनुप्रयोग को उलट देते हैं। परिदृश्य-आधारित प्रारूप छात्र को केवल याद करने के बजाय नियम लागू करने के लिए मजबूर करता है — जो छात्र केवल सतही ज्ञान रखते हैं, वे चुनाव नियम को हटाने के परिदृश्य पर लागू कर देंगे।",
+      "final_explanation": "एक संवैधानिक कानून विशेषज्ञ की सलाह को इस परिदृश्य में राष्ट्रपति के महाभियोग के लिए भाग लेने वाले निकायों की सटीक समझ को प्रतिबिंबित करना चाहिए।\n\nअनुच्छेद 61 महाभियोग को पूरी तरह से संसदीय कार्य बनाता है। राज्य विधानसभाएँ, जो अपने निर्वाचित सदस्यों के माध्यम से राष्ट्रपति के चुनाव में भाग लेती हैं, उनके हटाने में बिल्कुल भी भूमिका नहीं रखतीं। यह एक महत्वपूर्ण विषमता है जो चुनाव के संघीय चरित्र और जवाबदेही के संसदीय चरित्र को दर्शाती है।\n\nसबसे अधिक अप्रत्याशित नियम यह है कि संसद के नामित सदस्य — जो अनुच्छेद 54 के तहत राष्ट्रपति चुनाव में मतदान नहीं कर सकते — महाभियोग कार्यवाही में पूरी तरह से भाग लेने के पात्र हैं। कोई संवैधानिक प्रावधान उन्हें बाहर नहीं करता, जैसा कि चुनाव संदर्भ में स्पष्ट बहिष्कार है।\n\n• विकल्प (a): गलत। राज्य विधायक पूरी तरह से बाहर हैं — महाभियोग संसदीय है, संघीय नहीं।\n• विकल्प (b): गलत। नामित सांसद भाग लेते हैं — बहिष्कार केवल राष्ट्रपति चुनाव पर लागू होता है।\n• विकल्प (c): गलत। दोनों लोकसभा और राज्यसभा के नामित सदस्य भाग लेते हैं, केवल राज्यसभा के नहीं।\n• विकल्प (d): सही। दोनों सदनों के नामित सांसद मतदान करते हैं; राज्य विधायक की कोई भूमिका नहीं।\n\nमूल्य संवर्धन:\n• अनुच्छेद 54 नामित सदस्यों को राष्ट्रपति चुनावी कॉलेज से बाहर करता है — जिससे महाभियोग एक उल्लेखनीय अपवाद बनता है।\n• यह भेद UPSC में पसंदीदा जोड़ी है — हमेशा राष्ट्रपति चुनाव की संरचना को महाभियोग की संरचना से जोड़ें।\n• उपराष्ट्रपति का हटाना अनुच्छेद 67(ख) के तहत भी राज्य विधायकों को बाहर करता है।"
+    }
+  },
+  {
+    "uuid": "50f1afec-adf3-4950-9194-e923779bdf1e",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Effectiveness Date of Removal Upon Successful Impeachment",
+        "Comparison with Removal of Supreme Court Judges"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Removal is self-executing — no Presidential order needed",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Once both Houses of Parliament have separately passed the impeachment resolution by the requisite majority under Article 61 of the Constitution, the President of India stands removed from office ________.\n\n(a) Immediately and automatically, without any further order or notification\n(b) Upon issuance of a formal Presidential order countersigned by the Prime Minister\n(c) Upon the Speaker of Lok Sabha certifying the completion of the impeachment process\n(d) After the Supreme Court certifies that the constitutional violation has been established",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students know that a Supreme Court judge's removal requires a Presidential order, and may incorrectly apply that model to presidential impeachment itself.",
+      "elimination_logic": [
+        "Recall the constitutional design of Article 61: once the second house passes the resolution, removal is automatic — the Constitution does not require any external actor to execute the removal.",
+        "Eliminate (b): A Presidential order is needed for judicial removals under Article 124(4), not for impeachment of the President.",
+        "Eliminate (c): The Speaker has no role in executing presidential removal — the process is self-executing.",
+        "Eliminate (d): Supreme Court certification is not required anywhere in the Article 61 process.",
+        "Confirm (a): The President stands removed from office immediately and automatically upon the second house passing the resolution."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap transplants the procedural requirement for Supreme Court judge removal (Presidential order) onto the presidential impeachment context. Students who have studied judicial removal know that Article 124(4) requires a Presidential order as the final step — applying that to the President's own removal is the intended error.",
+      "final_explanation": "The self-executing nature of presidential removal is a distinctive feature of Article 61 that contrasts sharply with the removal of other constitutional functionaries.\n\n• Option (a) — Correct: The President stands removed immediately upon the second house passing the impeachment resolution. No external notification, order, or instrument is required — the constitutional text is itself the operative act.\n• Option (b) — Incorrect: A Presidential order is required to remove Supreme Court and High Court judges under Articles 124(4) and 217 — but this model cannot logically apply to the President removing himself.\n• Option (c) — Incorrect: The Speaker has no role in the execution of presidential removal.\n• Option (d) — Incorrect: Judicial certification plays no role in the Article 61 process.\n\nValue Addition:\n• The Vice President takes over as Acting President under Article 65 immediately upon the President's removal.\n• The self-executing nature prevents any delay between the parliamentary vote and the removal taking effect.\n• Contrast with the US, where the Senate's conviction vote also results in automatic removal — India follows a similar logic."
+    },
+    "hi": {
+      "display_text": "जब संसद के दोनों सदन अनुच्छेद 61 के तहत आवश्यक बहुमत से महाभियोग प्रस्ताव अलग-अलग पारित कर देते हैं, तो भारत के राष्ट्रपति पद से ________ हट जाते हैं।\n\n(a) तुरंत और स्वचालित रूप से, बिना किसी और आदेश या सूचना के\n(b) प्रधानमंत्री द्वारा सह-हस्ताक्षरित औपचारिक राष्ट्रपति आदेश जारी होने पर\n(c) लोकसभा के अध्यक्ष द्वारा महाभियोग प्रक्रिया के पूर्ण होने का प्रमाणित करने पर\n(d) सुप्रीम कोर्ट द्वारा संवैधानिक उल्लंघन स्थापित होने का प्रमाणित करने के बाद",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि छात्र जानते हैं कि सुप्रीम कोर्ट के न्यायाधीश को हटाने के लिए राष्ट्रपति के आदेश की आवश्यकता होती है, और वे गलत तरीके से उस मॉडल को राष्ट्रपति के महाभियोग पर लागू कर सकते हैं।",
+      "elimination_logic": [
+        "अनुच्छेद 61 की संवैधानिक संरचना को याद करें: एक बार जब दूसरा सदन प्रस्ताव पारित कर देता है, तो हटाना स्वचालित होता है — संविधान को हटाने के लिए किसी बाहरी कर्ता की आवश्यकता नहीं होती।",
+        "(b) को हटाएं: न्यायिक हटाने के लिए अनुच्छेद 124(4) के तहत राष्ट्रपति का आदेश आवश्यक है, न कि राष्ट्रपति के महाभियोग के लिए।",
+        "(c) को हटाएं: राष्ट्रपति के हटाने को लागू करने में लोकसभा के अध्यक्ष की कोई भूमिका नहीं है — यह प्रक्रिया स्वचालित है।",
+        "(d) को हटाएं: अनुच्छेद 61 की प्रक्रिया में सुप्रीम कोर्ट का प्रमाणन आवश्यक नहीं है।",
+        "(a) की पुष्टि करें: दूसरा सदन प्रस्ताव पारित करते ही राष्ट्रपति तुरंत और स्वचालित रूप से पद से हट जाते हैं।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल सुप्रीम कोर्ट के न्यायाधीश हटाने की प्रक्रिया (राष्ट्रपति के आदेश) को राष्ट्रपति के महाभियोग संदर्भ में स्थानांतरित करता है। जो छात्र न्यायिक हटाने का अध्ययन कर चुके हैं वे जानते हैं कि अनुच्छेद 124(4) अंतिम चरण के रूप में राष्ट्रपति के आदेश की मांग करता है — इसे राष्ट्रपति के अपने हटाने पर लागू करना जानबूझकर की गई त्रुटि है।",
+      "final_explanation": "राष्ट्रपति के हटाने की स्वचालित प्रकृति अनुच्छेद 61 की एक विशिष्ट विशेषता है जो अन्य संवैधानिक पदाधिकारियों के हटाने से स्पष्ट रूप से भिन्न है।\n\n• विकल्प (a) — सही: दूसरा सदन महाभियोग प्रस्ताव पारित करते ही राष्ट्रपति तुरंत पद से हट जाते हैं। किसी बाहरी सूचना, आदेश या उपकरण की आवश्यकता नहीं है — संवैधानिक पाठ स्वयं क्रियान्वयनकारी कृत्य है।\n• विकल्प (b) — गलत: सुप्रीम कोर्ट और उच्च न्यायालय के न्यायाधीशों को हटाने के लिए अनुच्छेद 124(4) और 217 के तहत राष्ट्रपति के आदेश की आवश्यकता होती है — लेकिन यह मॉडल तर्कसंगत रूप से राष्ट्रपति के अपने हटाने पर लागू नहीं हो सकता।\n• विकल्प (c) — गलत: राष्ट्रपति के हटाने के क्रियान्वयन में लोकसभा के अध्यक्ष की कोई भूमिका नहीं है।\n• विकल्प (d) — गलत: अनुच्छेद 61 की प्रक्रिया में न्यायिक प्रमाणन की कोई भूमिका नहीं है।\n\nमूल्य संवर्धन:\n• राष्ट्रपति के हटने के तुरंत बाद उपराष्ट्रपति अनुच्छेद 65 के तहत कार्यवाहक राष्ट्रपति के रूप में कार्यभार ग्रहण करते हैं।\n• स्वचालित प्रकृति संसद के मतदान और हटाने के प्रभाव के बीच किसी भी विलंब को रोकती है।\n• अमेरिका के साथ तुलना करें, जहाँ सीनेट के दोषसिद्धि मतदान के बाद भी स्वचालित हटाना होता है — भारत इसी तर्क का पालन करता है।"
+    }
+  },
+  {
+    "uuid": "9a59b4f6-61f6-4fd7-89de-e9dc1de24c43",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "No Impeachment of Vice President Under Article 61",
+        "Comparison with Removal of Vice President"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Article 61 applies only to President — not VP",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is CORRECTLY matched?\n\n(a) Supreme Court Judge — Removed by impeachment under Article 61 of the Constitution\n(b) Vice President of India — Removed through impeachment proceedings under Article 61 of the Constitution\n(c) Comptroller and Auditor General — Removed by impeachment under Article 61 of the Constitution\n(d) President of India — Subject to impeachment under Article 61 of the Constitution",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) pairing the Vice President with Article 61 is a direct exploitation of the entity-swap trap — students may assume 'impeachment' is the generic removal mechanism for top constitutional offices.",
+      "elimination_logic": [
+        "Eliminate (a): The removal of a Supreme Court judge is governed by Article 124(4), not Article 61.",
+        "Eliminate (b): Article 61 governs only the President's impeachment — the Vice President is removed under Article 67(b), and the word 'impeachment' does not appear in Article 67.",
+        "Eliminate (c): The Comptroller and Auditor General is removed under Article 148(1) in the same manner as a Supreme Court judge — not under Article 61.",
+        "Confirm (d): Article 61 is exclusively the President of India's impeachment provision — this is the only correctly matched pair."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap here is particularly sharp: option (b) pairs the Vice President with Article 61, exploiting the common assumption that 'impeachment' applies to senior constitutional offices generally. The key fact is that the word 'impeachment' appears in Article 61 only, and only in relation to the President. The VP's removal under Article 67(b) is not called impeachment anywhere in the Constitution.",
+      "final_explanation": "The term 'impeachment' in the Indian Constitution appears exclusively in Article 61 and applies exclusively to the President.\n\n• Option (a): Incorrect. Supreme Court judges are removed under Article 124(4) through an address by each House — not Article 61.\n• Option (b): Incorrect. The Vice President is removed under Article 67(b) by a Rajya Sabha resolution with Lok Sabha concurrence. The word 'impeachment' does not appear in Article 67.\n• Option (c): Incorrect. The CAG is removed under Article 148(1) in the same manner as a Supreme Court judge — by Presidential order following parliamentary address.\n• Option (d): Correct. Article 61 exclusively governs the President's impeachment — no other constitutional functionary's removal falls under this article.\n\nValue Addition:\n• In Indian constitutional terminology, only the President can be 'impeached' — all other removals are described differently.\n• Article 67(b) uses the phrase 'resolution of the Council of States' — not 'impeachment.'\n• This terminological precision is a frequent UPSC trap point — knowing what each article actually says, not just what it broadly means."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही रूप से मेल खाता है?\n\n(a) सुप्रीम कोर्ट के न्यायाधीश — संविधान के अनुच्छेद 61 के तहत महाभियोग द्वारा हटाया जाता है\n(b) भारत के उपराष्ट्रपति — संविधान के अनुच्छेद 61 के तहत महाभियोग प्रक्रिया द्वारा हटाए जाते हैं\n(c) नियंत्रक और महालेखा परीक्षक — संविधान के अनुच्छेद 61 के तहत महाभियोग द्वारा हटाया जाता है\n(d) भारत के राष्ट्रपति — संविधान के अनुच्छेद 61 के तहत महाभियोग के अधीन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) pairing the Vice President with Article 61 is a direct exploitation of the entity-swap trap — students may assume 'impeachment' is the generic removal mechanism for top constitutional offices.",
+      "elimination_logic": [
+        "(a) को खारिज करें: सुप्रीम कोर्ट के न्यायाधीश की नियुक्ति अनुच्छेद 124(4) द्वारा नियंत्रित होती है, न कि अनुच्छेद 61 द्वारा।",
+        "(b) को खारिज करें: अनुच्छेद 61 केवल राष्ट्रपति के महाभियोग (impeachment) को नियंत्रित करता है — उपराष्ट्रपति को अनुच्छेद 67(ख) के तहत हटाया जाता है, और अनुच्छेद 67 में 'महाभियोग' शब्द नहीं आता।",
+        "(c) को खारिज करें: नियंत्रक और महालेखा परीक्षक को अनुच्छेद 148(1) के तहत सुप्रीम कोर्ट के न्यायाधीश के समान तरीके से हटाया जाता है — न कि अनुच्छेद 61 के तहत।",
+        "(d) को स्वीकार करें: अनुच्छेद 61 केवल भारत के राष्ट्रपति के महाभियोग के लिए है — यह एकमात्र सही जोड़ी है।"
+      ],
+      "upsc_trap_explanation": "यहाँ entity-swap ट्रैप विशेष रूप से तीव्र है: विकल्प (b) उपराष्ट्रपति को अनुच्छेद 61 से जोड़ता है, जो सामान्य धारणा का दुरुपयोग है कि 'महाभियोग' वरिष्ठ संवैधानिक पदों के लिए सामान्य हटाने की प्रक्रिया है। मुख्य तथ्य यह है कि 'महाभियोग' शब्द केवल अनुच्छेद 61 में आता है, और केवल राष्ट्रपति के संबंध में। उपराष्ट्रपति का हटाना अनुच्छेद 67(ख) के तहत होता है, जिसे संविधान में कहीं भी महाभियोग नहीं कहा गया।",
+      "final_explanation": "भारतीय संविधान में 'महाभियोग' शब्द केवल अनुच्छेद 61 में आता है और केवल राष्ट्रपति पर लागू होता है।\n\n• विकल्प (a): गलत। सुप्रीम कोर्ट के न्यायाधीशों को अनुच्छेद 124(4) के तहत प्रत्येक सदन के प्रस्ताव द्वारा हटाया जाता है — न कि अनुच्छेद 61 के तहत।\n• विकल्प (b): गलत। उपराष्ट्रपति को अनुच्छेद 67(ख) के तहत राज्यसभा के प्रस्ताव से लोकसभा की सहमति के साथ हटाया जाता है। अनुच्छेद 67 में 'महाभियोग' शब्द नहीं है।\n• विकल्प (c): गलत। नियंत्रक और महालेखा परीक्षक को अनुच्छेद 148(1) के तहत सुप्रीम कोर्ट के न्यायाधीश के समान तरीके से राष्ट्रपति के आदेश द्वारा हटाया जाता है, जो संसदीय प्रस्ताव के बाद होता है।\n• विकल्प (d): सही। अनुच्छेद 61 केवल राष्ट्रपति के महाभियोग को नियंत्रित करता है — किसी अन्य संवैधानिक पदाधिकारी के हटाने का प्रावधान इसमें नहीं है।\n\nमूल्यवर्धन:\n• भारतीय संवैधानिक शब्दावली में केवल राष्ट्रपति को 'महाभियोग' के तहत हटाया जा सकता है — अन्य सभी हटाने की प्रक्रियाएँ अलग-अलग वर्णित हैं।\n• अनुच्छेद 67(ख) में 'राज्य परिषद का प्रस्ताव' शब्दावली का प्रयोग होता है — न कि 'महाभियोग'।\n• यह शब्दावली की सटीकता UPSC में अक्सर फँसाने वाला बिंदु होती है — यह जानना आवश्यक है कि प्रत्येक अनुच्छेद वास्तव में क्या कहता है, न कि केवल उसका सामान्य अर्थ।"
+    }
+  },
+  {
+    "uuid": "0b0cf962-861e-4c9e-b6e5-06f18cc4747b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Special Majority Requirement: Two-Thirds of Total Membership",
+        "Notice Requirement: 14-Day Advance Written Notice"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Two-thirds total membership vs. one-fourth notice threshold",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the numerical thresholds prescribed under Article 61 of the Constitution for the impeachment of the President of India, consider the following statements:\n\n1. For moving an impeachment resolution, the prior notice must be signed by not less than one-half of the total membership of the initiating house.\n2. The impeachment resolution must be passed by a majority of not less than two-thirds of the total membership of the house in which it is moved.\n3. After the initiating house passes the impeachment resolution, the investigation is conducted by the other house, and a two-thirds majority of that house's total membership is also required for the President to stand removed.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "For moving an impeachment resolution, the prior notice must be signed by not less than one-half of the total membership of the initiating house.",
+          "verdict": "Incorrect",
+          "reason": "Article 61(1) requires the notice to be signed by not less than one-fourth (not one-half) of the total membership of the house."
+        },
+        {
+          "statement": "The impeachment resolution must be passed by a majority of not less than two-thirds of the total membership of the house in which it is moved.",
+          "verdict": "Correct",
+          "reason": "Article 61(2)(b) requires the resolution to be passed by a majority of not less than two-thirds of the total membership of the house — making this an absolute rather than attendance-relative threshold."
+        },
+        {
+          "statement": "After the initiating house passes the impeachment resolution, the investigation is conducted by the other house, and a two-thirds majority of that house's total membership is also required for the President to stand removed.",
+          "verdict": "Correct",
+          "reason": "Article 61(3) and (4) together require the investigating house to also pass the resolution by two-thirds of its total membership — both houses must clear the same threshold."
+        }
+      ],
+      "strong_distractor": "d — Option (d) including all three statements attracts students who know the two-thirds threshold (Statements 2 and 3) are correct but fail to catch the 'one-half' error in Statement 1, assuming the notice requirement is simply a high fraction.",
+      "elimination_logic": [
+        "Identify Statement 1 as incorrect: The notice threshold is one-fourth, not one-half — a direct numerical error introduced as a trap.",
+        "Confirm Statement 2 correct: Two-thirds of total membership in the initiating house is exactly what Article 61(2)(b) requires.",
+        "Confirm Statement 3 correct: The investigating house must also clear the two-thirds total membership threshold — symmetry across both houses.",
+        "Since Statements 2 and 3 are correct and Statement 1 is incorrect, the answer is (b)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap upgrades the notice threshold from one-fourth to one-half. Students who remember that impeachment involves 'high thresholds' may accept one-half as consistent with the general tenor of the provision, missing the specific one-fourth figure for notice. The distinction matters: the notice threshold is deliberately lower than the passing threshold to ensure accessibility, while the passing threshold is deliberately high to ensure legitimacy.",
+      "final_explanation": "Article 61 uses two distinct numerical thresholds for two different purposes — initiation and passage — and conflating them is the primary trap.\n\n• Statement 1 — Incorrect: The written notice requires signatures of not less than one-fourth of the total membership. Raising this to one-half would make even initiating impeachment prohibitively difficult and misrepresents the constitutional text.\n• Statement 2 — Correct: Two-thirds of total membership is the passage threshold in the initiating house. This is an absolute number — absentees effectively count against the resolution.\n• Statement 3 — Correct: The second (investigating) house must also pass the resolution by the same two-thirds total membership threshold. Both houses must clear identical numerical hurdles for impeachment to succeed.\n\nValue Addition:\n• The one-fourth threshold for notice and two-thirds for passage creates a structured escalation — easy to start, hard to complete.\n• 'Total membership' is calculated based on sanctioned strength, not vacancies.\n• In practice, given India's parliamentary arithmetic, achieving two-thirds of total membership in both houses simultaneously is extraordinarily difficult."
+    },
+    "hi": {
+      "display_text": "भारत के राष्ट्रपति के महाभियोग के लिए संविधान के अनुच्छेद 61 के तहत निर्धारित संख्यात्मक सीमाओं के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. महाभियोग प्रस्ताव लाने के लिए, पूर्व सूचना पर कम से कम आधे सदस्यों के हस्ताक्षर होने आवश्यक हैं जो प्रस्ताव लाने वाले सदन की कुल सदस्यता का आधा हो।\n2. महाभियोग प्रस्ताव उस सदन की कुल सदस्यता के कम से कम दो-तिहाई बहुमत से पारित होना चाहिए जिसमें वह प्रस्ताव लाया गया हो।\n3. प्रस्ताव लाने वाले सदन के पारित करने के बाद, जांच दूसरे सदन द्वारा की जाती है, और उस सदन की कुल सदस्यता के दो-तिहाई बहुमत से भी राष्ट्रपति को हटाने के लिए प्रस्ताव पारित होना आवश्यक है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "महाभियोग प्रस्ताव लाने के लिए, पूर्व सूचना पर कम से कम आधे सदस्यों के हस्ताक्षर होने आवश्यक हैं जो प्रस्ताव लाने वाले सदन की कुल सदस्यता का आधा हो।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 61(1) के अनुसार, सूचना पर कम से कम एक-चौथाई (आधे नहीं) सदस्यों के हस्ताक्षर होने आवश्यक हैं।"
+        },
+        {
+          "statement": "महाभियोग प्रस्ताव उस सदन की कुल सदस्यता के कम से कम दो-तिहाई बहुमत से पारित होना चाहिए जिसमें वह प्रस्ताव लाया गया हो।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 61(2)(b) के अनुसार, प्रस्ताव उस सदन की कुल सदस्यता के कम से कम दो-तिहाई बहुमत से पारित होना चाहिए — जो उपस्थिति-सापेक्ष नहीं बल्कि पूर्ण सदस्यता पर आधारित है।"
+        },
+        {
+          "statement": "प्रस्ताव लाने वाले सदन के पारित करने के बाद, जांच दूसरे सदन द्वारा की जाती है, और उस सदन की कुल सदस्यता के दो-तिहाई बहुमत से भी राष्ट्रपति को हटाने के लिए प्रस्ताव पारित होना आवश्यक है।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 61(3) और (4) के अनुसार, जांच करने वाले सदन को भी प्रस्ताव को अपनी कुल सदस्यता के दो-तिहाई बहुमत से पारित करना आवश्यक है — दोनों सदनों को समान मानदंड पूरा करना होता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें तीनों कथन शामिल हैं, उन छात्रों को आकर्षित करता है जो जानते हैं कि दो-तिहाई सीमा (कथन 2 और 3) सही है लेकिन कथन 1 में 'आधा' त्रुटि को नहीं पकड़ पाते, यह मानते हुए कि सूचना की आवश्यकता केवल एक उच्च अंश है।",
+      "elimination_logic": [
+        "कथन 1 को गलत पहचानें: सूचना की सीमा एक-चौथाई है, आधा नहीं — यह एक स्पष्ट संख्यात्मक त्रुटि है जो जाल के रूप में डाली गई है।",
+        "कथन 2 को सही मानें: प्रस्ताव लाने वाले सदन में कुल सदस्यता के दो-तिहाई बहुमत की आवश्यकता अनुच्छेद 61(2)(b) में स्पष्ट है।",
+        "कथन 3 को सही मानें: जांच करने वाले सदन को भी कुल सदस्यता के दो-तिहाई बहुमत की सीमा पार करनी होती है — दोनों सदनों में समानता।",
+        "चूंकि कथन 2 और 3 सही हैं और कथन 1 गलत है, अतः उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्वैप जाल सूचना की सीमा को एक-चौथाई से आधे तक बढ़ा देता है। जो छात्र याद रखते हैं कि महाभियोग में 'उच्च सीमाएँ' होती हैं, वे आधे को सामान्य प्रवृत्ति के अनुरूप मान सकते हैं और सूचना के लिए विशिष्ट एक-चौथाई आंकड़े को नहीं पकड़ पाते। यह अंतर महत्वपूर्ण है: सूचना की सीमा जानबूझकर कम रखी गई है ताकि प्रक्रिया सुलभ हो, जबकि पारित करने की सीमा जानबूझकर उच्च रखी गई है ताकि वैधता सुनिश्चित हो।",
+      "final_explanation": "अनुच्छेद 61 दो अलग-अलग संख्यात्मक सीमाएँ उपयोग करता है — आरंभ और पारित करने के लिए — और इन्हें मिलाना मुख्य जाल है।\n\n• कथन 1 — गलत: लिखित सूचना पर कम से कम एक-चौथाई सदस्यों के हस्ताक्षर आवश्यक हैं। इसे आधे तक बढ़ाना महाभियोग आरंभ करना अत्यंत कठिन बना देगा और संवैधानिक पाठ का गलत प्रतिनिधित्व होगा।\n• कथन 2 — सही: आरंभ करने वाले सदन में कुल सदस्यता के दो-तिहाई बहुमत से प्रस्ताव पारित होता है। यह एक पूर्ण संख्या है — अनुपस्थित सदस्य प्रस्ताव के खिलाफ गिने जाते हैं।\n• कथन 3 — सही: दूसरा (जांच करने वाला) सदन भी समान दो-तिहाई कुल सदस्यता की सीमा पार करके प्रस्ताव पारित करता है। दोनों सदनों को समान संख्यात्मक बाधाएँ पार करनी होती हैं।\n\nमूल्यवर्धन:\n• सूचना के लिए एक-चौथाई और पारित करने के लिए दो-तिहाई की सीमा एक संरचित वृद्धि बनाती है — आरंभ करना आसान, पूरा करना कठिन।\n• 'कुल सदस्यता' अनुमोदित संख्या पर आधारित होती है, रिक्त पदों पर नहीं।\n• व्यवहार में, भारत की संसदीय गणित के अनुसार, दोनों सदनों में एक साथ कुल सदस्यता के दो-तिहाई बहुमत प्राप्त करना अत्यंत कठिन है।"
+    }
+  },
+  {
+    "uuid": "593be688-3d32-4875-ab7a-cd5a48b72ca1",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Judicial Review of Impeachment Proceedings",
+        "Interaction Between Impeachment and Presidential Immunity (Article 361)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 122 and judicial reluctance in parliamentary proceedings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Parliament has initiated impeachment proceedings against the President of India. Before the proceedings are completed, a retired civil servant files a writ petition in the Supreme Court alleging that the resolution was moved without following the notice procedure required under Article 61, and seeks a declaration that the proceedings are constitutionally invalid.\n\nThe Supreme Court is considering which constitutional provision to rely upon to assess its jurisdiction to entertain this petition. Which of the following provisions would be MOST directly relevant to the Court's examination of whether it can inquire into the validity of the parliamentary proceedings?\n\n(a) Article 361 — Presidential immunity from court proceedings\n(b) Article 122 — Courts not to inquire into proceedings of Parliament\n(c) Article 74 — Council of Ministers to aid and advise the President\n(d) Article 356 — Provisions in case of failure of constitutional machinery in states",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) invoking Article 361 is attractive because students know the President has immunity under that article, but Article 361 immunises the President from court proceedings regarding exercise of powers — not from judicial scrutiny of parliamentary proceedings.",
+      "elimination_logic": [
+        "Eliminate (a): Article 361 immunises the President from court proceedings for exercise of presidential powers — it does not bar courts from examining the procedural validity of parliamentary proceedings.",
+        "Eliminate (c): Article 74 governs the advice of the Council of Ministers to the President — irrelevant to a petition challenging impeachment procedure.",
+        "Eliminate (d): Article 356 is the President's Rule provision — entirely unrelated to judicial review of impeachment.",
+        "Confirm (b): Article 122 provides that courts shall not inquire into proceedings of Parliament — this is the primary constitutional argument available against judicial review of impeachment proceedings, though its absolute application remains debated."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Option (a) over-extends Article 361 immunity. Students who remember that the President is immune from court proceedings may apply Article 361 as a blanket shield for all matters involving the President — including challenges to parliamentary proceedings. The more precise answer is Article 122, which addresses the immunity of parliamentary proceedings from judicial scrutiny, not the President's personal immunity.",
+      "final_explanation": "When a petition challenges the procedural validity of impeachment proceedings, the relevant constitutional provisions are those dealing with judicial scrutiny of parliamentary proceedings, not presidential personal immunity.\n\nArticle 122 states that courts shall not inquire into the proceedings of Parliament. This provision, combined with the political question doctrine and general judicial reluctance to intervene in internal parliamentary matters, forms the primary constitutional argument against judicial review of impeachment proceedings.\n\n• Option (a): Incorrect. Article 361 immunises the President personally from court proceedings for acts done in exercise of presidential powers — it does not protect the parliamentary process from scrutiny.\n• Option (b): Correct. Article 122's bar on judicial inquiry into parliamentary proceedings is the most relevant provision. Courts have generally invoked this along with the political question doctrine to decline intervention in parliamentary proceedings.\n• Option (c): Incorrect. Article 74 concerns the constitutional requirement that the President act on ministerial advice — not relevant to the judicial review question.\n• Option (d): Incorrect. Article 356 authorises President's Rule in states — entirely unconnected to this scenario.\n\nValue Addition:\n• Article 105(2) grants immunity to MPs for anything said or votes cast in Parliament — a complementary provision to Article 122.\n• Courts have intervened in narrow circumstances involving breach of fundamental rights even within parliamentary proceedings — Keshav Singh case, 1965.\n• The 'political question' doctrine is not expressly in the Indian Constitution but has been invoked by courts in analogous situations."
+    },
+    "hi": {
+      "display_text": "संसद ने भारत के राष्ट्रपति के विरुद्ध महाभियोग प्रक्रिया शुरू की है। प्रक्रिया पूरी होने से पहले, एक सेवानिवृत्त सिविल सेवक सुप्रीम कोर्ट में एक रिट याचिका दायर करता है जिसमें आरोप है कि प्रस्ताव अनुच्छेद 61 के तहत आवश्यक नोटिस प्रक्रिया का पालन किए बिना प्रस्तुत किया गया था, और वह घोषणा चाहता है कि यह प्रक्रिया संवैधानिक रूप से अवैध है।\n\nसुप्रीम कोर्ट यह विचार कर रहा है कि इस याचिका को स्वीकार करने के लिए अपनी क्षेत्राधिकारिता का आकलन करने हेतु कौन-सा संवैधानिक प्रावधान सबसे अधिक प्रासंगिक होगा। निम्नलिखित में से कौन-सा प्रावधान संसदीय कार्यवाही की वैधता की जांच के संबंध में न्यायालय की परीक्षा के लिए सबसे सीधे प्रासंगिक होगा?\n\n(a) अनुच्छेद 361 — न्यायालयीन कार्यवाही से राष्ट्रपति की सुरक्षा\n(b) अनुच्छेद 122 — न्यायालय संसद की कार्यवाही में जांच नहीं करेंगे\n(c) अनुच्छेद 74 — राष्ट्रपति को सहायता और सलाह देने के लिए मंत्रिपरिषद\n(d) अनुच्छेद 356 — राज्यों में संवैधानिक व्यवस्था के विफल होने पर प्रावधान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) में अनुच्छेद 361 का हवाला आकर्षक है क्योंकि छात्र जानते हैं कि राष्ट्रपति को उस अनुच्छेद के तहत संरक्षण प्राप्त है, लेकिन अनुच्छेद 361 राष्ट्रपति को उनके अधिकारों के प्रयोग से संबंधित न्यायालयीन कार्यवाही से बचाता है — न कि संसदीय कार्यवाही की न्यायिक समीक्षा से।",
+      "elimination_logic": [
+        "(a) को हटाएँ: अनुच्छेद 361 राष्ट्रपति को उनके अधिकारों के प्रयोग के लिए न्यायालयीन कार्यवाही से बचाता है — यह न्यायालयों को संसदीय कार्यवाही की प्रक्रियात्मक वैधता की जांच करने से नहीं रोकता।",
+        "(c) को हटाएँ: अनुच्छेद 74 राष्ट्रपति को मंत्रिपरिषद की सलाह से संबंधित है — महाभियोग प्रक्रिया को चुनौती देने वाली याचिका से अप्रासंगिक।",
+        "(d) को हटाएँ: अनुच्छेद 356 राष्ट्रपति शासन का प्रावधान है — महाभियोग की न्यायिक समीक्षा से पूरी तरह असंबंधित।",
+        "(b) को स्वीकार करें: अनुच्छेद 122 के अनुसार न्यायालय संसद की कार्यवाही में जांच नहीं करेंगे — यह महाभियोग की न्यायिक समीक्षा के विरुद्ध मुख्य संवैधानिक तर्क है, हालांकि इसके पूर्ण रूप से लागू होने पर विवाद है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में अनुच्छेद 361 की सुरक्षा को अत्यधिक बढ़ा-चढ़ाकर प्रस्तुत किया गया है। जो छात्र याद रखते हैं कि राष्ट्रपति न्यायालयीन कार्यवाही से सुरक्षित हैं, वे अनुच्छेद 361 को राष्ट्रपति से संबंधित सभी मामलों के लिए एक सर्वव्यापी कवच मान सकते हैं — जिसमें संसदीय कार्यवाही को चुनौती देना भी शामिल है। अधिक सटीक उत्तर अनुच्छेद 122 है, जो संसदीय कार्यवाही की न्यायिक समीक्षा से सुरक्षा करता है, न कि राष्ट्रपति की व्यक्तिगत सुरक्षा।",
+      "final_explanation": "जब कोई याचिका महाभियोग प्रक्रिया की प्रक्रियात्मक वैधता को चुनौती देती है, तो संबंधित संवैधानिक प्रावधान वे होते हैं जो संसदीय कार्यवाही की न्यायिक समीक्षा से संबंधित हैं, न कि राष्ट्रपति की व्यक्तिगत सुरक्षा से।\n\nअनुच्छेद 122 कहता है कि न्यायालय संसद की कार्यवाही में जांच नहीं करेंगे। यह प्रावधान, राजनीतिक प्रश्न सिद्धांत और संसदीय आंतरिक मामलों में न्यायालय की सामान्य हिचक के साथ मिलकर, महाभियोग की न्यायिक समीक्षा के विरुद्ध मुख्य संवैधानिक तर्क बनाता है।\n\n• विकल्प (a): गलत। अनुच्छेद 361 राष्ट्रपति को उनके अधिकारों के प्रयोग के लिए व्यक्तिगत रूप से न्यायालयीन कार्यवाही से बचाता है — यह संसदीय प्रक्रिया को जांच से सुरक्षित नहीं करता।\n• विकल्प (b): सही। अनुच्छेद 122 संसदीय कार्यवाही में न्यायिक जांच पर रोक लगाता है। न्यायालयों ने सामान्यतः इसे राजनीतिक प्रश्न सिद्धांत के साथ मिलाकर संसदीय कार्यवाही में हस्तक्षेप से इनकार किया है।\n• विकल्प (c): गलत। अनुच्छेद 74 राष्ट्रपति के मंत्रिपरिषद की सलाह पर कार्य करने की संवैधानिक आवश्यकता से संबंधित है — न्यायिक समीक्षा के प्रश्न से अप्रासंगिक।\n• विकल्प (d): गलत। अनुच्छेद 356 राज्यों में राष्ट्रपति शासन का प्रावधान है — इस परिदृश्य से पूरी तरह असंबंधित।\n\nमूल्यवर्धन:\n• अनुच्छेद 105(2) सांसदों को संसद में कही गई बातों या डाले गए वोटों के लिए सुरक्षा प्रदान करता है — यह अनुच्छेद 122 का पूरक प्रावधान है।\n• न्यायालयों ने संसदीय कार्यवाही के भीतर मौलिक अधिकारों के उल्लंघन के संकुचित मामलों में हस्तक्षेप किया है — जैसे केशव सिंह मामला, 1965।\n• 'राजनीतिक प्रश्न' सिद्धांत भारतीय संविधान में स्पष्ट रूप से नहीं है, लेकिन न्यायालयों ने समान परिस्थितियों में इसका हवाला दिया है।"
+    }
+  },
+  {
+    "uuid": "2dc52312-ccc0-44b2-b97b-91b27360d8d4",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Grounds for Impeachment: 'Violation of the Constitution'",
+        "Impeachment vs. Removal Due to Incapacity or Death"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "No incapacity removal mechanism — India's constitutional gap",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements correctly describes the constitutional position in India regarding the removal of the President on grounds of permanent physical or mental incapacity?\n\n(a) Such removal is covered under Article 61 as 'violation of the Constitution' in a broad interpretive sense\n(b) A separate statutory procedure exists under a Presidential Incapacity Act for this scenario\n(c) The Constitution of India contains no provision for removing the President on grounds of physical or mental incapacity — it is a recognised constitutional gap\n(d) The Supreme Court of India, upon petition, can declare the President incapacitated and order removal",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because India does have a constitutional gap regarding incapacity, making students feel that Article 61 'must' cover it somehow, or that a provision analogous to the US 25th Amendment exists.",
+      "elimination_logic": [
+        "Recall that Article 61 is limited to 'violation of the Constitution' — no broader grounds are covered.",
+        "Eliminate (a): Article 61 does not extend to physical or mental incapacity — India has no 25th Amendment equivalent.",
+        "Eliminate (b): No statute or constitutional provision creates an incapacity-based removal mechanism — this is fabricated.",
+        "Eliminate (d): The Supreme Court has no removal power over the President during tenure — Article 361 bars proceedings.",
+        "Confirm (c): India's Constitution contains no provision for removal of the President on grounds of incapacity — this is a recognised constitutional gap."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap here assumes that because the US Constitution has been amended to provide for incapacity removal (25th Amendment), India must have an equivalent. Students who draw parallels between Indian and US constitutional design — as UPSC questions often invite — may incorrectly assume India has filled this gap. It has not.",
+      "final_explanation": "One of the most significant structural gaps in India's constitutional design for the presidency is the absence of an incapacity-removal mechanism.\n\n• Option (a): Incorrect. Article 61 is strictly limited to 'violation of the Constitution.' Neither the text nor judicial interpretation extends it to physical or mental incapacity.\n• Option (b): Incorrect. No statute creates an incapacity-based presidential removal procedure — this is a fabricated option.\n• Option (c): Correct. India's Constitution has no provision equivalent to the US 25th Amendment. If a President becomes permanently incapacitated, there is no formal constitutional mechanism to remove or replace them — the Vice President acts under Article 65 only in cases of vacancy, absence, or inability to discharge functions.\n• Option (d): Incorrect. The Supreme Court has no jurisdiction to remove the President — Article 361 immunises the President from court proceedings during tenure.\n\nValue Addition:\n• The US 25th Amendment (1967) provides a detailed mechanism for presidential incapacity — including a Cabinet majority vote and Congressional override.\n• Article 65 of the Indian Constitution allows the VP to discharge presidential functions in case of 'absence' or 'inability' — but does not constitute removal.\n• This gap has been noted in constitutional law scholarship as a design vulnerability."
+    },
+    "hi": {
+      "display_text": "भारत में राष्ट्रपति को स्थायी शारीरिक या मानसिक अक्षमता के आधार पर हटाने के संबंध में निम्नलिखित में से कौन-सा कथन संवैधानिक स्थिति को सही रूप से दर्शाता है?\n\n(a) ऐसा हटाना अनुच्छेद 61 के तहत 'संविधान के उल्लंघन' के व्यापक व्याख्यात्मक अर्थ में शामिल है\n(b) इस स्थिति के लिए राष्ट्रपति अक्षमता अधिनियम के तहत एक अलग वैधानिक प्रक्रिया मौजूद है\n(c) भारत के संविधान में राष्ट्रपति को शारीरिक या मानसिक अक्षमता के आधार पर हटाने का कोई प्रावधान नहीं है — यह एक मान्यता प्राप्त संवैधानिक अंतराल है\n(d) भारत का सुप्रीम कोर्ट याचिका पर राष्ट्रपति को अक्षम घोषित कर हटाने का आदेश दे सकता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because India does have a constitutional gap regarding incapacity, making students feel that Article 61 'must' cover it somehow, or that a provision analogous to the US 25th Amendment exists.",
+      "elimination_logic": [
+        "याद रखें कि अनुच्छेद 61 केवल 'संविधान के उल्लंघन' तक सीमित है — कोई व्यापक आधार शामिल नहीं है।",
+        "(a) को खारिज करें: अनुच्छेद 61 शारीरिक या मानसिक अक्षमता तक नहीं फैला है — भारत में 25वें संशोधन के समान कोई प्रावधान नहीं है।",
+        "(b) को खारिज करें: कोई विधि या संवैधानिक प्रावधान अक्षमता-आधारित हटाने की प्रक्रिया नहीं बनाता — यह काल्पनिक है।",
+        "(d) को खारिज करें: राष्ट्रपति के कार्यकाल के दौरान सुप्रीम कोर्ट के पास हटाने का अधिकार नहीं है — अनुच्छेद 361 कार्यवाही को रोकता है।",
+        "(c) को स्वीकार करें: भारत के संविधान में राष्ट्रपति को अक्षमता के आधार पर हटाने का कोई प्रावधान नहीं है — यह एक मान्यता प्राप्त संवैधानिक अंतराल है।"
+      ],
+      "upsc_trap_explanation": "यह सीमा-विस्तार जाल इस आधार पर है कि क्योंकि अमेरिकी संविधान को अक्षमता हटाने के लिए संशोधित किया गया है (25वां संशोधन), अतः भारत में भी ऐसा प्रावधान होना चाहिए। जो छात्र भारतीय और अमेरिकी संवैधानिक संरचना के बीच समानताएँ निकालते हैं — जैसा कि UPSC प्रश्न अक्सर करते हैं — वे गलतफहमी में पड़ सकते हैं कि भारत ने यह अंतराल भर दिया है। ऐसा नहीं है।",
+      "final_explanation": "भारत के राष्ट्रपति पद के संवैधानिक डिजाइन में सबसे महत्वपूर्ण संरचनात्मक अंतरालों में से एक अक्षमता-आधारित हटाने की प्रक्रिया का अभाव है।\n\n• विकल्प (a): गलत। अनुच्छेद 61 केवल 'संविधान के उल्लंघन' तक सीमित है। न तो इसका पाठ और न ही न्यायिक व्याख्या इसे शारीरिक या मानसिक अक्षमता तक बढ़ाती है।\n• विकल्प (b): गलत। कोई विधि राष्ट्रपति को अक्षमता के आधार पर हटाने की प्रक्रिया नहीं बनाती — यह एक काल्पनिक विकल्प है।\n• विकल्प (c): सही। भारत के संविधान में अमेरिकी 25वें संशोधन के समान कोई प्रावधान नहीं है। यदि राष्ट्रपति स्थायी रूप से अक्षम हो जाता है, तो उसे हटाने या बदलने के लिए कोई औपचारिक संवैधानिक प्रक्रिया नहीं है — उपराष्ट्रपति अनुच्छेद 65 के तहत केवल रिक्ति, अनुपस्थिति या कार्यों के निर्वहन में अक्षमता के मामलों में कार्य करता है।\n• विकल्प (d): गलत। सुप्रीम कोर्ट के पास राष्ट्रपति को हटाने का अधिकार नहीं है — अनुच्छेद 361 राष्ट्रपति को कार्यकाल के दौरान न्यायालयीन कार्यवाही से मुक्त करता है।\n\nमूल्यवर्धन:\n• अमेरिकी 25वां संशोधन (1967) राष्ट्रपति की अक्षमता के लिए विस्तृत प्रक्रिया प्रदान करता है — जिसमें कैबिनेट की बहुमत से वोट और कांग्रेस की पुनः पुष्टि शामिल है।\n• भारतीय संविधान का अनुच्छेद 65 उपराष्ट्रपति को 'अनुपस्थिति' या 'अक्षमता' की स्थिति में राष्ट्रपति के कार्यों का निर्वहन करने की अनुमति देता है — लेकिन यह हटाने का प्रावधान नहीं है।\n• इस अंतराल को संवैधानिक विधि के अध्ययन में एक डिजाइन कमजोरी के रूप में माना गया है।"
+    }
+  },
+  {
+    "uuid": "0e131e8c-47e9-4272-a0d1-57de42a50a25",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Role of the Investigating House",
+        "Participation of Both Houses: No Joint Sitting"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Investigating house — separate sequential procedure, no joint sitting",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the procedure followed by the second (investigating) house during the impeachment of the President of India under Article 61, consider the following statements:\n\n1. The second house, which acts as the investigating body, can pass the impeachment resolution by a simple majority of its members present and voting.\n2. If both the initiating house and the investigating house fail to reach the requisite majority, both houses may sit jointly under Article 108 to pass the resolution by a combined majority.\n3. The President has no right to appear before the investigating house and can only submit a written response to the allegations.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The second house, which acts as the investigating body, can pass the impeachment resolution by a simple majority of its members present and voting.",
+          "verdict": "Incorrect",
+          "reason": "The investigating house must also pass the resolution by two-thirds of its total membership — the same threshold as the initiating house; a simple majority is insufficient."
+        },
+        {
+          "statement": "If both the initiating house and the investigating house fail to reach the requisite majority, both houses may sit jointly under Article 108 to pass the resolution by a combined majority.",
+          "verdict": "Incorrect",
+          "reason": "Article 108 joint sitting is designed for legislative deadlocks on bills — it has no application to impeachment proceedings, which require sequential separate action by each house."
+        },
+        {
+          "statement": "The President has no right to appear before the investigating house and can only submit a written response to the allegations.",
+          "verdict": "Incorrect",
+          "reason": "Article 61(3) expressly guarantees the President the right to appear in person or be represented by counsel before the investigating house — the right is not limited to written submissions."
+        }
+      ],
+      "strong_distractor": "b — A student might accept Statement 2 as partially correct, reasoning that if both houses fail, some collaborative mechanism must exist — not recalling that Article 108 is explicitly inapplicable to impeachment.",
+      "elimination_logic": [
+        "Identify Statement 1 as incorrect: Both houses apply the two-thirds total membership standard — there is no reduced threshold for the investigating house.",
+        "Identify Statement 2 as incorrect: Article 108 joint sitting applies only to ordinary bills — impeachment is categorically excluded from joint sitting mechanisms.",
+        "Identify Statement 3 as incorrect: Article 61(3) explicitly guarantees personal appearance and counsel representation — not merely written submissions.",
+        "All three statements are NOT correct — the answer is (d)."
+      ],
+      "upsc_trap_explanation": "Statement 3 contains a partial-truth trap: the President does have the right to submit a response, so the second half of the statement ('only submit a written response') is not completely fabricated — it just excludes the stronger right to appear in person. Students who remember 'the President can respond' may overlook that the right extends to personal appearance and legal representation.",
+      "final_explanation": "The investigating house's role under Article 61 is precise and non-negotiable — three common misconceptions are tested here.\n\n• Statement 1 — Incorrect: The investigating house must meet the same two-thirds total membership threshold as the initiating house. There is no lower standard for the second house — both must clear the same bar.\n• Statement 2 — Incorrect: Article 108 joint sitting resolves legislative deadlocks on bills. Impeachment is not a legislative act but a quasi-judicial process — joint sitting has never been applicable and would be constitutionally anomalous here.\n• Statement 3 — Incorrect: Article 61(3) guarantees the President the right to appear personally and to be represented by counsel. The right is not restricted to written submissions — it is a full due-process right comparable to appearing before a tribunal.\n\nAll three statements are NOT correct.\n\nValue Addition:\n• The investigating house's role gives impeachment its quasi-judicial character — it examines evidence rather than merely voting politically.\n• The right to counsel is a constitutionally embedded guarantee — not dependent on parliamentary rules.\n• If the investigating house fails to pass the resolution, impeachment fails — there is no further procedural route."
+    },
+    "hi": {
+      "display_text": "अनुच्छेद 61 के तहत भारत के राष्ट्रपति के महाभियोग के दौरान दूसरे (जांच करने वाले) सदन द्वारा अपनाई गई प्रक्रिया के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. दूसरा सदन, जो जांच करने वाली संस्था के रूप में कार्य करता है, उपस्थित और मतदान करने वाले सदस्यों की साधारण बहुमत से महाभियोग प्रस्ताव पारित कर सकता है।\n2. यदि आरंभ करने वाला सदन और जांच करने वाला सदन दोनों आवश्यक बहुमत प्राप्त करने में विफल रहते हैं, तो दोनों सदन अनुच्छेद 108 के तहत संयुक्त रूप से बैठकर संयुक्त बहुमत से प्रस्ताव पारित कर सकते हैं।\n3. राष्ट्रपति का जांच करने वाले सदन के समक्ष उपस्थित होने का कोई अधिकार नहीं है और वह केवल आरोपों के प्रति लिखित उत्तर प्रस्तुत कर सकता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The second house, which acts as the investigating body, can pass the impeachment resolution by a simple majority of its members present and voting.",
+          "verdict": "गलत",
+          "reason": "जांच करने वाले सदन को भी अपनी कुल सदस्यता के दो-तिहाई बहुमत से प्रस्ताव पारित करना होता है — आरंभ करने वाले सदन के समान सीमा; साधारण बहुमत पर्याप्त नहीं है।"
+        },
+        {
+          "statement": "If both the initiating house and the investigating house fail to reach the requisite majority, both houses may sit jointly under Article 108 to pass the resolution by a combined majority.",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 108 की संयुक्त बैठक विधायी बिलों पर गतिरोध के लिए है — इसका महाभियोग कार्यवाही पर कोई लागू नहीं होता, जिसमें प्रत्येक सदन द्वारा क्रमिक पृथक कार्रवाई आवश्यक है।"
+        },
+        {
+          "statement": "The President has no right to appear before the investigating house and can only submit a written response to the allegations.",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 61(3) स्पष्ट रूप से राष्ट्रपति को जांच करने वाले सदन के समक्ष व्यक्तिगत रूप से उपस्थित होने या वकील द्वारा प्रतिनिधित्व कराने का अधिकार देता है — अधिकार केवल लिखित उत्तर देने तक सीमित नहीं है।"
+        }
+      ],
+      "strong_distractor": "b — एक छात्र कथन 2 को आंशिक रूप से सही मान सकता है, यह सोचकर कि यदि दोनों सदन असफल होते हैं तो कोई सहयोगी तंत्र अवश्य होगा — यह याद न रखते हुए कि अनुच्छेद 108 महाभियोग पर स्पष्ट रूप से लागू नहीं होता।",
+      "elimination_logic": [
+        "कथन 1 को गलत पहचानें: दोनों सदन दो-तिहाई कुल सदस्यता मानक लागू करते हैं — जांच करने वाले सदन के लिए कोई कम सीमा नहीं है।",
+        "कथन 2 को गलत पहचानें: अनुच्छेद 108 की संयुक्त बैठक केवल सामान्य विधेयकों पर लागू होती है — महाभियोग संयुक्त बैठक तंत्र से स्पष्ट रूप से बाहर है।",
+        "कथन 3 को गलत पहचानें: अनुच्छेद 61(3) व्यक्तिगत उपस्थिति और वकील प्रतिनिधित्व की स्पष्ट गारंटी देता है — केवल लिखित उत्तर तक सीमित नहीं।",
+        "तीनों कथन सही नहीं हैं — उत्तर (d) है।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में आंशिक-सत्य जाल है: राष्ट्रपति को उत्तर देने का अधिकार है, इसलिए कथन का दूसरा भाग ('केवल लिखित उत्तर प्रस्तुत कर सकता है') पूरी तरह से गलत नहीं है — यह केवल व्यक्तिगत उपस्थिति के मजबूत अधिकार को छोड़ देता है। जो छात्र 'राष्ट्रपति उत्तर दे सकता है' याद रखते हैं, वे यह भूल सकते हैं कि अधिकार व्यक्तिगत उपस्थिति और कानूनी प्रतिनिधित्व तक विस्तृत है।",
+      "final_explanation": "अनुच्छेद 61 के तहत जांच करने वाले सदन की भूमिका सटीक और अपरिवर्तनीय है — यहाँ तीन सामान्य भ्रांतियाँ परखी गई हैं।\n\n• कथन 1 — गलत: जांच करने वाले सदन को आरंभ करने वाले सदन के समान दो-तिहाई कुल सदस्यता सीमा पूरी करनी होती है। दूसरे सदन के लिए कोई कम मानक नहीं है — दोनों को समान स्तर पार करना आवश्यक है।\n• कथन 2 — गलत: अनुच्छेद 108 की संयुक्त बैठक विधायी बिलों पर गतिरोध सुलझाने के लिए है। महाभियोग कोई विधायी कार्य नहीं बल्कि अर्ध-न्यायिक प्रक्रिया है — संयुक्त बैठक कभी लागू नहीं हुई और यहाँ संवैधानिक रूप से असंगत होगी।\n• कथन 3 — गलत: अनुच्छेद 61(3) राष्ट्रपति को व्यक्तिगत रूप से उपस्थित होने और वकील द्वारा प्रतिनिधित्व कराने का अधिकार देता है। यह अधिकार केवल लिखित उत्तर तक सीमित नहीं है — यह एक पूर्ण प्रक्रिया अधिकार है, जो न्यायाधिकरण के समक्ष उपस्थित होने के समान है।\n\nतीनों कथन सही नहीं हैं।\n\nमूल्यवर्धन:\n• जांच करने वाले सदन की भूमिका महाभियोग को अर्ध-न्यायिक स्वरूप देती है — यह केवल राजनीतिक मतदान नहीं बल्कि साक्ष्य की जांच करता है।\n• वकील प्रतिनिधित्व का अधिकार संवैधानिक रूप से सुनिश्चित है — यह संसदीय नियमों पर निर्भर नहीं है।\n• यदि जांच करने वाला सदन प्रस्ताव पारित करने में विफल रहता है, तो महाभियोग विफल हो जाता है — आगे कोई प्रक्रिया नहीं होती।"
+    }
+  },
+  {
+    "uuid": "c8c9882b-200f-409c-a2e1-752be0a9f86b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Elected vs. Nominated Members' Voting Rights in Impeachment",
+        "Role of State Legislatures in Impeachment",
+        "Constitutional Basis and Nature of Impeachment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nominated MPs vote in impeachment; state MLA exclusion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the composition of the body that votes on presidential impeachment under Article 61 of the Constitution, consider the following statements:\n\n1. Nominated members of the Rajya Sabha are entitled to vote in presidential impeachment proceedings.\n2. Elected members of State Legislative Councils (Vidhan Parishads) participate in presidential impeachment in states that have bicameral legislatures.\n3. Anglo-Indian nominated members of the Lok Sabha, when they existed, would have been entitled to vote in impeachment proceedings.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Nominated members of the Rajya Sabha are entitled to vote in presidential impeachment proceedings.",
+          "verdict": "Correct",
+          "reason": "Article 61 contains no exclusion for nominated members of either house — unlike the Presidential election under Article 54, all MPs including nominated ones participate in impeachment."
+        },
+        {
+          "statement": "Elected members of State Legislative Councils (Vidhan Parishads) participate in presidential impeachment in states that have bicameral legislatures.",
+          "verdict": "Incorrect",
+          "reason": "State legislatures — neither assemblies nor councils — have any role in presidential impeachment. The process is purely parliamentary (central), unlike the Presidential election which involves elected members of State Legislative Assemblies."
+        },
+        {
+          "statement": "Anglo-Indian nominated members of the Lok Sabha, when they existed, would have been entitled to vote in impeachment proceedings.",
+          "verdict": "Correct",
+          "reason": "Nominated members of Lok Sabha (including the former Anglo-Indian nominees under the pre-104th Amendment provision) were MPs and entitled to vote in impeachment. There was no exclusion — unlike their exclusion from Presidential elections."
+        }
+      ],
+      "strong_distractor": "d — Option (d) selecting all three is attractive because Statement 3 seems like a natural extension of Statement 1, and students unfamiliar with the Anglo-Indian nomination history may accept it without scrutinising Statement 2.",
+      "elimination_logic": [
+        "Confirm Statement 1 correct: No exclusion of nominated members in Article 61 — all MPs vote.",
+        "Reject Statement 2: State Legislative Council members have zero role in impeachment — the federal electoral college does not apply to removal.",
+        "Confirm Statement 3 correct: Nominated Lok Sabha members, when they existed, were MPs with full voting rights in impeachment proceedings.",
+        "Statements 1 and 3 are correct; Statement 2 is incorrect — answer is (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap in Statement 2 introduces Vidhan Parishads — a body that sounds plausibly relevant because it is a state legislative body, and students know state elected members participate in Presidential elections. The trap is extending this electoral college logic to impeachment, which is exclusively parliamentary. Statement 3 is a secondary trap that tests whether students know the pre-104th Amendment Lok Sabha composition included two nominated Anglo-Indian members.",
+      "final_explanation": "Impeachment and Presidential election draw on entirely different constitutional constituencies — a distinction UPSC exploits frequently.\n\n• Statement 1 — Correct: Nominated Rajya Sabha members are full participants in impeachment. Article 61 contains no exclusion analogous to the Article 54 exclusion from the electoral college.\n• Statement 2 — Incorrect: State legislative bodies — assemblies or councils — have no role in impeachment. This is the sharpest contrast with Presidential elections, where elected MLA members of state assemblies form part of the electoral college.\n• Statement 3 — Correct: The 104th Constitutional Amendment (2020) abolished the Anglo-Indian nominated seats, but when they existed, those MPs were entitled to vote in impeachment — their nomination status did not disqualify them.\n\nValue Addition:\n• The 104th Amendment removed provisions for nominated Anglo-Indian members in Lok Sabha and state assemblies.\n• Nominated members' exclusion from Presidential elections (Article 54) and inclusion in impeachment is a high-yield pairing.\n• The upper houses of six states have Vidhan Parishads — their members participate in Presidential elections but not in impeachment."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 61 के तहत राष्ट्रपति के महाभियोग पर मतदान करने वाले निकाय की संरचना के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. राज्यसभा के नामित सदस्य राष्ट्रपति के महाभियोग कार्यवाही में मतदान करने के अधिकारी होते हैं।\n2. राज्य विधान परिषदों (विधान परिषद) के निर्वाचित सदस्य, जिन राज्यों में द्विसदनीय विधानमंडल हैं, राष्ट्रपति के महाभियोग में भाग लेते हैं।\n3. लोकसभा के एंग्लो-इंडियन नामित सदस्य, जब वे मौजूद थे, महाभियोग कार्यवाही में मतदान करने के अधिकारी होते।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "राज्यसभा के नामित सदस्य राष्ट्रपति के महाभियोग कार्यवाही में मतदान करने के अधिकारी होते हैं।",
+          "verdict": "सही है",
+          "reason": "अनुच्छेद 61 में किसी भी सदन के नामित सदस्यों के लिए कोई अपवाद नहीं है — अनुच्छेद 54 के तहत राष्ट्रपति चुनाव के विपरीत, सभी सांसदों सहित नामित सदस्य भी महाभियोग में भाग लेते हैं।"
+        },
+        {
+          "statement": "राज्य विधान परिषदों (विधान परिषद) के निर्वाचित सदस्य, जिन राज्यों में द्विसदनीय विधानमंडल हैं, राष्ट्रपति के महाभियोग में भाग लेते हैं।",
+          "verdict": "गलत है",
+          "reason": "राज्य विधानमंडल — न तो विधानसभा और न ही विधान परिषद — राष्ट्रपति के महाभियोग में कोई भूमिका रखते हैं। यह प्रक्रिया पूरी तरह से संसदीय (केंद्र) है, जबकि राष्ट्रपति चुनाव में राज्य विधानसभाओं के निर्वाचित सदस्य शामिल होते हैं।"
+        },
+        {
+          "statement": "लोकसभा के एंग्लो-इंडियन नामित सदस्य, जब वे मौजूद थे, महाभियोग कार्यवाही में मतदान करने के अधिकारी होते।",
+          "verdict": "सही है",
+          "reason": "लोकसभा के नामित सदस्य (जिसमें पूर्व 104वें संशोधन के तहत एंग्लो-इंडियन नामित सदस्य शामिल थे) सांसद थे और महाभियोग में मतदान के अधिकारी थे। राष्ट्रपति चुनाव से उनका बहिष्कार नहीं था।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) में तीनों को चुनना आकर्षक है क्योंकि कथन 3 कथन 1 का स्वाभाविक विस्तार लगता है, और एंग्लो-इंडियन नामांकन इतिहास से अनजान छात्र कथन 2 की जांच किए बिना इसे स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सही है: अनुच्छेद 61 में नामित सदस्यों का कोई बहिष्कार नहीं है — सभी सांसद मतदान करते हैं।",
+        "कथन 2 खारिज करें: राज्य विधान परिषद के सदस्यों की महाभियोग में कोई भूमिका नहीं है — संघीय निर्वाचक मंडल हटाने में लागू नहीं होता।",
+        "कथन 3 सही है: जब लोकसभा के नामित सदस्य मौजूद थे, वे महाभियोग कार्यवाही में पूर्ण मतदान अधिकार वाले सांसद थे।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में इकाई-स्थानांतरण जाल विधान परिषदों को प्रस्तुत करता है — यह एक ऐसा निकाय है जो राज्य विधानमंडल है और इसलिए प्रासंगिक लगता है क्योंकि छात्र जानते हैं कि राज्य के निर्वाचित सदस्य राष्ट्रपति चुनाव में भाग लेते हैं। यह जाल महाभियोग में इस निर्वाचक मंडल तर्क को लागू करने का है, जो पूरी तरह संसदीय है। कथन 3 एक द्वितीयक जाल है जो यह जांचता है कि छात्र जानते हैं कि 104वें संशोधन से पहले लोकसभा में दो नामित एंग्लो-इंडियन सदस्य थे।",
+      "final_explanation": "महाभियोग और राष्ट्रपति चुनाव पूरी तरह से अलग संवैधानिक निर्वाचन मंडलों पर आधारित हैं — यह अंतर UPSC अक्सर उपयोग करता है।\n\n• कथन 1 — सही: नामित राज्यसभा सदस्य महाभियोग में पूर्ण भागीदार होते हैं। अनुच्छेद 61 में अनुच्छेद 54 के निर्वाचक मंडल से बहिष्कार जैसा कोई प्रावधान नहीं है।\n• कथन 2 — गलत: राज्य विधानमंडल — विधानसभा या विधान परिषद — महाभियोग में कोई भूमिका नहीं रखते। यह राष्ट्रपति चुनाव से सबसे बड़ा अंतर है, जहां राज्य विधानसभा के निर्वाचित सदस्य निर्वाचक मंडल का हिस्सा होते हैं।\n• कथन 3 — सही: 104वें संवैधानिक संशोधन (2020) ने एंग्लो-इंडियन नामित सीटों को समाप्त किया, लेकिन जब वे मौजूद थे, वे महाभियोग में मतदान के अधिकारी थे — उनका नामांकन स्थिति उन्हें अयोग्य नहीं बनाती थी।\n\nमूल्यवर्धन:\n• 104वें संशोधन ने लोकसभा और राज्य विधानसभाओं में नामित एंग्लो-इंडियन सदस्यों के प्रावधान हटा दिए।\n• राष्ट्रपति चुनाव (अनुच्छेद 54) में नामित सदस्यों का बहिष्कार और महाभियोग में उनकी भागीदारी एक महत्वपूर्ण जोड़ी है।\n• छह राज्यों की उच्च सदनों में विधान परिषद हैं — उनके सदस्य राष्ट्रपति चुनाव में भाग लेते हैं लेकिन महाभियोग में नहीं।"
+    }
+  },
+  {
+    "uuid": "993468d9-f360-4bdf-8a74-0173a59a3c53",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "No Impeachment of Vice President Under Article 61",
+        "Comparison with Removal of Vice President"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Word 'impeachment' appears only in Article 61 for President",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the Constitution of India, the word 'impeachment' in relation to the removal of a constitutional functionary appears exclusively in ________, and refers to the removal of the ________.\n\n(a) Article 67 — Vice President of India\n(b) Article 61 — President of India\n(c) Article 67 — President of India\n(d) Article 124 — Chief Justice of India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) pairing Article 67 with the word 'impeachment' is the primary trap — students may associate both the President and VP removal with 'impeachment' since both are senior executive offices.",
+      "elimination_logic": [
+        "Recall that 'impeachment' is a constitutional term of art used only in Article 61 in the Indian Constitution.",
+        "Eliminate (c): Article 67 uses the word 'resolution' for removal — not 'impeachment.' The word impeachment does not appear in Article 67.",
+        "Eliminate (a) and (d): Both provide incorrect article-term combinations.",
+        "Confirm (b): The word 'impeachment' in the Indian Constitution appears exclusively in Article 61, governing the President's removal — only option (b) correctly identifies this."
+      ],
+      "upsc_trap_explanation": "This entity-swap trap exploits the common assumption that both the President and Vice President — as the two top constitutional executives — would be removed by the same mechanism called 'impeachment.' The Constitution reserves that term exclusively for the President. The Vice President's removal under Article 67 is simply called 'removal by resolution' — the word impeachment is absent.",
+      "final_explanation": "Constitutional terminology is a precision test area in UPSC. The word 'impeachment' has a specific, limited application in the Indian Constitution.\n\n• Option (a): Incorrect — provides a wrong article number.\n• Option (b): Correct. The word 'impeachment' appears in Article 61 in relation to the President of India. This is the only use of the term in the entire Constitution.\n• Option (c): Incorrect. Article 67 governs the VP's removal but uses the phrase 'resolution passed by a majority of all the then members of the Council of States' — the word 'impeachment' is absent.\n• Option (d): Incorrect — incorrect article-term pairing.\n\nValue Addition:\n• In constitutional law, 'impeachment' connotes a quasi-judicial inquiry — its exclusive application to the President reflects the higher procedural protection built into Article 61.\n• US Constitution also uses 'impeachment' broadly — for President, VP, and all civil officers; India's usage is narrower.\n• Knowing which constitutional terms appear where (and which do not) is a recurring UPSC precision point."
+    },
+    "hi": {
+      "display_text": "भारत के संविधान में, संवैधानिक पदाधिकारी के हटाने के संबंध में 'impeachment' शब्द केवल ________ में आता है, और यह ________ के हटाने को संदर्भित करता है।\n\n(a) अनुच्छेद 67 — भारत के उपराष्ट्रपति\n(b) अनुच्छेद 61 — भारत के राष्ट्रपति\n(c) अनुच्छेद 67 — भारत के राष्ट्रपति\n(d) अनुच्छेद 124 — भारत के मुख्य न्यायाधीश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) pairing Article 67 with the word 'impeachment' is the primary trap — students may associate both the President and VP removal with 'impeachment' since both are senior executive offices.",
+      "elimination_logic": [
+        "यह याद रखें कि 'impeachment' एक संवैधानिक तकनीकी शब्द है जो केवल भारतीय संविधान के अनुच्छेद 61 में प्रयुक्त होता है।",
+        "(c) को हटाएं: अनुच्छेद 67 में हटाने के लिए 'resolution' शब्द का उपयोग होता है — 'impeachment' शब्द नहीं है। अनुच्छेद 67 में 'impeachment' शब्द नहीं आता।",
+        "(a) और (d) को हटाएं: दोनों गलत अनुच्छेद-शब्द संयोजन प्रदान करते हैं।",
+        "(b) की पुष्टि करें: भारतीय संविधान में 'impeachment' शब्द केवल अनुच्छेद 61 में आता है, जो राष्ट्रपति के हटाने से संबंधित है — केवल विकल्प (b) इसे सही ढंग से पहचानता है।"
+      ],
+      "upsc_trap_explanation": "यह entity-swap जाल यह सामान्य धारणा का फायदा उठाता है कि राष्ट्रपति और उपराष्ट्रपति — दोनों शीर्ष संवैधानिक कार्यकारी — को हटाने की प्रक्रिया समान 'impeachment' कहलाती होगी। संविधान ने यह शब्द केवल राष्ट्रपति के लिए आरक्षित किया है। उपराष्ट्रपति का हटाना अनुच्छेद 67 के तहत केवल 'रिज़ॉल्यूशन द्वारा हटाना' कहलाता है — 'impeachment' शब्द अनुपस्थित है।",
+      "final_explanation": "संवैधानिक शब्दावली UPSC में एक सटीकता परीक्षण क्षेत्र है। 'impeachment' शब्द का भारतीय संविधान में विशिष्ट, सीमित प्रयोग है।\n\n• विकल्प (a): गलत — गलत अनुच्छेद संख्या प्रदान करता है।\n• विकल्प (b): सही। 'impeachment' शब्द अनुच्छेद 61 में भारत के राष्ट्रपति से संबंधित है। यह पूरे संविधान में इस शब्द का एकमात्र प्रयोग है।\n• विकल्प (c): गलत। अनुच्छेद 67 उपराष्ट्रपति के हटाने को नियंत्रित करता है लेकिन इसमें 'impeachment' शब्द नहीं है, बल्कि 'संसद के सदस्यों की बहुमत द्वारा पारित प्रस्ताव' का प्रयोग होता है।\n• विकल्प (d): गलत — अनुच्छेद-शब्द संयोजन गलत है।\n\nमूल्यवर्धन:\n• संवैधानिक कानून में, 'impeachment' एक अर्ध-न्यायिक जांच को दर्शाता है — इसका राष्ट्रपति के लिए विशेष प्रयोग अनुच्छेद 61 में उच्च प्रक्रिया सुरक्षा को दर्शाता है।\n• अमेरिकी संविधान में 'impeachment' व्यापक रूप से राष्ट्रपति, उपराष्ट्रपति और सभी नागरिक अधिकारियों के लिए उपयोग होता है; भारत में इसका प्रयोग सीमित है।\n• यह जानना कि कौन से संवैधानिक शब्द कहाँ आते हैं (और कहाँ नहीं) UPSC में बार-बार पूछा जाने वाला सटीकता बिंदु है।"
+    }
+  },
+  {
+    "uuid": "817d3572-5ad8-48d8-b715-3e699f1af7a6",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Initiating House: Either House Can Initiate",
+        "Participation of Both Houses: No Joint Sitting",
+        "Role of the Investigating House"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": null,
+      "concept_anchor": "Sequential process — initiating vs. investigating house sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider a scenario where impeachment proceedings are initiated against the President of India in the Lok Sabha. Arrange the following events in the correct chronological sequence as prescribed under Article 61:\n\nP. The Rajya Sabha sits as an investigating body; the President appears through counsel.\nQ. A written notice signed by the requisite fraction of Lok Sabha members is addressed to the President.\nR. The Lok Sabha passes the impeachment resolution by the constitutionally required majority.\nS. The Rajya Sabha passes the impeachment resolution by the requisite majority; the President stands removed.\n\nWhich of the following is the correct sequence?\n\n(a) R → Q → P → S\n(b) Q → P → R → S\n(c) P → Q → R → S\n(d) Q → R → P → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the Rajya Sabha as the initiating house and Lok Sabha as the investigating house — a plausible order that students familiar with the VP removal process (Rajya Sabha-led) may incorrectly apply here.",
+      "elimination_logic": [
+        "Step 1: Recall that either house may initiate — the question specifies Lok Sabha initiates. This rules out options placing Rajya Sabha as initiator.",
+        "Step 2: The sequence is fixed: 14-day notice → Lok Sabha debates and passes → resolution transmitted to Rajya Sabha → Rajya Sabha investigates and passes → President removed.",
+        "Step 3: The President's right to appear arises during the Rajya Sabha's investigation — after Lok Sabha has already passed the resolution.",
+        "The sequence Notice → LS passes → RS investigates with President's appearance → RS passes → removal is option (d)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Article 61 procedure is strictly sequential — each stage must complete before the next begins, and no stage can be skipped or reversed.\n\nCorrect sequence: 14-day notice to President → Lok Sabha debates and passes by two-thirds of total membership → Resolution transmitted to Rajya Sabha → Rajya Sabha sits as investigating body; President appears or is represented → Rajya Sabha passes by two-thirds of total membership → President stands removed.\n\n• The notice must precede any debate — it is a constitutional pre-condition protecting the President's right to prepare a defence.\n• Lok Sabha's passage in this scenario precedes investigation — the initiating house completes its role first.\n• The President's appearance right arises specifically during the investigating house stage.\n• Removal is automatic upon Rajya Sabha passing — no further step is needed.\n\nWhy wrong options fail: Any option placing investigation before the initiating house vote reverses the constitutional sequence. Any option placing Rajya Sabha as the initiator violates the scenario premise (which specifies Lok Sabha initiates) — but more importantly, Article 61 allows either house to be the initiator, and in this scenario Lok Sabha goes first.\n\nValue Addition:\n• In the reverse scenario (Rajya Sabha initiates), Lok Sabha becomes the investigating house — the roles are fully symmetric.\n• No joint session exists for impeachment — the houses must act sequentially, not concurrently.\n• The 14-day notice period cannot be waived — it is a mandatory constitutional buffer."
+    },
+    "hi": {
+      "display_text": "मान लीजिए कि भारत के राष्ट्रपति के खिलाफ महाभियोग की कार्यवाही लोकसभा में प्रारंभ की गई है। अनुच्छेद 61 के तहत निम्नलिखित घटनाओं को सही कालानुक्रमिक क्रम में व्यवस्थित कीजिए:\n\nP. राज्यसभा जांच करने वाली संस्था के रूप में बैठती है; राष्ट्रपति अपने वकील के माध्यम से उपस्थित होते हैं।\nQ. लोकसभा के आवश्यक अंश द्वारा हस्ताक्षरित एक लिखित नोटिस राष्ट्रपति को भेजा जाता है।\nR. लोकसभा संवैधानिक रूप से आवश्यक बहुमत से महाभियोग प्रस्ताव पारित करती है।\nS. राज्यसभा आवश्यक बहुमत से महाभियोग प्रस्ताव पारित करती है; राष्ट्रपति हटाए जाते हैं।\n\nनिम्नलिखित में से कौन-सा क्रम सही है?\n\n(a) R → Q → P → S\n(b) Q → P → R → S\n(c) P → Q → R → S\n(d) Q → R → P → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में राज्यसभा को प्रारंभिक सदन और लोकसभा को जांच करने वाला सदन बताया गया है — यह एक संभावित क्रम है जिसे उपाध्यक्ष के हटाने की प्रक्रिया (राज्यसभा-नेतृत्व वाली) से परिचित छात्र यहाँ गलत तरीके से लागू कर सकते हैं।",
+      "elimination_logic": [
+        "चरण 1: याद रखें कि कोई भी सदन प्रारंभ कर सकता है — प्रश्न में स्पष्ट रूप से कहा गया है कि लोकसभा प्रारंभ करती है। इससे वे विकल्प बाहर हो जाते हैं जिनमें राज्यसभा को प्रारंभकर्ता बताया गया है।",
+        "चरण 2: क्रम निश्चित है: 14-दिन का नोटिस → लोकसभा बहस करती है और पारित करती है → प्रस्ताव राज्यसभा को भेजा जाता है → राज्यसभा जांच करती है और पारित करती है → राष्ट्रपति हटाए जाते हैं।",
+        "चरण 3: राष्ट्रपति के उपस्थित होने का अधिकार राज्यसभा की जांच के दौरान उत्पन्न होता है — जब लोकसभा पहले ही प्रस्ताव पारित कर चुकी होती है।",
+        "क्रम नोटिस → लोकसभा पारित करती है → राज्यसभा जांच करती है जिसमें राष्ट्रपति उपस्थित होते हैं → राज्यसभा पारित करती है → हटाना विकल्प (d) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 61 की प्रक्रिया सख्ती से क्रमिक है — प्रत्येक चरण पूरा होना आवश्यक है इससे पहले कि अगला शुरू हो, और कोई भी चरण छोड़ा या उल्टा नहीं किया जा सकता।\n\nसही क्रम: राष्ट्रपति को 14-दिन का नोटिस → लोकसभा बहस करती है और कुल सदस्यता के दो-तिहाई बहुमत से पारित करती है → प्रस्ताव राज्यसभा को भेजा जाता है → राज्यसभा जांच करने वाली संस्था के रूप में बैठती है; राष्ट्रपति उपस्थित होते हैं या प्रतिनिधित्व करते हैं → राज्यसभा कुल सदस्यता के दो-तिहाई बहुमत से पारित करती है → राष्ट्रपति हटाए जाते हैं।\n\n• नोटिस किसी भी बहस से पहले होना चाहिए — यह एक संवैधानिक पूर्व-शर्त है जो राष्ट्रपति को बचाव की तैयारी का अधिकार देती है।\n• इस परिदृश्य में लोकसभा का पारित करना जांच से पहले होता है — प्रारंभिक सदन अपनी भूमिका पहले पूरा करता है।\n• राष्ट्रपति के उपस्थित होने का अधिकार विशेष रूप से जांच करने वाले सदन के चरण में उत्पन्न होता है।\n• राज्यसभा के पारित करते ही हटाना स्वचालित होता है — कोई और कदम आवश्यक नहीं है।\n\nगलत विकल्प क्यों असफल होते हैं: कोई भी विकल्प जो जांच को प्रारंभिक सदन के मतदान से पहले रखता है, संवैधानिक क्रम को उलट देता है। कोई भी विकल्प जो राज्यसभा को प्रारंभकर्ता बताता है, परिदृश्य की शर्त का उल्लंघन करता है (जिसमें कहा गया है कि लोकसभा प्रारंभ करती है) — लेकिन इससे भी महत्वपूर्ण, अनुच्छेद 61 किसी भी सदन को प्रारंभकर्ता बनने की अनुमति देता है, और इस परिदृश्य में लोकसभा पहले जाती है।\n\nमूल्यवर्धन:\n• उल्टे परिदृश्य में (राज्यसभा प्रारंभ करती है), लोकसभा जांच करने वाला सदन बनती है — भूमिकाएँ पूरी तरह समान होती हैं।\n• महाभियोग के लिए कोई संयुक्त सत्र नहीं होता — सदनों को क्रमशः कार्य करना होता है, एक साथ नहीं।\n• 14-दिन की नोटिस अवधि को छोड़ा नहीं जा सकता — यह एक अनिवार्य संवैधानिक缓冲 है।"
+    }
+  },
+  {
+    "uuid": "e4b2724d-ed1a-46ef-a216-169a4b9e340f",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Impeachment During Prorogued or Dissolved Parliament",
+        "Effect of Dissolution of Lok Sabha on Impeachment Proceedings"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Constitutional silence on impeachment during dissolved Parliament",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Suppose the Lok Sabha is dissolved by the President of India while an impeachment resolution against the President has been passed by the Lok Sabha but is pending investigation before the Rajya Sabha. Which of the following correctly describes the constitutional position in this scenario?\n\n(a) The Constitution is silent on this scenario, creating a potential tension between the President's power under Article 85 to summon Parliament and the need to continue the impeachment proceedings\n(b) A constitutional amendment passed in 2003 provides that impeachment proceedings do not lapse upon dissolution of the Lok Sabha and must be completed by the reconstituted house\n(c) The President may issue an ordinance under Article 123 directing the Rajya Sabha to continue the investigation notwithstanding the dissolution of Lok Sabha\n(d) The Election Commission of India is empowered to direct the reconvening of Parliament to complete pending constitutional proceedings",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) citing the President's ordinance-making power as a resolution mechanism sounds institutional and authoritative, exploiting students' knowledge that the President has emergency legislative powers — but this is entirely fabricated.",
+      "elimination_logic": [
+        "Recall that Articles 61 and 85 are the relevant provisions — Article 85 gives the President the power to summon Parliament.",
+        "Eliminate (b): No constitutional amendment addresses this scenario — it remains an unresolved gap.",
+        "Eliminate (c): The President's ordinance power under Article 123 has no bearing on the summoning of Parliament for impeachment — fabricated.",
+        "Eliminate (d): The Election Commission summons Parliament for elections, not for convening legislative proceedings.",
+        "Confirm (a): The Constitution is silent on this scenario — creating a tension between Article 85 (President's summoning power) and the need to continue impeachment proceedings."
+      ],
+      "upsc_trap_explanation": "Option (c) is a plausible-fabrication trap that creates an institutional-sounding resolution through the President's ordinance power. Students who know the President has legislative emergency powers under Article 123 may construct a logical path: President issues ordinance to summon Parliament. In fact, Article 85 (not Article 123) governs summoning, and no such mechanism exists for impeachment continuity.",
+      "final_explanation": "The interaction between the President's constitutional powers and the mechanics of impeachment creates a genuine theoretical gap that UPSC examiners find fertile.\n\n• Option (a): Correct. The Constitution is silent on what happens to impeachment proceedings if Lok Sabha dissolves mid-process. Article 61 contains no lapsing or continuity provision for this scenario — unlike Article 108, which has specific rules about bill lapsing. The additional tension is that the President controls summoning (Article 85) but is also the subject of the pending proceedings.\n• Option (b): Incorrect. No constitutional amendment has addressed this scenario — it remains a theoretical gap.\n• Option (c): Incorrect. The President's ordinance-making power under Article 123 operates when Parliament is not in session for legislative purposes — it has no application to summoning Parliament or continuing impeachment proceedings.\n• Option (d): Incorrect. The Election Commission's role is limited to conducting elections — it has no power over parliamentary sessions.\n\nValue Addition:\n• This scenario has never arisen in India — its practical significance remains theoretical.\n• Constitutional scholars argue it represents a deliberate or inadvertent design gap.\n• Article 85's placement of summoning power in presidential hands creates the constitutional tension that makes this scenario uniquely complex."
+    },
+    "hi": {
+      "display_text": "मान लीजिए कि भारत के राष्ट्रपति द्वारा लोकसभा भंग कर दी गई है जबकि राष्ट्रपति के खिलाफ लोकसभा द्वारा पारित महाभियोग प्रस्ताव राज्यसभा में जांच के लिए लंबित है। इस परिदृश्य में संवैधानिक स्थिति का सही वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) संविधान इस परिदृश्य पर मौन है, जो अनुच्छेद 85 के तहत राष्ट्रपति की संसद बुलाने की शक्ति और महाभियोग कार्यवाही जारी रखने की आवश्यकता के बीच संभावित तनाव उत्पन्न करता है\n(b) 2003 में पारित एक संवैधानिक संशोधन के अनुसार महाभियोग कार्यवाही लोकसभा के भंग होने पर समाप्त नहीं होती और पुनर्गठित सदन द्वारा पूरी की जानी चाहिए\n(c) राष्ट्रपति अनुच्छेद 123 के तहत एक अध्यादेश जारी कर सकते हैं जो लोकसभा के भंग होने के बावजूद राज्यसभा को जांच जारी रखने का निर्देश देता है\n(d) भारत का चुनाव आयोग संसद को पुनः बुलाने का निर्देश देने का अधिकार रखता है ताकि लंबित संवैधानिक कार्यवाही पूरी की जा सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) citing the President's ordinance-making power as a resolution mechanism sounds institutional and authoritative, exploiting students' knowledge that the President has emergency legislative powers — but this is entirely fabricated.",
+      "elimination_logic": [
+        "अनुच्छेद 61 और 85 प्रासंगिक प्रावधान हैं — अनुच्छेद 85 राष्ट्रपति को संसद बुलाने का अधिकार देता है।",
+        "(b) को खारिज करें: इस परिदृश्य को संबोधित करने वाला कोई संवैधानिक संशोधन नहीं है — यह एक अनसुलझा अंतराल बना हुआ है।",
+        "(c) को खारिज करें: अनुच्छेद 123 के तहत राष्ट्रपति की अध्यादेश शक्ति का संसद बुलाने या महाभियोग की कार्यवाही जारी रखने से कोई संबंध नहीं है — यह काल्पनिक है।",
+        "(d) को खारिज करें: चुनाव आयोग चुनाव के लिए संसद को बुलाता है, विधायी कार्यवाही के लिए नहीं।",
+        "(a) की पुष्टि करें: संविधान इस परिदृश्य पर मौन है — जो अनुच्छेद 85 (राष्ट्रपति की संसद बुलाने की शक्ति) और महाभियोग कार्यवाही जारी रखने की आवश्यकता के बीच तनाव उत्पन्न करता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) एक संभावित-काल्पनिक जाल है जो राष्ट्रपति की अध्यादेश शक्ति के माध्यम से एक संस्थागत-सुनने वाला समाधान प्रस्तुत करता है। जो छात्र जानते हैं कि राष्ट्रपति के पास अनुच्छेद 123 के तहत आपातकालीन विधायी शक्तियाँ हैं, वे तर्कसंगत रूप से सोच सकते हैं कि राष्ट्रपति अध्यादेश जारी करके संसद बुला सकता है। वास्तव में, संसद बुलाने का प्रावधान अनुच्छेद 85 में है (अनुच्छेद 123 में नहीं), और महाभियोग की निरंतरता के लिए ऐसा कोई प्रावधान नहीं है।",
+      "final_explanation": "राष्ट्रपति की संवैधानिक शक्तियों और महाभियोग की कार्यप्रणाली के बीच अंतःक्रिया एक वास्तविक सैद्धांतिक अंतराल उत्पन्न करती है जिसे UPSC परीक्षक उपजाऊ मानते हैं।\n\n• विकल्प (a): सही। संविधान इस परिदृश्य पर मौन है कि यदि लोकसभा महाभियोग प्रक्रिया के बीच भंग हो जाए तो क्या होता है। अनुच्छेद 61 में इस परिदृश्य के लिए कोई समाप्ति या निरंतरता प्रावधान नहीं है — जबकि अनुच्छेद 108 में विधेयक समाप्ति के लिए विशिष्ट नियम हैं। अतिरिक्त तनाव यह है कि संसद बुलाने का नियंत्रण राष्ट्रपति के पास है (अनुच्छेद 85), जो स्वयं लंबित कार्यवाही का विषय भी है।\n• विकल्प (b): गलत। इस परिदृश्य को संबोधित करने वाला कोई संवैधानिक संशोधन नहीं हुआ है — यह एक सैद्धांतिक अंतराल बना हुआ है।\n• विकल्प (c): गलत। अनुच्छेद 123 के तहत राष्ट्रपति की अध्यादेश बनाने की शक्ति तब लागू होती है जब संसद सत्र में नहीं होती है और विधायी उद्देश्यों के लिए होती है — इसका संसद बुलाने या महाभियोग कार्यवाही जारी रखने से कोई संबंध नहीं है।\n• विकल्प (d): गलत। चुनाव आयोग की भूमिका केवल चुनाव कराने तक सीमित है — संसद सत्रों पर उसका कोई अधिकार नहीं है।\n\nमूल्य संवर्धन:\n• यह परिदृश्य भारत में कभी उत्पन्न नहीं हुआ है — इसका व्यावहारिक महत्व सैद्धांतिक ही है।\n• संवैधानिक विद्वान इसे जानबूझकर या अनजाने में डिज़ाइन अंतराल मानते हैं।\n• अनुच्छेद 85 में संसद बुलाने की शक्ति राष्ट्रपति के हाथ में होने से संवैधानिक तनाव उत्पन्न होता है जो इस परिदृश्य को विशिष्ट रूप से जटिल बनाता है।"
+    }
+  },
+  {
+    "uuid": "dbc8dabb-aae5-4ad6-b21b-e01ff0116f58",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Historical Record: No Impeachment Has Ever Occurred in India",
+        "Special Majority Requirement: Two-Thirds of Total Membership"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Two-thirds total membership — practical impossibility of impeachment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An impeachment resolution against the President of India was passed by the Lok Sabha and transmitted to the Rajya Sabha for investigation. The Rajya Sabha, with a total sanctioned strength of 245 members, convened a special session. Of 245 members, 230 were present. After completing the investigation and hearing the President's counsel, the Rajya Sabha voted on the resolution. The result was: 155 votes in favour, 70 against, and 5 abstentions.\n\nWhich of the following correctly describes the outcome of this vote?\n\n(a) The resolution is passed, since the Rajya Sabha has successfully completed its investigative function and a majority of present members supported it\n(b) The resolution is passed, since 155 votes constitute more than two-thirds of the members present and voting\n(c) The Speaker of Lok Sabha must now certify the result before the President is formally removed\n(d) The resolution fails to achieve the constitutionally required majority, and the President is not removed",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) stating that the resolution has crossed the required threshold appears arithmetically plausible to students who calculate two-thirds of 230 votes cast rather than two-thirds of 245 total seats.",
+      "elimination_logic": [
+        "Identify the correct denominator: Article 61 requires two-thirds of TOTAL membership, not two-thirds of members present and voting.",
+        "Calculate two-thirds of 245 (total Rajya Sabha strength): 245 × 2/3 = 163.3 — so 164 votes are needed.",
+        "Compare 155 votes in favour with the threshold of 164: 155 < 164, so the threshold has NOT been met.",
+        "The resolution fails in the Rajya Sabha — the answer is (d), and the investigation stage cannot be deemed successfully completed."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap uses real-looking arithmetic: 155 votes out of 230 present is approximately 67% — which looks like 'two-thirds' of those who voted. Students who apply the 'present and voting' denominator (Article 368 logic) will calculate the threshold as 230 × 2/3 = 153, conclude that 155 exceeds 153, and incorrectly mark the resolution as passed. Only students who know the denominator is total membership (245) will correctly determine that 164 votes were needed and 155 falls short.",
+      "final_explanation": "This scenario tests the most critical precision point in Article 61 — the denominator for the two-thirds majority calculation.\n\nThe correct analysis: Article 61 requires a majority of not less than two-thirds of the total membership of the house. If the Rajya Sabha has 245 members, two-thirds of 245 = 163.3, meaning at least 164 votes are required for the resolution to pass.\n\nWith only 155 votes in favour (despite 230 members being present), the threshold is not met — 155 < 164.\n\n• Option (a): Incorrect. The investigation is conducted by the second house — but the critical question is whether the resolution passed, not whether an investigation occurred.\n• Option (b): Incorrect. The threshold is NOT met because 155 < 164 (two-thirds of 245). The 'present and voting' calculation (155/230 ≈ 67%) is irrelevant — Article 61 uses total membership.\n• Option (c): Incorrect. The Speaker has no role in certifying the outcome of Rajya Sabha proceedings.\n• Option (d): Correct. The resolution fails to achieve the requisite two-thirds of total membership. The President is NOT removed, and the investigation stage is not successfully completed.\n\nValue Addition:\n• This arithmetical precision is why no government has ever successfully managed an impeachment — even large majorities may fall short of two-thirds of total membership.\n• The Rajya Sabha currently has 245 seats; Lok Sabha has 543 — the two-thirds totals are 164 and 362 respectively.\n• Abstentions effectively work against the resolution since the denominator is fixed at total membership, not those voting."
+    },
+    "hi": {
+      "display_text": "भारत के राष्ट्रपति के विरुद्ध महाभियोग प्रस्ताव लोकसभा द्वारा पारित किया गया और जांच के लिए राज्यसभा को भेजा गया। राज्यसभा, जिसकी कुल स्वीकृत सदस्य संख्या 245 है, ने एक विशेष सत्र बुलाया। 245 सदस्यों में से 230 उपस्थित थे। जांच पूरी करने और राष्ट्रपति के वकील की सुनवाई के बाद, राज्यसभा ने प्रस्ताव पर मतदान किया। परिणाम था: 155 समर्थन में, 70 विरोध में, और 5 परहेज।\n\nनिम्नलिखित में से कौन-सा इस मतदान के परिणाम का सही वर्णन करता है?\n\n(a) प्रस्ताव पारित हो गया है, क्योंकि राज्यसभा ने अपनी जांच कार्यवाही सफलतापूर्वक पूरी कर ली है और उपस्थित सदस्यों की बहुमत ने इसका समर्थन किया है\n(b) प्रस्ताव पारित हो गया है, क्योंकि 155 वोट उपस्थित और मतदान करने वाले सदस्यों के दो-तिहाई से अधिक हैं\n(c) राष्ट्रपति को औपचारिक रूप से हटाने से पहले अब लोकसभा के अध्यक्ष को परिणाम प्रमाणित करना होगा\n(d) प्रस्ताव संवैधानिक रूप से आवश्यक बहुमत प्राप्त करने में विफल रहता है, और राष्ट्रपति हटाए नहीं जाते",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) stating that the resolution has crossed the required threshold appears arithmetically plausible to students who calculate two-thirds of 230 votes cast rather than two-thirds of 245 total seats.",
+      "elimination_logic": [
+        "सही हर (denominator) की पहचान करें: अनुच्छेद 61 कुल सदस्यता के दो-तिहाई की आवश्यकता करता है, न कि उपस्थित और मतदान करने वाले सदस्यों के दो-तिहाई।",
+        "245 (राज्यसभा की कुल सदस्य संख्या) के दो-तिहाई की गणना करें: 245 × 2/3 = 163.3 — अतः 164 वोट आवश्यक हैं।",
+        "155 समर्थन वाले वोटों की तुलना 164 की सीमा से करें: 155 < 164, अतः सीमा पूरी नहीं हुई है।",
+        "संकल्प राज्यसभा में विफल रहता है — उत्तर (d) है, और जांच चरण को सफलतापूर्वक पूरा नहीं माना जा सकता।"
+      ],
+      "upsc_trap_explanation": "आंशिक-सत्य जाल वास्तविक दिखने वाली अंकगणित का उपयोग करता है: 230 उपस्थित सदस्यों में से 155 वोट लगभग 67% है — जो मतदान करने वालों के दो-तिहाई जैसा दिखता है। जो छात्र 'उपस्थित और मतदान' हर (denominator) (अनुच्छेद 368 की तर्कशक्ति) लागू करते हैं, वे सीमा को 230 × 2/3 = 153 मानेंगे, निष्कर्ष निकालेंगे कि 155, 153 से अधिक है, और गलत तरीके से संकल्प को पारित मानेंगे। केवल वे छात्र जो जानते हैं कि हर कुल सदस्यता (245) है, सही ढंग से निर्धारित करेंगे कि 164 वोट आवश्यक थे और 155 कम है।",
+      "final_explanation": "यह परिदृश्य अनुच्छेद 61 में सबसे महत्वपूर्ण सटीकता बिंदु का परीक्षण करता है — दो-तिहाई बहुमत गणना के लिए हर (denominator)।\n\nसही विश्लेषण: अनुच्छेद 61 सदन की कुल सदस्यता के कम से कम दो-तिहाई बहुमत की आवश्यकता करता है। यदि राज्यसभा में 245 सदस्य हैं, तो 245 का दो-तिहाई = 163.3, अर्थात कम से कम 164 वोट आवश्यक हैं।\n\nकेवल 155 समर्थन वाले वोटों के साथ (हालांकि 230 सदस्य उपस्थित थे), सीमा पूरी नहीं होती — 155 < 164।\n\n• विकल्प (a): गलत। जांच दूसरी सभा द्वारा की जाती है — लेकिन महत्वपूर्ण प्रश्न यह है कि संकल्प पारित हुआ या नहीं, न कि जांच हुई या नहीं।\n• विकल्प (b): गलत। सीमा पूरी नहीं होती क्योंकि 155 < 164 (245 के दो-तिहाई)। 'उपस्थित और मतदान' गणना (155/230 ≈ 67%) अप्रासंगिक है — अनुच्छेद 61 कुल सदस्यता का उपयोग करता है।\n• विकल्प (c): गलत। राज्यसभा की कार्यवाही के परिणाम को प्रमाणित करने में लोकसभा के अध्यक्ष की कोई भूमिका नहीं है।\n• विकल्प (d): सही। संकल्प कुल सदस्यता के आवश्यक दो-तिहाई बहुमत को प्राप्त करने में विफल रहता है। राष्ट्रपति हटाए नहीं जाते, और जांच चरण सफलतापूर्वक पूरा नहीं होता।\n\nमूल्य संवर्धन:\n• यह अंकगणितीय सटीकता ही कारण है कि कोई भी सरकार कभी सफलतापूर्वक महाभियोग प्रबंधित नहीं कर पाई — यहां तक कि बड़े बहुमत भी कुल सदस्यता के दो-तिहाई से कम हो सकते हैं।\n• वर्तमान में राज्यसभा में 245 सीटें हैं; लोकसभा में 543 — दो-तिहाई कुल सदस्यता क्रमशः 164 और 362 हैं।\n• परहेज (abstentions) संकल्प के खिलाफ काम करते हैं क्योंकि हर स्थिर है, न कि मतदान करने वालों के आधार पर।"
+    }
+  },
+  {
+    "uuid": "5bf58435-4bf6-4c3c-923c-4558c6fd2be1",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Elected vs. Nominated Members' Voting Rights in Impeachment",
+        "Role of State Legislatures in Impeachment",
+        "Comparison with Removal of Vice President"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Electoral college vs. impeachment body — participation differences",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Constitutional Process) with List II (Body Participating in that Process):",
+        "columns": [
+          "List I — Process",
+          "List II — Participating Body"
+        ],
+        "rows": [
+          [
+            "A. Election of the President of India",
+            "1. All elected and nominated members of both Houses of Parliament; no state legislature role"
+          ],
+          [
+            "B. Impeachment of the President of India",
+            "2. Rajya Sabha (majority of all then members) initiates; Lok Sabha concurs; no state legislature role"
+          ],
+          [
+            "C. Election of the Vice President of India",
+            "3. Elected members of both Houses of Parliament and elected members of State Legislative Assemblies only"
+          ],
+          [
+            "D. Removal of the Vice President of India",
+            "4. All members (elected and nominated) of both Houses of Parliament; no state legislators"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-1, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) correctly pairs the President's election but swaps the participation rules for nominated MPs and state MLCs, exploiting the common confusion between who participates in election vs. removal.",
+      "elimination_logic": [
+        "Anchor on Presidential Election (A): Electoral college under Article 54 includes elected MPs of both houses and elected MLAs of state assemblies — excludes nominated MPs and state MLCs. Matches description 3.",
+        "Anchor on Presidential Impeachment (B): All MPs (elected + nominated) of both houses; no state legislature role. Matches description 1.",
+        "Anchor on VP Election (C): Electoral college is all elected and nominated members of both houses of Parliament — no state legislators. Matches description 4.",
+        "Anchor on VP Removal (D): Initiated by Rajya Sabha (majority of all then members); Lok Sabha concurs — no state legislature role. Matches description 2. Correct combination is A-3, B-1, C-4, D-2 — option (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places state MLC participation in the Presidential election (Option A in wrong-answer options), when in fact state MLCs do NOT participate — only elected MLAs of state assemblies do. Students who recall 'state legislators participate in Presidential election' may not remember the precise limit to elected MLAs only, and may accept pairings that include state MLCs or nominated MPs in the electoral college.",
+      "final_explanation": "The composition of bodies involved in electing and removing the President and VP is a recurring comparative area.\n\nCorrect pairings:\n• A (Presidential Election) — 3: Elected MPs of both houses plus elected members of state legislative assemblies. Nominated MPs and state MLCs are excluded.\n• B (Presidential Impeachment) — 1: All MPs (elected and nominated) of both houses. State legislatures — assemblies or councils — have no role.\n• C (VP Election) — 4: All members (elected and nominated) of both houses of Parliament. No state legislator participates.\n• D (VP Removal) — 2: Initiated by Rajya Sabha majority of all then members; Lok Sabha concurrence required. No state legislature role.\n\nThe trap pairing is A-1 (Presidential election with the impeachment body), which students who confuse election with removal will select.\n\nValue Addition:\n• The VP election body is entirely parliamentary — no state legislature element, unlike Presidential election.\n• Nominated MPs are excluded from both Presidential and VP elections but included in VP election? Correction: Article 55 explicitly uses 'elected members' for Presidential election; Article 66(1) for VP election says 'members of both Houses' without the 'elected' restriction — nominated MPs vote in VP elections.\n• State MLCs do not participate in Presidential elections — only elected MLAs of state assemblies participate."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संवैधानिक प्रक्रिया) को सूची II (उस प्रक्रिया में भाग लेने वाला निकाय) से मिलाइए:",
+        "columns": [
+          "सूची I — प्रक्रिया",
+          "सूची II — भाग लेने वाला निकाय"
+        ],
+        "rows": [
+          [
+            "A. भारत के राष्ट्रपति का चुनाव",
+            "1. दोनों सदनों के सभी निर्वाचित और नामित सदस्य; राज्य विधानमंडल की कोई भूमिका नहीं"
+          ],
+          [
+            "B. भारत के राष्ट्रपति का महाभियोग",
+            "2. राज्यसभा (तत्कालीन सभी सदस्यों की बहुमत) द्वारा आरंभ; लोकसभा सहमत; राज्य विधानमंडल की कोई भूमिका नहीं"
+          ],
+          [
+            "C. भारत के उपराष्ट्रपति का चुनाव",
+            "3. दोनों सदनों के निर्वाचित सदस्य और केवल राज्य विधानसभाओं के निर्वाचित सदस्य"
+          ],
+          [
+            "D. भारत के उपराष्ट्रपति का हटाना",
+            "4. दोनों सदनों के सभी सदस्य (निर्वाचित और नामित); कोई राज्य विधायक नहीं"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-4, C-1, D-2\n(b) A-1, B-3, C-4, D-2\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-1, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) सही रूप से राष्ट्रपति के चुनाव को जोड़ता है लेकिन नामित सांसदों और राज्य विधान परिषद के सदस्यों के भागीदारी नियमों को उलट देता है, जो चुनाव और हटाने में भागीदारी के बीच आम भ्रम का फायदा उठाता है।",
+      "elimination_logic": [
+        "राष्ट्रपति चुनाव (A) पर आधार: अनुच्छेद 54 के तहत निर्वाचन मंडल में दोनों सदनों के निर्वाचित सांसद और राज्य विधानसभाओं के निर्वाचित विधायक शामिल हैं — नामित सांसद और राज्य विधान परिषद के सदस्य शामिल नहीं हैं। यह विवरण 3 से मेल खाता है।",
+        "राष्ट्रपति महाभियोग (B) पर आधार: दोनों सदनों के सभी सांसद (निर्वाचित + नामित); राज्य विधानमंडल की कोई भूमिका नहीं। यह विवरण 1 से मेल खाता है।",
+        "उपराष्ट्रपति चुनाव (C) पर आधार: निर्वाचन मंडल में दोनों सदनों के सभी निर्वाचित और नामित सदस्य शामिल हैं — कोई राज्य विधायक नहीं। यह विवरण 4 से मेल खाता है।",
+        "उपराष्ट्रपति हटाने (D) पर आधार: राज्यसभा (तत्कालीन सभी सदस्यों की बहुमत) द्वारा आरंभ; लोकसभा की सहमति आवश्यक; राज्य विधानमंडल की कोई भूमिका नहीं। सही संयोजन है A-3, B-1, C-4, D-2 — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में राज्य विधान परिषद के सदस्यों को राष्ट्रपति चुनाव में शामिल दिखाया गया है (गलत उत्तर विकल्पों में विकल्प A), जबकि वास्तव में राज्य विधान परिषद के सदस्य शामिल नहीं होते — केवल राज्य विधानसभाओं के निर्वाचित विधायक शामिल होते हैं। जो छात्र 'राज्य विधायक राष्ट्रपति चुनाव में भाग लेते हैं' याद करते हैं, वे निर्वाचित विधायकों तक सीमित इस सटीक सीमा को याद नहीं रख पाते और ऐसे संयोजन स्वीकार कर लेते हैं जिनमें राज्य विधान परिषद के सदस्य या नामित सांसद शामिल होते हैं।",
+      "final_explanation": "राष्ट्रपति और उपराष्ट्रपति के चुनाव और हटाने में शामिल निकायों की संरचना एक बार-बार आने वाला तुलनात्मक विषय है।\n\nसही संयोजन:\n• A (राष्ट्रपति चुनाव) — 3: दोनों सदनों के निर्वाचित सांसद और राज्य विधानसभाओं के निर्वाचित सदस्य। नामित सांसद और राज्य विधान परिषद के सदस्य शामिल नहीं।\n• B (राष्ट्रपति महाभियोग) — 1: दोनों सदनों के सभी सांसद (निर्वाचित और नामित)। राज्य विधानमंडल — विधानसभा या परिषद — की कोई भूमिका नहीं।\n• C (उपराष्ट्रपति चुनाव) — 4: दोनों सदनों के सभी सदस्य (निर्वाचित और नामित)। कोई राज्य विधायक शामिल नहीं।\n• D (उपराष्ट्रपति हटाने) — 2: राज्यसभा (तत्कालीन सभी सदस्यों की बहुमत) द्वारा आरंभ; लोकसभा की सहमति आवश्यक। राज्य विधानमंडल की कोई भूमिका नहीं।\n\nजाल संयोजन है A-1 (राष्ट्रपति चुनाव को महाभियोग निकाय के साथ जोड़ना), जिसे चुनाव और हटाने में भ्रमित करने वाले छात्र चुनते हैं।\n\nमूल्य संवर्धन:\n• उपराष्ट्रपति चुनाव निकाय पूरी तरह से संसदीय है — राष्ट्रपति चुनाव की तरह कोई राज्य विधानमंडल तत्व नहीं।\n• नामित सांसद राष्ट्रपति और उपराष्ट्रपति दोनों चुनावों से बाहर हैं लेकिन उपराष्ट्रपति चुनाव में शामिल हैं? सुधार: अनुच्छेद 55 स्पष्ट रूप से राष्ट्रपति चुनाव के लिए 'निर्वाचित सदस्य' कहता है; अनुच्छेद 66(1) उपराष्ट्रपति चुनाव के लिए 'दोनों सदनों के सदस्य' कहता है बिना 'निर्वाचित' प्रतिबंध के — नामित सांसद उपराष्ट्रपति चुनाव में वोट करते हैं।\n• राज्य विधान परिषद के सदस्य राष्ट्रपति चुनाव में भाग नहीं लेते — केवल राज्य विधानसभाओं के निर्वाचित विधायक भाग लेते हैं।"
+    }
+  },
+  {
+    "uuid": "69c96a62-50ad-4b2b-ba8c-d799d6ba47c9",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Grounds for Impeachment: 'Violation of the Constitution'",
+        "Constitutional Basis and Nature of Impeachment",
+        "Interaction Between Impeachment and Presidential Immunity (Article 361)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Quasi-judicial features of impeachment — identifying the non-feature",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four features are characteristics that contribute to the quasi-judicial nature of presidential impeachment under Article 61 of the Constitution. Which one does NOT belong to this group?\n\n(a) Application of a criminal standard of proof (beyond reasonable doubt) to determine whether a constitutional violation occurred\n(b) The President's constitutional right to appear and be represented by counsel before the investigating house\n(c) The mandatory advance notice period that gives the President an opportunity to prepare a defence\n(d) The sequential procedure in which one house investigates before a final vote determines the outcome",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) mentioning a 'criminal standard of proof' sounds like it could belong to the quasi-judicial character of impeachment — but it is the odd one out because impeachment uses a parliamentary majority standard, not a criminal standard of proof.",
+      "elimination_logic": [
+        "Right to legal representation: Article 61(3) — explicitly part of impeachment. NOT the odd one out.",
+        "Advance notice to the accused: 14-day notice to President — embedded in Article 61(1). NOT the odd one out.",
+        "Sequential investigative procedure: House 1 passes → House 2 investigates — quasi-judicial feature of Article 61. NOT the odd one out.",
+        "Criminal standard of proof (beyond reasonable doubt): Not mentioned or applicable to impeachment — Parliament applies a political majority, not a criminal evidentiary standard. This is the odd one out."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges 'quasi-judicial' features of impeachment (representation, notice, investigation) with features of actual criminal proceedings (standard of proof). Students who know impeachment is described as 'quasi-judicial' may extend that characterisation to include criminal standards of proof — a feature of actual judicial proceedings that does not apply to parliamentary impeachment.",
+      "final_explanation": "Impeachment is described as quasi-judicial, but this characterisation has precise limits — it does not make impeachment equivalent to a criminal trial.\n\n• Option (a) — Criminal standard of proof (beyond reasonable doubt): This is the ODD ONE OUT. Impeachment is a parliamentary function — the standard is a constitutional majority (two-thirds of total membership), not the criminal evidentiary standard of 'beyond reasonable doubt.' Parliament is not a court and does not apply criminal proof standards.\n• Option (b) — Right to legal representation: Article 61(3) guarantees the President the right to appear and be represented by counsel — a genuine quasi-judicial feature.\n• Option (c) — Advance notice to the affected party: The 14-day notice requirement embeds audi alteram partem — a natural justice principle found in quasi-judicial proceedings.\n• Option (d) — Sequential investigative procedure: The two-stage process (initiating house passes → second house investigates) gives impeachment its quasi-judicial character — investigation by a deliberative body before a final vote.\n\nValue Addition:\n• 'Quasi-judicial' means the process has judicial-like features but is not a court proceeding — crucial distinction.\n• The absence of a formal evidentiary standard means Parliament exercises political judgment on what constitutes 'violation of the Constitution.'\n• This distinguishes India's impeachment from US Senate trials where rules of evidence can be adopted by Senate resolution."
+    },
+    "hi": {
+      "display_text": "संविधान के अनुच्छेद 61 के तहत राष्ट्रपति के महाभियोग की अर्ध-न्यायिक प्रकृति में योगदान देने वाली निम्नलिखित चार विशेषताओं में से तीन विशेषताएँ हैं। इनमें से कौन-सी इस समूह से संबंधित नहीं है?\n\n(a) यह निर्धारित करने के लिए आपराधिक प्रमाण का मानक (संदेह से परे) लागू करना कि क्या संवैधानिक उल्लंघन हुआ है\n(b) जांच सदन के समक्ष उपस्थित होने और वकील द्वारा प्रतिनिधित्व का राष्ट्रपति का संवैधानिक अधिकार\n(c) अनिवार्य अग्रिम सूचना अवधि जो राष्ट्रपति को बचाव तैयार करने का अवसर देती है\n(d) क्रमिक प्रक्रिया जिसमें एक सदन जांच करता है और अंतिम मतदान परिणाम निर्धारित करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) में 'आपराधिक प्रमाण का मानक' का उल्लेख है जो कि महाभियोग की अर्ध-न्यायिक प्रकृति से संबंधित लग सकता है — लेकिन यह असामान्य विकल्प है क्योंकि महाभियोग में संसद बहुमत का मानक लागू होता है, न कि आपराधिक प्रमाण का।",
+      "elimination_logic": [
+        "कानूनी प्रतिनिधित्व का अधिकार: अनुच्छेद 61(3) — स्पष्ट रूप से महाभियोग का हिस्सा है। यह असामान्य विकल्प नहीं है।",
+        "आरोपी को अग्रिम सूचना: राष्ट्रपति को 14 दिन की सूचना — अनुच्छेद 61(1) में निहित। यह असामान्य विकल्प नहीं है।",
+        "क्रमिक जांच प्रक्रिया: पहला सदन प्रस्ताव पारित करता है → दूसरा सदन जांच करता है — अनुच्छेद 61 की अर्ध-न्यायिक विशेषता। यह असामान्य विकल्प नहीं है।",
+        "आपराधिक प्रमाण का मानक (संदेह से परे): महाभियोग में उल्लेखित या लागू नहीं — संसद राजनीतिक बहुमत लागू करती है, आपराधिक साक्ष्य मानक नहीं। यह असामान्य विकल्प है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल महाभियोग की 'अर्ध-न्यायिक' विशेषताओं (प्रतिनिधित्व, सूचना, जांच) को वास्तविक आपराधिक कार्यवाही के प्रमाण मानक के साथ मिला देता है। जो छात्र जानते हैं कि महाभियोग को 'अर्ध-न्यायिक' कहा जाता है, वे इसे आपराधिक प्रमाण मानकों तक बढ़ा सकते हैं — जो कि वास्तविक न्यायिक कार्यवाही की विशेषता है और संसदीय महाभियोग पर लागू नहीं होती।",
+      "final_explanation": "महाभियोग को अर्ध-न्यायिक कहा जाता है, लेकिन इस वर्णन की सीमाएँ स्पष्ट हैं — यह महाभियोग को आपराधिक मुकदमे के बराबर नहीं बनाता।\n\n• विकल्प (a) — आपराधिक प्रमाण का मानक (संदेह से परे): यह असामान्य विकल्प है। महाभियोग संसदीय कार्य है — मानक संवैधानिक बहुमत (कुल सदस्यता का दो-तिहाई), न कि 'संदेह से परे' आपराधिक साक्ष्य मानक। संसद कोई न्यायालय नहीं है और आपराधिक प्रमाण मानक लागू नहीं करती।\n• विकल्प (b) — कानूनी प्रतिनिधित्व का अधिकार: अनुच्छेद 61(3) राष्ट्रपति को जांच सदन के समक्ष उपस्थित होने और वकील द्वारा प्रतिनिधित्व का अधिकार देता है — एक वास्तविक अर्ध-न्यायिक विशेषता।\n• विकल्प (c) — प्रभावित पक्ष को अग्रिम सूचना: 14 दिन की सूचना की आवश्यकता audi alteram partem — प्राकृतिक न्याय का सिद्धांत है जो अर्ध-न्यायिक कार्यवाहियों में पाया जाता है।\n• विकल्प (d) — क्रमिक जांच प्रक्रिया: दो-चरणीय प्रक्रिया (प्रारंभिक सदन प्रस्ताव पारित करता है → दूसरा सदन जांच करता है) महाभियोग को अर्ध-न्यायिक चरित्र देती है — अंतिम मतदान से पहले विचारशील निकाय द्वारा जांच।\n\nमूल्य संवर्धन:\n• 'अर्ध-न्यायिक' का अर्थ है कि प्रक्रिया में न्यायिक जैसी विशेषताएँ हैं लेकिन यह न्यायालयीन कार्यवाही नहीं है — यह महत्वपूर्ण भेद है।\n• औपचारिक साक्ष्य मानक की अनुपस्थिति का अर्थ है कि संसद 'संविधान का उल्लंघन' क्या है, इस पर राजनीतिक निर्णय करती है।\n• यह भारत के महाभियोग को अमेरिकी सीनेट के मुकदमों से अलग करता है जहाँ साक्ष्य के नियम सीनेट के प्रस्ताव द्वारा अपनाए जा सकते हैं।"
+    }
+  },
+  {
+    "uuid": "a2944532-18c9-40a1-8045-449424fb9880",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Union Executive — President",
+      "sub_topic": "Impeachment of President",
+      "concepts_used": [
+        "Notice Requirement: 14-Day Advance Written Notice",
+        "Special Majority Requirement: Two-Thirds of Total Membership",
+        "Role of the Investigating House"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Notice signed by one-fourth; resolution passed by two-thirds total membership",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under Article 61 of the Constitution of India, an impeachment resolution can be moved only after a written notice signed by not less than ________ of the total membership of the House has been given; and the resolution is deemed to be passed only if it is approved by not less than ________ of the total membership of that House.\n\n(a) two-thirds; one-fourth\n(b) one-third; two-thirds\n(c) one-fourth; two-thirds\n(d) one-fifth; two-thirds",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) flipping the fractions (one-third for notice, two-thirds for passage) is the primary trap — students who remember 'high thresholds throughout' may not recall which fraction applies to which stage.",
+      "elimination_logic": [
+        "Recall that Article 61(1) uses two distinct thresholds: notice requires one-fourth signatures; resolution passage requires two-thirds of total membership.",
+        "Eliminate (a): Two different thresholds in the wrong order — notice cannot require two-thirds.",
+        "Eliminate (b): One-third for notice is incorrect — the Constitution uses one-fourth.",
+        "Eliminate (d): One-fifth is too low and not the constitutional threshold.",
+        "Confirm (c): One-fourth for notice + two-thirds of total membership for passage — Article 61's exact thresholds."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap elevates the notice threshold from one-fourth to one-third in Option (b). Students who remember 'substantial fractions throughout' but not the precise one-fourth figure for notice will accept one-third as a plausible threshold — it sounds appropriately significant without being as high as the two-thirds passage threshold.",
+      "final_explanation": "Article 61's two-stage numerical design uses different fractions for different purposes — a precision point that governs both initiation accessibility and passage difficulty.\n\n• Option (a): Incorrect. The blanks are filled in reverse — notice requires one-fourth (not two-thirds) and passage requires two-thirds (not one-fourth).\n• Option (b): Incorrect. 'One-third' for the notice threshold misrepresents Article 61(1), which specifies one-fourth. One-third is not used anywhere in Article 61.\n• Option (c): Correct. Article 61(1) requires not less than one-fourth of total membership to sign the notice. Article 61(2)(b) and 61(4) require two-thirds of total membership to pass the resolution.\n• Option (d): Incorrect. One-fifth is not the constitutional notice threshold — it is a fabricated lower fraction.\n\nValue Addition:\n• The gap between one-fourth (notice) and two-thirds (passage) is intentional — impeachment should be initiable by a meaningful minority but completable only by a supermajority.\n• Both thresholds use 'total membership' as the denominator — consistent within Article 61 but different from Article 368's 'present and voting' component.\n• These two numbers — one-fourth and two-thirds — are the only numerical requirements in Article 61 and must be memorised precisely."
+    },
+    "hi": {
+      "display_text": "भारत के संविधान के अनुच्छेद 61 के अंतर्गत, एक महाभियोग प्रस्ताव तभी प्रस्तुत किया जा सकता है जब उस सदन की कुल सदस्यता के कम से कम ________ द्वारा हस्ताक्षरित लिखित नोटिस दिया गया हो; और प्रस्ताव तभी पारित माना जाएगा जब उसे उस सदन की कुल सदस्यता के कम से कम ________ द्वारा अनुमोदित किया गया हो।\n\n(a) दो-तिहाई; एक-चौथाई\n(b) एक-तिहाई; दो-तिहाई\n(c) एक-चौथाई; दो-तिहाई\n(d) एक-पाँचवाँ; दो-तिहाई",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) flipping the fractions (one-third for notice, two-thirds for passage) is the primary trap — students who remember 'high thresholds throughout' may not recall which fraction applies to which stage.",
+      "elimination_logic": [
+        "अनुच्छेद 61(1) में दो अलग-अलग सीमा मान होते हैं: नोटिस के लिए एक-चौथाई हस्ताक्षर आवश्यक हैं; प्रस्ताव पारित करने के लिए कुल सदस्यता का दो-तिहाई आवश्यक है।",
+        "(a) को खारिज करें: दो अलग-अलग सीमा मान गलत क्रम में हैं — नोटिस के लिए दो-तिहाई आवश्यक नहीं हो सकता।",
+        "(b) को खारिज करें: नोटिस के लिए एक-तिहाई गलत है — संविधान में एक-चौथाई का उपयोग होता है।",
+        "(d) को खारिज करें: एक-पाँचवाँ बहुत कम है और संवैधानिक सीमा मान नहीं है।",
+        "(c) को स्वीकार करें: नोटिस के लिए एक-चौथाई + प्रस्ताव पारित करने के लिए कुल सदस्यता का दो-तिहाई — अनुच्छेद 61 के सटीक सीमा मान।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्वैप जाल में विकल्प (b) में नोटिस की सीमा मान को एक-चौथाई से बढ़ाकर एक-तिहाई कर दिया गया है। जो छात्र 'संपूर्ण उच्च सीमा मान' याद रखते हैं लेकिन नोटिस के लिए सटीक एक-चौथाई नहीं जानते, वे एक-तिहाई को एक संभावित सीमा मान के रूप में स्वीकार कर लेते हैं — यह दो-तिहाई पारित सीमा मान जितना अधिक नहीं लगता।",
+      "final_explanation": "अनुच्छेद 61 की दो-चरणीय संख्यात्मक संरचना विभिन्न उद्देश्यों के लिए अलग-अलग सीमा मानों का उपयोग करती है — यह एक सटीक बिंदु है जो आरंभ की पहुँच और पारित करने की कठिनाई दोनों को नियंत्रित करता है।\n\n• विकल्प (a): गलत। रिक्त स्थान उल्टे भरे गए हैं — नोटिस के लिए एक-चौथाई (दो-तिहाई नहीं) और पारित करने के लिए दो-तिहाई (एक-चौथाई नहीं) आवश्यक है।\n• विकल्प (b): गलत। नोटिस के लिए 'एक-तिहाई' अनुच्छेद 61(1) का गलत प्रतिनिधित्व है, जो एक-चौथाई निर्दिष्ट करता है। अनुच्छेद 61 में कहीं भी एक-तिहाई का उपयोग नहीं होता।\n• विकल्प (c): सही। अनुच्छेद 61(1) के अनुसार नोटिस पर हस्ताक्षर करने के लिए कुल सदस्यता का कम से कम एक-चौथाई आवश्यक है। अनुच्छेद 61(2)(b) और 61(4) के अनुसार प्रस्ताव पारित करने के लिए कुल सदस्यता का दो-तिहाई आवश्यक है।\n• विकल्प (d): गलत। एक-पाँचवाँ संवैधानिक नोटिस सीमा मान नहीं है — यह एक काल्पनिक कम सीमा मान है।\n\nमूल्य संवर्धन:\n• एक-चौथाई (नोटिस) और दो-तिहाई (पारित) के बीच का अंतर जानबूझकर रखा गया है — महाभियोग को एक सार्थक अल्पसंख्यक द्वारा आरंभ किया जाना चाहिए लेकिन केवल एक सुपरमेजोरिटी द्वारा पूरा किया जाना चाहिए।\n• दोनों सीमा मानों में 'कुल सदस्यता' हर गणना का हर घटक है — अनुच्छेद 61 के भीतर सुसंगत लेकिन अनुच्छेद 368 के 'उपस्थित और मतदान करने वाले' घटक से भिन्न।\n• ये दो संख्याएँ — एक-चौथाई और दो-तिहाई — अनुच्छेद 61 में एकमात्र संख्यात्मक आवश्यकताएँ हैं और इन्हें सटीक रूप से याद रखना आवश्यक है।"
+    }
+  }
+]

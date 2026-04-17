@@ -1,0 +1,1279 @@
+[
+  {
+    "uuid": "3c8c623d-1c09-4668-8797-e7b14a52d6f4",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "The 1.5°C vs. 2°C Temperature Targets: Origins, Differences, and Scientific Basis"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 2 dual temperature targets — 2°C primary, 1.5°C aspirational",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the temperature targets embedded in the Paris Agreement, consider the following statements:\n\n1. Article 2(1)(a) of the Paris Agreement sets a single temperature target of limiting global warming to 1.5°C above pre-industrial levels.\n2. The IPCC Special Report on 1.5°C (2018) found significant differential impacts between 1.5°C and 2°C of warming, including greater coral reef loss and sea-level rise at 2°C.\n3. The pre-industrial baseline referenced in the Paris Agreement's temperature targets refers to average global temperatures recorded approximately in the mid-19th century before large-scale industrialization.\n\nWhich of the statements given above is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 2(1)(a) of the Paris Agreement sets a single temperature target of limiting global warming to 1.5°C above pre-industrial levels.",
+          "verdict": "Incorrect",
+          "reason": "Article 2(1)(a) contains two coexisting targets: 'well below 2°C' (primary) AND 'pursue efforts to limit to 1.5°C' (aspirational). It is not a single 1.5°C target."
+        },
+        {
+          "statement": "The IPCC Special Report on 1.5°C (2018) found significant differential impacts between 1.5°C and 2°C of warming, including greater coral reef loss and sea-level rise at 2°C.",
+          "verdict": "Correct",
+          "reason": "SR1.5 (2018) documented that at 2°C, coral reefs face near-total loss (99% decline) compared to 70–90% at 1.5°C, and sea-level rise is higher by approximately 10 cm — providing the scientific basis for the 1.5°C aspiration."
+        },
+        {
+          "statement": "The pre-industrial baseline referenced in the Paris Agreement's temperature targets refers to average global temperatures recorded approximately in the mid-19th century before large-scale industrialization.",
+          "verdict": "Correct",
+          "reason": "The pre-industrial baseline is conventionally taken as the average of the period 1850–1900, before widespread fossil fuel industrialization began significantly altering atmospheric composition."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because students who know the 1.5°C target was strongly advocated at Paris may assume it is the Agreement's sole or primary goal, making them incorrectly reject Statement 1 as correct and choose 'all three' or '2 and 3 only' — the trap lies in the word 'single.'",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 2(1)(a) mentions 'well below 2°C' as the primary target AND 'pursue efforts toward 1.5°C' as an additional aspiration — not a single 1.5°C target. Statement 1 is incorrect.",
+        "Evaluate Statement 2: SR1.5 (2018) is the landmark IPCC report quantifying differential impacts — coral reefs, sea level, extreme heat — between 1.5°C and 2°C. Statement 2 is correct.",
+        "Evaluate Statement 3: the 1850–1900 period is the standard pre-industrial baseline — this is a well-established scientific convention referenced in IPCC reports. Statement 3 is correct.",
+        "Only Statements 2 and 3 are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "The most potent trap in this question is Statement 1. Because small island states and vulnerable nations campaigned loudly at COP21 for the 1.5°C target and it received enormous media attention, many students remember it as 'the Paris target.' In reality, the 2°C limit is the primary commitment; 1.5°C is an aspirational 'pursue efforts' goal. A student who falls for this will mark Statement 1 as correct and choose an option that includes it, losing the mark.",
+      "final_explanation": "Article 2(1)(a) of the Paris Agreement contains a carefully negotiated dual formulation: hold warming 'well below 2°C above pre-industrial levels' AND 'pursue efforts to limit the temperature increase to 1.5°C.' The 2°C is the binding reference; 1.5°C is aspirational.\n\n• Statement 1 — Incorrect: The Agreement does not set a single 1.5°C target. The 2°C threshold is the primary commitment. The 1.5°C figure is an aspiration pushed by vulnerable island states.\n• Statement 2 — Correct: SR1.5 (2018) found that at 2°C, coral reef decline reaches 99% vs. 70–90% at 1.5°C; sea-level rise is ~10 cm higher; extreme heat events are more frequent.\n• Statement 3 — Correct: The pre-industrial baseline is conventionally defined as the 1850–1900 average temperature — the era before large-scale industrialization altered greenhouse gas concentrations.\n\nValue Addition:\n• SR1.5 was commissioned by the UNFCCC following COP21 and released in October 2018 in Incheon, South Korea.\n• As of 2023–24, the world has already warmed approximately 1.1–1.2°C above pre-industrial levels.\n• The 1.5°C aspiration gained treaty-level prominence primarily due to lobbying by AOSIS (Alliance of Small Island States)."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते में निहित तापमान लक्ष्यों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. पेरिस समझौते के Article 2(1)(a) में वैश्विक तापमान वृद्धि को पूर्व-औद्योगिक स्तर से 1.5°C तक सीमित करने का एकल तापमान लक्ष्य निर्धारित किया गया है।\n2. IPCC की 1.5°C (2018) विशेष रिपोर्ट में 1.5°C और 2°C की गर्मी के बीच महत्वपूर्ण भिन्न प्रभाव पाए गए, जिनमें 2°C पर कोरल रीफ की अधिक हानि और समुद्र स्तर में वृद्धि शामिल है।\n3. पेरिस समझौते के तापमान लक्ष्यों में संदर्भित पूर्व-औद्योगिक आधार रेखा लगभग 19वीं सदी के मध्य में दर्ज औसत वैश्विक तापमान को दर्शाती है, जब बड़े पैमाने पर औद्योगिकीकरण नहीं हुआ था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 2(1)(a) of the Paris Agreement sets a single temperature target of limiting global warming to 1.5°C above pre-industrial levels.",
+          "verdict": "गलत",
+          "reason": "Article 2(1)(a) में दो सह-अस्तित्व वाले लक्ष्य हैं: '2°C से काफी नीचे' (प्राथमिक) और '1.5°C तक सीमित करने के प्रयास करना' (आकांक्षात्मक)। यह एकल 1.5°C लक्ष्य नहीं है।"
+        },
+        {
+          "statement": "The IPCC Special Report on 1.5°C (2018) found significant differential impacts between 1.5°C and 2°C of warming, including greater coral reef loss and sea-level rise at 2°C.",
+          "verdict": "सही है",
+          "reason": "SR1.5 (2018) ने दर्शाया कि 2°C पर कोरल रीफ लगभग पूरी तरह से नष्ट हो जाते हैं (99% गिरावट) जबकि 1.5°C पर 70–90% की गिरावट होती है, और समुद्र स्तर लगभग 10 सेमी अधिक बढ़ता है — जो 1.5°C आकांक्षा का वैज्ञानिक आधार प्रदान करता है।"
+        },
+        {
+          "statement": "The pre-industrial baseline referenced in the Paris Agreement's temperature targets refers to average global temperatures recorded approximately in the mid-19th century before large-scale industrialization.",
+          "verdict": "सही है",
+          "reason": "पूर्व-औद्योगिक आधार रेखा पारंपरिक रूप से 1850–1900 की अवधि के औसत के रूप में ली जाती है, जब व्यापक जीवाश्म ईंधन औद्योगिकीकरण ने वायुमंडलीय संरचना को महत्वपूर्ण रूप से प्रभावित नहीं किया था।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि 1.5°C लक्ष्य पेरिस में जोरदार रूप से समर्थित था, वे मान सकते हैं कि यह समझौते का एकमात्र या प्राथमिक लक्ष्य है, जिससे वे कथन 1 को सही मानकर 'सभी तीन' या 'केवल 2 और 3' चुन सकते हैं — जाल शब्द 'एकल' में है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: Article 2(1)(a) में '2°C से काफी नीचे' प्राथमिक लक्ष्य के रूप में और '1.5°C की ओर प्रयास करना' अतिरिक्त आकांक्षा के रूप में उल्लेख है — यह एकल 1.5°C लक्ष्य नहीं है। अतः कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: SR1.5 (2018) एक महत्वपूर्ण IPCC रिपोर्ट है जो 1.5°C और 2°C के बीच के प्रभावों को मापती है — कोरल रीफ, समुद्र स्तर, अत्यधिक गर्मी। अतः कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: 1850–1900 की अवधि मानक पूर्व-औद्योगिक आधार रेखा है — यह IPCC रिपोर्टों में संदर्भित एक स्थापित वैज्ञानिक परंपरा है। अतः कथन 3 सही है।",
+        "केवल कथन 2 और 3 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "इस प्रश्न में सबसे प्रभावशाली जाल कथन 1 है। क्योंकि छोटे द्वीप राष्ट्रों और संवेदनशील देशों ने COP21 में 1.5°C लक्ष्य के लिए जोरदार अभियान चलाया था और इसे व्यापक मीडिया ध्यान मिला, कई छात्र इसे 'पेरिस लक्ष्य' के रूप में याद करते हैं। वास्तविकता में, 2°C सीमा प्राथमिक प्रतिबद्धता है; 1.5°C एक आकांक्षात्मक 'प्रयास जारी रखें' लक्ष्य है। जो छात्र इस जाल में फंसते हैं, वे कथन 1 को सही मानकर ऐसा विकल्प चुनेंगे जिसमें यह शामिल हो, और अंक खो देंगे।",
+      "final_explanation": "पेरिस समझौते के Article 2(1)(a) में सावधानीपूर्वक दोहरे लक्ष्य का प्रावधान है: 'पूर्व-औद्योगिक स्तर से 2°C से काफी नीचे' तापमान वृद्धि को रोकना और '1.5°C तक सीमित करने के प्रयास करना।' 2°C बाध्यकारी संदर्भ है; 1.5°C आकांक्षात्मक है।\n\n• कथन 1 — गलत: समझौता एकल 1.5°C लक्ष्य नहीं निर्धारित करता। 2°C सीमा प्राथमिक प्रतिबद्धता है। 1.5°C आकांक्षा है जिसे संवेदनशील द्वीप राष्ट्रों ने आगे बढ़ाया।\n• कथन 2 — सही: SR1.5 (2018) ने पाया कि 2°C पर कोरल रीफ में 99% गिरावट होती है जबकि 1.5°C पर 70–90%; समुद्र स्तर लगभग 10 सेमी अधिक बढ़ता है; अत्यधिक गर्मी की घटनाएं अधिक होती हैं।\n• कथन 3 — सही: पूर्व-औद्योगिक आधार रेखा पारंपरिक रूप से 1850–1900 की औसत तापमान अवधि है — वह युग जब बड़े पैमाने पर औद्योगिकीकरण ने ग्रीनहाउस गैसों की सांद्रता को प्रभावित नहीं किया था।\n\nमूल्य संवर्धन:\n• SR1.5 को UNFCCC ने COP21 के बाद कमीशन किया और अक्टूबर 2018 में इंचियोन, दक्षिण कोरिया में जारी किया।\n• 2023–24 तक, विश्व पहले ही पूर्व-औद्योगिक स्तर से लगभग 1.1–1.2°C तक गर्म हो चुका है।\n• 1.5°C आकांक्षा को मुख्य रूप से AOSIS (Alliance of Small Island States) के लॉबिंग के कारण संधि स्तर पर प्रमुखता मिली।"
+    }
+  },
+  {
+    "uuid": "f7fcb4e8-d402-4d08-a720-95e704375b4e",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Nationally Determined Contributions (NDCs): Structure, Submission, and Progression Principle"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "NDC progression principle and no international approval body",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Nationally Determined Contributions (NDCs) under the Paris Agreement, consider the following statements:\n\n1. Each successive NDC submitted under the Paris Agreement must represent a progression beyond the previous one — a country may not submit an NDC with a weaker ambition level than its predecessor.\n2. The UNFCCC Secretariat reviews and formally approves or rejects each country's NDC before it takes effect under the Paris Agreement.\n3. Under the Paris Agreement's NDC cycle, countries were expected to submit updated NDCs by 2020 reflecting enhanced ambition for the 2025 and 2030 timeframes.\n\nWhich of the statements given above is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 1 only\n(c) 2 and 3 only\n(d) 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Each successive NDC submitted under the Paris Agreement must represent a progression beyond the previous one — a country may not submit an NDC with a weaker ambition level than its predecessor.",
+          "verdict": "Correct",
+          "reason": "Article 4 of the Paris Agreement embeds the 'progression principle' — each successive NDC must reflect the highest possible ambition and represent an advance over the previous NDC. This is the ratchet mechanism."
+        },
+        {
+          "statement": "The UNFCCC Secretariat reviews and formally approves or rejects each country's NDC before it takes effect under the Paris Agreement.",
+          "verdict": "Incorrect",
+          "reason": "NDCs are purely nationally determined. No international body — including the UNFCCC Secretariat — has the authority to approve, reject, or revise a country's NDC. The Secretariat only receives and registers submissions."
+        },
+        {
+          "statement": "Under the Paris Agreement's NDC cycle, countries were expected to submit updated NDCs by 2020 reflecting enhanced ambition for the 2025 and 2030 timeframes.",
+          "verdict": "Correct",
+          "reason": "The five-year NDC cycle means parties communicate new or updated NDCs every five years. The 2020 milestone was a key deadline for enhanced submissions ahead of COP26, with 2025 and 2030 as further cycle points."
+        }
+      ],
+      "strong_distractor": "a — Option (a) asks which statements are NOT correct; a student who correctly identifies that Statement 2 is the false one might select 'b only' (Statement 2), but could confuse the structure of the question and select the wrong option letter.",
+      "elimination_logic": [
+        "Evaluate Statement 1: the progression principle (ratchet mechanism) under Article 4 is a genuine Paris Agreement obligation — NDC ambition may not go backward. Statement 1 is correct, so it is NOT the answer to 'which is incorrect.'",
+        "Evaluate Statement 2: no international body approves or rejects NDCs — this is a plausible fabrication exploiting the misconception that a UN body validates submissions. Statement 2 is incorrect — this IS a 'not correct' statement.",
+        "Evaluate Statement 3: the five-year cycle with 2020 as an enhanced submission milestone is correct per Article 4 timelines. Statement 3 is correct.",
+        "Only Statement 2 is incorrect — select option (d): 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits a very common misconception: students assume that because the Paris Agreement is a treaty with a Secretariat and governing bodies, there must be a review-and-approval mechanism for NDCs similar to how domestic regulations work. In fact, the entire philosophy of NDCs is sovereign self-determination — countries set their own targets with no external veto. The UNFCCC Secretariat merely archives the submissions.",
+      "final_explanation": "The NDC framework under Article 4 is built on national sovereignty balanced against collective ambition through the progression principle.\n\n• Statement 1 — Correct: The ratchet mechanism is explicit in Article 4 — each NDC must represent a 'progression beyond' the previous and reflect 'highest possible ambition.' This prevents backsliding.\n• Statement 2 — Incorrect: No international body approves or rejects NDCs. The UNFCCC Secretariat only receives, registers, and publishes them. Countries retain full discretion over their NDC content.\n• Statement 3 — Correct: The NDC cycle runs in five-year intervals. The 2020 deadline was for enhanced first-generation NDCs, with subsequent cycles at 2025 and 2030.\n\nValue Addition:\n• Despite the progression principle, enforcement is through 'naming and shaming' via the transparency framework — not legal sanction.\n• As of COP28, several countries submitted updated NDCs; the Glasgow Pact specifically requested strengthened 2030 NDCs by end of 2022.\n• The NDC registry maintained by the UNFCCC Secretariat is publicly accessible online and updated as submissions are received."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते के तहत राष्ट्रीय रूप से निर्धारित योगदान (NDCs) के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. पेरिस समझौते के तहत प्रस्तुत प्रत्येक क्रमागत NDC को पिछले NDC से आगे की प्रगति दर्शानी चाहिए — कोई देश अपने पूर्ववर्ती से कम महत्वाकांक्षा वाला NDC प्रस्तुत नहीं कर सकता।\n2. UNFCCC सचिवालय प्रत्येक देश के NDC की समीक्षा करता है और पेरिस समझौते के तहत प्रभावी होने से पहले औपचारिक रूप से उसे मंजूरी या अस्वीकृति देता है।\n3. पेरिस समझौते के NDC चक्र के तहत, देशों से अपेक्षा थी कि वे 2020 तक 2025 और 2030 के लिए बढ़ी हुई महत्वाकांक्षा को दर्शाते हुए अपडेटेड NDC प्रस्तुत करें।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1\n(c) केवल 2 और 3\n(d) केवल 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "पेरिस समझौते के तहत प्रस्तुत प्रत्येक क्रमागत NDC को पिछले NDC से आगे की प्रगति दर्शानी चाहिए — कोई देश अपने पूर्ववर्ती से कम महत्वाकांक्षा वाला NDC प्रस्तुत नहीं कर सकता।",
+          "verdict": "सही",
+          "reason": "पेरिस समझौते के अनुच्छेद 4 में 'प्रगति सिद्धांत' निहित है — प्रत्येक क्रमागत NDC को उच्चतम संभव महत्वाकांक्षा दर्शानी चाहिए और पिछले NDC से आगे की प्रगति होनी चाहिए। इसे रैचेट तंत्र कहा जाता है।"
+        },
+        {
+          "statement": "UNFCCC सचिवालय प्रत्येक देश के NDC की समीक्षा करता है और पेरिस समझौते के तहत प्रभावी होने से पहले औपचारिक रूप से उसे मंजूरी या अस्वीकृति देता है।",
+          "verdict": "गलत",
+          "reason": "NDC पूरी तरह से राष्ट्रीय स्तर पर निर्धारित होते हैं। कोई भी अंतरराष्ट्रीय संस्था — जिसमें UNFCCC सचिवालय भी शामिल है — किसी देश के NDC को मंजूरी देने, अस्वीकार करने या संशोधित करने का अधिकार नहीं रखती। सचिवालय केवल प्रस्तुतियों को प्राप्त करता है और पंजीकृत करता है।"
+        },
+        {
+          "statement": "पेरिस समझौते के NDC चक्र के तहत, देशों से अपेक्षा थी कि वे 2020 तक 2025 और 2030 के लिए बढ़ी हुई महत्वाकांक्षा को दर्शाते हुए अपडेटेड NDC प्रस्तुत करें।",
+          "verdict": "सही",
+          "reason": "पाँच-वर्षीय NDC चक्र के अनुसार, पक्षकार हर पाँच वर्ष में नए या अपडेटेड NDC संप्रेषित करते हैं। 2020 की समयसीमा COP26 से पहले बढ़ी हुई प्रस्तुतियों के लिए महत्वपूर्ण थी, जिसमें 2025 और 2030 आगे के चक्र बिंदु हैं।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) पूछता है कि कौन से कथन सही नहीं हैं; जो छात्र सही ढंग से पहचानते हैं कि कथन 2 गलत है, वे 'केवल b' (कथन 2) चुन सकते हैं, लेकिन प्रश्न की संरचना को लेकर भ्रमित होकर गलत विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 4 के तहत प्रगति सिद्धांत (रैचेट तंत्र) पेरिस समझौते की वास्तविक प्रतिबद्धता है — NDC की महत्वाकांक्षा पीछे नहीं जा सकती। कथन 1 सही है, अतः यह 'गलत कौन सा है' के उत्तर में नहीं है।",
+        "कथन 2 का मूल्यांकन करें: कोई भी अंतरराष्ट्रीय संस्था NDC को मंजूरी या अस्वीकृति नहीं देती — यह एक संभावित मिथ्या तथ्य है जो यह भ्रम पैदा करता है कि कोई UN संस्था प्रस्तुतियों को मान्य करती है। कथन 2 गलत है — यह 'सही नहीं' कथन है।",
+        "कथन 3 का मूल्यांकन करें: पाँच-वर्षीय चक्र जिसमें 2020 को बढ़ी हुई प्रस्तुतियों की समयसीमा माना गया है, अनुच्छेद 4 के अनुसार सही है। कथन 3 सही है।",
+        "केवल कथन 2 गलत है — विकल्प (d) चुनें: केवल 2।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक बहुत सामान्य भ्रांति का उपयोग करता है: छात्र मान लेते हैं कि क्योंकि पेरिस समझौता एक संधि है जिसमें सचिवालय और शासी निकाय हैं, इसलिए NDC के लिए समीक्षा और मंजूरी तंत्र होना चाहिए जैसे घरेलू नियमों में होता है। वास्तव में, NDC की पूरी फिलॉसफी संप्रभु स्व-निर्धारण पर आधारित है — देश अपने लक्ष्य स्वयं निर्धारित करते हैं बिना किसी बाहरी वीटो के। UNFCCC सचिवालय केवल प्रस्तुतियों को संग्रहित करता है।",
+      "final_explanation": "अनुच्छेद 4 के तहत NDC ढांचा राष्ट्रीय संप्रभुता पर आधारित है, जिसे सामूहिक महत्वाकांक्षा के साथ प्रगति सिद्धांत के माध्यम से संतुलित किया गया है।\n\n• कथन 1 — सही: रैचेट तंत्र अनुच्छेद 4 में स्पष्ट है — प्रत्येक NDC को पिछले से आगे की प्रगति और उच्चतम संभव महत्वाकांक्षा दर्शानी चाहिए। इससे पीछे हटने से रोका जाता है।\n• कथन 2 — गलत: कोई भी अंतरराष्ट्रीय संस्था NDC को मंजूरी या अस्वीकृति नहीं देती। UNFCCC सचिवालय केवल उन्हें प्राप्त करता है, पंजीकृत करता है और प्रकाशित करता है। देश अपने NDC की सामग्री पर पूर्ण विवेक रखते हैं।\n• कथन 3 — सही: NDC चक्र पाँच-वर्षीय होता है। 2020 की समयसीमा पहली पीढ़ी के बढ़े हुए NDC के लिए थी, जिसके बाद 2025 और 2030 के चक्र आते हैं।\n\nमूल्य संवर्धन:\n• प्रगति सिद्धांत के बावजूद, प्रवर्तन 'नामकरण और शर्मिंदगी' के माध्यम से पारदर्शिता ढांचे द्वारा होता है — कानूनी दंड के द्वारा नहीं।\n• COP28 तक कई देशों ने अपडेटेड NDC प्रस्तुत किए; ग्लासगो समझौते ने विशेष रूप से 2030 के NDC को 2022 के अंत तक मजबूत करने का अनुरोध किया।\n• UNFCCC सचिवालय द्वारा रखी गई NDC रजिस्ट्री सार्वजनिक रूप से ऑनलाइन उपलब्ध है और प्रस्तुतियों के प्राप्त होते ही अपडेट होती रहती है।"
+    }
+  },
+  {
+    "uuid": "091f813b-9268-44fe-99c6-35fac9a8c608",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Loss and Damage: Article 8 and the Santiago Network to the COP28 Fund"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Loss and Damage institutional evolution — WIM to COP28 Fund",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of key milestones in the development of the international Loss and Damage framework?\n\n1. Warsaw International Mechanism (WIM) for Loss and Damage\n2. Article 8 of the Paris Agreement formally acknowledging loss and damage\n3. Agreement at COP27 to establish a dedicated Loss and Damage fund\n4. Operationalization of the Loss and Damage fund at COP28\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) places the Loss and Damage Fund operationalization before the COP27 agreement to establish it, which some students accept because they confuse COP27 (agreement to establish) with COP28 (operationalization).",
+      "elimination_logic": [
+        "The Warsaw International Mechanism (WIM) for Loss and Damage was established at COP19 (Warsaw) in 2013 — predating the Paris Agreement. It comes first in the sequence.",
+        "Article 8 of the Paris Agreement was adopted in 2015 (Paris, COP21) — it acknowledged loss and damage formally in the treaty. This follows WIM.",
+        "COP27 (Sharm el-Sheikh, 2022) was the breakthrough where parties agreed to establish a dedicated Loss and Damage fund — this follows Article 8.",
+        "COP28 (Dubai, 2023) saw the operationalization of the fund, including agreement on World Bank hosting. This is the most recent event. Correct sequence: WIM → Article 8 → COP27 agreement → COP28 operationalization → option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Loss and damage has evolved over a decade from a conceptual acknowledgment into a functional funding mechanism.\n\nCorrect chronological sequence:\n1. Warsaw International Mechanism (WIM) for Loss and Damage — COP19, 2013. Pre-Paris institution to address loss and damage, particularly for small island and LDC states.\n2. Article 8, Paris Agreement — 2015. First treaty-level recognition of loss and damage. Crucially, Article 8 explicitly states it does NOT involve or provide a basis for liability or compensation.\n3. COP27 (Sharm el-Sheikh, 2022) — Agreement in principle to establish a dedicated Loss and Damage fund. This was the political breakthrough after years of developed-country resistance.\n4. COP28 (Dubai, 2023) — Operationalization: fund structure agreed, World Bank designated as interim host for 4 years.\n\nWhy wrong options fail:\n• Option (a): Places COP28 operationalization before COP27 agreement — impossible.\n• Option (c): Reverses WIM and Article 8 — WIM (2013) clearly predates the Paris Agreement (2015).\n• Option (d): Misplaces COP27 as earlier than Article 8.\n\nValue Addition:\n• Article 8's disclaimer on liability was a concession to developed countries — particularly the US — to prevent future legal claims.\n• The Santiago Network (2019, COP25) provides technical assistance for loss and damage — distinct from the fund.\n• Developing countries sought the fund for decades; its establishment at COP27 was called the 'most important outcome' by many delegations."
+    },
+    "hi": {
+      "display_text": "अंतर्राष्ट्रीय लॉस एंड डैमेज फ्रेमवर्क के विकास में प्रमुख मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. लॉस एंड डैमेज के लिए वारसॉ अंतर्राष्ट्रीय तंत्र (WIM)\n2. पेरिस समझौते का अनुच्छेद 8 जो लॉस एंड डैमेज को औपचारिक रूप से स्वीकार करता है\n3. COP27 में समर्पित लॉस एंड डैमेज फंड स्थापित करने का समझौता\n4. COP28 में लॉस एंड डैमेज फंड का संचालन\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) Loss and Damage फंड के संचालन को COP27 समझौते से पहले रखता है, जिसे स्थापित करने के लिए सहमति हुई थी, जिसे कुछ छात्र इसलिए स्वीकार करते हैं क्योंकि वे COP27 (स्थापना के लिए सहमति) को COP28 (संचालन) से भ्रमित करते हैं।",
+      "elimination_logic": [
+        "वारसॉ अंतर्राष्ट्रीय तंत्र (WIM) फॉर लॉस एंड डैमेज की स्थापना COP19 (वारसॉ) में 2013 में हुई थी — जो पेरिस समझौते से पहले है। यह अनुक्रम में सबसे पहले आता है।",
+        "पेरिस समझौते का अनुच्छेद 8 2015 (पेरिस, COP21) में अपनाया गया था — इसने समझौते में औपचारिक रूप से लॉस एंड डैमेज को स्वीकार किया। यह WIM के बाद आता है।",
+        "COP27 (शार्म एल-शेख, 2022) वह महत्वपूर्ण मोड़ था जहाँ पक्षों ने समर्पित लॉस एंड डैमेज फंड स्थापित करने पर सहमति व्यक्त की — यह अनुच्छेद 8 के बाद आता है।",
+        "COP28 (दुबई, 2023) में फंड का संचालन शुरू हुआ, जिसमें विश्व बैंक को मेजबान के रूप में सहमति दी गई। यह सबसे हालिया घटना है। सही अनुक्रम: WIM → अनुच्छेद 8 → COP27 समझौता → COP28 संचालन → विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "लॉस एंड डैमेज ने एक दशक में एक वैचारिक स्वीकृति से एक कार्यात्मक वित्तपोषण तंत्र के रूप में विकास किया है।\n\nसही कालानुक्रमिक अनुक्रम:\n1. वारसॉ अंतर्राष्ट्रीय तंत्र (WIM) फॉर लॉस एंड डैमेज — COP19, 2013। पेरिस से पहले की संस्था जो विशेष रूप से छोटे द्वीप और कम विकसित देशों के लिए लॉस एंड डैमेज को संबोधित करती है।\n2. अनुच्छेद 8, पेरिस समझौता — 2015। लॉस एंड डैमेज की पहली संधि-स्तरीय मान्यता। महत्वपूर्ण रूप से, अनुच्छेद 8 स्पष्ट रूप से कहता है कि यह देयता या मुआवजे के लिए आधार प्रदान नहीं करता।\n3. COP27 (शार्म एल-शेख, 2022) — समर्पित लॉस एंड डैमेज फंड स्थापित करने के लिए सिद्धांत में सहमति। यह वर्षों की विकसित देशों की प्रतिरोध के बाद राजनीतिक सफलता थी।\n4. COP28 (दुबई, 2023) — संचालन: फंड संरचना पर सहमति, विश्व बैंक को 4 वर्षों के लिए अंतरिम मेजबान के रूप में नामित किया गया।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (a): COP28 संचालन को COP27 समझौते से पहले रखता है — असंभव।\n• विकल्प (c): WIM और अनुच्छेद 8 को उलट देता है — WIM (2013) स्पष्ट रूप से पेरिस समझौते (2015) से पहले है।\n• विकल्प (d): अनुच्छेद 8 से पहले COP27 को गलत स्थान देता है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 8 का देयता पर अस्वीकरण विकसित देशों — विशेष रूप से अमेरिका — को भविष्य के कानूनी दावों से बचाने के लिए था।\n• सैंटियागो नेटवर्क (2019, COP25) लॉस एंड डैमेज के लिए तकनीकी सहायता प्रदान करता है — जो फंड से अलग है।\n• विकासशील देशों ने दशकों तक फंड की मांग की; COP27 में इसकी स्थापना को कई प्रतिनिधिमंडलों ने 'सबसे महत्वपूर्ण परिणाम' कहा।"
+    }
+  },
+  {
+    "uuid": "3b07cd13-aa25-4527-b445-5c845bb9ec6d",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Climate Finance: $100 Billion Goal, New Collective Quantified Goal (NCQG), and Article 9"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "$100 billion goal — in COP Decision, not Paris Agreement text",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During climate negotiations, a country's delegate argues that developed nations are legally bound by the Paris Agreement itself to provide USD 100 billion per year in climate finance to developing countries by 2020, citing this as a specific provision within the treaty text. A legal expert challenges this claim. Which of the following best explains the correct legal position?\n\n(a) The delegate is correct — Article 9 of the Paris Agreement specifies the USD 100 billion annual target as a binding financial obligation\n(b) The delegate is correct — the Paris Agreement text consolidates all prior climate finance commitments including the USD 100 billion goal from Copenhagen\n(c) The delegate is partially correct — the figure appears in Article 9 as an aspirational target but the New Collective Quantified Goal (NCQG) has since replaced it\n(d) The delegate is incorrect — the USD 100 billion figure does not appear in the Paris Agreement text itself but in the accompanying COP Decision, while Article 9 only creates a binding obligation to provide financial resources without specifying an amount",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students know the $100 billion figure is strongly associated with the Paris Agreement era and assume it must appear in the treaty text, making them reject option (d) which correctly locates it in the accompanying COP Decision.",
+      "elimination_logic": [
+        "The scenario describes a negotiator citing the '$100 billion/year by 2020' figure as a Paris Agreement text commitment. First, identify where this figure actually originates.",
+        "The $100 billion commitment was first made in the Copenhagen Accord (2009) and reaffirmed in COP decisions — it does NOT appear in the Paris Agreement text itself.",
+        "Article 9 of the Paris Agreement (binding finance obligation) says developed countries 'shall provide financial resources' but does not specify the $100 billion figure. Eliminate (a) and (c) which place the figure in Article 9.",
+        "The figure appears in the accompanying COP21 Decision (paragraph 53), not in the Agreement itself — this makes option (d) correct. The negotiator is technically inaccurate to cite 'the Paris Agreement text.'"
+      ],
+      "upsc_trap_explanation": "The conflation of the COP Decision with the Paris Agreement text is the precise trap. Students learn that '$100 billion and Paris Agreement' go together, but the mechanism is subtler: the Agreement creates a binding obligation to provide climate finance (Article 9) while the accompanying Decision (a political instrument) specifies the $100 billion figure. The Decision has weaker legal standing than the Agreement itself.",
+      "final_explanation": "The Paris Agreement and its accompanying COP Decision are two legally distinct documents. This distinction is critical for understanding where different obligations reside.\n\nThe scenario involves a negotiator claiming the '$100 billion/year by 2020' commitment appears in the Paris Agreement text. This is factually inaccurate.\n\n• Option (a) — Incorrect: Article 9 creates a binding obligation to 'provide financial resources' but does not quantify the amount. The $100 billion figure is not in Article 9.\n• Option (b) — Incorrect: The Agreement text is silent on the specific figure; the negotiator cannot cite the Agreement's text for this number.\n• Option (c) — Incorrect: The NCQG (New Collective Quantified Goal) is the post-2025 replacement — it does not retroactively locate the $100 billion in Article 9.\n• Option (d) — Correct: The $100 billion/year by 2020 goal appears in paragraph 53 of the COP21 Decision accompanying the Paris Agreement — not in the Agreement itself. The negotiator's citation of 'Paris Agreement text' is incorrect.\n\nValue Addition:\n• The $100 billion goal was first pledged in the Copenhagen Accord (COP15, 2009) — predating Paris by six years.\n• Developed countries first met the $100 billion goal in 2022 (two years late), according to OECD data.\n• NCQG is mandated to be agreed at COP29 (Baku, 2024), with a floor at least equal to $100 billion."
+    },
+    "hi": {
+      "display_text": "जलवायु वार्ताओं के दौरान, एक देश के प्रतिनिधि का तर्क है कि विकसित राष्ट्र पेरिस समझौते के तहत 2020 तक विकासशील देशों को प्रति वर्ष 100 अरब अमेरिकी डॉलर जलवायु वित्त प्रदान करने के लिए कानूनी रूप से बाध्य हैं, और इसे संधि के पाठ में एक विशिष्ट प्रावधान के रूप में उद्धृत करता है। एक कानूनी विशेषज्ञ इस दावे को चुनौती देता है। निम्नलिखित में से कौन-सा सही कानूनी स्थिति को सबसे बेहतर तरीके से समझाता है?\n\n(a) प्रतिनिधि सही है — पेरिस समझौते का अनुच्छेद 9 प्रति वर्ष 100 अरब अमेरिकी डॉलर के लक्ष्य को बाध्यकारी वित्तीय दायित्व के रूप में निर्दिष्ट करता है\n(b) प्रतिनिधि सही है — पेरिस समझौते का पाठ सभी पूर्व जलवायु वित्त प्रतिबद्धताओं को समेकित करता है जिसमें कोपेनहेगन से 100 अरब डॉलर का लक्ष्य भी शामिल है\n(c) प्रतिनिधि आंशिक रूप से सही है — यह संख्या अनुच्छेद 9 में एक आकांक्षात्मक लक्ष्य के रूप में है लेकिन नया सामूहिक मात्रात्मक लक्ष्य (NCQG) इसे बदल चुका है\n(d) प्रतिनिधि गलत है — 100 अरब अमेरिकी डॉलर की संख्या पेरिस समझौते के पाठ में नहीं है बल्कि सहायक COP निर्णय में है, जबकि अनुच्छेद 9 केवल वित्तीय संसाधन प्रदान करने का बाध्यकारी दायित्व बनाता है बिना किसी राशि निर्दिष्ट किए",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि छात्र जानते हैं कि $100 बिलियन की संख्या पेरिस समझौते के युग से जुड़ी है और मान लेते हैं कि यह संधि के पाठ में अवश्य होनी चाहिए, जिससे वे विकल्प (d) को अस्वीकार कर देते हैं जो इसे सहायक COP निर्णय में सही ढंग से स्थित करता है।",
+      "elimination_logic": [
+        "परिदृश्य में एक वार्ताकार '$100 बिलियन/वर्ष 2020 तक' आंकड़ा पेरिस समझौते के पाठ प्रतिबद्धता के रूप में उद्धृत करता है। पहले यह पहचानें कि यह आंकड़ा वास्तव में कहाँ से उत्पन्न होता है।",
+        "$100 बिलियन की प्रतिबद्धता पहली बार कोपेनहेगन समझौते (2009) में की गई थी और COP निर्णयों में पुनः पुष्टि की गई — यह पेरिस समझौते के पाठ में स्वयं नहीं है।",
+        "पेरिस समझौते के अनुच्छेद 9 (बाध्यकारी वित्तीय दायित्व) में विकसित देशों को 'वित्तीय संसाधन प्रदान करने' का निर्देश है लेकिन $100 बिलियन की संख्या निर्दिष्ट नहीं है। इसलिए (a) और (c) विकल्पों को हटा दें जो इस संख्या को अनुच्छेद 9 में रखते हैं।",
+        "यह संख्या पेरिस समझौते के साथ जुड़े COP21 निर्णय (पैराग्राफ 53) में है, न कि समझौते के पाठ में — इसलिए विकल्प (d) सही है। वार्ताकार का 'पेरिस समझौते के पाठ' का हवाला देना तकनीकी रूप से गलत है।"
+      ],
+      "upsc_trap_explanation": "COP निर्णय को पेरिस समझौते के पाठ के साथ मिलाना ही मुख्य जाल है। छात्र सीखते हैं कि '$100 बिलियन और पेरिस समझौता' साथ चलते हैं, लेकिन तंत्र सूक्ष्म है: समझौता वित्तीय संसाधन प्रदान करने का बाध्यकारी दायित्व बनाता है (अनुच्छेद 9) जबकि सहायक निर्णय (एक राजनीतिक उपकरण) $100 बिलियन की संख्या निर्दिष्ट करता है। निर्णय की कानूनी स्थिति समझौते से कमजोर है।",
+      "final_explanation": "पेरिस समझौता और इसका सहायक COP निर्णय दो कानूनी रूप से अलग दस्तावेज़ हैं। यह भेद समझना आवश्यक है कि विभिन्न दायित्व कहाँ स्थित हैं।\n\nपरिदृश्य में एक वार्ताकार दावा करता है कि '$100 बिलियन/वर्ष 2020 तक' प्रतिबद्धता पेरिस समझौते के पाठ में है। यह तथ्यात्मक रूप से गलत है।\n\n• विकल्प (a) — गलत: अनुच्छेद 9 'वित्तीय संसाधन प्रदान करने' का बाध्यकारी दायित्व बनाता है लेकिन राशि निर्दिष्ट नहीं करता। $100 बिलियन की संख्या अनुच्छेद 9 में नहीं है।\n• विकल्प (b) — गलत: समझौते के पाठ में इस विशिष्ट संख्या का उल्लेख नहीं है; वार्ताकार इस संख्या के लिए समझौते के पाठ का हवाला नहीं दे सकता।\n• विकल्प (c) — गलत: NCQG (नया सामूहिक मात्रात्मक लक्ष्य) 2025 के बाद का प्रतिस्थापन है — यह $100 बिलियन को अनुच्छेद 9 में पीछे से नहीं रखता।\n• विकल्प (d) — सही: $100 बिलियन/वर्ष 2020 तक का लक्ष्य पेरिस समझौते के साथ जुड़े COP21 निर्णय के पैराग्राफ 53 में है — समझौते के पाठ में नहीं। वार्ताकार का 'पेरिस समझौते के पाठ' का हवाला देना गलत है।\n\nमूल्य संवर्धन:\n• $100 बिलियन लक्ष्य पहली बार कोपेनहेगन समझौते (COP15, 2009) में घोषित किया गया था — जो पेरिस से छह वर्ष पहले है।\n• विकसित देशों ने OECD डेटा के अनुसार 2022 में (दो वर्ष देरी से) $100 बिलियन लक्ष्य पूरा किया।\n• NCQG को COP29 (बाकू, 2024) में सहमति बनानी है, जिसकी न्यूनतम सीमा कम से कम $100 बिलियन होगी।"
+    }
+  },
+  {
+    "uuid": "9bb811de-ea65-4c3f-b547-74ee2bcb80ce",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Net Zero Emissions: Concept, Article 4.1, and National Net Zero Targets"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "'Net zero' terminology absent from Paris Agreement — Article 4.1 uses 'balance'",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four terms or phrases are NOT found in the text of the Paris Agreement, while one IS directly used in Article 4.1. Which of the following does NOT belong to the same group as the other three?\n\n(a) Achieve a balance between anthropogenic emissions by sources and removals by sinks\n(b) Net zero emissions\n(c) Climate neutrality\n(d) Carbon neutrality",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) 'climate neutrality' is the strong distractor because it sounds like an invented term, but it is actually a real and distinct concept (used particularly in EU policy context, encompassing all greenhouse gases and climate forcers). Students may reject it as plausible and instead eliminate 'balance between emissions and removals' thinking it sounds unusual.",
+      "elimination_logic": [
+        "Identify which term does NOT appear in Article 4.1 of the Paris Agreement: the question tests which is the odd term out relative to the treaty's actual language.",
+        "'Balance between anthropogenic emissions by sources and removals by sinks' is the exact formulation of Article 4.1 — it belongs to the Paris Agreement text.",
+        "'Carbon neutrality' and 'climate neutrality' are real concepts used in national/corporate pledges and EU policy but are NOT Paris Agreement text terms — both are outside the treaty.",
+        "'Net zero' is also NOT in the Paris Agreement text — Article 4.1 avoids this phrase entirely. The odd one out among terms that ARE in the Paris Agreement is 'net zero' — but since the question asks which does NOT belong to the same category as the others (i.e., terms NOT in Article 4.1), 'balance between emissions and removals' is the one that IS in Article 4.1, making it the odd one out from the group of terms not in the treaty. Confirm: (a) is the term that appears in the treaty; the others do not → (a) is the odd one out."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 4.1 of the Paris Agreement uses deliberately precise language that avoids the politically charged term 'net zero.'\n\n• Option (a) — The ODD ONE OUT: 'Achieve a balance between anthropogenic emissions by sources and removals by sinks' is the exact formulation of Article 4.1. It appears in the treaty text. The three other options do NOT appear in the Paris Agreement.\n• Option (b) — Belongs with the group: 'Net zero' is a widely used concept in NDC pledges and national strategies but does NOT appear in the Paris Agreement text.\n• Option (c) — Belongs with the group: 'Climate neutrality' is used in EU Green Deal language encompassing all climate forcers — not a Paris Agreement term.\n• Option (d) — Belongs with the group: 'Carbon neutrality' typically refers to CO₂ balance only — also not Paris Agreement text.\n\nValue Addition:\n• India's 2070 net zero target (COP26 announcement) is not in its NDC — it is a declaratory goal.\n• Article 4.1 envisages achieving balance 'in the second half of this century' — roughly 2050–2100.\n• The distinction between carbon neutrality (CO₂ only) and climate neutrality (all GHGs + forcers) is increasingly significant in corporate climate pledges."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार शब्दों या वाक्यांशों में से तीन पेरिस समझौते के पाठ में नहीं पाए जाते, जबकि एक सीधे अनुच्छेद 4.1 में उपयोग होता है। निम्नलिखित में से कौन-सा अन्य तीनों के समान समूह में नहीं आता?\n\n(a) स्रोतों द्वारा मानवजनित उत्सर्जन और सिंकों द्वारा अवशोषण के बीच संतुलन प्राप्त करना\n(b) नेट ज़ीरो उत्सर्जन\n(c) जलवायु तटस्थता\n(d) कार्बन तटस्थता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) 'जलवायु तटस्थता' एक मजबूत भ्रम है क्योंकि यह एक आविष्कृत शब्द जैसा लगता है, लेकिन यह वास्तव में एक वास्तविक और भिन्न अवधारणा है (विशेष रूप से EU नीति संदर्भ में उपयोग की जाती है, जिसमें सभी ग्रीनहाउस गैसें और जलवायु प्रेरक शामिल हैं)। छात्र इसे संभावित मानने से इनकार कर सकते हैं और इसके बजाय 'उत्सर्जन और अवशोषण के बीच संतुलन' को असामान्य लगने के कारण हटा सकते हैं।",
+      "elimination_logic": [
+        "पहचानें कि पेरिस समझौते के अनुच्छेद 4.1 में कौन-सा शब्द नहीं आता: प्रश्न समझौते की वास्तविक भाषा के सापेक्ष असामान्य शब्द की परीक्षा लेता है।",
+        "'स्रोतों द्वारा मानवजनित उत्सर्जन और सिंकों द्वारा अवशोषण के बीच संतुलन' अनुच्छेद 4.1 का सटीक सूत्रीकरण है — यह पेरिस समझौते के पाठ का हिस्सा है।",
+        "'कार्बन तटस्थता' और 'जलवायु तटस्थता' राष्ट्रीय/कॉर्पोरेट प्रतिबद्धताओं और EU नीति में वास्तविक अवधारणाएं हैं लेकिन पेरिस समझौते के शब्द नहीं हैं — दोनों समझौते के बाहर हैं।",
+        "'नेट ज़ीरो' भी पेरिस समझौते के पाठ में नहीं है — अनुच्छेद 4.1 इस वाक्यांश से पूरी तरह बचता है। जो शब्द पेरिस समझौते में हैं, उनमें से असामान्य शब्द 'नेट ज़ीरो' है — लेकिन चूंकि प्रश्न पूछता है कि कौन-सा शब्द अन्य तीनों के समान श्रेणी में नहीं आता (अर्थात् अनुच्छेद 4.1 में नहीं है), इसलिए 'उत्सर्जन और अवशोषण के बीच संतुलन' वह शब्द है जो अनुच्छेद 4.1 में है, अतः यह उन शब्दों के समूह में असामान्य है जो समझौते में नहीं हैं। पुष्टि करें: (a) वह शब्द है जो समझौते में आता है; अन्य नहीं → (a) असामान्य शब्द है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "पेरिस समझौते के अनुच्छेद 4.1 में जानबूझकर सटीक भाषा का उपयोग किया गया है जो राजनीतिक रूप से संवेदनशील शब्द 'नेट ज़ीरो' से बचता है।\n\n• विकल्प (a) — असामान्य शब्द: 'स्रोतों द्वारा मानवजनित उत्सर्जन और सिंकों द्वारा अवशोषण के बीच संतुलन प्राप्त करना' अनुच्छेद 4.1 का सटीक सूत्रीकरण है। यह समझौते के पाठ में आता है। अन्य तीन विकल्प पेरिस समझौते में नहीं आते।\n• विकल्प (b) — समूह के साथ: 'नेट ज़ीरो' NDC प्रतिबद्धताओं और राष्ट्रीय रणनीतियों में व्यापक रूप से उपयोग किया जाता है लेकिन पेरिस समझौते के पाठ में नहीं है।\n• विकल्प (c) — समूह के साथ: 'जलवायु तटस्थता' EU ग्रीन डील भाषा में उपयोग होती है जिसमें सभी जलवायु प्रेरक शामिल हैं — यह पेरिस समझौते का शब्द नहीं है।\n• विकल्प (d) — समूह के साथ: 'कार्बन तटस्थता' आमतौर पर केवल CO₂ संतुलन को संदर्भित करती है — यह भी पेरिस समझौते का शब्द नहीं है।\n\nमूल्य संवर्धन:\n• भारत का 2070 नेट ज़ीरो लक्ष्य (COP26 घोषणा) उसके NDC में नहीं है — यह एक घोषणात्मक लक्ष्य है।\n• अनुच्छेद 4.1 'इस शताब्दी के दूसरे भाग' में संतुलन प्राप्त करने की कल्पना करता है — लगभग 2050–2100।\n• कार्बन तटस्थता (केवल CO₂) और जलवायु तटस्थता (सभी GHGs + प्रेरक) के बीच अंतर कॉर्पोरेट जलवायु प्रतिबद्धताओं में बढ़ता महत्व रखता है।"
+    }
+  },
+  {
+    "uuid": "5ebbe17b-1d92-4e90-9830-d9cdd9cf6c53",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Carbon Markets under Article 6: Cooperative Approaches and the Rulebook"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Article 6 rulebook finalized COP26 — not at Paris 2015",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to carbon market mechanisms under the Paris Agreement, consider the following statements:\n\nStatement 1: Article 6.2 of the Paris Agreement enables bilateral, country-to-country trading of Internationally Transferred Mitigation Outcomes (ITMOs), while Article 6.4 establishes a centralized UN-supervised carbon crediting mechanism that serves as the successor to the Clean Development Mechanism.\n\nStatement 2: The complete rulebook governing Article 6 carbon markets was finalized and adopted at the Paris climate conference in 2015, simultaneously with the Paris Agreement itself.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: Article 6.2 of the Paris Agreement enables bilateral, country-to-country trading of Internationally Transferred Mitigation Outcomes (ITMOs), while Article 6.4 establishes a centralized UN-supervised carbon crediting mechanism that serves as the successor to the Clean Development Mechanism.",
+          "verdict": "Correct",
+          "reason": "Article 6.2 governs cooperative approaches using ITMOs for bilateral trading; Article 6.4 creates a new centralized mechanism under UN supervision — conceptually succeeding the CDM under Kyoto, though with stronger environmental integrity provisions."
+        },
+        {
+          "statement": "Statement 2: The complete rulebook governing Article 6 carbon markets was finalized and adopted at the Paris climate conference in 2015, simultaneously with the Paris Agreement itself.",
+          "verdict": "Incorrect",
+          "reason": "The Article 6 rulebook was NOT finalized in 2015. It took six years of negotiations and was finally completed at COP26 in Glasgow in 2021. COP29 (Baku, 2024) further refined Article 6.4 standards."
+        }
+      ],
+      "strong_distractor": "a — Option (a) ('both correct') is the strong distractor because students who know both Article 6.2 and 6.4 exist assume the entire framework including rulebook was adopted at Paris, making them accept both statements as true.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The distinction between Article 6.2 (bilateral, ITMOs) and Article 6.4 (centralized, UN-supervised, CDM successor) is accurately described. Statement 1 is correct.",
+        "Evaluate Statement 2: The Article 6 rulebook was NOT finalized in 2015 at Paris. Despite the Agreement being adopted, the detailed rules for carbon markets were contested for six years. Glasgow (COP26, 2021) finalized the rulebook. Statement 2 is incorrect.",
+        "Statement 1 correct, Statement 2 incorrect → option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 6 of the Paris Agreement created the framework for international carbon markets, but the operational rules were among the most contested in climate diplomacy.\n\n• Statement 1 — Correct: Article 6 has three tracks: 6.2 (bilateral ITMOs between countries), 6.4 (centralized UN-supervised mechanism — CDM successor), and 6.8 (non-market cooperative approaches). The characterization of 6.2 and 6.4 is accurate.\n• Statement 2 — Incorrect: The Article 6 rulebook was emphatically NOT completed at Paris (2015). It was a point of failure at multiple COPs (Madrid COP25 most notably) and was finally resolved only at Glasgow (COP26, 2021) — six years after the Agreement was signed.\n\nValue Addition:\n• Key unresolved issue at COP25 (Madrid): whether old CDM credits could be carried over into the new Article 6.4 mechanism — this was eventually resolved at Glasgow with strict limits.\n• 'Corresponding adjustments' — a key Article 6.2 concept preventing double-counting of emission reductions by both buyer and seller countries.\n• COP29 (Baku, 2024) adopted new standards for Article 6.4 credits, bringing the mechanism closer to operational status."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते के तहत कार्बन बाजार तंत्रों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: पेरिस समझौते के अनुच्छेद 6.2 के तहत अंतरराष्ट्रीय हस्तांतरित शमन परिणामों (ITMOs) का द्विपक्षीय, देश-से-देश व्यापार संभव है, जबकि अनुच्छेद 6.4 एक केंद्रीकृत संयुक्त राष्ट्र-नियंत्रित कार्बन क्रेडिटिंग तंत्र स्थापित करता है जो क्लीन डेवलपमेंट मैकेनिज्म का उत्तराधिकारी है।\n\nकथन 2: अनुच्छेद 6 कार्बन बाजारों को नियंत्रित करने वाला पूर्ण नियमावली पेरिस जलवायु सम्मेलन 2015 में, पेरिस समझौते के साथ ही, अंतिम रूप दिया गया और अपनाया गया था।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: पेरिस समझौते के अनुच्छेद 6.2 के तहत अंतरराष्ट्रीय हस्तांतरित शमन परिणामों (ITMOs) का द्विपक्षीय, देश-से-देश व्यापार संभव है, जबकि अनुच्छेद 6.4 एक केंद्रीकृत संयुक्त राष्ट्र-नियंत्रित कार्बन क्रेडिटिंग तंत्र स्थापित करता है जो क्लीन डेवलपमेंट मैकेनिज्म का उत्तराधिकारी है।",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 6.2 द्विपक्षीय व्यापार के लिए ITMOs का उपयोग करते हुए सहयोगात्मक दृष्टिकोणों को नियंत्रित करता है; अनुच्छेद 6.4 संयुक्त राष्ट्र की निगरानी में एक नया केंद्रीकृत तंत्र बनाता है — जो क्योटो के तहत CDM का वैचारिक उत्तराधिकारी है, हालांकि इसमें पर्यावरणीय अखंडता के मजबूत प्रावधान हैं।"
+        },
+        {
+          "statement": "कथन 2: अनुच्छेद 6 कार्बन बाजारों को नियंत्रित करने वाला पूर्ण नियमावली पेरिस जलवायु सम्मेलन 2015 में, पेरिस समझौते के साथ ही, अंतिम रूप दिया गया और अपनाया गया था।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 6 की नियमावली 2015 में अंतिम रूप नहीं दी गई थी। छह वर्षों की वार्ता के बाद यह अंततः 2021 में ग्लासगो में COP26 में पूरी हुई। COP29 (बाकू, 2024) ने अनुच्छेद 6.4 के मानकों को और परिष्कृत किया।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) ('दोनों सही') एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि अनुच्छेद 6.2 और 6.4 दोनों मौजूद हैं, वे मान लेते हैं कि पूरा ढांचा सहित नियमावली पेरिस में अपनाई गई थी, जिससे वे दोनों कथनों को सही मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 6.2 (द्विपक्षीय, ITMOs) और अनुच्छेद 6.4 (केंद्रीकृत, संयुक्त राष्ट्र-नियंत्रित, CDM उत्तराधिकारी) के बीच अंतर सही ढंग से वर्णित है। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: अनुच्छेद 6 की नियमावली 2015 में पेरिस में अंतिम रूप नहीं दी गई थी। समझौता अपनाए जाने के बावजूद, कार्बन बाजारों के विस्तृत नियम छह वर्षों तक विवादित रहे। ग्लासगो (COP26, 2021) ने नियमावली को अंतिम रूप दिया। कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "पेरिस समझौते के अनुच्छेद 6 ने अंतरराष्ट्रीय कार्बन बाजारों के लिए ढांचा बनाया, लेकिन इसके संचालन नियम जलवायु कूटनीति में सबसे विवादित रहे।\n\n• कथन 1 — सही: अनुच्छेद 6 के तीन ट्रैक हैं: 6.2 (देशों के बीच द्विपक्षीय ITMOs), 6.4 (केंद्रीकृत संयुक्त राष्ट्र-नियंत्रित तंत्र — CDM उत्तराधिकारी), और 6.8 (गैर-बाजार सहयोगात्मक दृष्टिकोण)। 6.2 और 6.4 का वर्णन सटीक है।\n• कथन 2 — गलत: अनुच्छेद 6 की नियमावली पेरिस (2015) में निश्चित रूप से पूरी नहीं हुई थी। यह कई COPs में विफलता का कारण बनी (विशेषकर मैड्रिड COP25) और अंततः केवल ग्लासगो (COP26, 2021) में समझौते के छह वर्ष बाद हल हुई।\n\nमूल्य वर्धन:\n• COP25 (मैड्रिड) में एक प्रमुख अनसुलझा मुद्दा था कि क्या पुराने CDM क्रेडिट नए अनुच्छेद 6.4 तंत्र में स्थानांतरित किए जा सकते हैं — यह अंततः ग्लासगो में सख्त सीमाओं के साथ हल हुआ।\n• 'संबंधित समायोजन' — अनुच्छेद 6.2 की एक प्रमुख अवधारणा जो खरीदार और विक्रेता दोनों देशों द्वारा उत्सर्जन कटौती की दोहरी गिनती को रोकती है।\n• COP29 (बाकू, 2024) ने अनुच्छेद 6.4 क्रेडिट के लिए नए मानक अपनाए, जिससे तंत्र परिचालन स्थिति के करीब आया।"
+    }
+  },
+  {
+    "uuid": "5ac960f4-e2f6-4b1f-9582-62db37edc5c4",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Transparency Framework: Enhanced Transparency Framework (ETF) vs. MRV under Kyoto"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "ETF — single unified framework replacing Kyoto's dual MRV tracks",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Article 13 of the Paris Agreement established the ________, which replaced the dual-track Measurement, Reporting and Verification (MRV) system that existed under the Kyoto Protocol. Under this new arrangement, all Parties submit Biennial Transparency Reports from 2024, with built-in flexibility provisions for developing countries lacking sufficient capacity — though this flexibility operates within a single common framework rather than creating separate reporting standards.\n\nWhich of the following correctly fills the blank?\n\n(a) Differentiated Measurement Regime (DMR) with tiered reporting obligations for developed and developing Parties\n(b) Enhanced Transparency Framework (ETF) applicable as a single unified system to all Parties\n(c) Dual-track Measurement, Reporting and Verification system with enhanced obligations for Annex I countries\n(d) Flexible Transparency Protocol providing separate reporting tracks for developed and developing country Parties",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is deceptive because students know developing countries have 'flexibility' under the ETF and assume this means they are still on a separate track, conflating flexibility within a single system with the genuinely separate dual-track system that existed under Kyoto.",
+      "elimination_logic": [
+        "The blank requires the term that distinguishes the Paris Agreement's transparency system from Kyoto's dual-track MRV.",
+        "Kyoto had different reporting rules for developed (Annex I) and developing countries — a two-tier or dual-track MRV system.",
+        "Paris Agreement's Article 13 created a single framework for all parties — the Enhanced Transparency Framework (ETF) — with built-in flexibility for developing countries lacking capacity, but NOT a separate standard.",
+        "The correct term is 'Enhanced Transparency Framework (ETF)' under a 'single unified' arrangement — option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 13 of the Paris Agreement replaced Kyoto's split reporting system with a single architecture.\n\n• Option (a) — Incorrect: 'Differentiated Measurement Regime' is a plausible-sounding fabrication — no such named instrument exists in Paris Agreement architecture.\n• Option (b) — Correct: The Enhanced Transparency Framework (ETF) is a single unified framework under Article 13. All parties submit Biennial Transparency Reports (BTRs) from 2024. Developing countries get flexibility on timelines and technical support, but are subject to the same framework — not a separate one.\n• Option (c) — Incorrect: 'Dual-track Measurement, Reporting and Verification system' describes Kyoto's arrangement, not Paris's innovation.\n• Option (d) — Incorrect: The ETF does provide flexibility for developing countries, but it is explicitly one framework — not 'separate reporting tracks for developed and developing.'\n\nValue Addition:\n• BTRs (Biennial Transparency Reports) replace both Biennial Reports (BRs) from developed countries and Biennial Update Reports (BURs) from developing countries under Kyoto.\n• The first BTRs were due in December 2024.\n• Under Kyoto's MRV, developed countries faced expert review while developing countries had only facilitative sharing — Paris unifies these into one process with common elements."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते के अनुच्छेद 13 ने ________ की स्थापना की, जिसने क्योटो प्रोटोकॉल के तहत मौजूद दो-ट्रैक मापन, रिपोर्टिंग और सत्यापन (MRV) प्रणाली को प्रतिस्थापित किया। इस नई व्यवस्था के तहत, सभी पक्ष 2024 से द्विवार्षिक पारदर्शिता रिपोर्ट प्रस्तुत करते हैं, जिसमें क्षमता की कमी वाले विकासशील देशों के लिए अंतर्निहित लचीलापन प्रावधान हैं — हालांकि यह लचीलापन अलग-अलग रिपोर्टिंग मानकों के बजाय एक सामान्य एकल ढांचे के भीतर संचालित होता है।\n\nनिम्नलिखित में से कौन सा विकल्प रिक्त स्थान को सही ढंग से भरता है?\n\n(a) विकसित और विकासशील पक्षों के लिए स्तरित रिपोर्टिंग दायित्वों के साथ भेदित मापन व्यवस्था (Differentiated Measurement Regime - DMR)\n(b) सभी पक्षों पर लागू एकल एकीकृत प्रणाली के रूप में संवर्धित पारदर्शिता ढांचा (Enhanced Transparency Framework - ETF)\n(c) अनुबंध I देशों के लिए बढ़े हुए दायित्वों के साथ दो-ट्रैक मापन, रिपोर्टिंग और सत्यापन प्रणाली\n(d) विकसित और विकासशील देशों के पक्षों के लिए अलग-अलग रिपोर्टिंग ट्रैक प्रदान करने वाला लचीला पारदर्शिता प्रोटोकॉल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) भ्रमित करने वाला है क्योंकि छात्र जानते हैं कि विकासशील देशों के लिए ETF के तहत 'लचीलापन' है और वे मान लेते हैं कि इसका अर्थ है कि वे अभी भी एक अलग ट्रैक पर हैं, जो एकल प्रणाली के भीतर लचीलापन को क्योटो के तहत मौजूद वास्तविक अलग दो-ट्रैक प्रणाली के साथ भ्रमित करता है।",
+      "elimination_logic": [
+        "रिक्त स्थान उस शब्द की मांग करता है जो पेरिस समझौते की पारदर्शिता प्रणाली को क्योटो के दो-ट्रैक MRV से अलग करता है।",
+        "क्योटो में विकसित (अनुबंध I) और विकासशील देशों के लिए अलग-अलग रिपोर्टिंग नियम थे — एक दो-स्तरीय या दो-ट्रैक MRV प्रणाली।",
+        "पेरिस समझौते के अनुच्छेद 13 ने सभी पक्षों के लिए एक एकल ढांचा बनाया — संवर्धित पारदर्शिता ढांचा (ETF) — जिसमें क्षमता की कमी वाले विकासशील देशों के लिए अंतर्निहित लचीलापन है, लेकिन कोई अलग मानक नहीं।",
+        "सही शब्द है 'संवर्धित पारदर्शिता ढांचा (ETF)' जो 'एकल एकीकृत' व्यवस्था के तहत है — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "पेरिस समझौते के अनुच्छेद 13 ने क्योटो के विभाजित रिपोर्टिंग सिस्टम को एक एकल संरचना से बदल दिया।\n\n• विकल्प (a) — गलत: 'Differentiated Measurement Regime' एक संभावित-सा लगने वाला काल्पनिक नाम है — पेरिस समझौते की संरचना में ऐसा कोई नामित उपकरण नहीं है।\n• विकल्प (b) — सही: संवर्धित पारदर्शिता ढांचा (ETF) अनुच्छेद 13 के तहत सभी पक्षों के लिए एक एकीकृत एकल ढांचा है। सभी पक्ष 2024 से द्विवार्षिक पारदर्शिता रिपोर्ट (BTR) प्रस्तुत करते हैं। विकासशील देशों को समय सीमा और तकनीकी सहायता पर लचीलापन मिलता है, लेकिन वे उसी ढांचे के अधीन हैं — कोई अलग ढांचा नहीं।\n• विकल्प (c) — गलत: 'Dual-track Measurement, Reporting and Verification system' क्योटो की व्यवस्था का वर्णन करता है, पेरिस के नवाचार का नहीं।\n• विकल्प (d) — गलत: ETF विकासशील देशों के लिए लचीलापन प्रदान करता है, लेकिन यह स्पष्ट रूप से एक ही ढांचा है — न कि 'विकसित और विकासशील देशों के लिए अलग-अलग रिपोर्टिंग ट्रैक।'\n\nमूल्यवर्धन:\n• BTRs (द्विवार्षिक पारदर्शिता रिपोर्ट) क्योटो के तहत विकसित देशों की द्विवार्षिक रिपोर्ट (BRs) और विकासशील देशों की द्विवार्षिक अद्यतन रिपोर्ट (BURs) दोनों की जगह लेती हैं।\n• पहली BTR दिसंबर 2024 में देय थी।\n• क्योटो के MRV के तहत, विकसित देशों को विशेषज्ञ समीक्षा का सामना करना पड़ता था जबकि विकासशील देशों को केवल सुविधा प्रदान करने वाला साझा करना था — पेरिस इन्हें एक सामान्य प्रक्रिया में एकीकृत करता है।"
+    }
+  },
+  {
+    "uuid": "dcf73251-25b8-4e25-9f57-18a901a9ef38",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Paris Agreement's Entry into Force: Threshold, Ratification, and US Withdrawal/Re-entry"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Paris Agreement entry into force — ratification dates and US withdrawal timeline",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the entry into force and participation dynamics of the Paris Agreement, consider the following statements:\n\n1. The Paris Agreement entered into force on November 4, 2016, after the dual threshold of 55 Parties representing at least 55% of global greenhouse gas emissions was met.\n2. India ratified the Paris Agreement on October 2, 2016 — Gandhi Jayanti — and this ratification contributed to crossing the 55% emissions threshold.\n3. The United States, under President Trump, withdrew from the Paris Agreement effective November 4, 2020, and re-entered under President Biden on November 4, 2021.\n\nWhich of the statements given above is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Paris Agreement entered into force on November 4, 2016, after the dual threshold of 55 Parties representing at least 55% of global greenhouse gas emissions was met.",
+          "verdict": "Correct",
+          "reason": "The dual threshold condition (55 Parties + 55% of global emissions) was met in October 2016, triggering entry into force on November 4, 2016 — one year after the Agreement was opened for signature."
+        },
+        {
+          "statement": "India ratified the Paris Agreement on October 2, 2016 — Gandhi Jayanti — and this ratification contributed to crossing the 55% emissions threshold.",
+          "verdict": "Correct",
+          "reason": "India ratified on Gandhi Jayanti (October 2, 2016). India's ratification, along with the EU's, helped push total ratifying parties' emissions past 55% of global GHG emissions, enabling early entry into force."
+        },
+        {
+          "statement": "The United States, under President Trump, withdrew from the Paris Agreement effective November 4, 2020, and re-entered under President Biden on November 4, 2021.",
+          "verdict": "Incorrect",
+          "reason": "The US re-entry under Biden took effect on February 19, 2021 — not November 4, 2021. Biden rejoined on his first day in office (January 20, 2021) and the re-entry took effect 30 days later (February 19, 2021)."
+        }
+      ],
+      "strong_distractor": "c — Option (c) '1 and 3 only' is the strong distractor because students who remember the US withdrawal date correctly (November 4, 2020) may not know the precise re-entry effective date, assuming it was also a November date and thus accepting Statement 3 as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The dual threshold (55 Parties, 55% emissions) was met, entry into force November 4, 2016 — this is correct and well-documented.",
+        "Evaluate Statement 2: India ratified October 2, 2016 (Gandhi Jayanti); its large emissions share helped cross the 55% threshold. Statement 2 is correct.",
+        "Evaluate Statement 3: US withdrawal was effective November 4, 2020 (correct), but re-entry was February 19, 2021 — NOT November 4, 2021. Statement 3 contains a date error and is incorrect.",
+        "Statements 1 and 2 are correct → option (d): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "The date confusion trap: Trump's withdrawal (November 4, 2020) coinciding with the US election and being exactly 4 years after entry into force makes it memorable. Students then assume the re-entry was similarly symbolic, but Biden's Inauguration Day rejoining had a 30-day treaty mechanism that pushed the effective date to February 19, 2021. This level of date precision is typical of UPSC questions testing whether candidates actually know the mechanism versus merely the narrative.",
+      "final_explanation": "The Paris Agreement's entry into force and the US withdrawal/re-entry episode illustrate the treaty's procedural architecture.\n\n• Statement 1 — Correct: Entry into force conditions (55/55%) were met in October 2016; formal entry was November 4, 2016. A country may only withdraw after 3 years of entry into force, with 1-year notice — hence Trump's withdrawal was effective exactly on November 4, 2020.\n• Statement 2 — Correct: India's October 2, 2016 ratification was strategically timed and symbolically significant. India's large emissions share (approximately 4.5% at the time) contributed to crossing the 55% threshold ahead of the Marrakech COP22.\n• Statement 3 — Incorrect: Biden re-joined on Inauguration Day (January 20, 2021) but the treaty mechanics required a 30-day notice period, making re-entry effective February 19, 2021 — not November 4, 2021.\n\nValue Addition:\n• A country cannot withdraw from the Paris Agreement without remaining a member of UNFCCC — both are linked.\n• US withdrawal meant the US missed the COP25 (Madrid) and nearly all of COP26 negotiations as a full party.\n• The Paris Agreement's withdrawal mechanism (Article 28) — 3 years + 1 year notice — was designed to prevent hasty exits."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते के लागू होने और भागीदारी की गतिशीलता के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. पेरिस समझौता 4 नवंबर 2016 को लागू हुआ, जब 55 पक्षों ने वैश्विक ग्रीनहाउस गैस उत्सर्जन के कम से कम 55% का प्रतिनिधित्व करते हुए दोहरी सीमा पूरी की।\n2. भारत ने 2 अक्टूबर 2016 — गांधी जयंती — को पेरिस समझौते को अनुमोदित किया और इस अनुमोदन ने 55% उत्सर्जन सीमा पार करने में योगदान दिया।\n3. संयुक्त राज्य अमेरिका ने राष्ट्रपति ट्रंप के तहत 4 नवंबर 2020 को पेरिस समझौते से वापसी की और राष्ट्रपति बाइडेन के तहत 4 नवंबर 2021 को पुनः प्रवेश किया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Paris Agreement entered into force on November 4, 2016, after the dual threshold of 55 Parties representing at least 55% of global greenhouse gas emissions was met.",
+          "verdict": "सही है",
+          "reason": "दोहरी सीमा शर्त (55 पक्ष + वैश्विक उत्सर्जन का 55%) अक्टूबर 2016 में पूरी हुई थी, जिससे 4 नवंबर 2016 को लागू होना शुरू हुआ — यह समझौता हस्ताक्षर के लिए खुलने के एक वर्ष बाद था।"
+        },
+        {
+          "statement": "India ratified the Paris Agreement on October 2, 2016 — Gandhi Jayanti — and this ratification contributed to crossing the 55% emissions threshold.",
+          "verdict": "सही है",
+          "reason": "भारत ने गांधी जयंती (2 अक्टूबर 2016) को अनुमोदन किया। भारत के अनुमोदन ने यूरोपीय संघ के साथ मिलकर कुल अनुमोदित पक्षों के उत्सर्जन को वैश्विक ग्रीनहाउस गैस उत्सर्जन के 55% से ऊपर पहुंचाने में मदद की, जिससे जल्दी लागू होना संभव हुआ।"
+        },
+        {
+          "statement": "The United States, under President Trump, withdrew from the Paris Agreement effective November 4, 2020, and re-entered under President Biden on November 4, 2021.",
+          "verdict": "गलत है",
+          "reason": "बाइडेन के तहत अमेरिका का पुनः प्रवेश 4 नवंबर 2021 को नहीं बल्कि 19 फरवरी 2021 को प्रभावी हुआ। बाइडेन ने पदभार ग्रहण के पहले दिन (20 जनवरी 2021) पुनः शामिल होने की घोषणा की और पुनः प्रवेश 30 दिनों बाद (19 फरवरी 2021) प्रभावी हुआ।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल 1 और 3' मजबूत भ्रम है क्योंकि जो छात्र अमेरिका के वापसी की सही तारीख (4 नवंबर 2020) याद रखते हैं, वे पुनः प्रवेश की सटीक प्रभावी तारीख नहीं जानते होंगे और इसे भी नवंबर की तारीख मानकर कथन 3 को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: दोहरी सीमा (55 पक्ष, 55% उत्सर्जन) पूरी हुई, 4 नवंबर 2016 को लागू हुआ — यह सही और अच्छी तरह से प्रलेखित है।",
+        "कथन 2 का मूल्यांकन करें: भारत ने 2 अक्टूबर 2016 (गांधी जयंती) को अनुमोदन किया; इसके बड़े उत्सर्जन हिस्से ने 55% सीमा पार करने में मदद की। कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: अमेरिका की वापसी 4 नवंबर 2020 को प्रभावी थी (सही), लेकिन पुनः प्रवेश 19 फरवरी 2021 को हुआ — 4 नवंबर 2021 नहीं। कथन 3 में तारीख की गलती है और यह गलत है।",
+        "कथन 1 और 2 सही हैं → विकल्प (d): केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "तारीख भ्रम का जाल: ट्रंप की वापसी (4 नवंबर 2020) अमेरिकी चुनाव के साथ मेल खाती है और यह लागू होने के ठीक 4 साल बाद है, जिससे यह यादगार बनती है। छात्र मान लेते हैं कि पुनः प्रवेश भी इसी तरह प्रतीकात्मक नवंबर की तारीख पर हुआ होगा, लेकिन बाइडेन के शपथ ग्रहण दिवस पर पुनः शामिल होने के बाद 30 दिन की संधि प्रक्रिया के कारण प्रभावी तारीख 19 फरवरी 2021 बनी। यह तारीख की सटीकता UPSC के उन प्रश्नों की विशेषता है जो उम्मीदवारों से प्रक्रिया की समझ की परीक्षा लेते हैं, न कि केवल कथा की।",
+      "final_explanation": "पेरिस समझौते का लागू होना और अमेरिका की वापसी/पुनः प्रवेश की घटना संधि की प्रक्रियात्मक संरचना को दर्शाती है।\n\n• कथन 1 — सही: लागू होने की शर्तें (55/55%) अक्टूबर 2016 में पूरी हुईं; औपचारिक रूप से 4 नवंबर 2016 को लागू हुआ। कोई देश केवल 3 वर्ष लागू होने के बाद और 1 वर्ष पूर्व सूचना देकर ही वापसी कर सकता है — अतः ट्रंप की वापसी ठीक 4 नवंबर 2020 को प्रभावी हुई।\n• कथन 2 — सही: भारत का 2 अक्टूबर 2016 को अनुमोदन रणनीतिक और प्रतीकात्मक था। उस समय भारत का उत्सर्जन लगभग 4.5% था, जिसने 55% सीमा पार करने में योगदान दिया।\n• कथन 3 — गलत: बाइडेन ने शपथ ग्रहण दिवस (20 जनवरी 2021) को पुनः शामिल होने की घोषणा की, लेकिन संधि प्रक्रिया के तहत 30 दिन की सूचना अवधि के कारण पुनः प्रवेश 19 फरवरी 2021 को प्रभावी हुआ — 4 नवंबर 2021 नहीं।\n\nमूल्यवर्धन:\n• कोई देश पेरिस समझौते से बिना UNFCCC का सदस्य रहे वापसी नहीं कर सकता — दोनों जुड़े हुए हैं।\n• अमेरिका की वापसी का मतलब था कि उसने COP25 (मैड्रिड) और लगभग सभी COP26 वार्ताओं में पूर्ण पक्ष के रूप में भाग नहीं लिया।\n• पेरिस समझौते की वापसी प्रक्रिया (अनुच्छेद 28) — 3 वर्ष + 1 वर्ष सूचना — जल्दबाजी में निकास को रोकने के लिए डिज़ाइन की गई है।"
+    }
+  },
+  {
+    "uuid": "3bc047c0-f9db-480c-bc3b-0ed074e90379",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Adaptation vs. Mitigation in Paris Agreement: Global Goal on Adaptation (GGA)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Paris Agreement first to formally recognize Global Goal on Adaptation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following international climate instruments was the first to formally recognize a Global Goal on Adaptation (GGA), establishing it as a structured commitment alongside mitigation objectives?\n\n(a) The United Nations Framework Convention on Climate Change (UNFCCC), 1992\n(b) The Paris Agreement (2015) under Article 7\n(c) The COP27 Sharm el-Sheikh Adaptation Agenda (2022)\n(d) The Kyoto Protocol's Second Commitment Period under the Doha Amendment",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because COP27 finalized the GGA framework and COP28 adopted the UAE Framework for Climate Resilience, leading students to attribute the initial recognition of the GGA to COP27 rather than the Paris Agreement itself.",
+      "elimination_logic": [
+        "Eliminate (a): UNFCCC (1992) recognized adaptation's importance but did not establish a formal 'Global Goal on Adaptation' — that came later.",
+        "Eliminate (c): COP27 finalized the GGA framework but did not first establish the concept; the GGA was introduced in Article 7 of the Paris Agreement (2015).",
+        "Eliminate (d): Kyoto Protocol focused on mitigation targets for Annex I countries — it had no equivalent adaptation goal.",
+        "Confirm (b): Article 7 of the Paris Agreement is the first international climate treaty to formally establish a Global Goal on Adaptation, making Paris the correct answer."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Adaptation had long been treated as a subordinate concern to mitigation in international climate diplomacy.\n\n• Option (a) — Incorrect: While the UNFCCC recognized climate vulnerability, it did not establish a formal 'Global Goal on Adaptation' with structured commitments.\n• Option (b) — Correct: Article 7 of the Paris Agreement (2015) is the first international treaty to formally recognize a Global Goal on Adaptation — enhancing adaptive capacity, strengthening resilience, and reducing vulnerability to climate change.\n• Option (c) — Incorrect: COP27 finalized the GGA's implementation framework, and COP28 adopted the UAE Framework for Global Climate Resilience — but these operationalized, not established, the goal.\n• Option (d) — Incorrect: The Kyoto Protocol was focused entirely on quantified emission reduction obligations for Annex I countries.\n\nValue Addition:\n• Developing countries, including India, pushed hard for adaptation parity with mitigation in Paris negotiations.\n• Unlike mitigation (measurable by temperature), adaptation has no single global metric — making the GGA inherently harder to assess.\n• Article 7.9 requires countries to engage in adaptation planning processes and implementation actions."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा अंतरराष्ट्रीय जलवायु उपकरण पहली बार Global Goal on Adaptation (GGA) को औपचारिक रूप से मान्यता देने वाला था, जिसने इसे शमन उद्देश्यों के साथ एक संरचित प्रतिबद्धता के रूप में स्थापित किया?\n\n(a) संयुक्त राष्ट्र फ्रेमवर्क कन्वेंशन ऑन क्लाइमेट चेंज (UNFCCC), 1992\n(b) पेरिस समझौता (2015) के अनुच्छेद 7 के तहत\n(c) COP27 शार्म एल-शेख अनुकूलन एजेंडा (2022)\n(d) क्योटो प्रोटोकॉल की दूसरी प्रतिबद्धता अवधि, दोहा संशोधन के तहत",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि COP27 ने GGA फ्रेमवर्क को अंतिम रूप दिया और COP28 ने UAE फ्रेमवर्क को अपनाया, जिससे छात्र GGA की प्रारंभिक मान्यता को COP27 के बजाय पेरिस समझौते से जोड़ने में गलती करते हैं।",
+      "elimination_logic": [
+        "(a) को खारिज करें: UNFCCC (1992) ने अनुकूलन के महत्व को स्वीकार किया लेकिन औपचारिक 'Global Goal on Adaptation' स्थापित नहीं किया — वह बाद में आया।",
+        "(c) को खारिज करें: COP27 ने GGA फ्रेमवर्क को अंतिम रूप दिया लेकिन इस अवधारणा की पहली स्थापना नहीं की; GGA पेरिस समझौते (2015) के अनुच्छेद 7 में प्रस्तुत किया गया था।",
+        "(d) को खारिज करें: क्योटो प्रोटोकॉल ने Annex I देशों के लिए शमन लक्ष्यों पर ध्यान केंद्रित किया — इसका कोई समकक्ष अनुकूलन लक्ष्य नहीं था।",
+        "(b) की पुष्टि करें: पेरिस समझौते का अनुच्छेद 7 पहला अंतरराष्ट्रीय जलवायु संधि है जिसने औपचारिक रूप से Global Goal on Adaptation स्थापित किया, अतः पेरिस सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अंतरराष्ट्रीय जलवायु कूटनीति में अनुकूलन को लंबे समय तक शमन के अधीन माना गया।\n\n• विकल्प (a) — गलत: UNFCCC ने जलवायु संवेदनशीलता को स्वीकार किया, लेकिन संरचित प्रतिबद्धताओं के साथ औपचारिक 'Global Goal on Adaptation' स्थापित नहीं किया।\n• विकल्प (b) — सही: पेरिस समझौते (2015) का अनुच्छेद 7 पहला अंतरराष्ट्रीय संधि है जिसने औपचारिक रूप से Global Goal on Adaptation को मान्यता दी — अनुकूलन क्षमता बढ़ाना, लचीलापन मजबूत करना, और जलवायु परिवर्तन के प्रति संवेदनशीलता कम करना।\n• विकल्प (c) — गलत: COP27 ने GGA के कार्यान्वयन फ्रेमवर्क को अंतिम रूप दिया, और COP28 ने UAE फ्रेमवर्क को अपनाया — लेकिन ये लक्ष्य की स्थापना नहीं थे।\n• विकल्प (d) — गलत: क्योटो प्रोटोकॉल पूरी तरह से Annex I देशों के लिए मात्रात्मक उत्सर्जन कटौती दायित्वों पर केंद्रित था।\n\nमूल्यवर्धन:\n• भारत सहित विकासशील देशों ने पेरिस वार्ताओं में अनुकूलन को शमन के बराबर महत्व देने के लिए कड़ी मेहनत की।\n• शमन (तापमान द्वारा मापा जा सकता है) के विपरीत, अनुकूलन का कोई एकल वैश्विक मापदंड नहीं है — जिससे GGA का आकलन करना स्वाभाविक रूप से कठिन है।\n• अनुच्छेद 7.9 देशों को अनुकूलन योजना प्रक्रियाओं और क्रियान्वयन कार्यों में संलग्न होने की आवश्यकता करता है।"
+    }
+  },
+  {
+    "uuid": "cc1b9a06-ec37-49b6-be45-cea305cc66c4",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "COP26 Glasgow Climate Pact: Key Outcomes and Relationship to Paris Agreement"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Glasgow Pact — COP Decision, not Paris Agreement amendment; 'phase down' not 'phase out'",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the outcomes of COP26 held in Glasgow in 2021, consider the following statements:\n\n1. The Glasgow Climate Pact used the language 'phase out' of unabated coal power, marking the first time fossil fuels were mentioned in a formal COP decision.\n2. The Glasgow Climate Pact constitutes an amendment to the Paris Agreement and therefore carries the same legal status as the Agreement's original provisions.\n3. The completion of the Paris Rulebook on Article 6 carbon markets at COP26 ended six years of unresolved negotiations that had failed at multiple preceding COPs including COP25 in Madrid.\n\nWhich of the statements given above is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 2 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Glasgow Climate Pact used the language 'phase out' of unabated coal power, marking the first time fossil fuels were mentioned in a formal COP decision.",
+          "verdict": "Incorrect",
+          "reason": "The Glasgow Climate Pact used 'phase down' (not 'phase out') of unabated coal power — the weaker language was the result of last-minute intervention by India and China. While it was the first mention of fossil fuels in a COP decision, the specific terminology is 'phase down.'"
+        },
+        {
+          "statement": "The Glasgow Climate Pact constitutes an amendment to the Paris Agreement and therefore carries the same legal status as the Agreement's original provisions.",
+          "verdict": "Incorrect",
+          "reason": "The Glasgow Climate Pact is a COP Decision — a political instrument adopted by the Conference of Parties. It is NOT an amendment to the Paris Agreement and has a different (weaker) legal standing than the treaty text itself."
+        },
+        {
+          "statement": "The completion of the Paris Rulebook on Article 6 carbon markets at COP26 ended six years of unresolved negotiations that had failed at multiple preceding COPs including COP25 in Madrid.",
+          "verdict": "Correct",
+          "reason": "The Article 6 rulebook was indeed finalized at Glasgow (COP26, 2021) after failing at COP25 (Madrid, 2019) and other COPs since 2015 — this statement is correct and therefore NOT the answer to 'which is NOT correct.'"
+        }
+      ],
+      "strong_distractor": "b — Option (b) '2 only' is the strong distractor because students who remember the 'phase down vs. phase out' controversy may correctly identify Statement 1 as false but then incorrectly assume Statement 2 (about legal status) is true, missing the fact that a COP Decision is not an amendment.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Glasgow Pact said 'phase down' of unabated coal, NOT 'phase out' — India successfully changed the language. Statement 1 is incorrect ('NOT correct').",
+        "Evaluate Statement 2: The Glasgow Climate Pact is a COP Decision, NOT an amendment to the Paris Agreement. COP Decisions and treaty amendments have different legal standing and adoption procedures. Statement 2 is incorrect ('NOT correct').",
+        "Evaluate Statement 3: The Article 6 rulebook WAS completed at Glasgow after failing at COP25 Madrid and multiple other COPs. Statement 3 is correct — it is NOT a 'not correct' statement.",
+        "Both Statements 1 and 2 are NOT correct → option (a): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Both traps here are precision-based. Students who know India changed the coal language may mis-remember it as 'phase out changed to phase down' or 'phase down changed to phase out' depending on how they heard the story. Additionally, major COP Decisions often feel equivalent to treaty provisions in importance, leading students to conflate their legal status. The question exploits both confusions simultaneously.",
+      "final_explanation": "COP26 Glasgow produced several significant outcomes, but precision on the details is what UPSC tests.\n\n• Statement 1 — Incorrect: The final Glasgow Pact text reads 'phase down' (not 'phase out') of unabated coal power. India and China's intervention changed 'phase out' to 'phase down' in the final hours of negotiations — widely reported and consequential.\n• Statement 2 — Incorrect: The Glasgow Climate Pact is a COP Decision, not a Paris Agreement amendment. Amending a treaty requires a formal process under international law (Article 15 of the Paris Agreement) with ratification by parties. COP Decisions are adopted by consensus or vote but do not modify treaty text.\n• Statement 3 — Correct: The Article 6 rulebook's completion at Glasgow after six years of failure (notably at COP25 Madrid) is accurate.\n\nValue Addition:\n• The Glasgow Pact also requested countries to revisit and strengthen their 2030 NDCs by end of 2022.\n• 'Unabated coal' means coal without carbon capture and storage — allowing CCS-equipped coal plants to continue.\n• India's 'phase down' intervention at Glasgow drew both criticism and support from developing nations."
+    },
+    "hi": {
+      "display_text": "2021 में ग्लासगो में आयोजित COP26 के परिणामों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. ग्लासगो क्लाइमेट पैक्ट ने unabated कोयला ऊर्जा के 'phase out' शब्द का उपयोग किया, जो पहली बार था जब जीवाश्म ईंधन को औपचारिक COP निर्णय में उल्लेखित किया गया।\n2. ग्लासगो क्लाइमेट पैक्ट पेरिस समझौते में संशोधन है और इसलिए इसके मूल प्रावधानों के समान कानूनी दर्जा रखता है।\n3. COP26 में अनुच्छेद 6 कार्बन बाजारों पर पेरिस नियमावली का पूरा होना छह वर्षों की अनसुलझी वार्ताओं को समाप्त करता है, जो COP25 मैड्रिड सहित कई पूर्व COPs में विफल रही थीं।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Glasgow Climate Pact used the language 'phase out' of unabated coal power, marking the first time fossil fuels were mentioned in a formal COP decision.",
+          "verdict": "गलत",
+          "reason": "The Glasgow Climate Pact ने 'phase down' (न कि 'phase out') शब्दावली का उपयोग किया — कमजोर शब्दावली भारत और चीन के अंतिम समय के हस्तक्षेप का परिणाम थी। जबकि यह पहली बार था जब जीवाश्म ईंधन को COP निर्णय में उल्लेखित किया गया, विशिष्ट शब्दावली 'phase down' है।"
+        },
+        {
+          "statement": "The Glasgow Climate Pact constitutes an amendment to the Paris Agreement and therefore carries the same legal status as the Agreement's original provisions.",
+          "verdict": "गलत",
+          "reason": "The Glasgow Climate Pact एक COP निर्णय है — एक राजनीतिक उपकरण जिसे कॉन्फ्रेंस ऑफ पार्टीज़ ने अपनाया है। यह पेरिस समझौते में संशोधन नहीं है और इसका कानूनी दर्जा संधि के मूल प्रावधानों से अलग (कमज़ोर) है।"
+        },
+        {
+          "statement": "The completion of the Paris Rulebook on Article 6 carbon markets at COP26 ended six years of unresolved negotiations that had failed at multiple preceding COPs including COP25 in Madrid.",
+          "verdict": "सही",
+          "reason": "Article 6 नियमावली वास्तव में ग्लासगो (COP26, 2021) में अंतिम रूप दी गई थी, जो COP25 (मैड्रिड, 2019) और 2015 से अन्य COPs में विफल रही — यह कथन सही है और इसलिए 'सही नहीं है' वाले प्रश्न का उत्तर नहीं है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) 'केवल 2' एक मजबूत भ्रम है क्योंकि जो छात्र 'phase down बनाम phase out' विवाद को याद रखते हैं वे कथन 1 को गलत सही पहचान सकते हैं लेकिन फिर कथन 2 (कानूनी दर्जा) को सही मान लेते हैं, यह भूलते हुए कि COP निर्णय संशोधन नहीं है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: ग्लासगो पैक्ट ने 'phase down' कहा, न कि 'phase out' — भारत ने भाषा सफलतापूर्वक बदली। कथन 1 गलत है ('सही नहीं है')।",
+        "कथन 2 का मूल्यांकन करें: ग्लासगो क्लाइमेट पैक्ट एक COP निर्णय है, पेरिस समझौते का संशोधन नहीं। COP निर्णय और संधि संशोधन का कानूनी दर्जा और स्वीकृति प्रक्रिया अलग होती है। कथन 2 गलत है ('सही नहीं है')।",
+        "कथन 3 का मूल्यांकन करें: Article 6 नियमावली ग्लासगो में पूरी हुई, COP25 मैड्रिड और अन्य COPs में विफल रहने के बाद। कथन 3 सही है — यह 'सही नहीं है' वाला कथन नहीं है।",
+        "कथन 1 और 2 दोनों सही नहीं हैं → विकल्प (a): केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "यहाँ दोनों जाल सूक्ष्मता पर आधारित हैं। जो छात्र जानते हैं कि भारत ने कोयले की भाषा बदली, वे इसे 'phase out से phase down' या 'phase down से phase out' के रूप में गलत याद कर सकते हैं। इसके अलावा, प्रमुख COP निर्णय अक्सर संधि प्रावधानों के बराबर माने जाते हैं, जिससे छात्र उनके कानूनी दर्जे को भ्रमित कर देते हैं। प्रश्न दोनों भ्रमों का एक साथ उपयोग करता है।",
+      "final_explanation": "COP26 ग्लासगो ने कई महत्वपूर्ण परिणाम दिए, लेकिन UPSC विवरणों में सटीकता पर परीक्षा लेता है।\n\n• कथन 1 — गलत: अंतिम ग्लासगो पैक्ट में 'phase down' (न कि 'phase out') शब्दावली है। भारत और चीन के हस्तक्षेप ने अंतिम दौर में 'phase out' को 'phase down' में बदल दिया — यह व्यापक रूप से रिपोर्ट किया गया और महत्वपूर्ण था।\n• कथन 2 — गलत: ग्लासगो क्लाइमेट पैक्ट एक COP निर्णय है, पेरिस समझौते का संशोधन नहीं। संधि संशोधन के लिए अंतरराष्ट्रीय कानून के तहत औपचारिक प्रक्रिया (पेरिस समझौते का अनुच्छेद 15) और पक्षों की स्वीकृति आवश्यक है। COP निर्णय सर्वसम्मति या मतदान से अपनाए जाते हैं लेकिन संधि पाठ को संशोधित नहीं करते।\n• कथन 3 — सही: Article 6 नियमावली का ग्लासगो में पूरा होना, छह वर्षों की विफलताओं (विशेषकर COP25 मैड्रिड में) के बाद, सही है।\n\nमूल्य वर्धन:\n• ग्लासगो पैक्ट ने देशों से 2022 के अंत तक अपने 2030 NDCs की समीक्षा और सुदृढ़ीकरण का अनुरोध भी किया।\n• 'Unabated coal' का अर्थ है बिना कार्बन कैप्चर और स्टोरेज के कोयला — CCS से लैस कोयला संयंत्र जारी रह सकते हैं।\n• भारत का 'phase down' हस्तक्षेप विकासशील देशों से आलोचना और समर्थन दोनों मिला।"
+    }
+  },
+  {
+    "uuid": "9f95ec45-55a5-4656-9f12-8a5176068272",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Relationship between Paris Agreement, UNFCCC, and Kyoto Protocol: Institutional Hierarchy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Paris Agreement, UNFCCC, Kyoto — all three in force simultaneously",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion (A) and Reason (R) regarding the relationship between the Paris Agreement, UNFCCC, and Kyoto Protocol:\n\nAssertion (A): The Paris Agreement did not replace or terminate either the UNFCCC or the Kyoto Protocol — all three instruments remain in force simultaneously, with the UNFCCC serving as the parent framework.\n\nReason (R): The Paris Agreement is governed by the CMA (Conference of the Parties serving as the Meeting of the Parties to the Paris Agreement), while the UNFCCC Secretariat and subsidiary bodies SBSTA and SBI serve all three instruments.\n\nWhich of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The Paris Agreement did not replace or terminate either the UNFCCC or the Kyoto Protocol. All three instruments remain in force simultaneously, with the UNFCCC as the parent convention.",
+        "Step 2: Is Reason (R) correct? — Yes. The CMA (Conference of the Parties serving as the Meeting of the Parties to the Paris Agreement) is indeed the governing body of the Paris Agreement, and the UNFCCC Secretariat and subsidiary bodies (SBSTA and SBI) serve all three instruments.",
+        "Step 3: Does R causally explain A? — No. The fact that the CMA is the governing body of the Paris Agreement does not explain why the Kyoto Protocol remains in force. Kyoto remains in force because it was not formally terminated or superseded — it covers the 2008–2020 period and its Doha Amendment extended it to 2020. The institutional arrangements (CMA, shared Secretariat) describe how the frameworks coexist but do not cause Kyoto to remain in force.",
+        "A correct + R correct + R does NOT causally explain A → correct_option = b."
+      ],
+      "upsc_trap_explanation": "Both A and R describe real features of the climate treaty architecture. The trap is in assuming that the institutional coexistence (shared Secretariat, CMA governing Paris) causes or explains why Kyoto remains in force. These are two independent facts about the system — one about governance, one about treaty validity. Kyoto continues because it was never formally terminated, not because of how the Paris Agreement is institutionally structured.",
+      "final_explanation": "The international climate treaty architecture is a layered system, not a succession of replacements.\n\nAssertion (A): Correct. The Paris Agreement operates 'under' the UNFCCC — it is not a replacement. The Kyoto Protocol's second commitment period ran 2013–2020 under the Doha Amendment. All three instruments coexist.\n\nReason (R): Correct. The CMA (COP serving as Meeting of Parties to the Paris Agreement) is the governing body for Paris. The UNFCCC Secretariat in Bonn serves all three instruments. SBSTA (Subsidiary Body for Scientific and Technological Advice) and SBI (Subsidiary Body for Implementation) also serve all three.\n\nCausal link: Absent. The CMA's role as governing body explains how Paris is governed, not why Kyoto remains in force. Kyoto's continued validity is a function of its own treaty terms and the lack of formal termination — independent of Paris's institutional arrangements.\n\nValue Addition:\n• Kyoto's second commitment period (2013–2020) was established via the Doha Amendment — which, ironically, was not ratified by enough parties to formally enter into force.\n• Post-2020 climate action is governed entirely by the Paris Agreement; Kyoto's first commitment period covered 2008–2012.\n• The UNFCCC has near-universal membership (198 parties) — making it the constitutional framework for all subsequent climate treaties."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौता, UNFCCC, और क्योटो प्रोटोकॉल के संबंध में निम्नलिखित कथन (A) और कारण (R) पर विचार करें:\n\nकथन (A): पेरिस समझौते ने न तो UNFCCC को बदला है और न ही क्योटो प्रोटोकॉल को समाप्त किया है — ये तीनों उपकरण एक साथ प्रभावी हैं, जिसमें UNFCCC अभिभावक ढांचे के रूप में कार्य करता है।\n\nकारण (R): पेरिस समझौते का शासन CMA (पार्टियों की बैठक के रूप में कार्यरत पार्टियों की सम्मेलन) द्वारा किया जाता है, जबकि UNFCCC सचिवालय और सहायक निकाय SBSTA और SBI तीनों उपकरणों की सेवा करते हैं।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। पेरिस समझौते ने न तो UNFCCC को बदला है और न ही क्योटो प्रोटोकॉल को समाप्त किया है। ये तीनों उपकरण एक साथ प्रभावी हैं, जिसमें UNFCCC अभिभावक संधि के रूप में कार्य करता है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। CMA (पेरिस समझौते की बैठक के रूप में कार्यरत पार्टियों की सम्मेलन) वास्तव में पेरिस समझौते का शासी निकाय है, और UNFCCC सचिवालय तथा सहायक निकाय (SBSTA और SBI) तीनों उपकरणों की सेवा करते हैं।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — नहीं। CMA का पेरिस समझौते का शासी निकाय होना यह नहीं बताता कि क्योटो प्रोटोकॉल क्यों प्रभावी बना हुआ है। क्योटो प्रभावी इसलिए है क्योंकि इसे औपचारिक रूप से समाप्त या प्रतिस्थापित नहीं किया गया — यह 2008–2020 अवधि को कवर करता है और इसका दोहा संशोधन इसे 2020 तक बढ़ाता है। संस्थागत व्यवस्थाएं (CMA, साझा सचिवालय) यह दर्शाती हैं कि ये ढांचे कैसे सह-अस्तित्व में हैं, लेकिन ये क्योटो के प्रभावी रहने का कारण नहीं हैं।",
+        "A सही + R सही + R, A को कारणात्मक रूप से नहीं समझाता → सही विकल्प = b।"
+      ],
+      "upsc_trap_explanation": "A और R दोनों जलवायु संधि संरचना की वास्तविक विशेषताओं का वर्णन करते हैं। जाल यह मान लेना है कि संस्थागत सह-अस्तित्व (साझा सचिवालय, पेरिस के लिए CMA का शासन) क्योटो के प्रभावी रहने का कारण या व्याख्या करता है। ये प्रणाली के दो स्वतंत्र तथ्य हैं — एक शासन के बारे में, दूसरा संधि की वैधता के बारे में। क्योटो इसलिए जारी है क्योंकि इसे कभी औपचारिक रूप से समाप्त नहीं किया गया, न कि पेरिस समझौते की संस्थागत संरचना के कारण।",
+      "final_explanation": "अंतरराष्ट्रीय जलवायु संधि संरचना एक स्तरित प्रणाली है, प्रतिस्थापन की श्रृंखला नहीं।\n\nकथन (A): सही। पेरिस समझौता UNFCCC के 'अधीन' कार्य करता है — यह प्रतिस्थापन नहीं है। क्योटो प्रोटोकॉल की दूसरी प्रतिबद्धता अवधि 2013–2020 दोहा संशोधन के तहत चली। ये तीनों उपकरण सह-अस्तित्व में हैं।\n\nकारण (R): सही। CMA (पेरिस समझौते की बैठक के रूप में कार्यरत पार्टियों की सम्मेलन) पेरिस का शासी निकाय है। बॉन में स्थित UNFCCC सचिवालय तीनों उपकरणों की सेवा करता है। SBSTA (वैज्ञानिक एवं तकनीकी सलाह के लिए सहायक निकाय) और SBI (कार्यान्वयन के लिए सहायक निकाय) भी तीनों की सेवा करते हैं।\n\nकारणात्मक संबंध: अनुपस्थित। CMA की शासी निकाय के रूप में भूमिका यह बताती है कि पेरिस का शासन कैसे होता है, न कि क्योटो क्यों प्रभावी बना रहता है। क्योटो की वैधता उसके अपने संधि नियमों और औपचारिक समाप्ति की कमी पर निर्भर करती है — पेरिस की संस्थागत व्यवस्थाओं से स्वतंत्र।\n\nमूल्य संवर्धन:\n• क्योटो की दूसरी प्रतिबद्धता अवधि (2013–2020) दोहा संशोधन के माध्यम से स्थापित हुई — जो विडंबना यह है कि इसे औपचारिक रूप से प्रभावी होने के लिए पर्याप्त पार्टियों ने अनुमोदित नहीं किया।\n• 2020 के बाद जलवायु कार्रवाई पूरी तरह से पेरिस समझौते द्वारा संचालित है; क्योटो की पहली प्रतिबद्धता अवधि 2008–2012 थी।\n• UNFCCC के लगभग सार्वभौमिक सदस्यता (198 पार्टियां) है — जो इसे सभी बाद की जलवायु संधियों के लिए संवैधानिक ढांचा बनाती है।"
+    }
+  },
+  {
+    "uuid": "336922bd-2cdb-4925-a1fb-e4fb04f01af4",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Just Transition: Concept, COP Decisions, and Relevance for Developing Economies"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Just Transition Work Programme — COP27; preamble reference in Paris Agreement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The formal 'Just Transition Work Programme' under the UNFCCC climate framework, designed to ensure that the energy transition does not disproportionately harm workers and communities dependent on fossil fuels, was established at which of the following?\n\n(a) COP21, Paris (2015) — as an operative programme mandated by Article 4 of the Paris Agreement\n(b) COP26, Glasgow (2021) — as a core outcome of the Glasgow Climate Pact\n(c) COP27, Sharm el-Sheikh (2022) — as a formal structured work programme under the UNFCCC\n(d) COP28, Dubai (2023) — in conjunction with the UAE Consensus on fossil fuel transition",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is the strong distractor because 'Just Transition' appears in the Paris Agreement's preamble, leading students to assume the formal Work Programme also originates from Paris (2015) rather than from COP27 (2022).",
+      "elimination_logic": [
+        "Eliminate (a): While 'just transition of the workforce' appears in the Paris Agreement's preamble, the formal Just Transition Work Programme was only established at COP27 (2022) — not at Paris (2015).",
+        "Eliminate (b): The Glasgow Climate Pact (COP26, 2021) referenced just transition but did not establish a formal Work Programme — that milestone came at COP27.",
+        "Confirm (c): The Just Transition Work Programme was formally established at COP27 (Sharm el-Sheikh, 2022) — this is the correct attribution.",
+        "Eliminate (d): COP28 built upon the Work Programme but did not establish it — the Work Programme's origin is COP27."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Just transition addresses the socioeconomic dimensions of decarbonization — particularly for workers in fossil fuel industries.\n\n• Option (a) — Incorrect: While the Paris Agreement's preamble references 'a just transition of the workforce,' this is aspirational preamble language — not an operative mandate, and the formal Work Programme was not established at Paris.\n• Option (b) — Incorrect: COP26 (Glasgow, 2021) referenced just transition in the Glasgow Climate Pact and in Presidency statements but did not establish a formal Work Programme.\n• Option (c) — Correct: The Just Transition Work Programme was formally established at COP27 (Sharm el-Sheikh, Egypt, 2022) to guide countries in ensuring energy transitions do not disproportionately harm fossil fuel-dependent workers and communities.\n• Option (d) — Incorrect: COP28 continued work under the Programme established at COP27 — it did not originate the Programme.\n\nValue Addition:\n• India's position on just transition emphasizes the right to development and historical emissions responsibility of developed nations.\n• Article 2(1)(b) of the Paris Agreement references adaptation 'in a manner that does not threaten food production' — a related equity concept.\n• Just transition has gained prominence as coal phase-down accelerates in developing coal-dependent economies like South Africa."
+    },
+    "hi": {
+      "display_text": "UNFCCC जलवायु ढांचे के तहत औपचारिक 'Just Transition Work Programme', जिसे यह सुनिश्चित करने के लिए डिज़ाइन किया गया है कि ऊर्जा संक्रमण जीवाश्म ईंधन पर निर्भर श्रमिकों और समुदायों को असमान रूप से नुकसान न पहुंचाए, निम्नलिखित में से किसमें स्थापित किया गया था?\n\n(a) COP21, पेरिस (2015) — पेरिस समझौते के अनुच्छेद 4 द्वारा अनिवार्य एक कार्यकारी कार्यक्रम के रूप में\n(b) COP26, ग्लासगो (2021) — ग्लासगो क्लाइमेट पैक्ट के एक मुख्य परिणाम के रूप में\n(c) COP27, शर्म अल-शेख (2022) — UNFCCC के तहत एक औपचारिक संरचित कार्य कार्यक्रम के रूप में\n(d) COP28, दुबई (2023) — UAE के जीवाश्म ईंधन संक्रमण पर सहमति के साथ संयुक्त रूप से",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि 'Just Transition' पेरिस समझौते के प्रस्तावना में आता है, जिससे छात्र यह मान लेते हैं कि औपचारिक कार्य कार्यक्रम भी पेरिस (2015) से उत्पन्न हुआ है न कि COP27 (2022) से।",
+      "elimination_logic": [
+        "(a) को हटाएं: जबकि 'just transition of the workforce' पेरिस समझौते की प्रस्तावना में आता है, औपचारिक Just Transition कार्य कार्यक्रम केवल COP27 (2022) में स्थापित किया गया था — पेरिस (2015) में नहीं।",
+        "(b) को हटाएं: ग्लासगो क्लाइमेट पैक्ट (COP26, 2021) ने just transition का उल्लेख किया लेकिन औपचारिक कार्य कार्यक्रम स्थापित नहीं किया — वह मील का पत्थर COP27 पर आया।",
+        "(c) को पुष्टि करें: Just Transition कार्य कार्यक्रम औपचारिक रूप से COP27 (शर्म अल-शेख, 2022) में स्थापित किया गया था — यह सही संदर्भ है।",
+        "(d) को हटाएं: COP28 ने कार्य कार्यक्रम को आगे बढ़ाया लेकिन इसे स्थापित नहीं किया — कार्य कार्यक्रम की उत्पत्ति COP27 है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Just transition डिकार्बोनाइजेशन के सामाजिक-आर्थिक आयामों को संबोधित करता है — विशेष रूप से जीवाश्म ईंधन उद्योगों में काम करने वाले श्रमिकों के लिए।\n\n• विकल्प (a) — गलत: जबकि पेरिस समझौते की प्रस्तावना में 'a just transition of the workforce' का उल्लेख है, यह केवल आकांक्षात्मक प्रस्तावना भाषा है — कोई कार्यकारी आदेश नहीं, और औपचारिक कार्य कार्यक्रम पेरिस में स्थापित नहीं हुआ।\n• विकल्प (b) — गलत: COP26 (ग्लासगो, 2021) ने ग्लासगो क्लाइमेट पैक्ट और अध्यक्षता वक्तव्यों में just transition का उल्लेख किया लेकिन औपचारिक कार्य कार्यक्रम स्थापित नहीं किया।\n• विकल्प (c) — सही: Just Transition कार्य कार्यक्रम औपचारिक रूप से COP27 (शर्म अल-शेख, मिस्र, 2022) में स्थापित किया गया ताकि देशों को यह सुनिश्चित करने में मार्गदर्शन मिल सके कि ऊर्जा संक्रमण जीवाश्म ईंधन पर निर्भर श्रमिकों और समुदायों को असमान रूप से नुकसान न पहुंचाए।\n• विकल्प (d) — गलत: COP28 ने COP27 में स्थापित कार्यक्रम के तहत कार्य जारी रखा — उसने कार्यक्रम की उत्पत्ति नहीं की।\n\nमूल्य संवर्धन:\n• भारत की just transition पर स्थिति विकास के अधिकार और विकसित देशों की ऐतिहासिक उत्सर्जन जिम्मेदारी पर जोर देती है।\n• पेरिस समझौते के अनुच्छेद 2(1)(b) में अनुकूलन का उल्लेख है 'ऐसे तरीके से जो खाद्य उत्पादन को खतरे में न डाले' — एक संबंधित समानता अवधारणा।\n• जैसे-जैसे दक्षिण अफ्रीका जैसे कोयला-निर्भर विकासशील अर्थव्यवस्थाओं में कोयला चरण-डाउन तेज हो रहा है, just transition की प्रासंगिकता बढ़ी है।"
+    }
+  },
+  {
+    "uuid": "99a527f6-815e-4f02-90ef-8c9b9b4eb038",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Loss and Damage: Article 8 and the Santiago Network to the COP28 Fund",
+        "Climate Finance: $100 Billion Goal, New Collective Quantified Goal (NCQG), and Article 9"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Article 8 — no liability/compensation; Loss and Damage fund COP28 operationalization",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Article 8, Paris Agreement",
+            "1. Fund operationalized at COP28 with World Bank designated as interim host"
+          ],
+          [
+            "B. Warsaw International Mechanism (WIM) for Loss and Damage",
+            "2. Established at COP19 (2013) to provide technical guidance on loss and damage — predates the Paris Agreement"
+          ],
+          [
+            "C. USD 100 billion per year climate finance commitment",
+            "3. Appears in the COP21 Decision document accompanying the Paris Agreement, NOT in the Paris Agreement text itself"
+          ],
+          [
+            "D. Dedicated Loss and Damage Fund",
+            "4. Acknowledges loss and damage but explicitly states it does NOT provide a basis for liability or compensation"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-4, C-1, D-3\n(b) A-4, B-1, C-2, D-3\n(c) A-3, B-2, C-4, D-1\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) incorrectly pairs the $100 billion goal with Article 9 text (it's in the COP Decision) and mismatches the Warsaw International Mechanism with COP27 — two entity-swaps that a partially prepared student may not catch.",
+      "elimination_logic": [
+        "A (Article 8, Paris Agreement) pairs with 4: acknowledges loss and damage BUT explicitly states it does NOT provide a basis for liability or compensation. This is a critical Article 8 provision.",
+        "B (Warsaw International Mechanism for Loss and Damage) pairs with 2: established at COP19 (Warsaw, 2013) — predates Paris Agreement; provides technical guidance on loss and damage.",
+        "C ($100 billion per year climate finance goal) pairs with 3: appears in the COP21 Decision document, NOT in the Paris Agreement text itself. Article 9 creates a binding finance obligation without specifying the amount.",
+        "D (Loss and Damage Fund operationalization) pairs with 1: completed at COP28 (Dubai, 2023) with World Bank designated as interim host. Correct sequence: A-4, B-2, C-3, D-1 → option (d)."
+      ],
+      "upsc_trap_explanation": "Two overlapping traps operate. First, Article 8's liability disclaimer is counterintuitive — why would a climate treaty about harm explicitly say it creates no liability? This political compromise protected major emitters. Second, the $100 billion appearing in the COP Decision rather than treaty text is a structural distinction most students overlook because the figure is so associated with the Paris process.",
+      "final_explanation": "Loss and damage and climate finance are two areas where precise textual location matters for UPSC.\n\nCorrect matches:\n• A (Article 8, Paris Agreement) → 4: Article 8 acknowledges loss and damage's importance but contains an explicit disclaimer that it does NOT involve or provide a basis for liability or compensation — a concession to developed countries.\n• B (Warsaw International Mechanism for Loss and Damage) → 2: Established at COP19 (Warsaw, 2013) to address loss and damage comprehensively, predating and continuing alongside the Paris Agreement.\n• C ($100 billion per year climate finance commitment) → 3: This figure appears in paragraph 53 of the COP21 Decision accompanying the Paris Agreement — NOT in Article 9 of the Agreement itself.\n• D (Loss and Damage Fund operationalization) → 1: At COP28 (Dubai, 2023), the fund's governance and hosting arrangements were agreed, with the World Bank serving as interim host for four years.\n\nValue Addition:\n• The liability disclaimer in Article 8 was non-negotiable for US participation — it prevents climate litigation arguments based on treaty text.\n• Santiago Network (COP25, 2019) provides technical assistance for loss and damage — distinct from the fund itself.\n• NCQG (to replace $100 billion floor) is mandated to be agreed at COP29 (Baku, 2024)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. अनुच्छेद 8, पेरिस समझौता",
+            "1. COP28 में फंड का संचालन, विश्व बैंक को अंतरिम मेजबान के रूप में नामित किया गया"
+          ],
+          [
+            "B. लॉस एंड डैमेज के लिए वारसॉ इंटरनेशनल मैकेनिज्म (WIM)",
+            "2. COP19 (2013) में स्थापित, लॉस एंड डैमेज पर तकनीकी मार्गदर्शन प्रदान करता है — पेरिस समझौते से पहले"
+          ],
+          [
+            "C. $100 बिलियन प्रति वर्ष जलवायु वित्त प्रतिबद्धता",
+            "3. पेरिस समझौते के साथ COP21 निर्णय दस्तावेज़ में प्रकट होता है, पेरिस समझौते के पाठ में नहीं"
+          ],
+          [
+            "D. समर्पित लॉस एंड डैमेज फंड",
+            "4. लॉस एंड डैमेज को स्वीकार करता है लेकिन स्पष्ट रूप से कहता है कि यह दायित्व या मुआवजे का आधार नहीं है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-4, C-1, D-3\n(b) A-4, B-1, C-2, D-3\n(c) A-3, B-2, C-4, D-1\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) गलत तरीके से $100 बिलियन लक्ष्य को अनुच्छेद 9 के पाठ के साथ जोड़ता है (यह COP निर्णय में है) और वारसॉ इंटरनेशनल मैकेनिज्म को COP27 के साथ गलत जोड़ता है — दो संस्थागत स्वैप जो आंशिक रूप से तैयार छात्र पकड़ नहीं पाते।",
+      "elimination_logic": [
+        "A (अनुच्छेद 8, पेरिस समझौता) को 4 के साथ जोड़ा गया है: लॉस एंड डैमेज को स्वीकार करता है लेकिन स्पष्ट रूप से कहता है कि यह दायित्व या मुआवजे का आधार प्रदान नहीं करता। यह अनुच्छेद 8 का एक महत्वपूर्ण प्रावधान है।",
+        "B (लॉस एंड डैमेज के लिए वारसॉ इंटरनेशनल मैकेनिज्म) को 2 के साथ जोड़ा गया है: COP19 (वारसॉ, 2013) में स्थापित — पेरिस समझौते से पहले; लॉस एंड डैमेज पर तकनीकी मार्गदर्शन प्रदान करता है।",
+        "C ($100 बिलियन प्रति वर्ष जलवायु वित्त लक्ष्य) को 3 के साथ जोड़ा गया है: COP21 निर्णय दस्तावेज़ में प्रकट होता है, पेरिस समझौते के पाठ में नहीं। अनुच्छेद 9 एक बाध्यकारी वित्तीय दायित्व बनाता है बिना राशि निर्दिष्ट किए।",
+        "D (लॉस एंड डैमेज फंड संचालन) को 1 के साथ जोड़ा गया है: COP28 (दुबई, 2023) में पूरा हुआ, विश्व बैंक को अंतरिम मेजबान के रूप में नामित किया गया। सही क्रम: A-4, B-2, C-3, D-1 → विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "दो ओवरलैपिंग जाल काम करते हैं। पहला, अनुच्छेद 8 का दायित्व अस्वीकरण विरोधाभासी है — एक जलवायु संधि जो नुकसान के बारे में है, वह स्पष्ट रूप से क्यों कहेगी कि यह कोई दायित्व नहीं बनाती? यह राजनीतिक समझौता प्रमुख उत्सर्जकों की रक्षा करता है। दूसरा, $100 बिलियन का COP निर्णय में होना न कि संधि के पाठ में होना एक संरचनात्मक भेद है जिसे अधिकांश छात्र नजरअंदाज कर देते हैं क्योंकि यह आंकड़ा पेरिस प्रक्रिया से बहुत जुड़ा हुआ है।",
+      "final_explanation": "लॉस एंड डैमेज और जलवायु वित्त दो ऐसे क्षेत्र हैं जहाँ UPSC के लिए सटीक पाठ स्थान महत्वपूर्ण है।\n\nसही मिलान:\n• A (अनुच्छेद 8, पेरिस समझौता) → 4: अनुच्छेद 8 लॉस एंड डैमेज के महत्व को स्वीकार करता है लेकिन स्पष्ट अस्वीकरण करता है कि यह दायित्व या मुआवजे का आधार नहीं है — विकसित देशों के लिए एक रियायत।\n• B (लॉस एंड डैमेज के लिए वारसॉ इंटरनेशनल मैकेनिज्म) → 2: COP19 (वारसॉ, 2013) में स्थापित, लॉस एंड डैमेज को व्यापक रूप से संबोधित करता है, पेरिस समझौते से पहले और उसके साथ जारी है।\n• C ($100 बिलियन प्रति वर्ष जलवायु वित्त प्रतिबद्धता) → 3: यह आंकड़ा पेरिस समझौते के साथ COP21 निर्णय के पैराग्राफ 53 में है — अनुच्छेद 9 में नहीं।\n• D (लॉस एंड डैमेज फंड संचालन) → 1: COP28 (दुबई, 2023) में फंड के शासन और मेजबानी व्यवस्था पर सहमति बनी, विश्व बैंक चार वर्षों के लिए अंतरिम मेजबान के रूप में।\n\nमूल्य संवर्धन:\n• अनुच्छेद 8 में दायित्व अस्वीकरण अमेरिकी भागीदारी के लिए गैर-परिवर्तनीय था — यह संधि के पाठ पर आधारित जलवायु मुकदमेबाजी को रोकता है।\n• सैंटियागो नेटवर्क (COP25, 2019) लॉस एंड डैमेज के लिए तकनीकी सहायता प्रदान करता है — फंड से अलग।\n• NCQG ($100 बिलियन की जगह) COP29 (बाकू, 2024) में सहमति के लिए अनिवार्य है।"
+    }
+  },
+  {
+    "uuid": "b5bd02bf-8708-43d5-bfae-ba88963fb9e8",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Carbon Markets under Article 6: Cooperative Approaches and the Rulebook",
+        "Transparency Framework: Enhanced Transparency Framework (ETF) vs. MRV under Kyoto"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Article 6.4 — new UN mechanism; Article 6.8 non-market approaches",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to cooperative mechanisms under Article 6 of the Paris Agreement, consider the following statements:\n\n1. Article 6.8 of the Paris Agreement provides for non-market cooperative approaches — allowing countries to cooperate on mitigation and adaptation without involving carbon credit trading or market mechanisms.\n2. The Clean Development Mechanism (CDM) under the Kyoto Protocol is directly continued and renamed as the Article 6.4 mechanism under the Paris Agreement, with all existing CDM credits automatically transferable to the new mechanism.\n3. Under Article 6.2, countries engaging in bilateral trade of Internationally Transferred Mitigation Outcomes (ITMOs) must apply 'corresponding adjustments' to their accounts to prevent double-counting of emission reductions.\n\nWhich of the statements given above is/are correct?\n\n(a) 2 and 3 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 6.8 of the Paris Agreement provides for non-market cooperative approaches — allowing countries to cooperate on mitigation and adaptation without involving carbon credit trading or market mechanisms.",
+          "verdict": "Correct",
+          "reason": "Article 6.8 explicitly covers non-market approaches, recognizing that some countries prefer cooperative arrangements that do not involve commodity trading of emission reduction units — important for countries philosophically opposed to carbon markets."
+        },
+        {
+          "statement": "The Clean Development Mechanism (CDM) under the Kyoto Protocol is directly continued and renamed as the Article 6.4 mechanism under the Paris Agreement, with all existing CDM credits automatically transferable to the new mechanism.",
+          "verdict": "Incorrect",
+          "reason": "Article 6.4 is a new UN-supervised mechanism that conceptually succeeds the CDM — it is NOT a direct continuation or renaming. Transition rules for existing CDM credits were negotiated at Glasgow (COP26) with conditions, not automatic transferability."
+        },
+        {
+          "statement": "Under Article 6.2, countries engaging in bilateral trade of Internationally Transferred Mitigation Outcomes (ITMOs) must apply 'corresponding adjustments' to their accounts to prevent double-counting of emission reductions.",
+          "verdict": "Correct",
+          "reason": "Corresponding adjustments — where the seller country adds emissions to its account and the buyer subtracts them — are the key mechanism preventing double-counting under Article 6.2. This was a major unresolved issue before COP26."
+        }
+      ],
+      "strong_distractor": "d — Option (d) '1, 2 and 3' is deceptive because Statement 2's characterization of CDM-to-Article 6.4 as a direct continuation sounds plausible given the conceptual succession, and students who do not know the specific rules on credit transition may accept it.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 6.8 non-market approaches — this is accurate and tests whether students know all three Article 6 tracks. Statement 1 is correct.",
+        "Evaluate Statement 2: Article 6.4 is a new mechanism — CDM credits are NOT automatically transferable. Glasgow rules set conditions for transition. 'Directly continued and renamed' and 'automatically transferable' are both false. Statement 2 is incorrect.",
+        "Evaluate Statement 3: Corresponding adjustments preventing double-counting under Article 6.2 — this is accurate and was the key breakthrough at Glasgow. Statement 3 is correct.",
+        "Statements 1 and 3 correct → option (c): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The CDM-to-Article 6.4 continuity trap is sophisticated because the conceptual succession is real but the operational details are not. Students who know 'Article 6.4 is the CDM successor' extrapolate to 'therefore it directly continues the CDM with automatic credit transfer,' which is factually wrong. The new mechanism has stricter environmental integrity requirements, different governance, and a separate supervisory body.",
+      "final_explanation": "Article 6's three tracks cover the full spectrum from pure market to pure non-market cooperation.\n\n• Statement 1 — Correct: Article 6.8 provides for non-market approaches — voluntary cooperation without creating, transferring, or using market instruments. This is particularly important for countries like Bolivia that philosophically reject carbon markets.\n• Statement 2 — Incorrect: Article 6.4 creates a NEW UN-supervised mechanism conceptually inspired by but distinct from the CDM. CDM credits are not automatically transferable — Glasgow rules (COP26) established conditioned transition, including a requirement that existing CDM credits meet new methodological standards before being eligible.\n• Statement 3 — Correct: Corresponding adjustments under Article 6.2 ensure that when Country A sells ITMOs to Country B, Country A adds those units back to its emissions account (preventing it from counting the same reductions twice). This was the core unresolved technical issue before Glasgow.\n\nValue Addition:\n• Article 6.4 includes a 'share of proceeds' for adaptation finance — unlike the CDM.\n• The Article 6.4 supervisory body is a separate UN body — distinct from the UNFCCC Secretariat.\n• COP29 (Baku, 2024) adopted new Article 6.4 standards, bringing the mechanism closer to full operationalization."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते के अनुच्छेद 6 के तहत सहयोगी मैकेनिज्म के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. पेरिस समझौते के अनुच्छेद 6.8 में गैर-बाजार सहयोगी दृष्टिकोणों का प्रावधान है — जो देशों को कार्बन क्रेडिट ट्रेडिंग या बाजार तंत्रों में शामिल हुए बिना उत्सर्जन में कमी और अनुकूलन पर सहयोग करने की अनुमति देता है।\n2. क्योटो प्रोटोकॉल के तहत क्लीन डेवलपमेंट मैकेनिज्म (CDM) को सीधे जारी रखा गया है और पेरिस समझौते के तहत अनुच्छेद 6.4 मैकेनिज्म के रूप में नामित किया गया है, जिसमें सभी मौजूदा CDM क्रेडिट्स स्वचालित रूप से नए मैकेनिज्म में स्थानांतरित हो जाते हैं।\n3. अनुच्छेद 6.2 के तहत, जो देश अंतरराष्ट्रीय रूप से हस्तांतरित उत्सर्जन परिणामों (ITMOs) के द्विपक्षीय व्यापार में संलग्न हैं, उन्हें उत्सर्जन में कमी के दोहरे गणना को रोकने के लिए अपने खातों में 'संबंधित समायोजन' लागू करने चाहिए।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "पेरिस समझौते के अनुच्छेद 6.8 में गैर-बाजार सहयोगी दृष्टिकोणों का प्रावधान है — जो देशों को कार्बन क्रेडिट ट्रेडिंग या बाजार तंत्रों में शामिल हुए बिना उत्सर्जन में कमी और अनुकूलन पर सहयोग करने की अनुमति देता है।",
+          "verdict": "Correct",
+          "reason": "अनुच्छेद 6.8 स्पष्ट रूप से गैर-बाजार दृष्टिकोणों को कवर करता है, यह मान्यता देते हुए कि कुछ देश ऐसे सहयोगी व्यवस्थाओं को प्राथमिकता देते हैं जिनमें उत्सर्जन कमी इकाइयों के वस्तु व्यापार शामिल नहीं होते — जो उन देशों के लिए महत्वपूर्ण है जो कार्बन बाजारों के दार्शनिक विरोधी हैं।"
+        },
+        {
+          "statement": "क्योटो प्रोटोकॉल के तहत क्लीन डेवलपमेंट मैकेनिज्म (CDM) को सीधे जारी रखा गया है और पेरिस समझौते के तहत अनुच्छेद 6.4 मैकेनिज्म के रूप में नामित किया गया है, जिसमें सभी मौजूदा CDM क्रेडिट्स स्वचालित रूप से नए मैकेनिज्म में स्थानांतरित हो जाते हैं।",
+          "verdict": "Incorrect",
+          "reason": "अनुच्छेद 6.4 एक नया संयुक्त राष्ट्र-नियंत्रित मैकेनिज्म है जो सैद्धांतिक रूप से CDM का उत्तराधिकारी है — यह सीधे जारी रखना या नाम बदलना नहीं है। मौजूदा CDM क्रेडिट्स के लिए संक्रमण नियम ग्लासगो (COP26) में शर्तों के साथ बातचीत किए गए थे, स्वचालित स्थानांतरण नहीं।"
+        },
+        {
+          "statement": "अनुच्छेद 6.2 के तहत, जो देश अंतरराष्ट्रीय रूप से हस्तांतरित उत्सर्जन परिणामों (ITMOs) के द्विपक्षीय व्यापार में संलग्न हैं, उन्हें उत्सर्जन में कमी के दोहरे गणना को रोकने के लिए अपने खातों में 'संबंधित समायोजन' लागू करने चाहिए।",
+          "verdict": "Correct",
+          "reason": "संबंधित समायोजन — जहां विक्रेता देश अपने खाते में उत्सर्जन जोड़ता है और खरीदार उसे घटाता है — अनुच्छेद 6.2 के तहत दोहरे गणना को रोकने का मुख्य तंत्र है। यह COP26 से पहले एक प्रमुख अनसुलझा मुद्दा था।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) '1, 2 और 3' भ्रामक है क्योंकि कथन 2 में CDM से अनुच्छेद 6.4 को सीधे जारी रखने का वर्णन सैद्धांतिक उत्तराधिकार के कारण संभावित लगता है, और जो छात्र क्रेडिट संक्रमण के विशिष्ट नियम नहीं जानते वे इसे स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 6.8 गैर-बाजार दृष्टिकोण — यह सटीक है और यह जांचता है कि छात्र अनुच्छेद 6 के तीनों ट्रैकों को जानते हैं। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: अनुच्छेद 6.4 एक नया मैकेनिज्म है — CDM क्रेडिट्स स्वचालित रूप से स्थानांतरित नहीं होते। ग्लासगो नियम संक्रमण के लिए शर्तें निर्धारित करते हैं। 'सीधे जारी रखा गया और नाम बदला गया' और 'स्वचालित रूप से स्थानांतरित' दोनों गलत हैं। कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: अनुच्छेद 6.2 के तहत दोहरे गणना को रोकने वाले संबंधित समायोजन — यह सटीक है और ग्लासगो में मुख्य सफलता थी। कथन 3 सही है।",
+        "कथन 1 और 3 सही → विकल्प (c): केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "CDM से अनुच्छेद 6.4 की निरंतरता का जाल जटिल है क्योंकि सैद्धांतिक उत्तराधिकार वास्तविक है लेकिन परिचालन विवरण नहीं। जो छात्र जानते हैं कि 'अनुच्छेद 6.4 CDM का उत्तराधिकारी है' वे यह गलत निष्कर्ष निकालते हैं कि 'इसलिए यह CDM को सीधे जारी रखता है और क्रेडिट स्वचालित रूप से स्थानांतरित होते हैं,' जो तथ्यात्मक रूप से गलत है। नया मैकेनिज्म अधिक सख्त पर्यावरणीय अखंडता आवश्यकताएं, अलग शासन और अलग पर्यवेक्षी निकाय रखता है।",
+      "final_explanation": "अनुच्छेद 6 के तीन ट्रैक शुद्ध बाजार से लेकर शुद्ध गैर-बाजार सहयोग तक पूरे स्पेक्ट्रम को कवर करते हैं।\n\n• कथन 1 — सही: अनुच्छेद 6.8 गैर-बाजार दृष्टिकोण प्रदान करता है — स्वैच्छिक सहयोग बिना बाजार उपकरणों के निर्माण, हस्तांतरण या उपयोग के। यह उन देशों के लिए विशेष रूप से महत्वपूर्ण है जैसे बोलीविया जो दार्शनिक रूप से कार्बन बाजारों का विरोध करते हैं।\n• कथन 2 — गलत: अनुच्छेद 6.4 एक नया संयुक्त राष्ट्र-नियंत्रित मैकेनिज्म बनाता है जो सैद्धांतिक रूप से CDM से प्रेरित है लेकिन उससे भिन्न है। CDM क्रेडिट्स स्वचालित रूप से स्थानांतरित नहीं होते — ग्लासगो नियम (COP26) ने शर्तों वाला संक्रमण स्थापित किया, जिसमें यह आवश्यकता शामिल है कि मौजूदा CDM क्रेडिट्स नए पद्धतिगत मानकों को पूरा करें तभी वे पात्र होंगे।\n• कथन 3 — सही: अनुच्छेद 6.2 के तहत संबंधित समायोजन सुनिश्चित करते हैं कि जब देश A ITMOs देश B को बेचता है, तो देश A उन इकाइयों को अपने उत्सर्जन खाते में वापस जोड़ता है (जिससे दोहरी गणना से बचा जाता है)। यह ग्लासगो से पहले का मुख्य अनसुलझा तकनीकी मुद्दा था।\n\nमूल्य संवर्धन:\n• अनुच्छेद 6.4 में अनुकूलन वित्त के लिए 'आय का हिस्सा' शामिल है — जो CDM में नहीं था।\n• अनुच्छेद 6.4 पर्यवेक्षी निकाय एक अलग संयुक्त राष्ट्र निकाय है — जो UNFCCC सचिवालय से अलग है।\n• COP29 (बाकू, 2024) ने नए अनुच्छेद 6.4 मानक अपनाए, जिससे मैकेनिज्म पूर्ण परिचालन के करीब आया।"
+    }
+  },
+  {
+    "uuid": "849bc8b9-1a12-429d-a685-483976a96a7f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Global Stocktake (GST): Mechanism, Frequency, and First Outcomes",
+        "COP28 Dubai Outcomes: First Global Stocktake and 'Transitioning Away' from Fossil Fuels"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "GST informs but does not mandate NDC revision",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Following the completion of the First Global Stocktake at COP28 in Dubai in 2023, which found that current collective NDC trajectories are insufficient to limit warming to 1.5°C, a developing country's climate ministry seeks legal advice on its treaty obligations. The country had submitted its updated NDC in 2022 — well within the progression principle — and its next regular NDC cycle is due in 2025.\n\nWhich of the following best describes the country's legal obligation under the Paris Agreement in light of the GST findings?\n\n(a) The country is immediately required to revise and resubmit a more ambitious NDC, as the GST directly triggers mandatory NDC revision for all Parties\n(b) The country is not legally required to immediately revise its current NDC; it must consider GST findings when preparing its next NDC at the regular five-year cycle\n(c) The country must respond to the GST within six months by submitting an explanation of why its individual NDC is insufficient and propose enhanced targets accordingly\n(d) The progression principle automatically requires the country to submit a revised NDC within 12 months of any GST finding that shows collective insufficiency",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is the strong distractor because students who know the GST is meant to drive ambition assume it directly triggers mandatory NDC revisions — conflating the soft pressure mechanism with a legal mandate.",
+      "elimination_logic": [
+        "The scenario describes a developing country receiving GST findings showing collective NDC insufficiency. The question is whether the country is now legally obligated to immediately revise its NDC.",
+        "Eliminate (a): The GST 'informs' NDC revision but does NOT mandate it. Article 14 says GST outcomes 'inform Parties in updating and enhancing their actions and support' — not 'require' revision.",
+        "Eliminate (c): GST assesses collective progress, not individual country performance. A single country's NDC is not separately evaluated by the GST.",
+        "Eliminate (d): The progression principle applies at the next regular NDC cycle (every 5 years) — not as an immediate obligation triggered by GST findings.",
+        "Confirm (b): The country must consider GST findings in its next NDC communication but is not legally required to immediately revise its current NDC. The GST creates political and informational pressure — not a binding legal mandate for immediate revision."
+      ],
+      "upsc_trap_explanation": "The word 'informs' in Article 14 is the operative legal term. Students substitute 'informs' with 'requires' or 'triggers' based on logical inference — if the GST shows insufficiency, surely countries must act. But the Paris Agreement's consent-based architecture was designed to avoid this inference. The soft pressure of the GST is precisely calibrated to influence without mandating — maintaining NDC sovereignty while creating accountability.",
+      "final_explanation": "The Global Stocktake operates as a soft pressure mechanism within the Paris Agreement's architecture.\n\nScenario analysis: A developing country receives the First GST findings (completed COP28, 2023) showing collective NDC insufficiency for 1.5°C. What is the country's legal obligation?\n\n• Option (a) — Incorrect: Article 14 explicitly says GST outcomes 'inform' Parties — not 'mandate' NDC revision. The GST creates no binding legal obligation to immediately revise an existing NDC.\n• Option (b) — Correct: The country must take note of GST findings and consider them when preparing its NEXT NDC at the regular 5-year cycle. The GST informs, not compels. Political and reputational pressure exists, but legal compulsion does not.\n• Option (c) — Incorrect: The GST assesses collective (not individual) progress. It cannot trigger obligations based on one country's individual shortfall.\n• Option (d) — Incorrect: The progression principle applies at the next NDC submission cycle — it does not create an emergency out-of-cycle revision obligation triggered by GST.\n\nValue Addition:\n• The First GST (COP28) did not mandate immediate NDC revisions but created political momentum for enhanced 2035 NDCs.\n• Countries were expected to submit new NDCs for 2035 (covering 10-year cycles) before COP30 (Belém, Brazil, 2025).\n• The CMA (Paris Agreement governing body) called on parties to submit new NDCs 'ambitious across all dimensions' informed by GST findings."
+    },
+    "hi": {
+      "display_text": "2023 में दुबई में COP28 में प्रथम ग्लोबल स्टॉकटेक (GST) पूरा होने के बाद, जिसमें पाया गया कि वर्तमान सामूहिक NDC प्रक्षेपवक्र 1.5°C तक तापमान सीमित करने के लिए अपर्याप्त हैं, एक विकासशील देश के जलवायु मंत्रालय ने अपने संधि दायित्वों पर कानूनी सलाह मांगी। देश ने 2022 में अपना अद्यतन NDC प्रस्तुत किया था — जो प्रगति सिद्धांत के भीतर था — और अगला नियमित NDC चक्र 2025 में है।\n\nGST निष्कर्षों के प्रकाश में पेरिस समझौते के तहत देश का कानूनी दायित्व निम्नलिखित में से कौन सा है?\n\n(a) देश को तुरंत अधिक महत्वाकांक्षी NDC संशोधित कर पुनः प्रस्तुत करना आवश्यक है, क्योंकि GST सभी पक्षकारों के लिए अनिवार्य NDC संशोधन को सीधे प्रेरित करता है\n(b) देश को अपने वर्तमान NDC को तुरंत संशोधित करने की कानूनी आवश्यकता नहीं है; इसे अपने अगले नियमित पांच-वर्षीय चक्र में NDC तैयार करते समय GST निष्कर्षों पर विचार करना होगा\n(c) देश को छह महीनों के भीतर GST को जवाब देना होगा, जिसमें यह स्पष्ट करना होगा कि उसका व्यक्तिगत NDC अपर्याप्त क्यों है और तदनुसार उन्नत लक्ष्य प्रस्तावित करने होंगे\n(d) प्रगति सिद्धांत स्वचालित रूप से देश को किसी भी GST निष्कर्ष के 12 महीनों के भीतर संशोधित NDC प्रस्तुत करने की आवश्यकता बनाता है जो सामूहिक अपर्याप्तता दिखाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is the strong distractor because students who know the GST is meant to drive ambition assume it directly triggers mandatory NDC revisions — conflating the soft pressure mechanism with a legal mandate.",
+      "elimination_logic": [
+        "परिदृश्य में एक विकासशील देश को GST निष्कर्ष प्राप्त हुए हैं जो सामूहिक NDC अपर्याप्तता दिखाते हैं। प्रश्न यह है कि क्या देश अब कानूनी रूप से अपने NDC को तुरंत संशोधित करने के लिए बाध्य है।",
+        "(a) को हटाएं: GST 'सूचित करता है' NDC संशोधन के लिए लेकिन इसे अनिवार्य नहीं करता। अनुच्छेद 14 कहता है कि GST परिणाम 'पक्षकारों को उनके कार्यों और समर्थन को अपडेट और बढ़ाने में सूचित करते हैं' — न कि संशोधन 'मांगते' हैं।",
+        "(c) को हटाएं: GST सामूहिक प्रगति का आकलन करता है, न कि किसी एक देश के प्रदर्शन का। एक देश के NDC का अलग से GST द्वारा मूल्यांकन नहीं किया जाता।",
+        "(d) को हटाएं: प्रगति सिद्धांत अगली नियमित NDC चक्र (हर 5 वर्ष) पर लागू होता है — GST निष्कर्षों से तुरंत लागू होने वाला दायित्व नहीं है।",
+        "(b) की पुष्टि करें: देश को GST निष्कर्षों को अपने अगले NDC संचार में विचार करना होगा लेकिन वर्तमान NDC को तुरंत संशोधित करने का कानूनी दायित्व नहीं है। GST राजनीतिक और सूचना दबाव बनाता है — बाध्यकारी कानूनी आदेश नहीं।"
+      ],
+      "upsc_trap_explanation": "अनुच्छेद 14 में 'सूचित करता है' शब्द कानूनी रूप से महत्वपूर्ण है। छात्र 'सूचित करता है' को 'मांगता है' या 'प्रेरित करता है' से बदल देते हैं, यह तर्क लगाकर कि यदि GST अपर्याप्तता दिखाता है तो देश अवश्य कार्रवाई करेंगे। लेकिन पेरिस समझौते की सहमति-आधारित संरचना इस निष्कर्ष से बचने के लिए डिज़ाइन की गई है। GST का सौम्य दबाव प्रभाव केवल प्रभाव डालने के लिए है, अनिवार्य करने के लिए नहीं — NDC संप्रभुता बनाए रखते हुए जवाबदेही बनाता है।",
+      "final_explanation": "ग्लोबल स्टॉकटेक (GST) पेरिस समझौते की संरचना में एक सौम्य दबाव तंत्र के रूप में कार्य करता है।\n\nपरिदृश्य विश्लेषण: एक विकासशील देश को प्रथम GST निष्कर्ष (COP28, 2023) प्राप्त हुए जो 1.5°C के लिए सामूहिक NDC अपर्याप्तता दिखाते हैं। देश का कानूनी दायित्व क्या है?\n\n• विकल्प (a) — गलत: अनुच्छेद 14 स्पष्ट रूप से कहता है कि GST परिणाम पक्षकारों को 'सूचित' करते हैं — NDC संशोधन को 'अनिवार्य' नहीं करते। GST तत्काल NDC संशोधन के लिए कोई बाध्यकारी कानूनी दायित्व नहीं बनाता।\n• विकल्प (b) — सही: देश को GST निष्कर्षों को ध्यान में रखना होगा और अपने अगले नियमित 5-वर्षीय NDC चक्र में उन्हें शामिल करना होगा। GST सूचित करता है, बाध्य नहीं करता। राजनीतिक और प्रतिष्ठात्मक दबाव है, लेकिन कानूनी बाध्यता नहीं।\n• विकल्प (c) — गलत: GST सामूहिक (व्यक्तिगत नहीं) प्रगति का आकलन करता है। यह किसी एक देश की कमी के आधार पर दायित्व नहीं उत्पन्न कर सकता।\n• विकल्प (d) — गलत: प्रगति सिद्धांत अगली NDC प्रस्तुतिकरण चक्र पर लागू होता है — यह GST द्वारा उत्पन्न तत्काल संशोधन दायित्व नहीं बनाता।\n\nमूल्य संवर्धन:\n• प्रथम GST (COP28) ने तत्काल NDC संशोधन अनिवार्य नहीं किया लेकिन 2035 के लिए उन्नत NDC के लिए राजनीतिक गति बनाई।\n• देशों से अपेक्षा थी कि वे COP30 (बेलम, ब्राजील, 2025) से पहले 2035 के लिए नए NDC प्रस्तुत करें (10-वर्षीय चक्रों को कवर करते हुए)।\n• CMA (पेरिस समझौते की शासी संस्था) ने पक्षकारों से GST निष्कर्षों से सूचित होकर 'सभी आयामों में महत्वाकांक्षी' नए NDC प्रस्तुत करने का आह्वान किया।"
+    }
+  },
+  {
+    "uuid": "ea18e5b6-3d22-4852-9dda-cd5f5325519c",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Common but Differentiated Responsibilities and Respective Capabilities (CBDR-RC) in Paris Agreement",
+        "Legal Architecture of the Paris Agreement: Binding vs. Non-Binding Elements"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Paris Agreement abandons Annex I binary; CBDR reformulated with 'national circumstances'",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the principle of Common but Differentiated Responsibilities and Respective Capabilities (CBDR-RC) as applied in the Paris Agreement, consider the following statements:\n\n1. The Paris Agreement retains the Annex I and Non-Annex I country classification of the UNFCCC, using it to differentiate between developed and developing country obligations within the NDC framework.\n2. The Paris Agreement's reformulation of CBDR-RC added the qualifier 'in the light of different national circumstances,' which effectively dilutes the historical responsibility language compared to the original UNFCCC formulation.\n3. Under the Paris Agreement, developed countries retain obligations for climate finance and technology transfer to developing countries, reflecting the CBDR-RC principle within the Agreement's provisions.\n\nWhich of the statements given above is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 2 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Paris Agreement retains the Annex I and Non-Annex I country classification of the UNFCCC, using it to differentiate between developed and developing country obligations within the NDC framework.",
+          "verdict": "Incorrect",
+          "reason": "The Paris Agreement deliberately moved away from the Annex I/Non-Annex I binary. All countries submit NDCs regardless of their Annex classification — the binary distinction for NDC obligations does not exist in the Paris Agreement's architecture."
+        },
+        {
+          "statement": "The Paris Agreement's reformulation of CBDR-RC added the qualifier 'in the light of different national circumstances,' which effectively dilutes the historical responsibility language compared to the original UNFCCC formulation.",
+          "verdict": "Correct",
+          "reason": "The phrase 'in the light of different national circumstances' was a deliberate addition in the Paris Agreement, moving away from fixed historical responsibility (which tied developed countries to greater obligations permanently) toward a more fluid assessment based on current circumstances."
+        },
+        {
+          "statement": "Under the Paris Agreement, developed countries retain obligations for climate finance and technology transfer to developing countries, reflecting the CBDR-RC principle within the Agreement's provisions.",
+          "verdict": "Correct",
+          "reason": "Articles 9 and 10 of the Paris Agreement maintain differentiated obligations for climate finance and technology transfer — developed countries 'shall provide' financial resources (Article 9) — reflecting CBDR-RC even without the Annex classification."
+        }
+      ],
+      "strong_distractor": "b — Option (b) '2 only' is deceptive because students who know the Paris Agreement moved away from the Annex binary may think Statement 2 (about 'national circumstances' dilution) is also incorrect — confusing movement away from Annex classification with abandonment of all CBDR-RC differentiation.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Paris Agreement does NOT use Annex I/Non-Annex I binary for NDC differentiation. All parties submit NDCs. Statement 1 is incorrect — this IS a 'not correct' statement.",
+        "Evaluate Statement 2: 'In the light of different national circumstances' was added to the CBDR formulation — this accurately describes a dilution of historical responsibility language. Statement 2 is correct.",
+        "Evaluate Statement 3: Articles 9 and 10 maintain developed country obligations for finance and technology transfer — CBDR-RC is preserved in these provisions even without Annex labels. Statement 3 is correct.",
+        "Only Statement 1 is NOT correct → option (a): 1 only."
+      ],
+      "upsc_trap_explanation": "The UNFCCC uses Annex I/Non-Annex I; the Kyoto Protocol operationalized this for binding targets; the Paris Agreement retains differentiation but drops the Annex labels for NDC purposes. Students who know differentiation exists in Paris assume it must be through the Annex framework — they correctly identify the principle (CBDR) but incorrectly assume the mechanism (Annex labels) is retained.",
+      "final_explanation": "The Paris Agreement restructured CBDR-RC without eliminating differentiation entirely.\n\n• Statement 1 — Incorrect: The Paris Agreement does NOT use the Annex I/Non-Annex I classification for NDC obligations. This binary was deliberately abandoned — all parties submit NDCs on the same procedural basis, with differentiation in content reflecting 'national circumstances.'\n• Statement 2 — Correct: The qualifying phrase 'in the light of different national circumstances' softens historical responsibility language, shifting from a permanent developed/developing binary to a dynamic assessment. This was a developed-country priority.\n• Statement 3 — Correct: Despite abandoning Annex labels for NDCs, the Paris Agreement preserves differentiation in finance (Article 9: developed countries 'shall provide') and technology (Article 10: support for developing countries). CBDR-RC survives without the Annex classification.\n\nValue Addition:\n• India argued that abandoning historical responsibility framing was inequitable — developing countries contributed less to cumulative GHG but face disproportionate impacts.\n• Annex II countries (under UNFCCC) had specific finance obligations — Paris Article 9 extends this expectation broadly to 'developed country Parties.'\n• The phrase 'other Parties in a position to do so' in Article 9 opens the door for voluntary contributions from non-Annex II countries — a diplomatic innovation."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते में लागू सामान्य लेकिन भेदभावपूर्ण जिम्मेदारियों और संबंधित क्षमताओं (CBDR-RC) के सिद्धांत के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. पेरिस समझौता UNFCCC के Annex I और Non-Annex I देश वर्गीकरण को बनाए रखता है, जिसका उपयोग NDC ढांचे में विकसित और विकासशील देशों के दायित्वों के बीच भेद करने के लिए किया जाता है।\n2. पेरिस समझौते ने CBDR-RC के पुनः सूत्रीकरण में 'विभिन्न राष्ट्रीय परिस्थितियों के प्रकाश में' उपसर्ग जोड़ा, जो मूल UNFCCC सूत्रीकरण की तुलना में ऐतिहासिक जिम्मेदारी भाषा को प्रभावी रूप से पतला करता है।\n3. पेरिस समझौते के तहत, विकसित देशों के पास विकासशील देशों को जलवायु वित्त और प्रौद्योगिकी हस्तांतरण के लिए दायित्व बने रहते हैं, जो समझौते के प्रावधानों में CBDR-RC सिद्धांत को दर्शाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 2\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Paris Agreement retains the Annex I and Non-Annex I country classification of the UNFCCC, using it to differentiate between developed and developing country obligations within the NDC framework.",
+          "verdict": "गलत",
+          "reason": "पेरिस समझौता जानबूझकर Annex I/Non-Annex I द्वैत से हट गया है। सभी देश अपनी Annex वर्गीकरण की परवाह किए बिना NDC प्रस्तुत करते हैं — NDC दायित्वों के लिए द्वैत भेद पेरिस समझौते की संरचना में मौजूद नहीं है।"
+        },
+        {
+          "statement": "The Paris Agreement's reformulation of CBDR-RC added the qualifier 'in the light of different national circumstances,' which effectively dilutes the historical responsibility language compared to the original UNFCCC formulation.",
+          "verdict": "सही",
+          "reason": "पेरिस समझौते में 'विभिन्न राष्ट्रीय परिस्थितियों के प्रकाश में' वाक्यांश को जानबूझकर जोड़ा गया था, जो स्थायी ऐतिहासिक जिम्मेदारी से हटकर वर्तमान परिस्थितियों के आधार पर अधिक लचीली मूल्यांकन प्रणाली की ओर ले जाता है।"
+        },
+        {
+          "statement": "Under the Paris Agreement, developed countries retain obligations for climate finance and technology transfer to developing countries, reflecting the CBDR-RC principle within the Agreement's provisions.",
+          "verdict": "सही",
+          "reason": "पेरिस समझौते के अनुच्छेद 9 और 10 में जलवायु वित्त और प्रौद्योगिकी हस्तांतरण के लिए विकसित देशों के दायित्व बनाए गए हैं — Annex वर्गीकरण के बिना भी CBDR-RC प्रतिबिंबित होता है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) 'केवल 2' भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि पेरिस समझौता Annex द्वैत से हट गया है, वे कथन 2 (राष्ट्रीय परिस्थितियों के प्रकाश में) को भी गलत समझ सकते हैं — Annex वर्गीकरण से हटने को सभी CBDR-RC भेदभाव के परित्याग के रूप में भ्रमित करना।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: पेरिस समझौता NDC भेदभाव के लिए Annex I/Non-Annex I द्वैत का उपयोग नहीं करता। सभी पक्ष NDC प्रस्तुत करते हैं। कथन 1 गलत है — यह 'सही नहीं है'।",
+        "कथन 2 का मूल्यांकन करें: 'विभिन्न राष्ट्रीय परिस्थितियों के प्रकाश में' CBDR सूत्रीकरण में जोड़ा गया था — यह ऐतिहासिक जिम्मेदारी भाषा के पतलापन को सही रूप से दर्शाता है। कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: अनुच्छेद 9 और 10 विकसित देशों के वित्त और प्रौद्योगिकी हस्तांतरण के दायित्व बनाए रखते हैं — Annex लेबल के बिना भी CBDR-RC संरक्षित है। कथन 3 सही है।",
+        "केवल कथन 1 सही नहीं है → विकल्प (a): केवल 1।"
+      ],
+      "upsc_trap_explanation": "UNFCCC Annex I/Non-Annex I का उपयोग करता है; क्योटो प्रोटोकॉल ने इसे बाध्यकारी लक्ष्यों के लिए लागू किया; पेरिस समझौता भेदभाव बनाए रखता है लेकिन NDC उद्देश्यों के लिए Annex लेबल छोड़ देता है। जो छात्र जानते हैं कि पेरिस में भेदभाव है, वे मानते हैं कि यह Annex ढांचे के माध्यम से होना चाहिए — वे सिद्धांत (CBDR) सही पहचानते हैं लेकिन तंत्र (Annex लेबल) को बनाए रखना गलत समझते हैं।",
+      "final_explanation": "पेरिस समझौते ने CBDR-RC को पूरी तरह समाप्त किए बिना पुनर्गठित किया है।\n\n• कथन 1 — गलत: पेरिस समझौता NDC दायित्वों के लिए Annex I/Non-Annex I वर्गीकरण का उपयोग नहीं करता। यह द्वैत जानबूझकर छोड़ा गया — सभी पक्ष समान प्रक्रिया के आधार पर NDC प्रस्तुत करते हैं, जिसमें 'राष्ट्रीय परिस्थितियों' के अनुसार भेदभाव होता है।\n• कथन 2 — सही: 'विभिन्न राष्ट्रीय परिस्थितियों के प्रकाश में' वाक्यांश ऐतिहासिक जिम्मेदारी भाषा को नरम करता है, स्थायी विकसित/विकासशील द्वैत से गतिशील मूल्यांकन की ओर ले जाता है। यह विकसित देशों की प्राथमिकता थी।\n• कथन 3 — सही: NDC के लिए Annex लेबल छोड़ने के बावजूद, पेरिस समझौता वित्त (अनुच्छेद 9: विकसित देशों को वित्तीय संसाधन प्रदान करना होगा) और प्रौद्योगिकी (अनुच्छेद 10: विकासशील देशों के लिए समर्थन) में भेदभाव बनाए रखता है। Annex वर्गीकरण के बिना भी CBDR-RC जीवित है।\n\nमूल्य संवर्धन:\n• भारत ने तर्क दिया कि ऐतिहासिक जिम्मेदारी के फ्रेम को छोड़ना अन्यायपूर्ण है — विकासशील देशों ने कम GHG उत्सर्जन किया लेकिन असमान प्रभाव झेले।\n• Annex II देशों (UNFCCC के तहत) के पास विशिष्ट वित्तीय दायित्व थे — पेरिस अनुच्छेद 9 इस अपेक्षा को व्यापक रूप से 'विकसित देश पक्षों' तक बढ़ाता है।\n• अनुच्छेद 9 में 'अन्य पक्ष जो ऐसा करने की स्थिति में हैं' वाक्यांश गैर-Annex II देशों से स्वैच्छिक योगदान के लिए द्वार खोलता है — एक कूटनीतिक नवाचार।"
+    }
+  },
+  {
+    "uuid": "ab10254d-ea09-40e6-8a18-4163739d57b0",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Relationship between Paris Agreement, UNFCCC, and Kyoto Protocol: Institutional Hierarchy",
+        "Paris Agreement's Entry into Force: Threshold, Ratification, and US Withdrawal/Re-entry"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CMA — governing body of Paris Agreement only; COP serves UNFCCC and Kyoto",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four institutional bodies serve all three of the major international climate instruments — the UNFCCC, the Kyoto Protocol, and the Paris Agreement — simultaneously, while one serves exclusively a single instrument. Which of the following does NOT belong to the same group as the other three?\n\n(a) CMA — Conference of the Parties serving as the Meeting of the Parties to the Paris Agreement\n(b) UNFCCC Secretariat (Bonn)\n(c) SBSTA — Subsidiary Body for Scientific and Technological Advice\n(d) SBI — Subsidiary Body for Implementation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) 'UNFCCC Secretariat' is the strong distractor because students know it serves the Paris Agreement and assume it serves ONLY the Paris Agreement — not realizing it serves all three instruments simultaneously, making it different from the CMA.",
+      "elimination_logic": [
+        "Identify which body serves ALL THREE instruments (UNFCCC, Kyoto Protocol, and Paris Agreement) vs. which serves ONLY one.",
+        "UNFCCC Secretariat (Bonn): serves all three instruments — this is shared infrastructure. Belongs to the 'serving multiple instruments' group.",
+        "SBSTA and SBI (subsidiary bodies): serve all three instruments — technical and implementation support for UNFCCC, Kyoto, and Paris. Belong to the same group.",
+        "CMA (Conference of Parties serving as Meeting of Parties to the Paris Agreement): serves ONLY the Paris Agreement — it is the DEDICATED governing body of Paris, not of UNFCCC or Kyoto. This is the odd one out — it does NOT serve all three instruments."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The institutional architecture of international climate governance is layered with shared and exclusive bodies.\n\n• Option (a) — The ODD ONE OUT: The CMA (Conference of the Parties serving as the Meeting of the Parties to the Paris Agreement) governs ONLY the Paris Agreement. It does not serve the UNFCCC directly or the Kyoto Protocol.\n• Option (b) — Belongs with the group: The UNFCCC Secretariat (Bonn) provides administrative services for all three instruments — UNFCCC, Kyoto Protocol, and Paris Agreement.\n• Option (c) — Belongs with the group: The SBSTA (Subsidiary Body for Scientific and Technological Advice) serves all three instruments, providing technical analysis across conventions.\n• Option (d) — Belongs with the group: The SBI (Subsidiary Body for Implementation) also serves all three instruments, overseeing implementation issues for parties under all three agreements.\n\nValue Addition:\n• COP (Conference of Parties to UNFCCC) and CMP (for Kyoto Protocol) meet alongside CMA — all three governing bodies convene simultaneously at the annual COP meetings.\n• The CMA formally convenes only when a COP is in session — it does not hold separate meetings.\n• A country can be a Party to UNFCCC without being a Party to either Kyoto or Paris — they are legally distinct instruments."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार संस्थागत निकायों में से तीन सभी तीन प्रमुख अंतरराष्ट्रीय जलवायु उपकरणों — UNFCCC, क्योटो प्रोटोकॉल, और पेरिस समझौते — की एक साथ सेवा करते हैं, जबकि एक केवल एक उपकरण की सेवा करता है। निम्नलिखित में से कौन सा अन्य तीनों के समान समूह में नहीं आता?\n\n(a) CMA — पेरिस समझौते के लिए पार्टियों की बैठक के रूप में कार्यरत कॉन्फ्रेंस ऑफ पार्टीज़\n(b) UNFCCC सचिवालय (बॉन)\n(c) SBSTA — वैज्ञानिक और तकनीकी सलाह के लिए सहायक निकाय\n(d) SBI — कार्यान्वयन के लिए सहायक निकाय",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) 'UNFCCC सचिवालय' एक मजबूत भ्रम है क्योंकि छात्र जानते हैं कि यह पेरिस समझौते की सेवा करता है और मान लेते हैं कि यह केवल पेरिस समझौते की सेवा करता है — यह नहीं समझते कि यह तीनों उपकरणों की एक साथ सेवा करता है, जो इसे CMA से अलग बनाता है।",
+      "elimination_logic": [
+        "पहचानें कि कौन सा निकाय तीनों उपकरणों (UNFCCC, क्योटो प्रोटोकॉल, और पेरिस समझौता) की सेवा करता है और कौन केवल एक की।",
+        "UNFCCC सचिवालय (बॉन): तीनों उपकरणों की सेवा करता है — यह साझा संरचना है। यह 'कई उपकरणों की सेवा करने वाले' समूह में आता है।",
+        "SBSTA और SBI (सहायक निकाय): तीनों उपकरणों की सेवा करते हैं — UNFCCC, क्योटो, और पेरिस के लिए तकनीकी और कार्यान्वयन समर्थन। ये भी उसी समूह में आते हैं।",
+        "CMA (पेरिस समझौते के लिए पार्टियों की बैठक के रूप में कार्यरत कॉन्फ्रेंस ऑफ पार्टीज़): केवल पेरिस समझौते की सेवा करता है — यह पेरिस का समर्पित शासी निकाय है, न कि UNFCCC या क्योटो का। यह अलग है — यह तीनों उपकरणों की सेवा नहीं करता।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अंतरराष्ट्रीय जलवायु शासन की संस्थागत संरचना साझा और विशिष्ट निकायों की परतों में विभाजित है।\n\n• विकल्प (a) — अलग निकाय: CMA (पेरिस समझौते के लिए पार्टियों की बैठक के रूप में कार्यरत कॉन्फ्रेंस ऑफ पार्टीज़) केवल पेरिस समझौते का शासन करता है। यह सीधे UNFCCC या क्योटो प्रोटोकॉल की सेवा नहीं करता।\n• विकल्प (b) — समूह के साथ: UNFCCC सचिवालय (बॉन) तीनों उपकरणों — UNFCCC, क्योटो प्रोटोकॉल, और पेरिस समझौते — के लिए प्रशासनिक सेवाएं प्रदान करता है।\n• विकल्प (c) — समूह के साथ: SBSTA (वैज्ञानिक और तकनीकी सलाह के लिए सहायक निकाय) तीनों उपकरणों की सेवा करता है, सम्मेलनों में तकनीकी विश्लेषण प्रदान करता है।\n• विकल्प (d) — समूह के साथ: SBI (कार्यान्वयन के लिए सहायक निकाय) भी तीनों उपकरणों की सेवा करता है, सभी तीन समझौतों के तहत पार्टियों के कार्यान्वयन मुद्दों की देखरेख करता है।\n\nमूल्यवर्धन:\n• COP (UNFCCC के लिए पार्टियों की बैठक) और CMP (क्योटो प्रोटोकॉल के लिए) CMA के साथ साथ बैठक करते हैं — तीनों शासी निकाय वार्षिक COP बैठकों में एक साथ मिलते हैं।\n• CMA औपचारिक रूप से केवल तब ही बैठक करता है जब COP सत्र में हो — यह अलग बैठकें नहीं करता।\n• कोई देश UNFCCC का पक्षकार हो सकता है बिना क्योटो या पेरिस का पक्षकार हुए — ये कानूनी रूप से अलग उपकरण हैं।"
+    }
+  },
+  {
+    "uuid": "c188f75e-25ab-481d-a6d1-6e24f8fd6fe4",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Transparency Framework: Enhanced Transparency Framework (ETF) vs. MRV under Kyoto",
+        "Green Climate Fund (GCF): Role, Governance, and Replenishment"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "BTRs from 2024; GCF Incheon; GEF multi-convention; ETF single framework",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I with List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Biennial Transparency Reports (BTRs)",
+            "1. Older multi-convention fund serving climate, biodiversity, land degradation, and chemicals conventions simultaneously"
+          ],
+          [
+            "B. Global Environment Facility (GEF)",
+            "2. Single unified reporting framework under Article 13 of the Paris Agreement, replacing the Kyoto Protocol's two-tier MRV system with built-in flexibility for developing countries"
+          ],
+          [
+            "C. Green Climate Fund (GCF)",
+            "3. New reporting format submitted by all Parties from 2024, replacing Biennial Reports and Biennial Update Reports under the Kyoto era"
+          ],
+          [
+            "D. Enhanced Transparency Framework (ETF)",
+            "4. Exclusively climate-focused fund established at COP16 Cancun, operationalized at COP17 Durban, and headquartered in Incheon, South Korea"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-4, C-1, D-3\n(b) A-3, B-4, C-1, D-2\n(c) A-1, B-3, C-2, D-4\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) incorrectly pairs GEF with 'climate-only' and GCF with 'multi-convention,' which some students may accept because they know both exist in the UNFCCC space but do not remember which serves multiple conventions.",
+      "elimination_logic": [
+        "A (Biennial Transparency Reports — BTRs): Introduced under Article 13's Enhanced Transparency Framework; all parties submit from 2024. They replace BRs and BURs from the Kyoto era. Match A with 3.",
+        "B (Global Environment Facility — GEF): Older institution serving multiple environmental conventions including biodiversity (CBD), desertification (UNCCD), chemicals, ozone, AND climate. NOT exclusively climate. Match B with 1.",
+        "C (Green Climate Fund — GCF): Established at COP16 Cancun; operationalized COP17 Durban; headquartered Incheon, South Korea. Match C with 4.",
+        "D (Enhanced Transparency Framework — ETF): Single unified framework for all parties under Article 13, replacing Kyoto's dual-track MRV with built-in flexibility for developing countries. Match D with 2. Correct: A-3, B-1, C-4, D-2 → option (d)."
+      ],
+      "upsc_trap_explanation": "GEF and GCF are the most commonly confused climate finance institutions. Both have 'G' acronyms, both are associated with UNFCCC, and both provide environmental finance. The critical distinctions — GEF's age (1991/1994), multi-convention mandate, and Washington D.C. CEO office vs. GCF's climate exclusivity and Incheon location — are exactly the kind of precision UPSC tests. The entity-swap trap here exploits the similar names and overlapping contexts.",
+      "final_explanation": "Distinguishing Paris Agreement's transparency and finance institutions from older UNFCCC mechanisms tests precise institutional knowledge.\n\nCorrect matches:\n• A (Biennial Transparency Reports) → 3: BTRs are the new reporting format under the ETF, submitted by all parties from 2024, replacing the dual-track BRs (developed) and BURs (developing) from the Kyoto era.\n• B (Global Environment Facility — GEF) → 1: GEF is a multi-convention fund established in 1991/1994 that serves the UNFCCC, CBD, UNCCD, Stockholm Convention, and others. It is NOT exclusively climate-focused.\n• C (Green Climate Fund — GCF) → 4: GCF is exclusively climate-focused. Established COP16 Cancun (2010), operationalized COP17 Durban (2011), headquartered in Incheon, South Korea.\n• D (Enhanced Transparency Framework — ETF) → 2: Single unified framework under Article 13 replacing Kyoto's two-tier MRV; flexibility for developing countries but same framework standards.\n\nTrap pairing: B and C are conceptually adjacent — students must know GEF (older, multi-convention) vs. GCF (newer, climate-only) to avoid the entity-swap.\n\nValue Addition:\n• GEF serves as the financial mechanism for UNFCCC, CBD, and UNCCD simultaneously — a unique role.\n• India has received GEF funding for biodiversity and land degradation projects.\n• The first BTR cycle will provide comprehensive data on all parties' emissions and climate action progress for the Second GST."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I को सूची II से मिलाएं:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. द्विवार्षिक पारदर्शिता रिपोर्ट (BTRs)",
+            "1. पुराना बहु-संधि निधि जो जलवायु, जैव विविधता, भूमि क्षरण, और रसायन संधियों की एक साथ सेवा करता है"
+          ],
+          [
+            "B. वैश्विक पर्यावरण सुविधा (GEF)",
+            "2. पेरिस समझौते के अनुच्छेद 13 के तहत एकल एकीकृत रिपोर्टिंग ढांचा, जो क्योटो प्रोटोकॉल के द्वि-स्तरीय MRV प्रणाली की जगह लेता है और विकासशील देशों के लिए अंतर्निहित लचीलापन प्रदान करता है"
+          ],
+          [
+            "C. ग्रीन क्लाइमेट फंड (GCF)",
+            "3. नया रिपोर्टिंग प्रारूप जो सभी पक्षों द्वारा 2024 से प्रस्तुत किया जाता है, और क्योटो युग के द्विवार्षिक रिपोर्ट और द्विवार्षिक अद्यतन रिपोर्ट की जगह लेता है"
+          ],
+          [
+            "D. उन्नत पारदर्शिता ढांचा (ETF)",
+            "4. केवल जलवायु केंद्रित निधि, जो COP16 Cancun में स्थापित, COP17 Durban में परिचालित, और मुख्यालय Incheon, दक्षिण कोरिया में है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-4, C-1, D-3\n(b) A-3, B-4, C-1, D-2\n(c) A-1, B-3, C-2, D-4\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) गलत तरीके से GEF को 'केवल जलवायु' और GCF को 'बहु-संधि' के साथ जोड़ता है, जिसे कुछ छात्र इसलिए स्वीकार कर सकते हैं क्योंकि वे जानते हैं कि दोनों UNFCCC क्षेत्र में हैं लेकिन याद नहीं रखते कि कौन-कौन सी बहु-संधि सेवा करता है।",
+      "elimination_logic": [
+        "A (द्विवार्षिक पारदर्शिता रिपोर्ट — BTRs): अनुच्छेद 13 के अंतर्गत उन्नत पारदर्शिता ढांचे के तहत प्रस्तुत; सभी पक्ष 2024 से प्रस्तुत करते हैं। ये क्योटो युग की BRs और BURs की जगह लेते हैं। A को 3 से मिलाएं।",
+        "B (वैश्विक पर्यावरण सुविधा — GEF): पुराना संस्थान जो जैव विविधता (CBD), मरुस्थलीकरण (UNCCD), रसायन, ओजोन, और जलवायु सहित कई पर्यावरणीय संधियों की सेवा करता है। केवल जलवायु के लिए नहीं। B को 1 से मिलाएं।",
+        "C (ग्रीन क्लाइमेट फंड — GCF): COP16 Cancun में स्थापित; COP17 Durban में परिचालित; मुख्यालय Incheon, दक्षिण कोरिया। C को 4 से मिलाएं।",
+        "D (उन्नत पारदर्शिता ढांचा — ETF): अनुच्छेद 13 के तहत सभी पक्षों के लिए एकल एकीकृत ढांचा, क्योटो के द्वि-मार्ग MRV की जगह, विकासशील देशों के लिए अंतर्निहित लचीलापन। D को 2 से मिलाएं। सही: A-3, B-1, C-4, D-2 → विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "GEF और GCF जलवायु वित्त संस्थान हैं जिन्हें अक्सर भ्रमित किया जाता है। दोनों के नाम में 'G' है, दोनों UNFCCC से जुड़े हैं, और दोनों पर्यावरण वित्त प्रदान करते हैं। मुख्य अंतर — GEF की स्थापना (1991/1994), बहु-संधि कार्य, और वाशिंगटन डी.सी. मुख्यालय बनाम GCF की केवल जलवायु केंद्रितता और Incheon स्थान — ये UPSC में परिशुद्धता के लिए परीक्षण होते हैं। यहाँ नाम और संदर्भों की समानता का उपयोग कर भ्रम पैदा किया गया है।",
+      "final_explanation": "पेरिस समझौते के पारदर्शिता और वित्त संस्थानों को पुराने UNFCCC तंत्रों से अलग करना सटीक संस्थागत ज्ञान की परीक्षा है।\n\nसही मिलान:\n• A (द्विवार्षिक पारदर्शिता रिपोर्ट) → 3: BTRs ETF के तहत नया रिपोर्टिंग प्रारूप है, जो सभी पक्षों द्वारा 2024 से प्रस्तुत किया जाता है, और क्योटो युग के द्वि-मार्ग BRs (विकसित) और BURs (विकासशील) की जगह लेता है।\n• B (वैश्विक पर्यावरण सुविधा — GEF) → 1: GEF एक बहु-संधि निधि है जो 1991/1994 में स्थापित हुई और UNFCCC, CBD, UNCCD, स्टॉकहोम संधि आदि की सेवा करती है। यह केवल जलवायु केंद्रित नहीं है।\n• C (ग्रीन क्लाइमेट फंड — GCF) → 4: GCF केवल जलवायु केंद्रित है। COP16 Cancun (2010) में स्थापित, COP17 Durban (2011) में परिचालित, मुख्यालय Incheon, दक्षिण कोरिया।\n• D (उन्नत पारदर्शिता ढांचा — ETF) → 2: अनुच्छेद 13 के तहत एकल एकीकृत ढांचा जो क्योटो के द्वि-स्तरीय MRV को बदलता है; विकासशील देशों के लिए लचीलापन लेकिन समान मानक।\n\nफंदा मिलान: B और C अवधारणात्मक रूप से निकट हैं — छात्रों को GEF (पुराना, बहु-संधि) और GCF (नया, केवल जलवायु) को जानना चाहिए ताकि भ्रम से बचा जा सके।\n\nमूल्यवर्धन:\n• GEF एक साथ UNFCCC, CBD, और UNCCD के लिए वित्तीय तंत्र के रूप में कार्य करता है — एक अनूठी भूमिका।\n• भारत ने जैव विविधता और भूमि क्षरण परियोजनाओं के लिए GEF निधि प्राप्त की है।\n• पहला BTR चक्र सभी पक्षों के उत्सर्जन और जलवायु कार्रवाई प्रगति पर व्यापक डेटा प्रदान करेगा, जो दूसरे GST के लिए है।"
+    }
+  },
+  {
+    "uuid": "cab555f7-68de-4b72-8052-12a6dbe64456",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "India's NDC Commitments: Original (2015), Updated (2022), and Long-Term Strategy",
+        "Common but Differentiated Responsibilities and Respective Capabilities (CBDR-RC) in Paris Agreement"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "India's NDC — intensity-based only; no absolute emission reduction commitment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A climate policy analyst reviewing India's updated NDC (submitted in 2022) claims that India has committed to reducing its total greenhouse gas emissions by 45% below 2005 levels by 2030, bringing it in line with absolute emission reduction targets set by major developed economies. A second analyst disputes this characterization.\n\nWhich of the following best describes India's actual commitment in its updated 2022 NDC?\n\n(a) India has committed to absolute emission reductions consistent with a pathway to its announced 2070 net zero target, making the first analyst's characterization broadly correct\n(b) India has committed to implementing a carbon tax mechanism that would achieve a 45% reduction in emissions-intensive industries by 2030, targeting the same outcome through a different mechanism\n(c) India has committed to reducing the emissions intensity of its GDP by 45% by 2030 compared to 2005 levels — meaning emissions per unit of economic output fall, but total absolute emissions are not capped\n(d) India has committed to peaking its greenhouse gas emissions before 2030 and then achieving absolute reductions, consistent with the Glasgow Climate Pact's ambition expectations",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because India did announce a 2070 net zero target (an 'absolute' endpoint), and students may conflate this long-term declaration with a current NDC absolute reduction commitment.",
+      "elimination_logic": [
+        "The scenario asks what type of emission reduction commitment India has formally made in its NDC — the key distinction is intensity-based vs. absolute.",
+        "Eliminate (a): India's NDC does not commit to absolute emission reductions. The 2070 net zero announcement is a declaratory long-term goal outside the NDC. The NDC contains only intensity (per-GDP) targets.",
+        "Eliminate (b): India has not committed to a carbon tax or any specific domestic policy instrument in its NDC — NDCs describe outcomes, not instruments.",
+        "Confirm (c): India's NDC targets are emissions intensity reductions — 45% reduction in emissions per unit of GDP by 2030 compared to 2005 levels. This is not an absolute cap.",
+        "Eliminate (d): India has not committed to peak emissions by a specific year in its NDC — unlike China, which committed to peaking before 2030."
+      ],
+      "upsc_trap_explanation": "The 2070 net zero announcement is the deliberate trap bait. Students who associate 'India' with '2070 net zero' and 'COP26' correctly recall the announcement but incorrectly infer that it constitutes an absolute emission reduction commitment in India's NDC. The pathway from announcement to NDC formalization has not occurred — India's updated 2022 NDC is strictly intensity-based, and this distinction is the keystone of India's climate negotiating position.",
+      "final_explanation": "India's NDC reflects its development-first climate diplomacy — accepting relative improvement while preserving economic growth space.\n\nScenario analysis: An analyst claims India's NDC obligates it to cut total greenhouse gas output by 45% below 2005 levels. This is factually wrong.\n\n• Option (a) — Incorrect: India has announced a 2070 net zero aspiration, but this is NOT an NDC commitment. The NDC contains no absolute emission reduction target. Total emissions can — and are expected to — continue rising as India industrializes.\n• Option (b) — Incorrect: NDCs specify outcome targets, not domestic policy instruments. India's NDC does not prescribe a carbon tax.\n• Option (c) — Correct: India's NDC (updated 2022) commits to reducing emissions intensity of GDP by 45% by 2030 compared to 2005. This means emissions per unit of economic output fall, but total emissions may rise if the economy grows faster.\n• Option (d) — Incorrect: India has NOT committed to a peak emissions year in its NDC. China's NDC includes a peak before 2030 commitment — India's does not.\n\nValue Addition:\n• Emissions intensity reduction allows GDP growth while improving carbon efficiency — central to India's right-to-development argument under CBDR-RC.\n• India achieved its original 40% non-fossil capacity target ahead of schedule by 2021.\n• The distinction between absolute targets (total emissions cap) and intensity targets (emissions per GDP unit) is the single most important fact about India's NDC."
+    },
+    "hi": {
+      "display_text": "भारत के अद्यतन NDC (2022 में प्रस्तुत) की समीक्षा कर रहे एक जलवायु नीति विश्लेषक का दावा है कि भारत ने 2030 तक 2005 के स्तर से अपने कुल ग्रीनहाउस गैस उत्सर्जन को 45% तक कम करने के लिए प्रतिबद्धता की है, जो प्रमुख विकसित अर्थव्यवस्थाओं द्वारा निर्धारित पूर्ण उत्सर्जन कटौती लक्ष्यों के अनुरूप है। एक दूसरा विश्लेषक इस वर्णन का खंडन करता है।\n\nभारत की अद्यतन 2022 NDC में वास्तविक प्रतिबद्धता का सबसे उपयुक्त वर्णन निम्नलिखित में से कौन सा है?\n\n(a) भारत ने अपने घोषित 2070 नेट ज़ीरो लक्ष्य के अनुरूप पूर्ण उत्सर्जन कटौती के लिए प्रतिबद्धता की है, जिससे पहले विश्लेषक का वर्णन व्यापक रूप से सही है\n(b) भारत ने 2030 तक उत्सर्जन-तीव्रता वाले उद्योगों में 45% कटौती प्राप्त करने के लिए कार्बन टैक्स तंत्र लागू करने की प्रतिबद्धता की है, जो एक अलग तंत्र के माध्यम से समान परिणाम लक्षित करता है\n(c) भारत ने 2030 तक 2005 के स्तर की तुलना में अपने GDP की उत्सर्जन तीव्रता को 45% कम करने के लिए प्रतिबद्धता की है — जिसका अर्थ है कि आर्थिक उत्पादन प्रति इकाई उत्सर्जन कम होगा, लेकिन कुल पूर्ण उत्सर्जन पर कोई सीमा नहीं है\n(d) भारत ने 2030 से पहले अपने ग्रीनहाउस गैस उत्सर्जन के चरम पर पहुंचने और फिर पूर्ण कटौती प्राप्त करने के लिए प्रतिबद्धता की है, जो ग्लासगो क्लाइमेट पैक्ट की महत्वाकांक्षा अपेक्षाओं के अनुरूप है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because India did announce a 2070 net zero target (an 'absolute' endpoint), and students may conflate this long-term declaration with a current NDC absolute reduction commitment.",
+      "elimination_logic": [
+        "यह परिदृश्य पूछता है कि भारत ने अपने NDC में औपचारिक रूप से किस प्रकार की उत्सर्जन कटौती प्रतिबद्धता की है — मुख्य अंतर तीव्रता-आधारित और पूर्ण उत्सर्जन कटौती के बीच है।",
+        "(a) को हटाएं: भारत का NDC पूर्ण उत्सर्जन कटौती के लिए प्रतिबद्ध नहीं है। 2070 नेट ज़ीरो घोषणा NDC के बाहर एक दीर्घकालिक घोषणात्मक लक्ष्य है। NDC में केवल तीव्रता (प्रति-GDP) लक्ष्य शामिल हैं।",
+        "(b) को हटाएं: भारत ने अपने NDC में कार्बन टैक्स या किसी विशिष्ट घरेलू नीति उपकरण के लिए प्रतिबद्धता नहीं की है — NDC परिणामों का वर्णन करता है, न कि उपकरणों का।",
+        "(c) की पुष्टि करें: भारत के NDC लक्ष्य उत्सर्जन तीव्रता कटौती हैं — 2030 तक 2005 के स्तर की तुलना में GDP प्रति इकाई उत्सर्जन में 45% की कमी। यह कोई पूर्ण सीमा नहीं है।",
+        "(d) को हटाएं: भारत ने अपने NDC में किसी विशिष्ट वर्ष तक उत्सर्जन की चरम सीमा के लिए प्रतिबद्धता नहीं की है — चीन के विपरीत, जिसने 2030 से पहले चरम सीमा के लिए प्रतिबद्धता की है।"
+      ],
+      "upsc_trap_explanation": "2070 नेट ज़ीरो घोषणा जानबूझकर फंसाने के लिए रखी गई है। जो छात्र 'भारत' को '2070 नेट ज़ीरो' और 'COP26' से जोड़ते हैं, वे घोषणा को सही ढंग से याद करते हैं लेकिन गलत तरीके से यह मान लेते हैं कि यह भारत के NDC में पूर्ण उत्सर्जन कटौती प्रतिबद्धता है। घोषणा से NDC के औपचारिक रूप में परिवर्तित होने का मार्ग अभी तक नहीं हुआ है — भारत का अद्यतन 2022 NDC पूरी तरह से तीव्रता-आधारित है, और यह भेद भारत की जलवायु वार्ता की स्थिति की आधारशिला है।",
+      "final_explanation": "भारत का NDC उसके विकास-प्रथम जलवायु कूटनीति को दर्शाता है — सापेक्ष सुधार स्वीकार करते हुए आर्थिक विकास की गुंजाइश बनाए रखना।\n\nपरिदृश्य विश्लेषण: एक विश्लेषक का दावा है कि भारत का NDC 2005 के स्तर से कुल ग्रीनहाउस गैस उत्सर्जन को 45% तक कम करने के लिए बाध्य करता है। यह तथ्यात्मक रूप से गलत है।\n\n• विकल्प (a) — गलत: भारत ने 2070 नेट ज़ीरो आकांक्षा घोषित की है, लेकिन यह NDC प्रतिबद्धता नहीं है। NDC में कोई पूर्ण उत्सर्जन कटौती लक्ष्य नहीं है। कुल उत्सर्जन बढ़ सकते हैं — और बढ़ने की उम्मीद है क्योंकि भारत औद्योगिकीकरण कर रहा है।\n• विकल्प (b) — गलत: NDC परिणाम लक्ष्य निर्दिष्ट करता है, घरेलू नीति उपकरण नहीं। भारत के NDC में कार्बन टैक्स निर्धारित नहीं है।\n• विकल्प (c) — सही: भारत का NDC (अद्यतन 2022) 2030 तक 2005 की तुलना में GDP प्रति इकाई उत्सर्जन तीव्रता में 45% कमी के लिए प्रतिबद्ध है। इसका अर्थ है कि आर्थिक उत्पादन प्रति इकाई उत्सर्जन कम होगा, लेकिन यदि अर्थव्यवस्था तेजी से बढ़ती है तो कुल उत्सर्जन बढ़ सकते हैं।\n• विकल्प (d) — गलत: भारत ने अपने NDC में उत्सर्जन चरम सीमा के लिए किसी वर्ष तक प्रतिबद्धता नहीं की है। चीन के NDC में 2030 से पहले चरम सीमा की प्रतिबद्धता शामिल है — भारत के NDC में नहीं।\n\nमूल्य संवर्धन:\n• उत्सर्जन तीव्रता में कमी GDP विकास की अनुमति देती है जबकि कार्बन दक्षता में सुधार करती है — CBDR-RC के तहत भारत के विकास के अधिकार के तर्क का केंद्र।\n• भारत ने 2021 तक अपने मूल 40% गैर-जीवाश्म क्षमता लक्ष्य को समय से पहले प्राप्त कर लिया।\n• पूर्ण लक्ष्य (कुल उत्सर्जन सीमा) और तीव्रता लक्ष्य (प्रति GDP इकाई उत्सर्जन) के बीच का अंतर भारत के NDC के बारे में सबसे महत्वपूर्ण तथ्य है।"
+    }
+  },
+  {
+    "uuid": "12118120-89dd-4739-9b09-4ce7f78e52bd",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Paris Agreement — NDCs, 1.5 degree target",
+      "concepts_used": [
+        "Loss and Damage: Article 8 and the Santiago Network to the COP28 Fund",
+        "Climate Finance: $100 Billion Goal, New Collective Quantified Goal (NCQG), and Article 9",
+        "Green Climate Fund (GCF): Role, Governance, and Replenishment"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Article 8 no liability clause; GCF not loss and damage fund; NCQG COP29 mandate",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to loss and damage mechanisms and climate finance under the Paris Agreement framework, consider the following statements:\n\n1. Article 8 of the Paris Agreement acknowledges the importance of averting, minimizing, and addressing loss and damage associated with climate change, and explicitly establishes this as a basis for liability and compensation claims against major emitting countries.\n2. The Green Climate Fund (GCF), established at COP16 Cancun and operationalized at COP17 Durban, is the dedicated fund established to address loss and damage and is hosted by the World Bank.\n3. The New Collective Quantified Goal (NCQG) is mandated to replace the USD 100 billion annual climate finance floor with a new, higher target to be agreed by 2025, with the COP29 meeting in Baku designated as the key deadline.\n\nWhich of the statements given above is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 8 of the Paris Agreement acknowledges the importance of averting, minimizing, and addressing loss and damage associated with climate change, and explicitly establishes this as a basis for liability and compensation claims against major emitting countries.",
+          "verdict": "Incorrect",
+          "reason": "Article 8 explicitly states that it 'does not involve or provide a basis for any liability or compensation' — the exact opposite of what Statement 1 claims. This disclaimer was a non-negotiable requirement for US acceptance of the Article."
+        },
+        {
+          "statement": "The Green Climate Fund (GCF), established at COP16 Cancun and operationalized at COP17 Durban, is the dedicated fund established to address loss and damage and is hosted by the World Bank.",
+          "verdict": "Incorrect",
+          "reason": "GCF is dedicated to mitigation and adaptation — NOT loss and damage. The dedicated Loss and Damage fund is a separate instrument operationalized at COP28 (2023) with the World Bank as interim host. GCF is headquartered in Incheon, South Korea — not hosted by the World Bank."
+        },
+        {
+          "statement": "The New Collective Quantified Goal (NCQG) is mandated to replace the USD 100 billion annual climate finance floor with a new, higher target to be agreed by 2025, with the COP29 meeting in Baku designated as the key deadline.",
+          "verdict": "Correct",
+          "reason": "The NCQG process was initiated to set a new climate finance goal beyond the $100 billion floor, with COP29 (Baku, 2024) as the deadline for agreement. This statement is correct and therefore NOT the answer."
+        }
+      ],
+      "strong_distractor": "c — Option (c) '2 only' is deceptive because Statement 2 combines two incorrect elements (GCF = loss and damage fund; World Bank hosting) in ways that sound plausible — some students may catch one error but miss the other, partially accepting Statement 2.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 8 explicitly DISCLAIMS liability and compensation basis — the statement reverses this. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: GCF is for mitigation/adaptation — the Loss and Damage fund is separate, operationalized at COP28. Additionally, GCF is in Incheon, not World Bank-hosted. Statement 2 is NOT correct.",
+        "Evaluate Statement 3: NCQG replacing $100 billion with COP29 (Baku) as deadline — this is accurate. Statement 3 is correct, not the target of 'NOT correct.'",
+        "Both Statements 1 and 2 are NOT correct → option (b): 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a compound entity-swap — it correctly names COP16/COP17 as GCF milestones (accurate) but then incorrectly assigns GCF the function of the Loss and Damage Fund AND incorrectly assigns World Bank hosting to GCF rather than the L&D Fund. Students who know some GCF facts may not catch all three sub-errors simultaneously. The question tests whether students can decompose a complex claim into its verifiable components.",
+      "final_explanation": "Distinctions between climate finance instruments and loss and damage provisions are among the most UPSC-tested climate governance details.\n\n• Statement 1 — Incorrect (NOT correct): Article 8's exact text states the article 'does not involve or provide a basis for any liability or compensation.' The liability disclaimer was inserted specifically to satisfy developed countries' legal concerns about climate litigation. This is the opposite of what Statement 1 claims.\n• Statement 2 — Incorrect (NOT correct): GCF finances mitigation and adaptation — not loss and damage. The Loss and Damage Fund is a separate instrument with its own governance, operationalized at COP28 (2023). GCF is headquartered in Incheon, South Korea — it is not 'hosted by the World Bank' (the World Bank was designated as interim host of the new Loss and Damage Fund, not GCF).\n• Statement 3 — Correct: The NCQG process is correctly described. COP29 (Baku, November 2024) was the agreed deadline for setting the new climate finance goal.\n\nValue Addition:\n• The liability disclaimer in Article 8 was reportedly a US red line — without it, the US might not have joined the Paris Agreement.\n• GCF and the Loss and Damage Fund are two of at least a dozen multilateral climate finance channels — students should know the top three: GCF, GEF, and Loss and Damage Fund.\n• The NCQG floor is expected to be at least $1 trillion annually according to some developing country proposals."
+    },
+    "hi": {
+      "display_text": "पेरिस समझौते के ढांचे के तहत नुकसान और क्षति तंत्र और जलवायु वित्त के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. पेरिस समझौते का अनुच्छेद 8 जलवायु परिवर्तन से संबंधित नुकसान और क्षति को टालने, कम करने और संबोधित करने के महत्व को स्वीकार करता है, और इसे प्रमुख उत्सर्जक देशों के खिलाफ दायित्व और मुआवजा दावों के लिए स्पष्ट रूप से आधार बनाता है।\n2. ग्रीन क्लाइमेट फंड (GCF), जो COP16 कैंकुन में स्थापित हुआ और COP17 डर्बन में परिचालित हुआ, नुकसान और क्षति को संबोधित करने के लिए समर्पित कोष है और विश्व बैंक द्वारा मेजबान है।\n3. नया सामूहिक मात्रात्मक लक्ष्य (NCQG) USD 100 बिलियन वार्षिक जलवायु वित्त की न्यूनतम सीमा को बदलने के लिए अनिवार्य है, जिसे 2025 तक सहमति से एक नए, उच्च लक्ष्य से प्रतिस्थापित किया जाना है, जिसमें COP29 बैठक बाकू को मुख्य अंतिम तिथि के रूप में नामित किया गया है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 8 of the Paris Agreement acknowledges the importance of averting, minimizing, and addressing loss and damage associated with climate change, and explicitly establishes this as a basis for liability and compensation claims against major emitting countries.",
+          "verdict": "गलत",
+          "reason": "Article 8 स्पष्ट रूप से कहता है कि यह 'किसी भी दायित्व या मुआवजे के लिए आधार प्रदान नहीं करता है' — जो कथन 1 के बिल्कुल विपरीत है। यह अस्वीकरण अमेरिकी स्वीकृति के लिए अनिवार्य था।"
+        },
+        {
+          "statement": "The Green Climate Fund (GCF), established at COP16 Cancun and operationalized at COP17 Durban, is the dedicated fund established to address loss and damage and is hosted by the World Bank.",
+          "verdict": "गलत",
+          "reason": "GCF केवल शमन और अनुकूलन के लिए है — नुकसान और क्षति के लिए नहीं। नुकसान और क्षति का समर्पित कोष COP28 (2023) में शुरू हुआ है और इसका अंतरिम मेजबान विश्व बैंक है। GCF का मुख्यालय इंचियोन, दक्षिण कोरिया में है — यह विश्व बैंक द्वारा मेजबान नहीं है।"
+        },
+        {
+          "statement": "The New Collective Quantified Goal (NCQG) is mandated to replace the USD 100 billion annual climate finance floor with a new, higher target to be agreed by 2025, with the COP29 meeting in Baku designated as the key deadline.",
+          "verdict": "सही",
+          "reason": "NCQG प्रक्रिया $100 बिलियन की सीमा से आगे एक नया जलवायु वित्त लक्ष्य निर्धारित करने के लिए शुरू की गई थी, जिसमें COP29 (बाकू, 2024) को सहमति की अंतिम तिथि के रूप में नामित किया गया है। यह कथन सही है और इसलिए उत्तर नहीं है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) 'केवल 2' भ्रामक है क्योंकि कथन 2 में दो गलत तत्व (GCF = नुकसान और क्षति कोष; विश्व बैंक मेजबानी) ऐसे तरीके से जोड़े गए हैं जो विश्वसनीय लगते हैं — कुछ छात्र एक गलती पकड़ सकते हैं लेकिन दूसरी चूक सकते हैं, आंशिक रूप से कथन 2 को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: Article 8 स्पष्ट रूप से दायित्व और मुआवजे के आधार को अस्वीकार करता है — कथन इसका उल्टा कहता है। कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: GCF शमन/अनुकूलन के लिए है — नुकसान और क्षति कोष अलग है, जो COP28 में शुरू हुआ। साथ ही, GCF इंचियोन में है, विश्व बैंक द्वारा मेजबान नहीं। कथन 2 सही नहीं है।",
+        "कथन 3 का मूल्यांकन करें: NCQG $100 बिलियन को बदल रहा है और COP29 (बाकू) अंतिम तिथि है — यह सही है। कथन 3 सही है, इसलिए 'सही नहीं' का लक्ष्य नहीं।",
+        "कथन 1 और 2 दोनों सही नहीं हैं → विकल्प (b): केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक संयुक्त इकाई-स्थानांतरण है — यह सही ढंग से COP16/COP17 को GCF के मील के पत्थर के रूप में नामित करता है (सही) लेकिन फिर GCF को नुकसान और क्षति कोष का कार्य और विश्व बैंक को मेजबान गलत तरीके से सौंपता है। जो छात्र GCF के कुछ तथ्य जानते हैं, वे तीनों उप-त्रुटियों को एक साथ पकड़ नहीं पाएंगे। प्रश्न यह जांचता है कि छात्र जटिल दावे को उसके सत्यापन योग्य घटकों में विभाजित कर सकते हैं या नहीं।",
+      "final_explanation": "जलवायु वित्त उपकरणों और नुकसान एवं क्षति प्रावधानों के बीच अंतर UPSC में सबसे अधिक परीक्षण किए जाने वाले जलवायु शासन विवरणों में से हैं।\n\n• कथन 1 — गलत (सही नहीं): Article 8 का सटीक पाठ कहता है कि यह 'किसी भी दायित्व या मुआवजे के लिए आधार प्रदान नहीं करता।' यह दायित्व अस्वीकरण विकसित देशों की कानूनी चिंताओं को संतुष्ट करने के लिए डाला गया था। यह कथन 1 के विपरीत है।\n• कथन 2 — गलत (सही नहीं): GCF शमन और अनुकूलन के लिए वित्तपोषित करता है — नुकसान और क्षति के लिए नहीं। नुकसान और क्षति कोष एक अलग उपकरण है, जिसका संचालन COP28 (2023) में शुरू हुआ। GCF का मुख्यालय इंचियोन, दक्षिण कोरिया में है — यह विश्व बैंक द्वारा मेजबान नहीं है (विश्व बैंक नए नुकसान और क्षति कोष का अंतरिम मेजबान है, GCF का नहीं)।\n• कथन 3 — सही: NCQG प्रक्रिया सही ढंग से वर्णित है। COP29 (बाकू, नवंबर 2024) नए जलवायु वित्त लक्ष्य के निर्धारण की सहमति की अंतिम तिथि थी।\n\nमूल्य वर्धन:\n• Article 8 में दायित्व अस्वीकरण कथित तौर पर अमेरिकी लाल रेखा थी — इसके बिना अमेरिका पेरिस समझौते में शामिल नहीं होता।\n• GCF और नुकसान एवं क्षति कोष कम से कम बारह बहुपक्षीय जलवायु वित्त चैनलों में से दो हैं — छात्रों को शीर्ष तीन जानना चाहिए: GCF, GEF, और नुकसान एवं क्षति कोष।\n• NCQG की सीमा कुछ विकासशील देशों के प्रस्तावों के अनुसार कम से कम $1 ट्रिलियन वार्षिक होने की उम्मीद है।"
+    }
+  }
+]

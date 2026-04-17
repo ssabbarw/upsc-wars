@@ -1518,6 +1518,89 @@ final class RevisionQueueItemsProvider
 String _$revisionQueueItemsHash() =>
     r'87772c98ba3a80de5a596826389a469084d55929';
 
+@ProviderFor(weakSubTopicGroups)
+final weakSubTopicGroupsProvider = WeakSubTopicGroupsProvider._();
+
+final class WeakSubTopicGroupsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<WeakSubTopicGroup>>,
+          List<WeakSubTopicGroup>,
+          FutureOr<List<WeakSubTopicGroup>>
+        >
+    with
+        $FutureModifier<List<WeakSubTopicGroup>>,
+        $FutureProvider<List<WeakSubTopicGroup>> {
+  WeakSubTopicGroupsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'weakSubTopicGroupsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$weakSubTopicGroupsHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<WeakSubTopicGroup>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<WeakSubTopicGroup>> create(Ref ref) {
+    return weakSubTopicGroups(ref);
+  }
+}
+
+String _$weakSubTopicGroupsHash() =>
+    r'a52b32d09c1259f2d4f45406fd7c873ff7909bd6';
+
+@ProviderFor(weakTrapGroups)
+final weakTrapGroupsProvider = WeakTrapGroupsProvider._();
+
+final class WeakTrapGroupsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<TrapPatternGroup>>,
+          List<TrapPatternGroup>,
+          FutureOr<List<TrapPatternGroup>>
+        >
+    with
+        $FutureModifier<List<TrapPatternGroup>>,
+        $FutureProvider<List<TrapPatternGroup>> {
+  WeakTrapGroupsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'weakTrapGroupsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$weakTrapGroupsHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<TrapPatternGroup>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<TrapPatternGroup>> create(Ref ref) {
+    return weakTrapGroups(ref);
+  }
+}
+
+String _$weakTrapGroupsHash() => r'db6ed5d16a876f626f29534e0a2fae7a8c36c866';
+
 @ProviderFor(bookmarksList)
 final bookmarksListProvider = BookmarksListProvider._();
 

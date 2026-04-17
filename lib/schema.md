@@ -26,6 +26,7 @@ This document matches the unified app database: Drift definitions in `lib/core/d
 | `en_display_text` | TEXT | NULLABLE — may be null for table-first questions |
 | `hi_display_text` | TEXT | NULLABLE |
 | `has_table` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
+| `negative_framing` | INTEGER | NOT NULL DEFAULT 0 — 0 \| 1 |
 
 **Indexes**
 

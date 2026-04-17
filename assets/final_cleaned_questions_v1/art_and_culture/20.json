@@ -1,0 +1,1365 @@
+[
+  {
+    "uuid": "5726b15a-4855-4011-9f9b-3c4e2b6900c5",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Stupa: Etymology and Original Purpose"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Stupa relic typology: dhatu vs paribhogika vs uddesika",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the three-fold classification of stupas based on what they enshrine?\n\n(a) Dhatu stupas contain bodily relics; paribhogika stupas also contain bodily relics of secondary disciples; uddesika stupas contain objects used by the Buddha\n(b) Dhatu stupas contain bodily relics; paribhogika stupas contain objects used by the Buddha; uddesika stupas contain secondary relics from close disciples\n(c) Dhatu stupas contain bodily relics; paribhogika stupas contain objects used by the Buddha; uddesika stupas are purely commemorative with no physical relic\n(d) Sarira stupas contain bodily relics; dhatu stupas contain objects used by the Buddha; uddesika stupas are commemorative structures",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students often conflate all stupas with relic burial, overlooking the distinct paribhogika and uddesika categories that do not contain bodily relics.",
+      "elimination_logic": [
+        "Eliminate (a): this merges dhatu and paribhogika into a single category, which is incorrect — they are defined separately.",
+        "Eliminate (b): uddesika stupas are commemorative and need not contain any physical relic at all; calling them 'secondary relic' stupas is factually wrong.",
+        "Eliminate (d): sarira and dhatu are synonymous terms for bodily relics, not two distinct stupa types — the option fabricates a false distinction.",
+        "Accept (c): the three recognised categories — sarira/dhatu (bodily relics), paribhogika (objects used by the Buddha), and uddesika (commemorative, no relic) — are correctly distinguished."
+      ],
+      "upsc_trap_explanation": "The trap exploits a student's tendency to assume all stupas hold bodily relics. Superficially prepared students know only 'relic stupas' and skip the paribhogika and uddesika categories. Option (a) sounds authoritative by using correct Sanskrit terms but collapses two distinct categories. Option (d) invents a second Sanskrit-sounding label to confuse students who partially remember the terminology.",
+      "final_explanation": "Buddhist tradition classifies stupas according to what they enshrine — or whether they enshrine anything at all. This typology is crucial for understanding why stupas proliferated far beyond the original eight relic distributions.\n\n• Option (a) — Incorrect: Conflates dhatu (bodily relic) and paribhogika (used objects) into one category, erasing a recognised distinction.\n• Option (b) — Incorrect: Uddesika stupas are purely commemorative structures marking a sacred location or event; 'secondary relic' is a fabricated label.\n• Option (c) — Correct: Dhatu/sarira stupas hold bodily relics; paribhogika stupas enshrine objects used by the Buddha (begging bowl, robe); uddesika stupas are commemorative and need no physical relic.\n• Option (d) — Incorrect: Sarira and dhatu are interchangeable terms for the same category; no separate 'sarira stupa' type exists alongside dhatu stupas.\n\nValue Addition:\n• The Piprahwa relic casket (Uttar Pradesh) is considered archaeological evidence of an original dhatu stupa.\n• The Bodhi tree at Bodh Gaya qualifies as a paribhogika sacred site.\n• Votive stupas built by pilgrims are generally uddesika in character."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा सबसे सटीक रूप से स्तूपों के तीन-तरफा वर्गीकरण का वर्णन करता है, जो उनके अंदर रखे गए वस्तुओं के आधार पर है?\n\n(a) धातु स्तूप शारीरिक अवशेष रखते हैं; पारिभोगिक स्तूपों में भी द्वितीयक शिष्य के शारीरिक अवशेष होते हैं; उद्देशिका स्तूप बुद्ध द्वारा उपयोग की गई वस्तुएं रखते हैं\n(b) धातु स्तूप शारीरिक अवशेष रखते हैं; पारिभोगिक स्तूप बुद्ध द्वारा उपयोग की गई वस्तुएं रखते हैं; उद्देशिका स्तूप निकटवर्ती शिष्यों के द्वितीयक अवशेष रखते हैं\n(c) धातु स्तूप शारीरिक अवशेष रखते हैं; पारिभोगिक स्तूप बुद्ध द्वारा उपयोग की गई वस्तुएं रखते हैं; उद्देशिका स्तूप केवल स्मारकात्मक होते हैं और इनमें कोई भौतिक अवशेष नहीं होता\n(d) शरीर स्तूप शारीरिक अवशेष रखते हैं; धातु स्तूप बुद्ध द्वारा उपयोग की गई वस्तुएं रखते हैं; उद्देशिका स्तूप स्मारकात्मक संरचनाएँ हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि छात्र अक्सर सभी स्तूपों को अवशेष दफनाने से जोड़ देते हैं, जबकि पारिभोगिक और उद्देशिका श्रेणियाँ जो शारीरिक अवशेष नहीं रखतीं, उन्हें नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएँ: यह धातु और पारिभोगिक को एक ही श्रेणी में मिला देता है, जो गलत है — ये अलग-अलग परिभाषित हैं।",
+        "(b) को हटाएँ: उद्देशिका स्तूप स्मारकात्मक होते हैं और इनमें कोई भौतिक अवशेष होना आवश्यक नहीं है; इन्हें 'द्वितीयक अवशेष' स्तूप कहना तथ्यात्मक रूप से गलत है।",
+        "(d) को हटाएँ: शरीर और धातु शारीरिक अवशेषों के पर्यायवाची शब्द हैं, दो अलग स्तूप प्रकार नहीं — यह विकल्प एक गलत भेद बनाता है।",
+        "(c) स्वीकार करें: तीन मान्यता प्राप्त श्रेणियाँ — शरीर/धातु (शारीरिक अवशेष), पारिभोगिक (बुद्ध द्वारा उपयोग किए गए वस्त्र), और उद्देशिका (स्मारकात्मक, बिना अवशेष) — सही ढंग से भेदित हैं।"
+      ],
+      "upsc_trap_explanation": "यह जाल छात्र की उस प्रवृत्ति का फायदा उठाता है जिसमें वे मान लेते हैं कि सभी स्तूपों में शारीरिक अवशेष होते हैं। सतही रूप से तैयार छात्र केवल 'अवशेष स्तूप' जानते हैं और पारिभोगिक तथा उद्देशिका श्रेणियों को छोड़ देते हैं। विकल्प (a) सही संस्कृत शब्दों का उपयोग करके अधिकारपूर्ण लगता है लेकिन दो अलग श्रेणियों को मिला देता है। विकल्प (d) एक दूसरा संस्कृत-समान लेबल बनाकर उन छात्रों को भ्रमित करता है जो आंशिक रूप से शब्दावली याद रखते हैं।",
+      "final_explanation": "बौद्ध परंपरा स्तूपों को उनके अंदर क्या रखा गया है — या क्या कुछ भी रखा गया है — के आधार पर वर्गीकृत करती है। यह वर्गीकरण समझने के लिए महत्वपूर्ण है कि स्तूप क्यों मूल आठ अवशेष वितरण से कहीं अधिक फैल गए।\n\n• विकल्प (a) — गलत: धातु (शारीरिक अवशेष) और पारिभोगिक (उपयोग की वस्तुएं) को एक श्रेणी में मिला देता है, जो मान्यता प्राप्त भेद को मिटाता है।\n• विकल्प (b) — गलत: उद्देशिका स्तूप केवल स्मारकात्मक संरचनाएँ हैं जो किसी पवित्र स्थान या घटना को चिह्नित करती हैं; 'द्वितीयक अवशेष' एक निर्मित लेबल है।\n• विकल्प (c) — सही: धातु/शरीर स्तूप शारीरिक अवशेष रखते हैं; पारिभोगिक स्तूप बुद्ध द्वारा उपयोग की गई वस्तुएं (भिक्षु कटोरा, वस्त्र) रखते हैं; उद्देशिका स्तूप स्मारकात्मक होते हैं और इनमें कोई भौतिक अवशेष नहीं होता।\n• विकल्प (d) — गलत: शरीर और धातु एक ही श्रेणी के पर्यायवाची शब्द हैं; धातु स्तूपों के साथ अलग 'शरीर स्तूप' प्रकार मौजूद नहीं है।\n\nमूल्य संवर्धन:\n• पिपरहवा अवशेष संदूक (उत्तर प्रदेश) को एक मूल धातु स्तूप के पुरातात्विक प्रमाण के रूप में माना जाता है।\n• बोधगया का बोधि वृक्ष पारिभोगिक पवित्र स्थल के रूप में योग्य है।\n• तीर्थयात्रियों द्वारा निर्मित व्रत स्तूप सामान्यतः उद्देशिका स्वभाव के होते हैं।"
+    }
+  },
+  {
+    "uuid": "49e57027-9788-4c6d-a444-e5fa404d3194",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Anda (Hemispherical Dome): Symbolism and Evolution",
+        "Regional Stupa Variations: Mainland vs Periphery"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Anda regional variation: Gandhara cylindrical vs mainland hemispherical",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the anda (hemispherical dome) of Buddhist stupas, consider the following statements:\n\n1. The anda of mainland Indian stupas is typically hemispherical and symbolically associated with the cosmic egg (Brahmanda).\n2. Gandharan stupas adopted a tall cylindrical drum form, reflecting Greek architectural influences in the region.\n3. The anda at Amaravati is identical in proportion to the anda of Sanchi Stupa I, differing only in decorative treatment.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The anda of mainland Indian stupas is typically hemispherical and symbolically associated with the cosmic egg (Brahmanda).",
+          "verdict": "Correct",
+          "reason": "The hemispherical dome representing Brahmanda (cosmic egg or universe) is a defining feature of the mainland Indian stupa tradition, clearly visible at Sanchi."
+        },
+        {
+          "statement": "Gandharan stupas adopted a tall cylindrical drum form, reflecting Greek architectural influences in the region.",
+          "verdict": "Correct",
+          "reason": "The Gandhara region, exposed to Hellenistic influence after Alexander's campaigns, developed a distinct stupa form with tall cylindrical bases and Greek decorative elements."
+        },
+        {
+          "statement": "The anda at Amaravati is identical in proportion to the anda of Sanchi Stupa I, differing only in decorative treatment.",
+          "verdict": "Incorrect",
+          "reason": "The Amaravati anda is notably more elongated than the flatter hemispherical anda at Sanchi — the proportional difference is a recognised stylistic distinction, not merely decorative."
+        }
+      ],
+      "strong_distractor": "d — All three together is tempting because statements 1 and 2 are both correct, leading students to assume statement 3 must also be correct without carefully verifying the Amaravati proportion claim.",
+      "elimination_logic": [
+        "Confirm Statement 1: Brahmanda symbolism for the hemispherical anda is textbook knowledge — mark correct.",
+        "Confirm Statement 2: Gandhara's cylindrical drum is a well-established regional variation linked to Hellenistic influence — mark correct.",
+        "Evaluate Statement 3: Amaravati's anda is described as elongated/more vertical compared to Sanchi's flatter dome — proportional difference is structural, not merely decorative — mark incorrect.",
+        "Select (b): only statements 1 and 2 are correct."
+      ],
+      "upsc_trap_explanation": "The trap targets students who know Amaravati is decoratively distinct but assume the basic dome shape is the same across Indian stupas. Statement 3 inserts the word 'identical in proportion' — a scope-extension — which converts a partially true claim (same hemispherical category) into a false one (same proportions). Partially prepared students may mark all three correct.",
+      "final_explanation": "Stupa architecture shows remarkable regional variation, especially in the shape and proportions of the anda, which makes this a recurring UPSC differentiator.\n\n• Statement 1 — Correct: The hemispherical anda of mainland stupas encodes Brahmanda symbolism, representing the cosmic womb or universe in compressed form.\n• Statement 2 — Correct: Gandharan stupas feature tall cylindrical drums, a departure from the Indian hemisphere, shaped by Hellenistic artistic grammar imported via Greek successor kingdoms.\n• Statement 3 — Incorrect: Amaravati's anda is proportionally elongated — more vertical and slender — compared to the flatter, squatter Sanchi dome. These are distinct architectural choices, not just decorative overlays.\n\nValue Addition:\n• Sri Lankan dagobas (e.g., Ruwanwelisaya) are massive bell-shaped structures — another distinct regional form.\n• Borobudur in Java uses a mandala plan rather than a simple hemispherical anda.\n• Ayaka platforms are exclusive to the Amaravati-Nagarjunakonda tradition in the Deccan."
+    },
+    "hi": {
+      "display_text": "बौद्ध स्तूपों के अंडे (हिमीस्फेरिकल गुंबद) के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. मुख्यभूमि भारतीय स्तूपों का अंडा सामान्यतः हिमीस्फेरिकल होता है और इसे ब्रह्माण्डीय अंडे (ब्रह्माण्ड) के रूप में प्रतीकात्मक रूप से जोड़ा जाता है।\n2. गंधार स्तूपों ने लंबा सिलेंडराकार ड्रम रूप अपनाया, जो क्षेत्र में ग्रीक वास्तुकला प्रभाव को दर्शाता है।\n3. अमरावती का अंडा सांची स्तूप I के अंडे के अनुपात में समान है, केवल सजावटी उपचार में भिन्न है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The anda of mainland Indian stupas is typically hemispherical and symbolically associated with the cosmic egg (Brahmanda).",
+          "verdict": "सही है",
+          "reason": "हिमीस्फेरिकल गुंबद जो ब्रह्मांड (ब्रह्माण्ड) का प्रतिनिधित्व करता है, मुख्यभूमि भारतीय स्तूप परंपरा की एक परिभाषित विशेषता है, जो सांची में स्पष्ट रूप से दिखाई देती है।"
+        },
+        {
+          "statement": "Gandharan stupas adopted a tall cylindrical drum form, reflecting Greek architectural influences in the region.",
+          "verdict": "सही है",
+          "reason": "गंधार क्षेत्र, जो सिकंदर के अभियानों के बाद हेल्लेनिस्टिक प्रभाव के संपर्क में आया, ने लंबी सिलेंडराकार आधार वाली और ग्रीक सजावटी तत्वों वाली विशिष्ट स्तूप आकृति विकसित की।"
+        },
+        {
+          "statement": "The anda at Amaravati is identical in proportion to the anda of Sanchi Stupa I, differing only in decorative treatment.",
+          "verdict": "गलत है",
+          "reason": "अमरावती का अंडा सांची के फ्लैट हिमीस्फेरिकल अंडे की तुलना में स्पष्ट रूप से अधिक लम्बा है — अनुपात में यह अंतर एक मान्यता प्राप्त शैलीगत भेद है, केवल सजावटी नहीं।"
+        }
+      ],
+      "strong_distractor": "d — तीनों कथन एक साथ आकर्षक हैं क्योंकि कथन 1 और 2 दोनों सही हैं, जिससे छात्र यह मान लेते हैं कि कथन 3 भी सही होगा बिना अमरावती के अनुपात दावे की सावधानीपूर्वक जांच किए।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें: ब्रह्माण्ड प्रतीकात्मकता हिमीस्फेरिकल अंडे के लिए पाठ्यपुस्तक ज्ञान है — सही चिह्नित करें।",
+        "कथन 2 की पुष्टि करें: गंधार का सिलेंडराकार ड्रम हेल्लेनिस्टिक प्रभाव से जुड़ा एक स्थापित क्षेत्रीय भेद है — सही चिह्नित करें।",
+        "कथन 3 का मूल्यांकन करें: अमरावती का अंडा सांची के फ्लैट गुंबद की तुलना में लंबा/अधिक ऊर्ध्वाधर बताया गया है — अनुपात में यह संरचनात्मक भेद है, केवल सजावटी नहीं — गलत चिह्नित करें।",
+        "(b) चुनें: केवल कथन 1 और 2 सही हैं।"
+      ],
+      "upsc_trap_explanation": "यह जाल उन छात्रों को निशाना बनाता है जो जानते हैं कि अमरावती सजावटी रूप से भिन्न है लेकिन मान लेते हैं कि भारतीय स्तूपों में मूल गुंबद आकार समान है। कथन 3 में 'अनुपात में समान' शब्द शामिल है — यह एक दायरा-विस्तार है — जो आंशिक रूप से सही दावे (समान हिमीस्फेरिकल श्रेणी) को गलत (समान अनुपात) में बदल देता है। आंशिक रूप से तैयार छात्र तीनों को सही चिह्नित कर सकते हैं।",
+      "final_explanation": "स्तूप वास्तुकला में क्षेत्रीय भिन्नता स्पष्ट रूप से दिखाई देती है, विशेषकर अंडे के आकार और अनुपात में, जो UPSC में बार-बार एक निर्णायक कारक होता है।\n\n• कथन 1 — सही: मुख्यभूमि स्तूपों का हिमीस्फेरिकल अंडा ब्रह्माण्ड प्रतीकात्मकता को संक्षिप्त रूप में दर्शाता है, जो ब्रह्माण्ड या ब्रह्माण्डीय गर्भ का प्रतिनिधित्व करता है।\n• कथन 2 — सही: गंधार स्तूपों में लंबा सिलेंडराकार ड्रम होता है, जो भारतीय हिमीस्फेर से अलग है, और यह हेल्लेनिस्टिक कलात्मक व्याकरण द्वारा प्रभावित है जो ग्रीक उत्तराधिकारी राज्यों के माध्यम से आया।\n• कथन 3 — गलत: अमरावती का अंडा अनुपात में लंबा — अधिक ऊर्ध्वाधर और पतला — है, जबकि सांची का गुंबद फ्लैट और चपटा है। ये अलग वास्तुशिल्प विकल्प हैं, केवल सजावटी अंतर नहीं।\n\nमूल्यवर्धन:\n• श्रीलंकाई डागोबा (जैसे रुवानवेलिसाया) विशाल घंटी के आकार की संरचनाएँ हैं — एक और विशिष्ट क्षेत्रीय रूप।\n• जावा का बोरबुदुर एक साधारण हिमीस्फेरिकल अंडे के बजाय मंडल योजना का उपयोग करता है।\n• अयका प्लेटफॉर्म केवल अमरावती-नागार्जुनकोण्डा परंपरा में डेक्कन में पाए जाते हैं।"
+    }
+  },
+  {
+    "uuid": "d08aa019-1f56-464b-8fff-697493d25106",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Harmika: Structure and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Harmika vs medhi — structural and symbolic distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the structural components of a Buddhist stupa, consider the following statements:\n\n1. The harmika is a square railing structure placed atop the anda, traditionally interpreted as the abode of the gods.\n2. The medhi and the harmika refer to the same structural element called by different names in different regional traditions.\n3. The harmika is equally prominent and structurally similar across all Indian stupa traditions, including Amaravati.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The harmika is a square railing structure placed atop the anda, traditionally interpreted as the abode of the gods.",
+          "verdict": "Correct",
+          "reason": "This is the standard definition of the harmika — a square balustrade or enclosure at the summit of the dome, carrying divine/cosmic associations."
+        },
+        {
+          "statement": "The medhi and the harmika refer to the same structural element called by different names in different regional traditions.",
+          "verdict": "Incorrect",
+          "reason": "The medhi is the raised circular terrace at ground or intermediate level that forms the pradakshina path, while the harmika sits at the apex of the anda — they are structurally and locationally distinct."
+        },
+        {
+          "statement": "The harmika is equally prominent and structurally similar across all Indian stupa traditions, including Amaravati.",
+          "verdict": "Incorrect",
+          "reason": "The harmika is prominent and well-defined at Sanchi but is minimal or barely discernible in the Amaravati tradition, making 'equally prominent' factually wrong."
+        }
+      ],
+      "strong_distractor": "a — Statement 1 alone appears NOT correct to students who confuse harmika with medhi or think its 'abode of gods' interpretation is a later invention, making this a plausible wrong pick.",
+      "elimination_logic": [
+        "Evaluate Statement 1: 'square railing atop the anda = abode of gods' — this is the textbook definition; Statement 1 IS correct, so it should NOT appear in the answer.",
+        "Evaluate Statement 2: medhi is the circular terrace at base level; harmika is at the apex — they are distinct structures; Statement 2 is NOT correct — include in answer.",
+        "Evaluate Statement 3: harmika is prominent at Sanchi but minimal at Amaravati — 'equally prominent across all traditions' is false; Statement 3 is NOT correct — include in answer.",
+        "Only statements 2 and 3 are NOT correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "The conflation trap in Statement 2 merges two structurally distinct components (harmika and medhi) by claiming they are regional synonyms. Students who have not studied component-level stupa anatomy will find this plausible because both terms are Sanskrit, both relate to the stupa structure, and both appear in the same scholarly texts. Statement 3 uses a scope-extension ('equally prominent') to exploit the common mistake of generalising Sanchi's features to all Indian stupas.",
+      "final_explanation": "The stupa's superstructure involves several discrete elements that are frequently confused with one another in examination contexts.\n\n• Statement 1 — Correct (not the answer): The harmika is precisely a square railing or pavilion at the summit of the anda, symbolising the celestial realm — this is accurate.\n• Statement 2 — Incorrect (part of answer): The medhi is the elevated circular terrace encircling the base of the anda, facilitating circumambulation. The harmika crowns the apex. Conflating them erases a critical architectural distinction.\n• Statement 3 — Incorrect (part of answer): The harmika is a prominent visual feature at Sanchi but recedes to minimal presence in Amaravati-school stupas, which emphasise elaborate ayaka platforms and narrative friezes instead.\n\nValue Addition:\n• The harmika also carries Vedic fire-altar symbolism, linking the stupa to pre-Buddhist sacred architecture.\n• The yasti (axial pole) passes through the harmika and supports the chattra above.\n• Sanchi Stupa I's harmika is one of the best-preserved examples of this component in Indian Buddhist architecture."
+    },
+    "hi": {
+      "display_text": "बौद्ध स्तूप की संरचनात्मक घटकों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. harmika एक वर्गाकार रेलिंग संरचना है जो anda के ऊपर स्थित होती है, जिसे पारंपरिक रूप से देवताओं का निवास माना जाता है।\n2. medhi और harmika एक ही संरचनात्मक तत्व हैं जिन्हें विभिन्न क्षेत्रीय परंपराओं में अलग-अलग नामों से जाना जाता है।\n3. harmika सभी भारतीय स्तूप परंपराओं में, अमरावती सहित, समान रूप से प्रमुख और संरचनात्मक रूप से समान है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The harmika is a square railing structure placed atop the anda, traditionally interpreted as the abode of the gods.",
+          "verdict": "सही है",
+          "reason": "यह harmika की मानक परिभाषा है — गुंबद के शीर्ष पर एक वर्गाकार रेलिंग या बाड़, जो दैवीय/ब्रह्मांडीय संबंध दर्शाती है।"
+        },
+        {
+          "statement": "The medhi and the harmika refer to the same structural element called by different names in different regional traditions.",
+          "verdict": "गलत है",
+          "reason": "medhi वह उठी हुई वृत्ताकार छत है जो भूमि या मध्यवर्ती स्तर पर होती है और प्रदक्षिणा पथ बनाती है, जबकि harmika anda के शीर्ष पर स्थित होती है — ये संरचनात्मक और स्थानिक रूप से भिन्न हैं।"
+        },
+        {
+          "statement": "The harmika is equally prominent and structurally similar across all Indian stupa traditions, including Amaravati.",
+          "verdict": "गलत है",
+          "reason": "harmika सांची में प्रमुख और स्पष्ट है लेकिन अमरावती परंपरा में यह न्यूनतम या लगभग अस्पष्ट है, अतः 'सभी परंपराओं में समान रूप से प्रमुख' तथ्यात्मक रूप से गलत है।"
+        }
+      ],
+      "strong_distractor": "कथन (a) — कथन 1 अकेला उन छात्रों को सही नहीं लगता जो harmika को medhi से भ्रमित करते हैं या सोचते हैं कि इसका 'देवताओं का निवास' व्याख्या बाद में जोड़ी गई है, इसलिए यह एक संभावित गलत विकल्प है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: 'anda के ऊपर वर्गाकार रेलिंग = देवताओं का निवास' — यह पाठ्यपुस्तक परिभाषा है; कथन 1 सही है, अतः इसे उत्तर में नहीं शामिल करना चाहिए।",
+        "कथन 2 का मूल्यांकन करें: medhi आधार स्तर पर वृत्ताकार छत है; harmika शीर्ष पर है — ये अलग संरचनाएँ हैं; कथन 2 सही नहीं है — इसे उत्तर में शामिल करें।",
+        "कथन 3 का मूल्यांकन करें: harmika सांची में प्रमुख है लेकिन अमरावती में न्यूनतम है — 'सभी परंपराओं में समान रूप से प्रमुख' गलत है; कथन 3 सही नहीं है — इसे उत्तर में शामिल करें।",
+        "केवल कथन 2 और 3 सही नहीं हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में भ्रम का जाल दो संरचनात्मक रूप से भिन्न घटकों (harmika और medhi) को क्षेत्रीय पर्यायवाची बताकर मिला देता है। जो छात्र घटक-स्तरीय स्तूप संरचना का अध्ययन नहीं करते, उनके लिए यह विश्वसनीय लगता है क्योंकि दोनों संस्कृत शब्द हैं, दोनों स्तूप से संबंधित हैं, और दोनों एक ही विद्वत् ग्रंथों में आते हैं। कथन 3 में 'समान रूप से प्रमुख' का दायरा बढ़ाकर सांची की विशेषताओं को सभी भारतीय स्तूपों पर सामान्य करने की सामान्य गलती का फायदा उठाया गया है।",
+      "final_explanation": "स्तूप की ऊपरी संरचना में कई पृथक घटक होते हैं जिन्हें परीक्षा संदर्भों में अक्सर भ्रमित किया जाता है।\n\n• कथन 1 — सही (उत्तर नहीं): harmika ठीक उसी प्रकार एक वर्गाकार रेलिंग या मंडप है जो anda के शीर्ष पर होता है और आकाशीय क्षेत्र का प्रतीक है — यह सटीक है।\n• कथन 2 — गलत (उत्तर का हिस्सा): medhi वह उठी हुई वृत्ताकार छत है जो anda के आधार को घेरे रहती है और प्रदक्षिणा की सुविधा देती है। harmika शीर्ष पर स्थित है। इन्हें मिलाना एक महत्वपूर्ण वास्तुशिल्प भेद को मिटा देता है।\n• कथन 3 — गलत (उत्तर का हिस्सा): harmika सांची में एक प्रमुख दृश्य तत्व है लेकिन अमरावती-शैली के स्तूपों में यह न्यूनतम है, जो विस्तृत अयाक मंचों और कथात्मक फ्रिजों पर अधिक जोर देते हैं।\n\nमूल्यवर्धन:\n• harmika वेदिक अग्नि वेदी प्रतीकवाद भी रखता है, जो स्तूप को बौद्ध पूर्व पवित्र वास्तुकला से जोड़ता है।\n• यष्टि (अक्षीय खंभा) harmika से होकर गुजरता है और ऊपर छत्र को सहारा देता है।\n• सांची स्तूप I का harmika भारतीय बौद्ध वास्तुकला में इस घटक के सबसे अच्छी तरह संरक्षित उदाहरणों में से एक है।"
+    }
+  },
+  {
+    "uuid": "042479b2-5139-49db-a559-a123ac50d8a2",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Torana (Gateway): Architectural and Narrative Function",
+        "Sanchi Stupa Complex: Architectural Layers"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sanchi torana cardinal directions and iconographic themes",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Torana — Cardinal Gateway at Sanchi Stupa I) with List II (Primary Iconographic Theme):",
+        "columns": [
+          "List I — Gateway",
+          "List II — Primary Theme"
+        ],
+        "rows": [
+          [
+            "A. Western torana",
+            "1. Enlightenment: Bodhi tree, Vajrasana, and the Wheel"
+          ],
+          [
+            "B. Eastern torana (main entrance)",
+            "2. Seven Manushi Buddhas — the tradition of past Buddhas"
+          ],
+          [
+            "C. Northern torana",
+            "3. Miracle of Sravasti and the Vessantara Jataka"
+          ],
+          [
+            "D. Southern torana (oldest)",
+            "4. The Great Departure from Kapilavastu"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-1, B-4, C-3, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) swaps the North and East torana attributes, exploiting the common assumption that the Eastern gateway (being the main entrance) must feature the most cosmologically significant scene (Great Departure), when in fact it emphasises the Enlightenment.",
+      "elimination_logic": [
+        "The Southern torana is the oldest and its lowest architrave depicts the Great Departure — this is a well-documented fact; anchor D-4.",
+        "The Eastern torana is considered the main entrance and emphasises the Enlightenment (Bodhi tree, Vajrasana); anchor B-1.",
+        "The Northern torana features the Miracle of Sravasti and the previous life Jataka of Vessantara; anchor C-3.",
+        "The Western torana depicts the Seven Manushi Buddhas and the previous seven Buddhas; anchor A-2.",
+        "Correct combination: A-2, B-1, C-3, D-4 — select option (a)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works by placing the 'Great Departure' scene against the Eastern torana in option (b), exploiting students who know the East is the primary entrance and assume it must feature the most dramatic biographical moment. The South torana is actually older and carries the Great Departure on its lower architrave. Students who have not studied directional iconography specifically will swap South and East.",
+      "final_explanation": "The four toranas of Sanchi Stupa I are not interchangeable — each cardinal gateway carries a distinctive iconographic programme tied to specific events in the Buddha's biography or specific Jataka narratives.\n\nCorrect matching:\n• A (Western torana) — 2 (Seven Manushi Buddhas / previous Buddhas tradition)\n• B (Eastern torana, main entrance) — 1 (Enlightenment: Bodhi tree, Vajrasana, Wheel)\n• C (Northern torana) — 3 (Miracle of Sravasti; Vessantara Jataka)\n• D (Southern torana, oldest) — 4 (Great Departure from Kapilavastu)\n\nThe trap in option (b) places Great Departure at the Eastern torana — plausible because the East is the primary entrance, but historically the Southern torana is the oldest and carries the Great Departure sequence.\n\nValue Addition:\n• The Southern torana at Sanchi is chronologically the earliest of the four, built during the Satavahana period.\n• All four Sanchi toranas are adorned with salabhanjika (bracket figures) at the top, a motif borrowed from yaksha-worship traditions.\n• Buddha himself is never depicted in human form on the Sanchi toranas — his presence is indicated only by symbols such as the Bodhi tree, footprints, wheel, and parasol."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (सांची स्तूप I में टोराना — मुख्य द्वार) को सूची II (प्राथमिक प्रतीकात्मक विषय) से मिलाइए:",
+        "columns": [
+          "सूची I — द्वार",
+          "सूची II — प्राथमिक विषय"
+        ],
+        "rows": [
+          [
+            "A. पश्चिमी टोराना",
+            "1. ज्ञानोदय: बोधि वृक्ष, वज्रासन, और चक्र"
+          ],
+          [
+            "B. पूर्वी टोराना (मुख्य प्रवेश)",
+            "2. सात मानवशी बुद्ध — पिछले बुद्धों की परंपरा"
+          ],
+          [
+            "C. उत्तरी टोराना",
+            "3. श्रावस्ती का चमत्कार और वेस्संतरा जातक"
+          ],
+          [
+            "D. दक्षिणी टोराना (सबसे पुराना)",
+            "4. कपिलवस्तु से महान प्रस्थान"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-1, B-4, C-3, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में उत्तर और पूर्व टोराना के गुणों को बदल दिया गया है, जो इस सामान्य धारणा का लाभ उठाता है कि पूर्वी द्वार (मुख्य प्रवेश द्वार होने के कारण) में सबसे महत्वपूर्ण ब्रह्मांडीय दृश्य (महान प्रस्थान) होना चाहिए, जबकि वास्तव में यह ज्ञानोदय को दर्शाता है।",
+      "elimination_logic": [
+        "दक्षिणी टोराना सबसे पुराना है और इसके निचले आर्चिट्रेव में महान प्रस्थान दर्शाया गया है — यह एक अच्छी तरह से प्रलेखित तथ्य है; एंकर D-4।",
+        "पूर्वी टोराना को मुख्य प्रवेश द्वार माना जाता है और यह ज्ञानोदय (बोधि वृक्ष, वज्रासन) को प्रमुखता देता है; एंकर B-1।",
+        "उत्तरी टोराना में श्रावस्ती का चमत्कार और वेस्संतरा का पूर्वजन्म जातक कथा है; एंकर C-3।",
+        "पश्चिमी टोराना में सात मानवशी बुद्ध और पिछले सात बुद्ध दर्शाए गए हैं; एंकर A-2।",
+        "सही संयोजन: A-2, B-1, C-3, D-4 — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "सत्ता-विनिमय जाल विकल्प (b) में 'महान प्रस्थान' दृश्य को पूर्वी टोराना पर रखकर काम करता है, जो उन छात्रों को भ्रमित करता है जो जानते हैं कि पूर्व मुख्य प्रवेश द्वार है और मान लेते हैं कि इसमें सबसे नाटकीय जीवनी क्षण होना चाहिए। दक्षिणी टोराना वास्तव में पुराना है और इसके निचले आर्चिट्रेव पर महान प्रस्थान है। जो छात्र दिशात्मक प्रतीकात्मकता का अध्ययन नहीं करते, वे दक्षिण और पूर्व को बदल देते हैं।",
+      "final_explanation": "सांची स्तूप I के चार टोराने अदल-बदल योग्य नहीं हैं — प्रत्येक मुख्य द्वार में बुद्ध की जीवनी के विशिष्ट घटनाक्रम या विशिष्ट जातक कथाओं से जुड़ा एक विशिष्ट प्रतीकात्मक कार्यक्रम होता है।\n\nसही मिलान:\n• A (पश्चिमी टोराना) — 2 (सात मानवशी बुद्ध / पिछले बुद्धों की परंपरा)\n• B (पूर्वी टोराना, मुख्य प्रवेश) — 1 (ज्ञानोदय: बोधि वृक्ष, वज्रासन, चक्र)\n• C (उत्तरी टोराना) — 3 (श्रावस्ती का चमत्कार; वेस्संतरा जातक)\n• D (दक्षिणी टोराना, सबसे पुराना) — 4 (कपिलवस्तु से महान प्रस्थान)\n\nविकल्प (b) में जाल पूर्वी टोराना पर महान प्रस्थान रखता है — यह संभव है क्योंकि पूर्व मुख्य प्रवेश है, लेकिन ऐतिहासिक रूप से दक्षिणी टोराना सबसे पुराना है और इसमें महान प्रस्थान क्रम है।\n\nमूल्यवर्धन:\n• सांची में दक्षिणी टोराना कालानुक्रमिक रूप से चारों में सबसे प्राचीन है, जो सातवाहन काल में निर्मित है।\n• सभी चार सांची टोरानों के शीर्ष पर सालभांजिका (ब्रैकेट आकृतियाँ) हैं, जो यक्ष पूजा परंपराओं से लिए गए हैं।\n• बुद्ध को सांची टोरानों पर कभी मानव रूप में नहीं दर्शाया गया है — उनकी उपस्थिति केवल बोधि वृक्ष, पदचिह्न, चक्र और छत्र जैसे प्रतीकों से सूचित होती है।"
+    }
+  },
+  {
+    "uuid": "223e34f6-9b03-433e-b6d1-7c8acd2f8ca0",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Stupa vs Chaitya: Architectural Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Stupa vs chaitya: freestanding monument vs integrated rock-cut hall",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An archaeologist uncovers a rock-cut structure in the Western Ghats. The structure has an elongated nave flanked by two rows of pillars, an apsidal (rounded) rear end, and a solid dome-shaped form at the far end that served as a worship focal point. The entrance is marked by a large horseshoe-shaped window. Worshippers appear to have gathered inside the hall for congregational veneration.\n\nWhich of the following architectural categories does this structure most accurately represent?\n\n(a) A stupa — a freestanding relic monument designed for open-air circumambulation\n(b) A vihara — a monastic residence with cells arranged around a central courtyard\n(c) A chaitya — a rock-cut prayer hall with an integrated stupa form at the apsidal end\n(d) A mandapa — a pillared assembly hall attached to a main shrine complex",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know 'chaitya' involves a stupa inside may select this, conflating the presence of a stupa within the chaitya hall with the structure itself being a stupa.",
+      "elimination_logic": [
+        "The scenario describes an enclosed rock-cut prayer hall with a congregation space and a small stupa-like form at the far end — this is the structural definition of a chaitya hall, not a freestanding stupa.",
+        "Eliminate (a): a stupa is a freestanding monument for circumambulation under open sky — the scenario describes an enclosed hall.",
+        "Eliminate (b): a vihara is a residential monastic complex for monks — it does not have an apsidal hall with a worship focal point at the end.",
+        "Eliminate (d): a mandapa is a pillared hall but not a rock-cut prayer hall with an integrated stupa form.",
+        "Accept (c): the structure is a chaitya — an enclosed rock-cut congregational prayer hall with a stupa form at the apsidal end, exemplified by Karla and Bhaja."
+      ],
+      "upsc_trap_explanation": "The conflation trap targets students who know that chaityas contain stupas inside them. These students may call the structure a 'stupa' because they focus on the object at the far end rather than the architectural typology of the whole. The scenario is designed to test whether students can distinguish the container (chaitya hall) from the contained (the stupa within it).",
+      "final_explanation": "The distinction between a stupa and a chaitya is one of scale, enclosure, and function — and it is a favourite UPSC differentiator.\n\nScenario analysis: The structure described is rock-cut, has an apsidal plan, an enclosed nave flanked by columns, and a stupa form at the rounded end — this is a chaitya hall.\n\n• Option (a) — Incorrect: A stupa is a freestanding solid monument under open sky; it is not an enclosed prayer hall with a nave and columns.\n• Option (b) — Incorrect: A vihara is a monastic residence; its cells open onto a central courtyard — there is no apsidal prayer hall with a stupa focus.\n• Option (c) — Correct: A chaitya is a rock-cut congregational worship hall with a stupa integrated at the apsidal end. Karla (Maharashtra) and Bhaja are canonical examples. Worshippers could circumambulate the interior stupa under shelter.\n• Option (d) — Incorrect: A mandapa is a pillared assembly hall, not an apsidal rock-cut form with a stupa terminus.\n\nValue Addition:\n• The Karla chaitya (2nd century BCE–2nd century CE) has the tallest surviving rock-cut chaitya facade in India.\n• The horseshoe-shaped window (gavaksha/chaitya arch) above the entrance became a decorative motif across later Indian architecture.\n• Bhaja and Bedsa are among the earliest chaitya caves in the Western Ghats."
+    },
+    "hi": {
+      "display_text": "पश्चिमी घाट में एक पुरातत्ववेत्ता ने एक शिला-कट संरचना का अनावरण किया। इस संरचना में दो पंक्तियों में स्तंभों से घिरा एक लम्बा नेव, एक अप्सिडल (गोल) पिछला छोर, और दूर के छोर पर एक ठोस गुंबदाकार रूप है जो पूजा का केंद्र था। प्रवेश द्वार पर एक बड़ा घोड़े के नाल के आकार की खिड़की है। भक्त सभा के लिए हॉल के अंदर एकत्रित होते प्रतीत होते हैं।\n\nनिम्नलिखित में से कौन-सा वास्तुशिल्प वर्ग इस संरचना का सबसे सटीक प्रतिनिधित्व करता है?\n\n(a) स्तूप — एक स्वतंत्र अवशेष स्मारक जो खुले आकाश के नीचे परिक्रमा के लिए डिज़ाइन किया गया है\n(b) विहार — एक मठ आवास जिसमें कक्ष एक केंद्रीय आंगन के चारों ओर व्यवस्थित हैं\n(c) चैत्य — एक शिला-कट प्रार्थना हॉल जिसमें अप्सिडल छोर पर एकीकृत स्तूप रूप होता है\n(d) मंडप — एक स्तंभित सभा हॉल जो मुख्य मंदिर परिसर से जुड़ा होता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो जानते हैं कि 'चैत्य' के अंदर एक स्तूप होता है, वे इसे चुन सकते हैं, क्योंकि वे चैत्य हॉल के अंदर स्तूप की उपस्थिति को संरचना के स्तूप होने के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "परिदृश्य एक बंद शिला-कट प्रार्थना हॉल का वर्णन करता है जिसमें एक सभा स्थल और दूर के छोर पर एक छोटा स्तूप जैसा रूप है — यह चैत्य हॉल की संरचनात्मक परिभाषा है, स्वतंत्र स्तूप नहीं।",
+        "(a) को हटाएं: स्तूप एक स्वतंत्र स्मारक होता है जो खुले आकाश के नीचे परिक्रमा के लिए होता है — परिदृश्य एक बंद हॉल का वर्णन करता है।",
+        "(b) को हटाएं: विहार एक भिक्षुओं के लिए आवासीय मठ परिसर है — इसमें अंत में पूजा के लिए एक अप्सिडल हॉल नहीं होता।",
+        "(d) को हटाएं: मंडप एक स्तंभित हॉल है लेकिन यह एक शिला-कट प्रार्थना हॉल नहीं है जिसमें एकीकृत स्तूप रूप हो।",
+        "(c) स्वीकार करें: संरचना एक चैत्य है — एक बंद शिला-कट सभा प्रार्थना हॉल जिसमें अप्सिडल छोर पर स्तूप रूप होता है, जिसका उदाहरण करला और भाजा हैं।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल उन छात्रों को लक्षित करता है जो जानते हैं कि चैत्य के अंदर स्तूप होते हैं। ये छात्र संरचना को 'स्तूप' कह सकते हैं क्योंकि वे पूरे वास्तुशिल्प प्रकार के बजाय दूर के छोर पर वस्तु पर ध्यान केंद्रित करते हैं। परिदृश्य यह परीक्षण करने के लिए डिज़ाइन किया गया है कि छात्र कंटेनर (चैत्य हॉल) को कंटेंट (अंदर का स्तूप) से अलग कर सकते हैं या नहीं।",
+      "final_explanation": "स्तूप और चैत्य के बीच अंतर पैमाने, आवरण और कार्य का है — और यह UPSC का पसंदीदा भेदक है।\n\nपरिदृश्य विश्लेषण: वर्णित संरचना शिला-कट है, इसका अप्सिडल योजना है, स्तंभों से घिरा बंद नेव है, और गोल छोर पर स्तूप रूप है — यह एक चैत्य हॉल है।\n\n• विकल्प (a) — गलत: स्तूप एक स्वतंत्र ठोस स्मारक है जो खुले आकाश के नीचे होता है; यह एक बंद प्रार्थना हॉल नहीं है जिसमें नेव और स्तंभ हों।\n• विकल्प (b) — गलत: विहार एक मठ आवास है; इसके कक्ष एक केंद्रीय आंगन की ओर खुलते हैं — इसमें स्तूप केंद्रित अप्सिडल प्रार्थना हॉल नहीं होता।\n• विकल्प (c) — सही: चैत्य एक शिला-कट सभा प्रार्थना हॉल है जिसमें अप्सिडल छोर पर स्तूप एकीकृत होता है। करला (महाराष्ट्र) और भाजा इसके मानक उदाहरण हैं। भक्त अंदर के स्तूप के चारों ओर आश्रय के नीचे परिक्रमा कर सकते थे।\n• विकल्प (d) — गलत: मंडप एक स्तंभित सभा हॉल है, न कि अप्सिडल शिला-कट रूप जिसमें स्तूप अंत हो।\n\nमूल्य संवर्धन:\n• करला चैत्य (2री सदी ईसा पूर्व–2री सदी ईस्वी) भारत में सबसे ऊँचा जीवित शिला-कट चैत्य मुखौटा है।\n• प्रवेश द्वार के ऊपर घोड़े के नाल के आकार की खिड़की (गवाक्ष/चैत्य मेहराब) बाद की भारतीय वास्तुकला में सजावटी रूप बन गई।\n• भाजा और बेड़सा पश्चिमी घाट के सबसे पुराने चैत्य गुफाओं में से हैं।"
+    }
+  },
+  {
+    "uuid": "e677c6ff-c519-48b0-8f7a-2f7ec89e2bee",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Aniconic vs Iconic Representation in Stupa Art"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Aniconic symbols representing the Buddha in early stupa art",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the context of early Buddhist stupa art (pre-1st century CE), which of the following does NOT belong to the same representational tradition as the others?\n\n(a) An anthropomorphic figure of the Buddha seated in meditation\n(b) A Bodhi tree with an empty seat beneath it\n(c) A Dharmachakra (Wheel of Law) set on a pillar\n(d) A Vajrasana (empty throne) marking the spot of Enlightenment",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — The throne (Vajrasana) is sometimes confused with later iconic art because it marks the Enlightenment spot — students may think 'throne' implies a person seated on it, making it quasi-iconic, when in fact it is a recognised aniconic symbol.",
+      "elimination_logic": [
+        "Identify the context: early stupa art (pre-1st century CE) used only aniconic symbols to represent the Buddha.",
+        "Bodhi tree — aniconic symbol for Enlightenment: belongs in the group.",
+        "Wheel (Dharmachakra) — aniconic symbol for First Sermon: belongs in the group.",
+        "Vajrasana (throne) — aniconic symbol for the spot of Enlightenment: belongs in the group.",
+        "Anthropomorphic Buddha figure — this IS the iconic representation that replaced aniconism from the Gandhara/Mathura period onward: this is the odd one out.",
+        "Select (a)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes the Vajrasana (correct aniconic symbol) for the anthropomorphic Buddha figure (iconic). Students who have memorised the list of aniconic symbols without understanding what makes each aniconic may not immediately recognise that an anthropomorphic figure (option a) belongs to a different representational tradition entirely. The Vajrasana looks like it 'involves a person' (someone sat on it), making it a plausible trap distractor.",
+      "final_explanation": "Early Buddhist stupa art deliberately avoided depicting the Buddha in human form — a practice called aniconism. Only symbols stood in for the Buddha's presence.\n\n• Option (a) — ODD ONE OUT: The anthropomorphic Buddha figure — a human-form depiction — is a product of the iconic phase that emerged in Gandhara and Mathura from the 1st century CE onward. It does NOT belong to the aniconic tradition.\n• Option (b) — Aniconic symbol: The Bodhi tree represents the Enlightenment without showing the Buddha's body.\n• Option (c) — Aniconic symbol: The Dharmachakra (Wheel of Law) represents the First Sermon at Sarnath.\n• Option (d) — Aniconic symbol: The Vajrasana (empty throne) marks the seat of Enlightenment — the absence of a figure is the point.\n\nValue Addition:\n• Footprints (buddhapada) and the parasol are additional aniconic symbols used on Sanchi toranas.\n• The Gandhara school is generally credited as the first to produce anthropomorphic Buddha images, possibly under Greco-Roman influence.\n• The Mathura school independently developed the iconic Buddha form using a local red sandstone tradition."
+    },
+    "hi": {
+      "display_text": "प्रारंभिक बौद्ध स्तूप कला (1वीं सदी ईसा पूर्व) के संदर्भ में, निम्नलिखित में से कौन-सा अन्य प्रतिनिधित्व परंपरा से संबंधित नहीं है?\n\n(a) ध्यान में बैठे बुद्ध की मानवीय आकृति\n(b) खाली सिंहासन के नीचे बोधि वृक्ष\n(c) स्तंभ पर स्थापित धर्मचक्र (धर्म का चक्र)\n(d) बोधि स्थल को दर्शाने वाला वज्रासन (खाली सिंहासन)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — वज्रासन (सिंहासन) को कभी-कभी बाद की आइकोनिक कला के साथ भ्रमित किया जाता है क्योंकि यह बोधि स्थल को दर्शाता है — छात्र सोच सकते हैं कि 'सिंहासन' का अर्थ है उस पर कोई व्यक्ति बैठा है, जिससे यह आंशिक रूप से आइकोनिक प्रतीत होता है, जबकि वास्तव में यह एक मान्यता प्राप्त अनिकॉनिक प्रतीक है।",
+      "elimination_logic": [
+        "संदर्भ पहचानें: प्रारंभिक स्तूप कला (1वीं सदी ईसा पूर्व) में बुद्ध का प्रतिनिधित्व केवल अनिकॉनिक प्रतीकों द्वारा किया जाता था।",
+        "बोधि वृक्ष — बोधि का अनिकॉनिक प्रतीक: समूह में शामिल है।",
+        "धर्मचक्र (चक्र) — प्रथम उपदेश का अनिकॉनिक प्रतीक: समूह में शामिल है।",
+        "वज्रासन (सिंहासन) — बोधि स्थल का अनिकॉनिक प्रतीक: समूह में शामिल है।",
+        "मानवीय आकृति वाला बुद्ध प्रतिरूप — यह आइकोनिक प्रतिनिधित्व है जो गांधार/मथुरा काल से अनिकॉनिज़्म की जगह लेता है: यह अलग है।",
+        "अतः (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में वज्रासन (सही अनिकॉनिक प्रतीक) को मानवीय आकृति वाले बुद्ध प्रतिरूप (आइकोनिक) के स्थान पर रखा गया है। जो छात्र अनिकॉनिक प्रतीकों की सूची याद करते हैं पर यह नहीं समझते कि प्रत्येक अनिकॉनिक प्रतीक क्या है, वे तुरंत पहचान नहीं पाएंगे कि मानवीय आकृति (विकल्प a) पूरी तरह से अलग प्रतिनिधित्व परंपरा से है। वज्रासन ऐसा प्रतीत होता है जैसे इसमें कोई व्यक्ति बैठा हो, जिससे यह एक संभावित भ्रमकारी विकल्प बन जाता है।",
+      "final_explanation": "प्रारंभिक बौद्ध स्तूप कला जानबूझकर बुद्ध को मानव रूप में चित्रित करने से बचती थी — इसे अनिकॉनिज़्म कहा जाता है। केवल प्रतीक ही बुद्ध की उपस्थिति का प्रतिनिधित्व करते थे।\n\n• विकल्प (a) — अलग विकल्प: मानवीय आकृति वाला बुद्ध प्रतिरूप — मानव रूप में चित्रण — यह आइकोनिक चरण का उत्पाद है जो 1वीं सदी ईस्वी से गांधार और मथुरा में उभरा। यह अनिकॉनिक परंपरा का हिस्सा नहीं है।\n• विकल्प (b) — अनिकॉनिक प्रतीक: बोधि वृक्ष बिना बुद्ध के शरीर को दिखाए बोधि का प्रतिनिधित्व करता है।\n• विकल्प (c) — अनिकॉनिक प्रतीक: धर्मचक्र (धर्म का चक्र) सारनाथ में प्रथम उपदेश का प्रतिनिधित्व करता है।\n• विकल्प (d) — अनिकॉनिक प्रतीक: वज्रासन (खाली सिंहासन) बोधि स्थल को दर्शाता है — आकृति की अनुपस्थिति ही इसका उद्देश्य है।\n\nमूल्यवर्धन:\n• पदचिह्न (बुद्धपाद) और छत्रा संची के तोरणों पर अतिरिक्त अनिकॉनिक प्रतीक हैं।\n• गांधार स्कूल को आमतौर पर मानवीय बुद्ध प्रतिमाएँ बनाने वाला पहला माना जाता है, संभवतः ग्रीको-रोमन प्रभाव के तहत।\n• मथुरा स्कूल ने स्थानीय लाल बलुआ पत्थर की परंपरा का उपयोग करते हुए स्वतंत्र रूप से आइकोनिक बुद्ध रूप विकसित किया।"
+    }
+  },
+  {
+    "uuid": "d9051837-0bbd-4605-9553-5fa5a0f8423b",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Sanchi Stupa Complex: Architectural Layers"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Sanchi Stupa II and III: distinctive features",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Sanchi stupa complex, consider the following statements:\n\nStatement 1: Sanchi Stupa II is notable for being located on the hillside and for its continuous narrative friezes on the vedika, which display Jataka stories without individual torana gateways.\nStatement 2: Sanchi Stupa III is larger than Stupa I and contains the relics of both the Buddha's principal disciples — Sariputta and Moggallana.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sanchi Stupa II is notable for being located on the hillside and for its continuous narrative friezes on the vedika, which display Jataka stories without individual torana gateways.",
+          "verdict": "Correct",
+          "reason": "Stupa II is positioned on a lower terrace of the Sanchi hill, its vedika bears continuous decorative medallions with narrative content, and it lacks the four-torana gateway system of Stupa I."
+        },
+        {
+          "statement": "Sanchi Stupa III is larger than Stupa I and contains the relics of both the Buddha's principal disciples — Sariputta and Moggallana.",
+          "verdict": "Incorrect",
+          "reason": "Stupa III is smaller than the Great Stupa (Stupa I), not larger. It does contain the relics of Sariputta and Moggallana, but the size claim is factually reversed."
+        }
+      ],
+      "strong_distractor": "a — Students who know the relic attribution of Stupa III correctly may overlook the false size claim and accept both statements as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Stupa II's hillside position and continuous frieze vedika without individual toranas are standard features — Statement 1 is correct.",
+        "Evaluate Statement 2: The relic contents (Sariputta and Moggallana) are correct, but Stupa III is distinctly smaller than Stupa I (the Great Stupa) — the size claim is false.",
+        "Statement 1 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap embeds a false size claim within a statement that is otherwise factually accurate (the relic attribution is correct). Students who have memorised 'Stupa III = Sariputta and Moggallana' as an isolated fact will accept the whole statement without scrutinising the comparative size assertion. This is a classic UPSC technique of hiding one false element inside an otherwise true sentence.",
+      "final_explanation": "The Sanchi complex has three main stupas with very different characteristics, and UPSC questions regularly exploit cross-stupa confusion.\n\n• Statement 1 — Correct: Stupa II occupies a lower hillside terrace rather than the main hilltop. Its vedika carries continuous decorative medallions featuring Jataka-related imagery, and it does not have four elaborate gateways like the Great Stupa.\n• Statement 2 — Incorrect: Stupa III is the third-largest at Sanchi — it is decidedly smaller than Stupa I. It does contain the bone relics of Sariputta and Moggallana (excavated in the 19th century by Alexander Cunningham), but attributing to it a size greater than the Great Stupa is factually wrong.\n\nValue Addition:\n• The relics of Sariputta and Moggallana from Stupa III were taken to England and later returned to Sri Lanka, where they are now enshrined.\n• Stupa II at Sanchi is dated to the Sunga period and its medallions are among the earliest examples of narrative stupa art.\n• Stupa I (the Great Stupa) has a diameter of approximately 36.6 metres and a height of 16.5 metres."
+    },
+    "hi": {
+      "display_text": "सांची स्तूप परिसर के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: सांची स्तूप II अपनी पहाड़ी पर स्थित होने और वेदिका पर निरंतर कथात्मक फ्रिज़ के लिए प्रसिद्ध है, जिसमें जातक कथाएँ बिना किसी व्यक्तिगत तोरण द्वार के प्रदर्शित होती हैं।\nकथन 2: सांची स्तूप III, स्तूप I से बड़ा है और इसमें बुद्ध के मुख्य शिष्यों — सारिपुत्त और मोग्गलाना की अवशेष मौजूद हैं।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sanchi Stupa II is notable for being located on the hillside and for its continuous narrative friezes on the vedika, which display Jataka stories without individual torana gateways.",
+          "verdict": "Correct",
+          "reason": "Stupa II is positioned on a lower terrace of the Sanchi hill, its vedika bears continuous decorative medallions with narrative content, and it lacks the four-torana gateway system of Stupa I."
+        },
+        {
+          "statement": "Sanchi Stupa III is larger than Stupa I and contains the relics of both the Buddha's principal disciples — Sariputta and Moggallana.",
+          "verdict": "Incorrect",
+          "reason": "Stupa III is smaller than the Great Stupa (Stupa I), not larger. It does contain the relics of Sariputta and Moggallana, but the size claim is factually reversed."
+        }
+      ],
+      "strong_distractor": "a — Students who know the relic attribution of Stupa III correctly may overlook the false size claim and accept both statements as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Stupa II's hillside position and continuous frieze vedika without individual toranas are standard features — Statement 1 is correct.",
+        "Evaluate Statement 2: The relic contents (Sariputta and Moggallana) are correct, but Stupa III is distinctly smaller than Stupa I (the Great Stupa) — the size claim is false.",
+        "Statement 1 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap embeds a false size claim within a statement that is otherwise factually accurate (the relic attribution is correct). Students who have memorised 'Stupa III = Sariputta and Moggallana' as an isolated fact will accept the whole statement without scrutinising the comparative size assertion. This is a classic UPSC technique of hiding one false element inside an otherwise true sentence.",
+      "final_explanation": "The Sanchi complex has three main stupas with very different characteristics, and UPSC questions regularly exploit cross-stupa confusion.\n\n• Statement 1 — Correct: Stupa II occupies a lower hillside terrace rather than the main hilltop. Its vedika carries continuous decorative medallions featuring Jataka-related imagery, and it does not have four elaborate gateways like the Great Stupa.\n• Statement 2 — Incorrect: Stupa III is the third-largest at Sanchi — it is decidedly smaller than Stupa I. It does contain the bone relics of Sariputta and Moggallana (excavated in the 19th century by Alexander Cunningham), but attributing to it a size greater than the Great Stupa is factually wrong.\n\nValue Addition:\n• The relics of Sariputta and Moggallana from Stupa III were taken to England and later returned to Sri Lanka, where they are now enshrined.\n• Stupa II at Sanchi is dated to the Sunga period and its medallions are among the earliest examples of narrative stupa art.\n• Stupa I (the Great Stupa) has a diameter of approximately 36.6 metres and a height of 16.5 metres."
+    }
+  },
+  {
+    "uuid": "6c239961-5cef-429f-b695-fb05a8c48733",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Amaravati School: Distinctive Features"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Amaravati ayaka platforms — exclusive Deccan feature",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Amaravati stupa, belonging to the Satavahana-period tradition of the Deccan, is distinguished from North Indian stupas by the presence of five rectangular projecting structures at cardinal and subsidiary directions of the drum, each bearing elaborately carved narrative panels and additional pillars. These distinctive projections are known as ________.\n\n(a) Chattra platforms\n(b) Ayaka platforms\n(c) Vedika extensions\n(d) Torana bases",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Vedika extensions' sounds architecturally plausible and relates to a real component of stupa design, making it attractive to students who know vedika but not the specific term 'ayaka'.",
+      "elimination_logic": [
+        "The blank describes five projecting platforms unique to the Amaravati-Nagarjunakonda tradition that carry narrative panels and additional pillars.",
+        "Eliminate 'chattra platforms' (a): chhatras are umbrella-like elements on top, not projecting ground-level platforms.",
+        "Eliminate 'vedika extensions' (c): vedikas are railings encircling the stupa, not projecting platforms at cardinal points.",
+        "Eliminate 'torana bases' (d): torana bases belong to gateway posts, not to platform projections on the anda perimeter.",
+        "Accept 'ayaka platforms' (b): ayaka platforms are the five projecting rectangular additions at the cardinal and subsidiary directions that are the hallmark of the Amaravati tradition."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap replaces 'ayaka' with structurally adjacent terms ('vedika extension', 'chattra platform'). Students who know Amaravati is distinctive but have not memorised the specific term 'ayaka' will reach for a known vocabulary item like 'vedika' or 'torana'. The term 'ayaka' is rare enough outside specialist study to be genuinely discriminating.",
+      "final_explanation": "The Amaravati stupa tradition diverged from North Indian norms in several key structural features, with the ayaka being the most architecturally distinctive.\n\n• Option (a) — Incorrect: Chattra platforms do not exist as a structural category; chhatras are the umbrella elements atop the yasti.\n• Option (b) — Correct: Ayaka platforms are five rectangular projections extending outward from the drum of the Amaravati stupa at the cardinal and diagonal points. They carry ayaka pillars and elaborate narrative sculptural panels.\n• Option (c) — Incorrect: Vedika is a railing system; extending it does not create a projecting platform — these are architecturally distinct features.\n• Option (d) — Incorrect: Torana bases are the foundation posts of gateway structures and are not unique to the Amaravati tradition.\n\nValue Addition:\n• Amaravati used white limestone rather than the buff sandstone typical of North Indian stupas.\n• Ayaka pillars atop the ayaka platforms are a signature motif of the Andhra-region stupa tradition.\n• The Amaravati stupa's sculptural panels now reside partly in the Government Museum, Chennai, and partly in the British Museum, London."
+    },
+    "hi": {
+      "display_text": "अमरावती स्तूप, जो दक्कन की सातवाहन-कालीन परंपरा से संबंधित है, उत्तर भारतीय स्तूपों से इस बात से भिन्न है कि ड्रम के मुख्य और उप दिशाओं पर पाँच आयताकार प्रक्षिप्त संरचनाएँ होती हैं, जिनमें विस्तृत नक्काशीदार कथात्मक पैनल और अतिरिक्त स्तंभ होते हैं। इन विशिष्ट प्रक्षेपों को ________ कहा जाता है।\n\n(a) छत्र प्लेटफॉर्म\n(b) अयक प्लेटफॉर्म\n(c) वेदिका एक्सटेंशन्स\n(d) तोरणा बेस",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'वेदिका एक्सटेंशन्स' वास्तुकला के दृष्टिकोण से संभावित लगता है और स्तूप डिजाइन के एक वास्तविक घटक से संबंधित है, जो उन छात्रों के लिए आकर्षक है जो वेदिका जानते हैं लेकिन 'अयक' शब्द को नहीं जानते।",
+      "elimination_logic": [
+        "रिक्त स्थान अमरावती-नागर्जुनकोण्डा परंपरा के पांच प्रक्षिप्त प्लेटफॉर्म का वर्णन करता है जो कथात्मक पैनल और अतिरिक्त स्तंभ धारण करते हैं।",
+        "'छत्र प्लेटफॉर्म' (a) को हटा दें: छत्र छत्रा शीर्ष पर छत्र के समान तत्व हैं, न कि प्रक्षिप्त भूमि-स्तर के प्लेटफॉर्म।",
+        "'वेदिका एक्सटेंशन्स' (c) को हटा दें: वेदिका स्तूप के चारों ओर रेलिंग होती है, न कि मुख्य दिशाओं पर प्रक्षिप्त प्लेटफॉर्म।",
+        "'तोरणा बेस' (d) को हटा दें: तोरणा बेस द्वार के स्तंभों से संबंधित हैं, न कि अंडा परिधि पर प्लेटफॉर्म प्रक्षिप्तियों से।",
+        "'अयक प्लेटफॉर्म' (b) को स्वीकार करें: अयक प्लेटफॉर्म वे पांच प्रक्षिप्त आयताकार अतिरिक्त हैं जो मुख्य और उप दिशाओं पर होते हैं और अमरावती परंपरा की विशेषता हैं।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल 'अयक' को संरचनात्मक रूप से निकटवर्ती शब्दों ('वेदिका एक्सटेंशन', 'छत्र प्लेटफॉर्म') से बदल देता है। जो छात्र अमरावती की विशिष्टता जानते हैं लेकिन 'अयक' शब्द याद नहीं रखते, वे 'वेदिका' या 'तोरणा' जैसे परिचित शब्दों की ओर झुकेंगे। 'अयक' शब्द विशेषज्ञ अध्ययन के बाहर दुर्लभ है, इसलिए यह वास्तव में भेदक है।",
+      "final_explanation": "अमरावती स्तूप परंपरा उत्तर भारतीय मानदंडों से कई प्रमुख संरचनात्मक विशेषताओं में भिन्न है, जिनमें अयक सबसे वास्तुशिल्पीय रूप से विशिष्ट है।\n\n• विकल्प (a) — गलत: छत्र प्लेटफॉर्म एक संरचनात्मक श्रेणी के रूप में मौजूद नहीं हैं; छत्रा यस्ती के शीर्ष पर छत्र के समान तत्व हैं।\n• विकल्प (b) — सही: अयक प्लेटफॉर्म अमरावती स्तूप के ड्रम से मुख्य और विकर्ण बिंदुओं पर बाहर निकले पाँच आयताकार प्रक्षेप हैं। इनमें अयक स्तंभ और विस्तृत कथात्मक मूर्तिकला पैनल होते हैं।\n• विकल्प (c) — गलत: वेदिका एक रेलिंग प्रणाली है; इसे बढ़ाने से प्रक्षिप्त प्लेटफॉर्म नहीं बनते — ये वास्तुशिल्पीय रूप से भिन्न विशेषताएं हैं।\n• विकल्प (d) — गलत: तोरणा बेस द्वार संरचनाओं के आधार स्तंभ हैं और अमरावती परंपरा के लिए विशिष्ट नहीं हैं।\n\nमूल्य संवर्धन:\n• अमरावती ने उत्तर भारतीय स्तूपों में सामान्य बफ़ बलुआ पत्थर के बजाय सफेद चूना पत्थर का उपयोग किया।\n• अयक प्लेटफॉर्म के ऊपर अयक स्तंभ आंध्र क्षेत्र के स्तूप परंपरा की एक प्रमुख विशेषता हैं।\n• अमरावती स्तूप के मूर्तिकला पैनल अब आंशिक रूप से चेन्नई के सरकारी संग्रहालय और आंशिक रूप से लंदन के ब्रिटिश संग्रहालय में रखे गए हैं।"
+    }
+  },
+  {
+    "uuid": "abb49395-2e61-4f4f-a868-786a70141f61",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Relic Deposition and Consecration Practices"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Piprahwa and Bhattiprolu relic casket discoveries",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs of archaeological relic casket discovery sites and their locations is correctly matched?\n\n(a) Piprahwa — Uttar Pradesh; known for an Ashokan pillar edict inscription identifying it as the site of Buddha's relics\n(b) Bhattiprolu — Bihar; known for one of the earliest Brahmi relic casket inscriptions in eastern India\n(c) Sanchi Stupa II — Madhya Pradesh; known for containing the relics of Sariputta and Moggallana\n(d) Piprahwa — Uttar Pradesh; known for a relic casket inscription claiming Buddha's bodily relics; Bhattiprolu — Andhra Pradesh; known for an early Brahmi relic casket inscription",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Pairing Bhattiprolu with Bihar is deceptive because students know Bihar is Buddhist heartland (Bodh Gaya, Nalanda, Vaishali) and may attribute the Bhattiprolu discovery there rather than to Andhra Pradesh.",
+      "elimination_logic": [
+        "Eliminate (a): Piprahwa is correctly located in Uttar Pradesh near Kapilavastu — but the description 'Ashokan pillar edict inscription' is wrong; Piprahwa is known for the relic casket inscription, not an Ashokan pillar edict at that exact site.",
+        "Eliminate (b): Bhattiprolu is in Andhra Pradesh, not Bihar — geographic-swap trap.",
+        "Eliminate (c): Sanchi relics (Sariputta and Moggallana) were in Stupa III, not Stupa II — entity-swap within the same complex.",
+        "Accept (d): Piprahwa (Uttar Pradesh) — relic casket with Brahmi inscription claiming Buddha's bodily relics; Bhattiprolu (Andhra Pradesh) — relic casket with an early Brahmi inscription, considered among the earliest examples of Indian writing. Both pairings are geographically and epigraphically correct."
+      ],
+      "upsc_trap_explanation": "The geographic-swap in option (b) places Bhattiprolu in Bihar — a plausible location because Bihar is synonymous with early Buddhism in student memory. Bhattiprolu's Andhra Pradesh location is a precise fact that separates well-prepared students from the rest. Option (a) correctly places Piprahwa in UP but distorts the nature of the find, making it a partial-truth trap.",
+      "final_explanation": "Archaeological discoveries of relic caskets provide direct physical evidence for stupa traditions and are increasingly tested in UPSC Prelims.\n\n• Option (a) — Incorrect: Piprahwa is in Uttar Pradesh and did yield a relic casket, but it is not primarily associated with an Ashokan pillar edict — the casket inscription is pre-Ashokan or early Mauryan.\n• Option (b) — Incorrect: Bhattiprolu is in Andhra Pradesh (Krishna district), not Bihar. Its relic casket inscription is significant for being among the earliest Brahmi inscriptions found in South India.\n• Option (c) — Incorrect: The relics of Sariputta and Moggallana were found in Stupa III, not Stupa II at Sanchi.\n• Option (d) — Correct: Piprahwa (UP) yielded a relic casket with an inscription identifying Buddha's bodily relics — significant for Kapilavastu identification. Bhattiprolu (Andhra Pradesh) yielded a relic casket with early Brahmi. Both pairings are accurate.\n\nValue Addition:\n• The Piprahwa casket inscription reads (in translation): 'This is the relic of the Buddha of the Sakyas, of the illustrious one.'\n• Bhattiprolu's inscription is palaeographically dated to around the 3rd century BCE.\n• Alexander Cunningham excavated Piprahwa in the 19th century as part of his search for Kapilavastu."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-से पुरातात्विक अवशेष पात्र खोज स्थलों और उनके स्थानों के जोड़े सही रूप से मेल खाते हैं?\n\n(a) पिपरहवा — उत्तर प्रदेश; अशोक स्तंभ शिलालेख के लिए जाना जाता है जो इसे बुद्ध के अवशेष स्थल के रूप में पहचानता है\n(b) भट्टिप्रोलु — बिहार; पूर्वी भारत में सबसे प्राचीन ब्राह्मी अवशेष पात्र शिलालेखों में से एक के लिए जाना जाता है\n(c) सांची स्तूप II — मध्य प्रदेश; सारिपुत्र और मोग्गलाना के अवशेषों के लिए जाना जाता है\n(d) पिपरहवा — उत्तर प्रदेश; बुद्ध के शारीरिक अवशेषों का दावा करने वाले अवशेष पात्र शिलालेख के लिए जाना जाता है; भट्टिप्रोलु — आंध्र प्रदेश; प्रारंभिक ब्राह्मी अवशेष पात्र शिलालेख के लिए जाना जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — भट्टिप्रोलु को बिहार से जोड़ना भ्रमित करने वाला है क्योंकि छात्र जानते हैं कि बिहार बौद्ध धर्म का हृदयस्थल है (बोधगया, नालंदा, वैशाली) और वे भट्टिप्रोलु की खोज को आंध्र प्रदेश के बजाय वहां मान सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: पिपरहवा सही रूप से उत्तर प्रदेश में कपिलवस्तु के पास स्थित है — लेकिन 'अशोक स्तंभ शिलालेख' का विवरण गलत है; पिपरहवा अपने अवशेष पात्र के शिलालेख के लिए जाना जाता है, न कि उसी स्थल पर अशोक स्तंभ शिलालेख के लिए।",
+        "(b) को हटाएं: भट्टिप्रोलु आंध्र प्रदेश में है, बिहार में नहीं — भौगोलिक स्थान की अदला-बदली का जाल।",
+        "(c) को हटाएं: सांची के अवशेष (सारिपुत्र और मोग्गलाना) स्तूप III में थे, स्तूप II में नहीं — एक ही परिसर के भीतर वस्तु की अदला-बदली।",
+        "(d) को स्वीकार करें: पिपरहवा (उत्तर प्रदेश) — अवशेष पात्र जिसमें ब्राह्मी शिलालेख है जो बुद्ध के शारीरिक अवशेषों का दावा करता है; भट्टिप्रोलु (आंध्र प्रदेश) — एक प्रारंभिक ब्राह्मी शिलालेख वाला अवशेष पात्र, जिसे भारतीय लेखन के सबसे प्राचीन उदाहरणों में माना जाता है। दोनों जोड़े भौगोलिक और शिलालेखीय रूप से सही हैं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में भौगोलिक स्थान की अदला-बदली भट्टिप्रोलु को बिहार में रखती है — एक संभावित स्थान क्योंकि बिहार छात्र स्मृति में प्रारंभिक बौद्ध धर्म के पर्याय के रूप में है। भट्टिप्रोलु का आंध्र प्रदेश में होना एक सटीक तथ्य है जो अच्छी तैयारी वाले छात्रों को बाकी से अलग करता है। विकल्प (a) पिपरहवा को सही रूप से यूपी में रखता है लेकिन खोज की प्रकृति को विकृत करता है, जिससे यह आंशिक-सत्य जाल बन जाता है।",
+      "final_explanation": "अवशेष पात्रों की पुरातात्विक खोजें स्तूप परंपराओं के लिए प्रत्यक्ष भौतिक प्रमाण प्रदान करती हैं और UPSC प्रारंभिक परीक्षा में बढ़ती जांच का विषय हैं।\n\n• विकल्प (a) — गलत: पिपरहवा उत्तर प्रदेश में है और वहाँ अवशेष पात्र मिला था, लेकिन यह मुख्यतः अशोक स्तंभ शिलालेख से जुड़ा नहीं है — पात्र का शिलालेख प्राचीन या प्रारंभिक मौर्यकालीन है।\n• विकल्प (b) — गलत: भट्टिप्रोलु आंध्र प्रदेश (कृष्णा जिला) में है, बिहार में नहीं। इसका अवशेष पात्र शिलालेख दक्षिण भारत में पाए गए सबसे प्राचीन ब्राह्मी शिलालेखों में से एक है।\n• विकल्प (c) — गलत: सारिपुत्र और मोग्गलाना के अवशेष सांची के स्तूप III में पाए गए थे, स्तूप II में नहीं।\n• विकल्प (d) — सही: पिपरहवा (यूपी) में ऐसा अवशेष पात्र मिला जिसमें बुद्ध के शारीरिक अवशेषों की पहचान करने वाला शिलालेख था — जो कपिलवस्तु की पहचान के लिए महत्वपूर्ण है। भट्टिप्रोलु (आंध्र प्रदेश) में प्रारंभिक ब्राह्मी शिलालेख वाला अवशेष पात्र मिला। दोनों जोड़े सटीक हैं।\n\nमूल्यवर्धन:\n• पिपरहवा पात्र शिलालेख का अनुवाद है: 'यह शाक्य के बुद्ध का अवशेष है, जो महान है।'\n• भट्टिप्रोलु का शिलालेख लगभग तीसरी शताब्दी ईसा पूर्व का पुरालेखीय रूप से माना जाता है।\n• अलेक्जेंडर कनिंघम ने 19वीं सदी में कपिलवस्तु की खोज के हिस्से के रूप में पिपरहवा का उत्खनन किया।"
+    }
+  },
+  {
+    "uuid": "2a9a9b34-576f-4115-a86f-74353ed5f988",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Stupa Construction Materials and Techniques"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Stone replication of wooden structural forms in Sunga-Satavahana stupas",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The practice of encasing earlier brick stupa cores in stone and replicating the mortise-and-tenon joinery of wooden railing prototypes in the new stone medium is most closely associated with which period of Indian Buddhist architecture?\n\n(a) Sunga-Satavahana period\n(b) Gupta period\n(c) Mauryan period\n(d) Kushana period",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may choose (c) because 'Mauryan stone casing' sounds plausible — Ashoka is associated with stone pillar edicts and stone construction, making it easy to project stone casing onto the Mauryan phase.",
+      "elimination_logic": [
+        "Eliminate (b): Gupta-period construction used refined brick and stone but did not introduce the practice of stone replication of wooden prototypes — that is a Sunga-Satavahana innovation.",
+        "Eliminate (c): The Mauryan phase used brick for stupa cores — stone casing came later; attributing stone casing to Mauryan is a temporal-swap.",
+        "Eliminate (d): The Kushana period introduced different innovations (Gandhara style); stone-replica-of-wood is not their defining contribution.",
+        "Accept (a): The Sunga-Satavahana period is when craftsmen began encasing Mauryan brick cores in stone AND replicating in stone the mortise-and-tenon joinery of earlier wooden railings and gateways."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap places the stone-casing innovation in the Mauryan period rather than the Sunga-Satavahana period. Since Ashoka is universally associated with stone (his pillars, edicts), students assume his stupas were also stone-cased from the start. The reality is that early Ashokan stupas were brick, and stone became the medium only under Sunga patronage — a counter-intuitive fact that discriminates well-prepared from superficially prepared candidates.",
+      "final_explanation": "The material history of stupa construction follows a clear evolutionary arc that is regularly tested.\n\n• Option (a) — Correct: The Sunga-Satavahana period saw craftsmen apply stone casing to existing Ashokan brick cores and replicate the earlier wooden railing and gateway prototypes in stone, preserving wooden joinery forms (mortise-and-tenon, rail-and-crossbar) in the new material.\n• Option (b) — Incorrect: Gupta refinements involved adjustments to existing structures and construction of new temples, not the foundational innovation of stone-for-wood replacement.\n• Option (c) — Incorrect: Ashokan stupas were predominantly brick; stone came later — this is the classic temporal-swap trap exploiting Ashoka's famous association with stone pillars.\n• Option (d) — Incorrect: Kushana contributions are associated with the Gandhara style (Hellenistic decorative vocabulary) and the anthropomorphic Buddha image, not the stone-for-wood substitution.\n\nValue Addition:\n• The railings at Bharhut (Sunga) preserve wooden post-and-rail proportions in stone, making them a key example of this technology transfer.\n• The term 'post-and-rail' vedika refers to upright posts (thambha) connected by horizontal rails (suchi) and crossbars (ushnisha).\n• The Sanchi toranas similarly replicate multi-storeyed wooden gateway forms in stone."
+    },
+    "hi": {
+      "display_text": "प्रारंभिक ईंट के स्तूप कोर को पत्थर से आवृत करने और लकड़ी के रेलिंग प्रोटोटाइप के mortise-and-tenon जोड़ को नए पत्थर माध्यम में नकल करने की प्रथा भारतीय बौद्ध वास्तुकला के किस काल से सबसे अधिक जुड़ी है?\n\n(a) सुंग-सातवाहन काल\n(b) गुप्तकाल\n(c) मौर्यकाल\n(d) कुषाणकाल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students may choose (c) because 'Mauryan stone casing' sounds plausible — Ashoka is associated with stone pillar edicts and stone construction, making it easy to project stone casing onto the Mauryan phase.",
+      "elimination_logic": [
+        "(b) को खारिज करें: गुप्तकालीन निर्माण में परिष्कृत ईंट और पत्थर का उपयोग हुआ लेकिन लकड़ी के प्रोटोटाइप की पत्थर में नकल करने की प्रथा नहीं आई — यह एक सुंग-सातवाहन नवाचार है।",
+        "(c) को खारिज करें: मौर्य काल में स्तूप के कोर के लिए ईंट का उपयोग हुआ — पत्थर की आवरण बाद में आई; पत्थर की आवरण को मौर्य काल से जोड़ना कालानुक्रमिक भ्रम है।",
+        "(d) को खारिज करें: कुषाण काल में अलग नवाचार हुए (गंधार शैली); लकड़ी की जगह पत्थर की नकल उनकी मुख्य देन नहीं है।",
+        "(a) को स्वीकार करें: सुंग-सातवाहन काल में कारीगरों ने मौर्यकालीन ईंट के कोर को पत्थर से आवृत किया और पुराने लकड़ी के रेलिंग और द्वार के mortise-and-tenon जोड़ को पत्थर में नकल किया।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम यह पत्थर की आवरण की नवाचार को मौर्य काल में रखता है जबकि यह सुंग-सातवाहन काल की है। चूंकि अशोक पत्थर (उनके स्तंभ, शिलालेख) से व्यापक रूप से जुड़े हैं, छात्र मान लेते हैं कि उनके स्तूप भी शुरू से पत्थर से बने थे। वास्तविकता यह है कि प्रारंभिक अशोक स्तूप ईंट के थे, और पत्थर का उपयोग केवल सुंग संरक्षण में हुआ — यह एक विरोधाभासी तथ्य है जो सतही तैयारी वाले और अच्छी तैयारी वाले उम्मीदवारों में भेद करता है।",
+      "final_explanation": "स्तूप निर्माण की सामग्री का इतिहास एक स्पष्ट विकासात्मक क्रम का पालन करता है जो नियमित रूप से परीक्षा में पूछा जाता है।\n\n• विकल्प (a) — सही: सुंग-सातवाहन काल में कारीगरों ने मौजूदा अशोक ईंट के कोर को पत्थर से आवृत किया और पुराने लकड़ी के रेलिंग और द्वार के प्रोटोटाइप को पत्थर में नकल किया, जिससे mortise-and-tenon, रेल-और-क्रॉसबार जैसे लकड़ी के जोड़ संरक्षित रहे।\n• विकल्प (b) — गलत: गुप्तकालीन सुधार मौजूदा संरचनाओं में समायोजन और नए मंदिरों के निर्माण तक सीमित थे, पत्थर-के-स्थान-लकड़ी के मौलिक नवाचार नहीं थे।\n• विकल्प (c) — गलत: अशोक स्तूप मुख्यतः ईंट के थे; पत्थर बाद में आया — यह कालानुक्रमिक भ्रम है जो अशोक के पत्थर स्तंभों से जुड़ाव का दुरुपयोग करता है।\n• विकल्प (d) — गलत: कुषाण काल के योगदान गंधार शैली (हेल्लेनिस्टिक सजावटी शब्दावली) और मानवाकृति बुद्ध छवि से जुड़े हैं, न कि पत्थर-के-स्थान-लकड़ी से।\n\nमूल्यवर्धन:\n• भरहुत (सुंग) की रेलिंग पत्थर में लकड़ी के खंभे और रेल के अनुपात को संरक्षित करती है, जो इस तकनीकी हस्तांतरण का प्रमुख उदाहरण है।\n• 'पोस्ट-एंड-रेल' वेदिका से तात्पर्य खड़े खंभे (थंभा) होते हैं जो क्षैतिज रेल (सूची) और क्रॉसबार (उष्णिष) से जुड़े होते हैं।\n• सांची के तोरण भी बहु-तह लकड़ी के द्वार के रूपों को पत्थर में नकल करते हैं।"
+    }
+  },
+  {
+    "uuid": "74c7a572-dfae-4987-840b-56c4c394ce42",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Vedika (Railing): Types and Ritual Significance",
+        "Stupa Construction Materials and Techniques"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Stupa component materials and their period-specific evolution",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Stupa tradition or period) with List II (Primary construction material or technique associated with it):",
+        "columns": [
+          "List I — Tradition / Period",
+          "List II — Material / Technique"
+        ],
+        "rows": [
+          [
+            "A. Mauryan phase (3rd century BCE)",
+            "1. Stone replication of wooden railing and gateway prototypes"
+          ],
+          [
+            "B. Sunga-Satavahana phase (2nd century BCE – 2nd century CE)",
+            "2. Buff/Chunar sandstone — primary material at Sanchi, Sarnath, Mathura"
+          ],
+          [
+            "C. Deccan / Amaravati tradition",
+            "3. Brick core construction with minimal stone use"
+          ],
+          [
+            "D. North Indian mainstream stupa tradition",
+            "4. White limestone / marble-like stone distinct from North Indian sandstone"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-3, B-1, C-4, D-2\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) swaps sandstone (Deccan) for limestone, exploiting students who know sandstone is the primary North Indian material and may assign it to the Deccan as well.",
+      "elimination_logic": [
+        "Mauryan phase → brick construction: Ashokan brick stupas are foundational — anchor A-3.",
+        "Sunga-Satavahana phase → stone replication of wooden forms: stone casing and wood-form vedika in stone — anchor B-1.",
+        "Deccan/Amaravati tradition → limestone/marble: Amaravati used white limestone, distinct from North Indian sandstone — anchor C-4.",
+        "North Indian mainstream → buff sandstone: Sanchi, Mathura, and Sarnath all used Chunar/buff sandstone — anchor D-2.",
+        "Correct combination: A-3, B-1, C-4, D-2 — select (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places 'sandstone' against the Deccan tradition (option a), exploiting students who know sandstone is the dominant Indian material and apply it universally. Amaravati's use of white limestone (sometimes called marble) is a precise regional fact that differentiates the Deccan from North Indian material practice. Students must know material geography, not just material names.",
+      "final_explanation": "The evolution of stupa construction materials tracks both regional availability and dynastic patronage patterns.\n\nCorrect matching:\n• A (Mauryan phase) — 3 (Brick core construction with limited stone use)\n• B (Sunga-Satavahana phase) — 1 (Stone replication of wooden vedika and gateway prototypes)\n• C (Deccan/Amaravati tradition) — 4 (White limestone/marble, distinct from North Indian sandstone)\n• D (North Indian mainstream) — 2 (Buff/Chunar sandstone: Sanchi, Sarnath, Mathura)\n\nThe critical trap: option (a) assigns sandstone to the Deccan — wrong. The Amaravati tradition's use of white limestone is a defining material marker that separates it stylistically from the North.\n\nValue Addition:\n• Chunar sandstone (Uttar Pradesh) was the preferred material for Mauryan pillars and later for Sunga-era stone construction.\n• The Amaravati sculptural slabs are sometimes described as 'white marble' in older literature, though they are technically a fine-grained white limestone.\n• The use of terracotta for votive miniature stupas persisted across all periods regardless of regional material preference."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (स्तूप परंपरा या काल) को सूची II (प्राथमिक निर्माण सामग्री या तकनीक) से मिलाइए:",
+        "columns": [
+          "सूची I — परंपरा / काल",
+          "सूची II — सामग्री / तकनीक"
+        ],
+        "rows": [
+          [
+            "A. मौर्य काल (ईसा पूर्व 3री सदी)",
+            "1. लकड़ी की वेदिका और द्वार प्रोटोटाइप की पत्थर में नकल"
+          ],
+          [
+            "B. सुंगा-सातवाहन काल (ईसा पूर्व 2री सदी – ईसा के 2री सदी)",
+            "2. भूरा/चुनार सैंडस्टोन — सांची, सारनाथ, मथुरा में मुख्य सामग्री"
+          ],
+          [
+            "C. डेक्कन / अमरावती परंपरा",
+            "3. सीमित पत्थर उपयोग के साथ ईंट का मूल निर्माण"
+          ],
+          [
+            "D. उत्तर भारतीय मुख्यधारा स्तूप परंपरा",
+            "4. सफेद चूना पत्थर / संगमरमर जैसा पत्थर जो उत्तर भारतीय सैंडस्टोन से अलग है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-3, B-1, C-4, D-2\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) डेक्कन के लिए सैंडस्टोन को चूना पत्थर से बदल देता है, जो उन छात्रों का शोषण करता है जो जानते हैं कि सैंडस्टोन उत्तर भारत की मुख्य सामग्री है और इसे डेक्कन के लिए भी मान सकते हैं।",
+      "elimination_logic": [
+        "मौर्य काल → ईंट निर्माण: अशोक के ईंट स्तूप आधार हैं — एंकर A-3।",
+        "सुंगा-सातवाहन काल → लकड़ी के रूपों की पत्थर में नकल: पत्थर की आवरण और पत्थर में लकड़ी के रूप की वेदिका — एंकर B-1।",
+        "डेक्कन/अमरावती परंपरा → चूना पत्थर/सफेद संगमरमर: अमरावती ने सफेद चूना पत्थर का उपयोग किया, जो उत्तर भारतीय सैंडस्टोन से अलग है — एंकर C-4।",
+        "उत्तर भारतीय मुख्यधारा → भूरा सैंडस्टोन: सांची, मथुरा, और सारनाथ सभी ने चुनार/भूरा सैंडस्टोन का उपयोग किया — एंकर D-2।",
+        "सही संयोजन: A-3, B-1, C-4, D-2 — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "संपत्ति-स्थानांतरण जाल में 'सैंडस्टोन' को डेक्कन परंपरा (विकल्प a) के खिलाफ रखा गया है, जो उन छात्रों का शोषण करता है जो जानते हैं कि सैंडस्टोन भारत की प्रमुख सामग्री है और इसे सार्वभौमिक रूप से लागू करते हैं। अमरावती का सफेद चूना पत्थर (जिसे कभी-कभी संगमरमर कहा जाता है) एक सटीक क्षेत्रीय तथ्य है जो डेक्कन को उत्तर भारतीय सामग्री प्रथा से अलग करता है। छात्रों को केवल सामग्री के नाम नहीं, बल्कि सामग्री की भौगोलिकता जाननी चाहिए।",
+      "final_explanation": "स्तूप निर्माण सामग्री का विकास क्षेत्रीय उपलब्धता और राजवंशीय संरक्षण पैटर्न दोनों को दर्शाता है।\n\nसही मिलान:\n• A (मौर्य काल) — 3 (ईंट का मूल निर्माण जिसमें सीमित पत्थर का उपयोग)\n• B (सुंगा-सातवाहन काल) — 1 (लकड़ी की वेदिका और द्वार प्रोटोटाइप की पत्थर में नकल)\n• C (डेक्कन/अमरावती परंपरा) — 4 (सफेद चूना पत्थर/संगमरमर जैसा पत्थर, जो उत्तर भारतीय सैंडस्टोन से अलग है)\n• D (उत्तर भारतीय मुख्यधारा) — 2 (भूरा/चुनार सैंडस्टोन: सांची, सारनाथ, मथुरा)\n\nमहत्वपूर्ण जाल: विकल्प (a) में सैंडस्टोन को डेक्कन से जोड़ा गया है — गलत। अमरावती परंपरा का सफेद चूना पत्थर उपयोग एक निर्णायक सामग्री चिह्न है जो इसे शैलीगत रूप से उत्तर से अलग करता है।\n\nमूल्य संवर्धन:\n• चुनार सैंडस्टोन (उत्तर प्रदेश) मौर्य स्तंभों के लिए पसंदीदा सामग्री थी और बाद में सुंगा काल के पत्थर निर्माण के लिए भी।\n• अमरावती की मूर्तिकला पट्टिकाओं को कभी-कभी पुराने साहित्य में 'सफेद संगमरमर' कहा जाता है, हालांकि वे तकनीकी रूप से महीन दानेदार सफेद चूना पत्थर हैं।\n• क्षेत्रीय सामग्री पसंद के बावजूद सभी कालों में टेराकोटा का उपयोग छोटे स्तूपों के लिए जारी रहा।"
+    }
+  },
+  {
+    "uuid": "66242479-b8b4-4c95-a578-69d71a881307",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Pradakshina (Circumambulation): Ritual and Architecture",
+        "Medhi (Circular Terrace): Functional and Symbolic Aspects"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Pradakshina clockwise direction and medhi two-level ritual",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The ritual of pradakshina (circumambulation) performed at a Buddhist stupa follows a clockwise direction, keeping the monument to the devotee's right, in symbolic alignment with the path of the sun.\n\nReason (R): Clockwise circumambulation was prescribed at stupas because the medhi (raised circular terrace) was structurally engineered to provide better load distribution and safer passage for devotees moving from left to right.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is A correct? — Yes. Pradakshina at a stupa is performed clockwise (keeping the monument to the right), following the path of the sun — this is the established ritual norm.",
+        "Step 2: Is R correct? — No. The Reason states that clockwise circumambulation was prescribed because the medhi provides better structural support for left-to-right movement. This is architecturally fabricated — the medhi is a terrace, not a directional support structure; the clockwise direction derives from solar and cosmic symbolism, not from structural engineering.",
+        "Step 3: A is correct, R is incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Pradakshina (circumambulation) is one of the most ritually significant acts at a stupa, and its directional logic is grounded in cosmology, not architecture.\n\nAssertion (A): Pradakshina at a stupa is performed in a clockwise direction, keeping the monument to the devotee's right — this correctly mirrors the path of the sun and encodes solar-cosmic symbolism. This is accurate.\n\nReason (R): The claim that clockwise movement was prescribed because 'the medhi provides better structural support for left-to-right movement' is architecturally absurd and has no documentary basis. The medhi is simply an elevated circular terrace — it supports movement equally in both directions. The clockwise direction derives from the belief that following the sun's path (from east → south → west → north) aligns the devotee with cosmic order.\n\nA is correct, R is incorrect — select (c).\n\nValue Addition:\n• Two-level pradakshina was possible at major stupas: ground level (outer vedika) and elevated medhi level (inner vedika).\n• The narrative sequence on vedika friezes is deliberately arranged to be read in the pradakshina direction — left to right as the devotee moves clockwise.\n• Anti-clockwise circumambulation (prasavya) is associated with inauspicious rites in the Indian tradition."
+    },
+    "hi": {
+      "display_text": "कथन (A): बौद्ध स्तूप में प्रदक्षिणा (परिक्रमा) का अनुष्ठान दक्षिणावर्त दिशा में किया जाता है, स्मारक को भक्त के दाहिने ओर रखते हुए, जो सूर्य के मार्ग के प्रतीकात्मक संरेखण में है।\n\nकारण (R): स्तूपों में दक्षिणावर्त प्रदक्षिणा इसलिए निर्धारित की गई क्योंकि मेढी (ऊँचा वृत्ताकार छज्जा) को संरचनात्मक रूप से इस तरह डिजाइन किया गया था कि वह बाएं से दाएं चलने वाले भक्तों के लिए बेहतर भार वितरण और सुरक्षित मार्ग प्रदान करे।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? — हाँ। स्तूप में प्रदक्षिणा दक्षिणावर्त (घड़ी की दिशा में) की जाती है (स्मारक को भक्त के दाहिने ओर रखते हुए), जो सूर्य के मार्ग का अनुसरण करती है — यह स्थापित अनुष्ठानिक नियम है।",
+        "चरण 2: क्या R सही है? — नहीं। कारण में कहा गया है कि दक्षिणावर्त प्रदक्षिणा इसलिए निर्धारित की गई क्योंकि मेढी बाएं से दाएं चलने के लिए बेहतर संरचनात्मक समर्थन प्रदान करता है। यह वास्तुशिल्पीय रूप से निर्मित है — मेढी एक छज्जा है, कोई दिशा-निर्देशक संरचना नहीं; दक्षिणावर्त दिशा सौर और ब्रह्मांडीय प्रतीकवाद से उत्पन्न होती है, न कि संरचनात्मक अभियांत्रिकी से।",
+        "चरण 3: A सही है, R गलत है — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "प्रदक्षिणा (परिक्रमा) स्तूप में सबसे महत्वपूर्ण अनुष्ठानिक क्रियाओं में से एक है, और इसकी दिशा संबंधी तर्क ब्रह्मांड विज्ञान पर आधारित है, वास्तुकला पर नहीं।\n\nकथन (A): स्तूप में प्रदक्षिणा दक्षिणावर्त दिशा में की जाती है, स्मारक को भक्त के दाहिने रखते हुए — यह सूर्य के मार्ग का सही प्रतिबिंब है और सौर-ब्रह्मांडीय प्रतीकवाद को दर्शाता है। यह सही है।\n\nकारण (R): यह दावा कि दक्षिणावर्त प्रदक्षिणा इसलिए निर्धारित की गई क्योंकि 'मेढी बाएं से दाएं चलने के लिए बेहतर संरचनात्मक समर्थन प्रदान करता है' वास्तुशिल्पीय रूप से असंगत है और इसका कोई दस्तावेजी आधार नहीं है। मेढी केवल एक ऊँचा वृत्ताकार छज्जा है — यह दोनों दिशाओं में समान रूप से समर्थन करता है। दक्षिणावर्त दिशा इस विश्वास से उत्पन्न होती है कि सूर्य के मार्ग (पूर्व → दक्षिण → पश्चिम → उत्तर) का अनुसरण करने से भक्त ब्रह्मांडीय व्यवस्था के साथ संरेखित होता है।\n\nA सही है, R गलत है — विकल्प (c) चुनें।\n\nमूल्य संवर्धन:\n• प्रमुख स्तूपों में दो-स्तरीय प्रदक्षिणा संभव थी: भूतल स्तर (बाहरी वेदिका) और ऊँचा मेढी स्तर (आंतरिक वेदिका)।\n• वेदिका के फ्रिज़ पर कथा अनुक्रम जानबूझकर प्रदक्षिणा दिशा में पढ़ने के लिए व्यवस्थित किया गया है — भक्त के दक्षिणावर्त घुमाव के साथ बाएं से दाएं।\n• भारतीय परंपरा में वामावर्त प्रदक्षिणा (प्रसव्य) अशुभ अनुष्ठानों से जुड़ी है।"
+    }
+  },
+  {
+    "uuid": "9e5a2027-76a1-42da-b8f5-0516257e3b9a",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Votive Stupas and Miniature Traditions",
+        "Sanchi Stupa Complex: Architectural Layers"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Votive stupas: purpose and distinction from main relic stupas",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to votive and miniature stupa traditions in Buddhist practice, consider the following statements:\n\nStatement 1: Votive stupas surrounding the main stupa at sites like Sanchi and Nalanda were built by individual pilgrims and donors as acts of merit-making, and they typically do not contain bodily relics of the Buddha.\nStatement 2: Terracotta and metal miniature stupas served exclusively as decorative grave goods in Buddhist funerary contexts and had no function as portable worship objects.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Votive stupas surrounding the main stupa at sites like Sanchi and Nalanda were built by individual pilgrims and donors as acts of merit-making, and they typically do not contain bodily relics of the Buddha.",
+          "verdict": "Correct",
+          "reason": "Votive stupas are merit-making structures built by individual devotees; they are distinct from main relic stupas and do not enshrine the Buddha's bodily relics — they may contain symbolic objects, inscriptions, or dedicatory deposits."
+        },
+        {
+          "statement": "Terracotta and metal miniature stupas served exclusively as decorative grave goods in Buddhist funerary contexts and had no function as portable worship objects.",
+          "verdict": "Incorrect",
+          "reason": "Miniature stupas in terracotta and metal served as portable worship objects for individual devotion and were used in domestic or travel contexts — describing them as 'exclusively grave goods with no worship function' is factually wrong."
+        }
+      ],
+      "strong_distractor": "a — Students who know votive stupas are merit-making objects may accept Statement 2 uncritically, not knowing the dual function of miniature stupas as worship objects versus funerary deposits.",
+      "elimination_logic": [
+        "Statement 1: Votive stupas = merit-making, no bodily relics — standard definition; correct.",
+        "Statement 2: Miniature stupas = exclusively funerary grave goods — this is false; they served as portable personal worship objects, not exclusively as grave goods.",
+        "Statement 1 correct, Statement 2 incorrect — select (d)."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in Statement 2 acknowledges the funerary use of miniature stupas (which is documented) but inserts the word 'exclusively' to make the claim false. Miniature stupas had multiple functions — portable devotion, gifts, and yes, sometimes funerary deposits — but restricting them to 'exclusively grave goods' erases their primary role as personal worship objects. A partially prepared student who knows 'miniature stupa + funerary context' may accept Statement 2 without catching the exclusivity claim.",
+      "final_explanation": "Votive and miniature stupas represent the democratisation of the stupa tradition — making its symbolic power accessible to individual devotees beyond major pilgrimage sites.\n\n• Statement 1 — Correct: Votive stupas at Sanchi and Nalanda were funded by individual donors (often named in inscriptions) as merit-generating acts. They do not contain bodily relics — they are pious gestures, not relic shrines.\n• Statement 2 — Incorrect: Terracotta and metal miniature stupas functioned primarily as portable worship objects — carried by traders, monks, and pilgrims for personal devotion. While they sometimes appear in funerary deposits, describing their function as 'exclusively' funerary is factually wrong and contradicts the archaeological record.\n\nValue Addition:\n• Donative inscriptions on votive stupas and vedika pillars at Sanchi name individual donors from trade guilds, craftsmen's associations, and monastics.\n• Metal miniature stupas have been found along trade routes from India to Central Asia, evidence of personal devotional practice during travel.\n• The Nalanda monastic complex preserves numerous votive stupas in its courtyard areas, donated by students and pilgrims from across Asia."
+    },
+    "hi": {
+      "display_text": "बौद्ध प्रथा में व्रत और लघु स्तूप परंपराओं के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: सांची और नालंदा जैसे स्थलों पर मुख्य स्तूप के चारों ओर बने व्रत स्तूप व्यक्तिगत तीर्थयात्रियों और दाताओं द्वारा पुण्य कमाने के कार्य के रूप में बनाए गए थे, और इनमें आमतौर पर बुद्ध के शारीरिक अवशेष नहीं होते।\nकथन 2: मिट्टी के बर्तन (टेरेकोटा) और धातु के लघु स्तूप केवल बौद्ध अंतिम संस्कार संदर्भों में सजावटी कब्र सामग्री के रूप में सेवा करते थे और इनका कोई पोर्टेबल पूजा वस्तु के रूप में कार्य नहीं था।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "सांची और नालंदा जैसे स्थलों पर मुख्य स्तूप के चारों ओर बने व्रत स्तूप व्यक्तिगत तीर्थयात्रियों और दाताओं द्वारा पुण्य कमाने के कार्य के रूप में बनाए गए थे, और इनमें आमतौर पर बुद्ध के शारीरिक अवशेष नहीं होते।",
+          "verdict": "सही है",
+          "reason": "व्रत स्तूप पुण्य कमाने वाले संरचनाएं हैं जो व्यक्तिगत भक्तों द्वारा बनाई जाती हैं; ये मुख्य अवशेष स्तूपों से भिन्न हैं और बुद्ध के शारीरिक अवशेष नहीं रखते — इनमें प्रतीकात्मक वस्तुएं, शिलालेख या समर्पण जमा हो सकते हैं।"
+        },
+        {
+          "statement": "मिट्टी के बर्तन (टेरेकोटा) और धातु के लघु स्तूप केवल बौद्ध अंतिम संस्कार संदर्भों में सजावटी कब्र सामग्री के रूप में सेवा करते थे और इनका कोई पोर्टेबल पूजा वस्तु के रूप में कार्य नहीं था।",
+          "verdict": "गलत है",
+          "reason": "टेरेकोटा और धातु के लघु स्तूप व्यक्तिगत भक्ति के लिए पोर्टेबल पूजा वस्तु के रूप में काम करते थे और घरेलू या यात्रा संदर्भों में उपयोग किए जाते थे — इन्हें केवल कब्र सामग्री के रूप में वर्णित करना तथ्यात्मक रूप से गलत है।"
+        }
+      ],
+      "strong_distractor": "क) — जो छात्र जानते हैं कि व्रत स्तूप पुण्य कमाने वाले वस्तुएं हैं, वे बिना सावधानी के कथन 2 को स्वीकार कर सकते हैं, यह न जानते हुए कि लघु स्तूपों का पूजा वस्तु और अंतिम संस्कार जमा के रूप में द्वैध कार्य होता है।",
+      "elimination_logic": [
+        "कथन 1: व्रत स्तूप = पुण्य कमाने वाले, शारीरिक अवशेष नहीं — मानक परिभाषा; सही।",
+        "कथन 2: लघु स्तूप = केवल अंतिम संस्कार कब्र सामग्री — यह गलत है; ये पोर्टेबल व्यक्तिगत पूजा वस्तुएं थीं, केवल कब्र सामग्री नहीं।",
+        "कथन 1 सही, कथन 2 गलत — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में आंशिक-सत्य जाल यह स्वीकार करता है कि लघु स्तूपों का अंतिम संस्कार उपयोग होता है (जो प्रलेखित है) लेकिन 'केवल' शब्द डालकर दावा गलत बनाता है। लघु स्तूपों के कई कार्य थे — पोर्टेबल भक्ति, उपहार, और हाँ, कभी-कभी अंतिम संस्कार जमा — लेकिन उन्हें 'केवल कब्र सामग्री' तक सीमित करना उनकी मुख्य भूमिका को मिटा देता है। आंशिक रूप से तैयार छात्र जो 'लघु स्तूप + अंतिम संस्कार संदर्भ' जानते हैं, वे कथन 2 को बिना 'केवल' के दावे को पकड़े स्वीकार कर सकते हैं।",
+      "final_explanation": "व्रत और लघु स्तूप स्तूप परंपरा के लोकतंत्रीकरण का प्रतिनिधित्व करते हैं — जो इसके प्रतीकात्मक शक्ति को प्रमुख तीर्थ स्थलों से परे व्यक्तिगत भक्तों के लिए सुलभ बनाते हैं।\n\n• कथन 1 — सही: सांची और नालंदा में व्रत स्तूप व्यक्तिगत दाताओं (अक्सर शिलालेखों में नामित) द्वारा पुण्य कमाने के कार्य के रूप में वित्तपोषित थे। इनमें शारीरिक अवशेष नहीं होते — ये धार्मिक संकेत हैं, अवशेष मंदिर नहीं।\n• कथन 2 — गलत: मिट्टी के बर्तन और धातु के लघु स्तूप मुख्यतः पोर्टेबल पूजा वस्तु के रूप में कार्य करते थे — जिन्हें व्यापारी, भिक्षु और तीर्थयात्री व्यक्तिगत भक्ति के लिए ले जाते थे। यद्यपि वे कभी-कभी अंतिम संस्कार जमा में पाए जाते हैं, परंतु उनकी भूमिका को 'केवल' अंतिम संस्कार के रूप में बताना तथ्यात्मक रूप से गलत है और पुरातात्विक अभिलेखों के विपरीत है।\n\nमूल्य संवर्धन:\n• सांची में व्रत स्तूपों और वेदिका स्तंभों पर दानकर्ताओं के शिलालेख व्यापार गिल्ड, कारीगर संघों और मठाधीशों के व्यक्तिगत नाम देते हैं।\n• धातु के लघु स्तूप भारत से मध्य एशिया तक व्यापार मार्गों पर पाए गए हैं, जो यात्रा के दौरान व्यक्तिगत भक्ति अभ्यास का प्रमाण हैं।\n• नालंदा मठ परिसर में कई व्रत स्तूप आंगन क्षेत्रों में संरक्षित हैं, जो पूरे एशिया से आए छात्रों और तीर्थयात्रियों द्वारा दान किए गए हैं।"
+    }
+  },
+  {
+    "uuid": "b5ce4e68-d9a1-40fc-b7b8-6c31e8bab3db",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "UNESCO World Heritage Stupas: Conservation Issues"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sanchi UNESCO World Heritage inscription year 1989",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In which year were the Buddhist Monuments at Sanchi inscribed on the UNESCO World Heritage List?\n\n(a) 1983\n(b) 1989\n(c) 1993\n(d) 2002",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 1993 is a plausible year because it falls within the same decade of rapid UNESCO inscriptions for Indian sites and students unsure of the exact year tend to guess within the early 1990s range.",
+      "elimination_logic": [
+        "Eliminate (a): 1983 is the year Ajanta and Ellora Caves were inscribed — not Sanchi; temporal-swap trap.",
+        "Eliminate (c): 1993 has no documented Sanchi inscription; it is a plausible but false date.",
+        "Eliminate (d): 2002 is too late — Sanchi's inscription is documented in 1989.",
+        "Accept (b): Sanchi was inscribed as a UNESCO World Heritage Site in 1989."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap places 1983 (Ajanta/Ellora's UNESCO year) as an option, exploiting students who conflate Indian Buddhist UNESCO inscription years. Students who know 'early 1980s = early UNESCO inscriptions for India' may select 1983. Option (c) 1993 is a hedging error for students who know 'not too early, not too late' without knowing the precise year.",
+      "final_explanation": "UNESCO World Heritage Site inscription years for Indian monuments are a common UPSC data point, and Sanchi is frequently tested.\n\n• Option (a) — Incorrect: 1983 is the inscription year for Ajanta Caves and Ellora Caves — not Sanchi. This is the classic entity-swap / temporal-swap trap.\n• Option (b) — Correct: The Buddhist Monuments at Sanchi were inscribed on the UNESCO World Heritage List in 1989.\n• Option (c) — Incorrect: 1993 has no basis for Sanchi's inscription; it is a plausible fabrication.\n• Option (d) — Incorrect: 2002 is too recent; several other Indian sites were inscribed around that time but not Sanchi.\n\nValue Addition:\n• Sanchi's inscription covers the entire monastic complex including the three main stupas, viharas, and temples.\n• Ajanta Caves: 1983; Ellora Caves: 1983; Mahabodhi Temple Complex (Bodh Gaya): 2002.\n• The Archaeological Survey of India (ASI) is the primary custodian of Sanchi and has faced criticism for inappropriate cement-based restoration methods at some Buddhist sites."
+    },
+    "hi": {
+      "display_text": "सांची के बौद्ध स्मारकों को किस वर्ष यूनेस्को विश्व धरोहर सूची में शामिल किया गया था?\n\n(a) 1983\n(b) 1989\n(c) 1993\n(d) 2002",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 1993 एक संभावित वर्ष है क्योंकि यह भारतीय स्थलों के लिए यूनेस्को के तीव्र पंजीकरण के उसी दशक में आता है और छात्र सही वर्ष न जानने पर 1990 के दशक की शुरुआत के भीतर अनुमान लगाते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: 1983 वह वर्ष है जब अजंता और एलोरा गुफाओं को पंजीकृत किया गया था — सांची नहीं; यह एक कालिक-स्थानांतरण जाल है।",
+        "(c) को हटाएं: 1993 के लिए सांची के पंजीकरण का कोई दस्तावेज़ नहीं है; यह एक संभावित लेकिन गलत तिथि है।",
+        "(d) को हटाएं: 2002 बहुत बाद का है — सांची का पंजीकरण 1989 में दर्ज है।",
+        "(b) स्वीकार करें: सांची को 1989 में यूनेस्को विश्व धरोहर स्थल के रूप में पंजीकृत किया गया था।"
+      ],
+      "upsc_trap_explanation": "कालिक-स्थानांतरण जाल में 1983 (अजंता/एलोरा का यूनेस्को वर्ष) को विकल्प के रूप में रखा गया है, जो उन छात्रों का शोषण करता है जो भारतीय बौद्ध यूनेस्को पंजीकरण वर्षों को भ्रमित करते हैं। जो छात्र जानते हैं कि '1980 के दशक की शुरुआत = भारत के लिए शुरुआती यूनेस्को पंजीकरण' वे 1983 चुन सकते हैं। विकल्प (c) 1993 उन छात्रों के लिए एक हेजिंग त्रुटि है जो 'ना बहुत पहले, ना बहुत बाद' जानते हैं पर सही वर्ष नहीं जानते।",
+      "final_explanation": "भारतीय स्मारकों के लिए यूनेस्को विश्व धरोहर स्थल पंजीकरण वर्ष UPSC में एक सामान्य तथ्य है, और सांची पर अक्सर प्रश्न आते हैं।\n\n• विकल्प (a) — गलत: 1983 अजंता और एलोरा गुफाओं का पंजीकरण वर्ष है — सांची का नहीं। यह क्लासिक इकाई-स्थानांतरण / कालिक-स्थानांतरण जाल है।\n• विकल्प (b) — सही: सांची के बौद्ध स्मारकों को 1989 में यूनेस्को विश्व धरोहर सूची में शामिल किया गया था।\n• विकल्प (c) — गलत: 1993 का सांची के पंजीकरण के लिए कोई आधार नहीं है; यह एक संभावित मिथ्या तिथि है।\n• विकल्प (d) — गलत: 2002 बहुत हाल का है; उस समय कई अन्य भारतीय स्थल पंजीकृत हुए थे लेकिन सांची नहीं।\n\nमूल्यवर्धन:\n• सांची का पंजीकरण पूरे मठ परिसर को कवर करता है जिसमें तीन मुख्य स्तूप, विहार और मंदिर शामिल हैं।\n• अजंता गुफाएं: 1983; एलोरा गुफाएं: 1983; महाबोधि मंदिर परिसर (बोधगया): 2002।\n• भारतीय पुरातत्व सर्वेक्षण (ASI) सांची का मुख्य संरक्षक है और इसे कुछ बौद्ध स्थलों पर अनुचित सीमेंट आधारित पुनर्स्थापन विधियों के लिए आलोचना का सामना करना पड़ा है।"
+    }
+  },
+  {
+    "uuid": "1213e83b-1b01-4e71-b5a0-eaa31addda31",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Aniconic vs Iconic Representation in Stupa Art",
+        "Torana (Gateway): Architectural and Narrative Function"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Aniconism: reasons and transitional phase to iconic representation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the development of representational traditions in Buddhist stupa art, consider the following statements:\n\n1. One explanation for the absence of anthropomorphic Buddha images in early stupa art is philosophical — that the Buddha, having attained nirvana, is beyond form and therefore cannot be depicted in human likeness.\n2. The Gandhara school and the Mathura school simultaneously and independently developed anthropomorphic Buddha images, marking the end of the aniconic phase.\n3. After anthropomorphic Buddha images became established in Gandhara and Mathura, aniconic symbols such as the Bodhi tree and the wheel were entirely abandoned in stupa art.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "One explanation for the absence of anthropomorphic Buddha images in early stupa art is philosophical — that the Buddha, having attained nirvana, is beyond form and therefore cannot be depicted in human likeness.",
+          "verdict": "Correct",
+          "reason": "The philosophical argument that the Buddha transcended individual form after nirvana is a genuine scholarly explanation for early aniconism in Buddhist art."
+        },
+        {
+          "statement": "The Gandhara school and the Mathura school simultaneously and independently developed anthropomorphic Buddha images, marking the end of the aniconic phase.",
+          "verdict": "Correct",
+          "reason": "Both schools — Gandhara (with Hellenistic influence) and Mathura (with indigenous tradition) — independently produced Buddha images around the 1st–2nd century CE, and both are credited with ending the aniconic phase."
+        },
+        {
+          "statement": "After anthropomorphic Buddha images became established in Gandhara and Mathura, aniconic symbols such as the Bodhi tree and the wheel were entirely abandoned in stupa art.",
+          "verdict": "Incorrect",
+          "reason": "Aniconic symbols were not abandoned after the iconic phase began — they continued to be used alongside anthropomorphic images in both stupa and non-stupa Buddhist art."
+        }
+      ],
+      "strong_distractor": "d — All three appears correct to students who assume that once anthropomorphic images appeared, aniconic symbols became obsolete — this is the scope-extension trap in Statement 3.",
+      "elimination_logic": [
+        "Statement 1: philosophical basis for aniconism (Buddha beyond form) — documented scholarly position; correct.",
+        "Statement 2: Gandhara and Mathura independently producing Buddha images — established art history; correct.",
+        "Statement 3: 'entirely abandoned' after iconic phase — false; aniconic symbols persisted and coexisted with iconic imagery; incorrect.",
+        "Statements 1 and 2 correct — select (a)."
+      ],
+      "upsc_trap_explanation": "Statement 3's scope-extension trap uses the word 'entirely abandoned' to convert a partially true trend (iconic imagery increased) into a false absolute claim (aniconic symbols disappeared). Students who memorise 'Gandhara/Mathura = end of aniconism' as a binary shift may not know that in practice the two representational modes coexisted for centuries after the iconic phase began.",
+      "final_explanation": "The transition from aniconic to iconic representation in Buddhist art is one of the most tested themes in UPSC Art and Culture.\n\n• Statement 1 — Correct: The philosophical rationale for aniconism — that the Tathagata (one who has 'thus gone') is beyond material form — is one of two major explanations. The other is artistic convention (no established prototype existed for depicting a Buddha).\n• Statement 2 — Correct: Both Gandhara (Hellenistic-influenced, using schist stone) and Mathura (indigenous tradition, red sandstone) schools independently produced anthropomorphic Buddha images from roughly the 1st–2nd century CE onward. Neither copied the other — this independent emergence is a key UPSC fact.\n• Statement 3 — Incorrect: Aniconic symbols — Bodhi tree, wheel, footprints, throne — continued to appear in Buddhist art well after the iconic phase began. The two modes coexisted rather than one replacing the other.\n\nValue Addition:\n• Mathura Buddha images show the right shoulder bare and a thin clinging robe; Gandhara images show a heavier Greco-Roman drapery style.\n• The term 'aniconic' comes from Greek 'anikonos' — without image.\n• Some scholars argue aniconism was an artistic convention rather than a philosophical prescription."
+    },
+    "hi": {
+      "display_text": "बौद्ध स्तूप कला में प्रतिनिधित्व परंपराओं के विकास के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. प्रारंभिक स्तूप कला में मानवाकृति बुद्ध प्रतिमाओं की अनुपस्थिति के लिए एक व्याख्या दार्शनिक है — कि बुद्ध, निर्वाण प्राप्त करने के बाद, रूप से परे हैं और इसलिए मानव समानता में चित्रित नहीं किए जा सकते।\n2. गंधार स्कूल और मथुरा स्कूल ने एक साथ और स्वतंत्र रूप से मानवाकृति बुद्ध प्रतिमाओं का विकास किया, जो अनिकोनिक चरण के अंत को दर्शाता है।\n3. गंधार और मथुरा में मानवाकृति बुद्ध प्रतिमाएँ स्थापित होने के बाद, स्तूप कला में बोधि वृक्ष और चक्र जैसे अनिकोनिक प्रतीकों को पूरी तरह से छोड़ दिया गया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "प्रारंभिक स्तूप कला में मानवाकृति बुद्ध प्रतिमाओं की अनुपस्थिति के लिए एक व्याख्या दार्शनिक है — कि बुद्ध, निर्वाण प्राप्त करने के बाद, रूप से परे हैं और इसलिए मानव समानता में चित्रित नहीं किए जा सकते।",
+          "verdict": "सही",
+          "reason": "निर्वाण के बाद बुद्ध ने व्यक्तिगत रूप से परे होने का दार्शनिक तर्क बौद्ध कला में प्रारंभिक अनिकोनिज़्म के लिए एक वास्तविक विद्वतापूर्ण व्याख्या है।"
+        },
+        {
+          "statement": "गंधार और मथुरा स्कूल ने एक साथ और स्वतंत्र रूप से मानवाकृति बुद्ध प्रतिमाओं का विकास किया, जो अनिकोनिक चरण के अंत को दर्शाता है।",
+          "verdict": "सही",
+          "reason": "दोनों स्कूल — गंधार (हेल्लेनिस्टिक प्रभाव के साथ) और मथुरा (स्वदेशी परंपरा के साथ) — ने लगभग 1वीं-2वीं शताब्दी ईस्वी में स्वतंत्र रूप से बुद्ध प्रतिमाएँ बनाई, और दोनों को अनिकोनिक चरण के अंत के लिए श्रेय दिया जाता है।"
+        },
+        {
+          "statement": "गंधार और मथुरा में मानवाकृति बुद्ध प्रतिमाएँ स्थापित होने के बाद, स्तूप कला में बोधि वृक्ष और चक्र जैसे अनिकोनिक प्रतीकों को पूरी तरह से छोड़ दिया गया।",
+          "verdict": "गलत",
+          "reason": "मानवाकृति चरण शुरू होने के बाद भी अनिकोनिक प्रतीकों को छोड़ नहीं दिया गया — वे स्तूप और गैर-स्तूप दोनों बौद्ध कला में मानवाकृति छवियों के साथ जारी रहे।"
+        }
+      ],
+      "strong_distractor": "d — तीनों विकल्प छात्रों को सही लगते हैं जो मानते हैं कि एक बार मानवाकृति छवियाँ आने के बाद अनिकोनिक प्रतीक अप्रचलित हो गए — यह कथन 3 में स्कोप-एक्सटेंशन ट्रैप है।",
+      "elimination_logic": [
+        "कथन 1: अनिकोनिज़्म के लिए दार्शनिक आधार (बुद्ध रूप से परे) — प्रलेखित विद्वतापूर्ण स्थिति; सही।",
+        "कथन 2: गंधार और मथुरा ने स्वतंत्र रूप से बुद्ध प्रतिमाएँ बनाई — स्थापित कला इतिहास; सही।",
+        "कथन 3: 'पूरी तरह से छोड़ दिया गया' मानवाकृति चरण के बाद — गलत; अनिकोनिक प्रतीक जारी रहे और मानवाकृति छवियों के साथ सह-अस्तित्व में थे; गलत।",
+        "कथन 1 और 2 सही हैं — (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 का स्कोप-एक्सटेंशन ट्रैप 'पूरी तरह से छोड़ दिया गया' शब्द का उपयोग करता है ताकि आंशिक रूप से सही प्रवृत्ति (मानवाकृति छवियों में वृद्धि) को एक गलत पूर्ण दावे (अनिकोनिक प्रतीक गायब हो गए) में बदल दिया जाए। जो छात्र 'गंधार/मथुरा = अनिकोनिज़्म का अंत' को द्विआधारी बदलाव के रूप में याद करते हैं, वे यह नहीं जानते कि व्यवहार में ये दोनों प्रतिनिधित्वात्मक रूप मानवाकृति चरण शुरू होने के बाद सदियों तक सह-अस्तित्व में रहे।",
+      "final_explanation": "बौद्ध कला में अनिकोनिक से मानवाकृति प्रतिनिधित्व में संक्रमण UPSC कला और संस्कृति में सबसे अधिक पूछे जाने वाले विषयों में से एक है।\n\n• कथन 1 — सही: अनिकोनिज़्म के लिए दार्शनिक तर्क — कि तथागत (जो 'इस प्रकार गए') भौतिक रूप से परे हैं — दो प्रमुख व्याख्याओं में से एक है। दूसरी है कलात्मक परंपरा (बुद्ध को चित्रित करने के लिए कोई स्थापित प्रतिरूप नहीं था)।\n• कथन 2 — सही: गंधार (हेल्लेनिस्टिक प्रभाव वाला, शिस्ट पत्थर का उपयोग) और मथुरा (स्वदेशी परंपरा, लाल बलुआ पत्थर) स्कूलों ने लगभग 1वीं-2वीं शताब्दी ईस्वी से स्वतंत्र रूप से मानवाकृति बुद्ध प्रतिमाएँ बनाई। दोनों ने एक-दूसरे की नकल नहीं की — यह स्वतंत्र उद्भव UPSC के लिए एक महत्वपूर्ण तथ्य है।\n• कथन 3 — गलत: अनिकोनिक प्रतीक — बोधि वृक्ष, चक्र, पदचिह्न, सिंहासन — मानवाकृति चरण शुरू होने के बाद भी बौद्ध कला में दिखाई देते रहे। दोनों रूप सह-अस्तित्व में थे, एक ने दूसरे को प्रतिस्थापित नहीं किया।\n\nमूल्यवर्धन:\n• मथुरा बुद्ध प्रतिमाएँ दाहिने कंधे को खुला और पतली चिपकी हुई चादर दिखाती हैं; गंधार प्रतिमाएँ भारी ग्रीको-रोमन वस्त्र शैली दिखाती हैं।\n• 'अनिकोनिक' शब्द ग्रीक 'anikonos' से आया है — बिना छवि के।\n• कुछ विद्वान तर्क देते हैं कि अनिकोनिज़्म दार्शनिक निर्देश नहीं बल्कि कलात्मक परंपरा थी।"
+    }
+  },
+  {
+    "uuid": "97dc4807-dcbb-463e-bd59-0fe6424d653e",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Amaravati School: Distinctive Features",
+        "Regional Stupa Variations: Mainland vs Periphery"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Amaravati school: limestone material and Southeast Asian influence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to the Amaravati school of Buddhist art is correctly matched?\n\n(a) Amaravati school — Use of buff sandstone and geometric decorative patterns, similar to the Sanchi tradition\n(b) Borobudur — Sri Lanka; the most prominent example of Amaravati school's influence on insular Southeast Asia\n(c) Amaravati school — Significant influence on Buddhist art in Sri Lanka, Indonesia, and Thailand through its dynamic sculptural style\n(d) Gandhara school — Lotus medallion vedika decoration; stylistically derived from the Amaravati school's railing tradition",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Pairing Amaravati with 'sandstone and geometric decoration' is deceptive because sandstone is the dominant Indian Buddhist material and 'geometric decoration' sounds like a reasonable minimalist description — students who haven't specifically studied Amaravati's material may accept it.",
+      "elimination_logic": [
+        "Eliminate (a): Amaravati used white limestone, not sandstone — and its decoration is dynamic narrative, not geometric.",
+        "Eliminate (b): Borobudur is from Java, Indonesia — pairing it with 'Sri Lanka' is a geographic-swap.",
+        "Eliminate (d): Gandhara stupas use schist and are decorated with Hellenistic motifs, not 'geometric vedika medallions' — that is a North Indian mainland feature.",
+        "Accept (c): The Amaravati school is correctly paired with its influence on Sri Lankan, Indonesian, and Thai Buddhist art — the dynamic sculptural style of Amaravati was a formative influence on Southeast Asian Buddhist iconography."
+      ],
+      "upsc_trap_explanation": "The conflation trap in option (a) merges Amaravati's geographic location (Deccan) with North Indian material (sandstone) — a plausible error for students who know sandstone dominates Indian Buddhist art without knowing the regional exception. Option (d) conflates Gandharan decoration (Hellenistic classical) with mainland Indian vedika medallion traditions — two entirely distinct decorative vocabularies.",
+      "final_explanation": "The Amaravati school's material, style, and sphere of influence are tested both in isolation and in comparison with other schools.\n\n• Option (a) — Incorrect: Amaravati used white limestone (not sandstone), and its sculptural style is characterised by dynamic movement, emotional depth, and dense narrative — not geometric abstraction.\n• Option (b) — Incorrect: Borobudur is in Java, Indonesia — not Sri Lanka. While both Sri Lanka and Java show Amaravati influence, conflating them is geographically wrong.\n• Option (c) — Correct: The Amaravati school's influence on Sri Lankan dagoba sculpture, Indonesian Buddhist art, and Thai iconography is documented — it is the correct pairing of the school with its sphere of transmission.\n• Option (d) — Incorrect: Gandhara's decorative vocabulary is Hellenistic-classical (acanthus leaves, atlantes, toga-draped figures) — not the lotus medallion vedika style of the North Indian mainland.\n\nValue Addition:\n• The Amaravati school is dated from the 2nd century BCE to the 3rd century CE.\n• Its influence reached Sri Lanka via maritime routes — the Anuradhapura school of sculpture shows clear Amaravati stylistic debt.\n• Nagarjunakonda (also in Andhra Pradesh) is a sister site to Amaravati and shows identical ayaka platform features."
+    },
+    "hi": {
+      "display_text": "अमरावती स्कूल की बौद्ध कला से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) अमरावती स्कूल — सांची परंपरा के समान बफ रेत पत्थर और ज्यामितीय सजावटी पैटर्न का उपयोग\n(b) बोरबुदुर — श्रीलंका; द्वीपीय दक्षिण-पूर्व एशिया में अमरावती स्कूल के प्रभाव का सबसे प्रमुख उदाहरण\n(c) अमरावती स्कूल — इसकी गतिशील मूर्तिकला शैली के माध्यम से श्रीलंका, इंडोनेशिया, और थाईलैंड की बौद्ध कला पर महत्वपूर्ण प्रभाव\n(d) गंधार स्कूल — कमल मेडलियन वेदिका सजावट; शैलीगत रूप से अमरावती स्कूल की रेलिंग परंपरा से व्युत्पन्न",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — अमरावती को 'रेत पत्थर और ज्यामितीय सजावट' के साथ जोड़ना भ्रमित करने वाला है क्योंकि रेत पत्थर भारतीय बौद्ध कला की प्रमुख सामग्री है और 'ज्यामितीय सजावट' एक तार्किक न्यूनतम विवरण लगता है — जो छात्र विशेष रूप से अमरावती की सामग्री का अध्ययन नहीं करते, वे इसे स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: अमरावती ने सफेद चूना पत्थर का उपयोग किया, रेत पत्थर का नहीं — और इसकी सजावट गतिशील कथा है, ज्यामितीय नहीं।",
+        "(b) को हटाएं: बोरबुदुर जावा, इंडोनेशिया से है — इसे 'श्रीलंका' के साथ जोड़ना भौगोलिक त्रुटि है।",
+        "(d) को हटाएं: गंधार के स्तूप शिस्ट पत्थर से बने हैं और हेल्लेनिस्टिक सजावट से सुसज्जित हैं, 'ज्यामितीय वेदिका मेडलियन' से नहीं — यह उत्तर भारतीय मुख्यभूमि की विशेषता है।",
+        "(c) को स्वीकार करें: अमरावती स्कूल को सही रूप से श्रीलंका, इंडोनेशिया और थाईलैंड की बौद्ध कला पर इसके प्रभाव के साथ जोड़ा गया है — अमरावती की गतिशील मूर्तिकला शैली दक्षिण-पूर्व एशियाई बौद्ध प्रतिमाशास्त्र पर प्रारंभिक प्रभाव थी।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) में भ्रम का जाल अमरावती के भौगोलिक स्थान (डेक्कन) को उत्तर भारतीय सामग्री (रेत पत्थर) के साथ मिला देता है — यह उन छात्रों के लिए एक संभावित त्रुटि है जो जानते हैं कि भारतीय बौद्ध कला में रेत पत्थर प्रमुख है पर क्षेत्रीय अपवाद नहीं जानते। विकल्प (d) गंधार की सजावट (हेल्लेनिस्टिक क्लासिकल) को मुख्यभूमि भारतीय वेदिका मेडलियन परंपरा के साथ मिला देता है — ये दो पूरी तरह भिन्न सजावटी शब्दावली हैं।",
+      "final_explanation": "अमरावती स्कूल की सामग्री, शैली और प्रभाव क्षेत्र को अलग-अलग और अन्य स्कूलों के साथ तुलना में परखा जाता है।\n\n• विकल्प (a) — गलत: अमरावती ने सफेद चूना पत्थर का उपयोग किया (रेत पत्थर नहीं), और इसकी मूर्तिकला शैली गतिशील गति, भावनात्मक गहराई, और घनी कथा से परिभाषित है — ज्यामितीय अमूर्तन नहीं।\n• विकल्प (b) — गलत: बोरबुदुर जावा, इंडोनेशिया में है — श्रीलंका में नहीं। जबकि श्रीलंका और जावा दोनों में अमरावती प्रभाव दिखता है, उन्हें मिलाना भौगोलिक रूप से गलत है।\n• विकल्प (c) — सही: अमरावती स्कूल का श्रीलंकाई दगोबा मूर्तिकला, इंडोनेशियाई बौद्ध कला, और थाई प्रतिमाशास्त्र पर प्रभाव प्रलेखित है — यह स्कूल को उसके प्रसार क्षेत्र के साथ सही जोड़ी है।\n• विकल्प (d) — गलत: गंधार की सजावट हेल्लेनिस्टिक-क्लासिकल (अकैंथस पत्ते, एटलांटिस, टोगा-धारी आकृतियाँ) है — उत्तर भारतीय मुख्यभूमि के कमल मेडलियन वेदिका शैली की नहीं।\n\nमूल्यवर्धन:\n• अमरावती स्कूल दूसरी शताब्दी ईसा पूर्व से तीसरी शताब्दी ईस्वी तक का है।\n• इसका प्रभाव समुद्री मार्गों के माध्यम से श्रीलंका तक पहुँचा — अनुराधपुरा मूर्तिकला स्कूल में अमरावती शैली की स्पष्ट छाप है।\n• नगर्जुनकोंडा (आंध्र प्रदेश में भी) अमरावती की बहन साइट है और समान अयक प्लेटफॉर्म विशेषताएँ दिखाती है।"
+    }
+  },
+  {
+    "uuid": "e947d4e1-3c24-41dc-aef1-d1815d6b76d7",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Torana (Gateway): Architectural and Narrative Function",
+        "Stupa Iconography: Jataka and Buddha Life Scenes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Torana bracket figures (salabhanjika) and aniconic narrative on gateways",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An art historian studying a Buddhist stupa gateway (torana) notices a female figure carved at the top of the gateway post. The figure is depicted grasping a tree branch with both arms raised overhead, her body forming a graceful three-flexion (tribhanga) curve. She appears voluptuous and is adorned with heavy jewellery. Similar figures appear on all four gateways of the stupa complex in the same bracket position.\n\nWhich of the following iconographic terms most precisely identifies this figure and its architectural role?\n\n(a) Apsara — a celestial dancer placed on the gateway to ward off evil and invoke divine blessings\n(b) Salabhanjika — a bracket figure of a woman grasping a sala tree branch, symbolising auspiciousness and placed at gateway posts\n(c) Yakshi — a nature spirit placed on the gateway posts as a guardian protecting the sacred enclosure from below\n(d) Naga — a serpent deity depicted in female form to invoke water and fertility symbolism at the gateway threshold",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know stupa toranas carry royal court imagery may select 'Yaksha guardian' as the figure type, confusing yaksha (which appear on vedikas) with salabhanjika (which appear on torana brackets).",
+      "elimination_logic": [
+        "The scenario describes a gateway figure: a woman grasping a tree branch, depicted in a sensuous tribhanga (triple-flexion) pose, placed at the top of a gateway post — this is the textbook description of a salabhanjika.",
+        "Eliminate (a): Apsara figures in Hindu temple contexts appear on tower facades, not on Buddhist stupa gateway bracket positions.",
+        "Eliminate (c): Yaksha/yakshi figures appear on vedika pillars at Bharhut and Sanchi but not in the specific gateway bracket position described.",
+        "Eliminate (d): Naga figures typically appear at the base of pillars or as hood-spreading protectors — not as tree-grasping bracket women at gateway tops.",
+        "Accept (b): The salabhanjika is precisely a woman grasping a sala tree branch in tribhanga pose, placed as a bracket figure (stambha-top or architrave bracket) on Buddhist stupa gateways — canonically at Sanchi."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in option (c) places yakshi (which are real figures at Sanchi and Bharhut) in the specific torana bracket position. Yakshas and salabjhanjikas share sensuous feminine form and both appear in stupa contexts — the distinction is architectural location (vedika pillars vs gateway brackets) and iconographic naming. Students who know 'yakshi at Sanchi' will be tempted to select (c) without recognising that the bracket position identifies it as a salabhanjika.",
+      "final_explanation": "The torana gateways of Sanchi carry specific figural types at specific architectural positions, and UPSC questions test whether students know these with precision.\n\nScenario analysis: The figure is female, grasps a tree branch, is in tribhanga (triple-flexion) pose, and occupies the bracket position at the top of a gateway post — this is definitionally a salabhanjika.\n\n• Option (a) — Incorrect: Apsara is a celestial dancer in Hindu iconography — not the specific term for the tree-grasping bracket female of Buddhist gateways, though the motif has shared roots.\n• Option (b) — Correct: Salabhanjika ('she who breaks the sala branch') is the specific iconographic term for this figure type. She appears at the Sanchi torana brackets and symbolises auspiciousness, fertility, and connection between human and divine realms.\n• Option (c) — Incorrect: Yakshis appear as donor/guardian figures on vedika pillars at Bharhut — in a different architectural position and with different iconographic attributes.\n• Option (d) — Incorrect: Naga figures are typically hood-spreading serpent beings at pillar bases — distinct from the tree-grasping bracket female.\n\nValue Addition:\n• The salabhanjika motif predates Buddhist architecture — it appears in yaksha-worship traditions and was absorbed into the stupa programme.\n• The same motif later appears in Hindu temple architecture as the 'alasya kanya' (languid maiden) bracket figure.\n• Tribhanga (three-bend pose) is one of the most characteristically Indian body poses, encoding grace and sensuality."
+    },
+    "hi": {
+      "display_text": "एक कला इतिहासकार जो एक बौद्ध स्तूप तोरणा (द्वार) का अध्ययन कर रहा है, उसने तोरणा स्तंभ के शीर्ष पर एक महिला आकृति देखी। आकृति दोनों हाथ ऊपर उठाकर पेड़ की शाखा पकड़ती हुई त्रिभंग (तीन मोड़) मुद्रा में दर्शाई गई है। वह कामुक लगती है और भारी आभूषणों से सजी हुई है। इसी प्रकार की आकृतियाँ स्तूप परिसर के चारों तोरणाओं पर समान ब्रैकेट स्थान पर दिखाई देती हैं।\n\nनिम्नलिखित में से कौन-सा प्रतिमाशास्त्रीय शब्द इस आकृति और इसके वास्तुशिल्पीय भूमिका की सबसे सटीक पहचान करता है?\n\n(a) अप्सरा — एक स्वर्गीय नर्तकी जो तोरणा पर बुरी आत्माओं को दूर रखने और दिव्य आशीर्वाद प्राप्त करने के लिए रखी जाती है\n(b) सलभांजिका — साला वृक्ष की शाखा पकड़ने वाली महिला की ब्रैकेट आकृति, जो शुभता का प्रतीक है और तोरणा स्तंभों पर रखी जाती है\n(c) यक्षी — एक प्रकृति आत्मा जो तोरणा स्तंभों पर रक्षक के रूप में रखी जाती है और पवित्र परिसर की रक्षा करती है\n(d) नाग — एक सर्प देवता जो महिला रूप में दर्शाया जाता है ताकि तोरणा के द्वार पर जल और उर्वरता का प्रतीक स्थापित किया जा सके",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि स्तूप तोरणों में शाही दरबार की छवियाँ होती हैं, वे 'यक्ष रक्षक' को आकृति प्रकार के रूप में चुन सकते हैं, जिससे वे यक्ष (जो वेदिका पर होते हैं) और सलभांजिका (जो तोरणा ब्रैकेट पर होते हैं) में भ्रमित हो जाते हैं।",
+      "elimination_logic": [
+        "यह परिदृश्य एक तोरणा आकृति का वर्णन करता है: एक महिला जो पेड़ की शाखा को पकड़ती है, त्रिभंग (तीन मोड़) मुद्रा में चित्रित, जो तोरणा स्तंभ के शीर्ष पर स्थित है — यह सलभांजिका का पाठ्यपुस्तक वर्णन है।",
+        "(a) को हटाएं: हिंदू मंदिर संदर्भों में अप्सरा आकृतियाँ मीनार के मुखों पर होती हैं, न कि बौद्ध स्तूप तोरणा ब्रैकेट स्थानों पर।",
+        "(c) को हटाएं: यक्ष/यक्षी आकृतियाँ भरहुत और सांची में वेदिका स्तंभों पर दिखाई देती हैं, लेकिन वर्णित विशिष्ट तोरणा ब्रैकेट स्थान पर नहीं।",
+        "(d) को हटाएं: नाग आकृतियाँ आमतौर पर स्तंभ के आधार पर या हुड फैलाने वाले रक्षक के रूप में होती हैं — न कि तोरणा शीर्ष पर पेड़ पकड़ने वाली ब्रैकेट महिला के रूप में।",
+        "(b) स्वीकार करें: सलभांजिका ठीक उसी महिला को कहते हैं जो त्रिभंग मुद्रा में साला वृक्ष की शाखा पकड़ती है, और बौद्ध स्तूप तोरणा ब्रैकेट (स्तंभ-शीर्ष या आर्चिट्रेव ब्रैकेट) पर स्थित होती है — जो सांची में मानक है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) में आंशिक-सत्य जाल यह है कि यक्षी (जो सांची और भरहुत में वास्तविक आकृतियाँ हैं) को विशिष्ट तोरणा ब्रैकेट स्थान पर रखा गया है। यक्ष और सलभांजिका दोनों स्तूप संदर्भों में कामुक स्त्री आकृतियाँ हैं — अंतर वास्तुस्थिति (वेदिका स्तंभ बनाम तोरणा ब्रैकेट) और प्रतिमात्मक नामकरण में है। जो छात्र 'सांची में यक्षी' जानते हैं, वे (c) चुनने के लिए प्रलोभित होंगे बिना यह समझे कि ब्रैकेट स्थान इसे सलभांजिका के रूप में पहचानता है।",
+      "final_explanation": "सांची के तोरणा द्वारों पर विशिष्ट वास्तुस्थिति पर विशिष्ट आकृति प्रकार होते हैं, और UPSC प्रश्न यह परिशुद्धता से जानने की परीक्षा लेते हैं।\n\nपरिदृश्य विश्लेषण: आकृति स्त्रीलिंग है, पेड़ की शाखा पकड़ती है, त्रिभंग मुद्रा में है, और तोरणा स्तंभ के शीर्ष पर ब्रैकेट स्थान पर है — यह परिभाषागत रूप से सलभांजिका है।\n\n• विकल्प (a) — गलत: अप्सरा हिंदू प्रतिमाशास्त्र में एक स्वर्गीय नर्तकी है — बौद्ध तोरणा के पेड़ पकड़ने वाली ब्रैकेट महिला के लिए विशिष्ट शब्द नहीं, हालांकि यह रूपक साझा जड़ें रखता है।\n• विकल्प (b) — सही: सलभांजिका ('जो साला शाखा तोड़ती है') इस आकृति प्रकार के लिए विशिष्ट प्रतिमाशास्त्रीय शब्द है। यह सांची के तोरणा ब्रैकेट पर प्रकट होती है और शुभता, उर्वरता, तथा मानव और दिव्य क्षेत्रों के बीच संबंध का प्रतीक है।\n• विकल्प (c) — गलत: यक्षी भरहुत के वेदिका स्तंभों पर दाता/रक्षक आकृतियाँ हैं — अलग वास्तुस्थिति और अलग प्रतिमाशास्त्रीय गुणों के साथ।\n• विकल्प (d) — गलत: नाग आकृतियाँ आमतौर पर स्तंभ के आधार पर हुड फैलाने वाले सर्प देवता होते हैं — पेड़ पकड़ने वाली ब्रैकेट महिला से भिन्न।\n\nमूल्यवर्धन:\n• सलभांजिका रूपक बौद्ध वास्तुकला से पहले का है — यह यक्ष पूजा परंपराओं में प्रकट होता है और स्तूप कार्यक्रम में समाहित हो गया।\n• यही रूपक बाद में हिंदू मंदिर वास्तुकला में 'आलस्य कन्या' (सुस्त कन्या) ब्रैकेट आकृति के रूप में प्रकट होता है।\n• त्रिभंग (तीन मोड़ मुद्रा) भारतीय शरीर मुद्राओं में से एक है, जो सौंदर्य और कामुकता को व्यक्त करती है।"
+    }
+  },
+  {
+    "uuid": "cd095c8d-b2e8-4c07-b88f-d04e531c9b2f",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Stupa Symbolism: Cosmological Interpretations",
+        "Anda (Hemispherical Dome): Symbolism and Evolution"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Brahmanda (cosmic egg) symbolism of the hemispherical anda",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The hemispherical dome (anda) of the Buddhist stupa is understood, in the cosmological reading of the structure, to represent the entire universe — specifically the concept of the ________, or 'cosmic egg', from which the universe emerged in Indian cosmological thought.\n\n(a) Brahmanda\n(b) Sudarshana Chakra\n(c) Dharmachakra\n(d) Akasha",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Dharmachakra' is a legitimate Buddhist symbol (the wheel of law) and sounds architecturally plausible as something the dome might represent — students who think 'dome = wheel shape = Dharmachakra' will be misled.",
+      "elimination_logic": [
+        "The blank requires the Sanskrit cosmological concept that a hemispherical dome enclosing a relic evokes by representing the entire universe.",
+        "Eliminate 'Sudarshana Chakra' (b): this is the discus weapon of Vishnu — not a Buddhist or stupa-related cosmological concept.",
+        "Eliminate 'Dharmachakra' (c): Dharmachakra is the Wheel of Law (First Sermon symbol) — not the cosmological name for the universe-egg that the dome represents.",
+        "Eliminate 'Akasha' (d): Akasha means ether/space and maps to the yasti/space above in five-element symbolism, not to the dome itself.",
+        "Accept 'Brahmanda' (a): the hemispherical anda represents Brahmanda — the cosmic egg/universe — in stupa cosmological symbolism."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap in option (b) uses 'Sudarshana Chakra' — a real Sanskrit term from Vaishnavism — that sounds relevant to a student who confuses Buddhist and Hindu cosmological vocabulary. Option (c) uses 'Dharmachakra' — a genuinely Buddhist term — but applies it incorrectly to the dome rather than the wheel symbol. Both create false familiarity.",
+      "final_explanation": "The cosmological symbolism of the stupa's anda is a frequently tested conceptual dimension in UPSC Art and Culture.\n\n• Option (a) — Correct: Brahmanda literally means 'Brahma's egg' — the cosmic egg from which the universe emerged in Indian cosmological thought. The hemispherical anda (dome) of the stupa encodes this concept, making the stupa a model of the entire universe with the relic at its cosmic centre.\n• Option (b) — Incorrect: Sudarshana Chakra is the spinning discus of Vishnu — an unrelated Vaishnava concept with no role in Buddhist stupa symbolism.\n• Option (c) — Incorrect: Dharmachakra (Wheel of Law) represents the First Sermon and is an aniconic symbol — it is not the cosmological name for what the dome represents.\n• Option (d) — Incorrect: Akasha (ether/space) is the fifth element in the panchamahabhuta mapping and corresponds to the yasti and the space above — not to the dome.\n\nValue Addition:\n• The term 'anda' itself means 'egg' in Sanskrit — the name encodes the Brahmanda symbolism directly.\n• The relic placed at the geometric centre of the anda symbolises the Buddha as the axis of the universe.\n• The Brahmanda concept bridges Hindu and Buddhist cosmological frameworks — a reminder that early Buddhism did not break entirely from existing Indian cosmological vocabulary."
+    },
+    "hi": {
+      "display_text": "बौद्ध स्तूप के अर्धगोलाकार गुंबद (अंडा) को संरचना के ब्रह्मांडीय अर्थ में पूरे ब्रह्मांड का प्रतिनिधित्व करने वाला समझा जाता है — विशेष रूप से ________ की अवधारणा, या 'ब्रह्मांडीय अंडा', जिससे भारतीय ब्रह्मांडीय विचार में ब्रह्मांड उत्पन्न हुआ।\n\n(a) ब्रह्माण्ड\n(b) सुदर्शन चक्र\n(c) धर्मचक्र\n(d) आकाश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — 'Dharmachakra' एक वैध बौद्ध प्रतीक है (धर्म चक्र) और वास्तुशिल्पीय रूप से यह गुंबद द्वारा दर्शाए जाने वाली किसी चीज़ के रूप में संभावित लगता है — जो छात्र सोचते हैं 'गुंबद = चक्राकार = धर्मचक्र' वे भ्रमित होंगे।",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए संस्कृत ब्रह्मांडीय अवधारणा चाहिए जो एक अर्धगोलाकार गुंबद जो एक अवशेष को घेरता है, पूरे ब्रह्मांड का प्रतिनिधित्व करता है।",
+        "'सुदर्शन चक्र' (b) को हटा दें: यह विष्णु का चक्रास्त्र है — न कि बौद्ध या स्तूप से संबंधित कोई ब्रह्मांडीय अवधारणा।",
+        "'धर्मचक्र' (c) को हटा दें: धर्मचक्र कानून का चक्र है (प्रथम उपदेश का प्रतीक) — यह गुंबद द्वारा दर्शाए गए ब्रह्मांडीय अंडे का नाम नहीं है।",
+        "'आकाश' (d) को हटा दें: आकाश का अर्थ है आकाश/अंतरिक्ष और यह पंचमहाभूत में यष्टि/ऊपर के स्थान से संबंधित है, न कि गुंबद से।",
+        "'ब्रह्माण्ड' (a) को स्वीकार करें: अर्धगोलाकार अंडा ब्रह्माण्ड का प्रतिनिधित्व करता है — स्तूप के ब्रह्मांडीय प्रतीक में ब्रह्मांडीय अंडा।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में 'सुदर्शन चक्र' का उपयोग एक संभावित-निर्मित जाल है — यह वैष्णव धर्म से एक वास्तविक संस्कृत शब्द है — जो उन छात्रों को भ्रमित करता है जो बौद्ध और हिंदू ब्रह्मांडीय शब्दावली को मिलाते हैं। विकल्प (c) में 'धर्मचक्र' का उपयोग किया गया है — जो एक वास्तविक बौद्ध शब्द है — लेकिन इसे गलत तरीके से गुंबद के लिए लागू किया गया है बजाय चक्र प्रतीक के। दोनों झूठी परिचितता पैदा करते हैं।",
+      "final_explanation": "स्तूप के अंडा (गुंबद) का ब्रह्मांडीय प्रतीकात्मकता UPSC कला और संस्कृति में अक्सर परखा जाने वाला अवधारणात्मक आयाम है।\n\n• विकल्प (a) — सही: ब्रह्माण्ड का शाब्दिक अर्थ है 'ब्रह्मा का अंडा' — वह ब्रह्मांडीय अंडा जिससे भारतीय ब्रह्मांडीय विचार में ब्रह्मांड उत्पन्न हुआ। स्तूप का अर्धगोलाकार अंडा इस अवधारणा को दर्शाता है, जिससे स्तूप पूरे ब्रह्मांड का मॉडल बन जाता है जिसमें अवशेष ब्रह्मांडीय केंद्र में होता है।\n• विकल्प (b) — गलत: सुदर्शन चक्र विष्णु का घूमता हुआ चक्र है — एक असंबंधित वैष्णव अवधारणा जिसका बौद्ध स्तूप प्रतीक में कोई स्थान नहीं है।\n• विकल्प (c) — गलत: धर्मचक्र (धर्म का चक्र) प्रथम उपदेश का प्रतीक है और एक निरूपक प्रतीक है — यह गुंबद द्वारा दर्शाए गए ब्रह्मांडीय नाम नहीं है।\n• विकल्प (d) — गलत: आकाश (आकाश/अंतरिक्ष) पंचमहाभूत में पाँचवां तत्व है और यष्टि तथा ऊपर के स्थान से संबंधित है — गुंबद से नहीं।\n\nमूल्यवर्धन:\n• 'अंडा' शब्द स्वयं संस्कृत में 'अंडा' का अर्थ है — नाम सीधे ब्रह्माण्ड प्रतीक को दर्शाता है।\n• अंडे के ज्यामितीय केंद्र में रखा गया अवशेष बुद्ध को ब्रह्मांड के अक्ष के रूप में दर्शाता है।\n• ब्रह्माण्ड अवधारणा हिंदू और बौद्ध ब्रह्मांडीय ढाँचों को जोड़ती है — यह याद दिलाती है कि प्रारंभिक बौद्ध धर्म ने पूरी तरह से भारतीय ब्रह्मांडीय शब्दावली से अलगाव नहीं किया।"
+    }
+  },
+  {
+    "uuid": "02f01327-0f41-482e-ad5a-b03d64343c68",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Relic Deposition and Consecration Practices",
+        "Harmika: Structure and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Relic casket placement within anda: central chamber not harmika",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to relic deposition practices in Buddhist stupas, consider the following statements:\n\n1. Relic caskets found within stupas are often nested containers — an outer casket enclosing progressively smaller inner caskets — made of materials including crystal, gold, and silver.\n2. The primary relic deposit in a stupa is generally placed within a central chamber inside the anda, rather than within the harmika.\n3. The harmika at the summit of the anda served as the primary relic chamber in all Indian stupa traditions, as its elevated position brought the relic closest to the cosmic realm.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Relic caskets found within stupas are often nested containers — an outer casket containing progressively smaller inner caskets — made of materials including crystal, gold, and silver.",
+          "verdict": "Correct",
+          "reason": "Archaeological evidence from sites including Piprahwa and Bhattiprolu confirms the practice of nested relic caskets in precious and semi-precious materials."
+        },
+        {
+          "statement": "The primary relic deposit in a stupa is generally placed within a central chamber inside the anda, rather than within the harmika.",
+          "verdict": "Correct",
+          "reason": "Relic chambers are located within the body of the anda (the dome), typically at the geometric centre — the harmika, being an open square railing at the apex, does not serve as the primary relic repository."
+        },
+        {
+          "statement": "The harmika at the summit of the anda served as the primary relic chamber in all Indian stupa traditions, as its elevated position brought the relic closest to the cosmic realm.",
+          "verdict": "Incorrect",
+          "reason": "The harmika is an open-railed structure and does not function as a relic chamber — relics are deposited within the sealed body of the anda, not in the harmika. The claim that 'all Indian stupa traditions' used the harmika as a relic chamber is both structurally and geographically false."
+        }
+      ],
+      "strong_distractor": "d — All three appears correct to students who reason 'elevated = closer to heaven = more appropriate for relics', which sounds logical but contradicts archaeological and architectural evidence.",
+      "elimination_logic": [
+        "Statement 1: nested precious-material caskets — confirmed by Piprahwa and Bhattiprolu archaeology; correct.",
+        "Statement 2: relic in central anda chamber, not harmika — matches structural and archaeological consensus; correct.",
+        "Statement 3: 'harmika = primary relic chamber in all traditions' — false; harmika is open railing, not a sealed chamber; scope-extension ('all traditions') compounds the error; incorrect.",
+        "Statements 1 and 2 correct — select (b)."
+      ],
+      "upsc_trap_explanation": "The scope-extension in Statement 3 adds 'all Indian stupa traditions' to a false architectural claim (harmika as relic chamber). Students who associate the harmika with holiness and the summit with cosmic connection may reason that relics belong there — a logical error not supported by archaeology. The statement exploits two common mistakes: spatial intuition (higher = holier = relic location) and generalisation across traditions.",
+      "final_explanation": "The physical location of relic deposits within stupas is a testable archaeological fact that intersects with component-level architectural knowledge.\n\n• Statement 1 — Correct: Nested relic caskets in gold, silver, crystal, and steatite are documented across multiple excavated stupas. The innermost casket typically holds the actual relic material (bone fragments, ash).\n• Statement 2 — Correct: The relic deposit is sealed within the anda's central chamber during construction — the dome effectively becomes a permanent sealed reliquary. The harmika, being an open square railing, cannot serve this function.\n• Statement 3 — Incorrect: The harmika is architecturally an open structure — it cannot be a sealed relic chamber. 'All Indian stupa traditions' is an additional scope-extension error; construction practices varied, but none involved depositing relics in the open harmika.\n\nValue Addition:\n• The Piprahwa relic casket (now partially in the National Museum, New Delhi) bears an early Brahmi inscription claiming the contents are Buddha's bodily relics.\n• In some later stupas, a vertical shaft runs from the summit down to the central relic chamber — this is sometimes called the 'yupasthambha' or central axis shaft.\n• The act of sealing relics within the anda transforms the stupa from a building into a body — the dome becomes the Buddha's body present in the world."
+    },
+    "hi": {
+      "display_text": "बौद्ध स्तूपों में अवशेष जमा करने की प्रथाओं के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. स्तूपों के भीतर पाए जाने वाले अवशेष संदूक अक्सर नेस्टेड कंटेनर होते हैं — एक बाहरी संदूक जिसमें क्रमशः छोटे-छोटे आंतरिक संदूक होते हैं — जो क्रिस्टल, सोना, और चांदी सहित पदार्थों से बने होते हैं।\n2. स्तूप में प्राथमिक अवशेष जमा आमतौर पर अंडा के भीतर एक केंद्रीय कक्ष में रखा जाता है, न कि हार्मिका के भीतर।\n3. अंडा के शिखर पर स्थित हार्मिका सभी भारतीय स्तूप परंपराओं में प्राथमिक अवशेष कक्ष के रूप में कार्य करता था, क्योंकि इसकी ऊँची स्थिति अवशेष को ब्रह्मांडीय क्षेत्र के सबसे करीब लाती थी।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Relic caskets found within stupas are often nested containers — an outer casket containing progressively smaller inner caskets — made of materials including crystal, gold, and silver.",
+          "verdict": "सही है",
+          "reason": "पिपरहवा और भट्टीप्रोलु सहित स्थलों से प्राप्त पुरातात्विक साक्ष्य की पुष्टि करती है कि बहुमूल्य और अर्ध-कीमती पदार्थों से बने नेस्टेड अवशेष संदूकों की प्रथा थी।"
+        },
+        {
+          "statement": "The primary relic deposit in a stupa is generally placed within a central chamber inside the anda, rather than within the harmika.",
+          "verdict": "सही है",
+          "reason": "अवशेष कक्ष अंडा (गुम्बद) के शरीर के भीतर, सामान्यतः ज्यामितीय केंद्र में स्थित होते हैं — हार्मिका, जो शीर्ष पर खुला चौकोर रेलिंग है, प्राथमिक अवशेष भंडार के रूप में कार्य नहीं करता।"
+        },
+        {
+          "statement": "The harmika at the summit of the anda served as the primary relic chamber in all Indian stupa traditions, as its elevated position brought the relic closest to the cosmic realm.",
+          "verdict": "गलत है",
+          "reason": "हार्मिका एक खुली रेलिंग संरचना है और अवशेष कक्ष के रूप में कार्य नहीं करता — अवशेष अंडा के सील बंद शरीर के भीतर जमा किए जाते हैं, हार्मिका में नहीं। यह दावा कि 'सभी भारतीय स्तूप परंपराओं' में हार्मिका को अवशेष कक्ष के रूप में उपयोग किया गया, संरचनात्मक और भौगोलिक रूप से गलत है।"
+        }
+      ],
+      "strong_distractor": "d — तीनों विकल्प छात्रों को सही लगते हैं क्योंकि वे सोचते हैं 'ऊँचाई = स्वर्ग के करीब = अवशेषों के लिए उपयुक्त', जो तार्किक लगता है लेकिन पुरातात्विक और वास्तुशिल्प साक्ष्यों के विपरीत है।",
+      "elimination_logic": [
+        "कथन 1: बहुमूल्य पदार्थों से बने नेस्टेड संदूक — पिपरहवा और भट्टीप्रोलु पुरातत्व द्वारा पुष्टि; सही।",
+        "कथन 2: अवशेष अंडा के केंद्रीय कक्ष में, हार्मिका में नहीं — संरचनात्मक और पुरातात्विक सहमति से मेल खाता है; सही।",
+        "कथन 3: 'हार्मिका = सभी परंपराओं में प्राथमिक अवशेष कक्ष' — गलत; हार्मिका खुली रेलिंग है, सील बंद कक्ष नहीं; दायरा-विस्तार ('सभी परंपराएं') त्रुटि को बढ़ाता है; गलत।",
+        "कथन 1 और 2 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में दायरा-विस्तार ने 'सभी भारतीय स्तूप परंपराओं' को हार्मिका को अवशेष कक्ष बताने वाले गलत वास्तुशिल्प दावे में जोड़ा है। जो छात्र हार्मिका को पवित्रता और शिखर को ब्रह्मांडीय संबंध से जोड़ते हैं, वे सोच सकते हैं कि अवशेष वहीं होने चाहिए — यह पुरातत्व द्वारा समर्थित तार्किक त्रुटि है। यह कथन दो सामान्य गलतियों का उपयोग करता है: स्थानिक सहज ज्ञान (ऊँचाई = पवित्रता = अवशेष स्थान) और परंपराओं में सामान्यीकरण।",
+      "final_explanation": "स्तूपों के भीतर अवशेष जमा करने का भौतिक स्थान एक परीक्षण योग्य पुरातात्विक तथ्य है जो घटक-स्तरीय वास्तुशिल्प ज्ञान से जुड़ा है।\n\n• कथन 1 — सही: सोना, चांदी, क्रिस्टल, और स्टियाटाइट से बने नेस्टेड अवशेष संदूक कई उत्खनित स्तूपों में प्रलेखित हैं। सबसे अंदर का संदूक आमतौर पर वास्तविक अवशेष सामग्री (हड्डी के टुकड़े, राख) रखता है।\n• कथन 2 — सही: अवशेष जमा निर्माण के दौरान अंडा के केंद्रीय कक्ष में सील किया जाता है — गुंबद स्थायी सील बंद अवशेष भंडार बन जाता है। हार्मिका, जो खुला चौकोर रेलिंग है, यह कार्य नहीं कर सकता।\n• कथन 3 — गलत: हार्मिका वास्तुशिल्प रूप से खुली संरचना है — यह सील बंद अवशेष कक्ष नहीं हो सकता। 'सभी भारतीय स्तूप परंपराएं' एक अतिरिक्त दायरा-विस्तार त्रुटि है; निर्माण प्रथाएं भिन्न थीं, लेकिन किसी में भी हार्मिका में अवशेष जमा नहीं किए गए।\n\nमूल्य संवर्धन:\n• पिपरहवा अवशेष संदूक (जो अब आंशिक रूप से राष्ट्रीय संग्रहालय, नई दिल्ली में है) पर प्रारंभिक ब्राह्मी लिपि में लिखा है कि सामग्री बुद्ध के शारीरिक अवशेष हैं।\n• कुछ बाद के स्तूपों में, शिखर से केंद्रीय अवशेष कक्ष तक एक ऊर्ध्वाधर शाफ्ट होता है — इसे कभी-कभी 'युपस्थंभ' या केंद्रीय अक्ष शाफ्ट कहा जाता है।\n• अंडा के भीतर अवशेषों को सील करने की क्रिया स्तूप को एक भवन से शरीर में बदल देती है — गुंबद बुद्ध के शरीर के रूप में विश्व में उपस्थित होता है।"
+    }
+  },
+  {
+    "uuid": "8f0c8c5e-aeb8-4090-9025-994744845b77",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Medhi (Circular Terrace): Functional and Symbolic Aspects",
+        "Vedika (Railing): Types and Ritual Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Medhi as elevated pradakshina platform distinct from ground-level elements",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following structural elements does NOT belong to the same spatial system as the others — that is, the elevated terrace zone (medhi level) that facilitates upper-level circumambulation at a Buddhist stupa?\n\n(a) Medhi (raised circular terrace forming the elevated pradakshina path)\n(b) Inner vedika (railing placed on the medhi encircling the base of the anda)\n(c) Torana (ceremonial gateway giving access to the stupa precinct)\n(d) Second vedika on medhi level (railing defining the sacred boundary at the elevated terrace)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The outer vedika (ground level) looks like the odd one out because it is at ground level rather than elevated — students may think 'ground level = not part of elevated ritual space' without recognising that the outer vedika is also an integral stupa component.",
+      "elimination_logic": [
+        "The category being tested is 'structural elements that directly facilitate or form part of the elevated circumambulation terrace at the base of the anda'.",
+        "Medhi (raised terrace): defines the elevated pradakshina path — belongs.",
+        "Inner vedika (on the medhi): railing on the medhi level defining its sacred boundary — belongs.",
+        "Torana (gateway): the torana is a freestanding gateway at ground level giving access to the outer pradakshina path, not an element of the elevated medhi system — ODD ONE OUT.",
+        "Second vedika on medhi level: railing at the elevated level — belongs.",
+        "Select (c) — Torana."
+      ],
+      "upsc_trap_explanation": "The conflation trap groups the torana with medhi-level elements by exploiting students who know 'torana is part of the stupa complex' without distinguishing its architectural level. The torana stands at ground level and facilitates entry to the pradakshina path — it is not part of the elevated medhi terrace system. Students who think of all stupa components as a unified system may not catch this spatial distinction.",
+      "final_explanation": "The medhi-level system (raised terrace + inner vedika + second vedika) is a distinct spatial zone of the stupa, separate from ground-level elements.\n\n• Option (a) — Belongs: The medhi itself is the elevated circular terrace — the defining element of the elevated circumambulation zone.\n• Option (b) — Belongs: The inner vedika (railing encircling the anda directly, above the medhi) is placed at the medhi level, defining the sacred boundary around the dome base.\n• Option (c) — ODD ONE OUT: The torana (gateway) is a ground-level freestanding structure that gives ceremonial access to the outer pradakshina path. It is not part of the elevated medhi terrace system.\n• Option (d) — Belongs: A second vedika placed on the medhi level (the elevated terrace railing) is a documented feature of major stupas like Sanchi, functioning as the inner boundary for medhi-level circumambulation.\n\nValue Addition:\n• At Sanchi Stupa I, the medhi raises worshippers approximately 1.5 metres above the outer pradakshina path — creating a distinct spatial experience.\n• The outer vedika (ground level) and the medhi vedika (elevated level) together create the 'double vedika' system described in scholarly literature.\n• The torana's posts (stambhas) are structurally independent — they do not connect to the vedika system mechanically."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित संरचनात्मक तत्वों में से कौन-सा अन्य तत्वों के समान स्थानिक प्रणाली का हिस्सा नहीं है — अर्थात्, वह ऊँचा छज्जा क्षेत्र (मेधि स्तर) जो एक बौद्ध स्तूप में ऊपरी स्तर की प्रादक्षिणा की सुविधा देता है?\n\n(a) मेधि (ऊँचा वृत्ताकार छज्जा जो ऊँची प्रादक्षिणा पथ बनाता है)\n(b) आंतरिक वेदिका (मेधि पर स्थित रेलिंग जो अंडा के आधार को घेरे)\n(c) तोरण (अनुष्ठानिक प्रवेश द्वार जो स्तूप परिसर तक पहुँच देता है)\n(d) मेधि स्तर पर दूसरी वेदिका (ऊँचे छज्जे पर पवित्र सीमा को परिभाषित करने वाली रेलिंग)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — बाहरी वेदिका (भूमि स्तर) अजीब एक जैसा लगती है क्योंकि यह भूमि स्तर पर है न कि ऊँचे स्थान पर — छात्र सोच सकते हैं 'भूमि स्तर = ऊँचे अनुष्ठानिक स्थान का हिस्सा नहीं' बिना यह समझे कि बाहरी वेदिका भी एक अभिन्न स्तूप घटक है।",
+      "elimination_logic": [
+        "परीक्षित श्रेणी है 'संरचनात्मक तत्व जो सीधे मेधि के आधार पर स्थित ऊँचे प्रादक्षिणा छज्जे का हिस्सा या उसे सुविधा प्रदान करते हैं।'",
+        "मेधि (ऊँचा छज्जा): ऊँचे प्रादक्षिणा पथ को परिभाषित करता है — संबंधित है।",
+        "आंतरिक वेदिका (मेधि पर): मेधि स्तर पर स्थित रेलिंग जो इसके पवित्र सीमा को परिभाषित करती है — संबंधित है।",
+        "तोरण (प्रवेश द्वार): तोरण भूमि स्तर पर स्वतंत्र प्रवेश द्वार है जो बाहरी प्रादक्षिणा पथ तक पहुँच देता है, यह मेधि प्रणाली का हिस्सा नहीं है — अजीब एक जैसा।",
+        "मेधि स्तर पर दूसरी वेदिका: ऊँचे स्तर पर रेलिंग — संबंधित है।",
+        "चयन करें (c) — तोरण।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल तोरण को मेधि-स्तर के तत्वों के साथ जोड़ता है, उन छात्रों का लाभ उठाकर जो जानते हैं 'तोरण स्तूप परिसर का हिस्सा है' पर इसकी वास्तुशिल्पीय स्तर को अलग नहीं करते। तोरण भूमि स्तर पर स्थित है और प्रादक्षिणा पथ में प्रवेश की सुविधा देता है — यह मेधि छज्जा प्रणाली का हिस्सा नहीं है। जो छात्र सभी स्तूप घटकों को एकीकृत प्रणाली मानते हैं, वे इस स्थानिक भेद को नहीं पकड़ पाते।",
+      "final_explanation": "मेधि-स्तर प्रणाली (ऊँचा छज्जा + आंतरिक वेदिका + दूसरी वेदिका) स्तूप का एक पृथक स्थानिक क्षेत्र है, जो भूमि-स्तर के तत्वों से अलग है।\n\n• विकल्प (a) — संबंधित: मेधि स्वयं ऊँचा वृत्ताकार छज्जा है — ऊँचे प्रादक्षिणा क्षेत्र का परिभाषित तत्व।\n• विकल्प (b) — संबंधित: आंतरिक वेदिका (मेधि के ऊपर सीधे अंडा के आधार को घेरे रेलिंग) मेधि स्तर पर स्थित है, जो गुंबद के आधार के चारों ओर पवित्र सीमा को परिभाषित करती है।\n• विकल्प (c) — अजीब एक जैसा: तोरण (प्रवेश द्वार) भूमि-स्तर पर स्वतंत्र संरचना है जो बाहरी प्रादक्षिणा पथ तक अनुष्ठानिक प्रवेश देती है। यह मेधि छज्जा प्रणाली का हिस्सा नहीं है।\n• विकल्प (d) — संबंधित: मेधि स्तर पर स्थित दूसरी वेदिका (ऊँचा छज्जा रेलिंग) प्रमुख स्तूपों जैसे सांची में प्रलेखित है, जो मेधि-स्तर प्रादक्षिणा के लिए आंतरिक सीमा का कार्य करती है।\n\nमूल्य संवर्धन:\n• सांची स्तूप I में, मेधि भक्तों को बाहरी प्रादक्षिणा पथ से लगभग 1.5 मीटर ऊँचा उठाता है — एक विशिष्ट स्थानिक अनुभव बनाता है।\n• बाहरी वेदिका (भूमि स्तर) और मेधि वेदिका (ऊँचा स्तर) मिलकर 'डबल वेदिका' प्रणाली बनाते हैं, जो विद्वत साहित्य में वर्णित है।\n• तोरण के स्तंभ (स्तंभ) संरचनात्मक रूप से स्वतंत्र हैं — वे वेदिका प्रणाली से यांत्रिक रूप से जुड़े नहीं हैं।"
+    }
+  },
+  {
+    "uuid": "7446331d-175b-44d5-ae08-b05bb8f76f81",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Chattra (Umbrella): Hierarchical Symbolism",
+        "Harmika: Structure and Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Yasti as axis mundi passing through harmika to support chattra",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the yasti and chattra components of Buddhist stupa architecture, consider the following statements:\n\nStatement 1: The yasti (axial pole) passes through the harmika and extends upward to support the chattra, thereby connecting the relic chamber below to the cosmic realm above in the symbolic reading of the stupa.\nStatement 2: The triple chattra of the Indian stupa tradition directly inspired the multi-tiered rooflines of East Asian pagodas, which are structurally identical to the Indian chattra system but adapted in wood rather than stone.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The yasti (axial pole) passes through the harmika and extends upward to support the chattra, thereby connecting the relic chamber below to the cosmic realm above in the symbolic reading of the stupa.",
+          "verdict": "Correct",
+          "reason": "The yasti runs vertically from the sealed relic chamber at the base of the anda, through the body of the dome, through the harmika at the apex, and upward to carry the chattra — a physical and symbolic spine connecting earth (relic) to heaven (chattra)."
+        },
+        {
+          "statement": "The triple chattra of the Indian stupa tradition directly inspired the multi-tiered rooflines of East Asian pagodas, which are structurally identical to the Indian chattra system but adapted in wood rather than stone.",
+          "verdict": "Incorrect",
+          "reason": "While there is a historical and conceptual connection between the chattra and pagoda tiers, East Asian pagodas are multi-storeyed timber structures with floors and internal spaces — structurally and functionally quite different from the simple triple chattra on an axial pole. 'Structurally identical' is factually wrong."
+        }
+      ],
+      "strong_distractor": "a — Students who know there is a connection between chattra and pagoda tiers may accept Statement 2 without knowing the structural divergence — and since Statement 1 is correct, they select 'both correct'.",
+      "elimination_logic": [
+        "Statement 1: yasti passing through harmika to support chattra, connecting relic chamber to cosmos — this is the standard architectural and symbolic description; correct.",
+        "Statement 2: 'structurally identical' to East Asian pagodas 'but in wood' — East Asian pagodas are multi-storeyed structures with internal floors and habitable space; they are not structurally identical to the simple triple chattra system; incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — select (d)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes structural similarity for conceptual influence in Statement 2. The chattra concept did travel to East Asia and inform the pagoda form — that much is historically supportable. But calling them 'structurally identical' is a precise falsehood that targets students who know the conceptual link but have not studied the architectural divergence between a simple axial pole with three discs and a multi-storeyed timber tower.",
+      "final_explanation": "The yasti-harmika-chattra vertical axis is the architectural embodiment of the stupa's cosmic symbolism, and its comparison with East Asian pagodas requires precision.\n\n• Statement 1 — Correct: The yasti is the literal and symbolic spine of the stupa — it runs from below the relic chamber, through the sealed anda, through the square harmika opening, and upward to bear the chattra tiers. This axis mundi function is central to the stupa's cosmological programme.\n• Statement 2 — Incorrect: The conceptual relationship between chattra and pagoda tiers is real — both encode vertical cosmic ascent. However, East Asian pagodas are multi-storeyed, internally accessible timber or brick towers with distinct floors, roof overhangs, and in some traditions, habitable spaces for monks. They are structurally and functionally quite different from the simple three-disc chattra arrangement on a stone axial pole.\n\nValue Addition:\n• The Five Pagodas Temple in Beijing preserves a form closer to the Indian stupa than most East Asian pagodas.\n• The Japanese 'sotoba' (post with Sanskrit inscription) derives conceptually from the yasti tradition.\n• The Ashoka pillar edict columns may represent a related axis mundi concept in non-stupa Buddhist architecture."
+    },
+    "hi": {
+      "display_text": "बौद्ध स्तूप वास्तुकला के यस्ति और छत्र घटकों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: यस्ति (अक्षीय खंभा) हरमिका से होकर गुजरता है और ऊपर की ओर छत्र का समर्थन करता है, इस प्रकार स्तूप के प्रतीकात्मक अर्थ में नीचे के अवशेष कक्ष को ऊपर के ब्रह्मांडीय क्षेत्र से जोड़ता है।\nकथन 2: भारतीय स्तूप परंपरा के त्रिपल छत्र ने सीधे पूर्वी एशियाई पगोडाओं की बहु-स्तरीय छतों को प्रेरित किया, जो संरचनात्मक रूप से भारतीय छत्र प्रणाली के समान हैं लेकिन पत्थर के बजाय लकड़ी में अनुकूलित हैं।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "यस्ति (अक्षीय खंभा) हरमिका से होकर गुजरता है और ऊपर की ओर छत्र का समर्थन करता है, इस प्रकार स्तूप के प्रतीकात्मक अर्थ में नीचे के अवशेष कक्ष को ऊपर के ब्रह्मांडीय क्षेत्र से जोड़ता है।",
+          "verdict": "सही है",
+          "reason": "यस्ति अंडा के आधार में स्थित सील किए गए अवशेष कक्ष से ऊपर की ओर सीधे चलता है, गुंबद के शरीर से होकर, शीर्ष पर स्थित हरमिका से होकर, और ऊपर की ओर छत्र को धारण करता है — यह भौतिक और प्रतीकात्मक रीढ़ की हड्डी है जो पृथ्वी (अवशेष) को स्वर्ग (छत्र) से जोड़ती है।"
+        },
+        {
+          "statement": "भारतीय स्तूप परंपरा के त्रिपल छत्र ने सीधे पूर्वी एशियाई पगोडाओं की बहु-स्तरीय छतों को प्रेरित किया, जो संरचनात्मक रूप से भारतीय छत्र प्रणाली के समान हैं लेकिन पत्थर के बजाय लकड़ी में अनुकूलित हैं।",
+          "verdict": "गलत है",
+          "reason": "जहाँ छत्र और पगोडा की परतों के बीच ऐतिहासिक और वैचारिक संबंध है, पूर्वी एशियाई पगोडाएँ बहु-मंजिला लकड़ी की संरचनाएँ हैं जिनमें मंजिलें और आंतरिक स्थान होते हैं — ये संरचनात्मक और कार्यात्मक रूप से सरल त्रिपल छत्र से काफी भिन्न हैं। 'संरचनात्मक रूप से समान' तथ्यात्मक रूप से गलत है।"
+        }
+      ],
+      "strong_distractor": "क) — छात्र जो जानते हैं कि छत्र और पगोडा की परतों के बीच संबंध है, वे कथन 2 को बिना संरचनात्मक भिन्नता जाने स्वीकार कर सकते हैं — और चूंकि कथन 1 सही है, वे 'दोनों सही' चुन लेते हैं।",
+      "elimination_logic": [
+        "कथन 1: यस्ति हरमिका से होकर छत्र का समर्थन करता है, अवशेष कक्ष को ब्रह्मांड से जोड़ता है — यह मानक वास्तुशिल्प और प्रतीकात्मक विवरण है; सही है।",
+        "कथन 2: 'पूर्वी एशियाई पगोडाओं के संरचनात्मक रूप से समान लेकिन लकड़ी में' — पूर्वी एशियाई पगोडाएँ बहु-मंजिला संरचनाएँ हैं जिनमें आंतरिक मंजिलें और रहने योग्य स्थान होते हैं; वे सरल त्रिपल छत्र प्रणाली के समान नहीं हैं; गलत है।",
+        "कथन 1 सही, कथन 2 गलत — (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "सत्ता-विनिमय जाल कथन 2 में वैचारिक प्रभाव को संरचनात्मक समानता के रूप में प्रस्तुत करता है। छत्र की अवधारणा पूर्वी एशिया तक पहुँची और पगोडा रूप को प्रभावित किया — यह ऐतिहासिक रूप से समर्थित है। लेकिन उन्हें 'संरचनात्मक रूप से समान' कहना एक सटीक असत्य है जो उन छात्रों को भ्रमित करता है जो वैचारिक संबंध जानते हैं पर वास्तुशिल्प भिन्नता का अध्ययन नहीं किया है।",
+      "final_explanation": "यस्ति-हरमिका-छत्र ऊर्ध्वाधर अक्ष स्तूप के ब्रह्मांडीय प्रतीकवाद का वास्तुशिल्प अभिव्यक्ति है, और इसे पूर्वी एशियाई पगोडाओं से तुलना करते समय सटीकता आवश्यक है।\n\n• कथन 1 — सही: यस्ति स्तूप की वास्तविक और प्रतीकात्मक रीढ़ है — यह अवशेष कक्ष के नीचे से शुरू होकर, सील किए गए अंडा से होकर, चौकोर हरमिका उद्घाटन से होकर ऊपर की ओर छत्र की परतों को धारण करता है। यह अक्ष मुण्डी स्तूप के ब्रह्मांडीय कार्यक्रम का केंद्र है।\n• कथन 2 — गलत: छत्र और पगोडा की परतों के बीच वैचारिक संबंध वास्तविक है — दोनों ऊर्ध्वाधर ब्रह्मांडीय आरोहण को दर्शाते हैं। हालांकि, पूर्वी एशियाई पगोडाएँ बहु-मंजिला, आंतरिक रूप से सुलभ लकड़ी या ईंट की मीनारें हैं जिनमें अलग-अलग मंजिलें, छत के ओवरहैंग और कुछ परंपराओं में भिक्षुओं के रहने के स्थान होते हैं। ये संरचनात्मक और कार्यात्मक रूप से पत्थर के अक्षीय खंभे पर सरल तीन-डिस्क छत्र व्यवस्था से काफी भिन्न हैं।\n\nमूल्यवर्धन:\n• बीजिंग का फाइव पगोडास मंदिर अधिकांश पूर्वी एशियाई पगोडाओं की तुलना में भारतीय स्तूप के करीब रूप संरक्षित करता है।\n• जापानी 'सोटोबा' (संस्कृत शिलालेख वाला खंभा) वैचारिक रूप से यस्ति परंपरा से व्युत्पन्न है।\n• अशोक स्तंभ के शिलालेख स्तंभ गैर-स्तूप बौद्ध वास्तुकला में संबंधित अक्ष मुण्डी अवधारणा का प्रतिनिधित्व कर सकते हैं।"
+    }
+  },
+  {
+    "uuid": "2ff1db7a-e8ed-4e96-87ad-94795cdd5157",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Buddhist Architecture",
+      "sub_topic": "Stupa — origin, components (anda, harmika, chattra, torana)",
+      "concepts_used": [
+        "Stupa vs Chaitya: Architectural Distinctions",
+        "Vedika (Railing): Types and Ritual Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Chaitya-stupa distinction and open-air vs enclosed worship",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the architectural distinction between a stupa and a chaitya, consider the following statements:\n\n1. A stupa is a freestanding solid monument worshipped under open sky through circumambulation, while a chaitya is an enclosed rock-cut or constructed prayer hall containing a stupa form at its apsidal end.\n2. The stupa inside a chaitya hall is a votive stupa — a merit-making structure — and does not enshrine any relics, as relics are reserved exclusively for freestanding main stupas.\n3. Karla and Bhaja (Maharashtra) are canonical examples of rock-cut chaitya halls, while Sanchi is the canonical example of a freestanding stupa complex.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A stupa is a freestanding solid monument worshipped under open sky through circumambulation, while a chaitya is an enclosed rock-cut or constructed prayer hall containing a stupa form at its apsidal end.",
+          "verdict": "Correct",
+          "reason": "This accurately captures the defining architectural distinction: stupa = freestanding open-air monument; chaitya = enclosed hall with integrated stupa form."
+        },
+        {
+          "statement": "The stupa inside a chaitya hall is a votive stupa — a merit-making structure — and does not enshrine any relics, as relics are reserved exclusively for freestanding main stupas.",
+          "verdict": "Incorrect",
+          "reason": "The stupa inside a chaitya hall can contain relics — it is not necessarily a votive structure. Calling it 'exclusively votive with no relics' is an unjustified restriction; some chaitya stupas did contain relic deposits."
+        },
+        {
+          "statement": "Karla and Bhaja (Maharashtra) are canonical examples of rock-cut chaitya halls, while Sanchi is the canonical example of a freestanding stupa complex.",
+          "verdict": "Correct",
+          "reason": "Karla and Bhaja are among the most important rock-cut chaitya caves in Maharashtra (Western Ghats), and Sanchi is the premier freestanding stupa complex in India — these attributions are accurate."
+        }
+      ],
+      "strong_distractor": "d — All three appears correct because Statement 2 sounds authoritative with its 'exclusively reserved' language, which students might not challenge if they don't know whether chaitya stupas contain relics.",
+      "elimination_logic": [
+        "Statement 1: freestanding open-air stupa vs enclosed chaitya hall with apsidal stupa — standard definition pair; correct.",
+        "Statement 2: 'exclusively votive, no relics' for chaitya stupas — false; some chaitya hall stupas contain relics; the 'exclusively' restriction is unfounded; incorrect.",
+        "Statement 3: Karla, Bhaja = chaitya; Sanchi = freestanding stupa — accurate attributions; correct.",
+        "Statements 1 and 3 correct — select (b)."
+      ],
+      "upsc_trap_explanation": "The conflation trap in Statement 2 merges the concept of votive stupas (which are indeed primarily merit-making, non-relic) with the stupa inside a chaitya hall (which may contain relics). Students who know 'chaitya stupa = smaller, secondary' may conflate 'secondary' with 'no relics', missing the distinction between the architectural form (chaitya hall) and the relic status of the stupa within it.",
+      "final_explanation": "The stupa-chaitya distinction is one of the most tested paired concepts in Buddhist architecture, and precise knowledge of what belongs inside a chaitya is equally important.\n\n• Statement 1 — Correct: The stupa-chaitya distinction is fundamentally about enclosure — stupa is open-air, circumambulable, freestanding; chaitya is an enclosed prayer hall with congregational space and a stupa at its apsidal terminus.\n• Statement 2 — Incorrect: The stupa at the end of a chaitya hall is not categorically votive or relic-free. Some chaitya hall stupas contain relic deposits. The word 'exclusively' makes this claim false — it imposes a restriction that does not exist in documented Buddhist architectural practice.\n• Statement 3 — Correct: Karla (with its magnificent carved facade and interior) and Bhaja (early rock-cut, dated to c. 2nd century BCE) are the standard examples of chaitya halls in Maharashtra. Sanchi is the unambiguous canonical freestanding stupa complex.\n\nValue Addition:\n• The apsidal plan of the chaitya hall mirrors the shape of the stupa's anda — the hall envelops the stupa like an architectural shell.\n• Kondana, Pitalkhora, and Nasik are other important chaitya cave sites in Maharashtra.\n• The gavaksha (horseshoe arch/chaitya arch) over the entrance became a widely recycled decorative motif in later Indian architecture across religious traditions."
+    },
+    "hi": {
+      "display_text": "स्तूप और चैत्य के बीच वास्तुशिल्पीय भेद के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. स्तूप एक स्वतंत्र ठोस स्मारक है जिसे खुले आकाश के नीचे परिक्रमा द्वारा पूजा जाता है, जबकि चैत्य एक बंद शिला-कट या निर्मित प्रार्थना हॉल है जिसमें इसके एप्सिडल अंत में स्तूप रूप होता है।\n2. चैत्य हॉल के अंदर स्तूप एक पुण्य-साधक स्तूप है — एक पुण्य कमाने वाली संरचना — और इसमें कोई अवशेष नहीं होते, क्योंकि अवशेष केवल स्वतंत्र मुख्य स्तूपों के लिए आरक्षित होते हैं।\n3. करला और भजा (महाराष्ट्र) शिला-कट चैत्य हॉल के मानक उदाहरण हैं, जबकि सांची स्वतंत्र स्तूप परिसर का मानक उदाहरण है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A stupa is a freestanding solid monument worshipped under open sky through circumambulation, while a chaitya is an enclosed rock-cut or constructed prayer hall containing a stupa form at its apsidal end.",
+          "verdict": "सही है",
+          "reason": "यह वास्तुशिल्पीय भेद को सटीक रूप से दर्शाता है: स्तूप = स्वतंत्र खुला स्मारक; चैत्य = बंद हॉल जिसमें स्तूप रूप अंत में होता है।"
+        },
+        {
+          "statement": "The stupa inside a chaitya hall is a votive stupa — a merit-making structure — and does not enshrine any relics, as relics are reserved exclusively for freestanding main stupas.",
+          "verdict": "गलत है",
+          "reason": "चैत्य हॉल के अंदर स्तूप में अवशेष हो सकते हैं — यह आवश्यक रूप से केवल पुण्य-साधक संरचना नहीं है। इसे 'केवल पुण्य-साधक और अवशेष रहित' कहना अनुचित प्रतिबंध है; कुछ चैत्य स्तूपों में अवशेष पाए गए हैं।"
+        },
+        {
+          "statement": "Karla and Bhaja (Maharashtra) are canonical examples of rock-cut chaitya halls, while Sanchi is the canonical example of a freestanding stupa complex.",
+          "verdict": "सही है",
+          "reason": "करला और भजा महाराष्ट्र के प्रमुख शिला-कट चैत्य गुफाएँ हैं, और सांची स्वतंत्र स्तूप परिसर का प्रमुख उदाहरण है — ये विवरण सही हैं।"
+        }
+      ],
+      "strong_distractor": "d — तीनों कथन सही प्रतीत होते हैं क्योंकि कथन 2 में 'विशेष रूप से आरक्षित' भाषा प्रामाणिक लगती है, जिसे छात्र चुनौती नहीं दे सकते यदि वे न जानें कि चैत्य स्तूपों में अवशेष होते हैं या नहीं।",
+      "elimination_logic": [
+        "कथन 1: स्वतंत्र खुला स्तूप बनाम बंद चैत्य हॉल जिसमें अंत में स्तूप — मानक परिभाषा; सही।",
+        "कथन 2: चैत्य स्तूपों के लिए 'केवल पुण्य-साधक, अवशेष रहित' — गलत; कुछ चैत्य हॉल स्तूपों में अवशेष होते हैं; 'केवल' प्रतिबंध निराधार है; गलत।",
+        "कथन 3: करला, भजा = चैत्य; सांची = स्वतंत्र स्तूप — सही विवरण; सही।",
+        "कथन 1 और 3 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में भ्रम का जाल पुण्य-साधक स्तूपों (जो मुख्यतः पुण्य के लिए होते हैं और अवशेष रहित) की अवधारणा को चैत्य हॉल के स्तूप से मिला देता है (जिसमें अवशेष हो सकते हैं)। जो छात्र जानते हैं कि 'चैत्य स्तूप = छोटा, गौण' है, वे 'गौण' को 'अवशेष रहित' समझ सकते हैं, जिससे वास्तुशिल्पीय रूप (चैत्य हॉल) और स्तूप के अवशेष स्थिति के बीच अंतर छूट जाता है।",
+      "final_explanation": "स्तूप-चैत्य भेद बौद्ध वास्तुकला में सबसे अधिक परखे जाने वाले युग्मित अवधारणाओं में से एक है, और चैत्य के अंदर क्या होता है इसकी सटीक जानकारी भी उतनी ही महत्वपूर्ण है।\n\n• कथन 1 — सही: स्तूप-चैत्य भेद मूलतः आवरण का है — स्तूप खुला, परिक्रमा योग्य, स्वतंत्र स्मारक है; चैत्य बंद प्रार्थना हॉल है जिसमें सभा स्थल और अंत में स्तूप होता है।\n• कथन 2 — गलत: चैत्य हॉल के अंत में स्तूप अनिवार्य रूप से पुण्य-साधक या अवशेष रहित नहीं है। कुछ चैत्य हॉल स्तूपों में अवशेष पाए गए हैं। 'विशेष रूप से' शब्द इस दावे को गलत बनाता है — यह प्रतिबंध बौद्ध वास्तुकला में प्रलेखित नहीं है।\n• कथन 3 — सही: करला (जिसका भव्य नक्काशीदार मुख और आंतरिक भाग है) और भजा (प्रारंभिक शिला-कट, लगभग दूसरी शताब्दी ईसा पूर्व) महाराष्ट्र के मानक चैत्य हॉल उदाहरण हैं। सांची स्पष्ट रूप से स्वतंत्र स्तूप परिसर का प्रमुख उदाहरण है।\n\nमूल्यवर्धन:\n• चैत्य हॉल की एप्सिडल योजना स्तूप के अंडा आकार की नकल करती है — हॉल स्तूप को वास्तुशिल्पीय खोल की तरह घेरे रहता है।\n• कोंडाना, पितळखोरा, और नासिक महाराष्ट्र के अन्य महत्वपूर्ण चैत्य गुफा स्थल हैं।\n• गवाक्ष (घोड़े के नाल जैसा मेहराब/चैत्य मेहराब) प्रवेश द्वार पर बाद में भारतीय वास्तुकला में विभिन्न धार्मिक परंपराओं में व्यापक रूप से उपयोग किया गया सजावटी रूपांक।"
+    }
+  }
+]

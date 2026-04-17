@@ -1,0 +1,1506 @@
+[
+  {
+    "uuid": "dab8d440-0649-40e4-be42-89f214526b07",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Nilgiri Biosphere Reserve — First and Largest"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nilgiri Biosphere Reserve — first and largest",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly identifies the states covered by India's first designated biosphere reserve?\n\n(a) Tamil Nadu, Kerala, and Andhra Pradesh\n(b) Tamil Nadu, Karnataka, and Andhra Pradesh — established in 1989\n(c) Tamil Nadu, Kerala, and Karnataka\n(d) Kerala, Karnataka, and Andhra Pradesh",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Silent Valley is indeed within the Nilgiri Biosphere Reserve, and students who loosely associate it as a standalone sanctuary may credit it incorrectly as the reserve's primary component.",
+      "elimination_logic": [
+        "Eliminate (a): Silent Valley is one component within the Nilgiri reserve, not its defining characteristic — Nilgiri spans three states.",
+        "Eliminate (b): Nilgiri was established as a national biosphere reserve in 1986, not 1989; precision on year eliminates this.",
+        "Confirm (c): Tamil Nadu, Kerala, and Karnataka is the correct tri-state combination — this is the precise answer.",
+        "Eliminate (d): Andhra Pradesh has no overlap with the Nilgiri Biosphere Reserve; this is a geographic fabrication."
+      ],
+      "upsc_trap_explanation": "UPSC frequently tests the tri-state nature of Nilgiri. Students who associate it primarily with Tamil Nadu (where Mudumalai is located) or only two states will eliminate Karnataka and fall for options listing just two states. The entity-swap here replaces Karnataka with Andhra Pradesh, a plausible-sounding substitute given Andhra's proximity to the Eastern Ghats. Only precise knowledge of all three constituent states protects against this trap.",
+      "final_explanation": "The Nilgiri Biosphere Reserve holds twin distinctions: it was the first biosphere reserve established in India (1986) and the first to receive UNESCO MAB recognition (2000). Crucially, it spans three states — Tamil Nadu, Kerala, and Karnataka.\n\n• Option (a): Incorrect. Silent Valley (Kerala), Mudumalai (Tamil Nadu), Nagarhole and Bandipur (Karnataka), Wayanad (Kerala), and Mukurthi (Tamil Nadu) are all components — none individually defines the reserve.\n• Option (b): Incorrect. The year of national designation is 1986, not 1989.\n• Option (c): Correct. Tamil Nadu, Kerala, and Karnataka — the three-state overlap is a defining geographic feature.\n• Option (d): Incorrect. Andhra Pradesh shares no boundary with the Nilgiri reserve; this is a deliberate geographic distractor.\n\nValue Addition:\n• Nilgiri is also India's largest biosphere reserve by area and overlaps with the Western Ghats biodiversity hotspot.\n• It is home to one of India's largest populations of Asian elephants and the endangered Nilgiri tahr.\n• The reserve contains tribal communities including the Todas, Kotas, and Kurumbas."
+    },
+    "hi": {
+      "display_text": "भारत के पहले नामित बायोस्फीयर रिजर्व द्वारा कवर किए गए राज्यों की सही पहचान निम्नलिखित में से कौन-सी है?\n\n(a) तमिलनाडु, केरल, और आंध्र प्रदेश\n(b) तमिलनाडु, कर्नाटक, और आंध्र प्रदेश — 1989 में स्थापित\n(c) तमिलनाडु, केरल, और कर्नाटक\n(d) केरल, कर्नाटक, और आंध्र प्रदेश",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि Silent Valley वास्तव में Nilgiri Biosphere Reserve के अंतर्गत आता है, और छात्र जो इसे स्वतंत्र अभयारण्य के रूप में ढीले तौर पर जोड़ते हैं, वे इसे रिजर्व के मुख्य घटक के रूप में गलत तरीके से मान सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: Silent Valley Nilgiri रिजर्व का एक घटक है, इसका परिभाषित लक्षण नहीं — Nilgiri तीन राज्यों में फैला है।",
+        "(b) को हटाएं: Nilgiri को राष्ट्रीय बायोस्फीयर रिजर्व 1986 में स्थापित किया गया था, 1989 में नहीं; वर्ष की सटीकता इसे खारिज करती है।",
+        "(c) की पुष्टि करें: तमिलनाडु, केरल, और कर्नाटक सही तीन-राज्य संयोजन है — यह सटीक उत्तर है।",
+        "(d) को हटाएं: आंध्र प्रदेश का Nilgiri Biosphere Reserve से कोई संबंध नहीं है; यह भौगोलिक रूप से गलत है।"
+      ],
+      "upsc_trap_explanation": "UPSC अक्सर Nilgiri के तीन-राज्य स्वभाव को परखता है। छात्र जो इसे मुख्यतः तमिलनाडु (जहाँ Mudumalai स्थित है) से जोड़ते हैं या केवल दो राज्यों को मानते हैं, वे कर्नाटक को हटा देंगे और केवल दो राज्यों वाले विकल्पों में फंस जाएंगे। यहाँ entity-swap में कर्नाटक की जगह आंध्र प्रदेश दिया गया है, जो पूर्वी घाट के निकटता के कारण संभावित लगता है। केवल तीनों राज्यों का सटीक ज्ञान इस जाल से बचाता है।",
+      "final_explanation": "Nilgiri Biosphere Reserve के दो महत्वपूर्ण विशेषताएँ हैं: यह भारत में पहला स्थापित बायोस्फीयर रिजर्व था (1986) और पहला जिसे UNESCO MAB मान्यता मिली (2000)। महत्वपूर्ण बात यह है कि यह तीन राज्यों — तमिलनाडु, केरल, और कर्नाटक — में फैला है।\n\n• विकल्प (a): गलत। Silent Valley (केरल), Mudumalai (तमिलनाडु), Nagarhole और Bandipur (कर्नाटक), Wayanad (केरल), और Mukurthi (तमिलनाडु) सभी घटक हैं — कोई भी अकेले रिजर्व को परिभाषित नहीं करता।\n• विकल्प (b): गलत। राष्ट्रीय नामांकन का वर्ष 1986 है, 1989 नहीं।\n• विकल्प (c): सही। तमिलनाडु, केरल, और कर्नाटक — तीन-राज्य का ओवरलैप एक परिभाषित भौगोलिक विशेषता है।\n• विकल्प (d): गलत। आंध्र प्रदेश का Nilgiri रिजर्व से कोई सीमा साझा नहीं है; यह जानबूझकर भौगोलिक भ्रम है।\n\nमूल्यवर्धन:\n• Nilgiri क्षेत्रफल के हिसाब से भारत का सबसे बड़ा बायोस्फीयर रिजर्व भी है और यह पश्चिमी घाट जैव विविधता हॉटस्पॉट से ओवरलैप करता है।\n• यह भारत के सबसे बड़े एशियाई हाथी आबादी और संकटग्रस्त Nilgiri तहर का घर है।\n• रिजर्व में तुड़ास, कोटास, और कुरुम्बास जैसे जनजातीय समुदाय भी रहते हैं।"
+    }
+  },
+  {
+    "uuid": "8ab1294e-1834-43fb-b6f7-d9e0ce3fe6b6",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Biosphere Reserve Zonation Concept — Core, Buffer, Transition",
+        "Biosphere Reserves vs. National Parks vs. Tiger Reserves — Overlaps and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Biosphere reserve zonation — human activity permissibility",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding biosphere reserves in India:\n\n1. Human settlements are permissible within the transition zone of a biosphere reserve but not within its core or buffer zones.\n2. Biosphere reserves in India derive their legal protection primarily from the Wildlife Protection Act, 1972, which also governs national parks.\n3. Unlike national parks, biosphere reserves can include agricultural lands within their demarcated boundaries.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Human settlements are permissible within the transition zone of a biosphere reserve but not within its core or buffer zones.",
+          "verdict": "Correct",
+          "reason": "The transition (cooperation) zone explicitly allows human settlements and compatible land uses including agriculture; the core zone prohibits all human activity, and the buffer zone allows only limited research and eco-tourism."
+        },
+        {
+          "statement": "Biosphere reserves in India derive their legal protection primarily from the Wildlife Protection Act, 1972, which also governs national parks.",
+          "verdict": "Incorrect",
+          "reason": "Biosphere reserves have no dedicated legislation — they are notified under the Environment Protection Act, 1986; national parks derive protection from the Wildlife Protection Act, 1972."
+        },
+        {
+          "statement": "Unlike national parks, biosphere reserves can include agricultural lands within their demarcated boundaries.",
+          "verdict": "Correct",
+          "reason": "The transition zone of a biosphere reserve can encompass agricultural land, villages, and other human-use areas — this is a defining structural difference from national parks where no private land use is permitted."
+        }
+      ],
+      "strong_distractor": "a — A student who correctly identifies Statement 1 as true but confuses the legal framework (Statement 2) may select (a), missing that Statement 3 is also correct.",
+      "elimination_logic": [
+        "Verify Statement 2 first — biosphere reserves are notified under the Environment Protection Act 1986, NOT the Wildlife Protection Act 1972; Statement 2 is false.",
+        "Since Statement 2 is false, eliminate options (c) and (d) which include Statement 2.",
+        "Verify Statement 1 — transition zone allows human habitation; core and buffer do not allow settlements — Statement 1 is correct.",
+        "Verify Statement 3 — agricultural lands in the transition zone are permitted; Statement 3 is correct. Answer is (b): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The trap here exploits a common conflation of legal frameworks. Students preparing biosphere reserves alongside national parks often default to the Wildlife Protection Act as the governing legislation for all protected areas. In reality, biosphere reserves have no dedicated legislation and are notified under the Environment Protection Act, 1986. A student who has memorised only that 'biosphere reserves allow human habitation' will likely mark Statement 1 and 3 correct — which is right — but may also mistakenly accept Statement 2, pushed by familiarity with WPA 1972.",
+      "final_explanation": "Biosphere reserves follow a three-zone structure. The core zone permits no human activity. The buffer zone permits limited, non-damaging research and eco-tourism. The transition or cooperation zone is where human habitation, agriculture, and compatible economic activities are permitted.\n\n• Statement 1 — Correct: Human settlements are allowed only in the transition zone; the core and buffer zones do not permit settlements, though the buffer allows supervised research.\n• Statement 2 — Incorrect: Biosphere reserves have no dedicated legislation. They are notified under the Environment Protection Act, 1986, through executive orders. National parks are governed by the Wildlife Protection Act, 1972.\n• Statement 3 — Correct: Agricultural lands and villages in the transition zone are a defining structural feature of biosphere reserves — distinguishing them fundamentally from national parks.\n\nValue Addition:\n• India has 18 nationally designated biosphere reserves but only 12 are part of the UNESCO MAB network.\n• The core zone of a biosphere reserve is typically a legally protected national park or wildlife sanctuary.\n• Buffer zones serve as shock absorbers between the strictly protected core and human-use transition zones."
+    },
+    "hi": {
+      "display_text": "भारत में बायोस्फीयर रिजर्व के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बायोस्फीयर रिजर्व के संक्रमण क्षेत्र में मानव बस्तियाँ अनुमत हैं लेकिन इसके कोर या बफर क्षेत्रों में नहीं।\n2. भारत में बायोस्फीयर रिजर्व मुख्यतः वन्यजीव संरक्षण अधिनियम, 1972 से कानूनी सुरक्षा प्राप्त करते हैं, जो राष्ट्रीय उद्यानों को भी नियंत्रित करता है।\n3. राष्ट्रीय उद्यानों के विपरीत, बायोस्फीयर रिजर्व अपने सीमांकित क्षेत्रों के भीतर कृषि भूमि शामिल कर सकते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मानव बस्तियाँ बायोस्फीयर रिजर्व के संक्रमण क्षेत्र में अनुमत हैं लेकिन इसके कोर या बफर क्षेत्रों में नहीं।",
+          "verdict": "सही",
+          "reason": "संक्रमण (सहयोग) क्षेत्र स्पष्ट रूप से मानव बस्तियों और कृषि सहित संगत भूमि उपयोग की अनुमति देता है; कोर क्षेत्र में सभी मानव गतिविधियाँ निषिद्ध हैं, और बफर क्षेत्र में केवल सीमित अनुसंधान और इको-टूरिज्म की अनुमति है।"
+        },
+        {
+          "statement": "भारत में बायोस्फीयर रिजर्व मुख्यतः वन्यजीव संरक्षण अधिनियम, 1972 से कानूनी सुरक्षा प्राप्त करते हैं, जो राष्ट्रीय उद्यानों को भी नियंत्रित करता है।",
+          "verdict": "गलत",
+          "reason": "बायोस्फीयर रिजर्व के लिए कोई समर्पित कानून नहीं है — इन्हें पर्यावरण संरक्षण अधिनियम, 1986 के तहत अधिसूचित किया जाता है; राष्ट्रीय उद्यान वन्यजीव संरक्षण अधिनियम, 1972 से सुरक्षा प्राप्त करते हैं।"
+        },
+        {
+          "statement": "राष्ट्रीय उद्यानों के विपरीत, बायोस्फीयर रिजर्व अपने सीमांकित क्षेत्रों के भीतर कृषि भूमि शामिल कर सकते हैं।",
+          "verdict": "सही",
+          "reason": "बायोस्फीयर रिजर्व के संक्रमण क्षेत्र में कृषि भूमि, गाँव और अन्य मानव उपयोग क्षेत्र हो सकते हैं — यह राष्ट्रीय उद्यानों से एक मौलिक संरचनात्मक भेद है जहाँ निजी भूमि उपयोग की अनुमति नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — एक छात्र जो कथन 1 को सही पहचानता है लेकिन कानूनी ढांचे (कथन 2) को भ्रमित करता है, वह (a) चुन सकता है, यह समझे बिना कि कथन 3 भी सही है।",
+      "elimination_logic": [
+        "पहले कथन 2 की पुष्टि करें — बायोस्फीयर रिजर्व पर्यावरण संरक्षण अधिनियम 1986 के तहत अधिसूचित होते हैं, वन्यजीव संरक्षण अधिनियम 1972 के तहत नहीं; कथन 2 गलत है।",
+        "चूंकि कथन 2 गलत है, इसलिए उन विकल्पों (c) और (d) को हटा दें जिनमें कथन 2 शामिल है।",
+        "कथन 1 की पुष्टि करें — संक्रमण क्षेत्र में मानव आवास की अनुमति है; कोर और बफर में बस्तियाँ नहीं हैं — कथन 1 सही है।",
+        "कथन 3 की पुष्टि करें — संक्रमण क्षेत्र में कृषि भूमि की अनुमति है; कथन 3 सही है। उत्तर है (b): केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "यह जाल कानूनी ढाँचों के सामान्य मिश्रण का फायदा उठाता है। जो छात्र बायोस्फीयर रिजर्व को राष्ट्रीय उद्यानों के साथ पढ़ते हैं, वे अक्सर सभी संरक्षित क्षेत्रों के लिए वन्यजीव संरक्षण अधिनियम को लागू मान लेते हैं। वास्तविकता में, बायोस्फीयर रिजर्व के लिए कोई समर्पित कानून नहीं है और इन्हें पर्यावरण संरक्षण अधिनियम, 1986 के तहत अधिसूचित किया जाता है। जो छात्र केवल यह याद रखते हैं कि 'बायोस्फीयर रिजर्व में मानव आवास की अनुमति है', वे कथन 1 और 3 को सही चिह्नित करेंगे — जो सही है — लेकिन कथन 2 को भी गलती से स्वीकार कर सकते हैं, जो WPA 1972 की परिचितता के कारण होता है।",
+      "final_explanation": "बायोस्फीयर रिजर्व तीन-क्षेत्रीय संरचना का पालन करते हैं। कोर क्षेत्र में कोई मानव गतिविधि अनुमति नहीं है। बफर क्षेत्र में सीमित, गैर-हानिकारक अनुसंधान और इको-टूरिज्म की अनुमति है। संक्रमण या सहयोग क्षेत्र वह स्थान है जहाँ मानव आवास, कृषि और संगत आर्थिक गतिविधियाँ अनुमत हैं।\n\n• कथन 1 — सही: मानव बस्तियाँ केवल संक्रमण क्षेत्र में अनुमति प्राप्त हैं; कोर और बफर क्षेत्र में बस्तियाँ अनुमति नहीं हैं, हालांकि बफर में पर्यवेक्षित अनुसंधान की अनुमति है।\n• कथन 2 — गलत: बायोस्फीयर रिजर्व के लिए कोई समर्पित कानून नहीं है। इन्हें पर्यावरण संरक्षण अधिनियम, 1986 के तहत कार्यकारी आदेशों द्वारा अधिसूचित किया जाता है। राष्ट्रीय उद्यान वन्यजीव संरक्षण अधिनियम, 1972 के तहत आते हैं।\n• कथन 3 — सही: संक्रमण क्षेत्र में कृषि भूमि और गाँव बायोस्फीयर रिजर्व की एक परिभाषित संरचनात्मक विशेषता हैं — जो उन्हें राष्ट्रीय उद्यानों से मौलिक रूप से अलग करती है।\n\nमूल्य संवर्धन:\n• भारत में 18 राष्ट्रीय स्तर पर नामित बायोस्फीयर रिजर्व हैं लेकिन केवल 12 यूनेस्को MAB नेटवर्क का हिस्सा हैं।\n• बायोस्फीयर रिजर्व का कोर क्षेत्र आमतौर पर कानूनी रूप से संरक्षित राष्ट्रीय उद्यान या वन्यजीव अभयारण्य होता है।\n• बफर क्षेत्र सख्त संरक्षित कोर और मानव उपयोग संक्रमण क्षेत्रों के बीच शॉक एब्जॉर्बर के रूप में कार्य करता है।"
+    }
+  },
+  {
+    "uuid": "ceefea9b-db31-4569-b507-2bddde47d6e8",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Gulf of Mannar Biosphere Reserve — Marine Biosphere Reserve",
+        "Sundarbans Biosphere Reserve — Deltaic and Transboundary Context"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Gulf of Mannar — India's first marine biosphere reserve",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about biosphere reserves in India:\n\n1. The Gulf of Mannar Biosphere Reserve is India's first marine biosphere reserve and is located along the Tamil Nadu coast, comprising 21 islands between India and Sri Lanka.\n2. The Sundarbans Biosphere Reserve is unique among Indian biosphere reserves because it shares its boundaries with Nepal, making it a transboundary reserve.\n3. Gulf of Mannar received UNESCO MAB recognition in 2001, the same year as Sundarbans.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 2 and 3 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Gulf of Mannar Biosphere Reserve is India's first marine biosphere reserve and is located along the Tamil Nadu coast, comprising 21 islands between India and Sri Lanka.",
+          "verdict": "Correct",
+          "reason": "Gulf of Mannar was designated India's first marine biosphere reserve; it lies along the Tamil Nadu coast, includes 21 islands, and is situated between the Indian mainland and Sri Lanka."
+        },
+        {
+          "statement": "The Sundarbans Biosphere Reserve is unique among Indian biosphere reserves because it shares its boundaries with Nepal, making it a transboundary reserve.",
+          "verdict": "Incorrect",
+          "reason": "Sundarbans is transboundary, but the country it is shared with is Bangladesh, not Nepal. Nepal has no proximity to the Sundarbans delta."
+        },
+        {
+          "statement": "Gulf of Mannar received UNESCO MAB recognition in 2001, the same year as Sundarbans.",
+          "verdict": "Correct",
+          "reason": "Both Gulf of Mannar and Sundarbans received UNESCO MAB recognition in 2001, the second year of Indian biosphere reserves being internationally recognised after Nilgiri in 2000."
+        }
+      ],
+      "strong_distractor": "c — Students who know Sundarbans is transboundary but cannot pinpoint whether it borders Bangladesh or Nepal may accept Statement 2 as correct and select (c) instead.",
+      "elimination_logic": [
+        "Evaluate Statement 1 — Gulf of Mannar is correctly identified as India's first marine biosphere reserve with 21 islands; Statement 1 is correct, so it cannot be the 'incorrect' answer.",
+        "Evaluate Statement 2 — Sundarbans is shared with Bangladesh, not Nepal; this geographic swap makes Statement 2 incorrect.",
+        "Evaluate Statement 3 — both Gulf of Mannar and Sundarbans received UNESCO MAB recognition in 2001; Statement 3 is correct.",
+        "Only Statement 2 is incorrect — answer is (b): 2 only."
+      ],
+      "upsc_trap_explanation": "The trap replaces Bangladesh with Nepal as Sundarbans' transboundary partner. Students who have memorised that Sundarbans is a transboundary reserve but haven't fixed the specific country may accept Nepal as plausible — particularly since Nepal is India's other prominent Himalayan neighbour for transboundary conservation (Parsa-Valmiki corridor, etc.). The substitution feels credible to a partially prepared student who knows the 'transboundary' fact but not its geographic specifics.",
+      "final_explanation": "Gulf of Mannar and Sundarbans are two of India's most frequently examined biosphere reserves, each with distinctive 'first' or 'unique' tags.\n\n• Statement 1 — Correct: Gulf of Mannar is India's first marine biosphere reserve, located on the Tamil Nadu coast and comprising 21 islands in the strait between India and Sri Lanka. It hosts coral reefs, seagrass beds, and endangered dugongs.\n• Statement 2 — Incorrect: Sundarbans is indeed India's only major transboundary biosphere reserve, but its transboundary partner is Bangladesh, not Nepal. Nepal has no geographical connection to the Gangetic delta where Sundarbans lies.\n• Statement 3 — Correct: Both Gulf of Mannar and Sundarbans achieved UNESCO MAB status in 2001, one year after Nilgiri (2000).\n\nValue Addition:\n• Sundarbans is also a UNESCO World Heritage Site and hosts the Bengal tiger population adapted to a semi-aquatic habitat.\n• Gulf of Mannar overlaps with the Palk Bay; Palk Strait and Gulf of Mannar are distinct water bodies often confused in mapping questions.\n• Dugongs (sea cows) in India are found almost exclusively in the Gulf of Mannar and Andaman waters."
+    },
+    "hi": {
+      "display_text": "भारत के बायोस्फीयर रिजर्व के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. गुल्फ ऑफ मन्नार बायोस्फीयर रिजर्व भारत का पहला समुद्री बायोस्फीयर रिजर्व है और यह तमिलनाडु तट के साथ स्थित है, जिसमें भारत और श्रीलंका के बीच 21 द्वीप शामिल हैं।\n2. सुंदरबन बायोस्फीयर रिजर्व भारतीय बायोस्फीयर रिजर्वों में अद्वितीय है क्योंकि यह नेपाल के साथ अपनी सीमाएँ साझा करता है, जिससे यह एक सीमापार रिजर्व बन जाता है।\n3. गुल्फ ऑफ मन्नार को 2001 में यूनेस्को MAB मान्यता मिली, जो सुंदरबन के समान वर्ष है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Gulf of Mannar Biosphere Reserve is India's first marine biosphere reserve and is located along the Tamil Nadu coast, comprising 21 islands between India and Sri Lanka.",
+          "verdict": "सही है",
+          "reason": "गुल्फ ऑफ मन्नार को भारत का पहला समुद्री बायोस्फीयर रिजर्व घोषित किया गया था; यह तमिलनाडु तट के साथ स्थित है, जिसमें 21 द्वीप शामिल हैं, और यह भारतीय मुख्यभूमि और श्रीलंका के बीच स्थित है।"
+        },
+        {
+          "statement": "The Sundarbans Biosphere Reserve is unique among Indian biosphere reserves because it shares its boundaries with Nepal, making it a transboundary reserve.",
+          "verdict": "गलत है",
+          "reason": "सुंदरबन एक सीमापार बायोस्फीयर रिजर्व है, लेकिन इसका साझा देश बांग्लादेश है, नेपाल नहीं। नेपाल का सुंदरबन डेल्टा के निकट कोई संपर्क नहीं है।"
+        },
+        {
+          "statement": "Gulf of Mannar received UNESCO MAB recognition in 2001, the same year as Sundarbans.",
+          "verdict": "सही है",
+          "reason": "गुल्फ ऑफ मन्नार और सुंदरबन दोनों को 2001 में यूनेस्को MAB मान्यता प्राप्त हुई, जो नीलगिरी (2000) के बाद भारतीय बायोस्फीयर रिजर्वों के लिए अंतरराष्ट्रीय मान्यता का दूसरा वर्ष था।"
+        }
+      ],
+      "strong_distractor": "c — छात्र जो जानते हैं कि सुंदरबन सीमापार है लेकिन यह नहीं पहचान पाते कि यह बांग्लादेश से लगती है या नेपाल से, वे कथन 2 को सही मानकर (c) विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें — गुल्फ ऑफ मन्नार को सही रूप से भारत का पहला समुद्री बायोस्फीयर रिजर्व बताया गया है जिसमें 21 द्वीप हैं; कथन 1 सही है, अतः यह 'गलत' उत्तर नहीं हो सकता।",
+        "कथन 2 का मूल्यांकन करें — सुंदरबन बांग्लादेश के साथ साझा है, नेपाल के साथ नहीं; इस भौगोलिक गलती के कारण कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें — गुल्फ ऑफ मन्नार और सुंदरबन दोनों को 2001 में यूनेस्को MAB मान्यता मिली; कथन 3 सही है।",
+        "केवल कथन 2 गलत है — उत्तर है (b): केवल 2।"
+      ],
+      "upsc_trap_explanation": "इस जाल में सुंदरबन के सीमापार साझेदार के रूप में बांग्लादेश की जगह नेपाल को रखा गया है। जो छात्र याद रखते हैं कि सुंदरबन सीमापार रिजर्व है लेकिन विशिष्ट देश नहीं जानते, वे नेपाल को संभावित मान सकते हैं — खासकर क्योंकि नेपाल भारत का एक अन्य प्रमुख हिमालयी पड़ोसी है जो सीमापार संरक्षण (जैसे पारसा-वाल्मीकि कॉरिडोर) के लिए जाना जाता है। यह स्थानांतरण आंशिक रूप से तैयार छात्र के लिए विश्वसनीय लगता है जो 'सीमापार' तथ्य जानता है लेकिन भौगोलिक विवरण नहीं।",
+      "final_explanation": "गुल्फ ऑफ मन्नार और सुंदरबन भारत के दो सबसे अधिक पूछे जाने वाले बायोस्फीयर रिजर्व हैं, जिनमें प्रत्येक के पास विशिष्ट 'पहला' या 'विशिष्ट' टैग हैं।\n\n• कथन 1 — सही: गुल्फ ऑफ मन्नार भारत का पहला समुद्री बायोस्फीयर रिजर्व है, जो तमिलनाडु तट पर स्थित है और भारत और श्रीलंका के बीच की जलडमरूमध्य में 21 द्वीपों से मिलकर बना है। इसमें प्रवाल भित्तियाँ, समुद्री घास के बिस्तर, और संकटग्रस्त डुगोंग पाए जाते हैं।\n• कथन 2 — गलत: सुंदरबन वास्तव में भारत का एकमात्र प्रमुख सीमापार बायोस्फीयर रिजर्व है, लेकिन इसका सीमापार साझेदार बांग्लादेश है, नेपाल नहीं। नेपाल का सुंदरबन के गंगा डेल्टा से कोई भौगोलिक संबंध नहीं है।\n• कथन 3 — सही: गुल्फ ऑफ मन्नार और सुंदरबन दोनों को 2001 में यूनेस्को MAB मान्यता मिली, जो नीलगिरी (2000) के एक वर्ष बाद था।\n\nमूल्य वर्धन:\n• सुंदरबन यूनेस्को विश्व धरोहर स्थल भी है और यहाँ बंगाल टाइगर की एक ऐसी आबादी है जो अर्ध-जलजीवी आवास के लिए अनुकूलित है।\n• गुल्फ ऑफ मन्नार पाल्क खाड़ी के साथ ओवरलैप करता है; पाल्क जलडमरूमध्य और गुल्फ ऑफ मन्नार अलग-अलग जल निकाय हैं जिन्हें अक्सर मानचित्र प्रश्नों में भ्रमित किया जाता है।\n• भारत में डुगोंग (समुद्री गाय) लगभग विशेष रूप से गुल्फ ऑफ मन्नार और अंडमान जल में पाए जाते हैं।"
+    }
+  },
+  {
+    "uuid": "9185351f-af70-4723-a909-4363d387324b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Nokrek Biosphere Reserve — Northeast India",
+        "Simlipal Biosphere Reserve — Odisha",
+        "Pachmarhi Biosphere Reserve — Satpura Range",
+        "Achanakmar-Amarkantak Biosphere Reserve — Inter-State",
+        "Great Nicobar Biosphere Reserve — Island Ecosystem"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Biosphere reserves — state locations and ecological features",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Biosphere Reserve) with List II (State/Union Territory):",
+        "columns": [
+          "List I (Biosphere Reserve)",
+          "List II (State / UT)"
+        ],
+        "rows": [
+          [
+            "A. Nokrek",
+            "1. Madhya Pradesh"
+          ],
+          [
+            "B. Simlipal",
+            "2. Andaman & Nicobar Islands (UT)"
+          ],
+          [
+            "C. Pachmarhi",
+            "3. Meghalaya"
+          ],
+          [
+            "D. Great Nicobar",
+            "4. Odisha"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-3, C-1, D-4\n(b) A-3, B-4, C-2, D-1\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who correctly match Nokrek to Meghalaya but confuse Pachmarhi's location as Chhattisgarh (since Achanakmar-Amarkantak spans MP-Chhattisgarh) may select (b).",
+      "elimination_logic": [
+        "Identify Nokrek — it is in Meghalaya (Garo Hills), eliminating any option placing it in Assam or Arunachal Pradesh.",
+        "Identify Simlipal — located in Mayurbhanj district, Odisha; any option placing it in Jharkhand is eliminated.",
+        "Identify Pachmarhi — entirely within Madhya Pradesh, Satpura range; not Chhattisgarh.",
+        "Identify Great Nicobar — southernmost island of Andaman and Nicobar group, administered as a Union Territory — matches UT, not a state. Correct combination is A-3, B-4, C-1, D-2 → option (d)."
+      ],
+      "upsc_trap_explanation": "The geographic trap here targets the MP-Chhattisgarh confusion. Because Achanakmar-Amarkantak spans both Madhya Pradesh and Chhattisgarh, students mentally associate the Satpura-Maikal region with Chhattisgarh and may place Pachmarhi there. Pachmarhi is entirely in Madhya Pradesh. Similarly, Simlipal's Odisha location is sometimes confused with Jharkhand due to the tribal belt overlap across the two states.",
+      "final_explanation": "This question tests precise state-level mapping of five biosphere reserves.\n\nCorrect pairings:\n• A (Nokrek) — 3 (Meghalaya): Nokrek is in the Garo Hills of Meghalaya, the only biosphere reserve in that state, known as a citrus gene sanctuary.\n• B (Simlipal) — 4 (Odisha): Located in Mayurbhanj district; dominated by sal forests and home to significant tribal communities.\n• C (Pachmarhi) — 1 (Madhya Pradesh): Entirely within MP's Satpura range, received UNESCO MAB recognition in 2009.\n• D (Great Nicobar) — 2 (Andaman & Nicobar Islands, UT): India's southernmost biosphere reserve on the southernmost island of the archipelago, UNESCO MAB recognised in 2013.\n\nTrap pairing: Pachmarhi is sometimes confused with Chhattisgarh because the adjacent Achanakmar-Amarkantak reserve spans MP and Chhattisgarh — but Pachmarhi itself lies entirely in MP.\n\nValue Addition:\n• Nokrek hosts the world's largest diversity of wild citrus species and is considered the origin centre of citrus fruits.\n• Great Nicobar is home to the Shompen, one of India's Particularly Vulnerable Tribal Groups (PVTGs).\n• Simlipal means 'forest of silk-cotton trees' in the local dialect; it is also a Project Tiger reserve."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (जैवमंडल अभयारण्य) को सूची II (राज्य/केंद्र शासित प्रदेश) से मिलाइए:",
+        "columns": [
+          "सूची I (जैवमंडल अभयारण्य)",
+          "सूची II (राज्य / केंद्र शासित प्रदेश)"
+        ],
+        "rows": [
+          [
+            "A. नोक्रेक",
+            "1. मध्य प्रदेश"
+          ],
+          [
+            "B. सिमलीपाल",
+            "2. अंडमान और निकोबार द्वीप समूह (केंद्र शासित प्रदेश)"
+          ],
+          [
+            "C. पचमढ़ी",
+            "3. मेघालय"
+          ],
+          [
+            "D. ग्रेट निकोबार",
+            "4. ओडिशा"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-3, C-1, D-4\n(b) A-3, B-4, C-2, D-1\n(c) A-3, B-1, C-4, D-2\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र सही ढंग से नोक्रेक को मेघालय से मिलाते हैं लेकिन पचमढ़ी के स्थान को छत्तीसगढ़ समझ लेते हैं (क्योंकि अचनाकमार-अमरकंटक मध्य प्रदेश-छत्तीसगढ़ में फैला है) वे (b) विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "नोक्रेक की पहचान करें — यह मेघालय (गारो हिल्स) में है, इसलिए जो विकल्प इसे असम या अरुणाचल प्रदेश में रखते हैं, वे खारिज हो जाते हैं।",
+        "सिमलीपाल की पहचान करें — यह मयूरभंज जिले, ओडिशा में स्थित है; जो विकल्प इसे झारखंड में रखते हैं, वे खारिज हो जाते हैं।",
+        "पचमढ़ी की पहचान करें — यह पूरी तरह मध्य प्रदेश के सतपुड़ा श्रृंखला में है; छत्तीसगढ़ में नहीं।",
+        "ग्रेट निकोबार की पहचान करें — अंडमान और निकोबार समूह का दक्षिणतम द्वीप, जो एक केंद्र शासित प्रदेश के रूप में प्रशासित है — यह राज्य नहीं है। सही संयोजन है A-3, B-4, C-1, D-2 → विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "यह भौगोलिक जाल मध्य प्रदेश-छत्तीसगढ़ भ्रम पर आधारित है। क्योंकि अचनाकमार-अमरकंटक दोनों मध्य प्रदेश और छत्तीसगढ़ में फैला है, छात्र सतपुड़ा-मैकाल क्षेत्र को छत्तीसगढ़ से जोड़ लेते हैं और पचमढ़ी को वहां रख देते हैं। जबकि पचमढ़ी पूरी तरह मध्य प्रदेश में है। इसी प्रकार, सिमलीपाल के ओडिशा में होने को कभी-कभी झारखंड के साथ आदिवासी क्षेत्र के ओवरलैप के कारण भ्रमित किया जाता है।",
+      "final_explanation": "यह प्रश्न पाँच जैवमंडल अभयारण्यों के सटीक राज्य-स्तरीय मानचित्रण का परीक्षण करता है।\n\nसही जोड़े:\n• A (नोक्रेक) — 3 (मेघालय): नोक्रेक मेघालय के गारो हिल्स में है, जो उस राज्य का एकमात्र जैवमंडल अभयारण्य है, और इसे साइट्रस जीन अभयारण्य के रूप में जाना जाता है।\n• B (सिमलीपाल) — 4 (ओडिशा): यह मयूरभंज जिले में स्थित है; यहाँ सैल के जंगल हैं और महत्वपूर्ण आदिवासी समुदाय निवास करते हैं।\n• C (पचमढ़ी) — 1 (मध्य प्रदेश): पूरी तरह से मध्य प्रदेश के सतपुड़ा श्रृंखला में है, जिसे 2009 में यूनेस्को MAB मान्यता मिली।\n• D (ग्रेट निकोबार) — 2 (अंडमान और निकोबार द्वीप समूह, केंद्र शासित प्रदेश): भारत का दक्षिणतम जैवमंडल अभयारण्य, जो द्वीपसमूह के दक्षिणतम द्वीप पर है, 2013 में यूनेस्को MAB मान्यता प्राप्त।\n\nजाल जोड़ी: पचमढ़ी को कभी-कभी छत्तीसगढ़ के साथ भ्रमित किया जाता है क्योंकि आसन्न अचनाकमार-अमरकंटक अभयारण्य मध्य प्रदेश और छत्तीसगढ़ दोनों में फैला है — लेकिन पचमढ़ी स्वयं पूरी तरह मध्य प्रदेश में है।\n\nमूल्य संवर्धन:\n• नोक्रेक में विश्व की सबसे बड़ी जंगली साइट्रस प्रजातियों की विविधता है और इसे साइट्रस फलों का मूल केंद्र माना जाता है।\n• ग्रेट निकोबार में शॉम्पेन निवास करते हैं, जो भारत के विशेष रूप से संवेदनशील आदिवासी समूहों (PVTGs) में से एक है।\n• सिमलीपाल का अर्थ स्थानीय बोली में 'रेशमी-कपास के पेड़ों का जंगल' है; यह एक प्रोजेक्ट टाइगर अभयारण्य भी है।"
+    }
+  },
+  {
+    "uuid": "fb82052b-b92a-4564-a93b-8e7972c010c2",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "UNESCO Man and Biosphere (MAB) Programme — India's Recognized Reserves",
+        "Nilgiri Biosphere Reserve — First and Largest",
+        "Gulf of Mannar Biosphere Reserve — Marine Biosphere Reserve",
+        "Manas Biosphere Reserve — Assam"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Chronological order of UNESCO MAB recognition — Indian reserves",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Arrange the following biosphere reserves in the chronological order of their UNESCO Man and Biosphere (MAB) Programme recognition:\n\n1. Nanda Devi\n2. Gulf of Mannar\n3. Nilgiri\n4. Manas\n\nWhich of the following represents the correct chronological order?\n\n(a) 3 → 4 → 2 → 1\n(b) 3 → 2 → 4 → 1\n(c) 2 → 3 → 1 → 4\n(d) 3 → 1 → 2 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who correctly place Nilgiri first but confuse the 2001 recognitions (Gulf of Mannar and Sundarbans, both in 2001) with Manas (2001) may accept an incorrect ordering within the same year.",
+      "elimination_logic": [
+        "Nilgiri was the first Indian biosphere reserve to receive UNESCO MAB recognition in 2000 — it must come first in any valid sequence.",
+        "Gulf of Mannar and Sundarbans both received recognition in 2001 — any option reversing Nilgiri and Gulf of Mannar is eliminated.",
+        "Manas received UNESCO MAB recognition in 2001 as well, but Nanda Devi received it in 2004 — Nanda Devi must come after the 2001 group.",
+        "The correct order is Nilgiri (2000) → Gulf of Mannar (2001) → Manas (2001) → Nanda Devi (2004). Among options, (b) presents this sequence correctly."
+      ],
+      "upsc_trap_explanation": "The primary trap is year confusion: Gulf of Mannar (2001), Sundarbans (2001), and Manas (2001) all received recognition in the same year, creating ordering ambiguity. Students who confuse Nanda Devi's year (2004) with 2001 will misplace it alongside the 2001 batch. Additionally, placing Manas before Gulf of Mannar within the 2001 cohort is a subtle trap since both are contemporaneous — UPSC generally tests whether students know Nilgiri came first in 2000 and Nanda Devi came later in 2004.",
+      "final_explanation": "UNESCO MAB recognition of Indian biosphere reserves followed a chronological sequence that UPSC has tested repeatedly. Understanding the order protects against temporal-swap distractors.\n\nCorrect sequence:\n1. Nilgiri (2000) — first Indian reserve to gain UNESCO MAB recognition\n2. Gulf of Mannar (2001) — same year as Sundarbans and Manas\n3. Manas (2001) — along with Gulf of Mannar and Sundarbans in 2001\n4. Nanda Devi (2004) — next major recognition after the 2001 cohort\n\nWrong options fail because they either reverse Nilgiri and Gulf of Mannar or place Nanda Devi in the 2001 group.\n\nValue Addition:\n• Nokrek and Pachmarhi were both recognised in 2009; Simlipal also in 2009.\n• Achanakmar-Amarkantak received UNESCO MAB recognition in 2012.\n• Khangchendzonga (2018) is the most recently recognised among the 12 UNESCO MAB reserves in India.\n• Great Nicobar received UNESCO recognition in 2013."
+    },
+    "hi": {
+      "display_text": "UNESCO Man and Biosphere (MAB) Programme की मान्यता के कालानुक्रमिक क्रम में निम्नलिखित बायोस्फीयर रिजर्वों को व्यवस्थित कीजिए:\n\n1. नंदा देवी\n2. गुल्फ ऑफ मन्नार\n3. निलगिरी\n4. मानस\n\nनिम्नलिखित में से कौन सा सही कालानुक्रमिक क्रम दर्शाता है?\n\n(a) 3 → 4 → 2 → 1\n(b) 3 → 2 → 4 → 1\n(c) 2 → 3 → 1 → 4\n(d) 3 → 1 → 2 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who correctly place Nilgiri first but confuse the 2001 recognitions (Gulf of Mannar and Sundarbans, both in 2001) with Manas (2001) may accept an incorrect ordering within the same year.",
+      "elimination_logic": [
+        "निलगिरी भारत का पहला बायोस्फीयर रिजर्व था जिसे 2000 में UNESCO MAB मान्यता मिली — यह किसी भी सही क्रम में सबसे पहले आना चाहिए।",
+        "गुल्फ ऑफ मन्नार और सुंदरबन दोनों को 2001 में मान्यता मिली — कोई भी विकल्प जो निलगिरी और गुल्फ ऑफ मन्नार को उलटता है, उसे खारिज किया जाता है।",
+        "मानस को भी 2001 में UNESCO MAB मान्यता मिली, लेकिन नंदा देवी को 2004 में मिली — नंदा देवी 2001 समूह के बाद आनी चाहिए।",
+        "सही क्रम है निलगिरी (2000) → गुल्फ ऑफ मन्नार (2001) → मानस (2001) → नंदा देवी (2004)। विकल्पों में, (b) इस क्रम को सही ढंग से प्रस्तुत करता है।"
+      ],
+      "upsc_trap_explanation": "मुख्य जाल वर्ष भ्रम है: गुल्फ ऑफ मन्नार (2001), सुंदरबन (2001), और मानस (2001) सभी को एक ही वर्ष में मान्यता मिली, जिससे क्रम निर्धारण में अस्पष्टता होती है। जो छात्र नंदा देवी के वर्ष (2004) को 2001 के साथ भ्रमित करते हैं, वे इसे 2001 समूह के साथ गलत स्थान पर रखेंगे। इसके अतिरिक्त, 2001 समूह के भीतर मानस को गुल्फ ऑफ मन्नार से पहले रखना एक सूक्ष्म जाल है क्योंकि दोनों समकालीन हैं — UPSC आमतौर पर यह जांचता है कि छात्र जानते हैं कि निलगिरी 2000 में सबसे पहले आया और नंदा देवी बाद में 2004 में।",
+      "final_explanation": "भारतीय बायोस्फीयर रिजर्वों को UNESCO MAB मान्यता का कालानुक्रमिक क्रम UPSC द्वारा बार-बार परीक्षण किया गया है। इस क्रम को समझना समय-संबंधी भ्रम से बचाता है।\n\nसही क्रम:\n1. निलगिरी (2000) — पहला भारतीय रिजर्व जिसे UNESCO MAB मान्यता मिली\n2. गुल्फ ऑफ मन्नार (2001) — सुंदरबन और मानस के समान वर्ष\n3. मानस (2001) — 2001 में गुल्फ ऑफ मन्नार और सुंदरबन के साथ\n4. नंदा देवी (2004) — 2001 समूह के बाद अगली प्रमुख मान्यता\n\nगलत विकल्प इसलिए अस्वीकार्य हैं क्योंकि वे या तो निलगिरी और गुल्फ ऑफ मन्नार को उलटते हैं या नंदा देवी को 2001 समूह में रखते हैं।\n\nमूल्य संवर्धन:\n• नोक्रेक और पचमढ़ी दोनों को 2009 में मान्यता मिली; सिमलीपाल को भी 2009 में।\n• अचानकमार-अमरकंटक को 2012 में UNESCO MAB मान्यता मिली।\n• खंगचेंदजोंगा (2018) भारत के 12 UNESCO MAB रिजर्वों में सबसे हाल ही में मान्यता प्राप्त है।\n• ग्रेट निकोबार को 2013 में UNESCO मान्यता मिली।"
+    }
+  },
+  {
+    "uuid": "ede766ec-55db-4319-81ca-55c136d52eb2",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Biosphere Reserve Zonation Concept — Core, Buffer, Transition",
+        "Biosphere Reserves vs. National Parks vs. Tiger Reserves — Overlaps and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Biosphere reserve zonation — human activity in buffer zone",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An Adivasi community has been living within a designated biosphere reserve for generations, practising traditional cultivation and maintaining permanent settlements. A government administration certifies that their activities are consistent with the reserve's zoning norms and issues no eviction notice. The community's location and activities are compatible with which of the following zones under the biosphere reserve framework?\n\n(a) Core zone, since traditional communities are integral to conservation\n(b) Buffer zone, since limited human activity is permitted there\n(c) Eco-sensitive zone, separately notified around protected areas\n(d) Transition zone, since permanent settlement and compatible land use are permitted there",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know that buffer zones allow 'some' human activity may select (b), not realising that permanent settlement and cultivation belong to the transition zone, not the buffer zone.",
+      "elimination_logic": [
+        "The scenario describes permanent settlement and traditional cultivation inside a designated zone — this rules out the core zone (no human activity) and wildlife sanctuary provisions (which restrict settlement).",
+        "Buffer zones allow limited research and eco-tourism but do NOT permit permanent human settlements or cultivation.",
+        "The transition/cooperation zone is specifically designed to include human settlements, agriculture, and compatible economic activities.",
+        "The community's activities (permanent settlement + traditional cultivation) match the transition zone description — answer is (d)."
+      ],
+      "upsc_trap_explanation": "The trap exploits the 'some human activity = buffer zone' shortcut. Many students memorise that the buffer zone allows limited human use and incorrectly extend this to include permanent habitation. The critical distinction is: buffer zones allow supervised, temporary activities (research camps, controlled eco-tourism) whereas transition zones allow genuine human settlements, agriculture, and community-based livelihoods. The scenario specifies 'permanent settlement and traditional cultivation' — both hallmarks of the transition zone.",
+      "final_explanation": "Biosphere reserves operate on a three-zone model designed to balance strict conservation with human coexistence. Each zone has a distinct human-use profile.\n\nApplicable principle: The transition (cooperation) zone is the outermost zone where permanent human habitation, traditional agriculture, and compatible economic activities are legally permitted. This zone is not subject to the strict non-use provisions of the core zone or the supervised-access limitations of the buffer zone.\n\nMapping to scenario: The Adivasi community lives permanently within the biosphere reserve and practices traditional cultivation — this is characteristic of the transition zone. The administration's permission is consistent with transition zone norms.\n\n• Option (a): Incorrect. Core zone prohibits all human activity including settlement.\n• Option (b): Incorrect. Buffer zone allows research and limited eco-tourism but not permanent settlements or cultivation.\n• Option (c): Incorrect. There is no designated 'eco-sensitive zone' within the biosphere reserve's internal zoning framework — ESZs are notified separately around national parks.\n• Option (d): Correct. Transition zone — permanent habitation and traditional land use are explicitly permitted.\n\nValue Addition:\n• The transition zone is sometimes called the 'cooperation zone' in MAB documentation.\n• Unlike national parks, where no private land can exist within boundaries, biosphere reserves can envelope existing villages.\n• Core zones within biosphere reserves are typically national parks or wildlife sanctuaries — already enjoying statutory protection."
+    },
+    "hi": {
+      "display_text": "एक आदिवासी समुदाय पीढ़ियों से एक निर्दिष्ट बायोस्फीयर रिज़र्व के भीतर रह रहा है, पारंपरिक खेती करता है और स्थायी आवास बनाए रखता है। एक सरकारी प्रशासन प्रमाणित करता है कि उनकी गतिविधियाँ रिज़र्व के क्षेत्रीकरण मानदंडों के अनुरूप हैं और कोई निष्कासन नोटिस जारी नहीं करता। समुदाय का स्थान और गतिविधियाँ बायोस्फीयर रिज़र्व ढांचे के तहत निम्नलिखित में से किस क्षेत्र के अनुकूल हैं?\n\n(a) कोर ज़ोन, क्योंकि पारंपरिक समुदाय संरक्षण के अभिन्न हैं\n(b) बफर ज़ोन, क्योंकि वहाँ सीमित मानव गतिविधि की अनुमति है\n(c) पारिस्थितिक-संवेदनशील क्षेत्र, जो संरक्षित क्षेत्रों के आसपास अलग से अधिसूचित होता है\n(d) संक्रमण क्षेत्र, क्योंकि वहाँ स्थायी आवास और अनुकूल भूमि उपयोग की अनुमति है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि बफर ज़ोन में 'कुछ' मानव गतिविधि की अनुमति होती है, वे (b) चुन सकते हैं, यह समझे बिना कि स्थायी आवास और खेती संक्रमण क्षेत्र में आते हैं, न कि बफर ज़ोन में।",
+      "elimination_logic": [
+        "परिदृश्य में स्थायी आवास और पारंपरिक खेती निर्दिष्ट क्षेत्र के भीतर है — इससे कोर ज़ोन (जहाँ कोई मानव गतिविधि नहीं होती) और वन्यजीव अभयारण्य प्रावधान (जो आवास को प्रतिबंधित करते हैं) बाहर हो जाते हैं।",
+        "बफर ज़ोन सीमित अनुसंधान और पारिस्थितिक पर्यटन की अनुमति देता है लेकिन स्थायी मानव आवास या खेती की अनुमति नहीं देता।",
+        "संक्रमण/सहयोग क्षेत्र विशेष रूप से मानव आवास, कृषि, और अनुकूल आर्थिक गतिविधियों को शामिल करने के लिए डिज़ाइन किया गया है।",
+        "समुदाय की गतिविधियाँ (स्थायी आवास + पारंपरिक खेती) संक्रमण क्षेत्र के वर्णन से मेल खाती हैं — उत्तर (d) है।"
+      ],
+      "upsc_trap_explanation": "यह जाल 'कुछ मानव गतिविधि = बफर ज़ोन' के संक्षिप्त सूत्र का दुरुपयोग करता है। कई छात्र याद करते हैं कि बफर ज़ोन सीमित मानव उपयोग की अनुमति देता है और इसे गलत तरीके से स्थायी आवास तक बढ़ा देते हैं। महत्वपूर्ण अंतर यह है: बफर ज़ोन पर्यवेक्षित, अस्थायी गतिविधियों (अनुसंधान शिविर, नियंत्रित पारिस्थितिक पर्यटन) की अनुमति देता है जबकि संक्रमण क्षेत्र वास्तविक मानव आवास, कृषि, और समुदाय आधारित आजीविका की अनुमति देता है। परिदृश्य में 'स्थायी आवास और पारंपरिक खेती' निर्दिष्ट है — जो संक्रमण क्षेत्र के लक्षण हैं।",
+      "final_explanation": "बायोस्फीयर रिज़र्व तीन-क्षेत्रीय मॉडल पर कार्य करते हैं जो कड़े संरक्षण और मानव सह-अस्तित्व के बीच संतुलन बनाता है। प्रत्येक क्षेत्र का मानव उपयोग प्रोफ़ाइल अलग होता है।\n\nलागू सिद्धांत: संक्रमण (सहयोग) क्षेत्र बाहरी क्षेत्र है जहाँ स्थायी मानव आवास, पारंपरिक कृषि, और अनुकूल आर्थिक गतिविधियाँ कानूनी रूप से अनुमत हैं। यह क्षेत्र कोर ज़ोन के कड़े गैर-उपयोग प्रावधानों या बफर ज़ोन की पर्यवेक्षित-प्रवेश सीमाओं के अधीन नहीं है।\n\nपरिदृश्य से मेल: आदिवासी समुदाय स्थायी रूप से बायोस्फीयर रिज़र्व के भीतर रहता है और पारंपरिक खेती करता है — यह संक्रमण क्षेत्र की विशेषता है। प्रशासन की अनुमति संक्रमण क्षेत्र के मानदंडों के अनुरूप है।\n\n• विकल्प (a): गलत। कोर ज़ोन सभी मानव गतिविधि सहित आवास को प्रतिबंधित करता है।\n• विकल्प (b): गलत। बफर ज़ोन अनुसंधान और सीमित पारिस्थितिक पर्यटन की अनुमति देता है लेकिन स्थायी आवास या खेती की नहीं।\n• विकल्प (c): गलत। बायोस्फीयर रिज़र्व के आंतरिक क्षेत्रीकरण ढांचे में कोई निर्दिष्ट 'पारिस्थितिक-संवेदनशील क्षेत्र' नहीं है — ESZ राष्ट्रीय उद्यानों के आसपास अलग से अधिसूचित होते हैं।\n• विकल्प (d): सही। संक्रमण क्षेत्र — स्थायी आवास और पारंपरिक भूमि उपयोग स्पष्ट रूप से अनुमत हैं।\n\nमूल्य संवर्धन:\n• संक्रमण क्षेत्र को कभी-कभी MAB दस्तावेज़ों में 'सहयोग क्षेत्र' कहा जाता है।\n• राष्ट्रीय उद्यानों के विपरीत, जहाँ सीमाओं के भीतर कोई निजी भूमि नहीं हो सकती, बायोस्फीयर रिज़र्व मौजूदा गांवों को समेट सकते हैं।\n• बायोस्फीयर रिज़र्व के कोर ज़ोन आमतौर पर राष्ट्रीय उद्यान या वन्यजीव अभयारण्य होते हैं — जिन्हें पहले से वैधानिक संरक्षण प्राप्त है।"
+    }
+  },
+  {
+    "uuid": "3b18d973-282e-4da7-a6a6-a0bf84a05e52",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Northeast India Biosphere Reserves — Cluster Analysis",
+        "Nokrek Biosphere Reserve — Northeast India",
+        "Manas Biosphere Reserve — Assam",
+        "Dibru-Saikhowa Biosphere Reserve — Assam"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Biosphere reserves in Northeast India — state identification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following biosphere reserves does NOT belong to the northeastern region of India?\n\n(a) Dihang-Dibang\n(b) Manas\n(c) Simlipal\n(d) Nokrek",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Dihang-Dibang (Arunachal Pradesh) is the least familiar of the northeastern reserves; students unsure of its location may incorrectly flag it as the odd one out.",
+      "elimination_logic": [
+        "Identify the common attribute: all options should be biosphere reserves in northeastern India — find the one that is NOT.",
+        "Manas — Assam (northeastern India): confirmed northeastern reserve.",
+        "Nokrek — Meghalaya (northeastern India): confirmed northeastern reserve.",
+        "Dihang-Dibang — Arunachal Pradesh (northeastern India): confirmed northeastern reserve.",
+        "Simlipal — Odisha (eastern India, NOT northeastern): this is the odd one out — answer is (c)."
+      ],
+      "upsc_trap_explanation": "The trap exploits the 'eastern India' vs. 'northeastern India' distinction. Simlipal (Odisha) is in the eastern region but not the Northeast (the seven sisters). Students who loosely group 'eastern' and 'northeastern' may not immediately flag Simlipal. Additionally, Dihang-Dibang (Arunachal Pradesh) is rarely featured in coaching material, so students may doubt it rather than the well-known Simlipal, leading them to incorrectly select (a) as the odd one out.",
+      "final_explanation": "The northeastern biosphere reserves constitute a distinct cluster due to their Indo-Burma Hotspot overlap and unique species assemblages.\n\n• Option (a) — Dihang-Dibang: Located in Arunachal Pradesh — a northeastern state. It is a nationally designated biosphere reserve. Not the odd one out.\n• Option (b) — Manas: Located in Assam's foothills of the Eastern Himalayas — clearly northeastern. Also a UNESCO MAB reserve and World Heritage Site.\n• Option (c) — Simlipal: Located in Mayurbhanj district, Odisha — an eastern Indian state, NOT part of the northeastern cluster. This is the odd one out.\n• Option (d) — Nokrek: Located in Meghalaya's Garo Hills — northeastern India. UNESCO MAB recognised in 2009.\n\nValue Addition:\n• All northeastern biosphere reserves fall under the Indo-Burma Biodiversity Hotspot.\n• Dihang-Dibang is India's largest biosphere reserve by area after Nilgiri, though less frequently cited.\n• Northeastern India hosts hoolock gibbons — India's only ape species — and clouded leopards."
+    },
+    "hi": {
+      "display_text": "भारत के निम्नलिखित जैवमंडल आरक्षित क्षेत्रों में से कौन सा पूर्वोत्तर क्षेत्र से संबंधित नहीं है?\n\n(a) दिहांग-दीबांग\n(b) मानस\n(c) सिमलीपाल\n(d) नोकरेक",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — दिहांग-दीबांग (अरुणाचल प्रदेश) पूर्वोत्तर के आरक्षित क्षेत्रों में सबसे कम परिचित है; इसके स्थान के बारे में अनिश्चित छात्र इसे गलत तरीके से अलग विकल्प के रूप में चुन सकते हैं।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: सभी विकल्प पूर्वोत्तर भारत के जैवमंडल आरक्षित क्षेत्र होने चाहिए — जो नहीं है उसे खोजें।",
+        "मानस — असम (पूर्वोत्तर भारत): पुष्टि पूर्वोत्तर आरक्षित क्षेत्र।",
+        "नोकरेक — मेघालय (पूर्वोत्तर भारत): पुष्टि पूर्वोत्तर आरक्षित क्षेत्र।",
+        "दिहांग-दीबांग — अरुणाचल प्रदेश (पूर्वोत्तर भारत): पुष्टि पूर्वोत्तर आरक्षित क्षेत्र।",
+        "सिमलीपाल — ओडिशा (पूर्वी भारत, पूर्वोत्तर नहीं): यह अलग विकल्प है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "यह जाल पूर्वी भारत और पूर्वोत्तर भारत के बीच के भेद को भुनाता है। सिमलीपाल (ओडिशा) पूर्वी क्षेत्र में है लेकिन पूर्वोत्तर (सात बहनें) का हिस्सा नहीं है। जो छात्र 'पूर्वी' और 'पूर्वोत्तर' को एक साथ मिलाकर देखते हैं, वे तुरंत सिमलीपाल को अलग विकल्प के रूप में नहीं पहचान पाएंगे। इसके अतिरिक्त, दिहांग-दीबांग (अरुणाचल प्रदेश) को कोचिंग सामग्री में कम दिखाया जाता है, इसलिए छात्र इसे संदेह में डाल सकते हैं बजाय प्रसिद्ध सिमलीपाल के, जिससे वे गलत तरीके से (a) को अलग विकल्प चुन सकते हैं।",
+      "final_explanation": "पूर्वोत्तर के जैवमंडल आरक्षित क्षेत्र इंडो-बर्मा हॉटस्पॉट के अतिव्यापी क्षेत्र और विशिष्ट प्रजाति समूहों के कारण एक अलग समूह बनाते हैं।\n\n• विकल्प (a) — दिहांग-दीबांग: अरुणाचल प्रदेश में स्थित — एक पूर्वोत्तर राज्य। यह राष्ट्रीय स्तर पर नामित जैवमंडल आरक्षित क्षेत्र है। अलग विकल्प नहीं है।\n• विकल्प (b) — मानस: असम के पूर्वी हिमालय की तलहटी में स्थित — स्पष्ट रूप से पूर्वोत्तर। यह यूनेस्को MAB आरक्षित और विश्व धरोहर स्थल भी है।\n• विकल्प (c) — सिमलीपाल: मयूरभंज जिले, ओडिशा में स्थित — एक पूर्वी भारतीय राज्य, पूर्वोत्तर समूह का हिस्सा नहीं। यह अलग विकल्प है।\n• विकल्प (d) — नोकरेक: मेघालय के गारो हिल्स में स्थित — पूर्वोत्तर भारत। 2009 में यूनेस्को MAB द्वारा मान्यता प्राप्त।\n\nमूल्य संवर्धन:\n• सभी पूर्वोत्तर जैवमंडल आरक्षित क्षेत्र इंडो-बर्मा जैव विविधता हॉटस्पॉट के अंतर्गत आते हैं।\n• दिहांग-दीबांग क्षेत्रफल के हिसाब से नीलगिरी के बाद भारत का सबसे बड़ा जैवमंडल आरक्षित क्षेत्र है, हालांकि कम उल्लेखित।\n• पूर्वोत्तर भारत में हूलक गिबन — भारत की एकमात्र बंदर प्रजाति — और क्लाउडेड तेंदुए पाए जाते हैं।"
+    }
+  },
+  {
+    "uuid": "48e821b3-b0f7-4ef8-a9cd-41d97e08e0a7",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Khangchendzonga Biosphere Reserve — Sikkim"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Khangchendzonga — UNESCO Mixed Heritage and MAB status",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among India's UNESCO-recognised biosphere reserves, ________ is the only one that also holds the status of a UNESCO Mixed (Natural and Cultural) World Heritage Site, owing to its sacred landscape significance alongside extraordinary biodiversity.\n\n(a) Sundarbans\n(b) Khangchendzonga\n(c) Nanda Devi\n(d) Manas",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know Nanda Devi is a UNESCO World Heritage Site and associate it with dual-designation biosphere reserves may incorrectly select it, missing the 'mixed' (natural + cultural) classification that is unique to Khangchendzonga.",
+      "elimination_logic": [
+        "The blank requires an Indian biosphere reserve that is also a UNESCO Mixed (natural + cultural) World Heritage Site — this is a unique designation held by only one Indian site.",
+        "Eliminate Nanda Devi (c): it is a World Heritage Site but classified as Natural, not Mixed.",
+        "Eliminate Manas (d): it is a Natural World Heritage Site, not a Mixed one.",
+        "Eliminate Sundarbans (a): it is a Natural World Heritage Site; no cultural component in its UNESCO designation.",
+        "Khangchendzonga (b) is India's only UNESCO Mixed Heritage Site — combining the sacred Buddhist landscape (Beyul) with natural biodiversity. Answer is (b)."
+      ],
+      "upsc_trap_explanation": "The term 'Mixed Heritage Site' is distinct from 'World Heritage Site (Natural)' — a distinction UPSC has probed. Manas, Sundarbans, and Nanda Devi are all Natural World Heritage Sites. Khangchendzonga is the only Indian property designated as Mixed, recognising both its extraordinary natural values and its cultural significance as a sacred Buddhist landscape. Students who have memorised 'Khangchendzonga = dual UNESCO designation' without understanding what 'Mixed' means will confuse it with others.",
+      "final_explanation": "India's biosphere reserves intersect with UNESCO heritage designations in multiple ways — Natural Heritage, Cultural Heritage, and the rare Mixed Heritage category.\n\n• Option (a) — Sundarbans: A UNESCO Natural World Heritage Site, not a Mixed Heritage Site.\n• Option (b) — Khangchendzonga: Correct. It is India's only UNESCO Mixed Heritage Site (inscribed in 2016), combining outstanding natural values (Himalayan ecosystem, third-highest peak) with the sacred cultural landscape of the Beyul tradition in Sikkim's Buddhist communities. It also became a UNESCO MAB biosphere reserve in 2018.\n• Option (c) — Nanda Devi: A UNESCO Natural World Heritage Site (1988, extended 2005 to include Valley of Flowers). No cultural heritage component.\n• Option (d) — Manas: A UNESCO Natural World Heritage Site and Tiger Reserve; no Mixed designation.\n\nValue Addition:\n• UNESCO Mixed Heritage Sites must satisfy at least one natural AND one cultural criterion — only 39 such sites exist globally.\n• Khangchendzonga National Park includes the third-highest peak in the world (8,586 m).\n• The Beyul concept refers to sacred hidden lands in Tibetan Buddhist tradition — Sikkim is revered as one."
+    },
+    "hi": {
+      "display_text": "भारत के यूनेस्को-स्वीकृत बायोस्फीयर रिजर्वों में, ________ एकमात्र ऐसा है जिसे पवित्र परिदृश्य की महत्ता के साथ असाधारण जैव विविधता के कारण यूनेस्को मिश्रित (प्राकृतिक और सांस्कृतिक) विश्व धरोहर स्थल का दर्जा भी प्राप्त है।\n\n(a) सुंदरबन\n(b) खंगचेंदजोंगा\n(c) नंदा देवी\n(d) मानस",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र जो जानते हैं कि नंदा देवी एक यूनेस्को विश्व धरोहर स्थल है और इसे द्वैध-नामित बायोस्फीयर रिजर्व से जोड़ते हैं, वे इसे गलत तरीके से चुन सकते हैं, क्योंकि वे 'मिश्रित' (प्राकृतिक + सांस्कृतिक) वर्गीकरण को नहीं समझते जो केवल खंगचेंदजोंगा के लिए विशिष्ट है।",
+      "elimination_logic": [
+        "रिक्त स्थान के लिए एक भारतीय बायोस्फीयर रिजर्व चाहिए जो यूनेस्को मिश्रित (प्राकृतिक + सांस्कृतिक) विश्व धरोहर स्थल भी हो — यह एक अनूठा नामांकन है जो केवल एक भारतीय स्थल के पास है।",
+        "नंदा देवी (c) को हटा दें: यह एक विश्व धरोहर स्थल है लेकिन प्राकृतिक के रूप में वर्गीकृत है, मिश्रित के रूप में नहीं।",
+        "मानस (d) को हटा दें: यह एक प्राकृतिक विश्व धरोहर स्थल है, मिश्रित नहीं।",
+        "सुंदरबन (a) को हटा दें: यह एक प्राकृतिक विश्व धरोहर स्थल है; इसके यूनेस्को नामांकन में कोई सांस्कृतिक घटक नहीं है।",
+        "खंगचेंदजोंगा (b) भारत का एकमात्र यूनेस्को मिश्रित धरोहर स्थल है — जो पवित्र बौद्ध परिदृश्य (बेयुल) को प्राकृतिक जैव विविधता के साथ जोड़ता है। उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "'मिश्रित धरोहर स्थल' शब्द 'विश्व धरोहर स्थल (प्राकृतिक)' से भिन्न है — यह भेद यूपीएससी ने परखा है। मानस, सुंदरबन, और नंदा देवी सभी प्राकृतिक विश्व धरोहर स्थल हैं। खंगचेंदजोंगा एकमात्र भारतीय संपत्ति है जिसे मिश्रित के रूप में नामित किया गया है, जो इसके असाधारण प्राकृतिक मूल्य और पवित्र बौद्ध परिदृश्य के रूप में इसकी सांस्कृतिक महत्ता दोनों को मान्यता देता है। जो छात्र 'खंगचेंदजोंगा = द्वैध यूनेस्को नामांकन' को याद करते हैं लेकिन 'मिश्रित' का अर्थ नहीं समझते, वे इसे अन्य से भ्रमित कर देंगे।",
+      "final_explanation": "भारत के बायोस्फीयर रिजर्व यूनेस्को धरोहर नामांकनों के साथ कई तरीकों से मेल खाते हैं — प्राकृतिक धरोहर, सांस्कृतिक धरोहर, और दुर्लभ मिश्रित धरोहर श्रेणी।\n\n• विकल्प (a) — सुंदरबन: एक यूनेस्को प्राकृतिक विश्व धरोहर स्थल है, मिश्रित धरोहर स्थल नहीं।\n• विकल्प (b) — खंगचेंदजोंगा: सही। यह भारत का एकमात्र यूनेस्को मिश्रित धरोहर स्थल है (2016 में नामांकित), जो असाधारण प्राकृतिक मूल्य (हिमालयी पारिस्थितिकी तंत्र, तीसरी सबसे ऊँची चोटी) को सिक्किम के बौद्ध समुदायों में बेयुल परंपरा के पवित्र सांस्कृतिक परिदृश्य के साथ जोड़ता है। यह 2018 में यूनेस्को MAB बायोस्फीयर रिजर्व भी बना।\n• विकल्प (c) — नंदा देवी: एक यूनेस्को प्राकृतिक विश्व धरोहर स्थल (1988, 2005 में वैली ऑफ फ्लावर्स के साथ विस्तारित)। कोई सांस्कृतिक धरोहर घटक नहीं।\n• विकल्प (d) — मानस: एक यूनेस्को प्राकृतिक विश्व धरोहर स्थल और टाइगर रिजर्व; कोई मिश्रित नामांकन नहीं।\n\nमूल्य संवर्धन:\n• यूनेस्को मिश्रित धरोहर स्थलों को कम से कम एक प्राकृतिक और एक सांस्कृतिक मानदंड पूरा करना होता है — विश्व में केवल 39 ऐसे स्थल हैं।\n• खंगचेंदजोंगा राष्ट्रीय उद्यान में विश्व की तीसरी सबसे ऊँची चोटी (8,586 मीटर) शामिल है।\n• बेयुल अवधारणा तिब्बती बौद्ध परंपरा में पवित्र छिपे हुए स्थानों को संदर्भित करती है — सिक्किम को एक माना जाता है।"
+    }
+  },
+  {
+    "uuid": "a176da90-ccc9-4cb1-ba20-e0ccfc1f1e9b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "State-wise Distribution of Biosphere Reserves — Gap Analysis",
+        "Northeast India Biosphere Reserves — Cluster Analysis"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "States with no biosphere reserve — gap analysis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs of states BOTH lack a nationally designated biosphere reserve?\n\n(a) Manipur and Assam\n(b) Goa and Tamil Nadu\n(c) Goa and Jharkhand\n(d) Nagaland and Meghalaya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Goa is a plausible answer because it has no biosphere reserve, but Jharkhand also has none — students who identify Goa correctly may not independently verify Jharkhand, selecting (b) over (c).",
+      "elimination_logic": [
+        "The question asks which pair of states BOTH lack a nationally designated biosphere reserve.",
+        "Check Goa — no biosphere reserve exists in Goa; Goa is not a biosphere reserve host state — confirmed.",
+        "Check Jharkhand — no nationally designated biosphere reserve falls in Jharkhand (Simlipal is in Odisha, not Jharkhand); confirmed.",
+        "Check Manipur — no biosphere reserve is designated in Manipur; however, the question asks for a pair. Check option (c): Goa + Jharkhand — both confirmed as having no biosphere reserve. Answer is (c)."
+      ],
+      "upsc_trap_explanation": "The trap uses plausible-fabrication by implying Nagaland might have a reserve (option d pairs it with a state that does have one) or that Manipur has one due to its biodiversity significance. Students who associate high biodiversity automatically with biosphere reserve presence may struggle. Goa-Jharkhand is the correct pairing — neither has a nationally designated biosphere reserve, a fact rarely spotlighted in standard preparation material.",
+      "final_explanation": "India's 18 biosphere reserves are distributed unevenly across states. Identifying states that host NO biosphere reserve is a recurring Prelims trap.\n\n• Option (a) — Manipur and Assam: Assam hosts two reserves (Manas and Dibru-Saikhowa), so this pair fails — not both are reserve-free.\n• Option (b) — Goa and Tamil Nadu: Tamil Nadu hosts Nilgiri, Gulf of Mannar, and partial Agasthyamalai — so this pair fails.\n• Option (c) — Goa and Jharkhand: Correct. Neither Goa nor Jharkhand hosts a nationally designated biosphere reserve. Simlipal, frequently associated with tribal/forest belts, is in Odisha's Mayurbhanj district, not Jharkhand.\n• Option (d) — Nagaland and Tripura: Neither has a biosphere reserve, but this pair is less precisely documented in standard sources; the Goa-Jharkhand pairing is the more definitively testable answer.\n\nValue Addition:\n• Tamil Nadu hosts portions of three biosphere reserves: Nilgiri, Gulf of Mannar (entirely within TN), and Agasthyamalai (shared with Kerala).\n• Assam is the only state with two UNESCO MAB-recognised reserves (Manas).\n• Union Territory Andaman & Nicobar Islands hosts Great Nicobar Biosphere Reserve."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-से दोनों राज्यों की जोड़ी के पास राष्ट्रीय स्तर पर नामित कोई बायोस्फीयर रिजर्व नहीं है?\n\n(a) मणिपुर और असम\n(b) गोवा और तमिलनाडु\n(c) गोवा और झारखंड\n(d) नागालैंड और मेघालय",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — गोवा एक संभावित उत्तर है क्योंकि वहाँ कोई बायोस्फीयर रिजर्व नहीं है, लेकिन झारखंड में भी कोई नहीं है — जो छात्र गोवा को सही पहचानते हैं वे झारखंड की स्वतंत्र जांच नहीं कर सकते, इसलिए (b) को (c) पर चुन सकते हैं।",
+      "elimination_logic": [
+        "प्रश्न पूछता है कि निम्नलिखित में से कौन-से दोनों राज्यों की जोड़ी के पास राष्ट्रीय स्तर पर नामित कोई बायोस्फीयर रिजर्व नहीं है।",
+        "गोवा की जाँच करें — गोवा में कोई बायोस्फीयर रिजर्व नहीं है; गोवा बायोस्फीयर रिजर्व होस्ट राज्य नहीं है — पुष्टि हुई।",
+        "झारखंड की जाँच करें — झारखंड में कोई राष्ट्रीय स्तर पर नामित बायोस्फीयर रिजर्व नहीं है (सिमलीपाल ओडिशा में है, झारखंड में नहीं); पुष्टि हुई।",
+        "मणिपुर की जाँच करें — मणिपुर में कोई बायोस्फीयर रिजर्व नामित नहीं है; हालांकि प्रश्न एक जोड़ी मांगता है। विकल्प (c) देखें: गोवा + झारखंड — दोनों के पास कोई बायोस्फीयर रिजर्व नहीं है। उत्तर है (c)।"
+      ],
+      "upsc_trap_explanation": "यह जालसाजी संभावित-निर्माण (plausible-fabrication) का उपयोग करता है यह संकेत देकर कि नागालैंड के पास रिजर्व हो सकता है (विकल्प d इसे ऐसे राज्य के साथ जोड़ता है जिसके पास है) या मणिपुर के पास है क्योंकि उसकी जैव विविधता महत्वपूर्ण है। जो छात्र उच्च जैव विविधता को स्वचालित रूप से बायोस्फीयर रिजर्व की उपस्थिति से जोड़ते हैं, उन्हें कठिनाई हो सकती है। गोवा-झारखंड सही जोड़ी है — दोनों के पास राष्ट्रीय स्तर पर नामित कोई बायोस्फीयर रिजर्व नहीं है, जो सामान्य तैयारी सामग्री में शायद ही कभी उजागर होता है।",
+      "final_explanation": "भारत के 18 बायोस्फीयर रिजर्व राज्यों में असमान रूप से वितरित हैं। उन राज्यों की पहचान करना जिनके पास कोई बायोस्फीयर रिजर्व नहीं है, एक बार-बार आने वाला प्रीलिम्स जाल है।\n\n• विकल्प (a) — मणिपुर और असम: असम में दो रिजर्व हैं (मानस और डिब्रू-सैखोवा), इसलिए यह जोड़ी विफल है — दोनों रिजर्व-मुक्त नहीं हैं।\n• विकल्प (b) — गोवा और तमिलनाडु: तमिलनाडु में नीलगिरी, मन्नार की खाड़ी, और आगा स्थ्य मालयी के हिस्से हैं — इसलिए यह जोड़ी विफल है।\n• विकल्प (c) — गोवा और झारखंड: सही। न तो गोवा और न ही झारखंड में राष्ट्रीय स्तर पर नामित कोई बायोस्फीयर रिजर्व है। सिमलीपाल, जो अक्सर जनजातीय/वन क्षेत्र से जुड़ा होता है, ओडिशा के मयूरभंज जिले में है, झारखंड में नहीं।\n• विकल्प (d) — नागालैंड और त्रिपुरा: दोनों के पास कोई बायोस्फीयर रिजर्व नहीं है, लेकिन यह जोड़ी मानक स्रोतों में कम सटीक रूप से प्रलेखित है; गोवा-झारखंड जोड़ी अधिक निश्चित रूप से परीक्षण योग्य उत्तर है।\n\nमूल्य संवर्धन:\n• तमिलनाडु में तीन बायोस्फीयर रिजर्व के हिस्से हैं: नीलगिरी, मन्नार की खाड़ी (पूरी तरह तमिलनाडु में), और आगा स्थ्य मालयी (केरल के साथ साझा)।\n• असम एकमात्र राज्य है जिसके पास दो यूनेस्को MAB-स्वीकृत रिजर्व हैं (मानस)।\n• केंद्र शासित प्रदेश अंडमान और निकोबार द्वीप समूह में ग्रेट निकोबार बायोस्फीयर रिजर्व है।"
+    }
+  },
+  {
+    "uuid": "8826e86c-0708-4c0a-b244-5037cb483da5",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Nokrek Biosphere Reserve — Northeast India",
+        "Northeast India Biosphere Reserves — Cluster Analysis"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Nokrek — citrus gene sanctuary and red panda habitat",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Nokrek Biosphere Reserve in Meghalaya is distinguished from other Indian biosphere reserves primarily because it is designated as a:\n\n(a) Citrus gene sanctuary — harbouring wild ancestors of commercially cultivated citrus species\n(b) Critical red panda conservation zone — the only biosphere reserve designated for this purpose\n(c) Cloud forest reserve within the Khasi Hills, unique to northeastern India\n(d) UNESCO MAB reserve recognised in 2012 for its alpine grassland ecosystem",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who associate red pandas with the Eastern Himalayas broadly may assume Singalila (Darjeeling) or Namdapha rather than Nokrek; they may also question whether Garo Hills can host red pandas.",
+      "elimination_logic": [
+        "Eliminate (c): Nokrek is in the Garo Hills of Meghalaya, not Khasi Hills — geographic precision required.",
+        "Eliminate (d): Nokrek is a UNESCO MAB reserve recognised in 2009, not 2012 — temporal precision required.",
+        "Eliminate (b): While red pandas are associated with eastern Himalayan regions, they do extend into the hill forests of Meghalaya; the more unique and specific feature of Nokrek is its status as a citrus gene sanctuary, which is not contested.",
+        "Confirm (a): Nokrek is designated as a citrus gene sanctuary because it harbours the wild ancestors of commercially cultivated citrus species — this is its defining ecological and economic significance. Answer is (a)."
+      ],
+      "upsc_trap_explanation": "UPSC has previously tested 'first' and 'unique' tags. Nokrek's designation as a citrus gene sanctuary is its most distinctive feature — representing the origin zone of citrus domestication. Option (b) is the trap: red pandas DO inhabit Nokrek, but their presence is not the defining characteristic of the reserve — and students who recall 'red panda = Eastern Himalayas only' may eliminate (b) too hastily. The entity-swap in (c) — Khasi Hills instead of Garo Hills — targets students who know Nokrek is in Meghalaya but not its precise hill range.",
+      "final_explanation": "Nokrek Biosphere Reserve in Meghalaya's Garo Hills is among India's most ecologically distinctive reserves for one specific reason: it is designated a citrus gene sanctuary.\n\n• Option (a): Correct. Nokrek is recognized as a repository of wild citrus species — the genetic ancestors of oranges, lemons, and related fruits. This makes it globally significant for agricultural biodiversity and food security research.\n• Option (b): Incorrect as the defining feature. Red pandas are present in Nokrek, but this is not the reserve's primary ecological identifier — red pandas are more prominently associated with Singalila (West Bengal) and Namdapha (Arunachal Pradesh).\n• Option (c): Incorrect. Nokrek is in the Garo Hills, not the Khasi Hills — both are in Meghalaya but different sub-ranges.\n• Option (d): Incorrect. Nokrek received UNESCO MAB recognition in 2009, not 2012.\n\nValue Addition:\n• Nokrek is the only biosphere reserve in Meghalaya.\n• The wild citrus species Citrus indica found here may be the ancestor of all cultivated citrus fruits.\n• Meghalaya's Garo Hills are also known for their matrilineal tribal communities (Garo tribe)."
+    },
+    "hi": {
+      "display_text": "मेघालय में स्थित Nokrek बायोस्फीयर रिजर्व अन्य भारतीय बायोस्फीयर रिजर्वों से मुख्यतः इस कारण अलग है कि इसे नामित किया गया है:\n\n(a) साइट्रस जीन अभयारण्य — वाणिज्यिक रूप से उगाए जाने वाले साइट्रस प्रजातियों के जंगली पूर्वजों का आवास\n(b) महत्वपूर्ण रेड पांडा संरक्षण क्षेत्र — इस उद्देश्य के लिए नामित एकमात्र बायोस्फीयर रिजर्व\n(c) खासी हिल्स में बादल वन अभयारण्य, जो पूर्वोत्तर भारत के लिए विशिष्ट है\n(d) यूनेस्को MAB रिजर्व जिसे 2012 में इसके अल्पाइन घास के मैदान पारिस्थितिकी तंत्र के लिए मान्यता मिली है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who associate red pandas with the Eastern Himalayas broadly may assume Singalila (Darjeeling) or Namdapha rather than Nokrek; they may also question whether Garo Hills can host red pandas.",
+      "elimination_logic": [
+        "(c) को हटाएं: Nokrek मेघालय के गारो हिल्स में है, खासी हिल्स में नहीं — भौगोलिक सटीकता आवश्यक है।",
+        "(d) को हटाएं: Nokrek को 2012 नहीं, बल्कि 2009 में यूनेस्को MAB रिजर्व के रूप में मान्यता मिली — कालानुक्रमिक सटीकता आवश्यक है।",
+        "(b) को हटाएं: जबकि रेड पांडा पूर्वी हिमालयी क्षेत्रों से जुड़े हैं, वे मेघालय के पहाड़ी जंगलों तक भी फैले हैं; Nokrek की अधिक विशिष्ट और अनूठी विशेषता इसका साइट्रस जीन अभयारण्य होना है, जिसे विवादित नहीं किया गया है।",
+        "(a) की पुष्टि करें: Nokrek को साइट्रस जीन अभयारण्य के रूप में नामित किया गया है क्योंकि यह वाणिज्यिक रूप से उगाए जाने वाले साइट्रस प्रजातियों के जंगली पूर्वजों का आवास है — यही इसकी पारिस्थितिक और आर्थिक महत्ता है। उत्तर है (a)।"
+      ],
+      "upsc_trap_explanation": "UPSC ने पहले 'पहला' और 'विशिष्ट' टैग पर परीक्षा ली है। Nokrek का साइट्रस जीन अभयारण्य के रूप में नामांकन इसकी सबसे विशिष्ट विशेषता है — जो साइट्रस पालतूकरण के मूल क्षेत्र का प्रतिनिधित्व करता है। विकल्प (b) जाल है: रेड पांडा वास्तव में Nokrek में रहते हैं, लेकिन उनकी उपस्थिति अभयारण्य की परिभाषित विशेषता नहीं है — और जो छात्र 'रेड पांडा = केवल पूर्वी हिमालय' याद करते हैं, वे (b) को जल्दबाजी में हटा सकते हैं। (c) में इकाई-स्वैप — खासी हिल्स के बजाय गारो हिल्स — उन छात्रों को निशाना बनाता है जो जानते हैं कि Nokrek मेघालय में है लेकिन इसके सटीक पहाड़ी क्षेत्र को नहीं जानते।",
+      "final_explanation": "मेघालय के गारो हिल्स में स्थित Nokrek बायोस्फीयर रिजर्व भारत के सबसे पारिस्थितिक रूप से विशिष्ट रिजर्वों में से एक है, और इसका एक विशिष्ट कारण है: इसे साइट्रस जीन अभयारण्य के रूप में नामित किया गया है।\n\n• विकल्प (a): सही। Nokrek को जंगली साइट्रस प्रजातियों के भंडार के रूप में मान्यता प्राप्त है — जो संतरे, नींबू और संबंधित फलों के आनुवंशिक पूर्वज हैं। यह इसे कृषि जैव विविधता और खाद्य सुरक्षा अनुसंधान के लिए वैश्विक रूप से महत्वपूर्ण बनाता है।\n• विकल्प (b): परिभाषित विशेषता के रूप में गलत। रेड पांडा Nokrek में पाए जाते हैं, लेकिन यह अभयारण्य की मुख्य पारिस्थितिक पहचान नहीं है — रेड पांडा अधिक प्रमुख रूप से सिंगलिला (पश्चिम बंगाल) और नामदाफा (अरुणाचल प्रदेश) से जुड़े हैं।\n• विकल्प (c): गलत। Nokrek गारो हिल्स में है, खासी हिल्स में नहीं — दोनों मेघालय में हैं लेकिन अलग-अलग उप-श्रेणियाँ हैं।\n• विकल्प (d): गलत। Nokrek को 2012 में नहीं, बल्कि 2009 में यूनेस्को MAB मान्यता मिली।\n\nमूल्य संवर्धन:\n• Nokrek मेघालय का एकमात्र बायोस्फीयर रिजर्व है।\n• यहाँ पाया जाने वाला जंगली साइट्रस प्रजाति Citrus indica सभी पाले हुए साइट्रस फलों का पूर्वज हो सकता है।\n• मेघालय के गारो हिल्स मातृसत्तात्मक जनजातीय समुदायों (गारो जनजाति) के लिए भी जाने जाते हैं।"
+    }
+  },
+  {
+    "uuid": "1053c4e4-19a4-4b5a-89f0-8d494cfd5b69",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Agasthyamalai Biosphere Reserve — Southern Western Ghats",
+        "Nilgiri Biosphere Reserve — First and Largest",
+        "Gulf of Mannar Biosphere Reserve — Marine Biosphere Reserve"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Tamil Nadu biosphere reserves — geographic and ecological pairing",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about biosphere reserves associated with Tamil Nadu:",
+        "columns": [
+          "Statement",
+          "Claim"
+        ],
+        "rows": [
+          [
+            "1",
+            "Gulf of Mannar Biosphere Reserve — Located entirely within Tamil Nadu and includes 21 islands in the strait between India and Sri Lanka"
+          ],
+          [
+            "2",
+            "Agasthyamalai Biosphere Reserve — Shared between Kerala and Tamil Nadu, and encompasses the Kalakad-Mundanthurai Tiger Reserve"
+          ],
+          [
+            "3",
+            "Nilgiri Biosphere Reserve — Located entirely within Tamil Nadu and is India's largest biosphere reserve by area"
+          ],
+          [
+            "4",
+            "Nilgiri Biosphere Reserve — Overlaps with the Western Ghats biodiversity hotspot and encompasses Silent Valley National Park"
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Gulf of Mannar Biosphere Reserve — Located entirely within Tamil Nadu and includes 21 islands in the strait between India and Sri Lanka",
+          "verdict": "Correct",
+          "reason": "Gulf of Mannar is entirely within Tamil Nadu's coastal belt; it encompasses 21 islands and is situated between the Indian mainland and Sri Lanka."
+        },
+        {
+          "statement": "Agasthyamalai Biosphere Reserve — Shared between Kerala and Tamil Nadu, and encompasses the Kalakad-Mundanthurai Tiger Reserve",
+          "verdict": "Correct",
+          "reason": "Agasthyamalai spans both Kerala and Tamil Nadu, with the Kalakad-Mundanthurai Tiger Reserve forming its core area."
+        },
+        {
+          "statement": "Nilgiri Biosphere Reserve — Located entirely within Tamil Nadu and is India's largest biosphere reserve by area",
+          "verdict": "Incorrect",
+          "reason": "Nilgiri spans three states — Tamil Nadu, Kerala, and Karnataka — so it is not entirely within Tamil Nadu; the 'entirely within Tamil Nadu' claim is false."
+        },
+        {
+          "statement": "Nilgiri Biosphere Reserve — Overlaps with the Western Ghats biodiversity hotspot and encompasses Silent Valley National Park",
+          "verdict": "Correct",
+          "reason": "The Nilgiri Biosphere Reserve does overlap with the Western Ghats hotspot and Silent Valley National Park (Kerala) is one of its component protected areas."
+        }
+      ],
+      "strong_distractor": "d — Students who know Nilgiri is India's largest and overlaps the Western Ghats may mark all four correct without noticing the 'entirely within Tamil Nadu' error in statement 3.",
+      "elimination_logic": [
+        "Verify statement 1 — Gulf of Mannar: Tamil Nadu coast + 21 islands + India-Sri Lanka strait — all correct.",
+        "Verify statement 2 — Agasthyamalai: Kerala + Tamil Nadu + Kalakad-Mundanthurai — all correct.",
+        "Verify statement 3 — 'entirely within Tamil Nadu' for Nilgiri: FALSE — Nilgiri spans three states (TN, Kerala, Karnataka); this statement is incorrect.",
+        "Verify statement 4 — Nilgiri + Western Ghats + Silent Valley: all correct. Three statements correct → answer is (c): Only three."
+      ],
+      "upsc_trap_explanation": "Statement 3 deploys a scope-extension trap: students know Nilgiri is the largest biosphere reserve in India and associate it strongly with Tamil Nadu (because Mudumalai is the most cited component). Adding 'entirely within Tamil Nadu' sounds plausible to a student with partial knowledge. Only those who specifically recall the three-state coverage (Tamil Nadu, Kerala, Karnataka) will correctly flag Statement 3 as false.",
+      "final_explanation": "Tamil Nadu is one of India's most biosphere-reserve-rich states, hosting or sharing three major reserves.\n\n• Statement 1 (Gulf of Mannar) — Correct: Entirely within Tamil Nadu's southern coast, including 21 islands. India's first marine biosphere reserve, UNESCO MAB since 2001.\n• Statement 2 (Agasthyamalai) — Correct: Shared between Kerala and Tamil Nadu; contains Kalakad-Mundanthurai Tiger Reserve as its core zone. UNESCO MAB recognised in 2016.\n• Statement 3 (Nilgiri — 'entirely TN') — Incorrect: Nilgiri spans Tamil Nadu, Kerala, and Karnataka. It is India's largest biosphere reserve but covers three states, not one.\n• Statement 4 (Nilgiri + Silent Valley) — Correct: Silent Valley National Park (Kerala) is a protected area within the Nilgiri Biosphere Reserve; the reserve overlaps the Western Ghats hotspot.\n\nThree pairs are correctly described.\n\nValue Addition:\n• Agasthyamalai hosts one of India's richest concentrations of endemic flowering plants, particularly in the Agasthyar Peak area.\n• The Western Ghats hotspot, of which all three Tamil Nadu-linked reserves are a part, is one of only 36 global biodiversity hotspots.\n• Gulf of Mannar's seagrass beds are critical for the endangered dugong (sea cow)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "तमिलनाडु से जुड़े बायोस्फीयर रिजर्वों के बारे में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन",
+          "दावा"
+        ],
+        "rows": [
+          [
+            "1",
+            "गुल्फ ऑफ मन्नार बायोस्फीयर रिजर्व — पूरी तरह तमिलनाडु में स्थित और भारत व श्रीलंका के बीच जलसंधि में 21 द्वीप शामिल हैं"
+          ],
+          [
+            "2",
+            "अगस्थ्यमलाई बायोस्फीयर रिजर्व — केरल और तमिलनाडु के बीच साझा, और कलाकड़-मुंडंथुरई टाइगर रिजर्व को समेटे हुए"
+          ],
+          [
+            "3",
+            "निलगिरी बायोस्फीयर रिजर्व — पूरी तरह तमिलनाडु में स्थित और क्षेत्रफल के हिसाब से भारत का सबसे बड़ा बायोस्फीयर रिजर्व"
+          ],
+          [
+            "4",
+            "निलगिरी बायोस्फीयर रिजर्व — पश्चिमी घाट जैव विविधता हॉटस्पॉट के साथ ओवरलैप करता है और साइलेंट वैली नेशनल पार्क को समेटे हुए"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Gulf of Mannar Biosphere Reserve — Located entirely within Tamil Nadu and includes 21 islands in the strait between India and Sri Lanka",
+          "verdict": "सही है",
+          "reason": "गुल्फ ऑफ मन्नार पूरी तरह तमिलनाडु के तटीय क्षेत्र में स्थित है; इसमें 21 द्वीप शामिल हैं और यह भारत और श्रीलंका के बीच जलसंधि में है।"
+        },
+        {
+          "statement": "Agasthyamalai Biosphere Reserve — Shared between Kerala and Tamil Nadu, and encompasses the Kalakad-Mundanthurai Tiger Reserve",
+          "verdict": "सही है",
+          "reason": "अगस्थ्यमलाई केरल और तमिलनाडु दोनों में फैला हुआ है, जिसमें कलाकड़-मुंडंथुरई टाइगर रिजर्व इसका मुख्य क्षेत्र है।"
+        },
+        {
+          "statement": "Nilgiri Biosphere Reserve — Located entirely within Tamil Nadu and is India's largest biosphere reserve by area",
+          "verdict": "गलत है",
+          "reason": "निलगिरी तीन राज्यों — तमिलनाडु, केरल, और कर्नाटक — में फैला है, इसलिए यह पूरी तरह तमिलनाडु में नहीं है; 'पूरी तरह तमिलनाडु में' होने का दावा गलत है।"
+        },
+        {
+          "statement": "Nilgiri Biosphere Reserve — Overlaps with the Western Ghats biodiversity hotspot and encompasses Silent Valley National Park",
+          "verdict": "सही है",
+          "reason": "निलगिरी बायोस्फीयर रिजर्व पश्चिमी घाट जैव विविधता हॉटस्पॉट के साथ ओवरलैप करता है और साइलेंट वैली नेशनल पार्क (केरल) इसका एक संरक्षित क्षेत्र है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि निलगिरी भारत का सबसे बड़ा और पश्चिमी घाट से ओवरलैप करता है, वे चारों को सही मान सकते हैं बिना कथन 3 में 'पूरी तरह तमिलनाडु में' की गलती को देखे।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें — गुल्फ ऑफ मन्नार: तमिलनाडु तट + 21 द्वीप + भारत-श्रीलंका जलसंधि — सभी सही।",
+        "कथन 2 सत्यापित करें — अगस्थ्यमलाई: केरल + तमिलनाडु + कलाकड़-मुंडंथुरई — सभी सही।",
+        "कथन 3 सत्यापित करें — निलगिरी के लिए 'पूरी तरह तमिलनाडु में': गलत — निलगिरी तीन राज्यों (तमिलनाडु, केरल, कर्नाटक) में फैला है; यह कथन गलत है।",
+        "कथन 4 सत्यापित करें — निलगिरी + पश्चिमी घाट + साइलेंट वैली: सभी सही। तीन कथन सही → उत्तर है (c): केवल तीन।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में एक दायरा-विस्तार जाल है: छात्र जानते हैं कि निलगिरी भारत का सबसे बड़ा बायोस्फीयर रिजर्व है और इसे तमिलनाडु से जोड़ते हैं (क्योंकि मुदुमलाई सबसे अधिक उल्लेखित हिस्सा है)। 'पूरी तरह तमिलनाडु में' जोड़ना आंशिक ज्ञान वाले छात्र को सही लगता है। केवल वे जो तीन राज्यों (तमिलनाडु, केरल, कर्नाटक) के कवरेज को याद रखते हैं, वे कथन 3 को गलत के रूप में सही पहचानेंगे।",
+      "final_explanation": "तमिलनाडु भारत के उन राज्यों में से एक है जहाँ सबसे अधिक बायोस्फीयर रिजर्व हैं, जो तीन प्रमुख रिजर्वों की मेजबानी या साझेदारी करता है।\n\n• कथन 1 (गुल्फ ऑफ मन्नार) — सही: पूरी तरह तमिलनाडु के दक्षिणी तट पर, जिसमें 21 द्वीप शामिल हैं। भारत का पहला समुद्री बायोस्फीयर रिजर्व, यूनेस्को MAB से 2001 से मान्यता प्राप्त।\n• कथन 2 (अगस्थ्यमलाई) — सही: केरल और तमिलनाडु के बीच साझा; कलाकड़-मुंडंथुरई टाइगर रिजर्व इसका मुख्य क्षेत्र है। यूनेस्को MAB से 2016 में मान्यता प्राप्त।\n• कथन 3 (निलगिरी — 'पूरी तरह तमिलनाडु में') — गलत: निलगिरी तमिलनाडु, केरल, और कर्नाटक में फैला है। यह भारत का सबसे बड़ा बायोस्फीयर रिजर्व है लेकिन तीन राज्यों में फैला है, एक में नहीं।\n• कथन 4 (निलगिरी + साइलेंट वैली) — सही: साइलेंट वैली नेशनल पार्क (केरल) निलगिरी बायोस्फीयर रिजर्व का संरक्षित क्षेत्र है; रिजर्व पश्चिमी घाट हॉटस्पॉट के साथ ओवरलैप करता है।\n\nतीन जोड़े सही रूप से वर्णित हैं।\n\nमूल्य संवर्धन:\n• अगस्थ्यमलाई भारत के सबसे समृद्ध स्थानीय फूलों के पौधों के केंद्रों में से एक है, विशेष रूप से अगस्थ्यार पीक क्षेत्र में।\n• पश्चिमी घाट हॉटस्पॉट, जिसका हिस्सा ये तीन तमिलनाडु से जुड़े रिजर्व हैं, विश्व के केवल 36 जैव विविधता हॉटस्पॉट में से एक है।\n• गुल्फ ऑफ मन्नार के सीग्रास बेड संकटग्रस्त डुगोंग (समुद्री गाय) के लिए महत्वपूर्ण हैं।"
+    }
+  },
+  {
+    "uuid": "a9808d3e-2a56-4b0e-b460-eb4c52ed8642",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Dibru-Saikhowa Biosphere Reserve — Assam",
+        "Biosphere Reserves Along River Systems — Geographic Mapping"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Dibru-Saikhowa — feral horses and UNESCO non-recognition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following statements most accurately describes a distinctive characteristic of the Dibru-Saikhowa Biosphere Reserve?\n\n(a) It is located in the Manas river basin in Assam and is recognised under the UNESCO MAB programme\n(b) It is known for its population of feral horses inhabiting the upper Brahmaputra floodplain islands\n(c) It is a UNESCO MAB recognised reserve in Assam, distinct from Manas due to its riverine forest ecosystem\n(d) Its most unique ecological feature is the presence of Gangetic river dolphins in its core zone river channels",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Students may conflate Dibru-Saikhowa's river dolphin habitat with the Chilika Lake or Brahmaputra-based reserves and doubt the feral horse claim, making (d) seem authoritative.",
+      "elimination_logic": [
+        "Eliminate (a): Dibru-Saikhowa is in Tinsukia and Dibrugarh districts of Assam — upper Brahmaputra floodplain, not the Manas river basin. Manas is a separate reserve.",
+        "Eliminate (c): Dibru-Saikhowa is nationally designated but NOT yet a UNESCO MAB recognised reserve — this is the critical trap point to avoid.",
+        "Eliminate (d): The Gangetic river dolphin is present in the upper Brahmaputra system but it is not the defining unique feature — the feral horse population is.",
+        "Confirm (b): Dibru-Saikhowa is uniquely known for its feral (semi-wild) horse population — descendants of domesticated horses that have returned to a wild state on the floodplain islands. Answer is (b)."
+      ],
+      "upsc_trap_explanation": "Option (c) exploits the UNESCO trap — Dibru-Saikhowa is nationally designated but NOT UNESCO MAB recognised, unlike Manas (which is UNESCO MAB). Students who study both Assam reserves together may attribute Manas's UNESCO status to Dibru-Saikhowa. This is one of the most commonly confused 'nationally designated but not internationally recognised' reserves alongside Cold Desert.",
+      "final_explanation": "Dibru-Saikhowa Biosphere Reserve occupies the upper Brahmaputra floodplain in Tinsukia and Dibrugarh districts of Assam.\n\n• Option (a): Incorrect. Dibru-Saikhowa is in the upper Brahmaputra floodplain, not the Manas river basin. Manas Biosphere Reserve is a separate entity in Assam's western Himalayan foothills.\n• Option (b): Correct. Dibru-Saikhowa is uniquely known for its population of feral horses — domesticated horses that were abandoned and have reverted to semi-wild behaviour on the floodplain islands (chapori). This is the reserve's most distinctive zoological feature.\n• Option (c): Incorrect. Dibru-Saikhowa is a nationally designated biosphere reserve but has NOT been included in the UNESCO MAB network — unlike Manas, which is UNESCO MAB recognised.\n• Option (d): Incorrect. Gangetic river dolphins and hoolock gibbons are present, but they are not the defining unique ecological feature of Dibru-Saikhowa — the feral horse population is.\n\nValue Addition:\n• The feral horses at Dibru-Saikhowa are believed to be descendants of horses left by the British or used in the Assam tea industry.\n• Hoolock gibbons — India's only ape — are present in Dibru-Saikhowa.\n• The reserve is a flood-plain ecosystem, subject to seasonal flooding from the Brahmaputra."
+    },
+    "hi": {
+      "display_text": "Dibru-Saikhowa बायोस्फीयर रिजर्व की सबसे विशिष्ट विशेषता को सबसे सटीक रूप से कौन-सा कथन वर्णित करता है?\n\n(a) यह असम के मानस नदी बेसिन में स्थित है और UNESCO MAB कार्यक्रम के तहत मान्यता प्राप्त है\n(b) यह ब्रह्मपुत्र के ऊपरी बाढ़ मैदान के द्वीपों में रहने वाली जंगली घोड़ों की आबादी के लिए जाना जाता है\n(c) यह असम में एक UNESCO MAB मान्यता प्राप्त रिजर्व है, जो अपने नदी पारिस्थितिक तंत्र के कारण मानस से अलग है\n(d) इसकी सबसे अनूठी पारिस्थितिक विशेषता इसके कोर जोन नदी चैनलों में गंगीय नदी डॉल्फिन की उपस्थिति है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — छात्र Dibru-Saikhowa के नदी डॉल्फिन आवास को Chilika झील या ब्रह्मपुत्र आधारित रिजर्व से भ्रमित कर सकते हैं और जंगली घोड़ों के दावे पर संदेह कर सकते हैं, जिससे (d) अधिकारिक प्रतीत होता है।",
+      "elimination_logic": [
+        "(a) को खारिज करें: Dibru-Saikhowa असम के तिनसुकिया और डिब्रूगढ़ जिलों में है — ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में, न कि मानस नदी बेसिन में। मानस एक अलग रिजर्व है।",
+        "(c) को खारिज करें: Dibru-Saikhowa राष्ट्रीय स्तर पर नामित है लेकिन अभी तक UNESCO MAB मान्यता प्राप्त नहीं है — यह मुख्य जालसाजी बिंदु है।",
+        "(d) को खारिज करें: गंगीय नदी डॉल्फिन ब्रह्मपुत्र के ऊपरी क्षेत्र में मौजूद है लेकिन यह विशिष्ट अनूठी विशेषता नहीं है — जंगली घोड़ों की आबादी है।",
+        "(b) की पुष्टि करें: Dibru-Saikhowa अपने जंगली (अर्ध-वन्य) घोड़ों की आबादी के लिए विशिष्ट रूप से जाना जाता है — जो पालतू घोड़ों के वंशज हैं जो बाढ़ मैदान के द्वीपों पर जंगली अवस्था में लौट आए हैं। उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) UNESCO जालसाजी का उपयोग करता है — Dibru-Saikhowa राष्ट्रीय स्तर पर नामित है लेकिन UNESCO MAB मान्यता प्राप्त नहीं है, जबकि मानस (जो UNESCO MAB है) है। जो छात्र असम के दोनों रिजर्व एक साथ पढ़ते हैं वे मानस की UNESCO स्थिति को Dibru-Saikhowa को दे सकते हैं। यह 'राष्ट्रीय स्तर पर नामित लेकिन अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त नहीं' रिजर्वों में सबसे आम भ्रमों में से एक है, जैसे Cold Desert।",
+      "final_explanation": "Dibru-Saikhowa बायोस्फीयर रिजर्व असम के तिनसुकिया और डिब्रूगढ़ जिलों में ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में स्थित है।\n\n• विकल्प (a): गलत। Dibru-Saikhowa ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में है, न कि मानस नदी बेसिन में। मानस बायोस्फीयर रिजर्व असम के पश्चिमी हिमालयी तलहटी में एक अलग इकाई है।\n• विकल्प (b): सही। Dibru-Saikhowa अपने जंगली घोड़ों की आबादी के लिए विशिष्ट रूप से जाना जाता है — पालतू घोड़े जो छोड़े गए और बाढ़ मैदान के द्वीपों (चापोरी) पर अर्ध-वन्य व्यवहार में लौट आए। यह रिजर्व की सबसे विशिष्ट जीववैज्ञानिक विशेषता है।\n• विकल्प (c): गलत। Dibru-Saikhowa राष्ट्रीय स्तर पर नामित बायोस्फीयर रिजर्व है लेकिन UNESCO MAB नेटवर्क में शामिल नहीं है — जबकि मानस UNESCO MAB मान्यता प्राप्त है।\n• विकल्प (d): गलत। गंगीय नदी डॉल्फिन और हूलॉक गिबन मौजूद हैं, लेकिन वे Dibru-Saikhowa की विशिष्ट अनूठी पारिस्थितिक विशेषता नहीं हैं — जंगली घोड़ों की आबादी है।\n\nमूल्य संवर्धन:\n• Dibru-Saikhowa के जंगली घोड़ों को ब्रिटिशों द्वारा छोड़े गए या असम की चाय उद्योग में उपयोग किए गए घोड़ों के वंशज माना जाता है।\n• हूलॉक गिबन — भारत का एकमात्र बंदर — Dibru-Saikhowa में मौजूद है।\n• यह रिजर्व एक बाढ़ मैदान पारिस्थितिकी तंत्र है, जो ब्रह्मपुत्र की मौसमी बाढ़ से प्रभावित होता है।"
+    }
+  },
+  {
+    "uuid": "d3b98728-7bbc-480f-8108-a382e6eccaa2",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Great Nicobar Biosphere Reserve — Island Ecosystem",
+        "Gulf of Mannar Biosphere Reserve — Marine Biosphere Reserve"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Great Nicobar — location, tribes, and UNESCO MAB year",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Great Nicobar Biosphere Reserve:\n\n1. The Great Nicobar Biosphere Reserve is situated at the confluence of the Bay of Bengal and the Indian Ocean, on the southernmost island of the Andaman and Nicobar archipelago.\n2. The Shompen and Nicobari are two tribal communities whose traditional territories overlap with the Great Nicobar Biosphere Reserve.\n3. Great Nicobar Biosphere Reserve received UNESCO MAB recognition in 2013.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 2 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Great Nicobar Biosphere Reserve is situated at the confluence of the Bay of Bengal and the Indian Ocean, on the southernmost island of the Andaman and Nicobar archipelago.",
+          "verdict": "Incorrect",
+          "reason": "Great Nicobar lies at the confluence of the Bay of Bengal and the Andaman Sea — not the Indian Ocean. The Andaman Sea lies to the east; the Bay of Bengal to the west. Substituting 'Indian Ocean' for 'Andaman Sea' is a geographic imprecision that makes this statement incorrect."
+        },
+        {
+          "statement": "The Shompen and Nicobari are two tribal communities whose traditional territories overlap with the Great Nicobar Biosphere Reserve.",
+          "verdict": "Correct",
+          "reason": "Both the Shompen (a Particularly Vulnerable Tribal Group living in the forests) and the Nicobari (a larger tribal group) inhabit Great Nicobar Island, whose biosphere reserve encompasses their traditional territories."
+        },
+        {
+          "statement": "Great Nicobar Biosphere Reserve received UNESCO MAB recognition in 2013.",
+          "verdict": "Correct",
+          "reason": "Great Nicobar was included in the UNESCO MAB network in 2013, following Achanakmar-Amarkantak (2012) and preceding Agasthyamalai (2016)."
+        }
+      ],
+      "strong_distractor": "b — Students who have heard 'Bay of Bengal and Andaman Sea' in another context may doubt the waterbody names and mark Statement 1 as correct, then select (b) as the incorrect one.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Great Nicobar sits at the confluence of the Bay of Bengal and the Andaman Sea — not the Indian Ocean. Statement 1 is incorrect.",
+        "Evaluate Statement 2: Shompen and Nicobari tribes are documented inhabitants of Great Nicobar — Statement 2 is correct.",
+        "Evaluate Statement 3: UNESCO MAB recognition in 2013 for Great Nicobar — confirmed; Statement 3 is correct.",
+        "Only Statement 1 is incorrect — answer is (a): 1 only."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap lies in Statement 1. Students who know Great Nicobar is the southernmost island and is near the southern tip of India may substitute 'Indian Ocean' for 'Andaman Sea' since India's southern tip does face the Indian Ocean. However, geographically, Great Nicobar's eastern coast faces the Andaman Sea, not the Indian Ocean directly. This geographic nuance distinguishes precise knowledge from surface-level recall.",
+      "final_explanation": "Great Nicobar is India's southernmost biosphere reserve, occupying the most remote island of the Andaman and Nicobar archipelago.\n\n• Statement 1 — Incorrect: Great Nicobar lies at the confluence of the Bay of Bengal (western side) and the Andaman Sea (eastern side) — not the Indian Ocean. This geographic precision matters in a mapping-based question.\n• Statement 2 — Correct: The Shompen, classified as a Particularly Vulnerable Tribal Group (PVTG), live in the interior forests of Great Nicobar. The Nicobari people inhabit coastal settlements. Both groups' territories fall within the biosphere reserve area.\n• Statement 3 — Correct: UNESCO MAB recognition was granted in 2013. The reserve's ecological significance includes tropical rainforests, mangroves, beaches, and unique marine habitats.\n\nValue Addition:\n• The proposed holistic development project for Great Nicobar Island (transshipment port, greenfield township) has generated significant debate about ecological sensitivity vs. strategic maritime interests.\n• Great Nicobar hosts the leatherback sea turtle — the world's largest sea turtle — which nests on its beaches.\n• The reserve is close to the Malacca Strait, making it strategically significant beyond its ecological value."
+    },
+    "hi": {
+      "display_text": "ग्रेट निकोबार बायोस्फीयर रिजर्व के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ग्रेट निकोबार बायोस्फीयर रिजर्व बंगाल की खाड़ी और भारतीय महासागर के संगम पर, अंडमान और निकोबार द्वीपसमूह के सबसे दक्षिणी द्वीप पर स्थित है।\n2. शोम्पेन और निकोबारी दो जनजातीय समुदाय हैं जिनके पारंपरिक क्षेत्र ग्रेट निकोबार बायोस्फीयर रिजर्व के साथ ओवरलैप करते हैं।\n3. ग्रेट निकोबार बायोस्फीयर रिजर्व को 2013 में यूनेस्को MAB मान्यता प्राप्त हुई।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 2\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Great Nicobar Biosphere Reserve is situated at the confluence of the Bay of Bengal and the Indian Ocean, on the southernmost island of the Andaman and Nicobar archipelago.",
+          "verdict": "गलत",
+          "reason": "Great Nicobar बंगाल की खाड़ी और अंडमान सागर के संगम पर स्थित है — भारतीय महासागर पर नहीं। अंडमान सागर पूर्व में है; बंगाल की खाड़ी पश्चिम में। 'अंडमान सागर' के स्थान पर 'भारतीय महासागर' का उपयोग भौगोलिक त्रुटि है जो इस कथन को गलत बनाती है।"
+        },
+        {
+          "statement": "The Shompen and Nicobari are two tribal communities whose traditional territories overlap with the Great Nicobar Biosphere Reserve.",
+          "verdict": "सही है",
+          "reason": "शोम्पेन (एक विशेष रूप से संवेदनशील जनजातीय समूह जो जंगलों में रहता है) और निकोबारी (एक बड़ा जनजातीय समूह) दोनों ग्रेट निकोबार द्वीप में रहते हैं, जिसका बायोस्फीयर रिजर्व उनके पारंपरिक क्षेत्रों को शामिल करता है।"
+        },
+        {
+          "statement": "Great Nicobar Biosphere Reserve received UNESCO MAB recognition in 2013.",
+          "verdict": "सही है",
+          "reason": "ग्रेट निकोबार को 2013 में यूनेस्को MAB नेटवर्क में शामिल किया गया था, जो अचनाकमार-अमरकंटक (2012) के बाद और अगस्थ्यमलाई (2016) से पहले था।"
+        }
+      ],
+      "strong_distractor": "b — छात्र जो 'बंगाल की खाड़ी और अंडमान सागर' को किसी अन्य संदर्भ में सुन चुके हैं, वे जल निकायों के नामों पर संदेह कर सकते हैं और कथन 1 को सही मानकर (b) को गलत विकल्प के रूप में चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: ग्रेट निकोबार बंगाल की खाड़ी और अंडमान सागर के संगम पर है — भारतीय महासागर पर नहीं। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: शोम्पेन और निकोबारी जनजातियाँ ग्रेट निकोबार की निवासी हैं — कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: ग्रेट निकोबार को 2013 में यूनेस्को MAB मान्यता मिली — पुष्टि हुई; कथन 3 सही है।",
+        "केवल कथन 1 गलत है — उत्तर है (a): केवल 1।"
+      ],
+      "upsc_trap_explanation": "आंशिक-सत्य जाल कथन 1 में है। जो छात्र जानते हैं कि ग्रेट निकोबार दक्षिणी द्वीप है और भारत के दक्षिणी छोर के पास है, वे 'अंडमान सागर' के स्थान पर 'भारतीय महासागर' का उपयोग कर सकते हैं क्योंकि भारत का दक्षिणी छोर भारतीय महासागर की ओर है। हालांकि, भौगोलिक रूप से ग्रेट निकोबार का पूर्वी तट सीधे भारतीय महासागर की बजाय अंडमान सागर की ओर है। यह भौगोलिक सूक्ष्मता सतही स्मृति से सटीक ज्ञान को अलग करती है।",
+      "final_explanation": "ग्रेट निकोबार भारत का सबसे दक्षिणी बायोस्फीयर रिजर्व है, जो अंडमान और निकोबार द्वीपसमूह के सबसे दूरस्थ द्वीप पर स्थित है।\n\n• कथन 1 — गलत: ग्रेट निकोबार बंगाल की खाड़ी (पश्चिमी ओर) और अंडमान सागर (पूर्वी ओर) के संगम पर है — भारतीय महासागर पर नहीं। यह भौगोलिक सटीकता मानचित्र आधारित प्रश्न में महत्वपूर्ण है।\n• कथन 2 — सही: शोम्पेन, जो एक विशेष रूप से संवेदनशील जनजातीय समूह (PVTG) है, ग्रेट निकोबार के अंदरूनी जंगलों में रहता है। निकोबारी लोग तटीय बस्तियों में रहते हैं। दोनों समूहों के क्षेत्र बायोस्फीयर रिजर्व में आते हैं।\n• कथन 3 — सही: यूनेस्को MAB मान्यता 2013 में मिली। रिजर्व की पारिस्थितिक महत्ता में उष्णकटिबंधीय वर्षावन, मैंग्रोव, समुद्र तट और अनूठे समुद्री आवास शामिल हैं।\n\nमूल्य संवर्धन:\n• ग्रेट निकोबार द्वीप के लिए प्रस्तावित समग्र विकास परियोजना (ट्रांसशिपमेंट पोर्ट, ग्रीनफील्ड टाउनशिप) ने पारिस्थितिक संवेदनशीलता और रणनीतिक समुद्री हितों के बीच महत्वपूर्ण बहस छेड़ी है।\n• ग्रेट निकोबार में लेदरबैक समुद्री कछुआ पाया जाता है — जो विश्व का सबसे बड़ा समुद्री कछुआ है — जो इसके समुद्र तटों पर घोंसला बनाता है।\n• रिजर्व मलक्का जलडमरूमध्य के निकट है, जो इसे पारिस्थितिक मूल्य से परे रणनीतिक रूप से महत्वपूर्ण बनाता है।"
+    }
+  },
+  {
+    "uuid": "b72f63f6-d6c1-4e69-b96b-fc28476578bc",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Biosphere Reserves Along River Systems — Geographic Mapping",
+        "Achanakmar-Amarkantak Biosphere Reserve — Inter-State",
+        "Sundarbans Biosphere Reserve — Deltaic and Transboundary Context",
+        "Dibru-Saikhowa Biosphere Reserve — Assam",
+        "Manas Biosphere Reserve — Assam"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Biosphere reserves and associated river systems",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Biosphere Reserve) with List II (Associated River System / Geographic Feature):",
+        "columns": [
+          "List I (Biosphere Reserve)",
+          "List II (River / Geographic Feature)"
+        ],
+        "rows": [
+          [
+            "A. Achanakmar-Amarkantak",
+            "1. Brahmaputra tributary originating in Bhutan"
+          ],
+          [
+            "B. Sundarbans",
+            "2. Source of both Narmada and Son rivers"
+          ],
+          [
+            "C. Manas",
+            "3. Upper Brahmaputra floodplain islands (chaporis)"
+          ],
+          [
+            "D. Dibru-Saikhowa",
+            "4. Ganga-Brahmaputra active delta"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-4, D-3\n(b) A-2, B-4, C-3, D-1\n(c) A-2, B-4, C-1, D-3\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Manas is a Brahmaputra tributary area may confuse it with Dibru-Saikhowa (also Brahmaputra) and swap their river associations.",
+      "elimination_logic": [
+        "Achanakmar-Amarkantak (A): Source of Narmada AND Son rivers — match is 2 (Narmada-Son origin).",
+        "Sundarbans (B): Ganga-Brahmaputra-Meghna delta — match is 4 (Ganga-Brahmaputra delta).",
+        "Manas (C): The Manas river is a tributary of the Brahmaputra — match is 1 (Brahmaputra tributary).",
+        "Dibru-Saikhowa (D): Upper Brahmaputra floodplain in Tinsukia-Dibrugarh — match is 3 (upper Brahmaputra floodplain). Correct combination: A-2, B-4, C-1, D-3 → option (c)."
+      ],
+      "upsc_trap_explanation": "The Manas-Dibru-Saikhowa swap is the core trap. Both are in Assam and both are in the Brahmaputra watershed. However, Manas is a tributary of the Brahmaputra (flowing from Bhutan's hills), while Dibru-Saikhowa occupies the upper Brahmaputra floodplain itself. Students who associate both with 'Brahmaputra' without distinguishing tributary from floodplain will swap C and D, selecting (b) or (d) instead of (c).",
+      "final_explanation": "River geography is a critical mapping dimension for biosphere reserves, frequently tested in UPSC Prelims.\n\nCorrect pairings:\n• A (Achanakmar-Amarkantak) — 2 (Source of Narmada and Son): Amarkantak is the headwater plateau of both the Narmada (westward-flowing) and the Son (eastward-flowing into Ganga).\n• B (Sundarbans) — 4 (Ganga-Brahmaputra delta): Sundarbans occupies the world's largest active delta formed by the Ganga-Brahmaputra-Meghna river system.\n• C (Manas) — 1 (Brahmaputra tributary): The Manas river originates in Bhutan and joins the Brahmaputra in Assam; the biosphere reserve takes its name from this river.\n• D (Dibru-Saikhowa) — 3 (Upper Brahmaputra floodplain): Located on the riverine floodplain islands (chaporis) of the Brahmaputra in Tinsukia and Dibrugarh.\n\nTrap: Manas and Dibru-Saikhowa are both Brahmaputra-related, but Manas is a named tributary; Dibru-Saikhowa is on the main stem's floodplain.\n\nValue Addition:\n• The Narmada is the longest westward-flowing river in India, discharging into the Gulf of Khambhat.\n• The Son is one of the principal right-bank tributaries of the Ganga, joining it near Patna.\n• Manas river's name derives from a Sanskrit word meaning 'mind/heart' — associated with the mythological Manasa serpent."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (बायोस्फीयर रिजर्व) को सूची II (संबंधित नदी प्रणाली / भौगोलिक विशेषता) से मिलाइए:",
+        "columns": [
+          "सूची I (बायोस्फीयर रिजर्व)",
+          "सूची II (नदी / भौगोलिक विशेषता)"
+        ],
+        "rows": [
+          [
+            "A. अचनकमार-अमरकंटक",
+            "1. भूटान में उत्पन्न ब्रह्मपुत्र की सहायक नदी"
+          ],
+          [
+            "B. सुंदरबन",
+            "2. नर्मदा और सोन दोनों नदियों का स्रोत"
+          ],
+          [
+            "C. मानस",
+            "3. ऊपरी ब्रह्मपुत्र बाढ़ मैदान के द्वीप (चापोरी)"
+          ],
+          [
+            "D. डिब्रू-सैखोवा",
+            "4. गंगा-ब्रह्मपुत्र सक्रिय डेल्टा"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-2, C-4, D-3\n(b) A-2, B-4, C-3, D-1\n(c) A-2, B-4, C-1, D-3\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि मानस ब्रह्मपुत्र की सहायक नदी क्षेत्र है, वे इसे डिब्रू-सैखोवा (जो ब्रह्मपुत्र भी है) के साथ भ्रमित कर सकते हैं और उनकी नदी संबंधों को बदल सकते हैं।",
+      "elimination_logic": [
+        "अचनकमार-अमरकंटक (A): नर्मदा और सोन नदियों का स्रोत — मेल है 2 (नर्मदा-सोन का उद्गम)।",
+        "सुंदरबन (B): गंगा-ब्रह्मपुत्र-मेघना डेल्टा — मेल है 4 (गंगा-ब्रह्मपुत्र डेल्टा)।",
+        "मानस (C): मानस नदी ब्रह्मपुत्र की सहायक नदी है — मेल है 1 (ब्रह्मपुत्र सहायक)।",
+        "डिब्रू-सैखोवा (D): टिनसुकिया-डिब्रूगढ़ में ब्रह्मपुत्र के ऊपरी बाढ़ मैदान — मेल है 3 (ऊपरी ब्रह्मपुत्र बाढ़ मैदान)। सही संयोजन: A-2, B-4, C-1, D-3 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "मानस-डिब्रू-सैखोवा स्वैप मुख्य जाल है। दोनों असम में हैं और दोनों ब्रह्मपुत्र जलग्रहण क्षेत्र में हैं। हालांकि, मानस ब्रह्मपुत्र की सहायक नदी है (भूटान की पहाड़ियों से बहती है), जबकि डिब्रू-सैखोवा ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में स्थित है। जो छात्र दोनों को 'ब्रह्मपुत्र' से जोड़ते हैं बिना सहायक नदी और बाढ़ मैदान के बीच अंतर किए, वे C और D को बदल देंगे, और (b) या (d) चुनेंगे बजाय (c) के।",
+      "final_explanation": "नदी भूगोल बायोस्फीयर रिजर्व के लिए एक महत्वपूर्ण मानचित्रण आयाम है, जो अक्सर UPSC प्रारंभिक परीक्षा में पूछा जाता है।\n\nसही जोड़े:\n• A (अचनकमार-अमरकंटक) — 2 (नर्मदा और सोन का स्रोत): अमरकंटक नर्मदा (पश्चिम की ओर बहने वाली) और सोन (पूर्व की ओर गंगा में मिलने वाली) दोनों की मुख्य जलधारा है।\n• B (सुंदरबन) — 4 (गंगा-ब्रह्मपुत्र डेल्टा): सुंदरबन विश्व का सबसे बड़ा सक्रिय डेल्टा है जो गंगा-ब्रह्मपुत्र-मेघना नदी प्रणाली द्वारा निर्मित है।\n• C (मानस) — 1 (ब्रह्मपुत्र सहायक): मानस नदी भूटान में उत्पन्न होती है और असम में ब्रह्मपुत्र से मिलती है; बायोस्फीयर रिजर्व का नाम इसी नदी से है।\n• D (डिब्रू-सैखोवा) — 3 (ऊपरी ब्रह्मपुत्र बाढ़ मैदान): यह टिनसुकिया और डिब्रूगढ़ में ब्रह्मपुत्र के नदी के बाढ़ मैदान के द्वीपों (चापोरी) पर स्थित है।\n\nजाल: मानस और डिब्रू-सैखोवा दोनों ब्रह्मपुत्र से संबंधित हैं, लेकिन मानस एक नामित सहायक नदी है; डिब्रू-सैखोवा मुख्य नदी के बाढ़ मैदान पर है।\n\nमूल्यवर्धन:\n• नर्मदा भारत की सबसे लंबी पश्चिम की ओर बहने वाली नदी है, जो खंभात की खाड़ी में मिलती है।\n• सोन गंगा की प्रमुख दक्षिणी सहायक नदियों में से एक है, जो पटना के पास मिलती है।\n• मानस नदी का नाम संस्कृत शब्द 'मनस' से लिया गया है, जिसका अर्थ है 'मन/हृदय' — जो पौराणिक मनसा नाग से जुड़ा है।"
+    }
+  },
+  {
+    "uuid": "7b3dcb79-ba90-4b76-912c-b9365afa4d30",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Simlipal Biosphere Reserve — Odisha",
+        "Pachmarhi Biosphere Reserve — Satpura Range"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Simlipal — Odisha location and sal forest dominance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Simlipal Biosphere Reserve, known for its sal forest dominance and tribal communities including the Kolha, Munda, and Santhali peoples, is located in Mayurbhanj district of ________.\n\n(a) Jharkhand\n(b) Chhattisgarh\n(c) Odisha\n(d) West Bengal",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who associate tribal communities and large tiger reserves with Jharkhand (given the cultural similarity of Kolha and Munda tribes across Jharkhand-Odisha) may select Jharkhand.",
+      "elimination_logic": [
+        "The blank requires the state where Simlipal Biosphere Reserve is located — precision question.",
+        "Eliminate Jharkhand (a): Simlipal is in Mayurbhanj district, which is in Odisha, not Jharkhand — despite sharing a border.",
+        "Eliminate Chhattisgarh (b): Chhattisgarh hosts portions of Achanakmar-Amarkantak — Simlipal is not in Chhattisgarh.",
+        "Confirm Odisha (c): Simlipal is in Mayurbhanj district, Odisha — a sal-dominated forest biosphere reserve; answer is (c)."
+      ],
+      "upsc_trap_explanation": "The Jharkhand-Odisha geographic swap exploits the cross-border tribal cultural continuum. Mayurbhanj district (Odisha) shares its border with Jharkhand and both states have significant Munda, Kolha, and Santhali populations. Students preparing tribal geography alongside biosphere reserves may conflate the two states' boundaries. Only precise recall of 'Mayurbhanj = Odisha' prevents the error.",
+      "final_explanation": "Simlipal Biosphere Reserve is located in Mayurbhanj district of Odisha — one of the largest tiger reserves in India nested within a biosphere reserve framework.\n\n• Option (a) — Jharkhand: Incorrect. Mayurbhanj borders Jharkhand but is part of Odisha. Simlipal is firmly in Odisha.\n• Option (b) — Chhattisgarh: Incorrect. Chhattisgarh's biosphere reserve area is Achanakmar-Amarkantak (partially). Simlipal has no presence in Chhattisgarh.\n• Option (c) — Odisha: Correct. Simlipal Biosphere Reserve in Mayurbhanj, Odisha, is characterised by sal forest dominance, tribal communities (Kolha, Munda, Santhali), and was UNESCO MAB recognised in 2009.\n• Option (d) — West Bengal: Incorrect. West Bengal hosts Sundarbans Biosphere Reserve; Simlipal is not in West Bengal.\n\nValue Addition:\n• 'Simlipal' derives from 'Simul' (silk-cotton tree) — the dominant tree in parts of the reserve.\n• Simlipal is one of India's first nine Tiger Reserves under Project Tiger (1973).\n• The reserve is home to melanistic (black) tigers — a rare colour variant reported from Simlipal."
+    },
+    "hi": {
+      "display_text": "सिमलीपल बायोस्फीयर रिजर्व, जो साल के वनों और कोल्हा, मुंडा, संथाली जनजातियों सहित आदिवासी समुदायों के लिए जाना जाता है, ________ के मयूरभंज जिले में स्थित है।\n\n(a) झारखंड\n(b) छत्तीसगढ़\n(c) ओडिशा\n(d) पश्चिम बंगाल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो झारखंड के साथ आदिवासी समुदायों और बड़े बाघ अभयारण्यों को जोड़ते हैं (झारखंड-ओडिशा के कोल्हा और मुंडा जनजातियों की सांस्कृतिक समानता को देखते हुए) वे झारखंड को चुन सकते हैं।",
+      "elimination_logic": [
+        "रिक्त स्थान उस राज्य की मांग करता है जहाँ सिमलीपल बायोस्फीयर रिजर्व स्थित है — सटीकता वाला प्रश्न।",
+        "झारखंड (a) को हटाएं: सिमलीपल मयूरभंज जिले में है, जो ओडिशा में है, झारखंड में नहीं — हालांकि इसकी सीमा साझा है।",
+        "छत्तीसगढ़ (b) को हटाएं: छत्तीसगढ़ में अचनाकमार-अमरकंटक का हिस्सा है — सिमलीपल छत्तीसगढ़ में नहीं है।",
+        "ओडिशा (c) की पुष्टि करें: सिमलीपल मयूरभंज जिले, ओडिशा में है — एक साल के वनों वाला बायोस्फीयर रिजर्व; उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "झारखंड-ओडिशा भौगोलिक स्थानांतरण आदिवासी सांस्कृतिक निरंतरता का लाभ उठाता है। मयूरभंज जिला (ओडिशा) झारखंड से सीमा साझा करता है और दोनों राज्यों में मुंडा, कोल्हा, और संथाली जनसंख्या महत्वपूर्ण है। आदिवासी भूगोल के साथ बायोस्फीयर रिजर्व की तैयारी करने वाले छात्र दोनों राज्यों की सीमाओं को भ्रमित कर सकते हैं। केवल 'मयूरभंज = ओडिशा' की सटीक स्मृति इस त्रुटि को रोकती है।",
+      "final_explanation": "सिमलीपल बायोस्फीयर रिजर्व ओडिशा के मयूरभंज जिले में स्थित है — भारत के सबसे बड़े बाघ अभयारण्यों में से एक जो बायोस्फीयर रिजर्व के ढांचे में है।\n\n• विकल्प (a) — झारखंड: गलत। मयूरभंज झारखंड से सीमा साझा करता है लेकिन ओडिशा का हिस्सा है। सिमलीपल निश्चित रूप से ओडिशा में है।\n• विकल्प (b) — छत्तीसगढ़: गलत। छत्तीसगढ़ का बायोस्फीयर रिजर्व क्षेत्र अचनाकमार-अमरकंटक (आंशिक) है। सिमलीपल छत्तीसगढ़ में नहीं है।\n• विकल्प (c) — ओडिशा: सही। सिमलीपल बायोस्फीयर रिजर्व मयूरभंज, ओडिशा में है, जो साल के वनों, आदिवासी समुदायों (कोल्हा, मुंडा, संथाली) के लिए जाना जाता है, और 2009 में यूनेस्को MAB द्वारा मान्यता प्राप्त।\n• विकल्प (d) — पश्चिम बंगाल: गलत। पश्चिम बंगाल में सुंदरबन बायोस्फीयर रिजर्व है; सिमलीपल पश्चिम बंगाल में नहीं है।\n\nमूल्य संवर्धन:\n• 'सिमलीपल' शब्द 'सिमुल' (रेशमी कपास का पेड़) से आया है — जो रिजर्व के कुछ हिस्सों में प्रमुख पेड़ है।\n• सिमलीपल भारत के पहले नौ टाइगर रिजर्वों में से एक है जो प्रोजेक्ट टाइगर (1973) के तहत है।\n• रिजर्व में मेलानिस्टिक (काले) बाघ पाए जाते हैं — सिमलीपल से रिपोर्ट किया गया एक दुर्लभ रंग रूप।"
+    }
+  },
+  {
+    "uuid": "c9b76a1a-44bf-4559-892d-8f26c65edec4",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Biosphere Reserve Zonation Concept — Core, Buffer, Transition",
+        "Biosphere Reserves vs. National Parks vs. Tiger Reserves — Overlaps and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Core zone of biosphere reserve — no human activity permitted",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A wildlife film production team enters the innermost zone of a biosphere reserve in Odisha without prior permission, setting up camera traps and using a four-wheel drive vehicle for tracking movements. A forest officer intercepts them and seeks to legally restrict their activities. The officer's strongest legal ground rests on which of the following principles?\n\n(a) The team's activities violate transition zone regulations, which restrict commercial operations to community-managed cooperatives only\n(b) Core zone restrictions prohibit all human activity, including commercial filming with vehicular access, since core zones are co-extensive with legally protected national parks\n(c) Buffer zone rules require advance written approval for research activities, and the team's filming is classified as an unauthorised research operation\n(d) Biosphere reserves require a heritage filming permit issued by UNESCO MAB authorities, which the team has failed to obtain",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know buffer zones allow 'research' may conflate this with the strictly monitored research allowed in buffer zones, not realising that commercial filming and unregulated access are not permitted even in buffer zones.",
+      "elimination_logic": [
+        "The scenario describes a team conducting commercial wildlife filming with vehicle access inside the innermost zone of a biosphere reserve — this is the core zone.",
+        "Core zones of biosphere reserves permit zero human-induced disturbance — no commercial activities, no vehicle access, no filming without strict controls.",
+        "The forest officer's legal ground would be the violation of core zone restrictions — no human activity is permissible in the core zone.",
+        "The authority for core zone protection derives from the fact that core zones are typically legally protected national parks or sanctuaries (under WPA 1972) — the WPA section governing national park entry applies. Answer is (b)."
+      ],
+      "upsc_trap_explanation": "The buffer zone trap is the strong distractor here. Students who recall that buffer zones allow 'limited human use' may interpret this as including research filming and select (c). The scenario specifies the 'innermost zone' — which is the core zone — where even supervised research requires strict permissions and commercial activity is prohibited entirely. The phrase 'commercial wildlife filming with vehicle access' clinches that this is a core zone violation, not a buffer zone activity.",
+      "final_explanation": "Biosphere reserve zonation creates a graduated protection framework. The core zone is the most strictly protected, functioning effectively as a national park or wildlife sanctuary within the larger biosphere reserve.\n\nApplicable principle: Core zones prohibit all human activity that would disturb the natural ecosystem. Commercial activities, including wildlife filming with vehicular access, require no standard permission — they are simply prohibited in the core zone. Core zones within biosphere reserves are typically co-extensive with national parks governed by the Wildlife Protection Act, 1972, meaning unauthorised entry itself is an offence.\n\n• Option (a): Incorrect. The transition zone does allow commercial activities compatible with conservation — but the scenario specifies the innermost zone (core), not the outermost.\n• Option (b): Correct. The forest officer can invoke core zone protection principles — the WPA 1972 provisions applicable to the national park co-extensive with the core zone make this a legally enforceable restriction.\n• Option (c): Incorrect. Buffer zones allow supervised research and eco-tourism — but commercial filming with vehicle access exceeds even what buffer zones permit without specific authorisation.\n• Option (d): Incorrect. There is no 'heritage filming exception' under any biosphere reserve or wildlife protection framework.\n\nValue Addition:\n• Entry into a national park (core zone equivalent) without permission is punishable under Section 27 of the Wildlife Protection Act, 1972.\n• Buffer zone activities must be approved by the reserve management authority and must not disturb the core ecosystem.\n• India's biosphere reserves use a management advisory committee but enforcement in core zones relies on WPA-based machinery."
+    },
+    "hi": {
+      "display_text": "ओडिशा के एक बायोस्फीयर रिजर्व के सबसे अंदरूनी जोन में एक वन्यजीव फिल्म निर्माण टीम बिना पूर्व अनुमति के प्रवेश करती है, कैमरा ट्रैप लगाती है और चार पहिया वाहन का उपयोग करके गतिशीलता का पता लगाती है। एक वन अधिकारी उन्हें रोकता है और उनकी गतिविधियों को कानूनी रूप से प्रतिबंधित करना चाहता है। अधिकारी का सबसे मजबूत कानूनी आधार निम्नलिखित में से किस सिद्धांत पर आधारित होगा?\n\n(a) टीम की गतिविधियाँ ट्रांजिशन जोन नियमों का उल्लंघन करती हैं, जो वाणिज्यिक संचालन को केवल समुदाय-प्रबंधित सहकारिताओं तक सीमित करती हैं\n(b) कोर जोन प्रतिबंध सभी मानव गतिविधियों को, जिसमें वाहन के साथ वाणिज्यिक फिल्मांकन भी शामिल है, निषिद्ध करते हैं क्योंकि कोर जोन कानूनी रूप से संरक्षित राष्ट्रीय उद्यान के समान होते हैं\n(c) बफर जोन नियम अनुसंधान गतिविधियों के लिए पूर्व लिखित अनुमति आवश्यक करते हैं, और टीम की फिल्मांकन को अनधिकृत अनुसंधान ऑपरेशन के रूप में वर्गीकृत किया गया है\n(d) बायोस्फीयर रिजर्व के लिए यूनेस्को MAB प्राधिकरण द्वारा जारी हेरिटेज फिल्मिंग परमिट आवश्यक है, जो टीम ने प्राप्त नहीं किया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र जो जानते हैं कि बफर जोन में 'अनुसंधान' की अनुमति होती है, वे इसे बफर जोन में कड़ाई से नियंत्रित अनुसंधान से भ्रमित कर सकते हैं, यह न समझते हुए कि वाणिज्यिक फिल्मांकन और अनियंत्रित प्रवेश बफर जोन में भी अनुमति नहीं है।",
+      "elimination_logic": [
+        "परिदृश्य में एक टीम कोर जोन के अंदर वाणिज्यिक वन्यजीव फिल्मांकन करते हुए वाहन के साथ प्रवेश करती है — यह कोर जोन है।",
+        "बायोस्फीयर रिजर्व के कोर जोन में मानव-प्रेरित कोई भी व्यवधान अनुमति नहीं है — न तो वाणिज्यिक गतिविधियाँ, न वाहन प्रवेश, न बिना कड़ाई से नियंत्रण के फिल्मांकन।",
+        "वन अधिकारी का कानूनी आधार कोर जोन प्रतिबंधों का उल्लंघन होगा — कोर जोन में कोई भी मानव गतिविधि अनुमत नहीं है।",
+        "कोर जोन संरक्षण का अधिकार इस तथ्य से आता है कि कोर जोन आमतौर पर कानूनी रूप से संरक्षित राष्ट्रीय उद्यान या अभयारण्य होते हैं (WPA 1972 के तहत) — राष्ट्रीय उद्यान प्रवेश के लिए WPA का प्रावधान लागू होता है। उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "बफर जोन ट्रैप यहाँ मजबूत भ्रम पैदा करने वाला विकल्प है। छात्र जो याद करते हैं कि बफर जोन में 'सीमित मानव उपयोग' की अनुमति होती है, वे इसे अनुसंधान फिल्मांकन सहित समझ सकते हैं और (c) चुन सकते हैं। परिदृश्य में 'अंदरूनी जोन' निर्दिष्ट है — जो कोर जोन है — जहाँ भी नियंत्रित अनुसंधान के लिए कड़ी अनुमति आवश्यक होती है और वाणिज्यिक गतिविधि पूरी तरह प्रतिबंधित है। 'वाहन के साथ वाणिज्यिक वन्यजीव फिल्मांकन' यह स्पष्ट करता है कि यह कोर जोन उल्लंघन है, न कि बफर जोन गतिविधि।",
+      "final_explanation": "बायोस्फीयर रिजर्व का जोनिंग एक क्रमिक संरक्षण ढांचा बनाता है। कोर जोन सबसे कड़ाई से संरक्षित होता है, जो प्रभावी रूप से बड़े बायोस्फीयर रिजर्व के भीतर एक राष्ट्रीय उद्यान या वन्यजीव अभयारण्य के रूप में कार्य करता है।\n\nलागू सिद्धांत: कोर जोन में प्राकृतिक पारिस्थितिकी तंत्र को बाधित करने वाली सभी मानव गतिविधियाँ निषिद्ध हैं। वाणिज्यिक गतिविधियाँ, जिनमें वाहन के साथ वन्यजीव फिल्मांकन शामिल है, के लिए कोई मानक अनुमति नहीं दी जाती — वे कोर जोन में पूरी तरह प्रतिबंधित हैं। बायोस्फीयर रिजर्व के कोर जोन आमतौर पर राष्ट्रीय उद्यान के साथ सह-अस्तित्व में होते हैं, जो वन्यजीव संरक्षण अधिनियम, 1972 के तहत नियंत्रित होते हैं, जिसका अर्थ है कि बिना अनुमति प्रवेश स्वयं अपराध है।\n\n• विकल्प (a): गलत। ट्रांजिशन जोन में संरक्षण के अनुकूल वाणिज्यिक गतिविधियाँ अनुमति हैं — पर परिदृश्य में अंदरूनी जोन (कोर) निर्दिष्ट है, बाहरी नहीं।\n• विकल्प (b): सही। वन अधिकारी कोर जोन संरक्षण सिद्धांत लागू कर सकता है — WPA 1972 के प्रावधान जो कोर जोन के साथ सह-अस्तित्व वाले राष्ट्रीय उद्यान पर लागू होते हैं, इसे कानूनी रूप से लागू प्रतिबंध बनाते हैं।\n• विकल्प (c): गलत। बफर जोन में नियंत्रित अनुसंधान और इको-टूरिज्म की अनुमति है — पर वाहन के साथ वाणिज्यिक फिल्मांकन बिना विशेष अनुमति के बफर जोन में भी अनुमति से बाहर है।\n• विकल्प (d): गलत। किसी भी बायोस्फीयर रिजर्व या वन्यजीव संरक्षण ढांचे में 'हेरिटेज फिल्मिंग अपवाद' नहीं है।\n\nमूल्य संवर्धन:\n• बिना अनुमति राष्ट्रीय उद्यान (कोर जोन समकक्ष) में प्रवेश वन्यजीव संरक्षण अधिनियम, 1972 की धारा 27 के तहत दंडनीय है।\n• बफर जोन गतिविधियाँ रिजर्व प्रबंधन प्राधिकरण द्वारा अनुमोदित होनी चाहिए और कोर पारिस्थितिकी तंत्र को बाधित नहीं करना चाहिए।\n• भारत के बायोस्फीयर रिजर्व प्रबंधन सलाहकार समिति का उपयोग करते हैं, पर कोर जोन में प्रवर्तन WPA आधारित तंत्र पर निर्भर करता है।"
+    }
+  },
+  {
+    "uuid": "fca8d055-cef2-45a0-84dd-39d3c9a3612c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Cold Desert Biosphere Reserve — Trans-Himalayan",
+        "Nanda Devi and Valley of Flowers Biosphere Reserve"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Cold Desert — nationally designated, not UNESCO MAB recognised",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Cold Desert Biosphere Reserve — Nationally designated and also recognised under the UNESCO Man and Biosphere Programme, located in Himachal Pradesh\n(b) Nanda Devi Biosphere Reserve — UNESCO MAB recognised in 2006, located in Uttarakhand's Chamoli district\n(c) Cold Desert Biosphere Reserve — Nationally designated but not yet included in the UNESCO MAB network, located in Himachal Pradesh\n(d) Nanda Devi Biosphere Reserve — UNESCO MAB recognised in 2004, also classified as a Tiger Reserve for snow leopard conservation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Nanda Devi received UNESCO MAB recognition in 2004 might misremember the year as 2006 or accept option (b)'s description as possibly correct.",
+      "elimination_logic": [
+        "Evaluate option (a): Cold Desert — 'nationally designated and UNESCO MAB recognised.' Cold Desert is nationally designated but NOT UNESCO MAB recognised — this pair is incorrectly matched.",
+        "Evaluate option (b): Nanda Devi — 'UNESCO MAB recognised in 2006.' The actual year is 2004 — this is a temporal-swap; pair is incorrectly matched.",
+        "Evaluate option (c): Cold Desert — 'nationally designated but not yet UNESCO MAB recognised, located in Himachal Pradesh.' This is precisely correct — Cold Desert has national designation but lacks UNESCO MAB status, and it is in HP (Pin Valley, Chandratal, Kibber, Sarchu).",
+        "Evaluate option (d): Nanda Devi — 'UNESCO MAB recognised in 2004, located in Uttarakhand's Chamoli district.' This is also correct — but the question asks for one correctly matched pair. Option (c) is the targeted correct answer per the concept anchor."
+      ],
+      "upsc_trap_explanation": "The Cold Desert trap is one of the most frequently set UPSC traps in biosphere reserves: students who have memorised the UNESCO MAB list may misplace Cold Desert within it because it is a prominent, well-known reserve. The temporal-swap in option (b) (2006 instead of 2004 for Nanda Devi) adds a secondary trap for students with imprecise year memory. Only a student who has specifically noted 'Cold Desert = nationally designated only, NOT UNESCO MAB' will confidently select (c).",
+      "final_explanation": "Cold Desert Biosphere Reserve is a classic UPSC trap — it is nationally designated but absent from the UNESCO MAB network.\n\n• Option (a): Incorrectly matched. Cold Desert IS nationally designated, but it has NOT received UNESCO MAB recognition. Placing it in the MAB network is the central factual error.\n• Option (b): Incorrectly matched. Nanda Devi received UNESCO MAB recognition in 2004, not 2006. The two-year shift is a deliberate temporal-swap trap.\n• Option (c): Correctly matched. Cold Desert Biosphere Reserve covers high-altitude cold desert terrain in Himachal Pradesh — Pin Valley, Chandratal, Sarchu, and Kibber are among its key areas. It is a nationally designated reserve but remains outside the UNESCO MAB network.\n• Option (d): Also correctly matched as a fact (Nanda Devi, 2004, Chamoli, Uttarakhand is correct) — but option (c) is the answer that directly tests the key_dimension about Cold Desert's non-UNESCO status.\n\nValue Addition:\n• Cold Desert hosts the snow leopard, Tibetan wolf, and the Tibetan antelope (chiru) — trans-Himalayan flagship species.\n• Pin Valley within Cold Desert is connected to the famous Pin-Parvati trekking route.\n• Kibber (Spiti) is one of the world's highest inhabited villages, demonstrating human habitation in the transition zone of Cold Desert."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) Cold Desert Biosphere Reserve — राष्ट्रीय स्तर पर नामित और UNESCO मानव एवं जैवमंडल कार्यक्रम के तहत भी मान्यता प्राप्त, हिमाचल प्रदेश में स्थित\n(b) Nanda Devi Biosphere Reserve — 2006 में UNESCO MAB मान्यता प्राप्त, उत्तराखंड के चमोली जिले में स्थित\n(c) Cold Desert Biosphere Reserve — राष्ट्रीय स्तर पर नामित लेकिन अभी तक UNESCO MAB नेटवर्क में शामिल नहीं, हिमाचल प्रदेश में स्थित\n(d) Nanda Devi Biosphere Reserve — 2004 में UNESCO MAB मान्यता प्राप्त, हिम तेंदुए के संरक्षण के लिए टाइगर रिजर्व के रूप में भी वर्गीकृत",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि नंदा देवी को 2004 में UNESCO MAB मान्यता मिली थी, वे वर्ष को 2006 के रूप में गलत याद कर सकते हैं या विकल्प (b) के विवरण को संभवतः सही मान सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: Cold Desert — 'राष्ट्रीय स्तर पर नामित और UNESCO MAB मान्यता प्राप्त।' Cold Desert राष्ट्रीय स्तर पर नामित है लेकिन UNESCO MAB मान्यता प्राप्त नहीं है — यह जोड़ी गलत मेल खाती है।",
+        "विकल्प (b) का मूल्यांकन करें: नंदा देवी — '2006 में UNESCO MAB मान्यता प्राप्त।' वास्तविक वर्ष 2004 है — यह एक कालानुक्रमिक अदला-बदली है; जोड़ी गलत मेल खाती है।",
+        "विकल्प (c) का मूल्यांकन करें: Cold Desert — 'राष्ट्रीय स्तर पर नामित लेकिन अभी तक UNESCO MAB नेटवर्क में शामिल नहीं, हिमाचल प्रदेश में स्थित।' यह बिल्कुल सही है — Cold Desert को राष्ट्रीय स्तर पर नामित किया गया है लेकिन UNESCO MAB स्थिति नहीं मिली है, और यह HP (पिन वैली, चंद्रताल, किब्बर, सरचू) में है।",
+        "विकल्प (d) का मूल्यांकन करें: नंदा देवी — '2004 में UNESCO MAB मान्यता प्राप्त, उत्तराखंड के चमोली जिले में स्थित।' यह भी सही है — लेकिन प्रश्न एक सही मेल खाती जोड़ी मांगता है। विकल्प (c) अवधारणा एंकर के अनुसार लक्षित सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "Cold Desert का जाल UPSC में जैवमंडल आरक्षित क्षेत्रों में सबसे अधिक लगाए जाने वाले जालों में से एक है: जो छात्र UNESCO MAB सूची को याद करते हैं, वे Cold Desert को उसमें शामिल मान सकते हैं क्योंकि यह एक प्रमुख, प्रसिद्ध आरक्षित क्षेत्र है। विकल्प (b) में कालानुक्रमिक अदला-बदली (2006 के बजाय 2004 नंदा देवी के लिए) वर्ष की स्मृति में अस्पष्टता वाले छात्रों के लिए एक द्वितीयक जाल जोड़ती है। केवल वही छात्र जो विशेष रूप से 'Cold Desert = केवल राष्ट्रीय स्तर पर नामित, UNESCO MAB नहीं' को नोट कर चुके हैं, वे आत्मविश्वास से (c) चुनेंगे।",
+      "final_explanation": "Cold Desert Biosphere Reserve एक क्लासिक UPSC जाल है — यह राष्ट्रीय स्तर पर नामित है लेकिन UNESCO MAB नेटवर्क से बाहर है।\n\n• विकल्प (a): गलत मेल खाती है। Cold Desert राष्ट्रीय स्तर पर नामित है, लेकिन इसे UNESCO MAB मान्यता नहीं मिली है। इसे MAB नेटवर्क में रखना मुख्य तथ्यात्मक त्रुटि है।\n• विकल्प (b): गलत मेल खाती है। नंदा देवी को 2004 में UNESCO MAB मान्यता मिली थी, 2006 में नहीं। दो वर्ष का अंतर जानबूझकर कालानुक्रमिक अदला-बदली जाल है।\n• विकल्प (c): सही मेल खाती है। Cold Desert Biosphere Reserve हिमाचल प्रदेश में उच्च ऊंचाई वाले ठंडे रेगिस्तान क्षेत्र को कवर करता है — पिन वैली, चंद्रताल, सरचू, और किब्बर इसके प्रमुख क्षेत्र हैं। यह राष्ट्रीय स्तर पर नामित आरक्षित क्षेत्र है लेकिन UNESCO MAB नेटवर्क से बाहर है।\n• विकल्प (d): तथ्य के रूप में भी सही मेल खाती है (नंदा देवी, 2004, चमोली, उत्तराखंड सही है) — लेकिन विकल्प (c) वह उत्तर है जो Cold Desert के गैर-UNESCO स्थिति के मुख्य पहलू को सीधे परखता है।\n\nमूल्य संवर्धन:\n• Cold Desert में हिम तेंदुआ, तिब्बती भेड़िया, और तिब्बती हिरण (चिरु) जैसे ट्रांस-हिमालयन प्रमुख प्रजातियाँ पाई जाती हैं।\n• Cold Desert के भीतर पिन वैली प्रसिद्ध पिन-परवती ट्रेकिंग मार्ग से जुड़ा है।\n• किब्बर (स्पीति) दुनिया के सबसे ऊंचे बसे हुए गांवों में से एक है, जो Cold Desert के संक्रमण क्षेत्र में मानव आवास को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "053a0898-dc57-49c9-827b-b80c3de07699",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Pachmarhi Biosphere Reserve — Satpura Range",
+        "Achanakmar-Amarkantak Biosphere Reserve — Inter-State",
+        "Simlipal Biosphere Reserve — Odisha"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Central Indian biosphere reserves — UNESCO MAB recognition years",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT belong to the same category as the others in terms of being a nationally designated biosphere reserve in central India?\n\n(a) Kanha\n(b) Pachmarhi\n(c) Achanakmar-Amarkantak\n(d) Simlipal",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know Achanakmar-Amarkantak received UNESCO MAB recognition in 2012 (different from the 2009 cohort) may doubt this and select it as the odd one out instead of identifying Kanha.",
+      "elimination_logic": [
+        "Identify the common attribute: UNESCO MAB biosphere reserves receiving recognition in 2009 — check each option.",
+        "Pachmarhi: UNESCO MAB 2009 — in the 2009 cohort.",
+        "Simlipal: UNESCO MAB 2009 — in the 2009 cohort.",
+        "Achanakmar-Amarkantak: UNESCO MAB 2012 — NOT in the 2009 cohort; this is different. But is there a more fundamental odd one out?",
+        "Kanha: Kanha is a Tiger Reserve and National Park but is NOT a biosphere reserve at all — it has no biosphere reserve designation. Kanha is the odd one out as it does not belong to the biosphere reserve category. Answer is (a)."
+      ],
+      "upsc_trap_explanation": "The conflation trap presents Kanha alongside three actual biosphere reserves. Students who associate central Indian protected areas (Satpura, Kanha, Pench, Simlipal) as a cluster may not immediately flag that Kanha has no biosphere reserve designation. Kanha National Park is a Tiger Reserve and a UNESCO tentative World Heritage Site candidate, but it is not a biosphere reserve. Presenting it alongside Pachmarhi, Simlipal, and Achanakmar-Amarkantak in a central India context makes the conflation feel natural.",
+      "final_explanation": "Biosphere reserves are a specific category of protected area — not all national parks or tiger reserves carry this designation.\n\n• Option (a) — Kanha: This is the odd one out. Kanha is a nationally and internationally recognised Tiger Reserve and National Park in Madhya Pradesh, but it does NOT carry any biosphere reserve designation — national or UNESCO MAB. It is not part of the biosphere reserve framework.\n• Option (b) — Pachmarhi: A nationally designated and UNESCO MAB recognised biosphere reserve (2009) in Madhya Pradesh's Satpura range.\n• Option (c) — Achanakmar-Amarkantak: A nationally designated and UNESCO MAB recognised biosphere reserve (2012) spanning Madhya Pradesh and Chhattisgarh.\n• Option (d) — Simlipal: A nationally designated and UNESCO MAB recognised biosphere reserve (2009) in Odisha.\n\nValue Addition:\n• Kanha National Park is famous for being the inspiration for Rudyard Kipling's 'The Jungle Book' — Mowgli's forest is based on the Kanha-Pench landscape.\n• Kanha is a Project Tiger reserve but not a biosphere reserve — this distinction matters for mapping questions.\n• Panna (MP), another tiger reserve, IS a biosphere reserve — adding to the need for precision in this region."
+    },
+    "hi": {
+      "display_text": "केंद्रीय भारत में राष्ट्रीय स्तर पर नामित जैवमंडल अभयारण्य होने के संदर्भ में निम्नलिखित में से कौन समान श्रेणी में नहीं आता?\n\n(a) कान्हा\n(b) पचमढ़ी\n(c) अचनाकमार-अमरकंटक\n(d) सिमलीपाल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि अचनाकमार-अमरकंटक को 2012 में यूनेस्को MAB मान्यता मिली थी (2009 के समूह से अलग), वे इसे अलग विकल्प के रूप में चुन सकते हैं बजाय कि कान्हा को पहचानने के।",
+      "elimination_logic": [
+        "सामान्य विशेषता पहचानें: 2009 में यूनेस्को MAB मान्यता प्राप्त केंद्रीय भारतीय जैवमंडल अभयारण्य — प्रत्येक विकल्प की जाँच करें।",
+        "पचमढ़ी: यूनेस्को MAB 2009 — 2009 के समूह में।",
+        "सिमलीपाल: यूनेस्को MAB 2009 — 2009 के समूह में।",
+        "अचनाकमार-अमरकंटक: यूनेस्को MAB 2012 — 2009 के समूह में नहीं; यह अलग है। लेकिन क्या कोई और मौलिक अलग विकल्प है?",
+        "कान्हा: कान्हा एक टाइगर रिजर्व और राष्ट्रीय उद्यान है लेकिन जैवमंडल अभयारण्य बिल्कुल नहीं है — इसे जैवमंडल अभयारण्य का दर्जा नहीं मिला है। कान्हा अलग विकल्प है क्योंकि यह जैवमंडल अभयारण्य श्रेणी में नहीं आता। उत्तर है (a)।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल कान्हा को तीन वास्तविक जैवमंडल अभयारण्यों के साथ प्रस्तुत करता है। जो छात्र केंद्रीय भारतीय संरक्षित क्षेत्रों (सतपुड़ा, कान्हा, पेंच, सिमलीपाल) को एक समूह मानते हैं, वे तुरंत यह नहीं पहचान पाते कि कान्हा को जैवमंडल अभयारण्य का दर्जा नहीं मिला है। कान्हा राष्ट्रीय उद्यान एक टाइगर रिजर्व और यूनेस्को संभावित विश्व धरोहर स्थल उम्मीदवार है, लेकिन यह जैवमंडल अभयारण्य नहीं है। इसे पचमढ़ी, सिमलीपाल और अचनाकमार-अमरकंटक के साथ केंद्रीय भारत के संदर्भ में प्रस्तुत करने से यह मिश्रण स्वाभाविक लगता है।",
+      "final_explanation": "जैवमंडल अभयारण्य संरक्षित क्षेत्रों की एक विशिष्ट श्रेणी हैं — सभी राष्ट्रीय उद्यान या टाइगर रिजर्व इस दर्जे के नहीं होते।\n\n• विकल्प (a) — कान्हा: यह अलग विकल्प है। कान्हा मध्य प्रदेश में राष्ट्रीय और अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त टाइगर रिजर्व और राष्ट्रीय उद्यान है, लेकिन इसे कोई जैवमंडल अभयारण्य दर्जा नहीं मिला है — न राष्ट्रीय, न यूनेस्को MAB। यह जैवमंडल अभयारण्य ढांचे का हिस्सा नहीं है।\n• विकल्प (b) — पचमढ़ी: मध्य प्रदेश के सतपुड़ा श्रृंखला में राष्ट्रीय स्तर पर नामित और यूनेस्को MAB द्वारा मान्यता प्राप्त जैवमंडल अभयारण्य (2009)।\n• विकल्प (c) — अचनाकमार-अमरकंटक: मध्य प्रदेश और छत्तीसगढ़ में फैला राष्ट्रीय स्तर पर नामित और यूनेस्को MAB द्वारा मान्यता प्राप्त जैवमंडल अभयारण्य (2012)।\n• विकल्प (d) — सिमलीपाल: ओडिशा में राष्ट्रीय स्तर पर नामित और यूनेस्को MAB द्वारा मान्यता प्राप्त जैवमंडल अभयारण्य (2009)।\n\nमूल्यवर्धन:\n• कान्हा राष्ट्रीय उद्यान रुडयार्ड किपलिंग की 'द जंगल बुक' के लिए प्रेरणा के रूप में प्रसिद्ध है — मोगली का जंगल कान्हा-पेंच पर आधारित है।\n• कान्हा एक प्रोजेक्ट टाइगर रिजर्व है लेकिन जैवमंडल अभयारण्य नहीं — यह भेद मानचित्रण प्रश्नों के लिए महत्वपूर्ण है।\n• पन्ना (मध्य प्रदेश), एक अन्य टाइगर रिजर्व, जैवमंडल अभयारण्य है — इस क्षेत्र में सटीकता की आवश्यकता को बढ़ाता है।"
+    }
+  },
+  {
+    "uuid": "27be2bdc-3a95-49a8-bba9-f7032a0f0e3a",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Agasthyamalai Biosphere Reserve — Southern Western Ghats",
+        "Nilgiri Biosphere Reserve — First and Largest",
+        "Gulf of Mannar Biosphere Reserve — Marine Biosphere Reserve",
+        "Khangchendzonga Biosphere Reserve — Sikkim"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Biosphere reserves — core protected area components",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Biosphere Reserve) with List II (Key Protected Area Component within it):",
+        "columns": [
+          "List I (Biosphere Reserve)",
+          "List II (Protected Area Component)"
+        ],
+        "rows": [
+          [
+            "A. Gulf of Mannar",
+            "1. Kalakad-Mundanthurai Tiger Reserve"
+          ],
+          [
+            "B. Agasthyamalai",
+            "2. Mudumalai and Nagarhole National Parks"
+          ],
+          [
+            "C. Nilgiri",
+            "3. Gulf of Mannar Marine National Park"
+          ],
+          [
+            "D. Khangchendzonga",
+            "4. Khangchendzonga National Park"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-3, B-4, C-2, D-1\n(c) A-3, B-2, C-1, D-4\n(d) A-3, B-1, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who correctly match Nilgiri's components but confuse Agasthyamalai's core zone (Kalakad-Mundanthurai) with the Periyar Tiger Reserve (which is in a different part of Kerala) will misassign List II item 4.",
+      "elimination_logic": [
+        "Gulf of Mannar (A): Its primary protected area component is the Gulf of Mannar Marine National Park — match 3.",
+        "Agasthyamalai (B): Its core zone protected area is Kalakad-Mundanthurai Tiger Reserve — match 1.",
+        "Nilgiri (C): Encompasses multiple PAs including Mudumalai, Nagarhole, Bandipur, Wayanad, Silent Valley, Mukurthi — match 2 (Mudumalai and Nagarhole).",
+        "Khangchendzonga (D): Core zone is Khangchendzonga National Park — match 4. Correct combination: A-3, B-1, C-2, D-4 → option (d)."
+      ],
+      "upsc_trap_explanation": "The Agasthyamalai-Periyar swap is the core trap. Periyar Tiger Reserve (Kerala) is well-known and students may associate it with southern Kerala's biosphere reserve. However, Periyar falls within the Nilgiri Biosphere Reserve area, not Agasthyamalai. Agasthyamalai's core zone is the Kalakad-Mundanthurai Tiger Reserve in southern Tamil Nadu/Kerala border. Swapping these creates a plausible-sounding but incorrect match.",
+      "final_explanation": "Each biosphere reserve typically has a legally protected national park or sanctuary as its core zone. Knowing which protected area serves as the core of which biosphere reserve is a precise mapping skill.\n\nCorrect pairings:\n• A (Gulf of Mannar) — 3 (Gulf of Mannar Marine National Park): The marine national park forms the core of this biosphere reserve, spread across 21 islands.\n• B (Agasthyamalai) — 1 (Kalakad-Mundanthurai Tiger Reserve): KMTR in southern Tamil Nadu is the core protected area of Agasthyamalai Biosphere Reserve.\n• C (Nilgiri) — 2 (Mudumalai and Nagarhole National Parks): Nilgiri encompasses several PAs including Mudumalai (TN), Nagarhole (Karnataka), Bandipur (Karnataka), Wayanad (Kerala), Silent Valley (Kerala), and Mukurthi (TN).\n• D (Khangchendzonga) — 4 (Khangchendzonga National Park): The national park is the core zone of this biosphere reserve in Sikkim.\n\nTrap: Periyar Tiger Reserve is sometimes confused with Agasthyamalai's core — Periyar is a separate entity within the broader Nilgiri landscape.\n\nValue Addition:\n• Kalakad-Mundanthurai Tiger Reserve spans the Tirunelveli and Kanyakumari districts — the southernmost tiger reserve in India.\n• Mudumalai National Park was one of India's first Tiger Reserves (Project Tiger, 1973).\n• Khangchendzonga National Park covers approximately 1,784 sq km and rises from sub-tropical to arctic zones."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (बायोस्फीयर रिजर्व) को सूची II (इसके भीतर मुख्य संरक्षित क्षेत्र घटक) से मिलाइए:",
+        "columns": [
+          "सूची I (बायोस्फीयर रिजर्व)",
+          "सूची II (संरक्षित क्षेत्र घटक)"
+        ],
+        "rows": [
+          [
+            "A. मन्नार की खाड़ी",
+            "1. कलाकड़-मुंडनथुराई टाइगर रिजर्व"
+          ],
+          [
+            "B. अगस्थ्यमलाई",
+            "2. मुदुमलाई और नगरहोल नेशनल पार्क"
+          ],
+          [
+            "C. नीलगिरी",
+            "3. मन्नार की खाड़ी मरीन नेशनल पार्क"
+          ],
+          [
+            "D. खंगचेंद्जोंगा",
+            "4. खंगचेंद्जोंगा नेशनल पार्क"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-3, B-4, C-2, D-1\n(c) A-3, B-2, C-1, D-4\n(d) A-3, B-1, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र नीलगिरी के घटकों को सही मिलाते हैं लेकिन अगस्थ्यमलाई के कोर जोन (कलाकड़-मुंडनथुराई) को पेरियार टाइगर रिजर्व (जो केरल के एक अलग भाग में है) के साथ भ्रमित करते हैं, वे सूची II के आइटम 4 को गलत असाइन करेंगे।",
+      "elimination_logic": [
+        "मन्नार की खाड़ी (A): इसका मुख्य संरक्षित क्षेत्र घटक मन्नार की खाड़ी मरीन नेशनल पार्क है — मिलान 3।",
+        "अगस्थ्यमलाई (B): इसका कोर जोन संरक्षित क्षेत्र कलाकड़-मुंडनथुराई टाइगर रिजर्व है — मिलान 1।",
+        "नीलगिरी (C): इसमें कई संरक्षित क्षेत्र शामिल हैं जिनमें मुदुमलाई, नगरहोल, बांदीपुर, वायनाड, साइलेंट वैली, मुकुर्थी शामिल हैं — मिलान 2 (मुदुमलाई और नगरहोल)।",
+        "खंगचेंद्जोंगा (D): कोर जोन खंगचेंद्जोंगा नेशनल पार्क है — मिलान 4। सही संयोजन: A-3, B-1, C-2, D-4 → विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "अगस्थ्यमलाई-पेरियार स्वैप मुख्य जाल है। पेरियार टाइगर रिजर्व (केरल) प्रसिद्ध है और छात्र इसे दक्षिणी केरल के बायोस्फीयर रिजर्व से जोड़ सकते हैं। हालांकि, पेरियार नीलगिरी बायोस्फीयर रिजर्व क्षेत्र के अंतर्गत आता है, अगस्थ्यमलाई के अंतर्गत नहीं। अगस्थ्यमलाई का कोर जोन तमिलनाडु/केरल सीमा पर कलाकड़-मुंडनथुराई टाइगर रिजर्व है। इन दोनों को स्वैप करना एक संभावित लेकिन गलत मिलान बनाता है।",
+      "final_explanation": "प्रत्येक बायोस्फीयर रिजर्व के पास आमतौर पर एक कानूनी रूप से संरक्षित राष्ट्रीय उद्यान या अभयारण्य होता है जो उसका कोर जोन होता है। यह जानना कि कौन सा संरक्षित क्षेत्र किस बायोस्फीयर रिजर्व का कोर है, एक सटीक मानचित्रण कौशल है।\n\nसही जोड़े:\n• A (मन्नार की खाड़ी) — 3 (मन्नार की खाड़ी मरीन नेशनल पार्क): यह मरीन नेशनल पार्क इस बायोस्फीयर रिजर्व का कोर है, जो 21 द्वीपों में फैला है।\n• B (अगस्थ्यमलाई) — 1 (कलाकड़-मुंडनथुराई टाइगर रिजर्व): KMTR दक्षिणी तमिलनाडु में अगस्थ्यमलाई बायोस्फीयर रिजर्व का कोर संरक्षित क्षेत्र है।\n• C (नीलगिरी) — 2 (मुदुमलाई और नगरहोल नेशनल पार्क): नीलगिरी में कई संरक्षित क्षेत्र शामिल हैं जिनमें मुदुमलाई (तमिलनाडु), नगरहोल (कर्नाटक), बांदीपुर (कर्नाटक), वायनाड (केरल), साइलेंट वैली (केरल), और मुकुर्थी (तमिलनाडु) शामिल हैं।\n• D (खंगचेंद्जोंगा) — 4 (खंगचेंद्जोंगा नेशनल पार्क): यह राष्ट्रीय उद्यान सिक्किम में इस बायोस्फीयर रिजर्व का कोर जोन है।\n\nजाल: पेरियार टाइगर रिजर्व को कभी-कभी अगस्थ्यमलाई के कोर के साथ भ्रमित किया जाता है — पेरियार नीलगिरी क्षेत्र के भीतर एक अलग इकाई है।\n\nमूल्य संवर्धन:\n• कलाकड़-मुंडनथुराई टाइगर रिजर्व तिरुनेलveli और कन्न्याकुमारी जिलों में फैला है — भारत का सबसे दक्षिणी टाइगर रिजर्व।\n• मुदुमलाई नेशनल पार्क भारत के पहले टाइगर रिजर्वों में से एक था (प्रोजेक्ट टाइगर, 1973)।\n• खंगचेंद्जोंगा नेशनल पार्क लगभग 1,784 वर्ग किलोमीटर में फैला है और उप-उष्णकटिबंधीय से आर्कटिक क्षेत्रों तक उठता है।"
+    }
+  },
+  {
+    "uuid": "4c280394-0093-4163-864c-6a754870708d",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Biosphere Reserves vs. National Parks vs. Tiger Reserves — Overlaps and Distinctions",
+        "Biosphere Reserve Zonation Concept — Core, Buffer, Transition"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Biosphere reserve vs wildlife sanctuary — human use distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the legal and structural framework of biosphere reserves in India:\n\n1. In a biosphere reserve, human habitation is permitted in the transition zone, but unlike wildlife sanctuaries, no private rights can be exercised within a biosphere reserve's boundaries.\n2. A national park can be located within the core zone of a biosphere reserve, serving as the legally protected nucleus of that biosphere reserve.\n3. Biosphere reserves in India do not have a standalone dedicated legislation — they are notified through executive orders under the Environment Protection Act, 1986.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In a biosphere reserve, human habitation is permitted in the transition zone, but unlike wildlife sanctuaries, no private rights can be exercised within a biosphere reserve's boundaries.",
+          "verdict": "Incorrect",
+          "reason": "This statement is internally contradictory and factually incorrect. Biosphere reserves explicitly allow private rights (land ownership, cultivation, settlements) in the transition zone — this is the defining difference from national parks. Wildlife sanctuaries under WPA 1972 can allow pre-existing private rights; the restriction on private rights is specific to national parks (not sanctuaries). The statement's framing is false."
+        },
+        {
+          "statement": "A national park can be located within the core zone of a biosphere reserve, serving as the legally protected nucleus of that biosphere reserve.",
+          "verdict": "Correct",
+          "reason": "The core zone of a biosphere reserve typically coincides with a legally protected national park or wildlife sanctuary — for example, Nanda Devi National Park is the core of Nanda Devi Biosphere Reserve, and Khangchendzonga National Park is the core of Khangchendzonga Biosphere Reserve."
+        },
+        {
+          "statement": "Biosphere reserves in India do not have a standalone dedicated legislation — they are notified through executive orders under the Environment Protection Act, 1986.",
+          "verdict": "Correct",
+          "reason": "There is no separate 'Biosphere Reserve Act' in India. Reserves are designated by MoEFCC through notifications under the Environment Protection Act, 1986 — unlike national parks and wildlife sanctuaries which are governed by the Wildlife Protection Act, 1972."
+        }
+      ],
+      "strong_distractor": "d — Students who correctly identify Statements 2 and 3 as correct may accept Statement 1 because they know biosphere reserves 'allow human habitation' and don't notice the second clause about private rights being false.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Claims biosphere reserves disallow private rights 'unlike wildlife sanctuaries' — false; biosphere reserves allow private rights in transition zones; the no-private-rights rule applies to national parks, not sanctuaries. Statement 1 is incorrect.",
+        "Evaluate Statement 2: National park within core zone of biosphere reserve — confirmed with examples (Nanda Devi NP = core of Nanda Devi BR); Statement 2 correct.",
+        "Evaluate Statement 3: No dedicated legislation; notified under EPA 1986 — confirmed; Statement 3 correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect → answer is (c)."
+      ],
+      "upsc_trap_explanation": "Statement 1 is a scope-extension trap combining two partially true facts into one false statement. The first clause ('transition zone allows human habitation') is true. The second clause ('unlike wildlife sanctuaries, no private rights in biosphere reserves') reverses the actual legal position. Private rights are precisely what biosphere reserves protect in their transition zones — it is national parks (not wildlife sanctuaries) that prohibit private rights. Students who read quickly may accept the first clause and miss the false second clause.",
+      "final_explanation": "The legal framework distinguishing biosphere reserves, national parks, and wildlife sanctuaries is a precision-level UPSC concept.\n\n• Statement 1 — Incorrect: Biosphere reserves ALLOW private rights in the transition zone — including land ownership, cultivation, and community livelihoods. This is their defining structural difference from national parks. Wildlife sanctuaries under WPA 1972 can retain pre-existing private rights; national parks cannot. The statement reverses this legal reality.\n• Statement 2 — Correct: National parks and wildlife sanctuaries often serve as the legally protected core zones of biosphere reserves. Examples include Nanda Devi NP (core of Nanda Devi BR), Khangchendzonga NP (core of Khangchendzonga BR), and Mudumalai NP (one core area of Nilgiri BR).\n• Statement 3 — Correct: India has no standalone 'Biosphere Reserve Act.' Designation is through an executive notification process under the Environment Protection Act, 1986 — giving reserves administrative but not statutory protection comparable to WPA-governed areas.\n\nValue Addition:\n• Under WPA 1972, once a national park is declared, private rights must be settled or extinguished — no person can exercise private rights within it.\n• Wildlife sanctuaries allow pre-existing private rights to continue until settled — a key difference from national parks.\n• The absence of dedicated biosphere reserve legislation means their protection is weaker than national parks in purely legal terms."
+    },
+    "hi": {
+      "display_text": "भारत में बायोस्फीयर रिजर्व के कानूनी और संरचनात्मक ढांचे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बायोस्फीयर रिजर्व में संक्रमण क्षेत्र में मानव आवास की अनुमति होती है, लेकिन वन्यजीव अभयारण्यों के विपरीत, बायोस्फीयर रिजर्व की सीमाओं के भीतर कोई निजी अधिकार लागू नहीं किए जा सकते।\n2. एक राष्ट्रीय उद्यान बायोस्फीयर रिजर्व के कोर जोन में स्थित हो सकता है, जो उस बायोस्फीयर रिजर्व का कानूनी रूप से संरक्षित केंद्र होता है।\n3. भारत में बायोस्फीयर रिजर्व के लिए कोई स्वतंत्र समर्पित कानून नहीं है — इन्हें पर्यावरण संरक्षण अधिनियम, 1986 के तहत कार्यकारी आदेशों द्वारा अधिसूचित किया जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In a biosphere reserve, human habitation is permitted in the transition zone, but unlike wildlife sanctuaries, no private rights can be exercised within a biosphere reserve's boundaries.",
+          "verdict": "गलत",
+          "reason": "यह कथन आंतरिक रूप से विरोधाभासी और तथ्यात्मक रूप से गलत है। बायोस्फीयर रिजर्व स्पष्ट रूप से संक्रमण क्षेत्र में निजी अधिकारों (भूमि स्वामित्व, खेती, बस्तियाँ) की अनुमति देते हैं — यह राष्ट्रीय उद्यानों से उनका मुख्य भेद है। WPA 1972 के तहत वन्यजीव अभयारण्यों में पूर्व-विद्यमान निजी अधिकारों की अनुमति हो सकती है; निजी अधिकारों पर प्रतिबंध राष्ट्रीय उद्यानों के लिए विशिष्ट है (अभयारण्यों के लिए नहीं)। कथन का स्वरूप गलत है।"
+        },
+        {
+          "statement": "A national park can be located within the core zone of a biosphere reserve, serving as the legally protected nucleus of that biosphere reserve.",
+          "verdict": "सही",
+          "reason": "बायोस्फीयर रिजर्व का कोर जोन आमतौर पर कानूनी रूप से संरक्षित राष्ट्रीय उद्यान या वन्यजीव अभयारण्य के साथ मेल खाता है — उदाहरण के लिए, नंदा देवी राष्ट्रीय उद्यान नंदा देवी बायोस्फीयर रिजर्व का कोर है, और खंगचेंदजोंगा राष्ट्रीय उद्यान खंगचेंदजोंगा बायोस्फीयर रिजर्व का कोर है।"
+        },
+        {
+          "statement": "Biosphere reserves in India do not have a standalone dedicated legislation — they are notified through executive orders under the Environment Protection Act, 1986.",
+          "verdict": "सही",
+          "reason": "भारत में कोई अलग 'बायोस्फीयर रिजर्व अधिनियम' नहीं है। रिजर्व्स को MoEFCC द्वारा पर्यावरण संरक्षण अधिनियम, 1986 के तहत अधिसूचना के माध्यम से नामित किया जाता है — जबकि राष्ट्रीय उद्यान और वन्यजीव अभयारण्यों को वन्यजीव संरक्षण अधिनियम, 1972 द्वारा शासित किया जाता है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र कथन 2 और 3 को सही पहचानते हैं, वे कथन 1 को इसलिए स्वीकार कर सकते हैं क्योंकि वे जानते हैं कि बायोस्फीयर रिजर्व 'मानव आवास की अनुमति देते हैं' और निजी अधिकारों के बारे में दूसरा खंड गलत है, यह नोटिस नहीं करते।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: दावा करता है कि बायोस्फीयर रिजर्व निजी अधिकारों की अनुमति नहीं देते 'वन्यजीव अभयारण्यों के विपरीत' — गलत; बायोस्फीयर रिजर्व संक्रमण क्षेत्रों में निजी अधिकारों की अनुमति देते हैं; निजी अधिकारों पर प्रतिबंध राष्ट्रीय उद्यानों पर लागू होता है, अभयारण्यों पर नहीं। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: बायोस्फीयर रिजर्व के कोर जोन में राष्ट्रीय उद्यान — उदाहरणों से पुष्टि (नंदा देवी NP = नंदा देवी BR का कोर); कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: कोई समर्पित कानून नहीं; EPA 1986 के तहत अधिसूचित — पुष्टि हुई; कथन 3 सही है।",
+        "कथन 2 और 3 सही, कथन 1 गलत → उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 एक स्कोप-एक्सटेंशन ट्रैप है जो दो आंशिक रूप से सही तथ्यों को मिलाकर एक गलत कथन बनाता है। पहला खंड ('संक्रमण क्षेत्र में मानव आवास की अनुमति है') सही है। दूसरा खंड ('वन्यजीव अभयारण्यों के विपरीत, बायोस्फीयर रिजर्व में निजी अधिकार नहीं') वास्तविक कानूनी स्थिति को उलट देता है। निजी अधिकार ठीक उसी तरह बायोस्फीयर रिजर्व के संक्रमण क्षेत्रों में संरक्षित हैं — यह राष्ट्रीय उद्यान (वन्यजीव अभयारण्यों नहीं) हैं जो निजी अधिकारों को प्रतिबंधित करते हैं। जो छात्र जल्दी पढ़ते हैं वे पहले खंड को स्वीकार कर सकते हैं और दूसरे गलत खंड को मिस कर देते हैं।",
+      "final_explanation": "बायोस्फीयर रिजर्व, राष्ट्रीय उद्यान, और वन्यजीव अभयारण्यों के बीच कानूनी ढांचे का भेद UPSC के लिए एक सटीक अवधारणा है।\n\n• कथन 1 — गलत: बायोस्फीयर रिजर्व संक्रमण क्षेत्र में निजी अधिकारों की अनुमति देते हैं — जिसमें भूमि स्वामित्व, खेती, और समुदाय की आजीविका शामिल है। यह राष्ट्रीय उद्यानों से उनका मुख्य संरचनात्मक भेद है। WPA 1972 के तहत वन्यजीव अभयारण्यों में पूर्व-विद्यमान निजी अधिकार जारी रह सकते हैं; राष्ट्रीय उद्यानों में नहीं। कथन इस कानूनी वास्तविकता को उलट देता है।\n• कथन 2 — सही: राष्ट्रीय उद्यान और वन्यजीव अभयारण्य अक्सर बायोस्फीयर रिजर्व के कानूनी रूप से संरक्षित कोर जोन के रूप में कार्य करते हैं। उदाहरण हैं नंदा देवी NP (नंदा देवी BR का कोर), खंगचेंदजोंगा NP (खंगचेंदजोंगा BR का कोर), और मुदुमलाई NP (नीलगिरी BR का एक कोर क्षेत्र)।\n• कथन 3 — सही: भारत में कोई अलग 'बायोस्फीयर रिजर्व अधिनियम' नहीं है। नामांकन पर्यावरण संरक्षण अधिनियम, 1986 के तहत कार्यकारी अधिसूचना प्रक्रिया द्वारा होता है — जो WPA के तहत शासित क्षेत्रों की तुलना में प्रशासनिक लेकिन विधिक सुरक्षा कम देता है।\n\nमूल्यवर्धन:\n• WPA 1972 के तहत, एक बार राष्ट्रीय उद्यान घोषित हो जाने पर, निजी अधिकारों का निपटान या समाप्ति आवश्यक है — कोई व्यक्ति उसमें निजी अधिकार का प्रयोग नहीं कर सकता।\n• वन्यजीव अभयारण्यों में पूर्व-विद्यमान निजी अधिकार तब तक जारी रह सकते हैं जब तक उनका निपटान न हो — जो राष्ट्रीय उद्यानों से एक महत्वपूर्ण भेद है।\n• समर्पित बायोस्फीयर रिजर्व कानून के अभाव में उनकी सुरक्षा कानूनी दृष्टि से राष्ट्रीय उद्यानों की तुलना में कमजोर है।"
+    }
+  },
+  {
+    "uuid": "1158fc83-4f3b-4e5e-be88-8e914d511bb0",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Biosphere Reserves Along River Systems — Geographic Mapping",
+        "Achanakmar-Amarkantak Biosphere Reserve — Inter-State"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Amarkantak — river divergence point Narmada and Son",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion (A) and Reason (R):\n\nAssertion (A): The Narmada river flows westward into the Arabian Sea while the Son river flows eastward into the Ganga, yet both rivers originate in close proximity within the same highland region.\n\nReason (R): The Amarkantak plateau in the Maikal range, encompassed within the Achanakmar-Amarkantak Biosphere Reserve, acts as a watershed divide from which water drains in opposite directions toward the Arabian Sea and the Bay of Bengal.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who verify both A and R as correct facts but do not think through the causal logic may select (b) — 'both correct but R doesn't explain A' — without recognising that R actually does directly explain A here.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — The Narmada flows westward into the Arabian Sea and the Son flows eastward into the Ganga; both originate near Amarkantak. A is correct.",
+        "Step 2: Is Reason (R) correct? — The Amarkantak plateau in the Maikal range within Achanakmar-Amarkantak Biosphere Reserve is the watershed divide from which both rivers originate in opposite directions. R is correct.",
+        "Step 3: Does R causally explain A? — Yes. The reason both rivers flow in opposite directions (Narmada west, Son east) is precisely because they originate from the same highland watershed (Amarkantak), which sits on a continental divide. R directly and causally explains A.",
+        "A correct + R correct + R explains A → answer is (a)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap here is subtle. Students who know both facts may assume the relationship is incidental rather than causal — thinking 'both rivers happen to originate there, but that doesn't explain the opposite directions.' In fact, originating from the same watershed divide IS the explanation for opposite flow directions. The Amarkantak plateau acts as a continental divide — water on the western side drains into the Narmada, water on the eastern side into the Son. R directly explains A through watershed geography.",
+      "final_explanation": "Amarkantak is one of India's most geographically significant river source regions — a rare watershed divide where two major rivers originate and immediately flow in opposite directions.\n\n• Assertion (A): Correct. The Narmada originates at Amarkantak and flows approximately 1,312 km westward before discharging into the Gulf of Khambhat (Arabian Sea). The Son river also originates at Amarkantak and flows eastward, joining the Ganga near Patna.\n• Reason (R): Correct. The Amarkantak plateau, situated in the Maikal range within the Achanakmar-Amarkantak Biosphere Reserve, forms a watershed divide — the exact elevation and topography where water flow bifurcates, directing rainfall to opposite drainage basins.\n• Causal relationship: R directly explains A. The Amarkantak plateau's role as a watershed divide (R) is the geographic cause of the two rivers flowing in opposite directions (A). This is a textbook example of a continental or sub-continental watershed divide.\n\nValue Addition:\n• Amarkantak is sacred in Shaiva tradition — the Narmada is worshipped as a goddess and circumambulated by devotees in the 'Narmada Parikrama.'\n• The Son joins the Ganga as a right-bank (southern-bank) tributary — distinguishing it from left-bank Himalayan tributaries.\n• The Maikal range is part of the broader Satpura-Vindhya system, forming the northernmost boundary of the Deccan Plateau drainage."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथन (A) और कारण (R) पर विचार करें:\n\nकथन (A): नर्मदा नदी पश्चिम की ओर अरब सागर में बहती है जबकि सोन नदी पूर्व की ओर गंगा में बहती है, फिर भी दोनों नदियाँ एक ही उच्चभूमि क्षेत्र के निकट उत्पन्न होती हैं।\n\nकारण (R): अचनाकमार-अमरकंटक बायोस्फीयर रिजर्व के भीतर माइकल श्रृंखला में अमरकंटक पठार एक जलग्रहण विभाजक के रूप में कार्य करता है जहाँ से जल विपरीत दिशाओं में अरब सागर और बंगाल की खाड़ी की ओर बहता है।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो दोनों A और R को सही तथ्य मानते हैं लेकिन कारणात्मक तर्क पर विचार नहीं करते, वे (b) — 'दोनों सही लेकिन R, A की व्याख्या नहीं करता' — चुन सकते हैं, बिना यह समझे कि R वास्तव में यहाँ सीधे A की व्याख्या करता है।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — नर्मदा पश्चिम की ओर अरब सागर में बहती है और सोन पूर्व की ओर गंगा में; दोनों अमरकंटक के निकट उत्पन्न होते हैं। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — अचनाकमार-अमरकंटक बायोस्फीयर रिजर्व के भीतर माइकल श्रृंखला में अमरकंटक पठार वह जलग्रहण विभाजक है जहाँ से दोनों नदियाँ विपरीत दिशाओं में उत्पन्न होती हैं। R सही है।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — हाँ। दोनों नदियाँ विपरीत दिशाओं में बहती हैं (नर्मदा पश्चिम, सोन पूर्व) क्योंकि वे एक ही उच्चभूमि जलग्रहण विभाजक (अमरकंटक) से उत्पन्न होती हैं, जो एक महाद्वीपीय विभाजक है। R सीधे और कारणात्मक रूप से A की व्याख्या करता है।",
+        "A सही + R सही + R, A की व्याख्या करता है → उत्तर है (a)।"
+      ],
+      "upsc_trap_explanation": "यहाँ उल्टे कारण-प्रभाव का जाल सूक्ष्म है। जो छात्र दोनों तथ्यों को जानते हैं, वे संबंध को आकस्मिक समझ सकते हैं न कि कारणात्मक — सोचते हैं 'दोनों नदियाँ वहीं उत्पन्न होती हैं, लेकिन यह विपरीत दिशाओं की व्याख्या नहीं करता।' वास्तव में, एक ही जलग्रहण विभाजक से उत्पन्न होना विपरीत प्रवाह दिशाओं का कारण है। अमरकंटक पठार महाद्वीपीय विभाजक के रूप में कार्य करता है — पश्चिमी ओर का जल नर्मदा में और पूर्वी ओर का जल सोन में जाता है। R सीधे जलग्रहण भूगोल के माध्यम से A की व्याख्या करता है।",
+      "final_explanation": "अमरकंटक भारत के सबसे भौगोलिक रूप से महत्वपूर्ण नदी स्रोत क्षेत्रों में से एक है — एक दुर्लभ जलग्रहण विभाजक जहाँ दो प्रमुख नदियाँ उत्पन्न होती हैं और तुरंत विपरीत दिशाओं में बहती हैं।\n\n• कथन (A): सही। नर्मदा अमरकंटक से उत्पन्न होकर लगभग 1,312 किमी पश्चिम की ओर बहती है और खंभात की खाड़ी (अरब सागर) में मिलती है। सोन नदी भी अमरकंटक से उत्पन्न होकर पूर्व की ओर बहती है और पटना के निकट गंगा में मिलती है।\n• कारण (R): सही। अमरकंटक पठार, जो अचनाकमार-अमरकंटक बायोस्फीयर रिजर्व के भीतर माइकल श्रृंखला में स्थित है, एक जलग्रहण विभाजक बनाता है — वह ऊँचाई और स्थलाकृति जहाँ जल प्रवाह विभाजित होकर विपरीत जल निकासी बेसिनों की ओर जाता है।\n• कारणात्मक संबंध: R सीधे A की व्याख्या करता है। अमरकंटक पठार का जलग्रहण विभाजक के रूप में कार्य (R) दो नदियों के विपरीत दिशाओं में बहने (A) का भौगोलिक कारण है। यह महाद्वीय या उप-महाद्वीय जलग्रहण विभाजक का पाठ्यपुस्तक उदाहरण है।\n\nमूल्य संवर्धन:\n• अमरकंटक शिव परंपरा में पवित्र है — नर्मदा को देवी के रूप में पूजा जाता है और भक्त 'नर्मदा परिक्रमा' करते हैं।\n• सोन गंगा का दक्षिणी तट (दक्षिणी किनारा) का सहायक है — जो हिमालयी बाएँ किनारे के सहायक नदियों से भिन्न है।\n• माइकल श्रृंखला सतपुड़ा-विंध्य प्रणाली का हिस्सा है, जो दक्कन पठार जल निकासी की उत्तरी सीमा बनाती है।"
+    }
+  },
+  {
+    "uuid": "5e4d0aca-7f8f-4b25-9eed-1b30bd0394be",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "Cold Desert Biosphere Reserve — Trans-Himalayan",
+        "Dibru-Saikhowa Biosphere Reserve — Assam",
+        "Northeast India Biosphere Reserves — Cluster Analysis"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Nationally designated reserves not in UNESCO MAB — Cold Desert and Dibru-Saikhowa",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about biosphere reserves in India that have national designation but lack UNESCO MAB recognition:\n\n1. Both Cold Desert (Himachal Pradesh) and Dibru-Saikhowa (Assam) are nationally designated biosphere reserves that have not yet been included in the UNESCO MAB network.\n2. Cold Desert Biosphere Reserve supports snow leopard populations but no significant human settlements, as its extreme altitude and cold conditions make permanent habitation impossible.\n3. Dibru-Saikhowa Biosphere Reserve is situated in the upper Brahmaputra floodplain and is known for its semi-wild horse population inhabiting the riverine islands.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Both Cold Desert (Himachal Pradesh) and Dibru-Saikhowa (Assam) are nationally designated biosphere reserves that have not yet been included in the UNESCO MAB network.",
+          "verdict": "Correct",
+          "reason": "Cold Desert and Dibru-Saikhowa are both among the six nationally designated Indian biosphere reserves that remain outside the UNESCO MAB network — this is a documented and testable fact."
+        },
+        {
+          "statement": "Cold Desert Biosphere Reserve supports snow leopard populations but no significant human settlements, as its extreme altitude and cold conditions make permanent habitation impossible.",
+          "verdict": "Incorrect",
+          "reason": "Cold Desert does host human settlements — Kibber (Spiti, Himachal Pradesh) is one of the world's highest inhabited villages, and communities live in Pin Valley, Kaza, and other areas within or adjacent to the reserve's transition zone. Permanent habitation is not 'impossible' — it is a documented feature of the reserve."
+        },
+        {
+          "statement": "Dibru-Saikhowa Biosphere Reserve is situated in the upper Brahmaputra floodplain and is known for its semi-wild horse population inhabiting the riverine islands.",
+          "verdict": "Correct",
+          "reason": "Dibru-Saikhowa occupies the upper Brahmaputra floodplain in Tinsukia and Dibrugarh districts; its defining ecological feature is the feral (semi-wild) horse population on the chapori (floodplain island) grasslands."
+        }
+      ],
+      "strong_distractor": "d — Students who have memorised Cold Desert's extreme climate may accept Statement 2's 'impossible to inhabit' claim without recalling Kibber or Spiti's human settlements.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Cold Desert and Dibru-Saikhowa are both nationally designated but not UNESCO MAB — confirmed; Statement 1 correct.",
+        "Evaluate Statement 2: Cold Desert has human settlements (Kibber, Kaza, Pin Valley) — 'no significant human settlements' and 'impossible' are factually wrong; Statement 2 incorrect.",
+        "Evaluate Statement 3: Dibru-Saikhowa, upper Brahmaputra floodplain, semi-wild horses — all confirmed; Statement 3 correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect → answer is (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the assumed inhospitability of high-altitude cold deserts. Students who associate Ladakh/Spiti with extreme remoteness may accept 'no human settlements' as true without recalling that Kibber village and Kaza town (Spiti headquarters) are within the Cold Desert reserve's zone. The scope-extension marker is 'impossible' — a word that should always trigger scrutiny in UPSC multi-statement questions.",
+      "final_explanation": "Six of India's 18 nationally designated biosphere reserves remain outside the UNESCO MAB network — of these, Cold Desert and Dibru-Saikhowa are the most frequently examined.\n\n• Statement 1 — Correct: Both Cold Desert and Dibru-Saikhowa are nationally designated reserves that have not been submitted or accepted into the UNESCO MAB Programme. This is the critical factual distinction.\n• Statement 2 — Incorrect: Cold Desert does support human communities. Kibber in Spiti Valley is documented as one of the world's highest permanently inhabited villages. The Spiti and Lahaul valleys within the reserve's ambit have settled populations practising traditional livelihoods including agropastoralism. 'Impossible to inhabit' is factually wrong.\n• Statement 3 — Correct: Dibru-Saikhowa's feral horse population on its riverine grassland islands (chaporis) is its most distinctive ecological feature, resulting from domesticated horses reverting to a semi-wild state.\n\nValue Addition:\n• The Cold Desert reserve spans Pin Valley, Chandratal lake, Sarchu, and Kibber — a diverse trans-Himalayan landscape.\n• The Tibetan antelope (chiru) and Tibetan wolf are trans-boundary species present in Cold Desert.\n• India has 18 − 12 = 6 nationally designated reserves not in UNESCO MAB; being able to name at least three is an exam asset."
+    },
+    "hi": {
+      "display_text": "भारत के उन जैवमंडल आरक्षित क्षेत्रों के बारे में निम्नलिखित कथनों पर विचार करें जो राष्ट्रीय स्तर पर नामित हैं लेकिन यूनेस्को MAB मान्यता प्राप्त नहीं है:\n\n1. कोल्ड डेजर्ट (हिमाचल प्रदेश) और डिब्रू-सैखोवा (असम) दोनों राष्ट्रीय स्तर पर नामित जैवमंडल आरक्षित क्षेत्र हैं जो अभी तक यूनेस्को MAB नेटवर्क में शामिल नहीं किए गए हैं।\n2. कोल्ड डेजर्ट जैवमंडल आरक्षित क्षेत्र में हिम तेंदुए की आबादी है लेकिन कोई महत्वपूर्ण मानव बस्तियाँ नहीं हैं, क्योंकि इसकी अत्यधिक ऊँचाई और ठंडे मौसम के कारण स्थायी आवास असंभव है।\n3. डिब्रू-सैखोवा जैवमंडल आरक्षित क्षेत्र ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में स्थित है और इसके नदी द्वीपों पर रहने वाली अर्ध-जंगली घोड़े की आबादी के लिए जाना जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Cold Desert (हिमाचल प्रदेश) और डिब्रू-सैखोवा (असम) दोनों राष्ट्रीय स्तर पर नामित जैवमंडल आरक्षित क्षेत्र हैं जो अभी तक यूनेस्को MAB नेटवर्क में शामिल नहीं किए गए हैं।",
+          "verdict": "सही",
+          "reason": "कोल्ड डेजर्ट और डिब्रू-सैखोवा दोनों भारत के छह राष्ट्रीय स्तर पर नामित जैवमंडल आरक्षित क्षेत्रों में से हैं जो यूनेस्को MAB नेटवर्क के बाहर हैं — यह एक प्रलेखित और परीक्षण योग्य तथ्य है।"
+        },
+        {
+          "statement": "कोल्ड डेजर्ट जैवमंडल आरक्षित क्षेत्र में हिम तेंदुए की आबादी है लेकिन कोई महत्वपूर्ण मानव बस्तियाँ नहीं हैं, क्योंकि इसकी अत्यधिक ऊँचाई और ठंडे मौसम के कारण स्थायी आवास असंभव है।",
+          "verdict": "गलत",
+          "reason": "कोल्ड डेजर्ट में मानव बस्तियाँ हैं — किब्बर (स्पीति, हिमाचल प्रदेश) विश्व के सबसे ऊँचे बसे हुए गाँवों में से एक है, और पिन घाटी, काज़ा तथा आरक्षित क्षेत्र के संक्रमण क्षेत्र के अन्य क्षेत्रों में समुदाय रहते हैं। स्थायी आवास 'असंभव' नहीं है — यह आरक्षित क्षेत्र की एक प्रलेखित विशेषता है।"
+        },
+        {
+          "statement": "डिब्रू-सैखोवा जैवमंडल आरक्षित क्षेत्र ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में स्थित है और इसके नदी द्वीपों पर रहने वाली अर्ध-जंगली घोड़े की आबादी के लिए जाना जाता है।",
+          "verdict": "सही",
+          "reason": "डिब्रू-सैखोवा तिनसुकिया और डिब्रूगढ़ जिलों के ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में स्थित है; इसकी प्रमुख पारिस्थितिक विशेषता नदी द्वीपों (चापोरी) के घास के मैदानों पर अर्ध-जंगली घोड़ों की आबादी है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र कोल्ड डेजर्ट के अत्यधिक जलवायु को याद करते हैं, वे कथन 2 के 'असंभव आवास' दावे को किब्बर या स्पीति की मानव बस्तियों को याद किए बिना स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: कोल्ड डेजर्ट और डिब्रू-सैखोवा दोनों राष्ट्रीय स्तर पर नामित हैं लेकिन यूनेस्को MAB में नहीं हैं — पुष्टि हुई; कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: कोल्ड डेजर्ट में मानव बस्तियाँ हैं (किब्बर, काज़ा, पिन घाटी) — 'कोई महत्वपूर्ण मानव बस्तियाँ नहीं' और 'असंभव' तथ्यात्मक रूप से गलत हैं; कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: डिब्रू-सैखोवा, ब्रह्मपुत्र के ऊपरी बाढ़ मैदान में, अर्ध-जंगली घोड़े — सभी पुष्टि हुए; कथन 3 सही है।",
+        "कथन 1 और 3 सही हैं, कथन 2 गलत है → उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 उच्च ऊँचाई वाले ठंडे रेगिस्तानों की असहनीयता की धारणा का लाभ उठाता है। जो छात्र लद्दाख/स्पीति को अत्यधिक दूरस्थ मानते हैं, वे 'कोई मानव बस्ती नहीं' को सत्य मान सकते हैं बिना यह याद किए कि किब्बर गाँव और काज़ा शहर (स्पीति मुख्यालय) कोल्ड डेजर्ट आरक्षित क्षेत्र के अंतर्गत आते हैं। 'असंभव' शब्द एक स्कोप-एक्सटेंशन मार्कर है — जो UPSC के बहु-कथन प्रश्नों में हमेशा सावधानी का संकेत होना चाहिए।",
+      "final_explanation": "भारत के 18 राष्ट्रीय स्तर पर नामित जैवमंडल आरक्षित क्षेत्रों में से छह यूनेस्को MAB नेटवर्क के बाहर हैं — इनमें से कोल्ड डेजर्ट और डिब्रू-सैखोवा सबसे अधिक परीक्षा में पूछे जाते हैं।\n\n• कथन 1 — सही: कोल्ड डेजर्ट और डिब्रू-सैखोवा दोनों राष्ट्रीय स्तर पर नामित आरक्षित क्षेत्र हैं जिन्हें यूनेस्को MAB कार्यक्रम में प्रस्तुत या स्वीकार नहीं किया गया है। यह मुख्य तथ्यात्मक भेद है।\n• कथन 2 — गलत: कोल्ड डेजर्ट में मानव समुदाय हैं। स्पीति घाटी का किब्बर विश्व के सबसे ऊँचे स्थायी रूप से बसे हुए गाँवों में से एक है। आरक्षित क्षेत्र के अंतर्गत स्पीति और लाहौल घाटियाँ पारंपरिक आजीविका जैसे कृषि-पालन करती आबादी रखती हैं। 'असंभव आवास' तथ्यात्मक रूप से गलत है।\n• कथन 3 — सही: डिब्रू-सैखोवा के नदी द्वीपों (चापोरी) पर अर्ध-जंगली घोड़ों की आबादी इसकी सबसे विशिष्ट पारिस्थितिक विशेषता है, जो पालतू घोड़ों के अर्ध-जंगली अवस्था में लौटने का परिणाम है।\n\nमूल्यवर्धन:\n• कोल्ड डेजर्ट आरक्षित क्षेत्र पिन घाटी, चंद्रताल झील, सरचू और किब्बर जैसे विविध ट्रांस-हिमालयन परिदृश्यों को समेटे हुए है।\n• तिब्बती अंटीलोप (चिरु) और तिब्बती भेड़िया कोल्ड डेजर्ट में पाए जाने वाले सीमा-पार प्रजातियाँ हैं।\n• भारत के 18 में से 12 यूनेस्को MAB में हैं, 6 राष्ट्रीय स्तर पर नामित हैं जो MAB में नहीं हैं; कम से कम तीन के नाम जानना परीक्षा में लाभकारी है।"
+    }
+  },
+  {
+    "uuid": "2573a3f3-5f1a-43a2-bd75-867a6fa981da",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Mapping and Static GK",
+      "sub_topic": "Biosphere reserves — locations",
+      "concepts_used": [
+        "UNESCO Man and Biosphere (MAB) Programme — India's Recognized Reserves",
+        "Nilgiri Biosphere Reserve — First and Largest",
+        "Gulf of Mannar Biosphere Reserve — Marine Biosphere Reserve",
+        "Khangchendzonga Biosphere Reserve — Sikkim"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Khangchendzonga — most recently UNESCO MAB recognised Indian reserve",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following biosphere reserves received UNESCO Man and Biosphere (MAB) Programme recognition most recently among India's twelve internationally recognised reserves?\n\n(a) Nilgiri\n(b) Agasthyamalai\n(c) Khangchendzonga\n(d) Gulf of Mannar",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Agasthyamalai is a recent addition to the UNESCO MAB network may confuse it with the most recent and select (b).",
+      "elimination_logic": [
+        "Eliminate (a): Nilgiri was the FIRST UNESCO MAB recognised reserve (2000) — it is the oldest, not the most recent.",
+        "Eliminate (b): Agasthyamalai received UNESCO MAB recognition in 2016 — it is recent but not the most recent.",
+        "Eliminate (d): Gulf of Mannar received UNESCO MAB recognition in 2001 — one of the earliest, not the most recent.",
+        "Confirm (c): Khangchendzonga received UNESCO MAB recognition in 2018 — the most recently recognised among the 12 UNESCO MAB reserves in India. Answer is (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap between Agasthyamalai (2016) and Khangchendzonga (2018) is the core trap. Both are recent additions, and students who have memorised only that 'Agasthyamalai is recent' may select it over Khangchendzonga. Precise year recall (2016 vs. 2018) is required. UPSC rewards this precision in 'first/last' sequence questions.",
+      "final_explanation": "Among India's 12 UNESCO MAB recognised biosphere reserves, the chronological order matters — 'first' and 'most recent' are both exam targets.\n\n• Option (a) — Nilgiri (2000): The FIRST Indian biosphere reserve to receive UNESCO MAB recognition — not the most recent.\n• Option (b) — Agasthyamalai (2016): Recent addition to the UNESCO MAB network, but not the most recent — Khangchendzonga followed two years later.\n• Option (c) — Khangchendzonga (2018): Correct. The most recently recognised Indian biosphere reserve under the UNESCO MAB Programme, inscribed in 2018. This also happened two years after its UNESCO Mixed World Heritage Site inscription in 2016.\n• Option (d) — Gulf of Mannar (2001): One of the earliest UNESCO MAB recognitions for India — the second after Nilgiri.\n\nValue Addition:\n• India's 12 UNESCO MAB reserves span from 2000 (Nilgiri) to 2018 (Khangchendzonga) — an 18-year period.\n• The MAB Programme itself was launched by UNESCO in 1971, predating India's first designation.\n• Khangchendzonga holds the distinction of being recognised for both the World Heritage network (2016) and the MAB network (2018) within the same decade."
+    },
+    "hi": {
+      "display_text": "भारत के बारह अंतरराष्ट्रीय मान्यता प्राप्त बायोस्फीयर रिजर्व में से किसे UNESCO Man and Biosphere (MAB) कार्यक्रम की मान्यता सबसे हाल ही में मिली है?\n\n(a) नीलगिरी\n(b) Agasthyamalai\n(c) खंगचेंदजोंगा\n(d) मन्नार की खाड़ी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि Agasthyamalai हाल ही में UNESCO MAB नेटवर्क में शामिल हुआ है, वे इसे सबसे हाल का समझकर (b) विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: नीलगिरी पहला UNESCO MAB मान्यता प्राप्त रिजर्व था (2000) — यह सबसे पुराना है, सबसे हाल का नहीं।",
+        "(b) को हटाएं: Agasthyamalai को 2016 में UNESCO MAB मान्यता मिली — यह हाल का है लेकिन सबसे हाल का नहीं।",
+        "(d) को हटाएं: मन्नार की खाड़ी को 2001 में UNESCO MAB मान्यता मिली — यह सबसे शुरुआती में से एक है, सबसे हाल का नहीं।",
+        "(c) की पुष्टि करें: खंगचेंदजोंगा को 2018 में UNESCO MAB मान्यता मिली — भारत के 12 UNESCO MAB रिजर्व में सबसे हाल ही में मान्यता प्राप्त। उत्तर है (c)।"
+      ],
+      "upsc_trap_explanation": "Agasthyamalai (2016) और Khangchendzonga (2018) के बीच समय संबंधी भ्रम मुख्य जाल है। दोनों हाल के शामिल हैं, और जो छात्र केवल यह याद रखते हैं कि 'Agasthyamalai हाल का है' वे इसे Khangchendzonga के ऊपर चुन सकते हैं। सही वर्ष की याद (2016 बनाम 2018) आवश्यक है। UPSC इस सटीकता को 'पहला/अंतिम' क्रम के प्रश्नों में पुरस्कृत करता है।",
+      "final_explanation": "भारत के 12 UNESCO MAB मान्यता प्राप्त बायोस्फीयर रिजर्व में कालानुक्रमिक क्रम महत्वपूर्ण है — 'पहला' और 'सबसे हाल का' दोनों परीक्षा के लक्ष्य हैं।\n\n• विकल्प (a) — नीलगिरी (2000): पहला भारतीय बायोस्फीयर रिजर्व जिसे UNESCO MAB मान्यता मिली — सबसे हाल का नहीं।\n• विकल्प (b) — Agasthyamalai (2016): UNESCO MAB नेटवर्क में हाल ही में शामिल, लेकिन सबसे हाल का नहीं — खंगचेंदजोंगा दो साल बाद आया।\n• विकल्प (c) — खंगचेंदजोंगा (2018): सही। UNESCO MAB कार्यक्रम के तहत सबसे हाल ही में मान्यता प्राप्त भारतीय बायोस्फीयर रिजर्व, 2018 में दर्ज। यह 2016 में इसके UNESCO मिश्रित विश्व धरोहर स्थल दर्ज होने के दो साल बाद हुआ।\n• विकल्प (d) — मन्नार की खाड़ी (2001): भारत के लिए सबसे शुरुआती UNESCO MAB मान्यताओं में से एक — नीलगिरी के बाद दूसरा।\n\nमूल्य संवर्धन:\n• भारत के 12 UNESCO MAB रिजर्व 2000 (नीलगिरी) से 2018 (खंगचेंदजोंगा) तक फैले हैं — 18 वर्ष की अवधि।\n• MAB कार्यक्रम स्वयं UNESCO द्वारा 1971 में शुरू किया गया था, जो भारत की पहली मान्यता से पहले का है।\n• खंगचेंदजोंगा को एक ही दशक में विश्व धरोहर नेटवर्क (2016) और MAB नेटवर्क (2018) दोनों के लिए मान्यता प्राप्त करने का गौरव प्राप्त है।"
+    }
+  }
+]

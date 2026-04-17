@@ -1,0 +1,1496 @@
+[
+  {
+    "uuid": "3e2e8236-2757-4c53-b7f1-db85330ef49b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Coal: Classification and Rank Hierarchy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Coal rank hierarchy and industrial terminology",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly pairs a coal rank with its common industrial name?\n\n(a) Bituminous coal — 'Brown coal'\n(b) Bituminous coal — 'Thermal coal'\n(c) Bituminous coal — highest carbon content among all coal ranks\n(d) Lignite — a sub-type of peat",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because 'brown coal' is indeed associated with low-rank coal, leading students to conflate lignite with bituminous.",
+      "elimination_logic": [
+        "Eliminate (a): 'Brown coal' is the informal name for lignite, not bituminous coal.",
+        "Eliminate (c): Anthracite has the highest carbon content (>90%), not bituminous which sits below it in rank.",
+        "Eliminate (d): Peat is below lignite in rank; lignite is not a sub-type of peat.",
+        "Confirm (b): Bituminous coal is commonly called 'thermal coal' in the energy industry and is the primary fuel for thermal power stations."
+      ],
+      "upsc_trap_explanation": "The classic trap here is conflating 'brown coal' with 'thermal coal.' Students who have read cursorily remember that low-rank coals are called brown and that bituminous is used in power plants, but they mix the labels. Lignite is brown coal; bituminous is thermal coal. A student who swaps these will pick option (a). The question is designed to punish exactly that conflation.",
+      "final_explanation": "Coal is classified in ascending order of rank based on carbon content and calorific value: peat → lignite → sub-bituminous → bituminous → anthracite. Each rank carries a common industrial name.\n\n• Option (a) — Incorrect: 'Brown coal' refers to lignite, not bituminous. Bituminous coal is sometimes called 'thermal coal' because it is the dominant fuel in thermal power stations.\n• Option (b) — Correct: Bituminous coal is widely termed 'thermal coal' in the energy and power sector, making this the accurate pairing.\n• Option (c) — Incorrect: Anthracite, not bituminous, has the highest carbon content (90%+), making it the highest-rank coal.\n• Option (d) — Incorrect: Peat and lignite are separate ranks; peat is the lowest, lignite is the next step.\n\nValue Addition:\n• Coking coal is a subset of bituminous coal with low sulphur and ash — used in blast furnaces, not power plants.\n• India's anthracite deposits are negligible because Indian Gondwana coalfields formed ~250 MYA, geologically too young to reach anthracite rank.\n• Lignite has a calorific value of roughly 2,500–4,000 kcal/kg versus bituminous at 5,000–8,000 kcal/kg."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा कोयला रैंक उसके सामान्य औद्योगिक नाम के साथ सही जोड़ी बनाता है?\n\n(a) बिटुमिनस कोयला — 'ब्राउन कोयला'\n(b) बिटुमिनस कोयला — 'थर्मल कोयला'\n(c) बिटुमिनस कोयला — सभी कोयला रैंकों में सबसे अधिक कार्बन सामग्री\n(d) लिग्नाइट — पीट का एक उपप्रकार",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि 'ब्राउन कोयला' वास्तव में निम्न-रैंक कोयले से जुड़ा है, जिससे छात्र लिग्नाइट को बिटुमिनस के साथ भ्रमित कर लेते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: 'ब्राउन कोयला' लिग्नाइट का अनौपचारिक नाम है, बिटुमिनस कोयला नहीं।",
+        "(c) को हटाएं: एंथ्रासाइट में सबसे अधिक कार्बन सामग्री (>90%) होती है, बिटुमिनस इसके नीचे रैंक में आता है।",
+        "(d) को हटाएं: पीट लिग्नाइट से नीचे रैंक में है; लिग्नाइट पीट का उपप्रकार नहीं है।",
+        "(b) की पुष्टि करें: बिटुमिनस कोयले को ऊर्जा उद्योग में आमतौर पर 'थर्मल कोयला' कहा जाता है और यह थर्मल पावर स्टेशनों के लिए मुख्य ईंधन है।"
+      ],
+      "upsc_trap_explanation": "यहाँ क्लासिक जाल 'ब्राउन कोयला' को 'थर्मल कोयला' के साथ भ्रमित करना है। जो छात्र सतही रूप से पढ़ते हैं वे याद रखते हैं कि निम्न-रैंक कोयलों को ब्राउन कहा जाता है और बिटुमिनस पावर प्लांट में उपयोग होता है, लेकिन वे लेबल्स को मिलाते हैं। लिग्नाइट ब्राउन कोयला है; बिटुमिनस थर्मल कोयला है। जो छात्र इन्हें उलट देते हैं वे विकल्प (a) चुनेंगे। प्रश्न ठीक इसी भ्रम को दंडित करने के लिए बनाया गया है।",
+      "final_explanation": "कोयले को कार्बन सामग्री और ऊष्मा मूल्य के आधार पर आरोही क्रम में वर्गीकृत किया जाता है: पीट → लिग्नाइट → सब-बिटुमिनस → बिटुमिनस → एंथ्रासाइट। प्रत्येक रैंक का एक सामान्य औद्योगिक नाम होता है।\n\n• विकल्प (a) — गलत: 'ब्राउन कोयला' लिग्नाइट को संदर्भित करता है, बिटुमिनस कोयला नहीं। बिटुमिनस कोयले को कभी-कभी 'थर्मल कोयला' कहा जाता है क्योंकि यह थर्मल पावर स्टेशनों में प्रमुख ईंधन है।\n• विकल्प (b) — सही: बिटुमिनस कोयले को ऊर्जा और विद्युत क्षेत्र में व्यापक रूप से 'थर्मल कोयला' कहा जाता है, जो इसे सही जोड़ी बनाता है।\n• विकल्प (c) — गलत: एंथ्रासाइट में सबसे अधिक कार्बन सामग्री (90%+) होती है, जो इसे उच्चतम रैंक का कोयला बनाता है, न कि बिटुमिनस।\n• विकल्प (d) — गलत: पीट और लिग्नाइट अलग-अलग रैंक हैं; पीट सबसे नीचे है, लिग्नाइट अगला स्तर है।\n\nमूल्य संवर्धन:\n• कोकिंग कोयला बिटुमिनस कोयले का एक उपसमूह है जिसमें कम सल्फर और राख होती है — इसे ब्लास्ट फर्नेस में उपयोग किया जाता है, पावर प्लांट में नहीं।\n• भारत में एंथ्रासाइट जमा नगण्य हैं क्योंकि भारतीय गोंडवाना कोयला क्षेत्र लगभग 250 मिलियन वर्ष पुराना है, जो भूवैज्ञानिक रूप से एंथ्रासाइट रैंक तक पहुँचने के लिए बहुत युवा है।\n• लिग्नाइट का ऊष्मा मूल्य लगभग 2,500–4,000 किलो कैलोरी/किलो है जबकि बिटुमिनस का 5,000–8,000 किलो कैलोरी/किलो है।"
+    }
+  },
+  {
+    "uuid": "1f51cbda-2417-4eba-a297-4d07d619e163",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Gondwana Coalfields vs Tertiary Coalfields of India"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Neyveli lignite — Tertiary but Tamil Nadu location",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the coalfields of India:\n\n1. Gondwana coalfields, formed approximately 250 million years ago, account for nearly 98% of India's total coal reserves.\n2. All Tertiary coalfields in India are located in the north-eastern states of Assam, Meghalaya, and Arunachal Pradesh.\n3. Coal extracted from Tertiary fields is generally of lower rank than coal from Gondwana fields.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Gondwana coalfields, formed approximately 250 million years ago, account for nearly 98% of India's total coal reserves.",
+          "verdict": "Correct",
+          "reason": "Gondwana formations are geologically old and deep, containing predominantly bituminous and coking coal; they dominate India's reserve base at ~98%."
+        },
+        {
+          "statement": "All Tertiary coalfields in India are located in the north-eastern states of Assam, Meghalaya, and Arunachal Pradesh.",
+          "verdict": "Incorrect",
+          "reason": "The Neyveli lignite deposit in Tamil Nadu is also a Tertiary coalfield, formed 15–60 MYA, making the 'all in NE India' claim false."
+        },
+        {
+          "statement": "Coal extracted from Tertiary fields is generally of lower rank than coal from Gondwana fields.",
+          "verdict": "Correct",
+          "reason": "Tertiary coalfields are geologically younger, so the organic matter has undergone less metamorphism, yielding lignite and sub-bituminous coal rather than high-grade bituminous."
+        }
+      ],
+      "strong_distractor": "d — A student aware that Gondwana fields dominate reserves and that Tertiary fields are mostly in the NE may accept all three statements as correct, missing Statement 2's geographic error.",
+      "elimination_logic": [
+        "Verify Statement 1: Gondwana fields ~250 MYA, ~98% of reserves — Correct.",
+        "Examine Statement 2: 'All Tertiary coalfields' are in NE India — this is false; Neyveli (Tamil Nadu) is a major Tertiary lignite deposit, breaking the universal claim.",
+        "Verify Statement 3: Younger geological age → lower coalification → lower rank — Correct.",
+        "Since Statement 2 is incorrect and Statements 1 and 3 are correct, the answer is option (c)."
+      ],
+      "upsc_trap_explanation": "The trap lies in Statement 2's use of the absolute qualifier 'All.' Most students correctly associate Tertiary coalfields with Assam, Meghalaya, and Arunachal Pradesh. The Neyveli lignite field in Tamil Nadu is a well-known exception but is spatially incongruent with the NE India pattern, making the false universal statement feel accurate. A student who has not specifically memorised Neyveli as a Tertiary field will treat Statement 2 as correct and choose option (d).",
+      "final_explanation": "India's coalfields divide into two geological epochs with distinct characteristics.\n\n• Statement 1 — Correct: Gondwana coalfields (~250 MYA) formed in river basins of peninsular India and host predominantly bituminous and coking coal. They represent ~98% of total reserves, making them the backbone of India's energy security.\n• Statement 2 — Incorrect: While Assam, Meghalaya, Arunachal Pradesh, and Jammu & Kashmir hold Tertiary coalfields, the Neyveli Lignite Corporation fields in Tamil Nadu are also Tertiary in origin. The absolute word 'All' makes this statement false.\n• Statement 3 — Correct: Younger geological age means less time for coalification (the process of increasing carbon content under heat and pressure), so Tertiary fields yield lignite and sub-bituminous coal.\n\nValue Addition:\n• Gondwana coalfields lie in the Damodar, Son-Narmada, Mahanadi, and Godavari river belts.\n• Neyveli lignite is used primarily for power generation by Tamil Nadu Lignite Corporation power stations.\n• J&K's Tertiary fields (Kalakot, Metka) are also lignitic and largely undeveloped."
+    },
+    "hi": {
+      "display_text": "भारत के कोयला क्षेत्रों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. गोंडवाना कोयला क्षेत्र, जो लगभग 250 मिलियन वर्ष पहले बने थे, भारत के कुल कोयला भंडार का लगभग 98% हिस्सा हैं।\n2. भारत के सभी तृतीयक कोयला क्षेत्र असम, मेघालय, और अरुणाचल प्रदेश के उत्तर-पूर्वी राज्यों में स्थित हैं।\n3. तृतीयक क्षेत्रों से निकाला गया कोयला सामान्यतः गोंडवाना क्षेत्रों के कोयले की तुलना में निम्न श्रेणी का होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "गोंडवाना कोयला क्षेत्र, जो लगभग 250 मिलियन वर्ष पहले बने थे, भारत के कुल कोयला भंडार का लगभग 98% हिस्सा हैं।",
+          "verdict": "सही",
+          "reason": "गोंडवाना संरचनाएँ भूवैज्ञानिक रूप से प्राचीन और गहरी हैं, जिनमें मुख्यतः बिटुमिनस और कोकिंग कोयला होता है; ये भारत के भंडार आधार में लगभग 98% का प्रभुत्व रखते हैं।"
+        },
+        {
+          "statement": "भारत के सभी तृतीयक कोयला क्षेत्र असम, मेघालय और अरुणाचल प्रदेश के उत्तर-पूर्वी राज्यों में स्थित हैं।",
+          "verdict": "गलत",
+          "reason": "तमिलनाडु में नेयवेली लिग्नाइट जमा भी एक तृतीयक कोयला क्षेत्र है, जो 15–60 मिलियन वर्ष पुराना है, इसलिए 'सभी उत्तर-पूर्व भारत में' का दावा गलत है।"
+        },
+        {
+          "statement": "तृतीयक क्षेत्रों से निकाला गया कोयला सामान्यतः गोंडवाना क्षेत्रों के कोयले की तुलना में निम्न श्रेणी का होता है।",
+          "verdict": "सही",
+          "reason": "तृतीयक कोयला क्षेत्र भूवैज्ञानिक रूप से युवा हैं, इसलिए कार्बनिक पदार्थ ने कम रूपांतरण (metamorphism) सहा है, जिससे लिग्नाइट और सब-बिटुमिनस कोयला मिलता है, न कि उच्च श्रेणी का बिटुमिनस।"
+        }
+      ],
+      "strong_distractor": "d — एक छात्र जो जानता है कि गोंडवाना क्षेत्र भंडार में प्रभुत्व रखते हैं और तृतीयक क्षेत्र मुख्यतः उत्तर-पूर्व में हैं, वह तीनों कथनों को सही मान सकता है, और कथन 2 की भौगोलिक त्रुटि को नहीं देख पाता।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: गोंडवाना क्षेत्र लगभग 250 मिलियन वर्ष पुराने, लगभग 98% भंडार — सही।",
+        "कथन 2 की जांच करें: 'सभी तृतीयक कोयला क्षेत्र' उत्तर-पूर्व भारत में हैं — यह गलत है; नेयवेली (तमिलनाडु) एक प्रमुख तृतीयक लिग्नाइट जमा है, जो इस सर्वव्यापी दावे को तोड़ता है।",
+        "कथन 3 सत्यापित करें: युवा भूवैज्ञानिक आयु → कम कोयलीकरण → निम्न श्रेणी — सही।",
+        "चूंकि कथन 2 गलत है और कथन 1 व 3 सही हैं, अतः उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "फंदा कथन 2 में 'सभी' शब्द के उपयोग में है। अधिकांश छात्र तृतीयक कोयला क्षेत्रों को असम, मेघालय और अरुणाचल प्रदेश से जोड़ते हैं। तमिलनाडु का नेयवेली लिग्नाइट क्षेत्र एक प्रसिद्ध अपवाद है, जो उत्तर-पूर्व भारत के पैटर्न से मेल नहीं खाता, इसलिए यह सर्वव्यापी गलत कथन सही प्रतीत होता है। जिसने विशेष रूप से नेयवेली को तृतीयक क्षेत्र के रूप में याद नहीं किया है, वह कथन 2 को सही मानकर विकल्प (d) चुन सकता है।",
+      "final_explanation": "भारत के कोयला क्षेत्र दो भूवैज्ञानिक युगों में विभाजित हैं जिनकी विशेषताएँ भिन्न हैं।\n\n• कथन 1 — सही: गोंडवाना कोयला क्षेत्र (~250 मिलियन वर्ष पुराने) प्रायद्वीपीय भारत के नदी बेसिनों में बने हैं और मुख्यतः बिटुमिनस व कोकिंग कोयला रखते हैं। ये कुल भंडार का लगभग 98% हैं, जो भारत की ऊर्जा सुरक्षा की रीढ़ हैं।\n• कथन 2 — गलत: असम, मेघालय, अरुणाचल प्रदेश और जम्मू-कश्मीर में तृतीयक कोयला क्षेत्र हैं, पर तमिलनाडु के नेयवेली लिग्नाइट कॉर्पोरेशन के क्षेत्र भी तृतीयक हैं। 'सभी' शब्द इस कथन को गलत बनाता है।\n• कथन 3 — सही: युवा भूवैज्ञानिक आयु का अर्थ है कोयलीकरण (कोयले में कार्बन सामग्री बढ़ने की प्रक्रिया) के लिए कम समय, इसलिए तृतीयक क्षेत्र लिग्नाइट और सब-बिटुमिनस कोयला देते हैं।\n\nमूल्यवर्धन:\n• गोंडवाना कोयला क्षेत्र डामोदर, सोन-नर्मदा, महानदी और गोदावरी नदी घाटियों में स्थित हैं।\n• नेयवेली लिग्नाइट का उपयोग मुख्यतः तमिलनाडु लिग्नाइट कॉर्पोरेशन के पावर स्टेशनों में विद्युत उत्पादन के लिए होता है।\n• जम्मू-कश्मीर के तृतीयक क्षेत्र (कलाकोट, मेटका) भी लिग्नाइटिक हैं और अधिकांशतः अविकसित हैं।"
+    }
+  },
+  {
+    "uuid": "c1f79841-3acf-47fa-a5a3-29e3cea2fa28",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Major Coalfield Regions and Their River Basin Associations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Jharia coking coal and Raniganj state boundary",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about major coalfields of India:\n\n1. Jharia coalfield is the only significant source of prime coking coal in India and is located in the Damodar Valley.\n2. Raniganj coalfield lies entirely within West Bengal.\n3. Talcher coalfield in Odisha is part of the Mahanadi river basin coal belt.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Jharia coalfield is the only significant source of prime coking coal in India and is located in the Damodar Valley.",
+          "verdict": "Correct",
+          "reason": "Jharia in Jharkhand's Damodar belt is India's sole source of high-grade coking coal, critical for steel production."
+        },
+        {
+          "statement": "Raniganj coalfield lies entirely within West Bengal.",
+          "verdict": "Incorrect",
+          "reason": "Raniganj straddles the border of West Bengal and Jharkhand; it is not confined to a single state."
+        },
+        {
+          "statement": "Talcher coalfield in Odisha is part of the Mahanadi river basin coal belt.",
+          "verdict": "Correct",
+          "reason": "Talcher is one of the largest coalfields in the Mahanadi basin, located in Odisha which holds the largest single-state coal reserves."
+        }
+      ],
+      "strong_distractor": "a — Students who know Raniganj is in the Damodar belt may assume it lies entirely in West Bengal because the Bengal coalfields are historically associated with West Bengal, missing the Jharkhand portion.",
+      "elimination_logic": [
+        "Check Statement 1: Jharia is universally cited as India's only prime coking coal source in the Damodar Valley — Correct.",
+        "Check Statement 2: Raniganj straddles WB and Jharkhand — 'entirely within West Bengal' is false; Statement 2 is NOT correct.",
+        "Check Statement 3: Talcher is explicitly in the Mahanadi belt in Odisha — Correct.",
+        "The question asks which is NOT correct; only Statement 2 fails, so the answer is (b)."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap in Statement 2 exploits the historical association of Raniganj with West Bengal's coal mining history. The Raniganj coalfield was the first commercially mined coal deposit in India (1774) and is popularly associated with Bengal. However, the coalfield physically spans the boundary into Jharkhand. Students who have only a partial memory will mark Statement 2 as correct and choose a wrong option.",
+      "final_explanation": "India's major coalfields cluster in river valley basins, and precise state-level geography is a frequent UPSC test point.\n\n• Statement 1 — Correct: Jharia (Jharkhand) in the Damodar Valley is India's sole prime coking coal reserve, essential for the steel industry. Underground fires have been burning in Jharia for over a century.\n• Statement 2 — Incorrect: Raniganj, one of India's oldest coalfields, extends across both West Bengal and Jharkhand. The West Bengal portion is historically more developed, but the field is not confined to a single state.\n• Statement 3 — Correct: Talcher (Odisha) is part of the Mahanadi coal belt and contains some of the country's largest coal deposits; Odisha has the highest state-wise coal reserves.\n\nValue Addition:\n• Singrauli (MP/UP border) is a major coalfield in the Son-Narmada belt supplying several super thermal stations.\n• The Damodar Valley Corporation (DVC) was modelled on the Tennessee Valley Authority (TVA) for integrated river valley development.\n• IB Valley coalfield (Odisha) is another major Mahanadi belt deposit, operated by Mahanadi Coalfields Ltd (MCL)."
+    },
+    "hi": {
+      "display_text": "भारत के प्रमुख कोयला क्षेत्रों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. झारिया कोयला क्षेत्र भारत में प्रमुख कोकिंग कोयले का एकमात्र महत्वपूर्ण स्रोत है और यह डामोदर घाटी में स्थित है।\n2. रानीगंज कोयला क्षेत्र पूरी तरह से पश्चिम बंगाल के भीतर स्थित है।\n3. ओडिशा का तालचर कोयला क्षेत्र महानदी नदी बेसिन के कोयला बेल्ट का हिस्सा है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 2 और 3 दोनों",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "झारिया कोयला क्षेत्र भारत में प्रमुख कोकिंग कोयले का एकमात्र महत्वपूर्ण स्रोत है और यह डामोदर घाटी में स्थित है।",
+          "verdict": "सही",
+          "reason": "झारखंड के डामोदर बेल्ट में झारिया भारत का एकमात्र उच्च गुणवत्ता वाला कोकिंग कोयला स्रोत है, जो इस्पात उत्पादन के लिए महत्वपूर्ण है।"
+        },
+        {
+          "statement": "रणीगंज कोयला क्षेत्र पूरी तरह से पश्चिम बंगाल के भीतर स्थित है।",
+          "verdict": "गलत",
+          "reason": "रणीगंज पश्चिम बंगाल और झारखंड की सीमा पर फैला हुआ है; यह केवल एक राज्य तक सीमित नहीं है।"
+        },
+        {
+          "statement": "ओडिशा का तालचर कोयला क्षेत्र महानदी नदी बेसिन के कोयला बेल्ट का हिस्सा है।",
+          "verdict": "सही",
+          "reason": "तालचर महानदी बेसिन के सबसे बड़े कोयला क्षेत्रों में से एक है, जो ओडिशा में स्थित है जहाँ सबसे बड़े एकल-राज्य कोयला भंडार हैं।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि रानीगंज डामोदर बेल्ट में है, वे मान सकते हैं कि यह पूरी तरह से पश्चिम बंगाल में है क्योंकि बंगाल के कोयला क्षेत्र ऐतिहासिक रूप से पश्चिम बंगाल से जुड़े हैं, और झारखंड हिस्से को नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: झारिया को भारत में डामोदर घाटी में एकमात्र प्रमुख कोकिंग कोयले के स्रोत के रूप में सर्वमान्य माना जाता है — सही।",
+        "कथन 2 जांचें: रानीगंज पश्चिम बंगाल और झारखंड दोनों में फैला है — 'पूरी तरह से पश्चिम बंगाल में' गलत है; कथन 2 सही नहीं है।",
+        "कथन 3 जांचें: तालचर स्पष्ट रूप से ओडिशा के महानदी बेल्ट में है — सही।",
+        "प्रश्न पूछता है कि कौन सा कथन सही नहीं है; केवल कथन 2 गलत है, अतः उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में भौगोलिक-स्वैप जाल रानीगंज के पश्चिम बंगाल के कोयला खनन इतिहास से जुड़ी ऐतिहासिक पहचान का उपयोग करता है। रानीगंज कोयला क्षेत्र भारत में पहला व्यावसायिक रूप से खनन किया गया कोयला क्षेत्र था (1774) और यह बंगाल से लोकप्रिय रूप से जुड़ा है। हालांकि, यह क्षेत्र भौतिक रूप से झारखंड की सीमा तक फैला हुआ है। जो छात्र केवल आंशिक जानकारी रखते हैं, वे कथन 2 को सही मानकर गलत विकल्प चुन सकते हैं।",
+      "final_explanation": "भारत के प्रमुख कोयला क्षेत्र नदी घाटी बेसिनों में समूहित हैं, और सटीक राज्य-स्तरीय भूगोल UPSC में अक्सर परीक्षण का विषय होता है।\n\n• कथन 1 — सही: झारखंड के डामोदर घाटी में झारिया भारत का एकमात्र प्रमुख कोकिंग कोयला भंडार है, जो इस्पात उद्योग के लिए आवश्यक है। झारिया में भूमिगत आग सदी से अधिक समय से जल रही है।\n• कथन 2 — गलत: रानीगंज, भारत के सबसे पुराने कोयला क्षेत्रों में से एक, पश्चिम बंगाल और झारखंड दोनों में फैला है। पश्चिम बंगाल का हिस्सा ऐतिहासिक रूप से अधिक विकसित है, लेकिन यह क्षेत्र केवल एक राज्य तक सीमित नहीं है।\n• कथन 3 — सही: ओडिशा का तालचर महानदी कोयला बेल्ट का हिस्सा है और इसमें देश के सबसे बड़े कोयला भंडार हैं; ओडिशा के पास राज्यवार सबसे अधिक कोयला भंडार हैं।\n\nमूल्य संवर्धन:\n• सिंगरौली (मध्य प्रदेश/उत्तर प्रदेश सीमा) सोन-नर्मदा बेल्ट का एक प्रमुख कोयला क्षेत्र है जो कई सुपर थर्मल पावर स्टेशनों को आपूर्ति करता है।\n• डामोदर वैली कॉर्पोरेशन (DVC) को टेनेसी वैली अथॉरिटी (TVA) के मॉडल पर एकीकृत नदी घाटी विकास के लिए बनाया गया था।\n• आईबी वैली कोयला क्षेत्र (ओडिशा) महानदी बेल्ट का एक और प्रमुख कोयला क्षेत्र है, जिसे महानदी कोलफील्ड्स लिमिटेड (MCL) संचालित करता है।"
+    }
+  },
+  {
+    "uuid": "336ae57f-d883-4a7b-9f2a-0dcd7f2ff889",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Thermal Power: Plant Types and Efficiency Parameters"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Thermal power technology evolution — sub to ultra-supercritical",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence in the development of coal-based thermal power generation technology, from the earliest to the most advanced?\n\n(a) Supercritical → Sub-critical → Ultra-supercritical → Advanced ultra-supercritical\n(b) Sub-critical → Supercritical → Ultra-supercritical → Advanced ultra-supercritical\n(c) Sub-critical → Ultra-supercritical → Supercritical → Advanced ultra-supercritical\n(d) Supercritical → Ultra-supercritical → Sub-critical → Advanced ultra-supercritical",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who associate 'supercritical' with 'newer' may place it after ultra-supercritical, reversing the two most recent stages.",
+      "elimination_logic": [
+        "Sub-critical technology is the oldest, operating below the critical point of water (220 bar, 374°C) — it came first.",
+        "Supercritical technology operates above the critical point, achieving higher efficiency — it succeeded sub-critical.",
+        "Ultra-supercritical operates at even higher temperatures and pressures (>600°C), representing the next generation after supercritical.",
+        "Advanced ultra-supercritical (A-USC) is the frontier technology being developed under India's National Mission — chronology: sub-critical → supercritical → ultra-supercritical → A-USC; answer is (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The evolution of thermal power technology has been driven by the need for higher efficiency and lower emissions per unit of electricity generated.\n\nCorrect order: Sub-critical → Supercritical → Ultra-supercritical → Advanced ultra-supercritical\n\nSub-critical technology (pre-1960s onwards) operates below the thermodynamic critical point of water (~220 bar, 374°C), achieving about 33–37% efficiency. Supercritical plants exceed this threshold, achieving ~40–42% efficiency and lower coal consumption per unit. Ultra-supercritical plants operate at >600°C and pressures above 270 bar, yielding 44–46% efficiency. India's newer NTPC plants (e.g., Khargone, Darlipali) use supercritical technology. Advanced ultra-supercritical (A-USC) is under development by BHEL in collaboration with research institutions.\n\nValue Addition:\n• Higher efficiency means lower CO₂ per kWh — supercritical plants emit ~15% less CO₂ than sub-critical.\n• Plant Load Factor (PLF) measures the ratio of actual generation to maximum possible generation — India's PLF has declined due to renewable energy penetration.\n• Combined Cycle Gas Turbine (CCGT) plants are classified as thermal despite using gas as fuel — a common UPSC classification trap."
+    },
+    "hi": {
+      "display_text": "कोयला आधारित थर्मल पावर उत्पादन तकनीक के विकास में निम्नलिखित में से कौन-सा कालानुक्रमिक क्रम सबसे सही है, सबसे पुराने से लेकर सबसे उन्नत तक?\n\n(a) सुपरक्रिटिकल → सब-क्रिटिकल → अल्ट्रा-सुपरक्रिटिकल → एडवांस्ड अल्ट्रा-सुपरक्रिटिकल\n(b) सब-क्रिटिकल → सुपरक्रिटिकल → अल्ट्रा-सुपरक्रिटिकल → एडवांस्ड अल्ट्रा-सुपरक्रिटिकल\n(c) सब-क्रिटिकल → अल्ट्रा-सुपरक्रिटिकल → सुपरक्रिटिकल → एडवांस्ड अल्ट्रा-सुपरक्रिटिकल\n(d) सुपरक्रिटिकल → अल्ट्रा-सुपरक्रिटिकल → सब-क्रिटिकल → एडवांस्ड अल्ट्रा-सुपरक्रिटिकल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — छात्र जो 'सुपरक्रिटिकल' को 'नवीनतम' से जोड़ते हैं, वे इसे अल्ट्रा-सुपरक्रिटिकल के बाद रख सकते हैं, जिससे दो सबसे हाल के चरण उलट जाते हैं।",
+      "elimination_logic": [
+        "सब-क्रिटिकल तकनीक सबसे पुरानी है, जो पानी के क्रिटिकल पॉइंट (220 बार, 374°C) से नीचे काम करती है — यह सबसे पहले आई।",
+        "सुपरक्रिटिकल तकनीक क्रिटिकल पॉइंट से ऊपर काम करती है, जिससे उच्च दक्षता मिलती है — यह सब-क्रिटिकल के बाद आई।",
+        "अल्ट्रा-सुपरक्रिटिकल और भी उच्च तापमान और दबाव (>600°C) पर काम करती है, जो सुपरक्रिटिकल के बाद की अगली पीढ़ी है।",
+        "एडवांस्ड अल्ट्रा-सुपरक्रिटिकल (A-USC) भारत के राष्ट्रीय मिशन के तहत विकसित की जा रही अग्रणी तकनीक है — कालानुक्रम: सब-क्रिटिकल → सुपरक्रिटिकल → अल्ट्रा-सुपरक्रिटिकल → A-USC; उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "थर्मल पावर तकनीक का विकास उच्च दक्षता और प्रति यूनिट बिजली उत्पादन में कम उत्सर्जन की आवश्यकता से प्रेरित रहा है।\n\nसही क्रम: सब-क्रिटिकल → सुपरक्रिटिकल → अल्ट्रा-सुपरक्रिटिकल → एडवांस्ड अल्ट्रा-सुपरक्रिटिकल\n\nसब-क्रिटिकल तकनीक (1960 के दशक से पहले) पानी के थर्मोडायनामिक क्रिटिकल पॉइंट (~220 बार, 374°C) से नीचे काम करती है, लगभग 33–37% दक्षता प्राप्त करती है। सुपरक्रिटिकल संयंत्र इस सीमा से ऊपर काम करते हैं, लगभग 40–42% दक्षता और प्रति यूनिट कोयले की कम खपत होती है। अल्ट्रा-सुपरक्रिटिकल संयंत्र >600°C और 270 बार से अधिक दबाव पर काम करते हैं, 44–46% दक्षता देते हैं। भारत के नवीनतम NTPC संयंत्र (जैसे खर्गोन, दर्लिपाली) सुपरक्रिटिकल तकनीक का उपयोग करते हैं। एडवांस्ड अल्ट्रा-सुपरक्रिटिकल (A-USC) BHEL द्वारा अनुसंधान संस्थानों के सहयोग से विकसित की जा रही है।\n\nमूल्य संवर्धन:\n• उच्च दक्षता का अर्थ है प्रति kWh कम CO₂ — सुपरक्रिटिकल संयंत्र सब-क्रिटिकल की तुलना में लगभग 15% कम CO₂ उत्सर्जित करते हैं।\n• प्लांट लोड फैक्टर (PLF) वास्तविक उत्पादन और अधिकतम संभावित उत्पादन का अनुपात मापता है — भारत में नवीकरणीय ऊर्जा के प्रवेश के कारण PLF घटा है।\n• संयुक्त चक्र गैस टरबाइन (CCGT) संयंत्र गैस ईंधन का उपयोग करते हुए भी थर्मल श्रेणी में आते हैं — UPSC की सामान्य वर्गीकरण जाल।"
+    }
+  },
+  {
+    "uuid": "26ed37ff-183f-43d6-ad3c-3ecd84908131",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Hydropower: Potential vs Actual Development in India"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Small hydro classification under renewable energy policy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A state government proposes to develop a 15 MW run-of-river hydroelectric project on a tributary of the Beas river. The project will harness natural river flow without any significant reservoir storage. The developer seeks to register this project under the appropriate energy category to avail concessional financing and renewable energy certificates.\n\nUnder India's current energy policy framework, this project would most appropriately be classified as:\n\n(a) Conventional hydropower, regulated by the Ministry of Power\n(b) Small hydro under renewable energy, regulated by the Ministry of New and Renewable Energy\n(c) A wind-equivalent renewable project given its run-of-river nature\n(d) An unclassified project because run-of-river hydro does not fit any existing policy category",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know that hydro is a conventional energy source may apply the conventional hydro framework to all hydro projects regardless of capacity, missing the policy boundary at 25 MW.",
+      "elimination_logic": [
+        "The scenario specifies a 15 MW run-of-river project — this falls below the 25 MW threshold.",
+        "Eliminate (a): Projects above 25 MW are classified under conventional hydro under Ministry of Power — this project is below the threshold.",
+        "Eliminate (c): Wind energy classification is irrelevant to a hydro project.",
+        "Eliminate (d): The project is not unclassified; it clearly falls under the Ministry of New and Renewable Energy's 'small hydro' category for capacity ≤25 MW.",
+        "Confirm (b): Projects up to 25 MW capacity are classified as 'small hydro' under renewable energy policy, administered by MNRE."
+      ],
+      "upsc_trap_explanation": "The trap exploits the intuitive assumption that all hydropower projects are 'conventional energy.' The policy framework draws a sharp line at 25 MW: below this capacity, projects are administratively classified as 'small hydro' under the Ministry of New and Renewable Energy (MNRE), not under the Ministry of Power. A student who applies the general rule ('hydro is conventional') without knowing the 25 MW policy boundary will pick option (a).",
+      "final_explanation": "India's energy policy makes a capacity-based distinction within hydropower that has significant administrative and financial implications.\n\nThe 25 MW threshold: Projects with installed capacity up to 25 MW are classified as 'small hydro' and treated as a renewable energy source under the Ministry of New and Renewable Energy (MNRE). Projects above 25 MW fall under conventional hydropower regulated by the Ministry of Power. This distinction affects eligibility for renewable purchase obligations (RPOs), green certificates, and financing norms.\n\n• Option (a) — Incorrect: Conventional hydropower classification applies to projects above 25 MW, not to this 15 MW project.\n• Option (b) — Correct: At 15 MW, this is a 'small hydro' project and qualifies as renewable energy under MNRE jurisdiction.\n• Option (c) — Incorrect: Wind energy classification has no bearing on a hydro project.\n• Option (d) — Incorrect: The project is clearly classified; it is not in a regulatory vacuum.\n\nValue Addition:\n• India's total assessed small hydro potential is about 21,000 MW, largely in Himalayan states.\n• Pumped storage hydro blurs the conventional-renewable boundary further — it acts as both generation and storage.\n• Tehri Dam (Uttarakhand) is a large conventional hydro project with a 1,000 MW installed capacity, far above the 25 MW threshold."
+    },
+    "hi": {
+      "display_text": "एक राज्य सरकार बीस नदी की एक सहायक नदी पर 15 मेगावाट की रन-ऑफ-रिवर जलविद्युत परियोजना विकसित करने का प्रस्ताव रखती है। यह परियोजना बिना किसी महत्वपूर्ण जलाशय भंडारण के प्राकृतिक नदी प्रवाह का उपयोग करेगी। विकासकर्ता इस परियोजना को उचित ऊर्जा श्रेणी के तहत पंजीकृत कराना चाहता है ताकि उसे अनुदानित वित्तपोषण और नवीकरणीय ऊर्जा प्रमाणपत्र मिल सकें।\n\nभारत की वर्तमान ऊर्जा नीति ढांचे के तहत, इस परियोजना को सबसे उपयुक्त रूप से वर्गीकृत किया जाएगा:\n\n(a) ऊर्जा मंत्रालय द्वारा नियंत्रित पारंपरिक जलविद्युत\n(b) नई और नवीकरणीय ऊर्जा मंत्रालय द्वारा नियंत्रित नवीकरणीय ऊर्जा के तहत लघु जलविद्युत\n(c) इसकी रन-ऑफ-रिवर प्रकृति के कारण पवन-समकक्ष नवीकरणीय परियोजना\n(d) एक अवर्गीकृत परियोजना क्योंकि रन-ऑफ-रिवर जलविद्युत किसी भी मौजूदा नीति श्रेणी में फिट नहीं बैठती",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि जलविद्युत पारंपरिक ऊर्जा स्रोत है, वे सभी जल परियोजनाओं पर क्षमता की परवाह किए बिना पारंपरिक जल ढांचे को लागू कर सकते हैं, जिससे 25 मेगावाट की नीति सीमा छूट जाती है।",
+      "elimination_logic": [
+        "परिदृश्य में 15 मेगावाट रन-ऑफ-रिवर परियोजना निर्दिष्ट है — यह 25 मेगावाट की सीमा से नीचे है।",
+        "(a) को हटाएं: 25 मेगावाट से ऊपर की परियोजनाएँ ऊर्जा मंत्रालय के तहत पारंपरिक जलविद्युत के रूप में वर्गीकृत होती हैं — यह परियोजना सीमा से नीचे है।",
+        "(c) को हटाएं: पवन ऊर्जा वर्गीकरण का जल परियोजना से कोई संबंध नहीं है।",
+        "(d) को हटाएं: यह परियोजना अवर्गीकृत नहीं है; यह स्पष्ट रूप से नई और नवीकरणीय ऊर्जा मंत्रालय के 'लघु जलविद्युत' श्रेणी में आती है जिसकी क्षमता ≤25 मेगावाट है।",
+        "(b) की पुष्टि करें: 25 मेगावाट तक की क्षमता वाली परियोजनाएँ नवीकरणीय ऊर्जा नीति के तहत 'लघु जलविद्युत' के रूप में वर्गीकृत होती हैं, जिसका प्रशासन MNRE द्वारा किया जाता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल यह सहज धारणा का उपयोग करता है कि सभी जलविद्युत परियोजनाएँ 'पारंपरिक ऊर्जा' हैं। नीति ढांचा 25 मेगावाट पर स्पष्ट सीमा खींचता है: इस क्षमता से नीचे की परियोजनाएँ प्रशासनिक रूप से नई और नवीकरणीय ऊर्जा मंत्रालय (MNRE) के तहत 'लघु जलविद्युत' के रूप में वर्गीकृत होती हैं, न कि ऊर्जा मंत्रालय के तहत। जो छात्र सामान्य नियम ('जलविद्युत पारंपरिक है') को 25 मेगावाट की नीति सीमा जाने बिना लागू करते हैं, वे विकल्प (a) चुनेंगे।",
+      "final_explanation": "भारत की ऊर्जा नीति जलविद्युत के भीतर क्षमता-आधारित भेद करती है जिसका प्रशासनिक और वित्तीय प्रभाव महत्वपूर्ण है।\n\n25 मेगावाट की सीमा: 25 मेगावाट तक की स्थापित क्षमता वाली परियोजनाएँ 'लघु जलविद्युत' के रूप में वर्गीकृत होती हैं और नई और नवीकरणीय ऊर्जा मंत्रालय (MNRE) के तहत नवीकरणीय ऊर्जा स्रोत मानी जाती हैं। 25 मेगावाट से ऊपर की परियोजनाएँ पारंपरिक जलविद्युत के अंतर्गत आती हैं, जिनका नियमन ऊर्जा मंत्रालय करता है। यह भेद नवीकरणीय खरीद दायित्व (RPO), ग्रीन सर्टिफिकेट, और वित्तपोषण मानदंडों को प्रभावित करता है।\n\n• विकल्प (a) — गलत: पारंपरिक जलविद्युत वर्गीकरण 25 मेगावाट से ऊपर की परियोजनाओं पर लागू होता है, न कि इस 15 मेगावाट परियोजना पर।\n• विकल्प (b) — सही: 15 मेगावाट पर यह 'लघु जलविद्युत' परियोजना है और MNRE के तहत नवीकरणीय ऊर्जा के रूप में योग्य है।\n• विकल्प (c) — गलत: पवन ऊर्जा वर्गीकरण का जल परियोजना से कोई संबंध नहीं है।\n• विकल्प (d) — गलत: परियोजना स्पष्ट रूप से वर्गीकृत है; यह नियामक शून्यता में नहीं है।\n\nमूल्य संवर्धन:\n• भारत की कुल आकलित लघु जलविद्युत क्षमता लगभग 21,000 मेगावाट है, जो मुख्यतः हिमालयी राज्यों में है।\n• पंप्ड स्टोरेज हाइड्रो पारंपरिक-नवीकरणीय सीमा को और धुंधला करता है — यह उत्पादन और भंडारण दोनों के रूप में कार्य करता है।\n• तेहरी बांध (उत्तराखंड) एक बड़ी पारंपरिक जल परियोजना है जिसकी स्थापित क्षमता 1,000 मेगावाट है, जो 25 मेगावाट की सीमा से बहुत ऊपर है।"
+    }
+  },
+  {
+    "uuid": "3d6775da-2462-489d-903a-85836a01a328",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Nuclear Energy: Fuel Cycle and India's Three-Stage Programme"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "two-statement-relationship",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Uranium at Jaduguda; monazite thorium in coastal placers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding India's nuclear fuel resources and programme:\n\nStatement 1: India's uranium deposits are primarily concentrated at Jaduguda in Jharkhand, while thorium resources in the form of monazite are found in coastal placer deposits, notably in Kerala and Andhra Pradesh.\n\nStatement 2: In India's three-stage nuclear programme, the second stage uses plutonium bred in the first stage as fuel for Fast Breeder Reactors, while the third stage uses thorium as the primary fuel.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India's uranium deposits are primarily concentrated at Jaduguda in Jharkhand, while thorium resources in the form of monazite are found in coastal placer deposits, notably in Kerala and Andhra Pradesh.",
+          "verdict": "Correct",
+          "reason": "Jaduguda (Jharkhand) is India's primary uranium mining site; monazite (a thorium-bearing mineral) occurs in coastal sands of Kerala, Tamil Nadu, and AP — not in Rajasthan."
+        },
+        {
+          "statement": "In India's three-stage nuclear programme, the second stage uses plutonium bred in the first stage as fuel for Fast Breeder Reactors, while the third stage uses thorium as the primary fuel.",
+          "verdict": "Correct",
+          "reason": "Stage 2 FBRs are fuelled by plutonium (a by-product of Stage 1 PHWRs) and breed U-233 from thorium blankets; Stage 3 uses U-233 from thorium to run thorium-based reactors."
+        }
+      ],
+      "strong_distractor": "c — Students who confuse the Rajasthan location for uranium (conflating Rajasthan's mineral wealth) may mark Statement 1 as incorrect, choosing (d) instead.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Jaduguda (Jharkhand) uranium — correct; monazite in Kerala/AP coastal placers — correct; not Rajasthan.",
+        "Evaluate Statement 2: Stage 2 uses plutonium from Stage 1 PHWRs in FBRs; Stage 3 uses thorium-derived U-233 — both elements correct.",
+        "Both statements are independently correct — answer is (a)."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap targets students who associate Rajasthan with India's nuclear activities (because of Rawatbhata nuclear plant) and therefore place uranium deposits in Rajasthan. Uranium mining actually occurs at Jaduguda in Jharkhand. Separately, students may confuse the stage sequence — thinking thorium is used in Stage 2 — missing that Stage 2 is the plutonium/FBR stage and Stage 3 is the thorium stage.",
+      "final_explanation": "India's nuclear programme is built on a strategic logic driven by abundant thorium but limited uranium.\n\n• Statement 1 — Correct: Jaduguda (East Singhbhum, Jharkhand) is India's first and primary uranium mine; additional deposits exist in Tummalapalle (AP) and Gogi (Karnataka). Monazite, the principal thorium mineral, occurs in beach placer sands of Kerala (Chavara), Tamil Nadu, and Andhra Pradesh — not in inland Rajasthan.\n• Statement 2 — Correct: Stage 1 uses natural uranium in Pressurised Heavy Water Reactors (PHWRs) and produces plutonium as a by-product. Stage 2 uses this plutonium in Fast Breeder Reactors (Prototype FBR at Kalpakkam) to generate power and breed U-233 from thorium blankets. Stage 3 uses U-233 to drive Advanced Heavy Water Reactors on a thorium fuel cycle.\n\nValue Addition:\n• India has the world's largest thorium reserves (~25% of global reserves).\n• Kudankulam units use VVER-1000 reactors (Russian design) — classified as Light Water Reactors.\n• The Indo-US nuclear deal (123 Agreement, 2008) enabled civilian nuclear cooperation but required separation of civilian and military programmes."
+    },
+    "hi": {
+      "display_text": "भारत के परमाणु ईंधन संसाधनों और कार्यक्रम के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: भारत के यूरेनियम जमा मुख्यतः झारखंड के जादुगुड़ा में केंद्रित हैं, जबकि थोरियम संसाधन मोनाजाइट के रूप में तटीय प्लेसर जमा में पाए जाते हैं, विशेष रूप से केरल और आंध्र प्रदेश में।\n\nकथन 2: भारत के तीन-चरण परमाणु कार्यक्रम में, दूसरा चरण पहले चरण में उत्पन्न प्लूटोनियम का उपयोग फास्ट ब्रीडर रिएक्टरों के ईंधन के रूप में करता है, जबकि तीसरा चरण थोरियम को प्राथमिक ईंधन के रूप में उपयोग करता है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India's uranium deposits are primarily concentrated at Jaduguda in Jharkhand, while thorium resources in the form of monazite are found in coastal placer deposits, notably in Kerala and Andhra Pradesh.",
+          "verdict": "सही",
+          "reason": "जादुगुड़ा (झारखंड) भारत की प्रमुख यूरेनियम खनन स्थल है; मोनाजाइट (थोरियम युक्त खनिज) केरल, तमिलनाडु और आंध्र प्रदेश के तटीय रेत में पाया जाता है — राजस्थान में नहीं।"
+        },
+        {
+          "statement": "In India's three-stage nuclear programme, the second stage uses plutonium bred in the first stage as fuel for Fast Breeder Reactors, while the third stage uses thorium as the primary fuel.",
+          "verdict": "सही",
+          "reason": "दूसरे चरण के FBR में पहले चरण के PHWR से प्राप्त प्लूटोनियम ईंधन के रूप में उपयोग होता है और थोरियम कंबल से U-233 उत्पन्न होता है; तीसरे चरण में थोरियम आधारित रिएक्टर चलाने के लिए U-233 का उपयोग होता है।"
+        }
+      ],
+      "strong_distractor": "c — जो छात्र राजस्थान को यूरेनियम के स्थान के रूप में भ्रमित करते हैं (राजस्थान के खनिज संसाधनों के साथ मिलाते हैं) वे कथन 1 को गलत मानकर (d) विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: जादुगुड़ा (झारखंड) में यूरेनियम — सही; केरल/आंध्र प्रदेश के तटीय प्लेसर में मोनाजाइट — सही; राजस्थान में नहीं।",
+        "कथन 2 का मूल्यांकन करें: चरण 2 में चरण 1 के PHWR से प्राप्त प्लूटोनियम का FBR में उपयोग होता है; चरण 3 में थोरियम से प्राप्त U-233 का उपयोग होता है — दोनों तत्व सही हैं।",
+        "दोनों कथन स्वतंत्र रूप से सही हैं — उत्तर (a) है।"
+      ],
+      "upsc_trap_explanation": "भूगोल-संबंधित भ्रम उन छात्रों को लक्षित करता है जो राजस्थान को भारत की परमाणु गतिविधियों से जोड़ते हैं (रावतभाटा परमाणु संयंत्र के कारण) और इसलिए यूरेनियम जमा राजस्थान में मान लेते हैं। वास्तव में यूरेनियम खनन जादुगुड़ा (झारखंड) में होता है। इसके अलावा, छात्र चरण अनुक्रम को भ्रमित कर सकते हैं — सोचते हैं कि थोरियम चरण 2 में उपयोग होता है — जबकि चरण 2 प्लूटोनियम/FBR चरण है और चरण 3 थोरियम चरण है।",
+      "final_explanation": "भारत का परमाणु कार्यक्रम प्रचुर थोरियम लेकिन सीमित यूरेनियम पर आधारित रणनीतिक तर्क पर निर्मित है।\n\n• कथन 1 — सही: जादुगुड़ा (पूर्वी सिंहभूम, झारखंड) भारत का पहला और प्रमुख यूरेनियम खदान है; अतिरिक्त जमा तम्मलपल्ली (आंध्र प्रदेश) और गोगी (कर्नाटक) में हैं। मोनाजाइट, मुख्य थोरियम खनिज, केरल (चवारा), तमिलनाडु और आंध्र प्रदेश के समुद्र तटीय प्लेसर रेत में पाया जाता है — राजस्थान के अंदरूनी हिस्सों में नहीं।\n• कथन 2 — सही: चरण 1 में प्राकृतिक यूरेनियम का उपयोग प्रेशराइज्ड हेवी वाटर रिएक्टर (PHWR) में होता है और प्लूटोनियम उपोत्पाद के रूप में बनता है। चरण 2 में इस प्लूटोनियम का उपयोग फास्ट ब्रीडर रिएक्टर (कलपक्कम में प्रोटोटाइप FBR) में बिजली उत्पादन और थोरियम कंबल से U-233 उत्पन्न करने के लिए होता है। चरण 3 में U-233 का उपयोग थोरियम ईंधन चक्र पर आधारित उन्नत हेवी वाटर रिएक्टर चलाने के लिए होता है।\n\nमूल्यवर्धन:\n• भारत के पास विश्व के सबसे बड़े थोरियम भंडार (~25% वैश्विक भंडार) हैं।\n• कूडनकुलम इकाइयाँ VVER-1000 रिएक्टर (रूसी डिजाइन) का उपयोग करती हैं — जिन्हें लाइट वाटर रिएक्टर के रूप में वर्गीकृत किया गया है।\n• इंडो-अमेरिकी परमाणु समझौता (123 समझौता, 2008) ने नागरिक परमाणु सहयोग को सक्षम किया लेकिन नागरिक और सैन्य कार्यक्रमों के पृथक्करण की आवश्यकता थी।"
+    }
+  },
+  {
+    "uuid": "ce16afd6-3dc7-42d7-bae1-0762ea21d009",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Nuclear Power Plants: Location Logic and Reactor Types"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Rawatbhata inland nuclear plant on Chambal",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Rawatbhata Nuclear Power Station, an inland exception to India's preference for coastal siting of large reactors, is located in Rajasthan on the banks of the ________ river.\n\n(a) Banas\n(b) Luni\n(c) Sabarmati\n(d) Chambal",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know Rawatbhata is in Rajasthan and that Rajasthan has the Luni/Chambal river system may guess 'Luni' because Luni is more commonly associated with Rajasthan in geography questions.",
+      "elimination_logic": [
+        "Rawatbhata is located in Chittorgarh district, Rajasthan — confirm geography.",
+        "Eliminate (a): Banas river flows through eastern Rajasthan but not through Chittorgarh; not the correct river here.",
+        "Eliminate (b): Luni river is in western Rajasthan; Rawatbhata is on the Chambal.",
+        "Eliminate (c): Sabarmati flows through Gujarat, not Rajasthan's nuclear plant region.",
+        "Confirm (d): Rawatbhata Nuclear Power Station is situated on the Chambal river, which provides cooling water."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes the Chambal with the Luni or Banas, both of which are Rajasthan rivers that students commonly recall. Most students know Rawatbhata is in Rajasthan but do not remember its specific river association. The Chambal river, associated primarily with ravines and the MP-UP-Rajasthan tri-junction, is less intuitively associated with Rajasthan's nuclear plant, making the wrong options plausible.",
+      "final_explanation": "Most large nuclear power plants in India are coastal to exploit seawater for cooling. Rawatbhata is a notable inland exception.\n\n• Option (a) — Incorrect: Banas river flows through eastern Rajasthan (Rajsamand, Bhilwara) but is not the cooling water source for Rawatbhata.\n• Option (b) — Incorrect: Luni river drains western Rajasthan (Thar fringes) and empties into the Rann of Kutch; it is far from Rawatbhata's location.\n• Option (c) — Incorrect: Sabarmati originates in Udaipur district but flows southward into Gujarat; it is not associated with the Rawatbhata station.\n• Option (d) — Correct: Rawatbhata Nuclear Power Station in Chittorgarh district, Rajasthan, is situated on the Chambal river, which supplies the necessary cooling water.\n\nValue Addition:\n• Rawatbhata hosts 6 operational reactor units, all PHWRs operated by NPCIL.\n• Tarapur (Maharashtra) uses Boiling Water Reactors (BWRs) of American origin — India's oldest nuclear station.\n• Kudankulam (Tamil Nadu) uses VVER-1000 reactors — a Russian pressurised water reactor design."
+    },
+    "hi": {
+      "display_text": "भारत में बड़े रिएक्टरों के तटीय स्थान निर्धारण की प्राथमिकता के बीच एक अंतर्देशीय अपवाद, रावतभाटा न्यूक्लियर पावर स्टेशन, राजस्थान में ________ नदी के किनारे स्थित है।\n\n(a) बनास\n(b) लूनी\n(c) साबरमती\n(d) चंबल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो जानते हैं कि रावतभाटा राजस्थान में है और राजस्थान में लूनी/चंबल नदी प्रणाली है, वे 'लूनी' का अनुमान लगा सकते हैं क्योंकि भूगोल के प्रश्नों में लूनी को राजस्थान से अधिक जोड़ा जाता है।",
+      "elimination_logic": [
+        "रावतभाटा चित्तौड़गढ़ जिले, राजस्थान में स्थित है — भूगोल की पुष्टि करें।",
+        "(a) को हटाएं: बनास नदी पूर्वी राजस्थान से होकर बहती है लेकिन चित्तौड़गढ़ से नहीं; यहाँ सही नदी नहीं है।",
+        "(b) को हटाएं: लूनी नदी पश्चिमी राजस्थान में है; रावतभाटा चंबल नदी के किनारे है।",
+        "(c) को हटाएं: साबरमती गुजरात से होकर बहती है, राजस्थान के परमाणु संयंत्र क्षेत्र से नहीं।",
+        "(d) की पुष्टि करें: रावतभाटा न्यूक्लियर पावर स्टेशन चंबल नदी के किनारे स्थित है, जो ठंडा पानी प्रदान करती है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में चंबल की जगह लूनी या बनास को रखा गया है, जो दोनों राजस्थान की नदियाँ हैं जिन्हें छात्र सामान्यतः याद रखते हैं। अधिकांश छात्र जानते हैं कि रावतभाटा राजस्थान में है लेकिन उसकी विशिष्ट नदी संबद्धता याद नहीं रहती। चंबल नदी, जो मुख्यतः घाटियों और मध्यप्रदेश-उत्तरप्रदेश-राजस्थान त्रि-सीमांत से जुड़ी है, राजस्थान के परमाणु संयंत्र से कम सहजता से जुड़ी है, जिससे गलत विकल्प संभावित बनते हैं।",
+      "final_explanation": "भारत में अधिकांश बड़े परमाणु ऊर्जा संयंत्र तटीय क्षेत्रों में स्थित हैं ताकि समुद्री जल का उपयोग ठंडा करने के लिए किया जा सके। रावतभाटा एक उल्लेखनीय अंतर्देशीय अपवाद है।\n\n• विकल्प (a) — गलत: बनास नदी पूर्वी राजस्थान (राजसमंद, भीलवाड़ा) से होकर बहती है लेकिन रावतभाटा के लिए ठंडा पानी स्रोत नहीं है।\n• विकल्प (b) — गलत: लूनी नदी पश्चिमी राजस्थान (थार के किनारे) से बहती है और रण ऑफ कच्छ में मिलती है; यह रावतभाटा से दूर है।\n• विकल्प (c) — गलत: साबरमती उदयपुर जिले में उत्पन्न होती है लेकिन गुजरात की ओर दक्षिण में बहती है; इसका रावतभाटा स्टेशन से कोई संबंध नहीं है।\n• विकल्प (d) — सही: रावतभाटा न्यूक्लियर पावर स्टेशन चित्तौड़गढ़ जिले, राजस्थान में चंबल नदी के किनारे स्थित है, जो आवश्यक ठंडा पानी प्रदान करती है।\n\nमूल्यवर्धन:\n• रावतभाटा में 6 परिचालन रिएक्टर यूनिट हैं, सभी PHWR हैं जो NPCIL द्वारा संचालित हैं।\n• तारापुर (महाराष्ट्र) में अमेरिकी मूल के बॉयलिंग वाटर रिएक्टर (BWR) हैं — भारत का सबसे पुराना परमाणु स्टेशन।\n• कूडनकुलम (तमिलनाडु) में VVER-1000 रिएक्टर हैं — एक रूसी प्रेसराइज्ड वाटर रिएक्टर डिजाइन।"
+    }
+  },
+  {
+    "uuid": "7c933f95-db99-4493-8960-a62f05a05674",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Coal India Limited (CIL): Structure, Subsidiaries and Market Dominance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SCCL not a CIL subsidiary — GoI-Telangana JV",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Coal India Limited (CIL) and the coal sector in India:\n\n1. Coal India Limited (CIL) is classified as a Maharatna Central Public Sector Enterprise and accounts for approximately 80% of India's total coal production.\n2. Singareni Collieries Company Limited (SCCL) is a subsidiary of Coal India Limited and operates primarily in the Godavari coalfield.\n3. The Commercial Coal Mining policy announced in 2020 ended CIL's statutory monopoly by opening coal blocks for auction to private sector companies.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Coal India Limited (CIL) is classified as a Maharatna Central Public Sector Enterprise and accounts for approximately 80% of India's total coal production.",
+          "verdict": "Correct",
+          "reason": "CIL was granted Maharatna status and dominates domestic coal production, controlling roughly 80% of total output through its subsidiaries."
+        },
+        {
+          "statement": "Singareni Collieries Company Limited (SCCL) is a subsidiary of Coal India Limited and operates primarily in the Godavari coalfield.",
+          "verdict": "Incorrect",
+          "reason": "SCCL is NOT a CIL subsidiary; it is a joint venture between the Government of India and the Government of Telangana, operating independently in the Godavari valley coalfields."
+        },
+        {
+          "statement": "The Commercial Coal Mining policy announced in 2020 ended CIL's statutory monopoly by opening coal blocks for auction to private sector companies.",
+          "verdict": "Correct",
+          "reason": "The 2020 policy amendment to the Mines and Minerals (Development and Regulation) Act allowed private entities to commercially mine and sell coal, breaking CIL's monopoly."
+        }
+      ],
+      "strong_distractor": "d — Students who know CIL is dominant and SCCL operates in the south may assume it must be a CIL subsidiary, marking all three as correct.",
+      "elimination_logic": [
+        "Verify Statement 1: CIL Maharatna status and ~80% production share — Correct.",
+        "Examine Statement 2: SCCL is a JV of GoI and Telangana government, not a CIL subsidiary — Statement 2 is Incorrect.",
+        "Verify Statement 3: 2020 commercial mining opening — Correct.",
+        "Statements 1 and 3 are correct; Statement 2 is incorrect — answer is (c)."
+      ],
+      "upsc_trap_explanation": "SCCL is frequently mistaken as a CIL subsidiary because it operates in the coal sector and is a public sector entity. The entity-swap trap exploits this: SCCL operates in the Godavari coalfield (true) but is a separate joint venture between the Union government (49%) and the Telangana state government (51%), not a subsidiary of CIL. A student who has only broad knowledge of public sector coal companies will confidently mark Statement 2 as correct.",
+      "final_explanation": "CIL's structure and the distinction of SCCL are frequently tested in UPSC.\n\n• Statement 1 — Correct: CIL was incorporated in 1973 as a nationalised holding company under the Coal Mines (Nationalisation) Act. It holds Maharatna status and controls ~80% of domestic coal production through eight wholly-owned subsidiaries.\n• Statement 2 — Incorrect: SCCL is an independent entity — a public sector undertaking jointly owned by the Government of India (49%) and the Telangana state government (51%). It operates the Singareni coal seams in the Godavari valley, but it reports independently, not under CIL.\n• Statement 3 — Correct: The 2020 commercial coal mining reform removed the restriction on private sector coal sales, marking the first time since 1973 nationalisation that private companies could sell coal commercially.\n\nValue Addition:\n• CIL's eight subsidiaries: ECL (WB), BCCL (Jharkhand), CCL (Jharkhand), NCL (MP), WCL (Maharashtra), SECL (MP/CG), MCL (Odisha), NEC (NE states).\n• NEC (North Eastern Coalfields) operates in Assam's Makum coalfields.\n• CIL listed on stock exchanges in 2010 in one of India's largest IPOs."
+    },
+    "hi": {
+      "display_text": "भारत में Coal India Limited (CIL) और कोयला क्षेत्र के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Coal India Limited (CIL) को महारत्न केंद्रीय सार्वजनिक क्षेत्र की उद्यम के रूप में वर्गीकृत किया गया है और यह भारत के कुल कोयला उत्पादन का लगभग 80% हिस्सा रखता है।\n2. Singareni Collieries Company Limited (SCCL) Coal India Limited की सहायक कंपनी है और मुख्य रूप से गोदावरी कोयला क्षेत्र में संचालित होती है।\n3. 2020 में घोषित वाणिज्यिक कोयला खनन नीति ने निजी क्षेत्र की कंपनियों के लिए कोयला ब्लॉकों की नीलामी खोलकर CIL के वैधानिक एकाधिकार को समाप्त कर दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Coal India Limited (CIL) is classified as a Maharatna Central Public Sector Enterprise and accounts for approximately 80% of India's total coal production.",
+          "verdict": "सही है",
+          "reason": "CIL को महारत्न दर्जा दिया गया है और यह घरेलू कोयला उत्पादन में लगभग 80% हिस्सेदारी रखता है, जो अपनी सहायक कंपनियों के माध्यम से नियंत्रित करता है।"
+        },
+        {
+          "statement": "Singareni Collieries Company Limited (SCCL) is a subsidiary of Coal India Limited and operates primarily in the Godavari coalfield.",
+          "verdict": "गलत है",
+          "reason": "SCCL CIL की सहायक कंपनी नहीं है; यह भारत सरकार और तेलंगाना सरकार के बीच एक संयुक्त उद्यम है, जो गोदावरी घाटी के कोयला क्षेत्रों में स्वतंत्र रूप से संचालित होता है।"
+        },
+        {
+          "statement": "The Commercial Coal Mining policy announced in 2020 ended CIL's statutory monopoly by opening coal blocks for auction to private sector companies.",
+          "verdict": "सही है",
+          "reason": "2020 में खनिज और खनिज विकास (विनियमन) अधिनियम में संशोधन के तहत निजी कंपनियों को वाणिज्यिक कोयला खनन और बिक्री की अनुमति दी गई, जिससे CIL का एकाधिकार समाप्त हुआ।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो जानते हैं कि CIL प्रभुत्वशाली है और SCCL दक्षिण में संचालित होती है, वे मान सकते हैं कि यह CIL की सहायक कंपनी है, इसलिए तीनों को सही चिह्नित कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: CIL का महारत्न दर्जा और लगभग 80% उत्पादन हिस्सा — सही।",
+        "कथन 2 की जांच करें: SCCL भारत सरकार और तेलंगाना सरकार का संयुक्त उद्यम है, CIL की सहायक कंपनी नहीं — कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: 2020 में वाणिज्यिक खनन खोलना — सही।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "SCCL को अक्सर CIL की सहायक कंपनी समझा जाता है क्योंकि यह कोयला क्षेत्र में काम करती है और एक सार्वजनिक क्षेत्र की इकाई है। यह भ्रम इस तथ्य पर आधारित है कि SCCL गोदावरी कोयला क्षेत्र में संचालित होती है (सत्य है), लेकिन यह भारत सरकार (49%) और तेलंगाना राज्य सरकार (51%) के बीच एक अलग संयुक्त उद्यम है, न कि CIL की सहायक कंपनी। जो छात्र केवल सार्वजनिक क्षेत्र की कोयला कंपनियों का सामान्य ज्ञान रखते हैं, वे कथन 2 को सही मानकर चिह्नित कर सकते हैं।",
+      "final_explanation": "CIL की संरचना और SCCL के भेद को UPSC में अक्सर परखा जाता है।\n\n• कथन 1 — सही: CIL की स्थापना 1973 में कोयला खदान (राष्ट्रीयकरण) अधिनियम के तहत एक राष्ट्रीयकृत होल्डिंग कंपनी के रूप में हुई थी। इसे महारत्न दर्जा प्राप्त है और यह आठ पूर्ण स्वामित्व वाली सहायक कंपनियों के माध्यम से घरेलू कोयला उत्पादन का लगभग 80% नियंत्रित करता है।\n• कथन 2 — गलत: SCCL एक स्वतंत्र इकाई है — यह भारत सरकार (49%) और तेलंगाना राज्य सरकार (51%) के संयुक्त स्वामित्व वाली सार्वजनिक क्षेत्र की कंपनी है। यह गोदावरी घाटी के सिंगरेनी कोयला खदानों का संचालन करती है, लेकिन यह CIL के अधीन नहीं है।\n• कथन 3 — सही: 2020 के वाणिज्यिक कोयला खनन सुधार ने निजी क्षेत्र को कोयला बिक्री की अनुमति दी, जो 1973 के राष्ट्रीयकरण के बाद पहली बार था।\n\nमूल्यवर्धन:\n• CIL की आठ सहायक कंपनियाँ: ECL (पश्चिम बंगाल), BCCL (झारखंड), CCL (झारखंड), NCL (मध्य प्रदेश), WCL (महाराष्ट्र), SECL (मध्य प्रदेश/छत्तीसगढ़), MCL (ओडिशा), NEC (उत्तर-पूर्वी राज्य)।\n• NEC (उत्तर-पूर्वी कोयला क्षेत्र) असम के मकुम कोयला क्षेत्रों में संचालित है।\n• CIL ने 2010 में भारत के सबसे बड़े प्रारंभिक सार्वजनिक निर्गमों (IPO) में से एक के तहत स्टॉक एक्सचेंजों में सूचीबद्ध किया।"
+    }
+  },
+  {
+    "uuid": "2530c174-d12a-47d3-815c-301d32888a4e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Petroleum Pricing and Subsidy Architecture in India"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Petrol deregulation 2010, diesel deregulation 2014",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Deregulation of petrol prices — 2010\n(b) Deregulation of diesel prices — 2010\n(c) DBTL (Pahal scheme) — Direct transfer of kerosene subsidy\n(d) Under-recovery — Accounting loss recorded by oil marketing companies",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know petrol was deregulated before diesel but confuse the exact years (2010 vs 2014) may pick option (b) believing diesel was deregulated in 2010.",
+      "elimination_logic": [
+        "Petrol prices were deregulated in June 2010 following Kirit Parikh Committee recommendations — confirm year.",
+        "Eliminate (b): Diesel was deregulated in October 2014, not 2010.",
+        "Eliminate (c): DBTL/Pahal is for LPG, not kerosene — kerosene remains subsidised through PDS without DBTL.",
+        "Eliminate (d): Under-recovery is not accounting loss — it is the shortfall between the market-determined price and the selling price; actual accounting profit/loss is a separate concept.",
+        "Confirm (a): Petrol deregulated in 2010 — correctly matched."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap exploits confusion between 2010 (petrol deregulation) and 2014 (diesel deregulation). Both events are well-known but students frequently swap their years. Option (b) is designed to present diesel with the wrong year (2010) to catch students who know the sequence but not the precise dates.",
+      "final_explanation": "India's petroleum subsidy reform unfolded in stages, with each fuel type deregulated at a different point in time.\n\n• Option (a) — Correct: Petrol prices were freed from government control in June 2010, based on the Kirit Parikh Committee report. This allowed oil marketing companies to price petrol at market-linked rates.\n• Option (b) — Incorrect: Diesel was deregulated in October 2014, not 2010. Confusing this with petrol's 2010 date is the intended trap.\n• Option (c) — Incorrect: The DBTL (Direct Benefit Transfer for LPG) or 'Pahal' scheme transfers LPG subsidies directly to beneficiaries' bank accounts. Kerosene remains under PDS and has a different subsidy delivery mechanism.\n• Option (d) — Incorrect: Under-recovery is NOT an accounting loss. It is the difference between the import parity price (market price) and the price at which the fuel is sold to consumers. An oil company can have under-recoveries and still be profitable on other operations.\n\nValue Addition:\n• LPG and kerosene remain subsidised; LPG subsidy is delivered via Pahal — the world's largest DBT programme.\n• APM (Administered Price Mechanism) was dismantled in 2002 for most products but lingered for sensitive fuels.\n• India's SPR (Strategic Petroleum Reserve) stores crude oil, not refined products, providing approximately 9.5 days of import cover."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही रूप से मेल खाता है?\n\n(a) पेट्रोल की कीमतों का मुक्तिकरण — 2010\n(b) डीजल की कीमतों का मुक्तिकरण — 2010\n(c) DBTL (पहल योजना) — केरोसिन सब्सिडी का प्रत्यक्ष हस्तांतरण\n(d) अंडर-रिकवरी — तेल विपणन कंपनियों द्वारा दर्ज की गई लेखांकन हानि",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — वे छात्र जो जानते हैं कि पेट्रोल को डीजल से पहले मुक्त किया गया था लेकिन सही वर्षों (2010 बनाम 2014) में भ्रमित हैं, विकल्प (b) चुन सकते हैं यह मानकर कि डीजल 2010 में मुक्त किया गया था।",
+      "elimination_logic": [
+        "पेट्रोल की कीमतें जून 2010 में किरीट पारिख समिति की सिफारिशों के बाद मुक्त की गईं — वर्ष की पुष्टि करें।",
+        "(b) को हटाएं: डीजल अक्टूबर 2014 में मुक्त किया गया था, 2010 में नहीं।",
+        "(c) को हटाएं: DBTL/पहल एलपीजी के लिए है, केरोसिन के लिए नहीं — केरोसिन पीडीएस के माध्यम से सब्सिडी प्राप्त करता है और DBTL के अंतर्गत नहीं आता।",
+        "(d) को हटाएं: अंडर-रिकवरी लेखांकन हानि नहीं है — यह बाजार-निर्धारित मूल्य और बिक्री मूल्य के बीच की कमी है; वास्तविक लेखांकन लाभ/हानि अलग अवधारणा है।",
+        "(a) की पुष्टि करें: पेट्रोल 2010 में मुक्त किया गया — सही मेल।"
+      ],
+      "upsc_trap_explanation": "टेम्पोरल-स्वैप जाल 2010 (पेट्रोल मुक्तिकरण) और 2014 (डीजल मुक्तिकरण) के बीच भ्रम का फायदा उठाता है। दोनों घटनाएँ अच्छी तरह जानी जाती हैं लेकिन छात्र अक्सर वर्षों को उलट देते हैं। विकल्प (b) डीजल को गलत वर्ष (2010) के साथ प्रस्तुत करता है ताकि वे छात्र फंस जाएं जो क्रम जानते हैं लेकिन सही तिथियाँ नहीं।",
+      "final_explanation": "भारत में पेट्रोलियम सब्सिडी सुधार चरणबद्ध तरीके से हुआ, जिसमें प्रत्येक ईंधन प्रकार को अलग-अलग समय पर मुक्त किया गया।\n\n• विकल्प (a) — सही: पेट्रोल की कीमतें जून 2010 में सरकार के नियंत्रण से मुक्त हुईं, किरीट पारिख समिति की रिपोर्ट के आधार पर। इससे तेल विपणन कंपनियों को पेट्रोल की कीमत बाजार आधारित निर्धारित करने की अनुमति मिली।\n• विकल्प (b) — गलत: डीजल अक्टूबर 2014 में मुक्त किया गया था, 2010 में नहीं। पेट्रोल के 2010 के तारीख से भ्रमित होना जाल है।\n• विकल्प (c) — गलत: DBTL (एलपीजी के लिए डायरेक्ट बेनिफिट ट्रांसफर) या 'पहल' योजना एलपीजी सब्सिडी सीधे लाभार्थियों के बैंक खातों में ट्रांसफर करती है। केरोसिन पीडीएस के अंतर्गत है और उसकी सब्सिडी वितरण प्रणाली अलग है।\n• विकल्प (d) — गलत: अंडर-रिकवरी लेखांकन हानि नहीं है। यह आयात समानता मूल्य (बाजार मूल्य) और उपभोक्ताओं को बेचे जाने वाले मूल्य के बीच का अंतर है। एक तेल कंपनी के पास अंडर-रिकवरी हो सकती है और फिर भी अन्य संचालन में लाभकारी हो सकती है।\n\nमूल्य संवर्धन:\n• एलपीजी और केरोसिन सब्सिडी प्राप्त करते हैं; एलपीजी सब्सिडी पहल के माध्यम से दी जाती है — जो विश्व की सबसे बड़ी DBT योजना है।\n• APM (प्रशासित मूल्य तंत्र) 2002 में अधिकांश उत्पादों के लिए समाप्त कर दिया गया था लेकिन संवेदनशील ईंधनों के लिए बना रहा।\n• भारत का SPR (स्ट्रैटेजिक पेट्रोलियम रिजर्व) कच्चे तेल को संग्रहीत करता है, परिष्कृत उत्पादों को नहीं, जो लगभग 9.5 दिनों के आयात आवरण के बराबर है।"
+    }
+  },
+  {
+    "uuid": "0bf95518-a43a-418e-907e-e6744ec34acf",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Electricity Transmission Grid: National Grid Integration and Frequency Zones"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Southern grid last to join national grid 2013",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding India's electricity transmission grid:\n\n1. The integration of all five regional electricity grids into a single synchronised National Grid was completed in the year 2013, with the Southern Regional Grid being the last to join.\n2. High Voltage Direct Current (HVDC) transmission lines are used in India primarily for short-distance urban distribution because they are more cost-effective than HVAC at short distances.\n3. Power Grid Corporation of India (PGCIL) functions as the Central Transmission Utility and is responsible for the operation and development of the inter-state transmission network, not electricity generation.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The integration of all five regional electricity grids into a single synchronised National Grid was completed in the year 2013, with the Southern Regional Grid being the last to join.",
+          "verdict": "Correct",
+          "reason": "The Southern grid operated at a slightly different frequency (49.5 Hz) and required synchronisation infrastructure before it could join the national grid in December 2013."
+        },
+        {
+          "statement": "High Voltage Direct Current (HVDC) transmission lines are used in India primarily for short-distance urban distribution because they are more cost-effective than HVAC at short distances.",
+          "verdict": "Incorrect",
+          "reason": "HVDC is used for long-distance bulk power transmission (e.g., Rihand-Delhi, Vindhyachal links) because it becomes cost-effective over HVAC only beyond a break-even distance of several hundred kilometres."
+        },
+        {
+          "statement": "Power Grid Corporation of India (PGCIL) functions as the Central Transmission Utility and is responsible for the operation and development of the inter-state transmission network, not electricity generation.",
+          "verdict": "Correct",
+          "reason": "PGCIL owns and operates the inter-state transmission system; it is a transmission-only utility and does not generate electricity."
+        }
+      ],
+      "strong_distractor": "d — Students who recall that the national grid was completed and PGCIL is important may accept all three as correct without examining Statement 2's false claim about HVDC being suited for short distances.",
+      "elimination_logic": [
+        "Verify Statement 1: National Grid completed 2013, Southern grid (frequency mismatch) was last — Correct.",
+        "Examine Statement 2: HVDC for short-distance urban distribution — false; HVDC is for long-distance bulk transmission — Incorrect.",
+        "Verify Statement 3: PGCIL as Central Transmission Utility, not a generation entity — Correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect — answer is (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap in Statement 2 is subtler — it is actually a scope-extension trap inverting the application of HVDC. Students who recall 'HVDC is used in India' without knowing the long-distance rationale may accept the short-distance claim. The Rihand-Delhi and Vindhyachal HVDC links are classic examples of long-distance bulk power transport, the precise context where HVDC outperforms HVAC economically.",
+      "final_explanation": "India's national grid integration is a landmark in electricity sector development.\n\n• Statement 1 — Correct: The Northern, Eastern, Western, and North-Eastern grids were synchronised earlier; the Southern Regional Grid (operating at 49.5 Hz instead of the standard 50 Hz) required dedicated back-to-back HVDC links and synchronisation work before joining in December 2013.\n• Statement 2 — Incorrect: HVDC transmission is economically superior for long-distance (typically >600–800 km) bulk power transfer because it minimises reactive power losses. For short urban distances, HVAC is simpler and more economical. India's HVDC lines (Rihand-Delhi, ±800 kV Champa-Kurukshetra) are all long-distance projects.\n• Statement 3 — Correct: PGCIL operates the inter-state transmission network (ISTS) and acts as Central Transmission Utility. It is a Navratna PSU under the Ministry of Power.\n\nValue Addition:\n• The ±800 kV HVDC Champa-Kurukshetra line is one of the world's first at that voltage level.\n• POSOCO (Power System Operation Corporation) manages real-time grid operation — distinct from PGCIL's asset ownership role.\n• One Nation One Grid One Frequency was achieved synchronously for all five grids in 2013."
+    },
+    "hi": {
+      "display_text": "भारत के विद्युत संचरण ग्रिड के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. सभी पांच क्षेत्रीय विद्युत ग्रिड को एक एकीकृत सिंक्रोनस राष्ट्रीय ग्रिड में जोड़ने का कार्य वर्ष 2013 में पूरा हुआ, जिसमें दक्षिणी क्षेत्रीय ग्रिड अंतिम था।\n2. भारत में उच्च वोल्टेज डायरेक्ट करंट (HVDC) संचरण लाइनों का उपयोग मुख्यतः शॉर्ट-डिस्टेंस शहरी वितरण के लिए किया जाता है क्योंकि ये शॉर्ट दूरी पर HVAC की तुलना में अधिक किफायती हैं।\n3. पावर ग्रिड कॉर्पोरेशन ऑफ इंडिया (PGCIL) केंद्रीय संचरण उपयोगिता के रूप में कार्य करता है और अंतर-राज्यीय संचरण नेटवर्क के संचालन एवं विकास के लिए जिम्मेदार है, न कि विद्युत उत्पादन के लिए।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The integration of all five regional electricity grids into a single synchronised National Grid was completed in the year 2013, with the Southern Regional Grid being the last to join.",
+          "verdict": "सही है",
+          "reason": "दक्षिणी ग्रिड थोड़ी अलग आवृत्ति (49.5 Hz) पर संचालित होता था और इसे राष्ट्रीय ग्रिड में शामिल होने से पहले सिंक्रोनाइज़ेशन अवसंरचना की आवश्यकता थी, जो दिसंबर 2013 में पूरी हुई।"
+        },
+        {
+          "statement": "High Voltage Direct Current (HVDC) transmission lines are used in India primarily for short-distance urban distribution because they are more cost-effective than HVAC at short distances.",
+          "verdict": "गलत है",
+          "reason": "HVDC का उपयोग लंबी दूरी के थोक विद्युत संचरण के लिए किया जाता है (जैसे, रिहंड-दिल्ली, विंध्याचल लिंक) क्योंकि यह HVAC की तुलना में केवल कई सौ किलोमीटर की ब्रेक-ईवन दूरी के बाद ही किफायती होता है।"
+        },
+        {
+          "statement": "Power Grid Corporation of India (PGCIL) functions as the Central Transmission Utility and is responsible for the operation and development of the inter-state transmission network, not electricity generation.",
+          "verdict": "सही है",
+          "reason": "PGCIL अंतर-राज्यीय संचरण प्रणाली का स्वामित्व और संचालन करता है; यह केवल संचरण उपयोगिता है और विद्युत उत्पादन नहीं करता।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र याद करते हैं कि राष्ट्रीय ग्रिड पूरा हो चुका है और PGCIL महत्वपूर्ण है, वे बिना कथन 2 के झूठे दावे की जांच किए सभी तीनों को सही मान सकते हैं कि HVDC शॉर्ट दूरी के लिए उपयुक्त है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: राष्ट्रीय ग्रिड 2013 में पूरा हुआ, दक्षिणी ग्रिड (आवृत्ति असंगति) अंतिम था — सही।",
+        "कथन 2 की जांच करें: HVDC शॉर्ट-डिस्टेंस शहरी वितरण के लिए — गलत; HVDC लंबी दूरी के थोक संचरण के लिए है — गलत।",
+        "कथन 3 सत्यापित करें: PGCIL केंद्रीय संचरण उपयोगिता के रूप में, उत्पादन इकाई नहीं — सही।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में समय-संबंधी स्वैप जाल अधिक सूक्ष्म है — यह वास्तव में HVDC के उपयोग के दायरे का उलटाव है। जो छात्र 'HVDC भारत में उपयोग होता है' याद करते हैं लेकिन लंबी दूरी के कारण को नहीं जानते, वे शॉर्ट-डिस्टेंस दावे को स्वीकार कर सकते हैं। रिहंड-दिल्ली और विंध्याचल HVDC लिंक लंबी दूरी के थोक विद्युत परिवहन के क्लासिक उदाहरण हैं, जहाँ HVDC आर्थिक रूप से HVAC से बेहतर है।",
+      "final_explanation": "भारत का राष्ट्रीय ग्रिड एक महत्वपूर्ण मील का पत्थर है विद्युत क्षेत्र के विकास में।\n\n• कथन 1 — सही: उत्तरी, पूर्वी, पश्चिमी और उत्तर-पूर्वी ग्रिड पहले सिंक्रोनाइज़ हो चुके थे; दक्षिणी क्षेत्रीय ग्रिड (जो मानक 50 Hz के बजाय 49.5 Hz पर संचालित होता है) को दिसंबर 2013 में शामिल होने से पहले समर्पित बैक-टू-बैक HVDC लिंक और सिंक्रोनाइज़ेशन कार्य की आवश्यकता थी।\n• कथन 2 — गलत: HVDC संचरण लंबी दूरी (आमतौर पर >600–800 किमी) के थोक विद्युत स्थानांतरण के लिए आर्थिक रूप से श्रेष्ठ है क्योंकि यह प्रतिक्रियाशील शक्ति हानि को कम करता है। शॉर्ट शहरी दूरी के लिए HVAC सरल और अधिक किफायती है। भारत की HVDC लाइनें (रिहंड-दिल्ली, ±800 kV चंपा-कुरुक्षेत्र) सभी लंबी दूरी की परियोजनाएं हैं।\n• कथन 3 — सही: PGCIL अंतर-राज्यीय संचरण नेटवर्क (ISTS) का संचालन करता है और केंद्रीय संचरण उपयोगिता के रूप में कार्य करता है। यह ऊर्जा मंत्रालय के अधीन नवरत्न PSU है।\n\nमूल्यवर्धन:\n• ±800 kV HVDC चंपा-कुरुक्षेत्र लाइन उस वोल्टेज स्तर पर विश्व की पहली लाइनों में से एक है।\n• POSOCO (पावर सिस्टम ऑपरेशन कॉर्पोरेशन) वास्तविक समय ग्रिड संचालन का प्रबंधन करता है — जो PGCIL के संपत्ति स्वामित्व से अलग है।\n• 2013 में सभी पांच ग्रिड के लिए एक राष्ट्र एक ग्रिड एक आवृत्ति सिंक्रोनस रूप से प्राप्त की गई।"
+    }
+  },
+  {
+    "uuid": "e215d907-fcbb-4fab-b55f-ee7a19ff3587",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Imported Coal Dependency and Port Infrastructure Linkage"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "Reserve vs quality paradox — India large reserves yet top importer",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about India's coal import patterns:\n\nStatement 1: India is among the world's top four countries in terms of total coal reserves yet simultaneously ranks among the top three coal-importing nations globally.\n\nStatement 2: India imports coking coal primarily from Indonesia due to that country's geographic proximity and price competitiveness.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India is among the world's top four countries in terms of total coal reserves yet simultaneously ranks among the top three coal-importing nations globally.",
+          "verdict": "Correct",
+          "reason": "India holds the fourth-largest coal reserves globally but imports significant quantities because domestic coal is predominantly high-ash, low-calorific-value coal, and prime coking coal is scarce — making imports necessary for quality reasons."
+        },
+        {
+          "statement": "India imports coking coal primarily from Indonesia due to that country's geographic proximity and price competitiveness.",
+          "verdict": "Incorrect",
+          "reason": "India imports coking coal mainly from Australia (high-quality hard coking coal); Indonesia supplies primarily thermal coal (steam coal) to India, not coking coal."
+        }
+      ],
+      "strong_distractor": "a — Students who know India is both a major reserve holder and a major importer may accept Statement 1 easily, then assume Statement 2 is also correct because Indonesia is a well-known coal supplier to India — without distinguishing between coking and thermal coal import sources.",
+      "elimination_logic": [
+        "Evaluate Statement 1: India fourth-largest reserves, yet top-three importer — reserve vs quality paradox is a well-established fact — Correct.",
+        "Evaluate Statement 2: Indonesia supplies thermal coal; coking coal comes primarily from Australia — Statement 2 incorrectly attributes coking coal imports to Indonesia — Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — answer is (c)."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges India's two types of coal imports: thermal coal (bulk, from Indonesia/South Africa) and coking coal (higher grade, from Australia). Students who broadly know 'India imports coal from Indonesia' apply this to both types. The distinction is critical: Indonesia's coal is sub-bituminous steam coal; Australia's Bowen Basin produces the high-quality metallurgical coking coal that Indian steel plants require and cannot source domestically in sufficient quantity.",
+      "final_explanation": "India's coal import paradox stems from the quality mismatch between reserve abundance and industrial requirements.\n\n• Statement 1 — Correct: India holds the fourth-largest proven coal reserves globally (behind USA, Russia, Australia) yet is among the top three coal importers. This is because domestic coal is predominantly high-ash, lower-calorific-value coal that requires beneficiation, and prime coking coal for steel making is available domestically only from Jharia — in insufficient quantities.\n• Statement 2 — Incorrect: India's coking coal imports come primarily from Australia (Queensland's Bowen Basin), which produces hard coking coal with low ash and sulphur. Indonesia is a major source of thermal coal (steam coal) used in power stations, not of metallurgical coking coal.\n\nValue Addition:\n• South Africa and the USA are also sources of thermal coal imports to India.\n• Dedicated coal import terminals: Paradip, Visakhapatnam, Ennore, and Mundra facilitate large-scale imports.\n• Imported coal-based power plants are typically coastal (e.g., Tata Power's Mundra UMPP) to minimise inland transport cost."
+    },
+    "hi": {
+      "display_text": "भारत के कोयला आयात पैटर्न के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: भारत के पास कुल कोयला भंडार के मामले में विश्व के शीर्ष चार देशों में से एक होने के बावजूद, वह वैश्विक स्तर पर शीर्ष तीन कोयला आयातक देशों में भी शामिल है।\n\nकथन 2: भारत मुख्यतः इंडोनेशिया से कोकिंग कोयला आयात करता है क्योंकि वह देश भौगोलिक निकटता और मूल्य प्रतिस्पर्धा के कारण अनुकूल है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India is among the world's top four countries in terms of total coal reserves yet simultaneously ranks among the top three coal-importing nations globally.",
+          "verdict": "सही है",
+          "reason": "भारत के पास विश्व में चौथे सबसे बड़े कोयला भंडार हैं, लेकिन घरेलू कोयला मुख्यतः उच्च राख, कम ऊष्मा मूल्य वाला होता है, और प्रमुख कोकिंग कोयला दुर्लभ है — इसलिए गुणवत्ता कारणों से आयात आवश्यक है।"
+        },
+        {
+          "statement": "India imports coking coal primarily from Indonesia due to that country's geographic proximity and price competitiveness.",
+          "verdict": "गलत है",
+          "reason": "भारत मुख्यतः ऑस्ट्रेलिया से कोकिंग कोयला आयात करता है (उच्च गुणवत्ता वाला हार्ड कोकिंग कोयला); इंडोनेशिया मुख्यतः भारत को थर्मल कोयला (स्टीम कोयला) प्रदान करता है, कोकिंग कोयला नहीं।"
+        }
+      ],
+      "strong_distractor": "a — जो छात्र जानते हैं कि भारत के पास बड़े भंडार हैं और वह बड़ा आयातक भी है, वे कथन 1 को आसानी से स्वीकार कर लेते हैं, फिर कथन 2 को भी सही मान लेते हैं क्योंकि इंडोनेशिया भारत का एक जाना-माना कोयला आपूर्तिकर्ता है — बिना कोकिंग और थर्मल कोयला के आयात स्रोतों के बीच अंतर किए।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: भारत के पास चौथे सबसे बड़े भंडार हैं, फिर भी शीर्ष तीन आयातकों में है — भंडार बनाम गुणवत्ता विरोधाभास एक स्थापित तथ्य है — सही।",
+        "कथन 2 का मूल्यांकन करें: इंडोनेशिया थर्मल कोयला प्रदान करता है; कोकिंग कोयला मुख्यतः ऑस्ट्रेलिया से आता है — कथन 2 ने गलत तरीके से कोकिंग कोयला आयात को इंडोनेशिया से जोड़ा है — गलत।",
+        "कथन 1 सही है, कथन 2 गलत है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल भारत के दो प्रकार के कोयला आयातों को मिलाता है: थर्मल कोयला (बड़े पैमाने पर, इंडोनेशिया/दक्षिण अफ्रीका से) और कोकिंग कोयला (उच्च गुणवत्ता वाला, ऑस्ट्रेलिया से)। जो छात्र सामान्यतः जानते हैं कि 'भारत इंडोनेशिया से कोयला आयात करता है', वे इसे दोनों प्रकारों पर लागू कर देते हैं। यह भेद अत्यंत महत्वपूर्ण है: इंडोनेशिया का कोयला उप-बिटुमिनस स्टीम कोयला है; ऑस्ट्रेलिया का बोवेन बेसिन उच्च गुणवत्ता वाला धातुकर्मीय कोकिंग कोयला उत्पादन करता है, जिसकी भारतीय इस्पात कारखानों को आवश्यकता होती है और जो घरेलू रूप से पर्याप्त मात्रा में उपलब्ध नहीं है।",
+      "final_explanation": "भारत के कोयला आयात विरोधाभास का कारण भंडार की प्रचुरता और औद्योगिक आवश्यकताओं के बीच गुणवत्ता का मेल न होना है।\n\n• कथन 1 — सही: भारत के पास विश्व में चौथे सबसे बड़े प्रमाणित कोयला भंडार हैं (यूएसए, रूस, ऑस्ट्रेलिया के बाद) फिर भी वह शीर्ष तीन कोयला आयातकों में है। इसका कारण है कि घरेलू कोयला मुख्यतः उच्च राख वाला, कम ऊष्मा मूल्य वाला होता है जिसे सुधार की आवश्यकता होती है, और इस्पात निर्माण के लिए प्रमुख कोकिंग कोयला केवल झारखंड के झरिया क्षेत्र से सीमित मात्रा में उपलब्ध है।\n• कथन 2 — गलत: भारत का कोकिंग कोयला आयात मुख्यतः ऑस्ट्रेलिया (क्वींसलैंड के बोवेन बेसिन) से होता है, जो कम राख और सल्फर वाला हार्ड कोकिंग कोयला उत्पादन करता है। इंडोनेशिया थर्मल कोयला (स्टीम कोयला) का प्रमुख स्रोत है, जो विद्युत संयंत्रों में उपयोग होता है, न कि धातुकर्मीय कोकिंग कोयला का।\n\nमूल्यवर्धन:\n• दक्षिण अफ्रीका और अमेरिका भी भारत के थर्मल कोयला आयात स्रोत हैं।\n• समर्पित कोयला आयात टर्मिनल: पारादीप, विशाखापत्तनम, एन्नोर, और मुंद्रा बड़े पैमाने पर आयात की सुविधा प्रदान करते हैं।\n• आयातित कोयला आधारित विद्युत संयंत्र आमतौर पर तटीय होते हैं (जैसे टाटा पावर का मुंद्रा UMPP) ताकि आंतरिक परिवहन लागत कम हो।"
+    }
+  },
+  {
+    "uuid": "cdffc84a-d568-4e1a-b962-d579c24737f5",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Hydro-Thermal Mix and Load Balancing in India's Power Sector"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Pumped storage hydro — generation and storage duality",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A power facility in southern India operates as follows: during late-night hours when grid demand is low, it consumes electricity from the grid to pump water from a lower reservoir to an elevated upper reservoir. During peak afternoon demand, it releases this water through turbines to generate electricity and supply it to the grid. The facility's output thus varies entirely based on grid demand signals rather than fuel availability.\n\nThis facility is best described as which of the following?\n\n(a) A renewable energy peaker that supplements solar generation during non-solar hours\n(b) A base load thermal plant with water-cooled turbines that provides constant grid support\n(c) A pumped storage hydropower station that functions both as a generation asset and a grid storage asset, blurring conventional and storage energy boundaries\n(d) A gas peaker plant that uses water injection technology to improve turbine efficiency",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students familiar with pumped storage hydro may classify it as 'renewable' because it uses water, overlooking that it is an energy storage technology that consumes more energy than it generates.",
+      "elimination_logic": [
+        "The scenario describes a facility that consumes electricity during low demand and generates during peak demand — this is a storage facility, specifically pumped storage hydropower.",
+        "Eliminate (a): Pumped storage is not classified under solar or wind renewable categories; it is a storage and peaking technology.",
+        "Eliminate (b): 'Base load thermal plant' supplies constant output; this scenario describes variable, demand-responsive operation — opposite of base load.",
+        "Eliminate (d): The facility is not a gas peaker; it uses water as the storage medium.",
+        "Confirm (c): Pumped storage hydro acts as both a generation asset and a grid storage asset, blurring the conventional hydro/storage boundary — it is the grid balancing technology described."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges pumped storage hydro with conventional hydro or renewable storage. Pumped storage is unique: it pumps water uphill using surplus electricity (acting as storage/load) and releases it through turbines during demand peaks (acting as generation). This dual role blurs the conventional vs storage boundary. Students who see 'water-based electricity' may classify it as renewable generation, missing its primary role as a storage and grid balancing tool.",
+      "final_explanation": "India's power grid management requires matching instantaneous supply with demand, which varies significantly across the day and seasons.\n\nThe scenario describes pumped storage hydropower (PSH) — a facility that:\n1. Pumps water from a lower reservoir to an upper reservoir using surplus nighttime electricity (charging phase)\n2. Releases water through turbines during peak daytime demand (discharging phase)\n\n• Option (a) — Incorrect: PSH is not classified as solar or wind renewable energy. It is a storage technology that can use any source of electricity for pumping.\n• Option (b) — Incorrect: Base load thermal plants (coal/nuclear) operate at constant, high output throughout the day. PSH does the opposite — it is highly responsive and variable.\n• Option (c) — Correct: PSH serves as both a generation asset (during discharge) and a storage asset (during pumping), which blurs the conventional hydro vs storage boundary in grid planning. It is India's most significant utility-scale energy storage technology currently.\n• Option (d) — Incorrect: Gas peaker plants use gas turbines for rapid response; they do not use water or operate as a storage system.\n\nValue Addition:\n• India has PSH stations at Kadamparai (Tamil Nadu), Srisailam (Telangana), and Bhira (Maharashtra).\n• PSH round-trip efficiency is 70–80% — it loses some energy in the pump-generate cycle.\n• Seasonal mismatch: hydro peaks in monsoon; electricity demand peaks in summer — PSH helps bridge intra-day gaps but not seasonal ones."
+    },
+    "hi": {
+      "display_text": "दक्षिण भारत में एक विद्युत सुविधा निम्नलिखित प्रकार से संचालित होती है: जब ग्रिड की मांग कम होती है, तो यह ग्रिड से बिजली लेकर पानी को निचले जलाशय से ऊंचे जलाशय में पंप करती है। पीक दोपहर की मांग के दौरान, यह पानी को टरबाइन के माध्यम से छोड़कर बिजली उत्पन्न करती है और ग्रिड को आपूर्ति करती है। इस सुविधा का उत्पादन पूरी तरह से ग्रिड मांग संकेतों पर निर्भर करता है, न कि ईंधन उपलब्धता पर।\n\nइस सुविधा का सबसे उपयुक्त वर्णन निम्नलिखित में से कौन सा है?\n\n(a) एक नवीकरणीय ऊर्जा पीकर जो गैर-सौर घंटों में सौर उत्पादन की पूर्ति करता है\n(b) एक बेस लोड थर्मल प्लांट जिसमें जल-शीतलित टरबाइन होते हैं जो निरंतर ग्रिड समर्थन प्रदान करता है\n(c) एक पंप्ड स्टोरेज हाइड्रोपावर स्टेशन जो उत्पादन संपत्ति और ग्रिड भंडारण संपत्ति दोनों के रूप में कार्य करता है, पारंपरिक और भंडारण ऊर्जा सीमाओं को धुंधला करता है\n(d) एक गैस पीकर प्लांट जो टरबाइन दक्षता बढ़ाने के लिए जल इंजेक्शन तकनीक का उपयोग करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — पंप्ड स्टोरेज हाइड्रो से परिचित छात्र इसे 'नवीकरणीय' के रूप में वर्गीकृत कर सकते हैं क्योंकि यह पानी का उपयोग करता है, यह नजरअंदाज करते हुए कि यह एक ऊर्जा भंडारण तकनीक है जो उत्पन्न ऊर्जा से अधिक ऊर्जा खपत करती है।",
+      "elimination_logic": [
+        "यह परिदृश्य एक ऐसी सुविधा का वर्णन करता है जो कम मांग के दौरान बिजली का उपभोग करती है और उच्च मांग के दौरान उत्पादन करती है — यह एक भंडारण सुविधा है, विशेष रूप से पंप्ड स्टोरेज हाइड्रोपावर।",
+        "(a) को हटाएं: पंप्ड स्टोरेज को सौर या पवन नवीकरणीय श्रेणियों में वर्गीकृत नहीं किया जाता; यह एक भंडारण और पीकिंग तकनीक है।",
+        "(b) को हटाएं: 'बेस लोड थर्मल प्लांट' निरंतर आउटपुट प्रदान करता है; यह परिदृश्य चर, मांग-प्रतिक्रियाशील संचालन का वर्णन करता है — बेस लोड के विपरीत।",
+        "(d) को हटाएं: यह सुविधा गैस पीकर नहीं है; यह भंडारण माध्यम के रूप में पानी का उपयोग करती है।",
+        "(c) की पुष्टि करें: पंप्ड स्टोरेज हाइड्रो दोनों उत्पादन संपत्ति और ग्रिड भंडारण संपत्ति के रूप में कार्य करता है, पारंपरिक हाइड्रो/भंडारण सीमा को धुंधला करता है — यह ग्रिड संतुलन तकनीक है जिसका वर्णन किया गया है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल पंप्ड स्टोरेज हाइड्रो को पारंपरिक हाइड्रो या नवीकरणीय भंडारण के साथ मिला देता है। पंप्ड स्टोरेज अद्वितीय है: यह अधिशेष बिजली का उपयोग करके पानी को ऊपर की ओर पंप करता है (भंडारण/लोड के रूप में कार्य करता है) और मांग के पीक के दौरान टरबाइन के माध्यम से इसे छोड़ता है (उत्पादन के रूप में कार्य करता है)। यह द्वैध भूमिका पारंपरिक बनाम भंडारण सीमा को धुंधला करती है। जो छात्र 'पानी आधारित बिजली' देखते हैं वे इसे नवीकरणीय उत्पादन के रूप में वर्गीकृत कर सकते हैं, इसके प्राथमिक भंडारण और ग्रिड संतुलन उपकरण के रूप में भूमिका को नहीं समझते।",
+      "final_explanation": "भारत के पावर ग्रिड प्रबंधन के लिए तत्काल आपूर्ति को मांग के साथ मिलाना आवश्यक है, जो दिन और मौसम के अनुसार काफी भिन्न होती है।\n\nयह परिदृश्य पंप्ड स्टोरेज हाइड्रोपावर (PSH) का वर्णन करता है — एक ऐसी सुविधा जो:\n1. अधिशेष रात्रीकालीन बिजली का उपयोग करके पानी को निचले जलाशय से ऊपरी जलाशय में पंप करती है (चार्जिंग चरण)\n2. पीक दिन के दौरान टरबाइन के माध्यम से पानी छोड़ती है (डिस्चार्जिंग चरण)\n\n• विकल्प (a) — गलत: PSH को सौर या पवन नवीकरणीय ऊर्जा के रूप में वर्गीकृत नहीं किया जाता। यह एक भंडारण तकनीक है जो पंपिंग के लिए किसी भी स्रोत की बिजली का उपयोग कर सकती है।\n• विकल्प (b) — गलत: बेस लोड थर्मल प्लांट (कोयला/न्यूक्लियर) दिन भर स्थिर, उच्च आउटपुट पर चलते हैं। PSH इसका विपरीत है — यह अत्यंत प्रतिक्रियाशील और परिवर्तनीय है।\n• विकल्प (c) — सही: PSH उत्पादन संपत्ति (डिस्चार्ज के दौरान) और भंडारण संपत्ति (पंपिंग के दौरान) दोनों के रूप में कार्य करता है, जो ग्रिड योजना में पारंपरिक हाइड्रो बनाम भंडारण सीमा को धुंधला करता है। यह वर्तमान में भारत की सबसे महत्वपूर्ण उपयोगिता-स्तरीय ऊर्जा भंडारण तकनीक है।\n• विकल्प (d) — गलत: गैस पीकर प्लांट गैस टरबाइन का उपयोग करते हैं त्वरित प्रतिक्रिया के लिए; वे पानी का उपयोग नहीं करते और न ही भंडारण प्रणाली के रूप में कार्य करते हैं।\n\nमूल्य संवर्धन:\n• भारत में PSH स्टेशन कडंपराई (तमिलनाडु), श्रीसैलम (तेलंगाना), और भिरा (महाराष्ट्र) में हैं।\n• PSH का राउंड-ट्रिप दक्षता 70–80% है — पंप-उत्पादन चक्र में कुछ ऊर्जा खोती है।\n• मौसमी असंगति: हाइड्रो मानसून में चरम पर होता है; बिजली की मांग गर्मी में चरम पर होती है — PSH दिन के भीतर के अंतर को पाटने में मदद करता है लेकिन मौसमी अंतर को नहीं।"
+    }
+  },
+  {
+    "uuid": "054a1cb8-3580-4e88-85fb-10bb642a7a4a",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Coal: Classification and Rank Hierarchy",
+        "Major Coalfield Regions and Their River Basin Associations"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Coking vs non-coking coal and coalfield-state mapping",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the coalfields in List I with their correct description in List II:",
+        "columns": [
+          "List I — Coalfield",
+          "List II — Description"
+        ],
+        "rows": [
+          [
+            "A. Jharia",
+            "1. Located in Odisha; part of Mahanadi belt; state with India's largest coal reserves"
+          ],
+          [
+            "B. Raniganj",
+            "2. India's only source of prime coking coal; Damodar Valley; Jharkhand"
+          ],
+          [
+            "C. Talcher",
+            "3. Son-Narmada belt; Madhya Pradesh; supplies multiple thermal power stations"
+          ],
+          [
+            "D. Singrauli",
+            "4. Oldest commercially mined coalfield in India; non-coking bituminous; straddles WB-Jharkhand"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-4, C-1, D-3\n(c) A-4, B-2, C-1, D-3\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who associate Jharia with coking coal correctly but then incorrectly match Talcher with Jharkhand (confusing Odisha's Talcher with Jharkhand's coalfields) will choose option (a).",
+      "elimination_logic": [
+        "Match A (Jharia): India's only prime coking coal source — matches 2 (prime coking coal, steel industry use).",
+        "Match B (Raniganj): oldest coalfield, non-coking bituminous — matches 4 (oldest coalfield, thermal/industrial use).",
+        "Match C (Talcher): located in Odisha, Mahanadi belt — matches 1 (Odisha, largest state reserves).",
+        "Match D (Singrauli): Son-Narmada belt, MP — matches 3 (MP, Son-Narmada basin), confirming answer (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap operates between Talcher (Odisha/Mahanadi) and Bokaro (Jharkhand/Damodar). Both are large coalfields but in different states and river belts. Option (a) is designed to pair Talcher with Jharkhand, punishing students who know Talcher is a major coalfield but have not pinned its state-basin association precisely. Similarly, Singrauli is on the MP-UP border in the Son basin — students may associate it with UP rather than MP.",
+      "final_explanation": "India's major coalfields align with specific river basins and states, and their coal type determines industrial use.\n\nCorrect matches: A-2, B-4, C-1, D-3\n\n• A (Jharia) — 2: Located in Jharkhand's Damodar Valley, Jharia is India's only source of prime hard coking coal, essential for blast furnace steel production. Underground fires have burned here for over a century.\n• B (Raniganj) — 4: The oldest coalfield in India (commercial mining from 1774), straddling West Bengal and Jharkhand, producing bituminous non-coking coal used for thermal power and industrial purposes.\n• C (Talcher) — 1: Located in Odisha's Mahanadi belt, Talcher is one of the country's largest coalfields. Odisha holds the highest state-wise coal reserves in India.\n• D (Singrauli) — 3: In the Son-Narmada belt, primarily in Madhya Pradesh (with some portion in UP), Singrauli supplies several thermal power stations and is a critical energy zone.\n\nValue Addition:\n• The IB Valley coalfield (Odisha) and Ib-River basin are also part of the Mahanadi coal belt, operated by MCL (a CIL subsidiary).\n• Bokaro and Ramgarh coalfields are also in Jharkhand's Damodar Valley.\n• Coking coal from Jharia is supplemented by Australian imports for the steel industry."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में कोयला क्षेत्रों को सूची II के सही विवरण से मिलाइए:",
+        "columns": [
+          "सूची I — कोयला क्षेत्र",
+          "सूची II — विवरण"
+        ],
+        "rows": [
+          [
+            "A. झरिया",
+            "1. ओडिशा में स्थित; महानदी बेल्ट का हिस्सा; भारत के सबसे बड़े राज्य कोयला भंडार वाला राज्य"
+          ],
+          [
+            "B. रानीगंज",
+            "2. भारत का एकमात्र प्रमुख कोकिंग कोयला स्रोत; दमोदर घाटी; झारखंड"
+          ],
+          [
+            "C. तालचर",
+            "3. सोन-नर्मदा बेल्ट; मध्य प्रदेश; कई थर्मल पावर स्टेशनों को आपूर्ति करता है"
+          ],
+          [
+            "D. सिंगरौली",
+            "4. भारत का सबसे पुराना वाणिज्यिक रूप से खनन किया गया कोयला क्षेत्र; गैर-कोकिंग बिटुमिनस; पश्चिम बंगाल-झारखंड सीमा पर स्थित"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-4, C-1, D-3\n(c) A-4, B-2, C-1, D-3\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — छात्र जो झारखंड के बजाय ओडिशा के तालचर को झारखंड से जोड़कर सही रूप से झरिया को कोकिंग कोयले से जोड़ते हैं, वे विकल्प (a) चुनेंगे।",
+      "elimination_logic": [
+        "A (झरिया) से मेल खाता है: भारत का एकमात्र प्रमुख कोकिंग कोयला स्रोत — 2 (प्राइम कोकिंग कोयला, इस्पात उद्योग में उपयोग)।",
+        "B (रानीगंज) से मेल खाता है: सबसे पुराना कोयला क्षेत्र, गैर-कोकिंग बिटुमिनस — 4 (सबसे पुराना कोयला क्षेत्र, थर्मल/औद्योगिक उपयोग)।",
+        "C (तालचर) से मेल खाता है: ओडिशा में स्थित, महानदी बेल्ट — 1 (ओडिशा, भारत का सबसे बड़ा राज्य कोयला भंडार)।",
+        "D (सिंगरौली) से मेल खाता है: सोन-नर्मदा बेल्ट, मध्य प्रदेश — 3 (मध्य प्रदेश, सोन-नर्मदा बेसिन), उत्तर (b) की पुष्टि करता है।"
+      ],
+      "upsc_trap_explanation": "तालचर (ओडिशा/महानदी) और बोकारो (झारखंड/दमोदर) के बीच इकाई-स्थानांतरण जालसाजी होती है। दोनों बड़े कोयला क्षेत्र हैं लेकिन अलग-अलग राज्यों और नदी बेसिनों में। विकल्प (a) तालचर को झारखंड से जोड़ने के लिए बनाया गया है, जो उन छात्रों को दंडित करता है जो तालचर को एक प्रमुख कोयला क्षेत्र जानते हैं लेकिन उसके राज्य-बेसिन संबंध को सही ढंग से नहीं पहचान पाए हैं। इसी तरह, सिंगरौली मध्य प्रदेश-उत्तर प्रदेश सीमा पर सोन बेसिन में है — छात्र इसे मध्य प्रदेश के बजाय उत्तर प्रदेश से जोड़ सकते हैं।",
+      "final_explanation": "भारत के प्रमुख कोयला क्षेत्र विशिष्ट नदी बेसिनों और राज्यों के अनुरूप हैं, और उनके कोयले के प्रकार से औद्योगिक उपयोग निर्धारित होता है।\n\nसही मिलान: A-2, B-4, C-1, D-3\n\n• A (झरिया) — 2: झारखंड के दमोदर घाटी में स्थित, झरिया भारत का एकमात्र प्रमुख हार्ड कोकिंग कोयला स्रोत है, जो ब्लास्ट फर्नेस इस्पात उत्पादन के लिए आवश्यक है। यहां भूमिगत आग सदी से अधिक समय से जल रही है।\n• B (रानीगंज) — 4: भारत का सबसे पुराना कोयला क्षेत्र (1774 से वाणिज्यिक खनन), जो पश्चिम बंगाल और झारखंड में फैला है, बिटुमिनस गैर-कोकिंग कोयला उत्पादन करता है जो थर्मल पावर और औद्योगिक उपयोग के लिए है।\n• C (तालचर) — 1: ओडिशा के महानदी बेल्ट में स्थित, तालचर देश के सबसे बड़े कोयला क्षेत्रों में से एक है। ओडिशा के पास भारत में सबसे अधिक राज्यवार कोयला भंडार हैं।\n• D (सिंगरौली) — 3: सोन-नर्मदा बेल्ट में, मुख्यतः मध्य प्रदेश में (कुछ हिस्सा उत्तर प्रदेश में), सिंगरौली कई थर्मल पावर स्टेशनों को आपूर्ति करता है और एक महत्वपूर्ण ऊर्जा क्षेत्र है।\n\nमूल्य संवर्धन:\n• आईबी वैली कोयला क्षेत्र (ओडिशा) और इब-नदी बेसिन भी महानदी कोयला बेल्ट का हिस्सा हैं, जिन्हें MCL (CIL की सहायक कंपनी) संचालित करती है।\n• बोकारो और रामगढ़ कोयला क्षेत्र भी झारखंड के दमोदर घाटी में हैं।\n• झरिया से कोकिंग कोयले की आपूर्ति इस्पात उद्योग के लिए ऑस्ट्रेलियाई आयातों से पूरी होती है।"
+    }
+  },
+  {
+    "uuid": "36694f9e-d383-45a0-b33e-70526b4f1aec",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Nuclear Power Plants: Location Logic and Reactor Types"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Tarapur BWR American; Kudankulam VVER Russian",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about nuclear power plants in India:\n\n1. Kudankulam Nuclear Power Plant in Tamil Nadu uses Pressurised Heavy Water Reactors (PHWRs) designed by the Nuclear Power Corporation of India Limited (NPCIL).\n2. Tarapur Atomic Power Station was India's first nuclear power plant and uses Boiling Water Reactors (BWRs) of American origin.\n3. All nuclear power plants in India are mandatorily located on the coast to utilise seawater for reactor cooling.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 1 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Kudankulam Nuclear Power Plant in Tamil Nadu uses Pressurised Heavy Water Reactors (PHWRs) designed by the Nuclear Power Corporation of India Limited (NPCIL).",
+          "verdict": "Incorrect",
+          "reason": "Kudankulam uses VVER-1000 reactors, a Russian pressurised light water reactor design supplied under the Indo-Russian nuclear cooperation agreement — not domestic PHWRs."
+        },
+        {
+          "statement": "Tarapur Atomic Power Station was India's first nuclear power plant and uses Boiling Water Reactors (BWRs) of American origin.",
+          "verdict": "Correct",
+          "reason": "Tarapur (commissioned 1969) was built with US assistance under the 1963 agreement and uses General Electric BWR technology — it is India's oldest nuclear station."
+        },
+        {
+          "statement": "All nuclear power plants in India are mandatorily located on the coast to utilise seawater for reactor cooling.",
+          "verdict": "Incorrect",
+          "reason": "Rawatbhata (Rajasthan), Narora (UP, on Ganga canal system), and Kakrapar (Gujarat, inland on Tapti) are inland nuclear plants — the coastal preference is not a mandatory rule and inland plants use river or canal water."
+        }
+      ],
+      "strong_distractor": "b — Students who know Kudankulam uses Russian reactors may confidently mark Statement 1 as incorrect but then incorrectly assume Statement 3 is correct because they vaguely recall coastal siting as a general pattern.",
+      "elimination_logic": [
+        "Check Statement 1: Kudankulam uses VVER-1000 (Russian PWR), not NPCIL PHWRs — Statement 1 is NOT correct.",
+        "Check Statement 2: Tarapur is India's oldest nuclear station, BWR, American — Correct, not an incorrect statement.",
+        "Check Statement 3: 'All mandatorily on coast' — Rawatbhata (inland, Chambal), Narora (UP, Ganga), Kakrapar (Gujarat, Tapti) are inland — Statement 3 is NOT correct.",
+        "Statements 1 and 3 are NOT correct — answer is (a)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap in Statement 1 substitutes VVER (Russian) for PHWR (domestic). Students who have memorised 'NPCIL builds PHWRs' may apply this to Kudankulam without recalling its Russian-design exception. Statement 3's 'all mandatorily' trap catches students who know coastal siting is preferred but do not recall the three well-known inland plants (Rawatbhata, Narora, Kakrapar) that disprove the absolute rule.",
+      "final_explanation": "India's nuclear plant portfolio includes diverse reactor technologies and both coastal and inland locations.\n\n• Statement 1 — Incorrect: Kudankulam NPP (Units 1–6) uses VVER-1000 reactors — a Russian pressurised water reactor design supplied under Indo-Russian intergovernmental agreements. NPCIL's domestically developed PHWRs power stations like Kakrapar, Rawatbhata, and Narora.\n• Statement 2 — Correct: Tarapur (Maharashtra), commissioned in 1969, is India's oldest nuclear station. It was built with US assistance and uses GE-designed Boiling Water Reactors (BWRs).\n• Statement 3 — Incorrect: While large reactors prefer coastal sites for seawater cooling, inland plants exist and use river/canal water. Rawatbhata (Chambal, Rajasthan), Narora (UP), and Kakrapar (Tapti, Gujarat) are operational inland stations.\n\nValue Addition:\n• PHWRs use heavy water (D₂O) as both moderator and coolant — this allows use of natural (unenriched) uranium as fuel.\n• India's first indigenously designed PHWR was at Rajasthan Atomic Power Station (RAPS), Rawatbhata.\n• The Prototype Fast Breeder Reactor (PFBR) at Kalpakkam (Tamil Nadu) is India's Stage 2 programme flagship — a coastal site."
+    },
+    "hi": {
+      "display_text": "भारत के परमाणु ऊर्जा संयंत्रों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. तमिलनाडु में कूडनकुलम परमाणु ऊर्जा संयंत्र में प्रेसराइज्ड हेवी वाटर रिएक्टर (PHWRs) का उपयोग होता है जो Nuclear Power Corporation of India Limited (NPCIL) द्वारा डिज़ाइन किए गए हैं।\n2. तारापुर परमाणु ऊर्जा स्टेशन भारत का पहला परमाणु ऊर्जा संयंत्र था और इसमें अमेरिकी मूल के बॉइलिंग वाटर रिएक्टर (BWRs) का उपयोग होता है।\n3. भारत के सभी परमाणु ऊर्जा संयंत्र अनिवार्य रूप से तट के पास स्थित हैं ताकि रिएक्टर कूलिंग के लिए समुद्री जल का उपयोग किया जा सके।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "तमिलनाडु में कूडनकुलम परमाणु ऊर्जा संयंत्र में प्रेसराइज्ड हेवी वाटर रिएक्टर (PHWRs) का उपयोग होता है जो Nuclear Power Corporation of India Limited (NPCIL) द्वारा डिज़ाइन किए गए हैं।",
+          "verdict": "गलत",
+          "reason": "कूडनकुलम में VVER-1000 रिएक्टर होते हैं, जो रूसी प्रेसराइज्ड लाइट वाटर रिएक्टर डिज़ाइन है और यह Indo-Russian परमाणु सहयोग समझौते के तहत सप्लाई किया गया है — घरेलू PHWRs नहीं।"
+        },
+        {
+          "statement": "तारापुर परमाणु ऊर्जा स्टेशन भारत का पहला परमाणु ऊर्जा संयंत्र था और इसमें अमेरिकी मूल के बॉइलिंग वाटर रिएक्टर (BWRs) का उपयोग होता है।",
+          "verdict": "सही",
+          "reason": "तारापुर (1969 में कमीशन) को 1963 के समझौते के तहत अमेरिकी सहायता से बनाया गया था और इसमें General Electric के BWR तकनीक का उपयोग होता है — यह भारत का सबसे पुराना परमाणु स्टेशन है।"
+        },
+        {
+          "statement": "भारत के सभी परमाणु ऊर्जा संयंत्र अनिवार्य रूप से तट के पास स्थित हैं ताकि रिएक्टर कूलिंग के लिए समुद्री जल का उपयोग किया जा सके।",
+          "verdict": "गलत",
+          "reason": "रावतभाटा (राजस्थान), नरोरा (उत्तर प्रदेश, गंगा नहर प्रणाली पर), और काक्रापार (गुजरात, तापी नदी के किनारे) अंदरूनी परमाणु संयंत्र हैं — तटीय स्थान प्राथमिकता अनिवार्य नियम नहीं है और अंदरूनी संयंत्र नहर या नदी के जल का उपयोग करते हैं।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र जानते हैं कि कूडनकुलम में रूसी रिएक्टर होते हैं, वे कथन 1 को गलत चिह्नित कर सकते हैं लेकिन फिर कथन 3 को सही मान लेते हैं क्योंकि वे तटीय स्थान को सामान्य पैटर्न के रूप में याद करते हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: कूडनकुलम में VVER-1000 (रूसी PWR) है, NPCIL के PHWR नहीं — अतः कथन 1 सही नहीं है।",
+        "कथन 2 जांचें: तारापुर भारत का सबसे पुराना परमाणु स्टेशन है, BWR, अमेरिकी — सही है, गलत कथन नहीं।",
+        "कथन 3 जांचें: 'सभी अनिवार्य रूप से तट पर' — रावतभाटा (अंदरूनी, चंबल), नरोरा (गंगा), काक्रापार (तापी) अंदरूनी हैं — अतः कथन 3 सही नहीं है।",
+        "कथन 1 और 3 सही नहीं हैं — उत्तर (a) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में entity-swap ट्रैप VVER (रूसी) को PHWR (घरेलू) से बदल देता है। जो छात्र 'NPCIL PHWR बनाता है' याद करते हैं, वे इसे कूडनकुलम पर लागू कर देते हैं बिना इसके रूसी डिज़ाइन अपवाद को याद किए। कथन 3 का 'सभी अनिवार्य रूप से' ट्रैप उन छात्रों को फंसाता है जो तटीय स्थान को प्राथमिकता जानते हैं लेकिन रावतभाटा, नरोरा, काक्रापार जैसे तीन प्रसिद्ध अंदरूनी संयंत्रों को नहीं जानते जो इस पूर्ण नियम को खारिज करते हैं।",
+      "final_explanation": "भारत के परमाणु संयंत्रों में विविध रिएक्टर तकनीकें और तटीय तथा अंदरूनी दोनों स्थान शामिल हैं।\n\n• कथन 1 — गलत: कूडनकुलम NPP (यूनिट 1–6) में VVER-1000 रिएक्टर होते हैं — यह रूसी प्रेसराइज्ड वाटर रिएक्टर डिज़ाइन है जो Indo-Russian अंतरसरकारी समझौतों के तहत सप्लाई किया गया है। NPCIL के घरेलू PHWRs काक्रापार, रावतभाटा, और नरोरा जैसे स्टेशन चलाते हैं।\n• कथन 2 — सही: तारापुर (महाराष्ट्र), 1969 में कमीशन, भारत का सबसे पुराना परमाणु स्टेशन है। इसे अमेरिकी सहायता से बनाया गया और इसमें GE डिज़ाइन के बॉइलिंग वाटर रिएक्टर (BWRs) का उपयोग होता है।\n• कथन 3 — गलत: बड़े रिएक्टर तटीय स्थान पसंद करते हैं ताकि समुद्री जल से कूलिंग हो सके, लेकिन अंदरूनी संयंत्र भी हैं जो नदी/नहर जल का उपयोग करते हैं। रावतभाटा (चंबल, राजस्थान), नरोरा (उत्तर प्रदेश), और काक्रापार (तापी, गुजरात) सक्रिय अंदरूनी स्टेशन हैं।\n\nमूल्यवर्धन:\n• PHWRs में हेवी वाटर (D₂O) दोनों मॉडरेटर और कूलेंट के रूप में उपयोग होता है — जिससे प्राकृतिक (असंवर्धित) यूरेनियम ईंधन के रूप में इस्तेमाल हो सकता है।\n• भारत का पहला स्वदेशी डिज़ाइन किया गया PHWR राजस्थान परमाणु ऊर्जा स्टेशन (RAPS), रावतभाटा में था।\n• कलपक्कम (तमिलनाडु) में प्रोटोटाइप फास्ट ब्रीडर रिएक्टर (PFBR) भारत के स्टेज 2 कार्यक्रम का प्रमुख है — यह तटीय स्थान पर स्थित है।"
+    }
+  },
+  {
+    "uuid": "65d4c7ea-f803-42f6-8fc1-3b596ab08162",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Thermal Power: Plant Types and Efficiency Parameters",
+        "Hydro-Thermal Mix and Load Balancing in India's Power Sector"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "CCGT classified as thermal despite using gas",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A Combined Cycle Gas Turbine (CCGT) power plant uses natural gas to drive a gas turbine and then captures exhaust heat through a recovery system to generate additional electricity via a steam turbine. Under India's energy classification framework, a CCGT plant is most accurately described as:\n\n(a) A coal-based thermal power plant because it uses a steam turbine in its second stage\n(b) A renewable energy plant because natural gas is a cleaner fuel than coal\n(c) A thermal power plant because it generates electricity through thermodynamic heat cycles, irrespective of the gas fuel used\n(d) A nuclear-adjacent facility because the heat recovery system resembles the steam cycle used in nuclear plants",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who associate 'gas' with 'cleaner fuel' and 'renewable-adjacent' may classify CCGT as a renewable or hybrid energy technology rather than thermal.",
+      "elimination_logic": [
+        "Eliminate (a): CCGT plants use natural gas, not coal — the 'coal-fired' description is factually wrong.",
+        "Eliminate (b): CCGT is not classified as renewable; it uses fossil fuel (natural gas) and produces CO₂ emissions.",
+        "Eliminate (d): CCGT is not classified as nuclear; it has no nuclear fuel cycle.",
+        "Confirm (c): CCGT plants use gas turbines (Brayton cycle) followed by steam turbines (Rankine cycle) using waste heat — this combination is a thermal generation process. They are classified as thermal power plants despite using gas as fuel."
+      ],
+      "upsc_trap_explanation": "The conflation trap exploits the mental association of 'gas' with 'clean or non-thermal energy.' Students who think of thermal power as synonymous with coal-fired power will instinctively seek a non-thermal classification for CCGT. The critical insight is that 'thermal' refers to the thermodynamic process (heat → electricity), not the specific fuel. CCGT uses heat from gas combustion — it is indisputably thermal.",
+      "final_explanation": "Energy classification errors are a recurring UPSC trap. 'Thermal' refers to the method of electricity generation — using heat — not to the specific fuel.\n\n• Option (a) — Incorrect: CCGT plants are fuelled by natural gas, not coal. Describing them as coal-fired is a factual error.\n• Option (b) — Incorrect: CCGT uses natural gas, a fossil fuel. It is not renewable energy. It produces CO₂ and NOₓ emissions, though less per kWh than coal plants.\n• Option (c) — Correct: CCGT combines a gas turbine (burning natural gas in a Brayton cycle) with a heat recovery steam generator (HRSG) that captures exhaust heat to run a steam turbine (Rankine cycle). Both stages are thermodynamic heat-to-electricity processes — making CCGT a thermal plant. This dual cycle achieves efficiencies of 55–60%, far above single-cycle gas or coal plants.\n• Option (d) — Incorrect: CCGT has no nuclear component whatsoever.\n\nValue Addition:\n• India's CCGT capacity is concentrated at Kayamkulam (Kerala), Ratnagiri, and Auraiya — most underperform due to gas shortage.\n• Declining gas availability has forced many CCGT plants to operate at very low PLF, making them stranded assets.\n• Open Cycle Gas Turbine (OCGT) plants are simpler but less efficient (~35%) — used for rapid grid response rather than base load."
+    },
+    "hi": {
+      "display_text": "एक संयुक्त चक्र गैस टरबाइन (CCGT) पावर प्लांट प्राकृतिक गैस का उपयोग गैस टरबाइन चलाने के लिए करता है और फिर निकास गर्मी को एक रिकवरी सिस्टम के माध्यम से पकड़कर अतिरिक्त बिजली स्टीम टरबाइन के माध्यम से उत्पन्न करता है। भारत की ऊर्जा वर्गीकरण प्रणाली के तहत, CCGT संयंत्र को सबसे सटीक रूप से इस प्रकार वर्णित किया जा सकता है:\n\n(a) एक कोयला-आधारित थर्मल पावर प्लांट क्योंकि इसके दूसरे चरण में स्टीम टरबाइन होता है\n(b) एक नवीकरणीय ऊर्जा संयंत्र क्योंकि प्राकृतिक गैस कोयले की तुलना में स्वच्छ ईंधन है\n(c) एक थर्मल पावर प्लांट क्योंकि यह गैस ईंधन के बावजूद थर्मोडायनामिक ताप चक्रों के माध्यम से बिजली उत्पन्न करता है\n(d) एक परमाणु-सन्निकट सुविधा क्योंकि हीट रिकवरी सिस्टम परमाणु संयंत्रों में उपयोग होने वाले स्टीम चक्र जैसा दिखता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो 'गैस' को 'स्वच्छ ईंधन' और 'नवीकरणीय-सन्निकट' से जोड़ते हैं, वे CCGT को नवीकरणीय या संकर ऊर्जा तकनीक के रूप में वर्गीकृत कर सकते हैं, न कि थर्मल के रूप में।",
+      "elimination_logic": [
+        "(a) को हटाएं: CCGT संयंत्र प्राकृतिक गैस का उपयोग करते हैं, कोयला नहीं — 'कोयला-चालित' विवरण तथ्यात्मक रूप से गलत है।",
+        "(b) को हटाएं: CCGT को नवीकरणीय के रूप में वर्गीकृत नहीं किया जाता; यह जीवाश्म ईंधन (प्राकृतिक गैस) का उपयोग करता है और CO₂ उत्सर्जन करता है।",
+        "(d) को हटाएं: CCGT को परमाणु के रूप में वर्गीकृत नहीं किया जाता; इसमें कोई परमाणु ईंधन चक्र नहीं है।",
+        "(c) की पुष्टि करें: CCGT संयंत्र गैस टरबाइन (ब्रेटन चक्र) का उपयोग करते हैं, उसके बाद वेस्ट हीट का उपयोग करते हुए स्टीम टरबाइन (रैंकिन चक्र) — यह संयोजन एक थर्मल उत्पादन प्रक्रिया है। वे गैस ईंधन का उपयोग करने के बावजूद थर्मल पावर प्लांट के रूप में वर्गीकृत हैं।"
+      ],
+      "upsc_trap_explanation": "'गैस' को 'स्वच्छ या गैर-थर्मल ऊर्जा' से जोड़ने वाली मानसिक संगति का शिकार बनाना भ्रम का जाल है। जो छात्र थर्मल पावर को केवल कोयला-चालित पावर समझते हैं, वे स्वाभाविक रूप से CCGT के लिए गैर-थर्मल वर्गीकरण खोजेंगे। महत्वपूर्ण बात यह है कि 'थर्मल' शब्द थर्मोडायनामिक प्रक्रिया (ताप → विद्युत) को संदर्भित करता है, न कि विशिष्ट ईंधन को। CCGT गैस दहन से उत्पन्न ताप का उपयोग करता है — यह निर्विवाद रूप से थर्मल है।",
+      "final_explanation": "ऊर्जा वर्गीकरण में त्रुटियाँ UPSC में बार-बार आने वाला जाल हैं। 'थर्मल' विद्युत उत्पादन की विधि को दर्शाता है — ताप का उपयोग — न कि विशिष्ट ईंधन को।\n\n• विकल्प (a) — गलत: CCGT संयंत्र प्राकृतिक गैस से चलते हैं, कोयला से नहीं। उन्हें कोयला-चालित बताना तथ्यात्मक त्रुटि है।\n• विकल्प (b) — गलत: CCGT प्राकृतिक गैस, एक जीवाश्म ईंधन, का उपयोग करता है। यह नवीकरणीय ऊर्जा नहीं है। यह CO₂ और NOₓ उत्सर्जित करता है, हालांकि प्रति kWh कोयला संयंत्रों की तुलना में कम।\n• विकल्प (c) — सही: CCGT गैस टरबाइन (ब्रेटन चक्र में प्राकृतिक गैस जलाना) को हीट रिकवरी स्टीम जनरेटर (HRSG) के साथ जोड़ता है, जो निकास गर्मी को पकड़कर स्टीम टरबाइन (रैंकिन चक्र) चलाता है। दोनों चरण थर्मोडायनामिक ताप-से-विद्युत प्रक्रियाएँ हैं — जिससे CCGT थर्मल संयंत्र बनता है। यह दोहरे चक्र 55–60% दक्षता प्राप्त करते हैं, जो एकल चक्र गैस या कोयला संयंत्रों से कहीं अधिक है।\n• विकल्प (d) — गलत: CCGT में कोई परमाणु घटक नहीं है।\n\nमूल्य संवर्धन:\n• भारत की CCGT क्षमता मुख्यतः कायमकुलम (केरल), रत्नागिरी, और औरैया में केंद्रित है — अधिकांश गैस की कमी के कारण कम प्रदर्शन करते हैं।\n• गैस की घटती उपलब्धता ने कई CCGT संयंत्रों को बहुत कम PLF पर चलने के लिए मजबूर किया है, जिससे वे बेकार परिसंपत्तियाँ बन गए हैं।\n• ओपन साइकिल गैस टरबाइन (OCGT) संयंत्र सरल हैं लेकिन कम दक्षता (~35%) वाले हैं — इन्हें तेज ग्रिड प्रतिक्रिया के लिए उपयोग किया जाता है, बेस लोड के लिए नहीं।"
+    }
+  },
+  {
+    "uuid": "3e7af48f-f8ad-4557-bad2-ad7537145976",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Major Hydroelectric Projects: Inter-State and International Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Bhakra dam vs Nangal barrage — two separate structures",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Bhakra-Nangal project, often cited as a landmark multi-purpose river valley development in post-independence India, comprises the Bhakra gravity dam and the Nangal barrage located downstream — both built on the ________ river.\n\n(a) Ravi\n(b) Beas\n(c) Chenab\n(d) Sutlej",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'Bhakra-Nangal' is so commonly treated as a single compound name that students who hear the full project name naturally assume both structures are on the Beas, not distinguishing the Sutlej association.",
+      "elimination_logic": [
+        "Identify what 'Bhakra' refers to: Bhakra is the high gravity dam, Nangal is the barrage downstream — they are on the same river.",
+        "Eliminate (a): Ravi river is associated with other Himalayan projects; Bhakra is not on the Ravi.",
+        "Eliminate (b): The Beas river has its own dam (Pong/Pandoh) — Bhakra-Nangal is NOT on the Beas.",
+        "Eliminate (c): Chenab is a Pakistan-side IWT river for hydro; Bhakra is not on the Chenab.",
+        "Confirm (d): Both Bhakra dam and Nangal barrage are on the Sutlej river in Himachal Pradesh/Punjab."
+      ],
+      "upsc_trap_explanation": "The conflation trap arises from the popular but imprecise use of 'Bhakra-Nangal' as a single project name. Many students associate the project with 'Punjab irrigation' and confuse the Sutlej with the Beas — another major Punjab river. Option (b) (Beas) is the strongest distractor because the Beas flows nearby and has its own hydro projects (Pong Dam, Pandoh Dam), making it a plausible but wrong answer for students who haven't pinned the Sutlej association.",
+      "final_explanation": "The Bhakra-Nangal project is one of India's largest multi-purpose river valley projects.\n\n• Option (a) — Incorrect: Ravi river is associated with projects like Ranjit Sagar Dam (Thein Dam); Bhakra is not on the Ravi.\n• Option (b) — Incorrect: The Beas river has its own projects — Pong Dam and Pandoh Dam. Bhakra-Nangal is frequently confused with Beas projects due to geographic proximity, but the Sutlej is the correct river.\n• Option (c) — Incorrect: Chenab is an IWT western river allocated primarily to Pakistan; major Indian projects on it face treaty restrictions.\n• Option (d) — Correct: Bhakra Dam (256 metres high, the highest gravity dam in Asia at commissioning) is on the Sutlej river in Bilaspur district, Himachal Pradesh. Nangal barrage is downstream on the same Sutlej in Punjab. Jawaharlal Nehru called it a 'new temple of resurgent India.'\n\nValue Addition:\n• Bhakra-Nangal is a joint project of Punjab, Haryana, and Rajasthan under the Bhakra Management Board.\n• The reservoir behind Bhakra dam is named Gobind Sagar (after Guru Gobind Singh).\n• Nangal barrage distributes water into the Bhakra Main Line and Nangal Hydel Channel for irrigation and power."
+    },
+    "hi": {
+      "display_text": "भाकरा-नंगल परियोजना, जिसे स्वतंत्रता के बाद भारत में एक महत्वपूर्ण बहुउद्देश्यीय नदी घाटी विकास के रूप में अक्सर उद्धृत किया जाता है, में भाकरा गुरुत्वाकर्षण बांध और नंगल बांध शामिल हैं जो नीचे की ओर स्थित हैं — दोनों ________ नदी पर बने हैं।\n\n(a) रावी\n(b) बीस\n(c) चेनाब\n(d) सुतlej",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — 'Bhakra-Nangal' को इतना सामान्य रूप से एक संयुक्त नाम के रूप में माना जाता है कि जो छात्र पूरे परियोजना नाम को सुनते हैं वे स्वाभाविक रूप से मान लेते हैं कि दोनों संरचनाएँ बीस नदी पर हैं, सुतlej के संबंध को अलग नहीं करते।",
+      "elimination_logic": [
+        "यह पहचानें कि 'भाकरा' किसे संदर्भित करता है: भाकरा उच्च गुरुत्वाकर्षण बांध है, नंगल बांध नीचे की ओर है — वे एक ही नदी पर हैं।",
+        "(a) को हटाएं: रावी नदी अन्य हिमालयी परियोजनाओं से जुड़ी है; भाकरा रावी पर नहीं है।",
+        "(b) को हटाएं: बीस नदी का अपना बांध है (पोंग/पंडोह) — भाकरा-नंगल बीस पर नहीं है।",
+        "(c) को हटाएं: चेनाब पाकिस्तान-पक्ष की एक IWT नदी है; भाकरा चेनाब पर नहीं है।",
+        "(d) की पुष्टि करें: भाकरा बांध और नंगल बांध दोनों हिमाचल प्रदेश/पंजाब में सुतlej नदी पर हैं।"
+      ],
+      "upsc_trap_explanation": "'भाकरा-नंगल' को एकल परियोजना नाम के रूप में लोकप्रिय लेकिन अस्पष्ट उपयोग से भ्रम उत्पन्न होता है। कई छात्र इस परियोजना को 'पंजाब सिंचाई' से जोड़ते हैं और सुतlej को बीस के साथ भ्रमित करते हैं — जो पंजाब की एक अन्य प्रमुख नदी है। विकल्प (b) (बीस) सबसे मजबूत भ्रमकारी विकल्प है क्योंकि बीस पास से बहती है और इसके अपने जलविद्युत परियोजनाएँ (पोंग बांध, पंडोह बांध) हैं, जो उन छात्रों के लिए एक संभावित लेकिन गलत उत्तर बनाता है जिन्होंने सुतlej संबंध को स्पष्ट नहीं किया है।",
+      "final_explanation": "भाकरा-नंगल परियोजना स्वतंत्रता के बाद भारत की सबसे बड़ी बहुउद्देश्यीय नदी घाटी परियोजनाओं में से एक है।\n\n• विकल्प (a) — गलत: रावी नदी रंजीत सागर बांध (थेन बांध) जैसी परियोजनाओं से जुड़ी है; भाकरा रावी पर नहीं है।\n• विकल्प (b) — गलत: बीस नदी के अपने परियोजनाएँ हैं — पोंग बांध और पंडोह बांध। भाकरा-नंगल को भौगोलिक निकटता के कारण बीस परियोजनाओं के साथ अक्सर भ्रमित किया जाता है, लेकिन सही नदी सुतlej है।\n• विकल्प (c) — गलत: चेनाब एक IWT पश्चिमी नदी है जो मुख्य रूप से पाकिस्तान को आवंटित है; इस पर भारतीय प्रमुख परियोजनाओं को संधि प्रतिबंधों का सामना करना पड़ता है।\n• विकल्प (d) — सही: भाकरा बांध (256 मीटर ऊँचा, उद्घाटन के समय एशिया का सबसे ऊँचा गुरुत्वाकर्षण बांध) हिमाचल प्रदेश के बिलासपुर जिले में सुतlej नदी पर है। नंगल बांध उसी सुतlej पर पंजाब में नीचे की ओर है। जवाहरलाल नेहरू ने इसे 'पुनरुत्थान भारत का नया मंदिर' कहा था।\n\nमूल्य संवर्धन:\n• भाकरा-नंगल पंजाब, हरियाणा और राजस्थान की संयुक्त परियोजना है जो भाकरा प्रबंधन बोर्ड के अंतर्गत है।\n• भाकरा बांध के पीछे का जलाशय गोबिंद सागर (गुरु गोबिंद सिंह के नाम पर) कहलाता है।\n• नंगल बांध सिंचाई और विद्युत के लिए भाकरा मुख्य लाइन और नंगल हाइडल चैनल में पानी वितरित करता है।"
+    }
+  },
+  {
+    "uuid": "a0465d0e-a75e-45ae-998a-795c4f008daa",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Natural Gas: Types, Distribution and NELP Framework",
+        "Petroleum: Sedimentary Basin Distribution in India"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "NELP to HELP policy chronology",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of milestones in India's petroleum exploration and policy history?\n\n1. Establishment of ONGC as a statutory exploration body\n2. Commercial discovery of the Mumbai High offshore oilfield\n3. Launch of the New Exploration Licensing Policy (NELP)\n4. Introduction of the Hydrocarbon Exploration and Licensing Policy (HELP)\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 2 → 3 → 4\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know NELP was replaced by HELP may swap their positions, believing HELP came before NELP, choosing option (b).",
+      "elimination_logic": [
+        "Nationalisation of oil industry / ONGC creation: 1956 (ONGC formed under Industrial Policy Resolution) — earliest event.",
+        "Mumbai High oil discovery: 1974 — commercial oil found offshore, second chronologically.",
+        "NELP (New Exploration Licensing Policy): 1999 — liberalised exploration regime, third chronologically.",
+        "HELP (Hydrocarbon Exploration and Licensing Policy): 2016 — replaced NELP with revenue-sharing, last in sequence — answer is (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap places HELP before NELP or confuses the year of Mumbai High discovery with NELP launch. Students who know both policies exist but have not memorised their sequence may reverse them. The 1999 (NELP) → 2016 (HELP) sequence is the critical timeline, and substituting 2000 for 1999 or 2014 for 2016 would further trap a partially prepared student.",
+      "final_explanation": "India's petroleum exploration policy has evolved through distinct phases from nationalisation to progressive liberalisation.\n\nCorrect chronological order:\n1956 → 1974 → 1999 → 2016\n\n• 1956: ONGC established as a statutory body under the Industrial Policy Resolution; marks state monopoly era in petroleum exploration.\n• 1974: Discovery of Mumbai High (Bombay High) offshore field in the Arabian Sea — transformed India's domestic crude production profile.\n• 1999: New Exploration Licensing Policy (NELP) introduced — replaced nomination-based allocation with competitive bidding, production-sharing contracts (PSCs) for private/foreign companies.\n• 2016: Hydrocarbon Exploration and Licensing Policy (HELP) replaced NELP — introduced revenue-sharing contracts (replacing PSCs), a single licence for all hydrocarbons, and Open Acreage Licensing Policy (OALP).\n\nValue Addition:\n• Under NELP, 9 rounds were conducted awarding 254 blocks before HELP replaced it.\n• HELP's OALP allows companies to identify and bid for blocks on their own initiative without waiting for a government-declared round.\n• KG-D6 block (RIL) was awarded under NELP Round I (2000) — its production decline became a major policy controversy."
+    },
+    "hi": {
+      "display_text": "भारत के पेट्रोलियम अन्वेषण और नीति इतिहास में मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. ONGC की एक सांविधिक अन्वेषण संस्था के रूप में स्थापना\n2. मुंबई हाई ऑफशोर तेल क्षेत्र की वाणिज्यिक खोज\n3. नई अन्वेषण लाइसेंसिंग नीति (NELP) का शुभारंभ\n4. हाइड्रोकार्बन अन्वेषण और लाइसेंसिंग नीति (HELP) का परिचय\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 2 → 3 → 4\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know NELP was replaced by HELP may swap their positions, believing HELP came before NELP, choosing option (b).",
+      "elimination_logic": [
+        "तेल उद्योग का राष्ट्रीयकरण / ONGC का गठन: 1956 (औद्योगिक नीति संकल्प के तहत ONGC का गठन) — सबसे पहला घटना।",
+        "मुंबई हाई तेल की खोज: 1974 — समुद्र तट के बाहर वाणिज्यिक तेल मिला, कालानुक्रम में दूसरा।",
+        "NELP (नई अन्वेषण लाइसेंसिंग नीति): 1999 — उदारीकृत अन्वेषण व्यवस्था, कालानुक्रम में तीसरा।",
+        "HELP (हाइड्रोकार्बन अन्वेषण और लाइसेंसिंग नीति): 2016 — NELP की जगह राजस्व-साझाकरण के साथ, अंतिम क्रम में — उत्तर है (c)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रमक HELP को NELP से पहले रखने या मुंबई हाई खोज के वर्ष को NELP लॉन्च से मिलाने पर आधारित है। जो छात्र दोनों नीतियों को जानते हैं लेकिन उनकी क्रमबद्धता याद नहीं रखते, वे इन्हें उलट सकते हैं। 1999 (NELP) → 2016 (HELP) क्रम महत्वपूर्ण है, और 1999 के स्थान पर 2000 या 2016 के स्थान पर 2014 लेना आंशिक रूप से तैयार छात्र को भ्रमित कर सकता है।",
+      "final_explanation": "भारत की पेट्रोलियम अन्वेषण नीति राष्ट्रीयकरण से लेकर प्रगतिशील उदारीकरण तक विभिन्न चरणों से गुजरी है।\n\nसही कालानुक्रमिक क्रम:\n1956 → 1974 → 1999 → 2016\n\n• 1956: औद्योगिक नीति संकल्प के तहत ONGC की स्थापना एक सांविधिक निकाय के रूप में; पेट्रोलियम अन्वेषण में राज्याधिकार युग की शुरुआत।\n• 1974: अरब सागर में मुंबई हाई (बॉम्बे हाई) ऑफशोर क्षेत्र की खोज — भारत के घरेलू कच्चे तेल उत्पादन प्रोफ़ाइल को बदल दिया।\n• 1999: नई अन्वेषण लाइसेंसिंग नीति (NELP) लागू — नामांकन आधारित आवंटन की जगह प्रतिस्पर्धात्मक बोली, निजी/विदेशी कंपनियों के लिए उत्पादन-साझाकरण अनुबंध (PSC)।\n• 2016: हाइड्रोकार्बन अन्वेषण और लाइसेंसिंग नीति (HELP) ने NELP की जगह ली — राजस्व-साझाकरण अनुबंध (PSC की जगह), सभी हाइड्रोकार्बन के लिए एकल लाइसेंस, और ओपन एक्रेज लाइसेंसिंग नीति (OALP) शुरू की।\n\nमूल्य संवर्धन:\n• NELP के तहत 9 दौर आयोजित हुए, जिनमें 254 ब्लॉक आवंटित किए गए, इसके बाद HELP ने इसे प्रतिस्थापित किया।\n• HELP की OALP कंपनियों को सरकारी घोषित दौर का इंतजार किए बिना स्वयं पहल कर ब्लॉकों की पहचान और बोली लगाने की अनुमति देती है।\n• KG-D6 ब्लॉक (RIL) NELP राउंड I (2000) के तहत आवंटित हुआ — इसके उत्पादन में गिरावट एक प्रमुख नीति विवाद बन गई।"
+    }
+  },
+  {
+    "uuid": "7f6a016e-cbf8-4590-b551-d039aa36b22f",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Coal: Classification and Rank Hierarchy",
+        "Gondwana Coalfields vs Tertiary Coalfields of India"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Anthracite rare in India — geological age factor",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to coal resources in India, consider the following:\n\nAssertion (A): Anthracite coal, despite being the highest-rank coal, is virtually absent in India's coal reserves.\n\nReason (R): India's coalfields are predominantly of Gondwana geological age, formed approximately 250 million years ago during the Permian period.\n\nWhich of the following is correct?\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is A correct? Anthracite is extremely rare in India — Yes, India's coal is predominantly bituminous and lignite; anthracite deposits are negligible.",
+        "Step 2: Is R correct? India's Gondwana coalfields are approximately 250 million years old — Yes, this is the established geological age of Gondwana coal-bearing formations.",
+        "Step 3: Does R explain A? The coalification process requires both time and geothermal pressure; Gondwana coal at ~250 MYA is geologically relatively younger compared to the 300–350 MYA Carboniferous formations where European/North American anthracite formed. Less time + less metamorphic pressure = bituminous, not anthracite. R directly explains A — answer is (a).",
+        "Final step confirms: answer is (a)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap tempts students to think: 'if Indian coal is old (250 MYA), it should be of higher rank, not lower.' Students may reason that 250 MYA is very old and therefore conclude India should have more anthracite, making option (c) (A correct, R incorrect) or option (d) (A incorrect, R correct) attractive. The key is that 250 MYA for coal formation is actually younger than the Carboniferous Period (300–350 MYA) when most of the world's anthracite formed — making Indian coal relatively undercoalified for the highest rank.",
+      "final_explanation": "Coal rank is a function of time, temperature, and pressure during burial — together called coalification or metamorphism.\n\nAssertion (A): Anthracite (>90% carbon, highest rank) is virtually absent in India. Indian coal is predominantly bituminous (Gondwana) and lignite (Tertiary/Neyveli) — this is factually correct.\n\nReason (R): India's Gondwana coalfields are approximately 250 million years old (Permian period) — this is the established geological age and is factually correct.\n\nCausal link: R does explain A. Most of the world's anthracite deposits (UK, Pennsylvania, China) formed during the Carboniferous Period (~300–350 MYA) — older and subjected to deeper burial and tectonic compression. India's Gondwana coal at ~250 MYA had less time and relatively lower metamorphic pressure to reach anthracite rank. The result is high-grade bituminous coal — not anthracite. R correctly explains why anthracite is rare: insufficient geological age and coalification to reach the highest rank.\n\nValue Addition:\n• Coking coal (subset of bituminous) is India's most strategically valuable coal — concentrated only in Jharia.\n• The rank sequence reflects increasing carbon content: peat (~60%) → lignite (~70%) → bituminous (~80–90%) → anthracite (>90%).\n• Anthracite has the highest energy density and lowest moisture — used for speciality industrial applications, not power generation."
+    },
+    "hi": {
+      "display_text": "भारत में कोयला संसाधनों के संदर्भ में, निम्नलिखित पर विचार करें:\n\nकथन (A): एंथ्रेसाइट कोयला, जो उच्चतम रैंक का कोयला है, भारत के कोयला भंडारों में लगभग अनुपस्थित है।\n\nकारण (R): भारत के कोयला क्षेत्र मुख्यतः गोंडवाना भूवैज्ञानिक आयु के हैं, जो लगभग 250 मिलियन वर्ष पूर्व पर्मियन काल में बने थे।\n\nनिम्नलिखित में से कौन-सा सही है?\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या A सही है? भारत में एंथ्रेसाइट अत्यंत दुर्लभ है — हाँ, भारत का कोयला मुख्यतः बिटुमिनस और लिग्नाइट है; एंथ्रेसाइट के भंडार नगण्य हैं।",
+        "चरण 2: क्या R सही है? भारत के गोंडवाना कोयला क्षेत्र लगभग 250 मिलियन वर्ष पुराने हैं — हाँ, यह गोंडवाना कोयला-धारक संरचनाओं की स्थापित भूवैज्ञानिक आयु है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? कोयला बनने की प्रक्रिया में समय और भू-तापीय दबाव दोनों आवश्यक हैं; गोंडवाना कोयला लगभग 250 मिलियन वर्ष पुराना है जो यूरोपीय/उत्तर अमेरिकी एंथ्रेसाइट के 300–350 मिलियन वर्ष पुराने कार्बोनिफेरस काल की तुलना में भूवैज्ञानिक रूप से अपेक्षाकृत युवा है। कम समय + कम रूपांतर दबाव = बिटुमिनस, एंथ्रेसाइट नहीं। R सीधे A की व्याख्या करता है — उत्तर (a) है।",
+        "अंतिम चरण पुष्टि करता है: उत्तर (a) है।"
+      ],
+      "upsc_trap_explanation": "उल्टा-कारण (reversed-causation) जाल छात्रों को यह सोचने के लिए प्रेरित करता है: 'यदि भारतीय कोयला पुराना है (250 मिलियन वर्ष), तो इसका रैंक उच्च होना चाहिए, न कि निम्न।' छात्र यह तर्क कर सकते हैं कि 250 मिलियन वर्ष बहुत पुराना है और इसलिए भारत में अधिक एंथ्रेसाइट होना चाहिए, जिससे विकल्प (c) (A सही, R गलत) या विकल्प (d) (A गलत, R सही) आकर्षक लगते हैं। मुख्य बात यह है कि कोयला बनने की 250 मिलियन वर्ष की अवधि वास्तव में कार्बोनिफेरस काल (300–350 मिलियन वर्ष) से कम पुरानी है, जब अधिकांश विश्व के एंथ्रेसाइट बने थे — जिससे भारतीय कोयला उच्चतम रैंक के लिए अपेक्षाकृत कम रूपांतरित है।",
+      "final_explanation": "कोयले का रैंक दफनाव के दौरान समय, तापमान और दबाव का फल है — जिसे कोयला रूपांतरण (coalification) या रूपांतर (metamorphism) कहा जाता है।\n\nकथन (A): एंथ्रेसाइट (>90% कार्बन, उच्चतम रैंक) भारत में लगभग अनुपस्थित है। भारतीय कोयला मुख्यतः बिटुमिनस (गोंडवाना) और लिग्नाइट (टर्शियरी/नेवेली) है — यह तथ्यात्मक रूप से सही है।\n\nकारण (R): भारत के गोंडवाना कोयला क्षेत्र लगभग 250 मिलियन वर्ष पुराने (पर्मियन काल) हैं — यह स्थापित भूवैज्ञानिक आयु है और तथ्यात्मक रूप से सही है।\n\nकारणात्मक संबंध: R, A की व्याख्या करता है। विश्व के अधिकांश एंथ्रेसाइट भंडार (यूके, पेंसिल्वेनिया, चीन) कार्बोनिफेरस काल (~300–350 मिलियन वर्ष) में बने — जो पुराने और गहरे दफन तथा टेक्टोनिक दबाव के अधीन थे। भारत का गोंडवाना कोयला लगभग 250 मिलियन वर्ष पुराना है, जिसके पास एंथ्रेसाइट रैंक तक पहुँचने के लिए कम समय और अपेक्षाकृत कम रूपांतर दबाव था। परिणामस्वरूप उच्च-ग्रेड बिटुमिनस कोयला है — एंथ्रेसाइट नहीं। R सही ढंग से बताता है कि एंथ्रेसाइट क्यों दुर्लभ है: भूवैज्ञानिक आयु और रूपांतरण अपर्याप्त है।\n\nमूल्य संवर्धन:\n• कोकिंग कोयला (बिटुमिनस का उपसमूह) भारत का सबसे रणनीतिक रूप से मूल्यवान कोयला है — जो केवल झारखंड के झरिया क्षेत्र में केंद्रित है।\n• रैंक अनुक्रम बढ़ते कार्बन सामग्री को दर्शाता है: पीट (~60%) → लिग्नाइट (~70%) → बिटुमिनस (~80–90%) → एंथ्रेसाइट (>90%)।\n• एंथ्रेसाइट में उच्चतम ऊर्जा घनत्व और न्यूनतम नमी होती है — जो विशेष औद्योगिक उपयोगों के लिए है, विद्युत उत्पादन के लिए नहीं।"
+    }
+  },
+  {
+    "uuid": "ef7aa2d4-f7f0-482c-958c-bedd6d2b312b",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Electricity Transmission Grid: National Grid Integration and Frequency Zones",
+        "Thermal Power: Plant Types and Efficiency Parameters"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "PGCIL as transmission utility not generation entity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four Central Public Sector Enterprises share the common function of generating electricity. Which one does NOT belong to this grouping?\n\n(a) NTPC (National Thermal Power Corporation)\n(b) PGCIL (Power Grid Corporation of India)\n(c) NPCIL (Nuclear Power Corporation of India Limited)\n(d) NHPC (National Hydroelectric Power Corporation)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who confuse PGCIL's role with NTPC's generation function may mark PGCIL as a generation entity, choosing (c) as the odd one out on the basis of a different role type.",
+      "elimination_logic": [
+        "Identify the category: electricity generation entities — power-producing PSUs.",
+        "NTPC (National Thermal Power Corporation) — electricity generation company — belongs.",
+        "PGCIL (Power Grid Corporation of India) — transmission utility, does NOT generate electricity — does not belong to a 'generation' grouping.",
+        "NPCIL (Nuclear Power Corporation of India) — electricity generation from nuclear — belongs.",
+        "NHPC (National Hydroelectric Power Corporation) — electricity generation from hydro — belongs.",
+        "PGCIL is the odd one out — answer is (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap replaces PGCIL's actual function (transmission) with a perceived generation function. Students who know PGCIL is a major PSU in the electricity sector may loosely group it with other electricity-sector PSUs without distinguishing generation from transmission. NTPC, NPCIL, and NHPC all generate electricity; PGCIL only transmits it.",
+      "final_explanation": "India's electricity sector PSUs have clearly demarcated functional roles.\n\n• NTPC (National Thermal Power Corporation) — India's largest electricity generator, operating coal, gas, and renewable-based power stations.\n• PGCIL (Power Grid Corporation of India) — operates and develops the inter-state transmission network (ISTS). It does NOT generate electricity; it is the Central Transmission Utility. This makes it the odd one out in a list of electricity generation entities.\n• NPCIL (Nuclear Power Corporation of India) — operates all civilian nuclear power plants in India, generating nuclear electricity.\n• NHPC (National Hydroelectric Power Corporation) — develops and operates hydroelectric projects, generating hydropower.\n\nAll except PGCIL are in electricity generation; PGCIL is purely a transmission entity.\n\nValue Addition:\n• POSOCO (Power System Operation Corporation) — the grid operator managing real-time power system balancing; a PGCIL subsidiary.\n• NTPC has expanded into solar and wind through NTPC Renewable Energy Ltd.\n• SECI (Solar Energy Corporation of India) handles renewable energy tender management — another sectoral role distinction."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार केंद्रीय सार्वजनिक क्षेत्र की कंपनियों में से तीन का सामान्य कार्य विद्युत उत्पादन है। इनमें से कौन-सी इस समूह में शामिल नहीं है?\n\n(a) NTPC (National Thermal Power Corporation)\n(b) PGCIL (Power Grid Corporation of India)\n(c) NPCIL (Nuclear Power Corporation of India Limited)\n(d) NHPC (National Hydroelectric Power Corporation)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र PGCIL की भूमिका को NTPC के उत्पादन कार्य के साथ भ्रमित करते हैं, वे PGCIL को उत्पादन इकाई मानकर (c) को अलग विकल्प के रूप में चुन सकते हैं।",
+      "elimination_logic": [
+        "श्रेणी की पहचान करें: विद्युत उत्पादन इकाइयाँ — विद्युत उत्पादन करने वाली सार्वजनिक क्षेत्र की कंपनियाँ।",
+        "NTPC (National Thermal Power Corporation) — विद्युत उत्पादन कंपनी — इसमें शामिल है।",
+        "PGCIL (Power Grid Corporation of India) — संचरण उपयोगिता है, विद्युत उत्पादन नहीं करता — 'उत्पादन' समूह में शामिल नहीं है।",
+        "NPCIL (Nuclear Power Corporation of India) — परमाणु से विद्युत उत्पादन — इसमें शामिल है।",
+        "NHPC (National Hydroelectric Power Corporation) — जल विद्युत से विद्युत उत्पादन — इसमें शामिल है।",
+        "PGCIL अलग है — उत्तर है (b)।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जालसाजी में PGCIL के वास्तविक कार्य (संचरण) को उत्पादन कार्य के रूप में प्रस्तुत किया जाता है। जो छात्र जानते हैं कि PGCIL विद्युत क्षेत्र की एक प्रमुख सार्वजनिक क्षेत्र की कंपनी है, वे इसे अन्य विद्युत क्षेत्र की कंपनियों के साथ बिना उत्पादन और संचरण के भेद के समूहित कर सकते हैं। NTPC, NPCIL, और NHPC सभी विद्युत उत्पादन करते हैं; PGCIL केवल संचरण करता है।",
+      "final_explanation": "भारत के विद्युत क्षेत्र की सार्वजनिक क्षेत्र की कंपनियों के कार्य स्पष्ट रूप से विभाजित हैं।\n\n• NTPC (National Thermal Power Corporation) — भारत की सबसे बड़ी विद्युत उत्पादक कंपनी, जो कोयला, गैस और नवीकरणीय ऊर्जा आधारित पावर स्टेशन चलाती है।\n• PGCIL (Power Grid Corporation of India) — अंतर-राज्यीय संचरण नेटवर्क (ISTS) का संचालन और विकास करती है। यह विद्युत उत्पादन नहीं करता; यह केंद्रीय संचरण उपयोगिता है। इसलिए यह विद्युत उत्पादन इकाइयों की सूची में अलग है।\n• NPCIL (Nuclear Power Corporation of India) — भारत के सभी नागरिक परमाणु पावर प्लांट संचालित करता है, परमाणु विद्युत उत्पादन करता है।\n• NHPC (National Hydroelectric Power Corporation) — जल विद्युत परियोजनाओं का विकास और संचालन करता है, जल विद्युत उत्पादन करता है।\n\nPGCIL को छोड़कर सभी विद्युत उत्पादन में हैं; PGCIL केवल संचरण इकाई है।\n\nमूल्य संवर्धन:\n• POSOCO (Power System Operation Corporation) — ग्रिड ऑपरेटर जो वास्तविक समय में पावर सिस्टम संतुलन का प्रबंधन करता है; PGCIL की सहायक कंपनी।\n• NTPC ने NTPC Renewable Energy Ltd. के माध्यम से सौर और पवन ऊर्जा में विस्तार किया है।\n• SECI (Solar Energy Corporation of India) नवीकरणीय ऊर्जा टेंडर प्रबंधन संभालती है — एक और क्षेत्रीय भूमिका विभाजन।"
+    }
+  },
+  {
+    "uuid": "fdc5b2f4-fe9a-4e43-b9d1-1b4483f38e35",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Coalbed Methane (CBM) and Coal Mine Methane (CMM): Emerging Conventional Gas",
+        "Coal Washeries and Beneficiation: Environmental and Efficiency Dimension"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "CBM vs CMM source distinction and GHG dimension",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Coalbed Methane (CBM) and Coal Mine Methane (CMM):\n\n1. Coalbed Methane (CBM) and Coal Mine Methane (CMM) both originate from coal seams, but CBM is extracted from seams not currently being mined whereas CMM is captured during active coal mining operations.\n2. Methane captured from coal mines contributes to climate change mitigation because methane has a lower Global Warming Potential than carbon dioxide over a 100-year time horizon.\n3. India's CBM potential is concentrated primarily in the Damodar Valley, Sohagpur, and Raniganj blocks, which are the same regions that hold major coal deposits.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Coalbed Methane (CBM) and Coal Mine Methane (CMM) both originate from coal seams, but CBM is extracted from seams not currently being mined whereas CMM is captured during active coal mining operations.",
+          "verdict": "Correct",
+          "reason": "This source distinction is the defining difference: CBM targets unmineable seams via dedicated boreholes; CMM is recovered as a by-product from working mines, primarily as a safety measure."
+        },
+        {
+          "statement": "Methane captured from coal mines contributes to climate change mitigation because methane has a lower Global Warming Potential than carbon dioxide over a 100-year time horizon.",
+          "verdict": "Incorrect",
+          "reason": "Methane's GWP is approximately 25–30 times that of CO₂ over 100 years (and ~80 times over 20 years); CMM capture mitigates climate change precisely because methane is far more potent than CO₂, not less potent."
+        },
+        {
+          "statement": "India's CBM potential is concentrated primarily in the Damodar Valley, Sohagpur, and Raniganj blocks, which are the same regions that hold major coal deposits.",
+          "verdict": "Correct",
+          "reason": "CBM potential is geologically co-located with coal deposits; Damodar Valley (Jharia/Raniganj) and Sohagpur (MP) are both major coal and CBM zones."
+        }
+      ],
+      "strong_distractor": "d — Students who broadly know methane capture is good for climate may accept Statement 2 without scrutinising the specific claim about GWP comparison with CO₂.",
+      "elimination_logic": [
+        "Verify Statement 1: CBM from unmineable seams vs CMM from active mines — Correct.",
+        "Examine Statement 2: Methane GWP lower than CO₂ — false; methane GWP is ~25–80 times CO₂ depending on time horizon — Incorrect.",
+        "Verify Statement 3: CBM blocks in Damodar, Sohagpur, Raniganj — Correct.",
+        "Statements 1 and 3 correct; Statement 2 incorrect — answer is (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses a partial-truth trap: methane capture IS good for climate mitigation — but the reason given is inverted. CMM capture helps climate because methane is much more potent than CO₂ (not less potent). Students who know 'capturing coal mine methane is a mitigation strategy' may accept the statement without checking the specific GWP claim, mistakenly thinking they recall that methane dissipates faster (shorter atmospheric lifetime) and assuming this means lower GWP.",
+      "final_explanation": "CBM and CMM represent both an energy opportunity and a climate mitigation tool.\n\n• Statement 1 — Correct: CBM is extracted via vertical/horizontal wells drilled into coal seams that are too deep, thin, or structurally unstable for conventional mining. CMM is drained from active mines to prevent explosions and can be captured for energy use.\n• Statement 2 — Incorrect: Methane (CH₄) has a GWP of approximately 25–30 over 100 years and ~80 over 20 years relative to CO₂. Capturing and utilising CMM prevents this potent GHG from reaching the atmosphere — the mitigation value lies in methane's high GWP, not a low one. The statement's causal logic is reversed.\n• Statement 3 — Correct: India's CBM blocks are geologically colocated with coal deposits. Damodar Valley (WB-Jharkhand), Sohagpur (MP), and Raniganj are the primary CBM exploration zones.\n\nValue Addition:\n• India has CBM production from Raniganj (ESSAR/GEECL) and Sohagpur (ONGC).\n• Fugitive methane from coal mines is reported under India's GHG inventory to UNFCCC.\n• CBM is covered under natural gas pricing policy — its development was delayed by overlapping jurisdiction with coal blocks."
+    },
+    "hi": {
+      "display_text": "कोयल बेड मीथेन (CBM) और कोयला खदान मीथेन (CMM) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. कोयल बेड मीथेन (CBM) और कोयला खदान मीथेन (CMM) दोनों कोयला तहों से उत्पन्न होते हैं, लेकिन CBM उन तहों से निकाला जाता है जिनका वर्तमान में खनन नहीं हो रहा है जबकि CMM सक्रिय कोयला खनन के दौरान प्राप्त किया जाता है।\n2. कोयला खानों से प्राप्त मीथेन जलवायु परिवर्तन शमन में योगदान देता है क्योंकि मीथेन का 100-वर्षीय समय सीमा में कार्बन डाइऑक्साइड की तुलना में कम ग्लोबल वार्मिंग पोटेंशियल होता है।\n3. भारत की CBM संभावना मुख्यतः दामोदर घाटी, सोहागपुर, और रानीगंज ब्लॉकों में केंद्रित है, जो वही क्षेत्र हैं जहाँ प्रमुख कोयला भंडार हैं।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Coalbed Methane (CBM) and Coal Mine Methane (CMM) both originate from coal seams, but CBM is extracted from seams not currently being mined whereas CMM is captured during active coal mining operations.",
+          "verdict": "सही",
+          "reason": "यह स्रोत भेद मुख्य अंतर है: CBM उन कोयला तहों से निकाला जाता है जिन्हें वर्तमान में खनन नहीं किया जा रहा है, जबकि CMM सक्रिय कोयला खनन के दौरान एक उपउत्पाद के रूप में प्राप्त होता है, मुख्यतः सुरक्षा उपाय के रूप में।"
+        },
+        {
+          "statement": "Methane captured from coal mines contributes to climate change mitigation because methane has a lower Global Warming Potential than carbon dioxide over a 100-year time horizon.",
+          "verdict": "गलत",
+          "reason": "मीथेन का GWP कार्बन डाइऑक्साइड की तुलना में लगभग 25–30 गुना अधिक है 100 वर्षों के लिए (और लगभग 80 गुना 20 वर्षों के लिए); CMM का कब्जा जलवायु परिवर्तन को कम करता है क्योंकि मीथेन CO₂ से कहीं अधिक प्रभावशाली है, कम नहीं।"
+        },
+        {
+          "statement": "India's CBM potential is concentrated primarily in the Damodar Valley, Sohagpur, and Raniganj blocks, which are the same regions that hold major coal deposits.",
+          "verdict": "सही",
+          "reason": "CBM की संभावना भूवैज्ञानिक रूप से कोयला भंडार के साथ सह-स्थित है; दामोदर घाटी (झरिया/रानीगंज) और सोहागपुर (मध्य प्रदेश) दोनों प्रमुख कोयला और CBM क्षेत्र हैं।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र सामान्यतः जानते हैं कि मीथेन कब्जा जलवायु के लिए अच्छा है, वे बिना CO₂ के साथ GWP तुलना की विशिष्ट दावे की जांच किए कथन 2 को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: CBM उन तहों से जो खनन योग्य नहीं हैं, जबकि CMM सक्रिय खानों से — सही।",
+        "कथन 2 की जांच करें: मीथेन का GWP CO₂ से कम है — गलत; मीथेन का GWP समय सीमा के आधार पर लगभग 25–80 गुना CO₂ से अधिक है — गलत।",
+        "कथन 3 सत्यापित करें: दामोदर, सोहागपुर, रानीगंज में CBM क्षेत्र — सही।",
+        "कथन 1 और 3 सही हैं; कथन 2 गलत है — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 आंशिक-सत्य जाल का उपयोग करता है: मीथेन कब्जा जलवायु संरक्षण के लिए सही है — लेकिन दिया गया कारण उल्टा है। CMM कब्जा इसलिए मदद करता है क्योंकि मीथेन CO₂ से बहुत अधिक प्रभावशाली है (कम नहीं)। जो छात्र जानते हैं कि 'कोयला खदान मीथेन कब्जा एक संरक्षण रणनीति है' वे बिना GWP दावे की जांच किए इसे स्वीकार कर सकते हैं, गलती से सोचते हैं कि मीथेन जल्दी नष्ट हो जाता है (छोटी वायुमंडलीय आयु) और इसका अर्थ है कम GWP।",
+      "final_explanation": "CBM और CMM दोनों ऊर्जा के अवसर और जलवायु संरक्षण उपकरण हैं।\n\n• कथन 1 — सही: CBM उन कोयला तहों से निकाला जाता है जो बहुत गहरे, पतले या संरचनात्मक रूप से अस्थिर हैं, इसलिए पारंपरिक खनन के लिए उपयुक्त नहीं हैं। CMM सक्रिय खानों से निकाला जाता है ताकि विस्फोटों को रोका जा सके और इसे ऊर्जा उपयोग के लिए कब्जा किया जा सकता है।\n• कथन 2 — गलत: मीथेन (CH₄) का GWP लगभग 25–30 है 100 वर्षों के लिए और लगभग 80 है 20 वर्षों के लिए CO₂ के सापेक्ष। CMM को पकड़ना और उपयोग करना इस शक्तिशाली GHG को वायुमंडल में जाने से रोकता है — संरक्षण मूल्य मीथेन के उच्च GWP में है, न कि कम में। कथन की कारणात्मक तर्क उल्टी है।\n• कथन 3 — सही: भारत के CBM क्षेत्र भूवैज्ञानिक रूप से कोयला भंडार के साथ सह-स्थित हैं। दामोदर घाटी (पश्चिम बंगाल-झारखंड), सोहागपुर (मध्य प्रदेश), और रानीगंज प्रमुख CBM अन्वेषण क्षेत्र हैं।\n\nमूल्य संवर्धन:\n• भारत में रानीगंज (ESSAR/GEECL) और सोहागपुर (ONGC) से CBM उत्पादन होता है।\n• कोयला खानों से निकलने वाला मीथेन भारत के GHG इन्वेंट्री में UNFCCC को रिपोर्ट किया जाता है।\n• CBM प्राकृतिक गैस मूल्य निर्धारण नीति के अंतर्गत आता है — इसका विकास कोयला ब्लॉकों के साथ अधिकार क्षेत्र के ओवरलैप के कारण विलंबित हुआ।"
+    }
+  },
+  {
+    "uuid": "a1146aab-00b2-42e6-a93a-3b348ac49ecf",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Petroleum Pricing and Subsidy Architecture in India",
+        "Energy Intensity and India's Energy Security Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Under-recovery not accounting loss — pricing gap concept",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An oil marketing company in India is directed by regulation to sell diesel to consumers at a price that is ₹5 per litre below the market-determined import parity price. The company records a net shortfall of ₹5 on every litre of diesel it sells through its retail outlets. The company's management reports this shortfall in its quarterly filings to the petroleum ministry.\n\nThis shortfall of ₹5 per litre is most precisely described under India's petroleum pricing framework as:\n\n(a) An accounting loss, because the company receives less revenue than its cost of operations for diesel\n(b) A subsidy on the government's books, because the state bears the fiscal burden of ₹5 per litre\n(c) An under-recovery, representing the gap between the market-linked price and the regulated consumer selling price\n(d) A market failure, because the competitive price mechanism has been distorted by regulatory intervention",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who read 'net shortfall on every litre sold' will instinctively classify this as a financial loss (accounting loss), not recognising the regulatory concept of under-recovery as a price gap measure.",
+      "elimination_logic": [
+        "The scenario describes a company selling a product below market-determined cost on regulatory direction — this is the definition of under-recovery, not accounting loss.",
+        "Eliminate (a): An accounting loss appears on the income statement and reflects total expenses exceeding revenues — a company can have under-recoveries and still report accounting profit on other operations.",
+        "Eliminate (b): Subsidy on the government books refers to budgetary allocation — under-recovery is a pricing concept, not a budgetary line item in this context.",
+        "Eliminate (d): A market failure occurs when markets do not allocate resources efficiently — the scenario describes a policy-regulated pricing gap, not a market failure.",
+        "Confirm (c): Under-recovery is specifically the gap between the market-linked import parity price and the government-mandated selling price; it is a regulatory pricing concept distinct from accounting profit or loss."
+      ],
+      "upsc_trap_explanation": "The conflation trap equates 'under-recovery' with 'accounting loss.' Students encountering a company that 'loses money on every litre' will reflexively classify this as a loss on financial statements. The UPSC has tested the under-recovery concept precisely because partially prepared students apply the common-sense definition of loss to a technical pricing mechanism. Under-recovery is defined relative to market price, not to cost — a company can have under-recoveries and still be profitable through other revenue streams or government compensation mechanisms.",
+      "final_explanation": "India's petroleum pricing framework created a technical concept called 'under-recovery' that is distinct from financial loss.\n\nThe scenario describes an oil marketing company (OMC) directed to sell diesel at a price below the market-linked import parity price — this is the precise definition of under-recovery.\n\n• Option (a) — Incorrect: Accounting loss is the excess of expenses over revenues on the income statement. An OMC reporting under-recoveries may still be profitable overall, as other operations and government compensation may cover the shortfall. They are conceptually different.\n• Option (b) — Incorrect: While under-recoveries were historically compensated through the government budget (oil bonds, direct transfers), they are not themselves a 'subsidy on the government's books' — they are recorded as a deficit by the OMC relative to market price.\n• Option (c) — Correct: Under-recovery is the difference between what the OMC receives from the consumer and what it would have received at market (import parity) price. It is a regulatory pricing gap, not an accounting concept.\n• Option (d) — Incorrect: A market failure is an economic concept (externalities, public goods) — not applicable to this scenario of government-mandated price control.\n\nValue Addition:\n• APM (Administered Price Mechanism) was the earlier system where government fully fixed petroleum prices; partially dismantled between 1997–2002.\n• Petrol deregulated in 2010; diesel in 2014; LPG and kerosene remain controlled.\n• Oil bonds issued to compensate OMCs for under-recoveries created long-term fiscal liabilities for the government."
+    },
+    "hi": {
+      "display_text": "भारत में एक तेल विपणन कंपनी को नियमन द्वारा निर्देशित किया गया है कि वह डीजल को उपभोक्ताओं को बाजार-निर्धारित आयात समानता मूल्य से ₹5 प्रति लीटर कम मूल्य पर बेचे। कंपनी अपने खुदरा आउटलेट्स के माध्यम से बेचे गए हर लीटर डीजल पर ₹5 का शुद्ध घाटा दर्ज करती है। कंपनी का प्रबंधन इस घाटे को अपनी त्रैमासिक रिपोर्टिंग में पेट्रोलियम मंत्रालय को प्रस्तुत करता है।\n\nभारत के पेट्रोलियम मूल्य निर्धारण ढांचे के तहत ₹5 प्रति लीटर के इस घाटे को सबसे सटीक रूप में निम्नलिखित में से किस रूप में वर्णित किया जा सकता है:\n\n(a) एक लेखा हानि, क्योंकि कंपनी को डीजल के संचालन लागत से कम राजस्व प्राप्त होता है\n(b) सरकार की पुस्तकों पर एक सब्सिडी, क्योंकि राज्य ₹5 प्रति लीटर का वित्तीय बोझ उठाता है\n(c) एक अधिग्रहण की कमी, जो बाजार-लिंक्ड मूल्य और नियामित उपभोक्ता बिक्री मूल्य के बीच का अंतर दर्शाती है\n(d) एक बाजार विफलता, क्योंकि प्रतिस्पर्धी मूल्य तंत्र को नियामक हस्तक्षेप द्वारा विकृत किया गया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र 'प्रति लीटर बेचे गए हर लीटर पर शुद्ध घाटा' पढ़ते हैं, वे स्वाभाविक रूप से इसे वित्तीय हानि (लेखा हानि) के रूप में वर्गीकृत करेंगे, न कि नियामक अवधारणा के तहत-प्राप्ति को मूल्य अंतर के रूप में पहचानेंगे।",
+      "elimination_logic": [
+        "परिदृश्य एक कंपनी का वर्णन करता है जो नियामक निर्देश पर बाजार-निर्धारित लागत से कम मूल्य पर उत्पाद बेचती है — यह अधिग्रहण की कमी (under-recovery) की परिभाषा है, लेखा हानि नहीं।",
+        "(a) को हटाएं: लेखा हानि आय विवरण में प्रकट होती है और कुल खर्च राजस्व से अधिक होने को दर्शाती है — एक कंपनी के पास अधिग्रहण की कमी हो सकती है और फिर भी अन्य संचालन में लेखा लाभ रिपोर्ट कर सकती है।",
+        "(b) को हटाएं: सरकार की पुस्तकों पर सब्सिडी का अर्थ बजट आवंटन से है — अधिग्रहण की कमी एक मूल्य निर्धारण अवधारणा है, इस संदर्भ में बजट की कोई लाइन आइटम नहीं।",
+        "(d) को हटाएं: बाजार विफलता तब होती है जब बाजार संसाधनों का कुशल आवंटन नहीं करते — परिदृश्य एक नीति-नियंत्रित मूल्य अंतर को दर्शाता है, बाजार विफलता नहीं।",
+        "(c) की पुष्टि करें: अधिग्रहण की कमी विशेष रूप से बाजार-लिंक्ड आयात समानता मूल्य और सरकार द्वारा निर्धारित बिक्री मूल्य के बीच का अंतर है; यह एक नियामक मूल्य निर्धारण अवधारणा है जो लेखा लाभ या हानि से भिन्न है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल 'अधिग्रहण की कमी' को 'लेखा हानि' के साथ समान मानता है। जो छात्र यह देखते हैं कि कंपनी 'प्रति लीटर पैसे खो रही है', वे स्वचालित रूप से इसे वित्तीय विवरणों में हानि के रूप में वर्गीकृत कर देंगे। UPSC ने अधिग्रहण की कमी की अवधारणा को इसलिए परखा है क्योंकि आंशिक रूप से तैयार छात्र सामान्य ज्ञान के अनुसार हानि की परिभाषा को तकनीकी मूल्य निर्धारण तंत्र पर लागू करते हैं। अधिग्रहण की कमी बाजार मूल्य के सापेक्ष परिभाषित होती है, लागत के सापेक्ष नहीं — एक कंपनी के पास अधिग्रहण की कमी हो सकती है और फिर भी अन्य राजस्व स्रोतों या सरकारी मुआवजा तंत्रों के माध्यम से लाभकारी हो सकती है।",
+      "final_explanation": "भारत के पेट्रोलियम मूल्य निर्धारण ढांचे ने 'अधिग्रहण की कमी' नामक एक तकनीकी अवधारणा बनाई है जो वित्तीय हानि से भिन्न है।\n\nपरिदृश्य एक तेल विपणन कंपनी (OMC) का वर्णन करता है जिसे नियामक निर्देश के तहत डीजल को बाजार-लिंक्ड आयात समानता मूल्य से ₹5 प्रति लीटर कम मूल्य पर बेचना होता है — यह अधिग्रहण की कमी की सटीक परिभाषा है।\n\n• विकल्प (a) — गलत: लेखा हानि आय विवरण में खर्च राजस्व से अधिक होने को दर्शाती है। एक OMC जिसके पास अधिग्रहण की कमी है, वह कुल मिलाकर लाभकारी हो सकता है क्योंकि अन्य संचालन और सरकारी मुआवजा घाटे को पूरा कर सकते हैं। ये अवधारणात्मक रूप से भिन्न हैं।\n• विकल्प (b) — गलत: जबकि अधिग्रहण की कमी का मुआवजा ऐतिहासिक रूप से सरकारी बजट (तेल बॉन्ड, प्रत्यक्ष हस्तांतरण) के माध्यम से दिया गया था, वे स्वयं 'सरकार की पुस्तकों पर सब्सिडी' नहीं हैं — वे OMC द्वारा बाजार मूल्य के सापेक्ष एक घाटे के रूप में दर्ज होते हैं।\n• विकल्प (c) — सही: अधिग्रहण की कमी वह अंतर है जो OMC उपभोक्ता से प्राप्त करता है और वह जो उसे बाजार (आयात समानता) मूल्य पर प्राप्त होता। यह एक नियामक मूल्य निर्धारण अंतर है, लेखा अवधारणा नहीं।\n• विकल्प (d) — गलत: बाजार विफलता एक आर्थिक अवधारणा है (बाहरीताएँ, सार्वजनिक वस्तुएं) — यह सरकारी-निर्धारित मूल्य नियंत्रण के इस परिदृश्य पर लागू नहीं होती।\n\nमूल्य संवर्धन:\n• APM (प्रशासित मूल्य तंत्र) वह पूर्व प्रणाली थी जिसमें सरकार ने पेट्रोलियम कीमतों को पूरी तरह से निर्धारित किया था; 1997–2002 के बीच आंशिक रूप से समाप्त किया गया।\n• पेट्रोल 2010 में मुक्त किया गया; डीजल 2014 में; LPG और केरोसिन नियंत्रित बने हुए हैं।\n• अधिग्रहण की कमी के लिए OMC को मुआवजा देने के लिए जारी किए गए तेल बॉन्ड ने सरकार के लिए दीर्घकालिक वित्तीय दायित्व बनाए।"
+    }
+  },
+  {
+    "uuid": "675e10bd-9b26-4762-86b5-9e7cc15e10ab",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Hydropower: Potential vs Actual Development in India",
+        "Major Hydroelectric Projects: Inter-State and International Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Hydro potential utilisation gap and NE India ecological concerns",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding hydroelectric power development in India:\n\n1. India's total assessed hydroelectric potential of approximately 1,50,000 MW remains significantly underutilised, with actual installed hydro capacity representing only a fraction of this potential.\n2. Run-of-river hydroelectric projects in north-eastern India, such as those proposed on the Subansiri and Dibang rivers, have raised ecological concerns relating to downstream flooding and impact on biodiversity.\n3. Himalayan run-of-river projects pose no sedimentation challenge because the absence of large reservoirs means sediment flows through freely without accumulating.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India's total assessed hydroelectric potential of approximately 1,50,000 MW remains significantly underutilised, with actual installed hydro capacity representing only a fraction of this potential.",
+          "verdict": "Correct",
+          "reason": "India's assessed hydro potential is ~1,50,000 MW at 60% load factor; installed hydro capacity is roughly 47,000 MW — a large utilisation gap exists."
+        },
+        {
+          "statement": "Run-of-river hydroelectric projects in north-eastern India, such as those proposed on the Subansiri and Dibang rivers, have raised ecological concerns relating to downstream flooding and impact on biodiversity.",
+          "verdict": "Correct",
+          "reason": "Projects like the Lower Subansiri and Dibang Multipurpose Project have faced opposition from downstream communities in Assam and environmental experts citing seismic risk, biodiversity loss in biodiversity hotspot areas, and flash flood risk."
+        },
+        {
+          "statement": "Himalayan run-of-river projects pose no sedimentation challenge because the absence of large reservoirs means sediment flows through freely without accumulating.",
+          "verdict": "Incorrect",
+          "reason": "Run-of-river projects still have small ponds/desilting chambers that trap sediment; Himalayan rivers carry extremely high sediment loads, causing turbine abrasion and structural challenges even without large reservoirs."
+        }
+      ],
+      "strong_distractor": "d — Students who know both that India has underutilised hydro potential and that NE projects face ecological concerns may accept all three as correct without analysing Statement 3's logic about sedimentation.",
+      "elimination_logic": [
+        "Verify Statement 1: ~1,50,000 MW potential, ~47,000 MW installed — large gap — Correct.",
+        "Verify Statement 2: Subansiri, Dibang ecological concerns, downstream Assam flooding — Correct.",
+        "Examine Statement 3: 'No sedimentation challenge' for run-of-river — false; Himalayan sediment abrades turbines and clogs desilting basins — Incorrect.",
+        "Statements 1 and 2 correct — answer is (a)."
+      ],
+      "upsc_trap_explanation": "Statement 3 applies a scope-extension logic: 'no reservoir = no sedimentation problem' seems intuitively reasonable. Students who know that large reservoirs (like Tehri or Bhakra) face sedimentation will accept that run-of-river projects escape this problem entirely. The trap is the absolute 'no sedimentation challenge' claim — in reality, Himalayan rivers carry among the world's highest sediment loads, causing turbine wear and operational challenges even in run-of-river systems.",
+      "final_explanation": "India's hydropower sector faces both an opportunity gap (vast untapped potential) and real ecological constraints on development.\n\n• Statement 1 — Correct: India's total economically exploitable hydro potential at 60% load factor is ~1,50,000 MW, of which only ~47,000 MW is installed — a utilisation rate below 35%. Most unexploited potential lies in the Himalayan and NE river systems.\n• Statement 2 — Correct: Projects on the Subansiri (Lower Subansiri HEP, 2,000 MW) and Dibang (2,880 MW) face sustained ecological opposition. Concerns include: disruption of migratory fish, seismic vulnerability (high seismic zone), and downstream flooding risk for Assam's Brahmaputra plains.\n• Statement 3 — Incorrect: Run-of-river projects avoid the submergence of large land areas but do not escape sedimentation. Himalayan rivers have among the highest sediment loads globally. Sand and silt erode turbine blades (abrasion), clog intake structures, and require large desilting basins — a significant engineering and operational challenge.\n\nValue Addition:\n• Tehri Dam (Uttarakhand) is a storage-based hydro project — 1,000 MW; controversial for forest submergence and seismic risk in Zone IV–V.\n• The NE India hydro potential (assessed at ~60,000 MW+) remains the largest untapped block.\n• Cumulative sedimentation reduces reservoir storage capacity over time — a major issue for long-term project viability."
+    },
+    "hi": {
+      "display_text": "भारत में जलविद्युत विकास के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत की कुल आकलित जलविद्युत क्षमता लगभग 1,50,000 मेगावाट है जो काफी हद तक अध:प्रयुक्त है, जबकि वास्तविक स्थापित जलविद्युत क्षमता इस क्षमता का केवल एक अंश है।\n2. उत्तर-पूर्वी भारत में नदी प्रवाह आधारित जलविद्युत परियोजनाओं, जैसे कि सुबनसिरी और डिबांग नदियों पर प्रस्तावित परियोजनाओं ने नीचे की ओर बाढ़ और जैव विविधता पर प्रभाव से संबंधित पारिस्थितिक चिंताएँ उत्पन्न की हैं।\n3. हिमालयी नदी प्रवाह आधारित परियोजनाओं में तलछट की कोई समस्या नहीं होती क्योंकि बड़े जलाशयों के अभाव में तलछट बिना जमा हुए स्वतंत्र रूप से बह जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत की कुल आकलित जलविद्युत क्षमता लगभग 1,50,000 मेगावाट है जो काफी हद तक अध:प्रयुक्त है, जबकि वास्तविक स्थापित जलविद्युत क्षमता इस क्षमता का केवल एक अंश है।",
+          "verdict": "सही",
+          "reason": "भारत की आकलित जलविद्युत क्षमता लगभग 1,50,000 मेगावाट है 60% लोड फैक्टर पर; स्थापित जलविद्युत क्षमता लगभग 47,000 मेगावाट है — एक बड़ा उपयोग अंतर मौजूद है।"
+        },
+        {
+          "statement": "उत्तर-पूर्वी भारत में नदी प्रवाह आधारित जलविद्युत परियोजनाओं, जैसे कि सुबनसिरी और डिबांग नदियों पर प्रस्तावित परियोजनाओं ने नीचे की ओर बाढ़ और जैव विविधता पर प्रभाव से संबंधित पारिस्थितिक चिंताएँ उत्पन्न की हैं।",
+          "verdict": "सही",
+          "reason": "लोअर सुबनसिरी और डिबांग बहुउद्देश्यीय परियोजनाओं जैसी परियोजनाओं को असम के नीचे के समुदायों और पर्यावरण विशेषज्ञों से विरोध का सामना करना पड़ा है, जिनमें भूकंपीय जोखिम, जैव विविधता हानि (जैव विविधता हॉटस्पॉट क्षेत्रों में), और अचानक बाढ़ के जोखिम का हवाला दिया गया है।"
+        },
+        {
+          "statement": "हिमालयी नदी प्रवाह आधारित परियोजनाओं में तलछट की कोई समस्या नहीं होती क्योंकि बड़े जलाशयों के अभाव में तलछट बिना जमा हुए स्वतंत्र रूप से बह जाता है।",
+          "verdict": "गलत",
+          "reason": "नदी प्रवाह आधारित परियोजनाओं में भी छोटे तालाब/तलछट निकासी कक्ष होते हैं जो तलछट को फंसाते हैं; हिमालयी नदियाँ अत्यधिक तलछट ले जाती हैं, जिससे टरबाइन की घिसावट और संरचनात्मक चुनौतियाँ होती हैं, भले ही बड़े जलाशय न हों।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र जानते हैं कि भारत के पास अध:प्रयुक्त जलविद्युत क्षमता है और उत्तर-पूर्व की परियोजनाओं को पारिस्थितिक चिंताएँ हैं, वे बिना कथन 3 के तलछट संबंधी तर्क का विश्लेषण किए तीनों को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: लगभग 1,50,000 मेगावाट क्षमता, लगभग 47,000 मेगावाट स्थापित — बड़ा अंतर — सही।",
+        "कथन 2 सत्यापित करें: सुबनसिरी, डिबांग पारिस्थितिक चिंताएँ, असम में नीचे की ओर बाढ़ — सही।",
+        "कथन 3 की जांच करें: 'नदी प्रवाह आधारित में कोई तलछट समस्या नहीं' — गलत; हिमालयी तलछट टरबाइन घिसावट और तलछट निकासी कक्षों में जाम लगाता है।",
+        "कथन 1 और 2 सही हैं — उत्तर (a) है।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में दायरा-विस्तार तर्क लागू किया गया है: 'कोई जलाशय नहीं = कोई तलछट समस्या नहीं' सहज रूप से तर्कसंगत लगता है। जो छात्र जानते हैं कि बड़े जलाशय (जैसे तेहरी या भाखड़ा) में तलछट की समस्या होती है, वे मान लेते हैं कि नदी प्रवाह आधारित परियोजनाओं में यह समस्या पूरी तरह नहीं होती। जाल यह पूर्ण 'कोई तलछट समस्या नहीं' दावा है — वास्तव में, हिमालयी नदियाँ विश्व की सबसे अधिक तलछट ले जाने वाली नदियों में से हैं, जो टरबाइन की घिसावट और संचालन संबंधी चुनौतियाँ उत्पन्न करती हैं, भले ही वे नदी प्रवाह आधारित हों।",
+      "final_explanation": "भारत के जलविद्युत क्षेत्र में एक ओर अवसर की कमी (विशाल अप्रयुक्त क्षमता) है और दूसरी ओर विकास पर वास्तविक पारिस्थितिक प्रतिबंध हैं।\n\n• कथन 1 — सही: भारत की कुल आर्थिक रूप से उपयोगी जलविद्युत क्षमता 60% लोड फैक्टर पर लगभग 1,50,000 मेगावाट है, जिसमें से केवल लगभग 47,000 मेगावाट स्थापित है — उपयोग दर 35% से कम। अधिकांश अप्रयुक्त क्षमता हिमालयी और उत्तर-पूर्वी नदी प्रणालियों में है।\n• कथन 2 — सही: सुबनसिरी (लोअर सुबनसिरी HEP, 2,000 मेगावाट) और डिबांग (2,880 मेगावाट) पर परियोजनाओं को निरंतर पारिस्थितिक विरोध का सामना करना पड़ता है। चिंताएँ हैं: प्रवासी मछलियों का व्यवधान, भूकंपीय संवेदनशीलता (उच्च भूकंपीय क्षेत्र), और असम के ब्रह्मपुत्र मैदानों में नीचे की ओर बाढ़ का जोखिम।\n• कथन 3 — गलत: नदी प्रवाह आधारित परियोजनाएँ बड़े भूभाग के डूबने से बचती हैं लेकिन तलछट से बचती नहीं हैं। हिमालयी नदियाँ विश्व की सबसे अधिक तलछट ले जाने वाली नदियों में से हैं। रेत और मिट्टी टरबाइन ब्लेड को घिसती है (अब्रेशन), जल प्रवेश संरचनाओं को जाम करती है, और बड़े तलछट निकासी तालाबों की आवश्यकता होती है — जो एक महत्वपूर्ण इंजीनियरिंग और संचालन चुनौती है।\n\nमूल्यवर्धन:\n• तेहरी बांध (उत्तराखंड) एक जलाशय आधारित जलविद्युत परियोजना है — 1,000 मेगावाट; वन डूब और भूकंपीय जोखिम (क्षेत्र IV–V) के लिए विवादित।\n• उत्तर-पूर्व भारत की जलविद्युत क्षमता (लगभग 60,000 मेगावाट से अधिक आंकी गई) सबसे बड़ी अप्रयुक्त ब्लॉक बनी हुई है।\n• संचयी तलछट जलाशय की भंडारण क्षमता को समय के साथ कम करता है — दीर्घकालिक परियोजना स्थिरता के लिए एक प्रमुख समस्या।"
+    }
+  },
+  {
+    "uuid": "c090fa06-355f-4b03-ab83-3c7a90c7e6eb",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Coal India Limited (CIL): Structure, Subsidiaries and Market Dominance",
+        "Major Coalfield Regions and Their River Basin Associations"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "CIL subsidiaries mapped to states and coalfields",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Coal India Limited subsidiaries in List I with their principal operational states/coalfields in List II:",
+        "columns": [
+          "List I — CIL Subsidiary",
+          "List II — Principal Area of Operation"
+        ],
+        "rows": [
+          [
+            "A. Bharat Coking Coal Limited (BCCL)",
+            "1. Chhattisgarh and eastern Madhya Pradesh"
+          ],
+          [
+            "B. Mahanadi Coalfields Limited (MCL)",
+            "2. Jharia coalfield, Jharkhand"
+          ],
+          [
+            "C. South Eastern Coalfields Limited (SECL)",
+            "3. Wardha Valley and Nagpur belt, Maharashtra"
+          ],
+          [
+            "D. Western Coalfields Limited (WCL)",
+            "4. IB Valley and Talcher coalfields, Odisha"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-4, C-1, D-4\n(c) A-2, B-4, C-1, D-3\n(d) A-4, B-2, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know BCCL is associated with Jharia (coking coal, Jharkhand) but confuse CCL (Central Coalfields) with SECL (South Eastern) may swap their state assignments.",
+      "elimination_logic": [
+        "Match A (BCCL — Bharat Coking Coal Ltd): operates in Jharia coalfield, Jharkhand — matches 2.",
+        "Match B (MCL — Mahanadi Coalfields Ltd): operates in Odisha's Mahanadi belt (IB Valley, Talcher) — matches 4.",
+        "Match C (SECL — South Eastern Coalfields Ltd): operates in Chhattisgarh and eastern Madhya Pradesh — matches 1.",
+        "Match D (WCL — Western Coalfields Ltd): operates in Maharashtra (Wardha Valley, Nagpur belt) — matches 3. Answer is (c)."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap operates between SECL and WCL. Students who know WCL is in western India may incorrectly place it in Rajasthan or Gujarat rather than Maharashtra's Wardha coalfields. Similarly, SECL's coverage of Chhattisgarh (and MP) is confused with other eastern/central coalfields. Option (b) swaps WCL and SECL's state assignments to exploit this confusion.",
+      "final_explanation": "CIL's eight subsidiaries have distinct territorial jurisdictions aligned with India's major coalfield regions.\n\nCorrect matches: A-2, B-4, C-1, D-3\n\n• A (BCCL) — 2: Bharat Coking Coal Limited operates the strategic Jharia coalfield in Jharkhand — India's only prime coking coal source. BCCL also manages fire control operations in the burning mines.\n• B (MCL) — 4: Mahanadi Coalfields Limited operates in Odisha's Mahanadi belt — IB Valley, Talcher, and surrounding blocks. Odisha's coal comes primarily through MCL.\n• C (SECL) — 1: South Eastern Coalfields Limited is headquartered in Bilaspur and operates extensively in Chhattisgarh and the Singrauli/Sohagpur areas of eastern Madhya Pradesh.\n• D (WCL) — 3: Western Coalfields Limited operates in Maharashtra's coalfields, principally the Wardha Valley (Chandrapur, Yavatmal) and Nagpur-Kamptee area.\n\nValue Addition:\n• ECL (Eastern Coalfields) operates in West Bengal's Raniganj coalfield — India's oldest.\n• CCL (Central Coalfields) operates in Jharkhand's non-Jharia coalfields (Hazaribagh, Ramgarh areas).\n• NCL (Northern Coalfields) operates Singrauli coalfield on the MP-UP border, supplying northern India's thermal stations."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में कोल इंडिया लिमिटेड की सहायक कंपनियों को सूची II में उनके प्रमुख संचालन राज्यों/कोयला क्षेत्रों से मिलाएं:",
+        "columns": [
+          "सूची I — CIL सहायक कंपनी",
+          "सूची II — प्रमुख संचालन क्षेत्र"
+        ],
+        "rows": [
+          [
+            "A. भारत कोकिंग कोल लिमिटेड (BCCL)",
+            "1. छत्तीसगढ़ और पूर्वी मध्य प्रदेश"
+          ],
+          [
+            "B. महानदी कोलफील्ड्स लिमिटेड (MCL)",
+            "2. झरिया कोयला क्षेत्र, झारखंड"
+          ],
+          [
+            "C. साउथ ईस्टर्न कोलफील्ड्स लिमिटेड (SECL)",
+            "3. वर्धा वैली और नागपुर बेल्ट, महाराष्ट्र"
+          ],
+          [
+            "D. वेस्टर्न कोलफील्ड्स लिमिटेड (WCL)",
+            "4. IB वैली और तालचर कोयला क्षेत्र, ओडिशा"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-4, C-3, D-1\n(b) A-2, B-4, C-1, D-4\n(c) A-2, B-4, C-1, D-3\n(d) A-4, B-2, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो जानते हैं कि BCCL झारखंड के झरिया (कोकिंग कोयला) से जुड़ा है लेकिन CCL (सेंट्रल कोलफील्ड्स) को SECL (साउथ ईस्टर्न) के साथ भ्रमित करते हैं, वे उनके राज्य आवंटन को बदल सकते हैं।",
+      "elimination_logic": [
+        "A (BCCL — भारत कोकिंग कोल लिमिटेड) का मिलान करें: यह झारखंड के झरिया कोयला क्षेत्र में संचालित होता है — 2 से मेल खाता है।",
+        "B (MCL — महानदी कोलफील्ड्स लिमिटेड) का मिलान करें: यह ओडिशा के महानदी बेल्ट (IB वैली, तालचर) में संचालित होता है — 4 से मेल खाता है।",
+        "C (SECL — साउथ ईस्टर्न कोलफील्ड्स लिमिटेड) का मिलान करें: यह छत्तीसगढ़ और पूर्वी मध्य प्रदेश में संचालित होता है — 1 से मेल खाता है।",
+        "D (WCL — वेस्टर्न कोलफील्ड्स लिमिटेड) का मिलान करें: यह महाराष्ट्र (वर्धा वैली, नागपुर बेल्ट) में संचालित होता है — 3 से मेल खाता है। उत्तर है (c)।"
+      ],
+      "upsc_trap_explanation": "भूगोल-संबंधित भ्रम (geographic-swap) जाल SECL और WCL के बीच काम करता है। जो छात्र जानते हैं कि WCL पश्चिमी भारत में है, वे इसे महाराष्ट्र के वर्धा कोयला क्षेत्रों के बजाय राजस्थान या गुजरात में गलत स्थान पर रख सकते हैं। इसी तरह, SECL का छत्तीसगढ़ (और मध्य प्रदेश) में विस्तार अन्य पूर्वी/मध्य कोयला क्षेत्रों के साथ भ्रमित हो जाता है। विकल्प (b) WCL और SECL के राज्य आवंटन को बदलकर इस भ्रम का लाभ उठाता है।",
+      "final_explanation": "CIL की आठ सहायक कंपनियों के क्षेत्रीय अधिकार भारत के प्रमुख कोयला क्षेत्रों के अनुरूप हैं।\n\nसही मिलान: A-2, B-4, C-1, D-3\n\n• A (BCCL) — 2: भारत कोकिंग कोल लिमिटेड झारखंड के रणनीतिक झरिया कोयला क्षेत्र का संचालन करता है — भारत का एकमात्र प्रमुख कोकिंग कोयला स्रोत। BCCL जलते हुए खदानों में अग्नि नियंत्रण कार्य भी करता है।\n• B (MCL) — 4: महानदी कोलफील्ड्स लिमिटेड ओडिशा के महानदी बेल्ट — IB वैली, तालचर और आसपास के ब्लॉकों में संचालित होता है। ओडिशा का कोयला मुख्यतः MCL के माध्यम से आता है।\n• C (SECL) — 1: साउथ ईस्टर्न कोलफील्ड्स लिमिटेड का मुख्यालय बिलासपुर में है और यह छत्तीसगढ़ तथा पूर्वी मध्य प्रदेश के सिंगरौली/सोहागपुर क्षेत्रों में व्यापक रूप से संचालित होता है।\n• D (WCL) — 3: वेस्टर्न कोलफील्ड्स लिमिटेड महाराष्ट्र के कोयला क्षेत्रों में संचालित होता है, मुख्यतः वर्धा वैली (चंद्रपुर, यवतमाल) और नागपुर-कंपटी क्षेत्र।\n\nमूल्य संवर्धन:\n• ECL (ईस्टर्न कोलफील्ड्स) पश्चिम बंगाल के रानीगंज कोयला क्षेत्र में संचालित होता है — भारत का सबसे पुराना।\n• CCL (सेंट्रल कोलफील्ड्स) झारखंड के गैर-झरिया कोयला क्षेत्रों (हजारीबाग, रामगढ़ क्षेत्र) में संचालित होता है।\n• NCL (नॉर्दर्न कोलफील्ड्स) मध्य प्रदेश-उत्तर प्रदेश सीमा पर सिंगरौली कोयला क्षेत्र में संचालित होता है, जो उत्तरी भारत के थर्मल स्टेशन को आपूर्ति करता है।"
+    }
+  },
+  {
+    "uuid": "aabf522c-1e8b-4469-8738-031752def630",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Minerals and Energy Resources",
+      "sub_topic": "Conventional energy sources",
+      "concepts_used": [
+        "Imported Coal Dependency and Port Infrastructure Linkage",
+        "Coal India Limited (CIL): Structure, Subsidiaries and Market Dominance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Nationalisation of coal mines 1973 and commercial mining 2020",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of key milestones in India's coal sector governance?\n\n1. First commercial coal mining operations in India (Raniganj)\n2. Nationalisation of coal mines and formation of Coal India Limited\n3. Establishment of Singareni Collieries as a separate government joint venture outside CIL\n4. Opening of commercial coal mining to private sector players\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 2 → 3 → 1 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who remember coal was nationalised and CIL was formed may confuse the 1971 coking coal nationalisation with the 1973 non-coking coal nationalisation, or confuse CIL's incorporation date with nationalisation.",
+      "elimination_logic": [
+        "First commercial coal mine (Raniganj, 1774) — earliest event, clearly first.",
+        "Nationalisation of coking coal mines: 1971–72 (first phase); nationalisation of all coal mines and CIL incorporation: 1973 — second event.",
+        "SCCL formation (Singareni, as a JV with Andhra Pradesh/Telangana): formalised structure emerged post-nationalisation, later in 1970s — third.",
+        "Commercial coal mining opened to private sector (2020 policy reform) — most recent event. Order: Raniganj commercial mining → nationalisation/CIL (1973) → SCCL JV formalisation → 2020 commercial mining liberalisation; answer is (a)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap operates between the 1971 coking coal nationalisation (first phase) and the 1973 full nationalisation and CIL incorporation. Students who remember 'coal was nationalised in the early 1970s' without distinguishing these two phases may order events incorrectly. Additionally, the placement of SCCL's formalisation between nationalisation and commercial mining liberalisation requires knowing that SCCL was not nationalised under CIL but established as a separate JV — a post-nationalisation development.",
+      "final_explanation": "India's coal sector governance evolved across nearly 250 years from colonial extraction to state monopoly to liberalisation.\n\nCorrect chronological order:\n\n1. Commercial coal mining at Raniganj (1774): First commercial coal extraction in India under the East India Company — the origin of organised coal mining.\n\n2. Nationalisation and CIL formation (1973): Coking coal mines were nationalised in 1971–72 (first phase); non-coking coal mines in 1973. CIL was incorporated in November 1975 as the holding company, but the 1973 Act is the policy watershed.\n\n3. SCCL established as GoI-Andhra/Telangana JV: Post-nationalisation, Singareni Collieries became a JV outside CIL's fold — a distinct governance arrangement formalised in the post-nationalisation era.\n\n4. Commercial coal mining opened (2020): The Mines and Minerals (Development and Regulation) Amendment, 2020 allowed private companies to mine and sell coal commercially — ending CIL's near-monopoly established in 1973.\n\nValue Addition:\n• The Coking Coal Mines (Nationalisation) Act, 1972 and Coal Mines (Nationalisation) Act, 1973 are the two legislative milestones.\n• 'Nominated mining' vs 'auctioned mining' — pre-2020, blocks were allocated by government; post-2020, competitive auctions.\n• CIL's IPO (2010) was India's largest public offering at that time, though the government retained majority ownership."
+    },
+    "hi": {
+      "display_text": "भारत के कोयला क्षेत्र शासन में प्रमुख मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. भारत में पहला व्यावसायिक कोयला खनन संचालन (रानीगंज)\n2. कोयला खदानों का राष्ट्रीयकरण और कोल इंडिया लिमिटेड का गठन\n3. CIL के बाहर एक अलग सरकारी संयुक्त उद्यम के रूप में सिंगरेनी कोलियरीज की स्थापना\n4. निजी क्षेत्र के लिए व्यावसायिक कोयला खनन का उद्घाटन\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 2 → 3 → 1 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who remember coal was nationalised and CIL was formed may confuse the 1971 coking coal nationalisation with the 1973 non-coking coal nationalisation, or confuse CIL's incorporation date with nationalisation.",
+      "elimination_logic": [
+        "पहला व्यावसायिक कोयला खदान (रानीगंज, 1774) — सबसे पहला घटना, स्पष्ट रूप से पहला।",
+        "कोकिंग कोयला खदानों का राष्ट्रीयकरण: 1971–72 (पहला चरण); सभी कोयला खदानों का राष्ट्रीयकरण और CIL का गठन: 1973 — दूसरा घटना।",
+        "SCCL का गठन (सिंगरेनी, आंध्र प्रदेश/तेलंगाना के साथ संयुक्त उद्यम): राष्ट्रीयकरण के बाद औपचारिक संरचना उभरी, 1970 के दशक में — तीसरा।",
+        "व्यावसायिक कोयला खनन निजी क्षेत्र के लिए खोला गया (2020 नीति सुधार) — सबसे हाल की घटना। क्रम: रानीगंज व्यावसायिक खनन → राष्ट्रीयकरण/CIL (1973) → SCCL संयुक्त उद्यम औपचारिककरण → 2020 व्यावसायिक खनन उदारीकरण; उत्तर है (a)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्थानांतरण जाल 1971 के कोकिंग कोयला राष्ट्रीयकरण (पहला चरण) और 1973 के पूर्ण राष्ट्रीयकरण तथा CIL गठन के बीच काम करता है। जो छात्र 'कोयला 1970 के दशक की शुरुआत में राष्ट्रीयकृत हुआ' याद करते हैं लेकिन इन दो चरणों को अलग नहीं करते, वे घटनाओं को गलत क्रम में रख सकते हैं। इसके अतिरिक्त, SCCL के औपचारिककरण को राष्ट्रीयकरण और व्यावसायिक खनन उदारीकरण के बीच रखने के लिए यह जानना आवश्यक है कि SCCL CIL के अंतर्गत राष्ट्रीयकृत नहीं था बल्कि एक अलग संयुक्त उद्यम के रूप में स्थापित हुआ — जो राष्ट्रीयकरण के बाद का विकास है।",
+      "final_explanation": "भारत के कोयला क्षेत्र का शासन लगभग 250 वर्षों में उपनिवेशी उत्खनन से लेकर राज्याधिकारिता और उदारीकरण तक विकसित हुआ है।\n\nसही कालानुक्रमिक क्रम:\n\n1. रानीगंज में व्यावसायिक कोयला खनन (1774): भारत में पहली व्यावसायिक कोयला उत्खनन ईस्ट इंडिया कंपनी के तहत — संगठित कोयला खनन की शुरुआत।\n\n2. राष्ट्रीयकरण और CIL का गठन (1973): कोकिंग कोयला खदानों का राष्ट्रीयकरण 1971–72 में (पहला चरण); गैर-कोकिंग कोयला खदानों का 1973 में। CIL का गठन नवंबर 1975 में होल्डिंग कंपनी के रूप में हुआ, लेकिन 1973 का अधिनियम नीति का मील का पत्थर है।\n\n3. SCCL की स्थापना भारत सरकार-आंध्र/तेलंगाना संयुक्त उद्यम के रूप में: राष्ट्रीयकरण के बाद, सिंगरेनी कोलियरीज CIL के बाहर एक संयुक्त उद्यम के रूप में बनी — एक अलग शासन व्यवस्था जो राष्ट्रीयकरण के बाद औपचारिक हुई।\n\n4. व्यावसायिक कोयला खनन निजी क्षेत्र के लिए खोला गया (2020): खनिज और खनन (विकास और विनियमन) संशोधन, 2020 ने निजी कंपनियों को कोयला खनन और बिक्री की अनुमति दी — 1973 में स्थापित CIL के लगभग एकाधिकार का अंत।\n\nमूल्यवर्धन:\n• कोकिंग कोयला खदान (राष्ट्रीयकरण) अधिनियम, 1972 और कोयला खदान (राष्ट्रीयकरण) अधिनियम, 1973 दो महत्वपूर्ण विधायी मील के पत्थर हैं।\n• 'नामित खनन' बनाम 'नीलामी खनन' — 2020 से पहले, ब्लॉकों का आवंटन सरकार द्वारा होता था; 2020 के बाद, प्रतिस्पर्धात्मक नीलामी।\n• CIL का IPO (2010) उस समय भारत का सबसे बड़ा सार्वजनिक निर्गम था, हालांकि सरकार के पास बहुमत स्वामित्व बना रहा।"
+    }
+  }
+]

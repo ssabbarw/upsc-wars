@@ -1,8 +1,11 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart' show FutureProvider;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/domain/accuracy_rules.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/providers/catalog_providers.dart';
+import '../../../core/providers/user_database_provider.dart';
 import '../domain/topic_list_filter.dart';
 
 part 'topic_test_ui_providers.g.dart';
@@ -28,5 +31,54 @@ Future<List<TopicInfo>> topicTestDisplayedTopics(Ref ref) async {
   final subject = ref.watch(topicTestSelectedSubjectSlugProvider);
   final query = ref.watch(topicTestSearchQueryProvider);
   final raw = await ref.watch(topicTestTopicsProvider(subject).future);
-  return TopicListFilter.filter(raw, query);
+  final filtered = TopicListFilter.filter(raw, query);
+  final db = ref.watch(userDatabaseProvider);
+  final statsRows = await db.userTopicStatsDao.fetchBySubject(subject);
+  final statsByTopic = {for (final row in statsRows) row.topic: row};
+
+  final merged = filtered
+      .map((topic) {
+        final stat = statsByTopic[topic.topic];
+        final attemptCount = stat?.totalAttempted ?? 0;
+        final accuracyPercent = attemptCount > 0 ? stat!.accuracyPercentage : null;
+
+        return TopicInfo(
+          topic: topic.topic,
+          subject: topic.subject,
+          displayName: topic.displayName,
+          questionCount: topic.questionCount,
+          attemptCount: attemptCount,
+          accuracyPercent: accuracyPercent,
+          accuracyTier: AccuracyRules.tierFor(
+            attemptCount: attemptCount,
+            accuracyPercent: accuracyPercent,
+          ),
+        );
+      })
+      .toList();
+
+  merged.sort((a, b) {
+    final aAttempted = a.attemptCount > 0;
+    final bAttempted = b.attemptCount > 0;
+    if (aAttempted != bAttempted) return aAttempted ? -1 : 1;
+
+    if (!aAttempted && !bAttempted) {
+      return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
+    }
+
+    final aAccuracy = a.accuracyPercent ?? 0.0;
+    final bAccuracy = b.accuracyPercent ?? 0.0;
+    final byAccuracy = aAccuracy.compareTo(bAccuracy);
+    if (byAccuracy != 0) return byAccuracy;
+    return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
+  });
+
+  return merged;
 }
+
+final topicRevisionQueueCountsByTopicProvider =
+    FutureProvider.autoDispose<Map<String, int>>((ref) async {
+      final subject = ref.watch(topicTestSelectedSubjectSlugProvider);
+      final db = ref.watch(userDatabaseProvider);
+      return db.revisionQueueDao.getActiveQueueCountByTopic(subject);
+    });

@@ -1,0 +1,1453 @@
+[
+  {
+    "uuid": "983ab414-1cff-42a1-b4d5-cd123a16d46d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Adjournment Motion: Admissibility Conditions and Procedural Rules"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Adjournment Motion admissibility conditions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following most accurately describes the admissibility requirement for an Adjournment Motion in the Lok Sabha?\n\n(a) The Speaker retains full discretion to admit any matter deemed politically significant, regardless of other conditions\n(b) The matter raised must be recent, factual, and of public importance — any two of these being sufficient for admission\n(c) The matter must simultaneously satisfy the conditions of being definite, factual, urgent, and of public importance\n(d) Public importance of the matter is the primary and overriding criterion for the Speaker's admission decision",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because the Speaker's broad powers lead students to assume the decision is discretionary in a non-reviewable way, yet this is precisely what makes (c) correct — they conflate the nature of the power with its outcome.",
+      "elimination_logic": [
+        "Recall that Adjournment Motion admissibility requires the matter to be definite, factual, urgent, AND of public importance — all four conditions must be satisfied simultaneously.",
+        "Eliminate (a): the Speaker's power to admit is discretionary but absence of judicial review is a feature of that discretion, not an admissibility criterion.",
+        "Eliminate (b): 'recent' is not one of the prescribed criteria — 'urgent' is, but urgency and recency are not identical.",
+        "Eliminate (d): public importance alone is insufficient; all four criteria must be concurrently met, ruling out any single-criterion reading."
+      ],
+      "upsc_trap_explanation": "Students who partially remember the admissibility criteria often believe 'public importance' is the dominant or only required criterion, since it appears most frequently in parliamentary discourse. The trap here is the 'all must be satisfied' requirement — a student who knows three of the four criteria but treats them as alternatives (any one sufficient) will eliminate the correct option. Option (b) introduces 'recent' as a plausible-sounding substitute for 'urgent', exploiting the tendency to confuse the two.",
+      "final_explanation": "Adjournment Motion is one of the most significant parliamentary devices for censuring the government over specific failures. Its admissibility before the Speaker is governed by strict cumulative criteria: the matter must be (1) definite, (2) factual, (3) urgent, and (4) of public importance. All four must be satisfied simultaneously — the Speaker will not admit a motion that meets only some criteria.\n\n• Option (a): Incorrect. The Speaker's discretionary power to admit or reject is real, but this describes the procedural authority, not an admissibility criterion.\n• Option (b): Incorrect. 'Recent' is not a prescribed criterion. 'Urgent' is — and urgency implies the matter cannot await a later occasion, not merely that it happened recently.\n• Option (c): Correct. The matter must be definite, factual, urgent, and of public importance — all four conditions must be concurrently satisfied.\n• Option (d): Incorrect. Public importance alone does not suffice; the cumulative nature of the criteria means a matter of great public importance that is not urgent or not factually grounded will still be rejected.\n\nValue Addition:\n• The Speaker's decision on admissibility of Adjournment Motion is not subject to judicial review.\n• An Adjournment Motion, if admitted and passed, is a censure of the government in practice though not constitutionally designated as such.\n• Unlike Calling Attention Motion, Adjournment Motion involves full debate and effectively suspends the day's listed business."
+    },
+    "hi": {
+      "display_text": "लोकसभा में स्थगन प्रस्ताव की स्वीकृति की आवश्यकता को सबसे सटीक रूप से कौन-सा विकल्प वर्णित करता है?\n\n(a) स्पीकर के पास किसी भी राजनीतिक रूप से महत्वपूर्ण विषय को बिना अन्य शर्तों की परवाह किए स्वीकार करने का पूर्ण विवेक होता है\n(b) उठाया गया विषय हाल का, तथ्यात्मक, और सार्वजनिक महत्व का होना चाहिए — इनमें से कोई भी दो शर्तें स्वीकृति के लिए पर्याप्त हैं\n(c) विषय को निश्चित, तथ्यात्मक, तात्कालिक, और सार्वजनिक महत्व की शर्तों को एक साथ पूरा करना आवश्यक है\n(d) विषय का सार्वजनिक महत्व स्पीकर के स्वीकृति निर्णय के लिए प्राथमिक और सर्वोपरि मापदंड है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि स्पीकर के व्यापक अधिकार छात्रों को यह मानने पर मजबूर करते हैं कि निर्णय विवेकाधीन है और समीक्षा योग्य नहीं है, जबकि यही कारण है कि (c) सही है — वे अधिकार की प्रकृति को उसके परिणाम के साथ भ्रमित करते हैं।",
+      "elimination_logic": [
+        "याद रखें कि स्थगन प्रस्ताव की स्वीकृति के लिए विषय निश्चित, तथ्यात्मक, तात्कालिक, और सार्वजनिक महत्व का होना आवश्यक है — ये चारों शर्तें एक साथ पूरी होनी चाहिए।",
+        "(a) को खारिज करें: स्पीकर का स्वीकृति देने का अधिकार विवेकाधीन है लेकिन न्यायिक समीक्षा का अभाव उस विवेकाधिकार की विशेषता है, स्वीकृति का मापदंड नहीं।",
+        "(b) को खारिज करें: 'हाल का' निर्धारित मापदंडों में से नहीं है — 'तात्कालिक' है, लेकिन तात्कालिकता और हालिया होना समान नहीं हैं।",
+        "(d) को खारिज करें: केवल सार्वजनिक महत्व पर्याप्त नहीं है; चारों मापदंडों का एक साथ पूरा होना आवश्यक है, इसलिए किसी एक मापदंड को अकेले मानना गलत है।"
+      ],
+      "upsc_trap_explanation": "छात्र जो स्वीकृति के मापदंडों को आंशिक रूप से याद करते हैं, वे अक्सर मानते हैं कि 'सार्वजनिक महत्व' प्रमुख या एकमात्र आवश्यक मापदंड है क्योंकि यह संसदीय चर्चा में सबसे अधिक बार आता है। यहाँ जाल यह है कि 'सभी शर्तें पूरी होनी चाहिए' — जो छात्र चार में से तीन मापदंड जानते हैं लेकिन उन्हें विकल्प मानते हैं (कोई एक पर्याप्त), वे सही विकल्प को खारिज कर देंगे। विकल्प (b) 'तात्कालिक' के स्थान पर 'हाल का' को एक संभावित विकल्प के रूप में प्रस्तुत करता है, जो दोनों को भ्रमित करने की प्रवृत्ति का लाभ उठाता है।",
+      "final_explanation": "स्थगन प्रस्ताव संसद में सरकार की विशिष्ट विफलताओं पर निंदा करने के सबसे महत्वपूर्ण संसदीय उपकरणों में से एक है। इसके स्पीकर के समक्ष स्वीकृति के लिए कड़े संचयी मापदंड हैं: विषय (1) निश्चित, (2) तथ्यात्मक, (3) तात्कालिक, और (4) सार्वजनिक महत्व का होना चाहिए। ये चारों शर्तें एक साथ पूरी होनी चाहिए — स्पीकर केवल कुछ शर्तें पूरी होने पर प्रस्ताव स्वीकार नहीं करेगा।\n\n• विकल्प (a): गलत। स्पीकर का स्वीकृति देने या अस्वीकार करने का विवेकाधिकार वास्तविक है, लेकिन यह प्रक्रिया संबंधी अधिकार है, स्वीकृति का मापदंड नहीं।\n• विकल्प (b): गलत। 'हाल का' निर्धारित मापदंड नहीं है। 'तात्कालिक' है — और तात्कालिकता का अर्थ है कि विषय बाद के अवसर तक प्रतीक्षा नहीं कर सकता, न कि केवल हाल ही में हुआ हो।\n• विकल्प (c): सही। विषय निश्चित, तथ्यात्मक, तात्कालिक, और सार्वजनिक महत्व का होना चाहिए — चारों शर्तें एक साथ पूरी होनी चाहिए।\n• विकल्प (d): गलत। केवल सार्वजनिक महत्व पर्याप्त नहीं है; मापदंडों की संचयी प्रकृति का अर्थ है कि यदि विषय अत्यंत सार्वजनिक महत्व का है लेकिन तात्कालिक या तथ्यात्मक नहीं है तो भी उसे अस्वीकार किया जाएगा।\n\nमूल्यवर्धन:\n• स्थगन प्रस्ताव की स्वीकृति पर स्पीकर का निर्णय न्यायिक समीक्षा के अधीन नहीं है।\n• यदि स्थगन प्रस्ताव स्वीकार कर पारित हो जाता है, तो यह व्यवहार में सरकार की निंदा है, हालांकि संवैधानिक रूप से इसे ऐसा नामित नहीं किया गया है।\n• कॉलिंग अटेंशन प्रस्ताव के विपरीत, स्थगन प्रस्ताव में पूर्ण बहस होती है और यह दिन के सूचीबद्ध कार्य को प्रभावी रूप से स्थगित कर देता है।"
+    }
+  },
+  {
+    "uuid": "aa5dd2de-1ddf-4719-8feb-afe02d7f5deb",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Anti-Defection Law Interface with Confidence and No-Confidence Votes",
+        "Confidence Motion: Suo Motu and Directed Variants"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Anti-defection and floor test — Tenth Schedule whip interaction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A ruling coalition party with 40 members in Lok Sabha issues a three-line whip directing all its members to vote in favour of a Confidence Motion moved by the Prime Minister. Fifteen members of this party, disagreeing with the government's economic policies, vote against the motion. The Confidence Motion passes despite their defection. Which of the following best describes the constitutional and legal consequence that immediately applies to these fifteen members?\n\n(a) They are protected from disqualification if they constitute more than one-third of the party's legislative strength, under the merger exception of the Tenth Schedule\n(b) They face removal from the party by the party leadership, but their membership of the Lok Sabha remains unaffected as no constitutional provision covers intra-party dissent\n(c) They are liable to disqualification from Lok Sabha membership under the Tenth Schedule for voting contrary to the party whip on a confidence vote, with the Speaker deciding the petition\n(d) Their vote is legally invalid and cannot be counted, but they face no disqualification since the Confidence Motion ultimately passed",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know the merger exception (2/3rd of legislative party) may assume it applies here without checking whether a formal merger has occurred — the scenario describes voting behaviour, not a merger.",
+      "elimination_logic": [
+        "The scenario involves members of a ruling party voting against their party whip during a confidence vote — this is precisely the conduct regulated by the Tenth Schedule.",
+        "Under the Tenth Schedule, voting contrary to party direction (whip) on a confidence or no-confidence motion leads to disqualification — the merger exception requires 2/3rd of the legislative party to formally merge, not merely to vote differently.",
+        "Eliminate (a): merger exception requires a formal merger of 2/3rd of the legislative party, not just defection-voting by 2/3rd — a partial-truth trap.",
+        "Eliminate (b): the Speaker's power exists, but the consequence is disqualification from membership of the House, not merely removal from the party — option (b) understates the consequence.",
+        "Eliminate (d): Kihoto Hollohan (1992) confirmed that disqualification decisions by the Speaker are subject to judicial review — not immune. Option (c) correctly captures disqualification liability and the Tenth Schedule's operation."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the partial-truth trap: the Tenth Schedule does contain a merger exception, but it requires formal merger of the legislative party (2/3rd members), not just a voting bloc acting together against the whip during a confidence vote. Students who half-remember the merger exception apply it incorrectly to any situation involving 2/3rd of members voting together.",
+      "final_explanation": "The Anti-Defection Law under the Tenth Schedule of the Constitution was inserted by the 52nd Amendment (1985) to prevent political instability caused by floor-crossing. Its interaction with confidence votes is critical.\n\nIn the scenario, 15 members of a 40-member ruling party vote against the party whip during a confidence vote. This constitutes voting contrary to party direction — the core disqualifying conduct under the Tenth Schedule.\n\n• Option (a): Incorrect. The merger exception (2/3rd of legislative party) requires a formal merger of the entire legislative group into another party — not merely a bloc voting against the whip on one occasion.\n• Option (b): Incorrect. The consequence of Tenth Schedule violation is disqualification from membership of the House, not merely removal from the party. Party membership and House membership are distinct.\n• Option (c): Correct. The 15 members face disqualification from Lok Sabha membership under the Tenth Schedule for voting against the party whip on a confidence vote. The Speaker decides disqualification petitions.\n• Option (d): Incorrect. Kihoto Hollohan (1992) held that the Speaker's disqualification decisions are judicially reviewable — they are not immune from court scrutiny.\n\nValue Addition:\n• Disqualification under Tenth Schedule vs expulsion from party: these are separate consequences — expulsion does not automatically mean disqualification.\n• The Speaker's ruling on disqualification is subject to judicial review but only after the decision is made, not during pendency.\n• Whip during confidence votes is mandatory — there is no conscientious objection exception."
+    },
+    "hi": {
+      "display_text": "लोकसभा में 40 सदस्यों वाली एक सत्ताधारी गठबंधन पार्टी प्रधानमंत्री द्वारा प्रस्तुत विश्वास प्रस्ताव के पक्ष में मतदान करने के लिए अपने सभी सदस्यों को तीन-लाइन व्हिप जारी करती है। इस पार्टी के पंद्रह सदस्य, सरकार की आर्थिक नीतियों से असहमत होकर, प्रस्ताव के खिलाफ मतदान करते हैं। विश्वास प्रस्ताव उनके दलबदल के बावजूद पारित हो जाता है। निम्नलिखित में से कौन-सा विकल्प इन पंद्रह सदस्यों पर तुरंत लागू होने वाले संवैधानिक और कानूनी परिणाम का सर्वोत्तम वर्णन करता है?\n\n(a) यदि वे पार्टी की विधायी ताकत के एक-तिहाई से अधिक हैं, तो दसवें अनुसूची के विलय अपवाद के तहत वे अयोग्यता से सुरक्षित हैं\n(b) वे पार्टी नेतृत्व द्वारा पार्टी से हटाए जा सकते हैं, लेकिन उनकी लोकसभा सदस्यता प्रभावित नहीं होती क्योंकि आंतरिक पार्टी असहमति को कोई संवैधानिक प्रावधान कवर नहीं करता\n(c) वे विश्वास मत में पार्टी व्हिप के खिलाफ मतदान करने के कारण दसवें अनुसूची के तहत लोकसभा सदस्यता से अयोग्य ठहराए जा सकते हैं, और अयोग्यता याचिका का निर्णय स्पीकर करते हैं\n(d) उनका वोट कानूनी रूप से अमान्य है और गिना नहीं जा सकता, लेकिन चूंकि विश्वास प्रस्ताव अंततः पारित हो गया, वे अयोग्यता का सामना नहीं करते",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र विलय अपवाद (2/3 विधायी दल) को जानते हैं, वे बिना यह जांचे कि क्या औपचारिक विलय हुआ है, यह मान सकते हैं कि यह यहाँ लागू होता है — परिदृश्य मतदान व्यवहार का वर्णन करता है, विलय का नहीं।",
+      "elimination_logic": [
+        "परिदृश्य में एक सत्ताधारी पार्टी के सदस्य विश्वास मत के दौरान अपनी पार्टी के व्हिप के खिलाफ मतदान कर रहे हैं — यह ठीक वही व्यवहार है जिसे दसवें अनुसूची द्वारा नियंत्रित किया गया है।",
+        "दसवें अनुसूची के तहत, पार्टी के निर्देश (व्हिप) के विपरीत मतदान करना, चाहे वह विश्वास या अविश्वास प्रस्ताव हो, अयोग्यता का कारण बनता है — विलय अपवाद के लिए विधायी दल के 2/3 सदस्यों का औपचारिक विलय आवश्यक है, केवल अलग मतदान करना नहीं।",
+        "(a) को हटाएँ: विलय अपवाद के लिए विधायी दल के 2/3 सदस्यों का औपचारिक विलय आवश्यक है, केवल 2/3 सदस्य अलग मतदान करें यह पर्याप्त नहीं है — यह आंशिक सत्य का जाल है।",
+        "(b) को हटाएँ: स्पीकर की शक्ति अवश्य है, लेकिन परिणाम सदन की सदस्यता से अयोग्यता है, केवल पार्टी से निष्कासन नहीं — विकल्प (b) परिणाम को कम आंकता है।",
+        "(d) को हटाएँ: Kihoto Hollohan (1992) ने पुष्टि की कि स्पीकर के अयोग्यता निर्णय न्यायिक समीक्षा के अधीन हैं — वे प्रतिरक्षित नहीं हैं। विकल्प (c) सही रूप से अयोग्यता की जिम्मेदारी और दसवें अनुसूची के संचालन को दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) आंशिक सत्य के जाल का उपयोग करता है: दसवें अनुसूची में विलय अपवाद है, लेकिन इसके लिए विधायी दल का औपचारिक विलय (2/3 सदस्य) आवश्यक है, न कि केवल विश्वास मत के दौरान व्हिप के खिलाफ एक साथ मतदान करने वाला समूह। जो छात्र विलय अपवाद को आंशिक रूप से याद करते हैं, वे इसे किसी भी स्थिति पर गलत तरीके से लागू कर देते हैं जहाँ 2/3 सदस्य एक साथ मतदान करते हैं।",
+      "final_explanation": "संविधान के दसवें अनुसूची के तहत विरोधी-दल विधि को 52वें संशोधन (1985) द्वारा जोड़ा गया था ताकि सदन में सदस्यता बदलने से राजनीतिक अस्थिरता को रोका जा सके। इसका विश्वास मत के साथ संबंध महत्वपूर्ण है।\n\nपरिदृश्य में, 40 सदस्यीय सत्ताधारी पार्टी के 15 सदस्य विश्वास मत के दौरान पार्टी व्हिप के खिलाफ मतदान करते हैं। यह पार्टी के निर्देश के विपरीत मतदान है — जो दसवें अनुसूची के तहत अयोग्यता का मुख्य कारण है।\n\n• विकल्प (a): गलत। विलय अपवाद (2/3 विधायी दल) के लिए पूरी विधायी पार्टी का औपचारिक विलय आवश्यक है — केवल एक बार के लिए व्हिप के खिलाफ मतदान करने वाला समूह नहीं।\n• विकल्प (b): गलत। दसवें अनुसूची का उल्लंघन सदन की सदस्यता से अयोग्यता का कारण है, केवल पार्टी से निष्कासन नहीं। पार्टी सदस्यता और सदन सदस्यता अलग-अलग हैं।\n• विकल्प (c): सही। ये 15 सदस्य विश्वास मत में पार्टी व्हिप के खिलाफ मतदान करने के कारण दसवें अनुसूची के तहत लोकसभा सदस्यता से अयोग्य ठहराए जा सकते हैं। अयोग्यता याचिका का निर्णय स्पीकर करते हैं।\n• विकल्प (d): गलत। Kihoto Hollohan (1992) ने कहा कि स्पीकर के अयोग्यता निर्णय न्यायिक समीक्षा के अधीन हैं — वे न्यायालय की जांच से मुक्त नहीं हैं।\n\nमूल्यवर्धन:\n• दसवें अनुसूची के तहत अयोग्यता और पार्टी से निष्कासन अलग-अलग परिणाम हैं — निष्कासन का अर्थ स्वचालित अयोग्यता नहीं है।\n• स्पीकर का अयोग्यता निर्णय न्यायिक समीक्षा के अधीन है, लेकिन केवल निर्णय के बाद, निर्णय के दौरान नहीं।\n• विश्वास मत के दौरान व्हिप अनिवार्य है — कोई विवेकाधीन आपत्ति अपवाद नहीं है।"
+    }
+  },
+  {
+    "uuid": "afb34293-5871-4b30-abfc-a1cd911130c2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Closure Motion: Types and Speaker's Role"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Four types of Closure Motion — Guillotine identification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following are recognised types of Closure Motion in Indian parliamentary procedure, and one is not. Which one does NOT belong to the same category as the others?\n\n(a) Simple Closure\n(b) Kangaroo Closure\n(c) Guillotine\n(d) Sunrise Closure",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) Kangaroo Closure is a strong distractor because its unusual name makes it sound invented, leading students to incorrectly identify it as the fabricated one rather than recognising 'Sunrise Closure' as the non-existent term.",
+      "elimination_logic": [
+        "Simple Closure: a real type — the House votes immediately on the matter under discussion. Belongs.",
+        "Kangaroo Closure: a real type — the Speaker selects only some amendments for debate, skipping others like a kangaroo's jumps. Belongs.",
+        "Guillotine: a real type — undiscussed demands are put to vote together at the end of the budget session. Belongs.",
+        "Sunrise Closure: this is not a recognised type of Closure Motion in Indian parliamentary procedure — it does not exist. This is the odd one out. Select (d)."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap introduces 'Sunrise Closure' as a term that sounds like it could describe a morning-session procedural device. Students unfamiliar with all four actual closure types may reject 'Kangaroo Closure' as invented (due to its unusual name) and accept 'Sunrise Closure' as real. Precise recall of all four closure types — Simple, Guillotine, Kangaroo, and Closure by Compartments — is needed to identify the fabrication.",
+      "final_explanation": "Closure Motions are procedural devices to terminate debate in Parliament. There are exactly four recognised types in Indian parliamentary practice.\n\n• Option (a) Simple Closure: Correct type — the House immediately votes to end debate on the matter under discussion.\n• Option (b) Kangaroo Closure: Correct type — the Speaker selects certain amendments for discussion while skipping others, analogous to a kangaroo's jumping movement.\n• Option (c) Guillotine: Correct type — at the end of the budget session, all undiscussed Demands for Grants are put to vote together. Most commonly tested in UPSC.\n• Option (d) Sunrise Closure: This does NOT exist in Indian parliamentary procedure. It is a fabricated term. The fourth actual type is 'Closure by Compartments', where a Bill is divided into parts and each part is closed after discussion.\n\nValue Addition:\n• Guillotine is the most practically significant closure — it ensures budget passage within the prescribed time.\n• Speaker's power to apply closure cannot be challenged in courts.\n• 'Gag Rule' is an informal term; Closure is the formal procedural motion — they are not interchangeable."
+    },
+    "hi": {
+      "display_text": "भारतीय संसदीय प्रक्रिया में निम्नलिखित में से तीन क्लोजर मोशन के मान्यता प्राप्त प्रकार हैं, और एक नहीं है। कौन सा अन्य तीनों के समान श्रेणी में नहीं आता?\n\n(a) सिंपल क्लोजर\n(b) कंगारू क्लोजर\n(c) गिलोटिन\n(d) सनराइज क्लोजर",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) कंगारू क्लोजर एक मजबूत भ्रम है क्योंकि इसका असामान्य नाम इसे आविष्कृत जैसा लगाता है, जिससे छात्र इसे गलत तरीके से आविष्कृत के रूप में पहचानते हैं बजाय इसके कि वे 'सनराइज क्लोजर' को गैर-मौजूद शब्द के रूप में पहचानें।",
+      "elimination_logic": [
+        "सिंपल क्लोजर: एक वास्तविक प्रकार — सदन तुरंत चर्चा के विषय पर मतदान करता है। यह शामिल है।",
+        "कंगारू क्लोजर: एक वास्तविक प्रकार — स्पीकर केवल कुछ संशोधनों को बहस के लिए चुनता है, अन्य को कंगारू की छलांग की तरह छोड़ देता है। यह शामिल है।",
+        "गिलोटिन: एक वास्तविक प्रकार — बजट सत्र के अंत में बिना चर्चा किए गए मांगों को एक साथ मतदान के लिए रखा जाता है। यह शामिल है।",
+        "सनराइज क्लोजर: यह भारतीय संसदीय प्रक्रिया में मान्यता प्राप्त क्लोजर मोशन का प्रकार नहीं है — यह मौजूद नहीं है। यह अलग है। विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "प्रामाणिक-आविष्कार जाल में 'सनराइज क्लोजर' को एक ऐसा शब्द के रूप में प्रस्तुत किया गया है जो सुबह के सत्र की प्रक्रिया को दर्शाता प्रतीत होता है। जो छात्र चारों वास्तविक क्लोजर प्रकारों से परिचित नहीं हैं, वे 'कंगारू क्लोजर' को इसके असामान्य नाम के कारण आविष्कृत मान सकते हैं और 'सनराइज क्लोजर' को वास्तविक स्वीकार कर सकते हैं। सभी चार क्लोजर प्रकारों — सिंपल, गिलोटिन, कंगारू, और क्लोजर बाय कंपार्टमेंट्स — की सटीक याद आवश्यक है ताकि आविष्कार को पहचाना जा सके।",
+      "final_explanation": "क्लोजर मोशन संसदीय बहस को समाप्त करने के लिए प्रक्रियात्मक उपकरण हैं। भारतीय संसदीय अभ्यास में ठीक चार मान्यता प्राप्त प्रकार हैं।\n\n• विकल्प (a) सिंपल क्लोजर: सही प्रकार — सदन तुरंत चर्चा समाप्त करने के लिए मतदान करता है।\n• विकल्प (b) कंगारू क्लोजर: सही प्रकार — स्पीकर कुछ संशोधनों को चर्चा के लिए चुनता है और अन्य को छोड़ देता है, जो कंगारू की छलांग के समान है।\n• विकल्प (c) गिलोटिन: सही प्रकार — बजट सत्र के अंत में सभी बिना चर्चा किए गए मांगों को एक साथ मतदान के लिए रखा जाता है। UPSC में सबसे अधिक परीक्षण किया जाता है।\n• विकल्प (d) सनराइज क्लोजर: यह भारतीय संसदीय प्रक्रिया में मौजूद नहीं है। यह एक आविष्कृत शब्द है। चौथा वास्तविक प्रकार 'क्लोजर बाय कंपार्टमेंट्स' है, जिसमें विधेयक को भागों में विभाजित किया जाता है और प्रत्येक भाग पर चर्चा के बाद क्लोजर किया जाता है।\n\nमूल्य संवर्धन:\n• गिलोटिन सबसे व्यावहारिक रूप से महत्वपूर्ण क्लोजर है — यह बजट को निर्धारित समय में पारित कराता है।\n• स्पीकर की क्लोजर लगाने की शक्ति अदालतों में चुनौती नहीं दी जा सकती।\n• 'गैग रूल' एक अनौपचारिक शब्द है; क्लोजर औपचारिक प्रक्रियात्मक मोशन है — ये एक-दूसरे के स्थान पर उपयोग नहीं किए जा सकते।"
+    }
+  },
+  {
+    "uuid": "fba6fa5d-28ea-499b-a250-29a15ea3bb00",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Point of Order vs Privilege Motion: Overlap and Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Point of Order — sub judice restriction and Speaker's finality",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Point of Order in Indian parliamentary procedure, consider the following statements:\n\nStatement 1: A Point of Order can be raised on any matter, including one that is currently pending before a court of law, provided the Speaker deems it procedurally relevant.\nStatement 2: The Speaker's ruling on a Point of Order is final and cannot be debated on the floor of the House.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is incorrect but Statement 2 is correct\n(d) Statement 1 is correct but Statement 2 is incorrect",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A Point of Order can be raised on any matter, including one that is currently pending before a court of law, provided the Speaker deems it procedurally relevant.",
+          "verdict": "Incorrect",
+          "reason": "A Point of Order cannot be raised on a sub judice matter — this is an established restriction. The sub judice rule applies to Points of Order as well as general discussions."
+        },
+        {
+          "statement": "The Speaker's ruling on a Point of Order is final and cannot be debated on the floor of the House.",
+          "verdict": "Correct",
+          "reason": "The Speaker's ruling on a Point of Order is immediate and conclusive — it cannot be challenged or debated within the House, which distinguishes it sharply from the Privilege Committee's deliberative process."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because students who correctly identify Statement 2 as true may accept Statement 1 as also true by reasoning that the Speaker's discretion encompasses even sub judice matters — a 'scope-extension' error.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The sub judice restriction applies to Points of Order — they cannot be raised on matters pending before courts. The phrase 'provided the Speaker deems it procedurally relevant' is a scope extension that overrides a firm restriction. Statement 1 is incorrect.",
+        "Evaluate Statement 2: Speaker's ruling on Point of Order is immediate, final, and not debatable — this is a well-established parliamentary convention. Statement 2 is correct.",
+        "Statement 1 incorrect + Statement 2 correct → select option (c)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Statement 1 adds 'provided the Speaker deems it procedurally relevant' — a phrase that sounds like a reasonable qualifier but actually neutralises the sub judice restriction entirely. Students who know the Speaker has broad discretionary powers accept this qualifier without recalling that the sub judice rule is a categorical restriction on Points of Order, not subject to the Speaker's case-by-case override.",
+      "final_explanation": "Point of Order is a parliamentary device for immediate correction of procedural violations during ongoing business. Its key features distinguish it sharply from substantive motions like Privilege Motion.\n\n• Statement 1 — Incorrect: A Point of Order cannot be raised on sub judice matters. The sub judice rule restricts parliamentary discussion on matters pending before courts — this applies to Points of Order as well. The qualifier in the statement ('provided the Speaker deems it relevant') is an invented exception that does not exist.\n• Statement 2 — Correct: The Speaker's ruling on a Point of Order is immediate and final. It cannot be questioned or debated in the House. This finality is what gives the Point of Order its procedural effectiveness.\n\nValue Addition:\n• Privilege Motion requires referral to the Privileges Committee — it is deliberative; Point of Order is immediate.\n• A Point of Order must relate to the interpretation of Rules of Procedure — it is not a general complaint device.\n• Unlike Adjournment Motion, a Point of Order does not interrupt business to initiate a debate — the Speaker rules and proceedings continue."
+    },
+    "hi": {
+      "display_text": "भारतीय संसदीय प्रक्रिया में पॉइंट ऑफ ऑर्डर के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: किसी भी मामले पर, जिसमें वह मामला भी शामिल है जो वर्तमान में न्यायालय में लंबित है, यदि अध्यक्ष इसे प्रक्रियात्मक रूप से प्रासंगिक मानते हैं तो पॉइंट ऑफ ऑर्डर उठाया जा सकता है।\nकथन 2: पॉइंट ऑफ ऑर्डर पर अध्यक्ष का निर्णय अंतिम होता है और इसे सदन में बहस के लिए नहीं रखा जा सकता।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 गलत है लेकिन कथन 2 सही है\n(d) कथन 1 सही है लेकिन कथन 2 गलत है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "किसी भी मामले पर, जिसमें वह मामला भी शामिल है जो वर्तमान में न्यायालय में लंबित है, यदि अध्यक्ष इसे प्रक्रियात्मक रूप से प्रासंगिक मानते हैं तो पॉइंट ऑफ ऑर्डर उठाया जा सकता है।",
+          "verdict": "गलत",
+          "reason": "पॉइंट ऑफ ऑर्डर सब जुडी (sub judice) मामले पर नहीं उठाया जा सकता — यह एक स्थापित प्रतिबंध है। सब जुडी नियम पॉइंट ऑफ ऑर्डर के साथ-साथ सामान्य चर्चाओं पर भी लागू होता है।"
+        },
+        {
+          "statement": "पॉइंट ऑफ ऑर्डर पर अध्यक्ष का निर्णय अंतिम होता है और इसे सदन में बहस के लिए नहीं रखा जा सकता।",
+          "verdict": "सही",
+          "reason": "पॉइंट ऑफ ऑर्डर पर अध्यक्ष का निर्णय तात्कालिक और निर्णायक होता है — इसे सदन में चुनौती या बहस नहीं की जा सकती, जो इसे विशेषाधिकार समिति की विचार प्रक्रिया से स्पष्ट रूप से अलग करता है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि जो छात्र कथन 2 को सही मानते हैं वे यह भी मान सकते हैं कि कथन 1 भी सही है, यह सोचकर कि अध्यक्ष की विवेकाधिकार शक्ति सब जुडी मामलों को भी शामिल करती है — यह 'स्कोप-एक्सटेंशन' त्रुटि है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: सब जुडी प्रतिबंध पॉइंट ऑफ ऑर्डर पर लागू होता है — इसे न्यायालयों में लंबित मामलों पर नहीं उठाया जा सकता। 'यदि अध्यक्ष इसे प्रक्रियात्मक रूप से प्रासंगिक मानते हैं' वाक्यांश एक स्कोप-एक्सटेंशन है जो एक कठोर प्रतिबंध को निरस्त करता है। अतः कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: पॉइंट ऑफ ऑर्डर पर अध्यक्ष का निर्णय तात्कालिक, अंतिम और गैर-बहस योग्य होता है — यह एक स्थापित संसदीय परंपरा है। अतः कथन 2 सही है।",
+        "कथन 1 गलत + कथन 2 सही → विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में स्कोप-एक्सटेंशन जाल 'यदि अध्यक्ष इसे प्रक्रियात्मक रूप से प्रासंगिक मानते हैं' जोड़ता है — यह ऐसा वाक्यांश है जो तर्कसंगत प्रतीत होता है लेकिन वास्तव में सब जुडी प्रतिबंध को पूरी तरह निरस्त कर देता है। जो छात्र जानते हैं कि अध्यक्ष के पास व्यापक विवेकाधिकार है वे इस योग्यता को स्वीकार कर लेते हैं बिना यह याद किए कि सब जुडी नियम पॉइंट ऑफ ऑर्डर पर एक स्पष्ट प्रतिबंध है, जो अध्यक्ष के व्यक्तिगत मामले-दर-मामले के निर्णय से ऊपर है।",
+      "final_explanation": "पॉइंट ऑफ ऑर्डर संसदीय प्रक्रिया में चल रहे कार्य के दौरान प्रक्रियात्मक उल्लंघनों को तुरंत सुधारने का उपकरण है। इसकी मुख्य विशेषताएँ इसे विशेषाधिकार प्रस्ताव जैसे सार्थक प्रस्तावों से स्पष्ट रूप से अलग करती हैं।\n\n• कथन 1 — गलत: पॉइंट ऑफ ऑर्डर सब जुडी मामलों पर नहीं उठाया जा सकता। सब जुडी नियम न्यायालयों में लंबित मामलों पर संसदीय चर्चा को प्रतिबंधित करता है — यह पॉइंट ऑफ ऑर्डर पर भी लागू होता है। कथन में दिया गया योग्यता ('यदि अध्यक्ष इसे प्रासंगिक मानते हैं') एक काल्पनिक अपवाद है जो वास्तविकता में मौजूद नहीं है।\n• कथन 2 — सही: पॉइंट ऑफ ऑर्डर पर अध्यक्ष का निर्णय तात्कालिक और अंतिम होता है। इसे सदन में प्रश्न या बहस के लिए नहीं रखा जा सकता। यही अंतिमता पॉइंट ऑफ ऑर्डर को इसकी प्रक्रियात्मक प्रभावशीलता देती है।\n\nमूल्यवर्धन:\n• विशेषाधिकार प्रस्ताव को विशेषाधिकार समिति को भेजना आवश्यक होता है — यह विचारणीय होता है; पॉइंट ऑफ ऑर्डर तात्कालिक होता है।\n• पॉइंट ऑफ ऑर्डर नियमावली की व्याख्या से संबंधित होना चाहिए — यह सामान्य शिकायत उपकरण नहीं है।\n• स्थगन प्रस्ताव के विपरीत, पॉइंट ऑफ ऑर्डर व्यवसाय को बाधित नहीं करता बल्कि अध्यक्ष निर्णय देते हैं और कार्यवाही जारी रहती है।"
+    }
+  },
+  {
+    "uuid": "b5e0bb74-4c64-4c11-a352-4f2b779a6235",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Removal Motions for Constitutional Functionaries (CAG, Judges, Election Commissioners)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Election Commissioner removal — CEC vs other ECs distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to removal of constitutional functionaries in India is correctly matched?\n\n(a) Chief Election Commissioner — Removed by the same procedure as a Supreme Court judge; other Election Commissioners can be removed on CEC's recommendation\n(b) Comptroller and Auditor General — Removed under the Judges Inquiry Act 1968, which prescribes a three-member inquiry committee\n(c) Three-member committee under Judges Inquiry Act 1968 — Comprises one Supreme Court judge, two High Court Chief Justices, and one distinguished jurist\n(d) Judges Inquiry Act 1968 — Applies to removal of Supreme Court judges, High Court judges, and the Comptroller and Auditor General",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because the Judges Inquiry Act 1968 is well known, leading students to assume it covers CAG removal as well — an entity-swap between two similarly removed functionaries.",
+      "elimination_logic": [
+        "Evaluate (a): CEC is removed by the same procedure as a Supreme Court judge — on an address by Parliament. Other Election Commissioners can be removed on the recommendation of the CEC. This is correctly stated — select (a) as potentially correct.",
+        "Evaluate (b): CAG is removed by the same procedure as a Supreme Court judge (Article 148) — but there is no separate Judges Inquiry Act for CAG. This pair incorrectly attributes the 1968 Act to CAG removal.",
+        "Evaluate (c): The three-member inquiry committee under the Judges Inquiry Act 1968 comprises a sitting SC judge, a High Court Chief Justice, and a distinguished jurist — not two HC Chief Justices. The pair is incorrectly stated.",
+        "Evaluate (d): The Judges Inquiry Act 1968 applies to SC and HC judges — it does not cover CAG removal. Option (d) is an entity-swap."
+      ],
+      "upsc_trap_explanation": "The entity-swap operates between CAG and Supreme Court judges: both are removed by the same parliamentary address procedure, but the Judges Inquiry Act 1968 does NOT cover CAG — there is no separate inquiry act for CAG removal. Students who know the procedure but not the specific act's coverage apply the Act broadly to all 'judge-like' removals. Option (c) exploits partial-truth in the committee composition.",
+      "final_explanation": "The removal procedures for constitutional functionaries share structural similarities but differ in crucial details.\n\n• Option (a): Correctly matched. The Chief Election Commissioner is removed by the same procedure as a Supreme Court judge (address by both Houses). The other Election Commissioners can be removed on the recommendation of the CEC — a key asymmetry within the Election Commission.\n• Option (b): Incorrectly matched. CAG is removed by the same procedure as a Supreme Court judge (Article 148), but the Judges Inquiry Act 1968 does NOT apply to CAG removal — there is no equivalent statute.\n• Option (c): Incorrectly matched. The inquiry committee under the Judges Inquiry Act 1968 has three members: one sitting Supreme Court judge, one High Court Chief Justice, and one distinguished jurist — not two High Court Chief Justices.\n• Option (d): Incorrectly matched. The Judges Inquiry Act 1968 governs removal of SC and HC judges — the CAG has no separate inquiry act.\n\nValue Addition:\n• The asymmetry between CEC and other ECs in removal procedure was upheld in T.N. Seshan v Union of India.\n• The Judges Inquiry Act 1968 has never been successfully completed — no judge has been removed in India's history.\n• Article 317 governs removal of UPSC members, distinct from the judge-removal procedure."
+    },
+    "hi": {
+      "display_text": "भारत में संवैधानिक पदाधिकारियों की हटाने से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) मुख्य चुनाव आयुक्त — सुप्रीम कोर्ट के न्यायाधीश के समान प्रक्रिया से हटाया जाता है; अन्य चुनाव आयुक्त CEC की सिफारिश पर हटाए जा सकते हैं\n(b) नियंत्रक और महालेखा परीक्षक — Judges Inquiry Act 1968 के तहत हटाया जाता है, जो तीन सदस्यीय जांच समिति निर्धारित करता है\n(c) Judges Inquiry Act 1968 के तहत तीन सदस्यीय समिति — इसमें एक सुप्रीम कोर्ट न्यायाधीश, दो उच्च न्यायालय के मुख्य न्यायाधीश, और एक प्रतिष्ठित न्यायविद शामिल हैं\n(d) Judges Inquiry Act 1968 — सुप्रीम कोर्ट के न्यायाधीशों, उच्च न्यायालय के न्यायाधीशों, और नियंत्रक और महालेखा परीक्षक की हटाने पर लागू होता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि Judges Inquiry Act 1968 अच्छी तरह जाना जाता है, जिससे छात्र यह मान लेते हैं कि यह CAG की हटाने की प्रक्रिया को भी कवर करता है — यह दो समान रूप से हटाए जाने वाले पदाधिकारियों के बीच एक पहचान-परिवर्तन है।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: CEC को सुप्रीम कोर्ट के न्यायाधीश के समान प्रक्रिया से हटाया जाता है — संसद के संबोधन पर। अन्य चुनाव आयुक्तों को CEC की सिफारिश पर हटाया जा सकता है। यह सही रूप से बताया गया है — संभावित सही के रूप में (a) चुनें।",
+        "(b) का मूल्यांकन करें: CAG को सुप्रीम कोर्ट के न्यायाधीश के समान प्रक्रिया से हटाया जाता है (अनुच्छेद 148) — लेकिन CAG के लिए कोई अलग Judges Inquiry Act नहीं है। यह जोड़ी गलत तरीके से 1968 के अधिनियम को CAG की हटाने की प्रक्रिया से जोड़ती है।",
+        "(c) का मूल्यांकन करें: Judges Inquiry Act 1968 के तहत तीन सदस्यीय जांच समिति में एक वर्तमान सुप्रीम कोर्ट न्यायाधीश, एक उच्च न्यायालय के मुख्य न्यायाधीश, और एक प्रतिष्ठित न्यायविद होते हैं — दो उच्च न्यायालय के मुख्य न्यायाधीश नहीं। यह जोड़ी गलत बताई गई है।",
+        "(d) का मूल्यांकन करें: Judges Inquiry Act 1968 सुप्रीम कोर्ट और उच्च न्यायालय के न्यायाधीशों पर लागू होता है — यह CAG की हटाने की प्रक्रिया को कवर नहीं करता। विकल्प (d) एक पहचान-परिवर्तन है।"
+      ],
+      "upsc_trap_explanation": "पहचान-परिवर्तन CAG और सुप्रीम कोर्ट के न्यायाधीशों के बीच होता है: दोनों को संसद के संबोधन की समान प्रक्रिया से हटाया जाता है, लेकिन Judges Inquiry Act 1968 CAG को कवर नहीं करता — CAG की हटाने के लिए कोई अलग जांच अधिनियम नहीं है। जो छात्र प्रक्रिया जानते हैं लेकिन विशिष्ट अधिनियम के दायरे को नहीं जानते, वे इस अधिनियम को सभी 'न्यायाधीश जैसे' हटाने पर व्यापक रूप से लागू कर देते हैं। विकल्प (c) समिति की संरचना में आंशिक सत्य का लाभ उठाता है।",
+      "final_explanation": "संवैधानिक पदाधिकारियों की हटाने की प्रक्रियाओं में संरचनात्मक समानताएँ हैं लेकिन महत्वपूर्ण विवरणों में भिन्नताएँ हैं।\n\n• विकल्प (a): सही मेल। मुख्य चुनाव आयुक्त को सुप्रीम कोर्ट के न्यायाधीश के समान प्रक्रिया से हटाया जाता है (दोनों सदनों के संबोधन द्वारा)। अन्य चुनाव आयुक्तों को CEC की सिफारिश पर हटाया जा सकता है — चुनाव आयोग के भीतर एक महत्वपूर्ण असममिति।\n• विकल्प (b): गलत मेल। CAG को सुप्रीम कोर्ट के न्यायाधीश के समान प्रक्रिया से हटाया जाता है (अनुच्छेद 148), लेकिन Judges Inquiry Act 1968 CAG की हटाने पर लागू नहीं होता — कोई समकक्ष विधि नहीं है।\n• विकल्प (c): गलत मेल। Judges Inquiry Act 1968 के तहत जांच समिति में तीन सदस्य होते हैं: एक वर्तमान सुप्रीम कोर्ट न्यायाधीश, एक उच्च न्यायालय के मुख्य न्यायाधीश, और एक प्रतिष्ठित न्यायविद — दो उच्च न्यायालय के मुख्य न्यायाधीश नहीं।\n• विकल्प (d): गलत मेल। Judges Inquiry Act 1968 सुप्रीम कोर्ट और उच्च न्यायालय के न्यायाधीशों की हटाने को नियंत्रित करता है — CAG के लिए कोई अलग जांच अधिनियम नहीं है।\n\nमूल्यवर्धन:\n• CEC और अन्य चुनाव आयुक्तों के बीच हटाने की प्रक्रिया में असममिति को T.N. Seshan v Union of India में मान्यता मिली।\n• Judges Inquiry Act 1968 कभी सफलतापूर्वक पूरा नहीं हुआ — भारत के इतिहास में कोई न्यायाधीश हटाया नहीं गया।\n• अनुच्छेद 317 UPSC सदस्यों की हटाने को नियंत्रित करता है, जो न्यायाधीश हटाने की प्रक्रिया से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "1db06ac0-9427-477f-8597-734613ec24c7",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Motion of Thanks on President's Address: Nature and Amendments"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 87 — Motion of Thanks constitutional consequences",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the President's Address and the Motion of Thanks under the Indian Constitution, consider the following statements:\n\n1. Under Article 87, the President addresses a joint sitting of both Houses at the commencement of every new session of Parliament.\n2. Failure of the Motion of Thanks to pass is treated as equivalent to a no-confidence vote in the government by constitutional convention.\n3. Amendments to the Motion of Thanks can be used to criticise matters that the government has failed to address, serving as an indirect censure mechanism.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under Article 87, the President addresses a joint sitting of both Houses at the commencement of every new session of Parliament.",
+          "verdict": "Incorrect",
+          "reason": "Article 87 specifies two occasions: the first session after a general election, and the first session of each year. The President does NOT address Parliament at the commencement of every session — only these two specific occasions."
+        },
+        {
+          "statement": "Failure of the Motion of Thanks to pass is treated as equivalent to a no-confidence vote in the government by constitutional convention.",
+          "verdict": "Correct",
+          "reason": "Since the President's Address reflects the government's policy agenda, failure to pass the Motion of Thanks signals that the government has lost the confidence of the House — a constitutional convention equating it with a no-confidence vote."
+        },
+        {
+          "statement": "Amendments to the Motion of Thanks can be used to criticise matters that the government has failed to address, serving as an indirect censure mechanism.",
+          "verdict": "Correct",
+          "reason": "Amendments to the Motion of Thanks are a well-recognised device to highlight government omissions and express criticism — since the President's Address represents the government's programme, amendments can target what was left out."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is a strong distractor because students who identify Statements 2 and 3 as correct may hesitate to exclude Statement 1, recalling that the President does address Parliament — forgetting the specific session-based limitation.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Article 87 specifies first session after general elections AND first session of each year — NOT every session. 'Every new session' is a scope-extension. Statement 1 is incorrect.",
+        "Evaluate Statement 2: By constitutional convention, failure of Motion of Thanks = no-confidence. Statement 2 is correct.",
+        "Evaluate Statement 3: Amendments to Motion of Thanks for criticising omissions — this is a recognised parliamentary practice. Statement 3 is correct.",
+        "Statements 2 and 3 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 1 applies a scope-extension trap: the phrase 'every new session' sounds like an accurate description of the President's address but is factually wrong. Article 87 is limited to two specific occasions. Students who vaguely recall 'President addresses Parliament at the start of sessions' accept Statement 1 without recalling the constitutional specificity of Article 87's language.",
+      "final_explanation": "Article 87 governs the President's special address to Parliament — a constitutionally significant event that sets the government's agenda.\n\n• Statement 1 — Incorrect: Article 87 prescribes only two occasions — (i) the first session after each general election, and (ii) the first session of each year. The President does not address Parliament at the commencement of every session. The scope-extension 'every new session' is the trap.\n• Statement 2 — Correct: The Motion of Thanks must be passed, as the President's Address is the government's policy statement. By constitutional convention, failure to pass = effective no-confidence vote.\n• Statement 3 — Correct: Amendments to the Motion of Thanks allow members to criticise government omissions — matters the government failed to mention in its agenda. This is an indirect censure device that keeps the President's Address politically significant.\n\nValue Addition:\n• The President's Address reflects the Cabinet's views, not the President's personal opinions — a fundamental constitutional convention.\n• Both Lok Sabha and Rajya Sabha debate the Motion of Thanks separately after the joint sitting.\n• The Motion of Thanks debate is one of the longest debates in parliamentary sessions — it covers the full government agenda."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के तहत राष्ट्रपति के संबोधन और Motion of Thanks के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 87 के तहत, राष्ट्रपति संसद के प्रत्येक नए सत्र के आरंभ में दोनों सदनों की संयुक्त बैठक को संबोधित करते हैं।\n2. Motion of Thanks पास न होने को संवैधानिक परंपरा द्वारा सरकार के प्रति अविश्वास मत के बराबर माना जाता है।\n3. Motion of Thanks में संशोधनों का उपयोग उन विषयों की आलोचना के लिए किया जा सकता है जिन्हें सरकार ने संबोधित नहीं किया, जो एक अप्रत्यक्ष निंदा तंत्र के रूप में कार्य करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under Article 87, the President addresses a joint sitting of both Houses at the commencement of every new session of Parliament.",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 87 दो अवसर निर्दिष्ट करता है: आम चुनाव के बाद पहला सत्र, और प्रत्येक वर्ष का पहला सत्र। राष्ट्रपति संसद के प्रत्येक सत्र के आरंभ में संबोधन नहीं देते — केवल ये दो विशिष्ट अवसर।"
+        },
+        {
+          "statement": "Failure of the Motion of Thanks to pass is treated as equivalent to a no-confidence vote in the government by constitutional convention.",
+          "verdict": "सही",
+          "reason": "चूंकि राष्ट्रपति का संबोधन सरकार की नीति एजेंडा को दर्शाता है, इसलिए Motion of Thanks पास न होने को सरकार के प्रति अविश्वास मत के बराबर माना जाता है — यह एक संवैधानिक परंपरा है।"
+        },
+        {
+          "statement": "Amendments to the Motion of Thanks can be used to criticise matters that the government has failed to address, serving as an indirect censure mechanism.",
+          "verdict": "सही",
+          "reason": "Motion of Thanks में संशोधन सरकार की चूक को उजागर करने और आलोचना व्यक्त करने का एक मान्यता प्राप्त तरीका है — क्योंकि राष्ट्रपति का संबोधन सरकार के कार्यक्रम का प्रतिनिधित्व करता है, संशोधन उन विषयों को लक्षित कर सकते हैं जिन्हें छोड़ा गया।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र कथन 2 और 3 को सही मानते हैं, वे कथन 1 को बाहर करने में हिचकिचाते हैं, यह याद करते हुए कि राष्ट्रपति संसद को संबोधित करते हैं — लेकिन वे विशिष्ट सत्र-आधारित सीमा को भूल जाते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अनुच्छेद 87 आम चुनाव के बाद पहला सत्र और प्रत्येक वर्ष का पहला सत्र निर्दिष्ट करता है — प्रत्येक सत्र नहीं। 'प्रत्येक नया सत्र' एक दायरा-विस्तार है। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: संवैधानिक परंपरा के अनुसार, Motion of Thanks पास न होना = अविश्वास मत। कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: Motion of Thanks में संशोधन सरकार की चूक की आलोचना के लिए — यह एक मान्यता प्राप्त संसदीय अभ्यास है। कथन 3 सही है।",
+        "कथन 2 और 3 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में दायरा-विस्तार का जाल है: 'प्रत्येक नया सत्र' वाक्यांश राष्ट्रपति के संबोधन का सही विवरण लगता है लेकिन तथ्यात्मक रूप से गलत है। अनुच्छेद 87 केवल दो विशिष्ट अवसरों तक सीमित है। जो छात्र अस्पष्ट रूप से याद करते हैं कि 'राष्ट्रपति सत्रों की शुरुआत में संसद को संबोधित करते हैं', वे अनुच्छेद 87 की संवैधानिक विशिष्टता को याद किए बिना कथन 1 को स्वीकार कर लेते हैं।",
+      "final_explanation": "अनुच्छेद 87 राष्ट्रपति के संसद को विशेष संबोधन को नियंत्रित करता है — एक संवैधानिक रूप से महत्वपूर्ण घटना जो सरकार के एजेंडा को निर्धारित करती है।\n\n• कथन 1 — गलत: अनुच्छेद 87 केवल दो अवसर निर्धारित करता है — (i) प्रत्येक आम चुनाव के बाद पहला सत्र, और (ii) प्रत्येक वर्ष का पहला सत्र। राष्ट्रपति प्रत्येक सत्र के आरंभ में संसद को संबोधित नहीं करते। 'प्रत्येक नया सत्र' का दायरा-विस्तार जाल है।\n• कथन 2 — सही: Motion of Thanks पास होना आवश्यक है, क्योंकि राष्ट्रपति का संबोधन सरकार की नीति वक्तव्य है। संवैधानिक परंपरा के अनुसार, पास न होना प्रभावी रूप से अविश्वास मत के बराबर है।\n• कथन 3 — सही: Motion of Thanks में संशोधन सदस्यों को सरकार की चूक की आलोचना करने की अनुमति देते हैं — वे विषय जिन्हें सरकार ने अपने एजेंडा में उल्लेख नहीं किया। यह एक अप्रत्यक्ष निंदा उपकरण है जो राष्ट्रपति के संबोधन को राजनीतिक रूप से महत्वपूर्ण बनाए रखता है।\n\nमूल्य संवर्धन:\n• राष्ट्रपति का संबोधन कैबिनेट के विचारों को दर्शाता है, न कि राष्ट्रपति के व्यक्तिगत मतों को — एक मौलिक संवैधानिक परंपरा।\n• संयुक्त बैठक के बाद लोकसभा और राज्यसभा दोनों में Motion of Thanks पर अलग-अलग बहस होती है।\n• Motion of Thanks की बहस संसदीय सत्रों में सबसे लंबी बहसों में से एक है — यह पूरे सरकार के एजेंडा को कवर करती है।"
+    }
+  },
+  {
+    "uuid": "d650d740-dac4-493d-a30b-f6cb9a4323a0",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Suspension of Rules Motion and Special Mention: Procedural Devices"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Special Mention — Rajya Sabha specific device",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following parliamentary devices is exclusively available in Rajya Sabha and serves as the functional equivalent of the Zero Hour practised in Lok Sabha?\n\n(a) Zero Hour\n(b) Short Duration Discussion\n(c) Half-Hour Discussion\n(d) Special Mention",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because 'Short Duration Discussion' is a real device that exists in both Houses, making students confuse it with Special Mention which is exclusively a Rajya Sabha device.",
+      "elimination_logic": [
+        "The question asks which device is exclusively available in Rajya Sabha as an equivalent to Zero Hour in Lok Sabha.",
+        "Eliminate (a): Zero Hour itself is primarily associated with Lok Sabha — it is not the Rajya Sabha equivalent.",
+        "Eliminate (b): Short Duration Discussion under Rule 193 exists in both Houses — not exclusively Rajya Sabha.",
+        "Eliminate (c): Half-Hour Discussion is available in both Houses for addressing factual inaccuracies in previous answers.",
+        "Special Mention is the Rajya Sabha-specific device — select (d)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes 'Short Duration Discussion' — which exists in both Houses — for 'Special Mention', which is the Rajya Sabha-specific equivalent of Zero Hour. Students who know Short Duration Discussion and Zero Hour are related to urgent matters assume Short Duration Discussion fills the Rajya Sabha niche, overlooking the distinct 'Special Mention' device.",
+      "final_explanation": "Each House of Parliament has developed its own procedural devices for raising urgent matters.\n\n• Option (a) Zero Hour: Primarily associated with Lok Sabha practice — it is the instrument being compared against, not the Rajya Sabha equivalent.\n• Option (b) Short Duration Discussion: Available in both Lok Sabha and Rajya Sabha — not exclusively a Rajya Sabha device. It allows up to 2.5 hours of discussion without a formal motion or vote.\n• Option (c) Half-Hour Discussion: Available in both Houses — specifically to correct factual inaccuracies in previous ministerial answers.\n• Option (d) Special Mention: Correct. Special Mention is the Rajya Sabha-specific device for raising matters of public importance — the functional equivalent of Zero Hour in Lok Sabha.\n\nValue Addition:\n• Zero Hour is not mentioned in the Rules of Procedure — it is a convention that starts at 12 noon.\n• Special Mention in Rajya Sabha is governed by specific rules, unlike Zero Hour's informal character.\n• Neither Special Mention nor Zero Hour results in a vote — both are purely expressive/deliberative devices."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा संसदीय उपकरण केवल राज्यसभा में उपलब्ध है और लोकसभा में प्रचलित Zero Hour का कार्यात्मक समकक्ष है?\n\n(a) Zero Hour\n(b) Short Duration Discussion\n(c) Half-Hour Discussion\n(d) Special Mention",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि 'Short Duration Discussion' दोनों सदनों में मौजूद एक वास्तविक उपकरण है, जिससे छात्र इसे विशेष उल्लेख (Special Mention) के साथ भ्रमित कर लेते हैं जो केवल राज्यसभा का उपकरण है।",
+      "elimination_logic": [
+        "प्रश्न पूछता है कि कौन-सा उपकरण केवल राज्यसभा में उपलब्ध है और लोकसभा में प्रचलित Zero Hour के समकक्ष है।",
+        "(a) को हटाएं: Zero Hour मुख्यतः लोकसभा से जुड़ा है — यह राज्यसभा का समकक्ष नहीं है।",
+        "(b) को हटाएं: नियम 193 के तहत Short Duration Discussion दोनों सदनों में है — केवल राज्यसभा का नहीं।",
+        "(c) को हटाएं: Half-Hour Discussion दोनों सदनों में उपलब्ध है, जो पिछले उत्तरों में तथ्यात्मक त्रुटियों को सुधारने के लिए है।",
+        "विशेष उल्लेख (Special Mention) राज्यसभा-विशिष्ट उपकरण है — अतः (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "यह भ्रम पैदा करने वाला जाल 'Short Duration Discussion' को 'Special Mention' के स्थान पर रखता है, जबकि Short Duration Discussion दोनों सदनों में होता है और Special Mention राज्यसभा का विशेष उपकरण है जो Zero Hour के समकक्ष है। छात्र जो जानते हैं कि Short Duration Discussion और Zero Hour दोनों आपातकालीन मामलों से संबंधित हैं, वे मान लेते हैं कि Short Duration Discussion राज्यसभा में Zero Hour की जगह लेता है, जबकि वे अलग-अलग उपकरण हैं।",
+      "final_explanation": "संसद के प्रत्येक सदन ने आपातकालीन मामलों को उठाने के लिए अपने-अपने प्रक्रियात्मक उपकरण विकसित किए हैं।\n\n• विकल्प (a) Zero Hour: मुख्यतः लोकसभा की प्रथा से जुड़ा है — यह तुलना के लिए दिया गया उपकरण है, राज्यसभा का समकक्ष नहीं।\n• विकल्प (b) Short Duration Discussion: लोकसभा और राज्यसभा दोनों में उपलब्ध है — केवल राज्यसभा का उपकरण नहीं। यह बिना औपचारिक प्रस्ताव या मतदान के 2.5 घंटे तक चर्चा की अनुमति देता है।\n• विकल्प (c) Half-Hour Discussion: दोनों सदनों में उपलब्ध है — विशेष रूप से पिछले मंत्री के उत्तरों में तथ्यात्मक त्रुटियों को सुधारने के लिए।\n• विकल्प (d) Special Mention: सही। Special Mention राज्यसभा का विशिष्ट उपकरण है जो लोकसभा के Zero Hour के समकक्ष है और सार्वजनिक महत्व के मामलों को उठाने के लिए है।\n\nमूल्यवर्धन:\n• Zero Hour नियमावली में उल्लेखित नहीं है — यह एक परंपरा है जो दोपहर 12 बजे शुरू होती है।\n• राज्यसभा में Special Mention विशिष्ट नियमों द्वारा नियंत्रित है, जबकि Zero Hour अनौपचारिक है।\n• न तो Special Mention और न ही Zero Hour मतदान में परिणत होते हैं — दोनों केवल अभिव्यक्तिपूर्ण/चर्चात्मक उपकरण हैं।"
+    }
+  },
+  {
+    "uuid": "23c19529-f826-444b-8612-b035fadaaa6f",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Half-Hour Discussion and Short Duration Discussion: Scope and Distinction",
+        "Adjournment Motion: Admissibility Conditions and Procedural Rules"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Half-Hour Discussion — specific purpose and non-voting nature",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Half-Hour Discussion and Short Duration Discussion in Indian Parliament, consider the following statements:\n\n1. A Half-Hour Discussion can be initiated to examine any matter of sufficient public importance, provided the Speaker is satisfied of its urgency.\n2. Unlike an Adjournment Motion, neither a Half-Hour Discussion nor a Short Duration Discussion results in a formal vote.\n3. A Short Duration Discussion under Rule 193 is limited to a maximum duration of 2.5 hours and may be held as frequently as the Speaker or Chairman permits.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A Half-Hour Discussion can be initiated to examine any matter of sufficient public importance, provided the Speaker is satisfied of its urgency.",
+          "verdict": "Incorrect",
+          "reason": "A Half-Hour Discussion has a very specific and narrow purpose: to raise a matter involving a factual inaccuracy in a previous ministerial answer. It cannot be used for any general matter of public importance — that would be the purpose of Adjournment Motion or Short Duration Discussion."
+        },
+        {
+          "statement": "Unlike an Adjournment Motion, neither a Half-Hour Discussion nor a Short Duration Discussion results in a formal vote.",
+          "verdict": "Correct",
+          "reason": "Both Half-Hour Discussion and Short Duration Discussion are deliberative devices — they involve discussion but no formal motion or vote. Adjournment Motion, by contrast, results in a vote and has the effect of censuring the government."
+        },
+        {
+          "statement": "A Short Duration Discussion under Rule 193 is limited to a maximum duration of 2.5 hours and may be held as frequently as the Speaker or Chairman permits.",
+          "verdict": "Correct",
+          "reason": "Short Duration Discussion is capped at 2.5 hours per instance, and its scheduling depends on the Speaker's or Chairman's permission — there is no fixed frequency requirement."
+        }
+      ],
+      "strong_distractor": "b — Option (b) naming only Statement 2 as incorrect is deceptive because Statement 2 is actually correct — students who conflate Half-Hour Discussion with Adjournment Motion may incorrectly judge Statement 2 as false.",
+      "elimination_logic": [
+        "Statement 1 claims Half-Hour Discussion can address any urgent public matter — this is incorrect. It is specifically for factual inaccuracies in previous answers, not a general urgency device.",
+        "Statement 2 correctly states that neither Half-Hour Discussion nor Short Duration Discussion results in a vote — Adjournment Motion does. Statement 2 is correct.",
+        "Statement 3 correctly states the 2.5-hour cap for Short Duration Discussion and its scheduling by Speaker/Chairman. Statement 3 is correct.",
+        "Only Statement 1 is NOT correct — select option (a): 1 only."
+      ],
+      "upsc_trap_explanation": "The conflation trap in Statement 1 merges Half-Hour Discussion with Adjournment Motion by suggesting it can address 'any matter of sufficient public importance' — the very description of Adjournment Motion's scope. Students who know both devices deal with public matters, but forget the Half-Hour Discussion's narrow factual-inaccuracy purpose, accept Statement 1 as correct.",
+      "final_explanation": "Parliamentary discussion devices differ sharply in purpose, triggering conditions, and consequences.\n\n• Statement 1 — Incorrect: Half-Hour Discussion has a single, narrow purpose — to raise a matter involving a factual inaccuracy in a previous answer given in the same session. It is NOT available for any general urgent matter. Broadening it to 'any matter of public importance' is the error.\n• Statement 2 — Correct: Neither Half-Hour Discussion nor Short Duration Discussion results in a formal vote. Both are deliberative. Adjournment Motion involves debate AND a vote that constitutes a censure.\n• Statement 3 — Correct: Short Duration Discussion is capped at 2.5 hours under Rule 193, and the Speaker/Chairman determines scheduling.\n\nValue Addition:\n• Half-Hour Discussion can be raised on three days a week — a specific frequency rule.\n• Short Duration Discussion is the closest procedural alternative to Adjournment Motion for urgent matters, but without the accountability consequence.\n• Zero Hour is entirely informal — not in Rules of Procedure — unlike Half-Hour and Short Duration Discussions, which are codified."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद में Half-Hour Discussion और Short Duration Discussion के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. Half-Hour Discussion किसी भी पर्याप्त सार्वजनिक महत्व के मामले की जांच के लिए शुरू किया जा सकता है, बशर्ते स्पीकर इसकी तात्कालिकता से संतुष्ट हों।\n2. Adjournment Motion के विपरीत, न तो Half-Hour Discussion और न ही Short Duration Discussion में औपचारिक मतदान होता है।\n3. नियम 193 के तहत Short Duration Discussion की अधिकतम अवधि 2.5 घंटे है और इसे स्पीकर या अध्यक्ष की अनुमति के अनुसार जितनी बार चाहें आयोजित किया जा सकता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A Half-Hour Discussion can be initiated to examine any matter of sufficient public importance, provided the Speaker is satisfied of its urgency.",
+          "verdict": "गलत",
+          "reason": "Half-Hour Discussion का उद्देश्य बहुत विशिष्ट और सीमित है: पिछले मंत्री के उत्तर में तथ्यात्मक त्रुटि को उठाना। इसे किसी भी सामान्य सार्वजनिक महत्व के विषय के लिए उपयोग नहीं किया जा सकता — ऐसा उद्देश्य Adjournment Motion या Short Duration Discussion का होता है।"
+        },
+        {
+          "statement": "Unlike an Adjournment Motion, neither a Half-Hour Discussion nor a Short Duration Discussion results in a formal vote.",
+          "verdict": "सही है",
+          "reason": "Half-Hour Discussion और Short Duration Discussion दोनों विचार-विमर्श के उपकरण हैं — इनमें चर्चा होती है लेकिन कोई औपचारिक प्रस्ताव या मतदान नहीं होता। इसके विपरीत, Adjournment Motion में मतदान होता है और इसका प्रभाव सरकार की निंदा करना होता है।"
+        },
+        {
+          "statement": "A Short Duration Discussion under Rule 193 is limited to a maximum duration of 2.5 hours and may be held as frequently as the Speaker or Chairman permits.",
+          "verdict": "सही है",
+          "reason": "Short Duration Discussion की अधिकतम अवधि 2.5 घंटे प्रति सत्र होती है, और इसका आयोजन स्पीकर या अध्यक्ष की अनुमति पर निर्भर करता है — इसकी कोई निश्चित आवृत्ति निर्धारित नहीं है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) में केवल कथन 2 को गलत बताना भ्रमित करने वाला है क्योंकि कथन 2 वास्तव में सही है — जो छात्र Half-Hour Discussion को Adjournment Motion से मिला देते हैं, वे कथन 2 को गलत समझ सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 यह दावा करता है कि Half-Hour Discussion किसी भी तात्कालिक सार्वजनिक मामले को संबोधित कर सकता है — यह गलत है। इसका उद्देश्य केवल पिछले उत्तरों में तथ्यात्मक त्रुटि को उठाना है, न कि सामान्य तात्कालिकता का उपकरण।",
+        "कथन 2 सही है क्योंकि न तो Half-Hour Discussion और न ही Short Duration Discussion में मतदान होता है — मतदान Adjournment Motion में होता है।",
+        "कथन 3 सही है क्योंकि Short Duration Discussion की अवधि 2.5 घंटे तक सीमित है और इसका आयोजन स्पीकर/अध्यक्ष की अनुमति से होता है।",
+        "केवल कथन 1 सही नहीं है — अतः विकल्प (a): केवल 1 चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में भ्रम का जाल Half-Hour Discussion को Adjournment Motion से मिला देता है, यह कहते हुए कि यह 'किसी भी पर्याप्त सार्वजनिक महत्व के मामले' को संबोधित कर सकता है — जो Adjournment Motion की परिभाषा है। जो छात्र दोनों उपकरणों को सार्वजनिक मामलों से संबंधित समझते हैं, लेकिन Half-Hour Discussion के संकुचित तथ्यात्मक त्रुटि के उद्देश्य को भूल जाते हैं, वे कथन 1 को सही मान लेते हैं।",
+      "final_explanation": "संसदीय चर्चा उपकरण उद्देश्य, प्रारंभिक शर्तों और परिणामों में स्पष्ट रूप से भिन्न होते हैं।\n\n• कथन 1 — गलत: Half-Hour Discussion का एकमात्र संकुचित उद्देश्य है — उसी सत्र में दिए गए पिछले उत्तर में तथ्यात्मक त्रुटि को उठाना। यह किसी भी सामान्य तात्कालिक मामले के लिए उपलब्ध नहीं है। इसे 'किसी भी सार्वजनिक महत्व के मामले' तक बढ़ाना त्रुटि है।\n• कथन 2 — सही: न तो Half-Hour Discussion और न ही Short Duration Discussion में औपचारिक मतदान होता है। दोनों विचार-विमर्श के उपकरण हैं। Adjournment Motion में बहस और मतदान होता है जो सरकार की निंदा के बराबर होता है।\n• कथन 3 — सही: Short Duration Discussion की अवधि नियम 193 के तहत 2.5 घंटे तक सीमित है, और इसका आयोजन स्पीकर/अध्यक्ष निर्धारित करते हैं।\n\nमूल्यवर्धन:\n• Half-Hour Discussion सप्ताह में तीन दिन उठाया जा सकता है — एक विशिष्ट आवृत्ति नियम।\n• Short Duration Discussion तात्कालिक मामलों के लिए Adjournment Motion का निकटतम वैधानिक विकल्प है, लेकिन बिना जवाबदेही के परिणाम के।\n• Zero Hour पूरी तरह अनौपचारिक है — नियमों में नहीं है — जबकि Half-Hour और Short Duration Discussion नियमबद्ध हैं।"
+    }
+  },
+  {
+    "uuid": "7baf2fd8-b8ee-4f6d-b084-fd79b381f635",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Starred vs Unstarred Questions as 'Motions' — Zero Hour and Question Hour Interface"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Zero Hour — 12 noon start time, not 11 AM",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the Indian Parliament, Zero Hour — the time during which members may raise matters of urgent public importance without prior notice — conventionally begins at which of the following times?\n\n(a) 11 AM\n(b) 2 PM\n(c) 3 PM\n(d) 12 noon",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because Question Hour starts at 11 AM and Zero Hour immediately follows Question Hour, leading students to conflate the two start times and incorrectly state Zero Hour begins at 11 AM.",
+      "elimination_logic": [
+        "Question Hour begins at 11 AM — this is a well-known fact but is NOT the Zero Hour start time.",
+        "Zero Hour begins at 12 noon — immediately after Question Hour concludes, hence the name 'Zero Hour' (12:00).",
+        "Eliminate (a): 11 AM is Question Hour's start, not Zero Hour's.",
+        "Eliminate (b) and (c): 2 PM and 3 PM are not associated with Zero Hour in parliamentary scheduling. Select (d): 12 noon."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap exploits the sequential relationship between Question Hour and Zero Hour. Students who know Question Hour is 11 AM to 12 noon naturally assume Zero Hour begins when Question Hour begins (11 AM), overlooking that Zero Hour starts at 12 noon — the moment after Question Hour ends. The name 'Zero Hour' itself encodes the time (12:00, the zero position on a 12-hour clock).",
+      "final_explanation": "Zero Hour and Question Hour are among the most debated parliamentary time-slots in UPSC questions.\n\n• Option (a) 11 AM: Incorrect. This is when Question Hour begins, not Zero Hour. The two are sequential, not simultaneous.\n• Option (b) 2 PM: Incorrect. This time is not associated with any specific parliamentary device in the Rules of Procedure.\n• Option (c) 3 PM: Incorrect. Not associated with Zero Hour.\n• Option (d) 12 noon: Correct. Zero Hour begins at 12 noon, immediately after Question Hour concludes. This is the origin of the name — the 'zero' position on the clock.\n\nValue Addition:\n• Zero Hour is an informal convention — it does not appear in the Rules of Procedure of either House.\n• Matters raised in Zero Hour cannot be voted upon — it is a purely expressive device.\n• Starred Questions (oral answers + supplementaries) and Unstarred Questions (written answers) are technically not motions — they are parliamentary questions."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद में, शून्यकाल — वह समय जब सदस्य बिना पूर्व सूचना के तत्काल सार्वजनिक महत्व के विषय उठा सकते हैं — पारंपरिक रूप से निम्नलिखित में से किस समय पर शुरू होता है?\n\n(a) सुबह 11 बजे\n(b) दोपहर 2 बजे\n(c) दोपहर 3 बजे\n(d) दोपहर 12 बजे",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) विकल्प एक मजबूत भ्रम पैदा करने वाला है क्योंकि प्रश्नकाल सुबह 11 बजे शुरू होता है और शून्यकाल तुरंत प्रश्नकाल के बाद आता है, जिससे छात्र दोनों प्रारंभ समयों को मिलाकर गलत रूप से शून्यकाल को सुबह 11 बजे शुरू मान लेते हैं।",
+      "elimination_logic": [
+        "प्रश्नकाल सुबह 11 बजे शुरू होता है — यह एक प्रसिद्ध तथ्य है लेकिन शून्यकाल का प्रारंभ समय नहीं है।",
+        "शून्यकाल दोपहर 12 बजे शुरू होता है — प्रश्नकाल समाप्त होते ही तुरंत, इसलिए इसे 'शून्यकाल' (12:00) कहा जाता है।",
+        "(a) को हटाएं: सुबह 11 बजे प्रश्नकाल शुरू होता है, शून्यकाल नहीं।",
+        "(b) और (c) को हटाएं: दोपहर 2 बजे और 3 बजे का समय शून्यकाल से संसद में जुड़ा नहीं है। (d) चुनें: दोपहर 12 बजे।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम का जाल प्रश्नकाल और शून्यकाल के अनुक्रमिक संबंध का दुरुपयोग करता है। जो छात्र जानते हैं कि प्रश्नकाल सुबह 11 बजे से दोपहर 12 बजे तक होता है, वे स्वाभाविक रूप से मान लेते हैं कि शून्यकाल भी प्रश्नकाल के शुरू होने पर (सुबह 11 बजे) शुरू होता है, यह भूलकर कि शून्यकाल प्रश्नकाल समाप्त होते ही दोपहर 12 बजे शुरू होता है। 'शून्यकाल' नाम स्वयं समय (12:00, 12-घंटे की घड़ी पर शून्य स्थिति) को दर्शाता है।",
+      "final_explanation": "शून्यकाल और प्रश्नकाल UPSC प्रश्नों में सबसे अधिक बहस वाले संसदीय समय-खंडों में से हैं।\n\n• विकल्प (a) सुबह 11 बजे: गलत। यह प्रश्नकाल का प्रारंभ समय है, शून्यकाल का नहीं। दोनों अनुक्रमिक हैं, एक साथ नहीं।\n• विकल्प (b) दोपहर 2 बजे: गलत। यह समय नियमावली में किसी विशेष संसदीय उपकरण से जुड़ा नहीं है।\n• विकल्प (c) दोपहर 3 बजे: गलत। शून्यकाल से जुड़ा नहीं है।\n• विकल्प (d) दोपहर 12 बजे: सही। शून्यकाल दोपहर 12 बजे शुरू होता है, प्रश्नकाल समाप्त होते ही। यही नामकरण का मूल है — घड़ी पर 'शून्य' स्थिति।\n\nमूल्यवर्धन:\n• शून्यकाल एक अनौपचारिक परंपरा है — यह दोनों सदनों की नियमावली में नहीं आता।\n• शून्यकाल में उठाए गए मुद्दों पर मतदान नहीं हो सकता — यह केवल अभिव्यक्ति का माध्यम है।\n• स्टार प्रश्न (मौखिक उत्तर + पूरक) और अनस्टार प्रश्न (लिखित उत्तर) तकनीकी रूप से प्रस्ताव नहीं हैं — वे संसदीय प्रश्न हैं।"
+    }
+  },
+  {
+    "uuid": "d221fec8-3182-4072-84a7-f84ecd7e9f47",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Confidence Motion: Suo Motu and Directed Variants",
+        "Anti-Defection Law Interface with Confidence and No-Confidence Votes"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Kihoto Hollohan 1992 — judicial review of Speaker's disqualification decision",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following:\n\nAssertion (A): The decision of the Speaker on a disqualification petition filed under the Tenth Schedule of the Constitution — including petitions arising from a member's vote during a confidence motion — is subject to judicial review by superior courts.\n\nReason (R): The Tenth Schedule of the Constitution specifically designates the Speaker of Lok Sabha as the authority competent to decide disqualification petitions arising from members voting contrary to their party's direction during floor tests.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who accept both facts as correct may incorrectly reason that the Speaker's disqualification authority is constitutionally derived from the Tenth Schedule's immunity provisions, rather than from the causal chain: anti-defection (whip) → disqualification petition → Speaker's decision → judicial review.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — The Speaker's decision on disqualification under the Tenth Schedule is subject to judicial review, as held in Kihoto Hollohan v Zachillhu (1992). A is correct.",
+        "Step 2: Is Reason (R) correct? — The Tenth Schedule places the Speaker as the deciding authority on disqualification petitions arising from voting against party whip, including during confidence votes. R is correct.",
+        "Step 3: Does R explain A? — Yes. Because the Tenth Schedule designates the Speaker as the tribunal for disqualification decisions, courts can review whether the Speaker exercised that authority correctly. The Speaker's role as the designated authority is precisely what makes judicial review applicable (and limited to post-decision review). R causally explains A.",
+        "A correct + R correct + R explains A → correct option is (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "The Kihoto Hollohan case (1992) is one of the most significant constitutional law decisions relating to the Tenth Schedule and the Speaker's role in anti-defection proceedings.\n\n• Assertion (A): Correct. In Kihoto Hollohan v Zachillhu (1992), the Supreme Court held that the Speaker's decisions on disqualification under the Tenth Schedule are subject to judicial review — but only after the decision is made, not while it is pending.\n• Reason (R): Correct. The Tenth Schedule specifically designates the Speaker (or Chairman in Rajya Sabha) as the adjudicating authority for disqualification petitions arising from anti-defection violations — including voting against the party whip during confidence/no-confidence votes.\n• Causal relationship: R explains A. Because the Tenth Schedule creates the Speaker as a quasi-judicial tribunal, courts have the jurisdiction to review whether that tribunal acted correctly. The Speaker's designated authority is the constitutional basis that brings the decision within the reach of judicial review.\n\nValue Addition:\n• Disqualification under Tenth Schedule and expulsion from party are distinct — expulsion alone does not attract disqualification.\n• The merger exception (2/3rd of legislative party formally merging) is the only remaining exception after the 91st Amendment (2003) removed the one-third split exception.\n• A three-line whip during confidence votes is the highest form of party direction in parliamentary procedure."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित पर विचार करें:\n\nकथन (A): संविधान के दसवें अनुसूची के तहत दायर अयोग्यता याचिका पर स्पीकर का निर्णय — जिसमें विश्वास प्रस्ताव के दौरान सदस्य के मतदान से उत्पन्न याचिकाएँ भी शामिल हैं — उच्च न्यायालयों द्वारा न्यायिक समीक्षा के अधीन होता है।\n\nकारण (R): संविधान के दसवें अनुसूची में विशेष रूप से लोकसभा के स्पीकर को वह प्राधिकारी बनाया गया है जो सदस्यों के पार्टी के निर्देश के विरुद्ध मतदान करने पर उत्पन्न अयोग्यता याचिकाओं का निर्णय करता है, विशेषकर फ्लोर टेस्ट के दौरान।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र दोनों तथ्यों को सही मानते हैं वे गलत तरीके से यह तर्क कर सकते हैं कि स्पीकर की अयोग्यता की शक्ति संवैधानिक रूप से दसवें अनुसूची की प्रतिरक्षा प्रावधानों से प्राप्त है, जबकि वास्तविक कारणात्मक श्रृंखला है: पार्टी विरोधी (व्हिप) → अयोग्यता याचिका → स्पीकर का निर्णय → न्यायिक समीक्षा।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — Kihoto Hollohan v Zachillhu (1992) में निर्णय के अनुसार, दसवें अनुसूची के तहत स्पीकर का अयोग्यता पर निर्णय न्यायिक समीक्षा के अधीन है। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — दसवें अनुसूची में स्पीकर को पार्टी व्हिप के विरुद्ध मतदान से उत्पन्न अयोग्यता याचिकाओं का निर्णयकर्ता प्राधिकारी बनाया गया है, जिसमें विश्वास मत के दौरान भी शामिल है। R सही है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? — हाँ। क्योंकि दसवें अनुसूची में स्पीकर को अयोग्यता निर्णय के लिए न्यायाधिकरण के रूप में नामित किया गया है, अतः न्यायालय यह समीक्षा कर सकते हैं कि स्पीकर ने यह अधिकार सही ढंग से प्रयोग किया या नहीं। स्पीकर की यह भूमिका न्यायिक समीक्षा को लागू बनाती है (और यह समीक्षा केवल निर्णय के बाद सीमित है)। R, A को कारणात्मक रूप से समझाता है।",
+        "A सही + R सही + R, A को समझाता है → सही विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Kihoto Hollohan मामला (1992) दसवें अनुसूची और पार्टी विरोधी कार्रवाई में स्पीकर की भूमिका से संबंधित सबसे महत्वपूर्ण संवैधानिक निर्णयों में से एक है।\n\n• कथन (A): सही। Kihoto Hollohan v Zachillhu (1992) में सुप्रीम कोर्ट ने कहा कि दसवें अनुसूची के तहत स्पीकर के अयोग्यता निर्णय न्यायिक समीक्षा के अधीन हैं — लेकिन केवल निर्णय के बाद, न कि निर्णय लंबित रहते हुए।\n• कारण (R): सही। दसवें अनुसूची में विशेष रूप से स्पीकर (या राज्यसभा में अध्यक्ष) को पार्टी विरोधी उल्लंघन से उत्पन्न अयोग्यता याचिकाओं का निर्णयकर्ता प्राधिकारी बनाया गया है — जिसमें विश्वास/अविश्वास मत के दौरान पार्टी व्हिप के विरुद्ध मतदान भी शामिल है।\n• कारणात्मक संबंध: R, A को समझाता है। क्योंकि दसवें अनुसूची स्पीकर को एक अर्ध-न्यायिक न्यायाधिकरण बनाता है, अतः न्यायालय यह समीक्षा कर सकते हैं कि वह न्यायाधिकरण सही ढंग से कार्य कर रहा है या नहीं। स्पीकर की यह नामित भूमिका न्यायिक समीक्षा के दायरे में निर्णय लाती है।\n\nमूल्यवर्धन:\n• दसवें अनुसूची के तहत अयोग्यता और पार्टी से निष्कासन अलग हैं — केवल निष्कासन से अयोग्यता नहीं लगती।\n• 91वें संशोधन (2003) के बाद एक-तिहाई विभाजन अपवाद हट गया, अब केवल विधायी दल के दो-तिहाई सदस्यों के औपचारिक विलय का अपवाद बचा है।\n• विश्वास मत के दौरान तीन-लाइन व्हिप संसद की कार्यवाही में पार्टी के सर्वोच्च निर्देश का रूप है।"
+    }
+  },
+  {
+    "uuid": "4fb2b235-059d-4199-8ac1-ef191d42e1be",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Censure Motion vs No-Confidence Motion: Key Distinctions",
+        "No-Confidence Motion: Constitutional Basis and Procedural Requirements"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Reasons requirement — Censure vs No-Confidence reversal trap",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements comparing No-Confidence and Censure Motions in the Indian Parliament:\n\n1. A No-Confidence Motion need not specify any reason for withdrawal of confidence, whereas a Censure Motion must explicitly state the grounds for censure.\n2. Both No-Confidence and Censure Motions, when passed, compel the Council of Ministers to resign under constitutional mandate.\n3. A Censure Motion may target a specific minister's conduct on a policy matter, while a No-Confidence Motion always operates against the entire Council of Ministers.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A No-Confidence Motion need not specify any reason for withdrawal of confidence, whereas a Censure Motion must explicitly state the grounds for censure.",
+          "verdict": "Correct",
+          "reason": "This is the precise and frequently reversed distinction: No-Confidence Motion requires no reasons; Censure Motion must state reasons. Knowing which requires reasons is the exact test UPSC sets."
+        },
+        {
+          "statement": "Both No-Confidence and Censure Motions, when passed, compel the Council of Ministers to resign under constitutional mandate.",
+          "verdict": "Incorrect",
+          "reason": "Only No-Confidence Motion compels collective resignation of the Council — this is constitutionally mandated. Censure Motion passage carries only political/moral consequence with no constitutional compulsion to resign."
+        },
+        {
+          "statement": "A Censure Motion may target a specific minister's conduct on a policy matter, while a No-Confidence Motion always operates against the entire Council of Ministers.",
+          "verdict": "Correct",
+          "reason": "Censure can be directed at an individual minister or group; No-Confidence is always collective — this is the fundamental scope distinction between the two instruments."
+        }
+      ],
+      "strong_distractor": "d — Option (d) '1, 2 and 3' is a strong distractor because Statement 2 sounds constitutionally logical (why would Parliament censure if there is no consequence?), leading students to accept all three as correct.",
+      "elimination_logic": [
+        "Statement 1: No-confidence = no reasons needed; Censure = reasons must be stated. This correctly captures the reversed rule. Correct.",
+        "Statement 2: Claims both motions compel resignation — incorrect. Only No-Confidence does constitutionally. Censure has no such mandate. Incorrect.",
+        "Statement 3: Censure targets individuals/groups; No-confidence targets entire Council. Correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect → select option (b): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap in Statement 2 reasons from 'effect' (resignation) backward to 'cause' (passage of any censure-type motion) — students assume that any motion of disapproval must produce the same constitutional consequence as No-Confidence. This reversal ignores the constitutional architecture: only No-Confidence Motion has constitutional bite; Censure Motion's consequence is purely political.",
+      "final_explanation": "The Censure Motion and No-Confidence Motion are frequently compared in UPSC questions because they share a forum (Lok Sabha) but differ sharply in scope, procedure, and consequence.\n\n• Statement 1 — Correct: The reasons requirement is the most frequently reversed distinction. Censure Motion must state reasons (it is a specific accusation); No-Confidence Motion need not explain why confidence is withdrawn.\n• Statement 2 — Incorrect: Only No-Confidence Motion triggers constitutional obligation to resign. Passage of Censure Motion is a political rebuke — no resignation is mandated. Conflating political accountability with constitutional compulsion is the intended trap.\n• Statement 3 — Correct: Censure's flexibility (individual minister or group) vs No-Confidence's collective nature is a foundational distinction. A minister can be censured while the government continues — this is structurally impossible with No-Confidence.\n\nValue Addition:\n• Both Censure and No-Confidence Motions are exclusive to Lok Sabha — Rajya Sabha cannot pass either.\n• A minister who faces a passed Censure Motion may choose to resign on moral grounds — but this is not constitutionally required.\n• The 50-member admission threshold applies specifically to No-Confidence Motion — Censure has separate procedural requirements."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद में अविश्वास और निंदा प्रस्तावों की तुलना करते हुए निम्नलिखित कथनों पर विचार करें:\n\n1. कोई अविश्वास प्रस्ताव विश्वास वापस लेने के लिए कोई कारण निर्दिष्ट करने की आवश्यकता नहीं है, जबकि निंदा प्रस्ताव में निंदा के आधार स्पष्ट रूप से बताना आवश्यक है।\n2. जब पारित होते हैं, तो अविश्वास और निंदा दोनों प्रस्ताव संविधानिक आदेश के तहत मंत्रीमंडल को इस्तीफा देने के लिए बाध्य करते हैं।\n3. निंदा प्रस्ताव किसी विशिष्ट मंत्री के नीति मामले में आचरण को लक्षित कर सकता है, जबकि अविश्वास प्रस्ताव हमेशा पूरे मंत्रीमंडल के खिलाफ होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कोई अविश्वास प्रस्ताव विश्वास वापस लेने के लिए कोई कारण निर्दिष्ट करने की आवश्यकता नहीं है, जबकि निंदा प्रस्ताव में निंदा के आधार स्पष्ट रूप से बताना आवश्यक है।",
+          "verdict": "सही",
+          "reason": "यह सटीक और अक्सर उलटफेर किया जाने वाला अंतर है: अविश्वास प्रस्ताव में कारणों की आवश्यकता नहीं होती; निंदा प्रस्ताव में कारण बताना आवश्यक होता है। यह जानना कि किसमें कारणों की आवश्यकता है, UPSC द्वारा निर्धारित सटीक परीक्षा है।"
+        },
+        {
+          "statement": "जब पारित होते हैं, तो अविश्वास और निंदा दोनों प्रस्ताव संविधानिक आदेश के तहत मंत्रीमंडल को इस्तीफा देने के लिए बाध्य करते हैं।",
+          "verdict": "गलत",
+          "reason": "केवल अविश्वास प्रस्ताव ही मंत्रीमंडल के सामूहिक इस्तीफे को बाध्य करता है — यह संविधानिक आदेश है। निंदा प्रस्ताव पारित होने पर केवल राजनीतिक/नैतिक परिणाम होता है, इस्तीफा देने का कोई संविधानिक बाध्यकारी आदेश नहीं होता।"
+        },
+        {
+          "statement": "निंदा प्रस्ताव किसी विशिष्ट मंत्री के नीति मामले में आचरण को लक्षित कर सकता है, जबकि अविश्वास प्रस्ताव हमेशा पूरे मंत्रीमंडल के खिलाफ होता है।",
+          "verdict": "सही",
+          "reason": "निंदा प्रस्ताव व्यक्तिगत मंत्री या समूह को लक्षित कर सकता है; अविश्वास प्रस्ताव हमेशा सामूहिक होता है — यह दोनों उपकरणों के बीच मौलिक दायरे का अंतर है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) '1, 2 और 3' एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 2 संविधानिक रूप से तार्किक लगता है (यदि कोई परिणाम नहीं होता तो संसद निंदा क्यों करेगी?), जिससे छात्र तीनों को सही मान लेते हैं।",
+      "elimination_logic": [
+        "कथन 1: अविश्वास = कारणों की आवश्यकता नहीं; निंदा = कारण बताना आवश्यक। यह उलटे नियम को सही ढंग से दर्शाता है। सही।",
+        "कथन 2: दावा करता है कि दोनों प्रस्ताव इस्तीफा बाध्य करते हैं — गलत। केवल अविश्वास प्रस्ताव संविधानिक रूप से बाध्य करता है। निंदा में ऐसा कोई आदेश नहीं। गलत।",
+        "कथन 3: निंदा व्यक्तिगत/समूह को लक्षित करता है; अविश्वास पूरे मंत्रीमंडल को। सही।",
+        "कथन 1 और 3 सही, कथन 2 गलत → विकल्प (b) चुनें: केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में उलटा कारण-प्रभाव जाल यह है कि 'परिणाम' (इस्तीफा) से 'कारण' (किसी भी निंदा प्रकार के प्रस्ताव का पारित होना) की ओर तर्क किया गया है — छात्र मान लेते हैं कि किसी भी अस्वीकृति प्रस्ताव का अविश्वास प्रस्ताव जैसा संविधानिक परिणाम होगा। यह उलटफेर संविधानिक संरचना को नजरअंदाज करता है: केवल अविश्वास प्रस्ताव का संविधानिक प्रभाव होता है; निंदा प्रस्ताव का परिणाम केवल राजनीतिक होता है।",
+      "final_explanation": "निंदा प्रस्ताव और अविश्वास प्रस्ताव को UPSC प्रश्नों में अक्सर तुलना के लिए लिया जाता है क्योंकि दोनों का मंच (लोकसभा) समान है लेकिन दायरा, प्रक्रिया और परिणाम में वे स्पष्ट रूप से भिन्न हैं।\n\n• कथन 1 — सही: कारणों की आवश्यकता सबसे अधिक उलटफेर किया जाने वाला अंतर है। निंदा प्रस्ताव में कारण बताना आवश्यक है (यह एक विशिष्ट आरोप है); अविश्वास प्रस्ताव में यह आवश्यक नहीं कि विश्वास क्यों वापस लिया गया।\n• कथन 2 — गलत: केवल अविश्वास प्रस्ताव इस्तीफा देने का संविधानिक आदेश उत्पन्न करता है। निंदा प्रस्ताव पारित होना राजनीतिक निंदा है — इस्तीफा देना अनिवार्य नहीं। राजनीतिक जवाबदेही को संविधानिक बाध्यता से मिलाना जाल है।\n• कथन 3 — सही: निंदा की लचीलापन (व्यक्तिगत मंत्री या समूह) बनाम अविश्वास की सामूहिक प्रकृति मौलिक अंतर है। एक मंत्री को निंदा किया जा सकता है जबकि सरकार जारी रहती है — यह अविश्वास के साथ संभव नहीं।\n\nमूल्यवर्धन:\n• निंदा और अविश्वास दोनों प्रस्ताव केवल लोकसभा के लिए विशिष्ट हैं — राज्यसभा इनमें से कोई पारित नहीं कर सकती।\n• जिस मंत्री के खिलाफ निंदा प्रस्ताव पारित होता है, वह नैतिक आधार पर इस्तीफा दे सकता है — लेकिन यह संविधानिक रूप से आवश्यक नहीं है।\n• 50 सदस्य की न्यूनतम सदस्यता सीमा विशेष रूप से अविश्वास प्रस्ताव पर लागू होती है — निंदा के लिए अलग प्रक्रिया है।"
+    }
+  },
+  {
+    "uuid": "9e0c6565-5483-4125-bcf7-a9d431bffda1",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Impeachment Motion Against President: Constitutional and Procedural Dimensions",
+        "No-Confidence Motion: Constitutional Basis and Procedural Requirements"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Impeachment vs No-Confidence — House applicability and majority type",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the parliamentary motion in List I with its key characteristic in List II:",
+        "columns": [
+          "List I — Motion",
+          "List II — Key Characteristic"
+        ],
+        "rows": [
+          [
+            "A. Presidential Impeachment Motion",
+            "1. Applicable only in Lok Sabha; passed by simple majority of members present and voting"
+          ],
+          [
+            "B. No-Confidence Motion",
+            "2. Can be raised in both Lok Sabha and Rajya Sabha; relates to breach of privilege; referred to a committee"
+          ],
+          [
+            "C. Censure Motion",
+            "3. Must pass in both Houses with a 2/3rd majority of total membership (not merely present and voting)"
+          ],
+          [
+            "D. Privilege Motion",
+            "4. Confined to Lok Sabha; must state reasons; passage does not constitutionally compel resignation"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-4, D-2\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) swaps the majority requirements for impeachment and no-confidence, exploiting students who recall 'two-thirds' but misplace which stage requires it.",
+      "elimination_logic": [
+        "Presidential impeachment requires 2/3rd of total membership (not just present and voting) of both Houses — match A with 3.",
+        "No-Confidence Motion is admitted only in Lok Sabha with 50-member support, and is passed by simple majority — match B with 1.",
+        "Censure Motion: confined to Lok Sabha, must state reasons, no constitutional resignation consequence — match C with 4.",
+        "Privilege Motion: can be raised in both Houses, relates to breach of parliamentary privilege — match D with 2.",
+        "Only option (c) — A-3, B-1, C-4, D-2 — satisfies all four pairings."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap swaps the 'both Houses' attribute between Presidential Impeachment and Privilege Motion. Students who know Impeachment applies to both Houses may also know that No-Confidence applies to Lok Sabha only — but the precise majority requirement for Impeachment (total membership, not present and voting) is the specific detail that distinguishes A-3 from other pairings. Option (b) tempts by correctly identifying some pairings while swapping the majority standard.",
+      "final_explanation": "Understanding which motions operate in which House and what majority they require is essential for UPSC.\n\n• A (Presidential Impeachment) — 3 (2/3rd of total membership of both Houses): Impeachment under Article 61 requires a 2/3rd majority of total membership — stricter than present-and-voting majority — and must pass in both Houses. This distinguishes it from all other motions.\n• B (No-Confidence Motion) — 1 (Lok Sabha only, simple majority of present and voting): No-Confidence is exclusively a Lok Sabha device, passed by simple majority of members present and voting. Rajya Sabha has no role.\n• C (Censure Motion) — 4 (Lok Sabha only, must state reasons, no mandatory resignation): Censure is confined to Lok Sabha, must specify grounds, and carries no constitutional resignation compulsion.\n• D (Privilege Motion) — 2 (Both Houses, Committee referral, breach of privilege): Privilege Motion is available in both Houses and involves Committee referral — unlike No-Confidence and Censure, which are Lok Sabha-only.\n\nThe trap pairings swap D and A (both Houses attribute) and B and C (reasons requirement).\n\nValue Addition:\n• The 2/3rd 'total membership' standard for impeachment is more demanding than the 2/3rd 'present and voting' standard used elsewhere.\n• No President has ever been impeached in India's constitutional history.\n• Privilege Motion outcome depends on the Privileges Committee's recommendations — it does not automatically result in punishment."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में संसदीय प्रस्ताव को सूची II में उसके मुख्य लक्षण से मिलाएं:",
+        "columns": [
+          "सूची I — प्रस्ताव",
+          "सूची II — मुख्य लक्षण"
+        ],
+        "rows": [
+          [
+            "A. राष्ट्रपति महाभियोग प्रस्ताव",
+            "1. केवल लोकसभा में लागू; उपस्थित और मतदान करने वाले सदस्यों के सरल बहुमत से पारित"
+          ],
+          [
+            "B. अविश्वास प्रस्ताव",
+            "2. लोकसभा और राज्यसभा दोनों में उठाया जा सकता है; विशेषाधिकार उल्लंघन से संबंधित; समिति को संदर्भित"
+          ],
+          [
+            "C. निंदा प्रस्ताव",
+            "3. दोनों सदनों में कुल सदस्यता के 2/3 बहुमत से पारित होना आवश्यक (केवल उपस्थित और मतदान करने वाले नहीं)"
+          ],
+          [
+            "D. विशेषाधिकार प्रस्ताव",
+            "4. केवल लोकसभा तक सीमित; कारण बताना आवश्यक; पारित होने पर संवैधानिक रूप से इस्तीफा अनिवार्य नहीं"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-4, D-2\n(d) A-2, B-1, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) महाभियोग और अविश्वास के बहुमत आवश्यकताओं को बदल देता है, जो उन छात्रों को भ्रमित करता है जो 'दो-तिहाई' याद रखते हैं लेकिन यह गलत चरण पर लागू करते हैं।",
+      "elimination_logic": [
+        "राष्ट्रपति के महाभियोग के लिए दोनों सदनों की कुल सदस्यता का 2/3 आवश्यक है (केवल उपस्थित और मतदान करने वाले नहीं) — A को 3 से मिलाएं।",
+        "अविश्वास प्रस्ताव केवल लोकसभा में 50 सदस्यों के समर्थन से स्वीकार किया जाता है, और सरल बहुमत से पारित होता है — B को 1 से मिलाएं।",
+        "निंदा प्रस्ताव: केवल लोकसभा तक सीमित, कारण बताना आवश्यक, कोई संवैधानिक इस्तीफा अनिवार्यता नहीं — C को 4 से मिलाएं।",
+        "विशेषाधिकार प्रस्ताव: दोनों सदनों में उठाया जा सकता है, संसदीय विशेषाधिकार के उल्लंघन से संबंधित — D को 2 से मिलाएं।",
+        "केवल विकल्प (c) — A-3, B-1, C-4, D-2 — सभी चार जोड़ों को संतुष्ट करता है।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल राष्ट्रपतिपर महाभियोग और विशेषाधिकार प्रस्ताव के 'दोनों सदन' गुण को बदल देता है। जो छात्र जानते हैं कि महाभियोग दोनों सदनों पर लागू होता है, वे यह भी जानते होंगे कि अविश्वास केवल लोकसभा तक सीमित है — लेकिन महाभियोग के लिए कुल सदस्यता का 2/3 बहुमत (केवल उपस्थित और मतदान करने वाले नहीं) वह विशिष्ट विवरण है जो A-3 को अन्य जोड़ों से अलग करता है। विकल्प (b) कुछ जोड़ों को सही पहचानकर बहुमत मानक को बदलने का प्रलोभन देता है।",
+      "final_explanation": "यह समझना आवश्यक है कि कौन-से प्रस्ताव किस सदन में लागू होते हैं और उन्हें किस प्रकार का बहुमत चाहिए।\n\n• A (राष्ट्रपति महाभियोग) — 3 (दोनों सदनों की कुल सदस्यता का 2/3): अनुच्छेद 61 के तहत महाभियोग के लिए कुल सदस्यता का 2/3 बहुमत आवश्यक है — जो उपस्थित और मतदान करने वाले बहुमत से अधिक कड़ा है — और यह दोनों सदनों में पारित होना चाहिए। यह इसे अन्य प्रस्तावों से अलग करता है।\n• B (अविश्वास प्रस्ताव) — 1 (केवल लोकसभा, उपस्थित और मतदान करने वाले सदस्यों का सरल बहुमत): अविश्वास केवल लोकसभा का उपकरण है, जो उपस्थित और मतदान करने वाले सदस्यों के सरल बहुमत से पारित होता है। राज्यसभा की इसमें कोई भूमिका नहीं है।\n• C (निंदा प्रस्ताव) — 4 (केवल लोकसभा, कारण बताना आवश्यक, कोई अनिवार्य इस्तीफा नहीं): निंदा केवल लोकसभा तक सीमित है, कारण बताना आवश्यक है, और इसका कोई संवैधानिक इस्तीफा अनिवार्यता नहीं है।\n• D (विशेषाधिकार प्रस्ताव) — 2 (दोनों सदन, समिति को संदर्भित, विशेषाधिकार उल्लंघन): विशेषाधिकार प्रस्ताव दोनों सदनों में उपलब्ध है और इसमें समिति को संदर्भित किया जाता है — जो अविश्वास और निंदा से अलग है, जो केवल लोकसभा तक सीमित हैं।\n\nजाल जोड़े D और A (दोनों सदनों का गुण) तथा B और C (कारण बताने की आवश्यकता) को बदल देते हैं।\n\nमूल्यवर्धन:\n• महाभियोग के लिए कुल सदस्यता का 2/3 'कठोर' मानक है, जो अन्य जगहों पर प्रयुक्त 2/3 'उपस्थित और मतदान करने वाले' से अधिक मांग करता है।\n• भारत के संवैधानिक इतिहास में कोई भी राष्ट्रपति कभी महाभियोग के माध्यम से हटाया नहीं गया है।\n• विशेषाधिकार प्रस्ताव का परिणाम विशेषाधिकार समिति की सिफारिशों पर निर्भर करता है — यह स्वतः दंडात्मक नहीं होता।"
+    }
+  },
+  {
+    "uuid": "45baacd4-a431-4fdc-be2a-261213329cb2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Adjournment Motion: Admissibility Conditions and Procedural Rules",
+        "Calling Attention Motion: Purpose, Procedure, and Limitations"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Adjournment Motion — debate and censure character",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Adjournment Motion — A device that draws the government's attention to an urgent matter without involving a vote; serves an informational purpose only\n(b) Calling Attention Motion — A device for raising urgent matters in Parliament, involving a short ministerial statement followed by a structured debate\n(c) Short Duration Discussion — A discussion on urgent public matters under Rule 193 that concludes with a formal vote on the issue raised\n(d) Adjournment Motion — A device that suspends listed business, involves debate, and whose passage amounts in practice to a censure of the government",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because Calling Attention Motion does bring urgent matters to the minister's attention, and students who know this may accept 'attention of Parliament' as a reasonable paraphrase, overlooking the critical absence of debate and vote.",
+      "elimination_logic": [
+        "Evaluate (a): Adjournment Motion described as involving no vote and serving only an informational purpose — incorrect. Adjournment Motion results in a vote and is a censure of the government. Eliminate.",
+        "Evaluate (b): Calling Attention Motion described as drawing Parliament's attention and involving a debate — incorrect. There is no debate in Calling Attention Motion; only the minister gives a brief statement. Eliminate.",
+        "Evaluate (c): Short Duration Discussion described as resulting in a vote — incorrect. Short Duration Discussion has no formal vote. Eliminate.",
+        "Evaluate (d): Adjournment Motion correctly described as involving debate, suspension of listed business, and carrying the practical effect of censuring the government. Select (d)."
+      ],
+      "upsc_trap_explanation": "Option (b) exploits conflation between Calling Attention Motion and Adjournment Motion: both address urgent matters, and 'drawing Parliament's attention' sounds like a reasonable description of Calling Attention Motion — but the addition of 'involving a debate' is incorrect. Calling Attention Motion has no debate. Students who associate 'urgent matter + attention + minister' with debate accept option (b).",
+      "final_explanation": "Distinguishing between parliamentary devices that address urgent matters is a core UPSC test area.\n\n• Option (a): Incorrectly matched. Adjournment Motion does result in a vote — and its passage amounts to a censure. Describing it as 'informational only' is fundamentally wrong.\n• Option (b): Incorrectly matched. Calling Attention Motion involves no debate — only the minister's brief statement. Adding 'debate' to its description is the conflation error.\n• Option (c): Incorrectly matched. Short Duration Discussion under Rule 193 explicitly does not result in a vote — it is a debate without a vote. Attributing a vote to it is incorrect.\n• Option (d): Correctly matched. Adjournment Motion suspends the listed business of the day, involves full debate, and its passage amounts in practice to a censure of the government — even though it is not constitutionally designated as such.\n\nValue Addition:\n• Adjournment Motion is the only device among these four that directly censures the government in practice.\n• Calling Attention Motion is an Indian innovation — not found in British parliamentary practice.\n• Short Duration Discussion and Calling Attention Motion share the 'no vote' characteristic but differ in purpose and procedure."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) Adjournment Motion — एक ऐसा उपकरण जो सरकार का ध्यान तात्कालिक मामले की ओर बिना मतदान के आकर्षित करता है; केवल सूचना देने का उद्देश्य रखता है\n(b) Calling Attention Motion — संसद में तात्कालिक मामलों को उठाने का एक उपकरण, जिसमें एक संक्षिप्त मंत्रीय बयान के बाद संरचित बहस होती है\n(c) Short Duration Discussion — नियम 193 के तहत तात्कालिक सार्वजनिक मामलों पर चर्चा जो उठाए गए मुद्दे पर औपचारिक मतदान के साथ समाप्त होती है\n(d) Adjournment Motion — एक ऐसा उपकरण जो सूचीबद्ध कार्यों को निलंबित करता है, बहस शामिल करता है, और जिसका पारित होना व्यावहारिक रूप से सरकार की निंदा के बराबर होता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि Calling Attention Motion वास्तव में मंत्री का ध्यान आकृष्ट करता है, और जो छात्र इसे जानते हैं वे 'संसद का ध्यान' को एक उचित पर्यायवाची मान सकते हैं, जबकि बहस और मतदान की महत्वपूर्ण अनुपस्थिति को नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "(a) का मूल्यांकन करें: Adjournment Motion को बिना मतदान के केवल सूचना देने वाले उद्देश्य वाला बताया गया है — गलत। Adjournment Motion मतदान के साथ होता है और सरकार की निंदा करता है। इसे हटा दें।",
+        "(b) का मूल्यांकन करें: Calling Attention Motion को संसद का ध्यान आकर्षित करने वाला और बहस शामिल करने वाला बताया गया है — गलत। Calling Attention Motion में कोई बहस नहीं होती; केवल मंत्री संक्षिप्त बयान देते हैं। इसे हटा दें।",
+        "(c) का मूल्यांकन करें: Short Duration Discussion को मतदान के साथ समाप्त होने वाला बताया गया है — गलत। Short Duration Discussion में औपचारिक मतदान नहीं होता। इसे हटा दें।",
+        "(d) का मूल्यांकन करें: Adjournment Motion को सही रूप से बहस, सूचीबद्ध कार्यों के निलंबन, और सरकार की निंदा के व्यावहारिक प्रभाव के साथ बताया गया है। (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) Calling Attention Motion और Adjournment Motion के बीच भ्रम का फायदा उठाता है: दोनों ही तात्कालिक मामलों को संबोधित करते हैं, और 'संसद का ध्यान आकर्षित करना' Calling Attention Motion का एक उचित वर्णन लगता है — लेकिन 'बहस शामिल है' जोड़ना गलत है। Calling Attention Motion में कोई बहस नहीं होती। जो छात्र 'तात्कालिक मामला + ध्यान + मंत्री' को बहस से जोड़ते हैं वे विकल्प (b) को स्वीकार कर लेते हैं।",
+      "final_explanation": "तात्कालिक मामलों को संबोधित करने वाले संसदीय उपकरणों के बीच भेद करना UPSC की एक मुख्य परीक्षा क्षेत्र है।\n\n• विकल्प (a): गलत मेल। Adjournment Motion मतदान के साथ होता है — और इसके पारित होने का अर्थ सरकार की निंदा है। इसे केवल सूचना देने वाला बताना मूलतः गलत है।\n• विकल्प (b): गलत मेल। Calling Attention Motion में कोई बहस नहीं होती — केवल मंत्री का संक्षिप्त बयान होता है। 'बहस' जोड़ना भ्रम की गलती है।\n• विकल्प (c): गलत मेल। नियम 193 के तहत Short Duration Discussion में मतदान नहीं होता — यह बिना मतदान की बहस है। इसे मतदान वाला बताना गलत है।\n• विकल्प (d): सही मेल। Adjournment Motion सूचीबद्ध कार्यों को निलंबित करता है, पूर्ण बहस होती है, और इसके पारित होने का व्यावहारिक अर्थ सरकार की निंदा है — हालांकि इसे संवैधानिक रूप से ऐसा नामित नहीं किया गया है।\n\nमूल्यवर्धन:\n• इन चारों में से केवल Adjournment Motion ही व्यावहारिक रूप से सरकार की निंदा करता है।\n• Calling Attention Motion एक भारतीय नवाचार है — जो ब्रिटिश संसदीय प्रथा में नहीं पाया जाता।\n• Short Duration Discussion और Calling Attention Motion दोनों में 'कोई मतदान नहीं' विशेषता साझा है, पर उद्देश्य और प्रक्रिया भिन्न है।"
+    }
+  },
+  {
+    "uuid": "4cdd8b15-fc20-4df9-ae10-b789078f91ee",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Closure Motion: Types and Speaker's Role",
+        "Point of Order vs Privilege Motion: Overlap and Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Guillotine closure and Speaker's finality — judicial review excluded",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Closure Motions in Indian parliamentary procedure, consider the following statements:\n\n1. The Guillotine form of Closure Motion is applied during the budget session to put undiscussed Demands for Grants to vote simultaneously at the end of the allotted time.\n2. The Speaker's decision to apply a Closure Motion can be challenged in a court of law if it causes material prejudice to a minority party's parliamentary rights.\n3. In Kangaroo Closure, the Speaker selects certain amendments for debate while skipping others, enabling expedited consideration of a Bill.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Guillotine form of Closure Motion is applied during the budget session to put undiscussed Demands for Grants to vote simultaneously at the end of the allotted time.",
+          "verdict": "Correct",
+          "reason": "Guillotine is specifically designed for the budget process — when time runs out, all undiscussed demands are bundled and voted upon together. It is the most practically significant closure type."
+        },
+        {
+          "statement": "The Speaker's decision to apply a Closure Motion can be challenged in a court of law if it causes material prejudice to a minority party's parliamentary rights.",
+          "verdict": "Incorrect",
+          "reason": "The Speaker's power to apply closure is a parliamentary discretion that cannot be challenged in courts — there is no exception for minority party prejudice. This is a scope-extension that adds a fictional legal remedy."
+        },
+        {
+          "statement": "In Kangaroo Closure, the Speaker selects certain amendments for debate while skipping others, enabling expedited consideration of a Bill.",
+          "verdict": "Correct",
+          "reason": "Kangaroo Closure is precisely this — the Speaker 'jumps' over certain amendments, selecting only some for discussion, thereby speeding up the legislative process."
+        }
+      ],
+      "strong_distractor": "d — Option (d) '1, 2 and 3' is a strong distractor because Statement 2 sounds constitutionally principled (minority rights, judicial remedy), leading students to accept it as a reasonable safeguard that must exist.",
+      "elimination_logic": [
+        "Statement 1: Guillotine bundles undiscussed demands for vote at end of budget time — textbook description of Guillotine. Correct.",
+        "Statement 2: Speaker's closure decision is NOT subject to judicial review — adding 'minority prejudice exception' is a scope-extension that creates a fictional remedy. Incorrect.",
+        "Statement 3: Kangaroo Closure selects amendments for debate while skipping others — classic description. Correct.",
+        "Statements 1 and 3 correct — select option (a): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses the scope-extension technique by adding 'if it causes material prejudice to a minority party's parliamentary rights' — a phrase that sounds like a reasonable constitutional safeguard. Students with knowledge of fundamental rights remedies may assume courts can intervene in parliamentary procedure when rights are affected, overlooking Article 122 which bars court intervention in parliamentary proceedings.",
+      "final_explanation": "Closure Motions are procedural devices for terminating debate, and their application by the Speaker is an exclusive parliamentary power.\n\n• Statement 1 — Correct: Guillotine is the budget-specific closure mechanism. When the allotted time expires, all undiscussed Demands for Grants are put to vote simultaneously. This prevents indefinite delay of budget passage.\n• Statement 2 — Incorrect: The Speaker's power to apply a Closure Motion is protected from judicial review under Article 122, which bars courts from questioning parliamentary proceedings on grounds of procedural irregularity. There is no exception for minority party rights — this exception is invented.\n• Statement 3 — Correct: Kangaroo Closure allows the Speaker to select only certain amendments for debate, skipping others — named for the jumping movement. This is one of the four recognised closure types.\n\nValue Addition:\n• The four closure types: Simple Closure, Closure by Compartments, Kangaroo Closure, Guillotine.\n• Article 122 provides constitutional protection to parliamentary proceedings from judicial scrutiny.\n• Guillotine is the most frequently invoked closure in practice — budget sessions routinely end with guillotined demands."
+    },
+    "hi": {
+      "display_text": "भारतीय संसदीय प्रक्रिया में क्लोजर मोशन के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. गिलोटीन प्रकार का क्लोजर मोशन बजट सत्र के दौरान लागू किया जाता है ताकि निर्धारित समय के अंत में बिना चर्चा किए गए अनुदान मांगों को एक साथ मतदान के लिए रखा जा सके।\n2. यदि क्लोजर मोशन लागू करने के स्पीकर के निर्णय से अल्पसंख्यक दल के संसदीय अधिकारों को महत्वपूर्ण नुकसान होता है, तो इसे न्यायालय में चुनौती दी जा सकती है।\n3. कंगारू क्लोजर में, स्पीकर कुछ संशोधनों को बहस के लिए चुनते हैं जबकि अन्य को छोड़ देते हैं, जिससे विधेयक पर त्वरित विचार संभव होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Guillotine form of Closure Motion is applied during the budget session to put undiscussed Demands for Grants to vote simultaneously at the end of the allotted time.",
+          "verdict": "Correct",
+          "reason": "Guillotine is specifically designed for the budget process — when time runs out, all undiscussed demands are bundled and voted upon together. It is the most practically significant closure type."
+        },
+        {
+          "statement": "The Speaker's decision to apply a Closure Motion can be challenged in a court of law if it causes material prejudice to a minority party's parliamentary rights.",
+          "verdict": "Incorrect",
+          "reason": "The Speaker's power to apply closure is a parliamentary discretion that cannot be challenged in courts — there is no exception for minority party prejudice. This is a scope-extension that adds a fictional legal remedy."
+        },
+        {
+          "statement": "In Kangaroo Closure, the Speaker selects certain amendments for debate while skipping others, enabling expedited consideration of a Bill.",
+          "verdict": "Correct",
+          "reason": "Kangaroo Closure is precisely this — the Speaker 'jumps' over certain amendments, selecting only some for discussion, thereby speeding up the legislative process."
+        }
+      ],
+      "strong_distractor": "d — Option (d) '1, 2 and 3' is a strong distractor because Statement 2 sounds constitutionally principled (minority rights, judicial remedy), leading students to accept it as a reasonable safeguard that must exist.",
+      "elimination_logic": [
+        "Statement 1: Guillotine bundles undiscussed demands for vote at end of budget time — textbook description of Guillotine. Correct.",
+        "Statement 2: Speaker's closure decision is NOT subject to judicial review — adding 'minority prejudice exception' is a scope-extension that creates a fictional remedy. Incorrect.",
+        "Statement 3: Kangaroo Closure selects amendments for debate while skipping others — classic description. Correct.",
+        "Statements 1 and 3 correct — select option (a): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses the scope-extension technique by adding 'if it causes material prejudice to a minority party's parliamentary rights' — a phrase that sounds like a reasonable constitutional safeguard. Students with knowledge of fundamental rights remedies may assume courts can intervene in parliamentary procedure when rights are affected, overlooking Article 122 which bars court intervention in parliamentary proceedings.",
+      "final_explanation": "Closure Motions are procedural devices for terminating debate, and their application by the Speaker is an exclusive parliamentary power.\n\n• Statement 1 — Correct: Guillotine is the budget-specific closure mechanism. When the allotted time expires, all undiscussed Demands for Grants are put to vote simultaneously. This prevents indefinite delay of budget passage.\n• Statement 2 — Incorrect: The Speaker's power to apply a Closure Motion is protected from judicial review under Article 122, which bars courts from questioning parliamentary proceedings on grounds of procedural irregularity. There is no exception for minority party rights — this exception is invented.\n• Statement 3 — Correct: Kangaroo Closure allows the Speaker to select only certain amendments for debate, skipping others — named for the jumping movement. This is one of the four recognised closure types.\n\nValue Addition:\n• The four closure types: Simple Closure, Closure by Compartments, Kangaroo Closure, Guillotine.\n• Article 122 provides constitutional protection to parliamentary proceedings from judicial scrutiny.\n• Guillotine is the most frequently invoked closure in practice — budget sessions routinely end with guillotined demands."
+    }
+  },
+  {
+    "uuid": "693dc566-8a5a-41ab-98dd-cf641c83a5cc",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "No-Confidence Motion: Historical Record and Political Consequences",
+        "Confidence Motion: Suo Motu and Directed Variants"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "First No-Confidence Motion in India — JB Kripalani 1963",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The first No-Confidence Motion in the history of independent India's Parliament was moved in 1963 against the government of Jawaharlal Nehru. Who moved this historic motion?\n\n(a) Ram Manohar Lohia\n(b) JB Kripalani\n(c) Minoo Masani\n(d) Frank Anthony",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because Acharya Kripalani was a prominent Nehru-era Congress leader who later became a critic — students may swap the mover with a more famous political figure of that era.",
+      "elimination_logic": [
+        "The first No-Confidence Motion in independent India was moved in 1963 — this anchors the answer historically.",
+        "The motion was moved by JB Kripalani (Acharya Jivatram Bhagwandas Kripalani) against the Nehru government.",
+        "Eliminate (a): Ram Manohar Lohia was a prominent socialist leader who did move no-confidence motions but was NOT the first to do so in 1963.",
+        "Eliminate (c) and (d): These are fabricated or incorrect attributions for the first motion. Select (b): JB Kripalani."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap replaces JB Kripalani with Ram Manohar Lohia — both were prominent opposition figures in the 1960s who challenged the Nehru government. Students who know 'a socialist leader moved the first no-confidence motion against Nehru' may incorrectly attribute it to Lohia (who is more popularly associated with socialist opposition) rather than Kripalani, who moved the actual first motion.",
+      "final_explanation": "The No-Confidence Motion has a rich history in Indian parliamentary democracy, beginning from the Nehru era.\n\n• Option (a) Ram Manohar Lohia: Incorrect. Lohia was a prominent socialist parliamentarian who challenged the Nehru government on many occasions, but he did not move the first No-Confidence Motion in 1963.\n• Option (b) JB Kripalani: Correct. Acharya Jivatram Bhagwandas Kripalani moved the first No-Confidence Motion in independent India in 1963, against the Jawaharlal Nehru government. The motion was not passed.\n• Option (c) Minoo Masani: Incorrect. Masani was a Swatantra Party leader and member of parliament, but he did not move the first no-confidence motion.\n• Option (d) Frank Anthony: Incorrect. Anthony represented Anglo-Indian interests in Parliament and did not initiate the first no-confidence motion.\n\nValue Addition:\n• The motion was moved in the context of India's defeat in the 1962 Sino-Indian War — the political climate of disillusionment fuelled the challenge.\n• The government won the vote comfortably — Nehru's parliamentary majority was not threatened.\n• JB Kripalani had been a Congress president before becoming a prominent opposition voice."
+    },
+    "hi": {
+      "display_text": "स्वतंत्र भारत के संसदीय इतिहास में पहली अविश्वास प्रस्ताव 1963 में जवाहरलाल नेहरू सरकार के खिलाफ प्रस्तुत की गई थी। इस ऐतिहासिक प्रस्ताव को किसने प्रस्तुत किया?\n\n(a) राम मनोहर लोहिया\n(b) जेबी कृपालानी\n(c) मीनू मसानी\n(d) फ्रैंक एंथोनी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि आचार्य कृपालानी नेहरू युग के एक प्रमुख कांग्रेस नेता थे जो बाद में आलोचक बने — छात्र उस युग के अधिक प्रसिद्ध राजनीतिक व्यक्ति के साथ प्रस्तावक को बदल सकते हैं।",
+      "elimination_logic": [
+        "स्वतंत्र भारत में पहली अविश्वास प्रस्ताव 1963 में प्रस्तुत की गई थी — यह उत्तर को ऐतिहासिक रूप से स्थापित करता है।",
+        "यह प्रस्ताव जेबी कृपालानी (आचार्य जीवतराम भगवंदास कृपालानी) द्वारा नेहरू सरकार के खिलाफ प्रस्तुत किया गया था।",
+        "(a) को हटाएं: राम मनोहर लोहिया एक प्रमुख समाजवादी नेता थे जिन्होंने अविश्वास प्रस्ताव प्रस्तुत किए, लेकिन वे 1963 में पहली बार ऐसा करने वाले नहीं थे।",
+        "(c) और (d) को हटाएं: ये पहली प्रस्ताव के लिए गलत या गढ़े हुए हैं। (b) को चुनें: जेबी कृपालानी।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में जेबी कृपालानी को राम मनोहर लोहिया से बदल दिया जाता है — दोनों 1960 के दशक के प्रमुख विपक्षी नेता थे जिन्होंने नेहरू सरकार को चुनौती दी। जो छात्र जानते हैं कि 'एक समाजवादी नेता ने नेहरू के खिलाफ पहली अविश्वास प्रस्ताव प्रस्तुत की' वे इसे गलत रूप से लोहिया को दे सकते हैं (जो समाजवादी विपक्ष के साथ अधिक लोकप्रिय हैं) बजाय कृपालानी के, जिन्होंने वास्तविक पहली प्रस्ताव प्रस्तुत की।",
+      "final_explanation": "अविश्वास प्रस्ताव का भारतीय संसदीय लोकतंत्र में समृद्ध इतिहास है, जो नेहरू युग से शुरू होता है।\n\n• विकल्प (a) राम मनोहर लोहिया: गलत। लोहिया एक प्रमुख समाजवादी सांसद थे जिन्होंने कई बार नेहरू सरकार को चुनौती दी, लेकिन उन्होंने 1963 में पहली अविश्वास प्रस्ताव प्रस्तुत नहीं की।\n• विकल्प (b) जेबी कृपालानी: सही। आचार्य जीवतराम भगवंदास कृपालानी ने स्वतंत्र भारत में 1963 में पहली अविश्वास प्रस्ताव प्रस्तुत की, जो जवाहरलाल नेहरू सरकार के खिलाफ थी। यह प्रस्ताव पारित नहीं हुई।\n• विकल्प (c) मीनू मसानी: गलत। मसानी स्वतंत्र पार्टी के नेता और सांसद थे, लेकिन उन्होंने पहली अविश्वास प्रस्ताव प्रस्तुत नहीं की।\n• विकल्प (d) फ्रैंक एंथोनी: गलत। एंथोनी संसद में एंग्लो-इंडियन हितों का प्रतिनिधित्व करते थे और उन्होंने पहली अविश्वास प्रस्ताव शुरू नहीं की।\n\nमूल्य संवर्धन:\n• यह प्रस्ताव 1962 के भारत-चीन युद्ध में भारत की हार के संदर्भ में प्रस्तुत की गई थी — निराशा के राजनीतिक माहौल ने चुनौती को बढ़ावा दिया।\n• सरकार ने वोट आराम से जीता — नेहरू की संसदीय बहुमत को खतरा नहीं था।\n• जेबी कृपालानी कांग्रेस अध्यक्ष रह चुके थे और बाद में एक प्रमुख विपक्षी आवाज बने।"
+    }
+  },
+  {
+    "uuid": "609106ec-d15a-4a18-be41-ed5804be0f7b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "No-Day-Yet-Named Motion and Substantive Motions: Classification Framework",
+        "Dilatory Motion and Recommittal Motion: Lesser-Known Procedural Motions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "No-Day-Yet-Named Motion — government controlled, not opposition device",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following parliamentary devices primarily serve as tactical tools available to the opposition to challenge or delay government business, while one does NOT belong to this category. Which one is the odd one out?\n\n(a) Dilatory Motion\n(b) No-Day-Yet-Named Motion\n(c) Recommittal Motion\n(d) Adjournment Motion",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) Dilatory Motion is a strong distractor because students who know Dilatory Motions are used to delay proceedings may assume they are also government-controlled (to delay opposition business) — overlooking that Dilatory Motion is an opposition tactical device.",
+      "elimination_logic": [
+        "Identify the common attribute: which of these are opposition tactical devices to delay or challenge government business?",
+        "Dilatory Motion: opposition uses this to delay or defer — opposition device. Belongs.",
+        "Recommittal Motion: opposition uses this to send a Bill back to committee, delaying passage — can be an opposition device. Belongs.",
+        "Adjournment Motion: opposition-driven device to censure government and halt business. Belongs.",
+        "No-Day-Yet-Named Motion: admitted but the government controls when to schedule it — it is government-controlled, not an opposition device. This is the odd one out. Select (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes the controlling party: students who know No-Day-Yet-Named Motion is a deferred motion may assume the deferral benefits the opposition (who had the motion admitted). In reality, once admitted, the government controls the scheduling date — making it a government-held procedural advantage. The confusion between 'who moved the motion' (opposition) and 'who controls when it is heard' (government) is the trap mechanism.",
+      "final_explanation": "Parliamentary motions can be classified by which party they primarily benefit — opposition accountability tools vs government scheduling controls.\n\n• Option (a) Dilatory Motion: An opposition tactical device — moved to delay or defer government business when the opposition wishes to slow legislative proceedings.\n• Option (b) No-Day-Yet-Named Motion: This is the odd one out. Although it may have been admitted, the government controls when to schedule it — it is a government-held deferral power, not an opposition device.\n• Option (c) Recommittal Motion: Typically an opposition device — sends a Bill back to committee after it has been reported, delaying passage.\n• Option (d) Adjournment Motion: Clearly an opposition device — it suspends government-scheduled business and functions as a censure mechanism.\n\nThe common attribute of (a), (c), and (d) is that they serve as opposition tactical tools. No-Day-Yet-Named Motion is controlled by the government.\n\nValue Addition:\n• The government's control over scheduling No-Day-Yet-Named Motions effectively allows it to bury uncomfortable motions.\n• Dilatory Motion and Recommittal Motion are procedural (not substantive) — they carry no direct accountability consequence.\n• Distinguishing who controls each procedural device is a key analytical skill for parliamentary procedure questions."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन संसदीय युक्तियाँ मुख्य रूप से विपक्ष के पास उपलब्ध रणनीतिक उपकरण हैं जो सरकार के कार्य को चुनौती देने या विलंबित करने के लिए हैं, जबकि एक इस श्रेणी में नहीं आता। कौन-सा अलग है?\n\n(a) Dilatory Motion\n(b) No-Day-Yet-Named Motion\n(c) Recommittal Motion\n(d) Adjournment Motion",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) Dilatory Motion एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि Dilatory Motions कार्यवाही को विलंबित करने के लिए उपयोग किए जाते हैं, वे यह मान सकते हैं कि ये भी सरकार द्वारा नियंत्रित हैं (विपक्ष के कार्य को विलंबित करने के लिए) — यह ध्यान नहीं देते कि Dilatory Motion विपक्ष की रणनीतिक युक्ति है।",
+      "elimination_logic": [
+        "सामान्य गुण पहचानें: इनमें से कौन-से विपक्ष की रणनीतिक युक्तियाँ हैं जो सरकार के कार्य को विलंबित या चुनौती देती हैं?",
+        "Dilatory Motion: विपक्ष इसका उपयोग विलंबित करने या स्थगित करने के लिए करता है — विपक्षी युक्ति। शामिल।",
+        "Recommittal Motion: विपक्ष इसका उपयोग बिल को समिति में वापस भेजने के लिए करता है, जिससे पारित होने में विलंब होता है — यह विपक्षी युक्ति हो सकती है। शामिल।",
+        "Adjournment Motion: विपक्ष द्वारा सरकार की निंदा करने और कार्यवाही रोकने के लिए प्रयुक्त युक्ति। शामिल।",
+        "No-Day-Yet-Named Motion: स्वीकार किया गया है लेकिन इसे कब निर्धारित करना है, यह सरकार नियंत्रित करती है — यह सरकार द्वारा नियंत्रित है, विपक्षी युक्ति नहीं है। यह अलग है। विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "entity-swap जाल नियंत्रण पक्ष को बदल देता है: जो छात्र जानते हैं कि No-Day-Yet-Named Motion एक स्थगित युक्ति है, वे मान सकते हैं कि स्थगन विपक्ष के लाभ के लिए है (जिसने युक्ति स्वीकार कराई थी)। वास्तव में, एक बार स्वीकार होने के बाद, सरकार तय करती है कि इसे कब सुना जाएगा — जिससे यह सरकार के पास एक प्रक्रियात्मक लाभ बन जाता है। 'जिसने युक्ति प्रस्तुत की' (विपक्ष) और 'जिसके पास सुनवाई का नियंत्रण है' (सरकार) के बीच भ्रम जाल की प्रक्रिया है।",
+      "final_explanation": "संसदीय युक्तियों को इस आधार पर वर्गीकृत किया जा सकता है कि वे मुख्य रूप से किस पक्ष के लाभ के लिए हैं — विपक्ष की जवाबदेही उपकरण बनाम सरकार के समय निर्धारण नियंत्रण।\n\n• विकल्प (a) Dilatory Motion: विपक्ष की रणनीतिक युक्ति — जब विपक्ष विधायी कार्यवाही को धीमा करना चाहता है, तो सरकार के कार्य को विलंबित या स्थगित करने के लिए प्रस्तुत की जाती है।\n• विकल्प (b) No-Day-Yet-Named Motion: यह अलग है। हालांकि इसे स्वीकार किया गया हो, सरकार तय करती है कि इसे कब निर्धारित करना है — यह सरकार के पास स्थगन का अधिकार है, विपक्षी युक्ति नहीं।\n• विकल्प (c) Recommittal Motion: सामान्यतः विपक्षी युक्ति — बिल को रिपोर्ट करने के बाद समिति में वापस भेजती है, जिससे पारित होने में विलंब होता है।\n• विकल्प (d) Adjournment Motion: स्पष्ट रूप से विपक्षी युक्ति — यह सरकार द्वारा निर्धारित कार्य को स्थगित करती है और निंदा का माध्यम है।\n\n(a), (c), और (d) का सामान्य गुण यह है कि वे विपक्ष की रणनीतिक युक्तियाँ हैं। No-Day-Yet-Named Motion सरकार द्वारा नियंत्रित है।\n\nमूल्यवर्धन:\n• No-Day-Yet-Named Motions के समय निर्धारण पर सरकार का नियंत्रण असुविधाजनक युक्तियों को दबाने की अनुमति देता है।\n• Dilatory Motion और Recommittal Motion प्रक्रियात्मक हैं (मौलिक नहीं) — इनमें कोई प्रत्यक्ष जवाबदेही परिणाम नहीं होता।\n• प्रत्येक प्रक्रियात्मक युक्ति पर नियंत्रण किसके पास है, इसे पहचानना संसदीय प्रक्रिया के प्रश्नों के लिए एक महत्वपूर्ण विश्लेषणात्मक कौशल है।"
+    }
+  },
+  {
+    "uuid": "6bc54521-0f7e-4c69-8df3-d8c9b1ce1fa7",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Removal Motions for Constitutional Functionaries (CAG, Judges, Election Commissioners)",
+        "Impeachment Motion Against President: Constitutional and Procedural Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Judges Inquiry Act 1968 — three-member committee composition",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements relating to removal of constitutional functionaries in India:",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "The three-member inquiry committee constituted under the Judges Inquiry Act 1968 includes a sitting judge of the Supreme Court, the Chief Justice of a High Court, and a distinguished jurist."
+          ],
+          [
+            "2",
+            "The Chief Election Commissioner is removed by the same procedure as a Supreme Court judge, but other Election Commissioners can be removed by a simple majority of Parliament on the recommendation of the CEC."
+          ],
+          [
+            "3",
+            "The Comptroller and Auditor General can be removed by the same procedure as a Supreme Court judge but is not governed by the Judges Inquiry Act 1968."
+          ],
+          [
+            "4",
+            "Both the Presidential impeachment process and the removal of Supreme Court judges require a 2/3rd majority of total membership of both Houses of Parliament."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The three-member inquiry committee constituted under the Judges Inquiry Act 1968 includes a sitting judge of the Supreme Court, the Chief Justice of a High Court, and a distinguished jurist.",
+          "verdict": "Correct",
+          "reason": "This is the exact statutory composition under the Judges Inquiry Act 1968 — one sitting SC judge, one HC Chief Justice, and one distinguished jurist. All three elements are specified."
+        },
+        {
+          "statement": "The Chief Election Commissioner is removed by the same procedure as a Supreme Court judge, but other Election Commissioners can be removed by a simple majority of Parliament on the recommendation of the CEC.",
+          "verdict": "Incorrect",
+          "reason": "Other Election Commissioners can be removed on the recommendation of the CEC, but the removal is not by 'simple majority' — it follows the same address procedure. The partial truth is in correctly identifying CEC's role in recommending, while incorrectly specifying 'simple majority of Parliament' as the mechanism."
+        },
+        {
+          "statement": "The Comptroller and Auditor General can be removed by the same procedure as a Supreme Court judge but is not governed by the Judges Inquiry Act 1968.",
+          "verdict": "Correct",
+          "reason": "Article 148 provides for CAG removal by the same address procedure as SC judges, but the Judges Inquiry Act 1968 specifically covers SC and HC judges — it does not extend to CAG. There is no separate inquiry act for CAG."
+        },
+        {
+          "statement": "Both the Presidential impeachment process and the removal of Supreme Court judges require a 2/3rd majority of total membership of both Houses.",
+          "verdict": "Incorrect",
+          "reason": "The Presidential impeachment requires 2/3rd of total membership. However, the removal of SC judges under Article 124 requires a special majority — 2/3rd of members present and voting AND a majority of total membership — in both Houses. These are different standards, and the statement falsely equates them."
+        }
+      ],
+      "strong_distractor": "b — Option (b) 'Only two' is a strong distractor because students who correctly identify Statements 1 and 3 as correct may hesitate on Statement 4, not precisely recalling the distinction between 'total membership' (impeachment) and 'present and voting' (judge removal).",
+      "elimination_logic": [
+        "Statement 1: SC judge + HC Chief Justice + distinguished jurist — exact statutory composition. Correct.",
+        "Statement 2: 'Simple majority of Parliament' for removing other ECs is incorrect — the removal procedure is the same address procedure, not simple majority. Incorrect.",
+        "Statement 3: CAG = same procedure as SC judge but Judges Inquiry Act 1968 doesn't cover CAG. Correct.",
+        "Statement 4: Presidential impeachment = 2/3rd of total membership. SC judge removal = 2/3rd present and voting + majority of total. Not the same standard. Incorrect.",
+        "Two statements correct (1 and 3) — select option (a) Only two."
+      ],
+      "upsc_trap_explanation": "Statement 4 uses a partial-truth trap by correctly identifying that both processes require 2/3rd majority but incorrectly equating the denominator — total membership (impeachment) vs present and voting (judge removal). Students who recall '2/3rd' for both processes accept this equation without questioning whether the denominator (total vs present and voting) differs. Statement 2's partial truth correctly states CEC's recommendation role but invents a 'simple majority' mechanism.",
+      "final_explanation": "Removal procedures for constitutional functionaries contain critical numerical and procedural distinctions that UPSC tests with precision.\n\n• Statement 1 — Correct: The Judges Inquiry Act 1968 mandates a three-member committee of one sitting SC judge, one HC Chief Justice, and one distinguished jurist — all three components are statutory and must be named accurately.\n• Statement 2 — Incorrect: Other Election Commissioners are removed on CEC's recommendation, but the removal procedure is an address by Parliament — not described correctly as 'simple majority'. The partial truth is CEC's recommendation role; the error is the majority standard.\n• Statement 3 — Correct: CAG removal follows the SC judge address procedure (Article 148), but the Judges Inquiry Act 1968 does not apply to CAG — there is no statutory inquiry framework for CAG, a notable procedural gap.\n• Statement 4 — Incorrect: Presidential impeachment requires 2/3rd of total membership of each House. SC judge removal requires 2/3rd of members present and voting AND a majority of total membership — a dual requirement that is different from impeachment's single total-membership standard.\n\nValue Addition:\n• No judge has ever been successfully removed in India's history — the Judges Inquiry Act process has never reached conclusion.\n• The asymmetry between CEC and other ECs in removal procedure was challenged but upheld constitutionally.\n• The 'distinguished jurist' in the inquiry committee provides independent non-judicial expertise."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "भारत में संवैधानिक पदाधिकारियों को हटाने से संबंधित निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "Judges Inquiry Act 1968 के तहत गठित तीन सदस्यीय जांच समिति में एक वर्तमान सुप्रीम कोर्ट न्यायाधीश, एक उच्च न्यायालय के मुख्य न्यायाधीश, और एक प्रतिष्ठित न्यायविद शामिल हैं।"
+          ],
+          [
+            "2",
+            "मुख्य चुनाव आयुक्त को सुप्रीम कोर्ट न्यायाधीश के समान प्रक्रिया से हटाया जाता है, लेकिन अन्य चुनाव आयुक्तों को CEC की सिफारिश पर संसद के सरल बहुमत से हटाया जा सकता है।"
+          ],
+          [
+            "3",
+            "कंट्रोलर और ऑडिटर जनरल को सुप्रीम कोर्ट न्यायाधीश के समान प्रक्रिया से हटाया जा सकता है लेकिन वह Judges Inquiry Act 1968 के अंतर्गत नहीं आता।"
+          ],
+          [
+            "4",
+            "राष्ट्रपति के महाभियोग की प्रक्रिया और सुप्रीम कोर्ट न्यायाधीशों को हटाने के लिए दोनों सदनों की कुल सदस्यता का 2/3 बहुमत आवश्यक होता है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The three-member inquiry committee constituted under the Judges Inquiry Act 1968 includes a sitting judge of the Supreme Court, the Chief Justice of a High Court, and a distinguished jurist.",
+          "verdict": "सही है",
+          "reason": "यह Judges Inquiry Act 1968 के तहत सटीक वैधानिक संरचना है — एक वर्तमान सुप्रीम कोर्ट न्यायाधीश, एक उच्च न्यायालय के मुख्य न्यायाधीश, और एक प्रतिष्ठित न्यायविद। ये तीनों तत्व निर्दिष्ट हैं।"
+        },
+        {
+          "statement": "The Chief Election Commissioner is removed by the same procedure as a Supreme Court judge, but other Election Commissioners can be removed by a simple majority of Parliament on the recommendation of the CEC.",
+          "verdict": "गलत है",
+          "reason": "अन्य चुनाव आयुक्तों को CEC की सिफारिश पर हटाया जा सकता है, लेकिन हटाने की प्रक्रिया 'सरल बहुमत' द्वारा नहीं होती — यह उसी संबोधन प्रक्रिया का पालन करती है। आंशिक सत्य CEC की सिफारिश की भूमिका को सही पहचानता है, जबकि 'संसद के सरल बहुमत' को हटाने की प्रक्रिया के रूप में गलत बताया गया है।"
+        },
+        {
+          "statement": "The Comptroller and Auditor General can be removed by the same procedure as a Supreme Court judge but is not governed by the Judges Inquiry Act 1968.",
+          "verdict": "सही है",
+          "reason": "अनुच्छेद 148 के तहत CAG को सुप्रीम कोर्ट न्यायाधीशों के समान संबोधन प्रक्रिया द्वारा हटाया जाता है, लेकिन Judges Inquiry Act 1968 केवल सुप्रीम कोर्ट और उच्च न्यायालय के न्यायाधीशों को कवर करता है — यह CAG पर लागू नहीं होता। CAG के लिए कोई अलग जांच अधिनियम नहीं है।"
+        },
+        {
+          "statement": "Both the Presidential impeachment process and the removal of Supreme Court judges require a 2/3rd majority of total membership of both Houses.",
+          "verdict": "गलत है",
+          "reason": "राष्ट्रपति महाभियोग के लिए दोनों सदनों की कुल सदस्यता का 2/3 आवश्यक है। लेकिन अनुच्छेद 124 के तहत सुप्रीम कोर्ट न्यायाधीशों को हटाने के लिए विशेष बहुमत चाहिए — उपस्थित और मतदान करने वाले सदस्यों का 2/3 और कुल सदस्यता का बहुमत — दोनों सदनों में। ये अलग-अलग मानक हैं, और कथन गलत रूप से इन्हें समान मानता है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) 'केवल दो' एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र कथन 1 और 3 को सही पहचानते हैं वे कथन 4 पर हिचकिचा सकते हैं, 'कुल सदस्यता' (महाभियोग) और 'उपस्थित और मतदान' (न्यायाधीश हटाने) के बीच के अंतर को ठीक से याद नहीं रख पाते।",
+      "elimination_logic": [
+        "कथन 1: सुप्रीम कोर्ट न्यायाधीश + उच्च न्यायालय के मुख्य न्यायाधीश + प्रतिष्ठित न्यायविद — सटीक वैधानिक संरचना। सही।",
+        "कथन 2: अन्य चुनाव आयुक्तों को हटाने के लिए 'संसद के सरल बहुमत' की बात गलत है — हटाने की प्रक्रिया वही संबोधन प्रक्रिया है, सरल बहुमत नहीं। गलत।",
+        "कथन 3: CAG = सुप्रीम कोर्ट न्यायाधीश के समान प्रक्रिया लेकिन Judges Inquiry Act 1968 CAG पर लागू नहीं। सही।",
+        "कथन 4: राष्ट्रपति महाभियोग = कुल सदस्यता का 2/3। सुप्रीम कोर्ट न्यायाधीश हटाना = उपस्थित और मतदान करने वाले सदस्यों का 2/3 + कुल सदस्यता का बहुमत। समान मानक नहीं। गलत।",
+        "दो कथन सही हैं (1 और 3) — विकल्प (b) केवल दो चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 4 आंशिक-सत्य जाल का उपयोग करता है क्योंकि यह सही रूप से बताता है कि दोनों प्रक्रियाओं के लिए 2/3 बहुमत आवश्यक है, लेकिन गलत रूप से हर प्रक्रिया के लिए हर सदस्यता को समान मानता है — महाभियोग में कुल सदस्यता और न्यायाधीश हटाने में उपस्थित और मतदान करने वाले सदस्यों को। जो छात्र दोनों प्रक्रियाओं के लिए '2/3' याद रखते हैं वे इस समानता को बिना जांचे स्वीकार कर लेते हैं। कथन 2 का आंशिक सत्य CEC की सिफारिश की भूमिका को सही बताता है लेकिन 'सरल बहुमत' की प्रक्रिया गढ़ता है।",
+      "final_explanation": "संवैधानिक पदाधिकारियों को हटाने की प्रक्रियाओं में महत्वपूर्ण संख्यात्मक और प्रक्रियात्मक भेद होते हैं जिन्हें UPSC सटीकता से परखता है।\n\n• कथन 1 — सही: Judges Inquiry Act 1968 के तहत तीन सदस्यीय समिति होती है जिसमें एक वर्तमान सुप्रीम कोर्ट न्यायाधीश, एक उच्च न्यायालय के मुख्य न्यायाधीश, और एक प्रतिष्ठित न्यायविद शामिल होते हैं — ये तीनों घटक वैधानिक हैं और सही नामित होने चाहिए।\n• कथन 2 — गलत: अन्य चुनाव आयुक्तों को CEC की सिफारिश पर हटाया जाता है, लेकिन हटाने की प्रक्रिया संसद के संबोधन द्वारा होती है — इसे 'सरल बहुमत' के रूप में सही ढंग से वर्णित नहीं किया गया है। आंशिक सत्य CEC की सिफारिश की भूमिका है; त्रुटि बहुमत मानक में है।\n• कथन 3 — सही: CAG को हटाने की प्रक्रिया सुप्रीम कोर्ट न्यायाधीशों के संबोधन प्रक्रिया (अनुच्छेद 148) के समान है, लेकिन Judges Inquiry Act 1968 CAG पर लागू नहीं होता — CAG के लिए कोई वैधानिक जांच ढांचा नहीं है, जो एक महत्वपूर्ण प्रक्रियात्मक अंतर है।\n• कथन 4 — गलत: राष्ट्रपति महाभियोग के लिए प्रत्येक सदन की कुल सदस्यता का 2/3 आवश्यक है। सुप्रीम कोर्ट न्यायाधीश हटाने के लिए उपस्थित और मतदान करने वाले सदस्यों का 2/3 और कुल सदस्यता का बहुमत आवश्यक है — यह एक द्वैध आवश्यकता है जो महाभियोग के एकल कुल सदस्यता मानक से भिन्न है।\n\nमूल्य संवर्धन:\n• भारत के इतिहास में कोई भी न्यायाधीश सफलतापूर्वक हटाया नहीं गया है — Judges Inquiry Act की प्रक्रिया कभी पूर्ण नहीं हुई।\n• CEC और अन्य चुनाव आयुक्तों के हटाने की प्रक्रिया में असमानता को चुनौती दी गई थी लेकिन संवैधानिक रूप से स्वीकार किया गया।\n• जांच समिति में 'प्रतिष्ठित न्यायविद' स्वतंत्र गैर-न्यायिक विशेषज्ञता प्रदान करता है।"
+    }
+  },
+  {
+    "uuid": "0bc84292-def2-47dc-b8c7-0da7d6a77516",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Confidence Motion: Suo Motu and Directed Variants",
+        "No-Confidence Motion: Historical Record and Political Consequences"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "VP Singh and Deve Gowda — only governments defeated by No-Confidence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about No-Confidence Motions and their political consequences in India:\n\nStatement 1: The VP Singh government (1990) and the HD Deve Gowda government (1997) are the only two governments in independent India's history to have been defeated on a No-Confidence Motion on the floor of Lok Sabha.\nStatement 2: HD Deve Gowda's government fell in 1997 because the Bharatiya Janata Party withdrew its support from the United Front coalition, triggering the No-Confidence Motion.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The VP Singh government (1990) and the HD Deve Gowda government (1997) are the only two governments in independent India's history to have been defeated on a No-Confidence Motion on the floor of Lok Sabha.",
+          "verdict": "Correct",
+          "reason": "Both VP Singh (1990) and HD Deve Gowda (1997) lost No-Confidence Motions on the floor of Lok Sabha — these are the only two instances of government defeat through this constitutional mechanism in Indian history up to 2024."
+        },
+        {
+          "statement": "HD Deve Gowda's government fell in 1997 because the Bharatiya Janata Party withdrew its support from the United Front coalition, triggering the No-Confidence Motion.",
+          "verdict": "Incorrect",
+          "reason": "The Deve Gowda government fell because Congress (I) withdrew its outside support from the United Front coalition — not the BJP. The BJP was in opposition throughout this period. This is an entity-swap on the withdrawing party."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because both statements touch on correct factual domains (floor test defeats and coalition politics), and students who know Congress played a role in 1997 may not recall precisely whether Congress supported or opposed the government initially.",
+      "elimination_logic": [
+        "Evaluate Statement 1: VP Singh (1990) and Deve Gowda (1997) are the only two confirmed floor defeats — this is a documented historical fact. Statement 1 is correct.",
+        "Evaluate Statement 2: Deve Gowda's government fell because Congress (I) withdrew outside support — the BJP was not in the coalition. Attributing the withdrawal to BJP is an entity-swap. Statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect → select option (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap and entity-swap combine in Statement 2: students who recall 'a major party withdrew support from the United Front in 1997' may incorrectly name BJP (the primary opposition party) instead of Congress (which had been providing outside support to the United Front government). The confusion arises from associating 'opposition' with 'withdrawal' — but it was Congress, technically a supporter turned challenger, that moved the no-confidence motion.",
+      "final_explanation": "The two instances of government defeat on No-Confidence Motion are among the most politically significant events in Indian parliamentary history.\n\n• Statement 1 — Correct: VP Singh (1990) and HD Deve Gowda (1997) are the only two Prime Ministers defeated by No-Confidence Motions on the Lok Sabha floor. All other No-Confidence Motions moved in Indian parliamentary history were defeated.\n• Statement 2 — Incorrect: The Deve Gowda government fell because Congress (I), which had been providing outside support to the United Front coalition, withdrew that support and moved a No-Confidence Motion. The BJP had been in opposition throughout — it did not 'withdraw support' from a government it was never part of.\n\nValue Addition:\n• VP Singh's government fell in 1990 over the Mandal Commission controversy and the BJP's withdrawal of support following the Ayodhya developments.\n• The 2018 No-Confidence Motion against the NDA government (Modi I) was the 27th such motion — it was defeated by a comfortable margin.\n• Rajiv Gandhi survived multiple No-Confidence Motions despite facing significant political challenges including the Bofors controversy."
+    },
+    "hi": {
+      "display_text": "भारत में नो-कॉन्फिडेंस मोशन और उनके राजनीतिक परिणामों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: वीपी सिंह सरकार (1990) और एचडी देवगौड़ा सरकार (1997) स्वतंत्र भारत के इतिहास में लोकसभा के फर्श पर नो-कॉन्फिडेंस मोशन के कारण पराजित होने वाली केवल दो सरकारें हैं।\nकथन 2: एचडी देवगौड़ा की सरकार 1997 में इसलिए गिर गई क्योंकि भारतीय जनता पार्टी ने यूनाइटेड फ्रंट गठबंधन से अपना समर्थन वापस ले लिया, जिससे नो-कॉन्फिडेंस मोशन शुरू हुआ।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The VP Singh government (1990) and the HD Deve Gowda government (1997) are the only two governments in independent India's history to have been defeated on a No-Confidence Motion on the floor of Lok Sabha.",
+          "verdict": "Correct",
+          "reason": "Both VP Singh (1990) and HD Deve Gowda (1997) lost No-Confidence Motions on the floor of Lok Sabha — these are the only two instances of government defeat through this constitutional mechanism in Indian history up to 2024."
+        },
+        {
+          "statement": "HD Deve Gowda's government fell in 1997 because the Bharatiya Janata Party withdrew its support from the United Front coalition, triggering the No-Confidence Motion.",
+          "verdict": "Incorrect",
+          "reason": "The Deve Gowda government fell because Congress (I) withdrew its outside support from the United Front coalition — not the BJP. The BJP was in opposition throughout this period. This is an entity-swap on the withdrawing party."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because both statements touch on correct factual domains (floor test defeats and coalition politics), and students who know Congress played a role in 1997 may not recall precisely whether Congress supported or opposed the government initially.",
+      "elimination_logic": [
+        "Evaluate Statement 1: VP Singh (1990) and Deve Gowda (1997) are the only two confirmed floor defeats — this is a documented historical fact. Statement 1 is correct.",
+        "Evaluate Statement 2: Deve Gowda's government fell because Congress (I) withdrew outside support — the BJP was not in the coalition. Attributing the withdrawal to BJP is an entity-swap. Statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect → select option (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap and entity-swap combine in Statement 2: students who recall 'a major party withdrew support from the United Front in 1997' may incorrectly name BJP (the primary opposition party) instead of Congress (which had been providing outside support to the United Front government). The confusion arises from associating 'opposition' with 'withdrawal' — but it was Congress, technically a supporter turned challenger, that moved the no-confidence motion.",
+      "final_explanation": "The two instances of government defeat on No-Confidence Motion are among the most politically significant events in Indian parliamentary history.\n\n• Statement 1 — Correct: VP Singh (1990) and HD Deve Gowda (1997) are the only two Prime Ministers defeated by No-Confidence Motions on the Lok Sabha floor. All other No-Confidence Motions moved in Indian parliamentary history were defeated.\n• Statement 2 — Incorrect: The Deve Gowda government fell because Congress (I), which had been providing outside support to the United Front coalition, withdrew that support and moved a No-Confidence Motion. The BJP had been in opposition throughout — it did not 'withdraw support' from a government it was never part of.\n\nValue Addition:\n• VP Singh's government fell in 1990 over the Mandal Commission controversy and the BJP's withdrawal of support following the Ayodhya developments.\n• The 2018 No-Confidence Motion against the NDA government (Modi I) was the 27th such motion — it was defeated by a comfortable margin.\n• Rajiv Gandhi survived multiple No-Confidence Motions despite facing significant political challenges including the Bofors controversy."
+    }
+  },
+  {
+    "uuid": "d1c536a7-399e-4632-8e6b-8820f7104d38",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Adjournment Motion: Admissibility Conditions and Procedural Rules",
+        "Calling Attention Motion: Purpose, Procedure, and Limitations",
+        "Half-Hour Discussion and Short Duration Discussion: Scope and Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Matching parliamentary devices to their defining procedural consequence",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the parliamentary device in List I with its defining procedural characteristic in List II:",
+        "columns": [
+          "List I — Parliamentary Device",
+          "List II — Defining Characteristic"
+        ],
+        "rows": [
+          [
+            "A. Adjournment Motion",
+            "1. Raised to address a factual inaccuracy in a previous ministerial answer; can be raised on up to three days a week"
+          ],
+          [
+            "B. Calling Attention Motion",
+            "2. Involves full debate; its passage amounts to a practical censure of the government"
+          ],
+          [
+            "C. Short Duration Discussion",
+            "3. Discussion capped at 2.5 hours under Rule 193; involves no formal motion or vote"
+          ],
+          [
+            "D. Half-Hour Discussion",
+            "4. Minister gives a brief factual statement in response; no debate follows; only one is admitted per sitting day"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-4, C-3, D-1\n(c) A-2, B-1, C-4, D-3\n(d) A-4, B-2, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because it correctly places Adjournment Motion with debate+vote but swaps Calling Attention Motion and Half-Hour Discussion, exploiting the similar 'no vote' character of both.",
+      "elimination_logic": [
+        "Adjournment Motion: full debate + vote + practical censure of government — match A with 2.",
+        "Calling Attention Motion: minister's brief statement only, no debate, no vote, one per day — match B with 4.",
+        "Short Duration Discussion: up to 2.5 hours, no formal motion, no vote — match C with 3.",
+        "Half-Hour Discussion: specific purpose (factual inaccuracy in previous answer), no vote, up to 3 days a week — match D with 1.",
+        "Only option (b) — A-2, B-4, C-3, D-1 — satisfies all four pairings."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges Calling Attention Motion (B) and Half-Hour Discussion (D) — both involve no vote and relate to ministerial statements. Students who know 'no vote' applies to both may swap their pairings. The distinguishing detail: Calling Attention Motion is for any urgent public matter (minister gives a statement); Half-Hour Discussion is specifically for factual inaccuracies in previous answers (raised up to 3 days a week). Options (a) and (c) exploit this swap.",
+      "final_explanation": "Matching parliamentary devices to their defining characteristics tests the precise procedural distinction between superficially similar instruments.\n\nCorrect pairings:\n• A (Adjournment Motion) — 2 (Involves full debate; its passage amounts to a practical censure of the government): Adjournment Motion is the strongest of these four devices — it suspends business, involves debate, and carries a censure implication when passed.\n• B (Calling Attention Motion) — 4 (Minister gives a brief factual statement; no debate follows; only one admitted per day): This is the Indian parliamentary innovation — the minister responds, business resumes, no vote taken.\n• C (Short Duration Discussion) — 3 (Discussion capped at 2.5 hours under Rule 193; no formal motion or vote): Short Duration Discussion is the closest alternative to Adjournment Motion for urgent matters — but without the accountability consequence.\n• D (Half-Hour Discussion) — 1 (Raised to address factual inaccuracy in a previous ministerial answer; can be raised on up to three days a week): The narrowest of the four — specifically tied to correcting record inaccuracies.\n\nTrap pairings in options (a) and (c) swap B and D, exploiting their shared 'no vote' characteristic.\n\nValue Addition:\n• Adjournment Motion is the only one of these four that results in a vote with political consequence.\n• Calling Attention Motion's one-per-day limit is a frequently tested numerical rule.\n• Short Duration Discussion under Rule 193 has a 2.5-hour cap — the Rule number is itself a testable detail."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में संसदीय उपकरण को सूची II में उसकी परिभाषित प्रक्रियात्मक विशेषता से मिलाएं:",
+        "columns": [
+          "सूची I — संसदीय उपकरण",
+          "सूची II — परिभाषित विशेषता"
+        ],
+        "rows": [
+          [
+            "A. Adjournment Motion",
+            "1. पिछले मंत्री के उत्तर में तथ्यात्मक त्रुटि को सुधारने के लिए उठाया जाता है; सप्ताह में तीन दिन तक उठाया जा सकता है"
+          ],
+          [
+            "B. Calling Attention Motion",
+            "2. पूर्ण बहस शामिल; इसके पारित होने पर सरकार की व्यावहारिक निंदा होती है"
+          ],
+          [
+            "C. Short Duration Discussion",
+            "3. Rule 193 के तहत चर्चा 2.5 घंटे तक सीमित; कोई औपचारिक प्रस्ताव या मतदान नहीं"
+          ],
+          [
+            "D. Half-Hour Discussion",
+            "4. मंत्री संक्षिप्त तथ्यात्मक बयान देते हैं; कोई बहस नहीं होती; दिन में केवल एक स्वीकार किया जाता है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-2, B-1, C-3, D-4\n(b) A-2, B-4, C-3, D-1\n(c) A-2, B-1, C-4, D-3\n(d) A-4, B-2, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमकारी विकल्प है क्योंकि यह सही ढंग से Adjournment Motion को बहस+मतदान के साथ रखता है लेकिन Calling Attention Motion और Half-Hour Discussion को बदल देता है, दोनों के समान 'कोई मतदान नहीं' विशेषता का लाभ उठाता है।",
+      "elimination_logic": [
+        "Adjournment Motion: पूर्ण बहस + मतदान + सरकार की व्यावहारिक निंदा — A को 2 से मिलाएं।",
+        "Calling Attention Motion: मंत्री का संक्षिप्त बयान मात्र, कोई बहस नहीं, कोई मतदान नहीं, दिन में एक बार ही — B को 4 से मिलाएं।",
+        "Short Duration Discussion: 2.5 घंटे तक, कोई औपचारिक प्रस्ताव नहीं, कोई मतदान नहीं — C को 3 से मिलाएं।",
+        "Half-Hour Discussion: विशिष्ट उद्देश्य (पिछले उत्तर में तथ्यात्मक त्रुटि), कोई मतदान नहीं, सप्ताह में तीन दिन तक — D को 1 से मिलाएं।",
+        "केवल विकल्प (b) — A-2, B-4, C-3, D-1 — सभी चार जोड़ों को संतुष्ट करता है।"
+      ],
+      "upsc_trap_explanation": "भ्रम जाल Calling Attention Motion (B) और Half-Hour Discussion (D) को मिला देता है — दोनों में कोई मतदान नहीं होता और दोनों मंत्री के बयानों से संबंधित हैं। जो छात्र जानते हैं कि 'कोई मतदान नहीं' दोनों पर लागू होता है, वे इनके जोड़ों को बदल सकते हैं। भेद करने वाला विवरण: Calling Attention Motion किसी भी तात्कालिक सार्वजनिक मामले के लिए है (मंत्री बयान देते हैं); Half-Hour Discussion विशेष रूप से पिछले उत्तरों में तथ्यात्मक त्रुटियों को सुधारने के लिए है (सप्ताह में तीन दिन तक उठाया जा सकता है)। विकल्प (a) और (c) इस बदलाव का लाभ उठाते हैं।",
+      "final_explanation": "संसदीय उपकरणों को उनकी परिभाषित विशेषताओं से मिलाना सतही रूप से समान उपकरणों के बीच सटीक प्रक्रियात्मक भेद को परखता है।\n\nसही जोड़े:\n• A (Adjournment Motion) — 2 (पूर्ण बहस शामिल; इसके पारित होने पर सरकार की व्यावहारिक निंदा होती है): Adjournment Motion इन चार उपकरणों में सबसे मजबूत है — यह कार्यवाही को स्थगित करता है, बहस होती है, और पारित होने पर निंदा का अर्थ होता है।\n• B (Calling Attention Motion) — 4 (मंत्री संक्षिप्त तथ्यात्मक बयान देते हैं; कोई बहस नहीं होती; दिन में केवल एक स्वीकार किया जाता है): यह भारतीय संसदीय नवाचार है — मंत्री जवाब देते हैं, कार्यवाही पुनः शुरू होती है, कोई मतदान नहीं होता।\n• C (Short Duration Discussion) — 3 (Rule 193 के तहत चर्चा 2.5 घंटे तक सीमित; कोई औपचारिक प्रस्ताव या मतदान नहीं): Short Duration Discussion तात्कालिक मामलों के लिए Adjournment Motion का निकटतम विकल्प है — लेकिन बिना जवाबदेही के परिणाम के।\n• D (Half-Hour Discussion) — 1 (पिछले मंत्री के उत्तर में तथ्यात्मक त्रुटि को सुधारने के लिए उठाया जाता है; सप्ताह में तीन दिन तक उठाया जा सकता है): चारों में सबसे संकीर्ण — विशेष रूप से रिकॉर्ड की त्रुटियों को सुधारने के लिए।\n\nविकल्प (a) और (c) में भ्रम के जोड़े B और D को बदल देते हैं, जो उनकी साझा 'कोई मतदान नहीं' विशेषता का लाभ उठाते हैं।\n\nमूल्य संवर्धन:\n• Adjournment Motion ही इन चारों में से एकमात्र है जिसके परिणामस्वरूप राजनीतिक प्रभाव वाला मतदान होता है।\n• Calling Attention Motion का दिन में एक बार का प्रतिबंध एक बार-बार पूछे जाने वाला संख्यात्मक नियम है।\n• Rule 193 के तहत Short Duration Discussion की 2.5 घंटे की सीमा है — नियम संख्या स्वयं एक परीक्षण योग्य विवरण है।"
+    }
+  },
+  {
+    "uuid": "fdad0cca-cf6e-435a-b9e2-2b696207c2a1",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Adjournment Motion: Admissibility Conditions and Procedural Rules",
+        "No-Confidence Motion: Constitutional Basis and Procedural Requirements",
+        "Cut Motions: Disapproval of Policy, Economy, and Token Cut"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Parliamentary session sequence — Question Hour, Zero Hour, Adjournment Motion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct sequential order of parliamentary business during a typical sitting of the Lok Sabha?\n\n1. Question Hour\n2. Zero Hour\n3. Debate on an admitted Adjournment Motion (interrupting listed business)\n4. Consideration of Demands for Grants (where Cut Motions may be moved)\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 3 → 1 → 2 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because students may confuse when Adjournment Motion is moved with when it is debated, assuming it occupies the early part of the day's business.",
+      "elimination_logic": [
+        "Question Hour is the first hour of business in Parliament — starts at 11 AM and runs until 12 noon. This must come first.",
+        "Zero Hour follows immediately at 12 noon — members raise urgent matters without prior notice. Second in sequence.",
+        "Listed business of the day (Bills, motions, etc.) follows Zero Hour. Adjournment Motion, if admitted, interrupts listed business — but the admission and any debate occur after Zero Hour in the day's proceedings.",
+        "Demands for Grants (where Cut Motions are moved) come during the budget stage, which is part of the listed business — after Zero Hour. Correct order: Question Hour → Zero Hour → Listed Business including Adjournment Motion debate / Demands for Grants. Select (a)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap operates on the position of Adjournment Motion in the daily sequence. Students who know Adjournment Motion 'interrupts business' may place it before listed business begins — but the interruption happens DURING listed business, not before it. Zero Hour (12 noon to listed business) must be correctly positioned between Question Hour and the substantive business of the day.",
+      "final_explanation": "Understanding the daily sequencing of parliamentary business is essential for applying procedural knowledge.\n\nCorrect sequence:\n1. Question Hour (11 AM – 12 noon): Starred and unstarred questions; ministers answer; supplementary questions follow starred questions.\n2. Zero Hour (12 noon onwards): Informal convention; members raise urgent matters without prior notice; no vote taken.\n3. Listed business of the day: Bills, motions, Demands for Grants. Adjournment Motion, if admitted by Speaker, interrupts this stage — it does not precede it.\n\nOption (b) places Zero Hour before Question Hour — incorrect; Question Hour always opens the day. Option (c) places Adjournment Motion debate before Zero Hour — incorrect; Adjournment Motion operates within listed business. Option (d) inverts the order completely.\n\nValue Addition:\n• The daily sequence: Prayers → Question Hour → Zero Hour → Listed Business → Adjournment.\n• Adjournment Motion's 'interruption' character means it can be raised when listed business begins, but this is still after Zero Hour.\n• Cut Motions on Demands for Grants are part of listed business — they occur in the same post-Zero Hour stage as Adjournment Motion debates."
+    },
+    "hi": {
+      "display_text": "लोकसभा के एक सामान्य सत्र के दौरान संसदीय कार्य के सही अनुक्रम को निम्नलिखित में से कौन-सा दर्शाता है?\n\n1. प्रश्नकाल\n2. शून्यकाल\n3. स्वीकृत स्थगन प्रस्ताव पर चर्चा (सूचीबद्ध कार्य को बाधित करते हुए)\n4. अनुदान की मांगों पर विचार (जहाँ कट प्रस्ताव प्रस्तुत किए जा सकते हैं)\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 3 → 2 → 4\n(d) 3 → 1 → 2 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र भ्रमित हो सकते हैं कि स्थगन प्रस्ताव कब प्रस्तुत किया जाता है और कब उस पर चर्चा होती है, यह मानते हुए कि यह दिन के प्रारंभिक कार्य का हिस्सा है।",
+      "elimination_logic": [
+        "प्रश्नकाल संसद के कार्य का पहला घंटा होता है — यह सुबह 11 बजे शुरू होकर दोपहर 12 बजे तक चलता है। यह सबसे पहले होना चाहिए।",
+        "शून्यकाल तुरंत दोपहर 12 बजे शुरू होता है — सदस्य बिना पूर्व सूचना के तत्काल मुद्दे उठाते हैं। यह अनुक्रम में दूसरा है।",
+        "दिन के सूचीबद्ध कार्य (बिल, प्रस्ताव आदि) शून्यकाल के बाद आते हैं। यदि स्थगन प्रस्ताव स्वीकार किया जाता है, तो यह सूचीबद्ध कार्य को बाधित करता है — लेकिन स्वीकृति और कोई भी चर्चा शून्यकाल के बाद दिन के कार्य में होती है।",
+        "अनुदान की मांगें (जहाँ कट प्रस्ताव प्रस्तुत किए जाते हैं) बजट चरण के दौरान आती हैं, जो सूचीबद्ध कार्य का हिस्सा है — शून्यकाल के बाद। सही क्रम: प्रश्नकाल → शून्यकाल → सूचीबद्ध कार्य जिसमें स्थगन प्रस्ताव पर चर्चा / अनुदान की मांगें शामिल हैं। विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम स्थगन प्रस्ताव की दैनिक अनुक्रम में स्थिति पर आधारित होता है। जो छात्र जानते हैं कि स्थगन प्रस्ताव 'कारोबार को बाधित करता है' वे इसे सूचीबद्ध कार्य शुरू होने से पहले रख सकते हैं — लेकिन बाधा सूचीबद्ध कार्य के दौरान होती है, उससे पहले नहीं। शून्यकाल (दोपहर 12 बजे से सूचीबद्ध कार्य तक) को प्रश्नकाल और दिन के मुख्य कार्य के बीच सही स्थान पर होना चाहिए।",
+      "final_explanation": "संसदीय कार्य के दैनिक अनुक्रम को समझना प्रक्रियात्मक ज्ञान लागू करने के लिए आवश्यक है।\n\nसही अनुक्रम:\n1. प्रश्नकाल (सुबह 11 बजे – दोपहर 12 बजे): स्टार और अनस्टार प्रश्न; मंत्री उत्तर देते हैं; स्टार प्रश्नों के बाद पूरक प्रश्न होते हैं।\n2. शून्यकाल (दोपहर 12 बजे से): अनौपचारिक परंपरा; सदस्य बिना पूर्व सूचना के तत्काल मुद्दे उठाते हैं; कोई मतदान नहीं होता।\n3. दिन का सूचीबद्ध कार्य: बिल, प्रस्ताव, अनुदान की मांगें। यदि अध्यक्ष द्वारा स्थगन प्रस्ताव स्वीकार किया जाता है, तो यह इस चरण को बाधित करता है — यह इससे पहले नहीं होता।\n\nविकल्प (b) शून्यकाल को प्रश्नकाल से पहले रखता है — गलत; प्रश्नकाल हमेशा दिन की शुरुआत करता है। विकल्प (c) स्थगन प्रस्ताव पर चर्चा को शून्यकाल से पहले रखता है — गलत; स्थगन प्रस्ताव सूचीबद्ध कार्य के भीतर होता है। विकल्प (d) पूरी तरह से क्रम उलट देता है।\n\nमूल्यवर्धन:\n• दैनिक अनुक्रम: प्रार्थना → प्रश्नकाल → शून्यकाल → सूचीबद्ध कार्य → स्थगन।\n• स्थगन प्रस्ताव की 'बाधा' प्रकृति का अर्थ है कि इसे सूचीबद्ध कार्य शुरू होने पर उठाया जा सकता है, लेकिन यह अभी भी शून्यकाल के बाद होता है।\n• अनुदान की मांगों पर कट प्रस्ताव सूचीबद्ध कार्य का हिस्सा हैं — वे स्थगन प्रस्ताव की चर्चा के समान पोस्ट-शून्यकाल चरण में होते हैं।"
+    }
+  },
+  {
+    "uuid": "01f511fb-4ead-47fb-b851-876eee05e5d0",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Motion to Refer a Bill to Joint/Select Committee vs Direct Consideration: Strategic Dimensions",
+        "No-Day-Yet-Named Motion and Substantive Motions: Classification Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Joint Committee composition — proportional Lok Sabha, fixed Rajya Sabha",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the composition of a Joint Committee of Parliament formed to examine a Bill, which one of the following statements is correct?\n\n(a) Both Lok Sabha and Rajya Sabha are represented on equal terms, with each House nominating the same number of members regardless of their respective strengths\n(b) Lok Sabha members are drawn proportionally to the strength of parties in that House, while Rajya Sabha nominates a fixed number of members\n(c) The Joint Committee consists only of members from Lok Sabha, since money Bills and most legislation originate there\n(d) Rajya Sabha members in the Joint Committee are selected proportionally to party strength, while Lok Sabha nominates a fixed number of senior members",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because students who know Rajya Sabha nominates members to Joint Committees may assume the proportionality rule applies equally to both Houses — overlooking that only Lok Sabha uses proportional representation in Joint Committees.",
+      "elimination_logic": [
+        "The question asks about Joint Committee composition specifically — distinguishing Lok Sabha's proportional representation from Rajya Sabha's fixed nomination.",
+        "Eliminate (a): Lok Sabha's representation in Joint Committee is proportional to party strength — not equal representation.",
+        "Eliminate (c): The question is about Joint Committee (both Houses) — a Select Committee has only one House's members.",
+        "Eliminate (d): Rajya Sabha nominates a fixed number to Joint Committees — proportionality applies to Lok Sabha members, not Rajya Sabha. Select (b)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap swaps which House uses proportional representation in Joint Committees. Students who recall 'proportionality applies to parliamentary committees' may incorrectly apply the rule to Rajya Sabha instead of Lok Sabha. Rajya Sabha's representation in Joint Committees is by fixed numbers of nominees — the proportional rule belongs to Lok Sabha's side of the committee.",
+      "final_explanation": "Joint Committees are bicameral bodies that examine Bills referred from either House, with membership drawn from both Houses.\n\n• Option (a): Incorrect. Lok Sabha members in a Joint Committee are selected proportionally to party strength — not on an equal-share basis.\n• Option (b): Correct. Lok Sabha members are proportional to the strength of parties in the House; Rajya Sabha nominates a fixed number — approximately one-third of Lok Sabha's share — rather than using proportionality.\n• Option (c): Incorrect. A Select Committee has members from only one House — the referring House. A Joint Committee, by definition, includes members from both Houses.\n• Option (d): Incorrect. The proportionality rule applies to Lok Sabha's side of the Joint Committee, not Rajya Sabha's. Rajya Sabha's representation is by fixed nomination.\n\nValue Addition:\n• Bills referred to Joint Committee return to both Houses for further consideration after the committee's report.\n• Select Committee = one House; Joint Committee = both Houses — this distinction is frequently tested.\n• A motion to refer a Bill to committee can be moved by any member, not just the minister in charge."
+    },
+    "hi": {
+      "display_text": "किसी विधेयक की जांच के लिए गठित संसद की संयुक्त समिति की संरचना के संदर्भ में, निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) लोकसभा और राज्यसभा दोनों का प्रतिनिधित्व समान शर्तों पर होता है, प्रत्येक सदन अपनी संबंधित ताकतों की परवाह किए बिना समान संख्या में सदस्य नामित करता है\n(b) लोकसभा के सदस्य उस सदन में पार्टियों की ताकत के अनुपात में चुने जाते हैं, जबकि राज्यसभा एक निश्चित संख्या में सदस्य नामित करता है\n(c) संयुक्त समिति केवल लोकसभा के सदस्यों से मिलकर बनती है, क्योंकि वित्त विधेयक और अधिकांश कानून वहीं से उत्पन्न होते हैं\n(d) संयुक्त समिति में राज्यसभा के सदस्य पार्टी की ताकत के अनुपात में चुने जाते हैं, जबकि लोकसभा एक निश्चित संख्या में वरिष्ठ सदस्यों को नामित करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because students who know Rajya Sabha nominates members to Joint Committees may assume the proportionality rule applies equally to both Houses — overlooking that only Lok Sabha uses proportional representation in Joint Committees.",
+      "elimination_logic": [
+        "प्रश्न विशेष रूप से संयुक्त समिति की संरचना के बारे में है — लोकसभा के अनुपातिक प्रतिनिधित्व को राज्यसभा के निश्चित नामांकन से अलग करता है।",
+        "(a) को खारिज करें: संयुक्त समिति में लोकसभा का प्रतिनिधित्व पार्टी की ताकत के अनुपात में होता है — समान प्रतिनिधित्व नहीं।",
+        "(c) को खारिज करें: प्रश्न संयुक्त समिति (दोनों सदन) के बारे में है — चयन समिति में केवल एक सदन के सदस्य होते हैं।",
+        "(d) को खारिज करें: राज्यसभा संयुक्त समितियों के लिए निश्चित संख्या नामित करता है — अनुपातिकता केवल लोकसभा के सदस्यों पर लागू होती है, राज्यसभा पर नहीं। (b) को चुनें।"
+      ],
+      "upsc_trap_explanation": "एंटिटी-स्वैप ट्रैप यह बदल देता है कि कौन सा सदन संयुक्त समितियों में अनुपातिक प्रतिनिधित्व का उपयोग करता है। जो छात्र 'अनुपातिकता संसदीय समितियों पर लागू होती है' याद करते हैं, वे गलती से यह नियम राज्यसभा पर लागू कर सकते हैं बजाय लोकसभा के। राज्यसभा का प्रतिनिधित्व संयुक्त समितियों में निश्चित नामांकित सदस्यों द्वारा होता है — अनुपातिक नियम लोकसभा के सदस्यों के लिए है।",
+      "final_explanation": "संयुक्त समितियाँ द्विसदनीय निकाय होती हैं जो किसी भी सदन से संदर्भित विधेयकों की जांच करती हैं, जिनमें दोनों सदनों के सदस्य होते हैं।\n\n• विकल्प (a): गलत। संयुक्त समिति में लोकसभा के सदस्य पार्टी की ताकत के अनुपात में चुने जाते हैं — समान हिस्सेदारी पर नहीं।\n• विकल्प (b): सही। लोकसभा के सदस्य सदन में पार्टियों की ताकत के अनुपात में होते हैं; राज्यसभा एक निश्चित संख्या नामित करता है — जो लगभग लोकसभा के हिस्से का एक-तिहाई होता है — अनुपातिकता का उपयोग नहीं करता।\n• विकल्प (c): गलत। चयन समिति में केवल एक सदन के सदस्य होते हैं — संदर्भित सदन। संयुक्त समिति में परिभाषा के अनुसार दोनों सदनों के सदस्य होते हैं।\n• विकल्प (d): गलत। अनुपातिकता का नियम संयुक्त समिति में लोकसभा के पक्ष पर लागू होता है, राज्यसभा पर नहीं। राज्यसभा का प्रतिनिधित्व निश्चित नामांकन द्वारा होता है।\n\nमूल्य संवर्धन:\n• संयुक्त समिति को संदर्भित विधेयक समिति की रिपोर्ट के बाद दोनों सदनों में पुनः विचार के लिए लौटते हैं।\n• चयन समिति = एक सदन; संयुक्त समिति = दोनों सदन — यह भेद अक्सर परीक्षा में पूछा जाता है।\n• विधेयक को समिति को संदर्भित करने का प्रस्ताव किसी भी सदस्य द्वारा प्रस्तुत किया जा सकता है, केवल संबंधित मंत्री द्वारा नहीं।"
+    }
+  },
+  {
+    "uuid": "4abb782e-7617-49f2-963e-057ec5b4720d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Censure Motion vs No-Confidence Motion: Key Distinctions",
+        "Privilege Motion: Grounds, Procedure, and Consequences",
+        "Cut Motions: Disapproval of Policy, Economy, and Token Cut"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Disapproval of Policy Cut — reduce to ₹1 as policy protest",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During the budget session of Lok Sabha, while Demands for Grants are under consideration, the opposition members wish to express their specific disapproval of the government's infrastructure spending policy. They seek to formally register Parliament's rejection of this policy direction through the most appropriate budgetary accountability mechanism available at this stage. Which of the following is the correct parliamentary device for this purpose?\n\n(a) A Censure Motion directed against the Minister of Infrastructure for pursuing an unviable spending policy\n(b) A Token Cut reducing the infrastructure demand by ₹100 to signal general dissatisfaction with the ministry's functioning\n(c) A Disapproval of Policy Cut reducing the infrastructure demand to ₹1 to indicate rejection of the government's policy approach\n(d) An Adjournment Motion raising the infrastructure policy as a matter of urgent public importance requiring immediate debate",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because Censure Motion is the first instrument that comes to mind when Parliament wants to express disapproval of a specific government policy — students may not recall that Cut Motions provide an equally powerful and more specific mechanism during the budget stage.",
+      "elimination_logic": [
+        "The scenario specifies that Parliament is at the Demands for Grants stage — this is the budget stage where Cut Motions are the appropriate instrument.",
+        "The opposition wants to express disapproval of a specific government policy (infrastructure spending) — this maps to the Disapproval of Policy Cut, which reduces the demand to ₹1.",
+        "Eliminate (a): Censure Motion can be moved at any time but is not the specific instrument for budget-stage policy disapproval; Cut Motion is the budget-stage mechanism.",
+        "Eliminate (b): Token Cut (₹100) expresses general dissatisfaction, not specific policy disapproval — the scenario requires policy-specific protest.",
+        "Eliminate (d): Adjournment Motion interrupts business but is not the budget-stage accountability tool. Select (c): Disapproval of Policy Cut."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in option (a) is that Censure Motion could theoretically be moved against the minister for the infrastructure policy at any time — this is partially true. But during the Demands for Grants stage, the specific instrument for expressing policy disapproval is the Disapproval of Policy Cut, which reduces the demand to ₹1. Using a Censure Motion during budget stage when a Cut Motion is specifically available would be procedurally atypical — the scenario's budget-stage context is the critical clue.",
+      "final_explanation": "Cut Motions are the budget-stage instruments for parliamentary accountability, each serving a distinct form of disapproval.\n\nIn the scenario, Parliament is at the Demands for Grants stage and the opposition wishes to express disapproval of a specific infrastructure policy. This is the textbook scenario for a Disapproval of Policy Cut.\n\n• Option (a) Censure Motion against the Infrastructure Minister: A partial-truth distractor. Censure Motion is a valid accountability tool but is not the budget-stage-specific mechanism. The Disapproval of Policy Cut is the appropriate instrument when Demands for Grants are under consideration.\n• Option (b) Token Cut reducing the demand by ₹100: Incorrect for this scenario. Token Cut expresses general dissatisfaction — it does not target a specific policy. The scenario requires policy-specific protest.\n• Option (c) Disapproval of Policy Cut reducing the demand to ₹1: Correct. This Cut Motion specifically signals rejection of the government's policy approach. Reducing the demand to ₹1 is the strongest budget-stage policy protest.\n• Option (d) Adjournment Motion on the infrastructure policy failure: Incorrect. Adjournment Motion is a general accountability device that interrupts business — it is not the budget-stage instrument for policy disapproval.\n\nValue Addition:\n• If a Disapproval of Policy Cut passes, it is treated as a no-confidence vote in practice.\n• Economy Cut would be appropriate if the objection is to the amount of spending, not the policy itself.\n• Anti-defection whip makes passage of Cut Motions exceptionally rare."
+    },
+    "hi": {
+      "display_text": "लोकसभा के बजट सत्र के दौरान, जब डिमांड्स फॉर ग्रांट्स पर विचार चल रहा हो, विपक्षी सदस्य सरकार की इन्फ्रास्ट्रक्चर खर्च नीति की विशिष्ट अस्वीकृति व्यक्त करना चाहते हैं। वे संसद की इस नीति दिशा की अस्वीकृति को सबसे उपयुक्त बजटीय जवाबदेही तंत्र के माध्यम से औपचारिक रूप से दर्ज करना चाहते हैं। इस उद्देश्य के लिए निम्नलिखित में से कौन-सा संसदीय उपकरण सही है?\n\n(a) इन्फ्रास्ट्रक्चर मंत्री के खिलाफ एक सेंसचर मोशन जो अव्यवहार्य खर्च नीति को आगे बढ़ाने के लिए हो\n(b) मंत्रालय के कार्यप्रणाली के प्रति सामान्य असंतोष व्यक्त करने के लिए इन्फ्रास्ट्रक्चर मांग को ₹100 घटाने वाला टोकन कट\n(c) सरकार की नीति दृष्टिकोण की अस्वीकृति सूचित करने के लिए इन्फ्रास्ट्रक्चर मांग को ₹1 तक घटाने वाला नीति अस्वीकृति कट\n(d) तत्काल चर्चा के लिए आवश्यक सार्वजनिक महत्व के विषय के रूप में इन्फ्रास्ट्रक्चर नीति को उठाने वाला स्थगन प्रस्ताव",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) विकल्प एक मजबूत भ्रम है क्योंकि जब संसद किसी विशिष्ट सरकारी नीति की अस्वीकृति व्यक्त करना चाहती है तो सबसे पहले सेंसचर मोशन का विचार आता है — छात्र यह याद नहीं रख पाते कि कट मोशन बजट चरण के दौरान समान रूप से प्रभावी और अधिक विशिष्ट उपकरण प्रदान करते हैं।",
+      "elimination_logic": [
+        "परिदृश्य में निर्दिष्ट है कि संसद डिमांड्स फॉर ग्रांट्स चरण में है — यह बजट चरण है जहाँ कट मोशन उपयुक्त उपकरण हैं।",
+        "विपक्ष सरकार की एक विशिष्ट नीति (इन्फ्रास्ट्रक्चर खर्च) की अस्वीकृति व्यक्त करना चाहता है — यह नीति अस्वीकृति कट से मेल खाता है, जो मांग को ₹1 तक घटा देता है।",
+        "(a) को हटाएं: सेंसचर मोशन कभी भी प्रस्तुत किया जा सकता है लेकिन यह बजट-चरण की नीति अस्वीकृति के लिए विशिष्ट उपकरण नहीं है; कट मोशन बजट-चरण का यंत्र है।",
+        "(b) को हटाएं: टोकन कट (₹100) सामान्य असंतोष व्यक्त करता है, विशिष्ट नीति अस्वीकृति नहीं — परिदृश्य में नीति-विशिष्ट विरोध आवश्यक है।",
+        "(d) को हटाएं: स्थगन प्रस्ताव व्यवसाय को बाधित करता है लेकिन बजट-चरण की जवाबदेही का उपकरण नहीं है। (c) चुनें: नीति अस्वीकृति कट।"
+      ],
+      "upsc_trap_explanation": "(a) विकल्प में आंशिक-सत्य जाल यह है कि सेंसचर मोशन सैद्धांतिक रूप से किसी भी समय इन्फ्रास्ट्रक्चर नीति के मंत्री के खिलाफ प्रस्तुत किया जा सकता है — यह आंशिक रूप से सत्य है। लेकिन डिमांड्स फॉर ग्रांट्स चरण के दौरान नीति अस्वीकृति व्यक्त करने के लिए विशिष्ट उपकरण नीति अस्वीकृति कट है, जो मांग को ₹1 तक घटा देता है। बजट चरण में जब कट मोशन विशेष रूप से उपलब्ध हो तो सेंसचर मोशन का उपयोग प्रक्रिया के अनुसार असामान्य होगा — परिदृश्य का बजट-चरण संदर्भ महत्वपूर्ण संकेत है।",
+      "final_explanation": "कट मोशन संसद की जवाबदेही के बजट-चरण के उपकरण हैं, जो प्रत्येक अस्वीकृति के विशिष्ट रूप को दर्शाते हैं।\n\nपरिदृश्य में, संसद डिमांड्स फॉर ग्रांट्स चरण में है और विपक्ष सरकार की एक विशिष्ट इन्फ्रास्ट्रक्चर नीति की अस्वीकृति व्यक्त करना चाहता है। यह नीति अस्वीकृति कट के लिए आदर्श स्थिति है।\n\n• विकल्प (a) इन्फ्रास्ट्रक्चर मंत्री के खिलाफ सेंसचर मोशन: आंशिक-सत्य भ्रम। सेंसचर मोशन एक वैध जवाबदेही उपकरण है लेकिन बजट-चरण का विशिष्ट यंत्र नहीं है। डिमांड्स फॉर ग्रांट्स के दौरान नीति अस्वीकृति कट उपयुक्त उपकरण है।\n• विकल्प (b) ₹100 की टोकन कट: इस परिदृश्य के लिए गलत। टोकन कट सामान्य असंतोष व्यक्त करता है — यह किसी विशिष्ट नीति को लक्षित नहीं करता। परिदृश्य में नीति-विशिष्ट विरोध आवश्यक है।\n• विकल्प (c) नीति अस्वीकृति कट जो मांग को ₹1 तक घटाता है: सही। यह कट मोशन सरकार की नीति दृष्टिकोण की अस्वीकृति को स्पष्ट रूप से दर्शाता है। ₹1 तक मांग घटाना बजट-चरण की सबसे सशक्त नीति विरोध अभिव्यक्ति है।\n• विकल्प (d) इन्फ्रास्ट्रक्चर नीति को लेकर स्थगन प्रस्ताव: गलत। स्थगन प्रस्ताव एक सामान्य जवाबदेही उपकरण है जो व्यवसाय को बाधित करता है — यह बजट-चरण का नीति अस्वीकृति यंत्र नहीं है।\n\nमूल्य संवर्धन:\n• यदि नीति अस्वीकृति कट पारित हो जाता है, तो इसे व्यवहार में अविश्वास प्रस्ताव माना जाता है।\n• यदि आपत्ति खर्च की राशि पर हो, न कि नीति पर, तो अर्थव्यवस्था कट उपयुक्त होगा।\n• विरोध-विच्छेदन व्हिप के कारण कट मोशन का पारित होना अत्यंत दुर्लभ है।"
+    }
+  },
+  {
+    "uuid": "2388863e-7d8d-49a9-aa1f-731ce2cc1a2a",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Types of motions (adjournment, no-confidence, censure etc)",
+      "concepts_used": [
+        "Impeachment Motion Against President: Constitutional and Procedural Dimensions",
+        "Removal Motions for Constitutional Functionaries (CAG, Judges, Election Commissioners)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Presidential impeachment — both Houses with equal role, unlike No-Confidence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following:\n\nAssertion (A): In the impeachment of the President under Article 61, Rajya Sabha has an equal constitutional role — the resolution must be passed by both Houses of Parliament with the prescribed special majority.\n\nReason (R): Unlike the No-Confidence Motion, which can only be moved in Lok Sabha, Rajya Sabha is specifically excluded from any direct role in testing the confidence of the Council of Ministers.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who verify both facts independently (A: both Houses pass impeachment; R: Rajya Sabha excluded from no-confidence) may assume the causal connection — 'Rajya Sabha is excluded from no-confidence so the Constitution compensates by including it in impeachment'.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Presidential impeachment under Article 61 must be passed by both Houses — Rajya Sabha has an equal role. A is correct.",
+        "Step 2: Is Reason (R) correct? — No-Confidence Motion is exclusively in Lok Sabha; Rajya Sabha cannot pass a no-confidence motion. R is correct.",
+        "Step 3: Does R explain A? — Rajya Sabha's exclusion from No-Confidence proceedings does NOT causally explain why Rajya Sabha has an equal role in impeachment. Impeachment's bicameral requirement flows from Article 61's design for a grave constitutional act requiring broadest possible consensus — not as compensation for Rajya Sabha's exclusion from no-confidence. The two are structurally independent constitutional design choices.",
+        "A correct + R correct + R does NOT explain A → correct option is (b)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap constructs a plausible but false causal chain: students reason that 'since Rajya Sabha is excluded from the most powerful accountability mechanism (No-Confidence), the Constitution compensates by giving it an equal role in impeachment.' This narrative is logically appealing but constitutionally unfounded. Rajya Sabha's impeachment role flows from the gravity of removing the President — not from any compensatory design for its no-confidence exclusion.",
+      "final_explanation": "Presidential impeachment and No-Confidence Motion are among the most grave constitutional mechanisms — one targeting the Head of State, the other the Council of Ministers.\n\n• Assertion (A): Correct. Article 61 requires the impeachment resolution to be passed by both Houses of Parliament — Rajya Sabha has an equal constitutional role in Presidential impeachment. This reflects the gravity of removing the Head of State.\n• Reason (R): Correct. No-Confidence Motion operates exclusively in Lok Sabha, flowing from Article 75(3)'s designation of Lok Sabha alone as the forum for collective ministerial accountability.\n• Causal relationship: R does NOT explain A. The equal role of both Houses in Presidential impeachment is derived from Article 61's independent design — not from Rajya Sabha's exclusion from No-Confidence proceedings. These are two separate constitutional design decisions, each justified on its own logic: impeachment requires the broadest consensus given the gravity of removing the President; no-confidence is Lok Sabha-exclusive because ministers are accountable to the directly elected House.\n\nValue Addition:\n• In Presidential impeachment, the 2/3rd majority is of total membership — stricter than the 'present and voting' standard used in most other special majority provisions.\n• No President has ever been impeached in India — the mechanism has never been invoked.\n• Rajya Sabha's equal role in impeachment is one of the few areas where it is constitutionally co-equal with Lok Sabha in a directly consequential vote."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित पर विचार करें:\n\nकथन (A): अनुच्छेद 61 के तहत राष्ट्रपति के महाभियोग में, राज्यसभा की समान संवैधानिक भूमिका है — प्रस्ताव दोनों सदनों द्वारा निर्धारित विशेष बहुमत से पारित होना चाहिए।\n\nकारण (R): अविश्वास प्रस्ताव के विपरीत, जो केवल लोकसभा में ही लाया जा सकता है, राज्यसभा को मंत्रीमंडल की विश्वास परीक्षा में सीधे भूमिका से विशेष रूप से बाहर रखा गया है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि छात्र दोनों तथ्यों को स्वतंत्र रूप से सत्यापित करते हैं (A: दोनों सदन महाभियोग पारित करते हैं; R: राज्यसभा को अविश्वास प्रस्ताव से बाहर रखा गया है) और कारण संबंध मान लेते हैं — 'चूंकि राज्यसभा को अविश्वास से बाहर रखा गया है इसलिए संविधान उसे महाभियोग में शामिल करके संतुलन करता है।'",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — अनुच्छेद 61 के तहत राष्ट्रपति के महाभियोग को दोनों सदनों द्वारा पारित किया जाना आवश्यक है — राज्यसभा की समान भूमिका है। A सही है।",
+        "चरण 2: क्या कारण (R) सही है? — अविश्वास प्रस्ताव केवल लोकसभा में होता है; राज्यसभा अविश्वास प्रस्ताव पारित नहीं कर सकती। R सही है।",
+        "चरण 3: क्या R, A को समझाता है? — राज्यसभा का अविश्वास से बाहर रहना महाभियोग में उसकी समान भूमिका को कारणात्मक रूप से नहीं समझाता। महाभियोग की द्विसदनीय आवश्यकता अनुच्छेद 61 के डिजाइन से आती है जो एक गंभीर संवैधानिक कार्य के लिए व्यापक सहमति चाहता है — यह राज्यसभा के अविश्वास से बाहर रहने के लिए कोई संतुलन नहीं है। ये दोनों स्वतंत्र संवैधानिक डिजाइन विकल्प हैं।",
+        "A सही + R सही + R, A को नहीं समझाता → सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "उल्टा कारण संबंध का भ्रम एक संभावित लेकिन गलत कारणात्मक श्रृंखला बनाता है: छात्र सोचते हैं कि 'चूंकि राज्यसभा को सबसे शक्तिशाली जवाबदेही तंत्र (अविश्वास) से बाहर रखा गया है, इसलिए संविधान उसे महाभियोग में समान भूमिका देता है।' यह कथन तार्किक रूप से आकर्षक है लेकिन संवैधानिक रूप से गलत है। राज्यसभा की महाभियोग भूमिका राष्ट्रपति को हटाने की गंभीरता से आती है — न कि अविश्वास से बाहर रहने के लिए कोई संतुलन।",
+      "final_explanation": "राष्ट्रपति के महाभियोग और अविश्वास प्रस्ताव दोनों सबसे गंभीर संवैधानिक तंत्र हैं — एक राष्ट्राध्यक्ष को लक्षित करता है, दूसरा मंत्रीमंडल को।\n\n• कथन (A): सही। अनुच्छेद 61 के अनुसार महाभियोग प्रस्ताव दोनों सदनों द्वारा पारित होना चाहिए — राज्यसभा की राष्ट्रपति महाभियोग में समान संवैधानिक भूमिका है। यह राष्ट्राध्यक्ष को हटाने की गंभीरता को दर्शाता है।\n• कारण (R): सही। अविश्वास प्रस्ताव केवल लोकसभा में होता है, जो अनुच्छेद 75(3) के अनुसार मंत्रीमंडल की सामूहिक जवाबदेही के लिए लोकसभा को ही मंच मानता है।\n• कारणात्मक संबंध: R, A को नहीं समझाता। राष्ट्रपति महाभियोग में दोनों सदनों की समान भूमिका अनुच्छेद 61 के स्वतंत्र डिजाइन से आती है — न कि राज्यसभा के अविश्वास से बाहर रहने से। ये दो अलग-अलग संवैधानिक डिजाइन निर्णय हैं, प्रत्येक अपनी तर्कसंगतता पर आधारित: महाभियोग में व्यापक सहमति आवश्यक है क्योंकि राष्ट्रपति को हटाना गंभीर है; अविश्वास केवल लोकसभा-विशेष है क्योंकि मंत्री सीधे निर्वाचित सदन के प्रति जवाबदेह हैं।\n\nमूल्यवर्धन:\n• राष्ट्रपति महाभियोग में 2/3 बहुमत कुल सदस्यता का होता है — जो अधिकांश अन्य विशेष बहुमत प्रावधानों में 'उपस्थित और मतदान करने वाले' से कड़ा है।\n• भारत में कभी भी कोई राष्ट्रपति महाभियोग के माध्यम से हटाया नहीं गया है — यह तंत्र कभी लागू नहीं हुआ।\n• राज्यसभा की महाभियोग में समान भूमिका उन wenigen क्षेत्रों में से एक है जहाँ वह लोकसभा के साथ संवैधानिक रूप से समान है।"
+    }
+  }
+]

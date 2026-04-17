@@ -8,7 +8,8 @@ class HomeState {
     required this.dailyGoalProgress,
     required this.revisionQueueCount,
     required this.bookmarkCount,
-    required this.revisionSubjects,
+    required this.revisionSubTopicCount,
+    required this.revisionTrapCount,
     required this.lastSession,
   });
 
@@ -18,6 +19,7 @@ class HomeState {
   final int dailyGoalProgress;
   final int revisionQueueCount;
   final int bookmarkCount;
-  final List<String> revisionSubjects;
+  final int revisionSubTopicCount;
+  final int revisionTrapCount;
   final SessionSummary? lastSession;
 }

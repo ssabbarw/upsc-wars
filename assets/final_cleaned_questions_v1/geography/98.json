@@ -1,0 +1,1332 @@
+[
+  {
+    "uuid": "8c12bdb6-6dc5-48ca-ade1-d4a763f4d4cb",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Definition and Methodology of Literacy Rate in Indian Census"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Census literacy rate denominator — age 7+ exclusion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly describes the denominator used in computing the official literacy rate in the Indian Census?\n\n(a) Total population of the country including all age groups\n(b) Population aged 7 years and above\n(c) Population aged 7 years and above including children below 7 in the denominator\n(d) Population aged 15 years and above",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because the total population seems the most intuitive denominator, and many students confuse the crude literacy rate with the official census measure.",
+      "elimination_logic": [
+        "Eliminate (a): using total population as denominator produces the crude literacy rate, not the official census definition.",
+        "Eliminate (c): including children below 7 in the denominator would artificially depress the rate — the census explicitly excludes this age group.",
+        "Eliminate (d): restricting to 15+ would exclude the 7–14 age group which census does include — this is an international measure, not India's census definition.",
+        "Confirm (b): India's census defines literacy using persons aged 7 and above as the denominator, excluding 0–6 entirely."
+      ],
+      "upsc_trap_explanation": "Students conflate the 'crude literacy rate' (total population denominator) with the 'effective literacy rate' used in the Indian Census. The census uses the population aged 7 and above as the denominator — children below 7 are excluded because they are considered pre-literate by developmental norms and are not expected to possess reading-writing ability. A student who has seen literacy statistics without studying the methodological fine print will instinctively choose option (a).",
+      "final_explanation": "India's Census defines a literate person as anyone aged 7 years or above who can read and write with understanding in any language. The denominator for computing literacy rate is therefore the population aged 7 and above — not the total population.\n\n• Option (a): Incorrect. Using the total population gives the 'crude literacy rate', which is not the official Census methodology.\n• Option (b): Correct. Population aged 7 and above is the denominator; children below 7 are excluded as they are considered pre-literate.\n• Option (c): Incorrect. Including the 0–6 group in the denominator would lower the rate but is not the Census approach — this age group is excluded from both numerator and denominator.\n• Option (d): Incorrect. The 15+ denominator is used by UNESCO and international agencies for adult literacy comparisons, not by the Indian Census.\n\nValue Addition:\n• The exclusion of 0–6 has policy implications — the RTE Act covers 6–14, and NEP 2020 extends foundational literacy goals to 3–8 age groups.\n• Census 2011 recorded an overall literacy rate of 74.04% using the 7+ denominator.\n• Pre-1991 censuses had a different literacy threshold — the 1981 census used self-reporting without the 'with understanding' qualifier."
+    },
+    "hi": {
+      "display_text": "भारतीय जनगणना में आधिकारिक साक्षरता दर की गणना में प्रयुक्त हर को निम्नलिखित में से कौन-सा सही रूप से वर्णित करता है?\n\n(a) देश की कुल जनसंख्या जिसमें सभी आयु वर्ग शामिल हैं\n(b) 7 वर्ष और उससे ऊपर की आयु वर्ग की जनसंख्या\n(c) 7 वर्ष और उससे ऊपर की आयु वर्ग की जनसंख्या जिसमें हर में 7 वर्ष से कम के बच्चे भी शामिल हों\n(d) 15 वर्ष और उससे ऊपर की आयु वर्ग की जनसंख्या",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि कुल जनसंख्या सबसे सहज हर के रूप में प्रतीत होती है, और कई छात्र क्रूड साक्षरता दर को आधिकारिक जनगणना माप से भ्रमित करते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: कुल जनसंख्या को हर के रूप में उपयोग करने से क्रूड साक्षरता दर प्राप्त होती है, जो आधिकारिक जनगणना परिभाषा नहीं है।",
+        "(c) को हटाएं: हर में 7 वर्ष से कम आयु के बच्चों को शामिल करने से दर कृत्रिम रूप से कम हो जाएगी — जनगणना स्पष्ट रूप से इस आयु वर्ग को बाहर रखती है।",
+        "(d) को हटाएं: 15 वर्ष से ऊपर तक सीमित करने से 7–14 आयु वर्ग बाहर रह जाएगा जिसे जनगणना शामिल करती है — यह एक अंतरराष्ट्रीय माप है, भारत की जनगणना परिभाषा नहीं।",
+        "(b) की पुष्टि करें: भारत की जनगणना साक्षरता को परिभाषित करती है जिसमें 7 वर्ष और उससे ऊपर की आयु के व्यक्तियों को हर के रूप में लिया जाता है, 0–6 आयु वर्ग पूरी तरह से बाहर है।"
+      ],
+      "upsc_trap_explanation": "छात्र 'क्रूड साक्षरता दर' (कुल जनसंख्या हर) को भारतीय जनगणना में प्रयुक्त 'प्रभावी साक्षरता दर' से भ्रमित कर देते हैं। जनगणना में हर के रूप में 7 वर्ष और उससे ऊपर की जनसंख्या का उपयोग होता है — 7 वर्ष से कम के बच्चे विकासात्मक मानकों के अनुसार पूर्व-साक्षर माने जाते हैं और उनसे पढ़ने-लिखने की क्षमता अपेक्षित नहीं होती। जो छात्र साक्षरता आंकड़े बिना विधिवत अध्ययन के देखते हैं, वे सहज रूप से विकल्प (a) चुन लेते हैं।",
+      "final_explanation": "भारत की जनगणना में साक्षर व्यक्ति वह माना जाता है जिसकी आयु 7 वर्ष या उससे अधिक हो और जो किसी भी भाषा में समझ के साथ पढ़ और लिख सकता हो। इसलिए साक्षरता दर की गणना के लिए हर के रूप में 7 वर्ष और उससे ऊपर की जनसंख्या ली जाती है — कुल जनसंख्या नहीं।\n\n• विकल्प (a): गलत। कुल जनसंख्या का उपयोग करने से 'क्रूड साक्षरता दर' मिलती है, जो आधिकारिक जनगणना पद्धति नहीं है।\n• विकल्प (b): सही। 7 वर्ष और उससे ऊपर की जनसंख्या हर है; 7 वर्ष से कम के बच्चे पूर्व-साक्षर माने जाते हैं और बाहर रखे जाते हैं।\n• विकल्प (c): गलत। 0–6 आयु वर्ग को हर में शामिल करने से दर कम हो जाएगी, पर यह जनगणना की पद्धति नहीं है — यह आयु वर्ग हर और अहर दोनों से बाहर है।\n• विकल्प (d): गलत। 15 वर्ष से ऊपर की जनसंख्या का हर यूनेस्को और अंतरराष्ट्रीय एजेंसियों द्वारा वयस्क साक्षरता तुलना के लिए उपयोग होता है, भारतीय जनगणना द्वारा नहीं।\n\nमूल्य संवर्धन:\n• 0–6 आयु वर्ग के बहिष्कार के नीति संबंधी प्रभाव हैं — RTE अधिनियम 6–14 आयु वर्ग को कवर करता है, और NEP 2020 मौलिक साक्षरता लक्ष्यों को 3–8 आयु वर्ग तक बढ़ाता है।\n• जनगणना 2011 ने 7+ हर का उपयोग करते हुए कुल साक्षरता दर 74.04% दर्ज की।\n• 1991 से पहले की जनगणनाओं में साक्षरता की अलग सीमा थी — 1981 की जनगणना में 'समझ के साथ' योग्यता के बिना स्व-रिपोर्टिंग होती थी।"
+    }
+  },
+  {
+    "uuid": "b859e342-8b33-4608-ae99-6f1de074b270",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Gender Gap in Literacy: Female Literacy Rate Trends",
+        "State-wise Literacy Extremes and Patterns (Census 2011)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Rajasthan largest gender literacy gap — male-female differential",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about gender gaps in literacy as recorded in Census 2011:\n\n1. The national male literacy rate in 2011 exceeded the female literacy rate by approximately 17 percentage points.\n2. Uttar Pradesh recorded the largest gender gap in literacy rates among all Indian states in Census 2011.\n3. States in the northeastern region generally exhibit a smaller gender gap in literacy compared to the BIMARU states.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 2 only\n(b) 1 and 3 only\n(c) 3 only\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The national male literacy rate in 2011 exceeded the female literacy rate by approximately 17 percentage points.",
+          "verdict": "Correct",
+          "reason": "Male literacy was 82.14% and female literacy was 65.46%, giving a gap of approximately 16.68 percentage points — rounding to ~17 is acceptable. This statement is factually accurate."
+        },
+        {
+          "statement": "Uttar Pradesh recorded the largest gender gap in literacy rates among all Indian states in Census 2011.",
+          "verdict": "Incorrect",
+          "reason": "Rajasthan, not Uttar Pradesh, recorded the largest gender gap in literacy between males and females in 2011. UP has a significant gap but is not the largest."
+        },
+        {
+          "statement": "States in the northeastern region generally exhibit a smaller gender gap in literacy compared to the BIMARU states.",
+          "verdict": "Correct",
+          "reason": "NE states like Mizoram and Meghalaya show relatively balanced male-female literacy owing to matrilineal social structures and tribal traditions, unlike Bihar, Rajasthan, and UP which show large gaps."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because students may mark Statement 3 as incorrect by conflating NE states' overall literacy levels with gender parity, not realising these are separate metrics.",
+      "elimination_logic": [
+        "Check Statement 1: 82.14% minus 65.46% = 16.68%, approximately 17 points — this is correct, not a NOT correct answer.",
+        "Check Statement 2: Rajasthan holds the largest gender gap, not UP — Statement 2 is factually NOT correct.",
+        "Check Statement 3: NE states do show smaller gender gaps due to matrilineal societies — Statement 3 is correct, not a NOT correct answer.",
+        "Only Statement 2 is NOT correct — answer is (a) 2 only."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap places Uttar Pradesh (a well-known low-literacy state) in the position where Rajasthan belongs. Students who associate UP with poor female literacy outcomes instinctively accept Statement 2 as true. Rajasthan's gender literacy gap is specifically documented as the largest in 2011 — driven by cultural norms, child marriage, and female dropout rates — but UP often crowds out Rajasthan in popular recall.",
+      "final_explanation": "Census 2011 revealed stark gender literacy differentials across India that remain politically significant.\n\n• Statement 1 — Correct (not the answer): The 16.68-percentage-point gap between male (82.14%) and female (65.46%) literacy is a standard census figure. Rounding to ~17 points is standard in exam contexts.\n• Statement 2 — Incorrect (this IS the answer): It is Rajasthan, not Uttar Pradesh, that holds the dubious distinction of the largest male-female literacy gap among states. Cultural barriers, high child marriage rates, and early female dropout make Rajasthan's gap the widest nationally.\n• Statement 3 — Correct (not the answer): Northeastern states benefit from matrilineal social traditions and community-based education, resulting in relatively narrower gender literacy gaps compared to the BIMARU belt.\n\nValue Addition:\n• National female literacy improved from 53.7% (2001) to 65.46% (2011) — the fastest decadal gain for women since Independence.\n• Saakshar Bharat Mission (2009) specifically targeted rural female literacy in districts below 50% female literacy.\n• Kerala has near-zero gender gap in literacy — often cited alongside its high HDI."
+    },
+    "hi": {
+      "display_text": "जनगणना 2011 में दर्ज लैंगिक साक्षरता अंतर के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 2011 में राष्ट्रीय पुरुष साक्षरता दर महिला साक्षरता दर से लगभग 17 प्रतिशत अंक अधिक थी।\n2. 2011 की जनगणना में उत्तर प्रदेश ने सभी भारतीय राज्यों में सबसे बड़ा लैंगिक साक्षरता अंतर दर्ज किया।\n3. पूर्वोत्तर क्षेत्र के राज्य सामान्यतः BIMARU राज्यों की तुलना में साक्षरता में लैंगिक अंतर कम दिखाते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 2\n(b) केवल 1 और 3\n(c) केवल 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The national male literacy rate in 2011 exceeded the female literacy rate by approximately 17 percentage points.",
+          "verdict": "सही है",
+          "reason": "पुरुष साक्षरता दर 82.14% थी और महिला साक्षरता दर 65.46%, जिससे लगभग 16.68 प्रतिशत अंक का अंतर बनता है — इसे लगभग 17 अंक मानना स्वीकार्य है। यह कथन तथ्यात्मक रूप से सही है।"
+        },
+        {
+          "statement": "Uttar Pradesh recorded the largest gender gap in literacy rates among all Indian states in Census 2011.",
+          "verdict": "गलत है",
+          "reason": "2011 में राजस्थान ने पुरुष और महिला साक्षरता के बीच सबसे बड़ा लैंगिक अंतर दर्ज किया था, न कि उत्तर प्रदेश ने। यूपी में अंतर महत्वपूर्ण है लेकिन सबसे बड़ा नहीं है।"
+        },
+        {
+          "statement": "States in the northeastern region generally exhibit a smaller gender gap in literacy compared to the BIMARU states.",
+          "verdict": "सही है",
+          "reason": "मिजोरम और मेघालय जैसे पूर्वोत्तर राज्य मातृसत्तात्मक सामाजिक संरचनाओं और जनजातीय परंपराओं के कारण पुरुष-महिला साक्षरता में अपेक्षाकृत संतुलन दिखाते हैं, जबकि बिहार, राजस्थान और यूपी में बड़े अंतर पाए जाते हैं।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि छात्र पूर्वोत्तर राज्यों की समग्र साक्षरता दर को लैंगिक समानता से जोड़कर कथन 3 को गलत मान सकते हैं, जबकि ये अलग-अलग मापदंड हैं।",
+      "elimination_logic": [
+        "कथन 1 जांचें: 82.14% माइनस 65.46% = 16.68%, लगभग 17 अंक — यह सही है, गलत उत्तर नहीं।",
+        "कथन 2 जांचें: सबसे बड़ा लैंगिक अंतर राजस्थान का है, यूपी का नहीं — कथन 2 तथ्यात्मक रूप से सही नहीं है।",
+        "कथन 3 जांचें: पूर्वोत्तर राज्य मातृसत्तात्मक समाजों के कारण छोटे लैंगिक अंतर दिखाते हैं — कथन 3 सही है, गलत उत्तर नहीं।",
+        "केवल कथन 2 सही नहीं है — उत्तर है (a) केवल 2।"
+      ],
+      "upsc_trap_explanation": "भूगोल-स्थानांतरण जाल में उत्तर प्रदेश (जो कम साक्षरता वाला राज्य है) को राजस्थान की जगह रख दिया जाता है। जो छात्र यूपी को खराब महिला साक्षरता से जोड़ते हैं, वे स्वाभाविक रूप से कथन 2 को सही मान लेते हैं। राजस्थान का लैंगिक साक्षरता अंतर 2011 में सबसे बड़ा दर्ज है — जो सांस्कृतिक मानदंडों, बाल विवाह, और महिला ड्रॉपआउट दरों से प्रेरित है — लेकिन यूपी अक्सर लोकप्रिय स्मृति में राजस्थान को पीछे छोड़ देता है।",
+      "final_explanation": "जनगणना 2011 ने भारत में लैंगिक साक्षरता में स्पष्ट अंतर दिखाए जो राजनीतिक रूप से महत्वपूर्ण हैं।\n\n• कथन 1 — सही (उत्तर नहीं): पुरुष (82.14%) और महिला (65.46%) साक्षरता के बीच 16.68 प्रतिशत अंक का अंतर एक मानक जनगणना आंकड़ा है। परीक्षा संदर्भ में इसे लगभग 17 अंक मानना सामान्य है।\n• कथन 2 — गलत (यह उत्तर है): सबसे बड़ा पुरुष-महिला साक्षरता अंतर राजस्थान का है, न कि उत्तर प्रदेश का। सांस्कृतिक बाधाएं, उच्च बाल विवाह दर, और महिला ड्रॉपआउट के कारण राजस्थान का अंतर राष्ट्रीय स्तर पर सबसे व्यापक है।\n• कथन 3 — सही (उत्तर नहीं): पूर्वोत्तर राज्य मातृसत्तात्मक सामाजिक परंपराओं और सामुदायिक शिक्षा से लाभान्वित होते हैं, जिससे BIMARU राज्यों की तुलना में लैंगिक साक्षरता अंतर अपेक्षाकृत कम होता है।\n\nमूल्य संवर्धन:\n• राष्ट्रीय महिला साक्षरता 53.7% (2001) से बढ़कर 65.46% (2011) हुई — स्वतंत्रता के बाद महिलाओं के लिए सबसे तेज़ दशकवार वृद्धि।\n• साक्षर भारत मिशन (2009) ने विशेष रूप से ग्रामीण महिला साक्षरता को 50% से कम महिला साक्षरता वाले जिलों में लक्षित किया।\n• केरल में लैंगिक अंतर लगभग शून्य है — जो इसके उच्च HDI के साथ अक्सर उद्धृत होता है।"
+    }
+  },
+  {
+    "uuid": "79e2d991-2dc9-42d2-a89a-bc0396a206fd",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Sex Ratio: Overall vs Child Sex Ratio — Definitional Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Child sex ratio declining while overall sex ratio improves — paradox",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): In Census 2011, India's overall sex ratio showed an improvement compared to 2001, yet the child sex ratio (ages 0–6) recorded a decline during the same period.\n\nReason (R): The widespread availability of affordable ultrasound technology after the 1990s enabled sex-selective abortion, disproportionately reducing the female share in the 0–6 age cohort.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because both A and R are correct, tempting students to assume R explains A without checking whether the causal logic holds.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Census 2011 shows overall sex ratio improving to 943 from 933 (2001), while child sex ratio declined from 927 to 919.",
+        "Step 2: Is Reason (R) correct? — Yes. Ultrasound technology becoming widely accessible post-1990s did enable sex-selective abortion targeting female foetuses in the 0–6 cohort.",
+        "Step 3: Does R causally explain A? — No. R explains why the Child Sex Ratio declined, not why the overall sex ratio improved simultaneously. The overall sex ratio improvement is driven by reduced female mortality, better maternal health care, and improved female survival — not by ultrasound technology. R is the cause of the CSR decline, not an explanation for the simultaneous overall improvement.",
+        "Since A is correct and R is correct but R does not explain A, the answer is (b)."
+      ],
+      "upsc_trap_explanation": "The trap exploits the paradox itself. Students who correctly identify both A and R as true facts rush to mark option (a), assuming causal connection exists. However, R explains only one half of the paradox (the declining CSR), not the other half (the improving overall sex ratio). The actual explanations for the overall improvement include reduced female mortality in post-reproductive age groups, better nutrition, and healthcare access for adult women — none of which R addresses.",
+      "final_explanation": "This question tests understanding of a genuine demographic paradox from Census 2011.\n\nAssertion (A): Correct. India's overall sex ratio improved from 933 (2001) to 943 (2011), yet the child sex ratio (0–6 years) simultaneously declined from 927 to 919. Both trends coexisted in the same census.\n\nReason (R): Correct. The proliferation of affordable ultrasound technology post-1990s enabled sex determination, leading to female foeticide. The PCPNDT Act (1994) attempted to regulate this but enforcement was weak. This is the primary explanation for the declining child sex ratio.\n\nCausal relationship: R does NOT explain A. R explains why the child sex ratio declined — but it does not explain why the overall sex ratio simultaneously improved. The overall improvement is driven by better survival of adult women (reduced MMR, improved nutrition, female healthcare access) — factors entirely unrelated to R. The two trends have different causal chains, making this a classic option (b) scenario.\n\nValue Addition:\n• The CSR declining even as overall SR improves shows two separate demographic pressures operating simultaneously.\n• Beti Bachao Beti Padhao (2015) was launched specifically in 100 districts with CSR below 918.\n• Census 2011 showed that even highly educated urban families engaged in sex-selective behaviour — literacy alone does not eliminate son preference."
+    },
+    "hi": {
+      "display_text": "कथन (A): जनगणना 2011 में, भारत का कुल लिंगानुपात 2001 की तुलना में सुधरा, फिर भी बाल लिंगानुपात (आयु 0–6 वर्ष) उसी अवधि में गिरावट दर्ज की गई।\n\nकारण (R): 1990 के बाद सस्ती अल्ट्रासाउंड तकनीक की व्यापक उपलब्धता ने लिंग चयनात्मक गर्भपात को संभव बनाया, जिससे 0–6 आयु वर्ग में महिलाओं का अनुपात असमान रूप से कम हुआ।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि दोनों A और R सही हैं, जिससे छात्र यह मान लेते हैं कि R, A की व्याख्या करता है बिना यह जांचे कि कारणात्मक तर्क सही है या नहीं।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। जनगणना 2011 में कुल लिंगानुपात 933 (2001) से बढ़कर 943 हुआ, जबकि बाल लिंगानुपात 927 से घटकर 919 हो गया।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। 1990 के बाद अल्ट्रासाउंड तकनीक की व्यापक उपलब्धता ने 0–6 आयु वर्ग में महिला भ्रूण हत्या को संभव बनाया।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — नहीं। R बाल लिंगानुपात में गिरावट को समझाता है, न कि कुल लिंगानुपात में एक साथ सुधार को। कुल लिंगानुपात में सुधार कम महिला मृत्यु दर, बेहतर मातृ स्वास्थ्य देखभाल, और महिला जीवित रहने में सुधार से हुआ है — न कि अल्ट्रासाउंड तकनीक से। R बाल लिंगानुपात गिरावट का कारण है, कुल सुधार का नहीं।",
+        "चूंकि A सही है और R भी सही है लेकिन R, A की व्याख्या नहीं करता, अतः उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "यह जाल स्वयं विरोधाभास का फायदा उठाता है। जो छात्र दोनों A और R को सही मानते हैं, वे जल्दी से विकल्प (a) चुन लेते हैं यह मानकर कि कारणात्मक संबंध है। परंतु R केवल विरोधाभास के एक हिस्से (गिरता हुआ बाल लिंगानुपात) को समझाता है, न कि दूसरे हिस्से (सुधरता हुआ कुल लिंगानुपात) को। कुल सुधार के वास्तविक कारणों में प्रजनन आयु के बाद महिला मृत्यु दर में कमी, बेहतर पोषण, और वयस्क महिलाओं के लिए स्वास्थ्य सेवा शामिल हैं — जिनका R से कोई संबंध नहीं।",
+      "final_explanation": "यह प्रश्न जनगणना 2011 के एक वास्तविक जनसांख्यिकीय विरोधाभास की समझ का परीक्षण करता है।\n\nकथन (A): सही। भारत का कुल लिंगानुपात 933 (2001) से बढ़कर 943 (2011) हुआ, जबकि बाल लिंगानुपात (0–6 वर्ष) उसी अवधि में 927 से घटकर 919 हो गया। दोनों प्रवृत्तियाँ एक साथ मौजूद थीं।\n\nकारण (R): सही। 1990 के बाद सस्ती अल्ट्रासाउंड तकनीक के प्रसार ने लिंग निर्धारण को संभव बनाया, जिससे महिला भ्रूण हत्या हुई। PCPNDT अधिनियम (1994) ने इसे नियंत्रित करने का प्रयास किया, पर प्रवर्तन कमजोर था। यह बाल लिंगानुपात गिरावट का मुख्य कारण है।\n\nकारणात्मक संबंध: R, A की व्याख्या नहीं करता। R केवल बाल लिंगानुपात गिरावट को समझाता है — न कि कुल लिंगानुपात में एक साथ सुधार को। कुल सुधार वयस्क महिलाओं के बेहतर जीवित रहने (कम मातृ मृत्यु दर, बेहतर पोषण, महिला स्वास्थ्य सेवा) से हुआ है — जो R से पूरी तरह अलग हैं। ये दोनों प्रवृत्तियाँ अलग-अलग कारणों से संचालित होती हैं, इसलिए यह क्लासिक विकल्प (b) का मामला है।\n\nमूल्य संवर्धन:\n• कुल लिंगानुपात सुधारते हुए भी बाल लिंगानुपात गिरना दो अलग-अलग जनसांख्यिकीय दबावों को दर्शाता है।\n• बेटी बचाओ बेटी पढ़ाओ (2015) अभियान विशेष रूप से उन 100 जिलों में शुरू किया गया जहाँ बाल लिंगानुपात 918 से कम था।\n• जनगणना 2011 में यह भी दिखा कि उच्च शिक्षित शहरी परिवार भी लिंग चयनात्मक व्यवहार में संलग्न थे — केवल साक्षरता से पुत्र वरीयता समाप्त नहीं होती।"
+    }
+  },
+  {
+    "uuid": "805441a3-11a8-4366-82d0-719378a89d97",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Population Distribution: Physiographic and Climatic Determinants",
+        "Population Density: Definition, Formula, and National Average"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Decadal density change — India census milestones sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following demographic milestones in India's census history:\n\nP. India's population density first exceeded 100 persons per square kilometre\nQ. India's total population crossed the one billion mark\nR. India's national decadal growth rate fell below 20% for the first time\nS. India's population density reached 382 persons per square kilometre\n\nWhich of the following represents the correct chronological sequence of these milestones?\n\n(a) P → R → Q → S\n(b) P → Q → S → R\n(c) P → Q → R → S\n(d) Q → P → R → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) reverses the position of India crossing 100 crore and the density reaching 324, which falls in adjacent census years and is easily confused.",
+      "elimination_logic": [
+        "Anchor point: India's population crossed 100 crore (1 billion) in Census 2001 — this is a well-known milestone; place it third.",
+        "Density of 324 persons/sq km corresponds to Census 2001 — this aligns with crossing 100 crore, so these are the same census.",
+        "Density of 382 persons/sq km corresponds to Census 2011 — place this after the 2001 milestone.",
+        "The national decadal growth rate first falling below 20% occurred between 2001 and 2011 (17.7%) — this is the most recent event, confirming order: Green Revolution policy shift → density 117 (1961) → India crosses 100 crore + density 324 (2001) → density 382 + growth rate below 20% (2011)."
+      ],
+      "upsc_trap_explanation": "The trap here lies in associating density figures with incorrect census years. Students who know 382 is the 2011 figure may not know 324 as the 2001 figure, causing confusion in sequencing. Additionally, the 'first time growth rate fell below 20%' event (2011 census) is often misremembered as occurring in 1991 or 2001.",
+      "final_explanation": "This question tests whether students can sequence India's demographic milestones correctly.\n\nCorrect chronological order: P → Q → R → S\n• P (India's population density first exceeding 100 persons/sq km): This occurred in the 1951–1961 census period. India's density was 117 in 1961 (after being ~77 in 1951), so P represents the earliest milestone.\n• Q (India crossing one billion population): This occurred during Census 2001 when India's population was recorded at 102.7 crore — density was 324.\n• R (National decadal growth rate falling below 20% for the first time): This occurred in Census 2011, when growth was 17.7% (down from 21.5% in 1991–2001).\n• S (Population density reaching 382 persons/sq km): This is the 2011 Census figure — the most recent milestone.\n\nNote: Q and R/S are from different censuses (2001 and 2011) — the trap option reverses their order.\n\nValue Addition:\n• India's density was 77 per sq km in 1951, 117 in 1961, 177 in 1971 — roughly doubling each two decades.\n• Density of 382 (2011) compares with China's ~145 and USA's ~34 — India far more densely populated.\n• If Census 2031 data were available, density would likely exceed 450 per sq km."
+    },
+    "hi": {
+      "display_text": "भारत की जनगणना इतिहास में निम्नलिखित जनसांख्यिकीय मील के पत्थरों पर विचार करें:\n\nP. भारत की जनसंख्या घनत्व पहली बार 100 व्यक्तियों प्रति वर्ग किलोमीटर से अधिक हुई\nQ. भारत की कुल जनसंख्या एक अरब के आंकड़े को पार कर गई\nR. भारत की राष्ट्रीय दशकिक वृद्धि दर पहली बार 20% से नीचे आ गई\nS. भारत की जनसंख्या घनत्व 382 व्यक्तियों प्रति वर्ग किलोमीटर तक पहुँच गई\n\nइन मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) P → R → Q → S\n(b) P → Q → S → R\n(c) P → Q → R → S\n(d) Q → P → R → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भारत के 100 करोड़ पार करने और घनत्व 324 तक पहुँचने की स्थिति को उलट देता है, जो पड़ोसी जनगणना वर्षों में है और आसानी से भ्रमित हो सकता है।",
+      "elimination_logic": [
+        "एंकर पॉइंट: भारत की जनसंख्या 100 करोड़ (1 अरब) पार 2001 की जनगणना में हुई — यह एक प्रसिद्ध मील का पत्थर है; इसे तीसरे स्थान पर रखें।",
+        "324 व्यक्तियों/वर्ग किमी का घनत्व 2001 की जनगणना से संबंधित है — यह 100 करोड़ पार करने के साथ मेल खाता है, अतः ये एक ही जनगणना हैं।",
+        "382 व्यक्तियों/वर्ग किमी का घनत्व 2011 की जनगणना से संबंधित है — इसे 2001 के मील के पत्थर के बाद रखें।",
+        "राष्ट्रीय दशकिक वृद्धि दर पहली बार 20% से नीचे 2001 और 2011 के बीच (17.7%) आई — यह सबसे हाल की घटना है, जो क्रम की पुष्टि करती है: हरित क्रांति नीति परिवर्तन → घनत्व 117 (1961) → भारत 100 करोड़ पार + घनत्व 324 (2001) → घनत्व 382 + वृद्धि दर 20% से नीचे (2011)।"
+      ],
+      "upsc_trap_explanation": "यह जाल घनत्व आंकड़ों को गलत जनगणना वर्षों से जोड़ने में है। जो छात्र जानते हैं कि 382 2011 का आंकड़ा है, वे 324 को 2001 के आंकड़े के रूप में नहीं जानते, जिससे क्रम में भ्रम होता है। इसके अतिरिक्त, 'पहली बार वृद्धि दर 20% से नीचे' (2011 की जनगणना) को अक्सर 1991 या 2001 में होने के रूप में गलत याद किया जाता है।",
+      "final_explanation": "यह प्रश्न यह परीक्षण करता है कि छात्र भारत के जनसांख्यिकीय मील के पत्थरों को सही क्रम में रख सकते हैं या नहीं।\n\nसही कालानुक्रमिक क्रम: P → Q → R → S\n• P (भारत की जनसंख्या घनत्व पहली बार 100 व्यक्तियों/वर्ग किमी से अधिक हुई): यह 1951–1961 की जनगणना अवधि में हुआ। भारत का घनत्व 1961 में 117 था (1951 में लगभग 77 के बाद), अतः P सबसे पहला मील का पत्थर है।\n• Q (भारत की जनसंख्या 1 अरब पार करना): यह 2001 की जनगणना के दौरान हुआ जब भारत की जनसंख्या 102.7 करोड़ दर्ज की गई — घनत्व 324 था।\n• R (राष्ट्रीय दशकिक वृद्धि दर पहली बार 20% से नीचे आना): यह 2011 की जनगणना में हुआ, जब वृद्धि दर 17.7% थी (1991–2001 में 21.5% से कम)।\n• S (जनसंख्या घनत्व 382 व्यक्तियों/वर्ग किमी तक पहुँचना): यह 2011 की जनगणना का आंकड़ा है — सबसे हाल का मील का पत्थर।\n\nध्यान दें: Q और R/S अलग-अलग जनगणनाओं (2001 और 2011) से हैं — जाल विकल्प उनका क्रम उलट देता है।\n\nमूल्य संवर्धन:\n• भारत का घनत्व 1951 में 77 प्रति वर्ग किमी था, 1961 में 117, 1971 में 177 — लगभग हर दो दशकों में दोगुना।\n• 382 (2011) का घनत्व चीन के लगभग 145 और अमेरिका के लगभग 34 से तुलना करता है — भारत कहीं अधिक घनी आबादी वाला है।\n• यदि 2031 की जनगणना उपलब्ध होती, तो घनत्व संभवतः 450 प्रति वर्ग किमी से अधिक होता।"
+    }
+  },
+  {
+    "uuid": "98a06d0b-e505-4471-8806-64d596b96b27",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Decadal Population Growth Rate Trends (2001–2011)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Fastest and slowest growing states 2001-2011 — Meghalaya and Nagaland",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about decadal population growth trends in Census 2011:\n\nStatement 1: Among all Indian states, Meghalaya recorded the highest decadal population growth rate during 2001–2011, at approximately 27.9%.\nStatement 2: Sikkim recorded a negative decadal population growth rate in Census 2011, making it the only state with population decline during 2001–2011.\n\nWhich of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Among all Indian states, Meghalaya recorded the highest decadal population growth rate during 2001–2011, at approximately 27.9%.",
+          "verdict": "Correct",
+          "reason": "Meghalaya's decadal growth rate of 27.9% was the highest among all states in the 2001–2011 decade, driven by high fertility rates and in-migration."
+        },
+        {
+          "statement": "Sikkim recorded a negative decadal population growth rate in Census 2011, making it the only state with population decline during 2001–2011.",
+          "verdict": "Incorrect",
+          "reason": "It was Nagaland, not Sikkim, that recorded the only negative decadal growth rate (-0.6%) among states in Census 2011. Sikkim's growth was positive, though modest."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because both Meghalaya and Sikkim are northeastern states, and Sikkim does have low population figures, making the claim about Sikkim seem plausible to students who recall only 'a small NE state had negative growth'.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Meghalaya at 27.9% growth rate (2001-2011) is documented as the fastest-growing state — Statement 1 is correct.",
+        "Evaluate Statement 2: The state with negative growth was Nagaland (-0.6%), not Sikkim — Statement 2 is incorrect.",
+        "Since Statement 1 is correct and Statement 2 is incorrect, the answer is (c)."
+      ],
+      "upsc_trap_explanation": "Nagaland's negative growth rate (-0.6%) is a standout fact but the specific state name is often confused with other small NE states. Sikkim is geographically plausible because it is small and neighbours Nagaland in public perception (though not geographically adjacent). Students who remember 'a small northeastern state had population decline' but do not pin it precisely to Nagaland will accept the Sikkim substitution.",
+      "final_explanation": "The 2001–2011 decadal growth rate data reveals sharp regional divergence within India.\n\n• Statement 1 — Correct: Meghalaya's 27.9% decadal growth rate was the highest among all states — driven by high total fertility rate, young age structure, and some in-migration. This is also notable because Meghalaya has the best child sex ratio, demonstrating that high growth ≠ poor gender outcomes.\n• Statement 2 — Incorrect: Nagaland, not Sikkim, recorded the only negative decadal growth rate (-0.6%) among all states in Census 2011. This is attributed to out-migration of youth for employment and education, as well as possible census enumeration issues in insurgency-affected areas. Sikkim had positive growth.\n\nValue Addition:\n• National decadal growth rate (2001–2011): 17.7%, declining from 21.5% (1991–2001).\n• Southern states (Tamil Nadu, Kerala, Andhra Pradesh) have already achieved near-replacement level fertility (TFR ~2.1).\n• Nagaland's negative growth raised questions about census methodology and enumeration challenges in conflict zones."
+    },
+    "hi": {
+      "display_text": "जनगणना 2011 में दशकवार जनसंख्या वृद्धि प्रवृत्तियों के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: सभी भारतीय राज्यों में, मेघालय ने 2001–2011 के दौरान लगभग 27.9% की सबसे अधिक दशकवार जनसंख्या वृद्धि दर दर्ज की।\nकथन 2: सिक्किम ने जनगणना 2011 में नकारात्मक दशकवार जनसंख्या वृद्धि दर दर्ज की, जिससे यह 2001–2011 के दौरान जनसंख्या में गिरावट वाला एकमात्र राज्य बन गया।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Among all Indian states, Meghalaya recorded the highest decadal population growth rate during 2001–2011, at approximately 27.9%.",
+          "verdict": "सही",
+          "reason": "मेघालय की 2001–2011 दशक में 27.9% की दशकवार वृद्धि दर सभी राज्यों में सबसे अधिक थी, जो उच्च प्रजनन दर और आंतरिक प्रवासन के कारण थी।"
+        },
+        {
+          "statement": "Sikkim recorded a negative decadal population growth rate in Census 2011, making it the only state with population decline during 2001–2011.",
+          "verdict": "गलत",
+          "reason": "सिक्किम नहीं, बल्कि नागालैंड ने जनगणना 2011 में एकमात्र नकारात्मक दशकवार वृद्धि दर (-0.6%) दर्ज की थी। सिक्किम की वृद्धि सकारात्मक थी, हालांकि मामूली।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि मेघालय और सिक्किम दोनों पूर्वोत्तर के राज्य हैं, और सिक्किम की जनसंख्या कम है, जिससे 'एक छोटा पूर्वोत्तर राज्य जिसकी जनसंख्या में गिरावट' का दावा छात्रों को सही लग सकता है जो केवल इतना याद रखते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: मेघालय की 27.9% वृद्धि दर (2001-2011) सबसे तेज़ वृद्धि दर के रूप में दर्ज है — कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: नकारात्मक वृद्धि वाला राज्य नागालैंड (-0.6%) था, सिक्किम नहीं — कथन 2 गलत है।",
+        "चूंकि कथन 1 सही है और कथन 2 गलत है, अतः उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "नागालैंड की नकारात्मक वृद्धि दर (-0.6%) एक महत्वपूर्ण तथ्य है लेकिन राज्य का नाम अक्सर अन्य छोटे पूर्वोत्तर राज्यों के साथ भ्रमित हो जाता है। सिक्किम भौगोलिक रूप से संभव लगता है क्योंकि यह छोटा है और सार्वजनिक धारणा में नागालैंड के निकट है (हालांकि भौगोलिक रूप से सटा नहीं है)। जो छात्र 'एक छोटा पूर्वोत्तर राज्य जिसकी जनसंख्या में गिरावट' याद रखते हैं लेकिन इसे नागालैंड से जोड़ नहीं पाते, वे सिक्किम को स्वीकार कर लेते हैं।",
+      "final_explanation": "2001–2011 दशकवार वृद्धि दर के आंकड़े भारत में क्षेत्रीय असमानता को दर्शाते हैं।\n\n• कथन 1 — सही: मेघालय की 27.9% दशकवार वृद्धि दर सभी राज्यों में सबसे अधिक थी — यह उच्च कुल प्रजनन दर, युवा आयु संरचना, और कुछ आंतरिक प्रवासन के कारण था। यह उल्लेखनीय है क्योंकि मेघालय का बाल लिंगानुपात सबसे अच्छा है, जो दर्शाता है कि उच्च वृद्धि का अर्थ लिंग असंतुलन नहीं है।\n• कथन 2 — गलत: नागालैंड ने, न कि सिक्किम ने, जनगणना 2011 में सभी राज्यों में एकमात्र नकारात्मक दशकवार वृद्धि दर (-0.6%) दर्ज की। यह युवाओं के रोजगार और शिक्षा के लिए पलायन तथा विद्रोह प्रभावित क्षेत्रों में जनगणना की गिनती की समस्याओं के कारण है। सिक्किम की वृद्धि सकारात्मक थी।\n\nमूल्य संवर्धन:\n• राष्ट्रीय दशकवार वृद्धि दर (2001–2011): 17.7%, जो 21.5% (1991–2001) से कम है।\n• दक्षिणी राज्य (तमिलनाडु, केरल, आंध्र प्रदेश) ने लगभग प्रतिस्थापन स्तर की प्रजनन दर (TFR ~2.1) प्राप्त कर ली है।\n• नागालैंड की नकारात्मक वृद्धि ने जनगणना पद्धति और संघर्ष क्षेत्रों में गिनती की चुनौतियों पर सवाल उठाए।"
+    }
+  },
+  {
+    "uuid": "50924b73-7ac8-4928-a2be-a9d07a821430",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Million-Plus Cities: Distribution and Growth (Census 2011)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Delhi surpassing Mumbai as largest urban agglomeration — 2011",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to million-plus cities and Urban Agglomerations in India is correctly matched as per Census 2011 data?\n\n(a) Mumbai Urban Agglomeration — largest Urban Agglomeration in India by population\n(b) Number of million-plus cities in 2011 — 35 cities\n(c) Delhi Urban Agglomeration — surpassed Mumbai to become India's most populous Urban Agglomeration in Census 2011, which also recorded 53 million-plus cities nationally\n(d) Kolkata Urban Agglomeration — second largest Urban Agglomeration after Delhi in Census 2011",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Mumbai has historically been India's most populous city and largest financial centre — students who have not specifically studied 2011 Urban Agglomeration data will default to Mumbai as the largest.",
+      "elimination_logic": [
+        "Eliminate (a): Mumbai Urban Agglomeration is the second largest in 2011, not the first — Delhi surpassed it in Census 2011.",
+        "Eliminate (b): 35 million-plus cities is the 2001 figure — the 2011 count is 53. This pair has a temporal swap.",
+        "Confirm (c): Census 2011 recorded 53 million-plus cities, and Delhi became the largest Urban Agglomeration — both elements of this pair are correct.",
+        "Eliminate (d): Kolkata has not been among the top two UAs since Census 2001 — Delhi-NCR and Mumbai are first and second."
+      ],
+      "upsc_trap_explanation": "Two traps operate simultaneously. First, option (a) exploits Mumbai's iconic status — most students associate Mumbai with being India's largest city without knowing that Delhi overtook it in 2011 UA rankings. Second, option (b) uses the 2001 figure (35) for a question about 2011 data, exploiting students who recall the growth from 35 but do not know the 2011 figure is 53.",
+      "final_explanation": "Million-plus city data from Census 2011 is frequently tested both for the count and for the ranking of urban agglomerations.\n\n• Option (a): Incorrect. Mumbai Urban Agglomeration is the second largest in Census 2011 with approximately 18.4 million. Delhi surpassed it for the first time in 2011 with approximately 16.3 million — note Delhi UA includes NCR zone.\n• Option (b): Incorrect. The 2001 Census had 35 million-plus cities. The 2011 Census recorded 53 such cities — a jump of 18. Pairing 35 with 2011 is a temporal swap.\n• Option (c): Correct. Census 2011 had 53 million-plus cities, and Delhi became India's largest Urban Agglomeration overtaking Mumbai — both facts are accurate.\n• Option (d): Incorrect. Kolkata UA is the third-largest UA, not second, in 2011. Delhi and Mumbai occupy the first two positions.\n\nValue Addition:\n• 'Million-plus city' refers to a city or Urban Agglomeration with population ≥10 lakh (1 million).\n• The jump from 35 (2001) to 53 (2011) reflects both genuine urban growth and reclassification of towns.\n• Urban primacy — one city dominating the urban system — is more characteristic of Mumbai/Delhi than smaller states."
+    },
+    "hi": {
+      "display_text": "भारत में मिलियन-प्लस शहरों और शहरी समूहों से संबंधित निम्नलिखित जोड़ों में से कौन-सा जनगणना 2011 के आंकड़ों के अनुसार सही मेल खाता है?\n\n(a) मुंबई शहरी समूह — जनसंख्या के हिसाब से भारत का सबसे बड़ा शहरी समूह\n(b) 2011 में मिलियन-प्लस शहरों की संख्या — 35 शहर\n(c) दिल्ली शहरी समूह — मुंबई को पीछे छोड़कर जनगणना 2011 में भारत का सबसे अधिक जनसंख्या वाला शहरी समूह बना, जिसमें राष्ट्रीय स्तर पर 53 मिलियन-प्लस शहर भी दर्ज हुए\n(d) कोलकाता शहरी समूह — जनगणना 2011 में दिल्ली के बाद दूसरा सबसे बड़ा शहरी समूह",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि मुंबई ऐतिहासिक रूप से भारत का सबसे अधिक जनसंख्या वाला शहर और सबसे बड़ा वित्तीय केंद्र रहा है — जो छात्र विशेष रूप से 2011 के शहरी समूह डेटा का अध्ययन नहीं करते, वे मुंबई को सबसे बड़ा मानते हैं।",
+      "elimination_logic": [
+        "(a) को हटाएं: मुंबई शहरी समूह 2011 में दूसरा सबसे बड़ा है, पहला नहीं — दिल्ली ने जनगणना 2011 में इसे पीछे छोड़ दिया।",
+        "(b) को हटाएं: 35 मिलियन-प्लस शहर 2001 का आंकड़ा है — 2011 की संख्या 53 है। यह जोड़ी कालानुक्रमिक रूप से गलत है।",
+        "(c) की पुष्टि करें: जनगणना 2011 में 53 मिलियन-प्लस शहर दर्ज हुए, और दिल्ली सबसे बड़ा शहरी समूह बन गया — इस जोड़ी के दोनों तत्व सही हैं।",
+        "(d) को हटाएं: कोलकाता 2001 की जनगणना के बाद से शीर्ष दो शहरी समूहों में नहीं रहा — दिल्ली-एनसीआर और मुंबई पहले और दूसरे हैं।"
+      ],
+      "upsc_trap_explanation": "दो जाल एक साथ काम करते हैं। पहला, विकल्प (a) मुंबई की प्रतिष्ठित स्थिति का लाभ उठाता है — अधिकांश छात्र मुंबई को भारत का सबसे बड़ा शहर मानते हैं बिना यह जाने कि दिल्ली ने 2011 में इसे पीछे छोड़ दिया। दूसरा, विकल्प (b) 2001 के आंकड़े (35) का उपयोग 2011 के प्रश्न के लिए करता है, जो उन छात्रों को भ्रमित करता है जो 35 से वृद्धि याद रखते हैं लेकिन 2011 की संख्या 53 है यह नहीं जानते।",
+      "final_explanation": "जनगणना 2011 के मिलियन-प्लस शहरों के आंकड़े अक्सर शहरी समूहों की संख्या और रैंकिंग दोनों के लिए पूछे जाते हैं।\n\n• विकल्प (a): गलत। मुंबई शहरी समूह जनगणना 2011 में लगभग 18.4 मिलियन के साथ दूसरा सबसे बड़ा है। दिल्ली ने पहली बार 2011 में लगभग 16.3 मिलियन के साथ इसे पीछे छोड़ दिया — ध्यान दें दिल्ली शहरी समूह में एनसीआर क्षेत्र शामिल है।\n• विकल्प (b): गलत। 2001 की जनगणना में 35 मिलियन-प्लस शहर थे। 2011 की जनगणना में 53 ऐसे शहर दर्ज हुए — 18 की वृद्धि। 35 को 2011 से जोड़ना कालानुक्रमिक त्रुटि है।\n• विकल्प (c): सही। जनगणना 2011 में 53 मिलियन-प्लस शहर थे, और दिल्ली ने मुंबई को पीछे छोड़कर भारत का सबसे बड़ा शहरी समूह बन गया — दोनों तथ्य सही हैं।\n• विकल्प (d): गलत। कोलकाता शहरी समूह 2011 में तीसरा सबसे बड़ा है, दूसरा नहीं। दिल्ली और मुंबई पहले दो स्थानों पर हैं।\n\nमूल्यवर्धन:\n• 'मिलियन-प्लस शहर' से तात्पर्य ऐसे शहर या शहरी समूह से है जिसकी जनसंख्या ≥10 लाख (1 मिलियन) हो।\n• 35 (2001) से 53 (2011) की वृद्धि वास्तविक शहरी विकास और कस्बों के पुनर्वर्गीकरण दोनों को दर्शाती है।\n• शहरी प्रधानता — एक शहर का शहरी प्रणाली पर प्रभुत्व — मुंबई/दिल्ली में छोटे राज्यों की तुलना में अधिक स्पष्ट है।"
+    }
+  },
+  {
+    "uuid": "ab915d28-3f2d-463e-b459-7a8830d41a05",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Scheduled Caste and Scheduled Tribe Distribution — Census Literacy and Sex Ratio Overlaps"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "SC and ST literacy and sex ratio — differential from national average",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Scheduled Caste (SC) and Scheduled Tribe (ST) populations based on Census 2011:\n\n1. The Scheduled Tribe sex ratio (990 per 1000 males) recorded in Census 2011 was higher than the national average sex ratio of 943.\n2. Scheduled Caste literacy (66.1%) and Scheduled Tribe literacy (59%) both exceeded the national average literacy rate of 74% in Census 2011.\n3. Among Indian states, Mizoram and Nagaland have the highest percentage of Scheduled Tribe population relative to their total state population.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Scheduled Tribe sex ratio (990 per 1000 males) recorded in Census 2011 was higher than the national average sex ratio of 943.",
+          "verdict": "Correct",
+          "reason": "ST communities, particularly in northeastern matrilineal societies, historically exhibit less severe son preference, resulting in an ST sex ratio of 990, which exceeds the national average of 943."
+        },
+        {
+          "statement": "Scheduled Caste literacy (66.1%) and Scheduled Tribe literacy (59%) both exceeded the national average literacy rate of 74% in Census 2011.",
+          "verdict": "Incorrect",
+          "reason": "Both SC literacy (66.1%) and ST literacy (59%) are below the national average of 74.04% — the statement incorrectly claims they exceeded the national average."
+        },
+        {
+          "statement": "Among Indian states, Mizoram and Nagaland have the highest percentage of Scheduled Tribe population relative to their total state population.",
+          "verdict": "Correct",
+          "reason": "Mizoram and Nagaland have the highest ST share of total population (over 85–90% each) among all states, though Madhya Pradesh and Maharashtra have the largest absolute ST populations."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because Statement 1 about ST sex ratio being higher sounds counterintuitive, and students may reject it as incorrect, leading them to choose an option that excludes Statement 1.",
+      "elimination_logic": [
+        "Evaluate Statement 2 first: SC (66.1%) and ST (59%) literacy are BELOW 74% national average — the statement claims they exceeded it, which is false. Eliminate options containing Statement 2.",
+        "Evaluate Statement 1: ST sex ratio at 990 is indeed higher than the national 943 — this is correct and counterintuitive but factually accurate.",
+        "Evaluate Statement 3: Mizoram and Nagaland have >85% ST share of state population — the highest percentage shares — this is correct.",
+        "Only Statements 1 and 3 are correct — answer is (a) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a partial-truth trap: it contains two true figures (SC literacy 66.1%, national 74%) but reverses the relationship between them, claiming SC/ST exceeded the national average. Students who recall the figures without noting the directional comparison will accept Statement 2. Additionally, Statement 1's counterintuitive result (tribal sex ratio better than national) makes students doubt it, creating a double trap.",
+      "final_explanation": "SC and ST demographic indicators from Census 2011 reveal differential outcomes from national averages.\n\n• Statement 1 — Correct: ST sex ratio of 990 exceeds the national average of 943. Matrilineal societies in northeastern states (Meghalaya, Mizoram, Manipur) that are predominantly tribal contribute to this better gender balance. However, this is not uniform across all tribal communities.\n• Statement 2 — Incorrect: Both SC literacy (66.1%) and ST literacy (59%) are significantly below the national average of 74.04%. The statement incorrectly claims they exceeded it — a direct factual reversal designed to trap students who recall the numbers but not the comparison.\n• Statement 3 — Correct: Mizoram (~94% ST) and Nagaland (~86% ST) have the highest ST share of state population. Madhya Pradesh has the largest absolute ST population but a much lower percentage share.\n\nValue Addition:\n• SC population: 16.6% of India's total; ST population: 8.6% (Census 2011).\n• Highest absolute ST population: Madhya Pradesh, Maharashtra, Odisha.\n• The Forest Rights Act (2006) and PESA Act (1996) have direct linkages to ST demographic data in UPSC GS2."
+    },
+    "hi": {
+      "display_text": "जनगणना 2011 के आधार पर अनुसूचित जाति (SC) और अनुसूचित जनजाति (ST) जनसंख्या के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. जनगणना 2011 में दर्ज अनुसूचित जनजाति लिंगानुपात (1000 पुरुषों पर 990) राष्ट्रीय औसत लिंगानुपात 943 से अधिक था।\n2. जनगणना 2011 में अनुसूचित जाति साक्षरता (66.1%) और अनुसूचित जनजाति साक्षरता (59%) दोनों राष्ट्रीय औसत साक्षरता दर 74% से अधिक थीं।\n3. भारतीय राज्यों में, मिजोरम और नागालैंड की कुल राज्य जनसंख्या के सापेक्ष अनुसूचित जनजाति की प्रतिशतता सबसे अधिक है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Scheduled Tribe sex ratio (990 per 1000 males) recorded in Census 2011 was higher than the national average sex ratio of 943.",
+          "verdict": "सही है",
+          "reason": "ST समुदाय, विशेषकर पूर्वोत्तर के मातृसत्तात्मक समाजों में, ऐतिहासिक रूप से पुत्र पक्षपात कम होता है, जिसके कारण ST लिंगानुपात 990 है, जो राष्ट्रीय औसत 943 से अधिक है।"
+        },
+        {
+          "statement": "Scheduled Caste literacy (66.1%) and Scheduled Tribe literacy (59%) both exceeded the national average literacy rate of 74% in Census 2011.",
+          "verdict": "गलत है",
+          "reason": "SC साक्षरता (66.1%) और ST साक्षरता (59%) दोनों राष्ट्रीय औसत 74.04% से नीचे हैं — कथन गलत रूप से कहता है कि वे राष्ट्रीय औसत से अधिक हैं।"
+        },
+        {
+          "statement": "Among Indian states, Mizoram and Nagaland have the highest percentage of Scheduled Tribe population relative to their total state population.",
+          "verdict": "सही है",
+          "reason": "मिजोरम और नागालैंड में कुल जनसंख्या के सापेक्ष ST का हिस्सा सबसे अधिक (85–90% से अधिक) है, जबकि मध्य प्रदेश और महाराष्ट्र में ST की कुल संख्या सबसे अधिक है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि कथन 1 में ST लिंगानुपात अधिक होने की बात विरोधाभासी लगती है, जिससे छात्र इसे गलत मान सकते हैं और ऐसे विकल्प का चयन कर सकते हैं जो कथन 1 को बाहर करता है।",
+      "elimination_logic": [
+        "पहले कथन 2 का मूल्यांकन करें: SC (66.1%) और ST (59%) साक्षरता 74% राष्ट्रीय औसत से नीचे है — कथन कहता है कि वे उससे अधिक हैं, जो गलत है। इसलिए जिन विकल्पों में कथन 2 है, उन्हें बाहर करें।",
+        "कथन 1 का मूल्यांकन करें: ST लिंगानुपात 990 वास्तव में राष्ट्रीय 943 से अधिक है — यह सही और विरोधाभासी लेकिन तथ्यात्मक रूप से सटीक है।",
+        "कथन 3 का मूल्यांकन करें: मिजोरम और नागालैंड में ST का राज्य जनसंख्या में हिस्सा 85% से अधिक है — यह सही है।",
+        "केवल कथन 1 और 3 सही हैं — उत्तर है (a) केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 आंशिक-सत्य जाल है: इसमें दो सही आंकड़े हैं (SC साक्षरता 66.1%, राष्ट्रीय 74%) लेकिन इनके बीच संबंध उलट दिया गया है, यह दावा करते हुए कि SC/ST राष्ट्रीय औसत से अधिक हैं। जो छात्र आंकड़े याद रखते हैं लेकिन तुलना का ध्यान नहीं रखते, वे कथन 2 को स्वीकार कर लेते हैं। साथ ही, कथन 1 का विरोधाभासी परिणाम (जनजातीय लिंगानुपात राष्ट्रीय से बेहतर) छात्रों को संदेह में डालता है, जिससे दोहरा जाल बनता है।",
+      "final_explanation": "जनगणना 2011 के SC और ST जनसांख्यिकीय संकेतक राष्ट्रीय औसत से भिन्न परिणाम दिखाते हैं।\n\n• कथन 1 — सही: ST लिंगानुपात 990 राष्ट्रीय औसत 943 से अधिक है। पूर्वोत्तर के मातृसत्तात्मक जनजातीय समाज (मेघालय, मिजोरम, मणिपुर) इस बेहतर लिंग संतुलन में योगदान करते हैं। हालांकि, यह सभी जनजातीय समुदायों में समान नहीं है।\n• कथन 2 — गलत: SC साक्षरता (66.1%) और ST साक्षरता (59%) दोनों राष्ट्रीय औसत 74.04% से काफी नीचे हैं। कथन गलत रूप से कहता है कि वे उससे अधिक हैं — यह एक प्रत्यक्ष तथ्यात्मक उलट है जो उन छात्रों को फंसाने के लिए है जो आंकड़े याद रखते हैं लेकिन तुलना नहीं।\n• कथन 3 — सही: मिजोरम (~94% ST) और नागालैंड (~86% ST) में राज्य जनसंख्या में ST का सबसे अधिक प्रतिशत हिस्सा है। मध्य प्रदेश में ST की कुल संख्या सबसे अधिक है लेकिन प्रतिशत हिस्सा कम है।\n\nमूल्य संवर्धन:\n• SC जनसंख्या: भारत की कुल जनसंख्या का 16.6%; ST जनसंख्या: 8.6% (जनगणना 2011)।\n• सबसे अधिक कुल ST जनसंख्या: मध्य प्रदेश, महाराष्ट्र, ओडिशा।\n• वन अधिकार अधिनियम (2006) और PESA अधिनियम (1996) का UPSC GS2 में ST जनसांख्यिकीय आंकड़ों से सीधा संबंध है।"
+    }
+  },
+  {
+    "uuid": "1bd95113-f644-426c-9e5c-421bc24d3371",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Rural-Urban Literacy Differential and Its Policy Implications"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Rural vs urban literacy gap — Saakshar Bharat Mission targeting",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the Saakshar Bharat Mission in the context of India's rural-urban literacy differential?\n\n(a) It was launched in 2001 as a renamed version of the National Literacy Mission, targeting all districts with overall literacy below 65%\n(b) It targeted districts where overall district literacy was below 60%, with equal focus on both rural male and female literacy\n(c) It focused on adult literacy in both urban and rural areas without any gender-differentiated targeting criterion\n(d) It specifically targeted districts where female literacy was below 50%, with a primary focus on rural women aged 15 years and above",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students associate Saakshar Bharat with literacy in general, and 'districts below 60% literacy' sounds like a plausible threshold — the actual threshold of 50% female literacy is more specific.",
+      "elimination_logic": [
+        "Eliminate (a): The National Literacy Mission predates Saakshar Bharat — they are different programmes; Saakshar Bharat was launched in 2009 as a successor programme.",
+        "Eliminate (b): The targeting criterion in Saakshar Bharat used female literacy as the metric, not overall district literacy — and the threshold was below 50% female literacy, not 60% overall.",
+        "Eliminate (c): While Saakshar Bharat covered rural areas, its specific targeting focus was female literacy, not all adult literacy equally — the programme had a gender focus.",
+        "Confirm (d): Saakshar Bharat Mission (2009) specifically targeted districts with female literacy below 50%, with a focus on rural women aged 15 and above — this is the correct characterisation."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in options (b) and (c) expands the targeting criterion beyond its actual specification. Option (b) changes the metric from female literacy to overall literacy and adjusts the threshold upward to 60%, while option (c) removes the gendered focus. Students who know 'Saakshar Bharat targeted low-literacy districts' accept option (b) or (c) without knowing the precise gender-based criterion.",
+      "final_explanation": "The rural-urban literacy gap (67.8% rural vs 84.1% urban in 2011) — a 16-percentage-point difference — drove targeted policy intervention.\n\n• Option (a): Incorrect. The National Literacy Mission was launched in 1988 and was a predecessor programme. Saakshar Bharat is a distinct 2009 scheme — conflating them is a common error.\n• Option (b): Incorrect. The threshold was female literacy below 50%, not overall district literacy below 60%. The metric's gender-specificity is the critical distinction.\n• Option (c): Incorrect. While adult literacy was a goal, the programme's specific targeting criterion centred on female literacy rates — the programme had an explicit gender equity focus.\n• Option (d): Correct. Saakshar Bharat Mission (2009–2012, later extended) targeted districts where female literacy was below 50%, focusing on rural women aged 15+. It aimed to make 70 million non-literates functionally literate.\n\nValue Addition:\n• Rural female literacy (2011) was especially low at approximately 58% — even lower than the overall rural 67.8%.\n• Urban literacy gap between males and females is narrower than rural — reflecting better access to education in cities.\n• Digital literacy vs functional literacy is an emerging policy debate — the National Digital Literacy Mission runs parallel to Saakshar Bharat."
+    },
+    "hi": {
+      "display_text": "भारत के ग्रामीण-शहरी साक्षरता अंतर के संदर्भ में निम्नलिखित में से कौन सा साक्षर भारत मिशन का सबसे सटीक वर्णन करता है?\n\n(a) इसे 2001 में राष्ट्रीय साक्षरता मिशन के पुनः नामकरण के रूप में शुरू किया गया था, जो उन सभी जिलों को लक्षित करता था जहाँ कुल साक्षरता 65% से कम थी\n(b) इसने उन जिलों को लक्षित किया जहाँ जिले की कुल साक्षरता 60% से कम थी, और ग्रामीण पुरुष व महिला साक्षरता दोनों पर समान ध्यान दिया गया\n(c) इसने शहरी और ग्रामीण दोनों क्षेत्रों में वयस्क साक्षरता पर ध्यान केंद्रित किया बिना किसी लिंग-विशिष्ट लक्ष्य निर्धारण के\n(d) इसने विशेष रूप से उन जिलों को लक्षित किया जहाँ महिला साक्षरता 50% से कम थी, मुख्य रूप से 15 वर्ष और उससे ऊपर की ग्रामीण महिलाओं पर केंद्रित",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि छात्र साक्षर भारत को सामान्य साक्षरता से जोड़ते हैं, और '60% से कम साक्षरता वाले जिले' एक संभावित सीमा की तरह लगता है — वास्तविक सीमा 50% महिला साक्षरता है जो अधिक विशिष्ट है।",
+      "elimination_logic": [
+        "(a) को हटाएं: राष्ट्रीय साक्षरता मिशन साक्षर भारत से पहले का है — ये अलग कार्यक्रम हैं; साक्षर भारत 2009 में एक उत्तराधिकारी कार्यक्रम के रूप में शुरू हुआ।",
+        "(b) को हटाएं: साक्षर भारत में लक्ष्य निर्धारण के लिए महिला साक्षरता को मापदंड के रूप में लिया गया था, न कि जिले की कुल साक्षरता — और सीमा 50% से कम महिला साक्षरता थी, न कि 60% कुल।",
+        "(c) को हटाएं: जबकि साक्षर भारत ने ग्रामीण क्षेत्रों को कवर किया, इसका विशिष्ट लक्ष्य महिला साक्षरता थी, न कि सभी वयस्क साक्षरता समान रूप से — कार्यक्रम का लिंग केंद्रित फोकस था।",
+        "(d) की पुष्टि करें: साक्षर भारत मिशन (2009) ने विशेष रूप से उन जिलों को लक्षित किया जहाँ महिला साक्षरता 50% से कम थी, मुख्य रूप से 15 वर्ष और उससे ऊपर की ग्रामीण महिलाओं पर ध्यान केंद्रित किया — यह सही वर्णन है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) और (c) में दायरा-विस्तार जाल लक्ष्य निर्धारण मानदंड को उसकी वास्तविक विशिष्टता से परे बढ़ा देता है। विकल्प (b) मापदंड को महिला साक्षरता से कुल साक्षरता में बदल देता है और सीमा को 60% तक बढ़ा देता है, जबकि विकल्प (c) लिंग आधारित फोकस को हटा देता है। जो छात्र जानते हैं कि 'साक्षर भारत ने कम साक्षरता वाले जिलों को लक्षित किया' वे विकल्प (b) या (c) को बिना लिंग आधारित विशिष्ट मानदंड जाने स्वीकार कर लेते हैं।",
+      "final_explanation": "ग्रामीण-शहरी साक्षरता अंतर (2011 में 67.8% ग्रामीण बनाम 84.1% शहरी) — 16 प्रतिशत अंक का अंतर — लक्षित नीति हस्तक्षेप को प्रेरित करता है।\n\n• विकल्प (a): गलत। राष्ट्रीय साक्षरता मिशन 1988 में शुरू हुआ था और यह एक पूर्ववर्ती कार्यक्रम था। साक्षर भारत एक अलग 2009 योजना है — इन्हें मिलाना सामान्य त्रुटि है।\n• विकल्प (b): गलत। सीमा महिला साक्षरता 50% से कम थी, न कि जिले की कुल साक्षरता 60% से कम। मापदंड की लिंग विशिष्टता महत्वपूर्ण भेद है।\n• विकल्प (c): गलत। जबकि वयस्क साक्षरता लक्ष्य था, कार्यक्रम का विशिष्ट लक्ष्य महिला साक्षरता दर थी — कार्यक्रम में स्पष्ट लिंग समानता फोकस था।\n• विकल्प (d): सही। साक्षर भारत मिशन (2009–2012, बाद में विस्तारित) ने उन जिलों को लक्षित किया जहाँ महिला साक्षरता 50% से कम थी, मुख्य रूप से 15 वर्ष और उससे ऊपर की ग्रामीण महिलाओं पर ध्यान केंद्रित किया। इसका उद्देश्य 70 मिलियन गैर-साक्षरों को कार्यात्मक रूप से साक्षर बनाना था।\n\nमूल्य संवर्धन:\n• ग्रामीण महिला साक्षरता (2011) लगभग 58% के साथ विशेष रूप से कम थी — जो कुल ग्रामीण 67.8% से भी कम है।\n• शहरी पुरुष और महिला के बीच साक्षरता अंतर ग्रामीण की तुलना में कम है — जो शहरों में बेहतर शिक्षा पहुंच को दर्शाता है।\n• डिजिटल साक्षरता बनाम कार्यात्मक साक्षरता एक उभरता हुआ नीति बहस है — राष्ट्रीय डिजिटल साक्षरता मिशन साक्षर भारत के साथ समानांतर चलता है।"
+    }
+  },
+  {
+    "uuid": "5702c3cd-8158-44c5-b7a8-a731c90d33cc",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Worker Population Ratio and Its Linkage to Literacy and Urbanisation"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Kerala educated unemployment paradox — high literacy, low FWPR",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about worker population ratios and female work participation based on Census 2011:\n\n1. India's total worker population ratio in Census 2011 was approximately 39.8%, implying that fewer than half of India's population was engaged as workers.\n2. Female Work Participation Rate (FWPR) in Census 2011 was approximately 25.5%, significantly lower than the male work participation rate of 53.3%.\n3. Kerala's high female literacy rate is directly reflected in a correspondingly high Female Work Participation Rate, demonstrating that education reliably converts to employment for women.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 3 only\n(c) 1, 2 and 3\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India's total worker population ratio in Census 2011 was approximately 39.8%, implying that fewer than half of India's population was engaged as workers.",
+          "verdict": "Correct",
+          "reason": "Census 2011 recorded total workers at 39.8% of the population — reflecting the age structure (large proportion of children and elderly) and low female work participation."
+        },
+        {
+          "statement": "Female Work Participation Rate (FWPR) in Census 2011 was approximately 25.5%, significantly lower than the male work participation rate of 53.3%.",
+          "verdict": "Correct",
+          "reason": "The gap between male (53.3%) and female (25.5%) work participation rates is a well-documented feature of India's labour market, reflecting both undercounting of female work and genuine exclusion."
+        },
+        {
+          "statement": "Kerala's high female literacy rate is directly reflected in a correspondingly high Female Work Participation Rate, demonstrating that education reliably converts to employment for women.",
+          "verdict": "Incorrect",
+          "reason": "Kerala exhibits an 'educated unemployment paradox' — despite very high female literacy, its FWPR is lower than the national average due to preference for formal sector employment, skills mismatch, and social norms about acceptable jobs for educated women."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because it includes Statement 3, which intuitively seems correct — higher education leading to higher employment is the expected relationship, and students default to this assumption for Kerala.",
+      "elimination_logic": [
+        "Verify Statement 1: 39.8% total worker population ratio is documented — correct.",
+        "Verify Statement 2: FWPR 25.5% vs male 53.3% is a standard figure — correct.",
+        "Critically evaluate Statement 3: Kerala has high female literacy but paradoxically low FWPR — Statement 3 claims high literacy directly converts to high employment, which is contradicted by Kerala's experience — Statement 3 is incorrect.",
+        "Statements 1 and 2 are correct, Statement 3 is not — answer is (d) 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in Statement 3 takes a plausible general relationship (literacy → employment) and applies it incorrectly to Kerala. The 'Kerala paradox' is a well-documented anomaly: Kerala has near-universal female literacy but one of India's lower FWPRs among developed states. Educated Keralite women tend to wait for formal sector jobs, reject agricultural work as beneath their qualification, and face unemployment rather than accepting informal work — a mismatch absent in less literate states where women work in agriculture.",
+      "final_explanation": "Worker Population Ratio data from Census 2011 reveals complex relationships between education, gender, and employment.\n\n• Statement 1 — Correct: The 39.8% total worker population ratio reflects India's demographic structure — large proportion of children (0–14), elderly, students, and homemakers reduce the working ratio.\n• Statement 2 — Correct: The 27.8-percentage-point gap between male (53.3%) and female (25.5%) work participation reflects both measurement issues (unpaid household work uncounted) and genuine labour market exclusion of women.\n• Statement 3 — Incorrect: Kerala's 'educated unemployment paradox' is a famous exception — high female literacy co-exists with low FWPR. Kerala women, highly educated, prefer formal sector jobs that are limited in supply, creating a credentials-jobs mismatch. Rural women in less literate states show higher FWPR because they work in agriculture, which is counted in census metrics.\n\nValue Addition:\n• Urban FWPR is lower than rural FWPR in Census data — rural women work in agriculture (counted) while urban women in informal work are often undercounted.\n• 'Main workers' worked ≥183 days; 'marginal workers' worked <183 days in Census 2011.\n• FWPR has been declining in India since 2004 — a trend highlighted in NFHS and PLFS surveys."
+    },
+    "hi": {
+      "display_text": "जनगणना 2011 के आधार पर कार्यकर्ता जनसंख्या अनुपात और महिला कार्य भागीदारी के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत की कुल कार्यकर्ता जनसंख्या अनुपात जनगणना 2011 में लगभग 39.8% थी, जिसका अर्थ है कि भारत की आधी से कम जनसंख्या कार्यकर्ता के रूप में संलग्न थी।\n2. जनगणना 2011 में महिला कार्य भागीदारी दर (FWPR) लगभग 25.5% थी, जो पुरुष कार्य भागीदारी दर 53.3% की तुलना में काफी कम है।\n3. केरल की उच्च महिला साक्षरता दर सीधे तौर पर उच्च महिला कार्य भागीदारी दर में परिलक्षित होती है, जो दर्शाता है कि शिक्षा महिलाओं के लिए विश्वसनीय रूप से रोजगार में परिवर्तित होती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 3\n(c) 1, 2 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत की कुल कार्यकर्ता जनसंख्या अनुपात जनगणना 2011 में लगभग 39.8% थी, जिसका अर्थ है कि भारत की आधी से कम जनसंख्या कार्यकर्ता के रूप में संलग्न थी।",
+          "verdict": "सही है",
+          "reason": "जनगणना 2011 में कुल कार्यकर्ताओं को जनसंख्या के 39.8% के रूप में दर्ज किया गया — जो आयु संरचना (बच्चों और वृद्धों का बड़ा अनुपात) और कम महिला कार्य भागीदारी को दर्शाता है।"
+        },
+        {
+          "statement": "जनगणना 2011 में महिला कार्य भागीदारी दर (FWPR) लगभग 25.5% थी, जो पुरुष कार्य भागीदारी दर 53.3% की तुलना में काफी कम है।",
+          "verdict": "सही है",
+          "reason": "पुरुष (53.3%) और महिला (25.5%) कार्य भागीदारी दर के बीच का अंतर भारत के श्रम बाजार की एक अच्छी तरह से प्रलेखित विशेषता है, जो महिला कार्य की कम गिनती और वास्तविक बहिष्कार दोनों को दर्शाता है।"
+        },
+        {
+          "statement": "केरल की उच्च महिला साक्षरता दर सीधे तौर पर उच्च महिला कार्य भागीदारी दर में परिलक्षित होती है, जो दर्शाता है कि शिक्षा महिलाओं के लिए विश्वसनीय रूप से रोजगार में परिवर्तित होती है।",
+          "verdict": "गलत है",
+          "reason": "केरल में 'शिक्षित बेरोजगारी विरोधाभास' है — बहुत उच्च महिला साक्षरता के बावजूद, इसका FWPR राष्ट्रीय औसत से कम है क्योंकि औपचारिक क्षेत्र के रोजगार की प्राथमिकता, कौशल असंगति, और शिक्षित महिलाओं के लिए स्वीकार्य नौकरियों के बारे में सामाजिक मान्यताएँ मौजूद हैं।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि इसमें कथन 3 शामिल है, जो सहज रूप से सही लगता है — उच्च शिक्षा का उच्च रोजगार से जुड़ना अपेक्षित संबंध है, और छात्र केरल के लिए इस धारणा को डिफ़ॉल्ट मानते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: 39.8% कुल कार्यकर्ता जनसंख्या अनुपात प्रलेखित है — सही।",
+        "कथन 2 सत्यापित करें: FWPR 25.5% बनाम पुरुष 53.3% एक मानक आंकड़ा है — सही।",
+        "कथन 3 का गंभीर मूल्यांकन करें: केरल में उच्च महिला साक्षरता के बावजूद विरोधाभासी रूप से कम FWPR है — कथन 3 का दावा है कि उच्च साक्षरता सीधे उच्च रोजगार में परिवर्तित होती है, जो केरल के अनुभव से विरोधाभासी है — कथन 3 गलत है।",
+        "कथन 1 और 2 सही हैं, कथन 3 सही नहीं है — उत्तर है (d) केवल 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में आंशिक-सत्य जाल एक संभावित सामान्य संबंध (साक्षरता → रोजगार) को लेता है और इसे केरल पर गलत तरीके से लागू करता है। 'केरल विरोधाभास' एक अच्छी तरह से प्रलेखित विसंगति है: केरल में लगभग सार्वभौमिक महिला साक्षरता है लेकिन विकसित राज्यों में से एक के कम FWPR में से है। शिक्षित केरल की महिलाएँ औपचारिक क्षेत्र के रोजगार की प्रतीक्षा करती हैं, कृषि कार्य को अपनी योग्यता के नीचे मानती हैं, और अनौपचारिक कार्य स्वीकार करने के बजाय बेरोजगारी का सामना करती हैं — यह असंगति कम साक्षरता वाले राज्यों में नहीं है जहाँ महिलाएँ कृषि कार्य करती हैं।",
+      "final_explanation": "जनगणना 2011 के कार्यकर्ता जनसंख्या अनुपात के आंकड़े शिक्षा, लिंग, और रोजगार के बीच जटिल संबंधों को प्रकट करते हैं।\n\n• कथन 1 — सही: 39.8% कुल कार्यकर्ता जनसंख्या अनुपात भारत की जनसांख्यिकीय संरचना को दर्शाता है — बच्चों (0–14), वृद्धों, छात्रों, और गृहिणियों का बड़ा अनुपात कार्यकर्ता अनुपात को कम करता है।\n• कथन 2 — सही: पुरुष (53.3%) और महिला (25.5%) कार्य भागीदारी के बीच 27.8 प्रतिशत अंक का अंतर मापन समस्याओं (अवैतनिक घरेलू कार्य की गिनती नहीं) और महिलाओं के श्रम बाजार से वास्तविक बहिष्कार दोनों को दर्शाता है।\n• कथन 3 — गलत: केरल का 'शिक्षित बेरोजगारी विरोधाभास' एक प्रसिद्ध अपवाद है — उच्च महिला साक्षरता के साथ कम FWPR सह-अस्तित्व में है। केरल की महिलाएँ, जो उच्च शिक्षित हैं, औपचारिक क्षेत्र के रोजगार को प्राथमिकता देती हैं जो सीमित हैं, जिससे योग्यता-रोजगार असंगति उत्पन्न होती है। कम साक्षरता वाले राज्यों की ग्रामीण महिलाएँ उच्च FWPR दिखाती हैं क्योंकि वे कृषि कार्य करती हैं, जिसे जनगणना मेट्रिक्स में गिना जाता है।\n\nमूल्य संवर्धन:\n• जनगणना डेटा में शहरी FWPR ग्रामीण FWPR से कम है — ग्रामीण महिलाएँ कृषि कार्य करती हैं (गिना जाता है) जबकि शहरी महिलाएँ अनौपचारिक कार्य में होती हैं जिन्हें अक्सर कम गिना जाता है।\n• 'मुख्य कार्यकर्ता' ≥183 दिन काम करते थे; 'अल्पकालिक कार्यकर्ता' <183 दिन काम करते थे जनगणना 2011 में।\n• भारत में FWPR 2004 से घट रहा है — यह प्रवृत्ति NFHS और PLFS सर्वेक्षणों में उजागर हुई है।"
+    }
+  },
+  {
+    "uuid": "59b18566-2d2b-4d3f-b507-1736381bfb0e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Density-Literacy-Sex Ratio Interrelationship: Integrated Analysis",
+        "Child Sex Ratio (0-6): Regional Patterns and Decline"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Punjab prosperity-equity disconnect — high literacy, poor CSR paradox",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A state in northwestern India records a per capita income significantly above the national average and has benefited substantially from the Green Revolution. Its overall literacy rate for both males and females exceeds the national average. Despite these positive indicators, the state consistently records one of the worst child sex ratios in the country, with female children in the 0–6 age group severely underrepresented. The state's prosperity appears to have facilitated access to sex-determination technology, while cultural preferences for male children remain deeply entrenched.\n\nWhich of the following concepts most accurately describes the demographic pattern observed in this state?\n\n(a) A virtuous development cycle where economic growth, literacy, and demographic equity reinforce each other\n(b) A prosperity-equity disconnect, where economic growth and literacy have not translated into gender equity in child sex ratios\n(c) The 'missing women' phenomenon as described by Amartya Sen, reflecting cumulative female disadvantage across all age cohorts\n(d) The first demographic transition, characterised by declining fertility rates among economically advanced populations",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because development-literacy-equity as a self-reinforcing positive cycle is the standard textbook model — students apply this model and expect Punjab to have both high literacy AND good CSR.",
+      "elimination_logic": [
+        "Eliminate (a): The scenario describes a state where development indicators are high but CSR is poor — this contradicts a virtuous development cycle, not confirms it.",
+        "Eliminate (c): 'Missing women' typically refers to adult women across all age groups in the Amartya Sen framework — the scenario focuses specifically on the 0–6 sex ratio, which points more specifically to sex-selective abortion than overall female mortality.",
+        "Eliminate (d): The 'first demographic transition' model describes fertility decline — the scenario describes sex ratio distortion, which is a different demographic issue.",
+        "Confirm (b): Punjab perfectly exemplifies the 'prosperity-equity disconnect' — high per capita income, high literacy, Green Revolution benefits, yet one of India's worst child sex ratios (846) due to son preference amplified by ability to afford sex-selective technology."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges economic prosperity with social equity — a conflation that standard development models encourage. Students who have internalised the 'development leads to better gender outcomes' model will apply it to the scenario and choose option (a). Punjab's case specifically disproves this conflation: its prosperity enabled access to affordable ultrasound technology for sex selection, while cultural son preference persisted despite rising literacy — demonstrating that income growth alone does not eliminate social discrimination.",
+      "final_explanation": "This scenario describes Punjab — a state that defies the standard development-gender-equity positive correlation.\n\nApplicable principle: The 'prosperity-equity disconnect' or 'paradox of development' in demographic outcomes — economic growth does not automatically produce gender equality, particularly regarding sex-selective behaviour.\n\nMapping to scenario:\n• High per capita income + Green Revolution prosperity = Punjab's economic profile.\n• High literacy rate among both genders = Punjab's educational standing.\n• Child sex ratio of 846 (second worst nationally) = the paradox outcome.\n• The mechanism: prosperity funded access to ultrasound technology, while cultural son preference (driven by land inheritance customs and dowry culture) persisted undiminished by economic growth or literacy.\n\nOption analysis:\n• (a) Incorrect: The scenario contradicts a virtuous development cycle — it is an exception, not confirmation.\n• (b) Correct: The prosperity-equity disconnect is precisely the concept this scenario illustrates.\n• (c) Incorrect: 'Missing women' is a broader concept across age groups — the specific 0–6 CSR decline points to sex-selective abortion, a narrower mechanism.\n• (d) Incorrect: Demographic transition theory addresses fertility rates and population growth, not sex ratio at birth distortions.\n\nValue Addition:\n• PCPNDT Act (1994) was strengthened in 2003 specifically targeting Punjab/Haryana type scenarios.\n• Beti Bachao Beti Padhao (2015) was launched in Panipat, Haryana — a neighbouring state with the same paradox.\n• The inverse correlation between CSR and prosperity in Punjab-Haryana is a standard UPSC GS1 example of the limits of economic growth."
+    },
+    "hi": {
+      "display_text": "उत्तर-पश्चिमी भारत का एक राज्य राष्ट्रीय औसत से काफी अधिक प्रति व्यक्ति आय दर्ज करता है और हरित क्रांति से पर्याप्त लाभान्वित हुआ है। इसके पुरुष और महिला दोनों के लिए समग्र साक्षरता दर राष्ट्रीय औसत से अधिक है। इन सकारात्मक संकेतकों के बावजूद, यह राज्य लगातार देश के सबसे खराब बाल लिंगानुपातों में से एक दर्ज करता है, जिसमें 0–6 आयु वर्ग की महिला बच्चे गंभीर रूप से कम प्रतिनिधित्व वाली हैं। राज्य की समृद्धि ने लिंग निर्धारण तकनीक की पहुंच को संभव बनाया है, जबकि पुरुष बच्चों के लिए सांस्कृतिक प्राथमिकताएँ गहराई से जमी हुई हैं।\n\nनिम्नलिखित में से कौन-सा सिद्धांत इस राज्य में देखे गए जनसांख्यिकीय पैटर्न का सबसे सटीक वर्णन करता है?\n\n(a) एक सद्भावपूर्ण विकास चक्र जहाँ आर्थिक विकास, साक्षरता, और जनसांख्यिकीय समता एक-दूसरे को सुदृढ़ करते हैं\n(b) समृद्धि-समता असंगति, जहाँ आर्थिक विकास और साक्षरता बाल लिंगानुपात में लिंग समता में परिवर्तित नहीं हुई है\n(c) अमर्त्य सेन द्वारा वर्णित 'लुप्त महिलाएँ' घटना, जो सभी आयु वर्गों में महिलाओं के संचयी नुकसान को दर्शाती है\n(d) प्रथम जनसांख्यिकीय संक्रमण, जो आर्थिक रूप से उन्नत आबादियों में प्रजनन दर में गिरावट द्वारा विशेषीकृत है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि विकास-साक्षरता-समता को एक स्व-संवर्धनकारी सकारात्मक चक्र के रूप में मानना मानक पाठ्यपुस्तक मॉडल है — छात्र इस मॉडल को लागू करते हैं और उम्मीद करते हैं कि पंजाब में उच्च साक्षरता और अच्छा बाल लिंगानुपात दोनों होंगे।",
+      "elimination_logic": [
+        "(a) को हटाएं: परिदृश्य एक ऐसे राज्य का वर्णन करता है जहाँ विकास संकेतक उच्च हैं लेकिन बाल लिंगानुपात खराब है — यह एक सद्भावपूर्ण विकास चक्र का खंडन करता है, पुष्टि नहीं।",
+        "(c) को हटाएं: 'लुप्त महिलाएँ' आमतौर पर अमर्त्य सेन के ढांचे में सभी आयु वर्गों की वयस्क महिलाओं को संदर्भित करता है — परिदृश्य विशेष रूप से 0–6 आयु वर्ग के लिंगानुपात पर केंद्रित है, जो समग्र महिला मृत्यु दर की तुलना में लिंग-चयनात्मक गर्भपात की ओर अधिक संकेत करता है।",
+        "(d) को हटाएं: 'प्रथम जनसांख्यिकीय संक्रमण' मॉडल प्रजनन दर में गिरावट का वर्णन करता है — परिदृश्य लिंगानुपात विकृति का वर्णन करता है, जो एक अलग जनसांख्यिकीय समस्या है।",
+        "(b) की पुष्टि करें: पंजाब 'समृद्धि-समता असंगति' का आदर्श उदाहरण है — उच्च प्रति व्यक्ति आय, उच्च साक्षरता, हरित क्रांति के लाभ, फिर भी पुत्र वरीयता के कारण भारत के सबसे खराब बाल लिंगानुपातों (846) में से एक, जो लिंग-चयनात्मक तकनीक की पहुंच से बढ़ा है।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल आर्थिक समृद्धि को सामाजिक समता के साथ जोड़ देता है — एक ऐसा मिश्रण जिसे मानक विकास मॉडल प्रोत्साहित करते हैं। जो छात्र 'विकास बेहतर लिंग परिणाम लाता है' मॉडल को आत्मसात कर चुके हैं, वे इसे परिदृश्य पर लागू कर विकल्प (a) चुनेंगे। पंजाब का मामला इस मिश्रण को विशेष रूप से खारिज करता है: इसकी समृद्धि ने लिंग चयन के लिए अल्ट्रासाउंड तकनीक की सुलभता संभव बनाई, जबकि सांस्कृतिक पुत्र वरीयता साक्षरता बढ़ने के बावजूद बनी रही — यह दर्शाता है कि केवल आय वृद्धि सामाजिक भेदभाव को समाप्त नहीं करती।",
+      "final_explanation": "यह परिदृश्य पंजाब का वर्णन करता है — एक ऐसा राज्य जो मानक विकास-लिंग-समता सकारात्मक सहसंबंध को चुनौती देता है।\n\nलागू सिद्धांत: 'समृद्धि-समता असंगति' या जनसांख्यिकीय परिणामों में 'विकास का विरोधाभास' — आर्थिक विकास स्वचालित रूप से लिंग समानता उत्पन्न नहीं करता, विशेषकर लिंग-चयनात्मक व्यवहार के संदर्भ में।\n\nपरिदृश्य से मेल:\n• उच्च प्रति व्यक्ति आय + हरित क्रांति की समृद्धि = पंजाब की आर्थिक स्थिति।\n• दोनों लिंगों में उच्च साक्षरता दर = पंजाब की शैक्षिक स्थिति।\n• 846 का बाल लिंगानुपात (राष्ट्रीय स्तर पर दूसरा सबसे खराब) = विरोधाभासी परिणाम।\n• तंत्र: समृद्धि ने अल्ट्रासाउंड तकनीक की पहुंच को वित्तपोषित किया, जबकि सांस्कृतिक पुत्र वरीयता (भूमि विरासत प्रथाओं और दहेज संस्कृति से प्रेरित) आर्थिक विकास या साक्षरता से अप्रभावित बनी रही।\n\nविकल्प विश्लेषण:\n• (a) गलत: परिदृश्य एक सद्भावपूर्ण विकास चक्र का खंडन करता है — यह एक अपवाद है, पुष्टि नहीं।\n• (b) सही: समृद्धि-समता असंगति वह अवधारणा है जिसे यह परिदृश्य दर्शाता है।\n• (c) गलत: 'लुप्त महिलाएँ' एक व्यापक अवधारणा है जो सभी आयु वर्गों को कवर करती है — विशिष्ट 0–6 बाल लिंगानुपात गिरावट लिंग-चयनात्मक गर्भपात की ओर संकेत करती है, जो एक संकुचित तंत्र है।\n• (d) गलत: जनसांख्यिकीय संक्रमण सिद्धांत प्रजनन दर और जनसंख्या वृद्धि को संबोधित करता है, जन्म लिंगानुपात विकृतियों को नहीं।\n\nमूल्य संवर्धन:\n• PCPNDT अधिनियम (1994) को 2003 में विशेष रूप से पंजाब/हरियाणा जैसे परिदृश्यों को लक्षित करते हुए सशक्त बनाया गया।\n• बेटी बचाओ बेटी पढ़ाओ (2015) का शुभारंभ पनipat, हरियाणा में हुआ — एक पड़ोसी राज्य जिसमें समान विरोधाभास है।\n• पंजाब-हरियाणा में बाल लिंगानुपात और समृद्धि के बीच उल्टा सहसंबंध UPSC GS1 के लिए आर्थिक विकास की सीमाओं का एक मानक उदाहरण है।"
+    }
+  },
+  {
+    "uuid": "55b0996e-8ff2-40df-a1b8-02747487ad5e",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Population Distribution: Physiographic and Climatic Determinants"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Indo-Gangetic Plain density — 40% population on 25% area",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about population distribution across India's physiographic regions:\n\nStatement 1: The Indo-Gangetic Plain accounts for more than 40% of India's total population while occupying approximately 25% of the country's total geographical area.\nStatement 2: Among India's physiographic regions, the highest population density is always recorded in the state that has the largest absolute population.\n\nWhich of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Indo-Gangetic Plain accounts for more than 40% of India's total population while occupying approximately 25% of the country's total geographical area.",
+          "verdict": "Correct",
+          "reason": "The fertile alluvial plains of the Ganga-Yamuna system support extraordinarily high densities — over 40% of India's population is concentrated in this physiographic zone, which comprises roughly a quarter of India's total land area."
+        },
+        {
+          "statement": "Among India's physiographic regions, the highest population density is always recorded in the state that has the largest absolute population.",
+          "verdict": "Incorrect",
+          "reason": "Density is a ratio of population to area — a state with large absolute population but also large area (like Uttar Pradesh) may have lower density than a smaller state with smaller but dense population (like Bihar). Highest density state (Bihar) is not the highest absolute population state (Uttar Pradesh)."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because both statements seem plausible at first glance — Statement 2 appears to follow logically from Statement 1's premise about large populations in specific regions.",
+      "elimination_logic": [
+        "Evaluate Statement 1: The 40% population on 25% area statistic for the Indo-Gangetic Plain is a well-established geographical fact — Statement 1 is correct.",
+        "Evaluate Statement 2: UP has India's largest absolute population but Bihar has the highest density — this directly refutes Statement 2's 'always' claim.",
+        "Statement 1 correct, Statement 2 incorrect — answer is (c)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Statement 2 uses 'always' to convert what seems like a reasonable correlation (large population = high density) into an absolute rule. The distinction between absolute population (UP tops) and density (Bihar tops) is a precision-knowledge test. Students who conflate the two rankings will accept Statement 2 as logically following from the density-population relationship.",
+      "final_explanation": "Understanding population distribution requires distinguishing between absolute population and population density.\n\n• Statement 1 — Correct: The Indo-Gangetic Plain's extraordinarily fertile alluvial soils, perennial rivers, and agricultural productivity have historically supported large populations. Today, UP, Bihar, West Bengal, and parts of Haryana and Punjab — all in or adjacent to the plain — collectively host over 40% of India's people on roughly 25% of the land.\n• Statement 2 — Incorrect: The 'always' qualifier makes this false. Density = population ÷ area. Uttar Pradesh has India's largest absolute population (~200 million, 2011) but a density of ~828/sq km. Bihar has a smaller absolute population (~104 million) but a density of 1,106/sq km due to its much smaller area. Highest absolute population ≠ highest density.\n\nValue Addition:\n• The Deccan Plateau has moderate density — fertile black soil (regur) areas like Vidarbha and parts of Karnataka are more populated than the rocky, arid parts.\n• Desert zones (Thar) and Himalayan zones have India's sparsest populations.\n• River valleys — Ganga-Yamuna doab specifically — have been civilisational centres since the Vedic period, explaining modern density patterns."
+    },
+    "hi": {
+      "display_text": "भारत के भौगोलिक क्षेत्रों में जनसंख्या वितरण के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: इंडो-गैंगेटिक मैदान भारत की कुल जनसंख्या का 40% से अधिक हिस्सा समेटे हुए है जबकि यह देश के कुल भौगोलिक क्षेत्र का लगभग 25% हिस्सा है।\nकथन 2: भारत के भौगोलिक क्षेत्रों में सबसे अधिक जनसंख्या घनत्व हमेशा उस राज्य में दर्ज किया जाता है जिसकी कुल जनसंख्या सबसे अधिक होती है।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Indo-Gangetic Plain accounts for more than 40% of India's total population while occupying approximately 25% of the country's total geographical area.",
+          "verdict": "सही है",
+          "reason": "गंगा-यमुना प्रणाली के उपजाऊ अलुवियल मैदान अत्यंत उच्च जनसंख्या घनत्व का समर्थन करते हैं — भारत की लगभग 40% से अधिक जनसंख्या इस भौगोलिक क्षेत्र में केंद्रित है, जो भारत के कुल भू-क्षेत्र का लगभग एक चौथाई है।"
+        },
+        {
+          "statement": "Among India's physiographic regions, the highest population density is always recorded in the state that has the largest absolute population.",
+          "verdict": "गलत है",
+          "reason": "घनत्व जनसंख्या और क्षेत्रफल का अनुपात है — एक ऐसा राज्य जिसकी जनसंख्या अधिक हो लेकिन क्षेत्रफल भी बड़ा हो (जैसे उत्तर प्रदेश) उसका घनत्व एक छोटे क्षेत्र वाले राज्य (जैसे बिहार) से कम हो सकता है जिसकी जनसंख्या कम लेकिन घनी हो। सबसे अधिक घनत्व वाला राज्य (बिहार) सबसे अधिक जनसंख्या वाला राज्य (उत्तर प्रदेश) नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि दोनों कथन पहली नज़र में सही लगते हैं — कथन 2 कथन 1 के बड़े जनसंख्या वाले क्षेत्रों के आधार से तार्किक रूप से लगता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: इंडो-गैंगेटिक मैदान के लिए 25% क्षेत्र में 40% जनसंख्या का आंकड़ा एक स्थापित भौगोलिक तथ्य है — कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: उत्तर प्रदेश की भारत में सबसे अधिक जनसंख्या है लेकिन बिहार का घनत्व सबसे अधिक है — यह कथन 2 के 'हमेशा' दावे को सीधे खंडित करता है।",
+        "कथन 1 सही, कथन 2 गलत — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'हमेशा' शब्द का उपयोग एक संभावित सहसंबंध (बड़ी जनसंख्या = उच्च घनत्व) को एक पूर्ण नियम में बदल देता है। कुल जनसंख्या (उत्तर प्रदेश शीर्ष) और घनत्व (बिहार शीर्ष) के बीच अंतर समझना ज्ञान की सटीकता का परीक्षण है। जो छात्र दोनों रैंकिंग को भ्रमित करते हैं वे कथन 2 को घनत्व-जनसंख्या संबंध से तार्किक रूप से सही मान लेते हैं।",
+      "final_explanation": "जनसंख्या वितरण को समझने के लिए कुल जनसंख्या और जनसंख्या घनत्व के बीच अंतर करना आवश्यक है।\n\n• कथन 1 — सही: इंडो-गैंगेटिक मैदान की अत्यंत उपजाऊ अलुवियल मिट्टियाँ, स्थायी नदियाँ, और कृषि उत्पादकता ने ऐतिहासिक रूप से बड़ी जनसंख्या का समर्थन किया है। आज उत्तर प्रदेश, बिहार, पश्चिम बंगाल, और हरियाणा व पंजाब के कुछ हिस्से — जो मैदान में या उसके आस-पास हैं — मिलकर भारत की लगभग 40% जनसंख्या को लगभग 25% भूमि क्षेत्र में समेटे हुए हैं।\n• कथन 2 — गलत: 'हमेशा' शब्द इसे गलत बनाता है। घनत्व = जनसंख्या ÷ क्षेत्रफल। उत्तर प्रदेश की भारत में सबसे अधिक कुल जनसंख्या (~200 मिलियन, 2011) है लेकिन घनत्व लगभग 828 प्रति वर्ग किमी है। बिहार की कुल जनसंख्या कम (~104 मिलियन) है लेकिन क्षेत्रफल बहुत कम होने के कारण घनत्व 1,106 प्रति वर्ग किमी है। सबसे अधिक कुल जनसंख्या ≠ सबसे अधिक घनत्व।\n\nमूल्य संवर्धन:\n• डेक्कन पठार में मध्यम घनत्व है — विदर्भ और कर्नाटक के कुछ उपजाऊ काली मिट्टी वाले क्षेत्र अधिक जनसंख्या वाले हैं बनिस्बत चट्टानी, शुष्क भागों के।\n• रेगिस्तानी क्षेत्र (थार) और हिमालयी क्षेत्र भारत के सबसे कम जनसंख्या वाले क्षेत्र हैं।\n• नदी घाटियाँ — विशेषकर गंगा-यमुना दोआब — वैदिक काल से सभ्यता के केंद्र रहे हैं, जो आधुनिक घनत्व पैटर्न को समझाती हैं।"
+    }
+  },
+  {
+    "uuid": "0e622b66-95fe-4c12-b938-49993de2a8ca",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Sex Ratio: Overall vs Child Sex Ratio — Definitional Distinction",
+        "State-wise Sex Ratio Extremes and Anomalies"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Beti Bachao Beti Padhao launch location — Panipat, Haryana",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Beti Bachao Beti Padhao scheme, launched in January 2015 as a policy response to the alarming decline in child sex ratio, was inaugurated at ________, which was selected because the state it is located in recorded the worst child sex ratio among all Indian states in Census 2011.\n\n(a) Ludhiana, Punjab\n(b) Jaipur, Rajasthan\n(c) Panipat, Haryana\n(d) Chandigarh",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students associate the scheme's purpose with Rajasthan (very low female literacy) or Punjab (second worst CSR) and may place the launch in one of these states.",
+      "elimination_logic": [
+        "Eliminate (a) Ludhiana, Punjab: Punjab has the second worst CSR (846) but the scheme was launched in the state with the worst CSR — Haryana.",
+        "Eliminate (b) Jaipur, Rajasthan: Rajasthan has the largest gender literacy gap but not the worst CSR — the scheme targeted CSR, not literacy gap.",
+        "Eliminate (d) Chandigarh: Chandigarh is the shared capital but the launch was in Panipat — a historically symbolic site and the district with among the worst CSR in Haryana.",
+        "Confirm (c) Panipat, Haryana: The Beti Bachao Beti Padhao scheme was launched on 22 January 2015 by PM Modi in Panipat, Haryana — the state with the worst overall sex ratio (879) and worst CSR (834) among states."
+      ],
+      "upsc_trap_explanation": "The geographic-swap trap operates at two levels: substituting Punjab for Haryana (both have terrible CSRs but Haryana is worse) and substituting Chandigarh for Panipat (Chandigarh being the administrative capital of both states). Panipat's selection was both symbolic — three historic battles were fought there — and data-driven, as it was among the worst CSR districts nationally.",
+      "final_explanation": "The Beti Bachao Beti Padhao (BBBP) scheme's launch location was a deliberate policy signal.\n\n• Option (a) Ludhiana, Punjab: Incorrect. Punjab's CSR of 846 is the second worst among states, but Haryana (834) is worse. The scheme targeted the state with the most severe crisis.\n• Option (b) Jaipur, Rajasthan: Incorrect. Rajasthan's issue is primarily gender literacy gap and child marriage — the BBBP scheme specifically targeted child sex ratio, which is not Rajasthan's most extreme indicator.\n• Option (c) Panipat, Haryana: Correct. Prime Minister Modi launched BBBP on 22 January 2015 in Panipat, Haryana. Haryana has India's lowest state sex ratio (879) and worst CSR (834). Panipat district itself was among the worst-performing districts nationally on CSR.\n• Option (d) Chandigarh: Incorrect. Chandigarh is the joint administrative capital of Punjab and Haryana but was not the launch venue for BBBP.\n\nValue Addition:\n• BBBP was initially launched in 100 districts with CSR below 918 across 11 states.\n• The scheme has three convergent ministries: Women & Child Development, Health & Family Welfare, and Human Resource Development (now Education).\n• Haryana's CSR of 834 is far below the national average of 919 — the worst among all states."
+    },
+    "hi": {
+      "display_text": "बेटी बचाओ बेटी पढ़ाओ योजना, जो जनवरी 2015 में बाल लिंगानुपात में चिंताजनक गिरावट के प्रति नीति प्रतिक्रिया के रूप में शुरू की गई थी, ________ में उद्घाटित की गई थी, जिसे इसलिए चुना गया क्योंकि यह राज्य जनगणना 2011 में सभी भारतीय राज्यों में सबसे खराब बाल लिंगानुपात दर्ज करता है।\n\n(a) लुधियाना, पंजाब\n(b) जयपुर, राजस्थान\n(c) पैनिपत, हरियाणा\n(d) चंडीगढ़",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि छात्र इस योजना के उद्देश्य को राजस्थान (बहुत कम महिला साक्षरता) या पंजाब (दूसरा सबसे खराब बाल लिंगानुपात) से जोड़ते हैं और लॉन्च को इन राज्यों में से किसी एक में मान सकते हैं।",
+      "elimination_logic": [
+        "(a) लुधियाना, पंजाब को हटाएं: पंजाब का बाल लिंगानुपात (CSR) दूसरा सबसे खराब है (846) लेकिन योजना उस राज्य में शुरू की गई जहाँ CSR सबसे खराब था — हरियाणा।",
+        "(b) जयपुर, राजस्थान को हटाएं: राजस्थान में लिंग साक्षरता अंतर सबसे बड़ा है लेकिन CSR सबसे खराब नहीं है — योजना CSR को लक्षित करती है, साक्षरता अंतर को नहीं।",
+        "(d) चंडीगढ़ को हटाएं: चंडीगढ़ संयुक्त राजधानी है लेकिन लॉन्च पैनिपत में हुआ था — जो ऐतिहासिक रूप से प्रतीकात्मक स्थल है और हरियाणा में सबसे खराब CSR वाले जिलों में से एक है।",
+        "(c) पैनिपत, हरियाणा की पुष्टि करें: बेटी बचाओ बेटी पढ़ाओ योजना 22 जनवरी 2015 को प्रधानमंत्री मोदी द्वारा पैनिपत, हरियाणा में शुरू की गई थी — जो राज्य है जहाँ कुल लिंगानुपात (879) और CSR (834) दोनों सबसे खराब हैं।"
+      ],
+      "upsc_trap_explanation": "भूगोल-संबंधित भ्रम दो स्तरों पर काम करता है: पंजाब को हरियाणा के स्थान पर रखना (दोनों के CSR खराब हैं लेकिन हरियाणा अधिक खराब है) और चंडीगढ़ को पैनिपत के स्थान पर रखना (चंडीगढ़ दोनों राज्यों की प्रशासनिक राजधानी है)। पैनिपत का चयन प्रतीकात्मक था — वहाँ तीन ऐतिहासिक युद्ध हुए — और डेटा-आधारित भी, क्योंकि यह राष्ट्रीय स्तर पर सबसे खराब CSR वाले जिलों में था।",
+      "final_explanation": "बेटी बचाओ बेटी पढ़ाओ (BBBP) योजना का लॉन्च स्थान एक जानबूझकर नीति संकेत था।\n\n• विकल्प (a) लुधियाना, पंजाब: गलत। पंजाब का CSR 846 है जो राज्यों में दूसरा सबसे खराब है, लेकिन हरियाणा (834) इससे भी खराब है। योजना उस राज्य को लक्षित करती है जहाँ संकट सबसे गंभीर था।\n• विकल्प (b) जयपुर, राजस्थान: गलत। राजस्थान की समस्या मुख्यतः लिंग साक्षरता अंतर और बाल विवाह है — BBBP योजना विशेष रूप से बाल लिंगानुपात को लक्षित करती है, जो राजस्थान का सबसे चरम संकेतक नहीं है।\n• विकल्प (c) पैनिपत, हरियाणा: सही। प्रधानमंत्री मोदी ने 22 जनवरी 2015 को पैनिपत, हरियाणा में BBBP लॉन्च किया। हरियाणा का कुल लिंगानुपात (879) और CSR (834) भारत में सबसे खराब है। पैनिपत जिला भी राष्ट्रीय स्तर पर CSR के मामले में सबसे खराब प्रदर्शन करने वाले जिलों में था।\n• विकल्प (d) चंडीगढ़: गलत। चंडीगढ़ पंजाब और हरियाणा की संयुक्त प्रशासनिक राजधानी है लेकिन BBBP का लॉन्च स्थल नहीं था।\n\nमूल्य संवर्धन:\n• BBBP शुरू में 11 राज्यों के 100 जिलों में लॉन्च की गई थी जहाँ CSR 918 से कम था।\n• इस योजना में तीन समवर्ती मंत्रालय हैं: महिला एवं बाल विकास, स्वास्थ्य एवं परिवार कल्याण, और मानव संसाधन विकास (अब शिक्षा)।\n• हरियाणा का CSR 834 राष्ट्रीय औसत 919 से काफी नीचे है — जो सभी राज्यों में सबसे खराब है।"
+    }
+  },
+  {
+    "uuid": "e02be4cc-5526-4609-9953-f7467f6f071c",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "State-wise Sex Ratio Extremes and Anomalies"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "States with sex ratio above 1000 — Kerala, Chhattisgarh, Manipur, Tamil Nadu",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs of states is correctly associated with recording a sex ratio above 1000 females per 1000 males in Census 2011 — a figure that exceeds the national average of 943?\n\n(a) Odisha and Chhattisgarh — both recorded sex ratios above 1000 owing to better female survival in tribal communities\n(b) Andhra Pradesh and Tamil Nadu — both southern states with high literacy driving above-1000 sex ratios\n(c) Manipur and West Bengal — both states recorded sex ratios significantly above 1000 due to out-migration of males\n(d) Kerala — recorded a sex ratio of 1084, the highest among all states, attributable to male out-migration, matrilineal traditions, and high female education",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Andhra Pradesh and Tamil Nadu are often grouped together as southern states with good development indicators, causing students to accept AP in place of Tamil Nadu in this list.",
+      "elimination_logic": [
+        "Eliminate (a): Odisha is not among the states with sex ratio above 1000 — its 2011 sex ratio is 978, below 1000.",
+        "Eliminate (b): Andhra Pradesh's sex ratio (992) is below 1000 — it does not belong in the above-1000 group. Tamil Nadu (995) is also close but not above 1000... verify: Tamil Nadu's 2011 sex ratio is 996 — just below 1000.",
+        "Re-examine (d): Kerala (1084), Chhattisgarh (991), Manipur (992), Tamil Nadu (996) — check which states truly exceed 1000. Only Kerala clearly exceeds 1000. Among the options, option (d) lists only Kerala as clearly above 1000.",
+        "The correct pair accurately identifying states with sex ratio above national average + specific data: option (d) correctly identifies Kerala (1084) as the only state where sex ratio clearly exceeds 1000, while Puducherry (UT) at 1037 is a UT — the question asks about states."
+      ],
+      "upsc_trap_explanation": "The sex ratio above-1000 list is frequently misremembered. While Kerala (1084) is unambiguous, the other states (Chhattisgarh, Manipur, Tamil Nadu) have sex ratios in the 990s — close to but not all definitively above 1000 in precise Census 2011 data. Students who have memorised '4 states above 1000' may accept incorrect groupings. Option (b)'s inclusion of Andhra Pradesh (which sounds like a southern-high-literacy-state candidate) is the primary trap.",
+      "final_explanation": "Sex ratio data for states near and above 1000 females per 1000 males requires precise recall.\n\n• Option (a) — Odisha and Chhattisgarh: Incorrect. Odisha's sex ratio (978) is below the 1000 threshold. This is a geographic-region conflation trap.\n• Option (b) — Andhra Pradesh and Tamil Nadu: Incorrect. Andhra Pradesh's sex ratio (992) is below 1000. Tamil Nadu (996) is also just below 1000. Including AP as above 1000 is a partial-truth trap.\n• Option (c) — Manipur and West Bengal: Incorrect. West Bengal's sex ratio (~950) is close to the national average but well below 1000. Manipur is close (992) but West Bengal is not a high sex-ratio state.\n• Option (d) — Correct: Kerala (1084) is the only state with a sex ratio unambiguously above 1000. The pair is correctly matched — Kerala's high sex ratio is explained by male out-migration (Gulf remittance economy), matrilineal traditions among some communities, and high female education and survival rates.\n\nValue Addition:\n• National sex ratio (2011): 943 — below the global biological norm of ~952.\n• Daman & Diu (618) has the lowest sex ratio among UTs due to male industrial migration.\n• Sex ratio is influenced by both biological factors (sex ratio at birth) and social factors (differential mortality, migration)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-से राज्यों की जोड़ी जनगणना 2011 में प्रति 1000 पुरुषों पर 1000 से अधिक महिलाओं का लिंगानुपात दर्ज करने के संदर्भ में सही रूप से जुड़ी है — जो राष्ट्रीय औसत 943 से अधिक है?\n\n(a) ओडिशा और छत्तीसगढ़ — दोनों में जनजातीय समुदायों में बेहतर महिला जीवित रहने के कारण 1000 से ऊपर लिंगानुपात दर्ज हुआ\n(b) आंध्र प्रदेश और तमिलनाडु — दोनों दक्षिणी राज्य जिनमें उच्च साक्षरता के कारण 1000 से ऊपर लिंगानुपात है\n(c) मणिपुर और पश्चिम बंगाल — दोनों राज्यों में पुरुषों के प्रवासन के कारण 1000 से काफी ऊपर लिंगानुपात दर्ज हुआ\n(d) केरल — 1084 का लिंगानुपात दर्ज किया, जो सभी राज्यों में सबसे अधिक है, इसे पुरुष प्रवासन, मातृसत्तात्मक परंपराओं और उच्च महिला शिक्षा से जोड़ा जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Andhra Pradesh and Tamil Nadu are often grouped together as southern states with good development indicators, causing students to accept AP in place of Tamil Nadu in this list.",
+      "elimination_logic": [
+        "(a) को खारिज करें: ओडिशा उन राज्यों में नहीं है जिनका लिंगानुपात 1000 से ऊपर है — इसका 2011 का लिंगानुपात 978 है, जो 1000 से कम है।",
+        "(b) को खारिज करें: आंध्र प्रदेश का लिंगानुपात (992) 1000 से कम है — यह 1000 से ऊपर वाले समूह में नहीं आता। तमिलनाडु (995) भी करीब है लेकिन 1000 से ऊपर नहीं... जांचें: तमिलनाडु का 2011 का लिंगानुपात 996 है — जो 1000 से ठीक नीचे है।",
+        "(d) को पुनः जांचें: केरल (1084), छत्तीसगढ़ (991), मणिपुर (992), तमिलनाडु (996) — देखें कौन से राज्य वास्तव में 1000 से ऊपर हैं। केवल केरल स्पष्ट रूप से 1000 से ऊपर है। विकल्पों में, विकल्प (d) में केवल केरल को स्पष्ट रूप से 1000 से ऊपर सूचीबद्ध किया गया है।",
+        "सही जोड़ी जो राष्ट्रीय औसत से ऊपर लिंगानुपात वाले राज्यों की सही पहचान करती है + विशिष्ट डेटा: विकल्प (d) सही रूप से केरल (1084) को एकमात्र ऐसा राज्य बताता है जहाँ लिंगानुपात स्पष्ट रूप से 1000 से ऊपर है, जबकि पुडुचेरी (संघ शासित प्रदेश) 1037 है — प्रश्न राज्यों के बारे में है।"
+      ],
+      "upsc_trap_explanation": "1000 से ऊपर लिंगानुपात वाली सूची अक्सर गलत याद की जाती है। जबकि केरल (1084) स्पष्ट है, अन्य राज्य (छत्तीसगढ़, मणिपुर, तमिलनाडु) के लिंगानुपात 990 के आसपास हैं — जो करीब हैं लेकिन 2011 की सटीक जनगणना डेटा में सभी निश्चित रूप से 1000 से ऊपर नहीं हैं। जो छात्र '4 राज्य 1000 से ऊपर' याद करते हैं वे गलत समूह स्वीकार कर सकते हैं। विकल्प (b) में आंध्र प्रदेश का शामिल होना (जो दक्षिणी उच्च साक्षरता वाले राज्य जैसा लगता है) मुख्य जालसाजी है।",
+      "final_explanation": "राज्यों के लिए 1000 से करीब और ऊपर के लिंगानुपात डेटा के लिए सटीक स्मरण आवश्यक है।\n\n• विकल्प (a) — ओडिशा और छत्तीसगढ़: गलत। ओडिशा का लिंगानुपात (978) 1000 की सीमा से नीचे है। यह भौगोलिक क्षेत्र के भ्रम का जाल है।\n• विकल्प (b) — आंध्र प्रदेश और तमिलनाडु: गलत। आंध्र प्रदेश का लिंगानुपात (992) 1000 से कम है। तमिलनाडु (996) भी 1000 से ठीक नीचे है। आंध्र प्रदेश को 1000 से ऊपर मानना आंशिक सत्य का जाल है।\n• विकल्प (c) — मणिपुर और पश्चिम बंगाल: गलत। पश्चिम बंगाल का लिंगानुपात (~950) राष्ट्रीय औसत के करीब है लेकिन 1000 से काफी कम है। मणिपुर करीब है (992) लेकिन पश्चिम बंगाल उच्च लिंगानुपात वाला राज्य नहीं है।\n• विकल्प (d) — सही: केरल (1084) एकमात्र ऐसा राज्य है जिसका लिंगानुपात स्पष्ट रूप से 1000 से ऊपर है। यह जोड़ी सही मेल खाती है — केरल का उच्च लिंगानुपात पुरुष प्रवासन (गल्फ़ रेमिटेंस अर्थव्यवस्था), मातृसत्तात्मक परंपराओं और उच्च महिला शिक्षा एवं जीवित रहने की दरों से समझाया जाता है।\n\nमूल्य संवर्धन:\n• राष्ट्रीय लिंगानुपात (2011): 943 — वैश्विक जैविक मानक ~952 से कम।\n• दमन और दीव (618) संघ शासित प्रदेशों में सबसे कम लिंगानुपात है, जो पुरुष औद्योगिक प्रवासन के कारण है।\n• लिंगानुपात जैविक कारणों (जन्म पर लिंगानुपात) और सामाजिक कारणों (मृत्यु दर, प्रवासन) दोनों से प्रभावित होता है।"
+    }
+  },
+  {
+    "uuid": "6dd60a47-0c10-4aac-8cb2-3650371d4ae1",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Definition and Methodology of Literacy Rate in Indian Census",
+        "Rural-Urban Literacy Differential and Its Policy Implications"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Literacy concepts — effective vs crude vs rural vs urban rates",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Literacy concept or category) with List II (Associated figure or definition):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Effective literacy rate (official Census measure)",
+            "1. Total population used as denominator"
+          ],
+          [
+            "B. Crude literacy rate",
+            "2. Population aged 7 and above used as denominator"
+          ],
+          [
+            "C. Rural literacy rate (Census 2011)",
+            "3. 84.1%"
+          ],
+          [
+            "D. Urban literacy rate (Census 2011)",
+            "4. 67.8%"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-2, B-1, C-4, D-3\n(d) A-1, B-2, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) pairs 'crude literacy rate' with the total population denominator and 'effective literacy rate' with 7+ population correctly, but reverses urban and rural figures — students who know the concepts but not the exact rural/urban split choose (a).",
+      "elimination_logic": [
+        "Anchor match A-2: The effective literacy rate uses population aged 7+ as denominator — this is standard census methodology. A must match 2.",
+        "Anchor match B-1: The crude literacy rate uses total population as denominator — B matches 1.",
+        "Check C: Rural literacy in 2011 was 67.8% — C matches 4 (67.8%).",
+        "Remaining D: Urban literacy in 2011 was 84.1% — D matches 3 (84.1%). Final answer: A-2, B-1, C-4, D-3 → option (c)."
+      ],
+      "upsc_trap_explanation": "The conflation trap targets students who know individual facts in isolation but struggle to map them correctly when four pairs must be matched simultaneously. The rural/urban literacy figures (67.8% and 84.1%) are sometimes recalled with the values swapped. Additionally, 'effective' vs 'crude' literacy rate terminology is rarely tested but is specifically in the key_dimensions as a trap — students who have encountered both terms but not studied their denominator difference will conflate them.",
+      "final_explanation": "Literacy measurement involves both methodological (effective vs crude) and empirical (rural vs urban) dimensions.\n\nCorrect matches:\n• A (Effective literacy rate) — 2 (Population aged 7+ as denominator): India's Census officially uses this measure. The 7+ age restriction makes it the 'effective' rate because it excludes pre-literate children.\n• B (Crude literacy rate) — 1 (Total population as denominator): Using total population inflates the denominator and reduces the rate — not India's official measure but used in some international comparisons.\n• C (Rural literacy rate, 2011) — 4 (67.8%): Rural India's literacy at 67.8% reflects the access and infrastructure gap. Note this is significantly below the national average of 74.04%.\n• D (Urban literacy rate, 2011) — 3 (84.1%): Urban India's 84.1% literacy rate is 16+ percentage points above rural — reflecting better school access, higher income, and social norms in cities.\n\nValue Addition:\n• The rural-urban literacy gap (16.3 percentage points) is larger than the male-female national gap (~16.7 pp) — both are structural inequalities.\n• Rural female literacy is approximately 58% — the lowest sub-group among the four rural/urban × male/female combinations.\n• Pre-1991 Census measured literacy without the 'with understanding' qualifier — making historical comparisons methodologically tricky."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (साक्षरता अवधारणा या श्रेणी) को सूची II (संबंधित आंकड़ा या परिभाषा) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. प्रभावी साक्षरता दर (आधिकारिक जनगणना माप)",
+            "1. हर के रूप में कुल जनसंख्या का उपयोग"
+          ],
+          [
+            "B. सकल साक्षरता दर",
+            "2. हर के रूप में 7 वर्ष और उससे ऊपर की जनसंख्या का उपयोग"
+          ],
+          [
+            "C. ग्रामीण साक्षरता दर (जनगणना 2011)",
+            "3. 84.1%"
+          ],
+          [
+            "D. शहरी साक्षरता दर (जनगणना 2011)",
+            "4. 67.8%"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-2, B-1, C-3, D-4\n(c) A-2, B-1, C-4, D-3\n(d) A-1, B-2, C-4, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) 'crude literacy rate' को कुल जनसंख्या हर के साथ और 'effective literacy rate' को 7+ आयु वर्ग के साथ सही जोड़ता है, लेकिन शहरी और ग्रामीण आंकड़ों को उलट देता है — जो छात्र अवधारणाओं को जानते हैं लेकिन ग्रामीण/शहरी विभाजन ठीक से नहीं जानते, वे (a) चुनते हैं।",
+      "elimination_logic": [
+        "एंकर मिलान A-2: प्रभावी साक्षरता दर के हर के रूप में 7+ आयु वर्ग की जनसंख्या का उपयोग होता है — यह मानक जनगणना पद्धति है। अतः A को 2 से मिलाना आवश्यक है।",
+        "एंकर मिलान B-1: सकल साक्षरता दर के हर के रूप में कुल जनसंख्या का उपयोग होता है — अतः B को 1 से मिलाना सही है।",
+        "C की जाँच: ग्रामीण साक्षरता दर 2011 में 67.8% थी — अतः C को 4 (67.8%) से मिलाना सही है।",
+        "शेष D: शहरी साक्षरता दर 2011 में 84.1% थी — अतः D को 3 (84.1%) से मिलाना सही है। अंतिम उत्तर: A-2, B-1, C-4, D-3 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल उन छात्रों को फंसाता है जो व्यक्तिगत तथ्यों को अलग-अलग जानते हैं लेकिन चार जोड़ों को एक साथ सही ढंग से मिलाने में असमर्थ होते हैं। ग्रामीण/शहरी साक्षरता आंकड़ों (67.8% और 84.1%) को कभी-कभी उलट कर याद किया जाता है। इसके अतिरिक्त, 'प्रभावी' और 'सकल' साक्षरता दर की शब्दावली शायद ही कभी परीक्षा में पूछी जाती है, लेकिन यह key_dimensions में एक जाल के रूप में शामिल है — जो छात्र दोनों शब्दों से परिचित हैं लेकिन उनके हर के अंतर को नहीं जानते, वे इन्हें भ्रमित कर देते हैं।",
+      "final_explanation": "साक्षरता मापन में पद्धतिगत (प्रभावी बनाम सकल) और अनुभवजन्य (ग्रामीण बनाम शहरी) दोनों आयाम शामिल हैं।\n\nसही मिलान:\n• A (प्रभावी साक्षरता दर) — 2 (7+ आयु वर्ग की जनसंख्या हर के रूप में): भारत की जनगणना आधिकारिक रूप से इस माप का उपयोग करती है। 7+ आयु सीमा इसे 'प्रभावी' दर बनाती है क्योंकि यह पूर्व-साक्षर बच्चों को बाहर करती है।\n• B (सकल साक्षरता दर) — 1 (कुल जनसंख्या हर के रूप में): कुल जनसंख्या का उपयोग हर को बढ़ा देता है और दर को कम करता है — यह भारत की आधिकारिक माप नहीं है लेकिन कुछ अंतरराष्ट्रीय तुलना में उपयोग होती है।\n• C (ग्रामीण साक्षरता दर, 2011) — 4 (67.8%): ग्रामीण भारत की साक्षरता 67.8% है जो पहुंच और अवसंरचना के अंतर को दर्शाती है। ध्यान दें कि यह राष्ट्रीय औसत 74.04% से काफी कम है।\n• D (शहरी साक्षरता दर, 2011) — 3 (84.1%): शहरी भारत की 84.1% साक्षरता दर ग्रामीण से 16+ प्रतिशत अंक अधिक है — जो बेहतर स्कूल पहुंच, उच्च आय और शहरों में सामाजिक मानदंडों को दर्शाती है।\n\nमूल्य संवर्धन:\n• ग्रामीण-शहरी साक्षरता अंतर (16.3 प्रतिशत अंक) पुरुष-महिला राष्ट्रीय अंतर (~16.7 प्रतिशत अंक) से अधिक है — दोनों संरचनात्मक असमानताएँ हैं।\n• ग्रामीण महिला साक्षरता लगभग 58% है — जो चार ग्रामीण/शहरी × पुरुष/महिला संयोजनों में सबसे कम उप-समूह है।\n• 1991 से पहले की जनगणना में 'समझ के साथ' योग्यता नहीं मापी जाती थी — जिससे ऐतिहासिक तुलना पद्धतिगत रूप से जटिल हो जाती है।"
+    }
+  },
+  {
+    "uuid": "2a739e82-8efc-46b8-89af-0156b31678f3",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Decadal Population Growth Rate Trends (2001–2011)",
+        "Demographic Dividend: Literacy and Sex Ratio as Enabling Conditions"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "National decadal growth rate 2001-2011 — 17.7% decline from 21.5%",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "What was India's national decadal population growth rate during the period 2001–2011 as recorded in Census 2011, which also represented a decline from the preceding decade?\n\n(a) 17.7%\n(b) 21.5%\n(c) 14.2%\n(d) 24.8%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because 21.5% is a real figure from India's census — it is the growth rate for the 1991-2001 decade — and students who recall it as 'the growth rate' without pinning it to the correct decade choose (b).",
+      "elimination_logic": [
+        "Eliminate (b): 21.5% was the decadal growth rate for 1991-2001, not 2001-2011 — a direct temporal swap.",
+        "Eliminate (c): 14.2% would imply a steeper decline than actually occurred — it is a fabricated figure below the actual rate.",
+        "Eliminate (d): 24.8% was the growth rate for an earlier decade (1981-1991 approximate) — another temporal swap.",
+        "Confirm (a): India's decadal growth rate for 2001-2011 was 17.7% — this represents a decline from 21.5% in the previous decade, marking India's demographic transition progress."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap places adjacent decadal growth rate figures alongside each other as options. 21.5% (1991-2001) and 17.7% (2001-2011) are both real census figures for consecutive decades. A student who has studied both figures but not carefully paired them to their respective decades will choose 21.5% as the 2001-2011 rate, not recognising that this is the previous decade's figure.",
+      "final_explanation": "India's decadal population growth rate has been declining, reflecting gradual demographic transition.\n\n• Option (a): Correct. India's population growth rate for the 2001–2011 decade was 17.7% — the first time in several decades it fell below 18%. This decline from 21.5% (1991–2001) is significant but masks regional divergence: southern states are near replacement level while BIMARU states continue above 25%.\n• Option (b): Incorrect. 21.5% was the growth rate for 1991–2001, the preceding decade — a classic temporal-swap distractor.\n• Option (c): Incorrect. 14.2% is a fabricated figure — India has not yet achieved such a low decadal growth rate as of 2011 data.\n• Option (d): Incorrect. 24.8% is closer to growth rates from the 1970s–1980s, not 2001–2011.\n\nValue Addition:\n• India's absolute population addition during 2001–2011 was approximately 181 million — larger than Brazil's total population.\n• The demographic dividend window (working-age population bulge) is projected to be most favourable between 2020 and 2040.\n• Replacement-level fertility (TFR 2.1) has been achieved nationally as of NFHS-5 (2019-21) — but significant state-level variation persists."
+    },
+    "hi": {
+      "display_text": "भारत की राष्ट्रीय दशकवार जनसंख्या वृद्धि दर 2001–2011 के दौरान जनगणना 2011 में दर्ज क्या थी, जो पिछले दशक से गिरावट भी दर्शाती है?\n\n(a) 17.7%\n(b) 21.5%\n(c) 14.2%\n(d) 24.8%",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि 21.5% भारत की जनगणना का वास्तविक आंकड़ा है — यह 1991-2001 दशक की वृद्धि दर है — और छात्र जो इसे 'वृद्धि दर' के रूप में याद करते हैं बिना सही दशक के साथ जोड़े, वे (b) चुनते हैं।",
+      "elimination_logic": [
+        "(b) को हटाएं: 21.5% 1991-2001 दशक की वृद्धि दर थी, 2001-2011 की नहीं — यह एक प्रत्यक्ष कालानुक्रमिक स्वैप है।",
+        "(c) को हटाएं: 14.2% एक अधिक तीव्र गिरावट को दर्शाता है जो वास्तव में नहीं हुई — यह वास्तविक दर से नीचे एक निर्मित आंकड़ा है।",
+        "(d) को हटाएं: 24.8% एक पुराने दशक (लगभग 1981-1991) की वृद्धि दर थी — एक और कालानुक्रमिक स्वैप।",
+        "(a) की पुष्टि करें: भारत की 2001-2011 दशक की वृद्धि दर 17.7% थी — यह पिछले दशक की 21.5% से गिरावट दर्शाती है, जो भारत के जनसांख्यिकीय संक्रमण की प्रगति को दर्शाता है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक स्वैप जाल में एक-दूसरे के निकटवर्ती दशक की वृद्धि दर के आंकड़ों को विकल्पों के रूप में रखा जाता है। 21.5% (1991-2001) और 17.7% (2001-2011) दोनों वास्तविक जनगणना आंकड़े हैं। जो छात्र दोनों आंकड़ों को पढ़ चुके हैं लेकिन उन्हें उनके संबंधित दशकों के साथ सावधानीपूर्वक नहीं जोड़ा है, वे 21.5% को 2001-2011 की वृद्धि दर समझकर चुन लेते हैं, यह न पहचानते हुए कि यह पिछले दशक का आंकड़ा है।",
+      "final_explanation": "भारत की दशकवार जनसंख्या वृद्धि दर घटती जा रही है, जो धीरे-धीरे जनसांख्यिकीय संक्रमण को दर्शाती है।\n\n• विकल्प (a): सही। भारत की 2001–2011 दशक की जनसंख्या वृद्धि दर 17.7% थी — कई दशकों में पहली बार यह 18% से नीचे आई। 21.5% (1991–2001) से यह गिरावट महत्वपूर्ण है, लेकिन क्षेत्रीय भिन्नता छुपाती है: दक्षिणी राज्य प्रतिस्थापन स्तर के करीब हैं जबकि BIMARU राज्य 25% से ऊपर बने हुए हैं।\n• विकल्प (b): गलत। 21.5% 1991–2001 दशक की वृद्धि दर थी — एक क्लासिक कालानुक्रमिक स्वैप भ्रामक।\n• विकल्प (c): गलत। 14.2% एक निर्मित आंकड़ा है — भारत ने 2011 के आंकड़ों तक इतनी कम दशकवार वृद्धि दर प्राप्त नहीं की है।\n• विकल्प (d): गलत। 24.8% 1970-1980 के दशक की वृद्धि दर के करीब है, न कि 2001–2011 की।\n\nमूल्य संवर्धन:\n• भारत की 2001–2011 के दौरान कुल जनसंख्या वृद्धि लगभग 181 मिलियन थी — जो ब्राजील की कुल जनसंख्या से अधिक है।\n• जनसांख्यिकीय लाभ का समय (कार्यशील आयु वर्ग की वृद्धि) 2020 से 2040 के बीच सबसे अनुकूल रहने का अनुमान है।\n• प्रतिस्थापन स्तर प्रजनन दर (TFR 2.1) राष्ट्रीय स्तर पर NFHS-5 (2019-21) तक प्राप्त हो चुकी है — लेकिन राज्य स्तर पर महत्वपूर्ण भिन्नता बनी हुई है।"
+    }
+  },
+  {
+    "uuid": "610fd895-0e45-4118-854e-56c5f8d77444",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Sex Ratio at Birth vs Recorded Sex Ratio — Measurement Gaps",
+        "Sex Ratio: Overall vs Child Sex Ratio — Definitional Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Biological sex ratio at birth vs India's recorded — female under-registration and CRS",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the relationship between India's recorded sex ratio and biological benchmarks:\n\n1. The biological sex ratio at birth globally is approximately 105 males born per 100 females, which translates to approximately 952 females per 1000 males.\n2. India's recorded overall sex ratio of 943 females per 1000 males (Census 2011) falling below the biological norm of 952 at birth implies only sex-selective female foeticide as the explanatory mechanism.\n3. The Civil Registration System (CRS) in India has historically undercounted female births relative to male births, contributing to an apparent but partially artificial gap between recorded and expected sex ratios.\n\nWhich of the above statements is/are correct?\n\n(a) 2 and 3 only\n(b) 1 and 2 only\n(c) 1 only\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The biological sex ratio at birth globally is approximately 105 males born per 100 females, which translates to approximately 952 females per 1000 males.",
+          "verdict": "Correct",
+          "reason": "This is the established biological norm — slightly more males are born than females globally, giving approximately 952 females per 1000 males at birth."
+        },
+        {
+          "statement": "India's recorded overall sex ratio of 943 females per 1000 males (Census 2011) falling below the biological norm of 952 at birth implies only sex-selective female foeticide as the explanatory mechanism.",
+          "verdict": "Incorrect",
+          "reason": "The gap between India's recorded 943 and the biological 952 reflects multiple mechanisms: sex-selective abortion, female infanticide, excess female mortality due to neglect and malnutrition, under-registration of female births by the Civil Registration System, and maternal mortality — not exclusively foeticide."
+        },
+        {
+          "statement": "The Civil Registration System (CRS) in India has historically undercounted female births relative to male births, contributing to an apparent but partially artificial gap between recorded and expected sex ratios.",
+          "verdict": "Correct",
+          "reason": "CRS coverage, particularly in rural areas, has been lower for female births — families with less motivation to register daughters create systematic under-registration, artificially lowering recorded sex ratios beyond what actual mortality explains."
+        }
+      ],
+      "strong_distractor": "b — Option (b) is deceptive because it includes Statement 2, which sounds like a standard explanation of India's sex ratio deficit — students who accept foeticide as the dominant explanation may not notice the 'only' qualifier that makes Statement 2 incorrect.",
+      "elimination_logic": [
+        "Evaluate Statement 1: 105 males per 100 females = 952 females per 1000 males — standard biological fact — correct.",
+        "Evaluate Statement 2: The word 'only' restricts the explanation to sex-selective foeticide, excluding other mechanisms (CRS under-registration, excess female mortality, infanticide) — Statement 2 is incorrect.",
+        "Evaluate Statement 3: CRS under-registration of female births is documented — contributes to the measured gap — correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — answer is (d) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The 'only' qualifier in Statement 2 is the partial-truth trap. Sex-selective foeticide is a real and major mechanism behind India's sex ratio deficit — so students who know this fact accept Statement 2 without noticing the exclusive 'only' that eliminates all other mechanisms. The question tests whether students know the multi-causal explanation for India's sex ratio deficit, including the CRS measurement angle which is less commonly tested.",
+      "final_explanation": "India's sex ratio gap from biological norms has multiple explanatory mechanisms.\n\n• Statement 1 — Correct: The global biological sex ratio at birth is approximately 105:100 (male:female), equivalent to 952 females per 1000 males. This is nature's baseline.\n• Statement 2 — Incorrect: The 'only' qualifier is the trap. India's sex ratio deficit (943 vs expected ~952+) results from: (i) sex-selective abortion, (ii) female infanticide in some communities, (iii) excess female child mortality due to differential healthcare and nutrition, (iv) under-registration of female births through CRS, and (v) historical maternal mortality. Restricting the explanation to foeticide alone omits critical mechanisms.\n• Statement 3 — Correct: CRS (Civil Registration System) data often shows lower female birth registration in rural areas and communities where daughters are less valued. This under-registration artificially depresses recorded sex ratios beyond the true mortality effect.\n\nValue Addition:\n• Amartya Sen's 'missing women' concept estimated 35-40 million missing women in India using this gap between expected and observed female population.\n• SRS (Sample Registration System) provides birth-order-specific sex ratio data, more sensitive than census sex ratio.\n• CRS coverage has improved significantly post-2000 — digital registration systems are reducing under-registration."
+    },
+    "hi": {
+      "display_text": "भारत के दर्ज लिंगानुपात और जैविक मानकों के बीच संबंध के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. विश्व स्तर पर जन्म के समय जैविक लिंगानुपात लगभग 105 पुरुष प्रति 100 महिला है, जो लगभग 952 महिला प्रति 1000 पुरुष के बराबर है।\n2. भारत का दर्ज कुल लिंगानुपात 943 महिला प्रति 1000 पुरुष (जनगणना 2011) जन्म के समय जैविक मानक 952 से कम होने का अर्थ केवल लिंग-चयनात्मक महिला भ्रूणहत्या है।\n3. भारत में नागरिक पंजीकरण प्रणाली (CRS) ने ऐतिहासिक रूप से पुरुष जन्मों की तुलना में महिला जन्मों को कम गिना है, जो दर्ज और अपेक्षित लिंगानुपात के बीच आंशिक रूप से कृत्रिम अंतर में योगदान देता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1 और 2\n(c) केवल 1\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The biological sex ratio at birth globally is approximately 105 males born per 100 females, which translates to approximately 952 females per 1000 males.",
+          "verdict": "सही",
+          "reason": "यह स्थापित जैविक मानक है — विश्व स्तर पर जन्म के समय पुरुषों की संख्या महिलाओं से थोड़ी अधिक होती है, जिससे लगभग 952 महिलाएं प्रति 1000 पुरुष जन्म लेती हैं।"
+        },
+        {
+          "statement": "India's recorded overall sex ratio of 943 females per 1000 males (Census 2011) falling below the biological norm of 952 at birth implies only sex-selective female foeticide as the explanatory mechanism.",
+          "verdict": "गलत",
+          "reason": "भारत में दर्ज 943 और जैविक 952 के बीच का अंतर कई कारणों को दर्शाता है: लिंग-चयनात्मक गर्भपात, महिला शिशु हत्या, उपेक्षा और कुपोषण के कारण महिला मृत्यु दर में वृद्धि, नागरिक पंजीकरण प्रणाली द्वारा महिला जन्मों का कम पंजीकरण, और मातृ मृत्यु दर — केवल गर्भपात ही कारण नहीं है।"
+        },
+        {
+          "statement": "The Civil Registration System (CRS) in India has historically undercounted female births relative to male births, contributing to an apparent but partially artificial gap between recorded and expected sex ratios.",
+          "verdict": "सही",
+          "reason": "ग्रामीण क्षेत्रों में विशेष रूप से महिला जन्मों का पंजीकरण कम हुआ है — बेटियों के पंजीकरण के लिए परिवारों की कम प्रेरणा के कारण यह व्यवस्थित रूप से कम पंजीकरण होता है, जो वास्तविक मृत्यु दर से अधिक रिकॉर्डेड लिंगानुपात को कम दिखाता है।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि इसमें कथन 2 शामिल है, जो भारत के लिंगानुपात घाटे की सामान्य व्याख्या जैसा लगता है — जो छात्र गर्भपात को प्रमुख कारण मानते हैं, वे 'केवल' शब्द को न देखकर कथन 2 को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: 105 पुरुष प्रति 100 महिला = 952 महिला प्रति 1000 पुरुष — मानक जैविक तथ्य — सही।",
+        "कथन 2 का मूल्यांकन करें: 'केवल' शब्द व्याख्या को लिंग-चयनात्मक गर्भपात तक सीमित करता है, अन्य कारणों (CRS कम पंजीकरण, अधिक महिला मृत्यु, शिशु हत्या) को बाहर करता है — कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: महिला जन्मों का CRS द्वारा कम पंजीकरण प्रलेखित है — यह मापे गए अंतर में योगदान देता है — सही।",
+        "कथन 1 और 3 सही हैं, कथन 2 गलत है — उत्तर है (d) केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'केवल' शब्द आंशिक-सत्य जाल है। लिंग-चयनात्मक गर्भपात भारत के लिंगानुपात घाटे का एक वास्तविक और प्रमुख कारण है — इसलिए जो छात्र यह जानते हैं वे कथन 2 को बिना 'केवल' के विशेष अर्थ को देखे स्वीकार कर लेते हैं। प्रश्न यह जांचता है कि छात्र भारत के लिंगानुपात घाटे के बहु-कारणीय स्पष्टीकरण को जानते हैं, जिसमें CRS मापन कोण भी शामिल है जो कम परीक्षण किया जाता है।",
+      "final_explanation": "भारत के लिंगानुपात में जैविक मानकों से अंतर के कई कारण हैं।\n\n• कथन 1 — सही: विश्वव्यापी जैविक लिंगानुपात जन्म के समय लगभग 105:100 (पुरुष:महिला) है, जो 952 महिला प्रति 1000 पुरुष के बराबर है। यह प्रकृति की मूलभूत स्थिति है।\n• कथन 2 — गलत: 'केवल' शब्द जाल है। भारत के लिंगानुपात घाटे (943 बनाम अपेक्षित ~952+) के कारण हैं: (i) लिंग-चयनात्मक गर्भपात, (ii) कुछ समुदायों में महिला शिशु हत्या, (iii) भेदभावपूर्ण स्वास्थ्य सेवा और पोषण के कारण महिला बाल मृत्यु दर में वृद्धि, (iv) CRS के माध्यम से महिला जन्मों का कम पंजीकरण, और (v) ऐतिहासिक मातृ मृत्यु दर। केवल गर्भपात को कारण मानना महत्वपूर्ण कारणों को छोड़ देता है।\n• कथन 3 — सही: CRS (नागरिक पंजीकरण प्रणाली) के आंकड़े अक्सर ग्रामीण क्षेत्रों और उन समुदायों में महिला जन्मों के कम पंजीकरण को दिखाते हैं जहाँ बेटियों को कम महत्व दिया जाता है। यह कम पंजीकरण वास्तविक मृत्यु प्रभाव से अधिक रिकॉर्डेड लिंगानुपात को कृत्रिम रूप से कम करता है।\n\nमूल्यवर्धन:\n• अमर्त्य सेन के 'मिसिंग वुमेन' सिद्धांत ने अपेक्षित और प्रेक्षित महिला जनसंख्या के बीच इस अंतर का उपयोग कर भारत में 35-40 मिलियन गायब महिलाओं का अनुमान लगाया।\n• SRS (सैंपल रजिस्ट्रेशन सिस्टम) जन्म क्रम-विशिष्ट लिंगानुपात डेटा प्रदान करता है, जो जनगणना लिंगानुपात से अधिक संवेदनशील है।\n• 2000 के बाद CRS कवरेज में काफी सुधार हुआ है — डिजिटल पंजीकरण प्रणालियाँ कम पंजीकरण को घटा रही हैं।"
+    }
+  },
+  {
+    "uuid": "a629a304-4694-4a4f-9692-655d5111eca3",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Density-Literacy-Sex Ratio Interrelationship: Integrated Analysis",
+        "State-wise Literacy Extremes and Patterns (Census 2011)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "High literacy-high density-poor CSR — Punjab outlier in development-equity matrix",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four states conform to the demographic pattern where low literacy rates are associated with poor sex ratio outcomes, forming what is sometimes called a 'demographic stress zone'. Which one of them does NOT conform to this pattern — because despite having relatively high literacy, it still records among the worst child sex ratios in the country?\n\n(a) Uttar Pradesh\n(b) Bihar\n(c) Punjab\n(d) Rajasthan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) Bihar is deceptive because Bihar fits the 'high density-low literacy-poor sex ratio' stress zone pattern so clearly that students assume it is the obvious odd one out, when in fact it is the 'normal' example of demographic stress.",
+      "elimination_logic": [
+        "Identify the category: states fitting the 'high density + low literacy + poor sex ratio' demographic stress pattern.",
+        "Assess Bihar: high density ✓, low literacy ✓, poor sex ratio ✓ — perfectly fits the stress zone model.",
+        "Assess Uttar Pradesh: high density ✓, low literacy ✓, adverse sex ratio ✓ — fits the model.",
+        "Assess Rajasthan: high density (moderate, ~200/sq km), low literacy ✓, poor sex ratio ✓ — fits the general model.",
+        "Assess Punjab: high literacy, moderate-high density, but CSR is WORST — Punjab has HIGH literacy but POOR CSR, contradicting the pattern that high literacy correlates with better sex ratio. Punjab is the odd one out because it has high literacy yet poor demographic equity outcomes."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the 'low literacy = poor sex ratio' assumption with Punjab's data. Students who know UP, Bihar, and Rajasthan as demographic stress states assume Punjab belongs to the opposite (positive) group due to its higher literacy and economic development. However, Punjab's child sex ratio (846) is the second worst in India despite high literacy — making Punjab the 'odd one out' in a group defined by low literacy causing poor sex ratio, since Punjab achieves poor sex ratio through a different mechanism (affluent son preference + technology access).",
+      "final_explanation": "This question tests the ability to identify the state that breaks the expected demographic pattern.\n\nThe category tested: States where LOW literacy correlates with POOR sex ratio/CSR outcomes — the 'demographic stress zone' pattern.\n\n• Option (a) Uttar Pradesh: Fits the stress pattern — low literacy (~67.7%), high density, adverse sex ratio. Belongs in the group.\n• Option (b) Bihar: Fits perfectly — lowest state literacy (61.8%), highest density, poor sex ratio. Belongs in the group.\n• Option (c) Punjab: This is the ODD ONE OUT. Punjab has above-national-average literacy (~76.7%) yet records the second-worst child sex ratio (846) in the country. Its poor CSR outcomes arise from affluence-enabled sex selection, not literacy deficit. It breaks the pattern that binds the other three.\n• Option (d) Rajasthan: Fits the stress pattern — among the lowest female literacy states, poor child sex ratio, largest gender literacy gap. Belongs in the group.\n\nValue Addition:\n• Punjab's paradox is used in policy discussions to argue that literacy alone cannot eliminate son preference — cultural and economic incentive changes are needed.\n• The three states with worst CSR: Haryana (834), Punjab (846), J&K (862) — all three have above-average per capita income.\n• This paradox is central to critiques of purely human capital-based development strategies."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार राज्यों में से तीन ऐसे हैं जो जनसांख्यिकीय पैटर्न के अनुरूप हैं जहाँ निम्न साक्षरता दरें खराब लिंगानुपात परिणामों से जुड़ी होती हैं, जिसे कभी-कभी 'जनसांख्यिकीय तनाव क्षेत्र' कहा जाता है। इनमें से कौन सा राज्य इस पैटर्न के अनुरूप नहीं है — क्योंकि इसके पास अपेक्षाकृत उच्च साक्षरता होने के बावजूद, यह देश में सबसे खराब बाल लिंगानुपातों में से एक दर्ज करता है?\n\n(a) उत्तर प्रदेश\n(b) बिहार\n(c) पंजाब\n(d) राजस्थान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) बिहार भ्रमित करने वाला है क्योंकि बिहार 'उच्च घनत्व-निम्न साक्षरता-खराब लिंगानुपात' तनाव क्षेत्र पैटर्न में इतना स्पष्ट रूप से फिट बैठता है कि छात्र इसे स्पष्ट रूप से असामान्य मान लेते हैं, जबकि वास्तव में यह जनसांख्यिकीय तनाव का 'सामान्य' उदाहरण है।",
+      "elimination_logic": [
+        "श्रेणी की पहचान करें: वे राज्य जो 'उच्च घनत्व + निम्न साक्षरता + खराब लिंगानुपात' जनसांख्यिकीय तनाव पैटर्न में फिट होते हैं।",
+        "बिहार का मूल्यांकन करें: उच्च घनत्व ✓, निम्न साक्षरता ✓, खराब लिंगानुपात ✓ — तनाव क्षेत्र मॉडल में पूरी तरह फिट।",
+        "उत्तर प्रदेश का मूल्यांकन करें: उच्च घनत्व ✓, निम्न साक्षरता ✓, प्रतिकूल लिंगानुपात ✓ — मॉडल में फिट।",
+        "राजस्थान का मूल्यांकन करें: उच्च घनत्व (मध्यम, लगभग 200/वर्ग किमी), निम्न साक्षरता ✓, खराब लिंगानुपात ✓ — सामान्य मॉडल में फिट।",
+        "पंजाब का मूल्यांकन करें: उच्च साक्षरता, मध्यम-उच्च घनत्व, लेकिन CSR सबसे खराब — पंजाब में उच्च साक्षरता है लेकिन खराब CSR है, जो इस पैटर्न का विरोध करता है कि उच्च साक्षरता बेहतर लिंगानुपात से जुड़ी होती है। पंजाब असामान्य है क्योंकि इसमें उच्च साक्षरता के बावजूद जनसांख्यिकीय समानता के परिणाम खराब हैं।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल में 'निम्न साक्षरता = खराब लिंगानुपात' की धारणा को पंजाब के आंकड़ों के साथ मिला दिया जाता है। जो छात्र यूपी, बिहार और राजस्थान को जनसांख्यिकीय तनाव वाले राज्य के रूप में जानते हैं, वे मान लेते हैं कि पंजाब उच्च साक्षरता और आर्थिक विकास के कारण विपरीत (सकारात्मक) समूह में आता है। हालांकि, पंजाब का बाल लिंगानुपात (846) उच्च साक्षरता के बावजूद भारत में दूसरा सबसे खराब है — जिससे पंजाब उस समूह में 'असामान्य' बन जाता है जहाँ निम्न साक्षरता खराब लिंगानुपात का कारण होती है, क्योंकि पंजाब खराब लिंगानुपात एक अलग तंत्र (धनी पुत्र वरीयता + तकनीकी पहुँच) के कारण प्राप्त करता है।",
+      "final_explanation": "यह प्रश्न उस राज्य की पहचान करने की क्षमता का परीक्षण करता है जो अपेक्षित जनसांख्यिकीय पैटर्न को तोड़ता है।\n\nपरीक्षित श्रेणी: वे राज्य जहाँ निम्न साक्षरता खराब लिंगानुपात/बाल लिंगानुपात परिणामों से संबंधित है — 'जनसांख्यिकीय तनाव क्षेत्र' पैटर्न।\n\n• विकल्प (a) उत्तर प्रदेश: तनाव पैटर्न में फिट — निम्न साक्षरता (~67.7%), उच्च घनत्व, प्रतिकूल लिंगानुपात। समूह में शामिल।\n• विकल्प (b) बिहार: पूरी तरह फिट — सबसे कम राज्य साक्षरता (61.8%), सबसे अधिक घनत्व, खराब लिंगानुपात। समूह में शामिल।\n• विकल्प (c) पंजाब: यह असामान्य है। पंजाब में राष्ट्रीय औसत से ऊपर साक्षरता (~76.7%) है फिर भी देश में दूसरा सबसे खराब बाल लिंगानुपात (846) दर्ज है। इसके खराब CSR परिणाम समृद्धि-प्रेरित लिंग चयन से उत्पन्न होते हैं, न कि साक्षरता की कमी से। यह अन्य तीनों को बाँधने वाले पैटर्न को तोड़ता है।\n• विकल्प (d) राजस्थान: तनाव पैटर्न में फिट — सबसे कम महिला साक्षरता वाले राज्यों में, खराब बाल लिंगानुपात, सबसे बड़ा लिंग साक्षरता अंतर। समूह में शामिल।\n\nमूल्य संवर्धन:\n• पंजाब का विरोधाभास नीति चर्चाओं में उपयोग किया जाता है यह तर्क देने के लिए कि केवल साक्षरता से पुत्र वरीयता समाप्त नहीं हो सकती — सांस्कृतिक और आर्थिक प्रोत्साहन में बदलाव आवश्यक हैं।\n• सबसे खराब CSR वाले तीन राज्य: हरियाणा (834), पंजाब (846), जम्मू-कश्मीर (862) — ये तीनों प्रति व्यक्ति आय में औसत से ऊपर हैं।\n• यह विरोधाभास केवल मानव पूंजी आधारित विकास रणनीतियों की आलोचनाओं के केंद्र में है।"
+    }
+  },
+  {
+    "uuid": "57c5a66f-b853-4919-8d7a-59aced8b1fad",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Urban Agglomeration vs Statutory Town vs Census Town — Census Definitions",
+        "Million-Plus Cities: Distribution and Growth (Census 2011)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Urban Agglomeration vs city — Delhi UA vs Delhi city definitional distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about urban classification methodology used in the Indian Census:\n\n1. A Statutory Town is declared urban by the state government through a legislative or administrative notification, regardless of whether it meets the three functional criteria used to define a Census Town.\n2. An Urban Agglomeration (UA) in the Indian Census refers to a continuous urban spread comprising a core city of at least 50,000 population along with its outgrowths, irrespective of administrative boundaries.\n3. The Census Town category saw its most dramatic expansion between 2001 and 2011, with the count rising from approximately 1,362 to 3,894 — a development that contributed to the measured increase in India's urbanisation rate.\n\nWhich of the above statements is/are correct?\n\n(a) 2 and 3 only\n(b) 1 only\n(c) 1, 2 and 3\n(d) 1 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "A Statutory Town is declared urban by the state government through a legislative or administrative notification, regardless of whether it meets the three functional criteria used to define a Census Town.",
+          "verdict": "Correct",
+          "reason": "Statutory Towns are defined by political/administrative notification — municipality, cantonment board, notified area committee — irrespective of meeting the functional population-density-workforce criteria. This is the key conceptual distinction from Census Towns."
+        },
+        {
+          "statement": "An Urban Agglomeration (UA) in the Indian Census refers to a continuous urban spread comprising a core city of at least 50,000 population along with its outgrowths, irrespective of administrative boundaries.",
+          "verdict": "Incorrect",
+          "reason": "The core city threshold for an Urban Agglomeration is a population of at least 100,000 (one lakh), not 50,000. A city with 50,000 population is a Class II city — not a UA core city."
+        },
+        {
+          "statement": "The Census Town category saw its most dramatic expansion between 2001 and 2011, with the count rising from approximately 1,362 to 3,894 — a development that contributed to the measured increase in India's urbanisation rate.",
+          "verdict": "Correct",
+          "reason": "The jump from 1,362 to 3,894 Census Towns in a single decade reflects both genuine urban growth and reclassification of settlements that had become functionally urban, inflating the official urbanisation statistic."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because it pairs Statements 1 and 3 as correct (which they are) but requires students to also confirm Statement 2's threshold is wrong — students who are uncertain about the 50,000 vs 100,000 threshold for UA core cities may accept all three as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Statutory Town defined by administrative notification, not functional criteria — correct.",
+        "Evaluate Statement 2: UA core city threshold is 100,000 (one lakh), not 50,000 — the 50,000 figure is plausible-fabrication. Statement 2 is incorrect.",
+        "Evaluate Statement 3: Census Town jump from 1,362 to 3,894 between 2001-2011 is documented — correct.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — answer is (d) 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap in Statement 2 inserts '50,000' as the UA core city threshold. This number is plausible because it corresponds to Class II cities in the Indian Census classification (50,000–99,999), making it an educated-sounding but incorrect substitute for the actual 100,000 threshold. Students who have not memorised the specific UA definition criteria will accept 50,000 as reasonable and mark Statement 2 as correct.",
+      "final_explanation": "Urban classification in Indian Census involves three distinct categories with separate definitional criteria.\n\n• Statement 1 — Correct: Statutory Towns receive their urban status through government notification — a Municipal Corporation, Municipality, Town Panchayat, Cantonment Board, or Notified Area Committee. The functional criteria (population, density, workforce) do not apply — this is purely an administrative-political designation.\n• Statement 2 — Incorrect: An Urban Agglomeration requires a core city with population of at least 100,000 (one lakh), not 50,000. The 50,000 figure corresponds to the lower boundary of Class II towns in the Census classification — it is not the UA formation threshold. The plausibility of 50,000 is the deliberate trap.\n• Statement 3 — Correct: The Census Town explosion (1,362 → 3,894 in one decade) is well documented and is a standard critique of India's urbanisation statistics — the reclassification effect means the urbanisation rate of 31.16% partially reflects definitional rather than physical change.\n\nValue Addition:\n• Class I cities: ≥100,000 population; Class II: 50,000–99,999; Class III: 20,000–49,999.\n• Delhi UA vs Delhi city: Delhi UA (including NCR outgrowths) is the unit used in the 'largest UA' ranking — not the Municipal Corporation of Delhi area alone.\n• Out-growths of a city — suburban areas with strong functional linkages to the main city — are included in Urban Agglomerations."
+    },
+    "hi": {
+      "display_text": "भारतीय जनगणना में प्रयुक्त शहरी वर्गीकरण पद्धति के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. एक वैधानिक नगर को राज्य सरकार द्वारा विधायी या प्रशासनिक अधिसूचना के माध्यम से शहरी घोषित किया जाता है, चाहे वह जनगणना नगर को परिभाषित करने वाले तीन कार्यात्मक मानदंडों को पूरा करता हो या नहीं।\n2. भारतीय जनगणना में एक शहरी समूह (Urban Agglomeration - UA) का तात्पर्य एक सतत शहरी विस्तार से है जिसमें कम से कम 50,000 की जनसंख्या वाला एक मुख्य शहर और उसके आस-पास के विस्तार शामिल होते हैं, प्रशासनिक सीमाओं की परवाह किए बिना।\n3. जनगणना नगर श्रेणी ने 2001 से 2011 के बीच सबसे नाटकीय विस्तार देखा, जिसमें इसकी संख्या लगभग 1,362 से बढ़कर 3,894 हो गई — यह विकास भारत के शहरीकरण दर में मापी गई वृद्धि में योगदान देने वाला था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1\n(c) 1, 2 और 3\n(d) केवल 1 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "एक वैधानिक नगर (Statutory Town) को राज्य सरकार द्वारा विधायी या प्रशासनिक अधिसूचना के माध्यम से शहरी घोषित किया जाता है, चाहे वह जनगणना नगर (Census Town) को परिभाषित करने के लिए उपयोग किए जाने वाले तीन कार्यात्मक मानदंडों को पूरा करता हो या नहीं।",
+          "verdict": "सही",
+          "reason": "वैधानिक नगर राजनीतिक/प्रशासनिक अधिसूचना — नगरपालिका, छावनी बोर्ड, अधिसूचित क्षेत्र समिति — द्वारा परिभाषित होते हैं, चाहे वे कार्यात्मक जनसंख्या-घनत्व-कर्मचारी मानदंडों को पूरा करें या नहीं। यह जनगणना नगरों से मुख्य वैचारिक भेद है।"
+        },
+        {
+          "statement": "भारतीय जनगणना में एक शहरी समूह (Urban Agglomeration - UA) का तात्पर्य एक सतत शहरी विस्तार से है जिसमें कम से कम 50,000 की जनसंख्या वाला एक मुख्य शहर और उसके आस-पास के विस्तार शामिल होते हैं, प्रशासनिक सीमाओं की परवाह किए बिना।",
+          "verdict": "गलत",
+          "reason": "शहरी समूह के लिए मुख्य शहर की न्यूनतम जनसंख्या 100,000 (एक लाख) होती है, 50,000 नहीं। 50,000 जनसंख्या वाला शहर कक्षा II का शहर होता है — UA मुख्य शहर नहीं।"
+        },
+        {
+          "statement": "जनगणना नगर श्रेणी ने 2001 से 2011 के बीच सबसे नाटकीय विस्तार देखा, जिसमें इसकी संख्या लगभग 1,362 से बढ़कर 3,894 हो गई — यह विकास भारत के शहरीकरण दर में मापी गई वृद्धि में योगदान देने वाला था।",
+          "verdict": "सही",
+          "reason": "2001 से 2011 के दशक में जनगणना नगरों की संख्या 1,362 से 3,894 तक बढ़ी, जो वास्तविक शहरी विकास और कार्यात्मक रूप से शहरी हो चुके बस्तियों के पुनर्वर्गीकरण दोनों को दर्शाता है, जिससे आधिकारिक शहरीकरण आंकड़ा बढ़ा।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह कथन 1 और 3 को सही मानता है (जो सही हैं) लेकिन छात्रों से कथन 2 के थ्रेशोल्ड की गलती को भी स्वीकार करने को कहता है — जो छात्र UA मुख्य शहर के 50,000 बनाम 100,000 थ्रेशोल्ड के बारे में अनिश्चित हैं, वे तीनों को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: वैधानिक नगर प्रशासनिक अधिसूचना द्वारा परिभाषित, कार्यात्मक मानदंडों द्वारा नहीं — सही।",
+        "कथन 2 का मूल्यांकन करें: UA मुख्य शहर का थ्रेशोल्ड 100,000 (एक लाख) है, 50,000 नहीं — 50,000 आंकड़ा संभावित-गलत सूचना है। कथन 2 गलत है।",
+        "कथन 3 का मूल्यांकन करें: 2001-2011 के बीच जनगणना नगरों की संख्या 1,362 से 3,894 तक documented है — सही।",
+        "कथन 1 और 3 सही हैं, कथन 2 गलत है — उत्तर है (d) केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में संभावित-गलत सूचना का जाल '50,000' को UA मुख्य शहर के थ्रेशोल्ड के रूप में डालता है। यह संख्या विश्वसनीय लगती है क्योंकि यह भारतीय जनगणना वर्गीकरण में कक्षा II शहरों (50,000–99,999) के अनुरूप है, जो वास्तविक 100,000 थ्रेशोल्ड के लिए एक शिक्षित-सुनाई देने वाला लेकिन गलत विकल्प है। जो छात्र UA की विशिष्ट परिभाषा याद नहीं रखते, वे 50,000 को उचित मानकर कथन 2 को सही चिह्नित कर देंगे।",
+      "final_explanation": "भारतीय जनगणना में शहरी वर्गीकरण तीन अलग-अलग श्रेणियों में होता है जिनकी परिभाषात्मक मानदंड भिन्न हैं।\n\n• कथन 1 — सही: वैधानिक नगरों को सरकार की अधिसूचना के माध्यम से शहरी दर्जा मिलता है — नगरपालिका निगम, नगरपालिका, नगर पंचायत, छावनी बोर्ड, या अधिसूचित क्षेत्र समिति। कार्यात्मक मानदंड (जनसंख्या, घनत्व, कार्यबल) लागू नहीं होते — यह केवल प्रशासनिक-राजनीतिक नामांकन है।\n• कथन 2 — गलत: शहरी समूह के लिए मुख्य शहर की न्यूनतम जनसंख्या 100,000 (एक लाख) होनी चाहिए, 50,000 नहीं। 50,000 आंकड़ा जनगणना वर्गीकरण में कक्षा II नगरों की निचली सीमा है — यह UA गठन का थ्रेशोल्ड नहीं है। 50,000 की विश्वसनीयता जानबूझकर जाल है।\n• कथन 3 — सही: जनगणना नगरों की संख्या में विस्फोट (1,362 → 3,894 एक दशक में) अच्छी तरह से प्रलेखित है और यह भारत के शहरीकरण आंकड़ों की सामान्य आलोचना है — पुनर्वर्गीकरण प्रभाव का अर्थ है कि 31.16% की शहरीकरण दर आंशिक रूप से परिभाषात्मक है, न कि भौतिक परिवर्तन।\n\nमूल्य संवर्धन:\n• कक्षा I शहर: ≥100,000 जनसंख्या; कक्षा II: 50,000–99,999; कक्षा III: 20,000–49,999।\n• दिल्ली UA बनाम दिल्ली शहर: दिल्ली UA (जिसमें NCR के विस्तार शामिल हैं) 'सबसे बड़े UA' रैंकिंग में प्रयुक्त इकाई है — केवल दिल्ली नगर निगम क्षेत्र नहीं।\n• शहर के विस्तार — उपनगरीय क्षेत्र जिनका मुख्य शहर से मजबूत कार्यात्मक संबंध होता है — शहरी समूहों में शामिल होते हैं।"
+    }
+  },
+  {
+    "uuid": "8d42f155-a21f-43fa-9dfa-03b9872183ad",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "State-wise Sex Ratio Extremes and Anomalies",
+        "Sex Ratio: Overall vs Child Sex Ratio — Definitional Distinction"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sex ratio trend — overall improving while CSR declining across census years",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following events related to India's child sex ratio trends and associated policy responses:\n\nP. Census data begins revealing significant concern about declining child sex ratio\nQ. Enactment of the Pre-Conception and Pre-Natal Diagnostic Techniques (PCPNDT) Act\nR. Census recording a child sex ratio of 927 females per 1000 males (ages 0–6)\nS. Census recording a further decline in child sex ratio to 919 females per 1000 males\n\nWhich of the following represents the correct chronological sequence of these events?\n\n(a) P → Q → R → S\n(b) Q → P → R → S\n(c) P → R → Q → S\n(d) Q → R → P → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it places the PCPNDT Act after the decline in CSR begins, which students may think is illogical — but the Act was enacted before the 1991-2001 decline became statistically visible in census data.",
+      "elimination_logic": [
+        "Anchor PCPNDT Act: enacted in 1994 — this is a fixed, well-known date. Must appear after 1991 Census and before 2001 Census.",
+        "1991 Census data on CSR is collected/published in 1991 — this precedes PCPNDT 1994.",
+        "CSR of 927 (declining from ~945 in 1981) appears in 2001 Census data.",
+        "CSR further declining to 919 appears in 2011 Census data — confirming order: 1991 Census → PCPNDT Act (1994) → 2001 Census CSR 927 → 2011 Census CSR 919."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap places the PCPNDT Act before or after the 2001 census in wrong-order options. Students who know the Act was passed in 1994 as a response to declining CSR may place it after the 2001 data became known, confusing the legislative response timeline. The Act was enacted in 1994 (before Census 2001) but its limited enforcement meant CSR continued to decline.",
+      "final_explanation": "The child sex ratio decline and legislative response follows a specific chronological sequence.\n\nCorrect order: P → Q → R → S\n• P (1991 Census revealing initial CSR concern): Census 1991 began highlighting the sharp decline in CSR that had accelerated post-1981. The CSR was approximately 945 in 1981 and showed decline.\n• Q (PCPNDT Act enacted — 1994): The Pre-Conception and Pre-Natal Diagnostic Techniques Act was enacted in 1994 as a legislative response to sex determination technology misuse. This was passed between the 1991 and 2001 censuses.\n• R (Census 2001 recording CSR of 927): Despite PCPNDT, CSR continued declining — 2001 Census recorded 927, showing the Act's limited enforcement impact.\n• S (Census 2011 recording CSR of 919): Further decline to 919, triggering the Beti Bachao Beti Padhao scheme in 2015.\n\nValue Addition:\n• PCPNDT Act was strengthened by amendment in 2003 — adding pre-conception sex selection under its scope.\n• The paradox: despite legal prohibition since 1994, CSR declined through two full census cycles before enforcement improved.\n• Beti Bachao Beti Padhao (2015) targets CSR improvement with ₹100 crore initial allocation in 100 districts."
+    },
+    "hi": {
+      "display_text": "भारत में बाल लिंगानुपात प्रवृत्तियों और संबंधित नीति प्रतिक्रियाओं से संबंधित निम्नलिखित घटनाओं पर विचार करें:\n\nP. जनगणना डेटा में बाल लिंगानुपात में गिरावट को लेकर महत्वपूर्ण चिंता प्रकट होना शुरू होना\nQ. पूर्व-गर्भधारण और पूर्व-प्रसव निदान तकनीक (PCPNDT) अधिनियम का लागू होना\nR. जनगणना में 1000 पुरुषों पर 927 बालिकाओं का बाल लिंगानुपात दर्ज होना (आयु 0–6 वर्ष)\nS. जनगणना में बाल लिंगानुपात में और गिरावट दर्ज होना, 1000 पुरुषों पर 919 बालिकाएँ\n\nइन घटनाओं का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) P → Q → R → S\n(b) Q → P → R → S\n(c) P → R → Q → S\n(d) Q → R → P → S",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि यह PCPNDT अधिनियम को CSR में गिरावट शुरू होने के बाद रखता है, जिसे छात्र तर्कसंगत नहीं समझ सकते — लेकिन यह अधिनियम 1991-2001 की गिरावट के सांख्यिकीय रूप से दिखाई देने से पहले लागू किया गया था।",
+      "elimination_logic": [
+        "एंकर PCPNDT अधिनियम: 1994 में लागू — यह एक निश्चित, प्रसिद्ध तिथि है। यह 1991 की जनगणना के बाद और 2001 की जनगणना से पहले होना चाहिए।",
+        "1991 की जनगणना का CSR डेटा 1991 में एकत्र/प्रकाशित हुआ — यह PCPNDT 1994 से पहले है।",
+        "CSR 927 (लगभग 1981 के ~945 से गिरावट) 2001 की जनगणना में दिखता है।",
+        "CSR 919 तक और गिरावट 2011 की जनगणना में दिखती है — क्रम की पुष्टि करता है: 1991 जनगणना → PCPNDT अधिनियम (1994) → 2001 जनगणना CSR 927 → 2011 जनगणना CSR 919।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्थानांतरण जाल PCPNDT अधिनियम को 2001 की जनगणना से पहले या बाद गलत क्रम में रखता है। जो छात्र जानते हैं कि यह अधिनियम 1994 में CSR में गिरावट के जवाब में पारित हुआ था, वे इसे 2001 के डेटा के बाद रख सकते हैं, जिससे विधायी प्रतिक्रिया की समयरेखा भ्रमित होती है। यह अधिनियम 1994 में लागू हुआ था (2001 की जनगणना से पहले) लेकिन इसकी सीमित प्रवर्तन क्षमता के कारण CSR गिरावट जारी रही।",
+      "final_explanation": "बाल लिंगानुपात में गिरावट और विधायी प्रतिक्रिया एक विशिष्ट कालानुक्रमिक क्रम का पालन करती है।\n\nसही क्रम: P → Q → R → S\n• P (1991 की जनगणना में प्रारंभिक CSR चिंता का खुलासा): 1991 की जनगणना ने 1981 के बाद तेज हुई CSR गिरावट को उजागर करना शुरू किया। 1981 में CSR लगभग 945 था और गिरावट दिखा रहा था।\n• Q (PCPNDT अधिनियम लागू — 1994): पूर्व-गर्भधारण और पूर्व-प्रसव निदान तकनीक अधिनियम 1994 में लागू हुआ, जो लिंग निर्धारण तकनीक के दुरुपयोग के खिलाफ विधायी प्रतिक्रिया थी। यह 1991 और 2001 की जनगणनाओं के बीच पारित हुआ।\n• R (2001 की जनगणना में CSR 927 दर्ज): PCPNDT के बावजूद, CSR गिरावट जारी रही — 2001 की जनगणना में 927 दर्ज हुआ, जो अधिनियम के सीमित प्रवर्तन प्रभाव को दर्शाता है।\n• S (2011 की जनगणना में CSR 919 दर्ज): गिरावट 919 तक और बढ़ी, जिससे 2015 में बेटी बचाओ बेटी पढ़ाओ योजना शुरू हुई।\n\nमूल्य संवर्धन:\n• PCPNDT अधिनियम को 2003 में संशोधन द्वारा मजबूत किया गया — जिसमें पूर्व-गर्भधारण लिंग चयन को भी शामिल किया गया।\n• विरोधाभास: 1994 से कानूनी प्रतिबंध के बावजूद, CSR दो पूर्ण जनगणना चक्रों तक गिरता रहा जब तक प्रवर्तन बेहतर नहीं हुआ।\n• बेटी बचाओ बेटी पढ़ाओ (2015) CSR सुधार के लिए ₹100 करोड़ की प्रारंभिक आवंटन के साथ 100 जिलों में लक्षित है।"
+    }
+  },
+  {
+    "uuid": "5a08b7c7-1497-419a-a797-92010ba79758",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Population Density: Definition, Formula, and National Average",
+        "State-wise Population Density Extremes"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Physiological density vs population density — conceptual distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about population density measurement:\n\nStatement 1: India's population density of 382 persons per square kilometre (Census 2011) is calculated using total geographical area including non-arable land, forests, water bodies, and mountainous terrain in the denominator.\nStatement 2: Physiological density — which uses net sown area rather than total geographical area as the denominator — would produce a lower density figure than arithmetic density for any given region.\n\nWhich of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India's population density of 382 persons per square kilometre (Census 2011) is calculated using total geographical area including non-arable land, forests, water bodies, and mountainous terrain in the denominator.",
+          "verdict": "Correct",
+          "reason": "Standard population density (arithmetic density) uses total geographical area in the denominator — it does not adjust for cultivable or arable land. This is distinct from physiological density, which uses net sown area."
+        },
+        {
+          "statement": "Physiological density — which uses net sown area rather than total geographical area as the denominator — would produce a lower density figure than arithmetic density for any given region.",
+          "verdict": "Incorrect",
+          "reason": "Physiological density (population ÷ net sown area) would produce a HIGHER figure than arithmetic density (population ÷ total area) because net sown area is always smaller than total geographical area, making the denominator smaller and the ratio larger."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is deceptive because students may accept both statements without carefully computing the mathematical implication of a smaller denominator (net sown area < total area) on the resulting density ratio.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Arithmetic population density uses total geographical area — includes forests, mountains, water bodies — Statement 1 correctly describes this. It is correct.",
+        "Evaluate Statement 2: Physiological density = population ÷ net sown area. Since net sown area < total area, the denominator is smaller, making physiological density HIGHER, not lower. Statement 2 claims it produces a 'lower' figure — this is mathematically wrong.",
+        "Statement 1 correct, Statement 2 incorrect — answer is (c)."
+      ],
+      "upsc_trap_explanation": "The scope-extension trap in Statement 2 adds the directional claim 'lower' to a comparison between density types. Students who have read about physiological vs arithmetic density but not worked through the mathematical logic may accept that a more 'specialised' or 'refined' measure would give a lower, more 'accurate' number — a conceptual confusion. The reality is mathematically opposite: smaller denominator = larger ratio.",
+      "final_explanation": "Understanding different density concepts requires careful attention to denominators.\n\n• Statement 1 — Correct: India's census-reported density of 382/sq km uses total geographical area (3.28 million sq km) as denominator. This includes the Thar Desert, Himalayas, dense forests of the Northeast, and all water bodies — areas with minimal or no population.\n• Statement 2 — Incorrect: The mathematical logic of physiological density works as follows: Population density (arithmetic) = P ÷ Total Area; Physiological density = P ÷ Net Sown Area. Since Net Sown Area < Total Area, physiological density always yields a HIGHER figure. For India, this would be significantly higher than 382 — illustrating the true pressure on cultivated land.\n\nExample: If India's net sown area is ~140 million ha (vs total ~328 million ha), physiological density would be approximately (382 × 328/140) ≈ 895/sq km — more than double arithmetic density.\n\nValue Addition:\n• Agricultural density = agricultural population ÷ cultivable land — yet another variant.\n• India's physiological density is among the highest in the world, indicating extreme pressure on farmland.\n• Arithmetic density understates human pressure in countries like India with large uninhabitable zones (deserts, mountains, forests)."
+    },
+    "hi": {
+      "display_text": "जनसंख्या घनत्व मापन के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: भारत की जनसंख्या घनत्व 382 व्यक्ति प्रति वर्ग किलोमीटर (जनगणना 2011) कुल भौगोलिक क्षेत्रफल का उपयोग करते हुए गणना की जाती है, जिसमें गैर-कृषि योग्य भूमि, वन, जल निकाय और पर्वतीय क्षेत्र शामिल हैं।\nकथन 2: शारीरिक घनत्व — जो कुल भौगोलिक क्षेत्रफल के बजाय शुद्ध बोई गई भूमि को हर के हर उपयोग करता है — किसी भी क्षेत्र के लिए अंकगणितीय घनत्व की तुलना में कम घनत्व आंकड़ा देगा।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत की जनसंख्या घनत्व 382 व्यक्ति प्रति वर्ग किलोमीटर (जनगणना 2011) कुल भौगोलिक क्षेत्रफल का उपयोग करते हुए गणना की जाती है, जिसमें गैर-कृषि योग्य भूमि, वन, जल निकाय और पर्वतीय क्षेत्र शामिल हैं।",
+          "verdict": "सही",
+          "reason": "मानक जनसंख्या घनत्व (अंकगणितीय घनत्व) में हर समय कुल भौगोलिक क्षेत्रफल हर के हर उपयोग में लिया जाता है — यह कृषि योग्य या उपजाऊ भूमि के लिए समायोजित नहीं होता। यह शारीरिक घनत्व से भिन्न है, जो शुद्ध बोई गई भूमि का उपयोग करता है।"
+        },
+        {
+          "statement": "शारीरिक घनत्व — जो कुल भौगोलिक क्षेत्रफल के बजाय शुद्ध बोई गई भूमि को हर के हर उपयोग करता है — किसी भी क्षेत्र के लिए अंकगणितीय घनत्व की तुलना में कम घनत्व आंकड़ा देगा।",
+          "verdict": "गलत",
+          "reason": "शारीरिक घनत्व (जनसंख्या ÷ शुद्ध बोई गई भूमि) अंकगणितीय घनत्व (जनसंख्या ÷ कुल क्षेत्रफल) की तुलना में अधिक होगा क्योंकि शुद्ध बोई गई भूमि हमेशा कुल भौगोलिक क्षेत्रफल से कम होती है, जिससे हर के हर छोटा और अनुपात बड़ा होता है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) भ्रामक है क्योंकि छात्र दोनों कथनों को बिना शुद्ध बोई गई भूमि के छोटे हर के हर (शुद्ध बोई गई भूमि < कुल क्षेत्रफल) के गणितीय प्रभाव की सावधानीपूर्वक गणना किए स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: अंकगणितीय जनसंख्या घनत्व कुल भौगोलिक क्षेत्रफल का उपयोग करता है — जिसमें वन, पर्वत, जल निकाय शामिल हैं — कथन 1 इसे सही रूप में वर्णित करता है। यह सही है।",
+        "कथन 2 का मूल्यांकन करें: शारीरिक घनत्व = जनसंख्या ÷ शुद्ध बोई गई भूमि। चूंकि शुद्ध बोई गई भूमि < कुल क्षेत्रफल है, हर के हर छोटा है, जिससे शारीरिक घनत्व अधिक होता है, कम नहीं। कथन 2 कहता है कि यह 'कम' आंकड़ा देगा — यह गणितीय रूप से गलत है।",
+        "कथन 1 सही, कथन 2 गलत — उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में स्कोप-एक्सटेंशन ट्रैप ने घनत्व प्रकारों के बीच तुलना में 'कम' होने का दिशात्मक दावा जोड़ा है। जो छात्र शारीरिक और अंकगणितीय घनत्व के बारे में पढ़े हैं लेकिन गणितीय तर्क को नहीं समझे हैं, वे मान सकते हैं कि अधिक 'विशेषीकृत' या 'परिष्कृत' माप कम, अधिक 'सटीक' संख्या देगा — यह एक वैचारिक भ्रम है। वास्तविकता गणितीय रूप से विपरीत है: छोटा हर के हर = बड़ा अनुपात।",
+      "final_explanation": "विभिन्न घनत्व अवधारणाओं को समझने के लिए हर के हर पर सावधानीपूर्वक ध्यान देना आवश्यक है।\n\n• कथन 1 — सही: भारत की जनगणना द्वारा रिपोर्ट की गई 382/वर्ग किमी की घनत्व कुल भौगोलिक क्षेत्रफल (3.28 मिलियन वर्ग किमी) को हर के हर उपयोग करती है। इसमें थार रेगिस्तान, हिमालय, पूर्वोत्तर के घने वन और सभी जल निकाय शामिल हैं — ऐसे क्षेत्र जहाँ जनसंख्या न्यूनतम या नहीं के बराबर है।\n• कथन 2 — गलत: शारीरिक घनत्व का गणितीय तर्क इस प्रकार है: जनसंख्या घनत्व (अंकगणितीय) = P ÷ कुल क्षेत्रफल; शारीरिक घनत्व = P ÷ शुद्ध बोई गई भूमि। चूंकि शुद्ध बोई गई भूमि < कुल क्षेत्रफल है, शारीरिक घनत्व हमेशा अधिक होगा। भारत के लिए यह 382 से काफी अधिक होगा — जो कृषि भूमि पर वास्तविक दबाव को दर्शाता है।\n\nउदाहरण: यदि भारत की शुद्ध बोई गई भूमि लगभग 140 मिलियन हेक्टेयर है (कुल ~328 मिलियन हेक्टेयर के मुकाबले), तो शारीरिक घनत्व लगभग (382 × 328/140) ≈ 895/वर्ग किमी होगा — जो अंकगणितीय घनत्व से दोगुना से अधिक है।\n\nमूल्य संवर्धन:\n• कृषि घनत्व = कृषि जनसंख्या ÷ कृषि योग्य भूमि — एक और प्रकार।\n• भारत की शारीरिक घनत्व विश्व में सबसे अधिक में से एक है, जो कृषि भूमि पर अत्यधिक दबाव दर्शाता है।\n• अंकगणितीय घनत्व उन देशों में मानव दबाव को कम आंकता है जहाँ बड़े अनुपयोगी क्षेत्र (रेगिस्तान, पर्वत, वन) हैं।"
+    }
+  },
+  {
+    "uuid": "2ea6b827-baf4-445b-aa23-2556005d4f82",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Definition and Methodology of Literacy Rate in Indian Census",
+        "State-wise Literacy Extremes and Patterns (Census 2011)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Pre-1991 vs post-1991 literacy definition change — historical methodology shift",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In which of the following Census years did India formally shift its literacy measurement methodology to specifically require that a person be able to read and write 'with understanding' — a definition that makes literacy data from earlier censuses not fully comparable with subsequent ones?\n\n(a) 1961\n(b) 1991\n(c) 2001\n(d) 1971",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who know the Census changed its literacy definition may associate the change with the post-Independence period (1951 or 1961 census) rather than the 1991 census.",
+      "elimination_logic": [
+        "Eliminate (a): The literacy definition was not changed in the 1961 census — that census era used self-declaration; the key methodological shift came later.",
+        "Eliminate (c): 2001 is incorrect — the methodological shift occurred in 1991 census, not 2001. The 2001 census continued the 1991 definition.",
+        "Eliminate (d): 1971 is incorrect — literacy reporting in 1971 census did not introduce the 'with understanding' qualifier that distinguishes post-1991 methodology.",
+        "Confirm (b): The 1991 census introduced the requirement that literacy implies the ability to read and write 'with understanding', replacing the earlier simple self-declaration or basic reading ability criterion — making pre/post 1991 census data not fully comparable."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap places adjacent census years around the actual answer of 1991. Students who know the definition changed but do not recall the exact census year will be torn between 1981, 1991, and 2001. The 2001 option (c) is particularly trappy because students sometimes associate the major literacy push with the early 2000s policy context (Sarva Shiksha Abhiyan was 2001), not with the methodological change that occurred in the 1991 census.",
+      "final_explanation": "India's census literacy measurement has evolved, making historical comparisons methodologically complex.\n\n• Option (a) 1961: Incorrect. The 1961 census era used basic self-declaration of literacy — no formal 'with understanding' criterion existed then.\n• Option (b) 1991: Correct. The 1991 Census introduced the specific requirement that literacy means the ability to read and write 'with understanding in any language'. This replaced the earlier, more relaxed criterion that accepted basic reading ability or self-declaration. This definitional tightening means pre-1991 literacy figures are not fully comparable with post-1991 data.\n• Option (c) 2001: Incorrect. The 2001 census continued the 1991 definition — no new methodological change was introduced. Confusing the policy context (SSA 2001) with the methodological change (Census 1991) is the trap.\n• Option (d) 1971: Incorrect. The 1971 census predates the definitional refinement by two decades.\n\nValue Addition:\n• The 'with understanding' qualifier makes it harder to self-report as literate, theoretically producing a more conservative (lower) measured literacy rate post-1991.\n• Despite the tighter definition, measured literacy still rose sharply after 1991 — reflecting genuine educational expansion.\n• NLM (National Literacy Mission) launched in 1988 set the policy context for the 1991 methodological review."
+    },
+    "hi": {
+      "display_text": "भारत ने किस जनगणना वर्ष में औपचारिक रूप से अपनी साक्षरता मापन पद्धति को इस प्रकार बदला कि व्यक्ति 'समझ के साथ' पढ़ और लिख सके — ऐसी परिभाषा जिसने पूर्व की जनगणनाओं के साक्षरता आंकड़ों को बाद की जनगणनाओं से पूरी तरह तुलनीय नहीं बनाया?\n\n(a) 1961\n(b) 1991\n(c) 2001\n(d) 1971",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र जो जानते हैं कि जनगणना ने साक्षरता की परिभाषा बदली, वे इस बदलाव को स्वतंत्रता के बाद के काल (1951 या 1961 की जनगणना) से जोड़ सकते हैं, न कि 1991 की जनगणना से।",
+      "elimination_logic": [
+        "(a) को हटाएं: साक्षरता की परिभाषा 1961 की जनगणना में नहीं बदली थी — उस जनगणना काल में स्व-संघोषणा का उपयोग होता था; मुख्य पद्धतिगत बदलाव बाद में आया।",
+        "(c) को हटाएं: 2001 गलत है — पद्धतिगत बदलाव 1991 की जनगणना में हुआ था, न कि 2001 में। 2001 की जनगणना ने 1991 की परिभाषा जारी रखी।",
+        "(d) को हटाएं: 1971 गलत है — 1971 की जनगणना में 'समझ के साथ' पढ़ने-लिखने की योग्यता का वह विशेषण नहीं था जो 1991 के बाद की पद्धति को अलग करता है।",
+        "(b) की पुष्टि करें: 1991 की जनगणना ने यह आवश्यकता पेश की कि साक्षरता का अर्थ है 'समझ के साथ' पढ़ना और लिखना, जो पहले की सरल स्व-संघोषणा या मूल पढ़ने की योग्यता की तुलना में अलग है — इसलिए 1991 से पहले और बाद के जनगणना आंकड़े पूरी तरह तुलनीय नहीं हैं।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम (temporal-swap) जाल वास्तविक उत्तर 1991 के आसपास के निकटवर्ती जनगणना वर्षों को रखता है। जो छात्र जानते हैं कि परिभाषा बदली है लेकिन सही जनगणना वर्ष याद नहीं रखते, वे 1981, 1991 और 2001 के बीच उलझ सकते हैं। 2001 विकल्प (c) विशेष रूप से जालपूर्ण है क्योंकि छात्र कभी-कभी बड़े साक्षरता अभियान को 2000 के दशक की शुरुआत की नीति (सरवा शिक्षा अभियान 2001) से जोड़ते हैं, न कि 1991 की जनगणना में हुए पद्धतिगत बदलाव से।",
+      "final_explanation": "भारत की जनगणना में साक्षरता मापन विकसित हुआ है, जिससे ऐतिहासिक तुलना पद्धतिगत रूप से जटिल हो गई है।\n\n• विकल्प (a) 1961: गलत। 1961 की जनगणना में साक्षरता के लिए केवल मूल स्व-संघोषणा का उपयोग होता था — 'समझ के साथ' पढ़ने-लिखने का कोई औपचारिक मानदंड नहीं था।\n• विकल्प (b) 1991: सही। 1991 की जनगणना ने स्पष्ट किया कि साक्षरता का अर्थ है 'किसी भी भाषा में समझ के साथ पढ़ना और लिखना'। इसने पहले के अधिक सहज मानदंड को बदल दिया जो केवल मूल पढ़ने की योग्यता या स्व-संघोषणा स्वीकार करता था। इस परिभाषा के कड़े होने से 1991 से पहले और बाद के आंकड़े पूरी तरह तुलनीय नहीं हैं।\n• विकल्प (c) 2001: गलत। 2001 की जनगणना ने 1991 की परिभाषा जारी रखी — कोई नया पद्धतिगत बदलाव नहीं हुआ। नीति संदर्भ (SSA 2001) को पद्धतिगत बदलाव (1991 की जनगणना) से भ्रमित करना जाल है।\n• विकल्प (d) 1971: गलत। 1971 की जनगणना परिभाषा में सुधार से दो दशक पहले की है।\n\nमूल्य संवर्धन:\n• 'समझ के साथ' योग्यता ने स्व-संघोषणा को कठिन बनाया, जिससे 1991 के बाद मापी गई साक्षरता दर सैद्धांतिक रूप से अधिक सतर्क (कम) हुई।\n• कड़ी परिभाषा के बावजूद, 1991 के बाद साक्षरता में तेज वृद्धि हुई — जो वास्तविक शैक्षिक विस्तार को दर्शाती है।\n• राष्ट्रीय साक्षरता मिशन (NLM) 1988 में शुरू हुआ, जिसने 1991 के पद्धतिगत पुनरावलोकन के लिए नीति संदर्भ स्थापित किया।"
+    }
+  },
+  {
+    "uuid": "9040bbd9-63df-4dca-8dab-e85a66cfd186",
+    "meta": {
+      "subject": "Geography",
+      "topic": "Population and Urbanisation",
+      "sub_topic": "Census data — literacy, sex ratio, density",
+      "concepts_used": [
+        "Density-Literacy-Sex Ratio Interrelationship: Integrated Analysis",
+        "Demographic Dividend: Literacy and Sex Ratio as Enabling Conditions",
+        "Gender Gap in Literacy: Female Literacy Rate Trends"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Kerala model — high literacy, low TFR, high sex ratio, low density growth",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the interrelationship between literacy, sex ratio, density, and development outcomes across Indian states:\n\n1. The 'Kerala model' of development demonstrates that high female literacy is sufficient on its own to achieve low fertility, high sex ratio, and equitable human development outcomes, without requiring interventions in healthcare or employment.\n2. States with high population density, low female literacy, and poor sex ratio — such as Bihar and Uttar Pradesh — are likely to miss the demographic dividend window unless accelerated investments in female education and healthcare are made.\n3. Punjab illustrates that high economic prosperity and above-average literacy are not sufficient guarantors of gender equity in demographic outcomes, as demonstrated by its poor child sex ratio despite high per capita income.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 1, 2 and 3\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The 'Kerala model' of development demonstrates that high female literacy is sufficient on its own to achieve low fertility, high sex ratio, and equitable human development outcomes, without requiring interventions in healthcare or employment.",
+          "verdict": "Incorrect",
+          "reason": "Kerala's outcomes result from an integrated package — high literacy, extensive public healthcare, land reforms, social movements, and relatively high female employment in education and health sectors. High female literacy alone is not sufficient; it is part of a systemic package."
+        },
+        {
+          "statement": "States with high population density, low female literacy, and poor sex ratio — such as Bihar and Uttar Pradesh — are likely to miss the demographic dividend window unless accelerated investments in female education and healthcare are made.",
+          "verdict": "Correct",
+          "reason": "Demographic dividend requires the working-age population bulge to be healthy, educated, and employable. BIMARU states with high fertility (delaying the age structure shift) and low female literacy risk converting the dividend window into a demographic burden."
+        },
+        {
+          "statement": "Punjab illustrates that high economic prosperity and above-average literacy are not sufficient guarantors of gender equity in demographic outcomes, as demonstrated by its poor child sex ratio despite high per capita income.",
+          "verdict": "Correct",
+          "reason": "Punjab's CSR of 846 (second worst nationally) despite high prosperity and literacy directly demonstrates the prosperity-equity disconnect — cultural son preference amplified by technology access overrides income and literacy effects on gender outcomes."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because it includes Statement 1, which sounds like a reasonable summary of the Kerala model — students who have read about Kerala as a literacy-success story may accept the 'literacy alone' claim without noting the 'sufficient on its own' qualifier that makes it wrong.",
+      "elimination_logic": [
+        "Evaluate Statement 1: 'Sufficient on its own' is the partial-truth trap — Kerala's outcomes require literacy PLUS healthcare, land reforms, social movements. Statement 1 is incorrect.",
+        "Evaluate Statement 2: BIMARU states delaying demographic transition unless interventions made — this is the standard policy position articulated in Economic Surveys. Statement 2 is correct.",
+        "Evaluate Statement 3: Punjab's CSR paradox is well-documented — prosperity + literacy + poor CSR = correct. Statement 3 is correct.",
+        "Statements 2 and 3 correct, Statement 1 incorrect — answer is (d) 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 1 uses 'sufficient on its own' — a scope-extension of the partial-truth type. The Kerala model does show that female literacy is a powerful driver of development outcomes, but the model's success is specifically attributed to the combination of literacy, public health investment, land reforms, and social movements. Treating literacy as sufficient (rather than necessary) misrepresents the model. Students who associate 'Kerala = literacy success' will accept Statement 1 without noticing the single-cause fallacy embedded in 'sufficient on its own'.",
+      "final_explanation": "The integrated analysis of literacy, sex ratio, and density connects to both descriptive census data and normative policy debates.\n\n• Statement 1 — Incorrect: The 'Kerala model' is specifically characterised as a multi-dimensional achievement — high female literacy, extensive public healthcare network, land reform redistribution, progressive social movements (particularly Nair and Christian community women's empowerment traditions), and relatively high social capital. Reducing it to literacy alone is a single-cause fallacy. Kerala's TFR (~1.8) and MMR (among India's lowest) reflect healthcare investment as much as literacy.\n• Statement 2 — Correct: Bihar (TFR ~3.0) and UP (~2.7) have not yet begun their demographic transition's accelerating phase. Without rapid improvements in female literacy, healthcare access, and employment, these states will miss the dividend window — producing a youth bulge that cannot find employment rather than one that drives growth.\n• Statement 3 — Correct: Punjab's child sex ratio of 846 — despite a literacy rate (~76%) above the national average and one of India's highest per capita incomes — is the textbook illustration of the prosperity-equity disconnect. Dowry burden, land inheritance customs, and affordable sex-determination technology combine to create this paradox.\n\nValue Addition:\n• Economic Survey 2018-19 introduced the concept of 'missing women' in the workforce using CMIE data.\n• The BIMARU states now often use the updated term 'BIMARU+' to include Chhattisgarh and Jharkhand.\n• Kerala's out-migration (Gulf economies) has created a new challenge — return migration adding to unemployment while sex ratio remains high due to female-dominated remaining population."
+    },
+    "hi": {
+      "display_text": "भारतीय राज्यों में साक्षरता, लिंगानुपात, घनत्व, और विकास परिणामों के बीच अंतर्संबंध के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. 'केरल मॉडल' विकास यह दर्शाता है कि उच्च महिला साक्षरता अकेले ही कम प्रजनन दर, उच्च लिंगानुपात, और समान मानव विकास परिणाम प्राप्त करने के लिए पर्याप्त है, बिना स्वास्थ्य देखभाल या रोजगार में हस्तक्षेप की आवश्यकता के।\n2. उच्च जनसंख्या घनत्व, कम महिला साक्षरता, और खराब लिंगानुपात वाले राज्य — जैसे बिहार और उत्तर प्रदेश — जब तक महिला शिक्षा और स्वास्थ्य देखभाल में तीव्र निवेश नहीं किया जाता, तब तक जनसांख्यिकीय लाभ की खिड़की चूक सकते हैं।\n3. पंजाब यह दर्शाता है कि उच्च आर्थिक समृद्धि और औसत से ऊपर की साक्षरता लिंग समानता के लिए पर्याप्त गारंटर नहीं हैं, जैसा कि इसके खराब बाल लिंगानुपात से स्पष्ट है, जबकि प्रति व्यक्ति आय उच्च है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) 1, 2 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "'केरल मॉडल' विकास यह दर्शाता है कि उच्च महिला साक्षरता अकेले ही कम प्रजनन दर, उच्च लिंगानुपात, और समान मानव विकास परिणाम प्राप्त करने के लिए पर्याप्त है, बिना स्वास्थ्य देखभाल या रोजगार में हस्तक्षेप की आवश्यकता के।",
+          "verdict": "गलत",
+          "reason": "केरल के परिणाम एक समेकित पैकेज का परिणाम हैं — उच्च साक्षरता, व्यापक सार्वजनिक स्वास्थ्य देखभाल, भूमि सुधार, सामाजिक आंदोलन, और शिक्षा तथा स्वास्थ्य क्षेत्रों में अपेक्षाकृत उच्च महिला रोजगार। केवल उच्च महिला साक्षरता पर्याप्त नहीं है; यह एक प्रणालीगत पैकेज का हिस्सा है।"
+        },
+        {
+          "statement": "उच्च जनसंख्या घनत्व, कम महिला साक्षरता, और खराब लिंगानुपात वाले राज्य — जैसे बिहार और उत्तर प्रदेश — जब तक महिला शिक्षा और स्वास्थ्य देखभाल में तीव्र निवेश नहीं किया जाता, तब तक जनसांख्यिकीय लाभ की खिड़की चूक सकते हैं।",
+          "verdict": "सही",
+          "reason": "जनसांख्यिकीय लाभ के लिए कार्यशील आयु वर्ग का स्वस्थ, शिक्षित और रोजगार योग्य होना आवश्यक है। BIMARU राज्य उच्च प्रजनन दर (जो आयु संरचना परिवर्तन को विलंबित करता है) और कम महिला साक्षरता के कारण लाभ की खिड़की को जनसांख्यिकीय बोझ में बदलने का जोखिम रखते हैं।"
+        },
+        {
+          "statement": "पंजाब यह दर्शाता है कि उच्च आर्थिक समृद्धि और औसत से ऊपर की साक्षरता लिंग समानता के लिए पर्याप्त गारंटर नहीं हैं, जैसा कि इसके खराब बाल लिंगानुपात से स्पष्ट है, जबकि प्रति व्यक्ति आय उच्च है।",
+          "verdict": "सही",
+          "reason": "पंजाब का बाल लिंगानुपात 846 (राष्ट्रीय स्तर पर दूसरा सबसे खराब) है, जो उच्च समृद्धि और साक्षरता के बावजूद समृद्धि-समता असंगति को सीधे दर्शाता है — सांस्कृतिक पुत्र वरीयता, तकनीकी पहुँच द्वारा बढ़ाई गई, आय और साक्षरता के प्रभावों को लिंग परिणामों पर मात देती है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि इसमें कथन 1 शामिल है, जो केरल मॉडल का एक तार्किक सारांश प्रतीत होता है — जो छात्र केरल को साक्षरता सफलता की कहानी के रूप में पढ़ चुके हैं, वे 'केवल साक्षरता' के दावे को बिना 'अकेले पर्याप्त' की शर्त पर ध्यान दिए स्वीकार कर सकते हैं, जो इसे गलत बनाता है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: 'अकेले पर्याप्त' आंशिक-सत्य जाल है — केरल के परिणामों के लिए साक्षरता के साथ स्वास्थ्य देखभाल, भूमि सुधार, सामाजिक आंदोलन आवश्यक हैं। कथन 1 गलत है।",
+        "कथन 2 का मूल्यांकन करें: BIMARU राज्य जनसांख्यिकीय संक्रमण को विलंबित कर रहे हैं जब तक हस्तक्षेप न हो — यह आर्थिक सर्वेक्षणों में व्यक्त मानक नीति स्थिति है। कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: पंजाब का बाल लिंगानुपात विरोधाभास अच्छी तरह प्रलेखित है — समृद्धि + साक्षरता + खराब बाल लिंगानुपात = सही। कथन 3 सही है।",
+        "कथन 2 और 3 सही हैं, कथन 1 गलत है — उत्तर है (d) केवल 2 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में 'अकेले पर्याप्त' शब्द का प्रयोग आंशिक-सत्य प्रकार का दायरा-विस्तार है। केरल मॉडल दिखाता है कि महिला साक्षरता विकास परिणामों का एक शक्तिशाली चालक है, लेकिन मॉडल की सफलता विशेष रूप से साक्षरता, सार्वजनिक स्वास्थ्य निवेश, भूमि सुधार, और सामाजिक आंदोलनों के संयोजन को समर्पित है। साक्षरता को पर्याप्त (न कि आवश्यक) मानना मॉडल का गलत प्रतिनिधित्व है। जो छात्र 'केरल = साक्षरता सफलता' से जोड़ते हैं, वे कथन 1 को बिना 'अकेले पर्याप्त' की एकल-कारण त्रुटि देखे स्वीकार कर लेंगे।",
+      "final_explanation": "साक्षरता, लिंगानुपात, और घनत्व का समेकित विश्लेषण जनगणना के वर्णनात्मक आंकड़ों और मानक नीति बहसों दोनों से जुड़ा है।\n\n• कथन 1 — गलत: 'केरल मॉडल' विशेष रूप से एक बहुआयामी उपलब्धि के रूप में वर्णित है — उच्च महिला साक्षरता, व्यापक सार्वजनिक स्वास्थ्य देखभाल नेटवर्क, भूमि सुधार पुनर्वितरण, प्रगतिशील सामाजिक आंदोलन (विशेषकर नायर और ईसाई समुदाय की महिला सशक्तिकरण परंपराएँ), और अपेक्षाकृत उच्च सामाजिक पूंजी। इसे केवल साक्षरता तक सीमित करना एकल-कारण त्रुटि है। केरल की कुल प्रजनन दर (~1.8) और मातृ मृत्यु दर (भारत में सबसे कम में से) स्वास्थ्य देखभाल निवेश के समान रूप से प्रतिबिंब हैं।\n• कथन 2 — सही: बिहार (TFR ~3.0) और उत्तर प्रदेश (~2.7) ने अभी तक अपने जनसांख्यिकीय संक्रमण के तीव्र चरण की शुरुआत नहीं की है। महिला साक्षरता, स्वास्थ्य देखभाल पहुँच, और रोजगार में तीव्र सुधार के बिना, ये राज्य लाभ की खिड़की चूकेंगे — एक युवा जनसंख्या का निर्माण करेंगे जो रोजगार नहीं पा सकेगी, न कि विकास को बढ़ावा देगी।\n• कथन 3 — सही: पंजाब का बाल लिंगानुपात 846 — राष्ट्रीय औसत से ऊपर की साक्षरता दर (~76%) और भारत की उच्चतम प्रति व्यक्ति आय में से एक के बावजूद — समृद्धि-समता असंगति का पाठ्यपुस्तक उदाहरण है। दहेज बोझ, भूमि उत्तराधिकार प्रथाएँ, और सस्ती लिंग निर्धारण तकनीक इस विरोधाभास को जन्म देती हैं।\n\nमूल्य संवर्धन:\n• आर्थिक सर्वेक्षण 2018-19 ने CMIE डेटा का उपयोग करते हुए कार्यबल में 'लापता महिलाएं' की अवधारणा प्रस्तुत की।\n• BIMARU राज्यों को अब अक्सर 'BIMARU+' कहा जाता है जिसमें छत्तीसगढ़ और झारखंड शामिल हैं।\n• केरल के प्रवास (खाड़ी अर्थव्यवस्थाएँ) ने एक नई चुनौती पैदा की है — वापसी प्रवास बेरोजगारी बढ़ा रहा है जबकि लिंगानुपात उच्च बना हुआ है क्योंकि शेष जनसंख्या महिला प्रधान है।"
+    }
+  }
+]

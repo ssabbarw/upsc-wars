@@ -1,0 +1,1376 @@
+[
+  {
+    "uuid": "4503b8d6-c05b-46c9-852c-91dd11fe32c6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Government Securities (G-Secs): Definition, Types and Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Treasury Bills coupon rate — zero coupon instrument",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements correctly describes the coupon structure of Treasury Bills (T-Bills) issued by the Government of India?\n\n(a) T-Bills carry a low but fixed coupon rate paid at maturity along with the principal\n(b) T-Bills carry no coupon rate; they are issued at a discount and redeemed at face value\n(c) T-Bills carry a floating coupon rate linked to the prevailing repo rate\n(d) T-Bills carry a semi-annual fixed coupon identical in structure to dated government securities",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because T-Bills are indeed short-term government instruments, leading many students to assume they carry a low but positive coupon rate, as conventional bonds do.",
+      "elimination_logic": [
+        "Recall that T-Bills (91-day, 182-day, 364-day) are issued at a discount to face value and redeemed at face value — the difference is the investor's return.",
+        "Because T-Bills carry no periodic interest payment, they have a zero coupon rate — this is their defining structural feature.",
+        "Eliminate options (a), (c), and (d) which incorrectly attribute a coupon rate or periodic interest payment to T-Bills."
+      ],
+      "upsc_trap_explanation": "Students familiar with dated G-Secs often assume all government instruments carry coupon rates. T-Bills are discount instruments — they are issued below face value and redeemed at par. No periodic coupon is paid. The return is entirely embedded in the price discount. A partially prepared student may confuse the 'yield' quoted on T-Bills with a coupon rate, or assume that since dated G-Secs carry coupons, so do T-Bills. The trap exploits the conflation of 'yield' with 'coupon.'",
+      "final_explanation": "Treasury Bills are short-term money market instruments issued by the Government of India in three tenors: 91-day, 182-day, and 364-day. Unlike dated government securities that pay a semi-annual coupon, T-Bills are zero-coupon instruments issued at a discount to face value and redeemed at par on maturity.\n\n• Option (a): Incorrect. T-Bills do not carry a coupon rate. They are pure discount instruments.\n• Option (b): Correct. T-Bills carry no coupon rate; the investor's return is the difference between the discounted issue price and the face value at redemption.\n• Option (c): Incorrect. T-Bills are not floating-rate instruments; no periodic interest of any kind is paid.\n• Option (d): Incorrect. Dated securities — not T-Bills — carry fixed semi-annual coupons and qualify as 'dated securities.'\n\nValue Addition:\n• Only dated securities (central and state government) are called 'dated G-Secs'; T-Bills are classified as money market instruments.\n• The cut-off yield in T-Bill auctions is determined through a uniform price auction mechanism.\n• T-Bills are SLR-eligible instruments for banks."
+    },
+    "hi": {
+      "display_text": "भारत सरकार द्वारा जारी ट्रेजरी बिल्स (टी-बिल्स) की कूपन संरचना का सही वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) टी-बिल्स में एक कम लेकिन निश्चित कूपन दर होती है जो परिपक्वता पर मूलधन के साथ भुगतान की जाती है\n(b) टी-बिल्स में कोई कूपन दर नहीं होती; इन्हें छूट पर जारी किया जाता है और अंकित मूल्य पर भुनाया जाता है\n(c) टी-बिल्स में वर्तमान रेपो दर से जुड़ी फ्लोटिंग कूपन दर होती है\n(d) टी-बिल्स में अर्धवार्षिक निश्चित कूपन होता है जो तिथि वाली सरकारी प्रतिभूतियों के समान होता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि टी-बिल्स वास्तव में अल्पकालिक सरकारी उपकरण हैं, जिससे कई छात्र यह मान लेते हैं कि इनमें पारंपरिक बॉन्ड की तरह एक कम लेकिन सकारात्मक कूपन दर होती है।",
+      "elimination_logic": [
+        "याद रखें कि टी-बिल्स (91-दिन, 182-दिन, 364-दिन) अंकित मूल्य से छूट पर जारी किए जाते हैं और अंकित मूल्य पर परिपक्वता पर भुनाए जाते हैं — अंतर निवेशक की आय है।",
+        "चूंकि टी-बिल्स में कोई आवधिक ब्याज भुगतान नहीं होता, इसलिए इनका कूपन दर शून्य होता है — यह उनकी परिभाषित संरचनात्मक विशेषता है।",
+        "विकल्प (a), (c), और (d) को हटा दें क्योंकि ये गलत तरीके से टी-बिल्स को कूपन दर या आवधिक ब्याज भुगतान देते हैं।"
+      ],
+      "upsc_trap_explanation": "जो छात्र तिथि वाली सरकारी प्रतिभूतियों से परिचित हैं, वे अक्सर मान लेते हैं कि सभी सरकारी उपकरणों में कूपन दर होती है। टी-बिल्स छूट वाले उपकरण हैं — इन्हें अंकित मूल्य से कम पर जारी किया जाता है और अंकित मूल्य पर भुनाया जाता है। कोई आवधिक कूपन भुगतान नहीं होता। आय पूरी तरह से मूल्य छूट में निहित होती है। आंशिक रूप से तैयार छात्र टी-बिल्स पर उद्धृत 'यील्ड' को कूपन दर समझ सकते हैं, या यह मान सकते हैं कि चूंकि तिथि वाली सरकारी प्रतिभूतियों में कूपन होता है, इसलिए टी-बिल्स में भी होगा। यह जाल 'यील्ड' और 'कूपन' के मिश्रण का फायदा उठाता है।",
+      "final_explanation": "ट्रेजरी बिल्स भारत सरकार द्वारा जारी किए जाने वाले अल्पकालिक मुद्रा बाजार उपकरण हैं, जो तीन अवधियों में होते हैं: 91-दिन, 182-दिन, और 364-दिन। तिथि वाली सरकारी प्रतिभूतियों के विपरीत जो अर्धवार्षिक कूपन भुगतान करती हैं, टी-बिल्स शून्य-कूपन उपकरण हैं जो अंकित मूल्य से छूट पर जारी किए जाते हैं और परिपक्वता पर अंकित मूल्य पर भुनाए जाते हैं।\n\n• विकल्प (a): गलत। टी-बिल्स में कोई कूपन दर नहीं होती। ये शुद्ध छूट वाले उपकरण हैं।\n• विकल्प (b): सही। टी-बिल्स में कोई कूपन दर नहीं होती; निवेशक की आय छूट मूल्य और अंकित मूल्य के बीच के अंतर से होती है।\n• विकल्प (c): गलत। टी-बिल्स फ्लोटिंग-रेट उपकरण नहीं हैं; इनमें कोई आवधिक ब्याज भुगतान नहीं होता।\n• विकल्प (d): गलत। तिथि वाली प्रतिभूतियां — टी-बिल्स नहीं — अर्धवार्षिक निश्चित कूपन रखती हैं और इन्हें 'dated securities' कहा जाता है।\n\nमूल्य संवर्धन:\n• केवल तिथि वाली प्रतिभूतियां (केंद्र और राज्य सरकार) को 'dated G-Secs' कहा जाता है; टी-बिल्स को मुद्रा बाजार उपकरण के रूप में वर्गीकृत किया जाता है।\n• टी-बिल नीलामी में कट-ऑफ यील्ड एक समान मूल्य नीलामी तंत्र के माध्यम से निर्धारित होती है।\n• टी-बिल्स बैंक के लिए SLR-योग्य उपकरण हैं।"
+    }
+  },
+  {
+    "uuid": "31e2f1b4-4647-4048-8a8f-b0dd33dba027",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Government Securities (G-Secs): Definition, Types and Classification",
+        "Statutory Liquidity Ratio (SLR) and Its Link to G-Sec Market"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "SLR-eligible instruments and G-Sec classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding instruments in the Government Securities market:\n\n1. State Development Loans (SDLs) are classified as 'dated securities' and are eligible to be counted towards the Statutory Liquidity Ratio (SLR) of commercial banks.\n2. Sovereign Gold Bonds (SGBs) are SLR-eligible instruments, and Treasury Bills are not eligible for SLR computation.\n3. STRIPS derived from dated G-Secs are zero-coupon instruments tradeable separately, but the Government of India's total debt obligation does not increase when a G-Sec is stripped.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "State Development Loans (SDLs) are classified as 'dated securities' and are eligible to be counted towards the Statutory Liquidity Ratio (SLR) of commercial banks.",
+          "verdict": "Correct",
+          "reason": "SDLs are long-tenor, coupon-bearing instruments issued by state governments and are explicitly SLR-eligible, making them functionally similar to central government dated securities for SLR purposes."
+        },
+        {
+          "statement": "Sovereign Gold Bonds (SGBs) are SLR-eligible instruments, and Treasury Bills are not eligible for SLR computation.",
+          "verdict": "Incorrect",
+          "reason": "Both SGBs and Treasury Bills are SLR-eligible. The claim that T-Bills are not SLR-eligible is false — T-Bills, being government instruments, qualify under SLR-eligible securities."
+        },
+        {
+          "statement": "STRIPS derived from dated G-Secs are zero-coupon instruments tradeable separately, but the Government of India's total debt obligation does not increase when a G-Sec is stripped.",
+          "verdict": "Correct",
+          "reason": "STRIPS are derived from existing G-Secs by separating coupon and principal cash flows; no new government liability is created — the underlying debt obligation is redistributed, not increased."
+        }
+      ],
+      "strong_distractor": "d — A student who correctly identifies Statement 1 and Statement 3 as correct may still hesitate because Statement 2 sounds authoritative, and they may be unsure whether T-Bills qualify for SLR.",
+      "elimination_logic": [
+        "Confirm Statement 1: SDLs are explicitly listed as SLR-eligible instruments by RBI — this is correct.",
+        "Test Statement 2: T-Bills, as government paper, are SLR-eligible. The assertion that T-Bills are not SLR-eligible is factually wrong — eliminate any option that treats Statement 2 as correct.",
+        "Confirm Statement 3: STRIPS do not create new government debt; they redistribute existing cash flows into separately tradeable zero-coupon securities — correct.",
+        "Correct combination is Statements 1 and 3 only, pointing to option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the trap. Many students know SGBs are SLR-eligible and may assume T-Bills are not, since T-Bills are money market instruments rather than traditional bonds. However, T-Bills are government obligations and qualify for SLR. The partial truth in Statement 2 (correctly identifying SGB eligibility) makes the false claim about T-Bills easier to miss.",
+      "final_explanation": "This question tests precise knowledge of which instruments qualify for SLR and how STRIPS function. SLR-eligible instruments include G-Secs (central and state), T-Bills, and SGBs — the category is broader than many students assume.\n\n• Statement 1 — Correct: SDLs are dated securities (coupon-bearing, long-tenor) issued by state governments. Banks can include them in SLR computation. This is one reason states find a ready buyer for their paper.\n• Statement 2 — Incorrect: Both SGBs AND T-Bills are SLR-eligible. Claiming T-Bills are ineligible is factually wrong. T-Bills are short-term government obligations and have always qualified.\n• Statement 3 — Correct: STRIPS decompose an existing G-Sec into separately tradeable zero-coupon instruments (each coupon payment and the principal become individual instruments). No additional liability is created for the government.\n\nValue Addition:\n• The SLR floor is currently 18% of Net Demand and Time Liabilities (NDTL).\n• SDLs typically trade at a spread of 25–75 basis points over comparable central G-Secs.\n• RBI coordinates the SDL issuance calendar to prevent market congestion."
+    },
+    "hi": {
+      "display_text": "सरकारी प्रतिभूतियों के बाजार में उपकरणों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. स्टेट डेवलपमेंट लोन (SDLs) को 'डेटेड सिक्योरिटीज' के रूप में वर्गीकृत किया गया है और इन्हें वाणिज्यिक बैंकों के वैधानिक तरलता अनुपात (SLR) में गिना जा सकता है।\n2. सोवरेन गोल्ड बॉन्ड (SGBs) SLR-योग्य उपकरण हैं, और ट्रेजरी बिल SLR गणना के लिए योग्य नहीं हैं।\n3. डेटेड G-Secs से व्युत्पन्न STRIPS शून्य-कूपन उपकरण हैं जो अलग से व्यापार योग्य हैं, लेकिन जब कोई G-Sec स्ट्रिप किया जाता है तो भारत सरकार का कुल ऋण दायित्व नहीं बढ़ता।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "State Development Loans (SDLs) are classified as 'dated securities' and are eligible to be counted towards the Statutory Liquidity Ratio (SLR) of commercial banks.",
+          "verdict": "सही है",
+          "reason": "SDLs लंबी अवधि वाले, कूपन युक्त उपकरण हैं जो राज्य सरकारों द्वारा जारी किए जाते हैं और ये स्पष्ट रूप से SLR-योग्य हैं, जिससे ये SLR उद्देश्यों के लिए केंद्रीय सरकार के डेटेड सिक्योरिटीज के समान कार्य करते हैं।"
+        },
+        {
+          "statement": "Sovereign Gold Bonds (SGBs) are SLR-eligible instruments, and Treasury Bills are not eligible for SLR computation.",
+          "verdict": "गलत है",
+          "reason": "SGBs और ट्रेजरी बिल दोनों ही SLR-योग्य हैं। यह दावा कि ट्रेजरी बिल SLR के लिए योग्य नहीं हैं, गलत है — ट्रेजरी बिल, जो सरकारी उपकरण हैं, SLR-योग्य सिक्योरिटीज के अंतर्गत आते हैं।"
+        },
+        {
+          "statement": "STRIPS derived from dated G-Secs are zero-coupon instruments tradeable separately, but the Government of India's total debt obligation does not increase when a G-Sec is stripped.",
+          "verdict": "सही है",
+          "reason": "STRIPS मौजूदा G-Secs से कूपन और मूलधन नकदी प्रवाह को अलग करके बनाए जाते हैं; कोई नई सरकारी देयता उत्पन्न नहीं होती — अंतर्निहित ऋण दायित्व पुनर्वितरित होता है, बढ़ता नहीं है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र कथन 1 और कथन 3 को सही पहचानते हैं, वे फिर भी हिचक सकते हैं क्योंकि कथन 2 अधिकारिक लगता है, और वे सुनिश्चित नहीं हो सकते कि क्या ट्रेजरी बिल SLR के लिए योग्य हैं।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें: SDLs को RBI द्वारा स्पष्ट रूप से SLR-योग्य उपकरणों के रूप में सूचीबद्ध किया गया है — यह सही है।",
+        "कथन 2 का परीक्षण करें: ट्रेजरी बिल, एक सरकारी कागज के रूप में, SLR-योग्य हैं। यह दावा कि ट्रेजरी बिल SLR-योग्य नहीं हैं, तथ्यात्मक रूप से गलत है — किसी भी विकल्प को हटा दें जो कथन 2 को सही मानता है।",
+        "कथन 3 की पुष्टि करें: STRIPS नई सरकारी देनदारी नहीं बनाते; वे मौजूदा नकदी प्रवाह को अलग-अलग व्यापार योग्य शून्य-कूपन सिक्योरिटीज में पुनर्वितरित करते हैं — सही है।",
+        "सही संयोजन केवल कथन 1 और 3 है, जो विकल्प (b) की ओर संकेत करता है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 जाल है। कई छात्र जानते हैं कि SGBs SLR-योग्य हैं और मान सकते हैं कि ट्रेजरी बिल नहीं हैं, क्योंकि ट्रेजरी बिल पारंपरिक बॉन्ड की बजाय मनी मार्केट उपकरण हैं। हालांकि, ट्रेजरी बिल सरकारी दायित्व हैं और SLR के लिए योग्य हैं। कथन 2 में आंशिक सत्य (SGB की योग्यता को सही पहचानना) ट्रेजरी बिल के बारे में गलत दावा छुपाने में मदद करता है।",
+      "final_explanation": "यह प्रश्न यह परीक्षण करता है कि कौन से उपकरण SLR के लिए योग्य हैं और STRIPS कैसे कार्य करते हैं। SLR-योग्य उपकरणों में G-Secs (केंद्रीय और राज्य), ट्रेजरी बिल, और SGBs शामिल हैं — यह श्रेणी कई छात्रों की अपेक्षा से व्यापक है।\n\n• कथन 1 — सही: SDLs डेटेड सिक्योरिटीज (कूपन युक्त, लंबी अवधि) हैं जो राज्य सरकारों द्वारा जारी की जाती हैं। बैंक इन्हें SLR गणना में शामिल कर सकते हैं। यह एक कारण है कि राज्य अपने कागज के लिए तैयार खरीदार पाते हैं।\n• कथन 2 — गलत: SGBs और ट्रेजरी बिल दोनों SLR-योग्य हैं। यह दावा कि ट्रेजरी बिल अयोग्य हैं, तथ्यात्मक रूप से गलत है। ट्रेजरी बिल अल्पकालिक सरकारी दायित्व हैं और हमेशा से योग्य रहे हैं।\n• कथन 3 — सही: STRIPS मौजूदा G-Sec को अलग-अलग व्यापार योग्य शून्य-कूपन उपकरणों में विभाजित करते हैं (प्रत्येक कूपन भुगतान और मूलधन अलग-अलग उपकरण बन जाते हैं)। सरकार के लिए कोई अतिरिक्त देनदारी नहीं बनती।\n\nमूल्य संवर्धन:\n• वर्तमान में SLR की न्यूनतम सीमा नेट डिमांड और टाइम लाइबिलिटीज़ (NDTL) का 18% है।\n• SDLs आमतौर पर तुलनीय केंद्रीय G-Secs की तुलना में 25–75 बेसिस पॉइंट्स की स्प्रेड पर व्यापार करते हैं।\n• RBI SDL जारी करने के कैलेंडर का समन्वय करता है ताकि बाजार में भीड़ न हो।"
+    }
+  },
+  {
+    "uuid": "3cafb00f-8951-4bd4-a68b-2bbeeb376d5d",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Held-to-Maturity (HTM), Available-for-Sale (AFS), and Held-for-Trading (HFT) Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "HTM category — MTM exemption and bank interest rate risk",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the investment classification framework for Government Securities held by commercial banks in India:\n\n1. Government Securities held in the Held-to-Maturity (HTM) category are exempted from mark-to-market valuation, shielding banks from recognising losses when yields rise.\n2. Banks can freely transfer securities from the HTM category to the Available-for-Sale (AFS) category at any time during the financial year to take advantage of favourable market conditions.\n3. Rising interest rates cause mark-to-market losses in the AFS and HFT portfolios of banks, which partly explains why commercial banks often resist policy rate hikes despite being lenders.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Government Securities held in the Held-to-Maturity (HTM) category are exempted from mark-to-market valuation, shielding banks from recognising losses when yields rise.",
+          "verdict": "Correct",
+          "reason": "HTM-classified securities are not subject to mark-to-market requirements; they are carried at acquisition cost. This insulates banks' reported profits from rising-yield environments."
+        },
+        {
+          "statement": "Banks can freely transfer securities from the HTM category to the Available-for-Sale (AFS) category at any time during the financial year to take advantage of favourable market conditions.",
+          "verdict": "Incorrect",
+          "reason": "RBI guidelines restrict switching between investment categories. Transfers from HTM to AFS are not freely permitted — they require RBI approval and can only occur within specified windows, typically at the start of the financial year."
+        },
+        {
+          "statement": "Rising interest rates cause mark-to-market losses in the AFS and HFT portfolios of banks, which partly explains why commercial banks often resist policy rate hikes despite being lenders.",
+          "verdict": "Correct",
+          "reason": "Banks holding large AFS/HFT portfolios suffer mark-to-market losses when yields rise (bond prices fall). This portfolio effect can offset the benefit of higher lending margins, creating a structural incentive against rate hikes."
+        }
+      ],
+      "strong_distractor": "d — Students who misremember switching rules as 'permitted with board approval only' (rather than 'RBI approval required') may incorrectly validate Statement 2, leading them to choose all three as correct.",
+      "elimination_logic": [
+        "Statement 1: HTM exemption from MTM is a well-established RBI prudential norm — this is correct.",
+        "Statement 2: The word 'freely' is the scope-extension trap. Switching from HTM to AFS is restricted and requires RBI permission — it is not a free market decision. Statement 2 is incorrect.",
+        "Statement 3: This describes the portfolio effect of rising yields on AFS/HFT books — a real and well-documented phenomenon. Correct.",
+        "Correct statements are 1 and 3 — option (c)."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 2 is the word 'freely.' Students who know that switching between categories is permitted under some circumstances may not register the qualifier. RBI's investment classification norms explicitly restrict intra-year switching to prevent banks from gaming the classification to avoid MTM losses. The 'freely' qualifier transforms a partially true statement into an incorrect one.",
+      "final_explanation": "RBI's investment classification framework (HTM/AFS/HFT) determines how banks account for their G-Sec holdings and how exposed they are to interest rate risk.\n\n• Statement 1 — Correct: HTM securities are carried at amortised cost, not market value. This means rising yields do not generate accounting losses for HTM holdings — a feature banks lobby to expand during tightening cycles.\n• Statement 2 — Incorrect: Switching between categories is tightly regulated. Moving from HTM to AFS requires RBI permission and is restricted to specific windows (usually the start of the financial year). The word 'freely' makes this statement false.\n• Statement 3 — Correct: When yields rise, bond prices fall. AFS and HFT portfolios must be marked to market, generating paper losses that hit banks' income statements. This explains why banks have a structural ambivalence toward rate hikes.\n\nValue Addition:\n• RBI periodically revises the HTM limit (currently 23% of NDTL) as a macroprudential tool.\n• A bank with a large HTM portfolio effectively transfers interest rate risk to itself (opportunity cost) while avoiding accounting volatility.\n• Modified Duration is the key metric banks use to quantify the price sensitivity of their AFS/HFT portfolios to yield changes."
+    },
+    "hi": {
+      "display_text": "भारत में वाणिज्यिक बैंकों द्वारा रखी गई सरकारी प्रतिभूतियों के निवेश वर्गीकरण ढांचे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Held-to-Maturity (HTM) श्रेणी में रखी गई सरकारी प्रतिभूतियाँ मार्क-टू-मार्केट मूल्यांकन से मुक्त होती हैं, जिससे बैंकों को जब यील्ड बढ़ती है तो नुकसान मान्यता से बचाया जाता है।\n2. बैंक वित्तीय वर्ष के किसी भी समय HTM श्रेणी से Available-for-Sale (AFS) श्रेणी में प्रतिभूतियों को स्वतंत्र रूप से स्थानांतरित कर सकते हैं ताकि अनुकूल बाजार परिस्थितियों का लाभ उठा सकें।\n3. बढ़ती ब्याज दरें बैंकों के AFS और HFT पोर्टफोलियो में मार्क-टू-मार्केट नुकसान का कारण बनती हैं, जो आंशिक रूप से यह समझाती हैं कि वाणिज्यिक बैंक ऋणदाता होने के बावजूद नीति दर वृद्धि का विरोध क्यों करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) 1 और 2 केवल\n(c) 1 और 3 केवल\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Held-to-Maturity (HTM) श्रेणी में रखे गए सरकारी प्रतिभूतियाँ मार्क-टू-मार्केट मूल्यांकन से मुक्त होती हैं, जिससे बैंकों को जब यील्ड बढ़ती है तो नुकसान मान्यता से बचाया जाता है।",
+          "verdict": "सही",
+          "reason": "HTM श्रेणी में वर्गीकृत प्रतिभूतियाँ मार्क-टू-मार्केट आवश्यकताओं के अधीन नहीं होतीं; इन्हें अधिग्रहण लागत पर रखा जाता है। यह बैंकों के रिपोर्ट किए गए लाभों को बढ़ती यील्ड के वातावरण से बचाता है।"
+        },
+        {
+          "statement": "बैंक वित्तीय वर्ष के किसी भी समय HTM श्रेणी से Available-for-Sale (AFS) श्रेणी में प्रतिभूतियों को स्वतंत्र रूप से स्थानांतरित कर सकते हैं ताकि अनुकूल बाजार परिस्थितियों का लाभ उठा सकें।",
+          "verdict": "गलत",
+          "reason": "RBI के दिशानिर्देश निवेश श्रेणियों के बीच स्विचिंग को सीमित करते हैं। HTM से AFS में स्थानांतरण स्वतंत्र रूप से अनुमति प्राप्त नहीं है — इसके लिए RBI की मंजूरी आवश्यक है और यह आमतौर पर वित्तीय वर्ष की शुरुआत में ही हो सकता है।"
+        },
+        {
+          "statement": "बढ़ती ब्याज दरें बैंकों के AFS और HFT पोर्टफोलियो में मार्क-टू-मार्केट नुकसान का कारण बनती हैं, जो आंशिक रूप से यह समझाती हैं कि वाणिज्यिक बैंक ऋणदाता होने के बावजूद नीति दर वृद्धि का विरोध क्यों करते हैं।",
+          "verdict": "सही",
+          "reason": "बैंक जिनके पास बड़े AFS/HFT पोर्टफोलियो होते हैं, उन्हें यील्ड बढ़ने पर मार्क-टू-मार्केट नुकसान होता है (बॉन्ड की कीमतें गिरती हैं)। यह पोर्टफोलियो प्रभाव उच्च ऋण मार्जिन के लाभ को संतुलित कर सकता है, जिससे दर वृद्धि के खिलाफ संरचनात्मक प्रोत्साहन बनता है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो स्विचिंग नियमों को 'केवल बोर्ड की मंजूरी से अनुमति' के रूप में गलत याद करते हैं (जबकि सही है 'RBI की मंजूरी आवश्यक'), वे कथन 2 को गलत तरीके से सही मान सकते हैं, जिससे वे तीनों को सही चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: HTM को MTM से छूट देना RBI का स्थापित प्रूडेंशियल नियम है — यह सही है।",
+        "कथन 2: 'स्वतंत्र रूप से' शब्द स्कोप-एक्सटेंशन ट्रैप है। HTM से AFS में स्विचिंग प्रतिबंधित है और RBI की अनुमति आवश्यक है — यह स्वतंत्र बाजार निर्णय नहीं है। कथन 2 गलत है।",
+        "कथन 3: यह बढ़ती यील्ड के AFS/HFT पोर्टफोलियो पर प्रभाव का वर्णन करता है — एक वास्तविक और अच्छी तरह से प्रलेखित घटना। सही।",
+        "सही कथन 1 और 3 हैं — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में फंसाव 'स्वतंत्र रूप से' शब्द है। जो छात्र जानते हैं कि कुछ परिस्थितियों में श्रेणियों के बीच स्विचिंग की अनुमति है, वे इस शर्त को ध्यान में नहीं रखते। RBI के निवेश वर्गीकरण नियम स्पष्ट रूप से वर्ष के भीतर स्विचिंग को सीमित करते हैं ताकि बैंक MTM नुकसान से बचने के लिए वर्गीकरण का दुरुपयोग न कर सकें। 'स्वतंत्र रूप से' शब्द आंशिक सत्य को गलत कथन में बदल देता है।",
+      "final_explanation": "RBI का निवेश वर्गीकरण ढांचा (HTM/AFS/HFT) निर्धारित करता है कि बैंक अपनी सरकारी प्रतिभूतियों को कैसे खाते हैं और वे ब्याज दर जोखिम के प्रति कितने संवेदनशील हैं।\n\n• कथन 1 — सही: HTM प्रतिभूतियाँ अमोर्टाइज्ड कॉस्ट पर रखी जाती हैं, न कि बाजार मूल्य पर। इसका अर्थ है कि बढ़ती यील्ड HTM होल्डिंग्स के लिए लेखांकन नुकसान उत्पन्न नहीं करती — यह एक ऐसी विशेषता है जिसे बैंक टाइटनिंग चक्रों के दौरान बढ़ाने के लिए लॉबी करते हैं।\n• कथन 2 — गलत: श्रेणियों के बीच स्विचिंग कड़ाई से नियंत्रित है। HTM से AFS में स्थानांतरण के लिए RBI की अनुमति आवश्यक है और यह विशिष्ट विंडो (आमतौर पर वित्तीय वर्ष की शुरुआत) तक सीमित है। 'स्वतंत्र रूप से' शब्द इस कथन को गलत बनाता है।\n• कथन 3 — सही: जब यील्ड बढ़ती है, तो बॉन्ड की कीमतें गिरती हैं। AFS और HFT पोर्टफोलियो को मार्क-टू-मार्केट करना पड़ता है, जिससे कागजी नुकसान होते हैं जो बैंकों के आय विवरण को प्रभावित करते हैं। यह समझाता है कि बैंक दर वृद्धि के प्रति संरचनात्मक रूप से विरोधी क्यों होते हैं।\n\nमूल्य संवर्धन:\n• RBI समय-समय पर HTM सीमा (वर्तमान में NDTL का 23%) को मैक्रोप्रूडेंशियल उपकरण के रूप में संशोधित करता है।\n• बड़े HTM पोर्टफोलियो वाला बैंक ब्याज दर जोखिम को प्रभावी रूप से स्वयं पर स्थानांतरित करता है (अवसर लागत) जबकि लेखांकन अस्थिरता से बचता है।\n• मॉडिफाइड ड्यूरेशन वह प्रमुख मीट्रिक है जिसका उपयोग बैंक अपने AFS/HFT पोर्टफोलियो की यील्ड परिवर्तन के प्रति मूल्य संवेदनशीलता को मापने के लिए करते हैं।"
+    }
+  },
+  {
+    "uuid": "6c863da5-5579-402a-ae0a-ab1d16aacaab",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Open Market Operations (OMOs) and Their Monetary-Fiscal Nexus"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Operation Twist — yield curve flattening without liquidity change",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Reserve Bank of India's 'Operation Twist' involves ________, with the primary objective of ________.\n\n(a) purchasing G-Secs across all maturities simultaneously to inject liquidity into the banking system and lower interest rates uniformly\n(b) simultaneously purchasing long-term G-Secs and selling short-term G-Secs, leaving net system liquidity unchanged while compressing long-end yields to flatten the yield curve\n(c) selling long-term G-Secs and purchasing short-term G-Secs to steepen the yield curve and incentivise short-term borrowing\n(d) selling G-Secs across all maturities to absorb excess liquidity and raise short-term interest rates uniformly",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students associate 'Operation Twist' with a general OMO and may assume it involves purchasing all maturities uniformly to inject liquidity, missing the simultaneous sale of short-term securities.",
+      "elimination_logic": [
+        "The defining feature of Operation Twist is that it simultaneously buys long-term and sells short-term G-Secs — net liquidity impact is neutral.",
+        "Its objective is to flatten the yield curve by compressing long-end yields while keeping short-end yields anchored.",
+        "Options (a), (c), and (d) either misstate the securities traded or the objective — eliminate them.",
+        "Option (b) correctly describes both the mechanism (simultaneous purchase of long-term and sale of short-term) and the objective (yield curve flattening) — correct answer is (b)."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges 'Operation Twist' with standard OMO purchases. Students who know that OMO purchases lower yields may assume Operation Twist simply purchases across all maturities. The critical distinction — simultaneous sale of short-term while buying long-term — is what makes the net liquidity impact neutral and the curve-flattening objective achievable. Confusing the two leads to selecting option (a).",
+      "final_explanation": "Operation Twist is a specialised open market operation where the central bank simultaneously purchases long-tenor G-Secs and sells short-tenor G-Secs.\n\n• Option (a): Incorrect. Purchasing across all maturities without simultaneous sales describes a standard OMO, not Operation Twist, and would inject net liquidity.\n• Option (b): Correct. Simultaneous purchase of long-term and sale of short-term G-Secs keeps net system liquidity unchanged while compressing long-end yields (higher demand) and pushing up short-end yields (higher supply) — thereby flattening the curve.\n• Option (c): Incorrect. Selling long-term and buying short-term would steepen the curve, the opposite of what Operation Twist aims to achieve.\n• Option (d): Incorrect. Operation Twist is not aimed at absorbing excess liquidity — Reverse Repos and SDF serve that purpose.\n\nValue Addition:\n• RBI conducted Operation Twist operations during 2019–21 to reduce long-term borrowing costs.\n• A flatter yield curve signals convergence between short and long-term rates, reducing the 'term premium.'\n• Operation Twist is also called 'yield curve control' in some central banking literature."
+    },
+    "hi": {
+      "display_text": "भारतीय रिज़र्व बैंक का 'Operation Twist' ________ शामिल करता है, जिसका प्राथमिक उद्देश्य ________ है।\n\n(a) बैंकिंग प्रणाली में तरलता डालने और ब्याज दरों को समान रूप से कम करने के लिए सभी परिपक्वताओं में सरकारी प्रतिभूतियों की एक साथ खरीदारी\n(b) दीर्घकालिक सरकारी प्रतिभूतियों की एक साथ खरीद और अल्पकालिक सरकारी प्रतिभूतियों की बिक्री, जिससे शुद्ध प्रणाली तरलता अपरिवर्तित रहती है और दीर्घकालिक यील्ड को संकुचित कर यील्ड कर्व को सपाट किया जाता है\n(c) यील्ड कर्व को तीखा करने और अल्पकालिक उधारी को प्रोत्साहित करने के लिए दीर्घकालिक सरकारी प्रतिभूतियों की बिक्री और अल्पकालिक सरकारी प्रतिभूतियों की खरीद\n(d) अतिरिक्त तरलता अवशोषित करने और अल्पकालिक ब्याज दरों को समान रूप से बढ़ाने के लिए सभी परिपक्वताओं में सरकारी प्रतिभूतियों की बिक्री",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र 'Operation Twist' को सामान्य OMO से जोड़ते हैं और मान लेते हैं कि इसमें सभी परिपक्वताओं के सरकारी प्रतिभूतियों की समान रूप से खरीदारी शामिल है ताकि तरलता डाली जा सके, जबकि अल्पकालिक प्रतिभूतियों की एक साथ बिक्री को नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "Operation Twist की परिभाषित विशेषता यह है कि यह एक साथ दीर्घकालिक सरकारी प्रतिभूतियों की खरीद और अल्पकालिक सरकारी प्रतिभूतियों की बिक्री करता है — जिससे शुद्ध तरलता प्रभाव तटस्थ रहता है।",
+        "इसका उद्देश्य यील्ड कर्व को सपाट करना है, दीर्घकालिक यील्ड को संकुचित करते हुए और अल्पकालिक यील्ड को स्थिर रखते हुए।",
+        "विकल्प (a), (c), और (d) या तो व्यापार की गई प्रतिभूतियों या उद्देश्य को गलत बताते हैं — इन्हें हटा दें।",
+        "विकल्प (b) सही रूप से दोनों, तंत्र (दीर्घकालिक की एक साथ खरीद और अल्पकालिक की बिक्री) और उद्देश्य (यील्ड कर्व सपाट करना) का वर्णन करता है — सही उत्तर (b) है।"
+      ],
+      "upsc_trap_explanation": "'Operation Twist' को सामान्य OMO खरीद के साथ मिलाने की गलती होती है। जो छात्र जानते हैं कि OMO खरीद यील्ड को कम करती है, वे मान सकते हैं कि Operation Twist सभी परिपक्वताओं में खरीद करता है। महत्वपूर्ण अंतर यह है कि अल्पकालिक प्रतिभूतियों की एक साथ बिक्री और दीर्घकालिक की खरीद होती है — जो शुद्ध तरलता प्रभाव को तटस्थ बनाता है और कर्व सपाट करने का लक्ष्य पूरा करता है। इन दोनों को भ्रमित करने से विकल्प (a) चुनने की गलती होती है।",
+      "final_explanation": "Operation Twist एक विशेष ओपन मार्केट ऑपरेशन है जिसमें केंद्रीय बैंक एक साथ दीर्घकालिक सरकारी प्रतिभूतियों की खरीद और अल्पकालिक सरकारी प्रतिभूतियों की बिक्री करता है।\n\n• विकल्प (a): गलत। सभी परिपक्वताओं में खरीदारी बिना एक साथ बिक्री के एक सामान्य OMO को दर्शाती है, जो शुद्ध तरलता डालेगा, Operation Twist नहीं।\n• विकल्प (b): सही। दीर्घकालिक की एक साथ खरीद और अल्पकालिक की बिक्री से शुद्ध प्रणाली तरलता अपरिवर्तित रहती है, दीर्घकालिक यील्ड संकुचित होती है (मांग अधिक) और अल्पकालिक यील्ड बढ़ती है (आपूर्ति अधिक) — जिससे कर्व सपाट होता है।\n• विकल्प (c): गलत। दीर्घकालिक की बिक्री और अल्पकालिक की खरीद से कर्व तीखा होगा, जो Operation Twist का उद्देश्य नहीं है।\n• विकल्प (d): गलत। Operation Twist का उद्देश्य अतिरिक्त तरलता अवशोषित करना नहीं है — इसके लिए रिवर्स रेपो और SDF होते हैं।\n\nमूल्य संवर्धन:\n• RBI ने 2019–21 के दौरान Operation Twist के तहत दीर्घकालिक उधारी लागत कम करने के लिए ऑपरेशन किए।\n• सपाट यील्ड कर्व अल्पकालिक और दीर्घकालिक दरों के बीच संगम को दर्शाता है, जिससे 'टर्म प्रीमियम' कम होता है।\n• Operation Twist को कुछ केंद्रीय बैंकिंग साहित्य में 'yield curve control' भी कहा जाता है।"
+    }
+  },
+  {
+    "uuid": "ab5dfe58-4726-474f-84f8-97c8ee76723a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "State Development Loans (SDLs): Characteristics and Spread over G-Secs"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "SDL credit risk and Union Government guarantee distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about State Development Loans (SDLs) in India:\n\n1. State Development Loans (SDLs) carry an explicit sovereign guarantee of the Union Government of India, placing their credit risk on par with that of Central Government Securities.\n2. The spread of SDL yields over central G-Sec yields of comparable maturity can serve as a market-based signal of the fiscal health of individual states.\n3. State governments can independently decide the timing and size of their SDL issuances without any coordination role played by the Reserve Bank of India.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "State Development Loans (SDLs) carry an explicit sovereign guarantee of the Union Government of India, placing their credit risk on par with that of Central Government Securities.",
+          "verdict": "Incorrect",
+          "reason": "SDLs are guaranteed by the respective state government, not by the Union Government. While markets treat them near-sovereignly due to implicit support and SLR eligibility, there is no explicit Union guarantee — the credit risk is technically the state's."
+        },
+        {
+          "statement": "The spread of SDL yields over central G-Sec yields of comparable maturity can serve as a market-based signal of the fiscal health of individual states.",
+          "verdict": "Correct",
+          "reason": "A widening SDL-G-Sec spread reflects markets pricing in higher fiscal risk for a given state, making it a useful proxy indicator of deteriorating state finances."
+        },
+        {
+          "statement": "State governments can independently decide the timing and size of their SDL issuances without any coordination role played by the Reserve Bank of India.",
+          "verdict": "Incorrect",
+          "reason": "RBI coordinates the SDL issuance calendar on behalf of state governments. States cannot independently time their market borrowings — this coordination prevents market disruption and ensures orderly issuance."
+        }
+      ],
+      "strong_distractor": "b — Students who believe SDL spreads are purely technical market phenomena (not fiscal signals) may incorrectly mark Statement 2 as false, choosing only option (a) for Statement 1 alone.",
+      "elimination_logic": [
+        "Statement 1: SDLs carry the state's guarantee, not the Union Government's guarantee. The claim of an 'explicit sovereign guarantee of the Union Government' is incorrect.",
+        "Statement 2: SDL spread as a fiscal health proxy is correct — this is not an incorrect statement.",
+        "Statement 3: RBI coordinates the SDL issuance calendar; states have no independent authority to time their borrowings — this statement is incorrect.",
+        "Incorrect statements are 1 and 3, pointing to option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the common perception that since SDLs are implicitly backed by the Centre (through Article 293 debt ceilings, RBI coordination, and SLR eligibility), they carry a Union guarantee. This is false — the guarantee is the state's own. The scope-extension trap in Statement 3 removes the RBI coordination role entirely, which is incorrect.",
+      "final_explanation": "SDLs are a critical instrument for state fiscal management, but their risk and issuance structure are often misunderstood.\n\n• Statement 1 — Incorrect: The guarantee on SDLs is the respective state government's guarantee, not the Union Government's. There is no explicit central government sovereign guarantee on SDLs. Markets price them near-sovereignly due to SLR eligibility and historical implicit support, but the technical credit risk is state-level.\n• Statement 2 — Correct: The SDL-G-Sec yield spread is a genuine market-based fiscal indicator. States with higher borrowings, revenue deficits, or poor debt management tend to see their SDL spreads widen.\n• Statement 3 — Incorrect: RBI plays an active coordination role in timing SDL issuances. Without this coordination, multiple states borrowing simultaneously would create demand-supply imbalances and inflate borrowing costs.\n\nValue Addition:\n• SDL spreads in India typically range from 25 to 75 basis points over central G-Secs of the same maturity.\n• Under Article 293 of the Constitution, states require Central Government consent to borrow if they have outstanding loans from the Centre.\n• SDLs are SLR-eligible, creating captive bank demand that structurally anchors their yields."
+    },
+    "hi": {
+      "display_text": "भारत में राज्य विकास ऋण (SDLs) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. राज्य विकास ऋण (SDLs) पर भारत सरकार की स्पष्ट संप्रभु गारंटी होती है, जो इनके क्रेडिट जोखिम को केंद्रीय सरकारी प्रतिभूतियों के बराबर रखती है।\n2. समान परिपक्वता वाली केंद्रीय सरकारी प्रतिभूतियों की तुलना में SDL यील्ड का स्प्रेड व्यक्तिगत राज्यों की वित्तीय स्थिति का बाजार आधारित संकेतक हो सकता है।\n3. राज्य सरकारें बिना भारतीय रिज़र्व बैंक के किसी समन्वय भूमिका के स्वतंत्र रूप से अपने SDL जारी करने का समय और आकार तय कर सकती हैं।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "State Development Loans (SDLs) carry an explicit sovereign guarantee of the Union Government of India, placing their credit risk on par with that of Central Government Securities.",
+          "verdict": "गलत",
+          "reason": "SDLs की गारंटी संबंधित राज्य सरकार द्वारा दी जाती है, न कि केंद्र सरकार द्वारा। जबकि बाजार इन्हें नजदीकी संप्रभुता के रूप में देखते हैं क्योंकि इनके पीछे निहित समर्थन और SLR पात्रता होती है, कोई स्पष्ट केंद्र सरकार की गारंटी नहीं है — क्रेडिट जोखिम तकनीकी रूप से राज्य का होता है।"
+        },
+        {
+          "statement": "The spread of SDL yields over central G-Sec yields of comparable maturity can serve as a market-based signal of the fiscal health of individual states.",
+          "verdict": "सही",
+          "reason": "SDL-G-Sec स्प्रेड का बढ़ना बाजारों द्वारा किसी राज्य के उच्च वित्तीय जोखिम को दर्शाता है, जो राज्य की वित्तीय स्थिति के बिगड़ने का उपयोगी संकेतक है।"
+        },
+        {
+          "statement": "State governments can independently decide the timing and size of their SDL issuances without any coordination role played by the Reserve Bank of India.",
+          "verdict": "गलत",
+          "reason": "RBI राज्य सरकारों की ओर से SDL जारी करने के कैलेंडर का समन्वय करता है। राज्य स्वतंत्र रूप से अपने बाजार उधार लेने का समय निर्धारित नहीं कर सकते — यह समन्वय बाजार में व्यवधान को रोकता है और सुव्यवस्थित जारीकरण सुनिश्चित करता है।"
+        }
+      ],
+      "strong_distractor": "b — छात्र जो मानते हैं कि SDL स्प्रेड केवल तकनीकी बाजार घटनाएँ हैं (वित्तीय संकेत नहीं), वे कथन 2 को गलत समझकर केवल विकल्प (a) को सही मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: SDLs की गारंटी केंद्र सरकार की नहीं, बल्कि राज्य सरकार की होती है। 'केंद्र सरकार की स्पष्ट संप्रभु गारंटी' का दावा गलत है।",
+        "कथन 2: SDL स्प्रेड को वित्तीय स्वास्थ्य के संकेतक के रूप में देखना सही है — यह कथन गलत नहीं है।",
+        "कथन 3: RBI SDL जारी करने के कैलेंडर का समन्वय करता है; राज्यों के पास स्वतंत्र रूप से उधार लेने का समय तय करने का अधिकार नहीं है — यह कथन गलत है।",
+        "गलत कथन 1 और 3 हैं, अतः विकल्प (a) सही है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 इस सामान्य धारणा का फायदा उठाता है कि चूंकि SDLs को केंद्र द्वारा अप्रत्यक्ष रूप से समर्थन प्राप्त है (अनुच्छेद 293 ऋण सीमाएँ, RBI समन्वय, और SLR पात्रता के माध्यम से), इसलिए वे केंद्र सरकार की गारंटी के अंतर्गत आते हैं। यह गलत है — गारंटी राज्य की अपनी होती है। कथन 3 में समन्वय भूमिका को पूरी तरह हटाना एक दायरा-विस्तार जाल है, जो गलत है।",
+      "final_explanation": "SDLs राज्य वित्त प्रबंधन के लिए एक महत्वपूर्ण उपकरण हैं, लेकिन इनके जोखिम और जारीकरण संरचना को अक्सर गलत समझा जाता है।\n\n• कथन 1 — गलत: SDLs की गारंटी संबंधित राज्य सरकार की होती है, केंद्र सरकार की नहीं। SDLs पर कोई स्पष्ट केंद्र सरकार की संप्रभु गारंटी नहीं है। बाजार इन्हें SLR पात्रता और ऐतिहासिक अप्रत्यक्ष समर्थन के कारण नजदीकी संप्रभुता के रूप में मूल्यांकित करते हैं, लेकिन तकनीकी क्रेडिट जोखिम राज्य स्तर का होता है।\n• कथन 2 — सही: SDL-G-Sec यील्ड स्प्रेड एक वास्तविक बाजार आधारित वित्तीय संकेतक है। जिन राज्यों के उधार, राजस्व घाटा या ऋण प्रबंधन खराब होता है, उनके SDL स्प्रेड बढ़ते हैं।\n• कथन 3 — गलत: RBI SDL जारी करने के समय का सक्रिय समन्वय करता है। इस समन्वय के बिना, कई राज्य एक साथ उधार लेने से मांग-आपूर्ति असंतुलन और उधार लागत में वृद्धि होती।\n\nमूल्य संवर्धन:\n• भारत में SDL स्प्रेड आमतौर पर समान परिपक्वता वाले केंद्रीय G-Secs से 25 से 75 आधार अंक तक होता है।\n• संविधान के अनुच्छेद 293 के तहत, यदि राज्यों के पास केंद्र से बकाया ऋण है तो उन्हें उधार लेने के लिए केंद्र सरकार की सहमति चाहिए।\n• SDLs SLR पात्र हैं, जो बैंकों की कैप्टिव मांग उत्पन्न करते हैं और उनके यील्ड को संरचनात्मक रूप से स्थिर करते हैं।"
+    }
+  },
+  {
+    "uuid": "975b1b59-a5a4-4f82-bb31-969e6e589d0f",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Retail Direct Scheme and Retail Participation in G-Sec Market"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "RBI Retail Direct vs other retail G-Sec access routes",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT belong to the same category as the others in the context of retail investor participation in India's Government Securities market through RBI-managed mechanisms?\n\n(a) Non-competitive bidding facility in primary G-Sec auctions\n(b) Retail Direct Gilt Account maintained directly with RBI\n(c) Sovereign Gold Bonds distributed through banks and post offices\n(d) The 5% reservation for non-competitive bids in each G-Sec auction",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because many students know SGBs involve RBI, and may incorrectly categorise them as part of the Retail Direct scheme rather than recognising they use banks and post offices as distribution intermediaries.",
+      "elimination_logic": [
+        "The common attribute: mechanisms where retail investors can directly access government securities through the RBI's own auction infrastructure.",
+        "Non-competitive bidding in primary auctions — available to retail investors through the RBI Retail Direct platform.",
+        "Retail Direct Gilt Account — opened directly with RBI, no bank/broker intermediary required.",
+        "5% reservation for non-competitive bids — part of the RBI-managed auction process for retail access.",
+        "Sovereign Gold Bonds are issued by RBI on behalf of the government but distributed through banks, post offices, and stock exchanges — NOT through RBI's Retail Direct platform or the G-Sec auction system.",
+        "SGBs are the odd one out — option (c)."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap works here because SGBs are indeed issued by RBI (on behalf of the Government of India), creating the impression they belong to the same 'retail direct' ecosystem. However, SGB distribution uses a completely different channel — banks, post offices, and exchanges — not the RBI auction platform or the Retail Direct Gilt Account system. Students who focus on 'RBI issues them' rather than 'distributed through auction infrastructure' fall into this trap.",
+      "final_explanation": "The RBI Retail Direct scheme creates a direct channel for retail investors to participate in the primary G-Sec market without intermediaries.\n\n• Option (a) — Non-competitive bidding in G-Sec auctions: Part of the Retail Direct infrastructure. Retail investors bid without specifying a yield and are allotted at the weighted average cut-off yield.\n• Option (b) — Retail Direct Gilt Account with RBI: The core of the scheme — a demat account maintained directly with RBI, bypassing banks and brokers entirely. This is not the odd one out.\n• Option (c) — Sovereign Gold Bonds distributed through banks and post offices: The ODD ONE OUT. While SGBs are issued by RBI, their subscription and distribution use banks, post offices, stock exchanges, and designated agents — not the Retail Direct G-Sec auction platform.\n• Option (d) — 5% non-competitive bid reservation in G-Sec auctions: A feature of the primary auction process that benefits retail participants under the Retail Direct scheme.\n\nValue Addition:\n• The Retail Direct scheme was launched in November 2021 by the RBI.\n• Retail investors can access both primary market (auctions) and secondary market (NDS-OM) through the Retail Direct portal.\n• SGBs are the only government-backed gold instrument that earns a fixed interest rate in addition to gold price appreciation."
+    },
+    "hi": {
+      "display_text": "भारत में सरकार द्वारा प्रबंधित तंत्रों के माध्यम से खुदरा निवेशकों की भागीदारी के संदर्भ में निम्नलिखित में से कौन सा अन्य विकल्पों के समान श्रेणी में नहीं आता?\n\n(a) प्राथमिक सरकारी प्रतिभूति नीलामी में गैर-प्रतिस्पर्धी बोली सुविधा\n(b) आरबीआई के साथ सीधे रखी गई रिटेल डायरेक्ट गिल्ट खाता\n(c) बैंक और डाकघरों के माध्यम से वितरित संप्रभु स्वर्ण बांड\n(d) प्रत्येक सरकारी प्रतिभूति नीलामी में गैर-प्रतिस्पर्धी बोलियों के लिए 5% आरक्षण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि कई छात्र जानते हैं कि SGB आरबीआई से जुड़े हैं, और उन्हें गलत तरीके से रिटेल डायरेक्ट योजना का हिस्सा मान सकते हैं जबकि वे बैंक और डाकघरों के माध्यम से वितरित होते हैं।",
+      "elimination_logic": [
+        "साझा विशेषता: ऐसे तंत्र जहाँ खुदरा निवेशक सीधे आरबीआई की अपनी नीलामी संरचना के माध्यम से सरकारी प्रतिभूतियों तक पहुँच सकते हैं।",
+        "प्राथमिक नीलामी में गैर-प्रतिस्पर्धी बोली — खुदरा निवेशकों के लिए आरबीआई रिटेल डायरेक्ट प्लेटफॉर्म के माध्यम से उपलब्ध।",
+        "रिटेल डायरेक्ट गिल्ट खाता — सीधे आरबीआई के साथ खोला जाता है, किसी बैंक/दलाल मध्यस्थ की आवश्यकता नहीं।",
+        "5% गैर-प्रतिस्पर्धी बोली आरक्षण — खुदरा पहुँच के लिए आरबीआई द्वारा प्रबंधित नीलामी प्रक्रिया का हिस्सा।",
+        "संप्रभु स्वर्ण बांड आरबीआई द्वारा सरकार की ओर से जारी किए जाते हैं लेकिन बैंक, डाकघर और स्टॉक एक्सचेंज के माध्यम से वितरित होते हैं — न कि आरबीआई के रिटेल डायरेक्ट प्लेटफॉर्म या सरकारी प्रतिभूति नीलामी प्रणाली के माध्यम से।",
+        "SGB विकल्प अलग है — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "यहाँ एंटिटी-स्वैप जाल तब काम करता है क्योंकि SGB वास्तव में आरबीआई द्वारा (भारत सरकार की ओर से) जारी किए जाते हैं, जिससे यह भ्रम होता है कि वे उसी 'रिटेल डायरेक्ट' पारिस्थितिकी तंत्र के हैं। हालांकि, SGB वितरण पूरी तरह से अलग चैनल — बैंक, डाकघर, और एक्सचेंज — का उपयोग करता है, न कि आरबीआई नीलामी प्लेटफॉर्म या रिटेल डायरेक्ट गिल्ट खाता प्रणाली। जो छात्र 'आरबीआई द्वारा जारी' पर ध्यान केंद्रित करते हैं न कि 'नीलामी संरचना के माध्यम से वितरण' पर, वे इस जाल में फंस जाते हैं।",
+      "final_explanation": "आरबीआई रिटेल डायरेक्ट योजना खुदरा निवेशकों को बिना मध्यस्थों के प्राथमिक सरकारी प्रतिभूति बाजार में सीधे भाग लेने का मार्ग प्रदान करती है।\n\n• विकल्प (a) — सरकारी प्रतिभूति नीलामी में गैर-प्रतिस्पर्धी बोली: रिटेल डायरेक्ट संरचना का हिस्सा। खुदरा निवेशक बिना यील्ड निर्दिष्ट किए बोली लगाते हैं और उन्हें भारित औसत कट-ऑफ यील्ड पर आवंटित किया जाता है।\n• विकल्प (b) — आरबीआई के साथ रिटेल डायरेक्ट गिल्ट खाता: योजना का मूल — एक डिमैट खाता जो सीधे आरबीआई के साथ रखा जाता है, बैंक और दलालों को पूरी तरह से बायपास करता है। यह अलग विकल्प नहीं है।\n• विकल्प (c) — बैंक और डाकघरों के माध्यम से वितरित संप्रभु स्वर्ण बांड: अलग विकल्प। जबकि SGB आरबीआई द्वारा जारी किए जाते हैं, उनकी सदस्यता और वितरण बैंक, डाकघर, स्टॉक एक्सचेंज और नामित एजेंटों के माध्यम से होता है — न कि रिटेल डायरेक्ट सरकारी प्रतिभूति नीलामी प्लेटफॉर्म के माध्यम से।\n• विकल्प (d) — सरकारी प्रतिभूति नीलामी में 5% गैर-प्रतिस्पर्धी बोली आरक्षण: प्राथमिक नीलामी प्रक्रिया की एक विशेषता जो रिटेल डायरेक्ट योजना के तहत खुदरा प्रतिभागियों को लाभ देती है।\n\nमूल्यवर्धन:\n• रिटेल डायरेक्ट योजना नवंबर 2021 में आरबीआई द्वारा शुरू की गई थी।\n• खुदरा निवेशक रिटेल डायरेक्ट पोर्टल के माध्यम से प्राथमिक बाजार (नीलामी) और द्वितीयक बाजार (NDS-OM) दोनों तक पहुँच सकते हैं।\n• SGB एकमात्र सरकारी समर्थित स्वर्ण उपकरण है जो स्वर्ण मूल्य वृद्धि के अतिरिक्त निश्चित ब्याज दर भी अर्जित करता है।"
+    }
+  },
+  {
+    "uuid": "8e6c5d29-bf7a-45fa-ac5a-3542946b2e77",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Negotiated Dealing System – Order Matching (NDS-OM) and Secondary Market Structure"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "NDS-OM, CCIL, and G-Sec secondary market infrastructure",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Infrastructure/Platform) with List II (Characteristic/Function) in the context of India's Government Securities secondary market:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. NDS-OM",
+            "1. Bilateral trades negotiated and reported to a platform, not routed through anonymous order matching"
+          ],
+          [
+            "B. CCIL (Clearing Corporation of India Ltd.)",
+            "2. Anonymous, screen-based electronic order-matching platform for institutional G-Sec trading"
+          ],
+          [
+            "C. BSE / NSE",
+            "3. Central Counterparty that interposes itself between buyer and seller through novation, guaranteeing settlement"
+          ],
+          [
+            "D. OTC Segment",
+            "4. Exchange venue where G-Secs are listed but actual trading liquidity is negligible"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-2, C-1, D-4\n(b) A-2, B-4, C-3, D-1\n(c) A-3, B-2, C-4, D-1\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know CCIL handles clearing but misattribute its novation function to NSE/BSE (where G-Secs are nominally listed) will incorrectly match List I items, especially confusing CCIL's role with exchange-based trading.",
+      "elimination_logic": [
+        "CCIL is the Central Counterparty for G-Sec trades — its key function is novation, eliminating counterparty risk. CCIL matches with 'Central Counterparty providing novation and guaranteed settlement.'",
+        "NDS-OM is the anonymous electronic trading platform operated for G-Sec secondary market — not BSE/NSE. NDS-OM matches with 'anonymous screen-based electronic platform for G-Sec secondary market trading.'",
+        "G-Secs are listed on BSE and NSE but with negligible trading liquidity; real market action is on NDS-OM. BSE/NSE matches with 'venue where G-Secs are listed but trading liquidity is negligible.'",
+        "OTC market reported on NDS (not NDS-OM) handles the bulk of bilateral G-Sec trades. OTC segment matches with 'bilateral trades reported to the reporting platform, not exchange or anonymous order matching.'",
+        "The correct combination is A-2, B-3, C-4, D-1 — option (d)."
+      ],
+      "upsc_trap_explanation": "The trap is the conflation of NDS-OM (the trading platform) with BSE/NSE (where G-Secs are listed). Students who know G-Secs are 'listed on exchanges' may assume exchange platforms dominate trading. The reverse is true — BSE/NSE G-Sec trading is negligible. The real market is NDS-OM, operated under CCIL's CCP framework. Mismatching CCIL's role (novation/CCP) with an exchange role is the primary error pathway.",
+      "final_explanation": "India's G-Sec secondary market is dominated by the NDS-OM platform, not stock exchanges, despite G-Secs being technically listed on BSE and NSE.\n\n• A (NDS-OM) → 2 (anonymous screen-based electronic platform): NDS-OM is the primary anonymous order-matching system for G-Sec trades among institutional participants.\n• B (CCIL) → 3 (Central Counterparty providing novation and guaranteed settlement): CCIL interposes itself between buyer and seller, assuming the counterparty risk of each — this is the novation function.\n• C (BSE/NSE) → 4 (venue where G-Secs are listed but trading liquidity is negligible): G-Secs are exchange-listed but see minimal volume there; institutional and retail volume is negligible on exchanges.\n• D (OTC segment) → 1 (bilateral trades reported to a platform, not routed through anonymous matching): The OTC market involves negotiated bilateral trades reported to the NDS reporting platform — distinct from NDS-OM's anonymous order matching.\n\nValue Addition:\n• CCIL stands for Clearing Corporation of India Limited and is jointly owned by RBI, public sector banks, and financial institutions.\n• CCIL also provides CCP services for forex, money market, and government securities repo markets.\n• Most G-Sec trades, even OTC, are ultimately settled through CCIL, providing systemic stability."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "भारत के सरकारी प्रतिभूतियों के सेकेंडरी मार्केट के संदर्भ में सूची I (इन्फ्रास्ट्रक्चर/प्लेटफॉर्म) को सूची II (विशेषता/कार्य) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. NDS-OM",
+            "1. द्विपक्षीय ट्रेड जो बातचीत के बाद एक प्लेटफॉर्म को रिपोर्ट किए जाते हैं, गुमनाम ऑर्डर मिलान के माध्यम से नहीं"
+          ],
+          [
+            "B. CCIL (Clearing Corporation of India Ltd.)",
+            "2. संस्थागत G-Sec ट्रेडिंग के लिए गुमनाम, स्क्रीन-आधारित इलेक्ट्रॉनिक ऑर्डर-मिलान प्लेटफॉर्म"
+          ],
+          [
+            "C. BSE / NSE",
+            "3. नवेशन के माध्यम से खरीदार और विक्रेता के बीच मध्यस्थता करने वाली केंद्रीय काउंटरपार्टी, जो सेटलमेंट की गारंटी देती है"
+          ],
+          [
+            "D. OTC सेगमेंट",
+            "4. एक्सचेंज स्थल जहाँ G-Secs सूचीबद्ध हैं लेकिन वास्तविक ट्रेडिंग तरलता नगण्य है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-3, B-2, C-1, D-4\n(b) A-2, B-4, C-3, D-1\n(c) A-3, B-2, C-4, D-1\n(d) A-2, B-3, C-4, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र जो जानते हैं कि CCIL क्लियरिंग संभालता है लेकिन इसकी नवेशन (novation) भूमिका को NSE/BSE (जहाँ G-Secs नाममात्र रूप से सूचीबद्ध हैं) को गलत तरीके से सौंप देते हैं, वे सूची I के मदों को गलत मिलाएंगे, विशेषकर CCIL की भूमिका को एक्सचेंज-आधारित ट्रेडिंग के साथ भ्रमित करेंगे।",
+      "elimination_logic": [
+        "CCIL G-Sec ट्रेडों के लिए केंद्रीय काउंटरपार्टी है — इसकी मुख्य भूमिका नवेशन है, जो काउंटरपार्टी जोखिम को समाप्त करती है। CCIL का मिलान 'नवेशन और गारंटीकृत सेटलमेंट प्रदान करने वाली केंद्रीय काउंटरपार्टी' से होता है।",
+        "NDS-OM G-Sec सेकेंडरी मार्केट के लिए संचालित एक गुमनाम इलेक्ट्रॉनिक ट्रेडिंग प्लेटफॉर्म है — यह BSE/NSE नहीं है। NDS-OM का मिलान 'G-Sec सेकेंडरी मार्केट ट्रेडिंग के लिए गुमनाम स्क्रीन-आधारित इलेक्ट्रॉनिक प्लेटफॉर्म' से होता है।",
+        "G-Secs BSE और NSE पर सूचीबद्ध हैं लेकिन ट्रेडिंग तरलता नगण्य है; वास्तविक बाजार क्रिया NDS-OM पर होती है। BSE/NSE का मिलान 'ऐसा स्थान जहाँ G-Secs सूचीबद्ध हैं लेकिन ट्रेडिंग तरलता नगण्य है' से होता है।",
+        "OTC मार्केट जो NDS (NDS-OM नहीं) पर रिपोर्ट होता है, द्विपक्षीय G-Sec ट्रेडों का अधिकांश भाग संभालता है। OTC सेगमेंट का मिलान 'रिपोर्टिंग प्लेटफॉर्म को रिपोर्ट किए गए द्विपक्षीय ट्रेड, न कि एक्सचेंज या गुमनाम ऑर्डर मिलान के माध्यम से' से होता है।",
+        "सही संयोजन है A-2, B-3, C-4, D-1 — विकल्प (d)।"
+      ],
+      "upsc_trap_explanation": "फंदा यह है कि NDS-OM (ट्रेडिंग प्लेटफॉर्म) को BSE/NSE (जहाँ G-Secs सूचीबद्ध हैं) के साथ भ्रमित कर दिया जाता है। जो छात्र जानते हैं कि G-Secs 'एक्सचेंजों पर सूचीबद्ध हैं' वे मान सकते हैं कि एक्सचेंज प्लेटफॉर्म ट्रेडिंग में प्रमुख हैं। वास्तविकता इसके विपरीत है — BSE/NSE पर G-Sec ट्रेडिंग नगण्य है। वास्तविक बाजार NDS-OM है, जो CCIL के CCP ढांचे के तहत संचालित होता है। CCIL की भूमिका (नवेशन/CCP) को एक्सचेंज की भूमिका के साथ गलत मिलाना मुख्य त्रुटि मार्ग है।",
+      "final_explanation": "भारत के G-Sec सेकेंडरी मार्केट में NDS-OM प्लेटफॉर्म का प्रभुत्व है, न कि स्टॉक एक्सचेंजों का, यद्यपि G-Secs तकनीकी रूप से BSE और NSE पर सूचीबद्ध हैं।\n\n• A (NDS-OM) → 2 (गुमनाम स्क्रीन-आधारित इलेक्ट्रॉनिक प्लेटफॉर्म): NDS-OM संस्थागत प्रतिभागियों के बीच G-Sec ट्रेडों के लिए प्राथमिक गुमनाम ऑर्डर-मिलान प्रणाली है।\n• B (CCIL) → 3 (नवेशन के माध्यम से खरीदार और विक्रेता के बीच मध्यस्थ केंद्रीय काउंटरपार्टी, जो सेटलमेंट की गारंटी देती है): CCIL खरीदार और विक्रेता के बीच मध्यस्थता करता है, प्रत्येक की काउंटरपार्टी जोखिम को स्वीकार करता है — यही नवेशन कार्य है।\n• C (BSE/NSE) → 4 (ऐसा एक्सचेंज स्थल जहाँ G-Secs सूचीबद्ध हैं लेकिन वास्तविक ट्रेडिंग तरलता नगण्य है): G-Secs एक्सचेंज-लिस्टेड हैं लेकिन वहाँ ट्रेडिंग वॉल्यूम बहुत कम है; संस्थागत और खुदरा वॉल्यूम एक्सचेंजों पर नगण्य है।\n• D (OTC सेगमेंट) → 1 (द्विपक्षीय ट्रेड जो एक प्लेटफॉर्म को रिपोर्ट किए जाते हैं, गुमनाम मिलान के माध्यम से नहीं): OTC मार्केट में बातचीत द्वारा द्विपक्षीय ट्रेड होते हैं जो NDS रिपोर्टिंग प्लेटफॉर्म को रिपोर्ट किए जाते हैं — जो NDS-OM के गुमनाम ऑर्डर मिलान से अलग है।\n\nमूल्य संवर्धन:\n• CCIL का पूर्ण नाम Clearing Corporation of India Limited है और यह RBI, सार्वजनिक क्षेत्र के बैंक, और वित्तीय संस्थानों के संयुक्त स्वामित्व में है।\n• CCIL विदेशी मुद्रा, मनी मार्केट, और सरकारी प्रतिभूतियों के रेपो बाजारों के लिए भी CCP सेवाएं प्रदान करता है।\n• अधिकांश G-Sec ट्रेड, यहां तक कि OTC भी, अंततः CCIL के माध्यम से सेटल होते हैं, जो प्रणालीगत स्थिरता प्रदान करता है।"
+    }
+  },
+  {
+    "uuid": "b9afc868-f73b-4eb4-8c8f-de6cbf772c9a",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Yield Curve: Shape, Determinants and Policy Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Yield curve — inverted shape as recession signal and fiscal dominance",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the yield curve in the context of India's Government Securities market:\n\n1. An inverted yield curve — where short-term G-Sec yields exceed long-term yields — is historically associated with expectations of economic slowdown or recession, as it implies markets anticipate future rate cuts.\n2. Operation Twist, by simultaneously purchasing short-term and selling long-term G-Secs, is designed to steepen the yield curve and stimulate long-term investment.\n3. A large government market borrowing programme can raise long-term G-Sec yields even when the RBI keeps its policy repo rate unchanged, because increased supply of long-dated paper pressures the long end of the yield curve independently of short-term monetary policy.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "An inverted yield curve — where short-term G-Sec yields exceed long-term yields — is historically associated with expectations of economic slowdown or recession, as it implies markets anticipate future rate cuts.",
+          "verdict": "Correct",
+          "reason": "An inverted yield curve signals that markets expect near-term rates to fall in the future (reflecting slower growth or rate cuts), compressing long-end yields below short-end yields — a reliable leading indicator of recessions in major economies."
+        },
+        {
+          "statement": "Operation Twist, by simultaneously purchasing short-term and selling long-term G-Secs, is designed to steepen the yield curve and stimulate long-term investment.",
+          "verdict": "Incorrect",
+          "reason": "Operation Twist works in the opposite direction — it purchases long-term and sells short-term G-Secs. This compresses long-end yields and raises short-end yields, thereby flattening (not steepening) the yield curve."
+        },
+        {
+          "statement": "A large government market borrowing programme can raise long-term G-Sec yields even when the RBI keeps its policy repo rate unchanged, because increased supply of long-dated paper pressures the long end of the yield curve independently of short-term monetary policy.",
+          "verdict": "Correct",
+          "reason": "This is the 'fiscal dominance' effect on the yield curve — excess government supply of long-term bonds raises the term premium, pushing long yields higher regardless of the RBI's short-rate stance."
+        }
+      ],
+      "strong_distractor": "d — Students who misremember Operation Twist as a 'long-end selling' operation (confusing it with a standard liquidity-absorption OMO) may consider Statement 2 partially correct and choose option (d).",
+      "elimination_logic": [
+        "Statement 1: Inverted curve as recession predictor — correct and standard macroeconomic interpretation.",
+        "Statement 2: The description reverses the mechanics of Operation Twist. OT buys long-term and sells short-term — not the reverse. Statement 2 is incorrect.",
+        "Statement 3: Fiscal dominance raising long-end yields independently of repo rate — correct. This is a well-documented phenomenon in emerging market economies with large government borrowing programmes.",
+        "Correct statements are 1 and 3 — option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 reverses the directionality of Operation Twist, which is the most common error students make. Students who know OT involves 'buying some and selling some G-Secs' but cannot recall which maturity is bought versus sold will be unable to detect this reversal. The scope-extension trap in Statement 3 removes the fiscal dominance qualifier — students may doubt whether government borrowing 'always' raises long yields regardless of the policy rate stance.",
+      "final_explanation": "The yield curve is one of the most information-rich tools in macroeconomic analysis, and India's G-Sec yield curve is shaped by both monetary policy and fiscal variables.\n\n• Statement 1 — Correct: An inverted yield curve (short rates > long rates) signals that markets price in economic deceleration and expected future rate cuts. It is a leading indicator of recessions, documented extensively in advanced economies.\n• Statement 2 — Incorrect: Operation Twist purchases long-term G-Secs and sells short-term G-Secs — the opposite of what Statement 2 claims. The effect is curve flattening (long yields fall, short yields rise), not steepening.\n• Statement 3 — Correct: When the government issues large quantities of long-term bonds, supply pressure raises the term premium at the long end. This can occur even with an unchanged repo rate — a direct fiscal dominance effect on the yield curve.\n\nValue Addition:\n• India's benchmark yield is the 10-year G-Sec yield, which anchors home loan rates, corporate bond spreads, and FCNR deposit rates.\n• Yield curve steepening (long rates rising faster than short rates) typically signals improving growth expectations.\n• RBI's borrowing calendar front-loading vs back-loading strategy is partly a yield management decision."
+    },
+    "hi": {
+      "display_text": "भारत के सरकारी प्रतिभूति बाजार के संदर्भ में यील्ड कर्व के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. एक उल्टा यील्ड कर्व — जहाँ अल्पकालिक सरकारी प्रतिभूतियों की उपज दीर्घकालिक उपज से अधिक होती है — ऐतिहासिक रूप से आर्थिक मंदी या मंदी की अपेक्षाओं से जुड़ा होता है, क्योंकि यह संकेत देता है कि बाजार भविष्य में दरों में कटौती की उम्मीद करते हैं।\n2. ऑपरेशन ट्विस्ट, अल्पकालिक सरकारी प्रतिभूतियों को एक साथ खरीदने और दीर्घकालिक प्रतिभूतियों को बेचने के द्वारा, यील्ड कर्व को तीखा करने और दीर्घकालिक निवेश को प्रोत्साहित करने के लिए डिज़ाइन किया गया है।\n3. एक बड़ा सरकारी बाजार उधारी कार्यक्रम दीर्घकालिक सरकारी प्रतिभूतियों की उपज को बढ़ा सकता है भले ही RBI अपनी मौद्रिक नीति की रेपो दर अपरिवर्तित रखे, क्योंकि दीर्घकालिक कागज की बढ़ी हुई आपूर्ति यील्ड कर्व के दीर्घकालिक छोर पर दबाव डालती है जो अल्पकालिक मौद्रिक नीति से स्वतंत्र होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "एक उल्टा यील्ड कर्व — जहाँ अल्पकालिक सरकारी प्रतिभूतियों (G-Sec) की उपज दीर्घकालिक उपज से अधिक होती है — ऐतिहासिक रूप से आर्थिक मंदी या मंदी की अपेक्षाओं से जुड़ा होता है, क्योंकि यह संकेत देता है कि बाजार भविष्य में दरों में कटौती की उम्मीद करते हैं।",
+          "verdict": "सही",
+          "reason": "एक उल्टा यील्ड कर्व यह संकेत देता है कि बाजार निकट भविष्य में दरों में गिरावट की उम्मीद करते हैं (जो धीमी वृद्धि या दर कटौती को दर्शाता है), जिससे दीर्घकालिक उपज अल्पकालिक उपज से नीचे आ जाती है — यह प्रमुख अर्थव्यवस्थाओं में मंदी का एक विश्वसनीय अग्रिम संकेतक है।"
+        },
+        {
+          "statement": "ऑपरेशन ट्विस्ट, अल्पकालिक सरकारी प्रतिभूतियों को एक साथ खरीदने और दीर्घकालिक प्रतिभूतियों को बेचने के द्वारा, यील्ड कर्व को तीखा करने और दीर्घकालिक निवेश को प्रोत्साहित करने के लिए डिज़ाइन किया गया है।",
+          "verdict": "गलत",
+          "reason": "ऑपरेशन ट्विस्ट इसके विपरीत काम करता है — यह दीर्घकालिक प्रतिभूतियों को खरीदता है और अल्पकालिक प्रतिभूतियों को बेचता है। इससे दीर्घकालिक उपज कम होती है और अल्पकालिक उपज बढ़ती है, जिससे यील्ड कर्व सपाट होता है (तीखा नहीं)।"
+        },
+        {
+          "statement": "एक बड़ा सरकारी बाजार उधारी कार्यक्रम दीर्घकालिक सरकारी प्रतिभूतियों की उपज को बढ़ा सकता है भले ही RBI अपनी मौद्रिक नीति की रेपो दर अपरिवर्तित रखे, क्योंकि दीर्घकालिक कागज की बढ़ी हुई आपूर्ति यील्ड कर्व के दीर्घकालिक छोर पर दबाव डालती है जो अल्पकालिक मौद्रिक नीति से स्वतंत्र होता है।",
+          "verdict": "सही",
+          "reason": "यह यील्ड कर्व पर 'राजकोषीय प्रभुत्व' प्रभाव है — दीर्घकालिक बॉन्ड की सरकारी अधिक आपूर्ति टर्म प्रीमियम बढ़ाती है, जिससे दीर्घकालिक उपज RBI की अल्पकालिक दर की स्थिति से स्वतंत्र रूप से बढ़ती है।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो ऑपरेशन ट्विस्ट को 'दीर्घकालिक छोर की बिक्री' के रूप में गलत याद करते हैं (जिसे वे एक सामान्य तरलता अवशोषण OMO से भ्रमित करते हैं) वे कथन 2 को आंशिक रूप से सही मान सकते हैं और विकल्प (d) चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: मंदी के पूर्वानुमानक के रूप में उल्टा कर्व — सही और मानक मैक्रोइकॉनॉमिक व्याख्या।",
+        "कथन 2: ऑपरेशन ट्विस्ट की क्रियाविधि उलट बताई गई है। OT दीर्घकालिक खरीदता है और अल्पकालिक बेचता है — उल्टा नहीं। कथन 2 गलत है।",
+        "कथन 3: राजकोषीय प्रभुत्व के कारण दीर्घकालिक उपज में वृद्धि रेपो दर से स्वतंत्र — सही। यह उभरती बाजार अर्थव्यवस्थाओं में बड़े सरकारी उधारी कार्यक्रमों में अच्छी तरह से प्रलेखित घटना है।",
+        "सही कथन 1 और 3 हैं — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 ऑपरेशन ट्विस्ट की दिशा को उलट देता है, जो छात्रों द्वारा की जाने वाली सबसे सामान्य गलती है। जो छात्र जानते हैं कि OT में 'कुछ खरीदना और कुछ बेचना' शामिल है लेकिन यह याद नहीं रख पाते कि कौन सी अवधि खरीदी जाती है और कौन सी बेची जाती है, वे इस उलट को पहचान नहीं पाएंगे। कथन 3 में स्कोप-एक्सटेंशन ट्रैप राजकोषीय प्रभुत्व की शर्त को हटा देता है — छात्र संदेह कर सकते हैं कि क्या सरकारी उधारी 'हमेशा' नीति दर की स्थिति से स्वतंत्र रूप से दीर्घकालिक उपज बढ़ाती है।",
+      "final_explanation": "यील्ड कर्व मैक्रोइकॉनॉमिक विश्लेषण में सबसे सूचनाप्रद उपकरणों में से एक है, और भारत के सरकारी प्रतिभूति यील्ड कर्व को मौद्रिक नीति और राजकोषीय कारक दोनों आकार देते हैं।\n\n• कथन 1 — सही: एक उल्टा यील्ड कर्व (अल्पकालिक दरें > दीर्घकालिक दरें) संकेत देता है कि बाजार आर्थिक मंदी और अपेक्षित भविष्य की दर कटौती को मूल्यित करते हैं। यह अग्रणी संकेतक है, जो उन्नत अर्थव्यवस्थाओं में व्यापक रूप से प्रलेखित है।\n• कथन 2 — गलत: ऑपरेशन ट्विस्ट दीर्घकालिक सरकारी प्रतिभूतियों को खरीदता है और अल्पकालिक को बेचता है — जो कथन 2 के विपरीत है। इसका प्रभाव कर्व को सपाट करना है (दीर्घकालिक उपज गिरती है, अल्पकालिक उपज बढ़ती है), तीखा करना नहीं।\n• कथन 3 — सही: जब सरकार बड़ी मात्रा में दीर्घकालिक बॉन्ड जारी करती है, तो आपूर्ति दबाव टर्म प्रीमियम को बढ़ाता है। यह तब भी हो सकता है जब रेपो दर अपरिवर्तित हो — यील्ड कर्व पर राजकोषीय प्रभुत्व का प्रत्यक्ष प्रभाव।\n\nमूल्य संवर्धन:\n• भारत का मानक यील्ड 10-वर्षीय सरकारी प्रतिभूति उपज है, जो गृह ऋण दरों, कॉर्पोरेट बॉन्ड स्प्रेड्स, और FCNR जमा दरों को आधार देता है।\n• यील्ड कर्व का तीखा होना (दीर्घकालिक दरें अल्पकालिक दरों से तेज़ी से बढ़ना) आमतौर पर बेहतर विकास अपेक्षाओं का संकेत देता है।\n• RBI की उधारी कैलेंडर में फ्रंट-लोडिंग बनाम बैक-लोडिंग रणनीति आंशिक रूप से यील्ड प्रबंधन का निर्णय है।"
+    }
+  },
+  {
+    "uuid": "4ee8056a-5f7e-4af2-8869-fe33ffeba7cf",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Foreign Portfolio Investment (FPI) in G-Secs: Limits, Routes and Implications"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "JP Morgan GBI-EM Index — FAR bonds and Indian G-Sec inclusion 2024",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly describes the nature of India's inclusion in JP Morgan's Government Bond Index – Emerging Markets (GBI-EM) that took effect in 2024?\n\n(a) All outstanding Indian Government Securities automatically became eligible for inclusion upon the announcement, as India met the required market capitalisation threshold\n(b) FTSE Russell's World Government Bond Index was the first major international bond index to include Indian G-Secs, predating the JP Morgan announcement\n(c) Only bonds designated under the Fully Accessible Route (FAR) — which carry no Foreign Portfolio Investment limits — were eligible for JP Morgan GBI-EM inclusion\n(d) Index inclusion is expected to cause depreciation of the Indian rupee due to increased hedging demand from foreign investors",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who know about 'index inclusion' but confuse the mechanism may assume all G-Secs became eligible or that the FTSE Russell index was the first to include Indian bonds.",
+      "elimination_logic": [
+        "Recall that JP Morgan's GBI-EM Index announced inclusion of Indian G-Secs starting June 2024.",
+        "Only bonds under the Fully Accessible Route (FAR) — which have no FPI investment caps — were eligible for index inclusion.",
+        "Eliminate option (a): not all G-Secs were included; only FAR-designated bonds qualified.",
+        "Eliminate option (b): FTSE Russell announced inclusion separately; JP Morgan was first. Correct answer is (c)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap works by confusing which index was first (JP Morgan GBI-EM in 2024) versus which came later (Bloomberg EM Local Currency Index, FTSE Russell). Students aware of India's bond index inclusion story but uncertain about which index moved first, and which specific bonds qualified, are most susceptible. The 'FAR' feature is the critical eligibility criterion that is frequently overlooked.",
+      "final_explanation": "India's inclusion in the JP Morgan Government Bond Index – Emerging Markets (GBI-EM) in 2024 was a landmark event for the G-Sec market.\n\n• Option (a): Incorrect. Only bonds under the Fully Accessible Route (FAR) — not all Indian G-Secs — qualified for index inclusion. FAR bonds have no FPI investment limits, making them accessible without cap constraints.\n• Option (b): Incorrect. JP Morgan's GBI-EM was the first major index to announce Indian G-Sec inclusion (effective June 2024). Bloomberg and FTSE Russell have separate timelines.\n• Option (c): Correct. JP Morgan's GBI-EM inclusion from June 2024 involved only FAR-designated Indian G-Secs. These bonds have no FPI investment ceiling, which was the critical eligibility criterion for index inclusion.\n• Option (d): Incorrect. Index inclusion creates capital inflow pressure (attracting foreign funds benchmarked to the index) and may cause rupee appreciation, not depreciation, in the near term.\n\nValue Addition:\n• FAR bonds were introduced in 2020 specifically to facilitate index inclusion of Indian G-Secs.\n• Index inclusion is estimated to attract $20–30 billion in passive foreign inflows over the inclusion phase-in period.\n• FPI outflows during global risk-off events can cause simultaneous rupee depreciation and G-Sec yield spikes — the 'double whammy.'"
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन सा JP Morgan के Government Bond Index – Emerging Markets (GBI-EM) में भारत के 2024 में समावेशन की प्रकृति का सही वर्णन करता है?\n\n(a) घोषणा के साथ ही सभी प्रचलित भारतीय सरकारी प्रतिभूतियाँ स्वचालित रूप से समावेशन के लिए पात्र हो गईं क्योंकि भारत ने आवश्यक बाजार पूंजीकरण सीमा पूरी कर ली थी\n(b) FTSE Russell का World Government Bond Index पहला प्रमुख अंतरराष्ट्रीय बॉन्ड इंडेक्स था जिसने भारतीय सरकारी प्रतिभूतियों को शामिल किया, जो JP Morgan की घोषणा से पहले था\n(c) केवल Fully Accessible Route (FAR) के अंतर्गत आने वाले बॉन्ड्स — जिन पर विदेशी पोर्टफोलियो निवेश की कोई सीमा नहीं है — JP Morgan GBI-EM समावेशन के लिए पात्र थे\n(d) इंडेक्स समावेशन के कारण विदेशी निवेशकों की बढ़ी हुई हेजिंग मांग के कारण भारतीय रुपये के अवमूल्यन की संभावना है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र 'इंडेक्स समावेशन' के बारे में जानते हैं लेकिन प्रक्रिया को समझने में गलती करते हैं, वे मान सकते हैं कि सभी सरकारी प्रतिभूतियाँ पात्र हो गईं या FTSE Russell इंडेक्स ने भारतीय बॉन्ड्स को सबसे पहले शामिल किया।",
+      "elimination_logic": [
+        "याद रखें कि JP Morgan का GBI-EM इंडेक्स जून 2024 से भारतीय सरकारी प्रतिभूतियों को शामिल करने की घोषणा करता है।",
+        "केवल Fully Accessible Route (FAR) के अंतर्गत आने वाले बॉन्ड्स — जिन पर FPI निवेश की कोई सीमा नहीं है — इंडेक्स समावेशन के लिए पात्र थे।",
+        "विकल्प (a) को हटाएं: सभी सरकारी प्रतिभूतियाँ शामिल नहीं थीं; केवल FAR-निर्धारित बॉन्ड्स पात्र थे।",
+        "विकल्प (b) को हटाएं: FTSE Russell ने अलग से समावेशन की घोषणा की; JP Morgan सबसे पहला था। सही उत्तर (c) है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम (temporal-swap) जाल इस प्रकार काम करता है कि कौन सा इंडेक्स सबसे पहले था (JP Morgan GBI-EM 2024 में) और कौन बाद में आया (Bloomberg EM Local Currency Index, FTSE Russell) में भ्रम पैदा करता है। जो छात्र भारत के बॉन्ड इंडेक्स समावेशन की कहानी जानते हैं लेकिन यह निश्चित नहीं हैं कि कौन सा इंडेक्स पहले आया और कौन से बॉन्ड्स पात्र थे, वे सबसे अधिक प्रभावित होते हैं। 'FAR' विशेषता वह महत्वपूर्ण पात्रता मानदंड है जिसे अक्सर नजरअंदाज किया जाता है।",
+      "final_explanation": "भारत का JP Morgan Government Bond Index – Emerging Markets (GBI-EM) में 2024 में समावेशन सरकारी प्रतिभूतियों के बाजार के लिए एक महत्वपूर्ण घटना थी।\n\n• विकल्प (a): गलत। केवल Fully Accessible Route (FAR) के अंतर्गत आने वाले बॉन्ड्स — सभी भारतीय सरकारी प्रतिभूतियाँ नहीं — इंडेक्स समावेशन के लिए पात्र थे। FAR बॉन्ड्स पर FPI निवेश की कोई सीमा नहीं होती, जिससे वे बिना सीमा प्रतिबंध के सुलभ होते हैं।\n• विकल्प (b): गलत। JP Morgan का GBI-EM पहला प्रमुख इंडेक्स था जिसने भारतीय सरकारी प्रतिभूतियों के समावेशन की घोषणा की (जून 2024 से प्रभावी)। Bloomberg और FTSE Russell की अलग-अलग समय-सीमाएँ हैं।\n• विकल्प (c): सही। JP Morgan का GBI-EM समावेशन जून 2024 से केवल FAR-निर्धारित भारतीय सरकारी प्रतिभूतियों को शामिल करता है। इन बॉन्ड्स पर FPI निवेश की कोई सीमा नहीं है, जो इंडेक्स समावेशन के लिए महत्वपूर्ण पात्रता मानदंड था।\n• विकल्प (d): गलत। इंडेक्स समावेशन पूंजी प्रवाह दबाव उत्पन्न करता है (जो विदेशी निधियों को आकर्षित करता है जो इंडेक्स से जुड़ी होती हैं) और निकट अवधि में रुपये के मूल्यवृद्धि का कारण बन सकता है, अवमूल्यन नहीं।\n\nमूल्य संवर्धन:\n• FAR बॉन्ड्स 2020 में विशेष रूप से भारतीय सरकारी प्रतिभूतियों के इंडेक्स समावेशन को सुगम बनाने के लिए पेश किए गए थे।\n• इंडेक्स समावेशन के दौरान अनुमानित $20–30 बिलियन की निष्क्रिय विदेशी प्रवाह आकर्षित होने की संभावना है।\n• वैश्विक जोखिम-रोक (risk-off) घटनाओं के दौरान FPI निकासी से रुपये का अवमूल्यन और सरकारी प्रतिभूतियों की यील्ड में वृद्धि एक साथ हो सकती है — जिसे 'डबल व्हैमी' कहा जाता है।"
+    }
+  },
+  {
+    "uuid": "a7df2452-4b88-4139-9725-008829a477b7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "STRIPS (Separate Trading of Registered Interest and Principal of Securities)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "two-statement-relationship",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "STRIPS — zero-coupon derivation without new government debt",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to STRIPS (Separate Trading of Registered Interest and Principal of Securities) in India's Government Securities market, consider the following statements:\n\nStatement 1: STRIPS are created by decomposing an existing dated G-Sec into separate zero-coupon instruments, each representing a single future cash flow — either a coupon payment or the principal repayment — tradeable independently.\n\nStatement 2: When a G-Sec is stripped into STRIPS, the Government of India issues additional sovereign paper to back each STRIP, thereby increasing the government's total debt obligation by the face value of the STRIPS created.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: STRIPS are created by decomposing an existing dated G-Sec into separate zero-coupon instruments, each representing a single future cash flow — either a coupon payment or the principal repayment — tradeable independently.",
+          "verdict": "Correct",
+          "reason": "This is the precise mechanism of STRIPS. A G-Sec with ten coupon payments and one principal repayment can be stripped into eleven separately tradeable zero-coupon instruments."
+        },
+        {
+          "statement": "Statement 2: When a G-Sec is stripped into STRIPS, the Government of India issues additional sovereign paper to back each STRIP, thereby increasing the government's total debt obligation by the face value of the STRIPS created.",
+          "verdict": "Incorrect",
+          "reason": "STRIPS do not involve new issuance by the government. The existing G-Sec is decomposed — its cash flows are redistributed into separate instruments, but the government's total debt obligation remains unchanged. No new sovereign paper is issued."
+        }
+      ],
+      "strong_distractor": "a — A student who hears that STRIPS create 'new tradeable instruments' may assume new government paper is being issued, leading them to consider both statements correct.",
+      "elimination_logic": [
+        "Statement 1 is the textbook definition of STRIPS — decomposing coupon and principal cash flows into separately tradeable zero-coupon instruments. Correct.",
+        "Statement 2 claims new sovereign paper is issued when a G-Sec is stripped — this is factually false. STRIPS are derived from, not in addition to, existing G-Secs. The government's debt burden does not change.",
+        "Statement 1 is correct, Statement 2 is incorrect — option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a plausible fabrication. A student who has not specifically read about STRIPS may reason: 'if new instruments are being created and traded, new paper must have been issued.' This conflates financial engineering (decomposing existing cash flows) with new issuance. The UPSC trap specifically tests whether students know the government's total debt obligation is unchanged by the stripping process.",
+      "final_explanation": "STRIPS (Separate Trading of Registered Interest and Principal of Securities) are a financial engineering tool applied to existing dated G-Secs.\n\n• Statement 1 — Correct: Stripping decomposes a coupon-bearing G-Sec into multiple zero-coupon instruments — each coupon payment date becomes one instrument, and the final principal repayment becomes another. All are independently tradeable.\n• Statement 2 — Incorrect: No new sovereign debt is created. The underlying G-Sec is decomposed; the government's total cash flow obligations remain identical. STRIPS redistribute existing obligations — they do not add to them.\n\nValue Addition:\n• STRIPS are particularly useful for insurance companies and pension funds that need to match long-duration liabilities with zero-coupon instruments.\n• The zero-coupon yield curve generated by STRIPS pricing is essential for valuing interest rate derivatives.\n• Not all G-Secs are STRIPS-eligible — RBI specifies which dated securities can be stripped.\n• STRIPS can also be 'reconstituted' — the individual components reassembled into the original G-Sec."
+    },
+    "hi": {
+      "display_text": "भारत के सरकारी प्रतिभूतियों के बाजार में STRIPS (Separate Trading of Registered Interest and Principal of Securities) के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: STRIPS मौजूदा डेटेड G-Sec को अलग-अलग शून्य-कूपन उपकरणों में विभाजित करके बनाए जाते हैं, जिनमें से प्रत्येक एक भविष्य की नकदी प्रवाह का प्रतिनिधित्व करता है — या तो कूपन भुगतान या मूलधन की वापसी — जो स्वतंत्र रूप से व्यापार योग्य होते हैं।\n\nकथन 2: जब किसी G-Sec को STRIPS में विभाजित किया जाता है, तो भारत सरकार प्रत्येक STRIP का समर्थन करने के लिए अतिरिक्त संप्रभु कागज जारी करती है, जिससे सरकार के कुल ऋण दायित्व में STRIPS के अंकित मूल्य के बराबर वृद्धि होती है।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: STRIPS मौजूदा डेटेड सरकारी प्रतिभूतियों (G-Sec) को अलग-अलग शून्य-कूपन उपकरणों में विभाजित करके बनाए जाते हैं, जिनमें से प्रत्येक एक भविष्य की नकदी प्रवाह का प्रतिनिधित्व करता है — या तो कूपन भुगतान या मूलधन की वापसी — जो स्वतंत्र रूप से व्यापार योग्य होते हैं।",
+          "verdict": "सही है",
+          "reason": "यह STRIPS की सटीक प्रक्रिया है। दस कूपन भुगतान और एक मूलधन वापसी वाली G-Sec को ग्यारह अलग-अलग व्यापार योग्य शून्य-कूपन उपकरणों में विभाजित किया जा सकता है।"
+        },
+        {
+          "statement": "कथन 2: जब किसी G-Sec को STRIPS में विभाजित किया जाता है, तो भारत सरकार प्रत्येक STRIP का समर्थन करने के लिए अतिरिक्त संप्रभु कागज जारी करती है, जिससे सरकार के कुल ऋण दायित्व में STRIPS के अंकित मूल्य के बराबर वृद्धि होती है।",
+          "verdict": "गलत है",
+          "reason": "STRIPS में सरकार द्वारा नया जारीकरण शामिल नहीं होता। मौजूदा G-Sec को विभाजित किया जाता है — इसके नकदी प्रवाह अलग-अलग उपकरणों में पुनर्वितरित होते हैं, लेकिन सरकार का कुल ऋण दायित्व अपरिवर्तित रहता है। कोई नया संप्रभु कागज जारी नहीं किया जाता।"
+        }
+      ],
+      "strong_distractor": "क) — एक छात्र जो सुनता है कि STRIPS 'नए व्यापार योग्य उपकरण' बनाते हैं, वह यह मान सकता है कि नया सरकारी कागज जारी किया जा रहा है, जिससे वह दोनों कथनों को सही मान सकता है।",
+      "elimination_logic": [
+        "कथन 1 STRIPS की पाठ्यपुस्तक परिभाषा है — कूपन और मूलधन नकदी प्रवाह को अलग-अलग व्यापार योग्य शून्य-कूपन उपकरणों में विभाजित करना। सही है।",
+        "कथन 2 यह दावा करता है कि G-Sec को STRIPS में विभाजित करने पर नया संप्रभु कागज जारी किया जाता है — यह तथ्यात्मक रूप से गलत है। STRIPS मौजूदा G-Sec से व्युत्पन्न होते हैं, अतिरिक्त नहीं। सरकार का ऋण भार नहीं बदलता।",
+        "कथन 1 सही है, कथन 2 गलत है — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक संभावित मिथ्या है। जो छात्र विशेष रूप से STRIPS के बारे में नहीं पढ़ा है, वह सोच सकता है: 'यदि नए उपकरण बनाए और व्यापार किए जा रहे हैं, तो नया कागज जारी किया गया होगा।' यह वित्तीय इंजीनियरिंग (मौजूदा नकदी प्रवाह का विभाजन) को नए जारीकरण से भ्रमित करता है। UPSC का जाल यह जांचता है कि छात्र जानते हैं कि STRIPS प्रक्रिया से सरकार का कुल ऋण दायित्व अपरिवर्तित रहता है।",
+      "final_explanation": "STRIPS (Separate Trading of Registered Interest and Principal of Securities) मौजूदा डेटेड सरकारी प्रतिभूतियों पर लागू एक वित्तीय इंजीनियरिंग उपकरण हैं।\n\n• कथन 1 — सही: स्ट्रिपिंग एक कूपन-धारक G-Sec को कई शून्य-कूपन उपकरणों में विभाजित करती है — प्रत्येक कूपन भुगतान तिथि एक उपकरण बन जाती है, और अंतिम मूलधन वापसी एक अन्य। सभी स्वतंत्र रूप से व्यापार योग्य होते हैं।\n• कथन 2 — गलत: कोई नया संप्रभु ऋण नहीं बनता। मौजूदा G-Sec को विभाजित किया जाता है; सरकार के कुल नकदी प्रवाह दायित्व समान रहते हैं। STRIPS मौजूदा दायित्वों का पुनर्वितरण हैं — वे उनमें वृद्धि नहीं करते।\n\nमूल्य संवर्धन:\n• STRIPS विशेष रूप से बीमा कंपनियों और पेंशन फंडों के लिए उपयोगी हैं जिन्हें लंबी अवधि की देनदारियों को शून्य-कूपन उपकरणों से मेल करना होता है।\n• STRIPS मूल्य निर्धारण द्वारा उत्पन्न शून्य-कूपन यील्ड कर्व ब्याज दर व्युत्पन्नों के मूल्यांकन के लिए आवश्यक है।\n• सभी G-Sec STRIPS-योग्य नहीं होते — RBI यह निर्दिष्ट करता है कि कौन से डेटेड सिक्योरिटीज़ स्ट्रिप किए जा सकते हैं।\n• STRIPS को 'पुनर्निर्मित' भी किया जा सकता है — व्यक्तिगत घटकों को मूल G-Sec में पुनः संयोजित किया जाता है।"
+    }
+  },
+  {
+    "uuid": "5e45bb01-2fc4-40ec-bfce-fef96bd9b188",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Inflation-Indexed Bonds (IIBs) and Capital Indexed Bonds (CIBs)",
+        "Sovereign Gold Bonds (SGBs): Design, Issuance and Fiscal Implications"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "IIB vs CIB vs SGB — inflation hedge instrument design differences",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the special instruments in List I with their distinguishing characteristics in List II:",
+        "columns": [
+          "List I (Instrument)",
+          "List II (Distinguishing Characteristic)"
+        ],
+        "rows": [
+          [
+            "A. Inflation-Indexed Bonds (IIBs)",
+            "1. Denominated in grams of gold; pay 2.5% fixed annual interest on issue price; capital gains on maturity are tax-exempt for individual investors"
+          ],
+          [
+            "B. Capital Indexed Bonds (CIBs)",
+            "2. Index only the principal amount to inflation; coupon is fixed; this structure has been discontinued in India"
+          ],
+          [
+            "C. Sovereign Gold Bonds (SGBs)",
+            "3. Zero-coupon instruments derived from existing dated G-Secs; primarily used by insurance companies and pension funds for long-duration liability matching"
+          ],
+          [
+            "D. STRIPS",
+            "4. Link both the coupon payments and the principal to an inflation index; include a deflation floor ensuring investors receive at least the original face value at maturity"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-4, B-2, C-1, D-3\n(b) A-2, B-4, C-1, D-3\n(c) A-4, B-2, C-3, D-1\n(d) A-2, B-4, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who recall that 'IIBs index both principal and coupon' may correctly match A but then conflate the CIB structure (only principal indexed) with the IIB structure, mismatching B and getting the combination wrong.",
+      "elimination_logic": [
+        "A (Inflation-Indexed Bonds) link BOTH principal and coupon to inflation — distinct from CIBs which only index principal. A matches with 4 (both coupon and principal linked to inflation index, with deflation floor protection at maturity).",
+        "B (Capital Indexed Bonds) index only the principal to inflation; they are now discontinued in India. B matches with 2 (only principal indexed, discontinued structure).",
+        "C (Sovereign Gold Bonds) are denominated in grams of gold, carry 2.5% fixed interest, and offer capital gains tax exemption at maturity for individuals — issued by RBI, not SEBI. C matches with 1.",
+        "D (STRIPS) are zero-coupon instruments derived from existing G-Secs — used for liability matching by pension/insurance entities. D matches with 3.",
+        "Correct: A-4, B-2, C-1, D-3 — option (a)."
+      ],
+      "upsc_trap_explanation": "The conflation trap is between IIBs and CIBs. Both index some component to inflation, but IIBs go further by indexing both coupon and principal, while CIBs (now discontinued) indexed only principal. A student who remembers 'there are inflation bonds and they index principal' but cannot recall which type indexes both will misidentify A and B. Additionally, conflating SGB issuance by RBI with SEBI listing is a common secondary trap.",
+      "final_explanation": "This question tests distinctions between four special G-Sec category instruments that are frequently tested in UPSC in isolation but rarely compared together.\n\n• A (IIBs) → 4: IIBs link BOTH the coupon payments and the principal to an inflation index (CPI). They also feature a deflation floor — at maturity, investors receive the higher of the inflation-adjusted or original face value.\n• B (CIBs) → 2: Capital Indexed Bonds, the older structure, indexed only the principal to inflation. Coupon was fixed. This structure has been discontinued in India.\n• C (SGBs) → 1: Sovereign Gold Bonds are denominated in grams of gold, pay 2.5% fixed annual interest on the issue price, and capital gains on redemption at maturity are tax-exempt for individuals. Issued by RBI on behalf of the government.\n• D (STRIPS) → 3: STRIPS are zero-coupon instruments derived from existing G-Secs, primarily useful for pension funds and insurance companies for long-duration liability matching.\n\nValue Addition:\n• Retail uptake of IIBs in India was poor due to low financial literacy and preference for physical gold as an inflation hedge.\n• SGBs are SLR-eligible, adding to their attractiveness.\n• The deflation floor in IIBs is a feature not present in all countries' inflation-indexed bonds."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में विशेष उपकरणों को सूची II में उनके विशिष्ट लक्षणों से मिलाइए:",
+        "columns": [
+          "सूची I (उपकरण)",
+          "सूची II (विशिष्ट लक्षण)"
+        ],
+        "rows": [
+          [
+            "A. मुद्रास्फीति-सूचकांकित बांड (IIBs)",
+            "1. ग्राम सोने में नामांकित; जारी मूल्य पर 2.5% निश्चित वार्षिक ब्याज देते हैं; परिपक्वता पर व्यक्तिगत निवेशकों के लिए पूंजीगत लाभ कर मुक्त"
+          ],
+          [
+            "B. कैपिटल इंडेक्स्ड बॉन्ड्स (CIBs)",
+            "2. केवल मूलधन को मुद्रास्फीति से सूचकांकित करते हैं; कूपन निश्चित है; यह संरचना भारत में बंद हो चुकी है"
+          ],
+          [
+            "C. सॉवरेन गोल्ड बॉन्ड्स (SGBs)",
+            "3. मौजूदा तिथि वाली सरकारी प्रतिभूतियों से निकाले गए शून्य-कूपन उपकरण; मुख्य रूप से बीमा कंपनियों और पेंशन फंडों द्वारा दीर्घकालिक देयता मिलान के लिए उपयोग किए जाते हैं"
+          ],
+          [
+            "D. STRIPS",
+            "4. कूपन भुगतान और मूलधन दोनों को मुद्रास्फीति सूचकांक से जोड़ते हैं; डिफ्लेशन फ्लोर शामिल है जो सुनिश्चित करता है कि परिपक्वता पर निवेशकों को कम से कम मूल मूल्य प्राप्त हो"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-4, B-2, C-1, D-3\n(b) A-2, B-4, C-1, D-3\n(c) A-4, B-2, C-3, D-1\n(d) A-2, B-4, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र याद करते हैं कि 'IIBs दोनों मूलधन और कूपन को सूचकांकित करते हैं' वे सही रूप से A से मेल कर सकते हैं लेकिन फिर CIB संरचना (केवल मूलधन सूचकांकित) को IIB संरचना के साथ मिला देते हैं, B को गलत मिलाते हैं और संयोजन गलत हो जाता है।",
+      "elimination_logic": [
+        "A (मुद्रास्फीति-सूचकांकित बांड) दोनों मूलधन और कूपन को मुद्रास्फीति से जोड़ते हैं — जो CIBs से भिन्न है जो केवल मूलधन को सूचकांकित करते हैं। A मेल खाता है 4 से (दोनों कूपन और मूलधन मुद्रास्फीति सूचकांक से जुड़े हैं, परिपक्वता पर डिफ्लेशन फ्लोर सुरक्षा के साथ)।",
+        "B (कैपिटल इंडेक्स्ड बॉन्ड्स) केवल मूलधन को मुद्रास्फीति से सूचकांकित करते हैं; ये अब भारत में बंद हो चुके हैं। B मेल खाता है 2 से (केवल मूलधन सूचकांकित, बंद संरचना)।",
+        "C (सॉवरेन गोल्ड बॉन्ड्स) ग्राम सोने में नामांकित होते हैं, 2.5% निश्चित ब्याज देते हैं, और परिपक्वता पर व्यक्तिगत निवेशकों के लिए पूंजीगत लाभ कर छूट प्रदान करते हैं — RBI द्वारा जारी, SEBI द्वारा नहीं। C मेल खाता है 1 से।",
+        "D (STRIPS) मौजूदा सरकारी प्रतिभूतियों से निकाले गए शून्य-कूपन उपकरण हैं — पेंशन/बीमा संस्थाओं द्वारा देयता मिलान के लिए उपयोग किए जाते हैं। D मेल खाता है 3 से।",
+        "सही: A-4, B-2, C-1, D-3 — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल IIBs और CIBs के बीच है। दोनों मुद्रास्फीति के लिए कुछ घटक को सूचकांकित करते हैं, लेकिन IIBs दोनों कूपन और मूलधन को सूचकांकित करते हैं, जबकि CIBs (जो अब बंद हो चुके हैं) केवल मूलधन को सूचकांकित करते थे। जो छात्र याद करते हैं कि 'मुद्रास्फीति बांड होते हैं और वे मूलधन को सूचकांकित करते हैं' लेकिन यह याद नहीं कर पाते कि कौन सा प्रकार दोनों को सूचकांकित करता है, वे A और B को गलत पहचानेंगे। इसके अतिरिक्त, RBI द्वारा SGB जारी करने को SEBI सूचीकरण के साथ मिलाना एक सामान्य द्वितीयक जाल है।",
+      "final_explanation": "यह प्रश्न चार विशेष सरकारी प्रतिभूति श्रेणी उपकरणों के बीच भेदों का परीक्षण करता है जो UPSC में अक्सर अलग-अलग पूछे जाते हैं लेकिन शायद ही कभी एक साथ तुलना किए जाते हैं।\n\n• A (IIBs) → 4: IIBs दोनों कूपन भुगतान और मूलधन को मुद्रास्फीति सूचकांक (CPI) से जोड़ते हैं। इनमें डिफ्लेशन फ्लोर भी होता है — परिपक्वता पर निवेशकों को मुद्रास्फीति-समायोजित या मूल मूल्य में से उच्चतम राशि प्राप्त होती है।\n• B (CIBs) → 2: कैपिटल इंडेक्स्ड बॉन्ड्स, पुरानी संरचना, केवल मूलधन को मुद्रास्फीति से जोड़ते थे। कूपन निश्चित था। यह संरचना भारत में बंद हो चुकी है।\n• C (SGBs) → 1: सॉवरेन गोल्ड बॉन्ड्स ग्राम सोने में नामांकित होते हैं, जारी मूल्य पर 2.5% निश्चित वार्षिक ब्याज देते हैं, और परिपक्वता पर व्यक्तिगत निवेशकों के लिए पूंजीगत लाभ कर मुक्त होते हैं। सरकार की ओर से RBI द्वारा जारी।\n• D (STRIPS) → 3: STRIPS मौजूदा सरकारी प्रतिभूतियों से निकाले गए शून्य-कूपन उपकरण हैं, जो मुख्य रूप से पेंशन फंड और बीमा कंपनियों द्वारा दीर्घकालिक देयता मिलान के लिए उपयोग किए जाते हैं।\n\nमूल्य संवर्धन:\n• भारत में IIBs की खुदरा स्वीकृति कम रही क्योंकि वित्तीय साक्षरता कम थी और मुद्रास्फीति से बचाव के लिए भौतिक सोने को प्राथमिकता दी गई।\n• SGBs SLR-योग्य हैं, जो उनकी आकर्षकता बढ़ाता है।\n• IIBs में डिफ्लेशन फ्लोर एक ऐसी विशेषता है जो सभी देशों के मुद्रास्फीति-सूचकांकित बांडों में नहीं होती।"
+    }
+  },
+  {
+    "uuid": "27d2a09e-ae35-442c-9fd4-b23f8e631e44",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Fiscal Deficit Financing and Market Borrowing Programme"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Gross vs Net borrowing — fiscal deficit financing distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched in the context of government fiscal deficit financing and market borrowing?\n\n(a) Gross borrowing: equals net borrowing as all rollovers are automatically reclassified as new debt in the Union Budget\n(b) FRBM Act escape clause: triggered exclusively by war or national emergency, allowing the government to breach the fiscal deficit target\n(c) Crowding out effect: large government borrowing reduces inflation by absorbing excess liquidity from the banking system\n(d) Front-loading of market borrowings: tends to raise G-Sec yields in the near term due to concentrated supply pressure in the first half of the financial year",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) sounds factually correct because students know FRBM limits fiscal deficit as % of GDP; they may not detect that the 'escape clause' is attributed to 'war or national emergency' only, when the actual scope is broader.",
+      "elimination_logic": [
+        "Option (a): 'Gross borrowing equals net borrowing' is false — gross includes rollovers of maturing debt; net is only the fresh addition to debt stock. Incorrect pair.",
+        "Option (b): The FRBM Act escape clause is triggered by conditions including pandemic, national security, or severe economic downturns — not limited to 'war or national emergency.' This pair misrepresents the scope. Partially false.",
+        "Option (c): 'Crowding out means government borrowing reduces inflation' conflates two different phenomena. Crowding out refers to displacement of private investment, not inflation reduction. Incorrect pair.",
+        "Option (d): Front-loading of borrowings (issuing more bonds in H1 than H2) raises yields in the near term due to supply pressure — this is correct as a standard market outcome. Correctly matched pair."
+      ],
+      "upsc_trap_explanation": "Option (b) is the strong distractor because FRBM and escape clauses are frequently tested, and the clause does indeed exist. The trap is that 'war or national emergency' is too narrow — the actual escape clause covers natural calamities, national security threats, and structural reforms with unanticipated fiscal implications, among others. Conflating the narrow description with the full legal provision makes it a subtle incorrect pair.",
+      "final_explanation": "Fiscal deficit financing and market borrowing mechanics are tested for precision rather than general awareness.\n\n• Option (a): Incorrect pair. Gross borrowing includes fresh issuance PLUS rollovers of maturing debt. Net borrowing is gross minus redemptions — the true addition to debt stock. They are never equal (unless redemptions are zero).\n• Option (b): Incorrect pair. The FRBM escape clause is broader than 'war or national emergency.' It covers natural calamities, national security, structural reforms with fiscal consequences, and GDP growth decline — as amended in 2018.\n• Option (c): Incorrect pair. The crowding out effect means large government borrowing competes with private sector for savings, raising interest rates and displacing private investment — not reducing inflation.\n• Option (d): Correctly matched pair. Front-loading (concentrating borrowings in H1) creates near-term supply pressure that pushes yields higher. Back-loading eases that pressure. This is why RBI's borrowing calendar timing is itself a market signal.\n\nValue Addition:\n• The half-yearly borrowing calendar (H1: April–September, H2: October–March) is jointly managed by RBI and the Ministry of Finance.\n• Front-loading is sometimes preferred to reduce rollover risk later in the year.\n• FRBM targets are currently 4.5% of GDP for fiscal deficit by FY26 (as revised post-pandemic)."
+    },
+    "hi": {
+      "display_text": "सरकारी राजकोषीय घाटा वित्तपोषण और बाजार उधार के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) सकल उधारी: शुद्ध उधारी के बराबर क्योंकि सभी पुनःपूर्तियाँ स्वचालित रूप से संघ बजट में नए ऋण के रूप में पुनर्वर्गीकृत होती हैं\n(b) FRBM अधिनियम का एस्केप क्लॉज: केवल युद्ध या राष्ट्रीय आपातकाल द्वारा सक्रिय होता है, जिससे सरकार को राजकोषीय घाटा लक्ष्य तोड़ने की अनुमति मिलती है\n(c) क्राउडिंग आउट प्रभाव: बड़ी सरकारी उधारी बैंकिंग प्रणाली से अतिरिक्त तरलता अवशोषित करके मुद्रास्फीति को कम करती है\n(d) बाजार उधार की फ्रंट-लोडिंग: वित्तीय वर्ष की पहली छमाही में केंद्रित आपूर्ति दबाव के कारण निकट अवधि में सरकारी प्रतिभूति (G-Sec) यील्ड बढ़ाने का रुझान रखती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) तथ्यात्मक रूप से सही लगता है क्योंकि छात्र जानते हैं कि FRBM राजकोषीय घाटा को GDP के प्रतिशत के रूप में सीमित करता है; वे यह पहचान नहीं पाते कि 'एस्केप क्लॉज' केवल 'युद्ध या राष्ट्रीय आपातकाल' के लिए है, जबकि वास्तविक दायरा व्यापक है।",
+      "elimination_logic": [
+        "विकल्प (a): 'सकल उधारी शुद्ध उधारी के बराबर है' गलत है — सकल में परिपक्व हो रही ऋण की पुनःपूर्ति शामिल होती है; शुद्ध केवल ऋण स्टॉक में ताजा वृद्धि है। गलत जोड़ी।",
+        "विकल्प (b): FRBM अधिनियम का एस्केप क्लॉज महामारी, राष्ट्रीय सुरक्षा, या गंभीर आर्थिक मंदी सहित परिस्थितियों द्वारा सक्रिय होता है — केवल 'युद्ध या राष्ट्रीय आपातकाल' तक सीमित नहीं। यह जोड़ी दायरे को गलत दर्शाती है। आंशिक रूप से गलत।",
+        "विकल्प (c): 'क्राउडिंग आउट का अर्थ है कि सरकारी उधारी मुद्रास्फीति को कम करती है' दो अलग-अलग घटनाओं को मिलाना है। क्राउडिंग आउट का तात्पर्य निजी निवेश के विस्थापन से है, मुद्रास्फीति में कमी से नहीं। गलत जोड़ी।",
+        "विकल्प (d): बाजार उधार की फ्रंट-लोडिंग (वित्तीय वर्ष के पहले छमाही में अधिक बॉन्ड जारी करना) निकट अवधि में आपूर्ति दबाव के कारण यील्ड बढ़ाती है — यह एक मानक बाजार परिणाम के रूप में सही है। सही जोड़ी।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) मजबूत भ्रम पैदा करने वाला है क्योंकि FRBM और एस्केप क्लॉज अक्सर परीक्षा में आते हैं, और यह क्लॉज वास्तव में मौजूद है। जाल यह है कि 'युद्ध या राष्ट्रीय आपातकाल' बहुत संकीर्ण है — वास्तविक एस्केप क्लॉज प्राकृतिक आपदाओं, राष्ट्रीय सुरक्षा खतरों, और अप्रत्याशित राजकोषीय प्रभावों वाले संरचनात्मक सुधारों सहित व्यापक है। संकीर्ण विवरण को पूर्ण कानूनी प्रावधान के साथ मिलाना इसे सूक्ष्म रूप से गलत जोड़ी बनाता है।",
+      "final_explanation": "राजकोषीय घाटा वित्तपोषण और बाजार उधार की प्रक्रिया सटीकता के लिए परखी जाती है न कि सामान्य जागरूकता के लिए।\n\n• विकल्प (a): गलत जोड़ी। सकल उधारी में ताजा जारीकरण के साथ-साथ परिपक्व ऋण की पुनःपूर्ति शामिल होती है। शुद्ध उधारी = सकल उधारी − पुनर्भुगतान, जो ऋण स्टॉक में वास्तविक वृद्धि है। ये कभी बराबर नहीं होते (जब तक पुनर्भुगतान शून्य न हो)।\n• विकल्प (b): गलत जोड़ी। FRBM का एस्केप क्लॉज 'युद्ध या राष्ट्रीय आपातकाल' से व्यापक है। यह प्राकृतिक आपदाओं, राष्ट्रीय सुरक्षा, संरचनात्मक सुधारों के वित्तीय प्रभावों, और GDP वृद्धि में गिरावट को भी कवर करता है — जैसा कि 2018 में संशोधित किया गया।\n• विकल्प (c): गलत जोड़ी। क्राउडिंग आउट प्रभाव का अर्थ है कि बड़ी सरकारी उधारी बचत के लिए निजी क्षेत्र से प्रतिस्पर्धा करती है, जिससे ब्याज दरें बढ़ती हैं और निजी निवेश विस्थापित होता है — मुद्रास्फीति कम नहीं होती।\n• विकल्प (d): सही जोड़ी। फ्रंट-लोडिंग (पहली छमाही में उधार केंद्रित करना) निकट अवधि में आपूर्ति दबाव पैदा करता है जो यील्ड को बढ़ाता है। बैक-लोडिंग इस दबाव को कम करता है। इसलिए RBI का उधार कैलेंडर समय निर्धारण स्वयं एक बाजार संकेत है।\n\nमूल्य संवर्धन:\n• अर्धवार्षिक उधार कैलेंडर (H1: अप्रैल–सितंबर, H2: अक्टूबर–मार्च) RBI और वित्त मंत्रालय द्वारा संयुक्त रूप से प्रबंधित किया जाता है।\n• फ्रंट-लोडिंग कभी-कभी वर्ष के बाद के हिस्से में पुनःपूर्ति जोखिम कम करने के लिए पसंद किया जाता है।\n• FRBM लक्ष्य वर्तमान में FY26 तक राजकोषीय घाटा के लिए GDP का 4.5% है (महामारी के बाद संशोधित)।"
+    }
+  },
+  {
+    "uuid": "0a0702b0-d868-4b96-b78d-cc85a5f83bbe",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Debt Management: Public Debt Management Agency (PDMA) Debate",
+        "Primary Issuance Mechanism: Auctions and the Role of RBI"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "RBI conflict of interest — monetary policy vs debt management",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Reserve Bank of India's simultaneous role as the government's debt manager and as the monetary policy authority creates a structural conflict of interest, since the preferences of a debt manager (lower borrowing costs) may diverge from those of a monetary authority (higher interest rates to control inflation).\n\nReason (R): A Public Debt Management Agency (PDMA) was proposed by multiple committees, including the Financial Sector Legislative Reforms Commission, to separate public debt management from the RBI — but this agency has not yet been established in India.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both A and R are factually accurate and who believe the conflict of interest is the reason PDMA has not been established may select (a), missing the nuance that RBI resistance and political economy — not the conflict itself — explain PDMA's non-establishment.",
+      "elimination_logic": [
+        "Step 1 — Is A correct? The RBI managing public debt while also setting monetary policy creates a genuine conflict: as debt manager, RBI prefers lower yields (lower borrowing cost for government); as monetary authority, it may prefer higher rates to control inflation. A is correct.",
+        "Step 2 — Is R correct? The PDMA was proposed by the FSLRC and Jahangir Aziz Committee precisely to separate these two roles. The proposal exists but PDMA has not yet been established. R is correct.",
+        "Step 3 — Does R explain A? No. R describes that a solution was proposed but not implemented. It does not explain WHY the conflict of interest exists or what its mechanism is. A describes the problem; R describes an incomplete policy response. The causal link is absent — R does not causally explain A.",
+        "Both A and R correct, R does NOT explain A — correct option is (b)."
+      ],
+      "upsc_trap_explanation": "This is a classic assertion-reason trap where both A and R are independently true, but their relationship is not causal. A describes the conflict of interest problem; R describes that a solution (PDMA) was proposed but not established. A student who reads both as factually true and assumes 'they must be related therefore R explains A' will choose (a). The precise analytical requirement is to ask whether R gives the causal mechanism of A — it does not. R is a policy fact, not an explanation of why the conflict exists.",
+      "final_explanation": "The RBI-PDMA debate is a recurring governance question in UPSC Mains but requires Prelims-level factual precision.\n\n• Assertion (A): Correct. RBI simultaneously acts as India's monetary authority (setting the repo rate) and as the government's debt manager (managing borrowing costs). As debt manager, RBI prefers lower yields to reduce fiscal cost; as monetary authority, it may need higher rates to control inflation. This structural conflict is well-documented.\n• Reason (R): Correct as a standalone fact. Multiple committees — including the FSLRC and the Jahangir Aziz Committee — recommended establishing a PDMA as a separate statutory body. India has not yet established PDMA, making it an outlier among large economies (UK's DMO and the US Treasury's Office of Debt Management are separated from their central banks).\n• Causal relationship: Absent. R describes a policy response (PDMA proposal) to the problem described in A — it does not explain the mechanism of the conflict. Why the conflict exists is embedded in A's own logic. R is a consequential policy fact, not a causal explanation of A.\n\nValue Addition:\n• PDMA's non-establishment is partly attributed to RBI's institutional resistance and concerns about coordination failures during financial crises.\n• Ways and Means Advances (WMA) management is also a debt management function currently vested in RBI.\n• Separating debt management is associated with better monetary policy credibility in international literature."
+    },
+    "hi": {
+      "display_text": "कथन (A): भारतीय रिज़र्व बैंक की सरकार के ऋण प्रबंधक और मौद्रिक नीति प्राधिकरण के रूप में एक साथ भूमिका एक संरचनात्मक हितों के टकराव को जन्म देती है, क्योंकि ऋण प्रबंधक की प्राथमिकताएँ (कम उधारी लागत) मौद्रिक प्राधिकरण की प्राथमिकताओं (मुद्रास्फीति नियंत्रण के लिए उच्च ब्याज दरें) से भिन्न हो सकती हैं।\n\nकारण (R): वित्तीय क्षेत्र विधायी सुधार आयोग सहित कई समितियों द्वारा सार्वजनिक ऋण प्रबंधन को RBI से अलग करने के लिए एक सार्वजनिक ऋण प्रबंधन एजेंसी (PDMA) प्रस्तावित की गई थी — लेकिन यह एजेंसी भारत में अभी तक स्थापित नहीं हुई है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र A और R दोनों को तथ्यात्मक रूप से सही जानते हैं और मानते हैं कि हितों का टकराव PDMA के न बनने का कारण है, वे (a) चुन सकते हैं, जबकि असल में RBI का विरोध और राजनीतिक अर्थव्यवस्था — न कि स्वयं हितों का टकराव — PDMA के न बनने की व्याख्या करते हैं।",
+      "elimination_logic": [
+        "चरण 1 — क्या A सही है? RBI का सार्वजनिक ऋण प्रबंधन करते हुए साथ ही मौद्रिक नीति निर्धारित करना एक वास्तविक हितों का टकराव उत्पन्न करता है: ऋण प्रबंधक के रूप में RBI कम ब्याज दर (सरकार के लिए कम उधारी लागत) पसंद करता है; मौद्रिक प्राधिकरण के रूप में, यह मुद्रास्फीति नियंत्रण के लिए उच्च दरें पसंद कर सकता है। A सही है।",
+        "चरण 2 — क्या R सही है? PDMA की प्रस्तावना FSLRC और Jahangir Aziz समिति द्वारा इन दोनों भूमिकाओं को अलग करने के लिए की गई थी। प्रस्ताव मौजूद है लेकिन PDMA अभी तक स्थापित नहीं हुआ है। R सही है।",
+        "चरण 3 — क्या R, A की व्याख्या करता है? नहीं। R बताता है कि एक समाधान प्रस्तावित था लेकिन लागू नहीं हुआ। यह यह नहीं बताता कि हितों का टकराव क्यों है या इसका तंत्र क्या है। A समस्या बताता है; R एक अधूरा नीति उत्तर बताता है। कारणात्मक संबंध नहीं है — R, A को कारणात्मक रूप से नहीं समझाता।",
+        "A और R दोनों सही हैं, पर R, A की व्याख्या नहीं करता — सही विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "यह एक क्लासिक assertion-reason ट्रैप है जहाँ A और R दोनों स्वतंत्र रूप से सत्य हैं, लेकिन उनका संबंध कारणात्मक नहीं है। A हितों के टकराव की समस्या बताता है; R बताता है कि एक समाधान (PDMA) प्रस्तावित था लेकिन स्थापित नहीं हुआ। जो छात्र दोनों को तथ्यात्मक रूप से सही मानकर 'वे संबंधित हैं इसलिए R, A को समझाता है' मान लेते हैं, वे (a) चुनेंगे। सटीक विश्लेषण यह पूछना है कि क्या R, A का कारणात्मक तंत्र देता है — नहीं देता। R एक नीति तथ्य है, हितों के टकराव का कारणात्मक स्पष्टीकरण नहीं।",
+      "final_explanation": "RBI-PDMA बहस UPSC मेन्स में बार-बार उठने वाला शासन प्रश्न है लेकिन प्रीलिम्स स्तर की तथ्यात्मक सटीकता आवश्यक है।\n\n• कथन (A): सही। RBI एक ही समय में भारत का मौद्रिक प्राधिकरण (रेपो दर निर्धारित करना) और सरकार का ऋण प्रबंधक (उधारी लागत प्रबंधन) दोनों है। ऋण प्रबंधक के रूप में, RBI कम ब्याज दरों को प्राथमिकता देता है ताकि राजकोषीय लागत कम हो; मौद्रिक प्राधिकरण के रूप में, मुद्रास्फीति नियंत्रण के लिए उच्च दरों की आवश्यकता हो सकती है। यह संरचनात्मक टकराव अच्छी तरह से प्रलेखित है।\n• कारण (R): स्वतंत्र तथ्य के रूप में सही। कई समितियों — जिनमें FSLRC और Jahangir Aziz समिति शामिल हैं — ने PDMA को एक अलग वैधानिक निकाय के रूप में स्थापित करने की सिफारिश की। भारत ने अभी तक PDMA स्थापित नहीं किया है, जो इसे बड़े अर्थव्यवस्थाओं में अपवाद बनाता है (जैसे UK का DMO और US Treasury का Office of Debt Management केंद्रीय बैंकों से अलग हैं)।\n• कारणात्मक संबंध: अनुपस्थित। R एक नीति प्रतिक्रिया (PDMA प्रस्ताव) बताता है जो A में वर्णित समस्या का समाधान है — यह हितों के टकराव का तंत्र नहीं बताता। टकराव क्यों है, यह A के तर्क में निहित है। R एक परिणामी नीति तथ्य है, A का कारणात्मक स्पष्टीकरण नहीं।\n\nमूल्य संवर्धन:\n• PDMA के न बनने का आंशिक कारण RBI की संस्थागत प्रतिरोध और वित्तीय संकट के दौरान समन्वय विफलताओं की चिंताएं हैं।\n• Ways and Means Advances (WMA) प्रबंधन भी वर्तमान में RBI के पास ऋण प्रबंधन का कार्य है।\n• ऋण प्रबंधन को अलग करने से अंतरराष्ट्रीय साहित्य में बेहतर मौद्रिक नीति विश्वसनीयता जुड़ी हुई है।"
+    }
+  },
+  {
+    "uuid": "1b4ecd08-86c8-4987-b69a-c48dc5297ae2",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Liquidity Adjustment Facility (LAF) and Its G-Sec Collateral Requirement"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "SDF vs Reverse Repo — collateral distinction and LAF corridor",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Reserve Bank of India's Liquidity Adjustment Facility (LAF) and related instruments:\n\n1. The Standing Deposit Facility (SDF), introduced in 2022, allows banks to park surplus funds with the RBI without providing G-Secs or any other collateral — unlike the reverse repo, which required G-Secs as collateral.\n2. Under the Marginal Standing Facility (MSF), banks can borrow from the RBI at a rate above the repo rate, and the borrowing is limited to a maximum of 1% of a bank's Net Demand and Time Liabilities (NDTL), specifically from within the SLR-eligible securities portfolio.\n3. In the Liquidity Adjustment Facility (LAF) corridor, the Standing Deposit Facility rate serves as the floor and the Marginal Standing Facility rate serves as the ceiling, with the repo rate positioned between them.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Standing Deposit Facility (SDF), introduced in 2022, allows banks to park surplus funds with the RBI without providing G-Secs or any other collateral — unlike the reverse repo, which required G-Secs as collateral.",
+          "verdict": "Correct",
+          "reason": "SDF is an uncollateralised deposit window — banks park funds with RBI without needing to provide G-Secs in return. This distinguishes it fundamentally from the reverse repo mechanism and removes the constraint of collateral availability."
+        },
+        {
+          "statement": "Under the Marginal Standing Facility (MSF), banks can borrow from the RBI at a rate above the repo rate, and the borrowing is limited to a maximum of 1% of a bank's Net Demand and Time Liabilities (NDTL), specifically from within the SLR-eligible securities portfolio.",
+          "verdict": "Incorrect",
+          "reason": "MSF allows banks to borrow against G-Secs from their SLR portfolio — specifically, they can dip INTO their SLR holdings (borrow beyond normal limits using SLR securities). The key feature is that MSF permits banks to borrow using SLR securities, temporarily breaching the SLR minimum by up to 1% of NDTL. The statement incorrectly implies the borrowing is limited to securities 'within' SLR without capturing the 'dip into SLR' mechanism."
+        },
+        {
+          "statement": "In the Liquidity Adjustment Facility (LAF) corridor, the Standing Deposit Facility rate serves as the floor and the Marginal Standing Facility rate serves as the ceiling, with the repo rate positioned between them.",
+          "verdict": "Correct",
+          "reason": "Post-SDF introduction in 2022, the LAF corridor has SDF rate as the floor, MSF rate as the ceiling, and the repo rate as the policy anchor in the middle — replacing the reverse repo rate as the operative floor."
+        }
+      ],
+      "strong_distractor": "d — Students who recall that MSF permits SLR dipping but confuse the mechanics of Statement 2 as broadly correct may choose all three as correct.",
+      "elimination_logic": [
+        "Statement 1: SDF is uncollateralised — banks deposit funds without pledging G-Secs. This is the defining feature distinguishing SDF from reverse repo. Correct.",
+        "Statement 2: MSF does allow borrowing using SLR securities, but the critical feature is that banks can temporarily dip below SLR minimum by up to 1% of NDTL. The statement's phrasing misrepresents this as an ordinary SLR portfolio borrowing rather than an 'above-SLR-limit' emergency window. Incorrect.",
+        "Statement 3: SDF rate < Repo rate < MSF rate — this is the correct corridor structure post-April 2022. Correct.",
+        "Correct statements are 1 and 3 — option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is entity-level precision about the MSF. The critical feature of MSF is that it allows banks to temporarily BREACH their SLR requirement — they can borrow from RBI by pledging SLR-eligible securities even if doing so takes them below the mandatory SLR minimum (by up to 1% of NDTL). A student who only knows 'MSF uses G-Sec collateral' will not detect the nuance and may mark Statement 2 as correct.",
+      "final_explanation": "The LAF corridor is the operational framework through which RBI manages short-term liquidity. The 2022 introduction of the SDF restructured this corridor fundamentally.\n\n• Statement 1 — Correct: SDF is an uncollateralised absorption window. Banks park funds with RBI without providing G-Secs. This resolves the 'collateral scarcity' problem that limited reverse repo effectiveness — when banks lack eligible G-Secs, they could not use reverse repo.\n• Statement 2 — Incorrect: The statement mischaracterises MSF. MSF is an emergency borrowing window where banks can borrow against SLR-eligible securities even by temporarily dipping below the SLR minimum — up to 1% of NDTL. The 'within SLR portfolio' framing omits the defining 'breach of SLR' feature.\n• Statement 3 — Correct: Post-SDF: Floor = SDF rate; Middle = Repo rate; Ceiling = MSF rate. This replaced the earlier corridor where reverse repo was the floor.\n\nValue Addition:\n• The SDF rate is currently set 25 basis points below the repo rate; MSF rate is 25 basis points above.\n• Introduction of SDF was recommended by the Internal Working Group of RBI in 2021.\n• MSF provides overnight emergency liquidity against G-Sec collateral — it is a safety valve for banks facing acute short-term funding stress."
+    },
+    "hi": {
+      "display_text": "भारतीय रिज़र्व बैंक की लिक्विडिटी एडजस्टमेंट फैसिलिटी (LAF) और संबंधित उपकरणों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. 2022 में शुरू की गई स्टैंडिंग डिपॉजिट फैसिलिटी (SDF) बैंकों को आरबीआई के साथ अतिरिक्त धनराशि पार्क करने की अनुमति देती है बिना G-Secs या किसी अन्य जमानत के — इसके विपरीत रिवर्स रेपो में G-Secs को जमानत के रूप में देना आवश्यक था।\n2. मार्जिनल स्टैंडिंग फैसिलिटी (MSF) के तहत, बैंक आरबीआई से रेपो दर से ऊपर की दर पर उधार ले सकते हैं, और उधारी एक बैंक की नेट डिमांड और टाइम लाइबिलिटीज़ (NDTL) के अधिकतम 1% तक सीमित होती है, विशेष रूप से SLR-योग्य प्रतिभूतियों के पोर्टफोलियो के भीतर से।\n3. लिक्विडिटी एडजस्टमेंट फैसिलिटी (LAF) कॉरिडोर में, स्टैंडिंग डिपॉजिट फैसिलिटी दर फर्श के रूप में कार्य करती है और मार्जिनल स्टैंडिंग फैसिलिटी दर छत के रूप में, जबकि रेपो दर इनके बीच स्थित होती है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "2022 में शुरू की गई स्टैंडिंग डिपॉजिट फैसिलिटी (SDF) बैंकों को आरबीआई के साथ अतिरिक्त धनराशि पार्क करने की अनुमति देती है बिना G-Secs या किसी अन्य जमानत के — इसके विपरीत रिवर्स रेपो में G-Secs को जमानत के रूप में देना आवश्यक था।",
+          "verdict": "सही है",
+          "reason": "SDF एक बिना जमानत वाली जमा विंडो है — बैंक बिना G-Secs प्रदान किए आरबीआई के साथ धन जमा करते हैं। यह इसे मूल रूप से रिवर्स रेपो तंत्र से अलग करता है और जमानत उपलब्धता की बाधा को समाप्त करता है।"
+        },
+        {
+          "statement": "मार्जिनल स्टैंडिंग फैसिलिटी (MSF) के तहत, बैंक आरबीआई से रेपो दर से ऊपर की दर पर उधार ले सकते हैं, और उधारी एक बैंक की नेट डिमांड और टाइम लाइबिलिटीज़ (NDTL) के अधिकतम 1% तक सीमित होती है, विशेष रूप से SLR-योग्य प्रतिभूतियों के पोर्टफोलियो के भीतर से।",
+          "verdict": "गलत है",
+          "reason": "MSF बैंकों को उनके SLR पोर्टफोलियो से G-Secs के खिलाफ उधार लेने की अनुमति देता है — विशेष रूप से, वे अपने SLR होल्डिंग्स में डुबकी लगा सकते हैं (सामान्य सीमाओं से ऊपर SLR प्रतिभूतियों का उपयोग कर उधार ले सकते हैं)। मुख्य विशेषता यह है कि MSF बैंकों को SLR प्रतिभूतियों का उपयोग करके उधार लेने की अनुमति देता है, जिससे वे अस्थायी रूप से NDTL के 1% तक SLR न्यूनतम से नीचे जा सकते हैं। कथन गलत तरीके से यह दर्शाता है कि उधारी केवल SLR के भीतर की प्रतिभूतियों तक सीमित है।"
+        },
+        {
+          "statement": "लिक्विडिटी एडजस्टमेंट फैसिलिटी (LAF) कॉरिडोर में, स्टैंडिंग डिपॉजिट फैसिलिटी दर फर्श के रूप में कार्य करती है और मार्जिनल स्टैंडिंग फैसिलिटी दर छत के रूप में, जबकि रेपो दर इनके बीच स्थित होती है।",
+          "verdict": "सही है",
+          "reason": "2022 में SDF के परिचय के बाद, LAF कॉरिडोर में SDF दर फर्श, MSF दर छत, और रेपो दर मध्य में नीति का आधार है — जिसने रिवर्स रेपो दर को फर्श के रूप में बदल दिया।"
+        }
+      ],
+      "strong_distractor": "d — छात्र जो याद करते हैं कि MSF SLR डुबकी की अनुमति देता है लेकिन कथन 2 की यांत्रिकी को व्यापक रूप से सही समझते हैं, वे तीनों को सही चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: SDF बिना जमानत वाला है — बैंक बिना G-Secs के धन जमा करते हैं। यह SDF को रिवर्स रेपो से अलग करने वाली विशेषता है। सही।",
+        "कथन 2: MSF SLR प्रतिभूतियों का उपयोग कर उधार लेने की अनुमति देता है, लेकिन मुख्य विशेषता यह है कि बैंक अस्थायी रूप से NDTL के 1% तक SLR न्यूनतम से नीचे जा सकते हैं। कथन की अभिव्यक्ति इसे सामान्य SLR पोर्टफोलियो उधारी के रूप में गलत दर्शाती है। गलत।",
+        "कथन 3: SDF दर < रेपो दर < MSF दर — यह अप्रैल 2022 के बाद का सही कॉरिडोर संरचना है। सही।",
+        "सही कथन 1 और 3 हैं — विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का जाल MSF के बारे में इकाई-स्तर की सटीकता है। MSF की मुख्य विशेषता यह है कि यह बैंकों को अस्थायी रूप से अपने SLR आवश्यकताओं का उल्लंघन करने की अनुमति देता है — वे SLR-योग्य प्रतिभूतियों को गिरवी रखकर आरबीआई से उधार ले सकते हैं, भले ही इससे वे अनिवार्य SLR न्यूनतम से नीचे चले जाएं (NDTL के 1% तक)। जो छात्र केवल 'MSF G-Sec जमानत का उपयोग करता है' जानते हैं, वे इस सूक्ष्मता को नहीं समझ पाएंगे और कथन 2 को सही चिह्नित कर सकते हैं।",
+      "final_explanation": "LAF कॉरिडोर वह परिचालन ढांचा है जिसके माध्यम से आरबीआई अल्पकालिक तरलता का प्रबंधन करता है। 2022 में SDF के परिचय ने इस कॉरिडोर को मौलिक रूप से पुनर्गठित किया।\n\n• कथन 1 — सही: SDF एक बिना जमानत वाली अवशोषण विंडो है। बैंक बिना G-Secs प्रदान किए आरबीआई के साथ धन जमा करते हैं। इससे 'जमानत की कमी' की समस्या हल होती है जो रिवर्स रेपो की प्रभावशीलता को सीमित करती थी — जब बैंकों के पास योग्य G-Secs नहीं होते थे, तो वे रिवर्स रेपो का उपयोग नहीं कर सकते थे।\n• कथन 2 — गलत: यह कथन MSF को गलत तरीके से प्रस्तुत करता है। MSF एक आपातकालीन उधारी विंडो है जहां बैंक SLR-योग्य प्रतिभूतियों के खिलाफ उधार ले सकते हैं, भले ही वे अस्थायी रूप से SLR न्यूनतम से नीचे चले जाएं — NDTL के 1% तक। 'SLR पोर्टफोलियो के भीतर' की अभिव्यक्ति 'SLR उल्लंघन' की मुख्य विशेषता को छोड़ देती है।\n• कथन 3 — सही: SDF के बाद: फर्श = SDF दर; मध्य = रेपो दर; छत = MSF दर। इसने पहले के कॉरिडोर को बदल दिया जहां रिवर्स रेपो फर्श था।\n\nमूल्य संवर्धन:\n• वर्तमान में SDF दर रेपो दर से 25 बेसिस पॉइंट नीचे है; MSF दर 25 बेसिस पॉइंट ऊपर है।\n• SDF की शुरुआत 2021 में आरबीआई की आंतरिक कार्य समूह द्वारा अनुशंसित थी।\n• MSF ओवरनाइट आपातकालीन तरलता प्रदान करता है जो G-Sec जमानत के खिलाफ होती है — यह उन बैंकों के लिए सुरक्षा वाल्व है जो तीव्र अल्पकालिक वित्तीय तनाव का सामना कर रहे हैं।"
+    }
+  },
+  {
+    "uuid": "6eb6b936-a177-45c8-95a6-22294c63d0b7",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "G-Sec Market Development: Challenges and Recent Reforms"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "G-Sec market reforms chronological sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of milestones in the development of India's Government Securities market?\n\n1. Establishment of the Clearing Corporation of India Ltd. (CCIL) as a Central Counterparty\n2. Launch of the NDS-OM anonymous electronic order-matching platform\n3. Operation Twist (simultaneous purchase of long-term and sale of short-term G-Secs by RBI)\n4. Launch of RBI Retail Direct scheme for retail investor access to G-Sec auctions\n\n(a) 2 – 1 – 4 – 3\n(b) 1 – 2 – 3 – 4\n(c) 1 – 2 – 4 – 3\n(d) 2 – 1 – 3 – 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know CCIL was established before NDS-OM and that RBI Retail Direct came later may confuse the order of NDS-OM launch and CCIL establishment, or misplace Operation Twist relative to the others.",
+      "elimination_logic": [
+        "CCIL was established in 2001 and began operations in clearing G-Sec trades.",
+        "NDS (Negotiated Dealing System) was introduced around 2002; NDS-OM (anonymous order matching) came after — operationally from 2005.",
+        "Operation Twist by RBI India was conducted in 2019–2021 — well after CCIL and NDS-OM.",
+        "RBI Retail Direct was launched in November 2021 — the most recent of these milestones.",
+        "Correct sequence: CCIL establishment → NDS-OM launch → Operation Twist → RBI Retail Direct — option (b)."
+      ],
+      "upsc_trap_explanation": "The temporal-swap trap exploits uncertainty about when CCIL was established versus when NDS-OM became operational. CCIL was set up in 2001 but NDS-OM's anonymous trading module became operationally dominant only around 2005. Students who know both pre-date Operation Twist but cannot sequence the first two may make errors. The Retail Direct (2021) timeline is cleaner — it is the most recent milestone and anchors the end of the sequence.",
+      "final_explanation": "India's G-Sec market infrastructure developed sequentially over two decades, moving from fragmented OTC trading to a sophisticated CCP-based settlement and retail access ecosystem.\n\nCorrect sequence: CCIL establishment (2001) → NDS-OM launch (2002–05) → Operation Twist (2019–21) → RBI Retail Direct (2021)\n\n• CCIL (2001): Created as the Central Counterparty for G-Sec clearing and settlement — eliminating counterparty risk through novation.\n• NDS-OM (2002–05): The anonymous electronic order-matching platform replaced fragmented telephone-based OTC negotiation for institutional G-Sec trades.\n• Operation Twist (2019–21): RBI's yield curve management tool — simultaneous purchase of long-term and sale of short-term G-Secs, conducted during COVID-era monetary easing.\n• RBI Retail Direct (November 2021): Allowed retail investors to directly access G-Sec auctions and secondary markets without bank or broker intermediation.\n\nWrong options fail by misplacing Operation Twist before NDS-OM or placing Retail Direct before Operation Twist.\n\nValue Addition:\n• CCIL novation model means RBI faces no settlement risk even if a market participant defaults.\n• NDS-OM increased market transparency dramatically by replacing relationship-based phone trading.\n• Retail Direct is part of RBI's broader G-Sec market deepening strategy to diversify the investor base."
+    },
+    "hi": {
+      "display_text": "भारत के सरकारी प्रतिभूति बाजार के विकास में निम्नलिखित उपलब्धियों का सही कालानुक्रमिक क्रम क्या है?\n\n1. Clearing Corporation of India Ltd. (CCIL) की केंद्रीय काउंटरपार्टी के रूप में स्थापना\n2. NDS-OM गुमनाम इलेक्ट्रॉनिक ऑर्डर-मिलान मंच का शुभारंभ\n3. Operation Twist (RBI द्वारा दीर्घकालिक प्रतिभूतियों की खरीद और अल्पकालिक प्रतिभूतियों की बिक्री एक साथ)\n4. खुदरा निवेशकों के लिए RBI Retail Direct योजना का शुभारंभ\n\n(a) 2 – 1 – 4 – 3\n(b) 1 – 2 – 3 – 4\n(c) 1 – 2 – 4 – 3\n(d) 2 – 1 – 3 – 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि CCIL की स्थापना NDS-OM से पहले हुई थी और RBI Retail Direct बाद में आया, वे NDS-OM लॉन्च और CCIL स्थापना के क्रम को भ्रमित कर सकते हैं, या Operation Twist को अन्य घटनाओं के सापेक्ष गलत स्थान दे सकते हैं।",
+      "elimination_logic": [
+        "CCIL की स्थापना 2001 में हुई थी और इसने G-Sec ट्रेडों के क्लियरिंग में संचालन शुरू किया।",
+        "NDS (Negotiated Dealing System) लगभग 2002 में शुरू किया गया था; NDS-OM (गुमनाम ऑर्डर मिलान) बाद में — 2005 से परिचालन में आया।",
+        "RBI इंडिया द्वारा Operation Twist 2019–2021 में किया गया — जो CCIL और NDS-OM के बाद की घटना है।",
+        "RBI Retail Direct नवंबर 2021 में लॉन्च किया गया — ये सबसे हाल की उपलब्धि है।",
+        "सही क्रम: CCIL स्थापना → NDS-OM लॉन्च → Operation Twist → RBI Retail Direct — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक-स्वैप जाल CCIL की स्थापना कब हुई और NDS-OM कब परिचालन में आया, इस बारे में अनिश्चितता का फायदा उठाता है। CCIL 2001 में स्थापित हुआ था लेकिन NDS-OM का गुमनाम ट्रेडिंग मॉड्यूल लगभग 2005 में ही परिचालन में प्रमुख हुआ। जो छात्र दोनों को Operation Twist से पहले जानते हैं लेकिन पहले दो की सही क्रमबद्धता नहीं कर पाते, वे त्रुटि कर सकते हैं। Retail Direct (2021) का समयरेखा स्पष्ट है — यह सबसे हाल की उपलब्धि है और क्रम के अंत को दर्शाता है।",
+      "final_explanation": "भारत के सरकारी प्रतिभूति (G-Sec) बाजार का ढांचा दो दशकों में क्रमबद्ध रूप से विकसित हुआ, जो खंडित OTC ट्रेडिंग से एक परिष्कृत CCP-आधारित निपटान और खुदरा पहुंच प्रणाली की ओर बढ़ा।\n\nसही क्रम: CCIL स्थापना (2001) → NDS-OM लॉन्च (2002–05) → Operation Twist (2019–21) → RBI Retail Direct (2021)\n\n• CCIL (2001): G-Sec क्लियरिंग और निपटान के लिए केंद्रीय काउंटरपार्टी के रूप में स्थापित — नवेशन के माध्यम से काउंटरपार्टी जोखिम समाप्त किया।\n• NDS-OM (2002–05): गुमनाम इलेक्ट्रॉनिक ऑर्डर-मिलान मंच जिसने संस्थागत G-Sec ट्रेडों के लिए खंडित टेलीफोन-आधारित OTC बातचीत को प्रतिस्थापित किया।\n• Operation Twist (2019–21): RBI का यील्ड कर्व प्रबंधन उपकरण — COVID-कालीन मौद्रिक सहजता के दौरान दीर्घकालिक प्रतिभूतियों की खरीद और अल्पकालिक प्रतिभूतियों की बिक्री एक साथ।\n• RBI Retail Direct (नवंबर 2021): खुदरा निवेशकों को बैंक या दलाल के बिना सीधे G-Sec नीलामी और द्वितीयक बाजारों तक पहुंच प्रदान की।\n\nगलत विकल्प Operation Twist को NDS-OM से पहले या Retail Direct को Operation Twist से पहले रखकर गलत होते हैं।\n\nमूल्य संवर्धन:\n• CCIL नवेशन मॉडल का अर्थ है कि यदि कोई बाजार प्रतिभागी डिफॉल्ट करता है तो भी RBI को निपटान जोखिम नहीं होता।\n• NDS-OM ने संबंध-आधारित फोन ट्रेडिंग को बदलकर बाजार पारदर्शिता में भारी वृद्धि की।\n• Retail Direct RBI की व्यापक G-Sec बाजार गहराई रणनीति का हिस्सा है जो निवेशक आधार को विविध बनाता है।"
+    }
+  },
+  {
+    "uuid": "d0a95910-a44a-4d91-86d5-6ca416eef349",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Yield, Price and Duration: Core Mechanics of G-Sec Valuation",
+        "Held-to-Maturity (HTM), Available-for-Sale (AFS), and Held-for-Trading (HFT) Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Modified Duration and AFS MTM loss — interest rate risk for banks",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A large public sector bank holds a substantial portfolio of dated Government Securities in its Available-for-Sale (AFS) category, with a high Modified Duration profile. The RBI announces an unexpected 50-basis-point increase in the policy repo rate. Which of the following best describes the immediate financial consequence for this bank, and the mechanism that produces it?\n\n(a) The bank's entire G-Sec portfolio incurs mark-to-market losses because all G-Sec holdings — irrespective of classification — must be revalued at current market prices when yields change\n(b) The bank benefits overall from the rate hike because higher policy rates improve its net interest margin on lending, which more than compensates for any portfolio-side effects\n(c) The bank can immediately reclassify its AFS G-Secs into the Held-to-Maturity (HTM) category without regulatory permission to avoid mark-to-market losses\n(d) The AFS portfolio suffers mark-to-market losses because rising yields cause G-Sec prices to fall, and AFS holdings must be valued at current market prices — unlike HTM securities, which are exempt from this requirement",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know banks benefit from higher lending rates may assume 'banks welcome rate hikes' and choose option (b), not accounting for the simultaneous AFS portfolio MTM loss that offsets the margin gain.",
+      "elimination_logic": [
+        "The scenario involves a bank with a large AFS portfolio of G-Secs facing a repo rate hike.",
+        "A rate hike raises G-Sec yields — since price and yield move inversely, bond prices in the AFS book fall.",
+        "AFS securities must be marked to market — falling prices create immediate MTM losses hitting the income statement.",
+        "Higher lending rate benefit is a flow effect (future loans); MTM loss is an immediate balance sheet/income effect — the bank faces a trade-off.",
+        "Option (d) correctly captures both the mechanism (inverse price-yield) and the regulatory treatment (AFS requires MTM, unlike HTM) — correct answer."
+      ],
+      "upsc_trap_explanation": "The partial-truth trap in option (b) is that rate hikes do raise net interest margins for banks on new lending — this is true. But it ignores the simultaneous adverse MTM effect on existing AFS G-Sec holdings. A bank with a large existing AFS book may experience net losses from the portfolio effect that outweigh near-term margin gains. This is why banks' response to rate hikes is more ambivalent than the simple 'banks benefit from higher rates' narrative.",
+      "final_explanation": "This scenario tests the practical application of Modified Duration and the AFS mark-to-market framework to a bank's interest rate risk profile.\n\nApplicable principle: G-Sec prices move inversely to yields. AFS portfolios are marked to market — price declines translate immediately into income statement losses. HTM portfolios are exempt from MTM. A bank's net position on a rate hike depends on the relative size of its AFS versus HTM holdings.\n\n• Option (a): Incorrect. HTM exemption means only AFS/HFT suffer MTM losses, not the entire G-Sec book.\n• Option (b): Incorrect. While rate hikes improve lending margins on new loans, the simultaneous AFS MTM loss is a real cost that makes the overall impact ambiguous — not straightforwardly positive.\n• Option (c): Incorrect. The bank would not reclassify from AFS to HTM mid-year without RBI permission — switching is restricted. And even if permitted, it would not undo already incurred MTM losses.\n• Option (d): Correct. The repo rate hike raises G-Sec yields → AFS bond prices fall → MTM losses hit the income statement. This is the mechanism that explains why a bank with a large AFS portfolio resists rate hikes despite the lending margin benefit.\n\nValue Addition:\n• Banks with higher Modified Duration in their AFS books are more sensitive to yield changes — each 1% yield rise causes a larger price drop for higher-duration bonds.\n• This AFS MTM dynamic is one reason banks lobby for higher HTM limits during rising rate cycles.\n• MCLR (Marginal Cost of Funds-based Lending Rate) transmission means rate hike benefits to banks on lending accrue gradually, while MTM losses are immediate."
+    },
+    "hi": {
+      "display_text": "एक बड़ा सार्वजनिक क्षेत्र का बैंक अपनी उपलब्ध-से-बिक्री (AFS) श्रेणी में डेटेड सरकारी प्रतिभूतियों का एक बड़ा पोर्टफोलियो रखता है, जिसकी संशोधित अवधि प्रोफ़ाइल उच्च है। RBI ने नीति रेपो दर में अप्रत्याशित 50 बेसिस पॉइंट की वृद्धि की घोषणा की है। निम्नलिखित में से कौन-सा विकल्प इस बैंक के लिए तत्काल वित्तीय परिणाम और इसे उत्पन्न करने वाला तंत्र सबसे अच्छी तरह वर्णित करता है?\n\n(a) बैंक की पूरी G-Sec पोर्टफोलियो को मार्क-टू-मार्केट नुकसान होता है क्योंकि सभी G-Sec होल्डिंग्स — वर्गीकरण की परवाह किए बिना — यील्ड परिवर्तन पर वर्तमान बाजार कीमतों पर पुनर्मूल्यांकन किए जाने चाहिए\n(b) बैंक को दर वृद्धि से कुल मिलाकर लाभ होता है क्योंकि उच्च नीति दरें उसके ऋण पर शुद्ध ब्याज मार्जिन को सुधारती हैं, जो किसी भी पोर्टफोलियो-साइड प्रभावों की भरपाई से अधिक है\n(c) बैंक बिना नियामक अनुमति के अपने AFS G-Secs को तुरंत होल्ड-टू-मैच्योरिटी (HTM) श्रेणी में पुनर्वर्गीकृत कर सकता है ताकि मार्क-टू-मार्केट नुकसान से बचा जा सके\n(d) AFS पोर्टफोलियो को मार्क-टू-मार्केट नुकसान होता है क्योंकि बढ़ती यील्ड से G-Sec की कीमतें गिरती हैं, और AFS होल्डिंग्स को वर्तमान बाजार कीमतों पर मूल्यांकित किया जाना चाहिए — HTM प्रतिभूतियों के विपरीत, जिन्हें इस आवश्यकता से छूट प्राप्त है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि बैंक उच्च ऋण दरों से लाभान्वित होते हैं, वे मान सकते हैं कि 'बैंक दर वृद्धि का स्वागत करते हैं' और विकल्प (b) चुन सकते हैं, लेकिन वे एक साथ होने वाले AFS पोर्टफोलियो के MTM नुकसान को ध्यान में नहीं रखते जो मार्जिन लाभ को संतुलित करता है।",
+      "elimination_logic": [
+        "यह परिदृश्य एक बैंक से संबंधित है जिसके पास G-Secs का बड़ा AFS पोर्टफोलियो है और जो रेपो दर वृद्धि का सामना कर रहा है।",
+        "दर वृद्धि से G-Sec की यील्ड बढ़ती है — क्योंकि कीमत और यील्ड विपरीत दिशा में चलते हैं, AFS बुक में बॉन्ड की कीमतें गिरती हैं।",
+        "AFS प्रतिभूतियों को मार्क-टू-मार्केट करना आवश्यक है — गिरती कीमतें तत्काल MTM नुकसान उत्पन्न करती हैं जो आय विवरण को प्रभावित करती हैं।",
+        "उच्च ऋण दर का लाभ एक प्रवाह प्रभाव है (भविष्य के ऋण); MTM नुकसान तत्काल बैलेंस शीट/आय प्रभाव है — बैंक को एक समझौते का सामना करना पड़ता है।",
+        "विकल्प (d) सही ढंग से दोनों तंत्र (विपरीत कीमत-यील्ड) और नियामक उपचार (AFS के लिए MTM आवश्यक है, HTM के विपरीत) को दर्शाता है — सही उत्तर।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में आंशिक-सत्य जाल यह है कि दर वृद्धि नए ऋण पर बैंक के शुद्ध ब्याज मार्जिन को बढ़ाती है — यह सत्य है। लेकिन यह मौजूदा AFS G-Sec होल्डिंग्स पर एक साथ होने वाले प्रतिकूल MTM प्रभाव को नजरअंदाज करता है। बड़े AFS पोर्टफोलियो वाले बैंक को पोर्टफोलियो प्रभाव से शुद्ध नुकसान हो सकता है जो निकट अवधि के मार्जिन लाभ से अधिक हो। इसलिए बैंक की दर वृद्धि पर प्रतिक्रिया सरल 'बैंक उच्च दरों से लाभान्वित होते हैं' कथन से अधिक जटिल होती है।",
+      "final_explanation": "यह परिदृश्य बैंक के ब्याज दर जोखिम प्रोफ़ाइल पर संशोधित अवधि (Modified Duration) और AFS मार्क-टू-मार्केट फ्रेमवर्क के व्यावहारिक अनुप्रयोग का परीक्षण करता है।\n\nलागू सिद्धांत: G-Sec की कीमतें यील्ड के विपरीत चलती हैं। AFS पोर्टफोलियो को मार्क-टू-मार्केट किया जाता है — कीमत में गिरावट तुरंत आय विवरण में नुकसान में बदल जाती है। HTM पोर्टफोलियो MTM से मुक्त होते हैं। दर वृद्धि पर बैंक की शुद्ध स्थिति उसके AFS और HTM होल्डिंग्स के सापेक्ष आकार पर निर्भर करती है।\n\n• विकल्प (a): गलत। HTM छूट का अर्थ है कि केवल AFS/HFT को MTM नुकसान होता है, पूरे G-Sec बुक को नहीं।\n• विकल्प (b): गलत। जबकि दर वृद्धि नए ऋण पर मार्जिन सुधारती है, एक साथ होने वाला AFS MTM नुकसान एक वास्तविक लागत है जो कुल प्रभाव को अस्पष्ट बनाता है — सीधे सकारात्मक नहीं।\n• विकल्प (c): गलत। बैंक बिना RBI की अनुमति के वर्ष के मध्य में AFS से HTM में पुनर्वर्गीकरण नहीं कर सकता — स्विचिंग प्रतिबंधित है। और यदि अनुमति भी मिलती है, तो यह पहले हुए MTM नुकसान को वापस नहीं करेगा।\n• विकल्प (d): सही। रेपो दर वृद्धि से G-Sec यील्ड बढ़ती है → AFS बॉन्ड की कीमतें गिरती हैं → MTM नुकसान आय विवरण को प्रभावित करता है। यही तंत्र बताता है कि क्यों बड़े AFS पोर्टफोलियो वाले बैंक ऋण मार्जिन लाभ के बावजूद दर वृद्धि का विरोध करते हैं।\n\nमूल्य संवर्धन:\n• जिन बैंकों के AFS बुक में उच्च संशोधित अवधि होती है, वे यील्ड परिवर्तनों के प्रति अधिक संवेदनशील होते हैं — प्रत्येक 1% यील्ड वृद्धि उच्च अवधि वाले बॉन्ड की कीमत में अधिक गिरावट लाती है।\n• यह AFS MTM गतिशीलता एक कारण है कि बैंक बढ़ती दर चक्रों के दौरान HTM सीमाओं को बढ़ाने के लिए लॉबी करते हैं।\n• MCLR (मार्जिनल कॉस्ट ऑफ फंड्स-आधारित लेंडिंग रेट) संचरण का अर्थ है कि बैंक को ऋण पर दर वृद्धि के लाभ धीरे-धीरे मिलते हैं, जबकि MTM नुकसान तत्काल होते हैं।"
+    }
+  },
+  {
+    "uuid": "c29fe3c1-42f3-4b2b-a7f4-4562a283e0d4",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Foreign Portfolio Investment (FPI) in G-Secs: Limits, Routes and Implications",
+        "Yield Curve: Shape, Determinants and Policy Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "two-statement-relationship",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "FPI outflows — simultaneous yield spike and rupee depreciation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Foreign Portfolio Investment (FPI) flows in India's Government Securities market, consider the following statements:\n\nStatement 1: During episodes of global risk-off sentiment, FPI outflows from India's G-Sec market tend to simultaneously push G-Sec yields higher (as foreign holders sell bonds, depressing prices) and weaken the Indian rupee (as foreign currency exits the country).\n\nStatement 2: The Fully Accessible Route (FAR) was introduced to create a separate class of G-Secs with no FPI investment ceiling — unlike the general cap applicable to other G-Secs — thereby facilitating the inclusion of Indian G-Secs in global bond indices.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Statement 1: During episodes of global risk-off sentiment, FPI outflows from India's G-Sec market tend to simultaneously push G-Sec yields higher (as foreign holders sell bonds, depressing prices) and weaken the Indian rupee (as foreign currency exits the country).",
+          "verdict": "Correct",
+          "reason": "FPI outflows involve selling G-Secs (supply pressure → price fall → yield rise) and converting rupee proceeds to foreign currency (rupee supply increases → exchange rate depreciates). Both effects occur simultaneously — the 'double whammy.'"
+        },
+        {
+          "statement": "Statement 2: The Fully Accessible Route (FAR) was introduced to create a separate class of G-Secs with higher FPI investment limits than the general 6% cap, thereby facilitating the inclusion of Indian G-Secs in global bond indices.",
+          "verdict": "Correct",
+          "reason": "FAR bonds have no FPI investment ceiling at all (not merely a higher limit than 6%) — they are fully open to FPI investment without cap. This uncapped access was the key feature enabling JP Morgan GBI-EM index inclusion eligibility."
+        }
+      ],
+      "strong_distractor": "c — Students who know FAR has 'higher limits' but misremember it as 'no limit at all' may incorrectly evaluate Statement 2 as false, choosing (c).",
+      "elimination_logic": [
+        "Statement 1: FPI G-Sec selling → bond prices fall → yields rise. Simultaneous rupee conversion → rupee weakens. Both happen together. Statement 1 is correct.",
+        "Statement 2: FAR bonds have NO FPI investment ceiling — not merely a 'higher cap' but complete removal of caps. This uncapped structure was essential for index eligibility. Statement 2 is correct.",
+        "Both statements are correct — option (a)."
+      ],
+      "upsc_trap_explanation": "The reversed-causation trap applies subtly to Statement 2: some students understand that FAR was created 'because of index inclusion' and may reverse the causality — thinking FAR was a consequence of inclusion rather than the precondition for it. FAR was introduced in 2020, before the JP Morgan announcement, specifically to create index-eligible bonds. The trap in Statement 2 also involves the 'higher limit' vs 'no limit' distinction — FAR has no cap at all, not just a higher cap.",
+      "final_explanation": "FPI dynamics in India's G-Sec market are critical for understanding monetary policy transmission and exchange rate management.\n\n• Statement 1 — Correct: Global risk-off events trigger FPI outflows from emerging market debt. In India, this means G-Sec sales (raising yields) and simultaneous rupee conversion (weakening the currency). This dual adverse impact is the 'double whammy' — it constrains RBI's ability to cut rates (inflation from weak rupee) precisely when domestic growth may warrant easing.\n• Statement 2 — Correct: FAR bonds were specifically created with zero FPI investment ceiling — not merely a higher limit. The existing general FPI limit (approximately 6% of outstanding stock for central G-Secs) was insufficient for global bond index managers who cannot have their allocations capped. FAR removed this constraint, enabling JP Morgan GBI-EM inclusion from June 2024.\n\nValue Addition:\n• India's G-Sec FPI general limit is approximately 6% of outstanding stock for central G-Secs, with sub-limits for short-term instruments.\n• FAR bonds were introduced via RBI notification in April 2020.\n• Bloomberg's EM Local Currency Bond Index has also announced India inclusion on a separate timeline."
+    },
+    "hi": {
+      "display_text": "भारत के सरकारी प्रतिभूतियों (G-Secs) बाजार में विदेशी पोर्टफोलियो निवेश (FPI) प्रवाह के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: वैश्विक जोखिम-रहित भावना के दौर में, भारत के G-Sec बाजार से FPI निकासी एक साथ G-Sec यील्ड को बढ़ाने का रुझान रखती है (जैसे विदेशी धारक बॉन्ड बेचते हैं, जिससे कीमतें गिरती हैं) और भारतीय रुपये को कमजोर करती है (जैसे विदेशी मुद्रा देश से बाहर जाती है)।\n\nकथन 2: फुली एक्सेसिबल रूट (FAR) को एक अलग वर्ग के G-Secs बनाने के लिए पेश किया गया था जिन पर FPI निवेश की कोई सीमा नहीं थी — अन्य G-Secs पर लागू सामान्य सीमा के विपरीत — जिससे भारतीय G-Secs को वैश्विक बॉन्ड सूचकांकों में शामिल करना आसान हो गया।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कथन 1: वैश्विक जोखिम-रहित भावना के दौर में, भारत के G-Sec बाजार से FPI निकासी एक साथ G-Sec यील्ड को बढ़ाने का रुझान रखती है (जैसे विदेशी धारक बॉन्ड बेचते हैं, जिससे कीमतें गिरती हैं) और भारतीय रुपये को कमजोर करती है (जैसे विदेशी मुद्रा देश से बाहर जाती है)।",
+          "verdict": "सही",
+          "reason": "FPI निकासी में G-Secs की बिक्री शामिल है (आपूर्ति दबाव → कीमत गिरना → यील्ड बढ़ना) और रुपये की प्राप्ति को विदेशी मुद्रा में बदलना (रुपये की आपूर्ति बढ़ना → विनिमय दर का अवमूल्यन)। दोनों प्रभाव एक साथ होते हैं — 'डबल व्हैमी।'"
+        },
+        {
+          "statement": "कथन 2: फुली एक्सेसिबल रूट (FAR) को एक अलग वर्ग के G-Secs बनाने के लिए पेश किया गया था जिन पर सामान्य 6% सीमा से अधिक FPI निवेश सीमा थी, जिससे भारतीय G-Secs को वैश्विक बॉन्ड सूचकांकों में शामिल करना आसान हो गया।",
+          "verdict": "सही",
+          "reason": "FAR बॉन्ड पर कोई FPI निवेश सीमा नहीं है (केवल 6% से अधिक सीमा नहीं) — वे पूरी तरह से FPI निवेश के लिए खुला है बिना किसी सीमा के। यह बिना सीमा वाला एक्सेस JP Morgan GBI-EM सूचकांक में शामिल होने की पात्रता का मुख्य कारण था।"
+        }
+      ],
+      "strong_distractor": "c — जो छात्र जानते हैं कि FAR के पास 'उच्च सीमा' है लेकिन इसे 'कोई सीमा नहीं' के रूप में गलत याद करते हैं, वे कथन 2 को गलत समझकर (c) विकल्प चुन सकते हैं।",
+      "elimination_logic": [
+        "कथन 1: FPI द्वारा G-Sec की बिक्री → बॉन्ड की कीमतें गिरती हैं → यील्ड बढ़ती है। एक साथ रुपये का रूपांतरण → रुपया कमजोर होता है। दोनों एक साथ होते हैं। अतः कथन 1 सही है।",
+        "कथन 2: FAR बॉन्ड पर कोई FPI निवेश सीमा नहीं है — केवल 'उच्च सीमा' नहीं बल्कि पूरी तरह से सीमा हटाई गई है। यह बिना सीमा वाला ढांचा सूचकांक पात्रता के लिए आवश्यक था। अतः कथन 2 सही है।",
+        "दोनों कथन सही हैं — विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "रिवर्स्ड-कॉज़ेशन ट्रैप कथन 2 पर सूक्ष्म रूप से लागू होता है: कुछ छात्र समझते हैं कि FAR 'सूचकांक में शामिल होने के कारण' बनाया गया था और कारण-परिणाम उलट देते हैं — सोचते हैं कि FAR शामिल होने का परिणाम था न कि पूर्वशर्त। FAR को 2020 में JP Morgan की घोषणा से पहले सूचकांक-योग्य बॉन्ड बनाने के लिए पेश किया गया था। कथन 2 में 'उच्च सीमा' बनाम 'कोई सीमा नहीं' का अंतर भी ट्रैप है — FAR पर कोई सीमा नहीं है, केवल उच्च सीमा नहीं।",
+      "final_explanation": "भारत के G-Sec बाजार में FPI की गतिशीलता मौद्रिक नीति संचरण और विनिमय दर प्रबंधन को समझने के लिए महत्वपूर्ण है।\n\n• कथन 1 — सही: वैश्विक जोखिम-रहित घटनाएं उभरते बाजार ऋण से FPI निकासी को प्रेरित करती हैं। भारत में इसका अर्थ है G-Sec की बिक्री (यील्ड बढ़ाना) और एक साथ रुपये का रूपांतरण (मुद्रा कमजोर करना)। यह दोहरा प्रतिकूल प्रभाव 'डबल व्हैमी' है — यह RBI की दरें कम करने की क्षमता को सीमित करता है (कमजोर रुपये से मुद्रास्फीति) ठीक उसी समय जब घरेलू विकास में ढील की आवश्यकता हो सकती है।\n• कथन 2 — सही: FAR बॉन्ड विशेष रूप से बिना FPI निवेश सीमा के बनाए गए थे — केवल उच्च सीमा नहीं। मौजूदा सामान्य FPI सीमा (केंद्रीय G-Secs के लिए लगभग 6% स्टॉक) वैश्विक बॉन्ड सूचकांक प्रबंधकों के लिए अपर्याप्त थी जो अपनी आवंटन सीमित नहीं कर सकते। FAR ने इस बाधा को हटाया, जिससे जून 2024 से JP Morgan GBI-EM में शामिल होना संभव हुआ।\n\nमूल्य संवर्धन:\n• भारत के G-Sec FPI सामान्य सीमा केंद्रीय G-Secs के लिए लगभग 6% स्टॉक है, जिसमें अल्पकालिक उपकरणों के लिए उप-सीमाएं हैं।\n• FAR बॉन्ड अप्रैल 2020 में RBI अधिसूचना के माध्यम से पेश किए गए।\n• ब्लूमबर्ग का EM लोकल करेंसी बॉन्ड सूचकांक भी भारत को अलग समयरेखा पर शामिल करने की घोषणा कर चुका है।"
+    }
+  },
+  {
+    "uuid": "c80acf3c-8e38-437c-8f3b-a0ae2c0ddc54",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Retail Direct Scheme and Retail Participation in G-Sec Market",
+        "Negotiated Dealing System – Order Matching (NDS-OM) and Secondary Market Structure"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Non-competitive bidding — yield specification and allotment mechanism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the non-competitive bidding facility available in Government Securities primary auctions in India, a retail investor ________ and, if allotted, receives securities at ________.\n\n(a) specifies the maximum yield they are willing to accept; and receives securities at the lowest yield accepted in that auction, giving them the most favourable price\n(b) competes directly with institutional investors by specifying both quantity and yield; and receives securities at their own specified yield if it is below the cut-off\n(c) submits a bid specifying only the quantity desired without specifying any yield; and receives securities at the weighted average cut-off yield determined by the competitive bidding process\n(d) submits an expression of interest post-auction; and receives securities at the lowest yield (highest price) accepted among all successful competitive bids",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know 'non-competitive bids get priority allotment' may assume they are allotted at the lowest (most favourable) yield rather than at the weighted average cut-off yield.",
+      "elimination_logic": [
+        "Non-competitive bidding means the bidder does not specify a yield — they accept whatever yield the auction determines.",
+        "The allotment is at the weighted average cut-off yield of the competitive bids in that auction.",
+        "Option (a) — 'lowest yield' — is incorrect; priority does not translate to most favourable yield in this context.",
+        "Option (c) correctly states: no yield specified by the bidder; allotted at weighted average cut-off yield — correct answer."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes 'lowest yield' (which would be the most expensive price for the government) for 'weighted average cut-off yield' (the actual mechanism). Students who recall that non-competitive bidders get 'guaranteed allotment' may assume this privilege extends to getting the best price — it does not. They pay the market-determined average price.",
+      "final_explanation": "Non-competitive bidding is the retail investor's gateway into primary G-Sec auctions.\n\n• Option (a): Incorrect. Non-competitive bidders are not allotted at the lowest yield. The allotment is at the weighted average cut-off yield of competitive bids — not the most favourable rate.\n• Option (b): Incorrect. Non-competitive bids do not compete for yield with institutional investors. The bidder specifies only the quantity, not the rate.\n• Option (c): Correct. Under non-competitive bidding, the retail investor submits a bid without specifying a yield. If allotted, they receive securities at the weighted average cut-off yield determined by the competitive bidding process.\n• Option (d): Incorrect. Non-competitive bids are submitted before the auction — not post-auction. Post-auction allotment at the lowest yield describes neither the process nor the pricing.\n\nValue Addition:\n• 5% of the notified amount in each G-Sec auction is reserved for non-competitive bids.\n• Non-competitive bidding is available for both T-Bill and dated G-Sec auctions.\n• The RBI Retail Direct portal enables individual investors to participate in non-competitive bidding directly without intermediaries."
+    },
+    "hi": {
+      "display_text": "भारत में सरकारी प्रतिभूतियों की प्राथमिक नीलामी में उपलब्ध गैर-प्रतिस्पर्धी बोली सुविधा के तहत, एक खुदरा निवेशक ________ और, यदि आवंटित होता है, तो प्रतिभूतियाँ ________ पर प्राप्त करता है।\n\n(a) वह अधिकतम यील्ड निर्दिष्ट करता है जिसे वह स्वीकार करने को तैयार है; और उस नीलामी में स्वीकार की गई सबसे कम यील्ड पर प्रतिभूतियाँ प्राप्त करता है, जिससे उसे सबसे अनुकूल मूल्य मिलता है\n(b) मात्रा और यील्ड दोनों निर्दिष्ट करके संस्थागत निवेशकों के साथ सीधे प्रतिस्पर्धा करता है; और यदि उसकी निर्दिष्ट यील्ड कट-ऑफ से कम है तो उसी यील्ड पर प्रतिभूतियाँ प्राप्त करता है\n(c) केवल वांछित मात्रा निर्दिष्ट करते हुए बिना कोई यील्ड निर्दिष्ट किए बोली प्रस्तुत करता है; और प्रतिस्पर्धी बोली प्रक्रिया द्वारा निर्धारित भारित औसत कट-ऑफ यील्ड पर प्रतिभूतियाँ प्राप्त करता है\n(d) नीलामी के बाद अभिरुचि व्यक्त करता है; और सभी सफल प्रतिस्पर्धी बोलियों में स्वीकार की गई सबसे कम यील्ड (सबसे उच्च मूल्य) पर प्रतिभूतियाँ प्राप्त करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि 'गैर-प्रतिस्पर्धी बोलियाँ प्राथमिकता आवंटन पाती हैं' वे यह मान सकते हैं कि उन्हें सबसे कम (सबसे अनुकूल) यील्ड पर आवंटित किया जाता है, जबकि वास्तव में यह भारित औसत कट-ऑफ यील्ड पर होता है।",
+      "elimination_logic": [
+        "गैर-प्रतिस्पर्धी बोली का अर्थ है कि बोलीदाता यील्ड निर्दिष्ट नहीं करता — वे जो भी यील्ड नीलामी निर्धारित करे उसे स्वीकार करते हैं।",
+        "आवंटन उस नीलामी में प्रतिस्पर्धी बोलियों के भारित औसत कट-ऑफ यील्ड पर होता है।",
+        "विकल्प (a) — 'सबसे कम यील्ड' — गलत है; प्राथमिकता का अर्थ इस संदर्भ में सबसे अनुकूल यील्ड नहीं है।",
+        "विकल्प (c) सही है: बोलीदाता द्वारा कोई यील्ड निर्दिष्ट नहीं की जाती; आवंटन भारित औसत कट-ऑफ यील्ड पर होता है — सही उत्तर।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में 'सबसे कम यील्ड' (जो सरकार के लिए सबसे महंगा मूल्य होगा) को 'भारित औसत कट-ऑफ यील्ड' (वास्तविक तंत्र) के स्थान पर रखा गया है। जो छात्र याद करते हैं कि गैर-प्रतिस्पर्धी बोलीदाताओं को 'गारंटीकृत आवंटन' मिलता है, वे यह मान सकते हैं कि यह विशेषाधिकार सबसे अच्छी कीमत पाने तक भी लागू होता है — ऐसा नहीं है। वे बाजार-निर्धारित औसत मूल्य का भुगतान करते हैं।",
+      "final_explanation": "गैर-प्रतिस्पर्धी बोली खुदरा निवेशक का प्राथमिक सरकारी प्रतिभूतियों नीलामी में प्रवेश द्वार है।\n\n• विकल्प (a): गलत। गैर-प्रतिस्पर्धी बोलीदाताओं को सबसे कम यील्ड पर आवंटित नहीं किया जाता। आवंटन प्रतिस्पर्धी बोलियों के भारित औसत कट-ऑफ यील्ड पर होता है — न कि सबसे अनुकूल दर पर।\n• विकल्प (b): गलत। गैर-प्रतिस्पर्धी बोलियाँ संस्थागत निवेशकों के साथ यील्ड के लिए प्रतिस्पर्धा नहीं करतीं। बोलीदाता केवल मात्रा निर्दिष्ट करता है, दर नहीं।\n• विकल्प (c): सही। गैर-प्रतिस्पर्धी बोली के तहत, खुदरा निवेशक बिना यील्ड निर्दिष्ट किए बोली प्रस्तुत करता है। यदि आवंटित होता है, तो उन्हें प्रतिस्पर्धी बोली प्रक्रिया द्वारा निर्धारित भारित औसत कट-ऑफ यील्ड पर प्रतिभूतियाँ मिलती हैं।\n• विकल्प (d): गलत। गैर-प्रतिस्पर्धी बोलियाँ नीलामी से पहले प्रस्तुत की जाती हैं — न कि नीलामी के बाद। नीलामी के बाद सबसे कम यील्ड पर आवंटन न तो प्रक्रिया है न ही मूल्य निर्धारण।\n\nमूल्य संवर्धन:\n• प्रत्येक सरकारी प्रतिभूति नीलामी में अधिसूचित राशि का 5% गैर-प्रतिस्पर्धी बोलियों के लिए आरक्षित होता है।\n• गैर-प्रतिस्पर्धी बोली टी-बिल और डेटेड सरकारी प्रतिभूति दोनों नीलामी के लिए उपलब्ध है।\n• RBI रिटेल डायरेक्ट पोर्टल व्यक्तिगत निवेशकों को बिना मध्यस्थों के सीधे गैर-प्रतिस्पर्धी बोली में भाग लेने में सक्षम बनाता है।"
+    }
+  },
+  {
+    "uuid": "80fde649-07de-4a85-81b4-43a076642ed6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "G-Sec Market Development: Challenges and Recent Reforms",
+        "Yield Curve: Shape, Determinants and Policy Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "G-Sec market shallowness — captive SLR demand and IRF hedging",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the structural features and development challenges of India's Government Securities secondary market:\n\n1. The secondary market for Government Securities in India is characterised by low trading velocity and shallow depth, partly because commercial banks — as mandatory SLR holders — are price-insensitive captive buyers who hold G-Secs to maturity rather than actively trade them.\n2. Interest Rate Futures (IRFs) on G-Secs are traded exclusively on the Negotiated Dealing System – Order Matching (NDS-OM) platform and are not permitted on stock exchanges.\n3. RBI's consolidation operations — such as G-Sec buybacks and switches — help reduce rollover risk by replacing multiple small, illiquid G-Sec issuances with fewer large, liquid benchmark securities.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The secondary market for Government Securities in India is characterised by low trading velocity and shallow depth, partly because commercial banks — as mandatory SLR holders — are price-insensitive captive buyers who hold G-Secs to maturity rather than actively trade them.",
+          "verdict": "Correct",
+          "reason": "Banks' SLR obligation forces them to hold G-Secs regardless of price — creating a large but trading-inactive investor base. This reduces secondary market liquidity and trading velocity, making the market shallow relative to its size."
+        },
+        {
+          "statement": "Interest Rate Futures (IRFs) on G-Secs are traded exclusively on the Negotiated Dealing System – Order Matching (NDS-OM) platform and are not permitted on stock exchanges.",
+          "verdict": "Incorrect",
+          "reason": "Interest Rate Futures on G-Secs are traded on stock exchanges (NSE and BSE), not on NDS-OM. NDS-OM is the platform for spot G-Sec trades. IRFs are exchange-traded derivatives — their exchange listing is a key structural feature."
+        },
+        {
+          "statement": "RBI's consolidation operations — such as G-Sec buybacks and switches — help reduce rollover risk by replacing multiple small, illiquid G-Sec issuances with fewer large, liquid benchmark securities.",
+          "verdict": "Correct",
+          "reason": "Buybacks retire smaller, illiquid outstanding securities and switches exchange them for fewer, larger benchmark bonds. This reduces the number of outstanding securities, increases liquidity concentration in benchmarks, and reduces the government's rollover risk."
+        }
+      ],
+      "strong_distractor": "d — Students who know both IRFs and NDS-OM exist in the G-Sec ecosystem may assume they are on the same platform, marking all three as correct.",
+      "elimination_logic": [
+        "Statement 1: Captive SLR-driven buying reduces active trading — this is a well-documented structural feature of India's G-Sec market. Correct.",
+        "Statement 2: IRFs are exchange-traded (NSE, BSE) — NOT on NDS-OM. NDS-OM is for spot cash market trading. The 'exclusively on NDS-OM' claim is incorrect.",
+        "Statement 3: Buybacks and switches are liability management operations that concentrate liquidity in benchmark securities and reduce rollover risk. Correct.",
+        "Correct statements are 1 and 3 — option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2's scope-extension trap places IRFs on NDS-OM, which is the G-Sec spot trading platform. Students who know NDS-OM is central to G-Sec markets may assume derivatives also trade there. The distinction between spot/cash market infrastructure (NDS-OM) and derivatives market infrastructure (stock exchanges) is the key knowledge tested here.",
+      "final_explanation": "India's G-Sec secondary market has structural limitations that reformers have sought to address through derivatives, buybacks, and platform enhancements.\n\n• Statement 1 — Correct: The SLR framework creates a paradox — it generates large G-Sec demand but suppresses trading activity. Banks buy and hold, reducing turnover. Non-bank participation (insurance, pension, retail) is growing but remains insufficient to fundamentally deepen the market.\n• Statement 2 — Incorrect: Interest Rate Futures on G-Secs trade on stock exchanges (NSE, BSE) — not on NDS-OM. NDS-OM is the cash/spot market. IRFs as exchange-traded derivatives allow market participants to hedge G-Sec price risk without spot market transactions.\n• Statement 3 — Correct: Buybacks retire near-maturity or illiquid G-Secs using surplus government funds, while switches exchange them for newer benchmark bonds. Both operations improve market structure by concentrating liquidity and reducing the government's debt maturity profile risk.\n\nValue Addition:\n• The Urjit Patel Committee report analysed the bond-currency-derivatives nexus, highlighting how G-Sec yields, INR exchange rate, and derivatives markets are deeply interconnected.\n• G-Sec consolidation also facilitates index inclusion by creating large, liquid benchmark bonds that index providers can track.\n• India's G-Sec market trading velocity remains low compared to advanced economies — a key market development challenge."
+    },
+    "hi": {
+      "display_text": "भारत के सरकारी प्रतिभूतियों के द्वितीयक बाजार की संरचनात्मक विशेषताओं और विकास चुनौतियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत में सरकारी प्रतिभूतियों के द्वितीयक बाजार की विशेषता कम ट्रेडिंग वेग और उथली गहराई है, आंशिक रूप से क्योंकि वाणिज्यिक बैंक — जो अनिवार्य SLR धारक हैं — मूल्य के प्रति असंवेदनशील कैद खरीदार हैं जो सक्रिय रूप से व्यापार करने के बजाय G-Secs को परिपक्वता तक रखते हैं।\n2. सरकारी प्रतिभूतियों पर ब्याज दर वायदा (IRFs) केवल Negotiated Dealing System – Order Matching (NDS-OM) प्लेटफॉर्म पर व्यापारित होते हैं और स्टॉक एक्सचेंजों पर अनुमति नहीं है।\n3. RBI के समेकन संचालन — जैसे G-Sec बायबैक और स्विच — कई छोटे, अलिक्विड G-Sec जारीकरणों को कम करके कम संख्या में बड़े, तरल बेंचमार्क प्रतिभूतियों के साथ बदलकर रोलओवर जोखिम को कम करने में मदद करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "भारत में सरकारी प्रतिभूतियों के द्वितीयक बाजार की विशेषता कम ट्रेडिंग वेग और उथली गहराई है, आंशिक रूप से क्योंकि वाणिज्यिक बैंक — जो अनिवार्य SLR धारक हैं — मूल्य के प्रति असंवेदनशील कैद खरीदार हैं जो सक्रिय रूप से व्यापार करने के बजाय G-Secs को परिपक्वता तक रखते हैं।",
+          "verdict": "Correct",
+          "reason": "बैंकों का SLR दायित्व उन्हें मूल्य की परवाह किए बिना G-Secs रखने के लिए बाध्य करता है — जिससे एक बड़ा लेकिन व्यापार में निष्क्रिय निवेशक आधार बनता है। इससे द्वितीयक बाजार की तरलता और ट्रेडिंग वेग कम होता है, जो बाजार को उसके आकार के सापेक्ष उथला बनाता है।"
+        },
+        {
+          "statement": "सरकारी प्रतिभूतियों पर ब्याज दर वायदा (IRFs) केवल Negotiated Dealing System – Order Matching (NDS-OM) प्लेटफॉर्म पर व्यापारित होते हैं और स्टॉक एक्सचेंजों पर अनुमति नहीं है।",
+          "verdict": "Incorrect",
+          "reason": "सरकारी प्रतिभूतियों पर ब्याज दर वायदे स्टॉक एक्सचेंजों (NSE और BSE) पर व्यापारित होते हैं, न कि NDS-OM पर। NDS-OM स्पॉट G-Sec ट्रेड के लिए प्लेटफॉर्म है। IRFs एक्सचेंज-ट्रेडेड डेरिवेटिव्स हैं — उनका एक्सचेंज लिस्टिंग एक प्रमुख संरचनात्मक विशेषता है।"
+        },
+        {
+          "statement": "RBI के समेकन संचालन — जैसे G-Sec बायबैक और स्विच — कई छोटे, अलिक्विड G-Sec जारीकरणों को कम करके कम संख्या में बड़े, तरल बेंचमार्क प्रतिभूतियों के साथ बदलकर रोलओवर जोखिम को कम करने में मदद करते हैं।",
+          "verdict": "Correct",
+          "reason": "बायबैक छोटे, अलिक्विड बकाया प्रतिभूतियों को समाप्त करते हैं और स्विच उन्हें कम, बड़े बेंचमार्क बॉन्ड्स के लिए बदलते हैं। इससे बकाया प्रतिभूतियों की संख्या कम होती है, बेंचमार्क में तरलता केंद्रित होती है, और सरकार के रोलओवर जोखिम में कमी आती है।"
+        }
+      ],
+      "strong_distractor": "d — जो छात्र IRFs और NDS-OM दोनों के G-Sec पारिस्थितिकी तंत्र में होने को जानते हैं, वे मान सकते हैं कि वे एक ही प्लेटफॉर्म पर हैं, और इसलिए तीनों को सही चिह्नित कर देते हैं।",
+      "elimination_logic": [
+        "कथन 1: कैद SLR-प्रेरित खरीदारी सक्रिय ट्रेडिंग को कम करती है — यह भारत के G-Sec बाजार की एक अच्छी तरह से प्रलेखित संरचनात्मक विशेषता है। सही।",
+        "कथन 2: IRFs एक्सचेंज-ट्रेडेड हैं (NSE, BSE) — NDS-OM पर नहीं। NDS-OM स्पॉट कैश मार्केट ट्रेडिंग के लिए है। 'केवल NDS-OM पर' का दावा गलत है।",
+        "कथन 3: बायबैक और स्विच देयता प्रबंधन संचालन हैं जो तरलता को बेंचमार्क प्रतिभूतियों में केंद्रित करते हैं और रोलओवर जोखिम को कम करते हैं। सही।",
+        "सही कथन 1 और 3 हैं — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का स्कोप-एक्सटेंशन जाल IRFs को NDS-OM पर रखता है, जो G-Sec स्पॉट ट्रेडिंग प्लेटफॉर्म है। जो छात्र जानते हैं कि NDS-OM G-Sec बाजारों के लिए केंद्रीय है, वे मान सकते हैं कि डेरिवेटिव्स भी वहीं ट्रेड होते हैं। स्पॉट/कैश मार्केट इन्फ्रास्ट्रक्चर (NDS-OM) और डेरिवेटिव्स मार्केट इन्फ्रास्ट्रक्चर (स्टॉक एक्सचेंज) के बीच का अंतर मुख्य ज्ञान परीक्षण है।",
+      "final_explanation": "भारत के G-Sec द्वितीयक बाजार में संरचनात्मक सीमाएं हैं जिन्हें सुधारकों ने डेरिवेटिव्स, बायबैक, और प्लेटफॉर्म सुधारों के माध्यम से संबोधित करने का प्रयास किया है।\n\n• कथन 1 — सही: SLR ढांचा एक विरोधाभास उत्पन्न करता है — यह बड़ी G-Sec मांग उत्पन्न करता है लेकिन ट्रेडिंग गतिविधि को दबाता है। बैंक खरीदते हैं और रखते हैं, जिससे टर्नओवर कम होता है। गैर-बैंक भागीदारी (बीमा, पेंशन, रिटेल) बढ़ रही है लेकिन बाजार को मौलिक रूप से गहरा करने के लिए अपर्याप्त है।\n• कथन 2 — गलत: सरकारी प्रतिभूतियों पर ब्याज दर वायदे स्टॉक एक्सचेंजों (NSE, BSE) पर ट्रेड होते हैं — NDS-OM पर नहीं। NDS-OM कैश/स्पॉट मार्केट है। IRFs एक्सचेंज-ट्रेडेड डेरिवेटिव्स के रूप में बाजार प्रतिभागियों को G-Sec मूल्य जोखिम को स्पॉट मार्केट लेनदेन के बिना हेज करने की अनुमति देते हैं।\n• कथन 3 — सही: बायबैक निकट परिपक्वता या अलिक्विड G-Secs को सरकार के अधिशेष निधियों से समाप्त करते हैं, जबकि स्विच उन्हें नए बेंचमार्क बॉन्ड्स के लिए बदलते हैं। दोनों संचालन तरलता को केंद्रित करके और सरकार के ऋण परिपक्वता जोखिम को कम करके बाजार संरचना में सुधार करते हैं।\n\nमूल्य संवर्धन:\n• उर्जित पटेल समिति की रिपोर्ट ने बॉन्ड-करेंसी-डेरिवेटिव्स संबंध का विश्लेषण किया, यह दर्शाते हुए कि G-Sec यील्ड, INR विनिमय दर, और डेरिवेटिव्स बाजार गहराई से जुड़े हुए हैं।\n• G-Sec समेकन बड़े, तरल बेंचमार्क बॉन्ड्स बनाकर सूचकांक समावेशन को भी सुविधाजनक बनाता है जिन्हें सूचकांक प्रदाता ट्रैक कर सकते हैं।\n• भारत के G-Sec बाजार की ट्रेडिंग वेग उन्नत अर्थव्यवस्थाओं की तुलना में कम बनी हुई है — जो एक प्रमुख बाजार विकास चुनौती है।"
+    }
+  },
+  {
+    "uuid": "70a85913-287f-4fb4-b0cd-40dd5a5868e3",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Primary Issuance Mechanism: Auctions and the Role of RBI",
+        "Debt Management: Public Debt Management Agency (PDMA) Debate"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "PDMA international comparisons — UK DMO and US Treasury debt management",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched in the context of institutional frameworks for public debt management?\n\n(a) United States: The Federal Reserve manages US government debt issuance in coordination with the US Treasury, as monetary policy and debt management are integrated under the same institutional roof\n(b) United Kingdom: The Debt Management Office (DMO) was established within the Bank of England in 1998 to separate debt management from monetary policy\n(c) India: The Public Debt Management Agency (PDMA) was established as a statutory body and is currently fully operational, having taken over RBI's debt management functions\n(d) India: The Reserve Bank of India currently manages central government public debt under the provisions of the RBI Act, 1934, which creates a structural conflict between its debt management and monetary policy roles",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students who know that India manages debt through RBI may assume the UK also follows a central-bank-managed model, not recalling the UK Debt Management Office as a separate treasury agency.",
+      "elimination_logic": [
+        "Option (a): The claim that the US Federal Reserve manages US government debt is false. The US Treasury's Bureau of the Fiscal Service and the Office of Debt Management handle public debt — separated from the Federal Reserve. Incorrect pair.",
+        "Option (b): The UK Debt Management Office (DMO) was established in 1998 as a separate executive agency of HM Treasury — NOT as part of the Bank of England. Incorrect pair.",
+        "Option (c): The claim that India's PDMA is 'fully operational' is false — PDMA has been proposed but not yet established. Incorrect pair.",
+        "Option (d): RBI currently manages public debt under Section 20 and Section 21A of the RBI Act, 1934. This is the correct current arrangement. Correctly matched pair."
+      ],
+      "upsc_trap_explanation": "Option (c) is a plausible fabrication — PDMA exists as a well-discussed policy proposal, making it easy for a test-taker to believe it may have been quietly established. Option (b) traps students who know the UK separated debt management from its central bank but misattribute the DMO's institutional home (HM Treasury, not Bank of England).",
+      "final_explanation": "The institutional framework for public debt management is a policy design question that UPSC tests through international comparisons.\n\n• Option (a): Incorrect pair. The US Federal Reserve does NOT manage US government debt. This function is performed by the US Treasury's Office of Debt Management — consistent with the global trend of separating debt management from monetary policy.\n• Option (b): Incorrect pair. The UK Debt Management Office (DMO) was created in 1998 as an executive agency of HM Treasury — not as a Bank of England unit. It is independent of the UK's central bank, exemplifying the separation model.\n• Option (c): Incorrect pair. India's PDMA has been recommended by multiple expert committees (FSLRC, Jahangir Aziz Committee) but has NOT been established. India remains among the few large economies where the central bank (RBI) manages sovereign debt.\n• Option (d): Correctly matched pair. RBI manages central government debt under the RBI Act 1934 — Sections 20 and 21A specifically authorise this function. This arrangement is the source of the conflict-of-interest debate.\n\nValue Addition:\n• RBI also manages state government debt through SDL issuance coordination — a function the proposed PDMA would also absorb.\n• The FSLRC recommended PDMA as part of a broader financial sector regulatory restructuring.\n• WMA management is also a debt management function that would transfer to PDMA if established."
+    },
+    "hi": {
+      "display_text": "सार्वजनिक ऋण प्रबंधन के संस्थागत ढांचे के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) संयुक्त राज्य अमेरिका: फेडरल रिजर्व अमेरिकी सरकारी ऋण जारीकरण का प्रबंधन अमेरिकी ट्रेजरी के समन्वय में करता है, क्योंकि मौद्रिक नीति और ऋण प्रबंधन एक ही संस्थागत छत्र के अंतर्गत एकीकृत हैं\n(b) यूनाइटेड किंगडम: डेब्ट मैनेजमेंट ऑफिस (DMO) को 1998 में बैंक ऑफ इंग्लैंड के भीतर स्थापित किया गया था ताकि ऋण प्रबंधन को मौद्रिक नीति से अलग किया जा सके\n(c) भारत: पब्लिक डेब्ट मैनेजमेंट एजेंसी (PDMA) को एक वैधानिक निकाय के रूप में स्थापित किया गया है और यह वर्तमान में पूरी तरह से कार्यरत है, जिसने आरबीआई के ऋण प्रबंधन कार्यों को संभाल लिया है\n(d) भारत: भारतीय रिजर्व बैंक वर्तमान में आरबीआई अधिनियम, 1934 के प्रावधानों के तहत केंद्रीय सरकार के सार्वजनिक ऋण का प्रबंधन करता है, जो इसके ऋण प्रबंधन और मौद्रिक नीति भूमिकाओं के बीच संरचनात्मक टकराव उत्पन्न करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — जो छात्र जानते हैं कि भारत ऋण प्रबंधन आरबीआई के माध्यम से करता है, वे मान सकते हैं कि यूके भी केंद्रीय बैंक-प्रबंधित मॉडल का पालन करता है, जबकि वे यूके डेब्ट मैनेजमेंट ऑफिस को एक अलग ट्रेजरी एजेंसी के रूप में याद नहीं करते।",
+      "elimination_logic": [
+        "विकल्प (a): यह दावा कि यूएस फेडरल रिजर्व अमेरिकी सरकारी ऋण का प्रबंधन करता है, गलत है। अमेरिकी ट्रेजरी का ब्यूरो ऑफ फिस्कल सर्विस और ऑफिस ऑफ डेब्ट मैनेजमेंट सार्वजनिक ऋण का प्रबंधन करते हैं — जो फेडरल रिजर्व से अलग हैं। गलत जोड़ी।",
+        "विकल्प (b): यूके डेब्ट मैनेजमेंट ऑफिस (DMO) 1998 में HM ट्रेजरी की एक अलग कार्यकारी एजेंसी के रूप में स्थापित किया गया था — बैंक ऑफ इंग्लैंड का हिस्सा नहीं। गलत जोड़ी।",
+        "विकल्प (c): यह दावा कि भारत का PDMA 'पूरी तरह से कार्यरत' है, गलत है — PDMA प्रस्तावित है लेकिन अभी तक स्थापित नहीं हुआ है। गलत जोड़ी।",
+        "विकल्प (d): आरबीआई वर्तमान में आरबीआई अधिनियम, 1934 की धारा 20 और धारा 21A के तहत सार्वजनिक ऋण का प्रबंधन करता है। यह वर्तमान सही व्यवस्था है। सही जोड़ी।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) एक संभावित मिथ्या सूचना है — PDMA एक व्यापक चर्चा में प्रस्तावित नीति है, जिससे परीक्षार्थी यह मान सकते हैं कि इसे चुपचाप स्थापित कर दिया गया है। विकल्प (b) उन छात्रों को फंसाता है जो जानते हैं कि यूके ने ऋण प्रबंधन को अपने केंद्रीय बैंक से अलग किया है लेकिन DMO के संस्थागत घर (HM ट्रेजरी, बैंक ऑफ इंग्लैंड नहीं) को गलत समझते हैं।",
+      "final_explanation": "सार्वजनिक ऋण प्रबंधन के लिए संस्थागत ढांचा एक नीति डिजाइन प्रश्न है जिसे UPSC अंतरराष्ट्रीय तुलना के माध्यम से परखता है।\n\n• विकल्प (a): गलत जोड़ी। यूएस फेडरल रिजर्व अमेरिकी सरकारी ऋण का प्रबंधन नहीं करता। यह कार्य अमेरिकी ट्रेजरी के ऑफिस ऑफ डेब्ट मैनेजमेंट द्वारा किया जाता है — जो मौद्रिक नीति से ऋण प्रबंधन को अलग करने के वैश्विक रुझान के अनुरूप है।\n• विकल्प (b): गलत जोड़ी। यूके डेब्ट मैनेजमेंट ऑफिस (DMO) 1998 में HM ट्रेजरी की एक कार्यकारी एजेंसी के रूप में बनाया गया था — बैंक ऑफ इंग्लैंड की इकाई नहीं। यह यूके के केंद्रीय बैंक से स्वतंत्र है, जो पृथक्करण मॉडल का उदाहरण है।\n• विकल्प (c): गलत जोड़ी। भारत का PDMA कई विशेषज्ञ समितियों (FSLRC, जहांगिर अजीज समिति) द्वारा अनुशंसित है लेकिन स्थापित नहीं हुआ है। भारत उन कुछ बड़ी अर्थव्यवस्थाओं में से एक है जहाँ केंद्रीय बैंक (आरबीआई) संप्रभु ऋण का प्रबंधन करता है।\n• विकल्प (d): सही जोड़ी। आरबीआई केंद्रीय सरकार के ऋण का प्रबंधन आरबीआई अधिनियम 1934 के तहत करता है — विशेष रूप से धारा 20 और 21A इस कार्य को अधिकृत करती हैं। यह व्यवस्था हितों के टकराव की बहस का स्रोत है।\n\nमूल्य संवर्धन:\n• आरबीआई राज्य सरकार के ऋण का भी प्रबंधन करता है SDL जारीकरण समन्वय के माध्यम से — एक कार्य जिसे प्रस्तावित PDMA भी ग्रहण करेगा।\n• FSLRC ने व्यापक वित्तीय क्षेत्र नियामक पुनर्गठन के हिस्से के रूप में PDMA की सिफारिश की।\n• WMA प्रबंधन भी एक ऋण प्रबंधन कार्य है जो स्थापित होने पर PDMA को स्थानांतरित हो जाएगा।"
+    }
+  },
+  {
+    "uuid": "088f1cb4-1b54-4100-bfa7-ce44bb76ae7f",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Liquidity Adjustment Facility (LAF) and Its G-Sec Collateral Requirement",
+        "Primary Dealers (PDs): Role, Obligations and Privileges"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "G-Sec collateral demand beyond SLR — LAF, MSF, and PD obligations",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following does NOT create demand for Government Securities beyond the mandatory Statutory Liquidity Ratio (SLR) requirement?\n\n(a) Liquidity Adjustment Facility (LAF) Repo — where banks must pledge G-Secs as collateral to borrow from RBI\n(b) Marginal Standing Facility (MSF) — where banks borrow overnight from RBI by pledging SLR-eligible G-Secs as collateral\n(c) Standing Deposit Facility (SDF) — where banks park surplus funds with RBI overnight\n(d) Primary Dealer auction bidding obligations — where PDs must submit bids for the full notified amount in each G-Sec primary auction",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Students who know the SDF does not require G-Sec collateral may confuse it with the reverse repo or mix up SDF with MSF, believing all LAF-related operations require G-Secs.",
+      "elimination_logic": [
+        "The common attribute: mechanisms or facilities that create G-Sec demand beyond the SLR requirement — i.e., banks or entities need G-Secs for reasons other than SLR compliance.",
+        "LAF Repo: requires G-Secs as collateral — creates structural demand for G-Secs among banks for liquidity management.",
+        "MSF: banks borrow against SLR-eligible G-Secs — requires G-Secs as collateral.",
+        "PD obligations: PDs must bid for G-Secs in primary auctions — creates mandatory G-Sec acquisition demand.",
+        "Standing Deposit Facility (SDF): banks park funds with RBI WITHOUT collateral — G-Secs are NOT required. SDF is the ODD ONE OUT.",
+        "Option (c) is correct — SDF does not create G-Sec demand."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap substitutes the SDF (uncollateralised) into a group of G-Sec-collateral-requiring mechanisms. Students who recall 'SDF is part of the LAF corridor' may assume it also uses G-Sec collateral like the repo window — the defining distinction is that SDF is specifically uncollateralised. This was its key innovation when introduced in 2022.",
+      "final_explanation": "Beyond SLR compliance, G-Secs are in demand because multiple market mechanisms require them as collateral or through institutional obligations.\n\n• Option (a) — LAF Repo: Banks must pledge G-Secs (SLR-eligible securities) as collateral to borrow under the repo window. This creates G-Sec demand beyond SLR holdings.\n• Option (b) — MSF: Banks borrow overnight from RBI using SLR-eligible G-Secs — including by temporarily dipping below SLR. Requires G-Sec holdings.\n• Option (c) — Standing Deposit Facility (SDF): THE ODD ONE OUT. SDF allows banks to park surplus funds with RBI WITHOUT providing any collateral. No G-Secs are needed. This is the fundamental innovation of SDF — it removes the collateral constraint.\n• Option (d) — PD auction bidding obligation: Primary Dealers must bid for G-Secs in each primary auction, creating mandatory demand for government paper independent of SLR needs.\n\nValue Addition:\n• The uncollateralised nature of SDF also means it does not create G-Sec shortage in the system during liquidity surplus conditions.\n• Before SDF, the reverse repo was the floor but required banks to have surplus G-Secs to give to RBI — limiting its effectiveness when banks were already stretched on collateral.\n• SDF rate is currently 25 basis points below the repo rate."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा विकल्प अनिवार्य वैधानिक तरलता अनुपात (SLR) आवश्यकता से परे सरकारी प्रतिभूतियों (Government Securities) की मांग नहीं उत्पन्न करता?\n\n(a) लिक्विडिटी एडजस्टमेंट फैसिलिटी (LAF) रेपो — जहाँ बैंक RBI से उधार लेने के लिए G-Secs को जमानत के रूप में देना अनिवार्य होता है\n(b) मार्जिनल स्टैंडिंग फैसिलिटी (MSF) — जहाँ बैंक RBI से रातोंरात SLR-योग्य G-Secs को जमानत के रूप में देकर उधार लेते हैं\n(c) स्टैंडिंग डिपॉजिट फैसिलिटी (SDF) — जहाँ बैंक अधिशेष धन RBI के पास रातोंरात जमा करते हैं\n(d) प्राइमरी डीलर नीलामी बोली दायित्व — जहाँ PDs को प्रत्येक G-Sec प्राथमिक नीलामी में पूर्ण अधिसूचित राशि के लिए बोली लगानी होती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — जो छात्र जानते हैं कि SDF को G-Sec जमानत की आवश्यकता नहीं होती, वे इसे रिवर्स रेपो से भ्रमित कर सकते हैं या SDF को MSF के साथ मिला सकते हैं, यह मानते हुए कि सभी LAF-संबंधित संचालन के लिए G-Secs आवश्यक हैं।",
+      "elimination_logic": [
+        "सामान्य विशेषता: ऐसे तंत्र या सुविधाएँ जो SLR आवश्यकता से परे G-Sec की मांग उत्पन्न करती हैं — अर्थात्, बैंक या संस्थाओं को SLR अनुपालन के अलावा अन्य कारणों से G-Secs की आवश्यकता होती है।",
+        "LAF रेपो: उधार लेने के लिए G-Secs को जमानत के रूप में आवश्यक करता है — बैंकिंग में तरलता प्रबंधन के लिए G-Secs की संरचनात्मक मांग उत्पन्न करता है।",
+        "MSF: बैंक SLR-योग्य G-Secs के विरुद्ध उधार लेते हैं — G-Secs को जमानत के रूप में आवश्यक करता है।",
+        "PD दायित्व: PDs को प्राथमिक नीलामी में G-Secs के लिए बोली लगानी होती है — अनिवार्य G-Sec अधिग्रहण मांग उत्पन्न करता है।",
+        "स्टैंडिंग डिपॉजिट फैसिलिटी (SDF): बैंक बिना किसी जमानत के RBI के पास धन जमा करते हैं — G-Secs आवश्यक नहीं हैं। SDF ही ODD ONE OUT है।",
+        "विकल्प (c) सही है — SDF G-Sec मांग उत्पन्न नहीं करता।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण जाल में SDF (बिना जमानत) को उन तंत्रों के समूह में शामिल कर दिया जाता है जिन्हें G-Sec जमानत की आवश्यकता होती है। जो छात्र याद करते हैं कि 'SDF LAF कॉरिडोर का हिस्सा है' वे मान सकते हैं कि यह भी रेपो विंडो की तरह G-Sec जमानत का उपयोग करता है — पर मुख्य अंतर यह है कि SDF विशेष रूप से बिना जमानत वाला है। यह 2022 में इसकी प्रमुख नवाचार थी।",
+      "final_explanation": "SLR अनुपालन से परे, G-Secs की मांग इसलिए होती है क्योंकि कई बाजार तंत्र उन्हें जमानत के रूप में या संस्थागत दायित्वों के माध्यम से आवश्यक मानते हैं।\n\n• विकल्प (a) — LAF रेपो: बैंक को रेपो विंडो के तहत उधार लेने के लिए G-Secs (SLR-योग्य प्रतिभूतियाँ) को जमानत के रूप में देना होता है। इससे SLR होल्डिंग्स से परे G-Sec की मांग उत्पन्न होती है।\n• विकल्प (b) — MSF: बैंक RBI से रातोंरात उधार लेते हैं, SLR-योग्य G-Secs को जमानत के रूप में देकर — जिसमें अस्थायी रूप से SLR से नीचे जाना भी शामिल है। G-Sec होल्डिंग्स आवश्यक हैं।\n• विकल्प (c) — स्टैंडिंग डिपॉजिट फैसिलिटी (SDF): ODD ONE OUT। SDF बैंक को बिना किसी जमानत के RBI के पास अधिशेष धन जमा करने की अनुमति देता है। कोई G-Secs आवश्यक नहीं हैं। यह SDF की मूल नवाचार है — यह जमानत बाधा को हटाता है।\n• विकल्प (d) — PD नीलामी बोली दायित्व: प्राइमरी डीलर्स को प्रत्येक G-Sec प्राथमिक नीलामी में पूर्ण अधिसूचित राशि के लिए बोली लगानी होती है, जो SLR आवश्यकताओं से स्वतंत्र सरकारी कागज की अनिवार्य मांग उत्पन्न करता है।\n\nमूल्य संवर्धन:\n• SDF की बिना जमानत वाली प्रकृति का अर्थ है कि यह तरलता अधिशेष की स्थिति में प्रणाली में G-Sec की कमी नहीं पैदा करता।\n• SDF से पहले, रिवर्स रेपो फर्श था लेकिन इसके लिए बैंक के पास RBI को देने के लिए अधिशेष G-Secs होना आवश्यक था — जो तब प्रभावशीलता को सीमित करता था जब बैंक पहले से ही जमानत पर दबाव में थे।\n• वर्तमान में SDF दर रेपो दर से 25 बेसिस पॉइंट नीचे है।"
+    }
+  },
+  {
+    "uuid": "a8a0f92c-1e00-4b5a-8eab-4e89125622b6",
+    "meta": {
+      "subject": "Economy",
+      "topic": "Capital Markets and Financial System",
+      "sub_topic": "Government securities market",
+      "concepts_used": [
+        "Yield, Price and Duration: Core Mechanics of G-Sec Valuation",
+        "Yield Curve: Shape, Determinants and Policy Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "10-year G-Sec as risk-free benchmark — anchoring lending and corporate bond rates",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A public sector infrastructure company is planning to issue 15-year bonds to finance a highway project. Its treasury team is determining the appropriate risk-free rate benchmark from which to build the bond's yield — which would then include an additional credit spread based on the issuer's rating and liquidity premium. Which of the following correctly identifies the appropriate benchmark and the rationale for its use?\n\n(a) The RBI's policy repo rate — as it is set by India's monetary authority and reflects the prevailing cost of funds in the economy, it is the most appropriate risk-free rate for any rupee-denominated instrument\n(b) The Marginal Cost of Funds-based Lending Rate (MCLR) of State Bank of India — as it represents the floor lending rate for the largest commercial bank and anchors all rupee credit in the economy\n(c) The yield on 10-year Central Government Securities — as it represents India's market-determined risk-free rate for long-duration capital market instruments, anchoring the pricing of corporate bonds and long-term loans\n(d) The Standing Deposit Facility (SDF) rate — as it is the effective floor of the interest rate corridor set by RBI and reflects the minimum return on risk-free rupee placements",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know 'RBI sets the repo rate and banks follow' may assume the repo rate is the universal risk-free benchmark, not realising that the market-determined 10-year G-Sec yield serves this role for long-duration pricing.",
+      "elimination_logic": [
+        "The scenario involves a bank pricing a 15-year infrastructure bond — a long-duration instrument.",
+        "For long-duration pricing, the relevant risk-free benchmark is the 10-year G-Sec yield (not the repo rate, which is an overnight rate).",
+        "Option (a) — repo rate as benchmark for a 15-year bond: inappropriate; overnight rate doesn't match duration.",
+        "Option (b) — MCLR: a bank lending rate, not a risk-free benchmark for bond pricing.",
+        "Option (c) — 10-year G-Sec yield as risk-free rate, with spread added for credit risk and tenor: correct application of benchmark pricing.",
+        "Option (d) — SDF rate: an overnight absorption rate; completely mismatched for long-duration pricing.",
+        "Correct answer is (c)."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges the repo rate (RBI's policy rate, short-term) with the 10-year G-Sec yield (market-determined, long-term risk-free rate). For pricing long-duration corporate instruments, the 10-year G-Sec yield is the appropriate risk-free anchor. Using the repo rate for a 15-year instrument confuses short-term monetary policy signalling with long-term capital market pricing — a common conceptual error.",
+      "final_explanation": "Benchmark pricing in bond markets requires matching the risk-free reference rate to the instrument's tenor and risk profile.\n\nApplicable principle: The 10-year G-Sec yield is India's primary risk-free rate benchmark for long-duration instruments. Corporate bonds, infrastructure bonds, and long-term loans are priced as 'risk-free rate + credit spread + liquidity premium.' The repo rate, being an overnight rate, is appropriate only for very short-term instruments.\n\n• Option (a): Incorrect. The repo rate is an overnight policy rate — it is not the benchmark for pricing 15-year bonds. Using it would systematically misprice the term premium.\n• Option (b): Incorrect. MCLR is a bank lending rate benchmark used for floating-rate loans — it is not a risk-free benchmark for bond issuance pricing.\n• Option (c): Correct. The 10-year G-Sec yield serves as India's risk-free rate for capital market pricing. A 15-year infrastructure bond issuer adds a credit spread over this benchmark to reflect credit and liquidity risk. This is standard market practice.\n• Option (d): Incorrect. The SDF rate is an overnight absorption rate at the floor of the LAF corridor — it is entirely inappropriate as a reference for long-duration capital market pricing.\n\nValue Addition:\n• The G-Sec yield curve (from 91-day T-Bills to 40-year dated securities) allows market participants to price instruments at any tenor.\n• Corporate bond spreads over G-Sec yields of the same maturity reflect the issuer's credit risk premium.\n• Home loan rates and FCNR deposit rates are also anchored to the 10-year G-Sec yield, demonstrating its economy-wide benchmark role."
+    },
+    "hi": {
+      "display_text": "एक सार्वजनिक क्षेत्र की अवसंरचना कंपनी एक राजमार्ग परियोजना के वित्तपोषण के लिए 15-वर्षीय बॉन्ड जारी करने की योजना बना रही है। इसकी ट्रेजरी टीम बॉन्ड की उपज बनाने के लिए उपयुक्त जोखिम-मुक्त दर बेंचमार्क निर्धारित कर रही है — जिसमें जारीकर्ता की रेटिंग और तरलता प्रीमियम के आधार पर अतिरिक्त क्रेडिट स्प्रेड जोड़ा जाएगा। निम्नलिखित में से कौन सा सही बेंचमार्क और उसके उपयोग का तर्क सही ढंग से पहचानता है?\n\n(a) RBI की नीति रेपो दर — क्योंकि इसे भारत की मौद्रिक प्राधिकरण द्वारा निर्धारित किया जाता है और यह अर्थव्यवस्था में प्रचलित धन की लागत को दर्शाती है, यह किसी भी रुपये-आधारित उपकरण के लिए सबसे उपयुक्त जोखिम-मुक्त दर है\n(b) भारतीय स्टेट बैंक की मार्जिनल कॉस्ट ऑफ फंड्स-आधारित लेंडिंग रेट (MCLR) — क्योंकि यह सबसे बड़े वाणिज्यिक बैंक के लिए न्यूनतम ऋण दर का प्रतिनिधित्व करती है और अर्थव्यवस्था में सभी रुपये क्रेडिट को आधार देती है\n(c) 10-वर्षीय केंद्रीय सरकारी प्रतिभूतियों की उपज — क्योंकि यह भारत की बाजार-निर्धारित जोखिम-मुक्त दर है जो लंबी अवधि के पूंजी बाजार उपकरणों के लिए कॉर्पोरेट बॉन्ड और दीर्घकालिक ऋणों के मूल्य निर्धारण को आधार देती है\n(d) स्टैंडिंग डिपॉजिट फैसिलिटी (SDF) दर — क्योंकि यह RBI द्वारा निर्धारित ब्याज दर कॉरिडोर की प्रभावी न्यूनतम दर है और जोखिम-मुक्त रुपये निवेशों पर न्यूनतम रिटर्न को दर्शाती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि 'RBI रेपो दर निर्धारित करता है और बैंक उसका पालन करते हैं' वे मान सकते हैं कि रेपो दर सार्वभौमिक जोखिम-मुक्त बेंचमार्क है, यह समझे बिना कि बाजार-निर्धारित 10-वर्षीय सरकारी प्रतिभूति (G-Sec) की उपज इस भूमिका को लंबी अवधि के मूल्य निर्धारण के लिए निभाती है।",
+      "elimination_logic": [
+        "परिदृश्य में एक बैंक 15-वर्षीय अवसंरचना बॉन्ड का मूल्य निर्धारण कर रहा है — एक लंबी अवधि का उपकरण।",
+        "लंबी अवधि के मूल्य निर्धारण के लिए, प्रासंगिक जोखिम-मुक्त बेंचमार्क 10-वर्षीय सरकारी प्रतिभूति की उपज है (न कि रेपो दर, जो एक ओवरनाइट दर है)।",
+        "विकल्प (a) — 15-वर्षीय बॉन्ड के लिए रेपो दर को बेंचमार्क मानना अनुचित है; ओवरनाइट दर अवधि से मेल नहीं खाती।",
+        "विकल्प (b) — MCLR: एक बैंक ऋण दर है, बॉन्ड मूल्य निर्धारण के लिए जोखिम-मुक्त बेंचमार्क नहीं।",
+        "विकल्प (c) — 10-वर्षीय सरकारी प्रतिभूति की उपज को जोखिम-मुक्त दर के रूप में लेना, जिसमें क्रेडिट जोखिम और अवधि के लिए स्प्रेड जोड़ा जाता है: बेंचमार्क मूल्य निर्धारण का सही प्रयोग।",
+        "विकल्प (d) — SDF दर: एक ओवरनाइट अवशोषण दर है; लंबी अवधि के मूल्य निर्धारण के लिए पूरी तरह असंगत।",
+        "सही उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "संमिश्रण जाल में रेपो दर (RBI की नीति दर, अल्पकालिक) को 10-वर्षीय सरकारी प्रतिभूति की उपज (बाजार-निर्धारित, दीर्घकालिक जोखिम-मुक्त दर) के साथ मिलाया जाता है। लंबी अवधि के कॉर्पोरेट उपकरणों के मूल्य निर्धारण के लिए 10-वर्षीय सरकारी प्रतिभूति की उपज उपयुक्त जोखिम-मुक्त आधार है। 15-वर्षीय उपकरण के लिए रेपो दर का उपयोग करना अल्पकालिक मौद्रिक नीति संकेतों को दीर्घकालिक पूंजी बाजार मूल्य निर्धारण के साथ भ्रमित करता है — एक सामान्य वैचारिक त्रुटि।",
+      "final_explanation": "बॉन्ड बाजारों में बेंचमार्क मूल्य निर्धारण के लिए जोखिम-मुक्त संदर्भ दर को उपकरण की अवधि और जोखिम प्रोफ़ाइल से मेल खाना आवश्यक है।\n\nलागू सिद्धांत: 10-वर्षीय सरकारी प्रतिभूति की उपज भारत की लंबी अवधि के उपकरणों के लिए प्राथमिक जोखिम-मुक्त दर बेंचमार्क है। कॉर्पोरेट बॉन्ड, अवसंरचना बॉन्ड, और दीर्घकालिक ऋण को 'जोखिम-मुक्त दर + क्रेडिट स्प्रेड + तरलता प्रीमियम' के रूप में मूल्यांकित किया जाता है। रेपो दर, जो एक ओवरनाइट दर है, केवल बहुत अल्पकालिक उपकरणों के लिए उपयुक्त है।\n\n• विकल्प (a): गलत। रेपो दर एक ओवरनाइट नीति दर है — यह 15-वर्षीय बॉन्ड के मूल्य निर्धारण के लिए बेंचमार्क नहीं है। इसका उपयोग अवधि प्रीमियम को गलत तरीके से मूल्यांकित करेगा।\n• विकल्प (b): गलत। MCLR एक बैंक ऋण दर बेंचमार्क है जो फ्लोटिंग-रेट ऋणों के लिए उपयोग होता है — यह बॉन्ड जारी करने के मूल्य निर्धारण के लिए जोखिम-मुक्त बेंचमार्क नहीं है।\n• विकल्प (c): सही। 10-वर्षीय सरकारी प्रतिभूति की उपज भारत के पूंजी बाजार मूल्य निर्धारण के लिए जोखिम-मुक्त दर के रूप में कार्य करती है। 15-वर्षीय अवसंरचना बॉन्ड जारीकर्ता इस बेंचमार्क पर क्रेडिट और तरलता जोखिम को दर्शाने के लिए क्रेडिट स्प्रेड जोड़ता है। यह मानक बाजार प्रथा है।\n• विकल्प (d): गलत। SDF दर LAF कॉरिडोर की फर्श पर एक ओवरनाइट अवशोषण दर है — यह लंबी अवधि के पूंजी बाजार मूल्य निर्धारण के लिए पूरी तरह अनुपयुक्त है।\n\nमूल्य संवर्धन:\n• सरकारी प्रतिभूति उपज वक्र (91-दिन के टी-बिल से 40-वर्षीय प्रतिभूतियों तक) बाजार प्रतिभागियों को किसी भी अवधि पर उपकरणों का मूल्य निर्धारण करने की अनुमति देता है।\n• समान परिपक्वता वाली सरकारी प्रतिभूतियों की तुलना में कॉर्पोरेट बॉन्ड स्प्रेड जारीकर्ता के क्रेडिट जोखिम प्रीमियम को दर्शाते हैं।\n• गृह ऋण दरें और FCNR जमा दरें भी 10-वर्षीय सरकारी प्रतिभूति की उपज से जुड़ी होती हैं, जो इसके अर्थव्यवस्था-व्यापी बेंचमार्क भूमिका को दर्शाता है।"
+    }
+  }
+]

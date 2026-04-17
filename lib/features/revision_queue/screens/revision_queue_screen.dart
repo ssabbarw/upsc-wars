@@ -192,15 +192,3 @@ class _Dots extends HookConsumerWidget {
   }
 }
 
-extension on SessionConfig {
-  SessionConfig copyWith({int? questionCount}) => SessionConfig(
-        subject: subject,
-        topic: topic,
-        subTopic: subTopic,
-        mode: mode,
-        questionCount: questionCount ?? this.questionCount,
-        isTimed: isTimed,
-        timeLimitSecs: timeLimitSecs,
-        language: language,
-      );
-}

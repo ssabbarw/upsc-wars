@@ -1,0 +1,1405 @@
+[
+  {
+    "uuid": "f3c0c800-f4d3-4fa8-ae02-e055737e9d63",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Basel Convention: Origin, Mandate and Legal Architecture",
+        "The Basel, Rotterdam and Stockholm (BRS) Conventions: Synergies and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "BRS Conventions — secretariat locations and negotiating bodies",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Convention / Arrangement) with List II (Relevant Feature) and select the correct answer from the codes given below:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Basel Convention — negotiating body",
+            "1. Jointly negotiated by FAO and UNEP"
+          ],
+          [
+            "B. Rotterdam Convention — negotiating body",
+            "2. Joint secretariat operational since 2010"
+          ],
+          [
+            "C. Stockholm Convention — primary focus",
+            "3. Negotiated under UNEP alone"
+          ],
+          [
+            "D. BRS Conventions administrative arrangement",
+            "4. Elimination and restriction of persistent organic pollutants"
+          ]
+        ],
+        "footer_text": "Which of the following correctly matches List I with List II?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-3, B-3, C-4, D-2\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-1, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places Rotterdam's negotiation under UNEP alone, ignoring FAO's co-sponsorship, which many students miss because they associate UNEP with all three conventions.",
+      "elimination_logic": [
+        "Basel was negotiated under UNEP alone — confirm A matches with 3 (UNEP only).",
+        "Rotterdam was negotiated jointly by FAO and UNEP — confirm B matches with 1 (FAO and UNEP jointly).",
+        "Stockholm was negotiated under UNEP alone — confirm C matches with 3; but since A already takes 3, look more carefully: Stockholm matches 4 (UNEP, focuses on POPs elimination).",
+        "The BRS joint secretariat has been operational since 2010 — D matches 2; select option (a) as the correct combination."
+      ],
+      "upsc_trap_explanation": "Students associate UNEP with all three conventions and miss FAO's role in Rotterdam. This entity-swap is the primary trap — attributing UNEP-only negotiation to Rotterdam when it was a FAO-UNEP joint effort.",
+      "final_explanation": "The BRS Conventions share administrative synergies but have distinct negotiating histories and mandates.\n\n• A–3: Basel was negotiated exclusively under UNEP's auspices. No other body was involved in the original negotiations.\n• B–1: Rotterdam Convention (1998) was negotiated jointly by FAO and UNEP — FAO's involvement reflects the convention's focus on pesticides in addition to industrial chemicals.\n• C–4: Stockholm Convention (2001) was negotiated under UNEP and targets POPs through elimination, restriction, and reduction measures.\n• D–2: The three conventions established a joint secretariat in 2010 to achieve administrative efficiencies — this is an administrative arrangement, not a legal merger.\n\nValue Addition:\n• All three BRS convention secretariats are located in Geneva (Basel and Stockholm) with Rotterdam also having a Rome presence due to FAO.\n• PCBs appear in both Stockholm (elimination target) and Basel (waste management of PCB-containing equipment).\n• The joint COP of BRS conventions (COP-15, 2022) was held in Geneva."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (कन्वेंशन / व्यवस्था) को सूची II (संबंधित विशेषता) से मिलाएं और नीचे दिए गए कोडों में से सही उत्तर चुनें:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. बासेल कन्वेंशन — वार्ता निकाय",
+            "1. संयुक्त रूप से FAO और UNEP द्वारा वार्ता की गई"
+          ],
+          [
+            "B. रॉटरडैम कन्वेंशन — वार्ता निकाय",
+            "2. संयुक्त सचिवालय 2010 से कार्यरत"
+          ],
+          [
+            "C. स्टॉकहोम कन्वेंशन — प्राथमिक फोकस",
+            "3. केवल UNEP के अंतर्गत वार्ता की गई"
+          ],
+          [
+            "D. BRS कन्वेंशनों की प्रशासनिक व्यवस्था",
+            "4. स्थायी कार्बनिक प्रदूषकों (POPs) का उन्मूलन और प्रतिबंध"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन सूची I को सूची II के साथ सही रूप से मिलाता है?\n\n(a) A-3, B-1, C-4, D-2\n(b) A-3, B-3, C-4, D-2\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-1, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) रॉटरडैम के वार्ता को केवल UNEP के अंतर्गत रखता है, FAO की सह-प्रायोजन को नजरअंदाज करता है, जिसे कई छात्र मिस कर देते हैं क्योंकि वे UNEP को तीनों कन्वेंशनों से जोड़ते हैं।",
+      "elimination_logic": [
+        "बासेल केवल UNEP के अंतर्गत वार्ता की गई — पुष्टि करें कि A मेल खाता है 3 (केवल UNEP)।",
+        "रॉटरडैम का संयुक्त रूप से FAO और UNEP द्वारा वार्ता की गई — पुष्टि करें कि B मेल खाता है 1 (FAO और UNEP संयुक्त)।",
+        "स्टॉकहोम केवल UNEP के अंतर्गत वार्ता की गई — पुष्टि करें कि C मेल खाता है 3; लेकिन चूंकि A पहले ही 3 ले चुका है, इसलिए ध्यान से देखें: स्टॉकहोम मेल खाता है 4 (UNEP, POPs उन्मूलन पर केंद्रित)।",
+        "BRS संयुक्त सचिवालय 2010 से कार्यरत है — D मेल खाता है 2; सही संयोजन के रूप में विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "छात्र UNEP को तीनों कन्वेंशनों से जोड़ते हैं और रॉटरडैम में FAO की भूमिका को मिस कर देते हैं। यह इकाई-स्वैप मुख्य जाल है — रॉटरडैम के लिए केवल UNEP वार्ता को मान लेना जबकि यह FAO-UNEP संयुक्त प्रयास था।",
+      "final_explanation": "BRS कन्वेंशनों में प्रशासनिक तालमेल है लेकिन वार्ता इतिहास और प्राधिकरण अलग-अलग हैं।\n\n• A–3: बासेल केवल UNEP के संरक्षण में वार्ता की गई। मूल वार्ता में कोई अन्य संस्था शामिल नहीं थी।\n• B–1: रॉटरडैम कन्वेंशन (1998) का संयुक्त रूप से FAO और UNEP द्वारा वार्ता की गई — FAO की भागीदारी की वजह कन्वेंशन का कीटनाशकों के साथ-साथ औद्योगिक रसायनों पर ध्यान है।\n• C–4: स्टॉकहोम कन्वेंशन (2001) UNEP के अंतर्गत वार्ता की गई और POPs के उन्मूलन, प्रतिबंध और कमी पर केंद्रित है।\n• D–2: तीनों कन्वेंशनों ने 2010 में एक संयुक्त सचिवालय स्थापित किया ताकि प्रशासनिक दक्षता प्राप्त हो — यह एक प्रशासनिक व्यवस्था है, कानूनी विलय नहीं।\n\nमूल्य संवर्धन:\n• तीनों BRS कन्वेंशन सचिवालय जिनेवा में स्थित हैं (बासेल और स्टॉकहोम) जबकि रॉटरडैम का रोम में भी FAO के कारण कार्यालय है।\n• PCB स्टॉकहोम (उन्मूलन लक्ष्य) और बासेल (PCB युक्त उपकरणों के अपशिष्ट प्रबंधन) दोनों में आते हैं।\n• BRS कन्वेंशनों की संयुक्त COP (COP-15, 2022) जिनेवा में हुई।"
+    }
+  },
+  {
+    "uuid": "f3338a93-c04e-4d53-862a-8d120ac58685",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Basel Protocol on Liability and Compensation"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Basel Protocol on Liability — adoption year and force status",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is the correct chronological order of key milestones in the Basel Convention's history?\n\n1. Basel Convention adopted\n2. Basel Convention entered into force\n3. Basel Ban Amendment adopted at COP-3\n4. Basel Protocol on Liability and Compensation adopted\n\n(a) 1 → 3 → 2 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 2 → 3 → 4\n(d) 2 → 1 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the Liability Protocol before the Ban Amendment's entry into force, which feels plausible because both are 'later developments,' but the Protocol was adopted in 1999 and has never entered into force.",
+      "elimination_logic": [
+        "Basel Convention adopted in 1989 — this must come first in any correct chronology.",
+        "Basel entered into force in 1992 — second milestone.",
+        "Basel Ban Amendment adopted at COP-3 in 1995 — third event.",
+        "Basel Liability Protocol adopted in 1999 — fourth, after the Ban Amendment adoption; select option (c)."
+      ],
+      "upsc_trap_explanation": "The four milestones span 1989–1999 and students often confuse the Ban Amendment's adoption (1995) with its entry into force (2019), disrupting the chronology. The Liability Protocol (1999) is also rarely studied, making its placement error-prone.",
+      "final_explanation": "This question tests knowledge of Basel's legislative history across four distinct milestones.\n\nCorrect chronological order: Basel Convention adopted (1989) → Basel entered into force (1992) → Basel Ban Amendment adopted at COP-3 (1995) → Basel Liability and Compensation Protocol adopted (1999).\n\n• Option (a) reverses Ban Amendment and entry into force — eliminated.\n• Option (b) places the Liability Protocol before the Ban Amendment adoption — incorrect; 1999 follows 1995.\n• Option (c): 1989 → 1992 → 1995 → 1999 — correct sequence.\n• Option (d) places entry into force before adoption — impossible.\n\nValue Addition:\n• The Basel Liability Protocol (1999) has NOT yet entered into force — it requires 20 ratifications but remains well below that threshold.\n• The Ban Amendment (1995 adoption) entered into force only in September 2019 — a 24-year gap.\n• Plastic Waste Amendment to Basel was adopted at COP-14 (2019) and entered into force on 1 January 2021."
+    },
+    "hi": {
+      "display_text": "Basel Convention के इतिहास में प्रमुख मील के पत्थरों का सही कालानुक्रमिक क्रम क्या है?\n\n1. Basel Convention अपनाया गया\n2. Basel Convention लागू हुआ\n3. Basel Ban Amendment COP-3 में अपनाया गया\n4. Basel Protocol on Liability and Compensation अपनाया गया\n\n(a) 1 → 3 → 2 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 2 → 3 → 4\n(d) 2 → 1 → 3 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में Liability Protocol को Ban Amendment के लागू होने से पहले रखा गया है, जो संभव लगता है क्योंकि दोनों 'बाद के विकास' हैं, लेकिन Protocol 1999 में अपनाया गया था और कभी लागू नहीं हुआ।",
+      "elimination_logic": [
+        "Basel Convention 1989 में अपनाया गया — यह किसी भी सही कालानुक्रम में सबसे पहले आना चाहिए।",
+        "Basel 1992 में लागू हुआ — दूसरा मील का पत्थर।",
+        "Basel Ban Amendment COP-3 में 1995 में अपनाया गया — तीसरा घटना।",
+        "Basel Liability Protocol 1999 में अपनाया गया — Ban Amendment के अपनाने के बाद चौथा; विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "चार मील के पत्थर 1989–1999 के बीच हैं और छात्र अक्सर Ban Amendment के अपनाने (1995) को इसके लागू होने (2019) से भ्रमित कर देते हैं, जिससे कालानुक्रम बाधित होता है। Liability Protocol (1999) भी कम पढ़ा जाता है, जिससे इसकी स्थिति में त्रुटि होती है।",
+      "final_explanation": "यह प्रश्न Basel के विधायी इतिहास के चार अलग-अलग मील के पत्थरों के ज्ञान का परीक्षण करता है।\n\nसही कालानुक्रमिक क्रम: Basel Convention अपनाया गया (1989) → Basel लागू हुआ (1992) → Basel Ban Amendment COP-3 में अपनाया गया (1995) → Basel Liability and Compensation Protocol अपनाया गया (1999)।\n\n• विकल्प (a) Ban Amendment और लागू होने को उलट देता है — अस्वीकार।\n• विकल्प (b) Liability Protocol को Ban Amendment के अपनाने से पहले रखता है — गलत; 1999, 1995 के बाद है।\n• विकल्प (c): 1989 → 1992 → 1995 → 1999 — सही क्रम।\n• विकल्प (d) लागू होने को अपनाने से पहले रखता है — असंभव।\n\nमूल्य संवर्धन:\n• Basel Liability Protocol (1999) अभी तक लागू नहीं हुआ है — इसे 20 अनुमोदनों की आवश्यकता है लेकिन यह संख्या बहुत कम है।\n• Ban Amendment (1995 अपनाने) केवल सितंबर 2019 में लागू हुआ — 24 साल का अंतराल।\n• Basel के प्लास्टिक वेस्ट संशोधन को COP-14 (2019) में अपनाया गया और 1 जनवरी 2021 को लागू किया गया।"
+    }
+  },
+  {
+    "uuid": "2a4477c7-04b5-43d0-80dd-ab0f6b44b860",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Environmentally Sound Management (ESM): Core Principle",
+        "Basel Ban Amendment (Amendment to Article 4A)"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "ESM vs. Basel Ban Amendment — not a ban if ESM guaranteed",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A developing country generates large quantities of hazardous industrial sludge and seeks to export it to another developing country that has a licensed hazardous waste treatment facility. The importing country's competent authority has given written consent, and the exporting state has verified that the receiving facility meets international standards for waste management. There is no bilateral agreement between the two countries that provides stricter standards than the Basel Convention.\n\nWhich of the following principles of the Basel Convention primarily determines whether this export is permissible?\n\n(a) The Basel Protocol on Liability and Compensation, which must be activated before any cross-border movement\n(b) The Basel Ban Amendment, which prohibits all hazardous waste exports between countries regardless of recycling or disposal purpose\n(c) The proximity principle, which mandates that hazardous waste must be disposed of within the territory of the generating state under all circumstances\n(d) The Environmentally Sound Management standard, which permits movement if the receiving facility can manage the waste in a manner protective of human health and environment",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because the Basel Ban Amendment does prohibit Annex VII to non-Annex VII exports, and a student who applies the Ban Amendment without checking whether the exporting country is in Annex VII will mark (b) confidently.",
+      "elimination_logic": [
+        "Identify the exporting country: a developing country (not in Annex VII) — the Basel Ban Amendment applies only to Annex VII (OECD+EU+Liechtenstein) to non-Annex VII exports, so it does not apply here.",
+        "The question therefore turns on ESM: can the waste be exported if ESM is guaranteed at the destination?",
+        "ESM is NOT a ban — it permits movement when the receiving facility can manage waste in a manner protecting human health and environment.",
+        "Option (d) correctly identifies ESM as the applicable standard: the export is permissible provided ESM can be guaranteed at the destination facility."
+      ],
+      "upsc_trap_explanation": "The scenario traps students who apply the Ban Amendment reflexively. Checking the Annex VII status of the exporting country is the decisive step — a developing country exporter is outside the Ban's scope, shifting the entire analysis to ESM.",
+      "final_explanation": "ESM is the Basel Convention's overarching principle governing all transboundary movements of hazardous waste, while the Ban Amendment adds an absolute restriction for a specific group of countries.\n\nThe scenario presents a developing country exporting hazardous industrial sludge to another developing country with a licensed treatment facility. The Basel Ban Amendment (Article 4A) prohibits exports only FROM Annex VII countries (OECD + EU + Liechtenstein) TO non-Annex VII countries. A developing-to-developing export is not covered by the Ban Amendment.\n\nFor movements outside the Ban Amendment's scope, ESM governs: the exporting state must ensure the receiving facility can manage the waste in a manner that protects human health and the environment. ESM is not an absolute prohibition — it is a performance standard.\n\n• Option (a): Incorrect — the Liability Protocol is about compensation for damage, not the permissibility of movement.\n• Option (b): Incorrect — the Ban Amendment applies to Annex VII exporters only.\n• Option (c): Incorrect — the proximity principle is an obligation to dispose near the source, not a prohibition on exports when ESM is met.\n• Option (d): Correct — ESM determines permissibility for this scenario.\n\nValue Addition:\n• ESM is defined as 'taking all practicable steps' to protect human health and environment during waste management.\n• Basel Technical Guidelines operationalize ESM for specific waste streams including e-waste and ship recycling.\n• Stockholm POPs Convention uses 'best available techniques' — a different and higher standard than ESM."
+    },
+    "hi": {
+      "display_text": "एक विकासशील देश बड़ी मात्रा में खतरनाक औद्योगिक स्लज उत्पन्न करता है और इसे एक अन्य विकासशील देश को निर्यात करना चाहता है जहाँ एक लाइसेंस प्राप्त खतरनाक कचरा उपचार सुविधा है। आयातक देश के सक्षम प्राधिकारी ने लिखित सहमति दी है, और निर्यातक राज्य ने सत्यापित किया है कि प्राप्त करने वाली सुविधा कचरा प्रबंधन के लिए अंतरराष्ट्रीय मानकों को पूरा करती है। दोनों देशों के बीच कोई द्विपक्षीय समझौता नहीं है जो Basel Convention से अधिक कड़े मानक प्रदान करता हो।\n\nBasel Convention के निम्नलिखित सिद्धांतों में से कौन-सा मुख्य रूप से निर्धारित करता है कि यह निर्यात अनुमत है या नहीं?\n\n(a) Basel Protocol on Liability and Compensation, जिसे किसी भी सीमापार आवाजाही से पहले सक्रिय किया जाना चाहिए\n(b) Basel Ban Amendment, जो सभी खतरनाक कचरा निर्यातों को देशों के बीच प्रतिबंधित करता है चाहे पुनर्चक्रण या निपटान का उद्देश्य कुछ भी हो\n(c) proximity principle, जो आदेश देता है कि खतरनाक कचरे को हर परिस्थिति में उत्पन्न करने वाले राज्य के क्षेत्र में ही निपटाया जाना चाहिए\n(d) Environmentally Sound Management मानक, जो तब आवाजाही की अनुमति देता है जब प्राप्त करने वाली सुविधा कचरे का ऐसा प्रबंधन कर सके जो मानव स्वास्थ्य और पर्यावरण की रक्षा करता हो",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि Basel Ban Amendment Annex VII से गैर-Annex VII निर्यातों पर प्रतिबंध लगाता है, और जो छात्र Ban Amendment को बिना यह जांचे लागू करते हैं कि निर्यातक देश Annex VII में है या नहीं, वे (b) को आत्मविश्वास से सही चिह्नित कर देंगे।",
+      "elimination_logic": [
+        "निर्यातक देश की पहचान करें: एक विकासशील देश (जो Annex VII में नहीं है) — Basel Ban Amendment केवल Annex VII (OECD+EU+Liechtenstein) से गैर-Annex VII निर्यातों पर लागू होता है, अतः यह यहाँ लागू नहीं होता।",
+        "इसलिए प्रश्न ESM पर केंद्रित हो जाता है: क्या गंतव्य पर ESM की गारंटी होने पर कचरे का निर्यात किया जा सकता है?",
+        "ESM प्रतिबंध नहीं है — यह तब अनुमति देता है जब प्राप्त करने वाली सुविधा मानव स्वास्थ्य और पर्यावरण की रक्षा करते हुए कचरे का प्रबंधन कर सके।",
+        "विकल्प (d) सही रूप से ESM को लागू मानक के रूप में पहचानता है: निर्यात तब अनुमत है जब गंतव्य सुविधा पर ESM की गारंटी दी जा सके।"
+      ],
+      "upsc_trap_explanation": "यह परिदृश्य उन छात्रों को फंसाता है जो Ban Amendment को स्वचालित रूप से लागू करते हैं। निर्यातक देश के Annex VII स्थिति की जांच निर्णायक कदम है — एक विकासशील देश निर्यातक Ban के दायरे से बाहर है, जिससे पूरी विश्लेषण ESM पर केंद्रित हो जाती है।",
+      "final_explanation": "ESM Basel Convention का वह व्यापक सिद्धांत है जो सभी सीमापार खतरनाक कचरे की आवाजाही को नियंत्रित करता है, जबकि Ban Amendment एक विशिष्ट समूह के देशों के लिए पूर्ण प्रतिबंध जोड़ता है।\n\nयह परिदृश्य एक विकासशील देश द्वारा दूसरे विकासशील देश को खतरनाक औद्योगिक स्लज निर्यात करने का है, जहाँ लाइसेंस प्राप्त उपचार सुविधा है। Basel Ban Amendment (Article 4A) केवल Annex VII देशों (OECD + EU + Liechtenstein) से गैर-Annex VII देशों को निर्यात पर प्रतिबंध लगाता है। विकासशील से विकासशील निर्यात Ban Amendment के दायरे में नहीं आता।\n\nBan Amendment के दायरे के बाहर की आवाजाही के लिए, ESM लागू होता है: निर्यातक राज्य को यह सुनिश्चित करना होता है कि प्राप्त करने वाली सुविधा कचरे का ऐसा प्रबंधन कर सके जो मानव स्वास्थ्य और पर्यावरण की रक्षा करे। ESM पूर्ण प्रतिबंध नहीं है — यह एक प्रदर्शन मानक है।\n\n• विकल्प (a): गलत — Liability Protocol क्षति के लिए मुआवजे के बारे में है, आवाजाही की अनुमति के बारे में नहीं।\n• विकल्प (b): गलत — Ban Amendment केवल Annex VII निर्यातकों पर लागू होता है।\n• विकल्प (c): गलत — proximity principle स्रोत के निकट निपटान का दायित्व है, ESM पूरा होने पर निर्यात पर प्रतिबंध नहीं।\n• विकल्प (d): सही — इस परिदृश्य में अनुमति ESM द्वारा निर्धारित होती है।\n\nमूल्यवर्धन:\n• ESM को परिभाषित किया गया है कि कचरा प्रबंधन के दौरान मानव स्वास्थ्य और पर्यावरण की रक्षा के लिए 'सभी व्यावहारिक कदम' उठाए जाएं।\n• Basel तकनीकी दिशानिर्देश विशिष्ट कचरा धाराओं जैसे ई-कचरा और जहाज पुनर्चक्रण के लिए ESM को लागू करते हैं।\n• Stockholm POPs Convention 'best available techniques' का उपयोग करता है — जो ESM से अलग और उच्च मानक है।"
+    }
+  },
+  {
+    "uuid": "1bfcf32b-4dea-4145-bc5f-d293224280ef",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "The Basel, Rotterdam and Stockholm (BRS) Conventions: Synergies and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "POPs regulation — Stockholm vs. Basel jurisdictional boundary",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the scope of the Basel and Stockholm Conventions:\n\nStatement 1: The Stockholm Convention on Persistent Organic Pollutants regulates the elimination, restriction, and reduction of POPs such as PCBs in their active use phase.\nStatement 2: The Basel Convention, through its provisions on persistent organic pollutants, provides the primary international framework for restricting the production of PCBs.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Stockholm Convention on Persistent Organic Pollutants regulates the elimination, restriction, and reduction of POPs such as PCBs in their active use phase.",
+          "verdict": "Correct",
+          "reason": "Stockholm Convention targets POPs through three mechanisms: elimination (Annex A), restriction (Annex B), and reduction of unintentional releases (Annex C) — covering active chemicals in use."
+        },
+        {
+          "statement": "The Basel Convention, through its provisions on persistent organic pollutants, provides the primary international framework for restricting the production of PCBs.",
+          "verdict": "Incorrect",
+          "reason": "Basel Convention does not restrict PCB production. Its role is confined to the management and transboundary movement of PCB-containing waste. Production restriction is exclusively under the Stockholm Convention."
+        }
+      ],
+      "strong_distractor": "a — Option (a) (both correct) tempts students who know both conventions address PCBs but do not distinguish between production restriction (Stockholm) and waste management (Basel).",
+      "elimination_logic": [
+        "Statement 1 tests Stockholm's mandate: it targets POPs in active use through elimination and restriction — this is correct.",
+        "Statement 2 claims Basel provides the primary framework for restricting PCB production — this is incorrect; Basel addresses PCB-containing waste, not production.",
+        "PCB production restrictions fall exclusively under the Stockholm Convention, not Basel.",
+        "Statement 1 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "The overlap between Stockholm and Basel on PCBs is a known trap area. Students recall that both conventions deal with PCBs and conflate their distinct roles, leading them to incorrectly validate Statement 2.",
+      "final_explanation": "PCBs illustrate the overlapping but distinct mandates of the BRS Conventions.\n\n• Statement 1 — Correct: Stockholm Convention targets POPs across their lifecycle — Annex A (elimination), Annex B (restriction), Annex C (unintentional releases). PCBs were among the original 'dirty dozen' POPs.\n• Statement 2 — Incorrect: Basel has no mandate over PCB production. Basel regulates the transboundary movement and disposal of PCB-containing wastes — equipment with PCBs that has become waste. Restricting production belongs exclusively to Stockholm.\n\nValue Addition:\n• PCBs are regulated under both conventions but at different lifecycle stages: use/production (Stockholm) and end-of-life waste management (Basel).\n• The GEF serves as financial mechanism for Stockholm but NOT for Basel — a frequent UPSC distinction.\n• Stockholm Convention was adopted in 2001, entered into force in 2004 — same year as Rotterdam Convention."
+    },
+    "hi": {
+      "display_text": "Basel और Stockholm कन्वेंशन्स के दायरे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: Persistent Organic Pollutants पर Stockholm Convention सक्रिय उपयोग चरण में PCBs जैसे POPs के उन्मूलन, प्रतिबंध और कमी को नियंत्रित करता है।\nकथन 2: Basel Convention, Persistent Organic Pollutants पर अपने प्रावधानों के माध्यम से, PCBs के उत्पादन को प्रतिबंधित करने के लिए प्राथमिक अंतरराष्ट्रीय ढांचा प्रदान करता है।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Persistent Organic Pollutants पर Stockholm Convention सक्रिय उपयोग चरण में PCBs जैसे POPs के उन्मूलन, प्रतिबंध और कमी को नियंत्रित करता है।",
+          "verdict": "सही है",
+          "reason": "Stockholm Convention POPs को तीन तंत्रों के माध्यम से लक्षित करता है: उन्मूलन (परिशिष्ट A), प्रतिबंध (परिशिष्ट B), और अनजाने में उत्सर्जन की कमी (परिशिष्ट C) — जो सक्रिय रसायनों को कवर करता है।"
+        },
+        {
+          "statement": "Basel Convention, Persistent Organic Pollutants पर अपने प्रावधानों के माध्यम से, PCBs के उत्पादन को प्रतिबंधित करने के लिए प्राथमिक अंतरराष्ट्रीय ढांचा प्रदान करता है।",
+          "verdict": "गलत है",
+          "reason": "Basel Convention PCB उत्पादन को प्रतिबंधित नहीं करता। इसका कार्य PCB युक्त अपशिष्ट के प्रबंधन और सीमा-पार आंदोलन तक सीमित है। उत्पादन प्रतिबंध केवल Stockholm Convention के अंतर्गत है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) (दोनों सही) उन छात्रों को भ्रमित करता है जो जानते हैं कि दोनों कन्वेंशन्स PCBs को संबोधित करते हैं लेकिन उत्पादन प्रतिबंध (Stockholm) और अपशिष्ट प्रबंधन (Basel) के बीच अंतर नहीं समझते।",
+      "elimination_logic": [
+        "कथन 1 Stockholm के दायित्व का परीक्षण करता है: यह सक्रिय उपयोग में POPs को उन्मूलन और प्रतिबंध के माध्यम से लक्षित करता है — यह सही है।",
+        "कथन 2 यह दावा करता है कि Basel PCB उत्पादन को प्रतिबंधित करने के लिए प्राथमिक ढांचा प्रदान करता है — यह गलत है; Basel PCB युक्त अपशिष्ट को संबोधित करता है, उत्पादन को नहीं।",
+        "PCB उत्पादन प्रतिबंध केवल Stockholm Convention के अंतर्गत आता है, Basel के अंतर्गत नहीं।",
+        "कथन 1 सही, कथन 2 गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "PCBs पर Stockholm और Basel के बीच ओवरलैप एक जाना-पहचाना जाल क्षेत्र है। छात्र याद करते हैं कि दोनों कन्वेंशन्स PCBs से संबंधित हैं और उनके अलग-अलग कार्यों को मिलाकर कथन 2 को गलत तरीके से सही मान लेते हैं।",
+      "final_explanation": "PCBs BRS कन्वेंशन्स के ओवरलैपिंग लेकिन भिन्न दायित्वों का उदाहरण हैं।\n\n• कथन 1 — सही: Stockholm Convention POPs को उनके जीवनचक्र में लक्षित करता है — परिशिष्ट A (उन्मूलन), परिशिष्ट B (प्रतिबंध), परिशिष्ट C (अनजाने उत्सर्जन)। PCBs मूल 'डर्टी डजन' POPs में से थे।\n• कथन 2 — गलत: Basel का PCB उत्पादन पर कोई दायित्व नहीं है। Basel PCB युक्त अपशिष्ट के सीमा-पार आंदोलन और निपटान को नियंत्रित करता है — PCB युक्त उपकरण जो अपशिष्ट बन चुके हैं। उत्पादन प्रतिबंध केवल Stockholm के अंतर्गत है।\n\nमूल्य संवर्धन:\n• PCBs दोनों कन्वेंशन्स के तहत नियंत्रित हैं लेकिन अलग-अलग जीवनचक्र चरणों में: उपयोग/उत्पादन (Stockholm) और अंत-जीवन अपशिष्ट प्रबंधन (Basel)।\n• GEF वित्तीय तंत्र के रूप में Stockholm के लिए कार्य करता है लेकिन Basel के लिए नहीं — UPSC में एक सामान्य भेद।\n• Stockholm Convention 2001 में अपनाया गया, 2004 में लागू हुआ — वही वर्ष जब Rotterdam Convention लागू हुआ।"
+    }
+  },
+  {
+    "uuid": "75c2de08-aee7-4da1-8c38-a9d8257ab8f5",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Annex Structure of Basel Convention: Annexes I–IX"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Annex VIII vs. Annex IX — presumed hazardous vs. not covered",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the Basel Convention's annex structure, wastes that are presumed to be hazardous and therefore subject to full Basel Convention controls — including Prior Informed Consent — are listed in ________.\n\n(a) Annex I (List A), covering all categories of waste requiring international controls\n(b) Annex VIII (List A), which designates wastes presumed to be hazardous\n(c) Annex IX (List B), which identifies wastes not covered unless contaminated with Annex I materials\n(d) Annex IV (R-list), which specifies recovery operations for recyclable hazardous materials",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) (Annex IX, List B) is the strong distractor because students confuse the two lists: Annex IX contains wastes NOT presumed hazardous, while Annex VIII contains wastes that ARE presumed hazardous requiring full Basel controls.",
+      "elimination_logic": [
+        "The question asks which annex lists wastes presumed hazardous and therefore subject to full Basel controls.",
+        "Annex VIII (List A) contains wastes that are presumed hazardous — full controls apply.",
+        "Annex IX (List B) contains wastes NOT covered by Basel unless they are contaminated — the reverse.",
+        "Option (b) correctly identifies Annex VIII (List A) as the 'presumed hazardous' list."
+      ],
+      "upsc_trap_explanation": "Annex VIII (presumed hazardous) and Annex IX (not covered unless contaminated) are reverse-image lists. Confusing them leads to the opposite conclusion about whether a waste is subject to full Basel controls — a high-stakes error in both exam and practice.",
+      "final_explanation": "Basel's later annexes (added after 1995) create a nuanced classification system.\n\n• Option (a) — Annex I, List A: Annex I contains categories of waste — it does not use the 'List A/B' designation; incorrect.\n• Option (b) — Annex VIII, List A: Correct. Annex VIII contains wastes presumed to be hazardous, requiring full Basel controls including PIC.\n• Option (c) — Annex IX, List B: Annex IX is the reverse — wastes listed here are NOT subject to Basel controls unless contaminated with Annex I materials above defined thresholds.\n• Option (d) — Annex IV, R-list: Annex IV contains disposal (D-list) and recovery (R-list) operations — not a classification of wastes themselves.\n\nValue Addition:\n• Annex VIII and IX were added by amendment to resolve ambiguity about specific materials.\n• The R-list (Annex IV recovery operations) is key to determining if a movement is for 'recycling' — relevant to the Ban Amendment debate.\n• Amendment to Basel annexes requires COP decision plus ratification — not automatically binding."
+    },
+    "hi": {
+      "display_text": "बेसल कन्वेंशन की परिशिष्ट संरचना के तहत, वे अपशिष्ट जिन्हें संभावित खतरनाक माना जाता है और इसलिए पूर्ण बेसल कन्वेंशन नियंत्रणों — जिसमें पूर्व सूचित सहमति भी शामिल है — के अधीन हैं, वे ________ में सूचीबद्ध हैं।\n\n(a) परिशिष्ट I (सूची A), जो सभी अपशिष्ट श्रेणियों को कवर करता है जिन्हें अंतरराष्ट्रीय नियंत्रण की आवश्यकता है\n(b) परिशिष्ट VIII (सूची A), जो संभावित खतरनाक अपशिष्टों को निर्दिष्ट करता है\n(c) परिशिष्ट IX (सूची B), जो उन अपशिष्टों की पहचान करता है जो तब तक शामिल नहीं होते जब तक कि वे परिशिष्ट I की सामग्री से दूषित न हों\n(d) परिशिष्ट IV (R-सूची), जो पुनर्चक्रण योग्य खतरनाक सामग्री के लिए पुनर्प्राप्ति संचालन निर्दिष्ट करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) (परिशिष्ट IX, सूची B) मजबूत भ्रमित करने वाला है क्योंकि छात्र दोनों सूचियों को भ्रमित करते हैं: परिशिष्ट IX में वे अपशिष्ट होते हैं जिन्हें संभावित खतरनाक नहीं माना जाता, जबकि परिशिष्ट VIII में वे अपशिष्ट होते हैं जिन्हें संभावित खतरनाक माना जाता है और जिन पर पूर्ण बेसल नियंत्रण लागू होते हैं।",
+      "elimination_logic": [
+        "प्रश्न पूछता है कि कौन सा परिशिष्ट उन अपशिष्टों की सूची देता है जिन्हें संभावित खतरनाक माना जाता है और इसलिए पूर्ण बेसल नियंत्रण के अधीन हैं।",
+        "परिशिष्ट VIII (सूची A) में वे अपशिष्ट शामिल हैं जिन्हें संभावित खतरनाक माना जाता है — पूर्ण नियंत्रण लागू होते हैं।",
+        "परिशिष्ट IX (सूची B) में वे अपशिष्ट शामिल हैं जो बेसल के तहत शामिल नहीं हैं जब तक कि वे दूषित न हों — इसका उल्टा।",
+        "विकल्प (b) सही रूप से परिशिष्ट VIII (सूची A) को 'संभावित खतरनाक' सूची के रूप में पहचानता है।"
+      ],
+      "upsc_trap_explanation": "परिशिष्ट VIII (संभावित खतरनाक) और परिशिष्ट IX (शामिल नहीं जब तक दूषित न हों) उलट छवि वाली सूचियाँ हैं। इन्हें भ्रमित करने से यह गलत निष्कर्ष निकलता है कि कोई अपशिष्ट पूर्ण बेसल नियंत्रण के अधीन है या नहीं — यह परीक्षा और अभ्यास दोनों में एक गंभीर त्रुटि है।",
+      "final_explanation": "बेसल के बाद के परिशिष्ट (1995 के बाद जोड़े गए) एक सूक्ष्म वर्गीकरण प्रणाली बनाते हैं।\n\n• विकल्प (a) — परिशिष्ट I, सूची A: परिशिष्ट I में अपशिष्ट की श्रेणियाँ हैं — यह 'सूची A/B' पदनाम का उपयोग नहीं करता; गलत।\n• विकल्प (b) — परिशिष्ट VIII, सूची A: सही। परिशिष्ट VIII में वे अपशिष्ट शामिल हैं जिन्हें संभावित खतरनाक माना जाता है, जिन पर पूर्ण बेसल नियंत्रण लागू होते हैं, जिसमें पूर्व सूचित सहमति (PIC) भी शामिल है।\n• विकल्प (c) — परिशिष्ट IX, सूची B: परिशिष्ट IX इसका उल्टा है — यहाँ सूचीबद्ध अपशिष्ट बेसल नियंत्रण के अधीन नहीं हैं जब तक कि वे परिशिष्ट I की सामग्री से परिभाषित सीमा से अधिक दूषित न हों।\n• विकल्प (d) — परिशिष्ट IV, R-सूची: परिशिष्ट IV में निपटान (D-सूची) और पुनर्प्राप्ति (R-सूची) संचालन शामिल हैं — यह स्वयं अपशिष्टों का वर्गीकरण नहीं है।\n\nमूल्य संवर्धन:\n• परिशिष्ट VIII और IX को संशोधन द्वारा जोड़ा गया था ताकि विशिष्ट सामग्री के बारे में अस्पष्टता दूर हो सके।\n• R-सूची (परिशिष्ट IV पुनर्प्राप्ति संचालन) यह निर्धारित करने में महत्वपूर्ण है कि कोई आंदोलन 'पुनर्चक्रण' के लिए है या नहीं — जो बैन संशोधन बहस से संबंधित है।\n• बेसल परिशिष्टों में संशोधन के लिए COP निर्णय और अनुमोदन आवश्यक है — यह स्वचालित रूप से बाध्यकारी नहीं होता।"
+    }
+  },
+  {
+    "uuid": "3f1b5239-0da6-48c2-bb90-9b4c16792199",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "India and the Basel Convention: Ratification and Domestic Implementation",
+        "Ship Recycling and the Hong Kong Convention: Overlap with Basel"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "India Basel ratification year and ship-breaking Supreme Court case",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) India's ratification of Basel Convention: 1992 — and — Supreme Court case directing Basel compliance for ship-breaking: Research Foundation for Science v. Union of India\n(b) India's primary Basel implementation rule: Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2014\n(c) Landmark judicial direction on ship-breaking at Alang: National Green Tribunal order in a suo motu case\n(d) India's position on Basel Ban Amendment: Ratified, being an OECD member state with recycling obligations",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) attributes the ship-breaking Supreme Court case to the National Green Tribunal, which sounds plausible given NGT's environmental jurisdiction, but the landmark case was decided by the Supreme Court, not the NGT.",
+      "elimination_logic": [
+        "Option (a): India ratified Basel in 1992 and the landmark ship-breaking case is Research Foundation for Science v. Union of India — verify both facts as correct.",
+        "Option (b): India's domestic Basel implementation rule is the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 — not 2014; temporal-swap trap.",
+        "Option (c): The ship-breaking case was a Supreme Court decision, not an NGT order — entity-swap trap.",
+        "Option (d): India has NOT ratified the Basel Ban Amendment — the pair is incorrect.",
+        "Option (a) is the only correctly matched pair."
+      ],
+      "upsc_trap_explanation": "The NGT vs. Supreme Court confusion (option c) is the primary trap. Students aware of NGT's environmental mandate may attribute the ship-breaking judgment to it without recalling that the case predates NGT's existence.",
+      "final_explanation": "India's relationship with the Basel Convention spans treaty ratification, domestic legislation, and landmark judicial decisions.\n\n• Option (a) — Correct: India ratified the Basel Convention in 1992 and the Supreme Court's Research Foundation for Science v. Union of India case directed the government to implement Basel obligations for ship-breaking at Alang.\n• Option (b) — Incorrect: India's primary Basel implementation legislation is the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 (not 2014).\n• Option (c) — Incorrect: The ship-breaking case was decided by the Supreme Court of India, not the National Green Tribunal. NGT was established only in 2010.\n• Option (d) — Incorrect: India has NOT ratified the Basel Ban Amendment as of the current knowledge period, reflecting its strategic position as a major recycling economy.\n\nValue Addition:\n• Alang in Gujarat is the world's largest ship-breaking yard by tonnage.\n• India's competent authority under Basel is MoEFCC, with CPCB handling technical matters.\n• EPR (Extended Producer Responsibility) is the key mechanism in India's E-Waste Management Rules 2016/2022."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) भारत द्वारा बेसल कन्वेंशन की अनुमोदना: 1992 — और — सुप्रीम कोर्ट का वह मामला जो जहाज तोड़ने के लिए बेसल अनुपालन निर्देशित करता है: Research Foundation for Science v. Union of India\n(b) भारत का मुख्य बेसल कार्यान्वयन नियम: Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2014\n(c) अलंग में जहाज तोड़ने पर महत्वपूर्ण न्यायिक निर्देश: राष्ट्रीय हरित अधिकरण का suo motu आदेश\n(d) बेसल बैन संशोधन पर भारत की स्थिति: अनुमोदित, क्योंकि यह OECD सदस्य राज्य है और पुनर्चक्रण दायित्व रखता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) में जहाज तोड़ने के सुप्रीम कोर्ट मामले को राष्ट्रीय हरित अधिकरण से जोड़ा गया है, जो एनजीटी के पर्यावरणीय अधिकार क्षेत्र को देखते हुए संभावित लगता है, लेकिन यह महत्वपूर्ण मामला सुप्रीम कोर्ट ने निपटाया था, न कि एनजीटी ने।",
+      "elimination_logic": [
+        "विकल्प (a): भारत ने 1992 में बेसल कन्वेंशन को अनुमोदित किया और महत्वपूर्ण जहाज तोड़ने का मामला Research Foundation for Science v. Union of India है — दोनों तथ्यों को सही मानें।",
+        "विकल्प (b): भारत का घरेलू बेसल कार्यान्वयन नियम Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 है — 2014 नहीं; यह समय संबंधी भ्रम है।",
+        "विकल्प (c): जहाज तोड़ने का मामला सुप्रीम कोर्ट का निर्णय था, न कि एनजीटी का आदेश — यह संस्था भ्रम है।",
+        "विकल्प (d): भारत ने बेसल बैन संशोधन को अनुमोदित नहीं किया है — यह जोड़ी गलत है।",
+        "विकल्प (a) ही सही मेल खाती जोड़ी है।"
+      ],
+      "upsc_trap_explanation": "एनजीटी और सुप्रीम कोर्ट के बीच भ्रम (विकल्प c) मुख्य जाल है। एनजीटी के पर्यावरणीय अधिकार क्षेत्र से परिचित छात्र जहाज तोड़ने के फैसले को एनजीटी से जोड़ सकते हैं, जबकि यह मामला एनजीटी के अस्तित्व से पहले का है।",
+      "final_explanation": "भारत का बेसल कन्वेंशन के साथ संबंध संधि अनुमोदन, घरेलू कानून और महत्वपूर्ण न्यायिक निर्णयों तक फैला है।\n\n• विकल्प (a) — सही: भारत ने 1992 में बेसल कन्वेंशन को अनुमोदित किया और सुप्रीम कोर्ट के Research Foundation for Science v. Union of India मामले ने सरकार को अलंग में जहाज तोड़ने के लिए बेसल दायित्वों को लागू करने का निर्देश दिया।\n• विकल्प (b) — गलत: भारत का मुख्य बेसल कार्यान्वयन कानून Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 है (2014 नहीं)।\n• विकल्प (c) — गलत: जहाज तोड़ने का मामला भारत के सुप्रीम कोर्ट ने निपटाया था, न कि राष्ट्रीय हरित अधिकरण ने। एनजीटी की स्थापना केवल 2010 में हुई थी।\n• विकल्प (d) — गलत: वर्तमान ज्ञान अवधि तक भारत ने बेसल बैन संशोधन को अनुमोदित नहीं किया है, जो इसके प्रमुख पुनर्चक्रण अर्थव्यवस्था के रूप में रणनीतिक स्थिति को दर्शाता है।\n\nमूल्यवर्धन:\n• गुजरात का अलंग विश्व का सबसे बड़ा जहाज तोड़ने का यार्ड है।\n• भारत में बेसल के तहत सक्षम प्राधिकरण MoEFCC है, जबकि तकनीकी मामलों के लिए CPCB जिम्मेदार है।\n• EPR (Extended Producer Responsibility) भारत के ई-कचरा प्रबंधन नियम 2016/2022 में मुख्य तंत्र है।"
+    }
+  },
+  {
+    "uuid": "44067f6f-839c-40f0-89de-de6e5ee6bae6",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Plastic Waste Amendment to Basel Convention (2019)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Plastic Waste Amendment — entry into force date 2021",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The amendment to the Basel Convention requiring Prior Informed Consent for transboundary movements of contaminated, mixed, or non-recyclable plastic waste entered into force on which of the following dates?\n\n(a) 2018\n(b) 2019\n(c) 1 January 2021\n(d) 2022",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) (2019) is the strong distractor because students correctly recall that the Plastic Waste Amendment was adopted at COP-14 in 2019 and confuse adoption with entry into force.",
+      "elimination_logic": [
+        "The Plastic Waste Amendment was adopted at COP-14 in 2019 — this is the adoption year, not entry into force.",
+        "Entry into force occurred on 1 January 2021 — after the required 90-day notice period post-threshold ratification.",
+        "Eliminate option (b) (2019): adoption year, not entry into force.",
+        "Select option (c): 1 January 2021 — the correct entry-into-force date."
+      ],
+      "upsc_trap_explanation": "The 2019 (adoption at COP-14) vs. 2021 (entry into force) confusion is identical in structure to the Basel Convention's own 1989 vs. 1992 trap — applied to this more recent amendment. COP-14's prominence makes 2019 feel like the complete answer.",
+      "final_explanation": "The Plastic Waste Amendment to the Basel Convention was a landmark development, particularly following China's 2018 National Sword policy that banned plastic waste imports.\n\n• Option (a) — 2018: The year of China's National Sword policy, which triggered the Basel amendment process — not the entry-into-force date.\n• Option (b) — 2019: The year COP-14 adopted the amendment — adoption, not entry into force.\n• Option (c) — 1 January 2021: Correct. The Plastic Waste Amendment entered into force on this date.\n• Option (d) — 2022: The year India amended its Plastic Waste Management Rules — unrelated to the amendment's entry into force.\n\nValue Addition:\n• The amendment requires PIC for export of contaminated, mixed, or non-recyclable plastic waste — clean sorted plastic scrap remains in Annex IX (less regulated).\n• China's National Sword policy (2018) banned 24 categories of solid waste imports, disrupting global recycling chains.\n• India's domestic response includes Plastic Waste Management Rules 2016 (amended 2022) with EPR provisions."
+    },
+    "hi": {
+      "display_text": "बेसल कन्वेंशन के संशोधन के तहत दूषित, मिश्रित या पुनर्चक्रण योग्य न होने वाले प्लास्टिक कचरे के सीमा-पार परिवहन के लिए पूर्व सूचित सहमति (Prior Informed Consent) की आवश्यकता कब से प्रभावी हुई?\n\n(a) 2018\n(b) 2019\n(c) 1 जनवरी 2021\n(d) 2022",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) (2019) मुख्य भ्रम है क्योंकि छात्र सही रूप से याद करते हैं कि प्लास्टिक वेस्ट संशोधन COP-14 में 2019 में अपनाया गया था और इसे प्रभावी होने की तिथि के साथ भ्रमित करते हैं।",
+      "elimination_logic": [
+        "प्लास्टिक वेस्ट संशोधन COP-14 में 2019 में अपनाया गया था — यह अपनाने का वर्ष है, प्रभावी होने का नहीं।",
+        "प्रभावी होने की तिथि 1 जनवरी 2021 है — आवश्यक 90-दिन की सूचना अवधि के बाद।",
+        "विकल्प (b) (2019) को हटा दें: यह अपनाने का वर्ष है, प्रभावी होने का नहीं।",
+        "विकल्प (c) चुनें: 1 जनवरी 2021 — सही प्रभावी होने की तिथि।"
+      ],
+      "upsc_trap_explanation": "2019 (COP-14 में अपनाना) और 2021 (प्रभावी होने की तिथि) का भ्रम बिलकुल उसी प्रकार है जैसे बेसल कन्वेंशन के 1989 और 1992 के भ्रम में होता है — यह हालिया संशोधन पर लागू होता है। COP-14 की प्रमुखता 2019 को पूर्ण उत्तर जैसा महसूस कराती है।",
+      "final_explanation": "बेसल कन्वेंशन के प्लास्टिक वेस्ट संशोधन का एक महत्वपूर्ण विकास था, विशेषकर चीन के 2018 के नेशनल स्वॉर्ड नीति के बाद जिसने प्लास्टिक कचरे के आयात पर प्रतिबंध लगाया।\n\n• विकल्प (a) — 2018: चीन की नेशनल स्वॉर्ड नीति का वर्ष, जिसने बेसल संशोधन प्रक्रिया शुरू की — प्रभावी होने की तिथि नहीं।\n• विकल्प (b) — 2019: COP-14 में संशोधन को अपनाने का वर्ष — अपनाना है, प्रभावी होना नहीं।\n• विकल्प (c) — 1 जनवरी 2021: सही। प्लास्टिक वेस्ट संशोधन इस तिथि से प्रभावी हुआ।\n• विकल्प (d) — 2022: भारत ने प्लास्टिक वेस्ट प्रबंधन नियमों में संशोधन किया — संशोधन के प्रभावी होने से संबंधित नहीं।\n\nमूल्यवर्धन:\n• संशोधन दूषित, मिश्रित या पुनर्चक्रण योग्य न होने वाले प्लास्टिक कचरे के निर्यात के लिए पूर्व सूचित सहमति (PIC) की आवश्यकता रखता है — साफ़ छांटा हुआ प्लास्टिक स्क्रैप Annex IX में रहता है (कम विनियमित)।\n• चीन की नेशनल स्वॉर्ड नीति (2018) ने 24 श्रेणियों के ठोस कचरे के आयात पर प्रतिबंध लगाया, जिससे वैश्विक पुनर्चक्रण श्रृंखलाएं बाधित हुईं।\n• भारत की घरेलू प्रतिक्रिया में प्लास्टिक वेस्ट प्रबंधन नियम 2016 (संशोधित 2022) शामिल हैं जिनमें EPR प्रावधान हैं।"
+    }
+  },
+  {
+    "uuid": "45edb2f2-7ecf-4d26-9aa9-560a8326ae0b",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Conference of Parties (COP) to Basel Convention: Decision-Making",
+        "Plastic Waste Amendment to Basel Convention (2019)"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "COP decisions — binding vs. recommendatory; annex amendments ratification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Conference of Parties (COP) to the Basel Convention and its decisions:\n\n1. Decisions adopted by the Conference of Parties to the Basel Convention are automatically binding on all parties, including amendments to the Convention's annexes.\n2. The Basel Convention's Conference of Parties meets annually to review implementation progress and adopt binding decisions on waste management standards.\n3. The Plastic Waste Amendment adopted at COP-14 (2019) added plastic waste to Annex II of the Basel Convention and created an exemption in Annex IX for clean, uncontaminated plastic scrap.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Decisions adopted by the Conference of Parties to the Basel Convention are automatically binding on all parties, including amendments to the Convention's annexes.",
+          "verdict": "Incorrect",
+          "reason": "COP decisions are binding on parties, but amendments to the annexes require a separate ratification process by parties before entering into force — they are not automatically binding upon COP adoption."
+        },
+        {
+          "statement": "The Basel Convention's Conference of Parties meets annually to review implementation progress and adopt binding decisions on waste management standards.",
+          "verdict": "Incorrect",
+          "reason": "The Basel COP meets every two years (biennially), not annually. Its decisions require consensus, failing which a two-thirds majority of parties present and voting is needed."
+        },
+        {
+          "statement": "The Plastic Waste Amendment adopted at COP-14 (2019) added plastic waste to Annex II of the Basel Convention and created an exemption in Annex IX for clean, uncontaminated plastic scrap.",
+          "verdict": "Correct",
+          "reason": "This is the precise content of the COP-14 amendment — contaminated/mixed plastics added to Annex II requiring PIC, while clean recyclable plastic scrap was placed in Annex IX (less regulated)."
+        }
+      ],
+      "strong_distractor": "a — Option (a) (1 only) tempts students who catch the annex-ratification error in Statement 1 but incorrectly assume Statement 2's 'annual' meeting is a minor inaccuracy rather than a factually wrong claim.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Annex amendments require ratification by parties — COP adoption alone does not make them binding. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: COP meets biennially (every two years), not annually — Statement 2 is also NOT correct.",
+        "Evaluate Statement 3: COP-14 plastic waste details (Annex II + Annex IX exemption) are factually accurate — Statement 3 IS correct.",
+        "Statements 1 and 2 are both NOT correct — select option (b): 1 and 2."
+      ],
+      "upsc_trap_explanation": "Statement 2 contains a subtle frequency error ('annual' vs. 'biennial') that students overlook when focusing on the more complex Statement 1. Both contain errors, making option (b) the correct answer to this 'NOT correct' question.",
+      "final_explanation": "Basel COP's procedural rules and the distinction between decisions and annex amendments are important examination dimensions.\n\n• Statement 1 — Incorrect: COP decisions on procedures and guidelines are binding, but amendments to annexes require separate ratification by parties to enter into force — a crucial distinction missed in the statement's absolute phrasing.\n• Statement 2 — Incorrect: The Basel COP meets every two years (biennially), not annually. Decision-making follows consensus; failing consensus, a two-thirds majority suffices.\n• Statement 3 — Correct: COP-14 (2019) amendments precisely introduced contaminated/mixed plastic to Annex II (requiring PIC) while placing clean sorted plastic scrap in Annex IX under entry B3011 (less regulated).\n\nValue Addition:\n• COP-15 (2022) in Geneva was the first joint COP of all three BRS conventions.\n• The BRS joint COP system uses 'COPs MOP' terminology where conventions have both COP and Meeting of Parties components.\n• China's 2018 National Sword policy was the direct trigger for the COP-14 plastic waste amendment."
+    },
+    "hi": {
+      "display_text": "बेसल कन्वेंशन के Conference of Parties (COP) और उसके निर्णयों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. बेसल कन्वेंशन के Conference of Parties द्वारा अपनाए गए निर्णय सभी पक्षों पर स्वतः बाध्यकारी होते हैं, जिनमें कन्वेंशन के परिशिष्टों में संशोधन भी शामिल हैं।\n2. बेसल कन्वेंशन का Conference of Parties वार्षिक रूप से मिलता है ताकि कार्यान्वयन प्रगति की समीक्षा की जा सके और कचरा प्रबंधन मानकों पर बाध्यकारी निर्णय लिए जा सकें।\n3. COP-14 (2019) में अपनाया गया प्लास्टिक कचरा संशोधन बेसल कन्वेंशन के Annex II में प्लास्टिक कचरे को जोड़ा और Annex IX में साफ़, संदूषण रहित प्लास्टिक स्क्रैप के लिए छूट बनाई।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Decisions adopted by the Conference of Parties to the Basel Convention are automatically binding on all parties, including amendments to the Convention's annexes.",
+          "verdict": "गलत",
+          "reason": "COP के निर्णय पक्षों पर बाध्यकारी होते हैं, लेकिन संधि के परिशिष्टों में संशोधन लागू होने से पहले पक्षों द्वारा अलग से अनुमोदन प्रक्रिया आवश्यक होती है — वे COP के अंगीकरण पर स्वतः बाध्यकारी नहीं होते।"
+        },
+        {
+          "statement": "The Basel Convention's Conference of Parties meets annually to review implementation progress and adopt binding decisions on waste management standards.",
+          "verdict": "गलत",
+          "reason": "बेसल COP हर साल नहीं, बल्कि हर दो साल (द्विवार्षिक) मिलती है। इसके निर्णयों के लिए सर्वसम्मति आवश्यक होती है; यदि सर्वसम्मति नहीं होती तो उपस्थित और मतदान करने वाले पक्षों के दो-तिहाई बहुमत की आवश्यकता होती है।"
+        },
+        {
+          "statement": "The Plastic Waste Amendment adopted at COP-14 (2019) added plastic waste to Annex II of the Basel Convention and created an exemption in Annex IX for clean, uncontaminated plastic scrap.",
+          "verdict": "सही",
+          "reason": "यह COP-14 संशोधन की सटीक सामग्री है — संदूषित/मिश्रित प्लास्टिक को Annex II में जोड़ा गया है, जिसके लिए PIC आवश्यक है, जबकि साफ-सुथरे पुनर्नवीनीकरण प्लास्टिक स्क्रैप को Annex IX (कम विनियमित) में रखा गया।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) (केवल 1) उन छात्रों को आकर्षित करता है जो कथन 1 में परिशिष्ट अनुमोदन त्रुटि पकड़ लेते हैं लेकिन कथन 2 के 'वार्षिक' बैठक को मामूली त्रुटि समझते हैं बजाय इसके कि वह तथ्यात्मक रूप से गलत दावा है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: परिशिष्ट संशोधनों के लिए पक्षों द्वारा अनुमोदन आवश्यक है — केवल COP के अंगीकरण से वे बाध्यकारी नहीं होते। अतः कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: COP द्विवार्षिक (हर दो वर्ष) मिलती है, वार्षिक नहीं — अतः कथन 2 भी सही नहीं है।",
+        "कथन 3 का मूल्यांकन करें: COP-14 के प्लास्टिक कचरे के विवरण (Annex II + Annex IX छूट) तथ्यात्मक रूप से सही हैं — अतः कथन 3 सही है।",
+        "कथन 1 और 2 दोनों सही नहीं हैं — विकल्प (b) चुनें: 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में एक सूक्ष्म आवृत्ति त्रुटि ('वार्षिक' बनाम 'द्विवार्षिक') है जिसे छात्र कथन 1 की जटिलता पर ध्यान केंद्रित करते समय अनदेखा कर देते हैं। दोनों में त्रुटियां हैं, इसलिए इस 'सही नहीं है' प्रश्न का सही उत्तर विकल्प (b) है।",
+      "final_explanation": "बेसल COP के प्रक्रियात्मक नियम और निर्णयों तथा परिशिष्ट संशोधनों के बीच अंतर परीक्षा के महत्वपूर्ण आयाम हैं।\n\n• कथन 1 — गलत: COP के प्रक्रियाओं और दिशानिर्देशों पर निर्णय बाध्यकारी होते हैं, लेकिन परिशिष्ट संशोधनों के लिए पक्षों द्वारा अलग अनुमोदन आवश्यक होता है ताकि वे लागू हों — यह महत्वपूर्ण भेद कथन की पूर्णता में छूट गया है।\n• कथन 2 — गलत: बेसल COP हर दो वर्ष (द्विवार्षिक) मिलती है, वार्षिक नहीं। निर्णय सर्वसम्मति से होते हैं; यदि सर्वसम्मति न हो तो दो-तिहाई बहुमत पर्याप्त होता है।\n• कथन 3 — सही: COP-14 (2019) संशोधनों ने संदूषित/मिश्रित प्लास्टिक को Annex II में (PIC आवश्यक) जोड़ा जबकि साफ़ छांटा हुआ प्लास्टिक स्क्रैप Annex IX के B3011 प्रविष्टि में रखा (कम विनियमित)।\n\nमूल्यवर्धन:\n• COP-15 (2022) जिनेवा में तीन BRS संधियों की पहली संयुक्त COP थी।\n• BRS संयुक्त COP प्रणाली 'COPs MOP' शब्दावली का उपयोग करती है जहाँ संधियों में COP और Meeting of Parties दोनों घटक होते हैं।\n• चीन की 2018 की National Sword नीति COP-14 प्लास्टिक कचरे के संशोधन के लिए प्रत्यक्ष प्रेरक थी।"
+    }
+  },
+  {
+    "uuid": "61b1472e-4ec8-45de-8741-7040f5fe981b",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Compliance Mechanism and Enforcement under Basel Convention"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Basel Compliance Committee — non-punitive nature vs. ICJ dispute settlement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Compliance Committee established under the Basel Convention operates on a non-confrontational and assistance-oriented basis and serves as the primary operative mechanism for reviewing compliance by parties.\n\nReason (R): The Basel Convention's Article 20 provides for arbitration or referral to the International Court of Justice as a formal dispute settlement option, but this adversarial mechanism is rarely invoked in practice.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is tempting because students may incorrectly believe Article 20 ICJ referral is the primary compliance mechanism, making them doubt the Assertion, when in fact A is correct and the Compliance Committee is indeed the primary operative mechanism.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The Basel Compliance Committee, established at COP-6 (2002), operates on a non-confrontational, non-judicial, assistance-oriented basis — it is the primary operative compliance mechanism.",
+        "Step 2: Is Reason (R) correct? — Yes. Article 20 of Basel does provide for arbitration or referral to the ICJ for disputes, but this provision is rarely invoked in practice.",
+        "Step 3: Does R causally explain A? — Yes. The Compliance Committee's non-confrontational character exists precisely because the adversarial dispute settlement route (Article 20) is available as a backstop but is politically difficult to use — the Committee fills the practical compliance gap.",
+        "A correct + R correct + R explains A — correct option is (a)."
+      ],
+      "upsc_trap_explanation": "Students who know Article 20 provides for ICJ referral may doubt the Assertion's claim that the Compliance Committee is 'primary,' leading them toward option (c). The Assertion is correct — the Committee is the primary operative mechanism; Article 20 exists but is rarely invoked.",
+      "final_explanation": "Basel's compliance architecture reflects a tension between legal enforceability and political feasibility.\n\nAssertion (A): Correct. The Compliance Committee (established COP-6, 2002) is the primary compliance mechanism. It is deliberately non-confrontational and assistance-oriented — focusing on helping parties comply rather than punishing non-compliance. No punitive sanctions exist.\n\nReason (R): Correct. Article 20 of the Basel Convention does provide for ICJ referral or arbitration as a formal dispute settlement mechanism. However, this route is adversarial, diplomatically costly, and has rarely been used in the convention's history.\n\nCausal relationship: R correctly explains A. The Committee's non-punitive design exists because adversarial legal proceedings under Article 20 are theoretically available but practically inaccessible — the Committee provides a workable operational alternative.\n\nValue Addition:\n• Low reporting compliance by parties is a documented weakness — many parties fail to submit annual reports on transboundary movements.\n• The non-punitive compliance model mirrors similar mechanisms in the Kyoto Protocol and Montreal Protocol.\n• Contrast with WTO dispute settlement: adversarial, binding, and regularly invoked — the opposite of Basel's approach."
+    },
+    "hi": {
+      "display_text": "कथन (A): बेसल कन्वेंशन के तहत स्थापित अनुपालन समिति गैर-प्रतिस्पर्धात्मक और सहायता-उन्मुख आधार पर कार्य करती है और पक्षों के अनुपालन की समीक्षा के लिए प्राथमिक परिचालन तंत्र के रूप में कार्य करती है।\n\nकारण (R): बेसल कन्वेंशन का अनुच्छेद 20 मध्यस्थता या अंतरराष्ट्रीय न्यायालय (ICJ) को औपचारिक विवाद समाधान विकल्प के रूप में रेफर करने का प्रावधान करता है, लेकिन यह विरोधात्मक तंत्र व्यवहार में शायद ही कभी लागू होता है।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) आकर्षक है क्योंकि छात्र गलत तरीके से मान सकते हैं कि अनुच्छेद 20 ICJ रेफरल प्राथमिक अनुपालन तंत्र है, जिससे वे कथन पर संदेह कर सकते हैं, जबकि वास्तव में A सही है और अनुपालन समिति वास्तव में प्राथमिक परिचालन तंत्र है।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। बेसल अनुपालन समिति, जो COP-6 (2002) में स्थापित हुई, गैर-प्रतिस्पर्धात्मक, गैर-न्यायिक, सहायता-उन्मुख आधार पर कार्य करती है — यह प्राथमिक परिचालन अनुपालन तंत्र है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। बेसल का अनुच्छेद 20 विवादों के लिए मध्यस्थता या ICJ को रेफर करने का प्रावधान करता है, लेकिन इस प्रावधान का व्यवहार में शायद ही कभी उपयोग होता है।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — हाँ। अनुपालन समिति का गैर-प्रतिस्पर्धात्मक स्वरूप इसलिए है क्योंकि विरोधात्मक विवाद समाधान मार्ग (अनुच्छेद 20) एक बैकस्टॉप के रूप में उपलब्ध है लेकिन इसका राजनीतिक रूप से उपयोग करना कठिन है — समिति व्यावहारिक अनुपालन अंतर को भरती है।",
+        "A सही + R सही + R, A को समझाता है — सही विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र जानते हैं कि अनुच्छेद 20 ICJ रेफरल प्रदान करता है, वे कथन के दावे कि अनुपालन समिति 'प्राथमिक' है, पर संदेह कर सकते हैं, जिससे वे विकल्प (c) की ओर झुक सकते हैं। कथन सही है — समिति प्राथमिक परिचालन तंत्र है; अनुच्छेद 20 मौजूद है लेकिन शायद ही कभी लागू होता है।",
+      "final_explanation": "बेसल का अनुपालन ढांचा कानूनी प्रवर्तन और राजनीतिक व्यवहार्यता के बीच तनाव को दर्शाता है।\n\nकथन (A): सही। अनुपालन समिति (COP-6, 2002 में स्थापित) प्राथमिक अनुपालन तंत्र है। यह जानबूझकर गैर-प्रतिस्पर्धात्मक और सहायता-उन्मुख है — यह पक्षों को अनुपालन में मदद करने पर केंद्रित है, दंडित करने पर नहीं। कोई दंडात्मक प्रतिबंध नहीं हैं।\n\nकारण (R): सही। बेसल कन्वेंशन का अनुच्छेद 20 ICJ रेफरल या मध्यस्थता के लिए औपचारिक विवाद समाधान तंत्र प्रदान करता है। हालांकि, यह मार्ग विरोधात्मक, कूटनीतिक रूप से महंगा है, और कन्वेंशन के इतिहास में शायद ही कभी उपयोग हुआ है।\n\nकारणात्मक संबंध: R सही ढंग से A को समझाता है। समिति का गैर-दंडात्मक डिज़ाइन इसलिए है क्योंकि अनुच्छेद 20 के तहत विरोधात्मक कानूनी कार्यवाही सैद्धांतिक रूप से उपलब्ध है लेकिन व्यवहार में पहुंच से बाहर है — समिति एक व्यावहारिक परिचालन विकल्प प्रदान करती है।\n\nमूल्य संवर्धन:\n• पक्षों द्वारा कम रिपोर्टिंग अनुपालन एक प्रलेखित कमजोरी है — कई पक्ष वार्षिक रिपोर्ट प्रस्तुत करने में विफल रहते हैं।\n• गैर-दंडात्मक अनुपालन मॉडल क्योटो प्रोटोकॉल और मॉन्ट्रियल प्रोटोकॉल के समान तंत्रों को दर्शाता है।\n• WTO विवाद समाधान से तुलना करें: विरोधात्मक, बाध्यकारी, और नियमित रूप से लागू — बेसल के दृष्टिकोण के विपरीत।"
+    }
+  },
+  {
+    "uuid": "8dbae437-3330-414a-901f-56b96e9c8412",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Basel Convention and E-Waste: Specific Provisions and COP Decisions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "E-waste under Basel — 'used vs. waste' loophole and original 1989 text",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the Basel Convention's treatment of electronic waste (e-waste):\n\n1. The term 'electronic waste' or 'e-waste' is explicitly defined and separately categorised in the original text of the Basel Convention adopted in 1989.\n2. The Basel Convention's COP decisions have distinguished 'used but functional equipment' from 'e-waste,' with only the latter being subject to full Basel controls as hazardous waste.\n3. Labelling non-functional electronic equipment as 'second-hand goods' to avoid Basel Convention controls is a well-documented evasion technique that Basel COP decisions have specifically sought to address.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The term 'electronic waste' or 'e-waste' is explicitly defined and separately categorised in the original text of the Basel Convention adopted in 1989.",
+          "verdict": "Incorrect",
+          "reason": "E-waste was not a recognised category in 1989; it falls under existing Annex I categories through lead, mercury, and other hazardous components — no explicit e-waste definition exists in the original convention text."
+        },
+        {
+          "statement": "The Basel Convention's COP decisions have distinguished 'used but functional equipment' from 'e-waste,' with only the latter being subject to full Basel controls as hazardous waste.",
+          "verdict": "Correct",
+          "reason": "COP-9 (2008) and COP-10 (2011) adopted technical guidelines specifically distinguishing used equipment (not waste) from e-waste (subject to full Basel controls) — this distinction is the basis for the 'used vs. waste' policy framework."
+        },
+        {
+          "statement": "Labelling non-functional electronic equipment as 'second-hand goods' to avoid Basel Convention controls is a well-documented evasion technique that Basel COP decisions have specifically sought to address.",
+          "verdict": "Correct",
+          "reason": "The 'used vs. waste' loophole — exporting non-functional electronics as 'second-hand goods' — is a recognised evasion technique; Basel COP guidelines on e-waste were developed specifically to close this gap."
+        }
+      ],
+      "strong_distractor": "d — Option (d) (1, 2 and 3) is the strong distractor because students who know Basel broadly applies to e-waste may assume the original 1989 text explicitly covered it, validating Statement 1 and selecting all three as correct.",
+      "elimination_logic": [
+        "Statement 1 is false: 'e-waste' as a term and distinct category does not appear in the 1989 Basel text — eliminate options treating Statement 1 as correct.",
+        "Eliminate option (d) (all three) and option (a) (1 and 2 only) — both include Statement 1 as correct.",
+        "Statements 2 and 3 are both correct: COP-9/10 distinguished used equipment from e-waste, and the 'second-hand goods' labelling evasion is explicitly acknowledged in Basel COP decisions.",
+        "Select option (c): 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the common assumption that since Basel covers e-waste, it must have always explicitly defined it. The 1989 adoption predates the e-waste problem — coverage came through later COP decisions applying existing Annex I categories, not through original text.",
+      "final_explanation": "E-waste represents one of the most significant gaps between Basel's 1989 design and contemporary waste challenges.\n\n• Statement 1 — Incorrect: The 1989 text contains no explicit reference to 'electronic waste.' Coverage is achieved indirectly through Annex I categories for wastes containing lead, mercury, cadmium, and other hazardous substances found in electronics.\n• Statement 2 — Correct: COP-9 (2008) and COP-10 (2011) produced technical guidelines distinguishing 'used equipment' (not subject to full Basel controls if functional) from 'e-waste' (fully regulated). This distinction is the pivot of current e-waste governance.\n• Statement 3 — Correct: The 'second-hand goods' labelling evasion is explicitly named in COP decisions — non-functional devices are deliberately mislabelled to bypass Basel, a practice the technical guidelines attempt to address through testing and documentation requirements.\n\nValue Addition:\n• India's E-Waste Management Rules 2016 (amended 2022) operationalize Basel obligations domestically through Extended Producer Responsibility.\n• The 'used vs. waste' distinction creates monitoring challenges because functionality is difficult to verify at export.\n• E-waste is the world's fastest-growing waste stream by volume."
+    },
+    "hi": {
+      "display_text": "बासेल कन्वेंशन के इलेक्ट्रॉनिक कचरे (ई-वेस्ट) के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. 'इलेक्ट्रॉनिक कचरा' या 'ई-वेस्ट' शब्द को 1989 में अपनाए गए बासेल कन्वेंशन के मूल पाठ में स्पष्ट रूप से परिभाषित और अलग श्रेणीबद्ध किया गया है।\n2. बासेल कन्वेंशन के COP निर्णयों ने 'उपयोग किया गया लेकिन कार्यशील उपकरण' को 'ई-वेस्ट' से अलग किया है, जिसमें केवल बाद वाला ही खतरनाक कचरे के रूप में पूर्ण बासेल नियंत्रण के अधीन है।\n3. गैर-कार्यशील इलेक्ट्रॉनिक उपकरणों को 'सेकंड-हैंड सामान' के रूप में लेबल करना ताकि बासेल कन्वेंशन नियंत्रणों से बचा जा सके, एक अच्छी तरह से प्रलेखित छल तकनीक है जिसे बासेल COP निर्णयों ने विशेष रूप से संबोधित करने का प्रयास किया है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "'इलेक्ट्रॉनिक कचरा' या 'ई-वेस्ट' शब्द को 1989 में अपनाए गए बासेल कन्वेंशन के मूल पाठ में स्पष्ट रूप से परिभाषित और अलग श्रेणीबद्ध किया गया है।",
+          "verdict": "गलत",
+          "reason": "1989 में ई-वेस्ट को मान्यता प्राप्त श्रेणी नहीं माना गया था; यह लेड, मरकरी और अन्य खतरनाक घटकों के माध्यम से मौजूदा अनुलग्नक I श्रेणियों के अंतर्गत आता है — मूल कन्वेंशन पाठ में कोई स्पष्ट ई-वेस्ट परिभाषा नहीं है।"
+        },
+        {
+          "statement": "बासेल कन्वेंशन के COP निर्णयों ने 'उपयोग किया गया लेकिन कार्यशील उपकरण' को 'ई-वेस्ट' से अलग किया है, जिसमें केवल बाद वाला ही खतरनाक कचरे के रूप में पूर्ण बासेल नियंत्रण के अधीन है।",
+          "verdict": "सही",
+          "reason": "COP-9 (2008) और COP-10 (2011) ने तकनीकी दिशानिर्देश अपनाए जो उपयोग किए गए उपकरण (जो कचरा नहीं है) को ई-वेस्ट (पूर्ण बासेल नियंत्रण के अधीन) से अलग करते हैं — यह भेद 'उपयोग बनाम कचरा' नीति ढांचे का आधार है।"
+        },
+        {
+          "statement": "गैर-कार्यशील इलेक्ट्रॉनिक उपकरणों को 'सेकंड-हैंड सामान' के रूप में लेबल करना ताकि बासेल कन्वेंशन नियंत्रणों से बचा जा सके, एक अच्छी तरह से प्रलेखित छल तकनीक है जिसे बासेल COP निर्णयों ने विशेष रूप से संबोधित करने का प्रयास किया है।",
+          "verdict": "सही",
+          "reason": "'उपयोग बनाम कचरा' छिद्र — गैर-कार्यशील इलेक्ट्रॉनिक्स को 'सेकंड-हैंड सामान' के रूप में निर्यात करना — एक मान्यता प्राप्त छल तकनीक है; बासेल COP दिशानिर्देशों को विशेष रूप से इस अंतर को बंद करने के लिए विकसित किया गया है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) (1, 2 और 3) मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि बासेल व्यापक रूप से ई-वेस्ट पर लागू होता है, वे मान सकते हैं कि मूल 1989 पाठ में इसे स्पष्ट रूप से शामिल किया गया था, जिससे कथन 1 सही माना जाता है और सभी तीन को सही चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 गलत है: 'ई-वेस्ट' शब्द और अलग श्रेणी 1989 के बासेल पाठ में नहीं है — इसलिए जो विकल्प कथन 1 को सही मानते हैं उन्हें हटा दें।",
+        "विकल्प (d) (सभी तीन) और विकल्प (a) (केवल 1 और 2) को हटा दें — दोनों में कथन 1 को सही माना गया है।",
+        "कथन 2 और 3 दोनों सही हैं: COP-9/10 ने उपयोग किए गए उपकरण को ई-वेस्ट से अलग किया, और 'सेकंड-हैंड सामान' के लेबलिंग छल को बासेल COP निर्णयों में स्पष्ट रूप से स्वीकार किया गया है।",
+        "विकल्प (c) चुनें: केवल 2 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 1 उस सामान्य धारणा का लाभ उठाता है कि चूंकि बासेल ई-वेस्ट को कवर करता है, इसलिए इसे हमेशा स्पष्ट रूप से परिभाषित किया गया होगा। 1989 का अंगीकरण ई-वेस्ट समस्या से पहले का है — कवरेज बाद के COP निर्णयों के माध्यम से आया जो मौजूदा अनुलग्नक I श्रेणियों को लागू करते हैं, न कि मूल पाठ के माध्यम से।",
+      "final_explanation": "ई-वेस्ट बासेल के 1989 के डिजाइन और समकालीन कचरा चुनौतियों के बीच सबसे महत्वपूर्ण अंतरालों में से एक है।\n\n• कथन 1 — गलत: 1989 के पाठ में 'इलेक्ट्रॉनिक कचरा' का कोई स्पष्ट उल्लेख नहीं है। कवरेज अप्रत्यक्ष रूप से उन अनुलग्नक I श्रेणियों के माध्यम से होता है जिनमें लेड, मरकरी, कैडमियम और इलेक्ट्रॉनिक्स में पाए जाने वाले अन्य खतरनाक पदार्थ शामिल हैं।\n• कथन 2 — सही: COP-9 (2008) और COP-10 (2011) ने तकनीकी दिशानिर्देश जारी किए जो 'उपयोग किया गया उपकरण' (यदि कार्यशील हो तो पूर्ण बासेल नियंत्रण के अधीन नहीं) को 'ई-वेस्ट' (पूर्ण रूप से विनियमित) से अलग करते हैं। यह भेद वर्तमान ई-वेस्ट शासन का आधार है।\n• कथन 3 — सही: 'सेकंड-हैंड सामान' लेबलिंग छल को COP निर्णयों में स्पष्ट रूप से नामित किया गया है — गैर-कार्यशील उपकरणों को जानबूझकर गलत लेबल किया जाता है ताकि बासेल से बचा जा सके, और तकनीकी दिशानिर्देश परीक्षण और दस्तावेज़ीकरण आवश्यकताओं के माध्यम से इस अभ्यास को संबोधित करने का प्रयास करते हैं।\n\nमूल्य संवर्धन:\n• भारत के ई-वेस्ट प्रबंधन नियम 2016 (संशोधित 2022) बासेल दायित्वों को घरेलू स्तर पर विस्तारित उत्पादक जिम्मेदारी के माध्यम से लागू करते हैं।\n• 'उपयोग बनाम कचरा' भेद निगरानी चुनौतियां पैदा करता है क्योंकि निर्यात पर कार्यशीलता का सत्यापन कठिन होता है।\n• ई-वेस्ट विश्व का सबसे तेजी से बढ़ने वाला कचरा प्रवाह है।"
+    }
+  },
+  {
+    "uuid": "a09f008b-2f4e-4846-929a-30256394b900",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Waste Minimization and Proximity Principle",
+        "Relationship Between Basel Convention and WTO Agreements"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Basel waste hierarchy, proximity principle, WTO interface",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements regarding the Basel Convention's waste management principles and its relationship with WTO agreements:",
+        "columns": [
+          "Statement No.",
+          "Statement"
+        ],
+        "rows": [
+          [
+            "1",
+            "The Basel Convention's waste management hierarchy places prevention above minimization, followed by recovery and recycling, and finally disposal."
+          ],
+          [
+            "2",
+            "The proximity principle under the Basel Convention requires that hazardous waste must always be disposed of within the boundaries of the state that generated it, without exception."
+          ],
+          [
+            "3",
+            "An exporting state under the Basel Convention bears responsibility for verifying that the importing state has adequate Environmentally Sound Management capacity before permitting export."
+          ],
+          [
+            "4",
+            "WTO dispute settlement panels have issued definitive rulings establishing the Basel Convention's hierarchy over GATT obligations in cases of conflict."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The Basel Convention's waste management hierarchy places prevention above minimization, followed by recovery and recycling, and finally disposal.",
+          "verdict": "Correct",
+          "reason": "Article 4(2) establishes a clear hierarchy: prevention > minimization > recovery/recycling > disposal — this is the canonical Basel waste management order."
+        },
+        {
+          "statement": "The proximity principle under the Basel Convention requires that hazardous waste must always be disposed of within the boundaries of the state that generated it, without exception.",
+          "verdict": "Incorrect",
+          "reason": "The proximity principle requires disposal 'as close to source as possible' — it is a preference principle, not an absolute prohibition on cross-border disposal; ESM-guaranteed transboundary movement remains permissible."
+        },
+        {
+          "statement": "An exporting state under the Basel Convention bears responsibility for verifying that the importing state has adequate Environmentally Sound Management capacity before permitting export.",
+          "verdict": "Correct",
+          "reason": "Article 4(2)(e) places an explicit obligation on the exporting state to ensure that ESM can be guaranteed at the destination before authorising the export — the assessment burden is on the exporter."
+        },
+        {
+          "statement": "WTO dispute settlement panels have issued definitive rulings establishing the Basel Convention's hierarchy over GATT obligations in cases of conflict.",
+          "verdict": "Incorrect",
+          "reason": "No WTO dispute panel has definitively resolved the Basel-WTO hierarchy — the theoretical tension remains unresolved; GATT Article XX(b) provides a potential WTO-compatible basis for Basel-consistent trade restrictions but is not a hierarchy ruling."
+        }
+      ],
+      "strong_distractor": "c — 'Only three' is the strong distractor for students who accept Statement 2's 'without exception' phrasing uncritically or who believe WTO panels have addressed the Basel-WTO hierarchy.",
+      "elimination_logic": [
+        "Evaluate Statement 2: 'without exception' makes it false — proximity is a preference, not an absolute rule; ESM-compliant transboundary disposal is always permissible.",
+        "Evaluate Statement 4: No WTO panel has definitively ruled on Basel-WTO hierarchy — this is explicitly an unresolved theoretical tension.",
+        "Statements 1 and 3 are correct; Statements 2 and 4 are incorrect.",
+        "Exactly two statements are correct — select option (b): Only two."
+      ],
+      "upsc_trap_explanation": "Two traps operate simultaneously: Statement 2's 'without exception' scope-extension and Statement 4's fabricated WTO hierarchy ruling. Each targets a different dimension of student knowledge — one tests proximity principle precision, the other tests WTO-MEA interface awareness.",
+      "final_explanation": "Basel's substantive obligations on waste minimization and the convention's relationship with WTO rules involve several nuances.\n\n• Statement 1 — Correct: The waste hierarchy under Basel is: prevention > minimization > recovery/recycling > disposal. This parallels the EU Waste Framework Directive and reflects global consensus.\n• Statement 2 — Incorrect: 'Without exception' makes this false. The proximity principle (Article 4(2)(a)) is a strong preference for local disposal but does not prohibit cross-border movement when ESM is guaranteed.\n• Statement 3 — Correct: The exporting state must assess whether the importing state has ESM capacity. This obligation prevents 'waste tourism' to countries with inadequate treatment facilities.\n• Statement 4 — Incorrect: The Basel-WTO relationship remains an unresolved theoretical tension. GATT Article XX(b) offers a WTO-compatible pathway, and Basel Article 11 allows bilateral agreements — but no WTO panel has established a definitive hierarchy.\n\nValue Addition:\n• Basel Article 11 permits bilateral/multilateral agreements provided they are 'no less environmentally sound' than Basel.\n• GATT Article XX(b) allows trade restrictions 'necessary to protect human, animal or plant life or health.'\n• The Shrimp-Turtle case (WTO) illustrated how MEA considerations can influence Article XX analysis."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "बासेल कन्वेंशन के कचरा प्रबंधन सिद्धांतों और इसके WTO समझौतों के साथ संबंध के संबंध में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन संख्या",
+          "कथन"
+        ],
+        "rows": [
+          [
+            "1",
+            "बासेल कन्वेंशन की कचरा प्रबंधन पदानुक्रम में रोकथाम को न्यूनतमकरण से ऊपर रखा गया है, इसके बाद पुनर्प्राप्ति और पुनर्चक्रण, और अंत में निपटान।"
+          ],
+          [
+            "2",
+            "बासेल कन्वेंशन के तहत निकटता सिद्धांत यह आवश्यक करता है कि खतरनाक कचरे को हमेशा उस राज्य की सीमाओं के भीतर निपटाया जाना चाहिए जिसने उसे उत्पन्न किया है, बिना किसी अपवाद के।"
+          ],
+          [
+            "3",
+            "बासेल कन्वेंशन के तहत निर्यातक राज्य पर यह जिम्मेदारी होती है कि वह निर्यात की अनुमति देने से पहले यह सत्यापित करे कि आयातक राज्य के पास पर्यावरणीय रूप से सुरक्षित प्रबंधन क्षमता है।"
+          ],
+          [
+            "4",
+            "WTO विवाद निपटान पैनलों ने ऐसे मामलों में बासेल कन्वेंशन की पदानुक्रम को GATT दायित्वों पर स्थापित करने वाले निर्णायक निर्णय जारी किए हैं।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The Basel Convention's waste management hierarchy places prevention above minimization, followed by recovery and recycling, and finally disposal.",
+          "verdict": "Correct",
+          "reason": "Article 4(2) establishes a clear hierarchy: prevention > minimization > recovery/recycling > disposal — this is the canonical Basel waste management order."
+        },
+        {
+          "statement": "The proximity principle under the Basel Convention requires that hazardous waste must always be disposed of within the boundaries of the state that generated it, without exception.",
+          "verdict": "Incorrect",
+          "reason": "The proximity principle requires disposal 'as close to source as possible' — it is a preference principle, not an absolute prohibition on cross-border disposal; ESM-guaranteed transboundary movement remains permissible."
+        },
+        {
+          "statement": "An exporting state under the Basel Convention bears responsibility for verifying that the importing state has adequate Environmentally Sound Management capacity before permitting export.",
+          "verdict": "Correct",
+          "reason": "Article 4(2)(e) places an explicit obligation on the exporting state to ensure that ESM can be guaranteed at the destination before authorising the export — the assessment burden is on the exporter."
+        },
+        {
+          "statement": "WTO dispute settlement panels have issued definitive rulings establishing the Basel Convention's hierarchy over GATT obligations in cases of conflict.",
+          "verdict": "Incorrect",
+          "reason": "No WTO dispute panel has definitively resolved the Basel-WTO hierarchy — the theoretical tension remains unresolved; GATT Article XX(b) provides a potential WTO-compatible basis for Basel-consistent trade restrictions but is not a hierarchy ruling."
+        }
+      ],
+      "strong_distractor": "c — 'Only three' is the strong distractor for students who accept Statement 2's 'without exception' phrasing uncritically or who believe WTO panels have addressed the Basel-WTO hierarchy.",
+      "elimination_logic": [
+        "Evaluate Statement 2: 'without exception' makes it false — proximity is a preference, not an absolute rule; ESM-compliant transboundary disposal is always permissible.",
+        "Evaluate Statement 4: No WTO panel has definitively ruled on Basel-WTO hierarchy — this is explicitly an unresolved theoretical tension.",
+        "Statements 1 and 3 are correct; Statements 2 and 4 are incorrect.",
+        "Exactly two statements are correct — select option (b): Only two."
+      ],
+      "upsc_trap_explanation": "Two traps operate simultaneously: Statement 2's 'without exception' scope-extension and Statement 4's fabricated WTO hierarchy ruling. Each targets a different dimension of student knowledge — one tests proximity principle precision, the other tests WTO-MEA interface awareness.",
+      "final_explanation": "Basel's substantive obligations on waste minimization and the convention's relationship with WTO rules involve several nuances.\n\n• Statement 1 — Correct: The waste hierarchy under Basel is: prevention > minimization > recovery/recycling > disposal. This parallels the EU Waste Framework Directive and reflects global consensus.\n• Statement 2 — Incorrect: 'Without exception' makes this false. The proximity principle (Article 4(2)(a)) is a strong preference for local disposal but does not prohibit cross-border movement when ESM is guaranteed.\n• Statement 3 — Correct: The exporting state must assess whether the importing state has ESM capacity. This obligation prevents 'waste tourism' to countries with inadequate treatment facilities.\n• Statement 4 — Incorrect: The Basel-WTO relationship remains an unresolved theoretical tension. GATT Article XX(b) offers a WTO-compatible pathway, and Basel Article 11 allows bilateral agreements — but no WTO panel has established a definitive hierarchy.\n\nValue Addition:\n• Basel Article 11 permits bilateral/multilateral agreements provided they are 'no less environmentally sound' than Basel.\n• GATT Article XX(b) allows trade restrictions 'necessary to protect human, animal or plant life or health.'\n• The Shrimp-Turtle case (WTO) illustrated how MEA considerations can influence Article XX analysis."
+    }
+  },
+  {
+    "uuid": "cb28e0bb-a564-49ce-8a3c-0524e5d01ffe",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Ship Recycling and the Hong Kong Convention: Overlap with Basel"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "Hong Kong Convention vs. Basel — ship recycling lex specialis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the regulation of ship recycling under international law:\n\nStatement 1: The Hong Kong International Convention for Safe and Environmentally Sound Recycling of Ships (2009) serves as the lex specialis for ship recycling and has entered into force.\nStatement 2: Basel Convention parties have affirmed through COP decisions that end-of-life ships destined for recycling qualify as hazardous waste subject to Basel Convention controls.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Hong Kong International Convention for Safe and Environmentally Sound Recycling of Ships (2009) serves as the lex specialis for ship recycling and has entered into force.",
+          "verdict": "Incorrect",
+          "reason": "The Hong Kong Convention was adopted in 2009 but has NOT yet entered into force as of the knowledge cutoff — it awaits ratification by the required number of states representing sufficient combined merchant shipping tonnage."
+        },
+        {
+          "statement": "Basel Convention parties have affirmed through COP decisions that end-of-life ships destined for recycling qualify as hazardous waste subject to Basel Convention controls.",
+          "verdict": "Correct",
+          "reason": "Basel COP decisions have consistently affirmed that ships containing asbestos, PCBs, heavy metals, and other hazardous materials qualify as hazardous waste when sent for recycling — Basel's applicability to ship-breaking has been formally confirmed."
+        }
+      ],
+      "strong_distractor": "a — Option (a) (both correct) attracts students who believe the Hong Kong Convention, having been adopted in 2009, must have entered into force by now — they conflate adoption with entry into force.",
+      "elimination_logic": [
+        "Statement 1: Hong Kong Convention adopted 2009 — but has NOT entered into force; 'not yet in force' is the critical fact that makes Statement 1 incorrect.",
+        "Statement 2: Basel COP decisions have affirmed applicability to end-of-life ships — this is the established position following contested debates between Basel parties and the shipping industry.",
+        "Statement 1 incorrect, Statement 2 correct — select option (d)."
+      ],
+      "upsc_trap_explanation": "Statement 1's 'adopted in 2009' detail is a conflation trap — students confuse adoption with entry into force. The Hong Kong Convention's prolonged non-entry-into-force is a specific and frequently tested factual point in international environmental law questions.",
+      "final_explanation": "Ship recycling sits at the intersection of Basel Convention hazardous waste rules and the maritime-specific Hong Kong Convention.\n\n• Statement 1 — Incorrect: The Hong Kong Convention was adopted at an IMO conference in 2009 but has not entered into force. Its entry-into-force conditions require ratification by 15 states representing 40% of world merchant shipping tonnage.\n• Statement 2 — Correct: Basel COP decisions have definitively affirmed that ships containing hazardous materials (asbestos, PCBs, TBT, heavy metals) constitute hazardous waste when sent for end-of-life recycling. The shipping industry's 'ships are not waste' argument was rejected.\n\nValue Addition:\n• Alang in Gujarat (India) is the world's largest ship-breaking yard by tonnage dismantled annually.\n• India's Supreme Court in Research Foundation for Science v. Union of India directed Basel compliance for ship-breaking.\n• MARPOL governs wastes from ships' normal operations — distinct from end-of-life ship recycling under Basel."
+    },
+    "hi": {
+      "display_text": "अंतरराष्ट्रीय कानून के तहत जहाज पुनर्चक्रण के नियमन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: हांगकांग अंतरराष्ट्रीय कन्वेंशन फॉर सेफ एंड एनवायरनमेंटली साउंड रीसाइक्लिंग ऑफ शिप्स (2009) जहाज पुनर्चक्रण के लिए lex specialis के रूप में कार्य करता है और लागू हो चुका है।\nकथन 2: बासेल कन्वेंशन पक्षों ने COP निर्णयों के माध्यम से पुष्टि की है कि पुनर्चक्रण के लिए भेजे जाने वाले अंत-जीवन जहाज बासेल कन्वेंशन नियंत्रणों के अधीन खतरनाक अपशिष्ट माने जाते हैं।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Hong Kong International Convention for Safe and Environmentally Sound Recycling of Ships (2009) serves as the lex specialis for ship recycling and has entered into force.",
+          "verdict": "गलत",
+          "reason": "हांगकांग कन्वेंशन 2009 में अपनाया गया था लेकिन ज्ञान कटऑफ तक यह अभी तक लागू नहीं हुआ है — यह आवश्यक संख्या में राज्यों द्वारा अनुमोदन की प्रतीक्षा कर रहा है जो पर्याप्त संयुक्त व्यापारी जहाज टन भार का प्रतिनिधित्व करते हैं।"
+        },
+        {
+          "statement": "Basel Convention parties have affirmed through COP decisions that end-of-life ships destined for recycling qualify as hazardous waste subject to Basel Convention controls.",
+          "verdict": "सही है",
+          "reason": "बासेल COP निर्णयों ने लगातार पुष्टि की है कि जहाज जिनमें एस्बेस्टस, PCB, भारी धातुएं और अन्य खतरनाक पदार्थ होते हैं, जब पुनर्चक्रण के लिए भेजे जाते हैं तो वे खतरनाक अपशिष्ट माने जाते हैं — बासेल का जहाज तोड़ने पर लागू होना औपचारिक रूप से पुष्टि की गई है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) (दोनों सही) उन छात्रों को आकर्षित करता है जो मानते हैं कि हांगकांग कन्वेंशन, जिसे 2009 में अपनाया गया था, अब तक लागू हो जाना चाहिए — वे अपनाने को लागू होने से भ्रमित करते हैं।",
+      "elimination_logic": [
+        "कथन 1: हांगकांग कन्वेंशन 2009 में अपनाया गया — लेकिन लागू नहीं हुआ; 'अभी तक लागू नहीं' यह महत्वपूर्ण तथ्य है जो कथन 1 को गलत बनाता है।",
+        "कथन 2: बासेल COP निर्णयों ने अंत-जीवन जहाजों पर लागू होने की पुष्टि की है — यह बासेल पक्षों और शिपिंग उद्योग के बीच विवादित बहसों के बाद स्थापित स्थिति है।",
+        "कथन 1 गलत, कथन 2 सही — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 का '2009 में अपनाया गया' विवरण भ्रम का जाल है — छात्र अपनाने को लागू होने से भ्रमित करते हैं। हांगकांग कन्वेंशन का लंबे समय तक लागू न होना अंतरराष्ट्रीय पर्यावरण कानून के प्रश्नों में एक विशिष्ट और बार-बार परीक्षण किया जाने वाला तथ्य है।",
+      "final_explanation": "जहाज पुनर्चक्रण बासेल कन्वेंशन के खतरनाक अपशिष्ट नियमों और समुद्री-विशिष्ट हांगकांग कन्वेंशन के संगम पर स्थित है।\n\n• कथन 1 — गलत: हांगकांग कन्वेंशन को 2009 में IMO सम्मेलन में अपनाया गया था लेकिन यह लागू नहीं हुआ है। इसके लागू होने की शर्तें 15 राज्यों द्वारा अनुमोदन हैं जो विश्व व्यापारी जहाज टन भार का 40% प्रतिनिधित्व करते हैं।\n• कथन 2 — सही: बासेल COP निर्णयों ने स्पष्ट रूप से पुष्टि की है कि जहाज जिनमें खतरनाक पदार्थ (एस्बेस्टस, PCB, TBT, भारी धातुएं) होते हैं, जब अंत-जीवन पुनर्चक्रण के लिए भेजे जाते हैं तो वे खतरनाक अपशिष्ट होते हैं। शिपिंग उद्योग का 'जहाज अपशिष्ट नहीं हैं' तर्क खारिज कर दिया गया।\n\nमूल्य संवर्धन:\n• गुजरात (भारत) का अलंग विश्व का सबसे बड़ा जहाज तोड़ने का यार्ड है जो वार्षिक टन भार के हिसाब से dismantle करता है।\n• भारत के सर्वोच्च न्यायालय ने Research Foundation for Science v. Union of India में जहाज तोड़ने के लिए बासेल अनुपालन निर्देशित किया।\n• MARPOL जहाजों के सामान्य संचालन से उत्पन्न अपशिष्टों को नियंत्रित करता है — जो बासेल के अंत-जीवन जहाज पुनर्चक्रण से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "12792333-cf81-4c9f-ac47-1cc2b70d1b77",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Basel Convention: Origin, Mandate and Legal Architecture",
+        "The Basel, Rotterdam and Stockholm (BRS) Conventions: Synergies and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "BRS Convention secretariat locations — Geneva and Rome dual for Rotterdam",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the conventions in List I with their secretariat locations in List II:",
+        "columns": [
+          "List I — Convention",
+          "List II — Secretariat Location"
+        ],
+        "rows": [
+          [
+            "A. Basel Convention",
+            "1. Geneva (within UNEP), also Nairobi"
+          ],
+          [
+            "B. Rotterdam Convention",
+            "2. Geneva"
+          ],
+          [
+            "C. Stockholm Convention",
+            "3. Geneva and Rome (dual arrangement)"
+          ],
+          [
+            "D. Minamata Convention",
+            "4. Bonn"
+          ]
+        ],
+        "footer_text": "Which of the following correctly matches List I with List II?\n\n(a) A-2, B-2, C-2, D-1\n(b) A-2, B-3, C-2, D-1\n(c) A-2, B-3, C-4, D-2\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) places Rotterdam's secretariat exclusively in Geneva, which students choose because they know all three conventions are closely associated with Geneva through the joint secretariat — missing that Rotterdam has a dual Geneva/Rome arrangement due to FAO's co-sponsorship.",
+      "elimination_logic": [
+        "Basel Secretariat: Geneva — unambiguous.",
+        "Stockholm Secretariat: Geneva — confirmed.",
+        "Rotterdam Secretariat: dual Geneva/Rome arrangement due to FAO co-sponsorship — this is the trap pair.",
+        "Minamata Secretariat: Geneva (within UNEP) — distinct from the BRS trio but hosted in Geneva.",
+        "Only option (b) correctly reflects Rotterdam's dual Geneva/Rome arrangement — select (b)."
+      ],
+      "upsc_trap_explanation": "Rotterdam's dual Geneva/Rome secretariat arrangement is the geographic-swap trap. Students who know 'all major environmental convention secretariats are in Geneva' will assign option (a) without checking for the FAO-Rome connection that gives Rotterdam its unique dual location.",
+      "final_explanation": "Secretariat locations of MEAs are a recurring UPSC factual test requiring geographic precision.\n\n• A–2 (Basel–Geneva): Basel Convention Secretariat is in Geneva — unambiguous, housed within UNEP.\n• B–3 (Rotterdam–Geneva/Rome): Rotterdam's joint FAO-UNEP sponsorship gives it a dual secretariat arrangement — both Geneva (UNEP side) and Rome (FAO side). This is the key trap pair.\n• C–2 (Stockholm–Geneva): Stockholm Convention Secretariat is also in Geneva within UNEP structures.\n• D–1 (Minamata–Geneva): Minamata Convention on Mercury is administered from Geneva through UNEP.\n\nThe correct combination A-2, B-3, C-2, D-1 corresponds to option (b).\n\nValue Addition:\n• The BRS joint secretariat (operative since 2010) is housed in Geneva — administrative consolidation without legal merger.\n• FAO's role in Rotterdam reflects that convention's coverage of pesticides used in agriculture — FAO's primary domain.\n• Minamata Convention (2013, in force 2017) has GEF as its financial mechanism alongside Basel-style technical assistance."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में दी गई संधियों को सूची II में उनके सचिवालय स्थानों से मिलाइए:",
+        "columns": [
+          "सूची I — संधि",
+          "सूची II — सचिवालय स्थान"
+        ],
+        "rows": [
+          [
+            "A. बासेल कन्वेंशन",
+            "1. जिनेवा (UNEP के अंतर्गत), साथ ही नैरोबी"
+          ],
+          [
+            "B. रॉटरडैम कन्वेंशन",
+            "2. जिनेवा"
+          ],
+          [
+            "C. स्टॉकहोम कन्वेंशन",
+            "3. जिनेवा और रोम (द्वैध प्रबंध)"
+          ],
+          [
+            "D. मिनामाता कन्वेंशन",
+            "4. बॉन"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन सूची I को सूची II से सही ढंग से मिलाता है?\n\n(a) A-2, B-2, C-2, D-1\n(b) A-2, B-3, C-2, D-1\n(c) A-2, B-3, C-4, D-2\n(d) A-1, B-3, C-2, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) रॉटरडैम के सचिवालय को केवल जिनेवा में रखता है, जिसे छात्र इसलिए चुनते हैं क्योंकि वे जानते हैं कि तीनों संधियाँ संयुक्त सचिवालय के माध्यम से जिनेवा से जुड़ी हैं — यह भूल जाते हैं कि रॉटरडैम का FAO के सह-प्रायोजन के कारण जिनेवा/रोम का द्वैध प्रबंध है।",
+      "elimination_logic": [
+        "बासेल सचिवालय: जिनेवा — स्पष्ट।",
+        "स्टॉकहोम सचिवालय: जिनेवा — पुष्टि की गई।",
+        "रॉटरडैम सचिवालय: FAO के सह-प्रायोजन के कारण जिनेवा/रोम का द्वैध प्रबंध — यह जालसाजी जोड़ी है।",
+        "मिनामाता सचिवालय: जिनेवा (UNEP के अंतर्गत) — BRS त्रयी से अलग लेकिन जिनेवा में स्थित।",
+        "केवल विकल्प (b) रॉटरडैम के द्वैध जिनेवा/रोम प्रबंध को सही दर्शाता है — इसलिए (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "रॉटरडैम का द्वैध जिनेवा/रोम सचिवालय प्रबंध भौगोलिक-स्पैप जालसाजी है। जो छात्र 'सभी प्रमुख पर्यावरण संधियों के सचिवालय जिनेवा में हैं' जानते हैं, वे FAO-रोम संबंध की जांच किए बिना विकल्प (a) चुन लेंगे, जो रॉटरडैम को इसकी विशिष्ट द्वैध स्थिति देता है।",
+      "final_explanation": "MEA के सचिवालय स्थान UPSC में बार-बार आने वाला तथ्यात्मक प्रश्न है, जिसमें भौगोलिक सटीकता आवश्यक है।\n\n• A–2 (बासेल–जिनेवा): बासेल कन्वेंशन सचिवालय जिनेवा में है — स्पष्ट, UNEP के अंतर्गत।\n• B–3 (रॉटरडैम–जिनेवा/रोम): रॉटरडैम का संयुक्त FAO-UNEP प्रायोजन इसे द्वैध सचिवालय व्यवस्था देता है — जिनेवा (UNEP पक्ष) और रोम (FAO पक्ष)। यह मुख्य जालसाजी जोड़ी है।\n• C–2 (स्टॉकहोम–जिनेवा): स्टॉकहोम कन्वेंशन सचिवालय भी UNEP संरचनाओं के भीतर जिनेवा में है।\n• D–1 (मिनामाता–जिनेवा): मिनामाता कन्वेंशन पारा का प्रशासन जिनेवा से UNEP के माध्यम से होता है।\n\nसही संयोजन A-2, B-3, C-2, D-1 विकल्प (b) के अनुरूप है।\n\nमूल्य संवर्धन:\n• BRS संयुक्त सचिवालय (2010 से संचालित) जिनेवा में है — प्रशासनिक समेकन बिना कानूनी विलय के।\n• रॉटरडैम में FAO की भूमिका कृषि में उपयोग होने वाले कीटनाशकों को कवर करने वाली संधि के कारण है — FAO का प्राथमिक क्षेत्र।\n• मिनामाता कन्वेंशन (2013, 2017 में लागू) का वित्तीय तंत्र GEF है, साथ ही बासेल-शैली की तकनीकी सहायता भी।"
+    }
+  },
+  {
+    "uuid": "a280735d-5902-4e0b-b7f7-7fc434a281b6",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Relationship Between Basel Convention and WTO Agreements"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Basel Article 11 — bilateral agreements must be no less environmentally sound",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Country X, a party to the Basel Convention, enters into a bilateral treaty with Country Y, also a Basel party, under which Country X commits to refusing all imports of hazardous waste from Country Y regardless of whether Prior Informed Consent is sought. Country Y's exporters challenge this as both a violation of Basel Convention obligations and an impermissible import restriction under WTO law.\n\nWhich of the following most accurately describes the legal position of Country X?\n\n(a) Country X's blanket refusal constitutes illegal traffic under Basel Article 9 because it prevents the exercise of PIC rights by Country Y's exporters\n(b) Country X's bilateral import ban is an impermissible trade restriction under GATT Article XI and cannot be saved by any Basel provision\n(c) Country X's position violates Basel Convention obligations because the PIC mechanism mandates that consent requests be evaluated on a case-by-case basis and cannot be categorically refused in advance\n(d) Country X's bilateral agreement is permissible under Basel Article 11, which allows stricter bilateral arrangements, and is consistent with GATT Article XX(b)'s health protection exception",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students who know Basel and GATT can conflict will assume the WTO violation claim is determinative, without recalling that Basel Article 11 provides a WTO-compatible pathway for bilateral agreements.",
+      "elimination_logic": [
+        "Identify the key legal question: can Country X ban imports under a bilateral agreement that provides stricter standards than Basel?",
+        "Basel Article 11 explicitly permits bilateral/multilateral agreements on hazardous waste provided they are 'no less environmentally sound' than Basel.",
+        "GATT Article XX(b) allows trade restrictions necessary to protect human health — the bilateral agreement serves this purpose.",
+        "The agreement is permissible under both Basel Article 11 and GATT Article XX(b) — select option (d)."
+      ],
+      "upsc_trap_explanation": "Option (b)'s WTO violation claim exploits a surface-level understanding of trade law. Students who know 'import bans violate GATT' without knowing GATT Article XX exceptions or Basel Article 11's bilateral agreement pathway will mark (b) confidently.",
+      "final_explanation": "The Basel-WTO interface is tested here through the Article 11 bilateral agreement mechanism.\n\nThe scenario: Country X (Basel party) enters a bilateral agreement with Country Y (also a Basel party) under which Country X bans all imports of hazardous waste from Country Y, applying stricter standards than Basel's PIC requirement.\n\n• Option (a): Incorrect — this is not automatically illegal traffic; the bilateral agreement is expressly contemplated by Basel Article 11.\n• Option (b): Incorrect — while GATT Article XI generally prohibits import restrictions, Article XX(b) provides an exception for measures necessary to protect human health. The bilateral agreement falls within this exception.\n• Option (c): Incorrect — Basel's PIC mechanism sets a floor, not a ceiling. Parties can agree to more stringent standards bilaterally.\n• Option (d): Correct — Basel Article 11 permits bilateral agreements on hazardous waste provided they are 'no less environmentally sound' than Basel. An outright ban is stricter than PIC — it satisfies the Article 11 threshold and is consistent with GATT Article XX(b).\n\nValue Addition:\n• Article 11 agreements must be notified to other Basel parties through the Secretariat.\n• The 'no less environmentally sound' standard in Article 11 is the key phrase — agreements cannot be weaker than Basel but can be stronger.\n• GATT Article XX(b) has been interpreted broadly in WTO jurisprudence to accommodate genuine environmental measures."
+    },
+    "hi": {
+      "display_text": "देश X, जो Basel कन्वेंशन का पक्षकार है, देश Y के साथ एक द्विपक्षीय संधि करता है, जो स्वयं Basel पार्टी है, जिसके तहत देश X देश Y से सभी खतरनाक अपशिष्ट के आयातों को अस्वीकार करने का वचन देता है, चाहे पूर्व सूचित सहमति (Prior Informed Consent) मांगी गई हो या नहीं। देश Y के निर्यातक इसे Basel कन्वेंशन दायित्वों का उल्लंघन और WTO कानून के तहत अवैध आयात प्रतिबंध के रूप में चुनौती देते हैं।\n\nनिम्नलिखित में से कौन-सा देश X की कानूनी स्थिति का सबसे सटीक वर्णन करता है?\n\n(a) देश X का समग्र अस्वीकार Basel अनुच्छेद 9 के तहत अवैध ट्रैफिक है क्योंकि यह देश Y के निर्यातकों के PIC अधिकारों के प्रयोग को रोकता है\n(b) देश X का द्विपक्षीय आयात प्रतिबंध GATT अनुच्छेद XI के तहत अवैध व्यापार प्रतिबंध है और इसे किसी भी Basel प्रावधान द्वारा बचाया नहीं जा सकता\n(c) देश X की स्थिति Basel कन्वेंशन दायित्वों का उल्लंघन करती है क्योंकि PIC तंत्र के तहत सहमति अनुरोधों का मामले-दर-मामला मूल्यांकन किया जाना चाहिए और उन्हें पूर्व में पूरी तरह से अस्वीकार नहीं किया जा सकता\n(d) देश X का द्विपक्षीय समझौता Basel अनुच्छेद 11 के तहत वैध है, जो कड़े द्विपक्षीय समझौतों की अनुमति देता है, और GATT अनुच्छेद XX(b) के स्वास्थ्य संरक्षण अपवाद के अनुरूप है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि जो छात्र Basel और GATT के बीच टकराव को जानते हैं, वे WTO उल्लंघन के दावे को निर्णायक मानेंगे, बिना यह याद किए कि Basel अनुच्छेद 11 द्विपक्षीय समझौतों के लिए WTO-अनुकूल मार्ग प्रदान करता है।",
+      "elimination_logic": [
+        "प्रमुख कानूनी प्रश्न की पहचान करें: क्या देश X द्विपक्षीय समझौते के तहत आयातों पर प्रतिबंध लगा सकता है जो Basel से अधिक कड़े मानक प्रदान करता है?",
+        "Basel अनुच्छेद 11 स्पष्ट रूप से खतरनाक अपशिष्ट पर द्विपक्षीय/बहुपक्षीय समझौतों की अनुमति देता है बशर्ते वे Basel से 'कम पर्यावरणीय रूप से सुरक्षित' न हों।",
+        "GATT अनुच्छेद XX(b) मानव स्वास्थ्य की रक्षा के लिए आवश्यक व्यापार प्रतिबंधों की अनुमति देता है — द्विपक्षीय समझौता इस उद्देश्य की पूर्ति करता है।",
+        "यह समझौता Basel अनुच्छेद 11 और GATT अनुच्छेद XX(b) दोनों के तहत वैध है — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) का WTO उल्लंघन दावा व्यापार कानून की सतही समझ का फायदा उठाता है। जो छात्र 'आयात प्रतिबंध GATT का उल्लंघन करते हैं' जानते हैं लेकिन GATT अनुच्छेद XX के अपवाद या Basel अनुच्छेद 11 के द्विपक्षीय समझौता मार्ग को नहीं जानते, वे (b) को निश्चित रूप से सही मानेंगे।",
+      "final_explanation": "यहाँ Basel-WTO इंटरफेस को अनुच्छेद 11 के द्विपक्षीय समझौता तंत्र के माध्यम से परखा गया है।\n\nपरिदृश्य: देश X (Basel पार्टी) देश Y (जो Basel पार्टी भी है) के साथ एक द्विपक्षीय समझौता करता है जिसके तहत देश X देश Y से सभी खतरनाक अपशिष्ट के आयातों को प्रतिबंधित करता है, जो Basel के PIC आवश्यकता से अधिक कड़े मानक लागू करता है।\n\n• विकल्प (a): गलत — यह स्वचालित रूप से अवैध ट्रैफिक नहीं है; द्विपक्षीय समझौता Basel अनुच्छेद 11 द्वारा स्पष्ट रूप से अनुमत है।\n• विकल्प (b): गलत — जबकि GATT अनुच्छेद XI सामान्यतः आयात प्रतिबंधों को रोकता है, अनुच्छेद XX(b) मानव स्वास्थ्य की रक्षा के लिए आवश्यक उपायों के लिए अपवाद प्रदान करता है। द्विपक्षीय समझौता इस अपवाद के अंतर्गत आता है।\n• विकल्प (c): गलत — Basel का PIC तंत्र न्यूनतम स्तर निर्धारित करता है, अधिकतम नहीं। पार्टियां द्विपक्षीय रूप से अधिक कड़े मानकों पर सहमत हो सकती हैं।\n• विकल्प (d): सही — Basel अनुच्छेद 11 खतरनाक अपशिष्ट पर द्विपक्षीय समझौतों की अनुमति देता है बशर्ते वे Basel से 'कम पर्यावरणीय रूप से सुरक्षित' न हों। पूर्ण प्रतिबंध PIC से अधिक कड़ा है — यह अनुच्छेद 11 की सीमा को पूरा करता है और GATT अनुच्छेद XX(b) के अनुरूप है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 11 के समझौतों की सूचना अन्य Basel पार्टियों को सचिवालय के माध्यम से देनी होती है।\n• अनुच्छेद 11 में 'कम पर्यावरणीय रूप से सुरक्षित नहीं' मानक मुख्य वाक्यांश है — समझौते Basel से कमजोर नहीं हो सकते लेकिन मजबूत हो सकते हैं।\n• WTO न्यायशास्त्र में GATT अनुच्छेद XX(b) को व्यापक रूप से पर्यावरणीय उपायों के लिए स्वीकार किया गया है।"
+    }
+  },
+  {
+    "uuid": "31c52eb4-80b6-4f86-919f-a323d1c65354",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Definition of 'Hazardous Waste' under Basel Convention",
+        "Distinction Between 'Hazardous Waste' and 'Other Wastes' under Basel"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Radioactive waste Basel exclusion vs. e-waste inclusion via Annex I",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following is correctly identified as a category of waste EXPLICITLY EXCLUDED from the regulatory scope of the Basel Convention?\n\n(a) Electronic waste, which is specifically categorised under Annex I of the Basel Convention's 1989 text\n(b) Radioactive waste, which is governed by a separate international regime under IAEA auspices\n(c) Wastes from ships' normal operations, which lack hazardous characteristics and therefore fall outside Basel's definition\n(d) Electronic waste, which is explicitly excluded from Basel jurisdiction pending the development of a separate e-waste convention",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) states that e-waste is explicitly excluded from Basel, which is the reverse of the truth — it is implicitly included through existing Annex I categories, not explicitly excluded.",
+      "elimination_logic": [
+        "Radioactive waste: explicitly excluded from Basel Convention — governed by IAEA instruments.",
+        "Electronic waste: NOT explicitly excluded — covered through existing Annex I categories for lead, mercury, cadmium content.",
+        "Eliminate option (a): it claims e-waste is explicitly categorised in the 1989 text — false.",
+        "Eliminate option (c): it conflates 'not in Annex I' with 'excluded' — e-waste falls under existing Annex I categories.",
+        "Eliminate option (d): claims e-waste is explicitly excluded — false, the opposite is true.",
+        "Select option (b): radioactive waste is the correctly identified exclusion."
+      ],
+      "upsc_trap_explanation": "Options (a) and (d) create competing e-waste confusion, designed to distract from identifying radioactive waste as the explicitly excluded category. The 1989 adoption year makes e-waste's implicit inclusion vs. explicit exclusion a genuine knowledge test.",
+      "final_explanation": "Basel's exclusions are as legally significant as its inclusions.\n\n• Option (a) — Incorrect: E-waste is not explicitly categorised in Basel's 1989 text — it is implicitly covered through existing Annex I entries for lead, mercury, and cadmium-containing wastes.\n• Option (b) — Correct: Radioactive waste is explicitly excluded from the Basel Convention. It is governed by its own international regime under IAEA auspices (Joint Convention on the Safety of Radioactive Waste Management and Spent Fuel Management).\n• Option (c) — Incorrect: Ship operational wastes are excluded under MARPOL, not because they lack hazardous characteristics — they are governed by a different specialized regime.\n• Option (d) — Incorrect: E-waste is not explicitly excluded from Basel — the opposite is true. COP decisions have confirmed its inclusion through existing annex categories.\n\nValue Addition:\n• The Basel-IAEA jurisdictional boundary at radioactive waste is a classic UPSC trap.\n• MARPOL (International Convention for the Prevention of Pollution from Ships) governs operational ship wastes.\n• Both radioactive waste and ship operational wastes are excluded — two separate exclusions with separate governing regimes."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा अपशिष्ट बेसल कन्वेंशन के नियामक दायरे से स्पष्ट रूप से बहिष्कृत श्रेणी के रूप में सही ढंग से पहचाना गया है?\n\n(a) इलेक्ट्रॉनिक अपशिष्ट, जिसे बेसल कन्वेंशन के 1989 के पाठ के Annex I के तहत विशेष रूप से वर्गीकृत किया गया है\n(b) रेडियोधर्मी अपशिष्ट, जिसे IAEA के अधीन एक अलग अंतरराष्ट्रीय शासन द्वारा शासित किया जाता है\n(c) जहाजों के सामान्य संचालन से उत्पन्न अपशिष्ट, जिनमें खतरनाक गुण नहीं होते और इसलिए वे बेसल की परिभाषा के बाहर आते हैं\n(d) इलेक्ट्रॉनिक अपशिष्ट, जिसे एक अलग ई-वेस्ट कन्वेंशन के विकास तक बेसल अधिकार क्षेत्र से स्पष्ट रूप से बहिष्कृत किया गया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) states that e-waste is explicitly excluded from Basel, which is the reverse of the truth — it is implicitly included through existing Annex I categories, not explicitly excluded.",
+      "elimination_logic": [
+        "रेडियोधर्मी अपशिष्ट: बेसल कन्वेंशन से स्पष्ट रूप से बाहर — IAEA के उपकरणों द्वारा शासित।",
+        "इलेक्ट्रॉनिक अपशिष्ट: स्पष्ट रूप से बाहर नहीं — सीसा, पारा, कैडमियम युक्त अपशिष्टों के लिए मौजूदा Annex I श्रेणियों के तहत शामिल।",
+        "विकल्प (a) को हटाएं: यह दावा करता है कि ई-वेस्ट को 1989 के पाठ में स्पष्ट रूप से वर्गीकृत किया गया है — गलत।",
+        "विकल्प (c) को हटाएं: यह 'Annex I में नहीं' को 'बाहर' समझता है — ई-वेस्ट मौजूदा Annex I श्रेणियों के अंतर्गत आता है।",
+        "विकल्प (d) को हटाएं: यह दावा करता है कि ई-वेस्ट स्पष्ट रूप से बाहर है — गलत, इसके विपरीत सत्य है।",
+        "विकल्प (b) चुनें: रेडियोधर्मी अपशिष्ट सही ढंग से पहचाना गया स्पष्ट बहिष्करण है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) और (d) ई-वेस्ट को लेकर भ्रम पैदा करते हैं, जो रेडियोधर्मी अपशिष्ट को स्पष्ट रूप से बहिष्कृत श्रेणी के रूप में पहचानने से ध्यान भटकाने के लिए डिज़ाइन किए गए हैं। 1989 के अपनाने के वर्ष के कारण ई-वेस्ट का निहित समावेशन बनाम स्पष्ट बहिष्कार एक वास्तविक ज्ञान परीक्षा है।",
+      "final_explanation": "बेसल के बहिष्कार उसके समावेशों जितने ही कानूनी रूप से महत्वपूर्ण हैं।\n\n• विकल्प (a) — गलत: ई-वेस्ट को बेसल के 1989 के पाठ में स्पष्ट रूप से वर्गीकृत नहीं किया गया है — यह सीसा, पारा, और कैडमियम युक्त अपशिष्टों के लिए मौजूदा Annex I प्रविष्टियों के माध्यम से निहित रूप से शामिल है।\n• विकल्प (b) — सही: रेडियोधर्मी अपशिष्ट बेसल कन्वेंशन से स्पष्ट रूप से बहिष्कृत है। इसे IAEA के अधीन अपने अंतरराष्ट्रीय शासन द्वारा शासित किया जाता है (Radioactive Waste Management और Spent Fuel Management की सुरक्षा पर संयुक्त कन्वेंशन)।\n• विकल्प (c) — गलत: जहाजों के सामान्य संचालन से उत्पन्न अपशिष्ट MARPOL के तहत बहिष्कृत हैं, न कि इसलिए कि वे खतरनाक गुणों से रहित हैं — वे एक अलग विशेषीकृत शासन द्वारा शासित हैं।\n• विकल्प (d) — गलत: ई-वेस्ट बेसल से स्पष्ट रूप से बहिष्कृत नहीं है — इसके विपरीत सत्य है। COP निर्णयों ने इसके मौजूदा Annex श्रेणियों के माध्यम से समावेशन की पुष्टि की है।\n\nमूल्य संवर्धन:\n• रेडियोधर्मी अपशिष्ट पर बेसल-IAEA अधिकार क्षेत्र की सीमा UPSC का एक क्लासिक जाल है।\n• MARPOL (International Convention for the Prevention of Pollution from Ships) जहाजों के परिचालन अपशिष्टों को नियंत्रित करता है।\n• रेडियोधर्मी अपशिष्ट और जहाज परिचालन अपशिष्ट दोनों बहिष्कृत हैं — दो अलग-अलग बहिष्कार जिनके अलग-अलग शासन हैं।"
+    }
+  },
+  {
+    "uuid": "104b3838-9f69-436e-8aab-5894b6e062ef",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Conference of Parties (COP) to Basel Convention: Decision-Making",
+        "Financial Mechanism and Technical Assistance under Basel Convention"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Basel COP milestones — Compliance Committee, joint secretariat, plastic waste, BRS COP",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of governance milestones under the Basel Convention and the BRS framework?\n\n1. Establishment of the Basel Convention Compliance Committee\n2. BRS joint secretariat becoming operational\n3. Plastic Waste Amendment adopted at COP-14\n4. First joint Conference of Parties of all three BRS conventions\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 2 → 4 → 3\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the joint BRS secretariat before the Compliance Committee, which feels plausible because administrative consolidation seems like an early priority — students who don't know COP-6 (2002) established the Compliance Committee will order these incorrectly.",
+      "elimination_logic": [
+        "Compliance Committee established at COP-6 (2002) — this is the earliest of the four milestones.",
+        "Joint BRS secretariat became operational in 2010 — second chronologically.",
+        "Plastic Waste Amendment adopted at COP-14 (2019) — third.",
+        "First joint COP of BRS conventions (COP-15) in 2022 — most recent.",
+        "Correct order: Compliance Committee (2002) → Joint secretariat (2010) → Plastic Waste Amendment (2019) → First joint COP (2022) — select option (a)."
+      ],
+      "upsc_trap_explanation": "The 2002 Compliance Committee vs. 2010 joint secretariat reversal is the core temporal trap. Students intuitively place administrative consolidation before compliance mechanisms, reversing the actual order.",
+      "final_explanation": "Four major Basel governance milestones must be sequenced correctly.\n\nCorrect order: Basel Compliance Committee established (COP-6, 2002) → BRS joint secretariat operational (2010) → Plastic Waste Amendment adopted at COP-14 (2019) → First joint COP of BRS conventions — COP-15 (2022, Geneva).\n\n• Option (a): 2002 → 2010 → 2019 → 2022 — correct sequence.\n• Option (b): Reverses 2002 and 2010 — incorrect; Compliance Committee preceded the joint secretariat.\n• Option (c): Places COP-15 before the Plastic Waste Amendment — impossible; 2022 follows 2019.\n• Option (d): Places joint secretariat first — incorrect; Compliance Committee was established eight years earlier.\n\nValue Addition:\n• The Compliance Committee (COP-6, 2002) model influenced compliance mechanism design in other MEAs including the Stockholm Convention.\n• Joint BRS secretariat (2010) was an efficiency measure reducing duplication across the three conventions.\n• COP-15 (2022) being the first 'joint COP' of all three BRS conventions is a relatively recent and exam-relevant development."
+    },
+    "hi": {
+      "display_text": "बेसल कन्वेंशन और BRS ढांचे के तहत शासन के मील के पत्थरों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. बेसल कन्वेंशन अनुपालन समिति की स्थापना\n2. BRS संयुक्त सचिवालय का परिचालन में आना\n3. COP-14 में प्लास्टिक वेस्ट संशोधन को अपनाना\n4. तीनों BRS कन्वेंशनों का पहला संयुक्त पार्टीज सम्मेलन\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 3 → 4\n(c) 1 → 2 → 4 → 3\n(d) 2 → 1 → 4 → 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) संयुक्त BRS सचिवालय को अनुपालन समिति से पहले रखता है, जो प्रबंधकीय समेकन को प्रारंभिक प्राथमिकता मानने के कारण संभावित लगता है — जो छात्र नहीं जानते कि COP-6 (2002) में अनुपालन समिति स्थापित हुई थी, वे इसे गलत क्रम में रखेंगे।",
+      "elimination_logic": [
+        "अनुपालन समिति COP-6 (2002) में स्थापित हुई — यह चार मील के पत्थरों में सबसे पहला है।",
+        "संयुक्त BRS सचिवालय 2010 में परिचालित हुआ — कालानुक्रमिक रूप से दूसरा।",
+        "प्लास्टिक वेस्ट संशोधन COP-14 (2019) में अपनाया गया — तीसरा।",
+        "तीनों BRS सम्मेलनों का पहला संयुक्त COP (COP-15) 2022 में हुआ — सबसे हाल का।",
+        "सही क्रम: अनुपालन समिति (2002) → संयुक्त सचिवालय (2010) → प्लास्टिक वेस्ट संशोधन (2019) → पहला संयुक्त COP (2022) — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "2002 की अनुपालन समिति और 2010 के संयुक्त सचिवालय के उलटफेर को ही मुख्य कालानुक्रमिक जाल कहा जाता है। छात्र सहज रूप से प्रबंधकीय समेकन को अनुपालन तंत्र से पहले रखते हैं, जो वास्तविक क्रम का उल्टा है।",
+      "final_explanation": "बेसल शासन के चार प्रमुख मील के पत्थरों को सही क्रम में रखना आवश्यक है।\n\nसही क्रम: बेसल अनुपालन समिति की स्थापना (COP-6, 2002) → BRS संयुक्त सचिवालय परिचालन (2010) → प्लास्टिक वेस्ट संशोधन COP-14 में अपनाया गया (2019) → तीनों BRS सम्मेलनों का पहला संयुक्त COP — COP-15 (2022, जिनेवा)।\n\n• विकल्प (a): 2002 → 2010 → 2019 → 2022 — सही क्रम।\n• विकल्प (b): 2002 और 2010 को उलट देता है — गलत; अनुपालन समिति संयुक्त सचिवालय से पहले स्थापित हुई।\n• विकल्प (c): COP-15 को प्लास्टिक वेस्ट संशोधन से पहले रखता है — असंभव; 2022, 2019 के बाद है।\n• विकल्प (d): संयुक्त सचिवालय को पहले रखता है — गलत; अनुपालन समिति आठ वर्ष पहले स्थापित हुई थी।\n\nमूल्यवर्धन:\n• अनुपालन समिति (COP-6, 2002) मॉडल ने अन्य MEAs जैसे स्टॉकहोम कन्वेंशन में अनुपालन तंत्र के डिजाइन को प्रभावित किया।\n• संयुक्त BRS सचिवालय (2010) तीन कन्वेंशनों में दोहराव कम करने के लिए दक्षता उपाय था।\n• COP-15 (2022) सभी तीन BRS कन्वेंशनों का पहला 'संयुक्त COP' है, जो हाल का और परीक्षा-संबंधी विकास है।"
+    }
+  },
+  {
+    "uuid": "f8be205a-7a6c-469c-905a-ad65346dde03",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "India and the Basel Convention: Ratification and Domestic Implementation"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "India's Basel domestic legislation — 2016 Rules and EPR mechanism",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding India's relationship with the Basel Convention:\n\n1. India ratified the Basel Convention in 1992, making it one of the early developing countries to do so.\n2. India's primary domestic legislation implementing Basel Convention obligations is the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016.\n3. India has ratified the Basel Ban Amendment, reflecting its commitment as a major recycling economy to align with international standards on hazardous waste exports.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India ratified the Basel Convention in 1992, making it one of the early developing countries to do so.",
+          "verdict": "Correct",
+          "reason": "India ratified Basel in 1992, the same year it entered into force — an early ratification demonstrating India's engagement with the convention from the outset."
+        },
+        {
+          "statement": "India's primary domestic legislation implementing Basel Convention obligations is the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016.",
+          "verdict": "Correct",
+          "reason": "The 2016 Rules (amended in 2019) are India's primary implementation instrument under the Environment (Protection) Act, 1986 — they govern hazardous waste management and transboundary movement in line with Basel obligations."
+        },
+        {
+          "statement": "India has ratified the Basel Ban Amendment, reflecting its commitment as a major recycling economy to align with international standards on hazardous waste exports.",
+          "verdict": "Incorrect",
+          "reason": "India has NOT ratified the Basel Ban Amendment — its strategic position as a significant importer of recyclable hazardous materials has led it to maintain this position, as ratification would restrict incoming recyclable waste flows."
+        }
+      ],
+      "strong_distractor": "d — Option (d) (1, 2 and 3) is the strong distractor because a student who remembers India's 'green credentials' in environmental conventions may assume India has ratified all Basel instruments, missing the deliberate non-ratification of the Ban Amendment.",
+      "elimination_logic": [
+        "Statement 1: India ratified Basel in 1992 — correct; early ratification is well-documented.",
+        "Statement 2: 2016 Rules as primary domestic implementation — correct; these replaced earlier 2008 Rules.",
+        "Statement 3: India has NOT ratified the Ban Amendment — this is a deliberate strategic decision; Statement 3 is incorrect.",
+        "Only Statements 1 and 2 are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 3's 'reflects commitment' language is designed to sound positive and align with students' assumption that India has ratified all major environmental treaties. India's non-ratification of the Ban Amendment is a deliberate strategic decision — the opposite of the statement's claim.",
+      "final_explanation": "India's Basel relationship combines early ratification of the parent convention with strategic abstention from the Ban Amendment.\n\n• Statement 1 — Correct: India ratified in 1992, the year the Convention entered into force. This early ratification reflects India's engagement with international environmental law from the convention's inception.\n• Statement 2 — Correct: The Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 (amended 2019) are the current primary domestic implementation rules under the Environment (Protection) Act, 1986.\n• Statement 3 — Incorrect: India has NOT ratified the Basel Ban Amendment. As a significant importer of recyclable hazardous materials, India's industries benefit from being able to receive recycling-grade waste from OECD countries — ratifying the Ban Amendment would potentially restrict these flows.\n\nValue Addition:\n• India's E-Waste Management Rules 2016 (amended 2022) use Extended Producer Responsibility (EPR) as the core compliance mechanism.\n• MoEFCC is India's designated Basel Competent Authority; CPCB handles technical matters.\n• The Research Foundation for Science v. Union of India Supreme Court case directed Basel compliance implementation for ship-breaking."
+    },
+    "hi": {
+      "display_text": "भारत के बेसल कन्वेंशन के साथ संबंध के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. भारत ने 1992 में बेसल कन्वेंशन को अनुमोदित किया, जिससे यह प्रारंभिक विकासशील देशों में से एक बन गया।\n2. भारत का मुख्य घरेलू कानून जो बेसल कन्वेंशन की जिम्मेदारियों को लागू करता है, वह है खतरनाक और अन्य अपशिष्ट (प्रबंधन और सीमा-पार आंदोलन) नियम, 2016।\n3. भारत ने बेसल बैन संशोधन को अनुमोदित किया है, जो खतरनाक अपशिष्ट निर्यात पर अंतरराष्ट्रीय मानकों के साथ मेल खाने के लिए एक प्रमुख पुनर्चक्रण अर्थव्यवस्था के रूप में इसकी प्रतिबद्धता को दर्शाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "India ratified the Basel Convention in 1992, making it one of the early developing countries to do so.",
+          "verdict": "सही है",
+          "reason": "भारत ने 1992 में बेसल कन्वेंशन को अनुमोदित किया, वही वर्ष जब यह लागू हुआ — प्रारंभ से ही भारत की संधि के साथ संलग्नता को दर्शाता है।"
+        },
+        {
+          "statement": "India's primary domestic legislation implementing Basel Convention obligations is the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016.",
+          "verdict": "सही है",
+          "reason": "2016 के नियम (2019 में संशोधित) भारत के पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत मुख्य कार्यान्वयन उपकरण हैं — ये बेसल की जिम्मेदारियों के अनुरूप खतरनाक अपशिष्ट प्रबंधन और सीमा-पार आंदोलन को नियंत्रित करते हैं।"
+        },
+        {
+          "statement": "India has ratified the Basel Ban Amendment, reflecting its commitment as a major recycling economy to align with international standards on hazardous waste exports.",
+          "verdict": "गलत है",
+          "reason": "भारत ने बेसल बैन संशोधन को अनुमोदित नहीं किया है — पुनर्चक्रणीय खतरनाक सामग्री के एक महत्वपूर्ण आयातक के रूप में इसकी रणनीतिक स्थिति ने इसे इस स्थिति को बनाए रखने के लिए प्रेरित किया है, क्योंकि अनुमोदन से आने वाले पुनर्चक्रणीय अपशिष्ट प्रवाह प्रतिबंधित हो सकते हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) (1, 2 और 3) एक मजबूत भ्रम है क्योंकि पर्यावरणीय संधियों में भारत की 'हरित योग्यता' याद रखने वाला छात्र मान सकता है कि भारत ने बेसल के सभी उपकरणों को अनुमोदित किया है, जबकि बैन संशोधन के जानबूझकर गैर-अनुमोदन को नजरअंदाज कर देता है।",
+      "elimination_logic": [
+        "कथन 1: भारत ने 1992 में बेसल को अनुमोदित किया — सही; प्रारंभिक अनुमोदन अच्छी तरह से प्रलेखित है।",
+        "कथन 2: 2016 के नियम मुख्य घरेलू कार्यान्वयन हैं — सही; इन्होंने 2008 के पुराने नियमों को प्रतिस्थापित किया।",
+        "कथन 3: भारत ने बैन संशोधन को अनुमोदित नहीं किया है — यह एक जानबूझकर रणनीतिक निर्णय है; कथन 3 गलत है।",
+        "केवल कथन 1 और 2 सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में 'प्रतिबद्धता दर्शाता है' भाषा सकारात्मक लगने के लिए डिज़ाइन की गई है और छात्रों के उस अनुमान के अनुरूप है कि भारत ने सभी प्रमुख पर्यावरणीय संधियों को अनुमोदित किया है। भारत का बैन संशोधन का गैर-अनुमोदन एक जानबूझकर रणनीतिक निर्णय है — जो कथन के दावे के विपरीत है।",
+      "final_explanation": "भारत का बेसल संबंध प्रारंभिक अनुमोदन के साथ-साथ बैन संशोधन से रणनीतिक परहेज को मिलाता है।\n\n• कथन 1 — सही: भारत ने 1992 में अनुमोदन किया, वही वर्ष जब संधि लागू हुई। यह प्रारंभिक अनुमोदन संधि की शुरुआत से ही भारत की अंतरराष्ट्रीय पर्यावरण कानून में संलग्नता को दर्शाता है।\n• कथन 2 — सही: खतरनाक और अन्य अपशिष्ट (प्रबंधन और सीमा-पार आंदोलन) नियम, 2016 (2019 में संशोधित) पर्यावरण (संरक्षण) अधिनियम, 1986 के तहत वर्तमान मुख्य घरेलू कार्यान्वयन नियम हैं।\n• कथन 3 — गलत: भारत ने बेसल बैन संशोधन को अनुमोदित नहीं किया है। पुनर्चक्रणीय खतरनाक सामग्री के एक महत्वपूर्ण आयातक के रूप में, भारत की उद्योगों को OECD देशों से पुनर्चक्रण-ग्रेड अपशिष्ट प्राप्त करने में लाभ होता है — बैन संशोधन को अनुमोदित करने से ये प्रवाह प्रतिबंधित हो सकते हैं।\n\nमूल्य संवर्धन:\n• भारत के ई-अपशिष्ट प्रबंधन नियम 2016 (2022 में संशोधित) में विस्तारित उत्पादक जिम्मेदारी (EPR) को मुख्य अनुपालन तंत्र के रूप में उपयोग किया गया है।\n• MoEFCC भारत का नामित बेसल सक्षम प्राधिकरण है; CPCB तकनीकी मामलों को संभालता है।\n• Research Foundation for Science v. Union of India सुप्रीम कोर्ट के मामले ने जहाज तोड़ने के लिए बेसल अनुपालन कार्यान्वयन निर्देशित किया।"
+    }
+  },
+  {
+    "uuid": "99820369-a299-4e43-a4fd-a1a6d305174f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Prior Informed Consent (PIC) Mechanism",
+        "The Basel, Rotterdam and Stockholm (BRS) Conventions: Synergies and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "PIC under Basel vs. Rotterdam — wastes vs. chemicals distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched with respect to the Prior Informed Consent (PIC) mechanisms under international environmental conventions?\n\n(a) Basel Convention: administers PIC for both hazardous waste movements AND for hazardous chemicals and pesticides entering international trade\n(b) Basel Convention: PIC for transboundary movements of hazardous waste — Rotterdam Convention: PIC for hazardous chemicals and pesticides in international trade\n(c) Stockholm Convention: administers a PIC mechanism for persistent organic pollutants before they are listed in its annexes for elimination or restriction\n(d) Basel and Rotterdam Conventions: their PIC mechanisms were merged into a unified procedure following the establishment of the joint BRS secretariat in 2010",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) attributes PIC for both chemicals AND hazardous waste to Basel alone, which students who know 'Basel involves PIC' without knowing Rotterdam's separate chemical PIC regime will accept.",
+      "elimination_logic": [
+        "Option (a): Attributes PIC for chemicals and pesticides to Basel — incorrect; chemical/pesticide PIC is Rotterdam's domain.",
+        "Option (b): Basel PIC for hazardous waste movements; Rotterdam PIC for hazardous chemicals and pesticides in international trade — correctly distinguishes the two conventions' separate PIC regimes.",
+        "Option (c): Claims Stockholm Convention administers a PIC mechanism for persistent organic pollutants — Stockholm does not have a PIC mechanism; it uses elimination/restriction schedules.",
+        "Option (d): Claims PIC under Basel and Rotterdam are administered through a single unified mechanism — false; they are separate legal instruments with separate procedures.",
+        "Option (b) is the only correctly matched pair — select (b)."
+      ],
+      "upsc_trap_explanation": "Option (a) conflates Basel and Rotterdam PIC regimes — a frequent and high-stakes confusion. Students who associate PIC primarily with Basel will not question option (a)'s claim that Basel also handles chemical PIC.",
+      "final_explanation": "The PIC mechanism exists independently under both Basel and Rotterdam, but for entirely different subjects.\n\n• Option (a) — Incorrect: Attributes chemical and pesticide PIC to Basel. Basel's PIC applies to hazardous waste transboundary movements; chemical/pesticide PIC belongs to Rotterdam.\n• Option (b) — Correct: Precisely distinguishes Basel PIC (hazardous waste movements) from Rotterdam PIC (hazardous chemicals and pesticides in international trade). These are parallel but separate regimes.\n• Option (c) — Incorrect: Stockholm Convention does not employ a PIC mechanism. It uses schedules for elimination (Annex A), restriction (Annex B), and unintentional release reduction (Annex C).\n• Option (d) — Incorrect: No unified PIC mechanism exists across Basel and Rotterdam — each convention has its own independent PIC procedure, administered by separate national competent authorities.\n\nValue Addition:\n• Rotterdam PIC (formerly called Amended PIC) covers pesticides and industrial chemicals that have been banned or severely restricted.\n• A substance can trigger obligations under all three BRS conventions at different lifecycle stages.\n• The BRS joint secretariat does not merge their legal procedures — PIC under Basel and Rotterdam remains procedurally distinct."
+    },
+    "hi": {
+      "display_text": "अंतरराष्ट्रीय पर्यावरण कन्वेंशनों के तहत Prior Informed Consent (PIC) तंत्रों के संबंध में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) Basel कन्वेंशन: खतरनाक अपशिष्ट गतियों और अंतरराष्ट्रीय व्यापार में खतरनाक रसायनों और कीटनाशकों दोनों के लिए PIC संचालित करता है\n(b) Basel कन्वेंशन: खतरनाक अपशिष्ट के पारसीमा गतियों के लिए PIC — Rotterdam कन्वेंशन: अंतरराष्ट्रीय व्यापार में खतरनाक रसायनों और कीटनाशकों के लिए PIC\n(c) Stockholm कन्वेंशन: स्थायी कार्बनिक प्रदूषकों के लिए PIC तंत्र संचालित करता है, इससे पहले कि उन्हें उन्मूलन या प्रतिबंध के लिए इसके परिशिष्टों में सूचीबद्ध किया जाए\n(d) Basel और Rotterdam कन्वेंशनों: 2010 में संयुक्त BRS सचिवालय की स्थापना के बाद उनके PIC तंत्रों को एकीकृत प्रक्रिया में विलय कर दिया गया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) केवल Basel को रासायनिक और खतरनाक अपशिष्ट दोनों के लिए PIC का श्रेय देता है, जिसे वे छात्र स्वीकार कर लेंगे जो जानते हैं कि 'Basel में PIC होता है' लेकिन Rotterdam के अलग रासायनिक PIC व्यवस्था को नहीं जानते।",
+      "elimination_logic": [
+        "विकल्प (a): रासायनिक और कीटनाशक PIC को Basel को देता है — गलत; रासायनिक/कीटनाशक PIC Rotterdam का क्षेत्र है।",
+        "विकल्प (b): Basel PIC खतरनाक अपशिष्ट के पारसीमा गतियों के लिए; Rotterdam PIC अंतरराष्ट्रीय व्यापार में खतरनाक रसायनों और कीटनाशकों के लिए — दोनों कन्वेंशनों की अलग-अलग PIC व्यवस्थाओं को सही ढंग से अलग करता है।",
+        "विकल्प (c): दावा करता है कि Stockholm कन्वेंशन स्थायी कार्बनिक प्रदूषकों के लिए PIC तंत्र संचालित करता है — Stockholm में PIC तंत्र नहीं है; यह उन्मूलन/प्रतिबंध अनुसूचियों का उपयोग करता है।",
+        "विकल्प (d): दावा करता है कि Basel और Rotterdam के PIC एक एकीकृत तंत्र के माध्यम से संचालित होते हैं — गलत; ये अलग-अलग कानूनी उपकरण हैं जिनकी प्रक्रियाएँ अलग हैं।",
+        "विकल्प (b) ही सही मेल खाता जोड़ा है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) Basel और Rotterdam के PIC व्यवस्थाओं को मिलाता है — यह एक सामान्य और गंभीर भ्रम है। जो छात्र PIC को मुख्यतः Basel से जोड़ते हैं, वे विकल्प (a) के इस दावे पर सवाल नहीं उठाएंगे कि Basel रासायनिक PIC भी संभालता है।",
+      "final_explanation": "PIC तंत्र Basel और Rotterdam दोनों के तहत स्वतंत्र रूप से मौजूद है, लेकिन पूरी तरह से अलग विषयों के लिए।\n\n• विकल्प (a) — गलत: रासायनिक और कीटनाशक PIC को Basel को देता है। Basel का PIC खतरनाक अपशिष्ट के पारसीमा गतियों पर लागू होता है; रासायनिक/कीटनाशक PIC Rotterdam का है।\n• विकल्प (b) — सही: Basel PIC (खतरनाक अपशिष्ट गतियों) और Rotterdam PIC (अंतरराष्ट्रीय व्यापार में खतरनाक रसायन और कीटनाशक) को सटीक रूप से अलग करता है। ये समानांतर लेकिन अलग व्यवस्थाएँ हैं।\n• विकल्प (c) — गलत: Stockholm कन्वेंशन PIC तंत्र का उपयोग नहीं करता। यह उन्मूलन (परिशिष्ट A), प्रतिबंध (परिशिष्ट B), और अनजाने उत्सर्जन में कमी (परिशिष्ट C) के लिए अनुसूचियाँ उपयोग करता है।\n• विकल्प (d) — गलत: Basel और Rotterdam के बीच कोई एकीकृत PIC तंत्र नहीं है — प्रत्येक कन्वेंशन की अपनी स्वतंत्र PIC प्रक्रिया है, जो अलग-अलग राष्ट्रीय सक्षम प्राधिकरणों द्वारा संचालित होती है।\n\nमूल्य संवर्धन:\n• Rotterdam PIC (पूर्व में संशोधित PIC कहा जाता था) उन कीटनाशकों और औद्योगिक रसायनों को कवर करता है जिन्हें प्रतिबंधित या गंभीर रूप से सीमित किया गया है।\n• एक पदार्थ BRS के तीनों कन्वेंशनों के तहत जीवनचक्र के विभिन्न चरणों में दायित्व उत्पन्न कर सकता है।\n• BRS संयुक्त सचिवालय उनकी कानूनी प्रक्रियाओं को विलय नहीं करता — Basel और Rotterdam के तहत PIC प्रक्रियाएँ अलग-अलग बनी रहती हैं।"
+    }
+  },
+  {
+    "uuid": "eef08ca1-2a9d-4d79-938a-54ed4f40f58f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Basel Convention: Origin, Mandate and Legal Architecture",
+        "Waste Minimization and Proximity Principle"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Basel Convention core mandate — 'control AND disposal' conjunctive requirement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the core mandate of the Basel Convention?\n\n(a) To control transboundary movements of hazardous wastes and their disposal\n(b) To control transboundary movements of hazardous wastes only, leaving disposal to the domestic law of the importing state\n(c) To eliminate the production and use of hazardous chemicals through elimination and restriction schedules\n(d) To establish Prior Informed Consent procedures for the international trade in hazardous pesticides and industrial chemicals",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) omits 'disposal' from the mandate, reflecting the common partial recall that Basel is about controlling movements — students who remember only the 'transboundary movement' aspect will select (b) without noting the 'AND disposal' element.",
+      "elimination_logic": [
+        "The Basel Convention's core mandate is explicitly conjunctive: control of transboundary movements AND disposal of hazardous wastes.",
+        "Option (b) omits 'disposal' — partial-truth distractor exploiting the 'movement only' misremembering.",
+        "Option (c) adds 'elimination of hazardous chemicals' — that is Stockholm's mandate, not Basel.",
+        "Option (d) introduces 'Prior Informed Consent for pesticides' — Rotterdam's mandate.",
+        "Option (a) correctly states the full conjunctive mandate — select (a)."
+      ],
+      "upsc_trap_explanation": "The 'AND disposal' omission in option (b) is the scope-extension trap in reverse — students who know half the mandate (movement control) will select (b) without noticing the missing element. Disposal coverage is what makes Basel more than just a shipping restriction treaty.",
+      "final_explanation": "The precise framing of Basel's mandate is a direct but subtle test.\n\n• Option (a) — Correct: The Basel Convention's mandate is to control transboundary movements of hazardous wastes AND their disposal. Both elements are conjunctive — omitting disposal misses a significant component of Basel's scope.\n• Option (b) — Incorrect: Omits 'disposal' — this is the most common partial-recall error. Basel's scope extends through the full lifecycle to disposal, not just movement.\n• Option (c) — Incorrect: 'Elimination of hazardous chemicals' is the Stockholm Convention's mandate (for POPs). Basel addresses waste, not active chemical use.\n• Option (d) — Incorrect: 'Prior Informed Consent for pesticides' is the Rotterdam Convention's PIC mechanism — a different treaty for a different subject matter.\n\nValue Addition:\n• Basel's 'disposal' mandate includes both D-list (final disposal) and R-list (recovery) operations under Annex IV.\n• The word 'control' in Basel's mandate means regulatory oversight, not prohibition — ESM-compliant movements remain permissible.\n• Basel was explicitly designed to address the 'waste colonialism' of developed nations exporting waste to developing nations for cheap disposal."
+    },
+    "hi": {
+      "display_text": "बेसल कन्वेंशन के मूल मण्डेट का सबसे सटीक वर्णन निम्नलिखित में से कौन सा है?\n\n(a) खतरनाक अपशिष्टों के सीमा पार आंदोलनों और उनके निपटान का नियंत्रण करना\n(b) केवल खतरनाक अपशिष्टों के सीमा पार आंदोलनों का नियंत्रण करना, निपटान आयातक राज्य के घरेलू कानून पर छोड़ देना\n(c) उन्मूलन और प्रतिबंध अनुसूचियों के माध्यम से खतरनाक रसायनों के उत्पादन और उपयोग को समाप्त करना\n(d) खतरनाक कीटनाशकों और औद्योगिक रसायनों के अंतरराष्ट्रीय व्यापार के लिए पूर्व सूचित सहमति प्रक्रियाएँ स्थापित करना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में 'निपटान' को छोड़ दिया गया है, जो बेसल के नियंत्रण के बारे में आंशिक स्मृति को दर्शाता है — जो छात्र केवल 'सीमा पार आंदोलन' पहलू को याद रखते हैं वे बिना 'और निपटान' तत्व को नोट किए (b) चुनेंगे।",
+      "elimination_logic": [
+        "बेसल कन्वेंशन का मूल मण्डेट स्पष्ट रूप से संयोजक है: सीमा पार आंदोलन का नियंत्रण और खतरनाक अपशिष्टों का निपटान।",
+        "विकल्प (b) में 'निपटान' को छोड़ दिया गया है — यह आंशिक सत्य भ्रम पैदा करने वाला विकल्प है जो केवल 'आंदोलन' को याद रखने पर आधारित है।",
+        "विकल्प (c) में 'खतरनाक रसायनों का उन्मूलन' जोड़ा गया है — यह स्टॉकहोम कन्वेंशन का मण्डेट है, बेसल का नहीं।",
+        "विकल्प (d) में 'कीटनाशकों के लिए पूर्व सूचित सहमति' शामिल है — यह रॉटरडैम कन्वेंशन का मण्डेट है।",
+        "विकल्प (a) सही रूप से पूर्ण संयोजक मण्डेट बताता है — अतः (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में 'और निपटान' का अभाव स्कोप-एक्सटेंशन ट्रैप का उल्टा रूप है — जो छात्र आधा मण्डेट (आंदोलन नियंत्रण) जानते हैं वे बिना निपटान के अभाव को देखे (b) चुनेंगे। निपटान कवरेज बेसल को केवल शिपिंग प्रतिबंध संधि से अधिक बनाता है।",
+      "final_explanation": "बेसल के मण्डेट का सटीक स्वरूप एक प्रत्यक्ष लेकिन सूक्ष्म परीक्षा है।\n\n• विकल्प (a) — सही: बेसल कन्वेंशन का मण्डेट है खतरनाक अपशिष्टों के सीमा पार आंदोलनों और उनके निपटान का नियंत्रण। दोनों तत्व संयोजक हैं — निपटान को छोड़ना बेसल के दायरे का एक महत्वपूर्ण हिस्सा छोड़ देता है।\n• विकल्प (b) — गलत: 'निपटान' को छोड़ देता है — यह सबसे सामान्य आंशिक स्मृति त्रुटि है। बेसल का दायरा पूरे जीवनचक्र तक फैला है, केवल आंदोलन तक नहीं।\n• विकल्प (c) — गलत: 'खतरनाक रसायनों का उन्मूलन' स्टॉकहोम कन्वेंशन का मण्डेट है (POPs के लिए)। बेसल अपशिष्ट से संबंधित है, सक्रिय रसायनों के उपयोग से नहीं।\n• विकल्प (d) — गलत: 'कीटनाशकों के लिए पूर्व सूचित सहमति' रॉटरडैम कन्वेंशन की PIC प्रक्रिया है — एक अलग संधि और विषय।\n\nमूल्य संवर्धन:\n• बेसल का 'निपटान' मण्डेट Annex IV के तहत D-लिस्ट (अंतिम निपटान) और R-लिस्ट (पुनर्प्राप्ति) दोनों को शामिल करता है।\n• बेसल के मण्डेट में 'नियंत्रण' का अर्थ नियामक निगरानी है, प्रतिबंध नहीं — ESM-अनुरूप आंदोलन अनुमत रहते हैं।\n• बेसल विशेष रूप से विकसित देशों द्वारा सस्ते निपटान के लिए अपशिष्ट निर्यात की 'अपशिष्ट उपनिवेशवाद' को संबोधित करने के लिए डिज़ाइन किया गया था।"
+    }
+  },
+  {
+    "uuid": "11ce732e-76bc-48d4-bf47-e00a24dbc72f",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Financial Mechanism and Technical Assistance under Basel Convention",
+        "The Basel, Rotterdam and Stockholm (BRS) Conventions: Synergies and Distinctions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "GEF financial mechanism — applies to Stockholm, Minamata, CBD, UNFCCC; not Basel",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Global Environment Facility (GEF) serves as the designated financial mechanism for several major multilateral environmental agreements. Which of the following conventions does NOT have GEF as its financial mechanism?\n\n(a) Stockholm Convention on Persistent Organic Pollutants\n(b) Basel Convention on the Control of Transboundary Movements of Hazardous Wastes\n(c) Minamata Convention on Mercury\n(d) Convention on Biological Diversity",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) (Stockholm Convention) is the strong distractor because students who correctly identify that GEF serves Stockholm may still assume GEF also serves Basel through the BRS joint secretariat — confusing administrative linkage with financial mechanism identity.",
+      "elimination_logic": [
+        "Identify which conventions use GEF as their financial mechanism: Stockholm POPs — YES; Minamata Mercury — YES; Convention on Biological Diversity — YES; UNFCCC — YES.",
+        "Does Basel Convention use GEF? — NO; Basel relies on voluntary contributions and has no GEF financial mechanism.",
+        "The odd one out is the convention that does NOT use GEF — Basel Convention.",
+        "Select option (b): Basel Convention is the odd one out."
+      ],
+      "upsc_trap_explanation": "The BRS joint secretariat creates an implied financial linkage that does not exist. Students who associate Basel with Stockholm through the BRS framework assume GEF covers all three — missing that Basel's financial architecture is deliberately weaker and GEF-excluded.",
+      "final_explanation": "The Global Environment Facility (GEF) serves as the financial mechanism for several major MEAs — but not all.\n\n• Option (a) — Stockholm Convention: GEF IS the designated financial mechanism for Stockholm Convention. GEF has funded POPs elimination projects globally.\n• Option (b) — Basel Convention: GEF is NOT Basel's financial mechanism. Basel relies on voluntary contributions from parties to its trust fund. This is the odd one out.\n• Option (c) — Minamata Convention on Mercury: GEF IS the designated financial mechanism for Minamata, which entered into force in 2017.\n• Option (d) — Convention on Biological Diversity: GEF IS the financial mechanism for the CBD — it funds biodiversity conservation projects in developing countries.\n\nValue Addition:\n• UNFCCC also uses GEF alongside the Green Climate Fund (GCF).\n• Basel Regional Centres (BCRCs) fill the gap — 14 centres globally for capacity building, including India's BCRC in Mumbai.\n• Technical assistance for Basel is a 'best efforts' obligation — not legally binding as a financial commitment."
+    },
+    "hi": {
+      "display_text": "ग्लोबल एनवायरनमेंट फैसिलिटी (GEF) कई प्रमुख बहुपक्षीय पर्यावरण समझौतों के लिए नामित वित्तीय तंत्र के रूप में कार्य करता है। निम्नलिखित में से कौन सा सम्मेलन GEF को अपने वित्तीय तंत्र के रूप में नहीं रखता?\n\n(a) स्टॉकहोम सम्मेलन ऑन पर्सिस्टेंट ऑर्गेनिक पॉल्यूटेंट्स\n(b) बेसल सम्मेलन ऑन द कंट्रोल ऑफ ट्रांसबाउंड्री मूवमेंट्स ऑफ हैजर्डस वेस्ट\n(c) मिनामाता सम्मेलन ऑन मरकरी\n(d) जैव विविधता सम्मेलन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) (Stockholm Convention) मजबूत भ्रम पैदा करने वाला है क्योंकि जो छात्र सही रूप से पहचानते हैं कि GEF स्टॉकहोम के लिए सेवा करता है, वे अभी भी यह मान सकते हैं कि GEF BRS संयुक्त सचिवालय के माध्यम से बेसल के लिए भी सेवा करता है — प्रशासनिक संबंध को वित्तीय तंत्र की पहचान के साथ भ्रमित करते हैं।",
+      "elimination_logic": [
+        "पहचानिए कि कौन से सम्मेलन GEF को अपने वित्तीय तंत्र के रूप में उपयोग करते हैं: स्टॉकहोम POPs — हाँ; मिनामाता मरकरी — हाँ; जैव विविधता सम्मेलन — हाँ; UNFCCC — हाँ।",
+        "क्या बेसल सम्मेलन GEF का उपयोग करता है? — नहीं; बेसल स्वैच्छिक योगदानों पर निर्भर है और इसका कोई GEF वित्तीय तंत्र नहीं है।",
+        "अलग हटने वाला सम्मेलन वह है जो GEF का उपयोग नहीं करता — बेसल सम्मेलन।",
+        "विकल्प (b) चुनें: बेसल सम्मेलन अलग हटने वाला है।"
+      ],
+      "upsc_trap_explanation": "BRS संयुक्त सचिवालय एक अप्रत्यक्ष वित्तीय संबंध बनाता है जो वास्तव में मौजूद नहीं है। जो छात्र बेसल को BRS ढांचे के माध्यम से स्टॉकहोम से जोड़ते हैं, वे मान लेते हैं कि GEF तीनों को कवर करता है — यह समझे बिना कि बेसल की वित्तीय संरचना जानबूझकर कमजोर और GEF से बाहर है।",
+      "final_explanation": "ग्लोबल एनवायरनमेंट फैसिलिटी (GEF) कई प्रमुख बहुपक्षीय पर्यावरण समझौतों के लिए वित्तीय तंत्र के रूप में कार्य करता है — लेकिन सभी के लिए नहीं।\n\n• विकल्प (a) — स्टॉकहोम सम्मेलन: GEF स्टॉकहोम सम्मेलन के लिए नामित वित्तीय तंत्र है। GEF ने वैश्विक स्तर पर POPs उन्मूलन परियोजनाओं को वित्तपोषित किया है।\n• विकल्प (b) — बेसल सम्मेलन: GEF बेसल का वित्तीय तंत्र नहीं है। बेसल अपने ट्रस्ट फंड के लिए पक्षकारों से स्वैच्छिक योगदानों पर निर्भर करता है। यह अलग हटने वाला विकल्प है।\n• विकल्प (c) — मिनामाता सम्मेलन ऑन मरकरी: GEF मिनामाता के लिए नामित वित्तीय तंत्र है, जो 2017 में लागू हुआ।\n• विकल्प (d) — जैव विविधता सम्मेलन: GEF CBD के लिए वित्तीय तंत्र है — यह विकासशील देशों में जैव विविधता संरक्षण परियोजनाओं को वित्तपोषित करता है।\n\nमूल्य संवर्धन:\n• UNFCCC भी GEF का उपयोग ग्रीन क्लाइमेट फंड (GCF) के साथ करता है।\n• बेसल क्षेत्रीय केंद्र (BCRCs) इस अंतर को पूरा करते हैं — वैश्विक स्तर पर 14 केंद्र क्षमता निर्माण के लिए, जिनमें भारत का BCRC मुंबई शामिल है।\n• बेसल के लिए तकनीकी सहायता एक 'सर्वोत्तम प्रयास' दायित्व है — वित्तीय प्रतिबद्धता के रूप में कानूनी रूप से बाध्यकारी नहीं।"
+    }
+  },
+  {
+    "uuid": "66478de1-c9a6-4e60-aa5b-e92d53df9cbf",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Basel Ban Amendment (Amendment to Article 4A)",
+        "India and the Basel Convention: Ratification and Domestic Implementation"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Basel Ban Amendment — applies only to Annex VII (OECD+EU+Liechtenstein) exporters",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An OECD member state plans to export a large consignment of industrial solvents classified as hazardous waste to a licensed industrial recycling facility in India. The Indian facility has received prior written consent from its national competent authority, has been certified for Environmentally Sound Management of the relevant waste category, and India has been notified of the proposed movement. The two countries do not have a bilateral waste agreement.\n\nWhich of the following most accurately describes the legal status of this proposed movement under the Basel Convention?\n\n(a) The movement is prohibited by the Basel Ban Amendment, which bars Annex VII country exports of hazardous waste to non-Annex VII countries regardless of ESM capacity or PIC compliance at the destination\n(b) The movement is permissible because Prior Informed Consent from India's competent authority has been obtained, which satisfies all Basel procedural requirements\n(c) The movement is permissible because India's facility has demonstrated Environmentally Sound Management capacity, which is the overriding standard under the Basel Convention\n(d) The movement is permissible under Basel Article 11 because the exporting state can rely on a default bilateral presumption of equivalence when both countries are Basel parties",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it invokes ESM as a permissive standard — which is correct in general — but misses that the Ban Amendment creates an absolute prohibition for Annex VII exporters regardless of ESM capacity at the destination.",
+      "elimination_logic": [
+        "Identify the exporting country: a member of OECD — therefore in Annex VII.",
+        "The Basel Ban Amendment prohibits Annex VII to non-Annex VII exports of hazardous waste, including for recycling.",
+        "India is a non-Annex VII country — the movement falls squarely within the Ban Amendment's prohibition.",
+        "ESM capacity at the Indian facility is irrelevant for Annex VII exporters — the Ban is absolute, not performance-based.",
+        "The movement is prohibited by the Ban Amendment — select option (a)."
+      ],
+      "upsc_trap_explanation": "Option (c) applies ESM correctly in abstract but incorrectly in context. For Annex VII exporters, the Ban Amendment creates an absolute rule that ESM compliance cannot override. Students who apply ESM without first checking Annex VII status will choose (c) confidently.",
+      "final_explanation": "The scenario tests whether students can apply the Ban Amendment correctly by first checking the Annex VII status of the exporter.\n\nAn OECD member state proposes to export industrial solvents (classified as hazardous waste) to an Indian recycling facility that has demonstrated ESM capacity and has granted written PIC.\n\n• Option (a) — Correct: The exporting OECD member is an Annex VII country. India is non-Annex VII. The Basel Ban Amendment prohibits this movement absolutely — for any purpose including recycling. ESM compliance and PIC at the destination do not override the Ban Amendment for Annex VII exporters.\n• Option (b) — Incorrect: The movement is not permissible under full PIC procedures alone — the Ban Amendment creates an absolute prohibition that PIC compliance cannot cure for Annex VII to non-Annex VII flows.\n• Option (c) — Incorrect: ESM is the relevant standard for movements outside the Ban Amendment's scope. For Annex VII exporters to non-Annex VII destinations, the Ban Amendment applies regardless of ESM capacity.\n• Option (d) — Incorrect: Basel Article 11 bilateral agreements must be 'no less environmentally sound' than Basel — they cannot override the Ban Amendment's absolute prohibition.\n\nValue Addition:\n• India has NOT ratified the Ban Amendment — which means from India's perspective as importer, it might not consider itself bound by the Ban; but the exporting OECD state IS bound as an Annex VII party.\n• The Ban Amendment's entry into force in 2019 made this a live compliance issue for OECD exporters.\n• The Ban covers both D-list (disposal) and R-list (recycling) operations — no recycling exemption."
+    },
+    "hi": {
+      "display_text": "एक OECD सदस्य राज्य खतरनाक अपशिष्ट के रूप में वर्गीकृत औद्योगिक सॉल्वैंट्स का एक बड़ा खेप भारत की एक लाइसेंस प्राप्त औद्योगिक पुनर्चक्रण सुविधा को निर्यात करने की योजना बना रहा है। भारतीय सुविधा ने अपने राष्ट्रीय सक्षम प्राधिकारी से पूर्व लिखित सहमति प्राप्त कर ली है, संबंधित अपशिष्ट श्रेणी के पर्यावरणीय रूप से ध्वनि प्रबंधन के लिए प्रमाणित है, और प्रस्तावित लेन-देन की सूचना भारत को दी गई है। दोनों देशों के बीच कोई द्विपक्षीय अपशिष्ट समझौता नहीं है।\n\nBasel Convention के तहत इस प्रस्तावित लेन-देन की कानूनी स्थिति का सबसे सटीक वर्णन निम्नलिखित में से कौन सा है?\n\n(a) यह लेन-देन Basel Ban Amendment द्वारा प्रतिबंधित है, जो Annex VII देशों के खतरनाक अपशिष्ट के ग़ैर-Annex VII देशों को निर्यात को गंतव्य पर ESM क्षमता या PIC अनुपालन की परवाह किए बिना रोकता है\n(b) यह लेन-देन अनुमत है क्योंकि भारत के सक्षम प्राधिकारी से पूर्व सूचना सहमति प्राप्त हो चुकी है, जो Basel की सभी प्रक्रियात्मक आवश्यकताओं को पूरा करती है\n(c) यह लेन-देन अनुमत है क्योंकि भारत की सुविधा ने पर्यावरणीय रूप से ध्वनि प्रबंधन क्षमता प्रदर्शित की है, जो Basel Convention के तहत सर्वोपरि मानक है\n(d) यह लेन-देन Basel अनुच्छेद 11 के तहत अनुमत है क्योंकि निर्यातक राज्य दोनों देशों के Basel पार्टी होने पर द्विपक्षीय समतुल्यता की डिफ़ॉल्ट धारणा पर भरोसा कर सकता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह ESM को एक अनुमति देने वाला मानक बताता है — जो सामान्यतः सही है — लेकिन यह भूल जाता है कि Ban Amendment Annex VII निर्यातकों के लिए ग़ैर-Annex VII देशों को निर्यात पर पूर्ण प्रतिबंध लगाता है, चाहे गंतव्य पर ESM क्षमता हो या न हो।",
+      "elimination_logic": [
+        "निर्यातक देश की पहचान करें: यह OECD का सदस्य है — अतः Annex VII में आता है।",
+        "Basel Ban Amendment Annex VII से ग़ैर-Annex VII देशों को खतरनाक अपशिष्ट के निर्यात, जिसमें पुनर्चक्रण भी शामिल है, पर प्रतिबंध लगाता है।",
+        "भारत एक ग़ैर-Annex VII देश है — इसलिए यह लेन-देन Ban Amendment के प्रतिबंध के अंतर्गत आता है।",
+        "भारतीय सुविधा में ESM क्षमता का Annex VII निर्यातकों के लिए कोई महत्व नहीं है — Ban Amendment पूर्ण प्रतिबंध है, प्रदर्शन-आधारित नहीं।",
+        "यह लेन-देन Ban Amendment द्वारा प्रतिबंधित है — अतः विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) ESM को सही रूप में सामान्यतः लागू करता है लेकिन संदर्भ में गलत है। Annex VII निर्यातकों के लिए Ban Amendment एक पूर्ण नियम बनाता है जिसे ESM अनुपालन ओवरराइड नहीं कर सकता। जो छात्र Annex VII स्थिति जांचे बिना केवल ESM लागू करते हैं, वे आत्मविश्वास से विकल्प (c) चुनेंगे।",
+      "final_explanation": "यह परिदृश्य यह परखता है कि छात्र Ban Amendment को सही ढंग से लागू कर सकते हैं या नहीं, इसके लिए पहले निर्यातक के Annex VII स्थिति की जांच आवश्यक है।\n\nएक OECD सदस्य राज्य औद्योगिक सॉल्वैंट्स (जो खतरनाक अपशिष्ट के रूप में वर्गीकृत हैं) को भारत की एक लाइसेंस प्राप्त औद्योगिक पुनर्चक्रण सुविधा को निर्यात करने का प्रस्ताव करता है, जिसने पर्यावरणीय रूप से ध्वनि प्रबंधन (ESM) क्षमता प्रमाणित कराई है और लिखित पूर्व सूचना सहमति (PIC) प्राप्त की है।\n\n• विकल्प (a) — सही: निर्यातक OECD सदस्य Annex VII देश है। भारत ग़ैर-Annex VII है। Basel Ban Amendment इस लेन-देन को पूर्ण रूप से प्रतिबंधित करता है — पुनर्चक्रण सहित किसी भी उद्देश्य के लिए। गंतव्य पर ESM अनुपालन और PIC Ban Amendment को ओवरराइड नहीं करते।\n• विकल्प (b) — गलत: केवल PIC प्रक्रियाओं का पालन इस लेन-देन को अनुमति नहीं देता — Ban Amendment एक पूर्ण प्रतिबंध है जिसे PIC अनुपालन से ठीक नहीं किया जा सकता।\n• विकल्प (c) — गलत: ESM Ban Amendment के दायरे से बाहर के लेन-देन के लिए मानक है। Annex VII निर्यातकों के लिए Ban Amendment लागू होता है, चाहे गंतव्य पर ESM क्षमता हो या न हो।\n• विकल्प (d) — गलत: Basel अनुच्छेद 11 के द्विपक्षीय समझौते Basel से 'कम पर्यावरणीय रूप से ध्वनि' नहीं हो सकते — वे Ban Amendment के पूर्ण प्रतिबंध को ओवरराइड नहीं कर सकते।\n\nअतिरिक्त जानकारी:\n• भारत ने Ban Amendment को अनुमोदित नहीं किया है — इसलिए आयातक के रूप में भारत इसे बाध्यकारी नहीं मान सकता; लेकिन निर्यातक OECD राज्य Annex VII पार्टी के रूप में बाध्य है।\n• Ban Amendment का 2019 में प्रभावी होना OECD निर्यातकों के लिए एक सक्रिय अनुपालन मुद्दा बनाता है।\n• Ban Amendment D-लिस्ट (निपटान) और R-लिस्ट (पुनर्चक्रण) दोनों को कवर करता है — पुनर्चक्रण के लिए कोई छूट नहीं है।"
+    }
+  },
+  {
+    "uuid": "a02e25ec-43b1-4d6c-916a-971b4f3e7cc2",
+    "meta": {
+      "subject": "Environment",
+      "topic": "International Environmental Conventions",
+      "sub_topic": "Basel Convention — hazardous waste",
+      "concepts_used": [
+        "Ship Recycling and the Hong Kong Convention: Overlap with Basel",
+        "Distinction Between 'Hazardous Waste' and 'Other Wastes' under Basel"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Ship recycling — Basel applicability vs. MARPOL operational wastes",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the regulation of ship-related wastes under the Basel Convention:\n\n1. Under the Basel Convention, wastes arising from the normal operations of ships at sea — such as bilge water and engine room wastes — are subject to full Basel controls, including Prior Informed Consent requirements.\n2. The Hong Kong International Convention for the Safe and Environmentally Sound Recycling of Ships is considered the lex specialis for ship recycling but has not yet entered into force as of recent years.\n3. India's Alang shipyard in Gujarat has attracted Basel Convention scrutiny, and the Supreme Court of India has issued directions on implementing Basel obligations in the context of ship-breaking.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Basel Convention, wastes arising from the normal operations of ships at sea — such as bilge water and engine room wastes — are subject to full Basel controls, including Prior Informed Consent requirements.",
+          "verdict": "Incorrect",
+          "reason": "Wastes from ships' normal operations are explicitly excluded from the Basel Convention and are governed by MARPOL. Only end-of-life ships sent for recycling (ship-breaking) attract Basel controls."
+        },
+        {
+          "statement": "The Hong Kong International Convention for the Safe and Environmentally Sound Recycling of Ships is considered the lex specialis for ship recycling but has not yet entered into force as of recent years.",
+          "verdict": "Correct",
+          "reason": "The Hong Kong Convention (2009) is designed as the specialized instrument for ship recycling but has not entered into force — it requires ratification by states representing 40% of world merchant shipping tonnage."
+        },
+        {
+          "statement": "India's Alang shipyard in Gujarat has attracted Basel Convention scrutiny, and the Supreme Court of India has issued directions on implementing Basel obligations in the context of ship-breaking.",
+          "verdict": "Correct",
+          "reason": "Alang is the world's largest ship-breaking yard; the Research Foundation for Science v. Union of India case resulted in Supreme Court directions to implement Basel obligations for ship-breaking operations."
+        }
+      ],
+      "strong_distractor": "c — Option (c) (1 and 3 only) attracts students who accept Statement 1 as correct (believing all ship-related waste is Basel-covered) while correctly accepting Statement 3.",
+      "elimination_logic": [
+        "Statement 1 conflates MARPOL operational waste (excluded from Basel) with ship-breaking waste (Basel-covered) — Statement 1 is incorrect.",
+        "Eliminate options treating Statement 1 as correct: option (a) (1 and 2) and option (c) (1 and 3).",
+        "Statements 2 and 3 are both factually accurate — Hong Kong Convention not in force, and Alang/Research Foundation case both correct.",
+        "Select option (d): 2 and 3 only."
+      ],
+      "upsc_trap_explanation": "Statement 1's ship operational waste conflation is the primary trap. Students who recall 'Basel covers ships at Alang' incorrectly extend this to all ship-generated waste, missing the explicit MARPOL carve-out for normal operations.",
+      "final_explanation": "Ship recycling sits at a regulatory intersection requiring precise boundary knowledge.\n\n• Statement 1 — Incorrect: Operational ship wastes (bilge water, engine room wastes, garbage) are explicitly excluded from Basel and governed by MARPOL (International Convention for the Prevention of Pollution from Ships). Only ships themselves — when sent for end-of-life recycling — attract Basel scrutiny.\n• Statement 2 — Correct: The Hong Kong Convention (2009) is the specialized instrument for ship recycling. Entry into force requires ratification by 15 states representing at least 40% of world merchant shipping tonnage AND at least 3% of world ship recycling volume — conditions not yet met.\n• Statement 3 — Correct: Alang, Gujarat handles the largest tonnage of ship recycling globally. The Research Foundation case led to significant Supreme Court oversight of Basel compliance at Indian ship-breaking facilities.\n\nValue Addition:\n• Basel COP decisions have affirmed that end-of-life ships containing hazardous materials constitute hazardous waste subject to full Basel controls.\n• The 'ship or waste' question was the central legal debate between the shipping industry and Basel parties — COP resolved it in favor of Basel applicability.\n• Both Basel and the Hong Kong Convention (when in force) may apply to ship recycling — a potential dual regulatory burden."
+    },
+    "hi": {
+      "display_text": "Basel Convention के तहत जहाज-संबंधित कचरे के नियमन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. Basel Convention के तहत, समुद्र में जहाजों के सामान्य संचालन से उत्पन्न कचरे — जैसे बिल्ज़ पानी और इंजन कक्ष के कचरे — पूर्ण Basel नियंत्रण के अधीन होते हैं, जिनमें पूर्व सूचना सहमति आवश्यकताएँ शामिल हैं।\n2. जहाजों के सुरक्षित और पर्यावरण के अनुकूल पुनर्चक्रण के लिए हांगकांग अंतर्राष्ट्रीय कन्वेंशन को जहाज पुनर्चक्रण के लिए lex specialis माना जाता है, लेकिन यह हाल के वर्षों में अभी तक लागू नहीं हुआ है।\n3. भारत के गुजरात में आलंग शिपयार्ड ने Basel Convention की जांच आकर्षित की है, और भारत के सर्वोच्च न्यायालय ने शिप-ब्रेकिंग के संदर्भ में Basel दायित्वों को लागू करने के निर्देश जारी किए हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under the Basel Convention, wastes arising from the normal operations of ships at sea — such as bilge water and engine room wastes — are subject to full Basel controls, including Prior Informed Consent requirements.",
+          "verdict": "गलत",
+          "reason": "जहाजों के सामान्य संचालन से उत्पन्न कचरे को स्पष्ट रूप से Basel Convention से बाहर रखा गया है और यह MARPOL द्वारा नियंत्रित है। केवल अंत-जीवन जहाज जो पुनर्चक्रण (शिप-ब्रेकिंग) के लिए भेजे जाते हैं, वे Basel नियंत्रण के अधीन आते हैं।"
+        },
+        {
+          "statement": "The Hong Kong International Convention for the Safe and Environmentally Sound Recycling of Ships is considered the lex specialis for ship recycling but has not yet entered into force as of recent years.",
+          "verdict": "सही",
+          "reason": "हांगकांग कन्वेंशन (2009) जहाज पुनर्चक्रण के लिए विशेषीकृत उपकरण के रूप में डिज़ाइन किया गया है लेकिन यह अभी तक लागू नहीं हुआ है — इसके लिए उन राज्यों द्वारा अनुमोदन आवश्यक है जो विश्व व्यापी वाणिज्यिक जहाज टन भार के 40% का प्रतिनिधित्व करते हैं।"
+        },
+        {
+          "statement": "India's Alang shipyard in Gujarat has attracted Basel Convention scrutiny, and the Supreme Court of India has issued directions on implementing Basel obligations in the context of ship-breaking.",
+          "verdict": "सही",
+          "reason": "आलंग विश्व का सबसे बड़ा शिप-ब्रेकिंग यार्ड है; Research Foundation for Science v. Union of India मामले में सुप्रीम कोर्ट ने शिप-ब्रेकिंग संचालन के लिए Basel दायित्वों को लागू करने के निर्देश दिए।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) (केवल 1 और 3) उन छात्रों को आकर्षित करता है जो कथन 1 को सही मानते हैं (यह मानते हुए कि सभी जहाज-संबंधित कचरा Basel के अंतर्गत आता है) जबकि कथन 3 को सही मानते हैं।",
+      "elimination_logic": [
+        "कथन 1 MARPOL के संचालन कचरे (जो Basel से बाहर है) को शिप-ब्रेकिंग कचरे (जो Basel के अंतर्गत है) से मिला देता है — अतः कथन 1 गलत है।",
+        "कथन 1 को सही मानने वाले विकल्पों को हटा दें: विकल्प (a) (1 और 2) और विकल्प (c) (1 और 3)।",
+        "कथन 2 और 3 दोनों तथ्यात्मक रूप से सही हैं — हांगकांग कन्वेंशन लागू नहीं हुआ है, और आलंग/Research Foundation मामला दोनों सही हैं।",
+        "विकल्प (d) चुनें: केवल 2 और 3।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में जहाज के संचालन कचरे का मिश्रण मुख्य जालसाजी है। जो छात्र 'Basel आलंग में जहाजों को कवर करता है' याद करते हैं, वे इसे सभी जहाज-जनित कचरे पर गलत तरीके से लागू करते हैं, जबकि सामान्य संचालन के लिए MARPOL का स्पष्ट अपवाद है।",
+      "final_explanation": "जहाज पुनर्चक्रण एक नियामक संगम पर स्थित है जिसमें सटीक सीमा ज्ञान आवश्यक है।\n\n• कथन 1 — गलत: जहाज के संचालन से उत्पन्न कचरे (बिल्ज़ पानी, इंजन कचरा, कूड़ा) को स्पष्ट रूप से Basel से बाहर रखा गया है और MARPOL (International Convention for the Prevention of Pollution from Ships) द्वारा नियंत्रित किया जाता है। केवल जहाज स्वयं — जब अंत-जीवन पुनर्चक्रण के लिए भेजे जाते हैं — Basel नियंत्रण के अधीन आते हैं।\n• कथन 2 — सही: हांगकांग कन्वेंशन (2009) जहाज पुनर्चक्रण के लिए विशेषीकृत उपकरण है। लागू होने के लिए 15 राज्यों द्वारा अनुमोदन आवश्यक है जो विश्व व्यापी वाणिज्यिक जहाज टन भार के कम से कम 40% और विश्व जहाज पुनर्चक्रण मात्रा के कम से कम 3% का प्रतिनिधित्व करते हैं — ये शर्तें अभी पूरी नहीं हुई हैं।\n• कथन 3 — सही: गुजरात का आलंग विश्व में सबसे बड़ा जहाज पुनर्चक्रण टन भार संभालता है। Research Foundation मामले ने भारतीय शिप-ब्रेकिंग सुविधाओं में Basel अनुपालन के लिए सुप्रीम कोर्ट की महत्वपूर्ण निगरानी को जन्म दिया।\n\nमूल्य संवर्धन:\n• Basel COP निर्णयों ने पुष्टि की है कि अंत-जीवन जहाज जिनमें खतरनाक पदार्थ होते हैं, वे पूर्ण Basel नियंत्रण के अधीन खतरनाक कचरे माने जाते हैं।\n• 'जहाज या कचरा' प्रश्न शिपिंग उद्योग और Basel पक्षों के बीच मुख्य कानूनी बहस थी — COP ने इसे Basel लागू होने के पक्ष में सुलझाया।\n• Basel और हांगकांग कन्वेंशन (जब लागू होगा) दोनों जहाज पुनर्चक्रण पर लागू हो सकते हैं — जो संभावित दोहरी नियामक बोझ है।"
+    }
+  }
+]

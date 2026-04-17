@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/home_state.dart';
+import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/theme/app_colors.dart';
@@ -260,6 +261,13 @@ class HomeScreen extends HookConsumerWidget {
                       _PrimaryActionCard(home: h, borderColor: borderColor),
                       const SizedBox(height: AppSpacing.md),
                       _QuickGrid(home: h, borderColor: borderColor),
+                      if (h.revisionTrapCount > 0) ...[
+                        const SizedBox(height: AppSpacing.md),
+                        _TrapPatternsCard(
+                          trapCount: h.revisionTrapCount,
+                          borderColor: borderColor,
+                        ),
+                      ],
                       if (h.lastSession != null) ...[
                         const SizedBox(height: AppSpacing.md),
                         _LastSessionCard(home: h, borderColor: borderColor),
@@ -317,70 +325,143 @@ class _PrimaryActionCard extends HookConsumerWidget {
   const _PrimaryActionCard({required this.home, required this.borderColor});
   final HomeState home;
   final Color borderColor;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final hasRevision = home.revisionQueueCount > 0;
-    final bg = hasRevision ? AppColors.primary : scheme.surfaceContainerLow;
-    final fg = hasRevision ? AppColors.onPrimary : scheme.onSurface;
-    final sub = hasRevision
-        ? AppColors.onPrimary.withValues(alpha: 0.7)
-        : scheme.onSurfaceVariant;
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap:
-            () => context.push(
-              hasRevision ? '/revision-queue' : '/subject-test',
+
+    if (!hasRevision) {
+      return Material(
+        color: AppColors.transparent,
+        child: InkWell(
+          onTap: () => context.push('/subject-test'),
+          borderRadius: BorderRadius.circular(AppRadius.lg),
+          child: Container(
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            decoration: BoxDecoration(
+              color: scheme.surfaceContainerLow,
+              borderRadius: BorderRadius.circular(AppRadius.lg),
+              border: Border.all(color: borderColor, width: 0.5),
             ),
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          decoration: BoxDecoration(
-            color: bg,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: hasRevision
-                ? null
-                : Border.all(color: borderColor, width: 0.5),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      hasRevision ? 'Revision queue' : 'Start a test',
-                      style: AppTextStyles.h3().copyWith(color: fg),
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      hasRevision
-                          ? '${home.revisionQueueCount} questions waiting'
-                          : 'No questions in your revision queue',
-                      style: AppTextStyles.bodySm().copyWith(color: sub),
-                    ),
-                    if (hasRevision && home.revisionSubjects.isNotEmpty) ...[
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Start a test',
+                        style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                      ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        home.revisionSubjects
-                            .map(
-                              (s) =>
-                                  SubjectConstants.bySlug(s)?.displayName ?? s,
-                            )
-                            .join(' · '),
-                        style: AppTextStyles.caption().copyWith(
-                          color: AppColors.onPrimary.withValues(alpha: 0.6),
-                        ),
+                        'No weak areas identified yet',
+                        style: AppTextStyles.bodySm()
+                            .copyWith(color: scheme.onSurfaceVariant),
                       ),
                     ],
-                  ],
+                  ),
                 ),
-              ),
-              Icon(Icons.chevron_right, color: fg),
-            ],
+                Icon(Icons.chevron_right, color: scheme.onSurface),
+              ],
+            ),
           ),
         ),
+      );
+    }
+
+    // Has revision items — show Weak Areas card with two CTAs
+    final loading = useState(false);
+
+    Future<void> practiceNow() async {
+      if (loading.value) return;
+      loading.value = true;
+      try {
+        final create = await ref.read(createSessionUseCaseProvider.future);
+        final count = home.revisionQueueCount.clamp(1, 50);
+        final id = await create.execute(SessionConfig(
+          subject: 'revision',
+          mode: 'learning',
+          questionCount: count,
+          isTimed: true,
+          timeLimitSecs: 60,
+          language: 'en',
+        ));
+        if (context.mounted) context.push('/test/$id');
+      } finally {
+        loading.value = false;
+      }
+    }
+
+    final hasSubTopics = home.revisionSubTopicCount > 0;
+    final hasTraps = home.revisionTrapCount > 0;
+    final summaryParts = [
+      if (hasSubTopics)
+        '${home.revisionSubTopicCount} ${home.revisionSubTopicCount == 1 ? 'sub-topic' : 'sub-topics'}',
+      if (hasTraps)
+        '${home.revisionTrapCount} trap ${home.revisionTrapCount == 1 ? 'pattern' : 'patterns'}',
+    ];
+
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: AppColors.primary,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Weak Areas',
+            style: AppTextStyles.h3().copyWith(color: AppColors.onPrimary),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            summaryParts.isNotEmpty
+                ? summaryParts.join(' · ')
+                : '${home.revisionQueueCount} questions to review',
+            style: AppTextStyles.bodySm()
+                .copyWith(color: AppColors.onPrimary.withValues(alpha: 0.8)),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          Row(
+            children: [
+              Expanded(
+                child: FilledButton(
+                  onPressed: loading.value ? null : practiceNow,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.onPrimary,
+                    foregroundColor: AppColors.primary,
+                  ),
+                  child: loading.value
+                      ? SizedBox(
+                          height: 16,
+                          width: 16,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: AppColors.primary,
+                          ),
+                        )
+                      : const Text('Practice Now'),
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: () => context.push('/weak-areas'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppColors.onPrimary,
+                    side: BorderSide(
+                      color: AppColors.onPrimary.withValues(alpha: 0.5),
+                    ),
+                  ),
+                  child: const Text('View Details'),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -463,6 +544,58 @@ class _QuickCard extends HookConsumerWidget {
                 style: AppTextStyles.caption()
                     .copyWith(color: scheme.onSurfaceVariant),
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _TrapPatternsCard extends StatelessWidget {
+  const _TrapPatternsCard({
+    required this.trapCount,
+    required this.borderColor,
+  });
+
+  final int trapCount;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: () => context.push('/weak-areas/traps'),
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Container(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Trap Patterns',
+                      style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      "You've been caught by $trapCount trap ${trapCount == 1 ? 'type' : 'types'}",
+                      style: AppTextStyles.bodySm()
+                          .copyWith(color: scheme.onSurfaceVariant),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
             ],
           ),
         ),

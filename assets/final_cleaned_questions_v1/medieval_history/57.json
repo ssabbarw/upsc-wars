@@ -1,0 +1,1270 @@
+[
+  {
+    "uuid": "be1ea74a-670a-40f3-91fd-3f8a21f70b86",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Zabt System: Definition, Scope, and Geographical Applicability"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Zabt system geographical applicability — not pan-empire",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the geographical scope of the Zabt revenue system under Akbar?\n\n(a) It was applied uniformly across all provinces of the Mughal Empire, including Bengal, Kabul, and the Deccan\n(b) It operated primarily in regions under Akbar's direct administrative control, such as Punjab, Uttar Pradesh, Malwa, and Gujarat\n(c) It was restricted to provinces where the state collected revenue through physical division of the harvested crop\n(d) It was synonymous with the Ain-i-Dahsala and applied exclusively to crown lands throughout the empire",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because Akbar's reign is commonly associated with administrative uniformity across the empire, leading students to assume the Zabt system was applied everywhere.",
+      "elimination_logic": [
+        "Eliminate option (a): Zabt was not applied uniformly across the entire empire — Bengal, Deccan, and Kabul used different revenue methods.",
+        "Eliminate option (c): The Zabt system is defined by land measurement and survey, not by crop-sharing — that describes Batai.",
+        "Eliminate option (d): The Ain-i-Dahsala is the ten-year averaging mechanism within the Zabt framework, not a synonym for Zabt itself.",
+        "Confirm option (b): Zabt was primarily operative in regions where Akbar campaigned personally — Punjab, UP, Agra, Malwa, and Gujarat."
+      ],
+      "upsc_trap_explanation": "The most common trap here is assuming Akbar's administrative genius translated into uniform application of the Zabt system across all territories. Students who have read broadly but not carefully will mark option (a). The key precision is that Zabt was a regionally confined system — Bengal used Batai-based methods, Kabul's difficult terrain made measurement-based assessment impractical, and the Deccan was only partially integrated. UPSC exploits this by offering 'the entire Mughal Empire' as an attractive distractor.",
+      "final_explanation": "The Zabt system was a measurement-based revenue assessment method where land was physically surveyed and assessed based on area and crop productivity. A critical but frequently overlooked feature is its geographical limitation.\n\n• Option (a) — Incorrect: Zabt was not applied pan-empire. Bengal, Kabul, and the Deccan retained alternative methods like Batai (crop-sharing) and Nasaq (customary assessment).\n• Option (b) — Correct: Zabt operated chiefly in areas under Akbar's direct administrative control — Punjab, UP (Agra-Allahabad belt), Malwa, and Gujarat.\n• Option (c) — Incorrect: Zabt involved land measurement and cash-based assessment, not physical division of the harvest — that describes Batai.\n• Option (d) — Incorrect: Ain-i-Dahsala was the ten-year price-and-yield averaging mechanism built on top of the Zabt survey framework — they are related but distinct.\n\nValue Addition:\n• 'Zabt' literally means 'to seize/assess' — implying the state's right to assess based on measurement.\n• Areas with difficult terrain or newly conquered territories often used Nasaq or Kankut as interim methods.\n• The geographic selectivity of Zabt is itself evidence of administrative pragmatism rather than uniform imposition."
+    },
+    "hi": {
+      "display_text": "अकबर के शासनकाल में ज़ब्त राजस्व प्रणाली के भौगोलिक क्षेत्र का सबसे सटीक वर्णन निम्नलिखित में से कौन सा है?\n\n(a) यह मुगल साम्राज्य के सभी प्रांतों में समान रूप से लागू थी, जिसमें बंगाल, काबुल और दक्कन शामिल हैं\n(b) यह मुख्यतः उन क्षेत्रों में लागू थी जो अकबर के प्रत्यक्ष प्रशासनिक नियंत्रण में थे, जैसे पंजाब, उत्तर प्रदेश, मालवा और गुजरात\n(c) यह उन प्रांतों तक सीमित थी जहाँ राज्य फसल के भौतिक विभाजन के माध्यम से राजस्व एकत्र करता था\n(d) यह ऐन-ए-दहसाला के पर्याय थी और केवल पूरे साम्राज्य में शाही भूमि पर लागू थी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि अकबर के शासनकाल को आमतौर पर पूरे साम्राज्य में प्रशासनिक समानता से जोड़ा जाता है, जिससे छात्र यह मान लेते हैं कि ज़ब्त प्रणाली हर जगह लागू थी।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: ज़ब्त पूरे साम्राज्य में समान रूप से लागू नहीं थी — बंगाल, दक्कन और काबुल में राजस्व के लिए अलग-अलग तरीके अपनाए गए थे।",
+        "विकल्प (c) को खारिज करें: ज़ब्त प्रणाली भूमि मापन और सर्वेक्षण पर आधारित है, फसल के भौतिक विभाजन पर नहीं — यह बताई (Batai) को दर्शाता है।",
+        "विकल्प (d) को खारिज करें: ऐन-ए-दहसाला ज़ब्त प्रणाली के अंतर्गत दस वर्षों का औसत लेने की विधि है, यह ज़ब्त का पर्याय नहीं है।",
+        "विकल्प (b) की पुष्टि करें: ज़ब्त मुख्यतः उन क्षेत्रों में लागू थी जहाँ अकबर ने व्यक्तिगत रूप से अभियान चलाया था — पंजाब, उत्तर प्रदेश, आगरा, मालवा और गुजरात।"
+      ],
+      "upsc_trap_explanation": "यहाँ सबसे आम जाल यह मान लेना है कि अकबर की प्रशासनिक प्रतिभा ने ज़ब्त प्रणाली को पूरे साम्राज्य में समान रूप से लागू कर दिया। जो छात्र व्यापक रूप से पढ़े हैं लेकिन सावधानी से नहीं, वे विकल्प (a) को चुनते हैं। मुख्य सटीकता यह है कि ज़ब्त एक क्षेत्रीय सीमित प्रणाली थी — बंगाल में बताई आधारित तरीके उपयोग में थे, काबुल की कठिन भौगोलिक स्थिति ने मापन आधारित आकलन को असंभव बना दिया, और दक्कन आंशिक रूप से ही शामिल था। UPSC इस भ्रम का लाभ उठाता है और 'पूरे मुगल साम्राज्य' को आकर्षक भ्रम के रूप में प्रस्तुत करता है।",
+      "final_explanation": "ज़ब्त प्रणाली एक मापन-आधारित राजस्व आकलन विधि थी जिसमें भूमि का भौतिक सर्वेक्षण किया जाता था और क्षेत्रफल तथा फसल उत्पादकता के आधार पर मूल्यांकन किया जाता था। इसका एक महत्वपूर्ण लेकिन अक्सर अनदेखा किया जाने वाला पहलू इसका भौगोलिक प्रतिबंध है।\n\n• विकल्प (a) — गलत: ज़ब्त पूरे साम्राज्य में लागू नहीं थी। बंगाल, काबुल और दक्कन में बताई (फसल साझा) और नासक (परंपरागत आकलन) जैसे वैकल्पिक तरीके प्रचलित थे।\n• विकल्प (b) — सही: ज़ब्त मुख्यतः उन क्षेत्रों में लागू थी जो अकबर के प्रत्यक्ष प्रशासनिक नियंत्रण में थे — पंजाब, उत्तर प्रदेश (आगरा-इलाहाबाद क्षेत्र), मालवा और गुजरात।\n• विकल्प (c) — गलत: ज़ब्त भूमि मापन और नकद आधारित आकलन से संबंधित थी, फसल के भौतिक विभाजन से नहीं — यह बताई को दर्शाता है।\n• विकल्प (d) — गलत: ऐन-ए-दहसाला ज़ब्त सर्वेक्षण प्रणाली के ऊपर आधारित दस वर्षों के मूल्य और उपज का औसत लेने की विधि थी — ये संबंधित हैं लेकिन समान नहीं।\n\nमूल्य वर्धन:\n• 'ज़ब्त' का शाब्दिक अर्थ है 'कब्ज़ा करना/मूल्यांकन करना' — जो मापन आधारित आकलन के लिए राज्य के अधिकार को दर्शाता है।\n• कठिन भौगोलिक क्षेत्रों या नव-विजित क्षेत्रों में अक्सर नासक या कंकूट जैसे अंतरिम तरीके अपनाए जाते थे।\n• ज़ब्त की भौगोलिक चयनात्मकता प्रशासनिक व्यावहारिकता का प्रमाण है, न कि समान रूप से थोपने का।"
+    }
+  },
+  {
+    "uuid": "726ff424-5c13-4284-b3fc-7ad703f4c4b8",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Todar Mal: Role, Career Trajectory, and Institutional Contribution",
+        "Sher Shah Suri's Revenue Legacy and Continuity into the Zabt System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Todar Mal's career — Sher Shah precursor to Zabt",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Todar Mal and his role in Mughal revenue administration:\n\n1. Todar Mal served in Sher Shah Suri's administration before joining Akbar's service, providing continuity of revenue ideas.\n2. Todar Mal invented the concept of land measurement and cadastral surveys from scratch, as no such framework existed before Akbar's reign.\n3. Todar Mal was appointed as Diwan (revenue minister) and later elevated to the position of Wazir under Akbar.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Todar Mal served in Sher Shah Suri's administration before joining Akbar's service, providing continuity of revenue ideas.",
+          "verdict": "Correct",
+          "reason": "Todar Mal gained his formative administrative experience under Sher Shah Suri; this institutional continuity explains why the Zabt system built upon Sher Shah's earlier cadastral surveys and per-bigha rate framework."
+        },
+        {
+          "statement": "Todar Mal invented the concept of land measurement and cadastral surveys from scratch, as no such framework existed before Akbar's reign.",
+          "verdict": "Incorrect",
+          "reason": "Sher Shah Suri had already introduced systematic cadastral surveys and per-bigha rate assessment; Todar Mal's contribution was systematization, standardization, and the addition of the ten-year averaging mechanism — not creation from nothing."
+        },
+        {
+          "statement": "Todar Mal was appointed as Diwan (revenue minister) and later elevated to the position of Wazir under Akbar.",
+          "verdict": "Correct",
+          "reason": "Todar Mal's career under Akbar progressed from revenue management roles to the position of Diwan and subsequently Wazir, reflecting his indispensability to the Mughal fiscal administration."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is deceptive because it credits Todar Mal with both origination and perfection of the revenue system, which sounds like a complete and accurate description to a student who knows Todar Mal was important but has not read carefully about Sher Shah's prior role.",
+      "elimination_logic": [
+        "Statement 2 is clearly incorrect — Sher Shah's cadastral surveys preceded Todar Mal's reforms, so he did not invent the concept from scratch.",
+        "Eliminate options (b) and (d) as they include Statement 2 as correct.",
+        "Statements 1 and 3 are both factually accurate — Todar Mal served under Sher Shah and rose to Wazir under Akbar.",
+        "Select option (c): 1 and 3 only."
+      ],
+      "upsc_trap_explanation": "This question exploits a very common hagiographic tendency — crediting Akbar or Todar Mal with originating everything new in Mughal administration. Students who associate Todar Mal exclusively with Akbar's reign often forget his formative service under Sher Shah Suri. Statement 2 is the planted trap — it replaces 'systematized' with 'invented from scratch,' a scope-extension that makes an almost-true statement false.",
+      "final_explanation": "Todar Mal is one of the celebrated Nine Gems (Navaratnas) of Akbar's court and is rightly credited with the most sophisticated land revenue system of pre-colonial India. However, understanding his contribution requires situating it within a longer institutional history.\n\n• Statement 1 — Correct: Todar Mal's early career was under Sher Shah Suri. This experience gave him direct exposure to Sher Shah's cadastral surveys and per-bigha rate system, which he later refined under Akbar.\n• Statement 2 — Incorrect: Sher Shah had already conducted measurement-based surveys and issued pattas to peasants. Todar Mal's genius lay in systematization, standardization (Ilahi gaz, iron-ring jarib), and the ten-year averaging formula — not in creating measurement-based revenue from nothing.\n• Statement 3 — Correct: Under Akbar, Todar Mal rose progressively, serving as Diwan and later Wazir — the highest administrative offices available.\n\nValue Addition:\n• Sher Shah's revenue framework issued pattas (title deeds) and qabuliyats (peasant acceptance deeds) — both continued under Akbar.\n• Todar Mal also served briefly under Humayun during the Suri interregnum period.\n• The institutional continuity from Sher Shah to Akbar via Todar Mal is a favourite UPSC theme in comparative questions."
+    },
+    "hi": {
+      "display_text": "टोडरमल और मुगल राजस्व प्रशासन में उनकी भूमिका के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. टोडरमल ने अकबर की सेवा में आने से पहले शेर शाह सूरी के प्रशासन में सेवा की, जिससे राजस्व विचारों में निरंतरता बनी।\n2. टोडरमल ने भूमि मापन और काडस्ट्रल सर्वेक्षण की अवधारणा को शून्य से आविष्कार किया, क्योंकि अकबर के शासन से पहले ऐसा कोई ढांचा मौजूद नहीं था।\n3. टोडरमल को अकबर के अधीन दीवान (राजस्व मंत्री) नियुक्त किया गया और बाद में उन्हें वज़ीर के पद पर पदोन्नत किया गया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Todar Mal served in Sher Shah Suri's administration before joining Akbar's service, providing continuity of revenue ideas.",
+          "verdict": "सही है",
+          "reason": "टोडरमल ने अपनी प्रारंभिक प्रशासनिक अनुभव शेर शाह सूरी के अधीन प्राप्त की; यह संस्थागत निरंतरता समझाती है कि ज़ब्त प्रणाली ने शेर शाह के पूर्व के काडस्ट्रल सर्वेक्षणों और प्रति बीघा दर ढांचे पर आधारित थी।"
+        },
+        {
+          "statement": "Todar Mal invented the concept of land measurement and cadastral surveys from scratch, as no such framework existed before Akbar's reign.",
+          "verdict": "गलत है",
+          "reason": "शेर शाह सूरी ने पहले ही व्यवस्थित काडस्ट्रल सर्वेक्षण और प्रति बीघा दर मूल्यांकन शुरू कर दिया था; टोडरमल का योगदान प्रणालीकरण, मानकीकरण और दस वर्ष के औसत लेने की विधि जोड़ना था — न कि शून्य से निर्माण।"
+        },
+        {
+          "statement": "Todar Mal was appointed as Diwan (revenue minister) and later elevated to the position of Wazir under Akbar.",
+          "verdict": "सही है",
+          "reason": "टोडरमल का करियर अकबर के अधीन राजस्व प्रबंधन से शुरू होकर दीवान और बाद में वज़ीर के पद तक पहुंचा, जो मुगल वित्तीय प्रशासन में उनकी अपरिहार्यता को दर्शाता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) भ्रमित करने वाला है क्योंकि यह टोडरमल को राजस्व प्रणाली के दोनों आरंभ और पूर्णता का श्रेय देता है, जो उस छात्र के लिए पूर्ण और सही विवरण जैसा लगता है जो टोडरमल के महत्व को जानता है लेकिन शेर शाह की पूर्व भूमिका को ध्यान से नहीं पढ़ा है।",
+      "elimination_logic": [
+        "कथन 2 स्पष्ट रूप से गलत है — शेर शाह के काडस्ट्रल सर्वेक्षण टोडरमल के सुधारों से पहले थे, अतः उन्होंने यह अवधारणा शून्य से नहीं बनाई।",
+        "विकल्प (b) और (d) को हटा दें क्योंकि वे कथन 2 को सही मानते हैं।",
+        "कथन 1 और 3 दोनों तथ्यात्मक रूप से सही हैं — टोडरमल ने शेर शाह के अधीन सेवा की और अकबर के अधीन वज़ीर बने।",
+        "विकल्प (c) चुनें: केवल 1 और 3।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न एक सामान्य महिमामंडन प्रवृत्ति का उपयोग करता है — अकबर या टोडरमल को मुगल प्रशासन में सब कुछ नया आरंभ करने का श्रेय देना। जो छात्र टोडरमल को केवल अकबर के शासनकाल से जोड़ते हैं, वे अक्सर शेर शाह सूरी के अधीन उनकी प्रारंभिक सेवा भूल जाते हैं। कथन 2 एक जाल है — यह 'प्रणालीबद्ध' को 'शून्य से आविष्कार' से बदल देता है, जो लगभग सही कथन को गलत बना देता है।",
+      "final_explanation": "टोडरमल अकबर के दरबार के नौ रत्नों (नवरत्न) में से एक हैं और उन्हें उपनिवेश-पूर्व भारत की सबसे परिष्कृत भूमि राजस्व प्रणाली का श्रेय दिया जाता है। हालांकि, उनके योगदान को समझने के लिए इसे एक लंबी संस्थागत इतिहास में रखना आवश्यक है।\n\n• कथन 1 — सही: टोडरमल का प्रारंभिक करियर शेर शाह सूरी के अधीन था। इस अनुभव ने उन्हें शेर शाह के काडस्ट्रल सर्वेक्षण और प्रति बीघा दर प्रणाली से सीधे परिचित कराया, जिसे उन्होंने बाद में अकबर के अधीन परिष्कृत किया।\n• कथन 2 — गलत: शेर शाह पहले ही मापन-आधारित सर्वेक्षण कर चुके थे और किसानों को पट्टे जारी कर चुके थे। टोडरमल की प्रतिभा प्रणालीकरण, मानकीकरण (इलाही गज, लोहे की जंजीर जरीब) और दस वर्ष के औसत सूत्र में थी — न कि मापन-आधारित राजस्व को शून्य से बनाने में।\n• कथन 3 — सही: अकबर के अधीन टोडरमल ने क्रमशः दीवान और बाद में वज़ीर के पदों पर कार्य किया — जो उच्चतम प्रशासनिक पद थे।\n\nमूल्यवर्धन:\n• शेर शाह की राजस्व प्रणाली ने पट्टे (भूमि स्वामित्व पत्र) और कबूलियत (किसान स्वीकृति पत्र) जारी किए — जो अकबर के अधीन जारी रहे।\n• टोडरमल ने सुरी अंतराल काल में हुमायूं के अधीन भी संक्षिप्त सेवा की।\n• शेर शाह से अकबर तक टोडरमल के माध्यम से संस्थागत निरंतरता UPSC के तुलनात्मक प्रश्नों में एक पसंदीदा विषय है।"
+    }
+  },
+  {
+    "uuid": "9f0f754e-7f59-4806-ad9b-ee81e3b766c9",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Dastur-ul-Amal: Provincial Revenue Schedules and Rate Fixation"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "scope-extension",
+      "concept_anchor": "One-third revenue demand — normative vs actual",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Under Akbar's revenue administration, the normative state demand was fixed at approximately one-third of the estimated produce — a rate more moderate than that prevailing under Alauddin Khalji.\n\nReason (R): Contemporary foreign travellers including François Bernier documented that actual revenue burdens on peasants frequently exceeded the stated normative rates, particularly in jagir territories.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The normative state demand under Akbar's Zabt system was approximately one-third of estimated produce, lower than Alauddin Khalji's 50% demand.",
+        "Step 2: Is Reason (R) correct? — Yes. Contemporary observers including Bernier documented that actual revenue burdens frequently exceeded the stated normative rate, especially in jagir territories.",
+        "Step 3: Does R causally explain A? — No. The existence of higher actual burdens documented by travellers does not explain why the normative rate was set at one-third — the normative rate reflected state policy design, not travellers' accounts.",
+        "A correct + R correct + R does NOT explain A → correct_option is b."
+      ],
+      "upsc_trap_explanation": "Option (a) is attractive because both A and R are factually true and students may assume they are causally linked. The trap is in the causal direction — R describes the gap between normative and actual collection, which is an observation about implementation failure, not an explanation for why the normative rate was set at one-third in the first place. The one-third norm reflected Akbar's revenue policy design; Bernier's account reflects field reality. These are two different phenomena.",
+      "final_explanation": "The Dastur-ul-Amal system fixed state demand as a proportion of estimated produce, and the normative one-third rate is a well-established benchmark of Akbar's revenue policy.\n\nAssertion (A): Correct. Akbar's revenue system normatively demanded approximately one-third of estimated produce — a more moderate rate than Alauddin Khalji's 50% demand or Sher Shah's varying rates. This represented a deliberate policy to sustain peasant livelihoods.\n\nReason (R): Correct. François Bernier and other foreign observers documented that actual revenue collections in many areas — particularly jagir lands — substantially exceeded the stated normative rates. Jagirdars, with short-term assignments, had every incentive to over-extract.\n\nCausal Link: Absent. The normative one-third rate was set by policy deliberation and reflected the state's fiscal philosophy. The travellers' evidence of heavier actual burdens is a commentary on implementation divergence, not an explanation for the policy rate itself.\n\nValue Addition:\n• The one-third norm (salis) contrasts with Alauddin Khalji's half-produce (nisf) demand.\n• Sher Shah's demand varied by region and crop — Akbar's normative uniformity was an improvement.\n• The jagirdari-Zabt tension — where assigned officers had incentives to over-collect — is central to understanding the eventual agrarian crisis of the 17th century."
+    },
+    "hi": {
+      "display_text": "कथन (A): अकबर के राजस्व प्रशासन के तहत, राज्य की मानक मांग लगभग अनुमानित उपज का एक-तिहाई निर्धारित थी — जो अलाउद्दीन खिलजी के शासनकाल की तुलना में अधिक संयमित दर थी।\n\nकारण (R): समकालीन विदेशी यात्रियों में फ्राँसुआ बर्नियर ने दस्तावेजीकरण किया कि वास्तविक राजस्व भार किसानों पर अक्सर घोषित मानक दरों से अधिक था, विशेषकर जागीर क्षेत्रों में।\n\n(a) A और R दोनों सही हैं, और R, A का सही कारण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही कारण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। अकबर के ज़ब्त प्रणाली के तहत राज्य की मानक मांग लगभग अनुमानित उपज का एक-तिहाई थी, जो अलाउद्दीन खिलजी की 50% मांग से कम थी।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। समकालीन पर्यवेक्षकों में फ्राँसुआ बर्नियर ने दस्तावेजीकरण किया कि वास्तविक राजस्व भार अक्सर घोषित मानक दर से अधिक था, विशेषकर जागीर क्षेत्रों में।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — नहीं। यात्रियों द्वारा दर्ज उच्च वास्तविक भार का होना यह नहीं समझाता कि मानक दर एक-तिहाई क्यों निर्धारित की गई थी — मानक दर राज्य की नीति का प्रतिबिंब थी, यात्रियों के विवरण का नहीं।",
+        "A सही + R सही + R, A को नहीं समझाता → सही विकल्प है b।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) आकर्षक है क्योंकि A और R दोनों तथ्यात्मक रूप से सही हैं और छात्र मान सकते हैं कि वे कारणात्मक रूप से जुड़े हैं। जाल कारणात्मक दिशा में है — R मानक और वास्तविक संग्रह के बीच अंतर को दर्शाता है, जो कार्यान्वयन की विफलता का अवलोकन है, न कि यह कि मानक दर एक-तिहाई क्यों निर्धारित की गई। एक-तिहाई मानक अकबर की राजस्व नीति का प्रतिबिंब था; बर्नियर का विवरण क्षेत्रीय वास्तविकता को दर्शाता है। ये दो अलग-अलग घटनाएं हैं।",
+      "final_explanation": "दस्तूर-उल-अमल प्रणाली ने राज्य की मांग को अनुमानित उपज के अनुपात के रूप में निर्धारित किया, और मानक एक-तिहाई दर अकबर की राजस्व नीति का एक स्थापित मानक है।\n\nकथन (A): सही। अकबर की राजस्व प्रणाली ने मानक रूप से अनुमानित उपज का लगभग एक-तिहाई मांगा — जो अलाउद्दीन खिलजी की 50% मांग या शेर शाह की विभिन्न दरों से अधिक संयमित था। यह किसानों के जीवन निर्वाह को बनाए रखने की एक जानबूझकर नीति थी।\n\nकारण (R): सही। फ्राँसुआ बर्नियर और अन्य विदेशी पर्यवेक्षकों ने दस्तावेजीकरण किया कि कई क्षेत्रों में — विशेषकर जागीर भूमि में — वास्तविक राजस्व संग्रह घोषित मानक दरों से काफी अधिक था। जागीरदार, जिनके कार्यकाल अल्पकालिक थे, के पास अधिक संग्रह करने के प्रबल प्रोत्साहन थे।\n\nकारणात्मक संबंध: अनुपस्थित। मानक एक-तिहाई दर नीति के निर्णय द्वारा निर्धारित की गई थी और राज्य की वित्तीय दर्शन को दर्शाती थी। यात्रियों के प्रमाण अधिक वास्तविक भार के कार्यान्वयन में विचलन की व्याख्या करते हैं, न कि नीति दर के लिए।\n\nमूल्य संवर्धन:\n• एक-तिहाई मानक (सालिस) अलाउद्दीन खिलजी की आधी उपज (निस्फ) मांग से भिन्न है।\n• शेर शाह की मांग क्षेत्र और फसल के अनुसार भिन्न थी — अकबर की मानक समानता एक सुधार थी।\n• जागीरदारी-ज़ब्त तनाव — जहां नियुक्त अधिकारियों के पास अधिक संग्रह करने के प्रोत्साहन थे — 17वीं सदी के अंततः कृषि संकट को समझने के लिए केंद्रीय है।"
+    }
+  },
+  {
+    "uuid": "be087682-7818-4221-8e55-a4d19c28db08",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Sher Shah Suri's Revenue Legacy and Continuity into the Zabt System",
+        "Patta and Qabuliyat System under Akbar"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sher Shah to Akbar — institutional continuity in revenue",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of developments in the Mughal revenue administration?\n\n1. Introduction of cadastral surveys and patta-qabuliyat system by Sher Shah Suri\n2. Systematic land measurement using Ilahi gaz and iron-ring jarib under Todar Mal\n3. Collection of ten-year crop price and yield data (Ain-i-Dahsala, 1571–1580)\n4. Todar Mal's Grand Bandobast — province-by-province revenue settlement (1580–1582)\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 4 → 3\n(c) 1 → 3 → 2 → 4\n(d) 3 → 1 → 2 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the Patta-Qabuliyat system after the Ain-i-Dahsala, which is chronologically reversed and exploits students who associate pattas primarily with Akbar rather than Sher Shah.",
+      "elimination_logic": [
+        "Sher Shah's cadastral surveys and introduction of pattas and qabuliyats pre-date Akbar's reign (Sher Shah ruled 1540–1545) — this must come first.",
+        "Akbar's early revenue experiments (including Todar Mal's initial involvement from the 1560s) follow Sher Shah's foundation.",
+        "The Ain-i-Dahsala data collection period (1571–1580) is a mid-Akbar period development.",
+        "Todar Mal's Grand Bandobast (1580–1582) is the culminating event — it must appear last.",
+        "Correct order: Sher Shah's pattas → Todar Mal's early surveys under Akbar → Ain-i-Dahsala (1571–80) → Grand Bandobast (1580–82); select option (a)."
+      ],
+      "upsc_trap_explanation": "The most dangerous trap is placing patta-qabuliyat after the Ain-i-Dahsala, which reflects the error of attributing the patta system entirely to Akbar. Sher Shah introduced it circa 1540–1545, well before Akbar's reign began in 1556. Students who know the patta-qabuliyat system from Mughal context alone will misplace it temporally.",
+      "final_explanation": "Revenue administrative history from Sher Shah to Akbar follows a clear developmental arc — from foundational measurement to systematic averaging to the Grand Settlement.\n\nCorrect Sequence:\n1. Sher Shah Suri's cadastral surveys and patta-qabuliyat system (c.1540–45): Sher Shah introduced measurement-based per-bigha rates, issued pattas (title deeds) and collected qabuliyats (peasant agreements) — the institutional bedrock.\n2. Todar Mal's early survey and measurement standardization under Akbar (c.1560s–70): Akbar inherited Sher Shah's framework. Todar Mal systematized it, introducing the Ilahi gaz and iron-ring jarib.\n3. Ain-i-Dahsala data collection (1571–1580): Ten years of crop price and yield data were compiled across provinces to construct stable average demand figures.\n4. Todar Mal's Grand Bandobast (1580–1582): The culminating province-by-province settlement translating the Ain-i-Dahsala data into enforceable revenue schedules.\n\nValue Addition:\n• Option (b) is a chronological reversal trap — placing patta-qabuliyat after Ain-i-Dahsala.\n• Todar Mal's work in Bengal (1582 onward) extended the survey system beyond its original geographic scope.\n• The Grand Bandobast provided the fiscal stability that funded Akbar's Deccan campaigns."
+    },
+    "hi": {
+      "display_text": "मुगल राजस्व प्रशासन में विकास की सही कालानुक्रमिक श्रृंखला कौन-सी है?\n\n1. शेर शाह सूरी द्वारा काडस्ट्रल सर्वेक्षण और पट्टा-क़बूलियत प्रणाली की शुरुआत\n2. टोडरमल के तहत इलाही गज और लोहे की अंगूठी जरीब द्वारा व्यवस्थित भूमि मापन\n3. दस वर्षों के फसल मूल्य और उपज डेटा का संग्रह (ऐन-ए-दहसाला, 1571–1580)\n4. टोडरमल का ग्रैंड बंदोबस्त — प्रांतवार राजस्व समझौता (1580–1582)\n\n(a) 1 → 2 → 3 → 4\n(b) 2 → 1 → 4 → 3\n(c) 1 → 3 → 2 → 4\n(d) 3 → 1 → 2 → 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में पट्टा-क़बूलियत प्रणाली को ऐन-ए-दहसाला के बाद रखा गया है, जो कालानुक्रमिक रूप से उलटा है और उन छात्रों का शोषण करता है जो पट्टों को मुख्य रूप से अकबर से जोड़ते हैं न कि शेर शाह से।",
+      "elimination_logic": [
+        "शेर शाह के काडस्ट्रल सर्वेक्षण और पट्टा-क़बूलियत की शुरुआत अकबर के शासन से पहले हुई (शेर शाह का शासन 1540–1545 था) — यह सबसे पहले होना चाहिए।",
+        "अकबर के प्रारंभिक राजस्व प्रयोग (जिसमें टोडरमल की प्रारंभिक भागीदारी 1560 के दशक से शामिल है) शेर शाह की नींव के बाद आते हैं।",
+        "ऐन-ए-दहसाला डेटा संग्रह अवधि (1571–1580) अकबर के मध्यकालीन विकास का हिस्सा है।",
+        "टोडरमल का ग्रैंड बंदोबस्त (1580–1582) अंतिम घटना है — यह सबसे अंत में होना चाहिए।",
+        "सही क्रम: शेर शाह के पट्टे → अकबर के तहत टोडरमल के प्रारंभिक सर्वेक्षण → ऐन-ए-दहसाला (1571–80) → ग्रैंड बंदोबस्त (1580–82); विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "सबसे खतरनाक जाल है पट्टा-क़बूलियत को ऐन-ए-दहसाला के बाद रखना, जो पट्टा प्रणाली को पूरी तरह से अकबर से जोड़ने की गलती को दर्शाता है। शेर शाह ने इसे लगभग 1540–1545 में शुरू किया था, जो अकबर के शासन (1556 से) शुरू होने से बहुत पहले है। जो छात्र पट्टा-क़बूलियत प्रणाली को केवल मुगल संदर्भ से जानते हैं, वे इसे कालानुक्रमिक रूप से गलत स्थान पर रखेंगे।",
+      "final_explanation": "शेर शाह से अकबर तक राजस्व प्रशासन का इतिहास एक स्पष्ट विकासात्मक क्रम का पालन करता है — आधारभूत मापन से लेकर व्यवस्थित औसत निकालने तक और फिर ग्रैंड बंदोबस्त तक।\n\nसही क्रम:\n1. शेर शाह सूरी के काडस्ट्रल सर्वेक्षण और पट्टा-क़बूलियत प्रणाली (लगभग 1540–45): शेर शाह ने प्रति बीघा मापन आधारित दरें शुरू कीं, पट्टे (टाइटल डीड) जारी किए और क़बूलियत (किसान समझौते) एकत्र किए — यह संस्थागत आधार था।\n2. अकबर के तहत टोडरमल का प्रारंभिक सर्वेक्षण और मापन मानकीकरण (लगभग 1560 के दशक–70): अकबर ने शेर शाह की रूपरेखा विरासत में ली। टोडरमल ने इसे व्यवस्थित किया, इलाही गज और लोहे की अंगूठी जरीब पेश की।\n3. ऐन-ए-दहसाला डेटा संग्रह (1571–1580): दस वर्षों के फसल मूल्य और उपज डेटा को प्रांतों में संकलित किया गया ताकि स्थिर औसत मांग आंकड़े बनाए जा सकें।\n4. टोडरमल का ग्रैंड बंदोबस्त (1580–1582): ऐन-ए-दहसाला डेटा को लागू राजस्व अनुसूचियों में परिवर्तित करने वाला अंतिम प्रांतवार समझौता।\n\nमूल्य संवर्धन:\n• विकल्प (b) कालानुक्रमिक उलटफेर का जाल है — पट्टा-क़बूलियत को ऐन-ए-दहसाला के बाद रखना।\n• टोडरमल का बंगाल में कार्य (1582 के बाद) सर्वेक्षण प्रणाली को उसके मूल भौगोलिक दायरे से आगे बढ़ाया।\n• ग्रैंड बंदोबस्त ने वित्तीय स्थिरता प्रदान की जिसने अकबर के दक्कन अभियानों को वित्तपोषित किया।"
+    }
+  },
+  {
+    "uuid": "af56e024-d97f-49f6-aba2-9e91b8315054",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Role of Amil, Qanungo, and Patwari in Revenue Administration"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Revenue hierarchy — Amil, Qanungo, Patwari roles",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "During an inspection of a pargana under Akbar's administration, a supervising official notices that a local functionary is maintaining detailed registers of each cultivated field — recording the area, crop type, and revenue payable — for every household in his assigned village. These registers are referred to locally as khasra and khatauni. The functionary is described as hereditary to the village and serves as the primary link between individual cultivators and the state revenue hierarchy.\n\nWhich revenue official most accurately corresponds to this description?\n\n(a) Amil — the revenue collector responsible for assessment and collection at the pargana level\n(b) Qanungo — the hereditary accountant maintaining aggregate land records at the pargana level\n(c) Muqaddam — the village headman who mediated between peasants and pargana officials\n(d) Patwari — the village-level accountant maintaining crop and revenue registers for individual holdings",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who associate 'land records' with the Qanungo may overlook the distinction between pargana-level record-keeping (Qanungo) and village-level crop register maintenance (Patwari).",
+      "elimination_logic": [
+        "The functionary maintaining crop and revenue registers at the village level is the Patwari — khasra (field register) and khatauni (account register) are village documents.",
+        "Eliminate option (a): the Amil is the revenue collector at pargana level — not a village-level record-keeper.",
+        "Eliminate option (b): the Qanungo is a hereditary intermediary at the pargana level maintaining aggregate land records — not village-level crop registers.",
+        "Eliminate option (c): the Muqaddam is the village headman, not the designated record-keeping official under the Zabt system.",
+        "Select option (d): the Patwari is the village-level accountant responsible for khasra and khatauni — the correct answer."
+      ],
+      "upsc_trap_explanation": "This scenario exploits the blurring between Qanungo and Patwari. Both deal with land records, and students who know Qanungo maintained pargana-level records may assume they also handled village-level registers. The precision tested here is the level of administration — pargana (Qanungo) versus village (Patwari) — and the specific documents: khasra (crop/field register) and khatauni (revenue account) are Patwari-level records.",
+      "final_explanation": "The Zabt system's effectiveness rested on a layered administrative hierarchy, with distinct functionaries at the pargana and village levels.\n\nApplicable Principle: Under the Mughal revenue hierarchy, record-keeping was divided by level of administration. The Amil collected revenue at the pargana level; the Qanungo was a hereditary intermediary maintaining aggregate land records at the pargana level as a link between state and peasant; the Patwari was the village-level accountant responsible for crop-by-crop registers.\n\nMapping to Scenario: The scenario describes an official maintaining field-by-field crop registers (khasra) and household revenue accounts (khatauni) in a single village. This is specifically the Patwari's domain.\n\n• Option (a) — Incorrect: The Amil was the revenue assessor-collector at pargana level — above the village tier.\n• Option (b) — Incorrect: The Qanungo maintained records at the pargana level — an intermediate administrative unit above the village.\n• Option (c) — Incorrect: The Muqaddam was the village headman — a customary figure not primarily a revenue record-keeper in the Zabt framework.\n• Option (d) — Correct: The Patwari was the village accountant; khasra and khatauni are quintessential Patwari documents.\n\nValue Addition:\n• Patwari records were the primary evidence base for dispute resolution at the local level.\n• The Qanungo-Patwari distinction persisted into British-era land administration.\n• Khasra (field register by plot) and khatauni (account by household) are still used in Indian revenue administration today."
+    },
+    "hi": {
+      "display_text": "अकबर के प्रशासन के तहत एक परगना के निरीक्षण के दौरान, एक पर्यवेक्षी अधिकारी देखता है कि एक स्थानीय अधिकारी अपने आवंटित गाँव में प्रत्येक खेती किए गए खेत का विस्तृत रजिस्टर रख रहा है — क्षेत्रफल, फसल का प्रकार, और देय राजस्व दर्ज कर रहा है। इन रजिस्टरों को स्थानीय रूप से खासरा और खतौनी कहा जाता है। यह अधिकारी गाँव का वंशानुगत सदस्य है और व्यक्तिगत कृषकों तथा राज्य राजस्व पदानुक्रम के बीच प्राथमिक कड़ी के रूप में कार्य करता है।\n\nइस विवरण के अनुसार सबसे उपयुक्त राजस्व अधिकारी कौन है?\n\n(a) अमिल — परगना स्तर पर आकलन और संग्रह के लिए जिम्मेदार राजस्व संग्रहकर्ता\n(b) क़ानूनगो — परगना स्तर पर समग्र भूमि अभिलेख रखने वाला वंशानुगत लेखाकार\n(c) मुक़द्दम — गाँव का मुखिया जो किसानों और परगना अधिकारियों के बीच मध्यस्थता करता था\n(d) पटवारी — गाँव स्तर का लेखाकार जो व्यक्तिगत खेतों के लिए फसल और राजस्व रजिस्टर रखता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र जो 'भूमि अभिलेख' को क़ानूनगो से जोड़ते हैं, वे परगना स्तर के अभिलेख-रखने (क़ानूनगो) और गाँव स्तर के फसल रजिस्टर रखरखाव (पटवारी) के बीच अंतर को नजरअंदाज कर सकते हैं।",
+      "elimination_logic": [
+        "गाँव स्तर पर फसल और राजस्व रजिस्टर रखने वाला अधिकारी पटवारी होता है — खासरा (खेत रजिस्टर) और खतौनी (खाता रजिस्टर) गाँव के दस्तावेज़ हैं।",
+        "विकल्प (a) को हटाएं: अमिल परगना स्तर पर राजस्व संग्रहकर्ता होता है — वह गाँव स्तर का अभिलेख-रखने वाला नहीं है।",
+        "विकल्प (b) को हटाएं: क़ानूनगो एक वंशानुगत मध्यस्थ होता है जो परगना स्तर पर समग्र भूमि अभिलेख रखता है — वह गाँव स्तर के फसल रजिस्टर नहीं रखता।",
+        "विकल्प (c) को हटाएं: मुक़द्दम गाँव का मुखिया होता है, जो ज़ब्त प्रणाली के तहत अभिलेख-रखने वाला अधिकारी नहीं है।",
+        "विकल्प (d) चुनें: पटवारी गाँव स्तर का लेखाकार होता है जो खासरा और खतौनी का रखरखाव करता है — सही उत्तर।"
+      ],
+      "upsc_trap_explanation": "यह परिदृश्य क़ानूनगो और पटवारी के बीच भ्रम का लाभ उठाता है। दोनों भूमि अभिलेखों से संबंधित हैं, और जो छात्र जानते हैं कि क़ानूनगो परगना स्तर के अभिलेख रखते थे, वे मान सकते हैं कि वे गाँव स्तर के रजिस्टर भी संभालते थे। यहाँ परिक्षित सटीकता प्रशासन के स्तर की है — परगना (क़ानूनगो) बनाम गाँव (पटवारी) — और विशिष्ट दस्तावेज़: खासरा (फसल/खेत रजिस्टर) और खतौनी (राजस्व खाता) पटवारी स्तर के अभिलेख हैं।",
+      "final_explanation": "ज़ब्त प्रणाली की प्रभावशीलता एक स्तरीय प्रशासनिक पदानुक्रम पर आधारित थी, जिसमें परगना और गाँव स्तर पर अलग-अलग अधिकारी होते थे।\n\nलागू सिद्धांत: मुगल राजस्व पदानुक्रम के तहत अभिलेख-रखने का कार्य प्रशासन के स्तर के अनुसार विभाजित था। अमिल परगना स्तर पर राजस्व संग्रह करता था; क़ानूनगो एक वंशानुगत मध्यस्थ था जो परगना स्तर पर समग्र भूमि अभिलेख रखता था और राज्य तथा किसान के बीच कड़ी का काम करता था; पटवारी गाँव स्तर का लेखाकार था जो फसल-दर-फसल रजिस्टर का रखरखाव करता था।\n\nपरिदृश्य से मेल: यह परिदृश्य एक अधिकारी का वर्णन करता है जो एक गाँव में खेत-दर-खेत फसल रजिस्टर (खासरा) और परिवारवार राजस्व खाते (खतौनी) रखता है। यह विशेष रूप से पटवारी का कार्यक्षेत्र है।\n\n• विकल्प (a) — गलत: अमिल परगना स्तर पर राजस्व आकलक-संग्रहकर्ता था — जो गाँव स्तर से ऊपर था।\n• विकल्प (b) — गलत: क़ानूनगो परगना स्तर पर अभिलेख रखता था — जो गाँव से ऊपर एक मध्यवर्ती प्रशासनिक इकाई है।\n• विकल्प (c) — गलत: मुक़द्दम गाँव का मुखिया था — एक पारंपरिक पद जो ज़ब्त प्रणाली में मुख्य रूप से राजस्व अभिलेख-रखने वाला नहीं था।\n• विकल्प (d) — सही: पटवारी गाँव का लेखाकार था; खासरा और खतौनी पटवारी के दस्तावेज़ हैं।\n\nमूल्यवर्धन:\n• पटवारी के अभिलेख स्थानीय स्तर पर विवाद समाधान के लिए प्राथमिक साक्ष्य होते थे।\n• क़ानूनगो-पटवारी का भेद ब्रिटिश काल के भूमि प्रशासन में भी बना रहा।\n• खासरा (खेत रजिस्टर) और खतौनी (परिवारवार खाता) आज भी भारतीय राजस्व प्रशासन में उपयोग होते हैं।"
+    }
+  },
+  {
+    "uuid": "48c3968f-21a0-4e94-9134-cf3ffbcb7603",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Mansabdari System's Relationship with the Zabt Revenue System",
+        "Khalisa vs Jagir Lands: Revenue Collection Differences"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Khalisa vs jagir — Zabt application differences",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four features relate to Khalisa (crown) lands under Akbar's revenue administration. Which one does NOT belong to that category?\n\n(a) Revenue collected from these lands went directly to the imperial treasury without passing through any intermediary assignment holder\n(b) The Zabt system provided the assessment benchmark for determining the revenue demand on these lands\n(c) Assignments of these lands were typically rotated among holders every three to four years to prevent entrenchment of local power\n(d) These lands were subject to the most rigorous application of standardized measurement and Zabt-based assessment in the empire",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students may think that jagir lands, being subject to Zabt benchmarks in theory, are in the same category as Khalisa lands in terms of actual Zabt application.",
+      "elimination_logic": [
+        "The category being tested is: 'features that applied to Khalisa (crown) lands under the Zabt system.'",
+        "Option (a) — Revenue going directly to the imperial treasury: this is a defining feature of Khalisa land.",
+        "Option (b) — Zabt providing the assessment benchmark: both Khalisa and jagir used Zabt as the notional benchmark, but jagir actual collection often exceeded it.",
+        "Option (c) — Rapid transfer of assignment after 3–4 years: this describes the jagirdari rotation policy applied to jagir lands, NOT a feature of Khalisa land.",
+        "Option (d) — Strictest application of standardized Zabt measurement: Khalisa land, being directly under imperial administration, saw the most rigorous Zabt enforcement.",
+        "Option (c) is the odd one out — it describes a jagir feature, not a Khalisa feature."
+      ],
+      "upsc_trap_explanation": "Students who conflate Khalisa and jagir features in the abstract will struggle here. The rapid rotation of jagir assignments (every 3–4 years) was a specific jagirdari policy that applied to mansabdars' revenue assignments — not to crown land. The trap is that rapid rotation sounds like it could be an administrative control mechanism, which might make students assume it applied to all land types including Khalisa.",
+      "final_explanation": "Khalisa land was the revenue category most directly associated with strict Zabt application under Akbar's administration.\n\n• Option (a) — Belongs (Khalisa feature): Revenue from Khalisa land went directly to the imperial treasury (bayt al-mal), making it the state's most reliable fiscal resource.\n• Option (b) — Belongs (common feature): The Zabt rate served as the nominal assessment benchmark for both Khalisa and jagir lands, though enforcement differed significantly.\n• Option (c) — Does NOT belong (Jagir feature): Rapid rotation of assignments every 3–4 years was a policy applied to jagir (revenue assignment) lands held by mansabdars — not to Khalisa land. Akbar rotated jagir assignments to prevent mansabdars from entrenching local power, a policy that also had the unintended consequence of encouraging short-term extraction.\n• Option (d) — Belongs (Khalisa feature): Crown lands under direct imperial administration were subject to the most rigorous standardized measurement and Zabt enforcement.\n\nValue Addition:\n• Akbar's policy of expanding Khalisa was a strategy to reduce dependence on jagirdars.\n• Jagir rotation created the 'jagirdari crisis' of the 17th century — Aurangzeb's reign saw this reach a breaking point.\n• The tension between centralized Khalisa control and decentralized jagirdari extraction is central to understanding Mughal fiscal history."
+    },
+    "hi": {
+      "display_text": "अकबर के राजस्व प्रशासन के तहत खलीसा (राजसी) भूमि से संबंधित निम्नलिखित चार विशेषताओं में से तीन सही हैं। इनमें से कौन-सी विशेषता उस श्रेणी से संबंधित नहीं है?\n\n(a) इन भूमि से प्राप्त राजस्व सीधे सम्राट के खजाने में जाता था, बिना किसी मध्यस्थ असाइनमेंट धारक के\n(b) ज़ब्त प्रणाली ने इन भूमि पर राजस्व मांग निर्धारित करने के लिए मूल्यांकन मानक प्रदान किया\n(c) इन भूमि के असाइनमेंट आमतौर पर तीन से चार वर्षों में धारकों के बीच घुमाए जाते थे ताकि स्थानीय सत्ता के जड़ जमाने को रोका जा सके\n(d) ये भूमि साम्राज्य में मानकीकृत मापन और ज़ब्त आधारित मूल्यांकन के सबसे कठोर अनुपालन के अधीन थीं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र सोच सकते हैं कि जागीर भूमि, जो सैद्धांतिक रूप से ज़ब्त मानकों के अधीन है, वास्तविक ज़ब्त लागू होने के संदर्भ में खलीसा भूमि के समान श्रेणी में आती है।",
+      "elimination_logic": [
+        "परीक्षित श्रेणी है: 'खलीसा (राजसी) भूमि पर ज़ब्त प्रणाली के अंतर्गत लागू विशेषताएँ।'",
+        "विकल्प (a) — राजस्व सीधे सम्राट के खजाने में जाना: यह खलीसा भूमि की एक परिभाषित विशेषता है।",
+        "विकल्प (b) — ज़ब्त ने मूल्यांकन मानक प्रदान किया: खलीसा और जागीर दोनों ने ज़ब्त को सैद्धांतिक मानक के रूप में उपयोग किया, लेकिन जागीर की वास्तविक वसूली अक्सर इससे अधिक थी।",
+        "विकल्प (c) — 3-4 वर्षों के बाद असाइनमेंट का तीव्र परिवर्तन: यह जागीर भूमि पर लागू जागीरदारी घुमाव नीति का वर्णन करता है, जो खलीसा भूमि की विशेषता नहीं है।",
+        "विकल्प (d) — मानकीकृत ज़ब्त मापन का सबसे कड़ा पालन: खलीसा भूमि, जो सीधे सम्राट के प्रशासन के अधीन थी, वहां ज़ब्त का सबसे कठोर प्रवर्तन होता था।",
+        "विकल्प (c) अलग है — यह जागीर की विशेषता बताता है, खलीसा की नहीं।"
+      ],
+      "upsc_trap_explanation": "जो छात्र खलीसा और जागीर की विशेषताओं को सामान्य रूप में मिला देते हैं, वे इस प्रश्न में भ्रमित होंगे। जागीर असाइनमेंट का तीव्र घुमाव (हर 3-4 वर्ष) एक विशिष्ट जागीरदारी नीति थी जो मंसबदारों के राजस्व असाइनमेंट पर लागू होती थी — यह राजसी भूमि पर लागू नहीं होती थी। यह भ्रम इसलिए होता है क्योंकि तीव्र घुमाव एक प्रशासनिक नियंत्रण तंत्र जैसा लगता है, जिससे छात्र सोच सकते हैं कि यह सभी भूमि प्रकारों पर लागू होता है, जिसमें खलीसा भी शामिल है।",
+      "final_explanation": "खलीसा भूमि वह राजस्व श्रेणी थी जो अकबर के प्रशासन के तहत ज़ब्त प्रणाली के सबसे सख्त अनुपालन से जुड़ी थी।\n\n• विकल्प (a) — संबंधित (खलीसा विशेषता): खलीसा भूमि से प्राप्त राजस्व सीधे सम्राट के खजाने (बैत अल-माल) में जाता था, जो राज्य का सबसे विश्वसनीय वित्तीय स्रोत था।\n• विकल्प (b) — संबंधित (सामान्य विशेषता): ज़ब्त दर खलीसा और जागीर दोनों भूमि के लिए नाममात्र मूल्यांकन मानक के रूप में कार्य करती थी, हालांकि प्रवर्तन में काफी अंतर था।\n• विकल्प (c) — संबंधित नहीं (जागीर विशेषता): हर 3-4 वर्षों में असाइनमेंट का तीव्र घुमाव जागीर (राजस्व असाइनमेंट) भूमि पर लागू नीति थी, जो मंसबदारों के पास थी — खलीसा भूमि पर नहीं। अकबर ने मंसबदारों को स्थानीय सत्ता में जड़ जमाने से रोकने के लिए जागीर असाइनमेंट घुमाए, जिससे अल्पकालिक वसूली को बढ़ावा मिला।\n• विकल्प (d) — संबंधित (खलीसा विशेषता): सीधे सम्राट के प्रशासन के अधीन राजसी भूमि पर मानकीकृत मापन और ज़ब्त का सबसे कठोर प्रवर्तन होता था।\n\nमूल्य संवर्धन:\n• अकबर की खलीसा विस्तार नीति जागीरदारों पर निर्भरता कम करने की रणनीति थी।\n• जागीर घुमाव ने 17वीं सदी में 'जागीरदारी संकट' को जन्म दिया — औरंगजेब के शासनकाल में यह चरम पर पहुंचा।\n• केंद्रीकृत खलीसा नियंत्रण और विकेंद्रीकृत जागीरदारी वसूली के बीच तनाव मुगल वित्तीय इतिहास को समझने के लिए केंद्रीय है।"
+    }
+  },
+  {
+    "uuid": "f8664a73-5c5c-4d96-bbcc-4766e2b625ea",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Batai, Kankut, and Nasaq: Alternative Revenue Systems Coexisting with Zabt"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Nasaq — customary assessment without fresh measurement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under the Mughal revenue administration, the method of assessment that relied on customary demand based on past records — requiring neither fresh physical measurement of land nor direct inspection of the standing crop — and was particularly used in regions where regular survey operations were administratively impractical, was known as ________.\n\n(a) Batai\n(b) Kankut\n(c) Nasaq\n(d) Zabt",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because Kankut also involves estimation without physical division of the crop, making students conflate estimation-by-inspection (Kankut) with customary-past-record-based assessment (Nasaq).",
+      "elimination_logic": [
+        "Eliminate option (a): Batai involves physical division of the harvested crop — it is not based on past records or area estimation.",
+        "Eliminate option (b): Kankut involves visual inspection or crop-cutting to estimate the standing crop's yield — it does require field presence and estimation, not reliance on past records alone.",
+        "Eliminate option (d): Zabt is the measurement-based survey system — it specifically requires physical land measurement.",
+        "Select option (c): Nasaq is the method relying on customary assessment based on past records without fresh measurement — the correct answer."
+      ],
+      "upsc_trap_explanation": "Kankut and Nasaq are the most frequently conflated pair in revenue system questions. Both are described as 'assessment without full measurement' but they differ crucially: Kankut requires the assessor to inspect or sample the standing crop; Nasaq requires neither fresh inspection nor measurement — it simply carries forward customary demands based on historical records. Students who know both terms superficially will confuse them.",
+      "final_explanation": "Among the multiple revenue assessment methods that coexisted under the Mughal system, each had a distinct operational logic suited to different terrain and administrative capacity.\n\n• Option (a) — Batai: Incorrect. Batai involves actual physical division of the harvested crop between the state and the peasant — typically one-third or one-half to the state. It requires presence at harvest, not records.\n• Option (b) — Kankut: Incorrect. Kankut involves visual inspection or crop-cutting experiments to estimate the yield of the standing crop. It requires field presence but not physical division or fresh measurement of land area.\n• Option (c) — Nasaq: Correct. Nasaq is assessment based entirely on past records and customary demand — no fresh measurement of land, no inspection of the standing crop. It was practical in difficult terrain where surveyors could not operate.\n• Option (d) — Zabt: Incorrect. Zabt specifically requires physical measurement of land area using standardized instruments — the opposite of what the blank describes.\n\nValue Addition:\n• Nasaq was common in hilly and forested tracts where jarib-based survey was impractical.\n• All four methods (Zabt, Batai, Kankut, Nasaq) appear in Ain-i-Akbari's revenue chapters.\n• UPSC has previously tested paired comparisons of these methods in GS1 optional paper questions."
+    },
+    "hi": {
+      "display_text": "मुगल राजस्व प्रशासन के तहत, वह आकलन विधि जो पिछले रिकॉर्ड पर आधारित पारंपरिक मांग पर निर्भर करती थी — जिसमें भूमि का ताजा भौतिक मापन या खड़ी फसल का प्रत्यक्ष निरीक्षण आवश्यक नहीं था — और जो विशेष रूप से उन क्षेत्रों में उपयोग की जाती थी जहाँ नियमित सर्वेक्षण संचालन प्रशासनिक रूप से व्यावहारिक नहीं था, उसे ________ कहा जाता था।\n\n(a) बताई\n(b) कंकुट\n(c) नसक\n(d) ज़ब्त",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि कंकुट में भी फसल के भौतिक विभाजन के बिना अनुमान शामिल है, जिससे छात्र निरीक्षण-आधारित अनुमान (कंकुट) को पारंपरिक-पिछले रिकॉर्ड-आधारित आकलन (नसक) के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: बताई में कटाई गई फसल का भौतिक विभाजन शामिल है — यह पिछले रिकॉर्ड या क्षेत्र के अनुमान पर आधारित नहीं है।",
+        "विकल्प (b) को हटाएं: कंकुट में खड़े फसल की उपज का अनुमान लगाने के लिए दृश्य निरीक्षण या फसल-कटाई शामिल है — इसमें क्षेत्र में उपस्थिति और अनुमान आवश्यक है, केवल पिछले रिकॉर्ड पर निर्भर नहीं।",
+        "विकल्प (d) को हटाएं: ज़ब्त मापन-आधारित सर्वेक्षण प्रणाली है — इसमें विशेष रूप से भौतिक भूमि मापन आवश्यक है।",
+        "विकल्प (c) चुनें: नसक वह विधि है जो ताजा मापन के बिना पिछले रिकॉर्ड पर आधारित पारंपरिक आकलन पर निर्भर करती है — सही उत्तर।"
+      ],
+      "upsc_trap_explanation": "कंकुट और नसक राजस्व प्रणाली के प्रश्नों में सबसे अधिक भ्रमित किए जाने वाले जोड़े हैं। दोनों को 'पूर्ण मापन के बिना आकलन' के रूप में वर्णित किया जाता है लेकिन वे महत्वपूर्ण रूप से भिन्न हैं: कंकुट में आकलक को खड़ी फसल का निरीक्षण या नमूना लेना आवश्यक है; नसक में न तो ताजा निरीक्षण न ही मापन आवश्यक है — यह केवल ऐतिहासिक रिकॉर्ड पर आधारित पारंपरिक मांग को आगे बढ़ाता है। जो छात्र दोनों शब्दों को सतही रूप से जानते हैं वे इन्हें भ्रमित कर देते हैं।",
+      "final_explanation": "मुगल प्रणाली के तहत सह-अस्तित्व में कई राजस्व आकलन विधियों में से प्रत्येक का अलग परिचालन तर्क था जो विभिन्न भू-भाग और प्रशासनिक क्षमता के लिए उपयुक्त था।\n\n• विकल्प (a) — बताई: गलत। बताई में कटाई गई फसल का वास्तविक भौतिक विभाजन शामिल है, जो आमतौर पर एक-तिहाई या आधा राज्य को जाता है। इसके लिए कटाई के समय उपस्थिति आवश्यक है, रिकॉर्ड नहीं।\n• विकल्प (b) — कंकुट: गलत। कंकुट में खड़ी फसल की उपज का अनुमान लगाने के लिए दृश्य निरीक्षण या फसल-कटाई प्रयोग शामिल हैं। इसके लिए क्षेत्र में उपस्थिति आवश्यक है लेकिन भूमि क्षेत्र के ताजा मापन या भौतिक विभाजन की आवश्यकता नहीं है।\n• विकल्प (c) — नसक: सही। नसक पूरी तरह से पिछले रिकॉर्ड और पारंपरिक मांग पर आधारित आकलन है — न तो भूमि का ताजा मापन, न ही खड़ी फसल का निरीक्षण। यह कठिन भू-भाग में व्यावहारिक था जहाँ सर्वेक्षक काम नहीं कर सकते थे।\n• विकल्प (d) — ज़ब्त: गलत। ज़ब्त विशेष रूप से मानकीकृत उपकरणों से भूमि क्षेत्र के भौतिक मापन की मांग करता है — जो रिक्त स्थान में वर्णित के विपरीत है।\n\nमूल्य संवर्धन:\n• नसक पहाड़ी और वनाच्छादित क्षेत्रों में आम था जहाँ जरीब-आधारित सर्वेक्षण व्यावहारिक नहीं था।\n• चारों विधियाँ (ज़ब्त, बताई, कंकुट, नसक) ऐन-ए-अकबरी के राजस्व अध्यायों में प्रकट होती हैं।\n• UPSC ने पहले GS1 वैकल्पिक प्रश्नों में इन विधियों की जोड़ी तुलना का परीक्षण किया है।"
+    }
+  },
+  {
+    "uuid": "c6e9ea15-7bc3-47bb-bef5-f1694470a1a7",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Ain-i-Akbari as a Source for Understanding the Zabt System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Ain-i-Akbari — third volume of Akbarnama dealing with administration",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — describing a primary source text and its most accurate characterization — is correctly matched?\n\n(a) Akbarnama — A multi-volume administrative compendium compiled by Abul Fazl containing dastur schedules and province-by-province revenue statistics used by Irfan Habib to reconstruct Mughal agrarian history\n(b) Ain-i-Akbari — The third volume of Abul Fazl's Akbarnama, constituting an administrative compendium containing detailed revenue rules, dastur rates, and provincial statistics\n(c) Tabaqat-i-Akbari — An administrative manual written by Abul Fazl detailing the organizational structure of Akbar's Mansabdari system\n(d) Muntakhab-ut-Tawarikh — The official Mughal court chronicle authored by Abul Fazl containing a favourable account of Akbar's revenue reforms",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students frequently use 'Akbarnama' and 'Ain-i-Akbari' interchangeably, not knowing that the Ain is specifically the third volume of the Akbarnama dealing with administration.",
+      "elimination_logic": [
+        "Eliminate option (a): Akbarnama is a historical chronicle — its first two volumes deal with Akbar's life and reign, not administration. Ain-i-Akbari is specifically its third volume.",
+        "Eliminate option (c): Tabaqat-i-Akbari was written by Nizamuddin Ahmad, not Abul Fazl — an entity-swap trap.",
+        "Eliminate option (d): Muntakhab-ut-Tawarikh was written by Badauni, who was a critic of Akbar — not the source of revenue statistics used by Irfan Habib.",
+        "Select option (b): Ain-i-Akbari is the third volume of Akbarnama, written by Abul Fazl, containing detailed administrative rules and revenue statistics — correctly matched."
+      ],
+      "upsc_trap_explanation": "The Ain-i-Akbari vs Akbarnama conflation is one of the most persistent errors in Mughal source material questions. Students who know both titles but not their relationship will either treat them as synonyms or misattribute the administrative content to the chronicle volumes. The specific identification that the Ain is the third volume dealing with administration — as opposed to the first two volumes covering Akbar's military and political history — is the precision being tested.",
+      "final_explanation": "Primary sources for Mughal administrative history must be identified with precision — both the title and the nature of the content matter.\n\n• Option (a) — Incorrectly matched: The Akbarnama as a whole is a historical chronicle. The administrative content — dastur schedules, revenue statistics, and administrative rules — is specifically concentrated in its third part, the Ain-i-Akbari. Treating the Akbarnama's historical volumes as the source of revenue data is imprecise.\n• Option (b) — Correctly matched: The Ain-i-Akbari is the administrative compendium forming the third volume of Abul Fazl's Akbarnama. It contains province-by-province revenue statistics, dastur rates, and administrative regulations — the primary source used by Irfan Habib to reconstruct Mughal agrarian history.\n• Option (c) — Incorrectly matched: The Tabaqat-i-Akbari was written by Nizamuddin Ahmad Bakhshi, not Abul Fazl — an entity-swap.\n• Option (d) — Incorrectly matched: The Muntakhab-ut-Tawarikh was authored by Badauni — a contemporary but a critic of Akbar, not the source of official revenue data.\n\nValue Addition:\n• Ain-i-Akbari literally means 'Institutes of Akbar' — a regulatory/administrative compilation.\n• Irfan Habib's 'Agrarian System of the Mughal Empire' (1963) relies heavily on Ain-i-Akbari data.\n• Abul Fazl's official position as court historian gives the Ain great detail but also a eulogistic bias."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म — एक प्राथमिक स्रोत ग्रंथ और उसकी सबसे सटीक व्याख्या — सही रूप से मेल खाता है?\n\n(a) अकबरनामा — अबुल फज़ल द्वारा संकलित एक बहु-खंड प्रशासनिक संकलन जिसमें दस्तूर अनुसूचियाँ और प्रांतवार राजस्व आंकड़े शामिल हैं, जिनका उपयोग इरफ़ान हबीब ने मुगल कृषि इतिहास के पुनर्निर्माण के लिए किया\n(b) आइन-ए-अकबरी — अबुल फज़ल के अकबरनामा का तीसरा भाग, जो विस्तृत राजस्व नियम, दस्तूर दरें, और प्रांतीय आंकड़े समेटे एक प्रशासनिक संकलन है\n(c) तबकात-ए-अकबरी — अबुल फज़ल द्वारा लिखा गया एक प्रशासनिक मार्गदर्शक जो अकबर के मंसबदारी प्रणाली की संगठनात्मक संरचना बताता है\n(d) मुन्तख़ब-उत-तवारीख — अबुल फज़ल द्वारा रचित आधिकारिक मुगल दरबारी वृत्तांत जिसमें अकबर के राजस्व सुधारों का अनुकूल विवरण है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि छात्र अक्सर 'अकबरनामा' और 'आइन-ए-अकबरी' को एक-दूसरे के स्थान पर उपयोग करते हैं, यह न जानते हुए कि आइन विशेष रूप से अकबरनामा का तीसरा भाग है जो प्रशासन से संबंधित है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: अकबरनामा एक ऐतिहासिक वृत्तांत है — इसके पहले दो भाग अकबर के जीवन और शासन से संबंधित हैं, प्रशासन से नहीं। आइन-ए-अकबरी विशेष रूप से इसका तीसरा भाग है।",
+        "विकल्प (c) को हटाएं: तबकात-ए-अकबरी निज़ामुद्दीन अहमद द्वारा लिखी गई थी, न कि अबुल फज़ल द्वारा — यह एक पहचान-परिवर्तन जाल है।",
+        "विकल्प (d) को हटाएं: मुन्तख़ब-उत-तवारीख बादौनी द्वारा लिखी गई थी, जो अकबर के आलोचक थे — यह इरफ़ान हबीब द्वारा उपयोग किए गए राजस्व आंकड़ों का स्रोत नहीं है।",
+        "विकल्प (b) को चुनें: आइन-ए-अकबरी अकबरनामा का तीसरा भाग है, जिसे अबुल फज़ल ने लिखा है, जिसमें विस्तृत प्रशासनिक नियम और राजस्व आंकड़े हैं — सही मेल।"
+      ],
+      "upsc_trap_explanation": "आइन-ए-अकबरी और अकबरनामा के बीच भ्रम मुगल स्रोत सामग्री के प्रश्नों में सबसे स्थायी त्रुटियों में से एक है। जो छात्र दोनों शीर्षकों को जानते हैं लेकिन उनके संबंध को नहीं समझते, वे इन्हें पर्यायवाची मानते हैं या प्रशासनिक सामग्री को वृत्तांत के भागों से गलत तरीके से जोड़ते हैं। यह परीक्षण इस सटीक पहचान का है कि आइन प्रशासन से संबंधित तीसरा भाग है — जबकि पहले दो भाग अकबर के सैन्य और राजनीतिक इतिहास को कवर करते हैं।",
+      "final_explanation": "मुगल प्रशासनिक इतिहास के प्राथमिक स्रोतों की पहचान सटीकता से होनी चाहिए — शीर्षक और सामग्री दोनों का महत्व है।\n\n• विकल्प (a) — गलत मेल: अकबरनामा समग्र रूप से एक ऐतिहासिक वृत्तांत है। प्रशासनिक सामग्री — दस्तूर अनुसूचियाँ, राजस्व आंकड़े, और प्रशासनिक नियम — विशेष रूप से इसके तीसरे भाग, आइन-ए-अकबरी में केंद्रित हैं। अकबरनामा के ऐतिहासिक भागों को राजस्व डेटा का स्रोत मानना असटीक है।\n• विकल्प (b) — सही मेल: आइन-ए-अकबरी अबुल फज़ल के अकबरनामा का तीसरा भाग है, जो प्रशासनिक संकलन है। इसमें प्रांतवार राजस्व आंकड़े, दस्तूर दरें, और प्रशासनिक नियम शामिल हैं — जो इरफ़ान हबीब द्वारा मुगल कृषि इतिहास के पुनर्निर्माण में उपयोग किया गया प्राथमिक स्रोत है।\n• विकल्प (c) — गलत मेल: तबकात-ए-अकबरी निज़ामुद्दीन अहमद बख़्शी द्वारा लिखी गई थी, न कि अबुल फज़ल द्वारा — यह एक पहचान-परिवर्तन है।\n• विकल्प (d) — गलत मेल: मुन्तख़ब-उत-तवारीख बादौनी द्वारा लिखी गई थी — जो समकालीन थे लेकिन अकबर के आलोचक थे, और आधिकारिक राजस्व डेटा का स्रोत नहीं थे।\n\nमूल्यवर्धन:\n• आइन-ए-अकबरी का शाब्दिक अर्थ है 'अकबर के संस्थान' — एक नियामक/प्रशासनिक संकलन।\n• इरफ़ान हबीब की 'मुगल साम्राज्य की कृषि प्रणाली' (1963) आइन-ए-अकबरी के आंकड़ों पर भारी निर्भर है।\n• अबुल फज़ल का दरबारी इतिहासकार पद आइन को विस्तृत बनाता है, लेकिन इसमें प्रशंसात्मक पक्षपात भी है।"
+    }
+  },
+  {
+    "uuid": "2ea556f8-0444-47cf-99a3-004213f86334",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Irfan Habib's Agrarian System of the Mughal Empire: Historiographical Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Irfan Habib thesis — Zabt as cause of agrarian crisis",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the historiographical debate surrounding the Mughal revenue system:\n\n1. Irfan Habib argued that the Zabt system, despite its administrative rationalization, created structural conditions that contributed to the agrarian crisis of the 17th century.\n2. W.H. Moreland, writing before Irfan Habib, emphasized the administrative efficiency of the Mughal revenue system and largely shared Habib's critique that it was fundamentally exploitative.\n3. The historiographical debate about the Zabt system pivots on whether its rationalization of revenue demand represents administrative progress or an instrument of monetized extraction that deepened peasant vulnerability.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Irfan Habib argued that the Zabt system, despite its administrative rationalization, created structural conditions that contributed to the agrarian crisis of the 17th century.",
+          "verdict": "Correct",
+          "reason": "Irfan Habib's 'Agrarian System of the Mughal Empire' (1963) contends that the monetized, measurement-based revenue demand placed unsustainable pressure on peasants, particularly during famines when rates were not revised, making the system a structural cause — not merely a backdrop — of the 17th-century agrarian crisis."
+        },
+        {
+          "statement": "W.H. Moreland, writing before Irfan Habib, emphasized the administrative efficiency of the Mughal revenue system and largely shared Habib's critique that it was fundamentally exploitative.",
+          "verdict": "Incorrect",
+          "reason": "Moreland and Habib represent contrasting positions — Moreland emphasized the efficiency and orderliness of Mughal administration, while Habib introduced a structuralist critique of exploitation. They do not 'largely share' the critique of exploitation."
+        },
+        {
+          "statement": "The historiographical debate about the Zabt system pivots on whether its rationalization of revenue demand represents administrative progress or an instrument of monetized extraction that deepened peasant vulnerability.",
+          "verdict": "Correct",
+          "reason": "This accurately characterizes the central tension in the Mughal agrarian historiography — the progressive vs exploitative framing of the Zabt system is the core of the Moreland-Habib debate."
+        }
+      ],
+      "strong_distractor": "d — Option (d) (all three correct) is a strong distractor because Statements 1 and 3 are both accurate and substantial, leading students to assume Statement 2 must also be correct without carefully checking the Moreland-Habib distinction.",
+      "elimination_logic": [
+        "Statement 1 is correct — Habib's thesis explicitly links Zabt to the structural causes of the 17th-century agrarian crisis.",
+        "Statement 2 is incorrect — Moreland and Habib are contrasting voices: Moreland emphasized administrative efficiency; Habib introduced the exploitation critique. They did not share the same critical position.",
+        "Statement 3 is correct — it accurately states the core historiographical debate.",
+        "Only Statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 deploys a reversed-causation/conflation trap by merging Moreland and Habib's positions. A student who has read both names in the context of Mughal agrarian history but not their specific arguments will accept the statement as 'they both wrote about the system' without registering that they held opposing evaluative positions. This is a precision-of-argument trap rather than a factual recall trap.",
+      "final_explanation": "The historiography of the Mughal agrarian system is a rich site of scholarly debate, with different historians using the same primary sources to reach opposing conclusions.\n\n• Statement 1 — Correct: Irfan Habib's landmark 1963 work argued that the Zabt system's fixed cash demand, unrevised during agricultural crises, created conditions of structural exploitation — contributing to peasant debt, desertion, and ultimately the agrarian crisis that weakened the Mughal state from the 17th century onward.\n• Statement 2 — Incorrect: Moreland (writing in the early 20th century) viewed Mughal administration as relatively efficient and orderly. He did not share Habib's critique of structural exploitation. The two historians represent the efficiency-versus-exploitation binary in Mughal historiography.\n• Statement 3 — Correct: The rationalization-versus-extraction debate is the central question — did the Zabt system represent a rational, predictable tax system that benefited peasants through stability, or did its monetized rigidity create new vulnerabilities?\n\nValue Addition:\n• Irfan Habib's thesis uses Ain-i-Akbari data quantitatively — a pioneering use of medieval statistics.\n• The agrarian crisis of the 17th century (manifested in peasant revolts, zamindari conflicts) is directly linked by Habib to Zabt's structural pressures.\n• Satish Chandra offered a middle position — acknowledging both administrative achievements and social limitations."
+    },
+    "hi": {
+      "display_text": "मुगल राजस्व प्रणाली के इतिहासलेखन विवाद के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. इरफान हबीब ने तर्क दिया कि ज़ब्त प्रणाली, अपनी प्रशासनिक तर्कसंगतता के बावजूद, 17वीं सदी के कृषि संकट में योगदान देने वाली संरचनात्मक परिस्थितियाँ उत्पन्न करती थी।\n2. डब्ल्यू.एच. मोरलैंड, जो इरफान हबीब से पहले लिख रहे थे, ने मुगल राजस्व प्रणाली की प्रशासनिक दक्षता पर जोर दिया और हबीब की आलोचना से काफी हद तक सहमति जताई कि यह मूलतः शोषणकारी थी।\n3. ज़ब्त प्रणाली के बारे में इतिहासलेखन बहस इस बात पर केंद्रित है कि क्या इसकी राजस्व मांग की तर्कसंगतता प्रशासनिक प्रगति का प्रतिनिधित्व करती है या यह मुद्रा आधारित शोषण का उपकरण है जिसने किसानों की असुरक्षा को गहरा दिया।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "इरफान हबीब ने तर्क दिया कि ज़ब्त प्रणाली, अपनी प्रशासनिक तर्कसंगतता के बावजूद, 17वीं सदी के कृषि संकट में योगदान देने वाली संरचनात्मक परिस्थितियाँ उत्पन्न करती थी।",
+          "verdict": "सही है",
+          "reason": "इरफान हबीब की 'Agrarian System of the Mughal Empire' (1963) में कहा गया है कि मुद्रा आधारित, मापन-आधारित राजस्व मांग ने किसानों पर असहनीय दबाव डाला, विशेषकर अकाल के समय जब दरों में संशोधन नहीं किया गया, जिससे यह प्रणाली 17वीं सदी के कृषि संकट का केवल पृष्ठभूमि नहीं बल्कि संरचनात्मक कारण बनी।"
+        },
+        {
+          "statement": "डब्ल्यू.एच. मोरलैंड, जो इरफान हबीब से पहले लिख रहे थे, ने मुगल राजस्व प्रणाली की प्रशासनिक दक्षता पर जोर दिया और हबीब की आलोचना से काफी हद तक सहमति जताई कि यह मूलतः शोषणकारी थी।",
+          "verdict": "गलत है",
+          "reason": "मोरलैंड और हबीब विरोधी दृष्टिकोण प्रस्तुत करते हैं — मोरलैंड ने मुगल प्रशासन की दक्षता और सुव्यवस्था पर बल दिया, जबकि हबीब ने शोषण की संरचनात्मक आलोचना की। वे शोषण की आलोचना में 'काफी हद तक सहमत' नहीं हैं।"
+        },
+        {
+          "statement": "ज़ब्त प्रणाली के बारे में इतिहासलेखन बहस इस बात पर केंद्रित है कि क्या इसकी राजस्व मांग की तर्कसंगतता प्रशासनिक प्रगति का प्रतिनिधित्व करती है या यह मुद्रा आधारित शोषण का उपकरण है जिसने किसानों की असुरक्षा को गहरा दिया।",
+          "verdict": "सही है",
+          "reason": "यह मुगल कृषि इतिहासलेखन में केंद्रीय तनाव को सही ढंग से दर्शाता है — ज़ब्त प्रणाली के प्रगतिशील बनाम शोषणकारी स्वरूप की बहस मोरलैंड-हबीब विवाद का मूल है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) (सभी तीन सही) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 दोनों सटीक और महत्वपूर्ण हैं, जिससे छात्र यह मान लेते हैं कि कथन 2 भी सही होगा बिना मोरलैंड-हबीब के भेद को ध्यान से जांचे।",
+      "elimination_logic": [
+        "कथन 1 सही है — हबीब का सिद्धांत स्पष्ट रूप से ज़ब्त को 17वीं सदी के कृषि संकट के संरचनात्मक कारणों से जोड़ता है।",
+        "कथन 2 गलत है — मोरलैंड और हबीब विरोधी मत रखते हैं: मोरलैंड प्रशासनिक दक्षता पर जोर देता है; हबीब शोषण की आलोचना करता है। वे समान आलोचनात्मक स्थिति में नहीं हैं।",
+        "कथन 3 सही है — यह केंद्रीय इतिहासलेखन बहस को सही ढंग से प्रस्तुत करता है।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक उल्टी-कारण/मिश्रण जाल का उपयोग करता है जो मोरलैंड और हबीब की स्थितियों को मिला देता है। जो छात्र मुगल कृषि इतिहास में दोनों नाम पढ़ चुके हैं लेकिन उनके विशिष्ट तर्कों को नहीं जानते, वे इस कथन को 'वे दोनों प्रणाली के बारे में लिखे' के रूप में स्वीकार कर लेते हैं बिना यह समझे कि वे विरोधी मूल्यांकन रखते थे। यह तथ्यात्मक स्मृति जाल नहीं बल्कि तर्क की सटीकता का जाल है।",
+      "final_explanation": "मुगल कृषि प्रणाली का इतिहासलेखन विद्वतापूर्ण बहस का समृद्ध क्षेत्र है, जिसमें विभिन्न इतिहासकार समान प्राथमिक स्रोतों का उपयोग कर विरोधी निष्कर्ष निकालते हैं।\n\n• कथन 1 — सही: इरफान हबीब के 1963 के महत्वपूर्ण कार्य में कहा गया कि ज़ब्त प्रणाली की निश्चित नकद मांग, जो कृषि संकट के दौरान संशोधित नहीं हुई, ने संरचनात्मक शोषण की स्थितियाँ पैदा कीं — जिससे किसानों का ऋण, परित्याग और अंततः 17वीं सदी से मुगल राज्य को कमजोर करने वाला कृषि संकट उत्पन्न हुआ।\n• कथन 2 — गलत: मोरलैंड (20वीं सदी के प्रारंभ में) ने मुगल प्रशासन को अपेक्षाकृत कुशल और सुव्यवस्थित माना। उन्होंने हबीब की संरचनात्मक शोषण की आलोचना साझा नहीं की। ये दोनों इतिहासकार मुगल इतिहासलेखन में दक्षता बनाम शोषण के द्वैत को दर्शाते हैं।\n• कथन 3 — सही: तर्कसंगतता बनाम शोषण की बहस केंद्रीय प्रश्न है — क्या ज़ब्त प्रणाली एक तर्कसंगत, पूर्वानुमेय कर प्रणाली थी जो किसानों को स्थिरता प्रदान करती थी, या इसकी मुद्रा आधारित कठोरता ने नई असुरक्षाएँ पैदा कीं?\n\nमूल्य संवर्धन:\n• इरफान हबीब का सिद्धांत ऐन-ए-अकबरी के आंकड़ों का मात्रात्मक उपयोग करता है — मध्यकालीन सांख्यिकी का एक अग्रणी उपयोग।\n• 17वीं सदी का कृषि संकट (किसान विद्रोह, ज़मींदारी संघर्षों के रूप में) हबीब द्वारा ज़ब्त के संरचनात्मक दबावों से सीधे जोड़ा गया है।\n• सतीश चंद्र ने एक मध्यवर्ती स्थिति प्रस्तुत की — प्रशासनिक उपलब्धियों और सामाजिक सीमाओं दोनों को स्वीकार करते हुए।"
+    }
+  },
+  {
+    "uuid": "3577c6db-8666-460e-9396-a95724a4b723",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Todar Mal's Bandobast (Grand Settlement) of 1580–1582"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Todar Mal's Grand Bandobast — 1580–82 timeline",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Todar Mal's Grand Bandobast — the comprehensive province-by-province revenue settlement that is considered the high point of Mughal fiscal administration — was implemented during which of the following periods?\n\n(a) 1556–1562, coinciding with Akbar's early military consolidation campaigns\n(b) 1571–1580, during which ten-year crop price and yield data were systematically compiled\n(c) 1582–1590, during the extended survey operations that followed the completion of the Ain-i-Dahsala\n(d) 1580–1582, immediately after the completion of the ten-year Ain-i-Dahsala data collection exercise",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because the Ain-i-Dahsala data collection ended in 1580 and the Bandobast followed immediately, making 1571–1580 attractive to students who confuse the data collection phase with the settlement phase.",
+      "elimination_logic": [
+        "Eliminate option (a): 1556–1562 is Akbar's early consolidation phase — Todar Mal had not yet been assigned comprehensive revenue authority.",
+        "Eliminate option (b): 1571–1580 describes the Ain-i-Dahsala data collection period, not the Grand Bandobast settlement.",
+        "Eliminate option (c): 1582–1590 is partially accurate in that survey work continued post-Bandobast, but the Grand Bandobast itself was implemented in 1580–1582.",
+        "Select option (d): 1580–1582 is the specific timeline of Todar Mal's Grand Bandobast — the comprehensive province-by-province revenue settlement."
+      ],
+      "upsc_trap_explanation": "The temporal confusion here is between the Ain-i-Dahsala data collection phase (1571–1580) and the Grand Bandobast settlement (1580–1582). Students who recall '1580' in connection with Todar Mal's revenue work may select option (b), not realizing that 1580 is when the data collection ended and the Bandobast began — making these two consecutive phases, not the same event.",
+      "final_explanation": "The Grand Bandobast represented the culminating achievement of Todar Mal's revenue career under Akbar — translating a decade of data into enforceable fiscal schedules.\n\n• Option (a) — Incorrect: 1556–1562 covers Akbar's initial years — the Battle of Panipat II (1556), the Hemu episode, and early Rajput campaigns. Revenue systematization was not Todar Mal's focus at this point.\n• Option (b) — Incorrect: 1571–1580 is the Ain-i-Dahsala data collection window — ten years of crop price and yield data gathering that preceded the Grand Bandobast.\n• Option (c) — Incorrect: Though survey work continued after 1582, 1582–1590 does not describe the Grand Bandobast itself, which was formally implemented in 1580–1582.\n• Option (d) — Correct: The Grand Bandobast was implemented between 1580 and 1582 — immediately following the completion of the ten-year Ain-i-Dahsala data cycle. It produced province-by-province dastur compilations forming the high point of Mughal revenue administration.\n\nValue Addition:\n• 'Bandobast' means 'settlement' or 'arrangement' — the Grand Bandobast was a comprehensive fiscal settlement, not just a survey.\n• The Bandobast provided the fiscal base for Akbar's Deccan campaigns in the 1590s.\n• Todar Mal also conducted revenue surveys in Bengal after 1582, extending the Zabt framework eastward."
+    },
+    "hi": {
+      "display_text": "टोडर मल का ग्रैंड बंडोबस्त — व्यापक प्रांत-दर-प्रांत राजस्व निपटान जिसे मुगल वित्तीय प्रशासन की उच्चतम उपलब्धि माना जाता है — निम्नलिखित में से किस अवधि के दौरान लागू किया गया था?\n\n(a) 1556–1562, जो अकबर के प्रारंभिक सैन्य समेकन अभियानों के साथ मेल खाता है\n(b) 1571–1580, जिसके दौरान दस वर्षों का फसल मूल्य और उपज डेटा व्यवस्थित रूप से संकलित किया गया\n(c) 1582–1590, Ain-i-Dahsala के पूरा होने के बाद जारी विस्तारित सर्वेक्षण कार्य के दौरान\n(d) 1580–1582, दस वर्षीय Ain-i-Dahsala डेटा संग्रह अभ्यास के तुरंत बाद",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि Ain-i-Dahsala डेटा संग्रह 1580 में समाप्त हो गया था और बंडोबस्त तुरंत उसके बाद हुआ, जिससे 1571–1580 उन छात्रों के लिए आकर्षक हो जाता है जो डेटा संग्रह चरण को बंडोबस्त चरण के साथ भ्रमित करते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 1556–1562 अकबर के प्रारंभिक समेकन चरण हैं — टोडर मल को अभी व्यापक राजस्व प्राधिकरण नहीं दिया गया था।",
+        "विकल्प (b) को हटाएं: 1571–1580 Ain-i-Dahsala डेटा संग्रह अवधि है, न कि ग्रैंड बंडोबस्त का निपटान।",
+        "विकल्प (c) को हटाएं: 1582–1590 आंशिक रूप से सही है क्योंकि सर्वेक्षण कार्य बंडोबस्त के बाद जारी रहा, लेकिन ग्रैंड बंडोबस्त स्वयं 1580–1582 में लागू किया गया था।",
+        "विकल्प (d) चुनें: 1580–1582 टोडर मल के ग्रैंड बंडोबस्त का विशिष्ट समय है — व्यापक प्रांत-दर-प्रांत राजस्व निपटान।"
+      ],
+      "upsc_trap_explanation": "यहां कालानुक्रमिक भ्रम Ain-i-Dahsala डेटा संग्रह चरण (1571–1580) और ग्रैंड बंडोबस्त निपटान (1580–1582) के बीच है। जो छात्र टोडर मल के राजस्व कार्य से '1580' को याद करते हैं, वे विकल्प (b) चुन सकते हैं, यह न समझते हुए कि 1580 वह वर्ष है जब डेटा संग्रह समाप्त हुआ और बंडोबस्त शुरू हुआ — ये दो लगातार चरण हैं, एक ही घटना नहीं।",
+      "final_explanation": "ग्रैंड बंडोबस्त टोडर मल के अकबर के तहत राजस्व करियर की चरम उपलब्धि थी — एक दशक के डेटा को लागू वित्तीय अनुसूचियों में परिवर्तित करना।\n\n• विकल्प (a) — गलत: 1556–1562 अकबर के प्रारंभिक वर्ष हैं — पानीपत द्वितीय की लड़ाई (1556), हेमू का प्रकरण, और प्रारंभिक राजपूत अभियान। इस समय राजस्व प्रणालीकरण टोडर मल का मुख्य फोकस नहीं था।\n• विकल्प (b) — गलत: 1571–1580 Ain-i-Dahsala डेटा संग्रह की अवधि है — दस वर्षों का फसल मूल्य और उपज डेटा संग्रह जो ग्रैंड बंडोबस्त से पहले था।\n• विकल्प (c) — गलत: हालांकि सर्वेक्षण कार्य 1582 के बाद जारी रहा, 1582–1590 ग्रैंड बंडोबस्त को नहीं दर्शाता, जो औपचारिक रूप से 1580–1582 में लागू हुआ था।\n• विकल्प (d) — सही: ग्रैंड बंडोबस्त 1580 से 1582 के बीच लागू किया गया था — दस वर्षीय Ain-i-Dahsala डेटा चक्र के पूरा होने के तुरंत बाद। इसने प्रांत-दर-प्रांत दस्तूर संकलन तैयार किया जो मुगल राजस्व प्रशासन की उच्चतम उपलब्धि थी।\n\nमूल्य संवर्धन:\n• 'बंडोबस्त' का अर्थ है 'निपटान' या 'व्यवस्था' — ग्रैंड बंडोबस्त एक व्यापक वित्तीय निपटान था, केवल सर्वेक्षण नहीं।\n• बंडोबस्त ने 1590 के दशक में अकबर के दक्कन अभियानों के लिए वित्तीय आधार प्रदान किया।\n• टोडर मल ने 1582 के बाद बंगाल में भी राजस्व सर्वेक्षण किए, जिससे ज़ब्त प्रणाली को पूर्व की ओर विस्तारित किया गया।"
+    }
+  },
+  {
+    "uuid": "11dd93f0-9743-4e4e-adc9-a23750b05f8e",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Decline and Limitations of the Zabt System in Post-Akbar Period"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Zabt system decline — jagirdari crisis and dastur inflation failure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the decline and limitations of the Zabt revenue system in the post-Akbar period:\n\n1. The rapid rotation of jagir assignments among mansabdars discouraged long-term agricultural investment in jagir territories, undermining the effectiveness of the Zabt system over time.\n2. The failure to revise dastur (revenue schedule) rates to reflect price inflation meant that the real revenue burden on peasants declined over the 17th century as commodity prices rose.\n3. Aurangzeb's re-imposition of jizya and the expansion of military campaigns placed additional fiscal pressure on the revenue system, contributing to its eventual breakdown.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The rapid rotation of jagir assignments among mansabdars discouraged long-term agricultural investment in jagir territories, undermining the effectiveness of the Zabt system over time.",
+          "verdict": "Correct",
+          "reason": "Jagirdars holding short-term assignments (typically 3–4 years) had no incentive to invest in irrigation or land improvement — maximizing short-term extraction was more rational from their perspective, eroding the Zabt system's administrative premises."
+        },
+        {
+          "statement": "The failure to revise dastur (revenue schedule) rates to reflect price inflation meant that the real revenue burden on peasants declined over the 17th century as commodity prices rose.",
+          "verdict": "Incorrect",
+          "reason": "The logic is inverted: as commodity prices rose, the fixed cash demand in daam represented a declining share of market value — but this did not reduce peasant burden; rather, peasants still had to sell more produce to meet the same nominal cash demand if prices fell, and there was no systematic relief mechanism. The actual burden varied — the failure to revise dasturs created inequities in both directions."
+        },
+        {
+          "statement": "Aurangzeb's re-imposition of jizya and the expansion of military campaigns placed additional fiscal pressure on the revenue system, contributing to its eventual breakdown.",
+          "verdict": "Correct",
+          "reason": "Aurangzeb's religious policies (jizya re-imposition in 1679) and the enormous cost of the Deccan campaigns stretched the fiscal resources of the empire, diverting administrative attention from systematic revenue management and accelerating the Zabt system's breakdown."
+        }
+      ],
+      "strong_distractor": "d — Option (d) is a strong distractor because all three statements sound historically plausible, and Statement 2's inverted logic about price inflation and burden is subtle enough to escape rapid scrutiny.",
+      "elimination_logic": [
+        "Statement 1 is correct — jagir rotation created short-term extraction incentives, directly undermining Zabt's long-term effectiveness.",
+        "Statement 2 is incorrect — the logic of burden reduction through inflation is inverted; fixed cash demands were not revised, creating inequities and distress, not relief.",
+        "Statement 3 is correct — Aurangzeb's jizya and Deccan wars strained the fiscal system and contributed to Zabt breakdown.",
+        "Only Statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a partial-truth trap built on reversed economic logic. Students who know that nominal revenue rates were not revised to match inflation may instinctively think 'unchanged nominal demand + higher prices = lower real burden' — and conclude Statement 2 is correct. But the actual impact was more complex and harmful: peasants faced market volatility, debt cycles, and the absence of any systematic relief mechanism. The statement's confident-sounding economic language is designed to bypass critical evaluation.",
+      "final_explanation": "The decline of the Zabt system was not a sudden collapse but a gradual erosion driven by structural administrative failures and fiscal overextension.\n\n• Statement 1 — Correct: The jagirdari rotation policy — designed to prevent entrenchment — had the unintended consequence of creating short-term extraction incentives. Jagirdars maximized collection within their assignment period, often ignoring Zabt benchmarks. This is the core of the 'jagirdari crisis' identified by historians.\n• Statement 2 — Incorrect: The inverted claim — that unchanged nominal demands in a rising price environment reduced burden — misrepresents the actual dynamic. Fixed dasturs created rigidity: in good years, peasants might benefit slightly from higher produce prices; in bad years, the same cash demand from a failed harvest meant catastrophic distress. The system lacked any price-revision mechanism, making it increasingly inequitable over time.\n• Statement 3 — Correct: Aurangzeb's reign saw the re-imposition of jizya (1679) and protracted Deccan wars that drained the imperial treasury and diverted administrative capacity from revenue management — accelerating the systemic breakdown that led to the 18th-century Mughal collapse.\n\nValue Addition:\n• The 17th-century agrarian crisis (peasant revolts, zamindari resistance) is linked by Irfan Habib directly to these structural failures.\n• Jagir rotation frequency increased under later Mughal emperors — worsening extraction incentives.\n• The Zabt system's documentation was never formally abolished — it simply became unenforceable as central authority weakened."
+    },
+    "hi": {
+      "display_text": "अकबरोत्तर काल में ज़ब्त राजस्व प्रणाली के पतन और सीमाओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. मंसबदारों के बीच जागीर आवंटनों का तीव्र घुमाव जागीर क्षेत्रों में दीर्घकालिक कृषि निवेश को हतोत्साहित करता था, जिससे समय के साथ ज़ब्त प्रणाली की प्रभावशीलता कमजोर हो गई।\n2. मूल्य मुद्रास्फीति को दर्शाने के लिए दस्तूर (राजस्व अनुसूची) दरों को संशोधित न करने का अर्थ था कि 17वीं सदी में वस्तु मूल्य बढ़ने के बावजूद किसानों पर वास्तविक राजस्व भार कम हो गया।\n3. औरंगजेब द्वारा जिज़्या पुनः लागू करना और सैन्य अभियानों का विस्तार राजस्व प्रणाली पर अतिरिक्त वित्तीय दबाव डालता था, जिससे अंततः इसका पतन हुआ।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "मंसबदारों के बीच जागीर आवंटनों का तीव्र घुमाव जागीर क्षेत्रों में दीर्घकालिक कृषि निवेश को हतोत्साहित करता था, जिससे समय के साथ ज़ब्त प्रणाली की प्रभावशीलता कमजोर हो गई।",
+          "verdict": "सही है",
+          "reason": "अल्पकालिक (आमतौर पर 3-4 वर्ष) जागीर आवंटन रखने वाले जागीरदारों के पास सिंचाई या भूमि सुधार में निवेश करने की कोई प्रेरणा नहीं थी — उनके दृष्टिकोण से अल्पकालिक अधिकतम संग्रह अधिक तार्किक था, जिससे ज़ब्त प्रणाली के प्रशासनिक आधार कमजोर हुए।"
+        },
+        {
+          "statement": "मूल्य मुद्रास्फीति को दर्शाने के लिए दस्तूर (राजस्व अनुसूची) दरों को संशोधित न करने का अर्थ था कि 17वीं सदी में वस्तु मूल्य बढ़ने के बावजूद किसानों पर वास्तविक राजस्व भार कम हो गया।",
+          "verdict": "गलत है",
+          "reason": "तर्क उल्टा है: जैसे-जैसे वस्तु मूल्य बढ़े, दाम में निश्चित नकद मांग बाजार मूल्य के घटते हिस्से का प्रतिनिधित्व करती थी — लेकिन इससे किसान का बोझ कम नहीं हुआ; बल्कि, यदि कीमतें गिरतीं तो किसानों को समान नाममात्र नकद मांग पूरी करने के लिए अधिक उपज बेचनी पड़ती, और कोई व्यवस्थित राहत तंत्र नहीं था। वास्तविक बोझ भिन्न था — दस्तूरों को संशोधित न करने से दोनों दिशाओं में असमानताएं उत्पन्न हुईं।"
+        },
+        {
+          "statement": "औरंगजेब द्वारा जिज़्या पुनः लागू करना और सैन्य अभियानों का विस्तार राजस्व प्रणाली पर अतिरिक्त वित्तीय दबाव डालता था, जिससे अंततः इसका पतन हुआ।",
+          "verdict": "सही है",
+          "reason": "औरंगजेब की धार्मिक नीतियाँ (1679 में जिज़्या पुनः लागू करना) और दक्कन अभियानों की भारी लागत ने साम्राज्य के वित्तीय संसाधनों को खींचा, जिससे प्रशासनिक ध्यान व्यवस्थित राजस्व प्रबंधन से हट गया और ज़ब्त प्रणाली के पतन को तेज किया।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम है क्योंकि तीनों कथन ऐतिहासिक रूप से संभावित लगते हैं, और कथन 2 का मुद्रास्फीति और बोझ के बारे में उल्टा तर्क इतना सूक्ष्म है कि यह त्वरित जांच से बच जाता है।",
+      "elimination_logic": [
+        "कथन 1 सही है — जागीर घुमाव ने अल्पकालिक संग्रह प्रोत्साहन बनाए, जो ज़ब्त की दीर्घकालिक प्रभावशीलता को सीधे कमजोर करता है।",
+        "कथन 2 गलत है — मुद्रास्फीति के माध्यम से बोझ में कमी का तर्क उल्टा है; निश्चित नकद मांगों को संशोधित नहीं किया गया, जिससे असमानताएं और कष्ट उत्पन्न हुए, राहत नहीं।",
+        "कथन 3 सही है — औरंगजेब का जिज़्या और दक्कन युद्धों ने वित्तीय प्रणाली पर दबाव डाला और ज़ब्त के पतन में योगदान दिया।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक आंशिक-सत्य जाल है जो उल्टे आर्थिक तर्क पर आधारित है। जो छात्र जानते हैं कि नाममात्र राजस्व दरों को मुद्रास्फीति के अनुसार संशोधित नहीं किया गया था, वे सहज रूप से सोच सकते हैं 'अपरिवर्तित नाममात्र मांग + उच्च कीमतें = कम वास्तविक बोझ' — और कथन 2 को सही मान सकते हैं। लेकिन वास्तविक प्रभाव अधिक जटिल और हानिकारक था: किसानों को बाजार अस्थिरता, ऋण चक्रों और किसी भी व्यवस्थित राहत तंत्र की अनुपस्थिति का सामना करना पड़ा। कथन की आत्मविश्वासी आर्थिक भाषा आलोचनात्मक मूल्यांकन को पार करने के लिए डिज़ाइन की गई है।",
+      "final_explanation": "ज़ब्त प्रणाली का पतन अचानक नहीं था, बल्कि संरचनात्मक प्रशासनिक विफलताओं और वित्तीय अतिविस्तार से प्रेरित धीरे-धीरे क्षरण था।\n\n• कथन 1 — सही: जागीरदारी घुमाव नीति — जो गढ़न को रोकने के लिए बनाई गई थी — का अनपेक्षित परिणाम अल्पकालिक संग्रह प्रोत्साहन बनना था। जागीरदार अपने आवंटन अवधि के भीतर अधिकतम संग्रह करते थे, अक्सर ज़ब्त मानकों की अनदेखी करते थे। यह इतिहासकारों द्वारा पहचानी गई 'जागीरदारी संकट' का मूल है।\n• कथन 2 — गलत: उल्टा दावा — कि बढ़ती कीमतों के माहौल में अपरिवर्तित नाममात्र मांग बोझ कम करती है — वास्तविक गतिशीलता का गलत चित्रण है। निश्चित दस्तूर कठोरता पैदा करते थे: अच्छे वर्षों में, किसानों को उच्च उपज कीमतों से थोड़ी लाभ हो सकती थी; खराब वर्षों में, असफल फसल से समान नकद मांग आपदा जनक कष्ट थी। प्रणाली में कोई मूल्य-संशोधन तंत्र नहीं था, जिससे समय के साथ यह असमान होती गई।\n• कथन 3 — सही: औरंगजेब के शासनकाल में जिज़्या (1679) पुनः लागू किया गया और लंबी दक्कन युद्धों ने साम्राज्य के कोष को समाप्त कर दिया और राजस्व प्रबंधन से प्रशासनिक क्षमता को विचलित किया — जिससे 18वीं सदी के मुगल पतन की प्रणालीगत गिरावट तेज हुई।\n\nमूल्य संवर्धन:\n• 17वीं सदी के कृषि संकट (किसान विद्रोह, ज़मींदारी प्रतिरोध) को इरफ़ान हबीब ने सीधे इन संरचनात्मक विफलताओं से जोड़ा है।\n• बाद के मुगल सम्राटों के तहत जागीर घुमाव की आवृत्ति बढ़ी — जिससे संग्रह प्रोत्साहन और खराब हुए।\n• ज़ब्त प्रणाली का दस्तावेजीकरण कभी औपचारिक रूप से समाप्त नहीं किया गया — यह केवल केंद्रीय सत्ता कमजोर होने के कारण लागू न हो सकी।"
+    }
+  },
+  {
+    "uuid": "9fcc7412-47f5-470d-971d-c7411ecfbc67",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Mansabdari System's Relationship with the Zabt Revenue System",
+        "Khalisa vs Jagir Lands: Revenue Collection Differences"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Jagirdari extraction vs Zabt benchmark — enforcement gap",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A senior Mughal official conducting an inspection of a pargana in the Malwa region discovers that the local jagirdar — assigned this territory for revenue collection over a three-year period — has been collecting significantly higher amounts from peasants than the rates specified in the pargana's dastur (revenue schedule) under the Zabt system. The jagirdar justifies this by arguing that he must maximize collection during his assignment period before it is transferred. The official notes that similar practices are widespread across jagir territories.\n\nWhich of the following best explains the systemic reason for this situation under Akbar's revenue administration?\n\n(a) The Zabt system did not apply to jagir territories at all — it was exclusively designed for Khalisa (crown) lands — so no dastur benchmark existed to constrain jagirdar collection in assigned areas\n(b) While the Zabt system provided a revenue benchmark for jagir lands, the short-term rotation of jagir assignments created structural incentives for over-extraction, as jagirdars had no long-term stake in the territory's agricultural productivity\n(c) The Amil (revenue collector) assigned to the pargana had the authority to enforce Zabt-prescribed rates in jagir territories and was the appropriate official to address this situation\n(d) The Qanungo's land records constituted a legally binding cap on jagirdar collection and could be invoked by peasants as an enforceable limit on revenue demand",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know Zabt applied to jagir lands in theory may assume the Zabt benchmark was effectively enforced in practice, without recognizing the structural enforcement gap.",
+      "elimination_logic": [
+        "The scenario describes a jagirdar in a short-term assignment who extracts beyond the Zabt benchmark — this tests the jagirdari-Zabt tension.",
+        "Eliminate option (a): Zabt did apply to jagir lands as a benchmark, but enforcement in jagir territories was consistently weaker than in Khalisa lands.",
+        "Eliminate option (c): The Amil's authority applied primarily to Khalisa (crown) lands — in jagir territories, the jagirdar was the effective revenue authority.",
+        "Eliminate option (d): Qanungo records documented Zabt-based rates but could not independently enforce collection limits against a jagirdar.",
+        "Select option (b): The structural incentive for over-extraction in short-term jagir assignments was a recognized limitation of applying Zabt benchmarks to jagir lands — the correct analytical answer."
+      ],
+      "upsc_trap_explanation": "Option (a) is designed for students who know Zabt theoretically applied to jagir lands and assume this meant effective enforcement. The distinction being tested is theory versus practice — the Zabt benchmark existed for jagir lands, but jagirdars with short-term assignments had strong incentives to extract beyond it, and the administrative machinery (Amil, Qanungo) had limited authority over jagirdar-controlled territories.",
+      "final_explanation": "This scenario illustrates the central structural tension in the Mughal revenue system — between the Zabt framework as a normative benchmark and the practical realities of jagirdari extraction.\n\nApplicable Principle: The Zabt system applied to jagir lands in theory, providing a revenue benchmark. However, jagirdars holding short-term assignments (typically 3–4 years before rotation) had no long-term stake in the territory. Rational self-interest drove them to maximize extraction within their assignment period, often exceeding Zabt-prescribed rates.\n\n• Option (a) — Incorrect: While Zabt benchmarks did technically apply to jagir lands, enforcement was structurally weaker than in Khalisa territories. The claim that the situation would be 'fully addressed by the Zabt framework' ignores the enforcement gap.\n• Option (b) — Correct: The scenario exemplifies the structural flaw — short-term jagir assignment + profit-maximizing behavior = over-extraction beyond Zabt rates. This is the 'jagirdari crisis' in its early manifestation, and the Zabt system had no self-enforcing mechanism within jagir territories.\n• Option (c) — Incorrect: Amils (revenue collectors) operated in Khalisa lands under direct imperial supervision — their authority did not extend to checking jagirdar extraction in assigned territories.\n• Option (d) — Incorrect: Qanungo records documented the Zabt-based demand for reference, but the Qanungo was a local accountant-intermediary, not an enforcement authority capable of overriding a jagirdar.\n\nValue Addition:\n• Akbar expanded Khalisa precisely as a check on jagirdari over-extraction.\n• The jagirdari rotation policy, intended to prevent entrenchment, had the unintended effect of intensifying short-term extraction.\n• This tension between Khalisa control and jagirdari autonomy is a key analytical theme in the Mughal administrative history."
+    },
+    "hi": {
+      "display_text": "मालवा क्षेत्र के एक परगना का निरीक्षण कर रहे एक वरिष्ठ मुगल अधिकारी को पता चलता है कि स्थानीय जागीरदार — जिसे इस क्षेत्र में तीन वर्षों की अवधि के लिए राजस्व वसूली का कार्य सौंपा गया है — किसानों से परगना के दस्तूर (राजस्व अनुसूची) में ज़ब्त प्रणाली के तहत निर्दिष्ट दरों से काफी अधिक राशि वसूल रहा है। जागीरदार इसका औचित्य यह देकर करता है कि उसे अपनी नियुक्ति अवधि के दौरान अधिकतम वसूली करनी होगी इससे पहले कि उसे स्थानांतरित किया जाए। अधिकारी नोट करता है कि इस प्रकार की प्रथाएँ जागीर क्षेत्रों में व्यापक रूप से प्रचलित हैं।\n\nअकबर के राजस्व प्रशासन के तहत इस स्थिति के प्रणालीगत कारण की सबसे उपयुक्त व्याख्या निम्नलिखित में से कौन-सी है?\n\n(a) ज़ब्त प्रणाली जागीर क्षेत्रों पर बिल्कुल लागू नहीं होती थी — यह विशेष रूप से खलीसा (राजस्व) भूमि के लिए डिज़ाइन की गई थी — इसलिए नियुक्त क्षेत्रों में जागीरदार की वसूली को सीमित करने वाला कोई दस्तूर मानक मौजूद नहीं था\n(b) जबकि ज़ब्त प्रणाली जागीर भूमि के लिए राजस्व मानक प्रदान करती थी, जागीर नियुक्तियों के अल्पकालिक रोटेशन ने अधिक वसूली के लिए संरचनात्मक प्रोत्साहन पैदा किए, क्योंकि जागीरदारों का क्षेत्र की कृषि उत्पादकता में कोई दीर्घकालिक हित नहीं था\n(c) परगना में नियुक्त अमिल (राजस्व संग्रहकर्ता) के पास जागीर क्षेत्रों में ज़ब्त निर्धारित दरों को लागू करने का अधिकार था और यह स्थिति संभालने के लिए उपयुक्त अधिकारी था\n(d) कानूंगो के भूमि अभिलेख जागीरदार की वसूली पर कानूनी रूप से बाध्यकारी सीमा बनाते थे और किसानों द्वारा राजस्व मांग पर लागू सीमा के रूप में इसका उपयोग किया जा सकता था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि जो छात्र जानते हैं कि ज़ब्त सैद्धांतिक रूप से जागीर भूमि पर लागू होती थी, वे यह मान सकते हैं कि ज़ब्त मानक व्यवहार में प्रभावी रूप से लागू था, बिना इस संरचनात्मक प्रवर्तन अंतर को पहचाने।",
+      "elimination_logic": [
+        "परिदृश्य में एक जागीरदार का वर्णन है जो अल्पकालिक नियुक्ति पर है और जो ज़ब्त मानक से अधिक वसूली करता है — यह जागीरदारी-ज़ब्त तनाव का परीक्षण करता है।",
+        "विकल्प (a) को खारिज करें: ज़ब्त जागीर भूमि पर मानक के रूप में लागू थी, लेकिन जागीर क्षेत्रों में प्रवर्तन खलीसा भूमि की तुलना में लगातार कमजोर था।",
+        "विकल्प (c) को खारिज करें: अमिल का अधिकार मुख्य रूप से खलीसा (राजस्व) भूमि पर लागू था — जागीर क्षेत्रों में जागीरदार प्रभावी राजस्व अधिकारी था।",
+        "विकल्प (d) को खारिज करें: कानूंगो के अभिलेख ज़ब्त आधारित दरों को दर्ज करते थे लेकिन जागीरदार के खिलाफ स्वतंत्र रूप से वसूली सीमाओं को लागू नहीं कर सकते थे।",
+        "विकल्प (b) चुनें: अल्पकालिक जागीर नियुक्तियों में अधिक वसूली के लिए संरचनात्मक प्रोत्साहन ज़ब्त मानकों को जागीर भूमि पर लागू करने की एक मान्यता प्राप्त सीमा थी — यह सही विश्लेषणात्मक उत्तर है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) उन छात्रों के लिए डिज़ाइन किया गया है जो जानते हैं कि ज़ब्त सैद्धांतिक रूप से जागीर भूमि पर लागू होती थी और यह मानते हैं कि इसका अर्थ प्रभावी प्रवर्तन था। परीक्षण किया जा रहा अंतर सिद्धांत और व्यवहार के बीच है — जागीर भूमि के लिए ज़ब्त मानक मौजूद था, लेकिन अल्पकालिक नियुक्ति वाले जागीरदारों के पास इससे अधिक वसूली करने के मजबूत प्रोत्साहन थे, और प्रशासनिक मशीनरी (अमिल, कानूंगो) का जागीरदार-नियंत्रित क्षेत्रों पर सीमित अधिकार था।",
+      "final_explanation": "यह परिदृश्य मुगल राजस्व प्रणाली में केंद्रीय संरचनात्मक तनाव को दर्शाता है — ज़ब्त ढांचे के एक मानक के रूप में और जागीरदारी वसूली की व्यावहारिक वास्तविकताओं के बीच।\n\nलागू सिद्धांत: ज़ब्त प्रणाली सैद्धांतिक रूप से जागीर भूमि पर लागू थी, जो राजस्व मानक प्रदान करती थी। हालांकि, अल्पकालिक नियुक्ति वाले जागीरदारों (आमतौर पर 3–4 वर्षों के रोटेशन से पहले) का क्षेत्र में कोई दीर्घकालिक हित नहीं था। तर्कसंगत स्वार्थ ने उन्हें अपने कार्यकाल के दौरान अधिकतम वसूली करने के लिए प्रेरित किया, जो अक्सर ज़ब्त निर्धारित दरों से अधिक थी।\n\n• विकल्प (a) — गलत: जबकि ज़ब्त मानक तकनीकी रूप से जागीर भूमि पर लागू थे, प्रवर्तन संरचनात्मक रूप से खलीसा क्षेत्रों की तुलना में कमजोर था। यह दावा कि स्थिति 'ज़ब्त ढांचे द्वारा पूरी तरह से संबोधित' होगी, प्रवर्तन अंतर को नजरअंदाज करता है।\n• विकल्प (b) — सही: यह परिदृश्य संरचनात्मक दोष को दर्शाता है — अल्पकालिक जागीर नियुक्ति + लाभ अधिकतम करने वाला व्यवहार = ज़ब्त दरों से अधिक वसूली। यह 'जागीरदारी संकट' का प्रारंभिक रूप है, और ज़ब्त प्रणाली के पास जागीर क्षेत्रों में स्व-प्रवर्तन तंत्र नहीं था।\n• विकल्प (c) — गलत: अमिल (राजस्व संग्रहकर्ता) खलीसा भूमि में सीधे शाही पर्यवेक्षण के तहत कार्य करते थे — उनका अधिकार जागीरदार की वसूली को नियंत्रित करने तक नहीं था।\n• विकल्प (d) — गलत: कानूंगो के अभिलेख संदर्भ के लिए ज़ब्त आधारित मांग दर्ज करते थे, लेकिन कानूंगो एक स्थानीय लेखाकार-मध्यस्थ था, न कि जागीरदार को अधिलेखित करने वाला प्रवर्तन अधिकारी।\n\nमूल्य संवर्धन:\n• अकबर ने जागीरदारी अधिक वसूली पर नियंत्रण के लिए खलीसा का विस्तार किया।\n• जागीरदारी रोटेशन नीति, जो जड़ पकड़ने से रोकने के लिए थी, ने अल्पकालिक वसूली को तीव्र करने का अप्रत्याशित प्रभाव डाला।\n• खलीसा नियंत्रण और जागीरदारी स्वायत्तता के बीच यह तनाव मुगल प्रशासनिक इतिहास में एक प्रमुख विश्लेषणात्मक विषय है।"
+    }
+  },
+  {
+    "uuid": "4bb298e9-e2cd-46b5-b1a5-29b5af36e65c",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Batai, Kankut, and Nasaq: Alternative Revenue Systems Coexisting with Zabt",
+        "Zabt System: Definition, Scope, and Geographical Applicability"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Batai, Kankut, Nasaq — regional coexistence with Zabt",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about revenue assessment methods that coexisted with the Zabt system under Akbar's administration:\n\n1. Batai involved the physical division of the harvested crop between the state and the peasant, making it a revenue method that required direct state presence at the time of harvest.\n2. Kankut was a revenue method applied exclusively in areas where the Zabt system had already been established, serving as a supplementary check on the accuracy of land measurements.\n3. Nasaq assessed revenue based on customary records from previous years without requiring fresh physical measurement of land or inspection of the standing crop.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Batai involved the physical division of the harvested crop between the state and the peasant, making it a revenue method that required direct state presence at the time of harvest.",
+          "verdict": "Correct",
+          "reason": "Batai (crop-sharing) literally required state officials or their representatives to be present at harvest to divide the crop — typically allocating one-third to one-half to the state — making it administratively intensive but assessment-accurate."
+        },
+        {
+          "statement": "Kankut was a revenue method applied exclusively in areas where the Zabt system had already been established, serving as a supplementary check on the accuracy of land measurements.",
+          "verdict": "Incorrect",
+          "reason": "Kankut (estimation by visual inspection or crop-cutting) was used precisely in areas where Zabt measurement was impractical — it was an alternative, not a supplement to Zabt. It applied in regions outside the Zabt zone, not within it."
+        },
+        {
+          "statement": "Nasaq assessed revenue based on customary records from previous years without requiring fresh physical measurement of land or inspection of the standing crop.",
+          "verdict": "Correct",
+          "reason": "Nasaq relied entirely on historical records — carrying forward past demand figures — making it administratively simple but potentially stale and inequitable if conditions changed significantly."
+        }
+      ],
+      "strong_distractor": "d — All three correct is a strong distractor because students who accept Statement 2's superficially plausible claim about Kankut as a 'supplementary check' on Zabt measurements may not recognize that Kankut operated in non-Zabt areas.",
+      "elimination_logic": [
+        "Statement 1 is correct — Batai requires physical presence at harvest for crop division.",
+        "Statement 2 is incorrect — Kankut was used in areas where Zabt was impractical, not as a supplement within Zabt zones.",
+        "Statement 3 is correct — Nasaq uses past records without fresh measurement or inspection.",
+        "Statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 plants a plausible-fabrication trap by describing Kankut as a 'supplementary check' within Zabt-established areas. A student who knows both Kankut and Zabt exist in the same administrative system may accept this relational description without recognizing that they are functionally alternative methods for different geographic contexts, not hierarchically nested tools within the same area.",
+      "final_explanation": "Understanding the coexistence of multiple revenue assessment methods is essential for distinguishing the Zabt system's domain from the broader revenue landscape of the Mughal empire.\n\n• Statement 1 — Correct: Batai required state agents to be physically present at harvest to divide the crop. This 'sharing at the threshing floor' was accurate but administratively burdensome and prone to manipulation and delay — which is partly why the Zabt system's survey-and-cash method was preferred in core territories.\n• Statement 2 — Incorrect: The defining feature of Kankut is that it operated where Zabt survey was impractical — not where Zabt existed. Describing it as a 'supplementary check within Zabt areas' inverts its geographic rationale. Kankut involved field inspection or sample crop-cutting to estimate yield — still requiring field presence, but not physical land measurement.\n• Statement 3 — Correct: Nasaq carried forward customary demand from past records — no fresh field work required. It was the lightest administrative touch, but also the most static and potentially inequitable if demographic or agricultural conditions changed.\n\nValue Addition:\n• The three alternatives (Batai, Kankut, Nasaq) illustrate a spectrum from most accurate/burdensome (Batai) to least accurate/lightest (Nasaq).\n• Bengal and difficult terrain regions relied heavily on Kankut and Nasaq throughout the Mughal period.\n• The coexistence of four methods across one empire reflects administrative pragmatism rather than uniformity."
+    },
+    "hi": {
+      "display_text": "अकबर के प्रशासन के तहत ज़ब्त प्रणाली के साथ सह-अस्तित्व में रहे राजस्व आकलन तरीकों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. बटाई में फसल की कटाई के समय राज्य और किसान के बीच फसल का भौतिक विभाजन शामिल था, जिससे यह एक ऐसा राजस्व तरीका बन जाता था जिसमें फसल कटाई के समय सीधे राज्य की उपस्थिति आवश्यक होती थी।\n2. कंकूट एक ऐसा राजस्व तरीका था जो केवल उन क्षेत्रों में लागू होता था जहाँ पहले से ज़ब्त प्रणाली स्थापित हो चुकी थी, जो भूमि माप के सटीकता की एक पूरक जांच के रूप में कार्य करता था।\n3. नसक राजस्व का आकलन पिछले वर्षों के प्रचलित रिकॉर्ड के आधार पर करता था, जिसमें भूमि का नया भौतिक मापन या खड़ी फसल का निरीक्षण आवश्यक नहीं होता था।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "बटाई में फसल की कटाई के समय राज्य और किसान के बीच फसल का भौतिक विभाजन शामिल था, जिससे यह एक ऐसा राजस्व तरीका बन जाता था जिसमें फसल कटाई के समय सीधे राज्य की उपस्थिति आवश्यक होती थी।",
+          "verdict": "सही",
+          "reason": "बटाई (फसल साझा करना) में वास्तव में फसल के विभाजन के लिए राज्य के अधिकारी या उनके प्रतिनिधि की कटाई के समय उपस्थिति आवश्यक होती थी — आमतौर पर एक-तिहाई से आधे तक राज्य को आवंटित किया जाता था — जिससे यह प्रशासनिक रूप से जटिल लेकिन आकलन में सटीक था।"
+        },
+        {
+          "statement": "कंकूट एक ऐसा राजस्व तरीका था जो केवल उन क्षेत्रों में लागू होता था जहाँ पहले से ज़ब्त प्रणाली स्थापित हो चुकी थी, जो भूमि माप के सटीकता की एक पूरक जांच के रूप में कार्य करता था।",
+          "verdict": "गलत",
+          "reason": "कंकूट (दृश्य निरीक्षण या फसल काटकर आकलन) उन क्षेत्रों में उपयोग किया जाता था जहाँ ज़ब्त मापन व्यावहारिक नहीं था — यह ज़ब्त का पूरक नहीं बल्कि एक वैकल्पिक तरीका था। यह ज़ब्त क्षेत्र के बाहर के क्षेत्रों में लागू होता था, न कि उसके भीतर।"
+        },
+        {
+          "statement": "नसक राजस्व का आकलन पिछले वर्षों के प्रचलित रिकॉर्ड के आधार पर करता था, जिसमें भूमि का नया भौतिक मापन या खड़ी फसल का निरीक्षण आवश्यक नहीं होता था।",
+          "verdict": "सही",
+          "reason": "नसक पूरी तरह से ऐतिहासिक रिकॉर्ड पर निर्भर करता था — पिछले मांग आंकड़ों को आगे बढ़ाता था — जिससे यह प्रशासनिक रूप से सरल था लेकिन यदि परिस्थितियाँ काफी बदल जातीं तो यह पुराना और अन्यायपूर्ण हो सकता था।"
+        }
+      ],
+      "strong_distractor": "d — तीनों सही हैं विकल्प एक मजबूत भ्रम पैदा करता है क्योंकि जो छात्र कथन 2 के सतही रूप से संभावित दावे को स्वीकार करते हैं कि कंकूट ज़ब्त माप के लिए 'पूरक जांच' है, वे यह नहीं पहचान पाते कि कंकूट गैर-ज़ब्त क्षेत्रों में काम करता है।",
+      "elimination_logic": [
+        "कथन 1 सही है — बटाई में फसल के विभाजन के लिए कटाई के समय भौतिक उपस्थिति आवश्यक होती है।",
+        "कथन 2 गलत है — कंकूट उन क्षेत्रों में उपयोग होता था जहाँ ज़ब्त व्यावहारिक नहीं था, ज़ब्त क्षेत्रों के भीतर पूरक के रूप में नहीं।",
+        "कथन 3 सही है — नसक पिछले रिकॉर्ड का उपयोग करता है बिना नए मापन या निरीक्षण के।",
+        "कथन 1 और 3 सही हैं — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक संभावित-गलतफहमी का जाल बुनता है जब कंकूट को ज़ब्त स्थापित क्षेत्रों के भीतर 'पूरक जांच' के रूप में वर्णित किया जाता है। जो छात्र जानते हैं कि कंकूट और ज़ब्त एक ही प्रशासनिक प्रणाली में मौजूद हैं, वे इस संबंधात्मक विवरण को स्वीकार कर सकते हैं बिना यह समझे कि वे भौगोलिक संदर्भों के लिए कार्यात्मक रूप से वैकल्पिक तरीके हैं, न कि एक ही क्षेत्र के भीतर पदानुक्रमित उपकरण।",
+      "final_explanation": "कई राजस्व आकलन तरीकों के सह-अस्तित्व को समझना ज़ब्त प्रणाली के क्षेत्र को मुगल साम्राज्य के व्यापक राजस्व परिदृश्य से अलग करने के लिए आवश्यक है।\n\n• कथन 1 — सही: बटाई में फसल के विभाजन के लिए राज्य के एजेंटों की कटाई के समय भौतिक उपस्थिति आवश्यक थी। यह 'थ्रेसिंग फ्लोर पर साझा करना' सटीक था लेकिन प्रशासनिक रूप से बोझिल और हेरफेर तथा विलंब के लिए संवेदनशील था — इसलिए ज़ब्त प्रणाली के सर्वेक्षण और नकद विधि को मुख्य क्षेत्रों में प्राथमिकता दी गई।\n• कथन 2 — गलत: कंकूट की विशेषता यह है कि यह उन जगहों पर काम करता था जहाँ ज़ब्त सर्वेक्षण व्यावहारिक नहीं था — न कि जहाँ ज़ब्त मौजूद था। इसे ज़ब्त क्षेत्रों के भीतर 'पूरक जांच' के रूप में वर्णित करना इसके भौगोलिक तर्क को उलट देता है। कंकूट में फसल की पैदावार का आकलन करने के लिए क्षेत्र निरीक्षण या नमूना फसल काटना शामिल था — फिर भी क्षेत्रीय उपस्थिति आवश्यक थी, लेकिन भूमि का भौतिक मापन नहीं।\n• कथन 3 — सही: नसक पिछले रिकॉर्ड से प्रचलित मांग को आगे बढ़ाता था — कोई नया क्षेत्रीय कार्य आवश्यक नहीं था। यह सबसे हल्का प्रशासनिक तरीका था, लेकिन यदि जनसांख्यिकीय या कृषि स्थितियाँ बदलतीं तो यह सबसे स्थिर और संभावित रूप से अन्यायपूर्ण था।\n\nमूल्य संवर्धन:\n• ये तीन विकल्प (बटाई, कंकूट, नसक) सटीकता/बोझिलता के सबसे अधिक से सबसे कम के स्पेक्ट्रम को दर्शाते हैं।\n• बंगाल और कठिन भूभाग वाले क्षेत्र पूरे मुगल काल में कंकूट और नसक पर भारी निर्भर थे।\n• एक साम्राज्य में चार तरीकों का सह-अस्तित्व प्रशासनिक व्यावहारिकता को दर्शाता है, न कि समानता को।"
+    }
+  },
+  {
+    "uuid": "81945bd7-b06f-46e1-ae9e-ae9003947d75",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Land Measurement and Survey Operations under Todar Mal",
+        "Land Classification System: Polaj, Parauti, Chachar, Banjar"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Four-fold land classification — cultivation frequency, not crop type",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Under Todar Mal's revenue survey operations, the four-fold classification of land into Polaj, Parauti, Chachar, and Banjar was primarily organized on the basis of which of the following criteria?\n\n(a) The seasonal crop grown on the land — whether Kharif, Rabi, or Zaid\n(b) The quality of the soil — whether sandy, loamy, or clayey — as determined by survey measurements\n(c) The frequency with which the land was brought under cultivation — from annually cultivated to long-term fallow\n(d) The mode of revenue payment applicable to the land — whether cash (daam) or payment in kind was prescribed",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who know Kharif and Rabi are the primary crop classifications under the Zabt system may conflate crop classification with land classification, selecting the seasonal crop division as the basis for the four-fold scheme.",
+      "elimination_logic": [
+        "Eliminate option (a): Kharif-Rabi is a crop-season classification, not the basis for the Polaj-Parauti-Chachar-Banjar land classification.",
+        "Eliminate option (b): Soil quality (sandy, loamy, clayey) is not the basis for Todar Mal's four-fold classification — that would be a pedological classification.",
+        "Eliminate option (d): Revenue payment method (cash vs kind) is a separate dimension of the Zabt system, not the basis for land classification.",
+        "Select option (c): The four-fold classification is explicitly based on cultivation frequency — how regularly each plot of land is brought under the plough."
+      ],
+      "upsc_trap_explanation": "The most dangerous trap here is the conflation of crop classification (Kharif, Rabi, Zaid — based on season) with land classification (Polaj, Parauti, Chachar, Banjar — based on cultivation frequency). Students who have encountered both frameworks but not carefully distinguished their organizing principles will select option (a). The UPSC frequently constructs questions where two parallel classification systems within the same administrative domain are confused.",
+      "final_explanation": "The Polaj-Parauti-Chachar-Banjar classification is one of Mughal administrative history's most testable frameworks.\n\n• Option (a) — Incorrect: Seasonal crop division (Kharif/Rabi) is a separate classification system based on when crops are sown and harvested. The four-fold land classification is not organized around crop seasons.\n• Option (b) — Incorrect: While soil quality affects agricultural productivity, Todar Mal's four-fold classification is based on cultivation history — how long land has been left fallow — not on pedological (soil type) analysis.\n• Option (c) — Correct: Cultivation frequency is the organizing principle. Polaj (annually cultivated), Parauti (1–2 years fallow), Chachar (3–4 years fallow), Banjar (5+ years fallow) — each reflects a different rhythm of agricultural use, with graduated revenue rates creating an incentive structure.\n• Option (d) — Incorrect: Cash versus in-kind payment was a revenue collection mode distinction, not the basis for classifying agricultural land into categories.\n\nValue Addition:\n• The cultivation-frequency basis reflects soil recovery logic — land was left fallow specifically to restore fertility.\n• The same land could move between categories across years — Parauti could become Polaj once recultivated.\n• This classification system influenced British-era land records, where 'culturable waste' and 'current fallow' categories echo Mughal land classification logic."
+    },
+    "hi": {
+      "display_text": "तोदरमल के राजस्व सर्वेक्षण कार्यों के तहत, भूमि को पोलाज, परौती, चचर, और बंजर में चार-गुणा वर्गीकृत करने का मुख्य आधार निम्नलिखित में से कौन-सा था?\n\n(a) भूमि पर उगाई जाने वाली मौसमी फसल — ख़रीफ, रबी, या ज़ैद\n(b) मिट्टी की गुणवत्ता — रेतिली, दोमट, या चिकनी — जो सर्वेक्षण मापों द्वारा निर्धारित की गई हो\n(c) भूमि को खेती के लिए लाने की आवृत्ति — वार्षिक खेती से लेकर दीर्घकालीन बंजर तक\n(d) भूमि पर लागू राजस्व भुगतान का तरीका — नकद (दाम) या वस्तु में भुगतान निर्धारित हो",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि जो छात्र जानते हैं कि ख़रीफ और रबी ज़ब्त प्रणाली के तहत मुख्य फसल वर्गीकरण हैं, वे फसल वर्गीकरण को भूमि वर्गीकरण से मिला सकते हैं, और चार-गुणा योजना के आधार के रूप में मौसमी फसल विभाजन को चुन सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: ख़रीफ-रबी एक फसल-ऋतु वर्गीकरण है, न कि पोलाज-परौती-चचर-बंजर भूमि वर्गीकरण का आधार।",
+        "विकल्प (b) को हटाएं: मिट्टी की गुणवत्ता (रेतीली, दोमट, चिकनी) तोदरमल के चार-गुणा वर्गीकरण का आधार नहीं है — यह एक मिट्टी विज्ञान (pedological) वर्गीकरण होगा।",
+        "विकल्प (d) को हटाएं: राजस्व भुगतान का तरीका (नकद बनाम वस्तु में) ज़ब्त प्रणाली का एक अलग आयाम है, भूमि वर्गीकरण का आधार नहीं।",
+        "विकल्प (c) चुनें: चार-गुणा वर्गीकरण स्पष्ट रूप से खेती की आवृत्ति पर आधारित है — कि प्रत्येक भूखंड को कितनी नियमितता से हल से जोता जाता है।"
+      ],
+      "upsc_trap_explanation": "यहाँ सबसे खतरनाक जाल फसल वर्गीकरण (ख़रीफ, रबी, ज़ैद — ऋतु आधारित) को भूमि वर्गीकरण (पोलाज, परौती, चचर, बंजर — खेती की आवृत्ति आधारित) से मिलाना है। जो छात्र दोनों ढाँचों से परिचित हैं लेकिन उनके संगठनात्मक सिद्धांतों को सावधानीपूर्वक अलग नहीं कर पाए हैं, वे विकल्प (a) चुनेंगे। UPSC अक्सर ऐसे प्रश्न बनाता है जहाँ एक ही प्रशासनिक क्षेत्र में दो समानांतर वर्गीकरण प्रणालियाँ भ्रमित हो जाती हैं।",
+      "final_explanation": "पोलाज-परौती-चचर-बंजर वर्गीकरण मुगल प्रशासनिक इतिहास के सबसे परीक्षणीय ढाँचों में से एक है।\n\n• विकल्प (a) — गलत: मौसमी फसल विभाजन (ख़रीफ/रबी) एक अलग वर्गीकरण प्रणाली है जो फसलों के बोने और कटाई के समय पर आधारित है। चार-गुणा भूमि वर्गीकरण फसल ऋतुओं के आधार पर व्यवस्थित नहीं है।\n• विकल्प (b) — गलत: जबकि मिट्टी की गुणवत्ता कृषि उत्पादकता को प्रभावित करती है, तोदरमल का चार-गुणा वर्गीकरण खेती के इतिहास पर आधारित है — कि भूमि कितने समय तक बंजर छोड़ी गई है — न कि मिट्टी के प्रकार के विश्लेषण पर।\n• विकल्प (c) — सही: खेती की आवृत्ति संगठनात्मक सिद्धांत है। पोलाज (वार्षिक खेती), परौती (1–2 वर्ष बंजर), चचर (3–4 वर्ष बंजर), बंजर (5+ वर्ष बंजर) — प्रत्येक कृषि उपयोग की अलग लय दर्शाता है, जिसमें राजस्व दरों का क्रमिक ढांचा प्रोत्साहन बनाता है।\n• विकल्प (d) — गलत: नकद बनाम वस्तु में भुगतान राजस्व संग्रहण का तरीका था, भूमि वर्गीकरण का आधार नहीं।\n\nमूल्य संवर्धन:\n• खेती-आवृत्ति आधारित वर्गीकरण मिट्टी की उर्वरता पुनः प्राप्ति तर्क को दर्शाता है — भूमि को उर्वरता बहाल करने के लिए विशेष रूप से बंजर छोड़ा जाता था।\n• एक ही भूमि वर्षों के बीच वर्गों के बीच स्थानांतरित हो सकती थी — परौती पुनः खेती के बाद पोलाज बन सकती थी।\n• इस वर्गीकरण प्रणाली का प्रभाव ब्रिटिश काल के भूमि अभिलेखों पर पड़ा, जहाँ 'कृषि योग्य अपव्यय' और 'वर्तमान बंजर' श्रेणियाँ मुगल भूमि वर्गीकरण तर्क की प्रतिध्वनि हैं।"
+    }
+  },
+  {
+    "uuid": "3ad989df-a8b1-4a48-ba54-1789fd6a6e15",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Role of Amil, Qanungo, and Patwari in Revenue Administration",
+        "Patta and Qabuliyat System under Akbar"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Revenue hierarchy roles — Amil, Qanungo, Patwari distinctions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about revenue functionaries under Akbar's administration:\n\n1. The Qanungo was a hereditary local accountant who maintained land records at the pargana level and served as an intermediary between the state and the peasant community.\n2. The Amil was a village-level functionary responsible for maintaining the khasra (field register) and khatauni (revenue account) in each settlement under his jurisdiction.\n3. The patta issued to a peasant under Akbar's administration specified both the area of land held and the revenue due, creating a formal contractual basis for the peasant's obligations to the state.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Qanungo was a hereditary local accountant who maintained land records at the pargana level and served as an intermediary between the state and the peasant community.",
+          "verdict": "Correct",
+          "reason": "This accurately describes the Qanungo — hereditary, pargana-level, record-maintaining, and serving as a knowledge-bridge between local land conditions and the state's revenue administration."
+        },
+        {
+          "statement": "The Amil was a village-level functionary responsible for maintaining the khasra (field register) and khatauni (revenue account) in each settlement under his jurisdiction.",
+          "verdict": "Incorrect",
+          "reason": "The Amil was a pargana-level revenue collector and assessor — not a village-level official. Khasra and khatauni maintenance was the Patwari's function at the village level. Assigning the Amil to village-level record-keeping conflates two distinct roles."
+        },
+        {
+          "statement": "The patta issued to a peasant under Akbar's administration specified both the area of land held and the revenue due, creating a formal contractual basis for the peasant's obligations to the state.",
+          "verdict": "Correct",
+          "reason": "This accurately describes the patta — a written document specifying land area and revenue demand, which formalized the peasant-state relationship and, in theory, protected against arbitrary over-exaction."
+        }
+      ],
+      "strong_distractor": "c — Both statements 1 and 3 incorrect is a strong distractor because students who correctly identify Statement 2 as wrong may assume Statement 1 is also problematic (since Qanungo and Amil are often confused), leading them to doubt Statement 1's accuracy.",
+      "elimination_logic": [
+        "Statement 1 is correct — Qanungo is hereditary, pargana-level, maintains land records, serves as intermediary.",
+        "Statement 2 is incorrect — the Amil is pargana-level revenue collector, not village-level. Khasra/khatauni maintenance belongs to the Patwari.",
+        "Statement 3 is correct — patta specified land area and revenue due, creating a formal contract.",
+        "Only Statement 2 is NOT correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 conflates the Amil with the Patwari — both operate within the revenue system, but at different administrative levels with different functions. The specific attribution of khasra and khatauni to the Amil is the planted error. Students who know both terms but not their precise functional distinctions will accept Statement 2 as describing a generic 'revenue official' without noticing the level-mismatch.",
+      "final_explanation": "The Mughal revenue hierarchy was organized with clear functional distinctions across administrative levels — precision about who did what and at which level is essential.\n\n• Statement 1 — Correct: The Qanungo occupied a unique position — hereditary (ensuring local knowledge continuity), pargana-level (above the village), and record-maintaining. As an intermediary, the Qanungo translated local agricultural realities into state-readable data.\n• Statement 2 — Incorrect: The Amil was the pargana-level revenue assessor and collector — responsible for overseeing the implementation of revenue demand across multiple villages. Khasra (field register, plot-by-plot) and khatauni (household account) were specifically village-level Patwari documents. Conflating these roles is the planted error.\n• Statement 3 — Correct: The patta was the formal title document — the peasant's 'revenue contract.' It specified area, crop type, and revenue demand, providing legal grounding against demands beyond the stated amount.\n\nValue Addition:\n• The Amil-Qanungo-Patwari three-tier structure at the sub-district level has direct descendants in modern India's revenue administration (Sub-Divisional Officer, Patwari/Lekhpal).\n• Qanungo records were used as evidence in revenue disputes — their hereditary nature ensured institutional memory.\n• British-era collectors inherited both the terminology and the functional structure from this Mughal framework."
+    },
+    "hi": {
+      "display_text": "अकबर के प्रशासन के तहत राजस्व अधिकारियों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. कानूनगो एक वंशानुगत स्थानीय लेखाकार था जो परगना स्तर पर भूमि अभिलेख रखता था और राज्य तथा कृषक समुदाय के बीच मध्यस्थ के रूप में कार्य करता था।\n2. अमील एक गाँव-स्तरीय अधिकारी था जो अपने क्षेत्राधिकार के प्रत्येक बस्ती में खसरा (क्षेत्र रजिस्टर) और खातौनी (राजस्व खाता) बनाए रखने के लिए जिम्मेदार था।\n3. अकबर के प्रशासन के तहत कृषक को जारी किया गया पट्टा भूमि के क्षेत्रफल और देय राजस्व दोनों को निर्दिष्ट करता था, जो कृषक के राज्य के प्रति दायित्वों के लिए एक औपचारिक संविदात्मक आधार बनाता था।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "कानूनगो एक वंशानुगत स्थानीय लेखाकार था जो परगना स्तर पर भूमि अभिलेख रखता था और राज्य तथा कृषक समुदाय के बीच मध्यस्थ के रूप में कार्य करता था।",
+          "verdict": "सही है",
+          "reason": "यह कानूनगो का सटीक वर्णन है — वंशानुगत, परगना-स्तरीय, अभिलेख रखता, और स्थानीय भूमि स्थितियों तथा राज्य के राजस्व प्रशासन के बीच ज्ञान सेतु के रूप में कार्य करता।"
+        },
+        {
+          "statement": "अमील एक गाँव-स्तरीय अधिकारी था जो अपने क्षेत्राधिकार के प्रत्येक बस्ती में खसरा (क्षेत्र रजिस्टर) और खातौनी (राजस्व खाता) बनाए रखने के लिए जिम्मेदार था।",
+          "verdict": "गलत है",
+          "reason": "अमील परगना-स्तरीय राजस्व संग्रहकर्ता और मूल्यांकनकर्ता था — गाँव-स्तरीय अधिकारी नहीं। खसरा और खातौनी का रखरखाव पटवारी का कार्य था जो गाँव-स्तर पर होता था। अमील को गाँव-स्तर के अभिलेख-रखने वाले के रूप में बताना दो अलग-अलग भूमिकाओं को मिलाना है।"
+        },
+        {
+          "statement": "अकबर के प्रशासन के तहत कृषक को जारी किया गया पट्टा भूमि के क्षेत्रफल और देय राजस्व दोनों को निर्दिष्ट करता था, जो कृषक के राज्य के प्रति दायित्वों के लिए एक औपचारिक संविदात्मक आधार बनाता था।",
+          "verdict": "सही है",
+          "reason": "यह पट्टा का सटीक वर्णन है — एक लिखित दस्तावेज जो भूमि क्षेत्रफल और राजस्व मांग को निर्दिष्ट करता है, जिसने कृषक-राज्य संबंध को औपचारिक बनाया और सैद्धांतिक रूप से मनमानी अधिक वसूली से सुरक्षा प्रदान की।"
+        }
+      ],
+      "strong_distractor": "c — कथन 1 और 3 दोनों गलत हैं यह एक मजबूत भ्रम है क्योंकि जो छात्र सही रूप से कथन 2 को गलत पहचानते हैं वे यह मान सकते हैं कि कथन 1 भी समस्या है (क्योंकि कानूनगो और अमील को अक्सर भ्रमित किया जाता है), जिससे वे कथन 1 की सटीकता पर संदेह कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 सही है — कानूनगो वंशानुगत, परगना-स्तरीय, भूमि अभिलेख रखता है, मध्यस्थ के रूप में कार्य करता है।",
+        "कथन 2 गलत है — अमील परगना-स्तरीय राजस्व संग्रहकर्ता है, गाँव-स्तरीय नहीं। खसरा/खातौनी का रखरखाव पटवारी का कार्य है।",
+        "कथन 3 सही है — पट्टा भूमि क्षेत्रफल और देय राजस्व निर्दिष्ट करता है, जो एक औपचारिक संविदा बनाता है।",
+        "केवल कथन 2 सही नहीं है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में अमील को पटवारी के साथ मिलाया गया है — दोनों राजस्व प्रणाली में कार्य करते हैं, लेकिन अलग-अलग प्रशासनिक स्तरों पर और अलग-अलग कार्यों के साथ। खसरा और खातौनी का विशेष रूप से अमील को देना ही planted error है। जो छात्र दोनों पदों को जानते हैं लेकिन उनके सटीक कार्यात्मक भेद नहीं जानते, वे कथन 2 को एक सामान्य 'राजस्व अधिकारी' के रूप में स्वीकार कर लेते हैं बिना स्तर के असंगति को देखे।",
+      "final_explanation": "मुगल राजस्व पदानुक्रम स्पष्ट कार्यात्मक भेदों के साथ व्यवस्थित था — यह जानना आवश्यक है कि कौन क्या करता था और किस स्तर पर।\n\n• कथन 1 — सही: कानूनगो की एक विशिष्ट स्थिति थी — वंशानुगत (स्थानीय ज्ञान की निरंतरता सुनिश्चित करता है), परगना-स्तरीय (गाँव से ऊपर), और अभिलेख रखता था। मध्यस्थ के रूप में कानूनगो स्थानीय कृषि वास्तविकताओं को राज्य के लिए पठनीय डेटा में अनुवादित करता था।\n• कथन 2 — गलत: अमील परगना-स्तरीय राजस्व मूल्यांकनकर्ता और संग्रहकर्ता था — जो कई गाँवों में राजस्व मांग के क्रियान्वयन की देखरेख करता था। खसरा (क्षेत्र रजिस्टर, प्लॉट-दर-प्लॉट) और खातौनी (गृहस्थ खाता) विशेष रूप से गाँव-स्तरीय पटवारी दस्तावेज थे। इन भूमिकाओं को मिलाना planted error है।\n• कथन 3 — सही: पट्टा औपचारिक शीर्षक दस्तावेज था — कृषक का 'राजस्व संविदा'। यह क्षेत्रफल, फसल प्रकार, और राजस्व मांग निर्दिष्ट करता था, जो घोषित राशि से अधिक मांग के खिलाफ कानूनी आधार प्रदान करता था।\n\nमूल्य संवर्धन:\n• अमील-कानूनगो-पटवारी तीन-स्तरीय संरचना उप-जिला स्तर पर आधुनिक भारत के राजस्व प्रशासन (उप-प्रभागीय अधिकारी, पटवारी/लेखपाल) में सीधे उतरती है।\n• कानूनगो अभिलेख राजस्व विवादों में साक्ष्य के रूप में उपयोग किए जाते थे — उनकी वंशानुगत प्रकृति संस्थागत स्मृति सुनिश्चित करती थी।\n• ब्रिटिश युग के संग्रहकर्ताओं ने इस मुगल ढांचे से शब्दावली और कार्यात्मक संरचना दोनों विरासत में ली।"
+    }
+  },
+  {
+    "uuid": "3599dc8a-bbd6-45b6-ab48-830f9e60089b",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Ain-i-Dahsala (Ten-Year Average System): Mechanism and Significance",
+        "Todar Mal's Bandobast (Grand Settlement) of 1580–1582"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Ain-i-Dahsala data collection period 1571–1580",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Ain-i-Dahsala mechanism under Akbar involved the systematic collection of crop prices and agricultural yield data over a ten-year period, which was then used to calculate stable average revenue demands for each pargana. The ten-year data collection exercise for this purpose was conducted during the period ________.\n\n(a) 1540–1550\n(b) 1556–1566\n(c) 1571–1580\n(d) 1582–1592",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because 1556–1566 represents Akbar's early reign, and students who know the Ain-i-Dahsala was an 'early Akbar' reform may anchor to this decade without knowing the precise data collection years.",
+      "elimination_logic": [
+        "Eliminate option (a): 1540–1550 is Sher Shah Suri's period — the Ain-i-Dahsala did not exist then.",
+        "Eliminate option (b): 1556–1566 is Akbar's early reign — Todar Mal was active but the systematic ten-year data collection had not yet begun.",
+        "Eliminate option (d): 1582–1592 post-dates the Ain-i-Dahsala; the Grand Bandobast was implemented 1580–1582, after which the data collection phase was already complete.",
+        "Select option (c): 1571–1580 is the ten-year window during which crop price and yield data were systematically compiled for the Ain-i-Dahsala."
+      ],
+      "upsc_trap_explanation": "The temporal confusion between 1556–1566 and 1571–1580 is the planted trap. Students who associate the Ain-i-Dahsala with 'the beginning of Akbar's systematic reforms' may select the earlier decade, not knowing that the precise data collection window was 1571–1580. The 1571 start date is significant — it follows Akbar's consolidation of the core territories where Zabt applied.",
+      "final_explanation": "The Ain-i-Dahsala's ten-year data collection period is a specific factual anchor for UPSC questions on Mughal revenue administration.\n\n• Option (a) — Incorrect: 1540–1550 corresponds to Sher Shah Suri's reign — the concept of a ten-year averaging exercise did not exist in that period.\n• Option (b) — Incorrect: 1556–1566 covers Akbar's early years, including his consolidation after the Second Battle of Panipat. While Todar Mal began revenue work in this period, the systematic Ain-i-Dahsala data compilation had not commenced.\n• Option (c) — Correct: The ten-year data collection for the Ain-i-Dahsala ran from 1571 to 1580 — spanning a period of relative political stability in Akbar's core territories. The resulting average figures were used to compile the Grand Bandobast of 1580–1582.\n• Option (d) — Incorrect: 1582–1592 is the post-Bandobast period. The data collection phase was complete; Todar Mal's later work included extending surveys to Bengal (from 1582 onward), not the Ain-i-Dahsala exercise.\n\nValue Addition:\n• The 1571 start aligns with Akbar's shift toward stable administrative consolidation after the military campaigns of the 1560s.\n• The data used — price schedules from each pargana — had to be collected over ten years to smooth out annual fluctuations.\n• The Grand Bandobast of 1580–1582 was only possible because the Ain-i-Dahsala data collection was complete by 1580."
+    },
+    "hi": {
+      "display_text": "अकबर के शासनकाल में ऐन-ए-दहसाला प्रणाली में फसल की कीमतों और कृषि उपज के डेटा का व्यवस्थित रूप से दस वर्षों तक संग्रह किया जाता था, जिसका उपयोग प्रत्येक परगना के लिए स्थिर औसत राजस्व मांगों की गणना के लिए किया जाता था। इस उद्देश्य के लिए दस वर्षीय डेटा संग्रह का कार्य ________ अवधि के दौरान किया गया था।\n\n(a) 1540–1550\n(b) 1556–1566\n(c) 1571–1580\n(d) 1582–1592",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रमित करने वाला है क्योंकि 1556–1566 अकबर के प्रारंभिक शासन काल का प्रतिनिधित्व करता है, और जो छात्र जानते हैं कि ऐन-ए-दहसाला 'प्रारंभिक अकबर' सुधार था, वे इस दशक को सटीक डेटा संग्रह वर्षों को जाने बिना आधार बना सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 1540–1550 शेर शाह सूरी का काल है — उस समय ऐन-ए-दहसाला मौजूद नहीं था।",
+        "विकल्प (b) को हटाएं: 1556–1566 अकबर का प्रारंभिक शासन काल है — तोदार मल सक्रिय थे लेकिन व्यवस्थित दस वर्षीय डेटा संग्रह अभी शुरू नहीं हुआ था।",
+        "विकल्प (d) को हटाएं: 1582–1592 ऐन-ए-दहसाला के बाद का काल है; ग्रैंड बंदोबस्त 1580–1582 में लागू हुआ था, जिसके बाद डेटा संग्रह चरण पहले ही पूरा हो चुका था।",
+        "विकल्प (c) चुनें: 1571–1580 वह दस वर्षीय अवधि है जिसमें फसल की कीमत और उपज का डेटा व्यवस्थित रूप से ऐन-ए-दहसाला के लिए संकलित किया गया था।"
+      ],
+      "upsc_trap_explanation": "1556–1566 और 1571–1580 के बीच काल संबंधी भ्रम ही लगाया गया जाल है। जो छात्र ऐन-ए-दहसाला को 'अकबर के व्यवस्थित सुधारों की शुरुआत' से जोड़ते हैं, वे पहले दशक को चुन सकते हैं, यह जाने बिना कि सटीक डेटा संग्रह अवधि 1571–1580 थी। 1571 की शुरुआत महत्वपूर्ण है — यह अकबर के उन मुख्य क्षेत्रों के एकीकरण के बाद है जहाँ ज़ब्त लागू था।",
+      "final_explanation": "ऐन-ए-दहसाला का दस वर्षीय डेटा संग्रह काल मुग़ल राजस्व प्रशासन पर यूपीएससी प्रश्नों के लिए एक विशिष्ट तथ्यात्मक आधार है।\n\n• विकल्प (a) — गलत: 1540–1550 शेर शाह सूरी के शासन काल से संबंधित है — उस समय दस वर्षीय औसत निकालने की अवधारणा मौजूद नहीं थी।\n• विकल्प (b) — गलत: 1556–1566 अकबर के प्रारंभिक वर्षों को कवर करता है, जिसमें दूसरी पानीपत की लड़ाई के बाद उनका एकीकरण शामिल है। जबकि तोदार मल ने इस अवधि में राजस्व कार्य शुरू किया, व्यवस्थित ऐन-ए-दहसाला डेटा संकलन शुरू नहीं हुआ था।\n• विकल्प (c) — सही: ऐन-ए-दहसाला के लिए दस वर्षीय डेटा संग्रह 1571 से 1580 तक चला — यह अकबर के मुख्य क्षेत्रों में राजनीतिक स्थिरता की अवधि थी। इसके आधार पर 1580–1582 का ग्रैंड बंदोबस्त तैयार किया गया।\n• विकल्प (d) — गलत: 1582–1592 बंदोबस्त के बाद का काल है। डेटा संग्रह चरण पूरा हो चुका था; तोदार मल का बाद का कार्य बंगाल में सर्वेक्षण का विस्तार था (1582 से), न कि ऐन-ए-दहसाला का अभ्यास।\n\nमूल्य संवर्धन:\n• 1571 की शुरुआत अकबर के 1560 के दशक के सैन्य अभियानों के बाद स्थिर प्रशासनिक एकीकरण की ओर बदलाव के साथ मेल खाती है।\n• उपयोग किया गया डेटा — प्रत्येक परगना से मूल्य अनुसूचियाँ — दस वर्षों में एकत्रित किया गया ताकि वार्षिक उतार-चढ़ाव को समतल किया जा सके।\n• 1580–1582 का ग्रैंड बंदोबस्त केवल इसलिए संभव था क्योंकि ऐन-ए-दहसाला का डेटा संग्रह 1580 तक पूरा हो चुका था।"
+    }
+  },
+  {
+    "uuid": "cd024268-69e0-4286-8610-7e1fbbe5c03b",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Revenue System Comparison: Akbar's Zabt vs. Alauddin Khalji's Market Reforms vs. Sher Shah's System",
+        "Dastur-ul-Amal: Provincial Revenue Schedules and Rate Fixation"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Unique features of each ruler's revenue system — Alauddin, Sher Shah, Akbar",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — describing a Sultanate or Mughal ruler and a distinctive feature of their revenue administration — is correctly matched?\n\n(a) Alauddin Khalji — Introduced a ten-year crop price averaging mechanism to determine a stable annual revenue demand from agricultural land, reducing year-to-year variation for peasants\n(b) Sher Shah Suri — Combined land measurement surveys with a ten-year price averaging mechanism (Ain-i-Dahsala) and full monetization of revenue demand, producing the most systematic pre-British land revenue framework\n(c) Akbar — Originated the patta-qabuliyat system under which peasants received formal written title deeds and submitted written acceptance of revenue obligations for the first time in medieval India\n(d) Akbar (with Todar Mal) — Combined standardized land measurement using Ilahi gaz and iron-ring jarib with ten-year crop averaging, cash-denominated revenue demand, and province-by-province dastur schedules — constituting the most systematic pre-British land revenue administration",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because students who associate Sher Shah with administrative innovation may credit him with the ten-year averaging mechanism — not recognizing this was specifically Akbar-Todar Mal's contribution.",
+      "elimination_logic": [
+        "Eliminate option (a): Alauddin Khalji's revenue system involved fixed market prices and coercive extraction — not ten-year crop averaging. The 50% demand is associated with Alauddin, not the 1/3 Zabt rate.",
+        "Eliminate option (b): Sher Shah introduced cadastral surveys and pattas — but not the ten-year averaging mechanism (Ain-i-Dahsala). That is specifically Akbar-Todar Mal's addition.",
+        "Eliminate option (c): The patta-qabuliyat system was introduced by Sher Shah Suri, not invented by Akbar — this pair attributes origination incorrectly.",
+        "Select option (d): The claim that the Zabt system under Akbar combined land measurement, ten-year price averaging, and full monetization — making it the most systematic pre-British land revenue system — is a correctly matched characterization."
+      ],
+      "upsc_trap_explanation": "Option (b) is the primary trap — it assigns the ten-year averaging mechanism (a defining Akbar-period innovation) to Sher Shah. Students who know Sher Shah conducted surveys and know Akbar built on Sher Shah's work may blur the boundary between who did what. Sher Shah's surveys produced per-bigha rates; the ten-year averaging to create stable demand was uniquely Akbar's addition via the Ain-i-Dahsala.",
+      "final_explanation": "Distinguishing what was unique to each ruler's revenue system requires careful comparative knowledge.\n\n• Option (a) — Incorrectly matched: Alauddin Khalji's revenue policy is characterized by fixed commodity prices in urban markets (grain, cloth, cattle), enforced through a centralized Shahna (market supervisor) system. His land revenue demand was reportedly 50% of produce — not a ten-year average-based system. The pairing with Ain-i-Dahsala-type averaging is wrong.\n• Option (b) — Incorrectly matched: Sher Shah introduced per-bigha measurement rates and patta-qabuliyat — but not the ten-year price averaging mechanism. Assigning the Ain-i-Dahsala to Sher Shah is an entity-swap error.\n• Option (c) — Incorrectly matched: The patta-qabuliyat system originated with Sher Shah Suri, not Akbar. Akbar institutionalized and extended it — but crediting Akbar with its introduction misattributes the innovation.\n• Option (d) — Correctly matched: The description of Akbar-Todar Mal's system combining physical land measurement (Ilahi gaz, jarib), ten-year price averaging (Ain-i-Dahsala), cash monetization (daam/rupee), and comprehensive documentation (dastur-ul-amal) is the most accurate characterization — making it the most systematic pre-British land revenue administration.\n\nValue Addition:\n• The three-stage sequence — Alauddin (coercive price control) → Sher Shah (measurement + pattas) → Akbar (measurement + averaging + monetization) — is the cleanest narrative for exam answers.\n• Each system's 'unique feature' is the most likely MCQ test point.\n• W.H. Moreland's comparative analysis of these systems remains a key secondary source."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म — एक सल्तनत या मुगल शासक और उनके राजस्व प्रशासन की विशिष्ट विशेषता का वर्णन करता है — सही मेल खाता है?\n\n(a) अलाउद्दीन खिलजी — कृषि भूमि से स्थिर वार्षिक राजस्व मांग निर्धारित करने के लिए दस वर्ष की फसल मूल्य औसत प्रणाली शुरू की, जिससे किसानों के लिए वर्ष-दर-वर्ष परिवर्तन कम हुआ\n(b) शेर शाह सूरी — भूमि मापन सर्वेक्षणों को दस वर्ष की मूल्य औसत प्रणाली (ऐन-ए-दहसाला) और राजस्व मांग के पूर्ण मौद्रीकरण के साथ जोड़ा, जिससे सबसे व्यवस्थित ब्रिटिश-पूर्व भू-राजस्व ढांचा बना\n(c) अकबर — पट्टा-क़बूलियत प्रणाली की शुरुआत की जिसके तहत किसानों को औपचारिक लिखित स्वामित्व पत्र प्राप्त हुए और मध्यकालीन भारत में पहली बार राजस्व दायित्वों की लिखित स्वीकृति दी गई\n(d) अकबर (टोडरमल के साथ) — इलाही गज और लोहे की जरीब के उपयोग से मानकीकृत भूमि मापन, दस वर्ष की फसल औसत, नकद-आधारित राजस्व मांग, और प्रांत-प्रांत दस्तूर अनुसूचियों को संयोजित किया — जो सबसे व्यवस्थित ब्रिटिश-पूर्व भू-राजस्व प्रशासन था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि छात्र जो शेर शाह को प्रशासनिक नवाचार से जोड़ते हैं, वे उसे दस वर्ष की औसत प्रणाली का श्रेय दे सकते हैं — यह न पहचानते हुए कि यह विशेष रूप से अकबर-टोडरमल का योगदान था।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: अलाउद्दीन खिलजी की राजस्व प्रणाली में निश्चित बाजार मूल्य और जबरन वसूली शामिल थी — न कि दस वर्ष की फसल औसत। 50% मांग अलाउद्दीन से जुड़ी है, न कि 1/3 ज़ब्त दर से।",
+        "विकल्प (b) को हटाएं: शेर शाह ने कादस्ट्रल सर्वेक्षण और पट्टे शुरू किए — लेकिन दस वर्ष की औसत प्रणाली (ऐन-ए-दहसाला) नहीं। यह विशेष रूप से अकबर-टोडरमल की जोड़ है।",
+        "विकल्प (c) को हटाएं: पट्टा-क़बूलियत प्रणाली शेर शाह सूरी ने शुरू की थी, न कि अकबर ने — यह जोड़ी गलत रूप से मूल की पहचान करती है।",
+        "विकल्प (d) को चुनें: यह दावा कि अकबर के तहत ज़ब्त प्रणाली ने भूमि मापन, दस वर्ष की मूल्य औसत, और पूर्ण मौद्रीकरण को संयोजित किया — जिससे यह सबसे व्यवस्थित ब्रिटिश-पूर्व भू-राजस्व प्रणाली बनी — सही मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) मुख्य जाल है — यह दस वर्ष की औसत प्रणाली (जो अकबर काल की विशेष नवाचार है) को शेर शाह को सौंपता है। जो छात्र जानते हैं कि शेर शाह ने सर्वेक्षण करवाए और अकबर ने शेर शाह के कार्य को आगे बढ़ाया, वे यह सीमा धुंधली कर सकते हैं कि किसने क्या किया। शेर शाह के सर्वेक्षण प्रति बीघा दरें देते थे; स्थिर मांग बनाने के लिए दस वर्ष की औसत प्रणाली ऐन-ए-दहसाला के माध्यम से विशेष रूप से अकबर की जोड़ थी।",
+      "final_explanation": "प्रत्येक शासक की राजस्व प्रणाली की विशिष्टता को समझने के लिए सावधानीपूर्वक तुलनात्मक ज्ञान आवश्यक है।\n\n• विकल्प (a) — गलत मेल: अलाउद्दीन खिलजी की राजस्व नीति शहरी बाजारों (अनाज, कपड़ा, पशु) में निश्चित वस्तु मूल्य और केंद्रीकृत शाहना (बाजार पर्यवेक्षक) प्रणाली द्वारा लागू की गई थी। उनकी भूमि राजस्व मांग उत्पाद का लगभग 50% थी — न कि दस वर्ष की औसत आधारित प्रणाली। ऐन-ए-दहसाला जैसी औसत प्रणाली के साथ जोड़ी गलत है।\n• विकल्प (b) — गलत मेल: शेर शाह ने प्रति बीघा मापन दरें और पट्टा-क़बूलियत शुरू की, लेकिन दस वर्ष की मूल्य औसत प्रणाली नहीं। ऐन-ए-दहसाला को शेर शाह को देना एक पहचान-स्थानांतरण त्रुटि है।\n• विकल्प (c) — गलत मेल: पट्टा-क़बूलियत प्रणाली की उत्पत्ति शेर शाह सूरी के साथ हुई, न कि अकबर के साथ। अकबर ने इसे संस्थागत किया और विस्तारित किया — लेकिन इसे शुरू करने का श्रेय अकबर को देना नवाचार का गलत स्थानांतरण है।\n• विकल्प (d) — सही मेल: अकबर-टोडरमल की प्रणाली का वर्णन जिसमें भौतिक भूमि मापन (इलाही गज, जरीब), दस वर्ष की मूल्य औसत (ऐन-ए-दहसाला), नकद मौद्रीकरण (दाम/रुपया), और व्यापक दस्तावेजीकरण (दस्तूर-उल-अमल) शामिल है, सबसे सटीक है — जो इसे सबसे व्यवस्थित ब्रिटिश-पूर्व भू-राजस्व प्रशासन बनाता है।\n\nमूल्य संवर्धन:\n• तीन-चरणीय अनुक्रम — अलाउद्दीन (जबरन मूल्य नियंत्रण) → शेर शाह (मापन + पट्टे) → अकबर (मापन + औसत + मौद्रीकरण) — परीक्षा उत्तरों के लिए सबसे स्पष्ट कथा है।\n• प्रत्येक प्रणाली की 'विशिष्ट विशेषता' सबसे संभावित बहुविकल्पीय प्रश्न बिंदु है।\n• W.H. मोरलैंड का इन प्रणालियों का तुलनात्मक विश्लेषण एक प्रमुख द्वितीयक स्रोत बना हुआ है।"
+    }
+  },
+  {
+    "uuid": "240f1e72-d572-499a-9a3f-81d3cb9e0593",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Sher Shah Suri's Revenue Legacy and Continuity into the Zabt System",
+        "Todar Mal: Role, Career Trajectory, and Institutional Contribution"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "odd-one-out",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sher Shah revenue innovations — precursors vs Akbar-period additions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four features of the Mughal-Sultanate revenue system were specifically introduced by Sher Shah Suri as precursors to the Zabt system. Which one was NOT introduced by Sher Shah but was a later addition under Akbar's administration?\n\n(a) Assessment of revenue based on per-bigha rates following physical measurement of cultivated land\n(b) Collection of crop price and yield data over a ten-year period to calculate a stable average revenue demand for each pargana\n(c) Issuance of formal written title deeds (pattas) to peasants specifying their land area and revenue obligations\n(d) Systematic cadastral surveys producing pargana-level rate schedules based on local agricultural productivity",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because pattas and qabuliyats were continued under Akbar, and students who associate them primarily with Akbar's administration may not recognize they originated with Sher Shah.",
+      "elimination_logic": [
+        "The category being tested is: 'revenue innovations specifically introduced by Sher Shah Suri.'",
+        "Option (a) — Per-bigha rate assessment after land measurement: Sher Shah introduced this — it is a Sher Shah innovation.",
+        "Option (b) — Ten-year crop price averaging (Ain-i-Dahsala): This is specifically an Akbar-Todar Mal addition, not a Sher Shah innovation. This is the odd one out.",
+        "Option (c) — Pattas and qabuliyats for peasants: Introduced by Sher Shah — this is a Sher Shah innovation.",
+        "Option (d) — Cadastral surveys with per-bigha rates: Sher Shah conducted these — a Sher Shah innovation.",
+        "Option (b) does not belong — it is an Akbar-period innovation."
+      ],
+      "upsc_trap_explanation": "This question requires knowing not just what each ruler did, but specifically when each element of the revenue system was introduced. Students who know the Ain-i-Dahsala is associated with Akbar's reign but not that it was specifically NOT a Sher Shah feature may hesitate. Option (c) — pattas and qabuliyats — is the other trap: students who associate these primarily with Akbar (because they are discussed in the Mughal context) may incorrectly select it as the Akbar-only innovation.",
+      "final_explanation": "Identifying what was uniquely Sher Shah's versus what was uniquely Akbar's contribution requires sharp comparative recall.\n\n• Option (a) — Belongs to Sher Shah: Assessment based on per-bigha rates after physical measurement of cultivated land was Sher Shah's innovation — the direct predecessor to the Zabt system.\n• Option (b) — Does NOT belong (the odd one out): The ten-year crop price and yield averaging mechanism — Ain-i-Dahsala — was specifically introduced under Akbar's reign through Todar Mal's data compilation work (1571–1580). Sher Shah's per-bigha rates were fixed without multi-year averaging.\n• Option (c) — Belongs to Sher Shah: The patta (title deed) and qabuliyat (peasant agreement) system was Sher Shah's contribution — formalizing the peasant-state relationship for the first time in medieval India at scale.\n• Option (d) — Belongs to Sher Shah: Systematic cadastral surveys yielding per-bigha rate schedules were Sher Shah's central revenue innovation, which Todar Mal later standardized with uniform measurement tools.\n\nValue Addition:\n• Sher Shah's revenue framework survived his own dynasty (1540–1555) to become the foundation of Mughal administration.\n• The Ain-i-Dahsala is the single clearest boundary between Sher Shah's framework and Akbar's improvements.\n• UPSC often tests this boundary in questions about 'what was added by Akbar that Sher Shah had not done.'"
+    },
+    "hi": {
+      "display_text": "मुगल-सुल्तानत राजस्व प्रणाली की निम्नलिखित चार विशेषताओं में से तीन विशेष रूप से शेर शाह सूरी द्वारा ज़ब्त प्रणाली के पूर्ववर्ती के रूप में प्रस्तुत की गई थीं। इनमें से कौन-सी विशेषता शेर शाह द्वारा प्रस्तुत नहीं की गई थी बल्कि अकबर के प्रशासन के तहत बाद में जोड़ी गई थी?\n\n(a) उपजाऊ भूमि के भौतिक मापन के बाद प्रति बीघा दरों के आधार पर राजस्व का मूल्यांकन\n(b) प्रत्येक परगना के लिए स्थिर औसत राजस्व मांग की गणना हेतु दस वर्ष की फसल मूल्य और उपज डेटा संग्रह\n(c) किसानों को उनकी भूमि क्षेत्रफल और राजस्व दायित्वों को निर्दिष्ट करते हुए औपचारिक लिखित पट्टे जारी करना\n(d) स्थानीय कृषि उत्पादकता के आधार पर परगना-स्तरीय दर तालिकाएं तैयार करने वाले व्यवस्थित कैडस्ट्रल सर्वेक्षण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि पट्टे और कबूलियतें अकबर के शासनकाल में जारी रहीं, और जो छात्र इन्हें मुख्य रूप से अकबर के प्रशासन से जोड़ते हैं वे यह नहीं पहचान पाते कि ये शेर शाह से उत्पन्न हुए थे।",
+      "elimination_logic": [
+        "परीक्षित श्रेणी है: 'विशेष रूप से शेर शाह सूरी द्वारा प्रस्तुत राजस्व नवाचार।'",
+        "विकल्प (a) — भूमि के मापन के बाद प्रति बीघा दर पर आधारित मूल्यांकन: शेर शाह ने इसे प्रस्तुत किया — यह शेर शाह का नवाचार है।",
+        "विकल्प (b) — दस वर्ष की फसल मूल्य औसत (आइन-ए-दहसाला): यह विशेष रूप से अकबर-टोडरमल का जोड़ है, शेर शाह का नवाचार नहीं है। यह अलग विकल्प है।",
+        "विकल्प (c) — किसानों के लिए पट्टे और कबूलियतें: शेर शाह द्वारा प्रस्तुत — यह शेर शाह का नवाचार है।",
+        "विकल्प (d) — प्रति बीघा दरों के साथ कैडस्ट्रल सर्वेक्षण: शेर शाह ने ये करवाए — शेर शाह का नवाचार है।",
+        "विकल्प (b) इसमें शामिल नहीं है — यह अकबर कालीन नवाचार है।"
+      ],
+      "upsc_trap_explanation": "यह प्रश्न केवल यह जानने की आवश्यकता नहीं है कि प्रत्येक शासक ने क्या किया, बल्कि यह भी कि राजस्व प्रणाली के प्रत्येक तत्व को कब पेश किया गया। जो छात्र जानते हैं कि आइन-ए-दहसाला अकबर के शासनकाल से जुड़ा है लेकिन यह नहीं जानते कि यह विशेष रूप से शेर शाह की विशेषता नहीं थी, वे हिचकिचा सकते हैं। विकल्प (c) — पट्टे और कबूलियतें — दूसरा जाल है: जो छात्र इन्हें मुख्य रूप से अकबर से जोड़ते हैं (क्योंकि ये मुगल संदर्भ में चर्चा में आते हैं) वे इसे गलत रूप से केवल अकबर का नवाचार मान सकते हैं।",
+      "final_explanation": "शेर शाह के विशिष्ट नवाचारों और अकबर के विशिष्ट योगदानों की पहचान के लिए तीव्र तुलनात्मक स्मृति आवश्यक है।\n\n• विकल्प (a) — शेर शाह का है: उपजाऊ भूमि के भौतिक मापन के बाद प्रति बीघा दर पर आधारित मूल्यांकन शेर शाह का नवाचार था — जो ज़ब्त प्रणाली का प्रत्यक्ष पूर्ववर्ती था।\n• विकल्प (b) — इसमें शामिल नहीं है (अलग विकल्प): दस वर्ष की फसल मूल्य और उपज औसत प्रणाली — आइन-ए-दहसाला — विशेष रूप से अकबर के शासनकाल में टोडरमल के डेटा संकलन कार्य (1571–1580) के माध्यम से पेश की गई। शेर शाह की प्रति बीघा दरें बहु-वर्ष औसत के बिना निर्धारित की गई थीं।\n• विकल्प (c) — शेर शाह का है: पट्टा (भूमि स्वामित्व पत्र) और कबूलियत (किसान समझौता) प्रणाली शेर शाह का योगदान थी — जिसने मध्यकालीन भारत में पहली बार बड़े पैमाने पर किसान-राज्य संबंधों को औपचारिक बनाया।\n• विकल्प (d) — शेर शाह का है: स्थानीय कृषि उत्पादकता पर आधारित प्रति बीघा दर तालिकाएं तैयार करने वाले व्यवस्थित कैडस्ट्रल सर्वेक्षण शेर शाह का केंद्रीय राजस्व नवाचार थे, जिन्हें बाद में टोडरमल ने समान मापन उपकरणों के साथ मानकीकृत किया।\n\nमूल्य संवर्धन:\n• शेर शाह की राजस्व रूपरेखा उनकी अपनी वंशावली (1540–1555) के बाद भी जीवित रही और मुगल प्रशासन की नींव बनी।\n• आइन-ए-दहसाला शेर शाह की रूपरेखा और अकबर के सुधारों के बीच सबसे स्पष्ट सीमा है।\n• UPSC अक्सर इस सीमा को 'अकबर ने क्या जोड़ा जो शेर शाह ने नहीं किया' के प्रश्नों में परखता है।"
+    }
+  },
+  {
+    "uuid": "7399c46e-b40f-4cd0-938e-1d6d45155374",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Cash vs Kind Revenue Payment: Shift under the Zabt System",
+        "Impact of Zabt System on Peasantry and Agrarian Economy"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Cash demand — market vulnerability of peasants",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A peasant cultivating Polaj land in a pargana under Akbar's Zabt administration harvests an exceptionally good crop in a particular year. However, because many other cultivators in the region also had abundant harvests, grain prices in the local market have fallen sharply. When the revenue collection season arrives, the peasant finds that despite having more grain than usual, he lacks sufficient cash to pay the revenue demand fixed in the dastur schedule. The pargana's Amil refuses to accept payment in grain and insists on cash.\n\nWhich feature of the Zabt revenue system most directly explains the peasant's predicament in this scenario?\n\n(a) The Ain-i-Dahsala averaging mechanism had set the revenue rate too high relative to productive capacity by using outdated historical averages\n(b) Under the Batai method applicable in this region, the state's one-third share of the physical crop was unavailable because the harvest had already been stored by the peasant\n(c) The Zabt system's preference for cash payment over payment in kind exposed peasants to market price risk — a good physical harvest did not guarantee sufficient cash if grain prices collapsed at the time of sale\n(d) The patta system failed to specify the rate of revenue in this pargana, leaving the Amil free to demand arbitrary cash amounts beyond the cultivator's capacity",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who associate the Zabt system with 'rationalization' and 'peasant benefit' may select the option that describes Zabt's positive features, without recognizing that cash demand creates market vulnerability.",
+      "elimination_logic": [
+        "The scenario describes a peasant with a good harvest who still cannot meet the cash revenue demand because grain prices have collapsed — this tests cash-demand market vulnerability.",
+        "Eliminate option (a): The Ain-i-Dahsala averaging provided rate stability, but it did not address market price risk for the peasant at time of sale — this does not explain the predicament described.",
+        "Eliminate option (b): Batai (crop-sharing) would actually benefit the peasant here — if the state took a share of the crop itself, a good harvest would automatically provide enough for the state's portion without market sale pressure.",
+        "Eliminate option (d): The patta system protects against arbitrary extra-demand — the peasant's problem here is not an illegal demand but a legitimate cash demand that the market has made impossible to meet.",
+        "Select option (c): The shift to cash revenue demand exposed peasants to market price risk — when grain prices fell, a good harvest still produced insufficient cash to meet the fixed demand, creating the precise predicament described."
+      ],
+      "upsc_trap_explanation": "Option (a) is the trap for students who know the Ain-i-Dahsala provided rate stability and associate that stability with peasant protection. The scenario tests a different dimension — not the rate's stability but the medium of payment's market dependence. A fixed cash demand that seemed reasonable at average prices becomes crushing when market prices collapse, even with a good physical harvest. This is the structural critique of cash-based revenue that Irfan Habib emphasizes.",
+      "final_explanation": "This scenario illustrates one of the most significant structural weaknesses of the Zabt system's cash-demand framework.\n\nApplicable Principle: The Zabt system's monetization of revenue demand meant peasants had to sell their produce to obtain cash for payment. This created a direct link between peasant fiscal capacity and market prices — which the state did not control and did not account for in setting fixed dastur rates.\n\n• Option (a) — Incorrect: While the Ain-i-Dahsala provided multi-year averaging of rates, it averaged prices over 1571–1580 — a historical average. Current-year market price crashes were not addressed by this historical average, and rates were not revised in real time.\n• Option (b) — Incorrect: The Batai system (crop-sharing) would actually have insulated the peasant in this scenario — state and peasant would share the physical harvest proportionally, bypassing the market price problem entirely. The peasant's predicament arises precisely because Batai was not the applicable method.\n• Option (c) — Correct: The monetization of revenue demand under Zabt exposed peasants to market price risk. A bumper crop year with collapsed prices leaves the peasant with abundant grain but inadequate cash — the classic vulnerability of forced market integration.\n• Option (d) — Incorrect: The patta system addressed the quantum of demand (how much), not the medium of payment (cash vs kind). The problem here is not an illegally excessive demand but a legitimate cash demand that market conditions have made impossible to fulfill.\n\nValue Addition:\n• This 'good harvest, bad prices' paradox is the agrarian distress mechanism that Irfan Habib uses to explain peasant debt cycles.\n• The same vulnerability appears in British-era ryotwari areas — a direct institutional legacy.\n• Market price crashes during famines made cash demand particularly devastating — the 17th-century famines under Aurangzeb exposed this flaw acutely."
+    },
+    "hi": {
+      "display_text": "अकबर के ज़ब्त प्रशासन के अंतर्गत एक परगना में पोलाज भूमि जोतने वाला एक किसान किसी विशेष वर्ष में असाधारण रूप से अच्छी फसल काटता है। हालांकि, क्योंकि क्षेत्र के कई अन्य कृषक भी प्रचुर फसल लेकर आए हैं, स्थानीय बाजार में अनाज के दाम तीव्र रूप से गिर गए हैं। जब राजस्व संग्रहण का समय आता है, तो किसान पाता है कि सामान्य से अधिक अनाज होने के बावजूद उसके पास दस्तूर अनुसूची में निर्धारित नकद राजस्व मांग को पूरा करने के लिए पर्याप्त नकद नहीं है। परगना का अमिल अनाज में भुगतान स्वीकार करने से इनकार करता है और नकद भुगतान पर जोर देता है।\n\nइस परिदृश्य में किसान की समस्या को ज़ब्त राजस्व प्रणाली की कौन-सी विशेषता सबसे सीधे समझाती है?\n\n(a) ऐन-ए-दहसाला औसत तंत्र ने उत्पादक क्षमता की तुलना में राजस्व दर बहुत अधिक निर्धारित की थी क्योंकि यह पुरानी ऐतिहासिक औसतों का उपयोग करता था\n(b) इस क्षेत्र में लागू बताई विधि के तहत, राज्य का फसल के भौतिक हिस्से का एक-तिहाई हिस्सा उपलब्ध नहीं था क्योंकि फसल पहले ही किसान द्वारा संग्रहित कर ली गई थी\n(c) ज़ब्त प्रणाली की नकद भुगतान की प्राथमिकता ने किसानों को बाजार मूल्य जोखिम के संपर्क में ला दिया — अच्छी भौतिक फसल होने पर भी यदि बिक्री के समय अनाज के दाम गिर गए तो पर्याप्त नकद सुनिश्चित नहीं होता\n(d) पट्टा प्रणाली ने इस परगना में राजस्व दर निर्दिष्ट नहीं की, जिससे अमिल को किसान की क्षमता से परे मनमाने नकद राशि मांगने की स्वतंत्रता मिली",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) धोखाधड़ीपूर्ण है क्योंकि छात्र जो ज़ब्त प्रणाली को 'तर्कसंगतता' और 'किसान लाभ' से जोड़ते हैं, वे ज़ब्त की सकारात्मक विशेषताओं का वर्णन करने वाले विकल्प को चुन सकते हैं, बिना यह समझे कि नकद मांग बाजार संवेदनशीलता उत्पन्न करती है।",
+      "elimination_logic": [
+        "परिदृश्य में एक किसान का वर्णन है जिसके पास अच्छी फसल है फिर भी वह नकद राजस्व मांग पूरी नहीं कर पाता क्योंकि अनाज के दाम गिर गए हैं — यह नकद मांग की बाजार संवेदनशीलता की परीक्षा है।",
+        "विकल्प (a) को हटाएं: ऐन-ए-दहसाला औसत दर स्थिरता प्रदान करता था, लेकिन यह बिक्री के समय किसान के लिए बाजार मूल्य जोखिम को संबोधित नहीं करता था — यह वर्णित स्थिति को समझाने में असमर्थ है।",
+        "विकल्प (b) को हटाएं: बताई (फसल साझा करने) प्रणाली यहाँ किसान के लिए लाभकारी होती — यदि राज्य फसल का हिस्सा स्वयं लेता, तो अच्छी फसल से राज्य के हिस्से के लिए पर्याप्त अनाज स्वतः उपलब्ध होता, बाजार बिक्री दबाव के बिना।",
+        "विकल्प (d) को हटाएं: पट्टा प्रणाली मनमानी अतिरिक्त मांग से सुरक्षा करती है — यहाँ किसान की समस्या अवैध मांग नहीं बल्कि वैध नकद मांग है जिसे बाजार ने पूरा करना असंभव बना दिया है।",
+        "विकल्प (c) चुनें: नकद राजस्व मांग की ओर बदलाव ने किसानों को बाजार मूल्य जोखिम के संपर्क में ला दिया — जब अनाज के दाम गिरे, तो अच्छी फसल के बावजूद नकद की कमी बनी, जो वर्णित समस्या है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) उन छात्रों के लिए जाल है जो जानते हैं कि ऐन-ए-दहसाला दर स्थिरता प्रदान करता था और उस स्थिरता को किसान संरक्षण से जोड़ते हैं। यह परिदृश्य एक अलग आयाम की परीक्षा लेता है — दर की स्थिरता नहीं बल्कि भुगतान के माध्यम की बाजार निर्भरता। एक निश्चित नकद मांग जो औसत दामों पर उचित लगती थी, बाजार दाम गिरने पर भारी पड़ जाती है, भले ही फसल अच्छी हो। यह नकद आधारित राजस्व की संरचनात्मक आलोचना है जिसे इरफान हबीब ने रेखांकित किया है।",
+      "final_explanation": "यह परिदृश्य ज़ब्त प्रणाली की नकद मांग संरचना की सबसे महत्वपूर्ण संरचनात्मक कमजोरियों में से एक को दर्शाता है।\n\nलागू सिद्धांत: ज़ब्त प्रणाली में राजस्व मांग का मुद्रीकरण किसानों को भुगतान के लिए नकद प्राप्त करने हेतु अपनी उपज बेचने के लिए बाध्य करता था। इससे किसान की वित्तीय क्षमता और बाजार कीमतों के बीच सीधा संबंध बन गया — जिसे राज्य नियंत्रित नहीं करता था और निश्चित दस्तूर दरें निर्धारित करते समय ध्यान में नहीं रखता था।\n\n• विकल्प (a) — गलत: ऐन-ए-दहसाला ने दरों का बहुवर्षीय औसत प्रदान किया, जो 1571–1580 के ऐतिहासिक औसत पर आधारित था। वर्तमान वर्ष के बाजार मूल्य गिरावट को इस औसत ने संबोधित नहीं किया, और दरें वास्तविक समय में संशोधित नहीं हुईं।\n• विकल्प (b) — गलत: बताई प्रणाली (फसल साझा करना) इस परिदृश्य में किसान को बचाव प्रदान करती — राज्य और किसान फसल को अनुपातिक रूप से साझा करते, जिससे बाजार मूल्य समस्या पूरी तरह टल जाती। किसान की समस्या इसलिए उत्पन्न होती है क्योंकि बताई लागू नहीं थी।\n• विकल्प (c) — सही: ज़ब्त के तहत राजस्व मांग का मुद्रीकरण किसानों को बाजार मूल्य जोखिम के संपर्क में लाता है। दाम गिरने वाले bumper crop वर्ष में किसान के पास अनाज तो अधिक होता है, लेकिन नकद की कमी रहती है — जबरदस्त बाजार एकीकरण की पारंपरिक संवेदनशीलता।\n• विकल्प (d) — गलत: पट्टा प्रणाली मांग की मात्रा (कितना) को नियंत्रित करती है, भुगतान के माध्यम (नकद बनाम फसल) को नहीं। यहाँ समस्या अवैध अधिक मांग नहीं बल्कि वैध नकद मांग है जिसे बाजार की स्थिति ने पूरा करना असंभव बना दिया है।\n\nमूल्य संवर्धन:\n• यह 'अच्छी फसल, खराब दाम' विरोधाभास वह कृषि संकट तंत्र है जिसका उपयोग इरफान हबीब किसान ऋण चक्रों को समझाने के लिए करते हैं।\n• यह संवेदनशीलता ब्रिटिश काल के रायटवाड़ी क्षेत्रों में भी देखी जाती है — एक प्रत्यक्ष संस्थागत विरासत।\n• अकाल के दौरान बाजार मूल्य गिरावट ने नकद मांग को विशेष रूप से विनाशकारी बना दिया — औरंगजेब के शासनकाल के 17वीं सदी के अकालों ने इस दोष को तीव्रता से उजागर किया।"
+    }
+  },
+  {
+    "uuid": "30ef36a1-4457-4d86-bca1-e958670dbbc1",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Land Classification System: Polaj, Parauti, Chachar, Banjar",
+        "Crop Classification: Kharif, Rabi, and Zaid under the Zabt System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "conflation",
+      "concept_anchor": "Mughal revenue administrative milestones — correct sequence",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of the key administrative steps in the development of the Zabt revenue system under Akbar?\n\n1. Standardization of the Ilahi gaz and introduction of the iron-ring jarib as uniform survey instruments\n2. Establishment of the four-fold land classification (Polaj, Parauti, Chachar, Banjar) as a survey framework\n3. Systematic compilation of crop price and yield data over ten years (Ain-i-Dahsala, 1571–1580)\n4. Province-by-province revenue settlement — Todar Mal's Grand Bandobast (1580–1582)\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 2 → 3 → 4\n(d) 3 → 1 → 4 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the land classification four-fold system after the Ain-i-Dahsala, suggesting it was a product of the ten-year data collection. Students who associate Todar Mal's detailed administrative work with the post-1580 period may accept this reversed order.",
+      "elimination_logic": [
+        "The standardization of Ilahi gaz and introduction of iron-ring jarib were measurement tools adopted at the start of survey operations — before data could be collected for the Ain-i-Dahsala.",
+        "The four-fold land classification (Polaj-Banjar) was established as part of the survey framework — also prior to the Ain-i-Dahsala data collection.",
+        "The Ain-i-Dahsala data collection (1571–1580) built on the survey infrastructure already in place.",
+        "Todar Mal's Grand Bandobast (1580–1582) was the culminating province-by-province settlement — last in sequence.",
+        "Correct sequence: Ilahi gaz/jarib standardization → Four-fold land classification → Ain-i-Dahsala (1571–80) → Grand Bandobast (1580–82). Select option (c)."
+      ],
+      "upsc_trap_explanation": "The chronological trap is placing the four-fold land classification after the Ain-i-Dahsala. Students who think of the land classification as a product of the data analysis phase may reverse the order. In reality, the classification had to precede the data collection — surveyors needed a classification framework to record land types before yield data could be meaningfully compiled. The measurement-then-classify-then-average sequence is the correct logic.",
+      "final_explanation": "The development of the Zabt system followed a logical operational sequence from survey infrastructure to data collection to final settlement.\n\nCorrect Sequence:\n1. Standardization of Ilahi gaz and iron-ring jarib (measurement tools): These had to be in place before any survey could begin — the foundational infrastructure of the whole system.\n2. Establishment of the four-fold land classification (Polaj-Parauti-Chachar-Banjar): Surveyors needed a classification framework to categorize land as they measured it — this preceded the data collection phase.\n3. Ain-i-Dahsala data collection (1571–1580): With survey infrastructure and classification in place, systematic crop price and yield data could be compiled province-by-province over ten years.\n4. Grand Bandobast (1580–1582): The final synthesis — translating ten years of data into enforceable province-by-province dastur schedules.\n\nWrong Options:\n• Option (a) reverses the measurement tools and land classification, placing classification first.\n• Option (b) places the Grand Bandobast before the Ain-i-Dahsala — logically impossible since the Bandobast used the Ain data.\n• Option (d) inverts the entire sequence.\n\nValue Addition:\n• The logical sequence (tools → classification → data → settlement) mirrors modern statistical survey methodology.\n• Option (b) is the primary trap — it sounds like 'administrative detail before settlement,' which feels intuitive but reverses steps 3 and 4.\n• This sequence also explains why the Grand Bandobast could not have happened before 1580 — the Ain-i-Dahsala data simply did not exist yet."
+    },
+    "hi": {
+      "display_text": "अकबर के शासनकाल में ज़ब्त राजस्व प्रणाली के विकास में प्रमुख प्रशासनिक कदमों का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. इलाही गज का मानकीकरण और लोहे की अंगूठी वाले जरिब को एकसमान सर्वेक्षण उपकरण के रूप में लागू करना\n2. सर्वेक्षण ढांचे के रूप में भूमि के चार-खंडीय वर्गीकरण (पोलाज, परौती, चचर, बंजर) की स्थापना\n3. दस वर्षों तक फसल मूल्य और उपज डेटा का व्यवस्थित संकलन (Ain-i-Dahsala, 1571–1580)\n4. प्रांत-दर-प्रांत राजस्व निपटान — टोडरमल का ग्रैंड बंदोबस्त (1580–1582)\n\n(a) 2 → 1 → 3 → 4\n(b) 1 → 2 → 4 → 3\n(c) 1 → 2 → 3 → 4\n(d) 3 → 1 → 4 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भूमि वर्गीकरण के चार-खंडीय प्रणाली को Ain-i-Dahsala के बाद रखता है, जिससे यह प्रतीत होता है कि यह दस वर्ष के डेटा संग्रह का परिणाम था। जो छात्र टोडरमल के विस्तृत प्रशासनिक कार्य को 1580 के बाद के काल से जोड़ते हैं, वे इस उल्टे क्रम को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "इलाही गज के मानकीकरण और लोहे की अंगूठी वाले जरिब का परिचय सर्वेक्षण कार्यों की शुरुआत में अपनाए गए मापन उपकरण थे — इससे पहले कि Ain-i-Dahsala के लिए डेटा एकत्रित किया जा सके।",
+        "भूमि के चार-खंडीय वर्गीकरण (पोलाज-बंजर) सर्वेक्षण ढांचे के हिस्से के रूप में स्थापित किया गया था — यह भी Ain-i-Dahsala डेटा संग्रह से पहले।",
+        "Ain-i-Dahsala डेटा संग्रह (1571–1580) पहले से मौजूद सर्वेक्षण अवसंरचना पर आधारित था।",
+        "टोडरमल का ग्रैंड बंदोबस्त (1580–1582) प्रांत-दर-प्रांत अंतिम निपटान था — क्रम में अंतिम।",
+        "सही क्रम: इलाही गज/जरिब मानकीकरण → चार-खंडीय भूमि वर्गीकरण → Ain-i-Dahsala (1571–80) → ग्रैंड बंदोबस्त (1580–82)। विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक जाल यह है कि चार-खंडीय भूमि वर्गीकरण को Ain-i-Dahsala के बाद रखा जाए। जो छात्र भूमि वर्गीकरण को डेटा विश्लेषण चरण का उत्पाद मानते हैं, वे क्रम उलट सकते हैं। वास्तविकता में, वर्गीकरण डेटा संग्रह से पहले होना आवश्यक था — सर्वेक्षक को भूमि के प्रकार रिकॉर्ड करने के लिए वर्गीकरण ढांचा चाहिए था ताकि उपज डेटा सार्थक रूप से संकलित किया जा सके। मापन-फिर-वर्गीकरण-फिर-औसत निकालने की प्रक्रिया सही तर्क है।",
+      "final_explanation": "ज़ब्त प्रणाली का विकास सर्वेक्षण अवसंरचना से लेकर डेटा संग्रह और अंतिम निपटान तक तार्किक संचालन क्रम का पालन करता है।\n\nसही क्रम:\n1. इलाही गज और लोहे की अंगूठी वाले जरिब का मानकीकरण (मापन उपकरण): ये सर्वेक्षण शुरू होने से पहले स्थापित होने चाहिए थे — पूरे सिस्टम की आधारशिला।\n2. चार-खंडीय भूमि वर्गीकरण (पोलाज-परौती-चचर-बंजर) की स्थापना: सर्वेक्षक को भूमि को मापते समय वर्गीकृत करने के लिए ढांचा चाहिए था — यह डेटा संग्रह चरण से पहले था।\n3. Ain-i-Dahsala डेटा संग्रह (1571–1580): सर्वेक्षण अवसंरचना और वर्गीकरण के साथ, दस वर्षों तक प्रांत-दर-प्रांत फसल मूल्य और उपज डेटा व्यवस्थित रूप से संकलित किया गया।\n4. ग्रैंड बंदोबस्त (1580–1582): अंतिम संश्लेषण — दस वर्षों के डेटा को लागू करने योग्य प्रांत-दर-प्रांत दस्तूर अनुसूचियों में परिवर्तित करना।\n\nगलत विकल्प:\n• विकल्प (a) मापन उपकरण और भूमि वर्गीकरण को उलट देता है, वर्गीकरण को पहले रखता है।\n• विकल्प (b) ग्रैंड बंदोबस्त को Ain-i-Dahsala से पहले रखता है — तार्किक रूप से असंभव क्योंकि बंदोबस्त Ain डेटा का उपयोग करता है।\n• विकल्प (d) पूरे क्रम को उलट देता है।\n\nमूल्य संवर्धन:\n• तार्किक क्रम (उपकरण → वर्गीकरण → डेटा → निपटान) आधुनिक सांख्यिकीय सर्वेक्षण पद्धति को दर्शाता है।\n• विकल्प (b) मुख्य जाल है — यह 'निपटान से पहले प्रशासनिक विवरण' जैसा लगता है, जो सहज लगता है लेकिन चरण 3 और 4 को उलट देता है।\n• यह क्रम यह भी समझाता है कि ग्रैंड बंदोबस्त 1580 से पहले क्यों नहीं हो सकता था — Ain-i-Dahsala डेटा उस समय मौजूद नहीं था।"
+    }
+  },
+  {
+    "uuid": "06d43905-076a-4efb-8b84-0dcdb2680fb6",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Ain-i-Akbari as a Source for Understanding the Zabt System",
+        "Irfan Habib's Agrarian System of the Mughal Empire: Historiographical Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Ain-i-Akbari limitations — eulogistic bias; Irfan Habib's method",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Ain-i-Akbari as a historical source:\n\n1. The Ain-i-Akbari, as an official court document authored by Abul Fazl, carries a eulogistic bias in its portrayal of Akbar's administration — a limitation that historians must account for when using it as a primary source.\n2. Irfan Habib's 'Agrarian System of the Mughal Empire' relies primarily on the accounts of foreign travellers such as François Bernier rather than on the Ain-i-Akbari, because Bernier's observations were considered more objective than official Mughal records.\n3. The Ain-i-Akbari is the third volume of Abul Fazl's larger work Akbarnama, specifically dealing with the administrative organization of the empire rather than with Akbar's biographical and military history.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Ain-i-Akbari, as an official court document authored by Abul Fazl, carries a eulogistic bias in its portrayal of Akbar's administration — a limitation that historians must account for when using it as a primary source.",
+          "verdict": "Correct",
+          "reason": "Abul Fazl was Akbar's court historian and a devoted admirer — the Ain-i-Akbari presents imperial administration in its most favorable light, which means its revenue statistics and administrative descriptions must be cross-checked against other sources for balance."
+        },
+        {
+          "statement": "Irfan Habib's 'Agrarian System of the Mughal Empire' relies primarily on the accounts of foreign travellers such as François Bernier rather than on the Ain-i-Akbari, because Bernier's observations were considered more objective than official Mughal records.",
+          "verdict": "Incorrect",
+          "reason": "Irfan Habib's foundational methodology relies heavily on the Ain-i-Akbari's statistical data — its tabular revenue schedules and dastur figures — and supplemented this with travellers' accounts. Bernier was one supplementary source, not the primary basis for Habib's agrarian reconstruction."
+        },
+        {
+          "statement": "The Ain-i-Akbari is the third volume of Abul Fazl's larger work Akbarnama, specifically dealing with the administrative organization of the empire rather than with Akbar's biographical and military history.",
+          "verdict": "Correct",
+          "reason": "The Akbarnama comprises three parts — the first two dealing with Akbar's life, reign, and campaigns; the third part (Ain-i-Akbari) constituting an administrative compendium covering revenue, mansabs, court regulations, and provincial statistics."
+        }
+      ],
+      "strong_distractor": "a — Option (a) is a strong distractor because students who know Bernier's name appears frequently in Mughal history discussions may accept the claim that Habib primarily relied on Bernier without checking whether it was Bernier or the Ain-i-Akbari that was Habib's primary data source.",
+      "elimination_logic": [
+        "Statement 1 is correct — Abul Fazl's eulogistic bias is a well-documented limitation of the Ain-i-Akbari as a primary source.",
+        "Statement 2 is incorrect — Irfan Habib's primary data source is the Ain-i-Akbari's statistical tables; Bernier is a supplementary source, not the primary one.",
+        "Statement 3 is correct — Ain-i-Akbari is the third administrative volume of the Akbarnama.",
+        "Only Statement 2 is NOT correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the frequent mention of François Bernier alongside Irfan Habib in discussions of Mughal agrarian history. Students who recall both names in the same context may assume Habib relied primarily on Bernier — not realizing that Habib's methodological innovation was precisely his use of the Ain-i-Akbari's quantitative data (revenue schedules, dastur tables, area statistics) rather than traveller accounts. Bernier provided qualitative corroboration, not the quantitative foundation.",
+      "final_explanation": "Understanding primary sources for Mughal administrative history requires knowing not just what the sources contain but how historians have used them.\n\n• Statement 1 — Correct: Abul Fazl was a court appointee with a vested interest in presenting Akbar's reign favorably. The Ain-i-Akbari's administrative statistics are detailed and valuable, but they must be treated as an official record — subject to the biases of imperial self-representation.\n• Statement 2 — Incorrect: Irfan Habib's 1963 work is distinguished precisely by its quantitative use of the Ain-i-Akbari — tabulating revenue schedules, area statistics, and dastur rates to reconstruct the agrarian system systematically. François Bernier's travel account (1670s) provided qualitative insights into peasant conditions, but it was a supplementary source, not Habib's primary data. Habib's methodology was a pioneer in using medieval statistical records quantitatively.\n• Statement 3 — Correct: The Akbarnama's three-volume structure is: Volume I (Akbar's ancestry and early reign), Volume II (military campaigns and political history), Volume III (Ain-i-Akbari — administrative compendium).\n\nValue Addition:\n• Badauni's Muntakhab-ut-Tawarikh is the contrasting critical account — useful for correcting Abul Fazl's eulogistic bias.\n• Habib's use of Ain-i-Akbari data tables launched a new sub-field of quantitative medieval history in India.\n• Abu'l Fazl's administrative detail in Ain-i-Akbari is unmatched for the period — 42 Ain (institutes) covering everything from court protocol to provincial revenue."
+    },
+    "hi": {
+      "display_text": "अइन-ए-अकबरी को एक ऐतिहासिक स्रोत के रूप में लेकर निम्नलिखित कथनों पर विचार करें:\n\n1. अइन-ए-अकबरी, जो अबुल फज़ल द्वारा रचित एक आधिकारिक दरबारी दस्तावेज़ है, अकबर के प्रशासन के चित्रण में प्रशंसात्मक पक्षपात रखती है — यह एक सीमा है जिसे इतिहासकारों को इसे प्राथमिक स्रोत के रूप में उपयोग करते समय ध्यान में रखना चाहिए।\n2. इरफ़ान हबीब की 'मुगल साम्राज्य की कृषि प्रणाली' मुख्य रूप से विदेशी यात्रियों जैसे फ्राँसुआ बर्नियर के विवरणों पर निर्भर है न कि अइन-ए-अकबरी पर, क्योंकि बर्नियर के अवलोकन आधिकारिक मुगल अभिलेखों की तुलना में अधिक वस्तुनिष्ठ माने जाते थे।\n3. अइन-ए-अकबरी अबुल फज़ल के बड़े कार्य अकबरनामा का तीसरा खंड है, जो विशेष रूप से साम्राज्य के प्रशासनिक संगठन से संबंधित है न कि अकबर के जीवनी और सैन्य इतिहास से।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अइन-ए-अकबरी, जो अबुल फज़ल द्वारा रचित एक आधिकारिक दरबारी दस्तावेज़ है, अकबर के प्रशासन के चित्रण में प्रशंसात्मक पक्षपात रखती है — यह एक सीमा है जिसे इतिहासकारों को इसे प्राथमिक स्रोत के रूप में उपयोग करते समय ध्यान में रखना चाहिए।",
+          "verdict": "सही",
+          "reason": "अबुल फज़ल अकबर के दरबारी इतिहासकार और समर्पित प्रशंसक थे — अइन-ए-अकबरी साम्राज्य के प्रशासन को सबसे अनुकूल रूप में प्रस्तुत करता है, जिसका अर्थ है कि इसके राजस्व आंकड़े और प्रशासनिक विवरण संतुलन के लिए अन्य स्रोतों के साथ जांचे जाने चाहिए।"
+        },
+        {
+          "statement": "इरफ़ान हबीब की 'मुगल साम्राज्य की कृषि प्रणाली' मुख्य रूप से विदेशी यात्रियों जैसे फ्राँसुआ बर्नियर के विवरणों पर निर्भर है न कि अइन-ए-अकबरी पर, क्योंकि बर्नियर के अवलोकन आधिकारिक मुगल अभिलेखों की तुलना में अधिक वस्तुनिष्ठ माने जाते थे।",
+          "verdict": "गलत",
+          "reason": "इरफ़ान हबीब की मूल कार्यप्रणाली भारी रूप से अइन-ए-अकबरी के सांख्यिकीय आंकड़ों — इसके तालिकाबद्ध राजस्व कार्यक्रमों और दस्तूर आंकड़ों — पर निर्भर है और इसे यात्रियों के विवरणों से पूरक किया गया है। बर्नियर एक पूरक स्रोत था, हबीब की कृषि पुनर्निर्माण का प्राथमिक आधार नहीं।"
+        },
+        {
+          "statement": "अइन-ए-अकबरी अबुल फज़ल के बड़े कार्य अकबरनामा का तीसरा खंड है, जो विशेष रूप से साम्राज्य के प्रशासनिक संगठन से संबंधित है न कि अकबर के जीवनी और सैन्य इतिहास से।",
+          "verdict": "सही",
+          "reason": "अकबरनामा तीन भागों में विभाजित है — पहले दो अकबर के जीवन, शासन और अभियानों से संबंधित हैं; तीसरा भाग (अइन-ए-अकबरी) प्रशासनिक संकलन है जिसमें राजस्व, मंसब, दरबारी नियम और प्रांतीय सांख्यिकी शामिल हैं।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि जो छात्र बर्नियर का नाम मुगल इतिहास की चर्चाओं में अक्सर सुनते हैं, वे बिना जांचे मान सकते हैं कि हबीब ने मुख्य रूप से बर्नियर पर निर्भर किया जबकि हकीकत में हबीब का प्राथमिक डेटा स्रोत अइन-ए-अकबरी था।",
+      "elimination_logic": [
+        "कथन 1 सही है — अबुल फज़ल का प्रशंसात्मक पक्षपात अइन-ए-अकबरी के प्राथमिक स्रोत के रूप में उपयोग की एक अच्छी तरह से प्रलेखित सीमा है।",
+        "कथन 2 गलत है — इरफ़ान हबीब का प्राथमिक डेटा स्रोत अइन-ए-अकबरी के सांख्यिकीय तालिकाएं हैं; बर्नियर एक पूरक स्रोत है, प्राथमिक नहीं।",
+        "कथन 3 सही है — अइन-ए-अकबरी अकबरनामा का तीसरा प्रशासनिक खंड है।",
+        "केवल कथन 2 सही नहीं है — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 फ्राँसुआ बर्नियर के नाम का अक्सर इरफ़ान हबीब के साथ मुगल कृषि इतिहास की चर्चाओं में उल्लेख होने का फायदा उठाता है। जो छात्र दोनों नामों को एक ही संदर्भ में याद करते हैं, वे मान सकते हैं कि हबीब ने मुख्य रूप से बर्नियर पर निर्भर किया — यह समझे बिना कि हबीब की कार्यप्रणाली नवाचार अइन-ए-अकबरी के मात्रात्मक डेटा (राजस्व कार्यक्रम, दस्तूर तालिकाएं, क्षेत्र सांख्यिकी) के उपयोग में थी न कि यात्रियों के विवरणों में। बर्नियर ने गुणात्मक पुष्टि प्रदान की, मात्रात्मक आधार नहीं।",
+      "final_explanation": "मुगल प्रशासनिक इतिहास के प्राथमिक स्रोतों को समझने के लिए यह जानना आवश्यक है कि स्रोतों में क्या है और इतिहासकारों ने उनका उपयोग कैसे किया है।\n\n• कथन 1 — सही: अबुल फज़ल एक दरबारी नियुक्ति थे जिनका हित अकबर के शासन को अनुकूल रूप में प्रस्तुत करना था। अइन-ए-अकबरी के प्रशासनिक आंकड़े विस्तृत और मूल्यवान हैं, लेकिन इन्हें आधिकारिक अभिलेख के रूप में पक्षपात के अधीन माना जाना चाहिए।\n• कथन 2 — गलत: इरफ़ान हबीब का 1963 का कार्य विशेष रूप से अइन-ए-अकबरी के मात्रात्मक उपयोग के लिए प्रसिद्ध है — राजस्व कार्यक्रम, क्षेत्र सांख्यिकी, और दस्तूर दरों को तालिकाबद्ध कर कृषि प्रणाली का व्यवस्थित पुनर्निर्माण किया। फ्राँसुआ बर्नियर की यात्रा विवरण (1670 के दशक) ने किसान की स्थिति पर गुणात्मक अंतर्दृष्टि दी, लेकिन यह हबीब का प्राथमिक स्रोत नहीं था। हबीब की कार्यप्रणाली मध्यकालीन सांख्यिकीय अभिलेखों के मात्रात्मक उपयोग में अग्रणी थी।\n• कथन 3 — सही: अकबरनामा की तीन-खंड संरचना है: खंड I (अकबर की वंशावली और प्रारंभिक शासन), खंड II (सैन्य अभियान और राजनीतिक इतिहास), खंड III (अइन-ए-अकबरी — प्रशासनिक संकलन)।\n\nमूल्यवर्धन:\n• बादौनी का मुन्तखब-उत-तवारिख़ प्रशंसात्मक पक्षपात को सुधारने के लिए उपयोगी आलोचनात्मक खाता है।\n• हबीब का अइन-ए-अकबरी डेटा तालिकाओं का उपयोग मध्यकालीन मात्रात्मक इतिहास के एक नए उपक्षेत्र की शुरुआत था।\n• अबुल फज़ल का अइन-ए-अकबरी में प्रशासनिक विवरण उस काल के लिए अभूतपूर्व है — 42 ऐन (संस्थान) जो दरबारी प्रोटोकॉल से लेकर प्रांतीय राजस्व तक सब कुछ कवर करते हैं।"
+    }
+  },
+  {
+    "uuid": "2363416a-93ab-4d08-8111-cd42da6793ad",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Mughal Empire — Foundation and Expansion",
+      "sub_topic": "Akbar's revenue system — Zabt system under Todar Mal",
+      "concepts_used": [
+        "Impact of Zabt System on Peasantry and Agrarian Economy",
+        "Decline and Limitations of the Zabt System in Post-Akbar Period"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Zabt system — positive and negative impacts on peasantry",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the impact of Akbar's Zabt revenue system:\n\n1. The Polaj-Banjar land classification embedded an incentive structure in the revenue system by offering progressively lower assessment rates for lands that had been fallow for longer periods, encouraging cultivators to bring marginal land under the plough.\n2. The failure to revise dastur (rate) schedules after Akbar's reign meant that as commodity prices rose over the 17th century, the real value of the state's revenue demand automatically increased, generating surplus revenue for the imperial treasury.\n3. The security of tenure provided through pattas offered peasants a degree of legal protection against arbitrary exaction, contributing to the positive dimensions of the Zabt system's impact on the peasantry.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Polaj-Banjar land classification embedded an incentive structure in the revenue system by offering progressively lower assessment rates for lands that had been fallow for longer periods, encouraging cultivators to bring marginal land under the plough.",
+          "verdict": "Correct",
+          "reason": "The graduated reduction from Polaj (highest rate) to Banjar (lowest/zero rate) was designed to make it financially attractive to reclaim fallow land — an agricultural expansion incentive built into the revenue framework."
+        },
+        {
+          "statement": "The failure to revise dastur (rate) schedules after Akbar's reign meant that as commodity prices rose over the 17th century, the real value of the state's revenue demand automatically increased, generating surplus revenue for the imperial treasury.",
+          "verdict": "Incorrect",
+          "reason": "This claim inverts the actual dynamic. When commodity prices rose, the fixed cash demand in daam represented a smaller share of market value — not a larger one. However, during harvest failures with falling prices, the same nominal demand became crushing. The key point is that static dasturs failed to adjust to either direction of price change equitably, and the treasury did not automatically benefit from inflation through fixed nominal demands."
+        },
+        {
+          "statement": "The security of tenure provided through pattas offered peasants a degree of legal protection against arbitrary exaction, contributing to the positive dimensions of the Zabt system's impact on the peasantry.",
+          "verdict": "Correct",
+          "reason": "Pattas formalized the peasant's landholding and revenue obligation, creating a legal reference point against arbitrary over-demand by zamindars and local officials — a genuine improvement over the arbitrary exaction prevalent before formal documentation."
+        }
+      ],
+      "strong_distractor": "d — All three correct is the strong distractor because Statement 2 sounds economically plausible (fixed revenue + rising prices = more real revenue) to students who associate Akbar's period with imperial prosperity.",
+      "elimination_logic": [
+        "Statement 1 is correct — Polaj-Banjar gradient incentivizes reclamation of fallow land.",
+        "Statement 2 is incorrect — the claim that static dasturs automatically increased real revenue is economically inverted. Fixed nominal demands in an inflationary environment actually erode the state's real revenue share — and during price falls, crush peasants. The treasury did not benefit automatically from rising prices through fixed daam-denominated demands.",
+        "Statement 3 is correct — pattas provided security of tenure and legal protection against arbitrary exaction.",
+        "Statements 1 and 3 are correct — select option (c). Wait, checking option set: for 3 statements, options: (a) 1 and 2 only, (b) 2 and 3 only, (c) 1 and 3 only, (d) 1, 2 and 3. Statements 1 and 3 → option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 constructs a scope-extension trap using economic reasoning. Students who recall that commodity prices rose over the 17th century and know that dasturs were fixed in nominal terms may reason: 'fixed nominal demand + rising prices = treasury gains from real appreciation.' This is precisely backward — a fixed daam demand in an inflationary environment means the state collects a shrinking real share of the harvest's market value. The statement's confident economic framing obscures this reversal.",
+      "final_explanation": "Evaluating the Zabt system's impact on peasants requires distinguishing between its design features (genuinely innovative) and its implementation failures (structurally harmful over time).\n\n• Statement 1 — Correct: The incentive structure in land classification was a genuine design achievement. By offering near-zero assessment on Banjar land, the system encouraged pioneers to reclaim waste land — expanding the agricultural base without immediate full tax liability. This was an early example of incentive-compatible tax policy.\n• Statement 2 — Incorrect: The economic claim is inverted. Fixed daam-denominated demands in an inflationary environment actually meant the state collected less real value over time as prices rose — the treasury did not automatically gain. When prices fell (during famines), the same nominal demand became disproportionately crushing for peasants. Static dasturs created inequity in both directions — not a treasury windfall.\n• Statement 3 — Correct: The patta system's formalization of tenure and revenue obligations was a meaningful protective mechanism. Before pattas, arbitrary exaction by zamindars and local officials was constrained only by custom and negotiation — the written patta created an enforceable legal reference, though enforcement was uneven.\n\nValue Addition:\n• The design-versus-implementation gap is the central theme in evaluating any medieval revenue system.\n• Irfan Habib's critique focuses on the implementation failures (static dasturs, jagirdari extraction) rather than the design features.\n• W.H. Moreland's more positive evaluation emphasizes the design — explaining the divergence in historiographical conclusions."
+    },
+    "hi": {
+      "display_text": "अकबर की ज़ब्त राजस्व प्रणाली के प्रभाव के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पोलाज-बंजर भूमि वर्गीकरण ने राजस्व प्रणाली में एक प्रोत्साहन संरचना समाहित की थी, जो उन भूमि के लिए क्रमिक रूप से कम आकलन दरें प्रदान करती थी जो लंबे समय से बंजर पड़ी थीं, जिससे कृषकों को सीमांत भूमि को जोतने के लिए प्रोत्साहित किया गया।\n2. अकबर के शासनकाल के बाद दस्तूर (दर) अनुसूचियों को संशोधित न करने का अर्थ था कि 17वीं सदी में वस्तु मूल्यों के बढ़ने पर राज्य की राजस्व मांग का वास्तविक मूल्य स्वचालित रूप से बढ़ गया, जिससे शाही खजाने के लिए अधिशेष राजस्व उत्पन्न हुआ।\n3. पट्टों के माध्यम से प्रदान की गई अधिकार सुरक्षा ने किसानों को मनमानी वसूली के खिलाफ कानूनी सुरक्षा का एक स्तर दिया, जो ज़ब्त प्रणाली के किसानों पर सकारात्मक प्रभाव के आयामों में योगदान करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "पोलाज-बंजर भूमि वर्गीकरण ने राजस्व प्रणाली में एक प्रोत्साहन संरचना समाहित की थी, जो उन भूमि के लिए क्रमिक रूप से कम आकलन दरें प्रदान करती थी जो लंबे समय से बंजर पड़ी थीं, जिससे कृषकों को सीमांत भूमि को जोतने के लिए प्रोत्साहित किया गया।",
+          "verdict": "सही",
+          "reason": "पोलाज (सबसे उच्च दर) से बंजर (सबसे कम/शून्य दर) तक की क्रमिक कटौती इस उद्देश्य से डिज़ाइन की गई थी कि बंजर भूमि को पुनः उपजाऊ बनाना आर्थिक रूप से आकर्षक हो — राजस्व ढांचे में कृषि विस्तार के लिए एक प्रोत्साहन।"
+        },
+        {
+          "statement": "अकबर के शासनकाल के बाद दस्तूर (दर) अनुसूचियों को संशोधित न करने का अर्थ था कि 17वीं सदी में वस्तु मूल्यों के बढ़ने पर राज्य की राजस्व मांग का वास्तविक मूल्य स्वचालित रूप से बढ़ गया, जिससे शाही खजाने के लिए अधिशेष राजस्व उत्पन्न हुआ।",
+          "verdict": "गलत",
+          "reason": "यह दावा वास्तविक गतिशीलता को उलट देता है। जब वस्तु मूल्य बढ़े, तो दाम में स्थिर नकद मांग बाजार मूल्य के एक छोटे हिस्से का प्रतिनिधित्व करती थी — न कि बड़े हिस्से का। हालांकि, फसल की विफलताओं के दौरान कीमतों के गिरने पर, वही नाममात्र की मांग भारी बोझ बन गई। मुख्य बात यह है कि स्थिर दस्तूर कीमतों में किसी भी दिशा में बदलाव के अनुसार न्यायसंगत रूप से समायोजित नहीं हुए, और मुद्रास्फीति से खजाना स्वचालित रूप से लाभान्वित नहीं हुआ।"
+        },
+        {
+          "statement": "पट्टों के माध्यम से प्रदान की गई अधिकार सुरक्षा ने किसानों को मनमानी वसूली के खिलाफ कानूनी सुरक्षा का एक स्तर दिया, जो ज़ब्त प्रणाली के किसानों पर सकारात्मक प्रभाव के आयामों में योगदान करता है।",
+          "verdict": "सही",
+          "reason": "पट्टों ने किसान के भूमि अधिकार और राजस्व दायित्व को औपचारिक बनाया, जिससे ज़मींदारों और स्थानीय अधिकारियों द्वारा मनमानी अधिक मांग के खिलाफ एक कानूनी संदर्भ बिंदु बना — जो औपचारिक दस्तावेजीकरण से पहले प्रचलित मनमानी वसूली की तुलना में वास्तविक सुधार था।"
+        }
+      ],
+      "strong_distractor": "d — सभी तीन सही विकल्प एक मजबूत भ्रम है क्योंकि कथन 2 आर्थिक रूप से संभावित लगता है (स्थिर राजस्व + बढ़ती कीमतें = अधिक वास्तविक राजस्व) उन छात्रों के लिए जो अकबर के काल को शाही समृद्धि से जोड़ते हैं।",
+      "elimination_logic": [
+        "कथन 1 सही है — पोलाज-बंजर ग्रेडिएंट बंजर भूमि के पुनः उपयोग को प्रोत्साहित करता है।",
+        "कथन 2 गलत है — स्थिर दस्तूरों ने स्वचालित रूप से वास्तविक राजस्व बढ़ाने का दावा आर्थिक रूप से उलटा है। मुद्रास्फीति के माहौल में स्थिर नाममात्र की मांगें वास्तव में राज्य के वास्तविक राजस्व हिस्से को कम करती हैं — और कीमतों के गिरने पर किसानों के लिए भारी बोझ बनती हैं। खजाना स्थिर दाम-निर्धारित मांगों के माध्यम से बढ़ती कीमतों से स्वचालित रूप से लाभान्वित नहीं हुआ।",
+        "कथन 3 सही है — पट्टों ने अधिकार सुरक्षा और मनमानी वसूली के खिलाफ कानूनी संरक्षण प्रदान किया।",
+        "कथन 1 और 3 सही हैं — विकल्प (c) चुनें। विकल्प सेट जांचें: 3 कथनों के लिए विकल्प: (a) केवल 1 और 2, (b) केवल 2 और 3, (c) केवल 1 और 3, (d) 1, 2 और 3। कथन 1 और 3 → विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक दायरा-विस्तार जाल बनाता है आर्थिक तर्क का उपयोग करके। जो छात्र जानते हैं कि 17वीं सदी में वस्तु मूल्य बढ़े और दस्तूर नाममात्र में स्थिर थे, वे सोच सकते हैं: 'स्थिर नाममात्र की मांग + बढ़ती कीमतें = खजाने को वास्तविक प्रशंसा से लाभ।' यह पूरी तरह उल्टा है — मुद्रास्फीति के माहौल में स्थिर दाम मांग का अर्थ है कि राज्य फसल के बाजार मूल्य का घटता हुआ वास्तविक हिस्सा वसूलता है। कथन का आत्मविश्वासी आर्थिक स्वरूप इस उलटफेर को छुपाता है।",
+      "final_explanation": "ज़ब्त प्रणाली के किसानों पर प्रभाव का मूल्यांकन इसके डिज़ाइन विशेषताओं (वास्तव में नवोन्मेषी) और इसके कार्यान्वयन की विफलताओं (समय के साथ संरचनात्मक रूप से हानिकारक) के बीच अंतर करने की आवश्यकता है।\n\n• कथन 1 — सही: भूमि वर्गीकरण में प्रोत्साहन संरचना एक वास्तविक डिज़ाइन उपलब्धि थी। बंजर भूमि पर लगभग शून्य आकलन प्रदान करके, प्रणाली ने अग्रदूतों को बंजर भूमि को पुनः उपजाऊ बनाने के लिए प्रोत्साहित किया — बिना तत्काल पूर्ण कर दायित्व के कृषि आधार का विस्तार। यह प्रोत्साहन-संगत कर नीति का एक प्रारंभिक उदाहरण था।\n• कथन 2 — गलत: आर्थिक दावा उलटा है। मुद्रास्फीति के माहौल में स्थिर दाम-निर्धारित मांगों का अर्थ था कि जैसे-जैसे कीमतें बढ़ीं, राज्य ने वास्तविक मूल्य कम वसूल किया — खजाना स्वचालित रूप से लाभान्वित नहीं हुआ। जब कीमतें गिरीं (कुपोषण के दौरान), वही नाममात्र की मांग किसानों के लिए अत्यधिक बोझिल हो गई। स्थिर दस्तूर दोनों दिशाओं में असमानता पैदा करते थे — न कि खजाने के लिए लाभ।\n• कथन 3 — सही: पट्टा प्रणाली ने अधिकार और राजस्व दायित्वों का औपचारिककरण किया, जो एक महत्वपूर्ण सुरक्षा तंत्र था। पट्टों से पहले, ज़मींदारों और स्थानीय अधिकारियों द्वारा मनमानी वसूली केवल प्रथा और बातचीत से नियंत्रित होती थी — लिखित पट्टा एक लागू करने योग्य कानूनी संदर्भ बनाता था, हालांकि प्रवर्तन असमान था।\n\nमूल्य संवर्धन:\n• किसी भी मध्यकालीन राजस्व प्रणाली के मूल्यांकन में डिज़ाइन और कार्यान्वयन के बीच अंतर मुख्य विषय है।\n• इरफान हबीब की आलोचना कार्यान्वयन की विफलताओं (स्थिर दस्तूर, जागीरदारी वसूली) पर केंद्रित है, न कि डिज़ाइन विशेषताओं पर।\n• डब्ल्यू.एच. मोरलैंड का अधिक सकारात्मक मूल्यांकन डिज़ाइन पर जोर देता है — जो इतिहासकारों के मतभेदों को समझाता है।"
+    }
+  }
+]

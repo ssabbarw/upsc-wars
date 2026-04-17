@@ -1,0 +1,1493 @@
+[
+  {
+    "uuid": "18fe780d-23fb-4742-8ab5-c62c2b370678",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Financial Committees: Committee on Public Undertakings (CPU)",
+        "Financial Committees: Public Accounts Committee (PAC)",
+        "Financial Committees: Estimates Committee"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CPU scope exclusions and composition accuracy",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements regarding the Committee on Public Undertakings (CPU):",
+        "columns": [
+          "Statement",
+          "Claim"
+        ],
+        "rows": [
+          [
+            "1",
+            "The Committee on Public Undertakings has 22 members, with 15 from Lok Sabha and 7 from Rajya Sabha."
+          ],
+          [
+            "2",
+            "The Committee on Public Undertakings can examine the working of PSUs engaged in defence production to assess financial efficiency."
+          ],
+          [
+            "3",
+            "The Committee on Public Undertakings scrutinises CAG reports on public sector undertakings."
+          ],
+          [
+            "4",
+            "The Committee on Public Undertakings can review matters of major government policy as it pertains to public undertakings."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The Committee on Public Undertakings has 22 members, with 15 from Lok Sabha and 7 from Rajya Sabha.",
+          "verdict": "Correct",
+          "reason": "CPU has exactly 22 members — 15 elected from Lok Sabha and 7 elected from Rajya Sabha — the same total as PAC but with an identical composition ratio."
+        },
+        {
+          "statement": "The Committee on Public Undertakings can examine the working of PSUs engaged in defence production to assess financial efficiency.",
+          "verdict": "Incorrect",
+          "reason": "CPU explicitly excludes PSUs engaged in defence, atomic energy, and matters involving national security considerations from its scope of examination."
+        },
+        {
+          "statement": "The Committee on Public Undertakings scrutinises CAG reports on public sector undertakings.",
+          "verdict": "Correct",
+          "reason": "One of CPU's primary functions is to examine CAG audit reports relating to PSUs, similar to how PAC examines CAG reports on government ministries."
+        },
+        {
+          "statement": "The Committee on Public Undertakings can review matters of major government policy as it pertains to public undertakings.",
+          "verdict": "Incorrect",
+          "reason": "CPU cannot examine matters of major government policy or day-to-day administration of PSUs. It is restricted to examining whether PSUs are managed efficiently within existing policy."
+        }
+      ],
+      "strong_distractor": "c — Option (c) tempts students who correctly identify Statements 1 and 3 but mistakenly believe defence PSUs fall within CPU's scope given its broad mandate over 'public undertakings.'",
+      "elimination_logic": [
+        "Verify Statement 1: CPU has 22 members (15 LS + 7 RS) — this is accurate. Statement 1 is Correct.",
+        "Verify Statement 2: CPU is barred from examining defence and atomic energy PSUs due to security considerations. Statement 2 is Incorrect.",
+        "Verify Statement 3: CPU examines CAG reports on PSUs — this is a core function. Statement 3 is Correct.",
+        "Verify Statement 4: CPU cannot examine major policy matters or day-to-day administration of PSUs. Statement 4 is Incorrect.",
+        "Only two statements (1 and 3) are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the assumption that a committee examining 'public undertakings' has unlimited scope over all government-owned enterprises. Defence PSUs are explicitly excluded from CPU's examination — a nuance most students miss. Statement 4 exploits the assumption that if CPU can scrutinise PSU finances, it must also be able to question policy — another misconception. Policy review is left to Parliament itself.",
+      "final_explanation": "The Committee on Public Undertakings occupies a specific niche: it bridges financial oversight (like PAC) with administrative review of government-owned enterprises. However, its scope has important exclusions.\n\n• Statement 1 — Correct: CPU has 22 members (15 LS + 7 RS), mirroring PAC in composition size.\n• Statement 2 — Incorrect: PSUs in defence, atomic energy, and national security sectors are beyond CPU's examination. These exclusions protect sensitive operational information.\n• Statement 3 — Correct: CPU examines CAG audit reports on PSUs — this is its primary evidentiary input, similar to PAC's use of CAG reports for ministries.\n• Statement 4 — Incorrect: CPU cannot examine major government policy. It can only assess whether PSUs operate efficiently within the policy framework already set.\n\nValue Addition:\n• CPU was constituted in 1964 — it is the youngest of the three financial committees.\n• PAC examines government ministries; CPU examines PSUs — both use CAG reports as their primary tool.\n• The Estimates Committee is the only financial committee with no Rajya Sabha representation."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सार्वजनिक उपक्रम समिति (CPU) के संबंध में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन",
+          "दावा"
+        ],
+        "rows": [
+          [
+            "1",
+            "सार्वजनिक उपक्रम समिति के 22 सदस्य हैं, जिनमें से 15 लोकसभा से और 7 राज्यसभा से हैं।"
+          ],
+          [
+            "2",
+            "सार्वजनिक उपक्रम समिति रक्षा उत्पादन में लगे PSU के कार्यों की वित्तीय दक्षता का आकलन करने के लिए जांच कर सकती है।"
+          ],
+          [
+            "3",
+            "सार्वजनिक उपक्रम समिति सार्वजनिक क्षेत्र के उपक्रमों पर CAG रिपोर्टों की जांच करती है।"
+          ],
+          [
+            "4",
+            "सार्वजनिक उपक्रम समिति सार्वजनिक उपक्रमों से संबंधित प्रमुख सरकारी नीति मामलों की समीक्षा कर सकती है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "The Committee on Public Undertakings has 22 members, with 15 from Lok Sabha and 7 from Rajya Sabha.",
+          "verdict": "सही है",
+          "reason": "CPU के सदस्यों की संख्या ठीक 22 है — 15 लोकसभा से निर्वाचित और 7 राज्यसभा से निर्वाचित — कुल संख्या PAC के समान है लेकिन संरचना अनुपात समान है।"
+        },
+        {
+          "statement": "The Committee on Public Undertakings can examine the working of PSUs engaged in defence production to assess financial efficiency.",
+          "verdict": "गलत है",
+          "reason": "CPU स्पष्ट रूप से रक्षा, परमाणु ऊर्जा, और राष्ट्रीय सुरक्षा से संबंधित मामलों में लगे PSU को अपनी जांच के दायरे से बाहर रखता है।"
+        },
+        {
+          "statement": "The Committee on Public Undertakings scrutinises CAG reports on public sector undertakings.",
+          "verdict": "सही है",
+          "reason": "CPU के मुख्य कार्यों में से एक PSU से संबंधित CAG ऑडिट रिपोर्टों की जांच करना है, ठीक उसी प्रकार जैसे PAC सरकार के मंत्रालयों पर CAG रिपोर्टों की जांच करता है।"
+        },
+        {
+          "statement": "The Committee on Public Undertakings can review matters of major government policy as it pertains to public undertakings.",
+          "verdict": "गलत है",
+          "reason": "CPU बड़े सरकारी नीति मामलों या PSU के दैनिक प्रशासन की जांच नहीं कर सकता। यह केवल यह जांचने तक सीमित है कि PSU मौजूदा नीति के भीतर कुशलतापूर्वक प्रबंधित हो रहे हैं या नहीं।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) उन छात्रों को भ्रमित करता है जो कथन 1 और 3 को सही पहचानते हैं लेकिन गलती से मानते हैं कि रक्षा PSU CPU के दायरे में आते हैं क्योंकि इसका व्यापक दायरा 'सार्वजनिक उपक्रमों' पर है।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: CPU के 22 सदस्य हैं (15 लोकसभा + 7 राज्यसभा) — यह सही है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: सुरक्षा कारणों से CPU को रक्षा और परमाणु ऊर्जा PSU की जांच से रोका गया है। कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: CPU PSU पर CAG रिपोर्टों की जांच करता है — यह इसका मुख्य कार्य है। कथन 3 सही है।",
+        "कथन 4 सत्यापित करें: CPU बड़े नीति मामलों या PSU के दैनिक प्रशासन की जांच नहीं कर सकता। कथन 4 गलत है।",
+        "केवल दो कथन (1 और 3) सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 इस धारणा का फायदा उठाता है कि 'सार्वजनिक उपक्रमों' की जांच करने वाली समिति का सभी सरकारी उद्यमों पर असीमित दायरा होता है। रक्षा PSU स्पष्ट रूप से CPU की जांच से बाहर हैं — यह एक सूक्ष्मता है जिसे अधिकांश छात्र नहीं समझ पाते। कथन 4 इस धारणा का फायदा उठाता है कि यदि CPU PSU के वित्त की जांच कर सकता है, तो उसे नीति पर भी सवाल उठाना चाहिए — यह एक और गलतफहमी है। नीति समीक्षा संसद के अधिकार क्षेत्र में है।",
+      "final_explanation": "सार्वजनिक उपक्रम समिति (CPU) एक विशिष्ट भूमिका निभाती है: यह वित्तीय निगरानी (जैसे PAC) को सरकारी उद्यमों के प्रशासनिक समीक्षा से जोड़ती है। हालांकि, इसका दायरा कुछ महत्वपूर्ण अपवादों के साथ सीमित है।\n\n• कथन 1 — सही: CPU के 22 सदस्य हैं (15 लोकसभा + 7 राज्यसभा), जो PAC के सदस्यों की संख्या के समान है।\n• कथन 2 — गलत: रक्षा, परमाणु ऊर्जा, और राष्ट्रीय सुरक्षा क्षेत्रों के PSU CPU की जांच से बाहर हैं। ये अपवाद संवेदनशील परिचालन जानकारी की सुरक्षा के लिए हैं।\n• कथन 3 — सही: CPU PSU पर CAG ऑडिट रिपोर्टों की जांच करता है — यह इसका मुख्य साक्ष्य स्रोत है, ठीक वैसे ही जैसे PAC मंत्रालयों के लिए CAG रिपोर्टों का उपयोग करता है।\n• कथन 4 — गलत: CPU बड़े सरकारी नीति मामलों की जांच नहीं कर सकता। यह केवल यह आकलन कर सकता है कि PSU मौजूदा नीति के भीतर कुशलतापूर्वक संचालित हो रहे हैं या नहीं।\n\nमूल्यवर्धन:\n• CPU की स्थापना 1964 में हुई थी — यह तीन वित्तीय समितियों में सबसे युवा है।\n• PAC सरकार के मंत्रालयों की जांच करता है; CPU PSU की जांच करता है — दोनों CAG रिपोर्टों का उपयोग करते हैं।\n• Estimates Committee एकमात्र वित्तीय समिति है जिसमें राज्यसभा का प्रतिनिधित्व नहीं है।"
+    }
+  },
+  {
+    "uuid": "29a2c2be-d388-4dd5-a050-7973c1cc08d7",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate",
+        "Financial Committees: Public Accounts Committee (PAC)",
+        "Financial Committees: Estimates Committee",
+        "Financial Committees: Committee on Public Undertakings (CPU)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Financial committee composition and orientation comparison",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Parliamentary Committee) with List II (Key Feature):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Estimates Committee",
+            "1. Examines working of government-owned enterprises; 22 members (15 LS + 7 RS)"
+          ],
+          [
+            "B. Committee on Public Undertakings",
+            "2. 31 members from both Houses; conducts ministry-specific scrutiny of Bills and annual reports"
+          ],
+          [
+            "C. Public Accounts Committee",
+            "3. All 30 members from Lok Sabha only; prospective examination of estimates"
+          ],
+          [
+            "D. Departmentally Related Standing Committees",
+            "4. Retrospective examination of post-expenditure accounts using CAG audit reports"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-4, B-1, C-3, D-2\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-4, D-2\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) swaps the descriptions of PAC and Estimates Committee on temporal orientation, which traps students who know both are financial committees but confuse which is retrospective.",
+      "elimination_logic": [
+        "Anchor on the unambiguous pair: Estimates Committee — 30 members, all from Lok Sabha only. This confirms A matches 3.",
+        "CPU examines working of PSUs and has 22 members (15 LS + 7 RS) — B matches 1.",
+        "PAC is retrospective, examining post-expenditure accounts via CAG reports — C matches 4.",
+        "DRSCs have 31 members drawn from both Houses for ministry-specific examination — D matches 2. The correct combination is A-3, B-1, C-4, D-2, which is option (c)."
+      ],
+      "upsc_trap_explanation": "The trap lies in the CPU-PAC conflation. Both have 22 members and both examine CAG reports, but CPU focuses on PSUs while PAC focuses on government ministries. Students who remember '22 members + CAG reports' may assign both descriptions interchangeably. The DRSC description (31 members, both Houses, ministry-specific) is the anchor that helps eliminate wrong combinations if remembered precisely.",
+      "final_explanation": "This question tests precise knowledge of committee-specific attributes across four major parliamentary committees.\n\nCorrect pairings:\n• A (Estimates Committee) — 3: Exclusively Lok Sabha members (30 in total); prospective in orientation, suggesting economies before expenditure.\n• B (Committee on Public Undertakings) — 1: 22 members (15 LS + 7 RS); examines PSU working and CAG reports on PSUs.\n• C (Public Accounts Committee) — 4: Retrospective; examines post-expenditure accounts and CAG audit reports on ministries.\n• D (DRSCs) — 2: 31 members from both Houses; conducts ministry-specific scrutiny of Bills, demands for grants, and annual reports.\n\nTrap pairing: B and C both involve 22 members and CAG reports — the distinction is PSUs (CPU) vs government ministries (PAC).\n\nValue Addition:\n• DRSCs were originally 17 in 1993, expanded to 24 in 2004.\n• Only the Estimates Committee excludes Rajya Sabha — a constitutional design reflecting Rajya Sabha's limited role in money matters.\n• PAC's retrospective and CPU's PSU focus are classic UPSC pairing traps."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संसदीय समिति) को सूची II (मुख्य विशेषता) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. Estimates Committee",
+            "1. सरकारी स्वामित्व वाले उद्यमों के कार्य की जांच; 22 सदस्य (15 लोकसभा + 7 राज्यसभा)"
+          ],
+          [
+            "B. Committee on Public Undertakings",
+            "2. दोनों सदनों से 31 सदस्य; मंत्रालय-विशिष्ट विधेयकों और वार्षिक रिपोर्टों की जांच करता है"
+          ],
+          [
+            "C. Public Accounts Committee",
+            "3. सभी 30 सदस्य केवल लोकसभा से; अनुमान की संभावित जांच"
+          ],
+          [
+            "D. Departmentally Related Standing Committees",
+            "4. व्यय के बाद के खातों की प्रत्यावर्ती जांच CAG ऑडिट रिपोर्टों के माध्यम से"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-4, B-1, C-3, D-2\n(b) A-3, B-2, C-1, D-4\n(c) A-3, B-1, C-4, D-2\n(d) A-4, B-2, C-3, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) swaps the descriptions of PAC and Estimates Committee on temporal orientation, which traps students who know both are financial committees but confuse which is retrospective.",
+      "elimination_logic": [
+        "स्पष्ट जोड़ी पर ध्यान दें: Estimates Committee — 30 सदस्य, सभी केवल लोकसभा से। यह पुष्टि करता है कि A का मिलान 3 से है।",
+        "CPU सार्वजनिक क्षेत्र के उपक्रमों (PSUs) के कार्य की जांच करता है और इसके 22 सदस्य हैं (15 लोकसभा + 7 राज्यसभा) — B का मिलान 1 से है।",
+        "PAC प्रत्यावर्ती है, जो CAG की रिपोर्टों के माध्यम से व्यय के बाद के खातों की जांच करता है — C का मिलान 4 से है।",
+        "DRSCs में 31 सदस्य होते हैं जो दोनों सदनों से लिए जाते हैं और मंत्रालय-विशिष्ट जांच करते हैं — D का मिलान 2 से है। सही संयोजन है A-3, B-1, C-4, D-2, जो विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "फंदा CPU-PAC के भ्रम में है। दोनों के 22 सदस्य हैं और दोनों CAG रिपोर्टों की जांच करते हैं, लेकिन CPU सार्वजनिक क्षेत्र के उपक्रमों पर केंद्रित है जबकि PAC सरकारी मंत्रालयों पर। जो छात्र '22 सदस्य + CAG रिपोर्ट' याद रखते हैं, वे दोनों विवरणों को आपस में बदल सकते हैं। DRSC का विवरण (31 सदस्य, दोनों सदन, मंत्रालय-विशिष्ट) वह आधार है जो गलत संयोजनों को सही ढंग से याद रखने पर बाहर करने में मदद करता है।",
+      "final_explanation": "यह प्रश्न चार प्रमुख संसदीय समितियों के विशिष्ट गुणों के सटीक ज्ञान का परीक्षण करता है।\n\nसही जोड़ी:\n• A (Estimates Committee) — 3: केवल लोकसभा सदस्य (कुल 30); संभावित (prospective) जांच, व्यय से पहले की बचत सुझाती है।\n• B (Committee on Public Undertakings) — 1: 22 सदस्य (15 लोकसभा + 7 राज्यसभा); PSU के कार्य और PSU पर CAG रिपोर्टों की जांच करता है।\n• C (Public Accounts Committee) — 4: प्रत्यावर्ती (retrospective); व्यय के बाद के खातों और मंत्रालयों पर CAG ऑडिट रिपोर्टों की जांच करता है।\n• D (DRSCs) — 2: दोनों सदनों से 31 सदस्य; विधेयकों, अनुदान मांगों और वार्षिक रिपोर्टों की मंत्रालय-विशिष्ट जांच करता है।\n\nफंदा जोड़ी: B और C दोनों में 22 सदस्य और CAG रिपोर्ट शामिल हैं — अंतर PSU (CPU) बनाम सरकारी मंत्रालय (PAC) है।\n\nमूल्य संवर्धन:\n• DRSCs मूल रूप से 1993 में 17 थीं, 2004 में 24 तक बढ़ीं।\n• केवल Estimates Committee में राज्यसभा शामिल नहीं है — यह राजसभा की धन मामलों में सीमित भूमिका को दर्शाता है।\n• PAC की प्रत्यावर्ती जांच और CPU का PSU पर फोकस UPSC के क्लासिक फंदे हैं।"
+    }
+  },
+  {
+    "uuid": "ca13b8d4-34f8-4912-9516-2b7410683ca4",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate",
+        "Role of DRSCs in Pre-legislative Scrutiny vs Post-legislative Review"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "DRSC Bill referral is discretionary, not mandatory",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A prominent civil society organisation is lobbying the government to ensure that an important legislation affecting land acquisition is referred to the relevant Departmentally Related Standing Committee (DRSC) before it is taken up for passage in Parliament. The government argues it is not obliged to do so and can introduce the Bill directly on the floor for debate and vote. Which of the following most accurately describes the constitutional and procedural position?\n\n(a) The government is constitutionally required to refer all non-financial Bills to the relevant DRSC before passage\n(b) Referral of a Bill to a DRSC is discretionary — vested in the Speaker/Chairman — and the government cannot be compelled to route legislation through committee scrutiny\n(c) The relevant DRSC can itself claim jurisdiction over the pending Bill and require its referral before the House proceeds\n(d) DRSCs can only review Bills after their passage and do not have a pre-legislative scrutiny function",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know DRSCs examine Bills may assume the government must refer a Bill to the relevant DRSC, making option (a) seem constitutionally required.",
+      "elimination_logic": [
+        "Identify the core legal issue: Is referral of a Bill to a DRSC mandatory or discretionary?",
+        "Eliminate option (a): Referral of a Bill to a DRSC is not mandatory under any constitutional provision or rule — it is at the discretion of the Speaker/Chairman or the House.",
+        "Eliminate option (c): A DRSC cannot itself claim jurisdiction over a Bill — it has no power to demand referral of pending legislation.",
+        "Eliminate option (d): DRSCs are not restricted to only post-passage review — they can examine Bills before passage (pre-legislative scrutiny).",
+        "Select option (b): The Speaker/Chairman has the discretion to refer the Bill to the relevant DRSC, but the government is not compelled to do so."
+      ],
+      "upsc_trap_explanation": "This scenario exploits the widespread but incorrect belief that important Bills must go through DRSC scrutiny. In practice, major legislation such as the Citizenship Amendment Act, the three Farm Laws, and several labour codes bypassed DRSC examination entirely. The constitutional and procedural reality is that referral is discretionary — vested in the Speaker or Chairman. Many civil society and parliamentary reform advocates have argued for making referral mandatory, but no such rule exists.",
+      "final_explanation": "DRSCs were designed to conduct detailed legislative scrutiny that is impossible on the crowded floor of the House. Their pre-legislative function — examining Bills clause by clause — is one of their most valued but underutilised roles.\n\nHowever, reference of a Bill to a DRSC is not mandatory. Under the Rules of Procedure, the Speaker (Lok Sabha) or Chairman (Rajya Sabha) may refer a Bill to the relevant DRSC, or the House itself may pass a motion to do so. The executive is not compelled to route legislation through committee scrutiny.\n\n• Option (a) — Incorrect: No rule or constitutional provision mandates referral of Bills to DRSCs.\n• Option (b) — Correct: The Speaker/Chairman exercises discretion. The organisation can only advocate, not compel, DRSC scrutiny.\n• Option (c) — Incorrect: DRSCs have no inherent power to claim jurisdiction over pending Bills.\n• Option (d) — Incorrect: DRSCs can examine Bills both before and after passage, and also examine annual reports and demands for grants.\n\nValue Addition:\n• PRS Legislative Research has documented a declining trend in Bills referred to DRSCs in recent years.\n• Second ARC and parliamentary reform debates have recommended mandatory DRSC referral for all non-financial Bills.\n• DRSCs cover 24 ministry clusters (post-2004 expansion), each committee having 31 members from both Houses."
+    },
+    "hi": {
+      "display_text": "एक प्रमुख नागरिक समाज संगठन सरकार पर दबाव बना रहा है कि भूमि अधिग्रहण से संबंधित एक महत्वपूर्ण विधेयक को संसद में पारित होने से पहले संबंधित विभागीय स्थायी समिति (DRSC) को भेजा जाए। सरकार का तर्क है कि उसे ऐसा करने की बाध्यता नहीं है और वह विधेयक को सीधे सदन में बहस और मतदान के लिए प्रस्तुत कर सकती है। निम्नलिखित में से कौन-सा विकल्प संवैधानिक और प्रक्रियात्मक स्थिति को सबसे सटीक रूप से दर्शाता है?\n\n(a) सरकार को संवैधानिक रूप से सभी गैर-वित्तीय विधेयकों को पारित होने से पहले संबंधित DRSC को भेजना अनिवार्य है\n(b) किसी विधेयक को DRSC को भेजना विवेकाधीन है — जो स्पीकर/अध्यक्ष के पास निहित है — और सरकार को विधेयक को समिति जांच के माध्यम से भेजने के लिए बाध्य नहीं किया जा सकता\n(c) संबंधित DRSC स्वयं लंबित विधेयक पर अधिकार का दावा कर सकता है और सदन के आगे बढ़ने से पहले उसके संदर्भ की मांग कर सकता है\n(d) DRSC केवल विधेयकों की पारित होने के बाद समीक्षा कर सकते हैं और उनका पूर्व-विधायी जांच कार्य नहीं होता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know DRSCs examine Bills may assume the government must refer a Bill to the relevant DRSC, making option (a) seem constitutionally required.",
+      "elimination_logic": [
+        "मूल कानूनी मुद्दे की पहचान करें: क्या किसी विधेयक को DRSC को भेजना अनिवार्य है या विवेकाधीन?",
+        "विकल्प (a) को खारिज करें: किसी भी संवैधानिक प्रावधान या नियम के तहत विधेयक को DRSC को भेजना अनिवार्य नहीं है — यह स्पीकर/अध्यक्ष या सदन के विवेकाधीन है।",
+        "विकल्प (c) को खारिज करें: कोई DRSC स्वयं किसी विधेयक पर अधिकार का दावा नहीं कर सकता — उसके पास लंबित विधेयक के संदर्भ में भेजने की मांग करने का अधिकार नहीं है।",
+        "विकल्प (d) को खारिज करें: DRSC केवल विधेयक पारित होने के बाद समीक्षा करने तक सीमित नहीं हैं — वे विधेयकों की पारित होने से पहले (पूर्व-विधायी जांच) भी समीक्षा कर सकते हैं।",
+        "विकल्प (b) को चुनें: स्पीकर/अध्यक्ष के पास विधेयक को संबंधित DRSC को भेजने का विवेक होता है, लेकिन सरकार को ऐसा करने के लिए बाध्य नहीं किया जा सकता।"
+      ],
+      "upsc_trap_explanation": "यह परिदृश्य व्यापक लेकिन गलत धारणा का उपयोग करता है कि महत्वपूर्ण विधेयकों को DRSC की जांच से गुजरना आवश्यक है। व्यवहार में, नागरिकता संशोधन अधिनियम, तीन कृषि कानून और कई श्रम संहिता जैसे प्रमुख कानून पूरी तरह से DRSC की जांच से बच गए। संवैधानिक और प्रक्रियात्मक वास्तविकता यह है कि भेजना विवेकाधीन है — जो स्पीकर या अध्यक्ष के पास निहित है। कई नागरिक समाज और संसदीय सुधार समर्थकों ने भेजना अनिवार्य करने की मांग की है, लेकिन ऐसा कोई नियम मौजूद नहीं है।",
+      "final_explanation": "DRSCs को इस उद्देश्य से बनाया गया था कि वे सदन के व्यस्त फर्श पर असंभव विस्तृत विधायी जांच कर सकें। उनका पूर्व-विधायी कार्य — विधेयकों की धारा दर धारा जांच — उनकी सबसे मूल्यवान लेकिन कम उपयोग की जाने वाली भूमिकाओं में से एक है।\n\nहालांकि, किसी विधेयक को DRSC को भेजना अनिवार्य नहीं है। कार्यविधि नियमों के तहत, स्पीकर (लोकसभा) या अध्यक्ष (राज्यसभा) संबंधित DRSC को विधेयक भेज सकते हैं, या सदन स्वयं ऐसा प्रस्ताव पारित कर सकता है। कार्यपालिका को विधायी जांच के लिए समिति के माध्यम से भेजने के लिए बाध्य नहीं किया जा सकता।\n\n• विकल्प (a) — गलत: कोई नियम या संवैधानिक प्रावधान विधेयकों को DRSC को भेजना अनिवार्य नहीं करता।\n• विकल्प (b) — सही: स्पीकर/अध्यक्ष विवेकाधीन निर्णय करते हैं। संगठन केवल DRSC जांच की वकालत कर सकता है, बाध्य नहीं कर सकता।\n• विकल्प (c) — गलत: DRSC के पास लंबित विधेयकों पर अधिकार का स्वाभाविक दावा करने का कोई अधिकार नहीं है।\n• विकल्प (d) — गलत: DRSC विधेयकों की पारित होने से पहले और बाद दोनों समय जांच कर सकते हैं, साथ ही वार्षिक रिपोर्ट और अनुदान मांगों की भी समीक्षा करते हैं।\n\nमूल्यवर्धन:\n• PRS विधायी अनुसंधान ने हाल के वर्षों में DRSC को भेजे गए विधेयकों में गिरावट का दस्तावेजीकरण किया है।\n• दूसरी ARC और संसदीय सुधार बहसों ने सभी गैर-वित्तीय विधेयकों के लिए DRSC को भेजना अनिवार्य करने की सिफारिश की है।\n• DRSC 24 मंत्रालय समूहों को कवर करते हैं (2004 के बाद विस्तार), प्रत्येक समिति में दोनों सदनों के 31 सदस्य होते हैं।"
+    }
+  },
+  {
+    "uuid": "211247b8-e7f3-4184-a57b-841f5a0f8edc",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Committee on Subordinate Legislation",
+        "Committee on Papers Laid on the Table"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Subordinate legislation committee scope vs papers committee",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following parliamentary committees does NOT perform an oversight, accountability, or legislative scrutiny function?\n\n(a) Committee on Subordinate Legislation\n(b) Committee on Papers Laid on the Table\n(c) Library Committee\n(d) Committee on Government Assurances",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Students may select the Committee on Papers Laid on the Table as the odd one out because it sounds administrative, missing that it too is a scrutiny committee focused on procedural compliance.",
+      "elimination_logic": [
+        "Identify the common attribute: Three of the four options relate to committees that scrutinise delegated or subordinate forms of executive action/legislation.",
+        "Committee on Subordinate Legislation — scrutinises rules and regulations framed under delegated authority. Fits the scrutiny theme.",
+        "Committee on Papers Laid on the Table — scrutinises procedural compliance in laying statutory documents. Fits the scrutiny theme.",
+        "Committee on Government Assurances — scrutinises ministerial promises made on the floor of the House. Fits the scrutiny/accountability theme.",
+        "The Library Committee — supervises the Parliamentary Library and assists members in research. It has no scrutiny, accountability, or legislative oversight function. It is the odd one out."
+      ],
+      "upsc_trap_explanation": "The Library Committee sounds parliamentary and therefore 'legislative' to a casual reader. Students who do not know its purely administrative/housekeeping function may confuse it with substantive scrutiny committees. The three other options all perform an oversight or accountability role over executive actions — scrutinising delegated legislation, statutory documents, and ministerial assurances respectively. The Library Committee performs none of these functions.",
+      "final_explanation": "Parliamentary committees serve diverse functions: some scrutinise legislation, some oversee finances, and some are purely administrative. Distinguishing these categories is essential.\n\n• Option (a) — Committee on Subordinate Legislation: Examines rules, regulations, and bye-laws framed under delegated authority — a substantive oversight function.\n• Option (b) — Committee on Papers Laid on the Table: Examines whether documents tabled by Ministers meet procedural requirements under statute — a procedural oversight function.\n• Option (c) — Library Committee: Supervises the Parliamentary Library; assists members with research. It has zero legislative, financial, or accountability oversight role — purely administrative/housekeeping.\n• Option (d) — Committee on Government Assurances: Tracks whether ministerial promises made on the floor are fulfilled — a direct accountability function.\n\nValue Addition:\n• Library Committee and House Committee (residential amenities) are classified as 'service committees' — not scrutiny bodies.\n• Both Houses have separate Committees on Subordinate Legislation — they are not joint committees.\n• Committee on Papers Laid on the Table scrutinises procedural compliance only — it does not assess the merits of the documents tabled."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित संसदीय समितियों में से कौन-सी समिति निरीक्षण, जवाबदेही, या विधायी जांच कार्य नहीं करती?\n\n(a) Committee on Subordinate Legislation\n(b) Committee on Papers Laid on the Table\n(c) Library Committee\n(d) Committee on Government Assurances",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — छात्र इसे प्रशासनिक लगने वाली Committee on Papers Laid on the Table को अलग समझ सकते हैं, जबकि यह भी एक जांच समिति है जो प्रक्रियात्मक अनुपालन पर केंद्रित है।",
+      "elimination_logic": [
+        "सामान्य विशेषता पहचानें: चार विकल्पों में से तीन समितियाँ कार्यकारी कार्रवाई/विधि के प्रतिनिधि या अधीनस्थ रूपों की जांच करती हैं।",
+        "Committee on Subordinate Legislation — प्रतिनिधि अधिकार के तहत बनाए गए नियमों और विनियमों की जांच करती है। यह जांच विषय से मेल खाती है।",
+        "Committee on Papers Laid on the Table — विधिक दस्तावेजों के प्रस्तुतिकरण में प्रक्रियात्मक अनुपालन की जांच करती है। यह जांच विषय से मेल खाती है।",
+        "Committee on Government Assurances — सदन में मंत्री द्वारा किए गए वादों की जांच करती है। यह जांच/जवाबदेही विषय से मेल खाती है।",
+        "The Library Committee — संसदीय पुस्तकालय की देखरेख करती है और सदस्यों को शोध में सहायता प्रदान करती है। इसका कोई जांच, जवाबदेही या विधायी निरीक्षण कार्य नहीं है। यह अलग है।"
+      ],
+      "upsc_trap_explanation": "Library Committee संसदीय लगती है और इसलिए एक सामान्य पाठक के लिए 'विधायी' लग सकती है। जो छात्र इसके केवल प्रशासनिक/गृहकार्यात्मक कार्य को नहीं जानते, वे इसे जांच समितियों के साथ भ्रमित कर सकते हैं। अन्य तीन विकल्प कार्यकारी कार्रवाइयों पर निरीक्षण या जवाबदेही भूमिका निभाते हैं — प्रतिनिधि विधि, विधिक दस्तावेज, और मंत्री वादों की जांच। Library Committee इनमें से कोई भी कार्य नहीं करती।",
+      "final_explanation": "संसदीय समितियाँ विभिन्न कार्य करती हैं: कुछ विधि की जांच करती हैं, कुछ वित्त की देखरेख करती हैं, और कुछ केवल प्रशासनिक होती हैं। इन वर्गों को अलग पहचानना आवश्यक है।\n\n• विकल्प (a) — Committee on Subordinate Legislation: प्रतिनिधि अधिकार के तहत बनाए गए नियम, विनियम, और उपनियमों की जांच करती है — एक महत्वपूर्ण निरीक्षण कार्य।\n• विकल्प (b) — Committee on Papers Laid on the Table: यह जांचती है कि मंत्री द्वारा प्रस्तुत दस्तावेज विधि के तहत प्रक्रियात्मक आवश्यकताओं को पूरा करते हैं या नहीं — एक प्रक्रियात्मक निरीक्षण कार्य।\n• विकल्प (c) — Library Committee: संसदीय पुस्तकालय की देखरेख करती है; सदस्यों को शोध में सहायता प्रदान करती है। इसका कोई विधायी, वित्तीय, या जवाबदेही निरीक्षण कार्य नहीं है — केवल प्रशासनिक/गृहकार्यात्मक।\n• विकल्प (d) — Committee on Government Assurances: यह देखती है कि सदन में मंत्री द्वारा किए गए वादे पूरे हुए या नहीं — एक प्रत्यक्ष जवाबदेही कार्य।\n\nमूल्यवर्धन:\n• Library Committee और House Committee (आवासीय सुविधाएँ) को 'सेवा समितियाँ' कहा जाता है — ये जांच निकाय नहीं हैं।\n• दोनों सदनों में अलग-अलग Committee on Subordinate Legislation होती हैं — ये संयुक्त समितियाँ नहीं हैं।\n• Committee on Papers Laid on the Table केवल प्रक्रियात्मक अनुपालन की जांच करती है — यह प्रस्तुत दस्तावेजों की योग्यता का मूल्यांकन नहीं करती।"
+    }
+  },
+  {
+    "uuid": "058c9a6e-6c15-4e91-8da1-8911e1b572ff",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Committee on Privileges",
+        "Committee on Ethics"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "conflation",
+      "concept_anchor": "Ethics Committee establishment timeline RS vs LS",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Committee on Ethics in the Indian Parliament is ________ and was first established in ________, before being constituted in the other House subsequently.\n\n(a) constitutionally mandated; Lok Sabha in 1997\n(b) not constitutionally mandated; Rajya Sabha in 1997\n(c) not constitutionally mandated; Lok Sabha in 1997\n(d) constitutionally mandated; Rajya Sabha in 1990",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) reverses the order (Lok Sabha 1997, Rajya Sabha 2000), which feels plausible since Lok Sabha is the more prominent House and students may assume it acted first.",
+      "elimination_logic": [
+        "Eliminate option (a): The Ethics Committee is not constitutionally mandated — this is a key fact distinguishing it from many other committees.",
+        "Eliminate option (c): Rajya Sabha established its Ethics Committee in 1997, before Lok Sabha (2000) — not the other way around.",
+        "Eliminate option (d): 1990/1995 are fabricated years — neither House established an Ethics Committee in the 1990s before 1997.",
+        "Select option (b): Rajya Sabha (1997) preceded Lok Sabha (2000) — the correct order."
+      ],
+      "upsc_trap_explanation": "Students instinctively assume Lok Sabha acts before Rajya Sabha on most institutional reforms since it is the primary chamber. In this case, the Rajya Sabha was the pioneer — it established the Ethics Committee in 1997, three years before Lok Sabha did so in 2000. Option (c) exploits this assumption by reversing the order. Additionally, many students confuse the Ethics Committee with the Privileges Committee, conflating moral/professional accountability with legal breach-of-privilege proceedings.",
+      "final_explanation": "The Ethics Committee is a relatively recent addition to the parliamentary committee system, distinct from the longer-established Privileges Committee.\n\n• Option (a) — Incorrect: The Ethics Committee is not constitutionally mandated. It was created through procedural rules, not a constitutional provision — unlike, say, the PAC whose basis lies in rules connected to Article 151.\n• Option (b) — Correct: Rajya Sabha established its Ethics Committee in 1997; Lok Sabha followed in 2000.\n• Option (c) — Incorrect: This reverses the chronology. Rajya Sabha was the pioneer, not Lok Sabha.\n• Option (d) — Incorrect: Neither House established an Ethics Committee before 1997.\n\nValue Addition:\n• Privileges Committee handles breach of legal rights of the House; Ethics Committee deals with moral/professional misconduct of members.\n• Ethics Committee recommendations are not automatically binding — the full House retains final authority.\n• The Privileges Committee can recommend punishments including reprimand, suspension, or expulsion."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद में एथिक्स कमेटी ________ है और इसे सबसे पहले ________ में स्थापित किया गया था, जिसके बाद इसे दूसरे सदन में गठित किया गया।\n\n(a) संवैधानिक रूप से अनिवार्य; लोकसभा में 1997\n(b) संवैधानिक रूप से अनिवार्य नहीं; राज्यसभा में 1997\n(c) संवैधानिक रूप से अनिवार्य नहीं; लोकसभा में 1997\n(d) संवैधानिक रूप से अनिवार्य; राज्यसभा में 1990",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) क्रम उलट देता है (लोकसभा 1997, राज्यसभा 2000), जो संभावित लगता है क्योंकि लोकसभा अधिक प्रमुख सदन है और छात्र मान सकते हैं कि उसने पहले कार्य किया।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: एथिक्स कमेटी संवैधानिक रूप से अनिवार्य नहीं है — यह कई अन्य समितियों से इसे अलग करने वाला एक मुख्य तथ्य है।",
+        "विकल्प (c) को हटाएं: राज्यसभा ने 1997 में अपनी एथिक्स कमेटी स्थापित की, जो लोकसभा (2000) से पहले है — उल्टा नहीं।",
+        "विकल्प (d) को हटाएं: 1990/1995 काल्पनिक वर्ष हैं — 1997 से पहले किसी भी सदन ने एथिक्स कमेटी स्थापित नहीं की।",
+        "विकल्प (b) चुनें: राज्यसभा (1997) ने लोकसभा (2000) से पहले स्थापना की — सही क्रम।"
+      ],
+      "upsc_trap_explanation": "छात्र सहज रूप से मान लेते हैं कि अधिकांश संस्थागत सुधारों में लोकसभा राज्यसभा से पहले कार्य करती है क्योंकि यह प्राथमिक सदन है। इस मामले में, राज्यसभा अग्रणी थी — उसने 1997 में एथिक्स कमेटी स्थापित की, जो लोकसभा से तीन वर्ष पहले 2000 में हुई। विकल्प (c) इस मान्यता का फायदा उठाकर क्रम उलट देता है। इसके अतिरिक्त, कई छात्र एथिक्स कमेटी को प्रिविलेज कमेटी के साथ भ्रमित करते हैं, नैतिक/पेशेवर जवाबदेही को कानूनी अधिकारों के उल्लंघन से जोड़ देते हैं।",
+      "final_explanation": "एथिक्स कमेटी संसद की समिति प्रणाली में अपेक्षाकृत हाल की वृद्धि है, जो लंबे समय से स्थापित प्रिविलेज कमेटी से भिन्न है।\n\n• विकल्प (a) — गलत: एथिक्स कमेटी संवैधानिक रूप से अनिवार्य नहीं है। इसे संवैधानिक प्रावधान के बजाय प्रक्रियात्मक नियमों के माध्यम से बनाया गया था — जैसे कि PAC का आधार अनुच्छेद 151 से जुड़े नियम हैं।\n• विकल्प (b) — सही: राज्यसभा ने 1997 में अपनी एथिक्स कमेटी स्थापित की; लोकसभा ने 2000 में अनुसरण किया।\n• विकल्प (c) — गलत: यह कालक्रम को उलट देता है। राज्यसभा अग्रणी थी, न कि लोकसभा।\n• विकल्प (d) — गलत: 1997 से पहले किसी भी सदन ने एथिक्स कमेटी स्थापित नहीं की।\n\nमूल्य संवर्धन:\n• प्रिविलेज कमेटी सदन के कानूनी अधिकारों के उल्लंघन को संभालती है; एथिक्स कमेटी सदस्यों के नैतिक/पेशेवर कदाचार से संबंधित है।\n• एथिक्स कमेटी की सिफारिशें स्वचालित रूप से बाध्यकारी नहीं होतीं — पूर्ण सदन के पास अंतिम अधिकार होता है।\n• प्रिविलेज कमेटी दंड के रूप में फटकार, निलंबन, या निष्कासन की सिफारिश कर सकती है।"
+    }
+  },
+  {
+    "uuid": "863a3cde-5642-4758-8525-04b73098e8b2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Joint Parliamentary Committee (JPC): Ad Hoc Investigative Nature"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "JPC findings are recommendatory, not judicially enforceable",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following most accurately describes the nature and powers of a Joint Parliamentary Committee (JPC) constituted to investigate a specific matter of public importance?\n\n(a) It is constituted by an executive order of the President and functions as a quasi-judicial tribunal with enforceable findings\n(b) It can only examine documentary evidence and cannot summon ministers or senior officials\n(c) It is an Ad Hoc committee that dissolves after presenting its report to Parliament, and its findings are recommendatory in nature\n(d) Its findings, once tabled in Parliament, become judicially enforceable and courts are bound to take suo motu cognizance",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) appeals to students who know JPCs have wide powers (summoning ministers and officials) and assume these translate into enforceable directives.",
+      "elimination_logic": [
+        "Eliminate option (a): JPC is constituted by a motion passed in one House and concurred by the other — not by an executive order.",
+        "Eliminate option (b): JPC can summon ministers and officials — it is not restricted to only examining documents.",
+        "Eliminate option (d): JPC findings are presented to Parliament as a report — they are recommendatory and not judicially enforceable. Courts are not bound by JPC conclusions.",
+        "Select option (c): JPC is an Ad Hoc committee — it dissolves after presenting its report to Parliament."
+      ],
+      "upsc_trap_explanation": "The JPC's high political profile (Bofors, Harshad Mehta scam, 2G spectrum) leads students to overestimate its legal authority. Because it can summon senior officials and ministers, students assume its findings carry judicial or executive force. In reality, JPC findings are recommendatory — they are tabled in Parliament as a report and carry political but not legal enforceability. Courts have separately prosecuted individuals in cases where JPCs have also reported, but the JPC itself has no prosecutorial or enforcement authority.",
+      "final_explanation": "Joint Parliamentary Committees investigating specific matters of public importance are classic Ad Hoc committees with high political significance but limited formal legal power.\n\n• Option (a) — Incorrect: A JPC is constituted when one House passes a motion and the other House concurs — it is a parliamentary, not executive, creation.\n• Option (b) — Incorrect: JPCs can summon witnesses including ministers, officials, and experts. They are not limited to documentary examination.\n• Option (c) — Correct: JPCs are Ad Hoc — they are constituted for a specific inquiry and dissolve upon presenting their report to Parliament.\n• Option (d) — Incorrect: JPC findings are recommendatory. They are tabled as a report in Parliament. Courts are not bound by JPC conclusions, and any criminal prosecution follows from judicial processes, not JPC orders.\n\nValue Addition:\n• Notable JPCs: Bofors (1987), Harshad Mehta securities scam (1992), 2G spectrum allocation (2011).\n• JPC differs from a Select/Joint Committee on a Bill — JPCs investigate matters, not legislation.\n• The political significance of a JPC is often disproportionate to its formal legal powers."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा संयुक्त संसदीय समिति (JPC) की प्रकृति और शक्तियों का सबसे सटीक वर्णन करता है, जो किसी विशिष्ट सार्वजनिक महत्व के मामले की जांच के लिए गठित की गई हो?\n\n(a) इसे राष्ट्रपति के कार्यकारी आदेश द्वारा गठित किया जाता है और यह लागू निष्कर्षों के साथ एक अर्ध-न्यायिक न्यायाधिकरण के रूप में कार्य करती है\n(b) यह केवल दस्तावेजी साक्ष्य की जांच कर सकती है और मंत्रियों या वरिष्ठ अधिकारियों को समन नहीं भेज सकती\n(c) यह एक Ad Hoc समिति है जो संसद को अपनी रिपोर्ट प्रस्तुत करने के बाद समाप्त हो जाती है, और इसके निष्कर्ष सिफारिशात्मक होते हैं\n(d) इसके निष्कर्ष, एक बार संसद में प्रस्तुत होने के बाद, न्यायिक रूप से लागू हो जाते हैं और न्यायालय स्वतः संज्ञान लेने के लिए बाध्य होते हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) appeals to students who know JPCs have wide powers (summoning ministers and officials) and assume these translate into enforceable directives.",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: JPC एक सदन में पारित प्रस्ताव द्वारा गठित होती है और दूसरे सदन द्वारा सहमति दी जाती है — यह कार्यकारी आदेश द्वारा नहीं बनती।",
+        "विकल्प (b) को खारिज करें: JPC मंत्री और अधिकारियों को समन भेज सकती है — यह केवल दस्तावेजों की जांच तक सीमित नहीं है।",
+        "विकल्प (d) को खारिज करें: JPC के निष्कर्ष संसद में एक रिपोर्ट के रूप में प्रस्तुत किए जाते हैं — ये सिफारिशात्मक होते हैं और न्यायिक रूप से लागू नहीं होते। न्यायालय JPC के निष्कर्षों के बंधे हुए नहीं हैं।",
+        "विकल्प (c) को चुनें: JPC एक Ad Hoc समिति है — यह संसद को अपनी रिपोर्ट प्रस्तुत करने के बाद समाप्त हो जाती है।"
+      ],
+      "upsc_trap_explanation": "JPC की उच्च राजनीतिक प्रोफ़ाइल (बोफोर्स, हर्षद मेहता घोटाला, 2G स्पेक्ट्रम) छात्रों को इसकी कानूनी शक्ति को अधिक आंकने पर मजबूर करती है। क्योंकि यह वरिष्ठ अधिकारियों और मंत्रियों को समन भेज सकती है, छात्र मान लेते हैं कि इसके निष्कर्षों में न्यायिक या कार्यकारी शक्ति होती है। वास्तविकता में, JPC के निष्कर्ष सिफारिशात्मक होते हैं — ये संसद में रिपोर्ट के रूप में प्रस्तुत किए जाते हैं और राजनीतिक महत्व रखते हैं लेकिन कानूनी प्रवर्तन शक्ति नहीं। न्यायालयों ने उन मामलों में अलग से अभियोजन किया है जहाँ JPC ने भी रिपोर्ट दी है, लेकिन JPC के पास स्वयं अभियोजन या प्रवर्तन अधिकार नहीं है।",
+      "final_explanation": "विशिष्ट सार्वजनिक महत्व के मामलों की जांच करने वाली संयुक्त संसदीय समितियाँ (JPC) क्लासिक Ad Hoc समितियाँ हैं जिनका उच्च राजनीतिक महत्व होता है लेकिन सीमित औपचारिक कानूनी शक्ति होती है।\n\n• विकल्प (a) — गलत: JPC तब गठित होती है जब एक सदन प्रस्ताव पारित करता है और दूसरा सदन सहमत होता है — यह संसदीय है, कार्यकारी नहीं।\n• विकल्प (b) — गलत: JPC गवाहों को समन भेज सकती है जिनमें मंत्री, अधिकारी और विशेषज्ञ शामिल हैं। ये केवल दस्तावेजों की जांच तक सीमित नहीं हैं।\n• विकल्प (c) — सही: JPC Ad Hoc होती है — यह एक विशिष्ट जांच के लिए गठित होती है और संसद को अपनी रिपोर्ट प्रस्तुत करने के बाद समाप्त हो जाती है।\n• विकल्प (d) — गलत: JPC के निष्कर्ष सिफारिशात्मक होते हैं। ये संसद में रिपोर्ट के रूप में प्रस्तुत किए जाते हैं। न्यायालय JPC के निष्कर्षों के बंधे हुए नहीं हैं, और कोई भी आपराधिक अभियोजन न्यायिक प्रक्रियाओं से होता है, JPC के आदेश से नहीं।\n\nमूल्य संवर्धन:\n• उल्लेखनीय JPC: बोफोर्स (1987), हर्षद मेहता प्रतिभूतियाँ घोटाला (1992), 2G स्पेक्ट्रम आवंटन (2011)।\n• JPC एक विधेयक पर चयन/संयुक्त समिति से भिन्न है — JPC मामले की जांच करती है, विधायिका नहीं।\n• JPC का राजनीतिक महत्व अक्सर इसकी औपचारिक कानूनी शक्तियों से अधिक होता है।"
+    }
+  },
+  {
+    "uuid": "a80b31a4-47fb-485e-bdef-7d199a4c666b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Committee on Government Assurances",
+        "Committee on Papers Laid on the Table",
+        "Committee on Subordinate Legislation"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Government Assurances committee scope exclusions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements:\n\n1. The Committee on Government Assurances in each House scrutinises only the assurances made by Ministers on the floor of that respective House — it does not cover assurances given in the other House.\n2. The Committee on Government Assurances examines policy commitments made by the Finance Minister in Budget speeches to track their implementation.\n3. The Committee on Subordinate Legislation can examine the parent Act under which delegated powers have been granted to assess whether the delegation itself was appropriate.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Committee on Government Assurances in each House scrutinises only the assurances made by Ministers on the floor of that respective House — it does not cover assurances given in the other House.",
+          "verdict": "Correct",
+          "reason": "Separate Committees on Government Assurances exist in each House, and each covers only assurances made on the floor of its own House during Question Hour, debates, and other proceedings."
+        },
+        {
+          "statement": "The Committee on Government Assurances examines policy commitments made by the Finance Minister in Budget speeches to track their implementation.",
+          "verdict": "Incorrect",
+          "reason": "Budget speech commitments are not 'assurances' under this committee's jurisdiction. The committee covers only assurances made during floor proceedings such as Question Hour and debates — not Budget or policy documents."
+        },
+        {
+          "statement": "The Committee on Subordinate Legislation can examine the parent Act under which delegated powers have been granted to assess whether the delegation itself was appropriate.",
+          "verdict": "Incorrect",
+          "reason": "The Committee on Subordinate Legislation examines only the rules, regulations, and notifications framed under delegated authority — not the parent Act itself. Whether the delegation was appropriate is a matter for Parliament when enacting the parent legislation."
+        }
+      ],
+      "strong_distractor": "d — Selecting all three as correct is the most dangerous error: Statement 2 sounds perfectly reasonable (Budget commitments are ministerial), and Statement 3 sounds logical (why wouldn't the committee look at the source of power?).",
+      "elimination_logic": [
+        "Verify Statement 1: Each House has its own Committee on Government Assurances covering only its own floor proceedings. Statement 1 is Correct.",
+        "Verify Statement 2: Budget speech commitments are not within scope — only floor assurances during Question Hour, debates etc. Statement 2 is Incorrect.",
+        "Verify Statement 3: Committee on Subordinate Legislation examines rules framed under the parent Act, not the Act itself. Statement 3 is Incorrect.",
+        "Only Statement 1 is correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the logical assumption that if a committee tracks ministerial promises, Budget commitments must be the most important such promises to track. The committee's scope is narrower — it covers only oral and written assurances during floor proceedings. Statement 3 exploits the idea that examining delegated legislation should naturally include the source of that delegation. The committee's mandate is deliberately narrow: it only checks compliance within the delegation, not the delegation's wisdom.",
+      "final_explanation": "Both the Committee on Government Assurances and the Committee on Subordinate Legislation have carefully circumscribed mandates that are commonly misunderstood.\n\n• Statement 1 — Correct: Separate committees in each House cover only floor assurances of that House. There is no cross-House jurisdiction.\n• Statement 2 — Incorrect: Budget speeches, policy documents, and electoral promises are outside the committee's scope. Only assurances made during Question Hour, debates, Private Member's Bills discussions, etc., are covered.\n• Statement 3 — Incorrect: The Committee on Subordinate Legislation scrutinises whether rules/regulations stay within the scope of delegation granted by the parent Act — it does not revisit or evaluate the parent Act itself.\n\nValue Addition:\n• Committee on Government Assurances checks implementation timeliness — it tracks 'pending assurances' that remain unfulfilled.\n• Committee on Subordinate Legislation is a Standing Committee but is separate in each House — not a joint committee.\n• Committee on Papers Laid on the Table is the closest counterpart — it checks procedural compliance in tabling documents, not their substance."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित कथनों पर विचार करें:\n\n1. प्रत्येक सदन में सरकार की आश्वासन समिति केवल उस संबंधित सदन के सदस्यों द्वारा सदन के मंच पर दिए गए मंत्रियों के आश्वासनों की ही जांच करती है — यह दूसरे सदन में दिए गए आश्वासनों को कवर नहीं करती।\n2. सरकार की आश्वासन समिति बजट भाषणों में वित्त मंत्री द्वारा किए गए नीति प्रतिबद्धताओं की जांच करती है ताकि उनके क्रियान्वयन को ट्रैक किया जा सके।\n3. अधीनस्थ विधायिका समिति उस मूल अधिनियम की जांच कर सकती है जिसके तहत प्रतिनिधि शक्तियाँ प्रदान की गई हैं ताकि यह आंका जा सके कि प्रतिनिधि देना उचित था या नहीं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Committee on Government Assurances in each House scrutinises only the assurances made by Ministers on the floor of that respective House — it does not cover assurances given in the other House.",
+          "verdict": "Correct",
+          "reason": "Separate Committees on Government Assurances exist in each House, and each covers only assurances made on the floor of its own House during Question Hour, debates, and other proceedings."
+        },
+        {
+          "statement": "The Committee on Government Assurances examines policy commitments made by the Finance Minister in Budget speeches to track their implementation.",
+          "verdict": "Incorrect",
+          "reason": "Budget speech commitments are not 'assurances' under this committee's jurisdiction. The committee covers only assurances made during floor proceedings such as Question Hour and debates — not Budget or policy documents."
+        },
+        {
+          "statement": "The Committee on Subordinate Legislation can examine the parent Act under which delegated powers have been granted to assess whether the delegation itself was appropriate.",
+          "verdict": "Incorrect",
+          "reason": "The Committee on Subordinate Legislation examines only the rules, regulations, and notifications framed under delegated authority — not the parent Act itself. Whether the delegation was appropriate is a matter for Parliament when enacting the parent legislation."
+        }
+      ],
+      "strong_distractor": "d — Selecting all three as correct is the most dangerous error: Statement 2 sounds perfectly reasonable (Budget commitments are ministerial), and Statement 3 sounds logical (why wouldn't the committee look at the source of power?).",
+      "elimination_logic": [
+        "Verify Statement 1: Each House has its own Committee on Government Assurances covering only its own floor proceedings. Statement 1 is Correct.",
+        "Verify Statement 2: Budget speech commitments are not within scope — only floor assurances during Question Hour, debates etc. Statement 2 is Incorrect.",
+        "Verify Statement 3: Committee on Subordinate Legislation examines rules framed under the parent Act, not the Act itself. Statement 3 is Incorrect.",
+        "Only Statement 1 is correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the logical assumption that if a committee tracks ministerial promises, Budget commitments must be the most important such promises to track. The committee's scope is narrower — it covers only oral and written assurances during floor proceedings. Statement 3 exploits the idea that examining delegated legislation should naturally include the source of that delegation. The committee's mandate is deliberately narrow: it only checks compliance within the delegation, not the delegation's wisdom.",
+      "final_explanation": "Both the Committee on Government Assurances and the Committee on Subordinate Legislation have carefully circumscribed mandates that are commonly misunderstood.\n\n• Statement 1 — Correct: Separate committees in each House cover only floor assurances of that House. There is no cross-House jurisdiction.\n• Statement 2 — Incorrect: Budget speeches, policy documents, and electoral promises are outside the committee's scope. Only assurances made during Question Hour, debates, Private Member's Bills discussions, etc., are covered.\n• Statement 3 — Incorrect: The Committee on Subordinate Legislation scrutinises whether rules/regulations stay within the scope of delegation granted by the parent Act — it does not revisit or evaluate the parent Act itself.\n\nValue Addition:\n• Committee on Government Assurances checks implementation timeliness — it tracks 'pending assurances' that remain unfulfilled.\n• Committee on Subordinate Legislation is a Standing Committee but is separate in each House — not a joint committee.\n• Committee on Papers Laid on the Table is the closest counterpart — it checks procedural compliance in tabling documents, not their substance."
+    }
+  },
+  {
+    "uuid": "982ab6d7-231f-4ddf-a000-8bb1489e15ec",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Quorum, Voting, and Procedural Rules in Parliamentary Committees"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Committee quorum and secrecy of proceedings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding procedural rules governing parliamentary committees in India:\n\n1. The quorum for a meeting of any parliamentary committee is one-half of its total membership.\n2. A Minister who is a member of a Departmentally Related Standing Committee cannot participate in that committee's examination of the Demands for Grants of their own ministry.\n3. Parliamentary committees can meet only during parliamentary sessions and not during inter-session periods.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The quorum for a meeting of any parliamentary committee is one-half of its total membership.",
+          "verdict": "Incorrect",
+          "reason": "The quorum for parliamentary committees is one-third of total membership, not one-half. One-half is the quorum requirement for the full House."
+        },
+        {
+          "statement": "A Minister who is a member of a Departmentally Related Standing Committee cannot participate in that committee's examination of the Demands for Grants of their own ministry.",
+          "verdict": "Correct",
+          "reason": "This is a deliberate procedural safeguard: a Minister sitting in a DRSC cannot participate when their own ministry's Demands for Grants are being examined — to prevent conflict of interest and ensure independent scrutiny."
+        },
+        {
+          "statement": "Parliamentary committees can meet only during parliamentary sessions and not during inter-session periods.",
+          "verdict": "Incorrect",
+          "reason": "Parliamentary committees, including DRSCs, can and regularly do meet during inter-session periods. This is one of their key advantages over full House proceedings, which require a session to be in progress."
+        }
+      ],
+      "strong_distractor": "c — Students selecting option (c) (only Statement 3 is incorrect) correctly identify the inter-session meeting issue but miss that the one-half quorum figure in Statement 1 is also wrong.",
+      "elimination_logic": [
+        "Verify Statement 1: Quorum for committees is one-third of membership, not one-half. Statement 1 is Incorrect.",
+        "Verify Statement 2: A Minister cannot participate in DRSC scrutiny of their own ministry's grants — this is a genuine procedural rule. Statement 2 is Correct.",
+        "Verify Statement 3: Committees routinely meet during inter-session periods — this is a key procedural feature. Statement 3 is Incorrect.",
+        "Statements 1 and 3 are NOT correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the tendency to apply full-House quorum rules to committees. The House requires one-half; committees require only one-third. Statement 3 exploits the instinct that parliamentary bodies can function only when Parliament is in session. Committees are specifically designed to work between sessions — this continuity is central to their value. Both traps use 'reasonable-sounding' substitutions that feel correct without precise knowledge.",
+      "final_explanation": "Parliamentary committees have distinct procedural rules that differ significantly from those governing the full House.\n\n• Statement 1 — Incorrect: Committee quorum is one-third of total membership. The one-half requirement applies to the full House (Lok Sabha and Rajya Sabha). Many students conflate these.\n• Statement 2 — Correct: The rule preventing a Minister from participating in DRSC scrutiny of their own ministry is a critical conflict-of-interest safeguard. It ensures the scrutiny function remains independent.\n• Statement 3 — Incorrect: Parliamentary committees regularly meet during inter-session periods. In fact, the ability to work continuously — unlike the full House — is one of the strongest arguments for the committee system.\n\nValue Addition:\n• Committee proceedings are secret — members cannot disclose evidence or deliberations before the report is presented to the House.\n• Committees can take evidence from experts, administrators, and civil society, making them effective technical scrutiny bodies.\n• DRSCs meet an average of 20–30 times per year, including inter-session sittings."
+    },
+    "hi": {
+      "display_text": "भारत में संसदीय समितियों के संचालन संबंधी प्रक्रिया नियमों के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. किसी भी संसदीय समिति की बैठक के लिए कोरम उसकी कुल सदस्यता का आधा होता है।\n2. एक मंत्री जो विभागीय स्थायी समिति का सदस्य है, वह उस समिति की अपनी ही मंत्रालय की अनुदान मांगों की जांच में भाग नहीं ले सकता।\n3. संसदीय समितियाँ केवल संसदीय सत्रों के दौरान ही बैठक कर सकती हैं, अंतर-सत्र काल में नहीं।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The quorum for a meeting of any parliamentary committee is one-half of its total membership.",
+          "verdict": "गलत",
+          "reason": "संसदीय समितियों के लिए कोरम कुल सदस्यता का एक-तिहाई होता है, न कि आधा। आधा कोरम पूर्ण सदन के लिए आवश्यक होता है।"
+        },
+        {
+          "statement": "A Minister who is a member of a Departmentally Related Standing Committee cannot participate in that committee's examination of the Demands for Grants of their own ministry.",
+          "verdict": "सही",
+          "reason": "यह एक जानबूझकर लागू की गई प्रक्रिया सुरक्षा है: एक मंत्री जो DRSC का सदस्य है, वह अपनी ही मंत्रालय की मांगों की जांच में भाग नहीं ले सकता — ताकि हितों के टकराव से बचा जा सके और स्वतंत्र जांच सुनिश्चित हो सके।"
+        },
+        {
+          "statement": "Parliamentary committees can meet only during parliamentary sessions and not during inter-session periods.",
+          "verdict": "गलत",
+          "reason": "संसदीय समितियाँ, जिनमें DRSC भी शामिल हैं, अंतर-सत्र काल में भी बैठक कर सकती हैं और नियमित रूप से करती हैं। यह पूर्ण सदन की कार्यवाही की तुलना में उनकी एक प्रमुख विशेषता है, जिसके लिए सत्र चल रहा होना आवश्यक होता है।"
+        }
+      ],
+      "strong_distractor": "c — छात्र जो विकल्प (c) (केवल कथन 3 गलत है) चुनते हैं, वे अंतर-सत्र बैठक के मुद्दे को सही पहचानते हैं लेकिन कथन 1 में दिए गए आधा कोरम आंकड़े को गलत समझते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: समितियों के लिए कोरम सदस्यता का एक-तिहाई होता है, आधा नहीं। कथन 1 गलत है।",
+        "कथन 2 सत्यापित करें: एक मंत्री अपनी ही मंत्रालय की मांगों की DRSC जांच में भाग नहीं ले सकता — यह एक वास्तविक प्रक्रिया नियम है। कथन 2 सही है।",
+        "कथन 3 सत्यापित करें: समितियाँ नियमित रूप से अंतर-सत्र काल में बैठक करती हैं — यह एक महत्वपूर्ण प्रक्रिया विशेषता है। कथन 3 गलत है।",
+        "कथन 1 और 3 सही नहीं हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में पूर्ण सदन के कोरम नियमों को समितियों पर लागू करने की प्रवृत्ति का फायदा उठाया गया है। सदन के लिए आधा आवश्यक है; समितियों के लिए केवल एक-तिहाई। कथन 3 में संसदीय निकाय केवल सत्र के दौरान कार्य कर सकते हैं, ऐसी धारणा का फायदा उठाया गया है। समितियाँ विशेष रूप से सत्रों के बीच काम करने के लिए डिज़ाइन की गई हैं — यह उनकी उपयोगिता का मूल है। दोनों जाल 'तर्कसंगत' लगने वाले विकल्पों का उपयोग करते हैं जो बिना सटीक ज्ञान के सही लगते हैं।",
+      "final_explanation": "संसदीय समितियों के लिए अलग प्रक्रिया नियम होते हैं जो पूर्ण सदन के नियमों से काफी भिन्न होते हैं।\n\n• कथन 1 — गलत: समिति का कोरम कुल सदस्यता का एक-तिहाई होता है। आधा कोरम पूर्ण सदन (लोकसभा और राज्यसभा) के लिए होता है। कई छात्र इसे भ्रमित कर देते हैं।\n• कथन 2 — सही: एक मंत्री को अपनी ही मंत्रालय की DRSC जांच में भाग लेने से रोकना हितों के टकराव को रोकने वाला महत्वपूर्ण नियम है। यह जांच की स्वतंत्रता सुनिश्चित करता है।\n• कथन 3 — गलत: संसदीय समितियाँ नियमित रूप से अंतर-सत्र काल में बैठक करती हैं। वास्तव में, पूर्ण सदन के विपरीत, निरंतर कार्य करने की क्षमता समिति प्रणाली की सबसे मजबूत विशेषताओं में से एक है।\n\nमूल्य संवर्धन:\n• समिति की कार्यवाही गोपनीय होती है — सदस्य रिपोर्ट सदन को प्रस्तुत होने से पहले साक्ष्य या विचार-विमर्श का खुलासा नहीं कर सकते।\n• समितियाँ विशेषज्ञों, प्रशासकों और नागरिक समाज से साक्ष्य ले सकती हैं, जिससे वे प्रभावी तकनीकी जांच निकाय बनती हैं।\n• DRSC औसतन प्रति वर्ष 20–30 बार बैठक करती हैं, जिसमें अंतर-सत्र बैठकें भी शामिल हैं।"
+    }
+  },
+  {
+    "uuid": "461e5ca1-b124-4b23-9787-69c3d48178d0",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "DRSC evolution 1993 to 2004 expansion",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly represents the chronological evolution of Departmentally Related Standing Committees (DRSCs) in the Indian Parliament?\n\n(a) Originally constituted with 17 committees in 1993 → Expanded to 24 committees in 2004\n(b) Originally constituted with 24 committees in 1993 → Expanded further in 2004 to include all ministries\n(c) Originally constituted with 17 committees in 1993 → Expanded to 24 committees in 1998\n(d) Originally constituted with 24 committees in 2004 → Subsequently rationalised to 17 committees in 1993",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places the 24-committee expansion before the 17-committee origin, which appeals to students who remember '24' as the number and vaguely recall the 1993 reform without knowing which number came first.",
+      "elimination_logic": [
+        "Anchor on the founding event: DRSCs were originally constituted with 17 committees in 1993 — this is the starting point.",
+        "The expansion to 24 committees occurred in 2004 — this came after the 1993 origin.",
+        "Eliminate options placing the 24-committee phase before the 17-committee phase.",
+        "The correct sequence is: 17 committees (1993) → 24 committees (2004). Select option (a)."
+      ],
+      "upsc_trap_explanation": "Students who remember DRSCs as '24 committees' may place the 2004 expansion first, especially if they recall it as the 'current' structure and treat 1993 as a later refinement. The trap is temporal: '24' is the more familiar number because it is the post-2004 figure that appears in most textbooks. Knowing that DRSCs started with 17 committees in 1993 and were expanded to 24 in 2004 requires chronological precision, not just factual recall.",
+      "final_explanation": "The DRSC system has evolved through distinct phases since its introduction as a mechanism for detailed legislative and budgetary scrutiny.\n\nCorrect sequence:\n1. 1993 — DRSCs were first constituted with 17 committees covering various ministry clusters. This marked a significant reform in parliamentary oversight.\n2. 2004 — The system was expanded to 24 committees to cover all central government ministries and departments more comprehensively.\n\nWhy wrong options fail:\n• Option (b): Placing the 24-committee expansion before the 1993 origin reverses the chronology.\n• Option (c): Placing the expansion in 1998 is a temporal fabrication — no such expansion occurred then.\n• Option (d): Swapping the years (2004 as origin, 1993 as expansion) is internally illogical.\n\nValue Addition:\n• Each DRSC has 31 members drawn from both Houses (Lok Sabha and Rajya Sabha).\n• DRSCs are reconstituted annually and can examine Bills, Demands for Grants, and annual reports.\n• Recent proposals (2024 context) have discussed restructuring DRSCs to 8 broader clusters, though no final restructuring has been adopted."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद में विभागीय संबंधित स्थायी समितियों (DRSCs) के कालानुक्रमिक विकास का सही प्रतिनिधित्व निम्नलिखित में से कौन-सा है?\n\n(a) मूल रूप से 1993 में 17 समितियों के साथ गठित → 2004 में 24 समितियों तक विस्तार\n(b) मूल रूप से 1993 में 24 समितियों के साथ गठित → 2004 में सभी मंत्रालयों को शामिल करने के लिए और विस्तार\n(c) मूल रूप से 1993 में 17 समितियों के साथ गठित → 1998 में 24 समितियों तक विस्तार\n(d) मूल रूप से 2004 में 24 समितियों के साथ गठित → बाद में 1993 में 17 समितियों तक पुनर्संगठित",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) 24-सदस्य समिति के विस्तार को 17-सदस्य समिति की उत्पत्ति से पहले रखता है, जो उन छात्रों को आकर्षित करता है जो '24' संख्या को याद रखते हैं और 1993 के सुधार को अस्पष्ट रूप से याद करते हैं बिना यह जाने कि कौन-सी संख्या पहले आई।",
+      "elimination_logic": [
+        "स्थापना घटना पर आधारित: DRSC मूल रूप से 1993 में 17 समितियों के साथ गठित किए गए थे — यह प्रारंभिक बिंदु है।",
+        "24 समितियों के विस्तार 2004 में हुआ — यह 1993 की उत्पत्ति के बाद आया।",
+        "विकल्पों को हटा दें जो 24-सदस्य समिति के चरण को 17-सदस्य समिति के चरण से पहले रखते हैं।",
+        "सही क्रम है: 17 समितियाँ (1993) → 24 समितियाँ (2004)। विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "जो छात्र DRSC को '24 समितियाँ' के रूप में याद करते हैं, वे 2004 के विस्तार को पहले रख सकते हैं, खासकर यदि वे इसे 'वर्तमान' संरचना के रूप में याद करते हैं और 1993 को बाद का सुधार मानते हैं। यह जाल कालानुक्रमिक है: '24' अधिक परिचित संख्या है क्योंकि यह 2004 के बाद की संख्या है जो अधिकांश पाठ्यपुस्तकों में आती है। यह जानना कि DRSC की शुरुआत 1993 में 17 समितियों के साथ हुई और 2004 में इसे 24 समितियों तक बढ़ाया गया, इसके लिए कालानुक्रमिक सटीकता आवश्यक है, केवल तथ्यात्मक स्मृति नहीं।",
+      "final_explanation": "DRSC प्रणाली ने अपने परिचय के बाद से विशिष्ट चरणों के माध्यम से विकास किया है, जो विधायी और बजटीय जांच के लिए एक तंत्र है।\n\nसही क्रम:\n1. 1993 — DRSC की पहली बार 17 समितियों के साथ स्थापना हुई, जो विभिन्न मंत्रालय समूहों को कवर करती थीं। यह संसदीय निगरानी में एक महत्वपूर्ण सुधार था।\n2. 2004 — प्रणाली को 24 समितियों तक विस्तारित किया गया ताकि सभी केंद्रीय सरकार के मंत्रालयों और विभागों को अधिक व्यापक रूप से कवर किया जा सके।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (b): 24-सदस्य समिति के विस्तार को 1993 की उत्पत्ति से पहले रखना कालानुक्रम को उलट देता है।\n• विकल्प (c): 1998 में विस्तार को रखना कालानुक्रमिक मिथ्या है — उस समय ऐसा कोई विस्तार नहीं हुआ।\n• विकल्प (d): वर्षों को उलटना (2004 को उत्पत्ति और 1993 को विस्तार) आंतरिक रूप से तर्कहीन है।\n\nमूल्य संवर्धन:\n• प्रत्येक DRSC में दोनों सदनों (लोकसभा और राज्यसभा) के 31 सदस्य होते हैं।\n• DRSCs को वार्षिक रूप से पुनर्गठित किया जाता है और ये विधेयक, अनुदान मांगों और वार्षिक रिपोर्टों की जांच कर सकते हैं।\n• हाल के प्रस्तावों (2024 संदर्भ) में DRSCs को 8 व्यापक समूहों में पुनर्गठित करने पर चर्चा हुई है, हालांकि कोई अंतिम पुनर्गठन अपनाया नहीं गया है।"
+    }
+  },
+  {
+    "uuid": "bbd89440-0818-4d4f-a3dc-b50a71c33aff",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Committee on Privileges",
+        "Committee on Ethics"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Privileges Committee recommends; House decides final order",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Committee on Privileges in the Lok Sabha investigates questions of breach of privilege and submits recommendations, but the final order — including any punishment — is passed by the full House through a resolution.\n\nReason (R): The Committee on Privileges derives its authority directly from a specific Article of the Constitution of India that mandates its constitution in each House of Parliament.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both A and R are correct and see a surface connection between 'investigation' and 'passing final judgment' may select (a), missing that R does not causally explain A.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. The Committee on Privileges investigates and recommends; it is the full House that passes the final order on breach of privilege. This is an established procedural fact.",
+        "Step 2: Is Reason (R) correct? — No. R claims that the Privileges Committee is constitutionally constituted under a specific provision of the Constitution. In fact, the Committee on Privileges is constituted under the Rules of Procedure — it has no direct constitutional basis in a specific article. (Parliamentary privileges as such are under Articles 105/194, but the committee itself is a creature of rules.)",
+        "Step 3: Since R is factually incorrect, the answer is option (c): A is correct, R is incorrect."
+      ],
+      "upsc_trap_explanation": "The trap operates by invoking the correct fact that parliamentary privileges are constitutionally protected (Articles 105, 194) and then falsely attributing the Privileges Committee's constitution to a specific constitutional article. Students who know privileges are constitutional rights may assume the committee enforcing them is also directly constitutionally created. In reality, the committee is constituted under Rules of Procedure — the constitutional protection applies to the privileges themselves, not to the committee mechanism.",
+      "final_explanation": "The Committee on Privileges occupies a quasi-judicial role in maintaining the dignity and independence of Parliament, but its procedural limits are precisely defined.\n\nAssertion (A) — Correct: The Privileges Committee only investigates allegations of breach of privilege and makes recommendations (including reprimand, suspension, or expulsion). The House itself, through a resolution or order, takes the final action. The committee cannot independently impose punishment.\n\nReason (R) — Incorrect: The Committee on Privileges is constituted under the Rules of Procedure of the respective House — not under a specific constitutional article. Parliamentary privileges themselves are protected under Articles 105 (Parliament) and 194 (State Legislatures), but the committee mechanism is a rules-based creation.\n\nSince A is correct and R is incorrect, the answer is option (c).\n\nValue Addition:\n• The Speaker nominates members of the Privileges Committee and chairs it (in Lok Sabha) ex officio without being a formal member.\n• Breach of privilege can arise from actions both inside and outside the House that obstruct members in discharge of their duties.\n• The Ethics Committee deals with moral/professional misconduct — distinct from the legal/rights-based jurisdiction of the Privileges Committee."
+    },
+    "hi": {
+      "display_text": "कथन (A): लोकसभा में प्रिविलेजेज़ समिति विशेषाधिकार उल्लंघन के प्रश्नों की जांच करती है और सिफारिशें प्रस्तुत करती है, लेकिन अंतिम आदेश — जिसमें कोई दंड भी शामिल हो सकता है — पूर्ण सदन द्वारा प्रस्ताव के माध्यम से पारित किया जाता है।\n\nकारण (R): प्रिविलेजेज़ समिति अपनी अधिकारिता सीधे भारत के संविधान के किसी विशिष्ट अनुच्छेद से प्राप्त करती है जो प्रत्येक संसदीय सदन में इसकी स्थापना का प्रावधान करता है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both A and R are correct and see a surface connection between 'investigation' and 'passing final judgment' may select (a), missing that R does not causally explain A.",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। समिति ऑन प्रिविलेजेज़ जांच करती है और सिफारिशें देती है; अंतिम आदेश का पारित होना पूर्ण सदन द्वारा होता है। यह एक स्थापित प्रक्रिया संबंधी तथ्य है।",
+        "चरण 2: क्या कारण (R) सही है? — नहीं। R का दावा है कि प्रिविलेजेज़ समिति संविधान के किसी विशिष्ट प्रावधान के तहत संवैधानिक रूप से गठित है। वास्तव में, प्रिविलेजेज़ समिति नियमावली के तहत गठित होती है — इसका कोई विशिष्ट संवैधानिक अनुच्छेद में प्रत्यक्ष आधार नहीं है। (संसदीय विशेषाधिकार स्वयं अनुच्छेद 105/194 के अंतर्गत आते हैं, लेकिन समिति स्वयं नियमों का निर्माण है।)",
+        "चरण 3: चूंकि R तथ्यात्मक रूप से गलत है, उत्तर विकल्प (c) है: A सही है, R गलत है।"
+      ],
+      "upsc_trap_explanation": "यह जाल इस तथ्य का उपयोग करता है कि संसदीय विशेषाधिकार संवैधानिक रूप से संरक्षित हैं (अनुच्छेद 105, 194) और फिर गलत तरीके से प्रिविलेजेज़ समिति की स्थापना को किसी विशिष्ट संवैधानिक अनुच्छेद से जोड़ता है। जो छात्र जानते हैं कि विशेषाधिकार संवैधानिक अधिकार हैं, वे मान सकते हैं कि उन्हें लागू करने वाली समिति भी सीधे संवैधानिक रूप से गठित है। वास्तविकता में, समिति नियमावली के तहत गठित होती है — संवैधानिक संरक्षण केवल विशेषाधिकारों पर लागू होता है, समिति तंत्र पर नहीं।",
+      "final_explanation": "प्रिविलेजेज़ समिति संसदीय गरिमा और स्वतंत्रता बनाए रखने में एक अर्ध-न्यायिक भूमिका निभाती है, लेकिन इसकी प्रक्रिया संबंधी सीमाएँ स्पष्ट रूप से परिभाषित हैं।\n\nकथन (A) — सही: प्रिविलेजेज़ समिति केवल विशेषाधिकार उल्लंघन के आरोपों की जांच करती है और सिफारिशें (जैसे फटकार, निलंबन, या निष्कासन) प्रस्तुत करती है। अंतिम कार्रवाई सदन स्वयं प्रस्ताव या आदेश के माध्यम से करता है। समिति स्वतंत्र रूप से दंड नहीं लगा सकती।\n\nकारण (R) — गलत: प्रिविलेजेज़ समिति संबंधित सदन की नियमावली के तहत गठित होती है — किसी विशिष्ट संवैधानिक अनुच्छेद के तहत नहीं। संसदीय विशेषाधिकार स्वयं अनुच्छेद 105 (संसद) और 194 (राज्य विधानसभाएँ) के तहत संरक्षित हैं, लेकिन समिति तंत्र नियम-आधारित है।\n\nचूंकि A सही है और R गलत है, उत्तर विकल्प (c) है।\n\nमूल्य संवर्धन:\n• स्पीकर प्रिविलेजेज़ समिति के सदस्यों को नामित करते हैं और (लोकसभा में) इसके अध्यक्ष होते हैं, बिना औपचारिक सदस्य बने।\n• विशेषाधिकार उल्लंघन सदन के अंदर और बाहर दोनों कार्यों से हो सकता है जो सदस्यों के कर्तव्यों के निर्वहन में बाधा डालते हैं।\n• एथिक्स समिति नैतिक/पेशेवर कदाचार से संबंधित है — जो प्रिविलेजेज़ समिति के कानूनी/अधिकार आधारित क्षेत्र से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "8327be67-d5f7-4e0d-96ca-5e2939a7f086",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Consultative Committees: Nature and Distinction from Parliamentary Committees"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Consultative Committees not parliamentary committees; no formal powers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs regarding Consultative Committees attached to central government ministries is correctly matched?\n\n(a) Constitution authority — Constituted by the Rules Committee of Lok Sabha; provides structured legislative input\n(b) Functional scope — Can formally examine annual reports and ministry expenditures; reports findings to Parliament\n(c) Powers — Can summon witnesses and call for official papers to examine ministry performance\n(d) Nature — Constituted by the Ministry of Parliamentary Affairs; provides only an informal discussion forum with no formal powers",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) claims Consultative Committees can examine annual reports of ministries, which sounds plausible because DRSCs do so — students may conflate the two.",
+      "elimination_logic": [
+        "Eliminate option (a): Consultative Committees are constituted by the Ministry of Parliamentary Affairs, not by the Lok Sabha Rules Committee — a fabrication.",
+        "Eliminate option (b): Consultative Committees cannot examine annual reports in a formal capacity — that is a DRSC function. Consultative Committees only provide an informal discussion forum.",
+        "Eliminate option (c): Consultative Committees cannot summon witnesses — this is a formal power available only to DRSCs, Select/Joint Committees, and financial committees.",
+        "Select option (d): Consultative Committees are constituted by the Ministry of Parliamentary Affairs and provide only an informal forum for discussion — they have no formal powers. This pair is correctly matched."
+      ],
+      "upsc_trap_explanation": "Options (b) and (c) deliberately borrow functions from DRSCs and apply them to Consultative Committees. Students who confuse Consultative Committees with DRSCs may select these. The critical distinction: Consultative Committees have no formal powers whatsoever — no summons authority, no formal document examination, no report submission to Parliament. They exist solely for informal dialogue between Ministers and MPs about ministry policies.",
+      "final_explanation": "Consultative Committees are frequently confused with parliamentary committees, especially DRSCs, because both involve MPs discussing ministry policies.\n\n• Option (a) — Incorrect: Consultative Committees are constituted by the Ministry of Parliamentary Affairs, not by the Rules Committee — fabricated attribution.\n• Option (b) — Incorrect: Formal examination of ministry annual reports belongs to DRSCs, not Consultative Committees, which have no such formal mandate.\n• Option (c) — Incorrect: Consultative Committees cannot summon witnesses or call for papers — they have no formal powers of any kind.\n• Option (d) — Correct: Constituted by the Ministry of Parliamentary Affairs; provide only an informal dialogue forum between Ministers and MPs; no formal powers.\n\nValue Addition:\n• Consultative Committees meet both during sessions and inter-session periods — membership is voluntary for MPs.\n• They are not parliamentary committees in the strict legal sense — their proceedings are not recorded as formal parliamentary proceedings.\n• DRSCs are the formal counterpart to Consultative Committees — with binding examination powers (though non-binding recommendations)."
+    },
+    "hi": {
+      "display_text": "केंद्रीय सरकार के मंत्रालयों से सम्बद्ध सलाहकार समितियों के संबंध में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) गठन प्राधिकरण — लोकसभा की नियम समिति द्वारा गठित; संरचित विधायी इनपुट प्रदान करती है\n(b) कार्यक्षेत्र — वार्षिक रिपोर्टों और मंत्रालय के व्यय की औपचारिक जांच कर सकती है; संसद को निष्कर्ष प्रस्तुत करती है\n(c) अधिकार — गवाहों को तलब कर सकती है और मंत्रालय के प्रदर्शन की जांच के लिए आधिकारिक दस्तावेज मांग सकती है\n(d) स्वभाव — संसदीय कार्य मंत्रालय द्वारा गठित; केवल अनौपचारिक चर्चा मंच प्रदान करती है, कोई औपचारिक अधिकार नहीं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) का दावा है कि सलाहकार समितियाँ मंत्रालयों की वार्षिक रिपोर्टों की जांच कर सकती हैं, जो प्रासंगिक लगता है क्योंकि DRSC ऐसा करती हैं — छात्र दोनों को भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: सलाहकार समितियाँ लोकसभा के नियम समिति द्वारा नहीं, बल्कि संसदीय कार्य मंत्रालय द्वारा गठित की जाती हैं — यह एक मिथ्या कथन है।",
+        "विकल्प (b) को खारिज करें: सलाहकार समितियाँ औपचारिक रूप से वार्षिक रिपोर्टों की जांच नहीं कर सकतीं — यह DRSC का कार्य है। सलाहकार समितियाँ केवल अनौपचारिक चर्चा मंच प्रदान करती हैं।",
+        "विकल्प (c) को खारिज करें: सलाहकार समितियाँ गवाहों को तलब नहीं कर सकतीं — यह औपचारिक अधिकार केवल DRSC, चयन/संयुक्त समितियों और वित्तीय समितियों को प्राप्त है।",
+        "विकल्प (d) को चुनें: सलाहकार समितियाँ संसदीय कार्य मंत्रालय द्वारा गठित की जाती हैं और केवल अनौपचारिक चर्चा मंच प्रदान करती हैं — इनके पास कोई औपचारिक अधिकार नहीं हैं। यह जोड़ी सही मेल खाती है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) और (c) जानबूझकर DRSC के कार्यों को सलाहकार समितियों पर लागू करते हैं। जो छात्र सलाहकार समितियों को DRSC से भ्रमित करते हैं, वे इन्हें चुन सकते हैं। महत्वपूर्ण अंतर: सलाहकार समितियों के पास कोई औपचारिक अधिकार नहीं हैं — न तो तलब करने का अधिकार, न औपचारिक दस्तावेज जांच, न संसद को रिपोर्ट प्रस्तुत करने का अधिकार। वे केवल मंत्रियों और सांसदों के बीच मंत्रालय की नीतियों पर अनौपचारिक संवाद के लिए मौजूद हैं।",
+      "final_explanation": "सलाहकार समितियाँ अक्सर संसदीय समितियों, विशेषकर DRSC से भ्रमित की जाती हैं क्योंकि दोनों में सांसद मंत्रालय की नीतियों पर चर्चा करते हैं।\n\n• विकल्प (a) — गलत: सलाहकार समितियाँ संसदीय कार्य मंत्रालय द्वारा गठित होती हैं, न कि नियम समिति द्वारा — यह मिथ्या विवरण है।\n• विकल्प (b) — गलत: मंत्रालय की वार्षिक रिपोर्टों की औपचारिक जांच DRSC का कार्य है, सलाहकार समितियों का नहीं।\n• विकल्प (c) — गलत: सलाहकार समितियाँ गवाहों को तलब या दस्तावेज मांग नहीं सकतीं — इनके पास कोई औपचारिक अधिकार नहीं हैं।\n• विकल्प (d) — सही: संसदीय कार्य मंत्रालय द्वारा गठित; केवल मंत्रियों और सांसदों के बीच अनौपचारिक संवाद मंच प्रदान करती हैं; कोई औपचारिक अधिकार नहीं।\n\nमूल्य संवर्धन:\n• सलाहकार समितियाँ सत्रों के दौरान और सत्रों के बीच दोनों समय मिलती हैं — सांसदों के लिए सदस्यता स्वैच्छिक है।\n• ये सख्त कानूनी अर्थों में संसदीय समितियाँ नहीं हैं — इनके कार्यवाही संसदीय कार्यवाही के रूप में दर्ज नहीं होती।\n• DRSC सलाहकार समितियों के औपचारिक समकक्ष हैं — जिनके पास बाध्यकारी जांच अधिकार होते हैं (हालांकि अनुशंसाएँ बाध्यकारी नहीं होतीं)।"
+    }
+  },
+  {
+    "uuid": "6f5433ee-b075-4058-bffa-9738558ab3ac",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Financial Committees: Estimates Committee",
+        "Financial Committees: Public Accounts Committee (PAC)",
+        "Financial Committees: Committee on Public Undertakings (CPU)"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Estimates Committee exclusively Lok Sabha; 30 members",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly describes the composition of the Estimates Committee of the Indian Parliament?\n\n(a) 30 members, all elected from Lok Sabha, with no representation from Rajya Sabha\n(b) 30 members, with 22 from Lok Sabha and 8 from Rajya Sabha\n(c) 22 members, drawn equally from both Houses of Parliament\n(d) 30 members, including elected members from Lok Sabha and nominated members from Rajya Sabha",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) gives the correct number of members (30) but incorrectly adds Rajya Sabha representation, which seems plausible given that PAC and CPU both include Rajya Sabha members.",
+      "elimination_logic": [
+        "Eliminate option (b): Estimates Committee is exclusively a Lok Sabha body — Rajya Sabha has no representation. 30 members, all from LS.",
+        "Eliminate option (c): 22 members is the composition of PAC and CPU, not the Estimates Committee.",
+        "Eliminate option (d): The Estimates Committee does not include nominated members — all are elected from Lok Sabha.",
+        "Select option (a): 30 members, all elected from Lok Sabha, with Rajya Sabha having no representation."
+      ],
+      "upsc_trap_explanation": "Option (b) is the primary trap: it gives the correct membership size (30) but adds Rajya Sabha representation. Students who remember '30 members' may not remember that ALL 30 are exclusively from Lok Sabha. Since PAC and CPU both have Rajya Sabha members, students assume the Estimates Committee does too. The constitutional logic: the Estimates Committee deals with estimates that are fundamentally Lok Sabha's domain (money Bills originate in LS), making exclusive LS membership constitutionally coherent.",
+      "final_explanation": "The Estimates Committee is structurally unique among the three financial committees of Parliament.\n\n• Option (a) — Correct: 30 members, all elected from Lok Sabha. Rajya Sabha has no representation on the Estimates Committee — a deliberate design reflecting Lok Sabha's primacy in financial matters.\n• Option (b) — Incorrect: While 30 is the correct membership count, Rajya Sabha has no representation. This option adds false RS representation.\n• Option (c) — Incorrect: 22 members is the composition of PAC (15 LS + 7 RS) and CPU (15 LS + 7 RS), not the Estimates Committee.\n• Option (d) — Incorrect: The Estimates Committee has no nominated members — all 30 are elected from Lok Sabha.\n\nValue Addition:\n• Estimates Committee examines estimates prospectively — before expenditure is incurred.\n• PAC and CPU both have Rajya Sabha representation (7 members each); Estimates Committee has none.\n• The Estimates Committee's prospective scrutiny complements PAC's retrospective audit-based review."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद की Estimates Committee की संरचना का सही वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) 30 सदस्य, सभी लोकसभा से निर्वाचित, राज्यसभा का कोई प्रतिनिधित्व नहीं\n(b) 30 सदस्य, जिनमें से 22 लोकसभा से और 8 राज्यसभा से\n(c) 22 सदस्य, संसद के दोनों सदनों से समान रूप से चुने गए\n(d) 30 सदस्य, जिनमें लोकसभा से निर्वाचित सदस्य और राज्यसभा से नामित सदस्य शामिल हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) सही सदस्य संख्या (30) देता है लेकिन गलत तरीके से राज्यसभा प्रतिनिधित्व जोड़ता है, जो संभव लगता है क्योंकि PAC और CPU दोनों में राज्यसभा सदस्य शामिल हैं।",
+      "elimination_logic": [
+        "विकल्प (b) को खारिज करें: Estimates Committee पूरी तरह से लोकसभा की संस्था है — राज्यसभा का कोई प्रतिनिधित्व नहीं है। 30 सदस्य, सभी लोकसभा से।",
+        "विकल्प (c) को खारिज करें: 22 सदस्य PAC और CPU की संरचना है, Estimates Committee की नहीं।",
+        "विकल्प (d) को खारिज करें: Estimates Committee में नामित सदस्य नहीं होते — सभी लोकसभा से निर्वाचित होते हैं।",
+        "विकल्प (a) को चुनें: 30 सदस्य, सभी लोकसभा से निर्वाचित, राज्यसभा का कोई प्रतिनिधित्व नहीं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) मुख्य जाल है: यह सही सदस्य संख्या (30) देता है लेकिन राज्यसभा प्रतिनिधित्व जोड़ता है। जो छात्र '30 सदस्य' याद रखते हैं, वे यह याद नहीं रखते कि सभी 30 केवल लोकसभा से हैं। चूंकि PAC और CPU दोनों में राज्यसभा सदस्य होते हैं, छात्र मान लेते हैं कि Estimates Committee में भी होते हैं। संवैधानिक तर्क: Estimates Committee उन अनुमानों से संबंधित है जो मौलिक रूप से लोकसभा के क्षेत्राधिकार में हैं (मनी बिल लोकसभा में उत्पन्न होते हैं), इसलिए केवल लोकसभा सदस्यता संवैधानिक रूप से संगत है।",
+      "final_explanation": "Estimates Committee संसद की तीन वित्तीय समितियों में संरचनात्मक रूप से अद्वितीय है।\n\n• विकल्प (a) — सही: 30 सदस्य, सभी लोकसभा से निर्वाचित। राज्यसभा का Estimates Committee में कोई प्रतिनिधित्व नहीं है — यह लोकसभा की वित्तीय मामलों में प्रधानता को दर्शाता है।\n• विकल्प (b) — गलत: जबकि 30 सही सदस्य संख्या है, राज्यसभा का कोई प्रतिनिधित्व नहीं है। यह विकल्प गलत राज्यसभा प्रतिनिधित्व जोड़ता है।\n• विकल्प (c) — गलत: 22 सदस्य PAC (15 लोकसभा + 7 राज्यसभा) और CPU (15 लोकसभा + 7 राज्यसभा) की संरचना है, Estimates Committee की नहीं।\n• विकल्प (d) — गलत: Estimates Committee में कोई नामित सदस्य नहीं हैं — सभी 30 लोकसभा से निर्वाचित हैं।\n\nमूल्य संवर्धन:\n• Estimates Committee अनुमानों की पूर्वानुमानिक समीक्षा करती है — व्यय होने से पहले।\n• PAC और CPU दोनों में राज्यसभा का प्रतिनिधित्व होता है (प्रत्येक में 7 सदस्य); Estimates Committee में नहीं।\n• Estimates Committee की पूर्वानुमानिक जांच PAC की पश्चात्ताप आधारित लेखा परीक्षा की समीक्षा की पूरक है।"
+    }
+  },
+  {
+    "uuid": "77977100-704a-44f8-a995-06d5c200739c",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Business Advisory Committee (BAC)",
+        "Rules Committee",
+        "Committee on Privileges",
+        "Committee on Ethics"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "BAC, Rules, Privileges, Ethics committee function mapping",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Parliamentary Committee) with List II (Primary Function):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Business Advisory Committee",
+            "1. Considers matters of procedure and recommends amendments to Rules of Procedure; changes require full House approval"
+          ],
+          [
+            "B. Rules Committee",
+            "2. Recommends allocation of time for government and other legislative business in the House"
+          ],
+          [
+            "C. Committee on Privileges",
+            "3. Examines cases of moral turpitude and conduct unbecoming of a member; not constitutionally mandated"
+          ],
+          [
+            "D. Committee on Ethics",
+            "4. Investigates breach of privilege and may recommend reprimand, suspension, or expulsion; House passes the final order"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-2, B-1, C-4, D-3\n(c) A-2, B-3, C-1, D-4\n(d) A-1, B-4, C-2, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) swaps the functions of the BAC and Rules Committee (both are Speaker-chaired), which is the most common source of confusion for this topic.",
+      "elimination_logic": [
+        "Anchor on Ethics vs Privileges distinction: Ethics deals with moral/professional conduct (D); Privileges deals with breach of legal rights and can recommend expulsion (C).",
+        "Distinguish BAC from Rules Committee: BAC allocates time for business (A); Rules Committee recommends amendments to procedural rules (B).",
+        "Confirm: A-2 (BAC → time allocation), B-1 (Rules → procedural amendments), C-4 (Privileges → breach and punishment), D-3 (Ethics → moral conduct).",
+        "This matches option (b)."
+      ],
+      "upsc_trap_explanation": "The BAC-Rules Committee conflation is the primary trap: both are chaired by the Speaker and deal with procedural aspects of parliamentary functioning. Students who vaguely remember 'Speaker-chaired procedural committee' cannot distinguish between the two without precise functional knowledge. The secondary trap is Ethics-Privileges confusion: both deal with member conduct, but privileges concern legal rights of the House, while ethics concerns moral/professional standards.",
+      "final_explanation": "Four Speaker-proximate or conduct-related committees are frequently conflated in examination settings.\n\nCorrect pairings:\n• A (BAC) — 2: Recommends allocation of time for government and other legislative business; scheduling, not rule-making.\n• B (Rules Committee) — 1: Considers procedural matters and recommends amendments to the Rules of Procedure; approved by the full House.\n• C (Privileges Committee) — 4: Investigates breach of privilege; can recommend reprimand, suspension, or expulsion; House passes the final order.\n• D (Ethics Committee) — 3: Examines moral turpitude and professional misconduct; established in RS (1997) and LS (2000); not constitutionally mandated.\n\nTrap pairings:\n• BAC and Rules Committee: Both Speaker-chaired; distinguished by scheduling (BAC) vs rule-making (Rules Committee).\n• Privileges and Ethics: Both deal with member conduct; distinguished by legal rights (Privileges) vs moral standards (Ethics).\n\nValue Addition:\n• BAC recommendations on scheduling are advisory — Speaker has final authority.\n• Rules Committee amendments must receive full House approval.\n• Ethics Committee is not constitutionally mandated; Privileges Committee draws from Articles 105/194."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संसदीय समिति) को सूची II (प्राथमिक कार्य) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. व्यवसाय सलाहकार समिति (Business Advisory Committee)",
+            "1. प्रक्रियात्मक मामलों पर विचार करती है और नियमों में संशोधन की सिफारिश करती है; संशोधनों के लिए पूर्ण सदन की मंजूरी आवश्यक है"
+          ],
+          [
+            "B. नियम समिति (Rules Committee)",
+            "2. सदन में सरकार और अन्य विधायी व्यवसाय के लिए समय आवंटन की सिफारिश करती है"
+          ],
+          [
+            "C. विशेषाधिकार समिति (Committee on Privileges)",
+            "3. नैतिक पतन और सदस्य के अनुचित आचरण के मामलों की जांच करती है; संवैधानिक रूप से अनिवार्य नहीं"
+          ],
+          [
+            "D. नैतिकता समिति (Committee on Ethics)",
+            "4. विशेषाधिकार के उल्लंघन की जांच करती है और फटकार, निलंबन या निष्कासन की सिफारिश कर सकती है; अंतिम आदेश सदन पारित करता है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-2, B-1, C-4, D-3\n(c) A-2, B-3, C-1, D-4\n(d) A-1, B-4, C-2, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) BAC और नियम समिति (Rules Committee) के कार्यों को उलट देता है (दोनों अध्यक्ष द्वारा संचालित होते हैं), जो इस विषय में सबसे आम भ्रम का स्रोत है।",
+      "elimination_logic": [
+        "नैतिकता (Ethics) और विशेषाधिकार (Privileges) के बीच अंतर पर ध्यान दें: नैतिकता नैतिक/पेशेवर आचरण से संबंधित है (D); विशेषाधिकार कानूनी अधिकारों के उल्लंघन से संबंधित है और निष्कासन की सिफारिश कर सकता है (C)।",
+        "BAC को नियम समिति से अलग करें: BAC व्यवसाय के लिए समय आवंटित करता है (A); नियम समिति प्रक्रियात्मक नियमों में संशोधन की सिफारिश करती है (B)।",
+        "पुष्टि करें: A-2 (BAC → समय आवंटन), B-1 (नियम → प्रक्रियात्मक संशोधन), C-4 (विशेषाधिकार → उल्लंघन और दंड), D-3 (नैतिकता → नैतिक आचरण)।",
+        "यह विकल्प (b) से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "BAC-नियम समिति का भ्रम मुख्य जाल है: दोनों अध्यक्ष द्वारा संचालित होते हैं और संसदीय कार्यप्रणाली के प्रक्रियात्मक पहलुओं से संबंधित हैं। जो छात्र 'अध्यक्ष द्वारा संचालित प्रक्रियात्मक समिति' को अस्पष्ट रूप से याद करते हैं, वे सटीक कार्यात्मक ज्ञान के बिना दोनों में अंतर नहीं कर पाते। द्वितीयक जाल नैतिकता-विशेषाधिकार भ्रम है: दोनों सदस्य आचरण से संबंधित हैं, लेकिन विशेषाधिकार सदन के कानूनी अधिकारों से संबंधित है, जबकि नैतिकता नैतिक/पेशेवर मानकों से।",
+      "final_explanation": "चार अध्यक्ष-निकट या आचरण-संबंधित समितियाँ परीक्षा में अक्सर भ्रमित हो जाती हैं।\n\nसही जोड़े:\n• A (BAC) — 2: सरकार और अन्य विधायी व्यवसाय के लिए समय आवंटन की सिफारिश करता है; समय निर्धारण, नियम निर्माण नहीं।\n• B (नियम समिति) — 1: प्रक्रियात्मक मामलों पर विचार करती है और नियमों में संशोधन की सिफारिश करती है; पूर्ण सदन द्वारा अनुमोदित।\n• C (विशेषाधिकार समिति) — 4: विशेषाधिकार के उल्लंघन की जांच करती है; फटकार, निलंबन या निष्कासन की सिफारिश कर सकती है; अंतिम आदेश सदन पारित करता है।\n• D (नैतिकता समिति) — 3: नैतिक पतन और पेशेवर कदाचार की जांच करती है; राज्यसभा में 1997 और लोकसभा में 2000 में स्थापित; संवैधानिक रूप से अनिवार्य नहीं।\n\nजाल जोड़े:\n• BAC और नियम समिति: दोनों अध्यक्ष द्वारा संचालित; समय निर्धारण (BAC) और नियम निर्माण (नियम समिति) से भेद।\n• विशेषाधिकार और नैतिकता: दोनों सदस्य आचरण से संबंधित; कानूनी अधिकार (विशेषाधिकार) और नैतिक मानक (नैतिकता) से भेद।\n\nमूल्य संवर्धन:\n• BAC की समय निर्धारण संबंधी सिफारिशें परामर्शात्मक हैं — अध्यक्ष के पास अंतिम अधिकार है।\n• नियम समिति के संशोधनों को पूर्ण सदन की मंजूरी चाहिए।\n• नैतिकता समिति संवैधानिक रूप से अनिवार्य नहीं है; विशेषाधिकार समिति अनुच्छेद 105/194 से संबंधित है।"
+    }
+  },
+  {
+    "uuid": "8dc4b8f5-3795-48b4-a673-7a8f4cfc9840",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "DRSC composition — 31 members from both Houses",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Each Departmentally Related Standing Committee (DRSC) of the Indian Parliament has ________ drawn from ________.\n\n(a) 22 members; both Lok Sabha and Rajya Sabha\n(b) 31 members; Lok Sabha only\n(c) 31 members; both Lok Sabha and Rajya Sabha\n(d) 24 members; both Lok Sabha and Rajya Sabha",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) gives 24 members from both Houses, mixing the number of DRSCs (24) with the membership per committee (31), which is a classic number conflation.",
+      "elimination_logic": [
+        "Eliminate option (a): 22 members is the composition of PAC and CPU, not DRSCs.",
+        "Eliminate option (b): DRSCs include both Lok Sabha and Rajya Sabha members — they are joint committees. An exclusively Lok Sabha description is wrong.",
+        "Eliminate option (d): 24 is the number of DRSCs (post-2004), not the number of members per committee.",
+        "Select option (c): Each DRSC has 31 members drawn from both Lok Sabha and Rajya Sabha."
+      ],
+      "upsc_trap_explanation": "Option (d) conflates the number of DRSCs (24 after 2004 expansion) with the membership of each committee (31). This is a 'number swap' trap that targets students who remember both figures but apply them incorrectly. Option (a) conflates DRSC membership with that of PAC/CPU (22 members each), exploiting the fact that all these are joint committees using CAG reports.",
+      "final_explanation": "Each DRSC is a joint committee drawing members from both Houses of Parliament.\n\n• Option (a) — Incorrect: 22 members is the composition of PAC and CPU, not DRSCs.\n• Option (b) — Incorrect: DRSCs are joint committees with members from both Houses — not exclusively Lok Sabha.\n• Option (c) — Correct: Each DRSC has 31 members, drawn from both Lok Sabha and Rajya Sabha.\n• Option (d) — Incorrect: 24 is the number of DRSCs (post-2004), not the membership of each committee — a classic number conflation.\n\nValue Addition:\n• DRSCs were originally 17 (1993), expanded to 24 (2004).\n• Each DRSC examines Demands for Grants, Bills referred, and annual reports of the ministry cluster it oversees.\n• A Minister from a ministry cannot participate in that DRSC's scrutiny of their own ministry's demands."
+    },
+    "hi": {
+      "display_text": "भारतीय संसद की प्रत्येक विभागीय संबंधित स्थायी समिति (DRSC) में ________ सदस्य होते हैं जो ________ से लिए जाते हैं।\n\n(a) 22 सदस्य; दोनों लोकसभा और राज्यसभा\n(b) 31 सदस्य; केवल लोकसभा\n(c) 31 सदस्य; दोनों लोकसभा और राज्यसभा\n(d) 24 सदस्य; दोनों लोकसभा और राज्यसभा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) दोनों सदनों से 24 सदस्यों को देता है, जो DRSCs (24) की संख्या को प्रति समिति सदस्यता (31) के साथ मिला देता है, जो एक क्लासिक संख्या भ्रम है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: 22 सदस्य PAC और CPU की संरचना है, DRSCs की नहीं।",
+        "विकल्प (b) को हटाएं: DRSCs में लोकसभा और राज्यसभा दोनों के सदस्य होते हैं — ये संयुक्त समितियाँ हैं। केवल लोकसभा का वर्णन गलत है।",
+        "विकल्प (d) को हटाएं: 24 DRSCs की संख्या है (2004 के बाद), प्रति समिति सदस्यों की संख्या नहीं।",
+        "विकल्प (c) चुनें: प्रत्येक DRSC में लोकसभा और राज्यसभा दोनों से 31 सदस्य होते हैं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (d) DRSCs की संख्या (2004 के बाद 24) को प्रत्येक समिति की सदस्यता (31) के साथ मिला देता है। यह एक 'संख्या स्वैप' जाल है जो उन छात्रों को निशाना बनाता है जो दोनों आंकड़ों को याद रखते हैं लेकिन उन्हें गलत तरीके से लागू करते हैं। विकल्प (a) DRSC सदस्यता को PAC/CPU (प्रत्येक में 22 सदस्य) के साथ मिला देता है, यह तथ्य का उपयोग करते हुए कि ये सभी संयुक्त समितियाँ हैं जो CAG रिपोर्टों का उपयोग करती हैं।",
+      "final_explanation": "प्रत्येक DRSC संसद के दोनों सदनों से सदस्यों को लेकर गठित एक संयुक्त समिति है।\n\n• विकल्प (a) — गलत: 22 सदस्य PAC और CPU की संरचना है, DRSCs की नहीं।\n• विकल्प (b) — गलत: DRSCs संयुक्त समितियाँ हैं जिनमें दोनों सदनों के सदस्य होते हैं — केवल लोकसभा नहीं।\n• विकल्प (c) — सही: प्रत्येक DRSC में लोकसभा और राज्यसभा दोनों से 31 सदस्य होते हैं।\n• विकल्प (d) — गलत: 24 DRSCs की संख्या है (2004 के बाद), प्रति समिति सदस्यता नहीं — एक क्लासिक संख्या भ्रम।\n\nमूल्य संवर्धन:\n• DRSCs मूल रूप से 17 थीं (1993), जो 24 (2004) तक बढ़ाई गईं।\n• प्रत्येक DRSC उस मंत्रालय समूह की मांगों, विधेयकों और वार्षिक रिपोर्टों की समीक्षा करता है जिसे वह देखता है।\n• किसी मंत्रालय का मंत्री उस DRSC की समीक्षा में भाग नहीं ले सकता जो उसके अपने मंत्रालय की मांगों की जांच करता है।"
+    }
+  },
+  {
+    "uuid": "addbeb0d-ee64-4c24-a0a9-038b4e31214d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Financial Committees: Committee on Public Undertakings (CPU)",
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "CPU examines PSUs; DRSCs examine ministries — distinct jurisdictions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A parliamentary oversight review is initiated to examine the operational efficiency, financial management, and CAG-audited accounts of a major government-owned steel manufacturing company that operates under the administrative control of the Ministry of Heavy Industries. Which parliamentary committee has the primary jurisdiction to conduct this examination?\n\n(a) The Departmentally Related Standing Committee on Heavy Industries, since it covers all matters under that ministry\n(b) The Committee on Public Undertakings, since it specifically examines the working of government-owned enterprises and their CAG audit reports\n(c) The Public Accounts Committee, which examines all CAG reports including those relating to government undertakings\n(d) A Joint Parliamentary Committee constituted specifically for this purpose, since PSU examinations require a special ad hoc body",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know DRSCs examine ministry-related matters may assume the Ministry of Heavy Industries' DRSC covers PSUs under that ministry, conflating ministerial oversight with PSU-specific oversight.",
+      "elimination_logic": [
+        "Identify the entity being examined: A Public Sector Undertaking (a government-owned enterprise) — not a ministry's policy or administration.",
+        "Eliminate option (a): DRSCs examine ministry Demands for Grants, Bills, and annual reports — not the internal operations of specific PSUs. PSU-specific examination is CPU's domain.",
+        "Eliminate option (c): The PAC examines government ministry accounts and CAG reports on ministries — not PSU operations directly. PSU audit reports go to CPU.",
+        "Eliminate option (d): A JPC is an Ad Hoc investigative body for specific matters of public importance — not for routine PSU operational examination.",
+        "Select option (b): CPU examines the working of Public Sector Undertakings and is the appropriate committee for PSU operational scrutiny."
+      ],
+      "upsc_trap_explanation": "The central confusion in this scenario is between the ministry that owns a PSU (Ministry of Heavy Industries) and the PSU itself. DRSCs examine ministries — the DRSC for Heavy Industries examines the ministry's Demands for Grants and annual reports. CPU examines the working of PSUs, including their CAG-audited accounts. Students who conflate 'ministry oversight' with 'PSU oversight' will incorrectly select option (a). The distinction is structural: DRSCs follow ministry lines; CPU follows ownership of PSUs.",
+      "final_explanation": "The distinction between DRSC and CPU jurisdiction is a classic parallel oversight arrangement that generates examination confusion.\n\nIn this scenario, the relevant body is one that examines the working of a specific Public Sector Undertaking — its operations, efficiency, and CAG-audited accounts.\n\n• Option (a) — Incorrect: The DRSC for Heavy Industries examines the ministry's Demands for Grants and annual reports — not the internal workings of individual PSUs under it.\n• Option (b) — Correct: The Committee on Public Undertakings (CPU) specifically examines the working of PSUs, including their CAG audit reports. This is precisely its mandate.\n• Option (c) — Incorrect: PAC examines government ministry accounts — not PSU operations directly. PSU-related CAG reports are routed to CPU, not PAC.\n• Option (d) — Incorrect: A JPC is an Ad Hoc investigative body for specific high-profile matters, not for routine PSU scrutiny.\n\nValue Addition:\n• CPU cannot examine PSUs in defence, atomic energy, or national security sectors.\n• CPU also cannot review major government policy or day-to-day administration of PSUs.\n• PAC examines ministries; CPU examines PSUs — both use CAG reports as their primary evidence base."
+    },
+    "hi": {
+      "display_text": "एक संसदीय निगरानी समीक्षा शुरू की गई है ताकि भारी उद्योग मंत्रालय के प्रशासनिक नियंत्रण में संचालित एक प्रमुख सरकारी स्वामित्व वाली इस्पात निर्माण कंपनी की परिचालन दक्षता, वित्तीय प्रबंधन और CAG-लेखा परीक्षा रिपोर्टों की जांच की जा सके। इस जांच को करने का प्राथमिक अधिकार किस संसदीय समिति के पास है?\n\n(a) भारी उद्योग से संबंधित विभागीय स्थायी समिति, क्योंकि यह उस मंत्रालय के अंतर्गत सभी मामलों को कवर करती है\n(b) सार्वजनिक उपक्रम समिति, क्योंकि यह विशेष रूप से सरकारी स्वामित्व वाली संस्थाओं और उनकी CAG लेखा परीक्षा रिपोर्टों की जांच करती है\n(c) लोक लेखा समिति, जो सभी CAG रिपोर्टों की जांच करती है जिनमें सरकारी उपक्रमों से संबंधित रिपोर्टें भी शामिल हैं\n(d) इस उद्देश्य के लिए विशेष रूप से गठित संयुक्त संसदीय समिति, क्योंकि पीएसयू की जांच के लिए एक विशेष अस्थायी समिति आवश्यक होती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — जो छात्र जानते हैं कि DRSC मंत्रालय से संबंधित मामलों की जांच करते हैं, वे यह मान सकते हैं कि भारी उद्योग मंत्रालय का DRSC उस मंत्रालय के अधीन पीएसयू की जांच करता है, जिससे मंत्री स्तर की निगरानी और पीएसयू-विशिष्ट निगरानी में भ्रम हो जाता है।",
+      "elimination_logic": [
+        "जांच की जा रही इकाई की पहचान करें: एक सार्वजनिक क्षेत्र की उपक्रम (सरकार के स्वामित्व वाली संस्था) — न कि किसी मंत्रालय की नीति या प्रशासन।",
+        "विकल्प (a) को हटाएं: DRSC मंत्रालय के Demands for Grants, विधेयकों और वार्षिक रिपोर्टों की जांच करता है — न कि विशिष्ट पीएसयू के आंतरिक संचालन की। पीएसयू-विशिष्ट जांच CPU का क्षेत्र है।",
+        "विकल्प (c) को हटाएं: PAC सरकार के मंत्रालयों के खातों और मंत्रालयों पर CAG की रिपोर्टों की जांच करता है — सीधे पीएसयू संचालन की नहीं। पीएसयू के लेखा परीक्षा रिपोर्ट CPU को जाती हैं।",
+        "विकल्प (d) को हटाएं: JPC एक विशेष सार्वजनिक महत्व के मामलों के लिए अस्थायी जांच समिति है — नियमित पीएसयू संचालन की जांच के लिए नहीं।",
+        "विकल्प (b) चुनें: CPU सार्वजनिक क्षेत्र की उपक्रमों के कार्यों की जांच करता है और पीएसयू संचालन की समीक्षा के लिए उपयुक्त समिति है।"
+      ],
+      "upsc_trap_explanation": "इस परिदृश्य में केंद्रीय भ्रम उस मंत्रालय (भारी उद्योग मंत्रालय) और उस मंत्रालय के अधीन पीएसयू के बीच है। DRSC मंत्रालयों की जांच करता है — भारी उद्योग मंत्रालय का DRSC मंत्रालय के Demands for Grants और वार्षिक रिपोर्टों की जांच करता है। CPU पीएसयू के कार्यों, जिनमें उनके CAG-लेखा परीक्षा रिपोर्ट शामिल हैं, की जांच करता है। जो छात्र 'मंत्रालय की निगरानी' और 'पीएसयू की निगरानी' को एक समान समझते हैं, वे गलत तरीके से विकल्प (a) चुनेंगे। यह भेद संरचनात्मक है: DRSC मंत्रालयों के अनुसार काम करता है; CPU पीएसयू के स्वामित्व के अनुसार।",
+      "final_explanation": "DRSC और CPU के अधिकार क्षेत्र के बीच का अंतर एक क्लासिक समानांतर निगरानी व्यवस्था है जो परीक्षा में भ्रम उत्पन्न करती है।\n\nइस परिदृश्य में, संबंधित निकाय वह है जो किसी विशिष्ट सार्वजनिक क्षेत्र की उपक्रम के कार्यों, दक्षता और CAG-लेखा परीक्षा रिपोर्ट की जांच करता है।\n\n• विकल्प (a) — गलत: भारी उद्योग मंत्रालय का DRSC मंत्रालय के Demands for Grants और वार्षिक रिपोर्टों की जांच करता है — न कि उसके अधीन व्यक्तिगत पीएसयू के आंतरिक कार्यों की।\n• विकल्प (b) — सही: सार्वजनिक उपक्रम समिति (CPU) विशेष रूप से पीएसयू के कार्यों, जिनमें उनके CAG लेखा परीक्षा रिपोर्ट शामिल हैं, की जांच करती है। यही इसका अधिकार क्षेत्र है।\n• विकल्प (c) — गलत: PAC सरकार के मंत्रालयों के खातों की जांच करता है — सीधे पीएसयू संचालन की नहीं। पीएसयू से संबंधित CAG रिपोर्ट CPU को भेजी जाती हैं, PAC को नहीं।\n• विकल्प (d) — गलत: JPC एक विशेष उच्च-प्रोफ़ाइल मामलों के लिए अस्थायी जांच समिति है, नियमित पीएसयू जांच के लिए नहीं।\n\nमूल्य संवर्धन:\n• CPU रक्षा, परमाणु ऊर्जा या राष्ट्रीय सुरक्षा क्षेत्रों के पीएसयू की जांच नहीं कर सकता।\n• CPU प्रमुख सरकारी नीति या पीएसयू के दैनिक प्रशासन की समीक्षा भी नहीं कर सकता।\n• PAC मंत्रालयों की जांच करता है; CPU पीएसयू की जांच करता है — दोनों CAG रिपोर्टों को अपने प्राथमिक साक्ष्य के रूप में उपयोग करते हैं।"
+    }
+  },
+  {
+    "uuid": "54100d57-7e6f-4969-a168-6143cf2db271",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Quorum, Voting, and Procedural Rules in Parliamentary Committees",
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Committee proceedings secrecy and inter-session meetings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the procedural framework and scope of parliamentary committees:\n\n1. Parliamentary committee proceedings are secret, and members are prohibited from disclosing the evidence or deliberations of the committee before the report is presented to the House.\n2. The quorum for parliamentary committees is the same as that for the full House — that is, one-half of total membership.\n3. Departmentally Related Standing Committees can examine annual reports of constitutional bodies such as the Election Commission of India that fall under the relevant ministry cluster.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Parliamentary committee proceedings are secret, and members are prohibited from disclosing the evidence or deliberations of the committee before the report is presented to the House.",
+          "verdict": "Correct",
+          "reason": "Secrecy of committee proceedings is a fundamental procedural rule. Members cannot publicly disclose evidence or deliberations until the report is formally presented to the House."
+        },
+        {
+          "statement": "The quorum for parliamentary committees is the same as that for the full House — that is, one-half of total membership.",
+          "verdict": "Incorrect",
+          "reason": "Committee quorum is one-third of total membership, which is distinctly lower than the one-half quorum required for the full House. This facilitates committee functioning with smaller attendance."
+        },
+        {
+          "statement": "Departmentally Related Standing Committees can examine annual reports of constitutional bodies such as the Election Commission of India that fall under the relevant ministry cluster.",
+          "verdict": "Incorrect",
+          "reason": "DRSCs cannot examine constitutional bodies' own legislation or administration. Constitutional and statutory bodies have a separate framework of accountability; DRSCs examine ministry-level reports and demands for grants, not the operations of autonomous constitutional bodies."
+        }
+      ],
+      "strong_distractor": "d — Selecting all three as correct is tempting because Statement 3 sounds procedurally correct — DRSCs do cover ministries, and constitutional bodies do 'fall under' administrative ministries.",
+      "elimination_logic": [
+        "Verify Statement 1: Secrecy of committee proceedings is a standard procedural rule — disclosure before report presentation is prohibited. Statement 1 is Correct.",
+        "Verify Statement 2: Committee quorum is one-third, not one-half. Statement 2 is Incorrect.",
+        "Verify Statement 3: DRSCs cannot examine constitutional bodies' own legislation or administration — their scope is ministry-level. Statement 3 is Incorrect.",
+        "Only Statement 1 is correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 3 exploits the assumption that because an Election Commission falls under the administrative domain of the Law Ministry (for budget purposes), the DRSC for Law must be able to examine it. DRSCs explicitly cannot examine constitutional or statutory bodies' own functions and legislation. Statement 2 exploits the instinct to apply full House rules to committees — a persistent examination trap that appears in multiple question formats.",
+      "final_explanation": "Parliamentary committee procedures have several nuances that diverge from full House rules.\n\n• Statement 1 — Correct: Secrecy is a fundamental protection for committee deliberations. Premature disclosure by a member constitutes a breach of privilege.\n• Statement 2 — Incorrect: Committee quorum is one-third of membership. Full House quorum is one-half. The lower committee threshold facilitates continuous functioning even with limited attendance.\n• Statement 3 — Incorrect: DRSCs are explicitly barred from examining constitutional bodies' own legislation or administration. The Election Commission, CAG, UPSC, and similar bodies have separate accountability mechanisms outside the DRSC framework.\n\nValue Addition:\n• Witnesses before committees take an oath, and evidence is recorded — proceedings have a quasi-judicial character even though the committee itself is not a court.\n• DRSCs examine ministry annual reports but not the annual reports or functioning of constitutional bodies under those ministries.\n• Committee reports, once presented to the House, become public documents — secrecy ends at presentation."
+    },
+    "hi": {
+      "display_text": "संसदीय समितियों की प्रक्रियात्मक रूपरेखा और दायरे के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. संसदीय समिति की कार्यवाही गोपनीय होती है, और सदस्यों को समिति की रिपोर्ट सदन को प्रस्तुत किए जाने से पहले साक्ष्य या विचार-विमर्श प्रकट करने से मना किया जाता है।\n2. संसदीय समितियों के लिए कोरम पूर्ण सदन के समान होता है — अर्थात कुल सदस्यता का आधा।\n3. विभागीय संबंधित स्थायी समितियाँ संबंधित मंत्रालय समूह के अंतर्गत आने वाले निर्वाचन आयोग जैसे संवैधानिक निकायों की वार्षिक रिपोर्टों की जांच कर सकती हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संसदीय समिति की कार्यवाही गोपनीय होती है, और सदस्यों को समिति की रिपोर्ट सदन को प्रस्तुत किए जाने से पहले साक्ष्य या विचार-विमर्श प्रकट करने से मना किया जाता है।",
+          "verdict": "सही है",
+          "reason": "समिति की कार्यवाही की गोपनीयता एक मौलिक प्रक्रिया नियम है। सदन को रिपोर्ट औपचारिक रूप से प्रस्तुत किए जाने तक सदस्य सार्वजनिक रूप से साक्ष्य या विचार-विमर्श प्रकट नहीं कर सकते।"
+        },
+        {
+          "statement": "संसदीय समितियों के लिए कोरम पूर्ण सदन के समान होता है — अर्थात कुल सदस्यता का आधा।",
+          "verdict": "गलत है",
+          "reason": "समिति का कोरम कुल सदस्यता का एक-तिहाई होता है, जो पूर्ण सदन के लिए आवश्यक आधे कोरम से स्पष्ट रूप से कम है। इससे समिति की कार्यप्रणाली कम उपस्थिति के साथ संभव होती है।"
+        },
+        {
+          "statement": "विभागीय संबंधित स्थायी समितियाँ संबंधित मंत्रालय समूह के अंतर्गत आने वाले निर्वाचन आयोग जैसे संवैधानिक निकायों की वार्षिक रिपोर्टों की जांच कर सकती हैं।",
+          "verdict": "गलत है",
+          "reason": "DRSC संवैधानिक निकायों के अपने कानून या प्रशासन की जांच नहीं कर सकतीं। संवैधानिक और वैधानिक निकायों की अलग जवाबदेही व्यवस्था होती है; DRSC मंत्रालय स्तर की रिपोर्टों और अनुदान मांगों की जांच करती हैं, न कि स्वायत्त संवैधानिक निकायों के संचालन की।"
+        }
+      ],
+      "strong_distractor": "d — तीनों को सही चुनना आकर्षक है क्योंकि कथन 3 प्रक्रियात्मक रूप से सही लगता है — DRSC मंत्रालयों को कवर करती हैं, और संवैधानिक निकाय प्रशासनिक मंत्रालयों के अंतर्गत आते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: समिति की कार्यवाही की गोपनीयता एक मानक प्रक्रिया नियम है — रिपोर्ट प्रस्तुति से पहले प्रकटीकरण निषिद्ध है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: समिति का कोरम एक-तिहाई है, आधा नहीं। कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: DRSC संवैधानिक निकायों के अपने कानून या प्रशासन की जांच नहीं कर सकती — उनका दायरा मंत्रालय स्तर का है। कथन 3 गलत है।",
+        "केवल कथन 1 सही है — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 इस धारणा का लाभ उठाता है कि क्योंकि निर्वाचन आयोग बजट संबंधी उद्देश्यों के लिए विधि मंत्रालय के प्रशासनिक क्षेत्र के अंतर्गत आता है, इसलिए विधि मंत्रालय की DRSC इसे जांच सकती है। DRSC संवैधानिक या वैधानिक निकायों के अपने कार्यों और कानून की जांच स्पष्ट रूप से नहीं कर सकती। कथन 2 इस प्रवृत्ति का लाभ उठाता है कि पूर्ण सदन के नियमों को समितियों पर लागू किया जाए — यह एक लगातार परीक्षा जाल है जो कई प्रश्न प्रारूपों में आता है।",
+      "final_explanation": "संसदीय समिति की प्रक्रियाओं में कई सूक्ष्मताएँ होती हैं जो पूर्ण सदन के नियमों से भिन्न होती हैं।\n\n• कथन 1 — सही: गोपनीयता समिति के विचार-विमर्श की एक मौलिक सुरक्षा है। सदस्य द्वारा पूर्व समय पर प्रकटीकरण विशेषाधिकार का उल्लंघन है।\n• कथन 2 — गलत: समिति का कोरम सदस्यता का एक-तिहाई होता है। पूर्ण सदन का कोरम आधा होता है। कम कोरम समिति को सीमित उपस्थिति के बावजूद निरंतर कार्य करने में सक्षम बनाता है।\n• कथन 3 — गलत: DRSC संवैधानिक निकायों के अपने कानून या प्रशासन की जांच करने से स्पष्ट रूप से वंचित हैं। निर्वाचन आयोग, CAG, UPSC, और समान निकायों की जवाबदेही DRSC के दायरे से बाहर है।\n\nमूल्यवर्धन:\n• समितियों के समक्ष गवाह शपथ लेते हैं, और साक्ष्य दर्ज किए जाते हैं — कार्यवाही अर्ध-न्यायिक होती है, हालांकि समिति स्वयं न्यायालय नहीं है।\n• DRSC मंत्रालय की वार्षिक रिपोर्टों की जांच करती हैं, लेकिन उन मंत्रालयों के अंतर्गत आने वाले संवैधानिक निकायों की वार्षिक रिपोर्ट या कार्यप्रणाली की नहीं।\n• समिति की रिपोर्टें सदन को प्रस्तुत किए जाने के बाद सार्वजनिक दस्तावेज बन जाती हैं — गोपनीयता प्रस्तुति पर समाप्त हो जाती है।"
+    }
+  },
+  {
+    "uuid": "f2bb2e0a-5b6b-4f6a-b15d-ace0f538c140",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Committee on Government Assurances",
+        "Business Advisory Committee (BAC)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "BAC function — time allocation, not admissibility of questions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Business Advisory Committee — Chaired by the Speaker; decides on admissibility of questions and notices before they are put to the House\n(b) Committee on Government Assurances — Scrutinises policy commitments made in Budget speeches to assess their implementation\n(c) Business Advisory Committee — Chaired by the Speaker; recommends allocation of time for government and other legislative business in the House\n(d) Committee on Government Assurances — A joint committee of both Houses tracking ministerial assurances given in either House",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) attributes the admissibility of questions function to the BAC, which sounds plausible because BAC deals with scheduling and questions are part of scheduled House business.",
+      "elimination_logic": [
+        "Eliminate option (a): BAC does not decide admissibility of questions — that is the Speaker's prerogative alone. Fabricated function.",
+        "Eliminate option (b): Committee on Government Assurances covers only floor assurances during debates and Question Hour — not Budget speech commitments. Incorrect pairing.",
+        "Eliminate option (d): Committee on Government Assurances does NOT have a joint committee structure across both Houses — separate committees exist in each House covering that House's proceedings only.",
+        "Select option (c): BAC is chaired by the Speaker and recommends allocation of time for government and other legislative business — correctly matched."
+      ],
+      "upsc_trap_explanation": "Option (a) is the primary trap: it correctly identifies the BAC's chairperson (Speaker) and its general scheduling role but assigns it the function of admissibility of questions. Question admissibility is exclusively the Speaker's prerogative — not delegated to any committee. This plausible fabrication exploits the connection between the Speaker, the BAC, and parliamentary scheduling. Option (d) exploits the assumption that since Parliament has joint committees on many issues, Government Assurances might also be a joint committee — it is not.",
+      "final_explanation": "The BAC and the Committee on Government Assurances each have precisely defined and limited functions.\n\n• Option (a) — Incorrect: BAC allocates time for business; it does not decide admissibility of questions or notices. Admissibility is the Speaker's exclusive prerogative.\n• Option (b) — Incorrect: Committee on Government Assurances covers only oral and written assurances made during floor proceedings — not Budget speech commitments, which are policy documents.\n• Option (c) — Correct: BAC is chaired by the Speaker (in LS) and recommends time allocation for government business and other legislative items. This is a correct and complete description.\n• Option (d) — Incorrect: Separate Committees on Government Assurances exist in each House — it is not a joint committee. Each covers only assurances given in its own House.\n\nValue Addition:\n• BAC recommendations are advisory — the Speaker has final authority on scheduling.\n• BAC includes leaders of recognised parties and groups in the House.\n• The Committee on Government Assurances tracks 'pending assurances' — those given but not yet implemented."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही रूप से मेल खाता है?\n\n(a) व्यवसाय सलाहकार समिति — स्पीकर की अध्यक्षता में; प्रश्नों और नोटिसों की स्वीकृति का निर्णय करती है इससे पहले कि उन्हें सदन में प्रस्तुत किया जाए\n(b) समिति ऑन गवर्नमेंट एश्योरेंस — बजट भाषणों में किए गए नीति प्रतिबद्धताओं की जांच करती है ताकि उनके क्रियान्वयन का आकलन किया जा सके\n(c) व्यवसाय सलाहकार समिति — स्पीकर की अध्यक्षता में; सरकार और अन्य विधायी व्यवसाय के लिए सदन में समय आवंटन की सिफारिश करती है\n(d) समिति ऑन गवर्नमेंट एश्योरेंस — दोनों सदनों की संयुक्त समिति जो किसी भी सदन में दिए गए मंत्रीial आश्वासनों को ट्रैक करती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) attributes the admissibility of questions function to the BAC, which sounds plausible because BAC deals with scheduling and questions are part of scheduled House business.",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: BAC प्रश्नों की स्वीकृति का निर्णय नहीं करता — यह केवल स्पीकर का विशेषाधिकार है। यह एक गढ़ा हुआ कार्य है।",
+        "विकल्प (b) को खारिज करें: समिति ऑन गवर्नमेंट एश्योरेंस केवल बहसों और प्रश्नकाल के दौरान दिए गए आश्वासनों को कवर करती है — बजट भाषण की प्रतिबद्धताओं को नहीं। गलत जोड़ी।",
+        "विकल्प (d) को खारिज करें: समिति ऑन गवर्नमेंट एश्योरेंस दोनों सदनों में संयुक्त समिति नहीं है — प्रत्येक सदन में अलग-अलग समितियाँ होती हैं जो केवल उस सदन की कार्यवाही को कवर करती हैं।",
+        "विकल्प (c) को चुनें: BAC की अध्यक्षता स्पीकर करते हैं और यह सरकार और अन्य विधायी कार्यों के लिए समय आवंटन की सिफारिश करता है — सही मेल।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) मुख्य जाल है: यह सही रूप से BAC के अध्यक्ष (स्पीकर) और इसके सामान्य अनुसूचीकरण कार्य को पहचानता है लेकिन इसे प्रश्नों की स्वीकृति का कार्य देता है। प्रश्न स्वीकृति केवल स्पीकर का विशेषाधिकार है — किसी समिति को नहीं सौंपा गया। यह संभावित गढ़ना स्पीकर, BAC और संसदीय अनुसूचीकरण के बीच संबंध का उपयोग करता है। विकल्प (d) यह मानकर भ्रम पैदा करता है कि चूंकि संसद में कई मुद्दों पर संयुक्त समितियाँ हैं, इसलिए गवर्नमेंट एश्योरेंस भी संयुक्त समिति हो सकती है — ऐसा नहीं है।",
+      "final_explanation": "BAC और समिति ऑन गवर्नमेंट एश्योरेंस के कार्य स्पष्ट और सीमित हैं।\n\n• विकल्प (a) — गलत: BAC व्यवसाय के लिए समय आवंटित करता है; यह प्रश्नों या नोटिसों की स्वीकृति का निर्णय नहीं करता। स्वीकृति स्पीकर का विशेषाधिकार है।\n• विकल्प (b) — गलत: समिति ऑन गवर्नमेंट एश्योरेंस केवल मौखिक और लिखित आश्वासनों को कवर करती है जो सदन की कार्यवाही के दौरान दिए जाते हैं — बजट भाषण की प्रतिबद्धताएँ नीति दस्तावेज हैं।\n• विकल्प (c) — सही: BAC की अध्यक्षता स्पीकर (लोकसभा में) करते हैं और यह सरकार के व्यवसाय और अन्य विधायी विषयों के लिए समय आवंटन की सिफारिश करता है। यह सही और पूर्ण विवरण है।\n• विकल्प (d) — गलत: प्रत्येक सदन में अलग-अलग समिति ऑन गवर्नमेंट एश्योरेंस होती है — यह संयुक्त समिति नहीं है। प्रत्येक केवल अपने सदन में दिए गए आश्वासनों को कवर करती है।\n\nमूल्यवर्धन:\n• BAC की सिफारिशें परामर्शात्मक होती हैं — अनुसूची पर अंतिम अधिकार स्पीकर का होता है।\n• BAC में सदन के मान्यता प्राप्त दलों और समूहों के नेता शामिल होते हैं।\n• समिति ऑन गवर्नमेंट एश्योरेंस 'लंबित आश्वासनों' को ट्रैक करती है — जो दिए गए हैं लेकिन अभी तक लागू नहीं हुए।"
+    }
+  },
+  {
+    "uuid": "d034a9ee-ba11-4576-b048-1668dfb2175c",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Role of DRSCs in Pre-legislative Scrutiny vs Post-legislative Review",
+        "Effectiveness and Critiques of the Parliamentary Committee System in India"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "DRSC Bill referral discretionary; UK/US comparison",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the functioning and effectiveness of the parliamentary committee system in India:\n\n1. Reference of a Bill to a Departmentally Related Standing Committee is mandatory for all non-financial Bills under the Rules of Procedure of Parliament.\n2. In the United Kingdom's parliamentary system, Select Committees have weaker formal powers than India's DRSCs, making the Indian committee system relatively stronger.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Neither 1 nor 2\n(d) Both 1 and 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Reference of a Bill to a Departmentally Related Standing Committee is mandatory for all non-financial Bills under the Rules of Procedure of Parliament.",
+          "verdict": "Incorrect",
+          "reason": "DRSC referral is discretionary — vested in the Speaker or Chairman, or by a House motion. It is not mandatory under any rule or constitutional provision. Major legislation has regularly bypassed DRSCs."
+        },
+        {
+          "statement": "In the United Kingdom's parliamentary system, Select Committees have weaker formal powers than India's DRSCs, making the Indian committee system relatively stronger.",
+          "verdict": "Incorrect",
+          "reason": "The comparative assessment is reversed: UK Select Committees are generally regarded as having greater influence and sharper oversight capacity than India's DRSCs. India's committee system is considered weaker by comparison, partly due to non-binding recommendations and declining Bill referrals."
+        }
+      ],
+      "strong_distractor": "b — Students who know Statement 1 is wrong but are uncertain about the UK comparison may assume Statement 2 reflects Indian pride in its committee system, selecting only Statement 1 as incorrect.",
+      "elimination_logic": [
+        "Verify Statement 1: DRSC referral is discretionary, not mandatory. Statement 1 is Incorrect.",
+        "Verify Statement 2: UK Select Committees are stronger, not weaker, than Indian DRSCs. The statement reverses the correct comparative assessment. Statement 2 is Incorrect.",
+        "Both statements are NOT correct — select option (d)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits national pride and the surface plausibility of arguing India's committee system is stronger because DRSCs have quasi-judicial powers. The accurate comparative picture is that UK Select Committees are more influential, and US Congressional Committees are central to the legislative process in a way Indian DRSCs are not. The non-binding nature of recommendations and declining referral rates are key weaknesses. This reversed-comparison format is a recurring UPSC trick for international institution comparisons.",
+      "final_explanation": "Both statements contain common misconceptions about the DRSC system that are reinforced by wishful thinking rather than empirical accuracy.\n\n• Statement 1 — Incorrect: DRSC referral is discretionary. The Speaker/Chairman decides, or the House passes a motion. Several landmark laws — including the CAA and Farm Laws — bypassed DRSC scrutiny entirely without any procedural violation.\n• Statement 2 — Incorrect: The comparison is inverted. UK Select Committees are widely regarded as having stronger oversight capacity than Indian DRSCs. US Congressional Committees are central to legislation in a way Indian committees are not. Indian DRSCs suffer from non-binding recommendations, low attendance, and declining Bill referrals.\n\nValue Addition:\n• PRS Legislative Research documented that between 2009 and 2014, about 71% of Bills were referred to DRSCs; this declined sharply in subsequent years.\n• Second ARC recommended mandatory DRSC referral for all non-financial Bills as a reform measure.\n• Strengthening committee systems — through mandatory referral, better staffing, and binding recommendations — is a key parliamentary reform demand."
+    },
+    "hi": {
+      "display_text": "भारत में संसदीय समिति प्रणाली के कार्य और प्रभावशीलता के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. संसद के नियमावली के तहत सभी गैर-वित्तीय विधेयकों के लिए विभागीय संबंधित स्थायी समिति को विधेयक का संदर्भ अनिवार्य है।\n2. संयुक्त राज्य के संसदीय प्रणाली में, चयन समितियों के औपचारिक अधिकार भारत के DRSC की तुलना में कमजोर हैं, जिससे भारतीय समिति प्रणाली अपेक्षाकृत मजबूत बनती है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) न तो 1, न ही 2\n(d) दोनों 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संसद के नियमावली के तहत सभी गैर-वित्तीय विधेयकों के लिए विभागीय संबंधित स्थायी समिति को विधेयक का संदर्भ अनिवार्य है।",
+          "verdict": "गलत",
+          "reason": "DRSC को संदर्भित करना विवेकाधीन है — यह स्पीकर या अध्यक्ष के अधिकार में है, या सदन के प्रस्ताव द्वारा। यह किसी भी नियम या संवैधानिक प्रावधान के तहत अनिवार्य नहीं है। कई प्रमुख कानून नियमित रूप से DRSC को बायपास कर देते हैं।"
+        },
+        {
+          "statement": "संयुक्त राज्य के संसदीय प्रणाली में, चयन समितियों के औपचारिक अधिकार भारत के DRSC की तुलना में कमजोर हैं, जिससे भारतीय समिति प्रणाली अपेक्षाकृत मजबूत बनती है।",
+          "verdict": "गलत",
+          "reason": "तुलनात्मक मूल्यांकन उल्टा है: यूके की चयन समितियों को आमतौर पर भारत के DRSC की तुलना में अधिक प्रभावशाली और तीव्र निगरानी क्षमता वाला माना जाता है। भारत की समिति प्रणाली की तुलना में कमजोर मानी जाती है, आंशिक रूप से गैर-बाध्यकारी सिफारिशों और विधेयक संदर्भों में गिरावट के कारण।"
+        }
+      ],
+      "strong_distractor": "b — जो छात्र कथन 1 को गलत जानते हैं लेकिन यूके की तुलना को लेकर अनिश्चित हैं, वे मान सकते हैं कि कथन 2 भारतीय समिति प्रणाली पर गर्व दर्शाता है, इसलिए केवल कथन 1 को गलत चुनते हैं।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: DRSC को संदर्भित करना विवेकाधीन है, अनिवार्य नहीं। कथन 1 गलत है।",
+        "कथन 2 सत्यापित करें: यूके की चयन समितियाँ भारतीय DRSC से मजबूत हैं, कमजोर नहीं। कथन तुलना को उलट देता है। कथन 2 गलत है।",
+        "दोनों कथन सही नहीं हैं — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 राष्ट्रीय गर्व और DRSC के अर्ध-न्यायिक अधिकार होने के कारण भारत की समिति प्रणाली को मजबूत बताने की सतही संभावना का लाभ उठाता है। सही तुलनात्मक स्थिति यह है कि यूके की चयन समितियाँ अधिक प्रभावशाली हैं, और अमेरिकी कांग्रेस की समितियाँ विधायी प्रक्रिया में केंद्रीय भूमिका निभाती हैं, जो भारतीय DRSC नहीं करते। गैर-बाध्यकारी सिफारिशें और संदर्भों में गिरावट मुख्य कमजोरियाँ हैं। यह उल्टी तुलना UPSC की अंतरराष्ट्रीय संस्थान तुलना के लिए एक बार-बार उपयोग होने वाली चाल है।",
+      "final_explanation": "दोनों कथनों में DRSC प्रणाली के बारे में सामान्य गलतफहमियाँ हैं जो वास्तविकता के बजाय इच्छानुरूप सोच से पुष्ट होती हैं।\n\n• कथन 1 — गलत: DRSC संदर्भ विवेकाधीन है। स्पीकर/अध्यक्ष निर्णय लेते हैं, या सदन प्रस्ताव पारित करता है। कई महत्वपूर्ण कानून — जैसे CAA और कृषि कानून — DRSC की जांच को पूरी तरह से बायपास कर गए बिना किसी प्रक्रिया उल्लंघन के।\n• कथन 2 — गलत: तुलना उल्टी है। यूके की चयन समितियाँ भारतीय DRSC की तुलना में अधिक मजबूत निगरानी क्षमता रखती हैं। अमेरिकी कांग्रेस की समितियाँ विधायी प्रक्रिया में केंद्रीय हैं, जो भारतीय समितियाँ नहीं हैं। भारतीय DRSC गैर-बाध्यकारी सिफारिशों, कम उपस्थिति, और घटते विधेयक संदर्भों से पीड़ित हैं।\n\nमूल्य संवर्धन:\n• PRS विधायी अनुसंधान ने 2009 से 2014 के बीच लगभग 71% विधेयकों को DRSC को संदर्भित किया गया बताया; बाद के वर्षों में यह संख्या तेज़ी से घट गई।\n• दूसरी ARC ने सभी गैर-वित्तीय विधेयकों के लिए DRSC संदर्भ को अनिवार्य करने की सिफारिश की।\n• समिति प्रणालियों को मजबूत करना — अनिवार्य संदर्भ, बेहतर स्टाफिंग, और बाध्यकारी सिफारिशों के माध्यम से — एक प्रमुख संसदीय सुधार मांग है।"
+    }
+  },
+  {
+    "uuid": "7c715a95-7f4e-4563-8900-9228ee3100b1",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Financial Committees: Public Accounts Committee (PAC)",
+        "Financial Committees: Committee on Public Undertakings (CPU)",
+        "Financial Committees: Estimates Committee"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Financial committee establishment chronology: Estimates, PAC, CPU",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological order in which the three major financial committees of India's Parliament were established?\n\n(a) Estimates Committee → Public Accounts Committee → Committee on Public Undertakings\n(b) Public Accounts Committee → Committee on Public Undertakings → Estimates Committee\n(c) Committee on Public Undertakings → Estimates Committee → Public Accounts Committee\n(d) Public Accounts Committee → Estimates Committee → Committee on Public Undertakings",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) places CPU before PAC, which students may accept because CPU sounds like a more 'modern' institution and PAC's 1921 origin is not widely memorised.",
+      "elimination_logic": [
+        "Anchor on PAC's founding: PAC was established in 1921 during British India — it is the oldest financial committee.",
+        "Estimates Committee was formally constituted in 1950 (independent India) — after PAC but before CPU.",
+        "CPU was constituted in 1964 — the most recent of the three financial committees.",
+        "Correct chronological order: PAC (1921) → Estimates Committee (1950) → CPU (1964). Select option (d)."
+      ],
+      "upsc_trap_explanation": "Most students know the three financial committees but not their relative chronology. PAC is the oldest (1921, during British India) — a fact frequently skipped in standard preparation. CPU (1964) is the most recent. The trap places Estimates Committee before PAC in some options, exploiting the assumption that the Estimates Committee (which sounds more 'planning-era') came first. Precise historical knowledge of institutional origins is required to navigate this question.",
+      "final_explanation": "The three financial committees of India's Parliament have distinct historical origins spanning over four decades.\n\nCorrect chronological order:\n1. Public Accounts Committee — 1921 (during British India, under the Montagu-Chelmsford reforms framework). Oldest parliamentary financial committee.\n2. Estimates Committee — 1950 (constituted in independent India's first Parliament).\n3. Committee on Public Undertakings — 1964 (youngest of the three; constituted to address the growing public sector after Independence).\n\nWhy wrong options fail:\n• Option (a): Places Estimates before PAC — incorrect; PAC predates independence.\n• Option (b): Places CPU before Estimates — incorrect; CPU (1964) is the most recent.\n• Option (c): Reverses PAC and CPU — incorrect; PAC is the oldest.\n\nValue Addition:\n• PAC's origin in 1921 traces to British India's legislative assembly — it predates the Constitution.\n• CPU was created in 1964 specifically to address the expanding public sector following India's industrial policy of the 1950s.\n• All three committees are reconstituted annually — they are Standing Committees, not Ad Hoc."
+    },
+    "hi": {
+      "display_text": "भारत की संसद की तीन प्रमुख वित्तीय समितियों की स्थापना का सही कालानुक्रमिक क्रम कौन-सा है?\n\n(a) अनुमान समिति → सार्वजनिक लेखा समिति → सार्वजनिक उपक्रम समिति\n(b) सार्वजनिक लेखा समिति → सार्वजनिक उपक्रम समिति → अनुमान समिति\n(c) सार्वजनिक उपक्रम समिति → अनुमान समिति → सार्वजनिक लेखा समिति\n(d) सार्वजनिक लेखा समिति → अनुमान समिति → सार्वजनिक उपक्रम समिति",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) CPU को PAC से पहले रखता है, जिसे छात्र स्वीकार कर सकते हैं क्योंकि CPU एक अधिक 'आधुनिक' संस्था प्रतीत होती है और PAC की 1921 की स्थापना व्यापक रूप से याद नहीं रखी जाती।",
+      "elimination_logic": [
+        "PAC की स्थापना पर आधार: PAC की स्थापना 1921 में ब्रिटिश भारत के दौरान हुई थी — यह सबसे पुरानी वित्तीय समिति है।",
+        "Estimates Committee को औपचारिक रूप से 1950 में गठित किया गया था (स्वतंत्र भारत) — PAC के बाद लेकिन CPU से पहले।",
+        "CPU की स्थापना 1964 में हुई — तीनों वित्तीय समितियों में सबसे हाल की।",
+        "सही कालानुक्रमिक क्रम: PAC (1921) → Estimates Committee (1950) → CPU (1964)। विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "अधिकांश छात्र तीनों वित्तीय समितियों को जानते हैं लेकिन उनके सापेक्ष कालानुक्रम को नहीं। PAC सबसे पुरानी है (1921, ब्रिटिश भारत के दौरान) — यह तथ्य सामान्य तैयारी में अक्सर छूट जाता है। CPU (1964) सबसे हाल की है। इस जाल में कुछ विकल्पों में Estimates Committee को PAC से पहले रखा गया है, जो इस धारणा का फायदा उठाता है कि Estimates Committee (जो अधिक 'योजना-कालीन' लगती है) पहले आई। इस प्रश्न को हल करने के लिए संस्थागत उत्पत्ति का सटीक ऐतिहासिक ज्ञान आवश्यक है।",
+      "final_explanation": "भारत की संसद की तीन प्रमुख वित्तीय समितियों की स्थापना के ऐतिहासिक स्रोत चार दशकों से अधिक समय के हैं।\n\nसही कालानुक्रमिक क्रम:\n1. सार्वजनिक लेखा समिति (Public Accounts Committee) — 1921 (ब्रिटिश भारत के दौरान, Montagu-Chelmsford सुधारों के तहत)। सबसे पुरानी संसदीय वित्तीय समिति।\n2. अनुमान समिति (Estimates Committee) — 1950 (स्वतंत्र भारत के पहले संसद में गठित)।\n3. सार्वजनिक उपक्रम समिति (Committee on Public Undertakings) — 1964 (तीनों में सबसे युवा; स्वतंत्रता के बाद बढ़ते सार्वजनिक क्षेत्र को संबोधित करने के लिए गठित)।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (a): Estimates को PAC से पहले रखता है — गलत; PAC स्वतंत्रता से पहले की है।\n• विकल्प (b): CPU को Estimates से पहले रखता है — गलत; CPU (1964) सबसे हाल की है।\n• विकल्प (c): PAC और CPU को उलट देता है — गलत; PAC सबसे पुरानी है।\n\nमूल्य संवर्धन:\n• PAC की उत्पत्ति 1921 में ब्रिटिश भारत की विधान सभा से हुई — यह संविधान से पहले की है।\n• CPU की स्थापना 1964 में भारत की 1950 के दशक की औद्योगिक नीति के बाद बढ़ते सार्वजनिक क्षेत्र को ध्यान में रखकर की गई।\n• ये तीनों समितियाँ वार्षिक रूप से पुनर्गठित होती हैं — ये स्थायी समितियाँ हैं, अस्थायी नहीं।"
+    }
+  },
+  {
+    "uuid": "854fe255-ad61-4eca-9c2b-3b5cd3a6f4e6",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Classification of Parliamentary Committees: Standing vs Ad Hoc",
+        "Business Advisory Committee (BAC)",
+        "Rules Committee",
+        "Committee on Subordinate Legislation"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Standing committee basis of constitution — Rules of Procedure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements regarding the structure and constitution of parliamentary committees:\n\n1. Standing Committees of Parliament derive their existence from the Rules of Procedure, while Ad Hoc Committees are constituted by a special motion or order for a specific purpose.\n2. The Committee on Subordinate Legislation is a joint committee with members from both Houses, functioning as a single body for both Lok Sabha and Rajya Sabha.\n3. The Business Advisory Committee in Lok Sabha includes leaders of all registered political parties that have representation in the House, regardless of their numerical strength.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Standing Committees of Parliament derive their existence from the Rules of Procedure, while Ad Hoc Committees are constituted by a special motion or order for a specific purpose.",
+          "verdict": "Correct",
+          "reason": "This is the foundational distinction: Standing Committees are permanent bodies created under the Rules of Procedure; Ad Hoc Committees are temporary bodies created by motion or order for a specific task and dissolve on completion."
+        },
+        {
+          "statement": "The Committee on Subordinate Legislation is a joint committee with members from both Houses, functioning as a single body for both Lok Sabha and Rajya Sabha.",
+          "verdict": "Incorrect",
+          "reason": "Separate Committees on Subordinate Legislation exist in each House — they are not a joint committee. Each House has its own committee scrutinising delegated legislation arising from that House's legislative proceedings."
+        },
+        {
+          "statement": "The Business Advisory Committee in Lok Sabha includes leaders of all registered political parties that have representation in the House, regardless of their numerical strength.",
+          "verdict": "Incorrect",
+          "reason": "BAC includes leaders of recognised parties and groups — recognition requires meeting a numerical threshold in the House (typically 10 or more members for a recognised party). Leaders of all registered parties with even one member are not automatically included."
+        }
+      ],
+      "strong_distractor": "d — Selecting all three as correct is the strong trap: Statement 2 sounds procedurally elegant (a unified committee for both Houses), and Statement 3 sounds democratically inclusive (all parties represented).",
+      "elimination_logic": [
+        "Verify Statement 1: Standing Committees under Rules of Procedure; Ad Hoc by special motion — this is the textbook definitional distinction. Statement 1 is Correct.",
+        "Verify Statement 2: Committee on Subordinate Legislation is NOT a joint committee — separate bodies exist in each House. Statement 2 is Incorrect.",
+        "Verify Statement 3: BAC includes leaders of recognised parties — not all registered parties regardless of strength. Statement 3 is Incorrect.",
+        "Only Statement 1 is correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the fact that several parliamentary bodies dealing with similar subjects (Library Committee, SC/ST Welfare Committee) are indeed joint committees — making a similar claim about Subordinate Legislation seem plausible. Statement 3 exploits democratic inclusivity instincts: in a democracy, all parties should be represented. The reality is that BAC membership follows party recognition rules, not registration.",
+      "final_explanation": "The foundational distinction between Standing and Ad Hoc committees, and the structural details of specific standing committees, are tested together here.\n\n• Statement 1 — Correct: This is the definitional core. Standing Committees exist continuously under Rules of Procedure; Ad Hoc Committees are created for specific tasks and dissolve on completion. The basis of constitution is the primary distinguishing criterion.\n• Statement 2 — Incorrect: Each House has its own Committee on Subordinate Legislation. They are not merged into a single joint committee. This is unlike the SC/ST Welfare Committee and Library Committee, which are joint bodies.\n• Statement 3 — Incorrect: BAC includes leaders of 'recognised' parties and groups — recognition is based on numerical strength in the House. Leaders of parties with minimal representation are not automatically included.\n\nValue Addition:\n• Standing Committees: reconstituted annually but continuously functioning.\n• Ad Hoc Committees: constituted for a specific purpose; term tied to completion of that purpose.\n• BAC's advisory recommendations on time allocation are subject to the Speaker's final authority."
+    },
+    "hi": {
+      "display_text": "संसदीय समितियों की संरचना और गठन के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. संसद की स्थायी समितियाँ नियमावली से अपनी स्थापना प्राप्त करती हैं, जबकि विशेष समितियाँ किसी विशिष्ट उद्देश्य के लिए विशेष प्रस्ताव या आदेश द्वारा गठित की जाती हैं।\n2. अधीनस्थ विधायिका समिति एक संयुक्त समिति है जिसमें दोनों सदनों के सदस्य होते हैं, जो लोकसभा और राज्यसभा दोनों के लिए एक एकीकृत निकाय के रूप में कार्य करती है।\n3. लोकसभा में व्यवसाय सलाहकार समिति में उन सभी पंजीकृत राजनीतिक दलों के नेता शामिल होते हैं जिनका सदन में प्रतिनिधित्व है, चाहे उनकी संख्या कितनी भी हो।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संसद की स्थायी समितियाँ नियमावली से अपनी स्थापना प्राप्त करती हैं, जबकि विशेष समितियाँ किसी विशिष्ट उद्देश्य के लिए विशेष प्रस्ताव या आदेश द्वारा गठित की जाती हैं।",
+          "verdict": "सही",
+          "reason": "यह मूलभूत भेद है: स्थायी समितियाँ नियमावली के तहत स्थायी निकाय होती हैं; विशेष समितियाँ अस्थायी होती हैं जो किसी विशिष्ट कार्य के लिए प्रस्ताव या आदेश द्वारा बनाई जाती हैं और कार्य पूरा होने पर समाप्त हो जाती हैं।"
+        },
+        {
+          "statement": "अधीनस्थ विधायिका समिति एक संयुक्त समिति है जिसमें दोनों सदनों के सदस्य होते हैं, जो लोकसभा और राज्यसभा दोनों के लिए एक एकीकृत निकाय के रूप में कार्य करती है।",
+          "verdict": "गलत",
+          "reason": "अधीनस्थ विधायिका की अलग-अलग समितियाँ प्रत्येक सदन में होती हैं — वे संयुक्त समिति नहीं हैं। प्रत्येक सदन की अपनी समिति होती है जो उस सदन की विधायी कार्यवाही से उत्पन्न प्रतिनिधि विधायिका की समीक्षा करती है।"
+        },
+        {
+          "statement": "लोकसभा में व्यवसाय सलाहकार समिति में उन सभी पंजीकृत राजनीतिक दलों के नेता शामिल होते हैं जिनका सदन में प्रतिनिधित्व है, चाहे उनकी संख्या कितनी भी हो।",
+          "verdict": "गलत",
+          "reason": "व्यवसाय सलाहकार समिति में मान्यता प्राप्त दलों और समूहों के नेता शामिल होते हैं — मान्यता के लिए सदन में एक संख्या सीमा पूरी करनी होती है (आमतौर पर मान्यता प्राप्त दल के लिए 10 या अधिक सदस्य)। सभी पंजीकृत दलों के नेता, जिनके केवल एक सदस्य भी हों, स्वचालित रूप से शामिल नहीं होते।"
+        }
+      ],
+      "strong_distractor": "d — तीनों को सही चुनना एक मजबूत जाल है: कथन 2 प्रक्रियात्मक रूप से आकर्षक लगता है (दोनों सदनों के लिए एकीकृत समिति), और कथन 3 लोकतांत्रिक समावेशन की भावना देता है (सभी दल प्रतिनिधित्व में)।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: स्थायी समितियाँ नियमावली के तहत होती हैं; विशेष समितियाँ विशेष प्रस्ताव द्वारा — यह पाठ्यपुस्तक की परिभाषात्मक भेद है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: अधीनस्थ विधायिका समिति संयुक्त समिति नहीं है — प्रत्येक सदन में अलग निकाय होते हैं। कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: व्यवसाय सलाहकार समिति में मान्यता प्राप्त दलों के नेता होते हैं — सभी पंजीकृत दल नहीं। कथन 3 गलत है।",
+        "केवल कथन 1 सही है — विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 इस तथ्य का लाभ उठाता है कि कई संसदीय निकाय जो समान विषयों से संबंधित हैं (पुस्तकालय समिति, अनुसूचित जाति/जनजाति कल्याण समिति) वास्तव में संयुक्त समितियाँ हैं — जिससे अधीनस्थ विधायिका के लिए भी ऐसा दावा संभव लगता है। कथन 3 लोकतांत्रिक समावेशन की भावना का लाभ उठाता है: लोकतंत्र में सभी दलों का प्रतिनिधित्व होना चाहिए। वास्तविकता यह है कि व्यवसाय सलाहकार समिति की सदस्यता दल मान्यता नियमों के अनुसार होती है, न कि पंजीकरण के अनुसार।",
+      "final_explanation": "स्थायी और विशेष समितियों के बीच मूलभूत भेद, और विशिष्ट स्थायी समितियों की संरचनात्मक जानकारी यहाँ एक साथ परखी गई है।\n\n• कथन 1 — सही: यह परिभाषात्मक मूल है। स्थायी समितियाँ नियमावली के तहत निरंतर अस्तित्व में रहती हैं; विशेष समितियाँ विशिष्ट कार्यों के लिए बनाई जाती हैं और कार्य पूरा होने पर समाप्त हो जाती हैं। संविधान का आधार मुख्य भेद है।\n• कथन 2 — गलत: प्रत्येक सदन की अपनी अधीनस्थ विधायिका समिति होती है। वे एक संयुक्त समिति में नहीं मिलतीं। यह अनुसूचित जाति/जनजाति कल्याण समिति और पुस्तकालय समिति से भिन्न है, जो संयुक्त निकाय हैं।\n• कथन 3 — गलत: व्यवसाय सलाहकार समिति में 'मान्यता प्राप्त' दलों और समूहों के नेता होते हैं — मान्यता सदन में सदस्य संख्या पर आधारित होती है। न्यूनतम प्रतिनिधित्व वाले दलों के नेता स्वचालित रूप से शामिल नहीं होते।\n\nमूल्यवर्धन:\n• स्थायी समितियाँ: वार्षिक पुनर्गठन के बावजूद निरंतर कार्यरत रहती हैं।\n• विशेष समितियाँ: विशिष्ट उद्देश्य के लिए गठित; कार्य पूरा होने पर समाप्त।\n• व्यवसाय सलाहकार समिति की समय आवंटन संबंधी सलाह अंतिम रूप से स्पीकर के अधिकार क्षेत्र में होती है।"
+    }
+  },
+  {
+    "uuid": "9d5d3e23-b4c8-46b7-9d61-ca563185d257",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Financial Committees: Public Accounts Committee (PAC)",
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate",
+        "Committee on Subordinate Legislation",
+        "Committee on Government Assurances",
+        "Library Committee and House Committee: Internal Administrative Committees"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Correct committee–attribute mapping across five distinct bodies",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Parliamentary Committee) with List II (Defining Attribute):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Public Accounts Committee",
+            "1. Examines Bills referred to it, Demands for Grants, and annual reports of assigned ministry clusters; 31 members from both Houses"
+          ],
+          [
+            "B. Departmentally Related Standing Committees",
+            "2. Retrospective examination; scrutinises post-expenditure appropriation accounts and CAG audit reports on government ministries"
+          ],
+          [
+            "C. Committee on Subordinate Legislation",
+            "3. Scrutinises rules, regulations, and bye-laws framed under delegated authority to ensure they remain within the scope of the parent Act"
+          ],
+          [
+            "D. Library Committee",
+            "4. A housekeeping/service committee supervising the Parliamentary Library; has no legislative, financial, or oversight function"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-4, D-3\n(b) A-2, B-3, C-1, D-4\n(c) A-2, B-1, C-3, D-4\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) correctly places PAC but swaps DRSC and Subordinate Legislation descriptions, exploiting the fact that both deal with ministry-related statutory materials.",
+      "elimination_logic": [
+        "Anchor on Library Committee: pure housekeeping/service committee — supervises the Parliamentary Library; matches D with 4.",
+        "Anchor on PAC: retrospective examination of post-expenditure accounts via CAG reports — matches A with 2.",
+        "Distinguish DRSC from Subordinate Legislation: DRSCs examine Bills and annual reports of ministries (B matches 1); Subordinate Legislation committee examines rules/regulations under delegated authority (C matches 3).",
+        "Government Assurances: tracks ministerial floor assurances for implementation — matches with description in option already assigned. Confirm full matching: A-2, B-1, C-3, D-4 = option (c)."
+      ],
+      "upsc_trap_explanation": "The DRSC–Subordinate Legislation conflation is the primary trap: both involve Parliament examining executive-generated material connected to ministries. However, DRSCs examine Bills and annual reports (the broader policy and legislative framework), while the Subordinate Legislation Committee examines rules and regulations framed under existing Acts. Conflating 'examining ministry-related material' collapses this important distinction.",
+      "final_explanation": "This question maps five distinct committees to their defining attributes.\n\nCorrect pairings:\n• A (PAC) — 2: Retrospective; examines post-expenditure appropriation accounts and CAG audit reports on ministries.\n• B (DRSCs) — 1: Examines Bills referred, Demands for Grants, and annual reports of assigned ministry clusters; 31 members from both Houses.\n• C (Committee on Subordinate Legislation) — 3: Scrutinises rules, regulations, bye-laws, and notifications framed under delegated legislative authority to ensure they stay within the scope of the parent Act.\n• D (Library Committee) — 4: Housekeeping/service committee; supervises Parliamentary Library; no legislative, financial, or oversight function.\n\nTrap pairing: B (DRSCs) and C (Subordinate Legislation) are both ministry-connected scrutiny bodies — the distinction is the type of document: Bills/annual reports (DRSC) vs delegated rules (Subordinate Legislation).\n\nValue Addition:\n• PAC and CPU both examine CAG reports but differ in focus: PAC = ministries, CPU = PSUs.\n• Library Committee and House Committee are service committees — not scrutiny bodies.\n• Each House has its own Subordinate Legislation Committee — they are not joint committees."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संसदीय समिति) को सूची II (परिभाषित गुण) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. लोक लेखा समिति",
+            "1. संदर्भित बिलों, अनुदान मांगों, और आवंटित मंत्रालय समूहों की वार्षिक रिपोर्टों की जांच करता है; दोनों सदनों के 31 सदस्य"
+          ],
+          [
+            "B. विभागीय संबंधित स्थायी समितियाँ",
+            "2. व्यय के बाद की जांच; मंत्रालयों के व्यय खातों और CAG के लेखा परीक्षा रिपोर्टों की समीक्षा करता है"
+          ],
+          [
+            "C. अधीनस्थ विधायी समिति",
+            "3. प्रतिनिधि प्राधिकरण के तहत बनाए गए नियमों, विनियमों, और उपनियमों की जांच करता है ताकि वे मूल अधिनियम के दायरे में रहें"
+          ],
+          [
+            "D. पुस्तकालय समिति",
+            "4. संसदीय पुस्तकालय की देखरेख करने वाली गृहकार्य/सेवा समिति; इसका कोई विधायी, वित्तीय, या निरीक्षण कार्य नहीं है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन-सा है?\n\n(a) A-1, B-2, C-4, D-3\n(b) A-2, B-3, C-1, D-4\n(c) A-2, B-1, C-3, D-4\n(d) A-3, B-4, C-2, D-1"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) सही रूप से PAC को रखता है लेकिन DRSC और Subordinate Legislation के विवरणों को बदल देता है, क्योंकि दोनों मंत्रालय-संबंधित वैधानिक सामग्रियों से संबंधित हैं।",
+      "elimination_logic": [
+        "Library Committee पर आधार: शुद्ध गृहकार्य/सेवा समिति — संसदीय पुस्तकालय की देखरेख करती है; D को 4 से मिलाना।",
+        "PAC पर आधार: व्यय के बाद के खातों की CAG रिपोर्टों के माध्यम से पुनरावलोकन — A को 2 से मिलाना।",
+        "DRSC को Subordinate Legislation से अलग करना: DRSC बिलों और मंत्रालयों की वार्षिक रिपोर्टों की जांच करता है (B को 1 से मिलाना); Subordinate Legislation समिति नियम/नियमावली की जांच करती है जो प्रतिनिधि प्राधिकरण के तहत बनाई गई हैं (C को 3 से मिलाना)।",
+        "Government Assurances: मंत्री के सदन में दिए गए आश्वासनों की निगरानी करता है — पहले से आवंटित विकल्प के विवरण से मेल खाता है। पूर्ण मिलान की पुष्टि करें: A-2, B-1, C-3, D-4 = विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "DRSC और Subordinate Legislation का भ्रम मुख्य जाल है: दोनों संसद द्वारा मंत्रालयों से संबंधित कार्यकारी-निर्मित सामग्री की जांच से जुड़े हैं। हालांकि, DRSC बिलों और वार्षिक रिपोर्टों की जांच करता है (जो व्यापक नीति और विधायी ढांचे से संबंधित हैं), जबकि Subordinate Legislation समिति मौजूदा अधिनियमों के तहत बनाए गए नियमों और विनियमों की जांच करती है। 'मंत्रालय-संबंधित सामग्री की जांच' को मिलाना इस महत्वपूर्ण भेद को धुंधला कर देता है।",
+      "final_explanation": "यह प्रश्न पाँच अलग-अलग समितियों को उनके परिभाषित गुणों से जोड़ता है।\n\nसही जोड़े:\n• A (PAC) — 2: व्यय के बाद; मंत्रालयों के व्यय खातों और CAG के लेखा परीक्षा रिपोर्टों की जांच करता है।\n• B (DRSCs) — 1: संदर्भित बिलों, अनुदान मांगों, और आवंटित मंत्रालय समूहों की वार्षिक रिपोर्टों की जांच करता है; दोनों सदनों के 31 सदस्य।\n• C (Subordinate Legislation Committee) — 3: प्रतिनिधि विधायी प्राधिकरण के तहत बनाए गए नियमों, विनियमों, उपनियमों और अधिसूचनाओं की जांच करता है ताकि वे मूल अधिनियम के दायरे में रहें।\n• D (Library Committee) — 4: गृहकार्य/सेवा समिति; संसदीय पुस्तकालय की देखरेख करती है; कोई विधायी, वित्तीय या निरीक्षण कार्य नहीं।\n\nजाल जोड़ा: B (DRSCs) और C (Subordinate Legislation) दोनों मंत्रालय-संबंधित जांच निकाय हैं — अंतर दस्तावेज़ के प्रकार में है: बिल/वार्षिक रिपोर्ट (DRSC) बनाम प्रतिनिधि नियम (Subordinate Legislation)।\n\nमूल्य संवर्धन:\n• PAC और CPU दोनों CAG रिपोर्टों की जांच करते हैं लेकिन ध्यान केंद्रित क्षेत्र अलग है: PAC = मंत्रालय, CPU = PSU।\n• Library Committee और House Committee सेवा समितियाँ हैं — जांच निकाय नहीं।\n• प्रत्येक सदन की अपनी Subordinate Legislation Committee होती है — वे संयुक्त समितियाँ नहीं हैं।"
+    }
+  },
+  {
+    "uuid": "1fad739d-0a37-4105-aba4-214d52c354ac",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Consultative Committees: Nature and Distinction from Parliamentary Committees",
+        "Departmentally Related Standing Committees (DRSCs): Structure and Mandate"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "conflation",
+      "concept_anchor": "Consultative Committees not parliamentary committees; no formal powers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Consultative Committees attached to central government ministries are not parliamentary committees in the strict sense — they are constituted by the Ministry of Parliamentary Affairs and have no formal powers such as summoning witnesses or tabling reports in Parliament.\n\nReason (R): Departmentally Related Standing Committees are reconstituted annually and consist of 31 members drawn from both Lok Sabha and Rajya Sabha.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both A and R are correct and see a surface logical connection (informal body → no powers → hence not a parliamentary committee) may select (a) without examining the causal direction carefully.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Consultative Committees are not parliamentary committees in the strict sense. They are constituted by the Ministry of Parliamentary Affairs and have no formal powers.",
+        "Step 2: Is Reason (R) correct? — Yes. DRSCs are reconstituted annually and have 31 members from both Houses — this is a factually accurate description of DRSCs.",
+        "Step 3: Does R explain A? — No. The reason why Consultative Committees are not parliamentary committees has nothing to do with how DRSCs are structured. R describes DRSCs — a separate institutional fact. A's status as a non-parliamentary committee arises from its own constitution (by Ministry of Parliamentary Affairs) and lack of formal powers — not from any contrast with DRSC structure. R and A are independent facts.",
+        "A correct + R correct + R does NOT explain A = option (b)."
+      ],
+      "upsc_trap_explanation": "This is a classic 'both correct but causally unrelated' assertion-reason design. Students who correctly verify both A and R as factual may assume R explains A because DRSCs (described in R) are the 'real' parliamentary committees — and Consultative Committees differ from them. But the causal explanation for A's status is the Consultative Committees' own constitution and lack of formal powers — not the DRSC's structure. R is an independent institutional description, not a causal explanation for A.",
+      "final_explanation": "Consultative Committees and DRSCs are frequently compared as two forms of ministry-Parliament interface — but they are institutionally distinct.\n\nAssertion (A) — Correct: Consultative Committees are constituted by the Ministry of Parliamentary Affairs. They provide only an informal discussion forum between Ministers and MPs on ministry policies. They have no powers to summon witnesses, call for papers, or submit formal reports to Parliament. They are not parliamentary committees in the strict sense.\n\nReason (R) — Correct: DRSCs are reconstituted annually and have 31 members from both Lok Sabha and Rajya Sabha — this accurately describes DRSC structure.\n\nCausal link — Absent: R does not explain A. A's non-parliamentary status flows from the Consultative Committees' own constitutive authority (Ministry of Parliamentary Affairs) and their absence of formal powers — not from any contrast with how DRSCs are structured. Both facts are true but independent.\n\nAnswer: Option (b).\n\nValue Addition:\n• Consultative Committee membership is voluntary; meetings happen during and between sessions.\n• DRSCs have formal mandates: Bills, Demands for Grants, annual reports — each producing an official report tabled in Parliament.\n• The line between informal consultation (Consultative Committees) and formal scrutiny (DRSCs) is a key institutional distinction in Indian parliamentary practice."
+    },
+    "hi": {
+      "display_text": "कथन (A): केंद्र सरकार के मंत्रालयों से सम्बद्ध सलाहकार समितियाँ सख्त अर्थों में संसदीय समितियाँ नहीं हैं — इन्हें संसदीय कार्य मंत्रालय द्वारा गठित किया जाता है और इनके पास गवाहों को तलब करने या संसद में रिपोर्ट प्रस्तुत करने जैसे कोई औपचारिक अधिकार नहीं होते।\n\nकारण (R): विभागीय संबंधित स्थायी समितियाँ वार्षिक रूप से पुनर्गठित होती हैं और इनमें लोकसभा और राज्यसभा दोनों से 31 सदस्य होते हैं।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Students who know both A and R are correct and see a surface logical connection (informal body → no powers → hence not a parliamentary committee) may select (a) without examining the causal direction carefully.",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। सलाहकार समितियाँ सख्त अर्थों में संसदीय समितियाँ नहीं हैं। इन्हें संसदीय कार्य मंत्रालय द्वारा गठित किया जाता है और इनके पास कोई औपचारिक अधिकार नहीं होते।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। विभागीय संबंधित स्थायी समितियाँ (DRSCs) वार्षिक रूप से पुनर्गठित होती हैं और इनमें लोकसभा और राज्यसभा दोनों से 31 सदस्य होते हैं — यह DRSCs का तथ्यात्मक सही विवरण है।",
+        "चरण 3: क्या R, A की व्याख्या करता है? — नहीं। सलाहकार समितियाँ संसदीय समितियाँ क्यों नहीं हैं, इसका कारण DRSCs की संरचना से संबंधित नहीं है। R DRSCs का वर्णन करता है — एक अलग संस्थागत तथ्य। A की गैर-संसदीय समिति की स्थिति इसकी अपनी संरचना (संसदीय कार्य मंत्रालय द्वारा) और औपचारिक अधिकारों के अभाव से उत्पन्न होती है — DRSC संरचना के किसी भी विरोधाभास से नहीं। R और A स्वतंत्र तथ्य हैं।",
+        "A सही + R सही + R, A की व्याख्या नहीं करता = विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "यह एक क्लासिक 'दोनों सही लेकिन कारणात्मक रूप से असंबंधित' कथन-कारण डिज़ाइन है। जो छात्र दोनों A और R को तथ्यात्मक रूप से सही मानते हैं, वे मान सकते हैं कि R, A की व्याख्या करता है क्योंकि DRSCs (जो R में वर्णित हैं) 'वास्तविक' संसदीय समितियाँ हैं — और सलाहकार समितियाँ उनसे भिन्न हैं। लेकिन A की स्थिति का कारण सलाहकार समितियों की अपनी संरचना और औपचारिक अधिकारों का अभाव है — न कि DRSC की संरचना। R एक स्वतंत्र संस्थागत विवरण है, A के लिए कारणात्मक व्याख्या नहीं।",
+      "final_explanation": "सलाहकार समितियाँ और DRSCs अक्सर मंत्रालय-संसद इंटरफेस के दो रूपों के रूप में तुलना की जाती हैं — लेकिन वे संस्थागत रूप से भिन्न हैं।\n\nकथन (A) — सही: सलाहकार समितियाँ संसदीय कार्य मंत्रालय द्वारा गठित की जाती हैं। ये मंत्री और सांसदों के बीच मंत्रालय की नीतियों पर केवल अनौपचारिक चर्चा मंच प्रदान करती हैं। इनके पास गवाहों को तलब करने, दस्तावेज़ मांगने या संसद में औपचारिक रिपोर्ट प्रस्तुत करने के अधिकार नहीं हैं। ये सख्त अर्थों में संसदीय समितियाँ नहीं हैं।\n\nकारण (R) — सही: DRSCs वार्षिक रूप से पुनर्गठित होती हैं और इनमें लोकसभा और राज्यसभा दोनों से 31 सदस्य होते हैं — यह DRSC संरचना का सही विवरण है।\n\nकारणात्मक संबंध — अनुपस्थित: R, A की व्याख्या नहीं करता। A की गैर-संसदीय स्थिति सलाहकार समितियों की अपनी संवैधानिक प्राधिकरण (संसदीय कार्य मंत्रालय) और औपचारिक अधिकारों के अभाव से उत्पन्न होती है — न कि DRSCs की संरचना के किसी विरोधाभास से। दोनों तथ्य सही हैं लेकिन स्वतंत्र हैं।\n\nउत्तर: विकल्प (b)।\n\nमूल्य संवर्धन:\n• सलाहकार समिति की सदस्यता स्वैच्छिक होती है; बैठकें सत्रों के दौरान और बीच में होती हैं।\n• DRSCs के पास औपचारिक कार्य होते हैं: विधेयक, अनुदान मांग, वार्षिक रिपोर्टें — प्रत्येक संसद में प्रस्तुत आधिकारिक रिपोर्ट बनाती है।\n• अनौपचारिक परामर्श (सलाहकार समितियाँ) और औपचारिक जांच (DRSCs) के बीच की रेखा भारतीय संसदीय अभ्यास में एक महत्वपूर्ण संस्थागत भेद है।"
+    }
+  },
+  {
+    "uuid": "d8932a26-780c-45b0-b350-e87b0585a574",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Parliament",
+      "sub_topic": "Standing committees and ad hoc committees",
+      "concepts_used": [
+        "Committee on Subordinate Legislation",
+        "Committee on Papers Laid on the Table",
+        "Committee on Government Assurances",
+        "Library Committee and House Committee: Internal Administrative Committees"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "House Committee is administrative; others are oversight committees",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following parliamentary committees perform an oversight or executive accountability function. Which one does NOT belong to that category?\n\n(a) Committee on Subordinate Legislation\n(b) Committee on Papers Laid on the Table\n(c) Committee on Government Assurances\n(d) House Committee",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — The Committee on Papers Laid on the Table sounds procedural/administrative (it checks 'papers'), which may mislead students into thinking it is a housekeeping body like the House Committee.",
+      "elimination_logic": [
+        "Identify the common attribute: oversight/accountability over executive-generated materials or actions.",
+        "Committee on Subordinate Legislation: scrutinises delegated legislative instruments — oversight function. Fits.",
+        "Committee on Papers Laid on the Table: scrutinises procedural compliance in tabling statutory documents — oversight function. Fits.",
+        "Committee on Government Assurances: tracks implementation of ministerial floor commitments — accountability function. Fits.",
+        "House Committee: oversees residential accommodation and amenities for MPs — purely administrative/housekeeping function. Does NOT fit the oversight theme.",
+        "House Committee is the odd one out — select option (d)."
+      ],
+      "upsc_trap_explanation": "Option (b) is the strong distractor: the Committee on Papers Laid on the Table sounds administrative because it deals with 'papers' being 'laid' — which sounds like a housekeeping task. However, it is a substantive oversight body that checks whether the executive has complied with statutory requirements in tabling documents. The House Committee, by contrast, has zero oversight or accountability function — it deals purely with member welfare (housing, amenities).",
+      "final_explanation": "Three of the four committees perform an oversight or accountability function over executive actions; one is a service committee.\n\n• Option (a) — Committee on Subordinate Legislation: Scrutinises rules/regulations under delegated authority — a direct check on executive law-making power.\n• Option (b) — Committee on Papers Laid on the Table: Scrutinises whether the executive complied with statutory tabling requirements — a procedural oversight function.\n• Option (c) — Committee on Government Assurances: Tracks ministerial floor assurances for implementation — an executive accountability function.\n• Option (d) — House Committee: Manages residential accommodation and amenities for members of Parliament. Purely administrative — no legislative, financial, or oversight function whatsoever.\n\nValue Addition:\n• Library Committee and House Committee are the two classic 'service committees' of Parliament — both housekeeping in nature.\n• Committee on Papers Laid on the Table is frequently confused with the Library Committee due to the word 'papers' — but they are entirely different bodies.\n• All three oversight committees in this question (options a, b, c) are Standing Committees existing separately in each House."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन संसदीय समितियाँ कार्यपालिका पर निगरानी या जवाबदेही का कार्य करती हैं। इनमें से कौन-सी उस श्रेणी में नहीं आती?\n\n(a) Committee on Subordinate Legislation\n(b) Committee on Papers Laid on the Table\n(c) Committee on Government Assurances\n(d) House Committee",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Committee on Papers Laid on the Table नाम सुनने में प्रक्रियात्मक/प्रशासनिक लगता है (यह 'कागजात' की जांच करता है), जो छात्रों को यह भ्रम दे सकता है कि यह House Committee की तरह एक गृहकार्य निकाय है।",
+      "elimination_logic": [
+        "साझा गुण पहचानें: कार्यकारी द्वारा उत्पन्न सामग्री या क्रियाओं पर निगरानी/जवाबदेही।",
+        "Committee on Subordinate Legislation: प्रतिनिधि विधायी उपकरणों की जांच करता है — निगरानी कार्य। उपयुक्त।",
+        "Committee on Papers Laid on the Table: सांविधिक दस्तावेजों के टेबलिंग में प्रक्रियात्मक अनुपालन की जांच करता है — निगरानी कार्य। उपयुक्त।",
+        "Committee on Government Assurances: मंत्री के सदन में किए गए आश्वासनों के क्रियान्वयन को ट्रैक करता है — जवाबदेही कार्य। उपयुक्त।",
+        "House Committee: सांसदों के आवास और सुविधाओं की देखरेख करता है — पूरी तरह प्रशासनिक/गृहकार्य कार्य। निगरानी विषय से मेल नहीं खाता।",
+        "House Committee अलग है — विकल्प (d) चुनें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) मुख्य भ्रम पैदा करने वाला है: Committee on Papers Laid on the Table नाम सुनने में प्रशासनिक लगता है क्योंकि यह 'कागजात' के 'टेबल' होने से संबंधित है — जो गृहकार्य जैसा प्रतीत होता है। परन्तु यह एक महत्वपूर्ण निगरानी निकाय है जो जांचता है कि क्या कार्यपालिका ने दस्तावेजों को टेबल करने में सांविधिक आवश्यकताओं का पालन किया है। इसके विपरीत, House Committee का कोई निगरानी या जवाबदेही कार्य नहीं है — यह केवल सदस्यों की भलाई (आवास, सुविधाएँ) से संबंधित है।",
+      "final_explanation": "निम्नलिखित चार समितियों में से तीन कार्यपालिका क्रियाओं पर निगरानी या जवाबदेही का कार्य करती हैं; एक सेवा समिति है।\n\n• विकल्प (a) — Committee on Subordinate Legislation: प्रतिनिधि अधिकार के तहत नियम/नियमावली की जांच करता है — कार्यपालिका के विधायी अधिकार पर प्रत्यक्ष नियंत्रण।\n• विकल्प (b) — Committee on Papers Laid on the Table: जांच करता है कि कार्यपालिका ने सांविधिक टेबलिंग आवश्यकताओं का पालन किया या नहीं — एक प्रक्रियात्मक निगरानी कार्य।\n• विकल्प (c) — Committee on Government Assurances: मंत्री के सदन में दिए गए आश्वासनों के क्रियान्वयन को ट्रैक करता है — कार्यपालिका जवाबदेही कार्य।\n• विकल्प (d) — House Committee: सांसदों के आवास और सुविधाओं का प्रबंधन करता है। पूरी तरह प्रशासनिक — कोई विधायी, वित्तीय या निगरानी कार्य नहीं।\n\nमूल्यवर्धन:\n• Library Committee और House Committee संसद की दो क्लासिक 'सेवा समितियाँ' हैं — दोनों गृहकार्य प्रकृति की हैं।\n• Committee on Papers Laid on the Table को 'कागजात' शब्द के कारण अक्सर Library Committee से भ्रमित किया जाता है — पर वे पूरी तरह अलग निकाय हैं।\n• इस प्रश्न के तीनों निगरानी समितियाँ (विकल्प a, b, c) स्थायी समितियाँ हैं जो प्रत्येक सदन में अलग-अलग मौजूद हैं।"
+    }
+  }
+]

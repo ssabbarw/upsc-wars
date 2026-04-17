@@ -1,0 +1,1237 @@
+[
+  {
+    "uuid": "433cfec9-0207-4fd3-a9c6-6e14cde59a51",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Kathputli — Rajasthani String Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Kathputli construction and community identity",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following correctly describes the Kathputli puppet tradition of Rajasthan?\n\n(a) It is performed by the Killekyata community using jointed figures operated by rods from below\n(b) It features wooden figures with no legs, manipulated by a single overhead string, and is practised by the Bhat community\n(c) It is a rod puppet tradition in which figures are carved from a single piece of wood without joints\n(d) It uses translucent leather figures and is among the heaviest puppet forms in India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because rod puppetry is a visible and well-known form, and students may confuse Kathputli with Putul Nautch of Bengal, which is indeed a rod puppet tradition.",
+      "elimination_logic": [
+        "Eliminate option (a): Kathputli is associated with the Bhat community of Rajasthan, not the Killekyata community, which belongs to Tholu Bommalata of Andhra Pradesh.",
+        "Eliminate option (c): Kathputli is a string puppet manipulated from above — it is NOT a rod puppet; rod puppets are operated from below.",
+        "Eliminate option (d): Kathputli figures have no legs and are wooden — they are not made from leather, which is characteristic of shadow puppet traditions.",
+        "Confirm option (b): Kathputli is a wooden string puppet with no legs, operated by a single overhead thread, and practised by the Bhat community of Rajasthan."
+      ],
+      "upsc_trap_explanation": "The most common error in this question is selecting option (c) — rod puppet — because students often conflate Kathputli with Putul Nautch of Bengal. Putul Nautch is West Bengal's rod puppet tradition, operated from below. Kathputli is strictly a string puppet, operated from above by a single thread. A partially prepared student who has read only that 'Kathputli is a puppet tradition of Rajasthan' without internalising its technical classification will be drawn to the more familiar-sounding rod puppet option.",
+      "final_explanation": "Kathputli is Rajasthan's iconic string puppet tradition, practised hereditarily by the Bhat community. The name derives from 'Katth' (wood) and 'Putli' (doll), reflecting its construction from wood. Its most distinguishing technical feature is that the figure has no legs and is manipulated by a single thread from above — making it simpler in mechanism than jointed string puppets from other regions.\n\n• Option (a) — Incorrect: The Killekyata community is associated with Tholu Bommalata of Andhra Pradesh, not Kathputli.\n• Option (b) — Correct: Kathputli is a wooden string puppet with no legs, operated by a single overhead string, performed by the Bhat community of Rajasthan.\n• Option (c) — Incorrect: Kathputli is a string puppet, not a rod puppet. Rod puppets (like Putul Nautch) are operated from below by rods.\n• Option (d) — Incorrect: Leather is used in shadow puppet traditions such as Tholu Bommalata and Tholpavakoothu, not in Kathputli.\n\nValue Addition:\n• Kathputli performances narrate stories of folk heroes like Amar Singh Rathore and Prithviraj Chauhan, linking them to oral history.\n• The Bhat community is a nomadic performer community of Rajasthan with hereditary ties to this tradition.\n• Sangeet Natak Akademi has documented Kathputli as part of India's intangible cultural heritage preservation efforts."
+    },
+    "hi": {
+      "display_text": "राजस्थान की कठपुतली कठपुतली परंपरा का सही वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) यह किलेक्याता समुदाय द्वारा निभाई जाती है, जिसमें जोड़ वाले पुतले नीचे से छड़ी द्वारा संचालित होते हैं\n(b) इसमें लकड़ी के पुतले होते हैं जिनके पैर नहीं होते, जिन्हें एकल ऊपर से डोरी द्वारा नियंत्रित किया जाता है, और यह भट समुदाय द्वारा निभाई जाती है\n(c) यह एक छड़ी कठपुतली परंपरा है जिसमें पुतले बिना जोड़ के एक लकड़ी के टुकड़े से तराशे जाते हैं\n(d) इसमें पारदर्शी चमड़े के पुतले होते हैं और यह भारत के सबसे भारी कठपुतली रूपों में से एक है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम पैदा करने वाला है क्योंकि छड़ी कठपुतली एक दृश्य और प्रसिद्ध रूप है, और छात्र कठपुतली को बंगाल की पुतुल नाच से भ्रमित कर सकते हैं, जो वास्तव में एक छड़ी कठपुतली परंपरा है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएँ: कठपुतली राजस्थान के भट समुदाय से जुड़ी है, न कि किलेक्याता समुदाय से, जो आंध्र प्रदेश की थोलू बोंमलाटा से संबंधित है।",
+        "विकल्प (c) को हटाएँ: कठपुतली ऊपर से संचालित होने वाली डोरी से नियंत्रित होने वाली स्ट्रिंग कठपुतली है — यह छड़ी कठपुतली नहीं है; छड़ी कठपुतलियाँ नीचे से संचालित होती हैं।",
+        "विकल्प (d) को हटाएँ: कठपुतली के पुतले के पैर नहीं होते और वे लकड़ी के होते हैं — वे चमड़े से नहीं बने होते, जो छाया कठपुतली परंपराओं की विशेषता है।",
+        "विकल्प (b) की पुष्टि करें: कठपुतली एक लकड़ी की स्ट्रिंग कठपुतली है जिसके पैर नहीं होते, जो एकल ऊपर से डोरी द्वारा संचालित होती है, और यह राजस्थान के भट समुदाय द्वारा प्रचलित है।"
+      ],
+      "upsc_trap_explanation": "इस प्रश्न में सबसे सामान्य त्रुटि विकल्प (c) — छड़ी कठपुतली — का चयन करना है क्योंकि छात्र अक्सर कठपुतली को बंगाल की पुतुल नाच के साथ भ्रमित कर देते हैं। पुतुल नाच पश्चिम बंगाल की छड़ी कठपुतली परंपरा है, जो नीचे से संचालित होती है। कठपुतली सख्ती से ऊपर से एकल डोरी द्वारा संचालित स्ट्रिंग कठपुतली है। जो छात्र केवल यह पढ़े हैं कि 'कठपुतली राजस्थान की कठपुतली परंपरा है' लेकिन इसकी तकनीकी वर्गीकरण को नहीं समझे हैं, वे अधिक परिचित लगने वाले छड़ी कठपुतली विकल्प की ओर आकर्षित होंगे।",
+      "final_explanation": "कठपुतली राजस्थान की प्रसिद्ध स्ट्रिंग कठपुतली परंपरा है, जो विरासत में भट समुदाय द्वारा निभाई जाती है। इसका नाम 'कट्ठ' (लकड़ी) और 'पुतली' (गुड़िया) से लिया गया है, जो इसके लकड़ी से बने होने को दर्शाता है। इसकी सबसे विशिष्ट तकनीकी विशेषता यह है कि इसके पुतले के पैर नहीं होते और इसे ऊपर से एकल डोरी द्वारा नियंत्रित किया जाता है — जो इसे अन्य क्षेत्रों की जोड़ वाली स्ट्रिंग कठपुतलियों की तुलना में सरल बनाता है।\n\n• विकल्प (a) — गलत: किलेक्याता समुदाय आंध्र प्रदेश की थोलू बोंमलाटा से जुड़ा है, कठपुतली से नहीं।\n• विकल्प (b) — सही: कठपुतली एक लकड़ी की स्ट्रिंग कठपुतली है जिसके पैर नहीं होते, जो एकल ऊपर से डोरी द्वारा संचालित होती है, और राजस्थान के भट समुदाय द्वारा निभाई जाती है।\n• विकल्प (c) — गलत: कठपुतली स्ट्रिंग कठपुतली है, छड़ी कठपुतली नहीं। छड़ी कठपुतलियाँ (जैसे पुतुल नाच) नीचे से छड़ी द्वारा संचालित होती हैं।\n• विकल्प (d) — गलत: चमड़ा थोलू बोंमलाटा और थोलपवाकूथु जैसी छाया कठपुतली परंपराओं में उपयोग होता है, कठपुतली में नहीं।\n\nमूल्य संवर्धन:\n• कठपुतली प्रस्तुतियाँ अमर सिंह राठौड़ और पृथ्वीराज चौहान जैसे लोक नायकों की कहानियाँ प्रस्तुत करती हैं, जो मौखिक इतिहास से जुड़ी हैं।\n• भट समुदाय राजस्थान का एक खानाबदोश कलाकार समुदाय है, जिसका इस परंपरा से विरासत संबंध है।\n• संगीत नाटक अकादमी ने कठपुतली को भारत की अमूर्त सांस्कृतिक विरासत संरक्षण प्रयासों के हिस्से के रूप में दस्तावेजीकृत किया है।"
+    }
+  },
+  {
+    "uuid": "83f0a6e8-86c8-4aec-918e-e99209062f1d",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Ravanachhaya — Odisha Shadow Puppet Tradition",
+        "Tholpavakoothu — Kerala Shadow Puppet Tradition",
+        "Tholu Bommalata — Andhra Pradesh Shadow Puppet Tradition",
+        "Togalu Gombeyaata — Karnataka Shadow Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Ravanachhaya opaque figures — shadow puppet distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Indian shadow puppet traditions:\n\n1. Ravanachhaya of Odisha uses opaque, single-piece deer hide figures that project only black silhouettes.\n2. Tholpavakoothu of Kerala is performed as a secular entertainment tradition at public fairs and festivals.\n3. Tholu Bommalata of Andhra Pradesh uses perforated and dye-colored leather figures to produce multi-colored shadows on the screen.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Ravanachhaya of Odisha uses opaque, single-piece deer hide figures that project only black silhouettes.",
+          "verdict": "Correct",
+          "reason": "Ravanachhaya figures are made from a single piece of untreated deer hide without joints; they are opaque and produce only black silhouettes, distinguishing them from translucent shadow puppets elsewhere."
+        },
+        {
+          "statement": "Tholpavakoothu of Kerala is performed as a secular entertainment tradition at public fairs and festivals.",
+          "verdict": "Incorrect",
+          "reason": "Tholpavakoothu is strictly a ritual shadow puppet tradition performed inside Koothumadam theatres attached to Bhadrakali temples — it is sacred and temple-bound, not secular entertainment."
+        },
+        {
+          "statement": "Tholu Bommalata of Andhra Pradesh uses perforated and dye-colored leather figures to produce multi-colored shadows on the screen.",
+          "verdict": "Correct",
+          "reason": "Tholu Bommalata puppets are treated goat/deer hide figures with holes punched and colored with dyes, which cast multi-colored shadows — a unique technical feature of this tradition."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is a strong distractor because statements 1 and 3 are both correct, tempting students who are unsure about statement 2 to choose 'all three correct.'",
+      "elimination_logic": [
+        "Verify Statement 1: Ravanachhaya figures are opaque single-piece hide, projecting black silhouettes — this is the hallmark distinction of Odisha's shadow puppet tradition. Statement 1 is Correct.",
+        "Verify Statement 2: Tholpavakoothu is performed inside temple-attached Koothumadam structures as a ritual lasting up to 41 nights — it is NOT secular. Statement 2 is Incorrect.",
+        "Verify Statement 3: Tholu Bommalata's colored, perforated leather technique producing multi-colored shadows is its defining technical feature. Statement 3 is Correct.",
+        "Only statements 1 and 3 are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 is the trap. Students who associate shadow puppetry broadly with public performance will incorrectly mark it correct. Tholpavakoothu's ritual exclusivity — performed only within temple precincts over 41 nights — is precisely what differentiates it from secular traditions like Kathputli. A student who knows Kerala has shadow puppetry but hasn't registered its sacred-ritual nature will fall into this trap.",
+      "final_explanation": "Indian shadow puppet traditions vary sharply in technique, context, and function. Three major traditions — Ravanachhaya, Tholpavakoothu, and Tholu Bommalata — are frequently tested together because each has a distinctive feature.\n\n• Statement 1 — Correct: Ravanachhaya of Odisha is unique because its figures are carved from a single piece of untreated deer hide without joints, are fully opaque, and produce only stark black silhouettes — unlike all other Indian shadow traditions which use translucent leather.\n• Statement 2 — Incorrect: Tholpavakoothu is emphatically NOT a secular entertainment tradition. It is performed exclusively inside Koothumadam, a special theater built within Bhadrakali temple complexes, as a sacred ritual retelling of the Ramayana. It can last up to 41 nights.\n• Statement 3 — Correct: Tholu Bommalata of Andhra Pradesh received a GI Tag and is distinctive for its colored shadows — achieved through perforations and vegetable dyes applied to treated leather.\n\nValue Addition:\n• Tholu Bommalata figures can be up to 5 feet tall — among the largest shadow puppets in India.\n• Ravanachhaya's name derives from 'Ravana's shadow (Chhaya)' — a mythological etymology.\n• Tholpavakoothu uses traditionally oil lamps for illumination, creating sharp, high-contrast shadows."
+    },
+    "hi": {
+      "display_text": "भारतीय छायानाट्य कठपुतली परंपराओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. ओडिशा की रावणछाया अपारदर्शी, एकल टुकड़े वाली हिरण की खाल के आंकड़े उपयोग करती है जो केवल काले साये प्रक्षेपित करते हैं।\n2. केरल की थोलपवकूथु सार्वजनिक मेले और त्योहारों में एक सांसारिक मनोरंजन परंपरा के रूप में प्रस्तुत की जाती है।\n3. आंध्र प्रदेश की थोलु बोंमलाता छिद्रित और रंगीन चमड़े के आंकड़ों का उपयोग करती है जो पर्दे पर बहुरंगी साये उत्पन्न करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "ओडिशा की रावणछाया अपारदर्शी, एकल टुकड़े वाले हिरण की खाल के आंकड़े उपयोग करती है जो केवल काले साये प्रक्षेपित करते हैं।",
+          "verdict": "सही है",
+          "reason": "रावणछाया के आंकड़े बिना जोड़ के एकल टुकड़े की बिना उपचारित हिरण की खाल से बने होते हैं; वे अपारदर्शी होते हैं और केवल काले साये उत्पन्न करते हैं, जो उन्हें अन्य पारदर्शी छायानाट्य कठपुतलियों से अलग करता है।"
+        },
+        {
+          "statement": "केरल की थोलपवकूथु सार्वजनिक मेले और त्योहारों में एक सांसारिक मनोरंजन परंपरा के रूप में प्रस्तुत की जाती है।",
+          "verdict": "गलत है",
+          "reason": "थोलपवकूथु सख्ती से एक अनुष्ठान छायानाट्य परंपरा है जो भद्रकाली मंदिरों से जुड़ी कूथुमडम थिएटरों के अंदर प्रस्तुत की जाती है — यह पवित्र और मंदिर-आधारित है, सांसारिक मनोरंजन नहीं।"
+        },
+        {
+          "statement": "आंध्र प्रदेश की थोलु बोंमलाता छिद्रित और रंगीन चमड़े के आंकड़ों का उपयोग करती है जो पर्दे पर बहुरंगी साये उत्पन्न करते हैं।",
+          "verdict": "सही है",
+          "reason": "थोलु बोंमलाता कठपुतलियाँ उपचारित बकरी/हिरण की खाल के आंकड़े होती हैं जिनमें छेद पंच किए जाते हैं और रंगों से रंगे जाते हैं, जो बहुरंगी साये उत्पन्न करते हैं — यह परंपरा की एक अनूठी तकनीकी विशेषता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन) एक मजबूत भ्रम है क्योंकि कथन 1 और 3 दोनों सही हैं, जो उन छात्रों को आकर्षित करता है जो कथन 2 के बारे में अनिश्चित हैं कि वे 'सभी तीन सही' चुनें।",
+      "elimination_logic": [
+        "कथन 1 सत्यापित करें: रावणछाया के आंकड़े अपारदर्शी एकल टुकड़े की खाल के होते हैं, जो काले साये प्रक्षेपित करते हैं — यह ओडिशा की छायानाट्य कठपुतली परंपरा की विशिष्ट पहचान है। कथन 1 सही है।",
+        "कथन 2 सत्यापित करें: थोलपवकूथु मंदिर से जुड़ी कूथुमडम संरचनाओं के अंदर एक अनुष्ठान के रूप में प्रस्तुत की जाती है जो 41 रातों तक चल सकती है — यह सांसारिक नहीं है। कथन 2 गलत है।",
+        "कथन 3 सत्यापित करें: थोलु बोंमलाता की रंगीन, छिद्रित चमड़े की तकनीक जो बहुरंगी साये उत्पन्न करती है, इसकी परिभाषित तकनीकी विशेषता है। कथन 3 सही है।",
+        "केवल कथन 1 और 3 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 ही जाल है। जो छात्र छायानाट्य कठपुतलियों को व्यापक रूप से सार्वजनिक प्रदर्शन से जोड़ते हैं, वे इसे गलत तरीके से सही चिह्नित करेंगे। थोलपवकूथु की अनुष्ठानिक विशिष्टता — जो केवल मंदिर परिसर के भीतर 41 रातों तक प्रस्तुत की जाती है — इसे सांसारिक परंपराओं जैसे कठपुतली से अलग करती है। जो छात्र जानते हैं कि केरल में छायानाट्य कठपुतली है लेकिन इसके पवित्र-अनुष्ठानिक स्वरूप को नहीं समझते, वे इस जाल में फंसेंगे।",
+      "final_explanation": "भारतीय छायानाट्य कठपुतली परंपराएँ तकनीक, संदर्भ और कार्य में तीव्र रूप से भिन्न होती हैं। तीन प्रमुख परंपराएँ — रावणछाया, थोलपवकूथु, और थोलु बोंमलाता — अक्सर एक साथ परीक्षा में पूछी जाती हैं क्योंकि प्रत्येक की एक विशिष्ट विशेषता होती है।\n\n• कथन 1 — सही: ओडिशा की रावणछाया अद्वितीय है क्योंकि इसके आंकड़े बिना जोड़ के एकल टुकड़े की बिना उपचारित हिरण की खाल से बने होते हैं, पूर्णतः अपारदर्शी होते हैं, और केवल तीव्र काले साये उत्पन्न करते हैं — अन्य सभी भारतीय छायानाट्य परंपराएँ पारदर्शी चमड़े का उपयोग करती हैं।\n• कथन 2 — गलत: थोलपवकूथु स्पष्ट रूप से सांसारिक मनोरंजन परंपरा नहीं है। यह केवल भद्रकाली मंदिर परिसर के भीतर बने कूथुमडम नामक विशेष थिएटर में रामायण के पवित्र अनुष्ठान के रूप में प्रस्तुत की जाती है। यह 41 रातों तक चल सकती है।\n• कथन 3 — सही: आंध्र प्रदेश की थोलु बोंमलाता को GI टैग प्राप्त है और यह अपने रंगीन सायों के लिए विशिष्ट है — जो उपचारित चमड़े पर छिद्रों और वनस्पति रंगों के उपयोग से प्राप्त होते हैं।\n\nमूल्यवर्धन:\n• थोलु बोंमलाता के आंकड़े 5 फीट तक ऊँचे हो सकते हैं — जो भारत की सबसे बड़ी छायानाट्य कठपुतलियों में से हैं।\n• रावणछाया का नाम 'रावण की छाया (छाया)' से व्युत्पन्न है — एक पौराणिक व्युत्पत्ति।\n• थोलपवकूथु पारंपरिक रूप से तेल के दीपकों का उपयोग करता है, जो तीव्र, उच्च-स्पष्टता वाले साये बनाता है।"
+    }
+  },
+  {
+    "uuid": "c4ca1336-3cde-47ff-94a8-3869ef23256c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Sutradhara — The Cultural and Linguistic Legacy of Puppetry"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Sutradhara dual meaning — puppeteer to theater director",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A scholar studying the evolution of Indian performing arts notes that a particular Sanskrit term originally denoted the artisan who physically controlled wooden figures by holding threads from above. Over centuries, the same term came to describe the director-narrator in classical Sanskrit theater productions — the person who controlled the narrative thread of a performance. The scholar concludes that this term demonstrates a direct linguistic bridge between puppetry and theatrical tradition in India.\n\nWhich of the following terms is the scholar referring to?\n\n(a) Sutradhara\n(b) Vidushaka\n(c) Sutrakara\n(d) Nayaka",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because students may associate 'Sutradhara' with Natyashastra references and conclude it means only a narrator, overlooking its puppetry etymology.",
+      "elimination_logic": [
+        "The scenario describes a term that originated in puppetry (holder of strings) and evolved into a theatrical role. This points to 'Sutradhara.'",
+        "Eliminate option (b): 'Vidushaka' is the court jester/comic character in Sanskrit theater — not a directorial or string-holder role.",
+        "Eliminate option (c): 'Sutrakara' means author of sutras/aphorisms — a textual/compositional term, not a theatrical role derived from puppetry.",
+        "Eliminate option (d): 'Nayaka' means hero/protagonist — a character role, not a behind-the-scenes directorial position. Confirm option (a): Sutradhara literally means 'holder of strings,' originated as a puppeteer term, and evolved into the director-narrator role in Sanskrit theater."
+      ],
+      "upsc_trap_explanation": "The scenario-based framing tests whether students understand 'Sutradhara' as a concept with layered meaning, not just a vocabulary word. Students who have encountered 'Sutradhara' only in the context of Sanskrit theater (as director/narrator) may not connect it back to its puppetry roots, and vice versa. The question requires holding both dimensions simultaneously.",
+      "final_explanation": "The Sutradhara concept elegantly bridges India's puppetry and theatrical heritage. In puppetry, the Sutradhara was literally the 'holder of strings' (Sutra = thread/string; Dhara = one who holds) — the string puppet operator who controlled the figures. Over time, this term migrated into Sanskrit theatrical vocabulary, where the Sutradhara became the director-narrator who controlled the narrative thread of a performance.\n\n• Option (a) — Correct: Sutradhara combines both meanings — the original puppetry operator who held the strings, and by linguistic and cultural evolution, the director/narrator in Sanskrit drama. The Natyashastra of Bharata Muni references this transition.\n• Option (b) — Incorrect: Vidushaka is the comic/buffoon character in Sanskrit drama — a performer role, not a directorial one.\n• Option (c) — Incorrect: Sutrakara refers to a composer of sutras (aphoristic texts) — a textual/literary term with no theatrical-puppetry overlap.\n• Option (d) — Incorrect: Nayaka is the hero/protagonist of a narrative — a character classification.\n\nValue Addition:\n• The term Sutradhara in modern Hindi/Sanskrit usage means 'one who controls the narrative' — a living linguistic legacy of puppetry.\n• Bharata Muni's Natyashastra is considered evidence of puppetry as a precursor to structured theatrical performance in India.\n• The linguistic evolution of Sutradhara mirrors how puppetry itself is seen as the ancestor of classical theater."
+    },
+    "hi": {
+      "display_text": "भारतीय प्रदर्शन कला के विकास का अध्ययन कर रहे एक विद्वान ने नोट किया कि एक विशेष संस्कृत पद मूलतः उस कारीगर को दर्शाता था जो ऊपर से धागे पकड़कर लकड़ी की आकृतियों को नियंत्रित करता था। सदियों के दौरान, वही पद शास्त्रीय संस्कृत नाटकों में निर्देशक-कथावाचक के लिए प्रयुक्त होने लगा — वह व्यक्ति जो प्रदर्शन की कथा धारा को नियंत्रित करता था। विद्वान ने निष्कर्ष निकाला कि यह पद भारत में कठपुतली और नाट्य परंपरा के बीच एक प्रत्यक्ष भाषाई सेतु दर्शाता है।\n\nविद्वान किस पद का उल्लेख कर रहे हैं?\n\n(a) सूत्रधार\n(b) विदूषक\n(c) सूत्रकार\n(d) नायक",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र 'सूत्रधार' को नाट्यशास्त्र संदर्भों से जोड़ सकते हैं और इसे केवल कथावाचक समझ सकते हैं, जबकि इसके कठपुतली व्युत्पत्ति को नजरअंदाज कर देते हैं।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसे पद का वर्णन करता है जो कठपुतली कला से उत्पन्न हुआ (धागों का धारक) और नाटकीय भूमिका में विकसित हुआ। यह 'सूत्रधार' की ओर संकेत करता है।",
+        "विकल्प (b) को हटाएं: 'विदूषक' संस्कृत नाटक में दरबार का विदूषक/हास्य पात्र है — न तो निर्देशक है और न ही धागा पकड़ने वाला।",
+        "विकल्प (c) को हटाएं: 'सूत्रकार' का अर्थ है सूत्रों/सुभाषितों का लेखक — एक ग्रंथात्मक/रचनात्मक पद, कठपुतली से व्युत्पन्न नाटकीय भूमिका नहीं।",
+        "विकल्प (d) को हटाएं: 'नायक' का अर्थ है नायक/मुख्य पात्र — एक चरित्र भूमिका, पर्दे के पीछे निर्देशक पद नहीं। विकल्प (a) की पुष्टि करें: सूत्रधार का शाब्दिक अर्थ है 'धागों का धारक', यह कठपुतलीकार पद से उत्पन्न हुआ और संस्कृत नाटक में निर्देशक-कथावाचक की भूमिका में विकसित हुआ।"
+      ],
+      "upsc_trap_explanation": "परिदृश्य आधारित प्रश्न यह जांचता है कि छात्र 'सूत्रधार' को केवल शब्दावली के रूप में नहीं, बल्कि इसके द्वैध अर्थ के रूप में समझते हैं। जो छात्र 'सूत्रधार' को केवल संस्कृत नाटक (निर्देशक/कथावाचक) के संदर्भ में जानते हैं, वे इसके कठपुतली मूल से जोड़ नहीं पाते, और इसके विपरीत भी। प्रश्न दोनों आयामों को एक साथ समझने की मांग करता है।",
+      "final_explanation": "सूत्रधार की संकल्पना भारत की कठपुतली और नाट्य विरासत के बीच एक सुंदर सेतु है। कठपुतली में, सूत्रधार शाब्दिक रूप से 'धागों का धारक' था (सूत्र = धागा; धार = जो पकड़ता है) — वह कठपुतली संचालक जो आकृतियों को नियंत्रित करता था। समय के साथ, यह पद संस्कृत नाट्य शब्दावली में आ गया, जहाँ सूत्रधार निर्देशक-कथावाचक बन गया जो प्रदर्शन की कथा धारा को नियंत्रित करता था।\n\n• विकल्प (a) — सही: सूत्रधार दोनों अर्थों को समेटे हुए है — मूल कठपुतली संचालक जो धागे पकड़ता था, और भाषाई-सांस्कृतिक विकास के साथ संस्कृत नाटक में निर्देशक/कथावाचक। भरत मुनि के नाट्यशास्त्र में इस परिवर्तन का उल्लेख है।\n• विकल्प (b) — गलत: विदूषक संस्कृत नाटक में हास्य/विदूषक पात्र है — एक कलाकार की भूमिका, निर्देशक नहीं।\n• विकल्प (c) — गलत: सूत्रकार का अर्थ है सूत्रों का रचयिता — एक ग्रंथात्मक/साहित्यिक पद, नाटकीय-कठपुतली overlap नहीं।\n• विकल्प (d) — गलत: नायक कथा का नायक/मुख्य पात्र है — एक चरित्र वर्गीकरण।\n\nमूल्य संवर्धन:\n• आधुनिक हिंदी/संस्कृत में 'सूत्रधार' का अर्थ है 'जो कथा को नियंत्रित करता है' — कठपुतली की जीवित भाषाई विरासत।\n• भरत मुनि का नाट्यशास्त्र कठपुतली को भारत में संरचित नाटकीय प्रदर्शन का पूर्वज मानता है।\n• सूत्रधार का भाषाई विकास दर्शाता है कि कठपुतली को शास्त्रीय नाटक का पूर्वज कैसे माना जाता है।"
+    }
+  },
+  {
+    "uuid": "de8a6ced-ecc4-4706-b874-17bd8ac6f79c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Yampuri — Bihar String Puppet Tradition",
+        "Kathputli — Rajasthani String Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Yampuri single-piece jointless wood construction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following Indian string puppet traditions share a construction feature of jointed or articulated figures, while one is distinctly different. Which of the following does NOT share the same constructional characteristic as the others?\n\n(a) Kathputli\n(b) Gombeyatta\n(c) Yampuri\n(d) Kundhei",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (Kathputli) is a strong distractor because Kathputli also has a distinguishing construction feature (no legs) and students may confuse 'no legs' with 'no joints' and mark it as the odd one out.",
+      "elimination_logic": [
+        "Identify the common attribute: the question groups Indian string puppet traditions — identify which one has a construction distinctly different from the others.",
+        "Kathputli (Rajasthan): wooden, no legs, jointed upper body — has some form of articulated construction.",
+        "Gombeyatta (Karnataka): operated by strings on triangular frame, jointed figures representing Yakshagana characters.",
+        "Yampuri (Bihar): entire body carved from ONE piece of wood — NO JOINTS at all, making it structurally unlike any other Indian string puppet.",
+        "Kundhei (Odisha): 5–7 strings, jointed limbs reflecting Odissi aesthetics — jointed construction. Yampuri is the odd one out by virtue of its single-piece, jointless construction."
+      ],
+      "upsc_trap_explanation": "The trap is that all four are string puppet traditions — the surface-level grouping is consistent. The odd-one-out requires knowing the construction detail: Yampuri is carved from a single piece of wood with no joints whatsoever. Students who know only that Yampuri is Bihar's string puppet but not its structural uniqueness will struggle to differentiate it from the others.",
+      "final_explanation": "All four options are Indian string puppet traditions, making this a construction-level differentiation question rather than a type-level one.\n\n• Option (a) — Kathputli (Rajasthan): Wooden, no legs, manipulated by a single overhead thread. It has a body structure but no leg joints — not entirely jointless.\n• Option (b) — Gombeyatta (Karnataka): Jointed wooden figures operated by strings on a triangular frame; characters based on Yakshagana — jointed construction.\n• Option (c) — Yampuri (Bihar): The ODD ONE OUT. Yampuri's defining feature is that the entire figure is carved from a single piece of wood with no joints whatsoever — structurally unique among all Indian string puppets.\n• Option (d) — Kundhei (Odisha): Jointed limbs manipulated by 5–7 strings, with costumes echoing Odissi dance tradition.\n\nValue Addition:\n• Yampuri's central character is Yama, the god of death — reflecting its mythological thematic focus.\n• Bihar's string puppet identity is frequently overshadowed by Rajasthan's Kathputli in popular awareness — a deliberate exam blind spot.\n• The single-piece, jointless construction of Yampuri also distinguishes it from Ravanachhaya of Odisha, which is also single-piece but is a shadow puppet, not a string puppet."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित भारतीय स्ट्रिंग कठपुतली परंपराओं में से तीन में जोड़दार या संयुक्त आकृतियों का निर्माण होता है, जबकि एक स्पष्ट रूप से भिन्न है। निम्नलिखित में से कौन सा अन्य के समान निर्माण विशेषता साझा नहीं करता?\n\n(a) कठपुतली\n(b) गोम्बेयट्टा\n(c) यमपुरी\n(d) कुंधई",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (कठपुतली) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कठपुतली में भी एक विशिष्ट निर्माण विशेषता है (पैर नहीं होते) और छात्र 'पैर नहीं' को 'जोड़ नहीं' के साथ भ्रमित कर सकते हैं और इसे अलग विकल्प के रूप में चिह्नित कर सकते हैं।",
+      "elimination_logic": [
+        "सामान्य विशेषता की पहचान करें: प्रश्न भारतीय स्ट्रिंग कठपुतली परंपराओं को समूहित करता है — पहचानें कि इनमें से कौन सा निर्माण में स्पष्ट रूप से अन्य से भिन्न है।",
+        "कठपुतली (राजस्थान): लकड़ी की, पैर नहीं, जोड़दार ऊपरी शरीर — इसमें कुछ प्रकार का जोड़दार निर्माण होता है।",
+        "गोम्बेयट्टा (कर्नाटक): त्रिकोणीय फ्रेम पर तारों द्वारा संचालित, यक्षगान पात्रों का जोड़दार चित्रण।",
+        "यमपुरी (बिहार): पूरा शरीर एक ही लकड़ी के टुकड़े से तराशा गया है — बिलकुल भी जोड़ नहीं, जो इसे संरचनात्मक रूप से किसी भी अन्य भारतीय स्ट्रिंग कठपुतली से अलग बनाता है।",
+        "कुंधई (ओडिशा): 5–7 तार, जोड़दार अंग जो ओडिसी सौंदर्यशास्त्र को दर्शाते हैं — जोड़दार निर्माण। यमपुरी अपनी एकल-टुकड़ा, जोड़रहित संरचना के कारण अलग है।"
+      ],
+      "upsc_trap_explanation": "फंदा यह है कि ये सभी चारों स्ट्रिंग कठपुतली परंपराएँ हैं — सतही स्तर पर समूह समान है। अलग विकल्प चुनने के लिए निर्माण की विशेषता जानना आवश्यक है: यमपुरी एक ही लकड़ी के टुकड़े से तराशा गया है जिसमें कोई जोड़ नहीं है। जो छात्र केवल यह जानते हैं कि यमपुरी बिहार की स्ट्रिंग कठपुतली है लेकिन इसकी संरचनात्मक विशिष्टता नहीं जानते, वे इसे अन्य से अलग करने में कठिनाई महसूस करेंगे।",
+      "final_explanation": "सभी चार विकल्प भारतीय स्ट्रिंग कठपुतली परंपराएँ हैं, अतः यह प्रश्न प्रकार-स्तर के बजाय निर्माण-स्तर के भेद को दर्शाता है।\n\n• विकल्प (a) — कठपुतली (राजस्थान): लकड़ी की, पैर नहीं, एक ऊपर से तार द्वारा संचालित। इसका शरीर संरचना है लेकिन पैर जोड़ नहीं — पूरी तरह जोड़रहित नहीं।\n• विकल्प (b) — गोम्बेयट्टा (कर्नाटक): जोड़दार लकड़ी के चित्र जो त्रिकोणीय फ्रेम पर तारों द्वारा संचालित होते हैं; पात्र यक्षगान पर आधारित — जोड़दार निर्माण।\n• विकल्प (c) — यमपुरी (बिहार): अलग विकल्प। यमपुरी की विशेषता है कि पूरा आकृति एक ही लकड़ी के टुकड़े से तराशा गया है जिसमें कोई जोड़ नहीं है — सभी भारतीय स्ट्रिंग कठपुतलियों में संरचनात्मक रूप से अद्वितीय।\n• विकल्प (d) — कुंधई (ओडिशा): 5–7 तारों द्वारा संचालित जोड़दार अंग, जिनके वस्त्र ओडिसी नृत्य परंपरा की झलक देते हैं।\n\nमूल्यवर्धन:\n• यमपुरी का केंद्रीय पात्र यम, मृत्यु के देवता हैं — जो इसकी पौराणिक विषयवस्तु को दर्शाता है।\n• बिहार की स्ट्रिंग कठपुतली की पहचान लोकप्रियता में राजस्थान की कठपुतली से अक्सर छिपी रहती है — एक जानबूझकर परीक्षा की अंधी जगह।\n• यमपुरी की एकल-टुकड़ा, जोड़रहित संरचना इसे ओडिशा के रावणछाया से भी अलग करती है, जो भी एकल-टुकड़ा है लेकिन वह छाया कठपुतली है, स्ट्रिंग कठपुतली नहीं।"
+    }
+  },
+  {
+    "uuid": "bbdb8968-d308-46cb-9459-5ea7aaa20979",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Pavakathakali — Kerala Glove Puppet Tradition",
+        "Puppetry and Its Connection to Classical Dance-Drama Forms"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "Pavakathakali — glove puppet distinct from Kathakali",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Pavakathakali:\n\nStatement 1: Pavakathakali is a glove puppet tradition of Kerala in which the puppets are costumed and designed to replicate the character types of Kathakali, and puppeteers are often trained in Kathakali.\n\nStatement 2: Pavakathakali is classified as one of the eight classical dance forms of India recognized by the Sangeet Natak Akademi.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Pavakathakali is a glove puppet tradition of Kerala in which the puppets are costumed and designed to replicate the character types of Kathakali, and puppeteers are often trained in Kathakali.",
+          "verdict": "Correct",
+          "reason": "Pavakathakali is definitively a glove puppet form where the puppeteer inserts the hand into the puppet body; figures replicate Kathakali's elaborate costume and mudra tradition, and training in Kathakali is a noted feature of its performers."
+        },
+        {
+          "statement": "Pavakathakali is classified as one of the eight classical dance forms of India recognized by the Sangeet Natak Akademi.",
+          "verdict": "Incorrect",
+          "reason": "Pavakathakali is a puppetry tradition, not a classical dance form. The classical dance forms recognized include Bharatanatyam, Kathak, Kathakali, Manipuri, Kuchipudi, Odissi, Mohiniyattam, and Sattriya — Pavakathakali does not appear on this list."
+        }
+      ],
+      "strong_distractor": "a — Option a (both correct) is a strong distractor because a student who knows Pavakathakali is deeply connected to Kathakali may uncritically extend this to assume it has been granted the same classical status.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Pavakathakali is Kerala's glove puppet form, modeled on Kathakali aesthetics; practitioners trained in Kathakali — this is a documented, accurate description. Statement 1 is Correct.",
+        "Evaluate Statement 2: The eight classical dances recognized by Sangeet Natak Akademi are Bharatanatyam, Kathak, Kathakali, Manipuri, Kuchipudi, Odissi, Mohiniyattam, Sattriya — Pavakathakali is not among them. Statement 2 is Incorrect.",
+        "Statement 1 correct, Statement 2 incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the deep association between Pavakathakali and Kathakali. Because Pavakathakali is aesthetically derived from Kathakali (one of the eight classical forms), students assume it shares the same classical status. But Pavakathakali is a puppetry tradition — its relationship to Kathakali is one of aesthetic inspiration, not institutional classification.",
+      "final_explanation": "Pavakathakali demonstrates how puppet traditions can be deeply intertwined with classical performing arts without being classified within them.\n\n• Statement 1 — Correct: Pavakathakali is Kerala's glove puppet tradition. Figures are costumed in Kathakali regalia — elaborate headdresses, facial paint designs, and costumes are replicated in miniature on the puppets. Puppeteers are traditionally trained in Kathakali, creating a rare overlap between two traditions.\n• Statement 2 — Incorrect: Pavakathakali is NOT among the eight classical dance forms recognized by the Sangeet Natak Akademi. The eight are: Bharatanatyam, Kathak, Kathakali, Manipuri, Kuchipudi, Odissi, Mohiniyattam, and Sattriya. Puppetry traditions, regardless of their classical affiliations, are not classified as classical dance forms.\n\nValue Addition:\n• Pavakathakali's development is attributed to Mani Madhava Chakyar in the 20th century — making it a relatively recent tradition compared to ancient shadow puppet forms.\n• The Chakyar community of Kerala has deep roots in Kutiyattam, another classical form, creating a multilayered performing arts heritage in the state.\n• Kerala uniquely hosts both shadow (Tholpavakoothu) and glove (Pavakathakali) puppet traditions."
+    },
+    "hi": {
+      "display_text": "पवकठकली के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: पवकठकली केरल की एक दस्ताने वाली कठपुतली परंपरा है जिसमें कठपुतलियाँ कठकली के पात्रों की नकल करने के लिए पोशाक और डिज़ाइन की जाती हैं, और कठपुतलीकार अक्सर कठकली में प्रशिक्षित होते हैं।\n\nकथन 2: पवकठकली को संगीत नाटक अकादमी द्वारा मान्यता प्राप्त भारत के आठ शास्त्रीय नृत्य रूपों में से एक के रूप में वर्गीकृत किया गया है।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Pavakathakali is a glove puppet tradition of Kerala in which the puppets are costumed and designed to replicate the character types of Kathakali, and puppeteers are often trained in Kathakali.",
+          "verdict": "सही है",
+          "reason": "पवकठकली निश्चित रूप से केरल की एक दस्ताने वाली कठपुतली परंपरा है जहाँ कठपुतलियों के शरीर में कठपुतलीकार हाथ डालते हैं; आकृतियाँ कठकली के विस्तृत वेशभूषा और मुद्रा परंपरा की नकल करती हैं, और कठकली में प्रशिक्षण इसके कलाकारों की एक प्रमुख विशेषता है।"
+        },
+        {
+          "statement": "Pavakathakali is classified as one of the eight classical dance forms of India recognized by the Sangeet Natak Akademi.",
+          "verdict": "गलत है",
+          "reason": "पवकठकली एक कठपुतली परंपरा है, न कि शास्त्रीय नृत्य रूप। संगीत नाटक अकादमी द्वारा मान्यता प्राप्त आठ शास्त्रीय नृत्य रूपों में भरतनाट्यम, कथक, कथकली, मणिपुरी, कुचिपुड़ी, ओडिसी, मोहिनियट्टम और सत्त्रीय शामिल हैं — पवकठकली इस सूची में नहीं है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) (दोनों सही) एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि पवकठकली कठकली से गहराई से जुड़ा है, वे बिना जांचे यह मान सकते हैं कि इसे भी वही शास्त्रीय दर्जा दिया गया है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: पवकठकली केरल की दस्ताने वाली कठपुतली परंपरा है, जो कठकली की सौंदर्यशास्त्र पर आधारित है; इसके कलाकार कठकली में प्रशिक्षित होते हैं — यह एक प्रलेखित, सटीक विवरण है। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: संगीत नाटक अकादमी द्वारा मान्यता प्राप्त आठ शास्त्रीय नृत्य हैं भरतनाट्यम, कथक, कथकली, मणिपुरी, कुचिपुड़ी, ओडिसी, मोहिनियट्टम, सत्त्रीय — पवकठकली इनमें से नहीं है। कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 पवकठकली और कठकली के गहरे संबंध का दुरुपयोग करता है। क्योंकि पवकठकली सौंदर्यशास्त्र के रूप में कठकली से व्युत्पन्न है (जो आठ शास्त्रीय रूपों में से एक है), छात्र मान लेते हैं कि इसे भी वही शास्त्रीय दर्जा प्राप्त है। लेकिन पवकठकली एक कठपुतली परंपरा है — इसका कठकली से संबंध केवल सौंदर्यशास्त्रीय प्रेरणा का है, संस्थागत वर्गीकरण का नहीं।",
+      "final_explanation": "पवकठकली यह दर्शाता है कि कठपुतली परंपराएँ शास्त्रीय प्रदर्शन कलाओं के साथ गहराई से जुड़ी हो सकती हैं, परन्तु उनमें वर्गीकृत नहीं होतीं।\n\n• कथन 1 — सही: पवकठकली केरल की दस्ताने वाली कठपुतली परंपरा है। कठपुतलियाँ कठकली के विस्तृत वेशभूषा — जटिल मुकुट, चेहरे पर रंगोली और पोशाकों की नकल करती हैं। कठपुतलीकार पारंपरिक रूप से कठकली में प्रशिक्षित होते हैं, जो दो परंपराओं के बीच दुर्लभ संगम है।\n• कथन 2 — गलत: पवकठकली संगीत नाटक अकादमी द्वारा मान्यता प्राप्त आठ शास्त्रीय नृत्य रूपों में नहीं है। वे आठ हैं: भरतनाट्यम, कथक, कथकली, मणिपुरी, कुचिपुड़ी, ओडिसी, मोहिनियट्टम, और सत्त्रीय। कठपुतली परंपराएँ, चाहे वे शास्त्रीय संबद्ध हों या न हों, शास्त्रीय नृत्य रूपों में वर्गीकृत नहीं होतीं।\n\nमूल्यवर्धन:\n• पवकठकली का विकास 20वीं सदी में मणि माधव चाक्यर को दिया जाता है — जो इसे प्राचीन छाया कठपुतली रूपों की तुलना में अपेक्षाकृत हाल की परंपरा बनाता है।\n• केरल की चाक्यर समुदाय की कुटियट्टम में गहरी जड़ें हैं, जो एक अन्य शास्त्रीय रूप है, जिससे राज्य में बहुस्तरीय प्रदर्शन कला विरासत बनती है।\n• केरल में अनोखे रूप से दोनों छाया (थोलपवाकूथु) और दस्ताने वाली (पवकठकली) कठपुतली परंपराएँ विद्यमान हैं।"
+    }
+  },
+  {
+    "uuid": "334e556a-2c35-4f0f-b37e-5ec735439c15",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Gombeyatta — Karnataka String Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Gombeyatta relationship to Yakshagana theatrical tradition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Gombeyatta, the string puppet tradition of Karnataka, draws its characters, costumes, and narrative repertoire from ________, a classical theatrical tradition of the same region.\n\n(a) Kathakali\n(b) Yakshagana\n(c) Bharatanatyam\n(d) Kuchipudi",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (Kathakali) is a strong distractor because students frequently associate puppet-classical dance links with Kerala's Kathakali-Pavakathakali pairing, and may incorrectly apply the same logic to Karnataka.",
+      "elimination_logic": [
+        "The question specifies Karnataka's string puppet tradition — this is Gombeyatta.",
+        "Gombeyatta characters and narratives are drawn from Yakshagana, Karnataka's classical theatrical tradition — not Kathakali, which is Kerala's form.",
+        "Eliminate option (a): Kathakali is Kerala's classical form; its puppet counterpart is Pavakathakali, not Gombeyatta.",
+        "Eliminate option (c) and (d): Bharatanatyam is Tamil Nadu's classical form; Kuchipudi belongs to Andhra Pradesh — neither is the source tradition for Gombeyatta. Confirm option (b): Yakshagana of Karnataka."
+      ],
+      "upsc_trap_explanation": "The trap exploits the well-known Kathakali-Pavakathakali pairing. Students who have memorized that 'puppet tradition X mirrors classical form Y' may apply Kerala's pairing (Kathakali) to Karnataka's Gombeyatta without checking the specific state. Yakshagana is Karnataka's own classical theatrical tradition, and Gombeyatta is its puppet mirror — a state-specific pairing requiring precision.",
+      "final_explanation": "Gombeyatta is Karnataka's string puppet tradition. The word 'Gombe' means doll in Kannada. Its characters, costumes, and narrative themes are drawn directly from ________, Karnataka's own classical theatrical tradition.\n\n• Option (a) — Incorrect: Kathakali is the classical form of Kerala; its puppet counterpart is Pavakathakali, not Gombeyatta.\n• Option (b) — Correct: Yakshagana is Karnataka's classical theatrical form known for its elaborate costumes, mythological narratives, and stylized performance. Gombeyatta is its puppet adaptation.\n• Option (c) — Incorrect: Bharatanatyam is Tamil Nadu's classical dance form and has no structural link to Gombeyatta.\n• Option (d) — Incorrect: Kuchipudi is Andhra Pradesh's classical form; its puppet counterpart links to Andhra's own traditions.\n\nValue Addition:\n• Gombeyatta uses a hierarchical string system: higher-status characters (gods, kings) have more strings than lower-status characters — a sociological coding embedded in the craft.\n• Karnataka is the only state with both a string puppet tradition (Gombeyatta) and a shadow puppet tradition (Togalu Gombeyaata) that both derive from the same classical source — Yakshagana.\n• The triangular frame from which Gombeyatta strings are operated is a distinctive constructional feature."
+    },
+    "hi": {
+      "display_text": "गोम्बेयट्टा, कर्नाटक की स्ट्रिंग कठपुतली परंपरा, अपने पात्र, वेशभूषा और कथानक सामग्री ________, उसी क्षेत्र की एक शास्त्रीय नाट्य परंपरा से लेती है।\n\n(a) कथकली\n(b) यक्षगान\n(c) भरतनाट्यम\n(d) कुचिपुड़ी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (कथकली) एक मजबूत भ्रम है क्योंकि छात्र अक्सर कठपुतली-शास्त्रीय नृत्य संबंधों को केरल की कथकली-पावकथकली जोड़ी से जोड़ते हैं, और गलत तरीके से उसी तर्क को कर्नाटक पर लागू कर सकते हैं।",
+      "elimination_logic": [
+        "प्रश्न में कर्नाटक की स्ट्रिंग कठपुतली परंपरा निर्दिष्ट है — यह गोम्बेयट्टा है।",
+        "गोम्बेयट्टा के पात्र और कथानक कर्नाटक की शास्त्रीय नाट्य परंपरा यक्षगान से लिए गए हैं — न कि केरल की कथकली से।",
+        "विकल्प (a) को हटाएं: कथकली केरल की शास्त्रीय परंपरा है; इसकी कठपुतली समकक्ष पावकथकली है, गोम्बेयट्टा नहीं।",
+        "विकल्प (c) और (d) को हटाएं: भरतनाट्यम तमिलनाडु की शास्त्रीय परंपरा है; कुचिपुड़ी आंध्र प्रदेश की है — दोनों गोम्बेयट्टा की स्रोत परंपरा नहीं हैं। विकल्प (b) की पुष्टि करें: कर्नाटक का यक्षगान।"
+      ],
+      "upsc_trap_explanation": "यह जाल प्रसिद्ध कथकली-पावकथकली जोड़ी का उपयोग करता है। जो छात्र 'कठपुतली परंपरा X शास्त्रीय रूप Y का प्रतिबिंब है' याद करते हैं, वे बिना राज्य की जांच किए केरल की जोड़ी (कथकली) को कर्नाटक के गोम्बेयट्टा पर लागू कर सकते हैं। यक्षगान कर्नाटक की अपनी शास्त्रीय नाट्य परंपरा है, और गोम्बेयट्टा इसका कठपुतली रूप है — एक राज्य-विशिष्ट जोड़ी जो सटीकता मांगती है।",
+      "final_explanation": "गोम्बेयट्टा कर्नाटक की स्ट्रिंग कठपुतली परंपरा है। 'गोम्बे' का अर्थ कन्नड़ में गुड़िया होता है। इसके पात्र, वेशभूषा और कथानक सीधे ________ से लिए गए हैं, जो कर्नाटक की अपनी शास्त्रीय नाट्य परंपरा है।\n\n• विकल्प (a) — गलत: कथकली केरल की शास्त्रीय परंपरा है; इसकी कठपुतली समकक्ष पावकथकली है, गोम्बेयट्टा नहीं।\n• विकल्प (b) — सही: यक्षगान कर्नाटक की शास्त्रीय नाट्य परंपरा है, जो विस्तृत वेशभूषा, पौराणिक कथानक और शैलीबद्ध प्रदर्शन के लिए जानी जाती है। गोम्बेयट्टा इसका कठपुतली रूप है।\n• विकल्प (c) — गलत: भरतनाट्यम तमिलनाडु का शास्त्रीय नृत्य रूप है और इसका गोम्बेयट्टा से कोई संरचनात्मक संबंध नहीं है।\n• विकल्प (d) — गलत: कुचिपुड़ी आंध्र प्रदेश की शास्त्रीय परंपरा है; इसकी कठपुतली समकक्ष आंध्र की अपनी परंपराओं से जुड़ी है।\n\nमूल्यवर्धन:\n• गोम्बेयट्टा एक पदानुक्रमित स्ट्रिंग प्रणाली का उपयोग करता है: उच्च दर्जे के पात्रों (देवता, राजा) के पास निम्न दर्जे के पात्रों की तुलना में अधिक स्ट्रिंग होती हैं — यह शिल्प में निहित सामाजिक संकेत है।\n• कर्नाटक एकमात्र राज्य है जिसके पास दोनों स्ट्रिंग कठपुतली परंपरा (गोम्बेयट्टा) और छाया कठपुतली परंपरा (टोगलु गोम्बेयाटा) है, जो दोनों एक ही शास्त्रीय स्रोत — यक्षगान से उत्पन्न होती हैं।\n• गोम्बेयट्टा की स्ट्रिंग संचालित करने वाला त्रिकोणीय फ्रेम एक विशिष्ट निर्माणात्मक विशेषता है।"
+    }
+  },
+  {
+    "uuid": "a30ac31e-2515-4183-91dc-252c53af5b31",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Tholu Bommalata — Andhra Pradesh Shadow Puppet Tradition",
+        "Leather Preparation and Craft Techniques in Shadow Puppetry"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Tholu Bommalata GI Tag and community association",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Tholpavakoothu — Tamil Nadu shadow puppet tradition performed in temple precincts\n(b) Ravanachhaya — Odisha shadow puppet tradition using translucent leather figures\n(c) Togalu Gombeyaata — Karnataka shadow puppet tradition where larger figures represent lower social status\n(d) Tholu Bommalata — Andhra Pradesh shadow puppet tradition with a GI Tag, practised by the Killekyata community",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is a strong distractor because Ravanachhaya is a well-known Odisha shadow puppet tradition, and students may confuse its single-piece opaque hide construction with a GI Tag or community linkage detail.",
+      "elimination_logic": [
+        "Evaluate option (a): Tholpavakoothu — Tamil Nadu: Incorrect on geography. Tholpavakoothu belongs to Kerala, not Tamil Nadu.",
+        "Evaluate option (b): Ravanachhaya — translucent leather figures: Incorrect on technique. Ravanachhaya uses OPAQUE figures (untreated hide), not translucent ones.",
+        "Evaluate option (c): Togalu Gombeyaata — larger figures for lower social status: Incorrect. In Togalu Gombeyaata, LARGER figures represent higher social status (gods, kings), not lower.",
+        "Evaluate option (d): Tholu Bommalata — GI Tag, Killekyata community: Correct. Tholu Bommalata of Andhra Pradesh has received a Geographical Indication tag, and the Killekyata community are its hereditary practitioners."
+      ],
+      "upsc_trap_explanation": "Option (c) exploits the size-hierarchy relationship in shadow puppetry. The rule that larger figures represent higher social status is common to both Togalu Gombeyaata and Tholu Bommalata. By reversing it in option (c) — claiming larger figures represent lower status — the question traps students who remember the size-hierarchy principle but not its correct directional mapping.",
+      "final_explanation": "This question tests precision on shadow puppet traditions across multiple attributes: geography, construction technique, GI status, and social-hierarchy encoding.\n\n• Option (a) — Incorrect: Tholpavakoothu belongs to Kerala, not Tamil Nadu. It is performed in Bhadrakali temple precincts.\n• Option (b) — Incorrect: Ravanachhaya of Odisha uses opaque, untreated deer hide figures that produce only black silhouettes — NOT translucent leather.\n• Option (c) — Incorrect: In Togalu Gombeyaata, larger figures represent gods and royalty (higher status), and smaller figures represent common people. The pairing reverses the actual relationship.\n• Option (d) — Correct: Tholu Bommalata of Andhra Pradesh has received a GI Tag, protecting its identity as a regional craft. The Killekyata community are its traditional hereditary practitioners.\n\nValue Addition:\n• GI Tags in performing arts/crafts are a recurring UPSC topic — Tholu Bommalata is one of the few puppetry traditions with this protection.\n• The Killekyata community also serves as an important example of caste-craft nexus in Indian intangible heritage.\n• Tholu Bommalata figures can reach up to 5 feet — the largest shadow puppets in India."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा जोड़ा सही मेल खाता है?\n\n(a) थोलपवाकूथु — मंदिर परिसर में प्रदर्शित तमिलनाडु की छाया कठपुतली परंपरा\n(b) रावणछाया — पारदर्शी चमड़े के आंकड़ों का उपयोग करने वाली ओडिशा की छाया कठपुतली परंपरा\n(c) टोगालु गोम्बेयाटा — कर्नाटक की छाया कठपुतली परंपरा जहाँ बड़े आंकड़े निचली सामाजिक स्थिति का प्रतिनिधित्व करते हैं\n(d) थोलु बोंमलता — आंध्र प्रदेश की छाया कठपुतली परंपरा जिसे GI टैग प्राप्त है, और जिसे किलेक्याता समुदाय द्वारा निभाया जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b एक मजबूत भ्रम पैदा करने वाला है क्योंकि रावणछाया ओडिशा की एक प्रसिद्ध छाया कठपुतली परंपरा है, और छात्र इसके एक टुकड़े के अपारदर्शी चमड़े के निर्माण को GI टैग या समुदाय संबंध विवरण के साथ भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: थोलपवाकूथु — तमिलनाडु: भौगोलिक दृष्टि से गलत। थोलपवाकूथु केरल की परंपरा है, तमिलनाडु की नहीं।",
+        "विकल्प (b) का मूल्यांकन करें: रावणछाया — पारदर्शी चमड़े के आंकड़े: तकनीक के मामले में गलत। रावणछाया अपारदर्शी (अप्रक्रियाजात चमड़ा) आंकड़ों का उपयोग करता है, पारदर्शी नहीं।",
+        "विकल्प (c) का मूल्यांकन करें: टोगालु गोम्बेयाटा — निचली सामाजिक स्थिति के लिए बड़े आंकड़े: गलत। टोगालु गोम्बेयाटा में बड़े आंकड़े उच्च सामाजिक स्थिति (देवता, राजा) का प्रतिनिधित्व करते हैं, न कि निचली।",
+        "विकल्प (d) का मूल्यांकन करें: थोलु बोंमलता — GI टैग, किलेक्याता समुदाय: सही। आंध्र प्रदेश की थोलु बोंमलता को भौगोलिक संकेत (GI) टैग प्राप्त है, और किलेक्याता समुदाय इसके पारंपरिक वंशानुगत कलाकार हैं।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) छाया कठपुतली में आकार-हायरार्की संबंध का दुरुपयोग करता है। नियम है कि बड़े आंकड़े उच्च सामाजिक स्थिति का प्रतिनिधित्व करते हैं, जो टोगालु गोम्बेयाटा और थोलु बोंमलता दोनों में सामान्य है। विकल्प (c) में इसे उलटकर — बड़े आंकड़े निचली स्थिति दर्शाते हैं — प्रश्न उन छात्रों को फंसाता है जो आकार-हायरार्की सिद्धांत याद रखते हैं लेकिन सही दिशा नहीं।",
+      "final_explanation": "यह प्रश्न छाया कठपुतली परंपराओं के विभिन्न पहलुओं पर सटीकता की परीक्षा लेता है: भौगोलिक स्थिति, निर्माण तकनीक, GI स्थिति, और सामाजिक पदानुक्रम।\n\n• विकल्प (a) — गलत: थोलपवाकूथु केरल की परंपरा है, तमिलनाडु की नहीं। यह भद्रकाली मंदिर परिसर में प्रदर्शित होती है।\n• विकल्प (b) — गलत: ओडिशा की रावणछाया अपारदर्शी, अप्रक्रियाजात हिरण के चमड़े के आंकड़ों का उपयोग करती है जो केवल काले साये बनाते हैं — पारदर्शी चमड़ा नहीं।\n• विकल्प (c) — गलत: टोगालु गोम्बेयाटा में बड़े आंकड़े देवता और राजशाही (उच्च स्थिति) का प्रतिनिधित्व करते हैं, और छोटे आंकड़े आम लोगों का। यह जोड़ी वास्तविक संबंध को उलटती है।\n• विकल्प (d) — सही: आंध्र प्रदेश की थोलु बोंमलता को GI टैग प्राप्त है, जो इसे क्षेत्रीय शिल्प के रूप में सुरक्षित करता है। किलेक्याता समुदाय इसके पारंपरिक वंशानुगत कलाकार हैं।\n\nमूल्यवर्धन:\n• प्रदर्शन कला/शिल्प में GI टैग UPSC में बार-बार आने वाला विषय है — थोलु बोंमलता उन कुछ कठपुतली परंपराओं में से एक है जिसे यह संरक्षण प्राप्त है।\n• किलेक्याता समुदाय भारतीय अमूर्त विरासत में जाति-शिल्प संबंध का एक महत्वपूर्ण उदाहरण भी है।\n• थोलु बोंमलता के आंकड़े 5 फीट तक हो सकते हैं — भारत के सबसे बड़े छाया कठपुतलियाँ।"
+    }
+  },
+  {
+    "uuid": "264960e5-4649-4f49-97b2-aab300e85a1b",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Community-Craft-Livelihood Linkages in Puppetry Traditions",
+        "Sangeet Natak Akademi and Institutional Support for Puppetry"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Institutional and community support for puppetry preservation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about institutional and community dimensions of Indian puppetry traditions:\n\n1. The Mera Gaon Meri Dharohar initiative under the Ministry of Culture includes cultural mapping of intangible heritage traditions, potentially encompassing puppetry communities.\n2. The Sangeet Natak Akademi's mandate covers puppetry exclusively, to the exclusion of music, dance, and drama.\n3. The decline of traditional puppetry communities has been linked to the rise of cinema and television, which altered traditional patronage systems.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 3 only\n(b) 2 and 3 only\n(c) 1 and 2 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Mera Gaon Meri Dharohar initiative under the Ministry of Culture includes cultural mapping of intangible heritage traditions, potentially encompassing puppetry communities.",
+          "verdict": "Correct",
+          "reason": "Mera Gaon Meri Dharohar is a cultural mapping programme under the Ministry of Culture that documents villages' tangible and intangible heritage, which includes hereditary craft and performing arts communities such as puppetry practitioners."
+        },
+        {
+          "statement": "The Sangeet Natak Akademi's mandate covers puppetry exclusively, to the exclusion of music, dance, and drama.",
+          "verdict": "Incorrect",
+          "reason": "Sangeet Natak Akademi is the apex body for ALL performing arts — music, dance, drama, and puppetry. Puppetry is one component of its mandate, not the exclusive focus."
+        },
+        {
+          "statement": "The decline of traditional puppetry communities has been linked to the rise of cinema and television, which altered traditional patronage systems.",
+          "verdict": "Correct",
+          "reason": "The displacement of traditional audience-patronage for puppetry by cinema and television is a well-documented modernization challenge affecting hereditary puppet communities across India."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is a strong distractor because statements 1 and 3 are both clearly correct, and students unsure about statement 2 may assume it must also be correct given the authority of Sangeet Natak Akademi in the performing arts domain.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Mera Gaon Meri Dharohar is a government cultural mapping initiative — puppetry communities as intangible heritage fall within its scope. Statement 1 is Correct.",
+        "Evaluate Statement 2: The word 'exclusively' makes this incorrect. Sangeet Natak Akademi covers music, dance, drama, AND puppetry — not puppetry alone. Statement 2 is Incorrect.",
+        "Evaluate Statement 3: Cinema and television disrupting traditional patronage is a documented decline factor for puppetry — Statement 3 is Correct.",
+        "Only statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses the scope-extension technique through the word 'exclusively.' Students who know Sangeet Natak Akademi handles puppetry may not catch that 'exclusively' falsifies the statement — the Akademi covers all performing arts. This is a classic UPSC qualifier trap where one word converts a mostly true statement into a factually false one.",
+      "final_explanation": "The preservation of puppetry traditions involves both institutional support and community resilience. Two government-level instruments are relevant: Sangeet Natak Akademi (apex performing arts body) and Mera Gaon Meri Dharohar (cultural mapping programme).\n\n• Statement 1 — Correct: Mera Gaon Meri Dharohar, launched under the Ministry of Culture, aims to document cultural assets at the village level, encompassing intangible traditions like hereditary puppetry.\n• Statement 2 — Incorrect: The claim that Sangeet Natak Akademi covers 'puppetry exclusively' is false. Its mandate spans music, dance, drama, folk arts, and puppetry — puppetry is one of many performing arts under its umbrella.\n• Statement 3 — Correct: Television and cinema are widely recognized as factors that displaced traditional audience patronage for puppetry, reducing the economic viability of hereditary puppet communities like the Bhat and Killekyata.\n\nValue Addition:\n• The Scheme for Safeguarding Intangible Cultural Heritage under the Ministry of Culture also supports puppetry practitioners through financial assistance.\n• UNESCO's 2003 Convention on Intangible Cultural Heritage provides a global framework within which Indian puppetry traditions are increasingly documented.\n• Hereditary craft decline is a cross-topic issue examined in UPSC under artisan welfare, cultural heritage, and social policy questions."
+    },
+    "hi": {
+      "display_text": "भारतीय कठपुतली परंपराओं के संस्थागत और सामुदायिक आयामों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. संस्कृति मंत्रालय के तहत मेरा गाँव मेरी धरोहर पहल में अमूर्त सांस्कृतिक विरासत की परंपराओं का सांस्कृतिक मानचित्रण शामिल है, जिसमें कठपुतली समुदाय भी आ सकते हैं।\n2. संगीत नाटक अकादमी का कार्यक्षेत्र केवल कठपुतली तक सीमित है, जिसमें संगीत, नृत्य और नाटक शामिल नहीं हैं।\n3. पारंपरिक कठपुतली समुदायों के पतन को सिनेमा और टेलीविजन के उदय से जोड़ा गया है, जिसने पारंपरिक संरक्षक प्रणालियों को बदल दिया।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1 और 3\n(b) केवल 2 और 3\n(c) केवल 1 और 2\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Mera Gaon Meri Dharohar initiative under the Ministry of Culture includes cultural mapping of intangible heritage traditions, potentially encompassing puppetry communities.",
+          "verdict": "Correct",
+          "reason": "Mera Gaon Meri Dharohar is a cultural mapping programme under the Ministry of Culture that documents villages' tangible and intangible heritage, which includes hereditary craft and performing arts communities such as puppetry practitioners."
+        },
+        {
+          "statement": "The Sangeet Natak Akademi's mandate covers puppetry exclusively, to the exclusion of music, dance, and drama.",
+          "verdict": "Incorrect",
+          "reason": "Sangeet Natak Akademi is the apex body for ALL performing arts — music, dance, drama, and puppetry. Puppetry is one component of its mandate, not the exclusive focus."
+        },
+        {
+          "statement": "The decline of traditional puppetry communities has been linked to the rise of cinema and television, which altered traditional patronage systems.",
+          "verdict": "Correct",
+          "reason": "The displacement of traditional audience-patronage for puppetry by cinema and television is a well-documented modernization challenge affecting hereditary puppet communities across India."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is a strong distractor because statements 1 and 3 are both clearly correct, and students unsure about statement 2 may assume it must also be correct given the authority of Sangeet Natak Akademi in the performing arts domain.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Mera Gaon Meri Dharohar is a government cultural mapping initiative — puppetry communities as intangible heritage fall within its scope. Statement 1 is Correct.",
+        "Evaluate Statement 2: The word 'exclusively' makes this incorrect. Sangeet Natak Akademi covers music, dance, drama, AND puppetry — not puppetry alone. Statement 2 is Incorrect.",
+        "Evaluate Statement 3: Cinema and television disrupting traditional patronage is a documented decline factor for puppetry — Statement 3 is Correct.",
+        "Only statements 1 and 3 are correct — select option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses the scope-extension technique through the word 'exclusively.' Students who know Sangeet Natak Akademi handles puppetry may not catch that 'exclusively' falsifies the statement — the Akademi covers all performing arts. This is a classic UPSC qualifier trap where one word converts a mostly true statement into a factually false one.",
+      "final_explanation": "The preservation of puppetry traditions involves both institutional support and community resilience. Two government-level instruments are relevant: Sangeet Natak Akademi (apex performing arts body) and Mera Gaon Meri Dharohar (cultural mapping programme).\n\n• Statement 1 — Correct: Mera Gaon Meri Dharohar, launched under the Ministry of Culture, aims to document cultural assets at the village level, encompassing intangible traditions like hereditary puppetry.\n• Statement 2 — Incorrect: The claim that Sangeet Natak Akademi covers 'puppetry exclusively' is false. Its mandate spans music, dance, drama, folk arts, and puppetry — puppetry is one of many performing arts under its umbrella.\n• Statement 3 — Correct: Television and cinema are widely recognized as factors that displaced traditional audience patronage for puppetry, reducing the economic viability of hereditary puppet communities like the Bhat and Killekyata.\n\nValue Addition:\n• The Scheme for Safeguarding Intangible Cultural Heritage under the Ministry of Culture also supports puppetry practitioners through financial assistance.\n• UNESCO's 2003 Convention on Intangible Cultural Heritage provides a global framework within which Indian puppetry traditions are increasingly documented.\n• Hereditary craft decline is a cross-topic issue examined in UPSC under artisan welfare, cultural heritage, and social policy questions."
+    }
+  },
+  {
+    "uuid": "abad248f-c362-41a0-9ce7-8dee6b2d28b0",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Tholpavakoothu — Kerala Shadow Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Tholpavakoothu ritual-temple context and duration",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements about Tholpavakoothu, the shadow puppet tradition of Kerala, is correct?\n\n(a) It is a secular entertainment tradition performed in community amphitheaters, narrating episodes from the Mahabharata\n(b) It is a ritual shadow puppet performance conducted inside temple-attached Koothumadam structures dedicated to Bhadrakali, capable of lasting up to 41 nights\n(c) It is a form of Krishnanattam, the classical dance-drama of Kerala, adapted for shadow projection techniques\n(d) It is performed as a single-night ceremonial event accompanying the Onam harvest festival",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because students aware of Kerala's rich classical tradition may conflate Tholpavakoothu's sacred context with Krishnanattam, another temple-based performing art of Kerala.",
+      "elimination_logic": [
+        "Eliminate option (a): Tholpavakoothu is performed inside Koothumadam theaters attached to Bhadrakali temples, not in community halls or public amphitheaters.",
+        "Eliminate option (c): Krishnanattam is a separate classical dance-drama of Kerala associated with Guruvayur temple — distinct from Tholpavakoothu shadow puppetry.",
+        "Eliminate option (d): Tholpavakoothu can last up to 41 nights — not a single-night performance. The 41-night duration is a defining feature.",
+        "Confirm option (b): Tholpavakoothu is Kerala's shadow puppet tradition performed inside a Koothumadam (special puppet theater) attached to Bhadrakali temples, capable of lasting up to 41 nights as a sacred ritual."
+      ],
+      "upsc_trap_explanation": "The conflation trap in option (c) is set by associating Tholpavakoothu's temple context with Krishnanattam, which is also a Kerala temple-based performing form. A student with surface-level knowledge of Kerala's sacred performing arts may select Krishnanattam as the correct identifier without distinguishing shadow puppetry (Tholpavakoothu) from classical dance-drama (Krishnanattam).",
+      "final_explanation": "Tholpavakoothu is Kerala's distinguished shadow puppet tradition, unique in its ritual exclusivity and extraordinary duration.\n\n• Option (a) — Incorrect: Tholpavakoothu is not a secular public performance. It is performed inside the Koothumadam, a dedicated shadow puppet theater built within Bhadrakali temple complexes — not in community halls.\n• Option (b) — Correct: Tholpavakoothu is Kerala's ritual shadow puppet tradition performed in temple-attached Koothumadam structures. It narrates the Ramayana as a sacred offering to Bhadrakali and can last up to 41 nights — one of India's longest ritual performance traditions.\n• Option (c) — Incorrect: Krishnanattam is a separate classical dance-drama of Kerala, performed at Guruvayur Krishna temple. It is not a shadow puppet tradition.\n• Option (d) — Incorrect: The duration of Tholpavakoothu can extend up to 41 nights, not a single ceremonial night.\n\nValue Addition:\n• The leather figures of Tholpavakoothu are made from deer hide and illuminated by traditional oil lamps.\n• The Malavar community are the hereditary practitioners of Tholpavakoothu.\n• Tholpavakoothu's 41-night duration makes it a candidate for one of India's most immersive ritual performance traditions."
+    },
+    "hi": {
+      "display_text": "केरल की छाया कठपुतली परंपरा थोलपवाकूथु के संबंध में निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) यह एक सांसारिक मनोरंजन परंपरा है जो सामुदायिक एम्फीथिएटरों में महाभारत के प्रसंगों का वर्णन करती है\n(b) यह भद्रकाली को समर्पित मंदिर से जुड़े कूथुमड़म संरचनाओं के अंदर आयोजित एक अनुष्ठानिक छाया कठपुतली प्रदर्शन है, जो 41 रातों तक चल सकता है\n(c) यह कृष्णनट्टम का एक रूप है, जो केरल का शास्त्रीय नृत्य-नाटक है, जिसे छाया प्रक्षेपण तकनीकों के लिए अनुकूलित किया गया है\n(d) यह ओणम फसल उत्सव के साथ एकल रात्रि समारोह के रूप में प्रदर्शन किया जाता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रमकारी है क्योंकि केरल की समृद्ध शास्त्रीय परंपरा से परिचित छात्र थोलपवाकूथु के पवित्र संदर्भ को केरल के एक अन्य मंदिर आधारित प्रदर्शन कला कृष्णनट्टम के साथ मिला सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: थोलपवाकूथु भद्रकाली मंदिरों से जुड़े कूथुमड़म थिएटरों के अंदर प्रदर्शन किया जाता है, न कि सामुदायिक हॉल या सार्वजनिक एम्फीथिएटर में।",
+        "विकल्प (c) को हटाएं: कृष्णनट्टम केरल का एक अलग शास्त्रीय नृत्य-नाटक है जो गुरुवायूर मंदिर से जुड़ा है — जो थोलपवाकूथु छाया कठपुतली से भिन्न है।",
+        "विकल्प (d) को हटाएं: थोलपवाकूथु एकल रात्रि प्रदर्शन नहीं है, यह 41 रातों तक चल सकता है। 41 रातों की अवधि इसकी एक विशेषता है।",
+        "विकल्प (b) की पुष्टि करें: थोलपवाकूथु केरल की छाया कठपुतली परंपरा है जो भद्रकाली मंदिरों से जुड़े कूथुमड़म (विशेष कठपुतली थिएटर) के अंदर प्रदर्शन की जाती है, और यह एक पवित्र अनुष्ठान के रूप में 41 रातों तक चल सकती है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) में भ्रम का जाल थोलपवाकूथु के मंदिर संदर्भ को कृष्णनट्टम से जोड़कर बनाया गया है, जो केरल का एक अन्य मंदिर आधारित प्रदर्शन रूप है। केरल की पवित्र प्रदर्शन कलाओं की सतही जानकारी रखने वाला छात्र छाया कठपुतली (थोलपवाकूथु) और शास्त्रीय नृत्य-नाटक (कृष्णनट्टम) के बीच अंतर किए बिना कृष्णनट्टम को सही विकल्प मान सकता है।",
+      "final_explanation": "थोलपवाकूथु केरल की विशिष्ट छाया कठपुतली परंपरा है, जो अपने अनुष्ठानिक विशिष्टता और असाधारण अवधि के लिए जानी जाती है।\n\n• विकल्प (a) — गलत: थोलपवाकूथु एक सांसारिक सार्वजनिक प्रदर्शन नहीं है। यह भद्रकाली मंदिर परिसरों के भीतर बने कूथुमड़म नामक समर्पित छाया कठपुतली थिएटर के अंदर प्रदर्शन किया जाता है — न कि सामुदायिक हॉल में।\n• विकल्प (b) — सही: थोलपवाकूथु केरल की अनुष्ठानिक छाया कठपुतली परंपरा है जो मंदिर से जुड़े कूथुमड़म संरचनाओं में होती है। यह रामायण का पवित्र अर्पण भद्रकाली को प्रस्तुत करती है और 41 रातों तक चल सकती है — जो भारत की सबसे लंबी अनुष्ठानिक प्रदर्शन परंपराओं में से एक है।\n• विकल्प (c) — गलत: कृष्णनट्टम केरल का एक अलग शास्त्रीय नृत्य-नाटक है, जो गुरुवायूर कृष्ण मंदिर में होता है। यह छाया कठपुतली परंपरा नहीं है।\n• विकल्प (d) — गलत: थोलपवाकूथु की अवधि 41 रातों तक हो सकती है, यह एकल अनुष्ठानिक रात्रि नहीं है।\n\nमूल्यवर्धन:\n• थोलपवाकूथु की चमड़े की आकृतियाँ हिरण की खाल से बनाई जाती हैं और पारंपरिक तेल के दीपकों से प्रकाशित की जाती हैं।\n• मलावर समुदाय थोलपवाकूथु के वंशानुगत कलाकार हैं।\n• थोलपवाकूथु की 41 रातों की अवधि इसे भारत की सबसे गहन अनुष्ठानिक प्रदर्शन परंपराओं में से एक बनाती है।"
+    }
+  },
+  {
+    "uuid": "776651c6-4b6c-4e89-a8d4-b1405c6cd9d8",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Classification of Indian Puppets: Four Technical Types",
+        "Bommalattam — Tamil Nadu String + Rod Hybrid Puppet",
+        "Putul Nautch — Bengali Rod Puppet Tradition",
+        "Pavakathakali — Kerala Glove Puppet Tradition",
+        "Togalu Gombeyaata — Karnataka Shadow Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "quantitative-pairing",
+      "trap_type": "conflation",
+      "concept_anchor": "Bommalattam hybrid classification — not purely rod",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following pairings of Indian puppet traditions with their technical type:",
+        "columns": [
+          "Puppet Tradition",
+          "Technical Type"
+        ],
+        "rows": [
+          [
+            "Putul Nautch",
+            "Rod puppet"
+          ],
+          [
+            "Togalu Gombeyaata",
+            "Shadow puppet"
+          ],
+          [
+            "Bommalattam",
+            "Rod puppet"
+          ],
+          [
+            "Pavakathakali",
+            "Glove puppet"
+          ]
+        ],
+        "footer_text": "How many of the above pairs are correctly matched?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Putul Nautch — Rod puppet",
+          "verdict": "Correct",
+          "reason": "Putul Nautch of West Bengal is operated by rods from below; it is the canonical rod puppet tradition of eastern India."
+        },
+        {
+          "statement": "Togalu Gombeyaata — Shadow puppet",
+          "verdict": "Correct",
+          "reason": "Togalu Gombeyaata is Karnataka's leather shadow puppet tradition using translucent hide figures behind an illuminated screen."
+        },
+        {
+          "statement": "Bommalattam — Rod puppet",
+          "verdict": "Incorrect",
+          "reason": "Bommalattam is a hybrid combining both string and rod manipulation with an iron head crown — it cannot be classified as purely a rod puppet."
+        },
+        {
+          "statement": "Pavakathakali — Glove puppet",
+          "verdict": "Correct",
+          "reason": "Pavakathakali is Kerala's glove puppet tradition in which the puppeteer inserts the hand into the puppet body."
+        }
+      ],
+      "strong_distractor": "d — Option d (All four) is a strong distractor because three pairings are correct, and students who know Bommalattam involves rod manipulation may accept 'rod puppet' as its category without recognizing the string component.",
+      "elimination_logic": [
+        "Verify Putul Nautch — Rod puppet: Correct. West Bengal's Putul Nautch is operated by rods from below.",
+        "Verify Togalu Gombeyaata — Shadow puppet: Correct. Karnataka's leather figure tradition is definitively shadow puppet.",
+        "Verify Bommalattam — Rod puppet: Incorrect. Bommalattam uses rod AND string manipulation plus an iron head crown — it is a hybrid, not a pure rod puppet.",
+        "Verify Pavakathakali — Glove puppet: Correct. Three pairs are correct — select option (c)."
+      ],
+      "upsc_trap_explanation": "Pairing 3 (Bommalattam — Rod puppet) is the trap. Bommalattam does use rods as part of its manipulation mechanism, so a student who has encountered it in rod-puppet listings will confirm this pairing. However, Bommalattam's hybrid string-and-rod nature means it cannot be placed in the 'rod puppet' category alone — it bridges two categories. Only a student who has registered the hybrid classification will reject this pairing.",
+      "final_explanation": "Correct classification of Indian puppet types requires distinguishing between pure-type traditions and hybrid forms.\n\n| Tradition | Stated Type | Verdict |\n|---|---|---|\n| Putul Nautch | Rod puppet | Correct |\n| Togalu Gombeyaata | Shadow puppet | Correct |\n| Bommalattam | Rod puppet | Incorrect |\n| Pavakathakali | Glove puppet | Correct |\n\n• Putul Nautch (West Bengal): rods from below — pure rod puppet. Correct.\n• Togalu Gombeyaata (Karnataka): leather figures behind illuminated screen — pure shadow puppet. Correct.\n• Bommalattam (Tamil Nadu): uses an iron crown on puppeteer's head + strings above + rods below — explicitly a string-rod hybrid. Calling it purely a 'rod puppet' is incorrect.\n• Pavakathakali (Kerala): hand inserted into puppet body — pure glove puppet. Correct.\n\nThree pairings are correct — answer is option (c).\n\nValue Addition:\n• The four technical categories in Sanskrit: Sutradhara (string), Chhayanataka (shadow), Dasta (glove), Danda (rod).\n• Bommalattam's hybrid nature is the single most tested classification anomaly in Indian puppetry.\n• Sakhi Kundhei of Odisha is a glove puppet tradition less commonly examined but increasingly appearing in recent question sets."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "भारतीय कठपुतली परंपराओं के निम्नलिखित जोड़ों को उनके तकनीकी प्रकार के साथ विचार करें:",
+        "columns": [
+          "कठपुतली परंपरा",
+          "तकनीकी प्रकार"
+        ],
+        "rows": [
+          [
+            "पुतुल नौच",
+            "छड़ कठपुतली"
+          ],
+          [
+            "टोगालु गोम्बेयाटा",
+            "छाया कठपुतली"
+          ],
+          [
+            "बोम्मलत्तम",
+            "छड़ कठपुतली"
+          ],
+          [
+            "पवकठकली",
+            "दस्ताने कठपुतली"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने जोड़े सही मेल खाते हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Putul Nautch — Rod puppet",
+          "verdict": "सही है",
+          "reason": "पश्चिम बंगाल का पुतुल नौच नीचे से छड़ों द्वारा संचालित होता है; यह पूर्वी भारत की पारंपरिक छड़ कठपुतली परंपरा है।"
+        },
+        {
+          "statement": "Togalu Gombeyaata — Shadow puppet",
+          "verdict": "सही है",
+          "reason": "टोगालु गोम्बेयाटा कर्नाटक की चमड़े की छाया कठपुतली परंपरा है जिसमें पारदर्शी चमड़े की आकृतियों को प्रकाशित स्क्रीन के पीछे रखा जाता है।"
+        },
+        {
+          "statement": "Bommalattam — Rod puppet",
+          "verdict": "गलत है",
+          "reason": "बोम्मलत्तम एक संकर कठपुतली है जो दोनों स्ट्रिंग और छड़ नियंत्रण को मिलाता है और इसमें लोहे का सिरोपा होता है — इसे केवल छड़ कठपुतली के रूप में वर्गीकृत नहीं किया जा सकता।"
+        },
+        {
+          "statement": "Pavakathakali — Glove puppet",
+          "verdict": "सही है",
+          "reason": "पवकठकली केरल की दस्ताने कठपुतली परंपरा है जिसमें कठपुतलीकार अपनी हाथ कठपुतली के शरीर में डालता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी चार) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि तीन जोड़े सही हैं, और जो छात्र जानते हैं कि बोम्मलत्तम में छड़ नियंत्रण शामिल है, वे इसे केवल 'छड़ कठपुतली' के रूप में स्वीकार कर सकते हैं बिना स्ट्रिंग घटक को पहचाने।",
+      "elimination_logic": [
+        "पुतुल नौच — छड़ कठपुतली की पुष्टि करें: सही है। पश्चिम बंगाल की पुतुल नौच नीचे से छड़ों द्वारा संचालित होती है।",
+        "टोगालु गोम्बेयाटा — छाया कठपुतली की पुष्टि करें: सही है। कर्नाटक की चमड़े की आकृति परंपरा निश्चित रूप से छाया कठपुतली है।",
+        "बोम्मलत्तम — छड़ कठपुतली की पुष्टि करें: गलत है। बोम्मलत्तम में छड़ और स्ट्रिंग दोनों नियंत्रण होते हैं साथ ही लोहे का सिरोपा भी होता है — यह एक संकर है, केवल छड़ कठपुतली नहीं।",
+        "पवकठकली — दस्ताने कठपुतली की पुष्टि करें: सही है। तीन जोड़े सही हैं — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "तीसरा जोड़ा (बोम्मलत्तम — छड़ कठपुतली) जाल है। बोम्मलत्तम नियंत्रण तंत्र के हिस्से के रूप में छड़ों का उपयोग करता है, इसलिए जो छात्र इसे छड़ कठपुतली सूची में देख चुके हैं, वे इस जोड़े को सही मानेंगे। हालांकि, बोम्मलत्तम की संकर स्ट्रिंग-छड़ प्रकृति के कारण इसे केवल 'छड़ कठपुतली' श्रेणी में नहीं रखा जा सकता — यह दो श्रेणियों के बीच पुल है। केवल वही छात्र जो संकर वर्गीकरण को समझते हैं, इस जोड़े को अस्वीकार करेंगे।",
+      "final_explanation": "भारतीय कठपुतली प्रकारों का सही वर्गीकरण शुद्ध प्रकार की परंपराओं और संकर रूपों के बीच भेद करने पर निर्भर करता है।\n\n| परंपरा | कथित प्रकार | निर्णय |\n|---|---|---|\n| पुतुल नौच | छड़ कठपुतली | सही |\n| टोगालु गोम्बेयाटा | छाया कठपुतली | सही |\n| बोम्मलत्तम | छड़ कठपुतली | गलत |\n| पवकठकली | दस्ताने कठपुतली | सही |\n\n• पुतुल नौच (पश्चिम बंगाल): नीचे से छड़ों द्वारा संचालित — शुद्ध छड़ कठपुतली। सही।\n• टोगालु गोम्बेयाटा (कर्नाटक): प्रकाशित स्क्रीन के पीछे चमड़े की आकृतियाँ — शुद्ध छाया कठपुतली। सही।\n• बोम्मलत्तम (तमिलनाडु): कठपुतलीकार के सिर पर लोहे का मुकुट + ऊपर से स्ट्रिंग + नीचे से छड़ — स्पष्ट रूप से स्ट्रिंग-छड़ संकर। इसे केवल 'छड़ कठपुतली' कहना गलत है।\n• पवकठकली (केरल): कठपुतली के शरीर में हाथ डालना — शुद्ध दस्ताने कठपुतली। सही।\n\nतीन जोड़े सही हैं — उत्तर विकल्प (c) है।\n\nमूल्य संवर्धन:\n• संस्कृत में चार तकनीकी श्रेणियाँ: सूत्रधार (स्ट्रिंग), छायानाटक (छाया), दस्त (दस्ताने), डंड (छड़)।\n• बोम्मलत्तम की संकर प्रकृति भारतीय कठपुतली में सबसे अधिक परीक्षण की गई वर्गीकरण असंगति है।\n• ओडिशा की सखी कुंधेई एक दस्ताने कठपुतली परंपरा है जो कम जानी जाती है लेकिन हाल के प्रश्न सेटों में बढ़ती है।"
+    }
+  },
+  {
+    "uuid": "30e8c0d9-4be1-4025-b1ab-74474fcce167",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Puppetry in the Context of Ramayana and Mahabharata Transmission",
+        "Tholpavakoothu — Kerala Shadow Puppet Tradition",
+        "Tholu Bommalata — Andhra Pradesh Shadow Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Puppetry as sacred oral transmission vehicle vs. secular entertainment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A researcher documents a shadow puppet performance tradition in which performances are conducted exclusively within a special theater built inside a temple complex. The performances, which can continue for several weeks, narrate episodes from the Ramayana and are understood by the community to be a sacred offering to the presiding deity rather than entertainment for a general audience. Hereditary families have conducted these performances for generations without interruption.\n\nWhich of the following best describes the primary function of this tradition in the context of Indian cultural heritage?\n\n(a) A form of folk entertainment performed at religious fairs and melas, classified under intangible performing arts\n(b) A sacred ritual transmission of epic narratives, functioning as a devotional offering within a temple-bound ceremonial framework\n(c) A secular oral narrative tradition that uses visual performance to preserve and disseminate regional epic variants\n(d) A documentary cultural mapping exercise conducted by hereditary communities to preserve pre-literate textual knowledge",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students may apply the general 'intangible cultural heritage' label to any endangered tradition without distinguishing between its ritual-sacred classification and secular entertainment classification.",
+      "elimination_logic": [
+        "The scenario describes a performance that: (1) occurs within a temple, (2) lasts multiple weeks, (3) is conducted as a sacred offering rather than secular entertainment, (4) retells a religious epic. These features collectively point to a sacred ritual transmission function.",
+        "Eliminate option (a): 'Folk entertainment at melas' describes secular public performance — incompatible with a temple-bound, weeks-long ritual offering.",
+        "Eliminate option (c): 'Secular oral narrative tradition' contradicts the explicitly sacred temple context of the described performance.",
+        "Eliminate option (d): 'Documentary cultural mapping' is an institutional preservation activity, not a classification of the performance tradition itself.",
+        "Confirm option (b): The performance is a sacred ritual retelling — it functions as a religious offering and vehicle for transmitting the Ramayana as a devotional act, exemplified by Tholpavakoothu of Kerala."
+      ],
+      "upsc_trap_explanation": "Option (a) exploits the tendency to apply the 'intangible heritage' or 'folk entertainment' label broadly. The scenario's explicit temple-bound, ritual nature rules out secular entertainment. Students who associate puppetry with public fairs and folk performance will be drawn to option (a), missing the sacred-ritual dimension that distinguishes Tholpavakoothu from all other Indian puppet traditions.",
+      "final_explanation": "The principle being tested is the distinction between sacred-ritual and secular-entertainment functions of puppetry, with Tholpavakoothu as the primary example.\n\nThe scenario describes a shadow puppet performance conducted inside a dedicated theater within a temple complex, lasting multiple weeks as a sacred offering to the presiding deity — all hallmarks of Tholpavakoothu of Kerala, which is performed in Koothumadam theaters within Bhadrakali temples and can last 41 nights.\n\n• Option (a) — Incorrect: Folk entertainment at melas is secular and public — incompatible with a weeks-long temple-bound ritual offering.\n• Option (b) — Correct: The performance is a sacred ritual transmission of the Ramayana, functioning as a devotional offering. This is the defining functional category of Tholpavakoothu — sacred ritual retelling, not entertainment.\n• Option (c) — Incorrect: 'Secular oral narrative tradition' directly contradicts the temple context and ritual purpose described.\n• Option (d) — Incorrect: Cultural mapping is an institutional documentation activity — not a classification of the performance tradition itself.\n\nValue Addition:\n• Tholpavakoothu's 41-night duration is the longest documented ritual performance tradition in India.\n• The Malavar community are its hereditary performers, with sacred duties tied to the Bhadrakali temple calendar.\n• This ritual-vs-secular distinction mirrors the broader UPSC question on 'living traditions' vs. 'museum artifacts' in intangible heritage policy."
+    },
+    "hi": {
+      "display_text": "एक शोधकर्ता एक छाया कठपुतली प्रदर्शन परंपरा का दस्तावेजीकरण करता है जिसमें प्रदर्शन केवल मंदिर परिसर के भीतर बनाए गए एक विशेष थिएटर में आयोजित होते हैं। ये प्रदर्शन, जो कई सप्ताह तक चल सकते हैं, रामायण के प्रसंगों का वर्णन करते हैं और समुदाय द्वारा इन्हें सामान्य दर्शकों के लिए मनोरंजन के बजाय अधिष्ठात्री देवता को एक पवित्र भेंट माना जाता है। वंशानुगत परिवारों ने पीढ़ियों से बिना किसी व्यवधान के ये प्रदर्शन किए हैं।\n\nभारतीय सांस्कृतिक विरासत के संदर्भ में इस परंपरा के प्राथमिक कार्य का सबसे उपयुक्त वर्णन निम्नलिखित में से कौन सा है?\n\n(a) धार्मिक मेले और मेलों में प्रस्तुत लोक मनोरंजन का एक रूप, जिसे अमूर्त प्रदर्शन कला के अंतर्गत वर्गीकृत किया गया है\n(b) महाकाव्य कथाओं का एक पवित्र अनुष्ठानिक संप्रेषण, जो मंदिर-सीमित समारोहात्मक ढांचे के भीतर भक्ति भेंट के रूप में कार्य करता है\n(c) एक सांसारिक मौखिक कथा परंपरा जो क्षेत्रीय महाकाव्य रूपांतरों को संरक्षित और प्रसारित करने के लिए दृश्य प्रदर्शन का उपयोग करती है\n(d) वंशानुगत समुदायों द्वारा पूर्व-लिखित पाठ्य ज्ञान को संरक्षित करने के लिए संचालित एक दस्तावेजी सांस्कृतिक मानचित्रण अभ्यास",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is a strong distractor because students may apply the general 'intangible cultural heritage' label to any endangered tradition without distinguishing between its ritual-sacred classification and secular entertainment classification.",
+      "elimination_logic": [
+        "यह परिदृश्य एक ऐसे प्रदर्शन का वर्णन करता है जो: (1) मंदिर के भीतर होता है, (2) कई सप्ताह तक चलता है, (3) सांसारिक मनोरंजन के बजाय एक पवित्र भेंट के रूप में आयोजित किया जाता है, (4) एक धार्मिक महाकाव्य को पुनः प्रस्तुत करता है। ये विशेषताएँ सामूहिक रूप से एक पवित्र अनुष्ठानिक संप्रेषण कार्य की ओर संकेत करती हैं।",
+        "विकल्प (a) को हटाएँ: 'मेलों में लोक मनोरंजन' सांसारिक सार्वजनिक प्रदर्शन का वर्णन करता है — जो मंदिर-सीमित, कई सप्ताह तक चलने वाले अनुष्ठानिक भेंट के साथ असंगत है।",
+        "विकल्प (c) को हटाएँ: 'सांसारिक मौखिक कथा परंपरा' वर्णित प्रदर्शन के स्पष्ट रूप से पवित्र मंदिर संदर्भ के विपरीत है।",
+        "विकल्प (d) को हटाएँ: 'दस्तावेजी सांस्कृतिक मानचित्रण' एक संस्थागत संरक्षण गतिविधि है, न कि प्रदर्शन परंपरा का वर्गीकरण।",
+        "विकल्प (b) की पुष्टि करें: यह प्रदर्शन एक पवित्र अनुष्ठान पुनःकथन है — यह रामायण को भक्ति के रूप में संप्रेषित करने का माध्यम है, जिसका उदाहरण केरल का थोलपवाकूथु है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) इस प्रवृत्ति का लाभ उठाता है कि 'अमूर्त विरासत' या 'लोक मनोरंजन' लेबल को व्यापक रूप से लागू किया जाता है। परिदृश्य का स्पष्ट मंदिर-सीमित, अनुष्ठानिक स्वभाव सांसारिक मनोरंजन को खारिज करता है। जो छात्र कठपुतली को सार्वजनिक मेलों और लोक प्रदर्शन से जोड़ते हैं, वे विकल्प (a) की ओर आकर्षित होंगे, और थोलपवाकूथु को अन्य भारतीय कठपुतली परंपराओं से अलग करने वाले पवित्र-अनुष्ठानिक आयाम को नहीं समझ पाएंगे।",
+      "final_explanation": "परीक्षण का मूल सिद्धांत कठपुतली के पवित्र-अनुष्ठानिक और सांसारिक-मनोरंजन कार्यों के बीच अंतर है, जिसमें थोलपवाकूथु मुख्य उदाहरण है।\n\nपरिदृश्य एक छाया कठपुतली प्रदर्शन का वर्णन करता है जो मंदिर परिसर के भीतर एक समर्पित थिएटर में आयोजित होता है, जो कई सप्ताह तक चलता है और अधिष्ठात्री देवता को एक पवित्र भेंट के रूप में प्रस्तुत किया जाता है — ये सभी केरल के थोलपवाकूथु के लक्षण हैं, जो भद्रकाली मंदिरों के कूथुमडम थिएटरों में होता है और 41 रातों तक चल सकता है।\n\n• विकल्प (a) — गलत: मेलों में लोक मनोरंजन सांसारिक और सार्वजनिक होता है — जो कई सप्ताह तक चलने वाले मंदिर-सीमित अनुष्ठानिक भेंट के साथ असंगत है।\n• विकल्प (b) — सही: यह प्रदर्शन रामायण का पवित्र अनुष्ठानिक संप्रेषण है, जो भक्ति के रूप में कार्य करता है। यह थोलपवाकूथु की परिभाषित कार्यात्मक श्रेणी है — पवित्र अनुष्ठान पुनःकथन, मनोरंजन नहीं।\n• विकल्प (c) — गलत: 'सांसारिक मौखिक कथा परंपरा' सीधे मंदिर संदर्भ और अनुष्ठान उद्देश्य के विपरीत है।\n• विकल्प (d) — गलत: सांस्कृतिक मानचित्रण एक संस्थागत दस्तावेजीकरण गतिविधि है — प्रदर्शन परंपरा का वर्गीकरण नहीं।\n\nमूल्य संवर्धन:\n• थोलपवाकूथु की 41 रातों की अवधि भारत में सबसे लंबी प्रलेखित अनुष्ठानिक प्रदर्शन परंपरा है।\n• मलावर समुदाय इसके वंशानुगत कलाकार हैं, जिनके पवित्र कर्तव्य भद्रकाली मंदिर कैलेंडर से जुड़े हैं।\n• यह अनुष्ठान बनाम सांसारिक भेद अमूर्त विरासत नीति में 'जीवित परंपराएँ' बनाम 'संग्रहालय कलाकृतियाँ' पर व्यापक UPSC प्रश्न की प्रतिध्वनि है।"
+    }
+  },
+  {
+    "uuid": "9b756dfd-cb87-4ef2-a63c-1ea94dc7075a",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Togalu Gombeyaata — Karnataka Shadow Puppet Tradition",
+        "Tholu Bommalata — Andhra Pradesh Shadow Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Togalu Gombeyaata — Karnataka vs. Andhra geographic precision",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following shadow puppet traditions share the features of using treated leather figures and encoding social hierarchy through the size of puppet figures. Which one does NOT share these characteristics with the others?\n\n(a) Tholpavakoothu\n(b) Tholu Bommalata\n(c) Togalu Gombeyaata\n(d) Ravanachhaya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (Tholu Bommalata) is a strong distractor because students may confuse it with Togalu Gombeyaata — both are southern Indian leather shadow puppets using size-hierarchy encoding, and students unsure of the state boundary may mark either as the odd one out.",
+      "elimination_logic": [
+        "Identify the common attribute: which three of the four items share the characteristic of 'leather shadow puppet traditions of southern India that use size to indicate character status'?",
+        "Tholpavakoothu (Kerala): shadow puppet using deer hide — fits leather shadow puppet category.",
+        "Tholu Bommalata (Andhra Pradesh): leather shadow puppet with size-hierarchy — fits.",
+        "Togalu Gombeyaata (Karnataka): leather shadow puppet with size-hierarchy — fits.",
+        "Ravanachhaya (Odisha): shadow puppet BUT uses opaque, single-piece hide with NO size-hierarchy and NO color — belongs to a different region (eastern India) and has distinct technical features. Ravanachhaya is the odd one out among southern leather shadow traditions."
+      ],
+      "upsc_trap_explanation": "The trap is in the regional dimension. Tholpavakoothu, Tholu Bommalata, and Togalu Gombeyaata are all southern Indian leather shadow puppet traditions that share the size-hierarchy convention (larger figure = higher status). Ravanachhaya is Odisha's shadow puppet — eastern India — and additionally differs technically (opaque, no hierarchy, no color). A student focused on the technical type (shadow puppet) without noting the regional grouping and technical differentiation will not identify Ravanachhaya as the odd one out.",
+      "final_explanation": "This question groups shadow puppet traditions with the sub-criterion of southern Indian leather shadow puppets using size-based social hierarchy encoding.\n\n• Option (a) — Tholpavakoothu: Kerala's leather shadow puppet tradition; deer hide figures; temple-bound ritual form. Belongs to the southern leather shadow puppet group.\n• Option (b) — Tholu Bommalata: Andhra Pradesh's leather shadow puppet; uses size hierarchy (larger = higher status); multi-colored translucent leather. Belongs to the group.\n• Option (c) — Togalu Gombeyaata: Karnataka's leather shadow puppet; smaller figures for common characters, larger for royalty and gods. Belongs to the group.\n• Option (d) — Ravanachhaya: The ODD ONE OUT. Ravanachhaya belongs to Odisha (eastern India, not southern), uses opaque single-piece untreated hide, produces only black silhouettes with no color, and does not employ a size-hierarchy system. It differs in region, technique, and social encoding from the other three.\n\nValue Addition:\n• The size-hierarchy convention in shadow puppetry is a remarkable socio-aesthetic code: the puppet's physical scale encodes its social/cosmic status.\n• Ravanachhaya is also unique in having no joints — a single piece of hide creates the entire figure.\n• All four are shadow puppets, but only Ravanachhaya breaks the translucency, color, and size-hierarchy conventions of the others."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से तीन छाया कठपुतली परंपराएँ उपचारित चमड़े के पात्रों का उपयोग करती हैं और कठपुतली के आकार के माध्यम से सामाजिक पदानुक्रम को दर्शाती हैं। इनमें से कौन-सी परंपरा इन विशेषताओं को साझा नहीं करती?\n\n(a) थोलपावकूथु\n(b) थोलु बोंमलता\n(c) टोगालु गोम्बेयाटा\n(d) रावणछाया",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (थोलु बोंमलता) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र इसे टोगालु गोम्बेयाटा के साथ भ्रमित कर सकते हैं — दोनों दक्षिण भारतीय चमड़े के छाया कठपुतलियाँ हैं जो आकार-आधारित पदानुक्रम कोडिंग का उपयोग करती हैं, और राज्य सीमा के बारे में अनिश्चित छात्र किसी को भी अलग विकल्प के रूप में चिह्नित कर सकते हैं।",
+      "elimination_logic": [
+        "सामान्य विशेषता की पहचान करें: चार वस्तुओं में से कौन-से तीन 'दक्षिण भारत की चमड़े की छाया कठपुतली परंपराओं' की विशेषता साझा करते हैं जो पात्र की स्थिति दिखाने के लिए आकार का उपयोग करती हैं?",
+        "थोलपावकूथु (केरल): हिरण की खाल से बनी छाया कठपुतली — चमड़े की छाया कठपुतली श्रेणी में आता है।",
+        "थोलु बोंमलता (आंध्र प्रदेश): आकार-आधारित पदानुक्रम वाली चमड़े की छाया कठपुतली — फिट बैठती है।",
+        "टोगालु गोम्बेयाटा (कर्नाटक): आकार-आधारित पदानुक्रम वाली चमड़े की छाया कठपुतली — फिट बैठती है।",
+        "रावणछाया (ओडिशा): छाया कठपुतली है लेकिन अपारदर्शी, एकल-टुकड़ा खाल का उपयोग करती है जिसमें कोई आकार-आधारित पदानुक्रम और कोई रंग नहीं है — यह एक अलग क्षेत्र (पूर्वी भारत) से है और इसकी तकनीकी विशेषताएँ भिन्न हैं। रावणछाया दक्षिणी चमड़े की छाया परंपराओं में अलग है।"
+      ],
+      "upsc_trap_explanation": "फंदा क्षेत्रीय आयाम में है। थोलपावकूथु, थोलु बोंमलता, और टोगालु गोम्बेयाटा सभी दक्षिण भारतीय चमड़े की छाया कठपुतली परंपराएँ हैं जो आकार-आधारित पदानुक्रम (बड़ा आकार = उच्च स्थिति) साझा करती हैं। रावणछाया ओडिशा की छाया कठपुतली है — पूर्वी भारत — और तकनीकी रूप से भी भिन्न है (अपारदर्शी, कोई पदानुक्रम नहीं, कोई रंग नहीं)। जो छात्र केवल तकनीकी प्रकार (छाया कठपुतली) पर ध्यान देंगे और क्षेत्रीय समूह और तकनीकी भेद को नहीं देखेंगे, वे रावणछाया को अलग विकल्प के रूप में नहीं पहचान पाएंगे।",
+      "final_explanation": "यह प्रश्न छाया कठपुतली परंपराओं को दक्षिण भारतीय चमड़े की छाया कठपुतलियों के उप-मानदंड के साथ समूहित करता है जो आकार-आधारित सामाजिक पदानुक्रम कोडिंग का उपयोग करती हैं।\n\n• विकल्प (a) — थोलपावकूथु: केरल की चमड़े की छाया कठपुतली परंपरा; हिरण की खाल से बने पात्र; मंदिर-आधारित अनुष्ठान रूप। दक्षिणी चमड़े की छाया कठपुतली समूह का हिस्सा।\n• विकल्प (b) — थोलु बोंमलता: आंध्र प्रदेश की चमड़े की छाया कठपुतली; आकार पदानुक्रम (बड़ा = उच्च स्थिति) का उपयोग; बहुरंगी पारदर्शी चमड़ा। समूह का हिस्सा।\n• विकल्प (c) — टोगालु गोम्बेयाटा: कर्नाटक की चमड़े की छाया कठपुतली; सामान्य पात्रों के लिए छोटे आकार, राजसी और देवताओं के लिए बड़े आकार। समूह का हिस्सा।\n• विकल्प (d) — रावणछाया: अलग विकल्प। रावणछाया ओडिशा (पूर्वी भारत, दक्षिणी नहीं) की है, अपारदर्शी एकल-टुकड़ा बिना उपचार वाली खाल का उपयोग करती है, केवल काले सिल्हूट बनाती है बिना किसी रंग के, और आकार-आधारित पदानुक्रम प्रणाली का उपयोग नहीं करती। यह क्षेत्र, तकनीक और सामाजिक कोडिंग में अन्य तीनों से भिन्न है।\n\nमूल्यवर्धन:\n• छाया कठपुतली में आकार-आधारित पदानुक्रम एक उल्लेखनीय सामाजिक-सौंदर्य कोड है: कठपुतली का भौतिक आकार उसके सामाजिक/ब्रह्मांडीय स्थिति को दर्शाता है।\n• रावणछाया में जोड़ नहीं होते — एकल खाल का टुकड़ा पूरा आकृति बनाता है।\n• सभी चार छाया कठपुतलियाँ हैं, लेकिन केवल रावणछाया पारदर्शिता, रंग, और आकार-आधारित पदानुक्रम की परंपराओं को तोड़ती है।"
+    }
+  },
+  {
+    "uuid": "4e31f220-6abf-40ce-8fbc-66f923b6f403",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Sutradhara — The Cultural and Linguistic Legacy of Puppetry",
+        "Leather Preparation and Craft Techniques in Shadow Puppetry"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Natyashastra reference to puppetry as precursor to theater",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The concept of the Sutradhara as both a string puppet operator and a theatrical director-narrator finds its earliest documented expression in ________, attributed to Bharata Muni, which references puppetry as a precursor to structured theatrical performance in India.\n\n(a) Arthashastra\n(b) Vishnudharmottara Purana\n(c) Natyashastra\n(d) Abhinaya Darpana",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (Arthashastra) is a strong distractor because students associate Arthashastra with Kautilya's comprehensive treatise on statecraft and may recall it mentions various arts and crafts, making it plausible as a source for puppetry references.",
+      "elimination_logic": [
+        "The blank requires the text in which puppetry is referenced as a precursor to theatrical performance and where the term Sutradhara appears in a performing arts context.",
+        "Eliminate option (a): Arthashastra (Kautilya) is a treatise on statecraft and political economy — not a performing arts treatise.",
+        "Eliminate option (b): Vishnudharmottara Purana deals with iconography, painting, and sculptural canon — it is a visual arts text, not a performing arts treatise.",
+        "Eliminate option (d): Abhinaya Darpana (Nandikesvara) deals specifically with gestures and expressions in dance — narrower in scope than a comprehensive theatrical treatise.",
+        "Confirm option (c): Natyashastra by Bharata Muni is the foundational Indian treatise on performing arts, within which puppetry references and the Sutradhara concept appear as precursors to theatrical form."
+      ],
+      "upsc_trap_explanation": "Option (a) — Arthashastra — is deliberately placed to exploit the tendency to associate 'ancient authoritative Indian text' with Kautilya's Arthashastra. Students who have not specifically studied which text references puppetry in a theatrical context may default to the most famous ancient Indian treatise they know. The Natyashastra is the correct answer because it is explicitly a performing arts treatise — the only one of the four options that covers the theatrical domain comprehensively.",
+      "final_explanation": "The connection between puppetry and the foundational texts of Indian performing arts is tested through knowledge of which ancient treatise explicitly addresses theatrical performance origins.\n\n• Option (a) — Incorrect: The Arthashastra (attributed to Kautilya/Chanakya) is a treatise on statecraft, political economy, and governance — not performing arts.\n• Option (b) — Incorrect: The Vishnudharmottara Purana contains the Chitrasutram, a treatise on iconography and painting — it addresses visual arts, not theatrical performance or puppetry.\n• Option (c) — Correct: The Natyashastra, attributed to Bharata Muni, is India's foundational text on dramatic theory and performing arts. It references puppetry as a precursor to theatrical performance and is the source context for the Sutradhara concept in its theatrical-directorial role.\n• Option (d) — Incorrect: The Abhinaya Darpana (Nandikesvara) is a specialized text on gestural language (mudras and abhinaya) in dance — narrower in scope and not the source for puppetry-theater connections.\n\nValue Addition:\n• Natyashastra is often called the 'fifth Veda' of performing arts — a comprehensive compendium of drama, music, dance, and stagecraft.\n• The Natyashastra's coverage of Sutradhara as a theatrical role is evidence of puppetry's foundational influence on organized stage performance in India.\n• Abhinaya Darpana is frequently confused with Natyashastra in questions about dance treatises — remember that Natyashastra is broader and older."
+    },
+    "hi": {
+      "display_text": "सुतरधार की अवधारणा, जो एक सुतली कठपुतली संचालक और नाट्य निर्देशक-कथावाचक दोनों है, का सबसे प्राचीन प्रलेखित अभिव्यक्ति ________ में मिलता है, जिसे भरत मुनि को माना जाता है, जो भारत में कठपुतली को संगठित नाट्य प्रदर्शन के पूर्ववर्ती के रूप में संदर्भित करता है।\n\n(a) अर्थशास्त्र\n(b) विष्णुधर्मोत्तर पुराण\n(c) नाट्यशास्त्र\n(d) अभिनय दर्पण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (अर्थशास्त्र) एक मजबूत भ्रम है क्योंकि छात्र अर्थशास्त्र को कौटिल्य के राज्यशास्त्र के व्यापक ग्रंथ से जोड़ते हैं और याद कर सकते हैं कि इसमें विभिन्न कला और शिल्प का उल्लेख है, जिससे यह कठपुतली संदर्भ के लिए संभावित स्रोत बन जाता है।",
+      "elimination_logic": [
+        "रिक्त स्थान उस ग्रंथ की आवश्यकता है जिसमें कठपुतली को नाट्य प्रदर्शन के पूर्ववर्ती के रूप में संदर्भित किया गया हो और जहाँ सुतरधार शब्द प्रदर्शन कला के संदर्भ में आता हो।",
+        "विकल्प (a) को हटाएं: अर्थशास्त्र (कौटिल्य) राज्यशास्त्र और राजनीतिक अर्थव्यवस्था पर ग्रंथ है — यह प्रदर्शन कला का ग्रंथ नहीं है।",
+        "विकल्प (b) को हटाएं: विष्णुधर्मोत्तर पुराण चित्रकला, मूर्तिकला और शिल्पशास्त्र से संबंधित है — यह दृश्य कला का ग्रंथ है, प्रदर्शन कला का नहीं।",
+        "विकल्प (d) को हटाएं: अभिनय दर्पण (नंदीकेश्वर) नृत्य में हाव-भाव और अभिव्यक्ति पर केंद्रित है — यह व्यापक नाट्य ग्रंथ से संकीर्ण है।",
+        "विकल्प (c) की पुष्टि करें: भरत मुनि का नाट्यशास्त्र भारतीय प्रदर्शन कला का आधारभूत ग्रंथ है, जिसमें कठपुतली के संदर्भ और सुतरधार की अवधारणा नाट्य रूप के पूर्ववर्ती के रूप में आती है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) — अर्थशास्त्र — जानबूझकर इस प्रकार रखा गया है कि 'प्राचीन प्रामाणिक भारतीय ग्रंथ' को कौटिल्य के अर्थशास्त्र से जोड़ने की प्रवृत्ति का लाभ उठाया जा सके। जो छात्र विशेष रूप से यह नहीं जानते कि कठपुतली को नाट्य संदर्भ में किस ग्रंथ में उल्लेखित किया गया है, वे सबसे प्रसिद्ध प्राचीन भारतीय ग्रंथ को चुन सकते हैं। नाट्यशास्त्र सही उत्तर है क्योंकि यह स्पष्ट रूप से प्रदर्शन कला का ग्रंथ है — चारों विकल्पों में से एकमात्र जो नाट्य क्षेत्र को व्यापक रूप से कवर करता है।",
+      "final_explanation": "भारतीय प्रदर्शन कला के आधारभूत ग्रंथों और कठपुतली के बीच संबंध की परीक्षा इस बात के ज्ञान से होती है कि कौन सा प्राचीन ग्रंथ नाट्य प्रदर्शन की उत्पत्ति को स्पष्ट रूप से संबोधित करता है।\n\n• विकल्प (a) — गलत: अर्थशास्त्र (कौटिल्य/चाणक्य) राज्यशास्त्र, राजनीतिक अर्थव्यवस्था और शासन पर ग्रंथ है — प्रदर्शन कला का नहीं।\n• विकल्प (b) — गलत: विष्णुधर्मोत्तर पुराण में चित्रसूत्र है, जो चित्रकला और मूर्तिकला का ग्रंथ है — यह दृश्य कला से संबंधित है, नाट्य प्रदर्शन या कठपुतली से नहीं।\n• विकल्प (c) — सही: भरत मुनि का नाट्यशास्त्र भारत का नाटकीय सिद्धांत और प्रदर्शन कला का आधारभूत ग्रंथ है। इसमें कठपुतली को नाट्य प्रदर्शन के पूर्ववर्ती के रूप में संदर्भित किया गया है और सुतरधार की अवधारणा नाट्य-निर्देशक भूमिका के रूप में आती है।\n• विकल्प (d) — गलत: अभिनय दर्पण (नंदीकेश्वर) नृत्य में मुद्राओं और अभिनय भाषा पर विशेष ग्रंथ है — संकीर्ण विषय वाला और कठपुतली-नाट्य संबंधों का स्रोत नहीं।\n\nमूल्यवर्धन:\n• नाट्यशास्त्र को अक्सर प्रदर्शन कला का 'पंचम वेद' कहा जाता है — नाटक, संगीत, नृत्य और रंगमंच कला का व्यापक संकलन।\n• नाट्यशास्त्र में सुतरधार की नाट्य भूमिका कठपुतली के संगठित रंगमंच प्रदर्शन पर भारत में इसके मौलिक प्रभाव का प्रमाण है।\n• अभिनय दर्पण को अक्सर नृत्य ग्रंथों के प्रश्नों में नाट्यशास्त्र के साथ भ्रमित किया जाता है — याद रखें कि नाट्यशास्त्र व्यापक और प्राचीन है।"
+    }
+  },
+  {
+    "uuid": "aae7cd29-dcce-441a-9185-08782d2352ca",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Geographical Distribution and State Mapping of Puppet Traditions",
+        "Putul Nautch — Bengali Rod Puppet Tradition",
+        "Bommalattam — Tamil Nadu String + Rod Hybrid Puppet"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Putul Nautch — West Bengal rod puppet correct identification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Putul Nautch — rod puppet of West Bengal, operated by rods from below with jointed wooden figures\n(b) Yampuri — string puppet of Odisha, with entire body carved from a single piece of wood without joints\n(c) Bommalattam — pure rod puppet of Tamil Nadu, among the lightest puppet forms in India\n(d) Gombeyatta — shadow puppet of Karnataka, using translucent leather figures behind an illuminated screen",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is a strong distractor because students who know Bommalattam involves rod manipulation may accept 'pure rod puppet of Tamil Nadu' as correct, missing that Bommalattam is a string-rod hybrid.",
+      "elimination_logic": [
+        "Evaluate option (a): Putul Nautch — rod puppet of West Bengal, operated by rods from below, with jointed wooden figures: This is accurate in all three attributes. Correct.",
+        "Evaluate option (b): Yampuri — string puppet of Odisha: Incorrect on geography. Yampuri is Bihar's string puppet, not Odisha's.",
+        "Evaluate option (c): Bommalattam — pure rod puppet of Tamil Nadu: Incorrect on classification. Bommalattam is a hybrid string-and-rod form, not a pure rod puppet.",
+        "Evaluate option (d): Gombeyatta — shadow puppet of Karnataka: Incorrect on type. Gombeyatta is Karnataka's string puppet; Togalu Gombeyaata is Karnataka's shadow puppet."
+      ],
+      "upsc_trap_explanation": "Options (b), (c), and (d) each contain a single false element. Option (b) swaps Yampuri's state (Bihar becomes Odisha). Option (c) misclassifies Bommalattam as 'pure rod' ignoring its hybrid nature. Option (d) confuses Karnataka's two traditions by calling Gombeyatta a shadow puppet when it is a string puppet. These are precision traps requiring exact recall of both the tradition's type AND its state.",
+      "final_explanation": "This question requires simultaneous verification of both the technical type AND the state for each puppet tradition.\n\n• Option (a) — Correct: Putul Nautch is West Bengal's rod puppet tradition. 'Putul' means doll and 'Nautch' means dance. Figures are wooden with jointed limbs, operated by rods from below. All attributes correctly stated.\n• Option (b) — Incorrect: Yampuri is Bihar's string puppet tradition — not Odisha. Odisha's string puppet is Kundhei.\n• Option (c) — Incorrect: Bommalattam of Tamil Nadu is a string-and-rod hybrid, not a 'pure rod puppet.' Its distinctive feature is the iron crown on the puppeteer's head combined with both string and rod manipulation.\n• Option (d) — Incorrect: Gombeyatta is Karnataka's string puppet tradition, not a shadow puppet. Karnataka's shadow puppet tradition is Togalu Gombeyaata — a different form entirely.\n\nValue Addition:\n• 'Putul Nautch' literally translates to 'doll dance' — reflecting both the object (puppet/doll) and the performance mode (dance).\n• Putul Nautch has evolved to include contemporary social themes alongside traditional Ramayana and Mahabharata narratives.\n• The Bihar-Odisha confusion for Yampuri is a recurring exam trap — remember: Yampuri (Bihar, single-piece wood, no joints, Yama theme) vs. Kundhei (Odisha, jointed, Odissi aesthetic)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही रूप से मेल खाता है?\n\n(a) पुतुल नौच — पश्चिम बंगाल की छड़ी कठपुतली, नीचे से छड़ द्वारा संचालित, जोड़दार लकड़ी के आंकड़ों के साथ\n(b) यमपुरी — ओडिशा की स्ट्रिंग कठपुतली, जिसका पूरा शरीर बिना जोड़ के एक ही लकड़ी के टुकड़े से तराशा गया है\n(c) बोम्मलत्तम — तमिलनाडु की शुद्ध छड़ी कठपुतली, भारत के सबसे हल्के कठपुतली रूपों में से एक\n(d) गोम्बेयट्टा — कर्नाटक की छाया कठपुतली, जो एक प्रकाशित पर्दे के पीछे पारदर्शी चमड़े के आंकड़ों का उपयोग करती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि बोम्मलत्तम में छड़ी का संचालन होता है, वे 'तमिलनाडु का शुद्ध छड़ी कठपुतली' को सही मान सकते हैं, यह भूलकर कि बोम्मलत्तम एक स्ट्रिंग-छड़ी मिश्रित रूप है।",
+      "elimination_logic": [
+        "विकल्प (a) का मूल्यांकन करें: पुतुल नौच — पश्चिम बंगाल की छड़ी कठपुतली, नीचे से छड़ द्वारा संचालित, जोड़दार लकड़ी के आंकड़ों के साथ: यह तीनों गुणों में सटीक है। सही।",
+        "विकल्प (b) का मूल्यांकन करें: यमपुरी — ओडिशा की स्ट्रिंग कठपुतली: भौगोलिक दृष्टि से गलत। यमपुरी बिहार की स्ट्रिंग कठपुतली है, ओडिशा की नहीं।",
+        "विकल्प (c) का मूल्यांकन करें: बोम्मलत्तम — तमिलनाडु की शुद्ध छड़ी कठपुतली: वर्गीकरण में गलत। बोम्मलत्तम एक मिश्रित स्ट्रिंग-और-छड़ी रूप है, शुद्ध छड़ी कठपुतली नहीं।",
+        "विकल्प (d) का मूल्यांकन करें: गोम्बेयट्टा — कर्नाटक की छाया कठपुतली: प्रकार में गलत। गोम्बेयट्टा कर्नाटक की स्ट्रिंग कठपुतली है; टोगालु गोम्बेयाटा कर्नाटक की छाया कठपुतली है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b), (c), और (d) में प्रत्येक में एक गलत तत्व है। विकल्प (b) यमपुरी के राज्य को बदल देता है (बिहार को ओडिशा बना देता है)। विकल्प (c) बोम्मलत्तम को 'शुद्ध छड़ी' के रूप में गलत वर्गीकृत करता है जबकि यह मिश्रित है। विकल्प (d) कर्नाटक की दो परंपराओं को भ्रमित करता है, गोम्बेयट्टा को छाया कठपुतली कहता है जबकि यह स्ट्रिंग कठपुतली है। ये सटीकता के जाल हैं जो परंपरा के प्रकार और राज्य दोनों की सही स्मृति की मांग करते हैं।",
+      "final_explanation": "इस प्रश्न में प्रत्येक कठपुतली परंपरा के तकनीकी प्रकार और राज्य दोनों की एक साथ पुष्टि आवश्यक है।\n\n• विकल्प (a) — सही: पुतुल नौच पश्चिम बंगाल की छड़ी कठपुतली परंपरा है। 'पुतुल' का अर्थ गुड़िया और 'नौच' का अर्थ नृत्य है। आंकड़े जोड़दार लकड़ी के होते हैं, नीचे से छड़ द्वारा संचालित। सभी गुण सही बताए गए हैं।\n• विकल्प (b) — गलत: यमपुरी बिहार की स्ट्रिंग कठपुतली परंपरा है — ओडिशा की नहीं। ओडिशा की स्ट्रिंग कठपुतली कुंधेई है।\n• विकल्प (c) — गलत: तमिलनाडु का बोम्मलत्तम स्ट्रिंग-और-छड़ी मिश्रित रूप है, 'शुद्ध छड़ी कठपुतली' नहीं। इसकी विशिष्टता कठपुतलीकार के सिर पर लोहे का मुकुट और दोनों स्ट्रिंग व छड़ी संचालन है।\n• विकल्प (d) — गलत: गोम्बेयट्टा कर्नाटक की स्ट्रिंग कठपुतली परंपरा है, छाया कठपुतली नहीं। कर्नाटक की छाया कठपुतली टोगालु गोम्बेयाटा है — एक पूरी तरह अलग रूप।\n\nमूल्यवर्धन:\n• 'पुतुल नौच' का शाब्दिक अर्थ 'गुड़िया नृत्य' है — जो वस्तु (कठपुतली/गुड़िया) और प्रदर्शन शैली (नृत्य) दोनों को दर्शाता है।\n• पुतुल नौच ने पारंपरिक रामायण और महाभारत कथाओं के साथ-साथ समकालीन सामाजिक विषयों को भी शामिल किया है।\n• यमपुरी के लिए बिहार-ओडिशा भ्रम एक बार-बार आने वाला परीक्षा जाल है — याद रखें: यमपुरी (बिहार, एक टुकड़ा लकड़ी, बिना जोड़, यम विषय) बनाम कुंधेई (ओडिशा, जोड़दार, ओडिसी सौंदर्यशास्त्र)।"
+    }
+  },
+  {
+    "uuid": "b96b6f59-2209-4212-92ed-433f1ed9d595",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Community-Craft-Livelihood Linkages in Puppetry Traditions",
+        "Tholu Bommalata — Andhra Pradesh Shadow Puppet Tradition",
+        "Tholpavakoothu — Kerala Shadow Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Hereditary community — puppet tradition correct mapping",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Hereditary Community or Term) with List II (Associated Puppet Tradition or Role):",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Killekyata community",
+            "1. Kathputli tradition of Rajasthan"
+          ],
+          [
+            "B. Bhat community",
+            "2. String puppet operator who evolved into Sanskrit theater director"
+          ],
+          [
+            "C. Malavar community",
+            "3. Tholu Bommalata tradition of Andhra Pradesh"
+          ],
+          [
+            "D. Sutradhara",
+            "4. Tholpavakoothu tradition of Kerala"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-4, B-1, C-3, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-4, B-3, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a swaps Malavar and Killekyata communities between Kerala and Andhra Pradesh traditions, exploiting the fact that both are southern Indian communities tied to shadow puppet traditions in geographically proximate states.",
+      "elimination_logic": [
+        "Match A (Killekyata community): Killekyata are the hereditary practitioners of Tholu Bommalata of Andhra Pradesh — matches with 3.",
+        "Match B (Bhat community): Bhat community are the traditional performers of Kathputli in Rajasthan — matches with 1.",
+        "Match C (Malavar community): Malavar are the hereditary practitioners of Tholpavakoothu of Kerala — matches with 4.",
+        "Match D (Sutradhara — holder of strings): The term Sutradhara originated as a descriptor for string puppet operators who later became theater directors — matches with 2 (Bihar's Yampuri is not the match; the correct match is string puppet operator/Sanskrit theater director role). Correct combination: A-3, B-1, C-4, D-2 — option (b)."
+      ],
+      "upsc_trap_explanation": "The Killekyata-Malavar swap is the core trap. Both are southern Indian hereditary communities tied to leather shadow puppet traditions in neighboring states (Andhra Pradesh and Kerala respectively). A student who knows 'both communities are shadow puppetry communities' but hasn't memorized the state-community mapping precisely will swap them. The geographic proximity of Andhra Pradesh and Kerala makes this a plausible and deceptive error.",
+      "final_explanation": "Community-craft linkages are tested by mapping specific hereditary communities to their puppet traditions.\n\n| List I | Correct Match | List II |\n|---|---|---|\n| Killekyata | → 3 | Tholu Bommalata, AP |\n| Bhat | → 1 | Kathputli, Rajasthan |\n| Malavar | → 4 | Tholpavakoothu, Kerala |\n| Sutradhara | → 2 | String puppet operator/Sanskrit director |\n\n• Killekyata — Tholu Bommalata (Andhra Pradesh): The Killekyata community are the hereditary practitioners of AP's leather shadow puppet tradition that holds a GI Tag.\n• Bhat — Kathputli (Rajasthan): The Bhat community are Rajasthan's nomadic puppeteers who have practised Kathputli hereditarily.\n• Malavar — Tholpavakoothu (Kerala): The Malavar community conduct the sacred 41-night Tholpavakoothu performances in Bhadrakali temples.\n• Sutradhara — String puppet operator evolving into Sanskrit theater director: The term's journey from craft to theater demonstrates puppetry's foundational cultural role.\n\nValue Addition:\n• The Bhat community's nomadic nature meant Kathputli spread across Rajasthan and into neighboring states, unlike the geographically fixed temple-bound Tholpavakoothu.\n• Community-craft nexus questions may appear in UPSC under artisan welfare, social justice, or intangible heritage policy contexts.\n• GI Tags (like Tholu Bommalata's) specifically benefit the Killekyata community by protecting their geographical and community identity in the marketplace."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (वंशानुगत समुदाय या पद) को सूची II (संबंधित कठपुतली परंपरा या भूमिका) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. किलेक्याता समुदाय",
+            "1. राजस्थान की कठपुतली परंपरा"
+          ],
+          [
+            "B. भट समुदाय",
+            "2. डोरी कठपुतली संचालक जो संस्कृत रंगमंच निर्देशक बने"
+          ],
+          [
+            "C. मलावर समुदाय",
+            "3. आंध्र प्रदेश की थोलु बोंमलाटा परंपरा"
+          ],
+          [
+            "D. सूतधार",
+            "4. केरल की थोलपवकूथू परंपरा"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-4, B-1, C-3, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-2, C-1, D-4\n(d) A-4, B-3, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a में मलावर और किलेक्याता समुदायों को केरल और आंध्र प्रदेश की परंपराओं के बीच बदल दिया गया है, जो इस तथ्य का लाभ उठाता है कि दोनों दक्षिण भारतीय समुदाय हैं जो छाया कठपुतली परंपराओं से जुड़े हैं और भौगोलिक रूप से निकटवर्ती राज्यों में स्थित हैं।",
+      "elimination_logic": [
+        "मिलान A (किलेक्याता समुदाय): किलेक्याता आंध्र प्रदेश की थोलु बोंमलाटा के वंशानुगत कलाकार हैं — 3 के साथ मेल खाता है।",
+        "मिलान B (भट समुदाय): भट समुदाय राजस्थान में कठपुतली के पारंपरिक कलाकार हैं — 1 के साथ मेल खाता है।",
+        "मिलान C (मलावर समुदाय): मलावर केरल की थोलपवकूथू के वंशानुगत कलाकार हैं — 4 के साथ मेल खाता है।",
+        "मिलान D (सूतधार — डोरों का धारक): सूतधार शब्द डोरी कठपुतली संचालकों के लिए उत्पन्न हुआ जो बाद में रंगमंच निर्देशक बने — 2 के साथ मेल खाता है (बिहार का यमपुरी मेल नहीं खाता; सही मेल डोरी कठपुतली संचालक/संस्कृत रंगमंच निर्देशक भूमिका है)। सही संयोजन: A-3, B-1, C-4, D-2 — विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": "किलेक्याता-मलावर स्वैप मुख्य जाल है। दोनों दक्षिण भारतीय वंशानुगत समुदाय हैं जो पड़ोसी राज्यों (आंध्र प्रदेश और केरल) में चमड़े की छाया कठपुतली परंपराओं से जुड़े हैं। जो छात्र 'दोनों समुदाय छाया कठपुतली समुदाय हैं' जानते हैं लेकिन राज्य-समुदाय मिलान ठीक से याद नहीं रखते, वे इन्हें बदल देंगे। आंध्र प्रदेश और केरल की भौगोलिक निकटता इसे एक संभावित और धोखाधड़ीपूर्ण त्रुटि बनाती है।",
+      "final_explanation": "समुदाय-शिल्प संबंधों का परीक्षण विशिष्ट वंशानुगत समुदायों को उनकी कठपुतली परंपराओं से मिलाकर किया जाता है।\n\n| सूची I | सही मिलान | सूची II |\n|---|---|---|\n| किलेक्याता | → 3 | थोलु बोंमलाटा, आंध्र प्रदेश |\n| भट | → 1 | कठपुतली, राजस्थान |\n| मलावर | → 4 | थोलपवकूथू, केरल |\n| सूतधार | → 2 | डोरी कठपुतली संचालक/संस्कृत निर्देशक |\n\n• किलेक्याता — थोलु बोंमलाटा (आंध्र प्रदेश): किलेक्याता समुदाय आंध्र प्रदेश की चमड़े की छाया कठपुतली परंपरा के वंशानुगत कलाकार हैं जिन्हें GI टैग प्राप्त है।\n• भट — कठपुतली (राजस्थान): भट समुदाय राजस्थान के खानाबदोश कठपुतली कलाकार हैं जो वंशानुगत रूप से कठपुतली का अभ्यास करते हैं।\n• मलावर — थोलपवकूथू (केरल): मलावर समुदाय भद्रकाली मंदिरों में पवित्र 41-रातों के थोलपवकूथू प्रदर्शन करते हैं।\n• सूतधार — डोरी कठपुतली संचालक जो संस्कृत रंगमंच निर्देशक बने: इस शब्द की यात्रा शिल्प से रंगमंच तक कठपुतली की सांस्कृतिक भूमिका को दर्शाती है।\n\nमूल्य संवर्धन:\n• भट समुदाय की खानाबदोशी प्रकृति के कारण कठपुतली राजस्थान और पड़ोसी राज्यों में फैली, जबकि थोलपवकूथू भौगोलिक रूप से मंदिरों से बंधी है।\n• समुदाय-शिल्प संबंध वाले प्रश्न UPSC में कारीगर कल्याण, सामाजिक न्याय या अमूर्त विरासत नीति संदर्भों में आ सकते हैं।\n• GI टैग (जैसे थोलु बोंमलाटा का) विशेष रूप से किलेक्याता समुदाय को उनके भौगोलिक और सामुदायिक पहचान की बाज़ार में सुरक्षा प्रदान करता है।"
+    }
+  },
+  {
+    "uuid": "a80eeaa8-044d-40c3-beef-0bae42ae4c27",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Puppetry in the Context of Ramayana and Mahabharata Transmission",
+        "Bommalattam — Tamil Nadu String + Rod Hybrid Puppet"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Bommalattam and regional Ramayana — Kamban Ramayana linkage",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Bommalattam puppet tradition of Tamil Nadu incorporates narrative episodes from the Ramayana, drawing specifically from the regional literary version associated with that language's classical literary tradition. Which version of the Ramayana is primarily referenced in this context?\n\n(a) Ramcharitmanas of Tulsidas\n(b) Valmiki Ramayana in Sanskrit\n(c) Kamban Ramayana in Tamil\n(d) Ezuttacchan's Adhyatma Ramayanam in Malayalam",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (Valmiki Ramayana) is a strong distractor because students know Bommalattam draws from Ramayana, and Valmiki's Ramayana is the most universally known version — they may not recall that the specifically regional version performed in Tamil-speaking contexts is Kamban's.",
+      "elimination_logic": [
+        "Eliminate option (a): Tulsidas's Ramcharitmanas is the devotional Hindi Ramayana — primary to North Indian tradition (Awadh), not Tamil Nadu's Bommalattam context.",
+        "Eliminate option (b): Valmiki's Ramayana is the Sanskrit original — while authoritative, the regionally specific version incorporated into Tamil puppet performance is Kamban's Tamil Ramayana.",
+        "Eliminate option (d): Ezuttacchan's Adhyatma Ramayanam is the Malayalam devotional Ramayana — associated with Kerala's literary tradition, not Tamil Nadu.",
+        "Confirm option (c): Kamban Ramayana (Kamba Ramayanam) is the classical Tamil-language Ramayana composed by poet Kamban — the regional version that informs Bommalattam's narrative tradition in Tamil Nadu."
+      ],
+      "upsc_trap_explanation": "The trap exploits the universal association of Ramayana with Valmiki's version. Students who know Bommalattam performs Ramayana episodes will default to Valmiki as the source without accounting for regional literary traditions. Tamil Nadu has its own classical Ramayana — Kamban's Kamba Ramayanam — and recognizing regional variations of epics as distinct from pan-Indian versions is a refined level of cultural knowledge UPSC tests.",
+      "final_explanation": "Bommalattam of Tamil Nadu performs episodes from the Ramayana, but the specifically regional version embedded in Tamil cultural consciousness is Kamban's Ramayana.\n\n• Option (a) — Incorrect: Ramcharitmanas (Tulsidas) is the Hindi/Awadhi devotional Ramayana — central to North Indian tradition, not Tamil Nadu's Bommalattam.\n• Option (b) — Incorrect: Valmiki's Sanskrit Ramayana is the foundational text, but Bommalattam in Tamil Nadu context draws specifically from the Tamil literary tradition — Kamban's version.\n• Option (c) — Correct: Kamba Ramayanam (Kamban Ramayana), composed by the Tamil poet Kamban (approximately 12th century), is the classical Tamil Ramayana that informs Bommalattam's narrative repertoire. Its incorporation of local aesthetics, values, and Tamil literary conventions makes it the regionally authoritative version for Tamil puppet performance.\n• Option (d) — Incorrect: Ezuttacchan's Adhyatma Ramayanam is the Malayalam devotional Ramayana — associated with Kerala's literary tradition and irrelevant to Tamil Nadu's Bommalattam.\n\nValue Addition:\n• Kamban Ramayana is one of India's greatest regional epic compositions — its Tamil literary prestige is comparable to Valmiki's Sanskrit original.\n• The use of regional Ramayana versions in puppet performances is evidence of how puppetry facilitates not just epic transmission but culturally localized epic interpretation.\n• Tholpavakoothu of Kerala similarly incorporates the local Malayalam Ramayana tradition in its ritual retelling."
+    },
+    "hi": {
+      "display_text": "तमिलनाडु की बौम्मलत्तम कठपुतली परंपरा रामायण के कथात्मक प्रसंगों को समाहित करती है, जो विशेष रूप से उस भाषा की शास्त्रीय साहित्यिक परंपरा से जुड़ी क्षेत्रीय साहित्यिक संस्करण से ली गई है। इस संदर्भ में मुख्यतः रामायण का कौन सा संस्करण संदर्भित है?\n\n(a) तुलसीदास का रामचरितमानस\n(b) संस्कृत में वाल्मीकि रामायण\n(c) तमिल में कांबन रामायण\n(d) मलयालम में एज़ुट्टाचन का अध्यात्म रामायण",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (वाल्मीकि रामायण) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि छात्र जानते हैं कि बौम्मलत्तम रामायण से प्रेरित है, और वाल्मीकि का रामायण सबसे व्यापक रूप से जाना जाने वाला संस्करण है — वे यह याद नहीं रख पाते कि तमिल भाषी संदर्भों में विशेष रूप से क्षेत्रीय संस्करण कांबन का है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: तुलसीदास का रामचरितमानस भक्ति हिंदी रामायण है — मुख्यतः उत्तर भारतीय परंपरा (अवध) से संबंधित, तमिलनाडु के बौम्मलत्तम संदर्भ से नहीं।",
+        "विकल्प (b) को हटाएं: वाल्मीकि का रामायण संस्कृत मूल है — जबकि प्रामाणिक है, तमिल कठपुतली प्रदर्शन में शामिल क्षेत्रीय विशिष्ट संस्करण कांबन का तमिल रामायण है।",
+        "विकल्प (d) को हटाएं: एज़ुट्टाचन का अध्यात्म रामायण मलयालम भक्ति रामायण है — केरल की साहित्यिक परंपरा से जुड़ा है, तमिलनाडु से नहीं।",
+        "विकल्प (c) की पुष्टि करें: कांबन रामायण (कांबा रामायणम) तमिल कवि कांबन द्वारा रचित शास्त्रीय तमिल भाषा का रामायण है — यह क्षेत्रीय संस्करण है जो तमिलनाडु में बौम्मलत्तम की कथात्मक परंपरा को सूचित करता है।"
+      ],
+      "upsc_trap_explanation": "यह जाल वाल्मीकि के संस्करण के साथ रामायण की सार्वभौमिक संबद्धता का उपयोग करता है। जो छात्र जानते हैं कि बौम्मलत्तम रामायण के प्रसंग प्रस्तुत करता है, वे बिना क्षेत्रीय साहित्यिक परंपराओं को ध्यान में रखे वाल्मीकि को स्रोत मान लेते हैं। तमिलनाडु का अपना शास्त्रीय रामायण है — कांबन का कांबा रामायणम — और महाकाव्यों के क्षेत्रीय संस्करणों को समग्र भारतीय संस्करणों से अलग पहचानना UPSC द्वारा परखा जाने वाला सांस्कृतिक ज्ञान का परिष्कृत स्तर है।",
+      "final_explanation": "तमिलनाडु का बौम्मलत्तम रामायण के प्रसंग प्रस्तुत करता है, लेकिन तमिल सांस्कृतिक चेतना में जो विशेष रूप से क्षेत्रीय संस्करण निहित है वह कांबन का रामायण है।\n\n• विकल्प (a) — गलत: रामचरितमानस (तुलसीदास) हिंदी/अवधी भक्ति रामायण है — उत्तर भारतीय परंपरा के लिए केंद्रीय, तमिलनाडु के बौम्मलत्तम के लिए नहीं।\n• विकल्प (b) — गलत: वाल्मीकि का संस्कृत रामायण मूल ग्रंथ है, लेकिन तमिलनाडु के बौम्मलत्तम संदर्भ में यह विशेष रूप से तमिल साहित्यिक परंपरा — कांबन के संस्करण से लिया गया है।\n• विकल्प (c) — सही: कांबा रामायणम (कांबन रामायण), तमिल कवि कांबन (लगभग 12वीं सदी) द्वारा रचित, शास्त्रीय तमिल रामायण है जो बौम्मलत्तम की कथात्मक सामग्री को सूचित करता है। इसकी स्थानीय सौंदर्यशास्त्र, मूल्य और तमिल साहित्यिक परंपराओं का समावेश इसे तमिल कठपुतली प्रदर्शन के लिए क्षेत्रीय प्राधिकृत संस्करण बनाता है।\n• विकल्प (d) — गलत: एज़ुट्टाचन का अध्यात्म रामायण मलयालम भक्ति रामायण है — केरल की साहित्यिक परंपरा से संबंधित और तमिलनाडु के बौम्मलत्तम से असंबंधित।\n\nमूल्य संवर्धन:\n• कांबन रामायण भारत के महान क्षेत्रीय महाकाव्यों में से एक है — इसकी तमिल साहित्यिक प्रतिष्ठा वाल्मीकि के संस्कृत मूल के तुलनीय है।\n• कठपुतली प्रदर्शन में क्षेत्रीय रामायण संस्करणों का उपयोग यह दर्शाता है कि कठपुतली न केवल महाकाव्यों के प्रसारण में बल्कि सांस्कृतिक रूप से स्थानीयकृत महाकाव्य व्याख्या में भी सहायक है।\n• केरल का थोलपवाकूथु भी अपने अनुष्ठानिक पुनर्कथन में स्थानीय मलयालम रामायण परंपरा को समाहित करता है।"
+    }
+  },
+  {
+    "uuid": "86d25bbb-1e13-4ff8-b9bc-c1ca3695bac7",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Kathputli — Rajasthani String Puppet Tradition",
+        "Putul Nautch — Bengali Rod Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Puppetry — evolution from ritual to folk entertainment to social commentary",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following developmental stages in the history of Indian puppetry:\n\n1. Formal Geographical Indication (GI) Tag protection awarded to a shadow puppet tradition\n2. Natyashastra of Bharata Muni documenting puppetry as a precursor to theatrical performance\n3. Incorporation of contemporary social commentary themes into rod puppet performances\n4. Kathputli developing as a hereditary itinerant folk performance tradition of the Bhat community\n\nWhich of the following represents the correct chronological sequence of these stages?\n\n(a) 2 → 3 → 4 → 1\n(b) 2 → 4 → 1 → 3\n(c) 4 → 2 → 3 → 1\n(d) 2 → 4 → 3 → 1",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b reverses the position of folk performance and social commentary, which are close in time and conceptually adjacent, tempting students who know both phases exist but are uncertain of their ordering.",
+      "elimination_logic": [
+        "Place Event 1: References to puppetry in the Natyashastra (compiled approximately 200 BCE–200 CE) — this is the earliest textual evidence, placing this first.",
+        "Place Event 2: Development of Kathputli as a performed folk tradition by itinerant Bhat community — this represents the fully developed folk entertainment phase, post-classical textual documentation.",
+        "Place Event 3: GI Tag awarded to Tholu Bommalata — GI Tags are a modern intellectual property instrument; this is the most recent event, placing it last.",
+        "Place Event 4: Putul Nautch incorporating contemporary social themes — the evolution to include social commentary in rod puppetry represents a modern content evolution, occurring after traditional forms were established but before or around GI-tag institutionalization. Order: Natyashastra references → Kathputli folk tradition → Putul Nautch social themes → Tholu Bommalata GI Tag. This matches option (d)."
+      ],
+      "upsc_trap_explanation": "The chronological order trap involves the relative position of events 3 and 4 (Putul Nautch social themes vs. GI Tag). Both are modern phenomena, and students may reverse them. The GI Tag for Tholu Bommalata is a formal institutional event (recent decades) while the incorporation of social themes in Putul Nautch is a gradual cultural evolution that preceded formal institutional recognition. The Natyashastra's primacy and the folk tradition's development as the second phase are relatively clear — the confusion lies in ordering modern-era events.",
+      "final_explanation": "This chronology question traces the developmental arc of Indian puppetry from ancient textual documentation to modern institutional recognition.\n\nCorrect sequence:\n1. Natyashastra references to puppetry (c. 200 BCE–200 CE): Bharata Muni's foundational treatise represents the earliest documented evidence of puppetry in Indian performing arts — the classical-textual phase.\n2. Kathputli as developed itinerant folk tradition: The Bhat community's Kathputli tradition represents the fully evolved folk entertainment phase, developing over centuries as a hereditary practice.\n3. Putul Nautch incorporating social commentary: The evolution of West Bengal's rod puppet tradition to include contemporary social and satirical themes represents a content modernization phase in the 19th–20th centuries.\n4. GI Tag for Tholu Bommalata: Formal intellectual property protection (GI Tag) for a puppet tradition is the most recent institutional development, representing 21st-century heritage protection policy.\n\nCorrect order: Natyashastra → Kathputli folk tradition → Putul Nautch social themes → GI Tag — option (d).\n\nValue Addition:\n• GI Tags for craft traditions are administered under the Geographical Indications of Goods Act, 1999 — a TRIPS-compatible IPR instrument.\n• The evolution from sacred/ritual to folk entertainment to social commentary mirrors the broader trajectory of most Indian performing arts.\n• Natyashastra's composition period (200 BCE–200 CE) places Indian performing arts theory among the world's earliest systematic aesthetic treatises."
+    },
+    "hi": {
+      "display_text": "भारतीय कठपुतली कला के इतिहास में निम्नलिखित विकासात्मक चरणों पर विचार करें:\n\n1. छाया कठपुतली परंपरा को औपचारिक भौगोलिक संकेत (GI) टैग संरक्षण प्रदान किया जाना\n2. भरत मुनि का नाट्यशास्त्र, जो कठपुतली को नाटकीय प्रदर्शन के पूर्ववर्ती के रूप में दस्तावेजीकृत करता है\n3. छड़ी कठपुतली प्रस्तुतियों में समकालीन सामाजिक टिप्पणी विषयों का समावेश\n4. भाट समुदाय की वंशानुगत आवागमनशील लोक प्रदर्शन परंपरा के रूप में कठपुतली का विकास\n\nइन चरणों के सही कालानुक्रमिक क्रम का प्रतिनिधित्व कौन-सा है?\n\n(a) 2 → 3 → 4 → 1\n(b) 2 → 4 → 1 → 3\n(c) 4 → 2 → 3 → 1\n(d) 2 → 4 → 3 → 1",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b लोक प्रदर्शन और सामाजिक टिप्पणी की स्थिति को उलट देता है, जो समय में निकट और अवधारणात्मक रूप से सन्निकट हैं, जो उन छात्रों को भ्रमित करता है जो दोनों चरणों के अस्तित्व को जानते हैं लेकिन उनके क्रम के बारे में अनिश्चित हैं।",
+      "elimination_logic": [
+        "घटना 1 को स्थान दें: नाट्यशास्त्र में कठपुतली के संदर्भ (लगभग 200 ईसा पूर्व–200 ईस्वी) — यह सबसे प्राचीन ग्रंथीय साक्ष्य है, इसे पहले स्थान पर रखें।",
+        "घटना 2 को स्थान दें: भाट समुदाय द्वारा विकसित कठपुतली एक लोक प्रदर्शन परंपरा के रूप में — यह पूर्ण विकसित लोक मनोरंजन चरण का प्रतिनिधित्व करता है, जो शास्त्रीय ग्रंथीय दस्तावेजीकरण के बाद है।",
+        "घटना 3 को स्थान दें: थोलू बोंमलाटा को जीआई टैग प्रदान किया गया — जीआई टैग एक आधुनिक बौद्धिक संपदा उपकरण है; यह सबसे हाल की घटना है, इसे अंतिम स्थान पर रखें।",
+        "घटना 4 को स्थान दें: पुतुल नौच में समकालीन सामाजिक विषयों का समावेश — छड़ी कठपुतली में सामाजिक टिप्पणी का विकास एक आधुनिक सामग्री विकास को दर्शाता है, जो पारंपरिक रूपों के स्थापित होने के बाद लेकिन जीआई टैग संस्थागतकरण के पहले या उसके आसपास हुआ। क्रम: नाट्यशास्त्र संदर्भ → कठपुतली लोक परंपरा → पुतुल नौच सामाजिक विषय → थोलू बोंमलाटा जीआई टैग। यह विकल्प (d) से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक क्रम की जालसाजी में घटनाओं 3 और 4 (पुतुल नौच सामाजिक विषय बनाम जीआई टैग) की सापेक्ष स्थिति शामिल है। दोनों आधुनिक घटनाएँ हैं, और छात्र इन्हें उलट सकते हैं। थोलू बोंमलाटा के लिए जीआई टैग एक औपचारिक संस्थागत घटना है (हाल के दशकों में) जबकि पुतुल नौच में सामाजिक विषयों का समावेश एक क्रमिक सांस्कृतिक विकास है जो औपचारिक संस्थागत मान्यता से पहले हुआ। नाट्यशास्त्र की प्राथमिकता और लोक परंपरा का विकास दूसरे चरण के रूप में अपेक्षाकृत स्पष्ट हैं — भ्रम आधुनिक युग की घटनाओं के क्रम में है।",
+      "final_explanation": "यह कालानुक्रमिक प्रश्न भारतीय कठपुतली कला के विकास को प्राचीन ग्रंथीय दस्तावेजीकरण से लेकर आधुनिक संस्थागत मान्यता तक दर्शाता है।\n\nसही क्रम:\n1. नाट्यशास्त्र में कठपुतली के संदर्भ (लगभग 200 ईसा पूर्व–200 ईस्वी): भरत मुनि की आधारशिला ग्रंथ भारतीय प्रदर्शन कला में कठपुतली के सबसे प्राचीन दस्तावेजीकृत साक्ष्य का प्रतिनिधित्व करती है — शास्त्रीय-ग्रंथीय चरण।\n2. भाट समुदाय की विकसित कठपुतली लोक परंपरा: भाट समुदाय की कठपुतली परंपरा पूर्ण विकसित लोक मनोरंजन चरण का प्रतिनिधित्व करती है, जो सदियों से वंशानुगत अभ्यास के रूप में विकसित हुई।\n3. पुतुल नौच में सामाजिक टिप्पणी का समावेश: पश्चिम बंगाल की छड़ी कठपुतली परंपरा का समकालीन सामाजिक और व्यंग्यात्मक विषयों के समावेश का विकास 19वीं-20वीं शताब्दी में सामग्री आधुनिकीकरण चरण का प्रतिनिधित्व करता है।\n4. थोलू बोंमलाटा के लिए जीआई टैग: कठपुतली परंपरा के लिए औपचारिक बौद्धिक संपदा संरक्षण (जीआई टैग) सबसे हाल की संस्थागत विकास है, जो 21वीं सदी की विरासत संरक्षण नीति का प्रतिनिधित्व करता है।\n\nसही क्रम: नाट्यशास्त्र → कठपुतली लोक परंपरा → पुतुल नौच सामाजिक विषय → जीआई टैग — विकल्प (d)।\n\nमूल्य संवर्धन:\n• शिल्प परंपराओं के लिए जीआई टैग भौगोलिक संकेत अधिनियम, 1999 के तहत प्रबंधित होते हैं — एक TRIPS-अनुकूल बौद्धिक संपदा अधिकार उपकरण।\n• पवित्र/अनुष्ठान से लोक मनोरंजन और फिर सामाजिक टिप्पणी तक का विकास अधिकांश भारतीय प्रदर्शन कलाओं की व्यापक प्रगति को दर्शाता है।\n• नाट्यशास्त्र की रचना अवधि (200 ईसा पूर्व–200 ईस्वी) भारतीय प्रदर्शन कला सिद्धांत को विश्व के सबसे प्राचीन व्यवस्थित सौंदर्यशास्त्र ग्रंथों में स्थान देती है।"
+    }
+  },
+  {
+    "uuid": "ef8f0fe6-550b-4d38-9133-53eacfc8289c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Yampuri — Bihar String Puppet Tradition",
+        "Kathputli — Rajasthani String Puppet Tradition",
+        "Kundhei — Odisha String Puppet Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Yampuri Bihar identity — single-piece construction and Yama theme",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about Indian string puppet traditions:\n\nStatement 1: Yampuri of Bihar draws its name from Yama, the god of death, who is the central character in its mythological narratives, and the puppet figures are carved from a single unjointed piece of wood.\n\nStatement 2: Kundhei of Odisha and Kathputli of Rajasthan share identical construction techniques, as both use wooden figures operated by a single overhead thread.\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Yampuri of Bihar draws its name from Yama, the god of death, who is the central character in its mythological narratives, and the puppet figures are carved from a single unjointed piece of wood.",
+          "verdict": "Correct",
+          "reason": "Both attributes are accurate: Yampuri's name derives from Yama (god of death), who is its central thematic figure, and its defining construction feature is single-piece, jointless wooden carving."
+        },
+        {
+          "statement": "Kundhei of Odisha and Kathputli of Rajasthan share identical construction techniques, as both use wooden figures operated by a single overhead thread.",
+          "verdict": "Incorrect",
+          "reason": "Kundhei uses 5–7 strings and jointed limbs; Kathputli uses a single overhead thread with a legless figure. Their construction techniques are distinctly different — not identical. Both are wooden string puppets but operated differently."
+        }
+      ],
+      "strong_distractor": "a — Option a (both correct) is a strong distractor because both traditions are string puppets and both use wood, creating a surface-level similarity that makes 'identical construction' seem plausible to a student with only general knowledge.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Yampuri's name from Yama — documented. Single-piece unjointed wood construction — Yampuri's defining feature. Both attributes are accurate. Statement 1 is Correct.",
+        "Evaluate Statement 2: Kundhei uses 5–7 strings; Kathputli uses a single thread. Kundhei has jointed limbs; Kathputli has no legs. Their constructions are different, not 'identical.' Statement 2 is Incorrect.",
+        "Statement 1 Correct, Statement 2 Incorrect — select option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the general category similarity: both Kundhei and Kathputli are wooden string puppets. Students who know both are string puppets and both are made of wood may accept 'identical construction' without checking the specific operational mechanism (5–7 strings vs. single thread) and structural features (jointed vs. legless). The partial truth — both are wooden string puppets — makes the false element (identical construction) harder to spot.",
+      "final_explanation": "This question pairs two claims: one accurately multi-attribute (Statement 1) and one exploiting category-level similarity to hide construction-level difference (Statement 2).\n\n• Statement 1 — Correct: Yampuri's name derives from Yama, the Hindu god of death, who features as the central character in its mythological narratives. Additionally, the entire puppet figure is carved from a single piece of wood with no joints — a structural feature unique among Indian string puppets. Both attributes in this statement are accurate.\n• Statement 2 — Incorrect: Kundhei (Odisha) and Kathputli (Rajasthan) are both wooden string puppets, but their construction techniques are NOT identical. Kundhei is operated by 5–7 strings with jointed limbs and reflects Odissi dance aesthetics. Kathputli is operated by a single overhead thread with a legless figure. The operational mechanism, number of strings, and figure construction all differ.\n\nValue Addition:\n• The Yama theme in Yampuri connects puppetry to death mythology — a distinctive thematic strand compared to the heroic/epic themes of Kathputli or the classical dance aesthetics of Kundhei.\n• Bihar's Yampuri is among the least-examined string puppet traditions in UPSC preparation materials — deliberate attention to it signals sophisticated preparation.\n• String puppet construction diversity (single thread vs. 5–7 strings vs. triangular frame) mirrors the technical diversity within the same broad category."
+    },
+    "hi": {
+      "display_text": "भारतीय स्ट्रिंग कठपुतली परंपराओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: बिहार के यमपुरी का नाम यम से लिया गया है, जो मृत्यु के देवता हैं और इसके पौराणिक कथानकों में केंद्रीय पात्र हैं, तथा कठपुतली के आंकड़े एक ही बिना जोड़ वाले लकड़ी के टुकड़े से तराशे जाते हैं।\n\nकथन 2: ओड़िशा के कुंधई और राजस्थान के कठपुतली की निर्माण तकनीक समान है, क्योंकि दोनों लकड़ी के आंकड़ों का उपयोग करते हैं जिन्हें एक ही ऊपर से लटकाए गए धागे से संचालित किया जाता है।\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "बिहार के यमपुरी का नाम यम से लिया गया है, जो मृत्यु के देवता हैं और इसके पौराणिक कथानकों में केंद्रीय पात्र हैं, तथा कठपुतली के आंकड़े एक ही बिना जोड़ वाले लकड़ी के टुकड़े से तराशे जाते हैं।",
+          "verdict": "सही है",
+          "reason": "दोनों गुण सही हैं: यमपुरी का नाम यम (मृत्यु के देवता) से लिया गया है, जो इसका केंद्रीय विषय है, और इसकी विशिष्ट निर्माण विशेषता एक ही टुकड़े वाली, बिना जोड़ वाली लकड़ी की नक्काशी है।"
+        },
+        {
+          "statement": "ओड़िशा के कुंधई और राजस्थान के कठपुतली की निर्माण तकनीक समान है, क्योंकि दोनों लकड़ी के आंकड़ों का उपयोग करते हैं जिन्हें एक ही ऊपर से लटकाए गए धागे से संचालित किया जाता है।",
+          "verdict": "गलत है",
+          "reason": "कुंधई 5–7 तारों और जोड़ वाले अंगों का उपयोग करता है; कठपुतली एक ही ऊपर से लटकाए गए धागे और बिना पैरों वाले आंकड़े का उपयोग करता है। उनकी निर्माण तकनीकें स्पष्ट रूप से भिन्न हैं — समान नहीं। दोनों लकड़ी के स्ट्रिंग कठपुतली हैं लेकिन संचालन में भिन्न हैं।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) (दोनों सही) एक मजबूत भ्रम है क्योंकि दोनों परंपराएँ स्ट्रिंग कठपुतली हैं और दोनों लकड़ी का उपयोग करती हैं, जिससे सतही समानता बनती है जो सामान्य ज्ञान वाले छात्र के लिए 'समान निर्माण' को संभव दिखाती है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: यमपुरी का नाम यम से — प्रलेखित। एक ही टुकड़े वाली बिना जोड़ वाली लकड़ी की संरचना — यमपुरी की विशिष्ट विशेषता। दोनों गुण सही हैं। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: कुंधई 5–7 तारों का उपयोग करता है; कठपुतली एक ही धागे का। कुंधई के जोड़ वाले अंग हैं; कठपुतली के पैर नहीं हैं। उनकी संरचनाएँ भिन्न हैं, 'समान' नहीं। कथन 2 गलत है।",
+        "कथन 1 सही, कथन 2 गलत — विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 2 सामान्य श्रेणी समानता का उपयोग करता है: दोनों कुंधई और कठपुतली लकड़ी के स्ट्रिंग कठपुतली हैं। जो छात्र जानते हैं कि दोनों स्ट्रिंग कठपुतली हैं और दोनों लकड़ी से बने हैं, वे 'समान निर्माण' को बिना संचालन तंत्र (5–7 तार बनाम एक धागा) और संरचनात्मक विशेषताओं (जोड़ वाले बनाम बिना पैर वाले) की जांच किए स्वीकार कर सकते हैं। आंशिक सत्य — दोनों लकड़ी के स्ट्रिंग कठपुतली हैं — गलत तत्व (समान निर्माण) को पहचानना कठिन बनाता है।",
+      "final_explanation": "यह प्रश्न दो दावों को जोड़ता है: एक बहु-गुणात्मक रूप से सही (कथन 1) और एक श्रेणी-स्तरीय समानता का उपयोग करके निर्माण-स्तर के अंतर को छिपाने वाला (कथन 2)।\n\n• कथन 1 — सही: यमपुरी का नाम यम से लिया गया है, जो मृत्यु के हिंदू देवता हैं और इसके पौराणिक कथानकों में केंद्रीय पात्र हैं। इसके अतिरिक्त, कठपुतली का पूरा आंकड़ा एक ही लकड़ी के टुकड़े से बिना जोड़ के तराशा जाता है — जो भारतीय स्ट्रिंग कठपुतलियों में अद्वितीय संरचनात्मक विशेषता है। इस कथन के दोनों गुण सही हैं।\n• कथन 2 — गलत: कुंधई (ओड़िशा) और कठपुतली (राजस्थान) दोनों लकड़ी के स्ट्रिंग कठपुतली हैं, लेकिन उनकी निर्माण तकनीकें समान नहीं हैं। कुंधई 5–7 तारों से संचालित होता है जिनके जोड़ वाले अंग होते हैं और यह ओडिसी नृत्य सौंदर्यशास्त्र को दर्शाता है। कठपुतली एक ही ऊपर से लटकाए गए धागे से संचालित होती है और बिना पैरों वाले आंकड़े का उपयोग करती है। संचालन तंत्र, तारों की संख्या, और आंकड़े की संरचना सभी भिन्न हैं।\n\nमूल्यवर्धन:\n• यमपुरी में यम विषय कठपुतली को मृत्यु पौराणिकता से जोड़ता है — जो कठपुतली के नायक/महाकाव्य विषयों या कुंधई के शास्त्रीय नृत्य सौंदर्यशास्त्र से अलग एक विशिष्ट विषय है।\n• बिहार का यमपुरी यूपीएससी तैयारी सामग्री में सबसे कम परीक्षित स्ट्रिंग कठपुतली परंपराओं में से एक है — इसे जानना परिष्कृत तैयारी का संकेत है।\n• स्ट्रिंग कठपुतली निर्माण की विविधता (एक धागा बनाम 5–7 तार बनाम त्रिकोणीय फ्रेम) उसी व्यापक श्रेणी के भीतर तकनीकी विविधता को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "be8cff5f-f3e3-4083-ab7c-02d3a2a47e04",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Community-Craft-Livelihood Linkages in Puppetry Traditions",
+        "Sangeet Natak Akademi and Institutional Support for Puppetry"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sangeet Natak Akademi vs. Lalit Kala Akademi jurisdiction — puppetry",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A district-level heritage officer identifies a hereditary community that has practised a traditional puppet performance art for generations. The community requires support for: (i) documentation of the craft techniques and narrative repertoire of their tradition; (ii) creation of an institutional archive for the puppet figures and related materials; and (iii) fellowship grants for master puppeteers to train younger practitioners. The officer needs to route this proposal to the appropriate apex national institution.\n\nWhich institution would be the most appropriate nodal body for this proposal?\n\n(a) Sangeet Natak Akademi\n(b) Lalit Kala Akademi\n(c) Sahitya Akademi\n(d) National Crafts Museum, New Delhi",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b (Lalit Kala Akademi) is a strong distractor because the word 'craft' appears in the scenario — students associate craft with Lalit Kala Akademi's domain of visual and plastic arts without recognizing that puppetry as a performing art falls under Sangeet Natak Akademi.",
+      "elimination_logic": [
+        "The scenario describes a hereditary performing art (puppetry) that is facing decline and needs institutional support for documentation, archive creation, and practitioner fellowships.",
+        "Eliminate option (b): Lalit Kala Akademi covers visual and plastic arts — sculpture, painting, graphic art. Puppetry, even with its craft component, is a performing art and falls outside Lalit Kala's mandate.",
+        "Eliminate option (c): Sahitya Akademi covers literature and language — no mandate over performing arts traditions.",
+        "Eliminate option (d): National Crafts Museum documents and displays craft objects — it does not award fellowships to performers or maintain performing arts archives.",
+        "Confirm option (a): Sangeet Natak Akademi is the apex body for all performing arts including puppetry — it maintains a Puppet Archive, awards fellowships to puppet masters, and leads documentation projects."
+      ],
+      "upsc_trap_explanation": "The scenario mentions both 'craft techniques' and 'performance' — this deliberate ambiguity is designed to activate the Lalit Kala Akademi association for the craft dimension. Students who associate the word 'craft' with Lalit Kala without recognizing that puppetry's classification as a performing art overrides its craft component will select option (b). The key differentiator is: performing art → Sangeet Natak Akademi, regardless of the material craft involved.",
+      "final_explanation": "When a hereditary performing art tradition requires institutional support for documentation, archive creation, and artist fellowships, the correct nodal institution is determined by the nature of the art form — performing vs. visual.\n\n• Option (a) — Correct: Sangeet Natak Akademi is India's apex body for performing arts — music, dance, drama, folk arts, and puppetry. It maintains a dedicated Puppet Archive, grants Akademi Awards and Fellowships to master puppeteers, and has led documentation projects for traditions like Kathputli, Tholpavakoothu, and Ravanachhaya.\n• Option (b) — Incorrect: Lalit Kala Akademi's mandate covers visual and plastic arts — painting, sculpture, printmaking, and related crafts. While puppetry involves craft elements (figure construction, leather processing), it is classified as a performing art, placing it under Sangeet Natak Akademi's jurisdiction.\n• Option (c) — Incorrect: Sahitya Akademi promotes literary culture across India's languages — it has no mandate over performing arts traditions.\n• Option (d) — Incorrect: The National Crafts Museum (now Crafts Museum, Delhi) documents and exhibits tangible craft objects — it does not function as a fellowships-granting or archive-maintaining institution for performing arts.\n\nValue Addition:\n• The three national academies (Sangeet Natak, Lalit Kala, Sahitya) were all established in 1954 — making jurisdiction questions about them recurrent in UPSC.\n• Sangeet Natak Akademi's Tagore National Fellowship for Cultural Research is the highest award in performing arts preservation.\n• UNESCO's Intangible Cultural Heritage nominations for Indian performing traditions are channeled through the Ministry of Culture in consultation with Sangeet Natak Akademi."
+    },
+    "hi": {
+      "display_text": "एक जिला स्तरीय विरासत अधिकारी एक पारंपरिक कठपुतली प्रदर्शन कला को पीढ़ियों से अभ्यास करने वाले एक वंशानुगत समुदाय की पहचान करता है। उस समुदाय को निम्नलिखित के लिए समर्थन की आवश्यकता है: (i) उनकी परंपरा की शिल्प तकनीकों और कथात्मक भंडार का दस्तावेजीकरण; (ii) कठपुतली आकृतियों और संबंधित सामग्रियों के लिए एक संस्थागत अभिलेखागार का निर्माण; और (iii) युवा कलाकारों को प्रशिक्षित करने के लिए मास्टर कठपुतली कलाकारों को फैलोशिप अनुदान। अधिकारी को इस प्रस्ताव को उपयुक्त शीर्ष राष्ट्रीय संस्था को भेजना है।\n\nइस प्रस्ताव के लिए सबसे उपयुक्त नोडल संस्था कौन-सी होगी?\n\n(a) संगीत नाटक अकादमी\n(b) ललित कला अकादमी\n(c) साहित्य अकादमी\n(d) राष्ट्रीय शिल्प संग्रहालय, नई दिल्ली",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b (ललित कला अकादमी) एक मजबूत भ्रमकारी विकल्प है क्योंकि परिदृश्य में 'शिल्प' शब्द आता है — छात्र शिल्प को ललित कला अकादमी के दृश्य और प्लास्टिक कला क्षेत्र से जोड़ते हैं बिना यह समझे कि कठपुतली एक प्रदर्शन कला है जो संगीत नाटक अकादमी के अंतर्गत आती है।",
+      "elimination_logic": [
+        "परिदृश्य में एक पारंपरिक प्रदर्शन कला (कठपुतली) का वर्णन है जो क्षीण हो रही है और जिसे दस्तावेजीकरण, अभिलेखागार निर्माण, और कलाकारों के लिए फैलोशिप के लिए संस्थागत समर्थन की आवश्यकता है।",
+        "विकल्प (b) को हटाएं: ललित कला अकादमी दृश्य और प्लास्टिक कला जैसे मूर्तिकला, चित्रकला, ग्राफिक कला को कवर करती है। कठपुतली, भले ही उसमें शिल्प तत्व हों, एक प्रदर्शन कला है और ललित कला के दायरे से बाहर है।",
+        "विकल्प (c) को हटाएं: साहित्य अकादमी साहित्य और भाषा को कवर करती है — इसका प्रदर्शन कला पर कोई अधिकार क्षेत्र नहीं है।",
+        "विकल्प (d) को हटाएं: राष्ट्रीय शिल्प संग्रहालय शिल्प वस्तुओं का दस्तावेजीकरण और प्रदर्शन करता है — यह कलाकारों को फैलोशिप नहीं देता और प्रदर्शन कला अभिलेखागार नहीं रखता।",
+        "विकल्प (a) की पुष्टि करें: संगीत नाटक अकादमी सभी प्रदर्शन कलाओं के लिए शीर्ष संस्था है जिसमें कठपुतली भी शामिल है — यह कठपुतली अभिलेखागार रखती है, कठपुतली कलाकारों को फैलोशिप देती है, और दस्तावेजीकरण परियोजनाओं का नेतृत्व करती है।"
+      ],
+      "upsc_trap_explanation": "परिदृश्य में 'शिल्प तकनीक' और 'प्रदर्शन' दोनों का उल्लेख है — यह जानबूझकर अस्पष्टता ललित कला अकादमी के शिल्प आयाम के साथ जुड़ाव को सक्रिय करने के लिए डिज़ाइन की गई है। जो छात्र 'शिल्प' शब्द को ललित कला से जोड़ते हैं बिना यह समझे कि कठपुतली का प्रदर्शन कला के रूप में वर्गीकरण उसके शिल्प तत्व से ऊपर है, वे विकल्प (b) चुनेंगे। मुख्य भेद यह है: प्रदर्शन कला → संगीत नाटक अकादमी, चाहे उसमें शिल्प सामग्री शामिल हो।",
+      "final_explanation": "जब कोई पारंपरिक प्रदर्शन कला परंपरा दस्तावेजीकरण, अभिलेखागार निर्माण, और कलाकार फैलोशिप के लिए संस्थागत समर्थन की आवश्यकता होती है, तो सही नोडल संस्था कला के स्वरूप (प्रदर्शन बनाम दृश्य) के आधार पर निर्धारित होती है।\n\n• विकल्प (a) — सही: संगीत नाटक अकादमी भारत की शीर्ष प्रदर्शन कला संस्था है — संगीत, नृत्य, नाटक, लोक कला, और कठपुतली सहित। यह कठपुतली अभिलेखागार रखती है, कठपुतली कलाकारों को अकादमी पुरस्कार और फैलोशिप देती है, और कठपुतली, थोलपवाकूथु, रावणछाया जैसी परंपराओं के दस्तावेजीकरण परियोजनाओं का नेतृत्व करती है।\n• विकल्प (b) — गलत: ललित कला अकादमी का दायरा दृश्य और प्लास्टिक कला जैसे चित्रकला, मूर्तिकला, मुद्रण कला और संबंधित शिल्प तक सीमित है। जबकि कठपुतली में शिल्प तत्व (आकृति निर्माण, चमड़ा संसाधन) होते हैं, इसे प्रदर्शन कला के रूप में वर्गीकृत किया गया है, अतः यह संगीत नाटक अकादमी के अधिकार क्षेत्र में आता है।\n• विकल्प (c) — गलत: साहित्य अकादमी भारत की भाषाओं में साहित्यिक संस्कृति को बढ़ावा देती है — इसका प्रदर्शन कला पर कोई अधिकार क्षेत्र नहीं है।\n• विकल्प (d) — गलत: राष्ट्रीय शिल्प संग्रहालय (अब दिल्ली शिल्प संग्रहालय) मूर्त शिल्प वस्तुओं का दस्तावेजीकरण और प्रदर्शन करता है — यह प्रदर्शन कला के लिए फैलोशिप देने या अभिलेखागार रखने वाली संस्था नहीं है।\n\nमूल्य संवर्धन:\n• तीनों राष्ट्रीय अकादमियाँ (संगीत नाटक, ललित कला, साहित्य) सभी 1954 में स्थापित हुईं — इसलिए इनके अधिकार क्षेत्र से जुड़े प्रश्न UPSC में बार-बार आते हैं।\n• संगीत नाटक अकादमी का टैगोर राष्ट्रीय सांस्कृतिक अनुसंधान फैलोशिप प्रदर्शन कला संरक्षण में सर्वोच्च पुरस्कार है।\n• भारतीय प्रदर्शन परंपराओं के लिए यूनेस्को की अमूर्त सांस्कृतिक विरासत नामांकन संस्कृति मंत्रालय के माध्यम से संगीत नाटक अकादमी की सलाह से किए जाते हैं।"
+    }
+  },
+  {
+    "uuid": "cb5b7dea-d4bc-495c-bd01-b7d3237ec030",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Puppetry and Theatre",
+      "sub_topic": "Puppetry traditions — string, shadow, glove, rod",
+      "concepts_used": [
+        "Puppetry and Its Connection to Classical Dance-Drama Forms",
+        "Pavakathakali — Kerala Glove Puppet Tradition",
+        "Gombeyatta — Karnataka String Puppet Tradition",
+        "Bommalattam — Tamil Nadu String + Rod Hybrid Puppet"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Puppet-classical form relationships — correct and incorrect pairings",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the relationship between Indian puppet traditions and classical dance-drama forms:\n\n1. Pavakathakali mirrors Kathakali of Kerala; Gombeyatta mirrors Yakshagana of Karnataka — in each case, the puppet tradition replicates the aesthetics, costumes, and character types of the corresponding classical form.\n2. Some scholars argue that the influence between puppet traditions and classical forms was bidirectional — not only did puppet traditions borrow from classical forms, but classical performances also borrowed costume elements and character designs from puppet traditions.\n3. Bommalattam of Tamil Nadu is considered a puppet adaptation of Bharatanatyam, and its performers are required to undergo formal Bharatanatyam training before practising the tradition.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Pavakathakali mirrors Kathakali of Kerala; Gombeyatta mirrors Yakshagana of Karnataka — in each case, the puppet tradition replicates the aesthetics, costumes, and character types of the corresponding classical form.",
+          "verdict": "Correct",
+          "reason": "Both pairings are accurate and documented: Pavakathakali's glove puppets replicate Kathakali's costume and mudra tradition, while Gombeyatta's characters and frame are drawn from Yakshagana — the foundational classical form of Karnataka."
+        },
+        {
+          "statement": "Some scholars argue that the influence between puppet traditions and classical forms was bidirectional — not only did puppet traditions borrow from classical forms, but classical performances also borrowed costume elements and character designs from puppet traditions.",
+          "verdict": "Correct",
+          "reason": "The reverse influence — where classical theatrical forms incorporated elements from puppet traditions — is a documented scholarly observation, reflecting the deep inter-penetration of these art forms over centuries."
+        },
+        {
+          "statement": "Bommalattam of Tamil Nadu is considered a puppet adaptation of Bharatanatyam, and its performers are required to undergo formal Bharatanatyam training before practising the tradition.",
+          "verdict": "Incorrect",
+          "reason": "While Bommalattam is aesthetically influenced by Bharatanatyam in terms of visual style, it is not formally classified as a 'puppet adaptation of Bharatanatyam,' and there is no documented requirement that Bommalattam performers must undergo formal Bharatanatyam training — unlike Pavakathakali performers who are trained in Kathakali."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) is a strong distractor because Statement 3 sounds plausible — the Pavakathakali-Kathakali training parallel is real, and students may assume a similar formal training requirement exists for Bommalattam and Bharatanatyam.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Pavakathakali-Kathakali and Gombeyatta-Yakshagana pairings are well-established. Statement 1 is Correct.",
+        "Evaluate Statement 2: Bidirectional influence between puppet and classical forms is a recognized scholarly position. Statement 2 is Correct.",
+        "Evaluate Statement 3: The claim that Bommalattam performers 'must undergo formal Bharatanatyam training' is a fabricated requirement — this specific training linkage exists for Pavakathakali-Kathakali but is not documented for Bommalattam. Statement 3 is Incorrect.",
+        "Statements 1 and 2 are correct — select option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 3 applies the Pavakathakali-Kathakali training linkage (a real and documented feature) to Bommalattam-Bharatanatyam (where no such formal training requirement exists). This is a plausible-fabrication trap: the structure of the claim mirrors a real fact from a different tradition. Students who know Pavakathakali performers train in Kathakali may assume an analogous requirement for Bommalattam without verifying it.",
+      "final_explanation": "The relationship between puppet traditions and their corresponding classical forms is nuanced — not all pairs are equivalent in depth of connection or formal training requirements.\n\n• Statement 1 — Correct: Pavakathakali (Kerala glove puppet) mirrors Kathakali — puppets wear miniature versions of Kathakali's elaborate headdresses and face paint. Gombeyatta (Karnataka string puppet) mirrors Yakshagana — characters, narratives, and costumes are drawn directly from Yakshagana's theatrical tradition.\n• Statement 2 — Correct: The influence between puppet and classical forms was not unidirectional. Scholars have documented instances where classical performances borrowed costume elements, character iconography, and narrative devices from puppet traditions — a reverse flow that enriches both.\n• Statement 3 — Incorrect: While Bommalattam's aesthetic has Bharatanatyam influences (particularly in figure posture and ornamentation), Bommalattam is not formally classified as a 'puppet adaptation of Bharatanatyam,' and there is no documented compulsory Bharatanatyam training requirement for its practitioners. This erroneously generalizes the Pavakathakali-Kathakali training model.\n\nValue Addition:\n• Pavakathakali's development is attributed to Mani Madhava Chakyar — a figure also central to the revival of Kutiyattam, showing the interconnectedness of Kerala's classical traditions.\n• Yakshagana's influence on Gombeyatta extends to the hierarchical string-count system, encoding Yakshagana's social structure into the puppet's physical design.\n• The bidirectional influence between puppetry and classical forms is a growing area of research under intangible heritage studies."
+    },
+    "hi": {
+      "display_text": "भारतीय पुतुल परंपराओं और शास्त्रीय नृत्य-नाट्य रूपों के बीच संबंध के बारे में निम्नलिखित कथनों पर विचार करें:\n\n1. पवकठकली केरल के कथकली का प्रतिबिंब है; गोम्बेयट्टा कर्नाटक के यक्षगान का प्रतिबिंब है — प्रत्येक मामले में, पुतुल परंपरा संबंधित शास्त्रीय रूप की सौंदर्यशास्त्र, वेशभूषा, और पात्र प्रकारों की नकल करती है।\n2. कुछ विद्वान तर्क देते हैं कि पुतुल परंपराओं और शास्त्रीय रूपों के बीच प्रभाव द्विदिश था — केवल पुतुल परंपराएँ शास्त्रीय रूपों से नहीं उधार लेती थीं, बल्कि शास्त्रीय प्रस्तुतियों ने भी पुतुल परंपराओं से वेशभूषा तत्व और पात्र डिज़ाइन उधार लिए।\n3. तमिलनाडु का बौम्मलत्तम भरतनाट्यम का पुतुल रूपांतरण माना जाता है, और इसके कलाकारों को परंपरा का अभ्यास करने से पहले औपचारिक भरतनाट्यम प्रशिक्षण लेना आवश्यक होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "पवकठकली केरल के कथकली का प्रतिबिंब है; गोम्बेयट्टा कर्नाटक के यक्षगान का प्रतिबिंब है — प्रत्येक मामले में, पुतुल परंपरा संबंधित शास्त्रीय रूप की सौंदर्यशास्त्र, वेशभूषा, और पात्र प्रकारों की नकल करती है।",
+          "verdict": "सही",
+          "reason": "दोनों जोड़े सटीक और प्रलेखित हैं: पवकठकली के दस्ताने वाले पुतुल कथकली की वेशभूषा और मुद्रा परंपरा की नकल करते हैं, जबकि गोम्बेयट्टा के पात्र और ढांचा यक्षगान से लिए गए हैं — जो कर्नाटक का मौलिक शास्त्रीय रूप है।"
+        },
+        {
+          "statement": "कुछ विद्वान तर्क देते हैं कि पुतुल परंपराओं और शास्त्रीय रूपों के बीच प्रभाव द्विदिश था — केवल पुतुल परंपराएँ शास्त्रीय रूपों से नहीं उधार लेती थीं, बल्कि शास्त्रीय प्रस्तुतियों ने भी पुतुल परंपराओं से वेशभूषा तत्व और पात्र डिज़ाइन उधार लिए।",
+          "verdict": "सही",
+          "reason": "उलटा प्रभाव — जहाँ शास्त्रीय नाट्य रूपों ने पुतुल परंपराओं से तत्व शामिल किए — एक प्रलेखित विद्वान अवलोकन है, जो सदियों से इन कला रूपों की गहन अंतःप्रवेशिता को दर्शाता है।"
+        },
+        {
+          "statement": "तमिलनाडु का बौम्मलत्तम भरतनाट्यम का पुतुल रूपांतरण माना जाता है, और इसके कलाकारों को परंपरा का अभ्यास करने से पहले औपचारिक भरतनाट्यम प्रशिक्षण लेना आवश्यक होता है।",
+          "verdict": "गलत",
+          "reason": "जबकि बौम्मलत्तम की सौंदर्यशास्त्र में भरतनाट्यम का दृश्यात्मक प्रभाव है, इसे औपचारिक रूप से 'भरतनाट्यम का पुतुल रूपांतरण' नहीं माना जाता, और बौम्मलत्तम कलाकारों के लिए औपचारिक भरतनाट्यम प्रशिक्षण अनिवार्य होने का कोई प्रलेखित प्रमाण नहीं है — जबकि पवकठकली कलाकारों को कथकली में प्रशिक्षित किया जाता है।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) एक मजबूत भ्रमकारी विकल्प है क्योंकि कथन 3 संभावित लगता है — पवकठकली-कथकली प्रशिक्षण समानता वास्तविक है, और छात्र मान सकते हैं कि बौम्मलत्तम और भरतनाट्यम के लिए भी ऐसा औपचारिक प्रशिक्षण आवश्यक है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: पवकठकली-कथकली और गोम्बेयट्टा-यक्षगान जोड़े अच्छी तरह स्थापित हैं। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: पुतुल और शास्त्रीय रूपों के बीच द्विदिश प्रभाव एक मान्यता प्राप्त विद्वान स्थिति है। कथन 2 सही है।",
+        "कथन 3 का मूल्यांकन करें: बौम्मलत्तम कलाकारों को 'औपचारिक भरतनाट्यम प्रशिक्षण लेना आवश्यक है' का दावा एक निर्मित आवश्यकता है — यह विशिष्ट प्रशिक्षण संबंध पवकठकली-कथकली के लिए है लेकिन बौम्मलत्तम के लिए प्रलेखित नहीं है। कथन 3 गलत है।",
+        "कथन 1 और 2 सही हैं — विकल्प (b) चुनें।"
+      ],
+      "upsc_trap_explanation": "कथन 3 पवकठकली-कथकली प्रशिक्षण संबंध (एक वास्तविक और प्रलेखित विशेषता) को बौम्मलत्तम-भरतनाट्यम पर लागू करता है (जहाँ ऐसा कोई औपचारिक प्रशिक्षण आवश्यक नहीं है)। यह एक संभावित-निर्मित भ्रम है: दावा की संरचना एक अलग परंपरा के वास्तविक तथ्य की नकल करती है। जो छात्र जानते हैं कि पवकठकली कलाकार कथकली में प्रशिक्षित होते हैं, वे बिना जांच के बौम्मलत्तम के लिए समान आवश्यकता मान सकते हैं।",
+      "final_explanation": "पुतुल परंपराओं और उनके संबंधित शास्त्रीय रूपों के बीच संबंध सूक्ष्म है — सभी जोड़े गहराई या औपचारिक प्रशिक्षण आवश्यकताओं में समान नहीं हैं।\n\n• कथन 1 — सही: पवकठकली (केरल दस्ताने वाला पुतुल) कथकली का प्रतिबिंब है — पुतुल कथकली के विस्तृत मुकुट और मुखरंग के सूक्ष्म संस्करण पहनते हैं। गोम्बेयट्टा (कर्नाटक स्ट्रिंग पुतुल) यक्षगान का प्रतिबिंब है — पात्र, कथाएँ, और वेशभूषा सीधे यक्षगान की नाट्य परंपरा से लिए गए हैं।\n• कथन 2 — सही: पुतुल और शास्त्रीय रूपों के बीच प्रभाव एकतरफा नहीं था। विद्वानों ने प्रलेखित किया है कि शास्त्रीय प्रस्तुतियों ने पुतुल परंपराओं से वेशभूषा तत्व, पात्र प्रतीकात्मकता, और कथा उपकरण उधार लिए — एक उलटा प्रवाह जो दोनों को समृद्ध करता है।\n• कथन 3 — गलत: जबकि बौम्मलत्तम की सौंदर्यशास्त्र में भरतनाट्यम के प्रभाव हैं (विशेषकर मुद्रा और आभूषण में), बौम्मलत्तम को औपचारिक रूप से 'भरतनाट्यम का पुतुल रूपांतरण' नहीं माना जाता, और इसके कलाकारों के लिए कोई अनिवार्य भरतनाट्यम प्रशिक्षण आवश्यक नहीं है। यह पवकठकली-कथकली प्रशिक्षण मॉडल का गलत सामान्यीकरण है।\n\nमूल्य संवर्धन:\n• पवकठकली का विकास मणि माधव चाक्यर को श्रेय दिया जाता है — जो कुटियत्तम के पुनरुद्धार में भी केंद्रीय व्यक्ति थे, जो केरल की शास्त्रीय परंपराओं की अंतःसंबद्धता दिखाता है।\n• यक्षगान का गोम्बेयट्टा पर प्रभाव स्ट्रिंग-गिनती प्रणाली तक फैला है, जो यक्षगान की सामाजिक संरचना को पुतुल के भौतिक डिज़ाइन में संहिताबद्ध करता है।\n• पुतुल और शास्त्रीय रूपों के बीच द्विदिश प्रभाव अमूर्त विरासत अध्ययन के अंतर्गत एक बढ़ता हुआ शोध क्षेत्र है।"
+    }
+  }
+]

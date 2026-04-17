@@ -1,0 +1,1641 @@
+[
+  {
+    "uuid": "a44e9e93-fe63-4687-b3be-fe4e702db64f",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Natya Shastra: Authorship, Dating, and Musicological Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Natya Shastra authorship and period",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements most accurately describes the Natya Shastra in the context of Indian musicology?\n\n(a) It is exclusively a treatise on music theory and was composed as a companion to the Sama Veda\n(b) It functions as both a treatise on dramatic arts and the foundational text for Indian classical music classification\n(c) It was the first dedicated Indian musicological text, superseding the later Sangita Ratnakara\n(d) Its composition period (approximately 5th century CE) places it among early medieval Indian texts",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because Sangita Ratnakara is a later, well-known musicological text, and students who know it is a foundational music treatise may conflate its role with the Natya Shastra's foundational status.",
+      "elimination_logic": [
+        "Eliminate option (a) — Natya Shastra is primarily a treatise on dramaturgy with embedded music theory, not exclusively a music manual.",
+        "Eliminate option (c) — Sangita Ratnakara is a 13th-century text by Sharngadeva; it built upon Natya Shastra but did not precede it.",
+        "Eliminate option (d) — Natya Shastra's estimated composition period is 200 BCE to 200 CE, making it significantly older than medieval texts.",
+        "Confirm option (b) — Natya Shastra serves a dual role as a treatise on dramaturgy AND as the foundational text for Indian classical music theory."
+      ],
+      "upsc_trap_explanation": "Students familiar with Sangita Ratnakara often associate it with being the primary ancient musicological text, forgetting that Natya Shastra predates it by over a millennium. The conflation arises because Sangita Ratnakara is more detailed in music theory, making it feel more 'musicological,' whereas Natya Shastra's primary framing is dramaturgy. A student with surface knowledge may eliminate option (b) thinking dramaturgy and music are separate domains.",
+      "final_explanation": "Natya Shastra, attributed to Bharata Muni (though the question of single vs. multiple authorship remains scholarly debated), is estimated to have been composed between 200 BCE and 200 CE. It stands apart as a rare ancient text that simultaneously codified the theory of drama and laid the structural foundation for Indian classical music.\n\n• Option (a): Incorrect — Natya Shastra is not exclusively a music manual; its primary frame is dramaturgy (theatrical arts), within which music theory is embedded.\n• Option (b): Correct — It uniquely serves a dual role as both a dramatic treatise and the foundational source for Indian classical music classification.\n• Option (c): Incorrect — Sangita Ratnakara (13th century CE) was composed by Sharngadeva much later and expanded upon Natya Shastra's framework.\n• Option (d): Incorrect — Its placement (200 BCE–200 CE) predates medieval Indian texts by centuries.\n\nValue Addition:\n• The debate over single vs. multiple authorship of Natya Shastra parallels debates around Vedic authorship.\n• Natya Shastra has 36 chapters covering acting, dance, music, costume, and stagecraft.\n• It is sometimes called the 'Fifth Veda' due to its comprehensive treatment of performing arts."
+    },
+    "hi": {
+      "display_text": "भारतीय संगीतशास्त्र के संदर्भ में निम्नलिखित में से कौन-सा कथन नाट्यशास्त्र का सबसे सटीक वर्णन करता है?\n\n(a) यह केवल संगीत सिद्धांत पर एक ग्रंथ है और सामवेद के साथ सहायक के रूप में रचित है\n(b) यह नाट्य कला पर एक ग्रंथ होने के साथ-साथ भारतीय शास्त्रीय संगीत वर्गीकरण के लिए मौलिक ग्रंथ के रूप में कार्य करता है\n(c) यह पहला समर्पित भारतीय संगीतशास्त्रीय ग्रंथ था, जिसने बाद के संगीत रत्नाकर को प्रतिस्थापित किया\n(d) इसकी रचना अवधि (लगभग 5वीं सदी ईस्वी) इसे प्रारंभिक मध्यकालीन भारतीय ग्रंथों में रखती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि संगीत रत्नाकर एक बाद का, प्रसिद्ध संगीतशास्त्रीय ग्रंथ है, और जो छात्र इसे एक मौलिक संगीत ग्रंथ के रूप में जानते हैं वे इसके भूमिका को नाट्यशास्त्र की मौलिक स्थिति के साथ मिला सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं — नाट्यशास्त्र मुख्यतः नाट्यशास्त्र पर एक ग्रंथ है जिसमें संगीत सिद्धांत अंतर्निहित है, यह केवल संगीत मैनुअल नहीं है।",
+        "विकल्प (c) को हटाएं — संगीत रत्नाकर 13वीं सदी का शारंगदेव द्वारा रचित ग्रंथ है; यह नाट्यशास्त्र पर आधारित है लेकिन उससे पहले नहीं है।",
+        "विकल्प (d) को हटाएं — नाट्यशास्त्र की अनुमानित रचना अवधि 200 ईसा पूर्व से 200 ईस्वी तक है, जो मध्यकालीन ग्रंथों से काफी पुरानी है।",
+        "विकल्प (b) की पुष्टि करें — नाट्यशास्त्र नाट्यशास्त्र पर एक ग्रंथ होने के साथ-साथ भारतीय शास्त्रीय संगीत सिद्धांत के लिए मौलिक ग्रंथ के रूप में कार्य करता है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र संगीत रत्नाकर से परिचित हैं वे अक्सर इसे प्राचीन संगीतशास्त्रीय ग्रंथ के रूप में मानते हैं, यह भूलकर कि नाट्यशास्त्र इससे एक सहस्राब्दी से अधिक पुराना है। यह भ्रम इसलिए होता है क्योंकि संगीत रत्नाकर संगीत सिद्धांत में अधिक विस्तृत है, जिससे यह अधिक 'संगीतशास्त्रीय' प्रतीत होता है, जबकि नाट्यशास्त्र का मुख्य रूप नाट्यशास्त्र है। सतही ज्ञान वाले छात्र विकल्प (b) को इसलिए हटा सकते हैं क्योंकि वे नाट्यशास्त्र और संगीत को अलग-अलग क्षेत्र मानते हैं।",
+      "final_explanation": "नाट्यशास्त्र, जिसका श्रेय भरत मुनि को दिया जाता है (हालांकि एकल या बहु-लेखकत्व का प्रश्न विद्वतापूर्ण बहस का विषय है), इसकी रचना 200 ईसा पूर्व से 200 ईस्वी के बीच मानी जाती है। यह एक दुर्लभ प्राचीन ग्रंथ है जिसने नाट्य सिद्धांत को संहिताबद्ध किया और भारतीय शास्त्रीय संगीत के लिए संरचनात्मक आधार स्थापित किया।\n\n• विकल्प (a): गलत — नाट्यशास्त्र केवल संगीत मैनुअल नहीं है; इसका मुख्य ढांचा नाट्यशास्त्र (नाटकीय कला) है, जिसमें संगीत सिद्धांत अंतर्निहित है।\n• विकल्प (b): सही — यह अद्वितीय रूप से नाटकीय ग्रंथ और भारतीय शास्त्रीय संगीत वर्गीकरण के लिए मौलिक स्रोत दोनों के रूप में कार्य करता है।\n• विकल्प (c): गलत — संगीत रत्नाकर (13वीं सदी ईस्वी) शारंगदेव द्वारा बाद में रचित है और नाट्यशास्त्र के ढांचे का विस्तार करता है।\n• विकल्प (d): गलत — इसकी रचना अवधि (200 ईसा पूर्व–200 ईस्वी) मध्यकालीन भारतीय ग्रंथों से सदियों पहले है।\n\nमूल्य संवर्धन:\n• नाट्यशास्त्र के एकल या बहु-लेखकत्व पर बहस वैदिक लेखन के बहस के समानांतर है।\n• नाट्यशास्त्र में अभिनय, नृत्य, संगीत, वेशभूषा और मंचकला सहित 36 अध्याय हैं।\n• इसे कभी-कभी 'पंचम वेद' कहा जाता है क्योंकि यह प्रदर्शन कलाओं का व्यापक रूप से संकलन करता है।"
+    }
+  },
+  {
+    "uuid": "f7144b34-1777-487d-878b-cf8b36da54be",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Chaturvidha Vadya: The Four-Fold Classification System"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Chaturvidha Vadya classification principle",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Chaturvidha Vadya classification in the Natya Shastra, consider the following statements:\n\n1. The Chaturvidha Vadya system classifies instruments based on the material from which they are constructed.\n2. The Hornbostel-Sachs system (1914) introduced a fifth category — Electrophone — that has no equivalent in the Natya Shastra classification.\n3. Sushira Vadya corresponds most closely to the Aerophone category in the Hornbostel-Sachs system.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Chaturvidha Vadya system classifies instruments based on the material from which they are constructed.",
+          "verdict": "Incorrect",
+          "reason": "The classification is based on the sound-producing mechanism, not the material of construction — this is a critical and commonly tested distinction."
+        },
+        {
+          "statement": "The Hornbostel-Sachs system (1914) introduced a fifth category — Electrophone — that has no equivalent in the Natya Shastra classification.",
+          "verdict": "Correct",
+          "reason": "Natya Shastra's four-fold system (Tata, Avanaddha, Ghana, Sushira) has no electrophone category, which is a 20th-century addition in the Hornbostel-Sachs system."
+        },
+        {
+          "statement": "Sushira Vadya corresponds most closely to the Aerophone category in the Hornbostel-Sachs system.",
+          "verdict": "Correct",
+          "reason": "Both Sushira (hollow/perforated, air-column) and Aerophone (sound produced by vibrating air) describe the same fundamental mechanism — wind instruments."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three correct) is deceptive because statements 2 and 3 are clearly correct, tempting students to assume statement 1 is also correct if they have not precisely studied the classification basis.",
+      "elimination_logic": [
+        "Eliminate any option that includes Statement 1 as correct — the Chaturvidha system classifies by sound-producing mechanism, not material composition.",
+        "Confirm Statement 2 as correct — Hornbostel-Sachs has five categories including Electrophone, which Natya Shastra lacks.",
+        "Confirm Statement 3 as correct — Sushira (hollow/air) maps directly to Aerophone in Western classification.",
+        "Select option (c): Statements 2 and 3 only are correct."
+      ],
+      "upsc_trap_explanation": "Statement 1 is the planted trap. Students who have not studied the classificatory basis precisely may assume that instruments are categorised by material (wood, metal, skin), which is a natural intuition. The Natya Shastra system, however, is mechanism-based — how the sound is produced, not what the instrument is made of. This conflation with material composition is the most common error in this topic.",
+      "final_explanation": "The Chaturvidha Vadya system of the Natya Shastra divides instruments into four categories based on their sound-producing mechanism: Tata (stretched strings), Avanaddha (stretched membrane), Ghana (solid body, self-sounding), and Sushira (hollow air column). Material composition is irrelevant to this classification.\n\n• Statement 1 — Incorrect: The basis is sound mechanism, not material. A clay pot (Ghatam) and metal cymbals (Manjira) both fall under Ghana Vadya despite different materials.\n• Statement 2 — Correct: Hornbostel-Sachs (1914) added Electrophone for electronic instruments, which has no counterpart in the ancient Natya Shastra framework.\n• Statement 3 — Correct: Sushira (hollow/perforated) and Aerophone (air-vibration-based) describe the same physical principle.\n\nValue Addition:\n• Ghana Vadya is considered the oldest instrumental category in Indian tradition.\n• Hornbostel-Sachs was developed by Erich von Hornbostel and Curt Sachs — two ethnomusicologists.\n• The four Natya Shastra categories closely mirror four of the five Hornbostel-Sachs categories, confirming the sophistication of ancient Indian musicology."
+    },
+    "hi": {
+      "display_text": "नाट्य शास्त्र में चतुर्विध वाद्य वर्गीकरण के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. चतुर्विध वाद्य प्रणाली वाद्ययंत्रों को उनकी निर्माण सामग्री के आधार पर वर्गीकृत करती है।\n2. हॉर्नबॉस्टेल-सैक्स प्रणाली (1914) ने एक पाँचवीं श्रेणी — इलेक्ट्रोफोन — जोड़ी, जो नाट्य शास्त्र वर्गीकरण में नहीं है।\n3. सुशिर वाद्य हॉर्नबॉस्टेल-सैक्स प्रणाली में एरोफोन श्रेणी के सबसे निकट है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Chaturvidha Vadya system classifies instruments based on the material from which they are constructed.",
+          "verdict": "गलत",
+          "reason": "वर्गीकरण ध्वनि उत्पन्न करने की प्रक्रिया पर आधारित है, न कि निर्माण सामग्री पर — यह एक महत्वपूर्ण और सामान्यतः परीक्षा में पूछे जाने वाला अंतर है।"
+        },
+        {
+          "statement": "The Hornbostel-Sachs system (1914) introduced a fifth category — Electrophone — that has no equivalent in the Natya Shastra classification.",
+          "verdict": "सही",
+          "reason": "नाट्य शास्त्र की चार-खंडीय प्रणाली (ताता, अवनद्ध, घन, सुशिर) में इलेक्ट्रोफोन श्रेणी नहीं है, जो कि हॉर्नबॉस्टेल-सैक्स प्रणाली में 20वीं सदी में जोड़ी गई है।"
+        },
+        {
+          "statement": "Sushira Vadya corresponds most closely to the Aerophone category in the Hornbostel-Sachs system.",
+          "verdict": "सही",
+          "reason": "सुशिर (खोखला/छिद्रयुक्त, वायु-स्तंभ) और एरोफोन (हवा के कंपन से ध्वनि उत्पन्न) दोनों एक ही मूलभूत प्रक्रिया — वायु वाद्ययंत्र — को दर्शाते हैं।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों सही) भ्रमित करने वाला है क्योंकि कथन 2 और 3 स्पष्ट रूप से सही हैं, जिससे छात्र यह मान सकते हैं कि यदि उन्होंने वर्गीकरण के आधार को ठीक से नहीं पढ़ा है तो कथन 1 भी सही होगा।",
+      "elimination_logic": [
+        "किसी भी विकल्प को हटा दें जिसमें कथन 1 को सही माना गया हो — चतुर्विध वाद्य प्रणाली ध्वनि उत्पन्न करने की प्रक्रिया के आधार पर वर्गीकृत करती है, न कि निर्माण सामग्री के आधार पर।",
+        "कथन 2 को सही मानें — हॉर्नबॉस्टेल-सैक्स में इलेक्ट्रोफोन सहित पाँच श्रेणियाँ हैं, जो नाट्य शास्त्र में नहीं हैं।",
+        "कथन 3 को सही मानें — सुशिर (खोखला/वायु) पश्चिमी वर्गीकरण में एरोफोन के समान है।",
+        "विकल्प (c) चुनें: केवल कथन 2 और 3 सही हैं।"
+      ],
+      "upsc_trap_explanation": "कथन 1 एक जालसाजी है। जो छात्र वर्गीकरण के आधार को ठीक से नहीं पढ़े हैं, वे यह मान सकते हैं कि वाद्ययंत्रों को सामग्री (लकड़ी, धातु, चमड़ा) के आधार पर वर्गीकृत किया जाता है, जो एक स्वाभाविक धारणा है। नाट्य शास्त्र की प्रणाली, हालांकि, ध्वनि उत्पन्न करने की प्रक्रिया पर आधारित है — कि ध्वनि कैसे उत्पन्न होती है, न कि वाद्ययंत्र किस सामग्री से बना है। सामग्री के साथ इस भ्रम को इस विषय में सबसे सामान्य त्रुटि माना जाता है।",
+      "final_explanation": "नाट्य शास्त्र की चतुर्विध वाद्य प्रणाली वाद्ययंत्रों को उनके ध्वनि उत्पन्न करने की प्रक्रिया के आधार पर चार श्रेणियों में विभाजित करती है: ताता (तनी हुई तारें), अवनद्ध (तनी हुई झिल्ली), घन (ठोस शरीर, स्वयं-ध्वनित), और सुशिर (खोखला वायु स्तंभ)। निर्माण सामग्री इस वर्गीकरण में अप्रासंगिक है।\n\n• कथन 1 — गलत: आधार ध्वनि उत्पन्न करने की प्रक्रिया है, सामग्री नहीं। मिट्टी का घड़ा (घटम) और धातु की मंजीरा दोनों घन वाद्य में आते हैं, भले ही उनकी सामग्री अलग हो।\n• कथन 2 — सही: हॉर्नबॉस्टेल-सैक्स (1914) ने इलेक्ट्रॉनिक वाद्ययंत्रों के लिए इलेक्ट्रोफोन श्रेणी जोड़ी, जो प्राचीन नाट्य शास्त्र में नहीं है।\n• कथन 3 — सही: सुशिर (खोखला/छिद्रयुक्त) और एरोफोन (हवा के कंपन पर आधारित) एक ही भौतिक सिद्धांत को दर्शाते हैं।\n\nमूल्यवर्धन:\n• घन वाद्य को भारतीय परंपरा में सबसे पुरानी वाद्य श्रेणी माना जाता है।\n• हॉर्नबॉस्टेल-सैक्स प्रणाली एरिच वॉन हॉर्नबॉस्टेल और कर्ट सैक्स — दो नृसंगीतशास्त्री — द्वारा विकसित की गई थी।\n• नाट्य शास्त्र की चार श्रेणियाँ हॉर्नबॉस्टेल-सैक्स की पाँच श्रेणियों में से चार के समान हैं, जो प्राचीन भारतीय संगीतशास्त्र की परिष्कृतता को दर्शाता है।"
+    }
+  },
+  {
+    "uuid": "0735d0fc-1c25-41c0-9361-250897a61850",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Tata Vadya (Chordophones): Stringed Instruments",
+        "Veena in Natya Shastra: Classification and Cultural Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Tata Vadya examples — Natya Shastra period vs. later instruments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Tata Vadya as described in ancient Indian musicology, consider the following statements:\n\n1. Sitar and Sarod are cited in the Natya Shastra as primary examples of Tata Vadya.\n2. Saraswati Veena is primarily associated with Hindustani classical music, while Rudra Veena is the preferred instrument of Carnatic music.\n3. Both plucked and bowed stringed instruments fall under the Tata Vadya category in the Natya Shastra system.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sitar and Sarod are cited in the Natya Shastra as primary examples of Tata Vadya.",
+          "verdict": "Incorrect",
+          "reason": "Sitar and Sarod are medieval/Mughal-era developments and are not mentioned in the Natya Shastra; Veena is the primary example in the ancient text."
+        },
+        {
+          "statement": "Saraswati Veena is primarily associated with Hindustani classical music, while Rudra Veena is the preferred instrument of Carnatic music.",
+          "verdict": "Incorrect",
+          "reason": "This is the exact reverse: Saraswati Veena is associated with Carnatic music, and Rudra Veena (also called Bin) is associated with Hindustani music's Dhrupad tradition."
+        },
+        {
+          "statement": "Both plucked and bowed stringed instruments fall under the Tata Vadya category in the Natya Shastra system.",
+          "verdict": "Correct",
+          "reason": "Tata Vadya covers all stringed instruments where sound is produced through stretched strings — whether plucked (Veena) or bowed (Sarangi)."
+        }
+      ],
+      "strong_distractor": "c — Option c (Statements 1 and 3) is deceptive because students may correctly identify Statement 1 as wrong but fail to recognise Statement 2 as also wrong due to the Saraswati/Rudra Veena swap.",
+      "elimination_logic": [
+        "Identify Statement 1 as incorrect — Sitar and Sarod are Mughal-era instruments absent from Natya Shastra; Veena is the classical reference.",
+        "Identify Statement 2 as incorrect — the association is reversed: Saraswati Veena→Carnatic; Rudra Veena→Hindustani (Dhrupad).",
+        "Confirm Statement 3 as correct — Tata Vadya encompasses both plucked and bowed chordophones.",
+        "Select option (b): Statements 1 and 2 are NOT correct."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a precision trap that exploits the Saraswati Veena–Rudra Veena confusion. Because Saraswati is a pan-Indian deity and Rudra is associated with Shiva (and by extension North India), students instinctively map Saraswati Veena to Hindustani and Rudra Veena to a more intense/classical Carnatic tradition — both reversals of the factual position. Statement 1 traps students who know Sitar is a Tata Vadya but do not know it is not mentioned in Natya Shastra.",
+      "final_explanation": "Tata Vadya encompasses instruments where sound is produced through vibrating stretched strings, covering both plucked and bowed varieties. The Natya Shastra's primary example is the Veena, not Sitar or Sarod — both of which developed centuries later.\n\n• Statement 1 — Incorrect: Sitar and Sarod emerged during the Mughal period and are absent from the Natya Shastra. Veena is the archetypal Tata Vadya in the ancient text.\n• Statement 2 — Incorrect: The association is reversed. Saraswati Veena belongs to Carnatic music (South India); Rudra Veena (Bin) is the instrument of the Dhrupad tradition in Hindustani music.\n• Statement 3 — Correct: Tata Vadya is defined by string vibration as the sound mechanism, encompassing both plucked and bowed instruments.\n\nValue Addition:\n• Vichitra Veena and Gottuvadyam are two other important Veena variants — played with a slide, not plucked in the conventional sense.\n• The Sarangi, a bowed Tata Vadya, is distinct from Sarod (plucked).\n• Rudra Veena is associated with the Beenkar Gharana, now considered critically endangered."
+    },
+    "hi": {
+      "display_text": "प्राचीन भारतीय संगीतशास्त्र में वर्णित ताता वाद्य के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. सितार और सारोद को नाट्य शास्त्र में ताता वाद्य के मुख्य उदाहरण के रूप में उद्धृत किया गया है।\n2. सरस्वती वीणा मुख्यतः हिंदुस्तानी शास्त्रीय संगीत से जुड़ी है, जबकि रुद्र वीणा कर्नाटक संगीत का पसंदीदा वाद्य है।\n3. ताता वाद्य प्रणाली में प्लक्ड और बो दोनों तार वाले वाद्य शामिल होते हैं।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sitar and Sarod are cited in the Natya Shastra as primary examples of Tata Vadya.",
+          "verdict": "गलत",
+          "reason": "सितार और सारोद मध्यकालीन/मुगल काल के विकास हैं और नाट्य शास्त्र में उल्लेखित नहीं हैं; प्राचीन ग्रंथ में वीणा मुख्य उदाहरण है।"
+        },
+        {
+          "statement": "Saraswati Veena is primarily associated with Hindustani classical music, while Rudra Veena is the preferred instrument of Carnatic music.",
+          "verdict": "गलत",
+          "reason": "यह पूरी तरह उल्टा है: सरस्वती वीणा कर्नाटक संगीत से जुड़ी है, और रुद्र वीणा (जिसे बीन भी कहा जाता है) हिंदुस्तानी संगीत की ध्रुपद परंपरा से जुड़ी है।"
+        },
+        {
+          "statement": "Both plucked and bowed stringed instruments fall under the Tata Vadya category in the Natya Shastra system.",
+          "verdict": "सही",
+          "reason": "ताता वाद्य में सभी तार वाले वाद्य शामिल हैं जिनमें ध्वनि खींची हुई तारों से उत्पन्न होती है — चाहे वे प्लक्ड (वीणा) हों या बो (सरंगी)।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c (कथन 1 और 3) भ्रमित करने वाला है क्योंकि छात्र कथन 1 को सही ढंग से गलत पहचान सकते हैं लेकिन कथन 2 को भी गलत पहचानने में असफल रहते हैं, जो सरस्वती/रुद्र वीणा के उलटफेर के कारण है।",
+      "elimination_logic": [
+        "कथन 1 को गलत पहचानें — सितार और सारोद मुगल काल के वाद्य हैं जो नाट्य शास्त्र में नहीं हैं; वीणा शास्त्रीय संदर्भ है।",
+        "कथन 2 को गलत पहचानें — संबद्धता उल्टी है: सरस्वती वीणा→कर्नाटक; रुद्र वीणा→हिंदुस्तानी (ध्रुपद)।",
+        "कथन 3 को सही पुष्टि करें — ताता वाद्य में प्लक्ड और बो दोनों तार वाले वाद्य शामिल हैं।",
+        "विकल्प (b) चुनें: कथन 1 और 2 सही नहीं हैं।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक सटीक जाल है जो सरस्वती वीणा–रुद्र वीणा भ्रम का फायदा उठाता है। क्योंकि सरस्वती एक पैन-इंडियन देवी हैं और रुद्र शिव से जुड़े हैं (और विस्तार से उत्तर भारत से), छात्र सहज रूप से सरस्वती वीणा को हिंदुस्तानी और रुद्र वीणा को अधिक तीव्र/शास्त्रीय कर्नाटक परंपरा से जोड़ते हैं — दोनों तथ्य के विपरीत। कथन 1 उन छात्रों को फंसाता है जो जानते हैं कि सितार ताता वाद्य है लेकिन नहीं जानते कि यह नाट्य शास्त्र में नहीं है।",
+      "final_explanation": "ताता वाद्य में वे वाद्य शामिल हैं जिनमें ध्वनि खींची हुई तारों के कंपन से उत्पन्न होती है, जिसमें प्लक्ड और बो दोनों प्रकार के वाद्य शामिल हैं। नाट्य शास्त्र का मुख्य उदाहरण वीणा है, न कि सितार या सारोद — जो दोनों सदियों बाद विकसित हुए।\n\n• कथन 1 — गलत: सितार और सारोद मुगल काल में उभरे और नाट्य शास्त्र में नहीं हैं। वीणा प्राचीन ग्रंथ में ताता वाद्य का आदर्श उदाहरण है।\n• कथन 2 — गलत: संबद्धता उल्टी है। सरस्वती वीणा कर्नाटक संगीत (दक्षिण भारत) से है; रुद्र वीणा (बीन) हिंदुस्तानी संगीत की ध्रुपद परंपरा का वाद्य है।\n• कथन 3 — सही: ताता वाद्य की परिभाषा तारों के कंपन द्वारा ध्वनि उत्पन्न करने वाली है, जिसमें प्लक्ड और बो दोनों शामिल हैं।\n\nमूल्य संवर्धन:\n• विचित्र वीणा और गोट्टुवाद्यम दो अन्य महत्वपूर्ण वीणा प्रकार हैं — जो स्लाइड के साथ बजाए जाते हैं, पारंपरिक रूप से प्लक्ड नहीं।\n• सरंगी, एक बो ताता वाद्य, सारोद (प्लक्ड) से अलग है।\n• रुद्र वीणा बीनकार घराने से जुड़ी है, जो अब गंभीर रूप से संकटग्रस्त मानी जाती है।"
+    }
+  },
+  {
+    "uuid": "50049bc9-39b2-4874-895b-eab7400b497f",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sushira Vadya (Aerophones): Wind Instruments",
+        "Conch Shell (Shankha) as Sushira Vadya: Ritual and Musicological Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Shankha as Sushira Vadya — natural object classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): The Shankha (conch shell) is classified as a Sushira Vadya in the Natya Shastra framework of instrument classification.\n\nReason (R): The Shankha is among the rarest examples of a naturally occurring, non-manufactured object that satisfies the acoustic definition of a Sushira Vadya — sound produced by blowing through a hollow cavity — while simultaneously serving as a ritual object in Hindu and Buddhist traditions.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because students who correctly identify both A and R as factually true may fail to recognise that R (ritual use) is causally irrelevant to A (classification as Sushira Vadya); the classification is based on acoustic mechanism, not ritual role.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Shankha is classified as Sushira Vadya in Natya Shastra because sound is produced by blowing through the hollow shell's air column.",
+        "Step 2: Is Reason (R) correct? — Yes. Shankha is indeed used extensively in Hindu and Buddhist religious ceremonies and is one of the rarest natural (non-manufactured) objects classified as a musical instrument.",
+        "Step 3: Does R causally explain A? — Yes. The Natya Shastra's classification of Shankha as Sushira Vadya is precisely because its sound mechanism (air blown through a hollow cavity) meets the definition — and the fact that it is a natural object rather than a crafted one makes its inclusion in this category the notable point R correctly identifies.",
+        "Select option (a): Both A and R are correct, and R is the correct explanation of A."
+      ],
+      "upsc_trap_explanation": "The trap here is option (b) — both A and R are correct, but students must judge whether the natural-object dimension of Shankha is genuinely the reason it is classified as Sushira Vadya. In this case, R correctly identifies the unusual quality (natural non-manufactured object) that explains why Shankha's classification is noteworthy, making R the correct explanation of A. Students who hastily select (b) miss the logical connection between the mechanism of sound production and the natural origin of the instrument.",
+      "final_explanation": "Sushira Vadya encompasses instruments producing sound through a vibrating air column within a hollow body. The Shankha (conch shell) fits this definition precisely — sound is produced by blowing through its natural hollow cavity.\n\nAssertion (A): Correct — Shankha is classified as Sushira Vadya in Natya Shastra. Its sound-producing mechanism (blown air through hollow shell) is identical to that of a manufactured wind instrument.\n\nReason (R): Correct — Shankha is among the rarest examples of a naturally occurring object (not a crafted instrument) being formally classified within an instrumental taxonomy. Its dual identity as a ritual object and a musical instrument is unique.\n\nCausal relationship: R explains A — the reason Shankha's Sushira Vadya classification is noteworthy is precisely because it is a natural object that satisfies the aerophone definition, making R the correct explanation of A.\n\nValue Addition:\n• In the Mahabharata, each major warrior's conch had a name — Krishna's was Panchajanya, Arjuna's was Devadatta.\n• Shankha is also a symbol in Buddhist iconography, representing the spread of the Dharma.\n• Among Sushira Vadya, Bansuri (edge-blown) and Shehnai (double-reed) represent two distinct sub-types."
+    },
+    "hi": {
+      "display_text": "कथन (A): शंख को नाट्य शास्त्र के वाद्य यंत्र वर्गीकरण ढांचे में सुषिर वाद्य के रूप में वर्गीकृत किया गया है।\n\nकारण (R): शंख दुर्लभ प्राकृतिक, निर्मित नहीं वस्तुओं में से एक है जो सुषिर वाद्य की ध्वनिक परिभाषा — खोखली गुहा में फूंक मारने से ध्वनि उत्पन्न होना — को पूरा करता है, और साथ ही हिंदू और बौद्ध परंपराओं में एक अनुष्ठानिक वस्तु के रूप में भी कार्य करता है।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रमित करने वाला है क्योंकि जो छात्र A और R दोनों को तथ्यात्मक रूप से सही पहचानते हैं, वे यह समझने में असफल हो सकते हैं कि R (अनुष्ठानिक उपयोग) का A (सुषिर वाद्य के रूप में वर्गीकरण) से कारणात्मक संबंध नहीं है; वर्गीकरण ध्वनिक तंत्र पर आधारित है, अनुष्ठानिक भूमिका पर नहीं।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। शंख को नाट्य शास्त्र में सुषिर वाद्य के रूप में वर्गीकृत किया गया है क्योंकि ध्वनि खोखले शंख के वायु स्तंभ में फूंक मारने से उत्पन्न होती है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। शंख का हिंदू और बौद्ध धार्मिक अनुष्ठानों में व्यापक रूप से उपयोग होता है और यह दुर्लभ प्राकृतिक (निर्मित नहीं) वस्तुओं में से एक है जिसे वाद्य यंत्र के रूप में वर्गीकृत किया गया है।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — हाँ। नाट्य शास्त्र में शंख का सुषिर वाद्य के रूप में वर्गीकरण इसलिए है क्योंकि इसका ध्वनि तंत्र (खोखले गुहा में फूंक मारना) परिभाषा को पूरा करता है — और यह तथ्य कि यह एक प्राकृतिक वस्तु है न कि निर्मित, इसे इस श्रेणी में शामिल करने का उल्लेखनीय बिंदु है जिसे R सही ढंग से पहचानता है।",
+        "विकल्प (a) चुनें: A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है।"
+      ],
+      "upsc_trap_explanation": "यहाँ जाल विकल्प (b) है — A और R दोनों सही हैं, लेकिन छात्रों को यह आकलन करना चाहिए कि क्या शंख के प्राकृतिक वस्तु होने का आयाम वास्तव में इसे सुषिर वाद्य के रूप में वर्गीकृत करने का कारण है। इस मामले में, R असामान्य गुण (प्राकृतिक, निर्मित नहीं वस्तु) को सही ढंग से पहचानता है जो शंख के वर्गीकरण को उल्लेखनीय बनाता है, अतः R, A का सही स्पष्टीकरण है। जो छात्र जल्दबाजी में (b) चुनते हैं, वे ध्वनि उत्पादन के तंत्र और वाद्य यंत्र की प्राकृतिक उत्पत्ति के बीच तार्किक संबंध को समझने में चूक जाते हैं।",
+      "final_explanation": "सुषिर वाद्य वे वाद्य यंत्र हैं जो खोखले शरीर के भीतर कंपनशील वायु स्तंभ के माध्यम से ध्वनि उत्पन्न करते हैं। शंख (शंख) इस परिभाषा में पूरी तरह फिट बैठता है — इसकी प्राकृतिक खोखली गुहा में फूंक मारने से ध्वनि उत्पन्न होती है।\n\nकथन (A): सही — शंख को नाट्य शास्त्र में सुषिर वाद्य के रूप में वर्गीकृत किया गया है। इसका ध्वनि उत्पादन तंत्र (खोखले शंख में फूंक मारना) एक निर्मित वायु वाद्य यंत्र के समान है।\n\nकारण (R): सही — शंख दुर्लभ प्राकृतिक वस्तुओं में से एक है जिसे औपचारिक रूप से वाद्य यंत्र वर्गीकरण में शामिल किया गया है। इसका अनुष्ठानिक वस्तु और वाद्य यंत्र दोनों के रूप में द्वैध पहचान अद्वितीय है।\n\nकारणात्मक संबंध: R, A को समझाता है — शंख के सुषिर वाद्य वर्गीकरण का उल्लेखनीय होना इसलिए है क्योंकि यह एक प्राकृतिक वस्तु है जो वायु वाद्य की परिभाषा को पूरा करती है, अतः R, A का सही स्पष्टीकरण है।\n\nमूल्य संवर्धन:\n• महाभारत में प्रत्येक प्रमुख योद्धा के शंख का नाम था — कृष्ण का पंचजन्य, अर्जुन का देवदत्त।\n• शंख बौद्ध प्रतीकशास्त्र में भी एक प्रतीक है, जो धर्म के प्रचार का प्रतिनिधित्व करता है।\n• सुषिर वाद्य में बाँसुरी (किनारे से फूंकने वाला) और शहनाई (दोहरी रीड) दो भिन्न उप-प्रकार हैं।"
+    }
+  },
+  {
+    "uuid": "54862935-beb2-4b5f-9f42-c8792b850b72",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Harmonium: Classification and Controversy in Indian Classical Music",
+        "Sushira Vadya (Aerophones): Wind Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Harmonium — AIR ban, reversal, and Sushira Vadya classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A musicologist is documenting the classification and broadcast history of a bellows-driven free-reed keyboard instrument that was introduced into India during the 19th century by European traders. All India Radio took a formal institutional position on this instrument that was later revised. Which of the following most accurately describes the classification of this instrument and the reason for the institutional controversy?\n\n(a) It is an Avanaddha Vadya; the controversy arose because its membrane-driven sound conflicted with the acoustic requirements of Carnatic music\n(b) It is a Sushira Vadya; AIR banned it primarily because its foreign origin was deemed inconsistent with promoting indigenous classical forms\n(c) It is a Sushira Vadya; AIR banned it from classical music broadcasts because its equal-tempered tuning could not reproduce the microtonal intervals of Indian ragas, though this ban was eventually reversed\n(d) It is a Sushira Vadya; AIR imposed a ban on it that has been maintained to the present day as a policy to protect the integrity of classical raga rendition",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d is deceptive because students may know the AIR banned Harmonium but assume the ban was permanent and never reversed, making 'indefinite ban maintained' feel accurate.",
+      "elimination_logic": [
+        "Identify the instrument: bellows-driven free-reed — this is a Harmonium, classified as Sushira Vadya.",
+        "Eliminate option (a) — Harmonium is not Avanaddha Vadya; it has no membrane.",
+        "Eliminate option (b) — the ban was not because of foreign origin alone; equal temperament vs. microtonal raga fidelity was the core reason.",
+        "Eliminate option (d) — AIR's ban was later reversed; Harmonium is now accepted in classical broadcasts.",
+        "Select option (c): Harmonium is Sushira Vadya, banned for equal temperament incompatibility, with the ban later reversed."
+      ],
+      "upsc_trap_explanation": "The trap lies in option (d), which states the ban was permanent and maintained. Students who recall the AIR ban on Harmonium (from around 1940) often do not know it was eventually reversed. The additional nuance — that the ban was on acoustic grounds (equal temperament clashing with microtonal ragas) rather than merely cultural-nationalistic grounds — is the precise knowledge required. Option (b) partially exploits the nationalistic narrative, which is an oversimplification.",
+      "final_explanation": "A music programme director at All India Radio reviews the historical position on a bellows-driven free-reed keyboard instrument introduced by Europeans in 19th-century India. The correct principle: this instrument is the Harmonium, classified as Sushira Vadya (aerophone) because sound is produced by air driven through free reeds via bellows.\n\n• Option (a): Incorrect — Harmonium has no membrane; it cannot be Avanaddha Vadya.\n• Option (b): Incorrect — While foreign origin was a factor in the cultural debate, the stated technical reason for the AIR ban was that Harmonium's equal-tempered tuning could not reproduce the microtonal nuances (shrutis) essential to classical ragas.\n• Option (c): Correct — Harmonium is Sushira Vadya; AIR banned it from broadcasts beginning around 1940 due to its equal temperament incompatibility with microtonal raga requirements; the ban was later reversed.\n• Option (d): Incorrect — The ban was not maintained indefinitely; AIR eventually permitted Harmonium in classical broadcasts.\n\nValue Addition:\n• Harmonium arrived in India via European missionaries and traders in the 19th century.\n• It became ubiquitous in devotional music (bhajan, kirtan) despite the classical controversy.\n• Bansuri and Shehnai — both Sushira Vadya — faced no such controversy in classical contexts."
+    },
+    "hi": {
+      "display_text": "एक संगीतशास्त्री 19वीं सदी में यूरोपीय व्यापारियों द्वारा भारत में लाए गए बेलो से संचालित फ्री-रीड कीबोर्ड वाद्ययंत्र के वर्गीकरण और प्रसारण इतिहास का दस्तावेजीकरण कर रहा है। ऑल इंडिया रेडियो ने इस वाद्ययंत्र पर एक औपचारिक संस्थागत स्थिति ली थी जिसे बाद में संशोधित किया गया। निम्नलिखित में से कौन-सा इस वाद्ययंत्र के वर्गीकरण और संस्थागत विवाद के कारण को सबसे सटीक रूप से वर्णित करता है?\n\n(a) यह एक अवनद्ध वाद्य है; विवाद इसलिए उत्पन्न हुआ क्योंकि इसकी झिल्ली-संचालित ध्वनि कर्नाटक संगीत की ध्वनिक आवश्यकताओं से मेल नहीं खाती\n(b) यह एक सुषिर वाद्य है; AIR ने इसे मुख्यतः इसलिए प्रतिबंधित किया क्योंकि इसका विदेशी मूल स्वदेशी शास्त्रीय रूपों को बढ़ावा देने के अनुकूल नहीं माना गया\n(c) यह एक सुषिर वाद्य है; AIR ने इसे शास्त्रीय संगीत प्रसारणों से इसलिए प्रतिबंधित किया क्योंकि इसका समान स्वरूप भारतीय रागों के सूक्ष्मस्वर अंतरालों को पुन: उत्पन्न नहीं कर सकता, हालांकि यह प्रतिबंध अंततः वापस लिया गया\n(d) यह एक सुषिर वाद्य है; AIR ने इस पर प्रतिबंध लगाया जो शास्त्रीय राग प्रस्तुति की अखंडता की रक्षा के लिए आज तक बनाए रखा गया है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d भ्रमित करने वाला है क्योंकि छात्र AIR द्वारा हारमोनियम पर प्रतिबंध को जानते हैं लेकिन मान लेते हैं कि प्रतिबंध स्थायी था और कभी वापस नहीं लिया गया, जिससे 'अनिश्चितकालीन प्रतिबंध जारी' सही प्रतीत होता है।",
+      "elimination_logic": [
+        "वाद्ययंत्र की पहचान करें: बेलो से संचालित फ्री-रीड — यह हारमोनियम है, जिसे सुषिर वाद्य के रूप में वर्गीकृत किया गया है।",
+        "विकल्प (a) को खारिज करें — हारमोनियम अवनद्ध वाद्य नहीं है; इसमें झिल्ली नहीं होती।",
+        "विकल्प (b) को खारिज करें — प्रतिबंध केवल विदेशी मूल के कारण नहीं था; समान स्वरूप बनाम सूक्ष्मस्वर राग की सटीकता मुख्य कारण था।",
+        "विकल्प (d) को खारिज करें — AIR का प्रतिबंध बाद में वापस लिया गया; हारमोनियम अब शास्त्रीय प्रसारणों में स्वीकार्य है।",
+        "विकल्प (c) चुनें: हारमोनियम सुषिर वाद्य है, समान स्वरूप असंगतता के कारण प्रतिबंधित था, जिसे बाद में वापस लिया गया।"
+      ],
+      "upsc_trap_explanation": "फंदा विकल्प (d) में है, जो कहता है कि प्रतिबंध स्थायी और जारी है। जो छात्र AIR के हारमोनियम प्रतिबंध (लगभग 1940 के आसपास) को याद करते हैं, वे अक्सर नहीं जानते कि इसे अंततः वापस लिया गया था। अतिरिक्त बारीकी — कि प्रतिबंध केवल सांस्कृतिक-राष्ट्रीयतावादी कारणों से नहीं बल्कि ध्वनिक कारणों (समान स्वरूप बनाम सूक्ष्मस्वर रागों का टकराव) से था — यह सटीक ज्ञान आवश्यक है। विकल्प (b) आंशिक रूप से राष्ट्रीयतावादी कथा का उपयोग करता है, जो एक सरलीकरण है।",
+      "final_explanation": "ऑल इंडिया रेडियो के एक संगीत कार्यक्रम निदेशक ने 19वीं सदी में यूरोपीय व्यापारियों द्वारा भारत में लाए गए बेलो से संचालित फ्री-रीड कीबोर्ड वाद्ययंत्र के ऐतिहासिक स्थिति की समीक्षा की। सही सिद्धांत: यह वाद्ययंत्र हारमोनियम है, जिसे सुषिर वाद्य (एरोफोन) के रूप में वर्गीकृत किया गया है क्योंकि ध्वनि बेलो के माध्यम से फ्री रीड से हवा के प्रवाह से उत्पन्न होती है।\n\n• विकल्प (a): गलत — हारमोनियम में झिल्ली नहीं है; यह अवनद्ध वाद्य नहीं हो सकता।\n• विकल्प (b): गलत — विदेशी मूल सांस्कृतिक बहस का एक कारण था, लेकिन AIR प्रतिबंध का तकनीकी कारण यह था कि हारमोनियम का समान स्वरूप शास्त्रीय रागों के सूक्ष्मस्वर (श्रुति) को पुन: उत्पन्न नहीं कर सकता।\n• विकल्प (c): सही — हारमोनियम सुषिर वाद्य है; AIR ने लगभग 1940 से इसे शास्त्रीय संगीत प्रसारणों से प्रतिबंधित किया क्योंकि इसका समान स्वरूप सूक्ष्मस्वर राग आवश्यकताओं से मेल नहीं खाता; बाद में प्रतिबंध वापस लिया गया।\n• विकल्प (d): गलत — प्रतिबंध अनिश्चितकालीन नहीं था; AIR ने अंततः शास्त्रीय प्रसारणों में हारमोनियम की अनुमति दी।\n\nमूल्य संवर्धन:\n• हारमोनियम 19वीं सदी में यूरोपीय मिशनरियों और व्यापारियों के माध्यम से भारत आया।\n• यह भजन, कीर्तन जैसे भक्ति संगीत में सर्वव्यापी हो गया, भले ही शास्त्रीय विवाद रहा।\n• बांसुरी और शहनाई — दोनों सुषिर वाद्य — शास्त्रीय संदर्भों में इस तरह के विवाद का सामना नहीं करते।"
+    }
+  },
+  {
+    "uuid": "efe25449-c1b7-411e-b5f9-1359488618ec",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Bansuri and Shehnai: Sushira Vadya in Classical and Folk Contexts",
+        "Nadaswaram and Tavil: Sacred Pair in Carnatic Tradition"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Double-reed Sushira Vadya instruments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following instruments does NOT belong to the same sub-category of Sushira Vadya as the others, when classified by their internal sound-producing mechanism?\n\n(a) Shehnai\n(b) Nadaswaram\n(c) Bansuri\n(d) Pungi",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d (Pungi) is deceptive because students may eliminate it as the odd one out due to its folk/snake-charmer association, not recognising that Bansuri (edge-blown flute) is the genuine acoustic outlier among the reed instruments.",
+      "elimination_logic": [
+        "Identify the shared attribute: instruments in this set should share the same sound-production sub-mechanism within Sushira Vadya.",
+        "Shehnai — double-reed aerophone: fits the reed sub-category.",
+        "Nadaswaram — double-reed aerophone: fits the reed sub-category.",
+        "Pungi — single/double-reed aerophone: fits the reed sub-category.",
+        "Bansuri — edge-blown transverse flute: does NOT use a reed; sound is produced by air striking a sharp edge — odd one out; select option (c)."
+      ],
+      "upsc_trap_explanation": "All four instruments are Sushira Vadya, so a surface-level answer of 'all are wind instruments' would not help eliminate any option. The trap is the sub-category distinction within Sushira Vadya: Shehnai, Nadaswaram, and Pungi are all reed-based aerophones, while Bansuri is an edge-blown flute. A student who conflates all wind instruments misses the structural distinction. The Pungi is a further trap because its folk association makes it feel 'different,' when acoustically it belongs with the reed group.",
+      "final_explanation": "All four instruments are Sushira Vadya (aerophones), but they differ in their internal sound-production mechanism within this category.\n\n• Option (a) Shehnai: Double-reed aerophone — air is forced through two reeds vibrating against each other. Reed-based.\n• Option (b) Nadaswaram: Double-reed aerophone from South India — acoustically identical in principle to Shehnai. Reed-based.\n• Option (c) Bansuri: Transverse (side-blown) flute — sound is produced by air striking the sharp edge of the blowhole, NOT by a reed. This is the odd one out.\n• Option (d) Pungi: Reed aerophone (single or double reed) used by snake charmers — reed-based.\n\nValue Addition:\n• Nadaswaram is considered the world's loudest non-brass acoustic woodwind instrument.\n• Bansuri is associated with Krishna iconography and was elevated to classical status by Hariprasad Chaurasia.\n• Shehnai's association with Varanasi and its use in auspicious ceremonies made it an integral part of North Indian cultural life."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा वाद्य यंत्र अपने आंतरिक ध्वनि-उत्पादन तंत्र के आधार पर सुषिर वाद्य की समान उप-श्रेणी में नहीं आता?\n\n(a) शहनाई\n(b) नादस्वरम\n(c) बांसुरी\n(d) पुंगी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d (पुंगी) भ्रमित करने वाला है क्योंकि छात्र इसे लोक/साँपसाज़ी से जोड़कर अलग समझ सकते हैं, जबकि बांसुरी (किनारे से उड़ाई जाने वाली बांसुरी) वास्तव में रीड वाद्यों में ध्वनिक रूप से अलग है।",
+      "elimination_logic": [
+        "साझा गुण पहचानें: इस समूह के वाद्य यंत्रों को सुषिर वाद्य के भीतर एक ही ध्वनि-उत्पादन उप-तंत्र साझा करना चाहिए।",
+        "शहनाई — डबल-रीड एरोफोन: रीड उप-श्रेणी में आता है।",
+        "नादस्वरम — डबल-रीड एरोफोन: रीड उप-श्रेणी में आता है।",
+        "पुंगी — सिंगल/डबल-रीड एरोफोन: रीड उप-श्रेणी में आता है।",
+        "बांसुरी — किनारे से उड़ाई जाने वाली पार्श्व बांसुरी: रीड का उपयोग नहीं करती; ध्वनि तेज किनारे से हवा के टकराने से उत्पन्न होती है — यह अलग है; विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "सभी चार वाद्य सुषिर वाद्य हैं, इसलिए 'सभी वायु वाद्य हैं' जैसा सतही उत्तर किसी विकल्प को बाहर नहीं कर पाएगा। जाल सुषिर वाद्य के भीतर उप-श्रेणी का भेद है: शहनाई, नादस्वरम, और पुंगी सभी रीड आधारित एरोफोन हैं, जबकि बांसुरी किनारे से उड़ाई जाने वाली बांसुरी है। जो छात्र सभी वायु वाद्यों को एक समान समझते हैं, वे इस संरचनात्मक भेद को नहीं समझ पाते। पुंगी एक अतिरिक्त जाल है क्योंकि इसकी लोक-संबद्धता इसे 'अलग' महसूस कराती है, जबकि ध्वनिक रूप से यह रीड समूह में आता है।",
+      "final_explanation": "सभी चार वाद्य सुषिर वाद्य (एरोफोन) हैं, लेकिन इस श्रेणी के भीतर उनके आंतरिक ध्वनि-उत्पादन तंत्र में भिन्नता है।\n\n• विकल्प (a) शहनाई: डबल-रीड एरोफोन — हवा दो रीड के बीच से गुज़रती है जो एक-दूसरे के विरुद्ध कंपन करते हैं। रीड आधारित।\n• विकल्प (b) नादस्वरम: दक्षिण भारत का डबल-रीड एरोफोन — शहनाई के समान ध्वनिक सिद्धांत। रीड आधारित।\n• विकल्प (c) बांसुरी: पार्श्व (किनारे से उड़ाई जाने वाली) बांसुरी — ध्वनि तेज किनारे से हवा के टकराने से उत्पन्न होती है, रीड से नहीं। यह अलग है।\n• विकल्प (d) पुंगी: रीड एरोफोन (सिंगल या डबल रीड) जो साँपसाज़ों द्वारा उपयोग किया जाता है — रीड आधारित।\n\nमूल्यवर्धन:\n• नादस्वरम को विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड वाद्य माना जाता है।\n• बांसुरी कृष्ण की छवि से जुड़ी है और हरिप्रसाद चौरसिया द्वारा इसे शास्त्रीय दर्जा दिया गया।\n• शहनाई का वाराणसी से संबंध और शुभ अवसरों में इसका उपयोग इसे उत्तर भारतीय सांस्कृतिक जीवन का अभिन्न हिस्सा बनाता है।"
+    }
+  },
+  {
+    "uuid": "7c12cde6-c0ae-439c-9851-08333cced246",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sarangi: Classification Debate (Tata vs. Avanaddha) and Role in Hindustani Music"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "conflation",
+      "concept_anchor": "Sarangi — Tata Vadya classification despite resonating membrane",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Sarangi and its place in Indian musical tradition, consider the following statements:\n\nStatement 1: Sarangi is correctly classified as Tata Vadya because the primary sound is produced through vibrating strings, regardless of the presence of a membrane on its resonating cavity.\n\nStatement 2: Sarangi has traditionally been the dominant accompaniment instrument in Carnatic classical music, gradually replaced by Violin.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sarangi is correctly classified as Tata Vadya because the primary sound is produced through vibrating strings, regardless of the presence of a membrane on its resonating cavity.",
+          "verdict": "Correct",
+          "reason": "The classification principle in Natya Shastra is based on the primary sound-producing mechanism; in Sarangi, it is the bowed strings, making it Tata Vadya despite any membrane on the body."
+        },
+        {
+          "statement": "Sarangi has traditionally been the dominant accompaniment instrument in Carnatic classical music, gradually replaced by Violin.",
+          "verdict": "Incorrect",
+          "reason": "Sarangi is associated with Hindustani classical music (Khayal, Thumri, Ghazal traditions), not Carnatic music; it is the Violin that replaced Sarangi in Hindustani accompaniment — and Violin itself is central to Carnatic accompaniment."
+        }
+      ],
+      "strong_distractor": "a — Option a (both correct) tempts students who know Sarangi is Tata Vadya and vaguely know Violin replaced it, without specifying the musical tradition.",
+      "elimination_logic": [
+        "Evaluate Statement 1 — Sarangi's bowed strings are the primary sound source; membrane on resonating box is secondary. Statement 1 is correct.",
+        "Evaluate Statement 2 — Sarangi belongs to Hindustani (not Carnatic) tradition; it was replaced by Harmonium in Hindustani accompaniment, while Violin was adopted in Carnatic music independently.",
+        "Statement 2 conflates two different musical traditions — it is incorrect.",
+        "Select option (c): Statement 1 correct, Statement 2 incorrect."
+      ],
+      "upsc_trap_explanation": "Statement 2 is a geographic-swap trap. Sarangi's decline in the face of a keyboard/string competitor is a known fact, but the competitor instrument (Harmonium) and the tradition (Hindustani) are both swapped. Students who recall 'Sarangi was displaced by another instrument' may not catch that the statement incorrectly says Carnatic and Violin. Violin is indeed important in Carnatic music — but as an adopted melodic instrument, not as a replacement for Sarangi.",
+      "final_explanation": "Sarangi is a bowed chordophone — its strings are the primary sound-producing element, making it Tata Vadya in the Natya Shastra framework. The presence of a membrane on its resonating box does not reclassify it as Avanaddha Vadya, because the classification principle is the primary mechanism of sound production.\n\n• Statement 1 — Correct: The classification logic is clear — primary sound from strings = Tata Vadya. The membrane merely enhances resonance and is secondary.\n• Statement 2 — Incorrect: Sarangi is a Hindustani instrument (Khayal, Thumri, Ghazal), not Carnatic. It was gradually displaced in Hindustani accompaniment by the Harmonium, not Violin. Violin's rise was in Carnatic music as an adopted melodic instrument.\n\nValue Addition:\n• The decline of Sarangi is considered a significant loss for Hindustani classical music — sarangi players were integral to the Baithak culture.\n• Sarangi has 35–40 sympathetic strings beneath its main playing strings — a key structural feature.\n• Famous Sarangi players include Ustad Sultan Khan and Ram Narayan."
+    },
+    "hi": {
+      "display_text": "भारतीय संगीत परंपरा में सरंगी और उसकी स्थिति के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: सरंगी को सही रूप से ताता वाद्य के रूप में वर्गीकृत किया गया है क्योंकि प्राथमिक ध्वनि कंपनशील तारों के माध्यम से उत्पन्न होती है, भले ही उसके गूंजने वाले गुहा पर झिल्ली मौजूद हो।\n\nकथन 2: सरंगी पारंपरिक रूप से कर्नाटकी शास्त्रीय संगीत में प्रमुख साथ देने वाला वाद्य रहा है, जिसे धीरे-धीरे वायलिन ने प्रतिस्थापित किया।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "सरंगी को सही रूप से ताता वाद्य के रूप में वर्गीकृत किया गया है क्योंकि प्राथमिक ध्वनि कंपनशील तारों के माध्यम से उत्पन्न होती है, भले ही उसके गूंजने वाले गुहा पर झिल्ली मौजूद हो।",
+          "verdict": "सही",
+          "reason": "नाट्य शास्त्र में वर्गीकरण का सिद्धांत प्राथमिक ध्वनि उत्पन्न करने की प्रक्रिया पर आधारित है; सरंगी में यह धनुष से बजाए जाने वाले तार हैं, इसलिए झिल्ली होने के बावजूद इसे ताता वाद्य माना जाता है।"
+        },
+        {
+          "statement": "सरंगी पारंपरिक रूप से कर्नाटकी शास्त्रीय संगीत में प्रमुख साथ देने वाला वाद्य रहा है, जिसे धीरे-धीरे वायलिन ने प्रतिस्थापित किया।",
+          "verdict": "गलत",
+          "reason": "सरंगी हिंदुस्तानी शास्त्रीय संगीत (खयाल, ठुमरी, ग़ज़ल परंपराएँ) से जुड़ा है, कर्नाटकी संगीत से नहीं; हिंदुस्तानी साथ देने वाले वाद्य में सरंगी की जगह हारमोनियम ने ली है — और वायलिन स्वयं कर्नाटकी साथ देने वाले वाद्य का केंद्र है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प a (दोनों सही) उन छात्रों को भ्रमित करता है जो जानते हैं कि सरंगी ताता वाद्य है और अस्पष्ट रूप से जानते हैं कि वायलिन ने इसे प्रतिस्थापित किया, बिना संगीत परंपरा निर्दिष्ट किए।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें — सरंगी के धनुष से बजाए जाने वाले तार प्राथमिक ध्वनि स्रोत हैं; गूंजने वाले डिब्बे पर झिल्ली गौण है। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें — सरंगी हिंदुस्तानी (कर्नाटकी नहीं) परंपरा से है; इसे हिंदुस्तानी साथ देने में हारमोनियम ने प्रतिस्थापित किया, जबकि वायलिन कर्नाटकी संगीत में स्वतंत्र रूप से अपनाया गया।",
+        "कथन 2 दो अलग-अलग संगीत परंपराओं को मिलाता है — यह गलत है।",
+        "विकल्प (c) चुनें: कथन 1 सही, कथन 2 गलत।"
+      ],
+      "upsc_trap_explanation": "कथन 2 एक भौगोलिक-स्थानांतरण जाल है। सरंगी के सामने कीबोर्ड/तार वाले प्रतिस्पर्धी वाद्य के कारण उसका पतन एक ज्ञात तथ्य है, लेकिन प्रतिस्पर्धी वाद्य (हारमोनियम) और परंपरा (हिंदुस्तानी) दोनों को बदल दिया गया है। जो छात्र याद करते हैं कि 'सरंगी को किसी अन्य वाद्य ने विस्थापित किया' वे यह नहीं पकड़ पाते कि कथन गलत रूप से कर्नाटकी और वायलिन कहता है। वायलिन वास्तव में कर्नाटकी संगीत में महत्वपूर्ण है — लेकिन एक अपनाया गया सुरम्य वाद्य के रूप में, सरंगी के प्रतिस्थापन के रूप में नहीं।",
+      "final_explanation": "सरंगी एक धनुष से बजाया जाने वाला तार वाद्य है — इसके तार प्राथमिक ध्वनि उत्पन्न करने वाले तत्व हैं, जो इसे नाट्य शास्त्र के ढांचे में ताता वाद्य बनाते हैं। इसके गूंजने वाले डिब्बे पर झिल्ली होने से इसे अवनद्ध वाद्य के रूप में पुनः वर्गीकृत नहीं किया जाता क्योंकि वर्गीकरण का सिद्धांत प्राथमिक ध्वनि उत्पादन तंत्र है।\n\n• कथन 1 — सही: वर्गीकरण तर्क स्पष्ट है — तारों से प्राथमिक ध्वनि = ताता वाद्य। झिल्ली केवल गूंज बढ़ाती है और गौण है।\n• कथन 2 — गलत: सरंगी हिंदुस्तानी वाद्य है (खयाल, ठुमरी, ग़ज़ल), कर्नाटकी नहीं। इसे हिंदुस्तानी साथ देने में हारमोनियम ने धीरे-धीरे विस्थापित किया, वायलिन ने नहीं। वायलिन का उदय कर्नाटकी संगीत में एक अपनाए गए सुरम्य वाद्य के रूप में हुआ।\n\nमूल्यवर्धन:\n• सरंगी का पतन हिंदुस्तानी शास्त्रीय संगीत के लिए एक महत्वपूर्ण क्षति माना जाता है — सरंगी वादक बैठक संस्कृति के अभिन्न अंग थे।\n• सरंगी के मुख्य बजाने वाले तारों के नीचे 35–40 सहानुभूतिपूर्ण तार होते हैं — एक प्रमुख संरचनात्मक विशेषता।\n• प्रसिद्ध सरंगी वादकों में उस्ताद सुल्तान खान और राम नारायण शामिल हैं।"
+    }
+  },
+  {
+    "uuid": "89034c65-dc39-4280-b496-d5163a395e86",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sangita Ratnakara (Sharngadeva) and Its Extension of Natya Shastra Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sangita Ratnakara — authorship and patron",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Sangita Ratnakara, a 13th-century treatise that extended the instrument classification framework of the Natya Shastra and introduced detailed raga taxonomy, was composed by ________ at the court of the Yadava king Singhana.\n\n(a) Abhinavagupta\n(b) Sharngadeva\n(c) Bharata Muni\n(d) Matanga",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because Bharata Muni is the most prominent name in Indian musicology, and students may default to attributing a later text to the same author.",
+      "elimination_logic": [
+        "Eliminate option (a) — Abhinavagupta authored Abhinavabharati (a commentary on Natya Shastra), not Sangita Ratnakara.",
+        "Eliminate option (c) — Bharata Muni is the author of Natya Shastra, not Sangita Ratnakara.",
+        "Eliminate option (d) — Matanga authored Brihaddeshi (on raga classification), not Sangita Ratnakara.",
+        "Select option (b) — Sharngadeva authored Sangita Ratnakara at the court of Yadava king Singhana in the 13th century CE."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap functions at two levels: students may attribute the text to Bharata Muni (most prominent musicologist) or confuse Sharngadeva with Abhinavagupta (who wrote a famous commentary on Natya Shastra). Option (d) adds Matanga as a distractor, who is a legitimate musicologist but authored a different text (Brihaddeshi). Knowing specific author-text pairings is essential here.",
+      "final_explanation": "Sangita Ratnakara ('Jewel Mine of Music') is a landmark 13th-century treatise that expanded upon the foundational framework of Natya Shastra.\n\n• Option (a): Abhinavagupta — Incorrect. He authored the Abhinavabharati, a detailed commentary on the Natya Shastra, not Sangita Ratnakara.\n• Option (b): Sharngadeva — Correct. He composed Sangita Ratnakara at the court of the Yadava king Singhana in the 13th century CE. The text is a bridge between ancient and medieval Indian musicology.\n• Option (c): Bharata Muni — Incorrect. Bharata Muni is the attributed author of Natya Shastra (200 BCE–200 CE), a much earlier text.\n• Option (d): Matanga — Incorrect. Matanga authored Brihaddeshi, an important raga classification text, not Sangita Ratnakara.\n\nValue Addition:\n• Sangita Ratnakara has seven chapters — covering svara, raga, prakirna, prabandha, tala, vadya, and nartana.\n• It is significant for being one of the first texts to consolidate both Hindustani and Carnatic traditions before their divergence.\n• The Yadava dynasty (Singhana's court) was a major patron of Sanskrit learning in the Deccan."
+    },
+    "hi": {
+      "display_text": "संगीत रत्नाकर, 13वीं सदी का वह ग्रंथ जिसने नाट्यशास्त्र के वाद्य वर्गीकरण ढांचे का विस्तार किया और विस्तृत राग वर्गीकरण प्रस्तुत किया, यादव राजा सिंघना के दरबार में ________ द्वारा रचित था।\n\n(a) अभिनवगुप्त\n(b) शारंगदेव\n(c) भरत मुनि\n(d) मतंग",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि भरत मुनि भारतीय संगीतशास्त्र में सबसे प्रमुख नाम हैं, और छात्र स्वाभाविक रूप से बाद के ग्रंथ को उसी लेखक से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटा दें — अभिनवगुप्त ने अभिनवभारती (नाट्यशास्त्र पर टीका) लिखा, न कि संगीत रत्नाकर।",
+        "विकल्प (c) को हटा दें — भरत मुनि नाट्यशास्त्र के लेखक हैं, संगीत रत्नाकर के नहीं।",
+        "विकल्प (d) को हटा दें — मतंग ने बृहद्देशी (राग वर्गीकरण पर) लिखा, संगीत रत्नाकर नहीं।",
+        "विकल्प (b) को चुनें — शारंगदेव ने 13वीं सदी ईस्वी में यादव राजा सिंघना के दरबार में संगीत रत्नाकर की रचना की।"
+      ],
+      "upsc_trap_explanation": "सत्ता-विनिमय (entity-swap) जाल दो स्तरों पर काम करता है: छात्र ग्रंथ को भरत मुनि (सबसे प्रमुख संगीतशास्त्री) से जोड़ सकते हैं या शारंगदेव को अभिनवगुप्त से भ्रमित कर सकते हैं (जिन्होंने नाट्यशास्त्र पर प्रसिद्ध टीका लिखी)। विकल्प (d) में मतंग को भ्रमित करने वाला विकल्प बनाया गया है, जो एक वैध संगीतशास्त्री हैं लेकिन उन्होंने अलग ग्रंथ (बृहद्देशी) लिखा। यहाँ लेखक-ग्रंथ जोड़ी की सटीक जानकारी आवश्यक है।",
+      "final_explanation": "संगीत रत्नाकर ('संगीत का रत्नखदान') 13वीं सदी का एक महत्वपूर्ण ग्रंथ है जिसने नाट्यशास्त्र की मूल संरचना का विस्तार किया।\n\n• विकल्प (a): अभिनवगुप्त — गलत। उन्होंने अभिनवभारती लिखा, जो नाट्यशास्त्र पर विस्तृत टीका है, संगीत रत्नाकर नहीं।\n• विकल्प (b): शारंगदेव — सही। उन्होंने 13वीं सदी में यादव राजा सिंघना के दरबार में संगीत रत्नाकर की रचना की। यह ग्रंथ प्राचीन और मध्यकालीन भारतीय संगीतशास्त्र के बीच सेतु है।\n• विकल्प (c): भरत मुनि — गलत। भरत मुनि नाट्यशास्त्र (200 ईसा पूर्व–200 ईस्वी) के लेखक हैं, जो बहुत पुराना ग्रंथ है।\n• विकल्प (d): मतंग — गलत। मतंग ने बृहद्देशी लिखा, जो राग वर्गीकरण पर महत्वपूर्ण ग्रंथ है, संगीत रत्नाकर नहीं।\n\nमूल्यवर्धन:\n• संगीत रत्नाकर में सात अध्याय हैं — स्वर, राग, प्रकार, प्रबंध, ताल, वाद्य, और नर्तन।\n• यह ग्रंथ हिंदुस्तानी और कर्नाटक दोनों परंपराओं को उनके विभाजन से पहले समेकित करने वाला पहला ग्रंथों में से एक है।\n• यादव वंश (सिंघना का दरबार) दक्कन में संस्कृत शिक्षा का प्रमुख संरक्षक था।"
+    }
+  },
+  {
+    "uuid": "21e14ec3-fbf4-438f-b493-36421ee180a7",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sitar and Sarod: Medieval Origin and Tata Vadya Classification",
+        "Mridangam vs. Pakhawaj vs. Tabla: Classification and Lineage"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sarod origin and lineage — Afghan Rabab connection",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Sitar — derived from Afghan Rabab; structural innovations attributed to Amir Khusro's Mughal court musicians\n(b) Sarod — associated with innovations credited to Amir Khusro; its lineage leads to the Delhi Gharana of tabla\n(c) Afghan Rabab — bowed chordophone forming the structural basis of the modern Sarangi\n(d) Sarod — derived from the Afghan Rabab; associated with the musical lineage of Ustad Allauddin Khan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because Amir Khusro's name is strongly associated with musical innovation in the Delhi Sultanate era, and students who know this may incorrectly credit him with Sarod's development.",
+      "elimination_logic": [
+        "Eliminate option (a) — Sitar's structural antecedent is the Persian Setar combined with Indian Veena; attributing it to Afghan Rabab is an entity-swap error.",
+        "Eliminate option (b) — Amir Khusro is associated with Sitar's folk origin tradition (contested), not Sarod.",
+        "Eliminate option (c) — Rabab is an Afghan plucked instrument; Sarangi is a bowed instrument; confusing the two is a category error.",
+        "Select option (d) — Sarod is derived from the Afghan Rabab and is associated with the lineage of Ustad Allauddin Khan."
+      ],
+      "upsc_trap_explanation": "Options (a) and (b) exploit the Sitar-Sarod confusion. Students who know both are Tata Vadya of medieval origin may mix up their respective antecedents: Sitar traces to Persian Setar + Veena, while Sarod traces to Afghan Rabab. The Amir Khusro association is with Sitar (even that is contested), not Sarod. Option (c) conflates Rabab (plucked) with Sarangi (bowed) — a classification-level error.",
+      "final_explanation": "Sarod and Sitar are both Tata Vadya (plucked chordophones) that emerged during the medieval/Mughal period, absent from the Natya Shastra.\n\n• Option (a): Incorrect — Sitar's antecedents include the Persian Setar and the Indian Veena; Afghan Rabab is Sarod's antecedent, not Sitar's.\n• Option (b): Incorrect — Amir Khusro is associated (by contested folk tradition) with Sitar's development, not Sarod's.\n• Option (c): Incorrect — Afghan Rabab is a plucked instrument (Tata Vadya); Sarangi is a bowed chordophone — they are structurally distinct instruments in different sub-categories.\n• Option (d): Correct — Sarod is derived from the Afghan Rabab and is most prominently associated with the lineage of Ustad Allauddin Khan (of the Maihar Gharana).\n\nValue Addition:\n• Ustad Allauddin Khan was the guru of both Ravi Shankar (Sitar) and Ali Akbar Khan (Sarod).\n• Afghan Rabab has a skin-covered sound chamber; Sarod evolved a metallic fingerboard — a key structural modification.\n• The Rabab itself continues to be played in Afghan classical music traditions."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही मेल खाता है?\n\n(a) सितार — अफगान रबाब से व्युत्पन्न; संरचनात्मक नवाचार अमीर खुसरो के मुगल दरबारी संगीतकारों को attributed\n(b) सरोद — नवाचारों से जुड़ा जो अमीर खुसरो को श्रेय दिए जाते हैं; इसकी परंपरा दिल्ली घराने के तबले से जुड़ी है\n(c) अफगान रबाब — धनुषधारी तार वाला वाद्य जो आधुनिक सारंगी की संरचनात्मक आधारशिला है\n(d) सरोद — अफगान रबाब से व्युत्पन्न; उस्ताद अल्लाउद्दीन खान की संगीत परंपरा से जुड़ा है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रामक है क्योंकि अमीर खुसरो का नाम दिल्ली सल्तनत काल में संगीत नवाचार से गहराई से जुड़ा है, और जो छात्र इसे जानते हैं वे गलत तरीके से सरोद के विकास के लिए उन्हें श्रेय दे सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें — सितार की संरचनात्मक पूर्वज फ़ारसी सेतार और भारतीय वीणा का संयोजन है; इसे अफगान रबाब से जोड़ना एक इकाई-स्थानांतरण त्रुटि है।",
+        "विकल्प (b) को खारिज करें — अमीर खुसरो का संबंध सितार की लोक उत्पत्ति परंपरा (विवादित) से है, न कि सरोद से।",
+        "विकल्प (c) को खारिज करें — रबाब एक अफगान ताना हुआ वाद्य है; सारंगी एक धनुषधारी वाद्य है; दोनों को भ्रमित करना श्रेणीगत त्रुटि है।",
+        "विकल्प (d) को चुनें — सरोद अफगान रबाब से व्युत्पन्न है और उस्ताद अल्लाउद्दीन खान की परंपरा से जुड़ा है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) और (b) सितार-सरोद भ्रम का लाभ उठाते हैं। जो छात्र जानते हैं कि दोनों मध्यकालीन मूल के ताता वाद्य हैं, वे इनके पूर्वजों को गलत समझ सकते हैं: सितार फ़ारसी सेतार + वीणा से आता है, जबकि सरोद अफगान रबाब से। अमीर खुसरो का संबंध सितार से है (यह भी विवादित है), न कि सरोद से। विकल्प (c) रबाब (ताना हुआ) और सारंगी (धनुषधारी) को मिला देता है — यह वर्गीकरण स्तर की त्रुटि है।",
+      "final_explanation": "सरोद और सितार दोनों ताता वाद्य (ताने वाले तार वाले वाद्य) हैं जो मध्यकालीन/मुगल काल में उभरे, नाट्य शास्त्र में नहीं पाए जाते।\n\n• विकल्प (a): गलत — सितार के पूर्वज फ़ारसी सेतार और भारतीय वीणा हैं; अफगान रबाब सरोद का पूर्वज है, सितार का नहीं।\n• विकल्प (b): गलत — अमीर खुसरो का संबंध (विवादित लोक परंपरा द्वारा) सितार के विकास से है, सरोद से नहीं।\n• विकल्प (c): गलत — अफगान रबाब ताना हुआ वाद्य है (ताता वाद्य); सारंगी धनुषधारी तार वाला वाद्य है — ये संरचनात्मक रूप से भिन्न उप-श्रेणियाँ हैं।\n• विकल्प (d): सही — सरोद अफगान रबाब से व्युत्पन्न है और उस्ताद अल्लाउद्दीन खान (मैहर घराना) की परंपरा से प्रमुख रूप से जुड़ा है।\n\nमूल्य संवर्धन:\n• उस्ताद अल्लाउद्दीन खान रवि शंकर (सितार) और अली अकबर खान (सरोद) दोनों के गुरु थे।\n• अफगान रबाब की ध्वनि कक्ष त्वचा से ढकी होती है; सरोद ने धातु की उंगली पट्टी विकसित की — एक महत्वपूर्ण संरचनात्मक परिवर्तन।\n• रबाब स्वयं अफगान शास्त्रीय संगीत परंपराओं में आज भी बजाया जाता है।"
+    }
+  },
+  {
+    "uuid": "879a265b-7117-47be-b2d0-e8b7b1197147",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Hornbostel-Sachs vs. Natya Shastra Classification: Comparison and Contrast",
+        "Chaturvidha Vadya: The Four-Fold Classification System"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "conflation",
+      "concept_anchor": "Ghana Vadya corresponds to Idiophone, not Membranophone",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements comparing the Natya Shastra's Chaturvidha Vadya system with the Hornbostel-Sachs classification:\n\n1. In the Hornbostel-Sachs system, the category corresponding most closely to Ghana Vadya of the Natya Shastra is Membranophone.\n2. The Hornbostel-Sachs system (1914) includes a fifth category — Electrophone — that has no parallel in the Natya Shastra's four-fold classification.\n3. Both the Natya Shastra and the Hornbostel-Sachs system classify instruments based on their primary sound-producing mechanism rather than the material of construction.\n\nWhich of the above statements is/are correct?\n\n(a) 2 and 3 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the Hornbostel-Sachs system, the category corresponding most closely to Ghana Vadya of the Natya Shastra is Membranophone.",
+          "verdict": "Incorrect",
+          "reason": "Ghana Vadya corresponds to Idiophone (solid, self-sounding instruments), not Membranophone. Membranophone corresponds to Avanaddha Vadya."
+        },
+        {
+          "statement": "The Hornbostel-Sachs system (1914) includes a fifth category — Electrophone — that has no parallel in the Natya Shastra's four-fold classification.",
+          "verdict": "Correct",
+          "reason": "The Natya Shastra is an ancient text with no category for electronically produced sound; Hornbostel-Sachs added Electrophone in the 20th century for electronic instruments."
+        },
+        {
+          "statement": "Both the Natya Shastra and the Hornbostel-Sachs system classify instruments based on their primary sound-producing mechanism rather than the material of construction.",
+          "verdict": "Correct",
+          "reason": "Both systems use acoustic/mechanistic criteria — how sound is produced (strings, membrane, solid body, air) — not what the instrument is made of (wood, metal, clay)."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is deceptive because statements 2 and 3 are both correct, tempting students who do not precisely know the Ghana Vadya–Idiophone correspondence to accept Statement 1 as well.",
+      "elimination_logic": [
+        "Check Statement 1 — Ghana Vadya is solid/self-sounding = Idiophone; Membranophone = Avanaddha Vadya. Statement 1 is incorrect.",
+        "Confirm Statement 2 — Hornbostel-Sachs has 5 categories; Electrophone is the extra one absent in Natya Shastra.",
+        "Confirm Statement 3 — Both systems use mechanism-based, not material-based, classification.",
+        "Select option (a): Statements 2 and 3 only are correct."
+      ],
+      "upsc_trap_explanation": "Statement 1 is the signature trap of this topic: Ghana (solid) vs. Avanaddha (membrane) confusion. Students who loosely remember that 'Avanaddha has something to do with covering' and 'Ghana has something to do with metal instruments' may incorrectly map Ghana to Membranophone because membranes 'cover' a drum and metal cymbals feel like a separate solid category. Precision in knowing that Ghana = Idiophone and Avanaddha = Membranophone is the discriminating knowledge.",
+      "final_explanation": "Comparing the Natya Shastra's Chaturvidha Vadya system with Hornbostel-Sachs reveals elegant parallels alongside one important structural difference.\n\n• Statement 1 — Incorrect: Ghana Vadya (solid, self-sounding) corresponds to Idiophone, not Membranophone. Membranophone corresponds to Avanaddha Vadya. This reversal is the most common error in comparative musicology questions.\n• Statement 2 — Correct: Hornbostel-Sachs has five categories; Electrophone (electronic instruments) is the additional one with no ancient Indian equivalent.\n• Statement 3 — Correct: Both systems classify by mechanism: Tata/Chordophone (strings), Avanaddha/Membranophone (membrane), Ghana/Idiophone (solid body), Sushira/Aerophone (air column).\n\nValue Addition:\n• Hornbostel-Sachs was developed in 1914 by German ethnomusicologists Erich von Hornbostel and Curt Sachs.\n• The Electrophone category was not in the original 1914 publication — it was added later to accommodate electronic instruments.\n• Ghana Vadya being the 'oldest' category reflects the fact that solid percussion (stones, sticks) preceded crafted instruments in human prehistory."
+    },
+    "hi": {
+      "display_text": "नाट्य शास्त्र के चतुर्विध वाद्य प्रणाली की हॉर्नबॉस्टेल-सैक्स वर्गीकरण से तुलना करते हुए निम्नलिखित कथनों पर विचार करें:\n\n1. हॉर्नबॉस्टेल-सैक्स प्रणाली में, नाट्य शास्त्र के घन वाद्य के सबसे निकटतम समकक्ष वर्ग मेम्ब्रेनोफोन है।\n2. हॉर्नबॉस्टेल-सैक्स प्रणाली (1914) में पाँचवाँ वर्ग — इलेक्ट्रोफोन — शामिल है, जिसका नाट्य शास्त्र के चतुर्विध वर्गीकरण में कोई समकक्ष नहीं है।\n3. नाट्य शास्त्र और हॉर्नबॉस्टेल-सैक्स दोनों प्रणालियाँ वाद्यों को उनके प्राथमिक ध्वनि-उत्पादक तंत्र के आधार पर वर्गीकृत करती हैं, न कि निर्माण सामग्री के आधार पर।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2 और 3\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the Hornbostel-Sachs system, the category corresponding most closely to Ghana Vadya of the Natya Shastra is Membranophone.",
+          "verdict": "गलत",
+          "reason": "घन वाद्य का संबंध इडियोफोन (ठोस, स्वयं-ध्वनि उत्पन्न करने वाले वाद्य) से है, मेम्ब्रेनोफोन से नहीं। मेम्ब्रेनोफोन का संबंध अवनद्ध वाद्य से है।"
+        },
+        {
+          "statement": "The Hornbostel-Sachs system (1914) includes a fifth category — Electrophone — that has no parallel in the Natya Shastra's four-fold classification.",
+          "verdict": "सही है",
+          "reason": "नाट्य शास्त्र एक प्राचीन ग्रंथ है जिसमें इलेक्ट्रॉनिक ध्वनि के लिए कोई वर्ग नहीं है; हॉर्नबॉस्टेल-सैक्स ने 20वीं सदी में इलेक्ट्रोफोन को इलेक्ट्रॉनिक वाद्यों के लिए जोड़ा।"
+        },
+        {
+          "statement": "Both the Natya Shastra and the Hornbostel-Sachs system classify instruments based on their primary sound-producing mechanism rather than the material of construction.",
+          "verdict": "सही है",
+          "reason": "दोनों प्रणालियाँ ध्वनि उत्पन्न करने की प्रक्रिया (तार, झिल्ली, ठोस शरीर, वायु) के आधार पर वर्गीकरण करती हैं, न कि वाद्य के निर्माण सामग्री (लकड़ी, धातु, मिट्टी) के आधार पर।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन) भ्रमित करने वाला है क्योंकि कथन 2 और 3 दोनों सही हैं, जो उन छात्रों को लुभाता है जो घन वाद्य–इडियोफोन संबंध को ठीक से नहीं जानते और कथन 1 को भी स्वीकार कर लेते हैं।",
+      "elimination_logic": [
+        "कथन 1 की जाँच करें — घन वाद्य ठोस/स्वयं-ध्वनि उत्पन्न करने वाला है = इडियोफोन; मेम्ब्रेनोफोन = अवनद्ध वाद्य। कथन 1 गलत है।",
+        "कथन 2 की पुष्टि करें — हॉर्नबॉस्टेल-सैक्स के पाँच वर्ग हैं; इलेक्ट्रोफोन वह अतिरिक्त वर्ग है जो नाट्य शास्त्र में नहीं है।",
+        "कथन 3 की पुष्टि करें — दोनों प्रणालियाँ यांत्रिक आधार पर वर्गीकरण करती हैं, न कि सामग्री के आधार पर।",
+        "विकल्प (a) चुनें: केवल कथन 2 और 3 सही हैं।"
+      ],
+      "upsc_trap_explanation": "कथन 1 इस विषय का प्रमुख जाल है: घन (ठोस) बनाम अवनद्ध (झिल्ली) भ्रम। जो छात्र ढीले-ढाले तौर पर याद करते हैं कि 'अवनद्ध का संबंध आवरण से है' और 'घन का संबंध धातु वाद्यों से है', वे गलत तरीके से घन को मेम्ब्रेनोफोन से जोड़ सकते हैं क्योंकि झिल्ली ड्रम को 'आवरण' करती है और धातु के झांझ ठोस श्रेणी लगते हैं। घन = इडियोफोन और अवनद्ध = मेम्ब्रेनोफोन की सटीक समझ आवश्यक है।",
+      "final_explanation": "नाट्य शास्त्र के चतुर्विध वाद्य प्रणाली की हॉर्नबॉस्टेल-सैक्स वर्गीकरण से तुलना करने पर सुंदर समानताएँ और एक महत्वपूर्ण संरचनात्मक भिन्नता सामने आती है।\n\n• कथन 1 — गलत: घन वाद्य (ठोस, स्वयं-ध्वनि उत्पन्न करने वाला) इडियोफोन से संबंधित है, मेम्ब्रेनोफोन से नहीं। मेम्ब्रेनोफोन अवनद्ध वाद्य से संबंधित है। यह उलटफेर संगीतशास्त्र के तुलनात्मक प्रश्नों में सबसे सामान्य त्रुटि है।\n• कथन 2 — सही: हॉर्नबॉस्टेल-सैक्स के पाँच वर्ग हैं; इलेक्ट्रोफोन (इलेक्ट्रॉनिक वाद्य) वह अतिरिक्त वर्ग है जिसका प्राचीन भारतीय समकक्ष नहीं है।\n• कथन 3 — सही: दोनों प्रणालियाँ यांत्रिकी के आधार पर वर्गीकरण करती हैं: तंतुवाद्य/कोर्डोफोन (तार), अवनद्ध/मेम्ब्रेनोफोन (झिल्ली), घन/इडियोफोन (ठोस शरीर), सुषिर/एरोफोन (वायु स्तंभ)।\n\nमूल्य संवर्धन:\n• हॉर्नबॉस्टेल-सैक्स का विकास 1914 में जर्मन नृसंगीतज्ञ एरिच वॉन हॉर्नबॉस्टेल और कर्ट सैक्स ने किया था।\n• इलेक्ट्रोफोन वर्ग मूल 1914 प्रकाशन में नहीं था — इसे बाद में इलेक्ट्रॉनिक वाद्यों के लिए जोड़ा गया।\n• घन वाद्य को 'सबसे पुराना' वर्ग माना जाता है क्योंकि ठोस पर्कशन (पत्थर, छड़ें) मानव पूर्वइतिहास में निर्मित वाद्यों से पहले थे।"
+    }
+  },
+  {
+    "uuid": "82761638-676f-4e4c-ac46-e26c0097ff64",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Nadaswaram and Tavil: Sacred Pair in Carnatic Tradition",
+        "Bansuri and Shehnai: Sushira Vadya in Classical and Folk Contexts"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Nadaswaram — loudest non-brass acoustic woodwind",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following instruments is distinguished in organology as the world's loudest non-brass acoustic woodwind instrument, and belongs to the Sushira Vadya category in the Natya Shastra classification system?\n\n(a) Bansuri\n(b) Shehnai\n(c) Nadaswaram\n(d) Pungi",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because Shehnai is the North Indian counterpart of Nadaswaram; students who know Shehnai is the 'famous' ceremonial reed instrument may attribute the 'loudest' distinction to Shehnai rather than Nadaswaram.",
+      "elimination_logic": [
+        "Eliminate option (a) — Bansuri is an edge-blown flute; it is notably quieter than double-reed instruments.",
+        "Eliminate option (b) — Shehnai is a double-reed aerophone but is not documented as the world's loudest non-brass acoustic woodwind.",
+        "Eliminate option (d) — Pungi is a folk reed instrument of far lower volume than Nadaswaram.",
+        "Select option (c) — Nadaswaram (South India) is distinguished as the world's loudest non-brass acoustic woodwind instrument."
+      ],
+      "upsc_trap_explanation": "Students who associate Shehnai with Ustad Bismillah Khan and its ceremonial prominence may assume it holds the 'loudest' distinction. Nadaswaram, though less prominent in popular cultural discourse, is factually the louder instrument — capable of being heard over large outdoor ceremonial spaces. The geographic swap (North India's Shehnai vs. South India's Nadaswaram) is the core trap.",
+      "final_explanation": "Nadaswaram is a double-reed aerophone (Sushira Vadya) from the Carnatic tradition, always paired with the Tavil (Avanaddha Vadya) in what is called 'Mangala Vadya' — the auspicious pair used in temple festivals and weddings.\n\n• Option (a) Bansuri: Incorrect — It is an edge-blown transverse flute; acoustically much softer than reed instruments.\n• Option (b) Shehnai: Incorrect — The North Indian ceremonial reed instrument, associated with Ustad Bismillah Khan and Varanasi, is not the world's loudest non-brass acoustic woodwind.\n• Option (c) Nadaswaram: Correct — It is distinguished as the world's loudest non-brass acoustic woodwind instrument, capable of projecting sound across large temple courtyards without amplification.\n• Option (d) Pungi: Incorrect — A folk reed instrument with far lower acoustic projection.\n\nValue Addition:\n• Nadaswaram and Tavil are collectively called 'Periya Melam' in Tamil tradition.\n• Both are classified as 'Mangala Vadya' — played at auspicious occasions; traditionally not played at funerals.\n• Shehnai's North Indian role (ceremonial reed + percussion pair) is structurally analogous to Nadaswaram's Carnatic role."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा वाद्य यंत्र अंगविज्ञान (organology) में विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड वाद्य माना जाता है, और नाट्य शास्त्र वर्गीकरण प्रणाली में सुषिर वाद्य श्रेणी में आता है?\n\n(a) बांसुरी\n(b) शहनाई\n(c) नादस्वरम\n(d) पुंगी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रमित करने वाला है क्योंकि शहनाई नादस्वरम का उत्तर भारतीय समकक्ष है; जो छात्र जानते हैं कि शहनाई 'प्रसिद्ध' समारोहिक रीड वाद्य है, वे 'सबसे तेज़' की विशेषता शहनाई को दे सकते हैं नादस्वरम के बजाय।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं — बांसुरी एक किनारे से बजने वाला बांसुरी है; यह डबल-रीड वाद्यों की तुलना में स्पष्ट रूप से कम आवाज़ करता है।",
+        "विकल्प (b) को हटाएं — शहनाई एक डबल-रीड एरोफोन है लेकिन इसे विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड वाद्य नहीं माना जाता।",
+        "विकल्प (d) को हटाएं — पुंगी एक लोक रीड वाद्य है जिसकी आवाज़ नादस्वरम की तुलना में बहुत कम है।",
+        "विकल्प (c) चुनें — नादस्वरम (दक्षिण भारत) को विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड वाद्य माना जाता है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र शहनाई को उस्ताद बिस्मिल्लाह खान और इसके समारोहिक महत्व से जोड़ते हैं, वे मान सकते हैं कि यह 'सबसे तेज़' है। नादस्वरम, जो लोकप्रिय सांस्कृतिक चर्चा में कम प्रमुख है, तथ्यात्मक रूप से अधिक तेज़ वाद्य है — जो बड़े बाहरी समारोहिक स्थानों में सुना जा सकता है। भौगोलिक स्वैप (उत्तर भारत की शहनाई बनाम दक्षिण भारत की नादस्वरम) मुख्य जाल है।",
+      "final_explanation": "नादस्वरम एक डबल-रीड एरोफोन (सुषिर वाद्य) है जो कर्नाटक परंपरा से है, और हमेशा तविल (अवनद्ध वाद्य) के साथ जोड़ा जाता है जिसे 'मंगल वाद्य' कहा जाता है — जो मंदिर उत्सवों और शादियों में उपयोग होता है।\n\n• विकल्प (a) बांसुरी: गलत — यह एक किनारे से बजने वाली पार्श्व बांसुरी है; ध्वनिक रूप से रीड वाद्यों की तुलना में बहुत कम आवाज़ करती है।\n• विकल्प (b) शहनाई: गलत — उत्तर भारतीय समारोहिक रीड वाद्य, जो उस्ताद बिस्मिल्लाह खान और वाराणसी से जुड़ा है, विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड नहीं है।\n• विकल्प (c) नादस्वरम: सही — इसे विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड वाद्य माना जाता है, जो बिना एम्पलीफिकेशन के बड़े मंदिर प्रांगणों में ध्वनि प्रसारित कर सकता है।\n• विकल्प (d) पुंगी: गलत — एक लोक रीड वाद्य है जिसकी ध्वनिक क्षमता बहुत कम है।\n\nमूल्य संवर्धन:\n• नादस्वरम और तविल को तमिल परंपरा में सामूहिक रूप से 'पेरिया मेलम' कहा जाता है।\n• दोनों को 'मंगल वाद्य' के रूप में वर्गीकृत किया गया है — जो शुभ अवसरों पर बजाए जाते हैं; पारंपरिक रूप से अंतिम संस्कारों में नहीं बजाए जाते।\n• शहनाई की उत्तर भारतीय भूमिका (समारोहिक रीड + ताल वाद्य जोड़ी) संरचनात्मक रूप से नादस्वरम की कर्नाटक भूमिका के समान है।"
+    }
+  },
+  {
+    "uuid": "c4769d0e-8107-4f3e-8845-ff5397e2c115",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Ektar, Dotara, and Ektara: Folk Tata Vadya and Their Distinction from Classical Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Ektara/Dotara — Tata Vadya in folk tradition; Baul UNESCO heritage",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about folk Tata Vadya instruments and their associated traditions:\n\n1. Ektara and Dotara are classified as Tata Vadya, demonstrating that the Natya Shastra's classification framework applies to both classical and folk instruments.\n2. The Baul musical tradition of Bengal, which uses the Ektara as a primary instrument, has been recognised by UNESCO as an intangible cultural heritage.\n3. Dotara is a bowed chordophone used exclusively in the folk music of Bihar and Uttar Pradesh.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Ektara and Dotara are classified as Tata Vadya, demonstrating that the Natya Shastra's classification framework applies to both classical and folk instruments.",
+          "verdict": "Correct",
+          "reason": "Both are plucked chordophones (one-string and two-string respectively) and are correctly classified as Tata Vadya; the classification system is mechanism-based and applies regardless of folk or classical context."
+        },
+        {
+          "statement": "The Baul musical tradition of Bengal, which uses the Ektara as a primary instrument, has been recognised by UNESCO as an intangible cultural heritage.",
+          "verdict": "Correct",
+          "reason": "The Baul tradition was inscribed on UNESCO's Representative List of Intangible Cultural Heritage of Humanity in 2008 (originally proclaimed in 2005)."
+        },
+        {
+          "statement": "Dotara is a bowed chordophone used exclusively in the folk music of Bihar and Uttar Pradesh.",
+          "verdict": "Incorrect",
+          "reason": "Dotara is a plucked (not bowed) chordophone; it is associated primarily with the Baul tradition of Bengal, not exclusively with Bihar/UP."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) tempts students who know Statements 1 and 2 are correct and who do not know precisely that Dotara is plucked (not bowed) and is Bengali/Baul-associated.",
+      "elimination_logic": [
+        "Confirm Statement 1 — Ektara (1 string) and Dotara (2 strings) are plucked = Tata Vadya; the category is mechanism-based, covering folk instruments too.",
+        "Confirm Statement 2 — Baul tradition has UNESCO ICH recognition (proclaimed 2005, inscribed 2008).",
+        "Reject Statement 3 — Dotara is plucked, not bowed; and it is primarily Baul/Bengali, not exclusively Bihar/UP.",
+        "Select option (b): Statements 1 and 2 only are correct."
+      ],
+      "upsc_trap_explanation": "Statement 3 contains a double error: 'bowed' (wrong — Dotara is plucked) and 'exclusively Bihar/UP' (wrong — it is primarily Baul/Bengali). Students may correctly reject the geographic claim but accept 'bowed' as plausible if they confuse Dotara with Sarangi. The scope-extension 'exclusively' is the semantic trap that should trigger suspicion even without precise knowledge.",
+      "final_explanation": "The Ektara and Dotara are folk chordophones of Bengal illustrating that the Natya Shastra's classification is mechanism-based and covers folk instruments equally.\n\n• Statement 1 — Correct: Ektara (one string) and Dotara (two strings) are plucked chordophones → Tata Vadya. The classification does not discriminate between classical and folk instruments.\n• Statement 2 — Correct: The Baul singing tradition of Bengal was proclaimed a UNESCO Masterpiece of Oral and Intangible Heritage in 2005 and inscribed in 2008.\n• Statement 3 — Incorrect: Dotara is a plucked instrument, not bowed; it is central to Baul music in Bengal, not confined to Bihar/UP.\n\nValue Addition:\n• Baul songs combine elements of Vaishnavism, Sufism, and Tantra — making the tradition eclectic and syncretic.\n• Ektara literally means 'one string' (ek = one, tara = string); Dotara = two strings.\n• The Baul tradition was championed globally by Rabindranath Tagore, who incorporated Baul elements into his Rabindra Sangeet."
+    },
+    "hi": {
+      "display_text": "लोक ताना वाद्य वाद्यों और उनसे जुड़ी परंपराओं के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. एकतारा और डोटारा को ताना वाद्य के रूप में वर्गीकृत किया गया है, जो दर्शाता है कि नाट्य शास्त्र का वर्गीकरण ढांचा शास्त्रीय और लोक दोनों वाद्यों पर लागू होता है।\n2. बंगाल की बाउल संगीत परंपरा, जो एकतारा को मुख्य वाद्य के रूप में उपयोग करती है, को यूनेस्को द्वारा अमूर्त सांस्कृतिक विरासत के रूप में मान्यता प्राप्त है।\n3. डोटारा एक धनुष से बजाया जाने वाला ताना वाद्य है जो केवल बिहार और उत्तर प्रदेश के लोक संगीत में उपयोग होता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Ektara and Dotara are classified as Tata Vadya, demonstrating that the Natya Shastra's classification framework applies to both classical and folk instruments.",
+          "verdict": "सही है",
+          "reason": "दोनों ताना वाद्य (एक-तार और दो-तार क्रमशः) हैं और इन्हें सही ढंग से ताना वाद्य के रूप में वर्गीकृत किया गया है; वर्गीकरण प्रणाली यांत्रिक आधार पर है और लोक या शास्त्रीय संदर्भ से स्वतंत्र है।"
+        },
+        {
+          "statement": "The Baul musical tradition of Bengal, which uses the Ektara as a primary instrument, has been recognised by UNESCO as an intangible cultural heritage.",
+          "verdict": "सही है",
+          "reason": "बाउल परंपरा को 2008 में यूनेस्को की अमूर्त सांस्कृतिक विरासत की प्रतिनिधि सूची में शामिल किया गया था (मूल रूप से 2005 में घोषित)।"
+        },
+        {
+          "statement": "Dotara is a bowed chordophone used exclusively in the folk music of Bihar and Uttar Pradesh.",
+          "verdict": "गलत है",
+          "reason": "डोटारा एक ताना वाद्य है (धनुष से नहीं बजाया जाता); यह मुख्यतः बंगाल की बाउल परंपरा से जुड़ा है, न कि केवल बिहार/उत्तर प्रदेश से।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (तीनों) उन छात्रों को भ्रमित करता है जो जानते हैं कि कथन 1 और 2 सही हैं और जो यह ठीक से नहीं जानते कि डोटारा ताना वाद्य है (धनुष से नहीं बजाया जाता) और यह बंगाली/बाउल से जुड़ा है।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें — एकतारा (1 तार) और डोटारा (2 तार) ताना वाद्य हैं; यह वर्गीकरण यांत्रिक आधार पर है, जो लोक वाद्यों को भी कवर करता है।",
+        "कथन 2 की पुष्टि करें — बाउल परंपरा को यूनेस्को की अमूर्त सांस्कृतिक विरासत की मान्यता प्राप्त है (2005 में घोषित, 2008 में सूचीबद्ध)।",
+        "कथन 3 को अस्वीकार करें — डोटारा ताना वाद्य है, धनुष से नहीं बजाया जाता; और यह मुख्यतः बाउल/बंगाली है, न कि केवल बिहार/उत्तर प्रदेश।",
+        "विकल्प (b) चुनें: केवल कथन 1 और 2 सही हैं।"
+      ],
+      "upsc_trap_explanation": "कथन 3 में दो त्रुटियाँ हैं: 'धनुष से बजाया जाने वाला' (गलत — डोटारा ताना वाद्य है) और 'केवल बिहार/उत्तर प्रदेश' (गलत — यह मुख्यतः बाउल/बंगाली है)। छात्र भौगोलिक दावे को सही ढंग से अस्वीकार कर सकते हैं लेकिन यदि वे डोटारा को सारंगी से भ्रमित करते हैं तो 'धनुष से बजाया जाना' को सही मान सकते हैं। 'केवल' शब्द का दायरा-विस्तार एक अर्थगत जाल है जो बिना सटीक ज्ञान के भी संदेह उत्पन्न करना चाहिए।",
+      "final_explanation": "एकतारा और डोटारा बंगाल के लोक ताना वाद्य हैं जो दर्शाते हैं कि नाट्य शास्त्र का वर्गीकरण यांत्रिक आधार पर है और लोक वाद्यों को समान रूप से कवर करता है।\n\n• कथन 1 — सही: एकतारा (एक तार) और डोटारा (दो तार) ताना वाद्य हैं → ताना वाद्य। वर्गीकरण शास्त्रीय और लोक वाद्यों में भेद नहीं करता।\n• कथन 2 — सही: बंगाल की बाउल गायन परंपरा को 2005 में यूनेस्को की मौखिक और अमूर्त विरासत की उत्कृष्ट कृति घोषित किया गया और 2008 में सूचीबद्ध किया गया।\n• कथन 3 — गलत: डोटारा ताना वाद्य है, धनुष से नहीं बजाया जाता; यह बंगाल के बाउल संगीत का केंद्र है, न कि केवल बिहार/उत्तर प्रदेश तक सीमित।\n\nमूल्य संवर्धन:\n• बाउल गीत वैष्णववाद, सूफीवाद और तंत्र के तत्वों को मिलाते हैं — जिससे यह परंपरा विविधतापूर्ण और समन्वयी बनती है।\n• एकतारा का शाब्दिक अर्थ है 'एक तार' (एक = एक, तारा = तार); डोटारा = दो तार।\n• बाउल परंपरा को विश्व स्तर पर रवींद्रनाथ टैगोर ने बढ़ावा दिया, जिन्होंने अपने रवींद्र संगीत में बाउल तत्वों को शामिल किया।"
+    }
+  },
+  {
+    "uuid": "eb891ce6-a517-47ce-97ae-1d332bc817a1",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Avanaddha Vadya (Membranophones): Percussion Instruments with Membrane",
+        "Ghana Vadya (Idiophones): Solid/Self-Sounding Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "conflation",
+      "concept_anchor": "Kanjira and Ghatam — correct Vadya classification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the classification of Carnatic percussion instruments:\n\n1. Kanjira, a frame drum with a single lizard-skin membrane, is classified as Ghana Vadya because it is associated with Carnatic music alongside Ghatam.\n2. Ghatam, a clay pot struck by the palms and fingers, is classified as Avanaddha Vadya because its hollow resonant body resembles a covered drum.\n3. The primary distinguishing criterion between Avanaddha Vadya and Ghana Vadya is whether a stretched membrane is the primary sound-producing element.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Kanjira, a frame drum with a single lizard-skin membrane, is classified as Ghana Vadya because it is associated with Carnatic music alongside Ghatam.",
+          "verdict": "Incorrect",
+          "reason": "Kanjira has a stretched membrane (lizard skin) and is therefore correctly classified as Avanaddha Vadya (membranophone), not Ghana Vadya. The association with Ghatam in Carnatic music does not determine its category."
+        },
+        {
+          "statement": "Ghatam, a clay pot struck by the palms and fingers, is classified as Avanaddha Vadya because its hollow resonant body resembles a covered drum.",
+          "verdict": "Incorrect",
+          "reason": "Ghatam has no membrane — the clay pot itself vibrates; it is a self-sounding idiophone and is correctly classified as Ghana Vadya, not Avanaddha Vadya."
+        },
+        {
+          "statement": "The primary distinguishing criterion between Avanaddha Vadya and Ghana Vadya is whether a stretched membrane is the primary sound-producing element.",
+          "verdict": "Correct",
+          "reason": "Avanaddha Vadya requires a stretched membrane for primary sound production; Ghana Vadya produces sound from the solid body itself — the membrane criterion is the definitive distinguishing factor."
+        }
+      ],
+      "strong_distractor": "c — Option c (Statements 2 and 3) is deceptive because students may correctly identify Statement 2 as incorrect (Ghatam is Ghana) but then incorrectly mark Statement 1 as correct (not realising Kanjira belongs to Avanaddha due to its membrane).",
+      "elimination_logic": [
+        "Check Statement 1 — Kanjira has a lizard-skin membrane → Avanaddha Vadya; calling it Ghana Vadya is incorrect; Statement 1 is NOT correct.",
+        "Check Statement 2 — Ghatam has no membrane; hollow clay body vibrates → Ghana Vadya (idiophone); calling it Avanaddha is incorrect; Statement 2 is NOT correct.",
+        "Check Statement 3 — The membrane criterion is the correct distinguishing principle; Statement 3 is correct (not 'not correct').",
+        "Select option (b): Statements 1 and 2 are NOT correct."
+      ],
+      "upsc_trap_explanation": "The trap exploits guilt by association: because Kanjira and Ghatam both appear together in Carnatic percussion ensembles ('Kanjira-Ghatam' pairing), students may assume they belong to the same Vadya category. In fact, they belong to different categories — Kanjira (membrane) = Avanaddha; Ghatam (no membrane, clay body) = Ghana. This is a precision test of the membrane criterion.",
+      "final_explanation": "The Avanaddha vs. Ghana Vadya distinction hinges entirely on the presence or absence of a stretched membrane as the primary sound-producing element.\n\n• Statement 1 — NOT Correct: Kanjira is a frame drum with a stretched lizard-skin membrane. This makes it Avanaddha Vadya, not Ghana Vadya. Its Carnatic co-appearance with Ghatam is irrelevant to classification.\n• Statement 2 — NOT Correct: Ghatam is a solid clay pot with no membrane. The player strikes the clay body itself. This makes it Ghana Vadya (idiophone). Its hollow body is not a membrane-covered resonating chamber.\n• Statement 3 — Correct: The membrane test is definitive — Avanaddha Vadya requires membrane; Ghana Vadya requires solid self-sounding body.\n\nValue Addition:\n• Vikku Vinayakram is the most celebrated Ghatam exponent; his collaborations with Zakir Hussain popularised both instruments globally.\n• Kanjira is sometimes compared to a tambourine but lacks jingles in its traditional form.\n• In Carnatic thani avartanam (percussion solo), Mridangam, Ghatam, Kanjira, and Morsing typically all feature."
+    },
+    "hi": {
+      "display_text": "कर्नाटकी ताल वाद्यों के वर्गीकरण के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. कंजीरा, एक फ्रेम ड्रम जिसमें एक तनी हुई छिपकली की झिल्ली होती है, इसे घना वाद्य के रूप में वर्गीकृत किया जाता है क्योंकि यह घटम के साथ कर्नाटकी संगीत में जुड़ा होता है।\n2. घटम, एक मिट्टी का बर्तन जिसे हथेलियों और उंगलियों से मारा जाता है, इसे अवनद्ध वाद्य के रूप में वर्गीकृत किया जाता है क्योंकि इसका खोखला गूंजने वाला शरीर एक ढके हुए ड्रम जैसा दिखता है।\n3. अवनद्ध वाद्य और घना वाद्य के बीच प्राथमिक भेदभाव मापदंड यह है कि क्या तनी हुई झिल्ली प्राथमिक ध्वनि उत्पन्न करने वाला तत्व है।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Kanjira, a frame drum with a single lizard-skin membrane, is classified as Ghana Vadya because it is associated with Carnatic music alongside Ghatam.",
+          "verdict": "गलत",
+          "reason": "कंजीरा में एक तनी हुई छिपकली की खाल की झिल्ली होती है और इसलिए इसे सही रूप से अवनद्ध वाद्य (झिल्ली वाद्य) के रूप में वर्गीकृत किया जाता है, न कि घना वाद्य के रूप में। कर्नाटकी संगीत में घटम के साथ इसका संबंध इसकी श्रेणी निर्धारित नहीं करता।"
+        },
+        {
+          "statement": "Ghatam, a clay pot struck by the palms and fingers, is classified as Avanaddha Vadya because its hollow resonant body resembles a covered drum.",
+          "verdict": "गलत",
+          "reason": "घटम में कोई झिल्ली नहीं होती — मिट्टी का बर्तन स्वयं कंपन करता है; यह एक स्व-ध्वनित इडियोफोन (घना वाद्य) है और इसे सही रूप से अवनद्ध वाद्य के रूप में वर्गीकृत नहीं किया जाता।"
+        },
+        {
+          "statement": "The primary distinguishing criterion between Avanaddha Vadya and Ghana Vadya is whether a stretched membrane is the primary sound-producing element.",
+          "verdict": "सही",
+          "reason": "अवनद्ध वाद्य में प्राथमिक ध्वनि उत्पादन के लिए तनी हुई झिल्ली आवश्यक होती है; घना वाद्य में ध्वनि ठोस शरीर से उत्पन्न होती है — झिल्ली का मापदंड निर्णायक भेदभाव कारक है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c (कथन 2 और 3) भ्रमित करने वाला है क्योंकि छात्र कथन 2 को गलत (घटम घना है) सही ढंग से पहचान सकते हैं लेकिन फिर कथन 1 को सही चिह्नित कर देते हैं (यह नहीं समझते कि कंजीरा झिल्ली के कारण अवनद्ध वाद्य है)।",
+      "elimination_logic": [
+        "कथन 1 जांचें — कंजीरा में छिपकली की खाल की झिल्ली है → अवनद्ध वाद्य; इसे घना वाद्य कहना गलत है; कथन 1 सही नहीं है।",
+        "कथन 2 जांचें — घटम में झिल्ली नहीं है; खोखला मिट्टी का शरीर कंपन करता है → घना वाद्य (इडियोफोन); इसे अवनद्ध कहना गलत है; कथन 2 सही नहीं है।",
+        "कथन 3 जांचें — झिल्ली का मापदंड सही भेदभाव सिद्धांत है; कथन 3 सही है (गलत नहीं)।",
+        "विकल्प (b) चुनें: कथन 1 और 2 सही नहीं हैं।"
+      ],
+      "upsc_trap_explanation": "यह जालसाजी संघ के कारण दोषारोपण का उपयोग करता है: क्योंकि कंजीरा और घटम दोनों कर्नाटकी ताल वाद्य समूहों में साथ आते हैं ('कंजीरा-घटम' जोड़ी), छात्र मान सकते हैं कि वे एक ही वाद्य श्रेणी के हैं। वास्तव में, वे अलग श्रेणियों के हैं — कंजीरा (झिल्ली) = अवनद्ध; घटम (झिल्ली नहीं, मिट्टी का शरीर) = घना। यह झिल्ली के मापदंड की सटीकता की परीक्षा है।",
+      "final_explanation": "अवनद्ध वाद्य और घना वाद्य के बीच का भेद पूरी तरह से प्राथमिक ध्वनि उत्पन्न करने वाले तनी हुई झिल्ली की उपस्थिति या अनुपस्थिति पर निर्भर करता है।\n\n• कथन 1 — सही नहीं: कंजीरा एक फ्रेम ड्रम है जिसमें तनी हुई छिपकली की झिल्ली होती है। यह इसे अवनद्ध वाद्य बनाता है, घना वाद्य नहीं। इसका कर्नाटकी संगीत में घटम के साथ होना वर्गीकरण के लिए अप्रासंगिक है।\n• कथन 2 — सही नहीं: घटम एक ठोस मिट्टी का बर्तन है जिसमें कोई झिल्ली नहीं होती। वादक मिट्टी के शरीर को ही बजाता है। यह इसे घना वाद्य (इडियोफोन) बनाता है। इसका खोखला शरीर झिल्ली से ढके हुए गूंजने वाले कक्ष जैसा नहीं है।\n• कथन 3 — सही: झिल्ली परीक्षण निर्णायक है — अवनद्ध वाद्य में झिल्ली आवश्यक है; घना वाद्य में ठोस स्व-ध्वनित शरीर आवश्यक है।\n\nमूल्य संवर्धन:\n• विक्कु विनायक राम सबसे प्रसिद्ध घटम वादक हैं; उनके जाकिर हुसैन के साथ सहयोग ने दोनों वाद्यों को विश्वव्यापी लोकप्रियता दिलाई।\n• कंजीरा कभी-कभी टैम्बोरीन से तुलना की जाती है लेकिन इसकी पारंपरिक रूप में झंकार नहीं होती।\n• कर्नाटकी थानी आवर्तन (ताल वादन एकल) में मृदंगम, घटम, कंजीरा और मोर्सिंग आमतौर पर सभी शामिल होते हैं।"
+    }
+  },
+  {
+    "uuid": "abb9db70-0394-4aa0-990d-d7df7e27c720",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sitar and Sarod: Medieval Origin and Tata Vadya Classification",
+        "Tata Vadya (Chordophones): Stringed Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sitar origin — Persian Setar and Indian Veena lineage",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct sequence in tracing the developmental lineage of the Sitar?\n\n(a) Persian Setar → Ancient Veena → Sitar\n(b) Sitar → Ancient Veena → Persian Setar\n(c) Ancient Veena → Persian Setar influence → Sitar\n(d) Persian Setar → Sitar → Ancient Veena",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because Amir Khusro's name dominates popular narratives about Sitar's invention, making the Sultanate period feel like the obvious starting point rather than the confluence of Persian influence.",
+      "elimination_logic": [
+        "Veena is the ancient Tata Vadya, predating the common era — it must anchor the earliest position.",
+        "Persian Setar entered Indian musicology through Sultanate/early Mughal contact (13th–16th century CE).",
+        "Modern Sitar as a synthesised instrument emerged from this Persian-Indian confluence and is documented from the 18th century onward.",
+        "Correct sequence: Veena (ancient) → Persian Setar influence (medieval) → Sitar (late medieval/early modern); select option (c)."
+      ],
+      "upsc_trap_explanation": "The trap is placing Sitar's emergence before or simultaneously with the Persian Setar influence. Students who know that Amir Khusro (13th–14th century) is credited with Sitar may place Sitar's emergence very early, before properly accounting for the Persian Setar's role in shaping it. The correct sequence shows Veena as the ancient base, Persian Setar as the medieval influence, and Sitar as the synthesised outcome.",
+      "final_explanation": "Tracing the lineage of Sitar requires understanding the confluence of ancient Indian and medieval Persian traditions.\n\nCorrect sequence: Ancient Veena → Persian Setar influence (medieval) → Sitar (late medieval/early modern)\n\n• Ancient Veena: The foundational plucked string instrument referenced in Natya Shastra-era texts; predates the common era.\n• Persian Setar: Entered Indian musical culture through the Sultanate period contacts; 'Setar' means 'three strings' in Persian.\n• Sitar: Emerged as a synthesised instrument combining structural elements of Persian Setar with the Indian Veena tradition; becomes a documented classical instrument from approximately the 18th century onward, though folk attribution to Amir Khusro places its origins earlier.\n\nIncorrect options place Sitar before the Persian influence, or reverse the lineage entirely.\n\nValue Addition:\n• 'Sitar' derives from Persian 'Setar' (three strings), though modern Sitar has many more strings.\n• Ravi Shankar is the most internationally recognised Sitar exponent, having introduced it to global audiences.\n• Sitar's distinctive sympathetic strings (tarab) create its characteristic resonant sound."
+    },
+    "hi": {
+      "display_text": "सितार के विकासात्मक विरासत का पता लगाने में निम्नलिखित में से कौन-सा सही क्रम दर्शाता है?\n\n(a) फारसी सेतार → प्राचीन वीणा → सितार\n(b) सितार → प्राचीन वीणा → फारसी सेतार\n(c) प्राचीन वीणा → फारसी सेतार प्रभाव → सितार\n(d) फारसी सेतार → सितार → प्राचीन वीणा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रमित करने वाला है क्योंकि अमीर खुसरो का नाम सितार के आविष्कार के लोकप्रिय विवरणों में प्रमुख है, जिससे सल्तनत काल को स्पष्ट प्रारंभिक बिंदु माना जाता है बजाय फारसी प्रभाव के संगम के।",
+      "elimination_logic": [
+        "वीणा प्राचीन ताता वाद्य है, जो सामान्य युग से पहले का है — इसे सबसे प्रारंभिक स्थिति में होना चाहिए।",
+        "फारसी सेतार भारतीय संगीतशास्त्र में सल्तनत/प्रारंभिक मुग़ल संपर्क (13वीं–16वीं सदी ई.) के माध्यम से आया।",
+        "आधुनिक सितार इस फारसी-भारतीय संगम से उत्पन्न एक संश्लेषित वाद्य है और 18वीं सदी से दस्तावेजीकृत है।",
+        "सही क्रम: वीणा (प्राचीन) → फारसी सेतार प्रभाव (मध्यकालीन) → सितार (देर मध्यकालीन/आधुनिक प्रारंभ); विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "फंदा यह है कि सितार के उद्भव को फारसी सेतार प्रभाव से पहले या उसके साथ ही रखा जाए। जो छात्र जानते हैं कि अमीर खुसरो (13वीं–14वीं सदी) को सितार का श्रेय दिया जाता है, वे सितार के उद्भव को बहुत पहले रख सकते हैं, बिना फारसी सेतार की भूमिका को सही ढंग से समझे। सही क्रम में वीणा प्राचीन आधार है, फारसी सेतार मध्यकालीन प्रभाव है, और सितार संश्लेषित परिणाम है।",
+      "final_explanation": "सितार की विरासत का पता लगाने के लिए प्राचीन भारतीय और मध्यकालीन फारसी परंपराओं के संगम को समझना आवश्यक है।\n\nसही क्रम: प्राचीन वीणा → फारसी सेतार प्रभाव (मध्यकालीन) → सितार (देर मध्यकालीन/आधुनिक प्रारंभ)\n\n• प्राचीन वीणा: नाट्य शास्त्र कालीन ग्रंथों में उल्लिखित मूल ताना-बाना वाला तार वाद्य; सामान्य युग से पहले का।\n• फारसी सेतार: सल्तनत कालीन संपर्कों के माध्यम से भारतीय संगीत संस्कृति में आया; 'सेतार' का अर्थ फारसी में 'तीन तार' है।\n• सितार: फारसी सेतार के संरचनात्मक तत्वों को भारतीय वीणा परंपरा के साथ मिलाकर एक संश्लेषित वाद्य के रूप में उभरा; लगभग 18वीं सदी से एक दस्तावेजीकृत शास्त्रीय वाद्य के रूप में स्थापित, हालांकि लोक मान्यता अमीर खुसरो को इसके प्रारंभिक निर्माता के रूप में देती है।\n\nगलत विकल्प सितार को फारसी प्रभाव से पहले रखते हैं या पूरी विरासत को उलट देते हैं।\n\nमूल्य संवर्धन:\n• 'सितार' शब्द फारसी 'सेतार' (तीन तार) से आया है, हालांकि आधुनिक सितार में कई अधिक तार होते हैं।\n• रवि शंकर सबसे अंतरराष्ट्रीय स्तर पर मान्यता प्राप्त सितार वादक हैं, जिन्होंने इसे विश्व दर्शकों के सामने प्रस्तुत किया।\n• सितार के विशिष्ट सहानुभूतिपूर्ण तार (तरब) इसकी अनूठी गूंजती ध्वनि उत्पन्न करते हैं।"
+    }
+  },
+  {
+    "uuid": "5653bbc7-b29b-483d-9bec-98e593010aff",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Ghana Vadya (Idiophones): Solid/Self-Sounding Instruments",
+        "Chaturvidha Vadya: The Four-Fold Classification System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Ghana Vadya — oldest instrument category in Indian tradition",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among the four categories of the Chaturvidha Vadya system codified in the Natya Shastra, ________ is considered the oldest category of musical instruments in Indian tradition, as instruments in this category produce sound from their own solid body without requiring a membrane, strings, or air column.\n\n(a) Avanaddha Vadya\n(b) Ghana Vadya\n(c) Tata Vadya\n(d) Sushira Vadya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (Avanaddha Vadya) is deceptive because membranophones feel more 'primitive' to students who associate early percussion with simple skin drums rather than solid-body instruments.",
+      "elimination_logic": [
+        "Eliminate option (a) — Avanaddha Vadya requires crafting a stretched membrane; this is a more complex technological step than striking a solid object.",
+        "Eliminate option (c) — Tata Vadya (strings) requires significant crafting of strings and tensioning mechanisms; technologically later than solid percussion.",
+        "Eliminate option (d) — Sushira Vadya (hollow wind instruments) requires boring or shaping a hollow tube, also a later technological development.",
+        "Select option (b) — Ghana Vadya (solid idiophones) are considered oldest because striking natural solid objects (stones, sticks) requires no manufacture."
+      ],
+      "upsc_trap_explanation": "The intuitive trap is Avanaddha Vadya — students associate early human percussion with drums and skin, which feels 'primitive.' However, manufacturing a stretched membrane drum requires animal skin preparation, stretching, and frame construction — all more technologically advanced than simply striking a stone or wooden block. Ghana Vadya's 'oldest' status reflects the pre-technological human practice of striking solid objects, which predates any instrument manufacture.",
+      "final_explanation": "Among the four categories of the Chaturvidha Vadya system, Ghana Vadya is considered the oldest form of musical instrument in the Indian tradition.\n\n• Option (a) Avanaddha Vadya: Incorrect — membrane drums require animal skin preparation and frame construction; more technologically advanced than solid percussion.\n• Option (b) Ghana Vadya: Correct — Idiophones (solid, self-sounding instruments) represent the earliest stage of human music-making; striking stones, sticks, or solid objects predates any crafted instrument.\n• Option (c) Tata Vadya: Incorrect — stringed instruments require string fabrication and tensioning; a later technological development.\n• Option (d) Sushira Vadya: Incorrect — hollow wind instruments require boring or natural hollow objects; while some (like conch) are natural, the category overall is not designated the oldest.\n\nValue Addition:\n• This sequence (idiophones → membranophones → chordophones → aerophones) broadly mirrors organological theories about the evolution of musical instruments in world music.\n• Archaeological evidence from Indian sites shows stone percussion objects among the earliest musical artifacts.\n• Ghatam and Jaltarang as 'unconventional' Ghana Vadya challenge the assumption that this category is only metallic."
+    },
+    "hi": {
+      "display_text": "नाट्य शास्त्र में संहिताबद्ध चतुर्विध वाद्य प्रणाली के चार वर्गों में से, ________ को भारतीय परंपरा में सबसे पुराना वाद्य वर्ग माना जाता है, क्योंकि इस वर्ग के वाद्य अपने ठोस शरीर से ध्वनि उत्पन्न करते हैं और इनके लिए झिल्ली, तार या वायु स्तंभ की आवश्यकता नहीं होती।\n\n(a) अवनद्ध वाद्य\n(b) घन वाद्य\n(c) तंतुवाद्य\n(d) सुषिर वाद्य",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) अवनद्ध वाद्य भ्रमित करने वाला है क्योंकि झिल्ली वाद्य उन छात्रों को 'प्राचीन' लगते हैं जो प्रारंभिक तालवाद्य को सरल चमड़े के ढोल से जोड़ते हैं, न कि ठोस शरीर वाले वाद्य से।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं — अवनद्ध वाद्य में खिंची हुई झिल्ली बनानी होती है; यह ठोस वस्तु पर प्रहार करने की तुलना में अधिक जटिल तकनीकी प्रक्रिया है।",
+        "विकल्प (c) को हटाएं — तंतुवाद्य (तार वाले वाद्य) में तारों का निर्माण और तनाव व्यवस्था आवश्यक है; यह ठोस तालवाद्य की तुलना में तकनीकी रूप से बाद में विकसित हुआ।",
+        "विकल्प (d) को हटाएं — सुषिर वाद्य (खोखले वायु वाद्य) में खोखली नली बनाना या आकार देना पड़ता है, जो तकनीकी रूप से बाद में विकसित हुआ।",
+        "विकल्प (b) चुनें — घन वाद्य (ठोस आत्म-ध्वनित वाद्य) को सबसे पुराना माना जाता है क्योंकि प्राकृतिक ठोस वस्तुओं (पत्थर, लकड़ी) पर प्रहार करने के लिए निर्माण की आवश्यकता नहीं होती।"
+      ],
+      "upsc_trap_explanation": "सहज भ्रम अवनद्ध वाद्य है — छात्र प्रारंभिक मानव तालवाद्य को ढोल और चमड़े से जोड़ते हैं, जो 'प्राचीन' लगता है। लेकिन खिंची हुई झिल्ली वाले ढोल का निर्माण पशु चमड़े की तैयारी, खिंचाव और फ्रेम निर्माण की मांग करता है — जो केवल पत्थर या लकड़ी पर प्रहार करने से अधिक तकनीकी रूप से उन्नत है। घन वाद्य की 'सबसे पुरानी' स्थिति ठोस वस्तुओं पर प्रहार करने की मानव पूर्व-प्रौद्योगिकी प्रथा को दर्शाती है, जो किसी भी वाद्य निर्माण से पहले थी।",
+      "final_explanation": "नाट्य शास्त्र में संहिताबद्ध चतुर्विध वाद्य प्रणाली के चार वर्गों में, घन वाद्य को भारतीय परंपरा में सबसे पुराना वाद्य रूप माना जाता है।\n\n• विकल्प (a) अवनद्ध वाद्य: गलत — झिल्ली वाले ढोल के लिए पशु चमड़े की तैयारी और फ्रेम निर्माण आवश्यक है; यह ठोस तालवाद्य से तकनीकी रूप से अधिक उन्नत है।\n• विकल्प (b) घन वाद्य: सही — आत्म-ध्वनित (ठोस) वाद्य मानव संगीत निर्माण का प्रारंभिक चरण हैं; पत्थर, लकड़ी या ठोस वस्तुओं पर प्रहार किसी निर्मित वाद्य से पहले हुआ।\n• विकल्प (c) तंतुवाद्य: गलत — तार वाले वाद्य में तार निर्माण और तनाव व्यवस्था आवश्यक है; यह बाद में विकसित तकनीक है।\n• विकल्प (d) सुषिर वाद्य: गलत — खोखले वायु वाद्य में खोखली नली बनाना या प्राकृतिक खोखली वस्तु का उपयोग होता है; कुछ (जैसे शंख) प्राकृतिक हैं, पर यह वर्ग सबसे पुराना नहीं माना जाता।\n\nमूल्य संवर्धन:\n• यह क्रम (आत्म-ध्वनित → झिल्ली वाद्य → तंतुवाद्य → सुषिर वाद्य) विश्व संगीत में वाद्य विकास के अंगविज्ञान सिद्धांतों से मेल खाता है।\n• भारतीय पुरातात्विक स्थलों से प्राप्त पत्थर के तालवाद्य सबसे प्राचीन संगीत कलाकृतियों में से हैं।\n• घटम और जलतरंग जैसे 'अपरंपरागत' घन वाद्य इस वर्ग को केवल धातु वाद्य मानने की धारणा को चुनौती देते हैं।"
+    }
+  },
+  {
+    "uuid": "4e4cf0e9-9d03-4245-9d57-fc641039b33d",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Veena in Natya Shastra: Classification and Cultural Significance",
+        "Tata Vadya (Chordophones): Stringed Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "geographic-swap",
+      "concept_anchor": "Saraswati Veena vs. Rudra Veena — tradition association",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched?\n\n(a) Saraswati Veena — primary Veena of Hindustani classical music; associated with the Dhrupad tradition\n(b) Vichitra Veena — fretted chordophone of Carnatic music played with a traditional fingering technique\n(c) Rudra Veena (Bin) — instrument of the Dhrupad Beenkar tradition within Hindustani classical music\n(d) Gottuvadyam — alternative name for Rudra Veena; both refer to the same instrument in Carnatic tradition",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a (Saraswati Veena linked to Hindustani) is deceptive because Saraswati is pan-Indian and Goddess Saraswati's veena is depicted in both North and South India, leading students to generalise rather than identify the specific regional-classical tradition.",
+      "elimination_logic": [
+        "Eliminate option (a) — Saraswati Veena is associated with Carnatic, not Hindustani music; the pairing is reversed.",
+        "Eliminate option (b) — Vichitra Veena is a slide instrument played without frets; it does not have 'frets' as a defining structural feature.",
+        "Eliminate option (d) — Gottuvadyam is also played with a slide and is related to Vichitra Veena; it is not specifically the Rudra Veena's alternative name.",
+        "Select option (c) — Rudra Veena (Bin) is the instrument of Dhrupad's Beenkar tradition in Hindustani music — a correctly matched pair."
+      ],
+      "upsc_trap_explanation": "Option (a) is the precision trap: students who know Saraswati Veena is the most iconic Veena type may not know it is specifically a Carnatic instrument. The pan-Indian iconic status of Goddess Saraswati's veena makes students assume it spans both traditions equally. The correct distinction — Saraswati Veena = Carnatic; Rudra Veena = Hindustani (Dhrupad) — requires tradition-specific knowledge.",
+      "final_explanation": "The various Veena types are differentiated by structure, playing technique, and the classical tradition they belong to.\n\n• Option (a): Incorrect — Saraswati Veena is the principal Veena of Carnatic classical music, not Hindustani. The pairing is reversed.\n• Option (b): Incorrect — Vichitra Veena is a fretless instrument played with a glass or metal ball slide; it does not have a system of traditional frets.\n• Option (c): Correct — Rudra Veena (also called Bin) is the instrument of the Dhrupad tradition within Hindustani music, specifically the Beenkar Gharana.\n• Option (d): Incorrect — Gottuvadyam (Kuzhal Veena in Tamil) is a slide instrument of Carnatic music, distinct from Rudra Veena; it is not Rudra Veena's alternate name.\n\nValue Addition:\n• Saraswati Veena has 24 fixed frets and 4 main strings plus 3 side strings (tala strings).\n• Rudra Veena has two large gourd resonators — its size and tuning make it suited for the meditative depth of Dhrupad.\n• Vichitra Veena and Gottuvadyam are both slide Veenas but belong to different traditions (Hindustani and Carnatic respectively)."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सी जोड़ी सही मेल खाती है?\n\n(a) सरस्वती वीणा — हिंदुस्तानी शास्त्रीय संगीत की मुख्य वीणा; ध्रुपद परंपरा से जुड़ी\n(b) विचित्र वीणा — कर्नाटक संगीत की फ्रेट वाली तार वाद्य जिसे पारंपरिक उंगलियों की तकनीक से बजाया जाता है\n(c) रुद्र वीणा (बिन) — हिंदुस्तानी शास्त्रीय संगीत में ध्रुपद बीनकार परंपरा का वाद्य\n(d) गोट्टुवाद्यम — रुद्र वीणा का वैकल्पिक नाम; दोनों कर्नाटक परंपरा में एक ही वाद्य को संदर्भित करते हैं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a (सरस्वती वीणा को हिंदुस्तानी से जोड़ना) भ्रमित करने वाला है क्योंकि सरस्वती पैन-इंडियन हैं और देवी सरस्वती की वीणा दोनों उत्तर और दक्षिण भारत में चित्रित है, जिससे छात्र सामान्यीकरण करते हैं बजाय विशिष्ट क्षेत्रीय-शास्त्रीय परंपरा की पहचान करने के।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएँ — सरस्वती वीणा कर्नाटक संगीत से जुड़ी है, हिंदुस्तानी से नहीं; जोड़ी उलटी है।",
+        "विकल्प (b) को हटाएँ — विचित्र वीणा एक स्लाइड वाद्य है जो बिना फ्रेट के बजाई जाती है; इसमें 'फ्रेट' परिभाषित संरचनात्मक विशेषता नहीं है।",
+        "विकल्प (d) को हटाएँ — गोट्टुवाद्यम भी स्लाइड से बजाया जाता है और विचित्र वीणा से संबंधित है; यह विशेष रूप से रुद्र वीणा का वैकल्पिक नाम नहीं है।",
+        "विकल्प (c) को चुनें — रुद्र वीणा (बिन) हिंदुस्तानी संगीत में ध्रुपद की बीनकार परंपरा का वाद्य है — सही मेल वाली जोड़ी।"
+      ],
+      "upsc_trap_explanation": "विकल्प (a) सटीकता जाल है: जो छात्र जानते हैं कि सरस्वती वीणा सबसे प्रतिष्ठित वीणा प्रकार है, वे यह नहीं जानते कि यह विशेष रूप से कर्नाटक वाद्य है। देवी सरस्वती की पैन-इंडियन प्रतिष्ठा छात्रों को यह मानने पर मजबूर करती है कि यह दोनों परंपराओं में समान रूप से है। सही भेद — सरस्वती वीणा = कर्नाटक; रुद्र वीणा = हिंदुस्तानी (ध्रुपद) — परंपरा-विशिष्ट ज्ञान आवश्यक है।",
+      "final_explanation": "विभिन्न वीणा प्रकार संरचना, बजाने की तकनीक, और जिस शास्त्रीय परंपरा से वे संबंधित हैं, से भिन्न होते हैं।\n\n• विकल्प (a): गलत — सरस्वती वीणा कर्नाटक शास्त्रीय संगीत की मुख्य वीणा है, हिंदुस्तानी की नहीं। जोड़ी उलटी है।\n• विकल्प (b): गलत — विचित्र वीणा एक फ्रेटलेस वाद्य है जिसे कांच या धातु की गेंद स्लाइड से बजाया जाता है; इसमें पारंपरिक फ्रेट प्रणाली नहीं है।\n• विकल्प (c): सही — रुद्र वीणा (जिसे बिन भी कहा जाता है) हिंदुस्तानी संगीत की ध्रुपद परंपरा का वाद्य है, विशेष रूप से बीनकार घराना।\n• विकल्प (d): गलत — गोट्टुवाद्यम (तमिल में कुझल वीणा) कर्नाटक संगीत का स्लाइड वाद्य है, रुद्र वीणा से भिन्न; यह रुद्र वीणा का वैकल्पिक नाम नहीं है।\n\nमूल्य संवर्धन:\n• सरस्वती वीणा में 24 स्थिर फ्रेट और 4 मुख्य तार के साथ 3 पार्श्व तार (ताल तार) होते हैं।\n• रुद्र वीणा में दो बड़े लौकी के रेज़ोनेटर होते हैं — इसका आकार और ट्यूनिंग ध्रुपद की ध्यानमग्न गहराई के लिए उपयुक्त है।\n• विचित्र वीणा और गोट्टुवाद्यम दोनों स्लाइड वीणा हैं लेकिन वे अलग-अलग परंपराओं (हिंदुस्तानी और कर्नाटक क्रमशः) से हैं।"
+    }
+  },
+  {
+    "uuid": "2a3da9eb-fda1-48a6-bd66-daaf7ae527e9",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Chaturvidha Vadya: The Four-Fold Classification System",
+        "Hornbostel-Sachs vs. Natya Shastra Classification: Comparison and Contrast"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Natya Shastra categories mapped to Hornbostel-Sachs equivalents",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the Natya Shastra Vadya categories (List I) with their corresponding Hornbostel-Sachs categories (List II):",
+        "columns": [
+          "List I (Natya Shastra)",
+          "List II (Hornbostel-Sachs)"
+        ],
+        "rows": [
+          [
+            "A. Tata Vadya",
+            "1. Chordophone"
+          ],
+          [
+            "B. Avanaddha Vadya",
+            "2. Membranophone"
+          ],
+          [
+            "C. Ghana Vadya",
+            "3. Idiophone"
+          ],
+          [
+            "D. Sushira Vadya",
+            "4. Aerophone"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-1, B-2, C-3, D-4\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-2, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because it correctly maps Tata→Chordophone and Sushira→Aerophone but swaps Ghana and Avanaddha, which is the primary confusion between Idiophone and Membranophone.",
+      "elimination_logic": [
+        "Confirm Tata Vadya = Chordophone (A-1): strings produce sound in both systems.",
+        "Confirm Avanaddha Vadya = Membranophone (B-2): membrane produces sound in both.",
+        "Confirm Ghana Vadya = Idiophone (C-3): solid self-sounding body in both — NOT Membranophone.",
+        "Confirm Sushira Vadya = Aerophone (D-4): air column in both; select option (b): A-1, B-2, C-3, D-4."
+      ],
+      "upsc_trap_explanation": "The trap is the Ghana–Membranophone conflation. Options (a) and (c) both swap Ghana and Avanaddha in their mapping — because 'covered' (Avanaddha) feels like it should map to something more 'structural' like Idiophone, and 'solid' (Ghana) feels like it could be membrane. The precise mapping requires knowing that Ghana = solid body = Idiophone, and Avanaddha = membrane = Membranophone.",
+      "final_explanation": "The Natya Shastra's four-fold system maps closely to four of the five Hornbostel-Sachs categories, with each pair sharing the same fundamental acoustic principle.\n\nCorrect matchings:\n• A (Tata Vadya) — 1 (Chordophone): Both involve vibrating stretched strings as the primary sound source.\n• B (Avanaddha Vadya) — 2 (Membranophone): Both involve a vibrating stretched membrane.\n• C (Ghana Vadya) — 3 (Idiophone): Both involve a solid, self-sounding body with no membrane or strings.\n• D (Sushira Vadya) — 4 (Aerophone): Both involve a vibrating air column within a hollow vessel.\n\nTrap pairing to avoid: Ghana ≠ Membranophone. The word 'ghana' (solid/dense) is the key — it is the opposite of membrane-based.\n\nValue Addition:\n• The fifth Hornbostel-Sachs category — Electrophone — has no Natya Shastra equivalent, as electronic instruments postdate the ancient text by millennia.\n• Hornbostel-Sachs uses a decimal numbering system for sub-classification — more elaborate than Natya Shastra's literary approach.\n• Both systems demonstrate that acoustic mechanism-based classification is a universal organological principle across cultures."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "नाट्य शास्त्र वाद्य वर्गों (सूची I) को उनके समकक्ष हॉर्नबॉस्टेल-सैक्स वर्गों (सूची II) से मिलाइए:",
+        "columns": [
+          "सूची I (नाट्य शास्त्र)",
+          "सूची II (हॉर्नबॉस्टेल-सैक्स)"
+        ],
+        "rows": [
+          [
+            "A. तात वाद्य",
+            "1. कॉर्डोफोन"
+          ],
+          [
+            "B. आवरण वाद्य",
+            "2. मेम्ब्रेनोफोन"
+          ],
+          [
+            "C. घन वाद्य",
+            "3. इडियोफोन"
+          ],
+          [
+            "D. सुषिर वाद्य",
+            "4. एरोफोन"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-1, B-3, C-2, D-4\n(b) A-1, B-2, C-3, D-4\n(c) A-1, B-3, C-4, D-2\n(d) A-3, B-2, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प a भ्रमित करने वाला है क्योंकि यह सही रूप से Tata→Chordophone और Sushira→Aerophone को मैप करता है लेकिन Ghana और Avanaddha को उलट देता है, जो Idiophone और Membranophone के बीच मुख्य भ्रम है।",
+      "elimination_logic": [
+        "Tata वाद्य = Chordophone (A-1) की पुष्टि करें: दोनों प्रणालियों में तार ध्वनि उत्पन्न करते हैं।",
+        "Avanaddha वाद्य = Membranophone (B-2) की पुष्टि करें: दोनों में झिल्ली ध्वनि उत्पन्न करती है।",
+        "Ghana वाद्य = Idiophone (C-3) की पुष्टि करें: दोनों में ठोस स्वयं-ध्वनित शरीर होता है — Membranophone नहीं।",
+        "Sushira वाद्य = Aerophone (D-4) की पुष्टि करें: दोनों में वायु स्तंभ होता है; विकल्प (b) चुनें: A-1, B-2, C-3, D-4।"
+      ],
+      "upsc_trap_explanation": "फंदा Ghana–Membranophone भ्रम है। विकल्प (a) और (c) दोनों में Ghana और Avanaddha को उनके मैपिंग में उलट दिया गया है — क्योंकि 'आवरण' (Avanaddha) ऐसा लगता है कि इसे Idiophone जैसे अधिक 'संरचनात्मक' से जोड़ा जाना चाहिए, और 'ठोस' (Ghana) ऐसा लगता है कि यह झिल्ली हो सकता है। सटीक मैपिंग जानने के लिए आवश्यक है कि Ghana = ठोस शरीर = Idiophone, और Avanaddha = झिल्ली = Membranophone।",
+      "final_explanation": "नाट्य शास्त्र की चतुर्विध प्रणाली निकटता से हॉर्नबॉस्टेल-सैक्स की पाँच श्रेणियों में से चार के साथ मेल खाती है, प्रत्येक जो समान मौलिक ध्वनिक सिद्धांत साझा करती है।\n\nसही मिलान:\n• A (Tata वाद्य) — 1 (Chordophone): दोनों में कंपनशील तने हुए तार मुख्य ध्वनि स्रोत हैं।\n• B (Avanaddha वाद्य) — 2 (Membranophone): दोनों में कंपनशील तनी हुई झिल्ली शामिल है।\n• C (Ghana वाद्य) — 3 (Idiophone): दोनों में झिल्ली या तार के बिना ठोस, स्वयं-ध्वनित शरीर होता है।\n• D (Sushira वाद्य) — 4 (Aerophone): दोनों में खोखले पात्र के भीतर कंपनशील वायु स्तंभ होता है।\n\nटालने वाला भ्रम: Ghana ≠ Membranophone। 'घना' (ठोस/घना) शब्द मुख्य है — यह झिल्ली आधारित के विपरीत है।\n\nमूल्य संवर्धन:\n• पाँचवीं हॉर्नबॉस्टेल-सैक्स श्रेणी — इलेक्ट्रोफोन — का नाट्य शास्त्र में कोई समकक्ष नहीं है, क्योंकि इलेक्ट्रॉनिक वाद्य यंत्र प्राचीन ग्रंथ के बाद हजारों वर्ष बाद आए।\n• हॉर्नबॉस्टेल-सैक्स उप-वर्गीकरण के लिए दशमलव संख्या प्रणाली का उपयोग करता है — जो नाट्य शास्त्र की साहित्यिक पद्धति से अधिक विस्तृत है।\n• दोनों प्रणालियाँ दर्शाती हैं कि ध्वनिक तंत्र आधारित वर्गीकरण संस्कृतियों में सार्वभौमिक वाद्य विज्ञान सिद्धांत है।"
+    }
+  },
+  {
+    "uuid": "de91a766-0769-423f-b83b-0955e8894d66",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Mridangam vs. Pakhawaj vs. Tabla: Classification and Lineage",
+        "Avanaddha Vadya (Membranophones): Percussion Instruments with Membrane"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Pakhawaj–Tabla lineage; Tabla origin controversy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A historical musicologist is tracing the structural evolution of a two-piece Avanaddha Vadya instrument that is now central to Hindustani classical music in the Khayal and Thumri styles. The research indicates that this instrument is believed to have evolved from a double-headed Dhrupad percussion instrument, with the new pair of drums corresponding to a treble (right) and a bass (left) division of the original. Which of the following best identifies the structural antecedent of this instrument?\n\n(a) The Sultanate-period court was the origin point, with Amir Khusro credited with the instrumental innovation in the 13th century\n(b) The instrument evolved from Dhrupad practice itself — the Dhrupad tradition's own Tabla form preceded Pakhawaj\n(c) Pakhawaj, the double-headed drum of the Dhrupad tradition, is the acknowledged structural antecedent from which the two drums of this instrument are said to have derived\n(d) Nagara, the kettledrum associated with temple and court music, served as the direct structural model for this two-piece percussion instrument",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option a is deceptive because Amir Khusro's name is strongly linked to Tabla in popular accounts, and a scenario involving 'Sultanate court percussion' makes students default to Amir Khusro as the answer.",
+      "elimination_logic": [
+        "The scenario describes a percussion instrument that split into two drums with the treble/bass division — this directly describes the Pakhawaj→Tabla lineage.",
+        "Eliminate option (a) — Amir Khusro is the folk attribution; scholarly consensus places Tabla's documented emergence in the 18th century, not the 13th–14th century Sultanate.",
+        "Eliminate option (b) — Dhrupad is Pakhawaj's tradition, not Tabla's; this option conflates the two.",
+        "Eliminate option (d) — Nagara is a kettledrum (single-headed); it is not Tabla's structural antecedent.",
+        "Select option (c): Pakhawaj is the structurally acknowledged antecedent from which Tabla's two drums (Dayan and Bayan) are said to have derived."
+      ],
+      "upsc_trap_explanation": "The scenario is designed to trigger the Amir Khusro association. Students who have memorised 'Amir Khusro invented Tabla' as a rote fact will select option (a) without engaging with the scholarly position. The scenario's reference to a 'split' and 'treble-bass division' is the structural clue pointing to Pakhawaj, not to any individual inventor. Scholarly analysis consistently points to Pakhawaj as the structural predecessor regardless of who is credited with the split.",
+      "final_explanation": "A musicologist studying the structural evolution of Avanaddha Vadya notes that a double-headed Hindustani percussion instrument was at some point conceptually divided into two separate drums — a higher-pitched treble drum and a lower-pitched bass drum — which together became the instrument now central to Khayal and Thumri.\n\n• Option (a): Incorrect — Amir Khusro's attributed role is a folk legend (13th–14th century); scholarly evidence for Tabla as a distinct instrument dates to the 18th century. The scenario calls for the structural antecedent, not a legendary inventor.\n• Option (b): Incorrect — This conflates Pakhawaj's tradition (Dhrupad) with Tabla's; Pakhawaj is not the result of splitting but the source.\n• Option (c): Correct — Pakhawaj, the double-headed Dhrupad drum, is the acknowledged structural precursor. The account that Tabla's Dayan (right/treble) and Bayan (left/bass) derive from splitting the Pakhawaj is the accepted musicological explanation.\n• Option (d): Incorrect — Nagara is a kettledrum with a single membrane; it has no structural relationship to Tabla.\n\nValue Addition:\n• Pakhawaj is still played today in Dhrupad recitals; exponents include Pt. Bhavani Shankar.\n• The two drums of Tabla are tuned differently — Dayan to the tonic (Sa), Bayan to produce a bass rumble.\n• Tabla's syahi paste is typically made from iron filings, rice starch, and other materials — a unique feature among membranophones."
+    },
+    "hi": {
+      "display_text": "एक ऐतिहासिक संगीतशास्त्री एक दो-टुकड़ा अवनद्ध वाद्य के संरचनात्मक विकास का पता लगा रहा है जो अब खयाल और ठुमरी शैलियों में हिंदुस्तानी शास्त्रीय संगीत का केंद्र है। शोध से पता चलता है कि यह वाद्य एक दो-मढ़ा हुआ ध्रुपद ताल वाद्य से विकसित हुआ माना जाता है, जिसमें नए जोड़े गए दो ड्रम मूल वाद्य के तीव्र (दायाँ) और मंद (बायाँ) विभाजन के अनुरूप हैं। निम्नलिखित में से कौन सा इस वाद्य का संरचनात्मक पूर्वज सबसे उपयुक्त रूप से पहचानता है?\n\n(a) सुल्तानत कालीन दरबार इसका उद्गम स्थल था, जिसमें 13वीं सदी में आमिर खुसरो को वाद्य नवाचार का श्रेय दिया जाता है\n(b) यह वाद्य स्वयं ध्रुपद अभ्यास से विकसित हुआ — ध्रुपद परंपरा का अपना तबले रूप पखावज से पहले था\n(c) पखावज, ध्रुपद परंपरा का दो-मढ़ा हुआ ड्रम, वह मान्यता प्राप्त संरचनात्मक पूर्वज है जिससे इस वाद्य के दो ड्रम उत्पन्न माने जाते हैं\n(d) नगाड़ा, जो मंदिर और दरबार संगीत से जुड़ा केतली ड्रम है, इस दो-टुकड़ा ताल वाद्य के लिए प्रत्यक्ष संरचनात्मक मॉडल था",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) भ्रमित करने वाला है क्योंकि आमिर खुसरो का नाम लोकप्रिय विवरणों में तबले से गहराई से जुड़ा हुआ है, और 'सुल्तानत दरबार की ताल वाद्य' की स्थिति छात्रों को डिफ़ॉल्ट रूप से आमिर खुसरो को उत्तर चुनने पर मजबूर करती है।",
+      "elimination_logic": [
+        "यह स्थिति एक ताल वाद्य का वर्णन करती है जो दो ड्रमों में विभाजित हो गया जिसमें तीव्र/मंद स्वर का विभाजन है — यह सीधे पखावज→तबला वंश को दर्शाता है।",
+        "विकल्प (a) को हटाएं — आमिर खुसरो लोक कथन है; विद्वानों की सहमति तबले के प्रलेखित उद्भव को 18वीं सदी में रखती है, न कि 13वीं–14वीं सदी के सुल्तानत काल में।",
+        "विकल्प (b) को हटाएं — ध्रुपद पखावज की परंपरा है, तबले की नहीं; यह विकल्प दोनों को भ्रमित करता है।",
+        "विकल्प (d) को हटाएं — नगाड़ा एक केतली ड्रम है (एकल मढ़ा हुआ); यह तबले की संरचनात्मक पूर्वज नहीं है।",
+        "विकल्प (c) चुनें: पखावज वह संरचनात्मक पूर्वज है जिससे तबले के दो ड्रम (दायाँ और बायाँ) उत्पन्न माने जाते हैं।"
+      ],
+      "upsc_trap_explanation": "यह स्थिति आमिर खुसरो के संबंध को उकसाने के लिए डिज़ाइन की गई है। जो छात्र 'आमिर खुसरो ने तबला आविष्कार किया' को रटकर याद करते हैं, वे विद्वानों की स्थिति को समझे बिना विकल्प (a) चुनेंगे। 'विभाजन' और 'तीव्र-मंद विभाजन' का संदर्भ पखावज की संरचनात्मक पहचान की ओर संकेत करता है, न कि किसी व्यक्तिगत आविष्कारक की ओर। विद्वानों का विश्लेषण लगातार पखावज को संरचनात्मक पूर्वज के रूप में मानता है, चाहे विभाजन किसे श्रेय दिया जाए।",
+      "final_explanation": "एक संगीतशास्त्री जो अवनद्ध वाद्य के संरचनात्मक विकास का अध्ययन कर रहा है, उसने पाया कि एक दो-मढ़ा हुआ हिंदुस्तानी ताल वाद्य किसी समय अवधारणात्मक रूप से दो अलग ड्रमों में विभाजित हुआ — एक उच्च स्वर वाला तीव्र ड्रम और एक निम्न स्वर वाला मंद ड्रम — जो मिलकर खयाल और ठुमरी के लिए केंद्रीय वाद्य बन गया।\n\n• विकल्प (a): गलत — आमिर खुसरो को दिया गया श्रेय लोककथा है (13वीं–14वीं सदी); तबले के अलग वाद्य के रूप में 18वीं सदी के प्रलेखित प्रमाण हैं। स्थिति संरचनात्मक पूर्वज मांगती है, न कि किसी पौराणिक आविष्कारक को।\n• विकल्प (b): गलत — यह पखावज की परंपरा (ध्रुपद) को तबले से मिलाता है; पखावज विभाजन का परिणाम नहीं बल्कि स्रोत है।\n• विकल्प (c): सही — पखावज, दो-मढ़ा हुआ ध्रुपद ड्रम, मान्यता प्राप्त संरचनात्मक पूर्वज है। तबले के दायाँ (तीव्र) और बायाँ (मंद) ड्रम पखावज के विभाजन से उत्पन्न माने जाते हैं, जो संगीतशास्त्रीय व्याख्या है।\n• विकल्प (d): गलत — नगाड़ा एकल मढ़ा हुआ केतली ड्रम है; इसका तबले से कोई संरचनात्मक संबंध नहीं है।\n\nमूल्यवर्धन:\n• पखावज आज भी ध्रुपद गायन में बजाया जाता है; इसके प्रमुख कलाकारों में पं. भवानी शंकर शामिल हैं।\n• तबले के दो ड्रम अलग-अलग सुरों पर तुना होते हैं — दायाँ स्वर (सा) पर और बायाँ मंद स्वर उत्पन्न करता है।\n• तबले की स्याही आमतौर पर लोहे की कतरनों, चावल के स्टार्च और अन्य सामग्रियों से बनाई जाती है — जो अवनद्ध वाद्यों में अनूठी विशेषता है।"
+    }
+  },
+  {
+    "uuid": "bde93d41-56f4-4d31-94c7-81208e218cd9",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Veena in Natya Shastra: Classification and Cultural Significance",
+        "Tata Vadya (Chordophones): Stringed Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Veena types — structural and traditional distinctions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the different types of Veena in Indian classical music, consider the following statements:\n\n1. Vichitra Veena and Gottuvadyam are both slide chordophones, but Vichitra Veena belongs to the Hindustani tradition while Gottuvadyam belongs to the Carnatic tradition.\n2. The Rudra Veena is also called 'Bin' and is characterised by two large gourd resonators attached to a long bamboo beam, making it the largest of the classical Veena types.\n3. Goddess Saraswati is depicted with the Rudra Veena in classical iconography, reflecting the association between this instrument and the deity of learning.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 and 3 only\n(c) 1, 2 and 3\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vichitra Veena and Gottuvadyam are both slide chordophones, but Vichitra Veena belongs to the Hindustani tradition while Gottuvadyam belongs to the Carnatic tradition.",
+          "verdict": "Correct",
+          "reason": "Both instruments are played with a slide (glass ball or wooden slide) rather than by fretting; Vichitra Veena is a Hindustani instrument and Gottuvadyam is its Carnatic counterpart."
+        },
+        {
+          "statement": "The Rudra Veena is also called 'Bin' and is characterised by two large gourd resonators attached to a long bamboo beam, making it the largest of the classical Veena types.",
+          "verdict": "Correct",
+          "reason": "Rudra Veena (Bin) is indeed identified by its two large gourd resonators and is a large stick zither; it is among the most physically imposing of the classical Veena types."
+        },
+        {
+          "statement": "Goddess Saraswati is depicted with the Rudra Veena in classical iconography, reflecting the association between this instrument and the deity of learning.",
+          "verdict": "Incorrect",
+          "reason": "Goddess Saraswati is conventionally depicted with the Saraswati Veena (named after her), not the Rudra Veena. The Rudra Veena is associated with Lord Shiva/Rudra — note the name 'Rudra.'"
+        }
+      ],
+      "strong_distractor": "c — Option c (all three correct) tempts students who know Statements 1 and 2 are correct and who associate Saraswati-Veena generically without distinguishing which type is depicted in iconography.",
+      "elimination_logic": [
+        "Confirm Statement 1 — Vichitra Veena (Hindustani) and Gottuvadyam (Carnatic) are both slide chordophones: correct.",
+        "Confirm Statement 2 — Rudra Veena has two large gourd resonators and is also called Bin: correct.",
+        "Check Statement 3 — Saraswati is depicted with Saraswati Veena, not Rudra Veena (Rudra = Shiva); Statement 3 is incorrect.",
+        "Select option (d): Statements 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 is an iconographic trap. Students who loosely remember 'Saraswati with a Veena' do not distinguish which Veena. The Rudra Veena is named after Rudra (Shiva), not Saraswati — the deity associations are encoded in the names themselves. Saraswati Veena is the one depicted in Saraswati's iconography, while Rudra Veena is associated with Shiva.",
+      "final_explanation": "The Veena family includes several structurally and traditionally distinct instruments, each associated with specific musical traditions and cultural contexts.\n\n• Statement 1 — Correct: Vichitra Veena and Gottuvadyam are both played with a slide, not by pressing frets. Vichitra Veena belongs to Hindustani music; Gottuvadyam to Carnatic music.\n• Statement 2 — Correct: Rudra Veena (Bin) is a large stick zither with two gourd resonators. Its size and the depth of its resonance suit Dhrupad's meditative character.\n• Statement 3 — Incorrect: Goddess Saraswati is depicted with the Saraswati Veena (named after her) — a fretted plucked Veena of Carnatic tradition. Rudra Veena is associated with Rudra/Shiva, not Saraswati.\n\nValue Addition:\n• The deity-instrument name encoding is a mnemonic: Saraswati Veena → Saraswati; Rudra Veena → Rudra (Shiva).\n• Gottuvadyam is played with a cylindrical piece of wood or horn — the technique is called 'Kuzhal' playing.\n• Both Vichitra Veena and Gottuvadyam share the quality of being able to produce gamakas (microtonal ornaments) smoothly through the slide technique."
+    },
+    "hi": {
+      "display_text": "भारतीय शास्त्रीय संगीत में वीणा के विभिन्न प्रकारों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. विचित्र वीणा और गोट्टुवाद्यम दोनों स्लाइड कॉर्डोफोन हैं, लेकिन विचित्र वीणा हिंदुस्तानी परंपरा की है जबकि गोट्टुवाद्यम कर्नाटक परंपरा का है।\n2. रुद्र वीणा को 'बिन' भी कहा जाता है और यह दो बड़े लौकी के रेज़ोनेटर से युक्त लंबी बाँस की किरण से जुड़ी होती है, जो इसे शास्त्रीय वीणा प्रकारों में सबसे बड़ा बनाती है।\n3. देवी सरस्वती को शास्त्रीय चित्रकला में रुद्र वीणा के साथ दर्शाया जाता है, जो इस वाद्य और ज्ञान की देवी के बीच संबंध को दर्शाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2 और 3\n(c) 1, 2 और 3\n(d) केवल 1 और 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Vichitra Veena and Gottuvadyam are both slide chordophones, but Vichitra Veena belongs to the Hindustani tradition while Gottuvadyam belongs to the Carnatic tradition.",
+          "verdict": "सही है",
+          "reason": "दोनों वाद्ययंत्र स्लाइड (कांच की गेंद या लकड़ी की स्लाइड) से बजाए जाते हैं, फिंगरिंग से नहीं; विचित्र वीणा हिंदुस्तानी परंपरा की है और गोट्टुवाद्यम इसका कर्नाटक समकक्ष है।"
+        },
+        {
+          "statement": "The Rudra Veena is also called 'Bin' and is characterised by two large gourd resonators attached to a long bamboo beam, making it the largest of the classical Veena types.",
+          "verdict": "सही है",
+          "reason": "रुद्र वीणा (बिन) वास्तव में दो बड़े लौकी के रेज़ोनेटर से पहचानी जाती है और यह एक बड़ा स्टिक ज़िथर है; यह शास्त्रीय वीणा प्रकारों में सबसे बड़ा है।"
+        },
+        {
+          "statement": "Goddess Saraswati is depicted with the Rudra Veena in classical iconography, reflecting the association between this instrument and the deity of learning.",
+          "verdict": "गलत है",
+          "reason": "देवी सरस्वती को पारंपरिक रूप से सरस्वती वीणा (उनके नाम पर) के साथ दर्शाया जाता है, न कि रुद्र वीणा के साथ। रुद्र वीणा भगवान शिव/रुद्र से जुड़ी है — नाम 'रुद्र' पर ध्यान दें।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c (तीनों सही) उन छात्रों को भ्रमित करता है जो जानते हैं कि कथन 1 और 2 सही हैं और जो सरस्वती-वीणा को सामान्य रूप से जोड़ते हैं बिना यह भेद किए कि कौन सा प्रकार चित्रकला में दर्शाया गया है।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें — विचित्र वीणा (हिंदुस्तानी) और गोट्टुवाद्यम (कर्नाटक) दोनों स्लाइड कॉर्डोफोन हैं: सही।",
+        "कथन 2 की पुष्टि करें — रुद्र वीणा के दो बड़े लौकी के रेज़ोनेटर हैं और इसे बिन भी कहा जाता है: सही।",
+        "कथन 3 की जांच करें — सरस्वती को सरस्वती वीणा के साथ दर्शाया जाता है, रुद्र वीणा के साथ नहीं (रुद्र = शिव); कथन 3 गलत है।",
+        "विकल्प (d) चुनें: केवल कथन 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 एक चित्रात्मक जाल है। जो छात्र 'सरस्वती वीणा के साथ सरस्वती' को ढीले तौर पर याद करते हैं, वे यह भेद नहीं करते कि कौन सी वीणा है। रुद्र वीणा का नाम रुद्र (शिव) के नाम पर है, न कि सरस्वती के; देवता-वाद्य नामकरण स्वयं नामों में निहित है। सरस्वती वीणा को सरस्वती की चित्रकला में दर्शाया जाता है, जबकि रुद्र वीणा शिव से जुड़ी है।",
+      "final_explanation": "वीणा परिवार में कई संरचनात्मक और पारंपरिक रूप से भिन्न वाद्ययंत्र शामिल हैं, जो विशिष्ट संगीत परंपराओं और सांस्कृतिक संदर्भों से जुड़े हैं।\n\n• कथन 1 — सही: विचित्र वीणा और गोट्टुवाद्यम दोनों स्लाइड से बजाए जाते हैं, फिंगरिंग से नहीं। विचित्र वीणा हिंदुस्तानी संगीत की है; गोट्टुवाद्यम कर्नाटक संगीत की।\n• कथन 2 — सही: रुद्र वीणा (बिन) दो लौकी के रेज़ोनेटर वाला बड़ा स्टिक ज़िथर है। इसका आकार और गहराई ध्रुपद की ध्यानमग्न प्रकृति के अनुकूल है।\n• कथन 3 — गलत: देवी सरस्वती को सरस्वती वीणा (उनके नाम पर) के साथ दर्शाया जाता है — यह कर्नाटक परंपरा की फिंगर्ड प्लक्ड वीणा है। रुद्र वीणा रुद्र/शिव से जुड़ी है, न कि सरस्वती से।\n\nमूल्यवर्धन:\n• देवता-वाद्य नामकरण एक स्मृति तकनीक है: सरस्वती वीणा → सरस्वती; रुद्र वीणा → रुद्र (शिव)।\n• गोट्टुवाद्यम को लकड़ी या सींग के बेलनाकार टुकड़े से बजाया जाता है — इसे 'कुज़ल' बजाना कहा जाता है।\n• विचित्र वीणा और गोट्टुवाद्यम दोनों स्लाइड तकनीक से गमक (सूक्ष्मस्वर अलंकरण) सहजता से उत्पन्न कर सकते हैं।"
+    }
+  },
+  {
+    "uuid": "6781adbf-1c0d-4264-ad94-845b2b141375",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Pungi (Been) and Rudra Veena: Instruments Associated with Specific Traditions",
+        "Sushira Vadya (Aerophones): Wind Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Pungi — Sushira Vadya; folk and Sufi contexts",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Pungi (Been), a reed aerophone associated with snake charmers and certain Sufi traditions, belongs to which category of the Natya Shastra's Chaturvidha Vadya classification?\n\n(a) Sushira Vadya\n(b) Tata Vadya\n(c) It is a purely folk instrument not covered by the Natya Shastra classification\n(d) Avanaddha Vadya",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because 'snake charmer instrument' is the dominant cultural association with Pungi, leading students to classify it as folk/non-classical without considering its categorisation in the Vadya system.",
+      "elimination_logic": [
+        "Eliminate option (b) — Pungi is not Tata Vadya; it has no strings.",
+        "Eliminate option (c) — While Pungi is used by snake charmers, this does not remove it from classification; it is still an aerophone (Sushira Vadya), not an unclassified folk instrument.",
+        "Eliminate option (d) — Pungi is not a membranophone; it has no membrane.",
+        "Select option (a) — Pungi is a reed aerophone; its sound is produced through a hollow body with air blown through reeds = Sushira Vadya."
+      ],
+      "upsc_trap_explanation": "The trap is the assumption that folk or folk-ritual instruments exist outside the Vadya classification system. Pungi's snake-charmer association creates a mental category of 'folk instrument = unclassified.' In fact, Natya Shastra's classification is mechanism-based and covers all instruments regardless of cultural context. Pungi is straightforwardly Sushira Vadya — air blown through a hollow body with reeds.",
+      "final_explanation": "Pungi (also called Been) is a double-chambered reed aerophone used by snake charmers and in certain Sufi musical practices.\n\n• Option (a): Correct — Pungi is a Sushira Vadya. Air is blown into a hollow gourd with two bamboo pipes — one a drone, one a melody pipe — making it an aerophone in the Natya Shastra framework.\n• Option (b): Incorrect — Tata Vadya requires strings; Pungi has none.\n• Option (c): Incorrect — Its folk/ritual context is culturally significant but irrelevant to Vadya classification, which is mechanism-based.\n• Option (d): Incorrect — Avanaddha Vadya requires a membrane; Pungi has no membrane.\n\nValue Addition:\n• Pungi has historical mentions in ancient texts, predating its folk-ritual association with snake charming.\n• The instrument is also called 'Makudi' in some regional contexts.\n• Do not confuse Pungi (Sushira Vadya) with Rudra Veena — both share 'Been/Bin' as alternate names but are entirely different instruments in different categories."
+    },
+    "hi": {
+      "display_text": "पंगी (बीन), जो साँपसाज़ों और कुछ सूफी परंपराओं से जुड़ा एक सुषिर वाद्य है, नाट्य शास्त्र के चतुर्विध वाद्य वर्गीकरण में किस श्रेणी में आता है?\n\n(a) सुषिर वाद्य\n(b) तंतुवाद्य\n(c) यह एक शुद्ध लोक वाद्य है जो नाट्य शास्त्र वर्गीकरण में शामिल नहीं है\n(d) अवनद्ध वाद्य",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प c भ्रमित करने वाला है क्योंकि 'साँपसाज़ का वाद्य' पंगी के साथ प्रमुख सांस्कृतिक संबंध है, जिससे छात्र इसे लोक/गैर-शास्त्रीय के रूप में वर्गीकृत करते हैं बिना इसके वाद्य प्रणाली में वर्गीकरण पर विचार किए।",
+      "elimination_logic": [
+        "विकल्प (b) को हटाएं — पंगी तंतुवाद्य (Tata Vadya) नहीं है; इसमें तार नहीं होते।",
+        "विकल्प (c) को हटाएं — जबकि पंगी साँपसाज़ों द्वारा उपयोग किया जाता है, यह इसे वर्गीकरण से बाहर नहीं करता; यह अभी भी एक सुषिर वाद्य (aerophone) है, न कि एक अवर्गीकृत लोक वाद्य।",
+        "विकल्प (d) को हटाएं — पंगी अवनद्ध वाद्य (membranophone) नहीं है; इसमें झिल्ली नहीं होती।",
+        "विकल्प (a) चुनें — पंगी एक सुषिर वाद्य है; इसकी ध्वनि एक खोखले शरीर के माध्यम से बांसुरी के पत्तों से हवा फूँकने से उत्पन्न होती है।"
+      ],
+      "upsc_trap_explanation": "फंदा यह मान लेना है कि लोक या लोक-रितुअल वाद्य वाद्य वर्गीकरण प्रणाली के बाहर होते हैं। पंगी का साँपसाज़ संबंध एक मानसिक श्रेणी बनाता है 'लोक वाद्य = अवर्गीकृत।' वास्तव में, नाट्य शास्त्र का वर्गीकरण यंत्र-आधारित है और सभी वाद्यों को सांस्कृतिक संदर्भ से स्वतंत्र रूप से कवर करता है। पंगी स्पष्ट रूप से सुषिर वाद्य है — हवा खोखले शरीर के माध्यम से बांसुरी के पत्तों से फूँकी जाती है।",
+      "final_explanation": "पंगी (जिसे बीन भी कहा जाता है) एक दो-चेंबर वाला सुषिर वाद्य है जो साँपसाज़ों और कुछ सूफी संगीत प्रथाओं में उपयोग होता है।\n\n• विकल्प (a): सही — पंगी सुषिर वाद्य है। हवा एक खोखले लौकी में दो बाँस की नलिकाओं में फूँकी जाती है — एक ड्रोन, एक राग नली — जो इसे नाट्य शास्त्र के ढांचे में एक सुषिर वाद्य बनाता है।\n• विकल्प (b): गलत — तंतुवाद्य में तार आवश्यक हैं; पंगी में कोई तार नहीं।\n• विकल्प (c): गलत — इसका लोक/रितुअल संदर्भ सांस्कृतिक रूप से महत्वपूर्ण है लेकिन वाद्य वर्गीकरण के लिए अप्रासंगिक है, जो यंत्र-आधारित है।\n• विकल्प (d): गलत — अवनद्ध वाद्य में झिल्ली आवश्यक है; पंगी में झिल्ली नहीं है।\n\nमूल्यवर्धन:\n• पंगी का प्राचीन ग्रंथों में उल्लेख है, जो इसके लोक-रितुअल साँपसाज़ संबंध से पहले का है।\n• इस वाद्य को कुछ क्षेत्रीय संदर्भों में 'मकुड़ी' भी कहा जाता है।\n• पंगी (सुषिर वाद्य) को रुद्र वीणा से भ्रमित न करें — दोनों के नाम 'बीन/बिन' समान हैं लेकिन वे पूरी तरह अलग वाद्य हैं और अलग वर्गों में आते हैं।"
+    }
+  },
+  {
+    "uuid": "94dcbad0-86ee-457d-9fa9-1d6887222caa",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Nadaswaram and Tavil: Sacred Pair in Carnatic Tradition",
+        "Avanaddha Vadya (Membranophones): Percussion Instruments with Membrane"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "quantitative-pairing",
+      "trap_type": "conflation",
+      "concept_anchor": "Nadaswaram-Tavil pair — correct Vadya classification of each",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Consider the following statements about the Nadaswaram and Tavil, the sacred pair of Carnatic tradition:",
+        "columns": [
+          "Statement",
+          "Claim"
+        ],
+        "rows": [
+          [
+            "1",
+            "Nadaswaram belongs to Sushira Vadya."
+          ],
+          [
+            "2",
+            "Tavil belongs to Avanaddha Vadya."
+          ],
+          [
+            "3",
+            "Both Nadaswaram and Tavil are classified as 'Mangala Vadya' — instruments of auspicious ceremonial use — and this ceremonial classification supersedes their Natya Shastra Vadya category."
+          ],
+          [
+            "4",
+            "Nadaswaram is traditionally played only in indoor temple sanctuaries due to its tonal delicacy."
+          ]
+        ],
+        "footer_text": "How many of the above statements are correct?\n\n(a) Only one\n(b) Only two\n(c) Only three\n(d) All four"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Nadaswaram belongs to Sushira Vadya.",
+          "verdict": "Correct",
+          "reason": "Nadaswaram is a double-reed aerophone — sound is produced by air blown through a hollow bore with a double-reed mouthpiece, classifying it as Sushira Vadya."
+        },
+        {
+          "statement": "Tavil belongs to Avanaddha Vadya.",
+          "verdict": "Correct",
+          "reason": "Tavil is a barrel drum with two membrane heads — the membranes are the primary sound-producing elements, making it Avanaddha Vadya."
+        },
+        {
+          "statement": "Both Nadaswaram and Tavil are classified as 'Mangala Vadya' — instruments of auspicious ceremonial use — and this ceremonial classification supersedes their Natya Shastra Vadya category.",
+          "verdict": "Incorrect",
+          "reason": "Mangala Vadya is a functional/contextual designation indicating auspicious use; it does not override or replace the Natya Shastra acoustic classification. Both instruments retain their respective Vadya categories."
+        },
+        {
+          "statement": "Nadaswaram is traditionally played only in indoor temple sanctuaries due to its tonal delicacy.",
+          "verdict": "Incorrect",
+          "reason": "Nadaswaram is known for being the world's loudest non-brass acoustic woodwind — it is specifically suited for large outdoor temple courtyards and open ceremonial spaces, not confined to indoor settings."
+        }
+      ],
+      "strong_distractor": "c — Option c (Only three) tempts students who correctly identify Statements 1, 2, and 3 as correct (missing that Statement 3 contains a false claim about 'superseding') and reject only Statement 4.",
+      "elimination_logic": [
+        "Confirm Statement 1 — Nadaswaram is a double-reed aerophone = Sushira Vadya: correct.",
+        "Confirm Statement 2 — Tavil has two membranes = Avanaddha Vadya: correct.",
+        "Check Statement 3 — 'Mangala Vadya' is a ceremonial designation, not a classification system that supersedes Natya Shastra categories; Statement 3 is incorrect.",
+        "Check Statement 4 — Nadaswaram is the loudest non-brass acoustic woodwind, used outdoors; 'tonal delicacy' and 'indoor only' are both false; Statement 4 is incorrect; select option (b): Only two correct."
+      ],
+      "upsc_trap_explanation": "Statement 3 is a category-confusion trap: students who know that Nadaswaram and Tavil are 'Mangala Vadya' may accept that this functional label has some primacy over the acoustic classification. It does not — Mangala Vadya describes the instruments' ritual use context, while Vadya categories describe their acoustic mechanism. Statement 4 reverses the known fact about Nadaswaram's loudness — a reversed-fact trap.",
+      "final_explanation": "The Nadaswaram-Tavil pair represents the prototypical 'Mangala Vadya' ensemble of Carnatic temple and ceremonial music.\n\n• Statement 1 — Correct: Nadaswaram is a double-reed aerophone; sound through hollow air column with reed = Sushira Vadya.\n• Statement 2 — Correct: Tavil is a double-headed barrel drum; membranes produce sound = Avanaddha Vadya.\n• Statement 3 — Incorrect: 'Mangala Vadya' is a functional/ceremonial label indicating auspicious context. It coexists with, and does not supersede, the instruments' Natya Shastra acoustic classifications.\n• Statement 4 — Incorrect: Nadaswaram is celebrated precisely for its exceptional volume — the world's loudest non-brass acoustic woodwind. It is used in large outdoor temple festival settings.\n\nValue Addition:\n• Nadaswaram players use circular breathing — a technique allowing continuous sound without pause for inhalation.\n• Tavil is played with the right hand using a stick and the left hand using the fingers — an asymmetric playing technique.\n• The Nadaswaram-Tavil pair is called 'Periya Melam' (big ensemble) in Tamil tradition, distinguished from 'Chinna Melam' (small ensemble)."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "कर्नाटक परंपरा के पवित्र युग्म नादस्वरम और तविल के संबंध में निम्नलिखित कथनों पर विचार करें:",
+        "columns": [
+          "कथन",
+          "दावा"
+        ],
+        "rows": [
+          [
+            "1",
+            "नादस्वरम सुषिर वाद्य है।"
+          ],
+          [
+            "2",
+            "तविल अवनद्ध वाद्य है।"
+          ],
+          [
+            "3",
+            "नादस्वरम और तविल दोनों को 'मंगल वाद्य' के रूप में वर्गीकृत किया गया है — शुभ अनुष्ठानिक उपयोग के वाद्य — और यह अनुष्ठानिक वर्गीकरण उनके नाट्य शास्त्र वाद्य वर्ग को अधिभूत करता है।"
+          ],
+          [
+            "4",
+            "नादस्वरम पारंपरिक रूप से केवल अपने स्वर की नाजुकता के कारण इनडोर मंदिरों में बजाया जाता है।"
+          ]
+        ],
+        "footer_text": "उपरोक्त में से कितने कथन सही हैं?\n\n(a) केवल एक\n(b) केवल दो\n(c) केवल तीन\n(d) सभी चार"
+      },
+      "statement_analysis": [
+        {
+          "statement": "Nadaswaram belongs to Sushira Vadya.",
+          "verdict": "सही है",
+          "reason": "नादस्वरम एक डबल-रीड एरोफोन है — ध्वनि एक खोखले नलिका के माध्यम से डबल-रीड मुँह के टुकड़े से हवा फूँकने पर उत्पन्न होती है, जो इसे सुषिर वाद्य के रूप में वर्गीकृत करता है।"
+        },
+        {
+          "statement": "Tavil belongs to Avanaddha Vadya.",
+          "verdict": "सही है",
+          "reason": "तविल एक बैरल ड्रम है जिसमें दो झिल्ली वाले सिर होते हैं — झिल्लियाँ मुख्य ध्वनि उत्पन्न करने वाले तत्व हैं, जो इसे अवनद्ध वाद्य बनाती हैं।"
+        },
+        {
+          "statement": "Both Nadaswaram and Tavil are classified as 'Mangala Vadya' — instruments of auspicious ceremonial use — and this ceremonial classification supersedes their Natya Shastra Vadya category.",
+          "verdict": "गलत है",
+          "reason": "मंगल वाद्य एक कार्यात्मक/संदर्भात्मक पदनाम है जो शुभ उपयोग को दर्शाता है; यह नाट्य शास्त्र की ध्वनिक वर्गीकरण को अधिभूत या प्रतिस्थापित नहीं करता। दोनों वाद्य अपने-अपने वाद्य वर्गों को बनाए रखते हैं।"
+        },
+        {
+          "statement": "Nadaswaram is traditionally played only in indoor temple sanctuaries due to its tonal delicacy.",
+          "verdict": "गलत है",
+          "reason": "नादस्वरम विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड वाद्य है — यह विशेष रूप से बड़े खुले मंदिर प्रांगणों और बाहरी अनुष्ठानिक स्थानों के लिए उपयुक्त है, न कि केवल इनडोर स्थानों के लिए।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प c (केवल तीन) उन छात्रों को भ्रमित करता है जो कथन 1, 2 और 3 को सही मानते हैं (यह भूलकर कि कथन 3 में 'अधिभूत' होने का गलत दावा है) और केवल कथन 4 को अस्वीकार करते हैं।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें — नादस्वरम एक डबल-रीड एरोफोन है = सुषिर वाद्य: सही।",
+        "कथन 2 की पुष्टि करें — तविल के दो झिल्ली हैं = अवनद्ध वाद्य: सही।",
+        "कथन 3 की जाँच करें — 'मंगल वाद्य' एक अनुष्ठानिक पदनाम है, नाट्य शास्त्र की श्रेणियों को अधिभूत करने वाला वर्गीकरण नहीं; कथन 3 गलत है।",
+        "कथन 4 की जाँच करें — नादस्वरम सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड है, बाहरी उपयोग में आता है; 'स्वर की नाजुकता' और 'केवल इनडोर' दोनों गलत हैं; कथन 4 गलत है; विकल्प (b) चुनें: केवल दो सही।"
+      ],
+      "upsc_trap_explanation": "कथन 3 एक श्रेणी-संकरण जाल है: जो छात्र जानते हैं कि नादस्वरम और तविल 'मंगल वाद्य' हैं, वे मान सकते हैं कि यह कार्यात्मक लेबल ध्वनिक वर्गीकरण पर प्राथमिकता रखता है। ऐसा नहीं है — मंगल वाद्य वाद्यों के अनुष्ठानिक उपयोग संदर्भ को दर्शाता है, जबकि वाद्य श्रेणियाँ उनके ध्वनिक तंत्र को। कथन 4 नादस्वरम की तेज़ी के ज्ञात तथ्य को उलट देता है — एक उलटा तथ्य जाल।",
+      "final_explanation": "नादस्वरम-तविल जोड़ी कर्नाटक मंदिर और अनुष्ठानिक संगीत के आदर्श 'मंगल वाद्य' समूह का प्रतिनिधित्व करती है।\n\n• कथन 1 — सही: नादस्वरम एक डबल-रीड एरोफोन है; खोखली हवा की नली के माध्यम से रीड़ से ध्वनि = सुषिर वाद्य।\n• कथन 2 — सही: तविल एक दो-सर वाला बैरल ड्रम है; झिल्लियाँ ध्वनि उत्पन्न करती हैं = अवनद्ध वाद्य।\n• कथन 3 — गलत: 'मंगल वाद्य' एक कार्यात्मक/अनुष्ठानिक लेबल है जो शुभ संदर्भ दर्शाता है। यह वाद्यों के नाट्य शास्त्र ध्वनिक वर्गीकरण को प्रतिस्थापित नहीं करता।\n• कथन 4 — गलत: नादस्वरम अपनी असाधारण ध्वनि तीव्रता के लिए प्रसिद्ध है — विश्व का सबसे तेज़ गैर-पीतल ध्वनिक वुडविंड। यह बड़े खुले मंदिर उत्सव स्थलों में उपयोग होता है।\n\nमूल्यवर्धन:\n• नादस्वरम वादक वृत्तीय श्वास तकनीक का उपयोग करते हैं — जो बिना सांस लिए लगातार ध्वनि उत्पन्न करने की विधि है।\n• तविल दाहिने हाथ से छड़ी और बाएं हाथ से उंगलियों का उपयोग करके बजाया जाता है — एक विषमलैंगिक वादन तकनीक।\n• नादस्वरम-तविल जोड़ी तमिल परंपरा में 'पेरिया मेलम' (बड़ा समूह) कहलाती है, जो 'चिन्ना मेलम' (छोटा समूह) से भिन्न है।"
+    }
+  },
+  {
+    "uuid": "6405773b-1663-4760-9682-9147a9f72f7c",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sangita Ratnakara (Sharngadeva) and Its Extension of Natya Shastra Classification",
+        "Natya Shastra: Authorship, Dating, and Musicological Significance"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Chronological sequence of Indian musicological texts",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological order of composition of these foundational Indian musicological texts?\n\n1. Sangita Ratnakara (Sharngadeva)\n2. Natya Shastra (Bharata Muni)\n3. Brihaddeshi (Matanga)\n\n(a) 2 → 3 → 1\n(b) 2 → 1 → 3\n(c) 3 → 2 → 1\n(d) 1 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option b is deceptive because students who associate Sangita Ratnakara with being 'more advanced' than Natya Shastra may incorrectly place Brihaddeshi before it rather than between the two.",
+      "elimination_logic": [
+        "Natya Shastra (200 BCE–200 CE) is the oldest of the three — must be first.",
+        "Brihaddeshi (Matanga, approximately 5th–9th century CE) predates Sangita Ratnakara and is a bridge text.",
+        "Sangita Ratnakara (Sharngadeva, 13th century CE) is the most recent of these three — must be last.",
+        "Correct sequence: Natya Shastra → Brihaddeshi → Sangita Ratnakara; select option (a)."
+      ],
+      "upsc_trap_explanation": "Students who know Natya Shastra is oldest and Sangita Ratnakara is a 13th-century text may not know Brihaddeshi's approximate period (5th–9th century CE). Without this middle text's dating, students may incorrectly place it after Sangita Ratnakara, producing an incorrect sequence. Brihaddeshi by Matanga is the key intermediate text — famous for early raga classification.",
+      "final_explanation": "Indian classical musicology developed through a sequence of foundational texts, each building upon the previous:\n\nCorrect sequence: Natya Shastra → Brihaddeshi → Sangita Ratnakara\n\n• Natya Shastra (attributed to Bharata Muni, 200 BCE–200 CE): The foundational text on dramaturgy and the originating source of instrument classification.\n• Brihaddeshi (Matanga, approximately 5th–9th century CE): A crucial intermediate text that systematised raga classification for the first time, bridging Natya Shastra and later medieval texts.\n• Sangita Ratnakara (Sharngadeva, 13th century CE): The comprehensive medieval synthesis composed at the court of Yadava king Singhana; expanded raga taxonomy and refined instrument sub-classification.\n\nWrong options place Brihaddeshi after Sangita Ratnakara or reverse Natya Shastra's position.\n\nValue Addition:\n• Brihaddeshi is considered the first text to formally use the word 'raga' in its current musicological sense.\n• Sangita Ratnakara's synthesis is significant as it was composed before the divergence of Hindustani and Carnatic traditions.\n• These three texts together form the classical 'canon' of Indian musicological literature."
+    },
+    "hi": {
+      "display_text": "इन मूल भारतीय संगीतशास्त्रीय ग्रंथों की रचना का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. संगीतरत्नाकर (शारंगदेव)\n2. नाट्यशास्त्र (भरत मुनि)\n3. बृहद्देशी (मातंग)\n\n(a) 2 → 3 → 1\n(b) 2 → 1 → 3\n(c) 3 → 2 → 1\n(d) 1 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प b भ्रमित करने वाला है क्योंकि छात्र जो संगीतरत्नाकर को नाट्यशास्त्र से 'अधिक उन्नत' मानते हैं, वे बृहद्देशी को इसके पहले रखने के बजाय दोनों के बीच गलत स्थान दे सकते हैं।",
+      "elimination_logic": [
+        "नाट्यशास्त्र (200 ईसा पूर्व–200 ईस्वी) तीनों में सबसे प्राचीन है — अतः सबसे पहले होना चाहिए।",
+        "बृहद्देशी (मातंग, लगभग 5वीं–9वीं शताब्दी ईस्वी) संगीतरत्नाकर से पहले है और एक मध्यवर्ती ग्रंथ है।",
+        "संगीतरत्नाकर (शारंगदेव, 13वीं शताब्दी ईस्वी) इन तीनों में सबसे नवीन है — अतः सबसे अंत में होना चाहिए।",
+        "सही क्रम: नाट्यशास्त्र → बृहद्देशी → संगीतरत्नाकर; विकल्प (a) चुनें।"
+      ],
+      "upsc_trap_explanation": "जो छात्र जानते हैं कि नाट्यशास्त्र सबसे प्राचीन है और संगीतरत्नाकर 13वीं शताब्दी का ग्रंथ है, वे बृहद्देशी की अनुमानित अवधि (5वीं–9वीं शताब्दी ईस्वी) नहीं जानते होंगे। इस मध्यवर्ती ग्रंथ की तिथि न जानने पर छात्र इसे संगीतरत्नाकर के बाद रख सकते हैं, जिससे गलत क्रम बनता है। मातंग द्वारा रचित बृहद्देशी मुख्य मध्यवर्ती ग्रंथ है — जो प्रारंभिक राग वर्गीकरण के लिए प्रसिद्ध है।",
+      "final_explanation": "भारतीय शास्त्रीय संगीतशास्त्र की विकास यात्रा कुछ मूलभूत ग्रंथों के क्रम से हुई, जो एक-दूसरे पर आधारित हैं:\n\nसही क्रम: नाट्यशास्त्र → बृहद्देशी → संगीतरत्नाकर\n\n• नाट्यशास्त्र (भरत मुनि, 200 ईसा पूर्व–200 ईस्वी): नाट्यशास्त्र का मूल ग्रंथ और वाद्य यंत्र वर्गीकरण का प्रारंभिक स्रोत।\n• बृहद्देशी (मातंग, लगभग 5वीं–9वीं शताब्दी ईस्वी): एक महत्वपूर्ण मध्यवर्ती ग्रंथ जिसने पहली बार राग वर्गीकरण को व्यवस्थित किया, नाट्यशास्त्र और बाद के मध्यकालीन ग्रंथों के बीच सेतु का कार्य किया।\n• संगीतरत्नाकर (शारंगदेव, 13वीं शताब्दी ईस्वी): यादव राजा सिंघना के दरबार में रचित व्यापक मध्यकालीन संश्लेषण; राग वर्गीकरण का विस्तार और वाद्य यंत्र उप-वर्गीकरण का परिष्कार।\n\nगलत विकल्प बृहद्देशी को संगीतरत्नाकर के बाद रखते हैं या नाट्यशास्त्र की स्थिति उलट देते हैं।\n\nमूल्यवर्धन:\n• बृहद्देशी को पहला ऐसा ग्रंथ माना जाता है जिसने 'राग' शब्द का वर्तमान संगीतशास्त्रीय अर्थ में औपचारिक रूप से उपयोग किया।\n• संगीतरत्नाकर का संश्लेषण महत्वपूर्ण है क्योंकि यह हिंदुस्तानी और कर्नाटक संगीत परंपराओं के विभाजन से पहले रचित था।\n• ये तीनों ग्रंथ मिलकर भारतीय संगीतशास्त्रीय साहित्य का शास्त्रीय 'कैनन' बनाते हैं।"
+    }
+  },
+  {
+    "uuid": "e9e8153e-064b-4303-ac65-aab66d36c566",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Sarangi: Classification Debate (Tata vs. Avanaddha) and Role in Hindustani Music",
+        "Sitar and Sarod: Medieval Origin and Tata Vadya Classification"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Bowed vs. plucked Tata Vadya — Sarangi is the odd one out",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four instruments share a common sub-category within Tata Vadya based on their playing mechanism. Which one does NOT belong to the same sub-category as the others?\n\n(a) Sitar\n(b) Sarod\n(c) Sarangi\n(d) Rabab",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option d (Rabab) is deceptive because Rabab has a folk/Afghan connotation that may make students categorise it as 'different' from the classical Indian plucked instruments, without recognising that Sarangi is the genuine structural outlier (bowed vs. plucked).",
+      "elimination_logic": [
+        "Identify the shared attribute: the group should consist of plucked chordophones (Tata Vadya).",
+        "Sitar — plucked chordophone: fits.",
+        "Sarod — plucked chordophone: fits.",
+        "Rabab — plucked chordophone: fits (Afghan plucked instrument, Sarod's antecedent).",
+        "Sarangi — bowed chordophone: does NOT belong with plucked instruments; odd one out; select option (c)."
+      ],
+      "upsc_trap_explanation": "All four instruments are Tata Vadya (chordophones), so a category-level answer fails to identify the odd one out. The sub-category distinction — plucked vs. bowed — is the discriminating criterion. Sarangi (bowed) is structurally different from Sitar, Sarod, and Rabab (all plucked). Rabab is the trap option because its folk/Afghan identity makes it feel like the 'different' one, when acoustically it belongs with the plucked group.",
+      "final_explanation": "All four instruments are Tata Vadya (chordophones), but they differ in their playing technique within this category.\n\n• Option (a) Sitar: Plucked chordophone — strings are struck with a mizrab (plectrum ring).\n• Option (b) Sarod: Plucked chordophone — strings are plucked with a triangular coconut-shell plectrum.\n• Option (c) Sarangi: Bowed chordophone — strings are set in vibration by a bow. This is the odd one out among this group of plucked instruments.\n• Option (d) Rabab: Plucked chordophone (Afghan) — strings are plucked; it is the structural predecessor of Sarod.\n\nValue Addition:\n• Sarangi's main strings are bowed; it also has 35–40 sympathetic strings that resonate without being directly bowed.\n• Sarod's metallic fingerboard (no frets) allows for smooth glissando — a key characteristic.\n• Rabab continues to be played in Afghan classical music (known as Rubab); it predates Sarod in the subcontinent's musical history."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार वाद्यों में से तीन ताता वाद्य के अंतर्गत बजाने की तकनीक के आधार पर एक समान उप-श्रेणी में आते हैं। इनमें से कौन सा वाद्य अन्य के समान उप-श्रेणी में नहीं आता?\n\n(a) सितार\n(b) सरोद\n(c) सारंगी\n(d) रबाब",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प d (रबाब) भ्रमित करने वाला है क्योंकि रबाब का लोक/अफगान संबंध है जो छात्रों को इसे शास्त्रीय भारतीय ताना वाद्यों से 'अलग' वर्गीकृत करने पर मजबूर कर सकता है, जबकि सारंगी वास्तविक संरचनात्मक अपवाद (धनुष और ताना वाद्य) है।",
+      "elimination_logic": [
+        "साझा गुण पहचानें: समूह में ताना वाद्य (तानवाला वाद्य) होने चाहिए।",
+        "सितार — ताना वाद्य: उपयुक्त।",
+        "सरोद — ताना वाद्य: उपयुक्त।",
+        "रबाब — ताना वाद्य: उपयुक्त (अफगान ताना वाद्य, सरोद का पूर्वज)।",
+        "सारंगी — धनुष वाद्य: ताना वाद्यों के साथ नहीं आता; अलग है; विकल्प (c) चुनें।"
+      ],
+      "upsc_trap_explanation": "सभी चार वाद्य ताता वाद्य (तानवाला वाद्य) हैं, इसलिए केवल श्रेणी स्तर का उत्तर अलग वाद्य को पहचानने में विफल रहता है। उप-श्रेणी भेद — ताना वाद्य बनाम धनुष वाद्य — निर्णायक मानदंड है। सारंगी (धनुष वाद्य) संरचनात्मक रूप से सितार, सरोद, और रबाब (सभी ताना वाद्य) से भिन्न है। रबाब जालसाजी विकल्प है क्योंकि इसका लोक/अफगान पहचान इसे 'अलग' महसूस कराती है, जबकि ध्वनिक रूप से यह ताना वाद्य समूह में आता है।",
+      "final_explanation": "सभी चार वाद्य ताता वाद्य (तानवाला वाद्य) हैं, लेकिन इस श्रेणी के भीतर उनकी बजाने की तकनीक भिन्न है।\n\n• विकल्प (a) सितार: ताना वाद्य — तारों को मिज़राब (प्लेक्ट्रम रिंग) से बजाया जाता है।\n• विकल्प (b) सरोद: ताना वाद्य — तारों को त्रिकोणीय नारियल-छिलका प्लेक्ट्रम से ताना जाता है।\n• विकल्प (c) सारंगी: धनुष वाद्य — तारों को धनुष से कंपन में लाया जाता है। यह ताना वाद्यों के इस समूह में अलग है।\n• विकल्प (d) रबाब: ताना वाद्य (अफगान) — तारों को ताना जाता है; यह सरोद का संरचनात्मक पूर्वज है।\n\nमूल्य संवर्धन:\n• सारंगी के मुख्य तार धनुष से बजाए जाते हैं; इसके अलावा 35–40 सहानुभूतिपूर्ण तार होते हैं जो सीधे धनुष से नहीं बजाए जाते लेकिन गूंजते हैं।\n• सरोद का धातु का फिंगरबोर्ड (फ्रेट्स नहीं) चिकनी ग्लिसांदो की अनुमति देता है — एक प्रमुख विशेषता।\n• रबाब अफगान शास्त्रीय संगीत में (रुबाब के नाम से) बजाया जाता है; यह उपमहाद्वीप के संगीत इतिहास में सरोद से पहले का है।"
+    }
+  },
+  {
+    "uuid": "407d9d66-8371-4a5a-a53f-448be4b79d0b",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Conch Shell (Shankha) as Sushira Vadya: Ritual and Musicological Dimensions"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Shankha — named in Mahabharata; Buddhist and Hindu ritual use",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the cultural and ritual dimensions of Shankha (conch shell):\n\nStatement 1: In the Mahabharata, Krishna's conch is named Panchajanya, and Arjuna's conch is named Devadatta — each warrior's conch having an individual name reflects the instrument's cultural and martial significance.\n\nStatement 2: Shankha is used exclusively in Hindu religious ceremonies and has no documented role in Buddhist ritual contexts.\n\nWhich of the following is correct?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In the Mahabharata, Krishna's conch is named Panchajanya, and Arjuna's conch is named Devadatta — each warrior's conch having an individual name reflects the instrument's cultural and martial significance.",
+          "verdict": "Correct",
+          "reason": "The Mahabharata's Bhishma Parva records the named conchs of major warriors: Krishna's Panchajanya and Arjuna's Devadatta are the most cited, confirming both the cultural layering and the statement's accuracy."
+        },
+        {
+          "statement": "Shankha is used exclusively in Hindu religious ceremonies and has no documented role in Buddhist ritual contexts.",
+          "verdict": "Incorrect",
+          "reason": "Shankha is also a symbol in Buddhist iconography (one of the Ashtamangala — eight auspicious symbols) and is used in Tibetan Buddhist rituals; the claim of exclusivity to Hindu ceremonies is factually incorrect."
+        }
+      ],
+      "strong_distractor": "a — Option a (both correct) tempts students who know Statement 1 is accurate and who associate Shankha primarily with Hindu contexts, not examining whether it has Buddhist uses.",
+      "elimination_logic": [
+        "Evaluate Statement 1 — Panchajanya (Krishna) and Devadatta (Arjuna) are correctly named in Mahabharata; Statement 1 is correct.",
+        "Evaluate Statement 2 — 'Exclusively Hindu' is the scope-extension trap; Shankha appears in Tibetan Buddhist ritual and Buddhist Ashtamangala iconography; Statement 2 is incorrect.",
+        "Select option (c): Statement 1 correct, Statement 2 incorrect."
+      ],
+      "upsc_trap_explanation": "Statement 2 uses 'exclusively' to create a false boundary. Students who primarily associate Shankha with Hindu rituals (puja, temple use) may accept the exclusivity claim without recalling Shankha's role in Buddhist iconography and Tibetan Buddhist practice. Shankha is one of the eight auspicious symbols (Ashtamangala) in Buddhism — a fact that directly refutes the 'exclusively Hindu' claim.",
+      "final_explanation": "Shankha occupies a unique position at the intersection of musicology, religion, and ritual culture across multiple traditions.\n\n• Statement 1 — Correct: The Mahabharata's Bhishma Parva names the conchs of the major warriors. Krishna's is Panchajanya ('belonging to the five people'), Arjuna's is Devadatta ('god-given'). This naming tradition underscores the Shankha's significance as an instrument of individual martial identity.\n• Statement 2 — Incorrect: Shankha is not exclusive to Hindu ritual. It is one of the Ashtamangala (eight auspicious symbols) in both Hinduism and Buddhism. In Tibetan Buddhist practice, the Shankha is blown during religious ceremonies — making the 'exclusively Hindu' claim factually wrong.\n\nValue Addition:\n• Other named conchs in Mahabharata include Bhima's Paundra, Yudhishthira's Anantavijaya, and Nakula/Sahadeva's Sughosa and Manipushpaka.\n• Shankha is blown at Hindu puja as a purifying act — the sound is believed to create sacred vibrations.\n• A right-spiralling Shankha (Dakshinavarti) is considered exceptionally rare and auspicious in Hindu tradition."
+    },
+    "hi": {
+      "display_text": "शंख (शंख) के सांस्कृतिक और अनुष्ठानिक आयामों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\nकथन 1: महाभारत में, कृष्ण का शंख पंचजन्य नामक है, और अर्जुन का शंख देवदत्त नामक है — प्रत्येक योद्धा के शंख का व्यक्तिगत नाम होना वाद्ययंत्र के सांस्कृतिक और युद्धात्मक महत्व को दर्शाता है।\n\nकथन 2: शंख का उपयोग केवल हिंदू धार्मिक अनुष्ठानों में होता है और इसका बौद्ध अनुष्ठानिक संदर्भों में कोई प्रलेखित भूमिका नहीं है।\n\nनिम्नलिखित में से कौन सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "महाभारत में, कृष्ण का शंख पंचजन्य नामक है, और अर्जुन का शंख देवदत्त नामक है — प्रत्येक योद्धा के शंख का व्यक्तिगत नाम होना वाद्ययंत्र के सांस्कृतिक और युद्धात्मक महत्व को दर्शाता है।",
+          "verdict": "सही है",
+          "reason": "महाभारत के भीष्म पर्व में प्रमुख योद्धाओं के नामित शंखों का उल्लेख है: कृष्ण का पंचजन्य और अर्जुन का देवदत्त सबसे अधिक उद्धृत हैं, जो सांस्कृतिक परतों और कथन की सटीकता की पुष्टि करते हैं।"
+        },
+        {
+          "statement": "शंख का उपयोग केवल हिंदू धार्मिक अनुष्ठानों में होता है और इसका बौद्ध अनुष्ठानिक संदर्भों में कोई प्रलेखित भूमिका नहीं है।",
+          "verdict": "गलत है",
+          "reason": "शंख बौद्ध प्रतीकशास्त्र में भी एक प्रतीक है (अष्टमंगलों में से एक) और तिब्बती बौद्ध अनुष्ठानों में इसका उपयोग होता है; हिंदू अनुष्ठानों तक सीमित होने का दावा तथ्यात्मक रूप से गलत है।"
+        }
+      ],
+      "strong_distractor": "विकल्प (a) — दोनों सही है, उन छात्रों को भ्रमित करता है जो कथन 1 को सही जानते हैं और शंख को मुख्यतः हिंदू संदर्भों से जोड़ते हैं, बिना यह जांचे कि इसका बौद्ध उपयोग भी है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें — महाभारत में पंचजन्य (कृष्ण) और देवदत्त (अर्जुन) सही नामित हैं; कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें — 'केवल हिंदू' का दायरा बढ़ाने वाला जाल है; शंख तिब्बती बौद्ध अनुष्ठान और बौद्ध अष्टमंगल प्रतीकशास्त्र में भी है; कथन 2 गलत है।",
+        "विकल्प (c) चुनें: कथन 1 सही, कथन 2 गलत।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में 'केवल' शब्द का उपयोग एक गलत सीमा बनाने के लिए किया गया है। जो छात्र शंख को मुख्यतः हिंदू अनुष्ठानों (पूजा, मंदिर उपयोग) से जोड़ते हैं, वे शंख की बौद्ध प्रतीकशास्त्र और तिब्बती बौद्ध प्रथाओं में भूमिका को याद किए बिना इस 'केवल हिंदू' दावे को स्वीकार कर सकते हैं। शंख बौद्ध धर्म के आठ शुभ प्रतीकों (अष्टमंगल) में से एक है — जो 'केवल हिंदू' दावे को सीधे खंडित करता है।",
+      "final_explanation": "शंख संगीतशास्त्र, धर्म और अनुष्ठान संस्कृति के विभिन्न परंपराओं के संगम पर एक अनूठा स्थान रखता है।\n\n• कथन 1 — सही: महाभारत के भीष्म पर्व में प्रमुख योद्धाओं के शंखों के नाम दिए गए हैं। कृष्ण का शंख पंचजन्य ('पाँच लोगों का') और अर्जुन का देवदत्त ('ईश्वर द्वारा दिया गया') है। यह नामकरण परंपरा शंख के व्यक्तिगत युद्धात्मक पहचान के महत्व को दर्शाती है।\n• कथन 2 — गलत: शंख केवल हिंदू अनुष्ठान तक सीमित नहीं है। यह हिंदू और बौद्ध दोनों में अष्टमंगल (आठ शुभ प्रतीकों) में से एक है। तिब्बती बौद्ध प्रथाओं में शंख धार्मिक अनुष्ठानों के दौरान फूंका जाता है — अतः 'केवल हिंदू' दावा तथ्यात्मक रूप से गलत है।\n\nमूल्यवर्धन:\n• महाभारत में अन्य नामित शंखों में भीम का पौंद्र, युधिष्ठिर का अनंतविजय, और नकुल/सहदेव के सुगोषा और मणिपुष्पक शामिल हैं।\n• हिंदू पूजा में शंख को शुद्धिकरण के कार्य के रूप में फूंका जाता है — इसकी ध्वनि को पवित्र कंपन उत्पन्न करने वाला माना जाता है।\n• दक्षिणावर्ती शंख (दक्षिणावर्ती) हिंदू परंपरा में अत्यंत दुर्लभ और शुभ माना जाता है।"
+    }
+  },
+  {
+    "uuid": "c4c326db-a84c-488c-b65e-1f82d60c8988",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Chaturvidha Vadya: The Four-Fold Classification System",
+        "Tata Vadya (Chordophones): Stringed Instruments",
+        "Avanaddha Vadya (Membranophones): Percussion Instruments with Membrane",
+        "Ghana Vadya (Idiophones): Solid/Self-Sounding Instruments",
+        "Sushira Vadya (Aerophones): Wind Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "conflation",
+      "concept_anchor": "Classifying an unfamiliar instrument using Natya Shastra principles",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "At a folk craft exhibition, a musician demonstrates an instrument consisting of a ceramic vessel partially filled with water. When the player strikes the rim of the vessel with a thin wooden rod, it produces a clear pitched tone. There is no stretched animal skin or membrane on the vessel, no strings are attached to it, and it is not blown into. According to the Natya Shastra's Chaturvidha Vadya classification, this instrument would most correctly be placed under which category?\n\n(a) Tata Vadya, because the vessel has a hollow resonating body similar to stringed instruments\n(b) Ghana Vadya, because the primary sound is produced through the solid ceramic body of the vessel vibrating when struck\n(c) Avanaddha Vadya, because the hollow vessel body filled with a medium (water) resembles the principle of a covered or bound instrument\n(d) Sushira Vadya, because the hollow interior of the vessel contains air that resonates when the instrument is played",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because a vessel-shaped body with water suggests 'covered/bound' to students, triggering the Avanaddha Vadya association incorrectly.",
+      "elimination_logic": [
+        "The instrument in the scenario has no membrane, no strings, and no air column — the vessel itself vibrates when struck.",
+        "Eliminate option (a) — Tata Vadya requires strings; this instrument has none.",
+        "Eliminate option (c) — Avanaddha Vadya requires a stretched membrane as primary sound source; the scenario specifies no membrane.",
+        "Eliminate option (d) — Sushira Vadya requires a hollow air column as primary mechanism; this instrument is struck, not blown.",
+        "Select option (b) — Ghana Vadya: the solid body of the vessel vibrates when struck = idiophone principle."
+      ],
+      "upsc_trap_explanation": "The scenario's vessel-with-water design evokes Jaltarang — and the trap is students reaching for Avanaddha Vadya because 'vessel' sounds like a drum body. The critical fact the scenario makes explicit — 'no membrane' — should eliminate Avanaddha. The scenario is testing whether students apply the classification criterion (primary sound mechanism) rather than visual/shape-based categorisation.",
+      "final_explanation": "A folk musician at a craft exhibition demonstrates a ceramic vessel filled partially with water. When struck with a thin wooden rod at its rim, it produces a clear pitched tone. There is no stretched membrane, no strings, and it is not blown into.\n\nApplicable principle: The Natya Shastra's classification is mechanism-based. The primary sound producer here is the solid ceramic body of the vessel vibrating when struck — this is the definition of Ghana Vadya (idiophone).\n\n• Option (a) Tata Vadya: Incorrect — no strings present.\n• Option (b) Ghana Vadya: Correct — the solid ceramic body vibrates when struck; no membrane, no strings, no air column. This is identical in principle to Jaltarang and Ghatam.\n• Option (c) Avanaddha Vadya: Incorrect — no stretched membrane; the hollow body shape does not create an Avanaddha classification.\n• Option (d) Sushira Vadya: Incorrect — the instrument is struck, not blown; no air column mechanism.\n\nValue Addition:\n• This scenario mirrors exactly why Jaltarang is Ghana Vadya — ceramic body struck at rim, water adjusts pitch but does not create the primary sound.\n• The classification principle 'primary sound mechanism' is the single most important concept in the entire Chaturvidha Vadya system.\n• Folk and craft instruments are fully within the scope of Natya Shastra's classification — it is not confined to classical instruments."
+    },
+    "hi": {
+      "display_text": "एक लोक शिल्प प्रदर्शनी में, एक संगीतकार एक वाद्य यंत्र प्रदर्शित करता है जिसमें एक मिट्टी का पात्र आंशिक रूप से पानी से भरा होता है। जब वादक पात्र के किनारे को पतली लकड़ी की छड़ी से मारता है, तो स्पष्ट स्वर उत्पन्न होता है। पात्र पर कोई तनी हुई जानवर की चमड़ी या झिल्ली नहीं है, न ही उस पर कोई तार लगे हैं, और इसे फूंका नहीं जाता। नाट्य शास्त्र के चतुर्विध वाद्य वर्गीकरण के अनुसार, इस वाद्य यंत्र को सबसे सही रूप से किस श्रेणी में रखा जाएगा?\n\n(a) ताता वाद्य, क्योंकि पात्र का खोखला गूंजने वाला शरीर तार वाले वाद्यों जैसा है\n(b) घन वाद्य, क्योंकि प्राथमिक ध्वनि पात्र के ठोस मिट्टी के शरीर के मारे जाने पर उत्पन्न होती है\n(c) अवनद्ध वाद्य, क्योंकि पानी से भरे खोखले पात्र का शरीर 'आवृत/बंधित' वाद्य के सिद्धांत जैसा प्रतीत होता है\n(d) सुषिर वाद्य, क्योंकि पात्र के खोखले अंदरूनी हिस्से में हवा होती है जो वाद्य बजाने पर गूंजती है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option c is deceptive because a vessel-shaped body with water suggests 'covered/bound' to students, triggering the Avanaddha Vadya association incorrectly.",
+      "elimination_logic": [
+        "इस परिदृश्य में वाद्य यंत्र में कोई झिल्ली नहीं है, न ही तार हैं, और न ही वायु स्तंभ — जब मारा जाता है तो पात्र स्वयं कंपन करता है।",
+        "विकल्प (a) को हटाएँ — ताता वाद्य में तार आवश्यक हैं; इस वाद्य में कोई तार नहीं है।",
+        "विकल्प (c) को हटाएँ — अवनद्ध वाद्य में प्राथमिक ध्वनि स्रोत के रूप में तनी हुई झिल्ली आवश्यक है; परिदृश्य में झिल्ली नहीं है।",
+        "विकल्प (d) को हटाएँ — सुषिर वाद्य में प्राथमिक तंत्र के रूप में खोखला वायु स्तंभ आवश्यक है; यह वाद्य मारा जाता है, फूंका नहीं जाता।",
+        "विकल्प (b) चुनें — घन वाद्य: पात्र का ठोस शरीर मारे जाने पर कंपन करता है = इडियोफोन सिद्धांत।"
+      ],
+      "upsc_trap_explanation": "परिदृश्य में जल से भरे पात्र का डिज़ाइन जलतरंग को स्मरण कराता है — और जाल में छात्र अवनद्ध वाद्य की ओर झुकते हैं क्योंकि 'पात्र' शब्द से उन्हें ड्रम जैसा शरीर लगता है। परिदृश्य में स्पष्ट तथ्य — 'कोई झिल्ली नहीं' — अवनद्ध को बाहर कर देना चाहिए। यह परिदृश्य यह परखता है कि छात्र वर्गीकरण के मानदंड (प्राथमिक ध्वनि तंत्र) को लागू करते हैं या केवल दृश्य/आकार आधारित वर्गीकरण करते हैं।",
+      "final_explanation": "एक लोक संगीतकार शिल्प प्रदर्शनी में एक मिट्टी के पात्र को आंशिक रूप से पानी से भरा दिखाता है। जब पात्र के किनारे को पतली लकड़ी की छड़ी से मारा जाता है, तो स्पष्ट स्वर उत्पन्न होता है। कोई तनी हुई झिल्ली, कोई तार नहीं हैं, और इसे फूंका नहीं जाता।\n\nलागू सिद्धांत: नाट्य शास्त्र की वर्गीकरण प्रणाली तंत्र आधारित है। यहाँ प्राथमिक ध्वनि उत्पादक पात्र का ठोस मिट्टी का शरीर है जो मारे जाने पर कंपन करता है — यह घन वाद्य (इडियोफोन) की परिभाषा है।\n\n• विकल्प (a) ताता वाद्य: गलत — कोई तार नहीं।\n• विकल्प (b) घन वाद्य: सही — ठोस मिट्टी का शरीर मारे जाने पर कंपन करता है; कोई झिल्ली, तार या वायु स्तंभ नहीं। यह जलतरंग और घटम के सिद्धांत के समान है।\n• विकल्प (c) अवनद्ध वाद्य: गलत — कोई तनी हुई झिल्ली नहीं; खोखला शरीर अवनद्ध वर्गीकरण नहीं बनाता।\n• विकल्प (d) सुषिर वाद्य: गलत — वाद्य मारा जाता है, फूंका नहीं जाता; कोई वायु स्तंभ तंत्र नहीं।\n\nमूल्यवर्धन:\n• यह परिदृश्य ठीक उसी कारण से जलतरंग को घन वाद्य बताता है — किनारे पर मारा गया मिट्टी का शरीर, पानी स्वर को समायोजित करता है पर प्राथमिक ध्वनि नहीं बनाता।\n• 'प्राथमिक ध्वनि तंत्र' वर्गीकरण सिद्धांत चतुर्विध वाद्य प्रणाली का सबसे महत्वपूर्ण अवधारणा है।\n• लोक और शिल्प वाद्य नाट्य शास्त्र की वर्गीकरण में पूरी तरह शामिल हैं — यह केवल शास्त्रीय वाद्यों तक सीमित नहीं है।"
+    }
+  },
+  {
+    "uuid": "3a68789f-fbd2-4381-936f-38611d1541da",
+    "meta": {
+      "subject": "Art and Culture",
+      "topic": "Music",
+      "sub_topic": "Musical instruments — classification (Natya Shastra)",
+      "concepts_used": [
+        "Tata Vadya (Chordophones): Stringed Instruments",
+        "Avanaddha Vadya (Membranophones): Percussion Instruments with Membrane",
+        "Ghana Vadya (Idiophones): Solid/Self-Sounding Instruments",
+        "Sushira Vadya (Aerophones): Wind Instruments"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Sanskrit etymological basis of all four Vadya category names",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Sanskrit etymological basis of the Chaturvidha Vadya category names in the Natya Shastra, consider the following statements:\n\n1. The Sanskrit term 'Tata' means 'stretched' or 'extended,' reflecting the stretched string that is the primary sound-producing element of Tata Vadya.\n2. The Sanskrit term 'Avanaddha' means 'covered' or 'bound,' referring to the stretched membrane that covers or binds the body of the instrument.\n3. The Sanskrit term 'Sushira' means 'dense' or 'compact,' explaining why wind instruments produce a richer tonal density than other categories.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Sanskrit term 'Tata' means 'stretched' or 'extended,' reflecting the stretched string that is the primary sound-producing element of Tata Vadya.",
+          "verdict": "Correct",
+          "reason": "Tata (from Sanskrit root meaning 'stretched/spread') precisely describes the stretched string mechanism of chordophones — the etymological basis directly encodes the acoustic principle."
+        },
+        {
+          "statement": "The Sanskrit term 'Avanaddha' means 'covered' or 'bound,' referring to the stretched membrane that covers/binds the body of the instrument.",
+          "verdict": "Correct",
+          "reason": "Avanaddha (from 'ava' + 'naddha,' meaning covered/bound/laced) refers to the membrane that covers or is bound over the drum's body — accurate etymological description of membranophones."
+        },
+        {
+          "statement": "The Sanskrit term 'Sushira' means 'dense' or 'compact,' explaining why wind instruments produce a richer tonal density than other categories.",
+          "verdict": "Incorrect",
+          "reason": "Sushira means 'hollow' or 'perforated' (from 'su' + 'shira' or related to 'sushiratva' meaning hollowness) — not 'dense.' 'Dense/compact' is the meaning of 'Ghana,' not Sushira."
+        }
+      ],
+      "strong_distractor": "d — Option d (all three) is deceptive because students who know the first two etymologies may not know precisely that 'Sushira' means hollow/perforated and could accept 'dense' as a plausible meaning for a wind instrument category.",
+      "elimination_logic": [
+        "Confirm Statement 1 — Tata = stretched; correct etymological meaning for string-based instruments.",
+        "Confirm Statement 2 — Avanaddha = covered/bound; correct for membrane-based instruments.",
+        "Check Statement 3 — Sushira = hollow/perforated, NOT dense; 'dense' is the meaning of 'Ghana'; Statement 3 is incorrect.",
+        "Select option (a): Statements 1 and 2 only."
+      ],
+      "upsc_trap_explanation": "Statement 3 performs a cross-swap of Sanskrit meanings: 'Ghana' means dense/solid, and 'Sushira' means hollow/perforated. Attributing 'dense' to Sushira reverses the meanings of two categories. A student who knows these are Sanskrit terms but has not precisely memorised each meaning may accept 'dense' for a wind instrument category ('dense sound'). The etymological precision is the test.",
+      "final_explanation": "Each of the four Natya Shastra Vadya category names is a Sanskrit term that encodes the acoustic principle of that category:\n\n• Statement 1 — Correct: Tata = stretched/extended. The stretched string (taut string) vibrates to produce sound — the name directly describes the mechanism.\n• Statement 2 — Correct: Avanaddha = covered/bound/laced. The membrane is 'bound over' the drum body — again, the name describes the mechanism.\n• Statement 3 — Incorrect: Sushira means hollow or perforated — it describes the hollow cavity through which air vibrates. 'Dense' or 'compact' is the meaning of Ghana (from 'ghana' = dense/solid/heavy). Swapping these two meanings is the trap.\n\nValue Addition:\n• Ghana = dense/solid → solid body instruments; Sushira = hollow/perforated → hollow wind instruments: these two are the most commonly confused pair.\n• The etymological encoding of acoustic principles in Sanskrit instrument names reflects the sophisticated analytical tradition of ancient Indian musicology.\n• Knowing these four Sanskrit terms and their meanings is a direct pathway to correctly classifying any instrument without memorising long lists."
+    },
+    "hi": {
+      "display_text": "नाट्य शास्त्र में चतुर्विध वाद्य वर्ग नामों के संस्कृत व्युत्पत्तिगत आधार के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. संस्कृत शब्द 'तत' का अर्थ है 'खींचा हुआ' या 'विस्तारित', जो तत वाद्य के प्राथमिक ध्वनि उत्पन्न करने वाले तत्व, खींचे हुए तार को दर्शाता है।\n2. संस्कृत शब्द 'अवनद्ध' का अर्थ है 'ढका हुआ' या 'बंधा हुआ', जो वाद्य के शरीर को ढकने या बांधने वाले खींचे हुए झिल्ली को संदर्भित करता है।\n3. संस्कृत शब्द 'सुशिर' का अर्थ है 'घना' या 'सघन', जो बताता है कि वायु वाद्य अन्य वर्गों की तुलना में अधिक समृद्ध ध्वनि घनत्व उत्पन्न करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संस्कृत शब्द 'तत' का अर्थ है 'खींचा हुआ' या 'विस्तारित', जो तत वाद्य के प्राथमिक ध्वनि उत्पन्न करने वाले तत्व, खींचे हुए तार को दर्शाता है।",
+          "verdict": "सही है",
+          "reason": "तत (संस्कृत मूल से जिसका अर्थ है 'खींचा/फैला हुआ') तार वाद्यों की खींची हुई तार की क्रिया को सटीक रूप से दर्शाता है — व्युत्पत्तिगत आधार सीधे ध्वनिक सिद्धांत को व्यक्त करता है।"
+        },
+        {
+          "statement": "संस्कृत शब्द 'अवनद्ध' का अर्थ है 'ढका हुआ' या 'बंधा हुआ', जो वाद्य के शरीर को ढकने या बांधने वाले खींचे हुए झिल्ली को संदर्भित करता है।",
+          "verdict": "सही है",
+          "reason": "अवनद्ध ('अव' + 'नद्ध' से, जिसका अर्थ है ढका हुआ/बंधा हुआ/बांधा हुआ) उस झिल्ली को दर्शाता है जो ड्रम के शरीर को ढकती या बांधती है — झिल्ली वाद्यों का व्युत्पत्तिगत सही वर्णन।"
+        },
+        {
+          "statement": "संस्कृत शब्द 'सुशिर' का अर्थ है 'घना' या 'सघन', जो बताता है कि वायु वाद्य अन्य वर्गों की तुलना में अधिक समृद्ध ध्वनि घनत्व उत्पन्न करते हैं।",
+          "verdict": "गलत है",
+          "reason": "सुशिर का अर्थ है 'खोखला' या 'छिद्रयुक्त' (सु + शिर या 'सुशिरत्व' से संबंधित, जिसका अर्थ है खोखलापन) — 'घना' नहीं। 'घना/सघन' का अर्थ 'घन' है, न कि सुशिर।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प d (सभी तीन) भ्रमित करने वाला है क्योंकि जो छात्र पहले दो व्युत्पत्तियों को जानते हैं वे सही रूप से यह नहीं जान सकते कि 'सुशिर' का अर्थ खोखला/छिद्रयुक्त होता है और 'घना' को वायु वाद्य वर्ग के लिए उपयुक्त मान सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 की पुष्टि करें — तत = खींचा हुआ; तार आधारित वाद्यों के लिए सही व्युत्पत्तिगत अर्थ।",
+        "कथन 2 की पुष्टि करें — अवनद्ध = ढका हुआ/बंधा हुआ; झिल्ली आधारित वाद्यों के लिए सही।",
+        "कथन 3 की जाँच करें — सुशिर = खोखला/छिद्रयुक्त, घना नहीं; 'घना' का अर्थ 'घन' है; कथन 3 गलत है।",
+        "विकल्प (a) चुनें: केवल कथन 1 और 2।"
+      ],
+      "upsc_trap_explanation": "कथन 3 संस्कृत अर्थों का क्रॉस-स्वैप करता है: 'घन' का अर्थ है घना/ठोस, और 'सुशिर' का अर्थ है खोखला/छिद्रयुक्त। सुशिर को 'घना' कहना दो वर्गों के अर्थों को उलट देता है। जो छात्र जानते हैं कि ये संस्कृत शब्द हैं लेकिन प्रत्येक अर्थ को ठीक से याद नहीं रखते, वे वायु वाद्य वर्ग के लिए 'घना' को स्वीकार कर सकते हैं। व्युत्पत्तिगत सटीकता परीक्षा का आधार है।",
+      "final_explanation": "नाट्य शास्त्र के चतुर्विध वाद्य वर्गों के प्रत्येक नाम का संस्कृत शब्द रूप ध्वनिक सिद्धांत को व्यक्त करता है:\n\n• कथन 1 — सही: तत = खींचा हुआ/विस्तारित। खींची हुई तार (तना हुआ तार) कंपन कर ध्वनि उत्पन्न करती है — नाम सीधे तंत्र को दर्शाता है।\n• कथन 2 — सही: अवनद्ध = ढका हुआ/बंधा हुआ/बांधा हुआ। झिल्ली ड्रम के शरीर पर बंधी होती है — नाम तंत्र को दर्शाता है।\n• कथन 3 — गलत: सुशिर का अर्थ खोखला या छिद्रयुक्त है — यह उस खोखले गुहा का वर्णन करता है जिससे हवा कंपन करती है। 'घना' या 'सघन' का अर्थ 'घन' है (घन = घना/ठोस/भारी)। इन दोनों अर्थों का उलटफेर ही जाल है।\n\nमूल्यवर्धन:\n• घन = घना/ठोस → ठोस शरीर वाले वाद्य; सुशिर = खोखला/छिद्रयुक्त → खोखले वायु वाद्य: ये दो सबसे अधिक भ्रमित किए जाने वाले जोड़े हैं।\n• संस्कृत वाद्य नामों में ध्वनिक सिद्धांतों का व्युत्पत्तिगत समावेशन प्राचीन भारतीय संगीतशास्त्र की विश्लेषणात्मक परंपरा को दर्शाता है।\n• इन चार संस्कृत शब्दों और उनके अर्थों को जानना बिना लंबी सूचियाँ याद किए किसी भी वाद्य को सही वर्गीकृत करने का सीधा मार्ग है।"
+    }
+  }
+]

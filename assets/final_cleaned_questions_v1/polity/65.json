@@ -1,0 +1,1304 @@
+[
+  {
+    "uuid": "dbbc5063-16da-44c2-9ff3-581595b220cd",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Child Labour Prohibition under Article 24: Scope and Boundaries"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 24 scope — hazardous vs. all child employment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to Article 24 of the Indian Constitution and related legislation, consider the following statements:\n\n1. Article 24 of the Constitution prohibits the employment of children below 14 years in any form of work whatsoever, including domestic service.\n2. The Child Labour (Prohibition and Regulation) Amendment Act, 2016 extended the prohibition on employment in hazardous industries to children between 14 and 18 years of age.\n\nWhich of the above statement(s) is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 24 of the Constitution prohibits the employment of children below 14 years in any form of work whatsoever, including domestic service.",
+          "verdict": "Incorrect",
+          "reason": "Article 24 prohibits employment of children below 14 only in factories, mines, or hazardous employment — it does not, on its face, cover all forms of child work including domestic service."
+        },
+        {
+          "statement": "The Child Labour (Prohibition and Regulation) Amendment Act, 2016 extended the prohibition on employment in hazardous industries to children between 14 and 18 years of age.",
+          "verdict": "Correct",
+          "reason": "The 2016 Amendment introduced a new category — adolescents aged 14–18 — and prohibited their employment in hazardous industries and processes, going beyond the constitutional minimum."
+        }
+      ],
+      "strong_distractor": "c — Option (c) is deceptive because many students, having learned that child labour is broadly prohibited, assume Article 24 covers all child work and mark Statement 1 as correct rather than incorrect.",
+      "elimination_logic": [
+        "Article 24's text covers 'factories, mines, or any other hazardous employment' — domestic service is not enumerated, so Statement 1 overstates the constitutional provision and is incorrect.",
+        "The 2016 Amendment's extension to 14–18 age group for hazardous industries is a factual legislative provision — Statement 2 is correct.",
+        "Since only Statement 1 is NOT correct, option (b) is the answer."
+      ],
+      "upsc_trap_explanation": "Students often conflate the policy aspiration of eliminating all child labour with the actual constitutional text of Article 24. The constitutional provision is narrower — it targets hazardous employment for children under 14, not all employment. Domestic work, family assistance, and non-hazardous activities were historically outside Article 24's direct prohibition, though later legislation addressed these gaps. This makes Statement 1 incorrect and traps students who apply a broad understanding of the provision.",
+      "final_explanation": "Article 24 is a targeted provision, not a blanket ban on all child employment. Its constitutional text restricts children below 14 from factories, mines, and hazardous work.\n\n• Statement 1 — Incorrect: Article 24's reach is confined to hazardous employment. Domestic service and non-hazardous work were not covered by the original constitutional text, which is why legislative intervention through the Child Labour Acts became necessary.\n• Statement 2 — Correct: The 2016 Amendment created a new protective layer for adolescents (14–18 years) by prohibiting their engagement in hazardous industries — a statutory extension beyond the constitutional floor.\n\nValue Addition:\n• Article 24 is absolute within its scope — no exceptions exist for hazardous work involving children under 14, not even parental consent.\n• The 2016 Amendment also controversially introduced the 'family enterprise exception' for non-hazardous work by children.\n• Article 39(f) (DPSP) provides complementary policy guidance on protecting children's dignity and freedom."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के अनुच्छेद 24 और संबंधित विधायिका के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. संविधान का अनुच्छेद 24 14 वर्ष से कम आयु के बच्चों को किसी भी प्रकार के कार्य में, जिसमें घरेलू सेवा भी शामिल है, रोजगार करने से प्रतिबंधित करता है।\n2. बाल श्रम (प्रतिबंध और विनियमन) संशोधन अधिनियम, 2016 ने खतरनाक उद्योगों में 14 से 18 वर्ष के बच्चों के रोजगार पर प्रतिबंध बढ़ाया।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1, न ही 2",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "संविधान के अनुच्छेद 24 में 14 वर्ष से कम आयु के बच्चों को किसी भी प्रकार के कार्य में, जिसमें घरेलू सेवा भी शामिल है, रोजगार करने से प्रतिबंधित किया गया है।",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 24 केवल कारखानों, खानों या खतरनाक रोजगार में 14 वर्ष से कम आयु के बच्चों के रोजगार को प्रतिबंधित करता है — यह अपने शब्दों में सभी प्रकार के बाल श्रम, जिसमें घरेलू सेवा भी शामिल है, को कवर नहीं करता।"
+        },
+        {
+          "statement": "बाल श्रम (प्रतिबंध और विनियमन) संशोधन अधिनियम, 2016 ने खतरनाक उद्योगों में 14 से 18 वर्ष के बच्चों के रोजगार पर प्रतिबंध को बढ़ाया।",
+          "verdict": "सही है",
+          "reason": "2016 के संशोधन ने 14–18 वर्ष के किशोरों की एक नई श्रेणी बनाई और खतरनाक उद्योगों तथा प्रक्रियाओं में उनके रोजगार पर प्रतिबंध लगाया, जो संवैधानिक न्यूनतम से आगे है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि कई छात्र, यह सीखकर कि बाल श्रम व्यापक रूप से प्रतिबंधित है, मान लेते हैं कि अनुच्छेद 24 सभी बाल श्रम को कवर करता है और कथन 1 को सही के बजाय गलत के रूप में चिह्नित करते हैं।",
+      "elimination_logic": [
+        "अनुच्छेद 24 के शब्द 'कारखाने, खदानें, या कोई अन्य खतरनाक रोजगार' को कवर करते हैं — घरेलू सेवा सूचीबद्ध नहीं है, अतः कथन 1 संवैधानिक प्रावधान को बढ़ा-चढ़ा कर प्रस्तुत करता है और गलत है।",
+        "2016 के संशोधन द्वारा 14–18 आयु वर्ग के लिए खतरनाक उद्योगों में विस्तार एक तथ्यात्मक विधायी प्रावधान है — अतः कथन 2 सही है।",
+        "चूंकि केवल कथन 1 सही नहीं है, अतः विकल्प (b) उत्तर है।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर सभी बाल श्रम समाप्त करने की नीति आकांक्षा को अनुच्छेद 24 के वास्तविक संवैधानिक पाठ के साथ भ्रमित कर देते हैं। संवैधानिक प्रावधान संकीर्ण है — यह 14 वर्ष से कम आयु के बच्चों के खतरनाक रोजगार को लक्षित करता है, न कि सभी रोजगार को। घरेलू कार्य, पारिवारिक सहायता, और गैर-खतरनाक गतिविधियाँ ऐतिहासिक रूप से अनुच्छेद 24 के प्रत्यक्ष प्रतिबंध के बाहर थीं, हालांकि बाद की विधायिका ने इन अंतरालों को संबोधित किया। इससे कथन 1 गलत हो जाता है और वे छात्र जो प्रावधान की व्यापक समझ लागू करते हैं, फंस जाते हैं।",
+      "final_explanation": "अनुच्छेद 24 एक लक्षित प्रावधान है, सभी बाल रोजगार पर पूर्ण प्रतिबंध नहीं। इसका संवैधानिक पाठ 14 वर्ष से कम आयु के बच्चों को कारखानों, खानों और खतरनाक कार्यों से रोकता है।\n\n• कथन 1 — गलत: अनुच्छेद 24 का दायरा केवल खतरनाक रोजगार तक सीमित है। घरेलू सेवा और गैर-खतरनाक कार्य मूल संवैधानिक पाठ में शामिल नहीं थे, इसलिए बाल श्रम अधिनियमों के माध्यम से विधायी हस्तक्षेप आवश्यक हुआ।\n• कथन 2 — सही: 2016 का संशोधन किशोरों (14–18 वर्ष) के लिए एक नई सुरक्षा परत बनाता है, जो खतरनाक उद्योगों में उनकी भागीदारी पर प्रतिबंध लगाता है — संवैधानिक न्यूनतम से परे एक वैधानिक विस्तार।\n\nमूल्य संवर्धन:\n• अनुच्छेद 24 अपने दायरे में पूर्ण है — 14 वर्ष से कम आयु के बच्चों के खतरनाक कार्यों में कोई अपवाद नहीं, माता-पिता की सहमति भी नहीं।\n• 2016 के संशोधन ने विवादास्पद रूप से गैर-खतरनाक कार्यों के लिए 'पारिवारिक उद्यम अपवाद' भी पेश किया।\n• अनुच्छेद 39(f) (DPSP) बालों की गरिमा और स्वतंत्रता की रक्षा के लिए पूरक नीति मार्गदर्शन प्रदान करता है।"
+    }
+  },
+  {
+    "uuid": "2f8770d2-f51f-42fd-a094-50494706ddd2",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Distinction between Article 23 and Article 24: Scope, Subject Matter, and Age",
+        "The State Exception under Article 23(2): Compulsory Service for Public Purposes"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Structural comparison Articles 23 and 24 — exceptions and scope",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Constitutional Feature) with List II (Description):",
+        "columns": [
+          "List I — Constitutional Feature",
+          "List II — Description"
+        ],
+        "rows": [
+          [
+            "A. Exception permitting the State to impose compulsory service",
+            "1. An open-ended clause in Article 23 expanded by judicial interpretation to cover new forms of exploitation"
+          ],
+          [
+            "B. Absolute prohibition with no exception clause",
+            "2. Article 23's coverage extends to all persons regardless of age or gender"
+          ],
+          [
+            "C. 'Other similar forms of forced labour'",
+            "3. Article 23(2) allows this, subject to a condition of non-discrimination on grounds of religion, race, caste, or class"
+          ],
+          [
+            "D. Coverage of all persons without age restriction",
+            "4. Applies specifically to children below 14 years in hazardous employment under Article 24"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-3, B-1, C-2, D-4\n(c) A-2, B-4, C-1, D-3\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it correctly matches A and C but swaps the descriptions for B and D, exploiting student confusion about which article has an exception clause.",
+      "elimination_logic": [
+        "Article 23(2) explicitly allows the State to impose compulsory service — match A with 3.",
+        "Article 24 contains no exception clause whatsoever — it is absolute for children below 14 in hazardous work — match B with 4.",
+        "Article 23 uses the phrase 'other similar forms of forced labour,' which courts have read as an open-ended clause — match C with 1.",
+        "Article 23's protection covers all persons regardless of age or gender — match D with 2, confirming option (d)."
+      ],
+      "upsc_trap_explanation": "Students commonly conflate Articles 23 and 24, assuming both have State exception clauses. Only Article 23(2) contains such an exception. Article 24 is absolute — there is no corresponding provision allowing the State to employ children under 14 in hazardous settings. Additionally, students may confuse Article 24's age-specificity with Article 23's all-persons coverage. The match-the-column format forces precision on each of these distinctions simultaneously.",
+      "final_explanation": "Articles 23 and 24 are both in Part III but differ significantly in scope, subject matter, and the presence or absence of exceptions.\n\n• A–3: Article 23(2) explicitly permits the State to impose compulsory service for public purposes, subject to the condition that no discrimination is made on grounds of religion, race, caste, or class. This is a unique exception within a Fundamental Rights article.\n• B–4: Article 24 is an absolute prohibition — it admits of no exceptions for children below 14 in hazardous employment. Parental consent, family enterprise, or national interest cannot override it.\n• C–1: The phrase 'other similar forms of forced labour' in Article 23 has been judicially read as an open-ended expansionary clause, allowing courts to bring new forms of labour exploitation within its ambit.\n• D–2: Article 23 protects all persons — men, women, children, and adults — without age or gender restriction. Its breadth is what distinguishes it from the age-specific Article 24.\n\nValue Addition:\n• Article 23(2)'s non-discrimination condition means conscription, if introduced, must not target any one religious or caste group.\n• The 'other similar forms' clause enabled courts to include contract labour, migrant labour, and prison labour within Article 23.\n• Article 24's absolute character is reinforced by the fact that no clause analogous to Article 23(2) appears in it."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संवैधानिक विशेषता) को सूची II (विवरण) से मिलाएं:",
+        "columns": [
+          "सूची I — संवैधानिक विशेषता",
+          "सूची II — विवरण"
+        ],
+        "rows": [
+          [
+            "A. राज्य को अनिवार्य सेवा लगाने की अनुमति देने वाला अपवाद",
+            "1. अनुच्छेद 23 में एक खुला प्रावधान जिसे न्यायिक व्याख्या द्वारा नए प्रकार के शोषण को कवर करने के लिए बढ़ाया गया"
+          ],
+          [
+            "B. बिना किसी अपवाद प्रावधान के पूर्ण प्रतिबंध",
+            "2. अनुच्छेद 23 की सुरक्षा सभी व्यक्तियों तक उम्र या लिंग की परवाह किए बिना फैली है"
+          ],
+          [
+            "C. 'अन्य समान प्रकार की जबरन मजदूरी'",
+            "3. अनुच्छेद 23(2) इसे अनुमति देता है, बशर्ते धर्म, जाति, वर्ग या नस्ल के आधार पर कोई भेदभाव न हो"
+          ],
+          [
+            "D. उम्र की सीमा के बिना सभी व्यक्तियों की सुरक्षा",
+            "4. अनुच्छेद 24 के तहत 14 वर्ष से कम उम्र के बच्चों के खतरनाक रोजगार पर विशेष रूप से लागू होता है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-2, C-3, D-4\n(b) A-3, B-1, C-2, D-4\n(c) A-2, B-4, C-1, D-3\n(d) A-3, B-4, C-1, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) भ्रामक है क्योंकि यह सही ढंग से A और C को मिलाता है लेकिन B और D के विवरणों को बदल देता है, जिससे छात्र भ्रमित हो जाते हैं कि किस अनुच्छेद में अपवाद प्रावधान है।",
+      "elimination_logic": [
+        "अनुच्छेद 23(2) स्पष्ट रूप से राज्य को अनिवार्य सेवा लगाने की अनुमति देता है — A को 3 से मिलाएं।",
+        "अनुच्छेद 24 में कोई अपवाद प्रावधान नहीं है — यह 14 वर्ष से कम उम्र के बच्चों के लिए खतरनाक कार्यों में पूर्ण प्रतिबंध है — B को 4 से मिलाएं।",
+        "अनुच्छेद 23 में 'अन्य समान प्रकार की जबरन मजदूरी' शब्दावली है, जिसे न्यायालयों ने एक खुला प्रावधान माना है — C को 1 से मिलाएं।",
+        "अनुच्छेद 23 की सुरक्षा सभी व्यक्तियों को उम्र या लिंग की परवाह किए बिना कवर करती है — D को 2 से मिलाएं, विकल्प (d) की पुष्टि करते हुए।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर अनुच्छेद 23 और 24 को भ्रमित कर देते हैं, यह मानते हुए कि दोनों में राज्य अपवाद प्रावधान है। केवल अनुच्छेद 23(2) में ऐसा अपवाद है। अनुच्छेद 24 पूर्ण है — इसमें 14 वर्ष से कम उम्र के बच्चों को खतरनाक कार्यों में लगाने की अनुमति देने वाला कोई प्रावधान नहीं है। इसके अतिरिक्त, छात्र अनुच्छेद 24 की आयु-विशिष्टता को अनुच्छेद 23 की सभी व्यक्तियों की सुरक्षा से भ्रमित कर सकते हैं। कॉलम मिलान प्रारूप इन सभी भेदों पर एक साथ सटीकता की मांग करता है।",
+      "final_explanation": "अनुच्छेद 23 और 24 दोनों भाग III में हैं लेकिन दायरे, विषय वस्तु, और अपवादों की उपस्थिति या अनुपस्थिति में महत्वपूर्ण रूप से भिन्न हैं।\n\n• A–3: अनुच्छेद 23(2) स्पष्ट रूप से राज्य को सार्वजनिक उद्देश्यों के लिए अनिवार्य सेवा लगाने की अनुमति देता है, बशर्ते कि धर्म, जाति, वर्ग या नस्ल के आधार पर कोई भेदभाव न हो। यह मौलिक अधिकार के अनुच्छेद में एक अनूठा अपवाद है।\n• B–4: अनुच्छेद 24 पूर्ण प्रतिबंध है — यह 14 वर्ष से कम उम्र के बच्चों के खतरनाक रोजगार के लिए कोई अपवाद स्वीकार नहीं करता। माता-पिता की सहमति, पारिवारिक उद्यम, या राष्ट्रीय हित इसे अधिलेखित नहीं कर सकते।\n• C–1: अनुच्छेद 23 में 'अन्य समान प्रकार की जबरन मजदूरी' शब्दावली को न्यायिक व्याख्या द्वारा एक खुला और विस्तारवादी प्रावधान माना गया है, जिससे न्यायालय नई प्रकार की मजदूरी शोषण को इसके दायरे में ला सकते हैं।\n• D–2: अनुच्छेद 23 सभी व्यक्तियों — पुरुष, महिला, बच्चे, और वयस्क — को उम्र या लिंग की कोई सीमा नहीं लगाता। इसकी व्यापकता इसे आयु-विशिष्ट अनुच्छेद 24 से अलग करती है।\n\nमूल्यवर्धन:\n• अनुच्छेद 23(2) की गैर-भेदभाव की शर्त का अर्थ है कि यदि सैन्य सेवा अनिवार्य की जाती है, तो वह किसी एक धार्मिक या जातीय समूह को लक्षित नहीं कर सकती।\n• 'अन्य समान प्रकार' की धारा ने न्यायालयों को अनुबंध मजदूरी, प्रवासी मजदूरी, और जेल मजदूरी को अनुच्छेद 23 के अंतर्गत लाने की अनुमति दी।\n• अनुच्छेद 24 की पूर्ण प्रकृति इस तथ्य से पुष्ट होती है कि इसमें अनुच्छेद 23(2) जैसा कोई प्रावधान नहीं है।"
+    }
+  },
+  {
+    "uuid": "c689d94a-34ef-4f00-b38c-bb33698da2bd",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "The State Exception under Article 23(2): Compulsory Service for Public Purposes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Article 23(2) — compulsory service and remuneration obligation",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion (A) and Reason (R) about Article 23 of the Indian Constitution:\n\nAssertion (A): Article 23 does not prohibit the State from imposing compulsory service on citizens for public purposes such as national defence.\n\nReason (R): Article 23(2) provides that any compulsory service imposed by the State must not discriminate on grounds of religion, race, caste, or class.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because both A and R are factually true, tempting students to confirm 'R explains A' without recognising that the permission for compulsory service and the implied remuneration requirement flow from distinct constitutional provisions — 23(2) and the general anti-exploitation principle of Article 23(1) — not from each other.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Article 23(2) does permit the State to impose compulsory service for public purposes.",
+        "Step 2: Is Reason (R) correct? — Yes. Article 23(2) explicitly conditions such service on non-discrimination on grounds of religion, race, caste, or class.",
+        "Step 3: Does R causally explain A? — No. The permission to impose compulsory service in A is founded on Article 23(2)'s text, not on the non-discrimination condition. The non-discrimination requirement is a limitation on how the service is imposed, not the reason why it is permitted. R and A are both true but R does not explain why A is constitutionally valid.",
+        "Since both A and R are correct but R does not explain A, the answer is option (b)."
+      ],
+      "upsc_trap_explanation": "Both the Assertion and the Reason are factually accurate statements drawn from Article 23(2). The trap lies in the causal relationship: students who verify both as true will likely choose option (a) without pausing to examine whether the non-discrimination requirement is the reason the State is permitted to compel service. It is not — the permission is an autonomous constitutional grant; the non-discrimination clause is a separate condition attached to its exercise.",
+      "final_explanation": "Article 23(2) is an important constitutional exception within a Fundamental Rights provision. It allows the State to impose compulsory service — such as military conscription or civic duty — without this being treated as 'forced labour' under Article 23(1).\n\n• Assertion (A) analysis: Factually correct. Article 23(2) explicitly preserves the State's power to impose compulsory service for public purposes, and this power has been held not to violate Article 23(1).\n• Reason (R) analysis: Factually correct. Article 23(2) contains a specific anti-discrimination rider — such service cannot be imposed on the basis of religion, race, caste, or class.\n• Causal relationship: R is not the explanation for A. The authority to impose compulsory service exists as an independent constitutional grant under Article 23(2). The non-discrimination condition in R is a constraint on the exercise of that power, not the basis for its existence. These are two independent aspects of Article 23(2).\n\nValue Addition:\n• No compulsory military service currently exists in India — Article 23(2) is a dormant constitutional power.\n• The anti-discrimination condition in Article 23(2) reflects Constituent Assembly concerns about targeted conscription of marginalised communities.\n• Even compulsory service under Article 23(2) must not be exploitative — payment of wages is implied."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के अनुच्छेद 23 के संबंध में निम्नलिखित कथन (A) और कारण (R) पर विचार करें:\n\nकथन (A): अनुच्छेद 23 राज्य को राष्ट्रीय रक्षा जैसे सार्वजनिक उद्देश्यों के लिए नागरिकों पर अनिवार्य सेवा लगाने से रोकता नहीं है।\n\nकारण (R): अनुच्छेद 23(2) यह प्रावधान करता है कि राज्य द्वारा लगाई गई कोई भी अनिवार्य सेवा धर्म, जाति, वर्ण, या वर्ग के आधार पर भेदभाव नहीं कर सकती।\n\n(a) दोनों A और R सही हैं, और R, A की सही व्याख्या है\n(b) दोनों A और R सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "(a) — विकल्प (a) भ्रमित करने वाला है क्योंकि दोनों A और R तथ्यात्मक रूप से सही हैं, जो छात्रों को 'R, A की व्याख्या करता है' को पुष्टि करने के लिए प्रेरित करता है बिना यह समझे कि अनिवार्य सेवा की अनुमति और निहित वेतन भुगतान की आवश्यकता अलग-अलग संवैधानिक प्रावधानों — 23(2) और अनुच्छेद 23(1) के सामान्य शोषण-विरोधी सिद्धांत — से उत्पन्न होती है, न कि एक-दूसरे से।",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। अनुच्छेद 23(2) राज्य को सार्वजनिक उद्देश्यों के लिए अनिवार्य सेवा लगाने की अनुमति देता है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। अनुच्छेद 23(2) स्पष्ट रूप से ऐसी सेवा को धर्म, जाति, वर्ण या वर्ग के आधार पर भेदभाव न करने की शर्त पर रखता है।",
+        "चरण 3: क्या R, A की कारणात्मक व्याख्या करता है? — नहीं। A में अनिवार्य सेवा लगाने की अनुमति अनुच्छेद 23(2) के पाठ पर आधारित है, न कि भेदभाव न करने की शर्त पर। भेदभाव न करने की आवश्यकता सेवा लगाने के तरीके पर एक सीमा है, न कि अनुमति का कारण। R और A दोनों सही हैं लेकिन R यह नहीं बताता कि A संवैधानिक रूप से क्यों मान्य है।",
+        "चूंकि दोनों A और R सही हैं लेकिन R, A की व्याख्या नहीं करता, अतः उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन और कारण दोनों अनुच्छेद 23(2) से लिए गए तथ्यात्मक रूप से सही बयान हैं। जाल कारणात्मक संबंध में है: जो छात्र दोनों को सही मानते हैं, वे बिना यह जांचे कि क्या भेदभाव न करने की शर्त राज्य को सेवा लगाने की अनुमति का कारण है, विकल्प (a) चुन सकते हैं। ऐसा नहीं है — अनुमति एक स्वतंत्र संवैधानिक अधिकार है; भेदभाव न करने का प्रावधान इसके प्रयोग से जुड़ी एक अलग शर्त है।",
+      "final_explanation": "अनुच्छेद 23(2) मौलिक अधिकार प्रावधान के भीतर एक महत्वपूर्ण संवैधानिक अपवाद है। यह राज्य को अनिवार्य सेवा लगाने की अनुमति देता है — जैसे सैन्य भर्ती या नागरिक कर्तव्य — बिना इसे अनुच्छेद 23(1) के तहत 'बलपूर्वक श्रम' माना जाए।\n\n• कथन (A) विश्लेषण: तथ्यात्मक रूप से सही। अनुच्छेद 23(2) स्पष्ट रूप से राज्य की सार्वजनिक उद्देश्यों के लिए अनिवार्य सेवा लगाने की शक्ति को सुरक्षित रखता है, और यह शक्ति अनुच्छेद 23(1) का उल्लंघन नहीं करती।\n• कारण (R) विश्लेषण: तथ्यात्मक रूप से सही। अनुच्छेद 23(2) में एक विशिष्ट भेदभाव-विरोधी शर्त है — ऐसी सेवा धर्म, जाति, वर्ण या वर्ग के आधार पर नहीं लगाई जा सकती।\n• कारणात्मक संबंध: R, A की व्याख्या नहीं करता। अनिवार्य सेवा लगाने का अधिकार अनुच्छेद 23(2) के तहत स्वतंत्र संवैधानिक अधिकार के रूप में मौजूद है। R में भेदभाव न करने की शर्त उस अधिकार के प्रयोग पर एक सीमा है, न कि उसके अस्तित्व का आधार। ये अनुच्छेद 23(2) के दो स्वतंत्र पहलू हैं।\n\nमूल्य संवर्धन:\n• भारत में वर्तमान में कोई अनिवार्य सैन्य सेवा नहीं है — अनुच्छेद 23(2) एक निष्क्रिय संवैधानिक शक्ति है।\n• अनुच्छेद 23(2) में भेदभाव-विरोधी शर्त संविधान सभा की उन चिंताओं को दर्शाती है जो हाशिए पर पड़े समुदायों की लक्षित भर्ती के खिलाफ थीं।\n• अनुच्छेद 23(2) के तहत भी अनिवार्य सेवा शोषणकारी नहीं होनी चाहिए — वेतन भुगतान निहित है।"
+    }
+  },
+  {
+    "uuid": "6a73e2d1-6f2a-4b48-bab7-cb337ece4e46",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Article 24 and Domestic/Family Work: The 'Family Exception' Controversy"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Family enterprise exception — conditions under 2016 Amendment",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Arjun is 12 years old and lives with his father who runs a small pottery workshop from their home. After his school hours end at 4 PM, Arjun assists his father in shaping clay pots. His father does not employ him for wages, and the work does not involve exposure to any toxic substances or dangerous machinery.\n\nWhich of the following correctly describes the constitutional and legal status of Arjun's participation in his father's workshop under current law?\n\n(a) It constitutes a violation of Article 24 because any employment of a child below 14 years — including in family enterprises — is prohibited without exception\n(b) It is permissible under the Child Labour (Prohibition and Regulation) Amendment Act, 2016, since the work occurs outside school hours and is non-hazardous in nature\n(c) It is permissible because the 2016 Amendment allows children to assist in any family enterprise regardless of whether it falls within school hours\n(d) It falls under ILO Convention No. 182's permissible category of light family work and is therefore not subject to domestic prohibition",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it correctly identifies the family enterprise exception but omits the critical condition about school hours — a student who recalls the exception exists but not its precise conditions will be attracted to this option.",
+      "elimination_logic": [
+        "Eliminate option (a) — Article 24 does not prohibit all child labour in family enterprises; the 2016 Amendment introduced a specific family exception.",
+        "Eliminate option (c) — the family enterprise exception is not unconditional; it applies only outside school hours and only for non-hazardous work.",
+        "Eliminate option (d) — ILO Convention 182 does not override domestic law directly; India's domestic provisions govern this scenario.",
+        "Retain option (b) — it correctly captures both conditions: after school hours AND non-hazardous family enterprise."
+      ],
+      "upsc_trap_explanation": "The family exception under the 2016 Amendment is frequently misquoted. Students either deny its existence (asserting Article 24 absolutely prohibits all child work) or state it without conditions. The precise conditions — outside school hours, non-hazardous work, family enterprise — must all be present for the exception to apply. A scenario that omits any one condition would make the work legally impermissible.",
+      "final_explanation": "The Child Labour (Prohibition and Regulation) Amendment Act, 2016 introduced a nuanced family enterprise exception to the broader prohibition on child labour.\n\nThe applicable principle: Children below 14 may assist in family enterprises provided (i) the work occurs outside school hours, (ii) the work is non-hazardous in nature, and (iii) it involves a family (not a commercial third-party) enterprise.\n\nApplying to the scenario — Arjun (12 years old) helps his father in a home-based pottery workshop after school hours:\n• Option (a) — Incorrect: Article 24 does not operate as an absolute bar on all family-based work; the 2016 Amendment created the family exception precisely to accommodate such situations.\n• Option (b) — Correct: Both conditions are met — the work is after school hours and pottery in a home workshop is non-hazardous family work.\n• Option (c) — Incorrect: This option omits the school-hours condition, which is mandatory — if Arjun worked during school hours, the exception would not apply.\n• Option (d) — Incorrect: ILO Convention 182 addresses the worst forms of child labour (trafficking, slavery, debt bondage) — it does not directly govern incidental family assistance in non-hazardous settings.\n\nValue Addition:\n• The family exception does not extend to third-party commercial enterprises — the family link is essential.\n• 'Hazardous' processes are scheduled under the Child Labour Act, not left to discretion.\n• Critics argue the family exception could be misused to shield disguised commercial child labour."
+    },
+    "hi": {
+      "display_text": "अर्जुन 12 वर्ष का है और अपने पिता के साथ रहता है जो उनके घर से एक छोटी मिट्टी के बर्तन की कार्यशाला चलाते हैं। स्कूल के बाद 4 बजे के बाद, अर्जुन अपने पिता की मिट्टी के बर्तन बनाने में सहायता करता है। उसके पिता उसे मजदूरी के लिए काम पर नहीं रखते, और इस कार्य में किसी भी विषैले पदार्थ या खतरनाक मशीनरी के संपर्क में आने का कोई मामला नहीं है।\n\nनिम्नलिखित में से कौन सा विकल्प वर्तमान कानून के तहत अर्जुन की अपने पिता की कार्यशाला में भागीदारी की संवैधानिक और कानूनी स्थिति को सही रूप से वर्णित करता है?\n\n(a) यह अनुच्छेद 24 का उल्लंघन है क्योंकि 14 वर्ष से कम उम्र के किसी भी बच्चे की रोजगार — जिसमें पारिवारिक उद्यम भी शामिल हैं — बिना किसी अपवाद के प्रतिबंधित है\n(b) यह बालश्रम (प्रतिबंध और विनियमन) संशोधन अधिनियम, 2016 के तहत अनुमत है, क्योंकि कार्य स्कूल के बाद होता है और प्रकृति में गैर-खतरनाक है\n(c) यह अनुमत है क्योंकि 2016 संशोधन बच्चों को किसी भी पारिवारिक उद्यम में सहायता करने की अनुमति देता है चाहे वह स्कूल के समय के भीतर हो या नहीं\n(d) यह ILO कन्वेंशन संख्या 182 के हल्के पारिवारिक कार्य की अनुमत श्रेणी में आता है और इसलिए घरेलू प्रतिबंध के अधीन नहीं है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह सही रूप से पारिवारिक उद्यम अपवाद को पहचानता है लेकिन स्कूल के समय के बारे में महत्वपूर्ण शर्त को छोड़ देता है — एक छात्र जो अपवाद के अस्तित्व को याद करता है लेकिन इसकी सटीक शर्तों को नहीं जानता, वह इस विकल्प की ओर आकर्षित होगा।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं — अनुच्छेद 24 सभी पारिवारिक उद्यमों में बालश्रम को प्रतिबंधित नहीं करता; 2016 संशोधन ने एक विशिष्ट पारिवारिक अपवाद पेश किया।",
+        "विकल्प (c) को हटाएं — पारिवारिक उद्यम अपवाद बिना शर्त नहीं है; यह केवल स्कूल के समय के बाहर और केवल गैर-खतरनाक कार्य के लिए लागू होता है।",
+        "विकल्प (d) को हटाएं — ILO कन्वेंशन 182 सीधे घरेलू कानून को अधिलेखित नहीं करता; इस परिदृश्य को भारत के घरेलू प्रावधान नियंत्रित करते हैं।",
+        "विकल्प (b) को बनाए रखें — यह दोनों शर्तों को सही रूप से पकड़ता है: स्कूल के बाद का समय और गैर-खतरनाक पारिवारिक उद्यम।"
+      ],
+      "upsc_trap_explanation": "2016 संशोधन के तहत पारिवारिक अपवाद को अक्सर गलत रूप से उद्धृत किया जाता है। छात्र या तो इसके अस्तित्व से इनकार करते हैं (दावा करते हैं कि अनुच्छेद 24 सभी बाल कार्यों को पूरी तरह से प्रतिबंधित करता है) या इसे बिना शर्त बताए देते हैं। सटीक शर्तें — स्कूल के समय के बाहर, गैर-खतरनाक कार्य, पारिवारिक उद्यम — सभी का होना आवश्यक है ताकि अपवाद लागू हो। यदि कोई भी शर्त छूट जाए तो कार्य कानूनी रूप से अस्वीकार्य होगा।",
+      "final_explanation": "बालश्रम (प्रतिबंध और विनियमन) संशोधन अधिनियम, 2016 ने बालश्रम पर व्यापक प्रतिबंध में एक सूक्ष्म पारिवारिक उद्यम अपवाद पेश किया।\n\nलागू सिद्धांत: 14 वर्ष से कम आयु के बच्चे पारिवारिक उद्यमों में सहायता कर सकते हैं यदि (i) कार्य स्कूल के समय के बाहर हो, (ii) कार्य गैर-खतरनाक हो, और (iii) यह पारिवारिक (न कि व्यावसायिक तृतीय पक्ष) उद्यम हो।\n\nपरिदृश्य पर लागू — अर्जुन (12 वर्ष) स्कूल के बाद अपने पिता की घर आधारित मिट्टी के बर्तन की कार्यशाला में सहायता करता है:\n• विकल्प (a) — गलत: अनुच्छेद 24 सभी पारिवारिक कार्यों पर पूर्ण प्रतिबंध नहीं लगाता; 2016 संशोधन ने ऐसे मामलों के लिए पारिवारिक अपवाद बनाया।\n• विकल्प (b) — सही: दोनों शर्तें पूरी होती हैं — कार्य स्कूल के बाद है और घर की कार्यशाला में मिट्टी के बर्तन बनाना गैर-खतरनाक पारिवारिक कार्य है।\n• विकल्प (c) — गलत: यह विकल्प स्कूल के समय की शर्त को छोड़ देता है, जो अनिवार्य है — यदि अर्जुन स्कूल के समय में काम करता तो अपवाद लागू नहीं होता।\n• विकल्प (d) — गलत: ILO कन्वेंशन 182 बालश्रम के सबसे खराब रूपों (तस्करी, दासता, ऋण बंधन) को संबोधित करता है — यह गैर-खतरनाक पारिवारिक सहायता को सीधे नियंत्रित नहीं करता।\n\nमूल्य संवर्धन:\n• पारिवारिक अपवाद तृतीय पक्ष व्यावसायिक उद्यमों तक नहीं फैला है — पारिवारिक संबंध आवश्यक है।\n• 'खतरनाक' प्रक्रियाएँ बालश्रम अधिनियम के तहत निर्धारित हैं, न कि विवेकाधीन।\n• आलोचक कहते हैं कि पारिवारिक अपवाद का दुरुपयोग छिपे व्यावसायिक बालश्रम को छिपाने के लिए हो सकता है।"
+    }
+  },
+  {
+    "uuid": "7ab25621-6e02-453d-b345-d79edc3ede37",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Prison Labour and Article 23: Constitutionality of Forced Prison Work"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "State of Gujarat v. High Court of Gujarat 1998 — prison wages",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched — Supreme Court judgment and the principle it established in relation to Article 23?\n\n(a) State of Gujarat v. Hon'ble High Court of Gujarat (1998) — Even prisoners performing sentenced hard labour are entitled to at least minimum statutory wages\n(b) People's Union for Democratic Rights v. Union of India (1982) — Prisoners performing forced labour cannot be paid below minimum wages, as this constitutes exploitation under Article 23\n(c) Bachpan Bachao Andolan v. Union of India (2011) — Payment of prison wages below minimum rate violates Article 23\n(d) Bandhua Mukti Morcha v. Union of India (1984) — Prison labour for wages below statutory minimum constitutes forced labour and violates Article 23",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) pairs the same principle with People's Union for Democratic Rights, which did involve Article 23 and wages — making it a highly plausible distractor for students who remember the PUDR case's wage-related holding.",
+      "elimination_logic": [
+        "The principle that even sentenced prisoners must receive at least minimum wages for labour was established in State of Gujarat v. Hon'ble High Court of Gujarat (1998).",
+        "PUDR v. UOI (1982) dealt with Asiad construction workers, not prison labour specifically.",
+        "Bachpan Bachao Andolan (2011) concerned child labour in circuses, not prison wages.",
+        "Bandhua Mukti Morcha (1984) concerned bonded labourers, not prison wage entitlements."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places the correct legal principle (minimum wages for prison labour) against the wrong case name. PUDR v. UOI is particularly dangerous as a distractor because it also dealt with below-minimum-wage payment and Article 23 — students who recall the 'wages below minimum = Article 23 violation' principle from PUDR may incorrectly associate prison wages with that case rather than with State of Gujarat (1998).",
+      "final_explanation": "Prison labour and Article 23 intersect at the question of whether sentenced prisoners retain constitutional wage protections.\n\n• Option (a) — Correct: State of Gujarat v. Hon'ble High Court of Gujarat (1998) established that prisoners performing labour as part of their sentence retain the right to minimum wages under Article 23. Even punitive hard labour cannot be conducted at sub-minimum compensation.\n• Option (b) — Incorrect: PUDR v. UOI (1982) established minimum wage entitlements for Asiad construction workers — not prison labourers. Entity-swap distractor.\n• Option (c) — Incorrect: Bachpan Bachao Andolan v. UOI (2011) addressed child labour in circuses, not prison wages.\n• Option (d) — Incorrect: Bandhua Mukti Morcha (1984) established the State's positive obligation regarding bonded labourers, not minimum wages in prisons.\n\nValue Addition:\n• Prison labour is constitutionally permissible where it forms part of a court-imposed sentence.\n• The distinction between court-sentenced hard labour and arbitrary forced prison work is critical under Article 23.\n• Article 23(2)'s 'public purpose' exception may cover some prison work but cannot justify sub-minimum wages."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा युग्म सही रूप से मेल खाता है — सर्वोच्च न्यायालय का निर्णय और उसने अनुच्छेद 23 के संबंध में जो सिद्धांत स्थापित किया?\n\n(a) State of Gujarat v. Hon'ble High Court of Gujarat (1998) — दंडित कैदियों को भी कम से कम वैधानिक न्यूनतम वेतन का अधिकार है\n(b) People's Union for Democratic Rights v. Union of India (1982) — जबरन श्रम करने वाले कैदियों को न्यूनतम वेतन से कम भुगतान नहीं किया जा सकता, क्योंकि यह अनुच्छेद 23 के तहत शोषण है\n(c) Bachpan Bachao Andolan v. Union of India (2011) — जेल वेतन का न्यूनतम दर से कम भुगतान अनुच्छेद 23 का उल्लंघन है\n(d) Bandhua Mukti Morcha v. Union of India (1984) — न्यूनतम वैधानिक वेतन से कम वेतन पर जेल श्रम जबरन श्रम है और अनुच्छेद 23 का उल्लंघन करता है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) में वही सिद्धांत People's Union for Democratic Rights के साथ जोड़ा गया है, जिसमें वास्तव में अनुच्छेद 23 और वेतन शामिल थे — जो उन छात्रों के लिए एक अत्यंत संभावित भ्रमकारी विकल्प बनाता है जो PUDR मामले के वेतन-संबंधी निर्णय को याद रखते हैं।",
+      "elimination_logic": [
+        "यह सिद्धांत कि दंडित कैदियों को भी श्रम के लिए कम से कम न्यूनतम वेतन मिलना चाहिए, State of Gujarat v. Hon'ble High Court of Gujarat (1998) में स्थापित किया गया था।",
+        "PUDR v. UOI (1982) में विशेष रूप से जेल श्रम नहीं, बल्कि एशियाड निर्माण श्रमिकों का मामला था।",
+        "Bachpan Bachao Andolan (2011) सर्कस में बाल श्रम से संबंधित था, न कि जेल वेतन से।",
+        "Bandhua Mukti Morcha (1984) बंधुआ मजदूरों से संबंधित था, न कि जेल वेतन अधिकारों से।"
+      ],
+      "upsc_trap_explanation": "यह entity-swap ट्रैप सही कानूनी सिद्धांत (जेल श्रम के लिए न्यूनतम वेतन) को गलत मामले के नाम के साथ रखता है। PUDR v. UOI एक खतरनाक भ्रमकारी विकल्प है क्योंकि यह भी न्यूनतम वेतन से कम भुगतान और अनुच्छेद 23 से संबंधित था — जो छात्र PUDR से 'न्यूनतम वेतन से कम = अनुच्छेद 23 का उल्लंघन' सिद्धांत याद रखते हैं, वे जेल वेतन को उस मामले के बजाय State of Gujarat (1998) से जोड़ने में गलती कर सकते हैं।",
+      "final_explanation": "जेल श्रम और अनुच्छेद 23 का संबंध इस प्रश्न से है कि क्या दंडित कैदियों को संवैधानिक वेतन सुरक्षा प्राप्त है।\n\n• विकल्प (a) — सही: State of Gujarat v. Hon'ble High Court of Gujarat (1998) ने स्थापित किया कि दंड के हिस्से के रूप में श्रम करने वाले कैदियों को अनुच्छेद 23 के तहत न्यूनतम वेतन का अधिकार है। दंडात्मक कठोर श्रम भी न्यूनतम वेतन से कम पर नहीं किया जा सकता।\n• विकल्प (b) — गलत: PUDR v. UOI (1982) ने एशियाड निर्माण श्रमिकों के लिए न्यूनतम वेतन अधिकार स्थापित किया — जेल श्रमिकों के लिए नहीं। यह entity-swap भ्रमकारी विकल्प है।\n• विकल्प (c) — गलत: Bachpan Bachao Andolan v. UOI (2011) ने सर्कस में बाल श्रम का मामला देखा, जेल वेतन का नहीं।\n• विकल्प (d) — गलत: Bandhua Mukti Morcha (1984) ने बंधुआ मजदूरों के संबंध में राज्य की सकारात्मक जिम्मेदारी स्थापित की, जेल में न्यूनतम वेतन का नहीं।\n\nमूल्य संवर्धन:\n• जेल श्रम संवैधानिक रूप से स्वीकार्य है जब यह न्यायालय द्वारा निर्धारित दंड का हिस्सा हो।\n• न्यायालय द्वारा निर्धारित कठोर श्रम और मनमाने तौर पर जबरन जेल श्रम के बीच अंतर अनुच्छेद 23 के तहत महत्वपूर्ण है।\n• अनुच्छेद 23(2) का 'सार्वजनिक उद्देश्य' अपवाद कुछ जेल श्रम को कवर कर सकता है, लेकिन न्यूनतम वेतन से कम वेतन को न्यायसंगत नहीं ठहरा सकता।"
+    }
+  },
+  {
+    "uuid": "bf1c6ccc-460e-4718-bdee-deed214b530b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Article 23 vs. Article 19(1)(g): Free Trade vs. Prohibition of Forced Labour",
+        "Enforceability of Articles 23 and 24 Against Private Parties"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Waiver of Fundamental Rights — Article 23 non-waivable",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the interplay between Article 23 and other constitutional provisions, consider the following statements:\n\n1. An individual cannot waive the protection of Article 23 even through a voluntarily signed contract agreeing to work without remuneration.\n2. Article 19(1)(g), which protects the right to practise any profession or carry on any trade, can be used to justify a private arrangement for unpaid labour if both parties consent.\n3. Consent of the victim is constitutionally irrelevant as a defence to a charge of trafficking under Article 23.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "An individual cannot waive the protection of Article 23 even through a voluntarily signed contract agreeing to work without remuneration.",
+          "verdict": "Correct",
+          "reason": "Fundamental Rights cannot be waived by an individual. A State cannot enforce any private contract that violates Article 23, regardless of the apparent consent of the worker."
+        },
+        {
+          "statement": "Article 19(1)(g), which protects the right to practise any profession or carry on any trade, can be used to justify a private arrangement for unpaid labour if both parties consent.",
+          "verdict": "Incorrect",
+          "reason": "Article 19(1)(g) protects the freedom to engage in economic activity — it does not create a right to enforce contracts that violate Article 23. Constitutional rights operate within the framework of all other fundamental rights, not against them."
+        },
+        {
+          "statement": "Consent of the victim is constitutionally irrelevant as a defence to a charge of trafficking under Article 23.",
+          "verdict": "Correct",
+          "reason": "Because Article 23 is a non-waivable Fundamental Right, the victim's apparent consent to their own trafficking or forced labour cannot provide constitutional shelter to the exploiter."
+        }
+      ],
+      "strong_distractor": "b — Option (b) captures Statements 2 and 3 — a student who confuses the scope of Article 19(1)(g) may accept Statement 2 as correct, and anyone who doubts the consent-irrelevance principle may exclude Statement 3.",
+      "elimination_logic": [
+        "Statement 2 claims Article 19(1)(g) justifies unpaid labour by mutual consent — this directly contradicts the principle that Fundamental Rights cannot be waived and that Article 23 overrides private agreements.",
+        "Eliminate Statement 2 as incorrect — Article 19(1)(g) cannot be used to carve out an exception to Article 23's absolute prohibition.",
+        "Statements 1 and 3 are both established constitutional principles — the non-waivability of rights and consent-irrelevance in trafficking — retain them.",
+        "Option (c) correctly captures only Statements 1 and 3 as correct."
+      ],
+      "upsc_trap_explanation": "The trap in Statement 2 is the invocation of Article 19(1)(g) — a real Fundamental Right — to seemingly justify voluntary labour contracts. Students who have not specifically studied the interplay between Articles 19 and 23 may assume that if both parties 'freely' agree, the trade/profession right prevails. The constitutional position is the opposite: no Fundamental Right, including 19(1)(g), can be exercised in a manner that violates another Fundamental Right such as Article 23.",
+      "final_explanation": "The question of whether individuals can waive Fundamental Rights goes to the heart of constitutional theory. India's courts have consistently held that Fundamental Rights are not personal privileges to be bargained away — they are constitutional guarantees that even the State cannot contract out of.\n\n• Statement 1 — Correct: Courts have held that a worker's signed agreement to work unpaid is void against Article 23. The exploiter cannot raise 'consent' as a constitutional defence.\n• Statement 2 — Incorrect: Article 19(1)(g) protects freedom to engage in trade and profession — it does not create a right to enter forced labour arrangements. Rights operate within the constitutional framework; 19(1)(g) cannot override Article 23.\n• Statement 3 — Correct: This is especially important in trafficking prosecutions — the victim's consent, whether real or coerced, is constitutionally irrelevant under Article 23's prohibition.\n\nValue Addition:\n• The principle of non-waivability of Fundamental Rights was discussed in Basheshar Nath v. CIT (1959).\n• Consent as a defence is also excluded under the IPC Section 370 (post-2013) definition of trafficking.\n• The constitutional irrelevance of consent reflects the recognition that apparent consent in exploitation contexts is rarely truly free."
+    },
+    "hi": {
+      "display_text": "अनुच्छेद 23 और अन्य संवैधानिक प्रावधानों के अंतर्संबंध के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. एक व्यक्ति अनुच्छेद 23 की सुरक्षा को स्वयं द्वारा बिना पारिश्रमिक काम करने के लिए स्वेच्छा से हस्ताक्षरित अनुबंध के माध्यम से भी त्याग नहीं सकता।\n2. अनुच्छेद 19(1)(g), जो किसी भी पेशे का अभ्यास करने या किसी भी व्यापार को करने के अधिकार की रक्षा करता है, यदि दोनों पक्ष सहमत हों तो बिना पारिश्रमिक श्रम के लिए निजी व्यवस्था को न्यायसंगत ठहराने के लिए उपयोग किया जा सकता है।\n3. पीड़ित की सहमति को अनुच्छेद 23 के तहत तस्करी के आरोप के बचाव के रूप में संवैधानिक रूप से अप्रासंगिक माना जाता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "एक व्यक्ति अनुच्छेद 23 की सुरक्षा को स्वयं द्वारा बिना पारिश्रमिक काम करने के लिए स्वेच्छा से हस्ताक्षरित अनुबंध के माध्यम से भी त्याग नहीं सकता।",
+          "verdict": "सही है",
+          "reason": "मौलिक अधिकारों को किसी व्यक्ति द्वारा त्यागा नहीं जा सकता। कोई राज्य ऐसा निजी अनुबंध लागू नहीं कर सकता जो अनुच्छेद 23 का उल्लंघन करता हो, चाहे श्रमिक की स्पष्ट सहमति हो।"
+        },
+        {
+          "statement": "अनुच्छेद 19(1)(g), जो किसी भी पेशे का अभ्यास करने या किसी भी व्यापार को करने के अधिकार की रक्षा करता है, यदि दोनों पक्ष सहमत हों तो बिना पारिश्रमिक श्रम के लिए निजी व्यवस्था को न्यायसंगत ठहराने के लिए उपयोग किया जा सकता है।",
+          "verdict": "गलत है",
+          "reason": "अनुच्छेद 19(1)(g) आर्थिक गतिविधि में संलग्न होने की स्वतंत्रता की रक्षा करता है — यह अनुच्छेद 23 का उल्लंघन करने वाले अनुबंधों को लागू करने का अधिकार नहीं बनाता। संवैधानिक अधिकार सभी अन्य मौलिक अधिकारों के ढांचे के भीतर काम करते हैं, उनके विरुद्ध नहीं।"
+        },
+        {
+          "statement": "पीड़ित की सहमति को अनुच्छेद 23 के तहत तस्करी के आरोप के बचाव के रूप में संवैधानिक रूप से अप्रासंगिक माना जाता है।",
+          "verdict": "सही है",
+          "reason": "क्योंकि अनुच्छेद 23 एक गैर-त्याग योग्य मौलिक अधिकार है, पीड़ित की अपनी तस्करी या जबरन श्रम के लिए स्पष्ट सहमति शोषक को संवैधानिक संरक्षण नहीं दे सकती।"
+        }
+      ],
+      "strong_distractor": "b — विकल्प (b) कथन 2 और 3 को समाहित करता है — जो छात्र अनुच्छेद 19(1)(g) के दायरे को भ्रमित करते हैं वे कथन 2 को सही मान सकते हैं, और जो सहमति-अप्रासंगिकता सिद्धांत पर संदेह करते हैं वे कथन 3 को बाहर कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 2 यह दावा करता है कि अनुच्छेद 19(1)(g) पारस्परिक सहमति से बिना पारिश्रमिक श्रम को न्यायसंगत ठहराता है — यह सीधे उस सिद्धांत के विपरीत है कि मौलिक अधिकार त्यागे नहीं जा सकते और अनुच्छेद 23 निजी समझौतों से ऊपर है।",
+        "कथन 2 को गलत के रूप में बाहर करें — अनुच्छेद 19(1)(g) अनुच्छेद 23 के पूर्ण प्रतिबंध के लिए अपवाद नहीं बना सकता।",
+        "कथन 1 और 3 दोनों स्थापित संवैधानिक सिद्धांत हैं — अधिकारों की गैर-त्याग्यता और तस्करी में सहमति-अप्रासंगिकता — इन्हें बनाए रखें।",
+        "विकल्प (c) केवल कथन 1 और 3 को सही के रूप में सही ढंग से पकड़ता है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में जाल अनुच्छेद 19(1)(g) का हवाला देना है — एक वास्तविक मौलिक अधिकार — जो स्वेच्छा से श्रम अनुबंधों को न्यायसंगत ठहराने जैसा प्रतीत होता है। जो छात्र अनुच्छेद 19 और 23 के बीच अंतर्संबंध का अध्ययन नहीं करते, वे मान सकते हैं कि यदि दोनों पक्ष 'स्वतंत्र' सहमत हैं तो व्यापार/पेशा का अधिकार प्रबल होगा। संवैधानिक स्थिति इसके विपरीत है: कोई भी मौलिक अधिकार, जिसमें 19(1)(g) भी शामिल है, ऐसा प्रयोग नहीं किया जा सकता जो किसी अन्य मौलिक अधिकार जैसे अनुच्छेद 23 का उल्लंघन करे।",
+      "final_explanation": "मौलिक अधिकारों को व्यक्तियों द्वारा त्यागे जाने का प्रश्न संवैधानिक सिद्धांत के मूल में है। भारत की अदालतों ने लगातार यह माना है कि मौलिक अधिकार व्यक्तिगत विशेषाधिकार नहीं हैं जिन्हें सौदा किया जा सके — वे संवैधानिक गारंटी हैं जिनसे राज्य भी अनुबंध नहीं कर सकता।\n\n• कथन 1 — सही: अदालतों ने माना है कि श्रमिक का बिना पारिश्रमिक काम करने के लिए हस्ताक्षरित समझौता अनुच्छेद 23 के विरुद्ध शून्य है। शोषक 'सहमति' को संवैधानिक बचाव के रूप में नहीं उठा सकता।\n• कथन 2 — गलत: अनुच्छेद 19(1)(g) व्यापार और पेशे में संलग्न होने की स्वतंत्रता की रक्षा करता है — यह जबरन श्रम व्यवस्था में प्रवेश करने का अधिकार नहीं बनाता। अधिकार संवैधानिक ढांचे के भीतर काम करते हैं; 19(1)(g) अनुच्छेद 23 को अधिमान्य नहीं कर सकता।\n• कथन 3 — सही: यह तस्करी अभियोगों में विशेष रूप से महत्वपूर्ण है — पीड़ित की सहमति, चाहे वास्तविक हो या जबरन, अनुच्छेद 23 के प्रतिबंध के तहत संवैधानिक रूप से अप्रासंगिक है।\n\nमूल्य संवर्धन:\n• मौलिक अधिकारों की गैर-त्याग्यता का सिद्धांत Basheshar Nath v. CIT (1959) में चर्चा किया गया था।\n• सहमति को बचाव के रूप में IPC धारा 370 (2013 के बाद) के तहत भी बाहर रखा गया है।\n• सहमति की संवैधानिक अप्रासंगिकता इस तथ्य को दर्शाती है कि शोषण के संदर्भ में स्पष्ट सहमति शायद ही कभी वास्तव में स्वतंत्र होती है।"
+    }
+  },
+  {
+    "uuid": "1368e1e9-6c56-4e97-8533-c0146d8ce8ae",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Directive Principles Complementing Articles 23 and 24: Articles 39, 42, 43, 45"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 39(f) DPSP vs. Article 24 Fundamental Right — legal weight difference",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Directive Principles of State Policy that complement Articles 23 and 24, consider the following statements:\n\n1. Article 39(f), which directs the State to ensure that children are given opportunities to develop in conditions of freedom and dignity, is a justiciable Fundamental Right enforceable through writ petitions.\n2. Article 43 of the Constitution directs the State to endeavour to secure a living wage for workers, including conditions of work ensuring a decent standard of life.\n3. Prior to the 86th Constitutional Amendment (2002), Article 45 directed the State to provide free and compulsory education for all children until the completion of the age of 14 years.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 39(f), which directs the State to ensure that children are given opportunities to develop in conditions of freedom and dignity, is a justiciable Fundamental Right enforceable through writ petitions.",
+          "verdict": "Incorrect",
+          "reason": "Article 39(f) is a Directive Principle of State Policy in Part IV — it is not directly enforceable as a Fundamental Right, unlike Article 24 which is in Part III and is justiciable."
+        },
+        {
+          "statement": "Article 43 of the Constitution directs the State to endeavour to secure a living wage for workers, including conditions of work ensuring a decent standard of life.",
+          "verdict": "Correct",
+          "reason": "Article 43 is a DPSP that expressly directs the State to secure for all workers, agricultural and industrial, a living wage along with conditions ensuring a decent standard of life — this is its accurate content."
+        },
+        {
+          "statement": "Prior to the 86th Constitutional Amendment (2002), Article 45 directed the State to provide free and compulsory education for all children until the completion of the age of 14 years.",
+          "verdict": "Correct",
+          "reason": "Pre-86th Amendment, Article 45 was a DPSP requiring the State to provide free and compulsory education to all children up to the age of 14 — after the amendment, this directive was modified to focus on early childhood care for children below 6."
+        }
+      ],
+      "strong_distractor": "c — Option (c) suggests Statements 1 and 3 are not correct — students who confuse the pre- and post-86th Amendment text of Article 45 may reject Statement 3, making this option appealing.",
+      "elimination_logic": [
+        "Statement 1 claims Article 39(f) is a justiciable Fundamental Right — this is clearly incorrect because Article 39 is in Part IV (DPSPs), not Part III.",
+        "Statement 2 accurately describes Article 43's living wage directive — it is correct, not 'NOT correct'.",
+        "Statement 3 accurately describes the pre-86th Amendment text of Article 45 — it is correct.",
+        "Since only Statement 1 is NOT correct, option (b) is the answer."
+      ],
+      "upsc_trap_explanation": "Students often conflate the strength of DPSPs and Fundamental Rights when both seem to protect the same class of persons (children, workers). Article 39(f) and Article 24 both concern children's welfare — but only Article 24 is enforceable as a Fundamental Right. A student who uses the holistic 'child rights jurisprudence' approach may incorrectly elevate Article 39(f) to Fundamental Right status.",
+      "final_explanation": "The distinction between Part III rights and Part IV directives is one of constitutional hierarchy and enforceability.\n\n• Statement 1 — Incorrect: Article 39(f) sits in Part IV — it is aspirational and policy-guiding, not directly enforceable through a writ petition. Article 24 (Part III) is the justiciable counterpart.\n• Statement 2 — Correct: Article 43 directs the State to secure a living wage — this includes agricultural, industrial, and other categories of workers, with conditions ensuring dignity.\n• Statement 3 — Correct: Pre-2002, Article 45 required free and compulsory education for all children under 14. The 86th Amendment moved this into Part III (Article 21A) as a justiciable right and reframed Article 45 for early childhood care.\n\nValue Addition:\n• Courts use DPSPs interpretively to strengthen Fundamental Rights — Article 39(f) informs the reading of Articles 21 and 24.\n• Article 42 directs the State to make provision for just and humane conditions of work — relevant to forced labour discourse.\n• The interplay of Part III and Part IV is a recurring examination theme."
+    },
+    "hi": {
+      "display_text": "अनुच्छेद 23 और 24 के पूरक राज्य नीति के निर्देशात्मक सिद्धांतों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 39(f), जो राज्य को निर्देशित करता है कि बच्चों को स्वतंत्रता और गरिमा की परिस्थितियों में विकास के अवसर दिए जाएं, एक न्यायिक मौलिक अधिकार है जिसे रिट याचिकाओं के माध्यम से लागू किया जा सकता है।\n2. संविधान का अनुच्छेद 43 राज्य को निर्देशित करता है कि वह श्रमिकों के लिए जीवित वेतन सुनिश्चित करने का प्रयास करे, जिसमें गरिमापूर्ण जीवन स्तर सुनिश्चित करने वाली कार्य स्थितियाँ शामिल हैं।\n3. 86वें संविधान संशोधन (2002) से पहले, अनुच्छेद 45 राज्य को निर्देशित करता था कि वह सभी बच्चों को 14 वर्ष की आयु पूरी होने तक मुफ्त और अनिवार्य शिक्षा प्रदान करे।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) केवल 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Article 39(f), which directs the State to ensure that children are given opportunities to develop in conditions of freedom and dignity, is a justiciable Fundamental Right enforceable through writ petitions.",
+          "verdict": "गलत",
+          "reason": "अनुच्छेद 39(f) भाग IV में एक राज्य नीति के निर्देशात्मक सिद्धांत हैं — यह सीधे मौलिक अधिकार के रूप में लागू नहीं है, जबकि अनुच्छेद 24 भाग III में है और न्यायिक है।"
+        },
+        {
+          "statement": "Article 43 of the Constitution directs the State to endeavour to secure a living wage for workers, including conditions of work ensuring a decent standard of life.",
+          "verdict": "सही",
+          "reason": "अनुच्छेद 43 एक DPSP है जो स्पष्ट रूप से राज्य को सभी श्रमिकों, कृषि और औद्योगिक सहित, के लिए जीवित वेतन और गरिमापूर्ण जीवन स्तर सुनिश्चित करने के लिए निर्देशित करता है — यह इसका सही विवरण है।"
+        },
+        {
+          "statement": "Prior to the 86th Constitutional Amendment (2002), Article 45 directed the State to provide free and compulsory education for all children until the completion of the age of 14 years.",
+          "verdict": "सही",
+          "reason": "86वें संशोधन से पहले, अनुच्छेद 45 एक DPSP था जो राज्य को 14 वर्ष की आयु तक सभी बच्चों को मुफ्त और अनिवार्य शिक्षा प्रदान करने के लिए निर्देशित करता था — संशोधन के बाद यह निर्देश 6 वर्ष से कम उम्र के बच्चों के प्रारंभिक बाल्यकाल देखभाल पर केंद्रित हो गया।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) कथन 1 और 3 को गलत बताता है — जो छात्र अनुच्छेद 45 के 86वें संशोधन से पहले और बाद के पाठ में भ्रमित होते हैं, वे कथन 3 को अस्वीकार कर सकते हैं, जिससे यह विकल्प आकर्षक बनता है।",
+      "elimination_logic": [
+        "कथन 1 यह दावा करता है कि अनुच्छेद 39(f) एक न्यायिक मौलिक अधिकार है — यह स्पष्ट रूप से गलत है क्योंकि अनुच्छेद 39 भाग IV (DPSPs) में है, न कि भाग III में।",
+        "कथन 2 अनुच्छेद 43 के जीवित वेतन निर्देश का सही वर्णन करता है — यह सही है, 'सही नहीं है' नहीं।",
+        "कथन 3 अनुच्छेद 45 के 86वें संशोधन से पहले के पाठ का सही वर्णन करता है — यह सही है।",
+        "चूंकि केवल कथन 1 सही नहीं है, अतः विकल्प (b) उत्तर है।"
+      ],
+      "upsc_trap_explanation": "छात्र अक्सर DPSPs और मौलिक अधिकारों की ताकत को भ्रमित कर देते हैं जब दोनों एक ही वर्ग (बच्चे, श्रमिक) की सुरक्षा करते प्रतीत होते हैं। अनुच्छेद 39(f) और अनुच्छेद 24 दोनों बच्चों के कल्याण से संबंधित हैं — लेकिन केवल अनुच्छेद 24 न्यायिक रूप से लागू है। जो छात्र समग्र 'बाल अधिकार न्यायशास्त्र' दृष्टिकोण अपनाते हैं, वे अनुच्छेद 39(f) को गलत तरीके से मौलिक अधिकार का दर्जा दे सकते हैं।",
+      "final_explanation": "भाग III के अधिकारों और भाग IV के निर्देशों के बीच अंतर संवैधानिक पदानुक्रम और लागू होने की क्षमता का है।\n\n• कथन 1 — गलत: अनुच्छेद 39(f) भाग IV में है — यह आकांक्षात्मक और नीति-निर्देशक है, सीधे रिट याचिका के माध्यम से लागू नहीं। अनुच्छेद 24 (भाग III) इसका न्यायिक समकक्ष है।\n• कथन 2 — सही: अनुच्छेद 43 राज्य को जीवित वेतन सुनिश्चित करने का निर्देश देता है — इसमें कृषि, औद्योगिक और अन्य श्रमिक श्रेणियाँ शामिल हैं, जिनके लिए गरिमा सुनिश्चित करने वाले कार्य की स्थितियाँ भी हैं।\n• कथन 3 — सही: 2002 से पहले, अनुच्छेद 45 सभी 14 वर्ष से कम उम्र के बच्चों के लिए मुफ्त और अनिवार्य शिक्षा की मांग करता था। 86वें संशोधन ने इसे भाग III (अनुच्छेद 21A) में न्यायिक अधिकार के रूप में स्थानांतरित किया और अनुच्छेद 45 को प्रारंभिक बाल्यकाल देखभाल के लिए पुनः परिभाषित किया।\n\nमूल्य संवर्धन:\n• न्यायालय DPSPs का व्याख्यात्मक उपयोग मौलिक अधिकारों को मजबूत करने के लिए करते हैं — अनुच्छेद 39(f) अनुच्छेद 21 और 24 की व्याख्या में सहायक है।\n• अनुच्छेद 42 राज्य को न्यायसंगत और मानवीय कार्य स्थितियाँ प्रदान करने का निर्देश देता है — यह जबरन श्रम के विषय से संबंधित है।\n• भाग III और भाग IV का अंतःक्रिया परीक्षा में बार-बार पूछा जाता है।"
+    }
+  },
+  {
+    "uuid": "e7b239c7-2a4b-4fe7-b526-204aa2db9a3a",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "State's Positive Obligation under Articles 23 and 24",
+        "Bonded Labour System and Article 23: Legislative and Judicial Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Positive duty under Articles 23–24 — Bandhua Mukti Morcha",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following Assertion (A) and Reason (R) in the context of Articles 23 and 24:\n\nAssertion (A): Articles 23 and 24 impose positive obligations on the State to actively identify, rescue, and rehabilitate victims of exploitation — they are not confined to mere negative prohibitions.\n\nReason (R): In Bandhua Mukti Morcha v. Union of India (1984), the Supreme Court directed State governments to conduct surveys to identify bonded labourers, release them, and provide for their rehabilitation.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students may recognise both A and R as correct but find the causal link between positive obligation and State-directed surveys less obvious, defaulting to 'both correct but unrelated'.",
+      "elimination_logic": [
+        "Step 1: Is Assertion (A) correct? — Yes. Articles 23 and 24 are not merely negative prohibitions; the Supreme Court in Bandhua Mukti Morcha confirmed the State has a positive duty to identify and free bonded labourers.",
+        "Step 2: Is Reason (R) correct? — Yes. The Bandhua Mukti Morcha judgment did direct State governments to conduct surveys, release bonded labourers, and rehabilitate them.",
+        "Step 3: Does R causally explain A? — Yes. The very reason R is true is that the Supreme Court translated the positive obligation (A) into specific actionable directions — R is the judicial operationalisation of A, confirming the causal link.",
+        "Both A and R are correct and R explains A — the answer is option (a)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Articles 23 and 24 operate not merely as negative injunctions but also as positive constitutional mandates requiring the State to act against exploitation.\n\n• Assertion (A) analysis: Factually and legally correct. The Supreme Court has consistently held that the State has a constitutional duty to actively identify, rescue, and rehabilitate victims of forced and bonded labour — it cannot remain passive.\n• Reason (R) analysis: Factually correct. The Bandhua Mukti Morcha v. Union of India (1984) judgment is the landmark source of this positive obligation — the Court directed surveys, release of bonded labourers, and rehabilitation, treating a letter as a writ petition.\n• Causal relationship: R correctly and directly explains A. The positive obligation stated in A was given operational content by the specific judicial directions in the Bandhua Mukti Morcha case — the directions are the mechanism through which the positive obligation manifests.\n\nValue Addition:\n• The Bandhua Mukti Morcha case treated a letter addressed to a judge as a writ petition — a milestone in PIL development.\n• The Court also directed the constitution of Vigilance Committees under the 1976 Act.\n• The M.C. Mehta (1996) case similarly created a Child Labour Rehabilitation-cum-Welfare Fund as a positive State obligation."
+    },
+    "hi": {
+      "display_text": "अनुच्छेद 23 और 24 के संदर्भ में निम्नलिखित कथन (A) और कारण (R) पर विचार करें:\n\nकथन (A): अनुच्छेद 23 और 24 राज्य पर शोषण के शिकारों की सक्रिय पहचान, मुक्ति और पुनर्वास के लिए सकारात्मक दायित्व लगाते हैं — ये केवल नकारात्मक निषेध तक सीमित नहीं हैं।\n\nकारण (R): बंधुआ मुक्ति मोर्चा बनाम भारत संघ (1984) में, सुप्रीम कोर्ट ने राज्य सरकारों को बंधुआ मजदूरों की पहचान के लिए सर्वेक्षण करने, उन्हें मुक्त कराने और पुनर्वास की व्यवस्था करने का निर्देश दिया।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because students may recognise both A and R as correct but find the causal link between positive obligation and State-directed surveys less obvious, defaulting to 'both correct but unrelated'.",
+      "elimination_logic": [
+        "चरण 1: क्या कथन (A) सही है? — हाँ। अनुच्छेद 23 और 24 केवल नकारात्मक निषेध नहीं हैं; सुप्रीम कोर्ट ने बंधुआ मुक्ति मोर्चा में पुष्टि की कि राज्य पर बंधुआ मजदूरों की पहचान करने और उन्हें मुक्त कराने का सकारात्मक दायित्व है।",
+        "चरण 2: क्या कारण (R) सही है? — हाँ। बंधुआ मुक्ति मोर्चा के निर्णय में सुप्रीम कोर्ट ने राज्य सरकारों को सर्वेक्षण करने, बंधुआ मजदूरों को मुक्त कराने और पुनर्वास करने का निर्देश दिया।",
+        "चरण 3: क्या R, A को कारणात्मक रूप से समझाता है? — हाँ। R इसलिए सत्य है क्योंकि सुप्रीम कोर्ट ने सकारात्मक दायित्व (A) को विशिष्ट क्रियान्वयन योग्य निर्देशों में बदला — R, A का न्यायिक क्रियान्वयन है, जो कारणात्मक संबंध की पुष्टि करता है।",
+        "A और R दोनों सही हैं और R, A को समझाता है — उत्तर विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 23 और 24 केवल नकारात्मक निषेध के रूप में नहीं, बल्कि राज्य को शोषण के विरुद्ध सक्रिय रूप से कार्य करने के लिए सकारात्मक संवैधानिक दायित्व के रूप में कार्य करते हैं।\n\n• कथन (A) का विश्लेषण: तथ्यात्मक और कानूनी रूप से सही। सुप्रीम कोर्ट ने लगातार यह माना है कि राज्य पर जबरन और बंधुआ मजदूरी के शिकारों की सक्रिय पहचान, मुक्ति और पुनर्वास का संवैधानिक दायित्व है — राज्य निष्क्रिय नहीं रह सकता।\n• कारण (R) का विश्लेषण: तथ्यात्मक रूप से सही। बंधुआ मुक्ति मोर्चा बनाम भारत संघ (1984) का निर्णय इस सकारात्मक दायित्व का मील का पत्थर है — कोर्ट ने सर्वेक्षण, बंधुआ मजदूरों की मुक्ति और पुनर्वास के निर्देश दिए, और एक पत्र को रिट याचिका माना।\n• कारणात्मक संबंध: R सही और सीधे A को समझाता है। A में उल्लिखित सकारात्मक दायित्व को बंधुआ मुक्ति मोर्चा मामले में दिए गए विशिष्ट न्यायिक निर्देशों द्वारा क्रियान्वित किया गया — ये निर्देश सकारात्मक दायित्व के प्रकट होने का माध्यम हैं।\n\nमूल्य संवर्धन:\n• बंधुआ मुक्ति मोर्चा मामले में न्यायाधीश को लिखे गए एक पत्र को रिट याचिका माना गया — PIL विकास में एक मील का पत्थर।\n• कोर्ट ने 1976 के अधिनियम के तहत सतर्कता समितियों के गठन का भी निर्देश दिया।\n• एम.सी. मेहता (1996) मामले में भी बाल श्रम पुनर्वास-सह-कल्याण कोष का निर्माण एक सकारात्मक राज्य दायित्व के रूप में किया गया।"
+    }
+  },
+  {
+    "uuid": "4589da00-5ac4-4bcc-9ce2-5d503a139117",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "'Other Similar Forms of Forced Labour' — Judicial Expansion of Article 23",
+        "PUDR v. Union of India (1982): Landmark Judgment Expanding Article 23"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Open-ended clause 'other similar forms' — judicial expansion Article 23",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following correctly describes the significance of the phrase 'other similar forms of forced labour' in Article 23 of the Indian Constitution?\n\n(a) It confirms that Article 23 is an exhaustive provision covering only the specific forms of exploitation listed in its text\n(b) It restricts Article 23's application to cases involving sexual exploitation of women and children\n(c) It operates as an open-ended clause that enables courts to bring new and evolving forms of labour exploitation within Article 23's prohibition\n(d) It requires that labour exploitation must involve direct physical coercion before it can be classified as a violation of Article 23",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who read Article 23 literally may recall 'traffic in human beings' and 'begar' as the only enumerated forms and conclude the article is exhaustive.",
+      "elimination_logic": [
+        "Article 23 uses the phrase 'other similar forms of forced labour' — this phrase signals that the enumeration is illustrative, not exhaustive.",
+        "The Supreme Court in PUDR (1982) explicitly relied on this open-ended clause to bring construction workers' underpayment within Article 23.",
+        "Option (c) correctly identifies this as a judicially recognised expansionary clause — retain it."
+      ],
+      "upsc_trap_explanation": "Students who rely on rote recall of Article 23's text know 'traffic in human beings' and 'begar' but may not register the significance of the phrase 'other similar forms.' The open-ended character of this phrase is what allowed courts to bring unorganised labour exploitation, contract labour abuse, and migrant labour violations within Article 23's ambit — without this clause, the article would have been limited to two named categories.",
+      "final_explanation": "Article 23 prohibits traffic in human beings, begar, and 'other similar forms of forced labour.' This last phrase is constitutionally significant.\n\n• Option (a) — Incorrect: Article 23 is not an exhaustive provision. The phrase 'other similar forms' makes it explicitly open-ended.\n• Option (b) — Incorrect: The article is not restricted to only sexual exploitation — it covers all forms of forced labour including economic exploitation through underpayment.\n• Option (c) — Correct: Courts have treated 'other similar forms of forced labour' as an expansionary clause, bringing contract labour exploitation, migrant labour conditions, and prison labour within its scope.\n• Option (d) — Incorrect: Article 23 does not require 'direct physical coercion' — economic compulsion is sufficient, as established in PUDR v. UOI (1982).\n\nValue Addition:\n• The open-ended clause has been used to address modern forms of exploitation not contemplated in 1950.\n• The PUDR case brought unorganised sector workers within Article 23's protection.\n• Debt bondage, a form not explicitly named in Article 23, is covered through the 'other similar forms' clause."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के अनुच्छेद 23 में 'अन्य समान प्रकार के जबरन श्रम' शब्दावली का महत्व सही रूप में कौन-सा वर्णन करता है?\n\n(a) यह पुष्टि करता है कि अनुच्छेद 23 एक संपूर्ण प्रावधान है जो केवल अपने पाठ में सूचीबद्ध विशिष्ट शोषण के रूपों को ही कवर करता है\n(b) यह अनुच्छेद 23 के आवेदन को केवल महिलाओं और बच्चों के यौन शोषण के मामलों तक सीमित करता है\n(c) यह एक खुला प्रावधान है जो न्यायालयों को श्रम शोषण के नए और विकसित रूपों को अनुच्छेद 23 के प्रतिबंध के अंतर्गत लाने में सक्षम बनाता है\n(d) यह आवश्यक करता है कि श्रम शोषण में प्रत्यक्ष शारीरिक दबाव होना चाहिए तभी इसे अनुच्छेद 23 का उल्लंघन माना जाएगा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is deceptive because students who read Article 23 literally may recall 'traffic in human beings' and 'begar' as the only enumerated forms and conclude the article is exhaustive.",
+      "elimination_logic": [
+        "अनुच्छेद 23 में 'अन्य समान प्रकार के जबरन श्रम' शब्दावली का प्रयोग किया गया है — यह वाक्यांश संकेत करता है कि सूचीकरण केवल उदाहरणात्मक है, संपूर्ण नहीं।",
+        "सुप्रीम कोर्ट ने PUDR (1982) में इस खुली सीमा वाले प्रावधान का स्पष्ट रूप से सहारा लेकर निर्माण श्रमिकों के कम वेतन को अनुच्छेद 23 के अंतर्गत लाया।",
+        "विकल्प (c) सही रूप में इसे न्यायिक रूप से मान्यता प्राप्त विस्तारवादी प्रावधान के रूप में पहचानता है — इसे बनाए रखें।"
+      ],
+      "upsc_trap_explanation": "जो छात्र अनुच्छेद 23 के शब्दों को रट लेते हैं, वे 'मानव तस्करी' और 'बेगार' को ही याद रख सकते हैं और 'अन्य समान प्रकार' के महत्व को समझ नहीं पाते। इस खुली सीमा वाले वाक्यांश के कारण न्यायालयों ने असंगठित श्रम शोषण, ठेका श्रम दुरुपयोग, और प्रवासी श्रमिकों के उल्लंघनों को अनुच्छेद 23 के दायरे में लाया है — यदि यह प्रावधान न होता तो यह अनुच्छेद केवल दो नामित श्रेणियों तक सीमित रहता।",
+      "final_explanation": "अनुच्छेद 23 मानव तस्करी, बेगार, और 'अन्य समान प्रकार के जबरन श्रम' को प्रतिबंधित करता है। यह अंतिम वाक्यांश संवैधानिक दृष्टि से महत्वपूर्ण है।\n\n• विकल्प (a) — गलत: अनुच्छेद 23 एक संपूर्ण प्रावधान नहीं है। 'अन्य समान प्रकार' इसे स्पष्ट रूप से खुला बनाता है।\n• विकल्प (b) — गलत: यह अनुच्छेद केवल यौन शोषण तक सीमित नहीं है — यह जबरन श्रम के सभी रूपों को कवर करता है, जिसमें कम वेतन के माध्यम से आर्थिक शोषण भी शामिल है।\n• विकल्प (c) — सही: न्यायालयों ने 'अन्य समान प्रकार के जबरन श्रम' को विस्तारवादी प्रावधान माना है, जो ठेका श्रम शोषण, प्रवासी श्रम की स्थिति, और जेल श्रम को इसके दायरे में लाता है।\n• विकल्प (d) — गलत: अनुच्छेद 23 के उल्लंघन के लिए 'प्रत्यक्ष शारीरिक दबाव' आवश्यक नहीं है — आर्थिक बाध्यता पर्याप्त है, जैसा कि PUDR बनाम भारत संघ (1982) में स्थापित है।\n\nमूल्य संवर्धन:\n• यह खुला प्रावधान 1950 में कल्पित नहीं किए गए आधुनिक शोषण के रूपों को संबोधित करने के लिए उपयोग किया गया है।\n• PUDR मामले ने असंगठित क्षेत्र के श्रमिकों को अनुच्छेद 23 की सुरक्षा में लाया।\n• ऋण बंधन, जो अनुच्छेद 23 में स्पष्ट रूप से नामित नहीं है, 'अन्य समान प्रकार' के प्रावधान के माध्यम से शामिल है।"
+    }
+  },
+  {
+    "uuid": "50eee9cb-5d43-4ff4-85d7-50810635c23e",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Scope and Definition of 'Traffic in Human Beings' under Article 23"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 23 — traffic definition covers all persons, not gender-specific",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about 'traffic in human beings' under Article 23 of the Indian Constitution:\n\n1. The term 'traffic in human beings' under Article 23 has been judicially interpreted to extend beyond the literal constitutional text to encompass broader forms of exploitation including debt bondage and contract labour abuse.\n2. Article 23's protection against trafficking applies exclusively to women and children and does not extend to adult men.\n3. The Immoral Traffic Prevention Act (ITPA) and the Protection of Children from Sexual Offences Act (POCSO) are among the statutory instruments that operationalise Article 23's constitutional prohibition.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The term 'traffic in human beings' under Article 23 has been judicially interpreted to extend beyond the literal constitutional text to encompass broader forms of exploitation including debt bondage and contract labour abuse.",
+          "verdict": "Correct",
+          "reason": "Courts have expanded the constitutional term beyond its literal meaning to cover evolving forms of human exploitation — the article's text is treated as a floor, not a ceiling."
+        },
+        {
+          "statement": "Article 23's protection against trafficking applies exclusively to women and children and does not extend to adult men.",
+          "verdict": "Incorrect",
+          "reason": "Article 23 covers 'any person' — it is gender and age neutral. The protection extends to men, women, and children alike, distinguishing it from some statutory protections that are gender-specific."
+        },
+        {
+          "statement": "The Immoral Traffic Prevention Act (ITPA) and the Protection of Children from Sexual Offences Act (POCSO) are among the statutory instruments that operationalise Article 23's constitutional prohibition.",
+          "verdict": "Correct",
+          "reason": "ITPA (1956) addresses commercial sexual exploitation and trafficking, while POCSO (2012) protects children from sexual offences — both derive constitutional legitimacy from Article 23 as they regulate and punish forms of trafficking and exploitation."
+        }
+      ],
+      "strong_distractor": "a — Option (a) captures Statements 1 and 2 — students who believe trafficking protections are primarily designed for women and children (based on media discourse and knowledge of ITPA's female-focused provisions) may incorrectly accept Statement 2.",
+      "elimination_logic": [
+        "Statement 2 claims Article 23 applies 'exclusively to women and children' — this directly contradicts the constitutional text which says 'any person,' making Statement 2 incorrect.",
+        "Eliminate options containing Statement 2 — this removes options (a) and (d).",
+        "Statements 1 and 3 are both accurate — judicial expansion of trafficking's definition and ITPA/POCSO as Article 23's statutory expressions are settled positions.",
+        "Option (c) capturing Statements 1 and 3 is the correct answer."
+      ],
+      "upsc_trap_explanation": "The trap exploits a common misconception that anti-trafficking law primarily protects women and children, based on ITPA's historical focus on female victims and the common association of trafficking discourse with gender. Article 23's text, however, is universal — 'any person' is the constitutional standard. This distinction between the constitutional provision (universal) and some of its statutory expressions (sometimes gender-specific) is a tested source of confusion.",
+      "final_explanation": "Article 23 uses deliberately universal language — 'traffic in human beings, begar, and other similar forms of forced labour are prohibited.'\n\n• Statement 1 — Correct: Judicial interpretation has expanded the constitutional term well beyond literal trafficking to include debt bondage, migrant labour exploitation, and other modern forms — treating the article as a living document.\n• Statement 2 — Incorrect: Article 23 protects 'any person' — there is no gender or age limitation in the constitutional text. While some statutory instruments (like ITPA) historically focused on women, the constitutional prohibition is universal.\n• Statement 3 — Correct: ITPA 1956 and POCSO 2012 are two statutory pillars operationalising Article 23 — they provide criminal enforcement mechanisms for specific forms of exploitation the article prohibits.\n\nValue Addition:\n• IPC Section 370 (post-2013) is the most comprehensive statutory definition of trafficking and applies to all persons.\n• The universality of Article 23 is consistent with India's obligations under the Palermo Protocol.\n• Male trafficking victims are a growing area of concern in anti-trafficking discourse."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के अनुच्छेद 23 के अंतर्गत 'मानव तस्करी' के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. अनुच्छेद 23 के अंतर्गत 'मानव तस्करी' शब्द का न्यायिक व्याख्या शाब्दिक संवैधानिक पाठ से परे जाकर व्यापक शोषण के रूपों को शामिल करने के लिए की गई है, जिसमें ऋण बंधक और संविदा श्रम दुरुपयोग भी शामिल हैं।\n2. अनुच्छेद 23 के तहत तस्करी से सुरक्षा केवल महिलाओं और बच्चों के लिए है और यह वयस्क पुरुषों पर लागू नहीं होती।\n3. अश्लील तस्करी निवारण अधिनियम (ITPA) और बाल यौन अपराध संरक्षण अधिनियम (POCSO) वे वैधानिक उपकरण हैं जो अनुच्छेद 23 के संवैधानिक प्रतिबंध को लागू करते हैं।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "अनुच्छेद 23 के अंतर्गत 'मानव तस्करी' शब्द का न्यायिक व्याख्या शाब्दिक संवैधानिक पाठ से परे जाकर व्यापक शोषण के रूपों को शामिल करने के लिए की गई है, जिसमें ऋण बंधक और संविदा श्रम दुरुपयोग भी शामिल हैं।",
+          "verdict": "सही है",
+          "reason": "अदालतों ने संवैधानिक शब्द को इसके शाब्दिक अर्थ से आगे बढ़ाकर मानव शोषण के विकसित रूपों को कवर किया है — अनुच्छेद के पाठ को न्यूनतम मानकर, अधिकतम नहीं।"
+        },
+        {
+          "statement": "अनुच्छेद 23 के तहत तस्करी से सुरक्षा केवल महिलाओं और बच्चों के लिए है और यह वयस्क पुरुषों पर लागू नहीं होती।",
+          "verdict": "गलत है",
+          "reason": "अनुच्छेद 23 'किसी भी व्यक्ति' को कवर करता है — यह लिंग और आयु के मामले में तटस्थ है। सुरक्षा पुरुषों, महिलाओं और बच्चों सभी के लिए समान रूप से है, जो कुछ वैधानिक सुरक्षा से भिन्न है जो लिंग-विशिष्ट होती हैं।"
+        },
+        {
+          "statement": "अश्लील तस्करी निवारण अधिनियम (ITPA) और बाल यौन अपराध संरक्षण अधिनियम (POCSO) वे वैधानिक उपकरण हैं जो अनुच्छेद 23 के संवैधानिक प्रतिबंध को लागू करते हैं।",
+          "verdict": "सही है",
+          "reason": "ITPA (1956) वाणिज्यिक यौन शोषण और तस्करी को संबोधित करता है, जबकि POCSO (2012) बच्चों को यौन अपराधों से बचाता है — दोनों अनुच्छेद 23 से संवैधानिक वैधता प्राप्त करते हैं क्योंकि वे तस्करी और शोषण के रूपों को विनियमित और दंडित करते हैं।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) कथन 1 और 2 को समाहित करता है — जो छात्र मानते हैं कि तस्करी सुरक्षा मुख्य रूप से महिलाओं और बच्चों के लिए है (मीडिया चर्चा और ITPA के महिला-केंद्रित प्रावधानों के ज्ञान के आधार पर) वे गलत तरीके से कथन 2 को स्वीकार कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 2 यह दावा करता है कि अनुच्छेद 23 केवल 'महिलाओं और बच्चों' पर लागू होता है — यह सीधे संवैधानिक पाठ के विपरीत है जो 'किसी भी व्यक्ति' कहता है, अतः कथन 2 गलत है।",
+        "कथन 2 वाले विकल्पों को हटा दें — इससे विकल्प (a) और (d) हट जाते हैं।",
+        "कथन 1 और 3 दोनों सही हैं — तस्करी की परिभाषा का न्यायिक विस्तार और ITPA/POCSO का अनुच्छेद 23 के वैधानिक अभिव्यक्तियों के रूप में होना स्थापित तथ्य हैं।",
+        "विकल्प (c) जो कथन 1 और 3 को समाहित करता है, सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "यह जाल एक सामान्य भ्रांति का उपयोग करता है कि तस्करी विरोधी कानून मुख्य रूप से महिलाओं और बच्चों की रक्षा करता है, जो ITPA के ऐतिहासिक महिला पीड़ितों पर केंद्रित होने और तस्करी चर्चा के लिंग से जुड़े सामान्य संबंध पर आधारित है। हालांकि, अनुच्छेद 23 का पाठ सार्वभौमिक है — 'किसी भी व्यक्ति' संवैधानिक मानक है। संवैधानिक प्रावधान (सार्वभौमिक) और इसके कुछ वैधानिक अभिव्यक्तियों (कभी-कभी लिंग-विशिष्ट) के बीच यह भेद भ्रम का स्रोत है।",
+      "final_explanation": "अनुच्छेद 23 जानबूझकर सार्वभौमिक भाषा का उपयोग करता है — 'मानव तस्करी, बेगार, और अन्य समान प्रकार के जबरन श्रम निषिद्ध हैं।'\n\n• कथन 1 — सही: न्यायिक व्याख्या ने संवैधानिक शब्द को शाब्दिक तस्करी से परे बढ़ाकर ऋण बंधक, प्रवासी श्रम शोषण, और अन्य आधुनिक रूपों को शामिल किया है — अनुच्छेद को जीवंत दस्तावेज माना गया है।\n• कथन 2 — गलत: अनुच्छेद 23 'किसी भी व्यक्ति' की रक्षा करता है — संवैधानिक पाठ में कोई लिंग या आयु सीमा नहीं है। जबकि कुछ वैधानिक उपकरण (जैसे ITPA) ऐतिहासिक रूप से महिलाओं पर केंद्रित थे, संवैधानिक प्रतिबंध सार्वभौमिक है।\n• कथन 3 — सही: ITPA 1956 और POCSO 2012 अनुच्छेद 23 को लागू करने वाले दो वैधानिक स्तंभ हैं — ये उन विशिष्ट शोषण रूपों के लिए आपराधिक प्रवर्तन तंत्र प्रदान करते हैं जिन्हें अनुच्छेद निषिद्ध करता है।\n\nमूल्य संवर्धन:\n• आईपीसी धारा 370 (2013 के बाद) तस्करी की सबसे व्यापक वैधानिक परिभाषा है और सभी व्यक्तियों पर लागू होती है।\n• अनुच्छेद 23 की सार्वभौमिकता भारत की पालर्मो प्रोटोकॉल के तहत प्रतिबद्धताओं के अनुरूप है।\n• पुरुष तस्करी पीड़ित तस्करी विरोधी चर्चा में बढ़ती चिंता का विषय हैं।"
+    }
+  },
+  {
+    "uuid": "6f1402a2-e021-4391-8649-b8940c871f5d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Child Labour in the Context of Supreme Court's Evolving Jurisprudence Post-1990s",
+        "Definition of 'Hazardous Employment' under Article 24 and Statutory Interpretation"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "entity-swap",
+      "concept_anchor": "M.C. Mehta 1996 — child labour rehabilitation fund directions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Supreme Court's jurisprudence on child labour, consider the following statements:\n\n1. In M.C. Mehta v. State of Tamil Nadu (1996), the Supreme Court directed that whenever a child is found employed in a hazardous industry, the employer must deposit a prescribed amount into a Child Labour Rehabilitation-cum-Welfare Fund.\n2. In Bachpan Bachao Andolan v. Union of India (2011), the Supreme Court held that employment of children in match and fireworks factories constitutes hazardous employment under Article 24.\n3. The Supreme Court in M.C. Mehta (1996) also directed that an adult member of the family of the child removed from hazardous employment should be offered alternative employment.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "In M.C. Mehta v. State of Tamil Nadu (1996), the Supreme Court directed that whenever a child is found employed in a hazardous industry, the employer must deposit a prescribed amount into a Child Labour Rehabilitation-cum-Welfare Fund.",
+          "verdict": "Correct",
+          "reason": "This is a core direction from the M.C. Mehta (1996) judgment — the employer's obligation to contribute to a welfare fund was a key rehabilitative measure directed by the Court."
+        },
+        {
+          "statement": "In Bachpan Bachao Andolan v. Union of India (2011), the Supreme Court held that employment of children in match and fireworks factories constitutes hazardous employment under Article 24.",
+          "verdict": "Incorrect",
+          "reason": "The Bachpan Bachao Andolan (2011) case addressed children in circuses, not match and fireworks factories. Match and fireworks factories are listed in Child Labour Act schedules — they were not the subject of the 2011 case."
+        },
+        {
+          "statement": "The Supreme Court in M.C. Mehta (1996) also directed that an adult member of the family of the child removed from hazardous employment should be offered alternative employment.",
+          "verdict": "Correct",
+          "reason": "The Court recognised that economic compulsion drives child labour — removing the child without addressing the family's income would only push another family member into poverty or back to child labour. The direction to employ an adult family member was a preventive measure."
+        }
+      ],
+      "strong_distractor": "a — Option (a) suggests only Statement 1 is not correct — students who confuse Bachpan Bachao Andolan's subject matter with match factories (a plausible association given the case's title and general child labour context) may incorrectly mark Statement 2 as correct.",
+      "elimination_logic": [
+        "Statement 2 claims Bachpan Bachao Andolan (2011) addressed match and fireworks factories — this is an entity-swap error; the case was about circuses.",
+        "Only Statement 2 is NOT correct — Statements 1 and 3 are accurate holdings from M.C. Mehta (1996).",
+        "The answer is option (b) — 2 only."
+      ],
+      "upsc_trap_explanation": "The Bachpan Bachao Andolan case (2011) is exclusively associated with the circus industry being judicially declared a hazardous employment for children. Substituting 'match and fireworks factories' — which are genuinely hazardous and appear in Child Labour Act schedules — creates a plausible but factually wrong statement. Students familiar with child labour discourse but not the specific case holding will accept the swap.",
+      "final_explanation": "Two landmark Supreme Court cases shaped India's child labour jurisprudence in the 1990s and 2000s, each with precise holdings.\n\n• Statement 1 — Correct: The M.C. Mehta (1996) Court created an employer-funded welfare mechanism — employers using child labour must deposit ₹20,000 per child into the welfare fund.\n• Statement 2 — Incorrect: Bachpan Bachao Andolan v. UOI (2011) was specifically about children employed in circuses — the Court declared circus employment to be hazardous under Article 24. Match and fireworks factories are covered by the Child Labour Act's schedules, but were not the subject of this judgment.\n• Statement 3 — Correct: The M.C. Mehta judgment addressed root causes — the direction to provide employment to an adult family member tackled the economic compulsion underlying child labour.\n\nValue Addition:\n• The welfare fund under M.C. Mehta is to be administered by district-level authorities.\n• The 'circus as hazardous' ruling in 2011 expanded judicial understanding beyond traditional industrial settings.\n• Courts have repeatedly used Articles 21, 24, and 39(f) together to construct a child rights framework."
+    },
+    "hi": {
+      "display_text": "सुप्रीम कोर्ट के बाल श्रम संबंधी न्यायशास्त्र के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. M.C. Mehta v. State of Tamil Nadu (1996) में, सुप्रीम कोर्ट ने निर्देश दिया कि जब भी किसी बच्चे को खतरनाक उद्योग में काम करते पाया जाए, तो नियोक्ता को बाल श्रम पुनर्वास-सह-कल्याण कोष में निर्धारित राशि जमा करनी चाहिए।\n2. Bachpan Bachao Andolan v. Union of India (2011) में, सुप्रीम कोर्ट ने कहा कि माचिस और पटाखा फैक्ट्रियों में बच्चों का रोजगार अनुच्छेद 24 के तहत खतरनाक रोजगार है।\n3. M.C. Mehta (1996) में सुप्रीम कोर्ट ने यह भी निर्देश दिया कि खतरनाक रोजगार से हटाए गए बच्चे के परिवार के एक वयस्क सदस्य को वैकल्पिक रोजगार दिया जाना चाहिए।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "M.C. Mehta v. State of Tamil Nadu (1996) में, सुप्रीम कोर्ट ने निर्देश दिया कि जब भी किसी बच्चे को खतरनाक उद्योग में काम करते पाया जाए, तो नियोक्ता को बाल श्रम पुनर्वास-सह-कल्याण कोष में निर्धारित राशि जमा करनी चाहिए।",
+          "verdict": "सही है",
+          "reason": "यह M.C. Mehta (1996) के निर्णय से एक मूल निर्देश है — नियोक्ता की कल्याण कोष में योगदान की जिम्मेदारी पुनर्वास के लिए एक महत्वपूर्ण उपाय थी जिसे कोर्ट ने निर्देशित किया था।"
+        },
+        {
+          "statement": "Bachpan Bachao Andolan v. Union of India (2011) में, सुप्रीम कोर्ट ने कहा कि माचिस और पटाखा फैक्ट्रियों में बच्चों का रोजगार अनुच्छेद 24 के तहत खतरनाक रोजगार है।",
+          "verdict": "गलत है",
+          "reason": "Bachpan Bachao Andolan (2011) का मामला सर्कस में बच्चों के बारे में था, न कि माचिस और पटाखा फैक्ट्रियों के बारे में। माचिस और पटाखा फैक्ट्रियाँ बाल श्रम अधिनियम की अनुसूचियों में सूचीबद्ध हैं — वे 2011 के मामले का विषय नहीं थीं।"
+        },
+        {
+          "statement": "M.C. Mehta (1996) में सुप्रीम कोर्ट ने यह भी निर्देश दिया कि खतरनाक रोजगार से हटाए गए बच्चे के परिवार के एक वयस्क सदस्य को वैकल्पिक रोजगार दिया जाना चाहिए।",
+          "verdict": "सही है",
+          "reason": "कोर्ट ने माना कि आर्थिक मजबूरी बाल श्रम को प्रेरित करती है — बच्चे को हटाने पर परिवार की आय का प्रबंध न करने से परिवार का कोई अन्य सदस्य गरीबी में गिर सकता है या बाल श्रम में वापस जा सकता है। वयस्क परिवार सदस्य को रोजगार देने का निर्देश एक निवारक उपाय था।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) केवल कथन 1 को गलत बताता है — जो छात्र Bachpan Bachao Andolan के विषय को माचिस फैक्ट्रियों से भ्रमित करते हैं (मामले के शीर्षक और बाल श्रम के सामान्य संदर्भ के कारण) वे कथन 2 को सही चिह्नित कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 2 यह दावा करता है कि Bachpan Bachao Andolan (2011) ने माचिस और पटाखा फैक्ट्रियों को संबोधित किया — यह एक वस्तु-स्थानांतरण त्रुटि है; मामला सर्कस के बारे में था।",
+        "केवल कथन 2 सही नहीं है — कथन 1 और 3 M.C. Mehta (1996) के सटीक निर्णय हैं।",
+        "उत्तर विकल्प (b) है — केवल 2।"
+      ],
+      "upsc_trap_explanation": "Bachpan Bachao Andolan (2011) मामला विशेष रूप से सर्कस उद्योग से संबंधित है जिसे न्यायालय ने बच्चों के लिए खतरनाक रोजगार घोषित किया। 'माचिस और पटाखा फैक्ट्रियाँ' का स्थानांतरण — जो वास्तव में खतरनाक हैं और बाल श्रम अधिनियम की अनुसूचियों में हैं — एक संभावित लेकिन तथ्यात्मक रूप से गलत कथन बनाता है। जो छात्र बाल श्रम के विषय से परिचित हैं लेकिन विशिष्ट मामले के निर्णय से नहीं, वे इस स्थानांतरण को स्वीकार कर सकते हैं।",
+      "final_explanation": "1990 और 2000 के दशक में दो सुप्रीम कोर्ट के महत्वपूर्ण मामले भारत के बाल श्रम न्यायशास्त्र को आकार देते हैं, जिनमें प्रत्येक के सटीक निर्णय हैं।\n\n• कथन 1 — सही: M.C. Mehta (1996) कोर्ट ने नियोक्ता-प्रायोजित कल्याण तंत्र बनाया — बाल श्रम का उपयोग करने वाले नियोक्ताओं को प्रति बच्चे ₹20,000 कल्याण कोष में जमा करना होता है।\n• कथन 2 — गलत: Bachpan Bachao Andolan v. UOI (2011) विशेष रूप से सर्कस में बच्चों के रोजगार के बारे में था — कोर्ट ने सर्कस रोजगार को अनुच्छेद 24 के तहत खतरनाक घोषित किया। माचिस और पटाखा फैक्ट्रियाँ बाल श्रम अधिनियम की अनुसूचियों में हैं, लेकिन इस निर्णय का विषय नहीं थीं।\n• कथन 3 — सही: M.C. Mehta के निर्णय ने मूल कारणों को संबोधित किया — वयस्क परिवार सदस्य को रोजगार देने का निर्देश बाल श्रम के पीछे आर्थिक मजबूरी को दूर करने का उपाय था।\n\nमूल्य संवर्धन:\n• M.C. Mehta के तहत कल्याण कोष का प्रबंधन जिला स्तर के अधिकारियों द्वारा किया जाना है।\n• 2011 में 'सर्कस को खतरनाक' घोषित करने वाला निर्णय पारंपरिक औद्योगिक सेटिंग से परे न्यायिक समझ को बढ़ाता है।\n• न्यायालयों ने अनुच्छेद 21, 24, और 39(f) का बार-बार उपयोग बाल अधिकार ढांचे के निर्माण के लिए किया है।"
+    }
+  },
+  {
+    "uuid": "1bbe3534-1b0c-48ed-8055-07da68321402",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Distinction between Article 23 and Article 24: Scope, Subject Matter, and Age",
+        "Child Labour Prohibition under Article 24: Scope and Boundaries"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Comparative features of Articles 23 and 24 — scope and exceptions",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Constitutional/Legislative Feature) with List II (Applicable Provision):",
+        "columns": [
+          "List I — Feature",
+          "List II — Provision/Article"
+        ],
+        "rows": [
+          [
+            "A. Applies specifically to children below 14 years in hazardous employment only",
+            "1. Article 23 — covers all forms of exploitation for all persons regardless of age or gender"
+          ],
+          [
+            "B. Universal in personal scope — covers all persons irrespective of age or gender",
+            "2. Child Labour (P&R) Amendment Act, 2016 — introduced the family enterprise exception for non-hazardous work outside school hours"
+          ],
+          [
+            "C. Contains an exception allowing the State to impose compulsory service for public purposes",
+            "3. Article 23(2) — the only exception clause within the Article 23 framework; no parallel exists in Article 24"
+          ],
+          [
+            "D. Scope modified by a 2016 statutory provision that introduced a family enterprise exception",
+            "4. Article 24 — absolute and targeted prohibition restricted to hazardous employment of children below 14"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-4, B-1, C-3, D-2\n(b) A-1, B-4, C-2, D-3\n(c) A-4, B-2, C-3, D-1\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) correctly matches A and D but swaps B and C — exploiting the possibility that students conflate Article 23's broad personal scope with Article 24's targeted age limit.",
+      "elimination_logic": [
+        "Article 24 targets children below 14 years specifically and covers only hazardous employment — match A with 4.",
+        "Article 23 covers all persons regardless of age or gender across multiple forms of exploitation — match B with 1.",
+        "Article 23(2) allows State-imposed compulsory service; no equivalent exists in Article 24 — match C with 3.",
+        "The 2016 Amendment's family enterprise exception applies to Article 24's ambit — match D with 2, confirming option (a)."
+      ],
+      "upsc_trap_explanation": "The conflation trap works by mixing attributes of Articles 23 and 24 — both appear to deal with exploitation, so students may assign Article 23's 'all persons' scope to the more specific Article 24, or vice versa. The match-the-column format forces precision: Article 24 is age-specific and hazardous-employment-specific; Article 23 is universal in subject matter. Additionally, only Article 23(2) has an exception clause — Article 24 has none.",
+      "final_explanation": "Articles 23 and 24 operate in the same constitutional space but with distinct scopes and structures.\n\n• A–4: Article 24 specifically protects children below 14 years from hazardous employment — it is a targeted provision, not a universal one.\n• B–1: Article 23 covers all persons regardless of age or gender, across multiple forms of exploitation including trafficking, begar, and other forced labour.\n• C–3: Only Article 23 contains an exception clause (Article 23(2)) allowing State-imposed compulsory service. Article 24 is absolute — it permits no State exception for child hazardous employment.\n• D–2: The 2016 Child Labour Amendment Act introduced the family enterprise exception within the space governed by Article 24, allowing children to assist in non-hazardous family enterprises outside school hours.\n\nValue Addition:\n• Article 24's absolute character means courts cannot read in exceptions — legislative amendment is needed to modify its scope.\n• Article 23's universality is critical for extending protection to male trafficking victims and adult forced labourers.\n• The two articles together cover exploitation across the full human lifecycle — children and adults alike."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संवैधानिक/विधायी विशेषता) को सूची II (लागू प्रावधान) से मिलाएं:",
+        "columns": [
+          "सूची I — विशेषता",
+          "सूची II — प्रावधान/अनुच्छेद"
+        ],
+        "rows": [
+          [
+            "A. केवल 14 वर्ष से कम आयु के बच्चों के खतरनाक रोजगार पर विशेष रूप से लागू",
+            "1. अनुच्छेद 23 — सभी व्यक्तियों के लिए आयु या लिंग की परवाह किए बिना सभी प्रकार के शोषण को कवर करता है"
+          ],
+          [
+            "B. व्यक्तिगत दायरे में सार्वभौमिक — सभी व्यक्तियों को आयु या लिंग की परवाह किए बिना कवर करता है",
+            "2. बाल श्रम (प्रतिबंध एवं विनियमन) संशोधन अधिनियम, 2016 — स्कूल के बाहर गैर-खतरनाक कार्य के लिए पारिवारिक उद्यम अपवाद पेश किया"
+          ],
+          [
+            "C. सार्वजनिक उद्देश्यों के लिए राज्य द्वारा अनिवार्य सेवा लगाने की अनुमति देने वाला अपवाद शामिल",
+            "3. अनुच्छेद 23(2) — अनुच्छेद 23 के ढांचे में एकमात्र अपवाद प्रावधान; अनुच्छेद 24 में कोई समकक्ष नहीं"
+          ],
+          [
+            "D. 2016 के विधायी प्रावधान द्वारा संशोधित दायरा, जिसने पारिवारिक उद्यम अपवाद पेश किया",
+            "4. अनुच्छेद 24 — पूर्ण और लक्षित प्रतिबंध जो 14 वर्ष से कम आयु के बच्चों के खतरनाक रोजगार तक सीमित है"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-4, B-1, C-3, D-2\n(b) A-1, B-4, C-2, D-3\n(c) A-4, B-2, C-3, D-1\n(d) A-3, B-1, C-4, D-2"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) सही रूप से A और D को मिलाता है लेकिन B और C को उलट देता है — यह संभावना का फायदा उठाता है कि छात्र अनुच्छेद 23 के व्यापक व्यक्तिगत दायरे को अनुच्छेद 24 की लक्षित आयु सीमा के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "अनुच्छेद 24 विशेष रूप से 14 वर्ष से कम आयु के बच्चों को लक्षित करता है और केवल खतरनाक रोजगार को कवर करता है — A को 4 से मिलाएं।",
+        "अनुच्छेद 23 सभी व्यक्तियों को आयु या लिंग की परवाह किए बिना कई प्रकार के शोषण के अंतर्गत कवर करता है — B को 1 से मिलाएं।",
+        "अनुच्छेद 23(2) राज्य द्वारा अनिवार्य सेवा की अनुमति देता है; अनुच्छेद 24 में इसका कोई समकक्ष नहीं है — C को 3 से मिलाएं।",
+        "2016 के संशोधन का पारिवारिक उद्यम अपवाद अनुच्छेद 24 के दायरे में आता है — D को 2 से मिलाएं, विकल्प (a) की पुष्टि करते हुए।"
+      ],
+      "upsc_trap_explanation": "मिश्रण जाल (conflation trap) अनुच्छेद 23 और 24 के गुणों को मिलाकर काम करता है — दोनों शोषण से संबंधित प्रतीत होते हैं, इसलिए छात्र अनुच्छेद 23 के 'सभी व्यक्तियों' के दायरे को अधिक विशिष्ट अनुच्छेद 24 पर या इसके विपरीत लागू कर सकते हैं। कॉलम मिलान प्रारूप सटीकता की मांग करता है: अनुच्छेद 24 आयु-विशिष्ट और खतरनाक रोजगार-विशिष्ट है; अनुच्छेद 23 विषय वस्तु में सार्वभौमिक है। इसके अतिरिक्त, केवल अनुच्छेद 23(2) में अपवाद प्रावधान है — अनुच्छेद 24 में कोई अपवाद नहीं है।",
+      "final_explanation": "अनुच्छेद 23 और 24 समान संवैधानिक क्षेत्र में कार्य करते हैं लेकिन उनके दायरे और संरचनाएँ भिन्न हैं।\n\n• A–4: अनुच्छेद 24 विशेष रूप से 14 वर्ष से कम आयु के बच्चों को खतरनाक रोजगार से बचाता है — यह एक लक्षित प्रावधान है, सार्वभौमिक नहीं।\n• B–1: अनुच्छेद 23 सभी व्यक्तियों को आयु या लिंग की परवाह किए बिना कई प्रकार के शोषण जैसे तस्करी, बेगार, और अन्य जबरन श्रम के अंतर्गत कवर करता है।\n• C–3: केवल अनुच्छेद 23 में अपवाद प्रावधान (अनुच्छेद 23(2)) है जो राज्य द्वारा अनिवार्य सेवा की अनुमति देता है। अनुच्छेद 24 पूर्णतः प्रतिबंधात्मक है — यह बाल खतरनाक रोजगार के लिए राज्य अपवाद की अनुमति नहीं देता।\n• D–2: 2016 के बाल श्रम संशोधन अधिनियम ने अनुच्छेद 24 के अंतर्गत पारिवारिक उद्यम अपवाद पेश किया, जो बच्चों को स्कूल के बाहर गैर-खतरनाक पारिवारिक उद्यमों में सहायता करने की अनुमति देता है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 24 की पूर्णता का अर्थ है कि न्यायालय अपवाद नहीं जोड़ सकते — इसके दायरे में संशोधन के लिए विधायी संशोधन आवश्यक है।\n• अनुच्छेद 23 की सार्वभौमिकता पुरुष तस्करी पीड़ितों और वयस्क जबरन श्रमिकों को संरक्षण देने के लिए महत्वपूर्ण है।\n• ये दोनों अनुच्छेद मिलकर पूरे मानव जीवन चक्र में शोषण को कवर करते हैं — बच्चों और वयस्कों दोनों को।"
+    }
+  },
+  {
+    "uuid": "e9344bc2-6cd5-4c2f-abb4-e000a18a72ba",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Bonded Labour System and Article 23: Legislative and Judicial Framework"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "application-scenario",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Burden of proof reversal — bonded labour prima facie case",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Ramu, a migrant worker, approaches a District Magistrate alleging that he has been forced to work on a construction site without wages because he had accepted an advance payment from the contractor three years ago. He produces a written agreement requiring him to work until the advance is repaid. The contractor claims this is a voluntary contractual arrangement and denies exploitation. The Magistrate finds prima facie evidence consistent with bonded labour.\n\nWhich of the following correctly describes the constitutional and legal position at this stage?\n\n(a) Since a voluntary written agreement exists between Ramu and the contractor, the matter must be settled under the law of contract and Article 23 does not apply\n(b) Under Article 23, Ramu must conclusively prove through independent evidence that he was compelled to work against his will before the Magistrate can intervene\n(c) The Magistrate may intervene only if he personally observed the arrangement, as hearsay evidence of forced labour is insufficient under constitutional law\n(d) Once the Magistrate is satisfied that prima facie evidence of bonded labour exists, the burden shifts to the contractor to demonstrate that the relationship does not constitute bondage under the law",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it correctly identifies Article 23 as the applicable provision but states that the worker must prove the full case — students who apply ordinary civil evidence principles will select this, not realising the burden shifts once a prima facie case is made.",
+      "elimination_logic": [
+        "Eliminate option (a) — it applies contractual law, which is wholly inapposite once constitutional protections under Article 23 are invoked.",
+        "Eliminate option (c) — the magistrate need not have personally observed the arrangement; judicial notice of a prima facie case is sufficient.",
+        "Eliminate option (b) — ordinary evidence burden applies in civil suits, not in bonded labour determinations where prima facie establishment shifts the burden to the employer.",
+        "Retain option (d) — once the District Magistrate finds a prima facie case, the constitutional framework reverses the burden to the employer."
+      ],
+      "upsc_trap_explanation": "Option (b) is calibrated to catch students who correctly identify Article 23 as applicable but then apply general evidence law to the burden of proof question. The reversal of burden — from worker to employer once prima facie bonded labour is shown — is a judicially created protection specific to bonded labour proceedings, not a generally known evidence principle. Students who know the substantive right (Article 23 applies) but not the procedural doctrine (burden shift) will select option (b).",
+      "final_explanation": "This scenario tests both the substantive right under Article 23 and the procedural doctrine of burden reversal in bonded labour cases.\n\nThe applicable principle: Once a District Magistrate (or court) determines that a prima facie case of bonded labour exists, the burden shifts to the employer to disprove the relationship — the worker does not bear the full evidentiary burden throughout.\n\n• Option (a) — Incorrect: The contractual agreement is constitutionally void — it cannot be enforced as a private debt agreement once bonded labour is established.\n• Option (b) — Incorrect: This correctly identifies Article 23 but wrongly places the entire evidentiary burden on Ramu. The judicially established principle reverses this once prima facie evidence is shown.\n• Option (c) — Incorrect: The District Magistrate need not have personally observed the arrangement — prima facie evidence through testimony, documents, and investigation suffices.\n• Option (d) — Correct: This accurately states the burden-reversal doctrine — prima facie establishment of bondage shifts the proof obligation to the employer. Ramu's statement and evidence of the advance create this prima facie case.\n\nValue Addition:\n• The burden-reversal principle reflects judicial recognition of the structural power imbalance in bonded labour relationships.\n• The Bonded Labour System (Abolition) Act, 1976 empowers District Magistrates to investigate and release bonded labourers.\n• Any agreement requiring labour in exchange for repayment of an advance is presumptively a bonded labour agreement under the Act."
+    },
+    "hi": {
+      "display_text": "रामू, एक प्रवासी मजदूर, जिला मजिस्ट्रेट के पास यह आरोप लगाते हुए जाता है कि उसे तीन साल पहले ठेकेदार से अग्रिम भुगतान स्वीकार करने के बाद बिना वेतन के निर्माण स्थल पर काम करने के लिए मजबूर किया गया है। वह एक लिखित समझौता प्रस्तुत करता है जिसमें कहा गया है कि उसे अग्रिम भुगतान चुकाने तक काम करना होगा। ठेकेदार दावा करता है कि यह एक स्वैच्छिक संविदात्मक व्यवस्था है और शोषण से इनकार करता है। मजिस्ट्रेट को बंधुआ मजदूरी के अनुरूप प्रारंभिक साक्ष्य मिलता है।\n\nइस चरण पर संवैधानिक और कानूनी स्थिति का सही वर्णन कौन-सा है?\n\n(a) चूंकि रामू और ठेकेदार के बीच एक स्वैच्छिक लिखित समझौता है, इसलिए मामला संविदा कानून के तहत निपटाया जाना चाहिए और अनुच्छेद 23 लागू नहीं होता\n(b) अनुच्छेद 23 के तहत, रामू को मजिस्ट्रेट के हस्तक्षेप से पहले स्वतंत्र साक्ष्य के माध्यम से यह निर्णायक रूप से साबित करना होगा कि उसे अपनी इच्छा के विरुद्ध काम करने के लिए मजबूर किया गया था\n(c) मजिस्ट्रेट तभी हस्तक्षेप कर सकता है जब उसने व्यक्तिगत रूप से व्यवस्था देखी हो, क्योंकि जबरन श्रम के सुनवाई साक्ष्य संवैधानिक कानून के तहत अपर्याप्त हैं\n(d) एक बार जब मजिस्ट्रेट यह संतुष्ट हो जाता है कि बंधुआ मजदूरी के प्रारंभिक साक्ष्य मौजूद हैं, तो बोझ ठेकेदार पर स्थानांतरित हो जाता है कि वह दिखाए कि संबंध कानून के तहत बंधन नहीं है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is deceptive because it correctly identifies Article 23 as the applicable provision but states that the worker must prove the full case — students who apply ordinary civil evidence principles will select this, not realising the burden shifts once a prima facie case is made.",
+      "elimination_logic": [
+        "विकल्प (a) को हटा दें — यह संविदात्मक कानून लागू करता है, जो अनुच्छेद 23 के तहत संवैधानिक सुरक्षा लागू होने पर पूरी तरह अनुपयुक्त है।",
+        "विकल्प (c) को हटा दें — मजिस्ट्रेट को व्यक्तिगत रूप से व्यवस्था देखना आवश्यक नहीं है; प्रारंभिक प्रमाण के न्यायिक नोटिस से काम चल जाता है।",
+        "विकल्प (b) को हटा दें — सामान्य साक्ष्य का बोझ नागरिक मुकदमों में लागू होता है, न कि बंधुआ मजदूरी के निर्धारण में जहाँ प्रारंभिक स्थापना बोझ नियोक्ता पर स्थानांतरित कर देती है।",
+        "विकल्प (d) को बनाए रखें — एक बार जिला मजिस्ट्रेट प्रारंभिक मामला पाता है, संवैधानिक ढांचा बोझ को नियोक्ता की ओर पलट देता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) उन छात्रों को फंसाने के लिए है जो सही ढंग से अनुच्छेद 23 को लागू मानते हैं लेकिन साक्ष्य के सामान्य कानून को बोझ प्रमाण के प्रश्न पर लागू करते हैं। बोझ का उलट जाना — जब बंधुआ मजदूरी का प्रारंभिक प्रमाण दिखाया जाता है तो मजदूर से नियोक्ता की ओर — यह न्यायिक रूप से निर्मित सुरक्षा है जो बंधुआ मजदूरी की कार्यवाही के लिए विशिष्ट है, न कि सामान्य साक्ष्य सिद्धांत। जो छात्र मौलिक अधिकार (अनुच्छेद 23 लागू) जानते हैं लेकिन प्रक्रिया संबंधी सिद्धांत (बोझ स्थानांतरण) नहीं जानते, वे विकल्प (b) चुनेंगे।",
+      "final_explanation": "यह परिदृश्य अनुच्छेद 23 के तहत मौलिक अधिकार और बंधुआ मजदूरी मामलों में बोझ प्रमाण के उलट जाने की प्रक्रिया दोनों का परीक्षण करता है।\n\nलागू सिद्धांत: एक बार जिला मजिस्ट्रेट (या न्यायालय) यह निर्धारित कर ले कि बंधुआ मजदूरी का प्रारंभिक मामला मौजूद है, तो बोझ नियोक्ता पर स्थानांतरित हो जाता है कि वह संबंध को खारिज करे — मजदूर को पूरा साक्ष्य बोझ नहीं उठाना पड़ता।\n\n• विकल्प (a) — गलत: संविदात्मक समझौता संवैधानिक रूप से अमान्य है — बंधुआ मजदूरी स्थापित होने पर इसे निजी ऋण समझौते के रूप में लागू नहीं किया जा सकता।\n• विकल्प (b) — गलत: यह सही ढंग से अनुच्छेद 23 को पहचानता है लेकिन पूरी साक्ष्य जिम्मेदारी रामू पर डालता है। न्यायिक सिद्धांत इसे प्रारंभिक साक्ष्य दिखाए जाने पर उलट देता है।\n• विकल्प (c) — गलत: जिला मजिस्ट्रेट को व्यक्तिगत रूप से व्यवस्था देखना आवश्यक नहीं है — गवाही, दस्तावेज़ और जांच के माध्यम से प्रारंभिक साक्ष्य पर्याप्त है।\n• विकल्प (d) — सही: यह बोझ-उलट सिद्धांत को सही ढंग से बताता है — बंधन की प्रारंभिक स्थापना से प्रमाण की जिम्मेदारी नियोक्ता पर चली जाती है। रामू का बयान और अग्रिम भुगतान का साक्ष्य यह प्रारंभिक मामला बनाते हैं।\n\nमूल्य संवर्धन:\n• बोझ-उलट सिद्धांत बंधुआ मजदूरी संबंधों में संरचनात्मक शक्ति असंतुलन की न्यायिक मान्यता को दर्शाता है।\n• बंधुआ मजदूरी उन्मूलन अधिनियम, 1976 जिला मजिस्ट्रेटों को बंधुआ मजदूरों की जांच और रिहाई का अधिकार देता है।\n• अग्रिम भुगतान के बदले श्रम की मांग करने वाला कोई भी समझौता अधिनियम के तहत बंधुआ मजदूरी समझौता माना जाता है।"
+    }
+  },
+  {
+    "uuid": "3ef4a923-7d68-481e-a919-ef46689da15b",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Relationship between Article 24 and Article 21A (Right to Education)",
+        "Child Labour Prohibition under Article 24: Scope and Boundaries"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "86th Amendment 2002 — Right to Education Act 2009 — Child Labour Amendment 2016",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following legislative and constitutional milestones in India's framework for protecting children from exploitation and ensuring their education:\n\n1. Enactment of the Right to Education Act\n2. Launch of the PENCIL (Platform for Effective Enforcement for No Child Labour) platform\n3. 86th Constitutional Amendment inserting Article 21A\n4. Child Labour (Prohibition and Regulation) Amendment Act extending protection to adolescents in hazardous industries\n\nWhich of the following represents the correct chronological order?\n\n(a) 1 → 3 → 4 → 2\n(b) 3 → 1 → 4 → 2\n(c) 1 → 3 → 2 → 4\n(d) 3 → 4 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) places the Right to Education Act before the 86th Amendment, which is a plausible error for students who know both events but confuse the constitutional amendment (which preceded the statute) with the statute itself.",
+      "elimination_logic": [
+        "The 86th Constitutional Amendment (2002) inserted Article 21A — this is the constitutional foundation and must come first.",
+        "The Right to Education Act (2009) is the statute enacted to give effect to Article 21A — it necessarily follows the constitutional amendment.",
+        "The Child Labour (P&R) Amendment Act (2016) came after both the constitutional right and its implementing legislation.",
+        "PENCIL platform was launched as an executive initiative after the 2016 Amendment — it is the most recent of the four events."
+      ],
+      "upsc_trap_explanation": "Students who recall only approximate years may place the RTE Act before the 86th Amendment, confusing the legislative and constitutional timelines. The constitutional amendment (2002) is the foundation; the RTE Act (2009) is the statutory superstructure — this sequential logic should anchor memory, but the seven-year gap invites chronological errors in hurried examination conditions.",
+      "final_explanation": "The constitutional and legislative evolution of child rights protection has a clear temporal sequence.\n\nCorrect order — option (b):\n1. 86th Constitutional Amendment (2002): Inserted Article 21A and amended Article 45.\n2. Right to Education Act (2009): Statutory implementation of Article 21A for children aged 6–14.\n3. Child Labour (P&R) Amendment Act (2016): Extended protection to adolescents 14–18 in hazardous industries; introduced family enterprise exception.\n4. PENCIL Platform launch: Post-2016 administrative tool for enforcement.\n\nThe trap is placing RTE before the 86th Amendment — the Act cannot precede the constitutional right it implements.\n\nValue Addition:\n• The RTE Act mandates age-appropriate admission, free textbooks, midday meals, and neighbourhood school access.\n• The 86th Amendment simultaneously made elementary education a Fundamental Right and shifted early childhood care to Article 45.\n• The synergy between Article 21A and Article 24 has been judicially recognised — a child in school cannot simultaneously be in hazardous employment."
+    },
+    "hi": {
+      "display_text": "भारत में बच्चों को शोषण से बचाने और उनकी शिक्षा सुनिश्चित करने के लिए निम्नलिखित विधायी और संवैधानिक मील के पत्थरों पर विचार करें:\n\n1. शिक्षा का अधिकार अधिनियम का निर्माण\n2. PENCIL (प्रभावी प्रवर्तन के लिए कोई बाल श्रम नहीं) प्लेटफॉर्म का शुभारंभ\n3. अनुच्छेद 21A जोड़ने वाला 86वां संवैधानिक संशोधन\n4. खतरनाक उद्योगों में किशोरों की सुरक्षा बढ़ाने वाला बाल श्रम (प्रतिबंध एवं विनियमन) संशोधन अधिनियम\n\nनिम्नलिखित में से कौन-सा सही कालानुक्रमिक क्रम दर्शाता है?\n\n(a) 1 → 3 → 4 → 2\n(b) 3 → 1 → 4 → 2\n(c) 1 → 3 → 2 → 4\n(d) 3 → 4 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) में शिक्षा का अधिकार अधिनियम 86वें संशोधन से पहले रखा गया है, जो उन छात्रों के लिए एक संभावित त्रुटि है जो दोनों घटनाओं को जानते हैं लेकिन संवैधानिक संशोधन (जो अधिनियम से पहले हुआ) को अधिनियम के साथ भ्रमित कर देते हैं।",
+      "elimination_logic": [
+        "86वां संवैधानिक संशोधन (2002) ने अनुच्छेद 21A जोड़ा — यह संवैधानिक आधार है और इसे पहले आना चाहिए।",
+        "शिक्षा का अधिकार अधिनियम (2009) वह विधि है जो अनुच्छेद 21A को लागू करने के लिए बनाई गई — यह संवैधानिक संशोधन के बाद आता है।",
+        "बाल श्रम (प्रतिबंध एवं विनियमन) संशोधन अधिनियम (2016) संवैधानिक अधिकार और उसके कार्यान्वयन कानून दोनों के बाद आया।",
+        "PENCIL प्लेटफॉर्म 2016 के संशोधन के बाद एक कार्यकारी पहल के रूप में शुरू किया गया — यह चार घटनाओं में सबसे हाल की है।"
+      ],
+      "upsc_trap_explanation": "जो छात्र केवल अनुमानित वर्ष याद रखते हैं, वे शिक्षा का अधिकार अधिनियम को 86वें संशोधन से पहले रख सकते हैं, जिससे विधायी और संवैधानिक समयरेखा में भ्रम होता है। संवैधानिक संशोधन (2002) आधार है; शिक्षा का अधिकार अधिनियम (2009) वैधानिक संरचना है — इस क्रमिक तर्क को स्मृति में स्थापित करना चाहिए, लेकिन सात वर्षों के अंतराल के कारण परीक्षा के दबाव में कालानुक्रमिक त्रुटियाँ हो सकती हैं।",
+      "final_explanation": "बाल अधिकार संरक्षण के संवैधानिक और विधायी विकास की स्पष्ट कालानुक्रमिक श्रृंखला है।\n\nसही क्रम — विकल्प (b):\n1. 86वां संवैधानिक संशोधन (2002): अनुच्छेद 21A जोड़ा और अनुच्छेद 45 में संशोधन किया।\n2. शिक्षा का अधिकार अधिनियम (2009): 6–14 वर्ष के बच्चों के लिए अनुच्छेद 21A का वैधानिक कार्यान्वयन।\n3. बाल श्रम (प्रतिबंध एवं विनियमन) संशोधन अधिनियम (2016): खतरनाक उद्योगों में 14–18 वर्ष के किशोरों को सुरक्षा दी; पारिवारिक उद्यम अपवाद पेश किया।\n4. PENCIL प्लेटफॉर्म लॉन्च: 2016 के बाद प्रवर्तन के लिए प्रशासनिक उपकरण।\n\nफंदा यह है कि शिक्षा का अधिकार अधिनियम को 86वें संशोधन से पहले रखना — अधिनियम उस संवैधानिक अधिकार से पहले नहीं आ सकता जिसे वह लागू करता है।\n\nमूल्यवर्धन:\n• शिक्षा का अधिकार अधिनियम आयु-उपयुक्त प्रवेश, मुफ्त पाठ्यपुस्तकें, मध्याह्न भोजन, और पड़ोसी स्कूल तक पहुंच अनिवार्य करता है।\n• 86वें संशोधन ने एक साथ प्राथमिक शिक्षा को मौलिक अधिकार बनाया और प्रारंभिक बाल देखभाल को अनुच्छेद 45 में स्थानांतरित किया।\n• अनुच्छेद 21A और अनुच्छेद 24 के बीच न्यायिक रूप से मान्यता प्राप्त समन्वय है — स्कूल में बच्चा एक साथ खतरनाक रोजगार में नहीं हो सकता।"
+    }
+  },
+  {
+    "uuid": "efada594-d899-44e4-a3bb-07ed7c71aa39",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Prison Labour and Article 23: Constitutionality of Forced Prison Work",
+        "The State Exception under Article 23(2): Compulsory Service for Public Purposes"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 23(2) does not authorise unpaid service — remuneration implied",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "While Article 23(2) of the Constitution permits the State to impose compulsory service for public purposes, the constitutional limit on this power is that such service ________.\n\n(a) Is valid only if it serves a military or defence purpose directly connected to national security\n(b) Cannot be made unpaid or below minimum wage — the permission to compel service does not extend to authorising exploitative conditions\n(c) May be imposed without remuneration provided it does not violate civil rights under Articles 14 to 18\n(d) Can be extracted without payment because the State, in exercising sovereign power, is not required to pay market rates for compelled service",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is deceptive because it makes a logically intuitive claim — that since the State is compelling service, it need not pay market rates — which sounds constitutionally plausible but is incorrect.",
+      "elimination_logic": [
+        "Article 23(2) allows compulsory service but does not authorise exploitation — this is the fundamental constitutional limit.",
+        "The State of Gujarat (1998) case confirmed that even sentenced prison labourers must receive minimum wages — a fortiori, compulsory service must be remunerated.",
+        "Option (b) correctly states that Article 23(2)'s permission extends only to compelling participation, not to extracting unpaid or below-minimum-wage labour."
+      ],
+      "upsc_trap_explanation": "The trap exploits a logical but incorrect inference: if the State can compel service under Article 23(2), students may assume this implies the State can also determine the conditions, including wages. The constitutional position is otherwise — Article 23's overarching prohibition on exploitation limits even Article 23(2)'s permission. Unpaid or below-minimum-wage compulsory service remains exploitative and therefore unconstitutional, even when the purpose is public.",
+      "final_explanation": "Article 23(2) creates a specific exception within a rights-protection article — it must be read narrowly and consistently with Article 23(1).\n\n• Option (a) — Incorrect: Article 23(2) does not operate independently of Article 23(1). The permission for compulsory service is an exception, not a licence for unlimited State power over labour.\n• Option (b) — Correct: The constitutional permission under Article 23(2) covers the compulsion aspect — requiring citizens to serve — but does not authorise the State to make such service unpaid or exploitative. Remuneration at least at minimum wage levels is constitutionally implied.\n• Option (c) — Incorrect: Article 23(2) is not about civil rights — it is specifically about service obligations. Civil rights restrictions are dealt with elsewhere.\n• Option (d) — Incorrect: Market rate payment is not required (that would be excessive as a constitutional minimum), but zero or below-minimum-wage payment is not permitted — the middle ground of statutory minimum wages applies.\n\nValue Addition:\n• The non-discrimination condition in Article 23(2) prevents targeted conscription against religious or caste minorities.\n• India currently has no military conscription — Article 23(2) remains constitutionally available but unexercised for that purpose.\n• Prison labour remuneration was constitutionalised in State of Gujarat v. High Court of Gujarat (1998)."
+    },
+    "hi": {
+      "display_text": "जबकि संविधान के अनुच्छेद 23(2) के तहत राज्य को सार्वजनिक उद्देश्यों के लिए बाध्यकारी सेवा लगाने की अनुमति है, इस शक्ति की संवैधानिक सीमा यह है कि ऐसी सेवा ________।\n\n(a) केवल तभी मान्य है जब यह राष्ट्रीय सुरक्षा से सीधे जुड़ी सैन्य या रक्षा उद्देश्य की सेवा करे\n(b) बिना वेतन या न्यूनतम वेतन से कम नहीं हो सकती — सेवा को बाध्य करने की अनुमति शोषणकारी परिस्थितियों को अधिकृत नहीं करती\n(c) बिना वेतन के लगाई जा सकती है यदि यह अनुच्छेद 14 से 18 के तहत नागरिक अधिकारों का उल्लंघन नहीं करती\n(d) बिना भुगतान निकाली जा सकती है क्योंकि राज्य, संप्रभु शक्ति का प्रयोग करते हुए, बाध्यकारी सेवा के लिए बाजार दरों का भुगतान करने का बाध्य नहीं है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) भ्रामक है क्योंकि यह एक तार्किक रूप से सहज दावा करता है — कि चूंकि राज्य सेवा को बाध्य कर रहा है, इसलिए उसे बाजार दरों का भुगतान करने की आवश्यकता नहीं है — जो संवैधानिक रूप से संभव लगता है लेकिन गलत है।",
+      "elimination_logic": [
+        "अनुच्छेद 23(2) बाध्यकारी सेवा की अनुमति देता है लेकिन शोषण को अधिकृत नहीं करता — यह मौलिक संवैधानिक सीमा है।",
+        "State of Gujarat (1998) मामले में पुष्टि हुई कि यहां तक कि सजा पाए हुए कैदी मजदूरों को भी न्यूनतम वेतन मिलना चाहिए — अतः बाध्यकारी सेवा का भुगतान अवश्य किया जाना चाहिए।",
+        "विकल्प (b) सही रूप से कहता है कि अनुच्छेद 23(2) की अनुमति केवल भागीदारी को बाध्य करने तक सीमित है, न कि बिना वेतन या न्यूनतम वेतन से कम मजदूरी पर शोषण करने तक।"
+      ],
+      "upsc_trap_explanation": "यह जाल एक तार्किक लेकिन गलत अनुमान का उपयोग करता है: यदि राज्य अनुच्छेद 23(2) के तहत सेवा को बाध्य कर सकता है, तो छात्र यह मान सकते हैं कि इसका अर्थ है कि राज्य सेवा की शर्तें, जिसमें वेतन भी शामिल है, निर्धारित कर सकता है। संवैधानिक स्थिति इसके विपरीत है — अनुच्छेद 23 का व्यापक निषेध शोषण को रोकता है, जो अनुच्छेद 23(2) की अनुमति को भी सीमित करता है। बिना वेतन या न्यूनतम वेतन से कम बाध्यकारी सेवा शोषण है और इसलिए असंवैधानिक है, भले ही उद्देश्य सार्वजनिक हो।",
+      "final_explanation": "अनुच्छेद 23(2) अधिकार संरक्षण वाले अनुच्छेद के भीतर एक विशिष्ट अपवाद बनाता है — इसे संकीर्ण और अनुच्छेद 23(1) के अनुरूप पढ़ा जाना चाहिए।\n\n• विकल्प (a) — गलत: अनुच्छेद 23(2 स्वतंत्र रूप से अनुच्छेद 23(1) से संचालित नहीं होता। बाध्यकारी सेवा की अनुमति एक अपवाद है, राज्य की श्रम पर असीमित शक्ति का लाइसेंस नहीं।\n• विकल्प (b) — सही: अनुच्छेद 23(2) के तहत संवैधानिक अनुमति बाध्यता के पक्ष को कवर करती है — नागरिकों को सेवा देने के लिए बाध्य करना — लेकिन राज्य को ऐसी सेवा को बिना वेतन या शोषणकारी बनाने की अनुमति नहीं देती। कम से कम न्यूनतम वेतन स्तर पर भुगतान संवैधानिक रूप से निहित है।\n• विकल्प (c) — गलत: अनुच्छेद 23(2 नागरिक अधिकारों के बारे में नहीं है — यह विशेष रूप से सेवा दायित्वों के बारे में है। नागरिक अधिकारों के प्रतिबंध अन्यत्र देखे जाते हैं।\n• विकल्प (d) — गलत: बाजार दर का भुगतान आवश्यक नहीं है (यह संवैधानिक न्यूनतम के रूप में अत्यधिक होगा), लेकिन बिना भुगतान या न्यूनतम वेतन से कम भुगतान की अनुमति नहीं है — वैधानिक न्यूनतम वेतन का मध्य मार्ग लागू होता है।\n\nमूल्य संवर्धन:\n• अनुच्छेद 23(2) में गैर-भेदभाव की शर्त धार्मिक या जातीय अल्पसंख्यकों के खिलाफ लक्षित भर्ती को रोकती है।\n• भारत में वर्तमान में कोई सैन्य भर्ती नहीं है — अनुच्छेद 23(2) संवैधानिक रूप से उपलब्ध है लेकिन उस उद्देश्य के लिए प्रयोग नहीं किया गया है।\n• कैदियों के श्रम का वेतन State of Gujarat v. High Court of Gujarat (1998) में संवैधानिक रूप से मान्यता प्राप्त हुआ।"
+    }
+  },
+  {
+    "uuid": "6f60574b-3abf-45f3-bf31-f60e25a1eb5d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Definition and Judicial Interpretation of 'Begar' under Article 23"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "direct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Begar vs. bonded labour — definitional distinction",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following most accurately describes 'begar' as used in Article 23 of the Indian Constitution?\n\n(a) Forced or compulsory labour extracted from a person without any payment or remuneration\n(b) Any form of unpaid labour agreed to by an individual through an explicit voluntary contract\n(c) A system of labour tied to debt repayment where the worker receives reduced wages until the debt is cleared\n(d) Labour imposed on convicted prisoners as part of a court-imposed sentence",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because students conflate begar with bonded labour, since both involve compelled labour, not realising that begar specifically denotes the absence of any payment whereas bonded labour involves debt-induced compulsion with potential partial payment.",
+      "elimination_logic": [
+        "Begar is a specific term meaning compelled labour without any remuneration — the 'without payment' element distinguishes it.",
+        "Bonded labour may involve some payment (to offset a debt) — the defining feature is debt-induced compulsion, not zero payment.",
+        "Option (a) accurately captures begar's specific definition — forced labour with zero remuneration."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Article 23 explicitly names 'begar' alongside 'traffic in human beings.' Begar has a specific meaning in Indian legal and historical context.\n\n• Option (a) — Correct: Begar is the practice of exacting compulsory labour from individuals without any form of payment or remuneration — it historically included community obligations to provide labour to landlords or officials without wages.\n• Option (b) — Incorrect: Begar specifically involves forced labour — consensual unpaid labour (voluntarism) is a different concept.\n• Option (c) — Incorrect: Bonded labour involves debt-induced compulsion and may include partial wages applied to debt repayment. Begar's defining characteristic is zero payment, not debt structure.\n• Option (d) — Incorrect: Prison labour ordered by a court as part of a sentence is a different category — covered by separate constitutional analysis under Article 23(2).\n\nValue Addition:\n• Begar was common in feudal India — landlords could demand labour from tenants as a non-monetary obligation.\n• The PUDR case extended the concept beyond traditional begar to include economic compulsion through below-minimum-wage payment.\n• Bonded labour and begar can overlap — if a bonded labourer receives no wages at all, the arrangement is simultaneously both."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के अनुच्छेद 23 में प्रयुक्त 'बेगार' का सबसे सटीक वर्णन निम्नलिखित में से कौन-सा है?\n\n(a) बिना किसी भुगतान या पारिश्रमिक के व्यक्ति से जबरन या अनिवार्य श्रम लेना\n(b) किसी व्यक्ति द्वारा स्पष्ट स्वैच्छिक अनुबंध के माध्यम से सहमति से किया गया कोई भी बिना वेतन का श्रम\n(c) ऋण चुकाने के लिए श्रमिक को कम वेतन मिलने वाली श्रम प्रणाली\n(d) न्यायालय द्वारा सजा के रूप में आदेशित कैदियों पर लगाया गया श्रम",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रमित करने वाला है क्योंकि छात्र बेगार को बंधुआ मजदूरी के साथ जोड़ देते हैं, क्योंकि दोनों में जबरन श्रम होता है, यह समझे बिना कि बेगार विशेष रूप से बिना किसी भुगतान के श्रम को दर्शाता है जबकि बंधुआ मजदूरी ऋण-प्रेरित बाध्यता होती है जिसमें आंशिक भुगतान संभव है।",
+      "elimination_logic": [
+        "बेगार एक विशिष्ट शब्द है जिसका अर्थ है बिना किसी पारिश्रमिक के जबरन श्रम — 'बिना भुगतान' तत्व इसे अलग करता है।",
+        "बंधुआ मजदूरी में कुछ भुगतान हो सकता है (ऋण की पूर्ति के लिए) — परिभाषित विशेषता ऋण-प्रेरित बाध्यता है, न कि शून्य भुगतान।",
+        "विकल्प (a) बेगार की विशिष्ट परिभाषा को सही रूप से दर्शाता है — बिना किसी पारिश्रमिक के जबरन श्रम।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "अनुच्छेद 23 में स्पष्ट रूप से 'बेगार' को 'मानव तस्करी' के साथ नामित किया गया है। बेगार का भारतीय कानूनी और ऐतिहासिक संदर्भ में विशिष्ट अर्थ है।\n\n• विकल्प (a) — सही: बेगार वह प्रथा है जिसमें व्यक्तियों से बिना किसी भुगतान या पारिश्रमिक के जबरन श्रम लिया जाता है — ऐतिहासिक रूप से इसमें जमींदारों या अधिकारियों को बिना वेतन के श्रम प्रदान करने के सामुदायिक दायित्व शामिल थे।\n• विकल्प (b) — गलत: बेगार विशेष रूप से जबरन श्रम है — सहमति से बिना वेतन का श्रम (स्वैच्छिकता) अलग अवधारणा है।\n• विकल्प (c) — गलत: बंधुआ मजदूरी ऋण-प्रेरित बाध्यता है और इसमें ऋण चुकाने के लिए आंशिक वेतन शामिल हो सकता है। बेगार की परिभाषित विशेषता शून्य भुगतान है, न कि ऋण संरचना।\n• विकल्प (d) — गलत: न्यायालय द्वारा सजा के रूप में आदेशित कैदियों का श्रम अलग श्रेणी है — इसे अनुच्छेद 23(2) के तहत अलग संवैधानिक विश्लेषण के अंतर्गत कवर किया गया है।\n\nमूल्य संवर्धन:\n• बेगार सामंती भारत में सामान्य था — जमींदार किरायेदारों से गैर-मौद्रिक दायित्व के रूप में श्रम मांग सकते थे।\n• PUDR मामले ने पारंपरिक बेगार से परे आर्थिक बाध्यता को शामिल किया, जिसमें न्यूनतम वेतन से कम भुगतान शामिल था।\n• बंधुआ मजदूरी और बेगार ओवरलैप कर सकते हैं — यदि बंधुआ मजदूर को बिल्कुल वेतन नहीं मिलता, तो व्यवस्था दोनों ही होती है।"
+    }
+  },
+  {
+    "uuid": "c87178bf-6c02-412a-8680-658de0648b38",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "PUDR v. Union of India (1982): Landmark Judgment Expanding Article 23",
+        "Definition and Judicial Interpretation of 'Begar' under Article 23"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "entity-swap",
+      "concept_anchor": "PUDR v. UOI — unorganised labour sector coverage under Article 23",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs — case and principle — is correctly matched in the context of Articles 23 and 24 of the Indian Constitution?\n\n(a) People's Union for Democratic Rights v. Union of India (1982) — The State has a positive duty to conduct surveys to identify bonded labourers and rehabilitate them\n(b) People's Union for Democratic Rights v. Union of India (1982) — For an action to constitute 'forced labour' under Article 23, there must be physical coercion; economic compulsion alone is insufficient\n(c) People's Union for Democratic Rights v. Union of India (1982) — Employment of children in circuses constitutes hazardous employment under Article 24\n(d) People's Union for Democratic Rights v. Union of India (1982) — Article 23 extends to unorganised labour and the State cannot escape liability for contractor violations of minimum wage requirements",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) pairs PUDR with the holding that physical coercion is necessary for forced labour — this is a direct inversion of the judgment's actual holding, calibrated to catch students who know PUDR addressed wages and Article 23 but confuse what it decided about the nature of 'force'.",
+      "elimination_logic": [
+        "Option (a) pairs PUDR with the bonded labour positive-duty principle — that is Bandhua Mukti Morcha (1984), not PUDR. Entity-swap.",
+        "Option (b) pairs PUDR with physical coercion being necessary — PUDR explicitly held the opposite: economic compulsion suffices.",
+        "Option (c) pairs PUDR with the circus-as-hazardous holding — that is Bachpan Bachao Andolan (2011).",
+        "Option (d) correctly pairs PUDR (1982) with the principle that the unorganised labour sector is covered by Article 23 and State liability for contractor violations is established — retain this."
+      ],
+      "upsc_trap_explanation": "Option (b) represents a precise reversal of PUDR's holding — the case is famous for saying physical coercion is NOT required, but the distractor says the opposite. Students who recall 'PUDR dealt with coercion and Article 23' without remembering the specific direction of the ruling will select option (b). The reversal trap is effective because it uses the correct case name and the correct legal concept, just stated backwards.",
+      "final_explanation": "PUDR v. Union of India (1982) is a foundational case for Article 23's interpretation. Distinguishing it from adjacent cases is frequently tested.\n\n• Option (a) — Incorrect: The positive State duty to survey, identify, release, and rehabilitate was established in Bandhua Mukti Morcha (1984) — not PUDR. Entity-swap distractor.\n• Option (b) — Incorrect: PUDR held exactly the opposite — that physical coercion is NOT necessary; economic compulsion and underpayment of minimum wages suffice.\n• Option (c) — Incorrect: The circus-as-hazardous-employment ruling is from Bachpan Bachao Andolan (2011). PUDR concerned construction workers, not circus performers.\n• Option (d) — Correct: PUDR established two key principles: (i) Article 23 covers the unorganised labour sector (Asiad construction workers), and (ii) the State cannot escape Article 23 liability by outsourcing work to private contractors.\n\nValue Addition:\n• PUDR was filed as a letter petition — another milestone in PIL's expansion.\n• The case also held that the State must ensure contractors engaged for public works pay at least minimum wages.\n• PUDR, Bandhua Mukti Morcha, and M.C. Mehta (1996) form a trilogy of Article 23–24 PIL landmarks."
+    },
+    "hi": {
+      "display_text": "भारतीय संविधान के अनुच्छेद 23 और 24 के संदर्भ में निम्नलिखित में से कौन-सा युग्म — मामला और सिद्धांत — सही रूप से मेल खाता है?\n\n(a) पीपुल्स यूनियन फॉर डेमोक्रेटिक राइट्स बनाम भारत संघ (1982) — राज्य का बंधुआ मजदूरों की पहचान करने, सर्वेक्षण करने और पुनर्वास करने का सकारात्मक कर्तव्य है\n(b) पीपुल्स यूनियन फॉर डेमोक्रेटिक राइट्स बनाम भारत संघ (1982) — अनुच्छेद 23 के तहत 'जबरन श्रम' के लिए शारीरिक दबाव आवश्यक है; केवल आर्थिक बाध्यता पर्याप्त नहीं है\n(c) पीपुल्स यूनियन फॉर डेमोक्रेटिक राइट्स बनाम भारत संघ (1982) — सर्कस में बच्चों का रोजगार अनुच्छेद 24 के तहत खतरनाक रोजगार माना जाता है\n(d) पीपुल्स यूनियन फॉर डेमोक्रेटिक राइट्स बनाम भारत संघ (1982) — अनुच्छेद 23 असंगठित श्रम क्षेत्र तक विस्तृत है और राज्य ठेकेदारों द्वारा न्यूनतम वेतन उल्लंघन के लिए जिम्मेदारी से बच नहीं सकता",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) PUDR को इस धारणा के साथ जोड़ता है कि जबरन श्रम के लिए शारीरिक दबाव आवश्यक है — यह निर्णय के वास्तविक निष्कर्ष का सीधा उलट है, जो उन छात्रों को फंसाने के लिए बनाया गया है जो जानते हैं कि PUDR ने वेतन और अनुच्छेद 23 को संबोधित किया लेकिन 'जबरदस्ती' की प्रकृति के बारे में भ्रमित हैं।",
+      "elimination_logic": [
+        "विकल्प (a) PUDR को बंधुआ मजदूरों के लिए सकारात्मक कर्तव्य सिद्धांत के साथ जोड़ता है — वह बंधुआ मुक्ति मोर्चा (1984) है, PUDR नहीं। यह एक इकाई-स्थानांतरण है।",
+        "विकल्प (b) PUDR को शारीरिक दबाव आवश्यक होने के साथ जोड़ता है — PUDR ने स्पष्ट रूप से इसका उलटा कहा है: आर्थिक बाध्यता पर्याप्त है।",
+        "विकल्प (c) PUDR को सर्कस को खतरनाक रोजगार मानने वाले निर्णय के साथ जोड़ता है — वह बचपन बचाओ आंदोलन (2011) है।",
+        "विकल्प (d) सही रूप से PUDR (1982) को इस सिद्धांत के साथ जोड़ता है कि अनुच्छेद 23 असंगठित श्रम क्षेत्र को कवर करता है और ठेकेदार उल्लंघनों के लिए राज्य की जिम्मेदारी स्थापित करता है — इसे बनाए रखें।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) PUDR के निर्णय का सटीक उलट प्रस्तुत करता है — यह मामला प्रसिद्ध है कि शारीरिक दबाव आवश्यक नहीं है, लेकिन यह भ्रमित करने वाला विकल्प इसका उल्टा कहता है। जो छात्र 'PUDR ने दबाव और अनुच्छेद 23 को संबोधित किया' याद करते हैं लेकिन निर्णय की दिशा नहीं जानते, वे विकल्प (b) चुनेंगे। यह उलट जाल प्रभावी है क्योंकि यह सही मामले का नाम और सही कानूनी अवधारणा उपयोग करता है, बस उलट तरीके से।",
+      "final_explanation": "PUDR v. Union of India (1982) अनुच्छेद 23 की व्याख्या के लिए एक मौलिक मामला है। इसे आसन्न मामलों से अलग करना अक्सर परीक्षा में पूछा जाता है।\n\n• विकल्प (a) — गलत: बंधुआ मजदूरों की पहचान, रिहाई और पुनर्वास के लिए राज्य का सकारात्मक कर्तव्य बंधुआ मुक्ति मोर्चा (1984) में स्थापित हुआ था — PUDR में नहीं। यह इकाई-स्थानांतरण भ्रम है।\n• विकल्प (b) — गलत: PUDR ने बिल्कुल उल्टा कहा — कि शारीरिक दबाव आवश्यक नहीं है; आर्थिक बाध्यता और न्यूनतम वेतन का भुगतान न होना पर्याप्त है।\n• विकल्प (c) — गलत: सर्कस को खतरनाक रोजगार मानने वाला निर्णय बचपन बचाओ आंदोलन (2011) का है। PUDR निर्माण श्रमिकों से संबंधित था, सर्कस कलाकारों से नहीं।\n• विकल्प (d) — सही: PUDR ने दो मुख्य सिद्धांत स्थापित किए: (i) अनुच्छेद 23 असंगठित श्रम क्षेत्र (एशियाड निर्माण श्रमिक) को कवर करता है, और (ii) राज्य ठेकेदारों को काम सौंपकर अनुच्छेद 23 की जिम्मेदारी से बच नहीं सकता।\n\nमूल्य संवर्धन:\n• PUDR एक पत्र याचिका के रूप में दायर किया गया था — PIL के विस्तार में एक और मील का पत्थर।\n• इस मामले में यह भी कहा गया कि राज्य को सार्वजनिक कार्यों के लिए ठेकेदारों को कम से कम न्यूनतम वेतन देना सुनिश्चित करना चाहिए।\n• PUDR, बंधुआ मुक्ति मोर्चा, और M.C. मेहता (1996) अनुच्छेद 23–24 के PIL के तीन महत्वपूर्ण मुकदमे हैं।"
+    }
+  },
+  {
+    "uuid": "ccf35d35-cfbd-4049-aa12-c95da65b4f2c",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Directive Principles Complementing Articles 23 and 24: Articles 39, 42, 43, 45",
+        "State's Positive Obligation under Articles 23 and 24"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "DPSP-Article mapping — Articles 39, 42, 43, 45 and their content",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Constitutional Article) with List II (Directive Principle Content):",
+        "columns": [
+          "List I — Article",
+          "List II — Content of Directive Principle"
+        ],
+        "rows": [
+          [
+            "A. Article 39(f)",
+            "1. The State shall make provision for securing just and humane conditions of work and maternity relief"
+          ],
+          [
+            "B. Article 42",
+            "2. The State shall endeavour to provide free and compulsory education for all children until the age of 14 years (pre-86th Amendment)"
+          ],
+          [
+            "C. Article 43",
+            "3. The State shall ensure that children are given opportunities and facilities to develop in conditions of freedom and dignity"
+          ],
+          [
+            "D. Article 45 (pre-86th Amendment)",
+            "4. The State shall endeavour to secure a living wage for all workers including conditions ensuring a decent standard of life"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-1, C-2, D-4\n(d) A-2, B-4, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) correctly matches A and B but swaps C and D, exploiting student confusion between Article 43 (living wage) and Article 42 (humane conditions of work) — two adjacent DPSPs with overlapping themes.",
+      "elimination_logic": [
+        "Article 39(f) specifically mentions children, opportunities, freedom, and dignity — match A with 3.",
+        "Article 42 specifically directs the State to make provision for just and humane conditions of work and maternity relief — match B with 1.",
+        "Article 43 directs the State to secure a living wage for workers — match C with 4.",
+        "Article 45 (pre-86th Amendment) directed the State to provide free and compulsory education for children under 14 — match D with 2, confirming option (b)."
+      ],
+      "upsc_trap_explanation": "Articles 42 and 43 are adjacent, thematically related, and frequently confused. Article 42 is specifically about conditions of work and maternity relief — it does not mention wages. Article 43 is specifically about living wages. Students who know both articles address worker welfare but have not memorised their distinct content will conflate them. The match-the-column format forces this distinction.",
+      "final_explanation": "Part IV contains several DPSPs directly relevant to the anti-exploitation provisions of Part III. Each has a distinct focus.\n\n• A–3: Article 39(f) directs the State to ensure children enjoy opportunities for development in conditions of freedom and dignity, and are not exploited — the child welfare DPSP.\n• B–1: Article 42 directs the State to make provision for just and humane conditions of work and maternity relief — conditions of work, not wage levels.\n• C–4: Article 43 directs the State to endeavour to secure a living wage for all workers — this is the wage-related DPSP, distinct from conditions of work.\n• D–2: Article 45 (pre-86th Amendment) directed free and compulsory education for children under 14 — now partially superseded by Article 21A's justiciable right.\n\nValue Addition:\n• Post-86th Amendment, Article 45 was narrowed to early childhood care for children below 6.\n• DPSPs are used by courts to interpret and expand Fundamental Rights — Article 39(f) has been used to strengthen Article 24.\n• Article 42's maternity relief direction led to the Maternity Benefit Act — a statutory expression of a DPSP."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I (संवैधानिक अनुच्छेद) को सूची II (निर्देशक सिद्धांत की सामग्री) से मिलाएं:",
+        "columns": [
+          "सूची I — अनुच्छेद",
+          "सूची II — निर्देशक सिद्धांत की सामग्री"
+        ],
+        "rows": [
+          [
+            "A. अनुच्छेद 39(f)",
+            "1. राज्य न्यायसंगत और मानवीय कार्य की शर्तें और मातृत्व राहत सुनिश्चित करने का प्रावधान करेगा"
+          ],
+          [
+            "B. अनुच्छेद 42",
+            "2. राज्य 14 वर्ष तक के सभी बच्चों के लिए मुफ्त और अनिवार्य शिक्षा प्रदान करने का प्रयास करेगा (86वें संशोधन से पहले)"
+          ],
+          [
+            "C. अनुच्छेद 43",
+            "3. राज्य सुनिश्चित करेगा कि बच्चों को स्वतंत्रता और गरिमा की स्थितियों में विकास के अवसर और सुविधाएँ मिलें"
+          ],
+          [
+            "D. अनुच्छेद 45 (86वें संशोधन से पहले)",
+            "4. राज्य सभी श्रमिकों के लिए जीवित वेतन सुनिश्चित करने का प्रयास करेगा जिसमें सम्मानजनक जीवन स्तर सुनिश्चित करने की शर्तें शामिल हों"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से सही मिलान कौन सा है?\n\n(a) A-1, B-3, C-4, D-2\n(b) A-3, B-1, C-4, D-2\n(c) A-3, B-1, C-2, D-4\n(d) A-2, B-4, C-1, D-3"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) सही ढंग से A और B को मिलाता है लेकिन C और D को बदल देता है, जो छात्र भ्रम का लाभ उठाता है जो अनुच्छेद 43 (जीवित वेतन) और अनुच्छेद 42 (मानवीय कार्य की शर्तें) के बीच है — दो निकटवर्ती DPSP जिनके विषय ओवरलैप करते हैं।",
+      "elimination_logic": [
+        "अनुच्छेद 39(f) विशेष रूप से बच्चों, अवसरों, स्वतंत्रता और गरिमा का उल्लेख करता है — A को 3 से मिलाएं।",
+        "अनुच्छेद 42 विशेष रूप से राज्य को न्यायसंगत और मानवीय कार्य की शर्तें और मातृत्व राहत प्रदान करने का निर्देश देता है — B को 1 से मिलाएं।",
+        "अनुच्छेद 43 राज्य को सभी श्रमिकों के लिए जीवित वेतन सुनिश्चित करने का निर्देश देता है — C को 4 से मिलाएं।",
+        "अनुच्छेद 45 (86वें संशोधन से पहले) राज्य को 14 वर्ष से कम उम्र के बच्चों के लिए मुफ्त और अनिवार्य शिक्षा प्रदान करने का निर्देश देता था — D को 2 से मिलाएं, विकल्प (b) की पुष्टि करते हुए।"
+      ],
+      "upsc_trap_explanation": "अनुच्छेद 42 और 43 निकटवर्ती, विषयगत रूप से संबंधित और अक्सर भ्रमित किए जाते हैं। अनुच्छेद 42 विशेष रूप से कार्य की शर्तों और मातृत्व राहत के बारे में है — इसमें वेतन का उल्लेख नहीं है। अनुच्छेद 43 विशेष रूप से जीवित वेतन के बारे में है। जो छात्र जानते हैं कि दोनों अनुच्छेद श्रमिक कल्याण से संबंधित हैं लेकिन उनके विशिष्ट विषय को याद नहीं रखते, वे इन्हें मिला देते हैं। कॉलम मिलान प्रारूप इस भेद को मजबूर करता है।",
+      "final_explanation": "भाग IV में कई DPSP हैं जो भाग III के शोषण-विरोधी प्रावधानों से सीधे संबंधित हैं। प्रत्येक का एक विशिष्ट फोकस है।\n\n• A–3: अनुच्छेद 39(f) राज्य को निर्देश देता है कि वह सुनिश्चित करे कि बच्चों को विकास के अवसर स्वतंत्रता और गरिमा की स्थितियों में मिलें, और उनका शोषण न हो — बाल कल्याण DPSP।\n• B–1: अनुच्छेद 42 राज्य को न्यायसंगत और मानवीय कार्य की शर्तें और मातृत्व राहत प्रदान करने का निर्देश देता है — कार्य की शर्तें, वेतन स्तर नहीं।\n• C–4: अनुच्छेद 43 राज्य को सभी श्रमिकों के लिए जीवित वेतन सुनिश्चित करने का प्रयास करने का निर्देश देता है — यह वेतन-संबंधित DPSP है, कार्य की शर्तों से अलग।\n• D–2: अनुच्छेद 45 (86वें संशोधन से पहले) 14 वर्ष से कम उम्र के बच्चों के लिए मुफ्त और अनिवार्य शिक्षा प्रदान करने का निर्देश देता था — अब आंशिक रूप से अनुच्छेद 21A के न्यायिक अधिकार द्वारा प्रतिस्थापित।\n\nमूल्य संवर्धन:\n• 86वें संशोधन के बाद, अनुच्छेद 45 को 6 वर्ष से कम उम्र के बच्चों के लिए प्रारंभिक बाल देखभाल तक सीमित कर दिया गया।\n• DPSP का उपयोग न्यायालय मौलिक अधिकारों की व्याख्या और विस्तार के लिए करते हैं — अनुच्छेद 39(f) का उपयोग अनुच्छेद 24 को मजबूत करने के लिए किया गया है।\n• अनुच्छेद 42 के मातृत्व राहत निर्देश ने मातृत्व लाभ अधिनियम को जन्म दिया — DPSP का वैधानिक अभिव्यक्ति।"
+    }
+  },
+  {
+    "uuid": "e2ef2cc2-6863-4ee1-a1bf-1a5c3ba3ca14",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Definition of 'Hazardous Employment' under Article 24 and Statutory Interpretation",
+        "Child Labour Prohibition under Article 24: Scope and Boundaries"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "application-scenario",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Article 24 — absolute bar on children below 14 in hazardous work regardless of parental consent",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Priya is 11 years old. Her parents, unable to support the family, have permitted her to work in a factory that manufactures chemical dyes. The factory owner argues that since Priya's parents have given written consent and she works in a supervised section of the factory, her employment does not violate constitutional norms. The factory does not appear in the schedule of hazardous processes under the Child Labour Act, though the work involves daily exposure to chemical fumes.\n\nWhich of the following correctly describes the constitutional position?\n\n(a) Priya's employment violates Article 24 absolutely — no parental consent or supervisory arrangement can override the constitutional bar on employing children below 14 in hazardous settings\n(b) Priya's employment does not violate Article 24 because that provision only covers employment in factories listed in specific government schedules, not all industrial work\n(c) Since Priya's parents have consented and the work is within a family's economic arrangement, the family enterprise exception under the 2016 Amendment applies and her employment is permissible\n(d) Priya's employment may be constitutionally permissible until the government formally adds chemical dye manufacturing to the statutory list of hazardous processes",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because it correctly identifies Article 24's application but introduces the parental consent exception — students who are aware the 2016 Amendment created a family exception may incorrectly think parental consent matters even for hazardous work.",
+      "elimination_logic": [
+        "Eliminate option (b) — Article 24 applies to hazardous employment, not all employment; the factory setting makes this hazardous.",
+        "Eliminate option (c) — the absolute bar on children below 14 in hazardous employment admits no parental consent exception; the family exception applies only to non-hazardous family enterprises.",
+        "Eliminate option (d) — the Child Labour Act's schedules supplement but do not replace Article 24's constitutional minimum.",
+        "Retain option (a) — Article 24's prohibition on children below 14 in hazardous settings is absolute and cannot be overridden by parental consent."
+      ],
+      "upsc_trap_explanation": "Option (c) is precisely calibrated to catch students who have learned about the 2016 Amendment's family enterprise exception but have not noticed the critical condition that this exception applies only to non-hazardous work. A factory involving chemical processes is hazardous — parental consent provides no constitutional defence. The absolute character of Article 24 for hazardous employment is untouched by the 2016 Amendment.",
+      "final_explanation": "This scenario tests whether students can apply Article 24's absolute prohibition correctly, without being misled by the 2016 Amendment's family exception.\n\nThe applicable principle: Article 24 absolutely prohibits employment of children below 14 in any hazardous setting. No exception exists for parental consent, family enterprise, or economic necessity when the work is hazardous.\n\n• Option (a) — Correct: The factory involves chemical processes — squarely within hazardous employment. Article 24's prohibition is absolute for children below 14 in such settings. Priya's employer violates Article 24 regardless of parental consent.\n• Option (b) — Incorrect: A chemical factory is hazardous — Article 24 applies specifically to hazardous employment. This option misstates Article 24's scope.\n• Option (c) — Incorrect: The 2016 Amendment's family enterprise exception applies only to non-hazardous work. Chemical factory work is hazardous — no parental consent exception exists here.\n• Option (d) — Incorrect: The constitutional bar under Article 24 is self-executing — it does not depend on whether the specific process appears in a statutory schedule.\n\nValue Addition:\n• 'Hazardous employment' is defined both by judicial interpretation and statutory scheduling under the Child Labour Act.\n• The constitutional minimum (Article 24) cannot be reduced by executive inaction or by absence of specific scheduling.\n• M.C. Mehta (1996) held that even if a process is not formally scheduled, courts can treat it as hazardous based on its nature."
+    },
+    "hi": {
+      "display_text": "प्रिया 11 वर्ष की है। उसके माता-पिता, जो परिवार का पालन-पोषण करने में असमर्थ हैं, ने उसे एक फैक्ट्री में काम करने की अनुमति दी है जो रासायनिक रंग बनाती है। फैक्ट्री मालिक का तर्क है कि चूंकि प्रिया के माता-पिता ने लिखित सहमति दी है और वह फैक्ट्री के एक पर्यवेक्षित विभाग में काम करती है, इसलिए उसका रोजगार संवैधानिक मानदंडों का उल्लंघन नहीं करता। बाल श्रम अधिनियम के तहत खतरनाक प्रक्रियाओं की अनुसूची में यह फैक्ट्री शामिल नहीं है, हालांकि काम में रोजाना रासायनिक धुएं के संपर्क में रहना शामिल है।\n\nनिम्नलिखित में से कौन-सा संवैधानिक स्थिति को सही ढंग से वर्णित करता है?\n\n(a) प्रिया का रोजगार अनुच्छेद 24 का पूर्ण उल्लंघन है — 14 वर्ष से कम उम्र के बच्चों के खतरनाक माहौल में रोजगार पर संवैधानिक प्रतिबंध को माता-पिता की सहमति या पर्यवेक्षण व्यवस्था से अधिलेखित नहीं किया जा सकता\n(b) प्रिया का रोजगार अनुच्छेद 24 का उल्लंघन नहीं करता क्योंकि यह प्रावधान केवल उन फैक्ट्रियों में रोजगार को कवर करता है जो विशिष्ट सरकारी अनुसूचियों में सूचीबद्ध हैं, न कि सभी औद्योगिक कार्यों को\n(c) चूंकि प्रिया के माता-पिता ने सहमति दी है और काम परिवार की आर्थिक व्यवस्था के अंतर्गत है, 2016 संशोधन के तहत पारिवारिक उद्यम अपवाद लागू होता है और उसका रोजगार वैध है\n(d) प्रिया का रोजगार संवैधानिक रूप से तब तक वैध हो सकता है जब तक सरकार औपचारिक रूप से रासायनिक रंग निर्माण को खतरनाक प्रक्रियाओं की वैधानिक सूची में शामिल नहीं करती",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि यह सही ढंग से अनुच्छेद 24 के लागू होने की पहचान करता है लेकिन माता-पिता की सहमति की छूट को शामिल करता है — जो छात्र जानते हैं कि 2016 संशोधन ने पारिवारिक अपवाद बनाया है, वे गलत तरीके से सोच सकते हैं कि खतरनाक कार्य के लिए भी माता-पिता की सहमति मायने रखती है।",
+      "elimination_logic": [
+        "विकल्प (b) को खारिज करें — अनुच्छेद 24 केवल खतरनाक रोजगार पर लागू होता है, सभी रोजगार पर नहीं; फैक्ट्री का माहौल खतरनाक है।",
+        "विकल्प (c) को खारिज करें — 14 वर्ष से कम उम्र के बच्चों के खतरनाक रोजगार पर पूर्ण प्रतिबंध में माता-पिता की सहमति की कोई छूट नहीं है; पारिवारिक अपवाद केवल गैर-खतरनाक पारिवारिक उद्यमों पर लागू होता है।",
+        "विकल्प (d) को खारिज करें — बाल श्रम अधिनियम की अनुसूचियाँ अनुच्छेद 24 के संवैधानिक न्यूनतम को पूरक हैं, प्रतिस्थापित नहीं करतीं।",
+        "विकल्प (a) को बनाए रखें — अनुच्छेद 24 का 14 वर्ष से कम उम्र के बच्चों के खतरनाक माहौल में रोजगार पर प्रतिबंध पूर्ण है और इसे माता-पिता की सहमति से अधिलेखित नहीं किया जा सकता।"
+      ],
+      "upsc_trap_explanation": "विकल्प (c) विशेष रूप से उन छात्रों को फंसाने के लिए तैयार किया गया है जिन्होंने 2016 संशोधन के पारिवारिक उद्यम अपवाद के बारे में सीखा है लेकिन यह महत्वपूर्ण शर्त नहीं देखी कि यह अपवाद केवल गैर-खतरनाक कार्यों पर लागू होता है। रासायनिक प्रक्रियाओं वाली फैक्ट्री खतरनाक है — माता-पिता की सहमति कोई संवैधानिक रक्षा नहीं देती। खतरनाक रोजगार के लिए अनुच्छेद 24 का पूर्ण प्रतिबंध 2016 संशोधन से अप्रभावित है।",
+      "final_explanation": "यह परिदृश्य यह परीक्षण करता है कि छात्र अनुच्छेद 24 के पूर्ण प्रतिबंध को सही ढंग से लागू कर सकते हैं या नहीं, बिना 2016 संशोधन के पारिवारिक अपवाद से भ्रमित हुए।\n\nलागू सिद्धांत: अनुच्छेद 24 14 वर्ष से कम उम्र के बच्चों के किसी भी खतरनाक माहौल में रोजगार को पूर्ण रूप से प्रतिबंधित करता है। खतरनाक कार्य होने पर माता-पिता की सहमति, पारिवारिक उद्यम या आर्थिक आवश्यकता के लिए कोई अपवाद नहीं है।\n\n• विकल्प (a) — सही: फैक्ट्री में रासायनिक प्रक्रियाएँ शामिल हैं — जो स्पष्ट रूप से खतरनाक रोजगार के अंतर्गत आता है। अनुच्छेद 24 का प्रतिबंध 14 वर्ष से कम उम्र के बच्चों के लिए पूर्ण है। प्रिया का नियोक्ता माता-पिता की सहमति के बावजूद अनुच्छेद 24 का उल्लंघन करता है।\n• विकल्प (b) — गलत: रासायनिक फैक्ट्री खतरनाक है — अनुच्छेद 24 विशेष रूप से खतरनाक रोजगार पर लागू होता है। यह विकल्प अनुच्छेद 24 के दायरे को गलत बताता है।\n• विकल्प (c) — गलत: 2016 संशोधन का पारिवारिक उद्यम अपवाद केवल गैर-खतरनाक कार्यों पर लागू होता है। रासायनिक फैक्ट्री का कार्य खतरनाक है — यहाँ माता-पिता की सहमति का कोई अपवाद नहीं है।\n• विकल्प (d) — गलत: अनुच्छेद 24 के तहत संवैधानिक प्रतिबंध स्वचालित रूप से लागू होता है — यह इस बात पर निर्भर नहीं करता कि कोई विशिष्ट प्रक्रिया वैधानिक अनुसूची में शामिल है या नहीं।\n\nमूल्य संवर्धन:\n• 'खतरनाक रोजगार' की परिभाषा न्यायिक व्याख्या और बाल श्रम अधिनियम के तहत वैधानिक अनुसूची दोनों द्वारा की जाती है।\n• संवैधानिक न्यूनतम (अनुच्छेद 24) को कार्यकारी निष्क्रियता या विशिष्ट अनुसूची की अनुपस्थिति से कम नहीं किया जा सकता।\n• एम.सी. मेहता (1996) ने कहा कि यदि कोई प्रक्रिया औपचारिक रूप से अनुसूचित नहीं है, तब भी न्यायालय उसकी प्रकृति के आधार पर उसे खतरनाक मान सकते हैं।"
+    }
+  },
+  {
+    "uuid": "694574cb-9d27-4744-b48d-68f505458c3d",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Bonded Labour System and Article 23: Legislative and Judicial Framework",
+        "State's Positive Obligation under Articles 23 and 24",
+        "'Other Similar Forms of Forced Labour' — Judicial Expansion of Article 23"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Article 23 — coverage of migrant and contract labour",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements in the context of Article 23 and the Bonded Labour System (Abolition) Act, 1976:\n\n1. The Supreme Court has extended Article 23's protection to cover migrant workers and contract labourers subjected to exploitative conditions, relying on the 'other similar forms of forced labour' clause.\n2. Bonded labour and contractual debt are treated identically under the Bonded Labour System (Abolition) Act, 1976 — no distinction is drawn between the two.\n3. A State government that fails to implement the Bonded Labour System (Abolition) Act, 1976 by not appointing Vigilance Committees or conducting surveys can be held constitutionally accountable under Articles 23 and 226.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Supreme Court has extended Article 23's protection to cover migrant workers and contract labourers subjected to exploitative conditions, relying on the 'other similar forms of forced labour' clause.",
+          "verdict": "Correct",
+          "reason": "The open-ended clause in Article 23 has been judicially used to bring contract labour exploitation and migrant labour conditions within its scope, going beyond the literal categories of trafficking and begar."
+        },
+        {
+          "statement": "Bonded labour and contractual debt are treated identically under the Bonded Labour System (Abolition) Act, 1976 — no distinction is drawn between the two.",
+          "verdict": "Incorrect",
+          "reason": "The Act specifically distinguishes bonded labour (where the obligation to render labour is tied to a debt) from ordinary contractual debt. Legitimate commercial debt without a labour-compulsion element is not treated as bonded labour under the Act."
+        },
+        {
+          "statement": "A State government that fails to implement the Bonded Labour System (Abolition) Act, 1976 by not appointing Vigilance Committees or conducting surveys can be held constitutionally accountable under Articles 23 and 226.",
+          "verdict": "Correct",
+          "reason": "The positive obligation under Article 23, reinforced by Bandhua Mukti Morcha (1984), means State inaction in implementing the 1976 Act is a constitutional failure remediable through the writ jurisdiction of High Courts."
+        }
+      ],
+      "strong_distractor": "a — Option (a) only captures Statement 1 — students who correctly reject Statement 2 but doubt whether State inaction can be challenged in court (confusing it with a DPSP-type aspirational obligation) may not accept Statement 3.",
+      "elimination_logic": [
+        "Statement 2 claims bonded labour and contractual debt are treated identically under the 1976 Act — this is clearly incorrect; the Act makes a distinction between them.",
+        "Eliminate any option containing Statement 2 as correct — removes option (d).",
+        "Statements 1 and 3 are both correct — the judicial expansion of Article 23 to migrant/contract labour and the constitutional accountability for State inaction are established positions.",
+        "Option (c) captures exactly Statements 1 and 3."
+      ],
+      "upsc_trap_explanation": "Statement 2 contains a partial truth — both bonded labour and contractual debt involve financial obligations, which makes 'no distinction is drawn' sound plausible. However, the 1976 Act is premised entirely on distinguishing them: bonded labour involves a compelled labour element as a consequence of debt, whereas ordinary debt does not. A student who conflates economic obligation with bonded labour will accept Statement 2 as correct.",
+      "final_explanation": "Article 23 and the 1976 Act together form a comprehensive framework, but precise understanding of their limits is required.\n\n• Statement 1 — Correct: The 'other similar forms' clause has been stretched by courts to cover unorganised sector exploitation including migrant workers and contract labourers paid below minimum wages — a direct application of the PUDR principle.\n• Statement 2 — Incorrect: The 1976 Act draws a clear line — bonded labour requires a debt-linked compulsion to perform labour. Ordinary commercial debt that does not carry a labour obligation does not fall under the Act.\n• Statement 3 — Correct: State inaction on a positive constitutional obligation (identifying and releasing bonded labourers) is remediable through writ jurisdiction. The Bandhua Mukti Morcha case is the locus classicus for this.\n\nValue Addition:\n• The Inter-State Migrant Workmen (Regulation of Employment and Conditions of Service) Act, 1979 is the specific statute for migrant worker protection.\n• Vigilance Committees under the 1976 Act are to include MLAs, social workers, and district officials.\n• Writ jurisdiction under Article 226 is broader than Article 32 and can reach State-government inaction."
+    },
+    "hi": {
+      "display_text": "बंधुआ मजदूरी उन्मूलन अधिनियम, 1976 और अनुच्छेद 23 के संदर्भ में निम्नलिखित कथनों पर विचार करें:\n\n1. सुप्रीम कोर्ट ने अनुच्छेद 23 की सुरक्षा को प्रवासी श्रमिकों और अनुबंध श्रमिकों तक बढ़ाया है जो शोषणकारी परिस्थितियों के अधीन हैं, 'अन्य समान प्रकार के जबरन श्रम' खंड पर आधारित होकर।\n2. बंधुआ मजदूरी और अनुबंधात्मक ऋण को बंधुआ मजदूरी उन्मूलन अधिनियम, 1976 के तहत समान रूप से माना जाता है — दोनों के बीच कोई भेद नहीं किया गया है।\n3. यदि कोई राज्य सरकार बंधुआ मजदूरी उन्मूलन अधिनियम, 1976 को लागू करने में विफल रहती है, जैसे कि निगरानी समितियाँ नियुक्त न करना या सर्वेक्षण न करना, तो उसे अनुच्छेद 23 और 226 के तहत संवैधानिक रूप से जवाबदेह ठहराया जा सकता है।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "सुप्रीम कोर्ट ने अनुच्छेद 23 की सुरक्षा को प्रवासी श्रमिकों और अनुबंध श्रमिकों तक बढ़ाया है जो शोषणकारी परिस्थितियों के अधीन हैं, 'अन्य समान प्रकार के जबरन श्रम' खंड पर आधारित होकर।",
+          "verdict": "सही है",
+          "reason": "अनुच्छेद 23 में खुला खंड न्यायिक रूप से अनुबंध श्रम शोषण और प्रवासी श्रम की स्थितियों को इसके दायरे में लाने के लिए उपयोग किया गया है, जो तस्करी और बेगार की शाब्दिक श्रेणियों से परे है।"
+        },
+        {
+          "statement": "बंधुआ मजदूरी और अनुबंधात्मक ऋण को बंधुआ मजदूरी उन्मूलन अधिनियम, 1976 के तहत समान रूप से माना जाता है — दोनों के बीच कोई भेद नहीं किया गया है।",
+          "verdict": "गलत है",
+          "reason": "यह अधिनियम विशेष रूप से बंधुआ मजदूरी (जहाँ श्रम देने का दायित्व ऋण से जुड़ा होता है) को सामान्य अनुबंधात्मक ऋण से अलग करता है। वैध वाणिज्यिक ऋण जिसमें श्रम-प्रेरणा तत्व नहीं होता, उसे अधिनियम के तहत बंधुआ मजदूरी नहीं माना जाता।"
+        },
+        {
+          "statement": "यदि कोई राज्य सरकार बंधुआ मजदूरी उन्मूलन अधिनियम, 1976 को लागू करने में विफल रहती है, जैसे कि निगरानी समितियाँ नियुक्त न करना या सर्वेक्षण न करना, तो उसे अनुच्छेद 23 और 226 के तहत संवैधानिक रूप से जवाबदेह ठहराया जा सकता है।",
+          "verdict": "सही है",
+          "reason": "अनुच्छेद 23 के तहत सकारात्मक दायित्व, जिसे बंधुआ मुक्ति मोर्चा (1984) ने मजबूत किया है, का अर्थ है कि 1976 के अधिनियम को लागू करने में राज्य की निष्क्रियता संवैधानिक विफलता है जिसे उच्च न्यायालयों की रिट क्षेत्राधिकार के माध्यम से सुधारा जा सकता है।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) केवल कथन 1 को पकड़ता है — जो छात्र कथन 2 को सही ढंग से खारिज करते हैं लेकिन संदेह करते हैं कि क्या राज्य की निष्क्रियता को अदालत में चुनौती दी जा सकती है (इसे DPSP-प्रकार के आकांक्षात्मक दायित्व के साथ भ्रमित करते हैं) वे कथन 3 को स्वीकार नहीं कर सकते।",
+      "elimination_logic": [
+        "कथन 2 यह दावा करता है कि बंधुआ मजदूरी और अनुबंधात्मक ऋण को 1976 के अधिनियम के तहत समान रूप से माना जाता है — यह स्पष्ट रूप से गलत है; अधिनियम इनके बीच भेद करता है।",
+        "किसी भी विकल्प को जिसमें कथन 2 सही माना गया हो, हटा दें — इससे विकल्प (d) हट जाता है।",
+        "कथन 1 और 3 दोनों सही हैं — अनुच्छेद 23 का प्रवासी/अनुबंध श्रम तक न्यायिक विस्तार और राज्य की निष्क्रियता के लिए संवैधानिक जवाबदेही स्थापित स्थिति है।",
+        "विकल्प (c) ठीक उसी प्रकार कथन 1 और 3 को पकड़ता है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 में आंशिक सत्य है — बंधुआ मजदूरी और अनुबंधात्मक ऋण दोनों में वित्तीय दायित्व होते हैं, जो 'कोई भेद नहीं किया गया' को संभावित बनाता है। हालांकि, 1976 का अधिनियम पूरी तरह से इनके बीच भेद करने पर आधारित है: बंधुआ मजदूरी में ऋण के कारण श्रम करने का बाध्यकारी तत्व होता है, जबकि सामान्य ऋण में ऐसा नहीं होता। जो छात्र आर्थिक दायित्व को बंधुआ मजदूरी के साथ मिला देते हैं, वे कथन 2 को सही मानेंगे।",
+      "final_explanation": "अनुच्छेद 23 और 1976 का अधिनियम मिलकर एक व्यापक ढांचा बनाते हैं, लेकिन उनकी सीमाओं की सटीक समझ आवश्यक है।\n\n• कथन 1 — सही: 'अन्य समान प्रकार' खंड को न्यायालयों ने असंगठित क्षेत्र के शोषण को कवर करने के लिए बढ़ाया है, जिसमें प्रवासी श्रमिक और न्यूनतम वेतन से कम भुगतान पाने वाले अनुबंध श्रमिक शामिल हैं — यह PUDR सिद्धांत का प्रत्यक्ष अनुप्रयोग है।\n• कथन 2 — गलत: 1976 का अधिनियम स्पष्ट रूप से भेद करता है — बंधुआ मजदूरी के लिए ऋण से जुड़ा श्रम बाध्यता आवश्यक है। सामान्य वाणिज्यिक ऋण जिसमें श्रम बाध्यता नहीं होती, अधिनियम के अंतर्गत नहीं आता।\n• कथन 3 — सही: सकारात्मक संवैधानिक दायित्व (बंधुआ मजदूरों की पहचान और मुक्ति) पर राज्य की निष्क्रियता रिट क्षेत्राधिकार के माध्यम से सुधारी जा सकती है। बंधुआ मुक्ति मोर्चा मामला इसका प्रमुख उदाहरण है।\n\nमूल्य संवर्धन:\n• इंटर-स्टेट माइग्रेंट वर्कमेन (रोजगार और सेवा की शर्तों का विनियमन) अधिनियम, 1979 प्रवासी श्रमिक संरक्षण के लिए विशिष्ट क़ानून है।\n• 1976 के अधिनियम के तहत निगरानी समितियों में विधायक, सामाजिक कार्यकर्ता और जिला अधिकारी शामिल होते हैं।\n• अनुच्छेद 226 के तहत रिट क्षेत्राधिकार अनुच्छेद 32 से व्यापक है और राज्य सरकार की निष्क्रियता तक पहुँच सकता है।"
+    }
+  },
+  {
+    "uuid": "db2a8698-4690-4b3c-8560-4741d62789f4",
+    "meta": {
+      "subject": "Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Right against exploitation — Articles 23, 24",
+      "concepts_used": [
+        "Article 23 vs. Article 19(1)(g): Free Trade vs. Prohibition of Forced Labour",
+        "Enforceability of Articles 23 and 24 Against Private Parties"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Fundamental Rights non-waivability — Basheshar Nath principle",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The constitutional principle that an individual cannot waive a Fundamental Right — which directly underpins Article 23's operation as a non-derogable protection against forced labour — was authoritatively established by the Supreme Court in the case of ________.\n\n(a) Basheshar Nath v. Commissioner of Income Tax (1959)\n(b) Maneka Gandhi v. Union of India (1978)\n(c) Kesavananda Bharati v. State of Kerala (1973)\n(d) A.K. Gopalan v. State of Madras (1950)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is deceptive because 'Kesavananda Bharati' is the most famous Supreme Court constitutional case, and students may gravitate to it when asked about a landmark case on Fundamental Rights — but Kesavananda dealt with the basic structure doctrine, not waiver of rights.",
+      "elimination_logic": [
+        "The question specifies a case on 'waiver of Fundamental Rights' — this is a distinct and specific constitutional question.",
+        "Kesavananda Bharati dealt with Parliament's amending power and basic structure — not waiver of individual rights by consent.",
+        "Basheshar Nath v. Commissioner of Income Tax (1959) is the Supreme Court authority on non-waivability of Fundamental Rights — a taxpayer attempted to waive his Article 14 rights by agreement, and the Court held Fundamental Rights cannot be waived.",
+        "Option (a) is the correct answer."
+      ],
+      "upsc_trap_explanation": "The Basheshar Nath case is relatively obscure compared to Kesavananda, Minerva Mills, or Maneka Gandhi — the famous 'big' constitutional cases students memorise. Inserting Kesavananda as an option exploits the tendency to default to recognisable landmark names. The specific principle of non-waivability of Fundamental Rights belongs to Basheshar Nath — a case directly relevant to Article 23 but rarely identified by name.",
+      "final_explanation": "The principle that Fundamental Rights cannot be waived by individuals — even voluntarily — is a key constitutional doctrine.\n\n• Option (a) — Basheshar Nath v. Commissioner of Income Tax (1959): Correct. In this case, a taxpayer had entered a settlement with the revenue authorities and sought to argue that by agreeing to the settlement, he had waived his right to challenge it under Article 14. The Supreme Court held that Fundamental Rights are not personal privileges — they cannot be bartered away by individual consent. This principle directly supports Article 23's operation.\n• Option (b) — Maneka Gandhi v. Union of India (1978): This case expanded the scope of Article 21, establishing the 'golden triangle' of Articles 14, 19, and 21. Not about waiver.\n• Option (c) — Kesavananda Bharati v. State of Kerala (1973): This case established the basic structure doctrine limiting Parliament's amending power. Not about individual waiver of rights.\n• Option (d) — A.K. Gopalan v. State of Madras (1950): This case concerned the initial narrow interpretation of Article 21. Not about waiver.\n\nValue Addition:\n• Non-waivability of rights is why trafficking victims' consent cannot validate the trafficker's conduct under Article 23.\n• The principle also means contractual agreements to work in exploitative conditions are void ab initio.\n• Courts have drawn on Basheshar Nath when striking down private agreements that purport to exclude constitutional protections."
+    },
+    "hi": {
+      "display_text": "संवैधानिक सिद्धांत कि कोई व्यक्ति मौलिक अधिकार का त्याग नहीं कर सकता — जो अनुच्छेद 23 के तहत जबरन श्रम के विरुद्ध गैर-छूट योग्य सुरक्षा के रूप में सीधे लागू होता है — सुप्रीम कोर्ट ने ________ मामले में अधिकारिक रूप से स्थापित किया।\n\n(a) Basheshar Nath v. Commissioner of Income Tax (1959)\n(b) Maneka Gandhi v. Union of India (1978)\n(c) Kesavananda Bharati v. State of Kerala (1973)\n(d) A.K. Gopalan v. State of Madras (1950)",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) भ्रामक है क्योंकि 'Kesavananda Bharati' सुप्रीम कोर्ट का सबसे प्रसिद्ध संवैधानिक मामला है, और छात्र जब मौलिक अधिकारों पर एक महत्वपूर्ण मामले के बारे में पूछे जाते हैं तो वे इसकी ओर आकर्षित हो सकते हैं — लेकिन Kesavananda ने मूल संरचना सिद्धांत से संबंधित है, अधिकारों के त्याग से नहीं।",
+      "elimination_logic": [
+        "प्रश्न 'मौलिक अधिकारों के त्याग' पर एक मामले को निर्दिष्ट करता है — यह एक विशिष्ट संवैधानिक प्रश्न है।",
+        "Kesavananda Bharati संसद की संशोधन शक्ति और मूल संरचना से संबंधित है — व्यक्तिगत अधिकारों के सहमति द्वारा त्याग से नहीं।",
+        "Basheshar Nath v. Commissioner of Income Tax (1959) सुप्रीम कोर्ट का मौलिक अधिकारों के त्याग न होने का प्राधिकरण है — एक करदाता ने अनुच्छेद 14 के अधिकार को समझौते द्वारा त्यागने का प्रयास किया, और कोर्ट ने कहा कि मौलिक अधिकार त्यागे नहीं जा सकते।",
+        "विकल्प (a) सही उत्तर है।"
+      ],
+      "upsc_trap_explanation": "Basheshar Nath मामला Kesavananda, Minerva Mills, या Maneka Gandhi की तुलना में अपेक्षाकृत कम प्रसिद्ध है — ये प्रसिद्ध 'बड़े' संवैधानिक मामले हैं जिन्हें छात्र याद करते हैं। Kesavananda को विकल्प के रूप में डालना इस प्रवृत्ति का लाभ उठाता है कि छात्र परिचित नामों की ओर झुकते हैं। मौलिक अधिकारों के त्याग न होने का विशिष्ट सिद्धांत Basheshar Nath से संबंधित है — जो अनुच्छेद 23 से सीधे जुड़ा है लेकिन नाम से कम पहचाना जाता है।",
+      "final_explanation": "मौलिक अधिकारों को व्यक्तियों द्वारा स्वयं से भी त्यागा नहीं जा सकता — यह एक महत्वपूर्ण संवैधानिक सिद्धांत है।\n\n• विकल्प (a) — Basheshar Nath v. Commissioner of Income Tax (1959): सही। इस मामले में, एक करदाता ने राजस्व अधिकारियों के साथ समझौता किया और तर्क दिया कि समझौते से उसने अनुच्छेद 14 के तहत चुनौती देने का अधिकार त्याग दिया। सुप्रीम कोर्ट ने कहा कि मौलिक अधिकार व्यक्तिगत विशेषाधिकार नहीं हैं — इन्हें व्यक्तिगत सहमति से त्यागा नहीं जा सकता। यह सिद्धांत सीधे अनुच्छेद 23 के कार्यान्वयन का समर्थन करता है।\n• विकल्प (b) — Maneka Gandhi v. Union of India (1978): इस मामले ने अनुच्छेद 21 का दायरा बढ़ाया, और अनुच्छेद 14, 19, और 21 के 'गोल्डन ट्रायंगल' की स्थापना की। त्याग से संबंधित नहीं।\n• विकल्प (c) — Kesavananda Bharati v. State of Kerala (1973): इस मामले ने संसद की संशोधन शक्ति को सीमित करने वाला मूल संरचना सिद्धांत स्थापित किया। व्यक्तिगत अधिकारों के त्याग से संबंधित नहीं।\n• विकल्प (d) — A.K. Gopalan v. State of Madras (1950): इस मामले में अनुच्छेद 21 की प्रारंभिक संकीर्ण व्याख्या थी। त्याग से संबंधित नहीं।\n\nमूल्यवर्धन:\n• अधिकारों के त्याग न होने का सिद्धांत इसलिए महत्वपूर्ण है क्योंकि यह मानव तस्करी के शिकार व्यक्तियों की सहमति को अनुच्छेद 23 के तहत तस्कर के कृत्य को वैध नहीं बनाता।\n• यह सिद्धांत यह भी बताता है कि शोषणकारी परिस्थितियों में काम करने के लिए किए गए संविदात्मक समझौते प्रारंभ से ही अमान्य हैं।\n• न्यायालयों ने संवैधानिक सुरक्षा को बाहर करने वाले निजी समझौतों को रद्द करते समय Basheshar Nath का सहारा लिया है।"
+    }
+  }
+]

@@ -1,0 +1,1454 @@
+[
+  {
+    "uuid": "0ea89ccc-c0c8-4860-bd82-820620156438",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Currency Reforms and the Silver Rupya"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Sher Shah as originator of silver Rupiya",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which ruler is correctly identified as the originator of the standardized silver Rupiya that became the basis of monetary exchange across the subcontinent in the sixteenth century?\n\n(a) Muhammad bin Tughluq\n(b) Sher Shah Suri\n(c) Akbar\n(d) Alauddin Khalji",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students familiar with Muhammad bin Tughluq's monetary experiments may associate currency innovation with him, and the copper token currency episode is frequently recalled when currency reforms are mentioned.",
+      "elimination_logic": [
+        "Eliminate option (a): Muhammad bin Tughluq introduced a token currency in copper and brass — not a standardized silver rupee of fixed weight.",
+        "Eliminate option (c): Akbar continued and refined the rupee system but did not introduce it; conflating continuity with origination is the classic exam trap here.",
+        "Eliminate option (d): Alauddin Khalji is associated with market control and price regulation, not with the standardized silver rupee.",
+        "Confirm option (b): Sher Shah Suri introduced the silver Rupiya of 180 grains weight, establishing the monetary standard that subsequent rulers inherited."
+      ],
+      "upsc_trap_explanation": "The trap exploits a common conflation between who introduced the rupee and who made it dominant. Because the Mughal period is longer and better documented, students often attribute the rupee to Akbar or the Mughals generally. The question forces precise attribution — Sher Shah is the originator of the standardized silver Rupiya; the Mughals, especially Akbar, continued and perfected the system.",
+      "final_explanation": "Sher Shah Suri introduced a standardized silver coin known as the Rupiya, weighing approximately 180 grains, alongside a copper coin called the Dam. This was a deliberate break from the debased, inconsistent coinage of the preceding Lodi and Sur period and laid the monetary foundation that the Mughals inherited.\n\n• Option (a) — Incorrect: Muhammad bin Tughluq experimented with token currency in copper and brass as a substitute for silver — a failed experiment rooted in fiscal pressure, not a standardized rupee.\n• Option (b) — Correct: Sher Shah Suri introduced the silver Rupiya of fixed weight and purity. This is the direct ancestor of the modern rupee.\n• Option (c) — Incorrect: Akbar continued the rupee system and is associated with refining it under Todar Mal's revenue administration, but origination belongs to Sher Shah.\n• Option (d) — Incorrect: Alauddin Khalji is celebrated for market regulation and price control, not currency standardization.\n\nValue Addition:\n• The ratio of Rupiya to Dam under Sher Shah was 1 Rupiya = 64 Dams.\n• Sher Shah's coins bore both Persian and Devanagari inscriptions — a deliberate administrative and symbolic inclusion.\n• This two-tier currency (silver for large commerce, copper for peasant transactions) reflects a sophisticated understanding of economic stratification."
+    },
+    "hi": {
+      "display_text": "कौन-सा शासक मानकीकृत चांदी के रुपया का जनक सही रूप में पहचाना गया है, जो सोलहवीं सदी में उपमहाद्वीप में मौद्रिक लेनदेन का आधार बना?\n\n(a) मुहम्मद बिन तुगलक\n(b) शेर शाह सूरी\n(c) अकबर\n(d) अलाउद्दीन खिलजी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि मुहम्मद बिन तुगलक के मौद्रिक प्रयोगों से परिचित छात्र मुद्रा नवाचार को उनसे जोड़ सकते हैं, और तांबे की टोकन मुद्रा की घटना मुद्रा सुधारों के संदर्भ में अक्सर याद की जाती है।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: मुहम्मद बिन तुगलक ने तांबे और पीतल में टोकन मुद्रा शुरू की थी — न कि निश्चित वजन वाले मानकीकृत चांदी के रुपये।",
+        "विकल्प (c) को हटाएं: अकबर ने रुपया प्रणाली को जारी रखा और परिष्कृत किया लेकिन इसे शुरू नहीं किया; निरंतरता को उत्पत्ति से जोड़ना परीक्षा में आम जाल है।",
+        "विकल्प (d) को हटाएं: अलाउद्दीन खिलजी बाजार नियंत्रण और मूल्य विनियमन से जुड़े हैं, न कि मानकीकृत चांदी के रुपये से।",
+        "विकल्प (b) की पुष्टि करें: शेर शाह सूरी ने 180 ग्रेन वजन का चांदी का रुपया शुरू किया, जो मौद्रिक मानक स्थापित करता है जिसे बाद के शासकों ने अपनाया।"
+      ],
+      "upsc_trap_explanation": "यह जाल इस सामान्य भ्रम का उपयोग करता है कि रुपया किसने शुरू किया और किसने इसे प्रमुख बनाया। क्योंकि मुगल काल लंबा और बेहतर प्रलेखित है, छात्र अक्सर रुपया को अकबर या सामान्यतः मुगलों से जोड़ते हैं। प्रश्न सटीक श्रेय देने के लिए बाध्य करता है — शेर शाह मानकीकृत चांदी के रुपया के जनक हैं; मुगल, विशेषकर अकबर, ने इसे जारी रखा और परिष्कृत किया।",
+      "final_explanation": "शेर शाह सूरी ने एक मानकीकृत चांदी का सिक्का शुरू किया जिसे रुपया कहा जाता था, जिसका वजन लगभग 180 ग्रेन था, साथ ही तांबे का सिक्का जिसे दाम कहा जाता था। यह पूर्व के लोदी और सूरी काल के घटिया और असंगत सिक्कों से एक जानबूझकर अलगाव था और मुगलों को विरासत में मिली मौद्रिक नींव रखी।\n\n• विकल्प (a) — गलत: मुहम्मद बिन तुगलक ने चांदी के विकल्प के रूप में तांबे और पीतल में टोकन मुद्रा का प्रयोग किया — यह एक असफल प्रयोग था जो वित्तीय दबाव पर आधारित था, न कि मानकीकृत रुपया।\n• विकल्प (b) — सही: शेर शाह सूरी ने निश्चित वजन और शुद्धता वाला चांदी का रुपया शुरू किया। यह आधुनिक रुपये का प्रत्यक्ष पूर्वज है।\n• विकल्प (c) — गलत: अकबर ने रुपया प्रणाली जारी रखी और टोडरमल के राजस्व प्रशासन के तहत इसे परिष्कृत किया, लेकिन इसकी उत्पत्ति शेर शाह की है।\n• विकल्प (d) — गलत: अलाउद्दीन खिलजी बाजार विनियमन और मूल्य नियंत्रण के लिए प्रसिद्ध हैं, मुद्रा मानकीकरण के लिए नहीं।\n\nमूल्यवर्धन:\n• शेर शाह के समय रुपया और दाम का अनुपात था 1 रुपया = 64 दाम।\n• शेर शाह के सिक्कों पर फारसी और देवनागरी दोनों लिपियाँ अंकित थीं — यह एक जानबूझकर प्रशासनिक और प्रतीकात्मक समावेशन था।\n• यह दो-स्तरीय मुद्रा प्रणाली (बड़े व्यापार के लिए चांदी, किसान लेनदेन के लिए तांबा) आर्थिक स्तरीकरण की परिष्कृत समझ को दर्शाती है।"
+    }
+  },
+  {
+    "uuid": "ba7c1ccb-2ff2-45c3-bf40-3070a4d0af2e",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Patta and Qabuliyat System",
+        "Land Revenue Rate and the 'One-Third' Principle"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Patta and Qabuliyat as twin revenue instruments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the Patta and Qabuliyat system introduced during Sher Shah Suri's administration:\n\n1. The Patta was a document issued by the state to the peasant acknowledging the latter's rights over a specific piece of land and specifying the assessed revenue demand.\n2. The Qabuliyat was a declaration issued by the state to the peasant confirming acceptance of the revenue terms negotiated during settlement.\n3. Together, the Patta and Qabuliyat system aimed at creating a direct contractual relationship between the state and the cultivator, reducing the intermediary role of revenue officials.\n\nWhich of the above statements is/are correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Patta was a document issued by the state to the peasant acknowledging the latter's rights over a specific piece of land and specifying the assessed revenue demand.",
+          "verdict": "Correct",
+          "reason": "Patta was indeed issued TO the peasant — it was a title deed conferring legal recognition of the peasant's landholding and the revenue obligation, protecting against arbitrary exaction."
+        },
+        {
+          "statement": "The Qabuliyat was a declaration issued by the state to the peasant confirming acceptance of the revenue terms negotiated during settlement.",
+          "verdict": "Incorrect",
+          "reason": "Qabuliyat was issued BY the peasant to the state — it was the peasant's written agreement acknowledging the revenue terms, not a state-issued confirmation. The direction of obligation is reversed in this statement."
+        },
+        {
+          "statement": "Together, the Patta and Qabuliyat system aimed at creating a direct contractual relationship between the state and the cultivator, reducing the intermediary role of revenue officials.",
+          "verdict": "Correct",
+          "reason": "This is the administrative significance of the twin system — by creating documented obligations on both sides, arbitrary exaction by amils (revenue officials) was structurally constrained."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three are correct is a strong distractor because statements 1 and 3 are both correct, and a student who misremembers the direction of the Qabuliyat will mark all three as correct.",
+      "elimination_logic": [
+        "Evaluate Statement 2 first: Qabuliyat was issued BY the peasant to the state, not by the state to the peasant — Statement 2 reverses the direction of obligation, making it incorrect.",
+        "Confirm Statement 1: Patta was indeed a document issued to the peasant by the state — this is the critical directional distinction in the twin system.",
+        "Confirm Statement 3: The systemic purpose of both instruments was to create a direct, documented state-peasant relationship, reducing middlemen's arbitrary power.",
+        "Since Statements 1 and 3 are correct and Statement 2 is incorrect, the answer is option (c)."
+      ],
+      "upsc_trap_explanation": "The trap exploits confusion about which document flows in which direction. Both Patta and Qabuliyat sound like 'agreements,' and students often misremember which party issues which. Statement 2 deliberately reverses the Qabuliyat's direction — from a peasant-issued document to a state-issued one — which is the single most common error in answers on this topic.",
+      "final_explanation": "Sher Shah Suri's revenue settlement introduced a bilateral documentation system designed to protect peasants and create administrative accountability. The two instruments served distinct directional functions.\n\n• Statement 1 — Correct: The Patta was issued BY the state TO the peasant. It functioned as a title deed, specifying the land holding and the assessed revenue demand, giving the peasant a legal basis to resist arbitrary enhancement.\n• Statement 2 — Incorrect: The Qabuliyat was issued BY the peasant TO the state. It was the cultivator's written undertaking to pay the assessed amount — not a state confirmation. This statement reverses the obligational direction.\n• Statement 3 — Correct: The twin system created a direct contractual relationship between the sovereign and the tiller, structurally reducing the scope for amils (local revenue officials) to over-assess or extort peasants.\n\nValue Addition:\n• Both instruments were adopted and further institutionalized under Akbar's Zabti system by Raja Todar Mal.\n• The Patta-Qabuliyat system is seen as an early articulation of documented peasant rights in medieval India.\n• Abbas Khan Sarwani's Tarikh-i-Sher Shahi is the primary source for these administrative details, though its hagiographic tone requires critical reading."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के प्रशासन के दौरान लागू पट्टा और क़बूलियत प्रणाली के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. पट्टा वह दस्तावेज था जो राज्य द्वारा कृषक को जारी किया जाता था, जिसमें कृषक के किसी विशिष्ट भूखंड पर अधिकारों को स्वीकार किया जाता था और निर्धारित राजस्व की मांग निर्दिष्ट की जाती थी।\n2. क़बूलियत वह घोषणा थी जो राज्य द्वारा कृषक को जारी की जाती थी, जिसमें बसी हुई राजस्व शर्तों की स्वीकृति की पुष्टि की जाती थी।\n3. साथ मिलकर, पट्टा और क़बूलियत प्रणाली का उद्देश्य राज्य और कृषक के बीच प्रत्यक्ष संविदात्मक संबंध बनाना था, जिससे राजस्व अधिकारियों की मध्यस्थ भूमिका कम हो जाती थी।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "पट्टा वह दस्तावेज था जो राज्य द्वारा कृषक को जारी किया जाता था, जिसमें कृषक के किसी विशिष्ट भूखंड पर अधिकारों को स्वीकार किया जाता था और निर्धारित राजस्व की मांग निर्दिष्ट की जाती थी।",
+          "verdict": "सही है",
+          "reason": "पट्टा वास्तव में कृषक को जारी किया जाता था — यह एक शीर्षक पत्र था जो कृषक के भूमि अधिकार और राजस्व दायित्व को कानूनी मान्यता देता था, जिससे मनमानी वसूली से सुरक्षा मिलती थी।"
+        },
+        {
+          "statement": "क़बूलियत वह घोषणा थी जो राज्य द्वारा कृषक को जारी की जाती थी, जिसमें बसी हुई राजस्व शर्तों की स्वीकृति की पुष्टि की जाती थी।",
+          "verdict": "गलत है",
+          "reason": "क़बूलियत कृषक द्वारा राज्य को जारी की जाती थी — यह कृषक का लिखित समझौता था जो राजस्व शर्तों को स्वीकार करता था, न कि राज्य द्वारा जारी की गई पुष्टि। इस कथन में दायित्व की दिशा उलट दी गई है।"
+        },
+        {
+          "statement": "साथ मिलकर, पट्टा और क़बूलियत प्रणाली का उद्देश्य राज्य और कृषक के बीच प्रत्यक्ष संविदात्मक संबंध बनाना था, जिससे राजस्व अधिकारियों की मध्यस्थ भूमिका कम हो जाती थी।",
+          "verdict": "सही है",
+          "reason": "यह जुड़ी हुई प्रणाली का प्रशासनिक महत्व है — दोनों पक्षों पर लिखित दायित्व बनाकर, अमीलों (राजस्व अधिकारियों) द्वारा मनमानी वसूली को संरचनात्मक रूप से सीमित किया गया।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जो तीनों को सही बताता है, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 दोनों सही हैं, और जो छात्र क़बूलियत की दिशा भूल जाते हैं वे तीनों को सही चिह्नित कर देते हैं।",
+      "elimination_logic": [
+        "पहले कथन 2 का मूल्यांकन करें: क़बूलियत कृषक द्वारा राज्य को जारी की जाती थी, न कि राज्य द्वारा कृषक को — कथन 2 दायित्व की दिशा उलटता है, अतः यह गलत है।",
+        "कथन 1 की पुष्टि करें: पट्टा वास्तव में राज्य द्वारा कृषक को जारी किया गया दस्तावेज था — यह जुड़ी हुई प्रणाली में दिशा का महत्वपूर्ण अंतर है।",
+        "कथन 3 की पुष्टि करें: दोनों उपकरणों का प्रणालीगत उद्देश्य राज्य और कृषक के बीच प्रत्यक्ष, लिखित संबंध बनाना था, जिससे मध्यस्थों की मनमानी शक्ति कम हो।",
+        "चूंकि कथन 1 और 3 सही हैं और कथन 2 गलत है, अतः उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "यह जाल इस भ्रम का फायदा उठाता है कि कौन सा दस्तावेज किस दिशा में जाता है। पट्टा और क़बूलियत दोनों 'समझौते' जैसे लगते हैं, और छात्र अक्सर भूल जाते हैं कि कौन सा पक्ष किसे जारी करता है। कथन 2 जानबूझकर क़बूलियत की दिशा उलट देता है — कृषक द्वारा जारी दस्तावेज को राज्य द्वारा जारी बताया गया है — जो इस विषय पर सबसे आम त्रुटि है।",
+      "final_explanation": "शेर शाह सूरी के राजस्व निपटान ने एक द्विपक्षीय दस्तावेजी प्रणाली शुरू की जो कृषकों की सुरक्षा और प्रशासनिक जवाबदेही सुनिश्चित करती थी। दोनों उपकरणों के अलग-अलग दिशा संबंधी कार्य थे।\n\n• कथन 1 — सही: पट्टा राज्य द्वारा कृषक को जारी किया जाता था। यह एक शीर्षक पत्र के रूप में कार्य करता था, जिसमें भूमि अधिकार और निर्धारित राजस्व मांग निर्दिष्ट होती थी, जिससे कृषक को मनमानी वृद्धि से बचाव मिलता था।\n• कथन 2 — गलत: क़बूलियत कृषक द्वारा राज्य को जारी की जाती थी। यह कृषक की लिखित प्रतिबद्धता थी कि वह निर्धारित राशि का भुगतान करेगा — न कि राज्य की कोई पुष्टि। यह कथन दायित्व की दिशा उलट देता है।\n• कथन 3 — सही: यह जुड़ी हुई प्रणाली राज्य और कृषक के बीच प्रत्यक्ष संविदात्मक संबंध बनाती थी, जिससे अमीलों (स्थानीय राजस्व अधिकारी) के द्वारा अधिक मूल्यांकन या वसूली की संभावना कम हो जाती थी।\n\nमूल्यवर्धन:\n• दोनों उपकरणों को अकबर के ज़ब्ती प्रणाली के तहत अपनाया और संस्थागत किया गया।\n• पट्टा-क़बूलियत प्रणाली मध्यकालीन भारत में दस्तावेजीकृत कृषक अधिकारों की प्रारंभिक अभिव्यक्ति मानी जाती है।\n• अब्बास खान सरवानी की 'तारीख-ए-शेरशाही' इन प्रशासनिक विवरणों का प्रमुख स्रोत है, हालांकि इसकी प्रशंसात्मक शैली के कारण सावधानीपूर्वक अध्ययन आवश्यक है।"
+    }
+  },
+  {
+    "uuid": "2bf15b45-f5e8-473a-ba75-69a8b0b47ce4",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Provincial Administration and the Iqta/Sarkar System",
+        "Pargana Administration: The Five Officials"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Sarkar-level dual officials: roles and functions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the administrative hierarchy established by Sher Shah Suri:\n\n1. The Shiqdar-i-Shiqdaran at the Sarkar level was primarily responsible for revenue assessment and settlement, while the Munsif-i-Munsifan handled military and executive functions.\n2. Sher Shah Suri completely eliminated zamindars from the revenue collection chain, replacing them uniformly with salaried imperial officials at all levels.\n3. The Pargana was the basic administrative unit under Sher Shah's system, subdivided further into individual villages.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 2 only\n(c) 3 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Shiqdar-i-Shiqdaran at the Sarkar level was primarily responsible for revenue assessment and settlement, while the Munsif-i-Munsifan handled military and executive functions.",
+          "verdict": "Incorrect",
+          "reason": "The roles are reversed: Shiqdar-i-Shiqdaran managed military and executive functions (law and order), while Munsif-i-Munsifan handled revenue assessment and judicial matters."
+        },
+        {
+          "statement": "Sher Shah Suri completely eliminated zamindars from the revenue collection chain, replacing them uniformly with salaried imperial officials at all levels.",
+          "verdict": "Incorrect",
+          "reason": "Sher Shah sought to bypass zamindars and create direct state-peasant relationships, but he did not uniformly eliminate zamindars everywhere — the claim of complete elimination and uniform replacement is an over-extension of what was a policy tendency, not a total structural replacement."
+        },
+        {
+          "statement": "The Pargana was the basic administrative unit under Sher Shah's system, subdivided further into individual villages.",
+          "verdict": "Correct",
+          "reason": "The Pargana was indeed the foundational administrative unit — the empire was divided into Sarkars, which were further subdivided into Parganas, with individual villages at the base."
+        }
+      ],
+      "strong_distractor": "c — Option (c) suggesting only Statement 3 is incorrect is a strong distractor because Statement 3 is actually the only correct statement; students who partially know the hierarchy may treat the Pargana description as oversimplified and mark it incorrect.",
+      "elimination_logic": [
+        "Evaluate Statement 1: Shiqdar-i-Shiqdaran handled military/executive duties and Munsif-i-Munsifan handled revenue/judicial functions — the statement reverses these, making it incorrect (i.e., NOT correct).",
+        "Evaluate Statement 2: Sher Shah reduced zamindar intermediation but did not completely eliminate them everywhere — the absolute claim makes this statement incorrect.",
+        "Evaluate Statement 3: The Pargana as the basic unit subdivided into villages is accurate — Statement 3 is correct and therefore NOT an answer to 'which is NOT correct'.",
+        "Both Statements 1 and 2 are NOT correct — the answer is option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 1 exploits the most common error in Sher Shah's administration — swapping the functions of the two senior Sarkar-level officials. The Shiqdar sounds like a revenue word (shiqdari land), but at the Sarkar level, the Shiqdar-i-Shiqdaran was an executive/military officer. Reversing their roles is a near-universal trap in this topic.",
+      "final_explanation": "Sher Shah divided his empire into Sarkars (districts), each under two senior officials with distinct responsibilities — a deliberate separation of military-executive and revenue-judicial functions.\n\n• Statement 1 — NOT Correct: The Shiqdar-i-Shiqdaran was the military and executive head at the Sarkar level; the Munsif-i-Munsifan handled revenue assessment and judicial functions. The statement reverses their roles.\n• Statement 2 — NOT Correct: Sher Shah's policy moved toward direct state-peasant relations and reduced zamindar intermediation, but complete and uniform elimination of zamindars across all levels did not occur — the 'completely' and 'uniformly at all levels' make this an overstatement.\n• Statement 3 — Correct: The administrative hierarchy ran: Empire → Sarkar → Pargana → Village. The Pargana was the operational base unit where most revenue, judicial, and policing functions were implemented.\n\nValue Addition:\n• Each Pargana had five key officials: Shiqdar, Amin, Fotadar, and two Karkuns (bilingual record-keepers).\n• Sher Shah's Sarkar system was a forerunner of the Mughal Subah (province) system.\n• The deliberate functional separation between executive and revenue officials was an anti-corruption design to prevent any single official from monopolizing power."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी द्वारा स्थापित प्रशासनिक पदानुक्रम के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. सरकार स्तर पर शिकदार-ए-शिकदारान मुख्य रूप से राजस्व आकलन और निपटान के लिए जिम्मेदार था, जबकि मुनसिफ-ए-मुनसिफान सैन्य और कार्यकारी कार्य संभालता था।\n2. शेर शाह सूरी ने राजस्व संग्रहण श्रृंखला से ज़मींदारों को पूरी तरह समाप्त कर दिया, और सभी स्तरों पर उन्हें वेतनभोगी शाही अधिकारियों से समान रूप से प्रतिस्थापित किया।\n3. परगना शेर शाह की प्रणाली के तहत मूल प्रशासनिक इकाई था, जो आगे व्यक्तिगत गांवों में विभाजित था।\n\nउपरोक्त में से कौन-से कथन सही नहीं हैं?\n\n(a) केवल 1\n(b) केवल 1 और 2\n(c) केवल 3\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The Shiqdar-i-Shiqdaran at the Sarkar level was primarily responsible for revenue assessment and settlement, while the Munsif-i-Munsifan handled military and executive functions.",
+          "verdict": "गलत",
+          "reason": "भूमिकाएँ उलट हैं: शिकदार-ए-शिकदारान सैन्य और कार्यकारी कार्य (कानून और व्यवस्था) संभालता था, जबकि मुनसिफ-ए-मुनसिफान राजस्व आकलन और न्यायिक मामलों को देखता था।"
+        },
+        {
+          "statement": "Sher Shah Suri completely eliminated zamindars from the revenue collection chain, replacing them uniformly with salaried imperial officials at all levels.",
+          "verdict": "गलत",
+          "reason": "शेर शाह ने ज़मींदारों को बायपास कर सीधे राज्य-किसान संबंध बनाने का प्रयास किया, लेकिन उन्होंने हर जगह ज़मींदारों को पूरी तरह समाप्त नहीं किया — पूर्ण उन्मूलन और समान प्रतिस्थापन का दावा नीति प्रवृत्ति का अतिशयोक्ति है, न कि पूर्ण संरचनात्मक प्रतिस्थापन।"
+        },
+        {
+          "statement": "The Pargana was the basic administrative unit under Sher Shah's system, subdivided further into individual villages.",
+          "verdict": "सही",
+          "reason": "परगना वास्तव में मौलिक प्रशासनिक इकाई था — साम्राज्य को सरकारों में विभाजित किया गया था, जो आगे परगनों में और फिर व्यक्तिगत गांवों में विभाजित थे।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) जो केवल कथन 3 को गलत बताता है, एक मजबूत भ्रम है क्योंकि कथन 3 वास्तव में एकमात्र सही कथन है; जो छात्र पदानुक्रम को आंशिक रूप से जानते हैं वे परगना विवरण को अतिसरलीकृत समझकर इसे गलत चिह्नित कर सकते हैं।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: शिकदार-ए-शिकदारान सैन्य/कार्यकारी कर्तव्यों को संभालता था और मुनसिफ-ए-मुनसिफान राजस्व/न्यायिक कार्य करता था — कथन में ये उलट दिए गए हैं, अतः यह गलत (सही नहीं) है।",
+        "कथन 2 का मूल्यांकन करें: शेर शाह ने ज़मींदारों के मध्यस्थता को कम किया लेकिन उन्हें पूरी तरह समाप्त नहीं किया — पूर्णता का दावा इस कथन को गलत बनाता है।",
+        "कथन 3 का मूल्यांकन करें: परगना को मौलिक इकाई के रूप में गांवों में विभाजित होना सही है — कथन 3 सही है और इसलिए 'सही नहीं है' के प्रश्न का उत्तर नहीं हो सकता।",
+        "कथन 1 और 2 दोनों सही नहीं हैं — उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 शेर शाह के प्रशासन में सबसे आम त्रुटि का उपयोग करता है — दो वरिष्ठ सरकार-स्तरीय अधिकारियों के कार्यों को उलट देना। शिकदार शब्द राजस्व से संबंधित लगता है (शिकदारी भूमि), लेकिन सरकार स्तर पर शिकदार-ए-शिकदारान एक कार्यकारी/सैन्य अधिकारी था। उनकी भूमिकाओं को उलटना इस विषय में लगभग सार्वभौमिक जाल है।",
+      "final_explanation": "शेर शाह ने अपने साम्राज्य को सरकारों (जिलों) में विभाजित किया, प्रत्येक के अधीन दो वरिष्ठ अधिकारी थे जिनकी जिम्मेदारियाँ भिन्न थीं — सैन्य-कार्यकारी और राजस्व-न्यायिक कार्यों का स्पष्ट पृथक्करण।\n\n• कथन 1 — सही नहीं: शिकदार-ए-शिकदारान सरकार स्तर पर सैन्य और कार्यकारी प्रमुख था; मुनसिफ-ए-मुनसिफान राजस्व आकलन और न्यायिक कार्य करता था। कथन में भूमिकाएँ उलटी दी गई हैं।\n• कथन 2 — सही नहीं: शेर शाह की नीति सीधे राज्य-किसान संबंधों की ओर थी और ज़मींदारों की मध्यस्थता कम की, लेकिन सभी स्तरों पर ज़मींदारों का पूर्ण और समान उन्मूलन नहीं हुआ — 'पूरी तरह' और 'समान रूप से सभी स्तरों पर' यह अतिशयोक्ति है।\n• कथन 3 — सही: प्रशासनिक पदानुक्रम था: साम्राज्य → सरकार → परगना → गांव। परगना वह परिचालनात्मक आधार इकाई थी जहाँ अधिकांश राजस्व, न्यायिक और पुलिसिंग कार्य लागू होते थे।\n\nमूल्य संवर्धन:\n• प्रत्येक परगना में पांच प्रमुख अधिकारी होते थे: शिकदार, अमीन, फोटादार, और दो कारकुन (द्विभाषी अभिलेख-रखने वाले)।\n• शेर शाह की सरकार प्रणाली मुगल सूबा (प्रांत) प्रणाली की पूर्ववर्ती थी।\n• कार्यकारी और राजस्व अधिकारियों के बीच जानबूझकर कार्यात्मक पृथक्करण भ्रष्टाचार-रोधी डिजाइन था ताकि कोई एक अधिकारी सत्ता का एकाधिकार न कर सके।"
+    }
+  },
+  {
+    "uuid": "8f5b3106-2365-4fd7-af7e-56dd64beaf76",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Road Network and the Grand Trunk Road",
+        "Sarai System: Administrative and Commercial Functions",
+        "Pargana Administration: The Five Officials"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "match-the-column",
+      "trap_type": "conflation",
+      "concept_anchor": "Administrative officials and infrastructure functions under Sher Shah",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match List I (Administrative element) with List II (Primary function) as they existed under Sher Shah Suri's administration:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Shiqdar (at Pargana level)",
+            "1. Field-level land measurement and revenue assessment"
+          ],
+          [
+            "B. Amin",
+            "2. Intelligence gathering and postal relay node"
+          ],
+          [
+            "C. Sarai",
+            "3. Maintenance of law and order"
+          ],
+          [
+            "D. Karkun",
+            "4. Bilingual record-keeping in Persian and Hindi"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-3, B-3, C-2, D-1\n(c) A-1, B-3, C-4, D-2\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because it correctly matches the Sarai with intelligence functions but incorrectly pairs the Amin with law-and-order duties, a swap that tempts students who confuse Amin with Shiqdar.",
+      "elimination_logic": [
+        "Identify the most certain match first: Shiqdar at Pargana level is unambiguously responsible for law and order — confirm A-3.",
+        "Identify Karkun's function: bilingual record-keeping in Persian and Hindi is a distinctive and well-known feature — confirm D-4.",
+        "Evaluate Amin: revenue assessment at field level is the Amin's primary function — confirm B-1.",
+        "By elimination, Sarai must match intelligence/postal relay — confirm C-2, giving A-3, B-1, C-2, D-4 = option (a)."
+      ],
+      "upsc_trap_explanation": "The trap conflates the Amin and Shiqdar by associating 'Amin' with 'maintenance of peace' (a word association through 'Amin' = trustworthy in Arabic) and the Shiqdar with revenue (because 'shiqdari' land is a known term). Careful students recall that Shiqdar = executive/police, Amin = revenue assessment. The Sarai-intelligence link is the second trap, as students may limit Sarais to hospitality functions.",
+      "final_explanation": "Sher Shah's administrative architecture assigned carefully separated functions to each official and each infrastructure element — a deliberate design to prevent any single authority from monopolizing power.\n\nCorrect Matches: A-3, B-1, C-2, D-4\n\n• A (Shiqdar at Pargana) — 3 (Maintenance of law and order): The Shiqdar was the executive and police official at the Pargana level, distinct from revenue functions.\n• B (Amin) — 1 (Field-level land measurement and revenue assessment): The Amin personally measured lands and assessed crops — the technical revenue officer.\n• C (Sarai) — 2 (Intelligence gathering and postal relay node): Sarais doubled as intelligence posts with Muqaddams and Chaukidars, and horses stationed there enabled the Dak Chowki postal system.\n• D (Karkun) — 4 (Bilingual record-keeping in Persian and Hindi): Two Karkuns at each Pargana maintained records in both scripts — a structural anti-corruption and administrative reach measure.\n\nTrap pairing: B-3 (Amin with law and order) is the conceptually adjacent wrong match designed to catch students who confuse Amin and Shiqdar.\n\nValue Addition:\n• Approximately 1,700 Sarais were built along roads — each separated by roughly 2 kos.\n• The Karkun's bilingual records made falsification harder since two independent officials using different scripts cross-checked each other.\n• Sher Shah's Sarai system is considered a forerunner of the British dak bungalow network."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "शेर शाह सूरी के प्रशासन के तहत अस्तित्व में रहे सूची I (प्रशासनिक तत्व) को सूची II (प्राथमिक कार्य) से मिलाइए:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. शिकदार (परगना स्तर पर)",
+            "1. क्षेत्र स्तर पर भूमि मापन और राजस्व आकलन"
+          ],
+          [
+            "B. अमीन",
+            "2. खुफिया संग्रह और डाक संचार केंद्र"
+          ],
+          [
+            "C. सराय",
+            "3. कानून और व्यवस्था का रखरखाव"
+          ],
+          [
+            "D. कारकुन",
+            "4. फारसी और हिंदी में द्विभाषी अभिलेख-रखना"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा मिलान सही है?\n\n(a) A-3, B-1, C-2, D-4\n(b) A-3, B-3, C-2, D-1\n(c) A-1, B-3, C-4, D-2\n(d) A-2, B-1, C-3, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि यह सही ढंग से सराय को खुफिया कार्यों से जोड़ता है लेकिन अमीन को कानून-व्यवस्था के कर्तव्यों के साथ गलत तरीके से जोड़ता है, जो उन छात्रों को भ्रमित करता है जो अमीन को शिकदार से भ्रमित करते हैं।",
+      "elimination_logic": [
+        "सबसे निश्चित मिलान पहले पहचानें: परगना स्तर पर शिकदार स्पष्ट रूप से कानून और व्यवस्था के लिए जिम्मेदार है — A-3 की पुष्टि करें।",
+        "कारकुन के कार्य की पहचान करें: फारसी और हिंदी में द्विभाषी अभिलेख-रखना एक विशिष्ट और प्रसिद्ध विशेषता है — D-4 की पुष्टि करें।",
+        "अमीन का मूल्यांकन करें: क्षेत्र स्तर पर राजस्व आकलन अमीन का मुख्य कार्य है — B-1 की पुष्टि करें।",
+        "निकास द्वारा, सराय को खुफिया/डाक संचार से मेल खाना चाहिए — C-2 की पुष्टि करें, जिससे A-3, B-1, C-2, D-4 = विकल्प (a) बनता है।"
+      ],
+      "upsc_trap_explanation": "यह भ्रम अमीन और शिकदार को जोड़ता है क्योंकि 'अमीन' को 'शांति बनाए रखने' से जोड़ा जाता है (अरबी में 'अमीन' का अर्थ विश्वसनीय होता है) और शिकदार को राजस्व से (क्योंकि 'शिकदारी' भूमि एक ज्ञात शब्द है)। सावधान छात्र याद रखते हैं कि शिकदार = कार्यकारी/पुलिस, अमीन = राजस्व आकलन। सराय-खुफिया संबंध दूसरा भ्रम है, क्योंकि छात्र सराय को केवल आतिथ्य कार्यों तक सीमित कर सकते हैं।",
+      "final_explanation": "शेर शाह की प्रशासनिक संरचना ने प्रत्येक अधिकारी और प्रत्येक अवसंरचना तत्व को सावधानीपूर्वक अलग-अलग कार्य सौंपे — यह एक जानबूझकर डिज़ाइन था ताकि कोई एकल प्राधिकारी सत्ता का एकाधिकार न कर सके।\n\nसही मिलान: A-3, B-1, C-2, D-4\n\n• A (परगना स्तर पर शिकदार) — 3 (कानून और व्यवस्था का रखरखाव): शिकदार परगना स्तर पर कार्यकारी और पुलिस अधिकारी था, जो राजस्व कार्यों से अलग था।\n• B (अमीन) — 1 (क्षेत्र स्तर पर भूमि मापन और राजस्व आकलन): अमीन स्वयं भूमि मापता और फसल का आकलन करता था — तकनीकी राजस्व अधिकारी।\n• C (सराय) — 2 (खुफिया संग्रह और डाक संचार केंद्र): सराय खुफिया पोस्ट के रूप में भी कार्य करते थे, जहाँ मुकद्दम और चौकीदार होते थे, और वहाँ घोड़े डाक चौकी प्रणाली के लिए तैनात थे।\n• D (कारकुन) — 4 (फारसी और हिंदी में द्विभाषी अभिलेख-रखना): प्रत्येक परगना में दो कारकुन दोनों लिपियों में अभिलेख रखते थे — भ्रष्टाचार विरोधी और प्रशासनिक पहुंच के लिए एक संरचनात्मक उपाय।\n\nभ्रम जोड़ी: B-3 (अमीन के साथ कानून और व्यवस्था) वह गलत मिलान है जो अमीन और शिकदार को भ्रमित करने वाले छात्रों को पकड़ने के लिए डिज़ाइन किया गया है।\n\nमूल्य संवर्धन:\n• लगभग 1,700 सराय सड़कों के किनारे बनाए गए थे — प्रत्येक लगभग 2 कोस की दूरी पर।\n• कारकुन के द्विभाषी अभिलेखों ने फर्जीवाड़ा करना कठिन बना दिया क्योंकि दो स्वतंत्र अधिकारी विभिन्न लिपियों का उपयोग करके एक-दूसरे की जांच करते थे।\n• शेर शाह की सराय प्रणाली को ब्रिटिश डाक बंगला नेटवर्क का पूर्ववर्ती माना जाता है।"
+    }
+  },
+  {
+    "uuid": "fbf2b126-da85-4218-9525-d0b3c046d030",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Revenue System: Zabt (Measurement-based Assessment)",
+        "Land Revenue Rate and the 'One-Third' Principle"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "assertion-reason",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Zabt system — Sher Shah as Akbar's precursor",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Sher Shah Suri's Zabt revenue system relied on the direct measurement of cultivated land using standardized units such as the Sikandari Gaz and the Bigha, making it a precursor to Akbar's Zabti system.\n\nReason (R): Akbar's Zabti system used an entirely different unit of measurement, deliberately rejecting the standards established under Sher Shah in favour of a new imperial framework.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because both A and R are factually correct, and students who do not carefully evaluate the causal link will assume that Sher Shah's use of the Sikandari Gaz directly explains why Akbar adopted the Zabti system — but the Reason given is factually incorrect.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? Sher Shah's Zabt system used measurement-based assessment with standardized units including the Sikandari Gaz and Bigha — A is correct.",
+        "Step 2 — Is Reason (R) correct? R claims Akbar's Zabti system used an entirely different unit of measurement rejecting Sher Shah's standards — this is incorrect; Akbar's system retained the Ilahi Gaz but built upon the measurement-based approach Sher Shah pioneered.",
+        "Step 3 — Since A is correct but R is factually incorrect, the answer maps to option (c).",
+        "Confirm: option (c) states 'A is correct but R is incorrect' — this matches the analysis."
+      ],
+      "upsc_trap_explanation": "The trap is in the Reason, which sounds authoritative but is factually wrong. Students who know A is true and are uncertain about R's specific claim may default to option (a) or (b). The claim that Akbar used 'an entirely different unit rejecting Sher Shah's standards' is the fabricated element — in reality, Akbar's Zabti system was a development of Sher Shah's approach, not a rejection of it.",
+      "final_explanation": "Sher Shah's revenue system is the most direct institutional predecessor of Akbar's Zabti system — understanding the continuity and the specific tools used is essential.\n\nAssertion (A): Sher Shah's Zabt system was based on direct measurement of cultivated land using standardized units — the Sikandari Gaz (a yard of measurement) and the Bigha as the area unit. This is factually correct. The system aimed at equitable assessment by measuring actual cultivation rather than relying on crop-sharing estimates.\n\nReason (R): The claim that Akbar's Zabti system used entirely different measurement units rejecting Sher Shah's standards is factually incorrect. Akbar's system, developed under Todar Mal's supervision, retained the measurement-based approach and built upon it — the Ilahi Gaz replaced the Sikandari Gaz, but the conceptual framework of land measurement as the basis of assessment was directly inherited from Sher Shah.\n\nSince A is correct and R is incorrect, option (c) applies.\n\nValue Addition:\n• Sher Shah used three revenue methods simultaneously: Zabt (measurement), Batai (crop-sharing), and Nasaq (estimate-based) — Zabt was the most systematic.\n• The Sikandari Gaz was named after Sikandar Lodi, who had used it earlier — Sher Shah standardized its application.\n• Todar Mal's Bandobast (settlement) under Akbar is the mature successor to Sher Shah's Zabt."
+    },
+    "hi": {
+      "display_text": "कथन (A): शेर शाह सूरी की ज़ब्त राजस्व प्रणाली मानकीकृत इकाइयों जैसे सिकंदरी गज और बीघा का उपयोग करके सीधे खेती की गई भूमि के मापन पर आधारित थी, जो अकबर की ज़ब्ती प्रणाली का पूर्ववर्ती थी।\n\nकारण (R): अकबर की ज़ब्ती प्रणाली ने पूरी तरह अलग मापन इकाई का उपयोग किया, जानबूझकर शेर शाह के तहत स्थापित मानकों को अस्वीकार करते हुए एक नए शाही ढांचे के पक्ष में।\n\n(a) A और R दोनों सही हैं, और R, A का सही स्पष्टीकरण है\n(b) A और R दोनों सही हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि दोनों A और R तथ्यात्मक रूप से सही हैं, और जो छात्र कारणात्मक संबंध को सावधानीपूर्वक मूल्यांकन नहीं करते वे मान लेंगे कि शेर शाह का सिकंदरी गज का उपयोग सीधे यह समझाता है कि अकबर ने ज़ब्ती प्रणाली क्यों अपनाई — लेकिन दिया गया कारण तथ्यात्मक रूप से गलत है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? शेर शाह की ज़ब्त प्रणाली मापन-आधारित आकलन का उपयोग करती थी जिसमें मानकीकृत इकाइयाँ जैसे सिकंदरी गज और बीघा शामिल थे — A सही है।",
+        "चरण 2 — क्या कारण (R) सही है? R का दावा है कि अकबर की ज़ब्ती प्रणाली ने शेर शाह के मानकों को अस्वीकार करते हुए पूरी तरह अलग मापन इकाई का उपयोग किया — यह गलत है; अकबर की प्रणाली ने इलाही गज को रखा लेकिन शेर शाह द्वारा शुरू किए गए मापन-आधारित दृष्टिकोण पर आधारित थी।",
+        "चरण 3 — चूंकि A सही है लेकिन R तथ्यात्मक रूप से गलत है, उत्तर विकल्प (c) से मेल खाता है।",
+        "पुष्टि करें: विकल्प (c) कहता है 'A सही है लेकिन R गलत है' — यह विश्लेषण से मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "फंदा कारण में है, जो अधिकारपूर्ण लगता है लेकिन तथ्यात्मक रूप से गलत है। जो छात्र जानते हैं कि A सही है और R के विशिष्ट दावे के बारे में अनिश्चित हैं, वे विकल्प (a) या (b) चुन सकते हैं। यह दावा कि अकबर ने 'शेर शाह के मानकों को अस्वीकार करते हुए पूरी तरह अलग इकाई का उपयोग किया' एक निर्मित तत्व है — वास्तव में, अकबर की ज़ब्ती प्रणाली शेर शाह के दृष्टिकोण का विकास थी, उसका अस्वीकार नहीं।",
+      "final_explanation": "शेर शाह की राजस्व प्रणाली अकबर की ज़ब्ती प्रणाली की सबसे प्रत्यक्ष संस्थागत पूर्ववर्ती है — निरंतरता और उपयोग किए गए विशिष्ट उपकरणों को समझना आवश्यक है।\n\nकथन (A): शेर शाह की ज़ब्त प्रणाली मानकीकृत इकाइयों जैसे सिकंदरी गज (मापन की एक गज) और बीघा (क्षेत्र इकाई) का उपयोग करके सीधे खेती की गई भूमि के मापन पर आधारित थी। यह तथ्यात्मक रूप से सही है। यह प्रणाली वास्तविक खेती को मापकर न्यायसंगत आकलन का लक्ष्य रखती थी, न कि फसल-साझा अनुमान पर निर्भर।\n\nकारण (R): यह दावा कि अकबर की ज़ब्ती प्रणाली ने शेर शाह के मानकों को अस्वीकार करते हुए पूरी तरह अलग मापन इकाइयों का उपयोग किया, तथ्यात्मक रूप से गलत है। अकबर की प्रणाली, जो टोडरमल के पर्यवेक्षण में विकसित हुई, ने मापन-आधारित दृष्टिकोण को रखा और उस पर निर्माण किया — सिकंदरी गज की जगह इलाही गज आया, लेकिन भूमि मापन के आधार के रूप में अवधारणा सीधे शेर शाह से विरासत में मिली।\n\nचूंकि A सही है और R गलत है, विकल्प (c) लागू होता है।\n\nमूल्य संवर्धन:\n• शेर शाह ने तीन राजस्व विधियाँ एक साथ उपयोग कीं: ज़ब्त (मापन), बताई (फसल-साझा), और नासक (अनुमान आधारित) — ज़ब्त सबसे व्यवस्थित थी।\n• सिकंदरी गज का नाम सिकंदर लोदी के नाम पर था, जिन्होंने इसे पहले उपयोग किया था — शेर शाह ने इसके उपयोग को मानकीकृत किया।\n• अकबर के तहत टोडरमल का बंदोबस्त शेर शाह की ज़ब्त का परिपक्व उत्तराधिकारी है।"
+    }
+  },
+  {
+    "uuid": "23b5896a-9956-4c79-a9bd-463719c6b6c2",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Road Network and the Grand Trunk Road",
+        "Sarai System: Administrative and Commercial Functions"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Sarai as multipurpose administrative-commercial infrastructure",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "A medieval administrative document describes a structure built at regular intervals along an imperial highway. Each such structure houses a resident official who maintains records of travellers passing through, stables horses available for government messengers to change mounts, and enforces verified weights and measures for merchants. Separate accommodation exists for travellers of different communities. The document dates to the early sixteenth century CE.\n\nThe administrative institution being described most closely corresponds to which of the following?\n\n(a) A charitable rest house established primarily to provide free shelter to pilgrims, merchants, and state officials along major trade routes\n(b) An integrated administrative node combining postal relay, intelligence gathering, police outpost, and market regulation functions alongside traveller accommodation\n(c) A commercial caravanserai established under Mughal imperial policy to facilitate long-distance trade and collect transit duties\n(d) A military cantonment positioned at road junctions to provide logistical support for troop movements",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because students may focus on the travellers' rest-house function of Sarais — the most commonly cited feature — and miss the administrative, intelligence, and postal dimensions that make option (b) the comprehensive and correct description.",
+      "elimination_logic": [
+        "The scenario describes a Sarai that serves travellers but also houses horses for message relay, has resident officials maintaining records of travellers, and enforces standardized weights — this is clearly more than a rest house.",
+        "Eliminate option (a): describing the Sarai as 'primarily a charitable institution for travellers' reduces it to a single welfare function and ignores its systemic administrative roles.",
+        "Eliminate option (c): attributing the Sarai network to the Mughal period is temporally incorrect — Sher Shah built approximately 1,700 Sarais before the Mughal consolidation.",
+        "Eliminate option (d): the scenario explicitly describes police and postal functions, ruling out a purely commercial trading post.",
+        "Confirm option (b): the Sarai functioned as an integrated node combining rest, postal relay, intelligence gathering, police outpost, and market regulation — the scenario maps precisely to this."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Sher Shah Suri's Sarai network was one of the most sophisticated administrative innovations of medieval India — a multipurpose infrastructure that combined hospitality, security, communication, and market regulation.\n\nThe scenario describes a structure built at regular intervals along a major imperial road, staffed by officials who record travellers' details, housing horses for relay services, and enforcing standardized measures for merchants. This profile fits the Sarai system precisely.\n\n• Option (a) — Incorrect: Describing Sarais as primarily charitable institutions undersells their systemic administrative role — they were as much intelligence and postal nodes as rest houses.\n• Option (b) — Correct: Sarais served simultaneously as rest houses, Dak Chowki (postal relay) stations, intelligence gathering points under Muqaddams and Chaukidars, and enforcement points for standardized weights and measures.\n• Option (c) — Incorrect: The Sarai network of approximately 1,700 structures was built under Sher Shah Suri (1540–1545), predating Mughal consolidation.\n• Option (d) — Incorrect: Purely commercial trading posts would not have horses for relay or officials recording traveller movements.\n\nValue Addition:\n• Each Sarai had separate accommodation for Hindu and Muslim travellers within the same complex.\n• Sarais were positioned approximately every 2 kos along the Sadak-i-Azam (Grand Trunk Road).\n• The dual function of rest house and intelligence post is what made the Sarai system administratively transformative — it extended the state's eyes and ears to the road network."
+    },
+    "hi": {
+      "display_text": "मध्यकालीन एक प्रशासनिक दस्तावेज़ एक ऐसी संरचना का वर्णन करता है जो एक साम्राज्यवादी राजमार्ग के साथ नियमित अंतराल पर निर्मित है। प्रत्येक ऐसी संरचना में एक निवासी अधिकारी होता है जो गुजरने वाले यात्रियों के रिकॉर्ड रखता है, सरकारी संदेशवाहकों के लिए घोड़ों को स्थिर करता है ताकि वे सवारियाँ बदल सकें, और व्यापारियों के लिए प्रमाणित वजन और माप लागू करता है। विभिन्न समुदायों के यात्रियों के लिए अलग-अलग आवास उपलब्ध हैं। यह दस्तावेज़ सोलहवीं शताब्दी के प्रारंभ का है।\n\nवर्णित प्रशासनिक संस्था सबसे अधिक निकटता से निम्नलिखित में से किसके अनुरूप है?\n\n(a) एक धर्मार्थ विश्राम गृह जो मुख्य व्यापार मार्गों पर तीर्थयात्रियों, व्यापारियों, और राज्य अधिकारियों को मुफ्त आश्रय प्रदान करने के लिए स्थापित किया गया हो\n(b) एक एकीकृत प्रशासनिक केंद्र जो डाक चौकी, खुफिया संग्रह, पुलिस चौकी, और बाजार नियमन के कार्यों को यात्रियों के आवास के साथ संयोजित करता हो\n(c) एक वाणिज्यिक कारवांसराय जो मुगल साम्राज्य की नीति के तहत लंबी दूरी के व्यापार को सुविधाजनक बनाने और पारगमन शुल्क वसूलने के लिए स्थापित किया गया हो\n(d) एक सैन्य छावनी जो सड़क जंक्शनों पर सैनिकों की आवाजाही के लिए लॉजिस्टिक समर्थन प्रदान करती हो",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि छात्र सराय के यात्रियों के विश्राम स्थल के रूप पर ध्यान केंद्रित कर सकते हैं — जो सबसे सामान्य रूप से उद्धृत विशेषता है — और प्रशासनिक, खुफिया, तथा डाकीय आयामों को नजरअंदाज कर देते हैं जो विकल्प (b) को व्यापक और सही विवरण बनाते हैं।",
+      "elimination_logic": [
+        "परिदृश्य एक ऐसे सराय का वर्णन करता है जो यात्रियों की सेवा करता है परन्तु साथ ही संदेशवाहकों के लिए घोड़ों को रखता है, निवासी अधिकारी यात्रियों के रिकॉर्ड बनाए रखते हैं, और व्यापारियों के लिए मानकीकृत वजन लागू करता है — यह स्पष्ट रूप से केवल एक विश्राम गृह से अधिक है।",
+        "विकल्प (a) को हटाएं: सराय को 'प्राथमिक रूप से यात्रियों के लिए एक धर्मार्थ संस्था' बताना इसे केवल एक कल्याणकारी कार्य तक सीमित कर देता है और इसके प्रणालीगत प्रशासनिक भूमिकाओं को नजरअंदाज करता है।",
+        "विकल्प (c) को हटाएं: सराय नेटवर्क को मुगल काल से जोड़ना कालानुक्रमिक रूप से गलत है — शेर शाह ने मुगल एकीकरण से पहले लगभग 1,700 सराय बनाए थे।",
+        "विकल्प (d) को हटाएं: परिदृश्य स्पष्ट रूप से पुलिस और डाकीय कार्यों का वर्णन करता है, जो केवल वाणिज्यिक व्यापारिक पोस्ट को अस्वीकार करता है।",
+        "विकल्प (b) की पुष्टि करें: सराय ने विश्राम, डाक चौकी, खुफिया संग्रह, पुलिस चौकी, और बाजार नियमन को एकीकृत नोड के रूप में कार्य किया — परिदृश्य पूरी तरह से इसके अनुरूप है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "शेर शाह सूरी का सराय नेटवर्क मध्यकालीन भारत के सबसे परिष्कृत प्रशासनिक नवाचारों में से एक था — एक बहुउद्देश्यीय अवसंरचना जो आतिथ्य, सुरक्षा, संचार, और बाजार नियमन को संयोजित करती थी।\n\nपरिदृश्य एक ऐसी संरचना का वर्णन करता है जो एक प्रमुख साम्राज्यवादी मार्ग के साथ नियमित अंतराल पर निर्मित थी, जिसमें अधिकारी नियुक्त थे जो यात्रियों का विवरण रिकॉर्ड करते थे, संदेशवाहकों के लिए घोड़े रखे जाते थे, और व्यापारियों के लिए मानकीकृत माप लागू किए जाते थे। यह प्रोफ़ाइल सराय प्रणाली के अनुरूप है।\n\n• विकल्प (a) — गलत: सराय को प्राथमिक रूप से धर्मार्थ संस्थान बताना उनकी प्रणालीगत प्रशासनिक भूमिका को कम आंकता है — वे विश्राम गृह के साथ-साथ खुफिया और डाकीय केंद्र भी थे।\n• विकल्प (b) — सही: सराय एक साथ विश्राम गृह, डाक चौकी, मुक़द्दमों और चौकीदारों के अधीन खुफिया केंद्र, और मानकीकृत वजन-तौल के प्रवर्तन केंद्र के रूप में कार्य करते थे।\n• विकल्प (c) — गलत: लगभग 1,700 सराय शेर शाह सूरी (1540–1545) के अधीन बनाए गए थे, जो मुगल एकीकरण से पहले थे।\n• विकल्प (d) — गलत: केवल वाणिज्यिक व्यापारिक पोस्ट में संदेशवाहकों के लिए घोड़े या यात्रियों के रिकॉर्ड रखने वाले अधिकारी नहीं होते।\n\nमूल्य संवर्धन:\n• प्रत्येक सराय में हिंदू और मुस्लिम यात्रियों के लिए अलग-अलग आवास होते थे।\n• सराय लगभग हर 2 कोस पर सदाक-ए-आज़म (ग्रैंड ट्रंक रोड) के साथ स्थित थे।\n• विश्राम गृह और खुफिया पोस्ट की द्वैध भूमिका ने सराय प्रणाली को प्रशासनिक रूप से परिवर्तनकारी बनाया — यह राज्य की आंखें और कान सड़क नेटवर्क तक विस्तारित करता था।"
+    }
+  },
+  {
+    "uuid": "297515ac-f85d-46f7-9d16-0bedc47b577d",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Trade and Customs Reforms: Abolition of Internal Tolls",
+        "Currency Reforms and the Silver Rupya"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "odd-one-out",
+      "trap_type": "conflation",
+      "concept_anchor": "Sher Shah's commercial and trade reforms",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Three of the following four measures are directly related to Sher Shah Suri's commercial and trade reform agenda. Which one does NOT belong to the same category as the others?\n\n(a) Standardization of weights and measures across the empire with enforcement at Sarais\n(b) Using Sarais as nodes for verifying measures used in merchant transactions\n(c) Abolition of multiple internal transit duties, levying taxes only at the point of origin and point of sale\n(d) Maintenance of descriptive rolls (Chehra) for each soldier enrolled in the imperial army",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because the Dak Chowki system involves horses and relay stations which could superficially be associated with trade facilitation, leading students to confuse postal relay with commercial infrastructure.",
+      "elimination_logic": [
+        "Identify the category: the question tests which item belongs to Sher Shah's commercial/trade reform cluster.",
+        "Options (a), (b), (c) — standardization of weights, Sarai-enforced measures, and abolition of internal transit duties — are all directly part of Sher Shah's unified commercial reform agenda.",
+        "Option (d) — introduction of descriptive rolls (Chehra) for soldiers — is a military administration reform, not a commercial reform.",
+        "The odd one out is option (d)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Sher Shah's commercial reforms formed a coherent cluster aimed at market integration and merchant confidence — standardization of weights and measures, removal of internal transit duties, and enforcement at Sarais.\n\n• Option (a) — Belongs: Standardization of weights and measures across the empire was a core trade reform — enforced at Sarais and market points.\n• Option (b) — Belongs: Sarai-based enforcement of verified measures was the implementation mechanism for the weights standardization — these two reforms are inseparable.\n• Option (c) — Belongs: Abolition of internal transit duties (taxing goods only at origin and destination) directly reduced the cost of inter-regional trade and is a defining commercial reform.\n• Option (d) — Does NOT belong: The Chehra system (descriptive rolls of soldiers) is a military administration reform designed to prevent ghost-soldier fraud — it has no commercial dimension.\n\nValue Addition:\n• Before Sher Shah's reform, goods were taxed at multiple points during transit — the reduction to two points (origin and sale) was a significant stimulus for merchants.\n• Sher Shah's trade reforms are considered precursors to Akbar's later market integration policies.\n• The Sarai network served as the physical enforcement infrastructure for both postal and commercial standardization."
+    },
+    "hi": {
+      "display_text": "निम्नलिखित चार उपायों में से तीन सीधे शेर शाह सूरी के वाणिज्यिक और व्यापार सुधार एजेंडा से संबंधित हैं। इनमें से कौन सा अन्य के समान श्रेणी से संबंधित नहीं है?\n\n(a) पूरे साम्राज्य में भार और माप की मानकीकरण, जिसे सराय में लागू किया गया\n(b) व्यापारी लेनदेन में उपयोग किए गए मापों के सत्यापन के लिए सराय का नोड के रूप में उपयोग\n(c) कई आंतरिक पारगमन शुल्कों का उन्मूलन, केवल उत्पत्ति और बिक्री के बिंदु पर कर लगाना\n(d) साम्राज्य की सेना में भर्ती प्रत्येक सैनिक के लिए वर्णनात्मक रोल (चेहरा) का रखरखाव",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि डाक चौकी प्रणाली में घोड़े और रिले स्टेशन शामिल हैं जो सतही रूप से व्यापार सुविधा से जुड़ा प्रतीत हो सकता है, जिससे छात्र डाक रिले को वाणिज्यिक अवसंरचना से भ्रमित कर सकते हैं।",
+      "elimination_logic": [
+        "श्रेणी की पहचान करें: प्रश्न यह परीक्षण करता है कि कौन सा आइटम शेर शाह के वाणिज्यिक/व्यापार सुधार समूह से संबंधित है।",
+        "विकल्प (a), (b), (c) — भार और माप की मानकीकरण, सराय में लागू उपाय, और आंतरिक पारगमन शुल्कों का उन्मूलन — ये सभी सीधे शेर शाह के एकीकृत वाणिज्यिक सुधार एजेंडा का हिस्सा हैं।",
+        "विकल्प (d) — सैनिकों के लिए वर्णनात्मक रोल (चेहरा) की शुरुआत — यह एक सैन्य प्रशासनिक सुधार है, न कि वाणिज्यिक सुधार।",
+        "अलग हटने वाला विकल्प (d) है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "शेर शाह के वाणिज्यिक सुधार एक सुसंगत समूह थे जो बाजार एकीकरण और व्यापारी विश्वास को लक्षित करते थे — भार और माप की मानकीकरण, आंतरिक पारगमन शुल्कों का उन्मूलन, और सराय में प्रवर्तन।\n\n• विकल्प (a) — संबंधित: पूरे साम्राज्य में भार और माप की मानकीकरण एक मुख्य व्यापार सुधार था — जिसे सराय और बाजार स्थलों पर लागू किया गया।\n• विकल्प (b) — संबंधित: व्यापारी लेनदेन में उपयोग किए गए मापों के सत्यापन के लिए सराय को नोड के रूप में उपयोग करना भार मानकीकरण के लिए कार्यान्वयन तंत्र था — ये दोनों सुधार अविभाज्य हैं।\n• विकल्प (c) — संबंधित: आंतरिक पारगमन शुल्कों का उन्मूलन (केवल उत्पत्ति और बिक्री के बिंदु पर कर लगाना) ने क्षेत्रीय व्यापार की लागत को सीधे कम किया और यह एक परिभाषित वाणिज्यिक सुधार है।\n• विकल्प (d) — संबंधित नहीं: चेहरा प्रणाली (सैनिकों के वर्णनात्मक रोल) एक सैन्य प्रशासनिक सुधार है जो भूत सैनिक धोखाधड़ी को रोकने के लिए डिज़ाइन किया गया है — इसका कोई वाणिज्यिक आयाम नहीं है।\n\nमूल्य संवर्धन:\n• शेर शाह के सुधार से पहले, माल को पारगमन के दौरान कई बिंदुओं पर कर लगाया जाता था — इसे दो बिंदुओं (उत्पत्ति और बिक्री) तक कम करना व्यापारियों के लिए एक महत्वपूर्ण प्रोत्साहन था।\n• शेर शाह के व्यापार सुधार अकबर की बाद की बाजार एकीकरण नीतियों के पूर्ववर्ती माने जाते हैं।\n• सराय नेटवर्क डाक और वाणिज्यिक मानकीकरण दोनों के लिए भौतिक प्रवर्तन अवसंरचना के रूप में कार्य करता था।"
+    }
+  },
+  {
+    "uuid": "fe2a6957-1b7c-48e8-ad42-4e32ee073198",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Land Revenue Rate and the 'One-Third' Principle",
+        "Revenue System: Zabt (Measurement-based Assessment)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "two-statement-relationship",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Jama vs. Hasil distinction and revenue rate",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following two statements about Sher Shah Suri's land revenue arrangements:\n\nStatement 1: Under Sher Shah Suri's revenue system, the assessed demand (Jama) was fixed at one-third of produce — a rate identical to that fixed by Todar Mal under Akbar.\nStatement 2: Sher Shah consistently achieved full realization of the assessed Jama, ensuring that the actual collection (Hasil) always matched the demand.\n\nWhich one of the following is correct in respect of the above statements?\n\n(a) Both Statement 1 and Statement 2 are correct\n(b) Both Statement 1 and Statement 2 are incorrect\n(c) Statement 1 is correct but Statement 2 is incorrect\n(d) Statement 1 is incorrect but Statement 2 is correct",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Under Sher Shah Suri's revenue system, the assessed demand (Jama) was fixed at one-third of produce — a rate identical to that fixed by Todar Mal under Akbar.",
+          "verdict": "Correct",
+          "reason": "The one-third rate was indeed used by both Sher Shah and Todar Mal under Akbar, making this a genuine point of continuity between the two regimes."
+        },
+        {
+          "statement": "Sher Shah consistently achieved full realization of the assessed Jama, ensuring that the actual collection (Hasil) always matched the demand.",
+          "verdict": "Incorrect",
+          "reason": "The distinction between Jama (assessed demand) and Hasil (actual collection) is precisely the point where sources indicate that full realization was rarely achieved — the Hasil consistently fell short of Jama, meaning the two never uniformly matched."
+        }
+      ],
+      "strong_distractor": "a — Option (a) claiming both statements are correct is a strong distractor because Statement 1 is correct, and students who know the one-third rate may not carefully evaluate Statement 2's claim about full realization of Jama.",
+      "elimination_logic": [
+        "Evaluate Statement 1: One-third rate under Sher Shah and under Todar Mal (Akbar) — this is accurate and well-established. Statement 1 is correct.",
+        "Evaluate Statement 2: 'Always matched' is an absolute claim — the Jama-Hasil distinction exists precisely because collection never uniformly equalled demand. Statement 2 is incorrect.",
+        "Statement 1 correct + Statement 2 incorrect = option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the tendency to treat administrative policy as administrative achievement. The one-third rate was the assessed demand — but actual collection routinely fell short. Students who do not distinguish between the assessment framework (Jama) and realized collection (Hasil) will mark Statement 2 as correct.",
+      "final_explanation": "One of the most testable nuances in Sher Shah's revenue system is the distinction between policy intent (Jama) and implementation reality (Hasil).\n\n• Statement 1 — Correct: Sher Shah fixed revenue at one-third of produce. Todar Mal's Zabti system under Akbar also used one-third, making this a point of direct institutional continuity. For comparison, Alauddin Khalji had fixed revenue at one-half.\n• Statement 2 — Incorrect: The Jama was the assessed demand; the Hasil was the actual collection. Sources confirm that actual collection (Hasil) consistently fell short of assessed demand (Jama) — the gap between the two was a recognized feature of the system, not an anomaly. The claim that Hasil 'always matched' Jama is factually unsupported.\n\nValue Addition:\n• Alauddin Khalji's revenue rate of one-half of produce was significantly harsher than Sher Shah's one-third.\n• The Jama-Hasil gap is a recurring theme in Mughal revenue administration as well — it reflects the structural gap between assessment and enforcement capacity.\n• Sher Shah's decision to issue Patta and Qabuliyat was partly aimed at narrowing this gap by creating documented obligations."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी की भूमि राजस्व व्यवस्थाओं के संबंध में निम्नलिखित दो कथनों पर विचार करें:\n\nकथन 1: शेर शाह सूरी की राजस्व प्रणाली के तहत, आकलित मांग (जमा) उपज का एक-तिहाई निर्धारित की गई थी — यह दर अकबर के शासनकाल में टोडरमल द्वारा निर्धारित दर के समान थी।\nकथन 2: शेर शाह ने लगातार आकलित जमा की पूरी प्राप्ति सुनिश्चित की, जिससे वास्तविक संग्रह (हासिल) हमेशा मांग के बराबर रहता था।\n\nउपरोक्त कथनों के संबंध में निम्नलिखित में से कौन-सा सही है?\n\n(a) कथन 1 और कथन 2 दोनों सही हैं\n(b) कथन 1 और कथन 2 दोनों गलत हैं\n(c) कथन 1 सही है लेकिन कथन 2 गलत है\n(d) कथन 1 गलत है लेकिन कथन 2 सही है",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "शेर शाह सूरी की राजस्व प्रणाली के तहत, आकलित मांग (जमा) उपज का एक-तिहाई निर्धारित की गई थी — यह दर अकबर के शासनकाल में टोडरमल द्वारा निर्धारित दर के समान थी।",
+          "verdict": "सही",
+          "reason": "एक-तिहाई दर वास्तव में शेर शाह और अकबर के तहत टोडरमल दोनों द्वारा उपयोग की गई थी, जो दोनों शासन के बीच एक वास्तविक निरंतरता का बिंदु है।"
+        },
+        {
+          "statement": "शेर शाह ने लगातार आकलित जमा की पूरी प्राप्ति सुनिश्चित की, जिससे वास्तविक संग्रह (हासिल) हमेशा मांग के बराबर रहता था।",
+          "verdict": "गलत",
+          "reason": "जमा (आकलित मांग) और हासिल (वास्तविक संग्रह) के बीच का अंतर वह बिंदु है जहाँ स्रोत बताते हैं कि पूरी प्राप्ति शायद ही कभी हुई — हासिल लगातार जमा से कम था, अर्थात् दोनों कभी समान रूप से मेल नहीं खाते थे।"
+        }
+      ],
+      "strong_distractor": "a — विकल्प (a) जिसमें दोनों कथनों को सही बताया गया है, एक मजबूत भ्रम पैदा करने वाला है क्योंकि कथन 1 सही है, और जो छात्र एक-तिहाई दर जानते हैं वे कथन 2 के पूर्ण प्राप्ति के दावे का सावधानीपूर्वक मूल्यांकन नहीं कर सकते।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: शेर शाह और टोडरमल (अकबर) के तहत एक-तिहाई दर — यह सटीक और स्थापित तथ्य है। कथन 1 सही है।",
+        "कथन 2 का मूल्यांकन करें: 'हमेशा मेल खाता था' एक पूर्ण दावा है — जमा-हासिल का अंतर इसलिए है क्योंकि संग्रह कभी भी मांग के बराबर नहीं था। कथन 2 गलत है।",
+        "कथन 1 सही + कथन 2 गलत = विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कथन 2 प्रशासनिक नीति को प्रशासनिक उपलब्धि के रूप में देखने की प्रवृत्ति का फायदा उठाता है। एक-तिहाई दर आकलित मांग थी — लेकिन वास्तविक संग्रह नियमित रूप से कम था। जो छात्र आकलन ढांचा (जमा) और वास्तविक संग्रह (हासिल) के बीच अंतर नहीं समझते, वे कथन 2 को सही चिह्नित कर देंगे।",
+      "final_explanation": "शेर शाह की राजस्व प्रणाली में नीति की मंशा (जमा) और क्रियान्वयन की वास्तविकता (हासिल) के बीच का अंतर सबसे अधिक परीक्षणीय सूक्ष्मता है।\n\n• कथन 1 — सही: शेर शाह ने राजस्व को उपज के एक-तिहाई पर निर्धारित किया। अकबर के तहत टोडरमल की ज़ब्ती प्रणाली ने भी एक-तिहाई दर का उपयोग किया, जो एक प्रत्यक्ष संस्थागत निरंतरता का बिंदु है। तुलना के लिए, अलाउद्दीन खिलजी ने राजस्व को आधा निर्धारित किया था।\n• कथन 2 — गलत: जमा आकलित मांग थी; हासिल वास्तविक संग्रह था। स्रोत पुष्टि करते हैं कि वास्तविक संग्रह (हासिल) लगातार आकलित मांग (जमा) से कम था — दोनों के बीच का अंतर प्रणाली की एक मान्यता प्राप्त विशेषता थी, कोई अपवाद नहीं। दावा कि हासिल 'हमेशा मेल खाता था' तथ्यात्मक रूप से असमर्थित है।\n\nमूल्य संवर्धन:\n• अलाउद्दीन खिलजी की आधे उपज की राजस्व दर शेर शाह के एक-तिहाई की तुलना में काफी कठोर थी।\n• जमा-हासिल का अंतर मुगल राजस्व प्रशासन में भी एक आवर्ती विषय है — यह आकलन और प्रवर्तन क्षमता के बीच संरचनात्मक अंतर को दर्शाता है।\n• शेर शाह का पट्टा और कबूलियत जारी करने का निर्णय आंशिक रूप से इस अंतर को कम करने के लिए था, जिससे दस्तावेजीकृत दायित्व बनते थे।"
+    }
+  },
+  {
+    "uuid": "6a3fde98-be40-471d-9361-5130f8899b46",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Historiographical Debate: Sher Shah as Administrative Innovator vs. Synthesizer",
+        "Military Administration and the Branding (Dagh) System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Tarikh-i-Sher Shahi as primary source — author identification",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Tarikh-i-Sher Shahi, the primary Persian-language chronicle documenting Sher Shah Suri's administrative reforms in considerable detail, was authored by ________.\n\n(a) Ziauddin Barani\n(b) Abbas Khan Sarwani\n(c) Abul Fazl\n(d) Badauni",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because Abul Fazl's Ain-i-Akbari is the most famous administrative chronicle of the period and students may default to it when asked about a detailed administrative account.",
+      "elimination_logic": [
+        "The blank requires the name of the author of the Tarikh-i-Sher Shahi — the primary Persian chronicle on Sher Shah's administration.",
+        "Eliminate option (c): Abul Fazl authored the Ain-i-Akbari and Akbarnama — these are Mughal sources, not Sur dynasty chronicles.",
+        "Eliminate option (a): Ziauddin Barani authored the Tarikh-i-Firoz Shahi — a Delhi Sultanate chronicle, not a Sur-period text.",
+        "Eliminate option (d): Badauni authored Muntakhab-ut-Tawarikh — a Mughal-period critical chronicle, not related to Sher Shah.",
+        "Confirm option (b): Abbas Khan Sarwani authored the Tarikh-i-Sher Shahi — the primary source for Sher Shah's administrative reforms."
+      ],
+      "upsc_trap_explanation": "The trap exploits name-source mismatches. Students who know that Sher Shah's administration is documented in a Persian chronicle but are uncertain of the author may pick Abul Fazl (associated with administrative detail) or Barani (associated with Sultanate administration). Abbas Khan Sarwani is the correct and specific author of the Tarikh-i-Sher Shahi.",
+      "final_explanation": "Primary source attribution is a recurring UPSC test point — knowing not just what a text contains but who wrote it and what its limitations are.\n\n• Option (a) — Incorrect: Ziauddin Barani authored the Tarikh-i-Firoz Shahi, a Delhi Sultanate chronicle covering the reigns up to Firoz Shah Tughlaq.\n• Option (b) — Correct: Abbas Khan Sarwani authored the Tarikh-i-Sher Shahi — the most detailed contemporary account of Sher Shah's administration. It is hagiographic in tone and must be used critically.\n• Option (c) — Incorrect: Abul Fazl's literary output (Ain-i-Akbari and Akbarnama) covers Akbar's reign — it is the primary administrative source for the Mughal period, not the Sur period.\n• Option (d) — Incorrect: Badauni's Muntakhab-ut-Tawarikh is a Mughal-period critical account, valuable for its contrasting perspective to Abul Fazl.\n\nValue Addition:\n• The Tarikh-i-Sher Shahi's hagiographic bias means historians cross-check its claims against archaeological and numismatic evidence.\n• Abbas Khan Sarwani wrote during Akbar's reign — giving him retrospective perspective but also a political context that may color his portrayal.\n• Sher Shah's five-year reign (1540–1545) makes contemporary documentation sparse — making Sarwani's account disproportionately influential."
+    },
+    "hi": {
+      "display_text": "तारिख-ए-शेरशाही, जो शेर शाह सूरी के प्रशासनिक सुधारों का विस्तृत फारसी भाषा में इतिहास है, इसके लेखक हैं ________।\n\n(a) जियाउद्दीन बरनी\n(b) अब्बास खान सरवानी\n(c) अबुल फज़ल\n(d) बादौनी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि अबुल फज़ल की ऐन-ए-अकबरी उस काल की सबसे प्रसिद्ध प्रशासनिक इतिहास है और छात्र जब विस्तृत प्रशासनिक विवरण के बारे में पूछे जाते हैं तो वे आमतौर पर इसे चुन सकते हैं।",
+      "elimination_logic": [
+        "रिक्त स्थान में तारिख-ए-शेरशाही के लेखक का नाम चाहिए — जो शेर शाह के प्रशासन पर मुख्य फारसी इतिहास है।",
+        "विकल्प (c) को हटाएं: अबुल फज़ल ने ऐन-ए-अकबरी और अकबरनामा लिखा — ये मुगल स्रोत हैं, सूर वंश के इतिहास नहीं।",
+        "विकल्प (a) को हटाएं: जियाउद्दीन बरनी ने तारिख-ए-फिरोजशाही लिखा — यह दिल्ली सल्तनत का इतिहास है, सूर काल का नहीं।",
+        "विकल्प (d) को हटाएं: बादौनी ने मुन्तख़ब-उत-तवाअरिख़ लिखा — यह मुगल काल का आलोचनात्मक इतिहास है, शेर शाह से संबंधित नहीं।",
+        "विकल्प (b) की पुष्टि करें: अब्बास खान सरवानी ने तारिख-ए-शेरशाही लिखा — जो शेर शाह के प्रशासनिक सुधारों का मुख्य स्रोत है।"
+      ],
+      "upsc_trap_explanation": "यह जाल नाम-स्त्रोत असंगतियों का उपयोग करता है। जो छात्र जानते हैं कि शेर शाह का प्रशासन एक फारसी इतिहास में दर्ज है लेकिन लेखक के बारे में निश्चित नहीं हैं, वे अबुल फज़ल (प्रशासनिक विवरण से जुड़ा) या बरनी (सल्तनत प्रशासन से जुड़ा) को चुन सकते हैं। अब्बास खान सरवानी तारिख-ए-शेरशाही के सही और विशिष्ट लेखक हैं।",
+      "final_explanation": "प्राथमिक स्रोत का सही लेखक जानना UPSC में बार-बार पूछा जाने वाला विषय है — केवल यह जानना नहीं कि किसी ग्रंथ में क्या है, बल्कि यह भी कि इसे किसने लिखा और इसकी सीमाएँ क्या हैं।\n\n• विकल्प (a) — गलत: जियाउद्दीन बरनी ने तारिख-ए-फिरोजशाही लिखा, जो दिल्ली सल्तनत का इतिहास है और फिरोज शाह तुगलक तक के शासन को कवर करता है।\n• विकल्प (b) — सही: अब्बास खान सरवानी ने तारिख-ए-शेरशाही लिखा — शेर शाह के प्रशासन का सबसे विस्तृत समकालीन विवरण। यह प्रशंसात्मक शैली में है और इसे आलोचनात्मक दृष्टि से देखना चाहिए।\n• विकल्प (c) — गलत: अबुल फज़ल की साहित्यिक कृतियाँ (ऐन-ए-अकबरी और अकबरनामा) अकबर के शासन को कवर करती हैं — यह मुगल काल का मुख्य प्रशासनिक स्रोत है, सूर काल का नहीं।\n• विकल्प (d) — गलत: बादौनी की मुन्तख़ब-उत-तवाअरिख़ मुगल काल का आलोचनात्मक इतिहास है, जो अबुल फज़ल के विपरीत दृष्टिकोण प्रदान करता है।\n\nमूल्यवर्धन:\n• तारिख-ए-शेरशाही की प्रशंसात्मक पक्षपातिता के कारण इतिहासकार इसके दावों की पुरातात्विक और मुद्राविज्ञान साक्ष्यों से जांच करते हैं।\n• अब्बास खान सरवानी ने अकबर के शासनकाल में लिखा — जिससे उन्हें पीछे मुड़कर देखने का दृष्टिकोण मिला, लेकिन राजनीतिक संदर्भ भी जो उनकी प्रस्तुति को प्रभावित कर सकता है।\n• शेर शाह का पांच वर्ष का शासनकाल (1540–1545) समकालीन दस्तावेजों की कमी के कारण सरवानी के विवरण का प्रभाव अधिक है।"
+    }
+  },
+  {
+    "uuid": "147f7a30-7699-407e-8b2d-2d949b5f6cd9",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Centralization vs. Decentralization: The Core Tension in Sher Shah's Administration",
+        "Provincial Administration and the Iqta/Sarkar System"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sequence of medieval Indian administrative systems",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence in which the three major provincial administration systems evolved in medieval India?\n\n1. Sarkar-Pargana system under Sher Shah Suri\n2. Iqta system of the Delhi Sultanate\n3. Mansabdari system under Akbar\n\n(a) 2 → 1 → 3\n(b) 1 → 2 → 3\n(c) 2 → 3 → 1\n(d) 1 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because it places the Mughal Mansabdari correctly after Sher Shah but incorrectly positions the Iqta system — students who know Mansabdari came last but are uncertain about the Iqta-Sarkar relative sequence will pick this.",
+      "elimination_logic": [
+        "Anchor the earliest event: The Iqta system of the Delhi Sultanate predates all other systems listed — it was introduced from the early thirteenth century.",
+        "Next: Sher Shah's Sarkar-Pargana system replaced the Iqta model during 1540–1545 — it comes second.",
+        "Akbar's Mansabdari system developed from the 1560s onward — it comes after Sher Shah's Sarkar system.",
+        "Correct sequence: Iqta → Sarkar-Pargana → Mansabdari = option (a)."
+      ],
+      "upsc_trap_explanation": "The trap is the Iqta-Sarkar ordering. Students may know that Sher Shah came before Akbar but place the Iqta system after the Sarkar system, confusing the Delhi Sultanate's administrative legacy with Sher Shah's 'elimination' of hereditary Iqtas — interpreting 'elimination' as temporal succession in the wrong direction.",
+      "final_explanation": "This chronology tests understanding of the developmental arc of provincial administration in medieval India — from the Sultanate's Iqta to Sher Shah's Sarkar to the Mughal Mansabdari.\n\nCorrect sequence: Iqta System → Sarkar-Pargana System → Mansabdari System\n\n• Iqta System (Delhi Sultanate, 13th–15th centuries): Revenue assignments granted to nobles (Iqtadars) for military service — tended toward hereditary feudalization over time.\n• Sarkar-Pargana System (Sher Shah, 1540–1545): Sher Shah deliberately abolished hereditary Iqta assignments, replacing them with salaried, transferable officials — an anti-feudal centralization measure.\n• Mansabdari System (Akbar, from 1560s): A rank-based system assigning numerical ranks (Mansabs) determining pay and military obligations — a more systematic centralization that built on Sher Shah's precedents.\n\nWhy each wrong option fails:\n• Option (b): Places Iqta after Sarkar — chronologically impossible.\n• Option (c): Places Mansabdari before Sarkar — reverses the Mughal-Sur sequence.\n• Option (d): Places Sarkar system first — predates the Sultanate Iqta system incorrectly.\n\nValue Addition:\n• Sher Shah's elimination of hereditary Iqtas was a direct response to the Afghan noble confederacy model that caused the Lodi downfall.\n• Akbar's Mansabdari is a synthesis of Sher Shah's salaried official model and a new rank hierarchy.\n• The transition from Iqta to Mansabdari represents the progressive centralization of military-administrative authority in medieval India."
+    },
+    "hi": {
+      "display_text": "मध्यकालीन भारत में तीन प्रमुख प्रांतीय प्रशासन प्रणालियों के विकास का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. शेर शाह सूरी के अधीन सर्कार-परगना प्रणाली\n2. दिल्ली सल्तनत की इक़्ता प्रणाली\n3. अकबर के अधीन मनसबदारी प्रणाली\n\n(a) 2 → 1 → 3\n(b) 1 → 2 → 3\n(c) 2 → 3 → 1\n(d) 1 → 3 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह मुगल मनसबदारी को सही ढंग से शेर शाह के बाद रखता है लेकिन इक़्ता प्रणाली को गलत तरीके से स्थान देता है — जो छात्र जानते हैं कि मनसबदारी अंतिम आई थी लेकिन इक़्ता-सर्कार के सापेक्ष क्रम के बारे में अनिश्चित हैं, वे इसे चुनेंगे।",
+      "elimination_logic": [
+        "सबसे प्रारंभिक घटना को आधार बनाएं: दिल्ली सल्तनत की इक़्ता प्रणाली सभी सूचीबद्ध प्रणालियों से पहले है — इसे तेरहवीं सदी के प्रारंभ से लागू किया गया था।",
+        "अगला: शेर शाह का सर्कार-परगना प्रणाली 1540–1545 के दौरान इक़्ता मॉडल की जगह लेता है — यह दूसरा आता है।",
+        "अकबर की मनसबदारी प्रणाली 1560 के दशक से विकसित हुई — यह शेर शाह के सर्कार प्रणाली के बाद आती है।",
+        "सही क्रम: इक़्ता → सर्कार-परगना → मनसबदारी = विकल्प (a)।"
+      ],
+      "upsc_trap_explanation": "फंदा इक़्ता-सर्कार क्रम में है। छात्र जानते होंगे कि शेर शाह अकबर से पहले था लेकिन इक़्ता प्रणाली को सर्कार प्रणाली के बाद रख देते हैं, जिससे दिल्ली सल्तनत की प्रशासनिक विरासत को शेर शाह के 'वंशानुगत इक़्ताओं' के उन्मूलन के साथ भ्रमित करते हैं — 'उन्मूलन' को गलत दिशा में कालानुक्रमिक उत्तराधिकार के रूप में समझते हैं।",
+      "final_explanation": "यह कालक्रम मध्यकालीन भारत में प्रांतीय प्रशासन के विकासात्मक क्रम की समझ का परीक्षण करता है — सल्तनत की इक़्ता से शेर शाह के सर्कार तक और फिर मुगल मनसबदारी तक।\n\nसही क्रम: इक़्ता प्रणाली → सर्कार-परगना प्रणाली → मनसबदारी प्रणाली\n\n• इक़्ता प्रणाली (दिल्ली सल्तनत, 13वीं–15वीं सदी): राजस्व आवंटन जो सैनिक सेवा के लिए कुलों (इक़्तादारों) को दिए जाते थे — समय के साथ वंशानुगत जमींदारी की ओर झुकाव।\n• सर्कार-परगना प्रणाली (शेर शाह, 1540–1545): शेर शाह ने जानबूझकर वंशानुगत इक़्ता आवंटनों को समाप्त कर दिया, उन्हें वेतनभोगी, स्थानांतरित किए जाने वाले अधिकारियों से बदल दिया — एक विरोधी जमींदारी केंद्रीकरण उपाय।\n• मनसबदारी प्रणाली (अकबर, 1560 के दशक से): एक पद-आधारित प्रणाली जो संख्यात्मक पद (मनसब) आवंटित करती है जो वेतन और सैन्य दायित्व निर्धारित करता है — शेर शाह की परंपराओं पर आधारित अधिक व्यवस्थित केंद्रीकरण।\n\nप्रत्येक गलत विकल्प क्यों असफल है:\n• विकल्प (b): इक़्ता को सर्कार के बाद रखता है — कालानुक्रमिक रूप से असंभव।\n• विकल्प (c): मनसबदारी को सर्कार से पहले रखता है — मुगल-सूर क्रम को उलटता है।\n• विकल्प (d): सर्कार प्रणाली को पहले रखता है — सल्तनत की इक़्ता प्रणाली से पहले, जो गलत है।\n\nमूल्य संवर्धन:\n• शेर शाह का वंशानुगत इक़्ताओं का उन्मूलन अफगान कुलीन संघ मॉडल के प्रत्यक्ष जवाब था जिसने लोदी वंश का पतन किया।\n• अकबर की मनसबदारी शेर शाह के वेतनभोगी अधिकारी मॉडल और एक नई पदानुक्रम का संश्लेषण है।\n• इक़्ता से मनसबदारी तक संक्रमण मध्यकालीन भारत में सैन्य-प्रशासनिक अधिकार के प्रगतिशील केंद्रीकरण का प्रतिनिधित्व करता है।"
+    }
+  },
+  {
+    "uuid": "edb912c0-bc3f-40a5-b8b1-94c37b67c8d3",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Sher Shah's Coins as Administrative Instruments",
+        "Currency Reforms and the Silver Rupya"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Sher Shah's coins — script, weight, and function",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs is correctly matched in the context of Sher Shah Suri's monetary and coinage reforms?\n\n(a) Copper token currency introduced as substitute for silver — Muhammad bin Tughluq and Sher Shah Suri jointly\n(b) Silver Rupiya — Primary gold coinage for large-scale state transactions\n(c) Coins bearing both Persian and Devanagari inscriptions — Sher Shah Suri's silver Rupiya\n(d) Exchange ratio of silver Rupiya to copper Dam — 1 Rupiya = 40 Dams under Sher Shah",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because Muhammad bin Tughluq's token currency experiment is well-known, and students may conflate 'copper coin' with his failed copper token — attributing the copper Dam to Tughluq rather than Sher Shah.",
+      "elimination_logic": [
+        "Option (a): Muhammad bin Tughluq introduced token copper/brass currency as a substitute for silver — this failed experiment is distinct from Sher Shah's copper Dam which was a legitimate standard coin for everyday transactions.",
+        "Option (b): Sher Shah's silver Rupiya weighed 180 grains — pairing it with 'gold coinage' is wrong in both metal and function.",
+        "Option (c): Sher Shah's coins bearing both Persian and Devanagari inscriptions is a documented fact — this pairing is correctly matched.",
+        "Option (d): The 1 Rupiya = 40 Dams ratio is incorrect — the ratio under Sher Shah was 1 Rupiya = 64 Dams, not 40."
+      ],
+      "upsc_trap_explanation": "The conflation trap operates on two levels: first, associating 'copper coinage reform' with Muhammad bin Tughluq rather than Sher Shah's copper Dam; second, confusing the Rupiya-Dam exchange ratio (64 under Sher Shah vs. later Mughal modifications). Students who know the ratio exists but misremember the figure will eliminate option (d) correctly but may still miss option (c) if they are uncertain about the bilingual inscription detail.",
+      "final_explanation": "Sher Shah's coins were instruments of both economic and administrative policy — their design choices carried deliberate messages.\n\n• Option (a) — Incorrectly matched: Muhammad bin Tughluq introduced debased token currency (copper/brass as substitute for silver) — a failed monetary experiment. Sher Shah's copper Dam was a legitimate, standardized denomination for everyday peasant transactions, not a token currency.\n• Option (b) — Incorrectly matched: Sher Shah's silver Rupiya was not a gold coin. Gold coinage was part of a separate denomination hierarchy; the Rupiya was the primary silver standard.\n• Option (c) — Correctly matched: Sher Shah's coins bore inscriptions in both Persian script and Devanagari — a deliberate inclusion strategy to reach non-Persian-speaking populations and extend administrative legitimacy.\n• Option (d) — Incorrectly matched: The exchange ratio was 1 Rupiya = 64 Dams under Sher Shah, not 40 Dams.\n\nValue Addition:\n• The bilingual coin inscription is evidence that Sher Shah's administrative outreach was not limited to Persian-literate elites.\n• The copper Dam served the peasant economy; the silver Rupiya served larger commerce — a two-tier design.\n• The Mughal period saw the Dam ratio adjusted — Akbar's reforms altered the Rupiya-Dam relationship."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के मौद्रिक और सिक्का सुधारों के संदर्भ में निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) चांदी के स्थान पर टोकन मुद्रा के रूप में तांबे की मुद्रा — मुहम्मद बिन तुगलक और शेर शाह सूरी संयुक्त रूप से\n(b) चांदी का रुपया — बड़े पैमाने पर राज्यीय लेन-देन के लिए प्राथमिक सोने का सिक्का\n(c) फारसी और देवनागरी दोनों लिपियों में अंकित सिक्के — शेर शाह सूरी का चांदी का रुपया\n(d) चांदी के रुपया और तांबे के दम का विनिमय अनुपात — शेर शाह के समय 1 रुपया = 40 दम",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रमित करने वाला विकल्प है क्योंकि मुहम्मद बिन तुगलक के टोकन मुद्रा प्रयोग के बारे में अच्छी तरह जाना जाता है, और छात्र 'तांबे के सिक्के' को उनके असफल तांबे के टोकन के साथ भ्रमित कर सकते हैं — तांबे के दम को तुगलक के बजाय शेर शाह से जोड़ते हैं।",
+      "elimination_logic": [
+        "विकल्प (a): मुहम्मद बिन तुगलक ने चांदी के स्थान पर टोकन तांबे/पीतल की मुद्रा शुरू की — यह असफल प्रयोग शेर शाह के तांबे के दम से अलग है जो दैनिक लेन-देन के लिए एक वैध मानक सिक्का था।",
+        "विकल्प (b): शेर शाह का चांदी का रुपया 180 ग्रेन वजन का था — इसे 'सोने के सिक्के' के साथ जोड़ना धातु और कार्य दोनों में गलत है।",
+        "विकल्प (c): शेर शाह के सिक्कों पर फारसी और देवनागरी दोनों लिपियों के अंकन का प्रमाणित तथ्य है — यह जोड़ी सही मेल खाती है।",
+        "विकल्प (d): 1 रुपया = 40 दम का अनुपात गलत है — शेर शाह के समय यह अनुपात 1 रुपया = 64 दम था, न कि 40।"
+      ],
+      "upsc_trap_explanation": "यह भ्रमित करने वाला जाल दो स्तरों पर काम करता है: पहला, 'तांबे की मुद्रा सुधार' को शेर शाह के तांबे के दम के बजाय मुहम्मद बिन तुगलक से जोड़ना; दूसरा, रुपया-दम विनिमय अनुपात (शेर शाह के समय 64 बनाम बाद के मुगल संशोधन)। जो छात्र अनुपात जानते हैं लेकिन आंकड़ा भूल जाते हैं, वे विकल्प (d) को सही ढंग से हटा देंगे लेकिन यदि वे द्विभाषी अंकन विवरण के बारे में अनिश्चित हैं तो विकल्प (c) से चूक सकते हैं।",
+      "final_explanation": "शेर शाह के सिक्के आर्थिक और प्रशासनिक नीति दोनों के उपकरण थे — उनके डिज़ाइन विकल्पों में जानबूझकर संदेश छिपे थे।\n\n• विकल्प (a) — गलत मेल: मुहम्मद बिन तुगलक ने घटिया टोकन मुद्रा (चांदी के स्थान पर तांबा/पीतल) शुरू की — यह असफल मौद्रिक प्रयोग था। शेर शाह का तांबा दम एक वैध, मानकीकृत इकाई था जो दैनिक किसान लेन-देन के लिए था, टोकन मुद्रा नहीं।\n• विकल्प (b) — गलत मेल: शेर शाह का चांदी का रुपया सोने का सिक्का नहीं था। सोने के सिक्के एक अलग पदानुक्रम का हिस्सा थे; रुपया मुख्य चांदी मानक था।\n• विकल्प (c) — सही मेल: शेर शाह के सिक्कों पर फारसी और देवनागरी दोनों लिपियों में अंकन था — यह गैर-फारसी भाषी जनता तक पहुंचने और प्रशासनिक वैधता बढ़ाने की जानबूझकर रणनीति थी।\n• विकल्प (d) — गलत मेल: विनिमय अनुपात शेर शाह के समय 1 रुपया = 64 दम था, न कि 40 दम।\n\nमूल्य संवर्धन:\n• द्विभाषी सिक्का अंकन इस बात का प्रमाण है कि शेर शाह का प्रशासनिक विस्तार केवल फारसी-लिखित अभिजात वर्ग तक सीमित नहीं था।\n• तांबे का दम किसान अर्थव्यवस्था की सेवा करता था; चांदी का रुपया बड़े व्यापार के लिए था — एक दो-स्तरीय डिज़ाइन।\n• मुगल काल में दम का अनुपात बदला गया — अकबर के सुधारों ने रुपया-दम संबंध को परिवर्तित किया।"
+    }
+  },
+  {
+    "uuid": "4fe550d7-e303-47cc-8e52-2f591cf863ae",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Welfare Measures and Their Administrative Significance",
+        "Road Network and the Grand Trunk Road"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "multi-statement-correct",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Welfare measures as legitimacy-building vs. genuine concern",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about welfare measures undertaken by Sher Shah Suri:\n\n1. Sher Shah Suri ordered the planting of trees along the Grand Trunk Road primarily to provide shade to travellers and protection to crops in adjacent fields.\n2. Sher Shah's welfare measures such as hospitals (shifa khanas) and mosques along roads were identical in scale and intent to those of Firoz Shah Tughlaq's public works.\n3. The welfare dimension of Sher Shah's road infrastructure — including hospitals and rest houses — served the dual purpose of genuine traveller welfare and extending state administrative reach along major corridors.\n\nWhich of the above statements is/are correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sher Shah Suri ordered the planting of trees along the Grand Trunk Road primarily to provide shade to travellers and protection to crops in adjacent fields.",
+          "verdict": "Correct",
+          "reason": "Shade-giving trees planted along the Sadak-i-Azam are a documented welfare measure — Sher Shah's own reported statement connects tree-planting to traveller welfare, which is consistent with his legitimacy-building strategy."
+        },
+        {
+          "statement": "Sher Shah's welfare measures such as hospitals (shifa khanas) and mosques along roads were identical in scale and intent to those of Firoz Shah Tughlaq's public works.",
+          "verdict": "Incorrect",
+          "reason": "While both rulers undertook public welfare works, historians distinguish them in scale, intent, and administrative context — equating them as 'identical' is an over-extension. Firoz Shah's welfare works were more extensive in some dimensions and driven by different political-theological motivations."
+        },
+        {
+          "statement": "The welfare dimension of Sher Shah's road infrastructure — including hospitals and rest houses — served the dual purpose of genuine traveller welfare and extending state administrative reach along major corridors.",
+          "verdict": "Correct",
+          "reason": "The dual-purpose nature of Sher Shah's welfare-cum-administrative infrastructure is a well-established historiographical position — welfare legitimized authority while Sarais and hospitals extended the state's physical presence."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three correct is a strong distractor because Statement 1 and 3 are both true, and students may not pause to evaluate whether 'identical in scale and intent' in Statement 2 is an over-extension.",
+      "elimination_logic": [
+        "Focus on Statement 2's qualifier 'identical in scale and intent' — this is too strong a claim; Sher Shah and Firoz Shah Tughlaq operated in different contexts with different motivations and scales.",
+        "Confirm Statement 1: tree-planting for traveller welfare along the GT Road is directly associated with Sher Shah in historical sources.",
+        "Confirm Statement 3: the dual administrative-welfare function of road infrastructure is the established scholarly interpretation.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — answer is option (b)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the comparison between Sher Shah and Firoz Shah Tughlaq — both known for public works. Students who know both rulers built hospitals and public infrastructure may accept 'identical' without scrutinizing the qualifier. The trap is in 'identical in scale and intent' — a scope-extension that makes a broadly true comparison into an inaccurate absolute claim.",
+      "final_explanation": "Sher Shah's welfare works are best understood as instruments of legitimacy-building that simultaneously served genuine administrative functions — rather than purely altruistic or purely exploitative measures.\n\n• Statement 1 — Correct: Tree-planting along the Sadak-i-Azam (Grand Trunk Road) for traveller shade is documented — Sher Shah's reported statement about peasant welfare reflects at minimum a rhetorical commitment to humanitarian governance.\n• Statement 2 — Incorrect: Comparing Sher Shah's welfare works with Firoz Shah Tughlaq's as 'identical in scale and intent' overreaches. Firoz Shah Tughlaq's public works (canals, hospitals, mosques, rest houses) were more extensive in some areas and driven by Sunni theological imperatives. The contexts, scales, and motivations differ meaningfully.\n• Statement 3 — Correct: The dual-purpose character of welfare infrastructure — building state legitimacy while extending administrative nodes — is the dominant historiographical reading. Sarais combined rest, intelligence, postal, and market functions.\n\nValue Addition:\n• Sher Shah reportedly said he would be aggrieved if a traveller or a peasant were harmed — a statement used by historians to discuss the limits of administrative history as source material.\n• Firoz Shah Tughlaq built approximately 300 cities and towns and is associated with more systematic canal irrigation.\n• The welfare-legitimacy nexus is a recurring theme in medieval Indian administration — rulers built public goods as much for political consolidation as for social benefit."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी द्वारा किए गए कल्याण उपायों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. शेर शाह सूरी ने मुख्य रूप से यात्रियों को छाया देने और आस-पास के खेतों की फसलों की सुरक्षा के लिए सड़क-ए-आजम के किनारे पेड़ लगाने का आदेश दिया था।\n2. शेर शाह के अस्पताल (शिफा खानों) और सड़कों के किनारे मस्जिदों जैसे कल्याण उपाय फिरोज शाह तुगलक के सार्वजनिक कार्यों के पैमाने और उद्देश्य में समान थे।\n3. शेर शाह के सड़क अवसंरचना के कल्याण पहलू — जिसमें अस्पताल और विश्राम गृह शामिल थे — का द्वैध उद्देश्य था: वास्तविक यात्री कल्याण और प्रमुख मार्गों के साथ राज्य के प्रशासनिक विस्तार को बढ़ाना।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sher Shah Suri ordered the planting of trees along the Grand Trunk Road primarily to provide shade to travellers and protection to crops in adjacent fields.",
+          "verdict": "सही है",
+          "reason": "सड़क-ए-आजम के किनारे छाया देने वाले पेड़ लगाना एक प्रलेखित कल्याणकारी उपाय है — शेर शाह के अपने कथित बयान में पेड़ लगाने को यात्रियों के कल्याण से जोड़ा गया है, जो उनकी वैधता निर्माण रणनीति के अनुरूप है।"
+        },
+        {
+          "statement": "Sher Shah's welfare measures such as hospitals (shifa khanas) and mosques along roads were identical in scale and intent to those of Firoz Shah Tughlaq's public works.",
+          "verdict": "गलत है",
+          "reason": "हालांकि दोनों शासकों ने सार्वजनिक कल्याण कार्य किए, इतिहासकार उन्हें पैमाने, उद्देश्य और प्रशासनिक संदर्भ में अलग करते हैं — उन्हें 'समान' कहना अतिशयोक्ति है। फिरोज शाह के कल्याण कार्य कुछ आयामों में अधिक व्यापक और राजनीतिक-धार्मिक प्रेरणाओं से संचालित थे।"
+        },
+        {
+          "statement": "The welfare dimension of Sher Shah's road infrastructure — including hospitals and rest houses — served the dual purpose of genuine traveller welfare and extending state administrative reach along major corridors.",
+          "verdict": "सही है",
+          "reason": "शेर शाह के कल्याण-प्रशासनिक अवसंरचना के द्वैध उद्देश्य की स्थिति इतिहासकारों द्वारा स्थापित है — कल्याण ने वैधता दी जबकि सराय और अस्पतालों ने राज्य की भौतिक उपस्थिति बढ़ाई।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें तीनों कथनों को सही बताया गया है, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 दोनों सही हैं, और छात्र कथन 2 में 'पैमाने और उद्देश्य में समान' होने की अतिशयोक्ति पर ध्यान नहीं दे सकते।",
+      "elimination_logic": [
+        "कथन 2 के 'पैमाने और उद्देश्य में समान' शब्द पर ध्यान दें — यह बहुत मजबूत दावा है; शेर शाह और फिरोज शाह तुगलक अलग संदर्भों, प्रेरणाओं और पैमानों में कार्यरत थे।",
+        "कथन 1 की पुष्टि करें: सड़क-ए-आजम के किनारे यात्रियों के कल्याण के लिए पेड़ लगाना ऐतिहासिक स्रोतों में सीधे शेर शाह से जुड़ा है।",
+        "कथन 3 की पुष्टि करें: सड़क अवसंरचना का द्वैध प्रशासनिक-कल्याणकारी कार्य विद्वानों द्वारा स्थापित व्याख्या है।",
+        "कथन 1 और 3 सही हैं, कथन 2 गलत है — उत्तर विकल्प (b) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 शेर शाह और फिरोज शाह तुगलक के सार्वजनिक कार्यों की तुलना का उपयोग करता है — दोनों अस्पताल और सार्वजनिक अवसंरचना बनाते थे। जो छात्र दोनों शासकों के कल्याण कार्य जानते हैं, वे 'समान' शब्द को बिना सावधानी से देखे स्वीकार कर सकते हैं। जाल 'पैमाने और उद्देश्य में समान' की अतिशयोक्ति में है — जो एक व्यापक सही तुलना को गलत पूर्ण दावे में बदल देता है।",
+      "final_explanation": "शेर शाह के कल्याण कार्यों को वैधता निर्माण के उपकरण के रूप में समझना उचित है, जो साथ ही वास्तविक प्रशासनिक कार्य भी थे — न कि केवल परोपकारी या केवल शोषणकारी उपाय।\n\n• कथन 1 — सही: सड़क-ए-आजम के किनारे यात्रियों के लिए छाया देने के लिए पेड़ लगाना प्रलेखित है — शेर शाह का कथित बयान किसानों के कल्याण के प्रति कम से कम एक काव्यात्मक प्रतिबद्धता दर्शाता है।\n• कथन 2 — गलत: शेर शाह के कल्याण कार्यों की तुलना फिरोज शाह तुगलक के साथ 'पैमाने और उद्देश्य में समान' कहना अतिशयोक्ति है। फिरोज शाह के सार्वजनिक कार्य (नहरें, अस्पताल, मस्जिदें, सराय) कुछ क्षेत्रों में अधिक व्यापक थे और सुन्नी धार्मिक प्रेरणाओं से संचालित थे। संदर्भ, पैमाना और प्रेरणाएं भिन्न हैं।\n• कथन 3 — सही: कल्याण अवसंरचना का द्वैध उद्देश्य — राज्य की वैधता बनाना और प्रशासनिक केंद्रों का विस्तार करना — प्रमुख इतिहासकारों की व्याख्या है। सराय विश्राम, खुफिया, डाक और बाजार कार्यों का संयोजन थे।\n\nमूल्यवर्धन:\n• शेर शाह ने कथित रूप से कहा था कि यदि कोई यात्री या किसान हानि पहुंची तो वे दुखी होंगे — यह कथन प्रशासनिक इतिहास की सीमाओं पर चर्चा के लिए उपयोग किया जाता है।\n• फिरोज शाह तुगलक ने लगभग 300 शहर और कस्बे बनाए और अधिक व्यवस्थित नहर सिंचाई से जुड़े हैं।\n• कल्याण-वैधता संबंध मध्यकालीन भारतीय प्रशासन में एक आवर्ती विषय है — शासकों ने राजनीतिक समेकन के लिए सामाजिक लाभ के साथ सार्वजनिक वस्तुएं बनाईं।"
+    }
+  },
+  {
+    "uuid": "c89dc9c5-af06-40b8-b8a8-e31d6509071b",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Judicial Administration and Sher Shah's Personal Justice",
+        "Provincial Administration and the Iqta/Sarkar System"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Munsif-i-Munsifan judicial function at Sarkar level",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "At the Sarkar level in Sher Shah Suri's administrative hierarchy, which official was specifically responsible for revenue assessment and judicial functions, serving as the counterpart to the Shiqdar-i-Shiqdaran?\n\n(a) Shiqdar-i-Shiqdaran\n(b) Qazi\n(c) Fotadar\n(d) Munsif-i-Munsifan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because 'Qazi' is the standard Islamic judicial officer, and students who associate judicial functions with the Qazi institution may incorrectly assign revenue/judicial duties at the Sarkar level to the Qazi rather than to the Munsif-i-Munsifan.",
+      "elimination_logic": [
+        "Eliminate option (a): The Shiqdar-i-Shiqdaran handled military and executive functions — not revenue assessment or judicial administration at the Sarkar level.",
+        "Eliminate option (b): While Qazis existed in the judicial hierarchy, the specific Sarkar-level official combining revenue and judicial functions was the Munsif-i-Munsifan.",
+        "Eliminate option (c): The Fotadar was the treasury official at Pargana level — not a Sarkar-level judicial officer.",
+        "Confirm option (d): The Munsif-i-Munsifan was the designated revenue and judicial officer at the Sarkar level under Sher Shah's dual-official system."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap places 'Qazi' as an option — a real Islamic judicial officer who did function in medieval Indian administration. Students who know that judicial functions existed but cannot recall the specific Sarkar-level officer's title will default to the familiar 'Qazi.' The Munsif-i-Munsifan is the precise officer for this function at the Sarkar level.",
+      "final_explanation": "Sher Shah deliberately separated military-executive and revenue-judicial functions at the Sarkar level, placing each under a distinct official to prevent power concentration.\n\n• Option (a) — Incorrect: The Shiqdar-i-Shiqdaran was the military and executive head — responsible for maintaining order and command, not for revenue assessment or judicial decisions.\n• Option (b) — Incorrect: Qazis (Islamic judicial officers) existed in the broader judicial system, but the specific Sarkar-level official combining revenue assessment and judicial functions was the Munsif-i-Munsifan.\n• Option (c) — Incorrect: The Fotadar was the treasury officer at the Pargana level — responsible for maintaining the local treasury, not a Sarkar-level judicial officer.\n• Option (d) — Correct: The Munsif-i-Munsifan was the Sarkar-level official responsible for revenue matters and judicial functions — the administrative counterpart to the Shiqdar-i-Shiqdaran.\n\nValue Addition:\n• The deliberate pairing of Shiqdar-i-Shiqdaran (executive) and Munsif-i-Munsifan (revenue-judicial) at each Sarkar was a structural anti-monopoly design.\n• Sher Shah himself served as the final court of appeal — emphasizing personal justice as a legitimizing instrument.\n• The separation of executive and judicial functions at the Sarkar level prefigures later colonial administrative principles."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के प्रशासनिक पदानुक्रम में सरकार स्तर पर कौन-सा अधिकारी विशेष रूप से राजस्व आकलन और न्यायिक कार्यों के लिए जिम्मेदार था, जो शिकदार-ए-शिकदारान का समकक्ष था?\n\n(a) शिकदार-ए-शिकदारान\n(b) काजी\n(c) फोतादार\n(d) मुनसिफ-ए-मुनसिफान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम है क्योंकि 'काजी' मानक इस्लामी न्यायिक अधिकारी है, और जो छात्र न्यायिक कार्यों को काजी संस्था से जोड़ते हैं वे गलत तरीके से राजस्व/न्यायिक कर्तव्यों को सरकार स्तर पर काजी को सौंप सकते हैं बजाय मुनसिफ-ए-मुनसिफान के।",
+      "elimination_logic": [
+        "विकल्प (a) को खारिज करें: शिकदार-ए-शिकदारान सैन्य और कार्यकारी कार्य संभालता था — सरकार स्तर पर राजस्व आकलन या न्यायिक प्रशासन नहीं।",
+        "विकल्प (b) को खारिज करें: जबकि काजी न्यायिक पदानुक्रम में मौजूद थे, सरकार स्तर पर राजस्व और न्यायिक कार्यों को संयोजित करने वाला अधिकारी मुनसिफ-ए-मुनसिफान था।",
+        "विकल्प (c) को खारिज करें: फोतादार परगना स्तर का कोषाध्यक्ष था — सरकार स्तर का न्यायिक अधिकारी नहीं।",
+        "विकल्प (d) की पुष्टि करें: मुनसिफ-ए-मुनसिफान शेर शाह के द्वि-आधिकारिक प्रणाली के तहत सरकार स्तर पर राजस्व और न्यायिक अधिकारी था।"
+      ],
+      "upsc_trap_explanation": "प्रामाणिक-भ्रम जाल में 'काजी' को विकल्प के रूप में रखा गया है — एक वास्तविक इस्लामी न्यायिक अधिकारी जो मध्यकालीन भारतीय प्रशासन में कार्य करता था। जो छात्र जानते हैं कि न्यायिक कार्य होते थे लेकिन सरकार स्तर के विशिष्ट अधिकारी का नाम याद नहीं कर पाते, वे परिचित 'काजी' को चुन लेते हैं। मुनसिफ-ए-मुनसिफान सरकार स्तर पर इस कार्य के लिए सटीक अधिकारी है।",
+      "final_explanation": "शेर शाह ने जानबूझकर सरकार स्तर पर सैन्य-कार्यकारी और राजस्व-न्यायिक कार्यों को अलग किया, प्रत्येक को अलग अधिकारी के अधीन रखा ताकि सत्ता का केंद्रीकरण न हो।\n\n• विकल्प (a) — गलत: शिकदार-ए-शिकदारान सैन्य और कार्यकारी प्रमुख था — व्यवस्था बनाए रखने और कमान के लिए जिम्मेदार, राजस्व आकलन या न्यायिक निर्णय के लिए नहीं।\n• विकल्प (b) — गलत: काजी (इस्लामी न्यायिक अधिकारी) व्यापक न्यायिक प्रणाली में थे, लेकिन सरकार स्तर पर राजस्व आकलन और न्यायिक कार्य संयोजित करने वाला अधिकारी मुनसिफ-ए-मुनसिफान था।\n• विकल्प (c) — गलत: फोतादार परगना स्तर का कोषाध्यक्ष था — स्थानीय कोष का प्रबंधन करता था, सरकार स्तर का न्यायिक अधिकारी नहीं।\n• विकल्प (d) — सही: मुनसिफ-ए-मुनसिफान सरकार स्तर पर राजस्व और न्यायिक कार्यों के लिए जिम्मेदार अधिकारी था — शिकदार-ए-शिकदारान का प्रशासनिक समकक्ष।\n\nमूल्य संवर्धन:\n• प्रत्येक सरकार में शिकदार-ए-शिकदारान (कार्यकारी) और मुनसिफ-ए-मुनसिफान (राजस्व-न्यायिक) की जानबूझकर जोड़ी गई संरचना एक विरोधी एकाधिकार डिजाइन थी।\n• शेर शाह स्वयं अंतिम अपील न्यायालय के रूप में कार्य करते थे — व्यक्तिगत न्याय को वैधता देने वाले उपकरण के रूप में।\n• सरकार स्तर पर कार्यकारी और न्यायिक कार्यों का पृथक्करण बाद के औपनिवेशिक प्रशासनिक सिद्धांतों की पूर्वरूप है।"
+    }
+  },
+  {
+    "uuid": "e5430710-e82d-467f-8fb8-a1287d7beda2",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Centralization vs. Decentralization: The Core Tension in Sher Shah's Administration",
+        "Historiographical Debate: Sher Shah as Administrative Innovator vs. Synthesizer"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "scope-extension",
+      "concept_anchor": "Sher Shah's centralization — limits and historical debate",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the tensions between centralization and decentralization in Sher Shah Suri's administration:\n\n1. Sher Shah Suri's deliberate weakening of Afghan tribal chiefs was aimed at preventing the confederacy-model failure that had caused the Lodi dynasty's collapse.\n2. Sher Shah achieved a fully implemented centralized administration across his empire during his reign from 1540 to 1545.\n3. Sher Shah simultaneously empowered village-level officials such as the Muqaddam and Chaukidar, representing a form of selective grassroots decentralization alongside central authority consolidation.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 only\n(b) 1 and 3 only\n(c) 2 only\n(d) 2 and 3 only",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sher Shah Suri's deliberate weakening of Afghan tribal chiefs was aimed at preventing the confederacy-model failure that had caused the Lodi dynasty's collapse.",
+          "verdict": "Correct",
+          "reason": "This is a well-established interpretation — Sher Shah consciously broke the Afghan noble confederacy model that had made the Lodis vulnerable, centralizing authority in the Sultan."
+        },
+        {
+          "statement": "Sher Shah achieved a fully implemented centralized administration across his empire during his reign from 1540 to 1545.",
+          "verdict": "Incorrect",
+          "reason": "Sher Shah's reign lasted only five years — historians consistently note that many reforms were incomplete in implementation; the short reign prevented full administrative consolidation."
+        },
+        {
+          "statement": "Sher Shah simultaneously empowered village-level officials such as the Muqaddam and Chaukidar, representing a form of selective grassroots decentralization alongside central authority consolidation.",
+          "verdict": "Correct",
+          "reason": "The empowerment of village-level officials for policing and accountability while centralizing authority at the top represents the core tension in Sher Shah's administrative model — not a contradiction but a deliberate two-tier design."
+        }
+      ],
+      "strong_distractor": "a — Option (a) identifying only Statement 1 as NOT correct is a strong distractor because some students may mistake Statement 1 (weakening Afghan nobles) as revisionist and question it, while actually it is the correct and well-established interpretation.",
+      "elimination_logic": [
+        "Evaluate Statement 2: 'fully implemented' and 'complete' centralization — Sher Shah reigned only five years (1540–1545); sources confirm implementation was incomplete. Statement 2 is NOT correct.",
+        "Evaluate Statement 1: weakening Afghan nobles to prevent confederacy-model failure is the standard historical interpretation — Statement 1 IS correct.",
+        "Evaluate Statement 3: selective decentralization at the village level alongside centralization at the top is the documented tension in Sher Shah's model — Statement 3 IS correct.",
+        "Only Statement 2 is NOT correct — answer is option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2 exploits the assumption that because Sher Shah 'designed' comprehensive reforms, he also 'implemented' them fully. The five-year reign is the critical limiting factor — administrative historians consistently note the gap between Sher Shah's reform design and his incomplete implementation. The 'fully implemented' qualifier is the scope-extension that makes Statement 2 false.",
+      "final_explanation": "The central historiographical debate about Sher Shah is whether he was a thoroughgoing administrative reformer or a visionary whose execution was cut short by his short reign.\n\n• Statement 1 — Correct: Sher Shah's anti-noble policy was explicitly anti-confederacy — he had witnessed how Afghan noble power fragmented the Lodi state and consciously reversed this by making officials salaried and transferable.\n• Statement 2 — NOT Correct: Sher Shah ruled for only five years (1540–1545). Multiple sources and historians note that full implementation of his administrative framework was incomplete — the Mughal conquest under Humayun interrupted consolidation. 'Fully implemented' is the inaccurate qualifier.\n• Statement 3 — Correct: The simultaneous centralization at the top (breaking noble power) and decentralization at the bottom (empowering Muqaddams and Chaukidars) is the defining tension in Sher Shah's administrative model — a deliberate two-tier design, not a contradiction.\n\nValue Addition:\n• Only Statement 2 is NOT correct — answer is option (c).\n• Akbar, ruling for nearly 50 years, was able to systematize what Sher Shah had only sketched out in five.\n• The centralization-decentralization tension in Sher Shah's model anticipates debates in modern public administration about central control vs. local governance."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के प्रशासन में केंद्रीकरण और विकेंद्रीकरण के बीच तनावों के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. शेर शाह सूरी द्वारा अफगान जनजातीय प्रमुखों को जानबूझकर कमजोर करना उस संघ-मॉडल की विफलता को रोकने के उद्देश्य से था जिसने लोदी वंश के पतन का कारण बना था।\n2. शेर शाह ने 1540 से 1545 तक अपने शासनकाल के दौरान अपने साम्राज्य में पूरी तरह से लागू केंद्रीकृत प्रशासन स्थापित किया।\n3. शेर शाह ने एक ही समय में गांव स्तर के अधिकारियों जैसे मुकद्दम और चौकीदार को सशक्त किया, जो केंद्रीय सत्ता के साथ चयनात्मक जमीनी स्तर के विकेंद्रीकरण का प्रतिनिधित्व करता है।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1\n(b) केवल 1 और 3\n(c) केवल 2\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "शेर शाह सूरी द्वारा अफगान जनजातीय प्रमुखों को जानबूझकर कमजोर करना उस संघ-मॉडल की विफलता को रोकने के उद्देश्य से था जिसने लोदी वंश के पतन का कारण बना था।",
+          "verdict": "सही",
+          "reason": "यह एक स्थापित व्याख्या है — शेर शाह ने जानबूझकर अफगान कुलीन संघ मॉडल को तोड़ा था जिसने लोदियों को कमजोर बनाया था, और सत्ता को सुल्तान में केंद्रीकृत किया।"
+        },
+        {
+          "statement": "1540 से 1545 तक अपने शासनकाल के दौरान शेर शाह ने अपने साम्राज्य में पूरी तरह से लागू केंद्रीकृत प्रशासन स्थापित किया।",
+          "verdict": "गलत",
+          "reason": "शेर शाह का शासन केवल पाँच वर्षों का था — इतिहासकार लगातार यह बताते हैं कि कई सुधार अधूरे थे; छोटा शासनकाल पूर्ण प्रशासनिक समेकन को रोकता है।"
+        },
+        {
+          "statement": "शेर शाह ने एक ही समय में गांव स्तर के अधिकारियों जैसे मुकद्दम और चौकीदार को सशक्त किया, जो केंद्रीय सत्ता के साथ चयनात्मक जमीनी स्तर के विकेंद्रीकरण का प्रतिनिधित्व करता है।",
+          "verdict": "सही",
+          "reason": "गांव स्तर के अधिकारियों को पुलिसिंग और जवाबदेही के लिए सशक्त करना जबकि शीर्ष पर सत्ता केंद्रीकृत करना शेर शाह के प्रशासनिक मॉडल में मुख्य तनाव को दर्शाता है — यह विरोधाभास नहीं बल्कि जानबूझकर दो-स्तरीय डिज़ाइन है।"
+        }
+      ],
+      "strong_distractor": "कथन 1 को ही गलत बताने वाला विकल्प (a) एक मजबूत भ्रम है क्योंकि कुछ छात्र कथन 1 (अफगान कुलीनों को कमजोर करना) को संशोधनवादी समझ सकते हैं और प्रश्न कर सकते हैं, जबकि यह सही और स्थापित व्याख्या है।",
+      "elimination_logic": [
+        "कथन 2 का मूल्यांकन करें: 'पूरी तरह लागू' और 'पूर्ण' केंद्रीकरण — शेर शाह का शासन केवल पाँच वर्ष (1540–1545) था; स्रोत पुष्टि करते हैं कि कार्यान्वयन अधूरा था। अतः कथन 2 सही नहीं है।",
+        "कथन 1 का मूल्यांकन करें: संघ-मॉडल की विफलता रोकने के लिए अफगान कुलीनों को कमजोर करना मानक ऐतिहासिक व्याख्या है — अतः कथन 1 सही है।",
+        "कथन 3 का मूल्यांकन करें: शीर्ष पर केंद्रीकरण के साथ-साथ गांव स्तर पर चयनात्मक विकेंद्रीकरण शेर शाह के मॉडल में प्रलेखित तनाव है — अतः कथन 3 सही है।",
+        "केवल कथन 2 सही नहीं है — उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 इस धारणा का लाभ उठाता है कि चूंकि शेर शाह ने व्यापक सुधार 'डिज़ाइन' किए, इसलिए उन्होंने उन्हें पूरी तरह 'लागू' भी किया। पाँच वर्ष का शासनकाल सीमित कारक है — प्रशासनिक इतिहासकार लगातार शेर शाह के सुधार डिज़ाइन और अधूरे कार्यान्वयन के बीच अंतर बताते हैं। 'पूरी तरह लागू' शब्दावली कथन 2 को गलत बनाती है।",
+      "final_explanation": "शेर शाह के बारे में केंद्रीय ऐतिहासिक बहस यह है कि क्या वे एक पूर्ण प्रशासनिक सुधारक थे या एक दूरदर्शी जिन्होंने अपने छोटे शासनकाल के कारण कार्यान्वयन पूरा नहीं कर पाया।\n\n• कथन 1 — सही: शेर शाह की कुलीन-विरोधी नीति स्पष्ट रूप से संघ-विरोधी थी — उन्होंने देखा कि अफगान कुलीन शक्ति ने लोदी राज्य को कैसे विभाजित किया और इसे उलटने के लिए अधिकारियों को वेतनभोगी और स्थानांतरित करने योग्य बनाया।\n• कथन 2 — सही नहीं: शेर शाह केवल पाँच वर्ष (1540–1545) शासन किया। कई स्रोत और इतिहासकार बताते हैं कि उनके प्रशासनिक ढांचे का पूर्ण कार्यान्वयन अधूरा था — हुमायूँ के तहत मुगल विजय ने समेकन को बाधित किया। 'पूरी तरह लागू' गलत शब्द है।\n• कथन 3 — सही: शीर्ष पर केंद्रीकरण (कुलीन शक्ति को तोड़ना) और नीचे विकेंद्रीकरण (मुकद्दम और चौकीदारों को सशक्त करना) शेर शाह के प्रशासनिक मॉडल में परिभाषित तनाव है — यह जानबूझकर दो-स्तरीय डिज़ाइन है, विरोधाभास नहीं।\n\nमूल्यवर्धन:\n• केवल कथन 2 सही नहीं है — उत्तर विकल्प (c) है।\n• अकबर, जो लगभग 50 वर्ष शासन करता था, वह शेर शाह द्वारा पांच वर्षों में केवल रूपरेखा बनाए गए सुधारों को व्यवस्थित कर सका।\n• शेर शाह के मॉडल में केंद्रीकरण-विकेंद्रीकरण का तनाव आधुनिक लोक प्रशासन में केंद्रीय नियंत्रण बनाम स्थानीय शासन की बहसों की पूर्वसूचना करता है।"
+    }
+  },
+  {
+    "uuid": "f8d71dc6-01a6-40a1-a626-537b6a1e5f88",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Spy and Intelligence System",
+        "Sarai System: Administrative and Commercial Functions",
+        "Police Administration and the Muqaddam-Chaukidar System"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "fill-in-the-blank",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Barids as Sher Shah's intelligence officers",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Sher Shah Suri maintained a network of ________ who reported directly to him, bypassing the regular administrative hierarchy, to provide accurate intelligence about the conduct of provincial officials and the state of the empire — an institution with clear precedents in the earlier Delhi Sultanate period.\n\n(a) Muqaddams\n(b) Barids\n(c) Kotwals\n(d) Amils",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because 'Kotwal' is a well-known law-enforcement official in medieval Indian administration, and students may associate intelligence and surveillance functions with the Kotwal rather than the Barid.",
+      "elimination_logic": [
+        "Eliminate option (a): Muqaddam was the village headman responsible for local crime prevention — not a spy or intelligence reporter.",
+        "Eliminate option (c): Kotwal was an urban law enforcement and police official — a different function from the intelligence-reporting network reporting directly to the Sultan.",
+        "Eliminate option (d): Amil was a revenue collection official at the local level — not an intelligence operative.",
+        "Confirm option (b): Barid was the designated intelligence agent in Sher Shah's network — parallel to similar functions under Alauddin Khalji and Firoz Shah — reporting directly to Sher Shah."
+      ],
+      "upsc_trap_explanation": "The entity-swap trap places 'Kotwal' as the intuitive answer — students know Kotwals had police and surveillance roles in urban areas and may assume that intelligence gathering also fell under this office. The Barid was the specific intelligence agent who reported directly to the Sultan, distinct from the urban law-enforcement Kotwal.",
+      "final_explanation": "Sher Shah maintained a direct personal intelligence network using specially designated agents who bypassed the regular administrative chain.\n\n• Option (a) — Incorrect: Muqaddam was the village headman — responsible for local accountability and crime prevention, not a direct intelligence reporter to the Sultan.\n• Option (b) — Correct: Barids were the intelligence agents (spies) who reported directly to Sher Shah, forming a parallel information channel that bypassed official administrators — a system with precedents under Alauddin Khalji and Firoz Shah Tughlaq.\n• Option (c) — Incorrect: The Kotwal was the urban law-enforcement and policing official — an executive officer, not an intelligence reporter to the sovereign.\n• Option (d) — Incorrect: Amil was a revenue collector at the local level — a financial administrative role distinct from intelligence functions.\n\nValue Addition:\n• Sher Shah's intelligence network integrated with the Sarai system — Sarais doubled as information-gathering nodes where Muqaddams and Chaukidars reported on travellers and local events.\n• The Barid system had precedents in the Delhi Sultanate and was continued in various forms by the Mughals.\n• Administrative historians note the paradox: despite an extensive spy network, Sher Shah's officials feared punishment for reporting honestly — a recurring governance challenge in highly centralized systems."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी ने ________ का एक नेटवर्क बनाए रखा जो नियमित प्रशासनिक पदानुक्रम को दरकिनार करते हुए सीधे उन्हें रिपोर्ट करता था, ताकि प्रांतीय अधिकारियों के आचरण और साम्राज्य की स्थिति के बारे में सटीक खुफिया जानकारी प्रदान की जा सके — एक संस्था जिसके स्पष्ट पूर्ववर्ती दिल्ली सल्तनत काल में थे।\n\n(a) मुकद्दम\n(b) बारिद\n(c) कोतवाल\n(d) अमिल",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि 'कोतवाल' मध्यकालीन भारतीय प्रशासन में एक प्रसिद्ध कानून-प्रवर्तन अधिकारी था, और छात्र खुफिया और निगरानी कार्यों को बारिद के बजाय कोतवाल से जोड़ सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: मुकद्दम गाँव का मुखिया था जो स्थानीय अपराध रोकथाम के लिए जिम्मेदार था — जासूस या खुफिया रिपोर्टर नहीं।",
+        "विकल्प (c) को हटाएं: कोतवाल शहरी कानून-प्रवर्तन और पुलिस अधिकारी था — खुफिया रिपोर्टिंग नेटवर्क से अलग कार्य जो सीधे सुल्तान को रिपोर्ट करता था।",
+        "विकल्प (d) को हटाएं: अमिल स्थानीय स्तर पर राजस्व संग्रह अधिकारी था — खुफिया कार्यकर्ता नहीं।",
+        "विकल्प (b) की पुष्टि करें: बारिद शेर शाह के नेटवर्क में नामित खुफिया एजेंट थे — अलाउद्दीन खिलजी और फिरोज शाह के समान कार्यों के समानांतर — जो सीधे शेर शाह को रिपोर्ट करते थे।"
+      ],
+      "upsc_trap_explanation": "इकाई-स्थानांतरण भ्रम में 'कोतवाल' सहज उत्तर के रूप में रखा गया है — छात्र जानते हैं कि कोतवालों के पास शहरी क्षेत्रों में पुलिस और निगरानी की भूमिकाएँ थीं और वे मान सकते हैं कि खुफिया संग्रह भी इस कार्यालय के अंतर्गत आता था। बारिद वह विशिष्ट खुफिया एजेंट था जो सीधे सुल्तान को रिपोर्ट करता था, जो शहरी कानून-प्रवर्तन कोतवाल से भिन्न था।",
+      "final_explanation": "शेर शाह ने विशेष रूप से नामित एजेंटों का उपयोग करते हुए एक प्रत्यक्ष व्यक्तिगत खुफिया नेटवर्क बनाए रखा जो नियमित प्रशासनिक श्रृंखला को दरकिनार करता था।\n\n• विकल्प (a) — गलत: मुकद्दम गाँव का मुखिया था — स्थानीय जवाबदेही और अपराध रोकथाम के लिए जिम्मेदार, सीधे सुल्तान को खुफिया रिपोर्टर नहीं।\n• विकल्प (b) — सही: बारिद वे खुफिया एजेंट (जासूस) थे जो सीधे शेर शाह को रिपोर्ट करते थे, एक समानांतर सूचना चैनल बनाते थे जो आधिकारिक प्रशासकों को दरकिनार करता था — यह प्रणाली अलाउद्दीन खिलजी और फिरोज शाह तुगलक के तहत भी थी।\n• विकल्प (c) — गलत: कोतवाल शहरी कानून-प्रवर्तन और पुलिस अधिकारी था — कार्यकारी अधिकारी, सुल्तान को खुफिया रिपोर्टर नहीं।\n• विकल्प (d) — गलत: अमिल स्थानीय स्तर पर राजस्व संग्रहकर्ता था — खुफिया कार्यों से अलग वित्तीय प्रशासनिक भूमिका।\n\nमूल्य संवर्धन:\n• शेर शाह का खुफिया नेटवर्क सराय प्रणाली के साथ जुड़ा था — सराय सूचना-संग्रहण केंद्र के रूप में कार्य करते थे जहाँ मुकद्दम और चौकीदार यात्रियों और स्थानीय घटनाओं की रिपोर्ट करते थे।\n• बारिद प्रणाली का दिल्ली सल्तनत में पूर्ववर्ती थे और मुगलों द्वारा विभिन्न रूपों में जारी रखा गया।\n• प्रशासनिक इतिहासकार इस विरोधाभास को नोट करते हैं: व्यापक जासूसी नेटवर्क के बावजूद, शेर शाह के अधिकारी ईमानदारी से रिपोर्ट करने पर दंड से डरते थे — जो अत्यधिक केंद्रीकृत प्रणालियों में शासन की एक बार-बार आने वाली चुनौती है।"
+    }
+  },
+  {
+    "uuid": "3f18a568-15d5-403e-98fd-fe9617135413",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Historiographical Debate: Sher Shah as Administrative Innovator vs. Synthesizer",
+        "Military Administration and the Branding (Dagh) System",
+        "Revenue System: Zabt (Measurement-based Assessment)"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "match-the-column",
+      "trap_type": "entity-swap",
+      "concept_anchor": "Attribution of reforms — Sher Shah vs. Alauddin vs. Akbar",
+      "has_table": true
+    },
+    "en": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "Match the administrative reform or institution in List I with the ruler most correctly associated with its introduction or systematic implementation in List II:",
+        "columns": [
+          "List I",
+          "List II"
+        ],
+        "rows": [
+          [
+            "A. Dagh system (branding of horses at military musters)",
+            "1. Sher Shah Suri — road reconstruction"
+          ],
+          [
+            "B. Zabti revenue settlement (systematic empire-wide implementation)",
+            "2. Alauddin Khalji"
+          ],
+          [
+            "C. Silver Rupiya as a standardized currency unit",
+            "3. Sher Shah Suri — monetary reform"
+          ],
+          [
+            "D. Reconstruction of Sadak-i-Azam from Sonargaon to Peshawar",
+            "4. Akbar (systematized by Todar Mal)"
+          ]
+        ],
+        "footer_text": "Which of the following is the correct matching?\n\n(a) A-3, B-2, C-1, D-4\n(b) A-2, B-3, C-4, D-1\n(c) A-2, B-4, C-3, D-1\n(d) A-2, B-3, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because it correctly pairs Dagh with Alauddin Khalji but incorrectly assigns the Zabti system to Sher Shah rather than to Akbar-Todar Mal, exploiting the attribution confusion between precursor and inheritor.",
+      "elimination_logic": [
+        "Anchor the most certain match: Dagh (branding of horses) was introduced by Alauddin Khalji — A matches with 2.",
+        "Zabti system (mature revenue settlement) is associated with Akbar under Todar Mal's administration — B matches with 4.",
+        "Silver Rupiya as a standard coin was introduced by Sher Shah Suri — C matches with 3.",
+        "Grand Trunk Road reconstruction is Sher Shah's contribution — D matches with 1, giving A-2, B-4, C-3, D-1 = option (c)."
+      ],
+      "upsc_trap_explanation": "The trap is in pairing B (Zabti system) — students know Sher Shah had a Zabt system and may pair B with Sher Shah (option 3). But the specific term 'Zabti' as a mature, systematically implemented revenue settlement refers to Akbar's Todar Mal period. Sher Shah's measurement-based system was the precursor; Akbar's Zabti was the mature successor. The option set is designed to exploit this precursor-successor confusion.",
+      "final_explanation": "Precise attribution of medieval administrative reforms is one of the highest-yield test areas — knowing who introduced, who revived, and who systematized each reform.\n\nCorrect Matches: A-2, B-4, C-3, D-1\n\n• A (Dagh system — branding of horses) — 2 (Alauddin Khalji): Alauddin introduced Dagh as part of his military reforms to prevent horse substitution at musters. Sher Shah revived it but did not originate it.\n• B (Zabti revenue settlement system) — 4 (Akbar, systematized by Todar Mal): The mature Zabti system — comprehensive measurement-based settlement applied systematically across the empire — belongs to Akbar's reign under Todar Mal. Sher Shah's Zabt was the precursor.\n• C (Silver Rupiya as standardized currency) — 3 (Sher Shah Suri): Sher Shah introduced the silver Rupiya of 180 grains — the monetary standard inherited by the Mughals.\n• D (Reconstruction of Sadak-i-Azam / Grand Trunk Road) — 1 (Sher Shah Suri): The reconstruction and extension of the route from Sonargaon to Peshawar is Sher Shah's documented contribution.\n\nTrap pair: B-3 (Zabti with Sher Shah) is the near-miss that catches students who conflate Zabt (Sher Shah's method) with Zabti (Akbar's systematized version).\n\nValue Addition:\n• The precursor-inheritor distinction (Sher Shah → Akbar) is a recurring UPSC pattern in this topic.\n• Todar Mal's Bandobast is the formal name for the mature Zabti settlement under Akbar.\n• All four reforms listed represent major medieval administrative milestones — knowing their correct attribution is essential for elimination questions."
+    },
+    "hi": {
+      "display_text": null,
+      "table_data": {
+        "header_text": "सूची I में प्रशासनिक सुधार या संस्था को सूची II में उस शासक के साथ मिलाएं जो इसे शुरू करने या व्यवस्थित रूप से लागू करने के लिए सबसे सही रूप से जाना जाता है:",
+        "columns": [
+          "सूची I",
+          "सूची II"
+        ],
+        "rows": [
+          [
+            "A. दाग प्रणाली (सैन्य मुस्तरों में घोड़ों पर ब्रांडिंग)",
+            "1. शेर शाह सूरी — सड़क पुनर्निर्माण"
+          ],
+          [
+            "B. ज़ब्ती राजस्व निपटान (साम्राज्यव्यापी व्यवस्थित कार्यान्वयन)",
+            "2. अलाउद्दीन खिलजी"
+          ],
+          [
+            "C. चांदी का रुपया एक मानकीकृत मुद्रा इकाई के रूप में",
+            "3. शेर शाह सूरी — मौद्रिक सुधार"
+          ],
+          [
+            "D. सड़क-ए-आज़म का पुनर्निर्माण सोनारगाँव से पेशावर तक",
+            "4. अकबर (टोडर मल द्वारा व्यवस्थित)"
+          ]
+        ],
+        "footer_text": "निम्नलिखित में से कौन-सा सही मिलान है?\n\n(a) A-3, B-2, C-1, D-4\n(b) A-2, B-3, C-4, D-1\n(c) A-2, B-4, C-3, D-1\n(d) A-2, B-3, C-1, D-4"
+      },
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह दाग को अलाउद्दीन खिलजी के साथ सही जोड़ता है लेकिन ज़ब्ती प्रणाली को शेर शाह के बजाय अकबर-टोडर मल को गलत तरीके से सौंपता है, जो पूर्ववर्ती और उत्तराधिकारी के बीच भ्रम का फायदा उठाता है।",
+      "elimination_logic": [
+        "सबसे निश्चित मिलान को आधार बनाएं: दाग (घोड़ों पर ब्रांडिंग) अलाउद्दीन खिलजी ने शुरू किया था — A का मिलान 2 से।",
+        "ज़ब्ती प्रणाली (परिपक्व राजस्व निपटान) अकबर के शासनकाल में टोडर मल के प्रशासन से जुड़ी है — B का मिलान 4 से।",
+        "चांदी का रुपया एक मानकीकृत सिक्का के रूप में शेर शाह सूरी ने शुरू किया — C का मिलान 3 से।",
+        "सड़क-ए-आज़म का पुनर्निर्माण शेर शाह का योगदान है — D का मिलान 1 से, जिससे A-2, B-4, C-3, D-1 = विकल्प (c) बनता है।"
+      ],
+      "upsc_trap_explanation": "फंदा B (ज़ब्ती प्रणाली) के जोड़ में है — छात्र जानते हैं कि शेर शाह के पास ज़ब्त प्रणाली थी और B को शेर शाह (विकल्प 3) के साथ जोड़ सकते हैं। लेकिन 'ज़ब्ती' शब्द विशेष रूप से अकबर के टोडर मल काल की परिपक्व, व्यवस्थित राजस्व व्यवस्था को संदर्भित करता है। शेर शाह की मापन-आधारित प्रणाली पूर्ववर्ती थी; अकबर की ज़ब्ती परिपक्व उत्तराधिकारी थी। विकल्प सेट इस पूर्ववर्ती-उत्तराधिकारी भ्रम का फायदा उठाने के लिए डिज़ाइन किया गया है।",
+      "final_explanation": "मध्यकालीन प्रशासनिक सुधारों का सटीक श्रेय देना उच्चतम मूल्य वाले परीक्षा क्षेत्रों में से एक है — यह जानना कि किसने कौन-सा सुधार शुरू किया, पुनर्जीवित किया और व्यवस्थित किया।\n\nसही मिलान: A-2, B-4, C-3, D-1\n\n• A (दाग प्रणाली — सैन्य मुस्तरों में घोड़ों पर ब्रांडिंग) — 2 (अलाउद्दीन खिलजी): दाग को अलाउद्दीन ने अपने सैन्य सुधारों के हिस्से के रूप में शुरू किया ताकि घोड़ों के स्थानांतरण को रोका जा सके। शेर शाह ने इसे पुनर्जीवित किया लेकिन इसकी शुरुआत नहीं की।\n• B (ज़ब्ती राजस्व निपटान प्रणाली) — 4 (अकबर, टोडर मल द्वारा व्यवस्थित): परिपक्व ज़ब्ती प्रणाली — व्यापक मापन-आधारित निपटान जो पूरे साम्राज्य में व्यवस्थित रूप से लागू हुई — अकबर के शासनकाल की है, टोडर मल के तहत। शेर शाह की ज़ब्त पूर्ववर्ती थी।\n• C (चांदी का रुपया एक मानकीकृत मुद्रा इकाई के रूप में) — 3 (शेर शाह सूरी): शेर शाह ने 180 ग्रेन का चांदी रुपया शुरू किया — जो मुगलों द्वारा अपनाया गया।\n• D (सड़क-ए-आज़म का पुनर्निर्माण सोनारगाँव से पेशावर तक) — 1 (शेर शाह सूरी): सोनारगाँव से पेशावर तक मार्ग का पुनर्निर्माण और विस्तार शेर शाह का प्रमाणित योगदान है।\n\nफंदा जोड़ी: B-3 (ज़ब्ती के साथ शेर शाह) वह लगभग सही मिलान है जो उन छात्रों को फंसाता है जो ज़ब्त (शेर शाह की विधि) को ज़ब्ती (अकबर की व्यवस्थित प्रणाली) के साथ भ्रमित करते हैं।\n\nमूल्यवर्धन:\n• पूर्ववर्ती-उत्तराधिकारी भेद (शेर शाह → अकबर) UPSC में इस विषय का एक बार-बार आने वाला पैटर्न है।\n• टोडर मल का बंदोबस्त अकबर के तहत परिपक्व ज़ब्ती निपटान का औपचारिक नाम है।\n• सूचीबद्ध चारों सुधार मध्यकालीन प्रशासनिक मील के पत्थर हैं — इनके सही श्रेय को जानना बहिष्करण प्रश्नों के लिए आवश्यक है।"
+    }
+  },
+  {
+    "uuid": "f4775fd4-8cb5-43d5-8c20-062cf28a46f1",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Pargana Administration: The Five Officials",
+        "Anti-Corruption Measures and Accountability of Officials"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "direct",
+      "trap_type": "conflation",
+      "concept_anchor": "Fotadar's specific treasury function at Pargana",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Among the officials stationed at the Pargana level under Sher Shah Suri's administrative system, which one was specifically responsible for maintaining the local treasury — receiving collected revenues and managing disbursements?\n\n(a) Karkun\n(b) Amin\n(c) Shiqdar\n(d) Fotadar",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because 'Amin' is the most discussed revenue official at the Pargana level and students may conflate treasury management with revenue assessment, attributing both to the Amin.",
+      "elimination_logic": [
+        "Eliminate option (a): Karkuns were bilingual record-keepers — scribes maintaining administrative documents, not treasury officers.",
+        "Eliminate option (b): The Amin was responsible for field-level land measurement and revenue assessment — assessment, not treasury custody.",
+        "Eliminate option (c): The Shiqdar at the Pargana level maintained law and order — an executive-police function, not financial.",
+        "Confirm option (d): The Fotadar was the treasury official at the Pargana level — responsible for receiving, safeguarding, and disbursing local revenues."
+      ],
+      "upsc_trap_explanation": "The conflation trap merges revenue assessment (Amin) with treasury management (Fotadar). Students who know that both officials handle 'money-related' functions may attribute treasury duties to the Amin — the more frequently mentioned official. The Fotadar is a distinct and specific role that is less often separately taught, making it a reliable differentiating question.",
+      "final_explanation": "Each of the five Pargana officials had a precisely defined, non-overlapping function — this specificity is what makes the Pargana system an elegant administrative design.\n\n• Option (a) — Incorrect: Karkuns were the bilingual scribes (two per Pargana) maintaining records in Persian and Hindi — a documentation role, not a financial custody role.\n• Option (b) — Incorrect: The Amin assessed revenue through field measurement — a technical evaluation role. Receiving and disbursing collected revenue was a separate treasury function.\n• Option (c) — Incorrect: The Shiqdar at the Pargana level was responsible for law and order — the executive and police function.\n• Option (d) — Correct: The Fotadar was the treasury officer at the Pargana level — responsible for receiving collected revenues, maintaining the local treasury, and disbursing as authorized. This role was the financial complement to the Amin's assessment function.\n\nValue Addition:\n• The five Pargana officials: Shiqdar (executive/police), Amin (revenue assessment), Fotadar (treasury), and two Karkuns (bilingual record-keeping).\n• The functional separation among the five officials was an anti-corruption design — no single official controlled both assessment and collection.\n• The Fotadar-Amin separation (assessment vs. custody) anticipates modern principles of financial internal controls."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के प्रशासनिक तंत्र के तहत परगना स्तर पर तैनात अधिकारियों में से कौन स्थानीय कोषागार बनाए रखने — संग्रहित राजस्व प्राप्त करने और वितरण प्रबंधित करने — के लिए विशेष रूप से जिम्मेदार था?\n\n(a) कारकुन\n(b) अमीन\n(c) शिकदार\n(d) फोटादार",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि 'अमीन' पर परगना स्तर पर सबसे अधिक चर्चा होती है और छात्र राजस्व आकलन को कोषागार प्रबंधन के साथ मिला सकते हैं, दोनों को अमीन से जोड़ते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: कारकुन द्विभाषी अभिलेख-रक्षक थे — प्रशासनिक दस्तावेजों को बनाए रखने वाले लिपिक, कोषागार अधिकारी नहीं।",
+        "विकल्प (b) को हटाएं: अमीन क्षेत्रीय स्तर पर भूमि मापन और राजस्व आकलन के लिए जिम्मेदार था — आकलन, कोषागार संरक्षण नहीं।",
+        "विकल्प (c) को हटाएं: परगना स्तर पर शिकदार कानून और व्यवस्था बनाए रखता था — एक कार्यकारी- पुलिस कार्य, वित्तीय नहीं।",
+        "विकल्प (d) की पुष्टि करें: फोटादार परगना स्तर पर कोषागार अधिकारी था — स्थानीय राजस्व प्राप्त करने, सुरक्षित रखने और वितरण के लिए जिम्मेदार।"
+      ],
+      "upsc_trap_explanation": "यह भ्रम पैदा करने वाला जाल राजस्व आकलन (अमीन) कोषागार प्रबंधन (फोटादार) के साथ मिला देता है। जो छात्र जानते हैं कि दोनों अधिकारी 'पैसे से संबंधित' कार्य करते हैं, वे कोषागार कर्तव्य अमीन को दे सकते हैं — जो अधिक बार उल्लेखित अधिकारी है। फोटादार एक विशिष्ट और अलग भूमिका है जिसे कम सिखाया जाता है, इसलिए यह एक विश्वसनीय भेद करने वाला प्रश्न है।",
+      "final_explanation": "परगना के पांच अधिकारियों में से प्रत्येक की एक सटीक और गैर-ओवरलैपिंग भूमिका थी — यही परगना प्रणाली को एक उत्कृष्ट प्रशासनिक डिज़ाइन बनाती है।\n\n• विकल्प (a) — गलत: कारकुन द्विभाषी लिपिक थे (प्रत्येक परगना में दो) जो फारसी और हिंदी में अभिलेख बनाए रखते थे — एक दस्तावेजीकरण भूमिका, वित्तीय संरक्षण की भूमिका नहीं।\n• विकल्प (b) — गलत: अमीन क्षेत्रीय मापन के माध्यम से राजस्व का आकलन करता था — एक तकनीकी मूल्यांकन भूमिका। संग्रहित राजस्व प्राप्त करना और वितरित करना एक अलग कोषागार कार्य था।\n• विकल्प (c) — गलत: परगना स्तर पर शिकदार कानून और व्यवस्था के लिए जिम्मेदार था — कार्यकारी और पुलिस कार्य।\n• विकल्प (d) — सही: फोटादार परगना स्तर पर कोषागार अधिकारी था — संग्रहित राजस्व प्राप्त करने, स्थानीय कोषागार बनाए रखने और अधिकृत वितरण के लिए जिम्मेदार। यह भूमिका अमीन के आकलन कार्य की वित्तीय पूरक थी।\n\nमूल्य संवर्धन:\n• पांच परगना अधिकारी: शिकदार (कार्यकारी/पुलिस), अमीन (राजस्व आकलन), फोटादार (कोषागार), और दो कारकुन (द्विभाषी अभिलेख-रक्षण)।\n• पांच अधिकारियों के बीच कार्यात्मक पृथक्करण भ्रष्टाचार विरोधी डिज़ाइन था — कोई एक अधिकारी आकलन और संग्रह दोनों नियंत्रित नहीं करता था।\n• फोटादार-अमीन पृथक्करण (आकलन बनाम संरक्षण) आधुनिक वित्तीय आंतरिक नियंत्रण सिद्धांतों की पूर्वसूचना करता है।"
+    }
+  },
+  {
+    "uuid": "55428b84-fdac-402c-80f2-671fa65b13c8",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Judicial Administration and Sher Shah's Personal Justice",
+        "Anti-Corruption Measures and Accountability of Officials"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "assertion-reason",
+      "trap_type": null,
+      "concept_anchor": "Sher Shah as final court of appeal — personal justice as legitimacy",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Assertion (A): Sher Shah Suri personally served as the final court of appeal, directly hearing petitions and dispensing justice as part of his governing practice.\n\nReason (R): Sher Shah's administration lacked a separately codified imperial legal system, operating instead through Sharia and customary law, which necessitated the Sultan's personal intervention as the ultimate judicial authority.\n\n(a) Both A and R are correct, and R is the correct explanation of A\n(b) Both A and R are correct, but R is NOT the correct explanation of A\n(c) A is correct but R is incorrect\n(d) A is incorrect but R is correct",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) is a strong distractor because both A and R are factually correct and students may assume the absence of codified law explains why Sher Shah personally dispensed justice, but the actual explanation in R (legitimacy-building) is a different causal claim from 'filling a legal gap'.",
+      "elimination_logic": [
+        "Step 1 — Is Assertion (A) correct? Sher Shah positioned himself as the final court of appeal and personally dispensed justice — A is correct.",
+        "Step 2 — Is Reason (R) correct? Sher Shah's administration operated through Sharia and customary law without a separately codified legal system — R is correct.",
+        "Step 3 — Does R explain A? R says the absence of codified law is why Sher Shah personally dispensed justice. But historians identify personal justice dispensation primarily as a legitimacy-building and authority-consolidating tool — not as a gap-filling necessity created by the absence of codification. The causal link is not the strongest — Sher Shah could have delegated justice to Qazis even without a codified system. R is a contextual fact, not the explanation of A.",
+        "A correct + R correct + R does NOT causally explain A = option (b)."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Sher Shah's personal administration of justice was one of the most celebrated aspects of his reign — but its cause requires careful analysis separate from the structure of the legal system.\n\nAssertion (A): Sher Shah Suri personally served as the final court of appeal, directly hearing petitions and dispensing justice — this is historically documented and is presented through anecdotes such as his statement about equal justice even for his own son.\n\nReason (R): Sher Shah's legal system operated through Sharia (Islamic law) and customary practices without a separately codified imperial legal code — this is also factually correct.\n\nCausal Evaluation: R provides a correct contextual description, but it does not explain why Sher Shah personally heard cases. Rulers operating under Sharia — both before and after Sher Shah — delegated judicial functions to Qazis and Munsifs without personally hearing all appeals. Sher Shah's personal justice dispensation was a deliberate political and legitimizing act — a tool to demonstrate royal accessibility and moral authority — not a structural necessity created by the absence of codification. R and A are both true but causally unconnected — option (b).\n\nValue Addition:\n• Personal royal justice (Adalat) as legitimacy was a common medieval governance strategy across Islamic sultanates.\n• The Munsif-i-Munsifan at the Sarkar level was the formal judicial officer — Sher Shah's personal role was additive, not substitutive.\n• The 'equal justice' anecdote (even for his own son) is cited from Tarikh-i-Sher Shahi and should be treated as a legitimizing narrative, not necessarily a literal transcript."
+    },
+    "hi": {
+      "display_text": "कथन (A): शेर शाह सूरी ने व्यक्तिगत रूप से अंतिम अपील न्यायालय के रूप में कार्य किया, सीधे याचिकाएं सुनीं और अपने शासन के अभ्यास के हिस्से के रूप में न्याय दिया।\n\nकारण (R): शेर शाह के प्रशासन में कोई अलग संहिताबद्ध साम्राज्यिक कानूनी प्रणाली नहीं थी, बल्कि शरिया और प्रथागत कानून के माध्यम से संचालित था, जिसके कारण सुल्तान को अंतिम न्यायिक प्राधिकारी के रूप में व्यक्तिगत हस्तक्षेप करना आवश्यक था।\n\n(a) A और R दोनों सही हैं, और R, A की सही व्याख्या है\n(b) A और R दोनों सही हैं, लेकिन R, A की सही व्याख्या नहीं है\n(c) A सही है लेकिन R गलत है\n(d) A गलत है लेकिन R सही है",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) एक मजबूत भ्रम है क्योंकि A और R दोनों तथ्यात्मक रूप से सही हैं और छात्र यह मान सकते हैं कि संहिताबद्ध कानून की अनुपस्थिति के कारण शेर शाह ने व्यक्तिगत रूप से न्याय दिया, लेकिन R में वास्तविक व्याख्या (वैधता निर्माण) 'कानूनी अंतर को भरना' से अलग कारणात्मक दावा है।",
+      "elimination_logic": [
+        "चरण 1 — क्या कथन (A) सही है? शेर शाह ने स्वयं को अंतिम अपील न्यायालय के रूप में स्थापित किया और व्यक्तिगत रूप से न्याय दिया — A सही है।",
+        "चरण 2 — क्या कारण (R) सही है? शेर शाह का प्रशासन शरिया और प्रथागत कानून के माध्यम से संचालित था, बिना किसी अलग संहिताबद्ध कानूनी प्रणाली के — R सही है।",
+        "चरण 3 — क्या R, A की व्याख्या करता है? R कहता है कि संहिताबद्ध कानून की अनुपस्थिति के कारण शेर शाह ने व्यक्तिगत रूप से न्याय दिया। लेकिन इतिहासकार व्यक्तिगत न्याय को मुख्यतः वैधता निर्माण और अधिकार सुदृढ़ीकरण के उपकरण के रूप में पहचानते हैं — न कि संहिताबद्धता की अनुपस्थिति से उत्पन्न अंतर को भरने की आवश्यकता के रूप में। कारणात्मक संबंध सबसे मजबूत नहीं है — शेर शाह बिना संहिताबद्ध प्रणाली के भी न्याय काज़ियों को सौंप सकते थे। R एक संदर्भात्मक तथ्य है, A की व्याख्या नहीं।",
+        "A सही + R सही + R, A की कारणात्मक व्याख्या नहीं करता = विकल्प (b)।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "शेर शाह का व्यक्तिगत न्याय प्रशासन उनके शासन के सबसे प्रसिद्ध पहलुओं में से एक था — लेकिन इसका कारण कानूनी प्रणाली की संरचना से अलग सावधानीपूर्वक विश्लेषण मांगता है।\n\nकथन (A): शेर शाह सूरी ने व्यक्तिगत रूप से अंतिम अपील न्यायालय के रूप में कार्य किया, सीधे याचिकाएं सुनीं और न्याय दिया — यह ऐतिहासिक रूप से प्रमाणित है और उनके अपने पुत्र के लिए भी समान न्याय के कथन जैसे किस्सों के माध्यम से प्रस्तुत किया जाता है।\n\nकारण (R): शेर शाह की कानूनी प्रणाली शरिया (इस्लामी कानून) और प्रथागत प्रथाओं के माध्यम से संचालित होती थी, बिना किसी अलग संहिताबद्ध साम्राज्यिक कानूनी संहिता के — यह भी तथ्यात्मक रूप से सही है।\n\nकारणात्मक मूल्यांकन: R एक सही संदर्भात्मक विवरण प्रदान करता है, लेकिन यह नहीं बताता कि शेर शाह ने व्यक्तिगत रूप से मामले क्यों सुने। शरिया के तहत कार्य करने वाले शासक — शेर शाह से पहले और बाद में — न्यायिक कार्य काज़ियों और मुनसिफों को सौंपते थे बिना सभी अपीलों को व्यक्तिगत रूप से सुने। शेर शाह का व्यक्तिगत न्याय प्रशासन एक जानबूझकर राजनीतिक और वैधता निर्माण का कार्य था — एक उपकरण जो शाही पहुंच और नैतिक अधिकार दिखाता था — न कि संहिताबद्धता की अनुपस्थिति से उत्पन्न संरचनात्मक आवश्यकता। R और A दोनों सत्य हैं लेकिन कारणात्मक रूप से असंबंधित — विकल्प (b)।\n\nमूल्य संवर्धन:\n• वैधता के रूप में व्यक्तिगत शाही न्याय (अदालत) इस्लामी सल्तनतों में मध्यकालीन शासन की सामान्य रणनीति थी।\n• सरकार स्तर पर मुनसिफ-ए-मुनसिफान औपचारिक न्यायिक अधिकारी था — शेर शाह की व्यक्तिगत भूमिका पूरक थी, प्रतिस्थापन नहीं।\n• 'समान न्याय' की कथा (यहां तक कि अपने पुत्र के लिए भी) ताऱीख-ए-शेरशाही से उद्धृत है और इसे वैधता निर्माण वाली कथा के रूप में लेना चाहिए, अनिवार्य रूप से शाब्दिक अभिलेख के रूप में नहीं।"
+    }
+  },
+  {
+    "uuid": "02446f7c-ded1-4265-abf8-3829bcc7eabf",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Sher Shah's Revenue Administration: Role of the Amin",
+        "Pargana Administration: The Five Officials"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "application-scenario",
+      "trap_type": null,
+      "concept_anchor": "Amin vs. Munsif — distinguishing revenue from judicial functions",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "An administrative record from the early sixteenth century describes a revenue official who travels to each cultivated field within his jurisdiction, physically measures the land using a standardized unit, estimates the expected crop yield, and calculates the peasant's tax liability based on these measurements. He then communicates this assessment to the record-keepers and the treasury official. The official operates at the Pargana level.\n\nThe official described in this account corresponds most precisely to which of the following in Sher Shah Suri's administrative system?\n\n(a) Shiqdar (at Pargana level)\n(b) Fotadar\n(c) Amin\n(d) Munsif-i-Munsifan",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — Option (d) is a strong distractor because students may confuse Munsif (judicial/revenue officer at Sarkar level) with the Amin (field revenue assessor at Pargana level) — the similarity in revenue-adjacent functions makes this confusion highly plausible.",
+      "elimination_logic": [
+        "The scenario describes an official who personally walks fields, measures land, and estimates crop yields to calculate tax liability — this is purely a revenue assessment function at the field level.",
+        "Eliminate option (a): Shiqdar handles law and order — not crop measurement and yield estimation.",
+        "Eliminate option (b): Fotadar manages the treasury — receives and disburses revenue — not field assessment.",
+        "Eliminate option (d): Munsif-i-Munsifan is at the Sarkar level with judicial-revenue functions — not the field-level crop assessor at Pargana.",
+        "Confirm option (c): The Amin at the Pargana level personally measured land and assessed crop yields — the scenario matches exactly."
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "Field-level revenue assessment required specialized technical knowledge — measuring land and estimating yields demanded an official with specific training and direct physical presence in cultivated areas.\n\nThe scenario describes an official going to individual fields, measuring their extent using a standard unit (Bigha), and estimating expected crop yields to calculate the peasant's revenue obligation. This is the defining function of the Amin at the Pargana level.\n\n• Option (a) — Incorrect: The Shiqdar at the Pargana level was responsible for law and order — maintaining peace, not crop measurement.\n• Option (b) — Incorrect: The Fotadar was the treasury officer — receiving and disbursing revenue already collected, not conducting field assessments.\n• Option (c) — Correct: The Amin personally assessed land and crops at the field level — the primary revenue technical expert at the Pargana. His assessments formed the basis for the Patta issued to the peasant.\n• Option (d) — Incorrect: The Munsif-i-Munsifan was the revenue-judicial officer at the Sarkar level — a higher-level official, not the field-level crop assessor.\n\nValue Addition:\n• The Amin's field-level work was the empirical foundation of the Zabt system — without accurate measurement, the system could not function.\n• Amin vs. Munsif confusion is one of the most common errors in answers on Sher Shah's administration — the level (Pargana vs. Sarkar) and function (assessment vs. judicial-revenue) are the distinguishing criteria.\n• Under Akbar, the Amin institution continued under Todar Mal's Zabti system with similar assessment responsibilities."
+    },
+    "hi": {
+      "display_text": "सोलहवीं सदी के प्रारंभिक काल का एक प्रशासनिक अभिलेख एक ऐसे राजस्व अधिकारी का वर्णन करता है जो अपने क्षेत्राधिकार के प्रत्येक कृषि योग्य खेत में जाकर, मानकीकृत इकाई का उपयोग कर भूमि का भौतिक मापन करता है, अपेक्षित फसल उपज का अनुमान लगाता है, और इन मापों के आधार पर किसान के कर दायित्व की गणना करता है। वह फिर इस आकलन को अभिलेख-रखने वालों और कोषागार अधिकारी को सूचित करता है। यह अधिकारी परगना स्तर पर कार्य करता है।\n\nइस विवरण में वर्णित अधिकारी शेर शाह सूरी के प्रशासनिक तंत्र में निम्नलिखित में से किसके सबसे सटीक रूप से मेल खाता है?\n\n(a) शिकदार (परगना स्तर पर)\n(b) फोटादार\n(c) अमीन\n(d) मुनसिफ-ए-मुनसिफान",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "d — विकल्प (d) एक मजबूत भ्रम पैदा करने वाला है क्योंकि छात्र मुनसिफ (सरकार स्तर पर न्यायिक/राजस्व अधिकारी) को अमीन (परगना स्तर पर क्षेत्रीय राजस्व आकलक) से भ्रमित कर सकते हैं — राजस्व से संबंधित कार्यों में समानता इस भ्रम को अत्यंत संभावित बनाती है।",
+      "elimination_logic": [
+        "परिदृश्य में वर्णित अधिकारी व्यक्तिगत रूप से खेतों में जाकर भूमि मापता है और फसल की उपज का अनुमान लगाकर कर दायित्व निर्धारित करता है — यह पूरी तरह से क्षेत्रीय स्तर पर राजस्व आकलन का कार्य है।",
+        "विकल्प (a) को हटाएं: शिकदार कानून और व्यवस्था संभालता है — फसल मापन और उपज अनुमान नहीं।",
+        "विकल्प (b) को हटाएं: फोटादार कोषागार का प्रबंधक है — राजस्व प्राप्ति और वितरण करता है — क्षेत्रीय आकलन नहीं।",
+        "विकल्प (d) को हटाएं: मुनसिफ-ए-मुनसिफान सरकार स्तर पर न्यायिक-राजस्व कार्य करता है — परगना स्तर का क्षेत्रीय फसल आकलक नहीं।",
+        "विकल्प (c) की पुष्टि करें: परगना स्तर पर अमीन व्यक्तिगत रूप से भूमि मापता और फसल उपज का आकलन करता था — परिदृश्य पूरी तरह मेल खाता है।"
+      ],
+      "upsc_trap_explanation": null,
+      "final_explanation": "क्षेत्रीय स्तर पर राजस्व आकलन के लिए विशेष तकनीकी ज्ञान आवश्यक था — भूमि मापन और उपज का अनुमान लगाने के लिए ऐसे अधिकारी की आवश्यकता थी जिनके पास विशिष्ट प्रशिक्षण हो और जो सीधे कृषि क्षेत्रों में उपस्थित हों।\n\nपरिदृश्य में वर्णित अधिकारी व्यक्तिगत रूप से प्रत्येक खेत में जाकर मानकीकृत इकाई (बीघा) से भूमि का मापन करता है और अनुमानित फसल उपज का आकलन कर किसान के राजस्व दायित्व की गणना करता है। यह परगना स्तर पर अमीन का मुख्य कार्य था।\n\n• विकल्प (a) — गलत: परगना स्तर पर शिकदार कानून-व्यवस्था का प्रभारी था — फसल मापन नहीं।\n• विकल्प (b) — गलत: फोटादार कोषागार अधिकारी था — पहले से संग्रहित राजस्व की प्राप्ति और वितरण करता था, क्षेत्रीय आकलन नहीं।\n• विकल्प (c) — सही: अमीन व्यक्तिगत रूप से क्षेत्रीय स्तर पर भूमि और फसल का आकलन करता था — परगना का मुख्य राजस्व तकनीकी विशेषज्ञ। उसकी आकलन के आधार पर किसान को पट्टा दिया जाता था।\n• विकल्प (d) — गलत: मुनसिफ-ए-मुनसिफान सरकार स्तर का न्यायिक-राजस्व अधिकारी था — क्षेत्रीय फसल आकलक नहीं।\n\nमूल्य संवर्धन:\n• अमीन का क्षेत्रीय कार्य ज़ब्त प्रणाली की अनुभवजन्य नींव था — बिना सटीक मापन के यह प्रणाली कार्य नहीं कर सकती थी।\n• अमीन और मुनसिफ के बीच भ्रम शेर शाह के प्रशासन पर उत्तरों में सबसे सामान्य त्रुटियों में से एक है — स्तर (परगना बनाम सरकार) और कार्य (आकलन बनाम न्यायिक-राजस्व) भेद करने वाले मानदंड हैं।\n• अकबर के शासनकाल में अमीन संस्था टोडरमल की ज़ब्ती प्रणाली के तहत इसी प्रकार के आकलन कार्य के साथ जारी रही।"
+    }
+  },
+  {
+    "uuid": "d329c0e8-85cf-4262-b8e4-cbdff0c0eb68",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Historiographical Debate: Sher Shah as Administrative Innovator vs. Synthesizer",
+        "Military Administration and the Branding (Dagh) System",
+        "Anti-Corruption Measures and Accountability of Officials"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "chronology",
+      "trap_type": "temporal-swap",
+      "concept_anchor": "Sequence: Dagh system introduction, revival, and Mansabdari replacement",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following represents the correct chronological sequence of the institutional history of the Dagh (horse-branding) system in medieval Indian military administration?\n\n1. Sher Shah Suri revives the Dagh and Chehra systems as part of his military centralization reforms\n2. Alauddin Khalji introduces the Dagh (branding of horses) and Chehra (descriptive rolls) as anti-fraud military measures\n3. Akbar's Mansabdari system supplants the direct-payment and branding model with a rank-based military organization\n\n(a) 1 → 2 → 3\n(b) 2 → 3 → 1\n(c) 2 → 1 → 3\n(d) 3 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — Option (a) placing Sher Shah's revival before Alauddin's introduction is a strong distractor because students know Sher Shah had the Dagh system and may not be certain whether Alauddin's version preceded it or followed it within the Delhi Sultanate period.",
+      "elimination_logic": [
+        "Anchor the earliest: Alauddin Khalji introduced the Dagh system in the early 14th century (c. 1300) — this comes first.",
+        "Sher Shah Suri revived the system in 1540–1545 — this comes second.",
+        "Akbar's Mansabdari system (developed from the 1560s) replaced the direct-payment/branding model with a rank-based system — this comes third.",
+        "Correct sequence: Alauddin's introduction → Sher Shah's revival → Akbar's Mansabdari replacement = option (c)."
+      ],
+      "upsc_trap_explanation": "The temporal trap is the gap between Alauddin Khalji (early 14th century) and Sher Shah (mid 16th century). Students who know both rulers used the Dagh system but are uncertain about relative dating may reverse their order. The critical fact is that Alauddin's reforms preceded Sher Shah by approximately 240 years — Sher Shah consciously looked back to Alauddin's precedents.",
+      "final_explanation": "The Dagh system's institutional history spans three distinct medieval rulers — each representing a different phase in its evolution.\n\nCorrect sequence: Alauddin Khalji (introduction) → Sher Shah Suri (revival) → Akbar (Mansabdari system replacing the model)\n\n• Alauddin Khalji (c. early 14th century): First introduced Dagh (branding) and Chehra (descriptive rolls) as part of his military reforms — the original institutional design.\n• Sher Shah Suri (1540–1545): Deliberately revived Alauddin's Dagh and Chehra system — consciously referencing the Sultanate precedent as a proven anti-fraud model.\n• Akbar (from 1560s): The Mansabdari system introduced numerical rank (Mansab) as the basis for military organization and pay — effectively replacing the direct-payment/branding model with a rank-hierarchy system.\n\nWhy wrong options fail:\n• Option (a): Places Sher Shah before Alauddin — chronologically impossible.\n• Option (b): Places Akbar before Sher Shah — reverses the Sur-Mughal sequence.\n• Option (d): Places Alauddin last — reverses the entire sequence.\n\nValue Addition:\n• The Dagh system's revival by Sher Shah is central to the 'Sher Shah as synthesizer' historiographical argument.\n• The shift from Dagh/direct-payment to Mansabdari under Akbar marks a fundamental change in the state's relationship with its military.\n• Alauddin's military reforms (c. 1300) and Sher Shah's (1540) are separated by nearly 240 years — a gap that makes Sher Shah's conscious revival remarkable."
+    },
+    "hi": {
+      "display_text": "मध्यकालीन भारतीय सैन्य प्रशासन में दाग (घोड़े पर ब्रांडिंग) प्रणाली के संस्थागत इतिहास का सही कालानुक्रमिक क्रम कौन-सा है?\n\n1. शेर शाह सूरी अपने सैन्य केंद्रीकरण सुधारों के हिस्से के रूप में दाग और चेहरा प्रणालियों का पुनरुद्धार करते हैं\n2. अलाउद्दीन खिलजी दाग (घोड़ों पर ब्रांडिंग) और चेहरा (वर्णनात्मक रोल) को भ्रष्टाचार-रोधी सैन्य उपायों के रूप में प्रस्तुत करते हैं\n3. अकबर की मनसबदारी प्रणाली सीधे भुगतान और ब्रांडिंग मॉडल की जगह पद-आधारित सैन्य संगठन लेती है\n\n(a) 1 → 2 → 3\n(b) 2 → 3 → 1\n(c) 2 → 1 → 3\n(d) 3 → 1 → 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "a — विकल्प (a) में शेर शाह के पुनरुद्धार को अलाउद्दीन की शुरुआत से पहले रखना एक मजबूत भ्रम है क्योंकि छात्र जानते हैं कि शेर शाह के पास दाग प्रणाली थी और वे निश्चित नहीं हो सकते कि अलाउद्दीन का संस्करण दिल्ली सल्तनत काल में उससे पहले था या बाद में।",
+      "elimination_logic": [
+        "सबसे पहले को आधार बनाएं: अलाउद्दीन खिलजी ने 14वीं सदी की शुरुआत (लगभग 1300) में दाग प्रणाली शुरू की — यह सबसे पहला है।",
+        "शेर शाह सूरी ने 1540–1545 में इस प्रणाली का पुनरुद्धार किया — यह दूसरा है।",
+        "अकबर की मनसबदारी प्रणाली (1560 के दशक से विकसित) ने सीधे भुगतान/दाग मॉडल को पद-आधारित प्रणाली से प्रतिस्थापित किया — यह तीसरा है।",
+        "सही क्रम: अलाउद्दीन की शुरुआत → शेर शाह का पुनरुद्धार → अकबर का मनसबदारी प्रतिस्थापन = विकल्प (c)।"
+      ],
+      "upsc_trap_explanation": "कालानुक्रमिक भ्रम अलाउद्दीन खिलजी (14वीं सदी की शुरुआत) और शेर शाह (16वीं सदी के मध्य) के बीच के अंतराल से उत्पन्न होता है। जो छात्र दोनों शासकों के दाग प्रणाली उपयोग को जानते हैं लेकिन सापेक्ष तिथि निर्धारण में अनिश्चित हैं, वे उनकी क्रम को उलट सकते हैं। महत्वपूर्ण तथ्य यह है कि अलाउद्दीन के सुधार शेर शाह से लगभग 240 वर्ष पहले थे — शेर शाह ने जानबूझकर अलाउद्दीन के उदाहरणों को अपनाया।",
+      "final_explanation": "दाग प्रणाली का संस्थागत इतिहास तीन अलग-अलग मध्यकालीन शासकों में विभाजित है — प्रत्येक इसके विकास के एक अलग चरण का प्रतिनिधित्व करता है।\n\nसही क्रम: अलाउद्दीन खिलजी (शुरुआत) → शेर शाह सूरी (पुनरुद्धार) → अकबर (मनसबदारी प्रणाली द्वारा मॉडल का प्रतिस्थापन)\n\n• अलाउद्दीन खिलजी (लगभग 14वीं सदी की शुरुआत): अपने सैन्य सुधारों के हिस्से के रूप में दाग (घोड़ों पर ब्रांडिंग) और चेहरा (वर्णनात्मक रोल) पहली बार पेश किए — मूल संस्थागत डिजाइन।\n• शेर शाह सूरी (1540–1545): जानबूझकर अलाउद्दीन की दाग और चेहरा प्रणाली का पुनरुद्धार किया — सल्तनत के उदाहरण को एक सिद्ध भ्रष्टाचार-रोधी मॉडल के रूप में अपनाया।\n• अकबर (1560 के दशक से): मनसबदारी प्रणाली ने सैन्य संगठन और वेतन के लिए संख्यात्मक पद (मनसब) को आधार बनाया — सीधे भुगतान/दाग मॉडल को पद-आधारित पदानुक्रम प्रणाली से प्रभावी रूप से प्रतिस्थापित किया।\n\nगलत विकल्प क्यों असफल हैं:\n• विकल्प (a): शेर शाह को अलाउद्दीन से पहले रखता है — कालानुक्रमिक रूप से असंभव।\n• विकल्प (b): अकबर को शेर शाह से पहले रखता है — सुर-मुगल क्रम को उलटता है।\n• विकल्प (d): अलाउद्दीन को अंतिम स्थान देता है — पूरे क्रम को उलटता है।\n\nमूल्य संवर्धन:\n• शेर शाह द्वारा दाग प्रणाली का पुनरुद्धार 'शेर शाह एक संश्लेषक के रूप में' इतिहासलेखन तर्क का केंद्र है।\n• अकबर के तहत दाग/प्रत्यक्ष भुगतान से मनसबदारी में बदलाव राज्य और उसकी सेना के संबंध में मौलिक परिवर्तन दर्शाता है।\n• अलाउद्दीन के सैन्य सुधार (लगभग 1300) और शेर शाह के (1540) के बीच लगभग 240 वर्ष का अंतर है — जो शेर शाह के जानबूझकर पुनरुद्धार को उल्लेखनीय बनाता है।"
+    }
+  },
+  {
+    "uuid": "44fc317c-23cb-4530-a48e-1cb879a149a0",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Welfare Measures and Their Administrative Significance",
+        "Police Administration and the Muqaddam-Chaukidar System",
+        "Judicial Administration and Sher Shah's Personal Justice"
+      ]
+    },
+    "shared": {
+      "correct_option": "c",
+      "question_type": "multi-statement-correct",
+      "trap_type": "partial-truth",
+      "concept_anchor": "Welfare and justice as dual legitimacy instruments",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about welfare, justice, and accountability in Sher Shah Suri's administration:\n\n1. Sher Shah Suri's welfare works — including hospitals, mosques, and tree plantation along roads — served simultaneously as legitimacy-building instruments and as physical extensions of the state's administrative presence.\n2. The principle of collective village responsibility for crimes, implemented through the Muqaddam, was a welfare-oriented measure designed primarily to protect peasants from external criminal threats.\n3. Sher Shah's reported statement about equal justice — that even his own son would face punishment for murder — functions in historical analysis as a legitimizing narrative rather than a verifiable procedural guarantee.\n\nWhich of the above statements is/are correct?\n\n(a) 2 only\n(b) 1 and 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "Sher Shah Suri's welfare works — including hospitals, mosques, and tree plantation along roads — served simultaneously as legitimacy-building instruments and as physical extensions of the state's administrative presence.",
+          "verdict": "Correct",
+          "reason": "The dual-purpose character of welfare infrastructure is the established historiographical interpretation — welfare built popular legitimacy while physical infrastructure (Sarais, hospitals) extended the state's reach."
+        },
+        {
+          "statement": "The principle of collective village responsibility for crimes, implemented through the Muqaddam, was a welfare-oriented measure designed primarily to protect peasants from external criminal threats.",
+          "verdict": "Incorrect",
+          "reason": "Collective village responsibility was primarily a coercive accountability mechanism — placing the Muqaddam personally at risk for crimes in his jurisdiction was a control tool, not primarily a peasant welfare measure. Characterizing it as 'primarily welfare-oriented' misrepresents its punitive accountability logic."
+        },
+        {
+          "statement": "Sher Shah's reported statement about equal justice — that even his own son would face punishment for murder — functions in historical analysis as a legitimizing narrative rather than a verifiable procedural guarantee.",
+          "verdict": "Correct",
+          "reason": "Historians treat such anecdotes from hagiographic sources like Tarikh-i-Sher Shahi as legitimizing narratives — they reveal the ideological claims of the administration rather than constituting verifiable procedural records."
+        }
+      ],
+      "strong_distractor": "d — Option (d) claiming all three correct is a strong distractor because Statements 1 and 3 are both accurate, and students who interpret collective village responsibility through a welfare lens (protecting villagers from criminals) will accept Statement 2.",
+      "elimination_logic": [
+        "Evaluate Statement 2: 'designed primarily to protect peasants from external criminal threats' — the Muqaddam's personal liability for crimes is a coercive control tool, not a welfare protection measure. Statement 2 is incorrect.",
+        "Confirm Statement 1: dual welfare-legitimacy and administrative reach purpose of road infrastructure is the established interpretation.",
+        "Confirm Statement 3: historiographical treatment of justice anecdotes as legitimizing narratives is methodologically sound.",
+        "Statements 1 and 3 correct, Statement 2 incorrect — answer is option (c)."
+      ],
+      "upsc_trap_explanation": "Statement 2's trap is reframing a coercive accountability mechanism as a welfare measure. The Muqaddam's collective responsibility scheme did incidentally protect villagers (a Muqaddam fearing personal liability would actively prevent crime), but its primary design purpose was administrative control and accountability enforcement — not welfare provision. The 'primarily welfare-oriented' characterization is the false element.",
+      "final_explanation": "Sher Shah's administration blended welfare rhetoric, coercive accountability, and legitimacy-building in ways that resist simple categorization — understanding these distinctions is essential for high-quality exam answers.\n\n• Statement 1 — Correct: Hospitals, mosques, tree plantation, and Sarais along roads served dual purposes — genuine traveller welfare AND physical extension of the state's administrative presence and intelligence network.\n• Statement 2 — Incorrect: The Muqaddam's personal liability for crimes in his village was a punitive accountability mechanism, not primarily a welfare measure. The system created coercive incentives for crime prevention — its 'protection of peasants' was a byproduct of control, not the primary design intent.\n• Statement 3 — Correct: The 'even my own son' justice anecdote from the Tarikh-i-Sher Shahi is a legitimizing narrative — it projects an image of impartial royal justice but cannot be independently verified as a procedural guarantee. Treating it as ideology rather than fact is the methodologically correct approach.\n\nValue Addition:\n• The welfare-vs.-control debate about medieval administration mirrors modern public policy debates about state paternalism.\n• The Tarikh-i-Sher Shahi's hagiographic bias means all welfare claims require critical scrutiny against other evidence.\n• The dual-purpose design of infrastructure (welfare + administrative reach) is Sher Shah's most sophisticated administrative insight — recognized by historians as a template for later Mughal governance."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के प्रशासन में कल्याण, न्याय, और जवाबदेही के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. शेर शाह सूरी के कल्याण कार्य — जिनमें अस्पताल, मस्जिदें, और सड़कों के किनारे वृक्षारोपण शामिल हैं — एक साथ वैधता निर्माण के उपकरण और राज्य की प्रशासनिक उपस्थिति के भौतिक विस्तार के रूप में कार्य करते थे।\n2. मुक़द्दम के माध्यम से लागू अपराधों के लिए सामूहिक ग्राम जिम्मेदारी का सिद्धांत एक कल्याण-केंद्रित उपाय था, जो मुख्य रूप से किसानों को बाहरी आपराधिक खतरों से बचाने के लिए डिज़ाइन किया गया था।\n3. शेर शाह के कथित कथन कि समान न्याय होगा — कि उसका अपना पुत्र भी हत्या के लिए दंडित होगा — ऐतिहासिक विश्लेषण में एक वैधता निर्माण कथा के रूप में कार्य करता है, न कि एक सत्यापित प्रक्रिया संबंधी गारंटी के रूप में।\n\nउपरोक्त में से कौन-सा/से कथन सही है/हैं?\n\n(a) केवल 2\n(b) केवल 1 और 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "शेर शाह सूरी के कल्याण कार्य — जिनमें अस्पताल, मस्जिदें, और सड़कों के किनारे वृक्षारोपण शामिल हैं — एक साथ वैधता निर्माण के उपकरण और राज्य की प्रशासनिक उपस्थिति के भौतिक विस्तार के रूप में कार्य करते थे।",
+          "verdict": "सही",
+          "reason": "कल्याण अवसंरचना का द्वैध उद्देश्य इतिहासलेखन की स्थापित व्याख्या है — कल्याण ने लोकप्रिय वैधता बनाई जबकि भौतिक अवसंरचना (सराय, अस्पताल) ने राज्य की पहुँच बढ़ाई।"
+        },
+        {
+          "statement": "मुक़द्दम के माध्यम से लागू अपराधों के लिए सामूहिक ग्राम जिम्मेदारी का सिद्धांत एक कल्याण-केंद्रित उपाय था, जो मुख्य रूप से किसानों को बाहरी आपराधिक खतरों से बचाने के लिए डिज़ाइन किया गया था।",
+          "verdict": "गलत",
+          "reason": "सामूहिक ग्राम जिम्मेदारी मुख्य रूप से एक दंडात्मक जवाबदेही तंत्र था — मुक़द्दम को उसके क्षेत्राधिकार में अपराधों के लिए व्यक्तिगत रूप से जोखिम में डालना नियंत्रण का उपकरण था, न कि मुख्य रूप से किसान कल्याण उपाय। इसे 'मुख्य रूप से कल्याण-केंद्रित' बताना इसके दंडात्मक जवाबदेही तर्क का गलत चित्रण है।"
+        },
+        {
+          "statement": "शेर शाह के कथित कथन कि समान न्याय होगा — कि उसका अपना पुत्र भी हत्या के लिए दंडित होगा — ऐतिहासिक विश्लेषण में एक वैधता निर्माण कथा के रूप में कार्य करता है, न कि एक सत्यापित प्रक्रिया संबंधी गारंटी के रूप में।",
+          "verdict": "सही",
+          "reason": "इतिहासकार ऐसे किस्सों को, जो तारिख-ए-शेरशाही जैसे महिमा-गाथात्मक स्रोतों से आते हैं, वैधता निर्माण कथाओं के रूप में देखते हैं — ये प्रशासन के वैचारिक दावों को प्रकट करते हैं, न कि सत्यापित प्रक्रिया रिकॉर्ड।"
+        }
+      ],
+      "strong_distractor": "d — विकल्प (d) जिसमें तीनों कथन सही बताए गए हैं, एक मजबूत भ्रम पैदा करने वाला विकल्प है क्योंकि कथन 1 और 3 दोनों सही हैं, और जो छात्र सामूहिक ग्राम जिम्मेदारी को कल्याण के दृष्टिकोण से (गांव वालों को अपराधियों से बचाना) समझते हैं वे कथन 2 को स्वीकार कर लेंगे।",
+      "elimination_logic": [
+        "कथन 2 का मूल्यांकन करें: 'मुख्य रूप से किसानों को बाहरी आपराधिक खतरों से बचाने के लिए डिज़ाइन किया गया' — मुक़द्दम की व्यक्तिगत जवाबदेही एक दंडात्मक नियंत्रण उपकरण है, कल्याण सुरक्षा उपाय नहीं। अतः कथन 2 गलत है।",
+        "कथन 1 की पुष्टि करें: सड़क अवसंरचना का द्वैध कल्याण-वैधता और प्रशासनिक पहुँच उद्देश्य स्थापित व्याख्या है।",
+        "कथन 3 की पुष्टि करें: न्याय संबंधी किस्सों का इतिहासलेखन में वैधता निर्माण कथा के रूप में व्यवहार विधिवत् सही है।",
+        "कथन 1 और 3 सही, कथन 2 गलत — उत्तर विकल्प (c) है।"
+      ],
+      "upsc_trap_explanation": "कथन 2 का जाल एक दंडात्मक जवाबदेही तंत्र को कल्याण उपाय के रूप में पुनः प्रस्तुत करना है। मुक़द्दम की सामूहिक जिम्मेदारी योजना ने आकस्मिक रूप से गांव वालों की सुरक्षा की (एक मुक़द्दम जो व्यक्तिगत जवाबदेही से डरता है, वह सक्रिय रूप से अपराध को रोकेगा), लेकिन इसका मुख्य उद्देश्य प्रशासनिक नियंत्रण और जवाबदेही लागू करना था — कल्याण प्रदान करना प्राथमिक उद्देश्य नहीं था। 'मुख्य रूप से कल्याण-केंद्रित' वर्णन गलत तत्व है।",
+      "final_explanation": "शेर शाह का प्रशासन कल्याण वचनबद्धता, दंडात्मक जवाबदेही, और वैधता निर्माण को इस तरह मिश्रित करता था कि इसे सरल वर्गीकरण में बांटना कठिन है — इन भेदों को समझना उच्च गुणवत्ता वाले परीक्षा उत्तरों के लिए आवश्यक है।\n\n• कथन 1 — सही: अस्पताल, मस्जिदें, वृक्षारोपण, और सड़कों के किनारे सराय दोनों उद्देश्यों की पूर्ति करते थे — वास्तविक यात्री कल्याण और राज्य की प्रशासनिक उपस्थिति व खुफिया नेटवर्क का भौतिक विस्तार।\n• कथन 2 — गलत: मुक़द्दम की व्यक्तिगत जवाबदेही एक दंडात्मक जवाबदेही तंत्र था, मुख्य रूप से कल्याण उपाय नहीं। यह प्रणाली अपराध रोकथाम के लिए दंडात्मक प्रोत्साहन बनाती थी — इसका 'किसानों की सुरक्षा' नियंत्रण का एक उपोत्पाद था, प्राथमिक डिजाइन उद्देश्य नहीं।\n• कथन 3 — सही: तारिख-ए-शेरशाही से 'यहाँ तक कि मेरा पुत्र भी' न्याय कथा एक वैधता निर्माण कथा है — यह निष्पक्ष शाही न्याय की छवि प्रस्तुत करती है लेकिन इसे स्वतंत्र रूप से प्रक्रिया संबंधी गारंटी के रूप में सत्यापित नहीं किया जा सकता। इसे तथ्य के बजाय विचारधारा के रूप में देखना विधिवत् सही है।\n\nमूल्य संवर्धन:\n• मध्यकालीन प्रशासन के कल्याण बनाम नियंत्रण बहस आधुनिक सार्वजनिक नीति बहसों के राज्य पितृसत्तात्मकता से मेल खाती है।\n• तारिख-ए-शेरशाही की महिमा-गाथात्मक पक्षपात के कारण सभी कल्याण दावों की अन्य साक्ष्यों के साथ आलोचनात्मक जांच आवश्यक है।\n• अवसंरचना का द्वैध उद्देश्य (कल्याण + प्रशासनिक पहुँच) शेर शाह की सबसे परिष्कृत प्रशासनिक अंतर्दृष्टि है — जिसे इतिहासकार बाद के मुगल शासन के लिए एक मॉडल के रूप में मान्यता देते हैं।"
+    }
+  },
+  {
+    "uuid": "198b2a9f-0144-4a26-9501-e9a952119734",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Centralization vs. Decentralization: The Core Tension in Sher Shah's Administration",
+        "Historiographical Debate: Sher Shah as Administrative Innovator vs. Synthesizer"
+      ]
+    },
+    "shared": {
+      "correct_option": "b",
+      "question_type": "direct",
+      "trap_type": "plausible-fabrication",
+      "concept_anchor": "Short reign as limiting factor — 1540–1545",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Historians frequently note that many of Sher Shah Suri's administrative reforms remained incompletely implemented — a limitation directly attributed to the brevity of his formal imperial reign. Approximately how long did Sher Shah Suri reign as emperor before his death?\n\n(a) Approximately fifteen years\n(b) Approximately five years\n(c) Approximately seven years\n(d) Approximately three years",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — Option (c) is a strong distractor because students who know Sher Shah died at Kalinjar in 1545 may round up to 'approximately ten years' or calculate from his earlier Sur dynasty consolidation rather than from his formal accession as emperor.",
+      "elimination_logic": [
+        "Eliminate option (a): Sher Shah did not reign for fifteen years — his formal reign as emperor began after defeating Humayun at Chausa (1539) and formally acceding in 1540, ending at his death in 1545.",
+        "Eliminate option (c): Seven years from 1539 (Battle of Chausa) to 1545 is approximately six years, not seven — and the formal imperial reign is calculated from 1540.",
+        "Eliminate option (d): Three years is too short — his reign ran from 1540 to 1545.",
+        "Confirm option (b): Sher Shah's formal imperial reign lasted approximately five years (1540–1545) — the brevity is historically significant as it prevented full implementation of his reforms."
+      ],
+      "upsc_trap_explanation": "The plausible-fabrication trap is '1539' as a start date — students who date Sher Shah's reign from the Battle of Chausa (1539, when he first defeated Humayun) rather than from his formal accession (1540) will calculate six or seven years. The formal imperial reign of five years (1540–1545) is the standard historical measure.",
+      "final_explanation": "The duration of Sher Shah's reign is a critical contextual fact — it explains why many of his ambitious reforms remained incompletely implemented.\n\n• Option (a) — Incorrect: Fifteen years is nearly triple the actual length — clearly incorrect and eliminable with basic chronological knowledge.\n• Option (b) — Correct: Sher Shah Suri ruled as emperor from 1540 (formal accession after defeating Humayun) to 1545 (death at the siege of Kalinjar) — a reign of approximately five years. This brevity is the standard historiographical explanation for incomplete reform implementation.\n• Option (c) — Incorrect: Seven years would require a start date of 1538 — before even the Battle of Chausa (1539). The formal imperial reign is consistently measured as five years.\n• Option (d) — Incorrect: Three years (1542–1545) is too short — it omits the early years of his reign when major reforms were initiated.\n\nValue Addition:\n• Sher Shah died at Kalinjar (Madhya Pradesh) in 1545 — a gunpowder explosion during the siege, not in battle.\n• The contrast with Akbar's nearly 50-year reign explains why Akbar could systematize what Sher Shah only sketched.\n• Sher Shah's five-year reign producing such consequential reforms is the basis for the 'administrative genius' characterization in historiography."
+    },
+    "hi": {
+      "display_text": "इतिहासकार अक्सर यह उल्लेख करते हैं कि शेर शाह सूरी के कई प्रशासनिक सुधार अधूरे रह गए — यह सीमा सीधे उनके औपचारिक सम्राट शासन की संक्षिप्तता को दी जाती है। शेर शाह सूरी ने अपनी मृत्यु से पहले सम्राट के रूप में लगभग कितने वर्षों तक शासन किया?\n\n(a) लगभग पंद्रह वर्ष\n(b) लगभग पांच वर्ष\n(c) लगभग सात वर्ष\n(d) लगभग तीन वर्ष",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "c — विकल्प (c) एक मजबूत भ्रम है क्योंकि जो छात्र जानते हैं कि शेर शाह 1545 में कालिंजर में मरे थे, वे 'लगभग दस वर्ष' को गोल कर सकते हैं या उनकी औपचारिक सम्राट के रूप में अभिषेक से पहले के सुर वंश के समेकन से गणना कर सकते हैं।",
+      "elimination_logic": [
+        "विकल्प (a) को हटाएं: शेर शाह का शासन पंद्रह वर्ष का नहीं था — उनका औपचारिक सम्राट के रूप में शासन चौंसा (1539) में हुमायूं को हराने के बाद 1540 में शुरू हुआ और 1545 में उनकी मृत्यु पर समाप्त हुआ।",
+        "विकल्प (c) को हटाएं: 1539 (चौंसा का युद्ध) से 1545 तक सात वर्ष लगभग छह वर्ष हैं, सात नहीं — और औपचारिक सम्राट शासन 1540 से गिना जाता है।",
+        "विकल्प (d) को हटाएं: तीन वर्ष बहुत कम हैं — उनका शासन 1540 से 1545 तक चला।",
+        "विकल्प (b) की पुष्टि करें: शेर शाह का औपचारिक सम्राट शासन लगभग पांच वर्ष (1540–1545) तक चला — इसकी संक्षिप्तता ऐतिहासिक रूप से महत्वपूर्ण है क्योंकि इसने उनके सुधारों के पूर्ण कार्यान्वयन को रोका।"
+      ],
+      "upsc_trap_explanation": "संभावित-निर्माण (plausible-fabrication) जाल '1539' को प्रारंभ तिथि के रूप में है — जो छात्र शेर शाह के शासन को चौंसा के युद्ध (1539, जब उन्होंने पहली बार हुमायूं को हराया) से गिनते हैं, न कि उनके औपचारिक अभिषेक (1540) से, वे छह या सात वर्ष की गणना करेंगे। औपचारिक सम्राट शासन पांच वर्ष (1540–1545) का मानक ऐतिहासिक मापदंड है।",
+      "final_explanation": "शेर शाह के शासन की अवधि एक महत्वपूर्ण संदर्भ तथ्य है — यह समझाता है कि उनके कई महत्वाकांक्षी सुधार अधूरे क्यों रह गए।\n\n• विकल्प (a) — गलत: पंद्रह वर्ष वास्तविक अवधि का लगभग तीन गुना है — स्पष्ट रूप से गलत और सामान्य कालानुक्रमिक ज्ञान से हटाने योग्य।\n• विकल्प (b) — सही: शेर शाह सूरी ने 1540 (हुमायूं को हराने के बाद औपचारिक अभिषेक) से 1545 (कालिंजर की घेराबंदी में मृत्यु) तक सम्राट के रूप में शासन किया — लगभग पांच वर्ष का शासन। इस संक्षिप्तता को अधूरे सुधार कार्यान्वयन के लिए मानक इतिहासकारों द्वारा स्वीकार किया जाता है।\n• विकल्प (c) — गलत: सात वर्ष के लिए 1538 की शुरुआत आवश्यक होगी — जो चौंसा के युद्ध (1539) से भी पहले है। औपचारिक सम्राट शासन लगातार पांच वर्ष मापा जाता है।\n• विकल्प (d) — गलत: तीन वर्ष (1542–1545) बहुत कम हैं — यह उनके शासन के प्रारंभिक वर्षों को छोड़ देता है जब प्रमुख सुधार शुरू हुए थे।\n\nमूल्य संवर्धन:\n• शेर शाह 1545 में कालिंजर (मध्य प्रदेश) में मरे — घेराबंदी के दौरान बारूद विस्फोट से, युद्ध में नहीं।\n• अकबर के लगभग 50 वर्ष के शासन के साथ तुलना यह समझाती है कि अकबर ने जो शेर शाह ने केवल रूपरेखा तैयार की थी, उसे व्यवस्थित किया।\n• शेर शाह का पांच वर्ष का शासन, जिसमें इतने महत्वपूर्ण सुधार हुए, इतिहासकारों द्वारा 'प्रशासनिक प्रतिभा' के रूप में वर्णित है।"
+    }
+  },
+  {
+    "uuid": "15ad3a10-407c-4225-a0cb-dac371a3513f",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Revenue System: Zabt (Measurement-based Assessment)",
+        "Land Revenue Rate and the 'One-Third' Principle",
+        "Patta and Qabuliyat System"
+      ]
+    },
+    "shared": {
+      "correct_option": "a",
+      "question_type": "multi-statement-incorrect",
+      "trap_type": "reversed-causation",
+      "concept_anchor": "Revenue system — direct state-peasant relationship",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following statements about the mechanics of Sher Shah Suri's land revenue system:\n\n1. The direct state-peasant relationship in Sher Shah's revenue system was established by requiring zamindars to formally surrender all revenue collection rights to the imperial Amin before any settlement could begin.\n2. The Sikandari Gaz, the unit of land measurement used in Sher Shah's Zabt system, was an innovation entirely originated by Sher Shah with no precedent in earlier administrative practice.\n3. Under Sher Shah's Zabt system, the standardized Bigha was used as the unit of area measurement for assessment purposes — a unit that continued in use during Akbar's subsequent revenue settlements.\n\nWhich of the above statements is/are NOT correct?\n\n(a) 1 and 2 only\n(b) 2 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "The direct state-peasant relationship in Sher Shah's revenue system was established by requiring zamindars to formally surrender all revenue collection rights to the imperial Amin before any settlement could begin.",
+          "verdict": "Incorrect",
+          "reason": "The direct relationship was not established through a formal zamindar 'surrender' of rights — it was implemented by having the Amin deal directly with cultivators during settlement, effectively bypassing zamindars. No formal surrender mechanism is documented."
+        },
+        {
+          "statement": "The Sikandari Gaz, the unit of land measurement used in Sher Shah's Zabt system, was an innovation entirely originated by Sher Shah with no precedent in earlier administrative practice.",
+          "verdict": "Incorrect",
+          "reason": "The Sikandari Gaz is named after Sikandar Lodi — it was a pre-existing measurement unit that Sher Shah standardized and systematized, not an innovation he created from scratch."
+        },
+        {
+          "statement": "Under Sher Shah's Zabt system, the standardized Bigha was used as the unit of area measurement for assessment purposes — a unit that continued in use during Akbar's subsequent revenue settlements.",
+          "verdict": "Correct",
+          "reason": "The Bigha as the area measurement unit was used under Sher Shah's Zabt and continued into Akbar's Zabti settlements — representing institutional continuity in measurement practice."
+        }
+      ],
+      "strong_distractor": "c — Option (c) identifying only Statement 2 as NOT correct is a strong distractor because Statement 2's falseness (Sikandari Gaz's Sikandar Lodi origin) is the clearer trap, and students may miss that Statement 1 also contains a plausible-sounding but undocumented 'formal surrender' mechanism.",
+      "elimination_logic": [
+        "Evaluate Statement 1: 'required zamindars to formally surrender all revenue collection rights' — no such formal surrender mechanism is documented; the direct relationship was operational through the Amin's field practice, not through a formal rights transfer. Statement 1 is NOT correct.",
+        "Evaluate Statement 2: Sikandari Gaz named after Sikandar Lodi — pre-existing, not Sher Shah's innovation. Statement 2 is NOT correct.",
+        "Evaluate Statement 3: Bigha as area unit continuing into Akbar's settlements is accurate — Statement 3 IS correct.",
+        "Both Statements 1 and 2 are NOT correct — answer is option (a)."
+      ],
+      "upsc_trap_explanation": "Statement 1 uses reversed-causation logic — the direct state-peasant relationship is real, but the mechanism described (formal zamindar surrender of rights) is a plausible fabrication. Students who know the direct relationship existed may accept Statement 1's description of how it was achieved without questioning whether that specific mechanism occurred. The Sikandari Gaz trap in Statement 2 exploits attribution confusion — named after Sikandar Lodi, not Sher Shah.",
+      "final_explanation": "Two statements test complementary error types — a fabricated mechanism (Statement 1) and a false attribution (Statement 2).\n\n• Statement 1 — NOT Correct: The direct state-peasant relationship was operationalized through the Amin's field-level assessment bypassing zamindar intermediation — not through a formal documented 'surrender' of rights by zamindars. No such formal surrender mechanism is historically attested.\n• Statement 2 — NOT Correct: The Sikandari Gaz is named after Sikandar Lodi (r. 1489–1517), who used this measurement unit. Sher Shah standardized and applied it systematically — he did not originate it. Attributing its origin to Sher Shah is a false attribution.\n• Statement 3 — Correct: The Bigha as the basic area unit of Sher Shah's Zabt system continued into Akbar's Zabti settlements under Todar Mal — one of the clearest examples of institutional continuity between the Sur and Mughal revenue systems.\n\nValue Addition:\n• The Sikandari Gaz origin under Sikandar Lodi is a precision fact that tests knowledge of the Sur dynasty's relationship with its Lodi predecessors.\n• Sher Shah's greatest administrative contribution may be systematization and enforcement of existing tools rather than pure innovation — consistent with the 'synthesizer' interpretation.\n• Bigha as a land area unit remains in use in parts of India today — a remarkably durable administrative inheritance."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी की भूमि राजस्व प्रणाली की कार्यप्रणाली के संबंध में निम्नलिखित कथनों पर विचार करें:\n\n1. शेर शाह के राजस्व प्रणाली में सीधे राज्य-किसान संबंध की स्थापना इस प्रकार हुई कि किसी भी निपटान से पहले ज़मींदारों को सम्राट के अमीन के समक्ष सभी राजस्व संग्रह अधिकार औपचारिक रूप से सौंपने की आवश्यकता थी।\n2. शेर शाह के ज़ब्त प्रणाली में उपयोग की गई भूमि मापन इकाई सिकंदरी गज पूरी तरह से शेर शाह द्वारा नवाचार थी और इसका कोई पूर्व प्रशासनिक अभ्यास में उदाहरण नहीं था।\n3. शेर शाह के ज़ब्त प्रणाली के तहत, मूल्यांकन के लिए क्षेत्रफल मापन की इकाई के रूप में मानकीकृत बीघा का उपयोग किया गया था — यह इकाई अकबर के बाद के राजस्व निपटानों में भी जारी रही।\n\nउपरोक्त में से कौन-सा/से कथन सही नहीं है/हैं?\n\n(a) केवल 1 और 2\n(b) केवल 2\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": [
+        {
+          "statement": "शेर शाह के राजस्व प्रणाली में सीधे राज्य-किसान संबंध की स्थापना इस प्रकार हुई कि किसी भी निपटान से पहले ज़मींदारों को सम्राट के अमीन के समक्ष सभी राजस्व संग्रह अधिकार औपचारिक रूप से सौंपने की आवश्यकता थी।",
+          "verdict": "गलत",
+          "reason": "सीधा संबंध औपचारिक ज़मींदार 'सौंपने' के माध्यम से स्थापित नहीं हुआ था — इसे अमीन द्वारा निपटान के दौरान सीधे कृषकों से व्यवहार करके लागू किया गया था, जिससे ज़मींदारों को प्रभावी रूप से दरकिनार किया गया। कोई औपचारिक सौंपने की प्रक्रिया प्रलेखित नहीं है।"
+        },
+        {
+          "statement": "शेर शाह के ज़ब्त प्रणाली में उपयोग की गई भूमि मापन इकाई सिकंदरी गज पूरी तरह से शेर शाह द्वारा नवाचार थी और इसका कोई पूर्व प्रशासनिक अभ्यास में उदाहरण नहीं था।",
+          "verdict": "गलत",
+          "reason": "सिकंदरी गज का नाम सिकंदर लोदी के नाम पर है — यह एक पूर्व-मौजूद मापन इकाई थी जिसे शेर शाह ने मानकीकृत और व्यवस्थित किया, न कि उन्होंने इसे पूरी तरह से नया बनाया।"
+        },
+        {
+          "statement": "शेर शाह के ज़ब्त प्रणाली के तहत, मूल्यांकन के लिए क्षेत्रफल मापन की इकाई के रूप में मानकीकृत बीघा का उपयोग किया गया था — यह इकाई अकबर के बाद के राजस्व निपटानों में भी जारी रही।",
+          "verdict": "सही",
+          "reason": "बीघा क्षेत्रफल मापन की इकाई के रूप में शेर शाह के ज़ब्त में उपयोग की गई और अकबर के ज़ब्ती निपटानों में भी जारी रही — जो मापन अभ्यास में संस्थागत निरंतरता को दर्शाता है।"
+        }
+      ],
+      "strong_distractor": "c — विकल्प (c) केवल कथन 2 को सही नहीं मानना एक मजबूत भ्रम है क्योंकि कथन 2 की असत्यता (सिकंदरी गज का सिकंदर लोदी से संबंध) स्पष्ट जाल है, और छात्र यह मिस कर सकते हैं कि कथन 1 में भी एक संभावित लेकिन अप्रलेखित 'औपचारिक सौंपने' की प्रक्रिया है।",
+      "elimination_logic": [
+        "कथन 1 का मूल्यांकन करें: 'ज़मींदारों को सभी राजस्व संग्रह अधिकार औपचारिक रूप से सौंपने की आवश्यकता' — ऐसी कोई औपचारिक सौंपने की प्रक्रिया प्रलेखित नहीं है; सीधे संबंध अमीन के क्षेत्रीय व्यवहार के माध्यम से था, न कि अधिकारों के औपचारिक हस्तांतरण के माध्यम से। अतः कथन 1 सही नहीं है।",
+        "कथन 2 का मूल्यांकन करें: सिकंदरी गज का नाम सिकंदर लोदी के नाम पर है — यह पूर्व-मौजूद था, शेर शाह का नवाचार नहीं। अतः कथन 2 सही नहीं है।",
+        "कथन 3 का मूल्यांकन करें: बीघा की क्षेत्रफल इकाई के रूप में अकबर के निपटानों में जारी रहना सही है — अतः कथन 3 सही है।",
+        "कथन 1 और 2 दोनों सही नहीं हैं — उत्तर विकल्प (a) है।"
+      ],
+      "upsc_trap_explanation": "कथन 1 में उल्टी कारण-प्रभाव की तर्कशक्ति का उपयोग किया गया है — सीधे राज्य-किसान संबंध वास्तविक है, लेकिन वर्णित प्रक्रिया (औपचारिक ज़मींदार अधिकार सौंपना) एक संभावित कल्पना है। जो छात्र सीधे संबंध को जानते हैं, वे कथन 1 के इस विवरण को बिना जांचे स्वीकार कर सकते हैं कि यह प्रक्रिया वास्तव में हुई थी। कथन 2 में सिकंदरी गज का जाल नामकरण भ्रम का उपयोग करता है — यह सिकंदर लोदी के नाम पर है, न कि शेर शाह के।",
+      "final_explanation": "दो कथन पूरक त्रुटि प्रकारों का परीक्षण करते हैं — एक निर्मित प्रक्रिया (कथन 1) और एक गलत श्रेय (कथन 2)।\n\n• कथन 1 — सही नहीं: सीधे राज्य-किसान संबंध अमीन के क्षेत्रीय स्तर के आकलन के माध्यम से लागू हुआ, जो ज़मींदारों के मध्यस्थता को दरकिनार करता है — न कि ज़मींदारों द्वारा अधिकारों के औपचारिक 'सौंपने' के माध्यम से। ऐसी कोई औपचारिक प्रक्रिया ऐतिहासिक रूप से प्रमाणित नहीं है।\n• कथन 2 — सही नहीं: सिकंदरी गज का नाम सिकंदर लोदी (शासनकाल 1489–1517) के नाम पर है, जिन्होंने इस मापन इकाई का उपयोग किया। शेर शाह ने इसे मानकीकृत और व्यवस्थित किया — इसका आविष्कार नहीं किया। इसे शेर शाह का नवाचार बताना गलत श्रेय है।\n• कथन 3 — सही: बीघा शेर शाह के ज़ब्त प्रणाली की मूल क्षेत्रफल इकाई थी और अकबर के ज़ब्ती निपटानों में जारी रही — जो सुर और मुगल राजस्व प्रणालियों के बीच संस्थागत निरंतरता का स्पष्ट उदाहरण है।\n\nमूल्यवर्धन:\n• सिकंदरी गज का सिकंदर लोदी के तहत मूल एक सटीक तथ्य है जो सुर वंश के लोधी पूर्ववर्तियों के साथ संबंध की जानकारी का परीक्षण करता है।\n• शेर शाह का सबसे बड़ा प्रशासनिक योगदान मौजूदा उपकरणों का व्यवस्थित और सख्ती से पालन कराना हो सकता है, न कि शुद्ध नवाचार — जो 'संश्लेषक' व्याख्या के अनुरूप है।\n• बीघा आज भी भारत के कुछ हिस्सों में भूमि क्षेत्र की इकाई के रूप में उपयोग में है — एक उल्लेखनीय स्थायी प्रशासनिक विरासत।"
+    }
+  },
+  {
+    "uuid": "e843660a-b01f-4792-b10a-a40f01796587",
+    "meta": {
+      "subject": "Medieval History",
+      "topic": "Sher Shah Suri",
+      "sub_topic": "Sher Shah's administrative reforms",
+      "concepts_used": [
+        "Sarai System: Administrative and Commercial Functions",
+        "Spy and Intelligence System",
+        "Police Administration and the Muqaddam-Chaukidar System"
+      ]
+    },
+    "shared": {
+      "correct_option": "d",
+      "question_type": "identify-the-pair",
+      "trap_type": "conflation",
+      "concept_anchor": "Sarai staffing and function — Muqaddam vs. Barid",
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which of the following pairs relating to the Sarai system under Sher Shah Suri is correctly matched?\n\n(a) Approximately 1,700 Sarais built along the road network — each separated by approximately 5 kos\n(b) Sarais as intelligence-gathering nodes — Barids (imperial intelligence agents) stationed at each Sarai\n(c) Separate accommodation for travellers of different religious communities — Kotwal as the resident official at each Sarai\n(d) Sarais as enforcement nodes for standardized weights and measures — link between road infrastructure and commercial regulation",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — Option (b) is a strong distractor because it correctly identifies the Sarai as an intelligence node (accurate) but attributes this intelligence function to the Barid stationed AT the Sarai — Barids were the empire-wide intelligence network, while the Muqaddam and Chaukidar were the officials stationed at each Sarai for local accountability.",
+      "elimination_logic": [
+        "Option (a): 1,700 Sarais built — this figure is documented; but pairing it with 'each separated by 5 kos' is wrong (2 kos is the correct spacing). Option (a) is incorrectly matched.",
+        "Option (b): Sarai as intelligence gathering node — correct; but Barids stationed AT each Sarai — the officials at Sarais were Muqaddams and Chaukidars, not Barids. Option (b) is partially true but incorrectly matched.",
+        "Option (c): Sarais provided separate accommodation for different communities — this is documented (separate for Hindus and Muslims). Pairing this with 'Kotwal as resident official' is wrong — the resident officials were Muqaddam and Chaukidar, not Kotwal.",
+        "Option (d): Sarais as nodes of standardized weights enforcement — this is correctly documented; Sarais served as enforcement points for commercial standards. Option (d) is correctly matched."
+      ],
+      "upsc_trap_explanation": "The conflation in option (b) merges two real but distinct facts: Sarais were intelligence nodes (true) and Barids were Sher Shah's intelligence agents (true). But Barids were not the officials stationed at Sarais — Muqaddams and Chaukidars were. Conflating the intelligence function of Sarais with the Barid network creates a plausible-sounding but incorrect pairing that targets students who know both facts independently but not the precise institutional separation.",
+      "final_explanation": "The Sarai system's multiple functions must be distinguished from the broader imperial intelligence network — each operated through different institutional channels.\n\n• Option (a) — Incorrectly matched: 1,700 Sarais is the documented figure — but the spacing was every 2 kos, not 5 kos. The number is right, the interval is wrong.\n• Option (b) — Incorrectly matched: Sarais did function as intelligence-gathering nodes — but the resident officials were Muqaddams and Chaukidars, not Barids. Barids were the empire-wide intelligence network reporting to Sher Shah, distinct from the Sarai-stationed local officials.\n• Option (c) — Incorrectly matched: Separate accommodation for different communities within Sarais is documented — but Kotwal was an urban law enforcement official, not the Sarai resident officer. The correct officials were Muqaddam and Chaukidar.\n• Option (d) — Correctly matched: Sarais served as enforcement nodes for standardized weights and measures — merchants using Sarais were subject to verified commercial standards, making this a key link between physical infrastructure and commercial regulation.\n\nValue Addition:\n• The Muqaddam at each Sarai was responsible for local order and intelligence reporting — distinct from the empire-wide Barid network.\n• The three-layer intelligence architecture (village Muqaddam + Sarai officials + empire-wide Barids) gave Sher Shah multi-level information about his empire.\n• Standardized weights enforcement at Sarais is the institutional link between road infrastructure, commercial reform, and market integration."
+    },
+    "hi": {
+      "display_text": "शेर शाह सूरी के तहत सराय प्रणाली से संबंधित निम्नलिखित जोड़ों में से कौन-सा सही मेल खाता है?\n\n(a) सड़क नेटवर्क के साथ लगभग 1,700 सराय बनाए गए — प्रत्येक लगभग 5 कोस की दूरी पर\n(b) सराय खुफिया संग्रहण केंद्र के रूप में — प्रत्येक सराय में बारिद (साम्राज्य के खुफिया एजेंट) तैनात\n(c) विभिन्न धार्मिक समुदायों के यात्रियों के लिए अलग आवास — प्रत्येक सराय में निवासी अधिकारी के रूप में कोतवाल\n(d) सराय मानकीकृत वजन और माप के प्रवर्तन केंद्र के रूप में — सड़क अवसंरचना और वाणिज्यिक नियमन के बीच कड़ी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": "b — विकल्प (b) एक मजबूत भ्रम पैदा करने वाला है क्योंकि यह सही रूप से सराय को एक खुफिया केंद्र के रूप में पहचानता है (सटीक) लेकिन इस खुफिया कार्य को सराय में तैनात बारिद को सौंपता है — बारिद साम्राज्य भर में खुफिया नेटवर्क थे, जबकि मुकद्दम और चौकीदार प्रत्येक सराय में स्थानीय जवाबदेही के लिए तैनात अधिकारी थे।",
+      "elimination_logic": [
+        "विकल्प (a): 1,700 सराय बनाए गए — यह संख्या प्रलेखित है; लेकिन इसे 'प्रत्येक 5 कोस की दूरी पर' जोड़ना गलत है (सही दूरी 2 कोस है)। विकल्प (a) गलत मेल खाता है।",
+        "विकल्प (b): सराय खुफिया संग्रहण केंद्र के रूप में — सही; लेकिन प्रत्येक सराय में बारिद तैनात — सराय के अधिकारी मुकद्दम और चौकीदार थे, बारिद नहीं। विकल्प (b) आंशिक रूप से सही है लेकिन गलत मेल खाता है।",
+        "विकल्प (c): सराय में विभिन्न समुदायों के लिए अलग आवास — यह प्रलेखित है (हिंदू और मुस्लिम के लिए अलग-अलग)। इसे 'कोतवाल को निवासी अधिकारी' के रूप में जोड़ना गलत है — निवासी अधिकारी मुकद्दम और चौकीदार थे, कोतवाल नहीं।",
+        "विकल्प (d): सराय मानकीकृत वजन और माप के प्रवर्तन केंद्र के रूप में — यह सही रूप से प्रलेखित है; सराय वाणिज्यिक मानकों के प्रवर्तन के केंद्र थे। विकल्प (d) सही मेल खाता है।"
+      ],
+      "upsc_trap_explanation": "विकल्प (b) में भ्रम दो वास्तविक लेकिन भिन्न तथ्यों को मिला देता है: सराय खुफिया केंद्र थे (सत्य) और बारिद शेर शाह के खुफिया एजेंट थे (सत्य)। लेकिन बारिद सराय में तैनात अधिकारी नहीं थे — मुकद्दम और चौकीदार थे। सराय के खुफिया कार्य को बारिद नेटवर्क के साथ मिलाना एक संभावित सही लगने वाला लेकिन गलत मेल है, जो उन छात्रों को भ्रमित करता है जो दोनों तथ्यों को स्वतंत्र रूप से जानते हैं लेकिन संस्थागत विभाजन को नहीं समझते।",
+      "final_explanation": "सराय प्रणाली के कई कार्यों को व्यापक साम्राज्य खुफिया नेटवर्क से अलग करना आवश्यक है — प्रत्येक अलग संस्थागत चैनलों के माध्यम से संचालित होता था।\n\n• विकल्प (a) — गलत मेल: 1,700 सराय की संख्या सही है — लेकिन दूरी 5 कोस नहीं, 2 कोस थी। संख्या सही है, अंतराल गलत है।\n• विकल्प (b) — गलत मेल: सराय खुफिया केंद्र थे — लेकिन निवासी अधिकारी मुकद्दम और चौकीदार थे, बारिद नहीं। बारिद साम्राज्य भर के खुफिया नेटवर्क थे जो शेर शाह को रिपोर्ट करते थे, जो सराय में तैनात स्थानीय अधिकारियों से अलग थे।\n• विकल्प (c) — गलत मेल: सराय में विभिन्न समुदायों के लिए अलग आवास प्रलेखित है — लेकिन कोतवाल शहरी कानून प्रवर्तन अधिकारी था, सराय का निवासी अधिकारी नहीं। सही अधिकारी मुकद्दम और चौकीदार थे।\n• विकल्प (d) — सही मेल: सराय मानकीकृत वजन और माप के प्रवर्तन केंद्र थे — सराय का उपयोग करने वाले व्यापारी प्रमाणित वाणिज्यिक मानकों के अधीन थे, जो भौतिक अवसंरचना और वाणिज्यिक नियमन के बीच एक महत्वपूर्ण कड़ी है।\n\nमूल्य संवर्धन:\n• प्रत्येक सराय का मुकद्दम स्थानीय व्यवस्था और खुफिया रिपोर्टिंग के लिए जिम्मेदार था — जो साम्राज्य भर के बारिद नेटवर्क से अलग था।\n• तीन-स्तरीय खुफिया संरचना (गांव का मुकद्दम + सराय अधिकारी + साम्राज्य भर के बारिद) ने शेर शाह को उसके साम्राज्य के बारे में बहु-स्तरीय जानकारी दी।\n• सराय में मानकीकृत वजन और माप का प्रवर्तन सड़क अवसंरचना, वाणिज्यिक सुधार और बाजार एकीकरण के बीच संस्थागत कड़ी है।"
+    }
+  }
+]

@@ -30,6 +30,8 @@ import '../../features/revision_queue/data/repositories/revision_repository_impl
 import '../../features/revision_queue/domain/repositories/revision_repository.dart';
 import '../../features/revision_queue/domain/usecases/get_revision_queue_use_case.dart';
 import '../../features/revision_queue/domain/usecases/update_revision_queue_progress_use_case.dart';
+import '../domain/entities/weak_concept_group.dart';
+import '../domain/entities/trap_pattern_group.dart';
 import '../../features/bookmarks/data/repositories/bookmarks_repository_impl.dart';
 import '../../features/bookmarks/domain/repositories/bookmarks_repository.dart';
 import '../../features/bookmarks/domain/usecases/get_bookmarks_use_case.dart';
@@ -255,6 +257,18 @@ Future<UpdateStreakUseCase> updateStreakUseCase(Ref ref) async {
 Future<List<RevisionQueueItem>> revisionQueueItems(Ref ref) async {
   final uc = await ref.watch(getRevisionQueueUseCaseProvider.future);
   return uc.execute();
+}
+
+@riverpod
+Future<List<WeakSubTopicGroup>> weakSubTopicGroups(Ref ref) async {
+  final repo = await ref.watch(revisionRepositoryProvider.future);
+  return repo.getWeakSubTopicGroups();
+}
+
+@riverpod
+Future<List<TrapPatternGroup>> weakTrapGroups(Ref ref) async {
+  final repo = await ref.watch(revisionRepositoryProvider.future);
+  return repo.getWeakTrapGroups();
 }
 
 @riverpod
