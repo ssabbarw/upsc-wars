@@ -1,0 +1,10 @@
+{
+  "input_dir": "/Users/sachinsabbarwal/Desktop/upsc_wars_april/upsc_wars/assets/final_cleaned_questions",
+  "max_columns": 3,
+  "summary": {
+    "questions_scanned": 24587,
+    "table_questions_scanned": 2535,
+    "questions_with_more_than_max_columns": 0
+  },
+  "findings": []
+}

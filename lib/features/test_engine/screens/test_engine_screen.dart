@@ -829,44 +829,91 @@ class _QuestionTable extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
+    final header = table.header?.trim();
+    final footer = table.footer?.trim();
+    final columnCount = table.columns.length;
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      physics: const BouncingScrollPhysics(),
-      child: DataTable(
-        headingRowColor: WidgetStatePropertyAll(scheme.surfaceContainerLow),
-        dataRowColor: WidgetStateProperty.resolveWith(
-          (states) => scheme.surface,
-        ),
-        border: TableBorder.all(color: border, width: 0.5),
-        columns: [
-          for (final c in table.columns)
-            DataColumn(
-              label: Text(
-                c,
-                style: AppTextStyles.labelSm().copyWith(
-                  color: scheme.onSurface,
-                ),
-              ),
+    if (columnCount == 0) return const SizedBox.shrink();
+
+    final allRows = <List<String>>[
+      table.columns,
+      ...table.rows.map((row) {
+        if (row.length == columnCount) return row;
+        if (row.length < columnCount) {
+          return [...row, ...List.filled(columnCount - row.length, '')];
+        }
+        return row.take(columnCount).toList();
+      }),
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (header != null && header.isNotEmpty) ...[
+          Text(
+            header,
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
             ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
         ],
-        rows: [
-          for (final r in table.rows)
-            DataRow(
-              cells: [
-                for (final cell in r)
-                  DataCell(
-                    Text(
-                      cell,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurface,
-                      ),
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            border: Border.all(color: border, width: 0.5),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            child: Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              border: TableBorder.all(color: border, width: 0.5),
+              columnWidths: {
+                for (var i = 0; i < columnCount; i++)
+                  i: const FlexColumnWidth(),
+              },
+              children: [
+                for (var rowIndex = 0; rowIndex < allRows.length; rowIndex++)
+                  TableRow(
+                    decoration: BoxDecoration(
+                      color: rowIndex == 0
+                          ? scheme.surfaceContainerLow
+                          : scheme.surface,
                     ),
+                    children: [
+                      for (final cell in allRows[rowIndex])
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.sm,
+                            vertical: AppSpacing.sm,
+                          ),
+                          child: Text(
+                            cell,
+                            textAlign: TextAlign.left,
+                            style: (rowIndex == 0
+                                    ? AppTextStyles.labelSm()
+                                    : AppTextStyles.bodySm())
+                                .copyWith(color: scheme.onSurface),
+                          ),
+                        ),
+                    ],
                   ),
               ],
             ),
+          ),
+        ),
+        if (footer != null && footer.isNotEmpty) ...[
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            footer,
+            style: AppTextStyles.bodySm().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
         ],
-      ),
+      ],
     );
   }
 }

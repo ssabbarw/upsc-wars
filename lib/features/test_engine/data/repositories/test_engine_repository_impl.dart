@@ -73,21 +73,57 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       final displayTextHi = q.hiDisplayText ?? displayTextEn;
       final parsedEn = QuestionDisplayTextParser.parse(displayTextEn);
       final parsedHi = QuestionDisplayTextParser.parse(displayTextHi);
-      String pickOption(String primary, String secondary, String fallback) {
+      final table = await _userDb.questionTablesDao.getByQuestionUuid(
+        sq.questionUuid,
+      );
+      final footerEnOptions = _extractOptionsFromFooter(table?.enFooterText);
+      final footerHiOptions = _extractOptionsFromFooter(table?.hiFooterText);
+
+      String pickOption(
+        String primary,
+        String secondary,
+        String? footerEn,
+        String? footerHi,
+        String fallback,
+      ) {
         final p = primary.trim();
         if (p.isNotEmpty) return p;
         final s = secondary.trim();
         if (s.isNotEmpty) return s;
+        final fe = (footerEn ?? '').trim();
+        if (fe.isNotEmpty) return fe;
+        final fh = (footerHi ?? '').trim();
+        if (fh.isNotEmpty) return fh;
         return fallback;
       }
 
-      final optionA = pickOption(parsedEn.optionA, parsedHi.optionA, 'Option A');
-      final optionB = pickOption(parsedEn.optionB, parsedHi.optionB, 'Option B');
-      final optionC = pickOption(parsedEn.optionC, parsedHi.optionC, 'Option C');
-      final optionD = pickOption(parsedEn.optionD, parsedHi.optionD, 'Option D');
-
-      final table = await _userDb.questionTablesDao.getByQuestionUuid(
-        sq.questionUuid,
+      final optionA = pickOption(
+        parsedEn.optionA,
+        parsedHi.optionA,
+        footerEnOptions?.$1,
+        footerHiOptions?.$1,
+        'Option A',
+      );
+      final optionB = pickOption(
+        parsedEn.optionB,
+        parsedHi.optionB,
+        footerEnOptions?.$2,
+        footerHiOptions?.$2,
+        'Option B',
+      );
+      final optionC = pickOption(
+        parsedEn.optionC,
+        parsedHi.optionC,
+        footerEnOptions?.$3,
+        footerHiOptions?.$3,
+        'Option C',
+      );
+      final optionD = pickOption(
+        parsedEn.optionD,
+        parsedHi.optionD,
+        footerEnOptions?.$4,
+        footerHiOptions?.$4,
+        'Option D',
       );
 
       questions.add(
@@ -376,7 +412,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     final columnsRaw = language == 'hi' ? table.hiColumns : table.enColumns;
     final rowsRaw = language == 'hi' ? table.hiRows : table.enRows;
     final header = language == 'hi' ? table.hiHeaderText : table.enHeaderText;
-    final footer = language == 'hi' ? table.hiFooterText : table.enFooterText;
+    final footerRaw = language == 'hi' ? table.hiFooterText : table.enFooterText;
+    final footer = _stripOptionsFromFooter(footerRaw);
     final columns = _parseStringList(columnsRaw);
     final rowsDecoded = _safeJsonDecode(rowsRaw);
     if (columns.isEmpty || rowsDecoded is! List) return null;
@@ -438,5 +475,29 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     } catch (_) {
       return null;
     }
+  }
+
+  (String, String, String, String)? _extractOptionsFromFooter(String? footer) {
+    if (footer == null || footer.trim().isEmpty) return null;
+    final parsed = QuestionDisplayTextParser.parse(footer);
+    final a = parsed.optionA.trim();
+    final b = parsed.optionB.trim();
+    final c = parsed.optionC.trim();
+    final d = parsed.optionD.trim();
+    if (a.isEmpty || b.isEmpty || c.isEmpty || d.isEmpty) return null;
+    return (a, b, c, d);
+  }
+
+  String? _stripOptionsFromFooter(String? footer) {
+    if (footer == null || footer.trim().isEmpty) return footer;
+    final parsed = QuestionDisplayTextParser.parse(footer);
+    final hasAllOptions =
+        parsed.optionA.trim().isNotEmpty &&
+        parsed.optionB.trim().isNotEmpty &&
+        parsed.optionC.trim().isNotEmpty &&
+        parsed.optionD.trim().isNotEmpty;
+    if (!hasAllOptions) return footer;
+    final stem = parsed.stem.trim();
+    return stem.isEmpty ? null : stem;
   }
 }
