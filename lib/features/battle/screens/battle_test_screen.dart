@@ -78,7 +78,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
         notifier.tickSecond();
         final ui = ref.read(battleSessionProvider(sessionId));
         if (!context.mounted || ui.battleSession == null) return;
-        if (ui.isSubmitting) return;
+        if (ui.isSubmitting || ui.waitingForGuestToJoin) return;
         final remain = _remainingSecs(ui);
         if (remain > 0) return;
         if (autoSubmitDone.value) return;
@@ -189,6 +189,45 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 ),
                 child: BattleLiveScoreboard(sessionId: sessionId),
               ),
+              if (state.waitingForGuestToJoin)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xs,
+                    AppSpacing.lg,
+                    0,
+                  ),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.md,
+                        vertical: AppSpacing.sm,
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.hourglass_top,
+                            size: 20,
+                            color: scheme.primary,
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: Text(
+                              'Waiting for your opponent to join before you can answer.',
+                              style: AppTextStyles.bodyMd().copyWith(
+                                color: scheme.onSurface,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(
                   AppSpacing.lg,
@@ -199,7 +238,10 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 child: Row(
                   children: [
                     InkWell(
-                      onTap: state.isSubmitting ? null : notifier.toggleFlag,
+                      onTap:
+                          state.isSubmitting || state.waitingForGuestToJoin
+                              ? null
+                              : notifier.toggleFlag,
                       borderRadius: BorderRadius.circular(AppRadius.md),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -242,7 +284,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                     ),
                     TextButton(
                       onPressed:
-                          state.isSubmitting
+                          state.isSubmitting || state.waitingForGuestToJoin
                               ? null
                               : () async {
                                   try {
@@ -320,6 +362,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                         uiLanguage: uiLanguage.value,
                         revealed: revealed,
                         selectedOption: selectedForCurrent,
+                        optionsLocked: state.waitingForGuestToJoin,
                         onSelectOption: notifier.selectOption,
                       ),
                     ],
@@ -795,12 +838,14 @@ class _BattleQuestionBlock extends StatelessWidget {
     required this.revealed,
     required this.selectedOption,
     required this.onSelectOption,
+    this.optionsLocked = false,
   });
 
   final TestQuestion question;
   final String uiLanguage;
   final bool revealed;
   final String? selectedOption;
+  final bool optionsLocked;
   final Future<void> Function(String option) onSelectOption;
 
   @override
@@ -848,7 +893,7 @@ class _BattleQuestionBlock extends StatelessWidget {
               revealed,
             ),
             onTap:
-                revealed
+                revealed || optionsLocked
                     ? null
                     : () => onSelectOption(opt),
           ),

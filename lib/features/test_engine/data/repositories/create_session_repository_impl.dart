@@ -97,4 +97,59 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
 
     return sessionId;
   }
+
+  @override
+  Future<void> importSessionWithFixedId({
+    required String sessionId,
+    required SessionConfig config,
+  }) async {
+    final existing = await _userDatabase.sessionsDao.getSessionById(sessionId);
+    if (existing != null) return;
+
+    final uuids = config.specificQuestionUuids;
+    if (uuids == null || uuids.isEmpty) {
+      throw StateError('importSessionWithFixedId requires specificQuestionUuids');
+    }
+
+    final picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
+    if (picked.length != uuids.length) {
+      throw StateError('Some question UUIDs are missing from the local DB');
+    }
+
+    final n = picked.length;
+    if (n == 0) throw StateError('No questions available');
+
+    await _userDatabase.transaction(() async {
+      await _userDatabase.sessionsDao.insertSession(
+        SessionsCompanion.insert(
+          id: sessionId,
+          createdAt: DateTime.now(),
+          subject: config.subject,
+          topic: Value(config.topic),
+          subTopic: Value(config.subTopic),
+          mode: config.mode,
+          status: 'in_progress',
+          questionCount: n,
+          isTimed: config.mode == 'exam' ? config.isTimed : true,
+          timeLimitSecs: Value(config.timeLimitSecs),
+          examRemainingSecs: (config.mode == 'exam' &&
+                  config.isTimed &&
+                  config.timeLimitSecs != null)
+              ? Value(config.timeLimitSecs)
+              : const Value.absent(),
+          language: Value(config.language),
+        ),
+      );
+      for (var i = 0; i < n; i++) {
+        await _userDatabase.sessionQuestionsDao.insertSessionQuestion(
+          SessionQuestionsCompanion.insert(
+            id: _uuid.v4(),
+            sessionId: sessionId,
+            questionUuid: picked[i].uuid,
+            position: i + 1,
+          ),
+        );
+      }
+    });
+  }
 }

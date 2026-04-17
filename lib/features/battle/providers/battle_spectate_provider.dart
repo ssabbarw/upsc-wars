@@ -10,6 +10,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
+import 'package:upsc_wars/features/battle/data/battle_room_repository.dart';
 import 'package:upsc_wars/features/battle/domain/battle_scoring.dart';
 
 /// Live battle board after you submit while the opponent may still be playing.
@@ -124,22 +126,8 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
 
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _sub;
 
-  static const _roomsCollection = 'rooms';
-  static const _participantsSubCollection = 'joined_users';
-
-  String _year() => DateTime.now().year.toString();
-  String _month() => DateTime.now().month.toString();
-  String _day() => DateTime.now().day.toString();
-
   CollectionReference<Map<String, dynamic>> _joinedUsersCol(String roomId) {
-    return FirebaseFirestore.instance
-        .collection(_roomsCollection)
-        .doc(_year())
-        .collection(_month())
-        .doc(_day())
-        .collection(_day())
-        .doc(roomId)
-        .collection(_participantsSubCollection);
+    return BattleFirestorePaths.joinedUsersCol(roomId);
   }
 
   /// Loads last spectate session from prefs (same device) and re-subscribes.
@@ -243,29 +231,13 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
     final byQuestion = <String, String>{};
     if (raw is List) {
       for (var i = 0; i < raw.length && i < questions.length; i++) {
-        final mapped = _legacyResponseIntToOption(raw[i]);
+        final mapped = BattleRoomRepository.legacyResponseIntToOption(raw[i]);
         if (mapped != null) {
           byQuestion[questions[i].uuid] = mapped;
         }
       }
     }
     return byQuestion;
-  }
-
-  String? _legacyResponseIntToOption(Object? raw) {
-    final value = int.tryParse(raw.toString());
-    switch (value) {
-      case 1:
-        return 'a';
-      case 2:
-        return 'b';
-      case 3:
-        return 'c';
-      case 4:
-        return 'd';
-      default:
-        return null;
-    }
   }
 
   Future<void> _persistSnapshot() async {

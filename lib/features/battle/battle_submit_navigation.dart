@@ -15,6 +15,7 @@ Future<void> submitBattleWithOptionalSpectate(
   final ui = ref.read(battleSessionProvider(sessionId));
   final battle = ui.battleSession;
   if (battle == null) return;
+  if (ui.waitingForGuestToJoin) return;
 
   final notifier = ref.read(battleSessionProvider(sessionId).notifier);
   final limitSecs = battle.baseSession.timeLimitSecs;

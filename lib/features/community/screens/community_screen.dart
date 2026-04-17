@@ -8,6 +8,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../battle/domain/entities/battle_invite_target.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
 
@@ -206,6 +207,11 @@ Future<void> _showUserProfile(BuildContext context, CommunityUser user) async {
       builder: (context, setState) {
         final scheme = Theme.of(context).colorScheme;
         final isSelf = false;
+        final canInviteBattle =
+            !user.isInBattle &&
+            user.acceptingBattleInvites &&
+            !isBlocked &&
+            !isSelf;
         return SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(
@@ -263,12 +269,22 @@ Future<void> _showUserProfile(BuildContext context, CommunityUser user) async {
                     const SizedBox(width: AppSpacing.sm),
                     Expanded(
                       child: FilledButton.icon(
-                        onPressed: isBlocked || isSelf
+                        onPressed: !canInviteBattle
                             ? null
-                            : () => _showComingSoonSnackBar(
-                                context,
-                                'Invite For Battle',
-                              ),
+                            : () {
+                                Navigator.of(context).pop();
+                                context.push(
+                                  '/battle/config',
+                                  extra: BattleInviteTarget(
+                                    email: user.email.toLowerCase(),
+                                    displayName: user.name,
+                                    photoUrl:
+                                        user.photoUrl.trim().isEmpty
+                                            ? null
+                                            : user.photoUrl,
+                                  ),
+                                );
+                              },
                         icon: const Icon(Icons.sports_martial_arts_outlined),
                         label: const Text('Invite'),
                       ),

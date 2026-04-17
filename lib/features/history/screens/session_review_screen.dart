@@ -23,14 +23,12 @@ class SessionReviewScreen extends HookConsumerWidget {
       body: SafeArea(
         child: review.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error:
-              (e, st) => Center(
-                child: FilledButton(
-                  onPressed:
-                      () => ref.invalidate(reviewSessionProvider(sessionId)),
-                  child: const Text('Retry'),
-                ),
-              ),
+          error: (e, st) => Center(
+            child: FilledButton(
+              onPressed: () => ref.invalidate(reviewSessionProvider(sessionId)),
+              child: const Text('Retry'),
+            ),
+          ),
           data: (state) {
             final index = useState(0);
             final uiLanguage = useState('en');
@@ -41,10 +39,12 @@ class SessionReviewScreen extends HookConsumerWidget {
             final q = state.questions[index.value];
             final total = state.total;
             final current = index.value + 1;
-            final correct =
-                state.questions.where((e) => e.status == 'correct').length;
-            final wrong =
-                state.questions.where((e) => e.status == 'wrong').length;
+            final correct = state.questions
+                .where((e) => e.status == 'correct')
+                .length;
+            final wrong = state.questions
+                .where((e) => e.status == 'wrong')
+                .length;
             final isBookmarked = bookmarks.value[q.uuid] ?? false;
             final isQueued = queue.value[q.uuid] ?? false;
             return ReviewBody(
@@ -175,11 +175,10 @@ class ReviewBody extends StatelessWidget {
                     progressRight,
                     style: TextStyle(
                       fontSize: 12,
-                      color:
-                          showRevisionBadge
-                              ? scheme.primary
-                              : scheme.onSurfaceVariant,
-                    ),
+                      color: showRevisionBadge
+                          ? scheme.primary
+                          : scheme.onSurfaceVariant,
+                ),
                   ),
                 ],
               ),
@@ -246,7 +245,8 @@ class ReviewBody extends StatelessWidget {
               ],
               if (question.hasTable && tableData != null) ...[
                 SizedBox(
-                  height: parsed.stem.trim().isNotEmpty ||
+                  height:
+                      parsed.stem.trim().isNotEmpty ||
                           parsed.statements.isNotEmpty
                       ? 10
                       : 0,
@@ -272,10 +272,13 @@ class ReviewBody extends StatelessWidget {
               const SizedBox(height: 8),
               ExplanationCard(
                 translation: QuestionTranslation(
-                  finalExplanation:
-                      isHindi ? question.finalExplanationHi : question.finalExplanation,
+                  finalExplanation: isHindi
+                      ? question.finalExplanationHi
+                      : question.finalExplanation,
                   statementAnalysis:
-                      (isHindi ? question.statementAnalysisHi : question.statementAnalysis)
+                      (isHindi
+                              ? question.statementAnalysisHi
+                              : question.statementAnalysis)
                           .map(
                             (e) => StatementAnalysisVm(
                               statement: e.label,
@@ -284,18 +287,21 @@ class ReviewBody extends StatelessWidget {
                             ),
                           )
                           .toList(),
-                  eliminationLogic:
-                      isHindi ? question.eliminationLogicHi : question.eliminationLogic,
-                  strongDistractor:
-                      isHindi ? question.strongDistractorHi : question.strongDistractor,
-                  upscTrapExplanation:
-                      isHindi
-                          ? question.upscTrapExplanationHi
-                          : question.upscTrapExplanation,
+                  eliminationLogic: isHindi
+                      ? question.eliminationLogicHi
+                      : question.eliminationLogic,
+                  strongDistractor: isHindi
+                      ? question.strongDistractorHi
+                      : question.strongDistractor,
+                  upscTrapExplanation: isHindi
+                      ? question.upscTrapExplanationHi
+                      : question.upscTrapExplanation,
                   conceptsUsed: question.conceptsUsed,
                 ),
                 showStatements:
-                    (isHindi ? question.statementAnalysisHi : question.statementAnalysis)
+                    (isHindi
+                            ? question.statementAnalysisHi
+                            : question.statementAnalysis)
                         .isNotEmpty,
               ),
             ],
@@ -328,27 +334,26 @@ class ReviewBody extends StatelessWidget {
         if (!isRevisionMode)
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
-            child:
-                isQueued
-                    ? const Text(
-                      'In revision queue',
+            child: isQueued
+                ? const Text(
+                    'In revision queue',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Color(0xFF1D9E75),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )
+                : InkWell(
+                    onTap: onAddToRevision,
+                    child: Text(
+                      'Add to revision queue',
                       style: TextStyle(
                         fontSize: 11,
-                        color: Color(0xFF1D9E75),
-                        fontWeight: FontWeight.w500,
-                      ),
-                    )
-                    : InkWell(
-                      onTap: onAddToRevision,
-                      child: Text(
-                        'Add to revision queue',
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: scheme.onSurfaceVariant,
-                          decoration: TextDecoration.underline,
-                        ),
+                        color: scheme.onSurfaceVariant,
+                        decoration: TextDecoration.underline,
                       ),
                     ),
+                  ),
           ),
       ],
     );
@@ -421,7 +426,9 @@ class _TopBar extends HookConsumerWidget {
               margin: const EdgeInsets.only(right: 10),
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
               decoration: BoxDecoration(
-                color: isDark ? scheme.primaryContainer : const Color(0xFFE1F5EE),
+                color: isDark
+                    ? scheme.primaryContainer
+                    : const Color(0xFFE1F5EE),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
@@ -429,7 +436,9 @@ class _TopBar extends HookConsumerWidget {
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
-                  color: isDark ? scheme.onPrimaryContainer : const Color(0xFF0F6E56),
+                  color: isDark
+                      ? scheme.onPrimaryContainer
+                      : const Color(0xFF0F6E56),
                 ),
               ),
             ),
@@ -537,10 +546,9 @@ class _VerdictStrip extends StatelessWidget {
                       : 'Your answer: (${(question.selectedOption ?? '').toLowerCase()})',
                   style: TextStyle(
                     fontSize: 12,
-                    color:
-                        status.showOnlyCorrect
-                            ? const Color(0xFF3B6D11)
-                            : const Color(0xFF1D9E75),
+                    color: status.showOnlyCorrect
+                        ? const Color(0xFF3B6D11)
+                        : const Color(0xFF1D9E75),
                   ),
                 ),
             ],

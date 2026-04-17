@@ -6,7 +6,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
+import '../../features/battle/domain/entities/battle_invite_target.dart';
 import '../../features/battle/screens/battle_config_screen.dart';
+import '../../features/battle/screens/battle_join_screen.dart';
 import '../../features/battle/screens/battle_result_screen.dart';
 import '../../features/battle/screens/battle_test_screen.dart';
 import '../../features/battle/screens/battle_waiting_screen.dart';
@@ -115,7 +117,19 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle/config',
-        builder: (context, state) => const BattleConfigScreen(),
+        builder: (context, state) {
+          final invite = state.extra is BattleInviteTarget
+              ? state.extra! as BattleInviteTarget
+              : null;
+          return BattleConfigScreen(invite: invite);
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/battle/join/:sessionId',
+        builder: (context, state) => BattleJoinScreen(
+          sessionId: state.pathParameters['sessionId']!,
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function authedEmailLower() {
+      return signedIn()
+          && request.auth.token.email is string
+          ? lower(request.auth.token.email)
+          : '';
+    }
+
+    function matchDoc(sessionId) {
+      return get(/databases/$(database)/documents/battle_matches/$(sessionId)).data;
+    }
+
+    function isMatchParticipant(sessionId, participantId) {
+      let m = matchDoc(sessionId);
+      return authedEmailLower() == participantId
+        || authedEmailLower() == m.host_email
+        || (m.guest_email != null && authedEmailLower() == m.guest_email)
+        || (m.battle_mode == 'bot'
+            && participantId == 'opponent'
+            && authedEmailLower() == m.host_email);
+    }
+
+    function canWriteJoinedUserDoc(sessionId, participantId) {
+      let m = matchDoc(sessionId);
+      return authedEmailLower() == participantId
+        || (m.battle_mode == 'bot'
+            && participantId == 'opponent'
+            && authedEmailLower() == m.host_email);
+    }
+
+    // Community reads many user profiles; writes are limited to the signed-in doc id.
+    match /users/{userId} {
+      allow read: if signedIn();
+      allow create, update: if signedIn()
+          && userId == authedEmailLower();
+    }
+
+    match /buckets/{ym}/{day}/{bucketId} {
+      allow read: if signedIn();
+    }
+
+    match /battle_matches/{sessionId} {
+      allow read: if signedIn();
+
+      allow create: if signedIn()
+          && request.resource.data.host_email == authedEmailLower()
+          && request.resource.data.battle_mode in ['human', 'bot']
+          && request.resource.data.question_uuids is list;
+
+      allow update: if signedIn()
+          && resource.data.guest_email == authedEmailLower()
+          && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['lets_start_game', 'num_of_players_joined'])
+          && request.resource.data.lets_start_game == true
+          && request.resource.data.num_of_players_joined == 2;
+
+      match /joined_users/{participantId} {
+        allow read: if signedIn() && isMatchParticipant(sessionId, participantId);
+        allow create, update: if signedIn()
+            && canWriteJoinedUserDoc(sessionId, participantId);
+      }
+
+      match /joined_users_game_over_statuses/{participantId} {
+        allow read: if signedIn() && isMatchParticipant(sessionId, participantId);
+        allow create, update: if signedIn()
+            && canWriteJoinedUserDoc(sessionId, participantId);
+      }
+    }
+  }
+}

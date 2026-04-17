@@ -13,6 +13,10 @@ import 'package:upsc_wars/features/battle/domain/battle_scoring.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_participant.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_session.dart';
+import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
+import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
+import 'package:upsc_wars/features/battle/data/battle_room_repository.dart';
+import 'package:upsc_wars/features/battle/domain/battle_opponent_policy.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/battle/domain/services/bot_battle_service.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
@@ -31,6 +35,7 @@ class BattleSessionUiState {
     required this.errorMessage,
     required this.totalElapsedSecs,
     required this.bookmarkedByUuid,
+    required this.waitingForGuestToJoin,
   });
 
   factory BattleSessionUiState.initial() {
@@ -43,6 +48,7 @@ class BattleSessionUiState {
       errorMessage: null,
       totalElapsedSecs: 0,
       bookmarkedByUuid: {},
+      waitingForGuestToJoin: false,
     );
   }
 
@@ -54,6 +60,7 @@ class BattleSessionUiState {
   final String? errorMessage;
   final int totalElapsedSecs;
   final Map<String, bool> bookmarkedByUuid;
+  final bool waitingForGuestToJoin;
 
   BattleScore? get playerScore {
     final current = battleSession;
@@ -83,6 +90,7 @@ class BattleSessionUiState {
     bool clearError = false,
     int? totalElapsedSecs,
     Map<String, bool>? bookmarkedByUuid,
+    bool? waitingForGuestToJoin,
   }) {
     return BattleSessionUiState(
       isLoading: isLoading ?? this.isLoading,
@@ -93,6 +101,8 @@ class BattleSessionUiState {
       errorMessage: clearError ? null : (errorMessage ?? this.errorMessage),
       totalElapsedSecs: totalElapsedSecs ?? this.totalElapsedSecs,
       bookmarkedByUuid: bookmarkedByUuid ?? this.bookmarkedByUuid,
+      waitingForGuestToJoin:
+          waitingForGuestToJoin ?? this.waitingForGuestToJoin,
     );
   }
 }
@@ -107,11 +117,8 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   final String sessionId;
   final Map<String, Timer> _botTimersByQuestion = {};
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _participantsSub;
-
-  static const _roomsCollection = 'rooms';
-  static const _participantsSubCollection = 'joined_users';
-  static const _gameOverStatusSubCollection = 'joined_users_game_over_statuses';
-  static const _opponentId = 'opponent';
+  StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? _matchSub;
+  final BattleRoomRepository _roomRepository = const BattleRoomRepository();
 
   Future<void> _init() async {
     try {
@@ -136,6 +143,49 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
           );
         }
       }
+
+      final matchSnap = await BattleFirestorePaths.matchDoc(sessionId).get();
+      final questionUuids = base.questions.map((q) => q.uuid).toList();
+
+      var opponentId = BattleOpponentPolicy.syntheticBotDocId;
+      var opponentName = _opponentDisplayName(sessionId);
+      var humanLobbyWaiting = false;
+
+      if (matchSnap.exists) {
+        final d = matchSnap.data()!;
+        final mode = d['battle_mode'] as String?;
+        if (mode == BattleMatchFirestoreService.battleModeHuman) {
+          final host = (d['host_email'] as String?)?.toLowerCase() ?? '';
+          final guest = (d['guest_email'] as String?)?.toLowerCase() ?? '';
+          if (playerId == host && guest.isNotEmpty) {
+            opponentId = guest;
+            final gn = (d['guest_display_name'] as String?)?.trim();
+            opponentName =
+                (gn != null && gn.isNotEmpty) ? gn : 'Opponent';
+          } else if (playerId == guest && host.isNotEmpty) {
+            opponentId = host;
+            final hn = (d['host_display_name'] as String?)?.trim();
+            opponentName =
+                (hn != null && hn.isNotEmpty) ? hn : 'Opponent';
+          }
+          humanLobbyWaiting =
+              opponentId != BattleOpponentPolicy.syntheticBotDocId &&
+              !_matchDocLetsStartGame(d);
+        }
+      } else {
+        const svc = BattleMatchFirestoreService();
+        await svc.createBotMatch(
+          sessionId: sessionId,
+          questionUuids: questionUuids,
+          hostEmail: playerId,
+          hostDisplayName: user?.displayName ?? 'You',
+          hostPhotoUrl: user?.photoURL,
+          opponentDocId: BattleOpponentPolicy.syntheticBotDocId,
+          opponentDisplayName: _opponentDisplayName(sessionId),
+          subject: base.subject,
+        );
+      }
+
       final battle = BattleSession(
         id: sessionId,
         baseSession: base,
@@ -145,30 +195,29 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
           photoUrl: (photo == null || photo.isEmpty) ? null : photo,
         ),
         opponent: BattleParticipant(
-          id: _opponentId,
-          displayName: _opponentDisplayName(sessionId),
+          id: opponentId,
+          displayName: opponentName,
         ),
         playerResponsesByQuestion: _playerResponsesFromSession(base),
         opponentResponsesByQuestion: const <String, String>{},
       );
-      final roomId = await _createRoom(
-        sessionId: sessionId,
-        questionUuids: base.questions.map((q) => q.uuid).toList(),
-        player: battle.player,
-        opponent: battle.opponent,
-        playerPhotoUrl: user?.photoURL,
-      );
-      _listenToParticipants(roomId: roomId, base: battle);
+      _listenToParticipants(roomId: sessionId, base: battle);
       state = state.copyWith(
         isLoading: false,
         battleSession: battle,
-        roomId: roomId,
+        roomId: sessionId,
         currentIndex: _startIndex(base),
         totalElapsedSecs: totalElapsed,
         bookmarkedByUuid: bookmarked,
+        waitingForGuestToJoin: humanLobbyWaiting,
         clearError: true,
       );
-      _scheduleBotAnswerForCurrentQuestion();
+      if (humanLobbyWaiting) {
+        _listenMatchLobby();
+      }
+      if (opponentId == BattleOpponentPolicy.syntheticBotDocId) {
+        _scheduleBotAnswerForCurrentQuestion();
+      }
     } catch (error, stackTrace) {
       debugPrint('BattleSessionController._init failed: $error');
       debugPrintStack(stackTrace: stackTrace);
@@ -217,6 +266,12 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   Future<void> selectOption(String option) async {
     final current = state.battleSession;
     if (current == null) return;
+    if (state.waitingForGuestToJoin) {
+      state = state.copyWith(
+        errorMessage: 'Waiting for your opponent to join…',
+      );
+      return;
+    }
     final roomId = state.roomId;
     if (roomId == null) return;
     final index = state.currentIndex;
@@ -416,6 +471,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   void _scheduleBotAnswerForCurrentQuestion() {
     final current = state.battleSession;
     if (current == null) return;
+    if (!BattleOpponentPolicy.isBotOpponent(current.opponent.id)) return;
     final roomId = state.roomId;
     if (roomId == null) return;
     final q = current.baseSession.questions[state.currentIndex];
@@ -477,77 +533,11 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     }
   }
 
-  Future<String> _createRoom({
-    required String sessionId,
-    required List<String> questionUuids,
-    required BattleParticipant player,
-    required BattleParticipant opponent,
-    required String? playerPhotoUrl,
-  }) async {
-    try {
-      final roomRef = _roomDocRef(sessionId);
-      final emptyResponses = List<int>.filled(questionUuids.length, 0);
-      await roomRef
-          .set({
-            'question_indexes': List<int>.generate(
-              questionUuids.length,
-              (i) => i,
-            ),
-            'lets_start_game': true,
-            'num_of_players_joined': 2,
-            'fcm_token': null,
-          })
-          .timeout(const Duration(seconds: 8));
-      await roomRef
-          .collection(_participantsSubCollection)
-          .doc(player.id)
-          .set({
-            'display_name': player.displayName,
-            'profile_pic': playerPhotoUrl,
-            'game_progress_status': 'Active',
-            'responses': emptyResponses,
-          })
-          .timeout(const Duration(seconds: 8));
-      await roomRef
-          .collection(_gameOverStatusSubCollection)
-          .doc(player.id)
-          .set({'game_progress_status': 'Active'})
-          .timeout(const Duration(seconds: 8));
-      await roomRef
-          .collection(_participantsSubCollection)
-          .doc(opponent.id)
-          .set({
-            'display_name': opponent.displayName,
-            'profile_pic': 'no_image',
-            'game_progress_status': 'Active',
-            'responses': emptyResponses,
-          })
-          .timeout(const Duration(seconds: 8));
-      await roomRef
-          .collection(_gameOverStatusSubCollection)
-          .doc(opponent.id)
-          .set({'game_progress_status': 'Active'})
-          .timeout(const Duration(seconds: 8));
-      return roomRef.id;
-    } catch (error, stackTrace) {
-      debugPrint('BattleSessionController._createRoom failed: $error');
-      debugPrintStack(stackTrace: stackTrace);
-      rethrow;
-    }
-  }
-
   void _listenToParticipants({
     required String roomId,
     required BattleSession base,
   }) {
-    final colRef = FirebaseFirestore.instance
-        .collection(_roomsCollection)
-        .doc(_year())
-        .collection(_month())
-        .doc(_day())
-        .collection(_day())
-        .doc(roomId)
-        .collection(_participantsSubCollection);
+    final colRef = BattleFirestorePaths.joinedUsersCol(roomId);
     _participantsSub?.cancel();
     _participantsSub = colRef.snapshots().listen((snapshot) {
       final docs = snapshot.docs;
@@ -586,7 +576,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     if (raw is List) {
       for (var i = 0; i < raw.length && i < questions.length; i++) {
         final val = raw[i];
-        final mapped = _legacyResponseIntToOption(val);
+        final mapped = BattleRoomRepository.legacyResponseIntToOption(val);
         if (mapped != null) {
           byQuestion[questions[i].uuid] = mapped;
         }
@@ -604,34 +594,18 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     try {
       final current = state.battleSession;
       if (current == null) return;
-      final responses = List<int>.filled(
-        current.baseSession.questions.length,
-        0,
-      );
       final merged = participantId == current.player.id
           ? {...current.playerResponsesByQuestion, questionUuid: selectedOption}
           : {
               ...current.opponentResponsesByQuestion,
               questionUuid: selectedOption,
             };
-      for (var i = 0; i < current.baseSession.questions.length; i++) {
-        final q = current.baseSession.questions[i];
-        final selected = merged[q.uuid];
-        responses[i] = _optionToLegacyResponseInt(selected);
-      }
-      await FirebaseFirestore.instance
-          .collection(_roomsCollection)
-          .doc(_year())
-          .collection(_month())
-          .doc(_day())
-          .collection(_day())
-          .doc(roomId)
-          .collection(_participantsSubCollection)
-          .doc(participantId)
-          .set({
-            'game_progress_status': 'Active',
-            'responses': responses,
-          }, SetOptions(merge: true));
+      await _roomRepository.upsertParticipantResponses(
+        sessionId: roomId,
+        participantDocId: participantId,
+        questions: current.baseSession.questions,
+        responsesByQuestionUuid: merged,
+      );
     } catch (error, stackTrace) {
       debugPrint(
         'BattleSessionController._writeParticipantResponse failed: $error',
@@ -641,53 +615,25 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     }
   }
 
-  int _optionToLegacyResponseInt(String? option) {
-    switch (option) {
-      case 'a':
-        return 1;
-      case 'b':
-        return 2;
-      case 'c':
-        return 3;
-      case 'd':
-        return 4;
-      default:
-        return 0;
-    }
-  }
-
-  String? _legacyResponseIntToOption(Object? raw) {
-    final value = int.tryParse(raw.toString());
-    switch (value) {
-      case 1:
-        return 'a';
-      case 2:
-        return 'b';
-      case 3:
-        return 'c';
-      case 4:
-        return 'd';
-      default:
-        return null;
-    }
+  void _listenMatchLobby() {
+    _matchSub?.cancel();
+    _matchSub = BattleFirestorePaths.matchDoc(sessionId).snapshots().listen((
+      snap,
+    ) {
+      if (!snap.exists) return;
+      final lets = _matchDocLetsStartGame(snap.data());
+      final waiting = !lets;
+      if (state.waitingForGuestToJoin != waiting) {
+        state = state.copyWith(
+          waitingForGuestToJoin: waiting,
+          clearError: !waiting,
+        );
+      }
+    });
   }
 
   String _opponentDisplayName(String seed) {
     return BattleNameService.pickFromSeed(seed);
-  }
-
-  String _year() => DateTime.now().year.toString();
-  String _month() => DateTime.now().month.toString();
-  String _day() => DateTime.now().day.toString();
-
-  DocumentReference<Map<String, dynamic>> _roomDocRef(String roomId) {
-    return FirebaseFirestore.instance
-        .collection(_roomsCollection)
-        .doc(_year())
-        .collection(_month())
-        .doc(_day())
-        .collection(_day())
-        .doc(roomId);
   }
 
   String _friendlyStartError(Object error) {
@@ -704,12 +650,20 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   @override
   void dispose() {
     _participantsSub?.cancel();
+    _matchSub?.cancel();
     for (final timer in _botTimersByQuestion.values) {
       timer.cancel();
     }
     _botTimersByQuestion.clear();
     super.dispose();
   }
+}
+
+bool _matchDocLetsStartGame(Map<String, dynamic>? data) {
+  if (data == null) return true;
+  final v = data['lets_start_game'];
+  if (v is bool) return v;
+  return true;
 }
 
 ActiveSession _copySession(ActiveSession source, List<TestQuestion> questions) {

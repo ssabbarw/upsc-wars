@@ -8,11 +8,17 @@ import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/features/battle/data/battle_invite_cloud_service.dart';
+import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
+import 'package:upsc_wars/features/battle/domain/entities/battle_invite_target.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 class BattleConfigScreen extends ConsumerStatefulWidget {
-  const BattleConfigScreen({super.key});
+  const BattleConfigScreen({super.key, this.invite});
+
+  /// When set, starting the battle primes a human match and notifies [invite].
+  final BattleInviteTarget? invite;
 
   @override
   ConsumerState<BattleConfigScreen> createState() => _BattleConfigScreenState();
@@ -70,8 +76,11 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'One subject · 10 MCQs · Timed '
-                        '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
+                        widget.invite != null
+                            ? 'Battle vs ${widget.invite!.displayName} · 10 MCQs · Timed '
+                                '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)'
+                            : 'One subject · 10 MCQs · Timed '
+                                '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -223,6 +232,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
     if (subject == null || _submitting) return;
     setState(() => _submitting = true);
     try {
+      final me = ref.read(authStateChangesProvider).asData?.value;
       final uc = await ref.read(createSessionUseCaseProvider.future);
       final language = await ref.read(appLanguageProvider.future);
       final config = SessionConfig(
@@ -234,7 +244,40 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         language: language,
       );
       final sessionId = await uc.execute(config);
-      final opponentName = BattleNameService.pickFromSeed(sessionId);
+      final invite = widget.invite;
+      final opponentName =
+          invite != null
+              ? invite.displayName
+              : BattleNameService.pickFromSeed(sessionId);
+
+      if (invite != null) {
+        final load = await ref.read(loadSessionUseCaseProvider.future);
+        final active = await load.execute(sessionId);
+        final uuids = active.questions.map((q) => q.uuid).toList();
+        final hostEmail = (me?.email ?? '').toLowerCase().trim();
+        if (hostEmail.isEmpty) {
+          throw StateError('Sign in required to invite a player');
+        }
+        const matchSvc = BattleMatchFirestoreService();
+        await matchSvc.primeHumanMatch(
+          sessionId: sessionId,
+          questionUuids: uuids,
+          hostEmail: hostEmail,
+          hostDisplayName: playerName,
+          hostPhotoUrl: playerPhotoUrl?.trim(),
+          guestEmail: invite.email,
+          guestDisplayName: invite.displayName,
+          subject: subject,
+        );
+        const cloud = BattleInviteCloudService();
+        await cloud.sendBattleInvite(
+          guestEmail: invite.email,
+          sessionId: sessionId,
+          hostDisplayName: playerName,
+          subjectLabel: subject,
+        );
+      }
+
       if (!context.mounted) return;
       final photo = playerPhotoUrl?.trim();
       context.go(

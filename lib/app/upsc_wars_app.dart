@@ -1,7 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../core/providers/app_bootstrap.dart';
+import '../core/services/battle_messaging_service.dart';
+import '../core/services/fcm_token_sync_service.dart';
+import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/router/app_router.dart';
 import '../core/router/question_bank_loading_screen.dart';
@@ -51,6 +57,21 @@ class _RootMaterialApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    useEffect(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        BattleMessagingService.initialize();
+      });
+      return null;
+    }, const []);
+
+    ref.listen(authStateChangesProvider, (previous, next) {
+      next.whenData((user) {
+        if (user?.email != null) {
+          unawaited(FcmTokenSyncService.syncForCurrentUser());
+        }
+      });
+    });
+
     final router = ref.watch(appRouterProvider);
     final prefs = ref.watch(prefsServiceProvider);
     final themeMode = prefs.maybeWhen(
@@ -68,7 +89,7 @@ class _RootMaterialApp extends HookConsumerWidget {
         return Stack(
           fit: StackFit.expand,
           children: [
-            ?child,
+            child ?? const SizedBox.shrink(),
             const BattleSpectateFabHost(),
           ],
         );

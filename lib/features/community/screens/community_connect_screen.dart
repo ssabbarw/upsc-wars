@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../battle/domain/entities/battle_invite_target.dart';
 import '../domain/entities/community_user.dart';
 
 class CommunityConnectScreen extends StatelessWidget {
@@ -32,7 +33,21 @@ class CommunityConnectScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () => context.push('/battle/config'),
+                onPressed:
+                    () => context.push(
+                      '/battle/config',
+                      extra:
+                          user == null
+                              ? null
+                              : BattleInviteTarget(
+                                email: user.email.toLowerCase(),
+                                displayName: user.name,
+                                photoUrl:
+                                    user.photoUrl.trim().isEmpty
+                                        ? null
+                                        : user.photoUrl,
+                              ),
+                    ),
                 child: Text(
                   user == null ? 'Random Connect' : 'Start Challenge',
                 ),
