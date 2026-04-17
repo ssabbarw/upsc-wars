@@ -5,7 +5,11 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
+import '../../features/battle/domain/entities/battle_result_payload.dart';
+import '../../features/battle/screens/battle_config_screen.dart';
+import '../../features/battle/screens/battle_result_screen.dart';
 import '../../features/battle/screens/battle_test_screen.dart';
+import '../../features/battle/screens/battle_waiting_screen.dart';
 import '../../features/history/screens/history_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
@@ -107,6 +111,37 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/topic-test',
         builder: (context, state) => const TopicTestScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/battle/config',
+        builder: (context, state) => const BattleConfigScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/battle/wait/:sessionId',
+        builder: (context, state) {
+          final extra = state.extra;
+          final data = extra is Map ? extra : const <String, Object?>{};
+          return BattleWaitingScreen(
+            sessionId: state.pathParameters['sessionId']!,
+            playerName: (data['playerName'] as String?) ?? 'You',
+            opponentName: (data['opponentName'] as String?) ?? 'Opponent',
+          );
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/battle-results/:sessionId',
+        builder: (context, state) {
+          final payload = state.extra is BattleResultPayload
+              ? state.extra as BattleResultPayload
+              : null;
+          if (payload == null) {
+            return ResultsScreen(sessionId: state.pathParameters['sessionId']!);
+          }
+          return BattleResultScreen(payload: payload);
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

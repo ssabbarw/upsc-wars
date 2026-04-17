@@ -32,8 +32,7 @@ class CommunityConnectScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () =>
-                    context.push('/subject-test', extra: {'battleMode': 'bot'}),
+                onPressed: () => context.push('/battle/config'),
                 child: Text(
                   user == null ? 'Random Connect' : 'Start Challenge',
                 ),
@@ -41,7 +40,7 @@ class CommunityConnectScreen extends StatelessWidget {
             ),
             const SizedBox(height: AppSpacing.sm),
             Text(
-              'You will configure a 10-question battle before joining.',
+              'You will briefly see joined players, then battle auto-starts.',
               style: AppTextStyles.caption(),
             ),
           ],

@@ -69,7 +69,7 @@ class TestConfigBottomSheet extends HookConsumerWidget {
 
     final isExam = useState(args.forceExamMode ? true : true);
     final selectedPreset = useState(args.lockedQuestionCount ?? 25);
-    final examTimed = useState(true);
+    final examTimed = useState(args.forceExamMode ? true : true);
     final learningSecs = useState(60);
     final isSubmitting = useState(false);
 
@@ -310,23 +310,31 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                 ),
               if (isExam.value) ...[
                 const SizedBox(height: AppSpacing.xxl),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Timed test',
-                      style: AppTextStyles.label().copyWith(
-                        color: scheme.onSurface,
+                if (!args.forceExamMode)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Timed test',
+                        style: AppTextStyles.label().copyWith(
+                          color: scheme.onSurface,
+                        ),
                       ),
+                      Switch(
+                        value: examTimed.value,
+                        onChanged: (v) => examTimed.value = v,
+                        activeThumbColor: AppColors.onPrimary,
+                        activeTrackColor: AppColors.info,
+                      ),
+                    ],
+                  ),
+                if (args.forceExamMode)
+                  Text(
+                    'Timed test',
+                    style: AppTextStyles.label().copyWith(
+                      color: scheme.onSurface,
                     ),
-                    Switch(
-                      value: examTimed.value,
-                      onChanged: (v) => examTimed.value = v,
-                      activeThumbColor: AppColors.onPrimary,
-                      activeTrackColor: AppColors.info,
-                    ),
-                  ],
-                ),
+                  ),
                 if (examTimed.value) ...[
                   const SizedBox(height: AppSpacing.sm),
                   Text(

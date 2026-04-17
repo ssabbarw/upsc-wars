@@ -42,6 +42,16 @@ class BattleTestScreen extends ConsumerWidget {
     final playerScore = state.playerScore!;
     final opponentScore = state.opponentScore!;
     final isLast = state.currentIndex == session.questions.length - 1;
+    final payload = notifier.buildResultPayload();
+    final playerOutcomes =
+        payload?.playerOutcomeByQuestion ??
+        List<bool?>.filled(session.questions.length, null);
+    final selectedForCurrent =
+        battle.playerResponsesByQuestion[q.uuid] ?? q.selectedOption;
+
+    final opponentOutcomes =
+        payload?.opponentOutcomeByQuestion ??
+        List<bool?>.filled(session.questions.length, null);
 
     return Scaffold(
       appBar: AppBar(
@@ -60,12 +70,14 @@ class BattleTestScreen extends ConsumerWidget {
                 opponentName: battle.opponent.displayName,
                 playerScore: playerScore,
                 opponentScore: opponentScore,
+                playerOutcomeByQuestion: playerOutcomes,
+                opponentOutcomeByQuestion: opponentOutcomes,
               ),
               const SizedBox(height: AppSpacing.md),
               Expanded(
                 child: _BattleQuestionCard(
                   question: q,
-                  selectedOption: q.selectedOption,
+                  selectedOption: selectedForCurrent,
                   onSelectOption: notifier.selectOption,
                 ),
               ),
@@ -98,8 +110,13 @@ class BattleTestScreen extends ConsumerWidget {
                                 : () async {
                                     try {
                                       final id = await notifier.submit();
+                                      final resultPayload = notifier
+                                          .buildResultPayload();
                                       if (context.mounted) {
-                                        context.go('/results/$id');
+                                        context.go(
+                                          '/battle-results/$id',
+                                          extra: resultPayload,
+                                        );
                                       }
                                     } catch (_) {
                                       if (!context.mounted) return;

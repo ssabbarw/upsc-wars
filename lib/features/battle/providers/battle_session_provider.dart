@@ -1,15 +1,19 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/legacy.dart'
     show StateNotifier, StateNotifierProvider;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
+import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/features/battle/domain/battle_scoring.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_participant.dart';
+import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_session.dart';
+import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/battle/domain/services/bot_battle_service.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
@@ -94,20 +98,21 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   final Map<String, Timer> _botTimersByQuestion = {};
   StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _participantsSub;
 
-  static const _roomsCollection = 'battle_rooms';
-  static const _participantsSubCollection = 'participants';
+  static const _roomsCollection = 'rooms';
+  static const _participantsSubCollection = 'joined_users';
+  static const _gameOverStatusSubCollection = 'joined_users_game_over_statuses';
   static const _opponentId = 'opponent';
 
   Future<void> _init() async {
     try {
-      final load = await ref.read(loadSessionUseCaseProvider.future);
-      final base = await load.execute(sessionId);
+      final base = await _loadSessionWithRetry();
       final user = ref.read(authStateChangesProvider).asData?.value;
+      final playerId = (user?.email ?? user?.uid ?? 'player').toLowerCase();
       final battle = BattleSession(
         id: sessionId,
         baseSession: base,
         player: BattleParticipant(
-          id: user?.uid ?? 'player',
+          id: playerId,
           displayName: user?.displayName ?? 'You',
         ),
         opponent: BattleParticipant(
@@ -122,6 +127,7 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         questionUuids: base.questions.map((q) => q.uuid).toList(),
         player: battle.player,
         opponent: battle.opponent,
+        playerPhotoUrl: user?.photoURL,
       );
       _listenToParticipants(roomId: roomId, base: battle);
       state = state.copyWith(
@@ -132,13 +138,33 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         clearError: true,
       );
       _scheduleBotAnswerForCurrentQuestion();
-    } catch (_) {
+    } catch (error, stackTrace) {
+      debugPrint('BattleSessionController._init failed: $error');
+      debugPrintStack(stackTrace: stackTrace);
       state = state.copyWith(
         isLoading: false,
-        errorMessage:
-            'Could not start online battle. Please check internet and retry.',
+        errorMessage: _friendlyStartError(error),
       );
     }
+  }
+
+  Future<ActiveSession> _loadSessionWithRetry() async {
+    final load = await ref.read(loadSessionUseCaseProvider.future);
+    const maxAttempts = 4;
+    for (var attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        return await load.execute(sessionId);
+      } catch (error) {
+        final isNotFound = error is SessionNotFoundException;
+        if (!isNotFound || attempt == maxAttempts) rethrow;
+        debugPrint(
+          'BattleSessionController._loadSessionWithRetry waiting '
+          '(attempt $attempt/$maxAttempts) for session $sessionId',
+        );
+        await Future.delayed(Duration(milliseconds: attempt * 250));
+      }
+    }
+    throw const SessionNotFoundException();
   }
 
   int _startIndex(ActiveSession session) {
@@ -240,6 +266,44 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     }
   }
 
+  BattleResultPayload? buildResultPayload() {
+    final current = state.battleSession;
+    if (current == null) return null;
+    final player = state.playerScore;
+    final opponent = state.opponentScore;
+    if (player == null || opponent == null) return null;
+
+    bool? outcomeForQuestion(String? selected, String correct) {
+      if (selected == null) return null;
+      return selected.toLowerCase() == correct.toLowerCase();
+    }
+
+    final playerOutcomes = current.baseSession.questions
+        .map(
+          (q) => outcomeForQuestion(
+            current.playerResponsesByQuestion[q.uuid],
+            q.correctOption,
+          ),
+        )
+        .toList();
+    final opponentOutcomes = current.baseSession.questions
+        .map(
+          (q) => outcomeForQuestion(
+            current.opponentResponsesByQuestion[q.uuid],
+            q.correctOption,
+          ),
+        )
+        .toList();
+    return BattleResultPayload(
+      playerName: current.player.displayName,
+      opponentName: current.opponent.displayName,
+      playerScore: player.points,
+      opponentScore: opponent.points,
+      playerOutcomeByQuestion: playerOutcomes,
+      opponentOutcomeByQuestion: opponentOutcomes,
+    );
+  }
+
   void _scheduleBotAnswerForCurrentQuestion() {
     final current = state.battleSession;
     if (current == null) return;
@@ -274,40 +338,58 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     required List<String> questionUuids,
     required BattleParticipant player,
     required BattleParticipant opponent,
+    required String? playerPhotoUrl,
   }) async {
-    final roomRef = FirebaseFirestore.instance
-        .collection(_roomsCollection)
-        .doc(sessionId);
-    final now = DateTime.now().millisecondsSinceEpoch;
-    await roomRef
-        .set({
-          'sessionId': sessionId,
-          'status': 'active',
-          'createdAt': now,
-          'questionUuids': questionUuids,
-        })
-        .timeout(const Duration(seconds: 8));
-    await roomRef
-        .collection(_participantsSubCollection)
-        .doc(player.id)
-        .set({
-          'displayName': player.displayName,
-          'isBot': false,
-          'updatedAt': now,
-          'responses': <String, String>{},
-        })
-        .timeout(const Duration(seconds: 8));
-    await roomRef
-        .collection(_participantsSubCollection)
-        .doc(opponent.id)
-        .set({
-          'displayName': opponent.displayName,
-          'isBot': true,
-          'updatedAt': now,
-          'responses': <String, String>{},
-        })
-        .timeout(const Duration(seconds: 8));
-    return roomRef.id;
+    try {
+      final roomRef = _roomDocRef(sessionId);
+      final emptyResponses = List<int>.filled(questionUuids.length, 0);
+      await roomRef
+          .set({
+            'question_indexes': List<int>.generate(
+              questionUuids.length,
+              (i) => i,
+            ),
+            'lets_start_game': true,
+            'num_of_players_joined': 2,
+            'fcm_token': null,
+          })
+          .timeout(const Duration(seconds: 8));
+      await roomRef
+          .collection(_participantsSubCollection)
+          .doc(player.id)
+          .set({
+            'display_name': player.displayName,
+            'profile_pic': playerPhotoUrl,
+            'game_progress_status': 'Active',
+            'responses': emptyResponses,
+          })
+          .timeout(const Duration(seconds: 8));
+      await roomRef
+          .collection(_gameOverStatusSubCollection)
+          .doc(player.id)
+          .set({'game_progress_status': 'Active'})
+          .timeout(const Duration(seconds: 8));
+      await roomRef
+          .collection(_participantsSubCollection)
+          .doc(opponent.id)
+          .set({
+            'display_name': opponent.displayName,
+            'profile_pic': 'no_image',
+            'game_progress_status': 'Active',
+            'responses': emptyResponses,
+          })
+          .timeout(const Duration(seconds: 8));
+      await roomRef
+          .collection(_gameOverStatusSubCollection)
+          .doc(opponent.id)
+          .set({'game_progress_status': 'Active'})
+          .timeout(const Duration(seconds: 8));
+      return roomRef.id;
+    } catch (error, stackTrace) {
+      debugPrint('BattleSessionController._createRoom failed: $error');
+      debugPrintStack(stackTrace: stackTrace);
+      rethrow;
+    }
   }
 
   void _listenToParticipants({
@@ -316,6 +398,10 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   }) {
     final colRef = FirebaseFirestore.instance
         .collection(_roomsCollection)
+        .doc(_year())
+        .collection(_month())
+        .doc(_day())
+        .collection(_day())
         .doc(roomId)
         .collection(_participantsSubCollection);
     _participantsSub?.cancel();
@@ -328,9 +414,13 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         if (doc.id == base.player.id) playerDoc = doc;
         if (doc.id == base.opponent.id) opponentDoc = doc;
       }
-      final playerResponses = _responsesFromMap(playerDoc?.data()['responses']);
-      final opponentResponses = _responsesFromMap(
+      final playerResponses = _responsesFromList(
+        playerDoc?.data()['responses'],
+        base.baseSession.questions,
+      );
+      final opponentResponses = _responsesFromList(
         opponentDoc?.data()['responses'],
+        base.baseSession.questions,
       );
 
       final current = state.battleSession;
@@ -344,16 +434,21 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     });
   }
 
-  Map<String, String> _responsesFromMap(Object? raw) {
-    if (raw is Map<String, dynamic>) {
-      return raw.map((key, value) => MapEntry(key, value.toString()));
+  Map<String, String> _responsesFromList(
+    Object? raw,
+    List<TestQuestion> questions,
+  ) {
+    final byQuestion = <String, String>{};
+    if (raw is List) {
+      for (var i = 0; i < raw.length && i < questions.length; i++) {
+        final val = raw[i];
+        final mapped = _legacyResponseIntToOption(val);
+        if (mapped != null) {
+          byQuestion[questions[i].uuid] = mapped;
+        }
+      }
     }
-    if (raw is Map) {
-      return raw.map(
-        (key, value) => MapEntry(key.toString(), value.toString()),
-      );
-    }
-    return const <String, String>{};
+    return byQuestion;
   }
 
   Future<void> _writeParticipantResponse({
@@ -362,26 +457,104 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     required String questionUuid,
     required String selectedOption,
   }) async {
-    await FirebaseFirestore.instance
-        .collection(_roomsCollection)
-        .doc(roomId)
-        .collection(_participantsSubCollection)
-        .doc(participantId)
-        .set({
-          'updatedAt': DateTime.now().millisecondsSinceEpoch,
-          'responses': {questionUuid: selectedOption},
-        }, SetOptions(merge: true));
+    try {
+      final current = state.battleSession;
+      if (current == null) return;
+      final responses = List<int>.filled(
+        current.baseSession.questions.length,
+        0,
+      );
+      final merged = participantId == current.player.id
+          ? {...current.playerResponsesByQuestion, questionUuid: selectedOption}
+          : {
+              ...current.opponentResponsesByQuestion,
+              questionUuid: selectedOption,
+            };
+      for (var i = 0; i < current.baseSession.questions.length; i++) {
+        final q = current.baseSession.questions[i];
+        final selected = merged[q.uuid];
+        responses[i] = _optionToLegacyResponseInt(selected);
+      }
+      await FirebaseFirestore.instance
+          .collection(_roomsCollection)
+          .doc(_year())
+          .collection(_month())
+          .doc(_day())
+          .collection(_day())
+          .doc(roomId)
+          .collection(_participantsSubCollection)
+          .doc(participantId)
+          .set({
+            'game_progress_status': 'Active',
+            'responses': responses,
+          }, SetOptions(merge: true));
+    } catch (error, stackTrace) {
+      debugPrint(
+        'BattleSessionController._writeParticipantResponse failed: $error',
+      );
+      debugPrintStack(stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
+  int _optionToLegacyResponseInt(String? option) {
+    switch (option) {
+      case 'a':
+        return 1;
+      case 'b':
+        return 2;
+      case 'c':
+        return 3;
+      case 'd':
+        return 4;
+      default:
+        return 0;
+    }
+  }
+
+  String? _legacyResponseIntToOption(Object? raw) {
+    final value = int.tryParse(raw.toString());
+    switch (value) {
+      case 1:
+        return 'a';
+      case 2:
+        return 'b';
+      case 3:
+        return 'c';
+      case 4:
+        return 'd';
+      default:
+        return null;
+    }
   }
 
   String _opponentDisplayName(String seed) {
-    const names = <String>[
-      'Aspirant_01',
-      'UPSC_Warrior',
-      'CurrentAffairsAce',
-      'PolityNinja',
-      'GSMaster',
-    ];
-    return names[seed.hashCode.abs() % names.length];
+    return BattleNameService.pickFromSeed(seed);
+  }
+
+  String _year() => DateTime.now().year.toString();
+  String _month() => DateTime.now().month.toString();
+  String _day() => DateTime.now().day.toString();
+
+  DocumentReference<Map<String, dynamic>> _roomDocRef(String roomId) {
+    return FirebaseFirestore.instance
+        .collection(_roomsCollection)
+        .doc(_year())
+        .collection(_month())
+        .doc(_day())
+        .collection(_day())
+        .doc(roomId);
+  }
+
+  String _friendlyStartError(Object error) {
+    final message = error.toString().toLowerCase();
+    if (message.contains('permission-denied')) {
+      return 'Battle permission denied by Firestore rules.';
+    }
+    if (message.contains('unavailable') || message.contains('network')) {
+      return 'Network unavailable. Please check internet and retry.';
+    }
+    return 'Could not start online battle. Please retry.';
   }
 
   @override
