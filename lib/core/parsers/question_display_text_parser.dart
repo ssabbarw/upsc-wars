@@ -18,7 +18,7 @@ abstract final class QuestionDisplayTextParser {
   QuestionDisplayTextParser._();
 
   static final RegExp _marker = RegExp(
-    r'^\s*[\(\[]?([a-dA-D])[\)\]]?\s+',
+    r'^\s*[\(\[]([a-dA-D])[\)\]]\s+',
     multiLine: true,
   );
 
@@ -69,4 +69,5 @@ abstract final class QuestionDisplayTextParser {
       optionD: ordered['d'] ?? '',
     );
   }
+
 }
