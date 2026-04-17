@@ -19,7 +19,9 @@ class BotBattleService {
   }) {
     final seed = Object.hash(sessionId, question.uuid, questionIndex);
     final rng = Random(seed);
-    final delay = Duration(milliseconds: 1200 + rng.nextInt(2600));
+    // Human-like pacing: 5–100 seconds before answering (per battle / question).
+    final delaySecs = 5 + rng.nextInt(96);
+    final delay = Duration(seconds: delaySecs);
     final accuracyRoll = rng.nextDouble();
     final shouldBeCorrect = accuracyRoll < 0.62;
     final correct = question.correctOption.toLowerCase();

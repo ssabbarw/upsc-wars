@@ -430,16 +430,51 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
     );
     _botTimersByQuestion[q.uuid] = Timer(plan.delay, () {
       _botTimersByQuestion.remove(q.uuid);
-      final latest = state.battleSession;
-      if (latest == null) return;
-      if (latest.opponentResponsesByQuestion.containsKey(q.uuid)) return;
-      _writeParticipantResponse(
-        roomId: roomId,
-        participantId: latest.opponent.id,
-        questionUuid: q.uuid,
-        selectedOption: plan.selectedOption,
+      unawaited(
+        _commitBotAnswer(
+          roomId: roomId,
+          question: q,
+          selectedOption: plan.selectedOption,
+        ),
       );
     });
+  }
+
+  Future<void> _commitBotAnswer({
+    required String roomId,
+    required TestQuestion question,
+    required String selectedOption,
+  }) async {
+    final latest = state.battleSession;
+    if (latest == null) return;
+    if (latest.opponentResponsesByQuestion.containsKey(question.uuid)) {
+      return;
+    }
+    try {
+      await _writeParticipantResponse(
+        roomId: roomId,
+        participantId: latest.opponent.id,
+        questionUuid: question.uuid,
+        selectedOption: selectedOption,
+      );
+      final cur = state.battleSession;
+      if (cur == null) return;
+      if (cur.opponentResponsesByQuestion.containsKey(question.uuid)) {
+        return;
+      }
+      final merged = {
+        ...cur.opponentResponsesByQuestion,
+        question.uuid: selectedOption,
+      };
+      state = state.copyWith(
+        battleSession: cur.copyWith(
+          opponentResponsesByQuestion: merged,
+        ),
+      );
+    } catch (error, stackTrace) {
+      debugPrint('BattleSessionController._commitBotAnswer failed: $error');
+      debugPrintStack(stackTrace: stackTrace);
+    }
   }
 
   Future<String> _createRoom({

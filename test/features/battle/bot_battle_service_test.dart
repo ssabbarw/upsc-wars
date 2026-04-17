@@ -33,6 +33,25 @@ void main() {
       expect(['a', 'b', 'c', 'd'], contains(plan.selectedOption));
       expect(plan.delay.inMilliseconds, greaterThan(0));
     });
+
+    test('delay is between 5 and 100 seconds inclusive', () {
+      const service = BotBattleService();
+      for (var i = 0; i < 80; i++) {
+        final plan = service.buildPlan(
+          sessionId: 'session-$i',
+          questionIndex: i % 5,
+          question: _question('q$i', 'b'),
+        );
+        expect(
+          plan.delay,
+          greaterThanOrEqualTo(const Duration(seconds: 5)),
+        );
+        expect(
+          plan.delay,
+          lessThanOrEqualTo(const Duration(seconds: 100)),
+        );
+      }
+    });
   });
 }
 
