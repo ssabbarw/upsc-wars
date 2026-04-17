@@ -17,6 +17,8 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../providers/auth_providers.dart';
+import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 
@@ -29,6 +31,9 @@ class HomeScreen extends HookConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final home = ref.watch(homeStateProvider);
+    final authState = ref.watch(authStateChangesProvider);
+    final authActions = ref.watch(authActionsProvider);
+    final isAuthBusy = authActions.isLoading;
     final totalQuestions = ref.watch(totalQuestionCountProvider);
     final bootstrap = ref.watch(appBootstrapProvider);
     final cachedStreakText = useState<String?>(null);
@@ -52,13 +57,24 @@ class HomeScreen extends HookConsumerWidget {
 
     useEffect(() {
       home.whenData((h) {
-        cachedStreakText.value =
-            h.streakCount == 0 ? 'Start your streak' : '${h.streakCount} days';
+        cachedStreakText.value = h.streakCount == 0
+            ? 'Start your streak'
+            : '${h.streakCount} days';
       });
       return null;
     }, [home]);
 
     final greeting = _greeting();
+    final user = authState.asData?.value;
+    final userName = user == null
+        ? 'Aspirant'
+        : _toTitleCase(user.displayName?.trim() ?? 'Aspirant');
+    final avatarInitials = _avatarInitials(user?.displayName);
+    final avatarBackgroundColor = _avatarBackgroundColor(
+      user?.displayName,
+      scheme,
+    );
+    final hasPhotoUrl = user?.photoURL?.trim().isNotEmpty ?? false;
 
     return PopScope(
       canPop: false,
@@ -124,8 +140,74 @@ class HomeScreen extends HookConsumerWidget {
                   ),
                 ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Material(
+                    color: AppColors.transparent,
+                    child: InkWell(
+                      onTap: () async {
+                        if (user == null) {
+                          await showGoogleLoginBottomSheet(
+                            context: context,
+                            isLoading: isAuthBusy,
+                            onGoogleTap: () {
+                              Navigator.of(context).pop();
+                              ref
+                                  .read(authActionsProvider.notifier)
+                                  .signInWithGoogle();
+                            },
+                          );
+                          return;
+                        }
+
+                        if (context.mounted) {
+                          context.push('/profile');
+                        }
+                      },
+                      borderRadius: BorderRadius.circular(AppRadius.pill),
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        margin: const EdgeInsets.only(right: AppSpacing.sm),
+                        decoration: BoxDecoration(
+                          color: user == null
+                              ? scheme.surfaceContainerLow
+                              : avatarBackgroundColor,
+                          shape: BoxShape.circle,
+                          border: Border.all(color: borderColor, width: 0.5),
+                        ),
+                        child: hasPhotoUrl
+                            ? ClipOval(
+                                child: Image.network(
+                                  user!.photoURL!,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (_, __, ___) => Center(
+                                    child: Text(
+                                      avatarInitials,
+                                      style: AppTextStyles.label().copyWith(
+                                        color: scheme.onPrimaryContainer,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : user == null
+                            ? Icon(
+                                Icons.person_outline,
+                                size: 18,
+                                color: scheme.onSurfaceVariant,
+                              )
+                            : Center(
+                                child: Text(
+                                  avatarInitials,
+                                  style: AppTextStyles.label().copyWith(
+                                    color: scheme.onPrimaryContainer,
+                                  ),
+                                ),
+                              ),
+                      ),
+                    ),
+                  ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,7 +219,7 @@ class HomeScreen extends HookConsumerWidget {
                           ),
                         ),
                         Text(
-                          'Aspirant',
+                          userName,
                           style: AppTextStyles.bodySm().copyWith(
                             color: scheme.onSurfaceVariant,
                           ),
@@ -149,7 +231,9 @@ class HomeScreen extends HookConsumerWidget {
                     color: AppColors.transparent,
                     child: InkWell(
                       onTap: () async {
-                        final prefs = await ref.read(prefsServiceProvider.future);
+                        final prefs = await ref.read(
+                          prefsServiceProvider.future,
+                        );
                         prefs.darkModeEnabled = !isDark;
                         ref.invalidate(prefsServiceProvider);
                       },
@@ -343,6 +427,41 @@ class HomeScreen extends HookConsumerWidget {
     if (h < 12) return 'Good morning';
     if (h < 17) return 'Good afternoon';
     return 'Good evening';
+  }
+
+  String _avatarInitials(String? displayName) {
+    final cleanName = displayName?.trim() ?? '';
+    if (cleanName.isEmpty) return 'A';
+    final parts = cleanName.split(RegExp(r'\s+')).where((p) => p.isNotEmpty);
+    final names = parts.toList();
+    if (names.isEmpty) return 'A';
+    return names.first[0].toUpperCase();
+  }
+
+  String _toTitleCase(String value) {
+    if (value.isEmpty) return value;
+    final words = value
+        .split(RegExp(r'\s+'))
+        .where((word) => word.isNotEmpty)
+        .map((word) => '${word[0].toUpperCase()}${word.substring(1)}');
+    return words.join(' ');
+  }
+
+  Color _avatarBackgroundColor(String? displayName, ColorScheme scheme) {
+    final seed = displayName?.trim().toLowerCase() ?? '';
+    const defaultIndex = 0;
+    final palette = [
+      (bg: Colors.indigo.shade100, fg: Colors.indigo.shade900),
+      (bg: Colors.teal.shade100, fg: Colors.teal.shade900),
+      (bg: Colors.deepOrange.shade100, fg: Colors.deepOrange.shade900),
+      (bg: Colors.purple.shade100, fg: Colors.purple.shade900),
+      (bg: Colors.blue.shade100, fg: Colors.blue.shade900),
+      (bg: Colors.green.shade100, fg: Colors.green.shade900),
+    ];
+    final index = seed.isEmpty
+        ? defaultIndex
+        : seed.hashCode.abs() % palette.length;
+    return palette[index].bg.withValues(alpha: 0.9);
   }
 }
 

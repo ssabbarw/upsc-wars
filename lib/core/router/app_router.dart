@@ -3,9 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/history/screens/history_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
+import '../../features/community/screens/community_screen.dart';
+import '../../features/community/providers/community_providers.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
@@ -21,7 +24,6 @@ import '../../features/weak_areas/screens/concept_detail_screen.dart'
     show SubTopicDetailScreen;
 import '../../features/weak_areas/screens/trap_patterns_screen.dart';
 import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
-import '../../shared/widgets/google_login_bottom_sheet.dart';
 import '../providers/app_bootstrap.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -35,6 +37,38 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   ref.watch(appBootstrapProvider).requireValue;
+  final shellBranches = <StatefulShellBranch>[
+    StatefulShellBranch(
+      routes: [
+        GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
+      ],
+    ),
+    StatefulShellBranch(
+      routes: [
+        GoRoute(
+          path: '/history',
+          builder: (context, state) => const HistoryScreen(),
+        ),
+      ],
+    ),
+    StatefulShellBranch(
+      routes: [
+        GoRoute(
+          path: '/progress',
+          builder: (context, state) => const ProgressScreen(),
+        ),
+      ],
+    ),
+    if (FeatureFlags.communityTab)
+      StatefulShellBranch(
+        routes: [
+          GoRoute(
+            path: '/community',
+            builder: (context, state) => const CommunityScreen(),
+          ),
+        ],
+      ),
+  ];
   return GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: '/',
@@ -43,40 +77,12 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state, navigationShell) {
           return _AppShell(navigationShell: navigationShell);
         },
-        branches: [
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/',
-                builder: (context, state) => const HomeScreen(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/history',
-                builder: (context, state) => const HistoryScreen(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/progress',
-                builder: (context, state) => const ProgressScreen(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/profile',
-                builder: (context, state) => const ProfileScreen(),
-              ),
-            ],
-          ),
-        ],
+        branches: shellBranches,
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/profile',
+        builder: (context, state) => const ProfileScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -171,9 +177,29 @@ class _AppShell extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final authState = ref.watch(authStateChangesProvider);
-    final authActions = ref.watch(authActionsProvider);
-    final isAuthBusy = authActions.isLoading;
+    final navItems = <BottomNavigationBarItem>[
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.home_outlined, size: 22),
+        activeIcon: Icon(Icons.home, size: 22),
+        label: 'Home',
+      ),
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.access_time_outlined, size: 22),
+        activeIcon: Icon(Icons.access_time, size: 22),
+        label: 'History',
+      ),
+      const BottomNavigationBarItem(
+        icon: Icon(Icons.bar_chart_outlined, size: 22),
+        activeIcon: Icon(Icons.bar_chart, size: 22),
+        label: 'Progress',
+      ),
+      if (FeatureFlags.communityTab)
+        const BottomNavigationBarItem(
+          icon: Icon(Icons.groups_outlined, size: 22),
+          activeIcon: Icon(Icons.groups, size: 22),
+          label: 'Community',
+        ),
+    ];
 
     return Scaffold(
       body: navigationShell,
@@ -184,18 +210,10 @@ class _AppShell extends HookConsumerWidget {
           BottomNavigationBar(
             currentIndex: navigationShell.currentIndex,
             onTap: (index) async {
-              if (index == 3 && authState.asData?.value == null) {
-                await showGoogleLoginBottomSheet(
-                  context: context,
-                  isLoading: isAuthBusy,
-                  onGoogleTap: () {
-                    Navigator.of(context).pop();
-                    ref.read(authActionsProvider.notifier).signInWithGoogle();
-                  },
-                );
-                return;
+              if (FeatureFlags.communityTab && index == navItems.length - 1) {
+                // Always reload recents when user re-enters Community tab.
+                await ref.read(communityRecentUsersProvider.notifier).refresh();
               }
-
               navigationShell.goBranch(
                 index,
                 initialLocation: index == navigationShell.currentIndex,
@@ -209,28 +227,7 @@ class _AppShell extends HookConsumerWidget {
             selectedLabelStyle: AppTextStyles.navLabel(),
             unselectedLabelStyle: AppTextStyles.navLabel(),
             showUnselectedLabels: true,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, size: 22),
-                activeIcon: Icon(Icons.home, size: 22),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.access_time_outlined, size: 22),
-                activeIcon: Icon(Icons.access_time, size: 22),
-                label: 'History',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.bar_chart_outlined, size: 22),
-                activeIcon: Icon(Icons.bar_chart, size: 22),
-                label: 'Progress',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline, size: 22),
-                activeIcon: Icon(Icons.person, size: 22),
-                label: 'Profile',
-              ),
-            ],
+            items: navItems,
           ),
         ],
       ),
