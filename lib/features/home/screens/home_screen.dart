@@ -1020,7 +1020,7 @@ class _SubjectGrid extends ConsumerWidget {
         const SizedBox(height: AppSpacing.sm),
         subjectsAsync.when(
           loading: () => _SubjectGridSkeleton(borderColor: borderColor),
-          error: (_, __) => const SizedBox.shrink(),
+          error: (_, _) => const SizedBox.shrink(),
           data: (subjects) => GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -1069,9 +1069,6 @@ class _SubjectGridCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final hasAttempts = info.attemptCount > 0;
-    final iconBg = isDark
-        ? accent.withValues(alpha: 0.2)
-        : accent.withValues(alpha: 0.12);
 
     return Material(
       color: AppColors.transparent,
@@ -1089,37 +1086,24 @@ class _SubjectGridCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Container(
-                    width: 28,
-                    height: 28,
-                    decoration: BoxDecoration(
-                      color: iconBg,
-                      borderRadius: BorderRadius.circular(AppRadius.sm),
-                    ),
-                    child: Icon(icon, size: 16, color: accent),
-                  ),
-                  const Spacer(),
-                  if (hasAttempts)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.sm,
-                        vertical: 2,
-                      ),
-                      decoration: BoxDecoration(
-                        color: _accuracyBg(info.accuracyPercent),
-                        borderRadius: BorderRadius.circular(AppRadius.pill),
-                      ),
-                      child: Text(
-                        '${(info.accuracyPercent ?? 0).toStringAsFixed(0)}%',
-                        style: AppTextStyles.caption().copyWith(
-                          color: _accuracyFg(info.accuracyPercent),
-                          fontWeight: FontWeight.w600,
-                        ),
+              // Progress ring wrapping the subject icon
+              SizedBox(
+                width: 34,
+                height: 34,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    CircularProgressIndicator(
+                      value: (info.accuracyPercent ?? 0) / 100,
+                      strokeWidth: 2.5,
+                      backgroundColor: accent.withValues(alpha: 0.18),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        hasAttempts ? accent : AppColors.transparent,
                       ),
                     ),
-                ],
+                    Icon(icon, size: 16, color: accent),
+                  ],
+                ),
               ),
               const Spacer(),
               Text(
@@ -1134,7 +1118,7 @@ class _SubjectGridCard extends StatelessWidget {
               const SizedBox(height: AppSpacing.xs),
               Text(
                 hasAttempts
-                    ? '${info.attemptCount} attempted'
+                    ? '${info.attemptCount} · ${(info.accuracyPercent ?? 0).toStringAsFixed(0)}%'
                     : 'No practice yet',
                 style: AppTextStyles.caption().copyWith(
                   color: scheme.onSurfaceVariant,
@@ -1147,41 +1131,43 @@ class _SubjectGridCard extends StatelessWidget {
     );
   }
 
-  Color _accuracyBg(double? pct) {
-    if (pct == null) return AppColors.gray100;
-    if (pct >= 75) return AppColors.correctBg;
-    if (pct >= 50) return AppColors.warningBg;
-    return AppColors.wrongBg;
-  }
-
-  Color _accuracyFg(double? pct) {
-    if (pct == null) return AppColors.gray600;
-    if (pct >= 75) return AppColors.correctText;
-    if (pct >= 50) return AppColors.warningText;
-    return AppColors.wrongText;
-  }
 }
 
-class _SubjectGridSkeleton extends StatelessWidget {
+class _SubjectGridSkeleton extends HookWidget {
   const _SubjectGridSkeleton({required this.borderColor});
   final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
+    final ctrl = useAnimationController(
+      duration: const Duration(milliseconds: 900),
+    )..repeat(reverse: true);
+    final opacity = useAnimation(
+      Tween<double>(begin: 0.4, end: 1.0).animate(
+        CurvedAnimation(parent: ctrl, curve: Curves.easeInOut),
+      ),
+    );
     final scheme = Theme.of(context).colorScheme;
-    return GridView.count(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
-      mainAxisSpacing: AppSpacing.sm,
-      crossAxisSpacing: AppSpacing.sm,
-      childAspectRatio: 1.55,
-      children: List.generate(
-        8,
-        (_) => Container(
-          decoration: BoxDecoration(
-            color: scheme.surfaceContainerLow,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
+
+    return AnimatedBuilder(
+      animation: ctrl,
+      builder: (_, _) => Opacity(
+        opacity: opacity,
+        child: GridView.count(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          crossAxisCount: 2,
+          mainAxisSpacing: AppSpacing.sm,
+          crossAxisSpacing: AppSpacing.sm,
+          childAspectRatio: 1.55,
+          children: List.generate(
+            8,
+            (_) => Container(
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(AppRadius.lg),
+              ),
+            ),
           ),
         ),
       ),

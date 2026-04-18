@@ -12,7 +12,9 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
+import '../domain/subject_insights.dart';
 import '../providers/subject_detail_providers.dart';
+import '../providers/subject_insights_providers.dart';
 
 class SubjectDetailScreen extends ConsumerWidget {
   const SubjectDetailScreen({super.key, required this.subject});
@@ -79,6 +81,20 @@ class SubjectDetailScreen extends ConsumerWidget {
                   displayName: displayName,
                   borderColor: borderColor,
                   infoAsync: infoAsync,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  AppSpacing.xxl,
+                  AppSpacing.lg,
+                  0,
+                ),
+                child: _InsightsSection(
+                  subject: subject,
+                  borderColor: borderColor,
                 ),
               ),
             ),
@@ -160,7 +176,7 @@ class _Header extends ConsumerWidget {
           const SizedBox(height: AppSpacing.lg),
           infoAsync.when(
             loading: () => _HeaderStatsSkeleton(borderColor: borderColor),
-            error: (_, __) => const SizedBox.shrink(),
+            error: (_, _) => const SizedBox.shrink(),
             data: (info) => info == null
                 ? const SizedBox.shrink()
                 : _HeaderStats(info: info, borderColor: borderColor),
@@ -471,7 +487,7 @@ class _HistorySection extends ConsumerWidget {
         const SizedBox(height: AppSpacing.sm),
         historyAsync.when(
           loading: () => _HistorySkeleton(borderColor: borderColor),
-          error: (_, __) => Text(
+          error: (_, _) => Text(
             'Could not load history.',
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
@@ -709,5 +725,391 @@ class _SessionRow extends StatelessWidget {
     if (diff.inDays == 1) return 'Yesterday';
     if (diff.inDays < 7) return '${diff.inDays} days ago';
     return DateFormat('d MMM y').format(dt);
+  }
+}
+
+// ── Insights Section ────────────────────────────────────────────────────────────
+
+class _InsightsSection extends ConsumerWidget {
+  const _InsightsSection({
+    required this.subject,
+    required this.borderColor,
+  });
+
+  final String subject;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final insightsAsync = ref.watch(subjectInsightsProvider(subject));
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'INSIGHTS',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            letterSpacing: 0.6,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        insightsAsync.when(
+          loading: () => _InsightsSkeleton(borderColor: borderColor),
+          error: (_, _) => const SizedBox.shrink(),
+          data: (insights) => Column(
+            children: [
+              _MistakesCard(insights: insights, borderColor: borderColor),
+              const SizedBox(height: AppSpacing.sm),
+              _TopicRiskCard(insights: insights, borderColor: borderColor),
+              const SizedBox(height: AppSpacing.sm),
+              _TrapBlindSpotsCard(insights: insights, borderColor: borderColor),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Card 1: Mistakes to Review ─────────────────────────────────────────────────
+
+class _MistakesCard extends StatelessWidget {
+  const _MistakesCard({required this.insights, required this.borderColor});
+  final SubjectInsights insights;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final count = insights.wrongCountLast30Days;
+    final tier = insights.overallRiskTier;
+
+    final (countColor, countBg) = switch (tier) {
+      RiskTier.high => (
+          isDark ? AppColors.wrongTextDark : AppColors.wrongText,
+          isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
+        ),
+      RiskTier.medium => (
+          isDark ? AppColors.warningTextDark : AppColors.warningText,
+          isDark ? AppColors.warningBgDark : AppColors.warningBg,
+        ),
+      RiskTier.low => (
+          isDark ? AppColors.correctTextDark : AppColors.correctText,
+          isDark ? AppColors.correctBgDark : AppColors.correctBg,
+        ),
+    };
+
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border(
+          left: BorderSide(color: countColor, width: 3),
+          top: BorderSide(color: borderColor, width: 0.5),
+          right: BorderSide(color: borderColor, width: 0.5),
+          bottom: BorderSide(color: borderColor, width: 0.5),
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Mistakes to Review',
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  'Wrong answers in the last 30 days',
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: AppSpacing.md),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.md,
+              vertical: AppSpacing.sm,
+            ),
+            decoration: BoxDecoration(
+              color: countBg,
+              borderRadius: BorderRadius.circular(AppRadius.md),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  '$count',
+                  style: AppTextStyles.h2().copyWith(
+                    color: countColor,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Text(
+                  tier.label,
+                  style: AppTextStyles.caption().copyWith(
+                    color: countColor,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── Card 2: Topic Risk Ranking ─────────────────────────────────────────────────
+
+class _TopicRiskCard extends StatelessWidget {
+  const _TopicRiskCard({required this.insights, required this.borderColor});
+  final SubjectInsights insights;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Topic Risk Ranking',
+            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            'Topics with the most mistakes (all time)',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          if (!insights.hasTopicData)
+            _InsightsEmptyHint(
+              message: 'Complete more tests to see topic risks.',
+            )
+          else
+            Column(
+              children: [
+                for (var i = 0; i < insights.topicRisks.length; i++) ...[
+                  if (i > 0)
+                    Divider(
+                      height: AppSpacing.lg,
+                      color: borderColor,
+                      thickness: 0.5,
+                    ),
+                  _TopicRiskRow(stat: insights.topicRisks[i]),
+                ],
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _TopicRiskRow extends StatelessWidget {
+  const _TopicRiskRow({required this.stat});
+  final dynamic stat; // UserTopicStat
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final tier = riskTierForWrongCount(stat.wrongAttempts as int);
+
+    return Row(
+      children: [
+        Text(
+          tier.emoji,
+          style: const TextStyle(fontSize: 14),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        Expanded(
+          child: Text(
+            stat.topic as String,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
+          ),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        Text(
+          '${stat.wrongAttempts} mistakes',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Card 3: Trap Blind Spots ────────────────────────────────────────────────────
+
+class _TrapBlindSpotsCard extends StatelessWidget {
+  const _TrapBlindSpotsCard({required this.insights, required this.borderColor});
+  final SubjectInsights insights;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Trap Blind Spots',
+            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            'UPSC trap types that fool you most in this subject',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          if (!insights.hasTrapData)
+            _InsightsEmptyHint(
+              message: 'Answer more questions to discover your trap blind spots.',
+            )
+          else
+            Column(
+              children: [
+                for (var i = 0; i < insights.trapBlindSpots.length; i++) ...[
+                  if (i > 0)
+                    Divider(
+                      height: AppSpacing.lg,
+                      color: borderColor,
+                      thickness: 0.5,
+                    ),
+                  _TrapRow(trap: insights.trapBlindSpots[i]),
+                ],
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _TrapRow extends StatelessWidget {
+  const _TrapRow({required this.trap});
+  final TrapBlindSpotRow trap;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accuracy = trap.accuracyPercent;
+
+    final accuracyColor = accuracy >= 70
+        ? (isDark ? AppColors.correctTextDark : AppColors.correctText)
+        : accuracy >= 50
+            ? (isDark ? AppColors.warningTextDark : AppColors.warningText)
+            : (isDark ? AppColors.wrongTextDark : AppColors.wrongText);
+
+    return Row(
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                trap.displayName,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurface,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                '${trap.totalAttempts} questions · ${trap.wrongCount} wrong',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: AppSpacing.md),
+        Text(
+          '${accuracy.toStringAsFixed(0)}% acc',
+          style: AppTextStyles.labelSm().copyWith(
+            color: accuracyColor,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Shared Helpers ──────────────────────────────────────────────────────────────
+
+class _InsightsEmptyHint extends StatelessWidget {
+  const _InsightsEmptyHint({required this.message});
+  final String message;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Text(
+      message,
+      style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
+    );
+  }
+}
+
+class _InsightsSkeleton extends StatelessWidget {
+  const _InsightsSkeleton({required this.borderColor});
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      children: [
+        for (var i = 0; i < 3; i++) ...[
+          if (i > 0) const SizedBox(height: AppSpacing.sm),
+          Container(
+            height: i == 0 ? 76 : 120,
+            decoration: BoxDecoration(
+              color: scheme.surfaceContainerLow,
+              borderRadius: BorderRadius.circular(AppRadius.lg),
+            ),
+          ),
+        ],
+      ],
+    );
   }
 }

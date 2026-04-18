@@ -68,7 +68,7 @@ class TopicsListScreen extends ConsumerWidget {
                             ),
                           ),
                           loading: () => const SizedBox.shrink(),
-                          error: (_, __) => const SizedBox.shrink(),
+                          error: (_, _) => const SizedBox.shrink(),
                         ),
                       ],
                     ),
@@ -96,7 +96,7 @@ class TopicsListScreen extends ConsumerWidget {
                       AppSpacing.xxl,
                     ),
                     itemCount: topics.length,
-                    separatorBuilder: (_, __) =>
+                    separatorBuilder: (_, _) =>
                         const SizedBox(height: AppSpacing.cardListGap),
                     itemBuilder: (context, i) => _TopicCard(
                       topic: topics[i],
@@ -264,9 +264,9 @@ class _LoadingSkeleton extends StatelessWidget {
         AppSpacing.xxl,
       ),
       itemCount: 8,
-      separatorBuilder: (_, __) =>
+      separatorBuilder: (_, _) =>
           const SizedBox(height: AppSpacing.cardListGap),
-      itemBuilder: (_, __) => Container(
+      itemBuilder: (_, _) => Container(
         height: 88,
         decoration: BoxDecoration(
           color: scheme.surfaceContainerLow,

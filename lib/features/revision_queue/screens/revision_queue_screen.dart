@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -17,6 +18,8 @@ class RevisionQueueScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final async = ref.watch(revisionQueueItemsProvider);
     final scheme = Theme.of(context).colorScheme;
+    // null = "All subjects"
+    final selectedSubject = useState<String?>(null);
 
     Future<void> start(List<dynamic> items) async {
       final create = await ref.read(createSessionUseCaseProvider.future);
@@ -37,70 +40,98 @@ class RevisionQueueScreen extends HookConsumerWidget {
       body: SafeArea(
         child: Column(
           children: [
+            // ── Header row ─────────────────────────────────────────────────
             Padding(
               padding: const EdgeInsets.fromLTRB(AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
               child: Row(children: [
                 IconButton(
-                  onPressed:
-                      () =>
-                          context.canPop() ? context.pop() : context.go('/'),
+                  onPressed: () => context.canPop() ? context.pop() : context.go('/'),
                   icon: const Icon(Icons.chevron_left),
                 ),
                 Expanded(
                   child: async.when(
-                    data: (items) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text('Revision queue', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
-                      Text('${items.length} questions', style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant)),
-                    ]),
+                    data: (items) {
+                      final filtered = _filter(items, selectedSubject.value);
+                      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                        Text('Revision queue', style: AppTextStyles.h2().copyWith(color: scheme.onSurface)),
+                        Text(
+                          '${filtered.length} question${filtered.length == 1 ? '' : 's'}',
+                          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                        ),
+                      ]);
+                    },
                     loading: () => Text('Revision queue', style: AppTextStyles.h2()),
                     error: (e, st) => Text('Revision queue', style: AppTextStyles.h2()),
                   ),
                 ),
               ]),
             ),
+            // ── Subject filter chips ────────────────────────────────────────
+            async.whenOrNull(
+              data: (items) {
+                // Collect unique subjects that actually have queue items.
+                final subjects = items
+                    .map((e) => e.subject)
+                    .toSet()
+                    .toList()
+                  ..sort();
+                if (subjects.length <= 1) return const SizedBox.shrink();
+                return _SubjectFilterChips(
+                  subjects: subjects,
+                  selected: selectedSubject.value,
+                  onSelected: (s) => selectedSubject.value = s,
+                );
+              },
+            ) ?? const SizedBox.shrink(),
+            // ── Start button ────────────────────────────────────────────────
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+              padding: const EdgeInsets.fromLTRB(AppSpacing.lg, AppSpacing.sm, AppSpacing.lg, 0),
               child: async.when(
-                data: (items) => items.isEmpty
-                    ? const SizedBox.shrink()
-                    : SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () => start(items),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primary,
+                data: (items) {
+                  final filtered = _filter(items, selectedSubject.value);
+                  return filtered.isEmpty
+                      ? const SizedBox.shrink()
+                      : SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () => start(filtered),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.primary,
+                            ),
+                            child: Text(
+                              'Start revision session',
+                              style: AppTextStyles.label(),
+                            ),
                           ),
-                          child: Text(
-                            'Start revision session',
-                            style: AppTextStyles.label(),
-                          ),
-                        ),
-                      ),
+                        );
+                },
                 loading: () => SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                    ),
-                    child: Text(
-                      'Start revision session',
-                      style: AppTextStyles.label(),
-                    ),
+                    style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
+                    child: Text('Start revision session', style: AppTextStyles.label()),
                   ),
                 ),
                 error: (e, st) => const SizedBox.shrink(),
               ),
             ),
             const SizedBox(height: AppSpacing.md),
+            // ── List ────────────────────────────────────────────────────────
             Expanded(
               child: async.when(
                 loading: () => ListView.separated(
                   physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   itemCount: 8,
-                  separatorBuilder: (c, i) => const SizedBox(height: AppSpacing.sm),
-                  itemBuilder: (c, i) => Container(height: 84, decoration: BoxDecoration(color: scheme.surfaceContainerLow, borderRadius: BorderRadius.circular(AppRadius.lg))),
+                  separatorBuilder: (_, _) => const SizedBox(height: AppSpacing.sm),
+                  itemBuilder: (_, _) => Container(
+                    height: 84,
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerLow,
+                      borderRadius: BorderRadius.circular(AppRadius.lg),
+                    ),
+                  ),
                 ),
                 error: (e, st) => Center(
                   child: OutlinedButton(
@@ -109,21 +140,33 @@ class RevisionQueueScreen extends HookConsumerWidget {
                   ),
                 ),
                 data: (items) {
+                  final filtered = _filter(items, selectedSubject.value);
                   if (items.isEmpty) {
                     return Center(
                       child: Column(mainAxisSize: MainAxisSize.min, children: [
-                        Text('Your revision queue is empty', style: AppTextStyles.h3().copyWith(color: scheme.onSurface)),
+                        Text('Your revision queue is empty',
+                            style: AppTextStyles.h3().copyWith(color: scheme.onSurface)),
                         const SizedBox(height: AppSpacing.sm),
-                        Text('Questions you get wrong or bookmark will appear here', style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant)),
+                        Text(
+                          'Questions you get wrong or bookmark will appear here',
+                          style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
+                        ),
                       ]),
+                    );
+                  }
+                  if (filtered.isEmpty) {
+                    return Center(
+                      child: Text(
+                        'No items for this subject.',
+                        style: AppTextStyles.bodySm()
+                            .copyWith(color: scheme.onSurfaceVariant),
+                      ),
                     );
                   }
                   return ListView(
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.all(AppSpacing.lg),
-                    children: [
-                      ...items.map((e) => _Row(item: e)),
-                    ],
+                    children: filtered.map((e) => _Row(item: e)).toList(),
                   );
                 },
               ),
@@ -133,7 +176,80 @@ class RevisionQueueScreen extends HookConsumerWidget {
       ),
     );
   }
+
+  List<dynamic> _filter(List<dynamic> items, String? subject) =>
+      subject == null ? items : items.where((e) => e.subject == subject).toList();
 }
+
+// ────────────────────────────────────────────────────────────────────────────
+// Subject filter chip row
+// ────────────────────────────────────────────────────────────────────────────
+
+class _SubjectFilterChips extends StatelessWidget {
+  const _SubjectFilterChips({
+    required this.subjects,
+    required this.selected,
+    required this.onSelected,
+  });
+
+  final List<String> subjects;
+  final String? selected;
+  final ValueChanged<String?> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    Widget chip(String? subject) {
+      final isAll = subject == null;
+      final label = isAll
+          ? 'All'
+          : (SubjectConstants.bySlug(subject)?.displayName ?? subject);
+      final isSelected = selected == subject;
+      return Padding(
+        padding: const EdgeInsets.only(right: AppSpacing.sm),
+        child: ChoiceChip(
+          label: Text(label),
+          selected: isSelected,
+          onSelected: (_) => onSelected(isSelected ? null : subject),
+          labelStyle: AppTextStyles.bodySm().copyWith(
+            color: isSelected ? AppColors.onPrimary : scheme.onSurfaceVariant,
+            fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+          ),
+          selectedColor: AppColors.primary,
+          backgroundColor: scheme.surfaceContainerLow,
+          showCheckmark: false,
+          side: BorderSide.none,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.pill),
+          ),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.md,
+            vertical: AppSpacing.xs,
+          ),
+        ),
+      );
+    }
+
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.lg,
+        0,
+        AppSpacing.lg,
+        AppSpacing.sm,
+      ),
+      child: Row(
+        children: [
+          chip(null), // "All" chip
+          ...subjects.map(chip),
+        ],
+      ),
+    );
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────
 
 class _Row extends HookConsumerWidget {
   const _Row({required this.item});

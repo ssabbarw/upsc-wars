@@ -946,12 +946,17 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
         onCreate: (Migrator m) async {
           await m.createAll();
+          // Performance index for subject-scoped queries.
+          await customStatement(
+            'CREATE INDEX IF NOT EXISTS idx_questions_subject '
+            'ON questions(subject)',
+          );
         },
         onUpgrade: (Migrator m, int from, int to) async {
           if (from < 2) {
@@ -964,6 +969,13 @@ class UserDatabase extends _$UserDatabase {
               'UPDATE user_topic_stats SET wrong_attempts = '
               'CASE WHEN total_attempted - total_correct > 0 '
               'THEN total_attempted - total_correct ELSE 0 END',
+            );
+          }
+          if (from < 3) {
+            // Add subject index for existing installations.
+            await customStatement(
+              'CREATE INDEX IF NOT EXISTS idx_questions_subject '
+              'ON questions(subject)',
             );
           }
         },
