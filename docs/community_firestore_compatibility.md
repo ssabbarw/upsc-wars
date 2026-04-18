@@ -10,6 +10,7 @@ This document locks Phase 0 compatibility for Community migration.
 - `buckets`:
   - Path shape: `buckets/{yyyy-m}/{day}/{bucketName}`
   - Document payload is map `{email: userDataMap}` for recently-online snapshots
+  - On app open (signed-in), the app **merges** the current user under their lowercase email with fields including `name`, `optional`, `email`, `telegram`, `insta`, `photoURL`, `my_status`, `isInBattle`, `fcm_token`, `phoneModel`, `appVersion`, `lastOnlineTime` (see `CommunityBucketPresenceService`).
 
 ## Field Mapping
 

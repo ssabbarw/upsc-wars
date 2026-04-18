@@ -49,7 +49,62 @@ class _RecentTab extends HookConsumerWidget {
     final notifier = ref.read(communityRecentUsersProvider.notifier);
     final lastRefreshedAt = notifier.lastRefreshedAt;
     return recent.when(
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: () => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.lg,
+              AppSpacing.xs,
+            ),
+            child: Text(
+              'Recents',
+              style: AppTextStyles.label().copyWith(
+                color: scheme.onSurface,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const CircularProgressIndicator(),
+                  const SizedBox(height: AppSpacing.md),
+                  Text(
+                    'Loading recent users…',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.sm,
+                AppSpacing.lg,
+                AppSpacing.lg,
+              ),
+              child: SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: null,
+                  child: Text(
+                    notifier.hasMore ? 'Load More' : 'No More Users',
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       error: (error, _) => Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -67,14 +122,34 @@ class _RecentTab extends HookConsumerWidget {
         final sortedUsers = [...users]
           ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.lg,
+                AppSpacing.md,
+                AppSpacing.lg,
+                AppSpacing.xs,
+              ),
+              child: Text(
+                'Recents',
+                style: AppTextStyles.label().copyWith(
+                  color: scheme.onSurface,
+                ),
+              ),
+            ),
             Expanded(
               child: RefreshIndicator(
                 onRefresh: () =>
                     ref.read(communityRecentUsersProvider.notifier).refresh(),
                 child: ListView(
                   physics: const AlwaysScrollableScrollPhysics(),
-                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.lg,
+                    AppSpacing.xs,
+                    AppSpacing.lg,
+                    AppSpacing.lg,
+                  ),
                   children: [
                     Text(
                       'Tap a user to view profile and social links.',

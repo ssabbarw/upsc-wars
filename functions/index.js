@@ -11,7 +11,13 @@ const MAX_BODY_LEN = 180;
  *   guestEmail, sessionId, hostDisplayName, subjectLabel
  */
 exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
+  functions.logger.info("sendBattleInvite: invoked", {
+    uid: context.auth && context.auth.uid,
+    hasAuth: Boolean(context.auth),
+  });
+
   if (!context.auth) {
+    functions.logger.warn("sendBattleInvite: rejected unauthenticated");
     throw new functions.https.HttpsError(
       "unauthenticated",
       "Sign in required to send a battle invite.",
@@ -47,6 +53,13 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
 
   const guestEmail = guestEmailRaw.toLowerCase().trim();
   const sessionId = sessionIdRaw.trim();
+
+  functions.logger.info("sendBattleInvite: payload", {
+    sessionId,
+    guestEmail,
+    callerEmail,
+  });
+
   const hostDisplayName =
     typeof hostDisplayNameRaw === "string" && hostDisplayNameRaw.trim()
       ? hostDisplayNameRaw.trim()
@@ -89,6 +102,12 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
     );
   }
 
+  functions.logger.info("sendBattleInvite: match checks passed", {
+    sessionId,
+    guestEmail,
+    battleMode,
+  });
+
   const userSnap = await admin
     .firestore()
     .collection("users")
@@ -97,9 +116,18 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
   const userData = userSnap.data() || {};
   const fcmToken = userData.fcm_token || userData.fcmToken;
   if (!fcmToken || typeof fcmToken !== "string") {
-    functions.logger.warn("sendBattleInvite: no FCM token", { guestEmail });
+    functions.logger.warn("sendBattleInvite: no FCM token on users doc", {
+      guestEmail,
+      sessionId,
+    });
     return { ok: false, reason: "no_token" };
   }
+
+  functions.logger.info("sendBattleInvite: sending FCM", {
+    sessionId,
+    guestEmail,
+    tokenPrefix: fcmToken.slice(0, 8),
+  });
 
   const bodyBase = `${hostDisplayName} challenged you (${subjectLabel})`;
   const body =
@@ -127,5 +155,69 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
     return { ok: false, reason: "send_failed" };
   }
 
+  functions.logger.info("sendBattleInvite: FCM delivered", {
+    sessionId,
+    guestEmail,
+  });
+
+  return { ok: true };
+});
+
+/**
+ * HTTPS callable `sendSelfTestNotification` — sends one FCM to the caller’s
+ * own device (reads `users/{callerEmail}.fcm_token`). For one-device testing.
+ */
+exports.sendSelfTestNotification = functions.https.onCall(async (data, context) => {
+  functions.logger.info("sendSelfTestNotification: invoked", {
+    uid: context.auth && context.auth.uid,
+  });
+
+  if (!context.auth) {
+    functions.logger.warn("sendSelfTestNotification: unauthenticated");
+    throw new functions.https.HttpsError(
+      "unauthenticated",
+      "Sign in required.",
+    );
+  }
+
+  const tokenEmail = context.auth.token.email;
+  if (!tokenEmail || typeof tokenEmail !== "string") {
+    throw new functions.https.HttpsError(
+      "failed-precondition",
+      "Your account must have an email for this test.",
+    );
+  }
+
+  const email = tokenEmail.toLowerCase().trim();
+  functions.logger.info("sendSelfTestNotification: loading token", { email });
+
+  const userSnap = await admin.firestore().collection("users").doc(email).get();
+  const userData = userSnap.data() || {};
+  const fcmToken = userData.fcm_token || userData.fcmToken;
+  if (!fcmToken || typeof fcmToken !== "string") {
+    functions.logger.warn("sendSelfTestNotification: no token", { email });
+    return { ok: false, reason: "no_token" };
+  }
+
+  try {
+    await admin.messaging().send({
+      token: fcmToken,
+      notification: {
+        title: "UPSC Wars",
+        body: "Success — push notifications are working.",
+      },
+      data: {
+        kind: "self_test",
+      },
+    });
+  } catch (e) {
+    functions.logger.error("sendSelfTestNotification: FCM failed", {
+      email,
+      error: e && e.message ? e.message : String(e),
+    });
+    return { ok: false, reason: "send_failed" };
+  }
+
+  functions.logger.info("sendSelfTestNotification: delivered", { email });
   return { ok: true };
 });

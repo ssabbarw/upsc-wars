@@ -14,8 +14,9 @@ Battles use a **flat** collection `battle_matches/{sessionId}` where `sessionId`
 | `subject` | string | Subject label for the battle. |
 | `question_uuids` | array of strings | Canonical question order for both devices. |
 | `question_indexes` | array of numbers | Legacy-shaped indices `0..n-1` (parallel to `question_uuids`). |
-| `lets_start_game` | bool | **Lobby:** `false` until the guest has finished local session import and profile merge; then set to `true` by the joiner client. Bot matches use `true` immediately. |
-| `num_of_players_joined` | number | `1` while waiting for guest; `2` after guest completes join flow. |
+| `guest_ready` | bool | Human battles: `false` at create; set to `true` when the guest finishes join + local session import (`signalGuestLobbyReady`). Host lobby enables **Start battle** when this is `true`. |
+| `lets_start_game` | bool | Human: `false` until the host taps **Start battle** (`signalHostStartedBattle`); then both clients enter the timed test. Bot matches use `true` immediately. |
+| `num_of_players_joined` | number | `1` until guest joins; `2` after guest completes join flow. |
 | `fcm_token` | null | Reserved; prefer **`users/{email}.fcm_token`** for targeting. |
 
 ## Subcollections
@@ -45,7 +46,7 @@ They enforce:
 
 - Authenticated reads on `battle_matches` metadata (join flow + in-battle sync).
 - Match **create** only by the declared host (`host_email` matches signed-in email, lowercased).
-- Match **update** by the guest only for `lets_start_game` / `num_of_players_joined` when flipping the lobby to “started”.
+- Match **update** by the **guest** for `guest_ready` + `num_of_players_joined` after join; by the **host** for `lets_start_game` when starting the battle.
 - `joined_users` / game-over docs: each participant writes **only their own** doc id (email or `opponent` for bot host).
 
 See also [`battle_fcm_and_functions.md`](battle_fcm_and_functions.md) for FCM payloads and callable `sendBattleInvite`.

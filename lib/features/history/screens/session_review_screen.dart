@@ -178,7 +178,7 @@ class ReviewBody extends StatelessWidget {
                       color: showRevisionBadge
                           ? scheme.primary
                           : scheme.onSurfaceVariant,
-                ),
+                  ),
                   ),
                 ],
               ),

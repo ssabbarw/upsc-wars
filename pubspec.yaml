@@ -61,6 +61,8 @@ dependencies:
   firebase_messaging: ^16.0.2
   cloud_functions: ^6.0.2
   url_launcher: ^6.3.2
+  device_info_plus: ^13.0.0
+  package_info_plus: ^10.0.0
 
 dev_dependencies:
   flutter_test:

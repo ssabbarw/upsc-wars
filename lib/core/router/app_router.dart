@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -142,6 +144,7 @@ GoRouter appRouter(Ref ref) {
             playerName: (data['playerName'] as String?) ?? 'You',
             opponentName: (data['opponentName'] as String?) ?? 'Opponent',
             playerPhotoUrl: data['playerPhotoUrl'] as String?,
+            opponentPhotoUrl: data['opponentPhotoUrl'] as String?,
           );
         },
       ),
@@ -299,9 +302,17 @@ class _AppShell extends HookConsumerWidget {
                   );
                   return;
                 }
-                // Always reload recents whenever Community tab is tapped.
-                await ref.read(communityRecentUsersProvider.notifier).refresh();
+                navigationShell.goBranch(
+                  index,
+                  initialLocation: index == navigationShell.currentIndex,
+                );
                 ref.invalidate(communityChallengersProvider);
+                // Reload recents without blocking tab switch; Community screen
+                // shows a loader until this completes.
+                unawaited(
+                  ref.read(communityRecentUsersProvider.notifier).refresh(),
+                );
+                return;
               }
               navigationShell.goBranch(
                 index,

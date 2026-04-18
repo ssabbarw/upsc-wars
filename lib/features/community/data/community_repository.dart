@@ -10,6 +10,28 @@ class CommunityRepository {
 
   final FirebaseFirestore _firestore;
 
+  /// `buckets/{yyyy-m}/{day}/{0|3|…|21}` for “now” (same path as [fetchRecentUsers] offset 0).
+  DocumentReference<Map<String, dynamic>> presenceBucketDocRefNow() {
+    final now = DateTime.now();
+    final ts = now.millisecondsSinceEpoch;
+    return _firestore
+        .collection(CommunityLegacyContract.bucketsCollection)
+        .doc(CommunityBucketUtils.yearMonthDocIdForTimestamp(ts))
+        .collection('${now.day}')
+        .doc(CommunityBucketUtils.bucketForTimestamp(ts));
+  }
+
+  /// Top-level field key is lowercased [emailFieldKey]; value is a legacy-shaped map.
+  Future<void> upsertUserInCurrentPresenceBucket({
+    required String emailFieldKey,
+    required Map<String, dynamic> userPayload,
+  }) async {
+    await presenceBucketDocRefNow().set(
+      {emailFieldKey: userPayload},
+      SetOptions(merge: true),
+    );
+  }
+
   Future<List<CommunityUser>> fetchRecentUsers({int bucketOffset = 0}) async {
     if (bucketOffset >= CommunityBucketUtils.maxBucketLookback) return const [];
     final timestamp = DateTime.now()

@@ -9,6 +9,8 @@ class BattleMatchFirestoreService {
   static const battleModeHuman = 'human';
   static const battleModeBot = 'bot';
 
+  static const fieldGuestReady = 'guest_ready';
+
   /// Human 1v1: match doc + host and guest `joined_users` stubs (guest merges on join).
   Future<void> primeHumanMatch({
     required String sessionId,
@@ -35,6 +37,7 @@ class BattleMatchFirestoreService {
       'question_uuids': questionUuids,
       'question_indexes': List<int>.generate(questionUuids.length, (i) => i),
       'lets_start_game': false,
+      fieldGuestReady: false,
       'num_of_players_joined': 1,
       'fcm_token': null,
     }).timeout(const Duration(seconds: 12));
@@ -133,11 +136,18 @@ class BattleMatchFirestoreService {
     ).timeout(const Duration(seconds: 12));
   }
 
-  /// Guest finished local import + profile; host can answer once this flips.
-  Future<void> signalGuestJoinedAndReady(String sessionId) async {
+  /// Guest finished local import + profile; host lobby shows them as joined.
+  Future<void> signalGuestLobbyReady(String sessionId) async {
+    await BattleFirestorePaths.matchDoc(sessionId).update({
+      fieldGuestReady: true,
+      'num_of_players_joined': 2,
+    }).timeout(const Duration(seconds: 12));
+  }
+
+  /// Host starts the timed battle for both players (`lets_start_game`).
+  Future<void> signalHostStartedBattle(String sessionId) async {
     await BattleFirestorePaths.matchDoc(sessionId).update({
       'lets_start_game': true,
-      'num_of_players_joined': 2,
     }).timeout(const Duration(seconds: 12));
   }
 }

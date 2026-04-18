@@ -54,12 +54,21 @@ service cloud.firestore {
           && request.resource.data.battle_mode in ['human', 'bot']
           && request.resource.data.question_uuids is list;
 
-      allow update: if signedIn()
-          && resource.data.guest_email == authedEmailLower()
-          && request.resource.data.diff(resource.data).affectedKeys()
-              .hasOnly(['lets_start_game', 'num_of_players_joined'])
-          && request.resource.data.lets_start_game == true
-          && request.resource.data.num_of_players_joined == 2;
+      allow update: if signedIn() && (
+          (
+            resource.data.guest_email == authedEmailLower()
+            && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['guest_ready', 'num_of_players_joined'])
+            && request.resource.data.guest_ready == true
+            && request.resource.data.num_of_players_joined == 2
+          )
+          || (
+            resource.data.host_email == authedEmailLower()
+            && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['lets_start_game'])
+            && request.resource.data.lets_start_game == true
+          )
+        );
 
       match /joined_users/{participantId} {
         allow read: if signedIn() && isMatchParticipant(sessionId, participantId);

@@ -1,12 +1,18 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
+import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
+import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
 import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
+import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 /// Human-readable room-style id (stable for a given session UUID).
 String battleRoomDisplayId(String sessionId) {
@@ -25,9 +31,152 @@ String battleRoomDisplayId(String sessionId) {
   }
 }
 
-class BattleWaitingScreen extends StatefulWidget {
+/// After config (bot or human) or after guest join: bot uses a short countdown;
+/// human uses a lobby until [lets_start_game] (host taps Start).
+class BattleWaitingScreen extends ConsumerStatefulWidget {
   const BattleWaitingScreen({
     super.key,
+    required this.sessionId,
+    required this.playerName,
+    required this.opponentName,
+    this.playerPhotoUrl,
+    this.opponentPhotoUrl,
+  });
+
+  final String sessionId;
+  final String playerName;
+  final String opponentName;
+  final String? playerPhotoUrl;
+  final String? opponentPhotoUrl;
+
+  @override
+  ConsumerState<BattleWaitingScreen> createState() =>
+      _BattleWaitingScreenState();
+}
+
+enum _WaitUiMode { loading, botCountdown, humanLobby }
+
+class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
+  StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? _matchSub;
+  _WaitUiMode _mode = _WaitUiMode.loading;
+  Map<String, dynamic>? _match;
+  bool _navigatedToBattle = false;
+  bool _startingBattle = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _matchSub = BattleFirestorePaths.matchDoc(widget.sessionId)
+        .snapshots()
+        .listen(_onMatchSnapshot);
+  }
+
+  void _onMatchSnapshot(DocumentSnapshot<Map<String, dynamic>> snap) {
+    if (!snap.exists) {
+      setState(() {
+        _mode = _WaitUiMode.botCountdown;
+        _match = null;
+      });
+      return;
+    }
+    final d = snap.data()!;
+    final mode = d['battle_mode'] as String?;
+    if (mode == BattleMatchFirestoreService.battleModeHuman) {
+      final lets = d['lets_start_game'] == true;
+      if (lets && !_navigatedToBattle) {
+        _navigatedToBattle = true;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) {
+            context.go('/battle/${widget.sessionId}');
+          }
+        });
+      }
+      setState(() {
+        _mode = _WaitUiMode.humanLobby;
+        _match = d;
+      });
+    } else {
+      setState(() {
+        _mode = _WaitUiMode.botCountdown;
+        _match = null;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _matchSub?.cancel();
+    super.dispose();
+  }
+
+  String _initialLetter(String name) {
+    final t = name.trim();
+    if (t.isEmpty) return '?';
+    return t[0].toUpperCase();
+  }
+
+  String _shortName(String name, {int maxChars = 9}) {
+    final t = name.trim();
+    if (t.length <= maxChars) return t;
+    return '${t.substring(0, maxChars - 1)}…';
+  }
+
+  Future<void> _onHostStartBattle() async {
+    if (_startingBattle) return;
+    setState(() => _startingBattle = true);
+    try {
+      const svc = BattleMatchFirestoreService();
+      await svc.signalHostStartedBattle(widget.sessionId);
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not start battle. Try again.')),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _startingBattle = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.surfaceSecondaryDark
+          : AppColors.surfaceSecondaryLight,
+      appBar: AppBar(title: const Text('Match')),
+      body: switch (_mode) {
+        _WaitUiMode.loading => const Center(child: CircularProgressIndicator()),
+        _WaitUiMode.botCountdown => _BattleWaitBotCountdown(
+          sessionId: widget.sessionId,
+          playerName: widget.playerName,
+          opponentName: widget.opponentName,
+          playerPhotoUrl: widget.playerPhotoUrl,
+        ),
+        _WaitUiMode.humanLobby => _HumanLobbyBody(
+          sessionId: widget.sessionId,
+          match: _match!,
+          playerName: widget.playerName,
+          opponentName: widget.opponentName,
+          playerPhotoUrl: widget.playerPhotoUrl,
+          opponentPhotoUrl: widget.opponentPhotoUrl,
+          authEmail:
+              (ref.watch(authStateChangesProvider).asData?.value?.email ?? '')
+                  .toLowerCase()
+                  .trim(),
+          onHostStartBattle: _onHostStartBattle,
+          startingBattle: _startingBattle,
+          initialLetter: _initialLetter,
+          shortName: _shortName,
+        ),
+      },
+    );
+  }
+}
+
+/// Bot / no match doc: original short countdown then open battle test.
+class _BattleWaitBotCountdown extends StatefulWidget {
+  const _BattleWaitBotCountdown({
     required this.sessionId,
     required this.playerName,
     required this.opponentName,
@@ -40,13 +189,12 @@ class BattleWaitingScreen extends StatefulWidget {
   final String? playerPhotoUrl;
 
   @override
-  State<BattleWaitingScreen> createState() => _BattleWaitingScreenState();
+  State<_BattleWaitBotCountdown> createState() => _BattleWaitBotCountdownState();
 }
 
-class _BattleWaitingScreenState extends State<BattleWaitingScreen>
+class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
     with SingleTickerProviderStateMixin {
   static const _countdownSeconds = 4;
-
   int _secondsLeft = _countdownSeconds;
   Timer? _timer;
   late final AnimationController _pulse;
@@ -93,9 +241,6 @@ class _BattleWaitingScreenState extends State<BattleWaitingScreen>
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final surfaceBg = isDark
-        ? AppColors.surfaceSecondaryDark
-        : AppColors.surfaceSecondaryLight;
     final battleId = battleRoomDisplayId(widget.sessionId);
     final idColor = isDark ? AppColors.warningTextDark : AppColors.warning;
     final hostBg = battleMatchMonogramBackground(widget.sessionId, 'host');
@@ -105,152 +250,400 @@ class _BattleWaitingScreenState extends State<BattleWaitingScreen>
     final youBg = battleMatchMonogramBackground(widget.sessionId, 'you');
     final youFg = battleMatchMonogramForeground(youBg);
 
-    return Scaffold(
-      backgroundColor: surfaceBg,
-      appBar: AppBar(
-        title: const Text('Match'),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Center(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.lg,
-                  vertical: AppSpacing.md,
-                ),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 400),
-                  child: Card(
-                    elevation: 0,
-                    color: scheme.surface,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppRadius.xl),
-                      side: BorderSide(
-                        color: isDark
-                            ? AppColors.borderDark
-                            : AppColors.borderLight,
-                      ),
+    return Column(
+      children: [
+        Expanded(
+          child: Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.md,
+              ),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 400),
+                child: Card(
+                  elevation: 0,
+                  color: scheme.surface,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppRadius.xl),
+                    side: BorderSide(
+                      color:
+                          isDark ? AppColors.borderDark : AppColors.borderLight,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(AppSpacing.lg),
-                      child: Column(
-                        children: [
-                          _HostAvatar(
-                            photoUrl: widget.playerPhotoUrl,
-                            fallbackLetter: _initialLetter(widget.playerName),
-                            monogramBackground: hostBg,
-                            monogramForeground: hostFg,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.lg),
+                    child: Column(
+                      children: [
+                        _HostAvatar(
+                          photoUrl: widget.playerPhotoUrl,
+                          fallbackLetter: _initialLetter(widget.playerName),
+                          monogramBackground: hostBg,
+                          monogramForeground: hostFg,
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        Text(
+                          widget.playerName,
+                          style: AppTextStyles.h2().copyWith(
+                            color: scheme.onSurface,
                           ),
-                          const SizedBox(height: AppSpacing.sm),
-                          Text(
-                            widget.playerName,
-                            style: AppTextStyles.h2().copyWith(
-                              color: scheme.onSurface,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: AppSpacing.lg),
+                        Text(
+                          'Battle ID',
+                          style: AppTextStyles.labelSm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.xs),
+                        SelectableText(
+                          battleId,
+                          style: AppTextStyles.h1().copyWith(
+                            color: idColor,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.lg),
+                        Divider(
+                          height: 1,
+                          color:
+                              isDark
+                                  ? AppColors.borderDark
+                                  : AppColors.borderLight,
+                        ),
+                        const SizedBox(height: AppSpacing.md),
+                        Text(
+                          '2 joined',
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.md),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            _JoinedParticipant(
+                              letter: _initialLetter(widget.opponentName),
+                              label: _shortName(widget.opponentName),
+                              scheme: scheme,
+                              monogramBackground: oppBg,
+                              monogramForeground: oppFg,
+                              greyed: false,
                             ),
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          const SizedBox(height: AppSpacing.lg),
-                          Text(
-                            'Battle ID',
-                            style: AppTextStyles.labelSm().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacing.xs),
-                          SelectableText(
-                            battleId,
-                            style: AppTextStyles.h1().copyWith(
-                              color: idColor,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacing.lg),
-                          Divider(
-                            height: 1,
-                            color: isDark
-                                ? AppColors.borderDark
-                                : AppColors.borderLight,
-                          ),
-                          const SizedBox(height: AppSpacing.md),
-                          Text(
-                            '2 joined',
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.onSurface,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacing.md),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              _JoinedParticipant(
-                                letter: _initialLetter(widget.opponentName),
-                                label: _shortName(widget.opponentName),
-                                scheme: scheme,
-                                monogramBackground: oppBg,
-                                monogramForeground: oppFg,
-                              ),
-                              _JoinedParticipant(
-                                letter: _initialLetter(widget.playerName),
-                                label: 'You',
-                                scheme: scheme,
+                            _JoinedParticipant(
+                              letter: _initialLetter(widget.playerName),
+                              label: 'You',
+                              scheme: scheme,
+                              monogramBackground: youBg,
+                              monogramForeground: youFg,
+                              greyed: false,
+                              avatar: _HostAvatar(
+                                radius: 22,
+                                photoUrl: widget.playerPhotoUrl,
+                                fallbackLetter: _initialLetter(
+                                  widget.playerName,
+                                ),
                                 monogramBackground: youBg,
                                 monogramForeground: youFg,
-                                avatar: _HostAvatar(
-                                  radius: 22,
-                                  photoUrl: widget.playerPhotoUrl,
-                                  fallbackLetter: _initialLetter(
-                                    widget.playerName,
-                                  ),
-                                  monogramBackground: youBg,
-                                  monogramForeground: youFg,
-                                ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.lg,
-                0,
-                AppSpacing.lg,
-                AppSpacing.md,
+        ),
+        SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              0,
+              AppSpacing.lg,
+              AppSpacing.md,
+            ),
+            child: AnimatedBuilder(
+              animation: _pulse,
+              builder: (context, child) {
+                final o = 0.42 + _pulse.value * 0.48;
+                return Opacity(opacity: o, child: child);
+              },
+              child: Text(
+                'Please wait… battle is starting in a few seconds.',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                  fontSize: 12,
+                  height: 1.35,
+                ),
+                textAlign: TextAlign.center,
               ),
-              child: AnimatedBuilder(
-                animation: _pulse,
-                builder: (context, child) {
-                  final o = 0.42 + _pulse.value * 0.48;
-                  return Opacity(
-                    opacity: o,
-                    child: child,
-                  );
-                },
-                child: Text(
-                  'Please wait… battle is starting in a few seconds.',
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _HumanLobbyBody extends StatelessWidget {
+  const _HumanLobbyBody({
+    required this.sessionId,
+    required this.match,
+    required this.playerName,
+    required this.opponentName,
+    required this.playerPhotoUrl,
+    required this.opponentPhotoUrl,
+    required this.authEmail,
+    required this.onHostStartBattle,
+    required this.startingBattle,
+    required this.initialLetter,
+    required this.shortName,
+  });
+
+  final String sessionId;
+  final Map<String, dynamic> match;
+  final String playerName;
+  final String opponentName;
+  final String? playerPhotoUrl;
+  final String? opponentPhotoUrl;
+  final String authEmail;
+  final VoidCallback onHostStartBattle;
+  final bool startingBattle;
+  final String Function(String) initialLetter;
+  final String Function(String) shortName;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final battleId = battleRoomDisplayId(sessionId);
+    final idColor = isDark ? AppColors.warningTextDark : AppColors.warning;
+
+    final hostEmail = (match['host_email'] as String?)?.toLowerCase() ?? '';
+    final isHost = authEmail.isNotEmpty && authEmail == hostEmail;
+    final guestReady = match[BattleMatchFirestoreService.fieldGuestReady] == true;
+    final letsStart = match['lets_start_game'] == true;
+
+    final opponentGreyed = isHost ? !guestReady : !letsStart;
+
+    final hostBg = battleMatchMonogramBackground(sessionId, 'host');
+    final hostFg = battleMatchMonogramForeground(hostBg);
+    final oppBg = battleMatchMonogramBackground(sessionId, 'opponent');
+    final oppFg = battleMatchMonogramForeground(oppBg);
+    final youBg = battleMatchMonogramBackground(sessionId, 'you');
+    final youFg = battleMatchMonogramForeground(youBg);
+
+    final statusLine =
+        isHost
+            ? (guestReady
+                ? 'Opponent joined. Start the battle when you are ready.'
+                : 'Waiting for your opponent to open the invite and join.')
+            : (letsStart
+                ? 'Starting battle…'
+                : 'Waiting for the host to start the battle.');
+
+    final opponentAvatar =
+        (opponentPhotoUrl != null && opponentPhotoUrl!.trim().isNotEmpty)
+            ? CircleAvatar(
+              radius: 22,
+              backgroundColor: scheme.primaryContainer,
+              child: ClipOval(
+                child: Image.network(
+                  opponentPhotoUrl!.trim(),
+                  width: 44,
+                  height: 44,
+                  fit: BoxFit.cover,
+                  errorBuilder:
+                      (_, _, _) => CircleAvatar(
+                        radius: 22,
+                        backgroundColor: oppBg,
+                        foregroundColor: oppFg,
+                        child: Text(
+                          initialLetter(opponentName),
+                          style: AppTextStyles.label().copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                ),
+              ),
+            )
+            : CircleAvatar(
+              radius: 22,
+              backgroundColor: oppBg,
+              foregroundColor: oppFg,
+              child: Text(
+                initialLetter(opponentName),
+                style: AppTextStyles.label().copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            );
+
+    return Column(
+      children: [
+        Expanded(
+          child: Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.md,
+              ),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 400),
+                child: Card(
+                  elevation: 0,
+                  color: scheme.surface,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(AppRadius.xl),
+                    side: BorderSide(
+                      color:
+                          isDark ? AppColors.borderDark : AppColors.borderLight,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.lg),
+                    child: Column(
+                      children: [
+                        _HostAvatar(
+                          photoUrl: playerPhotoUrl,
+                          fallbackLetter: initialLetter(playerName),
+                          monogramBackground: hostBg,
+                          monogramForeground: hostFg,
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                        Text(
+                          playerName,
+                          style: AppTextStyles.h2().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: AppSpacing.lg),
+                        Text(
+                          'Battle ID',
+                          style: AppTextStyles.labelSm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.xs),
+                        SelectableText(
+                          battleId,
+                          style: AppTextStyles.h1().copyWith(
+                            color: idColor,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.lg),
+                        Divider(
+                          height: 1,
+                          color:
+                              isDark
+                                  ? AppColors.borderDark
+                                  : AppColors.borderLight,
+                        ),
+                        const SizedBox(height: AppSpacing.md),
+                        Text(
+                          guestReady ? 'Opponent in lobby' : 'Waiting for opponent',
+                          style: AppTextStyles.label().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.md),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            _JoinedParticipant(
+                              letter: initialLetter(opponentName),
+                              label: shortName(opponentName),
+                              scheme: scheme,
+                              monogramBackground: oppBg,
+                              monogramForeground: oppFg,
+                              greyed: opponentGreyed,
+                              avatar: opponentAvatar,
+                            ),
+                            _JoinedParticipant(
+                              letter: initialLetter(playerName),
+                              label: 'You',
+                              scheme: scheme,
+                              monogramBackground: youBg,
+                              monogramForeground: youFg,
+                              greyed: false,
+                              avatar: _HostAvatar(
+                                radius: 22,
+                                photoUrl: playerPhotoUrl,
+                                fallbackLetter: initialLetter(playerName),
+                                monogramBackground: youBg,
+                                monogramForeground: youFg,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              0,
+              AppSpacing.lg,
+              AppSpacing.md,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  statusLine,
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,
-                    fontSize: 12,
+                    fontSize: 13,
                     height: 1.35,
                   ),
                   textAlign: TextAlign.center,
                 ),
-              ),
+                if (isHost) ...[
+                  const SizedBox(height: AppSpacing.md),
+                  FilledButton(
+                    onPressed:
+                        (guestReady && !letsStart && !startingBattle)
+                            ? onHostStartBattle
+                            : null,
+                    child:
+                        startingBattle
+                            ? const SizedBox(
+                              height: 22,
+                              width: 22,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: Colors.white,
+                              ),
+                            )
+                            : const Text('Start battle'),
+                  ),
+                ],
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -319,6 +712,7 @@ class _JoinedParticipant extends StatelessWidget {
     this.avatar,
     required this.monogramBackground,
     required this.monogramForeground,
+    this.greyed = false,
   });
 
   final String letter;
@@ -327,10 +721,18 @@ class _JoinedParticipant extends StatelessWidget {
   final Widget? avatar;
   final Color monogramBackground;
   final Color monogramForeground;
+  final bool greyed;
+
+  static const _greyscale = <double>[
+    0.2126, 0.7152, 0.0722, 0, 0,
+    0.2126, 0.7152, 0.0722, 0, 0,
+    0.2126, 0.7152, 0.0722, 0, 0,
+    0, 0, 0, 1, 0,
+  ];
 
   @override
   Widget build(BuildContext context) {
-    final child =
+    final raw =
         avatar ??
         CircleAvatar(
           radius: 22,
@@ -343,6 +745,14 @@ class _JoinedParticipant extends StatelessWidget {
             ),
           ),
         );
+
+    final child =
+        greyed
+            ? ColorFiltered(
+              colorFilter: const ColorFilter.matrix(_greyscale),
+              child: Opacity(opacity: 0.55, child: raw),
+            )
+            : raw;
 
     return Expanded(
       child: Column(

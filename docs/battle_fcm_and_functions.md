@@ -25,7 +25,9 @@ The callable:
 3. Reads **`users/{guestEmail}`** and uses **`fcm_token`** or **`fcmToken`**.
 4. Sends FCM **`data.sessionId`** (string) for `BattleMessagingService`.
 
-**Deploy** (from repo root): `firebase use --add` once, then `firebase deploy --only functions`. See **`functions/README.md`** for setup and troubleshooting.
+**Deploy** (from repo root): `firebase use --add` once, then `firebase deploy --only functions` (or deploy `sendBattleInvite` and `sendSelfTestNotification` together). See **`functions/README.md`** for setup and troubleshooting.
+
+**Self test:** Callable **`sendSelfTestNotification`** sends a “Success” notification to the signed-in user’s own FCM token (Profile → **Send test notification**). Payload includes `data.kind=self_test` (no `sessionId`, so the app will not open the join route).
 
 ## Firestore: `battle_matches/{sessionId}`
 

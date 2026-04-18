@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/services/battle_messaging_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
+import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/router/app_router.dart';
@@ -68,6 +69,7 @@ class _RootMaterialApp extends HookConsumerWidget {
       next.whenData((user) {
         if (user?.email != null) {
           unawaited(FcmTokenSyncService.syncForCurrentUser());
+          unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         }
       });
     });

@@ -270,22 +270,29 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           subject: subject,
         );
         const cloud = BattleInviteCloudService();
-        await cloud.sendBattleInvite(
+        final inviteOutcome = await cloud.sendBattleInvite(
           guestEmail: invite.email,
           sessionId: sessionId,
           hostDisplayName: playerName,
           subjectLabel: subject,
         );
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(inviteOutcome.userFacingMessage)),
+        );
       }
 
       if (!context.mounted) return;
       final photo = playerPhotoUrl?.trim();
+      final opponentPhoto = invite?.photoUrl?.trim();
       context.go(
         '/battle/wait/$sessionId',
         extra: {
           'playerName': playerName,
           'opponentName': opponentName,
           if (photo != null && photo.isNotEmpty) 'playerPhotoUrl': photo,
+          if (opponentPhoto != null && opponentPhoto.isNotEmpty)
+            'opponentPhotoUrl': opponentPhoto,
         },
       );
     } finally {

@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:upsc_wars/core/router/app_router.dart';
@@ -23,11 +24,34 @@ class BattleMessagingService {
 
     FcmTokenSyncService.ensureTokenRefreshSubscription();
 
+    // Foreground: system tray often does not show; surface payload in-app.
+    FirebaseMessaging.onMessage.listen(_onForegroundMessage);
+
     FirebaseMessaging.onMessageOpenedApp.listen(_handleDataMessage);
     final initial = await messaging.getInitialMessage();
     if (initial != null) {
       _navigateFromMessage(initial);
     }
+  }
+
+  static void _onForegroundMessage(RemoteMessage message) {
+    final n = message.notification;
+    final title = n?.title?.trim();
+    final bodyRaw = n?.body?.trim();
+    final resolvedTitle =
+        (title != null && title.isNotEmpty) ? title : 'Message';
+    final resolvedBody =
+        (bodyRaw != null && bodyRaw.isNotEmpty)
+            ? bodyRaw
+            : (message.data.isEmpty ? 'New notification' : message.data.toString());
+    final ctx = rootNavigatorKey.currentContext;
+    if (ctx == null || !ctx.mounted) return;
+    ScaffoldMessenger.maybeOf(ctx)?.showSnackBar(
+      SnackBar(
+        content: Text('$resolvedTitle\n$resolvedBody'),
+        duration: const Duration(seconds: 6),
+      ),
+    );
   }
 
   static void _handleDataMessage(RemoteMessage message) {

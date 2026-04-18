@@ -114,7 +114,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
         photoUrl: user?.photoURL,
       );
 
-      await svc.signalGuestJoinedAndReady(widget.sessionId);
+      await svc.signalGuestLobbyReady(widget.sessionId);
 
       final hostName = (d['host_display_name'] as String?)?.trim();
       if (!mounted) return;
