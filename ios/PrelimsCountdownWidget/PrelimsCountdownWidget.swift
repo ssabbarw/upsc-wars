@@ -3,6 +3,33 @@ import WidgetKit
 
 private let widgetGroupId = "group.tinyminyapps.upsc.wars"
 
+/// Matches Dart `PrelimsCountdown.prelimsDate`: 24 May 2026, 09:30 in the user's current calendar/time zone.
+private func prelimsDate() -> Date {
+  var calendar = Calendar.current
+  calendar.timeZone = TimeZone.current
+  return calendar.date(
+    from: DateComponents(calendar: calendar, year: 2026, month: 5, day: 24, hour: 9, minute: 30)
+  ) ?? .distantFuture
+}
+
+/// Matches Dart `PrelimsCountdown.daysLeft` for a positive remaining interval.
+private func daysLeft(from now: Date) -> Int {
+  let prelims = prelimsDate()
+  let diff = prelims.timeIntervalSince(now)
+  if diff <= 0 { return 0 }
+  let fullDays = Int(floor(diff / 86400.0))
+  let remainder = diff - Double(fullDays) * 86400.0
+  let hasRemainder = remainder > 0.000001
+  return hasRemainder ? fullDays + 1 : fullDays
+}
+
+private func nextLocalMidnight(after date: Date) -> Date {
+  var calendar = Calendar.current
+  calendar.timeZone = TimeZone.current
+  let start = calendar.startOfDay(for: date)
+  return calendar.date(byAdding: .day, value: 1, to: start) ?? date.addingTimeInterval(86400)
+}
+
 struct PrelimsCountdownEntry: TimelineEntry {
   let date: Date
   let daysText: String
@@ -19,21 +46,39 @@ struct PrelimsCountdownProvider: TimelineProvider {
   }
 
   func getSnapshot(in context: Context, completion: @escaping (PrelimsCountdownEntry) -> Void) {
-    completion(loadEntry())
+    completion(loadEntry(at: Date(), data: nil))
   }
 
   func getTimeline(in context: Context, completion: @escaping (Timeline<PrelimsCountdownEntry>) -> Void) {
-    let entry = loadEntry()
-    let nextRefresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date().addingTimeInterval(3600)
-    completion(Timeline(entries: [entry], policy: .after(nextRefresh)))
+    let now = Date()
+    let data = UserDefaults(suiteName: widgetGroupId)
+    let debugMinute = (data?.string(forKey: "prelims_debug_minute_refresh") ?? "0") == "1"
+    let entry = loadEntry(at: now, data: data)
+    let refresh: Date
+    if debugMinute {
+      refresh = Calendar.current.date(byAdding: .minute, value: 1, to: now) ?? now.addingTimeInterval(60)
+    } else {
+      refresh = nextLocalMidnight(after: now)
+    }
+    completion(Timeline(entries: [entry], policy: .after(refresh)))
   }
 
-  private func loadEntry() -> PrelimsCountdownEntry {
-    let data = UserDefaults(suiteName: widgetGroupId)
+  private func loadEntry(at date: Date, data: UserDefaults? = nil) -> PrelimsCountdownEntry {
+    let data = data ?? UserDefaults(suiteName: widgetGroupId)
+    let debugMinute = (data?.string(forKey: "prelims_debug_minute_refresh") ?? "0") == "1"
+    let daysText: String
+    if debugMinute, let label = data?.string(forKey: "prelims_timer_label"), !label.isEmpty {
+      daysText = label
+    } else {
+      daysText = String(daysLeft(from: date))
+    }
+    let quote =
+      data?.string(forKey: "prelims_quote")
+      ?? "The trouble is, you think you have time.\n- Buddha"
     return PrelimsCountdownEntry(
-      date: Date(),
-      daysText: data?.string(forKey: "prelims_timer_label") ?? "0",
-      quote: data?.string(forKey: "prelims_quote") ?? "The trouble is, you think you have time.\n- Buddha"
+      date: date,
+      daysText: daysText,
+      quote: quote
     )
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../core/constants/prelims_debug_flags.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/services/battle_messaging_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
@@ -12,7 +13,7 @@ import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/router/app_router.dart';
 import '../core/router/question_bank_loading_screen.dart';
-import '../core/services/prelims_notification_service.dart';
+import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
 
@@ -70,11 +71,19 @@ class _RootMaterialApp extends HookConsumerWidget {
     useEffect(() {
       final observer = _PrelimsNotificationResumeObserver(
         onResumed: () {
-          unawaited(PrelimsNotificationService.syncPersistentNotification());
+          unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
         },
       );
       WidgetsBinding.instance.addObserver(observer);
       return () => WidgetsBinding.instance.removeObserver(observer);
+    }, const []);
+
+    useEffect(() {
+      if (!PrelimsDebugFlags.surfacesEveryMinute) return null;
+      final timer = Timer.periodic(const Duration(minutes: 1), (_) {
+        unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
+      });
+      return timer.cancel;
     }, const []);
 
     ref.listen(authStateChangesProvider, (previous, next) {

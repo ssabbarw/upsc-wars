@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/prelims_countdown.dart';
 import '../../../core/providers/prefs_provider.dart';
-import '../../../core/services/prelims_notification_service.dart';
+import '../../../core/services/prelims_surfaces_refresh.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -604,7 +604,7 @@ class _PrelimsPersistentNotificationCard extends ConsumerWidget {
                   final s = await ref.read(prefsServiceProvider.future);
                   s.prelimsPersistentNotificationEnabled = v;
                   ref.invalidate(prefsServiceProvider);
-                  await PrelimsNotificationService.syncPersistentNotification();
+                  await PrelimsSurfacesRefresh.refreshAllSurfaces();
                 },
               ),
               const SizedBox(height: AppSpacing.xs),

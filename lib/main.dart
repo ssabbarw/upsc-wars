@@ -1,17 +1,18 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:workmanager/workmanager.dart';
 
 import 'app/upsc_wars_app.dart';
-import 'core/providers/prefs_provider.dart';
+import 'core/constants/prelims_debug_flags.dart';
 import 'core/services/battle_messaging_service.dart';
-import 'core/services/prelims_notification_service.dart';
-import 'core/services/prelims_widget_sync_service.dart';
+import 'core/services/prelims_surfaces_refresh.dart';
+import 'core/services/prelims_workmanager_callback.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,10 +27,17 @@ Future<void> main() async {
   if (openedFromNotification != null) {
     BattleMessagingService.setPendingOpenedNotification(openedFromNotification);
   }
-  unawaited(PrelimsWidgetSyncService.sync());
-  final launchPrefs = await SharedPreferences.getInstance();
-  if (launchPrefs.getBool(PrefKeys.prelimsPersistentNotification) ?? true) {
-    unawaited(PrelimsNotificationService.syncPersistentNotification());
+  if (Platform.isAndroid) {
+    await Workmanager().initialize(prelimsWorkmanagerCallbackDispatcher);
+    await Workmanager().registerPeriodicTask(
+      PrelimsSurfacesRefresh.periodicTaskUniqueName,
+      PrelimsSurfacesRefresh.periodicTaskName,
+      frequency: PrelimsDebugFlags.surfacesEveryMinute
+          ? const Duration(minutes: 1)
+          : const Duration(hours: 24),
+      existingWorkPolicy: ExistingPeriodicWorkPolicy.keep,
+    );
   }
+  unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
   runApp(const ProviderScope(child: UpscWarsApp()));
 }

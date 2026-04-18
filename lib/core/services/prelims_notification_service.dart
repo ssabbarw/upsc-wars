@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/prelims_countdown.dart';
+import '../constants/prelims_debug_flags.dart';
 import '../providers/prefs_provider.dart';
 
 class PrelimsNotificationService {
@@ -51,7 +53,10 @@ class PrelimsNotificationService {
 
     final now = DateTime.now();
     final title = PrelimsCountdown.persistentNotificationTitle();
-    final body = PrelimsCountdown.persistentNotificationBody(now: now);
+    var body = PrelimsCountdown.persistentNotificationBody(now: now);
+    if (PrelimsDebugFlags.surfacesEveryMinute) {
+      body = '$body\n@${DateFormat('HH:mm').format(now)}';
+    }
 
     const androidDetails = AndroidNotificationDetails(
       _channelId,

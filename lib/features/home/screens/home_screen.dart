@@ -295,6 +295,8 @@ class HomeScreen extends HookConsumerWidget {
               const SizedBox(height: AppSpacing.md),
               const PrelimsCountdownCard(),
               const SizedBox(height: AppSpacing.md),
+              _HomeReleaseTodoCard(borderColor: borderColor, scheme: scheme),
+              const SizedBox(height: AppSpacing.md),
               Material(
                 color: scheme.surfaceContainerLow,
                 borderRadius: BorderRadius.circular(AppRadius.md),
@@ -463,6 +465,59 @@ class HomeScreen extends HookConsumerWidget {
         ? defaultIndex
         : seed.hashCode.abs() % palette.length;
     return palette[index].bg.withValues(alpha: 0.9);
+  }
+}
+
+class _HomeReleaseTodoCard extends StatelessWidget {
+  const _HomeReleaseTodoCard({
+    required this.borderColor,
+    required this.scheme,
+  });
+
+  final Color borderColor;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: scheme.surfaceContainerLow,
+      borderRadius: BorderRadius.circular(AppRadius.md),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppRadius.md),
+          border: Border.all(color: borderColor, width: 0.5),
+        ),
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.checklist_outlined,
+                  size: 18,
+                  color: scheme.onSurfaceVariant,
+                ),
+                const SizedBox(width: AppSpacing.xs),
+                Text(
+                  'TODO',
+                  style: AppTextStyles.label().copyWith(
+                    color: scheme.onSurface,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              '1. remove updating days every min before release.',
+              style: AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
