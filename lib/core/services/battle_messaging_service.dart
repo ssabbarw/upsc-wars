@@ -5,12 +5,24 @@ import 'package:go_router/go_router.dart';
 
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
+import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
 
-/// FCM setup for battle invites and deep links into [BattleJoinScreen].
+/// FCM setup for battle invites, long HTML announcements, and deep links.
 class BattleMessagingService {
   BattleMessagingService._();
 
-  static Future<void> initialize() async {
+  /// Set from [main] after [FirebaseMessaging.instance.getInitialMessage] so
+  /// the launch intent is not lost before the router exists.
+  static RemoteMessage? _pendingOpenedNotification;
+
+  static GoRouter? _router;
+
+  static void setPendingOpenedNotification(RemoteMessage message) {
+    _pendingOpenedNotification = message;
+  }
+
+  static Future<void> initialize(GoRouter router) async {
+    _router = router;
     final messaging = FirebaseMessaging.instance;
     await messaging.setAutoInitEnabled(true);
 
@@ -28,9 +40,12 @@ class BattleMessagingService {
     FirebaseMessaging.onMessage.listen(_onForegroundMessage);
 
     FirebaseMessaging.onMessageOpenedApp.listen(_handleDataMessage);
-    final initial = await messaging.getInitialMessage();
+
+    final initial = _pendingOpenedNotification ??
+        await messaging.getInitialMessage();
+    _pendingOpenedNotification = null;
     if (initial != null) {
-      _navigateFromMessage(initial);
+      _scheduleNavigateFromOpenedNotification(router, initial);
     }
   }
 
@@ -55,15 +70,43 @@ class BattleMessagingService {
   }
 
   static void _handleDataMessage(RemoteMessage message) {
-    _navigateFromMessage(message);
+    final router = _router;
+    if (router == null) return;
+    _scheduleNavigateFromOpenedNotification(router, message);
   }
 
-  static void _navigateFromMessage(RemoteMessage message) {
-    final sessionId = message.data['sessionId'] as String?;
-    if (sessionId == null || sessionId.isEmpty) return;
-    final ctx = rootNavigatorKey.currentContext;
-    if (ctx == null) return;
-    ctx.go('/battle/join/$sessionId');
+  /// Opens the long-HTML announcement screen when FCM **data** has
+  /// [LongHtmlNotificationConstants.fcmDataKeyType] ==
+  /// [LongHtmlNotificationConstants.fcmDataValueLongHtmlMessage] (case-insensitive).
+  static bool messageOpensLongHtmlScreen(RemoteMessage message) {
+    final raw = message.data[LongHtmlNotificationConstants.fcmDataKeyType];
+    if (raw == null) return false;
+    final s = raw.toString().trim().toLowerCase();
+    return s == LongHtmlNotificationConstants.fcmDataValueLongHtmlMessage;
+  }
+
+  /// Routes after notification open (background / terminated).
+  static void _scheduleNavigateFromOpenedNotification(
+    GoRouter router,
+    RemoteMessage message,
+  ) {
+    void go() {
+      if (kDebugMode) {
+        debugPrint('BattleMessagingService: notification opened, data=${message.data}');
+      }
+      if (messageOpensLongHtmlScreen(message)) {
+        router.push('/notification/long-html');
+        return;
+      }
+      final sessionId = message.data['sessionId'] as String?;
+      if (sessionId != null && sessionId.isNotEmpty) {
+        router.go('/battle/join/$sessionId');
+      }
+    }
+
+    // Defer one frame so the shell route is committed before [push] (cold
+    // start from notification tap).
+    WidgetsBinding.instance.addPostFrameCallback((_) => go());
   }
 
   /// Returns the device token for storing on `users/{email}` (server targets invites).

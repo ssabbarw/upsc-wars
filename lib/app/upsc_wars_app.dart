@@ -12,6 +12,7 @@ import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
 import '../core/router/app_router.dart';
 import '../core/router/question_bank_loading_screen.dart';
+import '../core/services/prelims_notification_service.dart';
 import '../core/theme/app_theme.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
 
@@ -60,9 +61,20 @@ class _RootMaterialApp extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     useEffect(() {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        BattleMessagingService.initialize();
+        final router = ref.read(appRouterProvider);
+        unawaited(BattleMessagingService.initialize(router));
       });
       return null;
+    }, const []);
+
+    useEffect(() {
+      final observer = _PrelimsNotificationResumeObserver(
+        onResumed: () {
+          unawaited(PrelimsNotificationService.syncPersistentNotification());
+        },
+      );
+      WidgetsBinding.instance.addObserver(observer);
+      return () => WidgetsBinding.instance.removeObserver(observer);
     }, const []);
 
     ref.listen(authStateChangesProvider, (previous, next) {
@@ -97,5 +109,18 @@ class _RootMaterialApp extends HookConsumerWidget {
         );
       },
     );
+  }
+}
+
+class _PrelimsNotificationResumeObserver extends WidgetsBindingObserver {
+  _PrelimsNotificationResumeObserver({required this.onResumed});
+
+  final void Function() onResumed;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      onResumed();
+    }
   }
 }

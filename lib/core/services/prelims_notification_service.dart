@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/prelims_countdown.dart';
+import '../providers/prefs_provider.dart';
 
 class PrelimsNotificationService {
   PrelimsNotificationService._();
@@ -16,19 +18,40 @@ class PrelimsNotificationService {
   static final FlutterLocalNotificationsPlugin _notifications =
       FlutterLocalNotificationsPlugin();
 
-  static Future<void> showPersistentCountdown() async {
-    if (!Platform.isAndroid) return;
+  static bool _initialized = false;
 
+  static Future<void> _ensureInitialized() async {
+    if (_initialized) return;
     const initializationSettings = InitializationSettings(
       android: AndroidInitializationSettings('@mipmap/ic_launcher'),
     );
     await _notifications.initialize(settings: initializationSettings);
-
     final androidPlugin = _notifications
         .resolvePlatformSpecificImplementation<
           AndroidFlutterLocalNotificationsPlugin
         >();
     await androidPlugin?.requestNotificationsPermission();
+    _initialized = true;
+  }
+
+  /// Shows, updates, or clears the persistent prelims notification from prefs.
+  static Future<void> syncPersistentNotification() async {
+    if (!Platform.isAndroid) return;
+
+    final prefs = await SharedPreferences.getInstance();
+    final enabled =
+        prefs.getBool(PrefKeys.prelimsPersistentNotification) ?? true;
+
+    await _ensureInitialized();
+
+    if (!enabled) {
+      await _notifications.cancel(id: _notificationId);
+      return;
+    }
+
+    final now = DateTime.now();
+    final title = PrelimsCountdown.persistentNotificationTitle();
+    final body = PrelimsCountdown.persistentNotificationBody(now: now);
 
     const androidDetails = AndroidNotificationDetails(
       _channelId,
@@ -45,11 +68,10 @@ class PrelimsNotificationService {
       visibility: NotificationVisibility.public,
     );
 
-    final now = DateTime.now();
     await _notifications.show(
       id: _notificationId,
-      title: 'Prelims countdown ${PrelimsCountdown.timerLabel(now: now)}',
-      body: PrelimsCountdown.quoteForDate(now: now),
+      title: title,
+      body: body,
       notificationDetails: const NotificationDetails(android: androidDetails),
     );
   }

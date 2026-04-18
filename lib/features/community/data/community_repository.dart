@@ -1,5 +1,7 @@
 import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 
 import '../domain/community_bucket_utils.dart';
 import '../domain/community_legacy_contract.dart';
@@ -26,7 +28,18 @@ class CommunityRepository {
     required String emailFieldKey,
     required Map<String, dynamic> userPayload,
   }) async {
-    await presenceBucketDocRefNow().set(
+    final docRef = presenceBucketDocRefNow();
+    if (kDebugMode) {
+      final path = docRef.path;
+      final segments = path.split('/');
+      final bucketId =
+          segments.length >= 2 ? segments[segments.length - 1] : '?';
+      debugPrint(
+        '[CommunityPresence] merge user field on doc=$path '
+        '(bucket=$bucketId, topLevelField=$emailFieldKey)',
+      );
+    }
+    await docRef.set(
       {emailFieldKey: userPayload},
       SetOptions(merge: true),
     );

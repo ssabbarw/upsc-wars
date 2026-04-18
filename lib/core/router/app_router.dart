@@ -20,7 +20,9 @@ import '../../features/community/screens/community_screen.dart';
 import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/providers/community_providers.dart';
 import '../../features/home/screens/home_screen.dart';
+import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
+import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/results_screen.dart';
@@ -94,6 +96,16 @@ GoRouter appRouter(Ref ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/profile',
         builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/settings',
+        builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/notification/long-html',
+        builder: (context, state) => const LongHtmlNotificationScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

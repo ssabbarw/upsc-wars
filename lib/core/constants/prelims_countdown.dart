@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class PrelimsCountdown {
   PrelimsCountdown._();
 
@@ -41,5 +43,24 @@ class PrelimsCountdown {
 
     String two(int value) => value.toString().padLeft(2, '0');
     return '${two(days)}:${two(hours)}:${two(minutes)}:${two(seconds)}';
+  }
+
+  static String _prelimsDateLabel() =>
+      DateFormat('d MMM yyyy').format(prelimsDate);
+
+  /// Title for the Android persistent prelims notification (days-only UI).
+  static String persistentNotificationTitle() => 'UPSC Prelims';
+
+  /// Body for the persistent notification: days remaining only (no quote, no H:M:S).
+  static String persistentNotificationBody({DateTime? now}) {
+    final days = daysLeft(now: now);
+    final dateLine = _prelimsDateLabel();
+    if (days <= 0) {
+      return 'It\'s exam day · $dateLine\nYou\'ve prepared for this — breathe and execute.';
+    }
+    if (days == 1) {
+      return '1 day to go · $dateLine\nOne calm session at a time.';
+    }
+    return '$days days to go · $dateLine\nSmall steps, every day — that\'s the edge.';
   }
 }

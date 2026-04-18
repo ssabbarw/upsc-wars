@@ -12,6 +12,8 @@ abstract final class PrefKeys {
   static const dbInitialized = 'db_initialized';
   static const dbAssetVersion = 'db_asset_version';
   static const darkModeEnabled = 'dark_mode_enabled';
+  /// Android persistent status-bar style prelims countdown (days only).
+  static const prelimsPersistentNotification = 'prelims_persistent_notification';
   /// JSON payload to restore battle spectate after app restart.
   static const battleSpectateRecovery = 'battle_spectate_recovery_v1';
 }
@@ -50,6 +52,13 @@ class PrefsService {
 
   bool get darkModeEnabled => _p.getBool(PrefKeys.darkModeEnabled) ?? false;
   set darkModeEnabled(bool v) => _p.setBool(PrefKeys.darkModeEnabled, v);
+
+  /// Default `true` so existing installs keep the prelims notification until
+  /// they turn it off in Profile.
+  bool get prelimsPersistentNotificationEnabled =>
+      _p.getBool(PrefKeys.prelimsPersistentNotification) ?? true;
+  set prelimsPersistentNotificationEnabled(bool v) =>
+      _p.setBool(PrefKeys.prelimsPersistentNotification, v);
 
   /// JSON for restoring battle spectate after restart; null clears.
   String? get battleSpectateRecoveryJson =>
