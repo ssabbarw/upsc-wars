@@ -1,44 +1,15 @@
-import '../../../core/database/user_db.dart';
-
-/// Result for a single trap type's performance stats.
-class TrapBlindSpotRow {
-  const TrapBlindSpotRow({
-    required this.trapType,
-    required this.totalAttempts,
-    required this.wrongCount,
-  });
-
-  final String trapType;
-  final int totalAttempts;
-  final int wrongCount;
-
-  int get correctCount => totalAttempts - wrongCount;
-
-  /// Accuracy as a percentage (0–100). Returns 0 if [totalAttempts] is 0.
-  double get accuracyPercent =>
-      totalAttempts > 0 ? (correctCount / totalAttempts) * 100 : 0;
-
-  /// Readable display name: underscores → spaces, title-cased.
-  String get displayName {
-    return trapType
-        .split('_')
-        .map((w) => w.isEmpty ? w : '${w[0].toUpperCase()}${w.substring(1)}')
-        .join(' ');
-  }
-}
-
-/// Risk tier for a topic or the overall subject.
+/// Risk tier from percentile bands within a subject (topic ranking).
 enum RiskTier { low, medium, high }
 
 extension RiskTierX on RiskTier {
   String get label {
     switch (this) {
       case RiskTier.low:
-        return 'Low Risk';
+        return 'Lower risk';
       case RiskTier.medium:
-        return 'Medium Risk';
+        return 'Medium risk';
       case RiskTier.high:
-        return 'High Risk';
+        return 'Higher risk';
     }
   }
 
@@ -54,33 +25,67 @@ extension RiskTierX on RiskTier {
   }
 }
 
+/// One topic's Danger Zone frequency in the ranking window, with a tier.
+class TopicPercentileRow {
+  const TopicPercentileRow({
+    required this.topic,
+    required this.dangerCount,
+    required this.tier,
+  });
+
+  final String topic;
+  final int dangerCount;
+  final RiskTier tier;
+}
+
+/// Subject-scoped Danger Zone + topic ranking (last 30 days).
+class SubjectInsights {
+  const SubjectInsights({
+    required this.dangerZoneCountLast30Days,
+    required this.dangerZoneMarksLast30,
+    required this.topicPercentiles,
+  });
+
+  final int dangerZoneCountLast30Days;
+  final double dangerZoneMarksLast30;
+  final List<TopicPercentileRow> topicPercentiles;
+
+  bool get hasTopicData => topicPercentiles.isNotEmpty;
+
+  bool get isWellCalibratedThisMonth => dangerZoneCountLast30Days == 0;
+}
+
+/// Top ~20% of topics by danger count → high, next ~30% → medium, rest low.
+List<TopicPercentileRow> topicRowsWithPercentileTiers(
+  List<({String topic, int dangerCount})> sortedDesc,
+) {
+  if (sortedDesc.isEmpty) return [];
+  final n = sortedDesc.length;
+  final redN = n == 1 ? 1 : (n * 0.2).ceil().clamp(1, n);
+  final yellowN = (n * 0.3).ceil().clamp(0, n);
+  final out = <TopicPercentileRow>[];
+  for (var i = 0; i < n; i++) {
+    final row = sortedDesc[i];
+    final tier =
+        i < redN
+            ? RiskTier.high
+            : i < redN + yellowN
+                ? RiskTier.medium
+                : RiskTier.low;
+    out.add(
+      TopicPercentileRow(
+        topic: row.topic,
+        dangerCount: row.dangerCount,
+        tier: tier,
+      ),
+    );
+  }
+  return out;
+}
+
+/// Fixed bands for cross-subject overview rows (not percentile-based).
 RiskTier riskTierForWrongCount(int count) {
   if (count >= 8) return RiskTier.high;
   if (count >= 3) return RiskTier.medium;
   return RiskTier.low;
-}
-
-/// Aggregated insights for a single subject.
-class SubjectInsights {
-  const SubjectInsights({
-    required this.wrongCountLast30Days,
-    required this.topicRisks,
-    required this.trapBlindSpots,
-  });
-
-  /// Wrong answers in the last 30 days for this subject.
-  final int wrongCountLast30Days;
-
-  /// Top-5 topics sorted by [UserTopicStat.wrongAttempts] descending,
-  /// filtered to only topics with at least 1 wrong attempt.
-  final List<UserTopicStat> topicRisks;
-
-  /// Trap types sorted by wrong count descending,
-  /// filtered to trap types with at least 2 attempts.
-  final List<TrapBlindSpotRow> trapBlindSpots;
-
-  RiskTier get overallRiskTier => riskTierForWrongCount(wrongCountLast30Days);
-
-  bool get hasTopicData => topicRisks.isNotEmpty;
-  bool get hasTrapData => trapBlindSpots.isNotEmpty;
 }

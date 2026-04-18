@@ -11,6 +11,7 @@ import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
+import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
@@ -164,6 +165,9 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       questions.add(
         TestQuestion(
           uuid: q.uuid,
+          subject: q.subject,
+          topic: q.topic,
+          negativeFraming: q.negativeFraming,
           displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
           displayTextHi:
               parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
@@ -186,6 +190,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
           status: sq.status,
           flagged: sq.flagged,
           timeSpentSecs: sq.timeSpentSecs,
+          confidence: sq.confidence,
           conceptAnchor: q.conceptAnchor,
           finalExplanation: trEn?.finalExplanation ?? trHi?.finalExplanation,
           finalExplanationHi: trHi?.finalExplanation ?? trEn?.finalExplanation,
@@ -233,10 +238,21 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   }
 
   @override
+  Future<int> countScoredAttempts() =>
+      _userDb.sessionQuestionsDao.countScoredAttempts();
+
+  @override
+  Future<Set<String>> fetchWeakTopicKeys(
+    List<({String subject, String topic})> pairs,
+  ) =>
+      _userDb.userTopicStatsDao.weakTopicKeysAmong(pairs);
+
+  @override
   Future<bool> updateQuestionAttempt({
     required String sessionId,
     required String questionUuid,
     required String selectedOption,
+    String? confidence,
     QuestionAttemptAnalyticsInput? analytics,
   }) async {
     final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
@@ -250,11 +266,18 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
     final normSelected = selectedOption.toLowerCase();
     final isCorrect = q.correctOption.toLowerCase() == normSelected;
+    final now = DateTime.now();
+    final conf =
+        confidence != null && AnswerConfidence.values.contains(confidence)
+            ? confidence
+            : null;
     await _userDb.sessionQuestionsDao.updateSessionQuestionFields(
       sq.id,
       selectedOption: Value(normSelected),
       isCorrect: Value(isCorrect),
       status: Value(isCorrect ? 'correct' : 'wrong'),
+      attemptedAt: Value(now),
+      confidence: conf != null ? Value(conf) : const Value.absent(),
     );
 
     if (analytics != null) {
@@ -272,10 +295,10 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
             difficulty: null,
             correct: isCorrect,
             timeTakenSeconds: analytics.secondsOnQuestion,
-            guessed: false,
+            guessed: conf == AnswerConfidence.guessing,
             eliminatedOptionsCount: 0,
             trapType: q.trapType,
-            confidenceLevel: null,
+            confidenceLevel: AnswerConfidence.analyticsCode(conf),
             featureName: labels.featureName,
             source: labels.source,
           ),

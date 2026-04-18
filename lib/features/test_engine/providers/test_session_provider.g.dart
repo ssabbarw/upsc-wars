@@ -51,7 +51,7 @@ final class TestSessionNotifierProvider
 }
 
 String _$testSessionNotifierHash() =>
-    r'7081ddc49bb92ef4f709cd25434d0000524b09aa';
+    r'bec4a051c1387a4aa2e8db378d0b4cb7778327d3';
 
 final class TestSessionNotifierFamily extends $Family
     with

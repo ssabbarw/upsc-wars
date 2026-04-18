@@ -19,6 +19,10 @@ class TestSessionState {
     required this.bookmarkedByUuid,
     required this.showTimedExamResumeBanner,
     required this.furthestAnsweredIndex,
+    required this.lifetimeScoredAttempts,
+    required this.weakTopicKeys,
+    required this.pendingSelectedOption,
+    required this.confidencePromptVisible,
   });
 
   factory TestSessionState.initial() => const TestSessionState(
@@ -37,6 +41,10 @@ class TestSessionState {
     bookmarkedByUuid: {},
     showTimedExamResumeBanner: false,
     furthestAnsweredIndex: -1,
+    lifetimeScoredAttempts: 0,
+    weakTopicKeys: {},
+    pendingSelectedOption: null,
+    confidencePromptVisible: false,
   );
 
   final bool isLoading;
@@ -54,6 +62,11 @@ class TestSessionState {
   final Map<String, bool> bookmarkedByUuid;
   final bool showTimedExamResumeBanner;
   final int furthestAnsweredIndex;
+  /// Global count of scored attempts when this session was opened (+ local bumps).
+  final int lifetimeScoredAttempts;
+  final Set<String> weakTopicKeys;
+  final String? pendingSelectedOption;
+  final bool confidencePromptVisible;
 
   TestSessionState copyWith({
     bool? isLoading,
@@ -73,6 +86,11 @@ class TestSessionState {
     Map<String, bool>? bookmarkedByUuid,
     bool? showTimedExamResumeBanner,
     int? furthestAnsweredIndex,
+    int? lifetimeScoredAttempts,
+    Set<String>? weakTopicKeys,
+    String? pendingSelectedOption,
+    bool clearPendingOption = false,
+    bool? confidencePromptVisible,
   }) {
     return TestSessionState(
       isLoading: isLoading ?? this.isLoading,
@@ -97,6 +115,13 @@ class TestSessionState {
           showTimedExamResumeBanner ?? this.showTimedExamResumeBanner,
       furthestAnsweredIndex:
           furthestAnsweredIndex ?? this.furthestAnsweredIndex,
+      lifetimeScoredAttempts:
+          lifetimeScoredAttempts ?? this.lifetimeScoredAttempts,
+      weakTopicKeys: weakTopicKeys ?? this.weakTopicKeys,
+      pendingSelectedOption:
+          clearPendingOption ? null : (pendingSelectedOption ?? this.pendingSelectedOption),
+      confidencePromptVisible:
+          confidencePromptVisible ?? this.confidencePromptVisible,
     );
   }
 }

@@ -119,6 +119,7 @@ class ReviewBody extends StatelessWidget {
     this.isRevisionMode = false,
     required this.uiLanguage,
     required this.onLanguageChanged,
+    this.confidenceBanner,
   });
 
   final String title;
@@ -136,6 +137,8 @@ class ReviewBody extends StatelessWidget {
   final bool isRevisionMode;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
+  /// Optional headline for Danger Zone style review.
+  final String? confidenceBanner;
 
   @override
   Widget build(BuildContext context) {
@@ -157,6 +160,30 @@ class ReviewBody extends StatelessWidget {
           uiLanguage: uiLanguage,
           onLanguageChanged: onLanguageChanged,
         ),
+        if (confidenceBanner != null)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: scheme.errorContainer.withValues(alpha: 0.35),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  child: Text(
+                    confidenceBanner!,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      color: scheme.onErrorContainer,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
           child: Column(

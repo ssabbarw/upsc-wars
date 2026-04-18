@@ -3391,6 +3391,17 @@ class $SessionQuestionsTable extends SessionQuestions
     type: DriftSqlType.dateTime,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _confidenceMeta = const VerificationMeta(
+    'confidence',
+  );
+  @override
+  late final GeneratedColumn<String> confidence = GeneratedColumn<String>(
+    'confidence',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -3403,6 +3414,7 @@ class $SessionQuestionsTable extends SessionQuestions
     timeSpentSecs,
     flagged,
     attemptedAt,
+    confidence,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -3493,6 +3505,12 @@ class $SessionQuestionsTable extends SessionQuestions
         ),
       );
     }
+    if (data.containsKey('confidence')) {
+      context.handle(
+        _confidenceMeta,
+        confidence.isAcceptableOrUnknown(data['confidence']!, _confidenceMeta),
+      );
+    }
     return context;
   }
 
@@ -3542,6 +3560,10 @@ class $SessionQuestionsTable extends SessionQuestions
         DriftSqlType.dateTime,
         data['${effectivePrefix}attempted_at'],
       ),
+      confidence: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}confidence'],
+      ),
     );
   }
 
@@ -3562,6 +3584,9 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
   final int? timeSpentSecs;
   final bool flagged;
   final DateTime? attemptedAt;
+
+  /// `very_sure` | `somewhat_sure` | `guessing`; null = not captured / ignored.
+  final String? confidence;
   const SessionQuestion({
     required this.id,
     required this.sessionId,
@@ -3573,6 +3598,7 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
     this.timeSpentSecs,
     required this.flagged,
     this.attemptedAt,
+    this.confidence,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -3594,6 +3620,9 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
     map['flagged'] = Variable<bool>(flagged);
     if (!nullToAbsent || attemptedAt != null) {
       map['attempted_at'] = Variable<DateTime>(attemptedAt);
+    }
+    if (!nullToAbsent || confidence != null) {
+      map['confidence'] = Variable<String>(confidence);
     }
     return map;
   }
@@ -3618,6 +3647,9 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
       attemptedAt: attemptedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(attemptedAt),
+      confidence: confidence == null && nullToAbsent
+          ? const Value.absent()
+          : Value(confidence),
     );
   }
 
@@ -3637,6 +3669,7 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
       timeSpentSecs: serializer.fromJson<int?>(json['timeSpentSecs']),
       flagged: serializer.fromJson<bool>(json['flagged']),
       attemptedAt: serializer.fromJson<DateTime?>(json['attemptedAt']),
+      confidence: serializer.fromJson<String?>(json['confidence']),
     );
   }
   @override
@@ -3653,6 +3686,7 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
       'timeSpentSecs': serializer.toJson<int?>(timeSpentSecs),
       'flagged': serializer.toJson<bool>(flagged),
       'attemptedAt': serializer.toJson<DateTime?>(attemptedAt),
+      'confidence': serializer.toJson<String?>(confidence),
     };
   }
 
@@ -3667,6 +3701,7 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
     Value<int?> timeSpentSecs = const Value.absent(),
     bool? flagged,
     Value<DateTime?> attemptedAt = const Value.absent(),
+    Value<String?> confidence = const Value.absent(),
   }) => SessionQuestion(
     id: id ?? this.id,
     sessionId: sessionId ?? this.sessionId,
@@ -3682,6 +3717,7 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
         : this.timeSpentSecs,
     flagged: flagged ?? this.flagged,
     attemptedAt: attemptedAt.present ? attemptedAt.value : this.attemptedAt,
+    confidence: confidence.present ? confidence.value : this.confidence,
   );
   SessionQuestion copyWithCompanion(SessionQuestionsCompanion data) {
     return SessionQuestion(
@@ -3703,6 +3739,9 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
       attemptedAt: data.attemptedAt.present
           ? data.attemptedAt.value
           : this.attemptedAt,
+      confidence: data.confidence.present
+          ? data.confidence.value
+          : this.confidence,
     );
   }
 
@@ -3718,7 +3757,8 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
           ..write('status: $status, ')
           ..write('timeSpentSecs: $timeSpentSecs, ')
           ..write('flagged: $flagged, ')
-          ..write('attemptedAt: $attemptedAt')
+          ..write('attemptedAt: $attemptedAt, ')
+          ..write('confidence: $confidence')
           ..write(')'))
         .toString();
   }
@@ -3735,6 +3775,7 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
     timeSpentSecs,
     flagged,
     attemptedAt,
+    confidence,
   );
   @override
   bool operator ==(Object other) =>
@@ -3749,7 +3790,8 @@ class SessionQuestion extends DataClass implements Insertable<SessionQuestion> {
           other.status == this.status &&
           other.timeSpentSecs == this.timeSpentSecs &&
           other.flagged == this.flagged &&
-          other.attemptedAt == this.attemptedAt);
+          other.attemptedAt == this.attemptedAt &&
+          other.confidence == this.confidence);
 }
 
 class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
@@ -3763,6 +3805,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
   final Value<int?> timeSpentSecs;
   final Value<bool> flagged;
   final Value<DateTime?> attemptedAt;
+  final Value<String?> confidence;
   final Value<int> rowid;
   const SessionQuestionsCompanion({
     this.id = const Value.absent(),
@@ -3775,6 +3818,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
     this.timeSpentSecs = const Value.absent(),
     this.flagged = const Value.absent(),
     this.attemptedAt = const Value.absent(),
+    this.confidence = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   SessionQuestionsCompanion.insert({
@@ -3788,6 +3832,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
     this.timeSpentSecs = const Value.absent(),
     this.flagged = const Value.absent(),
     this.attemptedAt = const Value.absent(),
+    this.confidence = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        sessionId = Value(sessionId),
@@ -3804,6 +3849,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
     Expression<int>? timeSpentSecs,
     Expression<bool>? flagged,
     Expression<DateTime>? attemptedAt,
+    Expression<String>? confidence,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -3817,6 +3863,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
       if (timeSpentSecs != null) 'time_spent_secs': timeSpentSecs,
       if (flagged != null) 'flagged': flagged,
       if (attemptedAt != null) 'attempted_at': attemptedAt,
+      if (confidence != null) 'confidence': confidence,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -3832,6 +3879,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
     Value<int?>? timeSpentSecs,
     Value<bool>? flagged,
     Value<DateTime?>? attemptedAt,
+    Value<String?>? confidence,
     Value<int>? rowid,
   }) {
     return SessionQuestionsCompanion(
@@ -3845,6 +3893,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
       timeSpentSecs: timeSpentSecs ?? this.timeSpentSecs,
       flagged: flagged ?? this.flagged,
       attemptedAt: attemptedAt ?? this.attemptedAt,
+      confidence: confidence ?? this.confidence,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -3882,6 +3931,9 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
     if (attemptedAt.present) {
       map['attempted_at'] = Variable<DateTime>(attemptedAt.value);
     }
+    if (confidence.present) {
+      map['confidence'] = Variable<String>(confidence.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -3901,6 +3953,7 @@ class SessionQuestionsCompanion extends UpdateCompanion<SessionQuestion> {
           ..write('timeSpentSecs: $timeSpentSecs, ')
           ..write('flagged: $flagged, ')
           ..write('attemptedAt: $attemptedAt, ')
+          ..write('confidence: $confidence, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -8466,6 +8519,7 @@ typedef $$SessionQuestionsTableCreateCompanionBuilder =
       Value<int?> timeSpentSecs,
       Value<bool> flagged,
       Value<DateTime?> attemptedAt,
+      Value<String?> confidence,
       Value<int> rowid,
     });
 typedef $$SessionQuestionsTableUpdateCompanionBuilder =
@@ -8480,6 +8534,7 @@ typedef $$SessionQuestionsTableUpdateCompanionBuilder =
       Value<int?> timeSpentSecs,
       Value<bool> flagged,
       Value<DateTime?> attemptedAt,
+      Value<String?> confidence,
       Value<int> rowid,
     });
 
@@ -8587,6 +8642,11 @@ class $$SessionQuestionsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<String> get confidence => $composableBuilder(
+    column: $table.confidence,
+    builder: (column) => ColumnFilters(column),
+  );
+
   $$SessionsTableFilterComposer get sessionId {
     final $$SessionsTableFilterComposer composer = $composerBuilder(
       composer: this,
@@ -8683,6 +8743,11 @@ class $$SessionQuestionsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get confidence => $composableBuilder(
+    column: $table.confidence,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   $$SessionsTableOrderingComposer get sessionId {
     final $$SessionsTableOrderingComposer composer = $composerBuilder(
       composer: this,
@@ -8766,6 +8831,11 @@ class $$SessionQuestionsTableAnnotationComposer
 
   GeneratedColumn<DateTime> get attemptedAt => $composableBuilder(
     column: $table.attemptedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get confidence => $composableBuilder(
+    column: $table.confidence,
     builder: (column) => column,
   );
 
@@ -8856,6 +8926,7 @@ class $$SessionQuestionsTableTableManager
                 Value<int?> timeSpentSecs = const Value.absent(),
                 Value<bool> flagged = const Value.absent(),
                 Value<DateTime?> attemptedAt = const Value.absent(),
+                Value<String?> confidence = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionQuestionsCompanion(
                 id: id,
@@ -8868,6 +8939,7 @@ class $$SessionQuestionsTableTableManager
                 timeSpentSecs: timeSpentSecs,
                 flagged: flagged,
                 attemptedAt: attemptedAt,
+                confidence: confidence,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -8882,6 +8954,7 @@ class $$SessionQuestionsTableTableManager
                 Value<int?> timeSpentSecs = const Value.absent(),
                 Value<bool> flagged = const Value.absent(),
                 Value<DateTime?> attemptedAt = const Value.absent(),
+                Value<String?> confidence = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionQuestionsCompanion.insert(
                 id: id,
@@ -8894,6 +8967,7 @@ class $$SessionQuestionsTableTableManager
                 timeSpentSecs: timeSpentSecs,
                 flagged: flagged,
                 attemptedAt: attemptedAt,
+                confidence: confidence,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

@@ -11,12 +11,14 @@ class UpdateQuestionAttemptUseCase {
     required String sessionId,
     required String questionUuid,
     required String selectedOption,
+    String? confidence,
     QuestionAttemptAnalyticsInput? analytics,
   }) {
     return _repository.updateQuestionAttempt(
       sessionId: sessionId,
       questionUuid: questionUuid,
       selectedOption: selectedOption,
+      confidence: confidence,
       analytics: analytics,
     );
   }

@@ -9,6 +9,7 @@ import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/session_analytics_derive.dart';
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -22,6 +23,99 @@ import '../../../shared/widgets/top_snack_bar.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
+
+Future<void> _showConfidenceBottomSheet(
+  BuildContext context,
+  WidgetRef ref,
+  String sessionId,
+) async {
+  final scheme = Theme.of(context).colorScheme;
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+  await showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    isDismissible: true,
+    backgroundColor: Colors.transparent,
+    builder: (ctx) {
+      return Padding(
+        padding: EdgeInsets.only(
+          left: AppSpacing.lg,
+          right: AppSpacing.lg,
+          bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          decoration: BoxDecoration(
+            color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+            border: Border.all(
+              color: isDark ? AppColors.borderDark : AppColors.borderLight,
+            ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'How sure are you?',
+                style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+              ),
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                'Pick before you see the answer — this builds your Danger Zone map.',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              FilledButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                  ref
+                      .read(testSessionProvider(sessionId).notifier)
+                      .submitConfidenceForPending(AnswerConfidence.verySure);
+                },
+                child: Text(
+                  AnswerConfidence.displayLabel(AnswerConfidence.verySure),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                  ref
+                      .read(testSessionProvider(sessionId).notifier)
+                      .submitConfidenceForPending(AnswerConfidence.somewhatSure);
+                },
+                child: Text(
+                  AnswerConfidence.displayLabel(AnswerConfidence.somewhatSure),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                  ref
+                      .read(testSessionProvider(sessionId).notifier)
+                      .submitConfidenceForPending(AnswerConfidence.guessing);
+                },
+                child: Text(
+                  AnswerConfidence.displayLabel(AnswerConfidence.guessing),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+  final stillOpen =
+      ref.read(testSessionProvider(sessionId)).asData?.value.confidencePromptVisible ??
+      false;
+  if (stillOpen && context.mounted) {
+    ref.read(testSessionProvider(sessionId).notifier).cancelConfidencePrompt();
+  }
+}
 
 class TestEngineScreen extends HookConsumerWidget {
   const TestEngineScreen({super.key, required this.sessionId});
@@ -161,6 +255,9 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
         } else if (current.isTimed && current.timeLimitSecs != null) {
           final remain = current.timeLimitSecs! - now.totalElapsedSecs;
           if (remain <= 0 && !now.isSubmitting) {
+            if (now.confidencePromptVisible) {
+              notifier.cancelConfidencePrompt();
+            }
             try {
               final submitted = await notifier.submit();
               if (context.mounted) context.go('/results/$submitted');
@@ -209,6 +306,21 @@ class _TestEngineLoaded extends HookConsumerWidget {
       );
       return null;
     }, [sessionForFx]);
+
+    ref.listen<AsyncValue<TestSessionState>>(
+      testSessionProvider(sessionId),
+      (prev, next) {
+        final was =
+            prev?.asData?.value.confidencePromptVisible ?? false;
+        final now = next.asData?.value.confidencePromptVisible ?? false;
+        if (!was && now) {
+          unawaited(
+            _showConfidenceBottomSheet(context, ref, sessionId),
+          );
+        }
+      },
+    );
+
     final sessionLanguage = ref.watch(
           testSessionProvider(
             sessionId,

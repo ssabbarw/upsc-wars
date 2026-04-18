@@ -113,6 +113,8 @@ class SessionQuestions extends Table {
   IntColumn get timeSpentSecs => integer().nullable()();
   BoolColumn get flagged => boolean().withDefault(const Constant(false))();
   DateTimeColumn get attemptedAt => dateTime().nullable()();
+  /// `very_sure` | `somewhat_sure` | `guessing`; null = not captured / ignored.
+  TextColumn get confidence => text().nullable()();
 
   @override
   Set<Column> get primaryKey => {id};
@@ -521,6 +523,7 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
     Value<String> status = const Value.absent(),
     Value<int?> timeSpentSecs = const Value.absent(),
     Value<DateTime?> attemptedAt = const Value.absent(),
+    Value<String?> confidence = const Value.absent(),
   }) =>
       (update(sessionQuestions)..where((t) => t.id.equals(id))).write(
         SessionQuestionsCompanion(
@@ -529,6 +532,7 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
           status: status,
           timeSpentSecs: timeSpentSecs,
           attemptedAt: attemptedAt,
+          confidence: confidence,
         ),
       );
 
@@ -558,6 +562,7 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
     required String status,
     required int? timeSpentSecs,
     required DateTime attemptedAt,
+    Value<String?> confidence = const Value.absent(),
   }) {
     return updateSessionQuestionFields(
       id,
@@ -566,7 +571,20 @@ class SessionQuestionsDao extends DatabaseAccessor<UserDatabase>
       status: Value(status),
       timeSpentSecs: Value(timeSpentSecs),
       attemptedAt: Value(attemptedAt),
+      confidence: confidence,
     );
+  }
+
+  /// Scored rows (correct + wrong), used for adaptive confidence rollout.
+  Future<int> countScoredAttempts() async {
+    final row = await customSelect(
+      '''
+      SELECT COUNT(*) AS c FROM attempts
+      WHERE status IN ('correct', 'wrong')
+      ''',
+      readsFrom: {sessionQuestions},
+    ).getSingle();
+    return row.read<int>('c');
   }
 
   Future<List<ScoredSessionQuestionRow>> getScoredPracticeRows() async {
@@ -912,6 +930,28 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
 
   Future<List<UserTopicStat>> fetchAll() =>
       (select(userTopicStats)..orderBy([(t) => OrderingTerm.asc(t.subject)])).get();
+
+  /// Keys `subject||topic` where the learner is under ~55% after enough attempts.
+  Future<Set<String>> weakTopicKeysAmong(
+    List<({String subject, String topic})> pairs,
+  ) async {
+    final seen = <String>{};
+    final out = <String>{};
+    for (final p in pairs) {
+      final key = '${p.subject}||${p.topic}';
+      if (seen.contains(key)) continue;
+      seen.add(key);
+      final row = await (select(userTopicStats)
+            ..where((t) => t.subject.equals(p.subject) & t.topic.equals(p.topic)))
+          .getSingleOrNull();
+      if (row != null &&
+          row.totalAttempted >= 5 &&
+          row.accuracyPercentage < 55.0) {
+        out.add(key);
+      }
+    }
+    return out;
+  }
 }
 
 @DriftDatabase(
@@ -946,7 +986,7 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -977,6 +1017,9 @@ class UserDatabase extends _$UserDatabase {
               'CREATE INDEX IF NOT EXISTS idx_questions_subject '
               'ON questions(subject)',
             );
+          }
+          if (from < 4) {
+            await m.addColumn(sessionQuestions, sessionQuestions.confidence);
           }
         },
       );

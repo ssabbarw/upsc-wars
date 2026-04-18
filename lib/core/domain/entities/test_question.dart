@@ -15,6 +15,9 @@ class QuestionTableData {
 class TestQuestion {
   const TestQuestion({
     required this.uuid,
+    required this.subject,
+    required this.topic,
+    required this.negativeFraming,
     required this.displayText,
     required this.displayTextHi,
     required this.optionA,
@@ -36,6 +39,7 @@ class TestQuestion {
     required this.status,
     required this.flagged,
     required this.timeSpentSecs,
+    required this.confidence,
     required this.conceptAnchor,
     required this.finalExplanation,
     required this.finalExplanationHi,
@@ -51,6 +55,9 @@ class TestQuestion {
   });
 
   final String uuid;
+  final String subject;
+  final String topic;
+  final bool negativeFraming;
   final String displayText;
   final String displayTextHi;
   final String optionA;
@@ -72,6 +79,8 @@ class TestQuestion {
   final String status;
   final bool flagged;
   final int? timeSpentSecs;
+  /// `AnswerConfidence.*` or null if not captured.
+  final String? confidence;
   final String? conceptAnchor;
   final String? finalExplanation;
   final String? finalExplanationHi;
@@ -90,9 +99,13 @@ class TestQuestion {
     String? status,
     bool? flagged,
     int? timeSpentSecs,
+    String? confidence,
   }) {
     return TestQuestion(
       uuid: uuid,
+      subject: subject,
+      topic: topic,
+      negativeFraming: negativeFraming,
       displayText: displayText,
       displayTextHi: displayTextHi,
       optionA: optionA,
@@ -114,6 +127,7 @@ class TestQuestion {
       status: status ?? this.status,
       flagged: flagged ?? this.flagged,
       timeSpentSecs: timeSpentSecs ?? this.timeSpentSecs,
+      confidence: confidence ?? this.confidence,
       conceptAnchor: conceptAnchor,
       finalExplanation: finalExplanation,
       finalExplanationHi: finalExplanationHi,

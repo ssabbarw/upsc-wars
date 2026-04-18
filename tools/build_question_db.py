@@ -260,6 +260,7 @@ def create_schema(conn: sqlite3.Connection) -> None:
             flagged         INTEGER NOT NULL DEFAULT 0,
             -- seconds since epoch, nullable
             attempted_at    INTEGER,
+            confidence      TEXT,
             FOREIGN KEY (session_id)    REFERENCES sessions(id)
                 ON DELETE CASCADE,
             FOREIGN KEY (question_uuid) REFERENCES questions(uuid)

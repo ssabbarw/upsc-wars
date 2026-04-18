@@ -20,6 +20,8 @@ class SessionResult {
     required this.totalTimeSpentSecs,
     required this.language,
     this.graduatedCount = 0,
+    this.dangerZoneWrongCount = 0,
+    this.dangerZoneMarksEstimate = 0.0,
   });
   final String sessionId;
   final String subject;
@@ -44,4 +46,10 @@ class SessionResult {
   /// Number of revision queue questions graduated during this session.
   /// Only populated for sessions with subject == 'revision_quick'.
   final int graduatedCount;
+
+  /// Wrong answers where confidence was very sure or somewhat sure.
+  final int dangerZoneWrongCount;
+
+  /// Approximate marks lost at Prelims negative marking (-0.66 per question).
+  final double dangerZoneMarksEstimate;
 }

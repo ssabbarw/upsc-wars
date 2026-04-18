@@ -54,6 +54,8 @@ class SettingsScreen extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.sm),
             const _DarkModeToggleCard(),
+            const SizedBox(height: AppSpacing.sm),
+            const _ConfidenceTrackingCard(),
             const SizedBox(height: AppSpacing.xxl),
             _SectionHeader(
               icon: Icons.notifications_active_rounded,
@@ -158,6 +160,58 @@ class _SettingsIntroBanner extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class _ConfidenceTrackingCard extends ConsumerWidget {
+  const _ConfidenceTrackingCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    return ref.watch(prefsServiceProvider).when(
+          data: (prefs) {
+            return Container(
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerLow,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  color: scheme.outlineVariant.withValues(alpha: 0.45),
+                ),
+              ),
+              child: SwitchListTile(
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.xs,
+                ),
+                value: prefs.confidenceTrackingEnabled,
+                onChanged: (v) async {
+                  final s = await ref.read(prefsServiceProvider.future);
+                  s.confidenceTrackingEnabled = v;
+                  ref.invalidate(prefsServiceProvider);
+                },
+                secondary: Icon(
+                  Icons.psychology_alt_rounded,
+                  color: scheme.primary,
+                  size: 28,
+                ),
+                title: Text('Confidence before reveal', style: AppTextStyles.label()),
+                subtitle: Text(
+                  'When on, the app asks how sure you are on important questions '
+                  'before showing the answer — powers Danger Zone insights.',
+                  style: AppTextStyles.bodySm().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
+            );
+          },
+          loading: () => const SizedBox(
+            height: 72,
+            child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
+          ),
+          error: (_, _) => const SizedBox.shrink(),
+        );
   }
 }
 

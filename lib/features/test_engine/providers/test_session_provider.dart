@@ -7,6 +7,8 @@ import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
+import 'package:upsc_wars/features/test_engine/domain/confidence_prompt_policy.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
@@ -26,7 +28,16 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     for (final q in active.questions) {
       bm[q.uuid] = await repo.isBookmarked(q.uuid);
     }
-    return _stateForLoadedSession(active, bm);
+    final lifetime = await repo.countScoredAttempts();
+    final pairs =
+        active.questions.map((q) => (subject: q.subject, topic: q.topic)).toList();
+    final weak = await repo.fetchWeakTopicKeys(pairs);
+    return _stateForLoadedSession(
+      active,
+      bm,
+      lifetimeScoredAttempts: lifetime,
+      weakTopicKeys: weak,
+    );
   }
 
   Future<void> reload() async {
@@ -40,14 +51,26 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       for (final q in active.questions) {
         bm[q.uuid] = await repo.isBookmarked(q.uuid);
       }
-      return _stateForLoadedSession(active, bm);
+      final lifetime = await repo.countScoredAttempts();
+      final pairs = active.questions
+          .map((q) => (subject: q.subject, topic: q.topic))
+          .toList();
+      final weak = await repo.fetchWeakTopicKeys(pairs);
+      return _stateForLoadedSession(
+        active,
+        bm,
+        lifetimeScoredAttempts: lifetime,
+        weakTopicKeys: weak,
+      );
     });
   }
 
   TestSessionState _stateForLoadedSession(
     ActiveSession active,
-    Map<String, bool> bookmarkedByUuid,
-  ) {
+    Map<String, bool> bookmarkedByUuid, {
+    required int lifetimeScoredAttempts,
+    required Set<String> weakTopicKeys,
+  }) {
     final firstUnattempted = active.questions.indexWhere(
       (q) => q.status == 'unattempted',
     );
@@ -84,6 +107,8 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       bookmarkedByUuid: bookmarkedByUuid,
       showTimedExamResumeBanner: showBanner,
       furthestAnsweredIndex: furthestAnswered,
+      lifetimeScoredAttempts: lifetimeScoredAttempts,
+      weakTopicKeys: weakTopicKeys,
       clearError: true,
     );
   }
@@ -96,6 +121,67 @@ class TestSessionNotifier extends _$TestSessionNotifier {
 
     if (s.mode == 'learning' && current.explanationVisible) return;
 
+    if (current.confidencePromptVisible) return;
+
+    final prefs = await ref.read(prefsServiceProvider.future);
+    final prompt = ConfidencePromptPolicy.shouldPrompt(
+      prefs: prefs,
+      question: q,
+      session: s,
+      lifetimeScoredAttempts: current.lifetimeScoredAttempts,
+      weakTopicKeys: current.weakTopicKeys,
+    );
+
+    if (prompt) {
+      state = AsyncData(
+        current.copyWith(
+          pendingSelectedOption: option,
+          confidencePromptVisible: true,
+        ),
+      );
+      return;
+    }
+
+    await _commitSelectedOption(option, confidence: null);
+  }
+
+  Future<void> submitConfidenceForPending(String confidence) async {
+    final before = state.asData?.value;
+    final pending = before?.pendingSelectedOption;
+    if (before == null || pending == null) return;
+    await _commitSelectedOption(pending, confidence: confidence);
+    final after = state.asData?.value;
+    if (after == null) return;
+    state = AsyncData(
+      after.copyWith(
+        clearPendingOption: true,
+        confidencePromptVisible: false,
+      ),
+    );
+  }
+
+  void cancelConfidencePrompt() {
+    final current = state.asData?.value;
+    if (current == null) return;
+    state = AsyncData(
+      current.copyWith(
+        clearPendingOption: true,
+        confidencePromptVisible: false,
+      ),
+    );
+  }
+
+  Future<void> _commitSelectedOption(
+    String option, {
+    required String? confidence,
+  }) async {
+    final current = state.asData?.value;
+    final s = current?.session;
+    if (current == null || s == null) return;
+    final q = s.questions[current.currentIndex];
+    final wasFresh =
+        q.status == 'unattempted' && (q.selectedOption == null || q.selectedOption!.isEmpty);
+
     try {
       final uc = await ref.read(updateQuestionAttemptUseCaseProvider.future);
       final secsOnQuestion =
@@ -104,6 +190,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
         sessionId: s.id,
         questionUuid: q.uuid,
         selectedOption: option,
+        confidence: confidence,
         analytics: QuestionAttemptAnalyticsInput(
           secondsOnQuestion: secsOnQuestion,
           isBattle: false,
@@ -121,6 +208,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       updatedQuestions[current.currentIndex] = q.copyWith(
         selectedOption: option.toLowerCase(),
         status: isCorrect ? 'correct' : 'wrong',
+        confidence: confidence,
       );
 
       state = AsyncData(
@@ -133,10 +221,22 @@ class TestSessionNotifier extends _$TestSessionNotifier {
               current.currentIndex > current.furthestAnsweredIndex
                   ? current.currentIndex
                   : current.furthestAnsweredIndex,
+          lifetimeScoredAttempts: wasFresh
+              ? current.lifetimeScoredAttempts + 1
+              : current.lifetimeScoredAttempts,
         ),
       );
     } catch (_) {
       _showStorageSnack();
+      final failed = state.asData?.value;
+      if (failed != null) {
+        state = AsyncData(
+          failed.copyWith(
+            clearPendingOption: true,
+            confidencePromptVisible: false,
+          ),
+        );
+      }
     }
   }
 

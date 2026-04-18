@@ -16,6 +16,8 @@ abstract final class PrefKeys {
   static const prelimsPersistentNotification = 'prelims_persistent_notification';
   /// JSON payload to restore battle spectate after app restart.
   static const battleSpectateRecovery = 'battle_spectate_recovery_v1';
+  /// Ask confidence before reveal in practice (adaptive); default on.
+  static const confidenceTrackingEnabled = 'confidence_tracking_enabled';
 }
 
 class PrefsService {
@@ -70,6 +72,11 @@ class PrefsService {
       _p.setString(PrefKeys.battleSpectateRecovery, v);
     }
   }
+
+  bool get confidenceTrackingEnabled =>
+      _p.getBool(PrefKeys.confidenceTrackingEnabled) ?? true;
+  set confidenceTrackingEnabled(bool v) =>
+      _p.setBool(PrefKeys.confidenceTrackingEnabled, v);
 }
 
 @Riverpod(keepAlive: true)

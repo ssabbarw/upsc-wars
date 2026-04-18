@@ -4,10 +4,17 @@ import 'package:upsc_wars/core/domain/entities/active_session.dart';
 abstract class TestEngineRepository {
   Future<ActiveSession> loadSession(String sessionId);
 
+  Future<int> countScoredAttempts();
+
+  Future<Set<String>> fetchWeakTopicKeys(
+    List<({String subject, String topic})> pairs,
+  );
+
   Future<bool> updateQuestionAttempt({
     required String sessionId,
     required String questionUuid,
     required String selectedOption,
+    String? confidence,
     QuestionAttemptAnalyticsInput? analytics,
   });
 

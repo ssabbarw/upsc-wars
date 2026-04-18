@@ -12,6 +12,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
+import '../../history/providers/history_filters_provider.dart';
 import '../domain/subject_insights.dart';
 import '../providers/subject_detail_providers.dart';
 import '../providers/subject_insights_providers.dart';
@@ -760,11 +761,13 @@ class _InsightsSection extends ConsumerWidget {
           error: (_, _) => const SizedBox.shrink(),
           data: (insights) => Column(
             children: [
-              _MistakesCard(insights: insights, borderColor: borderColor),
+              _DangerZoneSummaryCard(
+                subject: subject,
+                insights: insights,
+                borderColor: borderColor,
+              ),
               const SizedBox(height: AppSpacing.sm),
-              _TopicRiskCard(insights: insights, borderColor: borderColor),
-              const SizedBox(height: AppSpacing.sm),
-              _TrapBlindSpotsCard(insights: insights, borderColor: borderColor),
+              _TopicPercentileCard(insights: insights, borderColor: borderColor),
             ],
           ),
         ),
@@ -773,34 +776,35 @@ class _InsightsSection extends ConsumerWidget {
   }
 }
 
-// ── Card 1: Mistakes to Review ─────────────────────────────────────────────────
+// ── Card 1: Danger Zone summary (30 days) ───────────────────────────────────────
 
-class _MistakesCard extends StatelessWidget {
-  const _MistakesCard({required this.insights, required this.borderColor});
+class _DangerZoneSummaryCard extends ConsumerWidget {
+  const _DangerZoneSummaryCard({
+    required this.subject,
+    required this.insights,
+    required this.borderColor,
+  });
+
+  final String subject;
   final SubjectInsights insights;
   final Color borderColor;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final count = insights.wrongCountLast30Days;
-    final tier = insights.overallRiskTier;
+    final count = insights.dangerZoneCountLast30Days;
+    final calm = insights.isWellCalibratedThisMonth;
 
-    final (countColor, countBg) = switch (tier) {
-      RiskTier.high => (
-          isDark ? AppColors.wrongTextDark : AppColors.wrongText,
-          isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
-        ),
-      RiskTier.medium => (
-          isDark ? AppColors.warningTextDark : AppColors.warningText,
-          isDark ? AppColors.warningBgDark : AppColors.warningBg,
-        ),
-      RiskTier.low => (
-          isDark ? AppColors.correctTextDark : AppColors.correctText,
-          isDark ? AppColors.correctBgDark : AppColors.correctBg,
-        ),
-    };
+    final (accent, bg) = calm
+        ? (
+            isDark ? AppColors.correctTextDark : AppColors.correctText,
+            isDark ? AppColors.correctBgDark : AppColors.correctBg,
+          )
+        : (
+            isDark ? AppColors.wrongTextDark : AppColors.wrongText,
+            isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
+          );
 
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
@@ -808,73 +812,104 @@ class _MistakesCard extends StatelessWidget {
         color: scheme.surface,
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border(
-          left: BorderSide(color: countColor, width: 3),
+          left: BorderSide(color: accent, width: 3),
           top: BorderSide(color: borderColor, width: 0.5),
           right: BorderSide(color: borderColor, width: 0.5),
           bottom: BorderSide(color: borderColor, width: 0.5),
         ),
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Mistakes to Review',
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.xs),
-                Text(
-                  'Wrong answers in the last 30 days',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ),
-              ],
+          Text(
+            'Danger Zone',
+            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          Text(
+            'Confidently wrong (last 30 days)',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
             ),
           ),
-          const SizedBox(width: AppSpacing.md),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.md,
-              vertical: AppSpacing.sm,
-            ),
-            decoration: BoxDecoration(
-              color: countBg,
-              borderRadius: BorderRadius.circular(AppRadius.md),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  '$count',
-                  style: AppTextStyles.h2().copyWith(
-                    color: countColor,
-                    fontWeight: FontWeight.w700,
+          const SizedBox(height: AppSpacing.md),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: calm
+                    ? Text(
+                        '🟢 Well calibrated this month',
+                        style: AppTextStyles.bodyMd().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      )
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '⚠️ $count Danger Zone question${count == 1 ? '' : 's'}',
+                            style: AppTextStyles.bodyMd().copyWith(
+                              color: scheme.onSurface,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.xs),
+                          Text(
+                            'Would cost ${insights.dangerZoneMarksLast30.toStringAsFixed(2)} marks',
+                            style: AppTextStyles.caption().copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
+                      ),
+              ),
+              if (!calm)
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.sm,
+                  ),
+                  decoration: BoxDecoration(
+                    color: bg,
+                    borderRadius: BorderRadius.circular(AppRadius.md),
+                  ),
+                  child: Text(
+                    '$count',
+                    style: AppTextStyles.h2().copyWith(
+                      color: accent,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-                Text(
-                  tier.label,
-                  style: AppTextStyles.caption().copyWith(
-                    color: countColor,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
+            ],
           ),
+          if (!calm) ...[
+            const SizedBox(height: AppSpacing.md),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () {
+                  ref.read(historyFilterStateProvider.notifier).setSubject(subject);
+                  context.push('/history');
+                },
+                child: Text(
+                  'Review all in History',
+                  style: AppTextStyles.label(),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );
   }
 }
 
-// ── Card 2: Topic Risk Ranking ─────────────────────────────────────────────────
+// ── Card 2: Topic risk (percentile bands, 30 days) ─────────────────────────────
 
-class _TopicRiskCard extends StatelessWidget {
-  const _TopicRiskCard({required this.insights, required this.borderColor});
+class _TopicPercentileCard extends StatelessWidget {
+  const _TopicPercentileCard({required this.insights, required this.borderColor});
   final SubjectInsights insights;
   final Color borderColor;
 
@@ -898,27 +933,27 @@ class _TopicRiskCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(
-            'Topics with the most mistakes (all time)',
+            'Where you are confidently wrong lately (percentile bands)',
             style: AppTextStyles.caption().copyWith(
               color: scheme.onSurfaceVariant,
             ),
           ),
           const SizedBox(height: AppSpacing.md),
           if (!insights.hasTopicData)
-            _InsightsEmptyHint(
-              message: 'Complete more tests to see topic risks.',
+            const _InsightsEmptyHint(
+              message: 'No Danger Zone data by topic in the last 30 days yet.',
             )
           else
             Column(
               children: [
-                for (var i = 0; i < insights.topicRisks.length; i++) ...[
+                for (var i = 0; i < insights.topicPercentiles.length; i++) ...[
                   if (i > 0)
                     Divider(
                       height: AppSpacing.lg,
                       color: borderColor,
                       thickness: 0.5,
                     ),
-                  _TopicRiskRow(stat: insights.topicRisks[i]),
+                  _TopicPercentileRow(row: insights.topicPercentiles[i]),
                 ],
               ],
             ),
@@ -928,25 +963,21 @@ class _TopicRiskCard extends StatelessWidget {
   }
 }
 
-class _TopicRiskRow extends StatelessWidget {
-  const _TopicRiskRow({required this.stat});
-  final dynamic stat; // UserTopicStat
+class _TopicPercentileRow extends StatelessWidget {
+  const _TopicPercentileRow({required this.row});
+  final TopicPercentileRow row;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final tier = riskTierForWrongCount(stat.wrongAttempts as int);
 
     return Row(
       children: [
-        Text(
-          tier.emoji,
-          style: const TextStyle(fontSize: 14),
-        ),
+        Text(row.tier.emoji, style: const TextStyle(fontSize: 14)),
         const SizedBox(width: AppSpacing.sm),
         Expanded(
           child: Text(
-            stat.topic as String,
+            row.topic,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
@@ -954,119 +985,9 @@ class _TopicRiskRow extends StatelessWidget {
         ),
         const SizedBox(width: AppSpacing.sm),
         Text(
-          '${stat.wrongAttempts} mistakes',
+          '${row.dangerCount} · ${row.tier.label}',
           style: AppTextStyles.caption().copyWith(
             color: scheme.onSurfaceVariant,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-// ── Card 3: Trap Blind Spots ────────────────────────────────────────────────────
-
-class _TrapBlindSpotsCard extends StatelessWidget {
-  const _TrapBlindSpotsCard({required this.insights, required this.borderColor});
-  final SubjectInsights insights;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Trap Blind Spots',
-            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            'UPSC trap types that fool you most in this subject',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.md),
-          if (!insights.hasTrapData)
-            _InsightsEmptyHint(
-              message: 'Answer more questions to discover your trap blind spots.',
-            )
-          else
-            Column(
-              children: [
-                for (var i = 0; i < insights.trapBlindSpots.length; i++) ...[
-                  if (i > 0)
-                    Divider(
-                      height: AppSpacing.lg,
-                      color: borderColor,
-                      thickness: 0.5,
-                    ),
-                  _TrapRow(trap: insights.trapBlindSpots[i]),
-                ],
-              ],
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _TrapRow extends StatelessWidget {
-  const _TrapRow({required this.trap});
-  final TrapBlindSpotRow trap;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final accuracy = trap.accuracyPercent;
-
-    final accuracyColor = accuracy >= 70
-        ? (isDark ? AppColors.correctTextDark : AppColors.correctText)
-        : accuracy >= 50
-            ? (isDark ? AppColors.warningTextDark : AppColors.warningText)
-            : (isDark ? AppColors.wrongTextDark : AppColors.wrongText);
-
-    return Row(
-      children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                trap.displayName,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurface,
-                ),
-              ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                '${trap.totalAttempts} questions · ${trap.wrongCount} wrong',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(width: AppSpacing.md),
-        Text(
-          '${accuracy.toStringAsFixed(0)}% acc',
-          style: AppTextStyles.labelSm().copyWith(
-            color: accuracyColor,
-            fontWeight: FontWeight.w600,
           ),
         ),
       ],
@@ -1099,10 +1020,10 @@ class _InsightsSkeleton extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     return Column(
       children: [
-        for (var i = 0; i < 3; i++) ...[
+        for (var i = 0; i < 2; i++) ...[
           if (i > 0) const SizedBox(height: AppSpacing.sm),
           Container(
-            height: i == 0 ? 76 : 120,
+            height: i == 0 ? 100 : 140,
             decoration: BoxDecoration(
               color: scheme.surfaceContainerLow,
               borderRadius: BorderRadius.circular(AppRadius.lg),

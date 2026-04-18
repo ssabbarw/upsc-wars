@@ -1,4 +1,5 @@
 import 'package:upsc_wars/core/database/user_db.dart';
+import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/session_result.dart';
 import 'package:upsc_wars/core/domain/entities/session_summary.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
@@ -42,6 +43,15 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
     final accuracy = attempted == 0 ? 0.0 : (correct / attempted) * 100;
     final avg = attemptedTimeCount == 0 ? null : (attemptedTimeSum / attemptedTimeCount);
 
+    var dangerZoneWrong = 0;
+    for (final r in rows) {
+      if (r.status == 'wrong' &&
+          AnswerConfidence.isDangerouslyConfident(r.confidence)) {
+        dangerZoneWrong++;
+      }
+    }
+    final dangerMarks = dangerZoneWrong * 0.66;
+
     var graduatedCount = 0;
     if (session.subject == 'revision_quick') {
       for (final r in rows) {
@@ -79,6 +89,8 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
       accuracyTier: _tierFor(attempted, accuracy),
       language: session.language,
       graduatedCount: graduatedCount,
+      dangerZoneWrongCount: dangerZoneWrong,
+      dangerZoneMarksEstimate: dangerMarks,
     );
   }
 

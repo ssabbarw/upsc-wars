@@ -46,6 +46,9 @@ ActiveSession _activeSession() {
 TestQuestion _question() {
   return const TestQuestion(
     uuid: 'q1',
+    subject: 'history',
+    topic: 'general',
+    negativeFraming: false,
     displayText: 'Q1',
     displayTextHi: 'Q1',
     optionA: 'A',
@@ -67,6 +70,7 @@ TestQuestion _question() {
     status: 'unattempted',
     flagged: false,
     timeSpentSecs: null,
+    confidence: null,
     conceptAnchor: null,
     finalExplanation: null,
     finalExplanationHi: null,

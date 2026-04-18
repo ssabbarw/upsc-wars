@@ -26,6 +26,9 @@ void main() {
 TestQuestion _question(String id, String correctOption) {
   return TestQuestion(
     uuid: id,
+    subject: 'history',
+    topic: 'general',
+    negativeFraming: false,
     displayText: 'question',
     displayTextHi: 'question',
     optionA: 'A',
@@ -47,6 +50,7 @@ TestQuestion _question(String id, String correctOption) {
     status: 'unattempted',
     flagged: false,
     timeSpentSecs: null,
+    confidence: null,
     conceptAnchor: null,
     finalExplanation: null,
     finalExplanationHi: null,

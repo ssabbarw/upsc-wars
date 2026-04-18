@@ -112,6 +112,14 @@ class ResultsScreen extends HookConsumerWidget {
                     children: [
                       BattleLiveScoreboard(sessionId: sessionId),
                       const SizedBox(height: AppSpacing.md),
+                      if (r.dangerZoneWrongCount > 0) ...[
+                        _DangerZoneHeroCard(
+                          sessionId: sessionId,
+                          result: r,
+                          scheme: scheme,
+                        ),
+                        const SizedBox(height: AppSpacing.md),
+                      ],
                       _Card(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -423,6 +431,72 @@ class _Card extends HookConsumerWidget {
         ),
       ),
       child: child,
+    );
+  }
+}
+
+class _DangerZoneHeroCard extends StatelessWidget {
+  const _DangerZoneHeroCard({
+    required this.sessionId,
+    required this.result,
+    required this.scheme,
+  });
+
+  final String sessionId;
+  final SessionResult result;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return _Card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.warning_amber_rounded, color: AppColors.wrong, size: 28),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Today's Biggest Mistake",
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.xs),
+                    Text(
+                      'You were confidently wrong on ${result.dangerZoneWrongCount} question${result.dangerZoneWrongCount == 1 ? '' : 's'}',
+                      style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                    ),
+                    const SizedBox(height: AppSpacing.sm),
+                    Text(
+                      'This would cost ${result.dangerZoneMarksEstimate.toStringAsFixed(2)} marks in UPSC Prelims',
+                      style: AppTextStyles.bodyMd().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton(
+              onPressed: () => context.push('/danger-zone/$sessionId'),
+              child: Text(
+                'Review Danger Zone Questions',
+                style: AppTextStyles.label().copyWith(color: scheme.onPrimary),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
