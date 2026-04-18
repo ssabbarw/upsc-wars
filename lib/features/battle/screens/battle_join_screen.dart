@@ -103,6 +103,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
           timeLimitSecs: uuids.length * kDebugSecondsPerQuestion,
           language: language,
           specificQuestionUuids: uuids,
+          analyticsFeatureKey: 'mcq_battle',
         ),
       );
 

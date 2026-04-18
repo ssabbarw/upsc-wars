@@ -5,6 +5,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
+import '../../../core/analytics/session_analytics_derive.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
@@ -180,6 +183,32 @@ class _TestEngineLoaded extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(testSessionProvider(sessionId).notifier);
+    final sessionForFx = ref.watch(
+      testSessionProvider(sessionId).select((a) => a.asData?.value.session),
+    );
+    final featureStartedSent = useRef(false);
+    useEffect(() {
+      final s = sessionForFx;
+      if (s == null || featureStartedSent.value) return null;
+      featureStartedSent.value = true;
+      final labels = deriveSessionAnalyticsLabels(
+        analyticsFeatureKey: s.analyticsFeatureKey,
+        subject: s.subject,
+      );
+      unawaited(
+        Analytics.track(
+          ref,
+          FeatureStartedEvent(
+            featureName: labels.featureName,
+            subject: s.subject,
+            topic: s.topic,
+            difficulty: null,
+            source: labels.source,
+          ),
+        ),
+      );
+      return null;
+    }, [sessionForFx]);
     final sessionLanguage = ref.watch(
           testSessionProvider(
             sessionId,

@@ -9,6 +9,7 @@ class SessionConfig {
     this.timeLimitSecs,
     required this.language,
     this.specificQuestionUuids,
+    this.analyticsFeatureKey,
   });
 
   final String subject;
@@ -28,6 +29,9 @@ class SessionConfig {
   /// querying by subject/topic.
   final List<String>? specificQuestionUuids;
 
+  /// Optional stable analytics key (e.g. `mcq_battle`) stored on the session row.
+  final String? analyticsFeatureKey;
+
   SessionConfig copyWith({
     String? subject,
     String? topic,
@@ -38,6 +42,7 @@ class SessionConfig {
     int? timeLimitSecs,
     String? language,
     List<String>? specificQuestionUuids,
+    String? analyticsFeatureKey,
   }) {
     return SessionConfig(
       subject: subject ?? this.subject,
@@ -49,6 +54,7 @@ class SessionConfig {
       timeLimitSecs: timeLimitSecs ?? this.timeLimitSecs,
       language: language ?? this.language,
       specificQuestionUuids: specificQuestionUuids ?? this.specificQuestionUuids,
+      analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
     );
   }
 }

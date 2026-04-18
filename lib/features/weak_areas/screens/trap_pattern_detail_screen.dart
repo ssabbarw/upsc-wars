@@ -74,6 +74,7 @@ class TrapPatternDetailScreen extends HookConsumerWidget {
               timeLimitSecs: 60,
               language: 'en',
               specificQuestionUuids: group.questionUuids,
+              analyticsFeatureKey: 'trap_awareness',
             ));
             if (context.mounted) context.push('/test/$id');
           } finally {

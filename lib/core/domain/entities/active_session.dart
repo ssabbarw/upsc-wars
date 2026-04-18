@@ -14,6 +14,7 @@ class ActiveSession {
     required this.language,
     required this.questions,
     this.savedExamRemainingSecs,
+    this.analyticsFeatureKey,
   });
 
   final String id;
@@ -30,4 +31,7 @@ class ActiveSession {
 
   /// Persisted remaining time for timed exam resume; null if never saved.
   final int? savedExamRemainingSecs;
+
+  /// When set, overrides subject-based analytics feature resolution.
+  final String? analyticsFeatureKey;
 }

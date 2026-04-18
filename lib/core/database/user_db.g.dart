@@ -133,6 +133,34 @@ class RevisionQueueDaoManager {
       $$RevisionQueueTableTableManager(_db.attachedDatabase, _db.revisionQueue);
 }
 
+mixin _$UserFeatureStatsDaoMixin on DatabaseAccessor<UserDatabase> {
+  $UserFeatureStatsTable get userFeatureStats =>
+      attachedDatabase.userFeatureStats;
+  UserFeatureStatsDaoManager get managers => UserFeatureStatsDaoManager(this);
+}
+
+class UserFeatureStatsDaoManager {
+  final _$UserFeatureStatsDaoMixin _db;
+  UserFeatureStatsDaoManager(this._db);
+  $$UserFeatureStatsTableTableManager get userFeatureStats =>
+      $$UserFeatureStatsTableTableManager(
+        _db.attachedDatabase,
+        _db.userFeatureStats,
+      );
+}
+
+mixin _$UserTrapStatsDaoMixin on DatabaseAccessor<UserDatabase> {
+  $UserTrapStatsTable get userTrapStats => attachedDatabase.userTrapStats;
+  UserTrapStatsDaoManager get managers => UserTrapStatsDaoManager(this);
+}
+
+class UserTrapStatsDaoManager {
+  final _$UserTrapStatsDaoMixin _db;
+  UserTrapStatsDaoManager(this._db);
+  $$UserTrapStatsTableTableManager get userTrapStats =>
+      $$UserTrapStatsTableTableManager(_db.attachedDatabase, _db.userTrapStats);
+}
+
 mixin _$UserTopicStatsDaoMixin on DatabaseAccessor<UserDatabase> {
   $UserTopicStatsTable get userTopicStats => attachedDatabase.userTopicStats;
   UserTopicStatsDaoManager get managers => UserTopicStatsDaoManager(this);
@@ -2507,6 +2535,17 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     requiredDuringInsert: false,
     defaultValue: const Constant('en'),
   );
+  static const VerificationMeta _analyticsFeatureKeyMeta =
+      const VerificationMeta('analyticsFeatureKey');
+  @override
+  late final GeneratedColumn<String> analyticsFeatureKey =
+      GeneratedColumn<String>(
+        'analytics_feature_key',
+        aliasedName,
+        true,
+        type: DriftSqlType.string,
+        requiredDuringInsert: false,
+      );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -2523,6 +2562,7 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
     timeLimitSecs,
     examRemainingSecs,
     language,
+    analyticsFeatureKey,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -2643,6 +2683,15 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         language.isAcceptableOrUnknown(data['language']!, _languageMeta),
       );
     }
+    if (data.containsKey('analytics_feature_key')) {
+      context.handle(
+        _analyticsFeatureKeyMeta,
+        analyticsFeatureKey.isAcceptableOrUnknown(
+          data['analytics_feature_key']!,
+          _analyticsFeatureKeyMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -2708,6 +2757,10 @@ class $SessionsTable extends Sessions with TableInfo<$SessionsTable, Session> {
         DriftSqlType.string,
         data['${effectivePrefix}language'],
       )!,
+      analyticsFeatureKey: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}analytics_feature_key'],
+      ),
     );
   }
 
@@ -2732,6 +2785,7 @@ class Session extends DataClass implements Insertable<Session> {
   final int? timeLimitSecs;
   final int? examRemainingSecs;
   final String language;
+  final String? analyticsFeatureKey;
   const Session({
     required this.id,
     required this.createdAt,
@@ -2747,6 +2801,7 @@ class Session extends DataClass implements Insertable<Session> {
     this.timeLimitSecs,
     this.examRemainingSecs,
     required this.language,
+    this.analyticsFeatureKey,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -2777,6 +2832,9 @@ class Session extends DataClass implements Insertable<Session> {
       map['exam_remaining_secs'] = Variable<int>(examRemainingSecs);
     }
     map['language'] = Variable<String>(language);
+    if (!nullToAbsent || analyticsFeatureKey != null) {
+      map['analytics_feature_key'] = Variable<String>(analyticsFeatureKey);
+    }
     return map;
   }
 
@@ -2808,6 +2866,9 @@ class Session extends DataClass implements Insertable<Session> {
           ? const Value.absent()
           : Value(examRemainingSecs),
       language: Value(language),
+      analyticsFeatureKey: analyticsFeatureKey == null && nullToAbsent
+          ? const Value.absent()
+          : Value(analyticsFeatureKey),
     );
   }
 
@@ -2831,6 +2892,9 @@ class Session extends DataClass implements Insertable<Session> {
       timeLimitSecs: serializer.fromJson<int?>(json['timeLimitSecs']),
       examRemainingSecs: serializer.fromJson<int?>(json['examRemainingSecs']),
       language: serializer.fromJson<String>(json['language']),
+      analyticsFeatureKey: serializer.fromJson<String?>(
+        json['analyticsFeatureKey'],
+      ),
     );
   }
   @override
@@ -2851,6 +2915,7 @@ class Session extends DataClass implements Insertable<Session> {
       'timeLimitSecs': serializer.toJson<int?>(timeLimitSecs),
       'examRemainingSecs': serializer.toJson<int?>(examRemainingSecs),
       'language': serializer.toJson<String>(language),
+      'analyticsFeatureKey': serializer.toJson<String?>(analyticsFeatureKey),
     };
   }
 
@@ -2869,6 +2934,7 @@ class Session extends DataClass implements Insertable<Session> {
     Value<int?> timeLimitSecs = const Value.absent(),
     Value<int?> examRemainingSecs = const Value.absent(),
     String? language,
+    Value<String?> analyticsFeatureKey = const Value.absent(),
   }) => Session(
     id: id ?? this.id,
     createdAt: createdAt ?? this.createdAt,
@@ -2888,6 +2954,9 @@ class Session extends DataClass implements Insertable<Session> {
         ? examRemainingSecs.value
         : this.examRemainingSecs,
     language: language ?? this.language,
+    analyticsFeatureKey: analyticsFeatureKey.present
+        ? analyticsFeatureKey.value
+        : this.analyticsFeatureKey,
   );
   Session copyWithCompanion(SessionsCompanion data) {
     return Session(
@@ -2913,6 +2982,9 @@ class Session extends DataClass implements Insertable<Session> {
           ? data.examRemainingSecs.value
           : this.examRemainingSecs,
       language: data.language.present ? data.language.value : this.language,
+      analyticsFeatureKey: data.analyticsFeatureKey.present
+          ? data.analyticsFeatureKey.value
+          : this.analyticsFeatureKey,
     );
   }
 
@@ -2932,7 +3004,8 @@ class Session extends DataClass implements Insertable<Session> {
           ..write('isTimed: $isTimed, ')
           ..write('timeLimitSecs: $timeLimitSecs, ')
           ..write('examRemainingSecs: $examRemainingSecs, ')
-          ..write('language: $language')
+          ..write('language: $language, ')
+          ..write('analyticsFeatureKey: $analyticsFeatureKey')
           ..write(')'))
         .toString();
   }
@@ -2953,6 +3026,7 @@ class Session extends DataClass implements Insertable<Session> {
     timeLimitSecs,
     examRemainingSecs,
     language,
+    analyticsFeatureKey,
   );
   @override
   bool operator ==(Object other) =>
@@ -2971,7 +3045,8 @@ class Session extends DataClass implements Insertable<Session> {
           other.isTimed == this.isTimed &&
           other.timeLimitSecs == this.timeLimitSecs &&
           other.examRemainingSecs == this.examRemainingSecs &&
-          other.language == this.language);
+          other.language == this.language &&
+          other.analyticsFeatureKey == this.analyticsFeatureKey);
 }
 
 class SessionsCompanion extends UpdateCompanion<Session> {
@@ -2989,6 +3064,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
   final Value<int?> timeLimitSecs;
   final Value<int?> examRemainingSecs;
   final Value<String> language;
+  final Value<String?> analyticsFeatureKey;
   final Value<int> rowid;
   const SessionsCompanion({
     this.id = const Value.absent(),
@@ -3005,6 +3081,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.timeLimitSecs = const Value.absent(),
     this.examRemainingSecs = const Value.absent(),
     this.language = const Value.absent(),
+    this.analyticsFeatureKey = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   SessionsCompanion.insert({
@@ -3022,6 +3099,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     this.timeLimitSecs = const Value.absent(),
     this.examRemainingSecs = const Value.absent(),
     this.language = const Value.absent(),
+    this.analyticsFeatureKey = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : id = Value(id),
        createdAt = Value(createdAt),
@@ -3045,6 +3123,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Expression<int>? timeLimitSecs,
     Expression<int>? examRemainingSecs,
     Expression<String>? language,
+    Expression<String>? analyticsFeatureKey,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -3062,6 +3141,8 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       if (timeLimitSecs != null) 'time_limit_secs': timeLimitSecs,
       if (examRemainingSecs != null) 'exam_remaining_secs': examRemainingSecs,
       if (language != null) 'language': language,
+      if (analyticsFeatureKey != null)
+        'analytics_feature_key': analyticsFeatureKey,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -3081,6 +3162,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     Value<int?>? timeLimitSecs,
     Value<int?>? examRemainingSecs,
     Value<String>? language,
+    Value<String?>? analyticsFeatureKey,
     Value<int>? rowid,
   }) {
     return SessionsCompanion(
@@ -3098,6 +3180,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
       timeLimitSecs: timeLimitSecs ?? this.timeLimitSecs,
       examRemainingSecs: examRemainingSecs ?? this.examRemainingSecs,
       language: language ?? this.language,
+      analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -3147,6 +3230,11 @@ class SessionsCompanion extends UpdateCompanion<Session> {
     if (language.present) {
       map['language'] = Variable<String>(language.value);
     }
+    if (analyticsFeatureKey.present) {
+      map['analytics_feature_key'] = Variable<String>(
+        analyticsFeatureKey.value,
+      );
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -3170,6 +3258,7 @@ class SessionsCompanion extends UpdateCompanion<Session> {
           ..write('timeLimitSecs: $timeLimitSecs, ')
           ..write('examRemainingSecs: $examRemainingSecs, ')
           ..write('language: $language, ')
+          ..write('analyticsFeatureKey: $analyticsFeatureKey, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -4752,6 +4841,29 @@ class $UserTopicStatsTable extends UserTopicStats
     requiredDuringInsert: false,
     defaultValue: const Constant(0),
   );
+  static const VerificationMeta _wrongAttemptsMeta = const VerificationMeta(
+    'wrongAttempts',
+  );
+  @override
+  late final GeneratedColumn<int> wrongAttempts = GeneratedColumn<int>(
+    'wrong_attempts',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalTimeSpentSecsMeta =
+      const VerificationMeta('totalTimeSpentSecs');
+  @override
+  late final GeneratedColumn<int> totalTimeSpentSecs = GeneratedColumn<int>(
+    'total_time_spent_secs',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
   static const VerificationMeta _accuracyPercentageMeta =
       const VerificationMeta('accuracyPercentage');
   @override
@@ -4783,6 +4895,8 @@ class $UserTopicStatsTable extends UserTopicStats
     topic,
     totalAttempted,
     totalCorrect,
+    wrongAttempts,
+    totalTimeSpentSecs,
     accuracyPercentage,
     lastAttemptedAt,
   ];
@@ -4832,6 +4946,24 @@ class $UserTopicStatsTable extends UserTopicStats
         totalCorrect.isAcceptableOrUnknown(
           data['total_correct']!,
           _totalCorrectMeta,
+        ),
+      );
+    }
+    if (data.containsKey('wrong_attempts')) {
+      context.handle(
+        _wrongAttemptsMeta,
+        wrongAttempts.isAcceptableOrUnknown(
+          data['wrong_attempts']!,
+          _wrongAttemptsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('total_time_spent_secs')) {
+      context.handle(
+        _totalTimeSpentSecsMeta,
+        totalTimeSpentSecs.isAcceptableOrUnknown(
+          data['total_time_spent_secs']!,
+          _totalTimeSpentSecsMeta,
         ),
       );
     }
@@ -4888,6 +5020,14 @@ class $UserTopicStatsTable extends UserTopicStats
         DriftSqlType.int,
         data['${effectivePrefix}total_correct'],
       )!,
+      wrongAttempts: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}wrong_attempts'],
+      )!,
+      totalTimeSpentSecs: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_time_spent_secs'],
+      )!,
       accuracyPercentage: attachedDatabase.typeMapping.read(
         DriftSqlType.double,
         data['${effectivePrefix}accuracy_percentage'],
@@ -4911,6 +5051,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
   final String topic;
   final int totalAttempted;
   final int totalCorrect;
+  final int wrongAttempts;
+  final int totalTimeSpentSecs;
   final double accuracyPercentage;
   final DateTime lastAttemptedAt;
   const UserTopicStat({
@@ -4919,6 +5061,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
     required this.topic,
     required this.totalAttempted,
     required this.totalCorrect,
+    required this.wrongAttempts,
+    required this.totalTimeSpentSecs,
     required this.accuracyPercentage,
     required this.lastAttemptedAt,
   });
@@ -4930,6 +5074,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
     map['topic'] = Variable<String>(topic);
     map['total_attempted'] = Variable<int>(totalAttempted);
     map['total_correct'] = Variable<int>(totalCorrect);
+    map['wrong_attempts'] = Variable<int>(wrongAttempts);
+    map['total_time_spent_secs'] = Variable<int>(totalTimeSpentSecs);
     map['accuracy_percentage'] = Variable<double>(accuracyPercentage);
     map['last_attempted_at'] = Variable<DateTime>(lastAttemptedAt);
     return map;
@@ -4942,6 +5088,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
       topic: Value(topic),
       totalAttempted: Value(totalAttempted),
       totalCorrect: Value(totalCorrect),
+      wrongAttempts: Value(wrongAttempts),
+      totalTimeSpentSecs: Value(totalTimeSpentSecs),
       accuracyPercentage: Value(accuracyPercentage),
       lastAttemptedAt: Value(lastAttemptedAt),
     );
@@ -4958,6 +5106,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
       topic: serializer.fromJson<String>(json['topic']),
       totalAttempted: serializer.fromJson<int>(json['totalAttempted']),
       totalCorrect: serializer.fromJson<int>(json['totalCorrect']),
+      wrongAttempts: serializer.fromJson<int>(json['wrongAttempts']),
+      totalTimeSpentSecs: serializer.fromJson<int>(json['totalTimeSpentSecs']),
       accuracyPercentage: serializer.fromJson<double>(
         json['accuracyPercentage'],
       ),
@@ -4973,6 +5123,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
       'topic': serializer.toJson<String>(topic),
       'totalAttempted': serializer.toJson<int>(totalAttempted),
       'totalCorrect': serializer.toJson<int>(totalCorrect),
+      'wrongAttempts': serializer.toJson<int>(wrongAttempts),
+      'totalTimeSpentSecs': serializer.toJson<int>(totalTimeSpentSecs),
       'accuracyPercentage': serializer.toJson<double>(accuracyPercentage),
       'lastAttemptedAt': serializer.toJson<DateTime>(lastAttemptedAt),
     };
@@ -4984,6 +5136,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
     String? topic,
     int? totalAttempted,
     int? totalCorrect,
+    int? wrongAttempts,
+    int? totalTimeSpentSecs,
     double? accuracyPercentage,
     DateTime? lastAttemptedAt,
   }) => UserTopicStat(
@@ -4992,6 +5146,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
     topic: topic ?? this.topic,
     totalAttempted: totalAttempted ?? this.totalAttempted,
     totalCorrect: totalCorrect ?? this.totalCorrect,
+    wrongAttempts: wrongAttempts ?? this.wrongAttempts,
+    totalTimeSpentSecs: totalTimeSpentSecs ?? this.totalTimeSpentSecs,
     accuracyPercentage: accuracyPercentage ?? this.accuracyPercentage,
     lastAttemptedAt: lastAttemptedAt ?? this.lastAttemptedAt,
   );
@@ -5006,6 +5162,12 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
       totalCorrect: data.totalCorrect.present
           ? data.totalCorrect.value
           : this.totalCorrect,
+      wrongAttempts: data.wrongAttempts.present
+          ? data.wrongAttempts.value
+          : this.wrongAttempts,
+      totalTimeSpentSecs: data.totalTimeSpentSecs.present
+          ? data.totalTimeSpentSecs.value
+          : this.totalTimeSpentSecs,
       accuracyPercentage: data.accuracyPercentage.present
           ? data.accuracyPercentage.value
           : this.accuracyPercentage,
@@ -5023,6 +5185,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
           ..write('topic: $topic, ')
           ..write('totalAttempted: $totalAttempted, ')
           ..write('totalCorrect: $totalCorrect, ')
+          ..write('wrongAttempts: $wrongAttempts, ')
+          ..write('totalTimeSpentSecs: $totalTimeSpentSecs, ')
           ..write('accuracyPercentage: $accuracyPercentage, ')
           ..write('lastAttemptedAt: $lastAttemptedAt')
           ..write(')'))
@@ -5036,6 +5200,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
     topic,
     totalAttempted,
     totalCorrect,
+    wrongAttempts,
+    totalTimeSpentSecs,
     accuracyPercentage,
     lastAttemptedAt,
   );
@@ -5048,6 +5214,8 @@ class UserTopicStat extends DataClass implements Insertable<UserTopicStat> {
           other.topic == this.topic &&
           other.totalAttempted == this.totalAttempted &&
           other.totalCorrect == this.totalCorrect &&
+          other.wrongAttempts == this.wrongAttempts &&
+          other.totalTimeSpentSecs == this.totalTimeSpentSecs &&
           other.accuracyPercentage == this.accuracyPercentage &&
           other.lastAttemptedAt == this.lastAttemptedAt);
 }
@@ -5058,6 +5226,8 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
   final Value<String> topic;
   final Value<int> totalAttempted;
   final Value<int> totalCorrect;
+  final Value<int> wrongAttempts;
+  final Value<int> totalTimeSpentSecs;
   final Value<double> accuracyPercentage;
   final Value<DateTime> lastAttemptedAt;
   const UserTopicStatsCompanion({
@@ -5066,6 +5236,8 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
     this.topic = const Value.absent(),
     this.totalAttempted = const Value.absent(),
     this.totalCorrect = const Value.absent(),
+    this.wrongAttempts = const Value.absent(),
+    this.totalTimeSpentSecs = const Value.absent(),
     this.accuracyPercentage = const Value.absent(),
     this.lastAttemptedAt = const Value.absent(),
   });
@@ -5075,6 +5247,8 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
     required String topic,
     this.totalAttempted = const Value.absent(),
     this.totalCorrect = const Value.absent(),
+    this.wrongAttempts = const Value.absent(),
+    this.totalTimeSpentSecs = const Value.absent(),
     this.accuracyPercentage = const Value.absent(),
     required DateTime lastAttemptedAt,
   }) : subject = Value(subject),
@@ -5086,6 +5260,8 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
     Expression<String>? topic,
     Expression<int>? totalAttempted,
     Expression<int>? totalCorrect,
+    Expression<int>? wrongAttempts,
+    Expression<int>? totalTimeSpentSecs,
     Expression<double>? accuracyPercentage,
     Expression<DateTime>? lastAttemptedAt,
   }) {
@@ -5095,6 +5271,9 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
       if (topic != null) 'topic': topic,
       if (totalAttempted != null) 'total_attempted': totalAttempted,
       if (totalCorrect != null) 'total_correct': totalCorrect,
+      if (wrongAttempts != null) 'wrong_attempts': wrongAttempts,
+      if (totalTimeSpentSecs != null)
+        'total_time_spent_secs': totalTimeSpentSecs,
       if (accuracyPercentage != null) 'accuracy_percentage': accuracyPercentage,
       if (lastAttemptedAt != null) 'last_attempted_at': lastAttemptedAt,
     });
@@ -5106,6 +5285,8 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
     Value<String>? topic,
     Value<int>? totalAttempted,
     Value<int>? totalCorrect,
+    Value<int>? wrongAttempts,
+    Value<int>? totalTimeSpentSecs,
     Value<double>? accuracyPercentage,
     Value<DateTime>? lastAttemptedAt,
   }) {
@@ -5115,6 +5296,8 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
       topic: topic ?? this.topic,
       totalAttempted: totalAttempted ?? this.totalAttempted,
       totalCorrect: totalCorrect ?? this.totalCorrect,
+      wrongAttempts: wrongAttempts ?? this.wrongAttempts,
+      totalTimeSpentSecs: totalTimeSpentSecs ?? this.totalTimeSpentSecs,
       accuracyPercentage: accuracyPercentage ?? this.accuracyPercentage,
       lastAttemptedAt: lastAttemptedAt ?? this.lastAttemptedAt,
     );
@@ -5138,6 +5321,12 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
     if (totalCorrect.present) {
       map['total_correct'] = Variable<int>(totalCorrect.value);
     }
+    if (wrongAttempts.present) {
+      map['wrong_attempts'] = Variable<int>(wrongAttempts.value);
+    }
+    if (totalTimeSpentSecs.present) {
+      map['total_time_spent_secs'] = Variable<int>(totalTimeSpentSecs.value);
+    }
     if (accuracyPercentage.present) {
       map['accuracy_percentage'] = Variable<double>(accuracyPercentage.value);
     }
@@ -5155,8 +5344,676 @@ class UserTopicStatsCompanion extends UpdateCompanion<UserTopicStat> {
           ..write('topic: $topic, ')
           ..write('totalAttempted: $totalAttempted, ')
           ..write('totalCorrect: $totalCorrect, ')
+          ..write('wrongAttempts: $wrongAttempts, ')
+          ..write('totalTimeSpentSecs: $totalTimeSpentSecs, ')
           ..write('accuracyPercentage: $accuracyPercentage, ')
           ..write('lastAttemptedAt: $lastAttemptedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $UserFeatureStatsTable extends UserFeatureStats
+    with TableInfo<$UserFeatureStatsTable, UserFeatureStat> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $UserFeatureStatsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _featureNameMeta = const VerificationMeta(
+    'featureName',
+  );
+  @override
+  late final GeneratedColumn<String> featureName = GeneratedColumn<String>(
+    'feature_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _totalViewsMeta = const VerificationMeta(
+    'totalViews',
+  );
+  @override
+  late final GeneratedColumn<int> totalViews = GeneratedColumn<int>(
+    'total_views',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalStartsMeta = const VerificationMeta(
+    'totalStarts',
+  );
+  @override
+  late final GeneratedColumn<int> totalStarts = GeneratedColumn<int>(
+    'total_starts',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _totalCompletionsMeta = const VerificationMeta(
+    'totalCompletions',
+  );
+  @override
+  late final GeneratedColumn<int> totalCompletions = GeneratedColumn<int>(
+    'total_completions',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _lastUsedAtMeta = const VerificationMeta(
+    'lastUsedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastUsedAt = GeneratedColumn<DateTime>(
+    'last_used_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    featureName,
+    totalViews,
+    totalStarts,
+    totalCompletions,
+    lastUsedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'user_feature_stats';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<UserFeatureStat> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('feature_name')) {
+      context.handle(
+        _featureNameMeta,
+        featureName.isAcceptableOrUnknown(
+          data['feature_name']!,
+          _featureNameMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_featureNameMeta);
+    }
+    if (data.containsKey('total_views')) {
+      context.handle(
+        _totalViewsMeta,
+        totalViews.isAcceptableOrUnknown(data['total_views']!, _totalViewsMeta),
+      );
+    }
+    if (data.containsKey('total_starts')) {
+      context.handle(
+        _totalStartsMeta,
+        totalStarts.isAcceptableOrUnknown(
+          data['total_starts']!,
+          _totalStartsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('total_completions')) {
+      context.handle(
+        _totalCompletionsMeta,
+        totalCompletions.isAcceptableOrUnknown(
+          data['total_completions']!,
+          _totalCompletionsMeta,
+        ),
+      );
+    }
+    if (data.containsKey('last_used_at')) {
+      context.handle(
+        _lastUsedAtMeta,
+        lastUsedAt.isAcceptableOrUnknown(
+          data['last_used_at']!,
+          _lastUsedAtMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_lastUsedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {featureName};
+  @override
+  UserFeatureStat map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return UserFeatureStat(
+      featureName: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}feature_name'],
+      )!,
+      totalViews: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_views'],
+      )!,
+      totalStarts: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_starts'],
+      )!,
+      totalCompletions: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_completions'],
+      )!,
+      lastUsedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_used_at'],
+      )!,
+    );
+  }
+
+  @override
+  $UserFeatureStatsTable createAlias(String alias) {
+    return $UserFeatureStatsTable(attachedDatabase, alias);
+  }
+}
+
+class UserFeatureStat extends DataClass implements Insertable<UserFeatureStat> {
+  final String featureName;
+  final int totalViews;
+  final int totalStarts;
+  final int totalCompletions;
+  final DateTime lastUsedAt;
+  const UserFeatureStat({
+    required this.featureName,
+    required this.totalViews,
+    required this.totalStarts,
+    required this.totalCompletions,
+    required this.lastUsedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['feature_name'] = Variable<String>(featureName);
+    map['total_views'] = Variable<int>(totalViews);
+    map['total_starts'] = Variable<int>(totalStarts);
+    map['total_completions'] = Variable<int>(totalCompletions);
+    map['last_used_at'] = Variable<DateTime>(lastUsedAt);
+    return map;
+  }
+
+  UserFeatureStatsCompanion toCompanion(bool nullToAbsent) {
+    return UserFeatureStatsCompanion(
+      featureName: Value(featureName),
+      totalViews: Value(totalViews),
+      totalStarts: Value(totalStarts),
+      totalCompletions: Value(totalCompletions),
+      lastUsedAt: Value(lastUsedAt),
+    );
+  }
+
+  factory UserFeatureStat.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return UserFeatureStat(
+      featureName: serializer.fromJson<String>(json['featureName']),
+      totalViews: serializer.fromJson<int>(json['totalViews']),
+      totalStarts: serializer.fromJson<int>(json['totalStarts']),
+      totalCompletions: serializer.fromJson<int>(json['totalCompletions']),
+      lastUsedAt: serializer.fromJson<DateTime>(json['lastUsedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'featureName': serializer.toJson<String>(featureName),
+      'totalViews': serializer.toJson<int>(totalViews),
+      'totalStarts': serializer.toJson<int>(totalStarts),
+      'totalCompletions': serializer.toJson<int>(totalCompletions),
+      'lastUsedAt': serializer.toJson<DateTime>(lastUsedAt),
+    };
+  }
+
+  UserFeatureStat copyWith({
+    String? featureName,
+    int? totalViews,
+    int? totalStarts,
+    int? totalCompletions,
+    DateTime? lastUsedAt,
+  }) => UserFeatureStat(
+    featureName: featureName ?? this.featureName,
+    totalViews: totalViews ?? this.totalViews,
+    totalStarts: totalStarts ?? this.totalStarts,
+    totalCompletions: totalCompletions ?? this.totalCompletions,
+    lastUsedAt: lastUsedAt ?? this.lastUsedAt,
+  );
+  UserFeatureStat copyWithCompanion(UserFeatureStatsCompanion data) {
+    return UserFeatureStat(
+      featureName: data.featureName.present
+          ? data.featureName.value
+          : this.featureName,
+      totalViews: data.totalViews.present
+          ? data.totalViews.value
+          : this.totalViews,
+      totalStarts: data.totalStarts.present
+          ? data.totalStarts.value
+          : this.totalStarts,
+      totalCompletions: data.totalCompletions.present
+          ? data.totalCompletions.value
+          : this.totalCompletions,
+      lastUsedAt: data.lastUsedAt.present
+          ? data.lastUsedAt.value
+          : this.lastUsedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('UserFeatureStat(')
+          ..write('featureName: $featureName, ')
+          ..write('totalViews: $totalViews, ')
+          ..write('totalStarts: $totalStarts, ')
+          ..write('totalCompletions: $totalCompletions, ')
+          ..write('lastUsedAt: $lastUsedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    featureName,
+    totalViews,
+    totalStarts,
+    totalCompletions,
+    lastUsedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is UserFeatureStat &&
+          other.featureName == this.featureName &&
+          other.totalViews == this.totalViews &&
+          other.totalStarts == this.totalStarts &&
+          other.totalCompletions == this.totalCompletions &&
+          other.lastUsedAt == this.lastUsedAt);
+}
+
+class UserFeatureStatsCompanion extends UpdateCompanion<UserFeatureStat> {
+  final Value<String> featureName;
+  final Value<int> totalViews;
+  final Value<int> totalStarts;
+  final Value<int> totalCompletions;
+  final Value<DateTime> lastUsedAt;
+  final Value<int> rowid;
+  const UserFeatureStatsCompanion({
+    this.featureName = const Value.absent(),
+    this.totalViews = const Value.absent(),
+    this.totalStarts = const Value.absent(),
+    this.totalCompletions = const Value.absent(),
+    this.lastUsedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  UserFeatureStatsCompanion.insert({
+    required String featureName,
+    this.totalViews = const Value.absent(),
+    this.totalStarts = const Value.absent(),
+    this.totalCompletions = const Value.absent(),
+    required DateTime lastUsedAt,
+    this.rowid = const Value.absent(),
+  }) : featureName = Value(featureName),
+       lastUsedAt = Value(lastUsedAt);
+  static Insertable<UserFeatureStat> custom({
+    Expression<String>? featureName,
+    Expression<int>? totalViews,
+    Expression<int>? totalStarts,
+    Expression<int>? totalCompletions,
+    Expression<DateTime>? lastUsedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (featureName != null) 'feature_name': featureName,
+      if (totalViews != null) 'total_views': totalViews,
+      if (totalStarts != null) 'total_starts': totalStarts,
+      if (totalCompletions != null) 'total_completions': totalCompletions,
+      if (lastUsedAt != null) 'last_used_at': lastUsedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  UserFeatureStatsCompanion copyWith({
+    Value<String>? featureName,
+    Value<int>? totalViews,
+    Value<int>? totalStarts,
+    Value<int>? totalCompletions,
+    Value<DateTime>? lastUsedAt,
+    Value<int>? rowid,
+  }) {
+    return UserFeatureStatsCompanion(
+      featureName: featureName ?? this.featureName,
+      totalViews: totalViews ?? this.totalViews,
+      totalStarts: totalStarts ?? this.totalStarts,
+      totalCompletions: totalCompletions ?? this.totalCompletions,
+      lastUsedAt: lastUsedAt ?? this.lastUsedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (featureName.present) {
+      map['feature_name'] = Variable<String>(featureName.value);
+    }
+    if (totalViews.present) {
+      map['total_views'] = Variable<int>(totalViews.value);
+    }
+    if (totalStarts.present) {
+      map['total_starts'] = Variable<int>(totalStarts.value);
+    }
+    if (totalCompletions.present) {
+      map['total_completions'] = Variable<int>(totalCompletions.value);
+    }
+    if (lastUsedAt.present) {
+      map['last_used_at'] = Variable<DateTime>(lastUsedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('UserFeatureStatsCompanion(')
+          ..write('featureName: $featureName, ')
+          ..write('totalViews: $totalViews, ')
+          ..write('totalStarts: $totalStarts, ')
+          ..write('totalCompletions: $totalCompletions, ')
+          ..write('lastUsedAt: $lastUsedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $UserTrapStatsTable extends UserTrapStats
+    with TableInfo<$UserTrapStatsTable, UserTrapStat> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $UserTrapStatsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _trapTypeMeta = const VerificationMeta(
+    'trapType',
+  );
+  @override
+  late final GeneratedColumn<String> trapType = GeneratedColumn<String>(
+    'trap_type',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _totalFailuresMeta = const VerificationMeta(
+    'totalFailures',
+  );
+  @override
+  late final GeneratedColumn<int> totalFailures = GeneratedColumn<int>(
+    'total_failures',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _lastFailedAtMeta = const VerificationMeta(
+    'lastFailedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastFailedAt = GeneratedColumn<DateTime>(
+    'last_failed_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [trapType, totalFailures, lastFailedAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'user_trap_stats';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<UserTrapStat> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('trap_type')) {
+      context.handle(
+        _trapTypeMeta,
+        trapType.isAcceptableOrUnknown(data['trap_type']!, _trapTypeMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_trapTypeMeta);
+    }
+    if (data.containsKey('total_failures')) {
+      context.handle(
+        _totalFailuresMeta,
+        totalFailures.isAcceptableOrUnknown(
+          data['total_failures']!,
+          _totalFailuresMeta,
+        ),
+      );
+    }
+    if (data.containsKey('last_failed_at')) {
+      context.handle(
+        _lastFailedAtMeta,
+        lastFailedAt.isAcceptableOrUnknown(
+          data['last_failed_at']!,
+          _lastFailedAtMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_lastFailedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {trapType};
+  @override
+  UserTrapStat map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return UserTrapStat(
+      trapType: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}trap_type'],
+      )!,
+      totalFailures: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}total_failures'],
+      )!,
+      lastFailedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_failed_at'],
+      )!,
+    );
+  }
+
+  @override
+  $UserTrapStatsTable createAlias(String alias) {
+    return $UserTrapStatsTable(attachedDatabase, alias);
+  }
+}
+
+class UserTrapStat extends DataClass implements Insertable<UserTrapStat> {
+  final String trapType;
+  final int totalFailures;
+  final DateTime lastFailedAt;
+  const UserTrapStat({
+    required this.trapType,
+    required this.totalFailures,
+    required this.lastFailedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['trap_type'] = Variable<String>(trapType);
+    map['total_failures'] = Variable<int>(totalFailures);
+    map['last_failed_at'] = Variable<DateTime>(lastFailedAt);
+    return map;
+  }
+
+  UserTrapStatsCompanion toCompanion(bool nullToAbsent) {
+    return UserTrapStatsCompanion(
+      trapType: Value(trapType),
+      totalFailures: Value(totalFailures),
+      lastFailedAt: Value(lastFailedAt),
+    );
+  }
+
+  factory UserTrapStat.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return UserTrapStat(
+      trapType: serializer.fromJson<String>(json['trapType']),
+      totalFailures: serializer.fromJson<int>(json['totalFailures']),
+      lastFailedAt: serializer.fromJson<DateTime>(json['lastFailedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'trapType': serializer.toJson<String>(trapType),
+      'totalFailures': serializer.toJson<int>(totalFailures),
+      'lastFailedAt': serializer.toJson<DateTime>(lastFailedAt),
+    };
+  }
+
+  UserTrapStat copyWith({
+    String? trapType,
+    int? totalFailures,
+    DateTime? lastFailedAt,
+  }) => UserTrapStat(
+    trapType: trapType ?? this.trapType,
+    totalFailures: totalFailures ?? this.totalFailures,
+    lastFailedAt: lastFailedAt ?? this.lastFailedAt,
+  );
+  UserTrapStat copyWithCompanion(UserTrapStatsCompanion data) {
+    return UserTrapStat(
+      trapType: data.trapType.present ? data.trapType.value : this.trapType,
+      totalFailures: data.totalFailures.present
+          ? data.totalFailures.value
+          : this.totalFailures,
+      lastFailedAt: data.lastFailedAt.present
+          ? data.lastFailedAt.value
+          : this.lastFailedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('UserTrapStat(')
+          ..write('trapType: $trapType, ')
+          ..write('totalFailures: $totalFailures, ')
+          ..write('lastFailedAt: $lastFailedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(trapType, totalFailures, lastFailedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is UserTrapStat &&
+          other.trapType == this.trapType &&
+          other.totalFailures == this.totalFailures &&
+          other.lastFailedAt == this.lastFailedAt);
+}
+
+class UserTrapStatsCompanion extends UpdateCompanion<UserTrapStat> {
+  final Value<String> trapType;
+  final Value<int> totalFailures;
+  final Value<DateTime> lastFailedAt;
+  final Value<int> rowid;
+  const UserTrapStatsCompanion({
+    this.trapType = const Value.absent(),
+    this.totalFailures = const Value.absent(),
+    this.lastFailedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  UserTrapStatsCompanion.insert({
+    required String trapType,
+    this.totalFailures = const Value.absent(),
+    required DateTime lastFailedAt,
+    this.rowid = const Value.absent(),
+  }) : trapType = Value(trapType),
+       lastFailedAt = Value(lastFailedAt);
+  static Insertable<UserTrapStat> custom({
+    Expression<String>? trapType,
+    Expression<int>? totalFailures,
+    Expression<DateTime>? lastFailedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (trapType != null) 'trap_type': trapType,
+      if (totalFailures != null) 'total_failures': totalFailures,
+      if (lastFailedAt != null) 'last_failed_at': lastFailedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  UserTrapStatsCompanion copyWith({
+    Value<String>? trapType,
+    Value<int>? totalFailures,
+    Value<DateTime>? lastFailedAt,
+    Value<int>? rowid,
+  }) {
+    return UserTrapStatsCompanion(
+      trapType: trapType ?? this.trapType,
+      totalFailures: totalFailures ?? this.totalFailures,
+      lastFailedAt: lastFailedAt ?? this.lastFailedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (trapType.present) {
+      map['trap_type'] = Variable<String>(trapType.value);
+    }
+    if (totalFailures.present) {
+      map['total_failures'] = Variable<int>(totalFailures.value);
+    }
+    if (lastFailedAt.present) {
+      map['last_failed_at'] = Variable<DateTime>(lastFailedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('UserTrapStatsCompanion(')
+          ..write('trapType: $trapType, ')
+          ..write('totalFailures: $totalFailures, ')
+          ..write('lastFailedAt: $lastFailedAt, ')
+          ..write('rowid: $rowid')
           ..write(')'))
         .toString();
   }
@@ -5178,6 +6035,10 @@ abstract class _$UserDatabase extends GeneratedDatabase {
   late final $BookmarksTable bookmarks = $BookmarksTable(this);
   late final $RevisionQueueTable revisionQueue = $RevisionQueueTable(this);
   late final $UserTopicStatsTable userTopicStats = $UserTopicStatsTable(this);
+  late final $UserFeatureStatsTable userFeatureStats = $UserFeatureStatsTable(
+    this,
+  );
+  late final $UserTrapStatsTable userTrapStats = $UserTrapStatsTable(this);
   late final QuestionsDao questionsDao = QuestionsDao(this as UserDatabase);
   late final QuestionTranslationsDao questionTranslationsDao =
       QuestionTranslationsDao(this as UserDatabase);
@@ -5198,6 +6059,12 @@ abstract class _$UserDatabase extends GeneratedDatabase {
   late final UserTopicStatsDao userTopicStatsDao = UserTopicStatsDao(
     this as UserDatabase,
   );
+  late final UserFeatureStatsDao userFeatureStatsDao = UserFeatureStatsDao(
+    this as UserDatabase,
+  );
+  late final UserTrapStatsDao userTrapStatsDao = UserTrapStatsDao(
+    this as UserDatabase,
+  );
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -5212,6 +6079,8 @@ abstract class _$UserDatabase extends GeneratedDatabase {
     bookmarks,
     revisionQueue,
     userTopicStats,
+    userFeatureStats,
+    userTrapStats,
   ];
 }
 
@@ -7093,6 +7962,7 @@ typedef $$SessionsTableCreateCompanionBuilder =
       Value<int?> timeLimitSecs,
       Value<int?> examRemainingSecs,
       Value<String> language,
+      Value<String?> analyticsFeatureKey,
       Value<int> rowid,
     });
 typedef $$SessionsTableUpdateCompanionBuilder =
@@ -7111,6 +7981,7 @@ typedef $$SessionsTableUpdateCompanionBuilder =
       Value<int?> timeLimitSecs,
       Value<int?> examRemainingSecs,
       Value<String> language,
+      Value<String?> analyticsFeatureKey,
       Value<int> rowid,
     });
 
@@ -7222,6 +8093,11 @@ class $$SessionsTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<String> get analyticsFeatureKey => $composableBuilder(
+    column: $table.analyticsFeatureKey,
+    builder: (column) => ColumnFilters(column),
+  );
+
   Expression<bool> sessionQuestionsRefs(
     Expression<bool> Function($$SessionQuestionsTableFilterComposer f) f,
   ) {
@@ -7326,6 +8202,11 @@ class $$SessionsTableOrderingComposer
     column: $table.language,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<String> get analyticsFeatureKey => $composableBuilder(
+    column: $table.analyticsFeatureKey,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$SessionsTableAnnotationComposer
@@ -7386,6 +8267,11 @@ class $$SessionsTableAnnotationComposer
 
   GeneratedColumn<String> get language =>
       $composableBuilder(column: $table.language, builder: (column) => column);
+
+  GeneratedColumn<String> get analyticsFeatureKey => $composableBuilder(
+    column: $table.analyticsFeatureKey,
+    builder: (column) => column,
+  );
 
   Expression<T> sessionQuestionsRefs<T extends Object>(
     Expression<T> Function($$SessionQuestionsTableAnnotationComposer a) f,
@@ -7455,6 +8341,7 @@ class $$SessionsTableTableManager
                 Value<int?> timeLimitSecs = const Value.absent(),
                 Value<int?> examRemainingSecs = const Value.absent(),
                 Value<String> language = const Value.absent(),
+                Value<String?> analyticsFeatureKey = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion(
                 id: id,
@@ -7471,6 +8358,7 @@ class $$SessionsTableTableManager
                 timeLimitSecs: timeLimitSecs,
                 examRemainingSecs: examRemainingSecs,
                 language: language,
+                analyticsFeatureKey: analyticsFeatureKey,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -7489,6 +8377,7 @@ class $$SessionsTableTableManager
                 Value<int?> timeLimitSecs = const Value.absent(),
                 Value<int?> examRemainingSecs = const Value.absent(),
                 Value<String> language = const Value.absent(),
+                Value<String?> analyticsFeatureKey = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => SessionsCompanion.insert(
                 id: id,
@@ -7505,6 +8394,7 @@ class $$SessionsTableTableManager
                 timeLimitSecs: timeLimitSecs,
                 examRemainingSecs: examRemainingSecs,
                 language: language,
+                analyticsFeatureKey: analyticsFeatureKey,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0
@@ -8783,6 +9673,8 @@ typedef $$UserTopicStatsTableCreateCompanionBuilder =
       required String topic,
       Value<int> totalAttempted,
       Value<int> totalCorrect,
+      Value<int> wrongAttempts,
+      Value<int> totalTimeSpentSecs,
       Value<double> accuracyPercentage,
       required DateTime lastAttemptedAt,
     });
@@ -8793,6 +9685,8 @@ typedef $$UserTopicStatsTableUpdateCompanionBuilder =
       Value<String> topic,
       Value<int> totalAttempted,
       Value<int> totalCorrect,
+      Value<int> wrongAttempts,
+      Value<int> totalTimeSpentSecs,
       Value<double> accuracyPercentage,
       Value<DateTime> lastAttemptedAt,
     });
@@ -8828,6 +9722,16 @@ class $$UserTopicStatsTableFilterComposer
 
   ColumnFilters<int> get totalCorrect => $composableBuilder(
     column: $table.totalCorrect,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get wrongAttempts => $composableBuilder(
+    column: $table.wrongAttempts,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalTimeSpentSecs => $composableBuilder(
+    column: $table.totalTimeSpentSecs,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -8876,6 +9780,16 @@ class $$UserTopicStatsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<int> get wrongAttempts => $composableBuilder(
+    column: $table.wrongAttempts,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalTimeSpentSecs => $composableBuilder(
+    column: $table.totalTimeSpentSecs,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<double> get accuracyPercentage => $composableBuilder(
     column: $table.accuracyPercentage,
     builder: (column) => ColumnOrderings(column),
@@ -8912,6 +9826,16 @@ class $$UserTopicStatsTableAnnotationComposer
 
   GeneratedColumn<int> get totalCorrect => $composableBuilder(
     column: $table.totalCorrect,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get wrongAttempts => $composableBuilder(
+    column: $table.wrongAttempts,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalTimeSpentSecs => $composableBuilder(
+    column: $table.totalTimeSpentSecs,
     builder: (column) => column,
   );
 
@@ -8964,6 +9888,8 @@ class $$UserTopicStatsTableTableManager
                 Value<String> topic = const Value.absent(),
                 Value<int> totalAttempted = const Value.absent(),
                 Value<int> totalCorrect = const Value.absent(),
+                Value<int> wrongAttempts = const Value.absent(),
+                Value<int> totalTimeSpentSecs = const Value.absent(),
                 Value<double> accuracyPercentage = const Value.absent(),
                 Value<DateTime> lastAttemptedAt = const Value.absent(),
               }) => UserTopicStatsCompanion(
@@ -8972,6 +9898,8 @@ class $$UserTopicStatsTableTableManager
                 topic: topic,
                 totalAttempted: totalAttempted,
                 totalCorrect: totalCorrect,
+                wrongAttempts: wrongAttempts,
+                totalTimeSpentSecs: totalTimeSpentSecs,
                 accuracyPercentage: accuracyPercentage,
                 lastAttemptedAt: lastAttemptedAt,
               ),
@@ -8982,6 +9910,8 @@ class $$UserTopicStatsTableTableManager
                 required String topic,
                 Value<int> totalAttempted = const Value.absent(),
                 Value<int> totalCorrect = const Value.absent(),
+                Value<int> wrongAttempts = const Value.absent(),
+                Value<int> totalTimeSpentSecs = const Value.absent(),
                 Value<double> accuracyPercentage = const Value.absent(),
                 required DateTime lastAttemptedAt,
               }) => UserTopicStatsCompanion.insert(
@@ -8990,6 +9920,8 @@ class $$UserTopicStatsTableTableManager
                 topic: topic,
                 totalAttempted: totalAttempted,
                 totalCorrect: totalCorrect,
+                wrongAttempts: wrongAttempts,
+                totalTimeSpentSecs: totalTimeSpentSecs,
                 accuracyPercentage: accuracyPercentage,
                 lastAttemptedAt: lastAttemptedAt,
               ),
@@ -9018,6 +9950,388 @@ typedef $$UserTopicStatsTableProcessedTableManager =
       UserTopicStat,
       PrefetchHooks Function()
     >;
+typedef $$UserFeatureStatsTableCreateCompanionBuilder =
+    UserFeatureStatsCompanion Function({
+      required String featureName,
+      Value<int> totalViews,
+      Value<int> totalStarts,
+      Value<int> totalCompletions,
+      required DateTime lastUsedAt,
+      Value<int> rowid,
+    });
+typedef $$UserFeatureStatsTableUpdateCompanionBuilder =
+    UserFeatureStatsCompanion Function({
+      Value<String> featureName,
+      Value<int> totalViews,
+      Value<int> totalStarts,
+      Value<int> totalCompletions,
+      Value<DateTime> lastUsedAt,
+      Value<int> rowid,
+    });
+
+class $$UserFeatureStatsTableFilterComposer
+    extends Composer<_$UserDatabase, $UserFeatureStatsTable> {
+  $$UserFeatureStatsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get featureName => $composableBuilder(
+    column: $table.featureName,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalViews => $composableBuilder(
+    column: $table.totalViews,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalStarts => $composableBuilder(
+    column: $table.totalStarts,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalCompletions => $composableBuilder(
+    column: $table.totalCompletions,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastUsedAt => $composableBuilder(
+    column: $table.lastUsedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$UserFeatureStatsTableOrderingComposer
+    extends Composer<_$UserDatabase, $UserFeatureStatsTable> {
+  $$UserFeatureStatsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get featureName => $composableBuilder(
+    column: $table.featureName,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalViews => $composableBuilder(
+    column: $table.totalViews,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalStarts => $composableBuilder(
+    column: $table.totalStarts,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalCompletions => $composableBuilder(
+    column: $table.totalCompletions,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastUsedAt => $composableBuilder(
+    column: $table.lastUsedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$UserFeatureStatsTableAnnotationComposer
+    extends Composer<_$UserDatabase, $UserFeatureStatsTable> {
+  $$UserFeatureStatsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get featureName => $composableBuilder(
+    column: $table.featureName,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalViews => $composableBuilder(
+    column: $table.totalViews,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalStarts => $composableBuilder(
+    column: $table.totalStarts,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get totalCompletions => $composableBuilder(
+    column: $table.totalCompletions,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastUsedAt => $composableBuilder(
+    column: $table.lastUsedAt,
+    builder: (column) => column,
+  );
+}
+
+class $$UserFeatureStatsTableTableManager
+    extends
+        RootTableManager<
+          _$UserDatabase,
+          $UserFeatureStatsTable,
+          UserFeatureStat,
+          $$UserFeatureStatsTableFilterComposer,
+          $$UserFeatureStatsTableOrderingComposer,
+          $$UserFeatureStatsTableAnnotationComposer,
+          $$UserFeatureStatsTableCreateCompanionBuilder,
+          $$UserFeatureStatsTableUpdateCompanionBuilder,
+          (
+            UserFeatureStat,
+            BaseReferences<
+              _$UserDatabase,
+              $UserFeatureStatsTable,
+              UserFeatureStat
+            >,
+          ),
+          UserFeatureStat,
+          PrefetchHooks Function()
+        > {
+  $$UserFeatureStatsTableTableManager(
+    _$UserDatabase db,
+    $UserFeatureStatsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$UserFeatureStatsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$UserFeatureStatsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$UserFeatureStatsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> featureName = const Value.absent(),
+                Value<int> totalViews = const Value.absent(),
+                Value<int> totalStarts = const Value.absent(),
+                Value<int> totalCompletions = const Value.absent(),
+                Value<DateTime> lastUsedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => UserFeatureStatsCompanion(
+                featureName: featureName,
+                totalViews: totalViews,
+                totalStarts: totalStarts,
+                totalCompletions: totalCompletions,
+                lastUsedAt: lastUsedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String featureName,
+                Value<int> totalViews = const Value.absent(),
+                Value<int> totalStarts = const Value.absent(),
+                Value<int> totalCompletions = const Value.absent(),
+                required DateTime lastUsedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => UserFeatureStatsCompanion.insert(
+                featureName: featureName,
+                totalViews: totalViews,
+                totalStarts: totalStarts,
+                totalCompletions: totalCompletions,
+                lastUsedAt: lastUsedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$UserFeatureStatsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$UserDatabase,
+      $UserFeatureStatsTable,
+      UserFeatureStat,
+      $$UserFeatureStatsTableFilterComposer,
+      $$UserFeatureStatsTableOrderingComposer,
+      $$UserFeatureStatsTableAnnotationComposer,
+      $$UserFeatureStatsTableCreateCompanionBuilder,
+      $$UserFeatureStatsTableUpdateCompanionBuilder,
+      (
+        UserFeatureStat,
+        BaseReferences<_$UserDatabase, $UserFeatureStatsTable, UserFeatureStat>,
+      ),
+      UserFeatureStat,
+      PrefetchHooks Function()
+    >;
+typedef $$UserTrapStatsTableCreateCompanionBuilder =
+    UserTrapStatsCompanion Function({
+      required String trapType,
+      Value<int> totalFailures,
+      required DateTime lastFailedAt,
+      Value<int> rowid,
+    });
+typedef $$UserTrapStatsTableUpdateCompanionBuilder =
+    UserTrapStatsCompanion Function({
+      Value<String> trapType,
+      Value<int> totalFailures,
+      Value<DateTime> lastFailedAt,
+      Value<int> rowid,
+    });
+
+class $$UserTrapStatsTableFilterComposer
+    extends Composer<_$UserDatabase, $UserTrapStatsTable> {
+  $$UserTrapStatsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get trapType => $composableBuilder(
+    column: $table.trapType,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get totalFailures => $composableBuilder(
+    column: $table.totalFailures,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastFailedAt => $composableBuilder(
+    column: $table.lastFailedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$UserTrapStatsTableOrderingComposer
+    extends Composer<_$UserDatabase, $UserTrapStatsTable> {
+  $$UserTrapStatsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get trapType => $composableBuilder(
+    column: $table.trapType,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get totalFailures => $composableBuilder(
+    column: $table.totalFailures,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastFailedAt => $composableBuilder(
+    column: $table.lastFailedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$UserTrapStatsTableAnnotationComposer
+    extends Composer<_$UserDatabase, $UserTrapStatsTable> {
+  $$UserTrapStatsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get trapType =>
+      $composableBuilder(column: $table.trapType, builder: (column) => column);
+
+  GeneratedColumn<int> get totalFailures => $composableBuilder(
+    column: $table.totalFailures,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastFailedAt => $composableBuilder(
+    column: $table.lastFailedAt,
+    builder: (column) => column,
+  );
+}
+
+class $$UserTrapStatsTableTableManager
+    extends
+        RootTableManager<
+          _$UserDatabase,
+          $UserTrapStatsTable,
+          UserTrapStat,
+          $$UserTrapStatsTableFilterComposer,
+          $$UserTrapStatsTableOrderingComposer,
+          $$UserTrapStatsTableAnnotationComposer,
+          $$UserTrapStatsTableCreateCompanionBuilder,
+          $$UserTrapStatsTableUpdateCompanionBuilder,
+          (
+            UserTrapStat,
+            BaseReferences<_$UserDatabase, $UserTrapStatsTable, UserTrapStat>,
+          ),
+          UserTrapStat,
+          PrefetchHooks Function()
+        > {
+  $$UserTrapStatsTableTableManager(_$UserDatabase db, $UserTrapStatsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$UserTrapStatsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$UserTrapStatsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$UserTrapStatsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> trapType = const Value.absent(),
+                Value<int> totalFailures = const Value.absent(),
+                Value<DateTime> lastFailedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => UserTrapStatsCompanion(
+                trapType: trapType,
+                totalFailures: totalFailures,
+                lastFailedAt: lastFailedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String trapType,
+                Value<int> totalFailures = const Value.absent(),
+                required DateTime lastFailedAt,
+                Value<int> rowid = const Value.absent(),
+              }) => UserTrapStatsCompanion.insert(
+                trapType: trapType,
+                totalFailures: totalFailures,
+                lastFailedAt: lastFailedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$UserTrapStatsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$UserDatabase,
+      $UserTrapStatsTable,
+      UserTrapStat,
+      $$UserTrapStatsTableFilterComposer,
+      $$UserTrapStatsTableOrderingComposer,
+      $$UserTrapStatsTableAnnotationComposer,
+      $$UserTrapStatsTableCreateCompanionBuilder,
+      $$UserTrapStatsTableUpdateCompanionBuilder,
+      (
+        UserTrapStat,
+        BaseReferences<_$UserDatabase, $UserTrapStatsTable, UserTrapStat>,
+      ),
+      UserTrapStat,
+      PrefetchHooks Function()
+    >;
 
 class $UserDatabaseManager {
   final _$UserDatabase _db;
@@ -9040,4 +10354,8 @@ class $UserDatabaseManager {
       $$RevisionQueueTableTableManager(_db, _db.revisionQueue);
   $$UserTopicStatsTableTableManager get userTopicStats =>
       $$UserTopicStatsTableTableManager(_db, _db.userTopicStats);
+  $$UserFeatureStatsTableTableManager get userFeatureStats =>
+      $$UserFeatureStatsTableTableManager(_db, _db.userFeatureStats);
+  $$UserTrapStatsTableTableManager get userTrapStats =>
+      $$UserTrapStatsTableTableManager(_db, _db.userTrapStats);
 }

@@ -1,0 +1,17 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../analytics/analytics_service.dart';
+import '../analytics/firebase_analytics_sink.dart';
+import '../analytics/local_analytics_sink.dart';
+import 'user_database_provider.dart';
+
+part 'analytics_provider.g.dart';
+
+@Riverpod(keepAlive: true)
+AnalyticsService analyticsService(Ref ref) {
+  final db = ref.watch(userDatabaseProvider);
+  return AnalyticsService([
+    FirebaseAnalyticsSink(),
+    LocalAnalyticsSink(db),
+  ]);
+}

@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../analytics/analytics_route_observer.dart';
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
 import '../../features/battle/domain/entities/battle_result_payload.dart';
@@ -24,6 +25,7 @@ import '../../features/notifications/screens/long_html_notification_screen.dart'
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
+import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
@@ -55,13 +57,18 @@ GoRouter appRouter(Ref ref) {
   final shellBranches = <StatefulShellBranch>[
     StatefulShellBranch(
       routes: [
-        GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
+        GoRoute(
+          path: '/',
+          name: 'home',
+          builder: (context, state) => const HomeScreen(),
+        ),
       ],
     ),
     StatefulShellBranch(
       routes: [
         GoRoute(
           path: '/history',
+          name: 'history',
           builder: (context, state) => const HistoryScreen(),
         ),
       ],
@@ -70,6 +77,7 @@ GoRouter appRouter(Ref ref) {
       routes: [
         GoRoute(
           path: '/progress',
+          name: 'progress',
           builder: (context, state) => const ProgressScreen(),
         ),
       ],
@@ -79,6 +87,7 @@ GoRouter appRouter(Ref ref) {
         routes: [
           GoRoute(
             path: '/community',
+            name: 'community',
             builder: (context, state) => const CommunityScreen(),
           ),
         ],
@@ -87,6 +96,7 @@ GoRouter appRouter(Ref ref) {
   return GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: '/',
+    observers: [AnalyticsRouteObserver(ref)],
     routes: [
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
@@ -102,7 +112,14 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/settings',
+        name: 'settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/internal/feature-health',
+        name: 'feature_health',
+        builder: (context, state) => const FeatureHealthScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

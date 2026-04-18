@@ -81,6 +81,7 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
               ? Value(config.timeLimitSecs)
               : const Value.absent(),
           language: Value(config.language),
+          analyticsFeatureKey: Value(config.analyticsFeatureKey),
         ),
       );
       for (var i = 0; i < n; i++) {
@@ -138,6 +139,7 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
               ? Value(config.timeLimitSecs)
               : const Value.absent(),
           language: Value(config.language),
+          analyticsFeatureKey: Value(config.analyticsFeatureKey),
         ),
       );
       for (var i = 0; i < n; i++) {

@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/core/analytics/analytics.dart';
+import 'package:upsc_wars/core/analytics/analytics_events.dart';
+import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
@@ -71,6 +74,33 @@ class _BattleTestSessionView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.read(battleSessionProvider(sessionId).notifier);
     final autoSubmitDone = useRef(false);
+    final featureStartedSent = useRef(false);
+    final baseSession = ref.watch(
+      battleSessionProvider(sessionId).select((u) => u.battleSession?.baseSession),
+    );
+
+    useEffect(() {
+      final s = baseSession;
+      if (s == null || featureStartedSent.value) return null;
+      featureStartedSent.value = true;
+      final labels = deriveSessionAnalyticsLabels(
+        analyticsFeatureKey: s.analyticsFeatureKey,
+        subject: s.subject,
+      );
+      unawaited(
+        Analytics.track(
+          ref,
+          FeatureStartedEvent(
+            featureName: labels.featureName,
+            subject: s.subject,
+            topic: s.topic,
+            difficulty: null,
+            source: labels.source,
+          ),
+        ),
+      );
+      return null;
+    }, [baseSession]);
 
     useEffect(() {
       Timer? timer;

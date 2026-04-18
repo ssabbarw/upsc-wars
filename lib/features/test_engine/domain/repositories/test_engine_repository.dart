@@ -1,3 +1,4 @@
+import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 
 abstract class TestEngineRepository {
@@ -7,6 +8,7 @@ abstract class TestEngineRepository {
     required String sessionId,
     required String questionUuid,
     required String selectedOption,
+    QuestionAttemptAnalyticsInput? analytics,
   });
 
   Future<void> updateQuestionTime({

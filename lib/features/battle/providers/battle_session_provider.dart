@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/legacy.dart'
     show StateNotifier, StateNotifierProvider;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -284,6 +285,10 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         sessionId: sessionId,
         questionUuid: question.uuid,
         selectedOption: option,
+        analytics: const QuestionAttemptAnalyticsInput(
+          secondsOnQuestion: 0,
+          isBattle: true,
+        ),
       );
       final updatedQuestions = [...current.baseSession.questions];
       updatedQuestions[index] = question.copyWith(
@@ -680,6 +685,7 @@ ActiveSession _copySession(ActiveSession source, List<TestQuestion> questions) {
     language: source.language,
     questions: questions,
     savedExamRemainingSecs: source.savedExamRemainingSecs,
+    analyticsFeatureKey: source.analyticsFeatureKey,
   );
 }
 

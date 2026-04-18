@@ -44,6 +44,7 @@ import '../domain/entities/revision_queue_item.dart';
 import '../domain/entities/bookmark_item.dart';
 import 'prefs_provider.dart';
 import 'user_database_provider.dart';
+import 'analytics_provider.dart';
 
 part 'catalog_providers.g.dart';
 
@@ -106,6 +107,7 @@ Future<TestEngineRepository> testEngineRepository(Ref ref) async {
   return TestEngineRepositoryImpl(
     userDb: ref.watch(userDatabaseProvider),
     prefsService: prefs,
+    analytics: ref.watch(analyticsServiceProvider),
   );
 }
 

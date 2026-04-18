@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
@@ -97,10 +98,16 @@ class TestSessionNotifier extends _$TestSessionNotifier {
 
     try {
       final uc = await ref.read(updateQuestionAttemptUseCaseProvider.future);
+      final secsOnQuestion =
+          (q.timeSpentSecs ?? 0) + current.currentQuestionElapsedSecs;
       final isCorrect = await uc.execute(
         sessionId: s.id,
         questionUuid: q.uuid,
         selectedOption: option,
+        analytics: QuestionAttemptAnalyticsInput(
+          secondsOnQuestion: secsOnQuestion,
+          isBattle: false,
+        ),
       );
 
       if (isCorrect && (s.subject == 'revision' || s.subject == 'revision_quick')) {
@@ -421,6 +428,7 @@ extension on ActiveSession {
     List<TestQuestion>? questions,
     String? status,
     int? savedExamRemainingSecs,
+    String? analyticsFeatureKey,
   }) {
     return ActiveSession(
       id: id,
@@ -436,6 +444,7 @@ extension on ActiveSession {
       questions: questions ?? this.questions,
       savedExamRemainingSecs:
           savedExamRemainingSecs ?? this.savedExamRemainingSecs,
+      analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
     );
   }
 }

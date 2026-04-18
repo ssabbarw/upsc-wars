@@ -60,6 +60,7 @@ class SubTopicDetailScreen extends HookConsumerWidget {
               timeLimitSecs: 60,
               language: 'en',
               specificQuestionUuids: group.questionUuids,
+              analyticsFeatureKey: 'insights_dashboard',
             ));
             if (context.mounted) context.push('/test/$id');
           } finally {

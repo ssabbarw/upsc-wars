@@ -5,6 +5,10 @@ import 'package:drift/drift.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
+import 'package:upsc_wars/core/analytics/analytics_events.dart';
+import 'package:upsc_wars/core/analytics/analytics_service.dart';
+import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
+import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -17,11 +21,14 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   TestEngineRepositoryImpl({
     required UserDatabase userDb,
     required PrefsService prefsService,
+    required AnalyticsService analytics,
   }) : _userDb = userDb,
-       _prefsService = prefsService;
+       _prefsService = prefsService,
+       _analytics = analytics;
 
   final UserDatabase _userDb;
   final PrefsService _prefsService;
+  final AnalyticsService _analytics;
 
   static const _uuid = Uuid();
 
@@ -221,6 +228,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       language: session.language,
       questions: questions,
       savedExamRemainingSecs: session.examRemainingSecs,
+      analyticsFeatureKey: session.analyticsFeatureKey,
     );
   }
 
@@ -229,6 +237,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     required String sessionId,
     required String questionUuid,
     required String selectedOption,
+    QuestionAttemptAnalyticsInput? analytics,
   }) async {
     final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
       sessionId,
@@ -247,6 +256,32 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       isCorrect: Value(isCorrect),
       status: Value(isCorrect ? 'correct' : 'wrong'),
     );
+
+    if (analytics != null) {
+      final sess = await _userDb.sessionsDao.getSessionById(sessionId);
+      if (sess != null) {
+        final labels = deriveSessionAnalyticsLabels(
+          analyticsFeatureKey: sess.analyticsFeatureKey,
+          subject: sess.subject,
+        );
+        await _analytics.track(
+          QuestionAttemptedEvent(
+            questionId: questionUuid,
+            subject: q.subject,
+            topic: q.topic,
+            difficulty: null,
+            correct: isCorrect,
+            timeTakenSeconds: analytics.secondsOnQuestion,
+            guessed: false,
+            eliminatedOptionsCount: 0,
+            trapType: q.trapType,
+            confidenceLevel: null,
+            featureName: labels.featureName,
+            source: labels.source,
+          ),
+        );
+      }
+    }
     return isCorrect;
   }
 
@@ -283,6 +318,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
   @override
   Future<String> submitSession(String sessionId) async {
+    final sessionMeta = await _userDb.sessionsDao.getSessionById(sessionId);
     final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
       sessionId,
     );
@@ -307,7 +343,37 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
     );
     await _updateTopicStatsForSession(sessionId);
 
+    final prevStreak = _prefsService.currentStreak;
     _updateStreak();
+    final nextStreak = _prefsService.currentStreak;
+    if (nextStreak > prevStreak) {
+      await _analytics.track(StreakContinuedEvent(streakLength: nextStreak));
+    }
+
+    if (sessionMeta != null) {
+      final labels = deriveSessionAnalyticsLabels(
+        analyticsFeatureKey: sessionMeta.analyticsFeatureKey,
+        subject: sessionMeta.subject,
+      );
+      await _analytics.track(
+        FeatureCompletedEvent(
+          featureName: labels.featureName,
+          subject: sessionMeta.subject,
+          topic: sessionMeta.topic,
+          difficulty: null,
+          source: labels.source,
+        ),
+      );
+      if (sessionMeta.subject == 'revision' ||
+          sessionMeta.subject == 'revision_quick') {
+        await _analytics.track(
+          RevisionCompletedEvent(
+            questionsCount: sessionMeta.questionCount,
+            subject: sessionMeta.subject,
+          ),
+        );
+      }
+    }
 
     return sessionId;
   }
@@ -411,7 +477,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       scored.map((e) => e.questionUuid).toList(),
     );
     final byUuid = {for (final q in questions) q.uuid: q};
-    final agg = <String, ({int attempted, int correct})>{};
+    final agg =
+        <String, ({int attempted, int correct, int wrong, int timeSum})>{};
     for (final row in scored) {
       final q = byUuid[row.questionUuid];
       if (q == null) continue;
@@ -419,7 +486,14 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       final prev = agg[key];
       final attempted = (prev?.attempted ?? 0) + 1;
       final correct = (prev?.correct ?? 0) + (row.status == 'correct' ? 1 : 0);
-      agg[key] = (attempted: attempted, correct: correct);
+      final wrong = (prev?.wrong ?? 0) + (row.status == 'wrong' ? 1 : 0);
+      final timeSum = (prev?.timeSum ?? 0) + (row.timeSpentSecs ?? 0);
+      agg[key] = (
+        attempted: attempted,
+        correct: correct,
+        wrong: wrong,
+        timeSum: timeSum,
+      );
     }
 
     final now = DateTime.now();
@@ -430,6 +504,8 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         topic: parts[1],
         attemptedToAdd: entry.value.attempted,
         correctToAdd: entry.value.correct,
+        wrongToAdd: entry.value.wrong,
+        timeSpentSecsSum: entry.value.timeSum,
         attemptedAt: now,
       );
     }

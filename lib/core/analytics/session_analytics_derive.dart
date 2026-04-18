@@ -1,0 +1,58 @@
+/// Maps a persisted session row into stable analytics labels.
+class SessionAnalyticsLabels {
+  const SessionAnalyticsLabels({
+    required this.featureName,
+    required this.source,
+  });
+
+  final String featureName;
+  final String source;
+}
+
+SessionAnalyticsLabels deriveSessionAnalyticsLabels({
+  String? analyticsFeatureKey,
+  required String subject,
+}) {
+  if (analyticsFeatureKey == 'mcq_battle') {
+    return const SessionAnalyticsLabels(
+      featureName: 'mcq_battle',
+      source: 'test_series',
+    );
+  }
+  if (analyticsFeatureKey == 'trap_awareness') {
+    return const SessionAnalyticsLabels(
+      featureName: 'trap_awareness',
+      source: 'static_mcq',
+    );
+  }
+  if (analyticsFeatureKey == 'insights_dashboard') {
+    return const SessionAnalyticsLabels(
+      featureName: 'insights_dashboard',
+      source: 'static_mcq',
+    );
+  }
+  switch (subject) {
+    case 'revision':
+    case 'revision_quick':
+      return const SessionAnalyticsLabels(
+        featureName: 'revision_mode',
+        source: 'static_mcq',
+      );
+    case 'bookmarks':
+      return const SessionAnalyticsLabels(
+        featureName: 'flashcards',
+        source: 'static_mcq',
+      );
+    default:
+      if (subject.toLowerCase().contains('pyq')) {
+        return const SessionAnalyticsLabels(
+          featureName: 'pyq_mode',
+          source: 'pyq',
+        );
+      }
+      return const SessionAnalyticsLabels(
+        featureName: 'daily_quiz',
+        source: 'static_mcq',
+      );
+  }
+}

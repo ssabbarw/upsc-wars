@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../core/analytics/analytics_app_lifecycle_observer.dart';
+import '../core/analytics/analytics.dart';
+import '../core/analytics/analytics_events.dart';
 import '../core/constants/prelims_debug_flags.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/services/battle_messaging_service.dart';
@@ -66,6 +69,13 @@ class _RootMaterialApp extends HookConsumerWidget {
         unawaited(BattleMessagingService.initialize(router));
       });
       return null;
+    }, const []);
+
+    useEffect(() {
+      unawaited(Analytics.track(ref, const AppOpenedEvent()));
+      final analyticsLifecycle = AnalyticsAppLifecycleObserver(ref);
+      WidgetsBinding.instance.addObserver(analyticsLifecycle);
+      return () => WidgetsBinding.instance.removeObserver(analyticsLifecycle);
     }, const []);
 
     useEffect(() {

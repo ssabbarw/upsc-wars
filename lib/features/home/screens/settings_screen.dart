@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -76,6 +78,26 @@ class SettingsScreen extends ConsumerWidget {
             ),
             const SizedBox(height: AppSpacing.sm),
             _FeedbackCard(scheme: scheme),
+            if (kDebugMode) ...[
+              const SizedBox(height: AppSpacing.xxl),
+              _SectionHeader(
+                icon: Icons.analytics_outlined,
+                label: 'Internal',
+                scheme: scheme,
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              ListTile(
+                title: Text('Feature health', style: AppTextStyles.label()),
+                subtitle: Text(
+                  'Local usage aggregates (SQLite)',
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () => context.push('/internal/feature-health'),
+              ),
+            ],
             const SizedBox(height: AppSpacing.xl),
             Center(
               child: Text(

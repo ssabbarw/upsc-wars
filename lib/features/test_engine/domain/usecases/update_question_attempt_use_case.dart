@@ -1,3 +1,5 @@
+import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
+
 import '../repositories/test_engine_repository.dart';
 
 class UpdateQuestionAttemptUseCase {
@@ -9,11 +11,13 @@ class UpdateQuestionAttemptUseCase {
     required String sessionId,
     required String questionUuid,
     required String selectedOption,
+    QuestionAttemptAnalyticsInput? analytics,
   }) {
     return _repository.updateQuestionAttempt(
       sessionId: sessionId,
       questionUuid: questionUuid,
       selectedOption: selectedOption,
+      analytics: analytics,
     );
   }
 }

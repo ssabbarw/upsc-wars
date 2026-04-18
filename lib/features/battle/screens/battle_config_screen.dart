@@ -242,6 +242,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         isTimed: true,
         timeLimitSecs: 10 * kDebugSecondsPerQuestion,
         language: language,
+        analyticsFeatureKey: 'mcq_battle',
       );
       final sessionId = await uc.execute(config);
       final invite = widget.invite;

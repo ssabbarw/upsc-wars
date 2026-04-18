@@ -91,6 +91,8 @@ class Sessions extends Table {
   IntColumn get timeLimitSecs => integer().nullable()();
   IntColumn get examRemainingSecs => integer().nullable()();
   TextColumn get language => text().withDefault(const Constant('en'))();
+  TextColumn get analyticsFeatureKey =>
+      text().named('analytics_feature_key').nullable()();
 
   @override
   Set<Column> get primaryKey => {id};
@@ -154,6 +156,10 @@ class UserTopicStats extends Table {
       integer().named('total_attempted').withDefault(const Constant(0))();
   IntColumn get totalCorrect =>
       integer().named('total_correct').withDefault(const Constant(0))();
+  IntColumn get wrongAttempts =>
+      integer().named('wrong_attempts').withDefault(const Constant(0))();
+  IntColumn get totalTimeSpentSecs =>
+      integer().named('total_time_spent_secs').withDefault(const Constant(0))();
   RealColumn get accuracyPercentage =>
       real().named('accuracy_percentage').withDefault(const Constant(0.0))();
   DateTimeColumn get lastAttemptedAt =>
@@ -163,6 +169,30 @@ class UserTopicStats extends Table {
   List<Set<Column>> get uniqueKeys => [
     {subject, topic},
   ];
+}
+
+class UserFeatureStats extends Table {
+  TextColumn get featureName => text().named('feature_name')();
+  IntColumn get totalViews =>
+      integer().named('total_views').withDefault(const Constant(0))();
+  IntColumn get totalStarts =>
+      integer().named('total_starts').withDefault(const Constant(0))();
+  IntColumn get totalCompletions =>
+      integer().named('total_completions').withDefault(const Constant(0))();
+  DateTimeColumn get lastUsedAt => dateTime().named('last_used_at')();
+
+  @override
+  Set<Column> get primaryKey => {featureName};
+}
+
+class UserTrapStats extends Table {
+  TextColumn get trapType => text().named('trap_type')();
+  IntColumn get totalFailures =>
+      integer().named('total_failures').withDefault(const Constant(0))();
+  DateTimeColumn get lastFailedAt => dateTime().named('last_failed_at')();
+
+  @override
+  Set<Column> get primaryKey => {trapType};
 }
 
 @DriftAccessor(tables: [Questions])
@@ -737,6 +767,92 @@ class RevisionQueueDao extends DatabaseAccessor<UserDatabase>
   }
 }
 
+@DriftAccessor(tables: [UserFeatureStats])
+class UserFeatureStatsDao extends DatabaseAccessor<UserDatabase>
+    with _$UserFeatureStatsDaoMixin {
+  UserFeatureStatsDao(super.db);
+
+  Future<void> incrementViews(String featureName, DateTime at) =>
+      _bump(featureName, at, views: 1);
+
+  Future<void> incrementStarts(String featureName, DateTime at) =>
+      _bump(featureName, at, starts: 1);
+
+  Future<void> incrementCompletions(String featureName, DateTime at) =>
+      _bump(featureName, at, completions: 1);
+
+  Future<void> _bump(
+    String featureName,
+    DateTime at, {
+    int views = 0,
+    int starts = 0,
+    int completions = 0,
+  }) async {
+    final existing = await (select(userFeatureStats)
+          ..where((t) => t.featureName.equals(featureName)))
+        .getSingleOrNull();
+    if (existing == null) {
+      await into(userFeatureStats).insert(
+        UserFeatureStatsCompanion.insert(
+          featureName: featureName,
+          totalViews: Value(views),
+          totalStarts: Value(starts),
+          totalCompletions: Value(completions),
+          lastUsedAt: at,
+        ),
+      );
+      return;
+    }
+    await (update(userFeatureStats)..where((t) => t.featureName.equals(featureName)))
+        .write(
+      UserFeatureStatsCompanion(
+        totalViews: Value(existing.totalViews + views),
+        totalStarts: Value(existing.totalStarts + starts),
+        totalCompletions: Value(existing.totalCompletions + completions),
+        lastUsedAt: Value(at),
+      ),
+    );
+  }
+
+  Future<List<UserFeatureStat>> fetchAll() =>
+      (select(userFeatureStats)..orderBy([(t) => OrderingTerm.asc(t.featureName)]))
+          .get();
+
+  Stream<List<UserFeatureStat>> watchAll() =>
+      (select(userFeatureStats)..orderBy([(t) => OrderingTerm.asc(t.featureName)]))
+          .watch();
+}
+
+@DriftAccessor(tables: [UserTrapStats])
+class UserTrapStatsDao extends DatabaseAccessor<UserDatabase> with _$UserTrapStatsDaoMixin {
+  UserTrapStatsDao(super.db);
+
+  Future<void> recordFailure({
+    required String trapType,
+    required DateTime at,
+  }) async {
+    final existing = await (select(userTrapStats)
+          ..where((t) => t.trapType.equals(trapType)))
+        .getSingleOrNull();
+    if (existing == null) {
+      await into(userTrapStats).insert(
+        UserTrapStatsCompanion.insert(
+          trapType: trapType,
+          totalFailures: const Value(1),
+          lastFailedAt: at,
+        ),
+      );
+      return;
+    }
+    await (update(userTrapStats)..where((t) => t.trapType.equals(trapType))).write(
+      UserTrapStatsCompanion(
+        totalFailures: Value(existing.totalFailures + 1),
+        lastFailedAt: Value(at),
+      ),
+    );
+  }
+}
+
 @DriftAccessor(tables: [UserTopicStats])
 class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     with _$UserTopicStatsDaoMixin {
@@ -747,6 +863,8 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     required String topic,
     required int attemptedToAdd,
     required int correctToAdd,
+    required int wrongToAdd,
+    required int timeSpentSecsSum,
     required DateTime attemptedAt,
   }) async {
     final existing = await (select(userTopicStats)
@@ -761,6 +879,8 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
           topic: topic,
           totalAttempted: Value(attemptedToAdd),
           totalCorrect: Value(correctToAdd),
+          wrongAttempts: Value(wrongToAdd),
+          totalTimeSpentSecs: Value(timeSpentSecsSum),
           accuracyPercentage: Value(accuracy),
           lastAttemptedAt: attemptedAt,
         ),
@@ -769,11 +889,15 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     }
     final newAttempted = existing.totalAttempted + attemptedToAdd;
     final newCorrect = existing.totalCorrect + correctToAdd;
+    final newWrong = existing.wrongAttempts + wrongToAdd;
+    final newTime = existing.totalTimeSpentSecs + timeSpentSecsSum;
     final newAccuracy = newAttempted == 0 ? 0.0 : (newCorrect / newAttempted) * 100;
     await (update(userTopicStats)..where((t) => t.id.equals(existing.id))).write(
       UserTopicStatsCompanion(
         totalAttempted: Value(newAttempted),
         totalCorrect: Value(newCorrect),
+        wrongAttempts: Value(newWrong),
+        totalTimeSpentSecs: Value(newTime),
         accuracyPercentage: Value(newAccuracy),
         lastAttemptedAt: Value(attemptedAt),
       ),
@@ -801,6 +925,8 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     Bookmarks,
     RevisionQueue,
     UserTopicStats,
+    UserFeatureStats,
+    UserTrapStats,
   ],
   daos: [
     QuestionsDao,
@@ -812,18 +938,34 @@ class UserTopicStatsDao extends DatabaseAccessor<UserDatabase>
     BookmarksDao,
     RevisionQueueDao,
     UserTopicStatsDao,
+    UserFeatureStatsDao,
+    UserTrapStatsDao,
   ],
 )
 class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
         onCreate: (Migrator m) async {
           await m.createAll();
+        },
+        onUpgrade: (Migrator m, int from, int to) async {
+          if (from < 2) {
+            await m.addColumn(sessions, sessions.analyticsFeatureKey);
+            await m.addColumn(userTopicStats, userTopicStats.wrongAttempts);
+            await m.addColumn(userTopicStats, userTopicStats.totalTimeSpentSecs);
+            await m.createTable(userFeatureStats);
+            await m.createTable(userTrapStats);
+            await customStatement(
+              'UPDATE user_topic_stats SET wrong_attempts = '
+              'CASE WHEN total_attempted - total_correct > 0 '
+              'THEN total_attempted - total_correct ELSE 0 END',
+            );
+          }
         },
       );
 }
