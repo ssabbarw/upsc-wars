@@ -10,6 +10,7 @@ import '../../../core/constants/subject_constants.dart';
 import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
+import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/prefs_provider.dart';
@@ -35,7 +36,6 @@ class HomeScreen extends HookConsumerWidget {
     final authState = ref.watch(authStateChangesProvider);
     final authActions = ref.watch(authActionsProvider);
     final isAuthBusy = authActions.isLoading;
-    final totalQuestions = ref.watch(totalQuestionCountProvider);
     final bootstrap = ref.watch(appBootstrapProvider);
     final cachedStreakText = useState<String?>(null);
 
@@ -295,38 +295,7 @@ class HomeScreen extends HookConsumerWidget {
               const SizedBox(height: AppSpacing.md),
               const PrelimsCountdownCard(),
               const SizedBox(height: AppSpacing.md),
-              _HomeReleaseTodoCard(borderColor: borderColor, scheme: scheme),
-              const SizedBox(height: AppSpacing.md),
-              Material(
-                color: scheme.surfaceContainerLow,
-                borderRadius: BorderRadius.circular(AppRadius.md),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.md,
-                    vertical: AppSpacing.sm,
-                  ),
-                  child: totalQuestions.when(
-                    data: (count) => Text(
-                      'Temp debug: Total questions in DB = $count',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    loading: () => Text(
-                      'Temp debug: Reading total questions...',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                    error: (e, _) => Text(
-                      'Temp debug: Failed to read question count: $e',
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: AppColors.wrong,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              _SubjectGrid(borderColor: borderColor),
               const SizedBox(height: AppSpacing.md),
               home.when(
                 loading: () {
@@ -410,16 +379,11 @@ class HomeScreen extends HookConsumerWidget {
                       const SizedBox(height: AppSpacing.md),
                       _QuickPracticeSection(borderColor: borderColor),
                       const SizedBox(height: AppSpacing.md),
-                      _QuickGrid(home: h, borderColor: borderColor),
+                      _QuickShortcuts(home: h, borderColor: borderColor),
                       const SizedBox(height: AppSpacing.md),
                       _PyqYearCarousel(
                         borderColor: borderColor,
                         years: pyqYears,
-                      ),
-                      const SizedBox(height: AppSpacing.lg),
-                      _SubjectCarousel(
-                        borderColor: borderColor,
-                        subjects: SubjectConstants.ordered,
                       ),
                       if (h.revisionTrapCount > 0) ...[
                         const SizedBox(height: AppSpacing.md),
@@ -483,59 +447,6 @@ class HomeScreen extends HookConsumerWidget {
         ? defaultIndex
         : seed.hashCode.abs() % palette.length;
     return palette[index].bg.withValues(alpha: 0.9);
-  }
-}
-
-class _HomeReleaseTodoCard extends StatelessWidget {
-  const _HomeReleaseTodoCard({
-    required this.borderColor,
-    required this.scheme,
-  });
-
-  final Color borderColor;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: scheme.surfaceContainerLow,
-      borderRadius: BorderRadius.circular(AppRadius.md),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppRadius.md),
-          border: Border.all(color: borderColor, width: 0.5),
-        ),
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(
-                  Icons.checklist_outlined,
-                  size: 18,
-                  color: scheme.onSurfaceVariant,
-                ),
-                const SizedBox(width: AppSpacing.xs),
-                Text(
-                  'TODO',
-                  style: AppTextStyles.label().copyWith(
-                    color: scheme.onSurface,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            Text(
-              '1. remove updating days every min before release.',
-              style: AppTextStyles.bodySm().copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
 
@@ -721,20 +632,13 @@ class _PrimaryActionCard extends HookConsumerWidget {
   }
 }
 
-class _QuickGrid extends HookConsumerWidget {
-  const _QuickGrid({required this.home, required this.borderColor});
+class _QuickShortcuts extends HookConsumerWidget {
+  const _QuickShortcuts({required this.home, required this.borderColor});
   final HomeState home;
   final Color borderColor;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final data = [
-      _Q(
-        'Subject test',
-        '6 subjects',
-        Icons.menu_book_outlined,
-        AppColors.info,
-        '/subject-test',
-      ),
       _Q(
         'Topic test',
         'Pick any chapter',
@@ -758,12 +662,12 @@ class _QuickGrid extends HookConsumerWidget {
       ),
     ];
     return GridView.count(
-      crossAxisCount: 2,
+      crossAxisCount: 3,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       mainAxisSpacing: AppSpacing.sm,
       crossAxisSpacing: AppSpacing.sm,
-      childAspectRatio: 1.35,
+      childAspectRatio: 1.0,
       children: [
         for (final q in data) _QuickCard(q: q, borderColor: borderColor),
       ],
@@ -976,52 +880,6 @@ class _PyqYearCarousel extends StatelessWidget {
   }
 }
 
-class _SubjectCarousel extends StatelessWidget {
-  const _SubjectCarousel({
-    required this.borderColor,
-    required this.subjects,
-  });
-
-  final Color borderColor;
-  final List<SubjectDefinition> subjects;
-
-  static const _accents = <Color>[
-    AppColors.info,
-    AppColors.warning,
-    AppColors.primary,
-    AppColors.correct,
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const _CarouselSectionHeader(
-          title: 'All subjects',
-          leadingIcon: Icons.layers_outlined,
-          accent: AppColors.info,
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        _HorizontalDiscoveryStrip(
-          children: [
-            for (var i = 0; i < subjects.length; i++) ...[
-              if (i != 0) const SizedBox(width: AppSpacing.sm),
-              _HomeDiscoveryCard(
-                borderColor: borderColor,
-                titleText: subjects[i].displayName,
-                icon: subjects[i].materialIcon,
-                accent: _accents[i % _accents.length],
-                compactTitle: true,
-              ),
-            ],
-          ],
-        ),
-      ],
-    );
-  }
-}
-
 /// Horizontal strip; row height follows the tallest card (no fixed outer height).
 class _HorizontalDiscoveryStrip extends StatelessWidget {
   const _HorizontalDiscoveryStrip({required this.children});
@@ -1048,15 +906,12 @@ class _HomeDiscoveryCard extends StatelessWidget {
     required this.titleText,
     required this.icon,
     required this.accent,
-    this.compactTitle = false,
   });
 
   final Color borderColor;
   final String titleText;
   final IconData icon;
   final Color accent;
-  /// Smaller centered title (e.g. subject names on home carousels).
-  final bool compactTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -1104,19 +959,13 @@ class _HomeDiscoveryCard extends StatelessWidget {
               const SizedBox(height: AppSpacing.sm),
               Text(
                 titleText,
-                maxLines: compactTitle ? 3 : 1,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: compactTitle
-                    ? AppTextStyles.labelSm().copyWith(
-                        color: scheme.onSurface,
-                        height: 1.25,
-                        fontWeight: FontWeight.w600,
-                      )
-                    : AppTextStyles.h2().copyWith(
-                        color: scheme.onSurface,
-                        height: 1.2,
-                      ),
+                style: AppTextStyles.h2().copyWith(
+                  color: scheme.onSurface,
+                  height: 1.2,
+                ),
               ),
               const SizedBox(height: AppSpacing.xs),
               Container(
@@ -1134,6 +983,213 @@ class _HomeDiscoveryCard extends StatelessWidget {
     );
   }
 }
+
+// ── Subject Grid ────────────────────────────────────────────────────────────────
+
+class _SubjectGrid extends ConsumerWidget {
+  const _SubjectGrid({required this.borderColor});
+  final Color borderColor;
+
+  static const _accentColors = <Color>[
+    AppColors.info,
+    AppColors.warning,
+    AppColors.primary,
+    AppColors.correct,
+    AppColors.wrong,
+    AppColors.info,
+    AppColors.warning,
+    AppColors.primary,
+  ];
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final subjectsAsync = ref.watch(subjectTestListProvider);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'SUBJECTS',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            letterSpacing: 0.6,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        subjectsAsync.when(
+          loading: () => _SubjectGridSkeleton(borderColor: borderColor),
+          error: (_, __) => const SizedBox.shrink(),
+          data: (subjects) => GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: AppSpacing.sm,
+              crossAxisSpacing: AppSpacing.sm,
+              childAspectRatio: 1.55,
+            ),
+            itemCount: subjects.length,
+            itemBuilder: (context, i) {
+              final s = subjects[i];
+              final def = SubjectConstants.bySlug(s.subject);
+              final accent = _accentColors[i % _accentColors.length];
+              return _SubjectGridCard(
+                info: s,
+                icon: def?.materialIcon ?? Icons.school_outlined,
+                accent: accent,
+                borderColor: borderColor,
+                isDark: isDark,
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _SubjectGridCard extends StatelessWidget {
+  const _SubjectGridCard({
+    required this.info,
+    required this.icon,
+    required this.accent,
+    required this.borderColor,
+    required this.isDark,
+  });
+
+  final SubjectInfo info;
+  final IconData icon;
+  final Color accent;
+  final Color borderColor;
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final hasAttempts = info.attemptCount > 0;
+    final iconBg = isDark
+        ? accent.withValues(alpha: 0.2)
+        : accent.withValues(alpha: 0.12);
+
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: () =>
+            context.push('/subject/${Uri.encodeComponent(info.subject)}'),
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Container(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 28,
+                    height: 28,
+                    decoration: BoxDecoration(
+                      color: iconBg,
+                      borderRadius: BorderRadius.circular(AppRadius.sm),
+                    ),
+                    child: Icon(icon, size: 16, color: accent),
+                  ),
+                  const Spacer(),
+                  if (hasAttempts)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.sm,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: _accuracyBg(info.accuracyPercent),
+                        borderRadius: BorderRadius.circular(AppRadius.pill),
+                      ),
+                      child: Text(
+                        '${(info.accuracyPercent ?? 0).toStringAsFixed(0)}%',
+                        style: AppTextStyles.caption().copyWith(
+                          color: _accuracyFg(info.accuracyPercent),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+              const Spacer(),
+              Text(
+                info.displayName,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.labelSm().copyWith(
+                  color: scheme.onSurface,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                hasAttempts
+                    ? '${info.attemptCount} attempted'
+                    : 'No practice yet',
+                style: AppTextStyles.caption().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Color _accuracyBg(double? pct) {
+    if (pct == null) return AppColors.gray100;
+    if (pct >= 75) return AppColors.correctBg;
+    if (pct >= 50) return AppColors.warningBg;
+    return AppColors.wrongBg;
+  }
+
+  Color _accuracyFg(double? pct) {
+    if (pct == null) return AppColors.gray600;
+    if (pct >= 75) return AppColors.correctText;
+    if (pct >= 50) return AppColors.warningText;
+    return AppColors.wrongText;
+  }
+}
+
+class _SubjectGridSkeleton extends StatelessWidget {
+  const _SubjectGridSkeleton({required this.borderColor});
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return GridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,
+      mainAxisSpacing: AppSpacing.sm,
+      crossAxisSpacing: AppSpacing.sm,
+      childAspectRatio: 1.55,
+      children: List.generate(
+        8,
+        (_) => Container(
+          decoration: BoxDecoration(
+            color: scheme.surfaceContainerLow,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ────────────────────────────────────────────────────────────────────────────────
 
 class _LastSessionCard extends HookConsumerWidget {
   const _LastSessionCard({required this.home, required this.borderColor});

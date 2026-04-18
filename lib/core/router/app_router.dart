@@ -28,6 +28,8 @@ import '../../features/home/providers/auth_providers.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
+import '../../features/subject_detail/screens/subject_detail_screen.dart';
+import '../../features/subject_detail/screens/topics_list_screen.dart';
 import '../../features/subject_test/screens/subject_test_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
 import '../../features/topic_test/screens/topic_test_screen.dart';
@@ -113,6 +115,20 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) {
           return CommunityConnectScreen(selectedUser: state.extra);
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/topics',
+        builder: (context, state) => TopicsListScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name',
+        builder: (context, state) => SubjectDetailScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
