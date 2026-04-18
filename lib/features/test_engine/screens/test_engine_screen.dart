@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' show min;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -19,10 +20,12 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/context_extensions.dart';
 import '../../../shared/widgets/question_table_view.dart';
+import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
+import '../widgets/exam_option_confidence_strip.dart';
 
 Future<void> _showConfidenceBottomSheet(
   BuildContext context,
@@ -76,7 +79,7 @@ Future<void> _showConfidenceBottomSheet(
                       .submitConfidenceForPending(AnswerConfidence.verySure);
                 },
                 child: Text(
-                  AnswerConfidence.displayLabel(AnswerConfidence.verySure),
+                  AnswerConfidence.examShortLabel(AnswerConfidence.verySure),
                 ),
               ),
               const SizedBox(height: AppSpacing.sm),
@@ -88,7 +91,9 @@ Future<void> _showConfidenceBottomSheet(
                       .submitConfidenceForPending(AnswerConfidence.somewhatSure);
                 },
                 child: Text(
-                  AnswerConfidence.displayLabel(AnswerConfidence.somewhatSure),
+                  AnswerConfidence.examShortLabel(
+                    AnswerConfidence.somewhatSure,
+                  ),
                 ),
               ),
               const SizedBox(height: AppSpacing.sm),
@@ -100,7 +105,7 @@ Future<void> _showConfidenceBottomSheet(
                       .submitConfidenceForPending(AnswerConfidence.guessing);
                 },
                 child: Text(
-                  AnswerConfidence.displayLabel(AnswerConfidence.guessing),
+                  AnswerConfidence.examShortLabel(AnswerConfidence.guessing),
                 ),
               ),
             ],
@@ -412,13 +417,25 @@ Future<void> _showTestPaletteSheet(
   if (state == null || state.session == null) return;
   final session = state.session!;
   if (session.mode != 'exam') return;
+  final isDark = context.isDarkMode;
+  final scheme = Theme.of(context).colorScheme;
+  final prefs = await ref.read(prefsServiceProvider.future);
+  if (!context.mounted) return;
+  final trackConfidence = prefs.confidenceTrackingEnabled;
+  final missingConfidence = trackConfidence
+      ? session.questions
+            .where(
+              (q) =>
+                  (q.status == 'correct' || q.status == 'wrong') &&
+                  q.confidence == null,
+            )
+            .length
+      : 0;
   final attempted =
       session.questions.where((q) => q.status != 'unattempted').length;
   final flagged = session.questions.where((q) => q.flagged).length;
   final skipped =
       session.questions.where((q) => q.status == 'unattempted').length;
-  final isDark = context.isDarkMode;
-  final scheme = Theme.of(context).colorScheme;
   await showModalBottomSheet<void>(
     context: context,
     backgroundColor: AppColors.transparent,
@@ -487,8 +504,47 @@ Future<void> _showTestPaletteSheet(
                   bg: scheme.surfaceContainerLow,
                   fg: scheme.onSurfaceVariant,
                 ),
+                if (trackConfidence) ...[
+                  _LegendItem(
+                    label: 'Sure',
+                    bg: AppColors.correct,
+                    fg: AppColors.onPrimary,
+                  ),
+                  _LegendItem(
+                    label: 'Intelligent',
+                    bg: AppColors.warning,
+                    fg: AppColors.onPrimary,
+                  ),
+                  _LegendItem(
+                    label: 'Pure guess',
+                    bg: scheme.tertiary,
+                    fg: scheme.onTertiary,
+                  ),
+                  _LegendItem(
+                    label: 'No confidence',
+                    bg: scheme.surfaceContainerLow,
+                    fg: scheme.onSurfaceVariant,
+                    dashedBorder: true,
+                  ),
+                ],
               ],
             ),
+            if (trackConfidence && missingConfidence > 0) ...[
+              const SizedBox(height: AppSpacing.sm),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Logging confidence helps spot blind spots and calibrate revision — '
+                  '$missingConfidence answered question${missingConfidence == 1 ? '' : 's'} '
+                  'have no confidence yet (dashed outline on the grid).',
+                  style: AppTextStyles.caption().copyWith(
+                    color: scheme.primary,
+                    fontWeight: FontWeight.w600,
+                    height: 1.35,
+                  ),
+                ),
+              ),
+            ],
             const SizedBox(height: AppSpacing.md),
             Wrap(
               spacing: AppSpacing.sm,
@@ -505,6 +561,7 @@ Future<void> _showTestPaletteSheet(
                       currentIndex: state.currentIndex,
                       q: session.questions[i],
                       isDark: isDark,
+                      trackConfidence: trackConfidence,
                     ),
                   ),
               ],
@@ -608,36 +665,53 @@ class _CountCell extends HookConsumerWidget {
 }
 
 class _LegendItem extends HookConsumerWidget {
-  const _LegendItem({required this.label, required this.bg, required this.fg});
+  const _LegendItem({
+    required this.label,
+    required this.bg,
+    required this.fg,
+    this.dashedBorder = false,
+  });
 
   final String label;
   final Color bg;
   final Color fg;
+  final bool dashedBorder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    Widget swatch = Container(
+      width: 16,
+      height: 16,
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Center(
+        child: Text(
+          '•',
+          style: AppTextStyles.caption().copyWith(color: fg, height: 1),
+        ),
+      ),
+    );
+    if (dashedBorder) {
+      swatch = CustomPaint(
+        painter: _DashedRRectPainter(
+          color: scheme.outline,
+          radius: 4,
+        ),
+        child: swatch,
+      );
+    }
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          width: 16,
-          height: 16,
-          decoration: BoxDecoration(
-            color: bg,
-            borderRadius: BorderRadius.circular(4),
-          ),
-          child: Center(
-            child: Text(
-              '•',
-              style: AppTextStyles.caption().copyWith(color: fg, height: 1),
-            ),
-          ),
-        ),
+        swatch,
         const SizedBox(width: AppSpacing.xs),
         Text(
           label,
           style: AppTextStyles.caption().copyWith(
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
+            color: scheme.onSurfaceVariant,
           ),
         ),
       ],
@@ -910,7 +984,7 @@ class _QuestionArea extends HookConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (trimmedDisplayText.isNotEmpty)
-            Text(
+            SelectableCopySearchText(
               trimmedDisplayText,
               style: AppTextStyles.question().copyWith(color: scheme.onSurface),
             ),
@@ -925,8 +999,12 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.lg),
           _OptionRow(
             keyLabel: 'A',
+            optionKey: 'a',
             optionText: optionA,
             visual: _optionVisual(mode, question, 'a', explanationVisible),
+            mode: mode,
+            sessionId: sessionId,
+            question: question,
             onTap:
                 (mode == 'learning' && explanationVisible)
                     ? null
@@ -935,8 +1013,12 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
             keyLabel: 'B',
+            optionKey: 'b',
             optionText: optionB,
             visual: _optionVisual(mode, question, 'b', explanationVisible),
+            mode: mode,
+            sessionId: sessionId,
+            question: question,
             onTap:
                 (mode == 'learning' && explanationVisible)
                     ? null
@@ -945,8 +1027,12 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
             keyLabel: 'C',
+            optionKey: 'c',
             optionText: optionC,
             visual: _optionVisual(mode, question, 'c', explanationVisible),
+            mode: mode,
+            sessionId: sessionId,
+            question: question,
             onTap:
                 (mode == 'learning' && explanationVisible)
                     ? null
@@ -955,8 +1041,12 @@ class _QuestionArea extends HookConsumerWidget {
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
             keyLabel: 'D',
+            optionKey: 'd',
             optionText: optionD,
             visual: _optionVisual(mode, question, 'd', explanationVisible),
+            mode: mode,
+            sessionId: sessionId,
+            question: question,
             onTap:
                 (mode == 'learning' && explanationVisible)
                     ? null
@@ -1010,20 +1100,29 @@ enum _OptionVisual { unselected, selected, correct, wrong }
 class _OptionRow extends HookConsumerWidget {
   const _OptionRow({
     required this.keyLabel,
+    required this.optionKey,
     required this.optionText,
     required this.visual,
     required this.onTap,
+    required this.mode,
+    required this.sessionId,
+    required this.question,
   });
 
   final String keyLabel;
+  final String optionKey;
   final String optionText;
   final _OptionVisual visual;
   final VoidCallback? onTap;
+  final String mode;
+  final String sessionId;
+  final TestQuestion question;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
+    final prefs = ref.watch(prefsServiceProvider).value;
 
     Color bg;
     Color border;
@@ -1063,42 +1162,135 @@ class _OptionRow extends HookConsumerWidget {
         borderWidth = 2;
     }
 
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(AppRadius.md),
+    final scored =
+        question.status == 'correct' || question.status == 'wrong';
+    final selectedHere =
+        question.selectedOption?.toLowerCase() == optionKey.toLowerCase();
+    final showExamConfidenceStrip =
+        mode == 'exam' &&
+        (prefs?.confidenceTrackingEnabled ?? false) &&
+        scored &&
+        selectedHere;
+
+    final outerRadius = BorderRadius.circular(AppRadius.md);
+
+    return ClipRRect(
+      borderRadius: outerRadius,
+      child: Material(
+        color: AppColors.transparent,
         child: Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(AppSpacing.md),
           decoration: BoxDecoration(
             color: bg,
-            borderRadius: BorderRadius.circular(AppRadius.md),
+            borderRadius: outerRadius,
             border: Border.all(color: border, width: borderWidth),
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                width: 24,
-                height: 24,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: badgeBg,
-                  borderRadius: BorderRadius.circular(AppRadius.sm),
+              if (onTap != null)
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: onTap,
+                    borderRadius: showExamConfidenceStrip
+                        ? const BorderRadius.vertical(
+                            top: Radius.circular(AppRadius.md),
+                          )
+                        : BorderRadius.circular(AppRadius.md),
+                    child: Padding(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: Center(
+                              child: Container(
+                                width: 24,
+                                height: 24,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: badgeBg,
+                                  borderRadius: BorderRadius.circular(
+                                    AppRadius.sm,
+                                  ),
+                                ),
+                                child: Text(
+                                  keyLabel,
+                                  style: AppTextStyles.labelSm().copyWith(
+                                    color: badgeText,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: AppSpacing.md),
+                          Expanded(
+                            child: Text(
+                              optionText,
+                              style: AppTextStyles.option().copyWith(
+                                color: text,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              else
+                Padding(
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: Center(
+                          child: Container(
+                            width: 24,
+                            height: 24,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: badgeBg,
+                              borderRadius: BorderRadius.circular(
+                                AppRadius.sm,
+                              ),
+                            ),
+                            child: Text(
+                              keyLabel,
+                              style: AppTextStyles.labelSm().copyWith(
+                                color: badgeText,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.md),
+                      Expanded(
+                        child: SelectableCopySearchText(
+                          optionText,
+                          style: AppTextStyles.option().copyWith(color: text),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: Text(
-                  keyLabel,
-                  style: AppTextStyles.labelSm().copyWith(color: badgeText),
+              if (showExamConfidenceStrip) ...[
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: border.withValues(alpha: isDark ? 0.45 : 0.35),
                 ),
-              ),
-              const SizedBox(width: AppSpacing.md),
-              Expanded(
-                child: Text(
-                  optionText,
-                  style: AppTextStyles.option().copyWith(color: text),
+                ExamOptionConfidenceStrip(
+                  sessionId: sessionId,
+                  question: question,
                 ),
-              ),
+              ],
             ],
           ),
         ),
@@ -1185,7 +1377,7 @@ class _ExplanationCard extends HookConsumerWidget {
               ),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
-                child: Text(
+                child: SelectableCopySearchText(
                   question.conceptAnchor ?? '',
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,
@@ -1387,15 +1579,18 @@ class _PaletteCell extends HookConsumerWidget {
     required this.currentIndex,
     required this.q,
     required this.isDark,
+    required this.trackConfidence,
   });
 
   final int index;
   final int currentIndex;
   final TestQuestion q;
   final bool isDark;
+  final bool trackConfidence;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
     Color bg;
     Color fg;
 
@@ -1409,11 +1604,27 @@ class _PaletteCell extends HookConsumerWidget {
       bg = isDark ? AppColors.correctBgDark : AppColors.correctBg;
       fg = isDark ? AppColors.correctTextDark : AppColors.correctText;
     } else {
-      bg = Theme.of(context).colorScheme.surfaceContainerLow;
-      fg = Theme.of(context).colorScheme.onSurfaceVariant;
+      bg = scheme.surfaceContainerLow;
+      fg = scheme.onSurfaceVariant;
     }
 
-    return Container(
+    final scored = q.status == 'correct' || q.status == 'wrong';
+    Color? confStrip;
+    var missingConf = false;
+    if (trackConfidence && scored) {
+      switch (q.confidence) {
+        case AnswerConfidence.verySure:
+          confStrip = AppColors.correct;
+        case AnswerConfidence.somewhatSure:
+          confStrip = AppColors.warning;
+        case AnswerConfidence.guessing:
+          confStrip = scheme.tertiary;
+        default:
+          missingConf = true;
+      }
+    }
+
+    Widget cell = Container(
       width: 40,
       height: 40,
       alignment: Alignment.center,
@@ -1426,5 +1637,74 @@ class _PaletteCell extends HookConsumerWidget {
         style: AppTextStyles.labelSm().copyWith(color: fg),
       ),
     );
+
+    if (confStrip != null) {
+      cell = Stack(
+        clipBehavior: Clip.none,
+        children: [
+          cell,
+          Positioned(
+            top: 0,
+            left: 3,
+            right: 3,
+            child: Container(
+              height: 3,
+              decoration: BoxDecoration(
+                color: confStrip,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(2),
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    } else if (missingConf) {
+      cell = CustomPaint(
+        painter: _DashedRRectPainter(
+          color: scheme.outline,
+          radius: AppRadius.sm,
+        ),
+        child: cell,
+      );
+    }
+
+    return cell;
   }
+}
+
+/// Rounded-rectangle dashed stroke for “confidence not logged” cells.
+class _DashedRRectPainter extends CustomPainter {
+  _DashedRRectPainter({required this.color, required this.radius});
+
+  final Color color;
+  final double radius;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final inset = 1.0;
+    final rrect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(inset, inset, size.width - 2 * inset, size.height - 2 * inset),
+      Radius.circular(radius),
+    );
+    final path = Path()..addRRect(rrect);
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.6;
+    for (final metric in path.computeMetrics()) {
+      var distance = 0.0;
+      const dashLen = 3.5;
+      const gapLen = 3.0;
+      while (distance < metric.length) {
+        final next = min(distance + dashLen, metric.length);
+        canvas.drawPath(metric.extractPath(distance, next), paint);
+        distance = next + gapLen;
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _DashedRRectPainter oldDelegate) =>
+      oldDelegate.color != color || oldDelegate.radius != radius;
 }

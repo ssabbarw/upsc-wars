@@ -22,6 +22,12 @@ class SessionResult {
     this.graduatedCount = 0,
     this.dangerZoneWrongCount = 0,
     this.dangerZoneMarksEstimate = 0.0,
+    this.confidenceSureTotal = 0,
+    this.confidenceSureCorrect = 0,
+    this.confidenceIntelligentTotal = 0,
+    this.confidenceIntelligentCorrect = 0,
+    this.confidencePureTotal = 0,
+    this.confidencePureCorrect = 0,
   });
   final String sessionId;
   final String subject;
@@ -52,4 +58,16 @@ class SessionResult {
 
   /// Approximate marks lost at Prelims negative marking (-0.66 per question).
   final double dangerZoneMarksEstimate;
+
+  /// Scored rows with confidence == sure ([AnswerConfidence.verySure]).
+  final int confidenceSureTotal;
+  final int confidenceSureCorrect;
+
+  /// Scored rows with intelligent guess ([AnswerConfidence.somewhatSure]).
+  final int confidenceIntelligentTotal;
+  final int confidenceIntelligentCorrect;
+
+  /// Scored rows with pure guess ([AnswerConfidence.guessing]).
+  final int confidencePureTotal;
+  final int confidencePureCorrect;
 }

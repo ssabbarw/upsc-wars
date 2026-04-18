@@ -1,3 +1,6 @@
+/// Sentinel for [TestQuestion.copyWith] so `confidence: null` clears the field.
+enum _ConfidenceCopyUnset { unset }
+
 class QuestionTableData {
   const QuestionTableData({
     required this.header,
@@ -99,8 +102,15 @@ class TestQuestion {
     String? status,
     bool? flagged,
     int? timeSpentSecs,
-    String? confidence,
+    Object? confidence = _ConfidenceCopyUnset.unset,
   }) {
+    final String? nextConfidence;
+    if (identical(confidence, _ConfidenceCopyUnset.unset)) {
+      nextConfidence = this.confidence;
+    } else {
+      nextConfidence = confidence as String?;
+    }
+
     return TestQuestion(
       uuid: uuid,
       subject: subject,
@@ -127,7 +137,7 @@ class TestQuestion {
       status: status ?? this.status,
       flagged: flagged ?? this.flagged,
       timeSpentSecs: timeSpentSecs ?? this.timeSpentSecs,
-      confidence: confidence ?? this.confidence,
+      confidence: nextConfidence,
       conceptAnchor: conceptAnchor,
       finalExplanation: finalExplanation,
       finalExplanationHi: finalExplanationHi,

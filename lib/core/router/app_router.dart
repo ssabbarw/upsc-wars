@@ -27,6 +27,7 @@ import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
 import '../../features/internal/screens/feature_health_screen.dart';
 import '../../features/home/providers/auth_providers.dart';
+import '../../features/results/screens/confidence_tier_review_screen.dart';
 import '../../features/results/screens/danger_zone_review_screen.dart';
 import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
@@ -230,6 +231,14 @@ GoRouter appRouter(Ref ref) {
         path: '/danger-zone/:sessionId',
         builder: (context, state) => DangerZoneReviewScreen(
           sessionId: state.pathParameters['sessionId']!,
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/session-confidence-review/:sessionId/:tier',
+        builder: (context, state) => ConfidenceTierReviewScreen(
+          sessionId: state.pathParameters['sessionId']!,
+          tier: state.pathParameters['tier']!,
         ),
       ),
       GoRoute(

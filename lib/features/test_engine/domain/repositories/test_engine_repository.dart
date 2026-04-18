@@ -18,6 +18,13 @@ abstract class TestEngineRepository {
     QuestionAttemptAnalyticsInput? analytics,
   });
 
+  /// Updates only `confidence` for an already scored attempt (exam optional slider).
+  Future<void> updateAttemptConfidenceOnly({
+    required String sessionId,
+    required String questionUuid,
+    String? confidence,
+  });
+
   Future<void> updateQuestionTime({
     required String sessionId,
     required String questionUuid,

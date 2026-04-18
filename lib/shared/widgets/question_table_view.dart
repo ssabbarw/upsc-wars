@@ -6,6 +6,7 @@ import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 
 /// Renders [QuestionTableData] (header, column labels, rows, footer) for stems
 /// and review screens.
@@ -40,7 +41,7 @@ class QuestionTableView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (header != null && header.isNotEmpty) ...[
-          Text(
+          SelectableCopySearchText(
             header,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,
@@ -79,7 +80,7 @@ class QuestionTableView extends StatelessWidget {
                             horizontal: AppSpacing.sm,
                             vertical: AppSpacing.sm,
                           ),
-                          child: Text(
+                          child: SelectableCopySearchText(
                             cell,
                             textAlign: TextAlign.left,
                             style: (rowIndex == 0
@@ -96,7 +97,7 @@ class QuestionTableView extends StatelessWidget {
         ),
         if (footer != null && footer.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.sm),
-          Text(
+          SelectableCopySearchText(
             footer,
             style: AppTextStyles.bodySm().copyWith(
               color: scheme.onSurfaceVariant,

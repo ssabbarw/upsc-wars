@@ -20,6 +20,7 @@ import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/test_engine/providers/test_session_state.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
+import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
 
 class BattleTestScreen extends ConsumerWidget {
@@ -902,7 +903,7 @@ class _BattleQuestionBlock extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (trimmed.isNotEmpty)
-          Text(
+          SelectableCopySearchText(
             trimmed,
             style: AppTextStyles.question().copyWith(color: scheme.onSurface),
           ),
@@ -1037,36 +1038,70 @@ class _BattleOptionRow extends StatelessWidget {
         borderWidth = 2;
     }
 
-    return InkWell(
-      borderRadius: BorderRadius.circular(AppRadius.md),
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(color: border, width: borderWidth),
+      ),
+      child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),
-        decoration: BoxDecoration(
-          color: bg,
-          borderRadius: BorderRadius.circular(AppRadius.md),
-          border: Border.all(color: border, width: borderWidth),
-        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 28,
-              height: 28,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: badgeBg,
-                borderRadius: BorderRadius.circular(AppRadius.sm),
+            if (onTap != null)
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: onTap,
+                  borderRadius: BorderRadius.circular(AppRadius.sm),
+                  child: SizedBox(
+                    width: 44,
+                    height: 44,
+                    child: Center(
+                      child: Container(
+                        width: 28,
+                        height: 28,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: badgeBg,
+                          borderRadius: BorderRadius.circular(AppRadius.sm),
+                        ),
+                        child: Text(
+                          keyLabel,
+                          style: AppTextStyles.labelSm().copyWith(
+                            color: badgeText,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            else
+              SizedBox(
+                width: 44,
+                height: 44,
+                child: Center(
+                  child: Container(
+                    width: 28,
+                    height: 28,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: badgeBg,
+                      borderRadius: BorderRadius.circular(AppRadius.sm),
+                    ),
+                    child: Text(
+                      keyLabel,
+                      style: AppTextStyles.labelSm().copyWith(color: badgeText),
+                    ),
+                  ),
+                ),
               ),
-              child: Text(
-                keyLabel,
-                style: AppTextStyles.labelSm().copyWith(color: badgeText),
-              ),
-            ),
             const SizedBox(width: AppSpacing.sm),
             Expanded(
-              child: Text(
+              child: SelectableCopySearchText(
                 optionText,
                 style: AppTextStyles.option().copyWith(color: text),
               ),
@@ -1155,7 +1190,7 @@ class _BattleExplanationPanel extends StatelessWidget {
               ),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
-                child: Text(
+                child: SelectableCopySearchText(
                   question.conceptAnchor ?? '',
                   style: AppTextStyles.caption().copyWith(
                     color: scheme.onSurfaceVariant,

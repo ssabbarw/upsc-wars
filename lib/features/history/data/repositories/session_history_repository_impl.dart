@@ -1,5 +1,6 @@
 import 'package:upsc_wars/core/database/user_db.dart';
-import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
+import 'package:upsc_wars/core/domain/entities/answer_confidence.dart'
+    show AnswerConfidence;
 import 'package:upsc_wars/core/domain/entities/session_result.dart';
 import 'package:upsc_wars/core/domain/entities/session_summary.dart';
 import 'package:upsc_wars/core/domain/errors/app_errors.dart';
@@ -52,6 +53,22 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
     }
     final dangerMarks = dangerZoneWrong * 0.66;
 
+    var sureT = 0, sureC = 0, intelT = 0, intelC = 0, pureT = 0, pureC = 0;
+    for (final r in rows) {
+      if (r.status != 'correct' && r.status != 'wrong') continue;
+      final c = r.confidence;
+      if (c == AnswerConfidence.verySure) {
+        sureT++;
+        if (r.status == 'correct') sureC++;
+      } else if (c == AnswerConfidence.somewhatSure) {
+        intelT++;
+        if (r.status == 'correct') intelC++;
+      } else if (c == AnswerConfidence.guessing) {
+        pureT++;
+        if (r.status == 'correct') pureC++;
+      }
+    }
+
     var graduatedCount = 0;
     if (session.subject == 'revision_quick') {
       for (final r in rows) {
@@ -91,6 +108,12 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
       graduatedCount: graduatedCount,
       dangerZoneWrongCount: dangerZoneWrong,
       dangerZoneMarksEstimate: dangerMarks,
+      confidenceSureTotal: sureT,
+      confidenceSureCorrect: sureC,
+      confidenceIntelligentTotal: intelT,
+      confidenceIntelligentCorrect: intelC,
+      confidencePureTotal: pureT,
+      confidencePureCorrect: pureC,
     );
   }
 

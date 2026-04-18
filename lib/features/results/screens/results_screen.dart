@@ -15,6 +15,7 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/extensions/time_formatting.dart';
 import '../../battle/widgets/battle_live_scoreboard.dart';
+import '../widgets/confidence_insights_section.dart';
 
 class ResultsScreen extends HookConsumerWidget {
   const ResultsScreen({super.key, required this.sessionId});
@@ -117,6 +118,13 @@ class ResultsScreen extends HookConsumerWidget {
                           sessionId: sessionId,
                           result: r,
                           scheme: scheme,
+                        ),
+                        const SizedBox(height: AppSpacing.md),
+                      ],
+                      if (ConfidenceInsightsSection.shouldShow(r)) ...[
+                        ConfidenceInsightsSection(
+                          sessionId: sessionId,
+                          result: r,
                         ),
                         const SizedBox(height: AppSpacing.md),
                       ],

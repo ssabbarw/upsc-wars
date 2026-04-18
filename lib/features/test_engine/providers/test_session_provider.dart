@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
+import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
@@ -124,6 +125,19 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     if (current.confidencePromptVisible) return;
 
     final prefs = await ref.read(prefsServiceProvider.future);
+
+    // Exam: optional confidence via slider after answer (never blocking sheet).
+    if (s.mode == 'exam') {
+      await _commitSelectedOption(option, confidence: null);
+      return;
+    }
+
+    // Learning: optional global toggle; then adaptive sheet or direct commit.
+    if (!prefs.confidenceTrackingEnabled) {
+      await _commitSelectedOption(option, confidence: null);
+      return;
+    }
+
     final prompt = ConfidencePromptPolicy.shouldPrompt(
       prefs: prefs,
       question: q,
@@ -143,6 +157,39 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     }
 
     await _commitSelectedOption(option, confidence: null);
+  }
+
+  /// Exam-mode slider: set or clear confidence after the answer is saved.
+  Future<void> updateExamQuestionConfidence({
+    required String questionUuid,
+    required String? confidence,
+  }) async {
+    final current = state.asData?.value;
+    final s = current?.session;
+    if (current == null || s == null || s.mode != 'exam') return;
+    final prefs = await ref.read(prefsServiceProvider.future);
+    if (!prefs.confidenceTrackingEnabled) return;
+    if (confidence != null && !AnswerConfidence.values.contains(confidence)) {
+      return;
+    }
+
+    try {
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      await repo.updateAttemptConfidenceOnly(
+        sessionId: s.id,
+        questionUuid: questionUuid,
+        confidence: confidence,
+      );
+      final idx = s.questions.indexWhere((q) => q.uuid == questionUuid);
+      if (idx < 0) return;
+      final updated = [...s.questions];
+      updated[idx] = updated[idx].copyWith(confidence: confidence);
+      state = AsyncData(
+        current.copyWith(session: s.copyWith(questions: updated)),
+      );
+    } catch (_) {
+      _showStorageSnack();
+    }
   }
 
   Future<void> submitConfidenceForPending(String confidence) async {
@@ -175,9 +222,20 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     String option, {
     required String? confidence,
   }) async {
-    final current = state.asData?.value;
-    final s = current?.session;
-    if (current == null || s == null) return;
+    var current = state.asData?.value;
+    if (current == null || current.session == null) return;
+
+    // Clear the flag synchronously before any await. Otherwise the modal
+    // finishes, `_showConfidenceBottomSheet` sees `confidencePromptVisible` still
+    // true, calls `cancelConfidencePrompt`, and the subsequent commit state write
+    // can briefly flip the flag true again — `ref.listen` fires twice.
+    if (current.confidencePromptVisible) {
+      state = AsyncData(current.copyWith(confidencePromptVisible: false));
+      current = state.asData?.value;
+      if (current == null || current.session == null) return;
+    }
+
+    final s = current.session!;
     final q = s.questions[current.currentIndex];
     final wasFresh =
         q.status == 'unattempted' && (q.selectedOption == null || q.selectedOption!.isEmpty);
@@ -224,6 +282,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
           lifetimeScoredAttempts: wasFresh
               ? current.lifetimeScoredAttempts + 1
               : current.lifetimeScoredAttempts,
+          confidencePromptVisible: false,
         ),
       );
     } catch (_) {

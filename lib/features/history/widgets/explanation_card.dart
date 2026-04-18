@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
+
 class QuestionTranslation {
   const QuestionTranslation({
     required this.finalExplanation,
@@ -81,7 +83,7 @@ class ExplanationCard extends HookConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                SelectableCopySearchText(
                   body,
                   style: TextStyle(
                     fontSize: 13,
@@ -111,7 +113,7 @@ class ExplanationCard extends HookConsumerWidget {
                           ),
                         ),
                         const SizedBox(height: 5),
-                        Text(
+                        SelectableCopySearchText(
                           valueAdd,
                           style: TextStyle(
                             fontSize: 12,
@@ -266,7 +268,7 @@ class _TabBody extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    SelectableCopySearchText(
                       'Watch out - ${watchOut!.title}',
                       style: TextStyle(
                         fontSize: 10,
@@ -276,7 +278,7 @@ class _TabBody extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    Text(
+                    SelectableCopySearchText(
                       watchOut!.reason,
                       style: TextStyle(
                         fontSize: 12,
@@ -305,7 +307,7 @@ class _TabBody extends StatelessWidget {
                     ),
                     const SizedBox(width: 10),
                     Expanded(
-                      child: Text(
+                      child: SelectableCopySearchText(
                         translation.eliminationLogic[i],
                         style: TextStyle(
                           fontSize: 12,
@@ -323,7 +325,7 @@ class _TabBody extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            SelectableCopySearchText(
               (translation.upscTrapExplanation ?? '').trim(),
               style: TextStyle(
                 fontSize: 12,
@@ -351,7 +353,7 @@ class _TabBody extends StatelessWidget {
                         ),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Text(
+                      child: SelectableCopySearchText(
                         tag,
                         style: TextStyle(
                           fontSize: 11,
@@ -414,7 +416,7 @@ class _StatementRow extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Expanded(
-                child: Text(
+                child: SelectableCopySearchText(
                   item.statement,
                   style: TextStyle(
                     fontSize: 12,
@@ -444,7 +446,7 @@ class _StatementRow extends StatelessWidget {
           const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.only(left: 26),
-            child: Text(
+            child: SelectableCopySearchText(
               item.reason,
               style: TextStyle(
                 fontSize: 12,

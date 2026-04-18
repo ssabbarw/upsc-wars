@@ -309,6 +309,27 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
   }
 
   @override
+  Future<void> updateAttemptConfidenceOnly({
+    required String sessionId,
+    required String questionUuid,
+    String? confidence,
+  }) async {
+    final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+      sessionId,
+    );
+    final sq = rows.where((e) => e.questionUuid == questionUuid).firstOrNull;
+    if (sq == null) return;
+    final conf =
+        confidence != null && AnswerConfidence.values.contains(confidence)
+            ? confidence
+            : null;
+    await _userDb.sessionQuestionsDao.updateSessionQuestionFields(
+      sq.id,
+      confidence: Value(conf),
+    );
+  }
+
+  @override
   Future<void> updateQuestionTime({
     required String sessionId,
     required String questionUuid,

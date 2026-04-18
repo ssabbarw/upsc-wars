@@ -3,12 +3,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
+import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 
@@ -238,7 +240,7 @@ class ReviewBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
+              SelectableCopySearchText(
                 parsed.stem,
                 style: TextStyle(
                   fontSize: 13.5,
@@ -260,7 +262,7 @@ class ReviewBody extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: Text(
+                    child: SelectableCopySearchText(
                       st,
                       style: TextStyle(
                         fontSize: 13,
@@ -580,9 +582,24 @@ class _VerdictStrip extends StatelessWidget {
                 ),
             ],
           ),
+          if (question.status == 'correct' || question.status == 'wrong') ...[
+            const SizedBox(height: 8),
+            Text(
+              question.confidence == null
+                  ? 'Confidence: not logged'
+                  : 'Confidence: ${AnswerConfidence.examShortLabel(question.confidence!)}',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+                color: question.confidence == null
+                    ? scheme.onSurfaceVariant
+                    : scheme.primary,
+              ),
+            ),
+          ],
           if ((question.conceptAnchor ?? '').trim().isNotEmpty) ...[
             const SizedBox(height: 5),
-            Text(
+            SelectableCopySearchText(
               question.conceptAnchor!.trim(),
               style: TextStyle(fontSize: 12, color: status.anchorColor),
             ),
@@ -669,7 +686,7 @@ class _OptionRow extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           Expanded(
-            child: Text(
+            child: SelectableCopySearchText(
               text,
               style: TextStyle(
                 fontSize: 13,
