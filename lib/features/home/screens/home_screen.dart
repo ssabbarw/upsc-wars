@@ -357,6 +357,14 @@ class HomeScreen extends HookConsumerWidget {
                   ],
                 ),
                 data: (h) {
+                  const pyqYears = [
+                    '2025',
+                    '2024',
+                    '2023',
+                    '2022',
+                    '2021',
+                    '2020',
+                  ];
                   final goalDone = h.dailyGoalProgress >= h.dailyGoalTarget;
                   final progress = h.dailyGoalTarget == 0
                       ? 0.0
@@ -403,6 +411,16 @@ class HomeScreen extends HookConsumerWidget {
                       _QuickPracticeSection(borderColor: borderColor),
                       const SizedBox(height: AppSpacing.md),
                       _QuickGrid(home: h, borderColor: borderColor),
+                      const SizedBox(height: AppSpacing.md),
+                      _PyqYearCarousel(
+                        borderColor: borderColor,
+                        years: pyqYears,
+                      ),
+                      const SizedBox(height: AppSpacing.lg),
+                      _SubjectCarousel(
+                        borderColor: borderColor,
+                        subjects: SubjectConstants.ordered,
+                      ),
                       if (h.revisionTrapCount > 0) ...[
                         const SizedBox(height: AppSpacing.md),
                         _TrapPatternsCard(
@@ -852,6 +870,263 @@ class _TrapPatternsCard extends StatelessWidget {
                 ),
               ),
               Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CarouselSectionHeader extends StatelessWidget {
+  const _CarouselSectionHeader({
+    required this.title,
+    required this.leadingIcon,
+    required this.accent,
+  });
+
+  final String title;
+  final IconData leadingIcon;
+  final Color accent;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Row(
+      children: [
+        Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppRadius.sm),
+            color: accent.withValues(alpha: 0.16),
+            border: Border.all(
+              color: accent.withValues(alpha: 0.35),
+              width: 0.5,
+            ),
+          ),
+          child: Icon(leadingIcon, size: 16, color: accent),
+        ),
+        const SizedBox(width: AppSpacing.sm),
+        Expanded(
+          child: Text(
+            title.toUpperCase(),
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              letterSpacing: 0.6,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _PyqYearCarousel extends StatelessWidget {
+  const _PyqYearCarousel({
+    required this.borderColor,
+    required this.years,
+  });
+
+  final Color borderColor;
+  final List<String> years;
+
+  static const _icons = <IconData>[
+    Icons.calendar_month_rounded,
+    Icons.auto_stories_outlined,
+    Icons.quiz_outlined,
+    Icons.history_toggle_off_rounded,
+    Icons.school_outlined,
+    Icons.edit_note_rounded,
+  ];
+
+  static const _accents = <Color>[
+    AppColors.primary,
+    AppColors.info,
+    AppColors.warning,
+    AppColors.correct,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const _CarouselSectionHeader(
+          title: 'PYQ by year',
+          leadingIcon: Icons.timeline,
+          accent: AppColors.primary,
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _HorizontalDiscoveryStrip(
+          children: [
+            for (var i = 0; i < years.length; i++) ...[
+              if (i != 0) const SizedBox(width: AppSpacing.sm),
+              _HomeDiscoveryCard(
+                borderColor: borderColor,
+                titleText: years[i],
+                icon: _icons[i % _icons.length],
+                accent: _accents[i % _accents.length],
+              ),
+            ],
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _SubjectCarousel extends StatelessWidget {
+  const _SubjectCarousel({
+    required this.borderColor,
+    required this.subjects,
+  });
+
+  final Color borderColor;
+  final List<SubjectDefinition> subjects;
+
+  static const _accents = <Color>[
+    AppColors.info,
+    AppColors.warning,
+    AppColors.primary,
+    AppColors.correct,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const _CarouselSectionHeader(
+          title: 'All subjects',
+          leadingIcon: Icons.layers_outlined,
+          accent: AppColors.info,
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        _HorizontalDiscoveryStrip(
+          children: [
+            for (var i = 0; i < subjects.length; i++) ...[
+              if (i != 0) const SizedBox(width: AppSpacing.sm),
+              _HomeDiscoveryCard(
+                borderColor: borderColor,
+                titleText: subjects[i].displayName,
+                icon: subjects[i].materialIcon,
+                accent: _accents[i % _accents.length],
+                compactTitle: true,
+              ),
+            ],
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+/// Horizontal strip; row height follows the tallest card (no fixed outer height).
+class _HorizontalDiscoveryStrip extends StatelessWidget {
+  const _HorizontalDiscoveryStrip({required this.children});
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      physics: const BouncingScrollPhysics(),
+      clipBehavior: Clip.none,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: children,
+      ),
+    );
+  }
+}
+
+class _HomeDiscoveryCard extends StatelessWidget {
+  const _HomeDiscoveryCard({
+    required this.borderColor,
+    required this.titleText,
+    required this.icon,
+    required this.accent,
+    this.compactTitle = false,
+  });
+
+  final Color borderColor;
+  final String titleText;
+  final IconData icon;
+  final Color accent;
+  /// Smaller centered title (e.g. subject names on home carousels).
+  final bool compactTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final iconWellFill = isDark
+        ? accent.withValues(alpha: 0.22)
+        : accent.withValues(alpha: 0.12);
+    final iconWellBorder = accent.withValues(alpha: isDark ? 0.55 : 0.45);
+    final cardFill = Color.lerp(
+      scheme.surfaceContainerLow,
+      accent,
+      isDark ? 0.14 : 0.10,
+    )!;
+
+    return Material(
+      color: AppColors.transparent,
+      child: InkWell(
+        onTap: () {},
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        child: Ink(
+          width: 138,
+          padding: const EdgeInsets.all(AppSpacing.md),
+          decoration: BoxDecoration(
+            color: cardFill,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            border: Border.all(color: borderColor, width: 0.5),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: iconWellFill,
+                  border: Border.all(color: iconWellBorder, width: 1.5),
+                ),
+                alignment: Alignment.center,
+                child: Icon(icon, size: 30, color: accent),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                titleText,
+                maxLines: compactTitle ? 3 : 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: compactTitle
+                    ? AppTextStyles.labelSm().copyWith(
+                        color: scheme.onSurface,
+                        height: 1.25,
+                        fontWeight: FontWeight.w600,
+                      )
+                    : AppTextStyles.h2().copyWith(
+                        color: scheme.onSurface,
+                        height: 1.2,
+                      ),
+              ),
+              const SizedBox(height: AppSpacing.xs),
+              Container(
+                width: 28,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: accent,
+                  borderRadius: BorderRadius.circular(AppRadius.pill),
+                ),
+              ),
             ],
           ),
         ),

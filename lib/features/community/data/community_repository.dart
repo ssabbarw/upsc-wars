@@ -32,17 +32,15 @@ class CommunityRepository {
     if (kDebugMode) {
       final path = docRef.path;
       final segments = path.split('/');
-      final bucketId =
-          segments.length >= 2 ? segments[segments.length - 1] : '?';
+      final bucketId = segments.length >= 2
+          ? segments[segments.length - 1]
+          : '?';
       debugPrint(
         '[CommunityPresence] merge user field on doc=$path '
         '(bucket=$bucketId, topLevelField=$emailFieldKey)',
       );
     }
-    await docRef.set(
-      {emailFieldKey: userPayload},
-      SetOptions(merge: true),
-    );
+    await docRef.set({emailFieldKey: userPayload}, SetOptions(merge: true));
   }
 
   Future<List<CommunityUser>> fetchRecentUsers({int bucketOffset = 0}) async {
