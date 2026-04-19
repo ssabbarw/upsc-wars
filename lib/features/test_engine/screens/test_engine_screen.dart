@@ -1197,10 +1197,15 @@ class _OptionRow extends HookConsumerWidget {
                           ),
                           const SizedBox(width: AppSpacing.md),
                           Expanded(
-                            child: Text(
-                              optionText,
-                              style: AppTextStyles.option().copyWith(
-                                color: text,
+                            child: Text.rich(
+                              TextSpan(
+                                style: AppTextStyles.option().copyWith(
+                                  color: text,
+                                ),
+                                children: doubleAsteriskBoldInlineSpans(
+                                  optionText,
+                                  AppTextStyles.option().copyWith(color: text),
+                                ),
                               ),
                             ),
                           ),

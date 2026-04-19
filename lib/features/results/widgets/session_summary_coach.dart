@@ -73,6 +73,7 @@ class SessionSummaryCoachContent extends ConsumerWidget {
           ),
         ],
         _ScoreTrendCard(
+          sessionId: sessionId,
           result: result,
           displaySubjectName: displaySubjectName,
           scheme: scheme,
@@ -89,24 +90,24 @@ class SessionSummaryCoachContent extends ConsumerWidget {
             isDark: isDark,
           ),
           const SizedBox(height: AppSpacing.md),
-              _NextActionCard(
-                plan: plan,
-                result: result,
-                sessionId: sessionId,
-                scheme: scheme,
-                isDark: isDark,
-              ),
+          _NextActionCard(
+            plan: plan,
+            result: result,
+            sessionId: sessionId,
+            scheme: scheme,
+            isDark: isDark,
+          ),
           const SizedBox(height: AppSpacing.md),
-              _ProgressWeakCard(
-                displaySubjectName: displaySubjectName,
-                result: result,
-                historyAsync: historyAsync,
-                weakTopic: weak,
-                scheme: scheme,
-                isDark: isDark,
-                canScope: _canSubjectScope,
-                ref: ref,
-              ),
+          _ProgressWeakCard(
+            displaySubjectName: displaySubjectName,
+            result: result,
+            historyAsync: historyAsync,
+            weakTopic: weak,
+            scheme: scheme,
+            isDark: isDark,
+            canScope: _canSubjectScope,
+            ref: ref,
+          ),
           const SizedBox(height: AppSpacing.md),
         ],
         _RevisionNudgeCard(
@@ -149,10 +150,7 @@ class SessionSummaryCoachContent extends ConsumerWidget {
 }
 
 class _CoachNextPlan {
-  _CoachNextPlan({
-    required this.steps,
-    required this.primaryKind,
-  });
+  _CoachNextPlan({required this.steps, required this.primaryKind});
 
   final List<({String title, String? subtitle})> steps;
   final _CoachPrimaryKind primaryKind;
@@ -207,10 +205,7 @@ class _CoachNextPlan {
       ));
     }
 
-    return _CoachNextPlan(
-      steps: steps,
-      primaryKind: primary,
-    );
+    return _CoachNextPlan(steps: steps, primaryKind: primary);
   }
 }
 
@@ -224,6 +219,7 @@ TextStyle _advancedInsightsSectionHeading(ColorScheme scheme) =>
 
 class _ScoreTrendCard extends StatelessWidget {
   const _ScoreTrendCard({
+    required this.sessionId,
     required this.result,
     required this.displaySubjectName,
     required this.scheme,
@@ -232,6 +228,7 @@ class _ScoreTrendCard extends StatelessWidget {
     required this.canScope,
   });
 
+  final String sessionId;
   final SessionResult result;
   final String displaySubjectName;
   final ColorScheme scheme;
@@ -291,9 +288,7 @@ class _ScoreTrendCard extends StatelessWidget {
       );
     }
 
-    final accLabel = attempted == 0
-        ? '—'
-        : '${result.accuracy.round()}%';
+    final accLabel = attempted == 0 ? '—' : '${result.accuracy.round()}%';
 
     return _CoachSurfaceCard(
       scheme: scheme,
@@ -317,7 +312,10 @@ class _ScoreTrendCard extends StatelessWidget {
             Center(
               child: Container(
                 constraints: const BoxConstraints(minWidth: 200),
-                padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 32),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 22,
+                  horizontal: 32,
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: LinearGradient(
@@ -330,12 +328,12 @@ class _ScoreTrendCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  border: Border.all(
-                    color: netColor.withValues(alpha: 0.22),
-                  ),
+                  border: Border.all(color: netColor.withValues(alpha: 0.22)),
                   boxShadow: [
                     BoxShadow(
-                      color: scheme.shadow.withValues(alpha: isDark ? 0.35 : 0.08),
+                      color: scheme.shadow.withValues(
+                        alpha: isDark ? 0.35 : 0.08,
+                      ),
                       blurRadius: 16,
                       offset: const Offset(0, 6),
                     ),
@@ -411,8 +409,7 @@ class _ScoreTrendCard extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text:
-                          ' (${result.correct}/${result.questionCount})',
+                      text: ' (${result.correct}/${result.questionCount})',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: scheme.onSurfaceVariant,
@@ -424,6 +421,67 @@ class _ScoreTrendCard extends StatelessWidget {
             ),
             const SizedBox(height: 18),
             trendChild,
+            const SizedBox(height: 18),
+            SizedBox(
+              height: 48,
+              width: double.infinity,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: scheme.onSurface,
+                  side: BorderSide(
+                    color: isDark
+                        ? AppColors.borderDark
+                        : AppColors.borderLight,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                onPressed: () {
+                  HapticFeedback.lightImpact();
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go('/');
+                  }
+                },
+                child: Text(
+                  'Go back',
+                  style: AppTextStyles.label().copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 48,
+              width: double.infinity,
+              child: FilledButton(
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppColors.summaryCtaBlue,
+                  foregroundColor: AppColors.onPrimary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                onPressed: () {
+                  HapticFeedback.lightImpact();
+                  if (context.mounted) {
+                    context.push('/history/$sessionId');
+                  }
+                },
+                child: Text(
+                  'Review explanations',
+                  style: AppTextStyles.label().copyWith(
+                    color: AppColors.onPrimary,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -910,6 +968,13 @@ class _RevisionNudgeCard extends StatelessWidget {
               style: AppTextStyles.label().copyWith(
                 fontWeight: FontWeight.w800,
                 color: scheme.onSurface,
+              ),
+            ),
+            Text(
+              "(Collection of MCQs that you mark wrong, for later revision)",
+              style: AppTextStyles.bodySm().copyWith(
+                color: scheme.onSurfaceVariant,
+                fontSize: 10,
               ),
             ),
             const SizedBox(height: 10),

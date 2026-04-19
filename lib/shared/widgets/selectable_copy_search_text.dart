@@ -3,6 +3,36 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+/// Inline spans for strings that use markdown-style `**bold**` (markers are not shown).
+List<InlineSpan> doubleAsteriskBoldInlineSpans(String data, TextStyle baseStyle) {
+  final spans = <InlineSpan>[];
+  final boldStyle = baseStyle.copyWith(fontWeight: FontWeight.w700);
+  var i = 0;
+  while (i < data.length) {
+    final open = data.indexOf('**', i);
+    if (open < 0) {
+      if (i < data.length) {
+        spans.add(TextSpan(text: data.substring(i)));
+      }
+      break;
+    }
+    if (open > i) {
+      spans.add(TextSpan(text: data.substring(i, open)));
+    }
+    final close = data.indexOf('**', open + 2);
+    if (close < 0) {
+      spans.add(TextSpan(text: data.substring(open)));
+      break;
+    }
+    spans.add(TextSpan(text: data.substring(open + 2, close), style: boldStyle));
+    i = close + 2;
+  }
+  if (spans.isEmpty) {
+    spans.add(const TextSpan(text: ''));
+  }
+  return spans;
+}
+
 /// Question and explanation copy: selectable with Copy (system) and Search Google
 /// in the text selection toolbar.
 class SelectableCopySearchText extends StatelessWidget {
@@ -66,9 +96,12 @@ class SelectableCopySearchText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SelectableText(
-      data,
-      style: style,
+    final effectiveStyle = style ?? DefaultTextStyle.of(context).style;
+    return SelectableText.rich(
+      TextSpan(
+        style: effectiveStyle,
+        children: doubleAsteriskBoldInlineSpans(data, effectiveStyle),
+      ),
       strutStyle: strutStyle,
       textAlign: textAlign ?? TextAlign.start,
       textDirection: textDirection,
@@ -76,7 +109,7 @@ class SelectableCopySearchText extends StatelessWidget {
       maxLines: maxLines,
       textWidthBasis: textWidthBasis ?? TextWidthBasis.parent,
       textHeightBehavior: textHeightBehavior,
-      semanticsLabel: semanticsLabel,
+      semanticsLabel: semanticsLabel ?? (data.contains('**') ? data.replaceAll('**', '') : null),
       contextMenuBuilder: _contextMenuBuilder,
     );
   }
