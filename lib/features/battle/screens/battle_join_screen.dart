@@ -128,7 +128,7 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       final hostName = (d['host_display_name'] as String?)?.trim();
       if (!mounted) return;
       final guestPhoto = user?.photoURL?.trim();
-      context.go(
+      context.push(
         '/battle/wait/${widget.sessionId}',
         extra: {
           'playerName': user?.displayName ?? 'You',

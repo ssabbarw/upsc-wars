@@ -40,6 +40,11 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
       final uuids = await _userDatabase.bookmarksDao
           .getRandomBookmarkUuids(config.questionCount);
       picked = await _userDatabase.questionsDao.getByUuidsInOrder(uuids);
+    } else if (config.subject == 'misc') {
+      picked = await _userDatabase.questionsDao.getUnseenFirstRandomMixed(
+        limit: want,
+        attemptedQuestionUuids: attempted,
+      );
     } else if (topic != null) {
       picked = await _userDatabase.questionsDao.getUnseenFirstByTopic(
         subject: config.subject,

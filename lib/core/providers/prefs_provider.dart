@@ -61,10 +61,9 @@ class PrefsService {
   bool get darkModeEnabled => _p.getBool(PrefKeys.darkModeEnabled) ?? false;
   set darkModeEnabled(bool v) => _p.setBool(PrefKeys.darkModeEnabled, v);
 
-  /// Default `true` so existing installs keep the prelims notification until
-  /// they turn it off in Profile.
+  /// Default off; user can enable in Profile (Android status bar countdown).
   bool get prelimsPersistentNotificationEnabled =>
-      _p.getBool(PrefKeys.prelimsPersistentNotification) ?? true;
+      _p.getBool(PrefKeys.prelimsPersistentNotification) ?? false;
   set prelimsPersistentNotificationEnabled(bool v) =>
       _p.setBool(PrefKeys.prelimsPersistentNotification, v);
 

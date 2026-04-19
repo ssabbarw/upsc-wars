@@ -121,6 +121,15 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
     return '${t.substring(0, maxChars - 1)}…';
   }
 
+  void _leaveMatchScreen() {
+    if (!mounted) return;
+    if (context.canPop()) {
+      context.pop();
+    } else {
+      context.go('/');
+    }
+  }
+
   Future<void> _onHostStartBattle() async {
     if (_startingBattle) return;
     setState(() => _startingBattle = true);
@@ -140,11 +149,23 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
+        _leaveMatchScreen();
+      },
+      child: Scaffold(
       backgroundColor: Theme.of(context).brightness == Brightness.dark
           ? AppColors.surfaceSecondaryDark
           : AppColors.surfaceSecondaryLight,
-      appBar: AppBar(title: const Text('Match')),
+      appBar: AppBar(
+        title: const Text('Match'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: _leaveMatchScreen,
+        ),
+      ),
       body: switch (_mode) {
         _WaitUiMode.loading => const Center(child: CircularProgressIndicator()),
         _WaitUiMode.botCountdown => _BattleWaitBotCountdown(
@@ -170,6 +191,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
           shortName: _shortName,
         ),
       },
+    ),
     );
   }
 }

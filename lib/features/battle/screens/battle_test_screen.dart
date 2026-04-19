@@ -125,7 +125,12 @@ class _BattleTestSessionView extends HookConsumerWidget {
         if (autoSubmitDone.value) return;
         autoSubmitDone.value = true;
         try {
-          await submitBattleWithOptionalSpectate(context, ref, sessionId);
+          await submitBattleWithOptionalSpectate(
+            context,
+            ref,
+            sessionId,
+            askConfirmation: false,
+          );
         } catch (_) {
           autoSubmitDone.value = false;
         }
@@ -1049,75 +1054,109 @@ class _BattleOptionRow extends StatelessWidget {
         borderWidth = 2;
     }
 
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        border: Border.all(color: border, width: borderWidth),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (onTap != null)
-              Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: onTap,
-                  borderRadius: BorderRadius.circular(AppRadius.sm),
-                  child: SizedBox(
-                    width: 44,
-                    height: 44,
-                    child: Center(
-                      child: Container(
-                        width: 28,
-                        height: 28,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: badgeBg,
-                          borderRadius: BorderRadius.circular(AppRadius.sm),
-                        ),
-                        child: Text(
-                          keyLabel,
-                          style: AppTextStyles.labelSm().copyWith(
-                            color: badgeText,
+    final outerRadius = BorderRadius.circular(AppRadius.md);
+    final optionStyle = AppTextStyles.option().copyWith(color: text);
+
+    return ClipRRect(
+      borderRadius: outerRadius,
+      child: Material(
+        color: AppColors.transparent,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: bg,
+            borderRadius: outerRadius,
+            border: Border.all(color: border, width: borderWidth),
+          ),
+          child: onTap != null
+              ? Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: onTap,
+                    borderRadius: outerRadius,
+                    child: Padding(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: Center(
+                              child: Container(
+                                width: 24,
+                                height: 24,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: badgeBg,
+                                  borderRadius: BorderRadius.circular(
+                                    AppRadius.sm,
+                                  ),
+                                ),
+                                child: Text(
+                                  keyLabel,
+                                  style: AppTextStyles.labelSm().copyWith(
+                                    color: badgeText,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          const SizedBox(width: AppSpacing.md),
+                          Expanded(
+                            child: Text.rich(
+                              TextSpan(
+                                style: optionStyle,
+                                children: doubleAsteriskBoldInlineSpans(
+                                  optionText,
+                                  optionStyle,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ),
-              )
-            else
-              SizedBox(
-                width: 44,
-                height: 44,
-                child: Center(
-                  child: Container(
-                    width: 28,
-                    height: 28,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: badgeBg,
-                      borderRadius: BorderRadius.circular(AppRadius.sm),
-                    ),
-                    child: Text(
-                      keyLabel,
-                      style: AppTextStyles.labelSm().copyWith(color: badgeText),
-                    ),
+                )
+              : Padding(
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: Center(
+                          child: Container(
+                            width: 24,
+                            height: 24,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: badgeBg,
+                              borderRadius: BorderRadius.circular(
+                                AppRadius.sm,
+                              ),
+                            ),
+                            child: Text(
+                              keyLabel,
+                              style: AppTextStyles.labelSm().copyWith(
+                                color: badgeText,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: AppSpacing.md),
+                      Expanded(
+                        child: SelectableCopySearchText(
+                          optionText,
+                          style: optionStyle,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-            const SizedBox(width: AppSpacing.sm),
-            Expanded(
-              child: SelectableCopySearchText(
-                optionText,
-                style: AppTextStyles.option().copyWith(color: text),
-              ),
-            ),
-          ],
         ),
       ),
     );

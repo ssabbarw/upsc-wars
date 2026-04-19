@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:upsc_wars/core/router/app_router.dart';
+import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
 
@@ -27,6 +30,14 @@ class BattleMessagingService {
     await messaging.setAutoInitEnabled(true);
 
     if (!kIsWeb) {
+      AppLocalNotificationsService.onBattleInviteLocalTap = (sessionId) {
+        final r = _router;
+        if (r == null) return;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          r.go('/battle/join/$sessionId');
+        });
+      };
+      await AppLocalNotificationsService.ensureInitialized();
       await messaging.requestPermission(
         alert: true,
         badge: true,
@@ -59,6 +70,37 @@ class BattleMessagingService {
         (bodyRaw != null && bodyRaw.isNotEmpty)
             ? bodyRaw
             : (message.data.isEmpty ? 'New notification' : message.data.toString());
+
+    final rawSessionId = message.data['sessionId'];
+    final sessionId =
+        rawSessionId == null
+            ? null
+            : rawSessionId.toString().trim().isEmpty
+            ? null
+            : rawSessionId.toString().trim();
+    final kind = message.data['kind']?.toString().trim().toLowerCase();
+    final isSelfTest = kind == 'self_test';
+    final isBattleJoinInvite =
+        !kIsWeb &&
+        !isSelfTest &&
+        !messageOpensLongHtmlScreen(message) &&
+        sessionId != null &&
+        sessionId.isNotEmpty;
+
+    if (isBattleJoinInvite) {
+      unawaited(
+        AppLocalNotificationsService.showForegroundBattleInvite(
+          title: resolvedTitle == 'Message' ? 'Battle invite' : resolvedTitle,
+          body:
+              resolvedBody == 'New notification'
+                  ? 'Tap to join this battle'
+                  : resolvedBody,
+          sessionId: sessionId,
+        ),
+      );
+      return;
+    }
+
     final ctx = rootNavigatorKey.currentContext;
     if (ctx == null || !ctx.mounted) return;
     ScaffoldMessenger.maybeOf(ctx)?.showSnackBar(

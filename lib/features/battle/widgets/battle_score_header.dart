@@ -38,36 +38,43 @@ class BattleScoresCollapsible extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final headerBg = scheme.surfaceContainerHigh;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    // Mid-gray panels (avoid near-white in light; avoid heavy black in dark).
+    final headerBg =
+        isDark ? AppColors.surfaceTertiaryDark : AppColors.gray100;
     final onHeader = scheme.onSurface;
     final subtle = scheme.onSurfaceVariant;
-    final border = scheme.outline.withValues(alpha: 0.22);
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(AppRadius.lg),
+    final border = scheme.outline.withValues(alpha: isDark ? 0.4 : 0.28);
+    final radius = BorderRadius.circular(AppRadius.lg);
+    return Material(
+      color: headerBg,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: radius,
+        side: BorderSide(color: border),
+      ),
+      clipBehavior: Clip.antiAlias,
       child: Theme(
-        data: Theme.of(context).copyWith(dividerColor: AppColors.transparent),
+        data: Theme.of(context).copyWith(
+          dividerColor: AppColors.transparent,
+          listTileTheme: ListTileThemeData(tileColor: headerBg),
+          expansionTileTheme: ExpansionTileThemeData(
+            backgroundColor: headerBg,
+            collapsedBackgroundColor: headerBg,
+          ),
+        ),
         child: ExpansionTile(
           initiallyExpanded: initiallyExpanded,
           tilePadding: const EdgeInsets.symmetric(
             horizontal: AppSpacing.md,
             vertical: AppSpacing.xs,
           ),
-          childrenPadding: const EdgeInsets.fromLTRB(
-            AppSpacing.sm,
-            0,
-            AppSpacing.sm,
-            AppSpacing.sm,
-          ),
-          backgroundColor: headerBg,
-          collapsedBackgroundColor: headerBg,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            side: BorderSide(color: border),
-          ),
-          collapsedShape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            side: BorderSide(color: border),
-          ),
+          childrenPadding: EdgeInsets.zero,
+          backgroundColor: Colors.transparent,
+          collapsedBackgroundColor: Colors.transparent,
+          shape: const RoundedRectangleBorder(),
+          collapsedShape: const RoundedRectangleBorder(),
           iconColor: subtle,
           collapsedIconColor: subtle,
           title: Text(
@@ -78,46 +85,57 @@ class BattleScoresCollapsible extends StatelessWidget {
             ),
           ),
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: _PlayerScoreColumn(
-                    alignEnd: false,
-                    avatar: _MonogramAvatar(
-                      letter: opponentInitial,
-                      onPrimaryStrip: false,
-                      backgroundColor: opponentMonogramBackground,
-                      foregroundColor: opponentMonogramBackground != null
-                          ? battleMatchMonogramForeground(
-                              opponentMonogramBackground!,
-                            )
-                          : null,
-                    ),
-                    title: opponentName,
-                    outcomes: opponentOutcomeByQuestion,
-                  ),
+            ColoredBox(
+              color: headerBg,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.sm,
+                  0,
+                  AppSpacing.sm,
+                  AppSpacing.sm,
                 ),
-                const SizedBox(width: AppSpacing.sm),
-                Expanded(
-                  child: _PlayerScoreColumn(
-                    alignEnd: true,
-                    avatar: _PlayerAvatarStrip(
-                      initial: playerInitial,
-                      photoUrl: playerPhotoUrl,
-                      onPrimaryStrip: false,
-                      monogramBackground: playerMonogramBackground,
-                      monogramForeground: playerMonogramBackground != null
-                          ? battleMatchMonogramForeground(
-                              playerMonogramBackground!,
-                            )
-                          : null,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: _PlayerScoreColumn(
+                        alignEnd: false,
+                        avatar: _MonogramAvatar(
+                          letter: opponentInitial,
+                          onPrimaryStrip: false,
+                          backgroundColor: opponentMonogramBackground,
+                          foregroundColor: opponentMonogramBackground != null
+                              ? battleMatchMonogramForeground(
+                                  opponentMonogramBackground!,
+                                )
+                              : null,
+                        ),
+                        title: opponentName,
+                        outcomes: opponentOutcomeByQuestion,
+                      ),
                     ),
-                    title: 'You',
-                    outcomes: playerOutcomeByQuestion,
-                  ),
+                    const SizedBox(width: AppSpacing.sm),
+                    Expanded(
+                      child: _PlayerScoreColumn(
+                        alignEnd: true,
+                        avatar: _PlayerAvatarStrip(
+                          initial: playerInitial,
+                          photoUrl: playerPhotoUrl,
+                          onPrimaryStrip: false,
+                          monogramBackground: playerMonogramBackground,
+                          monogramForeground: playerMonogramBackground != null
+                              ? battleMatchMonogramForeground(
+                                  playerMonogramBackground!,
+                                )
+                              : null,
+                        ),
+                        title: 'You',
+                        outcomes: playerOutcomeByQuestion,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ],
         ),
@@ -173,7 +191,9 @@ class _PlayerScoreColumn extends StatelessWidget {
               width: constraints.maxWidth,
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                alignment: alignEnd ? Alignment.centerRight : Alignment.centerLeft,
+                alignment: alignEnd
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -232,10 +252,7 @@ class _TinyOutcomeCircle extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
-        border: Border.all(
-          color: borderColor,
-          width: 0.5,
-        ),
+        border: Border.all(color: borderColor, width: 0.5),
       ),
       child: Text(
         '$questionNumber',

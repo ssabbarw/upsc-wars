@@ -559,14 +559,6 @@ class WebPlayerResultsScreen extends StatelessWidget {
                                         height: 1.35,
                                       ),
                                     ),
-                                    const SizedBox(height: 6),
-                                    Text(
-                                      'Net score uses +2 per correct and −0.66 per wrong.',
-                                      style: AppTextStyles.caption().copyWith(
-                                        color: scheme.onSurfaceVariant,
-                                        height: 1.35,
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),

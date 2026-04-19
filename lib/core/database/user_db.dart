@@ -278,6 +278,28 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
     return getByUuidsInOrder([...unseenUuids, ...seenUuids]);
   }
 
+  /// Random MCQs from the whole bank (any subject), unseen-first then seen.
+  Future<List<Question>> getUnseenFirstRandomMixed({
+    required int limit,
+    required Set<String> attemptedQuestionUuids,
+  }) async {
+    if (limit <= 0) return const [];
+    final unseenUuids = await _randomQuestionUuidsMixed(
+      limit: limit,
+      attemptedQuestionUuids: attemptedQuestionUuids,
+      preferUnseen: true,
+    );
+    if (unseenUuids.length >= limit) {
+      return getByUuidsInOrder(unseenUuids.take(limit).toList());
+    }
+    final seenUuids = await _randomQuestionUuidsMixed(
+      limit: limit - unseenUuids.length,
+      attemptedQuestionUuids: attemptedQuestionUuids,
+      preferUnseen: false,
+    );
+    return getByUuidsInOrder([...unseenUuids, ...seenUuids]);
+  }
+
   Future<List<SubjectQuestionCount>> getSubjectQuestionCounts() async {
     return customSelect(
       'SELECT subject, COUNT(*) AS c FROM questions GROUP BY subject ORDER BY subject ASC',
@@ -378,6 +400,38 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
     variables.add(Variable.withInt(limit));
     final rows = await customSelect(
       'SELECT uuid FROM questions WHERE ${whereParts.join(' AND ')} ORDER BY RANDOM() LIMIT ?',
+      variables: variables,
+      readsFrom: {questions},
+    ).get();
+    return rows.map((row) => row.read<String>('uuid')).toList();
+  }
+
+  /// Like [_randomQuestionUuids] but across all subjects (no subject/topic filter).
+  Future<List<String>> _randomQuestionUuidsMixed({
+    required int limit,
+    required Set<String> attemptedQuestionUuids,
+    required bool preferUnseen,
+  }) async {
+    final whereParts = <String>['1 = 1'];
+    final variables = <Variable<Object>>[];
+
+    if (preferUnseen) {
+      final notInClause = _notInClause(attemptedQuestionUuids);
+      if (notInClause != null) {
+        whereParts.add(notInClause.$1);
+        variables.addAll(notInClause.$2);
+      }
+    } else {
+      final inClause = _inClause(attemptedQuestionUuids);
+      if (inClause == null) return const [];
+      whereParts.add(inClause.$1);
+      variables.addAll(inClause.$2);
+    }
+
+    variables.add(Variable.withInt(limit));
+    final rows = await customSelect(
+      'SELECT uuid FROM questions WHERE ${whereParts.join(' AND ')} '
+      'ORDER BY RANDOM() LIMIT ?',
       variables: variables,
       readsFrom: {questions},
     ).get();

@@ -67,26 +67,33 @@ String battleSpectateStatusSubline(BattleSpectateState s) {
   return '$short is still working through the paper.';
 }
 
-/// FAB close (X): always confirm before stopping spectate.
-Future<void> promptStopLiveDuelFromFab(
-  BuildContext context,
-  WidgetRef ref,
-) async {
+/// FAB close (X): confirm before stopping while the opponent is still playing.
+/// When the battle is already settled, stops immediately (same as the sheet).
+///
+/// Uses [rootNavigatorKey] for the dialog because [BattleSpectateFabHost] may
+/// sit above the route [Navigator], so its own [BuildContext] cannot push
+/// routes.
+Future<void> promptStopLiveDuelFromFab(WidgetRef ref) async {
   final s = ref.read(battleSpectateProvider);
   if (s == null) return;
 
-  final settled = s.battleSettled;
+  if (s.battleSettled) {
+    ref.read(battleSpectateProvider.notifier).stop();
+    return;
+  }
+
+  final dialogContext = rootNavigatorKey.currentContext;
+  if (dialogContext == null) return;
+
   final ok = await showDialog<bool>(
-    context: context,
+    context: dialogContext,
     useRootNavigator: true,
     builder:
         (ctx) => AlertDialog(
           title: Text('Close live duel?', style: AppTextStyles.h3()),
           content: Text(
-            settled
-                ? 'You will no longer see floating live scores for this battle.'
-                : '${_opponentShortName(s.opponentName)} is still answering. '
-                    'Stop the live duel anyway?',
+            '${_opponentShortName(s.opponentName)} is still answering. '
+            'Stop the live duel anyway?',
             style: AppTextStyles.bodyMd(),
           ),
           actions: [
@@ -96,7 +103,7 @@ Future<void> promptStopLiveDuelFromFab(
             ),
             FilledButton(
               onPressed: () => Navigator.pop(ctx, true),
-              child: Text(settled ? 'Close' : 'Stop'),
+              child: const Text('Stop'),
             ),
           ],
         ),
@@ -170,6 +177,9 @@ class BattleSpectateFabHost extends HookConsumerWidget {
 
     final settled = s.battleSettled;
     final accent = settled ? AppColors.info : AppColors.primary;
+    final duelIcon =
+        settled ? Icons.check_circle_rounded : Icons.sensors_rounded;
+    final duelLabel = settled ? 'They\'re done' : 'Live duel';
 
     final bottom = MediaQuery.of(context).padding.bottom + 88;
 
@@ -198,10 +208,10 @@ class BattleSpectateFabHost extends HookConsumerWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(Icons.sensors, color: AppColors.onPrimary, size: 22),
+                    Icon(duelIcon, color: AppColors.onPrimary, size: 22),
                     const SizedBox(width: 6),
                     Text(
-                      'Live duel',
+                      duelLabel,
                       style: AppTextStyles.label().copyWith(
                         color: AppColors.onPrimary,
                         fontWeight: FontWeight.w700,
@@ -212,7 +222,7 @@ class BattleSpectateFabHost extends HookConsumerWidget {
               ),
             ),
             InkWell(
-              onTap: () => promptStopLiveDuelFromFab(context, ref),
+              onTap: () => promptStopLiveDuelFromFab(ref),
               borderRadius: BorderRadius.horizontal(
                 right: Radius.circular(AppRadius.xl),
               ),

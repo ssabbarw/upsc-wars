@@ -11,6 +11,7 @@ import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
+import 'package:upsc_wars/core/presentation/session_subject_label.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/data/battle_invite_cloud_service.dart';
 import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
@@ -31,6 +32,9 @@ class BattleConfigScreen extends ConsumerStatefulWidget {
 class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
   String? _selectedSubject;
   bool _submitting = false;
+
+  /// Sentinel for mixed-subject random battles (see [CreateSessionRepositoryImpl]).
+  static const _miscSubjectKey = 'misc';
 
   static const _tileWidth = 108.0;
   static const _tileHeight = 48.0;
@@ -82,9 +86,9 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                       Text(
                         widget.invite != null
                             ? 'Battle vs ${widget.invite!.displayName} · 10 MCQs · Timed '
-                                '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)'
-                            : 'One subject · 10 MCQs · Timed '
-                                '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
+                                  '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)'
+                            : 'Pick one subject or mixed misc · 10 MCQs · Timed '
+                                  '(${(10 * kDebugSecondsPerQuestion / 60).round()} min)',
                         style: AppTextStyles.bodySm().copyWith(
                           color: scheme.onSurfaceVariant,
                         ),
@@ -96,79 +100,87 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                           color: scheme.onSurface,
                         ),
                       ),
-                          const SizedBox(height: AppSpacing.sm),
-                          DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: scheme.surfaceContainerLow,
-                              borderRadius: BorderRadius.circular(AppRadius.lg),
-                              border: Border.all(
-                                color: isDark
-                                    ? AppColors.borderDark
-                                    : AppColors.borderLight,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(AppSpacing.md),
-                              child: Wrap(
-                                alignment: WrapAlignment.center,
-                                spacing: AppSpacing.sm,
-                                runSpacing: AppSpacing.sm,
-                                children: [
-                                  for (final subject in subjects)
-                                    SizedBox(
-                                      width: _tileWidth,
-                                      height: _tileHeight,
-                                      child: _SubjectPickTile(
-                                        label: subject.displayName,
-                                        selected:
-                                            _selectedSubject ==
-                                            subject.subject,
-                                        onTap:
-                                            () => setState(
-                                              () => _selectedSubject =
-                                                  subject.subject,
-                                            ),
-                                        scheme: scheme,
-                                        isDark: isDark,
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ),
+                      const SizedBox(height: AppSpacing.sm),
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          borderRadius: BorderRadius.circular(AppRadius.lg),
+                          border: Border.all(
+                            color: isDark
+                                ? AppColors.borderDark
+                                : AppColors.borderLight,
                           ),
-                          const SizedBox(height: AppSpacing.lg),
-                          Row(
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(AppSpacing.md),
+                          child: Wrap(
+                            alignment: WrapAlignment.center,
+                            spacing: AppSpacing.sm,
+                            runSpacing: AppSpacing.sm,
                             children: [
-                              Icon(
-                                Icons.timer_outlined,
-                                size: 18,
-                                color: scheme.onSurfaceVariant,
-                              ),
-                              const SizedBox(width: AppSpacing.sm),
-                              Expanded(
-                                child: Text(
-                                  'Timer runs during the battle. Answers lock in once chosen, with explanations shown so you learn as you go.',
-                                  style: AppTextStyles.caption().copyWith(
-                                    color: scheme.onSurfaceVariant,
-                                    height: 1.4,
+                              SizedBox(
+                                width: _tileWidth,
+                                height: _tileHeight,
+                                child: _SubjectPickTile(
+                                  label: 'Misc',
+                                  selected: _selectedSubject == _miscSubjectKey,
+                                  onTap: () => setState(
+                                    () => _selectedSubject = _miscSubjectKey,
                                   ),
+                                  scheme: scheme,
+                                  isDark: isDark,
                                 ),
                               ),
+                              for (final subject in subjects)
+                                SizedBox(
+                                  width: _tileWidth,
+                                  height: _tileHeight,
+                                  child: _SubjectPickTile(
+                                    label: subject.displayName,
+                                    selected:
+                                        _selectedSubject == subject.subject,
+                                    onTap: () => setState(
+                                      () => _selectedSubject = subject.subject,
+                                    ),
+                                    scheme: scheme,
+                                    isDark: isDark,
+                                  ),
+                                ),
                             ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: AppSpacing.lg),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.timer_outlined,
+                            size: 18,
+                            color: scheme.onSurfaceVariant,
+                          ),
+                          const SizedBox(width: AppSpacing.sm),
+                          Expanded(
+                            child: Text(
+                              'Timer runs during the battle. Answers lock in once chosen, with explanations shown so you learn as you go.',
+                              style: AppTextStyles.caption().copyWith(
+                                color: scheme.onSurfaceVariant,
+                                height: 1.4,
+                              ),
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                    loading:
-                        () => const Center(child: CircularProgressIndicator()),
-                    error:
-                        (e, st) => Center(
-                          child: Text(
-                            'Could not load subjects',
-                            style: AppTextStyles.body(),
-                          ),
-                        ),
+                    ],
                   ),
+                ),
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (e, st) => Center(
+                  child: Text(
+                    'Could not load subjects',
+                    style: AppTextStyles.body(),
+                  ),
+                ),
+              ),
             ),
           ),
           Material(
@@ -187,37 +199,35 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
               child: SafeArea(
                 top: false,
                 child: FilledButton(
-                  onPressed:
-                      _submitting || _selectedSubject == null
-                          ? null
-                          : () => _startBattle(
-                            context,
-                            me?.displayName ?? 'You',
-                            me?.photoURL,
-                          ),
+                  onPressed: _submitting || _selectedSubject == null
+                      ? null
+                      : () => _startBattle(
+                          context,
+                          me?.displayName ?? 'You',
+                          me?.photoURL,
+                        ),
                   style: FilledButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(AppRadius.md),
                     ),
                   ),
-                  child:
-                      _submitting
-                          ? const SizedBox(
-                            height: 22,
-                            width: 22,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: AppColors.onPrimary,
-                            ),
-                          )
-                          : Text(
-                            'Start battle',
-                            style: AppTextStyles.label().copyWith(
-                              color: AppColors.onPrimary,
-                              fontWeight: FontWeight.w600,
-                            ),
+                  child: _submitting
+                      ? const SizedBox(
+                          height: 22,
+                          width: 22,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: AppColors.onPrimary,
                           ),
+                        )
+                      : Text(
+                          'Start battle',
+                          style: AppTextStyles.label().copyWith(
+                            color: AppColors.onPrimary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                 ),
               ),
             ),
@@ -250,10 +260,9 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
       );
       final sessionId = await uc.execute(config);
       final invite = widget.invite;
-      final opponentName =
-          invite != null
-              ? invite.displayName
-              : BattleNameService.pickFromSeed(sessionId);
+      final opponentName = invite != null
+          ? invite.displayName
+          : BattleNameService.pickFromSeed(sessionId);
 
       if (invite != null) {
         final load = await ref.read(loadSessionUseCaseProvider.future);
@@ -279,7 +288,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           guestEmail: invite.email,
           sessionId: sessionId,
           hostDisplayName: playerName,
-          subjectLabel: subject,
+          subjectLabel: displayNameForSessionSubject(subject),
         );
         unawaited(
           Analytics.track(
@@ -296,7 +305,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
       if (!context.mounted) return;
       final photo = playerPhotoUrl?.trim();
       final opponentPhoto = invite?.photoUrl?.trim();
-      context.go(
+      context.push(
         '/battle/wait/$sessionId',
         extra: {
           'playerName': playerName,
@@ -329,16 +338,14 @@ class _SubjectPickTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fill =
-        selected
-            ? (isDark
-                ? AppColors.primaryDeep.withValues(alpha: 0.45)
-                : AppColors.primaryLight)
-            : scheme.surface;
-    final border =
-        selected
-            ? AppColors.primary
-            : (isDark ? AppColors.borderDark : AppColors.borderLight);
+    final fill = selected
+        ? (isDark
+              ? AppColors.primaryDeep.withValues(alpha: 0.45)
+              : AppColors.primaryLight)
+        : scheme.surface;
+    final border = selected
+        ? AppColors.primary
+        : (isDark ? AppColors.borderDark : AppColors.borderLight);
     final borderW = selected ? 2.0 : 1.0;
 
     return Material(
