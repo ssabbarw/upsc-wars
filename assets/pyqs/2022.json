@@ -1,0 +1,3522 @@
+[
+  {
+    "uuid": "f99b3a24-821d-443b-9959-6f367f6b0f3d",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "“Rapid Financing Instrument” and “Rapid Credit Facility” are related to the provisions of lending by which one of the following?\n\n(a) Asian Development Bank\n\n(b) International Monetary Fund\n\n(c) United Nations Environment Programme Finance Initiative\n\n(d) World Bank",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "“रैपिड फाइनेंसिंग इंस्ट्रूमेंट” और “रैपिड क्रेडिट फैसिलिटी” निम्नलिखित में से किस संस्था द्वारा ऋण प्रदान करने की व्यवस्थाओं से संबंधित हैं?\n\n(a) एशियाई विकास बैंक\n\n(b) अंतर्राष्ट्रीय मुद्रा कोष\n\n(c) संयुक्त राष्ट्र पर्यावरण कार्यक्रम वित्त पहल\n\n(d) विश्व बैंक",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "4843598d-61ed-4930-8c7a-5346db86bcfc",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to the Indian economy, consider the following statements:\n\n1. An increase in Nominal Effective Exchange Rate (NEER) indicates the appreciation of rupee.\n\n2. An increase in the Real Effective Exchange Rate (REER) indicates an improvement in trade competitiveness.\n\n3. An increasing trend in domestic inflation relative to inflation in other countries is likely to cause an increasing divergence between NEER and REER.\n\nWhich of the above statements are correct?\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "भारतीय अर्थव्यवस्था के संदर्भ में, निम्नलिखित कथनों पर विचार करें:\n\n1. नाममात्र प्रभावी विनिमय दर (Nominal Effective Exchange Rate - NEER) में वृद्धि का अर्थ है रुपये का मूल्यवृद्धि होना।\n\n2. वास्तविक प्रभावी विनिमय दर (Real Effective Exchange Rate - REER) में वृद्धि व्यापार प्रतिस्पर्धात्मकता में सुधार को दर्शाती है।\n\n3. घरेलू मुद्रास्फीति की प्रवृत्ति अन्य देशों की मुद्रास्फीति की तुलना में बढ़ने से NEER और REER के बीच बढ़ती असमानता होने की संभावना है।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "4d9c5601-36ef-48be-840a-4462195b25ea",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the Indian economy, consider the following statements:**\n\n1. If the inflation is too high, Reserve Bank of India (RBI) is likely to buy government securities.\n\n2. If the rupee is rapidly depreciating, RBI is likely to sell dollars in the market.\n\n3. If interest rates in the USA or European Union were to fall, that is likely to induce RBI to buy dollars.\n\n**Which of the statements given above are correct?**\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय अर्थव्यवस्था के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. यदि मुद्रास्फीति बहुत अधिक है, तो भारतीय रिजर्व बैंक (RBI) सरकार के प्रतिभूतियाँ खरीदने की संभावना रखता है।\n\n2. यदि रुपया तेजी से अवमूल्यित हो रहा है, तो RBI बाजार में डॉलर बेचने की संभावना रखता है।\n\n3. यदि अमेरिका या यूरोपीय संघ में ब्याज दरें गिरती हैं, तो इससे RBI के डॉलर खरीदने की प्रवृत्ति बढ़ सकती है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "8b2594ea-d3ce-450b-b044-53b8c74049f4",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the “G20 Common Framework”, consider the following statements:**\n\n1. It is an initiative endorsed by the G20 together with the Paris Club.\n\n2. It is an initiative to support Low Income Countries with unsustainable debt.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**“G20 कॉमन फ्रेमवर्क” के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. यह एक पहल है जिसे G20 ने पेरिस क्लब के साथ मिलकर अनुमोदित किया है।\n\n2. यह एक पहल है जो अस्थिर ऋण वाले निम्न आय वाले देशों का समर्थन करने के लिए है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "2b2d8403-e1cb-4342-8ec7-d8fa10ba3d52",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the Indian economy, what are the advantages of \"Inflation-Indexed Bonds (IIBs)\"?**\n\n1. Government can reduce the coupon rates on its borrowing by way of IIBs.\n\n2. IIBs provide protection to the investors from uncertainty regarding inflation.\n\n3. The interest received as well as capital gains on IIBs are not taxable.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय अर्थव्यवस्था के संदर्भ में, \"मुद्रास्फीति-सूचक बांड (Inflation-Indexed Bonds - IIBs)\" के क्या लाभ हैं?**\n\n1. सरकार IIBs के माध्यम से अपनी उधारी पर कूपन दरों को कम कर सकती है।\n\n2. IIBs निवेशकों को मुद्रास्फीति के संबंध में अनिश्चितता से सुरक्षा प्रदान करते हैं।\n\n3. IIBs पर प्राप्त ब्याज तथा पूंजीगत लाभ करमुक्त होते हैं।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "7037d334-8aac-4896-88b8-306044ff09e3",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to foreign-owned e-commerce firms operating in India, which of the following statements is/are correct?**\n\n1. They can sell their own goods in addition to offering their platforms as marketplaces.\n\n2. The degree to which they can own big sellers on their platforms is limited.\n\n**Select the correct answer using the code given below:**\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में संचालित विदेशी स्वामित्व वाली ई-कॉमर्स कंपनियों के संदर्भ में, निम्नलिखित में से कौन-सा/से कथन सही है/हैं?**\n\n1. वे अपने प्लेटफॉर्म को बाज़ार के रूप में प्रदान करने के अतिरिक्त अपने स्वयं के माल भी बेच सकते हैं।\n\n2. उनके प्लेटफॉर्म पर बड़े विक्रेताओं के स्वामित्व की सीमा सीमित है।\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "edd5f6e3-b794-42cc-b5ca-b844b8c93549",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which of the following activities constitute the real sector in the economy?**\n\n1. Farmers harvesting their crops\n\n2. Textile mills converting raw cotton into fabrics\n\n3. A commercial bank lending money to a trading company\n\n4. A corporate body issuing Rupee Denominated Bonds overseas\n\n**Select the correct answer using the code given below:**\n\n(a) 2 only\n\n(b) 2, 3 and 4 only\n\n(c) 1, 3 and 4 only\n\n(d) 1, 2, 3 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन-सी गतिविधियाँ अर्थव्यवस्था के वास्तविक क्षेत्र (Real Sector) का गठन करती हैं?**\n\n1. किसान अपनी फसल काटना\n\n2. वस्त्र मिलें कच्चे कपास को वस्त्रों में परिवर्तित करना\n\n3. एक वाणिज्यिक बैंक किसी व्यापारिक कंपनी को धन उधार देना\n\n4. एक कॉर्पोरेट संस्था विदेशों में रुपये में नामांकित बॉन्ड जारी करना\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n\n(a) केवल 2\n\n(b) केवल 2, 3 और 4\n\n(c) केवल 1, 3 और 4\n\n(d) 1, 2, 3 और 4"
+    }
+  },
+  {
+    "uuid": "0c5b5647-04cc-43d1-b00e-a8efb8ffb89b",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following situations best reflects “Indirect Transfers” often talked about in media recently with reference to India?\n\n(a) An Indian company investing in a foreign enterprise and paying taxes to the foreign country on the profits arising out of its investment\n\n(b) A foreign company investing in India and paying taxes to the country of its base on the profits arising out of its investment\n\n(c) An Indian company purchases tangible assets in a foreign country and sells such assets after their value increases and transfers the proceeds to India\n\n(d) A foreign company transfers shares and such shares derive their substantial value from assets located in India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "भारत के संदर्भ में हाल ही में मीडिया में अक्सर चर्चा में आने वाले “अप्रत्यक्ष हस्तांतरण” की निम्नलिखित स्थितियों में से कौन-सी सबसे उपयुक्त व्याख्या करती है?\n\n(a) एक भारतीय कंपनी का विदेशी उद्यम में निवेश करना और अपने निवेश से होने वाले लाभ पर विदेशी देश को कर भुगतान करना\n\n(b) एक विदेशी कंपनी का भारत में निवेश करना और अपने आधार देश को अपने निवेश से होने वाले लाभ पर कर भुगतान करना\n\n(c) एक भारतीय कंपनी द्वारा विदेशी देश में मूर्त संपत्तियाँ खरीदना और उनकी कीमत बढ़ने के बाद उन्हें बेचकर प्राप्त राशि भारत में स्थानांतरित करना\n\n(d) एक विदेशी कंपनी द्वारा शेयरों का हस्तांतरण करना और ऐसे शेयरों का महत्वपूर्ण मूल्य भारत में स्थित संपत्तियों से प्राप्त होना"
+    }
+  },
+  {
+    "uuid": "2845383f-d7f1-4155-aafd-f980cca45261",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the expenditure made by an organisation or a company, which of the following statements is/are correct?**\n\n1. Acquiring new technology is capital expenditure.\n\n2. Debt financing is considered capital expenditure, while equity financing is considered revenue expenditure.\n\n**Select the correct answer using the code given below:**\n\n(a) 1 only\n\n(b) 2 only\n\n(c) Both 1 and 2\n\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**किसी संगठन या कंपनी द्वारा किए गए व्यय के संदर्भ में, निम्नलिखित में से कौन-सा/से कथन सही है/हैं?**\n\n1. नई तकनीक का अधिग्रहण पूंजीगत व्यय (Capital Expenditure) है।\n\n2. ऋण वित्तपोषण (Debt Financing) को पूंजीगत व्यय माना जाता है, जबकि इक्विटी वित्तपोषण (Equity Financing) को राजस्व व्यय (Revenue Expenditure) माना जाता है।\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n\n(a) केवल 1\n\n(b) केवल 2\n\n(c) 1 और 2 दोनों\n\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "199251ea-5c72-4d2b-8ee0-47dae308df33",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the Indian economy, consider the following statements:**\n\n1. A share of the household financial savings goes towards government borrowings.\n\n2. Dated securities issued at market-related rates in auctions form a large component of internal debt.\n\n**Which of the above statements is/are correct?**\n\n(a) 1 only\n\n(b) 2 only\n\n(c) Both 1 and 2\n\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय अर्थव्यवस्था के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. घरेलू वित्तीय बचत का एक हिस्सा सरकार के उधार लेने की ओर जाता है।\n\n2. नीलामी में बाजार-संबंधित दरों पर जारी की गई डेटेड सिक्योरिटीज आंतरिक ऋण का एक बड़ा घटक होती हैं।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 2\n\n(c) 1 और 2 दोनों\n\n(d) न तो 1 और न ही 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "ade9abdf-37d8-412b-afe4-a492a1547934",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Pursuant to the report of H.N. Sanyal Committee, the Contempt of Courts Act, 1971 was passed.\n\n2. The Constitution of India empowers the Supreme Court and the High Courts to punish for contempt of themselves.\n\n3. The Constitution of India defines Civil Contempt and Criminal Contempt.\n\n4. In India, the Parliament is vested with the powers to make laws on Contempt of Court.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 and 2 only\n(b) 1, 2 and 4\n(c) 3 and 4 only\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. एच.एन. सान्याल समिति की रिपोर्ट के अनुसार, 1971 में न्यायालय अवमानना अधिनियम पारित किया गया था।\n\n2. भारत का संविधान सर्वोच्च न्यायालय और उच्च न्यायालयों को स्वयं की अवमानना के लिए दंडित करने का अधिकार प्रदान करता है।\n\n3. भारत का संविधान नागरिक अवमानना और आपराधिक अवमानना को परिभाषित करता है।\n\n4. भारत में, संसद को न्यायालय अवमानना पर कानून बनाने का अधिकार प्राप्त है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1 और 2\n(b) 1, 2 और 4\n(c) केवल 3 और 4\n(d) केवल 3"
+    }
+  },
+  {
+    "uuid": "9c3987ab-e833-4bf4-8812-f3a7afee322a",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to India, consider the following statements:**\n\n1. Government law officers and legal firms are recognised as advocates, but corporate lawyers and patent attorneys are excluded from recognition as advocates.\n\n2. Bar Councils have the power to lay down the rules relating to legal education and recognition of law colleges.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n\n(b) 2 only\n\n(c) Both 1 and 2\n\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. सरकारी विधि अधिकारी और विधिक फर्मों को अधिवक्ताओं के रूप में मान्यता प्राप्त है, लेकिन कॉर्पोरेट वकील और पेटेंट अटॉर्नी अधिवक्ताओं के रूप में मान्यता से वंचित हैं।\n\n2. बार काउंसिलों के पास विधिक शिक्षा और विधि कॉलेजों की मान्यता से संबंधित नियम निर्धारित करने का अधिकार है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 2\n\n(c) 1 और 2 दोनों\n\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "b4180cd8-18de-4ede-92d0-377283d6ad4f",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. A bill amending the Constitution requires a prior recommendation of the President of India.\n\n2. When a Constitution Amendment Bill is presented to the President of India, it is obligatory for the President of India to give his/her assent.\n\n3. A Constitution Amendment Bill must be passed by both the Lok Sabha and the Rajya Sabha by a special majority and there is no provision for joint sitting.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. संविधान में संशोधन करने वाला विधेयक भारत के राष्ट्रपति की पूर्व अनुशंसा का आवश्यक होता है।\n\n2. जब संविधान संशोधन विधेयक भारत के राष्ट्रपति को प्रस्तुत किया जाता है, तो राष्ट्रपति के लिए उसका अनुमोदन देना अनिवार्य होता है।\n\n3. संविधान संशोधन विधेयक को लोकसभा और राज्यसभा दोनों में विशेष बहुमत से पारित किया जाना आवश्यक है और इसके लिए संयुक्त बैठक का प्रावधान नहीं है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "ee6ab22a-188f-4a13-86cd-010472ebc407",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. The Constitution of India classifies the ministers into four ranks viz. Cabinet Minister, Minister of State with Independent Charge, Minister of State, and Deputy Minister.\n\n2. The total number of ministers in the Union Government, including the Prime Minister, shall not exceed 15 percent of the total number of members in the Lok Sabha.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. भारत का संविधान मंत्रियों को चार श्रेणियों में वर्गीकृत करता है, अर्थात् कैबिनेट मंत्री, स्वतंत्र प्रभार वाले राज्य मंत्री, राज्य मंत्री, और उप मंत्री।\n\n2. केंद्र सरकार में मंत्रियों की कुल संख्या, जिसमें प्रधानमंत्री भी शामिल हैं, लोकसभा के कुल सदस्यों की संख्या का 15 प्रतिशत से अधिक नहीं हो सकती।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n(b) केवल 2\n(c) दोनों 1 और 2\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "0aa9f460-c6d7-4222-8fc4-659395f3b537",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which of the following is/are the exclusive power(s) of Lok Sabha?**\n\n1. To ratify the declaration of Emergency\n\n2. To pass a motion of no-confidence against the Council of Ministers\n\n3. To impeach the President of India\n\n**Select the correct answer using the code given below:**\n\n(a) 1 and 2\n(b) 2 only\n(c) 1 and 3\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन-सा/से लोक सभा के विशिष्ट अधिकार हैं?**\n\n1. आपातकाल की घोषणा को अनुमोदित करना\n\n2. मंत्रिपरिषद के विरुद्ध अविश्वास प्रस्ताव पारित करना\n\n3. भारत के राष्ट्रपति के विरुद्ध महाभियोग लगाना\n\n**नीचे दिए गए कोड का उपयोग कर सही उत्तर चुनिए:**\n\n(a) 1 और 2\n(b) केवल 2\n(c) 1 और 3\n(d) केवल 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "8d588d69-7b21-4d22-9175-1ccee918d1e5",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the anti-defection law in India, consider the following statements:**\n\n1. The law specifies that a nominated legislator cannot join any political party within six months of being appointed to the House.\n\n2. The law does not provide any time-frame within which the presiding officer has to decide a defection case.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में अयोग्यता (एंटी-डिफेक्शन) कानून के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. यह कानून निर्दिष्ट करता है कि नामित विधायक सदन में नियुक्ति के छह महीने के भीतर किसी भी राजनीतिक दल में शामिल नहीं हो सकता।\n\n2. यह कानून कोई समय-सीमा प्रदान नहीं करता जिसके भीतर अधिष्ठाता अधिकारी को अयोग्यता मामले का निर्णय करना होता है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "04db1861-9e46-4010-8d92-99a964ee75d8",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Attorney General of India and Solicitor General of India are the only officers of the Government who are allowed to participate in the meetings of the Parliament of India.\n\n2. According to the Constitution of India, the Attorney General of India submits his resignation when the Government which appointed him resigns.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. भारत के अटॉर्नी जनरल और सॉलिसिटर जनरल ही सरकार के वे एकमात्र अधिकारी हैं जिन्हें भारत की संसद की बैठकों में भाग लेने की अनुमति है।\n\n2. भारत के संविधान के अनुसार, अटॉर्नी जनरल उस सरकार के इस्तीफा देने पर अपना इस्तीफा प्रस्तुत करते हैं जिसने उन्हें नियुक्त किया था।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n(b) केवल 2\n(c) दोनों 1 और 2\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "9cf28333-73cb-43a7-b163-203de215e959",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the writs issued by the Courts in India, consider the following statements:**\n\n1. Mandamus will not lie against a private organisation unless it is entrusted with a public duty.\n\n2. Mandamus will not lie against a Company even though it may be a Government Company.\n\n3. Any public minded person can be a petitioner to move the Court to obtain the writ of Quo Warranto.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में न्यायालयों द्वारा जारी रिट्स के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. मंडामस रिट केवल तब ही निजी संगठन के विरुद्ध जारी होगा जब उसे कोई सार्वजनिक कर्तव्य सौंपा गया हो।\n\n2. मंडामस रिट किसी कंपनी के विरुद्ध नहीं जारी होगा, भले ही वह सरकार की कंपनी ही क्यों न हो।\n\n3. कोई भी सार्वजनिक हितैषी व्यक्ति कोर्ट में याचिकाकर्ता बनकर क्वो वारंटो रिट प्राप्त करने के लिए याचिका दायर कर सकता है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "406ffe3f-5e02-4e44-bfae-2bff89885f35",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Ayushman Bharat Digital Mission, consider the following statements:**\n\n1. Private and public hospitals must adopt it.\n\n2. As it aims to achieve universal health coverage, every citizen of India should be part of it ultimately.\n\n3. It has seamless portability across the country.\n\n**Which of the statements given above is/are correct?**\n(a) 1 and 2 only\n(b) 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**आयुष्मान भारत डिजिटल मिशन के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. निजी और सार्वजनिक अस्पतालों के लिए इसे अपनाना अनिवार्य है।\n\n2. चूंकि इसका उद्देश्य सार्वभौमिक स्वास्थ्य कवरेज प्राप्त करना है, इसलिए अंततः भारत का प्रत्येक नागरिक इसका हिस्सा होना चाहिए।\n\n3. इसमें पूरे देश में निर्बाध पोर्टेबिलिटी (स्थानांतरणीयता) है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n(a) केवल 1 और 2\n(b) केवल 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "edf686cd-f32f-459a-9601-d71905ce89de",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the Deputy Speaker of Lok Sabha, consider the following statements:**\n\n1. As per the Rules of Procedure and Conduct of Business in Lok Sabha, the election of the Deputy Speaker shall be held on such date as the Speaker may fix.\n\n2. There is a mandatory provision that the election of a candidate as Deputy Speaker of Lok Sabha shall be from either the principal opposition party or the ruling party.\n\n3. The Deputy Speaker has the same power as the Speaker when presiding over the sitting of the House, and no appeal lies against his rulings.\n\n4. The well-established parliamentary practice regarding the appointment of the Deputy Speaker is that the motion is moved by the Speaker and duly seconded by the Prime Minister.\n\nWhich of the statements given above are correct?\n\n(a) 1 and 3 only\n\n(b) 1, 2 and 3\n\n(c) 3 and 4 only\n\n(d) 2 and 4 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**लोकसभा के उपसभापति के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. लोकसभा के कार्यवाही नियमावली के अनुसार, उपसभापति का चुनाव उस तिथि को किया जाएगा जिसे सभापति निर्धारित करेगा।\n\n2. यह अनिवार्य प्रावधान है कि लोकसभा के उपसभापति के रूप में चुना गया उम्मीदवार या तो मुख्य विपक्षी पार्टी या सत्ताधारी पार्टी से होना चाहिए।\n\n3. उपसभापति को सदन की बैठक की अध्यक्षता करते समय सभापति के समान अधिकार प्राप्त होते हैं, और उनके निर्णयों के विरुद्ध कोई अपील नहीं की जा सकती।\n\n4. उपसभापति की नियुक्ति के संबंध में स्थापित संसदीय प्रथा यह है कि प्रस्ताव सभापति द्वारा प्रस्तुत किया जाता है और प्रधानमंत्री द्वारा उचित रूप से समर्थन दिया जाता है।\n\nउपरोक्त में से कौन-से कथन सही हैं?\n\n(a) केवल 1 और 3\n\n(b) 1, 2 और 3\n\n(c) केवल 3 और 4\n\n(d) केवल 2 और 4"
+    }
+  },
+  {
+    "uuid": "7b1742f7-4410-4fc9-99a2-875f3f6007fa",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Among the following crops, which one is the most important anthropogenic source of both methane and nitrous oxide?**\n\n(a) Cotton\n\n(b) Rice\n\n(c) Sugarcane\n\n(d) Wheat",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित फसलों में से कौन-सी फसल मीथेन और नाइट्रस ऑक्साइड दोनों का सबसे महत्वपूर्ण मानवजनित स्रोत है?**\n\n(a) कपास\n\n(b) धान\n\n(c) गन्ना\n\n(d) गेहूं",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "ac80be7d-cbe6-4622-8ec9-deb211a27f97",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**“System of Rice Intensification” of cultivation, in which alternate wetting and drying of rice fields is practised, results in:**\n\n1. Reduced seed requirement\n2. Reduced methane production\n3. Reduced electricity consumption\n\n**Select the correct answer using the code given below:**\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**धान की खेती की “System of Rice Intensification” में, जिसमें धान के खेतों को वैकल्पिक रूप से गीला और सुखाया जाता है, इसके परिणामस्वरूप:**\n\n1. बीज की आवश्यकता में कमी\n2. मीथेन उत्पादन में कमी\n3. विद्युत खपत में कमी\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "8aeeb893-87ee-4ff7-a8ad-f3eb6714dd87",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following lakes of West Africa has become dry and turned into a desert?\n\n(a) Lake Victoria\n(b) Lake Faguibine\n(c) Lake Oguta\n(d) Lake Volta",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "पश्चिम अफ्रीका की निम्नलिखित झीलों में से कौन-सी सूखकर रेगिस्तान में बदल गई है?\n\n(a) लेक विक्टोरिया\n(b) लेक फागुइबिन\n(c) लेक ओगुता\n(d) लेक वोल्टा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "cb9ddc88-7632-41a6-bbe1-cd687d7da32f",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Gandikota canyon of South India was created by which one of the following rivers?\n\n(a) Cauvery\n(b) Manjira\n(c) Pennar\n(d) Tungabhadra",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "दक्षिण भारत के गांडीकोटा घाटी का निर्माण निम्नलिखित नदियों में से किस नदी ने किया है?\n\n(a) कावेरी\n(b) मंजिरा\n(c) पेनार\n(d) तुंगभद्रा",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "297aa9fc-e2c8-49d6-83f7-7359529281c1",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "25. Consider the following pairs:\nPeak Mountains:\n1. Namcha Barwa — Garhwal Himalaya\n2. Nanda Devi — Kumaon Himalaya\n3. Nokrek — Sikkim Himalaya\nWhich of the pairs given above is/are correctly matched?\n(a) 1 and 2\n(b) 2 only\n(c) 1 and 3\n(d) 3 only",
+      "table_data": {
+        "header_text": "Consider the following pairs:",
+        "footer_text": "**Which of the pairs given above is/are correctly matched? **\n(a) 1 and 2 \n(b) 2 only \n(c) 1 and 3 \n(d) 3 only",
+        "columns": [
+          "Peak",
+          "Mountains"
+        ],
+        "rows": [
+          [
+            "Namcha Barwa",
+            "Garhwal Himalaya"
+          ],
+          [
+            "Nanda Devi",
+            "Kumaon Himalaya"
+          ],
+          [
+            "Nokrek",
+            "Sikkim Himalaya"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "25. निम्नलिखित युग्मों पर विचार कीजिए:\nशिखर पर्वत:\n1. नमचा बरवा — गढ़वाल हिमालय\n2. नंदा देवी — कुमाऊं हिमालय\n3. नोक्रेक — सिक्किम हिमालय\nउपरोक्त में से कौन-से युग्म सही रूप से मेल खाते हैं?\n(a) 1 और 2\n(b) केवल 2\n(c) 1 और 3\n(d) केवल 3",
+      "table_data": {
+        "header_text": "निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कौन-से युग्म सही रूप से मेल खाते हैं?**\n(a) 1 और 2\n(b) केवल 2\n(c) 1 और 3\n(d) केवल 3",
+        "columns": [
+          "शिखर",
+          "पर्वत"
+        ],
+        "rows": [
+          [
+            "नमचा बरवा",
+            "गढ़वाल हिमालय"
+          ],
+          [
+            "नंदा देवी",
+            "कुमाऊं हिमालय"
+          ],
+          [
+            "नोक्रेक",
+            "सिक्किम हिमालय"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "acf8a4bb-ee9a-401d-b9b6-e0ac1f92d7d7",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The term “Levant” often heard in the news roughly corresponds to which of the following regions?\n\n(a) Region along the eastern Mediterranean shores\n(b) Region along North African shores stretching from Egypt to Morocco\n(c) Region along Persian Gulf and Horn of Africa\n(d) The entire coastal areas of Mediterranean Sea",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "समाचारों में अक्सर सुना जाने वाला शब्द “लेवेंट” निम्नलिखित में से किस क्षेत्र के लगभग मेल खाता है?\n\n(a) पूर्वी भूमध्यसागरीय तटों के साथ क्षेत्र\n(b) मिस्र से मोरक्को तक फैले उत्तरी अफ्रीकी तटों के साथ क्षेत्र\n(c) फारस की खाड़ी और अफ्रीका के हॉर्न के साथ क्षेत्र\n(d) भूमध्य सागर के संपूर्ण तटीय क्षेत्र",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "f17e74c6-83a0-42b6-b4e3-202f4e87b4cb",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following countries:**\n1. Kyrgyzstan\n2. Tajikistan\n3. Turkmenistan\n4. Uzbekistan\n\n**Which of the above have borders with Afghanistan?**\n(a) 1, 2 and 5 only\n(b) 1, 2, 3 and 4 only\n(c) 3, 4 and 5 only\n(d) 1, 2, 3, 4 and 5",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित देशों पर विचार करें:**\n1. किर्गिज़स्तान\n2. ताजिकिस्तान\n3. तुर्कमेनिस्तान\n4. उज़्बेकिस्तान\n\n**उपरोक्त में से कौन-से देश अफगानिस्तान से सीमा साझा करते हैं?**\n(a) केवल 1, 2 और 5\n(b) केवल 1, 2, 3 और 4\n(c) केवल 3, 4 और 5\n(d) 1, 2, 3, 4 और 5",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "06c4f159-24e2-4231-9cd1-8259adaec9bf",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to India, consider the following statements:**\n1. Monazite is a source of rare earths.\n2. Monazite contains thorium.\n3. Monazite occurs naturally in the entire Indian coastal sands.\n4. In India, Government bodies only can process or export monazite.\n\n**Which of the statements given above are correct?**\n(a) 1, 2 and 3 only\n(b) 1, 2 and 4 only\n(c) 3, 8 and 4 only\n(d) 1, 2, 3 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n1. मोनाजाइट दुर्लभ पृथ्वी तत्वों का स्रोत है।\n2. मोनाजाइट में थोरियम होता है।\n3. मोनाजाइट प्राकृतिक रूप से पूरे भारतीय तटीय रेत में पाया जाता है।\n4. भारत में, केवल सरकारी संस्थाएँ ही मोनाजाइट का प्रसंस्करण या निर्यात कर सकती हैं।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) केवल 1, 2 और 3\n(b) केवल 1, 2 और 4\n(c) केवल 3, 8 और 4\n(d) 1, 2, 3 और 4"
+    }
+  },
+  {
+    "uuid": "8c0a1b82-495a-4b15-9fa1-2662d2286ec5",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**In the northern hemisphere, the longest day of the year normally occurs in the:**\n\n(a) First half of the month of June\n(b) Second half of the month of June\n(c) First half of the month of July\n(d) Second half of the month of July",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**उत्तरी गोलार्ध में, वर्ष का सबसे लंबा दिन सामान्यतः निम्नलिखित में से कब होता है:**\n\n(a) जून के महीने के पहले आधे में\n(b) जून के महीने के दूसरे आधे में\n(c) जुलाई के महीने के पहले आधे में\n(d) जुलाई के महीने के दूसरे आधे में",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "1a649850-efcc-4253-8f66-36875884fec6",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "30. Consider the following pairs:\nWetland / Lake Location\n1. Hokera Wetland — Punjab\n2. Renuka Wetland — Himachal Pradesh\n3. Rudrasagar Lake — Tripura\n4. Sasthamkotta Lake — Tamil Nadu\nHow many pairs given above are correctly matched?\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+      "table_data": {
+        "header_text": "Consider the following pairs:",
+        "footer_text": "**How many pairs given above are correctly matched?**\n\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+        "columns": [
+          "Wetland / Lake",
+          "Location"
+        ],
+        "rows": [
+          [
+            "Hokera Wetland",
+            "Punjab"
+          ],
+          [
+            "Renuka Wetland",
+            "Himachal Pradesh"
+          ],
+          [
+            "Rudrasagar Lake",
+            "Tripura"
+          ],
+          [
+            "Sasthamkotta Lake",
+            "Tamil Nadu"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "30. निम्नलिखित युग्मों पर विचार करें:\nआर्द्रभूमि / झील स्थान\n1. होकेरा आर्द्रभूमि — पंजाब\n2. रेणुका आर्द्रभूमि — हिमाचल प्रदेश\n3. रुद्रसागर झील — त्रिपुरा\n4. सस्थमकोट्टा झील — तमिलनाडु\nउपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+      "table_data": {
+        "header_text": "निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?**\n\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+        "columns": [
+          "आर्द्रभूमि / झील",
+          "स्थान"
+        ],
+        "rows": [
+          [
+            "होकेरा आर्द्रभूमि",
+            "पंजाब"
+          ],
+          [
+            "रेणुका आर्द्रभूमि",
+            "हिमाचल प्रदेश"
+          ],
+          [
+            "रुद्रसागर झील",
+            "त्रिपुरा"
+          ],
+          [
+            "सस्थमकोट्टा झील",
+            "तमिलनाडु"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "933cb0b8-02c4-4444-a82f-864a5f2cc7bc",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following:**\n\n1. Aarogya Setu\n2. CoWIN\n3. DigiLocker\n4. DIKSHA\n\n**Which of the above are built on top of open-source digital platforms?**\n(a) 1 and 2 only\n(b) 2, 3 and 4 only\n(c) 1, 3 and 4 only\n(d) 1, 2, 3 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित पर विचार करें:**\n\n1. आरोग्य सेतु\n2. कोविन (CoWIN)\n3. डिजीलॉकर\n4. दीक्षा\n\n**उपरोक्त में से कौन-कौन से ओपन-सोर्स डिजिटल प्लेटफॉर्म पर आधारित हैं?**\n(a) केवल 1 और 2\n(b) केवल 2, 3 और 4\n(c) केवल 1, 3 और 4\n(d) 1, 2, 3 और 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "471c56e5-6b99-4983-9da6-63902bb6e3df",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Web 3.0, consider the following statements:**\n\n1. Web 3.0 like, enables people to control their own data.\n\n2. In Web 3.0 world, there can be blockchain based social networks.\n\n3. Web 3.0 is operated by users collectively rather than a corporation.\n\n**Which of the statements given above are correct?**\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**वेब 3.0 के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. वेब 3.0 लोगों को अपने स्वयं के डेटा पर नियंत्रण करने में सक्षम बनाता है।\n\n2. वेब 3.0 की दुनिया में, ब्लॉकचेन आधारित सामाजिक नेटवर्क हो सकते हैं।\n\n3. वेब 3.0 को एक निगम के बजाय उपयोगकर्ताओं द्वारा सामूहिक रूप से संचालित किया जाता है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "e466660b-b7b8-4ce1-9284-dd52ba348780",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to “Software as a Service (SaaS)”, consider the following statements:**\n\n1. SaaS buyers can customise the user interface and can change data fields.\n\n2. SaaS users can access their data through their mobile devices.\n\n3. Outlook, Hotmail and Yahoo! Mail are forms of SaaS.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**“सॉफ्टवेयर ऐज़ ए सर्विस (SaaS)” के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. SaaS खरीदार उपयोगकर्ता इंटरफ़ेस को अनुकूलित कर सकते हैं और डेटा फ़ील्ड्स को बदल सकते हैं।\n\n2. SaaS उपयोगकर्ता अपने मोबाइल उपकरणों के माध्यम से अपने डेटा तक पहुँच सकते हैं।\n\n3. Outlook, Hotmail और Yahoo! Mail, SaaS के रूप हैं।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "77db5bc4-26a2-40c2-8d74-520521b0805e",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements best reflects the idea behind the “Fractional Orbital Bombardment System” often talked about in media?\n\n(a) A hypersonic missile is launched into space to counter the asteroid approaching the Earth and explode it in space.\n\n(b) A spacecraft lands on another planet after making several orbital motions.\n\n(c) A missile is put into a stable orbit around the Earth and deorbits over a target on the Earth.\n\n(d) A spacecraft moves along a comet with the same speed and places a probe on its surface.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा कथन “फ्रैक्शनल ऑर्बिटल बॉम्बार्डमेंट सिस्टम” के पीछे की अवधारणा को सबसे सटीक रूप से दर्शाता है, जिसके बारे में मीडिया में अक्सर चर्चा होती है?\n\n(a) एक हाइपरसोनिक मिसाइल को पृथ्वी की ओर बढ़ रहे क्षुद्रग्रह का मुकाबला करने के लिए अंतरिक्ष में लॉन्च किया जाता है और उसे अंतरिक्ष में विस्फोटित कर दिया जाता है।\n\n(b) एक अंतरिक्ष यान कई कक्षीय गतियों के बाद किसी अन्य ग्रह पर उतरता है।\n\n(c) एक मिसाइल को पृथ्वी के चारों ओर स्थिर कक्षा में रखा जाता है और वह पृथ्वी पर किसी लक्ष्य के ऊपर से डिओर्बिट (कक्षा से उतर) करता है।\n\n(d) एक अंतरिक्ष यान एक धूमकेतु के साथ समान गति से चलता है और उसकी सतह पर एक जांच यंत्र (प्रोब) स्थापित करता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "42464cbd-4b57-4e6e-86d4-46786cd05397",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following is the context in which the term “qubit” is mentioned?\n\n(a) Cloud Services\n(b) Quantum Computing\n(c) Visible Light Communication Technologies\n(d) Wireless Communication Technologies",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "\"क्यूबिट\" शब्द किस संदर्भ में उल्लेखित है, निम्नलिखित में से कौन सा है?\n\n(a) क्लाउड सेवाएँ\n(b) क्वांटम कंप्यूटिंग\n(c) दृश्य प्रकाश संचार प्रौद्योगिकियाँ\n(d) वायरलेस संचार प्रौद्योगिकियाँ",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "75526a40-45c3-4fa5-adcd-9448eefe4e7f",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Consider the following communication technologies:\n1. Closed-circuit Television\n2. Radio Frequency Identification\n3. Wireless Local Area Network\nWhich of the above are considered Short-Range devices/technologies?\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "निम्नलिखित संचार तकनीकों पर विचार करें:\n1. क्लोज्ड-सर्किट टेलीविजन\n2. रेडियो फ्रीक्वेंसी आइडेंटिफिकेशन\n3. वायरलेस लोकल एरिया नेटवर्क\nउपरोक्त में से कौन-सी तकनीकें/उपकरण शॉर्ट-रेंज (कम दूरी) के रूप में माने जाते हैं?\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "c417b359-0d84-40d8-892b-beda0d14e84f",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n1. Biofilms can form on medical implants within human tissues.\n2. Biofilms can form on food and food processing surfaces.\n3. Biofilms can exhibit antibiotic resistance.\n\n**Which of the statements given above are correct?**\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n1. बायोफिल्म मानव ऊतकों के भीतर चिकित्सा प्रत्यारोपणों (medical implants) पर बन सकते हैं।\n2. बायोफिल्म भोजन और भोजन प्रसंस्करण सतहों पर बन सकते हैं।\n3. बायोफिल्म एंटीबायोटिक प्रतिरोध (antibiotic resistance) प्रदर्शित कर सकते हैं।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "d3649993-48c4-43fd-8513-0f4ba463444b",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements in respect of probiotics:**\n\n1. Probiotics are made of both bacteria and yeast.\n\n2. The organisms in probiotics are found in foods we ingest but they do not naturally occur in our gut.\n\n3. Probiotics help in the digestion of milk sugars.\n\n**Which of the statements given above is/are correct?**\n(a) 1 only\n(b) 2 only\n(c) 1 and 3\n(d) 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**प्रोबायोटिक्स के संबंध में निम्नलिखित कथनों पर विचार करें:**\n\n1. प्रोबायोटिक्स बैक्टीरिया और यीस्ट दोनों से बने होते हैं।\n\n2. प्रोबायोटिक्स में पाए जाने वाले जीव हमारे द्वारा ग्रहण किए जाने वाले खाद्य पदार्थों में होते हैं, लेकिन वे हमारे आंत में स्वाभाविक रूप से नहीं पाए जाते।\n\n3. प्रोबायोटिक्स दूध में पाए जाने वाले शर्करा के पाचन में सहायता करते हैं।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 3\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "bd5fb8de-cfc6-4d22-9470-d35e51fa4735",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**In the context of vaccines manufactured to prevent COVID-19 pandemic, consider the following statements:**\n\n1. The Serum Institute of India produced COVID-19 vaccine named Covishield using mRNA platform.\n\n2. Sputnik V vaccine is manufactured using vector based platform.\n\n3. COVAXIN is an inactivated pathogen based vaccine.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**कोविड-19 महामारी को रोकने के लिए निर्मित टीकों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. सीरम इंस्टिट्यूट ऑफ इंडिया ने mRNA प्लेटफॉर्म का उपयोग करके कोविड-19 टीका कोविशील्ड का उत्पादन किया।\n\n2. स्पुतनिक V टीका वेक्टर आधारित प्लेटफॉर्म का उपयोग करके निर्मित किया जाता है।\n\n3. कोवैक्सिन एक निष्क्रिय रोगजनक आधारित टीका है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "25702970-4e3f-476d-90a5-88d2c8791ed7",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**If a major solar storm (solar flare) reaches the Earth, which of the following are the possible effects on the Earth?**\n\n1. GPS and navigation systems could fail.\n2. Tsunamis could occur at equatorial regions.\n3. Power grids could be damaged.\n4. Intense auroras could occur over much of the Earth.\n5. Forest fires could take place over much of the planet.\n6. Orbits of the satellites could be disturbed.\n7. Shortwave radio communication of the aircraft flying over polar regions could be interrupted.\n\n**Select the correct answer using the code given below:**\n(a) 1, 2, 4 and 6 only\n(b) 2, 3, 5, 6 and 7 only\n(c) 1, 3, 4, 6 and 7 only\n(d) 1, 2, 3, 4, 5, 6 and 7",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**यदि कोई प्रमुख सौर तूफान (सौर फ्लेयर) पृथ्वी तक पहुँचता है, तो निम्नलिखित में से पृथ्वी पर संभावित प्रभाव कौन-कौन से हो सकते हैं?**\n\n1. जीपीएस और नेविगेशन सिस्टम विफल हो सकते हैं।\n2. विषुवतीय क्षेत्रों में सुनामी आ सकती है।\n3. विद्युत ग्रिड क्षतिग्रस्त हो सकते हैं।\n4. पृथ्वी के अधिकांश भागों में तीव्र ध्रुवीय प्रकाश (ऑरोरा) उत्पन्न हो सकते हैं।\n5. ग्रह के अधिकांश हिस्सों में वनाग्नि लग सकती है।\n6. उपग्रहों की कक्षाएँ प्रभावित हो सकती हैं।\n7. ध्रुवीय क्षेत्रों के ऊपर उड़ रहे विमान की शॉर्टवेव रेडियो संचार बाधित हो सकती है।\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n(a) केवल 1, 2, 4 और 6\n(b) केवल 2, 3, 5, 6 और 7\n(c) केवल 1, 3, 4, 6 और 7\n(d) 1, 2, 3, 4, 5, 6 और 7"
+    }
+  },
+  {
+    "uuid": "62034a89-0392-447c-92a3-c1d1a85c39b6",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**“Climate Action Tracker” which monitors the emission reduction pledges of different countries is a:**\n\n(a) Database created by coalition of research organisations\n\n(b) Wing of “International Panel of Climate Change”\n\n(c) Committee under “United Nations Framework Convention on Climate Change”\n\n(d) Agency promoted and financed by United Nations Environment Programme and World Bank",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**“क्लाइमेट एक्शन ट्रैकर” जो विभिन्न देशों के उत्सर्जन कटौती वादों की निगरानी करता है, वह है:**\n\n(a) अनुसंधान संगठनों के गठबंधन द्वारा निर्मित डेटाबेस\n\n(b) “इंटरनेशनल पैनल ऑन क्लाइमेट चेंज” की एक शाखा\n\n(c) “संयुक्त राष्ट्र फ्रेमवर्क कन्वेंशन ऑन क्लाइमेट चेंज” के अंतर्गत समिति\n\n(d) एजेंसी जिसे संयुक्त राष्ट्र पर्यावरण कार्यक्रम और विश्व बैंक द्वारा प्रोत्साहित और वित्तपोषित किया जाता है"
+    }
+  },
+  {
+    "uuid": "7b928fc4-940a-42b9-a2cd-a45a1dbfbecf",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. “The Climate Group” is an international non-profit organization that drives climate action by building large networks and runs them.\n\n2. The International Energy Agency, in partnership with the Climate Group, launched a global initiative “EP100”.\n\n3. EP100 brings together leading companies committed to driving innovation in energy efficiency and increasing competitiveness while delivering on emission reduction goals.\n\n4. Some Indian companies are members of EP100.\n\n5. The International Energy Agency is the Secretariat to the “Under2 Coalition”.\n\n**Which of the statements given above are correct?**\n(a) 1, 2, 4 and 5\n\n(b) 1, 3 and 4 only\n\n(c) 2, 3 and 5 only\n\n(d) 1, 2, 3, 4 and 5",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. “द क्लाइमेट ग्रुप” एक अंतरराष्ट्रीय गैर-लाभकारी संगठन है जो बड़े नेटवर्क बनाकर और उन्हें संचालित करके जलवायु कार्रवाई को आगे बढ़ाता है।\n\n2. अंतरराष्ट्रीय ऊर्जा एजेंसी ने, क्लाइमेट ग्रुप के साथ साझेदारी में, एक वैश्विक पहल “EP100” शुरू की।\n\n3. EP100 उन प्रमुख कंपनियों को एक साथ लाता है जो ऊर्जा दक्षता में नवाचार को बढ़ावा देने और प्रतिस्पर्धात्मकता बढ़ाने के साथ-साथ उत्सर्जन में कमी के लक्ष्यों को पूरा करने के लिए प्रतिबद्ध हैं।\n\n4. कुछ भारतीय कंपनियां EP100 की सदस्य हैं।\n\n5. अंतरराष्ट्रीय ऊर्जा एजेंसी “अंडर2 कोएलिशन” की सचिवालय है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) 1, 2, 4 और 5\n\n(b) केवल 1, 3 और 4\n\n(c) केवल 2, 3 और 5\n\n(d) 1, 2, 3, 4 और 5"
+    }
+  },
+  {
+    "uuid": "d03ad12a-c666-41f2-a5db-6964ef9bc39e",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "\"If rainforests and tropical forests are the lungs of the Earth, then surely wetlands function as its kidneys.” **Which one of the following functions of wetlands best reflects the above statement?**\n\n(a) The water cycle in wetlands involves surface runoff, subsoil percolation, and evaporation.\n\n(b) Algae form the nutrient base upon which fish, crustaceans, molluscs, birds, reptiles, and mammals thrive.\n\n(c) Wetlands play a vital role in maintaining sedimentation balance and soil stabilization.\n\n(d) Aquatic plants absorb heavy metals and excess nutrients.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "\"यदि वर्षावन और उष्णकटिबंधीय वन पृथ्वी के फेफड़े हैं, तो निश्चय ही आर्द्रभूमि (Wetlands) इसके गुर्दे के रूप में कार्य करती हैं।” **निम्नलिखित में से आर्द्रभूमि के कौन-से कार्य उपरोक्त कथन को सर्वश्रेष्ठ रूप से प्रतिबिंबित करते हैं?**\n\n(a) आर्द्रभूमि में जल चक्र में सतही जल प्रवाह, उप-मृदा रिसाव, और वाष्पीकरण शामिल हैं।\n\n(b) शैवाल पोषक आधार बनाते हैं जिस पर मछलियाँ, क्रस्टेशियन्स, मोलस्क्स, पक्षी, सरीसृप, और स्तनधारी जीव निर्भर करते हैं।\n\n(c) आर्द्रभूमि तलछट संतुलन बनाए रखने और मृदा स्थिरीकरण में महत्वपूर्ण भूमिका निभाती हैं।\n\n(d) जलीय पौधे भारी धातुओं और अतिरिक्त पोषक तत्वों को अवशोषित करते हैं।"
+    }
+  },
+  {
+    "uuid": "f9f7490a-d143-47fe-9556-c6355d953064",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**In the context of WHO Air Quality Guidelines, consider the following statements:**\n\n1. The 24-hour mean of PM2.5 should not exceed 15 µg/m³ and the annual mean of PM2.5 should not exceed 5 µg/m³.\n\n2. In a year, the highest levels of ozone pollution occur during periods of inclement weather.\n\n3. PM2.5 can penetrate the lung barrier and enter the bloodstream.\n\n4. Excessive ozone in the air can trigger asthma.\n\n**Which of the statements given above are correct?**\n(a) 1, 3 and 4\n(b) 1 and 4 only\n(c) 2, 3 and 4\n(d) 1 and 2 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**WHO वायु गुणवत्ता दिशानिर्देशों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. PM2.5 का 24-घंटे का औसत 15 माइक्रोग्राम/घन मीटर से अधिक नहीं होना चाहिए और वार्षिक औसत 5 माइक्रोग्राम/घन मीटर से अधिक नहीं होना चाहिए।\n\n2. एक वर्ष में, ओजोन प्रदूषण का उच्चतम स्तर प्रतिकूल मौसम की अवधि के दौरान होता है।\n\n3. PM2.5 फेफड़ों की बाधा को पार कर रक्तप्रवाह में प्रवेश कर सकता है।\n\n4. वायु में अत्यधिक ओजोन अस्थमा को उत्प्रेरित कर सकता है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) 1, 3 और 4\n(b) केवल 1 और 4\n(c) 2, 3 और 4\n(d) केवल 1 और 2"
+    }
+  },
+  {
+    "uuid": "e812f427-ec1c-40ff-b090-0db40f0b7123",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to “Gucchi” sometimes mentioned in the news, consider the following statements:**\n\n1. It is a fungus.\n\n2. It grows in some Himalayan forest areas.\n\n3. It is commercially cultivated in the Himalayan foothills of north-eastern India.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n\n(b) 3 only\n\n(c) 1 and 2\n\n(d) 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**समाचारों में कभी-कभी उल्लेखित “गुच्छी” के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. यह एक कवक (फंगस) है।\n\n2. यह हिमालय के कुछ वन क्षेत्रों में उगता है।\n\n3. इसे भारत के पूर्वोत्तर हिमालयी तलहटी क्षेत्रों में व्यावसायिक रूप से उगाया जाता है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 3\n\n(c) 1 और 2\n\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "fe7865a6-796f-4b43-a8b0-917df3c6024c",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "With reference to polyethylene terephthalate, the use of which is so widespread in our daily lives,** consider the following statements:**\n\n1. Its fibres can be blended with wool and cotton fibres to reinforce their properties.\n\n2. Containers made of it can be used to store any alcoholic beverage.\n\n3. Bottles made of it can be recycled into other products.\n\n4. Articles made of it can be easily disposed of by incineration without causing greenhouse gas emissions.\n\n**Which of the statements given above are correct?**\n(a) 1 and 3\n(b) 2 and 4\n(c) 1 and 4\n(d) 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "पॉलीएथिलीन टेरेफ्थेलेट के संदर्भ में, जिसका उपयोग हमारे दैनिक जीवन में अत्यंत व्यापक है, **निम्नलिखित कथनों पर विचार करें:**\n\n1. इसके रेशों को ऊन और कपास के रेशों के साथ मिलाकर उनकी गुणधर्मों को सुदृढ़ किया जा सकता है।\n\n2. इससे बने कंटेनरों का उपयोग किसी भी प्रकार के शराबी पेय को संग्रहित करने के लिए किया जा सकता है।\n\n3. इससे बनी बोतलों को अन्य उत्पादों में पुनर्नवीनीकरण किया जा सकता है।\n\n4. इससे बने वस्तुओं को आसानी से दहन द्वारा नष्ट किया जा सकता है बिना ग्रीनहाउस गैस उत्सर्जन के।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n(a) 1 और 3\n(b) 2 और 4\n(c) 1 और 4\n(d) 2 और 3"
+    }
+  },
+  {
+    "uuid": "ab048a8f-fa7c-4dcf-9823-bc8c68023a1c",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which of the following is not a bird?**\n\n(a) Golden Mahseer\n\n(b) Indian Nightjar\n\n(c) Spoonbill\n\n(d) White Ibis",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन पक्षी नहीं है?**\n\n(a) गोल्डन माहसीर\n\n(b) भारतीय नाइटजार\n\n(c) स्पूनबिल\n\n(d) व्हाइट आइबिस",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "00700cab-dcf3-4c8a-97af-cfdc5b2b507a",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which of the following are nitrogen-fixing plants?**\n1. Alfalfa\n2. Amaranth\n3. Chickpea\n4. Clover\n5. Purslane (Kulfa)\n6. Spinach\n\n**Select the correct answer using the code given below:**\n(a) 1, 3 and 4 only\n(b) 1, 3, 5 and 6 only\n(c) 2, 4, 5 and 6 only\n(d) 1, 2, 4, 5 and 6",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन-कौन से नाइट्रोजन-स्थिर植物 हैं?**\n1. अल्फाल्फा\n2. अमरंथ\n3. चना\n4. क्लोवर\n5. कुल्फा (पर्सलेन)\n6. पालक\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n(a) केवल 1, 3 और 4\n(b) केवल 1, 3, 5 और 6\n(c) केवल 2, 4, 5 और 6\n(d) 1, 2, 4, 5 और 6"
+    }
+  },
+  {
+    "uuid": "ee6335c0-47d6-4449-99ab-d304ec650136",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**“Biorock technology” is talked about in which one of the following **situations?\n\n(a) Restoration of damaged coral reefs\n(b) Development of building materials using plant residues\n(c) Identification of areas for exploration/extraction of shale gas\n(d) Providing salt licks for wild animals in forests/protected areas",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**“बायोरॉक तकनीक” के संदर्भ में निम्नलिखित में से किस स्थिति की चर्चा की जाती है?**\n\n(a) क्षतिग्रस्त मूंगा चट्टानों की पुनर्स्थापना\n(b) पौधों के अवशेषों का उपयोग कर निर्माण सामग्री का विकास\n(c) शेल गैस के अन्वेषण/निकर्षण के लिए क्षेत्रों की पहचान\n(d) वन/संरक्षित क्षेत्रों में जंगली जानवरों के लिए नमक के चाटने के स्थान प्रदान करना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "574f8fe0-2004-49e7-9ce6-b5ccbda63e28",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**The “Miyawaki method” is well known for the:**\n\n(a) Promotion of commercial farming in arid and semi-arid areas\n(b) Development of gardens using genetically modified flora\n(c) Creation of mini forests in urban areas\n(d) Harvesting wind energy on coastal areas and on sea surfaces",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**“मियावाकी विधि” निम्नलिखित के लिए प्रसिद्ध है:**\n\n(a) शुष्क और अर्ध-शुष्क क्षेत्रों में वाणिज्यिक कृषि को बढ़ावा देना\n(b) आनुवंशिक रूप से संशोधित वनस्पतियों का उपयोग कर बागानों का विकास\n(c) शहरी क्षेत्रों में लघु वन (मिनी फॉरेस्ट) का सृजन\n(d) तटीय क्षेत्रों और समुद्र की सतह पर पवन ऊर्जा का संचयन",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "175abd9f-6838-4385-b099-657029d754f0",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In the Government of India Act 1919, the functions of Provincial Government were divided into “Reserved” and “Transferred” subjects. Which of the following were treated as “Reserved” subjects?\n1. Administration of Justice\n2. Local Self-Government\n3. Land Revenue\n4. Police\n\n**Select the correct answer using the code given below:**\n(a) 1, 2 and 3\n(b) 2, 3 and 4\n(c) 1, 3 and 4\n(d) 1, 2 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "भारत सरकार अधिनियम 1919 में, प्रांतीय सरकार के कार्यों को “आरक्षित” और “स्थानांतरित” विषयों में विभाजित किया गया था। निम्नलिखित में से कौन-कौन से विषय “आरक्षित” विषय माने गए थे?\n1. न्याय प्रशासन\n2. स्थानीय स्वशासन\n3. भूमि राजस्व\n4. पुलिस\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n(a) 1, 2 और 3\n(b) 2, 3 और 4\n(c) 1, 3 और 4\n(d) 1, 2 और 4"
+    }
+  },
+  {
+    "uuid": "a5830f63-fd33-4fb9-9662-3785ccf2fa64",
+    "meta": {
+      "subject": "Ancient history and culture",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": " In medieval India, the term “Fanam” referred to:\n(a) Clothing\n(b) Coins\n(c) Ornaments\n(d) Weapons",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "मध्यकालीन भारत में, “फनाम” शब्द का अर्थ था:\n(a) वस्त्र\n(b) सिक्के\n(c) आभूषण\n(d) हथियार",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "93e0feea-28f7-4655-bc00-f6a511ba1923",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following freedom fighters:**\n1. Barindra Kumar Ghosh\n2. Jogesh Chandra Chatterjee\n3. Rash Behari Bose\n\n**Who of the above was/were actively associated with the Ghadar Party?**\n(a) 1 and 2\n(b) 2 only\n(c) 1 and 3\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित स्वतंत्रता सेनानियों पर विचार करें:**\n1. बरींद्र कुमार घोष\n2. योगेश चंद्र चटर्जी\n3. रास बिहारी बोस\n\n**उपरोक्त में से कौन/कौन ग़दर पार्टी से सक्रिय रूप से जुड़े थे?**\n(a) 1 और 2\n(b) केवल 2\n(c) 1 और 3\n(d) केवल 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "0e970c31-7354-40d5-87e3-e16562fd4936",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the proposals of Cripps Mission, consider the following statements:**\n\n1. The Constituent Assembly would have members nominated by the Provincial Assemblies as well as the Princely States.\n\n2. Any Province which is not prepared to accept the new Constitution would have the right to sign a separate agreement with Britain regarding its future status.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n(b) 2 only\n(c) Both 1 and 2\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**क्रिप्स मिशन के प्रस्तावों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. संविधान सभा के सदस्य प्रांतीय विधानसभाओं के साथ-साथ रियासतों द्वारा नामित किए जाएंगे।\n\n2. कोई भी प्रांत जो नए संविधान को स्वीकार करने के लिए तैयार नहीं होगा, उसे अपनी भविष्य की स्थिति के संबंध में ब्रिटेन के साथ अलग समझौता करने का अधिकार होगा।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n(b) केवल 2\n(c) 1 और 2 दोनों\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "1e6d9d11-2c1e-4ceb-af2a-9cadc69e6619",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Indian history, consider the following texts:**\n\n1. Nettipakarana\n2. Parishishtaparvan\n3. Avadanashataka\n4. Trishashtilakshana Mahapurana\n\n**Which of the above are Jaina texts?**\n\n(a) 1, 2 and 3\n(b) 2 and 4 only\n(c) 1, 3 and 4\n(d) 2, 3 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय इतिहास के संदर्भ में, निम्नलिखित ग्रंथों पर विचार करें:**\n\n1. नेत्तिपकारण\n2. परिशिष्टपर्व\n3. अवदानशतक\n4. त्रिषष्टिलक्षण महापुराण\n\n**उपरोक्त में से कौन से जैन ग्रंथ हैं?**\n\n(a) 1, 2 और 3\n(b) केवल 2 और 4\n(c) 1, 3 और 4\n(d) 2, 3 और 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "b6023c45-6648-4e7e-b314-79710eba8169",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "56. With reference to Indian history, consider the following pairs:\nHistorical person - Known as\n1. Aryadeva - Jaina scholar\n2. Dignaga - Buddhist scholar\n3. Nathamuni - Vaishnava scholar\nHow many pairs given above are correctly matched?\n(a) None of the pairs\n(b) Only one pair\n(c) Only two pairs\n(d) All three pairs",
+      "table_data": {
+        "header_text": "With reference to Indian history, consider the following pairs:",
+        "footer_text": "**How many pairs given above are correctly matched?**\n(a) None of the pairs\n(b) Only one pair\n(c) Only two pairs\n(d) All three pairs",
+        "columns": [
+          "Historical person",
+          "Known as"
+        ],
+        "rows": [
+          [
+            "Aryadeva",
+            "Jaina scholar"
+          ],
+          [
+            "Dignaga",
+            "Buddhist scholar"
+          ],
+          [
+            "Nathamuni",
+            "Vaishnava scholar"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "56. भारतीय इतिहास के संदर्भ में, निम्नलिखित युग्मों पर विचार करें:\nऐतिहासिक व्यक्ति - के रूप में प्रसिद्ध\n1. आर्यदेव - जैन विद्वान\n2. दिग्नाग - बौद्ध विद्वान\n3. नाथमुनि - वैष्णव विद्वान\nउपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?\n(a) कोई भी युग्म नहीं\n(b) केवल एक युग्म\n(c) केवल दो युग्म\n(d) सभी तीन युग्म",
+      "table_data": {
+        "header_text": "भारतीय इतिहास के संदर्भ में, निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?**\n(a) कोई भी युग्म नहीं\n(b) केवल एक युग्म\n(c) केवल दो युग्म\n(d) सभी तीन युग्म",
+        "columns": [
+          "ऐतिहासिक व्यक्ति",
+          "के रूप में प्रसिद्ध"
+        ],
+        "rows": [
+          [
+            "आर्यदेव",
+            "जैन विद्वान"
+          ],
+          [
+            "दिग्नाग",
+            "बौद्ध विद्वान"
+          ],
+          [
+            "नाथमुनि",
+            "वैष्णव विद्वान"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "9889ad81-61b8-4558-8cc5-7e34be973744",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Indian history, consider the following statements:**\n\n1. The first Mongol invasion of India happened during the reign of Jalal-ud-din Khalji.\n\n2. During the reign of Ala-ud-din Khalji, one Mongol assault marched up to Delhi and besieged the city.\n\n3. Muhammad-bin-Tughlaq temporarily lost portions of north-west of his kingdom to Mongols.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 and 2\n(b) 2 only\n(c) 1 and 3\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय इतिहास के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. भारत पर पहला मंगोल आक्रमण जलाल-उद-दीन खिलजी के शासनकाल में हुआ था।\n\n2. अलाउद्दीन खिलजी के शासनकाल में एक मंगोल हमला दिल्ली तक पहुंचा और शहर की घेराबंदी की।\n\n3. मुहम्मद-बिन-तुगलक ने अस्थायी रूप से अपने राज्य के उत्तर-पश्चिमी हिस्से मंगोलों को खो दिए थे।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) 1 और 2\n(b) केवल 2\n(c) 1 और 3\n(d) केवल 3"
+    }
+  },
+  {
+    "uuid": "a9a85432-6e92-4a36-b4e0-6f2596750595",
+    "meta": {
+      "subject": "Ancient history and culture",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Indian history, who of the following were known as \"Kulah-Daran\"?**\n\n(a) Arab merchants\n\n(b) Qalandars\n\n(c) Persian calligraphists\n\n(d) Sayyids",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय इतिहास के संदर्भ में, निम्नलिखित में से किसे \"कुलाह-दारान\" के नाम से जाना जाता था?**\n\n(a) अरब व्यापारी\n\n(b) कलंदर\n\n(c) फारसी सुलेखकार\n\n(d) सय्यद"
+    }
+  },
+  {
+    "uuid": "fa98cc0c-47a3-469b-aebf-fc8cfddef01c",
+    "meta": {
+      "subject": "Modern history",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Indian history, consider the following statements:**\n\n1. The Dutch established their factories/warehouses on the east coast on lands granted to them by Gajapati rulers.\n\n2. Alfonso de Albuquerque captured Goa from the Bijapur Sultanate.\n\n3. The English East India Company established a factory at Madras on a plot of land leased from a representative of the Vijayanagara empire.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारतीय इतिहास के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. डचों ने पूर्वी तट पर अपने कारखाने/गोदाम गजपति शासकों द्वारा प्रदान की गई भूमि पर स्थापित किए।\n\n2. अल्फोंसो डी अल्बुquerque ने बीजापुर सुल्तानत से गोवा पर कब्जा किया।\n\n3. अंग्रेज़ ईस्ट इंडिया कंपनी ने मद्रास में विजयनगर साम्राज्य के एक प्रतिनिधि से पट्टे पर ली गई भूमि पर एक कारखाना स्थापित किया।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "8903c71a-0e56-4f96-8fed-2b407be1f94f",
+    "meta": {
+      "subject": "Ancient history and culture",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**According to Kautilya’s Arthashastra, which of the following are correct?**\n\n1. A person could be a slave as a result of a judicial punishment.\n\n2. If a female slave bore her master a son, she was legally free.\n\n3. If a son born to a female slave was fathered by her master, the son was entitled to the legal status of the master’s son.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**कौटिल्य के अर्थशास्त्र के अनुसार, निम्नलिखित में से कौन-से कथन सही हैं?**\n\n1. न्यायिक दंड के परिणामस्वरूप कोई व्यक्ति दास हो सकता था।\n\n2. यदि कोई महिला दास अपने स्वामी को पुत्र जन्म देती थी, तो वह कानूनी रूप से स्वतंत्र होती थी।\n\n3. यदि महिला दास से जन्मा पुत्र उसके स्वामी का पुत्र था, तो उस पुत्र को स्वामी के पुत्र का कानूनी दर्जा प्राप्त था।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "96dec531-37e8-446f-9d53-cadaf283ac65",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Tight monetary policy of US Federal Reserve could lead to capital flight.\n\n2. Capital flight may increase the interest cost of firms with existing External Commercial Borrowings (ECBs).\n\n3. Devaluation of domestic currency decreases the currency risk associated with ECBs.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. अमेरिकी फेडरल रिजर्व की कड़ी मौद्रिक नीति पूंजी पलायन (Capital Flight) का कारण बन सकती है।\n\n2. पूंजी पलायन उन फर्मों के लिए जिनके पास मौजूदा बाहरी वाणिज्यिक उधार (External Commercial Borrowings - ECBs) हैं, ब्याज लागत बढ़ा सकता है।\n\n3. घरेलू मुद्रा का अवमूल्यन ECBs से जुड़े मुद्रा जोखिम को कम करता है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "8c158a27-3b86-4af6-b6c0-6423066f9b7b",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following States:**\n\n1. Andhra Pradesh\n2. Kerala\n3. Himachal Pradesh\n4. Tripura\n\n**How many of the above are generally known as tea-producing States?**\n\n(a) Only one State\n(b) Only two States\n(c) Only three States\n(d) All four States",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित राज्यों पर विचार करें:**\n\n1. आंध्र प्रदेश\n2. केरल\n3. हिमाचल प्रदेश\n4. त्रिपुरा\n\n**उपरोक्त में से कितने राज्य सामान्यतः चाय उत्पादन के लिए जाने जाते हैं?**\n\n(a) केवल एक राज्य\n(b) केवल दो राज्य\n(c) केवल तीन राज्य\n(d) सभी चार राज्य",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "b308565a-bc85-4b88-be70-53bcb9442903",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. In India, credit rating agencies are regulated by Reserve Bank of India.\n\n2. The rating agency popularly known as ICRA is a public limited company.\n\n3. Brickwork Ratings is an Indian credit rating agency.\n\n**Which of the statements given above a**re correct?\n\n(a) 1 and 2 only\n(b) 2 and 3 only\n(c) 1 and 3 only\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. भारत में, क्रेडिट रेटिंग एजेंसियों का नियमन भारतीय रिजर्व बैंक द्वारा किया जाता है।\n\n2. आईसीआरए के नाम से प्रसिद्ध रेटिंग एजेंसी एक सार्वजनिक लिमिटेड कंपनी है।\n\n3. ब्रिकवर्क रेटिंग्स एक भारतीय क्रेडिट रेटिंग एजेंसी है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n(b) केवल 2 और 3\n(c) केवल 1 और 3\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "5e99871f-9efa-429c-ab37-1db6e57fac68",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the 'Banks Board Bureau (BBB)', which of the following statements are correct?**\n\n1. The Governor of RBI is the Chairman of BBB.\n\n2. BBB recommends the selection of heads for Public Sector Banks.\n\n3. BBB helps the Public Sector Banks in developing strategies and capital raising plans.\n\n**Select the correct answer using the code given below:**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**'बैंक्स बोर्ड ब्यूरो (BBB)' के संदर्भ में, निम्नलिखित में से कौन-से कथन सही हैं?**\n\n1. RBI के गवर्नर, BBB के अध्यक्ष होते हैं।\n\n2. BBB सार्वजनिक क्षेत्र के बैंकों के प्रमुखों के चयन की सिफारिश करता है।\n\n3. BBB सार्वजनिक क्षेत्र के बैंकों को रणनीतियाँ विकसित करने और पूंजी जुटाने की योजनाओं में सहायता करता है।\n\n**नीचे दिए गए कोड का उपयोग कर सही उत्तर चुनिए:**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "11526fea-0f9a-46d5-be04-9ebb1f6385bd",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Convertible Bonds, consider the following statements:**\n\n1. As there is an option to exchange the bond for equity, Convertible Bonds pay a lower rate of interest.\n\n2. The option to convert to equity affords the bondholder a degree of indexation to rising consumer prices.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n\n(b) 2 only\n\n(c) Both 1 and 2\n\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**कन्वर्टिबल बॉन्ड्स के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. चूंकि बॉन्ड को इक्विटी में परिवर्तित करने का विकल्प होता है, इसलिए कन्वर्टिबल बॉन्ड्स कम ब्याज दर देते हैं।\n\n2. इक्विटी में परिवर्तित करने का विकल्प बॉन्डधारक को बढ़ती उपभोक्ता कीमतों के प्रति एक प्रकार की सूचकांकित सुरक्षा प्रदान करता है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 2\n\n(c) 1 और 2 दोनों\n\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "4fc9ecf5-91e1-45ea-899f-1bb6adcea1e8",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following:**\n\n1. Asian Infrastructure Investment Bank\n\n2. Missile Technology Control Regime\n\n3. Shanghai Cooperation Organisation\n\n**India is a member of which of the above?**\n\n(a) 1 and 2 only\n\n(b) 3 only\n\n(c) 2 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित पर विचार करें:**\n\n1. एशियाई अवसंरचना निवेश बैंक\n\n2. मिसाइल प्रौद्योगिकी नियंत्रण व्यवस्था\n\n3. शंघाई सहयोग संगठन\n\n**भारत उपरोक्त में से किसका सदस्य है?**\n\n(a) केवल 1 और 2\n\n(b) केवल 3\n\n(c) केवल 2 और 3\n\n(d) 1, 2 और 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "fe641e9f-80e0-4316-9648-21a7ed16415a",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Vietnam has been one of the fastest growing economies in the world in recent years.\n\n2. Vietnam is led by a multi-party political system.\n\n3. Vietnam's economic growth is linked to its integration with global supply chains and focus on exports.\n\n4. For a long time, Vietnam's low labour costs and stable exchange rates have attracted global manufacturers.\n\n5. Vietnam has the most productive e-service sector in the Indo-Pacific region.\n\n**Which of the statements given above are correct?**\n\n(a) 2 and 4\n\n(b) 5 and 5\n\n(c) 1, 3 and 4\n\n(d) 1 and 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. वियतनाम हाल के वर्षों में विश्व की सबसे तेजी से बढ़ती अर्थव्यवस्थाओं में से एक रहा है।\n\n2. वियतनाम एक बहुदलीय राजनीतिक प्रणाली द्वारा संचालित है।\n\n3. वियतनाम की आर्थिक वृद्धि उसके वैश्विक आपूर्ति श्रृंखलाओं के साथ एकीकरण और निर्यात पर ध्यान केंद्रित करने से जुड़ी है।\n\n4. लंबे समय तक, वियतनाम की कम श्रम लागत और स्थिर विनिमय दरों ने वैश्विक निर्माताओं को आकर्षित किया है।\n\n5. वियतनाम के पास इंडो-पैसिफिक क्षेत्र में सबसे उत्पादक ई-सेवा क्षेत्र है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) 2 और 4\n\n(b) 5 और 5\n\n(c) 1, 3 और 4\n\n(d) 1 और 2"
+    }
+  },
+  {
+    "uuid": "f0a1f5ed-aa48-44e9-99dd-824414139bac",
+    "meta": {
+      "subject": "Economy",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**In India, which one of the following is responsible for maintaining price stability by controlling inflation?**\n\n(a) Department of Consumer Affairs\n\n(b) Expenditure Management Commission\n\n(c) Financial Stability and Development Council\n\n(d) Reserve Bank of India",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में, निम्नलिखित में से कौन मुद्रास्फीति को नियंत्रित करके मूल्य स्थिरता बनाए रखने के लिए जिम्मेदार है?**\n\n(a) उपभोक्ता मामले विभाग\n\n(b) व्यय प्रबंधन आयोग\n\n(c) वित्तीय स्थिरता और विकास परिषद\n\n(d) भारतीय रिजर्व बैंक",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "4b801b88-13b4-4ddb-9983-816ca1e7eced",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Non-Fungible Tokens (NFTs), consider the following statements:**\n\n1. They enable the digital representation of physical assets.\n\n2. They are unique cryptographic tokens that exist on a blockchain.\n\n3. They can be traded or exchanged at equivalency and therefore can be used as a medium of commercial transactions.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**नॉन-फंजिबल टोकन (NFTs) के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. ये भौतिक संपत्तियों का डिजिटल प्रतिनिधित्व संभव बनाते हैं।\n\n2. ये अद्वितीय क्रिप्टोग्राफिक टोकन होते हैं जो ब्लॉकचेन पर मौजूद होते हैं।\n\n3. इन्हें समतुल्यता पर व्यापार या विनिमय किया जा सकता है और इसलिए इन्हें वाणिज्यिक लेनदेन के माध्यम के रूप में उपयोग किया जा सकता है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "aabc1246-246d-452d-8abb-dc0107c3b748",
+    "meta": {
+      "subject": "Geography",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "70. Consider the following pairs:\n\nReservoirs - States\n1. Ghataprabha — Telangana\n2. Gandhi Sagar — Madhya Pradesh\n3. Indira Sagar — Andhra Pradesh\n4. Maithon — Chhattisgarh\n\nHow many pairs given above are not correctly matched?\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+      "table_data": {
+        "header_text": "Consider the following pairs:",
+        "footer_text": "**How many pairs given above are not correctly matched? **\n\n(a) Only one pair \n\n(b) Only two pairs \n\n(c) Only three pairs \n\n(d) All four pairs",
+        "columns": [
+          "Reservoirs",
+          "States"
+        ],
+        "rows": [
+          [
+            "Ghataprabha",
+            "Telangana"
+          ],
+          [
+            "Gandhi Sagar",
+            "Madhya Pradesh"
+          ],
+          [
+            "Indira Sagar",
+            "Andhra Pradesh"
+          ],
+          [
+            "Maithon",
+            "Chhattisgarh"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "70. निम्नलिखित युग्मों पर विचार करें:\n\nजलाशय - राज्य\n1. घाटप्रभा — तेलंगाना\n2. गांधी सागर — मध्य प्रदेश\n3. इंदिरा सागर — आंध्र प्रदेश\n4. मैथन — छत्तीसगढ़\n\nउपरोक्त में से कितने युग्म सही ढंग से मेल नहीं खाते हैं?\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+      "table_data": {
+        "header_text": "निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही ढंग से मेल नहीं खाते हैं?**\n\n(a) केवल एक युग्म\n\n(b) केवल दो युग्म\n\n(c) केवल तीन युग्म\n\n(d) सभी चार युग्म",
+        "columns": [
+          "जलाशय",
+          "राज्य"
+        ],
+        "rows": [
+          [
+            "घाटप्रभा",
+            "तेलंगाना"
+          ],
+          [
+            "गांधी सागर",
+            "मध्य प्रदेश"
+          ],
+          [
+            "इंदिरा सागर",
+            "आंध्र प्रदेश"
+          ],
+          [
+            "मैथन",
+            "छत्तीसगढ़"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "e5616f2b-c0ca-4540-a5c3-2bc278f05772",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "In India, which one of the following compiles information on industrial disputes, closures, retrenchments and lay-offs in factories employing workers?\n\n(a) Central Statistics Office\n\n(b) Department for Promotion of Industry and Internal Trade\n\n(c) Labour Bureau\n\n(d) National Technical Manpower Information System",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "भारत में, निम्नलिखित में से कौन-सा संस्थान उन कारखानों में कामगारों को रोजगार देने वाले औद्योगिक विवादों, बंदी, छंटनी और निकासी की जानकारी संकलित करता है?\n\n(a) केंद्रीय सांख्यिकी कार्यालय\n\n(b) उद्योग और आंतरिक व्यापार संवर्धन विभाग\n\n(c) श्रम ब्यूरो\n\n(d) राष्ट्रीय तकनीकी मानव संसाधन सूचना प्रणाली",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "1a73542a-9051-46a3-b0b6-61c93571666c",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**In India, what is the role of the Coal Controller’s Organization (CCO)?**\n\n1. CCO is the major source of Coal Statistics in Government of India.\n\n2. It monitors progress of development of Captive Coal/Lignite blocks.\n\n3. It hears any objection to the Government's notification relating to acquisition of coal-bearing areas.\n\n4. It ensures that coal mining companies deliver the coal to end users in the prescribed time.\n\n**Select the correct answer using the code given below:**\n\n(a) 1, 2 and 3\n(b) 3 and 4 only\n(c) 1 and 2 only\n(d) 1, 2 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में, कोयला नियंत्रक संगठन (CCO) की क्या भूमिका है?**\n\n1. CCO भारत सरकार में कोयला सांख्यिकी का प्रमुख स्रोत है।\n\n2. यह कैप्टिव कोयला/लिग्नाइट ब्लॉकों के विकास की प्रगति की निगरानी करता है।\n\n3. यह कोयला-धारक क्षेत्रों के अधिग्रहण से संबंधित सरकार के अधिसूचना पर किसी भी आपत्ति को सुनता है।\n\n4. यह सुनिश्चित करता है कि कोयला खनन कंपनियां निर्धारित समय में कोयला अंतिम उपयोगकर्ताओं तक पहुंचाएं।\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनें:**\n\n(a) 1, 2 और 3\n(b) केवल 3 और 4\n(c) केवल 1 और 2\n(d) 1, 2 और 4"
+    }
+  },
+  {
+    "uuid": "571635ee-35ce-456f-8c02-d7857fca0cd7",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "If a particular area is brought under the Fifth Schedule of the Constitution of India, which one of the following statements best reflects the consequence of it?\n\n(a) This would prevent the transfer of land of tribal people to non-tribal people.\n\n(b) This would create a local self-governing body in that area.\n\n(c) This would convert that area into a Union Territory.\n\n(d) The State having such areas would be declared a Special Category State.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "यदि किसी विशेष क्षेत्र को भारत के संविधान की पांचवीं अनुसूची के अंतर्गत लाया जाता है, तो निम्नलिखित में से कौन-सा कथन इसके परिणाम को सर्वश्रेष्ठ रूप से दर्शाता है?\n\n(a) इससे आदिवासी लोगों की भूमि का गैर-आदिवासी लोगों को हस्तांतरण रोक दिया जाएगा।\n\n(b) इससे उस क्षेत्र में एक स्थानीय स्वशासी निकाय का निर्माण होगा।\n\n(c) इससे वह क्षेत्र एक केंद्र शासित प्रदेश में परिवर्तित हो जाएगा।\n\n(d) ऐसे क्षेत्रों वाले राज्य को विशेष श्रेणी का राज्य घोषित किया जाएगा।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "d5f34e0c-1c1a-49ff-95d1-8a5a2de15c0b",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. The India Sanitation Coalition is a platform to promote sustainable sanitation and is funded by the Government of India and the World Health Organization.\n\n2. The National Institute of Urban Affairs is an apex body of the Ministry of Housing and Urban Affairs in the Government of India and provides innovative solutions to address the challenges of Urban India.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n\n(b) 2 only\n\n(c) Both 1 and 2\n\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. इंडिया सैनिटेशन कोएलिशन सतत स्वच्छता को बढ़ावा देने के लिए एक मंच है और इसे भारत सरकार तथा विश्व स्वास्थ्य संगठन द्वारा वित्तपोषित किया जाता है।\n\n2. नेशनल इंस्टिट्यूट ऑफ अर्बन अफेयर्स भारत सरकार के आवास और शहरी मामलों के मंत्रालय की एक शीर्ष संस्था है और शहरी भारत की चुनौतियों को संबोधित करने के लिए नवोन्मेषी समाधान प्रदान करती है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 2\n\n(c) 1 और 2 दोनों\n\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "dabf3a9e-1247-4f8a-abde-d11680de8d13",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which one of the following has been constituted under the Environment (Protection) Act, 1986?**\n\n(a) Central Water Commission\n\n(b) Central Ground Water Board\n\n(c) Central Ground Water Authority\n\n(d) National Water Development Agency",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन-सा पर्यावरण (संरक्षण) अधिनियम, 1986 के अंतर्गत गठित किया गया है?**\n\n(a) केंद्रीय जल आयोग\n\n(b) केंद्रीय भूजल बोर्ड\n\n(c) केंद्रीय भूजल प्राधिकरण\n\n(d) राष्ट्रीय जल विकास एजेंसी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "420242db-cd12-4cb4-97a6-6e82b52cf89d",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the “United Nations Credentials Committee”, consider the following statements:**\n\n1. It is a committee set up by the UN Security Council and works under its supervision.\n\n2. It traditionally meets in March, June, and September every year.\n\n3. It assesses the credentials of all UN members before submitting a report to the General Assembly for approval.\n\n**Which of the statements given above is/are correct?**\n\n(a) 3 only\n\n(b) 1 and 3\n\n(c) 2 and 3\n\n(d) 1 and 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**\"संयुक्त राष्ट्र प्रमाणपत्र समिति\" के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. यह एक समिति है जिसे संयुक्त राष्ट्र सुरक्षा परिषद द्वारा स्थापित किया गया है और यह उसकी निगरानी में कार्य करती है।\n\n2. यह परंपरागत रूप से हर वर्ष मार्च, जून और सितंबर में बैठक करती है।\n\n3. यह सभी संयुक्त राष्ट्र सदस्यों के प्रमाणपत्रों का मूल्यांकन करती है और अनुमोदन के लिए महासभा को रिपोर्ट प्रस्तुत करती है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 3\n\n(b) 1 और 3\n\n(c) 2 और 3\n\n(d) 1 और 2"
+    }
+  },
+  {
+    "uuid": "1c0f7c6c-b578-4200-a242-f50bfe7a54d1",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which one of the following statements best describes the ‘Polar Code’?**\n\n(a) It is the international code of safety for ships operating in polar waters.\n\n(b) It is the agreement of the countries around the North Pole regarding the demarcation of their territories in the polar region.\n\n(c) It is a set of norms to be followed by the countries whose scientists undertake research studies in the North Pole and South Pole.\n\n(d) It is a trade and security agreement of the member countries of the Arctic Council.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन-सा कथन ‘पोलर कोड’ का सर्वश्रेष्ठ वर्णन करता है?**\n\n(a) यह ध्रुवीय जलक्षेत्रों में संचालित जहाजों के लिए अंतरराष्ट्रीय सुरक्षा संहिता है।\n\n(b) यह उत्तरी ध्रुव के आसपास के देशों के बीच उनके क्षेत्रों के सीमांकन के संबंध में समझौता है।\n\n(c) यह उन देशों द्वारा अनुसरण किए जाने वाले नियमों का समूह है जिनके वैज्ञानिक उत्तरी और दक्षिणी ध्रुव में अनुसंधान करते हैं।\n\n(d) यह आर्कटिक काउंसिल के सदस्य देशों के बीच व्यापार और सुरक्षा समझौता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "996cf605-c9cf-4b65-a981-874994c6d36d",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the United Nations General Assembly, consider the following statements:**\n\n1. The UN General Assembly can grant observer status to the non-member states.\n\n2. Inter-governmental organisations can seek observer status in the UN General Assembly.\n\n3. Permanent Observers in the UN General Assembly can maintain missions at the UN headquarters.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**संयुक्त राष्ट्र महासभा के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. संयुक्त राष्ट्र महासभा गैर-सदस्य राज्यों को पर्यवेक्षक स्थिति प्रदान कर सकती है।\n\n2. अंतर-सरकारी संगठन संयुक्त राष्ट्र महासभा में पर्यवेक्षक स्थिति प्राप्त कर सकते हैं।\n\n3. संयुक्त राष्ट्र महासभा में स्थायी पर्यवेक्षक संयुक्त राष्ट्र मुख्यालय में मिशन बनाए रख सकते हैं।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "48032e97-13f1-4cbf-98e4-6ec896f1997f",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the “Tea Board” in India, consider the following statements:**\n\n1. The Tea Board is a statutory body.\n\n2. It is a regulatory body attached to the Ministry of Agriculture and Farmers Welfare.\n\n3. The Tea Board’s Head Office is situated in Bengaluru.\n\n4. The Board has overseas offices at Dubai and Moscow.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 3\n\n(b) 2 and 4\n\n(c) 3 and 4\n\n(d) 1 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में “चाय बोर्ड” के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. चाय बोर्ड एक सांविधिक निकाय है।\n\n2. यह कृषि और किसान कल्याण मंत्रालय से सम्बद्ध एक नियामक निकाय है।\n\n3. चाय बोर्ड का मुख्यालय बेंगलुरु में स्थित है।\n\n4. बोर्ड के दुबई और मॉस्को में विदेशी कार्यालय हैं।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) 1 और 3\n\n(b) 2 और 4\n\n(c) 3 और 4\n\n(d) 1 और 4"
+    }
+  },
+  {
+    "uuid": "218bc948-7843-4b94-ab42-37b63fc29410",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Which one of the following best describes the term “greenwashing”?**\n\n(a) Conveying a false impression that a company’s products are eco-friendly and environmentally sound\n\n(b) Non-inclusion of ecological/environmental costs in the Annual Financial Statements of a country\n\n(c) Ignoring the disastrous ecological consequences while undertaking infrastructure development\n\n(d) Making mandatory provisions for environmental costs in a government project/programme",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित में से कौन-सा विकल्प “ग्रीनवॉशिंग” शब्द का सर्वोत्तम वर्णन करता है?**\n\n(a) किसी कंपनी के उत्पादों को पर्यावरण-हितैषी और पर्यावरणीय रूप से सुरक्षित होने का गलत प्रभाव देना\n\n(b) किसी देश के वार्षिक वित्तीय विवरणों में पारिस्थितिक/पर्यावरणीय लागतों को शामिल न करना\n\n(c) अवसंरचना विकास करते समय विनाशकारी पारिस्थितिक परिणामों की अनदेखी करना\n\n(d) किसी सरकारी परियोजना/कार्यक्रम में पर्यावरणीय लागतों के लिए अनिवार्य प्रावधान बनाना",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "72ab6a28-1787-4460-b3eb-32c132106194",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. High clouds primarily reflect solar radiation and cool the surface of the Earth.\n\n2. Low clouds have a high absorption of infrared radiation emanating from the Earth’s surface and thus cause a warming effect.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n\n(b) 2 only\n\n(c) Both 1 and 2\n\n(d) Neither 1 nor 2",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. उच्च बादल मुख्यतः सौर विकिरण को परावर्तित करते हैं और पृथ्वी की सतह को ठंडा करते हैं।\n\n2. निम्न बादल पृथ्वी की सतह से निकलने वाली अवरक्त विकिरण को अधिक अवशोषित करते हैं और इस प्रकार तापमान बढ़ाने का प्रभाव उत्पन्न करते हैं।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 2\n\n(c) 1 और 2 दोनों\n\n(d) न तो 1 और न ही 2"
+    }
+  },
+  {
+    "uuid": "10e91777-f8b7-4f0e-a2f3-493c7afc30e9",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Bidibidi is a large refugee settlement in north-western Kenya.\n\n2. Some people who fled from the South Sudan civil war live in Bidibidi.\n\n3. Some people who fled from the civil war in Somalia live in the Dadaab refugee complex in Kenya.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 and 2\n\n(b) 2 only\n\n(c) 2 and 3\n\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. बिदिबिदि केन्या के उत्तर-पश्चिमी भाग में एक बड़ा शरणार्थी आवास है।\n\n2. कुछ लोग जो दक्षिण सूडान के गृहयुद्ध से भागे हैं, बिदिबिदि में रहते हैं।\n\n3. कुछ लोग जो सोमालिया के गृहयुद्ध से भागे हैं, केन्या के दादाब शरणार्थी परिसर में रहते हैं।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) 1 और 2\n\n(b) केवल 2\n\n(c) 2 और 3\n\n(d) केवल 3"
+    }
+  },
+  {
+    "uuid": "fcfd9cf9-823e-463f-a106-8182b0c654a5",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following countries:**\n\n1. Armenia\n2. Azerbaijan\n3. Croatia\n4. Romania\n5. Uzbekistan\n\n**Which of the above are members of the Organization of Turkic States?**\n\n(a) 1, 2 and 4\n\n(b) 1 and 3\n\n(c) 2 and 5\n\n(d) 3, 4 and 5",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित देशों पर विचार करें:**\n\n1. आर्मेनिया\n2. अजरबैजान\n3. क्रोएशिया\n4. रोमानिया\n5. उज़्बेकिस्तान\n\n**उपरोक्त में से कौन-से देश तुर्किक राज्यों के संगठन के सदस्य हैं?**\n\n(a) 1, 2 और 4\n\n(b) 1 और 3\n\n(c) 2 और 5\n\n(d) 3, 4 और 5",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "b4d1516a-1780-46e3-a834-ff784b8f8e3f",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Gujarat has the largest solar park in India.\n\n2. Kerala has a fully solar powered International Airport.\n\n3. Goa has the largest floating solar photovoltaic project in India.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 and 2\n\n(b) 2 only\n\n(c) 1 and 3\n\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. गुजरात में भारत का सबसे बड़ा सौर पार्क है।\n\n2. केरल में पूरी तरह से सौर ऊर्जा से संचालित एक अंतरराष्ट्रीय हवाई अड्डा है।\n\n3. गोवा में भारत की सबसे बड़ी तैरती हुई सौर फोटोवोल्टाइक परियोजना है।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) 1 और 2\n\n(b) केवल 2\n\n(c) 1 और 3\n\n(d) केवल 3"
+    }
+  },
+  {
+    "uuid": "3b555bf1-e1ef-4f69-a749-df6196dfb307",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to the United Nations Convention on the Law of Sea, consider the following statements:**\n\n1. A coastal state has the right to establish the breadth of its territorial sea up to a limit not exceeding 12 nautical miles, measured from baseline determined in accordance with the convention.\n\n2. Ships of all states, whether coastal or land-locked, enjoy the right of innocent passage through the territorial sea.\n\n3. The Exclusive Economic Zone shall not extend beyond 200 nautical miles from the baseline from which the breadth of the territorial sea is measured.\n\n**Which of the statements given above are correct?**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**संयुक्त राष्ट्र समुद्र कानून सम्मेलन के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. एक तटीय राज्य को अपने क्षेत्रीय समुद्र की चौड़ाई निर्धारित करने का अधिकार है, जो सम्मेलन के अनुसार निर्धारित आधार रेखा से मापी गई 12 समुद्री मील की सीमा से अधिक नहीं हो सकती।\n\n2. सभी राज्यों के जहाज, चाहे वे तटीय हों या भू-आबद्ध, क्षेत्रीय समुद्र के माध्यम से निर्दोष पारगमन का अधिकार रखते हैं।\n\n3. विशेष आर्थिक क्षेत्र (EEZ) उस आधार रेखा से 200 समुद्री मील से अधिक नहीं फैलेगा, जिससे क्षेत्रीय समुद्र की चौड़ाई मापी जाती है।\n\n**उपरोक्त में से कौन-से कथन सही हैं?**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "7e433cd4-f1b8-4d62-9b91-451c1c63b594",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements best reflects the issue with Senkaku Islands, sometimes mentioned in the news?\n\n(a) It is generally believed that they are artificial islands made by a country around South China Sea.\n\n(b) China and Japan engage in maritime disputes over these islands in East China Sea.\n\n(c) A permanent American military base has been set up there to help Taiwan to increase its defence capabilities.\n\n(d) Though International Court of Justice declared them as no man’s land, some South-East Asian countries claim them.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "निम्नलिखित में से कौन-सा कथन सेनकाकु द्वीपों के मुद्दे को सबसे सटीक रूप से दर्शाता है, जिनका कभी-कभी समाचारों में उल्लेख होता है?\n\n(a) सामान्यतः माना जाता है कि ये द्वीप दक्षिण चीन सागर के आसपास किसी देश द्वारा निर्मित कृत्रिम द्वीप हैं।\n\n(b) चीन और जापान पूर्वी चीन सागर में इन द्वीपों को लेकर समुद्री विवादों में संलग्न हैं।\n\n(c) वहाँ एक स्थायी अमेरिकी सैन्य अड्डा स्थापित किया गया है ताकि ताइवान की रक्षा क्षमताओं को बढ़ाने में मदद मिल सके।\n\n(d) यद्यपि अंतरराष्ट्रीय न्यायालय ने इन्हें नो मैन’स लैंड घोषित किया है, कुछ दक्षिण-पूर्व एशियाई देश इन्हें दावा करते हैं।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "5086f688-c300-4412-9b6c-ecf1791fc4d3",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "87. Consider the following pairs:\nCountry - Important reason for being in the news recently\n1. Chad — Setting up of permanent military base by China\n2. Guinea — Suspension of Constitution and Government by military\n3. Lebanon — Severe and prolonged economic depression\n4. Tunisia — Suspension of Parliament by President\nHow many pairs given above are correctly matched?\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+      "table_data": {
+        "header_text": "Consider the following pairs:",
+        "footer_text": "**How many pairs given above are correctly matched?**\n\n(a) Only one pair\n\n(b) Only two pair\n\n(c) Only three pairds\n\n(d) All four pairs",
+        "columns": [
+          "Country",
+          "Important reason for being in the news recently"
+        ],
+        "rows": [
+          [
+            "Chad",
+            "Setting up of permanent military base by China"
+          ],
+          [
+            "Guinea",
+            "Suspension of Constitution and Government by military"
+          ],
+          [
+            "Lebanon",
+            "Severe and prolonged economic depression"
+          ],
+          [
+            "Tunisia",
+            "Suspension of Parliament by President"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "87. निम्नलिखित युग्मों पर विचार करें:\nदेश - हाल ही में समाचारों में रहने का महत्वपूर्ण कारण\n1. चाड — चीन द्वारा स्थायी सैन्य अड्डा स्थापित करना\n2. गिनी — सैन्य द्वारा संविधान और सरकार का निलंबन\n3. लेबनान — गंभीर और दीर्घकालिक आर्थिक मंदी\n4. ट्यूनीशिया — राष्ट्रपति द्वारा संसद का निलंबन\nउपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+      "table_data": {
+        "header_text": "निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?**\n\n(a) केवल एक युग्म\n\n(b) केवल दो युग्म\n\n(c) केवल तीन युग्म\n\n(d) सभी चार युग्म",
+        "columns": [
+          "देश",
+          "हाल ही में समाचारों में रहने का महत्वपूर्ण कारण"
+        ],
+        "rows": [
+          [
+            "चाड",
+            "चीन द्वारा स्थायी सैन्य अड्डा स्थापित करना"
+          ],
+          [
+            "गिनी",
+            "सैन्य द्वारा संविधान और सरकार का निलंबन"
+          ],
+          [
+            "लेबनान",
+            "गंभीर और दीर्घकालिक आर्थिक मंदी"
+          ],
+          [
+            "ट्यूनीशिया",
+            "राष्ट्रपति द्वारा संसद का निलंबन"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "2947fbff-67d1-4da0-a677-f8ee2bc5b9b8",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "88. Consider the following pairs:\nRegion often mentioned in the news - Country\n1. Anatolia - Turkey\n2. Amhara - Ethiopia\n3. Cabo Delgado - Spain\n4. Catalonia - Italy\nHow many pairs given above are correctly matched?\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+      "table_data": {
+        "header_text": "Consider the following pairs:",
+        "footer_text": "**How many pairs given above are correctly matched?**\n\n(a) Only one pair\n\n(b) Only two pairs\n\n(c) Only three pairs\n\n(d) All four pairs",
+        "columns": [
+          "Region often mentioned in the news",
+          "Country"
+        ],
+        "rows": [
+          [
+            "Anatolia",
+            "Turkey"
+          ],
+          [
+            "Amhara",
+            "Ethiopia"
+          ],
+          [
+            "Cabo Delgado",
+            "Spain"
+          ],
+          [
+            "Catalonia",
+            "Italy"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "88. निम्नलिखित युग्मों पर विचार करें:\nसमाचार में अक्सर उल्लेखित क्षेत्र - देश\n1. अनातोलिया - तुर्की\n2. अम्हारा - इथियोपिया\n3. काबो डेलगाडो - स्पेन\n4. कातालोनिया - इटली\nउपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+      "table_data": {
+        "header_text": "निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?**\n\n(a) केवल एक युग्म\n\n(b) केवल दो युग्म\n\n(c) केवल तीन युग्म\n\n(d) सभी चार युग्म",
+        "columns": [
+          "समाचार में अक्सर उल्लेखित क्षेत्र",
+          "देश"
+        ],
+        "rows": [
+          [
+            "अनातोलिया",
+            "तुर्की"
+          ],
+          [
+            "अम्हारा",
+            "इथियोपिया"
+          ],
+          [
+            "काबो डेलगाडो",
+            "स्पेन"
+          ],
+          [
+            "कातालोनिया",
+            "इटली"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "5b34307f-7165-4d8b-a3e5-561416fb4f06",
+    "meta": {
+      "subject": "Polity",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**With reference to Indian laws about wildlife protection, consider the following statements:**\n\n1. Wild animals are the sole property of the government.\n\n2. When a wild animal is declared protected, such animal is entitled to equal protection whether it is found in protected areas or outside.\n\n3. Apprehension of a protected wild animal becoming a danger to human life is sufficient ground for its capture or\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 and 2\n\n(b) 2 only\n\n(c) 1 and 3\n\n(d) 3 only",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**भारत में वन्यजीव संरक्षण से संबंधित कानूनों के संदर्भ में, निम्नलिखित कथनों पर विचार करें:**\n\n1. वन्यजीव केवल सरकार की संपत्ति होते हैं।\n\n2. जब किसी वन्यजीव को संरक्षित घोषित किया जाता है, तो वह चाहे संरक्षित क्षेत्रों में हो या बाहर, उसे समान संरक्षण का अधिकार प्राप्त होता है।\n\n3. यदि किसी संरक्षित वन्यजीव के मानव जीवन के लिए खतरा बनने का संदेह हो, तो उसे पकड़ना या\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) 1 और 2\n\n(b) केवल 2\n\n(c) 1 और 3\n\n(d) केवल 3"
+    }
+  },
+  {
+    "uuid": "8bf6b4b0-2b40-4120-9b06-59266b5794da",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Certain species of which one of the following organisms are well known as cultivators of fungi?\n\n(a) Ant\n\n(b) Cockroach\n\n(c) Crab\n\n(d) Spider",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "निम्नलिखित जीवों में से किसकी कुछ प्रजातियाँ कवक (fungi) की खेती करने के लिए प्रसिद्ध हैं?\n\n(a) चींटी\n\n(b) तिलचट्टा\n\n(c) केकड़ा\n\n(d) मकड़ी",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "b0ccb9cf-741e-4d3c-94e4-25e1e525f739",
+    "meta": {
+      "subject": "Ancient history and culture",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "91. Consider the following pairs:\nSite of Ashoka’s major rock edicts - Location in the State\n1. Dhauli — Odisha\n2. Erragudi — Andhra Pradesh\n3. Jaugada — Madhya Pradesh\n4. Kalsi — Karnataka\n\nHow many pairs given above are correctly matched?\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+      "table_data": {
+        "header_text": "Site of Ashoka’s major rock edicts - Location in the State",
+        "footer_text": "**How many pairs given above are correctly matched?**\n\n(a) Only one apir\n\n(b) Only two pairs\n\n(c) Only three paids\n\n(d) All four pairs",
+        "columns": [
+          "Site of Ashoka’s major rock edicts",
+          "Location in the State"
+        ],
+        "rows": [
+          [
+            "Dhauli",
+            "Odisha"
+          ],
+          [
+            "Erragudi",
+            "Andhra Pradesh"
+          ],
+          [
+            "Jaugada",
+            "Madhya Pradesh"
+          ],
+          [
+            "Kalsi",
+            "Karnataka"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "91. निम्नलिखित युग्मों पर विचार करें:\nअशोक के प्रमुख शिलालेखों की स्थल - राज्य में स्थान\n1. धौली — ओडिशा\n2. एर्रागुड़ी — आंध्र प्रदेश\n3. जौगड़ा — मध्य प्रदेश\n4. कालसी — कर्नाटक\n\nउपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+      "table_data": {
+        "header_text": "अशोक के प्रमुख शिलालेखों की स्थल - राज्य में स्थान",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?**\n\n(a) केवल एक युग्म\n\n(b) केवल दो युग्म\n\n(c) केवल तीन युग्म\n\n(d) सभी चार युग्म",
+        "columns": [
+          "अशोक के प्रमुख शिलालेखों की स्थल",
+          "राज्य में स्थान"
+        ],
+        "rows": [
+          [
+            "धौली",
+            "ओडिशा"
+          ],
+          [
+            "एर्रागुड़ी",
+            "आंध्र प्रदेश"
+          ],
+          [
+            "जौगड़ा",
+            "मध्य प्रदेश"
+          ],
+          [
+            "कालसी",
+            "कर्नाटक"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "48b2a0dc-f1f7-418f-a956-b8823ca7cd73",
+    "meta": {
+      "subject": "Ancient history and culture",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": true
+    },
+    "en": {
+      "display_text": "92. Consider the following pairs:\nKing - Dynasty\n1. Nannuka - Chandela\n2. Jayashakti - Paramara\n3. Nagabhata II - Gurjara-Pratihara\n4. Bhoja - Rashtrakuta\nHow many pairs given above are correctly matched?\n(a) Only one pair\n(b) Only two pairs\n(c) Only three pairs\n(d) All four pairs",
+      "table_data": {
+        "header_text": "Consider the following pairs:",
+        "footer_text": "**How many pairs given above are correctly matched?**\n\n(a) Only one pair\n\n(b) Only two pairs\n\n(c) Only three pairs\n\n(d) All four pairs",
+        "columns": [
+          "King",
+          "Dynasty"
+        ],
+        "rows": [
+          [
+            "Nannuka",
+            "Chandela"
+          ],
+          [
+            "Jayashakti",
+            "Paramara"
+          ],
+          [
+            "Nagabhata II",
+            "Gurjara-Pratihara"
+          ],
+          [
+            "Bhoja",
+            "Rashtrakuta"
+          ]
+        ]
+      },
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "92. निम्नलिखित युग्मों पर विचार करें:\nराजा - वंश\n1. नन्नुक - चंदेला\n2. जयशक्ति - परमार\n3. नागभट्ट द्वितीय - गुर्जर-प्रतिहार\n4. भोज - राष्ट्रकूट\nउपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?\n(a) केवल एक युग्म\n(b) केवल दो युग्म\n(c) केवल तीन युग्म\n(d) सभी चार युग्म",
+      "table_data": {
+        "header_text": "निम्नलिखित युग्मों पर विचार करें:",
+        "footer_text": "**उपरोक्त में से कितने युग्म सही रूप से मेल खाते हैं?**\n\n(a) केवल एक युग्म\n\n(b) केवल दो युग्म\n\n(c) केवल तीन युग्म\n\n(d) सभी चार युग्म",
+        "columns": [
+          "राजा",
+          "वंश"
+        ],
+        "rows": [
+          [
+            "नन्नुक",
+            "चंदेला"
+          ],
+          [
+            "जयशक्ति",
+            "परमार"
+          ],
+          [
+            "नागभट्ट द्वितीय",
+            "गुर्जर-प्रतिहार"
+          ],
+          [
+            "भोज",
+            "राष्ट्रकूट"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "uuid": "4f43376c-132d-4572-9d09-607cd576b910",
+    "meta": {
+      "subject": "प्राचीन इतिहास और संस्कृति",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements about Sangam literature in ancient South India is correct?\n\n(a) Sangam poems are devoid of any reference to material culture.\n\n(b) The social classification of Varna was known to Sangam poets.\n\n(c) Sangam poems have no reference to warrior ethic.\n\n(d) Sangam literature refers to magical forces as irrational.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "प्राचीन दक्षिण भारत की संगम साहित्य के संबंध में निम्नलिखित में से कौन-सा कथन सही है?\n\n(a) संगम कविताओं में भौतिक संस्कृति का कोई उल्लेख नहीं है।\n\n(b) वर्णों का सामाजिक वर्गीकरण संगम कवियों को ज्ञात था।\n\n(c) संगम कविताओं में योद्धा नैतिकता का कोई उल्लेख नहीं है।\n\n(d) संगम साहित्य जादुई शक्तियों को तर्कहीन बताता है।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "bdbd271c-c358-4e54-90d4-26ec81c554e2",
+    "meta": {
+      "subject": "प्राचीन इतिहास और संस्कृति",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "“Yogavasistha” was translated into Persian by Nizamuddin Panipati during the reign of:\n\n(a) Akbar\n\n(b) Humayun\n\n(c) Shahjahan\n\n(d) Aurangzeb",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "“योगवासिष्ठ” का फारसी में अनुवाद निज़ामुद्दीन पानीपती ने किस शासक के शासनकाल में किया था:\n\n(a) अकबर\n\n(b) हुमायूँ\n\n(c) शाहजहाँ\n\n(d) औरंगज़ेब",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "52e87836-9c51-4c8c-8c85-25eb2a351a55",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The world’s second tallest statue in sitting pose of Ramanuja was inaugurated by the Prime Minister of India at Hyderabad recently. Which one of the following statements correctly represents the teachings of Ramanuja?\n\n(a) The best means of salvation was devotion.\n\n(b) Vedas are eternal, self-existent and wholly authoritative.\n\n(c) Logical arguments were essential means for the highest bliss.\n\n(d) Salvation was to be obtained through meditation.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "हाल ही में हैदराबाद में भारत के प्रधानमंत्री द्वारा रामानुज की विश्व की दूसरी सबसे ऊँची बैठी मुद्रा की मूर्ति का उद्घाटन किया गया। निम्नलिखित में से कौन-सा कथन रामानुज की शिक्षाओं का सही प्रतिनिधित्व करता है?\n\n(a) मोक्ष प्राप्ति का सर्वोत्तम साधन भक्ति है।\n\n(b) वेद शाश्वत, स्वयंसिद्ध और पूर्णतः प्रामाणिक हैं।\n\n(c) तर्कसंगत प्रमाण सर्वोच्च आनंद के लिए आवश्यक साधन हैं।\n\n(d) मोक्ष ध्यान के माध्यम से प्राप्त किया जाना चाहिए।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "9c721668-f368-415c-b931-9cbcaf48a712",
+    "meta": {
+      "subject": "Current affairs",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "The Prime Minister recently inaugurated the new Circuit House near Somnath Temple at Veraval. **Which of the following statements are correct regarding Somnath Temple?**\n\n1. Somnath Temple is one of the Jyotirlinga shrines.\n\n2. A description of Somnath Temple was given by Al-Biruni.\n\n3. Pran Pratishtha of Somnath Temple (installation of the present-day temple) was done by President S. Radhakrishnan.\n\n**Select the correct answer using the code given below:**\n\n(a) 1 and 2 only\n\n(b) 2 and 3 only\n\n(c) 1 and 3 only\n\n(d) 1, 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "प्रधानमंत्री ने हाल ही में वेरावल में सोमनाथ मंदिर के निकट नए सर्किट हाउस का उद्घाटन किया। **सोमनाथ मंदिर के संबंध में निम्नलिखित में से कौन-से कथन सही हैं?**\n\n1. सोमनाथ मंदिर ज्योतिर्लिंगों में से एक है।\n\n2. सोमनाथ मंदिर का वर्णन अल-बिरूनी ने दिया था।\n\n3. सोमनाथ मंदिर की प्राण प्रतिष्ठा (वर्तमान मंदिर की स्थापना) राष्ट्रपति एस. राधाकृष्णन द्वारा की गई थी।\n\n**नीचे दिए गए कोड का उपयोग करके सही उत्तर चुनिए:**\n\n(a) केवल 1 और 2\n\n(b) केवल 2 और 3\n\n(c) केवल 1 और 3\n\n(d) 1, 2 और 3"
+    }
+  },
+  {
+    "uuid": "86d99786-7af0-453e-b3a0-3e16e97078f8",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "Which one of the following statements best describes the role of B cells and T cells in the human body?\n\n(a) They protect the body from environmental allergens.\n\n(b) They alleviate the body’s pain and inflammation.\n\n(c) They act as immunosuppressants in the body.\n\n(d) They protect the body from the diseases caused by pathogens.",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "मानव शरीर में B कोशिकाओं और T कोशिकाओं की भूमिका को निम्नलिखित में से कौन-सा कथन सर्वश्रेष्ठ रूप से वर्णित करता है?\n\n(a) ये शरीर को पर्यावरणीय एलर्जेंस से सुरक्षा प्रदान करती हैं।\n\n(b) ये शरीर के दर्द और सूजन को कम करती हैं।\n\n(c) ये शरीर में इम्यूनोसप्रेसेंट के रूप में कार्य करती हैं।\n\n(d) ये शरीर को रोगजनकों द्वारा उत्पन्न रोगों से सुरक्षा प्रदान करती हैं।",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "7eeeff2a-56ad-4dec-acb9-3b686c5fbd4b",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\n1. Other than those made by humans, nanoparticles do not exist in nature.\n\n2. Nanoparticles of some metallic oxides are used in the manufacture of some cosmetics.\n\n3. Nanoparticles of some commercial products which enter the environment are unsafe for humans.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n(b) 3 only\n(c) 1 and 2\n(d) 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\n1. मनुष्यों द्वारा निर्मित नैनोकणों को छोड़कर, प्रकृति में नैनोकण मौजूद नहीं होते।\n\n2. कुछ धात्विक ऑक्साइड के नैनोकणों का उपयोग कुछ सौंदर्य प्रसाधनों के निर्माण में किया जाता है।\n\n3. कुछ व्यावसायिक उत्पादों के नैनोकण जो पर्यावरण में प्रवेश करते हैं, मानवों के लिए असुरक्षित होते हैं।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n(b) केवल 3\n(c) 1 और 2\n(d) 2 और 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  },
+  {
+    "uuid": "3414c2ea-f9a7-487e-afb7-d9f279d719b9",
+    "meta": {
+      "subject": "Science & Technology",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following statements:**\n\nDNA Barcoding can be a tool to:\n\n1. assess the age of a plant or animal.\n\n2. distinguish among species that look alike.\n\n3. identify undesirable animal or plant materials in processed foods.\n\n**Which of the statements given above is/are correct?**\n\n(a) 1 only\n\n(b) 3 only\n\n(c) 1 and 2\n\n(d) 2 and 3",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित कथनों पर विचार करें:**\n\nDNA बारकोडिंग एक उपकरण हो सकता है:\n\n1. किसी पौधे या जानवर की आयु का आकलन करने के लिए।\n\n2. एक जैसे दिखने वाली प्रजातियों के बीच अंतर करने के लिए।\n\n3. प्रसंस्कृत खाद्य पदार्थों में अवांछित पशु या पौधों की सामग्री की पहचान करने के लिए।\n\n**उपरोक्त में से कौन-सा/से कथन सही है/हैं?**\n\n(a) केवल 1\n\n(b) केवल 3\n\n(c) 1 और 2\n\n(d) 2 और 3"
+    }
+  },
+  {
+    "uuid": "c680725c-1577-475d-ae0d-6449c2f59c4e",
+    "meta": {
+      "subject": "Environment",
+      "topic": null,
+      "sub_topic": null,
+      "concepts_used": [],
+      "language": "hi"
+    },
+    "shared": {
+      "correct_option": null,
+      "question_type": null,
+      "trap_type": null,
+      "concept_anchor": null,
+      "has_table": false
+    },
+    "en": {
+      "display_text": "**Consider the following:**\n\n1. Carbon monoxide\n2. Nitrogen oxide\n3. Ozone\n4. Sulphur dioxide\n\n**Excess of which of the above in the environment is/are cause(s) of acid rain?**\n\n(a) 1, 2 and 3\n\n(b) 2 and 4 only\n\n(c) 4 only\n\n(d) 1, 3 and 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    },
+    "hi": {
+      "display_text": "**निम्नलिखित पर विचार करें:**\n\n1. कार्बन मोनोऑक्साइड\n2. नाइट्रोजन ऑक्साइड\n3. ओजोन\n4. सल्फर डाइऑक्साइड\n\n**पर्यावरण में उपरोक्त में से किसका अधिक होना अम्लीय वर्षा का कारण है?**\n\n(a) 1, 2 और 3\n\n(b) केवल 2 और 4\n\n(c) केवल 4\n\n(d) 1, 3 और 4",
+      "table_data": null,
+      "statement_analysis": null,
+      "strong_distractor": null,
+      "elimination_logic": [],
+      "upsc_trap_explanation": null,
+      "final_explanation": null
+    }
+  }
+]
