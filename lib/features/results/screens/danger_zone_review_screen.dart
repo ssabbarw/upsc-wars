@@ -45,10 +45,7 @@ class DangerZoneReviewScreen extends HookConsumerWidget {
             if (questions.isEmpty) {
               return _EmptyDangerZone(onBack: () => context.pop());
             }
-            return _DangerZonePager(
-              sessionId: sessionId,
-              questions: questions,
-            );
+            return _DangerZonePager(sessionId: sessionId, questions: questions);
           },
         ),
       ),
@@ -69,10 +66,7 @@ class _EmptyDangerZone extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IconButton(
-            onPressed: onBack,
-            icon: const Icon(Icons.chevron_left),
-          ),
+          IconButton(onPressed: onBack, icon: const Icon(Icons.chevron_left)),
           const Spacer(),
           Text(
             'No Danger Zone items',

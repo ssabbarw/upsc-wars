@@ -85,5 +85,13 @@ class AppColors {
   static const summaryButtonBorder = Color(0xFFD1D5DB);
   static const summaryButtonText = Color(0xFF374151);
 
+  /// Coach-style session summary (danger / next-action cards, light mode).
+  static const coachDangerSurfaceLight = Color(0xFFFEE2E2);
+  static const coachDangerBorder = Color(0xFFDC2626);
+  static const coachDangerTitleText = Color(0xFF991B1B);
+  static const coachDangerCtaFill = Color(0xFFDC2626);
+  static const coachNextActionSurfaceLight = Color(0xFFDBEAFE);
+  static const coachTrendEmerald = Color(0xFF10B981);
+
   static const transparent = Color(0x00000000);
 }

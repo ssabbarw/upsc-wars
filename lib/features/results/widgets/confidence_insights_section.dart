@@ -21,7 +21,8 @@ class ConfidenceInsightsSection extends StatelessWidget {
   final SessionResult result;
 
   static bool shouldShow(SessionResult r) {
-    final logged = r.confidenceSureTotal +
+    final logged =
+        r.confidenceSureTotal +
         r.confidenceIntelligentTotal +
         r.confidencePureTotal;
     return r.mode == 'exam' || logged > 0;
@@ -47,7 +48,8 @@ class ConfidenceInsightsSection extends StatelessWidget {
     final answered = _answeredScored(result);
     final logged = _loggedTotal(result);
     final coverage = _coverage(result);
-    final showNudge = result.mode == 'exam' &&
+    final showNudge =
+        result.mode == 'exam' &&
         answered >= 4 &&
         coverage < 0.5 &&
         answered > 0;
@@ -160,11 +162,11 @@ class ConfidenceInsightsSection extends StatelessWidget {
                 result: result,
                 onCellTap:
                     (ctx, {required tier, required outcome, required count}) {
-                  if (count <= 0) return;
-                  ctx.push(
-                    '/session-confidence-review/$sessionId/$tier?outcome=$outcome',
-                  );
-                },
+                      if (count <= 0) return;
+                      ctx.push(
+                        '/session-confidence-review/$sessionId/$tier?outcome=$outcome',
+                      );
+                    },
               ),
               if (result.confidenceSureTotal >= 3) ...[
                 const SizedBox(height: AppSpacing.md),
@@ -182,12 +184,13 @@ class ConfidenceInsightsSection extends StatelessWidget {
   }
 }
 
-typedef _CalibrationCellTap = void Function(
-  BuildContext context, {
-  required String tier,
-  required String outcome,
-  required int count,
-});
+typedef _CalibrationCellTap =
+    void Function(
+      BuildContext context, {
+      required String tier,
+      required String outcome,
+      required int count,
+    });
 
 class _CalibrationMatrix extends StatelessWidget {
   const _CalibrationMatrix({
@@ -382,8 +385,8 @@ class _MatrixCell extends StatelessWidget {
     final borderColor = danger
         ? AppColors.wrong
         : emphasizeLuck
-            ? AppColors.warning
-            : scheme.outlineVariant.withValues(alpha: 0.45);
+        ? AppColors.warning
+        : scheme.outlineVariant.withValues(alpha: 0.45);
     final bg = scheme.surface.withValues(alpha: 0.88);
 
     if (!enabled) {
@@ -411,7 +414,11 @@ class _MatrixCell extends StatelessWidget {
 
     Widget? icon;
     if (danger) {
-      icon = Icon(Icons.warning_amber_rounded, size: 16, color: AppColors.wrong);
+      icon = Icon(
+        Icons.warning_amber_rounded,
+        size: 16,
+        color: AppColors.wrong,
+      );
     } else if (emphasizeLuck) {
       icon = const Text('🍀', style: TextStyle(fontSize: 14));
     } else if (outcome == 'correct') {
@@ -434,13 +441,12 @@ class _MatrixCell extends StatelessWidget {
         color: bg,
         borderRadius: BorderRadius.circular(AppRadius.md),
         child: InkWell(
-          onTap: () => onTap(context, tier: tier, outcome: outcome, count: count),
+          onTap: () =>
+              onTap(context, tier: tier, outcome: outcome, count: count),
           borderRadius: BorderRadius.circular(AppRadius.md),
           child: Container(
             height: 72,
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.xs,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(AppRadius.md),
@@ -510,10 +516,10 @@ class _SureTierAccuracyBanner extends StatelessWidget {
             child: Text(
               warn
                   ? 'When you tapped Sure, you were right '
-                      '${pct.toStringAsFixed(0)}% of the time ($sureCorrect / $sureTotal). '
-                      'Aim for about 75%+ on high-conviction picks before Prelims.'
+                        '${pct.toStringAsFixed(0)}% of the time ($sureCorrect / $sureTotal). '
+                        'Aim for about 75%+ on high-conviction picks before Prelims.'
                   : 'Sure-tier accuracy ${pct.toStringAsFixed(0)}% ($sureCorrect / $sureTotal). '
-                      'That is in a healthy range for conviction answers.',
+                        'That is in a healthy range for conviction answers.',
               style: AppTextStyles.bodySm().copyWith(
                 color: warn ? scheme.onErrorContainer : scheme.onSurface,
                 height: 1.35,
@@ -607,9 +613,7 @@ class _TeaserCallout extends StatelessWidget {
       decoration: BoxDecoration(
         color: scheme.secondaryContainer.withValues(alpha: 0.55),
         borderRadius: BorderRadius.circular(AppRadius.md),
-        border: Border.all(
-          color: scheme.secondary.withValues(alpha: 0.35),
-        ),
+        border: Border.all(color: scheme.secondary.withValues(alpha: 0.35)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),

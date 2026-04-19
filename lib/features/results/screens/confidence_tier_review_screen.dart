@@ -20,6 +20,7 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
   });
 
   final String sessionId;
+
   /// One of [AnswerConfidence.verySure], [somewhatSure], [guessing].
   final String tier;
 

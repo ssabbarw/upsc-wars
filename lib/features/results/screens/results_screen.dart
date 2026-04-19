@@ -8,7 +8,7 @@ import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../battle/widgets/battle_live_scoreboard.dart';
-import '../widgets/session_summary_minimal.dart';
+import '../widgets/session_summary_coach.dart';
 
 class ResultsScreen extends ConsumerWidget {
   const ResultsScreen({super.key, required this.sessionId});
@@ -104,7 +104,7 @@ class ResultsScreen extends ConsumerWidget {
                 Expanded(
                   child: Center(
                     child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 600),
+                      constraints: const BoxConstraints(maxWidth: 700),
                       child: ListView(
                         physics: const BouncingScrollPhysics(),
                         padding: const EdgeInsets.fromLTRB(
@@ -114,21 +114,11 @@ class ResultsScreen extends ConsumerWidget {
                           AppSpacing.xxl,
                         ),
                         children: [
-                          if (r.dangerZoneWrongCount > 0) ...[
-                            _DangerZoneCompactCard(
-                              sessionId: sessionId,
-                              resultLabel:
-                                  'Confidently wrong on ${r.dangerZoneWrongCount} '
-                                  'question${r.dangerZoneWrongCount == 1 ? '' : 's'}',
-                              scheme: scheme,
-                            ),
-                            const SizedBox(height: AppSpacing.md),
-                          ],
                           if (r.analyticsFeatureKey == 'mcq_battle') ...[
                             BattleLiveScoreboard(sessionId: sessionId),
                             const SizedBox(height: AppSpacing.md),
                           ],
-                          SessionSummaryMinimalContent(
+                          SessionSummaryCoachContent(
                             sessionId: sessionId,
                             result: r,
                             displaySubjectName: displaySubject,
@@ -141,55 +131,6 @@ class ResultsScreen extends ConsumerWidget {
               ],
             );
           },
-        ),
-      ),
-    );
-  }
-}
-
-class _DangerZoneCompactCard extends StatelessWidget {
-  const _DangerZoneCompactCard({
-    required this.sessionId,
-    required this.resultLabel,
-    required this.scheme,
-  });
-
-  final String sessionId;
-  final String resultLabel;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: scheme.errorContainer.withValues(alpha: 0.35),
-      borderRadius: BorderRadius.circular(12),
-      child: InkWell(
-        onTap: () => context.push('/danger-zone/$sessionId'),
-        borderRadius: BorderRadius.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.md,
-            vertical: AppSpacing.sm,
-          ),
-          child: Row(
-            children: [
-              Icon(Icons.warning_amber_rounded, color: scheme.error, size: 22),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: Text(
-                  resultLabel,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  softWrap: true,
-                  style: AppTextStyles.bodySm().copyWith(
-                    color: scheme.onErrorContainer,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              Icon(Icons.chevron_right_rounded, color: scheme.onErrorContainer),
-            ],
-          ),
         ),
       ),
     );
