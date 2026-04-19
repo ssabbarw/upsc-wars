@@ -26,9 +26,9 @@ class ExamOptionConfidenceStrip extends ConsumerWidget {
     this.onReviewConfidenceSaved,
     this.interactionLocked = false,
   }) : assert(
-          (liveSessionId != null) != (reviewSessionId != null),
-          'Provide exactly one of liveSessionId or reviewSessionId',
-        );
+         (liveSessionId != null) != (reviewSessionId != null),
+         'Provide exactly one of liveSessionId or reviewSessionId',
+       );
 
   /// Active [testSessionProvider] session id.
   final String? liveSessionId;
@@ -79,8 +79,8 @@ class ExamOptionConfidenceStrip extends ConsumerWidget {
     }
 
     final confidenceLine = question.confidence == null
-        ? 'Confidence level not rated'
-        : 'Confidence level: ${AnswerConfidence.examShortLabel(question.confidence!)}';
+        ? 'Confidence: __'
+        : 'Confidence: ${AnswerConfidence.examShortLabel(question.confidence!)}';
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -127,7 +127,8 @@ class ExamOptionConfidenceStrip extends ConsumerWidget {
                   child: _TierToggle(
                     label: 'Intelligent\nguess',
                     maxLines: 2,
-                    selected: question.confidence == AnswerConfidence.somewhatSure,
+                    selected:
+                        question.confidence == AnswerConfidence.somewhatSure,
                     accent: AppColors.warning,
                     onSurface: Colors.white,
                     labelUnselected: isDark
@@ -191,10 +192,7 @@ class _TierToggle extends StatelessWidget {
     final borderColor = selected
         ? accent
         : accent.withValues(alpha: isDark ? 0.38 : 0.42);
-    final border = Border.all(
-      color: borderColor,
-      width: selected ? 2.5 : 1,
-    );
+    final border = Border.all(color: borderColor, width: selected ? 2.5 : 1);
     final inactiveDim = !enabled && !selected;
     return Material(
       color: Colors.transparent,
@@ -224,16 +222,14 @@ class _TierToggle extends StatelessWidget {
                       ),
                     ]
                   : selected && !enabled
-                      ? [
-                          BoxShadow(
-                            color: accent.withValues(
-                              alpha: isDark ? 0.22 : 0.18,
-                            ),
-                            blurRadius: 6,
-                            offset: const Offset(0, 2),
-                          ),
-                        ]
-                      : null,
+                  ? [
+                      BoxShadow(
+                        color: accent.withValues(alpha: isDark ? 0.22 : 0.18),
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  : null,
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
@@ -262,8 +258,9 @@ class _TierToggle extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.labelSm().copyWith(
                           color: selected ? onSurface : labelUnselected,
-                          fontWeight:
-                              selected ? FontWeight.w800 : FontWeight.w500,
+                          fontWeight: selected
+                              ? FontWeight.w800
+                              : FontWeight.w500,
                           height: 1.2,
                           fontSize: 11,
                         ),

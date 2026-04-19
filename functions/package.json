@@ -1,6 +1,6 @@
 {
   "name": "upsc-wars-functions",
-  "description": "Cloud Functions for UPSC Wars (battle invites, etc.)",
+  "description": "Cloud Functions for Upsc Wars (battle invites, etc.)",
   "version": "1.0.0",
   "main": "index.js",
   "engines": {

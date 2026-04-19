@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/analytics.dart';
+import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
@@ -116,6 +120,10 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       );
 
       await svc.signalGuestLobbyReady(widget.sessionId);
+
+      unawaited(
+        Analytics.track(ref, const BattleInviteAcceptedEvent()),
+      );
 
       final hostName = (d['host_display_name'] as String?)?.trim();
       if (!mounted) return;

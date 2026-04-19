@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:workmanager/workmanager.dart';
 
 import 'app/upsc_wars_app.dart';
+import 'core/crashlytics/crashlytics_provider_observer.dart';
+import 'core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import 'core/constants/prelims_debug_flags.dart';
 import 'core/services/firebase_in_app_messaging_service.dart';
 import 'core/services/battle_messaging_service.dart';
@@ -22,14 +23,7 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
   ]);
   await Firebase.initializeApp();
-  await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-  FlutterError.onError = (details) {
-    FirebaseCrashlytics.instance.recordFlutterFatalError(details);
-  };
-  PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
+  await setupFirebaseCrashlytics();
   await FirebaseInAppMessagingService.initializeAfterFirebase();
   // Capture tap-to-open payload before runApp. On Android, reading
   // getInitialMessage too late can leave data unavailable for routing.
@@ -50,5 +44,10 @@ Future<void> main() async {
     );
   }
   unawaited(PrelimsSurfacesRefresh.refreshAllSurfaces());
-  runApp(const ProviderScope(child: UpscWarsApp()));
+  runApp(
+    const ProviderScope(
+      observers: [CrashlyticsProviderObserver()],
+      child: UpscWarsApp(),
+    ),
+  );
 }

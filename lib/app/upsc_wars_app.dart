@@ -7,7 +7,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../core/analytics/analytics_app_lifecycle_observer.dart';
 import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
+import '../core/constants/app_constants.dart';
 import '../core/constants/prelims_debug_flags.dart';
+import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/services/battle_messaging_service.dart';
 import '../core/services/share_deep_link_service.dart';
@@ -38,22 +40,20 @@ class UpscWarsApp extends HookConsumerWidget {
     return boot.when(
       data: (_) => const _RootMaterialApp(),
       loading: () => MaterialApp(
+        title: AppConstants.appDisplayName,
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
         home: const QuestionBankLoadingScreen(),
       ),
       error: (error, stackTrace) => MaterialApp(
+        title: AppConstants.appDisplayName,
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
-        home: Scaffold(
-          body: Center(
-            child: Text(
-              error.toString(),
-              style: AppTheme.light().textTheme.bodyMedium,
-            ),
-          ),
+        home: _BootstrapErrorScreen(
+          error: error,
+          stackTrace: stackTrace,
         ),
       ),
     );
@@ -152,6 +152,7 @@ class _RootMaterialApp extends HookConsumerWidget {
       orElse: () => ThemeMode.system,
     );
     return MaterialApp.router(
+      title: AppConstants.appDisplayName,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: themeMode,
@@ -165,6 +166,43 @@ class _RootMaterialApp extends HookConsumerWidget {
           ],
         );
       },
+    );
+  }
+}
+
+class _BootstrapErrorScreen extends StatefulWidget {
+  const _BootstrapErrorScreen({
+    required this.error,
+    required this.stackTrace,
+  });
+
+  final Object error;
+  final StackTrace stackTrace;
+
+  @override
+  State<_BootstrapErrorScreen> createState() => _BootstrapErrorScreenState();
+}
+
+class _BootstrapErrorScreenState extends State<_BootstrapErrorScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      unawaited(
+        reportBootstrapFailure(widget.error, widget.stackTrace),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          widget.error.toString(),
+          style: AppTheme.light().textTheme.bodyMedium,
+        ),
+      ),
     );
   }
 }

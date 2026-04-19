@@ -43,6 +43,15 @@ class BattleInviteOutcome {
     }
     return 'Invite status unclear. Check Firebase Functions logs.';
   }
+
+  /// Low-cardinality label for the `battle_invite_outcome` analytics event.
+  String get analyticsKind {
+    if (transportError != null) return 'transport_error';
+    if (notificationSent) return 'push_ok';
+    if (serverReason == 'no_token') return 'no_token';
+    if (serverReason == 'send_failed') return 'send_failed';
+    return 'server_unknown';
+  }
 }
 
 /// Calls HTTPS callable `sendBattleInvite` (deploy separately; see docs).

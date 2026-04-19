@@ -547,8 +547,7 @@ class _TopBar extends HookConsumerWidget {
           const SizedBox(width: 8),
           InkWell(
             onTap: () async {
-              await setDarkModeEnabledWithLoader(
-                context: context,
+              await setDarkModeEnabled(
                 ref: ref,
                 darkModeEnabled: !isDark,
               );

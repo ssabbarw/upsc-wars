@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../core/constants/app_constants.dart';
 
 String _privacyPolicyBody() => '''
-UPSC Wars — Privacy Policy
+${AppConstants.appDisplayName} — Privacy Policy
 
-This describes how UPSC Wars ("we", "the app") handles information when you sign in with Google and use connected features.
+This describes how ${AppConstants.appDisplayName} ("we", "the app") handles information when you sign in with Google and use connected features.
 
 What we collect
 
@@ -19,7 +19,7 @@ What we collect
 
 How we use it
 
-We use this information to operate UPSC Wars: sign-in, sync and backup where enabled, battles and community, notifications, reliability, security, fraud prevention, and support.
+We use this information to operate ${AppConstants.appDisplayName}: sign-in, sync and backup where enabled, battles and community, notifications, reliability, security, fraud prevention, and support.
 
 Email from us
 
@@ -108,7 +108,7 @@ class GoogleLoginBottomSheet extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Sign in to UPSC Wars',
+              'Sign in to ${AppConstants.appDisplayName}',
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),

@@ -123,6 +123,20 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'questions_count': questionsCount,
           'subject': subject,
         });
+      case McqTestSessionStartedEvent(
+          :final subject,
+          :final topic,
+          :final analyticsFeatureKey,
+        ):
+        await _log('mcq_test_session_started', {
+          'subject': subject,
+          if (topic case final t?) 'topic': t,
+          if (analyticsFeatureKey case final k?) 'analytics_feature_key': k,
+        });
+      case BattleInviteOutcomeEvent(:final kind):
+        await _log('battle_invite_outcome', {'kind': kind});
+      case BattleInviteAcceptedEvent():
+        await _log('battle_invite_accepted', const {});
     }
   }
 

@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/core/analytics/analytics.dart';
+import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
@@ -276,6 +280,12 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           sessionId: sessionId,
           hostDisplayName: playerName,
           subjectLabel: subject,
+        );
+        unawaited(
+          Analytics.track(
+            ref,
+            BattleInviteOutcomeEvent(kind: inviteOutcome.analyticsKind),
+          ),
         );
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(

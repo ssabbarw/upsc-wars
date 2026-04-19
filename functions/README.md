@@ -1,4 +1,4 @@
-# Cloud Functions (UPSC Wars)
+# Cloud Functions (Upsc Wars)
 
 ## `sendBattleInvite`
 
@@ -6,7 +6,7 @@ HTTPS callable used by Flutter (`BattleInviteCloudService`). It verifies the cal
 
 ## `sendSelfTestNotification`
 
-HTTPS callable used by Flutter (`BattleSelfTestPushCloudService`) from **Profile → Push test**. Sends one FCM to **`users/{yourEmail}.fcm_token`** with title **UPSC Wars** and body **Success — push notifications are working.** so you can verify FCM on a **single device** without a second player.
+HTTPS callable used by Flutter (`BattleSelfTestPushCloudService`) from **Profile → Push test**. Sends one FCM to **`users/{yourEmail}.fcm_token`** with title **Upsc Wars** and body **Success — push notifications are working.** so you can verify FCM on a **single device** without a second player.
 
 ## Setup
 

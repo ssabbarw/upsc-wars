@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/core/presentation/session_subject_label.dart';
 import 'package:upsc_wars/core/domain/entities/session_result.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
@@ -207,7 +208,7 @@ class _WebPlayerScoreHeroCard extends StatelessWidget {
             const SizedBox(height: 18),
             Text(
               'Improvement trends, revision queue, and topic breakdowns '
-              'are available in the UPSC Wars app when you practice signed in.',
+              'are available in the ${AppConstants.appDisplayName} app when you practice signed in.',
               textAlign: TextAlign.center,
               style: AppTextStyles.bodySm().copyWith(
                 color: scheme.onSurfaceVariant,

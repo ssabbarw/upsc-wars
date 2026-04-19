@@ -17,7 +17,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
   const AppUpdateKillSwitchOverlay({super.key});
 
   String _iosSearchFallback() =>
-      'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}';
+      'https://apps.apple.com/search?term=${Uri.encodeComponent(AppConstants.appDisplayName)}';
 
   Future<void> _openUrl(BuildContext context, String url) async {
     await HapticFeedback.lightImpact();

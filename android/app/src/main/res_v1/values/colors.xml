@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Matches Flutter AppColors.primaryDeep -->
+    <color name="upsc_brand_dark">#FF085041</color>
+    <color name="ic_launcher_background">#FF085041</color>
+</resources>

@@ -1,6 +1,6 @@
 {
-    "name": "upsc_wars",
-    "short_name": "upsc_wars",
+    "name": "Upsc Wars",
+    "short_name": "Upsc Wars",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

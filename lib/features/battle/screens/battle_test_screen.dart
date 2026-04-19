@@ -100,6 +100,16 @@ class _BattleTestSessionView extends HookConsumerWidget {
           ),
         ),
       );
+      unawaited(
+        Analytics.track(
+          ref,
+          McqTestSessionStartedEvent(
+            subject: s.subject,
+            topic: s.topic,
+            analyticsFeatureKey: s.analyticsFeatureKey,
+          ),
+        ),
+      );
       return null;
     }, [baseSession]);
 
@@ -200,8 +210,7 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 size: 20,
               ),
               onPressed: () async {
-                await setDarkModeEnabledWithLoader(
-                  context: context,
+                await setDarkModeEnabled(
                   ref: ref,
                   darkModeEnabled: !isDark,
                 );

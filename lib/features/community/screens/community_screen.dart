@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -556,7 +557,7 @@ Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
                     borderRadius: BorderRadius.circular(AppRadius.md),
                   ),
                   child: Text(
-                    'Keep your profile updated so others can connect with you even outside UPSC Wars.',
+                    'Keep your profile updated so others can connect with you even outside ${AppConstants.appDisplayName}.',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),

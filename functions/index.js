@@ -203,7 +203,7 @@ exports.sendSelfTestNotification = functions.https.onCall(async (data, context) 
     await admin.messaging().send({
       token: fcmToken,
       notification: {
-        title: "UPSC Wars",
+        title: "Upsc Wars",
         body: "Success — push notifications are working.",
       },
       data: {

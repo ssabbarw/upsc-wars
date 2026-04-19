@@ -310,6 +310,16 @@ class _TestEngineLoaded extends HookConsumerWidget {
           ),
         ),
       );
+      unawaited(
+        Analytics.track(
+          ref,
+          McqTestSessionStartedEvent(
+            subject: s.subject,
+            topic: s.topic,
+            analyticsFeatureKey: s.analyticsFeatureKey,
+          ),
+        ),
+      );
       return null;
     }, [sessionForFx]);
 
@@ -861,8 +871,7 @@ class _TopBarDarkModeToggle extends HookConsumerWidget {
     final isDark = context.isDarkMode;
     return InkWell(
       onTap: () async {
-        await setDarkModeEnabledWithLoader(
-          context: context,
+        await setDarkModeEnabled(
           ref: ref,
           darkModeEnabled: !isDark,
         );

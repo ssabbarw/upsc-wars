@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/deep_link/share_link_kind.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
@@ -508,7 +509,7 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
         ),
         const SizedBox(height: AppSpacing.md),
         Text(
-          'This test is brought to you by "UPSC Wars mobile app".',
+          'This test is brought to you by "${AppConstants.appDisplayName} mobile app".',
           style: AppTextStyles.bodyMd().copyWith(
             color: scheme.onSurfaceVariant,
             height: 1.45,

@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/domain/entities/home_state.dart';
@@ -99,7 +100,7 @@ class HomeScreen extends HookConsumerWidget {
           builder: (ctx) => AlertDialog(
             title: Text('Exit app?', style: AppTextStyles.h3()),
             content: Text(
-              'You will leave UPSC Wars.',
+              'You will leave ${AppConstants.appDisplayName}.',
               style: AppTextStyles.bodyMd(),
             ),
             actions: [
@@ -247,8 +248,7 @@ class HomeScreen extends HookConsumerWidget {
                         color: AppColors.transparent,
                         child: InkWell(
                           onTap: () async {
-                            await setDarkModeEnabledWithLoader(
-                              context: context,
+                            await setDarkModeEnabled(
                               ref: ref,
                               darkModeEnabled: !isDark,
                             );

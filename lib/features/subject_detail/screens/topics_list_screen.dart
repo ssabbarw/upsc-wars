@@ -171,56 +171,52 @@ class _TopicCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppRadius.lg),
             border: Border.all(color: borderColor, width: 0.5),
           ),
-          child: Stack(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                bottom: 0,
-                child: Container(
-                  width: 4,
-                  color: isWeak ? AppColors.wrong : AppColors.transparent,
-                ),
+              Container(
+                width: 4,
+                color: isWeak ? AppColors.wrong : AppColors.transparent,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  4,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                  AppSpacing.lg,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            topic.displayName,
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.onSurface,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacing.sm),
-                          if (notStarted)
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(AppSpacing.lg),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
                             Text(
-                              'Not started',
-                              style: AppTextStyles.caption().copyWith(
-                                color: scheme.onSurfaceVariant,
+                              topic.displayName,
+                              style: AppTextStyles.label().copyWith(
+                                color: scheme.onSurface,
                               ),
-                            )
-                          else
-                            AccuracyPercentageText(
-                              attemptCount: topic.attemptCount,
-                              accuracyPercent: topic.accuracyPercent,
-                              tier: topic.accuracyTier,
                             ),
-                        ],
+                            const SizedBox(height: AppSpacing.sm),
+                            if (notStarted)
+                              Text(
+                                'Not started',
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                              )
+                            else
+                              AccuracyPercentageText(
+                                attemptCount: topic.attemptCount,
+                                accuracyPercent: topic.accuracyPercent,
+                                tier: topic.accuracyTier,
+                              ),
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    const _ActionButton(),
-                  ],
+                      const SizedBox(width: AppSpacing.sm),
+                      const _ActionButton(),
+                    ],
+                  ),
                 ),
               ),
             ],

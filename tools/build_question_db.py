@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build a pre-populated SQLite database for the UPSC Wars app.
+Build a pre-populated SQLite database for the Upsc Wars app.
 
 Usage:
     python tools/build_question_db.py /absolute/path/to/upsc_wars_questions.db
@@ -949,7 +949,7 @@ def populate_pyq_data(conn: sqlite3.Connection) -> None:
 
 def _parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Build pre-populated UPSC Wars SQLite database."
+        description="Build pre-populated Upsc Wars SQLite database."
     )
     parser.add_argument("out_path", help="Output SQLite file path")
     parser.add_argument(

@@ -37,7 +37,7 @@ class _ShareWebRootState extends State<ShareWebRoot> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'UPSC Wars — Shared practice',
+      title: '${AppConstants.appDisplayName} — Shared practice',
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: _themeMode,
@@ -346,7 +346,7 @@ class _ShareWebShellState extends State<ShareWebShell>
 
   Future<void> _launchFeedbackMail() async {
     final subject =
-        'UPSC Wars — shared ${_kindLabel()} feedback (id: $_shareId)';
+        '${AppConstants.appDisplayName} — shared ${_kindLabel()} feedback (id: $_shareId)';
     final body = 'Hi,\n\n'
         'Context: shared link in browser\n'
         '- Share ID: $_shareId\n'
@@ -892,7 +892,7 @@ class _ShareWebShellState extends State<ShareWebShell>
               const SizedBox(width: AppSpacing.sm),
               IconButton(
                 onPressed: null,
-                tooltip: 'Bookmarks available in the UPSC Wars app',
+                tooltip: 'Bookmarks available in the ${AppConstants.appDisplayName} app',
                 icon: Icon(
                   Icons.bookmark_border,
                   size: 20,

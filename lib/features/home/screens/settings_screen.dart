@@ -139,7 +139,7 @@ class _SettingsIntroBanner extends StatelessWidget {
         ),
       ),
       child: Text(
-        'Quiet tweaks, loud support — shape how UPSC Wars feels for you.',
+        'Quiet tweaks, loud support — shape how ${AppConstants.appDisplayName} feels for you.',
         style: AppTextStyles.bodySm().copyWith(
           color: Colors.white.withValues(alpha: 0.95),
           height: 1.45,
@@ -238,8 +238,7 @@ class _DarkModeToggleCard extends ConsumerWidget {
                 ),
                 value: prefs.darkModeEnabled,
                 onChanged: (v) async {
-                  await setDarkModeEnabledWithLoader(
-                    context: context,
+                  await setDarkModeEnabled(
                     ref: ref,
                     darkModeEnabled: v,
                   );
@@ -323,7 +322,7 @@ class _RateReviewCard extends StatelessWidget {
     final url = ios
         ? (appStore.isNotEmpty
               ? appStore
-              : 'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}')
+              : 'https://apps.apple.com/search?term=${Uri.encodeComponent(AppConstants.appDisplayName)}')
         : AppConstants.playStoreUrl;
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
@@ -793,7 +792,7 @@ class _AndroidPrelimsNotificationPreview extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'UPSC Wars',
+                    AppConstants.appDisplayName,
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.55),
                       fontSize: 12,

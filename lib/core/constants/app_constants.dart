@@ -6,6 +6,9 @@
 abstract final class AppConstants {
   AppConstants._();
 
+  /// Human-readable product name (launcher, window title, in-app copy).
+  static const String appDisplayName = 'Upsc Wars';
+
   // ── Store listings ─────────────────────────────────────────────────────────
   static const String playStoreUrl =
       'https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice';
@@ -22,7 +25,10 @@ abstract final class AppConstants {
   static Uri supportMailtoUri() => Uri(
     scheme: 'mailto',
     path: supportEmail,
-    queryParameters: {'subject': 'UPSC Wars — feedback', 'body': 'Hi,\n\n'},
+    queryParameters: {
+      'subject': '$appDisplayName — feedback',
+      'body': 'Hi,\n\n',
+    },
   );
 
   // ── Release (bump when publishing) ───────────────────────────────────────

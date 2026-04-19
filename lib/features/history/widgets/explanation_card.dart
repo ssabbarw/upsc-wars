@@ -34,6 +34,24 @@ class StatementAnalysisVm {
   final String reason;
 }
 
+List<String> _nonEmptyEliminationSteps(List<String> raw) => [
+  for (final s in raw)
+    if (s.trim().isNotEmpty) s,
+];
+
+bool _hasEliminationContent(
+  QuestionTranslation t,
+  ({String title, String reason})? watchOut,
+) {
+  if (watchOut != null) return true;
+  return _nonEmptyEliminationSteps(t.eliminationLogic).isNotEmpty;
+}
+
+bool _hasTrapContent(QuestionTranslation t) {
+  if ((t.upscTrapExplanation ?? '').trim().isNotEmpty) return true;
+  return t.conceptsUsed.any((c) => c.trim().isNotEmpty);
+}
+
 class ExplanationCard extends HookConsumerWidget {
   const ExplanationCard({
     required this.translation,
@@ -51,21 +69,30 @@ class ExplanationCard extends HookConsumerWidget {
     final deepDiveOpen = useState(false);
     final hasStatements =
         showStatements && translation.statementAnalysis.isNotEmpty;
-    final tabs =
-        hasStatements
-            ? const ['Statements', 'Elimination', 'Trap']
-            : const ['Elimination', 'Trap'];
-    final activeTab = useState(0);
-    final primary = const Color(0xFF1D9E75);
-
     final explanation = (translation.finalExplanation ?? '').trim();
     final split = explanation.split('\n\nValue Addition:');
     final body = split.first.trim();
-    final valueAdd =
-        split.length > 1
-            ? split.sublist(1).join('\n\nValue Addition:').trim()
-            : '';
+    final valueAdd = split.length > 1
+        ? split.sublist(1).join('\n\nValue Addition:').trim()
+        : '';
     final watchOut = _parseWatchOut(translation.strongDistractor);
+    final hasElimination = _hasEliminationContent(translation, watchOut);
+    final hasTrap = _hasTrapContent(translation);
+    final tabs = <String>[
+      if (hasStatements) 'Statements',
+      if (hasElimination) 'Elimination',
+      if (hasTrap) 'Trap',
+    ];
+    final hasDeepDive = tabs.isNotEmpty;
+    final activeTab = useState(0);
+    final primary = const Color(0xFF1D9E75);
+
+    useEffect(() {
+      if (activeTab.value >= tabs.length) {
+        activeTab.value = 0;
+      }
+      return null;
+    }, [tabs.join('|')]);
 
     return Container(
       decoration: BoxDecoration(
@@ -128,97 +155,98 @@ class ExplanationCard extends HookConsumerWidget {
               ],
             ),
           ),
-          InkWell(
-            onTap: () {
-              deepDiveOpen.value = !deepDiveOpen.value;
-              if (!deepDiveOpen.value) activeTab.value = 0;
-            },
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(14, 11, 14, 11),
-              decoration: BoxDecoration(
-                color: scheme.surfaceContainerLow,
-                border: Border(
-                  top: BorderSide(
-                    color: scheme.outlineVariant.withValues(alpha: 0.7),
-                    width: 0.5,
-                  ),
-                ),
-              ),
-              child: Row(
-                children: [
-                  Text(
-                    'Deep dive',
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                      color: scheme.onSurface,
+          if (hasDeepDive) ...[
+            InkWell(
+              onTap: () {
+                deepDiveOpen.value = !deepDiveOpen.value;
+                if (!deepDiveOpen.value) activeTab.value = 0;
+              },
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(14, 11, 14, 11),
+                decoration: BoxDecoration(
+                  color: scheme.surfaceContainerLow,
+                  border: Border(
+                    top: BorderSide(
+                      color: scheme.outlineVariant.withValues(alpha: 0.7),
+                      width: 0.5,
                     ),
                   ),
-                  const Spacer(),
-                  Icon(
-                    deepDiveOpen.value
-                        ? Icons.keyboard_arrow_up
-                        : Icons.keyboard_arrow_down,
-                    size: 18,
-                    color: scheme.onSurfaceVariant,
-                  ),
-                ],
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      'Deep dive',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                    const Spacer(),
+                    Icon(
+                      deepDiveOpen.value
+                          ? Icons.keyboard_arrow_up
+                          : Icons.keyboard_arrow_down,
+                      size: 18,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          if (deepDiveOpen.value) ...[
-            Row(
-              children: [
-                for (var i = 0; i < tabs.length; i++)
-                  Expanded(
-                    child: InkWell(
-                      onTap: () => activeTab.value = i,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 9),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color:
-                                  activeTab.value == i
-                                      ? primary
-                                      : Colors.transparent,
-                              width: 2,
-                            ),
-                            top: BorderSide(
-                              color: scheme.outlineVariant.withValues(alpha: 0.7),
-                              width: 0.5,
+            if (deepDiveOpen.value) ...[
+              Row(
+                children: [
+                  for (var i = 0; i < tabs.length; i++)
+                    Expanded(
+                      child: InkWell(
+                        onTap: () => activeTab.value = i,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 9),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                color: activeTab.value == i
+                                    ? primary
+                                    : Colors.transparent,
+                                width: 2,
+                              ),
+                              top: BorderSide(
+                                color: scheme.outlineVariant.withValues(
+                                  alpha: 0.7,
+                                ),
+                                width: 0.5,
+                              ),
                             ),
                           ),
-                        ),
-                        child: Text(
-                          tabs[i],
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight:
-                                activeTab.value == i
-                                    ? FontWeight.w500
-                                    : FontWeight.w400,
-                            color:
-                                activeTab.value == i
-                                    ? primary
-                                    : scheme.onSurfaceVariant,
+                          child: Text(
+                            tabs[i],
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: activeTab.value == i
+                                  ? FontWeight.w500
+                                  : FontWeight.w400,
+                              color: activeTab.value == i
+                                  ? primary
+                                  : scheme.onSurfaceVariant,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: _TabBody(
-                tab: tabs[activeTab.value],
-                translation: translation,
-                watchOut: watchOut,
-                isDark: isDark,
+                ],
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(14),
+                child: _TabBody(
+                  tab: tabs[activeTab.value],
+                  translation: translation,
+                  watchOut: watchOut,
+                  isDark: isDark,
+                ),
+              ),
+            ],
           ],
         ],
       ),
@@ -254,6 +282,9 @@ class _TabBody extends StatelessWidget {
           ],
         );
       case 'Elimination':
+        final eliminationSteps = _nonEmptyEliminationSteps(
+          translation.eliminationLogic,
+        );
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -262,7 +293,9 @@ class _TabBody extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF39290E) : const Color(0xFFFAEEDA),
+                  color: isDark
+                      ? const Color(0xFF39290E)
+                      : const Color(0xFFFAEEDA),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
@@ -274,7 +307,9 @@ class _TabBody extends StatelessWidget {
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
                         letterSpacing: 0.4,
-                        color: isDark ? const Color(0xFFF4D39E) : const Color(0xFF854F0B),
+                        color: isDark
+                            ? const Color(0xFFF4D39E)
+                            : const Color(0xFF854F0B),
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -283,7 +318,9 @@ class _TabBody extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12,
                         height: 1.55,
-                        color: isDark ? const Color(0xFFF4D39E) : const Color(0xFF633806),
+                        color: isDark
+                            ? const Color(0xFFF4D39E)
+                            : const Color(0xFF633806),
                       ),
                     ),
                   ],
@@ -291,7 +328,7 @@ class _TabBody extends StatelessWidget {
               ),
               const SizedBox(height: 12),
             ],
-            for (var i = 0; i < translation.eliminationLogic.length; i++)
+            for (var i = 0; i < eliminationSteps.length; i++)
               Padding(
                 padding: const EdgeInsets.only(bottom: 9),
                 child: Row(
@@ -308,7 +345,7 @@ class _TabBody extends StatelessWidget {
                     const SizedBox(width: 10),
                     Expanded(
                       child: SelectableCopySearchText(
-                        translation.eliminationLogic[i],
+                        eliminationSteps[i],
                         style: TextStyle(
                           fontSize: 12,
                           height: 1.55,
@@ -322,45 +359,48 @@ class _TabBody extends StatelessWidget {
           ],
         );
       default:
+        final trapText = (translation.upscTrapExplanation ?? '').trim();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SelectableCopySearchText(
-              (translation.upscTrapExplanation ?? '').trim(),
-              style: TextStyle(
-                fontSize: 12,
-                height: 1.65,
-                color: scheme.onSurface,
+            if (trapText.isNotEmpty)
+              SelectableCopySearchText(
+                trapText,
+                style: TextStyle(
+                  fontSize: 12,
+                  height: 1.65,
+                  color: scheme.onSurface,
+                ),
               ),
-            ),
-            if (translation.conceptsUsed.isNotEmpty) ...[
-              const SizedBox(height: 12),
+            if (translation.conceptsUsed.any((c) => c.trim().isNotEmpty)) ...[
+              if (trapText.isNotEmpty) const SizedBox(height: 12),
               Wrap(
                 spacing: 6,
                 runSpacing: 6,
                 children: [
                   for (final tag in translation.conceptsUsed)
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 4,
-                      ),
-                      decoration: BoxDecoration(
-                        color: scheme.surfaceContainerLow,
-                        border: Border.all(
-                          color: scheme.outlineVariant.withValues(alpha: 0.8),
-                          width: 0.5,
+                    if (tag.trim().isNotEmpty)
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 4,
                         ),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: SelectableCopySearchText(
-                        tag,
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: scheme.onSurfaceVariant,
+                        decoration: BoxDecoration(
+                          color: scheme.surfaceContainerLow,
+                          border: Border.all(
+                            color: scheme.outlineVariant.withValues(alpha: 0.8),
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: SelectableCopySearchText(
+                          tag,
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: scheme.onSurfaceVariant,
+                          ),
                         ),
                       ),
-                    ),
                 ],
               ),
             ],
@@ -379,14 +419,12 @@ class _StatementRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final pillBg =
-        item.isCorrect
-            ? (isDark ? const Color(0xFF2F5B35) : const Color(0xFFC0DD97))
-            : (isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF7C1C1));
-    final pillText =
-        item.isCorrect
-            ? (isDark ? const Color(0xFFD4F4D9) : const Color(0xFF173404))
-            : (isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313));
+    final pillBg = item.isCorrect
+        ? (isDark ? const Color(0xFF2F5B35) : const Color(0xFFC0DD97))
+        : (isDark ? const Color(0xFF6A2C2C) : const Color(0xFFF7C1C1));
+    final pillText = item.isCorrect
+        ? (isDark ? const Color(0xFFD4F4D9) : const Color(0xFF173404))
+        : (isDark ? const Color(0xFFF7CFCF) : const Color(0xFF501313));
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
