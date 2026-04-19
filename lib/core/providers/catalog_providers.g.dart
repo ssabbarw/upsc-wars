@@ -310,7 +310,7 @@ final class TopicTestTopicsProvider
   }) : super(
          retry: null,
          name: r'topicTestTopicsProvider',
-         isAutoDispose: true,
+         isAutoDispose: false,
          dependencies: null,
          $allTransitiveDependencies: null,
        );
@@ -348,7 +348,7 @@ final class TopicTestTopicsProvider
   }
 }
 
-String _$topicTestTopicsHash() => r'6ac2c4d29f0af742877b65de687526d9b39af214';
+String _$topicTestTopicsHash() => r'12cc006dc1570bd21b30f36548041fe97e24a355';
 
 final class TopicTestTopicsFamily extends $Family
     with $FunctionalFamilyOverride<FutureOr<List<TopicInfo>>, String> {
@@ -358,7 +358,7 @@ final class TopicTestTopicsFamily extends $Family
         name: r'topicTestTopicsProvider',
         dependencies: null,
         $allTransitiveDependencies: null,
-        isAutoDispose: true,
+        isAutoDispose: false,
       );
 
   TopicTestTopicsProvider call(String subject) =>

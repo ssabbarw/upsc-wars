@@ -2,50 +2,41 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../constants/app_constants.dart';
+
 part 'kill_switch_provider.g.dart';
 
-/// Remote Config parameter: ISO date `YYYY-MM-DD` (or full ISO). After this
-/// calendar day (local time), the home experience shows a mandatory update UI.
-const killSwitchDateRemoteConfigKey = 'kill_switch_date';
+/// Remote Config: minimum client version (same rules as [ReleaseVersion.parse]).
+/// Example: `2.1` means builds below 2.1.0 must update; `2.1.0` is allowed.
+const killSwitchVersionRemoteConfigKey = 'kill_switch_version';
 
-/// Result of evaluating Remote Config against the device clock.
+/// Result of comparing this build to Remote Config.
 class KillSwitchSnapshot {
   const KillSwitchSnapshot({
     required this.isActive,
-    this.configuredDate,
+    this.requiredMinimum,
+    this.appVersion,
   });
 
-  /// `true` when today is strictly after [configuredDate].
+  /// `true` when this app’s version is **strictly less** than [requiredMinimum].
   final bool isActive;
 
-  /// Parsed kill-switch date from Remote Config, if any.
-  final DateTime? configuredDate;
+  /// Parsed Remote Config minimum, if any.
+  final ReleaseVersion? requiredMinimum;
+
+  /// Parsed [AppConstants.releaseVersionLabel].
+  final ReleaseVersion? appVersion;
 
   static const inactive = KillSwitchSnapshot(isActive: false);
-}
-
-DateTime? _parseKillDate(String raw) {
-  final t = raw.trim();
-  if (t.isEmpty) return null;
-  final d = DateTime.tryParse(t);
-  if (d != null) {
-    return DateTime(d.year, d.month, d.day);
-  }
-  final parts = t.split(RegExp(r'[-/]'));
-  if (parts.length >= 3) {
-    final y = int.tryParse(parts[0]);
-    final m = int.tryParse(parts[1]);
-    final day = int.tryParse(parts[2]);
-    if (y != null && m != null && day != null) {
-      return DateTime(y, m, day);
-    }
-  }
-  return null;
 }
 
 @Riverpod(keepAlive: true)
 Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
   if (kIsWeb) {
+    return KillSwitchSnapshot.inactive;
+  }
+  final app = ReleaseVersion.appCurrent;
+  if (app == null) {
     return KillSwitchSnapshot.inactive;
   }
   try {
@@ -59,18 +50,26 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
       ),
     );
     await rc.setDefaults(<String, dynamic>{
-      killSwitchDateRemoteConfigKey: '',
+      killSwitchVersionRemoteConfigKey: '',
     });
     await rc.fetchAndActivate();
-    final raw = rc.getString(killSwitchDateRemoteConfigKey);
-    final killDay = _parseKillDate(raw);
-    if (killDay == null) {
-      return KillSwitchSnapshot.inactive;
+    final raw = rc.getString(killSwitchVersionRemoteConfigKey).trim();
+    if (raw.isEmpty) {
+      return KillSwitchSnapshot(
+        isActive: false,
+        appVersion: app,
+      );
     }
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    final active = today.isAfter(killDay);
-    return KillSwitchSnapshot(isActive: active, configuredDate: killDay);
+    final required = ReleaseVersion.parse(raw);
+    if (required == null) {
+      return KillSwitchSnapshot(isActive: false, appVersion: app);
+    }
+    final active = app.compareTo(required) < 0;
+    return KillSwitchSnapshot(
+      isActive: active,
+      requiredMinimum: required,
+      appVersion: app,
+    );
   } on Object catch (_) {
     return KillSwitchSnapshot.inactive;
   }

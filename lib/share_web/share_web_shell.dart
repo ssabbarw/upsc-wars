@@ -21,10 +21,8 @@ import 'package:upsc_wars/share_web/share_web_session_chrome.dart';
 import 'package:upsc_wars/web_player/web_player_welcome_sheet.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
-
-/// Same inbox as in-app settings → Talk to us.
-const _kFeedbackEmail = 'upscwars@gmail.com';
 
 class ShareWebRoot extends StatefulWidget {
   const ShareWebRoot({super.key});
@@ -333,12 +331,14 @@ class _ShareWebShellState extends State<ShareWebShell>
   }
 
   Future<void> _copyFeedbackEmailToClipboard() async {
-    await Clipboard.setData(const ClipboardData(text: _kFeedbackEmail));
+    await Clipboard.setData(
+      ClipboardData(text: AppConstants.supportEmail),
+    );
     if (!mounted) return;
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Copied $_kFeedbackEmail'),
+        content: Text('Copied ${AppConstants.supportEmail}'),
         duration: const Duration(seconds: 3),
       ),
     );
@@ -355,7 +355,7 @@ class _ShareWebShellState extends State<ShareWebShell>
         '\n';
     final uri = Uri(
       scheme: 'mailto',
-      path: _kFeedbackEmail,
+      path: AppConstants.supportEmail,
       queryParameters: <String, String>{
         'subject': subject,
         'body': body,

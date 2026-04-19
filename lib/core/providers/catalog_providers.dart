@@ -93,7 +93,7 @@ Future<List<SubjectInfo>> subjectTestList(Ref ref) async {
   return uc.execute(lang);
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 Future<List<TopicInfo>> topicTestTopics(Ref ref, String subject) async {
   final lang = await ref.watch(appLanguageProvider.future);
   final uc = await ref.watch(getTopicListUseCaseProvider.future);

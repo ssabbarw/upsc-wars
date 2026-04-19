@@ -3,6 +3,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../shared/widgets/pop_to_shell_home_scope.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/shimmer_box.dart';
 
 import '../../../core/theme/app_colors.dart';
@@ -23,9 +25,10 @@ class ProgressScreen extends HookConsumerWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-    return Scaffold(
-      body: SafeArea(
-        child: overviewAsync.when(
+    return PopToShellHomeScope(
+      child: Scaffold(
+        body: SafeArea(
+          child: overviewAsync.when(
           loading: () => _ProgressSkeleton(borderColor: borderColor),
           error: (e, _) => Center(
             child: Text(
@@ -78,11 +81,23 @@ class ProgressScreen extends HookConsumerWidget {
                     ),
                   ),
                 ),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.lg,
+                      AppSpacing.md,
+                      AppSpacing.lg,
+                      AppSpacing.xxxl,
+                    ),
+                    child: const Center(child: ContactUsTextButton()),
+                  ),
+                ),
               ],
             );
           },
         ),
       ),
+    ),
     );
   }
 

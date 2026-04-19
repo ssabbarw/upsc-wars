@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../providers/auth_providers.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
@@ -85,6 +86,15 @@ class ProfileScreen extends HookConsumerWidget {
                               'Sign in to sync your progress and keep your preparation data safe across devices.',
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              AppConstants.releaseVersionLabel,
+                              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurfaceVariant,
+                                  ),
                             ),
                             const SizedBox(height: 22),
                             SizedBox(
@@ -223,10 +233,20 @@ class ProfileScreen extends HookConsumerWidget {
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    AppConstants.releaseVersionLabel,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
+                  ),
+                ),
                 SafeArea(
                   top: false,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                     child: SizedBox(
                       width: double.infinity,
                       child: OutlinedButton.icon(

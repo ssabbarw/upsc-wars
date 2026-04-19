@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// Contact for privacy questions (matches Settings feedback email).
-const _kPrivacyContactEmail = 'upscwars@gmail.com';
+import '../../core/constants/app_constants.dart';
 
-const _kPrivacyPolicyBody = '''
+String _privacyPolicyBody() => '''
 UPSC Wars — Privacy Policy
 
 This describes how UPSC Wars ("we", "the app") handles information when you sign in with Google and use connected features.
@@ -24,7 +23,7 @@ We use this information to operate UPSC Wars: sign-in, sync and backup where ena
 
 Email from us
 
-We may use your email address to contact you about the product in the future—for example meaningful releases, important account or security notices, or occasional tips that respect your time. We are not in the business of flooding inboxes: think a well-timed postcard, not a flyer stack on your windshield. If you ever want fewer non-essential product emails, reply to any message and ask us to adjust, or write to $_kPrivacyContactEmail.
+We may use your email address to contact you about the product in the future—for example meaningful releases, important account or security notices, or occasional tips that respect your time. We are not in the business of flooding inboxes: think a well-timed postcard, not a flyer stack on your windshield. If you ever want fewer non-essential product emails, reply to any message and ask us to adjust, or write to ${AppConstants.supportEmail}.
 
 Third-party services
 
@@ -44,7 +43,7 @@ We may update this policy from time to time. When we do, we will reflect the lat
 
 Questions
 
-Privacy questions: $_kPrivacyContactEmail.
+Privacy questions: ${AppConstants.supportEmail}.
 ''';
 
 Future<void> showUpscWarsPrivacyPolicyDialog(BuildContext context) {
@@ -58,7 +57,7 @@ Future<void> showUpscWarsPrivacyPolicyDialog(BuildContext context) {
           width: double.maxFinite,
           child: SingleChildScrollView(
             child: Text(
-              _kPrivacyPolicyBody.trim(),
+              _privacyPolicyBody().trim(),
               style: theme.textTheme.bodyMedium?.copyWith(height: 1.45),
             ),
           ),

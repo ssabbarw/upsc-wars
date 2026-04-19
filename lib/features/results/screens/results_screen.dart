@@ -10,6 +10,7 @@ import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../../battle/widgets/battle_live_scoreboard.dart';
 import '../widgets/session_summary_coach.dart';
 
@@ -139,6 +140,8 @@ class ResultsScreen extends ConsumerWidget {
                             result: r,
                             displaySubjectName: displaySubject,
                           ),
+                          const SizedBox(height: AppSpacing.lg),
+                          const Center(child: ContactUsTextButton()),
                         ],
                       ),
                     ),

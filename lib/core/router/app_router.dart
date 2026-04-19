@@ -137,17 +137,19 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
-        path: '/subject/:name/topics',
-        builder: (context, state) => TopicsListScreen(
-          subject: Uri.decodeComponent(state.pathParameters['name']!),
-        ),
-      ),
-      GoRoute(
-        parentNavigatorKey: rootNavigatorKey,
         path: '/subject/:name',
         builder: (context, state) => SubjectDetailScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
+        routes: [
+          GoRoute(
+            parentNavigatorKey: rootNavigatorKey,
+            path: 'topics',
+            builder: (context, state) => TopicsListScreen(
+              subject: Uri.decodeComponent(state.pathParameters['name']!),
+            ),
+          ),
+        ],
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

@@ -15,11 +15,12 @@ import '../core/services/fcm_token_sync_service.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
-import '../core/router/app_router.dart';
+import '../core/router/app_router.dart' show appRouterProvider, rootNavigatorKey;
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
+import '../shared/widgets/first_launch_bilingual_welcome_sheet.dart';
 
 class UpscWarsApp extends HookConsumerWidget {
   const UpscWarsApp({super.key});
@@ -64,6 +65,23 @@ class _RootMaterialApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    /// Shown on every cold start while testing. Switch back to prefs-gated
+    /// one-time flow when ready (see `bilingualQuestionWelcomeSeen`).
+    useEffect(() {
+      var cancelled = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(() async {
+          if (cancelled) return;
+          final navCtx = rootNavigatorKey.currentContext;
+          if (navCtx == null || !navCtx.mounted) return;
+          await showFirstLaunchBilingualWelcomeSheet(navCtx);
+        }());
+      });
+      return () {
+        cancelled = true;
+      };
+    }, const []);
+
     useEffect(() {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         final router = ref.read(appRouterProvider);

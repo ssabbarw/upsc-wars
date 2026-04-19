@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
 import '../domain/entities/community_user.dart';
@@ -18,23 +19,25 @@ class CommunityScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Community', style: AppTextStyles.h3()),
-        actions: [
-          IconButton(
-            tooltip: 'Random connect',
-            icon: const Icon(Icons.casino_outlined),
-            onPressed: () => _showRandomConnectSheet(context),
-          ),
-          IconButton(
-            tooltip: 'Visibility settings',
-            icon: const Icon(Icons.settings_outlined),
-            onPressed: () => _showSettings(context, ref),
-          ),
-        ],
+    return PopToShellHomeScope(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Community', style: AppTextStyles.h3()),
+          actions: [
+            IconButton(
+              tooltip: 'Random connect',
+              icon: const Icon(Icons.casino_outlined),
+              onPressed: () => _showRandomConnectSheet(context),
+            ),
+            IconButton(
+              tooltip: 'Visibility settings',
+              icon: const Icon(Icons.settings_outlined),
+              onPressed: () => _showSettings(context, ref),
+            ),
+          ],
+        ),
+        body: _RecentTab(scheme: scheme),
       ),
-      body: _RecentTab(scheme: scheme),
     );
   }
 }

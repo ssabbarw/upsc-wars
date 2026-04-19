@@ -11,6 +11,8 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/time_formatting.dart';
+import '../../../shared/widgets/pop_to_shell_home_scope.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../providers/history_filters_provider.dart';
 
 class HistoryScreen extends HookConsumerWidget {
@@ -24,13 +26,14 @@ class HistoryScreen extends HookConsumerWidget {
     );
     final scheme = Theme.of(context).colorScheme;
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(AppSpacing.lg, AppSpacing.md, AppSpacing.lg, AppSpacing.sm),
-              child: async.when(
+    return PopToShellHomeScope(
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(AppSpacing.lg, AppSpacing.md, AppSpacing.lg, AppSpacing.sm),
+                child: async.when(
                 data: (list) => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -113,9 +116,13 @@ class HistoryScreen extends HookConsumerWidget {
                 },
               ),
             ),
+            const SizedBox(height: AppSpacing.lg),
+            const Center(child: ContactUsTextButton()),
+            const SizedBox(height: AppSpacing.sm),
           ],
         ),
       ),
+    ),
     );
   }
 }

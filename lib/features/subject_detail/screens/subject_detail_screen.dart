@@ -11,6 +11,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../../history/providers/history_filters_provider.dart';
 import '../domain/subject_insights.dart';
@@ -97,6 +98,17 @@ class SubjectDetailScreen extends ConsumerWidget {
                   subject: subject,
                   borderColor: borderColor,
                 ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  AppSpacing.lg,
+                  AppSpacing.lg,
+                  AppSpacing.sm,
+                ),
+                child: const Center(child: ContactUsTextButton()),
               ),
             ),
             const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxxl)),
@@ -332,7 +344,7 @@ class _PracticeSection extends ConsumerWidget {
         _PracticeCard(
           icon: Icons.shuffle_rounded,
           iconColor: AppColors.primary,
-          title: 'Start Random Test',
+          title: 'Start a test',
           subtitle: 'Questions from all topics in $displayName',
           isPrimary: true,
           borderColor: borderColor,
@@ -591,7 +603,7 @@ class _HistoryEmpty extends StatelessWidget {
                       ),
                     );
                   },
-            child: Text('Start Random Test', style: AppTextStyles.label()),
+            child: Text('Start a test', style: AppTextStyles.label()),
           ),
         ],
       ),
@@ -758,7 +770,10 @@ class _InsightsSection extends ConsumerWidget {
         const SizedBox(height: AppSpacing.sm),
         insightsAsync.when(
           loading: () => _InsightsSkeleton(borderColor: borderColor),
-          error: (_, _) => const SizedBox.shrink(),
+          error: (e, _) => _InsightsLoadError(
+            borderColor: borderColor,
+            onRetry: () => ref.invalidate(subjectInsightsProvider(subject)),
+          ),
           data: (insights) => Column(
             children: [
               _DangerZoneSummaryCard(
@@ -996,6 +1011,44 @@ class _TopicPercentileRow extends StatelessWidget {
 }
 
 // ── Shared Helpers ──────────────────────────────────────────────────────────────
+
+class _InsightsLoadError extends StatelessWidget {
+  const _InsightsLoadError({
+    required this.borderColor,
+    required this.onRetry,
+  });
+
+  final Color borderColor;
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.lg),
+      decoration: BoxDecoration(
+        color: scheme.surface,
+        borderRadius: BorderRadius.circular(AppRadius.lg),
+        border: Border.all(color: borderColor, width: 0.5),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Could not load insights.',
+            style: AppTextStyles.bodySm().copyWith(color: scheme.onSurface),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          OutlinedButton(
+            onPressed: onRetry,
+            child: Text('Retry', style: AppTextStyles.label()),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class _InsightsEmptyHint extends StatelessWidget {
   const _InsightsEmptyHint({required this.message});

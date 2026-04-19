@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../core/constants/store_listing_urls.dart';
+import '../../core/constants/app_constants.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
@@ -36,11 +36,11 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
   String _storeUrl() {
     final ios = defaultTargetPlatform == TargetPlatform.iOS;
     if (ios) {
-      final u = StoreListingUrls.appStore.trim();
+      final u = AppConstants.appStoreUrl.trim();
       if (u.isNotEmpty) return u;
       return _iosSearchFallback();
     }
-    return StoreListingUrls.playStore.trim();
+    return AppConstants.playStoreUrl.trim();
   }
 
   String _storeLabel() {
@@ -136,7 +136,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Fresh engines. Same battle.',
+                                      'This build is behind the line.',
                                       style: AppTextStyles.h3().copyWith(
                                         color: scheme.onSurface,
                                         height: 1.15,
@@ -144,7 +144,7 @@ class AppUpdateKillSwitchOverlay extends StatelessWidget {
                                     ),
                                     const SizedBox(height: AppSpacing.xs),
                                     Text(
-                                      'Your build has sunset — we shipped fixes, smoother drills, and sharper sync. Tap below to grab the latest UPSC Wars.',
+                                      'The store now carries a newer UPSC Wars — policy, polish, and prep flow all moved forward. Update to rejoin the drill room.',
                                       style: AppTextStyles.bodySm().copyWith(
                                         color: scheme.onSurfaceVariant,
                                         height: 1.45,

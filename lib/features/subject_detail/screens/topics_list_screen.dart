@@ -10,6 +10,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/count_formatting.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../providers/subject_detail_providers.dart';
 
@@ -95,16 +96,25 @@ class TopicsListScreen extends ConsumerWidget {
                       AppSpacing.lg,
                       AppSpacing.xxl,
                     ),
-                    itemCount: topics.length,
-                    separatorBuilder: (_, _) =>
-                        const SizedBox(height: AppSpacing.cardListGap),
-                    itemBuilder: (context, i) => _TopicCard(
-                      topic: topics[i],
-                      subject: subject,
-                      displayName: displayName,
-                      borderColor: borderColor,
-                      isDark: isDark,
-                    ),
+                    itemCount: topics.length + 1,
+                    separatorBuilder: (context, index) {
+                      if (index == topics.length - 1) {
+                        return const SizedBox(height: AppSpacing.xl);
+                      }
+                      return const SizedBox(height: AppSpacing.cardListGap);
+                    },
+                    itemBuilder: (context, i) {
+                      if (i == topics.length) {
+                        return const Center(child: ContactUsTextButton());
+                      }
+                      return _TopicCard(
+                        topic: topics[i],
+                        subject: subject,
+                        displayName: displayName,
+                        borderColor: borderColor,
+                        isDark: isDark,
+                      );
+                    },
                   );
                 },
               ),
@@ -263,16 +273,23 @@ class _LoadingSkeleton extends StatelessWidget {
         AppSpacing.lg,
         AppSpacing.xxl,
       ),
-      itemCount: 8,
-      separatorBuilder: (_, _) =>
-          const SizedBox(height: AppSpacing.cardListGap),
-      itemBuilder: (_, _) => Container(
-        height: 88,
-        decoration: BoxDecoration(
-          color: scheme.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(AppRadius.lg),
-        ),
-      ),
+      itemCount: 9,
+      separatorBuilder: (context, index) {
+        if (index == 7) return const SizedBox(height: AppSpacing.xl);
+        return const SizedBox(height: AppSpacing.cardListGap);
+      },
+      itemBuilder: (context, index) {
+        if (index == 8) {
+          return const Center(child: ContactUsTextButton());
+        }
+        return Container(
+          height: 88,
+          decoration: BoxDecoration(
+            color: scheme.surfaceContainerLow,
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+          ),
+        );
+      },
     );
   }
 }
@@ -300,6 +317,8 @@ class _ErrorState extends StatelessWidget {
               onPressed: onRetry,
               child: Text('Retry', style: AppTextStyles.label()),
             ),
+            const SizedBox(height: AppSpacing.lg),
+            const ContactUsTextButton(),
           ],
         ),
       ),
@@ -320,9 +339,20 @@ class _EmptyState extends StatelessWidget {
             Icon(Icons.topic_outlined, size: 40, color: scheme.onSurfaceVariant),
             const SizedBox(height: AppSpacing.md),
             Text(
-              'Topics coming soon.',
+              'No topics found for this subject.',
+              textAlign: TextAlign.center,
               style: AppTextStyles.body().copyWith(color: scheme.onSurface),
             ),
+            const SizedBox(height: AppSpacing.xs),
+            Text(
+              'If your question bank is still installing, go back and try again in a moment.',
+              textAlign: TextAlign.center,
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.lg),
+            const ContactUsTextButton(),
           ],
         ),
       ),

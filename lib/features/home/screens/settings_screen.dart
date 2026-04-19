@@ -6,18 +6,15 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/prelims_countdown.dart';
-import '../../../core/constants/store_listing_urls.dart';
+import '../../../core/constants/app_constants.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/services/prelims_surfaces_refresh.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../core/constants/creator_contact.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
-
-const _kFeedbackEmail = 'upscwars@gmail.com';
-const _kTelegramDirect = 'https://t.me/upsc_wars_sachin';
-const _kTelegramGroup = 'https://t.me/upsc_wars_group';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -315,12 +312,12 @@ class _RateReviewCard extends StatelessWidget {
   Future<void> _openStore(BuildContext context) async {
     await HapticFeedback.lightImpact();
     final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    final appStore = StoreListingUrls.appStore.trim();
+    final appStore = AppConstants.appStoreUrl.trim();
     final url = ios
         ? (appStore.isNotEmpty
             ? appStore
             : 'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}')
-        : StoreListingUrls.playStore;
+        : AppConstants.playStoreUrl;
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
@@ -426,14 +423,7 @@ class _FeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mailUri = Uri(
-      scheme: 'mailto',
-      path: _kFeedbackEmail,
-      queryParameters: {
-        'subject': 'UPSC Wars — feedback',
-        'body': 'Hi,\n\n',
-      },
-    );
+    final mailUri = CreatorContact.mailtoFeedbackUri();
 
     return Container(
       decoration: BoxDecoration(
@@ -483,7 +473,7 @@ class _FeedbackCard extends StatelessWidget {
             iconBg: AppColors.infoBg,
             iconColor: AppColors.info,
             title: 'Email',
-            subtitle: _kFeedbackEmail,
+            subtitle: CreatorContact.email,
             hint: 'Best for long context, screenshots, or attachments',
             onTap: () => _launch(context, mailUri),
           ),
@@ -495,7 +485,7 @@ class _FeedbackCard extends StatelessWidget {
             title: 'Telegram — direct',
             subtitle: 't.me/upsc_wars_sachin',
             hint: 'Quick ping, voice notes, “this broke today”',
-            onTap: () => _launch(context, Uri.parse(_kTelegramDirect)),
+            onTap: () => _launch(context, Uri.parse(CreatorContact.telegramDirectUrl)),
           ),
           const Divider(height: 1),
           _FeedbackTile(
@@ -505,7 +495,7 @@ class _FeedbackCard extends StatelessWidget {
             title: 'Telegram — group',
             subtitle: 't.me/upsc_wars_group',
             hint: 'Crowd wisdom, peer energy, battle banter',
-            onTap: () => _launch(context, Uri.parse(_kTelegramGroup)),
+            onTap: () => _launch(context, Uri.parse(CreatorContact.telegramGroupUrl)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(

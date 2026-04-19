@@ -18,6 +18,9 @@ abstract final class PrefKeys {
   static const battleSpectateRecovery = 'battle_spectate_recovery_v1';
   /// Ask confidence before reveal in practice (adaptive); default on.
   static const confidenceTrackingEnabled = 'confidence_tracking_enabled';
+  /// Shown once: Hindi/English availability + question-screen toggle.
+  static const bilingualQuestionWelcomeSeen =
+      'bilingual_question_welcome_seen_v1';
 }
 
 class PrefsService {
@@ -77,6 +80,11 @@ class PrefsService {
       _p.getBool(PrefKeys.confidenceTrackingEnabled) ?? true;
   set confidenceTrackingEnabled(bool v) =>
       _p.setBool(PrefKeys.confidenceTrackingEnabled, v);
+
+  bool get bilingualQuestionWelcomeSeen =>
+      _p.getBool(PrefKeys.bilingualQuestionWelcomeSeen) ?? false;
+  set bilingualQuestionWelcomeSeen(bool v) =>
+      _p.setBool(PrefKeys.bilingualQuestionWelcomeSeen, v);
 }
 
 @Riverpod(keepAlive: true)

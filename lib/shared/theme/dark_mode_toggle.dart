@@ -12,6 +12,11 @@ Future<void> setDarkModeEnabledWithLoader({
 }) async {
   if (!context.mounted) return;
 
+  // Hold the root navigator before any async/invalidate work: the caller's
+  // [BuildContext] can unmount after theme rebuild, which would skip [maybePop]
+  // and leave this dialog stuck forever.
+  final navigator = Navigator.of(context, rootNavigator: true);
+
   showDialog<void>(
     context: context,
     barrierDismissible: false,
@@ -49,8 +54,8 @@ Future<void> setDarkModeEnabledWithLoader({
     await ref.read(prefsServiceProvider.future);
     await WidgetsBinding.instance.endOfFrame;
   } finally {
-    if (context.mounted) {
-      Navigator.of(context, rootNavigator: true).maybePop();
+    if (navigator.mounted) {
+      navigator.maybePop();
     }
   }
 }

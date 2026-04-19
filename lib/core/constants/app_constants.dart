@@ -1,0 +1,72 @@
+/// App-wide URLs, support contact, and release version.
+///
+/// Bump [releaseVersionLabel] when you ship a new store build. Remote Config
+/// `kill_switch_version` uses the same format (e.g. `2.1` or `v2.1`); clients
+/// older than that minimum are prompted to update.
+abstract final class AppConstants {
+  AppConstants._();
+
+  // ── Store listings ─────────────────────────────────────────────────────────
+  static const String playStoreUrl =
+      'https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice';
+
+  static const String appStoreUrl = '';
+
+  // ── Telegram ─────────────────────────────────────────────────────────────
+  static const String developerTelegramUrl = 'https://t.me/upsc_wars_sachin';
+  static const String groupTelegramUrl = 'https://t.me/upsc_wars_group';
+
+  // ── Email ─────────────────────────────────────────────────────────────────
+  static const String supportEmail = 'upscwas@gmail.com';
+
+  static Uri supportMailtoUri() => Uri(
+        scheme: 'mailto',
+        path: supportEmail,
+        queryParameters: {
+          'subject': 'UPSC Wars — feedback',
+          'body': 'Hi,\n\n',
+        },
+      );
+
+  // ── Release (bump when publishing) ───────────────────────────────────────
+  /// Shown on Profile and compared to Remote Config [kill_switch_version].
+  static const String releaseVersionLabel = 'v2.1';
+}
+
+/// Comparable version from `v2.1`, `2.1`, or `2.1.0`.
+final class ReleaseVersion implements Comparable<ReleaseVersion> {
+  const ReleaseVersion(this.major, this.minor, this.patch);
+
+  final int major;
+  final int minor;
+  final int patch;
+
+  static ReleaseVersion? parse(String raw) {
+    var s = raw.trim();
+    if (s.isEmpty) return null;
+    if (s.startsWith('v') || s.startsWith('V')) {
+      s = s.substring(1);
+    }
+    final parts = s.split('.');
+    final major = int.tryParse(parts.first);
+    if (major == null) return null;
+    final minor = parts.length > 1 ? (int.tryParse(parts[1]) ?? 0) : 0;
+    final patch = parts.length > 2 ? (int.tryParse(parts[2]) ?? 0) : 0;
+    return ReleaseVersion(major, minor, patch);
+  }
+
+  static ReleaseVersion? get appCurrent =>
+      ReleaseVersion.parse(AppConstants.releaseVersionLabel);
+
+  @override
+  int compareTo(ReleaseVersion other) {
+    final c = major.compareTo(other.major);
+    if (c != 0) return c;
+    final c2 = minor.compareTo(other.minor);
+    if (c2 != 0) return c2;
+    return patch.compareTo(other.patch);
+  }
+
+  @override
+  String toString() => '$major.$minor.$patch';
+}

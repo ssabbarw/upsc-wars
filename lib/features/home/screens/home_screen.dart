@@ -25,6 +25,7 @@ import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
@@ -124,78 +125,97 @@ class HomeScreen extends HookConsumerWidget {
                     : const BouncingScrollPhysics(),
                 padding: const EdgeInsets.all(AppSpacing.lg),
                 children: [
-              if (bootstrap.hasError)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: AppSpacing.md),
-                  child: Material(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                    child: Padding(
-                      padding: const EdgeInsets.all(AppSpacing.lg),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Question bank unavailable',
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.onSurface,
-                            ),
+                  if (bootstrap.hasError)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: AppSpacing.md),
+                      child: Material(
+                        color: scheme.surfaceContainerLow,
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        child: Padding(
+                          padding: const EdgeInsets.all(AppSpacing.lg),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Question bank unavailable',
+                                style: AppTextStyles.label().copyWith(
+                                  color: scheme.onSurface,
+                                ),
+                              ),
+                              const SizedBox(height: AppSpacing.xs),
+                              Text(
+                                'The question database could not be opened. Reinstall the app or ensure storage is available, then restart.',
+                                style: AppTextStyles.bodySm().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: AppSpacing.xs),
-                          Text(
-                            'The question database could not be opened. Reinstall the app or ensure storage is available, then restart.',
-                            style: AppTextStyles.bodySm().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Material(
-                    color: AppColors.transparent,
-                    child: InkWell(
-                      onTap: () async {
-                        if (user == null) {
-                          await showGoogleLoginBottomSheet(
-                            context: context,
-                            isLoading: isAuthBusy,
-                            onGoogleTap: () {
-                              Navigator.of(context).pop();
-                              ref
-                                  .read(authActionsProvider.notifier)
-                                  .signInWithGoogle();
-                            },
-                          );
-                          return;
-                        }
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Material(
+                        color: AppColors.transparent,
+                        child: InkWell(
+                          onTap: () async {
+                            if (user == null) {
+                              await showGoogleLoginBottomSheet(
+                                context: context,
+                                isLoading: isAuthBusy,
+                                onGoogleTap: () {
+                                  Navigator.of(context).pop();
+                                  ref
+                                      .read(authActionsProvider.notifier)
+                                      .signInWithGoogle();
+                                },
+                              );
+                              return;
+                            }
 
-                        if (context.mounted) {
-                          context.push('/profile');
-                        }
-                      },
-                      borderRadius: BorderRadius.circular(AppRadius.pill),
-                      child: Container(
-                        width: 36,
-                        height: 36,
-                        margin: const EdgeInsets.only(right: AppSpacing.sm),
-                        decoration: BoxDecoration(
-                          color: user == null
-                              ? scheme.surfaceContainerLow
-                              : avatarBackgroundColor,
-                          shape: BoxShape.circle,
-                          border: Border.all(color: borderColor, width: 0.5),
-                        ),
-                        child: hasPhotoUrl
-                            ? ClipOval(
-                                child: Image.network(
-                                  user!.photoURL!,
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (_, __, ___) => Center(
+                            if (context.mounted) {
+                              context.push('/profile');
+                            }
+                          },
+                          borderRadius: BorderRadius.circular(AppRadius.pill),
+                          child: Container(
+                            width: 36,
+                            height: 36,
+                            margin: const EdgeInsets.only(right: AppSpacing.sm),
+                            decoration: BoxDecoration(
+                              color: user == null
+                                  ? scheme.surfaceContainerLow
+                                  : avatarBackgroundColor,
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: hasPhotoUrl
+                                ? ClipOval(
+                                    child: Image.network(
+                                      user!.photoURL!,
+                                      fit: BoxFit.cover,
+                                      errorBuilder: (_, __, ___) => Center(
+                                        child: Text(
+                                          avatarInitials,
+                                          style: AppTextStyles.label().copyWith(
+                                            color: scheme.onPrimaryContainer,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : user == null
+                                ? Icon(
+                                    Icons.person_outline,
+                                    size: 18,
+                                    color: scheme.onSurfaceVariant,
+                                  )
+                                : Center(
                                     child: Text(
                                       avatarInitials,
                                       style: AppTextStyles.label().copyWith(
@@ -203,216 +223,206 @@ class HomeScreen extends HookConsumerWidget {
                                       ),
                                     ),
                                   ),
-                                ),
-                              )
-                            : user == null
-                            ? Icon(
-                                Icons.person_outline,
-                                size: 18,
-                                color: scheme.onSurfaceVariant,
-                              )
-                            : Center(
-                                child: Text(
-                                  avatarInitials,
-                                  style: AppTextStyles.label().copyWith(
-                                    color: scheme.onPrimaryContainer,
-                                  ),
-                                ),
-                              ),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          greeting,
-                          style: AppTextStyles.h2().copyWith(
-                            color: scheme.onSurface,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              greeting,
+                              style: AppTextStyles.h2().copyWith(
+                                color: scheme.onSurface,
+                              ),
+                            ),
+                            Text(
+                              userName,
+                              style: AppTextStyles.bodySm().copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Material(
+                        color: AppColors.transparent,
+                        child: InkWell(
+                          onTap: () async {
+                            await setDarkModeEnabledWithLoader(
+                              context: context,
+                              ref: ref,
+                              darkModeEnabled: !isDark,
+                            );
+                          },
+                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          child: Container(
+                            padding: const EdgeInsets.all(AppSpacing.sm),
+                            margin: const EdgeInsets.only(right: AppSpacing.sm),
+                            decoration: BoxDecoration(
+                              color: scheme.surfaceContainerLow,
+                              borderRadius: BorderRadius.circular(AppRadius.md),
+                              border: Border.all(
+                                color: borderColor,
+                                width: 0.5,
+                              ),
+                            ),
+                            child: Icon(
+                              isDark ? Icons.dark_mode : Icons.light_mode,
+                              size: 18,
+                              color: scheme.onSurfaceVariant,
+                            ),
                           ),
                         ),
-                        Text(
-                          userName,
-                          style: AppTextStyles.bodySm().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.md,
+                          vertical: AppSpacing.sm,
                         ),
-                      ],
-                    ),
-                  ),
-                  Material(
-                    color: AppColors.transparent,
-                    child: InkWell(
-                      onTap: () async {
-                        await setDarkModeEnabledWithLoader(
-                          context: context,
-                          ref: ref,
-                          darkModeEnabled: !isDark,
-                        );
-                      },
-                      borderRadius: BorderRadius.circular(AppRadius.md),
-                      child: Container(
-                        padding: const EdgeInsets.all(AppSpacing.sm),
-                        margin: const EdgeInsets.only(right: AppSpacing.sm),
                         decoration: BoxDecoration(
                           color: scheme.surfaceContainerLow,
-                          borderRadius: BorderRadius.circular(AppRadius.md),
+                          borderRadius: BorderRadius.circular(AppRadius.pill),
                           border: Border.all(color: borderColor, width: 0.5),
                         ),
-                        child: Icon(
-                          isDark ? Icons.dark_mode : Icons.light_mode,
-                          size: 18,
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.md,
-                      vertical: AppSpacing.sm,
-                    ),
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(AppRadius.pill),
-                      border: Border.all(color: borderColor, width: 0.5),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.local_fire_department,
-                          color: AppColors.streak,
-                          size: 16,
-                        ),
-                        const SizedBox(width: AppSpacing.xs),
-                        Text(
-                          home.when(
-                            data: (h) => h.streakCount == 0
-                                ? 'Start your streak'
-                                : '${h.streakCount} days',
-                            loading: () =>
-                                cachedStreakText.value ?? 'Start your streak',
-                            error: (_, __) =>
-                                cachedStreakText.value ?? 'Start your streak',
-                          ),
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurface,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.md),
-              const PrelimsCountdownCard(),
-              const SizedBox(height: AppSpacing.md),
-              _SubjectGrid(borderColor: borderColor),
-              const SizedBox(height: AppSpacing.md),
-              home.when(
-                loading: () {
-                  if (!past200ms.value) {
-                    return SizedBox(
-                      height: 120,
-                      child: Center(
-                        child: SizedBox(
-                          width: 24,
-                          height: 24,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                      ),
-                    );
-                  }
-                  return _HeaderLoading(borderColor: borderColor);
-                },
-                error: (e, st) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    OutlinedButton(
-                      onPressed: () => ref.invalidate(homeStateProvider),
-                      child: Text('Retry', style: AppTextStyles.label()),
-                    ),
-                  ],
-                ),
-                data: (h) {
-                  const pyqYears = [
-                    '2025',
-                    '2024',
-                    '2023',
-                    '2022',
-                    '2021',
-                    '2020',
-                  ];
-                  final goalDone = h.dailyGoalProgress >= h.dailyGoalTarget;
-                  final progress = h.dailyGoalTarget == 0
-                      ? 0.0
-                      : (h.dailyGoalProgress / h.dailyGoalTarget)
-                            .clamp(0.0, 1.0)
-                            .toDouble();
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Today's goal",
-                            style: AppTextStyles.labelSm().copyWith(
-                              color: scheme.onSurface,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.local_fire_department,
+                              color: AppColors.streak,
+                              size: 16,
                             ),
-                          ),
-                          const Spacer(),
-                          Text(
-                            goalDone
-                                ? 'Goal complete!'
-                                : '${h.dailyGoalProgress} / ${h.dailyGoalTarget} questions',
-                            style: AppTextStyles.caption().copyWith(
-                              color: goalDone
-                                  ? AppColors.correct
-                                  : scheme.onSurfaceVariant,
+                            const SizedBox(width: AppSpacing.xs),
+                            Text(
+                              home.when(
+                                data: (h) => h.streakCount == 0
+                                    ? 'Start your streak'
+                                    : '${h.streakCount} days',
+                                loading: () =>
+                                    cachedStreakText.value ??
+                                    'Start your streak',
+                                error: (_, __) =>
+                                    cachedStreakText.value ??
+                                    'Start your streak',
+                              ),
+                              style: AppTextStyles.caption().copyWith(
+                                color: scheme.onSurface,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: AppSpacing.xs),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(AppRadius.pill),
-                        child: LinearProgressIndicator(
-                          value: progress,
-                          minHeight: 4,
-                          color: AppColors.primary,
-                          backgroundColor: scheme.surfaceContainerLow,
+                          ],
                         ),
                       ),
-                      const SizedBox(height: AppSpacing.xl),
-                      _PrimaryActionCard(home: h, borderColor: borderColor),
-                      const SizedBox(height: AppSpacing.md),
-                      _QuickPracticeSection(borderColor: borderColor),
-                      const SizedBox(height: AppSpacing.md),
-                      _QuickShortcuts(home: h, borderColor: borderColor),
-                      const SizedBox(height: AppSpacing.md),
-                      _PyqYearCarousel(
-                        borderColor: borderColor,
-                        years: pyqYears,
-                      ),
-                      if (h.revisionTrapCount > 0) ...[
-                        const SizedBox(height: AppSpacing.md),
-                        _TrapPatternsCard(
-                          trapCount: h.revisionTrapCount,
-                          borderColor: borderColor,
-                        ),
-                      ],
-                      if (h.lastSession != null) ...[
-                        const SizedBox(height: AppSpacing.md),
-                        _LastSessionCard(home: h, borderColor: borderColor),
-                      ],
                     ],
-                  );
-                },
-              ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  const PrelimsCountdownCard(),
+                  const SizedBox(height: AppSpacing.md),
+                  _SubjectGrid(borderColor: borderColor),
+                  const SizedBox(height: AppSpacing.md),
+                  home.when(
+                    loading: () {
+                      if (!past200ms.value) {
+                        return SizedBox(
+                          height: 120,
+                          child: Center(
+                            child: SizedBox(
+                              width: 24,
+                              height: 24,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: AppColors.primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      return _HeaderLoading(borderColor: borderColor);
+                    },
+                    error: (e, st) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        OutlinedButton(
+                          onPressed: () => ref.invalidate(homeStateProvider),
+                          child: Text('Retry', style: AppTextStyles.label()),
+                        ),
+                      ],
+                    ),
+                    data: (h) {
+                      const pyqYears = [
+                        '2025',
+                        '2024',
+                        '2023',
+                        '2022',
+                        '2021',
+                        '2020',
+                      ];
+                      final goalDone = h.dailyGoalProgress >= h.dailyGoalTarget;
+                      final progress = h.dailyGoalTarget == 0
+                          ? 0.0
+                          : (h.dailyGoalProgress / h.dailyGoalTarget)
+                                .clamp(0.0, 1.0)
+                                .toDouble();
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Today's goal",
+                                style: AppTextStyles.labelSm().copyWith(
+                                  color: scheme.onSurface,
+                                ),
+                              ),
+                              const Spacer(),
+                              Text(
+                                goalDone
+                                    ? 'Goal complete!'
+                                    : '${h.dailyGoalProgress} / ${h.dailyGoalTarget} questions',
+                                style: AppTextStyles.caption().copyWith(
+                                  color: goalDone
+                                      ? AppColors.correct
+                                      : scheme.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: AppSpacing.xs),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(AppRadius.pill),
+                            child: LinearProgressIndicator(
+                              value: progress,
+                              minHeight: 4,
+                              color: AppColors.primary,
+                              backgroundColor: scheme.surfaceContainerLow,
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.xl),
+                          _PrimaryActionCard(home: h, borderColor: borderColor),
+                          const SizedBox(height: AppSpacing.md),
+                          _QuickPracticeSection(borderColor: borderColor),
+                          const SizedBox(height: AppSpacing.md),
+                          _PyqYearCarousel(
+                            borderColor: borderColor,
+                            years: pyqYears,
+                          ),
+                          if (h.revisionTrapCount > 0) ...[
+                            const SizedBox(height: AppSpacing.md),
+                            _TrapPatternsCard(
+                              trapCount: h.revisionTrapCount,
+                              borderColor: borderColor,
+                            ),
+                          ],
+                          if (h.lastSession != null) ...[
+                            const SizedBox(height: AppSpacing.md),
+                            _LastSessionCard(home: h, borderColor: borderColor),
+                          ],
+                        ],
+                      );
+                    },
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  const Center(child: ContactUsTextButton()),
+                  const SizedBox(height: AppSpacing.sm),
                 ],
               ),
             ),
@@ -648,104 +658,6 @@ class _PrimaryActionCard extends HookConsumerWidget {
   }
 }
 
-class _QuickShortcuts extends HookConsumerWidget {
-  const _QuickShortcuts({required this.home, required this.borderColor});
-  final HomeState home;
-  final Color borderColor;
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final data = [
-      _Q(
-        'Topic test',
-        'Pick any chapter',
-        Icons.topic_outlined,
-        AppColors.warning,
-        '/topic-test',
-      ),
-      _Q(
-        'Bookmarks',
-        '${home.bookmarkCount} saved',
-        Icons.bookmark_outline,
-        AppColors.wrong,
-        '/bookmarks',
-      ),
-      _Q(
-        'History',
-        'Past sessions',
-        Icons.history,
-        AppColors.correct,
-        '/history',
-      ),
-    ];
-    return GridView.count(
-      crossAxisCount: 3,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      mainAxisSpacing: AppSpacing.sm,
-      crossAxisSpacing: AppSpacing.sm,
-      childAspectRatio: 1.0,
-      children: [
-        for (final q in data) _QuickCard(q: q, borderColor: borderColor),
-      ],
-    );
-  }
-}
-
-class _QuickCard extends HookConsumerWidget {
-  const _QuickCard({required this.q, required this.borderColor});
-  final _Q q;
-  final Color borderColor;
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final iconBg = isDark
-        ? q.color.withValues(alpha: 0.25)
-        : q.color.withValues(alpha: 0.15);
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap: () =>
-            q.route == '/history' ? context.go(q.route) : context.push(q.route),
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor, width: 0.5),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 32,
-                height: 32,
-                decoration: BoxDecoration(
-                  color: iconBg,
-                  borderRadius: BorderRadius.circular(AppRadius.sm),
-                ),
-                child: Icon(q.icon, size: 18, color: q.color),
-              ),
-              const Spacer(),
-              Text(
-                q.title,
-                style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-              ),
-              Text(
-                q.subtitle,
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class _TrapPatternsCard extends StatelessWidget {
   const _TrapPatternsCard({required this.trapCount, required this.borderColor});
 
@@ -843,10 +755,7 @@ class _CarouselSectionHeader extends StatelessWidget {
 }
 
 class _PyqYearCarousel extends StatelessWidget {
-  const _PyqYearCarousel({
-    required this.borderColor,
-    required this.years,
-  });
+  const _PyqYearCarousel({required this.borderColor, required this.years});
 
   final Color borderColor;
   final List<String> years;
@@ -1146,7 +1055,6 @@ class _SubjectGridCard extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class _SubjectGridSkeleton extends HookWidget {
@@ -1159,9 +1067,10 @@ class _SubjectGridSkeleton extends HookWidget {
       duration: const Duration(milliseconds: 900),
     )..repeat(reverse: true);
     final opacity = useAnimation(
-      Tween<double>(begin: 0.4, end: 1.0).animate(
-        CurvedAnimation(parent: ctrl, curve: Curves.easeInOut),
-      ),
+      Tween<double>(
+        begin: 0.4,
+        end: 1.0,
+      ).animate(CurvedAnimation(parent: ctrl, curve: Curves.easeInOut)),
     );
     final scheme = Theme.of(context).colorScheme;
 
@@ -1378,8 +1287,7 @@ class _QuickPracticeCard extends HookConsumerWidget {
             mode: isTutor ? 'learning' : 'exam',
             questionCount: 10,
             isTimed: true,
-            timeLimitSecs:
-                isTutor ? 60 : capped * kDebugSecondsPerQuestion,
+            timeLimitSecs: isTutor ? 60 : capped * kDebugSecondsPerQuestion,
             language: 'en',
           ),
         );

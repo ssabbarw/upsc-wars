@@ -11,6 +11,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/extensions/count_formatting.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
+import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
 
 class SubjectTestScreen extends HookConsumerWidget {
@@ -79,10 +80,17 @@ class SubjectTestScreen extends HookConsumerWidget {
                     AppSpacing.lg,
                     AppSpacing.xxl,
                   ),
-                  itemCount: subjects.length,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(height: AppSpacing.md),
+                  itemCount: subjects.length + 1,
+                  separatorBuilder: (context, index) {
+                    if (index == subjects.length - 1) {
+                      return const SizedBox(height: AppSpacing.xl);
+                    }
+                    return const SizedBox(height: AppSpacing.md);
+                  },
                   itemBuilder: (context, i) {
+                    if (i == subjects.length) {
+                      return const Center(child: ContactUsTextButton());
+                    }
                     final s = subjects[i];
                     final def = SubjectConstants.bySlug(s.subject);
                     return _SubjectCard(
@@ -117,16 +125,25 @@ class SubjectTestScreen extends HookConsumerWidget {
                     AppSpacing.lg,
                     AppSpacing.xxl,
                   ),
-                  itemCount: 6,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(height: AppSpacing.md),
-                  itemBuilder: (context, index) => Container(
-                    height: 96,
-                    decoration: BoxDecoration(
-                      color: scheme.surfaceContainerLow,
-                      borderRadius: BorderRadius.circular(AppRadius.lg),
-                    ),
-                  ),
+                  itemCount: 7,
+                  separatorBuilder: (context, index) {
+                    if (index == 5) {
+                      return const SizedBox(height: AppSpacing.xl);
+                    }
+                    return const SizedBox(height: AppSpacing.md);
+                  },
+                  itemBuilder: (context, index) {
+                    if (index == 6) {
+                      return const Center(child: ContactUsTextButton());
+                    }
+                    return Container(
+                      height: 96,
+                      decoration: BoxDecoration(
+                        color: scheme.surfaceContainerLow,
+                        borderRadius: BorderRadius.circular(AppRadius.lg),
+                      ),
+                    );
+                  },
                 ),
                 error: (e, _) => Center(
                   child: Padding(
@@ -147,6 +164,8 @@ class SubjectTestScreen extends HookConsumerWidget {
                               ref.invalidate(subjectTestListProvider),
                           child: Text('Retry', style: AppTextStyles.label()),
                         ),
+                        const SizedBox(height: AppSpacing.lg),
+                        const ContactUsTextButton(),
                       ],
                     ),
                   ),
