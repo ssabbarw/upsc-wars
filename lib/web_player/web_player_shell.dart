@@ -22,6 +22,7 @@ import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/web_player/web_player_danger_zone_review_screen.dart';
 import 'package:upsc_wars/web_player/web_player_results_screen.dart';
 import 'package:upsc_wars/web_player/web_player_ui_tokens.dart';
+import 'package:upsc_wars/web_player/web_shell_landing_page.dart';
 import 'package:upsc_wars/web_player/web_player_welcome_sheet.dart';
 import 'package:upsc_wars/web_player/web_session_chrome.dart';
 import 'package:upsc_wars/web_player/web_session_result_builder.dart';
@@ -94,6 +95,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   String _topic = '';
   List<TestQuestion> _questions = [];
   bool _loading = true;
+  bool _landing = false;
   String? _error;
 
   int _index = 0;
@@ -148,7 +150,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     if (segs.length < 3 || segs[0].toLowerCase() != 'share') {
       setState(() {
         _loading = false;
-        _error = 'Open a link like /share/test/{share-id}/';
+        _landing = true;
       });
       return;
     }
@@ -269,7 +271,10 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     );
   }
 
-  Widget _webPlayerResultsPage(BuildContext routeContext, SessionResult result) {
+  Widget _webPlayerResultsPage(
+    BuildContext routeContext,
+    SessionResult result,
+  ) {
     return WebPlayerResultsScreen(
       result: result,
       onReviewDangerZone: result.dangerZoneWrongCount > 0
@@ -310,7 +315,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   void _openResultsFromReview() {
     final completedAt =
         DateTime.tryParse(_completedAtIso ?? '')?.toUtc() ??
-            DateTime.now().toUtc();
+        DateTime.now().toUtc();
     final result = _buildSessionResult(completedAt: completedAt);
     if (!mounted) return;
     unawaited(
@@ -326,9 +331,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     final result = _buildSessionResult(completedAt: completedAt);
     if (!mounted) return;
     final action = await Navigator.of(context).push<WebPlayerResultsExit>(
-      MaterialPageRoute(
-        builder: (ctx) => _webPlayerResultsPage(ctx, result),
-      ),
+      MaterialPageRoute(builder: (ctx) => _webPlayerResultsPage(ctx, result)),
     );
     if (!mounted) return;
     if (action == WebPlayerResultsExit.reattempt) {
@@ -364,8 +367,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         _applySaved(saved, forReview: false);
         setState(() {});
         final completedAt =
-            DateTime.tryParse(saved['completedAt'] as String? ?? '')
-                ?.toUtc() ??
+            DateTime.tryParse(saved['completedAt'] as String? ?? '')?.toUtc() ??
             DateTime.now().toUtc();
         await _pushResultsScreen(completedAt: completedAt);
       });
@@ -423,8 +425,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     _examRemainingSecs = (saved['examRemainingSecs'] as num?)?.toInt() ?? 0;
     _examTimeLimitSecs = (saved['examTimeLimitSecs'] as num?)?.toInt();
     final startedRaw = saved['startedAt'] as String?;
-    _runStartedAt =
-        startedRaw != null ? DateTime.tryParse(startedRaw)?.toUtc() : null;
+    _runStartedAt = startedRaw != null
+        ? DateTime.tryParse(startedRaw)?.toUtc()
+        : null;
     _reviewMode = forReview;
     final rawIndex = (saved['currentIndex'] as num?)?.toInt() ?? 0;
     _index = (forReview ? 0 : rawIndex).clamp(0, _questions.length - 1);
@@ -446,9 +449,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   }
 
   Future<void> _copyFeedbackEmailToClipboard() async {
-    await Clipboard.setData(
-      ClipboardData(text: AppConstants.supportEmail),
-    );
+    await Clipboard.setData(ClipboardData(text: AppConstants.supportEmail));
     if (!mounted) return;
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -462,7 +463,8 @@ class _WebPlayerShellState extends State<WebPlayerShell>
   Future<void> _launchFeedbackMail() async {
     final subject =
         '${AppConstants.appDisplayName} — shared ${_kindLabel()} feedback (id: $_shareId)';
-    final body = 'Hi,\n\n'
+    final body =
+        'Hi,\n\n'
         'Context: shared link in browser\n'
         '- Share ID: $_shareId\n'
         '- Subject: $_subject\n'
@@ -471,10 +473,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     final uri = Uri(
       scheme: 'mailto',
       path: AppConstants.supportEmail,
-      queryParameters: <String, String>{
-        'subject': subject,
-        'body': body,
-      },
+      queryParameters: <String, String>{'subject': subject, 'body': body},
     );
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!mounted || ok) return;
@@ -584,12 +583,17 @@ class _WebPlayerShellState extends State<WebPlayerShell>
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(title, style: AppTextStyles.h3().copyWith(color: scheme.onSurface)),
+            Text(
+              title,
+              style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+            ),
             const SizedBox(height: AppSpacing.md),
             if (body != null)
               Text(
                 body,
-                style: AppTextStyles.body().copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.body().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ?bodyChild,
             const SizedBox(height: AppSpacing.lg),
@@ -765,7 +769,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
           .toList(),
       eliminationLogic: isHi ? q.eliminationLogicHi : q.eliminationLogic,
       strongDistractor: isHi ? q.strongDistractorHi : q.strongDistractor,
-      upscTrapExplanation: isHi ? q.upscTrapExplanationHi : q.upscTrapExplanation,
+      upscTrapExplanation: isHi
+          ? q.upscTrapExplanationHi
+          : q.upscTrapExplanation,
       conceptsUsed: q.conceptsUsed,
     );
   }
@@ -782,7 +788,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
         });
         final completedAt =
             DateTime.tryParse(_completedAtIso ?? '')?.toUtc() ??
-                DateTime.now().toUtc();
+            DateTime.now().toUtc();
         await _pushResultsScreen(completedAt: completedAt);
         return;
       }
@@ -836,6 +842,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     if (_loading) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
+    if (_landing) {
+      return WebShellLandingPage(onToggleTheme: widget.onToggleTheme);
+    }
     if (_error != null) {
       return Scaffold(
         body: Center(
@@ -877,7 +886,9 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                   ? 'Use the back button on the results screen, or refresh the link.'
                   : 'Pick Normal or Learning to begin.',
               textAlign: TextAlign.center,
-              style: AppTextStyles.body().copyWith(color: scheme.onSurfaceVariant),
+              style: AppTextStyles.body().copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
             ),
           ),
         ),
@@ -891,8 +902,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
     final stem = isHi ? q.displayTextHi : q.displayText;
     final table = isHi ? q.tableDataHi : q.tableData;
 
-    final contextLine =
-        _topic.isNotEmpty ? '$_subject · $_topic' : _subject;
+    final contextLine = _topic.isNotEmpty ? '$_subject · $_topic' : _subject;
     final stemTrimmed = stem.trim();
     final revealKey =
         _reviewMode || (_sessionMode == 'learning' && att.revealed);
@@ -937,9 +947,7 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                 child: const Text('Review explanations'),
               ),
               leading: IconButton(
-                style: IconButton.styleFrom(
-                  foregroundColor: scheme.onSurface,
-                ),
+                style: IconButton.styleFrom(foregroundColor: scheme.onSurface),
                 onPressed: _openResultsFromReview,
                 icon: const Icon(Icons.arrow_back_ios_new_rounded),
               ),
@@ -1008,21 +1016,23 @@ class _WebPlayerShellState extends State<WebPlayerShell>
                             : null,
                         confidenceStored: att.confidence,
                         showConfidenceHeader: false,
-                        confidenceFooter: !_reviewMode &&
+                        confidenceFooter:
+                            !_reviewMode &&
                                 att.selectedOption != null &&
                                 att.selectedOption == L &&
-                                ((_sessionMode == 'exam' &&
-                                        att.examAnswered) ||
+                                ((_sessionMode == 'exam' && att.examAnswered) ||
                                     (_sessionMode == 'learning' &&
                                         att.revealed))
                             ? WebPlayerExamConfidenceStrip(
                                 confidence: att.confidence,
-                                enabled: _sessionMode == 'exam' ||
+                                enabled:
+                                    _sessionMode == 'exam' ||
                                     att.confidence == null ||
                                     !att.revealed,
                                 onTierPressed: (tier) {
-                                  final next =
-                                      att.confidence == tier ? null : tier;
+                                  final next = att.confidence == tier
+                                      ? null
+                                      : tier;
                                   setState(() => att.confidence = next);
                                   unawaited(_writeSaved());
                                 },
@@ -1086,7 +1096,8 @@ class _WebPlayerShellState extends State<WebPlayerShell>
               const SizedBox(width: AppSpacing.sm),
               IconButton(
                 onPressed: null,
-                tooltip: 'Bookmarks available in the ${AppConstants.appDisplayName} app',
+                tooltip:
+                    'Bookmarks available in the ${AppConstants.appDisplayName} app',
                 icon: Icon(
                   Icons.bookmark_border,
                   size: 20,

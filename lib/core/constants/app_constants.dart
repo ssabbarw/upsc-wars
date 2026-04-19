@@ -20,7 +20,7 @@ abstract final class AppConstants {
   static const String groupTelegramUrl = 'https://t.me/upsc_wars_group';
 
   // ── Email ─────────────────────────────────────────────────────────────────
-  static const String supportEmail = 'upscwas@gmail.com';
+  static const String supportEmail = 'upscwars@gmail.com';
 
   static Uri supportMailtoUri() => Uri(
     scheme: 'mailto',

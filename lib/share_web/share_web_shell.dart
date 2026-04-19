@@ -18,6 +18,7 @@ import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/core/theme/app_theme.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/share_web/share_web_session_chrome.dart';
+import 'package:upsc_wars/web_player/web_shell_landing_page.dart';
 import 'package:upsc_wars/web_player/web_player_welcome_sheet.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
@@ -82,6 +83,7 @@ class _ShareWebShellState extends State<ShareWebShell>
   String _topic = '';
   List<TestQuestion> _questions = [];
   bool _loading = true;
+  bool _landing = false;
   String? _error;
 
   int _index = 0;
@@ -114,7 +116,7 @@ class _ShareWebShellState extends State<ShareWebShell>
     if (segs.length < 3 || segs[0].toLowerCase() != 'share') {
       setState(() {
         _loading = false;
-        _error = 'Open a link like /share/test/{share-id}/';
+        _landing = true;
       });
       return;
     }
@@ -331,9 +333,7 @@ class _ShareWebShellState extends State<ShareWebShell>
   }
 
   Future<void> _copyFeedbackEmailToClipboard() async {
-    await Clipboard.setData(
-      ClipboardData(text: AppConstants.supportEmail),
-    );
+    await Clipboard.setData(ClipboardData(text: AppConstants.supportEmail));
     if (!mounted) return;
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
@@ -347,7 +347,8 @@ class _ShareWebShellState extends State<ShareWebShell>
   Future<void> _launchFeedbackMail() async {
     final subject =
         '${AppConstants.appDisplayName} — shared ${_kindLabel()} feedback (id: $_shareId)';
-    final body = 'Hi,\n\n'
+    final body =
+        'Hi,\n\n'
         'Context: shared link in browser\n'
         '- Share ID: $_shareId\n'
         '- Subject: $_subject\n'
@@ -356,10 +357,7 @@ class _ShareWebShellState extends State<ShareWebShell>
     final uri = Uri(
       scheme: 'mailto',
       path: AppConstants.supportEmail,
-      queryParameters: <String, String>{
-        'subject': subject,
-        'body': body,
-      },
+      queryParameters: <String, String>{'subject': subject, 'body': body},
     );
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!mounted || ok) return;
@@ -506,12 +504,17 @@ class _ShareWebShellState extends State<ShareWebShell>
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(title, style: AppTextStyles.h3().copyWith(color: scheme.onSurface)),
+            Text(
+              title,
+              style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+            ),
             const SizedBox(height: AppSpacing.md),
             if (body != null)
               Text(
                 body,
-                style: AppTextStyles.body().copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.body().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ?bodyChild,
             const SizedBox(height: AppSpacing.lg),
@@ -587,7 +590,9 @@ class _ShareWebShellState extends State<ShareWebShell>
             padding: const EdgeInsets.all(AppSpacing.lg),
             decoration: BoxDecoration(
               color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(20),
+              ),
               border: Border.all(
                 color: isDark ? AppColors.borderDark : AppColors.borderLight,
               ),
@@ -675,7 +680,9 @@ class _ShareWebShellState extends State<ShareWebShell>
           .toList(),
       eliminationLogic: isHi ? q.eliminationLogicHi : q.eliminationLogic,
       strongDistractor: isHi ? q.strongDistractorHi : q.strongDistractor,
-      upscTrapExplanation: isHi ? q.upscTrapExplanationHi : q.upscTrapExplanation,
+      upscTrapExplanation: isHi
+          ? q.upscTrapExplanationHi
+          : q.upscTrapExplanation,
       conceptsUsed: q.conceptsUsed,
     );
   }
@@ -713,6 +720,9 @@ class _ShareWebShellState extends State<ShareWebShell>
   Widget build(BuildContext context) {
     if (_loading) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
+    }
+    if (_landing) {
+      return WebShellLandingPage(onToggleTheme: widget.onToggleTheme);
     }
     if (_error != null) {
       return Scaffold(
@@ -758,8 +768,7 @@ class _ShareWebShellState extends State<ShareWebShell>
     final stem = isHi ? q.displayTextHi : q.displayText;
     final table = isHi ? q.tableDataHi : q.tableData;
 
-    final contextLine =
-        _topic.isNotEmpty ? '$_subject · $_topic' : _subject;
+    final contextLine = _topic.isNotEmpty ? '$_subject · $_topic' : _subject;
     final stemTrimmed = stem.trim();
     final timedOut = att.revealed && att.selectedOption == null;
 
@@ -892,7 +901,8 @@ class _ShareWebShellState extends State<ShareWebShell>
               const SizedBox(width: AppSpacing.sm),
               IconButton(
                 onPressed: null,
-                tooltip: 'Bookmarks available in the ${AppConstants.appDisplayName} app',
+                tooltip:
+                    'Bookmarks available in the ${AppConstants.appDisplayName} app',
                 icon: Icon(
                   Icons.bookmark_border,
                   size: 20,
@@ -939,11 +949,7 @@ class _ShareWebShellState extends State<ShareWebShell>
         attemptFor: (uuid) {
           final a = _attempts[uuid];
           if (a == null) {
-            return (
-              revealed: false,
-              selectedOption: null,
-              confidence: null,
-            );
+            return (revealed: false, selectedOption: null, confidence: null);
           }
           return (
             revealed: a.revealed,
