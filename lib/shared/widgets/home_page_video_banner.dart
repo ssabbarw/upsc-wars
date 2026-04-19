@@ -81,63 +81,110 @@ class HomePageVideoBanner extends ConsumerWidget {
                 side: BorderSide(color: borderColor),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _VideoPromoThumbnail(
-                    videoUrl: payload.videoUrl,
-                    onOpen: () => unawaited(_openVideo(payload.videoUrl)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.lg,
-                      AppSpacing.md,
-                      AppSpacing.lg,
-                      AppSpacing.sm,
-                    ),
-                    child: Text(body, style: AppTextStyles.body()),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.sm,
-                      0,
-                      AppSpacing.sm,
-                      AppSpacing.sm,
-                    ),
-                    child: Wrap(
-                      spacing: AppSpacing.xs,
-                      runSpacing: AppSpacing.xs,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      children: [
-                        TextButton.icon(
-                          onPressed: () => unawaited(_openVideo(payload.videoUrl)),
-                          icon: Icon(
-                            Icons.play_circle_outline_rounded,
-                            size: 20,
-                            color: scheme.primary,
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final maxW = constraints.maxWidth;
+                  final thumbW = (maxW * 0.34).clamp(104.0, 148.0);
+                  final thumbH = thumbW * 9 / 16;
+                  return Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      _VideoPromoThumbnail(
+                        width: thumbW,
+                        videoUrl: payload.videoUrl,
+                        onOpen: () => unawaited(_openVideo(payload.videoUrl)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: AppSpacing.xs,
+                        ),
+                        child: Container(
+                          width: 1,
+                          height: thumbH,
+                          color: scheme.outlineVariant.withValues(alpha: 0.4),
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                            AppSpacing.md,
+                            AppSpacing.md,
+                            AppSpacing.lg,
+                            AppSpacing.md,
                           ),
-                          label: Text(
-                            'Watch video',
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.primary,
-                            ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                body,
+                                style: AppTextStyles.body(),
+                                maxLines: 6,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const SizedBox(height: AppSpacing.sm),
+                              Wrap(
+                                spacing: AppSpacing.xs,
+                                runSpacing: AppSpacing.xs,
+                                crossAxisAlignment: WrapCrossAlignment.center,
+                                children: [
+                                  TextButton.icon(
+                                    style: TextButton.styleFrom(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: AppSpacing.sm,
+                                        vertical: AppSpacing.xs,
+                                      ),
+                                      tapTargetSize:
+                                          MaterialTapTargetSize.shrinkWrap,
+                                      visualDensity: VisualDensity.compact,
+                                    ),
+                                    onPressed: () =>
+                                        unawaited(_openVideo(payload.videoUrl)),
+                                    icon: Icon(
+                                      Icons.play_circle_outline_rounded,
+                                      size: 20,
+                                      color: scheme.primary,
+                                    ),
+                                    label: Text(
+                                      'Watch video',
+                                      style: AppTextStyles.label().copyWith(
+                                        color: scheme.primary,
+                                      ),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    style: TextButton.styleFrom(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: AppSpacing.sm,
+                                        vertical: AppSpacing.xs,
+                                      ),
+                                      tapTargetSize:
+                                          MaterialTapTargetSize.shrinkWrap,
+                                      visualDensity: VisualDensity.compact,
+                                    ),
+                                    onPressed: () => unawaited(
+                                      _confirmAndDismiss(
+                                        context,
+                                        ref,
+                                        payload.version,
+                                      ),
+                                    ),
+                                    child: Text(
+                                      'Dismiss',
+                                      style: AppTextStyles.label().copyWith(
+                                        color: scheme.onSurfaceVariant,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                        TextButton(
-                          onPressed: () => unawaited(
-                            _confirmAndDismiss(context, ref, payload.version),
-                          ),
-                          child: Text(
-                            'Dismiss',
-                            style: AppTextStyles.label().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
             const SizedBox(height: AppSpacing.md),
@@ -150,10 +197,12 @@ class HomePageVideoBanner extends ConsumerWidget {
 
 class _VideoPromoThumbnail extends StatelessWidget {
   const _VideoPromoThumbnail({
+    required this.width,
     required this.videoUrl,
     required this.onOpen,
   });
 
+  final double width;
   final String videoUrl;
   final VoidCallback onOpen;
 
@@ -163,109 +212,105 @@ class _VideoPromoThumbnail extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final id = extractYoutubeVideoId(videoUrl);
     final dpr = MediaQuery.devicePixelRatioOf(context);
-    final logicalW = MediaQuery.sizeOf(context).width;
-    const thumbWidthFactor = 0.62;
-    final thumbLogicalW = logicalW * thumbWidthFactor;
-    final memW = (thumbLogicalW * dpr).round().clamp(240, 1200);
+    final memW = (width * dpr).round().clamp(160, 800);
     final memH = (memW * 9 / 16).round();
+    final playSize = (width * 0.26).clamp(22.0, 32.0);
 
     return Material(
       color: scheme.surfaceContainerHighest,
       child: InkWell(
         onTap: onOpen,
-        child: Padding(
-          padding: const EdgeInsets.only(top: AppSpacing.md),
-          child: Center(
-            child: FractionallySizedBox(
-              widthFactor: thumbWidthFactor,
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-              if (id != null)
-                _CachedYoutubeStill(
-                  videoId: id,
-                  memCacheWidth: memW,
-                  memCacheHeight: memH,
-                  scheme: scheme,
-                  isDark: isDark,
-                )
-              else
-                _NonYoutubePlaceholder(scheme: scheme, isDark: isDark),
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.black.withValues(alpha: 0.05),
-                      Colors.black.withValues(alpha: 0.45),
-                    ],
-                  ),
-                ),
-              ),
-              Center(
-                child: DecoratedBox(
+        child: SizedBox(
+          width: width,
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                if (id != null)
+                  _CachedYoutubeStill(
+                    videoId: id,
+                    memCacheWidth: memW,
+                    memCacheHeight: memH,
+                    scheme: scheme,
+                    isDark: isDark,
+                  )
+                else
+                  _NonYoutubePlaceholder(scheme: scheme, isDark: isDark),
+                DecoratedBox(
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.black.withValues(alpha: 0.35),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.25),
-                        blurRadius: 16,
-                        offset: const Offset(0, 6),
-                      ),
-                    ],
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Icon(
-                      Icons.play_arrow_rounded,
-                      color: Colors.white,
-                      size: 34,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                left: AppSpacing.sm,
-                top: AppSpacing.sm,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.45),
-                    borderRadius: BorderRadius.circular(AppRadius.sm),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.sm,
-                      vertical: AppSpacing.xs,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          id != null ? Icons.smart_display_rounded : Icons.link_rounded,
-                          size: 14,
-                          color: Colors.white.withValues(alpha: 0.95),
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          id != null ? 'YouTube' : 'Video',
-                          style: AppTextStyles.caption().copyWith(
-                            color: Colors.white.withValues(alpha: 0.95),
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 0.2,
-                          ),
-                        ),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withValues(alpha: 0.05),
+                        Colors.black.withValues(alpha: 0.45),
                       ],
                     ),
                   ),
                 ),
-              ),
-                  ],
+                Center(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.black.withValues(alpha: 0.35),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.25),
+                          blurRadius: 12,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(6),
+                      child: Icon(
+                        Icons.play_arrow_rounded,
+                        color: Colors.white,
+                        size: playSize,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Positioned(
+                  left: 6,
+                  top: 6,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.45),
+                      borderRadius: BorderRadius.circular(AppRadius.sm),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            id != null
+                                ? Icons.smart_display_rounded
+                                : Icons.link_rounded,
+                            size: 11,
+                            color: Colors.white.withValues(alpha: 0.95),
+                          ),
+                          const SizedBox(width: 3),
+                          Text(
+                            id != null ? 'YouTube' : 'Video',
+                            style: AppTextStyles.caption().copyWith(
+                              color: Colors.white.withValues(alpha: 0.95),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 0.15,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -294,32 +339,34 @@ class _CachedYoutubeStill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fallbackBg = isDark ? AppColors.surfaceTertiaryDark : AppColors.gray100;
+    final fallbackBg = isDark
+        ? AppColors.surfaceTertiaryDark
+        : AppColors.gray100;
 
     Widget placeholder() => ColoredBox(
-          color: fallbackBg,
-          child: Center(
-            child: SizedBox(
-              width: 28,
-              height: 28,
-              child: CircularProgressIndicator(
-                strokeWidth: 2.5,
-                color: scheme.primary.withValues(alpha: 0.85),
-              ),
-            ),
+      color: fallbackBg,
+      child: Center(
+        child: SizedBox(
+          width: 28,
+          height: 28,
+          child: CircularProgressIndicator(
+            strokeWidth: 2.5,
+            color: scheme.primary.withValues(alpha: 0.85),
           ),
-        );
+        ),
+      ),
+    );
 
     Widget iconFallback() => ColoredBox(
-          color: fallbackBg,
-          child: Center(
-            child: Icon(
-              Icons.smart_display_rounded,
-              size: 56,
-              color: scheme.primary.withValues(alpha: 0.35),
-            ),
-          ),
-        );
+      color: fallbackBg,
+      child: Center(
+        child: Icon(
+          Icons.smart_display_rounded,
+          size: 36,
+          color: scheme.primary.withValues(alpha: 0.35),
+        ),
+      ),
+    );
 
     return CachedNetworkImage(
       imageUrl: _thumbUrl('maxresdefault'),
@@ -343,10 +390,7 @@ class _CachedYoutubeStill extends StatelessWidget {
 }
 
 class _NonYoutubePlaceholder extends StatelessWidget {
-  const _NonYoutubePlaceholder({
-    required this.scheme,
-    required this.isDark,
-  });
+  const _NonYoutubePlaceholder({required this.scheme, required this.isDark});
 
   final ColorScheme scheme;
   final bool isDark;
@@ -369,7 +413,7 @@ class _NonYoutubePlaceholder extends StatelessWidget {
       child: Center(
         child: Icon(
           Icons.ondemand_video_rounded,
-          size: 56,
+          size: 36,
           color: scheme.primary.withValues(alpha: 0.45),
         ),
       ),
