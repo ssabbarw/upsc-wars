@@ -19,6 +19,7 @@ final communityRecentUsersProvider =
 class CommunityRecentUsersNotifier extends AsyncNotifier<List<CommunityUser>> {
   int _bucketOffset = 0;
   bool _hasMore = true;
+  bool _loadMoreInFlight = false;
   DateTime? _lastRefreshedAt;
 
   bool get hasMore => _hasMore;
@@ -45,23 +46,38 @@ class CommunityRecentUsersNotifier extends AsyncNotifier<List<CommunityUser>> {
   }
 
   Future<void> loadMore() async {
-    if (!_hasMore || state.isLoading) return;
+    if (!_hasMore || state.isLoading || _loadMoreInFlight) return;
+    final nextOffset = _bucketOffset + 1;
+    if (nextOffset >= CommunityBucketUtils.maxBucketLookback) {
+      _hasMore = false;
+      state = AsyncData(state.value ?? const <CommunityUser>[]);
+      return;
+    }
+
+    _loadMoreInFlight = true;
     final current = state.value ?? const <CommunityUser>[];
     state = AsyncData(current);
-    final repo = ref.read(communityRepositoryProvider);
-    _bucketOffset += 1;
-    final nextBatch = await repo.fetchRecentUsers(bucketOffset: _bucketOffset);
-    _hasMore = _bucketOffset < CommunityBucketUtils.maxBucketLookback - 1;
-    final merged = <String, CommunityUser>{for (final u in current) u.email: u};
-    for (final u in nextBatch) {
-      final existing = merged[u.email];
-      if (existing == null || u.lastOnlineTime > existing.lastOnlineTime) {
-        merged[u.email] = u;
+    try {
+      final repo = ref.read(communityRepositoryProvider);
+      final nextBatch = await repo.fetchRecentUsers(bucketOffset: nextOffset);
+      _bucketOffset = nextOffset;
+      _hasMore = _bucketOffset < CommunityBucketUtils.maxBucketLookback - 1;
+      final merged = <String, CommunityUser>{for (final u in current) u.email: u};
+      for (final u in nextBatch) {
+        final existing = merged[u.email];
+        if (existing == null || u.lastOnlineTime > existing.lastOnlineTime) {
+          merged[u.email] = u;
+        }
       }
+      final list = merged.values.toList()
+        ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
+      state = AsyncData(list);
+    } catch (_) {
+      // Keep current list and bucket cursor so the user can retry the same bucket.
+      state = AsyncData(current);
+    } finally {
+      _loadMoreInFlight = false;
     }
-    final list = merged.values.toList()
-      ..sort((a, b) => b.lastOnlineTime.compareTo(a.lastOnlineTime));
-    state = AsyncData(list);
   }
 }
 
