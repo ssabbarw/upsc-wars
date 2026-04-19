@@ -9,7 +9,7 @@ import '../providers/prefs_provider.dart';
 
 const _assetDbPath = 'assets/db/upsc_wars_questions.db';
 const _fileName = 'upsc_wars_questions.db';
-const _currentAssetVersion = 2;
+const _currentAssetVersion = 5;
 
 Future<void> ensureQuestionBankReady(SharedPreferences prefs) async {
   final dir = await getApplicationDocumentsDirectory();

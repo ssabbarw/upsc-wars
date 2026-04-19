@@ -21,6 +21,8 @@ class Questions extends Table {
       boolean().named('has_table').withDefault(const Constant(false))();
   BoolColumn get negativeFraming =>
       boolean().named('negative_framing').withDefault(const Constant(false))();
+  /// 1-based position within a PYQ year paper; null for non-PYQ questions.
+  IntColumn get paperOrder => integer().named('paper_order').nullable()();
 
   @override
   Set<Column> get primaryKey => {uuid};
@@ -208,6 +210,17 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
             ..orderBy([(t) => OrderingTerm.asc(t.uuid)]))
           .get();
 
+  /// PYQ and other ordered sets: paper order first, then uuid (null paper_order last).
+  Future<List<Question>> getBySubjectPaperOrder(String subject) async {
+    final rows = await customSelect(
+      'SELECT * FROM questions WHERE subject = ? '
+      'ORDER BY paper_order IS NULL, paper_order ASC, uuid ASC',
+      variables: [Variable.withString(subject)],
+      readsFrom: {questions},
+    ).get();
+    return rows.map((r) => questions.map(r.data)).toList();
+  }
+
   Future<List<Question>> getByTopic(String subject, String topic) =>
       (select(questions)
             ..where((t) => t.subject.equals(subject) & t.topic.equals(topic))
@@ -280,6 +293,15 @@ class QuestionsDao extends DatabaseAccessor<UserDatabase> with _$QuestionsDaoMix
   Future<int> getTotalQuestionCount() async {
     final row = await customSelect(
       'SELECT COUNT(*) AS c FROM questions',
+      readsFrom: {questions},
+    ).getSingle();
+    return row.read<int>('c');
+  }
+
+  Future<int> getQuestionCountBySubject(String subject) async {
+    final row = await customSelect(
+      'SELECT COUNT(*) AS c FROM questions WHERE subject = ?',
+      variables: [Variable.withString(subject)],
       readsFrom: {questions},
     ).getSingle();
     return row.read<int>('c');
@@ -497,6 +519,24 @@ class SessionsDao extends DatabaseAccessor<UserDatabase> with _$SessionsDaoMixin
             ..where((t) => t.status.equals('in_progress'))
             ..orderBy([(t) => OrderingTerm.desc(t.createdAt)]))
           .get();
+
+  /// Whether this PYQ 25-question pack has at least one completed session.
+  Future<bool> hasCompletedPyqPack({
+    required String subject,
+    required int packIndex,
+  }) async {
+    final topic = 'pyq_25:$packIndex';
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions "
+      "WHERE subject = ? AND topic = ? AND status = 'completed'",
+      variables: [
+        Variable.withString(subject),
+        Variable.withString(topic),
+      ],
+      readsFrom: {sessions},
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
 }
 
 @DriftAccessor(tables: [SessionQuestions])
@@ -984,7 +1024,37 @@ class UserDatabase extends _$UserDatabase {
   UserDatabase([QueryExecutor? executor]) : super(executor ?? _openUnifiedDb());
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
+
+  /// True when [column] already exists on [table] (handles prebuilt DBs whose
+  /// `user_version` lags behind the actual schema).
+  Future<bool> _sqliteColumnExists(String table, String column) async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM pragma_table_info('$table') "
+      "WHERE name = '$column'",
+      readsFrom: {
+        questions,
+        sessions,
+        sessionQuestions,
+        userTopicStats,
+      },
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
+
+  Future<bool> _sqliteTableExists(String name) async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sqlite_master "
+      "WHERE type = 'table' AND name = '$name'",
+      readsFrom: {
+        questions,
+        sessions,
+        sessionQuestions,
+        userTopicStats,
+      },
+    ).getSingle();
+    return (row.read<int?>('c') ?? 0) > 0;
+  }
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -998,11 +1068,27 @@ class UserDatabase extends _$UserDatabase {
         },
         onUpgrade: (Migrator m, int from, int to) async {
           if (from < 2) {
-            await m.addColumn(sessions, sessions.analyticsFeatureKey);
-            await m.addColumn(userTopicStats, userTopicStats.wrongAttempts);
-            await m.addColumn(userTopicStats, userTopicStats.totalTimeSpentSecs);
-            await m.createTable(userFeatureStats);
-            await m.createTable(userTrapStats);
+            if (!await _sqliteColumnExists('sessions', 'analytics_feature_key')) {
+              await m.addColumn(sessions, sessions.analyticsFeatureKey);
+            }
+            if (!await _sqliteColumnExists('user_topic_stats', 'wrong_attempts')) {
+              await m.addColumn(userTopicStats, userTopicStats.wrongAttempts);
+            }
+            if (!await _sqliteColumnExists(
+              'user_topic_stats',
+              'total_time_spent_secs',
+            )) {
+              await m.addColumn(
+                userTopicStats,
+                userTopicStats.totalTimeSpentSecs,
+              );
+            }
+            if (!await _sqliteTableExists('user_feature_stats')) {
+              await m.createTable(userFeatureStats);
+            }
+            if (!await _sqliteTableExists('user_trap_stats')) {
+              await m.createTable(userTrapStats);
+            }
             await customStatement(
               'UPDATE user_topic_stats SET wrong_attempts = '
               'CASE WHEN total_attempted - total_correct > 0 '
@@ -1017,7 +1103,14 @@ class UserDatabase extends _$UserDatabase {
             );
           }
           if (from < 4) {
-            await m.addColumn(sessionQuestions, sessionQuestions.confidence);
+            if (!await _sqliteColumnExists('attempts', 'confidence')) {
+              await m.addColumn(sessionQuestions, sessionQuestions.confidence);
+            }
+          }
+          if (from < 5) {
+            if (!await _sqliteColumnExists('questions', 'paper_order')) {
+              await m.addColumn(questions, questions.paperOrder);
+            }
           }
         },
       );

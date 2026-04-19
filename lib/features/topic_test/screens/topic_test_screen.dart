@@ -9,7 +9,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/extensions/count_formatting.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
@@ -337,12 +336,6 @@ class _TopicRow extends HookConsumerWidget {
                               topic.displayName,
                               style: AppTextStyles.label()
                                   .copyWith(color: scheme.onSurface),
-                            ),
-                            const SizedBox(height: AppSpacing.xs),
-                            Text(
-                              '${formatIntCount(topic.questionCount)} questions',
-                              style: AppTextStyles.bodySm()
-                                  .copyWith(color: scheme.onSurfaceVariant),
                             ),
                             const SizedBox(height: AppSpacing.sm),
                             AccuracyPercentageText(

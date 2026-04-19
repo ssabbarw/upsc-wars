@@ -48,4 +48,4 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'0fa4f0c7536efdf732cfd0a5a6daf5b42b955077';
+String _$killSwitchHash() => r'5d423d501caf66254e1481b2cb5dd90064b6ab8d';

@@ -83,9 +83,29 @@ class _ShareLinkTestModeSheetBodyState extends State<_ShareLinkTestModeSheetBody
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              kindLabel,
-              style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    kindLabel,
+                    style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                  ),
+                ),
+                IconButton(
+                  visualDensity: VisualDensity.compact,
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(
+                    minWidth: 40,
+                    minHeight: 40,
+                  ),
+                  onPressed: () => Navigator.of(context).pop(),
+                  icon: Icon(
+                    Icons.close_rounded,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                  tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
+                ),
+              ],
             ),
             const SizedBox(height: AppSpacing.sm),
             Text(

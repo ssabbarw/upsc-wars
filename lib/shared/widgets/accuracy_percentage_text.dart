@@ -19,8 +19,13 @@ class AccuracyPercentageText extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final label =
-        attemptCount == 0 ? '—' : '${accuracyPercent!.round()}%';
+    final String label;
+    if (attemptCount == 0) {
+      label = '—';
+    } else {
+      final a = accuracyPercent;
+      label = (a != null && a.isFinite) ? '${a.round()}%' : '—';
+    }
     return Text(
       label,
       style: AppTextStyles.labelSm().copyWith(

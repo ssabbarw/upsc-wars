@@ -2,7 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-import 'package:upsc_wars/core/constants/subject_constants.dart';
+import 'package:upsc_wars/core/presentation/session_subject_label.dart';
 import 'package:upsc_wars/core/domain/entities/session_result.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -386,8 +386,7 @@ class WebPlayerResultsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final displaySubject =
-        SubjectConstants.bySlug(result.subject)?.displayName ?? result.subject;
+    final displaySubject = displayNameForSessionSubject(result.subject);
     final attempted = result.correct + result.wrong;
     final modeLabel = result.mode == 'exam' ? 'Exam' : 'Learning';
 

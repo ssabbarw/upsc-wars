@@ -329,6 +329,17 @@ class $QuestionsTable extends Questions
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _paperOrderMeta = const VerificationMeta(
+    'paperOrder',
+  );
+  @override
+  late final GeneratedColumn<int> paperOrder = GeneratedColumn<int>(
+    'paper_order',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
   @override
   List<GeneratedColumn> get $columns => [
     uuid,
@@ -344,6 +355,7 @@ class $QuestionsTable extends Questions
     hiDisplayText,
     hasTable,
     negativeFraming,
+    paperOrder,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -472,6 +484,12 @@ class $QuestionsTable extends Questions
         ),
       );
     }
+    if (data.containsKey('paper_order')) {
+      context.handle(
+        _paperOrderMeta,
+        paperOrder.isAcceptableOrUnknown(data['paper_order']!, _paperOrderMeta),
+      );
+    }
     return context;
   }
 
@@ -533,6 +551,10 @@ class $QuestionsTable extends Questions
         DriftSqlType.bool,
         data['${effectivePrefix}negative_framing'],
       )!,
+      paperOrder: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}paper_order'],
+      ),
     );
   }
 
@@ -556,6 +578,9 @@ class Question extends DataClass implements Insertable<Question> {
   final String? hiDisplayText;
   final bool hasTable;
   final bool negativeFraming;
+
+  /// 1-based position within a PYQ year paper; null for non-PYQ questions.
+  final int? paperOrder;
   const Question({
     required this.uuid,
     required this.subject,
@@ -570,6 +595,7 @@ class Question extends DataClass implements Insertable<Question> {
     this.hiDisplayText,
     required this.hasTable,
     required this.negativeFraming,
+    this.paperOrder,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -593,6 +619,9 @@ class Question extends DataClass implements Insertable<Question> {
     }
     map['has_table'] = Variable<bool>(hasTable);
     map['negative_framing'] = Variable<bool>(negativeFraming);
+    if (!nullToAbsent || paperOrder != null) {
+      map['paper_order'] = Variable<int>(paperOrder);
+    }
     return map;
   }
 
@@ -617,6 +646,9 @@ class Question extends DataClass implements Insertable<Question> {
           : Value(hiDisplayText),
       hasTable: Value(hasTable),
       negativeFraming: Value(negativeFraming),
+      paperOrder: paperOrder == null && nullToAbsent
+          ? const Value.absent()
+          : Value(paperOrder),
     );
   }
 
@@ -639,6 +671,7 @@ class Question extends DataClass implements Insertable<Question> {
       hiDisplayText: serializer.fromJson<String?>(json['hiDisplayText']),
       hasTable: serializer.fromJson<bool>(json['hasTable']),
       negativeFraming: serializer.fromJson<bool>(json['negativeFraming']),
+      paperOrder: serializer.fromJson<int?>(json['paperOrder']),
     );
   }
   @override
@@ -658,6 +691,7 @@ class Question extends DataClass implements Insertable<Question> {
       'hiDisplayText': serializer.toJson<String?>(hiDisplayText),
       'hasTable': serializer.toJson<bool>(hasTable),
       'negativeFraming': serializer.toJson<bool>(negativeFraming),
+      'paperOrder': serializer.toJson<int?>(paperOrder),
     };
   }
 
@@ -675,6 +709,7 @@ class Question extends DataClass implements Insertable<Question> {
     Value<String?> hiDisplayText = const Value.absent(),
     bool? hasTable,
     bool? negativeFraming,
+    Value<int?> paperOrder = const Value.absent(),
   }) => Question(
     uuid: uuid ?? this.uuid,
     subject: subject ?? this.subject,
@@ -693,6 +728,7 @@ class Question extends DataClass implements Insertable<Question> {
         : this.hiDisplayText,
     hasTable: hasTable ?? this.hasTable,
     negativeFraming: negativeFraming ?? this.negativeFraming,
+    paperOrder: paperOrder.present ? paperOrder.value : this.paperOrder,
   );
   Question copyWithCompanion(QuestionsCompanion data) {
     return Question(
@@ -723,6 +759,9 @@ class Question extends DataClass implements Insertable<Question> {
       negativeFraming: data.negativeFraming.present
           ? data.negativeFraming.value
           : this.negativeFraming,
+      paperOrder: data.paperOrder.present
+          ? data.paperOrder.value
+          : this.paperOrder,
     );
   }
 
@@ -741,7 +780,8 @@ class Question extends DataClass implements Insertable<Question> {
           ..write('enDisplayText: $enDisplayText, ')
           ..write('hiDisplayText: $hiDisplayText, ')
           ..write('hasTable: $hasTable, ')
-          ..write('negativeFraming: $negativeFraming')
+          ..write('negativeFraming: $negativeFraming, ')
+          ..write('paperOrder: $paperOrder')
           ..write(')'))
         .toString();
   }
@@ -761,6 +801,7 @@ class Question extends DataClass implements Insertable<Question> {
     hiDisplayText,
     hasTable,
     negativeFraming,
+    paperOrder,
   );
   @override
   bool operator ==(Object other) =>
@@ -778,7 +819,8 @@ class Question extends DataClass implements Insertable<Question> {
           other.enDisplayText == this.enDisplayText &&
           other.hiDisplayText == this.hiDisplayText &&
           other.hasTable == this.hasTable &&
-          other.negativeFraming == this.negativeFraming);
+          other.negativeFraming == this.negativeFraming &&
+          other.paperOrder == this.paperOrder);
 }
 
 class QuestionsCompanion extends UpdateCompanion<Question> {
@@ -795,6 +837,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
   final Value<String?> hiDisplayText;
   final Value<bool> hasTable;
   final Value<bool> negativeFraming;
+  final Value<int?> paperOrder;
   final Value<int> rowid;
   const QuestionsCompanion({
     this.uuid = const Value.absent(),
@@ -810,6 +853,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     this.hiDisplayText = const Value.absent(),
     this.hasTable = const Value.absent(),
     this.negativeFraming = const Value.absent(),
+    this.paperOrder = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   QuestionsCompanion.insert({
@@ -826,6 +870,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     this.hiDisplayText = const Value.absent(),
     this.hasTable = const Value.absent(),
     this.negativeFraming = const Value.absent(),
+    this.paperOrder = const Value.absent(),
     this.rowid = const Value.absent(),
   }) : uuid = Value(uuid),
        subject = Value(subject),
@@ -849,6 +894,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     Expression<String>? hiDisplayText,
     Expression<bool>? hasTable,
     Expression<bool>? negativeFraming,
+    Expression<int>? paperOrder,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -865,6 +911,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
       if (hiDisplayText != null) 'hi_display_text': hiDisplayText,
       if (hasTable != null) 'has_table': hasTable,
       if (negativeFraming != null) 'negative_framing': negativeFraming,
+      if (paperOrder != null) 'paper_order': paperOrder,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -883,6 +930,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     Value<String?>? hiDisplayText,
     Value<bool>? hasTable,
     Value<bool>? negativeFraming,
+    Value<int?>? paperOrder,
     Value<int>? rowid,
   }) {
     return QuestionsCompanion(
@@ -899,6 +947,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
       hiDisplayText: hiDisplayText ?? this.hiDisplayText,
       hasTable: hasTable ?? this.hasTable,
       negativeFraming: negativeFraming ?? this.negativeFraming,
+      paperOrder: paperOrder ?? this.paperOrder,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -945,6 +994,9 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
     if (negativeFraming.present) {
       map['negative_framing'] = Variable<bool>(negativeFraming.value);
     }
+    if (paperOrder.present) {
+      map['paper_order'] = Variable<int>(paperOrder.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -967,6 +1019,7 @@ class QuestionsCompanion extends UpdateCompanion<Question> {
           ..write('hiDisplayText: $hiDisplayText, ')
           ..write('hasTable: $hasTable, ')
           ..write('negativeFraming: $negativeFraming, ')
+          ..write('paperOrder: $paperOrder, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();
@@ -6152,6 +6205,7 @@ typedef $$QuestionsTableCreateCompanionBuilder =
       Value<String?> hiDisplayText,
       Value<bool> hasTable,
       Value<bool> negativeFraming,
+      Value<int?> paperOrder,
       Value<int> rowid,
     });
 typedef $$QuestionsTableUpdateCompanionBuilder =
@@ -6169,6 +6223,7 @@ typedef $$QuestionsTableUpdateCompanionBuilder =
       Value<String?> hiDisplayText,
       Value<bool> hasTable,
       Value<bool> negativeFraming,
+      Value<int?> paperOrder,
       Value<int> rowid,
     });
 
@@ -6365,6 +6420,11 @@ class $$QuestionsTableFilterComposer
 
   ColumnFilters<bool> get negativeFraming => $composableBuilder(
     column: $table.negativeFraming,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get paperOrder => $composableBuilder(
+    column: $table.paperOrder,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -6567,6 +6627,11 @@ class $$QuestionsTableOrderingComposer
     column: $table.negativeFraming,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<int> get paperOrder => $composableBuilder(
+    column: $table.paperOrder,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$QuestionsTableAnnotationComposer
@@ -6628,6 +6693,11 @@ class $$QuestionsTableAnnotationComposer
 
   GeneratedColumn<bool> get negativeFraming => $composableBuilder(
     column: $table.negativeFraming,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get paperOrder => $composableBuilder(
+    column: $table.paperOrder,
     builder: (column) => column,
   );
 
@@ -6805,6 +6875,7 @@ class $$QuestionsTableTableManager
                 Value<String?> hiDisplayText = const Value.absent(),
                 Value<bool> hasTable = const Value.absent(),
                 Value<bool> negativeFraming = const Value.absent(),
+                Value<int?> paperOrder = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => QuestionsCompanion(
                 uuid: uuid,
@@ -6820,6 +6891,7 @@ class $$QuestionsTableTableManager
                 hiDisplayText: hiDisplayText,
                 hasTable: hasTable,
                 negativeFraming: negativeFraming,
+                paperOrder: paperOrder,
                 rowid: rowid,
               ),
           createCompanionCallback:
@@ -6837,6 +6909,7 @@ class $$QuestionsTableTableManager
                 Value<String?> hiDisplayText = const Value.absent(),
                 Value<bool> hasTable = const Value.absent(),
                 Value<bool> negativeFraming = const Value.absent(),
+                Value<int?> paperOrder = const Value.absent(),
                 Value<int> rowid = const Value.absent(),
               }) => QuestionsCompanion.insert(
                 uuid: uuid,
@@ -6852,6 +6925,7 @@ class $$QuestionsTableTableManager
                 hiDisplayText: hiDisplayText,
                 hasTable: hasTable,
                 negativeFraming: negativeFraming,
+                paperOrder: paperOrder,
                 rowid: rowid,
               ),
           withReferenceMapper: (p0) => p0

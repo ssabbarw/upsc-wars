@@ -26,6 +26,9 @@ class TestConfigSheetArgs {
     this.lockedQuestionCount,
     this.forceExamMode = false,
     this.startButtonLabel,
+    this.specificQuestionUuids,
+    this.fixedQuestionSetLabel,
+    this.analyticsFeatureKey,
   });
 
   final String subject;
@@ -39,6 +42,11 @@ class TestConfigSheetArgs {
   final int? lockedQuestionCount;
   final bool forceExamMode;
   final String? startButtonLabel;
+  /// When set, the session is built from exactly these UUIDs in order.
+  final List<String>? specificQuestionUuids;
+  /// Shown in the locked-count panel when [specificQuestionUuids] is set.
+  final String? fixedQuestionSetLabel;
+  final String? analyticsFeatureKey;
 }
 
 Future<void> showTestConfigBottomSheet({
@@ -126,6 +134,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
           isTimed: isExam.value ? examTimed.value : true,
           timeLimitSecs: timeLimitSecs,
           language: lang,
+          specificQuestionUuids: args.specificQuestionUuids,
+          analyticsFeatureKey: args.analyticsFeatureKey,
         );
         final id = await uc.execute(config);
         if (!context.mounted) return;
@@ -166,17 +176,45 @@ class TestConfigBottomSheet extends HookConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Center(
-                child: Container(
-                  width: 36,
-                  height: 4,
-                  margin: const EdgeInsets.only(bottom: AppSpacing.lg),
-                  decoration: BoxDecoration(
-                    color: borderColor,
-                    borderRadius: BorderRadius.circular(2),
-                  ),
+              SizedBox(
+                height: 40,
+                child: Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 36,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: borderColor,
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      right: -AppSpacing.sm,
+                      top: 0,
+                      child: IconButton(
+                        visualDensity: VisualDensity.compact,
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(
+                          minWidth: 44,
+                          minHeight: 40,
+                        ),
+                        onPressed: () => Navigator.of(context).pop(),
+                        icon: Icon(
+                          Icons.close_rounded,
+                          color: scheme.onSurfaceVariant,
+                        ),
+                        tooltip: MaterialLocalizations.of(context)
+                            .closeButtonTooltip,
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              const SizedBox(height: AppSpacing.sm),
               Text(
                 args.subjectDisplayName,
                 style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
@@ -276,7 +314,8 @@ class TestConfigBottomSheet extends HookConsumerWidget {
                     border: Border.all(color: borderColor, width: 0.5),
                   ),
                   child: Text(
-                    '${args.lockedQuestionCount} questions (fixed for battle)',
+                    args.fixedQuestionSetLabel ??
+                        '${args.lockedQuestionCount} questions (fixed for battle)',
                     style: AppTextStyles.bodySm().copyWith(
                       color: scheme.onSurfaceVariant,
                     ),

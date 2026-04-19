@@ -21,6 +21,9 @@ abstract final class PrefKeys {
   /// Shown once: Hindi/English availability + question-screen toggle.
   static const bilingualQuestionWelcomeSeen =
       'bilingual_question_welcome_seen_v1';
+  /// Last Remote Config `home_page_video` JSON `version` the user dismissed.
+  static const homePageVideoDismissedVersion =
+      'home_page_video_dismissed_version_v1';
 }
 
 class PrefsService {
@@ -85,6 +88,11 @@ class PrefsService {
       _p.getBool(PrefKeys.bilingualQuestionWelcomeSeen) ?? false;
   set bilingualQuestionWelcomeSeen(bool v) =>
       _p.setBool(PrefKeys.bilingualQuestionWelcomeSeen, v);
+
+  int get homePageVideoDismissedVersion =>
+      _p.getInt(PrefKeys.homePageVideoDismissedVersion) ?? 0;
+  set homePageVideoDismissedVersion(int v) =>
+      _p.setInt(PrefKeys.homePageVideoDismissedVersion, v);
 }
 
 @Riverpod(keepAlive: true)

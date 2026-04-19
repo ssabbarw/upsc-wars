@@ -29,8 +29,17 @@ final subjectTopicsProvider =
 
   final enriched = rawTopics.map((topic) {
     final stat = statsByTopic[topic.topic];
-    final attemptCount = stat?.totalAttempted ?? 0;
-    final accuracyPercent = attemptCount > 0 ? stat!.accuracyPercentage : null;
+    final fromUser = stat?.totalAttempted ?? 0;
+    final attemptCount =
+        fromUser > 0 ? fromUser : topic.attemptCount;
+    final double? accuracyPercent;
+    if (fromUser > 0) {
+      accuracyPercent = stat!.accuracyPercentage;
+    } else if (topic.attemptCount > 0) {
+      accuracyPercent = topic.accuracyPercent;
+    } else {
+      accuracyPercent = null;
+    }
     return TopicInfo(
       topic: topic.topic,
       subject: topic.subject,

@@ -8,7 +8,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/extensions/count_formatting.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
@@ -172,60 +171,56 @@ class _TopicCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppRadius.lg),
             border: Border.all(color: borderColor, width: 0.5),
           ),
-          child: Row(
+          child: Stack(
             children: [
-              Container(
-                width: 4,
-                height: double.infinity,
-                color: isWeak
-                    ? AppColors.wrong
-                    : notStarted
-                        ? AppColors.transparent
-                        : AppColors.transparent,
+              Positioned(
+                left: 0,
+                top: 0,
+                bottom: 0,
+                child: Container(
+                  width: 4,
+                  color: isWeak ? AppColors.wrong : AppColors.transparent,
+                ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.lg),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              topic.displayName,
-                              style: AppTextStyles.label().copyWith(
-                                color: scheme.onSurface,
-                              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  4,
+                  AppSpacing.lg,
+                  AppSpacing.lg,
+                  AppSpacing.lg,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            topic.displayName,
+                            style: AppTextStyles.label().copyWith(
+                              color: scheme.onSurface,
                             ),
-                            const SizedBox(height: AppSpacing.xs),
+                          ),
+                          const SizedBox(height: AppSpacing.sm),
+                          if (notStarted)
                             Text(
-                              '${formatIntCount(topic.questionCount)} questions',
-                              style: AppTextStyles.bodySm().copyWith(
+                              'Not started',
+                              style: AppTextStyles.caption().copyWith(
                                 color: scheme.onSurfaceVariant,
                               ),
+                            )
+                          else
+                            AccuracyPercentageText(
+                              attemptCount: topic.attemptCount,
+                              accuracyPercent: topic.accuracyPercent,
+                              tier: topic.accuracyTier,
                             ),
-                            const SizedBox(height: AppSpacing.sm),
-                            if (notStarted)
-                              Text(
-                                'Not started',
-                                style: AppTextStyles.caption().copyWith(
-                                  color: scheme.onSurfaceVariant,
-                                ),
-                              )
-                            else
-                              AccuracyPercentageText(
-                                attemptCount: topic.attemptCount,
-                                accuracyPercent: topic.accuracyPercent,
-                                tier: topic.accuracyTier,
-                              ),
-                          ],
-                        ),
+                        ],
                       ),
-                      const SizedBox(width: AppSpacing.sm),
-                      _ActionButton(notStarted: notStarted),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    const _ActionButton(),
+                  ],
                 ),
               ),
             ],
@@ -237,8 +232,7 @@ class _TopicCard extends StatelessWidget {
 }
 
 class _ActionButton extends StatelessWidget {
-  const _ActionButton({required this.notStarted});
-  final bool notStarted;
+  const _ActionButton();
 
   @override
   Widget build(BuildContext context) {
@@ -247,7 +241,7 @@ class _ActionButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          notStarted ? 'Start' : 'Practice',
+          'Practice',
           style: AppTextStyles.caption().copyWith(
             color: AppColors.primary,
             fontWeight: FontWeight.w600,

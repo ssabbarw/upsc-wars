@@ -8,7 +8,8 @@ Usage:
 This script:
 - Creates a new SQLite file at the given path (overwriting any existing file).
 - Creates ALL tables described in lib/schema.md (question bank + user state).
-- Populates the questions table from JSON files under assets/final_cleaned_questions/.
+- Populates the questions table from JSON files under assets/final_cleaned_questions/
+  and from assets/pyqs/{year}.json (subject upsc_pyq_YYYY).
 - Prints per-subject and total question counts.
 
 This script fully populates questions, explanations, and question_tables.
@@ -16,8 +17,10 @@ This script fully populates questions, explanations, and question_tables.
 
 import argparse
 import json
+import re
 import sqlite3
 import sys
+import uuid
 from pathlib import Path
 from typing import Iterable, Mapping, Any
 
@@ -152,8 +155,9 @@ def create_schema(conn: sqlite3.Connection) -> None:
     """Create all tables and indexes matching lib/schema.md."""
     cur = conn.cursor()
     cur.execute("PRAGMA foreign_keys = ON;")
-    # Keep SQLite's user_version in sync with Drift's schemaVersion (1).
-    cur.execute("PRAGMA user_version = 1;")
+    # Match Drift [UserDatabase.schemaVersion] so bundled DBs skip redundant
+    # onUpgrade steps that would duplicate existing columns.
+    cur.execute("PRAGMA user_version = 5;")
 
     cur.executescript(
         """
@@ -178,7 +182,8 @@ def create_schema(conn: sqlite3.Connection) -> None:
             en_display_text           TEXT,
             hi_display_text           TEXT,
             has_table                 INTEGER NOT NULL DEFAULT 0,
-            negative_framing          INTEGER NOT NULL DEFAULT 0
+            negative_framing          INTEGER NOT NULL DEFAULT 0,
+            paper_order               INTEGER
         );
 
         CREATE INDEX IF NOT EXISTS idx_questions_subject
@@ -245,7 +250,8 @@ def create_schema(conn: sqlite3.Connection) -> None:
             is_timed            INTEGER NOT NULL,   -- 0/1
             time_limit_secs     INTEGER,
             exam_remaining_secs INTEGER,
-            language            TEXT NOT NULL DEFAULT 'en'
+            language            TEXT NOT NULL DEFAULT 'en',
+            analytics_feature_key TEXT
         );
 
         CREATE TABLE IF NOT EXISTS attempts (
@@ -307,7 +313,26 @@ def create_schema(conn: sqlite3.Connection) -> None:
             total_correct       INTEGER NOT NULL DEFAULT 0,
             accuracy_percentage REAL    NOT NULL DEFAULT 0.0,
             last_attempted_at   INTEGER NOT NULL,
+            wrong_attempts      INTEGER NOT NULL DEFAULT 0,
+            total_time_spent_secs INTEGER NOT NULL DEFAULT 0,
             UNIQUE(subject, topic)
+        );
+
+        ------------------------------------------------------------------
+        -- Feature / trap usage stats (Drift user_feature_stats, user_trap_stats)
+        ------------------------------------------------------------------
+        CREATE TABLE IF NOT EXISTS user_feature_stats (
+            feature_name        TEXT NOT NULL PRIMARY KEY,
+            total_views         INTEGER NOT NULL DEFAULT 0,
+            total_starts        INTEGER NOT NULL DEFAULT 0,
+            total_completions   INTEGER NOT NULL DEFAULT 0,
+            last_used_at        INTEGER NOT NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS user_trap_stats (
+            trap_type           TEXT NOT NULL PRIMARY KEY,
+            total_failures      INTEGER NOT NULL DEFAULT 0,
+            last_failed_at      INTEGER NOT NULL
         );
 
         ------------------------------------------------------------------
@@ -343,7 +368,7 @@ def insert_questions(
       question_type, trap_type, correct_option,
       concept_anchor, concepts_used (JSON string),
       en_display_text, hi_display_text, has_table (0/1),
-      negative_framing (0/1)
+      negative_framing (0/1), paper_order (nullable int)
     """
     cur = conn.cursor()
     sql = """
@@ -360,7 +385,8 @@ def insert_questions(
           en_display_text,
           hi_display_text,
           has_table,
-          negative_framing
+          negative_framing,
+          paper_order
         ) VALUES (
           :uuid,
           :subject,
@@ -374,7 +400,8 @@ def insert_questions(
           :en_display_text,
           :hi_display_text,
           :has_table,
-          :negative_framing
+          :negative_framing,
+          :paper_order
         );
         """
     rows_list = list(rows)
@@ -601,6 +628,7 @@ def populate_static_data(conn: sqlite3.Connection) -> None:
                         "hi_display_text": hi["display_text"],
                         "has_table": 1 if shared.get("has_table") else 0,
                         "negative_framing": 1 if item.get("negative_framing") is True else 0,
+                        "paper_order": None,
                     }
                     subject_rows.append(row)
 
@@ -689,6 +717,236 @@ def populate_static_data(conn: sqlite3.Connection) -> None:
     print(f"[INFO] Total question_tables inserted: {total_question_tables}")
 
 
+_PYQ_YEAR_FILE = re.compile(r"^(\d{4})\.json$", re.IGNORECASE)
+
+
+def _normalize_question_type(raw: str) -> str:
+    t = (raw or "").strip()
+    if t == "multi-statement":
+        return "multi-statement-correct"
+    return t
+
+
+def populate_pyq_data(conn: sqlite3.Connection) -> None:
+    """
+    Populate PYQ rows from assets/pyqs/{year}.json.
+
+    Each question is stored with subject ``upsc_pyq_{year}`` so the app can
+    start sessions via getUnseenFirstBySubject. Original GS paper subject
+    from meta (e.g. Polity) is kept in ``topic``; ``sub_topic`` is PYQ.
+    """
+    project_root = Path(__file__).resolve().parents[1]
+    pyq_dir = project_root / "assets" / "pyqs"
+    if not pyq_dir.is_dir():
+        print(f"[WARN] PYQ directory not found: {pyq_dir}")
+        return
+
+    json_files = sorted(
+        p for p in pyq_dir.iterdir() if p.is_file() and _PYQ_YEAR_FILE.match(p.name)
+    )
+    if not json_files:
+        print(f"[INFO] No PYQ JSON files in {pyq_dir}")
+        return
+
+    total_questions = 0
+    total_explanations = 0
+    total_question_tables = 0
+    cur = conn.cursor()
+    cur.execute("SELECT uuid FROM questions")
+    used_question_uuids: set[str] = {row[0] for row in cur.fetchall()}
+
+    for json_file in json_files:
+        m = _PYQ_YEAR_FILE.match(json_file.name)
+        assert m is not None
+        year = m.group(1)
+        synthetic_subject = f"upsc_pyq_{year}"
+
+        subject_rows: list[Mapping[str, Any]] = []
+        explanation_rows: list[Mapping[str, Any]] = []
+        table_rows: list[Mapping[str, Any]] = []
+        per_file_count = 0
+
+        try:
+            with json_file.open("r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as exc:  # pragma: no cover - defensive
+            print(f"[WARN] Failed to read {json_file}: {exc}")
+            continue
+
+        if not isinstance(data, list):
+            print(f"[WARN] Expected list in {json_file}, got {type(data).__name__}")
+            continue
+
+        for item in data:
+            try:
+                meta = item["meta"]
+                shared = item["shared"]
+                en = item["en"]
+                hi = item["hi"]
+
+                raw_uuid = item["uuid"]
+                qt_raw = shared.get("question_type")
+                qtype = _normalize_question_type(
+                    _as_non_null_text(qt_raw).strip() or "direct"
+                )
+                co_raw = shared.get("correct_option")
+                co = str(co_raw).strip().lower() if co_raw is not None else ""
+                if co not in ("a", "b", "c", "d"):
+                    print(
+                        f"[WARN] Skipping question (invalid correct_option) "
+                        f"in {json_file} uuid={raw_uuid}"
+                    )
+                    continue
+
+                question_uuid = raw_uuid
+                if question_uuid in used_question_uuids:
+                    question_uuid = str(
+                        uuid.uuid5(
+                            uuid.NAMESPACE_URL,
+                            f"pyq-dedup|{year}|{per_file_count}|{raw_uuid}",
+                        )
+                    )
+                    while question_uuid in used_question_uuids:
+                        question_uuid = str(
+                            uuid.uuid5(
+                                uuid.NAMESPACE_URL,
+                                f"pyq-dedup2|{question_uuid}",
+                            )
+                        )
+                used_question_uuids.add(question_uuid)
+
+                paper_subject = _as_non_null_text(meta.get("subject")).strip()
+                if not paper_subject:
+                    paper_subject = "General Studies"
+
+                topic_raw = meta.get("topic")
+                topic = (
+                    _as_non_null_text(topic_raw).strip()
+                    if topic_raw is not None
+                    else paper_subject
+                )
+                if not topic:
+                    topic = paper_subject
+
+                sub_raw = meta.get("sub_topic")
+                sub_topic = (
+                    _as_non_null_text(sub_raw).strip()
+                    if sub_raw is not None
+                    else "PYQ"
+                )
+                if not sub_topic:
+                    sub_topic = "PYQ"
+
+                concepts_used = meta.get("concepts_used", [])
+
+                anchor = _as_non_null_text(shared.get("concept_anchor")).strip()
+
+                row = {
+                    "uuid": question_uuid,
+                    "subject": synthetic_subject,
+                    "topic": topic,
+                    "sub_topic": sub_topic,
+                    "question_type": qtype,
+                    "trap_type": shared.get("trap_type"),
+                    "correct_option": co,
+                    "concept_anchor": anchor,
+                    "concepts_used": json.dumps(
+                        concepts_used,
+                        ensure_ascii=False,
+                    ),
+                    "en_display_text": en["display_text"],
+                    "hi_display_text": hi["display_text"],
+                    "has_table": 1 if shared.get("has_table") else 0,
+                    "negative_framing": 1 if item.get("negative_framing") is True else 0,
+                    "paper_order": per_file_count + 1,
+                }
+                subject_rows.append(row)
+
+                for language_key in ("en", "hi"):
+                    payload = item[language_key]
+                    explanation_rows.append(
+                        {
+                            "question_uuid": question_uuid,
+                            "language": language_key,
+                            "strong_distractor": _as_non_null_text(
+                                payload.get("strong_distractor")
+                            ),
+                            "elimination_logic": json.dumps(
+                                payload.get("elimination_logic", []),
+                                ensure_ascii=False,
+                            ),
+                            "upsc_trap_explanation": _as_non_null_text(
+                                payload.get("upsc_trap_explanation")
+                            ),
+                            "final_explanation": _as_non_null_text(
+                                payload.get("final_explanation")
+                            ),
+                            "statement_analysis": (
+                                json.dumps(
+                                    payload["statement_analysis"],
+                                    ensure_ascii=False,
+                                )
+                                if payload.get("statement_analysis") is not None
+                                else None
+                            ),
+                        }
+                    )
+
+                has_table = bool(shared.get("has_table"))
+                en_table = en.get("table_data")
+                hi_table = hi.get("table_data")
+                if has_table and en_table and hi_table:
+                    table_rows.append(
+                        {
+                            "question_uuid": question_uuid,
+                            "en_header_text": en_table.get("header_text"),
+                            "en_footer_text": en_table.get("footer_text"),
+                            "en_columns": json.dumps(
+                                en_table.get("columns", []),
+                                ensure_ascii=False,
+                            ),
+                            "en_rows": json.dumps(
+                                en_table.get("rows", []),
+                                ensure_ascii=False,
+                            ),
+                            "hi_header_text": hi_table.get("header_text"),
+                            "hi_footer_text": hi_table.get("footer_text"),
+                            "hi_columns": json.dumps(
+                                hi_table.get("columns", []),
+                                ensure_ascii=False,
+                            ),
+                            "hi_rows": json.dumps(
+                                hi_table.get("rows", []),
+                                ensure_ascii=False,
+                            ),
+                        }
+                    )
+                per_file_count += 1
+            except KeyError as exc:  # pragma: no cover - data validation
+                print(f"[WARN] Missing key {exc} in {json_file}")
+            except Exception as exc:  # pragma: no cover - defensive
+                print(f"[WARN] Skipping malformed item in {json_file}: {exc}")
+
+        if subject_rows:
+            insert_questions(conn, subject_rows)
+            insert_explanations(conn, explanation_rows)
+            if table_rows:
+                insert_question_tables(conn, table_rows)
+            total_questions += len(subject_rows)
+            total_explanations += len(explanation_rows)
+            total_question_tables += len(table_rows)
+            print(
+                f"[INFO] PYQ {year} ({synthetic_subject}): "
+                f"{per_file_count} questions, "
+                f"{len(explanation_rows)} explanations, "
+                f"{len(table_rows)} question_tables inserted"
+            )
+
+    print(f"[INFO] PYQ total questions inserted: {total_questions}")
+    print(f"[INFO] PYQ total explanations inserted: {total_explanations}")
+    print(f"[INFO] PYQ total question_tables inserted: {total_question_tables}")
+
+
 def _parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Build pre-populated UPSC Wars SQLite database."
@@ -715,6 +973,7 @@ def main(argv: list[str]) -> None:
     try:
         create_schema(conn)
         populate_static_data(conn)
+        populate_pyq_data(conn)
         if args.verify:
             verify_built_db(conn)
     finally:

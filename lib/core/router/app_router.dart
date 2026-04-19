@@ -22,6 +22,7 @@ import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/providers/community_providers.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
+import '../../features/pyq/screens/pyq_year_packs_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
 import '../../features/home/screens/settings_screen.dart';
 import '../../features/home/screens/progress_screen.dart';
@@ -150,6 +151,13 @@ GoRouter appRouter(Ref ref) {
             ),
           ),
         ],
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/pyq-year/:year',
+        builder: (context, state) => PyqYearPacksScreen(
+          year: state.pathParameters['year']!,
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

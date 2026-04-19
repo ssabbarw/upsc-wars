@@ -9,7 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/session_analytics_derive.dart';
-import '../../../core/constants/subject_constants.dart';
+import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/domain/errors/app_errors.dart';
@@ -774,11 +774,9 @@ class _TopBar extends HookConsumerWidget {
       explanationVisible,
     ) = snap;
 
-    final subj =
-        subject == 'revision'
-            ? 'Revision'
-            : (SubjectConstants.bySlug(subject)?.displayName ??
-                subject);
+    final subj = subject == 'revision'
+        ? 'Revision'
+        : displayNameForSessionSubject(subject);
     final contextText = topic == null ? subj : '$subj · $topic';
 
     return Padding(

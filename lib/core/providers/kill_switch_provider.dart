@@ -51,6 +51,8 @@ Future<KillSwitchSnapshot> killSwitch(Ref ref) async {
     );
     await rc.setDefaults(<String, dynamic>{
       killSwitchVersionRemoteConfigKey: '',
+      // JSON: { "video_link": "https://...", "message": "...", "version": 1 }
+      'home_page_video': '',
     });
     await rc.fetchAndActivate();
     final raw = rc.getString(killSwitchVersionRemoteConfigKey).trim();

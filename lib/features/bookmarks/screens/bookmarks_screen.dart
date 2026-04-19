@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../../core/constants/subject_constants.dart';
+import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -92,7 +92,7 @@ class BookmarksScreen extends HookConsumerWidget {
                     separatorBuilder: (c, i) => const SizedBox(height: AppSpacing.sm),
                     itemBuilder: (c, i) {
                       final b = items[i];
-                      final subj = SubjectConstants.bySlug(b.subject)?.displayName ?? b.subject;
+                      final subj = displayNameForSessionSubject(b.subject);
                       final isDark = Theme.of(context).brightness == Brightness.dark;
                       final border = isDark ? AppColors.borderDark : AppColors.borderLight;
                       return Container(

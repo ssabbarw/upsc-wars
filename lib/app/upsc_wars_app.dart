@@ -65,18 +65,34 @@ class _RootMaterialApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    /// Shown on every cold start while testing. Switch back to prefs-gated
-    /// one-time flow when ready (see `bilingualQuestionWelcomeSeen`).
+    final welcomeScheduled = useRef(false);
+
+    /// First launch only: [PrefsService.bilingualQuestionWelcomeSeen].
     useEffect(() {
       var cancelled = false;
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        unawaited(() async {
-          if (cancelled) return;
-          final navCtx = rootNavigatorKey.currentContext;
-          if (navCtx == null || !navCtx.mounted) return;
-          await showFirstLaunchBilingualWelcomeSheet(navCtx);
-        }());
-      });
+      unawaited(() async {
+        final prefs = await ref.read(prefsServiceProvider.future);
+        if (cancelled || prefs.bilingualQuestionWelcomeSeen) return;
+        if (welcomeScheduled.value) return;
+        welcomeScheduled.value = true;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          unawaited(() async {
+            final navCtx = rootNavigatorKey.currentContext;
+            if (navCtx == null || !navCtx.mounted) {
+              welcomeScheduled.value = false;
+              return;
+            }
+            final svc = await ref.read(prefsServiceProvider.future);
+            if (cancelled || !navCtx.mounted || svc.bilingualQuestionWelcomeSeen) {
+              return;
+            }
+            await showFirstLaunchBilingualWelcomeSheet(navCtx);
+            if (cancelled || !navCtx.mounted) return;
+            (await ref.read(prefsServiceProvider.future)).bilingualQuestionWelcomeSeen =
+                true;
+          }());
+        });
+      }());
       return () {
         cancelled = true;
       };

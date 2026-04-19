@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/domain/entities/session_summary.dart';
 import '../../../core/theme/app_colors.dart';
@@ -186,7 +187,7 @@ class _SessionCard extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final border = isDark ? AppColors.borderDark : AppColors.borderLight;
-    final subj = SubjectConstants.bySlug(summary.subject)?.displayName ?? summary.subject;
+    final subj = displayNameForSessionSubject(summary.subject);
 
     final modeBg = summary.status == 'abandoned'
         ? scheme.surfaceContainerLow

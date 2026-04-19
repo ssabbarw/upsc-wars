@@ -5,8 +5,8 @@ import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/theme/app_text_styles.dart';
 
-/// Welcome sheet: Hindi + English copy; warm layout. Shown on each app open
-/// while testing (caller decides frequency).
+/// Welcome sheet: Hindi + English copy; warm layout. Shown once per install
+/// when the root app requests it (prefs-gated).
 Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
   return showModalBottomSheet<void>(
     context: context,

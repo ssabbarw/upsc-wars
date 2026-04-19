@@ -11,6 +11,7 @@ import '../../../core/constants/timed_exam_debug_constants.dart';
 import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
+import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
@@ -25,6 +26,7 @@ import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
+import '../../../shared/widgets/home_page_video_banner.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
@@ -361,6 +363,7 @@ class HomeScreen extends HookConsumerWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          HomePageVideoBanner(borderColor: borderColor),
                           Row(
                             children: [
                               Text(
@@ -792,6 +795,7 @@ class _PyqYearCarousel extends StatelessWidget {
                 titleText: years[i],
                 icon: _icons[i % _icons.length],
                 accent: _accents[i % _accents.length],
+                onTap: () => context.push('/pyq-year/${years[i]}'),
               ),
             ],
           ],
@@ -827,12 +831,14 @@ class _HomeDiscoveryCard extends StatelessWidget {
     required this.titleText,
     required this.icon,
     required this.accent,
+    this.onTap,
   });
 
   final Color borderColor;
   final String titleText;
   final IconData icon;
   final Color accent;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -851,7 +857,7 @@ class _HomeDiscoveryCard extends StatelessWidget {
     return Material(
       color: AppColors.transparent,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Ink(
           width: 138,
@@ -1107,7 +1113,7 @@ class _LastSessionCard extends HookConsumerWidget {
     final s = home.lastSession;
     final scheme = Theme.of(context).colorScheme;
     if (s == null) return const SizedBox.shrink();
-    final subj = SubjectConstants.bySlug(s.subject)?.displayName ?? s.subject;
+    final subj = displayNameForSessionSubject(s.subject);
     final title = s.topic == null ? subj : '$subj · ${s.topic}';
     final inProgress = s.status == 'in_progress';
     return Container(

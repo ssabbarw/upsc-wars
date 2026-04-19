@@ -20,13 +20,10 @@ abstract final class AppConstants {
   static const String supportEmail = 'upscwas@gmail.com';
 
   static Uri supportMailtoUri() => Uri(
-        scheme: 'mailto',
-        path: supportEmail,
-        queryParameters: {
-          'subject': 'UPSC Wars — feedback',
-          'body': 'Hi,\n\n',
-        },
-      );
+    scheme: 'mailto',
+    path: supportEmail,
+    queryParameters: {'subject': 'UPSC Wars — feedback', 'body': 'Hi,\n\n'},
+  );
 
   // ── Release (bump when publishing) ───────────────────────────────────────
   /// Shown on Profile and compared to Remote Config [kill_switch_version].
