@@ -1,10 +1,5 @@
-// Merge into firestore.rules — public read for shared sessions, authenticated create.
-// Adjust create rule if you use Cloud Functions instead.
-
-match /session/{shareId} {
-  allow read: if true;
-  allow create: if request.auth != null
-    && request.resource.data.keys().hasAll(['kind', 'subject', 'uuids', 'schemaVersion'])
-    && request.resource.data.uuids is list;
-  allow update, delete: if false;
-}
+// Merged into repo root firestore.rules under:
+//   match /session/{shareId} { ... }
+//
+// Deploy with:
+//   firebase deploy --only firestore:rules

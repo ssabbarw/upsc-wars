@@ -1,32 +1,74 @@
-# upscwars.app — Universal Links / App Links hosting
+# upscwars.com — share links, hosting, and local browser tests
 
-Upload the `public/` folder contents to the root of **https://upscwars.app** (or merge `.well-known/` and `share/` into your existing site).
+Upload the `public/` folder to the root of **https://upscwars.com** (or merge `.well-known/` and `share/` into your CDN).
 
-## Required files
+## Firestore rules (required for browser + app)
+
+Rules for collection **`session`** live in the app repo root **[`firestore.rules`](../../firestore.rules)** (not only the snippet file).
+
+Deploy from the repo root (where `firebase.json` references `firestore.rules`):
+
+```bash
+cd /path/to/upsc_wars
+firebase deploy --only firestore:rules
+```
+
+Until this succeeds, the web player’s Firestore REST `GET` will return **403** and the Flutter app cannot create share docs.
+
+### Behaviour
+
+| Operation | Who | Rule |
+|-----------|-----|------|
+| `GET session/{id}` | Anyone (browser, curl) | `allow read: if true` |
+| `CREATE session/{id}` | Signed-in user (app share) | Validated shape + limits |
+| `UPDATE` / `DELETE` | — | Denied |
+
+## Required hosted files
 
 | Path | Purpose |
 |------|---------|
-| `/.well-known/apple-app-site-association` | iOS Universal Links (no file extension; `Content-Type: application/json`) |
-| `/.well-known/assetlinks.json` | Android App Links verification |
-| `/share/index.html` | Web fallback: loads `session/{shareId}` from Firestore (REST), runs practice UI, saves progress in **localStorage** |
+| `/.well-known/apple-app-site-association` | iOS Universal Links (`Content-Type: application/json`, no redirects) |
+| `/.well-known/assetlinks.json` | Android App Links |
+| `/share/...` | Web player (`share/index.html` or SPA rewrite so path is `/share/test/{shareId}`) |
 
-## Firestore `session` collection
+## Test in the browser **without** upscwars.com hosting (Mac)
 
-The Flutter app writes **`session/{shareId}`** when the user shares (requires **signed-in** user per default rules). Fields:
+Firestore reads work from **any origin** once rules allow public read. The static page expects pathname **`/share/test/{shareId}`** (same as production).
 
-- `kind`, `subject`, optional `topic`
-- **`uuids`**: array of question JSON maps (same shape as [test_question_share_map.dart](../../lib/core/domain/entities/test_question_share_map.dart))
-- `createdAt`, `schemaVersion`
+1. **Deploy rules** (see above).
+2. **Create a doc** in Firebase Console → Firestore → `session` → document ID = a UUID, fields matching the app (`kind`, `subject`, `uuids`, `schemaVersion`, …), **or** use **Share** in the signed-in app and copy `shareId` from the copied URL.
+3. From repo:
 
-Merge **`firestore.rules.snippet`** into your project `firestore.rules` and deploy with `firebase deploy --only firestore:rules`.
+```bash
+cd deploy/upscwars_deep_link/public
+SHARE_ID='paste-your-share-uuid-here'
+mkdir -p "share/test/$SHARE_ID"
+cp share/index.html "share/test/$SHARE_ID/index.html"
+python3 -m http.server 8765
+```
 
-## Before going live
+4. Open in Chrome/Safari — paste the **expanded** URL (do not leave `$SHARE_ID` literally in the address bar):
 
-1. **assetlinks.json** — Replace `REPLACE_WITH_RELEASE_KEY_SHA256` with your **release** keystore SHA-256 fingerprint (`keytool -list -v -keystore …`). Add the debug fingerprint only for staging if needed.
-2. **apple-app-site-association** — Confirm `appID` is `TEAM_ID.BUNDLE_ID` (`PJFA69Q3GT.tinyminyapps.upsc.wars` matches the Xcode project at time of writing).
-3. Serve **AASA** without redirects (Apple validates `https://upscwars.app/.well-known/apple-app-site-association` with HTTP 200 and JSON body).
-4. **Netlify** — If you use Netlify, copy `netlify.toml` to the site root so `/share/*` serves the fallback HTML.
+`http://localhost:8765/share/test/<paste-the-same-uuid-here>/`
 
-## QA
+Example: if you set `SHARE_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`, open  
+`http://localhost:8765/share/test/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/`
 
-Test cold and warm opens of both `https://upscwars.app/share/...` and `upscwars://share/...` on **physical** Android and iOS devices (emulators are unreliable for domain verification).
+Trailing slash is fine; the page reads `/share/test/{uuid}` from the path.
+
+**404 in DevTools “Network”:**  
+- **`favicon.ico` / `apple-touch-icon`**: harmless; ignored.  
+- **`firestore.googleapis.com` … 404**: no document at `session/{shareId}` — create it (Share from app, or Firebase Console) and use that **exact** document ID in the URL.  
+- **`firestore.googleapis.com` … 403**: deploy [`firestore.rules`](../../firestore.rules) (`firebase deploy --only firestore:rules`).
+
+5. Answer a question, set confidence, reload the page — progress should remain (**localStorage** key `upscwars_share_v1_{shareId}`).
+
+## Before production
+
+1. **assetlinks.json** — Set real SHA-256 cert fingerprint(s).
+2. **apple-app-site-association** — Confirm `appID` is `TEAM_ID.bundleId`.
+3. **Netlify** — Use `netlify.toml` so `/share/*` serves the player page if you use a SPA layout.
+
+## QA on devices
+
+Universal / App Links for **`https://upscwars.com/share/*`** need real **Android + iOS** hardware after DNS + `.well-known` are live.

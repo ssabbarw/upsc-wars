@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:home_widget/home_widget.dart';
 import 'package:intl/intl.dart';
 
@@ -17,6 +16,7 @@ class PrelimsWidgetSyncService {
   static const String _debugMinuteRefreshKey = 'prelims_debug_minute_refresh';
 
   static Future<void> sync() async {
+    if (kIsWeb) return;
     final now = DateTime.now();
     final days = PrelimsCountdown.daysLeft(now: now);
     final timerLabel = PrelimsDebugFlags.surfacesEveryMinute
@@ -24,7 +24,7 @@ class PrelimsWidgetSyncService {
         : days.toString();
     final quote = PrelimsCountdown.quoteForDate(now: now);
 
-    if (Platform.isIOS) {
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
       await HomeWidget.setAppGroupId(_iosAppGroupId);
     }
 
@@ -35,9 +35,9 @@ class PrelimsWidgetSyncService {
       PrelimsDebugFlags.surfacesEveryMinute ? '1' : '0',
     );
 
-    if (Platform.isAndroid) {
+    if (defaultTargetPlatform == TargetPlatform.android) {
       await HomeWidget.updateWidget(androidName: _androidWidgetProvider);
-    } else if (Platform.isIOS) {
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       await HomeWidget.updateWidget(iOSName: _iosWidgetKind);
     }
   }

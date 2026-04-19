@@ -44,10 +44,12 @@ class SharedSessionFirestoreRepository {
     String? topic,
     required List<Map<String, dynamic>> questionMaps,
   }) async {
+    // Firestore rules expect schemaVersion as a number; use explicit int.
+    final safeSubject = subject.trim().isEmpty ? 'Misc' : subject.trim();
     await _db.collection(SharedSessionFirestore.collectionName).doc(shareId).set({
       'kind': kind.pathSegment,
-      'subject': subject,
-      if (topic != null && topic.isNotEmpty) 'topic': topic,
+      'subject': safeSubject,
+      if (topic != null && topic.trim().isNotEmpty) 'topic': topic.trim(),
       'uuids': questionMaps,
       'createdAt': FieldValue.serverTimestamp(),
       'schemaVersion': 1,

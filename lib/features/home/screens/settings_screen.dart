@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -8,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/prelims_countdown.dart';
+import '../../../core/constants/store_listing_urls.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/services/prelims_surfaces_refresh.dart';
 import '../../../core/theme/app_colors.dart';
@@ -15,10 +14,6 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
-
-/// Play Store listing (Android package from `android/app/build.gradle.kts`).
-const _kPlayStoreUrl =
-    'https://play.google.com/store/apps/details?id=practice.upsc.indiaapps.com.upscmcqpractice';
 
 const _kFeedbackEmail = 'upscwars@gmail.com';
 const _kTelegramDirect = 'https://t.me/upsc_wars_sachin';
@@ -319,9 +314,13 @@ class _RateReviewCard extends StatelessWidget {
 
   Future<void> _openStore(BuildContext context) async {
     await HapticFeedback.lightImpact();
-    final url = Platform.isIOS
-        ? 'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}'
-        : _kPlayStoreUrl;
+    final ios = defaultTargetPlatform == TargetPlatform.iOS;
+    final appStore = StoreListingUrls.appStore.trim();
+    final url = ios
+        ? (appStore.isNotEmpty
+            ? appStore
+            : 'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}')
+        : StoreListingUrls.playStore;
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
@@ -390,7 +389,11 @@ class _RateReviewCard extends StatelessWidget {
               FilledButton.tonalIcon(
                 onPressed: () => _openStore(context),
                 icon: const Icon(Icons.storefront_rounded, size: 22),
-                label: Text(Platform.isIOS ? 'Find us on the App Store' : 'Open Play Store listing'),
+                label: Text(
+                  defaultTargetPlatform == TargetPlatform.iOS
+                      ? 'Find us on the App Store'
+                      : 'Open Play Store listing',
+                ),
                 style: FilledButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                   shape: RoundedRectangleBorder(
@@ -618,7 +621,7 @@ class _PrelimsPersistentNotificationCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
 
-    if (!Platform.isAndroid) {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) {
       return Container(
         padding: const EdgeInsets.all(AppSpacing.xl),
         decoration: BoxDecoration(

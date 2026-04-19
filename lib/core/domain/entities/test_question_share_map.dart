@@ -8,11 +8,13 @@ Map<String, dynamic> statementAnalysisItemToMap(StatementAnalysisItem s) => {
 
 Map<String, dynamic>? questionTableDataToMap(QuestionTableData? t) {
   if (t == null) return null;
+  // Firestore rejects nested arrays (e.g. rows as List<List<String>>).
+  // Store each row as a map with a string array of cells.
   return {
     'header': t.header,
     'footer': t.footer,
     'columns': t.columns,
-    'rows': t.rows,
+    'rows': t.rows.map((row) => <String, dynamic>{'cells': row}).toList(),
   };
 }
 
@@ -54,4 +56,114 @@ Map<String, dynamic> testQuestionToShareMap(TestQuestion q) {
     'upscTrapExplanationHi': q.upscTrapExplanationHi,
     'conceptsUsed': q.conceptsUsed,
   };
+}
+
+String _shareStr(Map<dynamic, dynamic> m, String key, [String d = '']) {
+  final v = m[key];
+  if (v is String) return v;
+  if (v != null) return v.toString();
+  return d;
+}
+
+bool _shareBool(Map<dynamic, dynamic> m, String key, [bool d = false]) {
+  final v = m[key];
+  if (v is bool) return v;
+  return d;
+}
+
+List<String> _shareStringList(Object? v) {
+  if (v is! List) return const [];
+  return v.map((e) => e.toString()).toList();
+}
+
+QuestionTableData? _questionTableFromShare(Object? raw) {
+  if (raw is! Map) return null;
+  final m = Map<dynamic, dynamic>.from(raw);
+  final cols = _shareStringList(m['columns']);
+  if (cols.isEmpty) return null;
+  final rowsRaw = m['rows'];
+  final rows = <List<String>>[];
+  if (rowsRaw is List) {
+    for (final e in rowsRaw) {
+      if (e is Map && e['cells'] is List) {
+        rows.add(_shareStringList(e['cells']));
+      } else if (e is List) {
+        rows.add(e.map((x) => x.toString()).toList());
+      }
+    }
+  }
+  return QuestionTableData(
+    header: m['header'] as String?,
+    footer: m['footer'] as String?,
+    columns: cols,
+    rows: rows,
+  );
+}
+
+List<StatementAnalysisItem> _statementList(Object? v) {
+  if (v is! List) return const [];
+  final out = <StatementAnalysisItem>[];
+  for (final e in v) {
+    if (e is Map) {
+      final m = Map<dynamic, dynamic>.from(e);
+      out.add(
+        StatementAnalysisItem(
+          label: _shareStr(m, 'label'),
+          isCorrect: _shareBool(m, 'isCorrect'),
+          reason: _shareStr(m, 'reason'),
+        ),
+      );
+    }
+  }
+  return out;
+}
+
+/// Rebuilds [TestQuestion] from Firestore / share JSON ([testQuestionToShareMap]).
+TestQuestion testQuestionFromShareMap(
+  Map<String, dynamic> raw, {
+  required int position,
+  required String subject,
+  required String topic,
+}) {
+  final m = Map<dynamic, dynamic>.from(raw);
+  return TestQuestion(
+    uuid: _shareStr(m, 'uuid'),
+    subject: _shareStr(m, 'subject', subject),
+    topic: _shareStr(m, 'topic', topic),
+    negativeFraming: _shareBool(m, 'negativeFraming'),
+    displayText: _shareStr(m, 'displayText'),
+    displayTextHi: _shareStr(m, 'displayTextHi'),
+    optionA: _shareStr(m, 'optionA'),
+    optionAHi: _shareStr(m, 'optionAHi'),
+    optionB: _shareStr(m, 'optionB'),
+    optionBHi: _shareStr(m, 'optionBHi'),
+    optionC: _shareStr(m, 'optionC'),
+    optionCHi: _shareStr(m, 'optionCHi'),
+    optionD: _shareStr(m, 'optionD'),
+    optionDHi: _shareStr(m, 'optionDHi'),
+    correctOption: _shareStr(m, 'correctOption', 'a'),
+    questionType: m['questionType'] as String?,
+    trapType: m['trapType'] as String?,
+    hasTable: _shareBool(m, 'hasTable'),
+    tableData: _questionTableFromShare(m['tableData']),
+    tableDataHi: _questionTableFromShare(m['tableDataHi']),
+    position: position,
+    selectedOption: m['selectedOption'] as String?,
+    status: _shareStr(m, 'status', 'unattempted'),
+    flagged: _shareBool(m, 'flagged'),
+    timeSpentSecs: (m['timeSpentSecs'] is num) ? (m['timeSpentSecs'] as num).toInt() : null,
+    confidence: m['confidence'] as String?,
+    conceptAnchor: m['conceptAnchor'] as String?,
+    finalExplanation: m['finalExplanation'] as String?,
+    finalExplanationHi: m['finalExplanationHi'] as String?,
+    eliminationLogic: _shareStringList(m['eliminationLogic']),
+    eliminationLogicHi: _shareStringList(m['eliminationLogicHi']),
+    statementAnalysis: _statementList(m['statementAnalysis']),
+    statementAnalysisHi: _statementList(m['statementAnalysisHi']),
+    strongDistractor: m['strongDistractor'] as String?,
+    strongDistractorHi: m['strongDistractorHi'] as String?,
+    upscTrapExplanation: m['upscTrapExplanation'] as String?,
+    upscTrapExplanationHi: m['upscTrapExplanationHi'] as String?,
+    conceptsUsed: _shareStringList(m['conceptsUsed']),
+  );
 }

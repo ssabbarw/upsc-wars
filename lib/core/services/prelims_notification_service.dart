@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -38,7 +37,7 @@ class PrelimsNotificationService {
 
   /// Shows, updates, or clears the persistent prelims notification from prefs.
   static Future<void> syncPersistentNotification() async {
-    if (!Platform.isAndroid) return;
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return;
 
     final prefs = await SharedPreferences.getInstance();
     final enabled =

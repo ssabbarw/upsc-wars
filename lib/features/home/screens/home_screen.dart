@@ -13,6 +13,7 @@ import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
+import '../../../core/providers/kill_switch_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -20,6 +21,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
+import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
@@ -37,6 +39,11 @@ class HomeScreen extends HookConsumerWidget {
     final authActions = ref.watch(authActionsProvider);
     final isAuthBusy = authActions.isLoading;
     final bootstrap = ref.watch(appBootstrapProvider);
+    final killSwitchAsync = ref.watch(killSwitchProvider);
+    final killBlocked = killSwitchAsync.maybeWhen(
+      data: (s) => s.isActive,
+      orElse: () => false,
+    );
     final cachedStreakText = useState<String?>(null);
 
     final past200ms = useState(false);
@@ -81,6 +88,7 @@ class HomeScreen extends HookConsumerWidget {
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async {
         if (didPop) return;
+        if (killBlocked) return;
         final exit = await showDialog<bool>(
           context: context,
           builder: (ctx) => AlertDialog(
@@ -105,12 +113,17 @@ class HomeScreen extends HookConsumerWidget {
           await SystemNavigator.pop();
         }
       },
-      child: Scaffold(
-        body: SafeArea(
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.all(AppSpacing.lg),
-            children: [
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Scaffold(
+            body: SafeArea(
+              child: ListView(
+                physics: killBlocked
+                    ? const NeverScrollableScrollPhysics()
+                    : const BouncingScrollPhysics(),
+                padding: const EdgeInsets.all(AppSpacing.lg),
+                children: [
               if (bootstrap.hasError)
                 Padding(
                   padding: const EdgeInsets.only(bottom: AppSpacing.md),
@@ -400,9 +413,12 @@ class HomeScreen extends HookConsumerWidget {
                   );
                 },
               ),
-            ],
+                ],
+              ),
+            ),
           ),
-        ),
+          if (killBlocked) const AppUpdateKillSwitchOverlay(),
+        ],
       ),
     );
   }

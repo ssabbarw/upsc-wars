@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
 
+import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/domain/entities/test_question_share_map.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
@@ -13,6 +14,7 @@ import 'package:upsc_wars/core/router/app_router.dart';
 
 import 'share_link_kind.dart';
 import 'share_link_parser.dart';
+import 'share_link_test_mode_sheet.dart';
 import 'share_link_url_builder.dart';
 import 'shared_session_firestore.dart';
 
@@ -32,7 +34,10 @@ void showShareLinkMessage(String message) {
   );
 }
 
-/// Imports a fixed-id learning session from [payload] and navigates to the test engine.
+/// Imports a fixed-id session from [payload] and navigates to the test engine.
+///
+/// The user always chooses **Normal** (`exam`) or **Learning** on a bottom sheet
+/// (share payloads do not include mode).
 ///
 /// [payload.questionIds] may be empty: then questions are resolved from Firestore
 /// `session/{shareId}` field `uuids`.
@@ -58,9 +63,6 @@ Future<void> openShareLinkPayload({
       }
     }
 
-    final uc = await ref.read(createSessionUseCaseProvider.future);
-    final lang = await ref.read(appLanguageProvider.future);
-
     if (subject == null || subject.isEmpty) {
       final q = await ref
           .read(userDatabaseProvider)
@@ -70,13 +72,39 @@ Future<void> openShareLinkPayload({
       topic ??= q?.topic;
     }
 
-    final config = SessionConfig(
-      subject: subject,
+    final trimmedSubject = subject.trim();
+    final subjectResolved =
+        trimmedSubject.isEmpty ? 'Misc' : trimmedSubject;
+
+    final sheetContext = rootNavigatorKey.currentContext;
+    if (sheetContext == null || !sheetContext.mounted) {
+      showShareLinkMessage('Could not open share sheet.');
+      return;
+    }
+
+    final chosenMode = await showShareLinkTestModeSheet(
+      context: sheetContext,
+      subject: subjectResolved,
       topic: topic,
-      mode: 'learning',
+      questionCount: questionIds.length,
+      kind: payload.kind,
+    );
+    if (chosenMode == null) return;
+
+    final uc = await ref.read(createSessionUseCaseProvider.future);
+    final lang = await ref.read(appLanguageProvider.future);
+
+    final timeLimitSecs = chosenMode == 'exam'
+        ? questionIds.length * kDebugSecondsPerQuestion
+        : 60;
+
+    final config = SessionConfig(
+      subject: subjectResolved,
+      topic: topic,
+      mode: chosenMode,
       questionCount: questionIds.length,
       isTimed: true,
-      timeLimitSecs: 60,
+      timeLimitSecs: timeLimitSecs,
       language: lang,
       specificQuestionUuids: questionIds,
       analyticsFeatureKey: _analyticsKeyForKind(payload.kind),
@@ -133,18 +161,34 @@ Future<void> shareSessionQuestionsLink({
 
   final shareId = _shareUuid.v4();
   final maps = sorted.map(testQuestionToShareMap).toList();
+  final subjectForShare = active.subject.trim().isEmpty
+      ? 'Misc'
+      : active.subject.trim();
 
   try {
     final fs = SharedSessionFirestoreRepository();
     await fs.uploadSession(
       shareId: shareId,
       kind: kind,
-      subject: active.subject,
+      subject: subjectForShare,
       topic: active.topic,
       questionMaps: maps,
     );
-  } catch (_) {
-    showShareLinkMessage('Could not upload share. Check connection and try again.');
+  } on FirebaseException catch (e, st) {
+    debugPrint('shareSessionQuestionsLink FirebaseException: ${e.code} ${e.message}');
+    debugPrintStack(stackTrace: st);
+    final msg = switch (e.code) {
+      'permission-denied' =>
+        'Share upload blocked (permission). Deploy latest firestore.rules and sign in.',
+      'unavailable' => 'Network issue. Try again when online.',
+      _ => 'Could not upload share (${e.code}).',
+    };
+    showShareLinkMessage(msg);
+    return;
+  } catch (e, st) {
+    debugPrint('shareSessionQuestionsLink: $e');
+    debugPrintStack(stackTrace: st);
+    showShareLinkMessage('Could not upload share: $e');
     return;
   }
 

@@ -1,9 +1,7 @@
-import 'dart:io';
-
 import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
+
+import 'user_db_connection_io.dart' if (dart.library.html) 'user_db_connection_web.dart'
+    as user_db_connection;
 
 part 'user_db.g.dart';
 
@@ -1025,10 +1023,4 @@ class UserDatabase extends _$UserDatabase {
       );
 }
 
-LazyDatabase _openUnifiedDb() {
-  return LazyDatabase(() async {
-    final docsDir = await getApplicationDocumentsDirectory();
-    final file = File(p.join(docsDir.path, 'upsc_wars_questions.db'));
-    return NativeDatabase(file);
-  });
-}
+LazyDatabase _openUnifiedDb() => user_db_connection.openUserDb();

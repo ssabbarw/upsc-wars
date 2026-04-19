@@ -42,8 +42,20 @@ service cloud.firestore {
           && userId == authedEmailLower();
     }
 
+    // Presence map: one top-level field per user email (legacy shape).
+    // Writes use set(merge: true); each user may only create/update their own key.
     match /buckets/{ym}/{day}/{bucketId} {
       allow read: if signedIn();
+
+      allow create: if signedIn()
+        && authedEmailLower() != ''
+        && request.resource.data.keys().hasOnly([authedEmailLower()])
+        && request.resource.data[authedEmailLower()] is map;
+
+      allow update: if signedIn()
+        && authedEmailLower() != ''
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([authedEmailLower()])
+        && request.resource.data[authedEmailLower()] is map;
     }
 
     match /battle_matches/{sessionId} {
@@ -81,6 +93,30 @@ service cloud.firestore {
         allow create, update: if signedIn()
             && canWriteJoinedUserDoc(sessionId, participantId);
       }
+    }
+
+    // Shared practice links (HTTPS upscwars.com/share/... + web player + app resolver).
+    // Reads are public so the browser can load questions via REST without auth.
+    // Writes only for signed-in app users creating a new share doc.
+    match /session/{shareId} {
+      allow read: if true;
+
+      allow create: if signedIn()
+        && request.resource.data.keys().hasAll(['kind', 'subject', 'uuids', 'schemaVersion'])
+        && request.resource.data.kind is string
+        && request.resource.data.kind in ['battle', 'test', 'question']
+        && request.resource.data.subject is string
+        && request.resource.data.subject.size() > 0
+        && request.resource.data.subject.size() <= 240
+        && request.resource.data.uuids is list
+        && request.resource.data.uuids.size() > 0
+        && request.resource.data.uuids.size() <= 200
+        && request.resource.data.schemaVersion == 1
+        && (!('topic' in request.resource.data)
+            || (request.resource.data.topic is string
+                && request.resource.data.topic.size() <= 240));
+
+      allow update, delete: if false;
     }
   }
 }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
   <title>UPSC Wars — Shared practice</title>
   <style>
     :root { color-scheme: dark; --bg: #0f172a; --card: #1e293b; --accent: #2563eb; --muted: #94a3b8; --ok: #22c55e; --bad: #ef4444; }
@@ -94,7 +95,22 @@
       '/databases/(default)/documents/session/' + encodeURIComponent(shareId) +
       '?key=' + encodeURIComponent(CONFIG.apiKey);
     return fetch(url).then(function (r) {
-      if (!r.ok) throw new Error('Could not load shared session (' + r.status + ').');
+      if (r.status === 404) {
+        throw new Error(
+          'Firestore: no document session/' + shareId + '. ' +
+          'Use the exact share ID from the app (after tapping Share) or create this document in the console. ' +
+          'Placeholder text like "your-document-id-uuid" is not a real document.'
+        );
+      }
+      if (r.status === 403) {
+        throw new Error(
+          'Firestore denied read (403). Run: firebase deploy --only firestore:rules ' +
+          'and ensure session/* allows read.'
+        );
+      }
+      if (!r.ok) {
+        throw new Error('Could not load shared session (HTTP ' + r.status + ').');
+      }
       return r.json();
     });
   }
