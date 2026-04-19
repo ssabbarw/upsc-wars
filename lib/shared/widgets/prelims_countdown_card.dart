@@ -1,11 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../core/constants/prelims_countdown.dart';
-import '../../core/services/prelims_widget_sync_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_radius.dart';
 import '../../core/theme/app_spacing.dart';
@@ -27,19 +25,10 @@ class PrelimsCountdownCard extends HookWidget {
       return timer.cancel;
     }, const []);
 
-    useEffect(() {
-      unawaited(PrelimsWidgetSyncService.sync());
-      return null;
-    }, [now.value.day]);
-
     final timerLabel = PrelimsCountdown.timerLabel(now: now.value);
     final quote = PrelimsCountdown.quoteForDate(now: now.value);
     final cardColor = isDark ? AppColors.infoBgDark : AppColors.infoBg;
     final quoteColor = isDark ? AppColors.infoTextDark : AppColors.infoText;
-    final showHomeWidgetHint =
-        !kIsWeb &&
-        (defaultTargetPlatform == TargetPlatform.android ||
-            defaultTargetPlatform == TargetPlatform.iOS);
 
     return Container(
       width: double.infinity,
@@ -76,29 +65,6 @@ class PrelimsCountdownCard extends HookWidget {
             quote,
             style: AppTextStyles.bodySm().copyWith(color: quoteColor),
           ),
-          // if (showHomeWidgetHint) ...[
-          //   const SizedBox(height: AppSpacing.sm),
-          //   Row(
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     children: [
-          //       Icon(
-          //         Icons.widgets_outlined,
-          //         size: 16,
-          //         color: scheme.onSurfaceVariant,
-          //       ),
-          //       const SizedBox(width: AppSpacing.xs),
-          //       Expanded(
-          //         child: Text(
-          //           'You can also add this countdown as a widget on your device home screen.',
-          //           style: AppTextStyles.caption().copyWith(
-          //             color: scheme.onSurfaceVariant,
-          //             height: 1.3,
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ],
         ],
       ),
     );

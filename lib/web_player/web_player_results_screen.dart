@@ -19,7 +19,12 @@ TextStyle _advancedInsightsSectionHeading(ColorScheme scheme) =>
       color: scheme.onSurface,
     );
 
-Widget _resultConfLine(ColorScheme scheme, String label, int total, int correct) {
+Widget _resultConfLine(
+  ColorScheme scheme,
+  String label,
+  int total,
+  int correct,
+) {
   if (total <= 0) {
     return Text(
       '$label: —',
@@ -101,7 +106,10 @@ class _WebPlayerScoreHeroCard extends StatelessWidget {
             Center(
               child: Container(
                 constraints: const BoxConstraints(minWidth: 200),
-                padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 32),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 22,
+                  horizontal: 32,
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: LinearGradient(
@@ -114,12 +122,12 @@ class _WebPlayerScoreHeroCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  border: Border.all(
-                    color: netColor.withValues(alpha: 0.22),
-                  ),
+                  border: Border.all(color: netColor.withValues(alpha: 0.22)),
                   boxShadow: [
                     BoxShadow(
-                      color: scheme.shadow.withValues(alpha: isDark ? 0.35 : 0.08),
+                      color: scheme.shadow.withValues(
+                        alpha: isDark ? 0.35 : 0.08,
+                      ),
                       blurRadius: 16,
                       offset: const Offset(0, 6),
                     ),
@@ -473,9 +481,9 @@ class WebPlayerResultsScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: AppSpacing.md),
                         Theme(
-                          data: Theme.of(context).copyWith(
-                            dividerColor: AppColors.transparent,
-                          ),
+                          data: Theme.of(
+                            context,
+                          ).copyWith(dividerColor: AppColors.transparent),
                           child: ExpansionTile(
                             tilePadding: const EdgeInsets.symmetric(
                               horizontal: 12,
@@ -490,9 +498,15 @@ class WebPlayerResultsScreen extends StatelessWidget {
                             ),
                             children: [
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                                padding: const EdgeInsets.fromLTRB(
+                                  16,
+                                  0,
+                                  16,
+                                  16,
+                                ),
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
                                   children: [
                                     Text(
                                       'Confidence accuracy',
@@ -562,17 +576,17 @@ class WebPlayerResultsScreen extends StatelessWidget {
                       ],
                       const SizedBox(height: AppSpacing.xl),
                       ElevatedButton(
-                        onPressed: () => Navigator.of(context).pop(
-                          WebPlayerResultsExit.review,
-                        ),
+                        onPressed: () => Navigator.of(
+                          context,
+                        ).pop(WebPlayerResultsExit.review),
                         style: WebPlayerUiTokens.primaryCta(context),
                         child: const Text('Review with explanations'),
                       ),
                       const SizedBox(height: AppSpacing.sm),
                       OutlinedButton(
-                        onPressed: () => Navigator.of(context).pop(
-                          WebPlayerResultsExit.reattempt,
-                        ),
+                        onPressed: () => Navigator.of(
+                          context,
+                        ).pop(WebPlayerResultsExit.reattempt),
                         style: WebPlayerUiTokens.outlineFullWidth(context),
                         child: const Text('Reattempt'),
                       ),

@@ -6,9 +6,5 @@
 	<array>
 		<string>applinks:upscwars.com</string>
 	</array>
-	<key>com.apple.security.application-groups</key>
-	<array>
-		<string>group.tinyminyapps.upsc.wars</string>
-	</array>
 </dict>
 </plist>
