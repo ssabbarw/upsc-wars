@@ -20,11 +20,8 @@ import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 void _leaveBattleResultScreen(BuildContext context) {
   if (!context.mounted) return;
-  if (context.canPop()) {
-    context.pop();
-  } else {
-    context.go('/');
-  }
+  // Always home: stack is usually battle test → results; pop would reopen the test.
+  context.go('/');
 }
 
 (String, String) _battleResultHeadline({
