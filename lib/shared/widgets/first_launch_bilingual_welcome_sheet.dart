@@ -13,6 +13,8 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
     useRootNavigator: true,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
+    isDismissible: false,
+    enableDrag: false,
     builder: (sheetContext) {
       final theme = Theme.of(sheetContext);
       final scheme = theme.colorScheme;
@@ -28,30 +30,38 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
       final warmBottom = scheme.surfaceContainerHighest;
       final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
-      return Padding(
-        padding: EdgeInsets.fromLTRB(
-          AppSpacing.sm,
-          0,
-          AppSpacing.sm,
-          bottom + AppSpacing.sm,
-        ),
-        child: Align(
+      return PopScope(
+        canPop: false,
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.sm,
+            0,
+            AppSpacing.sm,
+            bottom + AppSpacing.sm,
+          ),
+          child: Align(
           alignment: Alignment.bottomCenter,
           child: ConstrainedBox(
             constraints: BoxConstraints(maxHeight: maxH),
             child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(28),
+              ),
               child: Material(
                 color: scheme.surface,
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(28)),
-                    border: Border.all(color: borderColor.withValues(alpha: 0.45)),
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(28),
+                    ),
+                    border: Border.all(
+                      color: borderColor.withValues(alpha: 0.45),
+                    ),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.gray900
-                            .withValues(alpha: isDark ? 0.5 : 0.12),
+                        color: AppColors.gray900.withValues(
+                          alpha: isDark ? 0.5 : 0.12,
+                        ),
                         blurRadius: 24,
                         offset: const Offset(0, -6),
                       ),
@@ -72,10 +82,7 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
-                            colors: [
-                              warmTop,
-                              warmBottom,
-                            ],
+                            colors: [warmTop, warmBottom],
                           ),
                         ),
                         child: Column(
@@ -86,8 +93,9 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
                                 width: 40,
                                 height: 4,
                                 decoration: BoxDecoration(
-                                  color: scheme.onSurfaceVariant
-                                      .withValues(alpha: 0.35),
+                                  color: scheme.onSurfaceVariant.withValues(
+                                    alpha: 0.35,
+                                  ),
                                   borderRadius: BorderRadius.circular(2),
                                 ),
                               ),
@@ -102,8 +110,9 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
                                     color: scheme.surface.withValues(
                                       alpha: isDark ? 0.2 : 0.85,
                                     ),
-                                    borderRadius:
-                                        BorderRadius.circular(AppRadius.lg),
+                                    borderRadius: BorderRadius.circular(
+                                      AppRadius.lg,
+                                    ),
                                     boxShadow: [
                                       BoxShadow(
                                         color: AppColors.primary.withValues(
@@ -125,7 +134,8 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
                                 const SizedBox(width: AppSpacing.md),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Welcome · स्वागत है',
@@ -187,48 +197,6 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
                                     'प्रश्न वाली स्क्रीन पर अंग्रेज़ी / हिंदी टॉगल '
                                     'से आप कभी भी भाषा बदल सकते हैं।',
                               ),
-                              const SizedBox(height: AppSpacing.sm),
-                              DecoratedBox(
-                                decoration: BoxDecoration(
-                                  color: AppColors.primaryLight.withValues(
-                                    alpha: isDark ? 0.12 : 0.65,
-                                  ),
-                                  borderRadius:
-                                      BorderRadius.circular(AppRadius.md),
-                                  border: Border.all(
-                                    color: AppColors.primary.withValues(
-                                      alpha: isDark ? 0.25 : 0.2,
-                                    ),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(AppSpacing.md),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.lightbulb_outline_rounded,
-                                        size: 22,
-                                        color: isDark
-                                            ? AppColors.correctTextDark
-                                            : AppColors.primaryDark,
-                                      ),
-                                      const SizedBox(width: AppSpacing.sm),
-                                      Expanded(
-                                        child: Text(
-                                          'Tip: Take your time — learn at the pace '
-                                          'that feels right for you.\n'
-                                          'सुझाव: अपनी गति से पढ़ें — जैसा आपके लिए '
-                                          'ठीक लगे, वैसे ही आगे बढ़ें।',
-                                          style: AppTextStyles.bodySm().copyWith(
-                                            color: scheme.onSurfaceVariant,
-                                            height: 1.45,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -247,19 +215,22 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
                             foregroundColor: AppColors.onPrimary,
                             elevation: 0,
                             padding: const EdgeInsets.symmetric(
-                              vertical: AppSpacing.md,
+                              vertical: AppSpacing.lg + 2,
                             ),
+                            minimumSize: const Size(double.infinity, 56),
                             shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(AppRadius.lg),
+                              borderRadius: BorderRadius.circular(AppRadius.lg),
                             ),
-                            shadowColor: AppColors.primary.withValues(alpha: 0.4),
+                            shadowColor: AppColors.primary.withValues(
+                              alpha: 0.4,
+                            ),
                           ),
                           child: Text(
-                            'Got it · समझ गया',
-                            style: AppTextStyles.label().copyWith(
+                            "Let's go!",
+                            style: AppTextStyles.h3().copyWith(
                               color: AppColors.onPrimary,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w700,
+                              height: 1.15,
                             ),
                           ),
                         ),
@@ -270,6 +241,7 @@ Future<void> showFirstLaunchBilingualWelcomeSheet(BuildContext context) {
               ),
             ),
           ),
+        ),
         ),
       );
     },

@@ -22,7 +22,6 @@ import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
-import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
@@ -37,8 +36,6 @@ class HomeScreen extends HookConsumerWidget {
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
     final home = ref.watch(homeStateProvider);
     final authState = ref.watch(authStateChangesProvider);
-    final authActions = ref.watch(authActionsProvider);
-    final isAuthBusy = authActions.isLoading;
     final bootstrap = ref.watch(appBootstrapProvider);
     final killSwitchAsync = ref.watch(killSwitchProvider);
     final killBlocked = killSwitchAsync.maybeWhen(
@@ -84,6 +81,11 @@ class HomeScreen extends HookConsumerWidget {
       scheme,
     );
     final hasPhotoUrl = user?.photoURL?.trim().isNotEmpty ?? false;
+
+    void openProfile() {
+      if (!context.mounted) return;
+      context.push('/profile');
+    }
 
     return PopScope(
       canPop: false,
@@ -160,25 +162,7 @@ class HomeScreen extends HookConsumerWidget {
                       Material(
                         color: AppColors.transparent,
                         child: InkWell(
-                          onTap: () async {
-                            if (user == null) {
-                              await showGoogleLoginBottomSheet(
-                                context: context,
-                                isLoading: isAuthBusy,
-                                onGoogleTap: () {
-                                  Navigator.of(context).pop();
-                                  ref
-                                      .read(authActionsProvider.notifier)
-                                      .signInWithGoogle();
-                                },
-                              );
-                              return;
-                            }
-
-                            if (context.mounted) {
-                              context.push('/profile');
-                            }
-                          },
+                          onTap: openProfile,
                           borderRadius: BorderRadius.circular(AppRadius.pill),
                           child: Container(
                             width: 36,
@@ -227,22 +211,34 @@ class HomeScreen extends HookConsumerWidget {
                         ),
                       ),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              greeting,
-                              style: AppTextStyles.h2().copyWith(
-                                color: scheme.onSurface,
+                        child: Material(
+                          color: AppColors.transparent,
+                          child: InkWell(
+                            onTap: openProfile,
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: AppSpacing.xs,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    greeting,
+                                    style: AppTextStyles.h2().copyWith(
+                                      color: scheme.onSurface,
+                                    ),
+                                  ),
+                                  Text(
+                                    userName,
+                                    style: AppTextStyles.bodySm().copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            Text(
-                              userName,
-                              style: AppTextStyles.bodySm().copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                       Material(

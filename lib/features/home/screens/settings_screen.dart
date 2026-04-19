@@ -162,7 +162,9 @@ class _ConfidenceTrackingCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    return ref.watch(prefsServiceProvider).when(
+    return ref
+        .watch(prefsServiceProvider)
+        .when(
           data: (prefs) {
             return Container(
               decoration: BoxDecoration(
@@ -188,7 +190,10 @@ class _ConfidenceTrackingCard extends ConsumerWidget {
                   color: scheme.primary,
                   size: 28,
                 ),
-                title: Text('Confidence before reveal', style: AppTextStyles.label()),
+                title: Text(
+                  'Confidence before reveal',
+                  style: AppTextStyles.label(),
+                ),
                 subtitle: Text(
                   'When on, the app asks how sure you are on important questions '
                   'before showing the answer — powers Danger Zone insights.',
@@ -214,7 +219,9 @@ class _DarkModeToggleCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    return ref.watch(prefsServiceProvider).when(
+    return ref
+        .watch(prefsServiceProvider)
+        .when(
           data: (prefs) {
             return Container(
               decoration: BoxDecoration(
@@ -315,14 +322,16 @@ class _RateReviewCard extends StatelessWidget {
     final appStore = AppConstants.appStoreUrl.trim();
     final url = ios
         ? (appStore.isNotEmpty
-            ? appStore
-            : 'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}')
+              ? appStore
+              : 'https://apps.apple.com/search?term=${Uri.encodeComponent('UPSC Wars')}')
         : AppConstants.playStoreUrl;
     final uri = Uri.parse(url);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
       ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-        const SnackBar(content: Text('Could not open the store. Try again later.')),
+        const SnackBar(
+          content: Text('Could not open the store. Try again later.'),
+        ),
       );
     }
   }
@@ -342,7 +351,9 @@ class _RateReviewCard extends StatelessWidget {
           padding: const EdgeInsets.all(AppSpacing.xl),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.45)),
+            border: Border.all(
+              color: scheme.outlineVariant.withValues(alpha: 0.45),
+            ),
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -392,7 +403,10 @@ class _RateReviewCard extends StatelessWidget {
                       : 'Open Play Store listing',
                 ),
                 style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 14,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(AppRadius.lg),
                   ),
@@ -415,9 +429,9 @@ class _FeedbackCard extends StatelessWidget {
     await HapticFeedback.selectionClick();
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
-      ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-        const SnackBar(content: Text('Could not open link.')),
-      );
+      ScaffoldMessenger.maybeOf(
+        context,
+      )?.showSnackBar(const SnackBar(content: Text('Could not open link.')));
     }
   }
 
@@ -429,7 +443,9 @@ class _FeedbackCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: scheme.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.45)),
+        border: Border.all(
+          color: scheme.outlineVariant.withValues(alpha: 0.45),
+        ),
         boxShadow: [
           BoxShadow(
             color: scheme.shadow.withValues(alpha: 0.06),
@@ -485,7 +501,8 @@ class _FeedbackCard extends StatelessWidget {
             title: 'Telegram — direct',
             subtitle: 't.me/upsc_wars_sachin',
             hint: 'Quick ping, voice notes, “this broke today”',
-            onTap: () => _launch(context, Uri.parse(CreatorContact.telegramDirectUrl)),
+            onTap: () =>
+                _launch(context, Uri.parse(CreatorContact.telegramDirectUrl)),
           ),
           const Divider(height: 1),
           _FeedbackTile(
@@ -495,7 +512,8 @@ class _FeedbackCard extends StatelessWidget {
             title: 'Telegram — group',
             subtitle: 't.me/upsc_wars_group',
             hint: 'Crowd wisdom, peer energy, battle banter',
-            onTap: () => _launch(context, Uri.parse(CreatorContact.telegramGroupUrl)),
+            onTap: () =>
+                _launch(context, Uri.parse(CreatorContact.telegramGroupUrl)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(
@@ -571,7 +589,9 @@ class _FeedbackTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: AppTextStyles.label().copyWith(color: scheme.onSurface),
+                      style: AppTextStyles.label().copyWith(
+                        color: scheme.onSurface,
+                      ),
                     ),
                     const SizedBox(height: 2),
                     Text(
@@ -617,17 +637,25 @@ class _PrelimsPersistentNotificationCard extends ConsumerWidget {
         decoration: BoxDecoration(
           color: scheme.surface,
           borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.45)),
+          border: Border.all(
+            color: scheme.outlineVariant.withValues(alpha: 0.45),
+          ),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(Icons.notifications_active_outlined, color: scheme.primary, size: 28),
+            Icon(
+              Icons.notifications_active_outlined,
+              color: scheme.primary,
+              size: 28,
+            ),
             const SizedBox(width: AppSpacing.md),
             Expanded(
               child: Text(
                 'The ambient Prelims strip in your status bar is an Android-only flourish for now.',
-                style: AppTextStyles.bodyMd().copyWith(color: scheme.onSurfaceVariant),
+                style: AppTextStyles.bodyMd().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             ),
           ],
@@ -635,78 +663,92 @@ class _PrelimsPersistentNotificationCard extends ConsumerWidget {
       );
     }
 
-    return ref.watch(prefsServiceProvider).when(
-      data: (prefs) {
-        final enabled = prefs.prelimsPersistentNotificationEnabled;
-        return Container(
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: scheme.outlineVariant.withValues(alpha: 0.45)),
+    return ref
+        .watch(prefsServiceProvider)
+        .when(
+          data: (prefs) {
+            final enabled = prefs.prelimsPersistentNotificationEnabled;
+            return Container(
+              decoration: BoxDecoration(
+                color: scheme.surface,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  color: scheme.outlineVariant.withValues(alpha: 0.45),
+                ),
+              ),
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.xl,
+                AppSpacing.lg,
+                AppSpacing.xl,
+                AppSpacing.xl,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Prelims reminder',
+                    style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    'A quiet, persistent nudge in your status bar that keeps the '
+                    'days-until-Prelims count in sight, calmly and continuously. '
+                    'Let it be your pocket-sized motivation: fewer aimless unlocks, '
+                    'a faster pull back to the desk—each time the screen wakes in your hand.',
+                    style: AppTextStyles.bodySm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.5,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(
+                      'Show in status bar',
+                      style: AppTextStyles.label(),
+                    ),
+                    subtitle: Text(
+                      'Low priority · No sound or vibration',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                    value: enabled,
+                    onChanged: (v) async {
+                      final s = await ref.read(prefsServiceProvider.future);
+                      s.prelimsPersistentNotificationEnabled = v;
+                      ref.invalidate(prefsServiceProvider);
+                      await PrelimsSurfacesRefresh.refreshAllSurfaces();
+                    },
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    enabled ? 'Preview' : 'Preview (dimmed while off)',
+                    style: AppTextStyles.labelSm().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Opacity(
+                    opacity: enabled ? 1 : 0.5,
+                    child: const _AndroidPrelimsNotificationPreview(),
+                  ),
+                ],
+              ),
+            );
+          },
+          loading: () => Container(
+            height: 120,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: scheme.surface,
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: const CircularProgressIndicator(strokeWidth: 2),
           ),
-          padding: const EdgeInsets.fromLTRB(AppSpacing.xl, AppSpacing.lg, AppSpacing.xl, AppSpacing.xl),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Prelims reminder',
-                style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
-              ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                'A quiet, persistent nudge in your status bar that keeps the '
-                'days-until-Prelims count in sight, calmly and continuously. '
-                'Let it be your pocket-sized motivation: fewer aimless unlocks, '
-                'a faster pull back to the desk—each time the screen wakes in your hand.',
-                style: AppTextStyles.bodySm().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.5,
-                ),
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              SwitchListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text('Show in status bar', style: AppTextStyles.label()),
-                subtitle: Text(
-                  'Low priority · No sound or vibration',
-                  style: AppTextStyles.bodySm().copyWith(color: scheme.onSurfaceVariant),
-                ),
-                value: enabled,
-                onChanged: (v) async {
-                  final s = await ref.read(prefsServiceProvider.future);
-                  s.prelimsPersistentNotificationEnabled = v;
-                  ref.invalidate(prefsServiceProvider);
-                  await PrelimsSurfacesRefresh.refreshAllSurfaces();
-                },
-              ),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                enabled ? 'Preview' : 'Preview (dimmed while off)',
-                style: AppTextStyles.labelSm().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  letterSpacing: 0.3,
-                ),
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              Opacity(
-                opacity: enabled ? 1 : 0.5,
-                child: const _AndroidPrelimsNotificationPreview(),
-              ),
-            ],
-          ),
+          error: (_, _) => const SizedBox.shrink(),
         );
-      },
-      loading: () => Container(
-        height: 120,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: scheme.surface,
-          borderRadius: BorderRadius.circular(24),
-        ),
-        child: const CircularProgressIndicator(strokeWidth: 2),
-      ),
-      error: (_, _) => const SizedBox.shrink(),
-    );
   }
 }
 
@@ -736,10 +778,7 @@ class _AndroidPrelimsNotificationPreview extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                    primary,
-                    Color.lerp(primary, Colors.black, 0.22)!,
-                  ],
+                  colors: [primary, Color.lerp(primary, Colors.black, 0.22)!],
                 ),
               ),
               child: const Icon(

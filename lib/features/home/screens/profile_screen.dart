@@ -9,6 +9,42 @@ import '../providers/auth_providers.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 
+class _ProfileFooter extends StatelessWidget {
+  const _ProfileFooter();
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final style = Theme.of(context).textTheme.labelSmall?.copyWith(
+          color: scheme.onSurfaceVariant,
+          height: 1.45,
+        );
+    return Column(
+      children: [
+        Text(
+          'Current app version: ${AppConstants.releaseVersionLabel}',
+          textAlign: TextAlign.center,
+          style: style,
+        ),
+        const SizedBox(height: 6),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Made with love ', style: style),
+            Icon(
+              Icons.favorite,
+              size: 15,
+              color: scheme.error.withValues(alpha: 0.9),
+            ),
+            Text(' in Delhi', style: style),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
 class ProfileScreen extends HookConsumerWidget {
   const ProfileScreen({super.key});
 
@@ -88,14 +124,7 @@ class ProfileScreen extends HookConsumerWidget {
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                             const SizedBox(height: 16),
-                            Text(
-                              AppConstants.releaseVersionLabel,
-                              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurfaceVariant,
-                                  ),
-                            ),
+                            const _ProfileFooter(),
                             const SizedBox(height: 22),
                             SizedBox(
                               width: double.infinity,
@@ -233,15 +262,9 @@ class ProfileScreen extends HookConsumerWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    AppConstants.releaseVersionLabel,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: Theme.of(context).colorScheme.onSurfaceVariant,
-                        ),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: _ProfileFooter(),
                 ),
                 SafeArea(
                   top: false,

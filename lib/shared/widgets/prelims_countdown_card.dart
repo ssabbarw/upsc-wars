@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -35,6 +36,10 @@ class PrelimsCountdownCard extends HookWidget {
     final quote = PrelimsCountdown.quoteForDate(now: now.value);
     final cardColor = isDark ? AppColors.infoBgDark : AppColors.infoBg;
     final quoteColor = isDark ? AppColors.infoTextDark : AppColors.infoText;
+    final showHomeWidgetHint =
+        !kIsWeb &&
+        (defaultTargetPlatform == TargetPlatform.android ||
+            defaultTargetPlatform == TargetPlatform.iOS);
 
     return Container(
       width: double.infinity,
@@ -71,6 +76,29 @@ class PrelimsCountdownCard extends HookWidget {
             quote,
             style: AppTextStyles.bodySm().copyWith(color: quoteColor),
           ),
+          // if (showHomeWidgetHint) ...[
+          //   const SizedBox(height: AppSpacing.sm),
+          //   Row(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       Icon(
+          //         Icons.widgets_outlined,
+          //         size: 16,
+          //         color: scheme.onSurfaceVariant,
+          //       ),
+          //       const SizedBox(width: AppSpacing.xs),
+          //       Expanded(
+          //         child: Text(
+          //           'You can also add this countdown as a widget on your device home screen.',
+          //           style: AppTextStyles.caption().copyWith(
+          //             color: scheme.onSurfaceVariant,
+          //             height: 1.3,
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ],
         ],
       ),
     );
