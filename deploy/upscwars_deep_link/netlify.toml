@@ -1,0 +1,5 @@
+# Optional: place at Netlify site root so deep link paths serve the fallback page.
+[[redirects]]
+  from = "/share/*"
+  to = "/share/index.html"
+  status = 200

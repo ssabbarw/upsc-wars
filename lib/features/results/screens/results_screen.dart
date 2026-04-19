@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
+import '../../../core/deep_link/share_session_opener.dart';
 import '../../../core/domain/errors/app_errors.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -75,6 +78,19 @@ class ResultsScreen extends ConsumerWidget {
                         onPressed: () =>
                             context.canPop() ? context.pop() : context.go('/'),
                         icon: const Icon(Icons.arrow_back_ios_new_rounded),
+                      ),
+                      IconButton(
+                        tooltip: 'Share questions',
+                        style: IconButton.styleFrom(
+                          foregroundColor: scheme.onSurface,
+                        ),
+                        onPressed: () => unawaited(
+                          shareSessionQuestionsLink(
+                            ref: ref,
+                            sessionId: sessionId,
+                          ),
+                        ),
+                        icon: const Icon(Icons.ios_share_rounded),
                       ),
                       Expanded(
                         child: Column(

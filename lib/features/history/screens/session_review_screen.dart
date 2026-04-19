@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/deep_link/share_session_opener.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
@@ -94,6 +97,9 @@ class SessionReviewScreen extends HookConsumerWidget {
               isBookmarked: isBookmarked,
               isQueued: isQueued,
               confidenceSessionId: sessionId,
+              onShare: () => unawaited(
+                shareSessionQuestionsLink(ref: ref, sessionId: sessionId),
+              ),
               onToggleBookmark: () async {
                 final repo = await ref.read(
                   testEngineRepositoryProvider.future,
@@ -159,6 +165,7 @@ class ReviewBody extends StatelessWidget {
     required this.onLanguageChanged,
     this.confidenceBanner,
     this.confidenceSessionId,
+    this.onShare,
   });
 
   final String title;
@@ -181,6 +188,7 @@ class ReviewBody extends StatelessWidget {
 
   /// When set, a read-only confidence line is shown under the user’s chosen option.
   final String? confidenceSessionId;
+  final VoidCallback? onShare;
 
   @override
   Widget build(BuildContext context) {
@@ -199,6 +207,7 @@ class ReviewBody extends StatelessWidget {
           isBookmarked: isBookmarked,
           showRevisionBadge: showRevisionBadge,
           onBookmark: onToggleBookmark,
+          onShare: onShare,
           uiLanguage: uiLanguage,
           onLanguageChanged: onLanguageChanged,
         ),
@@ -440,6 +449,7 @@ class _TopBar extends HookConsumerWidget {
     required this.isBookmarked,
     required this.showRevisionBadge,
     required this.onBookmark,
+    this.onShare,
     required this.uiLanguage,
     required this.onLanguageChanged,
   });
@@ -447,6 +457,7 @@ class _TopBar extends HookConsumerWidget {
   final bool isBookmarked;
   final bool showRevisionBadge;
   final VoidCallback onBookmark;
+  final VoidCallback? onShare;
   final String uiLanguage;
   final ValueChanged<String> onLanguageChanged;
   @override
@@ -549,6 +560,17 @@ class _TopBar extends HookConsumerWidget {
             ),
           ),
           const SizedBox(width: 8),
+          if (onShare != null) ...[
+            InkWell(
+              onTap: onShare,
+              child: Icon(
+                Icons.ios_share_rounded,
+                size: 20,
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(width: 8),
+          ],
           InkWell(
             onTap: onBookmark,
             child: Icon(

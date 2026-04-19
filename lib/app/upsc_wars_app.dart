@@ -10,6 +10,7 @@ import '../core/analytics/analytics_events.dart';
 import '../core/constants/prelims_debug_flags.dart';
 import '../core/providers/app_bootstrap.dart';
 import '../core/services/battle_messaging_service.dart';
+import '../core/services/share_deep_link_service.dart';
 import '../core/services/fcm_token_sync_service.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
@@ -67,8 +68,11 @@ class _RootMaterialApp extends HookConsumerWidget {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         final router = ref.read(appRouterProvider);
         unawaited(BattleMessagingService.initialize(router));
+        unawaited(ShareDeepLinkService.initialize(ref, router));
       });
-      return null;
+      return () {
+        unawaited(ShareDeepLinkService.dispose());
+      };
     }, const []);
 
     useEffect(() {

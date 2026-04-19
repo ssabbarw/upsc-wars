@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UPSC Wars — Shared practice</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0f172a; --card: #1e293b; --accent: #2563eb; --muted: #94a3b8; --ok: #22c55e; --bad: #ef4444; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: var(--bg); color: #e2e8f0; min-height: 100vh; }
+    .banner { background: #1d4ed8; color: #fff; padding: 12px 16px; font-weight: 600; text-align: center; font-size: 14px; }
+    main { max-width: 720px; margin: 0 auto; padding: 20px 16px 48px; }
+    .card { background: var(--card); border-radius: 12px; padding: 16px; margin-bottom: 16px; border: 1px solid #334155; }
+    h1 { font-size: 1.1rem; margin: 0 0 8px; }
+    .meta { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+    .stem { white-space: pre-wrap; line-height: 1.5; margin-bottom: 14px; font-size: 15px; }
+    .opts { display: flex; flex-direction: column; gap: 8px; }
+    button.opt { text-align: left; padding: 12px 14px; border-radius: 10px; border: 1px solid #475569; background: #0f172a; color: #e2e8f0; font-size: 14px; cursor: pointer; }
+    button.opt:hover { border-color: var(--accent); }
+    button.opt:disabled { opacity: 0.55; cursor: default; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    button.pill { padding: 10px 14px; border-radius: 999px; border: none; background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; font-size: 13px; }
+    button.pill.secondary { background: #334155; }
+    .explain { margin-top: 14px; padding: 12px; background: #0f172a; border-radius: 10px; font-size: 14px; line-height: 1.5; color: #cbd5e1; white-space: pre-wrap; }
+    .err { color: var(--bad); font-size: 14px; }
+    .prog { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .store-note { font-size: 11px; color: var(--muted); margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="banner">Open in the UPSC Wars app for full features. Progress here is saved in this browser only.</div>
+  <main id="app">
+    <p class="err" id="status">Loading…</p>
+  </main>
+  <script>
+(function () {
+  var CONFIG = {
+    projectId: 'questionmaker-a821f',
+    apiKey: 'AIzaSyDFs4KrEfmvHWlBWoJLVKbt6PGAof7RKpM',
+  };
+
+  function unwrapValue(v) {
+    if (!v || typeof v !== 'object') return null;
+    if ('stringValue' in v) return v.stringValue;
+    if ('booleanValue' in v) return v.booleanValue;
+    if ('integerValue' in v) return parseInt(v.integerValue, 10);
+    if ('doubleValue' in v) return v.doubleValue;
+    if ('arrayValue' in v) {
+      return (v.arrayValue.values || []).map(unwrapValue);
+    }
+    if ('mapValue' in v) {
+      var out = {};
+      var f = v.mapValue.fields || {};
+      Object.keys(f).forEach(function (k) { out[k] = unwrapValue(f[k]); });
+      return out;
+    }
+    return null;
+  }
+
+  function parsePath() {
+    var p = window.location.pathname.replace(/\/+$/, '').split('/').filter(Boolean);
+    if (p.length < 3 || p[0].toLowerCase() !== 'share') return null;
+    return { kind: p[1].toLowerCase(), shareId: p[2] };
+  }
+
+  function storageKey(shareId) {
+    return 'upscwars_share_v1_' + shareId;
+  }
+
+  function loadProgress(shareId) {
+    try {
+      var raw = localStorage.getItem(storageKey(shareId));
+      if (!raw) return { cursor: 0, attempts: {} };
+      var j = JSON.parse(raw);
+      return {
+        cursor: typeof j.cursor === 'number' ? j.cursor : 0,
+        attempts: j.attempts && typeof j.attempts === 'object' ? j.attempts : {},
+      };
+    } catch (e) {
+      return { cursor: 0, attempts: {} };
+    }
+  }
+
+  function saveProgress(shareId, state) {
+    try {
+      localStorage.setItem(storageKey(shareId), JSON.stringify({
+        cursor: state.cursor,
+        attempts: state.attempts,
+      }));
+    } catch (e) { /* quota */ }
+  }
+
+  function fetchSessionDoc(shareId) {
+    var url = 'https://firestore.googleapis.com/v1/projects/' + CONFIG.projectId +
+      '/databases/(default)/documents/session/' + encodeURIComponent(shareId) +
+      '?key=' + encodeURIComponent(CONFIG.apiKey);
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('Could not load shared session (' + r.status + ').');
+      return r.json();
+    });
+  }
+
+  function docToSession(doc) {
+    var fields = doc.fields || {};
+    var subject = unwrapValue(fields.subject) || '';
+    var topic = unwrapValue(fields.topic) || '';
+    var uuidsRaw = unwrapValue(fields.uuids);
+    if (!Array.isArray(uuidsRaw) || uuidsRaw.length === 0) {
+      throw new Error('Invalid session document.');
+    }
+    return { subject: subject, topic: topic, questions: uuidsRaw };
+  }
+
+  var state = {
+    shareId: '',
+    questions: [],
+    subject: '',
+    topic: '',
+    cursor: 0,
+    attempts: {},
+    phase: 'idle',
+    pendingOption: null,
+  };
+
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k === 'text') n.textContent = attrs[k];
+      else n.setAttribute(k, attrs[k]);
+    });
+    (children || []).forEach(function (c) { n.appendChild(c); });
+    return n;
+  }
+
+  function render() {
+    var app = document.getElementById('app');
+    app.innerHTML = '';
+    var q = state.questions[state.cursor];
+    if (!q) {
+      app.appendChild(el('p', { class: 'err', text: 'No question.' }));
+      return;
+    }
+    var att = state.attempts[q.uuid] || null;
+    var doneHere = !!(att && att.confidence);
+
+    var card = el('div', { class: 'card' });
+    card.appendChild(el('div', { class: 'prog', text: 'Question ' + (state.cursor + 1) + ' of ' + state.questions.length }));
+    card.appendChild(el('h1', { text: 'Shared practice' }));
+    card.appendChild(el('div', { class: 'meta', text: state.subject + (state.topic ? ' · ' + state.topic : '') }));
+    card.appendChild(el('div', { class: 'stem', text: q.displayText || '' }));
+
+    var opts = el('div', { class: 'opts' });
+    ['a', 'b', 'c', 'd'].forEach(function (letter) {
+      var key = 'option' + letter.toUpperCase();
+      var label = q[key] || '';
+      var btn = el('button', { class: 'opt', type: 'button' });
+      btn.textContent = letter.toUpperCase() + ') ' + label;
+      btn.disabled = doneHere;
+      btn.onclick = function () {
+        if (doneHere) return;
+        state.pendingOption = letter;
+        state.phase = 'confidence';
+        render();
+      };
+      opts.appendChild(btn);
+    });
+    card.appendChild(opts);
+
+    if (state.phase === 'confidence' && state.pendingOption && !doneHere) {
+      var row = el('div', { class: 'row' });
+      [['very_sure', 'Very sure'], ['somewhat_sure', 'Somewhat sure'], ['guessing', 'Guessing']].forEach(function (pair) {
+        var b = el('button', { class: 'pill', type: 'button' });
+        b.textContent = pair[1];
+        b.onclick = function () {
+          var correct = (q.correctOption || '').toLowerCase().trim() === state.pendingOption;
+          state.attempts[q.uuid] = {
+            selectedOption: state.pendingOption,
+            confidence: pair[0],
+            correct: correct,
+            at: Date.now(),
+          };
+          state.phase = 'revealed';
+          state.pendingOption = null;
+          saveProgress(state.shareId, { cursor: state.cursor, attempts: state.attempts });
+          render();
+        };
+        row.appendChild(b);
+      });
+      card.appendChild(el('p', { class: 'meta', text: 'How sure were you before revealing?' }));
+      card.appendChild(row);
+    }
+
+    if (doneHere && att) {
+      var verdict = att.correct ? 'Correct' : 'Incorrect';
+      card.appendChild(el('p', { class: 'meta', text: verdict + ' · You chose ' + att.selectedOption.toUpperCase() + ' · ' + att.confidence.replace(/_/g, ' ') }));
+      if (q.finalExplanation) {
+        var ex = el('div', { class: 'explain' });
+        ex.textContent = q.finalExplanation;
+        card.appendChild(ex);
+      }
+      var nav = el('div', { class: 'row' });
+      if (state.cursor > 0) {
+        var prev = el('button', { class: 'pill secondary', type: 'button', text: 'Previous' });
+        prev.onclick = function () {
+          state.cursor--;
+          state.phase = 'idle';
+          saveProgress(state.shareId, { cursor: state.cursor, attempts: state.attempts });
+          render();
+        };
+        nav.appendChild(prev);
+      }
+      if (state.cursor < state.questions.length - 1) {
+        var next = el('button', { class: 'pill', type: 'button', text: 'Next' });
+        next.onclick = function () {
+          state.cursor++;
+          state.phase = 'idle';
+          saveProgress(state.shareId, { cursor: state.cursor, attempts: state.attempts });
+          render();
+        };
+        nav.appendChild(next);
+      } else {
+        var fin = el('button', { class: 'pill', type: 'button', text: 'Done' });
+        fin.onclick = function () {
+          state.phase = 'done';
+          render();
+        };
+        nav.appendChild(fin);
+      }
+      card.appendChild(nav);
+    }
+
+    if (state.phase === 'done') {
+      app.appendChild(el('div', { class: 'card' }, [
+        el('h1', { text: 'Finished' }),
+        el('p', { class: 'meta', text: 'You can revisit this link; your attempts stay in this browser (localStorage).' }),
+      ]));
+      return;
+    }
+
+    app.appendChild(card);
+    app.appendChild(el('p', { class: 'store-note', text: 'Progress key: ' + storageKey(state.shareId) }));
+  }
+
+  function run() {
+    var path = parsePath();
+    var st = document.getElementById('status');
+    if (!path) {
+      st.textContent = 'Invalid link.';
+      return;
+    }
+    state.shareId = path.shareId;
+    var prog = loadProgress(path.shareId);
+    state.cursor = Math.min(prog.cursor, 999);
+    state.attempts = prog.attempts;
+    state.phase = 'idle';
+
+    fetchSessionDoc(path.shareId)
+      .then(docToSession)
+      .then(function (s) {
+        state.questions = s.questions;
+        state.subject = s.subject;
+        state.topic = s.topic;
+        if (state.cursor >= state.questions.length) state.cursor = 0;
+        st.remove();
+        render();
+      })
+      .catch(function (e) {
+        st.className = 'err';
+        st.textContent = e.message || String(e);
+      });
+  }
+
+  run();
+})();
+  </script>
+</body>
+</html>
