@@ -315,6 +315,83 @@ class HomeScreen extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   const PrelimsCountdownCard(),
                   const SizedBox(height: AppSpacing.md),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: home.when(
+                      data: (h) {
+                        final goalDone =
+                            h.dailyGoalProgress >= h.dailyGoalTarget;
+                        final progress = h.dailyGoalTarget == 0
+                            ? 0.0
+                            : (h.dailyGoalProgress / h.dailyGoalTarget)
+                                  .clamp(0.0, 1.0)
+                                  .toDouble();
+                        return LayoutBuilder(
+                          builder: (context, constraints) {
+                            final barWidth = (constraints.maxWidth * 0.55)
+                                .clamp(160.0, 280.0);
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "Today's goal",
+                                  style: AppTextStyles.labelSm().copyWith(
+                                    color: scheme.onSurface,
+                                  ),
+                                ),
+                                Text(
+                                  goalDone
+                                      ? 'Goal complete!'
+                                      : '${h.dailyGoalProgress} / ${h.dailyGoalTarget} questions',
+                                  textAlign: TextAlign.start,
+                                  style: AppTextStyles.caption().copyWith(
+                                    color: goalDone
+                                        ? AppColors.correct
+                                        : scheme.onSurfaceVariant,
+                                  ),
+                                ),
+                                const SizedBox(height: AppSpacing.xs),
+                                SizedBox(
+                                  width: barWidth,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(
+                                      AppRadius.pill,
+                                    ),
+                                    child: LinearProgressIndicator(
+                                      value: progress,
+                                      minHeight: 4,
+                                      color: AppColors.primary,
+                                      backgroundColor:
+                                          scheme.surfaceContainerLow,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      loading: () => past200ms.value
+                          ? SizedBox(
+                              height: 36,
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: SizedBox(
+                                  width: 22,
+                                  height: 22,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: AppColors.primary,
+                                  ),
+                                ),
+                              ),
+                            )
+                          : const SizedBox.shrink(),
+                      error: (_, __) => const SizedBox.shrink(),
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
                   _SubjectGrid(borderColor: borderColor),
                   const SizedBox(height: AppSpacing.md),
                   home.when(
@@ -354,47 +431,10 @@ class HomeScreen extends HookConsumerWidget {
                         '2021',
                         '2020',
                       ];
-                      final goalDone = h.dailyGoalProgress >= h.dailyGoalTarget;
-                      final progress = h.dailyGoalTarget == 0
-                          ? 0.0
-                          : (h.dailyGoalProgress / h.dailyGoalTarget)
-                                .clamp(0.0, 1.0)
-                                .toDouble();
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           HomePageVideoBanner(borderColor: borderColor),
-                          Row(
-                            children: [
-                              Text(
-                                "Today's goal",
-                                style: AppTextStyles.labelSm().copyWith(
-                                  color: scheme.onSurface,
-                                ),
-                              ),
-                              const Spacer(),
-                              Text(
-                                goalDone
-                                    ? 'Goal complete!'
-                                    : '${h.dailyGoalProgress} / ${h.dailyGoalTarget} questions',
-                                style: AppTextStyles.caption().copyWith(
-                                  color: goalDone
-                                      ? AppColors.correct
-                                      : scheme.onSurfaceVariant,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: AppSpacing.xs),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(AppRadius.pill),
-                            child: LinearProgressIndicator(
-                              value: progress,
-                              minHeight: 4,
-                              color: AppColors.primary,
-                              backgroundColor: scheme.surfaceContainerLow,
-                            ),
-                          ),
                           const SizedBox(height: AppSpacing.xl),
                           _PrimaryActionCard(home: h, borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),

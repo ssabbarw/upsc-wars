@@ -47,3 +47,4 @@ app.*.map.json
 
 assets/db/upsc_wars_questions.db
 old
+android/key.properties
