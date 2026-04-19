@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' show min;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -436,18 +435,6 @@ Future<void> _showTestPaletteSheet(
   final session = state.session!;
   final isDark = context.isDarkMode;
   final scheme = Theme.of(context).colorScheme;
-  final prefs = await ref.read(prefsServiceProvider.future);
-  if (!context.mounted) return;
-  final trackConfidence = prefs.confidenceTrackingEnabled;
-  final missingConfidence = trackConfidence
-      ? session.questions
-            .where(
-              (q) =>
-                  (q.status == 'correct' || q.status == 'wrong') &&
-                  q.confidence == null,
-            )
-            .length
-      : 0;
   final attempted =
       session.questions.where((q) => q.status != 'unattempted').length;
   final flagged = session.questions.where((q) => q.flagged).length;
@@ -521,47 +508,8 @@ Future<void> _showTestPaletteSheet(
                   bg: scheme.surfaceContainerLow,
                   fg: scheme.onSurfaceVariant,
                 ),
-                if (trackConfidence) ...[
-                  _LegendItem(
-                    label: 'Sure',
-                    bg: AppColors.correct,
-                    fg: AppColors.onPrimary,
-                  ),
-                  _LegendItem(
-                    label: 'Intelligent',
-                    bg: AppColors.warning,
-                    fg: AppColors.onPrimary,
-                  ),
-                  _LegendItem(
-                    label: 'Pure guess',
-                    bg: scheme.tertiary,
-                    fg: scheme.onTertiary,
-                  ),
-                  _LegendItem(
-                    label: 'No confidence',
-                    bg: scheme.surfaceContainerLow,
-                    fg: scheme.onSurfaceVariant,
-                    dashedBorder: true,
-                  ),
-                ],
               ],
             ),
-            if (trackConfidence && missingConfidence > 0) ...[
-              const SizedBox(height: AppSpacing.sm),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Logging confidence helps spot blind spots and calibrate revision — '
-                  '$missingConfidence answered question${missingConfidence == 1 ? '' : 's'} '
-                  'have no confidence yet (dashed outline on the grid).',
-                  style: AppTextStyles.caption().copyWith(
-                    color: scheme.primary,
-                    fontWeight: FontWeight.w600,
-                    height: 1.35,
-                  ),
-                ),
-              ),
-            ],
             const SizedBox(height: AppSpacing.md),
             Wrap(
               spacing: AppSpacing.sm,
@@ -578,7 +526,6 @@ Future<void> _showTestPaletteSheet(
                       currentIndex: state.currentIndex,
                       q: session.questions[i],
                       isDark: isDark,
-                      trackConfidence: trackConfidence,
                     ),
                   ),
               ],
@@ -688,18 +635,16 @@ class _LegendItem extends HookConsumerWidget {
     required this.label,
     required this.bg,
     required this.fg,
-    this.dashedBorder = false,
   });
 
   final String label;
   final Color bg;
   final Color fg;
-  final bool dashedBorder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    Widget swatch = Container(
+    final swatch = Container(
       width: 16,
       height: 16,
       decoration: BoxDecoration(
@@ -713,15 +658,6 @@ class _LegendItem extends HookConsumerWidget {
         ),
       ),
     );
-    if (dashedBorder) {
-      swatch = CustomPaint(
-        painter: _DashedRRectPainter(
-          color: scheme.outline,
-          radius: 4,
-        ),
-        child: swatch,
-      );
-    }
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -1541,14 +1477,12 @@ class _PaletteCell extends HookConsumerWidget {
     required this.currentIndex,
     required this.q,
     required this.isDark,
-    required this.trackConfidence,
   });
 
   final int index;
   final int currentIndex;
   final TestQuestion q;
   final bool isDark;
-  final bool trackConfidence;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -1570,23 +1504,7 @@ class _PaletteCell extends HookConsumerWidget {
       fg = scheme.onSurfaceVariant;
     }
 
-    final scored = q.status == 'correct' || q.status == 'wrong';
-    Color? confStrip;
-    var missingConf = false;
-    if (trackConfidence && scored) {
-      switch (q.confidence) {
-        case AnswerConfidence.verySure:
-          confStrip = AppColors.correct;
-        case AnswerConfidence.somewhatSure:
-          confStrip = AppColors.warning;
-        case AnswerConfidence.guessing:
-          confStrip = scheme.tertiary;
-        default:
-          missingConf = true;
-      }
-    }
-
-    Widget cell = Container(
+    return Container(
       width: 40,
       height: 40,
       alignment: Alignment.center,
@@ -1599,74 +1517,5 @@ class _PaletteCell extends HookConsumerWidget {
         style: AppTextStyles.labelSm().copyWith(color: fg),
       ),
     );
-
-    if (confStrip != null) {
-      cell = Stack(
-        clipBehavior: Clip.none,
-        children: [
-          cell,
-          Positioned(
-            top: 0,
-            left: 3,
-            right: 3,
-            child: Container(
-              height: 3,
-              decoration: BoxDecoration(
-                color: confStrip,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(2),
-                ),
-              ),
-            ),
-          ),
-        ],
-      );
-    } else if (missingConf) {
-      cell = CustomPaint(
-        painter: _DashedRRectPainter(
-          color: scheme.outline,
-          radius: AppRadius.sm,
-        ),
-        child: cell,
-      );
-    }
-
-    return cell;
   }
-}
-
-/// Rounded-rectangle dashed stroke for “confidence not logged” cells.
-class _DashedRRectPainter extends CustomPainter {
-  _DashedRRectPainter({required this.color, required this.radius});
-
-  final Color color;
-  final double radius;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final inset = 1.0;
-    final rrect = RRect.fromRectAndRadius(
-      Rect.fromLTWH(inset, inset, size.width - 2 * inset, size.height - 2 * inset),
-      Radius.circular(radius),
-    );
-    final path = Path()..addRRect(rrect);
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.6;
-    for (final metric in path.computeMetrics()) {
-      var distance = 0.0;
-      const dashLen = 3.5;
-      const gapLen = 3.0;
-      while (distance < metric.length) {
-        final next = min(distance + dashLen, metric.length);
-        canvas.drawPath(metric.extractPath(distance, next), paint);
-        distance = next + gapLen;
-      }
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant _DashedRRectPainter oldDelegate) =>
-      oldDelegate.color != color || oldDelegate.radius != radius;
 }

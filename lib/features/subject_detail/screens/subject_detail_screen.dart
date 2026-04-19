@@ -151,9 +151,7 @@ class _Header extends ConsumerWidget {
       ),
       decoration: BoxDecoration(
         color: scheme.surface,
-        border: Border(
-          bottom: BorderSide(color: borderColor, width: 0.5),
-        ),
+        border: Border(bottom: BorderSide(color: borderColor, width: 0.5)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,7 +170,9 @@ class _Header extends ConsumerWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: isDark ? 0.2 : 0.12),
+                  color: AppColors.primary.withValues(
+                    alpha: isDark ? 0.2 : 0.12,
+                  ),
                   borderRadius: BorderRadius.circular(AppRadius.md),
                 ),
                 child: Icon(subjectIcon, size: 20, color: AppColors.primary),
@@ -744,10 +744,7 @@ class _SessionRow extends StatelessWidget {
 // ── Insights Section ────────────────────────────────────────────────────────────
 
 class _InsightsSection extends ConsumerWidget {
-  const _InsightsSection({
-    required this.subject,
-    required this.borderColor,
-  });
+  const _InsightsSection({required this.subject, required this.borderColor});
 
   final String subject;
   final Color borderColor;
@@ -782,7 +779,10 @@ class _InsightsSection extends ConsumerWidget {
                 borderColor: borderColor,
               ),
               const SizedBox(height: AppSpacing.sm),
-              _TopicPercentileCard(insights: insights, borderColor: borderColor),
+              _TopicPercentileCard(
+                insights: insights,
+                borderColor: borderColor,
+              ),
             ],
           ),
         ),
@@ -821,101 +821,127 @@ class _DangerZoneSummaryCard extends ConsumerWidget {
             isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
           );
 
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
+    // Rounded corners require a uniform border color on BoxDecoration; the
+    // left accent is drawn separately so we keep the same look without the
+    // framework assertion.
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(AppRadius.lg),
+      child: ColoredBox(
         color: scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border(
-          left: BorderSide(color: accent, width: 3),
-          top: BorderSide(color: borderColor, width: 0.5),
-          right: BorderSide(color: borderColor, width: 0.5),
-          bottom: BorderSide(color: borderColor, width: 0.5),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Danger Zone',
-            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            'Confidently wrong (last 30 days)',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.md),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: calm
-                    ? Text(
-                        '🟢 Well calibrated this month',
-                        style: AppTextStyles.bodyMd().copyWith(
-                          color: scheme.onSurface,
-                        ),
-                      )
-                    : Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '⚠️ $count Danger Zone question${count == 1 ? '' : 's'}',
-                            style: AppTextStyles.bodyMd().copyWith(
-                              color: scheme.onSurface,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          const SizedBox(height: AppSpacing.xs),
-                          Text(
-                            'Would cost ${insights.dangerZoneMarksLast30.toStringAsFixed(2)} marks',
-                            style: AppTextStyles.caption().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  border: Border.all(color: borderColor, width: 0.5),
+                ),
               ),
-              if (!calm)
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppSpacing.md,
-                    vertical: AppSpacing.sm,
-                  ),
-                  decoration: BoxDecoration(
-                    color: bg,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                  ),
-                  child: Text(
-                    '$count',
-                    style: AppTextStyles.h2().copyWith(
-                      color: accent,
-                      fontWeight: FontWeight.w700,
+            ),
+            Positioned(
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: 3,
+              child: ColoredBox(color: accent),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                3 + AppSpacing.lg,
+                AppSpacing.lg,
+                AppSpacing.lg,
+                AppSpacing.lg,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Danger Zone',
+                    style: AppTextStyles.label().copyWith(
+                      color: scheme.onSurface,
                     ),
                   ),
-                ),
-            ],
-          ),
-          if (!calm) ...[
-            const SizedBox(height: AppSpacing.md),
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: () {
-                  ref.read(historyFilterStateProvider.notifier).setSubject(subject);
-                  context.push('/history');
-                },
-                child: Text(
-                  'Review all in History',
-                  style: AppTextStyles.label(),
-                ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    'Confidently wrong (last 30 days)',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: calm
+                            ? Text(
+                                '🟢 Well calibrated this month',
+                                style: AppTextStyles.bodyMd().copyWith(
+                                  color: scheme.onSurface,
+                                ),
+                              )
+                            : Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '⚠️ $count Danger Zone question${count == 1 ? '' : 's'}',
+                                    style: AppTextStyles.bodyMd().copyWith(
+                                      color: scheme.onSurface,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(height: AppSpacing.xs),
+                                  Text(
+                                    'Would cost ${insights.dangerZoneMarksLast30.toStringAsFixed(2)} marks',
+                                    style: AppTextStyles.caption().copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                      ),
+                      if (!calm)
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.md,
+                            vertical: AppSpacing.sm,
+                          ),
+                          decoration: BoxDecoration(
+                            color: bg,
+                            borderRadius: BorderRadius.circular(AppRadius.md),
+                          ),
+                          child: Text(
+                            '$count',
+                            style: AppTextStyles.h2().copyWith(
+                              color: accent,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                  if (!calm) ...[
+                    const SizedBox(height: AppSpacing.md),
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          ref
+                              .read(historyFilterStateProvider.notifier)
+                              .setSubject(subject);
+                          context.push('/history');
+                        },
+                        child: Text(
+                          'Review all in History',
+                          style: AppTextStyles.label(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
           ],
-        ],
+        ),
       ),
     );
   }
@@ -924,7 +950,10 @@ class _DangerZoneSummaryCard extends ConsumerWidget {
 // ── Card 2: Topic risk (percentile bands, 30 days) ─────────────────────────────
 
 class _TopicPercentileCard extends StatelessWidget {
-  const _TopicPercentileCard({required this.insights, required this.borderColor});
+  const _TopicPercentileCard({
+    required this.insights,
+    required this.borderColor,
+  });
   final SubjectInsights insights;
   final Color borderColor;
 
@@ -1013,10 +1042,7 @@ class _TopicPercentileRow extends StatelessWidget {
 // ── Shared Helpers ──────────────────────────────────────────────────────────────
 
 class _InsightsLoadError extends StatelessWidget {
-  const _InsightsLoadError({
-    required this.borderColor,
-    required this.onRetry,
-  });
+  const _InsightsLoadError({required this.borderColor, required this.onRetry});
 
   final Color borderColor;
   final VoidCallback onRetry;
