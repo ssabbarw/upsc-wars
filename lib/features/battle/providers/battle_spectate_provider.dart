@@ -27,6 +27,7 @@ class BattleSpectateState {
     required this.playerByUuid,
     required this.opponentByUuid,
     required this.deadline,
+    this.opponentPaperSubmitted = false,
   });
 
   final String sessionId;
@@ -40,13 +41,17 @@ class BattleSpectateState {
   final Map<String, String> opponentByUuid;
   final DateTime deadline;
 
+  /// From opponent's `joined_users.battle_paper_submitted` (they submitted the test).
+  final bool opponentPaperSubmitted;
+
   bool get opponentCaughtUp =>
       questions.every((q) => opponentByUuid.containsKey(q.uuid));
 
   bool get timerExpired => DateTime.now().isAfter(deadline);
 
-  /// Opponent finished all questions, or global timer window ended.
-  bool get battleSettled => opponentCaughtUp || timerExpired;
+  /// Opponent finished all questions, submitted the paper, or timer window ended.
+  bool get battleSettled =>
+      opponentCaughtUp || opponentPaperSubmitted || timerExpired;
 
   bool get opponentStillPlaying => !opponentCaughtUp && !timerExpired;
 
@@ -77,6 +82,7 @@ class BattleSpectateState {
   BattleSpectateState copyWith({
     Map<String, String>? playerByUuid,
     Map<String, String>? opponentByUuid,
+    bool? opponentPaperSubmitted,
   }) {
     return BattleSpectateState(
       sessionId: sessionId,
@@ -89,6 +95,8 @@ class BattleSpectateState {
       playerByUuid: playerByUuid ?? this.playerByUuid,
       opponentByUuid: opponentByUuid ?? this.opponentByUuid,
       deadline: deadline,
+      opponentPaperSubmitted:
+          opponentPaperSubmitted ?? this.opponentPaperSubmitted,
     );
   }
 }
@@ -105,6 +113,7 @@ class BattleSpectateStartArgs {
     required this.playerByUuid,
     required this.opponentByUuid,
     required this.deadline,
+    this.opponentPaperSubmitted = false,
   });
 
   final String sessionId;
@@ -117,6 +126,7 @@ class BattleSpectateStartArgs {
   final Map<String, String> playerByUuid;
   final Map<String, String> opponentByUuid;
   final DateTime deadline;
+  final bool opponentPaperSubmitted;
 }
 
 class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
@@ -164,6 +174,8 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
             playerByUuid: _decodeStringMap(m['playerByUuid']),
             opponentByUuid: _decodeStringMap(m['opponentByUuid']),
             deadline: deadline,
+            opponentPaperSubmitted:
+                (m['opponentPaperSubmitted'] as bool?) ?? false,
           ),
         );
       } catch (e, st) {
@@ -192,6 +204,7 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
       playerByUuid: Map<String, String>.from(args.playerByUuid),
       opponentByUuid: Map<String, String>.from(args.opponentByUuid),
       deadline: args.deadline,
+      opponentPaperSubmitted: args.opponentPaperSubmitted,
     );
     _sub = _joinedUsersCol(args.sessionId).snapshots().listen(
       _onSnapshot,
@@ -205,12 +218,17 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
     if (cur == null) return;
     Map<String, String>? playerDoc;
     Map<String, String>? oppDoc;
+    var opponentPaper = cur.opponentPaperSubmitted;
     for (final d in snap.docs) {
       if (d.id == cur.playerId) {
         playerDoc = _responsesFromList(d.data()['responses'], cur.questions);
       }
       if (d.id == cur.opponentId) {
         oppDoc = _responsesFromList(d.data()['responses'], cur.questions);
+        final data = d.data();
+        if ((data['battle_paper_submitted'] as bool?) == true) {
+          opponentPaper = true;
+        }
       }
     }
     state = cur.copyWith(
@@ -220,6 +238,7 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
       opponentByUuid: oppDoc == null
           ? cur.opponentByUuid
           : {...cur.opponentByUuid, ...oppDoc},
+      opponentPaperSubmitted: opponentPaper,
     );
     unawaited(_persistSnapshot());
   }
@@ -255,6 +274,7 @@ class BattleSpectateNotifier extends StateNotifier<BattleSpectateState?> {
         'deadline': cur.deadline.toIso8601String(),
         'playerByUuid': cur.playerByUuid,
         'opponentByUuid': cur.opponentByUuid,
+        'opponentPaperSubmitted': cur.opponentPaperSubmitted,
       });
     } catch (e, st) {
       debugPrint('BattleSpectateNotifier._persistSnapshot: $e');

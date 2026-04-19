@@ -13,10 +13,14 @@ class BattleLiveScoreboard extends ConsumerWidget {
     super.key,
     required this.sessionId,
     this.fallbackPayload,
+    this.battleFinishedOverride,
   });
 
   final String sessionId;
   final BattleResultPayload? fallbackPayload;
+
+  /// When non-null, forces the "Battle finished" chip on [BattleScoresCollapsible].
+  final bool? battleFinishedOverride;
 
   static String _letter(String name) {
     final t = name.trim();
@@ -28,6 +32,8 @@ class BattleLiveScoreboard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final spectate = ref.watch(battleSpectateProvider);
     if (spectate != null && spectate.sessionId == sessionId) {
+      final finished =
+          battleFinishedOverride ?? spectate.battleSettled;
       return BattleScoresCollapsible(
         opponentName: spectate.opponentName,
         playerOutcomeByQuestion: spectate.playerOutcomes,
@@ -36,10 +42,12 @@ class BattleLiveScoreboard extends ConsumerWidget {
         playerInitial: _letter(spectate.playerName),
         playerPhotoUrl: spectate.playerPhotoUrl,
         initiallyExpanded: true,
+        battleFinished: finished,
       );
     }
 
-    final battle = ref.watch(battleSessionProvider(sessionId)).battleSession;
+    final ui = ref.watch(battleSessionProvider(sessionId));
+    final battle = ui.battleSession;
     if (battle != null) {
       final notifier = ref.read(battleSessionProvider(sessionId).notifier);
       final payload = notifier.buildResultPayload();
@@ -50,6 +58,12 @@ class BattleLiveScoreboard extends ConsumerWidget {
       final opponentOutcomes =
           payload?.opponentOutcomeByQuestion ??
           List<bool?>.filled(n, null);
+      final opponentCaughtUp = battle.baseSession.questions.every(
+        (q) => battle.opponentResponsesByQuestion.containsKey(q.uuid),
+      );
+      final finished =
+          battleFinishedOverride ??
+          (ui.opponentPaperSubmitted || opponentCaughtUp);
       return BattleScoresCollapsible(
         opponentName: battle.opponent.displayName,
         playerOutcomeByQuestion: playerOutcomes,
@@ -58,11 +72,13 @@ class BattleLiveScoreboard extends ConsumerWidget {
         playerInitial: _letter(battle.player.displayName),
         playerPhotoUrl: battle.player.photoUrl,
         initiallyExpanded: true,
+        battleFinished: finished,
       );
     }
 
     final fb = fallbackPayload;
     if (fb != null && fb.sessionId == sessionId) {
+      final finished = battleFinishedOverride ?? false;
       return BattleScoresCollapsible(
         opponentName: fb.opponentName,
         playerOutcomeByQuestion: fb.playerOutcomeByQuestion,
@@ -70,6 +86,7 @@ class BattleLiveScoreboard extends ConsumerWidget {
         opponentInitial: _letter(fb.opponentName),
         playerInitial: _letter(fb.playerName),
         initiallyExpanded: true,
+        battleFinished: finished,
       );
     }
 

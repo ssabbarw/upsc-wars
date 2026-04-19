@@ -7,6 +7,20 @@ import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 class BattleRoomRepository {
   const BattleRoomRepository();
 
+  /// Call when the local player submits the battle paper so spectators can
+  /// treat unanswered slots as final (Firestore `responses` uses `0` there).
+  Future<void> markBattlePaperSubmitted({
+    required String sessionId,
+    required String participantDocId,
+  }) async {
+    await BattleFirestorePaths.joinedUsersCol(sessionId)
+        .doc(participantDocId)
+        .set(
+          {'battle_paper_submitted': true},
+          SetOptions(merge: true),
+        );
+  }
+
   Future<void> upsertParticipantResponses({
     required String sessionId,
     required String participantDocId,

@@ -16,6 +16,8 @@ abstract final class PrefKeys {
   static const prelimsPersistentNotification = 'prelims_persistent_notification';
   /// JSON payload to restore battle spectate after app restart.
   static const battleSpectateRecovery = 'battle_spectate_recovery_v1';
+  /// Last user-dragged position for the live-duel FAB (`"left,top"` in logical px).
+  static const battleSpectateFabPos = 'battle_spectate_fab_pos_v1';
   /// Ask confidence before reveal in practice (adaptive); default on.
   static const confidenceTrackingEnabled = 'confidence_tracking_enabled';
   /// Shown once: Hindi/English availability + question-screen toggle.
@@ -75,6 +77,17 @@ class PrefsService {
       _p.remove(PrefKeys.battleSpectateRecovery);
     } else {
       _p.setString(PrefKeys.battleSpectateRecovery, v);
+    }
+  }
+
+  /// Persisted top-left of the live-duel FAB; null uses default bottom-right.
+  String? get battleSpectateFabPosition =>
+      _p.getString(PrefKeys.battleSpectateFabPos);
+  set battleSpectateFabPosition(String? v) {
+    if (v == null || v.isEmpty) {
+      _p.remove(PrefKeys.battleSpectateFabPos);
+    } else {
+      _p.setString(PrefKeys.battleSpectateFabPos, v);
     }
   }
 

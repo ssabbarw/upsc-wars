@@ -50,6 +50,7 @@ class BattleResultScreen extends HookConsumerWidget {
     final scheme = Theme.of(context).colorScheme;
     final spectate = ref.watch(battleSpectateProvider);
     final firestoreLive = useState(payload);
+    final opponentBattleOver = useState(false);
 
     useEffect(() {
       if (spectate != null && spectate.sessionId == payload.sessionId) {
@@ -61,6 +62,7 @@ class BattleResultScreen extends HookConsumerWidget {
       var mergedOpp = <String, String>{};
 
       firestoreLive.value = payload;
+      opponentBattleOver.value = false;
 
       Future<void> run() async {
         try {
@@ -94,8 +96,13 @@ class BattleResultScreen extends HookConsumerWidget {
             }
             if (oppDoc == null) return;
 
+            final oppData = oppDoc.data();
+            if ((oppData['battle_paper_submitted'] as bool?) == true) {
+              opponentBattleOver.value = true;
+            }
+
             final slice = battleOpponentResponsesFromJoinedDoc(
-              oppDoc.data()['responses'],
+              oppData['responses'],
               questions,
             );
             mergedOpp = {...mergedOpp, ...slice};
@@ -158,6 +165,11 @@ class BattleResultScreen extends HookConsumerWidget {
               BattleLiveScoreboard(
                 sessionId: payload.sessionId,
                 fallbackPayload: displayPayload,
+                battleFinishedOverride:
+                    spectate != null &&
+                            spectate.sessionId == payload.sessionId
+                        ? null
+                        : opponentBattleOver.value,
               ),
               const SizedBox(height: AppSpacing.lg),
               BattleResultScoreComparison(payload: displayPayload),

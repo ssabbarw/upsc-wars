@@ -37,6 +37,7 @@ class BattleSessionUiState {
     required this.totalElapsedSecs,
     required this.bookmarkedByUuid,
     required this.waitingForGuestToJoin,
+    required this.opponentPaperSubmitted,
   });
 
   factory BattleSessionUiState.initial() {
@@ -50,6 +51,7 @@ class BattleSessionUiState {
       totalElapsedSecs: 0,
       bookmarkedByUuid: {},
       waitingForGuestToJoin: false,
+      opponentPaperSubmitted: false,
     );
   }
 
@@ -62,6 +64,9 @@ class BattleSessionUiState {
   final int totalElapsedSecs;
   final Map<String, bool> bookmarkedByUuid;
   final bool waitingForGuestToJoin;
+
+  /// Opponent's `joined_users` doc has `battle_paper_submitted` (they ended the test).
+  final bool opponentPaperSubmitted;
 
   BattleScore? get playerScore {
     final current = battleSession;
@@ -92,6 +97,7 @@ class BattleSessionUiState {
     int? totalElapsedSecs,
     Map<String, bool>? bookmarkedByUuid,
     bool? waitingForGuestToJoin,
+    bool? opponentPaperSubmitted,
   }) {
     return BattleSessionUiState(
       isLoading: isLoading ?? this.isLoading,
@@ -104,6 +110,8 @@ class BattleSessionUiState {
       bookmarkedByUuid: bookmarkedByUuid ?? this.bookmarkedByUuid,
       waitingForGuestToJoin:
           waitingForGuestToJoin ?? this.waitingForGuestToJoin,
+      opponentPaperSubmitted:
+          opponentPaperSubmitted ?? this.opponentPaperSubmitted,
     );
   }
 }
@@ -419,10 +427,20 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
   Future<String> submit() async {
     final current = state.battleSession;
     if (current == null) throw StateError('No battle session');
+    final roomId = state.roomId;
+    final playerDocId = current.player.id;
     state = state.copyWith(isSubmitting: true, clearError: true);
     try {
       final uc = await ref.read(submitSessionUseCaseProvider.future);
       final resultId = await uc.execute(sessionId);
+      if (roomId != null) {
+        unawaited(
+          _roomRepository.markBattlePaperSubmitted(
+            sessionId: roomId,
+            participantDocId: playerDocId,
+          ),
+        );
+      }
       state = state.copyWith(isSubmitting: false, clearError: true);
       return resultId;
     } catch (_) {
@@ -562,6 +580,9 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
         base.baseSession.questions,
       );
 
+      final opponentSubmitted =
+          (opponentDoc?.data()['battle_paper_submitted'] as bool?) == true;
+
       final current = state.battleSession;
       if (current == null) return;
       state = state.copyWith(
@@ -569,6 +590,8 @@ class BattleSessionController extends StateNotifier<BattleSessionUiState> {
           playerResponsesByQuestion: playerResponses,
           opponentResponsesByQuestion: opponentResponses,
         ),
+        opponentPaperSubmitted:
+            opponentSubmitted || state.opponentPaperSubmitted,
       );
     });
   }

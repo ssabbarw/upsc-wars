@@ -44,9 +44,11 @@ Future<void> submitBattleWithOptionalSpectate(
           ),
         );
 
-  final opponentComplete = battle.baseSession.questions.every(
-    (q) => battle.opponentResponsesByQuestion.containsKey(q.uuid),
-  );
+  final opponentComplete =
+      battle.baseSession.questions.every(
+        (q) => battle.opponentResponsesByQuestion.containsKey(q.uuid),
+      ) ||
+      ui.opponentPaperSubmitted;
 
   var wantSpectate = false;
   if (askConfirmation) {
@@ -64,6 +66,8 @@ Future<void> submitBattleWithOptionalSpectate(
   final id = await notifier.submit();
   final payload = notifier.buildResultPayload();
   if (!context.mounted) return;
+
+  final uiAfterSubmit = ref.read(battleSessionProvider(sessionId));
 
   if (wantSpectate) {
     ref
@@ -84,6 +88,7 @@ Future<void> submitBattleWithOptionalSpectate(
               battle.opponentResponsesByQuestion,
             ),
             deadline: deadline,
+            opponentPaperSubmitted: uiAfterSubmit.opponentPaperSubmitted,
           ),
         );
   }

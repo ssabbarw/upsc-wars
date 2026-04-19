@@ -20,6 +20,7 @@ class BattleScoresCollapsible extends StatelessWidget {
     this.opponentMonogramBackground,
     this.playerMonogramBackground,
     this.initiallyExpanded = true,
+    this.battleFinished = false,
   });
 
   final String opponentName;
@@ -34,6 +35,9 @@ class BattleScoresCollapsible extends StatelessWidget {
   final Color? opponentMonogramBackground;
   final Color? playerMonogramBackground;
   final bool initiallyExpanded;
+
+  /// Both sides are done (submitted / timer / spectate settled).
+  final bool battleFinished;
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +81,55 @@ class BattleScoresCollapsible extends StatelessWidget {
           collapsedShape: const RoundedRectangleBorder(),
           iconColor: subtle,
           collapsedIconColor: subtle,
-          title: Text(
-            'Scores',
-            style: AppTextStyles.label().copyWith(
-              color: onHeader,
-              fontWeight: FontWeight.w600,
-            ),
+          title: Row(
+            children: [
+              Text(
+                'Scores',
+                style: AppTextStyles.label().copyWith(
+                  color: onHeader,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              if (battleFinished) ...[
+                const SizedBox(width: AppSpacing.sm),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.sm,
+                    vertical: 2,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.info.withValues(alpha: isDark ? 0.35 : 0.2),
+                    borderRadius: BorderRadius.circular(AppRadius.pill),
+                    border: Border.all(
+                      color: AppColors.info.withValues(alpha: 0.55),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.flag_rounded,
+                        size: 13,
+                        color: isDark
+                            ? AppColors.infoTextDark
+                            : AppColors.infoText,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        'Battle finished',
+                        style: AppTextStyles.caption().copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: isDark
+                              ? AppColors.infoTextDark
+                              : AppColors.infoText,
+                          letterSpacing: 0.2,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ],
           ),
           children: [
             ColoredBox(

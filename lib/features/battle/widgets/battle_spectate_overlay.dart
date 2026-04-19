@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_riverpod/legacy.dart'
     show StateNotifier, StateNotifierProvider;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/router/app_router.dart' show rootNavigatorKey;
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
@@ -58,6 +60,9 @@ String battleSpectateVerdictLine(BattleSpectateState s) {
 
 String battleSpectateStatusSubline(BattleSpectateState s) {
   final short = _opponentShortName(s.opponentName);
+  if (s.opponentPaperSubmitted && !s.opponentCaughtUp) {
+    return '$short has submitted; unanswered questions stay blank.';
+  }
   if (s.opponentCaughtUp) {
     return '$short has locked in every answer.';
   }
@@ -65,6 +70,45 @@ String battleSpectateStatusSubline(BattleSpectateState s) {
     return 'The timer window ended; the room will not add more live marks.';
   }
   return '$short is still working through the paper.';
+}
+
+Offset? _decodeFabOffset(String? raw) {
+  if (raw == null || raw.isEmpty) return null;
+  final parts = raw.split(',');
+  if (parts.length != 2) return null;
+  final dx = double.tryParse(parts[0].trim());
+  final dy = double.tryParse(parts[1].trim());
+  if (dx == null || dy == null) return null;
+  return Offset(dx, dy);
+}
+
+String _encodeFabOffset(Offset o) =>
+    '${o.dx.toStringAsFixed(1)},${o.dy.toStringAsFixed(1)}';
+
+Offset _defaultFabTopLeft(Size canvas, MediaQueryData mq, Size fab) {
+  return Offset(
+    canvas.width - fab.width - AppSpacing.md,
+    canvas.height - mq.padding.bottom - 88 - fab.height,
+  );
+}
+
+Offset _clampFabTopLeft(Offset o, Size canvas, MediaQueryData mq, Size fab) {
+  const margin = AppSpacing.sm;
+  final pad = mq.padding;
+  final minLeft = pad.left + margin;
+  final minTop = pad.top + margin;
+  final maxLeft = math.max(
+    minLeft,
+    canvas.width - fab.width - pad.right - margin,
+  );
+  final maxTop = math.max(
+    minTop,
+    canvas.height - fab.height - pad.bottom - margin,
+  );
+  return Offset(
+    o.dx.clamp(minLeft, maxLeft),
+    o.dy.clamp(minTop, maxTop),
+  );
 }
 
 /// FAB close (X): confirm before stopping while the opponent is still playing.
@@ -173,74 +217,148 @@ class BattleSpectateFabHost extends HookConsumerWidget {
       return t.cancel;
     }, [s?.sessionId]);
 
+    final fabKey = useMemoized(GlobalKey.new);
+    final fabTopLeft = useState<Offset?>(null);
+    final fabSize = useState(const Size(200, 48));
+    final persistTimer = useRef<Timer?>(null);
+
+    useEffect(() {
+      Future(() async {
+        try {
+          final prefs = await ref.read(prefsServiceProvider.future);
+          final parsed = _decodeFabOffset(prefs.battleSpectateFabPosition);
+          if (parsed != null) {
+            fabTopLeft.value = parsed;
+          }
+        } catch (_) {}
+      });
+      return () {
+        persistTimer.value?.cancel();
+      };
+    }, const []);
+
+    useEffect(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final box = fabKey.currentContext?.findRenderObject() as RenderBox?;
+        if (box != null && box.hasSize) {
+          fabSize.value = box.size;
+        }
+      });
+      return null;
+    }, [s?.sessionId]);
+
     if (s == null || sheetOpen) return const SizedBox.shrink();
 
     final settled = s.battleSettled;
     final accent = settled ? AppColors.info : AppColors.primary;
     final duelIcon =
-        settled ? Icons.check_circle_rounded : Icons.sensors_rounded;
-    final duelLabel = settled ? 'They\'re done' : 'Live duel';
+        settled ? Icons.flag_rounded : Icons.sensors_rounded;
+    final duelLabel = settled ? 'Battle over' : 'Live duel';
 
-    final bottom = MediaQuery.of(context).padding.bottom + 88;
+    void schedulePersistFab(Offset topLeft) {
+      persistTimer.value?.cancel();
+      persistTimer.value = Timer(const Duration(milliseconds: 450), () async {
+        try {
+          final prefs = await ref.read(prefsServiceProvider.future);
+          prefs.battleSpectateFabPosition = _encodeFabOffset(topLeft);
+        } catch (_) {}
+      });
+    }
+
+    // [Positioned] must be a direct child of the root [Stack] in
+    // [MaterialApp.router] `builder` — not wrapped in [LayoutBuilder].
+    final mq = MediaQuery.of(context);
+    final canvas = mq.size;
+    final sz = fabSize.value;
+    final defaultPos = _defaultFabTopLeft(canvas, mq, sz);
+    final topLeft = _clampFabTopLeft(
+      fabTopLeft.value ?? defaultPos,
+      canvas,
+      mq,
+      sz,
+    );
 
     return Positioned(
-      right: AppSpacing.md,
-      bottom: bottom,
-      child: Material(
-        elevation: 10,
-        borderRadius: BorderRadius.circular(AppRadius.xl),
-        color: accent,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            InkWell(
-              onTap: () => openBattleSpectateSheet(ref),
-              borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(AppRadius.xl),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.sm,
-                  AppSpacing.xs,
-                  AppSpacing.xs,
-                  AppSpacing.xs,
+      left: topLeft.dx,
+      top: topLeft.dy,
+      child: GestureDetector(
+        onPanUpdate: (details) {
+          final base = fabTopLeft.value ?? defaultPos;
+          final next = _clampFabTopLeft(
+            base + details.delta,
+            canvas,
+            mq,
+            sz,
+          );
+          fabTopLeft.value = next;
+          schedulePersistFab(next);
+        },
+        child: Material(
+          key: fabKey,
+          elevation: 10,
+          color: accent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.xl),
+            side: settled
+                ? BorderSide(
+                    color: AppColors.onPrimary.withValues(alpha: 0.9),
+                    width: 2,
+                  )
+                : BorderSide.none,
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              InkWell(
+                onTap: () => openBattleSpectateSheet(ref),
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(AppRadius.xl),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(duelIcon, color: AppColors.onPrimary, size: 22),
-                    const SizedBox(width: 6),
-                    Text(
-                      duelLabel,
-                      style: AppTextStyles.label().copyWith(
-                        color: AppColors.onPrimary,
-                        fontWeight: FontWeight.w700,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.sm,
+                    AppSpacing.xs,
+                    AppSpacing.xs,
+                    AppSpacing.xs,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(duelIcon, color: AppColors.onPrimary, size: 22),
+                      const SizedBox(width: 6),
+                      Text(
+                        duelLabel,
+                        style: AppTextStyles.label().copyWith(
+                          color: AppColors.onPrimary,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: () => promptStopLiveDuelFromFab(ref),
-              borderRadius: BorderRadius.horizontal(
-                right: Radius.circular(AppRadius.xl),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  4,
-                  AppSpacing.xs,
-                  AppSpacing.sm,
-                  AppSpacing.xs,
+              InkWell(
+                onTap: () => promptStopLiveDuelFromFab(ref),
+                borderRadius: BorderRadius.horizontal(
+                  right: Radius.circular(AppRadius.xl),
                 ),
-                child: Icon(
-                  Icons.close,
-                  color: AppColors.onPrimary.withValues(alpha: 0.92),
-                  size: 20,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    4,
+                    AppSpacing.xs,
+                    AppSpacing.sm,
+                    AppSpacing.xs,
+                  ),
+                  child: Icon(
+                    Icons.close,
+                    color: AppColors.onPrimary.withValues(alpha: 0.92),
+                    size: 20,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
