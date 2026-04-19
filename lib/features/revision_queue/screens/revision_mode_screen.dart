@@ -13,7 +13,9 @@ class RevisionModeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final review = ref.watch(reviewSessionProvider(sessionId));
+    final review = ref.watch(
+      reviewSessionProvider((sessionId: sessionId, focusWrong: false)),
+    );
     return Scaffold(
       body: SafeArea(
         child: review.when(
@@ -22,7 +24,11 @@ class RevisionModeScreen extends HookConsumerWidget {
               (e, st) => Center(
                 child: FilledButton(
                   onPressed:
-                      () => ref.invalidate(reviewSessionProvider(sessionId)),
+                      () => ref.invalidate(
+                      reviewSessionProvider(
+                        (sessionId: sessionId, focusWrong: false),
+                      ),
+                    ),
                   child: const Text('Retry'),
                 ),
               ),
@@ -46,6 +52,7 @@ class RevisionModeScreen extends HookConsumerWidget {
               isBookmarked: isBookmarked,
               isQueued: true,
               isRevisionMode: true,
+              confidenceSessionId: sessionId,
               onToggleBookmark: () async {
                 final repo = await ref.read(
                   testEngineRepositoryProvider.future,

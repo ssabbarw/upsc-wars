@@ -72,5 +72,18 @@ class AppColors {
   /// Text and icons on primary-colored controls.
   static const onPrimary = Color(0xFFFFFFFF);
 
+  /// Session summary / marketing-style CTAs (distinct from app primary teal).
+  static const summaryCtaBlue = Color(0xFF2563EB);
+
+  /// Charts and “attempted” segments on the minimalist summary.
+  static const summaryChartBlue = Color(0xFF3B82F6);
+
+  /// Intelligent-guess tier on the minimalist session summary.
+  static const summaryOrange = Color(0xFFF59E0B);
+
+  /// Outlined secondary CTA on the minimalist session summary (light UI).
+  static const summaryButtonBorder = Color(0xFFD1D5DB);
+  static const summaryButtonText = Color(0xFF374151);
+
   static const transparent = Color(0x00000000);
 }

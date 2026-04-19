@@ -45,7 +45,10 @@ class DangerZoneReviewScreen extends HookConsumerWidget {
             if (questions.isEmpty) {
               return _EmptyDangerZone(onBack: () => context.pop());
             }
-            return _DangerZonePager(questions: questions);
+            return _DangerZonePager(
+              sessionId: sessionId,
+              questions: questions,
+            );
           },
         ),
       ),
@@ -91,8 +94,9 @@ class _EmptyDangerZone extends StatelessWidget {
 }
 
 class _DangerZonePager extends HookConsumerWidget {
-  const _DangerZonePager({required this.questions});
+  const _DangerZonePager({required this.sessionId, required this.questions});
 
+  final String sessionId;
   final List<TestQuestion> questions;
 
   @override
@@ -132,6 +136,7 @@ class _DangerZonePager extends HookConsumerWidget {
       total: total,
       isBookmarked: isBookmarked,
       isQueued: false,
+      confidenceSessionId: sessionId,
       onToggleBookmark: () async {
         final repo = await ref.read(testEngineRepositoryProvider.future);
         if (isBookmarked) {

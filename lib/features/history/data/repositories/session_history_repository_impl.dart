@@ -114,6 +114,7 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
       confidenceIntelligentCorrect: intelC,
       confidencePureTotal: pureT,
       confidencePureCorrect: pureC,
+      analyticsFeatureKey: session.analyticsFeatureKey,
     );
   }
 

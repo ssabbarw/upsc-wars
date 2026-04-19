@@ -6,7 +6,8 @@ import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 
 /// Collapsible battle scores: two players in one row with compact per-question
-/// outcome circles (primary green strip, on-brand with the app).
+/// outcome circles. Uses surface chrome so [AppColors.correct] chips stay
+/// visually distinct from the header (primary and correct share the same hue).
 class BattleScoresCollapsible extends StatelessWidget {
   const BattleScoresCollapsible({
     super.key,
@@ -36,6 +37,11 @@ class BattleScoresCollapsible extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final headerBg = scheme.surfaceContainerHigh;
+    final onHeader = scheme.onSurface;
+    final subtle = scheme.onSurfaceVariant;
+    final border = scheme.outline.withValues(alpha: 0.22);
     return ClipRRect(
       borderRadius: BorderRadius.circular(AppRadius.lg),
       child: Theme(
@@ -52,14 +58,22 @@ class BattleScoresCollapsible extends StatelessWidget {
             AppSpacing.sm,
             AppSpacing.sm,
           ),
-          backgroundColor: AppColors.primary,
-          collapsedBackgroundColor: AppColors.primary,
-          iconColor: AppColors.onPrimary,
-          collapsedIconColor: AppColors.onPrimary,
+          backgroundColor: headerBg,
+          collapsedBackgroundColor: headerBg,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            side: BorderSide(color: border),
+          ),
+          collapsedShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.lg),
+            side: BorderSide(color: border),
+          ),
+          iconColor: subtle,
+          collapsedIconColor: subtle,
           title: Text(
             'Scores',
             style: AppTextStyles.label().copyWith(
-              color: AppColors.onPrimary,
+              color: onHeader,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -72,7 +86,7 @@ class BattleScoresCollapsible extends StatelessWidget {
                     alignEnd: false,
                     avatar: _MonogramAvatar(
                       letter: opponentInitial,
-                      onPrimaryStrip: opponentMonogramBackground == null,
+                      onPrimaryStrip: false,
                       backgroundColor: opponentMonogramBackground,
                       foregroundColor: opponentMonogramBackground != null
                           ? battleMatchMonogramForeground(
@@ -91,7 +105,7 @@ class BattleScoresCollapsible extends StatelessWidget {
                     avatar: _PlayerAvatarStrip(
                       initial: playerInitial,
                       photoUrl: playerPhotoUrl,
-                      onPrimaryStrip: playerMonogramBackground == null,
+                      onPrimaryStrip: false,
                       monogramBackground: playerMonogramBackground,
                       monogramForeground: playerMonogramBackground != null
                           ? battleMatchMonogramForeground(
@@ -143,7 +157,7 @@ class _PlayerScoreColumn extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: alignEnd ? TextAlign.right : TextAlign.left,
                 style: AppTextStyles.label().copyWith(
-                  color: AppColors.onPrimary,
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -168,6 +182,7 @@ class _PlayerScoreColumn extends StatelessWidget {
                       _TinyOutcomeCircle(
                         questionNumber: i + 1,
                         outcome: outcomes[i],
+                        scheme: Theme.of(context).colorScheme,
                       ),
                     ],
                   ],
@@ -185,22 +200,29 @@ class _TinyOutcomeCircle extends StatelessWidget {
   const _TinyOutcomeCircle({
     required this.questionNumber,
     required this.outcome,
+    required this.scheme,
   });
 
   final int questionNumber;
   final bool? outcome;
+  final ColorScheme scheme;
 
   @override
   Widget build(BuildContext context) {
     final color = switch (outcome) {
       true => AppColors.correct,
       false => AppColors.wrong,
-      null => AppColors.onPrimary.withValues(alpha: 0.22),
+      null => scheme.surfaceContainerHighest,
     };
     final textColor = switch (outcome) {
       true => AppColors.onPrimary,
       false => AppColors.onPrimary,
-      null => AppColors.onPrimary.withValues(alpha: 0.9),
+      null => scheme.onSurfaceVariant,
+    };
+    final borderColor = switch (outcome) {
+      true => AppColors.correct.withValues(alpha: 0.45),
+      false => AppColors.wrong.withValues(alpha: 0.45),
+      null => scheme.outline.withValues(alpha: 0.45),
     };
 
     return Container(
@@ -211,7 +233,7 @@ class _TinyOutcomeCircle extends StatelessWidget {
         shape: BoxShape.circle,
         color: color,
         border: Border.all(
-          color: AppColors.onPrimary.withValues(alpha: 0.35),
+          color: borderColor,
           width: 0.5,
         ),
       ),
@@ -289,9 +311,10 @@ class _PlayerAvatarStrip extends StatelessWidget {
   Widget build(BuildContext context) {
     final url = photoUrl?.trim();
     if (url != null && url.isNotEmpty) {
+      final scheme = Theme.of(context).colorScheme;
       return CircleAvatar(
         radius: 18,
-        backgroundColor: AppColors.onPrimary.withValues(alpha: 0.22),
+        backgroundColor: scheme.surfaceContainerHighest,
         child: ClipOval(
           child: Image.network(
             url,
@@ -302,7 +325,7 @@ class _PlayerAvatarStrip extends StatelessWidget {
               child: Text(
                 initial,
                 style: AppTextStyles.label().copyWith(
-                  color: AppColors.onPrimary,
+                  color: scheme.onSurface,
                   fontWeight: FontWeight.w700,
                 ),
               ),

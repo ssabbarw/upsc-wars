@@ -35,10 +35,13 @@ class ReviewSessionState {
   }
 }
 
-final reviewSessionProvider = FutureProvider.family<ReviewSessionState, String>(
-  (ref, sessionId) async {
+typedef ReviewSessionParams = ({String sessionId, bool focusWrong});
+
+final reviewSessionProvider =
+    FutureProvider.family<ReviewSessionState, ReviewSessionParams>(
+  (ref, arg) async {
     final load = await ref.read(loadSessionUseCaseProvider.future);
-    final active = await load.execute(sessionId);
+    final active = await load.execute(arg.sessionId);
     final sorted = [...active.questions]
       ..sort((a, b) => a.position.compareTo(b.position));
     final repo = await ref.read(testEngineRepositoryProvider.future);
@@ -53,9 +56,15 @@ final reviewSessionProvider = FutureProvider.family<ReviewSessionState, String>(
       queue[q.uuid] = queued != null;
     }
 
+    var startIndex = 0;
+    if (arg.focusWrong) {
+      final i = sorted.indexWhere((q) => q.status == 'wrong');
+      if (i >= 0) startIndex = i;
+    }
+
     return ReviewSessionState(
       questions: sorted,
-      currentIndex: 0,
+      currentIndex: startIndex,
       bookmarkedByUuid: bm,
       queuedByUuid: queue,
     );

@@ -14,6 +14,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
+import '../../../shared/theme/dark_mode_toggle.dart';
 
 /// Play Store listing (Android package from `android/app/build.gradle.kts`).
 const _kPlayStoreUrl =
@@ -238,9 +239,11 @@ class _DarkModeToggleCard extends ConsumerWidget {
                 ),
                 value: prefs.darkModeEnabled,
                 onChanged: (v) async {
-                  final s = await ref.read(prefsServiceProvider.future);
-                  s.darkModeEnabled = v;
-                  ref.invalidate(prefsServiceProvider);
+                  await setDarkModeEnabledWithLoader(
+                    context: context,
+                    ref: ref,
+                    darkModeEnabled: v,
+                  );
                 },
                 secondary: Icon(
                   prefs.darkModeEnabled

@@ -28,6 +28,7 @@ class SessionResult {
     this.confidenceIntelligentCorrect = 0,
     this.confidencePureTotal = 0,
     this.confidencePureCorrect = 0,
+    this.analyticsFeatureKey,
   });
   final String sessionId;
   final String subject;
@@ -70,4 +71,7 @@ class SessionResult {
   /// Scored rows with pure guess ([AnswerConfidence.guessing]).
   final int confidencePureTotal;
   final int confidencePureCorrect;
+
+  /// When set (e.g. `mcq_battle`), identifies the session's originating feature.
+  final String? analyticsFeatureKey;
 }

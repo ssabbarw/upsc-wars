@@ -8,7 +8,6 @@ import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
-import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -19,6 +18,7 @@ import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 import 'package:upsc_wars/features/test_engine/providers/test_session_state.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/shared/widgets/top_snack_bar.dart';
@@ -200,9 +200,11 @@ class _BattleTestSessionView extends HookConsumerWidget {
                 size: 20,
               ),
               onPressed: () async {
-                final prefs = await ref.read(prefsServiceProvider.future);
-                prefs.darkModeEnabled = !isDark;
-                ref.invalidate(prefsServiceProvider);
+                await setDarkModeEnabledWithLoader(
+                  context: context,
+                  ref: ref,
+                  darkModeEnabled: !isDark,
+                );
               },
             ),
           ],

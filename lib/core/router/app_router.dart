@@ -236,16 +236,22 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/session-confidence-review/:sessionId/:tier',
-        builder: (context, state) => ConfidenceTierReviewScreen(
-          sessionId: state.pathParameters['sessionId']!,
-          tier: state.pathParameters['tier']!,
-        ),
+        builder: (context, state) {
+          final o = state.uri.queryParameters['outcome'];
+          return ConfidenceTierReviewScreen(
+            sessionId: state.pathParameters['sessionId']!,
+            tier: state.pathParameters['tier']!,
+            outcomeFilter: (o == 'correct' || o == 'wrong') ? o : null,
+          );
+        },
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/history/:sessionId',
-        builder: (context, state) =>
-            SessionReviewScreen(sessionId: state.pathParameters['sessionId']!),
+        builder: (context, state) => SessionReviewScreen(
+          sessionId: state.pathParameters['sessionId']!,
+          focusWrong: state.uri.queryParameters['focus'] == 'wrong',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,

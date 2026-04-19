@@ -13,13 +13,13 @@ import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
-import '../../../core/providers/prefs_provider.dart';
 import '../../../core/providers/quick_practice_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
+import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
@@ -232,11 +232,11 @@ class HomeScreen extends HookConsumerWidget {
                     color: AppColors.transparent,
                     child: InkWell(
                       onTap: () async {
-                        final prefs = await ref.read(
-                          prefsServiceProvider.future,
+                        await setDarkModeEnabledWithLoader(
+                          context: context,
+                          ref: ref,
+                          darkModeEnabled: !isDark,
                         );
-                        prefs.darkModeEnabled = !isDark;
-                        ref.invalidate(prefsServiceProvider);
                       },
                       borderRadius: BorderRadius.circular(AppRadius.md),
                       child: Container(

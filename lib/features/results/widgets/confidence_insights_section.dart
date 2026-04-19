@@ -40,10 +40,6 @@ class ConfidenceInsightsSection extends StatelessWidget {
     return (_loggedTotal(r) / a).clamp(0.0, 1.0);
   }
 
-  void _openTier(BuildContext context, String tier) {
-    context.push('/session-confidence-review/$sessionId/$tier');
-  }
-
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
@@ -107,7 +103,7 @@ class ConfidenceInsightsSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'How your confidence matched outcomes',
+                        'Confidence calibration',
                         style: AppTextStyles.h3().copyWith(
                           color: scheme.onSurface,
                           height: 1.2,
@@ -115,7 +111,7 @@ class ConfidenceInsightsSection extends StatelessWidget {
                       ),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
-                        'Tap a row to review only those questions in this session.',
+                        'Tap a cell to review those questions only (same session).',
                         style: AppTextStyles.caption().copyWith(
                           color: scheme.onSurfaceVariant,
                           height: 1.35,
@@ -157,38 +153,374 @@ class ConfidenceInsightsSection extends StatelessWidget {
                     'Aim for at least half — the more you log, the sharper your insights get.',
               ),
             ],
-            const SizedBox(height: AppSpacing.lg),
-            _TierInsightTile(
-              scheme: scheme,
-              title: AnswerConfidence.examShortLabel(AnswerConfidence.verySure),
-              subtitle: 'High conviction picks',
-              accent: AppColors.correct,
-              total: result.confidenceSureTotal,
-              correct: result.confidenceSureCorrect,
-              onOpen: () => _openTier(context, AnswerConfidence.verySure),
+            if (logged > 0) ...[
+              const SizedBox(height: AppSpacing.lg),
+              _CalibrationMatrix(
+                scheme: scheme,
+                result: result,
+                onCellTap:
+                    (ctx, {required tier, required outcome, required count}) {
+                  if (count <= 0) return;
+                  ctx.push(
+                    '/session-confidence-review/$sessionId/$tier?outcome=$outcome',
+                  );
+                },
+              ),
+              if (result.confidenceSureTotal >= 3) ...[
+                const SizedBox(height: AppSpacing.md),
+                _SureTierAccuracyBanner(
+                  scheme: scheme,
+                  sureTotal: result.confidenceSureTotal,
+                  sureCorrect: result.confidenceSureCorrect,
+                ),
+              ],
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+typedef _CalibrationCellTap = void Function(
+  BuildContext context, {
+  required String tier,
+  required String outcome,
+  required int count,
+});
+
+class _CalibrationMatrix extends StatelessWidget {
+  const _CalibrationMatrix({
+    required this.scheme,
+    required this.result,
+    required this.onCellTap,
+  });
+
+  final ColorScheme scheme;
+  final SessionResult result;
+  final _CalibrationCellTap onCellTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final sureC = result.confidenceSureCorrect;
+    final sureW = result.confidenceSureTotal - sureC;
+    final intC = result.confidenceIntelligentCorrect;
+    final intW = result.confidenceIntelligentTotal - intC;
+    final pureC = result.confidencePureCorrect;
+    final pureW = result.confidencePureTotal - pureC;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            SizedBox(
+              width: 52,
+              child: Text(
+                '',
+                style: AppTextStyles.caption().copyWith(fontSize: 10),
+              ),
             ),
-            const SizedBox(height: AppSpacing.sm),
-            _TierInsightTile(
-              scheme: scheme,
-              title: AnswerConfidence.examShortLabel(AnswerConfidence.somewhatSure),
-              subtitle: 'Reasoned but not certain',
-              accent: AppColors.warning,
-              total: result.confidenceIntelligentTotal,
-              correct: result.confidenceIntelligentCorrect,
-              onOpen: () => _openTier(context, AnswerConfidence.somewhatSure),
+            Expanded(
+              child: _MatrixColHeader(scheme: scheme, label: 'Sure'),
             ),
-            const SizedBox(height: AppSpacing.sm),
-            _TierInsightTile(
-              scheme: scheme,
-              title: AnswerConfidence.examShortLabel(AnswerConfidence.guessing),
-              subtitle: 'Honest long shots',
-              accent: scheme.tertiary,
-              total: result.confidencePureTotal,
-              correct: result.confidencePureCorrect,
-              onOpen: () => _openTier(context, AnswerConfidence.guessing),
+            Expanded(
+              child: _MatrixColHeader(scheme: scheme, label: 'Likely'),
+            ),
+            Expanded(
+              child: _MatrixColHeader(scheme: scheme, label: 'Guess'),
             ),
           ],
         ),
+        const SizedBox(height: AppSpacing.xs),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _MatrixRowLabel(scheme: scheme, label: 'Correct'),
+            Expanded(
+              child: _MatrixCell(
+                scheme: scheme,
+                count: sureC,
+                tier: AnswerConfidence.verySure,
+                outcome: 'correct',
+                emphasizeLuck: false,
+                onTap: onCellTap,
+              ),
+            ),
+            Expanded(
+              child: _MatrixCell(
+                scheme: scheme,
+                count: intC,
+                tier: AnswerConfidence.somewhatSure,
+                outcome: 'correct',
+                emphasizeLuck: false,
+                onTap: onCellTap,
+              ),
+            ),
+            Expanded(
+              child: _MatrixCell(
+                scheme: scheme,
+                count: pureC,
+                tier: AnswerConfidence.guessing,
+                outcome: 'correct',
+                emphasizeLuck: pureC > 0,
+                onTap: onCellTap,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.xs),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _MatrixRowLabel(scheme: scheme, label: 'Wrong'),
+            Expanded(
+              child: _MatrixCell(
+                scheme: scheme,
+                count: sureW,
+                tier: AnswerConfidence.verySure,
+                outcome: 'wrong',
+                danger: sureW > 0,
+                onTap: onCellTap,
+              ),
+            ),
+            Expanded(
+              child: _MatrixCell(
+                scheme: scheme,
+                count: intW,
+                tier: AnswerConfidence.somewhatSure,
+                outcome: 'wrong',
+                danger: intW > 0,
+                onTap: onCellTap,
+              ),
+            ),
+            Expanded(
+              child: _MatrixCell(
+                scheme: scheme,
+                count: pureW,
+                tier: AnswerConfidence.guessing,
+                outcome: 'wrong',
+                danger: false,
+                onTap: onCellTap,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _MatrixColHeader extends StatelessWidget {
+  const _MatrixColHeader({required this.scheme, required this.label});
+
+  final ColorScheme scheme;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        label,
+        textAlign: TextAlign.center,
+        style: AppTextStyles.caption().copyWith(
+          color: scheme.onSurfaceVariant,
+          fontWeight: FontWeight.w800,
+          fontSize: 11,
+        ),
+      ),
+    );
+  }
+}
+
+class _MatrixRowLabel extends StatelessWidget {
+  const _MatrixRowLabel({required this.scheme, required this.label});
+
+  final ColorScheme scheme;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 52,
+      child: Padding(
+        padding: const EdgeInsets.only(top: AppSpacing.md),
+        child: Text(
+          label,
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _MatrixCell extends StatelessWidget {
+  const _MatrixCell({
+    required this.scheme,
+    required this.count,
+    required this.tier,
+    required this.outcome,
+    required this.onTap,
+    this.danger = false,
+    this.emphasizeLuck = false,
+  });
+
+  final ColorScheme scheme;
+  final int count;
+  final String tier;
+  final String outcome;
+  final _CalibrationCellTap onTap;
+  final bool danger;
+  final bool emphasizeLuck;
+
+  @override
+  Widget build(BuildContext context) {
+    final enabled = count > 0;
+    final borderColor = danger
+        ? AppColors.wrong
+        : emphasizeLuck
+            ? AppColors.warning
+            : scheme.outlineVariant.withValues(alpha: 0.45);
+    final bg = scheme.surface.withValues(alpha: 0.88);
+
+    if (!enabled) {
+      return Padding(
+        padding: const EdgeInsets.all(3),
+        child: Container(
+          height: 72,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: scheme.surfaceContainerLow.withValues(alpha: 0.5),
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            border: Border.all(
+              color: scheme.outlineVariant.withValues(alpha: 0.2),
+            ),
+          ),
+          child: Text(
+            '—',
+            style: AppTextStyles.h3().copyWith(
+              color: scheme.onSurfaceVariant.withValues(alpha: 0.45),
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget? icon;
+    if (danger) {
+      icon = Icon(Icons.warning_amber_rounded, size: 16, color: AppColors.wrong);
+    } else if (emphasizeLuck) {
+      icon = const Text('🍀', style: TextStyle(fontSize: 14));
+    } else if (outcome == 'correct') {
+      icon = Icon(
+        Icons.check_circle_outline,
+        size: 16,
+        color: AppColors.correct,
+      );
+    } else {
+      icon = Icon(
+        Icons.cancel_outlined,
+        size: 16,
+        color: scheme.onSurfaceVariant,
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.all(3),
+      child: Material(
+        color: bg,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        child: InkWell(
+          onTap: () => onTap(context, tier: tier, outcome: outcome, count: count),
+          borderRadius: BorderRadius.circular(AppRadius.md),
+          child: Container(
+            height: 72,
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.xs,
+            ),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppRadius.md),
+              border: Border.all(
+                color: borderColor.withValues(alpha: 0.85),
+                width: danger ? 1.4 : 1,
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                icon,
+                const SizedBox(height: 2),
+                Text(
+                  '$count',
+                  style: AppTextStyles.h3().copyWith(
+                    color: scheme.onSurface,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SureTierAccuracyBanner extends StatelessWidget {
+  const _SureTierAccuracyBanner({
+    required this.scheme,
+    required this.sureTotal,
+    required this.sureCorrect,
+  });
+
+  final ColorScheme scheme;
+  final int sureTotal;
+  final int sureCorrect;
+
+  @override
+  Widget build(BuildContext context) {
+    final pct = sureTotal == 0 ? 0.0 : (100.0 * sureCorrect / sureTotal);
+    final warn = pct < 75;
+    return Container(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: warn ? scheme.errorContainer : scheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(
+          color: warn
+              ? scheme.error.withValues(alpha: 0.35)
+              : scheme.secondary.withValues(alpha: 0.3),
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            warn ? Icons.priority_high_rounded : Icons.verified_outlined,
+            color: warn ? scheme.onErrorContainer : scheme.onSecondaryContainer,
+            size: 22,
+          ),
+          const SizedBox(width: AppSpacing.sm),
+          Expanded(
+            child: Text(
+              warn
+                  ? 'When you tapped Sure, you were right '
+                      '${pct.toStringAsFixed(0)}% of the time ($sureCorrect / $sureTotal). '
+                      'Aim for about 75%+ on high-conviction picks before Prelims.'
+                  : 'Sure-tier accuracy ${pct.toStringAsFixed(0)}% ($sureCorrect / $sureTotal). '
+                      'That is in a healthy range for conviction answers.',
+              style: AppTextStyles.bodySm().copyWith(
+                color: warn ? scheme.onErrorContainer : scheme.onSurface,
+                height: 1.35,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -308,264 +640,6 @@ class _TeaserCallout extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _TierInsightTile extends StatelessWidget {
-  const _TierInsightTile({
-    required this.scheme,
-    required this.title,
-    required this.subtitle,
-    required this.accent,
-    required this.total,
-    required this.correct,
-    required this.onOpen,
-  });
-
-  final ColorScheme scheme;
-  final String title;
-  final String subtitle;
-  final Color accent;
-  final int total;
-  final int correct;
-  final VoidCallback onOpen;
-
-  @override
-  Widget build(BuildContext context) {
-    final wrong = total - correct;
-    final acc = total > 0 ? (correct * 100 / total) : null;
-    final accLabel = acc == null ? '—' : '${acc.toStringAsFixed(0)}%';
-
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onOpen,
-        borderRadius: BorderRadius.circular(AppRadius.md),
-        child: Ink(
-          decoration: BoxDecoration(
-            color: scheme.surface.withValues(alpha: 0.92),
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(
-              color: accent.withValues(alpha: 0.45),
-              width: 1.2,
-            ),
-          ),
-          child: IntrinsicHeight(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  width: 5,
-                  decoration: BoxDecoration(
-                    color: accent,
-                    borderRadius: const BorderRadius.horizontal(
-                      left: Radius.circular(AppRadius.md - 1),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.md,
-                      AppSpacing.md,
-                      AppSpacing.md,
-                      AppSpacing.md,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    title,
-                                    style: AppTextStyles.h3().copyWith(
-                                      color: scheme.onSurface,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                  Text(
-                                    subtitle,
-                                    style: AppTextStyles.caption().copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Icon(
-                              Icons.chevron_right_rounded,
-                              color: accent,
-                              size: 28,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                        Wrap(
-                          spacing: AppSpacing.sm,
-                          runSpacing: AppSpacing.xs,
-                          children: [
-                            _StatChip(
-                              label: 'Attempted',
-                              value: '$total',
-                              scheme: scheme,
-                            ),
-                            _StatChip(
-                              label: 'Correct',
-                              value: '$correct',
-                              scheme: scheme,
-                              valueColor: AppColors.correct,
-                            ),
-                            _StatChip(
-                              label: 'Incorrect',
-                              value: '$wrong',
-                              scheme: scheme,
-                              valueColor: wrong > 0 ? AppColors.wrong : null,
-                            ),
-                            _StatChip(
-                              label: 'Accuracy',
-                              value: accLabel,
-                              scheme: scheme,
-                              emphasize: acc != null,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: AppSpacing.sm),
-                        _OutcomeRatioBar(
-                          correct: correct,
-                          wrong: wrong,
-                          accentCorrect: AppColors.correct,
-                          accentWrong: AppColors.wrong,
-                          trackColor: scheme.surfaceContainerHighest,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _StatChip extends StatelessWidget {
-  const _StatChip({
-    required this.label,
-    required this.value,
-    required this.scheme,
-    this.valueColor,
-    this.emphasize = false,
-  });
-
-  final String label;
-  final String value;
-  final ColorScheme scheme;
-  final Color? valueColor;
-  final bool emphasize;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.sm,
-        vertical: AppSpacing.xs,
-      ),
-      decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadius.sm),
-        border: Border.all(
-          color: scheme.outlineVariant.withValues(alpha: 0.5),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            label,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontSize: 10,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          Text(
-            value,
-            style: AppTextStyles.label().copyWith(
-              color: valueColor ??
-                  (emphasize ? scheme.primary : scheme.onSurface),
-              fontWeight: emphasize ? FontWeight.w900 : FontWeight.w700,
-              fontSize: emphasize ? 15 : 13,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _OutcomeRatioBar extends StatelessWidget {
-  const _OutcomeRatioBar({
-    required this.correct,
-    required this.wrong,
-    required this.accentCorrect,
-    required this.accentWrong,
-    required this.trackColor,
-  });
-
-  final int correct;
-  final int wrong;
-  final Color accentCorrect;
-  final Color accentWrong;
-  final Color trackColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final t = correct + wrong;
-    if (t == 0) {
-      return Container(
-        height: 12,
-        alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
-        decoration: BoxDecoration(
-          color: trackColor,
-          borderRadius: BorderRadius.circular(AppRadius.sm),
-        ),
-        child: Text(
-          'No attempts in this bucket',
-          style: AppTextStyles.caption().copyWith(
-            fontSize: 10,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-        ),
-      );
-    }
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(AppRadius.sm),
-      child: SizedBox(
-        height: 12,
-        child: Row(
-          children: [
-            if (correct > 0)
-              Expanded(
-                flex: correct,
-                child: Container(color: accentCorrect),
-              ),
-            if (wrong > 0)
-              Expanded(
-                flex: wrong,
-                child: Container(color: accentWrong),
-              ),
           ],
         ),
       ),

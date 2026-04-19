@@ -6,28 +6,63 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
+import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
 import 'package:upsc_wars/shared/extensions/context_extensions.dart';
+import 'package:upsc_wars/shared/theme/dark_mode_toggle.dart';
 import 'package:upsc_wars/shared/widgets/question_table_view.dart';
 import 'package:upsc_wars/shared/widgets/selectable_copy_search_text.dart';
 import 'package:upsc_wars/features/history/providers/review_session_provider.dart';
 import 'package:upsc_wars/features/history/widgets/explanation_card.dart';
 
+String _reviewConfidenceCaption(String? stored) {
+  final v = (stored ?? '').trim();
+  if (v.isEmpty) {
+    return 'Confidence: —';
+  }
+  return 'Confidence: ${AnswerConfidence.examShortLabel(v)}';
+}
+
+Color _reviewConfidenceCaptionColor({
+  required TestQuestion question,
+  required ColorScheme scheme,
+  required bool isDark,
+}) {
+  final conf = question.confidence;
+  if (!AnswerConfidence.isDangerouslyConfident(conf)) {
+    return scheme.onSurfaceVariant;
+  }
+  if (question.status == 'wrong') {
+    return isDark ? AppColors.wrongTextDark : AppColors.wrongText;
+  }
+  if (question.status == 'correct') {
+    return isDark ? AppColors.correctTextDark : AppColors.correctText;
+  }
+  return scheme.onSurfaceVariant;
+}
+
 class SessionReviewScreen extends HookConsumerWidget {
-  const SessionReviewScreen({super.key, required this.sessionId});
+  const SessionReviewScreen({
+    super.key,
+    required this.sessionId,
+    this.focusWrong = false,
+  });
+
   final String sessionId;
+  final bool focusWrong;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final review = ref.watch(reviewSessionProvider(sessionId));
+    final params = (sessionId: sessionId, focusWrong: focusWrong);
+    final review = ref.watch(reviewSessionProvider(params));
     return Scaffold(
       body: SafeArea(
         child: review.when(
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (e, st) => Center(
             child: FilledButton(
-              onPressed: () => ref.invalidate(reviewSessionProvider(sessionId)),
+              onPressed: () => ref.invalidate(reviewSessionProvider(params)),
               child: const Text('Retry'),
             ),
           ),
@@ -58,6 +93,7 @@ class SessionReviewScreen extends HookConsumerWidget {
               total: total,
               isBookmarked: isBookmarked,
               isQueued: isQueued,
+              confidenceSessionId: sessionId,
               onToggleBookmark: () async {
                 final repo = await ref.read(
                   testEngineRepositoryProvider.future,
@@ -122,6 +158,7 @@ class ReviewBody extends StatelessWidget {
     required this.uiLanguage,
     required this.onLanguageChanged,
     this.confidenceBanner,
+    this.confidenceSessionId,
   });
 
   final String title;
@@ -141,6 +178,9 @@ class ReviewBody extends StatelessWidget {
   final ValueChanged<String> onLanguageChanged;
   /// Optional headline for Danger Zone style review.
   final String? confidenceBanner;
+
+  /// When set, a read-only confidence line is shown under the user’s chosen option.
+  final String? confidenceSessionId;
 
   @override
   Widget build(BuildContext context) {
@@ -190,20 +230,24 @@ class ReviewBody extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
           child: Column(
             children: [
-              Row(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
                     'Question $current of $total',
+                    softWrap: true,
                     style: TextStyle(
                       fontSize: 12,
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(height: 4),
                   Text(
                     progressRight,
+                    softWrap: true,
                     style: TextStyle(
                       fontSize: 12,
+                      height: 1.35,
                       color: showRevisionBadge
                           ? scheme.primary
                           : scheme.onSurfaceVariant,
@@ -287,6 +331,7 @@ class ReviewBody extends StatelessWidget {
                 question: question,
                 isRevisionMode: isRevisionMode,
                 uiLanguage: uiLanguage,
+                confidenceSessionId: confidenceSessionId,
               ),
               const SizedBox(height: 14),
               const Text(
@@ -491,9 +536,11 @@ class _TopBar extends HookConsumerWidget {
           const SizedBox(width: 8),
           InkWell(
             onTap: () async {
-              final prefs = await ref.read(prefsServiceProvider.future);
-              prefs.darkModeEnabled = !isDark;
-              ref.invalidate(prefsServiceProvider);
+              await setDarkModeEnabledWithLoader(
+                context: context,
+                ref: ref,
+                darkModeEnabled: !isDark,
+              );
             },
             child: Icon(
               isDark ? Icons.dark_mode : Icons.light_mode,
@@ -582,21 +629,6 @@ class _VerdictStrip extends StatelessWidget {
                 ),
             ],
           ),
-          if (question.status == 'correct' || question.status == 'wrong') ...[
-            const SizedBox(height: 8),
-            Text(
-              question.confidence == null
-                  ? 'Confidence: not logged'
-                  : 'Confidence: ${AnswerConfidence.examShortLabel(question.confidence!)}',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                color: question.confidence == null
-                    ? scheme.onSurfaceVariant
-                    : scheme.primary,
-              ),
-            ),
-          ],
           if ((question.conceptAnchor ?? '').trim().isNotEmpty) ...[
             const SizedBox(height: 5),
             SelectableCopySearchText(
@@ -610,41 +642,83 @@ class _VerdictStrip extends StatelessWidget {
   }
 }
 
-class _Options extends StatelessWidget {
+class _Options extends ConsumerWidget {
   const _Options({
     required this.question,
     required this.isRevisionMode,
     required this.uiLanguage,
+    this.confidenceSessionId,
   });
   final TestQuestion question;
   final bool isRevisionMode;
   final String uiLanguage;
+  final String? confidenceSessionId;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isHindi = uiLanguage == 'hi';
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
+    final prefs = ref.watch(prefsServiceProvider).value;
+    final confidenceOn = prefs?.confidenceTrackingEnabled ?? false;
+    final scored =
+        question.status == 'correct' || question.status == 'wrong';
+    final selected = question.selectedOption?.toLowerCase();
+
+    Widget? stripFor(String letter) {
+      final sid = confidenceSessionId;
+      if (sid == null || !confidenceOn || !scored) return null;
+      if (selected != letter) return null;
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            _reviewConfidenceCaption(question.confidence),
+            style: TextStyle(
+              fontSize: 12,
+              height: 1.35,
+              fontWeight: AnswerConfidence.isDangerouslyConfident(
+                    question.confidence,
+                  )
+                  ? FontWeight.w700
+                  : FontWeight.w500,
+              color: _reviewConfidenceCaptionColor(
+                question: question,
+                scheme: scheme,
+                isDark: isDark,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
     return Column(
       children: [
         _OptionRow(
           letter: 'a',
           text: isHindi ? question.optionAHi : question.optionA,
           state: _optionState(question, 'a', isRevisionMode, isDark, scheme),
+          confidenceBelow: stripFor('a'),
         ),
         _OptionRow(
           letter: 'b',
           text: isHindi ? question.optionBHi : question.optionB,
           state: _optionState(question, 'b', isRevisionMode, isDark, scheme),
+          confidenceBelow: stripFor('b'),
         ),
         _OptionRow(
           letter: 'c',
           text: isHindi ? question.optionCHi : question.optionC,
           state: _optionState(question, 'c', isRevisionMode, isDark, scheme),
+          confidenceBelow: stripFor('c'),
         ),
         _OptionRow(
           letter: 'd',
           text: isHindi ? question.optionDHi : question.optionD,
           state: _optionState(question, 'd', isRevisionMode, isDark, scheme),
+          confidenceBelow: stripFor('d'),
         ),
       ],
     );
@@ -656,23 +730,21 @@ class _OptionRow extends StatelessWidget {
     required this.letter,
     required this.text,
     required this.state,
+    this.confidenceBelow,
   });
   final String letter;
   final String text;
   final _OptionState state;
+  final Widget? confidenceBelow;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 5),
+    final scheme = Theme.of(context).colorScheme;
+    final hasStrip = confidenceBelow != null;
+    final radius = BorderRadius.circular(8);
+
+    final optionBlock = Padding(
       padding: const EdgeInsets.fromLTRB(12, 9, 12, 9),
-      decoration: BoxDecoration(
-        color: state.bg,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: state.border,
-          width: state.strong ? 1.5 : 0.5,
-        ),
-      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -712,6 +784,37 @@ class _OptionRow extends StatelessWidget {
                   color: state.tagColor,
                 ),
               ),
+            ),
+          ],
+        ],
+      ),
+    );
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 5),
+      decoration: BoxDecoration(
+        color: state.bg,
+        borderRadius: radius,
+        border: Border.all(
+          color: state.border,
+          width: state.strong ? 1.5 : 0.5,
+        ),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          optionBlock,
+          if (hasStrip) ...[
+            Divider(
+              height: 1,
+              thickness: 1,
+              color: scheme.outlineVariant.withValues(alpha: 0.45),
+            ),
+            ColoredBox(
+              color: scheme.surface.withValues(alpha: 0.35),
+              child: confidenceBelow!,
             ),
           ],
         ],

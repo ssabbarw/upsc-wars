@@ -16,11 +16,15 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
     super.key,
     required this.sessionId,
     required this.tier,
+    this.outcomeFilter,
   });
 
   final String sessionId;
   /// One of [AnswerConfidence.verySure], [somewhatSure], [guessing].
   final String tier;
+
+  /// When set to `correct` or `wrong`, only those outcomes are listed.
+  final String? outcomeFilter;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,7 +45,11 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
     }
 
     final async = ref.watch(
-      confidenceTierQuestionsProvider((sessionId: sessionId, tier: tier)),
+      confidenceTierQuestionsProvider((
+        sessionId: sessionId,
+        tier: tier,
+        outcomeFilter: outcomeFilter,
+      )),
     );
 
     return Scaffold(
@@ -58,9 +66,11 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
                   const SizedBox(height: AppSpacing.md),
                   OutlinedButton(
                     onPressed: () => ref.invalidate(
-                      confidenceTierQuestionsProvider(
-                        (sessionId: sessionId, tier: tier),
-                      ),
+                      confidenceTierQuestionsProvider((
+                        sessionId: sessionId,
+                        tier: tier,
+                        outcomeFilter: outcomeFilter,
+                      )),
                     ),
                     child: const Text('Retry'),
                   ),
@@ -72,10 +82,16 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
             if (questions.isEmpty) {
               return _EmptyTierReview(
                 tier: tier,
+                outcomeFilter: outcomeFilter,
                 onBack: () => context.pop(),
               );
             }
-            return _TierPager(sessionId: sessionId, tier: tier, questions: questions);
+            return _TierPager(
+              sessionId: sessionId,
+              tier: tier,
+              outcomeFilter: outcomeFilter,
+              questions: questions,
+            );
           },
         ),
       ),
@@ -84,15 +100,23 @@ class ConfidenceTierReviewScreen extends HookConsumerWidget {
 }
 
 class _EmptyTierReview extends StatelessWidget {
-  const _EmptyTierReview({required this.tier, required this.onBack});
+  const _EmptyTierReview({
+    required this.tier,
+    required this.outcomeFilter,
+    required this.onBack,
+  });
 
   final String tier;
+  final String? outcomeFilter;
   final VoidCallback onBack;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final label = AnswerConfidence.examShortLabel(tier);
+    final outcomeLine = outcomeFilter == null
+        ? ''
+        : ' with outcome “$outcomeFilter”';
     return Padding(
       padding: const EdgeInsets.all(AppSpacing.xxl),
       child: Column(
@@ -106,7 +130,7 @@ class _EmptyTierReview extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
-            'No scored questions in this session were logged under “$label”.',
+            'No scored questions in this session were logged under “$label”$outcomeLine.',
             style: AppTextStyles.bodyMd().copyWith(
               color: scheme.onSurfaceVariant,
             ),
@@ -122,11 +146,13 @@ class _TierPager extends HookConsumerWidget {
   const _TierPager({
     required this.sessionId,
     required this.tier,
+    required this.outcomeFilter,
     required this.questions,
   });
 
   final String sessionId;
   final String tier;
+  final String? outcomeFilter;
   final List<TestQuestion> questions;
 
   @override
@@ -154,9 +180,12 @@ class _TierPager extends HookConsumerWidget {
     final current = index.value + 1;
     final tierLabel = AnswerConfidence.examShortLabel(tier);
     final isBookmarked = bookmarks.value[q.uuid] ?? false;
+    final filterSuffix = outcomeFilter == null
+        ? ''
+        : ' · ${outcomeFilter == 'wrong' ? 'Wrong only' : 'Correct only'}';
 
     return ReviewBody(
-      title: '$tierLabel · Review',
+      title: '$tierLabel · Review$filterSuffix',
       showRevisionBadge: false,
       progressRight: '${q.subject} · ${q.topic}',
       question: q,
@@ -164,6 +193,7 @@ class _TierPager extends HookConsumerWidget {
       total: total,
       isBookmarked: isBookmarked,
       isQueued: false,
+      confidenceSessionId: sessionId,
       onToggleBookmark: () async {
         final repo = await ref.read(testEngineRepositoryProvider.future);
         if (isBookmarked) {
@@ -190,7 +220,7 @@ class _TierPager extends HookConsumerWidget {
       onAddToRevision: null,
       uiLanguage: uiLanguage.value,
       onLanguageChanged: (lang) => uiLanguage.value = lang,
-      confidenceBanner: 'Logged as: $tierLabel',
+      confidenceBanner: 'Logged as: $tierLabel$filterSuffix',
     );
   }
 }

@@ -159,17 +159,27 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     await _commitSelectedOption(option, confidence: null);
   }
 
-  /// Exam-mode slider: set or clear confidence after the answer is saved.
+  /// Set or clear confidence after the answer is saved (exam or learning).
+  /// Learning: once a tier is stored for the current question, further updates
+  /// are ignored (first pick is final for that attempt).
   Future<void> updateExamQuestionConfidence({
     required String questionUuid,
     required String? confidence,
   }) async {
     final current = state.asData?.value;
     final s = current?.session;
-    if (current == null || s == null || s.mode != 'exam') return;
+    if (current == null || s == null) return;
+    if (s.mode != 'exam' && s.mode != 'learning') return;
     final prefs = await ref.read(prefsServiceProvider.future);
     if (!prefs.confidenceTrackingEnabled) return;
     if (confidence != null && !AnswerConfidence.values.contains(confidence)) {
+      return;
+    }
+
+    final qIdx = s.questions.indexWhere((q) => q.uuid == questionUuid);
+    if (qIdx >= 0 &&
+        s.mode == 'learning' &&
+        s.questions[qIdx].confidence != null) {
       return;
     }
 
@@ -180,10 +190,9 @@ class TestSessionNotifier extends _$TestSessionNotifier {
         questionUuid: questionUuid,
         confidence: confidence,
       );
-      final idx = s.questions.indexWhere((q) => q.uuid == questionUuid);
-      if (idx < 0) return;
+      if (qIdx < 0) return;
       final updated = [...s.questions];
-      updated[idx] = updated[idx].copyWith(confidence: confidence);
+      updated[qIdx] = updated[qIdx].copyWith(confidence: confidence);
       state = AsyncData(
         current.copyWith(session: s.copyWith(questions: updated)),
       );
