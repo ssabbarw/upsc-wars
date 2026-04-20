@@ -88,6 +88,8 @@ class TopicsListScreen extends ConsumerWidget {
                     return _EmptyState();
                   }
                   return ListView.separated(
+                    primary: false,
+                    shrinkWrap: true,
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.fromLTRB(
                       AppSpacing.lg,
@@ -166,13 +168,14 @@ class _TopicCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
           clipBehavior: Clip.antiAlias,
+          constraints: const BoxConstraints(minHeight: 88),
           decoration: BoxDecoration(
             color: scheme.surface,
             borderRadius: BorderRadius.circular(AppRadius.lg),
             border: Border.all(color: borderColor, width: 0.5),
           ),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 4,
@@ -256,6 +259,8 @@ class _LoadingSkeleton extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     return ListView.separated(
+      primary: false,
+      shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.lg,

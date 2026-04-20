@@ -1,10 +1,48 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Any authenticated user may read/write any document (including subcollections).
-    // Tighten per-collection rules before production if you need isolation between users.
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    /// Share links (`session/{shareId}`): browser + app must read without auth.
+    function sessionFieldKeysOk() {
+      let ks = request.resource.data.keys();
+      return ks.hasOnly(['kind', 'subject', 'uuids', 'schemaVersion', 'createdAt'])
+        || ks.hasOnly(['kind', 'subject', 'topic', 'uuids', 'schemaVersion', 'createdAt']);
+    }
+
+    function validSessionCreate() {
+      let d = request.resource.data;
+      return sessionFieldKeysOk()
+        && d.kind is string
+        && d.kind in ['battle', 'test', 'question']
+        && d.subject is string
+        && d.subject.size() > 0
+        && d.subject.size() <= 200
+        && (!('topic' in d)
+          || (d.topic is string && d.topic.size() > 0 && d.topic.size() <= 200))
+        && d.uuids is list
+        && d.uuids.size() > 0
+        && d.uuids.size() <= 100
+        && d.schemaVersion is int
+        && d.schemaVersion == 1
+        && d.createdAt == request.time;
+    }
+
+    match /session/{shareId} {
+      allow read: if true;
+      allow create: if signedIn()
+        && shareId.size() >= 8
+        && shareId.size() <= 128
+        && validSessionCreate();
+      allow update, delete: if false;
+    }
+
+    // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
-      allow read, write: if request.auth != null;
+      allow read, write: if signedIn();
     }
   }
 }

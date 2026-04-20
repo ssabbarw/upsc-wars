@@ -17,7 +17,8 @@ import '../core/services/fcm_token_sync_service.dart';
 import '../features/community/services/community_bucket_presence_service.dart';
 import '../features/home/providers/auth_providers.dart';
 import '../core/providers/prefs_provider.dart';
-import '../core/router/app_router.dart' show appRouterProvider, rootNavigatorKey;
+import '../core/router/app_router.dart'
+    show appRouterProvider, rootNavigatorKey;
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
@@ -32,15 +33,15 @@ class UpscWarsApp extends HookConsumerWidget {
     final boot = ref.watch(appBootstrapProvider);
     final prefs = ref.watch(prefsServiceProvider);
     final themeMode = prefs.maybeWhen(
-      data:
-          (service) =>
-              service.darkModeEnabled ? ThemeMode.dark : ThemeMode.light,
+      data: (service) =>
+          service.darkModeEnabled ? ThemeMode.dark : ThemeMode.light,
       orElse: () => ThemeMode.system,
     );
     return boot.when(
       data: (_) => const _RootMaterialApp(),
       loading: () => MaterialApp(
         title: AppConstants.appDisplayName,
+        debugShowCheckedModeBanner: false,
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
@@ -51,10 +52,7 @@ class UpscWarsApp extends HookConsumerWidget {
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
-        home: _BootstrapErrorScreen(
-          error: error,
-          stackTrace: stackTrace,
-        ),
+        home: _BootstrapErrorScreen(error: error, stackTrace: stackTrace),
       ),
     );
   }
@@ -83,13 +81,16 @@ class _RootMaterialApp extends HookConsumerWidget {
               return;
             }
             final svc = await ref.read(prefsServiceProvider.future);
-            if (cancelled || !navCtx.mounted || svc.bilingualQuestionWelcomeSeen) {
+            if (cancelled ||
+                !navCtx.mounted ||
+                svc.bilingualQuestionWelcomeSeen) {
               return;
             }
             await showFirstLaunchBilingualWelcomeSheet(navCtx);
             if (cancelled || !navCtx.mounted) return;
-            (await ref.read(prefsServiceProvider.future)).bilingualQuestionWelcomeSeen =
-                true;
+            (await ref.read(
+              prefsServiceProvider.future,
+            )).bilingualQuestionWelcomeSeen = true;
           }());
         });
       }());
@@ -146,9 +147,8 @@ class _RootMaterialApp extends HookConsumerWidget {
     final router = ref.watch(appRouterProvider);
     final prefs = ref.watch(prefsServiceProvider);
     final themeMode = prefs.maybeWhen(
-      data:
-          (service) =>
-              service.darkModeEnabled ? ThemeMode.dark : ThemeMode.light,
+      data: (service) =>
+          service.darkModeEnabled ? ThemeMode.dark : ThemeMode.light,
       orElse: () => ThemeMode.system,
     );
     return MaterialApp.router(
@@ -171,10 +171,7 @@ class _RootMaterialApp extends HookConsumerWidget {
 }
 
 class _BootstrapErrorScreen extends StatefulWidget {
-  const _BootstrapErrorScreen({
-    required this.error,
-    required this.stackTrace,
-  });
+  const _BootstrapErrorScreen({required this.error, required this.stackTrace});
 
   final Object error;
   final StackTrace stackTrace;
@@ -188,9 +185,7 @@ class _BootstrapErrorScreenState extends State<_BootstrapErrorScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      unawaited(
-        reportBootstrapFailure(widget.error, widget.stackTrace),
-      );
+      unawaited(reportBootstrapFailure(widget.error, widget.stackTrace));
     });
   }
 
