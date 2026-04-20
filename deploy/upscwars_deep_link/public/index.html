@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPSC Wars - Stop Memorizing. Start Understanding.</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-teal: #2d9687;
+      --primary-teal-dark: #247568;
+      --bg-cream: #faf8f5;
+      --bg-white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-gray: #6b6b6b;
+      --text-light: #9b9b9b;
+      --border-light: #e8e5e0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: var(--bg-white);
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      min-width: 0;
+    }
+    .logo-circle {
+      width: 42px;
+      height: 42px;
+      background: var(--primary-teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.62rem;
+      color: white;
+      letter-spacing: -0.4px;
+      flex-shrink: 0;
+    }
+    .logo-text {
+      font-size: clamp(1.05rem, 2.7vw, 1.45rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .lang-toggle {
+      display: flex;
+      gap: 0.35rem;
+      background: var(--bg-cream);
+      padding: 0.35rem;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: 0.42rem 0.8rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.2s;
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+    .lang-btn.active {
+      background: var(--bg-white);
+      color: var(--primary-teal);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+    .hero, .stats, .features, .reviews {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+    .hero { padding-top: 2.8rem; padding-bottom: 1.5rem; }
+    .hero-content { text-align: center; margin-bottom: 1.8rem; }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.45rem 1rem;
+      background: var(--primary-teal);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.3rem;
+      letter-spacing: 0.2px;
+    }
+    .hero-headline, .hero-headline-hi {
+      font-size: clamp(2rem, 6.2vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      letter-spacing: -0.6px;
+      text-wrap: balance;
+    }
+    .hero-headline-hi { display: none; }
+    .hero-subheadline, .hero-subheadline-hi {
+      font-size: clamp(1rem, 3.6vw, 1.35rem);
+      color: var(--text-gray);
+      max-width: 720px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+    .hero-subheadline-hi { display: none; }
+    .cta-primary, .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.95rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      min-height: 48px;
+    }
+    .cta-primary {
+      background: var(--primary-teal);
+      color: white;
+      box-shadow: 0 4px 12px rgba(45, 150, 135, 0.25);
+      transition: all 0.25s;
+    }
+    .cta-primary:hover { background: var(--primary-teal-dark); transform: translateY(-1px); }
+    .play-icon {
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-teal);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .video-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      border-radius: 16px;
+      padding: 0.9rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-light);
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2d9687 0%, #247568 100%);
+      color: white;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem;
+    }
+    .video-placeholder-icon {
+      width: 68px;
+      height: 68px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+    .stats { margin-top: 3rem; margin-bottom: 1rem; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 1rem 0.7rem;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+    }
+    .stat-number {
+      font-size: clamp(1.5rem, 6vw, 2.6rem);
+      font-weight: 800;
+      color: var(--primary-teal);
+      margin-bottom: 0.2rem;
+    }
+    .stat-label, .stat-label-hi {
+      font-size: 0.92rem;
+      color: var(--text-gray);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .stat-label-hi { display: none; }
+    .features, .reviews { margin-top: 4rem; }
+    .section-header { text-align: center; margin-bottom: 2rem; }
+    .section-title, .section-title-hi {
+      font-size: clamp(1.6rem, 6vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .section-title-hi { display: none; }
+    .section-subtitle, .section-subtitle-hi {
+      font-size: clamp(0.98rem, 3.8vw, 1.2rem);
+      color: var(--text-gray);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .section-subtitle-hi { display: none; }
+    .features-grid, .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .feature-card, .review-card {
+      background: var(--bg-white);
+      padding: 1.2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+    }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--primary-teal);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .feature-title, .feature-title-hi {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+    }
+    .feature-title-hi { display: none; }
+    .feature-description, .feature-description-hi {
+      font-size: 0.96rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+    .feature-description-hi { display: none; }
+    .review-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .review-text { font-size: 0.98rem; color: var(--text-dark); margin-bottom: 0.8rem; line-height: 1.6; }
+    .review-author { font-weight: 600; color: var(--text-gray); font-size: 0.86rem; }
+    .cta-section {
+      max-width: 900px;
+      margin: 4rem auto 1rem;
+      padding: 2rem 1.25rem;
+      background: var(--primary-teal);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .cta-section-title, .cta-section-title-hi {
+      font-size: clamp(1.6rem, 6vw, 2.4rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+    .cta-section-title-hi { display: none; }
+    .cta-section-subtitle, .cta-section-subtitle-hi {
+      font-size: clamp(1rem, 3.4vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 1.25rem;
+    }
+    .cta-section-subtitle-hi { display: none; }
+    .cta-secondary {
+      background: white;
+      color: var(--primary-teal);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      padding: 2rem 1.25rem;
+      margin-top: 3rem;
+    }
+    .footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.8rem;
+    }
+    .footer-text { color: var(--text-gray); font-size: 0.85rem; }
+
+    @media (max-width: 980px) {
+      .features-grid, .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding-top: 2.2rem; }
+    }
+    @media (max-width: 768px) {
+      .header-content { align-items: flex-start; }
+      .logo-circle { width: 38px; height: 38px; font-size: 0.58rem; }
+      .lang-btn { padding-inline: 0.65rem; font-size: 0.84rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .features-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .feature-card, .review-card { padding: 1rem; }
+      .cta-primary, .cta-secondary { width: 100%; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo">
+        <div class="logo-circle"><div style="text-align:center;line-height:1.1;">UPSC<br>WARS</div></div>
+        <span class="logo-text">UPSC Wars</span>
+      </a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLang('en', this)">English</button>
+        <button class="lang-btn" onclick="switchLang('hi', this)">हिन्दी</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">GS Paper 1 - 32,000+ Questions</div>
+        <h1 class="hero-headline lang-en">Stop Memorizing.<br />Start Understanding.</h1>
+        <h1 class="hero-headline-hi lang-hi">रटना बंद करें।<br />समझना शुरू करें।</h1>
+        <p class="hero-subheadline lang-en">Every question comes with trap breakdowns, elimination logic, and concept anchors. Built by UPSC aspirants, for aspirants.</p>
+        <p class="hero-subheadline-hi lang-hi">हर सवाल के साथ जाल विश्लेषण, elimination तर्क, और concept anchors। UPSC aspirants द्वारा, aspirants के लिए बनाया गया।</p>
+        <a href="#video" class="cta-primary">
+          <span class="play-icon">▶</span>
+          <span class="lang-en">Watch How It Works</span>
+          <span class="lang-hi" style="display:none;">देखें यह कैसे काम करता है</span>
+        </a>
+      </div>
+
+      <div class="video-container" id="video">
+        <div class="video-wrapper">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon"><span style="font-size:1.8rem;">▶</span></div>
+            <div class="lang-en">Demo Video Coming Soon</div>
+            <div class="lang-hi" style="display:none;">डेमो वीडियो जल्द आ रहा है</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">32,000+</div>
+          <div class="stat-label lang-en">Questions with Deep Explanations</div>
+          <div class="stat-label-hi lang-hi">गहन व्याख्या के साथ प्रश्न</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label lang-en">GS Paper 1 Coverage</div>
+          <div class="stat-label-hi lang-hi">GS Paper 1 कवरेज</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label lang-en">Languages (English + Hindi)</div>
+          <div class="stat-label-hi lang-hi">भाषाएं (अंग्रेजी + हिंदी)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-header">
+        <h2 class="section-title lang-en">Why UPSC Wars is Different</h2>
+        <h2 class="section-title-hi lang-hi">UPSC Wars क्यों अलग है</h2>
+        <p class="section-subtitle lang-en">We don't just give you answers. We teach you how to think like the examiner.</p>
+        <p class="section-subtitle-hi lang-hi">हम केवल उत्तर नहीं देते। हम आपको परीक्षक की तरह सोचना सिखाते हैं।</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">🎯</div><h3 class="feature-title lang-en">Trap Breakdowns</h3><h3 class="feature-title-hi lang-hi">जाल विश्लेषण</h3><p class="feature-description lang-en">Every distractor is dissected. Learn exactly why wrong options are designed to trap you and how to spot them instantly.</p><p class="feature-description-hi lang-hi">हर distractor का विश्लेषण। जानें कि गलत विकल्प आपको फंसाने के लिए कैसे डिज़ाइन किए गए हैं और उन्हें तुरंत कैसे पहचानें।</p></div>
+        <div class="feature-card"><div class="feature-icon">📊</div><h3 class="feature-title lang-en">Elimination Logic</h3><h3 class="feature-title-hi lang-hi">Elimination तर्क</h3><p class="feature-description lang-en">Step-by-step elimination strategy for multi-statement questions. Master the art of arriving at the right answer methodically.</p><p class="feature-description-hi lang-hi">बहु-कथन प्रश्नों के लिए चरण-दर-चरण elimination रणनीति। सही उत्तर पर पद्धतिगत रूप से पहुंचने की कला में महारत हासिल करें।</p></div>
+        <div class="feature-card"><div class="feature-icon">🧠</div><h3 class="feature-title lang-en">Concept Anchors</h3><h3 class="feature-title-hi lang-hi">Concept Anchors</h3><p class="feature-description lang-en">Every question is linked to core concepts. Build deep, interconnected knowledge, not isolated facts.</p><p class="feature-description-hi lang-hi">हर प्रश्न मुख्य अवधारणाओं से जुड़ा है। गहरा, आपस में जुड़ा हुआ ज्ञान बनाएं, अलग-थलग तथ्य नहीं।</p></div>
+        <div class="feature-card"><div class="feature-icon">🔄</div><h3 class="feature-title lang-en">Smart Revision Queue</h3><h3 class="feature-title-hi lang-hi">Smart Revision Queue</h3><p class="feature-description lang-en">Questions automatically enter revision until you get them right 3 times on separate days. No manual tracking needed.</p><p class="feature-description-hi lang-hi">प्रश्न स्वचालित रूप से revision में आते हैं जब तक आप उन्हें अलग-अलग दिनों पर 3 बार सही नहीं करते। मैनुअल ट्रैकिंग की आवश्यकता नहीं।</p></div>
+        <div class="feature-card"><div class="feature-icon">📖</div><h3 class="feature-title lang-en">Learning Mode</h3><h3 class="feature-title-hi lang-hi">Learning Mode</h3><p class="feature-description lang-en">See explanations immediately as you practice. Tap to select, confirm your choice, then learn, all in one flow.</p><p class="feature-description-hi lang-hi">अभ्यास करते समय तुरंत व्याख्या देखें। चुनने के लिए tap करें, अपनी पसंद की पुष्टि करें, फिर सीखें, सब एक flow में।</p></div>
+        <div class="feature-card"><div class="feature-icon">🌐</div><h3 class="feature-title lang-en">Full Bilingual Support</h3><h3 class="feature-title-hi lang-hi">पूर्ण द्विभाषी समर्थन</h3><p class="feature-description lang-en">Every question, explanation, and trap breakdown available in both English and Hindi. Switch anytime.</p><p class="feature-description-hi lang-hi">हर प्रश्न, व्याख्या, और जाल विश्लेषण अंग्रेजी और हिंदी दोनों में उपलब्ध। कभी भी switch करें।</p></div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="section-header">
+        <h2 class="section-title lang-en">What Aspirants Are Saying</h2>
+        <h2 class="section-title-hi lang-hi">Aspirants क्या कह रहे हैं</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"The trap breakdowns are game-changing. I finally understand why I was getting questions wrong."</p><p class="review-author">- Play Store Reviewer</p></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Best explanation depth I've seen in any app. The elimination logic section alone is worth it."</p><p class="review-author">- Play Store Reviewer</p></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Finally an app that treats me like an aspirant, not just a test-taker. Learning mode is brilliant."</p><p class="review-author">- Play Store Reviewer</p></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2 class="cta-section-title lang-en">Ready to Transform Your Prep?</h2>
+      <h2 class="cta-section-title-hi lang-hi">अपनी तैयारी को बदलने के लिए तैयार हैं?</h2>
+      <p class="cta-section-subtitle lang-en">Join thousands of aspirants who stopped memorizing and started understanding.</p>
+      <p class="cta-section-subtitle-hi lang-hi">हजारों aspirants से जुड़ें जिन्होंने रटना बंद किया और समझना शुरू किया।</p>
+      <a href="#" class="cta-secondary">
+        <span class="lang-en">Download on Play Store</span>
+        <span class="lang-hi" style="display:none;">Play Store पर डाउनलोड करें</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="logo-circle" style="width:38px;height:38px;font-size:0.58rem;"><div style="text-align:center;line-height:1.1;">UPSC<br>WARS</div></div>
+        <span style="font-weight:700;font-size:1.05rem;">UPSC Wars</span>
+      </div>
+      <p class="footer-text">
+        <span class="lang-en">Built by aspirants, for aspirants. © 2024 UPSC Wars</span>
+        <span class="lang-hi" style="display:none;">Aspirants द्वारा, aspirants के लिए बनाया गया। © 2024 UPSC Wars</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function switchLang(lang, btn) {
+      document.querySelectorAll(".lang-btn").forEach(function (b) { b.classList.remove("active"); });
+      if (btn) btn.classList.add("active");
+      var showEn = lang === "en";
+      document.querySelectorAll(".lang-en").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".lang-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".hero-headline").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".hero-subheadline").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".section-title").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".section-subtitle").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".stat-label").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".feature-title").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".feature-description").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".cta-section-title").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".cta-section-subtitle").forEach(function (el) { el.style.display = showEn ? "" : "none"; });
+      document.querySelectorAll(".hero-headline-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".hero-subheadline-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".section-title-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".section-subtitle-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".stat-label-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".feature-title-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".feature-description-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".cta-section-title-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+      document.querySelectorAll(".cta-section-subtitle-hi").forEach(function (el) { el.style.display = showEn ? "none" : ""; });
+    }
+  </script>
+</body>
+</html>

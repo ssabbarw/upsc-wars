@@ -36,6 +36,7 @@ Future<WebPlayerWelcomeOutcome?> showWebPlayerWelcomeSheet({
   required String subject,
   required String? topic,
   required int questionCount,
+  String? participantName,
   bool learningOnly = false,
   VoidCallback? onFeedbackPressed,
 }) {
@@ -49,6 +50,7 @@ Future<WebPlayerWelcomeOutcome?> showWebPlayerWelcomeSheet({
       subject: subject,
       topic: topic,
       questionCount: questionCount,
+      participantName: participantName,
       learningOnly: learningOnly,
       onFeedbackPressed: onFeedbackPressed,
     ),
@@ -61,6 +63,7 @@ class _WebPlayerWelcomeSheetBody extends StatefulWidget {
     required this.subject,
     required this.topic,
     required this.questionCount,
+    required this.participantName,
     required this.learningOnly,
     this.onFeedbackPressed,
   });
@@ -69,6 +72,7 @@ class _WebPlayerWelcomeSheetBody extends StatefulWidget {
   final String subject;
   final String? topic;
   final int questionCount;
+  final String? participantName;
   final bool learningOnly;
   final VoidCallback? onFeedbackPressed;
 
@@ -93,6 +97,12 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
     final t = widget.topic?.trim();
     if (t == null || t.isEmpty) return '';
     return t;
+  }
+
+  String get _helloLine {
+    final name = widget.participantName?.trim();
+    if (name == null || name.isEmpty) return '';
+    return 'Hello $name';
   }
 
   bool get _isLearning =>
@@ -240,6 +250,15 @@ class _WebPlayerWelcomeSheetBodyState extends State<_WebPlayerWelcomeSheetBody> 
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      if (_helloLine.isNotEmpty) ...[
+                        Text(
+                          _helloLine,
+                          style: AppTextStyles.h3().copyWith(
+                            color: scheme.onSurface,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.sm),
+                      ],
                       Text(
                         widget.subject,
                         style: AppTextStyles.h2().copyWith(color: scheme.onSurface),

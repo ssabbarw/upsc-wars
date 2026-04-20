@@ -673,18 +673,16 @@ class _WebPlayerLegendItem extends StatelessWidget {
     required this.label,
     required this.bg,
     required this.fg,
-    this.dashedBorder = false,
   });
 
   final String label;
   final Color bg;
   final Color fg;
-  final bool dashedBorder;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    Widget swatch = Container(
+    final swatch = Container(
       width: 16,
       height: 16,
       decoration: BoxDecoration(
@@ -698,15 +696,6 @@ class _WebPlayerLegendItem extends StatelessWidget {
         ),
       ),
     );
-    if (dashedBorder) {
-      swatch = CustomPaint(
-        painter: _WebPlayerDashedRRectPainter(
-          color: scheme.outline,
-          radius: 4,
-        ),
-        child: swatch,
-      );
-    }
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -744,16 +733,11 @@ Future<void> showWebPlayerQuestionGridSheet({
   final scheme = Theme.of(context).colorScheme;
   final isDark = Theme.of(context).brightness == Brightness.dark;
 
-  var missingConfidence = 0;
   var examAttempted = 0;
   var examSkipped = 0;
   var learningAnswered = 0;
   for (final q in questions) {
     final a = attemptFor(q.uuid);
-    final locked = a.revealed || a.examAnswered;
-    if (locked && a.selectedOption != null && a.confidence == null) {
-      missingConfidence++;
-    }
     if (showSubmitPanel) {
       if (isExamMode) {
         if (a.examAnswered) {
@@ -831,45 +815,8 @@ Future<void> showWebPlayerQuestionGridSheet({
                       bg: scheme.surfaceContainerLow,
                       fg: scheme.onSurfaceVariant,
                     ),
-                    const _WebPlayerLegendItem(
-                      label: 'Sure',
-                      bg: AppColors.correct,
-                      fg: AppColors.onPrimary,
-                    ),
-                    const _WebPlayerLegendItem(
-                      label: 'Intelligent',
-                      bg: AppColors.warning,
-                      fg: AppColors.onPrimary,
-                    ),
-                    _WebPlayerLegendItem(
-                      label: 'Pure guess',
-                      bg: scheme.tertiary,
-                      fg: scheme.onTertiary,
-                    ),
-                    _WebPlayerLegendItem(
-                      label: 'No confidence',
-                      bg: scheme.surfaceContainerLow,
-                      fg: scheme.onSurfaceVariant,
-                      dashedBorder: true,
-                    ),
                   ],
                 ),
-                if (missingConfidence > 0) ...[
-                  const SizedBox(height: AppSpacing.sm),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Logging confidence helps spot blind spots and calibrate revision — '
-                      '$missingConfidence answered question${missingConfidence == 1 ? '' : 's'} '
-                      'have no confidence yet (dashed outline on the grid).',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.primary,
-                        fontWeight: FontWeight.w600,
-                        height: 1.35,
-                      ),
-                    ),
-                  ),
-                ],
                 const SizedBox(height: AppSpacing.md),
                 Wrap(
                   spacing: AppSpacing.sm,
@@ -1078,24 +1025,7 @@ class _WebPlayerPaletteCell extends StatelessWidget {
       fg = scheme.onSurfaceVariant;
     }
 
-    final scored = visited && attempt.selectedOption != null;
-
-    Color? confStrip;
-    var missingConf = false;
-    if (scored) {
-      switch (attempt.confidence) {
-        case AnswerConfidence.verySure:
-          confStrip = AppColors.correct;
-        case AnswerConfidence.somewhatSure:
-          confStrip = AppColors.warning;
-        case AnswerConfidence.guessing:
-          confStrip = scheme.tertiary;
-        default:
-          missingConf = true;
-      }
-    }
-
-    Widget cell = Container(
+    final cell = Container(
       width: 40,
       height: 40,
       alignment: Alignment.center,
@@ -1108,37 +1038,6 @@ class _WebPlayerPaletteCell extends StatelessWidget {
         style: AppTextStyles.labelSm().copyWith(color: fg),
       ),
     );
-
-    if (confStrip != null) {
-      cell = Stack(
-        clipBehavior: Clip.none,
-        children: [
-          cell,
-          Positioned(
-            top: 0,
-            left: 3,
-            right: 3,
-            child: Container(
-              height: 3,
-              decoration: BoxDecoration(
-                color: confStrip,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(2),
-                ),
-              ),
-            ),
-          ),
-        ],
-      );
-    } else if (missingConf) {
-      cell = CustomPaint(
-        painter: _WebPlayerDashedRRectPainter(
-          color: scheme.outline,
-          radius: AppRadius.sm,
-        ),
-        child: cell,
-      );
-    }
 
     return cell;
   }

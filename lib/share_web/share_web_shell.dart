@@ -81,6 +81,8 @@ class _ShareWebShellState extends State<ShareWebShell>
   ShareLinkKind? _linkKind;
   String _subject = '';
   String _topic = '';
+  String _sharedBy = 'A friend';
+  String _participantName = '';
   List<TestQuestion> _questions = [];
   bool _loading = true;
   bool _landing = false;
@@ -127,7 +129,9 @@ class _ShareWebShellState extends State<ShareWebShell>
       final doc = await repo.fetch(_shareId!);
       _subject = doc.subject;
       _topic = doc.topic ?? '';
+      _sharedBy = doc.sharedBy ?? 'A friend';
       _linkKind = doc.kind;
+      _participantName = await _readParticipantName() ?? '';
       final list = <TestQuestion>[];
       for (var i = 0; i < doc.uuids.length; i++) {
         list.add(
@@ -154,6 +158,7 @@ class _ShareWebShellState extends State<ShareWebShell>
   }
 
   String _prefsKey() => '$_prefsPrefix$_shareId';
+  String _namePrefsKey() => '$_prefsPrefix${_shareId}_name';
 
   String _kindLabel() {
     final k = _kind;
@@ -170,6 +175,37 @@ class _ShareWebShellState extends State<ShareWebShell>
       return jsonDecode(raw) as Map<String, dynamic>;
     } catch (_) {
       return null;
+    }
+  }
+
+  Future<String?> _readParticipantName() async {
+    if (_shareId == null) return null;
+    final p = await SharedPreferences.getInstance();
+    final raw = p.getString(_namePrefsKey())?.trim();
+    if (raw == null || raw.isEmpty) return null;
+    return raw;
+  }
+
+  Future<void> _writeParticipantName(String name) async {
+    if (_shareId == null) return;
+    final p = await SharedPreferences.getInstance();
+    await p.setString(_namePrefsKey(), name.trim());
+  }
+
+  Future<void> _appendLeaderboardEntry({
+    required String name,
+    required double score,
+  }) async {
+    if (_shareId == null) return;
+    try {
+      final repo = SharedSessionFirestoreRepository();
+      await repo.appendLeaderboardAttempt(
+        shareId: _shareId!,
+        name: name,
+        score: score,
+      );
+    } catch (_) {
+      // Fire-and-forget; test completion should not fail on leaderboard write.
     }
   }
 
@@ -432,7 +468,20 @@ class _ShareWebShellState extends State<ShareWebShell>
 
   Future<void> _finishTestRun() async {
     _sessionCompleted = true;
-    _completedAtIso = DateTime.now().toUtc().toIso8601String();
+    final completedAt = DateTime.now().toUtc();
+    var correct = 0;
+    for (final q in _questions) {
+      final selected = _attempts[q.uuid]?.selectedOption;
+      if (selected != null && selected == q.correctOption.toLowerCase()) {
+        correct++;
+      }
+    }
+    final score = _questions.isEmpty ? 0.0 : (correct / _questions.length) * 100;
+    await _appendLeaderboardEntry(
+      name: _participantName,
+      score: score,
+    );
+    _completedAtIso = completedAt.toIso8601String();
     await _writeSaved();
     if (!mounted) return;
     setState(() {
@@ -452,12 +501,15 @@ class _ShareWebShellState extends State<ShareWebShell>
       setState(() => _error = 'Invalid share link kind.');
       return;
     }
+    final ready = await _ensureParticipantIntro();
+    if (!mounted || !ready) return;
     final outcome = await showWebPlayerWelcomeSheet(
       context: context,
       kind: kind,
       subject: _subject,
       topic: _topic.isEmpty ? null : _topic,
       questionCount: _questions.length,
+      participantName: _participantName,
       learningOnly: true,
       onFeedbackPressed: () => unawaited(_launchFeedbackMail()),
     );
@@ -474,6 +526,230 @@ class _ShareWebShellState extends State<ShareWebShell>
     });
     await _clearSaved();
     _startQuestionTimer();
+  }
+
+  Future<bool> _ensureParticipantIntro() async {
+    if (!mounted) return false;
+    List<SharedLeaderboardEntry> leaderboard = const [];
+    if (_shareId != null) {
+      try {
+        final repo = SharedSessionFirestoreRepository();
+        leaderboard = await repo.fetchTopLeaderboard(shareId: _shareId!);
+      } catch (_) {
+        leaderboard = const [];
+      }
+    }
+    final controller = TextEditingController(text: _participantName);
+    var validationError = '';
+    var accepted = false;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      isDismissible: false,
+      enableDrag: false,
+      builder: (ctx) {
+        final scheme = Theme.of(ctx).colorScheme;
+        final isDark = Theme.of(ctx).brightness == Brightness.dark;
+        return StatefulBuilder(
+          builder: (ctx, setModalState) => Padding(
+            padding: EdgeInsets.only(
+              left: AppSpacing.lg,
+              right: AppSpacing.lg,
+              bottom: MediaQuery.paddingOf(ctx).bottom + AppSpacing.lg,
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(AppSpacing.lg),
+              decoration: BoxDecoration(
+                color: isDark ? scheme.surfaceContainerHigh : scheme.surface,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(20),
+                ),
+                border: Border.all(
+                  color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Before you begin',
+                    style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
+                    '$_sharedBy shared this test with you.',
+                    style: AppTextStyles.body().copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  if (leaderboard.isNotEmpty) ...[
+                    Container(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      decoration: BoxDecoration(
+                        color: scheme.primaryContainer.withValues(
+                          alpha: isDark ? 0.3 : 0.55,
+                        ),
+                        borderRadius: BorderRadius.circular(AppRadius.md),
+                        border: Border.all(
+                          color: scheme.primary.withValues(alpha: 0.28),
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.emoji_events_rounded,
+                                size: 18,
+                                color: scheme.primary,
+                              ),
+                              const SizedBox(width: AppSpacing.xs),
+                              Text(
+                                'Leaderboard · Top 5',
+                                style: AppTextStyles.label().copyWith(
+                                  color: scheme.onSurface,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: AppSpacing.sm),
+                          for (var i = 0; i < leaderboard.length && i < 5; i++)
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: AppSpacing.xs,
+                              ),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '#${i + 1}',
+                                    style: AppTextStyles.caption().copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  const SizedBox(width: AppSpacing.sm),
+                                  Expanded(
+                                    child: Text(
+                                      leaderboard[i].name,
+                                      style: AppTextStyles.bodySm().copyWith(
+                                        color: scheme.onSurface,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    '${leaderboard[i].score.toStringAsFixed(1)}%',
+                                    style: AppTextStyles.bodySm().copyWith(
+                                      color: scheme.primary,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: AppSpacing.md),
+                  ],
+                  Container(
+                    padding: const EdgeInsets.all(AppSpacing.md),
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerLow,
+                      borderRadius: BorderRadius.circular(AppRadius.md),
+                      border: Border.all(
+                        color: isDark
+                            ? AppColors.borderDark
+                            : AppColors.borderLight,
+                        width: 0.6,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'You are about to start a shared practice test.',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurface,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: AppSpacing.xs),
+                        Text(
+                          _topic.isNotEmpty
+                              ? 'Subject: $_subject · $_topic'
+                              : 'Subject: $_subject',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                        Text(
+                          'Questions: ${_questions.length}',
+                          style: AppTextStyles.bodySm().copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.md),
+                  TextField(
+                    controller: controller,
+                    textInputAction: TextInputAction.done,
+                    autofocus: controller.text.trim().isEmpty,
+                    decoration: InputDecoration(
+                      labelText: 'Your name',
+                      hintText: 'Enter your display name',
+                      errorText: validationError.isEmpty
+                          ? null
+                          : validationError,
+                    ),
+                    onSubmitted: (_) {
+                      final name = controller.text.trim();
+                      if (name.isEmpty) {
+                        setModalState(() {
+                          validationError = 'Please enter your name';
+                        });
+                        return;
+                      }
+                      accepted = true;
+                      Navigator.pop(ctx);
+                    },
+                  ),
+                  const SizedBox(height: AppSpacing.lg),
+                  FilledButton(
+                    onPressed: () {
+                      final name = controller.text.trim();
+                      if (name.isEmpty) {
+                        setModalState(() {
+                          validationError = 'Please enter your name';
+                        });
+                        return;
+                      }
+                      accepted = true;
+                      Navigator.pop(ctx);
+                    },
+                    child: const Text('Continue'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+    if (!accepted) {
+      controller.dispose();
+      return false;
+    }
+    final name = controller.text.trim();
+    controller.dispose();
+    _participantName = name;
+    await _writeParticipantName(name);
+    return true;
   }
 
   Widget _sheet(

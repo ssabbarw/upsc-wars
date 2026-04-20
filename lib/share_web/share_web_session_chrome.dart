@@ -423,18 +423,16 @@ class _ShareWebLegendItem extends StatelessWidget {
     required this.label,
     required this.bg,
     required this.fg,
-    this.dashedBorder = false,
   });
 
   final String label;
   final Color bg;
   final Color fg;
-  final bool dashedBorder;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    Widget swatch = Container(
+    final swatch = Container(
       width: 16,
       height: 16,
       decoration: BoxDecoration(
@@ -448,15 +446,6 @@ class _ShareWebLegendItem extends StatelessWidget {
         ),
       ),
     );
-    if (dashedBorder) {
-      swatch = CustomPaint(
-        painter: _ShareWebDashedRRectPainter(
-          color: scheme.outline,
-          radius: 4,
-        ),
-        child: swatch,
-      );
-    }
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -489,14 +478,6 @@ Future<void> showShareWebQuestionGridSheet({
 }) {
   final scheme = Theme.of(context).colorScheme;
   final isDark = Theme.of(context).brightness == Brightness.dark;
-
-  var missingConfidence = 0;
-  for (final q in questions) {
-    final a = attemptFor(q.uuid);
-    if (a.revealed && a.selectedOption != null && a.confidence == null) {
-      missingConfidence++;
-    }
-  }
 
   return showModalBottomSheet<void>(
     context: context,
@@ -560,45 +541,8 @@ Future<void> showShareWebQuestionGridSheet({
                       bg: scheme.surfaceContainerLow,
                       fg: scheme.onSurfaceVariant,
                     ),
-                    const _ShareWebLegendItem(
-                      label: 'Sure',
-                      bg: AppColors.correct,
-                      fg: AppColors.onPrimary,
-                    ),
-                    const _ShareWebLegendItem(
-                      label: 'Intelligent',
-                      bg: AppColors.warning,
-                      fg: AppColors.onPrimary,
-                    ),
-                    _ShareWebLegendItem(
-                      label: 'Pure guess',
-                      bg: scheme.tertiary,
-                      fg: scheme.onTertiary,
-                    ),
-                    _ShareWebLegendItem(
-                      label: 'No confidence',
-                      bg: scheme.surfaceContainerLow,
-                      fg: scheme.onSurfaceVariant,
-                      dashedBorder: true,
-                    ),
                   ],
                 ),
-                if (missingConfidence > 0) ...[
-                  const SizedBox(height: AppSpacing.sm),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Logging confidence helps spot blind spots and calibrate revision — '
-                      '$missingConfidence answered question${missingConfidence == 1 ? '' : 's'} '
-                      'have no confidence yet (dashed outline on the grid).',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.primary,
-                        fontWeight: FontWeight.w600,
-                        height: 1.35,
-                      ),
-                    ),
-                  ),
-                ],
                 const SizedBox(height: AppSpacing.md),
                 Wrap(
                   spacing: AppSpacing.sm,
@@ -670,24 +614,7 @@ class _ShareWebPaletteCell extends StatelessWidget {
       fg = scheme.onSurfaceVariant;
     }
 
-    final scored = visited && attempt.selectedOption != null;
-
-    Color? confStrip;
-    var missingConf = false;
-    if (scored) {
-      switch (attempt.confidence) {
-        case AnswerConfidence.verySure:
-          confStrip = AppColors.correct;
-        case AnswerConfidence.somewhatSure:
-          confStrip = AppColors.warning;
-        case AnswerConfidence.guessing:
-          confStrip = scheme.tertiary;
-        default:
-          missingConf = true;
-      }
-    }
-
-    Widget cell = Container(
+    final cell = Container(
       width: 40,
       height: 40,
       alignment: Alignment.center,
@@ -700,38 +627,6 @@ class _ShareWebPaletteCell extends StatelessWidget {
         style: AppTextStyles.labelSm().copyWith(color: fg),
       ),
     );
-
-    if (confStrip != null) {
-      cell = Stack(
-        clipBehavior: Clip.none,
-        children: [
-          cell,
-          Positioned(
-            top: 0,
-            left: 3,
-            right: 3,
-            child: Container(
-              height: 3,
-              decoration: BoxDecoration(
-                color: confStrip,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(2),
-                ),
-              ),
-            ),
-          ),
-        ],
-      );
-    } else if (missingConf) {
-      cell = CustomPaint(
-        painter: _ShareWebDashedRRectPainter(
-          color: scheme.outline,
-          radius: AppRadius.sm,
-        ),
-        child: cell,
-      );
-    }
-
     return cell;
   }
 }

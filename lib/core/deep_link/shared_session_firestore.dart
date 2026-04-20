@@ -17,12 +17,14 @@ class SharedSessionDocument {
     required this.kind,
     required this.subject,
     this.topic,
+    this.sharedBy,
     required this.uuids,
   });
 
   final ShareLinkKind kind;
   final String subject;
   final String? topic;
+  final String? sharedBy;
 
   /// Ordered list of question JSON maps (`uuid` + full display fields).
   final List<Map<String, dynamic>> uuids;
@@ -31,11 +33,30 @@ class SharedSessionDocument {
       uuids.map((m) => m['uuid'] as String).toList();
 }
 
+class SharedLeaderboardEntry {
+  const SharedLeaderboardEntry({
+    required this.name,
+    required this.score,
+    required this.attemptedAtMs,
+  });
+
+  final String name;
+  final double score;
+  final int attemptedAtMs;
+}
+
 class SharedSessionFirestoreRepository {
   SharedSessionFirestoreRepository({FirebaseFirestore? firestore})
     : _db = firestore ?? FirebaseFirestore.instance;
 
   final FirebaseFirestore _db;
+
+  CollectionReference<Map<String, dynamic>> _leaderboardCollection(String shareId) {
+    return _db
+        .collection(SharedSessionFirestore.collectionName)
+        .doc(shareId)
+        .collection('leaderboard');
+  }
 
   Future<void> uploadSession({
     required String shareId,
@@ -95,11 +116,67 @@ class SharedSessionFirestoreRepository {
     }
     final topicRaw = d['topic'] as String?;
     final topic = topicRaw?.trim();
+    final sharedByRaw = (d['Shared by'] ?? d['sharedBy']) as String?;
+    final sharedBy = sharedByRaw?.trim();
     return SharedSessionDocument(
       kind: kind,
       subject: subject,
       topic: (topic != null && topic.isNotEmpty) ? topic : null,
+      sharedBy: (sharedBy != null && sharedBy.isNotEmpty) ? sharedBy : null,
       uuids: uuids,
     );
+  }
+
+  Future<void> appendLeaderboardAttempt({
+    required String shareId,
+    required String name,
+    required double score,
+  }) async {
+    final trimmed = name.trim();
+    if (trimmed.isEmpty) return;
+    final clamped = score.clamp(0.0, 100.0);
+    await _leaderboardCollection(shareId).add({
+      'name': trimmed,
+      'score': clamped,
+      'attemptedAt': FieldValue.serverTimestamp(),
+      'attemptedAtMs': DateTime.now().millisecondsSinceEpoch,
+    });
+  }
+
+  Future<List<SharedLeaderboardEntry>> fetchTopLeaderboard({
+    required String shareId,
+    int limit = 5,
+  }) async {
+    final safeLimit = limit < 1 ? 1 : (limit > 20 ? 20 : limit);
+    final snap = await _leaderboardCollection(shareId)
+        .orderBy('score', descending: true)
+        .limit(50)
+        .get();
+
+    final out = <SharedLeaderboardEntry>[];
+    for (final d in snap.docs) {
+      final m = d.data();
+      final name = (m['name'] as String?)?.trim();
+      final score = (m['score'] as num?)?.toDouble();
+      final attemptedAtMs = (m['attemptedAtMs'] as num?)?.toInt();
+      if (name == null || name.isEmpty || score == null || attemptedAtMs == null) {
+        continue;
+      }
+      out.add(
+        SharedLeaderboardEntry(
+          name: name,
+          score: score,
+          attemptedAtMs: attemptedAtMs,
+        ),
+      );
+    }
+
+    out.sort((a, b) {
+      final scoreCmp = b.score.compareTo(a.score);
+      if (scoreCmp != 0) return scoreCmp;
+      return b.attemptedAtMs.compareTo(a.attemptedAtMs);
+    });
+    if (out.length <= safeLimit) return out;
+    return out.sublist(0, safeLimit);
   }
 }
