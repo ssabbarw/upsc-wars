@@ -19,16 +19,14 @@ import 'core/services/prelims_workmanager_callback.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Firebase.initializeApp();
   await setupFirebaseCrashlytics();
   await FirebaseInAppMessagingService.initializeAfterFirebase();
   // Capture tap-to-open payload before runApp. On Android, reading
   // getInitialMessage too late can leave data unavailable for routing.
-  final openedFromNotification =
-      await FirebaseMessaging.instance.getInitialMessage();
+  final openedFromNotification = await FirebaseMessaging.instance
+      .getInitialMessage();
   if (openedFromNotification != null) {
     BattleMessagingService.setPendingOpenedNotification(openedFromNotification);
   }

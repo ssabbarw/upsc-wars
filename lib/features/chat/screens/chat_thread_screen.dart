@@ -200,9 +200,8 @@ class ChatThreadScreen extends HookConsumerWidget {
                     final message = messages[index];
                     final mine = message.senderEmail == me;
                     final scheme = Theme.of(context).colorScheme;
-                    final timestampColor = mine
-                        ? scheme.onPrimaryContainer.withValues(alpha: 0.82)
-                        : scheme.onSurfaceVariant;
+                    final timestampColor =
+                        mine ? Colors.white70 : scheme.onSurfaceVariant;
                     return Align(
                       alignment:
                           mine ? Alignment.centerRight : Alignment.centerLeft,
@@ -227,6 +226,9 @@ class ChatThreadScreen extends HookConsumerWidget {
                             _MessageText(
                               text: message.text,
                               isCurrentUserBubble: mine,
+                              messageStyle: AppTextStyles.bodyMd().copyWith(
+                                color: mine ? Colors.white : null,
+                              ),
                             ),
                             const SizedBox(height: 4),
                             Text(
@@ -305,10 +307,12 @@ class _MessageText extends StatelessWidget {
   const _MessageText({
     required this.text,
     required this.isCurrentUserBubble,
+    required this.messageStyle,
   });
 
   final String text;
   final bool isCurrentUserBubble;
+  final TextStyle messageStyle;
 
   static final RegExp _urlRegExp = RegExp(
     r'((https?:\/\/|www\.)[^\s]+)',
@@ -317,10 +321,10 @@ class _MessageText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseStyle = AppTextStyles.bodyMd();
+    final baseStyle = messageStyle;
     final scheme = Theme.of(context).colorScheme;
     final linkStyle = baseStyle.copyWith(
-      color: isCurrentUserBubble ? scheme.onPrimaryContainer : scheme.primary,
+      color: isCurrentUserBubble ? Colors.white : scheme.primary,
       decoration: TextDecoration.underline,
       fontWeight: FontWeight.w600,
     );
