@@ -52,14 +52,6 @@ class AppLocalNotificationsService {
       onDidReceiveNotificationResponse: _onNotificationResponse,
     );
 
-    final android = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
-    await android?.requestNotificationsPermission();
-
-    final ios = _plugin.resolvePlatformSpecificImplementation<
-        IOSFlutterLocalNotificationsPlugin>();
-    await ios?.requestPermissions(alert: true, badge: true, sound: true);
-
     _initialized = true;
   }
 

@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "chatThreads": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "chatMessages": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "chatTyping": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "presence": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    ".read": false,
+    ".write": false
+  }
+}

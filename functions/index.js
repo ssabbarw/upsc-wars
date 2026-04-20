@@ -221,3 +221,62 @@ exports.sendSelfTestNotification = functions.https.onCall(async (data, context) 
   functions.logger.info("sendSelfTestNotification: delivered", { email });
   return { ok: true };
 });
+
+/**
+ * RTDB trigger: notify peer on new chat message.
+ */
+exports.onChatMessageCreated = functions.database
+  .ref("/chatMessages/{chatId}/{messageId}")
+  .onCreate(async (snapshot, context) => {
+    const value = snapshot.val() || {};
+    const senderEmail = (value.senderEmail || "").toString().toLowerCase().trim();
+    const text = (value.text || "").toString().trim();
+    if (!senderEmail || !text) return null;
+
+    const threadSnap = await admin
+      .database()
+      .ref(`/chatThreads/${context.params.chatId}/participantEmails`)
+      .once("value");
+    const participants = threadSnap.val();
+    if (!Array.isArray(participants) || participants.length < 2) {
+      return null;
+    }
+    const recipientEmail = participants
+      .map((item) => (item || "").toString().toLowerCase().trim())
+      .find((email) => email && email !== senderEmail);
+    if (!recipientEmail) return null;
+
+    const userSnap = await admin.firestore().collection("users").doc(recipientEmail).get();
+    const userData = userSnap.data() || {};
+    const fcmToken = userData.fcm_token || userData.fcmToken;
+    if (!fcmToken || typeof fcmToken !== "string") {
+      return null;
+    }
+
+    const senderSnap = await admin.firestore().collection("users").doc(senderEmail).get();
+    const senderName = ((senderSnap.data() || {}).name || senderEmail).toString();
+    const body = text.length > MAX_BODY_LEN ? `${text.slice(0, MAX_BODY_LEN - 1)}…` : text;
+
+    try {
+      await admin.messaging().send({
+        token: fcmToken,
+        notification: {
+          title: senderName,
+          body,
+        },
+        data: {
+          kind: "chat_message",
+          chatId: String(context.params.chatId),
+          senderEmail,
+        },
+      });
+    } catch (e) {
+      functions.logger.error("onChatMessageCreated: FCM send failed", {
+        chatId: context.params.chatId,
+        recipientEmail,
+        error: e && e.message ? e.message : String(e),
+      });
+    }
+
+    return null;
+  });

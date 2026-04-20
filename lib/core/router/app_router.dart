@@ -20,6 +20,8 @@ import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
 import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/providers/community_providers.dart';
+import '../../features/chat/screens/chat_thread_screen.dart';
+import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
@@ -134,6 +136,24 @@ GoRouter appRouter(Ref ref) {
         path: '/community/connect',
         builder: (context, state) {
           return CommunityConnectScreen(selectedUser: state.extra);
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/chat/:chatId',
+        builder: (context, state) {
+          final extra = state.extra;
+          if (extra is! ChatThreadRoutePayload) {
+            return const Scaffold(
+              body: Center(child: Text('Invalid chat payload')),
+            );
+          }
+          return ChatThreadScreen(
+            chatId: state.pathParameters['chatId']!,
+            peerEmail: extra.peerEmail,
+            peerDisplayName: extra.peerDisplayName,
+            peerPhotoUrl: extra.peerPhotoUrl,
+          );
         },
       ),
       GoRoute(

@@ -11,6 +11,9 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
+import '../../chat/domain/chat_ids.dart';
+import '../../chat/domain/entities/chat_thread_route_payload.dart';
+import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
 
@@ -52,6 +55,8 @@ class _RecentTab extends HookConsumerWidget {
     final recent = ref.watch(communityRecentUsersProvider);
     final notifier = ref.read(communityRecentUsersProvider.notifier);
     final lastRefreshedAt = notifier.lastRefreshedAt;
+    final currentUserEmail =
+        ref.watch(authStateChangesProvider).asData?.value?.email?.toLowerCase();
     return recent.when(
       loading: () => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -187,7 +192,11 @@ class _RecentTab extends HookConsumerWidget {
                     for (final user in sortedUsers) ...[
                       _UserTile(
                         user: user,
-                        onTap: () => _showUserProfile(context, user),
+                        onTap: () => _showUserProfile(
+                          context,
+                          user,
+                          currentUserEmail: currentUserEmail,
+                        ),
                       ),
                       const SizedBox(height: AppSpacing.sm),
                     ],
@@ -274,7 +283,11 @@ class _UserTile extends StatelessWidget {
   }
 }
 
-Future<void> _showUserProfile(BuildContext context, CommunityUser user) async {
+Future<void> _showUserProfile(
+  BuildContext context,
+  CommunityUser user, {
+  String? currentUserEmail,
+}) async {
   bool isBlocked = false;
   await showModalBottomSheet<void>(
     context: context,
@@ -285,7 +298,7 @@ Future<void> _showUserProfile(BuildContext context, CommunityUser user) async {
     builder: (context) => StatefulBuilder(
       builder: (context, setState) {
         final scheme = Theme.of(context).colorScheme;
-        final isSelf = false;
+        final isSelf = currentUserEmail == user.email.toLowerCase();
         final canInviteBattle =
             !user.isInBattle &&
             user.acceptingBattleInvites &&
@@ -376,8 +389,22 @@ Future<void> _showUserProfile(BuildContext context, CommunityUser user) async {
                   child: FilledButton.icon(
                     onPressed: isBlocked || isSelf
                         ? null
-                        : () =>
-                              _showComingSoonSnackBar(context, 'Send Message'),
+                        : () {
+                            Navigator.of(context).pop();
+                            final me = currentUserEmail;
+                            if (me == null || me.isEmpty) return;
+                            final chatId = ChatIds.chatIdForPair(me, user.email);
+                            context.push(
+                              '/chat/$chatId',
+                              extra: ChatThreadRoutePayload(
+                                peerEmail: user.email.toLowerCase(),
+                                peerDisplayName: user.name,
+                                peerPhotoUrl: user.photoUrl.trim().isEmpty
+                                    ? null
+                                    : user.photoUrl,
+                              ),
+                            );
+                          },
                     icon: const Icon(Icons.chat_bubble_outline),
                     label: const Text('Send Message'),
                   ),
