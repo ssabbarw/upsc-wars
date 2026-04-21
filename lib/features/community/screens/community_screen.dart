@@ -13,6 +13,7 @@ import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
 import '../../chat/domain/chat_ids.dart';
 import '../../chat/domain/entities/chat_thread_route_payload.dart';
+import '../../chat/providers/chat_providers.dart';
 import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
@@ -23,11 +24,42 @@ class CommunityScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final chatHasUnread = ref.watch(chatInboxHasUnreadProvider);
     return PopToShellHomeScope(
       child: Scaffold(
         appBar: AppBar(
           title: Text('Community', style: AppTextStyles.h3()),
           actions: [
+            IconButton(
+              tooltip: 'Chats',
+              onPressed: () => context.push('/chats'),
+              icon: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Icon(
+                    chatHasUnread ? Icons.chat_rounded : Icons.chat_outlined,
+                    color: chatHasUnread ? scheme.primary : null,
+                  ),
+                  if (chatHasUnread)
+                    Positioned(
+                      right: -2,
+                      top: -2,
+                      child: Container(
+                        width: 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: scheme.error,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: scheme.surface,
+                            width: 1.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
             IconButton(
               tooltip: 'Random connect',
               icon: const Icon(Icons.casino_outlined),

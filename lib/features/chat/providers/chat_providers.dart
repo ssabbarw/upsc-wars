@@ -84,6 +84,14 @@ final chatThreadsProvider = StreamProvider<List<ChatThread>>((ref) {
   return service.watchThreads(currentUserEmail: email);
 });
 
+/// True when any thread has unread messages (for inbox / nav highlights).
+final chatInboxHasUnreadProvider = Provider<bool>((ref) {
+  return ref.watch(chatThreadsProvider).maybeWhen(
+        data: (threads) => threads.any((t) => t.unreadCount > 0),
+        orElse: () => false,
+      );
+});
+
 final chatTypingProvider = StreamProvider.family
     .autoDispose<bool, ({String chatId, String peerEmail})>((ref, data) {
       final service = ref.watch(chatServiceProvider);

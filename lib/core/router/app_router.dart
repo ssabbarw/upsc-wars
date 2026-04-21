@@ -20,6 +20,7 @@ import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
 import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/providers/community_providers.dart';
+import '../../features/chat/screens/chat_list_screen.dart';
 import '../../features/chat/screens/chat_thread_screen.dart';
 import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
 import '../../features/home/screens/home_screen.dart';
@@ -137,6 +138,11 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) {
           return CommunityConnectScreen(selectedUser: state.extra);
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/chats',
+        builder: (context, state) => const ChatListScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
