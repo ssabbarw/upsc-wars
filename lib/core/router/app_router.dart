@@ -18,8 +18,12 @@ import '../../features/battle/screens/battle_waiting_screen.dart';
 import '../../features/history/screens/history_screen.dart';
 import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
+import '../../features/community/screens/post_qotd_flow_screen.dart';
 import '../../features/community/screens/community_connect_screen.dart';
+import '../../features/community/screens/open_challenge_detail_screen.dart';
+import '../../features/community/screens/open_challenge_pick_subject_screen.dart';
 import '../../features/community/providers/community_providers.dart';
+import '../../features/community/providers/open_challenge_providers.dart';
 import '../../features/chat/providers/chat_providers.dart';
 import '../../features/chat/screens/chat_list_screen.dart';
 import '../../features/chat/screens/chat_thread_screen.dart';
@@ -50,6 +54,7 @@ import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
 import '../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../shared/widgets/unread_pulse_wrapper.dart';
 import '../providers/app_bootstrap.dart';
+import '../providers/kill_switch_provider.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 
@@ -62,6 +67,21 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>(
 @Riverpod(keepAlive: true)
 GoRouter appRouter(Ref ref) {
   ref.watch(appBootstrapProvider).requireValue;
+  final shellHasCommunity = FeatureFlags.communityTab;
+  final redirectRefresh = _CommunityTabRedirectRefresh();
+  ref.onDispose(redirectRefresh.dispose);
+  ref.listen(communityTabRemoteEnabledProvider, (_, _) {
+    redirectRefresh.notify();
+  });
+
+  bool communityTabVisibleForRedirect() {
+    if (!shellHasCommunity) return false;
+    return ref.read(communityTabRemoteEnabledProvider).maybeWhen(
+          data: (v) => v,
+          orElse: () => true,
+        );
+  }
+
   final shellBranches = <StatefulShellBranch>[
     StatefulShellBranch(
       routes: [
@@ -96,7 +116,14 @@ GoRouter appRouter(Ref ref) {
           GoRoute(
             path: '/community',
             name: 'community',
-            builder: (context, state) => const CommunityScreen(),
+            builder: (context, state) {
+              final tab = state.uri.queryParameters['tab'];
+              final openChallenge =
+                  tab == 'open_challenge' || tab == 'open-challenge';
+              return CommunityScreen(
+                initialTabIndex: openChallenge ? 1 : 0,
+              );
+            },
           ),
         ],
       ),
@@ -104,6 +131,14 @@ GoRouter appRouter(Ref ref) {
   return GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: '/',
+    refreshListenable: redirectRefresh,
+    redirect: (context, state) {
+      if (!communityTabVisibleForRedirect() &&
+          state.matchedLocation == '/community') {
+        return '/';
+      }
+      return null;
+    },
     observers: [AnalyticsRouteObserver(ref)],
     routes: [
       StatefulShellRoute.indexedStack(
@@ -140,6 +175,38 @@ GoRouter appRouter(Ref ref) {
         builder: (context, state) {
           return CommunityConnectScreen(selectedUser: state.extra);
         },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/community/qotd/post',
+        builder: (context, state) => const PostQotdFlowScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/community/qotd/explanation',
+        builder: (context, state) {
+          final extra = state.extra;
+          if (extra is! SingleQuestionReviewArgs) {
+            return const Scaffold(
+              body: Center(child: Text('Invalid QOTD explanation navigation')),
+            );
+          }
+          return SingleQuestionReviewScreen(args: extra);
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/community/open-challenges/new/subject',
+        builder: (context, state) => const OpenChallengePickSubjectScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/community/open-challenges/:challengeId',
+        builder: (context, state) => OpenChallengeDetailScreen(
+          challengeId: state.pathParameters['challengeId']!,
+          backToCommunityOpenTab:
+              state.uri.queryParameters['origin'] == 'accept_flow',
+        ),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -334,6 +401,11 @@ GoRouter appRouter(Ref ref) {
   );
 }
 
+/// Triggers [GoRouter] redirect re-evaluation when Remote Config toggles Community.
+final class _CommunityTabRedirectRefresh extends ChangeNotifier {
+  void notify() => notifyListeners();
+}
+
 class _CommunityTabIcon extends StatelessWidget {
   const _CommunityTabIcon({
     required this.outlined,
@@ -404,8 +476,12 @@ class _AppShell extends HookConsumerWidget {
     final authState = ref.watch(authStateChangesProvider);
     final authActions = ref.watch(authActionsProvider);
     final isAuthBusy = authActions.isLoading;
+    final shellHasCommunity = FeatureFlags.communityTab;
+    final remoteCommunity = ref.watch(communityTabRemoteEnabledProvider);
+    final showCommunityTab = shellHasCommunity &&
+        remoteCommunity.maybeWhen(data: (v) => v, orElse: () => true);
     final chatUnreadDot =
-        FeatureFlags.communityTab ? ref.watch(chatInboxHasUnreadProvider) : false;
+        showCommunityTab ? ref.watch(chatInboxHasUnreadProvider) : false;
 
     final navItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(
@@ -423,7 +499,7 @@ class _AppShell extends HookConsumerWidget {
         activeIcon: Icon(Icons.bar_chart, size: 22),
         label: 'Progress',
       ),
-      if (FeatureFlags.communityTab)
+      if (showCommunityTab)
         BottomNavigationBarItem(
           icon: _CommunityTabIcon(
             outlined: true,
@@ -446,33 +522,50 @@ class _AppShell extends HookConsumerWidget {
         children: [
           Container(height: 0.5, color: borderColor),
           BottomNavigationBar(
-            currentIndex: navigationShell.currentIndex,
+            currentIndex: () {
+              if (!shellHasCommunity) return navigationShell.currentIndex;
+              if (showCommunityTab) return navigationShell.currentIndex;
+              final i = navigationShell.currentIndex;
+              return i >= 3 ? 0 : i;
+            }(),
             onTap: (index) async {
-              final communityTabIndex = FeatureFlags.communityTab
-                  ? navItems.length - 1
-                  : -1;
-
-              if (FeatureFlags.communityTab && index == communityTabIndex) {
-                if (authState.asData?.value == null) {
-                  await showGoogleLoginBottomSheet(
-                    context: context,
-                    isLoading: isAuthBusy,
-                    onGoogleTap: () {
-                      Navigator.of(context).pop();
-                      ref.read(authActionsProvider.notifier).signInWithGoogle();
-                    },
+              if (!shellHasCommunity) {
+                navigationShell.goBranch(
+                  index,
+                  initialLocation: index == navigationShell.currentIndex,
+                );
+                return;
+              }
+              if (showCommunityTab) {
+                final communityTabIndex = navItems.length - 1;
+                if (index == communityTabIndex) {
+                  if (authState.asData?.value == null) {
+                    await showGoogleLoginBottomSheet(
+                      context: context,
+                      isLoading: isAuthBusy,
+                      onGoogleTap: () {
+                        Navigator.of(context).pop();
+                        ref
+                            .read(authActionsProvider.notifier)
+                            .signInWithGoogle();
+                      },
+                    );
+                    return;
+                  }
+                  navigationShell.goBranch(
+                    index,
+                    initialLocation: index == navigationShell.currentIndex,
+                  );
+                  ref.invalidate(communityChallengersProvider);
+                  ref.invalidate(openChallengesListProvider);
+                  unawaited(
+                    ref.read(communityRecentUsersProvider.notifier).refresh(),
                   );
                   return;
                 }
                 navigationShell.goBranch(
                   index,
                   initialLocation: index == navigationShell.currentIndex,
-                );
-                ref.invalidate(communityChallengersProvider);
-                // Reload recents without blocking tab switch; Community screen
-                // shows a loader until this completes.
-                unawaited(
-                  ref.read(communityRecentUsersProvider.notifier).refresh(),
                 );
                 return;
               }

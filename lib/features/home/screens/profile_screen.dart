@@ -1,11 +1,19 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../community/services/community_bucket_presence_service.dart';
 import '../providers/auth_providers.dart';
+import '../services/instagram_link_service.dart';
+import '../services/profile_photo_service.dart';
 import '../../../shared/widgets/google_login_bottom_sheet.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 
@@ -45,31 +53,31 @@ class _ProfileFooter extends StatelessWidget {
   }
 }
 
+Future<bool> _confirmProfileLogout(BuildContext context) async {
+  final result = await showDialog<bool>(
+    context: context,
+    builder: (dialogContext) {
+      return AlertDialog(
+        title: const Text('Log out?'),
+        content: const Text('Are you sure you want to log out?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: const Text('Log out'),
+          ),
+        ],
+      );
+    },
+  );
+  return result ?? false;
+}
+
 class ProfileScreen extends HookConsumerWidget {
   const ProfileScreen({super.key});
-
-  Future<bool> _confirmLogout(BuildContext context) async {
-    final result = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) {
-        return AlertDialog(
-          title: const Text('Log out?'),
-          content: const Text('Are you sure you want to log out?'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(dialogContext).pop(false),
-              child: const Text('Cancel'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.of(dialogContext).pop(true),
-              child: const Text('Log out'),
-            ),
-          ],
-        );
-      },
-    );
-    return result ?? false;
-  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -160,143 +168,223 @@ class ProfileScreen extends HookConsumerWidget {
               );
             }
 
-            return Column(
-              children: [
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 520),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(24),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    Theme.of(
-                                      context,
-                                    ).colorScheme.primaryContainer,
-                                    Theme.of(context)
-                                        .colorScheme
-                                        .secondaryContainer
-                                        .withValues(alpha: 0.85),
-                                  ],
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  TappableCircularAvatar(
-                                    imageUrl: user.photoURL,
-                                    displayName:
-                                        user.displayName ??
-                                        user.email ??
-                                        'Signed in user',
-                                    size: 84,
-                                  ),
-                                  const SizedBox(height: 14),
-                                  Text(
-                                    user.displayName ?? 'Signed in user',
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(
-                                      context,
-                                    ).textTheme.titleLarge,
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    user.email ?? 'No email',
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(
-                                      context,
-                                    ).textTheme.bodyMedium,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            Card(
-                              elevation: 0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(18),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Account',
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.titleMedium,
-                                    ),
-                                    const SizedBox(height: 12),
-                                    _InfoRow(
-                                      icon: Icons.verified_user_outlined,
-                                      label: 'Authentication',
-                                      value: 'Google account connected',
-                                    ),
-                                    const SizedBox(height: 10),
-                                    _InfoRow(
-                                      icon: Icons.shield_outlined,
-                                      label: 'Privacy',
-                                      value: 'Your account data remains secure',
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            _CommunityProfileCard(
-                              email: user.email,
-                              isBusy: isBusy,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 8),
-                  child: _ProfileFooter(),
-                ),
-                SafeArea(
-                  top: false,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton.icon(
-                        onPressed: isBusy
-                            ? null
-                            : () async {
-                                final shouldLogout = await _confirmLogout(
-                                  context,
-                                );
-                                if (!shouldLogout) return;
-                                ref
-                                    .read(authActionsProvider.notifier)
-                                    .signOut();
-                              },
-                        icon: const Icon(Icons.logout_rounded),
-                        label: Text(isBusy ? 'Logging out...' : 'Log out'),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            );
+            return _SignedInProfileBody(user: user, isBusy: isBusy);
           },
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) => Center(child: Text(error.toString())),
         ),
       ),
+    );
+  }
+}
+
+class _SignedInProfileBody extends HookConsumerWidget {
+  const _SignedInProfileBody({
+    required this.user,
+    required this.isBusy,
+  });
+
+  final User user;
+  final bool isBusy;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final uploadingPhoto = useState(false);
+    final photoService = useMemoized(ProfilePhotoService.new);
+
+    Future<void> onChangePhoto() async {
+      if (uploadingPhoto.value) return;
+      uploadingPhoto.value = true;
+      try {
+        final (ok, err) = await photoService.pickCropUploadAndUpdateProfile();
+        if (!context.mounted) return;
+        if (ok) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Profile photo updated')),
+          );
+          unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
+        } else if (err != null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(err)),
+          );
+        }
+      } finally {
+        uploadingPhoto.value = false;
+      }
+    }
+
+    final scheme = Theme.of(context).colorScheme;
+
+    return Column(
+      children: [
+        Expanded(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(20, 24, 20, 16),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 520),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            scheme.primaryContainer,
+                            scheme.secondaryContainer.withValues(alpha: 0.85),
+                          ],
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Stack(
+                            clipBehavior: Clip.none,
+                            alignment: Alignment.center,
+                            children: [
+                              TappableCircularAvatar(
+                                imageUrl: user.photoURL,
+                                displayName:
+                                    user.displayName ??
+                                    user.email ??
+                                    'Signed in user',
+                                size: 84,
+                              ),
+                              if (!kIsWeb)
+                                Positioned(
+                                  right: -4,
+                                  bottom: -4,
+                                  child: Material(
+                                    color: scheme.surface,
+                                    elevation: 2,
+                                    shape: const CircleBorder(),
+                                    clipBehavior: Clip.antiAlias,
+                                    child: InkWell(
+                                      onTap: uploadingPhoto.value || isBusy
+                                          ? null
+                                          : onChangePhoto,
+                                      customBorder: const CircleBorder(),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8),
+                                        child: uploadingPhoto.value
+                                            ? SizedBox(
+                                                width: 22,
+                                                height: 22,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  strokeWidth: 2,
+                                                  color: scheme.primary,
+                                                ),
+                                              )
+                                            : Icon(
+                                                Icons.photo_camera_outlined,
+                                                size: 20,
+                                                color: scheme.primary,
+                                              ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                          if (kIsWeb) ...[
+                            const SizedBox(height: 10),
+                            Text(
+                              'Profile photo can be changed in the Android or iOS app.',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodySmall
+                                  ?.copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
+                          const SizedBox(height: 14),
+                          Text(
+                            user.displayName ?? 'Signed in user',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            user.email ?? 'No email',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(18),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Account',
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                            const SizedBox(height: 12),
+                            const _InfoRow(
+                              icon: Icons.verified_user_outlined,
+                              label: 'Authentication',
+                              value: 'Google account connected',
+                            ),
+                            const SizedBox(height: 10),
+                            const _InfoRow(
+                              icon: Icons.shield_outlined,
+                              label: 'Privacy',
+                              value: 'Your account data remains secure',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    _CommunityProfileCard(
+                      email: user.email,
+                      isBusy: isBusy,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(bottom: 8),
+          child: _ProfileFooter(),
+        ),
+        SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+            child: SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: isBusy
+                    ? null
+                    : () async {
+                        final shouldLogout = await _confirmProfileLogout(
+                          context,
+                        );
+                        if (!shouldLogout) return;
+                        ref.read(authActionsProvider.notifier).signOut();
+                      },
+                icon: const Icon(Icons.logout_rounded),
+                label: Text(isBusy ? 'Logging out...' : 'Log out'),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -311,10 +399,13 @@ class _CommunityProfileCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final statusController = useTextEditingController();
     final optionalController = useTextEditingController();
-    final instagramController = useTextEditingController();
     final telegramController = useTextEditingController();
     final didLoad = useState(false);
     final saving = useState(false);
+    final instagramBusy = useState(false);
+    final instagramLinked = useState(false);
+    final instagramHandle = useState('');
+    final scheme = Theme.of(context).colorScheme;
 
     Future<void> loadCommunityProfile() async {
       final userEmail = email;
@@ -327,8 +418,11 @@ class _CommunityProfileCard extends HookConsumerWidget {
       if (data != null) {
         statusController.text = (data['my_status'] as String?) ?? '';
         optionalController.text = (data['optional'] as String?) ?? '';
-        instagramController.text = (data['insta'] as String?) ?? '';
         telegramController.text = (data['telegram'] as String?) ?? '';
+        final ig = (data['insta'] as String?)?.trim() ?? '';
+        instagramHandle.value = ig;
+        final linked = data['insta_user_id'] != null;
+        instagramLinked.value = linked;
       }
       didLoad.value = true;
     }
@@ -343,12 +437,11 @@ class _CommunityProfileCard extends HookConsumerWidget {
       if (userEmail == null || userEmail.isEmpty) return;
       if (saving.value) return;
 
-      final insta = instagramController.text.trim();
       final tele = telegramController.text.trim();
-      if (insta.contains('/') || tele.contains('/')) {
+      if (tele.contains('/')) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Instagram/Telegram should not contain /'),
+            content: Text('Telegram username should not contain /'),
           ),
         );
         return;
@@ -362,7 +455,6 @@ class _CommunityProfileCard extends HookConsumerWidget {
             .set({
               'my_status': statusController.text.trim(),
               'optional': optionalController.text.trim(),
-              'insta': insta,
               'telegram': tele,
               'lastOnlineTime': DateTime.now().millisecondsSinceEpoch,
             }, SetOptions(merge: true));
@@ -375,6 +467,94 @@ class _CommunityProfileCard extends HookConsumerWidget {
         saving.value = false;
       }
     }
+
+    Future<void> onConnectInstagram() async {
+      if (instagramBusy.value || isBusy) return;
+      instagramBusy.value = true;
+      try {
+        final username = await InstagramLinkService.connectInstagramAccount();
+        instagramHandle.value = username;
+        instagramLinked.value = true;
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Instagram @$username connected')),
+          );
+        }
+      } on InstagramLinkCancelled {
+        // User closed the browser; no message.
+      } on InstagramLinkFailed catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.message)),
+          );
+        }
+      } on FirebaseFunctionsException catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.message ?? e.code)),
+          );
+        }
+      } on UnsupportedError catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.toString())),
+          );
+        }
+      } catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.toString())),
+          );
+        }
+      } finally {
+        instagramBusy.value = false;
+      }
+    }
+
+    Future<void> onDisconnectInstagram() async {
+      final ok = await showDialog<bool>(
+        context: context,
+        builder: (c) => AlertDialog(
+          title: const Text('Disconnect Instagram?'),
+          content: const Text(
+            'Your profile will no longer show a verified Instagram link.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(c).pop(false),
+              child: const Text('Cancel'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(c).pop(true),
+              child: const Text('Disconnect'),
+            ),
+          ],
+        ),
+      );
+      if (ok != true || instagramBusy.value) return;
+      instagramBusy.value = true;
+      try {
+        await InstagramLinkService.unlinkInstagramAccount();
+        instagramLinked.value = false;
+        instagramHandle.value = '';
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Instagram disconnected')),
+          );
+        }
+      } on FirebaseFunctionsException catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.message ?? e.code)),
+          );
+        }
+      } finally {
+        instagramBusy.value = false;
+      }
+    }
+
+    final igConfigured =
+        AppConstants.instagramOAuthAppId.trim().isNotEmpty;
 
     return Card(
       elevation: 0,
@@ -413,16 +593,99 @@ class _CommunityProfileCard extends HookConsumerWidget {
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 10),
-            TextField(
-              controller: instagramController,
-              maxLength: 30,
-              decoration: const InputDecoration(
-                labelText: 'Instagram (without @)',
-                border: OutlineInputBorder(),
-              ),
+            const SizedBox(height: 14),
+            Text(
+              'Instagram',
+              style: Theme.of(context).textTheme.labelLarge,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 4),
+            Text(
+              kIsWeb
+                  ? 'Open the mobile app to connect Instagram.'
+                  : 'Uses Meta login. Instagram Professional (Business or Creator) accounts only.',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+            ),
+            const SizedBox(height: 8),
+            if (!igConfigured)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  'Instagram linking is not enabled in this build (missing INSTAGRAM_APP_ID).',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.error,
+                      ),
+                ),
+              ),
+            if (instagramLinked.value) ...[
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      instagramHandle.value.isEmpty
+                          ? 'Connected'
+                          : '@${instagramHandle.value}',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ),
+                  Icon(Icons.verified_rounded, color: scheme.primary, size: 22),
+                  const SizedBox(width: 6),
+                  Text(
+                    'Verified',
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                          color: scheme.primary,
+                        ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: instagramBusy.value || isBusy
+                      ? null
+                      : onDisconnectInstagram,
+                  child: const Text('Disconnect Instagram'),
+                ),
+              ),
+            ] else ...[
+              if (instagramHandle.value.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    'Previous unverified handle (replaced when you connect): '
+                    '@${instagramHandle.value}',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: scheme.onSurfaceVariant,
+                        ),
+                  ),
+                ),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton.icon(
+                  onPressed: (!igConfigured ||
+                          kIsWeb ||
+                          instagramBusy.value ||
+                          isBusy)
+                      ? null
+                      : onConnectInstagram,
+                  icon: instagramBusy.value
+                      ? const SizedBox(
+                          width: 18,
+                          height: 18,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Icons.link_rounded),
+                  label: Text(
+                    instagramBusy.value
+                        ? 'Connecting…'
+                        : 'Connect Instagram',
+                  ),
+                ),
+              ),
+            ],
+            const SizedBox(height: 14),
             TextField(
               controller: telegramController,
               maxLength: 30,

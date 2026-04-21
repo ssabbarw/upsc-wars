@@ -19,6 +19,30 @@ abstract final class AppConstants {
   static const String developerTelegramUrl = 'https://t.me/upsc_wars_sachin';
   static const String groupTelegramUrl = 'https://t.me/upsc_wars_group';
 
+  // ── Instagram (Meta OAuth) ──────────────────────────────────────────────
+  /// Public Instagram App ID from Meta Developer Console. Pass at build time:
+  /// `flutter run --dart-define=INSTAGRAM_APP_ID=...`
+  static const String instagramOAuthAppId = String.fromEnvironment(
+    'INSTAGRAM_APP_ID',
+  );
+
+  /// Must match Meta "Valid OAuth Redirect URIs" and Cloud Functions config.
+  static const String instagramOAuthRedirectUri =
+      'upscwars://instagram-callback';
+
+  /// Shown when a user has no profile photo (local UI + community fallback).
+  static const String defaultProfilePhotoUrl =
+      'https://firebasestorage.googleapis.com/v0/b/questionmaker-a821f.appspot.com/o/default_dp.jpg?alt=media&token=6857cccc-5149-4949-a1de-4255dc06dd53';
+
+  /// Returns [photoUrl] when non-empty; otherwise [defaultProfilePhotoUrl].
+  static String profileImageUrlOrDefault(String? photoUrl) {
+    final t = photoUrl?.trim();
+    if (t != null && t.isNotEmpty) {
+      return t;
+    }
+    return defaultProfilePhotoUrl;
+  }
+
   // ── Email ─────────────────────────────────────────────────────────────────
   static const String supportEmail = 'upscwars@gmail.com';
 

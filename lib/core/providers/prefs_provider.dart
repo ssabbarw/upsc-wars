@@ -26,6 +26,11 @@ abstract final class PrefKeys {
   /// Last Remote Config `home_page_video` JSON `version` the user dismissed.
   static const homePageVideoDismissedVersion =
       'home_page_video_dismissed_version_v1';
+  /// When the user last published an open challenge (local epoch ms); 24h cooldown for new creates.
+  static const openChallengeLastPublishedAtMs =
+      'open_challenge_last_published_at_ms_v1';
+  /// JSON array of epoch ms for QOTD posts from this device (rolling 24h client cap).
+  static const qotdLocalPostEpochsMsJson = 'qotd_local_post_epochs_ms_json_v1';
 }
 
 class PrefsService {
@@ -105,6 +110,25 @@ class PrefsService {
       _p.getInt(PrefKeys.homePageVideoDismissedVersion) ?? 0;
   set homePageVideoDismissedVersion(int v) =>
       _p.setInt(PrefKeys.homePageVideoDismissedVersion, v);
+
+  /// Local-only: last time this device published an open challenge to Firestore.
+  int? get openChallengeLastPublishedAtMs =>
+      _p.containsKey(PrefKeys.openChallengeLastPublishedAtMs)
+          ? _p.getInt(PrefKeys.openChallengeLastPublishedAtMs)
+          : null;
+  set openChallengeLastPublishedAtMs(int? v) {
+    if (v == null) {
+      _p.remove(PrefKeys.openChallengeLastPublishedAtMs);
+    } else {
+      _p.setInt(PrefKeys.openChallengeLastPublishedAtMs, v);
+    }
+  }
+
+  /// JSON list of ints: `DateTime.now().millisecondsSinceEpoch` for each QOTD post from this device.
+  String get qotdLocalPostEpochsMsJson =>
+      _p.getString(PrefKeys.qotdLocalPostEpochsMsJson) ?? '[]';
+  set qotdLocalPostEpochsMsJson(String v) =>
+      _p.setString(PrefKeys.qotdLocalPostEpochsMsJson, v);
 }
 
 @Riverpod(keepAlive: true)

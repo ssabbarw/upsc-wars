@@ -22,6 +22,7 @@ import '../../../shared/widgets/question_table_view.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/selectable_copy_search_text.dart';
 import '../../../shared/widgets/top_snack_bar.dart';
+import '../../community/widgets/share_qotd_sheet.dart';
 import '../../history/widgets/explanation_card.dart';
 import '../providers/test_session_provider.dart';
 import '../providers/test_session_state.dart';
@@ -1315,25 +1316,41 @@ class _ExplanationCard extends HookConsumerWidget {
           color: scheme.surfaceContainerLow,
         ),
         padding: const EdgeInsets.all(AppSpacing.lg),
-        child: ExplanationCard(
-          translation: QuestionTranslation(
-            finalExplanation: finalExplanation,
-            statementAnalysis:
-                statementAnalysis
-                    .map(
-                      (e) => StatementAnalysisVm(
-                        statement: e.label,
-                        isCorrect: e.isCorrect,
-                        reason: e.reason,
-                      ),
-                    )
-                    .toList(),
-            eliminationLogic: eliminationLogic,
-            strongDistractor: strongDistractor,
-            upscTrapExplanation: upscTrapExplanation,
-            conceptsUsed: question.conceptsUsed,
-          ),
-          showStatements: statementAnalysis.isNotEmpty,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ExplanationCard(
+              translation: QuestionTranslation(
+                finalExplanation: finalExplanation,
+                statementAnalysis:
+                    statementAnalysis
+                        .map(
+                          (e) => StatementAnalysisVm(
+                            statement: e.label,
+                            isCorrect: e.isCorrect,
+                            reason: e.reason,
+                          ),
+                        )
+                        .toList(),
+                eliminationLogic: eliminationLogic,
+                strongDistractor: strongDistractor,
+                upscTrapExplanation: upscTrapExplanation,
+                conceptsUsed: question.conceptsUsed,
+              ),
+              showStatements: statementAnalysis.isNotEmpty,
+            ),
+            const SizedBox(height: AppSpacing.md),
+            OutlinedButton.icon(
+              onPressed: () => showShareQotdSheet(
+                context: context,
+                ref: ref,
+                questionUuid: question.uuid,
+                correctOption: question.correctOption,
+              ),
+              icon: const Icon(Icons.groups_2_outlined),
+              label: const Text('Share as community QOTD'),
+            ),
+          ],
         ),
       ),
     );

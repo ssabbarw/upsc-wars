@@ -139,3 +139,70 @@ class TestConfigLearningTimeTile extends StatelessWidget {
     );
   }
 }
+
+/// Compact subject chip — same visuals as battle / open-challenge pickers.
+class SubjectPickChipTile extends StatelessWidget {
+  const SubjectPickChipTile({
+    super.key,
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    required this.scheme,
+    required this.isDark,
+    this.width = 108,
+    this.height = 48,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  final ColorScheme scheme;
+  final bool isDark;
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    final fill = selected
+        ? (isDark
+            ? AppColors.primaryDeep.withValues(alpha: 0.45)
+            : AppColors.primaryLight)
+        : scheme.surface;
+    final border = selected
+        ? AppColors.primary
+        : (isDark ? AppColors.borderDark : AppColors.borderLight);
+    final borderW = selected ? 2.0 : 1.0;
+
+    return Material(
+      color: fill,
+      borderRadius: BorderRadius.circular(AppRadius.md),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          width: width,
+          height: height,
+          alignment: Alignment.center,
+          padding: const EdgeInsets.symmetric(horizontal: 6),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppRadius.md),
+            border: Border.all(color: border, width: borderW),
+          ),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: AppTextStyles.bodySm().copyWith(
+              color: selected
+                  ? (isDark ? AppColors.onPrimary : AppColors.primaryDeep)
+                  : scheme.onSurface,
+              fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
+              height: 1.2,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

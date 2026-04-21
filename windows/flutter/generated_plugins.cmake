@@ -5,13 +5,17 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
   cloud_firestore
+  desktop_webview_window
+  file_selector_windows
   firebase_auth
   firebase_core
   firebase_database
   firebase_remote_config
+  firebase_storage
   share_plus
   sqlite3_flutter_libs
   url_launcher_windows
+  window_to_front
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

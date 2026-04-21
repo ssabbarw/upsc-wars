@@ -9,3 +9,10 @@ String displayNameForSessionSubject(String subject) {
   if (pyq != null) return 'Prelims PYQ · ${pyq.group(1)}';
   return subject;
 }
+
+/// Open-challenge list/detail headers: human label, first character uppercased.
+String openChallengeSubjectTitle(String rawSubject) {
+  final label = displayNameForSessionSubject(rawSubject).trim();
+  if (label.isEmpty) return label;
+  return label[0].toUpperCase() + label.substring(1);
+}

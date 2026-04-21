@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -478,12 +480,16 @@ class _HumanLobbyBody extends StatelessWidget {
               radius: 22,
               backgroundColor: scheme.primaryContainer,
               child: ClipOval(
-                child: Image.network(
-                  opponentPhotoUrl!.trim(),
+                child: CachedNetworkImage(
+                  imageUrl: opponentPhotoUrl!.trim(),
                   width: 44,
                   height: 44,
                   fit: BoxFit.cover,
-                  errorBuilder:
+                  memCacheWidth:
+                      (44 * MediaQuery.devicePixelRatioOf(context)).round(),
+                  fadeInDuration: Duration.zero,
+                  fadeOutDuration: Duration.zero,
+                  errorWidget:
                       (_, _, _) => CircleAvatar(
                         radius: 22,
                         backgroundColor: oppBg,
@@ -688,28 +694,26 @@ class _HostAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final url = photoUrl?.trim();
+    final url = AppConstants.profileImageUrlOrDefault(photoUrl);
     final side = radius * 2;
-    if (url != null && url.isNotEmpty) {
-      return CircleAvatar(
-        radius: radius,
-        backgroundColor: scheme.primaryContainer,
-        child: ClipOval(
-          child: Image.network(
-            url,
-            width: side,
-            height: side,
-            fit: BoxFit.cover,
-            errorBuilder: (_, _, _) => _fallbackLetter(letter: fallbackLetter),
-          ),
-        ),
-      );
-    }
+    final cachePx =
+        (side * MediaQuery.devicePixelRatioOf(context)).round();
     return CircleAvatar(
       radius: radius,
-      backgroundColor: monogramBackground,
-      foregroundColor: monogramForeground,
-      child: _fallbackLetter(letter: fallbackLetter),
+      backgroundColor: scheme.primaryContainer,
+      child: ClipOval(
+        child: CachedNetworkImage(
+          imageUrl: url,
+          width: side,
+          height: side,
+          fit: BoxFit.cover,
+          memCacheWidth: cachePx,
+          fadeInDuration: Duration.zero,
+          fadeOutDuration: Duration.zero,
+          errorWidget: (_, _, _) =>
+              _fallbackLetter(letter: fallbackLetter),
+        ),
+      ),
     );
   }
 

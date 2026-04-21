@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -20,6 +19,10 @@ class CommunityBucketPresenceService {
     if (user == null || email == null || email.isEmpty) return;
 
     try {
+      // Ensure Auth has propagated a token to Firestore before rules run
+      // (avoids PERMISSION_DENIED on cold start when user stream fires early).
+      await user.getIdToken();
+
       final userSnap = await FirebaseFirestore.instance
           .collection(CommunityLegacyContract.usersCollection)
           .doc(email)

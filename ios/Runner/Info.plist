@@ -82,5 +82,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>UPSC Wars needs photo library access so you can choose a profile picture.</string>
 </dict>
 </plist>

@@ -3,14 +3,19 @@ import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../community/domain/entities/community_user.dart';
+import '../../community/providers/community_providers.dart';
 import '../../community/providers/user_block_providers.dart';
+import '../../community/screens/community_screen.dart';
 import '../domain/entities/chat_runtime_config.dart';
 import '../providers/chat_providers.dart';
 
@@ -142,41 +147,70 @@ class ChatThreadScreen extends HookConsumerWidget {
     final showOnline = configAsync.value?.enableOnlineIndicator == true;
     final showTyping = configAsync.value?.enableTypingIndicator == true;
 
+    Future<void> openPeerProfile() async {
+      final me = ref.read(currentUserEmailProvider);
+      final repo = ref.read(communityRepositoryProvider);
+      final loaded = await repo.fetchCommunityUserByEmail(peerEmail);
+      final user = loaded ??
+          _fallbackPeerCommunityUser(
+            peerEmail: peerEmail,
+            peerDisplayName: peerDisplayName,
+            peerPhotoUrl: peerPhotoUrl,
+          );
+      if (!context.mounted) return;
+      await showCommunityUserProfileSheet(
+        context,
+        ref,
+        user,
+        currentUserEmail: me,
+        hideSendMessage: true,
+        confirmBlockClosesChat: true,
+        onBlockedFromChat: () {
+          if (context.mounted) context.go('/');
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 0,
-        title: Row(
-          children: [
-            TappableCircularAvatar(
-              imageUrl: peerPhotoUrl,
-              displayName: peerDisplayName,
-              size: 34,
-            ),
-            const SizedBox(width: AppSpacing.sm),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(peerDisplayName, style: AppTextStyles.label()),
-                  if (showTyping && typingAsync.value == true)
-                    Text(
-                      'typing...',
-                      style: AppTextStyles.caption().copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    )
-                  else if (showOnline)
-                    Text(
-                      isOnline ? 'online' : 'offline',
-                      style: AppTextStyles.caption().copyWith(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                ],
+        title: InkWell(
+          onTap: () => unawaited(openPeerProfile()),
+          child: Row(
+            children: [
+              TappableCircularAvatar(
+                imageUrl: peerPhotoUrl,
+                displayName: peerDisplayName,
+                size: 34,
+                enableImageTap: false,
               ),
-            ),
-          ],
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(peerDisplayName, style: AppTextStyles.label()),
+                    if (showTyping && typingAsync.value == true)
+                      Text(
+                        'typing...',
+                        style: AppTextStyles.caption().copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      )
+                    else if (showOnline)
+                      Text(
+                        isOnline ? 'online' : 'offline',
+                        style: AppTextStyles.caption().copyWith(
+                          color:
+                              Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       body: Column(
@@ -340,6 +374,31 @@ class ChatThreadScreen extends HookConsumerWidget {
       ),
     );
   }
+}
+
+CommunityUser _fallbackPeerCommunityUser({
+  required String peerEmail,
+  required String peerDisplayName,
+  String? peerPhotoUrl,
+}) {
+  final photo = peerPhotoUrl?.trim() ?? '';
+  return CommunityUser(
+    email: peerEmail.toLowerCase().trim(),
+    name: peerDisplayName,
+    photoUrl: photo.isNotEmpty
+        ? photo
+        : AppConstants.defaultProfilePhotoUrl,
+    lastOnlineTime: 0,
+    acceptingBattleInvites: true,
+    isInBattleTill: null,
+    appVersion: null,
+    telegram: null,
+    instagram: null,
+    optionalContact: null,
+    status: null,
+    openChallengeTimestamp: null,
+    openChallengeSubject: null,
+  );
 }
 
 String _formatMessageTime(int millis) {

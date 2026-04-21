@@ -62,158 +62,7 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
         );
         continue;
       }
-      final trEn = await _userDb.questionTranslationsDao.getByQuestionAndLanguage(
-        sq.questionUuid,
-        'en',
-      );
-      final trHi = await _userDb.questionTranslationsDao.getByQuestionAndLanguage(
-        sq.questionUuid,
-        'hi',
-      );
-      if (trEn == null && trHi == null) {
-        developer.log(
-          'No translation for uuid=${sq.questionUuid}; falling back to question text',
-          name: 'TestEngineRepository',
-        );
-      }
-
-      final displayTextEn = q.enDisplayText ?? '';
-      final displayTextHi = q.hiDisplayText ?? displayTextEn;
-      final parsedEn = QuestionDisplayTextParser.parse(displayTextEn);
-      final parsedHi = QuestionDisplayTextParser.parse(displayTextHi);
-      final table = await _userDb.questionTablesDao.getByQuestionUuid(
-        sq.questionUuid,
-      );
-      final footerEnOptions = _extractOptionsFromFooter(table?.enFooterText);
-      final footerHiOptions = _extractOptionsFromFooter(table?.hiFooterText);
-
-      String pickOption(
-        String primary,
-        String secondary,
-        String? footerPrimary,
-        String? footerSecondary,
-        String fallback,
-      ) {
-        final p = primary.trim();
-        if (p.isNotEmpty) return p;
-        final s = secondary.trim();
-        if (s.isNotEmpty) return s;
-        final fp = (footerPrimary ?? '').trim();
-        if (fp.isNotEmpty) return fp;
-        final fs = (footerSecondary ?? '').trim();
-        if (fs.isNotEmpty) return fs;
-        return fallback;
-      }
-
-      final optionAEn = pickOption(
-        parsedEn.optionA,
-        parsedHi.optionA,
-        footerEnOptions?.$1,
-        footerHiOptions?.$1,
-        'Option A',
-      );
-      final optionBEn = pickOption(
-        parsedEn.optionB,
-        parsedHi.optionB,
-        footerEnOptions?.$2,
-        footerHiOptions?.$2,
-        'Option B',
-      );
-      final optionCEn = pickOption(
-        parsedEn.optionC,
-        parsedHi.optionC,
-        footerEnOptions?.$3,
-        footerHiOptions?.$3,
-        'Option C',
-      );
-      final optionDEn = pickOption(
-        parsedEn.optionD,
-        parsedHi.optionD,
-        footerEnOptions?.$4,
-        footerHiOptions?.$4,
-        'Option D',
-      );
-      final optionAHi = pickOption(
-        parsedHi.optionA,
-        parsedEn.optionA,
-        footerHiOptions?.$1,
-        footerEnOptions?.$1,
-        optionAEn,
-      );
-      final optionBHi = pickOption(
-        parsedHi.optionB,
-        parsedEn.optionB,
-        footerHiOptions?.$2,
-        footerEnOptions?.$2,
-        optionBEn,
-      );
-      final optionCHi = pickOption(
-        parsedHi.optionC,
-        parsedEn.optionC,
-        footerHiOptions?.$3,
-        footerEnOptions?.$3,
-        optionCEn,
-      );
-      final optionDHi = pickOption(
-        parsedHi.optionD,
-        parsedEn.optionD,
-        footerHiOptions?.$4,
-        footerEnOptions?.$4,
-        optionDEn,
-      );
-
-      questions.add(
-        TestQuestion(
-          uuid: q.uuid,
-          subject: q.subject,
-          topic: q.topic,
-          negativeFraming: q.negativeFraming,
-          displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
-          displayTextHi:
-              parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
-          optionA: optionAEn,
-          optionAHi: optionAHi,
-          optionB: optionBEn,
-          optionBHi: optionBHi,
-          optionC: optionCEn,
-          optionCHi: optionCHi,
-          optionD: optionDEn,
-          optionDHi: optionDHi,
-          correctOption: q.correctOption,
-          questionType: q.questionType,
-          trapType: q.trapType,
-          hasTable: q.hasTable,
-          tableData: _parseTable(table, 'en'),
-          tableDataHi: _parseTable(table, 'hi') ?? _parseTable(table, 'en'),
-          position: sq.position,
-          selectedOption: sq.selectedOption,
-          status: sq.status,
-          flagged: sq.flagged,
-          timeSpentSecs: sq.timeSpentSecs,
-          confidence: sq.confidence,
-          conceptAnchor: q.conceptAnchor,
-          finalExplanation: trEn?.finalExplanation ?? trHi?.finalExplanation,
-          finalExplanationHi: trHi?.finalExplanation ?? trEn?.finalExplanation,
-          eliminationLogic:
-              _parseStringList(trEn?.eliminationLogic) +
-              const <String>[],
-          eliminationLogicHi: _parseStringList(
-            trHi?.eliminationLogic ?? trEn?.eliminationLogic,
-          ),
-          statementAnalysis: _parseStatementAnalysis(trEn?.statementAnalysis),
-          statementAnalysisHi: _parseStatementAnalysis(
-            trHi?.statementAnalysis ?? trEn?.statementAnalysis,
-          ),
-          strongDistractor: trEn?.strongDistractor ?? trHi?.strongDistractor,
-          strongDistractorHi:
-              trHi?.strongDistractor ?? trEn?.strongDistractor,
-          upscTrapExplanation:
-              trEn?.upscTrapExplanation ?? trHi?.upscTrapExplanation,
-          upscTrapExplanationHi:
-              trHi?.upscTrapExplanation ?? trEn?.upscTrapExplanation,
-          conceptsUsed: _parseStringList(q.conceptsUsed),
-        ),
-      );
+      questions.add(await _buildTestQuestionFromStoredRow(q, sq));
     }
 
     if (questions.isEmpty) {
@@ -234,6 +83,180 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       questions: questions,
       savedExamRemainingSecs: session.examRemainingSecs,
       analyticsFeatureKey: session.analyticsFeatureKey,
+    );
+  }
+
+  @override
+  Future<TestQuestion?> loadStandaloneQuestionByUuid(String uuid) async {
+    final q = await _userDb.questionsDao.getByUuid(uuid);
+    if (q == null) return null;
+    final sq = SessionQuestion(
+      id: 'standalone',
+      sessionId: 'standalone',
+      questionUuid: uuid,
+      position: 1,
+      selectedOption: null,
+      isCorrect: null,
+      status: 'unattempted',
+      timeSpentSecs: null,
+      flagged: false,
+      attemptedAt: null,
+      confidence: null,
+    );
+    return _buildTestQuestionFromStoredRow(q, sq);
+  }
+
+  Future<TestQuestion> _buildTestQuestionFromStoredRow(
+    Question q,
+    SessionQuestion sq,
+  ) async {
+    final trEn = await _userDb.questionTranslationsDao.getByQuestionAndLanguage(
+      sq.questionUuid,
+      'en',
+    );
+    final trHi = await _userDb.questionTranslationsDao.getByQuestionAndLanguage(
+      sq.questionUuid,
+      'hi',
+    );
+    if (trEn == null && trHi == null) {
+      developer.log(
+        'No translation for uuid=${sq.questionUuid}; falling back to question text',
+        name: 'TestEngineRepository',
+      );
+    }
+
+    final displayTextEn = q.enDisplayText ?? '';
+    final displayTextHi = q.hiDisplayText ?? displayTextEn;
+    final parsedEn = QuestionDisplayTextParser.parse(displayTextEn);
+    final parsedHi = QuestionDisplayTextParser.parse(displayTextHi);
+    final table = await _userDb.questionTablesDao.getByQuestionUuid(
+      sq.questionUuid,
+    );
+    final footerEnOptions = _extractOptionsFromFooter(table?.enFooterText);
+    final footerHiOptions = _extractOptionsFromFooter(table?.hiFooterText);
+
+    String pickOption(
+      String primary,
+      String secondary,
+      String? footerPrimary,
+      String? footerSecondary,
+      String fallback,
+    ) {
+      final p = primary.trim();
+      if (p.isNotEmpty) return p;
+      final s = secondary.trim();
+      if (s.isNotEmpty) return s;
+      final fp = (footerPrimary ?? '').trim();
+      if (fp.isNotEmpty) return fp;
+      final fs = (footerSecondary ?? '').trim();
+      if (fs.isNotEmpty) return fs;
+      return fallback;
+    }
+
+    final optionAEn = pickOption(
+      parsedEn.optionA,
+      parsedHi.optionA,
+      footerEnOptions?.$1,
+      footerHiOptions?.$1,
+      'Option A',
+    );
+    final optionBEn = pickOption(
+      parsedEn.optionB,
+      parsedHi.optionB,
+      footerEnOptions?.$2,
+      footerHiOptions?.$2,
+      'Option B',
+    );
+    final optionCEn = pickOption(
+      parsedEn.optionC,
+      parsedHi.optionC,
+      footerEnOptions?.$3,
+      footerHiOptions?.$3,
+      'Option C',
+    );
+    final optionDEn = pickOption(
+      parsedEn.optionD,
+      parsedHi.optionD,
+      footerEnOptions?.$4,
+      footerHiOptions?.$4,
+      'Option D',
+    );
+    final optionAHi = pickOption(
+      parsedHi.optionA,
+      parsedEn.optionA,
+      footerHiOptions?.$1,
+      footerEnOptions?.$1,
+      optionAEn,
+    );
+    final optionBHi = pickOption(
+      parsedHi.optionB,
+      parsedEn.optionB,
+      footerHiOptions?.$2,
+      footerEnOptions?.$2,
+      optionBEn,
+    );
+    final optionCHi = pickOption(
+      parsedHi.optionC,
+      parsedEn.optionC,
+      footerHiOptions?.$3,
+      footerEnOptions?.$3,
+      optionCEn,
+    );
+    final optionDHi = pickOption(
+      parsedHi.optionD,
+      parsedEn.optionD,
+      footerHiOptions?.$4,
+      footerEnOptions?.$4,
+      optionDEn,
+    );
+
+    return TestQuestion(
+      uuid: q.uuid,
+      subject: q.subject,
+      topic: q.topic,
+      negativeFraming: q.negativeFraming,
+      displayText: parsedEn.stem.trim().isEmpty ? displayTextEn : parsedEn.stem,
+      displayTextHi:
+          parsedHi.stem.trim().isEmpty ? displayTextHi : parsedHi.stem,
+      optionA: optionAEn,
+      optionAHi: optionAHi,
+      optionB: optionBEn,
+      optionBHi: optionBHi,
+      optionC: optionCEn,
+      optionCHi: optionCHi,
+      optionD: optionDEn,
+      optionDHi: optionDHi,
+      correctOption: q.correctOption,
+      questionType: q.questionType,
+      trapType: q.trapType,
+      hasTable: q.hasTable,
+      tableData: _parseTable(table, 'en'),
+      tableDataHi: _parseTable(table, 'hi') ?? _parseTable(table, 'en'),
+      position: sq.position,
+      selectedOption: sq.selectedOption,
+      status: sq.status,
+      flagged: sq.flagged,
+      timeSpentSecs: sq.timeSpentSecs,
+      confidence: sq.confidence,
+      conceptAnchor: q.conceptAnchor,
+      finalExplanation: trEn?.finalExplanation ?? trHi?.finalExplanation,
+      finalExplanationHi: trHi?.finalExplanation ?? trEn?.finalExplanation,
+      eliminationLogic:
+          _parseStringList(trEn?.eliminationLogic) + const <String>[],
+      eliminationLogicHi: _parseStringList(
+        trHi?.eliminationLogic ?? trEn?.eliminationLogic,
+      ),
+      statementAnalysis: _parseStatementAnalysis(trEn?.statementAnalysis),
+      statementAnalysisHi: _parseStatementAnalysis(
+        trHi?.statementAnalysis ?? trEn?.statementAnalysis,
+      ),
+      strongDistractor: trEn?.strongDistractor ?? trHi?.strongDistractor,
+      strongDistractorHi: trHi?.strongDistractor ?? trEn?.strongDistractor,
+      upscTrapExplanation:
+          trEn?.upscTrapExplanation ?? trHi?.upscTrapExplanation,
+      upscTrapExplanationHi:
+          trHi?.upscTrapExplanation ?? trEn?.upscTrapExplanation,
+      conceptsUsed: _parseStringList(q.conceptsUsed),
     );
   }
 

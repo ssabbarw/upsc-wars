@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -83,8 +84,6 @@ class HomeScreen extends HookConsumerWidget {
       user?.displayName,
       scheme,
     );
-    final hasPhotoUrl = user?.photoURL?.trim().isNotEmpty ?? false;
-
     void openProfile() {
       if (!context.mounted) return;
       context.push('/profile');
@@ -181,32 +180,35 @@ class HomeScreen extends HookConsumerWidget {
                                 width: 0.5,
                               ),
                             ),
-                            child: hasPhotoUrl
-                                ? ClipOval(
-                                    child: Image.network(
-                                      user!.photoURL!,
+                            child: user == null
+                                ? Icon(
+                                    Icons.person_outline,
+                                    size: 18,
+                                    color: scheme.onSurfaceVariant,
+                                  )
+                                : ClipOval(
+                                    child: CachedNetworkImage(
+                                      imageUrl:
+                                          AppConstants.profileImageUrlOrDefault(
+                                        user.photoURL,
+                                      ),
+                                      width: 36,
+                                      height: 36,
                                       fit: BoxFit.cover,
-                                      errorBuilder: (_, __, ___) => Center(
+                                      memCacheWidth: (36 *
+                                              MediaQuery.devicePixelRatioOf(
+                                                context,
+                                              ))
+                                          .round(),
+                                      fadeInDuration: Duration.zero,
+                                      fadeOutDuration: Duration.zero,
+                                      errorWidget: (_, __, ___) => Center(
                                         child: Text(
                                           avatarInitials,
                                           style: AppTextStyles.label().copyWith(
                                             color: scheme.onPrimaryContainer,
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  )
-                                : user == null
-                                ? Icon(
-                                    Icons.person_outline,
-                                    size: 18,
-                                    color: scheme.onSurfaceVariant,
-                                  )
-                                : Center(
-                                    child: Text(
-                                      avatarInitials,
-                                      style: AppTextStyles.label().copyWith(
-                                        color: scheme.onPrimaryContainer,
                                       ),
                                     ),
                                   ),

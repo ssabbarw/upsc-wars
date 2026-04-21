@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/constants/app_constants.dart';
 
 class TappableCircularAvatar extends StatelessWidget {
   const TappableCircularAvatar({
@@ -9,24 +12,32 @@ class TappableCircularAvatar extends StatelessWidget {
     required this.displayName,
     required this.size,
     this.previewName,
+    this.enableImageTap = true,
   });
 
   final String? imageUrl;
   final String displayName;
   final double size;
   final String? previewName;
+  /// When false, tapping the photo does not open fullscreen preview (parent can handle taps).
+  final bool enableImageTap;
 
   @override
   Widget build(BuildContext context) {
-    final url = _enhanceGooglePhotoUrl(imageUrl);
+    final url = _enhanceGooglePhotoUrl(
+      AppConstants.profileImageUrlOrDefault(imageUrl),
+    );
     final hasImage = url.trim().isNotEmpty;
     final monogram = _monogramFrom(displayName);
     final scheme = Theme.of(context).colorScheme;
     final textColor = scheme.onPrimaryContainer;
     final monogramFontSize = (size * 0.42).clamp(14.0, 42.0);
+    final cachePx = (size * MediaQuery.devicePixelRatioOf(context)).round();
 
     return GestureDetector(
-      onTap: hasImage ? () => _showFullscreenAvatar(context, url) : null,
+      onTap: enableImageTap && hasImage
+          ? () => _showFullscreenAvatar(context, url)
+          : null,
       child: SizedBox(
         width: size,
         height: size,
@@ -47,13 +58,15 @@ class TappableCircularAvatar extends StatelessWidget {
             ),
             if (hasImage)
               ClipOval(
-                child: Image.network(
-                  url,
+                child: CachedNetworkImage(
+                  imageUrl: url,
                   width: size,
                   height: size,
                   fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) =>
-                      const SizedBox.shrink(),
+                  memCacheWidth: cachePx,
+                  fadeInDuration: Duration.zero,
+                  fadeOutDuration: Duration.zero,
+                  errorWidget: (context, u, e) => const SizedBox.shrink(),
                 ),
               ),
           ],
@@ -69,6 +82,8 @@ class TappableCircularAvatar extends StatelessWidget {
       builder: (dialogContext) {
         final width = MediaQuery.sizeOf(dialogContext).width;
         final avatarSize = width * 0.72;
+        final dialogCachePx =
+            (avatarSize * MediaQuery.devicePixelRatioOf(dialogContext)).round();
         return BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
           child: Dialog(
@@ -77,15 +92,25 @@ class TappableCircularAvatar extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  width: avatarSize,
-                  height: avatarSize,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    image: DecorationImage(
-                      image: NetworkImage(image),
-                      fit: BoxFit.cover,
+                ClipOval(
+                  child: CachedNetworkImage(
+                    imageUrl: image,
+                    width: avatarSize,
+                    height: avatarSize,
+                    fit: BoxFit.cover,
+                    memCacheWidth: dialogCachePx,
+                    fadeInDuration: Duration.zero,
+                    fadeOutDuration: Duration.zero,
+                    errorWidget: (context, u, e) => Container(
+                      width: avatarSize,
+                      height: avatarSize,
+                      color: Colors.grey.shade300,
+                      alignment: Alignment.center,
+                      child: Icon(
+                        Icons.broken_image_outlined,
+                        color: Colors.grey.shade600,
+                        size: avatarSize * 0.2,
+                      ),
                     ),
                   ),
                 ),
@@ -114,8 +139,8 @@ class TappableCircularAvatar extends StatelessWidget {
   }
 }
 
-String _enhanceGooglePhotoUrl(String? imageUrl) {
-  final raw = imageUrl?.trim() ?? '';
+String _enhanceGooglePhotoUrl(String imageUrl) {
+  final raw = imageUrl.trim();
   if (raw.isEmpty) return '';
   return raw.replaceAll('s96-c', 's900-c');
 }

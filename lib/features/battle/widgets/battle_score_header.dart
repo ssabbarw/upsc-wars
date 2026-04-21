@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:upsc_wars/core/constants/app_constants.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
@@ -373,36 +375,30 @@ class _PlayerAvatarStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final url = photoUrl?.trim();
-    if (url != null && url.isNotEmpty) {
-      final scheme = Theme.of(context).colorScheme;
-      return CircleAvatar(
-        radius: 18,
-        backgroundColor: scheme.surfaceContainerHighest,
-        child: ClipOval(
-          child: Image.network(
-            url,
-            width: 36,
-            height: 36,
-            fit: BoxFit.cover,
-            errorBuilder: (_, _, _) => Center(
-              child: Text(
-                initial,
-                style: AppTextStyles.label().copyWith(
-                  color: scheme.onSurface,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
+    final scheme = Theme.of(context).colorScheme;
+    final url = AppConstants.profileImageUrlOrDefault(photoUrl);
+    final cachePx =
+        (36 * MediaQuery.devicePixelRatioOf(context)).round();
+    return CircleAvatar(
+      radius: 18,
+      backgroundColor: scheme.surfaceContainerHighest,
+      child: ClipOval(
+        child: CachedNetworkImage(
+          imageUrl: url,
+          width: 36,
+          height: 36,
+          fit: BoxFit.cover,
+          memCacheWidth: cachePx,
+          fadeInDuration: Duration.zero,
+          fadeOutDuration: Duration.zero,
+          errorWidget: (_, _, _) => _MonogramAvatar(
+            letter: initial,
+            onPrimaryStrip: onPrimaryStrip,
+            backgroundColor: monogramBackground,
+            foregroundColor: monogramForeground,
           ),
         ),
-      );
-    }
-    return _MonogramAvatar(
-      letter: initial,
-      onPrimaryStrip: onPrimaryStrip,
-      backgroundColor: monogramBackground,
-      foregroundColor: monogramForeground,
+      ),
     );
   }
 }

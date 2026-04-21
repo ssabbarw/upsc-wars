@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_radius.dart';
@@ -11,26 +11,46 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
 import '../../../shared/widgets/unread_pulse_wrapper.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
-import '../../battle/domain/entities/battle_invite_target.dart';
-import '../../chat/domain/chat_ids.dart';
-import '../../chat/domain/entities/chat_thread_route_payload.dart';
 import '../../chat/providers/chat_providers.dart';
 import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
-import '../providers/user_block_providers.dart';
+import '../providers/open_challenge_providers.dart';
+import 'community_qotd_tab.dart';
+import '../widgets/community_user_profile_sheet.dart';
+import '../widgets/open_challenge_community_section.dart';
+
+export '../widgets/community_user_profile_sheet.dart'
+    show showCommunityUserProfileSheet;
 
 class CommunityScreen extends HookConsumerWidget {
-  const CommunityScreen({super.key});
+  const CommunityScreen({super.key, this.initialTabIndex = 0});
+
+  /// 0 = Recent online, 1 = Open challenge, 2 = QOTD.
+  final int initialTabIndex;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final safeIndex = initialTabIndex.clamp(0, 2);
+    final tabController = useTabController(
+      initialLength: 3,
+      initialIndex: safeIndex,
+    );
     final chatHasUnread = ref.watch(chatInboxHasUnreadProvider);
     return PopToShellHomeScope(
       child: Scaffold(
         appBar: AppBar(
           title: Text('Community', style: AppTextStyles.h3()),
+          bottom: TabBar(
+            controller: tabController,
+            isScrollable: true,
+            tabs: const [
+              Tab(text: 'Recent online'),
+              Tab(text: 'Open challenge'),
+              Tab(text: 'QOTD'),
+            ],
+          ),
           actions: [
             IconButton(
               tooltip: 'Chats',
@@ -78,7 +98,32 @@ class CommunityScreen extends HookConsumerWidget {
             ),
           ],
         ),
-        body: _RecentTab(scheme: scheme),
+        body: TabBarView(
+          controller: tabController,
+          children: [
+            _RecentTab(scheme: scheme),
+            const _OpenChallengesTab(),
+            const CommunityQotdTab(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _OpenChallengesTab extends ConsumerWidget {
+  const _OpenChallengesTab();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return RefreshIndicator(
+      onRefresh: () async {
+        ref.invalidate(openChallengesListProvider);
+      },
+      child: SingleChildScrollView(
+        key: const PageStorageKey<String>('community_open_challenges_scroll'),
+        physics: const AlwaysScrollableScrollPhysics(),
+        child: const OpenChallengeCommunitySection(),
       ),
     );
   }
@@ -107,7 +152,7 @@ class _RecentTab extends HookConsumerWidget {
               AppSpacing.xs,
             ),
             child: Text(
-              'Recents',
+              'Recent online',
               style: AppTextStyles.label().copyWith(
                 color: scheme.onSurface,
               ),
@@ -152,18 +197,39 @@ class _RecentTab extends HookConsumerWidget {
           ),
         ],
       ),
-      error: (error, _) => Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('Could not load recent users', style: AppTextStyles.bodyMd()),
-            const SizedBox(height: AppSpacing.sm),
-            OutlinedButton(
-              onPressed: () => ref.invalidate(communityRecentUsersProvider),
-              child: const Text('Retry'),
+      error: (error, _) => ListView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.only(bottom: AppSpacing.lg),
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.lg,
+              AppSpacing.md,
+              AppSpacing.lg,
+              AppSpacing.xs,
             ),
-          ],
-        ),
+            child: Text(
+              'Recent online',
+              style: AppTextStyles.label().copyWith(
+                color: scheme.onSurface,
+              ),
+            ),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Could not load recent users', style: AppTextStyles.bodyMd()),
+                const SizedBox(height: AppSpacing.sm),
+                OutlinedButton(
+                  onPressed: () => ref.invalidate(communityRecentUsersProvider),
+                  child: const Text('Retry'),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       data: (users) {
         final sortedUsers = [...users]
@@ -179,7 +245,7 @@ class _RecentTab extends HookConsumerWidget {
                 AppSpacing.xs,
               ),
               child: Text(
-                'Recents',
+                'Recent online',
                 style: AppTextStyles.label().copyWith(
                   color: scheme.onSurface,
                 ),
@@ -187,8 +253,11 @@ class _RecentTab extends HookConsumerWidget {
             ),
             Expanded(
               child: RefreshIndicator(
-                onRefresh: () =>
-                    ref.read(communityRecentUsersProvider.notifier).refresh(),
+                onRefresh: () async {
+                  await ref
+                      .read(communityRecentUsersProvider.notifier)
+                      .refresh();
+                },
                 child: ListView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.fromLTRB(
@@ -230,7 +299,7 @@ class _RecentTab extends HookConsumerWidget {
                     for (final user in sortedUsers) ...[
                       _UserTile(
                         user: user,
-                        onTap: () => _showUserProfile(
+                        onTap: () => showCommunityUserProfileSheet(
                           context,
                           ref,
                           user,
@@ -306,7 +375,7 @@ class _UserTile extends StatelessWidget {
                     Text(user.name, style: AppTextStyles.label()),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
-                      '${_formatTime(user.lastOnlineTime)} · $statusText',
+                      '${formatCommunityProfileLastOnline(user.lastOnlineTime)} · $statusText',
                       style: AppTextStyles.caption().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -320,266 +389,6 @@ class _UserTile extends StatelessWidget {
       ),
     );
   }
-}
-
-Future<void> _showUserProfile(
-  BuildContext context,
-  WidgetRef ref,
-  CommunityUser user, {
-  String? currentUserEmail,
-}) async {
-  final blockedInitially = ref.read(blockedUserEmailsProvider).maybeWhen(
-        data: (s) => s.contains(user.email.toLowerCase()),
-        orElse: () => false,
-      );
-  var isBlocked = blockedInitially;
-  await showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-    ),
-    builder: (context) => StatefulBuilder(
-      builder: (context, setState) {
-        final scheme = Theme.of(context).colorScheme;
-        final isSelf = currentUserEmail == user.email.toLowerCase();
-        final canInviteBattle =
-            !user.isInBattle &&
-            user.acceptingBattleInvites &&
-            !isBlocked &&
-            !isSelf;
-        return SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              AppSpacing.lg,
-              AppSpacing.lg,
-              AppSpacing.lg,
-              AppSpacing.xxl,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TappableCircularAvatar(
-                      imageUrl: user.photoUrl,
-                      displayName: user.name,
-                      size: 76,
-                    ),
-                    const SizedBox(width: AppSpacing.lg),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(user.name, style: AppTextStyles.h3()),
-                          const SizedBox(height: AppSpacing.xs),
-                          Text(
-                            user.isInBattle ? 'fighting a battle' : 'available',
-                            style: AppTextStyles.caption().copyWith(
-                              color: scheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: AppSpacing.lg),
-                Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        onPressed: isSelf
-                            ? null
-                            : () async {
-                                final me = currentUserEmail;
-                                if (me == null || me.isEmpty) return;
-                                final repo =
-                                    ref.read(communityRepositoryProvider);
-                                final target = user.email.toLowerCase();
-                                final nextBlocked = !isBlocked;
-                                try {
-                                  await repo.setUserBlocked(
-                                    ownerEmail: me,
-                                    otherEmail: target,
-                                    blocked: nextBlocked,
-                                  );
-                                  setState(() => isBlocked = nextBlocked);
-                                  if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          nextBlocked
-                                              ? 'You will not see messages or '
-                                                  'battle invites from '
-                                                  '${user.name}.'
-                                              : '${user.name} has been unblocked.',
-                                        ),
-                                      ),
-                                    );
-                                  }
-                                } catch (e) {
-                                  if (context.mounted) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Could not update block: $e',
-                                        ),
-                                      ),
-                                    );
-                                  }
-                                }
-                              },
-                        icon: Icon(
-                          isBlocked
-                              ? Icons.lock_open_outlined
-                              : Icons.block_outlined,
-                        ),
-                        label: Text(isBlocked ? 'Unblock' : 'Block'),
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: FilledButton.icon(
-                        onPressed: !canInviteBattle
-                            ? null
-                            : () {
-                                Navigator.of(context).pop();
-                                context.push(
-                                  '/battle/config',
-                                  extra: BattleInviteTarget(
-                                    email: user.email.toLowerCase(),
-                                    displayName: user.name,
-                                    photoUrl:
-                                        user.photoUrl.trim().isEmpty
-                                            ? null
-                                            : user.photoUrl,
-                                  ),
-                                );
-                              },
-                        icon: const Icon(Icons.sports_martial_arts_outlined),
-                        label: const Text('Invite'),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                SizedBox(
-                  width: double.infinity,
-                  child: FilledButton.icon(
-                    onPressed: isBlocked || isSelf
-                        ? null
-                        : () {
-                            Navigator.of(context).pop();
-                            final me = currentUserEmail;
-                            if (me == null || me.isEmpty) return;
-                            final chatId = ChatIds.chatIdForPair(me, user.email);
-                            context.push(
-                              '/chat/$chatId',
-                              extra: ChatThreadRoutePayload(
-                                peerEmail: user.email.toLowerCase(),
-                                peerDisplayName: user.name,
-                                peerPhotoUrl: user.photoUrl.trim().isEmpty
-                                    ? null
-                                    : user.photoUrl,
-                              ),
-                            );
-                          },
-                    icon: const Icon(Icons.chat_bubble_outline),
-                    label: const Text('Send Message'),
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(AppSpacing.md),
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Status', style: AppTextStyles.label()),
-                      const SizedBox(height: AppSpacing.xs),
-                      Text(
-                        (user.status ?? '').trim().isEmpty
-                            ? 'Hey there! I am a UPSC Warrior.'
-                            : user.status!,
-                        style: AppTextStyles.bodySm(),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.sm),
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(AppSpacing.md),
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadius.md),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.schedule_outlined, size: 18),
-                      const SizedBox(width: AppSpacing.sm),
-                      Expanded(
-                        child: Text(
-                          'Last online: ${_formatTime(user.lastOnlineTime)}',
-                          style: AppTextStyles.bodySm(),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        onPressed: (user.instagram ?? '').isEmpty
-                            ? null
-                            : () => _openExternal(
-                                context,
-                                'https://instagram.com/${user.instagram!.replaceAll('@', '')}',
-                              ),
-                        icon: const Icon(Icons.camera_alt_outlined),
-                        label: Text(
-                          (user.instagram ?? '').isEmpty
-                              ? 'Instagram'
-                              : user.instagram!,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: AppSpacing.sm),
-                    Expanded(
-                      child: OutlinedButton.icon(
-                        onPressed: (user.telegram ?? '').isEmpty
-                            ? null
-                            : () => _openExternal(
-                                context,
-                                'https://t.me/${user.telegram!.replaceAll('@', '')}',
-                              ),
-                        icon: const Icon(Icons.send_outlined),
-                        label: Text(
-                          (user.telegram ?? '').isEmpty
-                              ? 'Telegram'
-                              : user.telegram!,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    ),
-  );
 }
 
 Future<void> _showSettings(BuildContext context, WidgetRef ref) async {
@@ -745,21 +554,3 @@ Future<void> _showRandomConnectSheet(BuildContext context) async {
     },
   );
 }
-
-Future<void> _openExternal(BuildContext context, String url) async {
-  final uri = Uri.parse(url);
-  if (!await launchUrl(uri, mode: LaunchMode.externalApplication) &&
-      context.mounted) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Could not open link')));
-  }
-}
-
-String _formatTime(int millis) {
-  if (millis <= 0) return 'unknown';
-  return DateFormat(
-    'dd MMM, hh:mm a',
-  ).format(DateTime.fromMillisecondsSinceEpoch(millis));
-}
-

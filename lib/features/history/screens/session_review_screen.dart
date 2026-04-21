@@ -45,6 +45,155 @@ Color _reviewConfidenceCaptionColor({
   return scheme.onSurfaceVariant;
 }
 
+/// Route `extra` for [SingleQuestionReviewScreen] (same UI as session review, one question).
+class SingleQuestionReviewArgs {
+  const SingleQuestionReviewArgs({
+    required this.question,
+    this.initialUiLanguage = 'en',
+  });
+
+  final TestQuestion question;
+  final String initialUiLanguage;
+}
+
+/// Post-test style review ([ReviewBody]) for a single question — e.g. Community QOTD explanation.
+class SingleQuestionReviewScreen extends ConsumerStatefulWidget {
+  const SingleQuestionReviewScreen({super.key, required this.args});
+
+  final SingleQuestionReviewArgs args;
+
+  @override
+  ConsumerState<SingleQuestionReviewScreen> createState() =>
+      _SingleQuestionReviewScreenState();
+}
+
+class _SingleQuestionReviewScreenState
+    extends ConsumerState<SingleQuestionReviewScreen> {
+  String _uiLanguage = 'en';
+  bool _loadingMeta = true;
+  Object? _metaError;
+  bool _bookmarked = false;
+  bool _queued = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _uiLanguage = widget.args.initialUiLanguage;
+    _loadMeta();
+  }
+
+  @override
+  void didUpdateWidget(covariant SingleQuestionReviewScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.args.question.uuid != widget.args.question.uuid) {
+      _uiLanguage = widget.args.initialUiLanguage;
+      _loadMeta();
+    }
+  }
+
+  Future<void> _loadMeta() async {
+    setState(() {
+      _loadingMeta = true;
+      _metaError = null;
+    });
+    try {
+      final repo = await ref.read(testEngineRepositoryProvider.future);
+      final userDb = ref.read(userDatabaseProvider);
+      final bookmarked = await repo.isBookmarked(widget.args.question.uuid);
+      final rq = await userDb.revisionQueueDao
+          .getRevisionQueueItemByQuestionUuid(widget.args.question.uuid);
+      if (!mounted) return;
+      setState(() {
+        _bookmarked = bookmarked;
+        _queued = rq != null;
+        _loadingMeta = false;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _metaError = e;
+        _loadingMeta = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_loadingMeta) {
+      return const Scaffold(
+        body: SafeArea(child: Center(child: CircularProgressIndicator())),
+      );
+    }
+    if (_metaError != null) {
+      return Scaffold(
+        body: SafeArea(
+          child: Center(
+            child: FilledButton(
+              onPressed: _loadMeta,
+              child: const Text('Retry'),
+            ),
+          ),
+        ),
+      );
+    }
+
+    final q = widget.args.question;
+    final isBookmarked = _bookmarked;
+    final isQueued = _queued;
+
+    return Scaffold(
+      body: SafeArea(
+        child: ReviewBody(
+          title: 'Explanation',
+          showRevisionBadge: false,
+          progressRight: 'Community QOTD',
+          question: q,
+          current: 1,
+          total: 1,
+          isBookmarked: isBookmarked,
+          isQueued: isQueued,
+          confidenceSessionId: null,
+          onShare: null,
+          onToggleBookmark: () async {
+            final repo = await ref.read(testEngineRepositoryProvider.future);
+            if (isBookmarked) {
+              await repo.removeBookmark(q.uuid);
+            } else {
+              await repo.addBookmark(q.uuid);
+            }
+            if (!mounted) return;
+            setState(() {
+              _bookmarked = !isBookmarked;
+              _queued = true; // match session review bookmark handler
+            });
+          },
+          onPrev: () {},
+          onNext: () {
+            if (context.canPop()) {
+              context.pop();
+            } else {
+              context.go('/');
+            }
+          },
+          onAddToRevision: () async {
+            if (isQueued) return;
+            final userDb = ref.read(userDatabaseProvider);
+            await userDb.revisionQueueDao.add(
+              id: reviewSessionUuid.v4(),
+              questionUuid: q.uuid,
+              dateAddedToQueue: DateTime.now(),
+            );
+            if (!mounted) return;
+            setState(() => _queued = true);
+          },
+          uiLanguage: _uiLanguage,
+          onLanguageChanged: (lang) => setState(() => _uiLanguage = lang),
+        ),
+      ),
+    );
+  }
+}
+
 class SessionReviewScreen extends HookConsumerWidget {
   const SessionReviewScreen({
     super.key,

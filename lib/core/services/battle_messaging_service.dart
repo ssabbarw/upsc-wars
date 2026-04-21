@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
+import 'package:upsc_wars/features/community/open_challenge/open_challenge_fcm.dart';
 import 'package:upsc_wars/features/notifications/long_html_notification_constants.dart';
 
 /// FCM setup for battle invites, long HTML announcements, and deep links.
@@ -142,6 +143,15 @@ class BattleMessagingService {
       }
       if (messageOpensLongHtmlScreen(message)) {
         router.push('/notification/long-html');
+        return;
+      }
+      final ocKind = message.data['kind']?.toString().trim().toLowerCase();
+      if (ocKind == OpenChallengeFcm.kind) {
+        final id =
+            message.data[OpenChallengeFcm.challengeId]?.toString().trim();
+        if (id != null && id.isNotEmpty) {
+          router.go('/community/open-challenges/$id');
+        }
         return;
       }
       final sessionId = message.data['sessionId'] as String?;

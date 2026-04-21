@@ -17,6 +17,10 @@ class AppTheme {
       colorScheme: ColorScheme.light(
         primary: AppColors.primary,
         onPrimary: AppColors.onPrimary,
+        secondary: AppColors.secondary,
+        onSecondary: AppColors.onSecondary,
+        secondaryContainer: AppColors.secondaryContainerLight,
+        onSecondaryContainer: AppColors.onSecondaryContainerLight,
         surface: AppColors.surfacePrimaryLight,
         surfaceContainerLow: AppColors.surfaceSecondaryLight,
         surfaceContainerLowest: AppColors.surfaceTertiaryLight,
@@ -58,6 +62,16 @@ class AppTheme {
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.onPrimary,
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.md),
+          ),
+          textStyle: AppTextStyles.label(),
+        ),
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
           ),
@@ -171,6 +185,10 @@ class AppTheme {
       colorScheme: ColorScheme.dark(
         primary: AppColors.primary,
         onPrimary: AppColors.onPrimary,
+        secondary: AppColors.secondary,
+        onSecondary: AppColors.onSecondary,
+        secondaryContainer: AppColors.secondaryContainerDark,
+        onSecondaryContainer: AppColors.onSecondaryContainerDark,
         surface: AppColors.surfacePrimaryDark,
         surfaceContainerLow: AppColors.surfaceSecondaryDark,
         surfaceContainerLowest: AppColors.surfaceTertiaryDark,
@@ -212,6 +230,16 @@ class AppTheme {
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.onPrimary,
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadius.md),
+          ),
+          textStyle: AppTextStyles.label(),
+        ),
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
           ),

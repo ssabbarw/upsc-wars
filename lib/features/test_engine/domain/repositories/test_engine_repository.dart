@@ -1,8 +1,13 @@
 import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
+import 'package:upsc_wars/core/domain/entities/test_question.dart';
 
 abstract class TestEngineRepository {
   Future<ActiveSession> loadSession(String sessionId);
+
+  /// Loads a single catalog question as [TestQuestion] (no session row).
+  /// Returns null if the UUID is missing locally.
+  Future<TestQuestion?> loadStandaloneQuestionByUuid(String uuid);
 
   Future<int> countScoredAttempts();
 

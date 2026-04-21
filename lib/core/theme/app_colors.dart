@@ -72,6 +72,15 @@ class AppColors {
   /// Text and icons on primary-colored controls.
   static const onPrimary = Color(0xFFFFFFFF);
 
+  // ── Secondary / tonal ([FilledButton.tonal] uses secondaryContainer) ──
+  /// Solid [info] surface with white label — matches requested brand blue.
+  static const secondary = info;
+  static const onSecondary = onPrimary;
+  static const secondaryContainerLight = info;
+  static const onSecondaryContainerLight = onPrimary;
+  static const secondaryContainerDark = info;
+  static const onSecondaryContainerDark = onPrimary;
+
   /// Session summary / marketing-style CTAs (distinct from app primary teal).
   static const summaryCtaBlue = Color(0xFF2563EB);
 

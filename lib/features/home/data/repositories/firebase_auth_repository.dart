@@ -30,6 +30,9 @@ class FirebaseAuthRepository implements AuthRepository {
   Stream<User?> authStateChanges() => _firebaseAuth.authStateChanges();
 
   @override
+  Stream<User?> userChanges() => _firebaseAuth.userChanges();
+
+  @override
   User? get currentUser => _firebaseAuth.currentUser;
 
   @override

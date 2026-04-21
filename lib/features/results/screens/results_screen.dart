@@ -12,6 +12,12 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../battle/widgets/battle_live_scoreboard.dart';
+import '../../community/open_challenge/open_challenge_analytics.dart';
+import '../../community/open_challenge/open_challenge_exam_context.dart';
+import '../../community/open_challenge/open_challenge_exam_registry.dart';
+import '../../community/open_challenge/open_challenge_post_results_submit.dart';
+import '../../community/widgets/open_challenge_post_from_results_card.dart';
+import '../../community/widgets/open_challenge_results_actions.dart';
 import '../widgets/session_summary_coach.dart';
 
 class ResultsScreen extends ConsumerWidget {
@@ -65,6 +71,19 @@ class ResultsScreen extends ConsumerWidget {
               ),
             ),
             data: (r) {
+              final ocCtx =
+                  ref.read(openChallengeExamRegistryProvider).peek(sessionId);
+              final isAcceptOpenChallenge =
+                  r.analyticsFeatureKey == OpenChallengeAnalytics.accept &&
+                      ocCtx?.kind == OpenChallengeExamKind.accept;
+
+              if (isAcceptOpenChallenge) {
+                return OpenChallengeAcceptResultsShell(
+                  sessionId: sessionId,
+                  result: r,
+                );
+              }
+
               final displaySubject = displayNameForSessionSubject(r.subject);
 
               return Column(
@@ -142,6 +161,14 @@ class ResultsScreen extends ConsumerWidget {
                               BattleLiveScoreboard(sessionId: sessionId),
                               const SizedBox(height: AppSpacing.md),
                             ],
+                            OpenChallengeResultsActions(
+                              sessionId: sessionId,
+                              result: r,
+                            ),
+                            OpenChallengePostFromResultsCard(
+                              sessionId: sessionId,
+                              result: r,
+                            ),
                             SessionSummaryCoachContent(
                               sessionId: sessionId,
                               result: r,

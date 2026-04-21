@@ -48,4 +48,52 @@ final class KillSwitchProvider
   }
 }
 
-String _$killSwitchHash() => r'5d423d501caf66254e1481b2cb5dd90064b6ab8d';
+String _$killSwitchHash() => r'c0e6ca46adc1e7fb9fcf4aeab02cc13099319b89';
+
+/// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
+///
+/// Fails open (`true`) while loading or on read errors so the tab stays unless RC
+/// explicitly disables it. On web, only [FeatureFlags.communityTab] applies.
+
+@ProviderFor(communityTabRemoteEnabled)
+final communityTabRemoteEnabledProvider = CommunityTabRemoteEnabledProvider._();
+
+/// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
+///
+/// Fails open (`true`) while loading or on read errors so the tab stays unless RC
+/// explicitly disables it. On web, only [FeatureFlags.communityTab] applies.
+
+final class CommunityTabRemoteEnabledProvider
+    extends $FunctionalProvider<AsyncValue<bool>, bool, FutureOr<bool>>
+    with $FutureModifier<bool>, $FutureProvider<bool> {
+  /// Whether the Community tab should be shown (after [killSwitchProvider] fetch).
+  ///
+  /// Fails open (`true`) while loading or on read errors so the tab stays unless RC
+  /// explicitly disables it. On web, only [FeatureFlags.communityTab] applies.
+  CommunityTabRemoteEnabledProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'communityTabRemoteEnabledProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$communityTabRemoteEnabledHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<bool> create(Ref ref) {
+    return communityTabRemoteEnabled(ref);
+  }
+}
+
+String _$communityTabRemoteEnabledHash() =>
+    r'ed6ce0ddcb75b90a24cf3013c80fd3c4ce8b8b21';

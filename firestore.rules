@@ -6,6 +6,41 @@ service cloud.firestore {
       return request.auth != null;
     }
 
+    function ownsUserRootDoc(userId) {
+      return signedIn()
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() == userId;
+    }
+
+    /// Instagram link fields are set only by Cloud Functions (admin SDK).
+    /// Uses merged document shape so partial `set(merge: true)` updates stay valid.
+    function clientOkUserRootWrite() {
+      return instaUserIdUnchanged()
+        && instaLinkedAtUnchanged()
+        && instaHandleUnchanged();
+    }
+
+    function instaUserIdUnchanged() {
+      return (resource == null && !('insta_user_id' in request.resource.data))
+        || (resource != null
+          && (!('insta_user_id' in resource.data)
+            || request.resource.data.insta_user_id == resource.data.insta_user_id));
+    }
+
+    function instaLinkedAtUnchanged() {
+      return (resource == null && !('insta_linked_at' in request.resource.data))
+        || (resource != null
+          && (!('insta_linked_at' in resource.data)
+            || request.resource.data.insta_linked_at == resource.data.insta_linked_at));
+    }
+
+    function instaHandleUnchanged() {
+      return resource == null
+        || !('insta_user_id' in resource.data)
+        || !('insta' in request.resource.data)
+        || request.resource.data.insta == resource.data.insta;
+    }
+
     /// Share links (`session/{shareId}`): browser + app must read without auth.
     function sessionFieldKeysOk() {
       let ks = request.resource.data.keys();
@@ -40,6 +75,55 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    /// Community open challenges — public scores; clients enforce one attempt per user.
+    match /open_challenges/{challengeId} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update: if signedIn();
+      allow delete: if false;
+    }
+
+    /// Community presence for “Recents”: dense map under `buckets/{yyyy-m}/{day}/{0|3|…|21}`.
+    match /buckets/{yearMonth}/{day}/{bucketId} {
+      allow read: if signedIn();
+      allow create, update: if signedIn();
+      allow delete: if false;
+    }
+
+    /// Community QOTD — one document per post (`attempts` + `reactions` maps by uid).
+    function qotdAttemptsKeysSuperset() {
+      let before = resource.data.get('attempts', {});
+      let after = request.resource.data.get('attempts', {});
+      return after.keys().hasAll(before.keys());
+    }
+    function qotdReactionsKeysSuperset() {
+      let before = resource.data.get('reactions', {});
+      let after = request.resource.data.get('reactions', {});
+      return after.keys().hasAll(before.keys());
+    }
+    function qotdCountsNonDecreasing() {
+      return request.resource.data.correct_count
+          >= resource.data.get('correct_count', 0)
+        && request.resource.data.wrong_count
+          >= resource.data.get('wrong_count', 0);
+    }
+    match /qotd_posts/{postId} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update: if signedIn()
+        && request.resource.data.question_uuid == resource.data.question_uuid
+        && request.resource.data.author_email == resource.data.author_email
+        && request.resource.data.author_name == resource.data.author_name
+        && request.resource.data.author_photo_url == resource.data.author_photo_url
+        && request.resource.data.correct_option == resource.data.correct_option
+        && request.resource.data.comment == resource.data.comment
+        && request.resource.data.created_at == resource.data.created_at
+        && qotdAttemptsKeysSuperset()
+        && qotdReactionsKeysSuperset()
+        && qotdCountsNonDecreasing();
+      allow delete: if false;
+    }
+
     /// Per-user block list: `users/{email}/blocked/{blockedEmail}` (doc ids are lowercased emails).
     match /users/{userId}/blocked/{blockedId} {
       allow read, write: if signedIn()
@@ -47,9 +131,21 @@ service cloud.firestore {
         && request.auth.token.email.lower() == userId;
     }
 
+    /// `users/{lowercaseEmail}` — clients cannot forge Instagram verification fields.
+    match /users/{userId} {
+      allow read: if signedIn();
+      allow create: if ownsUserRootDoc(userId) && clientOkUserRootWrite();
+      allow update: if ownsUserRootDoc(userId) && clientOkUserRootWrite();
+      allow delete: if false;
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
-      allow read, write: if signedIn();
+      allow read, write: if signedIn() && !isUsersRootDoc(database);
+    }
+
+    function isUsersRootDoc(database) {
+      return request.path.matches('/databases/' + database + '/documents/users/[^/]+$');
     }
   }
 }

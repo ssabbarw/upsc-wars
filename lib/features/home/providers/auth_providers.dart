@@ -9,9 +9,11 @@ final authRepositoryProvider = Provider<AuthRepository>((ref) {
   return FirebaseAuthRepository();
 });
 
+/// Uses [AuthRepository.userChanges] so UI rebuilds when [User.photoURL] or
+/// other profile fields update (not only sign-in / sign-out).
 final authStateChangesProvider = StreamProvider<User?>((ref) {
   final repo = ref.watch(authRepositoryProvider);
-  return repo.authStateChanges();
+  return repo.userChanges();
 });
 
 class AuthActionsNotifier extends AsyncNotifier<void> {

@@ -132,6 +132,19 @@ class CommunityRepository {
     return dedupeCommunityUsersByLatest(fallbackUsers);
   }
 
+  /// Loads `users/{email}` for profile display (e.g. chat header).
+  Future<CommunityUser?> fetchCommunityUserByEmail(String email) async {
+    final normalized = email.toLowerCase().trim();
+    if (normalized.isEmpty) return null;
+    final snap = await _firestore
+        .collection(CommunityLegacyContract.usersCollection)
+        .doc(normalized)
+        .get();
+    final data = snap.data();
+    if (!snap.exists || data == null) return null;
+    return communityUserFromLegacyMap(normalized, data);
+  }
+
   Future<List<CommunityUser>> fetchChallengers() async {
     final minTs = DateTime.now()
         .subtract(const Duration(hours: 24))

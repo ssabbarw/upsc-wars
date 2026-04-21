@@ -1,3 +1,5 @@
+import 'package:upsc_wars/core/constants/app_constants.dart';
+
 import 'entities/community_user.dart';
 
 abstract final class CommunityLegacyContract {
@@ -37,7 +39,7 @@ CommunityUser communityUserFromLegacyMap(
     name: rawName?.isNotEmpty == true ? rawName! : 'UPSC Warrior',
     photoUrl: photo?.isNotEmpty == true
         ? photo!
-        : 'https://ui-avatars.com/api/?name=UPSC+Warrior&background=2E7D32&color=fff',
+        : AppConstants.defaultProfilePhotoUrl,
     lastOnlineTime:
         (map[CommunityLegacyContract.lastOnlineTime] as num?)?.toInt() ?? 0,
     acceptingBattleInvites:

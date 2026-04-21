@@ -19,6 +19,7 @@ import 'package:upsc_wars/features/battle/domain/entities/battle_invite_target.d
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
 import 'package:upsc_wars/features/community/providers/community_providers.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
+import 'package:upsc_wars/shared/widgets/test_config_sheet_widgets.dart';
 
 class BattleConfigScreen extends ConsumerStatefulWidget {
   const BattleConfigScreen({super.key, this.invite});
@@ -119,7 +120,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                               SizedBox(
                                 width: _tileWidth,
                                 height: _tileHeight,
-                                child: _SubjectPickTile(
+                                child: SubjectPickChipTile(
                                   label: 'Misc',
                                   selected: _selectedSubject == _miscSubjectKey,
                                   onTap: () => setState(
@@ -133,7 +134,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
                                 SizedBox(
                                   width: _tileWidth,
                                   height: _tileHeight,
-                                  child: _SubjectPickTile(
+                                  child: SubjectPickChipTile(
                                     label: subject.displayName,
                                     selected:
                                         _selectedSubject == subject.subject,
@@ -257,12 +258,18 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           ownerEmail: hostEmail,
           otherEmail: guestEmail,
         );
-        if (hostBlockedGuest) {
+        final guestBlockedHost = await repo.isUserBlocked(
+          ownerEmail: guestEmail,
+          otherEmail: hostEmail,
+        );
+        if (hostBlockedGuest || guestBlockedHost) {
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
+              SnackBar(
                 content: Text(
-                  'Unblock this player in Community before inviting them.',
+                  hostBlockedGuest
+                      ? 'Unblock this player in Community before inviting them.'
+                      : 'This player has blocked you. Battle invites cannot be sent.',
                 ),
               ),
             );
@@ -346,66 +353,5 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
     } finally {
       if (mounted) setState(() => _submitting = false);
     }
-  }
-}
-
-class _SubjectPickTile extends StatelessWidget {
-  const _SubjectPickTile({
-    required this.label,
-    required this.selected,
-    required this.onTap,
-    required this.scheme,
-    required this.isDark,
-  });
-
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
-  final ColorScheme scheme;
-  final bool isDark;
-
-  @override
-  Widget build(BuildContext context) {
-    final fill = selected
-        ? (isDark
-              ? AppColors.primaryDeep.withValues(alpha: 0.45)
-              : AppColors.primaryLight)
-        : scheme.surface;
-    final border = selected
-        ? AppColors.primary
-        : (isDark ? AppColors.borderDark : AppColors.borderLight);
-    final borderW = selected ? 2.0 : 1.0;
-
-    return Material(
-      color: fill,
-      borderRadius: BorderRadius.circular(AppRadius.md),
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          width: 108,
-          height: 48,
-          alignment: Alignment.center,
-          padding: const EdgeInsets.symmetric(horizontal: 6),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppRadius.md),
-            border: Border.all(color: border, width: borderW),
-          ),
-          child: Text(
-            label,
-            textAlign: TextAlign.center,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.bodySm().copyWith(
-              color: selected
-                  ? (isDark ? AppColors.onPrimary : AppColors.primaryDeep)
-                  : scheme.onSurface,
-              fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
-              height: 1.2,
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }

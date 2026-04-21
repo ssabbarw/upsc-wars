@@ -1,3 +1,5 @@
+import 'dart:ui' show Color;
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
@@ -45,7 +47,7 @@ class AppLocalNotificationsService {
     );
     await _plugin.initialize(
       settings: const InitializationSettings(
-        android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+        android: AndroidInitializationSettings('@drawable/ic_notification'),
         iOS: darwinInit,
         macOS: darwinInit,
       ),
@@ -93,7 +95,9 @@ class AppLocalNotificationsService {
           channelDescription: _battleChannelDescription,
           importance: Importance.high,
           priority: Priority.high,
-          icon: '@mipmap/ic_launcher',
+          icon: '@drawable/ic_notification',
+          color: const Color(0xFF085041),
+          largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
           category: AndroidNotificationCategory.social,
           autoCancel: true,
         ),
@@ -140,6 +144,9 @@ class AppLocalNotificationsService {
       onlyAlertOnce: true,
       playSound: false,
       enableVibration: false,
+      icon: '@drawable/ic_notification',
+      color: Color(0xFF085041),
+      largeIcon: DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
       category: AndroidNotificationCategory.reminder,
       visibility: NotificationVisibility.public,
     );
