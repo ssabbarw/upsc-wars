@@ -17,6 +17,7 @@ import 'package:upsc_wars/features/battle/data/battle_invite_cloud_service.dart'
 import 'package:upsc_wars/features/battle/data/battle_match_firestore_service.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_invite_target.dart';
 import 'package:upsc_wars/features/battle/domain/services/battle_name_service.dart';
+import 'package:upsc_wars/features/community/providers/community_providers.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 class BattleConfigScreen extends ConsumerStatefulWidget {
@@ -51,10 +52,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           ? AppColors.surfaceSecondaryDark
           : AppColors.surfaceSecondaryLight,
       appBar: AppBar(
-        title: const Text('Configure battle'),
-        elevation: 0,
-        backgroundColor: AppColors.primary,
-        foregroundColor: isDark ? AppColors.onPrimary : AppColors.gray900,
+        title: Text('Configure battle', style: AppTextStyles.h3()),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -247,6 +245,32 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
     setState(() => _submitting = true);
     try {
       final me = ref.read(authStateChangesProvider).asData?.value;
+      final invite = widget.invite;
+      if (invite != null) {
+        final hostEmail = (me?.email ?? '').toLowerCase().trim();
+        if (hostEmail.isEmpty) {
+          throw StateError('Sign in required to invite a player');
+        }
+        final guestEmail = invite.email.toLowerCase().trim();
+        final repo = ref.read(communityRepositoryProvider);
+        final hostBlockedGuest = await repo.isUserBlocked(
+          ownerEmail: hostEmail,
+          otherEmail: guestEmail,
+        );
+        if (hostBlockedGuest) {
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'Unblock this player in Community before inviting them.',
+                ),
+              ),
+            );
+          }
+          return;
+        }
+      }
+
       final uc = await ref.read(createSessionUseCaseProvider.future);
       final language = await ref.read(appLanguageProvider.future);
       final config = SessionConfig(
@@ -259,7 +283,6 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         analyticsFeatureKey: 'mcq_battle',
       );
       final sessionId = await uc.execute(config);
-      final invite = widget.invite;
       final opponentName = invite != null
           ? invite.displayName
           : BattleNameService.pickFromSeed(sessionId);
@@ -300,6 +323,11 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(inviteOutcome.userFacingMessage)),
         );
+        if (!inviteOutcome.notificationSent &&
+            inviteOutcome.serverReason == 'blocked') {
+          context.pop();
+          return;
+        }
       }
 
       if (!context.mounted) return;

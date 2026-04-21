@@ -40,6 +40,13 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    /// Per-user block list: `users/{email}/blocked/{blockedEmail}` (doc ids are lowercased emails).
+    match /users/{userId}/blocked/{blockedId} {
+      allow read, write: if signedIn()
+        && request.auth.token.email != null
+        && request.auth.token.email.lower() == userId;
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
       allow read, write: if signedIn();

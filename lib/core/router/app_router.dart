@@ -20,6 +20,7 @@ import '../../features/history/screens/session_review_screen.dart';
 import '../../features/community/screens/community_screen.dart';
 import '../../features/community/screens/community_connect_screen.dart';
 import '../../features/community/providers/community_providers.dart';
+import '../../features/chat/providers/chat_providers.dart';
 import '../../features/chat/screens/chat_list_screen.dart';
 import '../../features/chat/screens/chat_thread_screen.dart';
 import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
@@ -47,6 +48,7 @@ import '../../features/weak_areas/screens/concept_detail_screen.dart'
 import '../../features/weak_areas/screens/trap_patterns_screen.dart';
 import '../../features/weak_areas/screens/trap_pattern_detail_screen.dart';
 import '../../shared/widgets/google_login_bottom_sheet.dart';
+import '../../shared/widgets/unread_pulse_wrapper.dart';
 import '../providers/app_bootstrap.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -332,6 +334,51 @@ GoRouter appRouter(Ref ref) {
   );
 }
 
+class _CommunityTabIcon extends StatelessWidget {
+  const _CommunityTabIcon({
+    required this.outlined,
+    required this.showUnreadDot,
+    required this.scheme,
+  });
+
+  final bool outlined;
+  final bool showUnreadDot;
+  final ColorScheme scheme;
+
+  @override
+  Widget build(BuildContext context) {
+    final stack = Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Icon(
+          outlined ? Icons.groups_outlined : Icons.groups,
+          size: 22,
+        ),
+        if (showUnreadDot)
+          Positioned(
+            right: -3,
+            top: -3,
+            child: Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(
+                color: scheme.error,
+                shape: BoxShape.circle,
+                border: Border.all(color: scheme.surface, width: 1.5),
+              ),
+            ),
+          ),
+      ],
+    );
+    if (!showUnreadDot) return stack;
+    return UnreadPulseWrapper(
+      active: true,
+      scheme: scheme,
+      child: stack,
+    );
+  }
+}
+
 class _AppShell extends HookConsumerWidget {
   const _AppShell({required this.navigationShell});
 
@@ -357,6 +404,9 @@ class _AppShell extends HookConsumerWidget {
     final authState = ref.watch(authStateChangesProvider);
     final authActions = ref.watch(authActionsProvider);
     final isAuthBusy = authActions.isLoading;
+    final chatUnreadDot =
+        FeatureFlags.communityTab ? ref.watch(chatInboxHasUnreadProvider) : false;
+
     final navItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(
         icon: Icon(Icons.home_outlined, size: 22),
@@ -374,9 +424,17 @@ class _AppShell extends HookConsumerWidget {
         label: 'Progress',
       ),
       if (FeatureFlags.communityTab)
-        const BottomNavigationBarItem(
-          icon: Icon(Icons.groups_outlined, size: 22),
-          activeIcon: Icon(Icons.groups, size: 22),
+        BottomNavigationBarItem(
+          icon: _CommunityTabIcon(
+            outlined: true,
+            showUnreadDot: chatUnreadDot,
+            scheme: scheme,
+          ),
+          activeIcon: _CommunityTabIcon(
+            outlined: false,
+            showUnreadDot: chatUnreadDot,
+            scheme: scheme,
+          ),
           label: 'Community',
         ),
     ];

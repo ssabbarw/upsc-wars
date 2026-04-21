@@ -102,17 +102,37 @@ exports.sendBattleInvite = functions.https.onCall(async (data, context) => {
     );
   }
 
+  const db = admin.firestore();
+  const hostBlockedGuestRef = db
+    .collection("users")
+    .doc(hostEmail)
+    .collection("blocked")
+    .doc(guestEmail);
+  const guestBlockedHostRef = db
+    .collection("users")
+    .doc(guestEmail)
+    .collection("blocked")
+    .doc(hostEmail);
+  const [hostBlockedSnap, guestBlockedSnap] = await Promise.all([
+    hostBlockedGuestRef.get(),
+    guestBlockedHostRef.get(),
+  ]);
+  if (hostBlockedSnap.exists || guestBlockedSnap.exists) {
+    functions.logger.info("sendBattleInvite: blocked relation", {
+      sessionId,
+      guestEmail,
+      hostEmail,
+    });
+    return { ok: false, reason: "blocked" };
+  }
+
   functions.logger.info("sendBattleInvite: match checks passed", {
     sessionId,
     guestEmail,
     battleMode,
   });
 
-  const userSnap = await admin
-    .firestore()
-    .collection("users")
-    .doc(guestEmail)
-    .get();
+  const userSnap = await db.collection("users").doc(guestEmail).get();
   const userData = userSnap.data() || {};
   const fcmToken = userData.fcm_token || userData.fcmToken;
   if (!fcmToken || typeof fcmToken !== "string") {

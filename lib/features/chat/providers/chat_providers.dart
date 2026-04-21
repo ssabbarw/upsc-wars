@@ -5,6 +5,8 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../community/providers/community_providers.dart';
+import '../../community/providers/user_block_providers.dart';
 import '../../home/providers/auth_providers.dart';
 import '../data/realtime_chat_service.dart';
 import '../domain/chat_service.dart';
@@ -84,9 +86,47 @@ final chatThreadsProvider = StreamProvider<List<ChatThread>>((ref) {
   return service.watchThreads(currentUserEmail: email);
 });
 
-/// True when any thread has unread messages (for inbox / nav highlights).
+String _peerEmailForThread(ChatThread thread, String? me) {
+  final mine = (me ?? '').trim().toLowerCase();
+  for (final email in thread.participantEmails) {
+    final n = email.trim().toLowerCase();
+    if (n.isNotEmpty && n != mine) return n;
+  }
+  return thread.participantEmails.isEmpty
+      ? ''
+      : thread.participantEmails.first.trim().toLowerCase();
+}
+
+List<ChatThread> _threadsHidingBlocked(
+  List<ChatThread> threads,
+  String? me,
+  Set<String> blocked,
+) {
+  if (me == null || me.isEmpty) return threads;
+  return threads.where((t) {
+    final peer = _peerEmailForThread(t, me);
+    if (peer.isEmpty) return true;
+    return !blocked.contains(peer);
+  }).toList();
+}
+
+/// Threads with people you have blocked omitted (inbox, badges).
+final filteredChatThreadsProvider =
+    Provider<AsyncValue<List<ChatThread>>>((ref) {
+  final threads = ref.watch(chatThreadsProvider);
+  final blockedAsync = ref.watch(blockedUserEmailsProvider);
+  final me = ref.watch(currentUserEmailProvider);
+  final blocked = blockedAsync.value ?? const <String>{};
+  return threads.when(
+    loading: () => const AsyncLoading(),
+    error: (e, st) => AsyncError(e, st),
+    data: (list) => AsyncData(_threadsHidingBlocked(list, me, blocked)),
+  );
+});
+
+/// True when any non-blocked thread has unread messages (for inbox / nav highlights).
 final chatInboxHasUnreadProvider = Provider<bool>((ref) {
-  return ref.watch(chatThreadsProvider).maybeWhen(
+  return ref.watch(filteredChatThreadsProvider).maybeWhen(
         data: (threads) => threads.any((t) => t.unreadCount > 0),
         orElse: () => false,
       );
@@ -126,6 +166,16 @@ class ChatComposerNotifier extends AsyncNotifier<void> {
     final current = ref.read(currentUserEmailProvider);
     if (current == null) {
       throw StateError('You are not signed in. Please sign in and try again.');
+    }
+    final repo = ref.read(communityRepositoryProvider);
+    final iBlockedThem = await repo.isUserBlocked(
+      ownerEmail: current,
+      otherEmail: peerEmail,
+    );
+    if (iBlockedThem) {
+      throw StateError(
+        'You have blocked this person. Unblock them from Community to send messages.',
+      );
     }
     final config =
         ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;

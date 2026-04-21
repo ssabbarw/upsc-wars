@@ -38,6 +38,9 @@ class BattleInviteOutcome {
     if (serverReason == 'no_token') {
       return 'Invitee has no push token yet. They can still join using the session link.';
     }
+    if (serverReason == 'blocked') {
+      return 'Cannot send invite — one of you has blocked the other.';
+    }
     if (serverReason == 'send_failed') {
       return 'Push could not be sent. They can still join using the session link.';
     }
@@ -49,6 +52,7 @@ class BattleInviteOutcome {
     if (transportError != null) return 'transport_error';
     if (notificationSent) return 'push_ok';
     if (serverReason == 'no_token') return 'no_token';
+    if (serverReason == 'blocked') return 'blocked';
     if (serverReason == 'send_failed') return 'send_failed';
     return 'server_unknown';
   }

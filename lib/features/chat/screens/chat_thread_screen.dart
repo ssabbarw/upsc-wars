@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
+import '../../community/providers/user_block_providers.dart';
 import '../domain/entities/chat_runtime_config.dart';
 import '../providers/chat_providers.dart';
 
@@ -39,10 +40,15 @@ class ChatThreadScreen extends HookConsumerWidget {
     final input = useTextEditingController();
     final scroll = useScrollController();
     final typingTimer = useRef<Timer?>(null);
+    final peerNorm = peerEmail.trim().toLowerCase();
+    final iBlockedPeer = ref.watch(isPeerBlockedProvider(peerNorm));
 
     useEffect(() {
-      ref.read(chatRuntimeConfigProvider.notifier).refresh();
-      unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!context.mounted) return;
+        ref.read(chatRuntimeConfigProvider.notifier).refresh();
+        unawaited(ref.read(chatComposerProvider.notifier).markRead(chatId));
+      });
       return null;
     }, [chatId]);
 
@@ -51,32 +57,32 @@ class ChatThreadScreen extends HookConsumerWidget {
       if (current == null) return null;
       final config =
           ref.read(chatRuntimeConfigProvider).value ?? ChatRuntimeConfig.defaults;
+      final chatService = ref.read(chatServiceProvider);
+      final composer = ref.read(chatComposerProvider.notifier);
       unawaited(
-        ref
-            .read(chatServiceProvider)
-            .setOnline(currentUserEmail: current, isOnline: true, config: config),
+        chatService.setOnline(
+          currentUserEmail: current,
+          isOnline: true,
+          config: config,
+        ),
       );
       return () {
         typingTimer.value?.cancel();
         unawaited(
-          ref.read(chatComposerProvider.notifier).setTyping(
-                chatId: chatId,
-                isTyping: false,
-              ),
+          composer.setTyping(chatId: chatId, isTyping: false),
         );
         unawaited(
-          ref
-              .read(chatServiceProvider)
-              .setOnline(
-                currentUserEmail: current,
-                isOnline: false,
-                config: config,
-              ),
+          chatService.setOnline(
+            currentUserEmail: current,
+            isOnline: false,
+            config: config,
+          ),
         );
       };
     }, [chatId]);
 
     Future<void> send() async {
+      if (iBlockedPeer) return;
       final text = input.text.trim();
       if (text.isEmpty) return;
       typingTimer.value?.cancel();
@@ -179,10 +185,22 @@ class ChatThreadScreen extends HookConsumerWidget {
             child: messagesAsync.when(
               data: (messages) {
                 final me = ref.watch(currentUserEmailProvider);
-                if (messages.isEmpty) {
+                final visible = iBlockedPeer
+                    ? messages
+                        .where(
+                          (m) =>
+                              m.senderEmail.trim().toLowerCase() != peerNorm,
+                        )
+                        .toList()
+                    : messages;
+                if (visible.isEmpty) {
                   return Center(
                     child: Text(
-                      'Start the conversation.',
+                      iBlockedPeer
+                          ? 'You have blocked this person. Their messages are hidden. '
+                              'Unblock them from Community to chat.'
+                          : 'Start the conversation.',
+                      textAlign: TextAlign.center,
                       style: AppTextStyles.bodyMd(),
                     ),
                   );
@@ -195,9 +213,9 @@ class ChatThreadScreen extends HookConsumerWidget {
                     AppSpacing.md,
                     AppSpacing.md,
                   ),
-                  itemCount: messages.length,
+                  itemCount: visible.length,
                   itemBuilder: (context, index) {
-                    final message = messages[index];
+                    final message = visible[index];
                     final mine = message.senderEmail == me;
                     final scheme = Theme.of(context).colorScheme;
                     final timestampColor =
@@ -249,48 +267,75 @@ class ChatThreadScreen extends HookConsumerWidget {
                   Center(child: Text('Could not load messages: $error')),
             ),
           ),
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.md,
-                AppSpacing.xs,
-                AppSpacing.md,
-                AppSpacing.md,
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: input,
-                      onChanged: onChanged,
-                      onSubmitted: (_) => unawaited(send()),
-                      minLines: 1,
-                      maxLines: 4,
-                      textCapitalization: TextCapitalization.sentences,
-                      decoration: const InputDecoration(
-                        hintText: 'Type a message',
-                        border: OutlineInputBorder(),
+          if (iBlockedPeer)
+            SafeArea(
+              top: false,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.md,
+                  AppSpacing.xs,
+                  AppSpacing.md,
+                  AppSpacing.md,
+                ),
+                child: Material(
+                  color: Theme.of(context).colorScheme.surfaceContainerLow,
+                  borderRadius: BorderRadius.circular(12),
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.md),
+                    child: Text(
+                      'You have blocked this person. Unblock them from '
+                      'Community to send messages.',
+                      style: AppTextStyles.bodySm().copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ),
-                  const SizedBox(width: AppSpacing.sm),
-                  FilledButton(
-                    onPressed: composerState.isLoading
-                        ? null
-                        : () => unawaited(send()),
-                    child: composerState.isLoading
-                        ? const SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Icon(Icons.send_rounded),
-                  ),
-                ],
+                ),
+              ),
+            )
+          else
+            SafeArea(
+              top: false,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.md,
+                  AppSpacing.xs,
+                  AppSpacing.md,
+                  AppSpacing.md,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: input,
+                        onChanged: onChanged,
+                        onSubmitted: (_) => unawaited(send()),
+                        minLines: 1,
+                        maxLines: 4,
+                        textCapitalization: TextCapitalization.sentences,
+                        decoration: const InputDecoration(
+                          hintText: 'Type a message',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.sm),
+                    FilledButton(
+                      onPressed: composerState.isLoading
+                          ? null
+                          : () => unawaited(send()),
+                      child: composerState.isLoading
+                          ? const SizedBox(
+                              width: 18,
+                              height: 18,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Icon(Icons.send_rounded),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
         ],
       ),
     );

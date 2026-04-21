@@ -128,7 +128,8 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
       final hostName = (d['host_display_name'] as String?)?.trim();
       if (!mounted) return;
       final guestPhoto = user?.photoURL?.trim();
-      context.push(
+      // Replace join route so back from the lobby does not return here with _busy still true.
+      context.go(
         '/battle/wait/${widget.sessionId}',
         extra: {
           'playerName': user?.displayName ?? 'You',
@@ -154,28 +155,41 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Scaffold(
-      appBar: AppBar(title: const Text('Join battle')),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          child: _busy
-              ? const CircularProgressIndicator()
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      _error ?? 'Something went wrong.',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.bodyMd().copyWith(color: scheme.error),
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                    FilledButton(
-                      onPressed: () => context.go('/'),
-                      child: const Text('Home'),
-                    ),
-                  ],
-                ),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        context.go('/');
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Join battle', style: AppTextStyles.h3()),
+          leading: BackButton(
+            onPressed: () => context.go('/'),
+          ),
+        ),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            child: _busy
+                ? const CircularProgressIndicator()
+                : Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        _error ?? 'Something went wrong.',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyMd()
+                            .copyWith(color: scheme.error),
+                      ),
+                      const SizedBox(height: AppSpacing.lg),
+                      FilledButton(
+                        onPressed: () => context.go('/'),
+                        child: const Text('Home'),
+                      ),
+                    ],
+                  ),
+          ),
         ),
       ),
     );

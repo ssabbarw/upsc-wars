@@ -15,7 +15,7 @@ class ChatListScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final threadsAsync = ref.watch(chatThreadsProvider);
+    final threadsAsync = ref.watch(filteredChatThreadsProvider);
     final me = ref.watch(currentUserEmailProvider);
     final scheme = Theme.of(context).colorScheme;
 

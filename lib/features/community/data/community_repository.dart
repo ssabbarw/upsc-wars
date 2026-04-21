@@ -156,6 +156,53 @@ class CommunityRepository {
     return users;
   }
 
+  /// `users/{ownerEmail}/blocked/{otherEmail}` — only the owner may read/write (see Firestore rules).
+  CollectionReference<Map<String, dynamic>> blockedUsersCol(String ownerEmail) {
+    return _firestore
+        .collection(CommunityLegacyContract.usersCollection)
+        .doc(ownerEmail.toLowerCase().trim())
+        .collection('blocked');
+  }
+
+  Stream<Set<String>> watchBlockedEmails(String ownerEmail) {
+    final normalized = ownerEmail.toLowerCase().trim();
+    if (normalized.isEmpty) {
+      return Stream.value(const <String>{});
+    }
+    return blockedUsersCol(normalized).snapshots().map(
+          (snap) => snap.docs.map((d) => d.id.toLowerCase()).toSet(),
+        );
+  }
+
+  Future<bool> isUserBlocked({
+    required String ownerEmail,
+    required String otherEmail,
+  }) async {
+    final owner = ownerEmail.toLowerCase().trim();
+    final other = otherEmail.toLowerCase().trim();
+    if (owner.isEmpty || other.isEmpty) return false;
+    final snap = await blockedUsersCol(owner).doc(other).get();
+    return snap.exists;
+  }
+
+  Future<void> setUserBlocked({
+    required String ownerEmail,
+    required String otherEmail,
+    required bool blocked,
+  }) async {
+    final owner = ownerEmail.toLowerCase().trim();
+    final other = otherEmail.toLowerCase().trim();
+    if (owner.isEmpty || other.isEmpty || owner == other) return;
+    final ref = blockedUsersCol(owner).doc(other);
+    if (blocked) {
+      await ref.set({
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+    } else {
+      await ref.delete();
+    }
+  }
+
   Future<void> updateCommunityVisibility({
     required String email,
     required bool acceptingBattleInvites,

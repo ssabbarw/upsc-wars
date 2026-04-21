@@ -9,6 +9,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/pop_to_shell_home_scope.dart';
+import '../../../shared/widgets/unread_pulse_wrapper.dart';
 import '../../../shared/widgets/tappable_circular_avatar.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
 import '../../chat/domain/chat_ids.dart';
@@ -17,6 +18,7 @@ import '../../chat/providers/chat_providers.dart';
 import '../../home/providers/auth_providers.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
+import '../providers/user_block_providers.dart';
 
 class CommunityScreen extends HookConsumerWidget {
   const CommunityScreen({super.key});
@@ -33,31 +35,35 @@ class CommunityScreen extends HookConsumerWidget {
             IconButton(
               tooltip: 'Chats',
               onPressed: () => context.push('/chats'),
-              icon: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Icon(
-                    chatHasUnread ? Icons.chat_rounded : Icons.chat_outlined,
-                    color: chatHasUnread ? scheme.primary : null,
-                  ),
-                  if (chatHasUnread)
-                    Positioned(
-                      right: -2,
-                      top: -2,
-                      child: Container(
-                        width: 8,
-                        height: 8,
-                        decoration: BoxDecoration(
-                          color: scheme.error,
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: scheme.surface,
-                            width: 1.5,
+              icon: UnreadPulseWrapper(
+                active: chatHasUnread,
+                scheme: scheme,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Icon(
+                      chatHasUnread ? Icons.chat_rounded : Icons.chat_outlined,
+                      color: chatHasUnread ? scheme.primary : null,
+                    ),
+                    if (chatHasUnread)
+                      Positioned(
+                        right: -2,
+                        top: -2,
+                        child: Container(
+                          width: 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: scheme.error,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: scheme.surface,
+                              width: 1.5,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               ),
             ),
             IconButton(
@@ -226,6 +232,7 @@ class _RecentTab extends HookConsumerWidget {
                         user: user,
                         onTap: () => _showUserProfile(
                           context,
+                          ref,
                           user,
                           currentUserEmail: currentUserEmail,
                         ),
@@ -317,10 +324,15 @@ class _UserTile extends StatelessWidget {
 
 Future<void> _showUserProfile(
   BuildContext context,
+  WidgetRef ref,
   CommunityUser user, {
   String? currentUserEmail,
 }) async {
-  bool isBlocked = false;
+  final blockedInitially = ref.read(blockedUserEmailsProvider).maybeWhen(
+        data: (s) => s.contains(user.email.toLowerCase()),
+        orElse: () => false,
+      );
+  var isBlocked = blockedInitially;
   await showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -378,10 +390,47 @@ Future<void> _showUserProfile(
                   children: [
                     Expanded(
                       child: OutlinedButton.icon(
-                        onPressed: () {
-                          setState(() => isBlocked = !isBlocked);
-                          _showComingSoonSnackBar(context, 'Block/Unblock');
-                        },
+                        onPressed: isSelf
+                            ? null
+                            : () async {
+                                final me = currentUserEmail;
+                                if (me == null || me.isEmpty) return;
+                                final repo =
+                                    ref.read(communityRepositoryProvider);
+                                final target = user.email.toLowerCase();
+                                final nextBlocked = !isBlocked;
+                                try {
+                                  await repo.setUserBlocked(
+                                    ownerEmail: me,
+                                    otherEmail: target,
+                                    blocked: nextBlocked,
+                                  );
+                                  setState(() => isBlocked = nextBlocked);
+                                  if (context.mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          nextBlocked
+                                              ? 'You will not see messages or '
+                                                  'battle invites from '
+                                                  '${user.name}.'
+                                              : '${user.name} has been unblocked.',
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                } catch (e) {
+                                  if (context.mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Could not update block: $e',
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                }
+                              },
                         icon: Icon(
                           isBlocked
                               ? Icons.lock_open_outlined
@@ -714,8 +763,3 @@ String _formatTime(int millis) {
   ).format(DateTime.fromMillisecondsSinceEpoch(millis));
 }
 
-void _showComingSoonSnackBar(BuildContext context, String action) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(content: Text('$action flow will be connected next.')),
-  );
-}
