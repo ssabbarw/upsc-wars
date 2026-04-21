@@ -86,6 +86,7 @@ class BattleMessagingService {
         !messageOpensLongHtmlScreen(message) &&
         sessionId != null &&
         sessionId.isNotEmpty;
+    final isChatMessage = kind == 'chat_message';
 
     if (isBattleJoinInvite) {
       unawaited(
@@ -98,6 +99,9 @@ class BattleMessagingService {
           sessionId: sessionId,
         ),
       );
+      return;
+    }
+    if (isChatMessage) {
       return;
     }
 

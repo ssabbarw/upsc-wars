@@ -54,7 +54,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
         title: const Text('Configure battle'),
         elevation: 0,
         backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.onPrimary,
+        foregroundColor: isDark ? AppColors.onPrimary : AppColors.gray900,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -22,6 +22,7 @@ import '../core/router/app_router.dart'
 import '../core/router/question_bank_loading_screen.dart';
 import '../core/services/prelims_surfaces_refresh.dart';
 import '../core/theme/app_theme.dart';
+import '../features/battle/widgets/battle_chat_fab.dart';
 import '../features/battle/widgets/battle_spectate_overlay.dart';
 import '../shared/widgets/first_launch_bilingual_welcome_sheet.dart';
 
@@ -163,6 +164,7 @@ class _RootMaterialApp extends HookConsumerWidget {
           children: [
             child ?? const SizedBox.shrink(),
             const BattleSpectateFabHost(),
+            const BattleChatFabHost(),
           ],
         );
       },

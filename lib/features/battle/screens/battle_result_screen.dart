@@ -11,8 +11,11 @@ import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
 import 'package:upsc_wars/features/battle/battle_result_live_payload.dart';
 import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
+import 'package:upsc_wars/features/battle/domain/battle_opponent_policy.dart';
 import 'package:upsc_wars/features/battle/domain/entities/battle_result_payload.dart';
+import 'package:upsc_wars/features/battle/providers/battle_session_provider.dart';
 import 'package:upsc_wars/features/battle/providers/battle_spectate_provider.dart';
+import 'package:upsc_wars/features/battle/widgets/battle_chat_fab.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_result_score_breakdown.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_spectate_overlay.dart';
@@ -46,8 +49,41 @@ class BattleResultScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
     final spectate = ref.watch(battleSpectateProvider);
+    final battleUi = ref.watch(battleSessionProvider(payload.sessionId));
+    final battle = battleUi.battleSession;
     final firestoreLive = useState(payload);
     final opponentBattleOver = useState(false);
+
+    final opponentId = battle?.opponent.id;
+    final shouldShowChat =
+        opponentId != null &&
+        opponentId.isNotEmpty &&
+        !BattleOpponentPolicy.isBotOpponent(opponentId);
+    useEffect(() {
+      if (!shouldShowChat) return null;
+      var disposed = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (disposed || !context.mounted) return;
+        ref
+            .read(battleChatOverlayProvider.notifier)
+            .activate(
+              BattleChatOverlayState(
+                opponentEmail: opponentId,
+                opponentName: battle?.opponent.displayName ?? payload.opponentName,
+                opponentPhotoUrl: battle?.opponent.photoUrl,
+              ),
+            );
+      });
+      return () {
+        disposed = true;
+      };
+    }, [
+      payload.sessionId,
+      shouldShowChat,
+      opponentId,
+      battle?.opponent.displayName,
+      battle?.opponent.photoUrl,
+    ]);
 
     useEffect(() {
       if (spectate != null && spectate.sessionId == payload.sessionId) {
