@@ -1,10 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:upsc_wars/features/battle/data/battle_firestore_paths.dart';
 
 /// Host-side Firestore setup before the battle screen loads.
 class BattleMatchFirestoreService {
   const BattleMatchFirestoreService();
+
+  static Future<void> _ensureSignedInForFirestore() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      throw StateError('Sign in with Google before using battle sync.');
+    }
+    await user.getIdToken(true);
+  }
 
   static const battleModeHuman = 'human';
   static const battleModeBot = 'bot';
@@ -22,6 +31,7 @@ class BattleMatchFirestoreService {
     required String guestDisplayName,
     required String subject,
   }) async {
+    await _ensureSignedInForFirestore();
     final host = hostEmail.toLowerCase();
     final guest = guestEmail.toLowerCase();
     final matchRef = BattleFirestorePaths.matchDoc(sessionId);
@@ -76,6 +86,7 @@ class BattleMatchFirestoreService {
     required String opponentDisplayName,
     required String subject,
   }) async {
+    await _ensureSignedInForFirestore();
     final host = hostEmail.toLowerCase();
     final matchRef = BattleFirestorePaths.matchDoc(sessionId);
     final emptyResponses = List<int>.filled(questionUuids.length, 0);
@@ -124,6 +135,7 @@ class BattleMatchFirestoreService {
     required String displayName,
     String? photoUrl,
   }) async {
+    await _ensureSignedInForFirestore();
     final guest = guestEmail.toLowerCase();
     await BattleFirestorePaths.joinedUsersCol(sessionId).doc(guest).set(
       {
@@ -138,6 +150,7 @@ class BattleMatchFirestoreService {
 
   /// Guest finished local import + profile; host lobby shows them as joined.
   Future<void> signalGuestLobbyReady(String sessionId) async {
+    await _ensureSignedInForFirestore();
     await BattleFirestorePaths.matchDoc(sessionId).update({
       fieldGuestReady: true,
       'num_of_players_joined': 2,
@@ -146,6 +159,7 @@ class BattleMatchFirestoreService {
 
   /// Host starts the timed battle for both players (`lets_start_game`).
   Future<void> signalHostStartedBattle(String sessionId) async {
+    await _ensureSignedInForFirestore();
     await BattleFirestorePaths.matchDoc(sessionId).update({
       'lets_start_game': true,
     }).timeout(const Duration(seconds: 12));

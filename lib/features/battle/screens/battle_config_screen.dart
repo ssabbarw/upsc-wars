@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -247,6 +248,7 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
     try {
       final me = ref.read(authStateChangesProvider).asData?.value;
       final invite = widget.invite;
+      var guestBlockedHost = false;
       if (invite != null) {
         final hostEmail = (me?.email ?? '').toLowerCase().trim();
         if (hostEmail.isEmpty) {
@@ -258,18 +260,16 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           ownerEmail: hostEmail,
           otherEmail: guestEmail,
         );
-        final guestBlockedHost = await repo.isUserBlocked(
+        guestBlockedHost = await repo.isUserBlocked(
           ownerEmail: guestEmail,
           otherEmail: hostEmail,
         );
-        if (hostBlockedGuest || guestBlockedHost) {
+        if (hostBlockedGuest) {
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 content: Text(
-                  hostBlockedGuest
-                      ? 'Unblock this player in Community before inviting them.'
-                      : 'This player has blocked you. Battle invites cannot be sent.',
+                  'Unblock this player in Community before inviting them.',
                 ),
               ),
             );
@@ -313,27 +313,37 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
           guestDisplayName: invite.displayName,
           subject: subject,
         );
-        const cloud = BattleInviteCloudService();
-        final inviteOutcome = await cloud.sendBattleInvite(
-          guestEmail: invite.email,
-          sessionId: sessionId,
-          hostDisplayName: playerName,
-          subjectLabel: displayNameForSessionSubject(subject),
-        );
-        unawaited(
-          Analytics.track(
-            ref,
-            BattleInviteOutcomeEvent(kind: inviteOutcome.analyticsKind),
-          ),
-        );
         if (!context.mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(inviteOutcome.userFacingMessage)),
-        );
-        if (!inviteOutcome.notificationSent &&
-            inviteOutcome.serverReason == 'blocked') {
-          context.pop();
-          return;
+        if (guestBlockedHost) {
+          unawaited(
+            Analytics.track(
+              ref,
+              const BattleInviteOutcomeEvent(kind: 'blocked'),
+            ),
+          );
+        } else {
+          const cloud = BattleInviteCloudService();
+          final inviteOutcome = await cloud.sendBattleInvite(
+            guestEmail: invite.email,
+            sessionId: sessionId,
+            hostDisplayName: playerName,
+            subjectLabel: displayNameForSessionSubject(subject),
+          );
+          unawaited(
+            Analytics.track(
+              ref,
+              BattleInviteOutcomeEvent(kind: inviteOutcome.analyticsKind),
+            ),
+          );
+          if (!context.mounted) return;
+          final serverSaysBlocked =
+              !inviteOutcome.notificationSent &&
+              inviteOutcome.serverReason == 'blocked';
+          if (!serverSaysBlocked) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(inviteOutcome.userFacingMessage)),
+            );
+          }
         }
       }
 
@@ -350,6 +360,41 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
             'opponentPhotoUrl': opponentPhoto,
         },
       );
+    } on FirebaseException catch (e, st) {
+      debugPrint('Battle start FirebaseException: ${e.code} ${e.message}');
+      debugPrintStack(stackTrace: st);
+      if (context.mounted) {
+        final msg = switch (e.code) {
+          'permission-denied' =>
+            'Could not save the battle room. Sign in and try again, or check Firestore rules.',
+          'unavailable' =>
+            'Firestore is temporarily unavailable. Check your connection and try again.',
+          _ => e.message ?? 'Battle setup failed (${e.code}).',
+        };
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(msg)),
+        );
+      }
+    } on TimeoutException catch (e, st) {
+      debugPrint('Battle start timed out: $e');
+      debugPrintStack(stackTrace: st);
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Saving the battle timed out. Check your internet connection and try again.',
+            ),
+          ),
+        );
+      }
+    } catch (e, st) {
+      debugPrint('Battle start: $e');
+      debugPrintStack(stackTrace: st);
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('$e')),
+        );
+      }
     } finally {
       if (mounted) setState(() => _submitting = false);
     }

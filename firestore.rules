@@ -147,6 +147,20 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    /// Mcq battles (`BattleFirestorePaths`): match doc + per-player sync docs.
+    /// Host may prime the guest’s `joined_users` stub before the guest opens the invite.
+    match /battle_matches/{sessionId} {
+      allow read, write: if signedIn();
+
+      match /joined_users/{participantId} {
+        allow read, write: if signedIn();
+      }
+
+      match /joined_users_game_over_statuses/{participantId} {
+        allow read, write: if signedIn();
+      }
+    }
+
     // Authenticated users: all other collections (tighten per collection before prod if needed).
     match /{document=**} {
       allow read, write: if signedIn() && !isUsersRootDoc(database);

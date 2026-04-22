@@ -50,18 +50,7 @@ Future<void> showCommunityUserProfileSheet(
         orElse: () => false,
       );
   var isBlocked = blockedInitially;
-  var guestHasBlockedMe = false;
   final meNorm = currentUserEmail?.toLowerCase().trim();
-  final peerNorm = user.email.toLowerCase();
-  if (meNorm != null && meNorm.isNotEmpty && meNorm != peerNorm) {
-    try {
-      guestHasBlockedMe = await ref
-          .read(communityRepositoryProvider)
-          .isUserBlocked(ownerEmail: peerNorm, otherEmail: meNorm);
-    } catch (_) {
-      guestHasBlockedMe = false;
-    }
-  }
   if (!context.mounted) return;
   await showModalBottomSheet<void>(
     context: context,
@@ -85,7 +74,6 @@ Future<void> showCommunityUserProfileSheet(
             !user.isInBattle &&
             user.acceptingBattleInvites &&
             !isBlocked &&
-            !guestHasBlockedMe &&
             !isSelf;
         return SingleChildScrollView(
           child: Padding(

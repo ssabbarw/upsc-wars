@@ -18,6 +18,9 @@ import 'package:upsc_wars/features/battle/domain/battle_monogram_palette.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 /// Human-readable room-style id (stable for a given session UUID).
+/// Host wait for human guest to open the invite before [Start battle] is enabled.
+const int kBattleHostGuestJoinWaitSeconds = 120;
+
 String battleRoomDisplayId(String sessionId) {
   final hex = sessionId.replaceAll('-', '');
   if (hex.length < 10) return sessionId;
@@ -64,6 +67,10 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
   bool _navigatedToBattle = false;
   bool _startingBattle = false;
 
+  Timer? _guestJoinTimer;
+  DateTime? _guestJoinDeadline;
+  bool _guestJoinWindowExpired = false;
+
   @override
   void initState() {
     super.initState();
@@ -72,8 +79,107 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
     ).snapshots().listen(_onMatchSnapshot);
   }
 
+  void _cancelGuestJoinWindow() {
+    _guestJoinTimer?.cancel();
+    _guestJoinTimer = null;
+    _guestJoinDeadline = null;
+    _guestJoinWindowExpired = false;
+  }
+
+  void _onGuestJoinTimerTick(Timer _) {
+    if (!mounted) return;
+    final deadline = _guestJoinDeadline;
+    if (deadline == null) return;
+    if (DateTime.now().isAfter(deadline)) {
+      _guestJoinTimer?.cancel();
+      _guestJoinTimer = null;
+      setState(() => _guestJoinWindowExpired = true);
+    } else {
+      setState(() {});
+    }
+  }
+
+  void _syncGuestJoinWindowFromMatch(Map<String, dynamic> d) {
+    if (d['lets_start_game'] == true) {
+      if (_guestJoinTimer != null ||
+          _guestJoinDeadline != null ||
+          _guestJoinWindowExpired) {
+        _cancelGuestJoinWindow();
+        if (mounted) setState(() {});
+      }
+      return;
+    }
+    final me =
+        ref
+            .read(authStateChangesProvider)
+            .asData
+            ?.value
+            ?.email
+            ?.toLowerCase()
+            .trim() ??
+        '';
+    final hostEmail = (d['host_email'] as String?)?.toLowerCase() ?? '';
+    final guestReady = d[BattleMatchFirestoreService.fieldGuestReady] == true;
+    final isHost = me.isNotEmpty && me == hostEmail;
+
+    if (!isHost || guestReady) {
+      if (_guestJoinTimer != null ||
+          _guestJoinDeadline != null ||
+          _guestJoinWindowExpired) {
+        _cancelGuestJoinWindow();
+        if (mounted) setState(() {});
+      }
+      return;
+    }
+
+    _guestJoinDeadline ??= DateTime.now().add(
+      const Duration(seconds: kBattleHostGuestJoinWaitSeconds),
+    );
+    _guestJoinTimer ??= Timer.periodic(
+      const Duration(seconds: 1),
+      _onGuestJoinTimerTick,
+    );
+    if (mounted) setState(() {});
+  }
+
+  void _onKeepWaitingGuestJoin() {
+    _guestJoinTimer?.cancel();
+    _guestJoinTimer = null;
+    setState(() {
+      _guestJoinWindowExpired = false;
+      _guestJoinDeadline = DateTime.now().add(
+        const Duration(seconds: kBattleHostGuestJoinWaitSeconds),
+      );
+    });
+    _guestJoinTimer = Timer.periodic(
+      const Duration(seconds: 1),
+      _onGuestJoinTimerTick,
+    );
+  }
+
+  int? _guestJoinWaitSecondsRemaining() {
+    if (_mode != _WaitUiMode.humanLobby ||
+        _match == null ||
+        _guestJoinWindowExpired) {
+      return null;
+    }
+    if (_match!['lets_start_game'] == true) return null;
+    final me = (ref.watch(authStateChangesProvider).asData?.value?.email ?? '')
+        .toLowerCase()
+        .trim();
+    final hostEmail = (_match!['host_email'] as String?)?.toLowerCase() ?? '';
+    final guestReady =
+        _match![BattleMatchFirestoreService.fieldGuestReady] == true;
+    if (me.isEmpty || me != hostEmail || guestReady) return null;
+    final deadline = _guestJoinDeadline;
+    if (deadline == null) return null;
+    final s = deadline.difference(DateTime.now()).inSeconds;
+    return s <= 0 ? 0 : s;
+  }
+
   void _onMatchSnapshot(DocumentSnapshot<Map<String, dynamic>> snap) {
     if (!snap.exists) {
+      _cancelGuestJoinWindow();
       setState(() {
         _mode = _WaitUiMode.botCountdown;
         _match = null;
@@ -86,17 +192,20 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
       final lets = d['lets_start_game'] == true;
       if (lets && !_navigatedToBattle) {
         _navigatedToBattle = true;
+        _cancelGuestJoinWindow();
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (mounted) {
             context.go('/battle/${widget.sessionId}');
           }
         });
       }
+      _syncGuestJoinWindowFromMatch(d);
       setState(() {
         _mode = _WaitUiMode.humanLobby;
         _match = d;
       });
     } else {
+      _cancelGuestJoinWindow();
       setState(() {
         _mode = _WaitUiMode.botCountdown;
         _match = null;
@@ -106,6 +215,7 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
 
   @override
   void dispose() {
+    _cancelGuestJoinWindow();
     _matchSub?.cancel();
     super.dispose();
   }
@@ -192,6 +302,10 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
             startingBattle: _startingBattle,
             initialLetter: _initialLetter,
             shortName: _shortName,
+            guestJoinWaitSecondsRemaining: _guestJoinWaitSecondsRemaining(),
+            guestJoinWindowExpired: _guestJoinWindowExpired,
+            onKeepWaitingGuestJoin: _onKeepWaitingGuestJoin,
+            onGoBackFromGuestJoinTimeout: _leaveMatchScreen,
           ),
         },
       ),
@@ -419,6 +533,13 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
   }
 }
 
+String _formatJoinWaitMmSs(int totalSeconds) {
+  final s = totalSeconds.clamp(0, 3599);
+  final m = s ~/ 60;
+  final sec = s % 60;
+  return '$m:${sec.toString().padLeft(2, '0')}';
+}
+
 class _HumanLobbyBody extends StatelessWidget {
   const _HumanLobbyBody({
     required this.sessionId,
@@ -432,6 +553,10 @@ class _HumanLobbyBody extends StatelessWidget {
     required this.startingBattle,
     required this.initialLetter,
     required this.shortName,
+    required this.guestJoinWaitSecondsRemaining,
+    required this.guestJoinWindowExpired,
+    required this.onKeepWaitingGuestJoin,
+    required this.onGoBackFromGuestJoinTimeout,
   });
 
   final String sessionId;
@@ -445,6 +570,10 @@ class _HumanLobbyBody extends StatelessWidget {
   final bool startingBattle;
   final String Function(String) initialLetter;
   final String Function(String) shortName;
+  final int? guestJoinWaitSecondsRemaining;
+  final bool guestJoinWindowExpired;
+  final VoidCallback onKeepWaitingGuestJoin;
+  final VoidCallback onGoBackFromGuestJoinTimeout;
 
   @override
   Widget build(BuildContext context) {
@@ -641,6 +770,23 @@ class _HumanLobbyBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                if (isHost &&
+                    !guestReady &&
+                    guestJoinWaitSecondsRemaining != null) ...[
+                  Text(
+                    'If your opponent joins within '
+                    '${_formatJoinWaitMmSs(kBattleHostGuestJoinWaitSeconds)}, '
+                    '\nyou can start the battle. '
+                    'Time remaining: ${_formatJoinWaitMmSs(guestJoinWaitSecondsRemaining!)}.',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      fontSize: 13,
+                      height: 1.35,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                ],
                 Text(
                   statusLine,
                   style: AppTextStyles.caption().copyWith(
@@ -650,6 +796,49 @@ class _HumanLobbyBody extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                if (isHost && !guestReady && guestJoinWindowExpired) ...[
+                  const SizedBox(height: AppSpacing.md),
+                  Material(
+                    color: scheme.surfaceContainerLow,
+                    borderRadius: BorderRadius.circular(AppRadius.md),
+                    child: Padding(
+                      padding: const EdgeInsets.all(AppSpacing.md),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            'We timed out while waiting for your opponent to '
+                            'join. You can keep waiting in case they are slow, '
+                            'or go back.',
+                            style: AppTextStyles.bodySm().copyWith(
+                              color: scheme.onSurfaceVariant,
+                              height: 1.35,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: AppSpacing.md),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: OutlinedButton(
+                                  onPressed: onGoBackFromGuestJoinTimeout,
+                                  child: const Text('Go back'),
+                                ),
+                              ),
+                              const SizedBox(width: AppSpacing.sm),
+                              Expanded(
+                                child: FilledButton(
+                                  onPressed: onKeepWaitingGuestJoin,
+                                  child: const Text('Keep waiting'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
                 if (isHost) ...[
                   const SizedBox(height: AppSpacing.md),
                   FilledButton(

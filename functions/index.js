@@ -491,6 +491,22 @@ exports.onChatMessageCreated = functions.database
       .find((email) => email && email !== senderEmail);
     if (!recipientEmail) return null;
 
+    const recipientBlockedSenderSnap = await admin
+      .firestore()
+      .collection("users")
+      .doc(recipientEmail)
+      .collection("blocked")
+      .doc(senderEmail)
+      .get();
+    if (recipientBlockedSenderSnap.exists) {
+      functions.logger.info("onChatMessageCreated: skip FCM, recipient blocked sender", {
+        chatId: context.params.chatId,
+        recipientEmail,
+        senderEmail,
+      });
+      return null;
+    }
+
     const userSnap = await admin.firestore().collection("users").doc(recipientEmail).get();
     const userData = userSnap.data() || {};
     const fcmToken = userData.fcm_token || userData.fcmToken;
