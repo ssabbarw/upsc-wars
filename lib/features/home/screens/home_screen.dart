@@ -30,7 +30,6 @@ import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/home_page_video_banner.dart';
-
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
 
