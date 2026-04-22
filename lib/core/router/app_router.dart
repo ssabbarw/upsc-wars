@@ -29,6 +29,7 @@ import '../../features/chat/screens/chat_list_screen.dart';
 import '../../features/chat/screens/chat_thread_screen.dart';
 import '../../features/chat/domain/entities/chat_thread_route_payload.dart';
 import '../../features/home/screens/home_screen.dart';
+import '../../features/onboarding/screens/onboarding_flow_screen.dart';
 import '../../features/notifications/screens/long_html_notification_screen.dart';
 import '../../features/pyq/screens/pyq_year_packs_screen.dart';
 import '../../features/home/screens/profile_screen.dart';
@@ -141,6 +142,11 @@ GoRouter appRouter(Ref ref) {
     },
     observers: [AnalyticsRouteObserver(ref)],
     routes: [
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/onboarding',
+        builder: (context, state) => const OnboardingFlowScreen(),
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return _AppShell(navigationShell: navigationShell);

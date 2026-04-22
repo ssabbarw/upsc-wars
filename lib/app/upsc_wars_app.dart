@@ -65,40 +65,69 @@ class _RootMaterialApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final welcomeScheduled = useRef(false);
+    final prefsAsync = ref.watch(prefsServiceProvider);
+    final prefsReady = prefsAsync.hasValue;
+    final patternInterruptDone =
+        prefsAsync.value?.patternInterruptOnboardingSeen ?? false;
+    final bilingualSeen =
+        prefsAsync.value?.bilingualQuestionWelcomeSeen ?? false;
 
-    /// First launch only: [PrefsService.bilingualQuestionWelcomeSeen].
     useEffect(() {
       var cancelled = false;
       unawaited(() async {
         final prefs = await ref.read(prefsServiceProvider.future);
-        if (cancelled || prefs.bilingualQuestionWelcomeSeen) return;
-        if (welcomeScheduled.value) return;
-        welcomeScheduled.value = true;
+        if (cancelled || prefs.patternInterruptOnboardingSeen) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          unawaited(() async {
-            final navCtx = rootNavigatorKey.currentContext;
-            if (navCtx == null || !navCtx.mounted) {
-              welcomeScheduled.value = false;
-              return;
-            }
-            final svc = await ref.read(prefsServiceProvider.future);
-            if (cancelled ||
-                !navCtx.mounted ||
-                svc.bilingualQuestionWelcomeSeen) {
-              return;
-            }
-            await showFirstLaunchBilingualWelcomeSheet(navCtx);
-            if (cancelled || !navCtx.mounted) return;
-            (await ref.read(
-              prefsServiceProvider.future,
-            )).bilingualQuestionWelcomeSeen = true;
-          }());
+          if (cancelled) return;
+          final router = ref.read(appRouterProvider);
+          if (router.state.matchedLocation != '/') return;
+          router.go('/onboarding');
         });
       }());
       return () {
         cancelled = true;
       };
     }, const []);
+
+    /// First launch only: [PrefsService.bilingualQuestionWelcomeSeen].
+    /// Deferred until [PrefsService.patternInterruptOnboardingSeen] is true.
+    useEffect(() {
+      if (!prefsReady) return null;
+      if (!patternInterruptDone) {
+        welcomeScheduled.value = false;
+        return null;
+      }
+      if (bilingualSeen) return null;
+      var cancelled = false;
+      if (welcomeScheduled.value) return null;
+      welcomeScheduled.value = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(() async {
+          final navCtx = rootNavigatorKey.currentContext;
+          if (navCtx == null || !navCtx.mounted) {
+            welcomeScheduled.value = false;
+            return;
+          }
+          final svc = await ref.read(prefsServiceProvider.future);
+          if (cancelled ||
+              !navCtx.mounted ||
+              svc.bilingualQuestionWelcomeSeen ||
+              !svc.patternInterruptOnboardingSeen) {
+            welcomeScheduled.value = false;
+            return;
+          }
+          await showFirstLaunchBilingualWelcomeSheet(navCtx);
+          if (cancelled || !navCtx.mounted) return;
+          (await ref.read(
+            prefsServiceProvider.future,
+          )).bilingualQuestionWelcomeSeen = true;
+          ref.invalidate(prefsServiceProvider);
+        }());
+      });
+      return () {
+        cancelled = true;
+      };
+    }, [prefsReady, patternInterruptDone, bilingualSeen]);
 
     useEffect(() {
       WidgetsBinding.instance.addPostFrameCallback((_) {

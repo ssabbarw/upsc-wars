@@ -19,7 +19,7 @@ import 'package:upsc_wars/features/home/providers/auth_providers.dart';
 
 /// Human-readable room-style id (stable for a given session UUID).
 /// Host wait for human guest to open the invite before [Start battle] is enabled.
-const int kBattleHostGuestJoinWaitSeconds = 120;
+const int kBattleHostGuestJoinWaitSeconds = 60;
 
 String battleRoomDisplayId(String sessionId) {
   final hex = sessionId.replaceAll('-', '');
