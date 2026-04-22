@@ -169,7 +169,8 @@ class CommunityRepository {
     return users;
   }
 
-  /// `users/{ownerEmail}/blocked/{otherEmail}` — only the owner may read/write (see Firestore rules).
+  /// `users/{ownerEmail}/blocked/{otherEmail}` — owner read/write; others may read only the doc
+  /// whose id is their own email (see Firestore rules) to detect "has this user blocked me?".
   CollectionReference<Map<String, dynamic>> blockedUsersCol(String ownerEmail) {
     return _firestore
         .collection(CommunityLegacyContract.usersCollection)

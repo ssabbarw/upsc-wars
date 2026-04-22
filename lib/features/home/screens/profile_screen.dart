@@ -10,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../community/services/community_bucket_presence_service.dart';
 import '../providers/auth_providers.dart';
 import '../services/instagram_link_service.dart';
@@ -24,9 +25,9 @@ class _ProfileFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final style = Theme.of(context).textTheme.labelSmall?.copyWith(
-          color: scheme.onSurfaceVariant,
-          height: 1.45,
-        );
+      color: scheme.onSurfaceVariant,
+      height: 1.45,
+    );
     return Column(
       children: [
         Text(
@@ -179,10 +180,7 @@ class ProfileScreen extends HookConsumerWidget {
 }
 
 class _SignedInProfileBody extends HookConsumerWidget {
-  const _SignedInProfileBody({
-    required this.user,
-    required this.isBusy,
-  });
+  const _SignedInProfileBody({required this.user, required this.isBusy});
 
   final User user;
   final bool isBusy;
@@ -204,9 +202,9 @@ class _SignedInProfileBody extends HookConsumerWidget {
           );
           unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
         } else if (err != null) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(err)),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(err)));
         }
       } finally {
         uploadingPhoto.value = false;
@@ -214,6 +212,11 @@ class _SignedInProfileBody extends HookConsumerWidget {
     }
 
     final scheme = Theme.of(context).colorScheme;
+    final profileNameLabel = displayNameForViewer(
+      name: user.displayName ?? user.email ?? 'Signed in user',
+      viewerEmail: user.email,
+      subjectEmail: user.email,
+    );
 
     return Column(
       children: [
@@ -247,10 +250,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
                             children: [
                               TappableCircularAvatar(
                                 imageUrl: user.photoURL,
-                                displayName:
-                                    user.displayName ??
-                                    user.email ??
-                                    'Signed in user',
+                                displayName: profileNameLabel,
                                 size: 84,
                               ),
                               if (!kIsWeb)
@@ -275,9 +275,9 @@ class _SignedInProfileBody extends HookConsumerWidget {
                                                 height: 22,
                                                 child:
                                                     CircularProgressIndicator(
-                                                  strokeWidth: 2,
-                                                  color: scheme.primary,
-                                                ),
+                                                      strokeWidth: 2,
+                                                      color: scheme.primary,
+                                                    ),
                                               )
                                             : Icon(
                                                 Icons.photo_camera_outlined,
@@ -296,14 +296,12 @@ class _SignedInProfileBody extends HookConsumerWidget {
                               'Profile photo can be changed in the Android or iOS app.',
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodySmall
-                                  ?.copyWith(
-                                color: scheme.onSurfaceVariant,
-                              ),
+                                  ?.copyWith(color: scheme.onSurfaceVariant),
                             ),
                           ],
                           const SizedBox(height: 14),
                           Text(
-                            user.displayName ?? 'Signed in user',
+                            profileNameLabel,
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
@@ -348,10 +346,7 @@ class _SignedInProfileBody extends HookConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    _CommunityProfileCard(
-                      email: user.email,
-                      isBusy: isBusy,
-                    ),
+                    _CommunityProfileCard(email: user.email, isBusy: isBusy),
                   ],
                 ),
               ),
@@ -484,27 +479,27 @@ class _CommunityProfileCard extends HookConsumerWidget {
         // User closed the browser; no message.
       } on InstagramLinkFailed catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(e.message)),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(e.message)));
         }
       } on FirebaseFunctionsException catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(e.message ?? e.code)),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(e.message ?? e.code)));
         }
       } on UnsupportedError catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(e.toString())),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(e.toString())));
         }
       } catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(e.toString())),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(e.toString())));
         }
       } finally {
         instagramBusy.value = false;
@@ -544,17 +539,16 @@ class _CommunityProfileCard extends HookConsumerWidget {
         }
       } on FirebaseFunctionsException catch (e) {
         if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(e.message ?? e.code)),
-          );
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(e.message ?? e.code)));
         }
       } finally {
         instagramBusy.value = false;
       }
     }
 
-    final igConfigured =
-        AppConstants.instagramOAuthAppId.trim().isNotEmpty;
+    final igConfigured = AppConstants.instagramOAuthAppId.trim().isNotEmpty;
 
     return Card(
       elevation: 0,
@@ -594,18 +588,15 @@ class _CommunityProfileCard extends HookConsumerWidget {
               ),
             ),
             const SizedBox(height: 14),
-            Text(
-              'Instagram',
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
+            Text('Instagram', style: Theme.of(context).textTheme.labelLarge),
             const SizedBox(height: 4),
             Text(
               kIsWeb
                   ? 'Open the mobile app to connect Instagram.'
                   : 'Uses Meta login. Instagram Professional (Business or Creator) accounts only.',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: scheme.onSurfaceVariant,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: scheme.onSurfaceVariant),
             ),
             const SizedBox(height: 8),
             if (!igConfigured)
@@ -613,9 +604,9 @@ class _CommunityProfileCard extends HookConsumerWidget {
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
                   'Instagram linking is not enabled in this build (missing INSTAGRAM_APP_ID).',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: scheme.error,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(color: scheme.error),
                 ),
               ),
             if (instagramLinked.value) ...[
@@ -633,9 +624,9 @@ class _CommunityProfileCard extends HookConsumerWidget {
                   const SizedBox(width: 6),
                   Text(
                     'Verified',
-                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                          color: scheme.primary,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.labelLarge?.copyWith(color: scheme.primary),
                   ),
                 ],
               ),
@@ -657,17 +648,15 @@ class _CommunityProfileCard extends HookConsumerWidget {
                     'Previous unverified handle (replaced when you connect): '
                     '@${instagramHandle.value}',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
                 ),
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: (!igConfigured ||
-                          kIsWeb ||
-                          instagramBusy.value ||
-                          isBusy)
+                  onPressed:
+                      (!igConfigured || kIsWeb || instagramBusy.value || isBusy)
                       ? null
                       : onConnectInstagram,
                   icon: instagramBusy.value
@@ -678,9 +667,7 @@ class _CommunityProfileCard extends HookConsumerWidget {
                         )
                       : const Icon(Icons.link_rounded),
                   label: Text(
-                    instagramBusy.value
-                        ? 'Connecting…'
-                        : 'Connect Instagram',
+                    instagramBusy.value ? 'Connecting…' : 'Connect Instagram',
                   ),
                 ),
               ),

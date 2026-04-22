@@ -21,13 +21,13 @@ class OpenChallengeProfileSnapshot {
   final String? status;
 
   Map<String, dynamic> toFirestoreMap() => {
-        'email': email,
-        'name': name,
-        'photoURL': photoUrl,
-        if (telegram != null) 'telegram': telegram,
-        if (instagram != null) 'insta': instagram,
-        if (status != null) 'my_status': status,
-      };
+    'email': email,
+    'name': name,
+    'photoURL': photoUrl,
+    if (telegram != null) 'telegram': telegram,
+    if (instagram != null) 'insta': instagram,
+    if (status != null) 'my_status': status,
+  };
 
   /// [attemptFieldKey] is the Firestore document field name for this attempt
   /// (lowercased email). Used when nested `profile.email` is missing or legacy
@@ -57,7 +57,8 @@ class OpenChallengeProfileSnapshot {
         ? nameRaw
         : _displayNameFromEmailKey(email);
 
-    final photo = _nonEmptyString(m['photoURL']) ?? _nonEmptyString(m['photoUrl']);
+    final photo =
+        _nonEmptyString(m['photoURL']) ?? _nonEmptyString(m['photoUrl']);
     return OpenChallengeProfileSnapshot(
       email: email,
       name: name,
@@ -103,13 +104,13 @@ class OpenChallengeDetail {
   final String subject;
   final List<String> questionUuids;
   final DateTime? createdAt;
+
   /// When absent in Firestore, treated as [createdAt] + 24h for legacy docs.
   final DateTime? expiresAt;
   final Map<String, OpenChallengeAttemptEntry> attemptsByEmail;
 
   DateTime? get effectiveExpiresAt =>
-      expiresAt ??
-      (createdAt?.add(const Duration(hours: 24)));
+      expiresAt ?? (createdAt?.add(const Duration(hours: 24)));
 
   bool get isExpired {
     final end = effectiveExpiresAt;
@@ -145,12 +146,57 @@ class OpenChallengeDetail {
     return rows;
   }
 
+  /// True if [data] already includes an attempt for this participant.
+  ///
+  /// Firestore treats `.` in [Transaction.update] map keys as nested paths, so
+  /// older accepts may have stored the payload under nested maps instead of a
+  /// single top-level field named like the email. This walks those shapes too.
+  static bool documentContainsParticipantAttempt(
+    Map<String, dynamic> data,
+    String participantEmailLower,
+  ) {
+    final t = participantEmailLower.toLowerCase().trim();
+    if (t.isEmpty) return false;
+    for (final key in data.keys) {
+      if (_openChallengeReservedRootKey(key)) continue;
+      if (key.toLowerCase() == t && data[key] is Map) {
+        final m = Map<String, dynamic>.from(data[key]! as Map);
+        if (_scoreFromFirestoreAttempt(m) != null) return true;
+      }
+    }
+    bool walk(Map<String, dynamic> map) {
+      if (_scoreFromFirestoreAttempt(map) != null) {
+        final raw = map['profile'];
+        if (raw is Map) {
+          final p = OpenChallengeProfileSnapshot.fromMap(
+            Map<String, dynamic>.from(raw),
+            attemptFieldKey: null,
+          );
+          if (p != null && p.email.toLowerCase() == t) return true;
+        }
+      }
+      for (final v in map.values) {
+        if (v is Map && walk(Map<String, dynamic>.from(v))) return true;
+      }
+      return false;
+    }
+
+    for (final e in data.entries) {
+      if (_openChallengeReservedRootKey(e.key)) continue;
+      final v = e.value;
+      if (v is Map && walk(Map<String, dynamic>.from(v))) return true;
+    }
+    return false;
+  }
+
   static OpenChallengeDetail? parse(String id, Map<String, dynamic> data) {
     if (kDebugMode) {
-      final keySummary = data.keys.map((k) {
-        final v = data[k];
-        return '$k:${v.runtimeType}';
-      }).join(', ');
+      final keySummary = data.keys
+          .map((k) {
+            final v = data[k];
+            return '$k:${v.runtimeType}';
+          })
+          .join(', ');
       debugPrint('[OpenChallenge:parse] doc=$id rootKeys($keySummary)');
     }
 
@@ -179,12 +225,7 @@ class OpenChallengeDetail {
 
     final attempts = <String, OpenChallengeAttemptEntry>{};
     for (final e in data.entries) {
-      if (e.key == 'questions' ||
-          e.key == 'subject' ||
-          e.key == 'created_at' ||
-          e.key == 'expires_at') {
-        continue;
-      }
+      if (_openChallengeReservedRootKey(e.key)) continue;
       final v = e.value;
       if (v is! Map) {
         _openChallengeParseLog(
@@ -192,61 +233,12 @@ class OpenChallengeDetail {
         );
         continue;
       }
-      final map = Map<String, dynamic>.from(v);
-      Map<String, dynamic>? profileMap;
-      final rawProfile = map['profile'];
-      if (rawProfile is Map) {
-        profileMap = Map<String, dynamic>.from(rawProfile);
-      }
-      final profile = OpenChallengeProfileSnapshot.fromMap(
-        profileMap,
-        attemptFieldKey: e.key,
-      );
-      if (profile == null) {
-        _openChallengeParseLog(
-          'doc=$id skip field="${e.key}" profile=null '
-          '(rawProfileType=${rawProfile.runtimeType}, mapKeys=${map.keys.toList()})',
-        );
-        continue;
-      }
-      final attemptsMap = (map['attempts'] as Map?)?.cast<dynamic, dynamic>();
-      final byQ = <String, String>{};
-      if (attemptsMap != null) {
-        for (final a in attemptsMap.entries) {
-          byQ['${a.key}'] = '${a.value}'.toLowerCase().trim();
-        }
-      }
-      final score = _scoreFromFirestoreAttempt(map);
-      if (score == null) {
-        final raw = map['score'];
-        _openChallengeParseLog(
-          'doc=$id skip field="${e.key}" score unreadable '
-          'raw=$raw (${raw.runtimeType})',
-        );
-        continue;
-      }
-      // Server timestamps can be null briefly on read; without a time we would
-      // drop the whole attempt and the leaderboard would miss rows.
-      final at = _readDateTime(map['attempted_at']) ??
-          createdAt ??
-          DateTime.now().toUtc();
-      final rsRaw = map['review_session_id'];
-      final reviewSessionId = rsRaw is String && rsRaw.trim().isNotEmpty
-          ? rsRaw.trim()
-          : null;
-      final emailKey = e.key.toLowerCase();
-      attempts[emailKey] = OpenChallengeAttemptEntry(
-        emailKey: emailKey,
-        profile: profile,
-        attemptsByQuestionUuid: byQ,
-        score: score,
-        attemptedAt: at,
-        reviewSessionId: reviewSessionId,
-      );
-      _openChallengeParseLog(
-        'doc=$id OK attempt key="$emailKey" score=$score '
-        'profile.email=${profile.email} name=${profile.name} '
-        'byQCount=${byQ.length} attempted_at=${map['attempted_at']?.runtimeType ?? 'missing'}',
+      _walkOpenChallengeAttemptMaps(
+        docId: id,
+        rootFieldKey: e.key,
+        node: v,
+        createdAt: createdAt,
+        attempts: attempts,
       );
     }
     if (kDebugMode) {
@@ -278,6 +270,112 @@ class OpenChallengeLeaderboardRow {
   final DateTime attemptedAt;
 }
 
+bool _openChallengeReservedRootKey(String k) =>
+    k == 'questions' ||
+    k == 'subject' ||
+    k == 'created_at' ||
+    k == 'expires_at';
+
+/// Firestore [Transaction.update] treats `.` in String keys as nested field
+/// paths. Walk [node] until we find a leaf map that looks like an attempt
+/// payload (`score` + optional `profile`), then merge into [attempts].
+void _walkOpenChallengeAttemptMaps({
+  required String docId,
+  required String rootFieldKey,
+  required dynamic node,
+  required DateTime? createdAt,
+  required Map<String, OpenChallengeAttemptEntry> attempts,
+  int depth = 0,
+}) {
+  if (depth > 16) return;
+  if (node is! Map) return;
+  final map = Map<String, dynamic>.from(node);
+  if (_scoreFromFirestoreAttempt(map) != null) {
+    _mergeAttemptMapIfValid(
+      docId: docId,
+      fieldHint: rootFieldKey,
+      map: map,
+      createdAt: createdAt,
+      attempts: attempts,
+      nested: depth > 0,
+    );
+    return;
+  }
+  for (final e in map.entries) {
+    _walkOpenChallengeAttemptMaps(
+      docId: docId,
+      rootFieldKey: '$rootFieldKey.${e.key}',
+      node: e.value,
+      createdAt: createdAt,
+      attempts: attempts,
+      depth: depth + 1,
+    );
+  }
+}
+
+void _mergeAttemptMapIfValid({
+  required String docId,
+  required String fieldHint,
+  required Map<String, dynamic> map,
+  required DateTime? createdAt,
+  required Map<String, OpenChallengeAttemptEntry> attempts,
+  required bool nested,
+}) {
+  Map<String, dynamic>? profileMap;
+  final rawProfile = map['profile'];
+  if (rawProfile is Map) {
+    profileMap = Map<String, dynamic>.from(rawProfile);
+  }
+  final profile = OpenChallengeProfileSnapshot.fromMap(
+    profileMap,
+    attemptFieldKey: fieldHint,
+  );
+  if (profile == null) {
+    _openChallengeParseLog(
+      'doc=$docId skip fieldHint="$fieldHint" profile=null '
+      '(rawProfileType=${rawProfile.runtimeType}, mapKeys=${map.keys.toList()})',
+    );
+    return;
+  }
+  final attemptsMap = (map['attempts'] as Map?)?.cast<dynamic, dynamic>();
+  final byQ = <String, String>{};
+  if (attemptsMap != null) {
+    for (final a in attemptsMap.entries) {
+      byQ['${a.key}'] = '${a.value}'.toLowerCase().trim();
+    }
+  }
+  final score = _scoreFromFirestoreAttempt(map);
+  if (score == null) {
+    final raw = map['score'];
+    _openChallengeParseLog(
+      'doc=$docId skip fieldHint="$fieldHint" score unreadable '
+      'raw=$raw (${raw.runtimeType})',
+    );
+    return;
+  }
+  final at =
+      _readDateTime(map['attempted_at']) ?? createdAt ?? DateTime.now().toUtc();
+  final rsRaw = map['review_session_id'];
+  final reviewSessionId = rsRaw is String && rsRaw.trim().isNotEmpty
+      ? rsRaw.trim()
+      : null;
+  final emailKey = profile.email.toLowerCase();
+  attempts[emailKey] = OpenChallengeAttemptEntry(
+    emailKey: emailKey,
+    profile: profile,
+    attemptsByQuestionUuid: byQ,
+    score: score,
+    attemptedAt: at,
+    reviewSessionId: reviewSessionId,
+  );
+  _openChallengeParseLog(
+    'doc=$docId OK attempt emailKey="$emailKey" score=$score '
+    'profile.email=${profile.email} name=${profile.name} '
+    'byQCount=${byQ.length} nested=$nested fieldHint="$fieldHint" '
+    'attempted_at=${map['attempted_at']?.runtimeType ?? 'missing'}',
+  );
+}
+
 class OpenChallengeListTileModel {
   const OpenChallengeListTileModel({
     required this.id,
@@ -286,6 +384,7 @@ class OpenChallengeListTileModel {
     required this.topScore,
     this.myScore,
     required this.postedByName,
+    this.postedByEmail,
     required this.postedByPhotoUrl,
     required this.postedAt,
     required this.liveUntil,
@@ -297,8 +396,12 @@ class OpenChallengeListTileModel {
   final int topScore;
   final int? myScore;
   final String postedByName;
+
+  /// Lowercased email of the creator (for "You" vs name in the list UI).
+  final String? postedByEmail;
   final String postedByPhotoUrl;
   final DateTime? postedAt;
+
   /// When the challenge stops accepting attempts (24h window).
   final DateTime? liveUntil;
 }

@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -151,10 +153,7 @@ Future<void> showQotdAnswerersBottomSheet(
 }
 
 class _QotdAnswererRow extends StatelessWidget {
-  const _QotdAnswererRow({
-    required this.entry,
-    required this.onOpenProfile,
-  });
+  const _QotdAnswererRow({required this.entry, required this.onOpenProfile});
 
   final QotdAttemptEntry entry;
   final Future<void> Function(QotdAttemptEntry e) onOpenProfile;
@@ -163,9 +162,17 @@ class _QotdAnswererRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = context.isDarkMode;
-    final name = (entry.authorName ?? '').trim().isEmpty
+    final rawName = (entry.authorName ?? '').trim().isEmpty
         ? 'UPSC Warrior'
         : entry.authorName!.trim();
+    final viewer = FirebaseAuth.instance.currentUser;
+    final name = displayNameForViewer(
+      name: rawName,
+      viewerUid: viewer?.uid,
+      subjectUid: entry.uid,
+      viewerEmail: viewer?.email,
+      subjectEmail: entry.authorEmail,
+    );
     final border = entry.isCorrect
         ? (isDark ? AppColors.correct : AppColors.correct)
         : (isDark ? AppColors.wrong : AppColors.wrong);
@@ -205,11 +212,11 @@ class _QotdAnswererRow extends StatelessWidget {
                       style: AppTextStyles.caption().copyWith(
                         color: entry.isCorrect
                             ? (isDark
-                                ? AppColors.correctTextDark
-                                : AppColors.correctText)
+                                  ? AppColors.correctTextDark
+                                  : AppColors.correctText)
                             : (isDark
-                                ? AppColors.wrongTextDark
-                                : AppColors.wrongText),
+                                  ? AppColors.wrongTextDark
+                                  : AppColors.wrongText),
                       ),
                     ),
                   ],
@@ -225,11 +232,11 @@ class _QotdAnswererRow extends StatelessWidget {
                   border: Border.all(color: border, width: 1.5),
                   color: entry.isCorrect
                       ? (isDark
-                          ? AppColors.correctBgDark.withValues(alpha: 0.35)
-                          : AppColors.correctBg.withValues(alpha: 0.45))
+                            ? AppColors.correctBgDark.withValues(alpha: 0.35)
+                            : AppColors.correctBg.withValues(alpha: 0.45))
                       : (isDark
-                          ? AppColors.wrongBgDark.withValues(alpha: 0.35)
-                          : AppColors.wrongBg.withValues(alpha: 0.45)),
+                            ? AppColors.wrongBgDark.withValues(alpha: 0.35)
+                            : AppColors.wrongBg.withValues(alpha: 0.45)),
                 ),
                 child: Text(
                   entry.pickedOption,
@@ -250,7 +257,9 @@ CommunityUser _fallbackUser(QotdAttemptEntry e) {
   final email = (e.authorEmail ?? '').trim().toLowerCase();
   return CommunityUser(
     email: email,
-    name: (e.authorName ?? '').trim().isEmpty ? 'UPSC Warrior' : e.authorName!.trim(),
+    name: (e.authorName ?? '').trim().isEmpty
+        ? 'UPSC Warrior'
+        : e.authorName!.trim(),
     photoUrl: AppConstants.profileImageUrlOrDefault(e.authorPhotoUrl),
     lastOnlineTime: 0,
     acceptingBattleInvites: true,
@@ -290,10 +299,5 @@ Future<void> _openAnswererProfile(
   } catch (_) {}
   if (!context.mounted) return;
   final me = ref.read(authStateChangesProvider).asData?.value?.email;
-  await showCommunityUserProfileSheet(
-    context,
-    ref,
-    user,
-    currentUserEmail: me,
-  );
+  await showCommunityUserProfileSheet(context, ref, user, currentUserEmail: me);
 }

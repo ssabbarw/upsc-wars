@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/domain/entities/test_question.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -34,11 +35,7 @@ String _qotdPostedFriendlyAgo(DateTime? posted) {
 }
 
 class QotdPostCard extends ConsumerStatefulWidget {
-  const QotdPostCard({
-    super.key,
-    required this.post,
-    required this.uiLanguage,
-  });
+  const QotdPostCard({super.key, required this.post, required this.uiLanguage});
 
   final QotdPost post;
   final String uiLanguage;
@@ -96,7 +93,10 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     final repo = ref.read(qotdRepositoryProvider);
     try {
       final pick = await repo.userAttemptPick(postId: widget.post.id, uid: uid);
-      final rid = await repo.reactionIdForUser(postId: widget.post.id, uid: uid);
+      final rid = await repo.reactionIdForUser(
+        postId: widget.post.id,
+        uid: uid,
+      );
       if (!mounted) return;
       setState(() {
         _myPick = pick;
@@ -154,9 +154,9 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
         _correct = rollbackCorrect;
         _wrong = rollbackWrong;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Could not save attempt: $e')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Could not save attempt: $e')));
     }
   }
 
@@ -198,9 +198,9 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
         _myReactionId = null;
         _reactionSaving = false;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Could not update reaction: $e')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Could not update reaction: $e')));
     }
   }
 
@@ -223,7 +223,9 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final qAsync = ref.watch(qotdQuestionByUuidProvider(widget.post.questionUuid));
+    final qAsync = ref.watch(
+      qotdQuestionByUuidProvider(widget.post.questionUuid),
+    );
 
     return Card(
       margin: const EdgeInsets.only(bottom: AppSpacing.md),
@@ -256,12 +258,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
               ),
             );
           }
-          return _expandableCard(
-            context,
-            scheme,
-            vm.question,
-            vm.subTopic,
-          );
+          return _expandableCard(context, scheme, vm.question, vm.subTopic);
         },
       ),
     );
@@ -316,7 +313,9 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     TestQuestion q,
     String subTopic,
   ) {
-    final cap = AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant);
+    final cap = AppTextStyles.caption().copyWith(
+      color: scheme.onSurfaceVariant,
+    );
     final trap = (q.trapType ?? '').trim().isEmpty ? '—' : q.trapType!.trim();
     final st = subTopic.trim().isEmpty ? '—' : subTopic.trim();
     return Column(
@@ -339,6 +338,12 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     TestQuestion q,
     String subTopic,
   ) {
+    final me = FirebaseAuth.instance.currentUser;
+    final authorLabel = displayNameForViewer(
+      name: widget.post.authorName,
+      viewerEmail: me?.email,
+      subjectEmail: widget.post.authorEmail,
+    );
     final preview = _stemPreviewLine(q);
 
     return Theme(
@@ -372,7 +377,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
               children: [
                 TappableCircularAvatar(
                   imageUrl: widget.post.authorPhotoUrl,
-                  displayName: widget.post.authorName,
+                  displayName: authorLabel,
                   size: 32,
                 ),
                 const SizedBox(width: AppSpacing.sm),
@@ -380,7 +385,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(widget.post.authorName, style: AppTextStyles.label()),
+                      Text(authorLabel, style: AppTextStyles.label()),
                       const SizedBox(height: AppSpacing.xs),
                       Text(
                         widget.post.comment.trim().isEmpty
@@ -429,9 +434,8 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                 const Spacer(),
                 ToggleButtons(
                   isSelected: [_displayLang == 'en', _displayLang == 'hi'],
-                  onPressed: (i) => setState(
-                    () => _displayLang = i == 0 ? 'en' : 'hi',
-                  ),
+                  onPressed: (i) =>
+                      setState(() => _displayLang = i == 0 ? 'en' : 'hi'),
                   constraints: const BoxConstraints(
                     minHeight: 28,
                     minWidth: 36,
@@ -484,14 +488,16 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                   color: scheme.onSurface,
                 ),
               ),
-        children: [
-          _questionBody(context, scheme, q),
-        ],
+        children: [_questionBody(context, scheme, q)],
       ),
     );
   }
 
-  Widget _questionBody(BuildContext context, ColorScheme scheme, TestQuestion q) {
+  Widget _questionBody(
+    BuildContext context,
+    ColorScheme scheme,
+    TestQuestion q,
+  ) {
     final isHi = _displayLang == 'hi';
     final stem = (isHi ? q.displayTextHi : q.displayText).toString().trim();
     final oa = (isHi ? q.optionAHi : q.optionA).toString().trim();
@@ -500,8 +506,9 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
     final od = (isHi ? q.optionDHi : q.optionD).toString().trim();
     final hasTable = q.hasTable;
     final optionsBody = '(A) $oa\n(B) $ob\n(C) $oc\n(D) $od';
-    final questionStyle =
-        AppTextStyles.question().copyWith(color: scheme.onSurface);
+    final questionStyle = AppTextStyles.question().copyWith(
+      color: scheme.onSurface,
+    );
 
     final nonTableBlock = () {
       final buf = StringBuffer();
@@ -529,16 +536,10 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
           ),
         ],
         if (!hasTable)
-          SelectableCopySearchText(
-            nonTableBlock,
-            style: questionStyle,
-          )
+          SelectableCopySearchText(nonTableBlock, style: questionStyle)
         else ...[
           if (stem.isNotEmpty)
-            SelectableCopySearchText(
-              stem,
-              style: questionStyle,
-            ),
+            SelectableCopySearchText(stem, style: questionStyle),
           Builder(
             builder: (_) {
               final td = isHi ? q.tableDataHi : q.tableData;
@@ -554,10 +555,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
             },
           ),
           const SizedBox(height: AppSpacing.md),
-          SelectableCopySearchText(
-            optionsBody,
-            style: questionStyle,
-          ),
+          SelectableCopySearchText(optionsBody, style: questionStyle),
         ],
         if (!hasTable) const SizedBox(height: AppSpacing.md),
         QotdOptionLettersRow(
@@ -573,8 +571,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
                 context,
                 ref,
                 postId: widget.post.id,
-                statsLine:
-                    '$_correct got it right · $_wrong got it wrong',
+                statsLine: '$_correct got it right · $_wrong got it wrong',
               );
             },
             borderRadius: BorderRadius.circular(AppRadius.sm),
@@ -611,8 +608,7 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
           FilledButton.tonal(
             onPressed: () {
               final pick = _myPick!.toLowerCase().trim();
-              final ok =
-                  pick == q.correctOption.toLowerCase().trim();
+              final ok = pick == q.correctOption.toLowerCase().trim();
               final forReview = q.copyWith(
                 selectedOption: pick,
                 status: ok ? 'correct' : 'wrong',

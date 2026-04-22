@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/presentation/session_subject_label.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -53,7 +54,11 @@ class _OpenChallengeDetailScreenState
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final async = ref.watch(openChallengeDetailProvider(widget.challengeId));
-    final me = ref.watch(authStateChangesProvider).asData?.value?.email
+    final me = ref
+        .watch(authStateChangesProvider)
+        .asData
+        ?.value
+        ?.email
         ?.toLowerCase()
         .trim();
 
@@ -63,8 +68,7 @@ class _OpenChallengeDetailScreenState
         leading: widget.backToCommunityOpenTab
             ? IconButton(
                 icon: const Icon(Icons.arrow_back_ios_new_rounded),
-                onPressed: () =>
-                    context.go('/community?tab=open_challenge'),
+                onPressed: () => context.go('/community?tab=open_challenge'),
               )
             : null,
         title: Text('Challenge', style: AppTextStyles.h3()),
@@ -104,13 +108,12 @@ class _OpenChallengeDetailScreenState
           }
           final creator = detail.creatorEntry();
           final board = detail.leaderboardRows();
-          final myEntry =
-              (me != null && me.isNotEmpty) ? detail.attemptsByEmail[me] : null;
+          final myEntry = (me != null && me.isNotEmpty)
+              ? detail.attemptsByEmail[me]
+              : null;
           final myRank = myEntry == null
               ? null
-              : board.indexWhere(
-                  (r) => r.profile.email.toLowerCase() == me,
-                );
+              : board.indexWhere((r) => r.profile.email.toLowerCase() == me);
           final leader = board.isEmpty ? null : board.first;
 
           return RefreshIndicator(
@@ -130,7 +133,11 @@ class _OpenChallengeDetailScreenState
                     children: [
                       TappableCircularAvatar(
                         imageUrl: creator.profile.photoUrl,
-                        displayName: creator.profile.name,
+                        displayName: displayNameForViewer(
+                          name: creator.profile.name,
+                          viewerEmail: me,
+                          subjectEmail: creator.profile.email,
+                        ),
                         size: 40,
                       ),
                       const SizedBox(width: AppSpacing.md),
@@ -139,7 +146,7 @@ class _OpenChallengeDetailScreenState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Created by ${creator.profile.name}',
+                              'Created by ${displayNameForViewer(name: creator.profile.name, viewerEmail: me, subjectEmail: creator.profile.email)}',
                               style: AppTextStyles.label(),
                             ),
                             Text(
@@ -207,7 +214,7 @@ class _OpenChallengeDetailScreenState
                   else if (leader != null &&
                       leader.profile.email.toLowerCase() != me)
                     Text(
-                      '${leader.profile.name} has beaten your score',
+                      '${displayNameForViewer(name: leader.profile.name, viewerEmail: me, subjectEmail: leader.profile.email)} has beaten your score',
                       style: AppTextStyles.bodySm().copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -216,9 +223,8 @@ class _OpenChallengeDetailScreenState
                       myEntry.reviewSessionId!.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.md),
                     OutlinedButton.icon(
-                      onPressed: () => context.push(
-                        '/history/${myEntry.reviewSessionId}',
-                      ),
+                      onPressed: () =>
+                          context.push('/history/${myEntry.reviewSessionId}'),
                       icon: const Icon(Icons.menu_book_outlined, size: 20),
                       label: const Text('Review explanations'),
                     ),
@@ -231,6 +237,7 @@ class _OpenChallengeDetailScreenState
                   _LeaderTile(
                     rank: i + 1,
                     row: board[i],
+                    viewerEmail: me,
                     highlight:
                         me != null &&
                         board[i].profile.email.toLowerCase() == me,
@@ -262,7 +269,8 @@ class _AcceptChallengeCallout extends ConsumerStatefulWidget {
       _AcceptChallengeCalloutState();
 }
 
-class _AcceptChallengeCalloutState extends ConsumerState<_AcceptChallengeCallout> {
+class _AcceptChallengeCalloutState
+    extends ConsumerState<_AcceptChallengeCallout> {
   var _busy = false;
 
   @override
@@ -304,16 +312,23 @@ class _LeaderTile extends StatelessWidget {
   const _LeaderTile({
     required this.rank,
     required this.row,
+    required this.viewerEmail,
     required this.highlight,
   });
 
   final int rank;
   final OpenChallengeLeaderboardRow row;
+  final String? viewerEmail;
   final bool highlight;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final nameLabel = displayNameForViewer(
+      name: row.profile.name,
+      viewerEmail: viewerEmail,
+      subjectEmail: row.profile.email,
+    );
     return Material(
       color: highlight
           ? scheme.primaryContainer.withValues(alpha: 0.35)
@@ -334,7 +349,7 @@ class _LeaderTile extends StatelessWidget {
             ),
             TappableCircularAvatar(
               imageUrl: row.profile.photoUrl,
-              displayName: row.profile.name,
+              displayName: nameLabel,
               size: 40,
             ),
             const SizedBox(width: AppSpacing.md),
@@ -342,7 +357,7 @@ class _LeaderTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(row.profile.name, style: AppTextStyles.label()),
+                  Text(nameLabel, style: AppTextStyles.label()),
                   Text(
                     _attemptedLabel(row.attemptedAt),
                     style: AppTextStyles.caption().copyWith(
@@ -352,10 +367,7 @@ class _LeaderTile extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              '${row.score}/10',
-              style: AppTextStyles.label(),
-            ),
+            Text('${row.score}/10', style: AppTextStyles.label()),
           ],
         ),
       ),

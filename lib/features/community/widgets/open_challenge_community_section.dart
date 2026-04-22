@@ -4,6 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/presentation/session_subject_label.dart';
+import '../../../core/presentation/user_display_name.dart';
+import '../../home/providers/auth_providers.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
@@ -19,6 +21,12 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final viewerEmail = ref
+        .watch(authStateChangesProvider)
+        .asData
+        ?.value
+        ?.email
+        ?.toLowerCase();
     final async = ref.watch(openChallengesListProvider);
     final createAvailAsync = ref.watch(openChallengeCreateAvailabilityProvider);
 
@@ -35,11 +43,7 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                Icons.bolt_rounded,
-                color: AppColors.warning,
-                size: 28,
-              ),
+              Icon(Icons.bolt_rounded, color: AppColors.warning, size: 28),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Column(
@@ -71,8 +75,9 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
                         : avail.tooltipLine,
                     child: FilledButton.tonal(
                       onPressed: avail.allowed
-                          ? () => context
-                              .push('/community/open-challenges/new/subject')
+                          ? () => context.push(
+                              '/community/open-challenges/new/subject',
+                            )
                           : null,
                       child: const Text('✨ Create'),
                     ),
@@ -83,8 +88,8 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
                   child: const Text('✨ Create'),
                 ),
                 error: (_, _) => FilledButton.tonal(
-                  onPressed: () => context
-                      .push('/community/open-challenges/new/subject'),
+                  onPressed: () =>
+                      context.push('/community/open-challenges/new/subject'),
                   child: const Text('✨ Create'),
                 ),
               ),
@@ -146,7 +151,9 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
                 ),
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    color: scheme.surfaceContainerHighest.withValues(alpha: 0.5),
+                    color: scheme.surfaceContainerHighest.withValues(
+                      alpha: 0.5,
+                    ),
                     borderRadius: BorderRadius.circular(AppRadius.lg),
                     border: Border.all(
                       color: scheme.outlineVariant.withValues(alpha: 0.8),
@@ -185,8 +192,10 @@ class OpenChallengeCommunitySection extends ConsumerWidget {
               children: [
                 for (final m in items) ...[
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
-                    child: _ChallengeTile(model: m),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                    ),
+                    child: _ChallengeTile(model: m, viewerEmail: viewerEmail),
                   ),
                   const SizedBox(height: AppSpacing.sm),
                 ],
@@ -215,15 +224,21 @@ String _friendlyTimeAgo(DateTime? posted) {
 }
 
 class _ChallengeTile extends StatelessWidget {
-  const _ChallengeTile({required this.model});
+  const _ChallengeTile({required this.model, required this.viewerEmail});
 
   final OpenChallengeListTileModel model;
+  final String? viewerEmail;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final my = model.myScore;
+    final postedLabel = displayNameForViewer(
+      name: model.postedByName,
+      viewerEmail: viewerEmail,
+      subjectEmail: model.postedByEmail,
+    );
     final accentEnd = isDark ? AppColors.primaryDark : AppColors.primary;
 
     return Material(
@@ -246,10 +261,7 @@ class _ChallengeTile extends StatelessWidget {
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [
-                        AppColors.primary,
-                        accentEnd,
-                      ],
+                      colors: [AppColors.primary, accentEnd],
                     ),
                   ),
                 ),
@@ -266,7 +278,7 @@ class _ChallengeTile extends StatelessWidget {
                       children: [
                         TappableCircularAvatar(
                           imageUrl: model.postedByPhotoUrl,
-                          displayName: model.postedByName,
+                          displayName: postedLabel,
                           size: 52,
                         ),
                         const SizedBox(width: AppSpacing.md),
@@ -290,9 +302,7 @@ class _ChallengeTile extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      openChallengeSubjectTitle(
-                                        model.subject,
-                                      ),
+                                      openChallengeSubjectTitle(model.subject),
                                       style: AppTextStyles.label().copyWith(
                                         fontSize: 16,
                                         height: 1.25,
@@ -306,7 +316,7 @@ class _ChallengeTile extends StatelessWidget {
                               const SizedBox(height: AppSpacing.sm),
                               _MetaRow(
                                 icon: Icons.person_rounded,
-                                text: 'by ${model.postedByName}',
+                                text: 'by $postedLabel',
                                 scheme: scheme,
                               ),
                               const SizedBox(height: AppSpacing.xs),
@@ -333,8 +343,9 @@ class _ChallengeTile extends StatelessWidget {
                                     icon: Icons.emoji_events_rounded,
                                     label: 'Top ${model.topScore}/10',
                                     background: isDark
-                                        ? AppColors.warningBgDark
-                                            .withValues(alpha: 0.45)
+                                        ? AppColors.warningBgDark.withValues(
+                                            alpha: 0.45,
+                                          )
                                         : AppColors.warningBg,
                                     foreground: isDark
                                         ? AppColors.warningTextDark
@@ -344,10 +355,10 @@ class _ChallengeTile extends StatelessWidget {
                                     icon: Icons.groups_rounded,
                                     label:
                                         '${model.attemptCount} ${model.attemptCount == 1 ? 'try' : 'tries'}',
-                                    background:
-                                        scheme.secondaryContainer.withValues(
-                                      alpha: isDark ? 0.35 : 0.65,
-                                    ),
+                                    background: scheme.secondaryContainer
+                                        .withValues(
+                                          alpha: isDark ? 0.35 : 0.65,
+                                        ),
                                     foreground: scheme.onSecondaryContainer,
                                   ),
                                   if (my != null)

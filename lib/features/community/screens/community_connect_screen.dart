@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../battle/domain/entities/battle_invite_target.dart';
@@ -17,6 +19,14 @@ class CommunityConnectScreen extends StatelessWidget {
     final user = selectedUser is CommunityUser
         ? selectedUser as CommunityUser
         : null;
+    final me = FirebaseAuth.instance.currentUser?.email?.toLowerCase();
+    final targetLabel = user == null
+        ? null
+        : displayNameForViewer(
+            name: user.name,
+            viewerEmail: me,
+            subjectEmail: user.email,
+          );
     return Scaffold(
       appBar: AppBar(title: const Text('Connect')),
       body: Padding(
@@ -27,27 +37,25 @@ class CommunityConnectScreen extends StatelessWidget {
             Text(
               user == null
                   ? 'Start a random battle connect.'
-                  : 'Challenge ${user.name} in a battle.',
+                  : 'Challenge $targetLabel in a battle.',
               style: AppTextStyles.bodyMd(),
             ),
             const SizedBox(height: AppSpacing.lg),
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed:
-                    () => context.push(
-                      '/battle/config',
-                      extra:
-                          user == null
-                              ? null
-                              : BattleInviteTarget(
-                                email: user.email.toLowerCase(),
-                                displayName: user.name,
-                                photoUrl: AppConstants.profileImageUrlOrDefault(
-                                  user.photoUrl,
-                                ),
-                              ),
-                    ),
+                onPressed: () => context.push(
+                  '/battle/config',
+                  extra: user == null
+                      ? null
+                      : BattleInviteTarget(
+                          email: user.email.toLowerCase(),
+                          displayName: targetLabel!,
+                          photoUrl: AppConstants.profileImageUrlOrDefault(
+                            user.photoUrl,
+                          ),
+                        ),
+                ),
                 child: Text(
                   user == null ? 'Random Connect' : 'Start Challenge',
                 ),

@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -138,8 +139,12 @@ class _RecentTab extends HookConsumerWidget {
     final recent = ref.watch(communityRecentUsersProvider);
     final notifier = ref.read(communityRecentUsersProvider.notifier);
     final lastRefreshedAt = notifier.lastRefreshedAt;
-    final currentUserEmail =
-        ref.watch(authStateChangesProvider).asData?.value?.email?.toLowerCase();
+    final currentUserEmail = ref
+        .watch(authStateChangesProvider)
+        .asData
+        ?.value
+        ?.email
+        ?.toLowerCase();
     return recent.when(
       loading: () => Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -153,9 +158,7 @@ class _RecentTab extends HookConsumerWidget {
             ),
             child: Text(
               'Recent online',
-              style: AppTextStyles.label().copyWith(
-                color: scheme.onSurface,
-              ),
+              style: AppTextStyles.label().copyWith(color: scheme.onSurface),
             ),
           ),
           Expanded(
@@ -188,9 +191,7 @@ class _RecentTab extends HookConsumerWidget {
                 width: double.infinity,
                 child: FilledButton(
                   onPressed: null,
-                  child: Text(
-                    notifier.hasMore ? 'Load More' : 'No More Users',
-                  ),
+                  child: Text(notifier.hasMore ? 'Load More' : 'No More Users'),
                 ),
               ),
             ),
@@ -210,9 +211,7 @@ class _RecentTab extends HookConsumerWidget {
             ),
             child: Text(
               'Recent online',
-              style: AppTextStyles.label().copyWith(
-                color: scheme.onSurface,
-              ),
+              style: AppTextStyles.label().copyWith(color: scheme.onSurface),
             ),
           ),
           const SizedBox(height: AppSpacing.md),
@@ -220,7 +219,10 @@ class _RecentTab extends HookConsumerWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Could not load recent users', style: AppTextStyles.bodyMd()),
+                Text(
+                  'Could not load recent users',
+                  style: AppTextStyles.bodyMd(),
+                ),
                 const SizedBox(height: AppSpacing.sm),
                 OutlinedButton(
                   onPressed: () => ref.invalidate(communityRecentUsersProvider),
@@ -246,9 +248,7 @@ class _RecentTab extends HookConsumerWidget {
               ),
               child: Text(
                 'Recent online',
-                style: AppTextStyles.label().copyWith(
-                  color: scheme.onSurface,
-                ),
+                style: AppTextStyles.label().copyWith(color: scheme.onSurface),
               ),
             ),
             Expanded(
@@ -299,6 +299,7 @@ class _RecentTab extends HookConsumerWidget {
                     for (final user in sortedUsers) ...[
                       _UserTile(
                         user: user,
+                        currentUserEmail: currentUserEmail,
                         onTap: () => showCommunityUserProfileSheet(
                           context,
                           ref,
@@ -342,15 +343,22 @@ class _RecentTab extends HookConsumerWidget {
 class _UserTile extends StatelessWidget {
   const _UserTile({
     required this.user,
+    required this.currentUserEmail,
     required this.onTap,
   });
 
   final CommunityUser user;
+  final String? currentUserEmail;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final nameLabel = displayNameForViewer(
+      name: user.name,
+      viewerEmail: currentUserEmail,
+      subjectEmail: user.email,
+    );
     final statusText = user.isInBattle ? 'fighting a battle' : 'available';
     return Material(
       color: scheme.surfaceContainerLow,
@@ -364,7 +372,7 @@ class _UserTile extends StatelessWidget {
             children: [
               TappableCircularAvatar(
                 imageUrl: user.photoUrl,
-                displayName: user.name,
+                displayName: nameLabel,
                 size: 40,
               ),
               const SizedBox(width: AppSpacing.md),
@@ -372,7 +380,7 @@ class _UserTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(user.name, style: AppTextStyles.label()),
+                    Text(nameLabel, style: AppTextStyles.label()),
                     const SizedBox(height: AppSpacing.xs),
                     Text(
                       '${formatCommunityProfileLastOnline(user.lastOnlineTime)} · $statusText',

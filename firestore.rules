@@ -125,8 +125,16 @@ service cloud.firestore {
     }
 
     /// Per-user block list: `users/{email}/blocked/{blockedEmail}` (doc ids are lowercased emails).
+    /// Owner may read/write the whole list. Any signed-in user may read only the doc whose id is
+    /// their own email — so the app can check "has this person blocked me?" without listing others.
     match /users/{userId}/blocked/{blockedId} {
-      allow read, write: if signedIn()
+      allow read: if signedIn()
+        && request.auth.token.email != null
+        && (
+          request.auth.token.email.lower() == userId
+          || request.auth.token.email.lower() == blockedId
+        );
+      allow write: if signedIn()
         && request.auth.token.email != null
         && request.auth.token.email.lower() == userId;
     }

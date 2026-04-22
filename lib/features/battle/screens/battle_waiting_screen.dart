@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:upsc_wars/core/constants/app_constants.dart';
+import 'package:upsc_wars/core/presentation/user_display_name.dart';
 import 'package:upsc_wars/core/theme/app_colors.dart';
 import 'package:upsc_wars/core/theme/app_radius.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
@@ -27,9 +28,7 @@ String battleRoomDisplayId(String sessionId) {
     final s = n.toString().padLeft(12, '0');
     return '${s.substring(0, 4)}-${s.substring(4, 7)}-${s.substring(7)}';
   } catch (_) {
-    return sessionId.length > 18
-        ? '${sessionId.substring(0, 8)}…'
-        : sessionId;
+    return sessionId.length > 18 ? '${sessionId.substring(0, 8)}…' : sessionId;
   }
 }
 
@@ -68,9 +67,9 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
   @override
   void initState() {
     super.initState();
-    _matchSub = BattleFirestorePaths.matchDoc(widget.sessionId)
-        .snapshots()
-        .listen(_onMatchSnapshot);
+    _matchSub = BattleFirestorePaths.matchDoc(
+      widget.sessionId,
+    ).snapshots().listen(_onMatchSnapshot);
   }
 
   void _onMatchSnapshot(DocumentSnapshot<Map<String, dynamic>> snap) {
@@ -158,42 +157,44 @@ class _BattleWaitingScreenState extends ConsumerState<BattleWaitingScreen> {
         _leaveMatchScreen();
       },
       child: Scaffold(
-      backgroundColor: Theme.of(context).brightness == Brightness.dark
-          ? AppColors.surfaceSecondaryDark
-          : AppColors.surfaceSecondaryLight,
-      appBar: AppBar(
-        title: const Text('Match'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: _leaveMatchScreen,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.surfaceSecondaryDark
+            : AppColors.surfaceSecondaryLight,
+        appBar: AppBar(
+          title: const Text('Match'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: _leaveMatchScreen,
+          ),
         ),
+        body: switch (_mode) {
+          _WaitUiMode.loading => const Center(
+            child: CircularProgressIndicator(),
+          ),
+          _WaitUiMode.botCountdown => _BattleWaitBotCountdown(
+            sessionId: widget.sessionId,
+            playerName: widget.playerName,
+            opponentName: widget.opponentName,
+            playerPhotoUrl: widget.playerPhotoUrl,
+          ),
+          _WaitUiMode.humanLobby => _HumanLobbyBody(
+            sessionId: widget.sessionId,
+            match: _match!,
+            playerName: widget.playerName,
+            opponentName: widget.opponentName,
+            playerPhotoUrl: widget.playerPhotoUrl,
+            opponentPhotoUrl: widget.opponentPhotoUrl,
+            authEmail:
+                (ref.watch(authStateChangesProvider).asData?.value?.email ?? '')
+                    .toLowerCase()
+                    .trim(),
+            onHostStartBattle: _onHostStartBattle,
+            startingBattle: _startingBattle,
+            initialLetter: _initialLetter,
+            shortName: _shortName,
+          ),
+        },
       ),
-      body: switch (_mode) {
-        _WaitUiMode.loading => const Center(child: CircularProgressIndicator()),
-        _WaitUiMode.botCountdown => _BattleWaitBotCountdown(
-          sessionId: widget.sessionId,
-          playerName: widget.playerName,
-          opponentName: widget.opponentName,
-          playerPhotoUrl: widget.playerPhotoUrl,
-        ),
-        _WaitUiMode.humanLobby => _HumanLobbyBody(
-          sessionId: widget.sessionId,
-          match: _match!,
-          playerName: widget.playerName,
-          opponentName: widget.opponentName,
-          playerPhotoUrl: widget.playerPhotoUrl,
-          opponentPhotoUrl: widget.opponentPhotoUrl,
-          authEmail:
-              (ref.watch(authStateChangesProvider).asData?.value?.email ?? '')
-                  .toLowerCase()
-                  .trim(),
-          onHostStartBattle: _onHostStartBattle,
-          startingBattle: _startingBattle,
-          initialLetter: _initialLetter,
-          shortName: _shortName,
-        ),
-      },
-    ),
     );
   }
 }
@@ -213,7 +214,8 @@ class _BattleWaitBotCountdown extends StatefulWidget {
   final String? playerPhotoUrl;
 
   @override
-  State<_BattleWaitBotCountdown> createState() => _BattleWaitBotCountdownState();
+  State<_BattleWaitBotCountdown> createState() =>
+      _BattleWaitBotCountdownState();
 }
 
 class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
@@ -291,8 +293,9 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(AppRadius.xl),
                     side: BorderSide(
-                      color:
-                          isDark ? AppColors.borderDark : AppColors.borderLight,
+                      color: isDark
+                          ? AppColors.borderDark
+                          : AppColors.borderLight,
                     ),
                   ),
                   child: Padding(
@@ -307,7 +310,7 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
-                          widget.playerName,
+                          kViewerSelfDisplayLabel,
                           style: AppTextStyles.h2().copyWith(
                             color: scheme.onSurface,
                           ),
@@ -334,10 +337,9 @@ class _BattleWaitBotCountdownState extends State<_BattleWaitBotCountdown>
                         const SizedBox(height: AppSpacing.lg),
                         Divider(
                           height: 1,
-                          color:
-                              isDark
-                                  ? AppColors.borderDark
-                                  : AppColors.borderLight,
+                          color: isDark
+                              ? AppColors.borderDark
+                              : AppColors.borderLight,
                         ),
                         const SizedBox(height: AppSpacing.md),
                         Text(
@@ -453,7 +455,8 @@ class _HumanLobbyBody extends StatelessWidget {
 
     final hostEmail = (match['host_email'] as String?)?.toLowerCase() ?? '';
     final isHost = authEmail.isNotEmpty && authEmail == hostEmail;
-    final guestReady = match[BattleMatchFirestoreService.fieldGuestReady] == true;
+    final guestReady =
+        match[BattleMatchFirestoreService.fieldGuestReady] == true;
     final letsStart = match['lets_start_game'] == true;
 
     final opponentGreyed = isHost ? !guestReady : !letsStart;
@@ -465,56 +468,54 @@ class _HumanLobbyBody extends StatelessWidget {
     final youBg = battleMatchMonogramBackground(sessionId, 'you');
     final youFg = battleMatchMonogramForeground(youBg);
 
-    final statusLine =
-        isHost
-            ? (guestReady
-                ? 'Opponent joined. Start the battle when you are ready.'
-                : 'Waiting for your opponent to open the invite and join.')
-            : (letsStart
-                ? 'Starting battle…'
-                : 'Waiting for the host to start the battle.');
+    final statusLine = isHost
+        ? (guestReady
+              ? 'Opponent joined. Start the battle when you are ready.'
+              : 'Waiting for your opponent to open the invite and join.')
+        : (letsStart
+              ? 'Starting battle…'
+              : 'Waiting for the host to start the battle.');
 
     final opponentAvatar =
         (opponentPhotoUrl != null && opponentPhotoUrl!.trim().isNotEmpty)
-            ? CircleAvatar(
-              radius: 22,
-              backgroundColor: scheme.primaryContainer,
-              child: ClipOval(
-                child: CachedNetworkImage(
-                  imageUrl: opponentPhotoUrl!.trim(),
-                  width: 44,
-                  height: 44,
-                  fit: BoxFit.cover,
-                  memCacheWidth:
-                      (44 * MediaQuery.devicePixelRatioOf(context)).round(),
-                  fadeInDuration: Duration.zero,
-                  fadeOutDuration: Duration.zero,
-                  errorWidget:
-                      (_, _, _) => CircleAvatar(
-                        radius: 22,
-                        backgroundColor: oppBg,
-                        foregroundColor: oppFg,
-                        child: Text(
-                          initialLetter(opponentName),
-                          style: AppTextStyles.label().copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
+        ? CircleAvatar(
+            radius: 22,
+            backgroundColor: scheme.primaryContainer,
+            child: ClipOval(
+              child: CachedNetworkImage(
+                imageUrl: opponentPhotoUrl!.trim(),
+                width: 44,
+                height: 44,
+                fit: BoxFit.cover,
+                memCacheWidth: (44 * MediaQuery.devicePixelRatioOf(context))
+                    .round(),
+                fadeInDuration: Duration.zero,
+                fadeOutDuration: Duration.zero,
+                errorWidget: (_, _, _) => CircleAvatar(
+                  radius: 22,
+                  backgroundColor: oppBg,
+                  foregroundColor: oppFg,
+                  child: Text(
+                    initialLetter(opponentName),
+                    style: AppTextStyles.label().copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ),
               ),
-            )
-            : CircleAvatar(
-              radius: 22,
-              backgroundColor: oppBg,
-              foregroundColor: oppFg,
-              child: Text(
-                initialLetter(opponentName),
-                style: AppTextStyles.label().copyWith(
-                  fontWeight: FontWeight.w700,
-                ),
+            ),
+          )
+        : CircleAvatar(
+            radius: 22,
+            backgroundColor: oppBg,
+            foregroundColor: oppFg,
+            child: Text(
+              initialLetter(opponentName),
+              style: AppTextStyles.label().copyWith(
+                fontWeight: FontWeight.w700,
               ),
-            );
+            ),
+          );
 
     return Column(
       children: [
@@ -533,8 +534,9 @@ class _HumanLobbyBody extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(AppRadius.xl),
                     side: BorderSide(
-                      color:
-                          isDark ? AppColors.borderDark : AppColors.borderLight,
+                      color: isDark
+                          ? AppColors.borderDark
+                          : AppColors.borderLight,
                     ),
                   ),
                   child: Padding(
@@ -549,7 +551,7 @@ class _HumanLobbyBody extends StatelessWidget {
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
-                          playerName,
+                          kViewerSelfDisplayLabel,
                           style: AppTextStyles.h2().copyWith(
                             color: scheme.onSurface,
                           ),
@@ -576,14 +578,15 @@ class _HumanLobbyBody extends StatelessWidget {
                         const SizedBox(height: AppSpacing.lg),
                         Divider(
                           height: 1,
-                          color:
-                              isDark
-                                  ? AppColors.borderDark
-                                  : AppColors.borderLight,
+                          color: isDark
+                              ? AppColors.borderDark
+                              : AppColors.borderLight,
                         ),
                         const SizedBox(height: AppSpacing.md),
                         Text(
-                          guestReady ? 'Opponent in lobby' : 'Waiting for opponent',
+                          guestReady
+                              ? 'Opponent in lobby'
+                              : 'Waiting for opponent',
                           style: AppTextStyles.label().copyWith(
                             color: scheme.onSurface,
                           ),
@@ -650,21 +653,19 @@ class _HumanLobbyBody extends StatelessWidget {
                 if (isHost) ...[
                   const SizedBox(height: AppSpacing.md),
                   FilledButton(
-                    onPressed:
-                        (guestReady && !letsStart && !startingBattle)
-                            ? onHostStartBattle
-                            : null,
-                    child:
-                        startingBattle
-                            ? const SizedBox(
-                              height: 22,
-                              width: 22,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            )
-                            : const Text('Start battle'),
+                    onPressed: (guestReady && !letsStart && !startingBattle)
+                        ? onHostStartBattle
+                        : null,
+                    child: startingBattle
+                        ? const SizedBox(
+                            height: 22,
+                            width: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text('Start battle'),
                   ),
                 ],
               ],
@@ -696,8 +697,7 @@ class _HostAvatar extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final url = AppConstants.profileImageUrlOrDefault(photoUrl);
     final side = radius * 2;
-    final cachePx =
-        (side * MediaQuery.devicePixelRatioOf(context)).round();
+    final cachePx = (side * MediaQuery.devicePixelRatioOf(context)).round();
     return CircleAvatar(
       radius: radius,
       backgroundColor: scheme.primaryContainer,
@@ -710,8 +710,7 @@ class _HostAvatar extends StatelessWidget {
           memCacheWidth: cachePx,
           fadeInDuration: Duration.zero,
           fadeOutDuration: Duration.zero,
-          errorWidget: (_, _, _) =>
-              _fallbackLetter(letter: fallbackLetter),
+          errorWidget: (_, _, _) => _fallbackLetter(letter: fallbackLetter),
         ),
       ),
     );
@@ -750,10 +749,26 @@ class _JoinedParticipant extends StatelessWidget {
   final bool greyed;
 
   static const _greyscale = <double>[
-    0.2126, 0.7152, 0.0722, 0, 0,
-    0.2126, 0.7152, 0.0722, 0, 0,
-    0.2126, 0.7152, 0.0722, 0, 0,
-    0, 0, 0, 1, 0,
+    0.2126,
+    0.7152,
+    0.0722,
+    0,
+    0,
+    0.2126,
+    0.7152,
+    0.0722,
+    0,
+    0,
+    0.2126,
+    0.7152,
+    0.0722,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
   ];
 
   @override
@@ -766,19 +781,16 @@ class _JoinedParticipant extends StatelessWidget {
           foregroundColor: monogramForeground,
           child: Text(
             letter,
-            style: AppTextStyles.label().copyWith(
-              fontWeight: FontWeight.w700,
-            ),
+            style: AppTextStyles.label().copyWith(fontWeight: FontWeight.w700),
           ),
         );
 
-    final child =
-        greyed
-            ? ColorFiltered(
-              colorFilter: const ColorFilter.matrix(_greyscale),
-              child: Opacity(opacity: 0.55, child: raw),
-            )
-            : raw;
+    final child = greyed
+        ? ColorFiltered(
+            colorFilter: const ColorFilter.matrix(_greyscale),
+            child: Opacity(opacity: 0.55, child: raw),
+          )
+        : raw;
 
     return Expanded(
       child: Column(

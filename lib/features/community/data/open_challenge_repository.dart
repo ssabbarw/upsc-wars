@@ -51,7 +51,8 @@ class OpenChallengeRepository {
       }
       final creator = detail.creatorEntry();
       final postedName = creator?.profile.name ?? 'Warrior';
-      final postedPhoto = creator?.profile.photoUrl ??
+      final postedPhoto =
+          creator?.profile.photoUrl ??
           AppConstants.profileImageUrlOrDefault(null);
       out.add(
         OpenChallengeListTileModel(
@@ -61,6 +62,7 @@ class OpenChallengeRepository {
           topScore: top,
           myScore: myScore,
           postedByName: postedName,
+          postedByEmail: creator?.profile.email,
           postedByPhotoUrl: postedPhoto,
           postedAt: detail.createdAt ?? creator?.attemptedAt,
           liveUntil: detail.effectiveExpiresAt,
@@ -71,9 +73,9 @@ class OpenChallengeRepository {
   }
 
   Future<OpenChallengeDetail?> fetchDetail(String id) async {
-    final snap = await _col.doc(id).get(
-          const GetOptions(source: Source.server),
-        );
+    final snap = await _col
+        .doc(id)
+        .get(const GetOptions(source: Source.server));
     if (kDebugMode) {
       debugPrint(
         '[OpenChallenge:repo] fetchDetail id=$id exists=${snap.exists} '
@@ -115,12 +117,16 @@ class OpenChallengeRepository {
     if (rs != null && rs.isNotEmpty) {
       creatorPayload['review_session_id'] = rs;
     }
+    // [DocumentReference.set] only accepts String map keys (dots become nested
+    // paths). [update] accepts FieldPath — one segment = literal email field.
     await doc.set({
       'questions': questionUuids,
       'subject': subject,
       'created_at': FieldValue.serverTimestamp(),
       'expires_at': Timestamp.fromDate(expiresAt),
-      creatorEmailKey: creatorPayload,
+    });
+    await doc.update(<Object, Object?>{
+      FieldPath([creatorEmailKey]): creatorPayload,
     });
     if (kDebugMode) {
       debugPrint(
@@ -128,10 +134,7 @@ class OpenChallengeRepository {
         'creatorKey=$creatorEmailKey score=$score',
       );
     }
-    await _touchUserOpenChallengeMeta(
-      email: creatorEmailKey,
-      subject: subject,
-    );
+    await _touchUserOpenChallengeMeta(email: creatorEmailKey, subject: subject);
     return doc.id;
   }
 
@@ -154,7 +157,10 @@ class OpenChallengeRepository {
       if (_firestoreChallengeDataExpired(data)) {
         throw StateError('challenge_expired');
       }
-      if (data.containsKey(participantEmailKey)) {
+      if (OpenChallengeDetail.documentContainsParticipantAttempt(
+        data,
+        participantEmailKey,
+      )) {
         throw StateError('already_attempted');
       }
       final attemptPayload = <String, dynamic>{
@@ -174,8 +180,8 @@ class OpenChallengeRepository {
           'score=$score payloadKeys=${attemptPayload.keys.toList()}',
         );
       }
-      txn.update(ref, {
-        participantEmailKey: attemptPayload,
+      txn.update(ref, <Object, Object?>{
+        FieldPath([participantEmailKey]): attemptPayload,
       });
     });
     await _touchUserOpenChallengeMeta(
@@ -264,8 +270,8 @@ Future<List<String>> pickTenRandomQuestionUuidsForSubject({
   required UserDatabase userDatabase,
   required String subject,
 }) async {
-  final attempted =
-      await userDatabase.sessionQuestionsDao.getAllAttemptedQuestionUuids();
+  final attempted = await userDatabase.sessionQuestionsDao
+      .getAllAttemptedQuestionUuids();
   final picked = subject == 'misc'
       ? await userDatabase.questionsDao.getUnseenFirstRandomMixed(
           limit: 10,

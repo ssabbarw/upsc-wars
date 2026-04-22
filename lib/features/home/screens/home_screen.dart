@@ -14,6 +14,7 @@ import '../../../core/domain/entities/home_state.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/presentation/session_subject_label.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/app_bootstrap.dart';
 import '../../../core/providers/kill_switch_provider.dart';
@@ -78,7 +79,11 @@ class HomeScreen extends HookConsumerWidget {
     final user = authState.asData?.value;
     final userName = user == null
         ? 'Aspirant'
-        : _toTitleCase(user.displayName?.trim() ?? 'Aspirant');
+        : displayNameForViewer(
+            name: _toTitleCase(user.displayName?.trim() ?? 'Aspirant'),
+            viewerEmail: user.email,
+            subjectEmail: user.email,
+          );
     final avatarInitials = _avatarInitials(user?.displayName);
     final avatarBackgroundColor = _avatarBackgroundColor(
       user?.displayName,
@@ -190,16 +195,17 @@ class HomeScreen extends HookConsumerWidget {
                                     child: CachedNetworkImage(
                                       imageUrl:
                                           AppConstants.profileImageUrlOrDefault(
-                                        user.photoURL,
-                                      ),
+                                            user.photoURL,
+                                          ),
                                       width: 36,
                                       height: 36,
                                       fit: BoxFit.cover,
-                                      memCacheWidth: (36 *
-                                              MediaQuery.devicePixelRatioOf(
-                                                context,
-                                              ))
-                                          .round(),
+                                      memCacheWidth:
+                                          (36 *
+                                                  MediaQuery.devicePixelRatioOf(
+                                                    context,
+                                                  ))
+                                              .round(),
                                       fadeInDuration: Duration.zero,
                                       fadeOutDuration: Duration.zero,
                                       errorWidget: (_, __, ___) => Center(

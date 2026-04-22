@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_constants.dart';
+import '../../../core/presentation/user_display_name.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -15,7 +16,6 @@ import '../../chat/domain/entities/chat_thread_route_payload.dart';
 import '../domain/entities/community_user.dart';
 import '../providers/community_providers.dart';
 import '../providers/user_block_providers.dart';
-
 
 Future<void> openCommunityExternalUrl(BuildContext context, String url) async {
   final uri = Uri.parse(url);
@@ -43,7 +43,9 @@ Future<void> showCommunityUserProfileSheet(
   bool confirmBlockClosesChat = false,
   VoidCallback? onBlockedFromChat,
 }) async {
-  final blockedInitially = ref.read(blockedUserEmailsProvider).maybeWhen(
+  final blockedInitially = ref
+      .read(blockedUserEmailsProvider)
+      .maybeWhen(
         data: (s) => s.contains(user.email.toLowerCase()),
         orElse: () => false,
       );
@@ -51,14 +53,11 @@ Future<void> showCommunityUserProfileSheet(
   var guestHasBlockedMe = false;
   final meNorm = currentUserEmail?.toLowerCase().trim();
   final peerNorm = user.email.toLowerCase();
-  if (meNorm != null &&
-      meNorm.isNotEmpty &&
-      meNorm != peerNorm) {
+  if (meNorm != null && meNorm.isNotEmpty && meNorm != peerNorm) {
     try {
-      guestHasBlockedMe = await ref.read(communityRepositoryProvider).isUserBlocked(
-            ownerEmail: peerNorm,
-            otherEmail: meNorm,
-          );
+      guestHasBlockedMe = await ref
+          .read(communityRepositoryProvider)
+          .isUserBlocked(ownerEmail: peerNorm, otherEmail: meNorm);
     } catch (_) {
       guestHasBlockedMe = false;
     }
@@ -73,7 +72,15 @@ Future<void> showCommunityUserProfileSheet(
     builder: (context) => StatefulBuilder(
       builder: (context, setState) {
         final scheme = Theme.of(context).colorScheme;
-        final isSelf = currentUserEmail == user.email.toLowerCase();
+        final displayLabel = displayNameForViewer(
+          name: user.name,
+          viewerEmail: meNorm,
+          subjectEmail: user.email,
+        );
+        final isSelf =
+            meNorm != null &&
+            meNorm.isNotEmpty &&
+            meNorm == user.email.toLowerCase();
         final canInviteBattle =
             !user.isInBattle &&
             user.acceptingBattleInvites &&
@@ -96,7 +103,7 @@ Future<void> showCommunityUserProfileSheet(
                   children: [
                     TappableCircularAvatar(
                       imageUrl: user.photoUrl,
-                      displayName: user.name,
+                      displayName: displayLabel,
                       size: 76,
                     ),
                     const SizedBox(width: AppSpacing.lg),
@@ -104,7 +111,7 @@ Future<void> showCommunityUserProfileSheet(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(user.name, style: AppTextStyles.h3()),
+                          Text(displayLabel, style: AppTextStyles.h3()),
                           const SizedBox(height: AppSpacing.xs),
                           Text(
                             user.isInBattle ? 'fighting a battle' : 'available',
@@ -127,8 +134,9 @@ Future<void> showCommunityUserProfileSheet(
                             : () async {
                                 final me = currentUserEmail;
                                 if (me == null || me.isEmpty) return;
-                                final repo =
-                                    ref.read(communityRepositoryProvider);
+                                final repo = ref.read(
+                                  communityRepositoryProvider,
+                                );
                                 final target = user.email.toLowerCase();
                                 final nextBlocked = !isBlocked;
                                 if (nextBlocked &&
@@ -180,8 +188,8 @@ Future<void> showCommunityUserProfileSheet(
                                         content: Text(
                                           nextBlocked
                                               ? 'You will not see messages or '
-                                                  'battle invites from '
-                                                  '${user.name}.'
+                                                    'battle invites from '
+                                                    '${user.name}.'
                                               : '${user.name} has been unblocked.',
                                         ),
                                       ),
@@ -243,8 +251,10 @@ Future<void> showCommunityUserProfileSheet(
                               Navigator.of(context).pop();
                               final me = currentUserEmail;
                               if (me == null || me.isEmpty) return;
-                              final chatId =
-                                  ChatIds.chatIdForPair(me, user.email);
+                              final chatId = ChatIds.chatIdForPair(
+                                me,
+                                user.email,
+                              );
                               context.push(
                                 '/chat/$chatId',
                                 extra: ChatThreadRoutePayload(
