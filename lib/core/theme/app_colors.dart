@@ -102,5 +102,17 @@ class AppColors {
   static const coachNextActionSurfaceLight = Color(0xFFDBEAFE);
   static const coachTrendEmerald = Color(0xFF10B981);
 
+  /// Onboarding “latest test / hidden risk” split card (reference layout).
+  static const onboardingScoreLeftPanel = Color(0xFF121212);
+  static const onboardingScoreSeam = Color(0xFF2C2C2C);
+  static const onboardingScoreMutedGreen = Color(0xFF76B48D);
+  static const onboardingRiskPanelTop = Color(0xFF261818);
+  static const onboardingRiskPanelBottom = Color(0xFF120B0B);
+  static const onboardingRiskFigure = Color(0xFFD16A5E);
+  static const onboardingRiskHeader = Color(0xFFCC7A6E);
+  static const onboardingScoreFabFill = Color(0xFF1E1E1E);
+  static const onboardingWarningBarBg = Color(0xFFF5F7F9);
+  static const onboardingWarningOrange = Color(0xFFE68A45);
+
   static const transparent = Color(0x00000000);
 }

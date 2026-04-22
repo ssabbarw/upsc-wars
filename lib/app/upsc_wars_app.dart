@@ -80,7 +80,11 @@ class _RootMaterialApp extends HookConsumerWidget {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           if (cancelled) return;
           final router = ref.read(appRouterProvider);
-          if (router.state.matchedLocation != '/') return;
+          final cfg = router.routerDelegate.currentConfiguration;
+          final matchedLocation = cfg.isEmpty
+              ? router.routeInformationProvider.value.uri.path
+              : router.state.matchedLocation;
+          if (matchedLocation != '/') return;
           router.go('/onboarding');
         });
       }());

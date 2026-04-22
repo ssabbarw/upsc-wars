@@ -62,7 +62,11 @@ class BattleChatFabHost extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
     useListenable(router.routerDelegate);
-    final location = router.state.uri.path;
+    useListenable(router.routeInformationProvider);
+    final cfg = router.routerDelegate.currentConfiguration;
+    final location = cfg.isEmpty
+        ? router.routeInformationProvider.value.uri.path
+        : router.state.uri.path;
     useEffect(() {
       if (location == '/') {
         ref.read(battleChatOverlayProvider.notifier).deactivate();
