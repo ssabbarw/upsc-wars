@@ -528,7 +528,7 @@ class WebPlayerResultsScreen extends StatelessWidget {
                                       padding: const EdgeInsets.only(bottom: 4),
                                       child: _resultConfLine(
                                         scheme,
-                                        'Intelligent guess',
+                                        'Educated guess',
                                         result.confidenceIntelligentTotal,
                                         result.confidenceIntelligentCorrect,
                                       ),

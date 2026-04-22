@@ -47,9 +47,11 @@ class SessionResult {
   final String accuracyTier;
   final double netScore;
   final double? avgTimeSpentSecs;
+
   /// Sum of per-question time spent (for timed session summary).
   final int totalTimeSpentSecs;
   final String language;
+
   /// Number of revision queue questions graduated during this session.
   /// Only populated for sessions with subject == 'revision_quick'.
   final int graduatedCount;
@@ -64,7 +66,7 @@ class SessionResult {
   final int confidenceSureTotal;
   final int confidenceSureCorrect;
 
-  /// Scored rows with intelligent guess ([AnswerConfidence.somewhatSure]).
+  /// Scored rows with educated guess ([AnswerConfidence.somewhatSure]).
   final int confidenceIntelligentTotal;
   final int confidenceIntelligentCorrect;
 

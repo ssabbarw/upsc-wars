@@ -38,7 +38,7 @@ abstract final class AnswerConfidence {
       case verySure:
         return 'Sure';
       case somewhatSure:
-        return 'Intelligent guess';
+        return 'Educated guess';
       case guessing:
         return 'Pure guess';
       default:

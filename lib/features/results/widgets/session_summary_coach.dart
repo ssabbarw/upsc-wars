@@ -1065,7 +1065,7 @@ class _AdvancedInsightsExpansion extends ConsumerWidget {
                   result.confidenceSureCorrect,
                 ),
                 _confLine(
-                  'Intelligent guess',
+                  'Educated guess',
                   result.confidenceIntelligentTotal,
                   result.confidenceIntelligentCorrect,
                 ),
