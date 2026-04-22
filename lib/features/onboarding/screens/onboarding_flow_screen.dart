@@ -8,9 +8,12 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
+import '../../../core/theme/app_spacing.dart';
+import '../../../core/theme/app_text_styles.dart';
 
 /// Scale vs ~390dp shortest side (phone-first baseline); clamped for large/small devices.
 double _onbScale(BuildContext context) {
@@ -31,31 +34,10 @@ class OnboardingFlowScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = usePageController();
     final page = useState(0);
-    final firstScreenCtaReady = useMemoized(
-      () => ValueNotifier(false),
-      const [],
-    );
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
     final hPad = _onb(context, 20);
     final vPadSm = _onb(context, 8);
-
-    useEffect(() {
-      return () {
-        firstScreenCtaReady.dispose();
-      };
-    }, [firstScreenCtaReady]);
-
-    void goNext() {
-      if (!isLast) {
-        pageController.nextPage(
-          duration: const Duration(milliseconds: 320),
-          curve: Curves.easeOutCubic,
-        );
-      } else {
-        unawaited(_complete(ref, context));
-      }
-    }
 
     // final screenBackground = isLast
     //     ? AppColors.primaryDeep
@@ -83,14 +65,9 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                       physics: const BouncingScrollPhysics(),
                       onPageChanged: (i) {
                         page.value = i;
-                        if (i != 0) {
-                          firstScreenCtaReady.value = false;
-                        }
                       },
                       children: [
-                        _ScoreStoryPage(
-                          firstScreenCtaReady: firstScreenCtaReady,
-                        ),
+                        const _ScoreStoryPage(),
                         const _MechanismPage(),
                         const _DiagnosisPage(),
                         const _LoopPage(),
@@ -102,12 +79,47 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                       hPad,
                       vPadSm,
                       hPad,
-                      _onb(context, 4),
+                      bottom + _onb(context, 4),
                     ),
-                    child: _DotRow(
-                      index: page.value,
-                      count: _pageCount,
-                      dark: isLast,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _DotRow(
+                          index: page.value,
+                          count: _pageCount,
+                          dark: isLast,
+                        ),
+                        if (isLast) ...[
+                          SizedBox(height: _onb(context, 10)),
+                          FilledButton(
+                            onPressed: () => unawaited(_complete(ref, context)),
+                            style: FilledButton.styleFrom(
+                              backgroundColor: AppColors.primary,
+                              foregroundColor: AppColors.onPrimary,
+                              elevation: 0,
+                              padding: EdgeInsets.symmetric(
+                                vertical: _onb(context, 15),
+                              ),
+                              minimumSize: Size(
+                                double.infinity,
+                                _onb(context, 50),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                  AppRadius.lg,
+                                ),
+                              ),
+                            ),
+                            child: Text(
+                              'Get started',
+                              style: GoogleFonts.dmSans(
+                                fontSize: _onb(context, 16),
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ],
                     ),
                   ),
                 ],
@@ -579,9 +591,7 @@ class _DraggableSplitScoreCardState extends State<_DraggableSplitScoreCard> {
 
 /// First step: split “latest test vs hidden risk” story (reference layout).
 class _ScoreStoryPage extends StatefulWidget {
-  const _ScoreStoryPage({required this.firstScreenCtaReady});
-
-  final ValueNotifier<bool> firstScreenCtaReady;
+  const _ScoreStoryPage();
 
   @override
   State<_ScoreStoryPage> createState() => _ScoreStoryPageState();
@@ -632,10 +642,7 @@ class _ScoreStoryPageState extends State<_ScoreStoryPage> {
           ),
         ),
         SizedBox(height: _onb(context, 10)),
-        _RevealTrialCard(
-          firstScreenCtaReady: widget.firstScreenCtaReady,
-          pageController: _revealScroll,
-        ),
+        _RevealTrialCard(pageController: _revealScroll),
         SizedBox(height: _onb(context, 10)),
         Text(
           'DISCOVER INSIGHTS LIKE',
@@ -673,12 +680,8 @@ class _ScoreStoryPageState extends State<_ScoreStoryPage> {
 /// Trial: vertical [PageView] (typical stats vs UPSC Wars); pager dots sit
 /// on top of the slides (semi-transparent pill, trailing side).
 class _RevealTrialCard extends StatefulWidget {
-  const _RevealTrialCard({
-    required this.firstScreenCtaReady,
-    required this.pageController,
-  });
+  const _RevealTrialCard({required this.pageController});
 
-  final ValueNotifier<bool> firstScreenCtaReady;
   final PageController pageController;
 
   @override
@@ -697,12 +700,6 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
   PageController get _pageController => widget.pageController;
 
   int _pageIndex = 0;
-
-  void _enableFirstScreenCta() {
-    if (!mounted) return;
-    if (widget.firstScreenCtaReady.value) return;
-    widget.firstScreenCtaReady.value = true;
-  }
 
   Future<void> _playSwipeUpHint() async {
     if (!mounted || _pageIndex != 0) return;
@@ -736,9 +733,6 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
       if (n == 0 && mounted && _pageIndex == 0) {
         await Future<void>.delayed(const Duration(milliseconds: 200));
       }
-    }
-    if (mounted) {
-      _enableFirstScreenCta();
     }
   }
 
@@ -1108,9 +1102,6 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
                   physics: const BouncingScrollPhysics(),
                   onPageChanged: (i) {
                     setState(() => _pageIndex = i);
-                    if (i == 1) {
-                      _enableFirstScreenCta();
-                    }
                   },
                   children: [_surfaceSlide(context), _hiddenSlide(context)],
                 ),
@@ -1206,6 +1197,409 @@ class _DiscoverChevronTile extends StatelessWidget {
 
 // ── Page 2 ────────────────────────────────────────────────────────────────
 
+/// Pixels and typography match [TestEngineScreen] `_OptionRow` +
+/// [ExamOptionConfidenceStrip] (exam mode, after a scored pick).
+class _OnboardingQuestionConfidenceSample extends StatefulWidget {
+  const _OnboardingQuestionConfidenceSample();
+
+  @override
+  State<_OnboardingQuestionConfidenceSample> createState() =>
+      _OnboardingQuestionConfidenceSampleState();
+}
+
+class _OnboardingQuestionConfidenceSampleState
+    extends State<_OnboardingQuestionConfidenceSample> {
+  static const _kQuestion = 'Article 21 of the Indian Constitution deals with:';
+  static const _kOptions = <String>[
+    'Right to property',
+    'Protection of life and personal liberty',
+    'Right to work',
+    'Right to education',
+  ];
+
+  /// B is the well-known match for Art. 21; whole block mirrors exam review.
+  int _optionIndex = 1;
+  String? _confidence = AnswerConfidence.somewhatSure;
+
+  void _toggleConfidence(String tier) {
+    setState(() {
+      _confidence = _confidence == tier ? null : tier;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Semantics(
+      label: 'Sample exam question and optional confidence',
+      child: ColoredBox(
+        color: scheme.surface,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                _kQuestion,
+                style: AppTextStyles.question().copyWith(
+                  color: scheme.onSurface,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              for (var i = 0; i < 4; i++) ...[
+                _OnboardingExamOptionRow(
+                  keyLabel: 'ABCD'[i],
+                  optionText: _kOptions[i],
+                  selected: i == _optionIndex,
+                  showConfidenceStrip: i == _optionIndex,
+                  confidence: _confidence,
+                  isDark: isDark,
+                  scheme: scheme,
+                  onOptionTap: () => setState(() => _optionIndex = i),
+                  onToggleConfidence: _toggleConfidence,
+                ),
+                if (i != 3) const SizedBox(height: AppSpacing.sm),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _OnboardingExamOptionRow extends StatelessWidget {
+  const _OnboardingExamOptionRow({
+    required this.keyLabel,
+    required this.optionText,
+    required this.selected,
+    required this.showConfidenceStrip,
+    required this.confidence,
+    required this.isDark,
+    required this.scheme,
+    required this.onOptionTap,
+    required this.onToggleConfidence,
+  });
+
+  final String keyLabel;
+  final String optionText;
+  final bool selected;
+  final bool showConfidenceStrip;
+  final String? confidence;
+  final bool isDark;
+  final ColorScheme scheme;
+  final VoidCallback onOptionTap;
+  final void Function(String tier) onToggleConfidence;
+
+  @override
+  Widget build(BuildContext context) {
+    late final Color bg;
+    late final Color border;
+    late final Color text;
+    late final Color badgeBg;
+    late final Color badgeText;
+    late final double borderWidth;
+    if (selected) {
+      bg = isDark ? AppColors.primaryDeep : AppColors.primaryLight;
+      border = AppColors.primary;
+      text = isDark ? AppColors.onPrimary : AppColors.primaryDeep;
+      badgeBg = AppColors.primary;
+      badgeText = AppColors.onPrimary;
+      borderWidth = 2;
+    } else {
+      bg = scheme.surface;
+      border = isDark ? AppColors.borderDark : AppColors.borderLight;
+      text = scheme.onSurface;
+      badgeBg = scheme.surfaceContainerLow;
+      badgeText = scheme.onSurfaceVariant;
+      borderWidth = 0.5;
+    }
+
+    final outerRadius = BorderRadius.circular(AppRadius.md);
+
+    return ClipRRect(
+      borderRadius: outerRadius,
+      child: Material(
+        color: AppColors.transparent,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: bg,
+            borderRadius: outerRadius,
+            border: Border.all(color: border, width: borderWidth),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: onOptionTap,
+                  borderRadius: showConfidenceStrip
+                      ? const BorderRadius.vertical(
+                          top: Radius.circular(AppRadius.md),
+                        )
+                      : BorderRadius.circular(AppRadius.md),
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.md),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: Center(
+                            child: Container(
+                              width: 24,
+                              height: 24,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: badgeBg,
+                                borderRadius: BorderRadius.circular(
+                                  AppRadius.sm,
+                                ),
+                              ),
+                              child: Text(
+                                keyLabel,
+                                style: AppTextStyles.labelSm().copyWith(
+                                  color: badgeText,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: AppSpacing.md),
+                        Expanded(
+                          child: Text(
+                            optionText,
+                            style: AppTextStyles.option().copyWith(color: text),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              if (showConfidenceStrip) ...[
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: border.withValues(alpha: isDark ? 0.45 : 0.35),
+                ),
+                _OnboardingExamConfidenceStrip(
+                  confidence: confidence,
+                  isDark: isDark,
+                  scheme: scheme,
+                  onToggle: onToggleConfidence,
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Local clone of [ExamOptionConfidenceStrip] (same copy and tier controls).
+class _OnboardingExamConfidenceStrip extends StatelessWidget {
+  const _OnboardingExamConfidenceStrip({
+    required this.confidence,
+    required this.isDark,
+    required this.scheme,
+    required this.onToggle,
+  });
+
+  final String? confidence;
+  final bool isDark;
+  final ColorScheme scheme;
+  final void Function(String tier) onToggle;
+
+  @override
+  Widget build(BuildContext context) {
+    final confidenceLine = confidence == null
+        ? 'Confidence: __'
+        : 'Confidence: ${AnswerConfidence.examShortLabel(confidence!)}';
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        AppSpacing.md,
+        AppSpacing.sm,
+        AppSpacing.md,
+        AppSpacing.md,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            confidenceLine,
+            style: AppTextStyles.caption().copyWith(
+              color: confidence == null
+                  ? scheme.onSurfaceVariant
+                  : scheme.primary,
+              fontWeight: FontWeight.w700,
+              height: 1.25,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: _OnboardingTierToggle(
+                    label: 'Sure',
+                    maxLines: 2,
+                    selected: confidence == AnswerConfidence.verySure,
+                    accent: AppColors.correct,
+                    onSurface: AppColors.onPrimary,
+                    labelUnselected: isDark
+                        ? AppColors.correctTextDark
+                        : AppColors.correctText,
+                    isDark: isDark,
+                    onTap: () => onToggle(AnswerConfidence.verySure),
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: _OnboardingTierToggle(
+                    label: 'Intelligent\nguess',
+                    maxLines: 2,
+                    selected: confidence == AnswerConfidence.somewhatSure,
+                    accent: AppColors.warning,
+                    onSurface: Colors.white,
+                    labelUnselected: isDark
+                        ? AppColors.warningTextDark
+                        : AppColors.warningText,
+                    isDark: isDark,
+                    onTap: () => onToggle(AnswerConfidence.somewhatSure),
+                  ),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: _OnboardingTierToggle(
+                    label: 'Pure guess',
+                    maxLines: 2,
+                    selected: confidence == AnswerConfidence.guessing,
+                    accent: AppColors.info,
+                    onSurface: AppColors.onPrimary,
+                    labelUnselected: isDark
+                        ? AppColors.infoTextDark
+                        : AppColors.infoText,
+                    isDark: isDark,
+                    onTap: () => onToggle(AnswerConfidence.guessing),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Matches [ExamOptionConfidenceStrip]’s private [_TierToggle].
+class _OnboardingTierToggle extends StatelessWidget {
+  const _OnboardingTierToggle({
+    required this.label,
+    required this.maxLines,
+    required this.selected,
+    required this.accent,
+    required this.onSurface,
+    required this.labelUnselected,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  final String label;
+  final int maxLines;
+  final bool selected;
+  final Color accent;
+  final Color onSurface;
+  final Color labelUnselected;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final borderColor = selected
+        ? accent
+        : accent.withValues(alpha: isDark ? 0.38 : 0.42);
+    final border = Border.all(color: borderColor, width: selected ? 2.5 : 1);
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(AppRadius.sm),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
+          curve: Curves.easeOutCubic,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: selected
+                ? accent
+                : accent.withValues(alpha: isDark ? 0.07 : 0.06),
+            borderRadius: BorderRadius.circular(AppRadius.sm),
+            border: border,
+            boxShadow: selected
+                ? [
+                    BoxShadow(
+                      color: accent.withValues(alpha: isDark ? 0.42 : 0.35),
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    ),
+                  ]
+                : null,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: AppSpacing.sm,
+              horizontal: AppSpacing.xs,
+            ),
+            child: Align(
+              alignment: Alignment.center,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  if (selected)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 6),
+                      child: Icon(
+                        Icons.check_rounded,
+                        size: 18,
+                        color: onSurface,
+                      ),
+                    ),
+                  Expanded(
+                    child: Text(
+                      label,
+                      textAlign: TextAlign.center,
+                      maxLines: maxLines,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.labelSm().copyWith(
+                        color: selected ? onSurface : labelUnselected,
+                        fontWeight: selected
+                            ? FontWeight.w800
+                            : FontWeight.w500,
+                        height: 1.2,
+                        fontSize: 11,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _MechanismPage extends StatelessWidget {
   const _MechanismPage();
 
@@ -1220,42 +1614,14 @@ class _MechanismPage extends StatelessWidget {
       ),
       children: [
         Text('HOW IT WORKS', style: _eyebrow(context, false)),
-        SizedBox(height: _onb(context, 8)),
+        SizedBox(height: _onb(context, 6)),
         Text(
-          'We track what normal tests miss.',
+          'Pick an option, then how sure you are.',
           style: _headline(context, false),
         ),
         SizedBox(height: _onb(context, 6)),
-
         Text(
-          'UPSC WARS IDENTIFIES:',
-          style: GoogleFonts.dmSans(
-            fontSize: _onb(context, 12),
-            fontWeight: FontWeight.w800,
-            letterSpacing: 1.2,
-            color: AppColors.primaryDark,
-          ),
-        ),
-        SizedBox(height: _onb(context, 8)),
-        const _IdentifiesRow(
-          icon: Icons.visibility_off_outlined,
-          text: 'Blind spots',
-        ),
-        const _IdentifiesRow(
-          icon: Icons.psychology_outlined,
-          text: 'Overconfidence patterns',
-        ),
-        const _IdentifiesRow(
-          icon: Icons.trending_down_rounded,
-          text: 'Weak topics',
-        ),
-        const _IdentifiesRow(
-          icon: Icons.cancel_rounded,
-          text: 'Negative marking traps',
-        ),
-        SizedBox(height: _onb(context, 8)),
-        Text(
-          'We show you where your prelims marks are actually being lost.',
+          'We layer that with your attempts to surface patterns: traps, overconfidence, weak areas.',
           style: GoogleFonts.dmSans(
             fontSize: _onb(context, 14),
             height: 1.4,
@@ -1263,345 +1629,20 @@ class _MechanismPage extends StatelessWidget {
             color: AppColors.onSurfaceVariantLight,
           ),
         ),
-        SizedBox(height: _onb(context, 10)),
-        Wrap(
-          spacing: _onb(context, 6),
-          runSpacing: _onb(context, 6),
-          children: [
-            _ConfidenceChip(
-              label: 'Sure',
-              bg: AppColors.primaryDark,
-              fg: AppColors.onPrimary,
-              border: AppColors.primaryDeep,
-            ),
-            _ConfidenceChip(
-              label: 'Intelligent guess',
-              bg: AppColors.warningBg,
-              fg: AppColors.warningText,
-              border: AppColors.warning.withValues(alpha: 0.4),
-            ),
-            _ConfidenceChip(
-              label: 'Pure guess',
-              bg: AppColors.infoBg,
-              fg: AppColors.infoText,
-              border: AppColors.info.withValues(alpha: 0.35),
-            ),
-          ],
+        SizedBox(height: _onb(context, 8)),
+        const _OnboardingQuestionConfidenceSample(),
+        SizedBox(height: _onb(context, 4)),
+        Text(
+          'Note: This question just for demonstration,\nReal question in the app are of high quality',
+          textAlign: TextAlign.center,
+          style: GoogleFonts.dmSans(
+            fontSize: _onb(context, 12),
+            height: 1.3,
+            color: AppColors.onSurfaceVariantLight,
+          ),
         ),
-        SizedBox(height: _onb(context, 10)),
-        const _MechanismDangerCallout(),
+        SizedBox(height: _onb(context, 6)),
       ],
-    );
-  }
-}
-
-/// Rich callout: when a wrong pick meets high confidence, it becomes the
-/// highest-priority “danger” pattern — not a flat A+B=C equation.
-class _MechanismDangerCallout extends StatelessWidget {
-  const _MechanismDangerCallout();
-
-  @override
-  Widget build(BuildContext context) {
-    double o(double x) => _onb(context, x);
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.fromLTRB(o(14), o(14), o(14), o(16)),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(o(6) + AppRadius.xl),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.wrongBg,
-            Color.lerp(AppColors.wrongBg, AppColors.wrong, 0.07)!,
-          ],
-        ),
-        border: Border.all(color: AppColors.wrong.withValues(alpha: 0.22)),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.wrong.withValues(alpha: 0.12),
-            blurRadius: o(10),
-            offset: Offset(0, o(4)),
-            spreadRadius: -1,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  color: AppColors.wrong.withValues(alpha: 0.14),
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(o(6)),
-                  child: Icon(
-                    Icons.bolt_rounded,
-                    size: o(20),
-                    color: AppColors.wrong,
-                  ),
-                ),
-              ),
-              SizedBox(width: o(10)),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'The pattern that costs you the most',
-                      style: GoogleFonts.dmSans(
-                        fontSize: o(13.5),
-                        fontWeight: FontWeight.w800,
-                        height: 1.3,
-                        letterSpacing: 0.15,
-                        color: AppColors.wrongText,
-                      ),
-                    ),
-                    SizedBox(height: o(4)),
-                    Text(
-                      'When you miss a question but you were “sure” — that’s a danger signal, not just a wrong tick.',
-                      style: GoogleFonts.dmSans(
-                        fontSize: o(12),
-                        height: 1.45,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.onSurfaceVariantLight,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: o(14)),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Expanded(
-                child: _MechanismFactorPill(
-                  icon: Icons.cancel_outlined,
-                  label: 'Wrong',
-                  line2: 'answer',
-                  emphasis: true,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(o(4), 0, o(4), o(8)),
-                child: Text(
-                  '+',
-                  style: GoogleFonts.dmSans(
-                    fontSize: o(18),
-                    fontWeight: FontWeight.w800,
-                    color: AppColors.gray600,
-                    height: 1,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: _MechanismFactorPill(
-                  icon: Icons.verified_user_outlined,
-                  label: '“Sure”',
-                  line2: 'confidence',
-                  emphasis: false,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: o(8)),
-          Center(
-            child: Icon(
-              Icons.arrow_downward_rounded,
-              size: o(18),
-              color: AppColors.wrong.withValues(alpha: 0.55),
-            ),
-          ),
-          SizedBox(height: o(8)),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: o(12), vertical: o(11)),
-            decoration: BoxDecoration(
-              color: AppColors.surfacePrimaryLight.withValues(alpha: 0.92),
-              borderRadius: BorderRadius.circular(o(6) + AppRadius.md),
-              border: Border.all(
-                color: AppColors.wrong.withValues(alpha: 0.4),
-                width: o(1.2),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.warning_amber_rounded,
-                  size: o(20),
-                  color: AppColors.wrong,
-                ),
-                SizedBox(width: o(8)),
-                Flexible(
-                  child: Text(
-                    'Danger zone — the leak prelims tests hide',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.dmSans(
-                      fontSize: o(13.5),
-                      fontWeight: FontWeight.w800,
-                      height: 1.3,
-                      letterSpacing: 0.1,
-                      color: AppColors.wrongText,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _MechanismFactorPill extends StatelessWidget {
-  const _MechanismFactorPill({
-    required this.icon,
-    required this.label,
-    required this.line2,
-    required this.emphasis,
-  });
-
-  final IconData icon;
-  final String label;
-  final String line2;
-  final bool emphasis;
-
-  @override
-  Widget build(BuildContext context) {
-    double o(double x) => _onb(context, x);
-    final border = emphasis
-        ? AppColors.wrong.withValues(alpha: 0.45)
-        : AppColors.gray200.withValues(alpha: 0.8);
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: AppColors.surfacePrimaryLight,
-        borderRadius: BorderRadius.circular(AppRadius.lg + 2),
-        border: Border.all(color: border, width: o(1.2)),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.gray900.withValues(alpha: 0.04),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: o(10), vertical: o(10)),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(
-              icon,
-              size: o(20),
-              color: emphasis ? AppColors.wrong : AppColors.primaryDark,
-            ),
-            SizedBox(width: o(8)),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    label,
-                    style: GoogleFonts.dmSans(
-                      fontSize: o(13.5),
-                      fontWeight: FontWeight.w800,
-                      height: 1.1,
-                      color: AppColors.onSurfaceLight,
-                    ),
-                  ),
-                  Text(
-                    line2,
-                    style: GoogleFonts.dmSans(
-                      fontSize: o(11),
-                      fontWeight: FontWeight.w600,
-                      height: 1.2,
-                      color: AppColors.onSurfaceVariantLight,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _IdentifiesRow extends StatelessWidget {
-  const _IdentifiesRow({required this.icon, required this.text});
-
-  final IconData icon;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: _onb(context, 12)),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(icon, size: _onb(context, 24), color: AppColors.primaryDark),
-          SizedBox(width: _onb(context, 12)),
-          Expanded(
-            child: Text(
-              text,
-              style: GoogleFonts.dmSans(
-                fontSize: _onb(context, 15),
-                height: 1.4,
-                fontWeight: FontWeight.w500,
-                color: AppColors.onSurfaceLight,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ConfidenceChip extends StatelessWidget {
-  const _ConfidenceChip({
-    required this.label,
-    required this.bg,
-    required this.fg,
-    required this.border,
-  });
-
-  final String label;
-  final Color bg;
-  final Color fg;
-  final Color border;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: _onb(context, 12),
-        vertical: _onb(context, 8),
-      ),
-      decoration: BoxDecoration(
-        color: bg,
-        borderRadius: BorderRadius.circular(AppRadius.pill),
-        border: Border.all(color: border),
-      ),
-      child: Text(
-        label,
-        style: GoogleFonts.dmSans(
-          fontSize: _onb(context, 13),
-          fontWeight: FontWeight.w600,
-          color: fg,
-        ),
-      ),
     );
   }
 }
