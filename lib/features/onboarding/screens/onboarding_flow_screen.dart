@@ -57,65 +57,62 @@ class OnboardingFlowScreen extends HookConsumerWidget {
       }
     }
 
-    final screenBackground = isLast
-        ? AppColors.primaryDeep
-        : AppColors.correctTextDark;
+    // final screenBackground = isLast
+    //     ? AppColors.primaryDeep
+    //     : AppColors.correctTextDark;
 
     return PopScope(
       canPop: false,
       child: Scaffold(
-        backgroundColor: screenBackground,
-        body: ColoredBox(
-          color: screenBackground,
-          child: SafeArea(
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                final h = constraints.maxHeight;
-                if (h <= 0) {
-                  return const SizedBox.shrink();
-                }
-                final topInset = h * 0.1;
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(height: topInset),
-                    Expanded(
-                      child: PageView(
-                        controller: pageController,
-                        physics: const BouncingScrollPhysics(),
-                        onPageChanged: (i) {
-                          page.value = i;
-                          if (i != 0) {
-                            firstScreenCtaReady.value = false;
-                          }
-                        },
-                        children: [
-                          _ScoreStoryPage(
-                            firstScreenCtaReady: firstScreenCtaReady,
-                          ),
-                          const _MechanismPage(),
-                          const _DiagnosisPage(),
-                          const _LoopPage(),
-                        ],
-                      ),
+        // backgroundColor: screenBackground,
+        body: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final h = constraints.maxHeight;
+              if (h <= 0) {
+                return const SizedBox.shrink();
+              }
+              final topInset = h * 0.1;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(height: topInset),
+                  Expanded(
+                    child: PageView(
+                      controller: pageController,
+                      physics: const BouncingScrollPhysics(),
+                      onPageChanged: (i) {
+                        page.value = i;
+                        if (i != 0) {
+                          firstScreenCtaReady.value = false;
+                        }
+                      },
+                      children: [
+                        _ScoreStoryPage(
+                          firstScreenCtaReady: firstScreenCtaReady,
+                        ),
+                        const _MechanismPage(),
+                        const _DiagnosisPage(),
+                        const _LoopPage(),
+                      ],
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(
-                        hPad,
-                        vPadSm,
-                        hPad,
-                        _onb(context, 4),
-                      ),
-                      child: _DotRow(
-                        index: page.value,
-                        count: _pageCount,
-                        dark: isLast,
-                      ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(
+                      hPad,
+                      vPadSm,
+                      hPad,
+                      _onb(context, 4),
                     ),
-                  ],
-                );
-              },
-            ),
+                    child: _DotRow(
+                      index: page.value,
+                      count: _pageCount,
+                      dark: isLast,
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),
@@ -1292,63 +1289,250 @@ class _MechanismPage extends StatelessWidget {
           ],
         ),
         SizedBox(height: _onb(context, 10)),
-        Container(
-          width: double.infinity,
-          padding: EdgeInsets.fromLTRB(
-            _onb(context, 12),
-            _onb(context, 12),
-            _onb(context, 12),
-            _onb(context, 12),
+        const _MechanismDangerCallout(),
+      ],
+    );
+  }
+}
+
+/// Rich callout: when a wrong pick meets high confidence, it becomes the
+/// highest-priority “danger” pattern — not a flat A+B=C equation.
+class _MechanismDangerCallout extends StatelessWidget {
+  const _MechanismDangerCallout();
+
+  @override
+  Widget build(BuildContext context) {
+    double o(double x) => _onb(context, x);
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.fromLTRB(o(14), o(14), o(14), o(16)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(o(6) + AppRadius.xl),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.wrongBg,
+            Color.lerp(AppColors.wrongBg, AppColors.wrong, 0.07)!,
+          ],
+        ),
+        border: Border.all(color: AppColors.wrong.withValues(alpha: 0.22)),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.wrong.withValues(alpha: 0.12),
+            blurRadius: o(10),
+            offset: Offset(0, o(4)),
+            spreadRadius: -1,
           ),
-          decoration: BoxDecoration(
-            color: AppColors.surfacePrimaryLight,
-            borderRadius: BorderRadius.circular(AppRadius.xl),
-            border: Border.all(
-              color: AppColors.wrong,
-              width: _onb(context, 1.5),
-            ),
-          ),
-          child: Column(
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _EqIcon(Icons.close_rounded, AppColors.wrong),
-                  Text(
-                    ' + ',
-                    style: GoogleFonts.dmSans(
-                      fontSize: _onb(context, 20),
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.onSurfaceLight,
-                    ),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  color: AppColors.wrong.withValues(alpha: 0.14),
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(o(6)),
+                  child: Icon(
+                    Icons.bolt_rounded,
+                    size: o(20),
+                    color: AppColors.wrong,
                   ),
-                  _EqIcon(Icons.psychology_rounded, AppColors.wrong),
-                  Text(
-                    ' = ',
-                    style: GoogleFonts.dmSans(
-                      fontSize: _onb(context, 20),
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.onSurfaceLight,
-                    ),
-                  ),
-                  _EqIcon(Icons.gps_fixed_rounded, AppColors.wrong),
-                ],
+                ),
               ),
-              SizedBox(height: _onb(context, 8)),
-              Text(
-                'Wrong answer + Sure (high confidence) = Danger zone',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.dmSans(
-                  fontSize: _onb(context, 14),
-                  height: 1.4,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.wrongText,
+              SizedBox(width: o(10)),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'The pattern that costs you the most',
+                      style: GoogleFonts.dmSans(
+                        fontSize: o(13.5),
+                        fontWeight: FontWeight.w800,
+                        height: 1.3,
+                        letterSpacing: 0.15,
+                        color: AppColors.wrongText,
+                      ),
+                    ),
+                    SizedBox(height: o(4)),
+                    Text(
+                      'When you miss a question but you were “sure” — that’s a danger signal, not just a wrong tick.',
+                      style: GoogleFonts.dmSans(
+                        fontSize: o(12),
+                        height: 1.45,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.onSurfaceVariantLight,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
+          SizedBox(height: o(14)),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(
+                child: _MechanismFactorPill(
+                  icon: Icons.cancel_outlined,
+                  label: 'Wrong',
+                  line2: 'answer',
+                  emphasis: true,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(o(4), 0, o(4), o(8)),
+                child: Text(
+                  '+',
+                  style: GoogleFonts.dmSans(
+                    fontSize: o(18),
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.gray600,
+                    height: 1,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: _MechanismFactorPill(
+                  icon: Icons.verified_user_outlined,
+                  label: '“Sure”',
+                  line2: 'confidence',
+                  emphasis: false,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: o(8)),
+          Center(
+            child: Icon(
+              Icons.arrow_downward_rounded,
+              size: o(18),
+              color: AppColors.wrong.withValues(alpha: 0.55),
+            ),
+          ),
+          SizedBox(height: o(8)),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: o(12), vertical: o(11)),
+            decoration: BoxDecoration(
+              color: AppColors.surfacePrimaryLight.withValues(alpha: 0.92),
+              borderRadius: BorderRadius.circular(o(6) + AppRadius.md),
+              border: Border.all(
+                color: AppColors.wrong.withValues(alpha: 0.4),
+                width: o(1.2),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.warning_amber_rounded,
+                  size: o(20),
+                  color: AppColors.wrong,
+                ),
+                SizedBox(width: o(8)),
+                Flexible(
+                  child: Text(
+                    'Danger zone — the leak prelims tests hide',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.dmSans(
+                      fontSize: o(13.5),
+                      fontWeight: FontWeight.w800,
+                      height: 1.3,
+                      letterSpacing: 0.1,
+                      color: AppColors.wrongText,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MechanismFactorPill extends StatelessWidget {
+  const _MechanismFactorPill({
+    required this.icon,
+    required this.label,
+    required this.line2,
+    required this.emphasis,
+  });
+
+  final IconData icon;
+  final String label;
+  final String line2;
+  final bool emphasis;
+
+  @override
+  Widget build(BuildContext context) {
+    double o(double x) => _onb(context, x);
+    final border = emphasis
+        ? AppColors.wrong.withValues(alpha: 0.45)
+        : AppColors.gray200.withValues(alpha: 0.8);
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AppColors.surfacePrimaryLight,
+        borderRadius: BorderRadius.circular(AppRadius.lg + 2),
+        border: Border.all(color: border, width: o(1.2)),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.gray900.withValues(alpha: 0.04),
+            blurRadius: 6,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: o(10), vertical: o(10)),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              icon,
+              size: o(20),
+              color: emphasis ? AppColors.wrong : AppColors.primaryDark,
+            ),
+            SizedBox(width: o(8)),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    label,
+                    style: GoogleFonts.dmSans(
+                      fontSize: o(13.5),
+                      fontWeight: FontWeight.w800,
+                      height: 1.1,
+                      color: AppColors.onSurfaceLight,
+                    ),
+                  ),
+                  Text(
+                    line2,
+                    style: GoogleFonts.dmSans(
+                      fontSize: o(11),
+                      fontWeight: FontWeight.w600,
+                      height: 1.2,
+                      color: AppColors.onSurfaceVariantLight,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
@@ -1418,28 +1602,6 @@ class _ConfidenceChip extends StatelessWidget {
           color: fg,
         ),
       ),
-    );
-  }
-}
-
-class _EqIcon extends StatelessWidget {
-  const _EqIcon(this.icon, this.color);
-
-  final IconData icon;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    final box = _onb(context, 44);
-    return Container(
-      width: box,
-      height: box,
-      decoration: BoxDecoration(
-        color: AppColors.wrongBg.withValues(alpha: 0.85),
-        borderRadius: BorderRadius.circular(_onb(context, 12)),
-        border: Border.all(color: color.withValues(alpha: 0.35)),
-      ),
-      child: Icon(icon, color: color, size: _onb(context, 26)),
     );
   }
 }
