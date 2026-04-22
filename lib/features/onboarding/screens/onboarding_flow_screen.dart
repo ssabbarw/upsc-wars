@@ -112,73 +112,6 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                         dark: isLast,
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(
-                        hPad,
-                        _onb(context, 4),
-                        hPad,
-                        _onb(context, 12) + bottom,
-                      ),
-                      child: ValueListenableBuilder<bool>(
-                        valueListenable: firstScreenCtaReady,
-                        builder: (context, firstReady, _) {
-                          final pageIndex = page.value;
-                          final onFirst = pageIndex == 0;
-                          final blocked = onFirst && !firstReady;
-                          return FilledButton(
-                            onPressed: blocked ? null : goNext,
-                            style: FilledButton.styleFrom(
-                              backgroundColor: isLast
-                                  ? AppColors.primary
-                                  : AppColors.gray900,
-                              foregroundColor: isLast
-                                  ? AppColors.onPrimary
-                                  : AppColors.surfacePrimaryLight,
-                              disabledBackgroundColor: AppColors.gray900
-                                  .withValues(alpha: 0.4),
-                              disabledForegroundColor: AppColors
-                                  .surfacePrimaryLight
-                                  .withValues(alpha: 0.45),
-                              padding: EdgeInsets.symmetric(
-                                vertical: _onb(context, 16),
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  AppRadius.md,
-                                ),
-                              ),
-                            ),
-                            child: Opacity(
-                              opacity: blocked ? 0.5 : 1,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    switch (pageIndex) {
-                                      0 => 'Tell Me More',
-                                      1 => 'Show Me My Blind Spots',
-                                      2 => 'Start My Analysis Test',
-                                      _ => 'Start My First Diagnostic Test',
-                                    },
-                                    style: GoogleFonts.dmSans(
-                                      fontSize: _onb(context, 16),
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  if (pageIndex == 0) ...[
-                                    SizedBox(width: _onb(context, 8)),
-                                    Icon(
-                                      Icons.arrow_forward_rounded,
-                                      size: _onb(context, 20),
-                                    ),
-                                  ],
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
                   ],
                 );
               },
@@ -767,15 +700,11 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
   PageController get _pageController => widget.pageController;
 
   int _pageIndex = 0;
-  bool _ctaGateScheduled = false;
 
-  void _scheduleCtaAfterHiddenSeen() {
-    if (_ctaGateScheduled || !mounted) return;
-    _ctaGateScheduled = true;
-    Future<void>.delayed(const Duration(milliseconds: 400), () {
-      if (!mounted) return;
-      widget.firstScreenCtaReady.value = true;
-    });
+  void _enableFirstScreenCta() {
+    if (!mounted) return;
+    if (widget.firstScreenCtaReady.value) return;
+    widget.firstScreenCtaReady.value = true;
   }
 
   Future<void> _playSwipeUpHint() async {
@@ -810,6 +739,9 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
       if (n == 0 && mounted && _pageIndex == 0) {
         await Future<void>.delayed(const Duration(milliseconds: 200));
       }
+    }
+    if (mounted) {
+      _enableFirstScreenCta();
     }
   }
 
@@ -1179,7 +1111,9 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
                   physics: const BouncingScrollPhysics(),
                   onPageChanged: (i) {
                     setState(() => _pageIndex = i);
-                    if (i == 1) _scheduleCtaAfterHiddenSeen();
+                    if (i == 1) {
+                      _enableFirstScreenCta();
+                    }
                   },
                   children: [_surfaceSlide(context), _hiddenSlide(context)],
                 ),
