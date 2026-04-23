@@ -5,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/debug/upsc_wars_trace.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
 import '../../../core/analytics/session_analytics_derive.dart';
@@ -266,8 +267,19 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
             }
             try {
               final submitted = await notifier.submit();
-              if (context.mounted) context.go('/results/$submitted');
-            } catch (_) {}
+              if (context.mounted) {
+                upscWarsTrace(
+                  'TestEngine timer submit -> go /results/$submitted',
+                );
+                context.go('/results/$submitted');
+              }
+            } catch (e, st) {
+              upscWarsTrace(
+                'TestEngine timer submit FAILED sessionId=$sessionId',
+                error: e,
+                stackTrace: st,
+              );
+            }
           }
         }
       });
@@ -576,8 +588,19 @@ Future<void> _showTestPaletteSheet(
                       try {
                         final id = await notifier.submit();
                         if (ctx.mounted) Navigator.pop(ctx);
-                        if (context.mounted) context.go('/results/$id');
-                      } catch (_) {}
+                        if (context.mounted) {
+                          upscWarsTrace(
+                            'TestEngine palette submit -> go /results/$id',
+                          );
+                          context.go('/results/$id');
+                        }
+                      } catch (e, st) {
+                        upscWarsTrace(
+                          'TestEngine palette submit FAILED',
+                          error: e,
+                          stackTrace: st,
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:

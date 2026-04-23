@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../core/domain/entities/revision_queue_item.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/providers/catalog_providers.dart';
+import '../../../core/services/deferred_push_permission_coordinator.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
@@ -235,7 +236,7 @@ TextStyle _advancedInsightsSectionHeading(ColorScheme scheme) =>
       color: scheme.onSurface,
     );
 
-class _ScoreTrendCard extends StatelessWidget {
+class _ScoreTrendCard extends ConsumerWidget {
   const _ScoreTrendCard({
     required this.sessionId,
     required this.result,
@@ -255,7 +256,7 @@ class _ScoreTrendCard extends StatelessWidget {
   final bool canScope;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final attempted = result.correct + result.wrong;
     final net = result.netScore;
     final netColor = net >= 0 ? AppColors.coachTrendEmerald : AppColors.wrong;
@@ -455,8 +456,13 @@ class _ScoreTrendCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   HapticFeedback.lightImpact();
+                  await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
+                    context,
+                    ref,
+                  );
+                  if (!context.mounted) return;
                   if (context.canPop()) {
                     context.pop();
                   } else {
@@ -484,8 +490,12 @@ class _ScoreTrendCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   HapticFeedback.lightImpact();
+                  await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
+                    context,
+                    ref,
+                  );
                   if (context.mounted) {
                     _openSessionHistoryReview(context, sessionId);
                   }
@@ -650,7 +660,7 @@ class _DangerZoneCard extends StatelessWidget {
   }
 }
 
-class _NextActionCard extends StatelessWidget {
+class _NextActionCard extends ConsumerWidget {
   const _NextActionCard({
     required this.plan,
     required this.result,
@@ -666,7 +676,7 @@ class _NextActionCard extends StatelessWidget {
   final bool isDark;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final bg = isDark
         ? AppColors.infoBgDark
         : AppColors.coachNextActionSurfaceLight;
@@ -741,6 +751,7 @@ class _NextActionCard extends StatelessWidget {
               ),
               onPressed: () => _runPrimaryCoachAction(
                 context,
+                ref,
                 plan.primaryKind,
                 sessionId,
                 result,
@@ -763,6 +774,7 @@ class _NextActionCard extends StatelessWidget {
 
 Future<void> _runPrimaryCoachAction(
   BuildContext context,
+  WidgetRef ref,
   _CoachPrimaryKind kind,
   String sessionId,
   SessionResult result,
@@ -783,11 +795,21 @@ Future<void> _runPrimaryCoachAction(
           context.go('/subject/${Uri.encodeComponent(result.subject)}/topics');
         }
       } else if (context.mounted) {
-        context.go('/');
+        await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
+          context,
+          ref,
+        );
+        if (context.mounted) context.go('/');
       }
       break;
     case _CoachPrimaryKind.home:
-      if (context.mounted) context.go('/');
+      if (context.mounted) {
+        await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
+          context,
+          ref,
+        );
+        if (context.mounted) context.go('/');
+      }
       break;
   }
 }

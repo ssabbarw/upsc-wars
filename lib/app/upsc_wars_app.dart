@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../core/debug/upsc_wars_trace.dart';
 import '../core/analytics/analytics_app_lifecycle_observer.dart';
 import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
@@ -192,6 +193,12 @@ class _RootMaterialApp extends HookConsumerWidget {
       themeMode: themeMode,
       routerConfig: router,
       builder: (context, child) {
+        if (child == null) {
+          upscWarsTrace(
+            'MaterialApp.router builder: child is null '
+            '(blank frame if this repeats)',
+          );
+        }
         return Stack(
           fit: StackFit.expand,
           children: [

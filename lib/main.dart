@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:workmanager/workmanager.dart';
 
 import 'app/upsc_wars_app.dart';
+import 'core/debug/upsc_wars_trace.dart';
 import 'core/crashlytics/crashlytics_provider_observer.dart';
 import 'core/crashlytics/firebase_crashlytics_bootstrap.dart';
 import 'core/constants/prelims_debug_flags.dart';
@@ -19,6 +20,21 @@ import 'core/services/prelims_workmanager_callback.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    upscWarsTrace(
+      'FlutterError: ${details.exceptionAsString()}',
+      error: details.exception,
+      stackTrace: details.stack,
+    );
+  };
+
+  PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
+    upscWarsTrace('PlatformDispatcher.onError', error: error, stackTrace: stack);
+    return false;
+  };
+
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Firebase.initializeApp();
   await setupFirebaseCrashlytics();

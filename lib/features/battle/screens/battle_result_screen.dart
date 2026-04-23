@@ -19,10 +19,18 @@ import 'package:upsc_wars/features/battle/widgets/battle_chat_fab.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_live_scoreboard.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_result_score_breakdown.dart';
 import 'package:upsc_wars/features/battle/widgets/battle_spectate_overlay.dart';
+import 'package:upsc_wars/core/services/deferred_push_permission_coordinator.dart';
 import 'package:upsc_wars/features/home/providers/auth_providers.dart';
-import 'package:upsc_wars/features/results/widgets/deferred_push_permission_results_hook.dart';
 
-void _leaveBattleResultScreen(BuildContext context) {
+Future<void> _leaveBattleResultScreen(
+  BuildContext context,
+  WidgetRef ref,
+) async {
+  if (!context.mounted) return;
+  await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
+    context,
+    ref,
+  );
   if (!context.mounted) return;
   // Always home: stack is usually battle test → results; pop would reopen the test.
   context.go('/');
@@ -185,82 +193,84 @@ class BattleResultScreen extends HookConsumerWidget {
       canPop: false,
       onPopInvokedWithResult: (didPop, _) {
         if (didPop) return;
-        _leaveBattleResultScreen(context);
+        unawaited(_leaveBattleResultScreen(context, ref));
       },
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Battle Result'),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            onPressed: () => _leaveBattleResultScreen(context),
+            onPressed: () => unawaited(_leaveBattleResultScreen(context, ref)),
           ),
         ),
-        body: Stack(
-          children: [
-            Positioned.fill(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(AppSpacing.lg),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    BattleLiveScoreboard(
-                      sessionId: payload.sessionId,
-                      fallbackPayload: displayPayload,
-                      battleFinishedOverride:
-                          spectate != null &&
-                              spectate.sessionId == payload.sessionId
-                          ? null
-                          : opponentBattleOver.value,
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                    BattleResultScoreComparison(payload: displayPayload),
-                    const SizedBox(height: AppSpacing.lg),
-                    Text(
-                      message.$1,
-                      style: AppTextStyles.h1().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      message.$2,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    if (spectate != null &&
-                        spectate.sessionId == payload.sessionId) ...[
-                      const SizedBox(height: AppSpacing.sm),
-                      Text(
-                        battleSpectateVerdictLine(spectate),
-                        style: AppTextStyles.bodyMd().copyWith(
-                          color: scheme.primary,
-                          fontStyle: FontStyle.italic,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                    const SizedBox(height: AppSpacing.lg),
-                    ElevatedButton.icon(
-                      onPressed: () =>
-                          context.push('/history/${payload.sessionId}'),
-                      icon: const Icon(Icons.menu_book_outlined),
-                      label: const Text('Review explanations'),
-                    ),
-                    const SizedBox(height: AppSpacing.sm),
-                    OutlinedButton(
-                      onPressed: () => context.go('/'),
-                      child: const Text('Back to Home'),
-                    ),
-                    const SizedBox(height: AppSpacing.lg),
-                  ],
-                ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              BattleLiveScoreboard(
+                sessionId: payload.sessionId,
+                fallbackPayload: displayPayload,
+                battleFinishedOverride:
+                    spectate != null &&
+                        spectate.sessionId == payload.sessionId
+                    ? null
+                    : opponentBattleOver.value,
               ),
-            ),
-            const DeferredPushPermissionResultsHook(),
-          ],
+              const SizedBox(height: AppSpacing.lg),
+              BattleResultScoreComparison(payload: displayPayload),
+              const SizedBox(height: AppSpacing.lg),
+              Text(
+                message.$1,
+                style: AppTextStyles.h1().copyWith(
+                  color: scheme.onSurface,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                message.$2,
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              if (spectate != null &&
+                  spectate.sessionId == payload.sessionId) ...[
+                const SizedBox(height: AppSpacing.sm),
+                Text(
+                  battleSpectateVerdictLine(spectate),
+                  style: AppTextStyles.bodyMd().copyWith(
+                    color: scheme.primary,
+                    fontStyle: FontStyle.italic,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+              const SizedBox(height: AppSpacing.lg),
+              ElevatedButton.icon(
+                onPressed: () async {
+                  await DeferredPushPermissionCoordinator
+                      .tryOfferFromResultsUserAction(context, ref);
+                  if (context.mounted) {
+                    context.push('/history/${payload.sessionId}');
+                  }
+                },
+                icon: const Icon(Icons.menu_book_outlined),
+                label: const Text('Review explanations'),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              OutlinedButton(
+                onPressed: () async {
+                  await DeferredPushPermissionCoordinator
+                      .tryOfferFromResultsUserAction(context, ref);
+                  if (context.mounted) context.go('/');
+                },
+                child: const Text('Back to Home'),
+              ),
+              const SizedBox(height: AppSpacing.lg),
+            ],
+          ),
         ),
       ),
     );

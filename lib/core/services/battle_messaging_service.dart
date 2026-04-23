@@ -161,6 +161,17 @@ class BattleMessagingService {
     WidgetsBinding.instance.addPostFrameCallback((_) => go());
   }
 
+  /// Current OS notification authorization (does not prompt).
+  static Future<AuthorizationStatus> notificationAuthorizationStatus() async {
+    if (kIsWeb) return AuthorizationStatus.authorized;
+    final settings = await FirebaseMessaging.instance.getNotificationSettings();
+    return settings.authorizationStatus;
+  }
+
+  static bool notificationAuthorizationAllowsPush(AuthorizationStatus s) =>
+      s == AuthorizationStatus.authorized ||
+      s == AuthorizationStatus.provisional;
+
   /// System notification permission + token sync (call after user-facing prompt).
   static Future<AuthorizationStatus?> requestPushAuthorizationAndSync() async {
     if (kIsWeb) return null;

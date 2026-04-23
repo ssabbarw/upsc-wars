@@ -1,11 +1,13 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../analytics/analytics_route_observer.dart';
+import '../debug/upsc_wars_trace.dart';
 import '../services/deferred_push_permission_coordinator.dart';
 import '../config/feature_flags.dart';
 import '../../features/bookmarks/screens/bookmarks_screen.dart';
@@ -131,14 +133,22 @@ GoRouter appRouter(Ref ref) {
     navigatorKey: rootNavigatorKey,
     initialLocation: '/',
     refreshListenable: redirectRefresh,
+    debugLogDiagnostics: kDebugMode,
     redirect: (context, state) {
       if (!communityTabVisibleForRedirect() &&
           state.matchedLocation == '/community') {
+        upscWarsTrace(
+          'GoRouter redirect uri=${state.uri} matched=${state.matchedLocation} '
+          '-> /',
+        );
         return '/';
       }
       return null;
     },
-    observers: [AnalyticsRouteObserver(ref)],
+    observers: [
+      AnalyticsRouteObserver(ref),
+      UpscWarsRouteTraceObserver(),
+    ],
     routes: [
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
@@ -471,10 +481,34 @@ class _AppShell extends HookConsumerWidget {
       if (!wasSignedOut || !nowSignedIn) return;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!context.mounted) return;
+        final showCommunityTab =
+            FeatureFlags.communityTab &&
+            ref
+                .read(communityTabRemoteEnabledProvider)
+                .maybeWhen(data: (v) => v, orElse: () => true);
         unawaited(
           DeferredPushPermissionCoordinator.onSignedInAfterCommunityPromptArmed(
             context,
             ref,
+            onSignedInFromCommunityTab: showCommunityTab
+                ? () {
+                    if (!context.mounted) return;
+                    final branches = navigationShell.route.branches;
+                    if (branches.isEmpty) return;
+                    final communityIndex = branches.length - 1;
+                    navigationShell.goBranch(
+                      communityIndex,
+                      initialLocation: false,
+                    );
+                    ref.invalidate(communityChallengersProvider);
+                    ref.invalidate(openChallengesListProvider);
+                    unawaited(
+                      ref
+                          .read(communityRecentUsersProvider.notifier)
+                          .refresh(),
+                    );
+                  }
+                : null,
           ),
         );
       });

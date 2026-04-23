@@ -45,9 +45,18 @@ abstract final class PrefKeys {
   /// JSON array of epoch ms for QOTD posts from this device (rolling 24h client cap).
   static const qotdLocalPostEpochsMsJson = 'qotd_local_post_epochs_ms_json_v1';
 
-  /// After first test completion or community sign-in: user saw push education + choice.
+  /// Legacy: one-shot “education sheet done” (older builds). When true, no modal
+  /// or home nudge (preserves prior installs).
   static const deferredPushPermissionSheetCompletedV1 =
       'deferred_push_permission_sheet_completed_v1';
+
+  /// How many times the deferred push **education modal** was shown (max 2).
+  static const deferredPushModalShownCountV2 =
+      'deferred_push_modal_shown_count_v2';
+
+  /// User dismissed the post-modal home notification hint.
+  static const deferredPushHomeNudgeDismissedV2 =
+      'deferred_push_home_nudge_dismissed_v2';
 }
 
 class PrefsService {
@@ -156,6 +165,16 @@ class PrefsService {
       _p.getBool(PrefKeys.deferredPushPermissionSheetCompletedV1) ?? false;
   set deferredPushPermissionSheetCompletedV1(bool v) =>
       _p.setBool(PrefKeys.deferredPushPermissionSheetCompletedV1, v);
+
+  int get deferredPushModalShownCountV2 =>
+      _p.getInt(PrefKeys.deferredPushModalShownCountV2) ?? 0;
+  set deferredPushModalShownCountV2(int v) =>
+      _p.setInt(PrefKeys.deferredPushModalShownCountV2, v);
+
+  bool get deferredPushHomeNudgeDismissedV2 =>
+      _p.getBool(PrefKeys.deferredPushHomeNudgeDismissedV2) ?? false;
+  set deferredPushHomeNudgeDismissedV2(bool v) =>
+      _p.setBool(PrefKeys.deferredPushHomeNudgeDismissedV2, v);
 }
 
 @Riverpod(keepAlive: true)

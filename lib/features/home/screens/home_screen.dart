@@ -24,6 +24,7 @@ import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../providers/auth_providers.dart';
+import '../widgets/deferred_push_home_nudge_banner.dart';
 import '../../../shared/theme/dark_mode_toggle.dart';
 import '../../../shared/widgets/app_update_kill_switch_overlay.dart';
 import '../../../shared/widgets/prelims_countdown_card.dart';
@@ -447,6 +448,7 @@ class HomeScreen extends HookConsumerWidget {
                           const SizedBox(height: AppSpacing.md),
                           _QuickPracticeSection(borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),
+                          const DeferredPushHomeNudgeBanner(),
                           _PyqYearCarousel(
                             borderColor: borderColor,
                             years: pyqYears,
