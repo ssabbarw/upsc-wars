@@ -896,6 +896,8 @@ class _AdviceForSubjectMockPrepGroupState
               children: [
                 TabBar(
                   controller: _tabController,
+                  dividerColor: Colors.transparent,
+                  dividerHeight: 0,
                   tabs: const [
                     Tab(text: 'Revise'),
                     Tab(text: 'Safe areas'),
