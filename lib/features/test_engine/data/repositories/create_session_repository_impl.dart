@@ -78,7 +78,7 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
           mode: config.mode,
           status: 'in_progress',
           questionCount: n,
-          isTimed: config.mode == 'exam' ? config.isTimed : true,
+          isTimed: config.isTimed,
           timeLimitSecs: Value(config.timeLimitSecs),
           examRemainingSecs: (config.mode == 'exam' &&
                   config.isTimed &&
@@ -100,6 +100,18 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
         );
       }
     });
+
+    final historyConf = config.dangerReviseHistoryConfidence;
+    if (historyConf != null &&
+        config.specificQuestionUuids != null &&
+        config.specificQuestionUuids!.isNotEmpty) {
+      await _hydrateDangerReviseFromHistory(
+        _userDatabase,
+        sessionId: sessionId,
+        confidence: historyConf,
+        questionUuids: picked.map((q) => q.uuid).toList(),
+      );
+    }
 
     return sessionId;
   }
@@ -136,7 +148,7 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
           mode: config.mode,
           status: 'in_progress',
           questionCount: n,
-          isTimed: config.mode == 'exam' ? config.isTimed : true,
+          isTimed: config.isTimed,
           timeLimitSecs: Value(config.timeLimitSecs),
           examRemainingSecs: (config.mode == 'exam' &&
                   config.isTimed &&
@@ -158,5 +170,89 @@ class CreateSessionRepositoryImpl implements CreateSessionRepository {
         );
       }
     });
+  }
+}
+
+const _hydrateInChunk = 350;
+
+Future<Map<String, String>> _fetchLastWrongSelectionsByQuestion(
+  UserDatabase db, {
+  required String confidence,
+  required List<String> questionUuids,
+}) async {
+  if (questionUuids.isEmpty) return {};
+  final out = <String, String>{};
+  for (var i = 0; i < questionUuids.length; i += _hydrateInChunk) {
+    final end = i + _hydrateInChunk > questionUuids.length
+        ? questionUuids.length
+        : i + _hydrateInChunk;
+    final part = questionUuids.sublist(i, end);
+    final placeholders = List.filled(part.length, '?').join(',');
+    final rows = await db.customSelect(
+      '''
+      SELECT q1.question_uuid AS quid, q1.selected_option AS sel
+      FROM attempts q1
+      INNER JOIN (
+        SELECT question_uuid, MAX(attempted_at) AS mx
+        FROM attempts
+        WHERE question_uuid IN ($placeholders)
+          AND confidence = ?
+          AND attempted_at IS NOT NULL
+          AND status = 'wrong'
+          AND IFNULL(is_correct, 0) = 0
+        GROUP BY question_uuid
+      ) t ON t.question_uuid = q1.question_uuid
+        AND q1.attempted_at = t.mx
+        AND q1.confidence = ?
+      ''',
+      variables: [
+        ...part.map(Variable.withString),
+        Variable.withString(confidence),
+        Variable.withString(confidence),
+      ],
+      readsFrom: {db.sessionQuestions},
+    ).get();
+    for (final r in rows) {
+      final quid = r.read<String>('quid');
+      final sel = r.read<String?>('sel');
+      if (sel != null && sel.trim().isNotEmpty) {
+        out[quid] = sel;
+      }
+    }
+  }
+  return out;
+}
+
+Future<void> _hydrateDangerReviseFromHistory(
+  UserDatabase db, {
+  required String sessionId,
+  required String confidence,
+  required List<String> questionUuids,
+}) async {
+  final prior = await _fetchLastWrongSelectionsByQuestion(
+    db,
+    confidence: confidence,
+    questionUuids: questionUuids,
+  );
+  if (prior.isEmpty) return;
+
+  final rows = await db.sessionQuestionsDao.getSessionQuestionsOrdered(sessionId);
+  final now = DateTime.now();
+  const valid = {'a', 'b', 'c', 'd'};
+
+  for (final sq in rows) {
+    final raw = prior[sq.questionUuid];
+    if (raw == null) continue;
+    final opt = raw.trim().toLowerCase();
+    if (!valid.contains(opt)) continue;
+
+    await db.sessionQuestionsDao.updateSessionQuestionFields(
+      sq.id,
+      selectedOption: Value(opt),
+      isCorrect: Value(false),
+      status: Value('wrong'),
+      attemptedAt: Value(now),
+      confidence: Value(confidence),
+    );
   }
 }

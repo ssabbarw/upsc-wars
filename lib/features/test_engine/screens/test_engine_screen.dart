@@ -283,7 +283,7 @@ class _TestEngineTimerTicker extends HookConsumerWidget {
         if (now == null || current == null) return;
 
         if (current.mode == 'learning') {
-          if (!now.explanationVisible && now.learningRemainingSecs <= 0) {
+          if (!now.explanationVisible && now.learningRemainingSecs == 0) {
             await notifier.onLearningTimedOut();
           }
         } else if (current.isTimed && current.timeLimitSecs != null) {
@@ -916,6 +916,9 @@ class _TopBarTimerLabel extends HookConsumerWidget {
           }
           return ('eu', v.totalElapsedSecs, false);
         }
+        if (v.learningRemainingSecs < 0) {
+          return ('lr', 0, false);
+        }
         return ('l', v.learningRemainingSecs, false);
       }),
     );
@@ -942,6 +945,9 @@ class _TopBarTimerLabel extends HookConsumerWidget {
         } else {
           rightColor = AppColors.wrong;
         }
+      case 'lr':
+        rightLabel = 'Review';
+        rightColor = scheme.onSurfaceVariant;
       default:
         rightLabel = '00:00';
         rightColor = scheme.onSurface;

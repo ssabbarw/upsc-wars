@@ -78,6 +78,12 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     var startIndex = firstUnattempted == -1 ? 0 : firstUnattempted;
     if (startIndex >= active.questions.length) startIndex = 0;
 
+    final startQ = active.questions[startIndex];
+    final learningStartExplanation =
+        active.mode == 'learning' &&
+        (startQ.selectedOption != null ||
+            startQ.status == 'timed_out');
+
     var totalElapsed = 0;
     var showBanner = false;
     if (active.mode == 'exam' &&
@@ -93,8 +99,9 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       }
     }
 
-    final learningLimit =
-        active.mode == 'learning' ? (active.timeLimitSecs ?? 60) : 0;
+    final learningLimit = active.mode != 'learning'
+        ? 0
+        : (!active.isTimed ? -1 : (active.timeLimitSecs ?? 60));
     final furthestAnswered = active.questions.lastIndexWhere(
       (q) => q.selectedOption != null || q.status == 'timed_out',
     );
@@ -111,6 +118,11 @@ class TestSessionNotifier extends _$TestSessionNotifier {
       lifetimeScoredAttempts: lifetimeScoredAttempts,
       weakTopicKeys: weakTopicKeys,
       clearError: true,
+      explanationVisible: learningStartExplanation,
+      learningVerdict: learningStartExplanation
+          ? _learningVerdictFromStatus(startQ.status)
+          : null,
+      clearLearningVerdict: !learningStartExplanation,
     );
   }
 
@@ -391,7 +403,7 @@ class TestSessionNotifier extends _$TestSessionNotifier {
           s.mode == 'learning'
               ? (nextAnswered
                   ? current.learningRemainingSecs
-                  : (s.timeLimitSecs ?? 60))
+                  : (!s.isTimed ? -1 : (s.timeLimitSecs ?? 60)))
               : current.learningRemainingSecs,
     );
     state = AsyncData(nextState);
@@ -466,8 +478,10 @@ class TestSessionNotifier extends _$TestSessionNotifier {
     final s = current?.session;
     if (current == null || s == null) return;
     var learningLeft = current.learningRemainingSecs;
-    if (s.mode == 'learning' && !current.explanationVisible) {
-      learningLeft = (learningLeft - 1).clamp(0, 1 << 30);
+    if (s.mode == 'learning' &&
+        !current.explanationVisible &&
+        learningLeft > 0) {
+      learningLeft = learningLeft - 1;
     }
 
     final newElapsed = current.totalElapsedSecs + 1;

@@ -1305,13 +1305,7 @@ class _ConfidenceMiniCard extends StatelessWidget {
               height: 1.05,
             ),
           ),
-          Text(
-            marksLabel,
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-              fontSize: 11,
-            ),
-          ),
+
           const SizedBox(height: AppSpacing.sm),
           Text(
             subtitle,

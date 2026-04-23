@@ -97,11 +97,12 @@ class DangerZoneSummaryCard extends HookConsumerWidget {
             topic: scopedTopic,
             mode: 'learning',
             questionCount: uuids.length,
-            isTimed: true,
-            timeLimitSecs: 60,
+            isTimed: false,
+            timeLimitSecs: null,
             language: lang,
             specificQuestionUuids: uuids,
             analyticsFeatureKey: analyticsKey,
+            dangerReviseHistoryConfidence: confidence,
           ),
         );
         if (context.mounted) await navigateToTest(id);

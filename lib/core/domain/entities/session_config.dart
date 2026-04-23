@@ -10,6 +10,7 @@ class SessionConfig {
     required this.language,
     this.specificQuestionUuids,
     this.analyticsFeatureKey,
+    this.dangerReviseHistoryConfidence,
   });
 
   final String subject;
@@ -19,9 +20,12 @@ class SessionConfig {
   /// 'exam' | 'learning'
   final String mode;
   final int questionCount;
+
+  /// Exam: overall timer when [timeLimitSecs] is set. Learning: per-question
+  /// countdown when true; when false, learning runs as untimed review.
   final bool isTimed;
 
-  /// Exam: total seconds when timed; Learning: per-question limit (45|60|120).
+  /// Exam: total seconds when timed; Learning: per-question limit when timed.
   final int? timeLimitSecs;
   final String language;
 
@@ -31,6 +35,11 @@ class SessionConfig {
 
   /// Optional stable analytics key (e.g. `mcq_battle`) stored on the session row.
   final String? analyticsFeatureKey;
+
+  /// When set with [specificQuestionUuids], after insert each new session row is
+  /// filled from the learner's latest wrong attempt at this confidence so review
+  /// opens with their pick and the correct answer visible.
+  final String? dangerReviseHistoryConfidence;
 
   SessionConfig copyWith({
     String? subject,
@@ -43,6 +52,7 @@ class SessionConfig {
     String? language,
     List<String>? specificQuestionUuids,
     String? analyticsFeatureKey,
+    String? dangerReviseHistoryConfidence,
   }) {
     return SessionConfig(
       subject: subject ?? this.subject,
@@ -55,6 +65,8 @@ class SessionConfig {
       language: language ?? this.language,
       specificQuestionUuids: specificQuestionUuids ?? this.specificQuestionUuids,
       analyticsFeatureKey: analyticsFeatureKey ?? this.analyticsFeatureKey,
+      dangerReviseHistoryConfidence:
+          dangerReviseHistoryConfidence ?? this.dangerReviseHistoryConfidence,
     );
   }
 }
