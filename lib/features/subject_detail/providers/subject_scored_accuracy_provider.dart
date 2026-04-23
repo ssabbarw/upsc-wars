@@ -15,6 +15,7 @@ final subjectScoredAccuracyProvider =
           '''
           SELECT
             COUNT(*) AS total,
+            COUNT(DISTINCT a.question_uuid) AS unique_count,
             COALESCE(SUM(CASE WHEN a.is_correct = 1 THEN 1 ELSE 0 END), 0) AS correct_count
           FROM attempts a
           INNER JOIN questions q ON q.uuid = a.question_uuid
@@ -49,6 +50,7 @@ final subjectScoredAccuracyProvider =
     return SubjectScoredAccuracySummary(
       scoredAttempted: overall.read<int>('total'),
       scoredCorrect: overall.read<int>('correct_count'),
+      uniqueQuestionsAttempted: overall.read<int>('unique_count'),
       sureTotal: confidenceRow.read<int>('sure_total'),
       sureWrong: confidenceRow.read<int>('sure_wrong'),
       educatedGuessTotal: confidenceRow.read<int>('guess_total'),

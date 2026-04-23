@@ -3,6 +3,7 @@ class SubjectScoredAccuracySummary {
   const SubjectScoredAccuracySummary({
     required this.scoredAttempted,
     required this.scoredCorrect,
+    required this.uniqueQuestionsAttempted,
     required this.sureTotal,
     required this.sureWrong,
     required this.educatedGuessTotal,
@@ -12,6 +13,9 @@ class SubjectScoredAccuracySummary {
   /// Answered questions with a known correct/wrong outcome.
   final int scoredAttempted;
   final int scoredCorrect;
+
+  /// Distinct questions with at least one scored attempt in this subject.
+  final int uniqueQuestionsAttempted;
 
   /// Attempts where confidence was Sure (`very_sure` in the DB).
   final int sureTotal;

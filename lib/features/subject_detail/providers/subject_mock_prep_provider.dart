@@ -59,6 +59,8 @@ final subjectMockPrepInsightsProvider =
         safeTopics: const [],
         globalConfidentRatePercent: null,
         globalConfidentMistakeRatePercent: null,
+        reviseTopicTotalCount: revise.length,
+        safeTopicTotalCount: 0,
       );
     }
     final globalMistakeRate = 100.0 * (globalTotal - globalCorrect) / globalTotal;
@@ -168,6 +170,8 @@ final subjectMockPrepInsightsProvider =
       safeTopics: safeTop,
       globalConfidentRatePercent: globalRate,
       globalConfidentMistakeRatePercent: globalMistakeRate,
+      reviseTopicTotalCount: revise.length,
+      safeTopicTotalCount: safeCandidates.length,
     );
   },
 );

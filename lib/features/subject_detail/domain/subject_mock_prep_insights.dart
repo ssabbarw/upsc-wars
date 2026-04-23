@@ -42,6 +42,8 @@ class SubjectMockPrepInsights {
     required this.safeTopics,
     required this.globalConfidentRatePercent,
     required this.globalConfidentMistakeRatePercent,
+    required this.reviseTopicTotalCount,
+    required this.safeTopicTotalCount,
   });
 
   final List<ReviseBeforeMockRow> reviseTopics;
@@ -50,6 +52,11 @@ class SubjectMockPrepInsights {
   final double? globalConfidentRatePercent;
   /// Share of those same attempts that are **wrong**, all subjects. Null if none.
   final double? globalConfidentMistakeRatePercent;
+
+  /// Topics with at least one confident wrong (lifetime), before UI list cap.
+  final int reviseTopicTotalCount;
+  /// Topics that qualify as “safe” (lifetime), before UI list cap.
+  final int safeTopicTotalCount;
 
   bool get hasReviseData => reviseTopics.isNotEmpty;
   bool get hasSafeData => safeTopics.isNotEmpty;
