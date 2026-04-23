@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/domain/accuracy_rules.dart';
-import '../../../core/domain/entities/session_summary.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -68,10 +67,9 @@ final subjectTopicsProvider =
   return enriched;
 });
 
-/// Past completed sessions for a subject, most recent first.
-final subjectHistoryProvider =
-    FutureProvider.autoDispose.family<List<SessionSummary>, String>((ref, subject) async {
-  final uc = ref.watch(getSessionListUseCaseProvider);
-  final all = await uc.execute(subject: subject);
-  return all.where((s) => s.status == 'completed').toList();
+/// Completed session count for a subject (subject hub card).
+final subjectCompletedSessionCountProvider =
+    FutureProvider.autoDispose.family<int, String>((ref, subject) async {
+  final repo = ref.watch(sessionHistoryRepositoryProvider);
+  return repo.countCompletedSessionsForSubject(subject);
 });

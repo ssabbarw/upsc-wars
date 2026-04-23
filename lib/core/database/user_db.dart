@@ -580,6 +580,29 @@ class SessionsDao extends DatabaseAccessor<UserDatabase>
             ..orderBy([(t) => OrderingTerm.desc(t.createdAt)]))
           .get();
 
+  /// Completed sessions for one subject, newest first, for paginated history.
+  Future<List<Session>> getCompletedSessionsBySubjectOrderedPaged({
+    required String subject,
+    required int limit,
+    required int offset,
+  }) =>
+      (select(sessions)
+            ..where(
+              (t) => t.subject.equals(subject) & t.status.equals('completed'),
+            )
+            ..orderBy([(t) => OrderingTerm.desc(t.createdAt)])
+            ..limit(limit, offset: offset))
+          .get();
+
+  Future<int> countCompletedSessionsBySubject(String subject) async {
+    final row = await customSelect(
+      "SELECT COUNT(*) AS c FROM sessions WHERE subject = ? AND status = 'completed'",
+      variables: [Variable.withString(subject)],
+      readsFrom: {sessions},
+    ).getSingle();
+    return row.read<int?>('c') ?? 0;
+  }
+
   Future<List<Session>> getSessionsByMode(String mode) =>
       (select(sessions)
             ..where((t) => t.mode.equals(mode))

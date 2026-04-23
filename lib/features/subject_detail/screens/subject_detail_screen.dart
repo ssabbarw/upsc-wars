@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:intl/intl.dart';
-
 import '../../../core/constants/subject_constants.dart';
-import '../../../core/domain/entities/session_summary.dart';
 import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
@@ -36,7 +33,6 @@ class SubjectDetailScreen extends ConsumerWidget {
     final displayName = subjectDef?.displayName ?? subject;
 
     final infoAsync = ref.watch(subjectInfoProvider(subject));
-    final historyAsync = ref.watch(subjectHistoryProvider(subject));
 
     return Scaffold(
       backgroundColor: scheme.surfaceContainerLowest,
@@ -79,12 +75,10 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _HistorySection(
-                  historyAsync: historyAsync,
+                child: _InsightsSection(
                   subject: subject,
                   displayName: displayName,
                   borderColor: borderColor,
-                  infoAsync: infoAsync,
                 ),
               ),
             ),
@@ -96,9 +90,8 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _InsightsSection(
+                child: _HistoryHubSection(
                   subject: subject,
-                  displayName: displayName,
                   borderColor: borderColor,
                 ),
               ),
@@ -111,10 +104,11 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   AppSpacing.sm,
                 ),
-                child: const Center(child: ContactUsTextButton()),
+                child: const Center(
+                  child: ContactUsTextButton(leadingText: 'Any questions? '),
+                ),
               ),
             ),
-            const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xxxl)),
           ],
         ),
       ),
@@ -640,301 +634,82 @@ class _PracticeCard extends StatelessWidget {
   }
 }
 
-// ── History Section ─────────────────────────────────────────────────────────────
+// ── History hub (opens paginated subject history) ─────────────────────────────
 
-class _HistorySection extends ConsumerWidget {
-  const _HistorySection({
-    required this.historyAsync,
-    required this.subject,
-    required this.displayName,
-    required this.borderColor,
-    required this.infoAsync,
-  });
+class _HistoryHubSection extends ConsumerWidget {
+  const _HistoryHubSection({required this.subject, required this.borderColor});
 
-  final AsyncValue<List<SessionSummary>> historyAsync;
   final String subject;
-  final String displayName;
   final Color borderColor;
-  final AsyncValue<SubjectInfo?> infoAsync;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final countAsync = ref.watch(subjectCompletedSessionCountProvider(subject));
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const _ScreenSectionHeader(
           title: 'TEST HISTORY',
-          subtitle: 'Recent learning and exam sessions for this subject.',
+          subtitle: 'List of Completed sessions for this subject.',
         ),
         const SizedBox(height: AppSpacing.sm),
-        historyAsync.when(
-          loading: () => _HistorySkeleton(borderColor: borderColor),
-          error: (_, _) =>
-              _HistoryLoadError(borderColor: borderColor, scheme: scheme),
-          data: (sessions) {
-            if (sessions.isEmpty) {
-              return _HistoryEmpty(
-                subject: subject,
-                displayName: displayName,
-                infoAsync: infoAsync,
-                borderColor: borderColor,
-              );
-            }
-            final visible = sessions.take(10).toList();
-            return Column(
-              children: [
-                for (var i = 0; i < visible.length; i++) ...[
-                  if (i > 0) const SizedBox(height: AppSpacing.cardListGap),
-                  _SessionRow(session: visible[i], borderColor: borderColor),
-                ],
-                if (sessions.length > 10) ...[
-                  const SizedBox(height: AppSpacing.md),
-                  Center(
-                    child: Text(
-                      '+ ${sessions.length - 10} more sessions',
-                      style: AppTextStyles.caption().copyWith(
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                ],
-              ],
-            );
-          },
-        ),
-      ],
-    );
-  }
-}
-
-class _HistoryLoadError extends StatelessWidget {
-  const _HistoryLoadError({required this.borderColor, required this.scheme});
-
-  final Color borderColor;
-  final ColorScheme scheme;
-
-  @override
-  Widget build(BuildContext context) {
-    return _SubjectPanel(
-      borderColor: borderColor,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.error_outline, size: 20, color: scheme.onSurfaceVariant),
-          const SizedBox(width: AppSpacing.md),
-          Expanded(
-            child: Text(
-              'We could not load your test history. Try again in a moment.',
-              style: AppTextStyles.caption().copyWith(
-                color: scheme.onSurfaceVariant,
-                height: 1.45,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _HistoryEmpty extends StatelessWidget {
-  const _HistoryEmpty({
-    required this.subject,
-    required this.displayName,
-    required this.infoAsync,
-    required this.borderColor,
-  });
-
-  final String subject;
-  final String displayName;
-  final AsyncValue<SubjectInfo?> infoAsync;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final info = infoAsync.asData?.value;
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(AppSpacing.xl),
-      decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
-      child: Column(
-        children: [
-          Icon(
-            Icons.history_outlined,
-            size: 32,
-            color: scheme.onSurfaceVariant,
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            'No test history yet.',
-            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            'Start a test to see your results here.',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.lg),
-          OutlinedButton(
-            onPressed: info == null
-                ? null
-                : () {
-                    if (!context.mounted) return;
-                    showTestConfigBottomSheet(
-                      context: context,
-                      args: TestConfigSheetArgs(
-                        subject: subject,
-                        subjectDisplayName: displayName,
-                        availableQuestionCount: info.questionCount,
-                        topicCountWhenSubjectOnly: info.topicCount,
-                        onSessionCreated: (id) => context.push('/test/$id'),
-                      ),
-                    );
-                  },
-            child: Text('Start a test', style: AppTextStyles.label()),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _HistorySkeleton extends StatelessWidget {
-  const _HistorySkeleton({required this.borderColor});
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        for (var i = 0; i < 3; i++) ...[
-          if (i > 0) const SizedBox(height: AppSpacing.cardListGap),
-          Container(
+        countAsync.when(
+          loading: () => Container(
             height: 72,
             decoration: BoxDecoration(
               color: scheme.surfaceContainerLow,
               borderRadius: BorderRadius.circular(AppRadius.lg),
             ),
           ),
-        ],
-      ],
-    );
-  }
-}
-
-class _SessionRow extends StatelessWidget {
-  const _SessionRow({required this.session, required this.borderColor});
-
-  final SessionSummary session;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final isLearning = session.mode == 'learning';
-    final modeLabel = isLearning ? 'Learning' : 'Exam';
-    final modeColor = isLearning ? AppColors.primary : AppColors.info;
-    final modeBg = isLearning ? AppColors.correctBg : AppColors.infoBg;
-
-    final accuracy = session.accuracy;
-    final correct = session.correct;
-    final total = session.questionCount;
-    final scoreText = accuracy != null && correct != null
-        ? '$correct/$total correct · ${accuracy.toStringAsFixed(0)}%'
-        : '$total questions';
-
-    return Material(
-      color: AppColors.transparent,
-      child: InkWell(
-        onTap: () => context.push('/history/${session.sessionId}'),
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        child: Container(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          decoration: BoxDecoration(
-            color: scheme.surface,
-            borderRadius: BorderRadius.circular(AppRadius.lg),
-            border: Border.all(color: borderColor, width: 0.5),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: AppSpacing.sm,
-                            vertical: 2,
-                          ),
-                          decoration: BoxDecoration(
-                            color: modeBg,
-                            borderRadius: BorderRadius.circular(AppRadius.sm),
-                          ),
-                          child: Text(
-                            modeLabel,
-                            style: AppTextStyles.caption().copyWith(
-                              color: modeColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: AppSpacing.sm),
-                        Text(
-                          _relativeDate(session.createdAt),
-                          style: AppTextStyles.caption().copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Text(
-                      scoreText,
-                      style: AppTextStyles.bodySm().copyWith(
-                        color: scheme.onSurface,
-                      ),
-                    ),
-                    if (session.topic != null) ...[
-                      const SizedBox(height: AppSpacing.xs),
-                      Text(
-                        session.topic!,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppTextStyles.caption().copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
-                  ],
+          error: (_, _) => _SubjectPanel(
+            borderColor: borderColor,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.error_outline,
+                  size: 20,
+                  color: scheme.onSurfaceVariant,
                 ),
-              ),
-              Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
-            ],
+                const SizedBox(width: AppSpacing.md),
+                Expanded(
+                  child: Text(
+                    'Could not load session count.',
+                    style: AppTextStyles.caption().copyWith(
+                      color: scheme.onSurfaceVariant,
+                      height: 1.45,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => ref.invalidate(
+                    subjectCompletedSessionCountProvider(subject),
+                  ),
+                  child: Text('Retry', style: AppTextStyles.label()),
+                ),
+              ],
+            ),
+          ),
+          data: (count) => _PracticeCard(
+            icon: Icons.history_rounded,
+            iconColor: AppColors.info,
+            title: 'View test history',
+            subtitle: count == 0
+                ? 'No completed sessions yet'
+                : '$count completed session${count == 1 ? '' : 's'} · paginated',
+            isPrimary: false,
+            borderColor: borderColor,
+            isDark: isDark,
+            onTap: () => context.push(
+              '/subject/${Uri.encodeComponent(subject)}/history',
+            ),
           ),
         ),
-      ),
+      ],
     );
-  }
-
-  String _relativeDate(DateTime dt) {
-    final now = DateTime.now();
-    final diff = now.difference(dt);
-    if (diff.inDays == 0) return 'Today';
-    if (diff.inDays == 1) return 'Yesterday';
-    if (diff.inDays < 7) return '${diff.inDays} days ago';
-    return DateFormat('d MMM y').format(dt);
   }
 }
 
@@ -982,22 +757,130 @@ class _InsightsSection extends ConsumerWidget {
         ),
         const SizedBox(height: AppSpacing.sm),
         mockPrepAsync.when(
-          loading: () => _MockPrepInsightsSkeleton(borderColor: borderColor),
+          loading: () => _MockPrepInsightsSkeleton(
+            borderColor: borderColor,
+            displayName: displayName,
+          ),
           error: (e, _) => _MockPrepLoadError(
             borderColor: borderColor,
             onRetry: () =>
                 ref.invalidate(subjectMockPrepInsightsProvider(subject)),
           ),
-          data: (mock) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _ReviseBeforeNextMockCard(mock: mock, borderColor: borderColor),
-              const SizedBox(height: AppSpacing.sm),
-              _MockSafeAreasCard(mock: mock, borderColor: borderColor),
-            ],
+          data: (mock) => _AdviceForSubjectMockPrepGroup(
+            displayName: displayName,
+            mock: mock,
+            borderColor: borderColor,
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Mock-prep revise + safe cards grouped under one subject-scoped heading.
+class _AdviceForSubjectMockPrepGroup extends StatefulWidget {
+  const _AdviceForSubjectMockPrepGroup({
+    required this.displayName,
+    required this.mock,
+    required this.borderColor,
+  });
+
+  final String displayName;
+  final SubjectMockPrepInsights mock;
+  final Color borderColor;
+
+  @override
+  State<_AdviceForSubjectMockPrepGroup> createState() =>
+      _AdviceForSubjectMockPrepGroupState();
+}
+
+class _AdviceForSubjectMockPrepGroupState
+    extends State<_AdviceForSubjectMockPrepGroup>
+    with SingleTickerProviderStateMixin {
+  bool _expanded = true;
+  late final TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  double _tabViewHeight(BuildContext context) {
+    final h = MediaQuery.sizeOf(context).height * 0.40;
+    return h.clamp(260.0, 460.0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return _SubjectPanel(
+      borderColor: widget.borderColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => setState(() => _expanded = !_expanded),
+              borderRadius: BorderRadius.circular(AppRadius.md),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Advice for ${widget.displayName}',
+                        style: AppTextStyles.h2().copyWith(
+                          color: scheme.onSurface,
+                        ),
+                      ),
+                    ),
+                    Icon(
+                      _expanded ? Icons.expand_less : Icons.expand_more,
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          if (_expanded) ...[
+            const SizedBox(height: AppSpacing.md),
+            TabBar(
+              controller: _tabController,
+              tabs: const [
+                Tab(text: 'Revise'),
+                Tab(text: 'Safe areas'),
+              ],
+            ),
+            SizedBox(
+              height: _tabViewHeight(context),
+              child: TabBarView(
+                controller: _tabController,
+                physics: const ClampingScrollPhysics(),
+                children: [
+                  _ReviseBeforeNextMockCard(
+                    mock: widget.mock,
+                    borderColor: widget.borderColor,
+                  ),
+                  _MockSafeAreasCard(
+                    mock: widget.mock,
+                    borderColor: widget.borderColor,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 }
@@ -1088,8 +971,9 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
 
     return _MockPrepThemedPanel(
       isRevise: true,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        physics: const ClampingScrollPhysics(),
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1099,8 +983,9 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   'Revise Before Your Next Mock',
-                  style: AppTextStyles.label().copyWith(
+                  style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurface,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -1115,7 +1000,7 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
             isRevise: true,
           ),
           const SizedBox(height: AppSpacing.lg),
-          Divider(),
+          Divider(color: scheme.outlineVariant.withValues(alpha: 0.35)),
           const SizedBox(height: AppSpacing.lg),
           const _MockPrepSubheading('Topics to revise'),
           const SizedBox(height: AppSpacing.xs),
@@ -1131,23 +1016,16 @@ class _ReviseBeforeNextMockCard extends StatelessWidget {
               borderColor: borderColor,
               accentTint: accent,
             )
-          else
-            Column(
-              children: [
-                for (var i = 0; i < mock.reviseTopics.length; i++) ...[
-                  if (i > 0)
-                    Divider(
-                      height: AppSpacing.lg,
-                      color: divider,
-                      thickness: 0.5,
-                    ),
-                  _ReviseBeforeMockRowWidget(
-                    row: mock.reviseTopics[i],
-                    statColor: accent,
-                  ),
-                ],
-              ],
-            ),
+          else ...[
+            for (var i = 0; i < mock.reviseTopics.length; i++) ...[
+              if (i > 0)
+                Divider(height: AppSpacing.lg, color: divider, thickness: 0.5),
+              _ReviseBeforeMockRowWidget(
+                row: mock.reviseTopics[i],
+                statColor: accent,
+              ),
+            ],
+          ],
         ],
       ),
     );
@@ -1204,8 +1082,9 @@ class _MockSafeAreasCard extends StatelessWidget {
 
     return _MockPrepThemedPanel(
       isRevise: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        physics: const ClampingScrollPhysics(),
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1215,8 +1094,9 @@ class _MockSafeAreasCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   'Safe Areas for Higher Attempts',
-                  style: AppTextStyles.label().copyWith(
+                  style: AppTextStyles.bodySm().copyWith(
                     color: scheme.onSurface,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -1230,7 +1110,7 @@ class _MockSafeAreasCard extends StatelessWidget {
             isRevise: false,
           ),
           const SizedBox(height: AppSpacing.lg),
-          Divider(),
+          Divider(color: scheme.outlineVariant.withValues(alpha: 0.35)),
           const SizedBox(height: AppSpacing.lg),
           const _MockPrepSubheading('List of Topics'),
           if (!mock.hasSafeData)
@@ -1251,20 +1131,13 @@ class _MockSafeAreasCard extends StatelessWidget {
               borderColor: borderColor,
               accentTint: accent,
             )
-          else
-            Column(
-              children: [
-                for (var i = 0; i < mock.safeTopics.length; i++) ...[
-                  if (i > 0)
-                    Divider(
-                      height: AppSpacing.lg,
-                      color: divider,
-                      thickness: 0.5,
-                    ),
-                  _MockSafeAreaRow(row: mock.safeTopics[i], statColor: accent),
-                ],
-              ],
-            ),
+          else ...[
+            for (var i = 0; i < mock.safeTopics.length; i++) ...[
+              if (i > 0)
+                Divider(height: AppSpacing.lg, color: divider, thickness: 0.5),
+              _MockSafeAreaRow(row: mock.safeTopics[i], statColor: accent),
+            ],
+          ],
         ],
       ),
     );
@@ -1333,26 +1206,44 @@ class _MockPrepLoadError extends StatelessWidget {
 }
 
 class _MockPrepInsightsSkeleton extends StatelessWidget {
-  const _MockPrepInsightsSkeleton({required this.borderColor});
+  const _MockPrepInsightsSkeleton({
+    required this.borderColor,
+    required this.displayName,
+  });
+
   final Color borderColor;
+  final String displayName;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Column(
-      children: [
-        for (var i = 0; i < 2; i++) ...[
-          if (i > 0) const SizedBox(height: AppSpacing.sm),
-          Container(
-            height: 120,
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
-              border: Border.all(color: borderColor.withValues(alpha: 0.2)),
+    return _SubjectPanel(
+      borderColor: borderColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  'Advice for $displayName',
+                  style: AppTextStyles.h2().copyWith(color: scheme.onSurface),
+                ),
+              ),
+              Icon(Icons.expand_more, color: scheme.onSurfaceVariant),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.md),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(2),
+            child: LinearProgressIndicator(
+              minHeight: 3,
+              backgroundColor: scheme.surfaceContainerHighest,
             ),
           ),
         ],
-      ],
+      ),
     );
   }
 }

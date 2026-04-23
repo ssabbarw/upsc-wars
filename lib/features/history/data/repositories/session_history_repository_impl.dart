@@ -174,6 +174,69 @@ class SessionHistoryRepositoryImpl implements SessionHistoryRepository {
   }
 
   @override
+  Future<int> countCompletedSessionsForSubject(String subject) =>
+      _userDb.sessionsDao.countCompletedSessionsBySubject(subject);
+
+  @override
+  Future<List<SessionSummary>> getCompletedSessionSummariesPage({
+    required String subject,
+    required int limit,
+    required int offset,
+  }) async {
+    final sessionRows =
+        await _userDb.sessionsDao.getCompletedSessionsBySubjectOrderedPaged(
+      subject: subject,
+      limit: limit,
+      offset: offset,
+    );
+    final out = <SessionSummary>[];
+    for (final s in sessionRows) {
+      final rows = await _userDb.sessionQuestionsDao.getSessionQuestionsOrdered(
+        s.id,
+      );
+      var correct = 0, wrong = 0, timeSum = 0, timeCount = 0;
+      for (final r in rows) {
+        if (r.status == 'correct') {
+          correct++;
+          if (r.timeSpentSecs != null) {
+            timeSum += r.timeSpentSecs!;
+            timeCount++;
+          }
+        }
+        if (r.status == 'wrong') {
+          wrong++;
+          if (r.timeSpentSecs != null) {
+            timeSum += r.timeSpentSecs!;
+            timeCount++;
+          }
+        }
+      }
+      final attempted = correct + wrong;
+      out.add(
+        SessionSummary(
+          sessionId: s.id,
+          subject: s.subject,
+          topic: s.topic,
+          mode: s.mode,
+          status: s.status,
+          createdAt: s.createdAt,
+          questionCount: s.questionCount,
+          correct: correct,
+          wrong: wrong,
+          accuracy: attempted == 0 ? 0.0 : (correct / attempted) * 100,
+          netScore: (correct * 2) - (wrong * 0.66),
+          avgTimeSpentSecs: timeCount == 0 ? null : (timeSum / timeCount),
+          accuracyTier: _tierFor(
+            attempted,
+            attempted == 0 ? 0.0 : (correct / attempted) * 100,
+          ),
+        ),
+      );
+    }
+    return out;
+  }
+
+  @override
   Future<int> getDailyProgressCount(DateTime date) async {
     final start = DateTime(date.year, date.month, date.day);
     final end = start.add(const Duration(days: 1));

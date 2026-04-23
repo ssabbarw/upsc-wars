@@ -49,6 +49,7 @@ import '../../features/results/screens/results_screen.dart';
 import '../../features/revision_queue/screens/revision_queue_screen.dart';
 import '../../features/revision_queue/screens/revision_mode_screen.dart';
 import '../../features/subject_detail/screens/subject_detail_screen.dart';
+import '../../features/subject_detail/screens/subject_history_screen.dart';
 import '../../features/subject_detail/screens/topics_list_screen.dart';
 import '../../features/subject_test/screens/subject_test_screen.dart';
 import '../../features/test_engine/screens/test_engine_screen.dart';
@@ -264,6 +265,14 @@ GoRouter appRouter(Ref ref) {
         path: '/subject/:name/topics',
         name: 'subject_topics',
         builder: (context, state) => TopicsListScreen(
+          subject: Uri.decodeComponent(state.pathParameters['name']!),
+        ),
+      ),
+      GoRoute(
+        parentNavigatorKey: rootNavigatorKey,
+        path: '/subject/:name/history',
+        name: 'subject_history',
+        builder: (context, state) => SubjectHistoryScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
       ),

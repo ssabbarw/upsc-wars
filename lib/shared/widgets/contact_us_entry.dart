@@ -179,11 +179,43 @@ class _SheetTile extends StatelessWidget {
 
 /// Subtle inline control that opens [showContactUsSheet].
 class ContactUsTextButton extends StatelessWidget {
-  const ContactUsTextButton({super.key});
+  const ContactUsTextButton({super.key, this.leadingText});
+
+  /// Shown before the link, e.g. `'Want further clarity? '` (include trailing space).
+  final String? leadingText;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final linkStyle = AppTextStyles.labelSm().copyWith(
+      color: scheme.primary,
+      fontWeight: FontWeight.w600,
+      decoration: TextDecoration.underline,
+      decorationColor: scheme.primary,
+    );
+
+    if (leadingText != null && leadingText!.isNotEmpty) {
+      return Text.rich(
+        textAlign: TextAlign.center,
+        TextSpan(
+          style: AppTextStyles.bodySm().copyWith(
+            color: scheme.onSurfaceVariant,
+            height: 1.45,
+          ),
+          children: [
+            TextSpan(text: leadingText),
+            WidgetSpan(
+              alignment: PlaceholderAlignment.middle,
+              child: GestureDetector(
+                onTap: () => showContactUsSheet(context),
+                child: Text('Contact us', style: linkStyle),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return TextButton(
       onPressed: () => showContactUsSheet(context),
       style: TextButton.styleFrom(

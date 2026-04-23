@@ -69,6 +69,7 @@ class _MockPrepWhySheet extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: AppSpacing.lg),
           ConstrainedBox(
@@ -151,7 +152,9 @@ class _MockPrepWhySheet extends StatelessWidget {
                   ),
                 ],
                 const SizedBox(height: AppSpacing.xl),
-                const _ContactClarityLine(),
+                const ContactUsTextButton(
+                  leadingText: 'Want further clarity? ',
+                ),
                 const SizedBox(height: AppSpacing.lg),
               ],
             ),
@@ -169,9 +172,7 @@ class _MockPrepWhySheet extends StatelessWidget {
                 backgroundColor: AppColors.primary,
                 foregroundColor: AppColors.onPrimary,
                 elevation: 0,
-                padding: const EdgeInsets.symmetric(
-                  vertical: AppSpacing.md,
-                ),
+                padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
                 minimumSize: const Size(double.infinity, 48),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(AppRadius.lg),
@@ -229,40 +230,6 @@ class _TitleBlock extends StatelessWidget {
           color: scheme.onSurface,
           fontSize: 16,
         ),
-      ),
-    );
-  }
-}
-
-class _ContactClarityLine extends StatelessWidget {
-  const _ContactClarityLine();
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final body = AppTextStyles.bodySm().copyWith(
-      color: scheme.onSurfaceVariant,
-      height: 1.45,
-    );
-    final link = AppTextStyles.labelSm().copyWith(
-      color: scheme.primary,
-      fontWeight: FontWeight.w600,
-      decoration: TextDecoration.underline,
-      decorationColor: scheme.primary,
-    );
-    return Text.rich(
-      TextSpan(
-        style: body,
-        children: [
-          const TextSpan(text: 'Want further clarity? '),
-          WidgetSpan(
-            alignment: PlaceholderAlignment.middle,
-            child: GestureDetector(
-              onTap: () => showContactUsSheet(context),
-              child: Text('Contact us', style: link),
-            ),
-          ),
-        ],
       ),
     );
   }
