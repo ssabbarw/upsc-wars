@@ -1534,11 +1534,6 @@ class _AdviceForSubjectMockPrepGroupState
     super.dispose();
   }
 
-  double _tabPanelHeight(BuildContext context) {
-    final h = MediaQuery.sizeOf(context).height * 0.56;
-    return h.clamp(360.0, 640.0);
-  }
-
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
@@ -1608,38 +1603,23 @@ class _AdviceForSubjectMockPrepGroupState
             },
           ),
           const SizedBox(height: AppSpacing.sm),
-          SizedBox(
-            height: _tabPanelHeight(context),
-            child: TabBarView(
-              controller: _tabController,
-              physics: const BouncingScrollPhysics(),
-              children: [
-                SingleChildScrollView(
-                  physics: const ClampingScrollPhysics(),
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: _ReviseBeforeNextMockCard(
+          ListenableBuilder(
+            listenable: _tabController,
+            builder: (context, _) {
+              return _tabController.index == 0
+                  ? _ReviseBeforeNextMockCard(
                       subject: widget.subject,
                       subjectDisplayName: widget.displayName,
                       mock: widget.mock,
                       borderColor: widget.borderColor,
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(
-                  physics: const ClampingScrollPhysics(),
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: _MockSafeAreasCard(
+                    )
+                  : _MockSafeAreasCard(
                       subject: widget.subject,
                       subjectDisplayName: widget.displayName,
                       mock: widget.mock,
                       borderColor: widget.borderColor,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+                    );
+            },
           ),
         ],
       ],
