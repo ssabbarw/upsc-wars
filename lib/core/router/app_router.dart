@@ -153,6 +153,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/onboarding',
+        name: 'onboarding',
         builder: (context, state) => const OnboardingFlowScreen(),
       ),
       StatefulShellRoute.indexedStack(
@@ -326,6 +327,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/test/:sessionId',
+        name: 'test_session',
         builder: (context, state) =>
             TestEngineScreen(sessionId: state.pathParameters['sessionId']!),
       ),
@@ -338,6 +340,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/results/:sessionId',
+        name: 'session_results',
         builder: (context, state) =>
             ResultsScreen(sessionId: state.pathParameters['sessionId']!),
       ),

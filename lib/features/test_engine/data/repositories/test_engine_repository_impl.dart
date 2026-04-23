@@ -408,6 +408,11 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       sessionId,
       DateTime.now(),
     );
+    final completedSessionCount = await _userDb.sessionsDao
+        .countCompletedSessions();
+    if (completedSessionCount == 1) {
+      await _analytics.track(const FirstSessionCompletedEvent());
+    }
     await _updateTopicStatsForSession(sessionId);
 
     final prevStreak = _prefsService.currentStreak;

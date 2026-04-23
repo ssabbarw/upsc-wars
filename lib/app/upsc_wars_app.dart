@@ -8,6 +8,7 @@ import '../core/debug/upsc_wars_trace.dart';
 import '../core/analytics/analytics_app_lifecycle_observer.dart';
 import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
+import '../core/analytics/push_notification_status_snapshot.dart';
 import '../core/constants/app_constants.dart';
 import '../core/constants/prelims_debug_flags.dart';
 import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
@@ -147,6 +148,7 @@ class _RootMaterialApp extends HookConsumerWidget {
 
     useEffect(() {
       unawaited(Analytics.track(ref, const AppOpenedEvent()));
+      unawaited(trackPushNotificationStatusSnapshot(ref));
       final analyticsLifecycle = AnalyticsAppLifecycleObserver(ref);
       WidgetsBinding.instance.addObserver(analyticsLifecycle);
       return () => WidgetsBinding.instance.removeObserver(analyticsLifecycle);

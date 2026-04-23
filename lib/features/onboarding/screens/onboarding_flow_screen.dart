@@ -8,6 +8,8 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/analytics.dart';
+import '../../../core/analytics/analytics_events.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -24,6 +26,17 @@ double _onbScale(BuildContext context) {
 double _onb(BuildContext context, double designPx) =>
     designPx * _onbScale(context);
 
+/// Horizontal pager step id for [OnboardingStepDurationEvent].
+String _onboardingStepIdForIndex(int i) {
+  return switch (i) {
+    0 => 'score_story',
+    1 => 'mechanism',
+    2 => 'diagnosis',
+    3 => 'loop',
+    _ => 'unknown',
+  };
+}
+
 /// Four-step first-run onboarding (score story → mechanism → diagnosis → loop).
 class OnboardingFlowScreen extends HookConsumerWidget {
   const OnboardingFlowScreen({super.key});
@@ -34,10 +47,17 @@ class OnboardingFlowScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController = usePageController();
     final page = useState(0);
+    final pageEnteredAt = useRef(DateTime.now());
+    final onboardingFlowStartedAt = useRef(DateTime.now());
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
     final hPad = _onb(context, 20);
     final vPadSm = _onb(context, 8);
+
+    useEffect(() {
+      unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
+      return null;
+    }, const []);
 
     return PopScope(
       canPop: false,
@@ -64,10 +84,35 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                         controller: pageController,
                         physics: const BouncingScrollPhysics(),
                         onPageChanged: (i) {
+                          final from = page.value;
+                          final ms = DateTime.now()
+                              .difference(pageEnteredAt.value)
+                              .inMilliseconds;
+                          if (ms >= 0) {
+                            unawaited(
+                              Analytics.track(
+                                ref,
+                                OnboardingStepDurationEvent(
+                                  step: _onboardingStepIdForIndex(from),
+                                  durationMs: ms,
+                                ),
+                              ),
+                            );
+                          }
+                          pageEnteredAt.value = DateTime.now();
                           page.value = i;
                         },
                         children: [
-                          const _ScoreStoryPage(),
+                          _ScoreStoryPage(
+                            onFirstRevealCardSwipe: () {
+                              unawaited(
+                                Analytics.track(
+                                  ref,
+                                  const OnboardingRevealTrialSwipedEvent(),
+                                ),
+                              );
+                            },
+                          ),
                           const _MechanismPage(),
                           const _DiagnosisPage(),
                           const _LoopPage(),
@@ -92,8 +137,16 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           if (isLast) ...[
                             SizedBox(height: _onb(context, 10)),
                             FilledButton(
-                              onPressed: () =>
-                                  unawaited(_complete(ref, context)),
+                              onPressed: () => unawaited(
+                                _complete(
+                                  ref,
+                                  context,
+                                  lastStepIndex: page.value,
+                                  lastStepStartedAt: pageEnteredAt.value,
+                                  onboardingFlowStartedAt:
+                                      onboardingFlowStartedAt.value,
+                                ),
+                              ),
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.primary,
                                 foregroundColor: AppColors.onPrimary,
@@ -134,7 +187,38 @@ class OnboardingFlowScreen extends HookConsumerWidget {
   }
 }
 
-Future<void> _complete(WidgetRef ref, BuildContext context) async {
+Future<void> _complete(
+  WidgetRef ref,
+  BuildContext context, {
+  required int lastStepIndex,
+  required DateTime lastStepStartedAt,
+  required DateTime onboardingFlowStartedAt,
+}) async {
+  final ms = DateTime.now()
+      .difference(lastStepStartedAt)
+      .inMilliseconds;
+  if (ms >= 0) {
+    unawaited(
+      Analytics.track(
+        ref,
+        OnboardingStepDurationEvent(
+          step: _onboardingStepIdForIndex(lastStepIndex),
+          durationMs: ms,
+        ),
+      ),
+    );
+  }
+  final totalMs = DateTime.now()
+      .difference(onboardingFlowStartedAt)
+      .inMilliseconds;
+  if (totalMs >= 0) {
+    unawaited(
+      Analytics.track(
+        ref,
+        OnboardingFlowCompletedEvent(totalDurationMs: totalMs),
+      ),
+    );
+  }
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
   ref.invalidate(prefsServiceProvider);
@@ -593,7 +677,9 @@ class _DraggableSplitScoreCardState extends State<_DraggableSplitScoreCard> {
 
 /// First step: split “latest test vs hidden risk” story (reference layout).
 class _ScoreStoryPage extends StatefulWidget {
-  const _ScoreStoryPage();
+  const _ScoreStoryPage({this.onFirstRevealCardSwipe});
+
+  final VoidCallback? onFirstRevealCardSwipe;
 
   @override
   State<_ScoreStoryPage> createState() => _ScoreStoryPageState();
@@ -644,7 +730,10 @@ class _ScoreStoryPageState extends State<_ScoreStoryPage> {
           ),
         ),
         SizedBox(height: _onb(context, 10)),
-        _RevealTrialCard(pageController: _revealScroll),
+        _RevealTrialCard(
+          pageController: _revealScroll,
+          onFirstVerticalReveal: widget.onFirstRevealCardSwipe,
+        ),
         SizedBox(height: _onb(context, 10)),
         Text(
           'DISCOVER INSIGHTS LIKE',
@@ -682,9 +771,13 @@ class _ScoreStoryPageState extends State<_ScoreStoryPage> {
 /// Trial: vertical [PageView] (typical stats vs UPSC Wars); pager dots sit
 /// on top of the slides (semi-transparent pill, trailing side).
 class _RevealTrialCard extends StatefulWidget {
-  const _RevealTrialCard({required this.pageController});
+  const _RevealTrialCard({
+    required this.pageController,
+    this.onFirstVerticalReveal,
+  });
 
   final PageController pageController;
+  final VoidCallback? onFirstVerticalReveal;
 
   @override
   State<_RevealTrialCard> createState() => _RevealTrialCardState();
@@ -702,6 +795,7 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
   PageController get _pageController => widget.pageController;
 
   int _pageIndex = 0;
+  bool _firedFirstRevealAnalytics = false;
 
   Future<void> _playSwipeUpHint() async {
     if (!mounted || _pageIndex != 0) return;
@@ -1103,6 +1197,12 @@ class _RevealTrialCardState extends State<_RevealTrialCard> {
                   controller: _pageController,
                   physics: const BouncingScrollPhysics(),
                   onPageChanged: (i) {
+                    if (i == 1 &&
+                        _pageIndex == 0 &&
+                        !_firedFirstRevealAnalytics) {
+                      _firedFirstRevealAnalytics = true;
+                      widget.onFirstVerticalReveal?.call();
+                    }
                     setState(() => _pageIndex = i);
                   },
                   children: [_surfaceSlide(context), _hiddenSlide(context)],

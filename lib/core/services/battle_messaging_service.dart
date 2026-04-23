@@ -172,6 +172,17 @@ class BattleMessagingService {
       s == AuthorizationStatus.authorized ||
       s == AuthorizationStatus.provisional;
 
+  /// Stable label for [AnalyticsEvent] payloads (not i18n).
+  static String notificationAuthorizationStatusLabel(AuthorizationStatus s) {
+    if (kIsWeb) return 'web_authorized';
+    return switch (s) {
+      AuthorizationStatus.authorized => 'authorized',
+      AuthorizationStatus.denied => 'denied',
+      AuthorizationStatus.notDetermined => 'not_determined',
+      AuthorizationStatus.provisional => 'provisional',
+    };
+  }
+
   /// System notification permission + token sync (call after user-facing prompt).
   static Future<AuthorizationStatus?> requestPushAuthorizationAndSync() async {
     if (kIsWeb) return null;

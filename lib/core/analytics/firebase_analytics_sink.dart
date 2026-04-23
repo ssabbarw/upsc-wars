@@ -137,6 +137,53 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         await _log('battle_invite_outcome', {'kind': kind});
       case BattleInviteAcceptedEvent():
         await _log('battle_invite_accepted', const {});
+      case PushNotificationStatusSnapshotEvent(
+          :final status,
+          :final allowsPush,
+        ):
+        await _analytics.setUserProperty(
+          name: 'push_alerts',
+          value: switch (status) {
+            'authorized' => 'on',
+            'provisional' => 'on',
+            'not_determined' => 'not_determined',
+            'denied' => 'off',
+            'web_authorized' => 'on',
+            _ => 'unknown',
+          },
+        );
+        await _log('push_permission_snapshot', {
+          'status': status,
+          'allows_push': allowsPush ? 1 : 0,
+        });
+      case OnboardingStepDurationEvent(
+          :final step,
+          :final durationMs,
+        ):
+        await _log('onboarding_step_duration', {
+          'step': step,
+          'duration_ms': durationMs,
+        });
+      case OnboardingRevealTrialSwipedEvent():
+        await _log('onboarding_reveal_trial_swiped', const {});
+      case OnboardingFlowOpenedEvent():
+        await _log('onboarding_flow_opened', const {});
+      case OnboardingFlowCompletedEvent(:final totalDurationMs):
+        await _log('onboarding_flow_completed', {
+          'total_duration_ms': totalDurationMs,
+        });
+      case DeferredPushEducationModalOutcomeEvent(
+          :final source,
+          :final modalIndex,
+          :final tappedEnableNotifications,
+        ):
+        await _log('deferred_push_education_outcome', {
+          'source': source,
+          'modal_index': modalIndex,
+          'tapped_enable': tappedEnableNotifications ? 1 : 0,
+        });
+      case FirstSessionCompletedEvent():
+        await _log('first_session_completed', const {});
     }
   }
 

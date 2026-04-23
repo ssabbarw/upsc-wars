@@ -1,7 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/analytics.dart';
+import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/debug/upsc_wars_trace.dart';
 import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/providers/user_database_provider.dart';
@@ -42,7 +46,12 @@ class DeferredPushPermissionCoordinator {
   }) async {
     if (!_takeCommunitySignInArmed()) return;
     onSignedInFromCommunityTab?.call();
-    await _offerIfNeeded(context, ref, requireCompletedSession: false);
+    await _offerIfNeeded(
+      context,
+      ref,
+      requireCompletedSession: false,
+      source: 'community_signin',
+    );
   }
 
   /// After a completed test: offer the notification education sheet from explicit
@@ -51,7 +60,12 @@ class DeferredPushPermissionCoordinator {
     BuildContext context,
     WidgetRef ref,
   ) async {
-    await _offerIfNeeded(context, ref, requireCompletedSession: true);
+    await _offerIfNeeded(
+      context,
+      ref,
+      requireCompletedSession: true,
+      source: 'post_test',
+    );
   }
 
   /// Whether to show the one-line home notification hint (after 2 modals).
@@ -69,6 +83,7 @@ class DeferredPushPermissionCoordinator {
     BuildContext context,
     WidgetRef ref, {
     required bool requireCompletedSession,
+    required String source,
   }) async {
     if (kIsWeb) return;
     try {
@@ -89,6 +104,17 @@ class DeferredPushPermissionCoordinator {
         if (!context.mounted) return;
         final svc = await ref.read(prefsServiceProvider.future);
         svc.deferredPushModalShownCountV2 = svc.deferredPushModalShownCountV2 + 1;
+        final modalIndex = svc.deferredPushModalShownCountV2;
+        unawaited(
+          Analytics.track(
+            ref,
+            DeferredPushEducationModalOutcomeEvent(
+              source: source,
+              modalIndex: modalIndex,
+              tappedEnableNotifications: wantSystemPrompt == true,
+            ),
+          ),
+        );
         if (wantSystemPrompt == true) {
           await BattleMessagingService.requestPushAuthorizationAndSync();
         }
@@ -98,7 +124,7 @@ class DeferredPushPermissionCoordinator {
     } catch (e, st) {
       upscWarsTrace(
         'DeferredPushPermissionCoordinator._offerIfNeeded '
-        '(requireCompletedSession=$requireCompletedSession)',
+        '(requireCompletedSession=$requireCompletedSession, source=$source)',
         error: e,
         stackTrace: st,
       );
