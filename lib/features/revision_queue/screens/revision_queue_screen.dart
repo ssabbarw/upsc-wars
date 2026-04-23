@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/session_config.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -45,7 +46,19 @@ class RevisionQueueScreen extends HookConsumerWidget {
               padding: const EdgeInsets.fromLTRB(AppSpacing.sm, AppSpacing.sm, AppSpacing.lg, AppSpacing.sm),
               child: Row(children: [
                 IconButton(
-                  onPressed: () => context.canPop() ? context.pop() : context.go('/'),
+                  onPressed: () {
+                    ScreenFlow.logAction(
+                      ref,
+                      screenName: ScreenFlow.revisionQueue,
+                      actionId: 'back',
+                      actionKind: 'back',
+                    );
+                    if (context.canPop()) {
+                      context.pop();
+                    } else {
+                      context.go('/');
+                    }
+                  },
                   icon: const Icon(Icons.chevron_left),
                 ),
                 Expanded(

@@ -8,8 +8,10 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/providers/prefs_provider.dart';
 import '../../../core/theme/app_colors.dart';
@@ -49,6 +51,9 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     final page = useState(0);
     final pageEnteredAt = useRef(DateTime.now());
     final onboardingFlowStartedAt = useRef(DateTime.now());
+    final onboardingFlowCompleted = useRef(false);
+    final highestPageIndex = useRef(0);
+    final lastPageIndex = useRef(0);
     final bottom = MediaQuery.paddingOf(context).bottom;
     final isLast = page.value == _pageCount - 1;
     final hPad = _onb(context, 20);
@@ -57,6 +62,29 @@ class OnboardingFlowScreen extends HookConsumerWidget {
     useEffect(() {
       unawaited(Analytics.track(ref, const OnboardingFlowOpenedEvent()));
       return null;
+    }, const []);
+
+    useEffect(() {
+      return () {
+        if (onboardingFlowCompleted.value) return;
+        final ms = DateTime.now()
+            .difference(onboardingFlowStartedAt.value)
+            .inMilliseconds;
+        if (ms < 0) return;
+        unawaited(
+          Analytics.track(
+            ref,
+            OnboardingExitedIncompleteEvent(
+              highestStep: _onboardingStepIdForIndex(
+                highestPageIndex.value,
+              ),
+              lastStep: _onboardingStepIdForIndex(lastPageIndex.value),
+              elapsedMs: ms,
+              reachedLastStep: highestPageIndex.value == _pageCount - 1,
+            ),
+          ),
+        );
+      };
     }, const []);
 
     return PopScope(
@@ -101,6 +129,10 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           }
                           pageEnteredAt.value = DateTime.now();
                           page.value = i;
+                          lastPageIndex.value = i;
+                          if (i > highestPageIndex.value) {
+                            highestPageIndex.value = i;
+                          }
                         },
                         children: [
                           _ScoreStoryPage(
@@ -137,16 +169,26 @@ class OnboardingFlowScreen extends HookConsumerWidget {
                           if (isLast) ...[
                             SizedBox(height: _onb(context, 10)),
                             FilledButton(
-                              onPressed: () => unawaited(
-                                _complete(
+                              onPressed: () {
+                                ScreenFlow.logAction(
                                   ref,
-                                  context,
-                                  lastStepIndex: page.value,
-                                  lastStepStartedAt: pageEnteredAt.value,
-                                  onboardingFlowStartedAt:
-                                      onboardingFlowStartedAt.value,
-                                ),
-                              ),
+                                  screenName: ScreenFlow.onboarding,
+                                  actionId: 'get_started',
+                                );
+                                unawaited(
+                                  _complete(
+                                    ref,
+                                    context,
+                                    markFlowCompleted: () {
+                                      onboardingFlowCompleted.value = true;
+                                    },
+                                    lastStepIndex: page.value,
+                                    lastStepStartedAt: pageEnteredAt.value,
+                                    onboardingFlowStartedAt:
+                                        onboardingFlowStartedAt.value,
+                                  ),
+                                );
+                              },
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.primary,
                                 foregroundColor: AppColors.onPrimary,
@@ -190,10 +232,12 @@ class OnboardingFlowScreen extends HookConsumerWidget {
 Future<void> _complete(
   WidgetRef ref,
   BuildContext context, {
+  required void Function() markFlowCompleted,
   required int lastStepIndex,
   required DateTime lastStepStartedAt,
   required DateTime onboardingFlowStartedAt,
 }) async {
+  markFlowCompleted();
   final ms = DateTime.now()
       .difference(lastStepStartedAt)
       .inMilliseconds;
@@ -219,6 +263,12 @@ Future<void> _complete(
       ),
     );
   }
+  unawaited(
+    logActivationMilestoneOnce(
+      ref,
+      ActivationMilestones.onboardingFlowCompleted,
+    ),
+  );
   final prefs = await ref.read(prefsServiceProvider.future);
   prefs.patternInterruptOnboardingSeen = true;
   ref.invalidate(prefsServiceProvider);

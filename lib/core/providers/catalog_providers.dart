@@ -216,7 +216,11 @@ Future<UpdateRevisionQueueProgressUseCase> updateRevisionQueueProgressUseCase(Re
 
 @Riverpod(keepAlive: true)
 Future<BookmarksRepository> bookmarksRepository(Ref ref) async {
-  return BookmarksRepositoryImpl(userDb: ref.watch(userDatabaseProvider));
+  return BookmarksRepositoryImpl(
+    userDb: ref.watch(userDatabaseProvider),
+    prefs: await ref.watch(prefsServiceProvider.future),
+    analytics: ref.watch(analyticsServiceProvider),
+  );
 }
 
 @Riverpod(keepAlive: true)

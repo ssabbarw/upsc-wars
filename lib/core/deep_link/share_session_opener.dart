@@ -1,10 +1,16 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
 
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
+import 'package:upsc_wars/core/providers/analytics_provider.dart';
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
 import 'package:upsc_wars/core/domain/entities/test_question_share_map.dart';
@@ -199,4 +205,15 @@ Future<void> shareSessionQuestionsLink({
     topic: active.topic,
   );
   await SharePlus.instance.share(ShareParams(uri: uri));
+  if (kDebugMode) {
+    debugPrint('shareSessionQuestionsLink: shared $kind shareId=$shareId');
+  }
+  unawaited(() async {
+    final prefs = await ref.read(prefsServiceProvider.future);
+    await logActivationMilestoneForServices(
+      ref.read(analyticsServiceProvider),
+      prefs,
+      id: ActivationMilestones.firstScorecardShare,
+    );
+  }());
 }

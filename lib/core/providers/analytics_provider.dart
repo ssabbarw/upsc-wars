@@ -7,6 +7,8 @@ import 'user_database_provider.dart';
 
 part 'analytics_provider.g.dart';
 
+/// Global [AnalyticsService] wiring [FirebaseAnalyticsSink] and
+/// [LocalAnalyticsSink]; event meanings are on each [AnalyticsEvent] subclass.
 @Riverpod(keepAlive: true)
 AnalyticsService analyticsService(Ref ref) {
   final db = ref.watch(userDatabaseProvider);

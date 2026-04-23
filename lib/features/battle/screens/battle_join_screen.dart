@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/constants/timed_exam_debug_constants.dart';
@@ -123,6 +124,12 @@ class _BattleJoinScreenState extends ConsumerState<BattleJoinScreen> {
 
       unawaited(
         Analytics.track(ref, const BattleInviteAcceptedEvent()),
+      );
+      unawaited(
+        logActivationMilestoneOnce(
+          ref,
+          ActivationMilestones.firstBattleLobbyJoined,
+        ),
       );
 
       final hostName = (d['host_display_name'] as String?)?.trim();

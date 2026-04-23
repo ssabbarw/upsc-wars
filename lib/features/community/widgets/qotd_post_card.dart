@@ -1,7 +1,11 @@
+import 'dart:async' show unawaited;
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../core/analytics/activation_milestones.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/domain/entities/test_question.dart';
@@ -143,6 +147,11 @@ class _QotdPostCardState extends ConsumerState<QotdPostCard> {
         author: authorSnapshot,
       );
       if (!mounted || widget.post.id != postId) return;
+      if (!r.alreadyAttempted) {
+        unawaited(
+          logActivationMilestoneOnce(ref, ActivationMilestones.firstQotdAttempt),
+        );
+      }
       setState(() {
         _correct = r.correctCount;
         _wrong = r.wrongCount;

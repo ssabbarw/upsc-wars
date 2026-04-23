@@ -8,8 +8,11 @@ import '../services/battle_messaging_service.dart';
 
 DateTime? _lastPushStatusSnapshot;
 
-/// Fires [PushNotificationStatusSnapshotEvent] (debounced to avoid
-/// back-to-back duplicates on cold start when [AppOpened] and [resumed] run).
+/// Fires [PushNotificationStatusSnapshotEvent] — **OS push permission
+/// snapshot** (not in-app settings toggles) — and updates the GA4 user
+/// property `push_alerts` in [FirebaseAnalyticsSink] (see event class docs).
+/// **Debounced** to avoid back-to-back duplicates on cold start when
+/// [AppOpenedEvent] and [SessionStartedEvent] both run close together.
 Future<void> trackPushNotificationStatusSnapshot(WidgetRef ref) async {
   final now = DateTime.now();
   if (_lastPushStatusSnapshot != null &&

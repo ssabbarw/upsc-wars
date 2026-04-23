@@ -1,26 +1,121 @@
-/// Strongly typed analytics envelope. Add new variants only when product needs
-/// custom payloads; feature usage uses [FeatureUsageEvent] subclasses.
+// Analytics event catalog: each class maps to a Firebase/GA4
+// event in [FirebaseAnalyticsSink]. The doc comment for each class lists the
+// **meaning**, **when it is emitted**, and the **GA4 name + parameters** so
+// product and data teams can read one file without spelunking the sink.
+//
+// ## Platform & analytics console (not emitted from this app)
+// * **Install counts, DAU / WAU / MAU, stickiness, retention (D1/D7/…), session
+//   time, user paths** — use **Google Analytics 4** + (optional) **BigQuery**
+//   export; `first_open` and engagement are often automatic.
+// * **Play Store install conversion, organic vs paid source, CPI, campaign
+//   UTM** — use **Play Console** + **Google Play Install Referrer** (or
+//   Campaign URL on first launch) when you run ads; this codebase does not
+//   set install referrer.
+// * **“Where they leave / return”** — screen funnels in GA4, or BigQuery
+//   joins; [ScreenViewedEvent] gives named routes; [AppNotificationOpenEvent]
+//   flags return via push.
+//
+// Naming: [AnalyticsEvent] is the Dart name; the GA4 `logEvent` `name` is
+// always snake_case, defined next to the matching `case` in
+// [FirebaseAnalyticsSink.send]. User id is added in the sink when logged in.
+//
+// Not implemented in UI yet: [PaywallViewedEvent], [SubscriptionStartedEvent],
+// [SubscriptionCompletedEvent] — wire when subscription/paywall exists.
+
+/// Top-level [AnalyticsEvent] for type-safe [AnalyticsService.track] calls.
 sealed class AnalyticsEvent {
   const AnalyticsEvent();
 }
 
+// ── App lifecycle & sessions ────────────────────────────────────────────
+
+/// **App cold start (process launch).** Logged once when the root [MaterialApp]
+/// mounts, not on every return from the background. Use with session events
+/// to reason about restarts.
+///
+/// **GA4:** `app_opened` (no custom parameters; Firebase may attach defaults).
 final class AppOpenedEvent extends AnalyticsEvent {
   const AppOpenedEvent();
 }
 
+/// **User brought the app to the foreground** (e.g. resumed from home screen or
+/// after unlocking the phone). Pairs with [SessionEndedEvent] for rough
+/// in-app session length.
+///
+/// **GA4:** `session_started` (no custom parameters).
+/// **Note:** Distinct from GA4’s automatic “session”; this is a custom event name.
 final class SessionStartedEvent extends AnalyticsEvent {
   const SessionStartedEvent();
 }
 
+/// **User left the app** (switched app or backgrounded). Emitted on pause/detach.
+///
+/// **GA4:** `session_ended` (no custom parameters).
 final class SessionEndedEvent extends AnalyticsEvent {
   const SessionEndedEvent();
 }
 
+// ── Navigation (automatic) ─────────────────────────────────────────────
+
+/// **User navigated to a named GoRouter route** that sets `name:` on the route;
+/// the observer logs the route’s name, not the URL path. Add `name` on routes
+/// in [app_router] to make screens show up in analytics.
+///
+/// **GA4:** `screen_viewed` with `screen_name` (e.g. `home`, `onboarding`).
 final class ScreenViewedEvent extends AnalyticsEvent {
   const ScreenViewedEvent({required this.screenName});
 
+  /// Route `name` from [GoRoute.name] (e.g. `test_session`, `settings`).
   final String screenName;
 }
+
+/// **User left a critical screen (or tab)** after a measurable **dwell** period.
+/// Use for funnels, drop-off, and “time to complete” (paired with
+/// [ScreenViewedEvent] and [ScreenFlowActionEvent] for CTAs / back). See
+/// [ScreenDwellRouteObserver] (root stack dwell) plus `ScreenFlow` helpers
+/// in `lib/core/analytics/screen_flow_analytics.dart` for modals and shell
+/// tab timing.
+///
+/// [endKind] is stable, query-friendly, e.g.:
+/// * `back_pop` — system back or [Navigator] pop
+/// * `replaced` — [Navigator] replace (incl. some [GoRouter] `go` transitions)
+/// * `shell_tab_change` — bottom bar switched to another main tab
+/// * `modal_dismissed` — bottom sheet or dialog closed (CTA in
+///   [ScreenFlowActionEvent])
+/// * `removed` — [Navigator] removed the route
+///
+/// **GA4:** `screen_dwell_ended` with `screen_name`, `duration_ms` (0 allowed),
+/// `end_kind` (string).
+final class ScreenDwellEndedEvent extends AnalyticsEvent {
+  const ScreenDwellEndedEvent({
+    required this.screenName,
+    required this.durationMs,
+    required this.endKind,
+  });
+
+  final String screenName;
+  final int durationMs;
+  final String endKind;
+}
+
+/// **An explicit user action** on a critical screen (CTA, back, skip) where
+/// route-based dwell is not enough.
+///
+/// **GA4:** `screen_flow_action` with `screen_name`, `action_id` (snake case),
+/// `action_kind` (`cta`, `back`, `skip`, `dismiss`, or `other`).
+final class ScreenFlowActionEvent extends AnalyticsEvent {
+  const ScreenFlowActionEvent({
+    required this.screenName,
+    required this.actionId,
+    this.actionKind = 'cta',
+  });
+
+  final String screenName;
+  final String actionId;
+  final String actionKind;
+}
+
+// ── Generic feature funnel (test flows, some catalog features) ───────
 
 sealed class FeatureUsageEvent extends AnalyticsEvent {
   const FeatureUsageEvent({
@@ -31,13 +126,20 @@ sealed class FeatureUsageEvent extends AnalyticsEvent {
     required this.source,
   });
 
+  /// Derived product label (e.g. `mcq_practice`, `revision`).
   final String featureName;
   final String subject;
   final String? topic;
   final String? difficulty;
+  /// How the user entered the flow (`home`, `share`, etc. — from sessionderive).
   final String source;
 }
 
+/// **User opened a feature’s entry screen** (e.g. landed on a catalog surface).
+/// Local sink may increment view counters in Drift.
+///
+/// **GA4:** `feature_viewed` with `feature_name`, `subject`, optional `topic`,
+/// optional `difficulty`, `source`.
 final class FeatureViewedEvent extends FeatureUsageEvent {
   const FeatureViewedEvent({
     required super.featureName,
@@ -48,6 +150,10 @@ final class FeatureViewedEvent extends FeatureUsageEvent {
   });
 }
 
+/// **User began an interactive flow** (e.g. a timed test has loaded with real
+/// questions and the engine is active).
+///
+/// **GA4:** `feature_started` (same parameters as [FeatureViewedEvent]).
 final class FeatureStartedEvent extends FeatureUsageEvent {
   const FeatureStartedEvent({
     required super.featureName,
@@ -58,6 +164,10 @@ final class FeatureStartedEvent extends FeatureUsageEvent {
   });
 }
 
+/// **User finished a session successfully** (submitted/completed, not abandoned).
+/// Fired from [TestEngineRepositoryImpl.submitSession] after streak updates.
+///
+/// **GA4:** `feature_completed` (same parameters as [FeatureViewedEvent]).
 final class FeatureCompletedEvent extends FeatureUsageEvent {
   const FeatureCompletedEvent({
     required super.featureName,
@@ -68,6 +178,15 @@ final class FeatureCompletedEvent extends FeatureUsageEvent {
   });
 }
 
+// ── Per-question (practice / test) ────────────────────────────────────
+
+/// **User submitted an answer (or the system recorded an attempt)** for one
+/// question in a session. High-volume; use for quality/trap/velocity analysis.
+///
+/// **GA4:** `question_attempted` with `question_id`, `subject`, `topic`,
+/// optional `difficulty`, `correct` (0/1), `time_taken_seconds`, `guessed` (0/1),
+/// `eliminated_options_count`, optional `trap_type`, optional `confidence_level`,
+/// `feature_name`, `source`.
 final class QuestionAttemptedEvent extends AnalyticsEvent {
   const QuestionAttemptedEvent({
     required this.questionId,
@@ -98,6 +217,13 @@ final class QuestionAttemptedEvent extends AnalyticsEvent {
   final String source;
 }
 
+// ── Subscription / paywall (wire when product exists) ───────────────────
+
+/// **User was shown a paywall or upgrade screen.** (Not yet emitted from any
+/// screen — add when the paywall widget appears.)
+///
+/// **GA4:** `paywall_viewed` with `source_feature` (entry point) and optional
+/// `plan_type` (e.g. monthly, yearly).
 final class PaywallViewedEvent extends AnalyticsEvent {
   const PaywallViewedEvent({
     required this.sourceFeature,
@@ -108,6 +234,9 @@ final class PaywallViewedEvent extends AnalyticsEvent {
   final String? planType;
 }
 
+/// **User started checkout or tapped subscribe** (before store confirmation).
+///
+/// **GA4:** `subscription_started` with `source_feature`, optional `plan_type`.
 final class SubscriptionStartedEvent extends AnalyticsEvent {
   const SubscriptionStartedEvent({
     required this.sourceFeature,
@@ -118,6 +247,10 @@ final class SubscriptionStartedEvent extends AnalyticsEvent {
   final String? planType;
 }
 
+/// **Subscription purchase succeeded** (or restore completed — align with
+/// your billing layer when implemented).
+///
+/// **GA4:** `subscription_completed` with `source_feature`, optional `plan_type`.
 final class SubscriptionCompletedEvent extends AnalyticsEvent {
   const SubscriptionCompletedEvent({
     required this.sourceFeature,
@@ -128,12 +261,21 @@ final class SubscriptionCompletedEvent extends AnalyticsEvent {
   final String? planType;
 }
 
+// ── Streaks & revision ────────────────────────────────────────────────
+
+/// **Daily (or study) streak length increased** after a qualifying session
+/// complete.
+///
+/// **GA4:** `streak_continued` with `streak_length` (integer).
 final class StreakContinuedEvent extends AnalyticsEvent {
   const StreakContinuedEvent({required this.streakLength});
 
   final int streakLength;
 }
 
+/// **A revision or revision_quick session was completed.**
+///
+/// **GA4:** `revision_completed` with `questions_count`, `subject`.
 final class RevisionCompletedEvent extends AnalyticsEvent {
   const RevisionCompletedEvent({
     required this.questionsCount,
@@ -144,9 +286,14 @@ final class RevisionCompletedEvent extends AnalyticsEvent {
   final String subject;
 }
 
-/// One event per MCQ session when the player enters the active test UI
-/// (home flow or battle). Firebase event count on `mcq_test_session_started`
-/// is the global total of tests attempted.
+// ── MCQ & battles ─────────────────────────────────────────────────────
+
+/// **User entered the full-screen MCQ test experience** (practice or
+/// home-driven test). One event per session start, separate from
+/// [FeatureStartedEvent] which is broader.
+///
+/// **GA4:** `mcq_test_session_started` with `subject`, optional `topic`,
+/// optional `analytics_feature_key` (product routing / experiments).
 final class McqTestSessionStartedEvent extends AnalyticsEvent {
   const McqTestSessionStartedEvent({
     required this.subject,
@@ -159,26 +306,33 @@ final class McqTestSessionStartedEvent extends AnalyticsEvent {
   final String? analyticsFeatureKey;
 }
 
-/// Host finished the `sendBattleInvite` callable (success or structured
-/// failure). [kind] is `push_ok`, `no_token`, `send_failed`, or
-/// `transport_error`. In GA4, count events where `kind` != `transport_error`
-/// for “invite reached the backend”; use `kind` == `push_ok` for FCM
-/// delivered.
+/// **Outcome of sending a battle invite** (FCM / callable result).
+/// [kind] values include `push_ok`, `no_token`, `send_failed`, `transport_error`.
+///
+/// **GA4:** `battle_invite_outcome` with `kind`.
 final class BattleInviteOutcomeEvent extends AnalyticsEvent {
   const BattleInviteOutcomeEvent({required this.kind});
 
   final String kind;
 }
 
-/// Guest completed the join flow and entered the battle lobby (invite accepted).
+/// **Invitee completed join and entered the battle lobby.**
+///
+/// **GA4:** `battle_invite_accepted` (no parameters).
 final class BattleInviteAcceptedEvent extends AnalyticsEvent {
   const BattleInviteAcceptedEvent();
 }
 
-/// OS push notification permission as reported by
-/// [FirebaseMessaging.instance.getNotificationSettings] (one snapshot, e.g. on
-/// app resume). [status] is a stable snake_case label: `authorized`,
-/// `denied`, `provisional`, `not_determined`, or `web_authorized` on web.
+// ── Push permission & reminders ───────────────────────────────────────
+
+/// **Snapshot of OS notification permission** from Firebase Messaging
+/// (authorized / denied / provisional / not determined / web). Emitted on
+/// cold start and resume, debounced to avoid duplicates. Also sets the **user
+/// property** `push_alerts` (`on`, `off`, `not_determined`, or `unknown`) in
+/// [FirebaseAnalyticsSink] for audience building.
+///
+/// **GA4:** `push_permission_snapshot` with `status` (string label) and
+/// `allows_push` (0/1). User property: `push_alerts`.
 final class PushNotificationStatusSnapshotEvent extends AnalyticsEvent {
   const PushNotificationStatusSnapshotEvent({
     required this.status,
@@ -189,42 +343,14 @@ final class PushNotificationStatusSnapshotEvent extends AnalyticsEvent {
   final bool allowsPush;
 }
 
-/// Time spent on a horizontal onboarding step before leaving (swipe) or
-/// finishing the flow. [step] is one of: `score_story`, `mechanism`,
-/// `diagnosis`, `loop`.
-final class OnboardingStepDurationEvent extends AnalyticsEvent {
-  const OnboardingStepDurationEvent({
-    required this.step,
-    required this.durationMs,
-  });
-
-  final String step;
-  final int durationMs;
-}
-
-/// User swiped the vertical “Typical test series stats / swipe up”
-/// [PageView] on the first onboarding page to the hidden “UPSC Wars advantage”
-/// slide (at least once; event fires on first reach only per screen visit).
-final class OnboardingRevealTrialSwipedEvent extends AnalyticsEvent {
-  const OnboardingRevealTrialSwipedEvent();
-}
-
-/// Fires once when the first-run [OnboardingFlowScreen] is opened (funnel start).
-final class OnboardingFlowOpenedEvent extends AnalyticsEvent {
-  const OnboardingFlowOpenedEvent();
-}
-
-/// User tapped **Get started** on the last step; [totalDurationMs] is time from
-/// [OnboardingFlowOpenedEvent] to completion (entire flow).
-final class OnboardingFlowCompletedEvent extends AnalyticsEvent {
-  const OnboardingFlowCompletedEvent({required this.totalDurationMs});
-
-  final int totalDurationMs;
-}
-
-/// Deferred notification education bottom sheet closed after 1st/2nd impression.
-/// [source] is `post_test` or `community_signin`. [tappedEnableNotifications] is
-/// true when the user hit “Turn on notifications” (we then may show the system dialog).
+/// **Deferred “education” bottom sheet** (after a test or community sign-in)
+/// was closed. Tracks whether the user asked for the system prompt.
+///
+/// **GA4:** `deferred_push_education_outcome` with:
+/// * `source` — `post_test` (after completing a test path) or `community_signin`
+///   (signed in from Community with prompt armed);
+/// * `modal_index` — 1 or 2 (max two education modals);
+/// * `tapped_enable` — 1 if the user chose “Turn on notifications”, else 0.
 final class DeferredPushEducationModalOutcomeEvent extends AnalyticsEvent {
   const DeferredPushEducationModalOutcomeEvent({
     required this.source,
@@ -237,8 +363,196 @@ final class DeferredPushEducationModalOutcomeEvent extends AnalyticsEvent {
   final bool tappedEnableNotifications;
 }
 
-/// Fires the first time any local session is marked `completed` (D1 “activation”
-/// signal; includes practice and similar flows through [submitSession]).
+/// **Home nudge line was shown** (after two education modals, user still
+/// without push). One impression per time the nudge is built and visible for
+/// that provider resolution (we dedupe to once per build cycle).
+///
+/// **GA4:** `deferred_push_home_nudge_shown` (no parameters).
+final class DeferredPushHomeNudgeShownEvent extends AnalyticsEvent {
+  const DeferredPushHomeNudgeShownEvent();
+}
+
+/// **User tapped “Turn on notifications”** on the home nudge (may open
+/// system settings or request permission).
+///
+/// **GA4:** `deferred_push_home_nudge_tap_enable` (no parameters).
+final class DeferredPushHomeNudgeTapEnableEvent extends AnalyticsEvent {
+  const DeferredPushHomeNudgeTapEnableEvent();
+}
+
+/// **User dismissed the home nudge** with the close control (prefs updated
+/// so it does not reappear for that nudge class).
+///
+/// **GA4:** `deferred_push_home_nudge_dismissed` (no parameters).
+final class DeferredPushHomeNudgeDismissedEvent extends AnalyticsEvent {
+  const DeferredPushHomeNudgeDismissedEvent();
+}
+
+// ── First-run onboarding (horizontal + vertical trial card) ──────────
+
+/// **Time the user spent on one horizontal step** of the first-run flow before
+/// swiping to the next, or the last step before “Get started.” [step] is
+/// `score_story`, `mechanism`, `diagnosis`, or `loop`.
+///
+/// **GA4:** `onboarding_step_duration` with `step`, `duration_ms` (int).
+final class OnboardingStepDurationEvent extends AnalyticsEvent {
+  const OnboardingStepDurationEvent({
+    required this.step,
+    required this.durationMs,
+  });
+
+  final String step;
+  final int durationMs;
+}
+
+/// **On the first horizontal page, the user swiped the vertical “Typical test
+/// series / swipe up” card** to the hidden “UPSC Wars advantage” page (first
+/// time only in that visit).
+///
+/// **GA4:** `onboarding_reveal_trial_swiped` (no parameters).
+final class OnboardingRevealTrialSwipedEvent extends AnalyticsEvent {
+  const OnboardingRevealTrialSwipedEvent();
+}
+
+/// **The four-page onboarding flow screen opened** (funnel start).
+///
+/// **GA4:** `onboarding_flow_opened` (no parameters).
+final class OnboardingFlowOpenedEvent extends AnalyticsEvent {
+  const OnboardingFlowOpenedEvent();
+}
+
+/// **User tapped “Get started” on the last page**; [totalDurationMs] is
+/// time since [OnboardingFlowOpenedEvent] for the same visit.
+///
+/// **GA4:** `onboarding_flow_completed` with `total_duration_ms` (int).
+final class OnboardingFlowCompletedEvent extends AnalyticsEvent {
+  const OnboardingFlowCompletedEvent({required this.totalDurationMs});
+
+  final int totalDurationMs;
+}
+
+/// **User left onboarding without finishing** (navigated away or the widget
+/// was disposed) without a successful [OnboardingFlowCompletedEvent]. Funnel
+/// drop-out signal.
+///
+/// **GA4:** `onboarding_exited_incomplete` with:
+/// * `highest_step` — furthest step id reached (`score_story` …);
+/// * `last_step` — page index at exit mapped the same way;
+/// * `elapsed_ms` — time from flow open;
+/// * `reached_last_step` — 1 if the user ever reached the final horizontal page.
+final class OnboardingExitedIncompleteEvent extends AnalyticsEvent {
+  const OnboardingExitedIncompleteEvent({
+    required this.highestStep,
+    required this.lastStep,
+    required this.elapsedMs,
+    required this.reachedLastStep,
+  });
+
+  final String highestStep;
+  final String lastStep;
+  final int elapsedMs;
+  final bool reachedLastStep;
+}
+
+// ── Session completion & drop-off ────────────────────────────────────
+
+/// **First time any test session in local storage reached `completed`**
+/// (activation for D1). Includes practice sessions completed through
+/// [TestEngineRepositoryImpl.submitSession] (and any other path that writes
+/// the same `sessions` row to completed, if any).
+///
+/// **GA4:** `first_session_completed` (no parameters; once per app install
+/// for that user on device).
 final class FirstSessionCompletedEvent extends AnalyticsEvent {
   const FirstSessionCompletedEvent();
+}
+
+/// **A session was marked abandoned** (user left without finishing/submit
+/// through the normal “mark abandoned” use case, e.g. from test or battle
+/// exit). Use with [FeatureStartedEvent] to compute abandon rate by flow.
+///
+/// **GA4:** `test_session_abandoned` with `feature_name`, `subject`, optional
+/// `topic`, `source` (same meaning as in feature usage).
+final class TestSessionAbandonedEvent extends AnalyticsEvent {
+  const TestSessionAbandonedEvent({
+    required this.featureName,
+    required this.subject,
+    this.topic,
+    required this.source,
+  });
+
+  final String featureName;
+  final String subject;
+  final String? topic;
+  final String source;
+}
+
+// ── Activation (per-device, first time) — see [activation_milestones] ─
+
+/// **User reached a one-time product step**; [milestoneId] matches
+/// [ActivationMilestones] in `activation_milestones.dart`.
+///
+/// **GA4:** `activation_milestone` with `milestone_id` (string).
+final class ActivationMilestoneEvent extends AnalyticsEvent {
+  const ActivationMilestoneEvent({required this.milestoneId});
+
+  final String milestoneId;
+}
+
+// ── UPSC Wars “USP” — result snapshot & coach —──────────────────────
+
+/// **Confidence and Danger Zone aggregates** at session submit (one row per
+/// completed session, practice flows).
+///
+/// **GA4:** `usp_session_result` — see [FirebaseAnalyticsSink] for param keys.
+final class UspSessionResultSnapshotEvent extends AnalyticsEvent {
+  const UspSessionResultSnapshotEvent({
+    required this.featureKey,
+    required this.subject,
+    required this.questionCount,
+    required this.correct,
+    required this.wrong,
+    required this.accuracyHundredths,
+    required this.dangerZoneWrongCount,
+    required this.sureTotal,
+    required this.sureCorrect,
+    required this.intelligentTotal,
+    required this.intelligentCorrect,
+    required this.pureTotal,
+    required this.pureCorrect,
+  });
+
+  final String featureKey;
+  final String subject;
+  final int questionCount;
+  final int correct;
+  final int wrong;
+  final int accuracyHundredths;
+  final int dangerZoneWrongCount;
+  final int sureTotal;
+  final int sureCorrect;
+  final int intelligentTotal;
+  final int intelligentCorrect;
+  final int pureTotal;
+  final int pureCorrect;
+}
+
+/// **User tapped a post-results coach CTA** (Danger Zone, next step, etc.).
+///
+/// **GA4:** `usp_coach_cta` with `action` (snake_case, see app integration).
+final class UspSessionCoachCtaTappedEvent extends AnalyticsEvent {
+  const UspSessionCoachCtaTappedEvent({required this.action});
+
+  final String action;
+}
+
+/// **App opened from a system notification** (data message / local notif tap).
+///
+/// **GA4:** `app_notification_open` with `channel` (`fcm` | `local`),
+/// `kind` (routing hint: `battle_join` | `open_challenge` | `long_html` | `unknown`).
+final class AppNotificationOpenEvent extends AnalyticsEvent {
+  const AppNotificationOpenEvent({required this.channel, required this.kind});
+
+  final String channel;
+  final String kind;
 }

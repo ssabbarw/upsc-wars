@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
 import 'package:upsc_wars/core/analytics/analytics.dart';
 import 'package:upsc_wars/core/analytics/analytics_events.dart';
 import 'package:upsc_wars/core/domain/entities/session_config.dart';
@@ -335,6 +336,14 @@ class _BattleConfigScreenState extends ConsumerState<BattleConfigScreen> {
               BattleInviteOutcomeEvent(kind: inviteOutcome.analyticsKind),
             ),
           );
+          if (inviteOutcome.analyticsKind == 'push_ok') {
+            unawaited(
+              logActivationMilestoneOnce(
+                ref,
+                ActivationMilestones.firstBattleInvitePushOk,
+              ),
+            );
+          }
           if (!context.mounted) return;
           final serverSaysBlocked =
               !inviteOutcome.notificationSent &&

@@ -1,8 +1,11 @@
+import 'dart:async' show unawaited;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/prefs_provider.dart'
@@ -142,6 +145,12 @@ class PostQotdFlowScreen extends HookConsumerWidget {
       );
       if (!context.mounted) return;
       if (posted) {
+        unawaited(
+          logActivationMilestoneOnce(
+            ref,
+            ActivationMilestones.firstQotdPosted,
+          ),
+        );
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(const SnackBar(content: Text('Posted to QOTD')));

@@ -4,8 +4,45 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'analytics_events.dart';
 import 'analytics_sink.dart';
 
-/// Sends curated events to Firebase Analytics. No other layer imports
-/// [FirebaseAnalytics] directly.
+/// Sends [AnalyticsEvent] instances to **Google Analytics 4 (Firebase)** via
+/// [FirebaseAnalytics.logEvent]. The **English description** of each product
+/// event lives on the corresponding class in [analytics_events.dart]. This
+/// file only maps **Dart type → GA4 event `name` and parameter keys**.
+///
+/// **Event name quick reference (GA4 `name` = left, parameters = right):**
+/// * `app_opened` — (none)
+/// * `session_started` / `session_ended` — (none) — custom app foreground/background
+/// * `screen_viewed` — `screen_name`
+/// * `screen_dwell_ended` — `screen_name`, `duration_ms`, `end_kind` (see
+///   [ScreenDwellRouteObserver], [ScreenFlow] for shell + modals)
+/// * `screen_flow_action` — `screen_name`, `action_id`, `action_kind`
+/// * `feature_viewed` / `feature_started` / `feature_completed` — `feature_name`, `subject`, `topic?`, `difficulty?`, `source`
+/// * `question_attempted` — per-question fields (see [QuestionAttemptedEvent])
+/// * `paywall_viewed` / `subscription_started` / `subscription_completed` — `source_feature`, `plan_type?`
+/// * `streak_continued` — `streak_length`
+/// * `revision_completed` — `questions_count`, `subject`
+/// * `mcq_test_session_started` — `subject`, `topic?`, `analytics_feature_key?`
+/// * `battle_invite_outcome` — `kind`
+/// * `battle_invite_accepted` — (none)
+/// * `push_permission_snapshot` — `status`, `allows_push` (0/1); also sets user property `push_alerts`
+/// * `onboarding_step_duration` — `step`, `duration_ms`
+/// * `onboarding_reveal_trial_swiped` — (none)
+/// * `onboarding_flow_opened` / `onboarding_flow_completed` — `total_duration_ms` on completed only
+/// * `onboarding_exited_incomplete` — `highest_step`, `last_step`, `elapsed_ms`, `reached_last_step` (0/1)
+/// * `deferred_push_education_outcome` — `source`, `modal_index`, `tapped_enable` (0/1)
+/// * `deferred_push_home_nudge_shown` / `deferred_push_home_nudge_tap_enable` /
+///   `deferred_push_home_nudge_dismissed` — (none) for nudge events
+/// * `first_session_completed` — (none)
+/// * `test_session_abandoned` — `feature_name`, `subject`, `topic?`, `source`
+/// * `activation_milestone` — `milestone_id` (one-time activation funnel, see
+///   [ActivationMilestones] in [activation_milestones.dart])
+/// * `usp_session_result` — session snapshot: `feature_key`, `subject`,
+///   `question_count`, `correct`, `wrong`, `accuracy_hundredths`, `danger_zone_wrong`,
+///   and confidence bucket totals (see [UspSessionResultSnapshotEvent])
+/// * `usp_coach_cta` — `action` (result coach / Danger Zone CTA labels)
+/// * `app_notification_open` — `channel` (`fcm` / `local`), `kind` (e.g. battle)
+///
+/// All events also send `user_id` when the user is signed in to Firebase Auth.
 class FirebaseAnalyticsSink implements AnalyticsSink {
   FirebaseAnalyticsSink({
     FirebaseAnalytics? analytics,
@@ -29,6 +66,26 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         await _log('session_ended', const {});
       case ScreenViewedEvent(:final screenName):
         await _log('screen_viewed', {'screen_name': screenName});
+      case ScreenDwellEndedEvent(
+          :final screenName,
+          :final durationMs,
+          :final endKind,
+        ):
+        await _log('screen_dwell_ended', {
+          'screen_name': screenName,
+          'duration_ms': durationMs,
+          'end_kind': endKind,
+        });
+      case ScreenFlowActionEvent(
+          :final screenName,
+          :final actionId,
+          :final actionKind,
+        ):
+        await _log('screen_flow_action', {
+          'screen_name': screenName,
+          'action_id': actionId,
+          'action_kind': actionKind,
+        });
       case FeatureViewedEvent(
           :final featureName,
           :final subject,
@@ -172,6 +229,18 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
         await _log('onboarding_flow_completed', {
           'total_duration_ms': totalDurationMs,
         });
+      case OnboardingExitedIncompleteEvent(
+          :final highestStep,
+          :final lastStep,
+          :final elapsedMs,
+          :final reachedLastStep,
+        ):
+        await _log('onboarding_exited_incomplete', {
+          'highest_step': highestStep,
+          'last_step': lastStep,
+          'elapsed_ms': elapsedMs,
+          'reached_last_step': reachedLastStep ? 1 : 0,
+        });
       case DeferredPushEducationModalOutcomeEvent(
           :final source,
           :final modalIndex,
@@ -182,8 +251,67 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
           'modal_index': modalIndex,
           'tapped_enable': tappedEnableNotifications ? 1 : 0,
         });
+      case DeferredPushHomeNudgeShownEvent():
+        await _log('deferred_push_home_nudge_shown', const {});
+      case DeferredPushHomeNudgeTapEnableEvent():
+        await _log('deferred_push_home_nudge_tap_enable', const {});
+      case DeferredPushHomeNudgeDismissedEvent():
+        await _log('deferred_push_home_nudge_dismissed', const {});
       case FirstSessionCompletedEvent():
         await _log('first_session_completed', const {});
+      case TestSessionAbandonedEvent(
+          :final featureName,
+          :final subject,
+          :final topic,
+          :final source,
+        ):
+        await _log('test_session_abandoned', {
+          'feature_name': featureName,
+          'subject': subject,
+          if (topic case final t?) 'topic': t,
+          'source': source,
+        });
+      case ActivationMilestoneEvent(:final milestoneId):
+        await _log('activation_milestone', {
+          'milestone_id': milestoneId,
+        });
+      case UspSessionResultSnapshotEvent(
+          :final featureKey,
+          :final subject,
+          :final questionCount,
+          :final correct,
+          :final wrong,
+          :final accuracyHundredths,
+          :final dangerZoneWrongCount,
+          :final sureTotal,
+          :final sureCorrect,
+          :final intelligentTotal,
+          :final intelligentCorrect,
+          :final pureTotal,
+          :final pureCorrect,
+        ):
+        await _log('usp_session_result', {
+          'feature_key': featureKey,
+          'subject': subject,
+          'question_count': questionCount,
+          'correct': correct,
+          'wrong': wrong,
+          'accuracy_hundredths': accuracyHundredths,
+          'danger_zone_wrong': dangerZoneWrongCount,
+          'confidence_sure_total': sureTotal,
+          'confidence_sure_correct': sureCorrect,
+          'confidence_intelligent_total': intelligentTotal,
+          'confidence_intelligent_correct': intelligentCorrect,
+          'confidence_pure_total': pureTotal,
+          'confidence_pure_correct': pureCorrect,
+        });
+      case UspSessionCoachCtaTappedEvent(:final action):
+        await _log('usp_coach_cta', {'action': action});
+      case AppNotificationOpenEvent(:final channel, :final kind):
+        await _log('app_notification_open', {
+          'channel': channel,
+          'kind': kind,
+        });
     }
   }
 

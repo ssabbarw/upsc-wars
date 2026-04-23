@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:upsc_wars/core/analytics/analytics_events.dart';
+import 'package:upsc_wars/core/analytics/analytics_global_dispatch.dart';
 import 'package:upsc_wars/core/router/app_router.dart';
 import 'package:upsc_wars/core/services/app_local_notifications_service.dart';
 import 'package:upsc_wars/core/services/fcm_token_sync_service.dart';
@@ -32,6 +34,9 @@ class BattleMessagingService {
 
     if (!kIsWeb) {
       AppLocalNotificationsService.onBattleInviteLocalTap = (sessionId) {
+        logGlobalAnalytics(
+          const AppNotificationOpenEvent(channel: 'local', kind: 'battle_join'),
+        );
         final r = _router;
         if (r == null) return;
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -52,7 +57,7 @@ class BattleMessagingService {
         _pendingOpenedNotification ?? await messaging.getInitialMessage();
     _pendingOpenedNotification = null;
     if (initial != null) {
-      _scheduleNavigateFromOpenedNotification(router, initial);
+      _scheduleNavigateFromOpenedNotification(router, initial, channel: 'fcm');
     }
   }
 
@@ -112,7 +117,25 @@ class BattleMessagingService {
   static void _handleDataMessage(RemoteMessage message) {
     final router = _router;
     if (router == null) return;
-    _scheduleNavigateFromOpenedNotification(router, message);
+    _scheduleNavigateFromOpenedNotification(router, message, channel: 'fcm');
+  }
+
+  static void _logNotificationOpen(RemoteMessage message, String channel) {
+    var kind = 'unknown';
+    if (messageOpensLongHtmlScreen(message)) {
+      kind = 'long_html';
+    } else if (message.data['kind']?.toString().trim().toLowerCase() ==
+        OpenChallengeFcm.kind) {
+      kind = 'open_challenge';
+    } else {
+      final sid = message.data['sessionId']?.toString().trim() ?? '';
+      if (sid.isNotEmpty) {
+        kind = 'battle_join';
+      }
+    }
+    logGlobalAnalytics(
+      AppNotificationOpenEvent(channel: channel, kind: kind),
+    );
   }
 
   /// Opens the long-HTML announcement screen when FCM **data** has
@@ -128,14 +151,16 @@ class BattleMessagingService {
   /// Routes after notification open (background / terminated).
   static void _scheduleNavigateFromOpenedNotification(
     GoRouter router,
-    RemoteMessage message,
-  ) {
+    RemoteMessage message, {
+    required String channel,
+  }) {
     void go() {
       if (kDebugMode) {
         debugPrint(
           'BattleMessagingService: notification opened, data=${message.data}',
         );
       }
+      _logNotificationOpen(message, channel);
       if (messageOpensLongHtmlScreen(message)) {
         router.push('/notification/long-html');
         return;

@@ -1,14 +1,18 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart' show User;
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../core/debug/upsc_wars_trace.dart';
 import '../core/analytics/analytics_app_lifecycle_observer.dart';
+import '../core/analytics/activation_milestones.dart';
 import '../core/analytics/analytics.dart';
 import '../core/analytics/analytics_events.dart';
+import '../core/analytics/analytics_global_dispatch.dart';
 import '../core/analytics/push_notification_status_snapshot.dart';
+import '../core/providers/analytics_provider.dart';
 import '../core/constants/app_constants.dart';
 import '../core/constants/prelims_debug_flags.dart';
 import '../core/crashlytics/firebase_crashlytics_bootstrap.dart';
@@ -147,11 +151,27 @@ class _RootMaterialApp extends HookConsumerWidget {
     }, const []);
 
     useEffect(() {
+      void dispatch(AnalyticsEvent e) {
+        unawaited(ref.read(analyticsServiceProvider).track(e));
+      }
+
+      bindGlobalAnalytics(dispatch);
       unawaited(Analytics.track(ref, const AppOpenedEvent()));
+      unawaited(() async {
+        final p = await ref.read(prefsServiceProvider.future);
+        await logActivationMilestoneForServices(
+          ref.read(analyticsServiceProvider),
+          p,
+          id: ActivationMilestones.firstProcessLaunch,
+        );
+      }());
       unawaited(trackPushNotificationStatusSnapshot(ref));
       final analyticsLifecycle = AnalyticsAppLifecycleObserver(ref);
       WidgetsBinding.instance.addObserver(analyticsLifecycle);
-      return () => WidgetsBinding.instance.removeObserver(analyticsLifecycle);
+      return () {
+        bindGlobalAnalytics(null);
+        WidgetsBinding.instance.removeObserver(analyticsLifecycle);
+      };
     }, const []);
 
     useEffect(() {
@@ -172,14 +192,26 @@ class _RootMaterialApp extends HookConsumerWidget {
       return timer.cancel;
     }, const []);
 
-    ref.listen(authStateChangesProvider, (previous, next) {
-      next.whenData((user) {
-        if (user?.email != null) {
-          unawaited(FcmTokenSyncService.syncForCurrentUser());
-          unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
+    ref.listen<AsyncValue<User?>>(
+      authStateChangesProvider,
+      (prev, next) {
+        if (!next.hasValue) return;
+        final u = next.requireValue;
+        if (u == null) return;
+        unawaited(FcmTokenSyncService.syncForCurrentUser());
+        unawaited(CommunityBucketPresenceService.syncForCurrentUser(ref));
+        User? prevUser;
+        if (prev is AsyncData<User?>) prevUser = prev.value;
+        if (prevUser == null) {
+          unawaited(
+            logActivationMilestoneOnce(
+              ref,
+              ActivationMilestones.firstAccountSignIn,
+            ),
+          );
         }
-      });
-    });
+      },
+    );
 
     final router = ref.watch(appRouterProvider);
     final prefs = ref.watch(prefsServiceProvider);

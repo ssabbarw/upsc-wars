@@ -6,8 +6,10 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/debug/upsc_wars_trace.dart';
+import '../../../core/analytics/activation_milestones.dart';
 import '../../../core/analytics/analytics.dart';
 import '../../../core/analytics/analytics_events.dart';
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/analytics/session_analytics_derive.dart';
 import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
@@ -160,7 +162,15 @@ class TestEngineScreen extends HookConsumerWidget {
         );
         if (confirmed == true) {
           await notifier.markAbandoned();
-          if (context.mounted) context.go('/');
+          if (context.mounted) {
+            ScreenFlow.logAction(
+              ref,
+              screenName: ScreenFlow.testSession,
+              actionId: 'leave_after_dialog',
+              actionKind: 'back',
+            );
+            context.go('/');
+          }
         }
       },
       child: Scaffold(
@@ -213,7 +223,15 @@ class _TestEngineAsyncBody extends HookConsumerWidget {
               if (isNotFound || isNoQuestions) ...[
                 const SizedBox(height: AppSpacing.sm),
                 OutlinedButton(
-                  onPressed: () => context.go('/'),
+                  onPressed: () {
+                    ScreenFlow.logAction(
+                      ref,
+                      screenName: ScreenFlow.testSession,
+                      actionId: 'error_go_home',
+                      actionKind: 'back',
+                    );
+                    context.go('/');
+                  },
                   child: Text('Home', style: AppTextStyles.label()),
                 ),
               ],
@@ -332,6 +350,17 @@ class _TestEngineLoaded extends HookConsumerWidget {
           ),
         ),
       );
+      unawaited(
+        logActivationMilestoneOnce(ref, ActivationMilestones.firstMcqTestEntered),
+      );
+      if (s.subject == 'revision' || s.subject == 'revision_quick') {
+        unawaited(
+          logActivationMilestoneOnce(
+            ref,
+            ActivationMilestones.firstRevisionTest,
+          ),
+        );
+      }
       return null;
     }, [sessionForFx]);
 

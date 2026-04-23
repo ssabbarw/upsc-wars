@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:upsc_wars/core/analytics/screen_flow_analytics.dart';
 import 'package:upsc_wars/core/providers/catalog_providers.dart';
 import 'package:upsc_wars/core/theme/app_spacing.dart';
 import 'package:upsc_wars/core/theme/app_text_styles.dart';
@@ -26,6 +27,12 @@ Future<void> _leaveBattleResultScreen(
   BuildContext context,
   WidgetRef ref,
 ) async {
+  ScreenFlow.logAction(
+    ref,
+    screenName: ScreenFlow.battleResults,
+    actionId: 'leave_to_home',
+    actionKind: 'back',
+  );
   if (!context.mounted) return;
   await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
     context,
@@ -250,6 +257,11 @@ class BattleResultScreen extends HookConsumerWidget {
               const SizedBox(height: AppSpacing.lg),
               ElevatedButton.icon(
                 onPressed: () async {
+                  ScreenFlow.logAction(
+                    ref,
+                    screenName: ScreenFlow.battleResults,
+                    actionId: 'review_explanations',
+                  );
                   await DeferredPushPermissionCoordinator
                       .tryOfferFromResultsUserAction(context, ref);
                   if (context.mounted) {

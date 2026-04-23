@@ -1,13 +1,26 @@
+import 'dart:async';
+
 import 'package:drift/drift.dart';
 import 'package:uuid/uuid.dart';
+import 'package:upsc_wars/core/analytics/activation_milestones.dart';
+import 'package:upsc_wars/core/analytics/analytics_service.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
 import 'package:upsc_wars/core/domain/entities/bookmark_item.dart';
 import 'package:upsc_wars/core/parsers/question_display_text_parser.dart';
+import 'package:upsc_wars/core/providers/prefs_provider.dart';
 import 'package:upsc_wars/features/bookmarks/domain/repositories/bookmarks_repository.dart';
 
 class BookmarksRepositoryImpl implements BookmarksRepository {
-  const BookmarksRepositoryImpl({required UserDatabase userDb}) : _userDb = userDb;
+  const BookmarksRepositoryImpl({
+    required UserDatabase userDb,
+    required PrefsService prefs,
+    required AnalyticsService analytics,
+  })  : _userDb = userDb,
+        _prefs = prefs,
+        _analytics = analytics;
   final UserDatabase _userDb;
+  final PrefsService _prefs;
+  final AnalyticsService _analytics;
   static const _uuid = Uuid();
 
   @override
@@ -41,6 +54,13 @@ class BookmarksRepositoryImpl implements BookmarksRepository {
           questionUuid: questionUuid,
           createdAt: DateTime.now(),
           userNote: Value(note),
+        ),
+      );
+      unawaited(
+        logActivationMilestoneForServices(
+          _analytics,
+          _prefs,
+          id: ActivationMilestones.firstBookmark,
         ),
       );
     }

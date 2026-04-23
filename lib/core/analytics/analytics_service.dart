@@ -3,8 +3,11 @@ import 'dart:developer' as developer;
 import 'analytics_events.dart';
 import 'analytics_sink.dart';
 
-/// Central analytics API. UI and repositories call [track] only through this
-/// service (via Riverpod), never Firebase or Drift directly.
+/// In-process hub: one [track] call fan-outs to all registered [AnalyticsSink]s
+/// (e.g. [FirebaseAnalyticsSink] for GA4, [LocalAnalyticsSink] for Drift).
+///
+/// **Product meaning of each [AnalyticsEvent]** is documented in English on the
+/// event class in [analytics_events.dart], not here.
 class AnalyticsService {
   AnalyticsService(this._sinks);
 

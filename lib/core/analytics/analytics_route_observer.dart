@@ -6,7 +6,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'analytics_events.dart';
 import '../providers/analytics_provider.dart';
 
-/// Logs [ScreenViewedEvent] for shell and root navigators (GoRouter 17+).
+/// Subscribes to the navigator: when a route is pushed or replaced, emits
+/// [ScreenViewedEvent] (GA4: `screen_viewed`, parameter `screen_name`) if the
+/// [RouteSettings.name] is set. [GoRoute.name] in [app_router] must be set
+/// for each screen you want in analytics.
 class AnalyticsRouteObserver extends NavigatorObserver {
   AnalyticsRouteObserver(this._ref);
 

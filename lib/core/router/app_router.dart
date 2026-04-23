@@ -2,11 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../analytics/analytics_route_observer.dart';
+import '../analytics/screen_dwell_route_observer.dart';
+import '../analytics/screen_flow_analytics.dart';
 import '../debug/upsc_wars_trace.dart';
 import '../services/deferred_push_permission_coordinator.dart';
 import '../config/feature_flags.dart';
@@ -147,6 +150,7 @@ GoRouter appRouter(Ref ref) {
     },
     observers: [
       AnalyticsRouteObserver(ref),
+      ScreenDwellRouteObserver(ref),
       UpscWarsRouteTraceObserver(),
     ],
     routes: [
@@ -165,6 +169,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/profile',
+        name: 'profile',
         builder: (context, state) => const ProfileScreen(),
       ),
       GoRoute(
@@ -182,11 +187,13 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/notification/long-html',
+        name: 'long_html_notification',
         builder: (context, state) => const LongHtmlNotificationScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/community/connect',
+        name: 'community_connect',
         builder: (context, state) {
           return CommunityConnectScreen(selectedUser: state.extra);
         },
@@ -194,11 +201,13 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/community/qotd/post',
+        name: 'qotd_post',
         builder: (context, state) => const PostQotdFlowScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/community/qotd/explanation',
+        name: 'qotd_explanation',
         builder: (context, state) {
           final extra = state.extra;
           if (extra is! SingleQuestionReviewArgs) {
@@ -212,11 +221,13 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/community/open-challenges/new/subject',
+        name: 'open_challenge_pick_subject',
         builder: (context, state) => const OpenChallengePickSubjectScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/community/open-challenges/:challengeId',
+        name: 'open_challenge_detail',
         builder: (context, state) => OpenChallengeDetailScreen(
           challengeId: state.pathParameters['challengeId']!,
           backToCommunityOpenTab:
@@ -226,11 +237,13 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/chats',
+        name: 'chat_list',
         builder: (context, state) => const ChatListScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/chat/:chatId',
+        name: 'chat_thread',
         builder: (context, state) {
           final extra = state.extra;
           if (extra is! ChatThreadRoutePayload) {
@@ -249,6 +262,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/subject/:name/topics',
+        name: 'subject_topics',
         builder: (context, state) => TopicsListScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
@@ -256,6 +270,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/subject/:name',
+        name: 'subject_detail',
         builder: (context, state) => SubjectDetailScreen(
           subject: Uri.decodeComponent(state.pathParameters['name']!),
         ),
@@ -263,12 +278,14 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/pyq-year/:year',
+        name: 'pyq_year_packs',
         builder: (context, state) =>
             PyqYearPacksScreen(year: state.pathParameters['year']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/subject-test',
+        name: 'subject_test',
         builder: (context, state) {
           final extra = state.extra;
           final isBotBattle = extra is Map && extra['battleMode'] == 'bot';
@@ -278,11 +295,13 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/topic-test',
+        name: 'topic_test',
         builder: (context, state) => const TopicTestScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle/config',
+        name: 'battle_config',
         builder: (context, state) {
           final invite = state.extra is BattleInviteTarget
               ? state.extra! as BattleInviteTarget
@@ -293,12 +312,14 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle/join/:sessionId',
+        name: 'battle_join',
         builder: (context, state) =>
             BattleJoinScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle/wait/:sessionId',
+        name: 'battle_wait',
         builder: (context, state) {
           final extra = state.extra;
           final data = extra is Map ? extra : const <String, Object?>{};
@@ -314,6 +335,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle-results/:sessionId',
+        name: 'battle_results',
         builder: (context, state) {
           final payload = state.extra is BattleResultPayload
               ? state.extra as BattleResultPayload
@@ -334,6 +356,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/battle/:sessionId',
+        name: 'battle_test',
         builder: (context, state) =>
             BattleTestScreen(sessionId: state.pathParameters['sessionId']!),
       ),
@@ -347,6 +370,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/danger-zone/:sessionId',
+        name: 'danger_zone_review',
         builder: (context, state) => DangerZoneReviewScreen(
           sessionId: state.pathParameters['sessionId']!,
         ),
@@ -354,6 +378,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/session-confidence-review/:sessionId/:tier',
+        name: 'session_confidence_review',
         builder: (context, state) {
           final o = state.uri.queryParameters['outcome'];
           return ConfidenceTierReviewScreen(
@@ -366,6 +391,7 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/history/:sessionId',
+        name: 'session_history_review',
         builder: (context, state) => SessionReviewScreen(
           sessionId: state.pathParameters['sessionId']!,
           focusWrong: state.uri.queryParameters['focus'] == 'wrong',
@@ -374,38 +400,45 @@ GoRouter appRouter(Ref ref) {
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/revision-queue',
+        name: 'revision_queue',
         builder: (context, state) => const RevisionQueueScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/revision-queue/session/:sessionId',
+        name: 'revision_queue_session',
         builder: (context, state) =>
             RevisionModeScreen(sessionId: state.pathParameters['sessionId']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/bookmarks',
+        name: 'bookmarks',
         builder: (context, state) => const BookmarksScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/weak-areas',
+        name: 'weak_areas_hub',
         builder: (context, state) => const WeakAreasHubScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/weak-areas/subtopic/:subTopic',
+        name: 'weak_areas_subtopic',
         builder: (context, state) =>
             SubTopicDetailScreen(subTopic: state.pathParameters['subTopic']!),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/weak-areas/traps',
+        name: 'weak_areas_traps',
         builder: (context, state) => const TrapPatternsScreen(),
       ),
       GoRoute(
         parentNavigatorKey: rootNavigatorKey,
         path: '/weak-areas/trap/:trapType',
+        name: 'weak_area_trap_detail',
         builder: (context, state) => TrapPatternDetailScreen(
           trapType: state.pathParameters['trapType']!,
         ),
@@ -532,6 +565,27 @@ class _AppShell extends HookConsumerWidget {
         ? ref.watch(chatInboxHasUnreadProvider)
         : false;
 
+    final tabDwellIndex = useRef(navigationShell.currentIndex);
+    final tabDwellAt = useRef(DateTime.now());
+    void onWillSwitchMainTab(int toIndex) {
+      final from = tabDwellIndex.value;
+      if (from != toIndex) {
+        final d = DateTime.now().difference(tabDwellAt.value).inMilliseconds;
+        if (d >= 0) {
+          unawaited(
+            ScreenFlow.logShellTabDwellEnded(
+              ref,
+              fromIndex: from,
+              durationMs: d,
+              hasCommunity: showCommunityTab,
+            ),
+          );
+        }
+      }
+      tabDwellIndex.value = toIndex;
+      tabDwellAt.value = DateTime.now();
+    }
+
     final navItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(
         icon: Icon(Icons.home_outlined, size: 22),
@@ -579,6 +633,7 @@ class _AppShell extends HookConsumerWidget {
             }(),
             onTap: (index) async {
               if (!shellHasCommunity) {
+                onWillSwitchMainTab(index);
                 navigationShell.goBranch(
                   index,
                   initialLocation: index == navigationShell.currentIndex,
@@ -602,6 +657,7 @@ class _AppShell extends HookConsumerWidget {
                     );
                     return;
                   }
+                  onWillSwitchMainTab(index);
                   navigationShell.goBranch(
                     index,
                     initialLocation: index == navigationShell.currentIndex,
@@ -613,12 +669,14 @@ class _AppShell extends HookConsumerWidget {
                   );
                   return;
                 }
+                onWillSwitchMainTab(index);
                 navigationShell.goBranch(
                   index,
                   initialLocation: index == navigationShell.currentIndex,
                 );
                 return;
               }
+              onWillSwitchMainTab(index);
               navigationShell.goBranch(
                 index,
                 initialLocation: index == navigationShell.currentIndex,

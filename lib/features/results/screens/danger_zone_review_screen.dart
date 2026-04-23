@@ -1,8 +1,12 @@
+import 'dart:async' show unawaited;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/activation_milestones.dart';
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/domain/entities/answer_confidence.dart';
 import '../../../core/domain/entities/test_question.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -43,7 +47,17 @@ class DangerZoneReviewScreen extends HookConsumerWidget {
           ),
           data: (questions) {
             if (questions.isEmpty) {
-              return _EmptyDangerZone(onBack: () => context.pop());
+              return _EmptyDangerZone(
+                onBack: () {
+                  ScreenFlow.logAction(
+                    ref,
+                    screenName: ScreenFlow.dangerZoneReview,
+                    actionId: 'back',
+                    actionKind: 'back',
+                  );
+                  context.pop();
+                },
+              );
             }
             return _DangerZonePager(sessionId: sessionId, questions: questions);
           },
@@ -100,6 +114,16 @@ class _DangerZonePager extends HookConsumerWidget {
     final bookmarks = useState<Map<String, bool>>({});
 
     useEffect(() {
+      unawaited(
+        logActivationMilestoneOnce(
+          ref,
+          ActivationMilestones.firstDangerZoneReview,
+        ),
+      );
+      return null;
+    }, const []);
+
+    useEffect(() {
       Future<void> loadBm() async {
         final repo = await ref.read(testEngineRepositoryProvider.future);
         final map = <String, bool>{};
@@ -149,6 +173,12 @@ class _DangerZonePager extends HookConsumerWidget {
             },
             onNext: () {
               if (current == total) {
+                ScreenFlow.logAction(
+                  ref,
+                  screenName: ScreenFlow.dangerZoneReview,
+                  actionId: 'exit_pager',
+                  actionKind: 'back',
+                );
                 if (context.canPop()) {
                   context.pop();
                 } else {
@@ -167,8 +197,14 @@ class _DangerZonePager extends HookConsumerWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
           child: OutlinedButton(
-            onPressed: () =>
-                context.pushReplacement('/history/$sessionId'),
+            onPressed: () {
+              ScreenFlow.logAction(
+                ref,
+                screenName: ScreenFlow.dangerZoneReview,
+                actionId: 'open_full_session_history',
+              );
+              context.pushReplacement('/history/$sessionId');
+            },
             child: Text(
               'Review full session in History',
               style: AppTextStyles.label(),

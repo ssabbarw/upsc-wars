@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -5,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/analytics_events.dart';
+import '../../../core/analytics/analytics_global_dispatch.dart';
 import '../../../core/domain/entities/revision_queue_item.dart';
 import '../../../core/domain/entities/session_result.dart';
 import '../../../core/providers/catalog_providers.dart';
@@ -19,6 +22,10 @@ import '../providers/session_topic_accuracy_provider.dart';
 /// Opens session question review. When the user is already on Danger Zone for
 /// this session, [Navigator] page keys from stacked `/history/...` routes can
 /// collide; replacing that route avoids the duplicate-key assert.
+void _logUspSessionCoach(String action) {
+  logGlobalAnalytics(UspSessionCoachCtaTappedEvent(action: action));
+}
+
 void _openSessionHistoryReview(
   BuildContext context,
   String sessionId, {
@@ -642,6 +649,7 @@ class _DangerZoneCard extends StatelessWidget {
               ),
               onPressed: () {
                 HapticFeedback.mediumImpact();
+                _logUspSessionCoach('results_review_danger_zone_tap');
                 context.push('/danger-zone/$sessionId');
               },
               child: Text(
@@ -749,13 +757,18 @@ class _NextActionCard extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              onPressed: () => _runPrimaryCoachAction(
-                context,
-                ref,
-                plan.primaryKind,
-                sessionId,
-                result,
-              ),
+              onPressed: () {
+                _logUspSessionCoach('results_coach_start_next_step_tap');
+                unawaited(
+                  _runPrimaryCoachAction(
+                    context,
+                    ref,
+                    plan.primaryKind,
+                    sessionId,
+                    result,
+                  ),
+                );
+              },
               child: Text(
                 'Start Next Step',
                 style: AppTextStyles.label().copyWith(
@@ -947,6 +960,7 @@ class _ProgressWeakCard extends StatelessWidget {
               OutlinedButton(
                 onPressed: () {
                   HapticFeedback.lightImpact();
+                  _logUspSessionCoach('results_weak_topic_practice_tap');
                   ref
                       .read(topicTestSelectedSubjectSlugProvider.notifier)
                       .setSlug(result.subject);
@@ -1051,7 +1065,10 @@ class _RevisionNudgeCard extends StatelessWidget {
                 side: const BorderSide(color: AppColors.summaryCtaBlue),
                 minimumSize: const Size.fromHeight(44),
               ),
-              onPressed: () => context.push('/revision-queue'),
+              onPressed: () {
+                _logUspSessionCoach('results_revision_queue_nudge_tap');
+                context.push('/revision-queue');
+              },
               child: const Text('Go to Revision Queue'),
             ),
           ],

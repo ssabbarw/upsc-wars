@@ -10,6 +10,7 @@ import 'package:upsc_wars/core/analytics/analytics_service.dart';
 import 'package:upsc_wars/core/analytics/question_attempt_analytics_input.dart';
 import 'package:upsc_wars/core/analytics/session_analytics_derive.dart';
 import 'package:upsc_wars/core/database/user_db.dart';
+import 'package:upsc_wars/features/history/data/repositories/session_history_repository_impl.dart';
 import 'package:upsc_wars/core/domain/entities/active_session.dart';
 import 'package:upsc_wars/core/domain/entities/answer_confidence.dart';
 import 'package:upsc_wars/core/domain/entities/test_question.dart';
@@ -447,6 +448,36 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
       }
     }
 
+    try {
+      final r = await SessionHistoryRepositoryImpl(_userDb)
+          .getSessionResult(sessionId);
+      final accH = (r.accuracy * 100).round();
+      await _analytics.track(
+        UspSessionResultSnapshotEvent(
+          featureKey: r.analyticsFeatureKey ?? 'unknown',
+          subject: r.subject,
+          questionCount: r.questionCount,
+          correct: r.correct,
+          wrong: r.wrong,
+          accuracyHundredths: accH,
+          dangerZoneWrongCount: r.dangerZoneWrongCount,
+          sureTotal: r.confidenceSureTotal,
+          sureCorrect: r.confidenceSureCorrect,
+          intelligentTotal: r.confidenceIntelligentTotal,
+          intelligentCorrect: r.confidenceIntelligentCorrect,
+          pureTotal: r.confidencePureTotal,
+          pureCorrect: r.confidencePureCorrect,
+        ),
+      );
+    } catch (e, st) {
+      developer.log(
+        'UspSessionResultSnapshot skipped: $e',
+        name: 'TestEngineRepositoryImpl',
+        error: e,
+        stackTrace: st,
+      );
+    }
+
     return sessionId;
   }
 
@@ -469,7 +500,22 @@ class TestEngineRepositoryImpl implements TestEngineRepository {
 
   @override
   Future<void> markSessionAbandoned(String sessionId) async {
+    final sessionMeta = await _userDb.sessionsDao.getSessionById(sessionId);
     await _userDb.sessionsDao.updateSessionStatus(sessionId, 'abandoned');
+    if (sessionMeta != null) {
+      final labels = deriveSessionAnalyticsLabels(
+        analyticsFeatureKey: sessionMeta.analyticsFeatureKey,
+        subject: sessionMeta.subject,
+      );
+      await _analytics.track(
+        TestSessionAbandonedEvent(
+          featureName: labels.featureName,
+          subject: sessionMeta.subject,
+          topic: sessionMeta.topic,
+          source: labels.source,
+        ),
+      );
+    }
   }
 
   @override

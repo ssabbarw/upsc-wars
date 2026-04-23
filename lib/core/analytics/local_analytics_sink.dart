@@ -2,8 +2,10 @@ import '../database/user_db.dart';
 import 'analytics_events.dart';
 import 'analytics_sink.dart';
 
-/// Persists high-signal aggregates into the local Drift DB (feature health,
-/// trap failures). Topic rollups stay on the existing session completion path.
+/// Second sink: writes **on-device** aggregates (Drift) for a subset of events
+/// (feature view/start/complete, trap wrongs). **Does not** upload to GA4; see
+/// [FirebaseAnalyticsSink] for cloud event names. Events not listed in [send]
+/// are ignored.
 class LocalAnalyticsSink implements AnalyticsSink {
   LocalAnalyticsSink(this._db);
 

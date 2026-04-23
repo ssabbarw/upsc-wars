@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../core/analytics/screen_flow_analytics.dart';
 import '../../../core/debug/upsc_wars_trace.dart';
 import '../../../core/presentation/session_subject_label.dart';
 import '../../../core/deep_link/share_session_opener.dart';
@@ -61,7 +62,21 @@ class ResultsScreen extends ConsumerWidget {
     return PopScope(
       canPop: context.canPop(),
       onPopInvokedWithResult: (didPop, _) {
-        if (didPop) return;
+        if (didPop) {
+          ScreenFlow.logAction(
+            ref,
+            screenName: ScreenFlow.sessionResults,
+            actionId: 'system_back_pop',
+            actionKind: 'back',
+          );
+          return;
+        }
+        ScreenFlow.logAction(
+          ref,
+          screenName: ScreenFlow.sessionResults,
+          actionId: 'back_to_home',
+          actionKind: 'back',
+        );
         unawaited(() async {
           await DeferredPushPermissionCoordinator.tryOfferFromResultsUserAction(
             context,

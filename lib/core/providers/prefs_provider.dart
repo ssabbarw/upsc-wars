@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -57,6 +59,9 @@ abstract final class PrefKeys {
   /// User dismissed the post-modal home notification hint.
   static const deferredPushHomeNudgeDismissedV2 =
       'deferred_push_home_nudge_dismissed_v2';
+
+  /// JSON list of [ActivationMilestones] ids already logged to analytics.
+  static const activationMilestonesV1 = 'activation_milestones_v1';
 }
 
 class PrefsService {
@@ -175,6 +180,28 @@ class PrefsService {
       _p.getBool(PrefKeys.deferredPushHomeNudgeDismissedV2) ?? false;
   set deferredPushHomeNudgeDismissedV2(bool v) =>
       _p.setBool(PrefKeys.deferredPushHomeNudgeDismissedV2, v);
+
+  /// Ids of [activation_milestone] events already sent (one-time activation).
+  Set<String> get activationMilestones {
+    final raw = _p.getString(PrefKeys.activationMilestonesV1);
+    if (raw == null || raw.isEmpty) return <String>{};
+    try {
+      final list = jsonDecode(raw);
+      if (list is! List) return <String>{};
+      return list.map((e) => e.toString()).toSet();
+    } catch (_) {
+      return <String>{};
+    }
+  }
+
+  bool hasActivationMilestone(String id) => activationMilestones.contains(id);
+
+  void addActivationMilestone(String id) {
+    if (id.isEmpty) return;
+    final s = activationMilestones;
+    s.add(id);
+    _p.setString(PrefKeys.activationMilestonesV1, jsonEncode(s.toList()..sort()));
+  }
 }
 
 @Riverpod(keepAlive: true)
