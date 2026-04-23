@@ -31,6 +31,7 @@ import '../../../shared/widgets/prelims_countdown_card.dart';
 import '../../../shared/widgets/quick_practice_mode_sheet.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/home_page_video_banner.dart';
+
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
 
@@ -443,26 +444,20 @@ class HomeScreen extends HookConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           HomePageVideoBanner(borderColor: borderColor),
-                          const SizedBox(height: AppSpacing.xl),
-                          _PrimaryActionCard(home: h, borderColor: borderColor),
                           const SizedBox(height: AppSpacing.md),
-                          _QuickPracticeSection(borderColor: borderColor),
-                          const SizedBox(height: AppSpacing.md),
-                          const DeferredPushHomeNudgeBanner(),
                           _PyqYearCarousel(
                             borderColor: borderColor,
                             years: pyqYears,
                           ),
+                          const SizedBox(height: AppSpacing.md),
+                          const DeferredPushHomeNudgeBanner(),
+                          _QuickPracticeSection(borderColor: borderColor),
                           if (h.revisionTrapCount > 0) ...[
                             const SizedBox(height: AppSpacing.md),
                             _TrapPatternsCard(
                               trapCount: h.revisionTrapCount,
                               borderColor: borderColor,
                             ),
-                          ],
-                          if (h.lastSession != null) ...[
-                            const SizedBox(height: AppSpacing.md),
-                            _LastSessionCard(home: h, borderColor: borderColor),
                           ],
                         ],
                       );
@@ -550,158 +545,6 @@ class _HeaderLoading extends HookConsumerWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _PrimaryActionCard extends HookConsumerWidget {
-  const _PrimaryActionCard({required this.home, required this.borderColor});
-  final HomeState home;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final hasRevision = home.revisionQueueCount > 0;
-
-    if (!hasRevision) {
-      return Material(
-        color: AppColors.transparent,
-        child: InkWell(
-          onTap: () => context.push('/subject-test'),
-          borderRadius: BorderRadius.circular(AppRadius.lg),
-          child: Container(
-            padding: const EdgeInsets.all(AppSpacing.lg),
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerLow,
-              borderRadius: BorderRadius.circular(AppRadius.lg),
-              border: Border.all(color: borderColor, width: 0.5),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Start a test',
-                        style: AppTextStyles.h3().copyWith(
-                          color: scheme.onSurface,
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.xs),
-                      Text(
-                        'No weak areas identified yet',
-                        style: AppTextStyles.bodySm().copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Icon(Icons.chevron_right, color: scheme.onSurface),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
-
-    // Has revision items — show Weak Areas card with two CTAs
-    final loading = useState(false);
-
-    Future<void> practiceNow() async {
-      if (loading.value) return;
-      loading.value = true;
-      try {
-        final create = await ref.read(createSessionUseCaseProvider.future);
-        final count = home.revisionQueueCount.clamp(1, 50);
-        final id = await create.execute(
-          SessionConfig(
-            subject: 'revision',
-            mode: 'learning',
-            questionCount: count,
-            isTimed: true,
-            timeLimitSecs: 60,
-            language: 'en',
-          ),
-        );
-        if (context.mounted) context.push('/test/$id');
-      } finally {
-        loading.value = false;
-      }
-    }
-
-    final hasSubTopics = home.revisionSubTopicCount > 0;
-    final hasTraps = home.revisionTrapCount > 0;
-    final summaryParts = [
-      if (hasSubTopics)
-        '${home.revisionSubTopicCount} ${home.revisionSubTopicCount == 1 ? 'sub-topic' : 'sub-topics'}',
-      if (hasTraps)
-        '${home.revisionTrapCount} trap ${home.revisionTrapCount == 1 ? 'pattern' : 'patterns'}',
-    ];
-
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: AppColors.primary,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Weak Areas',
-            style: AppTextStyles.h3().copyWith(color: AppColors.onPrimary),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            summaryParts.isNotEmpty
-                ? summaryParts.join(' · ')
-                : '${home.revisionQueueCount} questions to review',
-            style: AppTextStyles.bodySm().copyWith(
-              color: AppColors.onPrimary.withValues(alpha: 0.8),
-            ),
-          ),
-          const SizedBox(height: AppSpacing.md),
-          Row(
-            children: [
-              Expanded(
-                child: FilledButton(
-                  onPressed: loading.value ? null : practiceNow,
-                  style: FilledButton.styleFrom(
-                    backgroundColor: AppColors.onPrimary,
-                    foregroundColor: AppColors.primary,
-                  ),
-                  child: loading.value
-                      ? SizedBox(
-                          height: 16,
-                          width: 16,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: AppColors.primary,
-                          ),
-                        )
-                      : const Text('Practice Now'),
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: OutlinedButton(
-                  onPressed: () => context.push('/weak-areas'),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: AppColors.onPrimary,
-                    side: BorderSide(
-                      color: AppColors.onPrimary.withValues(alpha: 0.5),
-                    ),
-                  ),
-                  child: const Text('View Details'),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }
@@ -1120,72 +963,6 @@ class _SubjectGridSkeleton extends HookWidget {
 }
 
 // ────────────────────────────────────────────────────────────────────────────────
-
-class _LastSessionCard extends HookConsumerWidget {
-  const _LastSessionCard({required this.home, required this.borderColor});
-  final HomeState home;
-  final Color borderColor;
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final s = home.lastSession;
-    final scheme = Theme.of(context).colorScheme;
-    if (s == null) return const SizedBox.shrink();
-    final subj = displayNameForSessionSubject(s.subject);
-    final title = s.topic == null ? subj : '$subj · ${s.topic}';
-    final inProgress = s.status == 'in_progress';
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.lg),
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        borderRadius: BorderRadius.circular(AppRadius.lg),
-        border: Border.all(color: borderColor, width: 0.5),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'LAST SESSION',
-            style: AppTextStyles.caption().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            title,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: AppTextStyles.label().copyWith(color: scheme.onSurface),
-          ),
-          const SizedBox(height: AppSpacing.xs),
-          Text(
-            inProgress
-                ? '${s.questionCount}Q · in progress'
-                : '${s.questionCount}Q · ${s.accuracy?.toStringAsFixed(1) ?? '—'}% · net ${s.netScore?.toStringAsFixed(1) ?? '—'}',
-            style: AppTextStyles.bodySm().copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Align(
-            alignment: Alignment.centerRight,
-            child: inProgress
-                ? ElevatedButton(
-                    onPressed: () => context.push('/test/${s.sessionId}'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                    ),
-                    child: Text('Resume', style: AppTextStyles.labelSm()),
-                  )
-                : OutlinedButton(
-                    onPressed: () => context.push('/history/${s.sessionId}'),
-                    child: Text('Review', style: AppTextStyles.labelSm()),
-                  ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 // ── Quick Practice Section ────────────────────────────────────────────────────
 
