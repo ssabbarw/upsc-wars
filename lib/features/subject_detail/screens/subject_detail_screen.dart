@@ -66,9 +66,8 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _SubjectPerformanceSection(
+                child: _PerformanceSummarySection(
                   subject: subject,
-                  displayName: displayName,
                   borderColor: borderColor,
                 ),
               ),
@@ -81,7 +80,7 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _PracticeSection(
+                child: _NewTestSection(
                   subject: subject,
                   displayName: displayName,
                   borderColor: borderColor,
@@ -97,7 +96,22 @@ class SubjectDetailScreen extends ConsumerWidget {
                   AppSpacing.lg,
                   0,
                 ),
-                child: _HistoryHubSection(
+                child: _PerformanceInsightsSection(
+                  subject: subject,
+                  displayName: displayName,
+                  borderColor: borderColor,
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.lg,
+                  AppSpacing.xxxl,
+                  AppSpacing.lg,
+                  0,
+                ),
+                child: _HistorySection(
                   subject: subject,
                   borderColor: borderColor,
                 ),
@@ -433,8 +447,8 @@ class _Header extends ConsumerWidget {
 
 // ── Practice Section ────────────────────────────────────────────────────────────
 
-class _PracticeSection extends ConsumerWidget {
-  const _PracticeSection({
+class _NewTestSection extends ConsumerWidget {
+  const _NewTestSection({
     required this.subject,
     required this.displayName,
     required this.borderColor,
@@ -455,7 +469,7 @@ class _PracticeSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const _ScreenSectionHeader(
-          title: 'PRACTICE',
+          title: 'NEW TEST',
           subtitle: 'Start a test or practice specific topics.',
         ),
         const SizedBox(height: AppSpacing.sm),
@@ -579,8 +593,8 @@ class _PracticeCard extends StatelessWidget {
 
 // ── History hub (opens paginated subject history) ─────────────────────────────
 
-class _HistoryHubSection extends ConsumerWidget {
-  const _HistoryHubSection({required this.subject, required this.borderColor});
+class _HistorySection extends ConsumerWidget {
+  const _HistorySection({required this.subject, required this.borderColor});
 
   final String subject;
   final Color borderColor;
@@ -595,7 +609,7 @@ class _HistoryHubSection extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const _ScreenSectionHeader(
-          title: 'TEST HISTORY',
+          title: 'HISTORY',
           subtitle: 'List of Completed sessions for this subject.',
         ),
         const SizedBox(height: AppSpacing.sm),
@@ -655,15 +669,57 @@ class _HistoryHubSection extends ConsumerWidget {
   }
 }
 
-// ── Performance (overall + mock prep + confidence) ─────────────────────────
-
 /// Advice + danger-zone breakdown need at least one scored attempt marked
 /// Sure or Educated guess in this subject.
 bool _subjectHasConfidenceLabelsForInsights(SubjectScoredAccuracySummary s) =>
     s.sureTotal > 0 || s.educatedGuessTotal > 0;
 
-class _SubjectPerformanceSection extends ConsumerWidget {
-  const _SubjectPerformanceSection({
+class _PerformanceSummarySection extends ConsumerWidget {
+  const _PerformanceSummarySection({
+    required this.subject,
+    required this.borderColor,
+  });
+
+  final String subject;
+  final Color borderColor;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final accuracyAsync = ref.watch(subjectScoredAccuracyProvider(subject));
+    final scheme = Theme.of(context).colorScheme;
+
+    return accuracyAsync.when(
+      loading: () => const _SubjectStatsCardSkeleton(),
+      error: (_, _) => _SubjectPanel(
+        borderColor: borderColor,
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                'Could not load subject stats.',
+                style: AppTextStyles.bodySm().copyWith(
+                  color: scheme.onSurface,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () =>
+                  ref.invalidate(subjectScoredAccuracyProvider(subject)),
+              child: Text('Retry', style: AppTextStyles.label()),
+            ),
+          ],
+        ),
+      ),
+      data: (summary) => _SubjectScoredSummaryCard(
+        summary: summary,
+        borderColor: borderColor,
+      ),
+    );
+  }
+}
+
+class _PerformanceInsightsSection extends ConsumerWidget {
+  const _PerformanceInsightsSection({
     required this.subject,
     required this.displayName,
     required this.borderColor,
@@ -675,106 +731,74 @@ class _SubjectPerformanceSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final accuracyAsync = ref.watch(subjectScoredAccuracyProvider(subject));
     final insightsAsync = ref.watch(subjectInsightsProvider(subject));
     final mockPrepAsync = ref.watch(subjectMockPrepInsightsProvider(subject));
-    final accuracyAsync = ref.watch(subjectScoredAccuracyProvider(subject));
     final scheme = Theme.of(context).colorScheme;
 
     return accuracyAsync.when(
-      loading: () => const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [_SubjectStatsCardSkeleton()],
-      ),
-      error: (_, _) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _SubjectPanel(
-            borderColor: borderColor,
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Could not load subject stats.',
-                    style: AppTextStyles.bodySm().copyWith(
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () =>
-                      ref.invalidate(subjectScoredAccuracyProvider(subject)),
-                  child: Text('Retry', style: AppTextStyles.label()),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      loading: () => const SizedBox.shrink(),
+      error: (_, _) => const SizedBox.shrink(),
       data: (summary) {
         final showInsightBlocks = _subjectHasConfidenceLabelsForInsights(
           summary,
         );
+
+        if (!showInsightBlocks) {
+          return Text(
+            'Mark Sure or Educated guess when you answer scored questions '
+            'in this subject — mock-prep advice and your confidence '
+            'breakdown will appear here.',
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+              height: 1.45,
+            ),
+          );
+        }
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _SubjectScoredSummaryCard(
-              summary: summary,
-              borderColor: borderColor,
+            mockPrepAsync.when(
+              loading: () => _MockPrepInsightsSkeleton(
+                borderColor: borderColor,
+                displayName: displayName,
+              ),
+              error: (e, _) => _MockPrepLoadError(
+                borderColor: borderColor,
+                onRetry: () =>
+                    ref.invalidate(subjectMockPrepInsightsProvider(subject)),
+              ),
+              data: (mock) => _AdviceForSubjectMockPrepGroup(
+                displayName: displayName,
+                mock: mock,
+                borderColor: borderColor,
+                subject: subject,
+              ),
             ),
-            if (showInsightBlocks) ...[
-              const SizedBox(height: AppSpacing.lg),
-              mockPrepAsync.when(
-                loading: () => _MockPrepInsightsSkeleton(
-                  borderColor: borderColor,
-                  displayName: displayName,
-                ),
-                error: (e, _) => _MockPrepLoadError(
-                  borderColor: borderColor,
-                  onRetry: () =>
-                      ref.invalidate(subjectMockPrepInsightsProvider(subject)),
-                ),
-                data: (mock) => _AdviceForSubjectMockPrepGroup(
-                  displayName: displayName,
-                  mock: mock,
-                  borderColor: borderColor,
-                  subject: subject,
-                ),
+            const SizedBox(height: AppSpacing.xxl),
+            insightsAsync.when(
+              loading: () => _InsightsSkeleton(borderColor: borderColor),
+              error: (e, _) => _InsightsLoadError(
+                borderColor: borderColor,
+                onRetry: () =>
+                    ref.invalidate(subjectInsightsProvider(subject)),
               ),
-              const SizedBox(height: AppSpacing.xxl),
-              insightsAsync.when(
-                loading: () => _InsightsSkeleton(borderColor: borderColor),
-                error: (e, _) => _InsightsLoadError(
-                  borderColor: borderColor,
-                  onRetry: () =>
-                      ref.invalidate(subjectInsightsProvider(subject)),
-                ),
-                data: (insights) => _ConfidenceBreakdownSection(
-                  subject: subject,
-                  displayName: displayName,
-                  borderColor: borderColor,
-                  insights: insights,
-                ),
+              data: (insights) => _ConfidenceBreakdownSection(
+                subject: subject,
+                displayName: displayName,
+                borderColor: borderColor,
+                insights: insights,
               ),
-              const SizedBox(height: AppSpacing.md),
-              Text(
-                'More scored answers with confidence labels sharpen these stats.',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.4,
-                ),
+            ),
+            const SizedBox(height: AppSpacing.md),
+            Text(
+              'More scored answers with confidence labels sharpen these stats.',
+              style: AppTextStyles.caption().copyWith(
+                color: scheme.onSurfaceVariant,
+                height: 1.4,
               ),
-            ] else ...[
-              const SizedBox(height: AppSpacing.lg),
-              Text(
-                'Mark Sure or Educated guess when you answer scored questions '
-                'in this subject — mock-prep advice and your confidence '
-                'breakdown will appear here.',
-                style: AppTextStyles.caption().copyWith(
-                  color: scheme.onSurfaceVariant,
-                  height: 1.45,
-                ),
-              ),
-            ],
+            ),
           ],
         );
       },

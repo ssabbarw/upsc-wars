@@ -93,7 +93,9 @@ Future<void> _showConfidenceBottomSheet(
                   Navigator.pop(ctx);
                   ref
                       .read(testSessionProvider(sessionId).notifier)
-                      .submitConfidenceForPending(AnswerConfidence.somewhatSure);
+                      .submitConfidenceForPending(
+                        AnswerConfidence.somewhatSure,
+                      );
                 },
                 child: Text(
                   AnswerConfidence.examShortLabel(
@@ -120,7 +122,11 @@ Future<void> _showConfidenceBottomSheet(
     },
   );
   final stillOpen =
-      ref.read(testSessionProvider(sessionId)).asData?.value.confidencePromptVisible ??
+      ref
+          .read(testSessionProvider(sessionId))
+          .asData
+          ?.value
+          .confidencePromptVisible ??
       false;
   if (stillOpen && context.mounted) {
     ref.read(testSessionProvider(sessionId).notifier).cancelConfidencePrompt();
@@ -142,24 +148,23 @@ class TestEngineScreen extends HookConsumerWidget {
         if (didPop) return;
         final confirmed = await showDialog<bool>(
           context: context,
-          builder:
-              (ctx) => AlertDialog(
-                title: Text('Leave test?', style: AppTextStyles.h3()),
-                content: Text(
-                  'Your progress will be saved and you can resume later.',
-                  style: AppTextStyles.bodyMd(),
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(ctx, false),
-                    child: const Text('Cancel'),
-                  ),
-                  TextButton(
-                    onPressed: () => Navigator.pop(ctx, true),
-                    child: const Text('Leave'),
-                  ),
-                ],
+          builder: (ctx) => AlertDialog(
+            title: Text('Leave test?', style: AppTextStyles.h3()),
+            content: Text(
+              'Your progress will be saved and you can resume later.',
+              style: AppTextStyles.bodyMd(),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: const Text('Cancel'),
               ),
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: const Text('Leave'),
+              ),
+            ],
+          ),
         );
         if (confirmed == true) {
           await notifier.markAbandoned();
@@ -206,12 +211,11 @@ class _TestEngineAsyncBody extends HookConsumerWidget {
     if (err != null) {
       final isNotFound = err is SessionNotFoundException;
       final isNoQuestions = err is SessionHasNoQuestionsException;
-      final msg =
-          isNotFound
-              ? 'Session not found'
-              : isNoQuestions
-              ? 'Something went wrong'
-              : 'Could not load test session.';
+      final msg = isNotFound
+          ? 'Session not found'
+          : isNoQuestions
+          ? 'Something went wrong'
+          : 'Could not load test session.';
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.xxl),
@@ -360,7 +364,10 @@ class _TestEngineLoaded extends HookConsumerWidget {
         ),
       );
       unawaited(
-        logActivationMilestoneOnce(ref, ActivationMilestones.firstMcqTestEntered),
+        logActivationMilestoneOnce(
+          ref,
+          ActivationMilestones.firstMcqTestEntered,
+        ),
       );
       if (s.subject == 'revision' || s.subject == 'revision_quick') {
         unawaited(
@@ -373,21 +380,19 @@ class _TestEngineLoaded extends HookConsumerWidget {
       return null;
     }, [sessionForFx]);
 
-    ref.listen<AsyncValue<TestSessionState>>(
-      testSessionProvider(sessionId),
-      (prev, next) {
-        final was =
-            prev?.asData?.value.confidencePromptVisible ?? false;
-        final now = next.asData?.value.confidencePromptVisible ?? false;
-        if (!was && now) {
-          unawaited(
-            _showConfidenceBottomSheet(context, ref, sessionId),
-          );
-        }
-      },
-    );
+    ref.listen<AsyncValue<TestSessionState>>(testSessionProvider(sessionId), (
+      prev,
+      next,
+    ) {
+      final was = prev?.asData?.value.confidencePromptVisible ?? false;
+      final now = next.asData?.value.confidencePromptVisible ?? false;
+      if (!was && now) {
+        unawaited(_showConfidenceBottomSheet(context, ref, sessionId));
+      }
+    });
 
-    final sessionLanguage = ref.watch(
+    final sessionLanguage =
+        ref.watch(
           testSessionProvider(
             sessionId,
           ).select((a) => a.asData?.value.session?.language),
@@ -486,11 +491,13 @@ Future<void> _showTestPaletteSheet(
   final session = state.session!;
   final isDark = context.isDarkMode;
   final scheme = Theme.of(context).colorScheme;
-  final attempted =
-      session.questions.where((q) => q.status != 'unattempted').length;
+  final attempted = session.questions
+      .where((q) => q.status != 'unattempted')
+      .length;
   final flagged = session.questions.where((q) => q.flagged).length;
-  final skipped =
-      session.questions.where((q) => q.status == 'unattempted').length;
+  final skipped = session.questions
+      .where((q) => q.status == 'unattempted')
+      .length;
   await showModalBottomSheet<void>(
     context: context,
     backgroundColor: AppColors.transparent,
@@ -519,9 +526,7 @@ Future<void> _showTestPaletteSheet(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Question Grid',
-                style: AppTextStyles.h3().copyWith(
-                  color: scheme.onSurface,
-                ),
+                style: AppTextStyles.h3().copyWith(color: scheme.onSurface),
               ),
             ),
             const SizedBox(height: AppSpacing.xs),
@@ -547,12 +552,16 @@ Future<void> _showTestPaletteSheet(
                 _LegendItem(
                   label: 'Attempted',
                   bg: isDark ? AppColors.correctBgDark : AppColors.correctBg,
-                  fg: isDark ? AppColors.correctTextDark : AppColors.correctText,
+                  fg: isDark
+                      ? AppColors.correctTextDark
+                      : AppColors.correctText,
                 ),
                 _LegendItem(
                   label: 'Flagged',
                   bg: isDark ? AppColors.warningBgDark : AppColors.warningBg,
-                  fg: isDark ? AppColors.warningTextDark : AppColors.warningText,
+                  fg: isDark
+                      ? AppColors.warningTextDark
+                      : AppColors.warningText,
                 ),
                 _LegendItem(
                   label: 'Not visited',
@@ -595,7 +604,9 @@ Future<void> _showTestPaletteSheet(
               child: Table(
                 border: TableBorder.symmetric(
                   inside: BorderSide(
-                    color: isDark ? AppColors.borderDark : AppColors.borderLight,
+                    color: isDark
+                        ? AppColors.borderDark
+                        : AppColors.borderLight,
                     width: 0.6,
                   ),
                 ),
@@ -641,8 +652,9 @@ Future<void> _showTestPaletteSheet(
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          isDark ? scheme.errorContainer : AppColors.wrong,
+                      backgroundColor: isDark
+                          ? scheme.errorContainer
+                          : AppColors.wrong,
                       foregroundColor: isDark ? scheme.onErrorContainer : null,
                     ),
                     child: Text(
@@ -677,7 +689,9 @@ class _CountCell extends HookConsumerWidget {
         children: [
           Text(
             label,
-            style: AppTextStyles.caption().copyWith(color: scheme.onSurfaceVariant),
+            style: AppTextStyles.caption().copyWith(
+              color: scheme.onSurfaceVariant,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppSpacing.xs),
@@ -693,11 +707,7 @@ class _CountCell extends HookConsumerWidget {
 }
 
 class _LegendItem extends HookConsumerWidget {
-  const _LegendItem({
-    required this.label,
-    required this.bg,
-    required this.fg,
-  });
+  const _LegendItem({required this.label, required this.bg, required this.fg});
 
   final String label;
   final Color bg;
@@ -822,27 +832,29 @@ class _TopBar extends HookConsumerWidget {
             borderRadius: BorderRadius.circular(AppRadius.sm),
             constraints: const BoxConstraints(minHeight: 28, minWidth: 40),
             children: const [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 8), child: Text('EN')),
-              Padding(padding: EdgeInsets.symmetric(horizontal: 8), child: Text('HI')),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text('EN'),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text('HI'),
+              ),
             ],
           ),
           const SizedBox(width: AppSpacing.sm),
           InkWell(
-            onTap:
-                () =>
-                    ref
-                        .read(testSessionProvider(sessionId).notifier)
-                        .toggleFlag(),
+            onTap: () =>
+                ref.read(testSessionProvider(sessionId).notifier).toggleFlag(),
             borderRadius: BorderRadius.circular(AppRadius.md),
             child: Container(
               padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
-                color:
-                    flagged
-                        ? (context.isDarkMode
-                            ? AppColors.warningBgDark
-                            : AppColors.warningBg)
-                        : AppColors.transparent,
+                color: flagged
+                    ? (context.isDarkMode
+                          ? AppColors.warningBgDark
+                          : AppColors.warningBg)
+                    : AppColors.transparent,
                 borderRadius: BorderRadius.circular(AppRadius.md),
               ),
               child: Icon(
@@ -869,10 +881,7 @@ class _TopBarDarkModeToggle extends HookConsumerWidget {
     final isDark = context.isDarkMode;
     return InkWell(
       onTap: () async {
-        await setDarkModeEnabled(
-          ref: ref,
-          darkModeEnabled: !isDark,
-        );
+        await setDarkModeEnabled(ref: ref, darkModeEnabled: !isDark);
       },
       borderRadius: BorderRadius.circular(AppRadius.md),
       child: Padding(
@@ -1028,10 +1037,9 @@ class _QuestionArea extends HookConsumerWidget {
             explanationVisible: explanationVisible,
             sessionId: sessionId,
             question: question,
-            onTap:
-                (mode == 'learning' && explanationVisible)
-                    ? null
-                    : () => onSelectOption('a'),
+            onTap: (mode == 'learning' && explanationVisible)
+                ? null
+                : () => onSelectOption('a'),
           ),
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
@@ -1043,10 +1051,9 @@ class _QuestionArea extends HookConsumerWidget {
             explanationVisible: explanationVisible,
             sessionId: sessionId,
             question: question,
-            onTap:
-                (mode == 'learning' && explanationVisible)
-                    ? null
-                    : () => onSelectOption('b'),
+            onTap: (mode == 'learning' && explanationVisible)
+                ? null
+                : () => onSelectOption('b'),
           ),
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
@@ -1058,10 +1065,9 @@ class _QuestionArea extends HookConsumerWidget {
             explanationVisible: explanationVisible,
             sessionId: sessionId,
             question: question,
-            onTap:
-                (mode == 'learning' && explanationVisible)
-                    ? null
-                    : () => onSelectOption('c'),
+            onTap: (mode == 'learning' && explanationVisible)
+                ? null
+                : () => onSelectOption('c'),
           ),
           const SizedBox(height: AppSpacing.sm),
           _OptionRow(
@@ -1073,23 +1079,21 @@ class _QuestionArea extends HookConsumerWidget {
             explanationVisible: explanationVisible,
             sessionId: sessionId,
             question: question,
-            onTap:
-                (mode == 'learning' && explanationVisible)
-                    ? null
-                    : () => onSelectOption('d'),
+            onTap: (mode == 'learning' && explanationVisible)
+                ? null
+                : () => onSelectOption('d'),
           ),
           if (mode == 'learning') ...[
             const SizedBox(height: AppSpacing.lg),
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 200),
-              child:
-                  explanationVisible
-                      ? _ExplanationCard(
-                        question: question,
-                        uiLanguage: uiLanguage,
-                        verdict: learningVerdict,
-                      )
-                      : const SizedBox.shrink(),
+              child: explanationVisible
+                  ? _ExplanationCard(
+                      question: question,
+                      uiLanguage: uiLanguage,
+                      verdict: learningVerdict,
+                    )
+                  : const SizedBox.shrink(),
             ),
           ],
         ],
@@ -1190,24 +1194,17 @@ class _OptionRow extends HookConsumerWidget {
         borderWidth = 2;
     }
 
-    final scored =
-        question.status == 'correct' || question.status == 'wrong';
+    final scored = question.status == 'correct' || question.status == 'wrong';
     final selectedHere =
         question.selectedOption?.toLowerCase() == optionKey.toLowerCase();
     final showLearningConfidenceStrip =
-        mode == 'learning' &&
-        explanationVisible &&
-        scored &&
-        selectedHere;
-    final showExamConfidenceStrip =
-        mode == 'exam' && scored && selectedHere;
+        mode == 'learning' && explanationVisible && scored && selectedHere;
+    final showExamConfidenceStrip = mode == 'exam' && scored && selectedHere;
     final showOptionConfidenceStrip =
         (prefs?.confidenceTrackingEnabled ?? false) &&
         (showExamConfidenceStrip || showLearningConfidenceStrip);
     final learningConfidenceInteractionLocked =
-        mode == 'learning' &&
-        explanationVisible &&
-        question.confidence != null;
+        mode == 'learning' && explanationVisible && question.confidence != null;
 
     final outerRadius = BorderRadius.circular(AppRadius.md);
 
@@ -1299,9 +1296,7 @@ class _OptionRow extends HookConsumerWidget {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: badgeBg,
-                              borderRadius: BorderRadius.circular(
-                                AppRadius.sm,
-                              ),
+                              borderRadius: BorderRadius.circular(AppRadius.sm),
                             ),
                             child: Text(
                               keyLabel,
@@ -1380,9 +1375,7 @@ class _ExplanationCard extends HookConsumerWidget {
       clipBehavior: Clip.antiAlias,
       child: Container(
         key: ValueKey('${question.uuid}-${verdict?.name ?? 'none'}'),
-        decoration: BoxDecoration(
-          color: scheme.surfaceContainerLow,
-        ),
+        decoration: BoxDecoration(color: scheme.surfaceContainerLow),
         padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1390,16 +1383,15 @@ class _ExplanationCard extends HookConsumerWidget {
             ExplanationCard(
               translation: QuestionTranslation(
                 finalExplanation: finalExplanation,
-                statementAnalysis:
-                    statementAnalysis
-                        .map(
-                          (e) => StatementAnalysisVm(
-                            statement: e.label,
-                            isCorrect: e.isCorrect,
-                            reason: e.reason,
-                          ),
-                        )
-                        .toList(),
+                statementAnalysis: statementAnalysis
+                    .map(
+                      (e) => StatementAnalysisVm(
+                        statement: e.label,
+                        isCorrect: e.isCorrect,
+                        reason: e.reason,
+                      ),
+                    )
+                    .toList(),
                 eliminationLogic: eliminationLogic,
                 strongDistractor: strongDistractor,
                 upscTrapExplanation: upscTrapExplanation,
@@ -1416,7 +1408,7 @@ class _ExplanationCard extends HookConsumerWidget {
                 correctOption: question.correctOption,
               ),
               icon: const Icon(Icons.groups_2_outlined),
-              label: const Text('Share as community QOTD'),
+              label: const Text('Post QOTD'),
             ),
           ],
         ),
