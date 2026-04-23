@@ -6,6 +6,7 @@ import '../../../core/domain/entities/subject_info.dart';
 import '../../../core/domain/entities/topic_info.dart';
 import '../../../core/providers/catalog_providers.dart';
 import '../../../core/providers/user_database_provider.dart';
+import '../data/subject_topic_danger_last30.dart';
 
 /// SubjectInfo for a single subject, derived from the cached subject list.
 final subjectInfoProvider =
@@ -24,11 +25,14 @@ final subjectTopicsProvider =
     FutureProvider.autoDispose.family<List<TopicInfo>, String>((ref, subject) async {
   final rawTopics = await ref.watch(topicTestTopicsProvider(subject).future);
   final db = ref.watch(userDatabaseProvider);
+  final dangerByTopic = await fetchSubjectTopicDangerLast30(db, subject);
+
   final statsRows = await db.userTopicStatsDao.fetchBySubject(subject);
   final statsByTopic = {for (final row in statsRows) row.topic: row};
 
   final enriched = rawTopics.map((topic) {
     final stat = statsByTopic[topic.topic];
+    final d = dangerByTopic[topic.topic];
     final fromUser = stat?.totalAttempted ?? 0;
     final attemptCount =
         fromUser > 0 ? fromUser : topic.attemptCount;
@@ -51,21 +55,15 @@ final subjectTopicsProvider =
         attemptCount: attemptCount,
         accuracyPercent: accuracyPercent,
       ),
+      dangerSureWrongLast30: d?.sure ?? 0,
+      dangerEducatedGuessWrongLast30: d?.guess ?? 0,
     );
   }).toList();
 
-  enriched.sort((a, b) {
-    final aAttempted = a.attemptCount > 0;
-    final bAttempted = b.attemptCount > 0;
-    if (aAttempted != bAttempted) return aAttempted ? -1 : 1;
-    if (!aAttempted && !bAttempted) {
-      return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
-    }
-    final byAccuracy =
-        (a.accuracyPercent ?? 0).compareTo(b.accuracyPercent ?? 0);
-    if (byAccuracy != 0) return byAccuracy;
-    return a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase());
-  });
+  // Stable baseline order; [TopicsListScreen] applies [TopicListSortMode].
+  enriched.sort(
+    (a, b) => a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase()),
+  );
 
   return enriched;
 });

@@ -12,10 +12,12 @@ final subjectInsightsProvider =
     final db = ref.watch(userDatabaseProvider);
     final since = DateTime.now().subtract(const Duration(days: 30));
 
-    final dangerTotalRow = await db
+    final splitRow = await db
         .customSelect(
           '''
-          SELECT COUNT(*) AS c
+          SELECT
+            COALESCE(SUM(CASE WHEN a.confidence = 'very_sure' THEN 1 ELSE 0 END), 0) AS sure_w,
+            COALESCE(SUM(CASE WHEN a.confidence = 'somewhat_sure' THEN 1 ELSE 0 END), 0) AS guess_w
           FROM attempts a
           INNER JOIN questions q ON q.uuid = a.question_uuid
           WHERE q.subject = ?
@@ -31,7 +33,9 @@ final subjectInsightsProvider =
           readsFrom: {db.sessionQuestions, db.questions},
         )
         .getSingle();
-    final dangerTotal = dangerTotalRow.read<int>('c');
+    final sureWrong = splitRow.read<int>('sure_w');
+    final guessWrong = splitRow.read<int>('guess_w');
+    final dangerTotal = sureWrong + guessWrong;
     final marks = dangerTotal * 0.66;
 
     final topicRows = await db
@@ -69,6 +73,8 @@ final subjectInsightsProvider =
 
     return SubjectInsights(
       dangerZoneCountLast30Days: dangerTotal,
+      dangerZoneSureWrongCountLast30Days: sureWrong,
+      dangerZoneEducatedGuessWrongCountLast30Days: guessWrong,
       dangerZoneMarksLast30: marks,
       topicPercentiles: tiered,
     );

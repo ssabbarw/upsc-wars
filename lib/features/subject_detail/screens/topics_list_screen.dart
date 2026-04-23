@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/constants/subject_constants.dart';
 import '../../../core/domain/entities/topic_info.dart';
+import '../domain/topic_list_sort_mode.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_radius.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
-import '../../../shared/widgets/test_config_bottom_sheet.dart';
 import '../providers/subject_detail_providers.dart';
+import '../widgets/topic_entry_bottom_sheet.dart';
 
-class TopicsListScreen extends ConsumerWidget {
+class TopicsListScreen extends HookConsumerWidget {
   const TopicsListScreen({super.key, required this.subject});
 
   final String subject;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final sortMode = useState(TopicListSortMode.dangerZone);
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
@@ -76,6 +79,17 @@ class TopicsListScreen extends ConsumerWidget {
                 ],
               ),
             ),
+            topicsAsync.when(
+              loading: () => const SizedBox.shrink(),
+              error: (_, _) => const SizedBox.shrink(),
+              data: (topics) {
+                if (topics.isEmpty) return const SizedBox.shrink();
+                return _TopicSortChips(
+                  sortMode: sortMode.value,
+                  onSortChanged: (m) => sortMode.value = m,
+                );
+              },
+            ),
             // Topics list
             Expanded(
               child: topicsAsync.when(
@@ -87,6 +101,10 @@ class TopicsListScreen extends ConsumerWidget {
                   if (topics.isEmpty) {
                     return _EmptyState();
                   }
+                  final sorted = _sortTopics(
+                    List<TopicInfo>.from(topics),
+                    sortMode.value,
+                  );
                   return ListView.separated(
                     primary: false,
                     shrinkWrap: true,
@@ -97,19 +115,19 @@ class TopicsListScreen extends ConsumerWidget {
                       AppSpacing.lg,
                       AppSpacing.xxl,
                     ),
-                    itemCount: topics.length + 1,
+                    itemCount: sorted.length + 1,
                     separatorBuilder: (context, index) {
-                      if (index == topics.length - 1) {
+                      if (index == sorted.length - 1) {
                         return const SizedBox(height: AppSpacing.xl);
                       }
                       return const SizedBox(height: AppSpacing.cardListGap);
                     },
                     itemBuilder: (context, i) {
-                      if (i == topics.length) {
+                      if (i == sorted.length) {
                         return const Center(child: ContactUsTextButton());
                       }
                       return _TopicCard(
-                        topic: topics[i],
+                        topic: sorted[i],
                         subject: subject,
                         displayName: displayName,
                         borderColor: borderColor,
@@ -127,7 +145,133 @@ class TopicsListScreen extends ConsumerWidget {
   }
 }
 
+// ── Sort: chips + ordering ─────────────────────────────────────────────────────
+
+List<TopicInfo> _sortTopics(List<TopicInfo> copy, TopicListSortMode mode) {
+  switch (mode) {
+    case TopicListSortMode.alphabetical:
+      copy.sort(
+        (a, b) => a.displayName.toLowerCase().compareTo(
+              b.displayName.toLowerCase(),
+            ),
+      );
+    case TopicListSortMode.accuracy:
+      copy.sort((a, b) {
+        final aAtt = a.attemptCount > 0;
+        final bAtt = b.attemptCount > 0;
+        if (aAtt != bAtt) return aAtt ? -1 : 1;
+        if (!aAtt && !bAtt) {
+          return a.displayName
+              .toLowerCase()
+              .compareTo(b.displayName.toLowerCase());
+        }
+        final byAcc = (a.accuracyPercent ?? 0).compareTo(
+          b.accuracyPercent ?? 0,
+        );
+        if (byAcc != 0) return byAcc;
+        return a.displayName
+            .toLowerCase()
+            .compareTo(b.displayName.toLowerCase());
+      });
+    case TopicListSortMode.dangerZone:
+      copy.sort((a, b) {
+        final da = a.dangerSureWrongLast30 + a.dangerEducatedGuessWrongLast30;
+        final db = b.dangerSureWrongLast30 + b.dangerEducatedGuessWrongLast30;
+        if (db != da) return db.compareTo(da);
+        return a.displayName
+            .toLowerCase()
+            .compareTo(b.displayName.toLowerCase());
+      });
+  }
+  return copy;
+}
+
+class _TopicSortChips extends StatelessWidget {
+  const _TopicSortChips({
+    required this.sortMode,
+    required this.onSortChanged,
+  });
+
+  final TopicListSortMode sortMode;
+  final ValueChanged<TopicListSortMode> onSortChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+
+    Widget chip(String label, TopicListSortMode mode) {
+      final selected = sortMode == mode;
+      return ChoiceChip(
+        label: Text(label),
+        selected: selected,
+        onSelected: (_) => onSortChanged(mode),
+        labelStyle: AppTextStyles.bodySm().copyWith(
+          color: selected ? AppColors.onPrimary : scheme.onSurfaceVariant,
+          fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+        ),
+        selectedColor: AppColors.primary,
+        backgroundColor: scheme.surfaceContainerLow,
+        showCheckmark: false,
+        side: BorderSide.none,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadius.pill),
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.xs,
+        ),
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+        child: Row(
+          children: [
+            chip('Accuracy', TopicListSortMode.accuracy),
+            const SizedBox(width: AppSpacing.sm),
+            chip('Danger zone', TopicListSortMode.dangerZone),
+            const SizedBox(width: AppSpacing.sm),
+            chip('A – Z', TopicListSortMode.alphabetical),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 // ── Topic Card ──────────────────────────────────────────────────────────────────
+
+class _TopicLabeledLine extends StatelessWidget {
+  const _TopicLabeledLine({
+    required this.label,
+    required this.child,
+  });
+
+  final String label;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '$label: ',
+          style: AppTextStyles.caption().copyWith(
+            color: scheme.onSurfaceVariant,
+            fontWeight: FontWeight.w600,
+            height: 1.3,
+          ),
+        ),
+        Expanded(child: child),
+      ],
+    );
+  }
+}
 
 class _TopicCard extends StatelessWidget {
   const _TopicCard({
@@ -153,17 +297,14 @@ class _TopicCard extends StatelessWidget {
     return Material(
       color: AppColors.transparent,
       child: InkWell(
-        onTap: () => showTestConfigBottomSheet(
+        onTap: () => showTopicEntryBottomSheet(
           context: context,
-          args: TestConfigSheetArgs(
-            subject: subject,
-            topic: topic.topic,
-            subjectDisplayName: displayName,
-            topicDisplayName: topic.displayName,
-            availableQuestionCount: topic.questionCount,
-            topicCountWhenSubjectOnly: 0,
-            onSessionCreated: (id) => context.push('/test/$id'),
-          ),
+          subject: subject,
+          topic: topic.topic,
+          subjectDisplayName: displayName,
+          topicDisplayName: topic.displayName,
+          availableQuestionCount: topic.questionCount,
+          onTestSessionCreated: (id) => context.push('/test/$id'),
         ),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         child: Container(
@@ -200,19 +341,50 @@ class _TopicCard extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: AppSpacing.sm),
-                            if (notStarted)
-                              Text(
-                                'Not started',
+                            _TopicLabeledLine(
+                              label: 'Accuracy',
+                              child: notStarted
+                                  ? Text(
+                                      'Not started',
+                                      style: AppTextStyles.caption().copyWith(
+                                        color: scheme.onSurfaceVariant,
+                                        height: 1.3,
+                                      ),
+                                    )
+                                  : Wrap(
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.center,
+                                      spacing: 4,
+                                      runSpacing: 2,
+                                      children: [
+                                        AccuracyPercentageText(
+                                          attemptCount: topic.attemptCount,
+                                          accuracyPercent: topic.accuracyPercent,
+                                          tier: topic.accuracyTier,
+                                        ),
+                                        Text(
+                                          '· ${topic.attemptCount} ${topic.attemptCount == 1 ? 'attempt' : 'attempts'}',
+                                          style: AppTextStyles.caption()
+                                              .copyWith(
+                                            color: scheme.onSurfaceVariant,
+                                            height: 1.3,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                            ),
+                            const SizedBox(height: AppSpacing.xs),
+                            _TopicLabeledLine(
+                              label: 'Danger zone',
+                              child: Text(
+                                'Sure ${topic.dangerSureWrongLast30} · '
+                                'Educated guess ${topic.dangerEducatedGuessWrongLast30} (30 days)',
                                 style: AppTextStyles.caption().copyWith(
                                   color: scheme.onSurfaceVariant,
+                                  height: 1.3,
                                 ),
-                              )
-                            else
-                              AccuracyPercentageText(
-                                attemptCount: topic.attemptCount,
-                                accuracyPercent: topic.accuracyPercent,
-                                tier: topic.accuracyTier,
                               ),
+                            ),
                           ],
                         ),
                       ),

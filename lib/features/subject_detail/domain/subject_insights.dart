@@ -42,11 +42,17 @@ class TopicPercentileRow {
 class SubjectInsights {
   const SubjectInsights({
     required this.dangerZoneCountLast30Days,
+    required this.dangerZoneSureWrongCountLast30Days,
+    required this.dangerZoneEducatedGuessWrongCountLast30Days,
     required this.dangerZoneMarksLast30,
     required this.topicPercentiles,
   });
 
   final int dangerZoneCountLast30Days;
+  /// Wrong attempts where confidence was "Sure" (`very_sure` in the DB).
+  final int dangerZoneSureWrongCountLast30Days;
+  /// Wrong attempts where confidence was "Educated guess" (`somewhat_sure`).
+  final int dangerZoneEducatedGuessWrongCountLast30Days;
   final double dangerZoneMarksLast30;
   final List<TopicPercentileRow> topicPercentiles;
 

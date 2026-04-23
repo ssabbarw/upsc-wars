@@ -13,10 +13,10 @@ import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
 import '../../../shared/widgets/test_config_bottom_sheet.dart';
-import '../../history/providers/history_filters_provider.dart';
 import '../domain/subject_insights.dart';
 import '../providers/subject_detail_providers.dart';
 import '../providers/subject_insights_providers.dart';
+import '../widgets/danger_zone_summary_card.dart';
 
 class SubjectDetailScreen extends ConsumerWidget {
   const SubjectDetailScreen({super.key, required this.subject});
@@ -96,6 +96,7 @@ class SubjectDetailScreen extends ConsumerWidget {
                 ),
                 child: _InsightsSection(
                   subject: subject,
+                  displayName: displayName,
                   borderColor: borderColor,
                 ),
               ),
@@ -744,9 +745,14 @@ class _SessionRow extends StatelessWidget {
 // ── Insights Section ────────────────────────────────────────────────────────────
 
 class _InsightsSection extends ConsumerWidget {
-  const _InsightsSection({required this.subject, required this.borderColor});
+  const _InsightsSection({
+    required this.subject,
+    required this.displayName,
+    required this.borderColor,
+  });
 
   final String subject;
+  final String displayName;
   final Color borderColor;
 
   @override
@@ -773,7 +779,8 @@ class _InsightsSection extends ConsumerWidget {
           ),
           data: (insights) => Column(
             children: [
-              _DangerZoneSummaryCard(
+              DangerZoneSummaryCard(
+                dangerZoneContextLabel: displayName,
                 subject: subject,
                 insights: insights,
                 borderColor: borderColor,
@@ -787,162 +794,6 @@ class _InsightsSection extends ConsumerWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-// ── Card 1: Danger Zone summary (30 days) ───────────────────────────────────────
-
-class _DangerZoneSummaryCard extends ConsumerWidget {
-  const _DangerZoneSummaryCard({
-    required this.subject,
-    required this.insights,
-    required this.borderColor,
-  });
-
-  final String subject;
-  final SubjectInsights insights;
-  final Color borderColor;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final scheme = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final count = insights.dangerZoneCountLast30Days;
-    final calm = insights.isWellCalibratedThisMonth;
-
-    final (accent, bg) = calm
-        ? (
-            isDark ? AppColors.correctTextDark : AppColors.correctText,
-            isDark ? AppColors.correctBgDark : AppColors.correctBg,
-          )
-        : (
-            isDark ? AppColors.wrongTextDark : AppColors.wrongText,
-            isDark ? AppColors.wrongBgDark : AppColors.wrongBg,
-          );
-
-    // Rounded corners require a uniform border color on BoxDecoration; the
-    // left accent is drawn separately so we keep the same look without the
-    // framework assertion.
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(AppRadius.lg),
-      child: ColoredBox(
-        color: scheme.surface,
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  border: Border.all(color: borderColor, width: 0.5),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 0,
-              top: 0,
-              bottom: 0,
-              width: 3,
-              child: ColoredBox(color: accent),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                3 + AppSpacing.lg,
-                AppSpacing.lg,
-                AppSpacing.lg,
-                AppSpacing.lg,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Danger Zone',
-                    style: AppTextStyles.label().copyWith(
-                      color: scheme.onSurface,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    'Confidently wrong (last 30 days)',
-                    style: AppTextStyles.caption().copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.md),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: calm
-                            ? Text(
-                                '🟢 Well calibrated this month',
-                                style: AppTextStyles.bodyMd().copyWith(
-                                  color: scheme.onSurface,
-                                ),
-                              )
-                            : Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '⚠️ $count Danger Zone question${count == 1 ? '' : 's'}',
-                                    style: AppTextStyles.bodyMd().copyWith(
-                                      color: scheme.onSurface,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  const SizedBox(height: AppSpacing.xs),
-                                  Text(
-                                    'Would cost ${insights.dangerZoneMarksLast30.toStringAsFixed(2)} marks',
-                                    style: AppTextStyles.caption().copyWith(
-                                      color: scheme.onSurfaceVariant,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                      ),
-                      if (!calm)
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: AppSpacing.md,
-                            vertical: AppSpacing.sm,
-                          ),
-                          decoration: BoxDecoration(
-                            color: bg,
-                            borderRadius: BorderRadius.circular(AppRadius.md),
-                          ),
-                          child: Text(
-                            '$count',
-                            style: AppTextStyles.h2().copyWith(
-                              color: accent,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                  if (!calm) ...[
-                    const SizedBox(height: AppSpacing.md),
-                    SizedBox(
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed: () {
-                          ref
-                              .read(historyFilterStateProvider.notifier)
-                              .setSubject(subject);
-                          context.push('/history');
-                        },
-                        child: Text(
-                          'Review all in History',
-                          style: AppTextStyles.label(),
-                        ),
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

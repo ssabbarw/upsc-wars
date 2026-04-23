@@ -11,7 +11,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/theme/app_text_styles.dart';
 import '../../../shared/widgets/accuracy_percentage_text.dart';
 import '../../../shared/widgets/contact_us_entry.dart';
-import '../../../shared/widgets/test_config_bottom_sheet.dart';
+import '../../subject_detail/widgets/topic_entry_bottom_sheet.dart';
 import '../providers/topic_test_ui_providers.dart';
 
 class _NoScrollbarBehavior extends ScrollBehavior {
@@ -205,19 +205,16 @@ class TopicTestScreen extends HookConsumerWidget {
                         borderColor: borderColor,
                         revisionQueueCount: revisionQueueCount,
                         isWeak: isWeak,
-                        onTap: () => showTestConfigBottomSheet(
+                        onTap: () => showTopicEntryBottomSheet(
                           context: context,
-                          args: TestConfigSheetArgs(
-                            subject: t.subject,
-                            topic: t.topic,
-                            subjectDisplayName:
-                                subj?.displayName ?? t.subject,
-                            topicDisplayName: t.displayName,
-                            availableQuestionCount: t.questionCount,
-                            topicCountWhenSubjectOnly: 0,
-                            onSessionCreated: (id) =>
-                                context.push('/test/$id'),
-                          ),
+                          subject: t.subject,
+                          topic: t.topic,
+                          subjectDisplayName:
+                              subj?.displayName ?? t.subject,
+                          topicDisplayName: t.displayName,
+                          availableQuestionCount: t.questionCount,
+                          onTestSessionCreated: (id) =>
+                              context.push('/test/$id'),
                         ),
                       );
                     },
@@ -349,6 +346,18 @@ class _TopicRow extends HookConsumerWidget {
                                 '$revisionQueueCount in revision queue',
                                 style: AppTextStyles.caption()
                                     .copyWith(color: scheme.onSurfaceVariant),
+                              ),
+                            ],
+                            if (topic.dangerSureWrongLast30 > 0 ||
+                                topic.dangerEducatedGuessWrongLast30 > 0) ...[
+                              const SizedBox(height: AppSpacing.xs),
+                              Text(
+                                'Sure wrong: ${topic.dangerSureWrongLast30} · '
+                                'Educated guess wrong: ${topic.dangerEducatedGuessWrongLast30} (30 days)',
+                                style: AppTextStyles.caption().copyWith(
+                                  color: scheme.onSurfaceVariant,
+                                  height: 1.3,
+                                ),
                               ),
                             ],
                           ],

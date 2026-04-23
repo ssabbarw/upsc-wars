@@ -99,6 +99,8 @@ void main() {
     );
 
     expect(insights.dangerZoneCountLast30Days, 3);
+    expect(insights.dangerZoneSureWrongCountLast30Days, 2);
+    expect(insights.dangerZoneEducatedGuessWrongCountLast30Days, 1);
     expect(insights.dangerZoneMarksLast30, closeTo(1.98, 0.001));
 
     expect(insights.topicPercentiles, hasLength(2));
