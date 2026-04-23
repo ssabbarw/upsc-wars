@@ -21,7 +21,7 @@ class ProgressScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final overviewAsync = ref.watch(allSubjectsOverviewProvider);
-    final sortMode = useState(SubjectSortMode.mistakes);
+    final sortMode = useState(SubjectSortMode.accuracy);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final borderColor = isDark ? AppColors.borderDark : AppColors.borderLight;
 
